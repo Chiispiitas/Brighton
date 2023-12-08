@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- ==============================================
+    *  Head
+=============================================== -->
+<head>
+
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Certificate Generator | Brighton English School</title>
+  <meta content="Version 1.0" name="description">
+
+  <!-- Favicon -->
+  <link href="assets/img/favicon.png" rel="icon">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+
+  <!-- CSS -->
+  <link href="assets/css/fonts.css" rel="stylesheet">
+  <link href="assets/css/style.css" rel="stylesheet">
+
+</head>
+
+<!-- ==============================================
+    *  Body
+============================================== -->
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="fixed-top">
+    <div class="container d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>
+    </div>
+  </header><!-- End Header -->
+
+  <!-- ======= Hero ======= -->
+  <section id="hero" class="d-flex align-items-center">
+    <div class="container position-relative" data-aos="fade-up" data-aos-delay="100">
+      <div class="row justify-content-center">
+        <div class="col-xl-7 col-lg-9 text-center">
+          <h1>Student Name:</h1>
+          <input type="text" name="Student" id="student" required value="Waleska J. Macías C."/>
+          <h1>Date:</h1>
+          <input type="text" name="Date" id="date" required value="December 8, 2023"/>
+        </div>
+      </div>
+      <div class="text-center">
+        <input class="download-btn" type="submit" id="certificate-btn" value="Download Certificate"/>
+      </div>
+
+      <div class="row icon-boxes">
+        <div class="col" data-aos="zoom-in" data-aos-delay="200">
+          <div class="icon-box">
+            <div class="icon"><i class="ri-fingerprint-line"></i></div>
+            <h2 class="title">Course Information</h2>
+            <p class="description">Program</p>
+            <input type="text" name="Program" id="program" required value="General English"/>
+            <p class="description">Level</p>
+            <input type="text" name="Level" id="level" required value="A1 Beginner"/>
+          </div>
+        </div>
+
+        <div class="col" data-aos="zoom-in" data-aos-delay="400">
+          <div class="icon-box">
+            <div class="icon"><i class="ri-command-line"></i></div>
+            <h2 class="title">Grades</h2>
+            <p class="description">Final grade</p>
+            <input type="text" name="Final" id="final" required value="Merit"/>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section><!-- End Hero -->
+
+  <div id="preloader"></div>
+
+  <!-- Vendor -->
+  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+  <script src="https://unpkg.com/@pdf-lib/fontkit@0.0.4"></script>
+
+  <script src="assets/vendor/pdf-lib.js"></script>
+  <script src="assets/vendor/filesaver.js"></script>
+
+  <!-- Main -->
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/pdf.js"></script>
+
+</body>
+
+</html>

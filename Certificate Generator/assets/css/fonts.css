@@ -1,0 +1,31 @@
+/*--------------------------------------------------------------
+# Poppins
+--------------------------------------------------------------*/
+/* Regular */
+@font-face {
+	font-family: "poppins";
+	src: url("../fonts/Poppins-Regular.ttf");
+}
+
+/* Bold */
+@font-face {
+	font-family: "poppins";
+	src: url("../fonts/Poppins-Bold.ttf");
+	font-weight: bold;
+}
+
+/*--------------------------------------------------------------
+# Brittany
+--------------------------------------------------------------*/
+@font-face {
+	font-family: "brittany";
+	src: url("../fonts/BrittanySignature.ttf");
+}
+
+/*--------------------------------------------------------------
+# Boston Angel
+--------------------------------------------------------------*/
+@font-face {
+	font-family: "boston-angel";
+	src: url("../fonts/BostonAngelBold.otf");
+}
