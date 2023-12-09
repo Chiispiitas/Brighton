@@ -104,6 +104,8 @@ function changeExams(exams) {
     Certificate name string
 ============================================== */
 function getCertificateNameString(fullName) {
+  fullName.replace(/\w\S*/g, function(txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
+
   const names = fullName.split(' ');
 
   if (names.length >= 4) {
@@ -269,7 +271,7 @@ const generateCertificate = async() => {
  
   /* Save PDF */
   const pdfDataUri = await pdfDoc.saveAsBase64({ dataUri: true });
-  saveAs(pdfDataUri,"newcertificate.pdf")
+  saveAs(pdfDataUri,`Certificate ${student.value.toUpperCase()}.pdf`)
 };
 
 /* ==============================================
