@@ -104,7 +104,7 @@ function changeExams(exams) {
     Certificate name string
 ============================================== */
 function getCertificateNameString(fullName) {
-  fullName.replace(/\w\S*/g, function(txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
+  fullName = fullName.replace(/\w\S*/g, function(txt) { return txt.charAt(0).toUpperCase() + txt.substr(1).toLowerCase(); });
 
   const names = fullName.split(' ');
 
