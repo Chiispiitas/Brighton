@@ -135,6 +135,28 @@ body {
 }
 
 /* Text field */
+#hero input[type="password"] {
+  margin-top: 24px;
+  border-radius: 10px;
+  width: 200px;
+  color: #444444;
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  background-color: rgb(255, 255, 255);
+}
+
+/* Date field */
+#hero input[type="date"] {
+  margin-top: 24px;
+  border-radius: 10px;
+  width: 200px;
+  color: #444444;
+  font-family: "Poppins", sans-serif;
+  font-size: 24px;
+  background-color: rgb(255, 255, 255);
+}
+
+/* Text field */
 #hero select {
   margin-top: 5px;
   margin-bottom: 20px;

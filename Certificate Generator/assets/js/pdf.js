@@ -24,7 +24,8 @@ var reportOverviewString4 = "";
 
 /* Text fields */
 var student = document.getElementById("student");
-var date = document.getElementById("date");
+var date = document.getElementById('date')
+var password = document.getElementById("password");
 var program = document.getElementById("program");
 var level = document.getElementById("level");
 var shortLevel = document.getElementById("short-level");
@@ -52,7 +53,6 @@ var gpa = document.getElementById("gpa");
 var final = document.getElementById("final");
 
 student.value = getQueryParam("student") || student.value;
-date.value = getQueryParam("date") || date.value;
 program.value = getQueryParam("program") || program.value;
 level.value = getQueryParam("level") || level.value;
 shortLevel.value = getQueryParam("short-level") || shortLevel.value;
@@ -78,6 +78,7 @@ yleTotal.value = getQueryParam("yle-total") || yleTotal.value;
 generalExamsTotal.value = getQueryParam("general-exams-total") || generalExamsTotal.value;
 gpa.value = getQueryParam("gpa") || gpa.value;
 final.value = getQueryParam("final") || final.value;
+document.getElementById('date').valueAsDate = new Date();
 
 /* Exams */
 var yle = document.getElementById("yle");
@@ -163,7 +164,16 @@ function getReportOverviewStrings() {
     Date string
 ============================================== */
 function getDateString() {
-  dateString = "Manta, " + date.value;
+  const months = [
+    'January', 'February', 'March', 'April', 'May', 'June',
+    'July', 'August', 'September', 'October', 'November', 'December'
+  ];
+
+  dateBase = date.value;
+  const [year, month, day] = dateBase.split('-');
+  const monthName = months[parseInt(month, 10) - 1];
+
+  dateString = "Manta, " + `${monthName} ${parseInt(day, 10)}, ${year}`;
 };
 
 /* ==============================================
@@ -172,7 +182,19 @@ function getDateString() {
 certificateBtn.addEventListener("click", () => {
   let name = student.value;
   if (name.trim() !== "" && student.checkValidity()) {
-    generateCertificate();
+    if (password.checkValidity()) {
+      if (password.value == "g33*5S#i^Z.u") {
+        generateCertificate();
+      } else {
+        password.value = "";
+        password.setCustomValidity("Wrong password.");
+        password.reportValidity();
+      }
+    } else {
+      password.value = "";
+      password.setCustomValidity("");
+      password.reportValidity();
+    }
   } else {
     student.reportValidity();
   }
@@ -181,7 +203,11 @@ certificateBtn.addEventListener("click", () => {
 reportBtn.addEventListener("click", () => {
   let name = student.value;
   if (name.trim() !== "" && student.checkValidity()) {
-    generateReport();
+    if (password.checkValidity()) {
+      generateReport();
+    } else {
+      password.reportValidity();
+    }
   } else {
     student.reportValidity();
   }
