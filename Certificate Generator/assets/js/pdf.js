@@ -26,8 +26,8 @@ const certificateBtn = document.getElementById("certificate-btn");
     Pass strings
 ============================================== */
 function getPassStrings() {
-  passString1 = "has successfully PASSED the " + level.value + " level of the"
-  passString2 = program.value + " program";
+  passString1 = "has successfully PASSED the " + level.value.toUpperCase() + " level of the"
+  passString2 = program.value.toUpperCase() + " program";
 
   if (final.value == "Distinction") {
     passString2 += " WITH DISTINCTION.";
