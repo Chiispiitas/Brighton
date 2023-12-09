@@ -127,11 +127,23 @@ body {
 #hero input[type="text"] {
   margin-top: 24px;
   border-radius: 10px;
+  width: 400px;
   color: #444444;
   font-family: "Poppins", sans-serif;
   font-size: 24px;
   background-color: rgb(255, 255, 255);
-  outline: none;
+}
+
+/* Text field */
+#hero select {
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border-radius: 10px;
+  width: 200px;
+  color: #444444;
+  font-family: "Poppins", sans-serif;
+  font-size: 18px;
+  background-color: rgb(255, 255, 255);
 }
 
 /* Download button */
@@ -151,8 +163,8 @@ body {
 }
 
 /* Download button hovered */
-#hero .btn-get-started:hover {
-  background: #ffce73;
+#hero .download-btn:hover {
+  background: #ffbe47;
 }
 
 /* Icon box container */
@@ -201,6 +213,16 @@ body {
   font-size: 18px;
   background-color: rgb(255, 255, 255);
   outline: none;
+}
+
+/* Icon box text field */
+#hero .icon-box .status {
+  margin-bottom: 20px;
+}
+
+/* Icon box hidden */
+#hero .icon-box .hidden {
+  display: none;
 }
 
 /* Icon box icon */
