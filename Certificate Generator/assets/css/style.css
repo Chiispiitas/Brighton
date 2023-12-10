@@ -132,6 +132,12 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 24px;
   background-color: rgb(255, 255, 255);
+  transition: 0.4s;
+}
+
+/* Text field hover */
+#hero input[type="text"]:hover {
+  transform: scale(1.05);
 }
 
 /* Text field */
@@ -143,6 +149,12 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 24px;
   background-color: rgb(255, 255, 255);
+  transition: 0.4s;
+}
+
+/* Text field hover */
+#hero input[type="password"]:hover {
+  transform: scale(1.05);
 }
 
 /* Date field */
@@ -154,6 +166,12 @@ body {
   font-family: "Poppins", sans-serif;
   font-size: 24px;
   background-color: rgb(255, 255, 255);
+  transition: 0.4s;
+}
+
+/* Date field hover */
+#hero input[type="date"]:hover {
+  transform: scale(1.05);
 }
 
 /* Text field */
@@ -178,7 +196,7 @@ body {
   padding: 14px 50px;
   border-color: #ffffff00;
   border-radius: 5px;
-  transition: 0.5s;
+  transition: 0.4s;
   margin-top: 30px;
   color: #fff;
   background: #ffa701;
@@ -186,7 +204,14 @@ body {
 
 /* Download button hovered */
 #hero .download-btn:hover {
-  background: #ffbe47;
+  background: #ffbc41;
+  transition: 0.1s;
+}
+
+/* Download button active */
+#hero .download-btn:active {
+  transform: scale(0.98);
+  background: #d98e01;
 }
 
 /* Icon box container */
