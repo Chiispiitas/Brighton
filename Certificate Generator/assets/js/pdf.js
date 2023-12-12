@@ -294,6 +294,19 @@ const generateCertificate = async() => {
     font: bostonAngelFont,
     color: rgb(0.5, 0.5, 0.5),
   });
+
+  /* Get backside PDF bytes */
+  const existingBacksidePdfBytes = await fetch(`${shortLevel.value} Backside.pdf`).then((res) =>
+    res.arrayBuffer()
+  );
+
+  /* Get backside PDF document from PDF bytes */
+  const pdfDocBackside = await PDFDocument.load(existingBacksidePdfBytes);
+
+  /* Get document pages */
+  const [firstBacksidePage] = await pdfDoc.copyPages(pdfDocBackside, [0]);
+
+  pdfDoc.addPage(firstBacksidePage);
  
   /* Save PDF */
   const pdfDataUri = await pdfDoc.saveAsBase64({ dataUri: true });
