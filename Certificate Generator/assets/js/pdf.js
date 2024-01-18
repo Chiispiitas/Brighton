@@ -80,8 +80,6 @@ gpa.value = getQueryParam("gpa") || gpa.value;
 final.value = getQueryParam("final") || final.value;
 document.getElementById('date').valueAsDate = new Date();
 
-console.log(shortLevel)
-
 /* Exams */
 var yle = document.getElementById("yle");
 var generalExams = document.getElementById("general-exams");
