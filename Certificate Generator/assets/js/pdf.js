@@ -476,7 +476,7 @@ const generateReport = async() => {
     color: rgb(0, 0, 0),
   });
 
-  if (exam.value == "STARTERS" || exam.value == "MOVERS" || exam.value == "FLYERS") {
+  if (exam.value == "STARTERS" || exam.value == "MOVERS" || exam.value == "FLYERS" || exam.value == "KEY") {
     /* Draw reading and writing */
     firstPageReport.drawText("1", {
       x: 107,
