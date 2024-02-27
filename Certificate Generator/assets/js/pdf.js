@@ -183,7 +183,7 @@ certificateBtn.addEventListener("click", () => {
   let name = student.value;
   if (name.trim() !== "" && student.checkValidity()) {
     if (password.checkValidity()) {
-      if (password.value == "g33*5S#i^Z.u") {
+      if (password.value == "Brighton1234@") {
         generateCertificate();
       } else {
         password.value = "";
@@ -439,8 +439,13 @@ const generateReport = async() => {
     color: rgb(0, 0, 0),
   });
 
+  shortLevelX = 314
+  if (shortLevel.value == "PRE-A1") {
+    shortLevelX = 302
+  }
+
   firstPageReport.drawText(shortLevel.value, {
-    x: 314,
+    x: shortLevelX,
     y: 525,
     size: 11,
     font: poppinsFont,
