@@ -78,6 +78,7 @@ yleTotal.value = getQueryParam("yle-total") || yleTotal.value;
 generalExamsTotal.value = getQueryParam("general-exams-total") || generalExamsTotal.value;
 gpa.value = getQueryParam("gpa") || gpa.value;
 final.value = getQueryParam("final") || final.value;
+password.value = getQueryParam("password") || password.value;
 document.getElementById('date').valueAsDate = new Date();
 
 /* Exams */
