@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<!-- ==============================================
+    *  Head
+============================================== -->
+<head>
+
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+    <title>Pass the Bomb!</title>
+    <meta content="Point Institute Party Games - David Santana" name="description">
+
+    <!-- Favicons -->
+    <link href="img/favicon.png" rel="icon">
+
+    <!-- Vendor -->
+    <link href="vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+
+    <!-- Main -->
+    <link href="css/fonts.css" rel="stylesheet">
+    <link href="css/style.css" rel="stylesheet">
+
+
+</head>
+
+<!-- ==============================================
+    *  Body
+============================================== -->
+<body>
+
+    <div id="screen-overlay"></div>
+    
+    <div id="container-scene">
+
+        <div class="scene" id="scene-title">
+            <img id="img-game-logo" src="img/game-logo.png" width="60%">
+            <button id="btn-title-start-now">Start</button>
+            <button id="btn-title-options">Options</button>
+            <img id="logo-point" src="img/logo.png">
+        </div>
+
+        <div class="scene" id="scene-participants">
+            <div class="container-participants-controls">
+                <i class="bi bi-arrow-left-circle" id="btn-participants-back"></i>
+            </div>
+
+            <div id="container-participants-info">
+                <p>Participants</p>
+
+                <div id="container-list-participants">
+                    <div id="list-participants"></div>
+                </div>
+
+                <div id="container-input-participants">
+                    <input id="input-participants" type="text" spellcheck="false" autocomplete="off" maxlength="11">
+                </div>
+            </div>
+
+            <div class="container-participants-controls">
+                <i class="bi bi-arrow-right-circle" id="btn-participants-next"></i>
+            </div>
+        </div>
+
+        <div class="scene" id="scene-countdown">
+            <h1 id="text-countdown"></h1>
+        </div>
+
+        <div class="scene" id="scene-game">
+            <div id="listener-game"></div>
+
+            <div id="container-game-left">
+                <div id="list-players"></div>
+            </div>
+
+            <div class="col-separator"></div>
+
+            <div id="container-game-right">
+                <div id="container-youre-up">
+                    <p>Go</p><h2 id="text-youre-up"></h2>
+                </div>
+
+                <div id="container-bomb">
+                    <div id="img-bomb"></div>
+                    <div id="range-time"></div>
+                </div>
+
+                <div class="row-separator"></div>
+                <div id="container-letters"></div>
+
+                <div id="container-input-word">
+                    <input id="input-word" type="text" spellcheck="false" autocomplete="off" maxlength="45">
+                </div>
+            </div>
+        </div>
+
+        <div class="scene" id="scene-results">
+            <h2 id="text-winner"></h2>
+        </div>
+    </div>
+
+    <!-- Vendor -->
+    <script src="vendor/howler.min.js"></script>
+
+    <!-- Database -->
+    <script src="js/dictionary.js"></script>
+    <script src="js/database.js"></script>
+    <script src="js/sound.js"></script>
+
+    <!-- Scenes -->
+    <script src="js/scenes/scene-manager.js"></script>
+    <script src="js/scenes/scene-title.js"></script>
+    <script src="js/scenes/scene-participants.js"></script>
+    <script src="js/scenes/scene-countdown.js"></script>
+    <script src="js/scenes/scene-game.js"></script>
+    <script src="js/scenes/scene-results.js"></script>
+
+</body>
+</html>

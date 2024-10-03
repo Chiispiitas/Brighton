@@ -1,0 +1,444 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+/* Main */
+html, body {
+  margin: 0px;
+  height: 100vh;
+  font-size: calc(1vw + 2vh);
+}
+/* Body */
+body {
+  display: flex;
+  flex-direction: column;
+  font-family: "porkys", sans-serif;
+  color: #fff;
+  text-transform: uppercase;
+  background-color: rgb(255, 56, 89);
+  background-image: url("../img/bg.png");
+  background-size: cover;
+}
+/* Selection */
+::selection {
+  background-color: transparent;
+}
+/* Anchor */
+a {
+  display: block;
+  color: rgb(255, 255, 255);
+  font-size: 1.1rem;
+  margin-bottom: 5px;
+  cursor: pointer;
+  transform: scale(1);
+  transition: 0.25s;
+}
+/* Anchor Hover */
+a:hover {
+  color: rgb(238, 238, 238);
+  transform: scale(1.5);
+}
+/* Button */
+button {
+  position: relative;
+  overflow: hidden;
+  margin-left: auto;
+  margin-right: auto;
+  border: 4px solid rgba(255, 255, 255, 0.671);
+  border-radius: 40px;
+  background: transparent;
+  color: #fff;
+  font-family: "porkys", sans-serif;
+  font-size: 1rem;
+  font-weight: 400;
+  text-transform: uppercase;
+  transition: 0.2s;
+}
+/* Button Hover */
+button:hover {
+  background: rgba(255, 255, 255, 0.219);
+  color: rgb(231, 231, 231);
+  cursor: pointer;
+}
+/* Icon */
+i {
+  color: rgb(255, 255, 255);
+  font-size: 2.5rem;
+  cursor: pointer;
+  transform: scale(1);
+  transition: 0.25s;
+}
+/* Anchor Hover */
+i:hover {
+  color: rgb(238, 238, 238);
+  transform: scale(1.25);
+}
+/* Header 1 */
+h1 {
+  font-size: 6rem;
+}
+/* Header 2 */
+h2 {
+  font-size: 2.5rem;
+}
+/* Input Text */
+input[type="text"] {
+  border: none;
+  border-radius: 10px;
+  width: 90%;
+  height: 1.2rem;
+  color: rgb(48, 48, 48);
+  font-family: "porkys", sans-serif;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  background-color: rgb(255, 255, 255);
+  outline: none;
+}
+/* Input Text Selection */
+input[type="text"]::selection {
+  background-color: rgba(85, 178, 255, 0.678);
+}
+/* Input Text Selection */
+input[type="text"]:disabled {
+  background-color: rgba(255, 255, 255, 0.678);
+}
+/* Row Separator */
+.row-separator {
+  width: 80%;
+  min-height: 2px;
+  margin-top: 3%;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.555), rgba(255, 255, 255, 0.555)) no-repeat center/100% 2px;
+}
+/* Column Separator */
+.col-separator {
+  height: 80%;
+  min-width: 2px;
+  margin-left: 1%;
+  margin-right: 1%;
+  background: linear-gradient(rgba(255, 255, 255, 0.555), rgba(255, 255, 255, 0.555)) no-repeat center/2px 100%;
+}
+/*--------------------------------------------------------------
+# Effects
+--------------------------------------------------------------*/
+/* Main */
+#screen-overlay {
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: transparent;
+  pointer-events: none;
+  z-index: 2;
+}
+/* Explosion */
+#screen-overlay.explosion {
+  animation: explosion 1s;
+}
+/* Explosion Animation */
+@keyframes explosion {
+  from { background-color: rgb(255, 255, 255); }
+  to { background-color: transparent; }
+}
+/*--------------------------------------------------------------
+# Scene Container
+--------------------------------------------------------------*/
+/* Main */
+#container-scene {
+  display: grid;
+  place-items: center;
+  grid-template-areas: "scene";
+  border: 2px solid rgba(255, 255, 255, 0.555);
+  border-radius: 40px;
+  margin: auto;
+  height: 90%;
+  width: 95%;
+}
+/*--------------------------------------------------------------
+# Scene Base
+--------------------------------------------------------------*/
+/* Main */
+.scene {
+  grid-area: scene;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.5s;
+}
+/*--------------------------------------------------------------
+# Scene Title
+--------------------------------------------------------------*/
+/* Main */
+#scene-title {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  place-items: center;
+  text-align: center;
+  opacity: 1;
+  visibility: visible;
+}
+/* Image Game Logo */
+#img-game-logo {
+  position: absolute;
+  top: 12%;
+  left: 20%;
+}
+/* Button Start */
+#btn-title-start-now {
+  position: absolute;
+  left: 40%;
+  bottom: 7%;
+  width: 20%;
+  height: 10%;
+}
+/* Button Options */
+#btn-title-options {
+  position: absolute;
+  left: 4%;
+  bottom: 7%;
+  width: 20%;
+  height: 10%;
+}
+/*--------------------------------------------------------------
+# Scene Participants
+--------------------------------------------------------------*/
+/* Main */
+#scene-participants {
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  width: 55%;
+  height: 80vh;
+  max-height: 80vh;
+  text-align: center;
+}
+/* Input Text */
+#scene-participants input[type="text"] {
+  text-align: center;
+}
+/* Container Participants Info */
+#container-participants-info {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  place-items: center;
+  width: 80%;
+  height: 100%;
+}
+/* Paragraph */
+#container-participants-info p {
+  margin-top: 5px;
+  margin-bottom: 15px;
+  font-size: 1.8em;
+}
+/* Container List Participants */
+#container-list-participants {
+  overflow-y: scroll;
+  height: 80%;
+  width: 100%;
+  margin-bottom: 20px;
+  border-radius: 40px;
+  background-color: rgb(252, 34, 59);
+}
+/* Container Participants Controls */
+.container-participants-controls {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  place-items: center;
+  width: 20%;
+  height: 100%;
+}
+/*--------------------------------------------------------------
+# Scene Countdown
+--------------------------------------------------------------*/
+/* Main */
+#scene-countdown {
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  text-align: center;
+}
+/*--------------------------------------------------------------
+# Scene Game
+--------------------------------------------------------------*/
+/* Main */
+#scene-game {
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  width: 95%;
+  height: 95%;
+  text-align: center;
+}
+/* Listener Game */
+#listener-game {
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+/* Container Game Left */
+#container-game-left {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  place-items: center;
+  width: 26%;
+  height: 85%;
+  border-radius: 40px;
+  background-color: rgb(252, 34, 59);
+}
+/* List Players Participants */
+#list-players {
+  display: flex;
+  overflow-y: scroll;
+  flex-direction: column;
+  justify-content: right;
+  text-align: right;
+  width: 96%;
+  height: 94vh;
+  max-height: 94vh;
+}
+/* Paragraph */
+#list-players p {
+  font-size: 0.9rem;
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+/* Current Participant */
+.current-participant {
+  font-size: 1.1rem;
+  color: rgb(134, 197, 248);
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+/* Container Game Right */
+#container-game-right {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  place-items: center;
+  width: 75%;
+  height: 100%;
+  text-align: center;
+}
+/* Container You're Up */
+#container-youre-up {
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  text-align: center;
+  height: 10%;
+}
+/* Paragraph You're Up */
+#container-youre-up p {
+  font-size: 1.1rem;
+  margin-right: 10px;
+}
+/* Container Bomb */
+#container-bomb {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  place-items: center;
+  text-align: center;
+  height: 40%;
+  width: 33%;
+  margin-top: 15px;
+  margin-bottom: 5px;
+  border: none;
+  border-radius: 50%;
+  background-color: rgb(252, 34, 59);
+}
+/* Image Bomb */
+#img-bomb {
+  height: 80%;
+  width: 90%;
+  background: url("../img/bomb.png") no-repeat;
+  background-size: contain;
+}
+/* Range Time */
+#range-time {
+  height: 15%;
+  width: 200%;
+  margin-top: 5%;
+  border: none;
+  border-radius: 40px;
+  background-color: rgb(111, 224, 111);
+}
+/* Container Letters */
+#container-letters {
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  text-align: center;
+  margin-top: 3%;
+  height: 20%;
+}
+/* Item Letter */
+.item-required-letter {
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  text-align: center;
+  margin-left: 2px;
+  margin-right: 2px;
+  border-radius: 40px;
+  color: rgb(0, 0, 0);
+  background-color: rgb(130, 192, 243);
+}
+/* Item Letter Typed */
+.typed {
+  background-color: rgb(171, 243, 157);
+}
+/* Item Letter */
+.item-letter {
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  text-align: center;
+  margin-left: 2px;
+  margin-right: 2px;
+  border-radius: 40px;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+}
+/* Container Input Word */
+#container-input-word {
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  width: 1px;
+  height: 1px;
+  margin-top: 5px;
+  text-align: center;
+}
+/* Input Word */
+#container-input-word input[type="text"] {
+  width: 100%;
+  text-align: center;
+  background: none;
+  color: transparent;
+  text-shadow: 0 0 0 rgb(255, 255, 255);
+}
+/*--------------------------------------------------------------
+# Scene Results
+--------------------------------------------------------------*/
+/* Main */
+#scene-results {
+  display: flex;
+  justify-content: center;
+  place-items: center;
+  text-align: center;
+}
+/*--------------------------------------------------------------
+# Logo Point
+--------------------------------------------------------------*/
+/* Image */
+#logo-point {
+  position: absolute;
+  bottom: 7%;
+  right: 4%;
+  height: 10%;
+}
