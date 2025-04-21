@@ -255,8 +255,8 @@ const generateCertificate = async() => {
   getCertificateNameString(student.value);
   const studentTextWidth = brittanyFont.widthOfTextAtSize(certificateName, 56);
   firstPage.drawText(certificateName, {
-    x: (pageSize.width - studentTextWidth) / 2 + 15,
-    y: 310,
+    x: (pageSize.width - studentTextWidth) / 2,
+    y: 320,
     size: 56,
     font: brittanyFont,
     color: rgb(0, 0, 0),
@@ -269,8 +269,8 @@ const generateCertificate = async() => {
 
     /* Line 1 */
     firstPage.drawText(passString1, {
-      x: (pageSize.width - passString1Width) / 2 + 15,
-      y: 257,
+      x: (pageSize.width - passString1Width) / 2,
+      y: 267,
       size: 16,
       font: poppinsFont,
       color: rgb(0.35, 0.35, 0.35),
@@ -278,8 +278,8 @@ const generateCertificate = async() => {
 
     /* Line 2 */
     firstPage.drawText(passString2, {
-      x: (pageSize.width - passString2Width) / 2 + 15,
-      y: 234,
+      x: (pageSize.width - passString2Width) / 2,
+      y: 244,
       size: 16,
       font: poppinsFont,
       color: rgb(0.35, 0.35, 0.35),
@@ -289,8 +289,8 @@ const generateCertificate = async() => {
   getDateString();
   const dateTextWidth = bostonAngelFont.widthOfTextAtSize(dateString, 16);
   firstPage.drawText(dateString, {
-    x: (pageSize.width - dateTextWidth) / 2 + 15,
-    y: 208,
+    x: (pageSize.width - dateTextWidth) / 2,
+    y: 218,
     size: 16,
     font: bostonAngelFont,
     color: rgb(0.5, 0.5, 0.5),
