@@ -13,10 +13,10 @@ const AUDIO_EXT = '.mp3';
  * Converts a display word to an audio file name. By default:
  *   - lowercases the word
  *   - trims spaces
- *   - replaces internal spaces with underscores
+ *   - replaces internal spaces with dashes
  */
 function wordToAudioBasename(word) {
-    return word.trim().toLowerCase().replace(/\s+/g, '_');
+    return word.trim().toLowerCase().replace(/\s+/g, '-');
 }
 
 /** @typedef {'pending'|'ok'|'err'|'skip'} Mark */
@@ -156,6 +156,7 @@ function setCurrentWord(w) {
 
 function playAudio() {
     elAudio.currentTime = 0;
+    elAudio.playbackRate = 0.75;
     elAudio.play().catch(() => {});
 }
 
