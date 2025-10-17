@@ -32,6 +32,7 @@ let raf = null;       // requestAnimationFrame id
 
 // DOM references
 const elWord = document.getElementById('word');
+const elSecretWord = document.getElementById('secret-word');
 const elAudio = document.getElementById('audio');
 const elWrongAudio = document.getElementById('wrong-audio');
 const elCorrectAudio = document.getElementById('correct-audio');
@@ -147,10 +148,9 @@ function toggleWordMode() {
 
 function setCurrentWord(w) {
     current = w;
-    // preload audio source
+    elSecretWord.textContent = w;
     const src = `${AUDIO_DIR}/${wordToAudioBasename(w)}${AUDIO_EXT}`;
     elAudio.src = src;
-    // reset marks
     resetMarks();
 }
 
@@ -407,6 +407,19 @@ function onKey(e) {
         nextWord();
         return;
     }
+
+    // Show secret word while holding "I"
+    window.addEventListener('keydown', e => {
+    if (e.key === 'i' || e.key === 'I') {
+        elSecretWord.classList.add('visible');
+    }
+    });
+
+    window.addEventListener('keyup', e => {
+    if (e.key === 'i' || e.key === 'I') {
+        elSecretWord.classList.remove('visible');
+    }
+    });
 }
 
 /* ==============================================
