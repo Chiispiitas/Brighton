@@ -33,6 +33,8 @@ let raf = null;       // requestAnimationFrame id
 // DOM references
 const elWord = document.getElementById('word');
 const elAudio = document.getElementById('audio');
+const elWrongAudio = document.getElementById('wrong-audio');
+const elCorrectAudio = document.getElementById('correct-audio');
 const btnPlay = document.getElementById('play-audio');
 const btnNext = document.getElementById('next-word');
 const elTimer = document.getElementById('timer');
@@ -157,6 +159,16 @@ function playAudio() {
     elAudio.play().catch(() => {});
 }
 
+function playWrongAudio() {
+    elWrongAudio.currentTime = 0;
+    elWrongAudio.play().catch(() => {});
+}
+
+function playCorrectAudio() {
+    elCorrectAudio.currentTime = 0;
+    elCorrectAudio.play().catch(() => {});
+}
+
 /* ==============================================
    Marking Logic (O/P/Backspace)
 ============================================== */
@@ -178,6 +190,9 @@ function mark(type) {
     // Trigger confetti when all are correct
     if (isAllMarked() && !hadAnyError()) {
         launchConfetti();
+        playCorrectAudio();
+    } else if (isAllMarked()) {
+        playWrongAudio();
     }
 }
 
