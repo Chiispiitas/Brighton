@@ -1,0 +1,313 @@
+/*--------------------------------------------------------------
+# General
+--------------------------------------------------------------*/
+:root {
+  --bg: #1b0c10;       /* dark background */
+  --fg: #efe8e8;       /* main text */
+  --muted: #a591ad;    /* secondary */
+  --ok: #21c55d;       /* green */
+  --err: #ef4444;      /* red */
+  --accent: #ef233c;   /* Speller Things vibe */
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0px;
+  background: var(--bg);
+  color: var(--fg);
+  display: flex;
+  flex-direction: column;
+  font-family: system-ui, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+/*--------------------------------------------------------------
+# Topbar
+--------------------------------------------------------------*/
+.topbar {
+  position: fixed;
+  top: -30px;
+  width: 100%;
+  height: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.topbar img {
+  width: 60%;
+  object-fit: scale-down;
+}
+
+/*--------------------------------------------------------------
+# Word Area
+--------------------------------------------------------------*/
+.stage {
+  flex: 1;
+  display: grid;
+  place-items: center;
+  text-align: center;
+  padding: 2rem;
+}
+
+.word {
+  padding-top: 5%;
+  font-size: clamp(3rem, 12vw, 12rem);
+  font-weight: 800;
+  letter-spacing: 0.06em;
+}
+
+.char {
+  opacity: 0.35;
+  transition: transform 0.2s ease, opacity 0.2s ease;
+}
+
+.char.active {
+  opacity: 1;
+  text-shadow: 0 0 0.6rem rgba(239, 35, 60, 0.35);
+  transform: scale(1.06);
+}
+
+.char.ok {
+  color: var(--ok);
+  opacity: 1;
+  text-shadow: none;
+  transform: none;
+}
+
+.char.err {
+  color: var(--err);
+  opacity: 1;
+  text-shadow: none;
+  transform: none;
+}
+
+.char.skip {
+  opacity: 0.6;
+}
+
+/*--------------------------------------------------------------
+# Controls
+--------------------------------------------------------------*/
+.controls {
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding: 1rem;
+  border-top: 1px solid #271e28;
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(255, 255, 255, 0));
+  position: sticky;
+  bottom: 0;
+  backdrop-filter: blur(6px);
+}
+
+.group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.25rem 0.75rem;
+  border: 1px solid #242634;
+  border-radius: 0.75rem;
+}
+
+.btn {
+  appearance: none;
+  border: 1px solid #2f2b3c;
+  background: #221522;
+  color: var(--fg);
+  padding: 0.6rem 0.9rem;
+  border-radius: 0.65rem;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.btn:hover {
+  border-color: #3b3e4f;
+}
+
+.btn.primary {
+  background: #201a2f;
+  border-color: #583a40;
+}
+
+.btn.success {
+  background: #0f2a1a;
+  border-color: #1c5a35;
+}
+
+.btn.danger {
+  background: #2a1313;
+  border-color: #5a2222;
+}
+
+.btn:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.label {
+  font-size: 0.9rem;
+  color: var(--muted);
+  margin-right: 0.25rem;
+}
+
+.timer {
+  font-variant-numeric: tabular-nums;
+  font-weight: 800;
+  font-size: 1.35rem;
+}
+
+.legend {
+  color: var(--muted);
+  font-size: 0.9rem;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+}
+
+.pill {
+  padding: 0.15rem 0.5rem;
+  border-radius: 0.5rem;
+  border: 1px solid #2b2e3c;
+}
+
+/*--------------------------------------------------------------
+# Help Overlay
+--------------------------------------------------------------*/
+.help {
+  display: flex;
+  justify-content: center;
+  text-align: center;
+  color: var(--muted);
+  font-size: 0.95rem;
+  padding: 0.25rem 1rem 1rem 1rem;
+}
+
+/*--------------------------------------------------------------
+# Logo
+--------------------------------------------------------------*/
+
+.lev-logo-container {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 7%; 
+  height: 11%;
+  overflow: hidden;
+}
+
+.lev-logo-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.english-logo-container {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 7%; 
+  height: 10%;
+  overflow: hidden;
+}
+
+.english-logo-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/*--------------------------------------------------------------
+# Select (Dropdown)
+--------------------------------------------------------------*/
+select {
+  appearance: none;
+  background-color: #221522;
+  color: var(--fg);
+  border: 1px solid #2f2b3c;
+  border-radius: 0.65rem;
+  padding: 0.6rem 2rem 0.6rem 0.9rem;
+  font-weight: 600;
+  font-size: 0.95rem;
+  cursor: pointer;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%23a591ad' height='12' viewBox='0 0 24 24' width='12' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 0.7rem center;
+  background-size: 1rem;
+}
+
+select:hover {
+  border-color: #3b3e4f;
+  background-color: #26182a;
+}
+
+select:focus {
+  outline: none;
+  border-color: var(--accent);
+}
+
+select:disabled {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+option {
+  background-color: #1b0c10;
+  color: var(--fg);
+  font-weight: 500;
+}
+
+/* Optional variant: smaller “pill” dropdown for grouped controls */
+select.pill {
+  padding: 0.3rem 1.8rem 0.3rem 0.7rem;
+  font-size: 0.85rem;
+  border-radius: 0.5rem;
+}
+
+/*--------------------------------------------------------------
+# Hidden Mode
+--------------------------------------------------------------*/
+.char.dot {
+  opacity: 0.5;
+}
+
+/*--------------------------------------------------------------
+# Confetti
+--------------------------------------------------------------*/
+#confetti-container {
+  position: fixed;
+  inset: 0;
+  pointer-events: none;
+  overflow: visible;
+  z-index: 9999;
+}
+
+.confetti {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  width: 8px;
+  height: 8px;
+  background: var(--accent);
+  border-radius: 2px;
+  opacity: 0.9;
+  transform-origin: center;
+  animation: explode 1.2s ease-out forwards;
+}
+
+@keyframes explode {
+  0% {
+    transform: translate(-50%, -50%) scale(1) rotate(0deg);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(calc(var(--dx) * 1px), calc(var(--dy) * 1px)) scale(1.2) rotate(720deg);
+    opacity: 0;
+  }
+}

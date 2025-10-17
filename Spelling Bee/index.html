@@ -1,514 +1,94 @@
 <!DOCTYPE html>
 <html lang="en">
+
+<!-- ==============================================
+     *  Head
+============================================== -->
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Spelling Bee Display - By Mr. David</title>
-  <style>
-    :root{
-      --bg:#1b0c10;       /* dark background */
-      --fg:#efe8e8;       /* main text */
-      --muted:#a591ad;    /* secondary */
-      --ok:#21c55d;       /* green */
-      --err:#ef4444;      /* red */
-      --accent:#ef233c;   /* Speller Things vibe */
-    }
-    html,body{height:100%;}
-    body{
-      margin:0; background:var(--bg); color:var(--fg);
-      display:flex; flex-direction:column; font-family:system-ui, Segoe UI, Roboto, Helvetica, Arial, sans-serif;
-    }
+    <meta charset="utf-8">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
 
-    /* Topbar styling */
-    .topbar {
-      position: fixed;
-      top: -30px;
-      width: 100%;
-      height: 30%;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      overflow: hidden;
-    }
-    .topbar img {
-      width: 60%;
-      object-fit: scale-down;
-    }
+    <title>Spelling Bee Display - By Mr. David</title>
+    <meta content="Speller Things 2025 - Mr. David" name="description">
 
-    /* Word area */
-    .stage{
-      flex:1; display:grid; place-items:center; text-align:center; padding:2rem;
-    }
-    .word{ padding-top: 5%; font-size: clamp(3rem, 12vw, 12rem); font-weight:800; letter-spacing:.06em; }
-    .char{ opacity:.35; transition: transform .2s ease, opacity .2s ease; }
-    .char.active{ opacity:1; text-shadow:0 0 .6rem rgba(239,35,60,.35); transform:scale(1.06); }
-    .char.ok{ color:var(--ok); opacity:1; text-shadow:none; transform:none; }
-    .char.err{ color:var(--err); opacity:1; text-shadow:none; transform:none; }
-    .char.skip{ opacity:.6; }
-
-    /* Bottom control bar */
-    .controls{
-      display:flex; gap:1rem; align-items:center; justify-content:center; flex-wrap:wrap;
-      padding:1rem; border-top:1px solid #271e28; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0));
-      position:sticky; bottom:0; backdrop-filter: blur(6px);
-    }
-    .group{ display:flex; align-items:center; gap:.5rem; padding:.25rem .75rem; border:1px solid #242634; border-radius:.75rem; }
-    .btn{
-      appearance:none; border:1px solid #2f2b3c; background:#221522; color:var(--fg);
-      padding:.6rem .9rem; border-radius:.65rem; font-weight:600; cursor:pointer;
-    }
-    .btn:hover{ border-color:#3b3e4f; }
-    .btn.primary{ background:#201a2f; border-color:#583a40; }
-    .btn.success{ background:#0f2a1a; border-color:#1c5a35; }
-    .btn.danger{ background:#2a1313; border-color:#5a2222; }
-    .btn:disabled{ opacity:.45; cursor:not-allowed; }
-
-    .label{ font-size:.9rem; color:var(--muted); margin-right:.25rem; }
-    .timer{ font-variant-numeric: tabular-nums; font-weight:800; font-size:1.35rem; }
-
-    .legend{ color:var(--muted); font-size:.9rem; display:flex; gap:1rem; align-items:center; }
-    .pill{ padding:.15rem .5rem; border-radius:.5rem; border:1px solid #2b2e3c; }
-
-    /* Small help overlay (optional) */
-    .help{ text-align:center; color:var(--muted); font-size:.95rem; }
-
-    /* Hidden mode: pending letters appear as faint dots */
-    .char.dot {
-      opacity: .5;
-    }
-
-    /* === Confetti === */
-    #confetti-container {
-      position: fixed;
-      inset: 0;
-      pointer-events: none;
-      overflow: visible;
-      z-index: 9999;
-    }
-
-    .confetti {
-      position: absolute;
-      left: 50%;
-      top: 50%;
-      width: 8px;
-      height: 8px;
-      background: var(--accent);
-      border-radius: 2px;
-      opacity: 0.9;
-      transform-origin: center;
-      animation: explode 1.2s ease-out forwards;
-    }
-
-    @keyframes explode {
-      0% {
-        transform: translate(-50%, -50%) scale(1) rotate(0deg);
-        opacity: 1;
-      }
-      100% {
-        transform: translate(calc(var(--dx) * 1px), calc(var(--dy) * 1px))
-          scale(1.2)
-          rotate(720deg);
-        opacity: 0;
-      }
-    }
-  </style>
+    <!-- Main -->
+    <link href="style.css" rel="stylesheet">
 </head>
 
-<!-- ------------------------------------------------------------------ BODY ------------------------------------------------------------->
+<!-- ==============================================
+     *  Body
+============================================== -->
 <body>
-  <div id="confetti-container"></div>
+    <div id="confetti-container"></div>
 
-  <header class="topbar">
-    <img src="assets/lights.png" />
-  </header>
+    <header class="topbar">
+        <img src="assets/lights.png" alt="Lights">
+    </header>
 
-  <main class="stage">
-    <div id="word" class="word" aria-live="polite" aria-atomic="true">—</div>
-  </main>
+    <main class="stage">
+        <div id="word" class="word" aria-live="polite" aria-atomic="true">—</div>
+    </main>
 
-  <section class="controls" role="group" aria-label="Controls">
-    <!-- Audio controls -->
-    <div class="group" aria-label="Audio">
-      <span class="label">Audio</span>
-      <button class="btn" id="play-audio" title="Play pronunciation (Space)">▶︎ Play</button>
+    <section class="controls" role="group" aria-label="Controls">
+        <!-- Audio controls -->
+        <div class="group" aria-label="Audio">
+            <span class="label">Audio</span>
+            <button class="btn" id="play-audio" title="Play pronunciation (Space)">▶︎ Play</button>
+        </div>
+
+        <!-- Timer controls -->
+        <div class="group" aria-label="Timer">
+            <span class="label">Timer</span>
+            <span id="timer" class="timer">00:00.0</span>
+            <button class="btn primary" id="timer-start" title="Start (S)">Start</button>
+            <button class="btn" id="timer-stop" title="Stop (T)">Stop</button>
+            <button class="btn" id="timer-reset" title="Reset (R)">Reset</button>
+        </div>
+
+        <!-- Next word & status -->
+        <div class="group" aria-label="Word navigation">
+            <button class="btn success" id="next-word" title="Next word (N)">Next</button>
+        </div>
+
+        <!-- Legend
+        <div class="legend">
+            <span class="pill">Keyboard: O = ✅, P = ❌, Backspace = Undo</span>
+        </div> -->
+
+        <!-- Difficulty selection -->
+        <div class="group" aria-label="Difficulty">
+            <span class="label">Difficulty</span>
+            <button class="btn" id="btn-easy">Easy</button>
+            <button class="btn" id="btn-medium">Medium</button>
+            <button class="btn" id="btn-hard">Hard</button>
+        </div>
+
+        <!-- Pool selection -->
+        <div class="pool">
+            <select id="pool-select">
+                <option value="4TH-5TH">4TH-5TH</option>
+                <option value="6TH-7TH">6TH-7TH</option>
+                <option value="JUNIOR">JUNIOR</option>
+                <option value="SENIOR">SENIOR</option>
+            </select>
+        </div>
+    </section>
+
+    <!-- <div class="help">
+        <div>Speller Things - 1st Interscholastic Spelling Bee U.E.P Lev Vigotsky.</div>
+    </div> -->
+
+    <audio id="audio" preload="auto"></audio>
+
+    <div class="lev-logo-container">
+        <img src="assets/logo.png">
     </div>
 
-    <!-- Timer controls -->
-    <div class="group" aria-label="Timer">
-      <span class="label">Timer</span>
-      <span id="timer" class="timer">00:00.0</span>
-      <button class="btn primary" id="timer-start" title="Start (S)">Start</button>
-      <button class="btn" id="timer-stop" title="Stop (T)">Stop</button>
-      <button class="btn" id="timer-reset" title="Reset (R)">Reset</button>
+    <div class="english-logo-container">
+        <img src="assets/english-logo.png">
     </div>
 
-    <!-- Next word & status -->
-    <div class="group" aria-label="Word navigation">
-      <button class="btn success" id="next-word" title="Next word (N)">Next</button>
-    </div>
-
-    <!-- Legend -->
-    <div class="legend">
-      <span class="pill">Keyboard: O = ✅, P = ❌, Backspace = Undo</span>
-    </div>
-
-    <!-- Difficulty selection -->
-    <div class="group" aria-label="Difficulty">
-      <span class="label">Difficulty</span>
-      <button class="btn" id="btn-easy">Easy</button>
-      <button class="btn" id="btn-medium">Medium</button>
-      <button class="btn" id="btn-hard">Hard</button>
-    </div>
-  </section>
-
-  <div class="help" style="padding: .25rem 1rem 1rem 1rem;">
-    Speller Things - 1st Interscholastic Spelling Bee U.E.P Lev Vigotsky.
-  </div>
-
-  <audio id="audio" preload="auto"></audio>
-
-  <script>
-  // ======= Configuration & State =======
-  let hiddenMode = true; // default: hidden word mode
-  let currentDifficulty = 'easy';  // default
-  let WORDLIST_PATH = `${currentDifficulty}.txt`;
-  const AUDIO_DIR = 'audio';
-  const AUDIO_EXT = '.mp3';
-
-  /**
-   * Converts a display word to an audio file name. By default:
-   *   - lowercases the word
-   *   - trims spaces
-   *   - replaces internal spaces with underscores
-   * Adjust if your filenames differ.
-   */
-  function wordToAudioBasename(word){
-    return word.trim().toLowerCase().replace(/\s+/g,'_');
-  }
-
-  /** @typedef {'pending'|'ok'|'err'|'skip'} Mark */
-  let pool = [];        // remaining words
-  let current = null;   // current word string
-  let marks = [];       // per-character marks
-  let ptr = 0;          // index of next character to mark
-
-  // Timer state
-  let t0 = 0;          // epoch ms when started
-  let acc = 0;         // accumulated ms when paused
-  let raf = null;      // requestAnimationFrame id
-
-  // DOM refs
-  const elWord = document.getElementById('word');
-  const elAudio = document.getElementById('audio');
-  const btnPlay = document.getElementById('play-audio');
-  const btnNext = document.getElementById('next-word');
-  const elTimer = document.getElementById('timer');
-  const btnTStart = document.getElementById('timer-start');
-  const btnTStop  = document.getElementById('timer-stop');
-  const btnTReset = document.getElementById('timer-reset');
-  const btnEasy = document.getElementById('btn-easy');
-  const btnMedium = document.getElementById('btn-medium');
-  const btnHard = document.getElementById('btn-hard');
-
-  // ======= Wordlist loading =======
-  async function loadWordlist(){
-    const res = await fetch(WORDLIST_PATH, {cache: 'no-store'});
-    if(!res.ok){ throw new Error('Failed to load wordlist.txt'); }
-    const text = await res.text();
-    // split lines, trim, ignore empties, keep unique
-    const seen = new Set();
-    const words = [];
-    for(const raw of text.split(/\r?\n/)){
-      const w = raw.trim();
-      if(!w) continue;
-      if(!seen.has(w)) { seen.add(w); words.push(w); }
-    }
-    return words;
-  }
-
-  // ======= Rendering =======
-  function renderWord(){
-    if(!current){ elWord.textContent = '—'; return; }
-    const frag = document.createDocumentFragment();
-
-    // reflect mode in a data-attribute (optional, useful for CSS targeting)
-    elWord.dataset.mode = hiddenMode ? 'hidden' : 'normal';
-
-    [...current].forEach((ch, i) => {
-      const span = document.createElement('span');
-      span.className = 'char';
-
-      const m = marks[i] || 'pending';
-      if(m === 'ok') span.classList.add('ok');
-      else if(m === 'err') span.classList.add('err');
-      else if(m === 'skip') span.classList.add('skip');
-
-      // Determine what to display
-      let displayCh = ch;
-
-      if (hiddenMode) {
-        // In hidden mode: letters are dots until revealed (ok/err)
-        if (/[A-Za-z]/.test(ch)) {
-          if (m === 'pending') {
-            displayCh = '•';         // dot for unrevealed letter
-            span.classList.add('dot');
-          } else {
-            displayCh = ch;          // reveal when marked ok/err
-          }
-        } else {
-          // Non-letters (spaces, hyphens, punctuation) remain visible
-          displayCh = ch;
-        }
-      } else {
-        // Normal mode: show characters as-is
-        displayCh = ch;
-      }
-
-      span.textContent = displayCh;
-
-      if(i === ptr) span.classList.add('active');
-      frag.appendChild(span);
-    });
-    elWord.replaceChildren(frag);
-  }
-
-  // Move ptr to next markable character; auto-skip non-letters
-  function advancePtr(){
-    while(ptr < current.length){
-      const ch = current[ptr];
-      if(/[A-Za-z]/.test(ch)) return; // stop on a letter
-      // otherwise auto-mark as skip and advance
-      if(!marks[ptr]) marks[ptr] = 'skip';
-      ptr++;
-    }
-  }
-
-  function resetMarks(){
-    marks = new Array(current.length).fill('pending');
-    ptr = 0; advancePtr();
-    renderWord();
-  }
-
-  function toggleWordMode() {
-    hiddenMode = !hiddenMode;
-    renderWord();
-  }
-
-  function setCurrentWord(w){
-    current = w;
-    // preload audio source
-    const src = `${AUDIO_DIR}/${wordToAudioBasename(w)}${AUDIO_EXT}`;
-    elAudio.src = src;
-    // reset marks
-    resetMarks();
-  }
-
-  function playAudio(){
-    elAudio.currentTime = 0; elAudio.play().catch(()=>{});
-  }
-
-  // ======= Marking logic (O/P/Backspace) =======
-  function mark(type /** @type {'ok'|'err'} */){
-    if(!current) return;
-    if(ptr >= current.length) return;
-    // ensure we are at a letter; advancePtr already does skipping
-    if(!/[A-Za-z]/.test(current[ptr])) { advancePtr(); renderWord(); return; }
-
-    marks[ptr] = type;
-    ptr++;
-    advancePtr();
-    renderWord();
-
-    // Trigger confetti when all are correct
-    if (isAllMarked() && !hadAnyError()) {
-      launchConfetti();
-    }
-  }
-
-  function undo(){
-    if(!current) return;
-    // step back to previous index that is not skip
-    do {
-      if(ptr <= 0) break;
-      ptr--;
-    } while(marks[ptr] === 'skip');
-
-    if(ptr >= 0){ marks[ptr] = 'pending'; }
-    // also clear any trailing skips if we stepped before them
-    renderWord();
-  }
-
-  function isAllMarked(){
-    return marks.every(m => m && m !== 'pending');
-  }
-
-  function hadAnyError(){
-    return marks.some(m => m === 'err');
-  }
-
-  // ======= Confetti effect =======
-  function launchConfetti() {
-    const container = document.getElementById('confetti-container');
-    const colors = ['#ef233c', '#21c55d', '#ffd166', '#3a86ff', '#ff006e'];
-    const pieces = 70; // number of pieces
-
-    for (let i = 0; i < pieces; i++) {
-      const conf = document.createElement('div');
-      conf.className = 'confetti';
-      conf.style.background = colors[Math.floor(Math.random() * colors.length)];
-
-      // random direction (circle)
-      const angle = Math.random() * 2 * Math.PI;
-      const radius = 200 + Math.random() * 400; // how far each piece flies
-      const dx = Math.cos(angle) * radius;
-      const dy = Math.sin(angle) * radius;
-      conf.style.setProperty('--dx', dx);
-      conf.style.setProperty('--dy', dy);
-
-      // random size, rotation, delay
-      conf.style.width = 6 + Math.random() * 8 + 'px';
-      conf.style.height = 6 + Math.random() * 8 + 'px';
-      conf.style.animationDelay = (Math.random() * 0.15) + 's';
-      conf.style.transform = `translate(-50%, -50%) rotate(${Math.random() * 360}deg)`;
-
-      container.appendChild(conf);
-      setTimeout(() => conf.remove(), 1200);
-    }
-  }
-
-  // ======= Timer =======
-  function fmt(ms){
-    const total = Math.max(0, Math.floor(ms));
-    const tenths = Math.floor((total % 1000) / 100);
-    const s = Math.floor(total / 1000);
-    const mm = String(Math.floor(s/60)).padStart(2,'0');
-    const ss = String(s % 60).padStart(2,'0');
-    return `${mm}:${ss}.${tenths}`;
-  }
-  function tick(){
-    const now = performance.now();
-    elTimer.textContent = fmt(acc + (now - t0));
-    raf = requestAnimationFrame(tick);
-  }
-  function timerStart(){
-    if(raf) return; t0 = performance.now(); raf = requestAnimationFrame(tick);
-  }
-  function timerStop(){
-    if(!raf) return; cancelAnimationFrame(raf); raf = null; acc = parseTime(elTimer.textContent);
-  }
-  function timerReset(){
-    if(raf){ cancelAnimationFrame(raf); raf = null; }
-    acc = 0; elTimer.textContent = '00:00.0';
-  }
-  function parseTime(txt){
-    // mm:ss.t (tenths)
-    const m = txt.match(/(\d{2}):(\d{2})\.(\d)/);
-    if(!m) return 0;
-    const mm = +m[1], ss = +m[2], t = +m[3];
-    return ((mm*60)+ss)*1000 + t*100;
-  }
-
-  // ======= Word navigation =======
-  function nextWord(){
-    if(!current) { drawRandom(); return; }
-
-    const complete = isAllMarked();
-    const anyErr = hadAnyError();
-
-    // Remove if complete and no errors
-    if(complete && !anyErr){
-      pool = pool.filter(w => w !== current);
-    }
-
-    // Draw next from remaining pool; if empty, reload from original file (optional)
-    if(pool.length === 0){
-      // Optional: keep current displayed and disable next
-      btnNext.disabled = true;
-      return;
-    }
-
-    drawRandom();
-  }
-
-  function drawRandom(){
-    const idx = Math.floor(Math.random() * pool.length);
-    setCurrentWord(pool[idx]);
-    // reset timer (choice: reset on each word)
-    timerReset();
-  }
-
-  async function changeDifficulty(level) {
-    currentDifficulty = level;
-    WORDLIST_PATH = `${level}.txt`;
-
-    // Visually highlight active difficulty
-    [btnEasy, btnMedium, btnHard].forEach(b => b.classList.remove('primary'));
-    if (level === 'easy') btnEasy.classList.add('primary');
-    if (level === 'medium') btnMedium.classList.add('primary');
-    if (level === 'hard') btnHard.classList.add('primary');
-
-    // Reload the word pool
-    try {
-      const words = await loadWordlist();
-      pool = words.slice();
-      if (pool.length === 0) {
-        elWord.textContent = `No words in ${level}.txt`;
-        btnNext.disabled = true;
-        return;
-      }
-      btnNext.disabled = false;
-      drawRandom();
-    } catch (err) {
-      console.error(err);
-      elWord.textContent = `Could not load ${level}.txt`;
-    }
-  }
-
-  // ======= Keyboard bindings =======
-  function onKey(e){
-    // Avoid using inputs (none in UI, but safe guard)
-    if(['INPUT','TEXTAREA'].includes(document.activeElement?.tagName)) return;
-
-    if(e.key === 'o' || e.key === 'O'){ e.preventDefault(); mark('ok'); return; }
-    if(e.key === 'p' || e.key === 'P'){ e.preventDefault(); mark('err'); return; }
-    if(e.key === 'Backspace'){ e.preventDefault(); undo(); return; }
-
-    // Quality of life: Space = play audio, S=Start, T=Stop, R=Reset, N=Next
-    if(e.code === 'Space'){ e.preventDefault(); playAudio(); return; }
-    if(e.key === 's' || e.key === 'S'){ timerStart(); return; }
-    if(e.key === 't' || e.key === 'T'){ timerStop(); return; }
-    if(e.key === 'r' || e.key === 'R'){ timerReset(); return; }
-    if(e.key === 'n' || e.key === 'N'){ nextWord(); return; }
-  }
-
-  // ======= Wire up UI =======
-  btnPlay.addEventListener('click', playAudio);
-  btnNext.addEventListener('click', nextWord);
-  btnTStart.addEventListener('click', timerStart);
-  btnTStop.addEventListener('click', timerStop);
-  btnTReset.addEventListener('click', timerReset);
-  window.addEventListener('keydown', onKey, {capture:true});
-  btnEasy.addEventListener('click', () => changeDifficulty('easy'));
-  btnMedium.addEventListener('click', () => changeDifficulty('medium'));
-  btnHard.addEventListener('click', () => changeDifficulty('hard'));
-  elWord.addEventListener('click', toggleWordMode); // click word to toggle mode
-
-  // ======= Init =======
-  (async function init(){
-    try{
-      const words = await loadWordlist();
-      pool = words.slice();
-      if(pool.length === 0){
-        elWord.textContent = 'Add words to wordlist.txt';
-        btnNext.disabled = true; return;
-      }
-      // drawRandom();
-    }catch(err){
-      console.error(err);
-      elWord.textContent = 'Could not load wordlist.txt';
-      btnNext.disabled = true;
-    }
-  })();
-  </script>
+    <!-- JavaScript -->
+    <script src="js/main.js"></script>
 </body>
 </html>
