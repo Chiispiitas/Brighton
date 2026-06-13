@@ -16,6 +16,13 @@
   let rows = [];
   const answerKeyCache = new Map();
 
+  const WRITING_TASK_META = {
+    1: { part: 1, partId: "part1", question: 1, label: "Part 1", taskType: "Essay", title: "Essay: environment and everyday action", targetReader: "Your English teacher", prompt: "In your English class you have been talking about the environment.\n\nSome people say that schools and companies should do much more to reduce waste and pollution. Do you agree?\n\nNotes: transport; daily habits; your own idea\n\nWrite an essay using all the notes and giving reasons for your point of view." },
+    2: { part: 2, partId: "part2", question: 2, label: "Part 2", taskType: "Article", title: "Article: design that improves everyday life", targetReader: "Readers of a college English-language magazine", prompt: "You see this announcement in your college English-language magazine.\n\nArticles wanted: Better design, better lives\n\nWrite an article about a product, building or public place that you think is well designed. Explain what makes the design useful and say how it could be improved even more.\n\nThe best articles will be published in next month’s magazine.\n\nWrite your article." },
+    3: { part: 2, partId: "part2", question: 3, label: "Part 2", taskType: "Email", title: "Email: advice about learning and work", targetReader: "An English-speaking friend", prompt: "Your English-speaking friend Sam has written to you for advice.\n\nI’m thinking of taking an online course while doing a part-time job. I’m worried I won’t have enough time, but I also don’t want to miss a good opportunity. What do you think I should do?\n\nWrite an email to Sam giving your opinion. Suggest how Sam could organise the week and explain what problems to avoid." },
+    4: { part: 2, partId: "part2", question: 4, label: "Part 2", taskType: "Review", title: "Review: a story that made you think", targetReader: "Readers of an English-language student website", prompt: "You see this announcement on an English-language website for students.\n\nReviews wanted\n\nHave you read a book, watched a film or seen a series which made you think about facts, fake news or real life? Write a review describing it and explaining why it made an impression on you. Say whether you would recommend it to other students.\n\nThe best reviews will be posted on the website.\n\nWrite your review." }
+  };
+
   loadBtn.addEventListener("click", loadResults);
   clearBtn.addEventListener("click", clearFilters);
   exportBtn.addEventListener("click", exportCsv);
@@ -134,13 +141,26 @@
   }
 
   function payloadFromRow(row) {
-    const raw = safeJson(row.rawPayloadJson, row.rawPayload || {});
+    const raw = firstJsonFrom(row, ["rawPayloadJson", "rawPayload", "payloadJson", "payload"], {});
     const payload = raw?.payload || raw || {};
-    if (Array.isArray(payload.answerList) || payload.answers) return payload;
+    const answers = firstJsonFrom(row, ["answersJson", "answers", "studentAnswersJson", "studentAnswers", "responsesJson", "responses"], payload.answers || {});
+    const answerList = firstJsonFrom(row, ["answerListJson", "answerList"], payload.answerList || []);
+    const writingSamples = firstJsonFrom(row, ["writingSamplesJson", "writingSamples"], payload.writingSamples || []);
+    const part2Drafts = firstJsonFrom(row, ["part2DraftsJson", "part2Drafts"], payload.part2Drafts || []);
     return {
-      examId: row.examId,
-      answerList: safeJson(row.answerListJson, row.answerList || []),
-      answers: safeJson(row.answersJson, row.answers || {})
+      ...payload,
+      examId: payload.examId || row.examId,
+      examTitle: payload.examTitle || row.examTitle,
+      level: payload.level || row.level,
+      skill: payload.skill || row.skill,
+      studentName: payload.studentName || row.studentName,
+      classId: payload.classId || row.classId,
+      submittedAt: payload.submittedAt || row.submittedAt,
+      answers,
+      answerList,
+      writingSamples,
+      part2Drafts,
+      part2SelectedQuestion: resolvePart2SelectedQuestion(payload.part2SelectedQuestion || row.part2SelectedQuestion || row.part2Selected, answers)
     };
   }
 
@@ -258,7 +278,7 @@
         <div class="detail-box"><span>Exam</span><strong>${escapeHtml(row.examTitle || payload.examTitle || row.examId || "—")}</strong></div>
         <div class="detail-box"><span>Submitted</span><strong>${escapeHtml(submittedAt)}</strong></div>
         <div class="detail-box"><span>Status</span><strong>Manual writing review</strong></div>
-        <div class="detail-box"><span>Selected Part 2</span><strong>${escapeHtml(payload.part2SelectedQuestion ? `Question ${payload.part2SelectedQuestion}` : "—")}</strong></div>
+        <div class="detail-box"><span>Selected Part 2</span><strong>${escapeHtml(selectedPart2Label(payload, samples))}</strong></div>
       </div>
 
       <section class="detail-section writing-review-actions">
@@ -307,21 +327,90 @@
   }
 
   function extractWritingSamples(row, payload) {
-    if (Array.isArray(payload?.writingSamples) && payload.writingSamples.length) return payload.writingSamples;
-    const answers = payload?.answers || safeJson(row.answersJson, row.answers || {});
+    const samplesFromPayload = parseJsonDeep(payload?.writingSamples, []);
+    if (Array.isArray(samplesFromPayload) && samplesFromPayload.length) {
+      return samplesFromPayload.filter(sample => String(sample?.answer || "").trim()).map(enrichWritingSample);
+    }
+
+    const answers = parseJsonDeep(payload?.answers, firstJsonFrom(row, ["answersJson", "answers", "studentAnswersJson", "studentAnswers", "responsesJson", "responses"], {}));
     const list = [];
-    const part1 = answers?.part1?.[1] || answers?.part1?.["1"];
-    if (part1) list.push({ part: 1, partId: "part1", question: 1, label: "Part 1", taskType: "Essay", title: "Part 1 essay", answer: part1, wordCount: countWords(part1) });
-    const part2Question = payload?.part2SelectedQuestion || Object.keys(answers?.part2 || {}).find(q => String(answers.part2[q] || "").trim());
-    const part2 = part2Question ? answers?.part2?.[part2Question] : "";
-    if (part2) list.push({ part: 2, partId: "part2", question: Number(part2Question), label: "Part 2", taskType: "Selected task", title: `Part 2 question ${part2Question}`, answer: part2, wordCount: countWords(part2) });
-    const answerList = safeJson(row.answerListJson, row.answerList || payload?.answerList || []);
-    if (!list.length && Array.isArray(answerList)) {
-      answerList.forEach(item => {
-        if (String(item.answer || "").trim()) list.push({ part: item.part, partId: item.partId, question: item.question, label: `Part ${item.part || ""}`, taskType: "Writing", title: `Question ${item.question}`, answer: item.answer, wordCount: countWords(item.answer) });
+    const part1 = getAnswerFromNested(answers, "part1", 1);
+    if (String(part1 || "").trim()) list.push(enrichWritingSample({ question: 1, answer: part1 }));
+
+    const selected = Number(resolvePart2SelectedQuestion(payload?.part2SelectedQuestion, answers) || 0);
+    const part2Questions = selected ? [selected] : [2, 3, 4];
+    part2Questions.forEach(question => {
+      const answer = getAnswerFromNested(answers, "part2", question);
+      if (String(answer || "").trim()) list.push(enrichWritingSample({ question, answer }));
+    });
+
+    const drafts = parseJsonDeep(payload?.part2Drafts, firstJsonFrom(row, ["part2DraftsJson", "part2Drafts"], []));
+    if (Array.isArray(drafts) && drafts.length) {
+      drafts.forEach(draft => {
+        const question = Number(draft?.question || draft?.q);
+        if (!question || list.some(sample => Number(sample.question) === question)) return;
+        if (String(draft?.answer || "").trim()) list.push(enrichWritingSample(draft));
       });
     }
-    return list;
+
+    const answerList = parseJsonDeep(payload?.answerList, firstJsonFrom(row, ["answerListJson", "answerList"], []));
+    if (Array.isArray(answerList)) {
+      answerList.forEach(item => {
+        const question = Number(item?.question || item?.q);
+        if (!question || list.some(sample => Number(sample.question) === question)) return;
+        if (String(item?.answer || "").trim()) list.push(enrichWritingSample(item));
+      });
+    }
+
+    return list.sort((a, b) => Number(a.part || 0) - Number(b.part || 0) || Number(a.question || 0) - Number(b.question || 0));
+  }
+
+  function enrichWritingSample(sample) {
+    const question = Number(sample?.question || sample?.q || 0);
+    const meta = WRITING_TASK_META[question] || {};
+    const answer = sample?.answer || "";
+    return {
+      ...meta,
+      ...sample,
+      part: sample?.part ?? meta.part ?? (question === 1 ? 1 : 2),
+      partId: sample?.partId || meta.partId || (question === 1 ? "part1" : "part2"),
+      question: question || sample?.question || sample?.q,
+      label: sample?.label || meta.label || (question === 1 ? "Part 1" : "Part 2"),
+      taskType: sample?.taskType || meta.taskType || "Writing",
+      title: sample?.title || meta.title || `Question ${question || "—"}`,
+      targetReader: sample?.targetReader || meta.targetReader || "",
+      prompt: sample?.prompt || meta.prompt || "",
+      answer,
+      wordCount: Number(sample?.wordCount) || countWords(answer)
+    };
+  }
+
+  function getAnswerFromNested(answers, partId, question) {
+    const parsed = parseJsonDeep(answers, {});
+    return parsed?.[partId]?.[question] ?? parsed?.[partId]?.[String(question)] ?? parsed?.[question] ?? parsed?.[String(question)] ?? "";
+  }
+
+  function inferPart2QuestionFromAnswers(answers) {
+    const parsed = parseJsonDeep(answers, {});
+    const part2 = parsed?.part2 || {};
+    return [2, 3, 4].find(question => String(part2?.[question] ?? part2?.[String(question)] ?? "").trim()) || null;
+  }
+
+  function resolvePart2SelectedQuestion(selected, answers) {
+    const parsed = parseJsonDeep(answers, {});
+    const selectedNumber = Number(selected);
+    if ([2, 3, 4].includes(selectedNumber)) {
+      const selectedAnswer = parsed?.part2?.[selectedNumber] ?? parsed?.part2?.[String(selectedNumber)] ?? "";
+      if (String(selectedAnswer || "").trim()) return selectedNumber;
+    }
+    return inferPart2QuestionFromAnswers(parsed) || selectedNumber || null;
+  }
+
+  function selectedPart2Label(payload, samples) {
+    const question = Number(payload?.part2SelectedQuestion || samples.find(sample => Number(sample.part) === 2)?.question || 0);
+    if (!question) return "—";
+    const meta = WRITING_TASK_META[question] || {};
+    return `Question ${question}${meta.taskType ? ` · ${meta.taskType}` : ""}`;
   }
 
   function renderWritingSample(sample, index) {
@@ -415,10 +504,14 @@
 
   function isWritingSubmission(row) {
     const id = String(row?.examId || "").toLowerCase();
-    if (id.includes("writing")) return true;
-    const raw = safeJson(row?.rawPayloadJson, row?.rawPayload || {});
-    const payload = raw?.payload || raw || {};
-    return String(payload.skill || "").toLowerCase() === "writing" || Array.isArray(payload.writingSamples);
+    const title = String(row?.examTitle || "").toLowerCase();
+    const skill = String(row?.skill || "").toLowerCase();
+    if (id.includes("writing") || title.includes("writing") || skill === "writing") return true;
+    const payload = payloadFromRow(row);
+    if (String(payload.skill || "").toLowerCase() === "writing") return true;
+    if (Array.isArray(parseJsonDeep(payload.writingSamples, [])) && parseJsonDeep(payload.writingSamples, []).length) return true;
+    const answers = parseJsonDeep(payload.answers, {});
+    return Boolean(answers?.part1 || answers?.part2);
   }
 
   async function buildAnswerReview(row) {
@@ -614,9 +707,34 @@
     }).join(" · ");
   }
 
+  function firstJsonFrom(source, fieldNames, fallback) {
+    for (const field of fieldNames) {
+      if (source && Object.prototype.hasOwnProperty.call(source, field) && source[field] !== undefined && source[field] !== null && source[field] !== "") {
+        return parseJsonDeep(source[field], fallback);
+      }
+    }
+    return parseJsonDeep(fallback, fallback);
+  }
+
   function safeJson(value, fallback) {
-    if (typeof value !== "string") return value ?? fallback;
-    try { return JSON.parse(value); } catch { return fallback; }
+    return parseJsonDeep(value, fallback);
+  }
+
+  function parseJsonDeep(value, fallback) {
+    if (value === undefined || value === null || value === "") return fallback;
+    if (typeof value !== "string") return value;
+    let current = value;
+    for (let i = 0; i < 3; i += 1) {
+      if (typeof current !== "string") return current;
+      const trimmed = current.trim();
+      if (!trimmed) return fallback;
+      try {
+        current = JSON.parse(trimmed);
+      } catch {
+        return i === 0 ? fallback : current;
+      }
+    }
+    return current;
   }
 
   function formatDate(value) {

@@ -96,7 +96,6 @@
       student: { name: "", classId: "", startedAt: "" },
       current: { partId: "part1", question: 1 },
       selectedPart2Question: 2,
-      splitWidths: { part1: 44, part2: 39 },
       answers,
       flagged: {},
       notes: "",
@@ -127,7 +126,6 @@
       merged.answers[partId] = { ...(base.answers[partId] || {}), ...(saved.answers[partId] || {}) };
     });
     merged.flagged = { ...base.flagged, ...(saved.flagged || {}) };
-    merged.splitWidths = { ...base.splitWidths, ...(saved.splitWidths || {}) };
     return merged;
   }
 
@@ -189,18 +187,16 @@
       const item = part.items[0];
       dom.mainContent.innerHTML = `${panelHeader}${renderWritingWorkspace(part, item)}</section>`;
       bindEditor(part.id, item.q);
-      bindSplitResize(part.id);
       return;
     }
 
     dom.mainContent.innerHTML = `${panelHeader}${renderPart2Workspace(part)}</section>`;
     bindPart2();
-    bindSplitResize(part.id);
   }
 
   function renderWritingWorkspace(part, item) {
     return `
-      <div class="split-grid" style="--left: ${getSplitWidth(part.id, 44)}%;">
+      <div class="split-grid" style="--left: 44%;">
         <div class="split-column">
           ${renderPrompt(item, part.id === "part1")}
         </div>
@@ -216,7 +212,7 @@
     const selected = getPart2Item();
     return `
       <div class="warning-note">Choose only one Part 2 task. Drafts are saved, but only the selected task will be shown as the Part 2 answer for marking.</div>
-      <div class="split-grid" style="--left: ${getSplitWidth(part.id, 39)}%;">
+      <div class="split-grid" style="--left: 39%;">
         <div class="split-column">
           <div class="choice-list">
             ${part.items.map(item => renderChoiceCard(item)).join("")}
@@ -298,83 +294,6 @@
         <p><strong>${words}</strong> words saved</p>
       </button>
     `;
-  }
-
-  function getSplitWidth(partId, fallback) {
-    const raw = Number(state.splitWidths?.[partId]);
-    return clamp(Number.isFinite(raw) ? raw : fallback, 28, 68);
-  }
-
-  function bindSplitResize(partId) {
-    const grid = $(".split-grid", dom.mainContent);
-    const divider = $(".split-divider", dom.mainContent);
-    if (!grid || !divider || !window.matchMedia("(min-width: 861px)").matches) return;
-
-    divider.setAttribute("role", "separator");
-    divider.setAttribute("aria-orientation", "vertical");
-    divider.setAttribute("aria-label", "Resize writing columns");
-    divider.tabIndex = 0;
-
-    let startRect = null;
-    let dragging = false;
-
-    const setWidthFromClientX = clientX => {
-      if (!startRect) startRect = grid.getBoundingClientRect();
-      const rawPercent = ((clientX - startRect.left) / startRect.width) * 100;
-      const next = clamp(rawPercent, 28, 68);
-      grid.style.setProperty("--left", `${next}%`);
-      state.splitWidths = state.splitWidths || {};
-      state.splitWidths[partId] = Math.round(next * 10) / 10;
-      saveState();
-    };
-
-    const stopDrag = event => {
-      if (!dragging) return;
-      dragging = false;
-      startRect = null;
-      document.body.classList.remove("split-resizing");
-      divider.classList.remove("is-dragging");
-      if (event?.pointerId !== undefined && divider.hasPointerCapture?.(event.pointerId)) {
-        divider.releasePointerCapture(event.pointerId);
-      }
-    };
-
-    divider.addEventListener("pointerdown", event => {
-      if (!window.matchMedia("(min-width: 861px)").matches) return;
-      event.preventDefault();
-      dragging = true;
-      startRect = grid.getBoundingClientRect();
-      document.body.classList.add("split-resizing");
-      divider.classList.add("is-dragging");
-      divider.setPointerCapture?.(event.pointerId);
-      setWidthFromClientX(event.clientX);
-    });
-
-    divider.addEventListener("pointermove", event => {
-      if (!dragging) return;
-      event.preventDefault();
-      setWidthFromClientX(event.clientX);
-    });
-
-    divider.addEventListener("pointerup", stopDrag);
-    divider.addEventListener("pointercancel", stopDrag);
-    divider.addEventListener("lostpointercapture", stopDrag);
-
-    divider.addEventListener("keydown", event => {
-      if (!["ArrowLeft", "ArrowRight", "Home", "End"].includes(event.key)) return;
-      event.preventDefault();
-      const current = getSplitWidth(partId, partId === "part2" ? 39 : 44);
-      let next = current;
-      if (event.key === "ArrowLeft") next = current - 2;
-      if (event.key === "ArrowRight") next = current + 2;
-      if (event.key === "Home") next = 28;
-      if (event.key === "End") next = 68;
-      next = clamp(next, 28, 68);
-      grid.style.setProperty("--left", `${next}%`);
-      state.splitWidths = state.splitWidths || {};
-      state.splitWidths[partId] = next;
-      saveState();
-    });
   }
 
   function bindEditor(partId, question) {
@@ -507,6 +426,23 @@
     return part.items.find(item => Number(item.q) === Number(state.selectedPart2Question)) || part.items[0];
   }
 
+  function resolveSelectedPart2FromDrafts() {
+    const part = examParts.find(p => p.id === "part2");
+    if (!part) return;
+    const selected = Number(state.selectedPart2Question || 2);
+    const selectedWords = countWords(getAnswer("part2", selected));
+    if (selectedWords > 0) return;
+
+    const current = Number(state.current?.partId === "part2" ? state.current.question : selected);
+    if (countWords(getAnswer("part2", current)) > 0) {
+      state.selectedPart2Question = current;
+      return;
+    }
+
+    const firstAnswered = part.items.find(item => countWords(getAnswer("part2", item.q)) > 0);
+    if (firstAnswered) state.selectedPart2Question = Number(firstAnswered.q);
+  }
+
   function getCurrentQuestionNumber() {
     if (state.current.partId === "part2") return Number(state.current.question || state.selectedPart2Question || 2);
     return 1;
@@ -611,11 +547,15 @@
   }
 
   function finishExam() {
+    resolveSelectedPart2FromDrafts();
     const p1Words = countWords(getAnswer("part1", 1));
     const part2Item = getPart2Item();
     const p2Words = countWords(getAnswer("part2", part2Item.q));
-    if (p1Words === 0 || p2Words === 0) {
-      const ok = window.confirm("One or more writing tasks appear to be empty. Submit anyway?");
+    const missing = [];
+    if (p1Words === 0) missing.push("Part 1 essay");
+    if (p2Words === 0) missing.push(`Part 2 selected task (Question ${part2Item.q})`);
+    if (missing.length) {
+      const ok = window.confirm(`${missing.join(" and ")} appears to be empty. Submit anyway?`);
       if (!ok) return;
     }
     state.submitted = true;
@@ -641,6 +581,7 @@
   }
 
   function buildExportPayload() {
+    resolveSelectedPart2FromDrafts();
     const selectedPart2 = getPart2Item();
     const writingSamples = [
       buildWritingSample("part1", examParts[0].items[0]),
@@ -758,10 +699,6 @@
     dom.toast.classList.add("show");
     clearTimeout(showToast.timer);
     showToast.timer = setTimeout(() => dom.toast.classList.remove("show"), 1800);
-  }
-
-  function clamp(value, min, max) {
-    return Math.min(max, Math.max(min, value));
   }
 
   function escapeHtml(value) {
