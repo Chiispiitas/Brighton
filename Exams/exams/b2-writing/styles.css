@@ -82,12 +82,10 @@ h1, h2, h3, p { margin-top: 0; }
 .question-range { background: var(--ink); color: #fff; padding: 10px 14px; border-radius: 999px; font-weight: 900; white-space: nowrap; }
 .instruction-card { border: 2px solid var(--yellow); border-radius: 22px; padding: 18px 20px; background: var(--yellow-soft); color: #3b2d17; margin-bottom: 20px; box-shadow: 0 12px 26px rgba(248,168,50,.12); }
 .instruction-card strong { text-transform: uppercase; letter-spacing: .04em; }
-.split-grid { display: grid; grid-template-columns: minmax(280px, var(--left, 44%)) 16px minmax(280px, 1fr); gap: 0; min-height: 0; height: min(620px, calc(100vh - var(--header-h) - var(--footer-h) - 170px)); max-height: calc(100vh - var(--header-h) - var(--footer-h) - 170px); background: #fff; border: 2px solid #f1e2ca; border-radius: var(--radius); overflow: hidden; box-shadow: 0 12px 30px rgba(32,38,49,.08); }
+.split-grid { display: grid; grid-template-columns: var(--left, 44%) 10px minmax(320px, 1fr); gap: 0; min-height: 0; height: min(620px, calc(100vh - var(--header-h) - var(--footer-h) - 170px)); max-height: calc(100vh - var(--header-h) - var(--footer-h) - 170px); background: #fff; border: 2px solid #f1e2ca; border-radius: var(--radius); overflow: hidden; box-shadow: 0 12px 30px rgba(32,38,49,.08); }
 .split-column { min-height: 0; height: 100%; padding: 22px; overflow: auto; max-height: none; overscroll-behavior: contain; }
-.split-divider { width: 16px; background: linear-gradient(180deg, var(--yellow), var(--yellow-dark)); position: relative; cursor: col-resize; touch-action: none; z-index: 4; }
-.split-divider::before { content: "⋮"; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); display: grid; place-items: center; width: 30px; height: 60px; border-radius: 999px; background: #fff; color: var(--yellow-dark); border: 2px solid var(--yellow); font-weight: 1000; box-shadow: 0 8px 20px rgba(248,168,50,.22); }
-.split-divider:hover::before, .split-divider:focus-visible::before, .split-divider.is-dragging::before { background: var(--yellow-soft); border-color: var(--yellow-dark); transform: translate(-50%, -50%) scale(1.04); }
-body.split-resizing, body.split-resizing * { cursor: col-resize !important; user-select: none !important; }
+.split-divider { width: 10px; background: linear-gradient(180deg, var(--yellow), var(--yellow-dark)); position: relative; cursor: col-resize; }
+.split-divider::before { content: "⋮"; position: sticky; top: 50%; display: grid; place-items: center; width: 28px; height: 56px; margin-left: -9px; border-radius: 999px; background: #fff; color: var(--yellow-dark); border: 2px solid var(--yellow); font-weight: 1000; }
 .prompt-card, .editor-card, .choice-card { background: rgba(255,255,255,.96); border: 2px solid #f1e2ca; border-radius: var(--radius); box-shadow: 0 12px 30px rgba(32,38,49,.08); }
 .prompt-card { padding: clamp(20px, 3vw, 30px); line-height: 1.65; font-size: 17px; }
 .prompt-card h3 { font-size: 26px; letter-spacing: -.02em; margin-bottom: 14px; }
@@ -186,4 +184,166 @@ body.split-resizing, body.split-resizing * { cursor: col-resize !important; user
   .editor-head { display: block; }
   .task-type-pill { display: inline-flex; margin-top: 10px; }
   .round-nav { width: 56px; height: 56px; border-radius: 20px; }
+}
+
+/* Brighton compact writing layout overrides */
+:root {
+  --footer-h: 70px;
+}
+
+.main-content {
+  bottom: var(--footer-h);
+  padding: 14px 20px 20px !important;
+}
+
+.exam-panel {
+  max-width: 1320px;
+}
+
+.part-title-row {
+  margin-bottom: 10px;
+}
+
+.part-title-row h2 {
+  font-size: clamp(24px, 2.3vw, 36px);
+}
+
+.instruction-card {
+  padding: 10px 12px;
+  margin-bottom: 12px;
+  border-width: 1px;
+  box-shadow: none;
+}
+
+.split-grid {
+  height: min(760px, calc(100vh - var(--header-h) - var(--footer-h) - 86px)) !important;
+  max-height: calc(100vh - var(--header-h) - var(--footer-h) - 86px) !important;
+  min-height: min(560px, calc(100vh - var(--header-h) - var(--footer-h) - 86px)) !important;
+  border-width: 1px;
+  box-shadow: none;
+}
+
+.split-column {
+  padding: 18px !important;
+}
+
+.prompt-card,
+.editor-card,
+.choice-card {
+  border-width: 1px;
+  box-shadow: none;
+}
+
+.bottom-nav {
+  display: flex !important;
+  align-items: stretch;
+  grid-template-columns: none !important;
+  height: var(--footer-h) !important;
+  gap: 6px !important;
+  padding: 6px 12px !important;
+  border-top: 1px solid #d8d8d8 !important;
+  box-shadow: none !important;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scroll-behavior: smooth;
+}
+
+.part-nav-card {
+  flex: 1 1 0;
+  min-width: 0;
+  padding: 5px 8px !important;
+  border-width: 1px !important;
+  border-radius: 12px !important;
+  gap: 4px !important;
+  overflow: hidden;
+}
+
+.part-nav-card.active {
+  transform: translateY(-1px);
+}
+
+.part-nav-top {
+  gap: 4px !important;
+  align-items: center;
+}
+
+.part-nav-title {
+  font-size: 12px !important;
+  white-space: nowrap;
+}
+
+.part-nav-progress {
+  font-size: 11px !important;
+  white-space: nowrap;
+}
+
+.question-bubbles {
+  flex-wrap: nowrap !important;
+  gap: 4px !important;
+}
+
+.q-pill {
+  width: 23px !important;
+  height: 23px !important;
+  min-width: 23px !important;
+  font-size: 10.5px !important;
+  border-width: 1px !important;
+  border-radius: 8px !important;
+}
+
+.step-controls {
+  right: 14px !important;
+  bottom: calc(var(--footer-h) + 10px) !important;
+  gap: 8px !important;
+}
+
+.round-nav {
+  width: 46px !important;
+  height: 46px !important;
+  border-radius: 14px !important;
+  box-shadow: none !important;
+  font-size: 22px !important;
+}
+
+.round-nav:active {
+  transform: translateY(1px);
+  box-shadow: none !important;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --footer-h: 138px;
+  }
+
+  .main-content {
+    padding: 18px 14px 150px !important;
+  }
+
+  .split-grid {
+    height: auto !important;
+    max-height: none !important;
+    min-height: 0 !important;
+  }
+
+  .bottom-nav {
+    display: grid !important;
+    grid-template-columns: 1fr !important;
+    height: auto !important;
+    min-height: var(--footer-h) !important;
+    max-height: 42vh;
+    overflow: auto;
+  }
+
+  .part-nav-card {
+    min-height: 54px;
+  }
+
+  .question-bubbles {
+    flex-wrap: wrap !important;
+  }
+
+  .step-controls {
+    right: 14px !important;
+    bottom: 16px !important;
+  }
 }
