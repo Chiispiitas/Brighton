@@ -347,3 +347,94 @@ h1, h2, h3, p { margin-top: 0; }
     bottom: 16px !important;
   }
 }
+
+/* Start card centering + mobile bottom navigation row fix */
+.start-screen {
+  min-height: 100dvh;
+  place-items: center !important;
+  align-items: center !important;
+  justify-items: center !important;
+}
+
+@media (max-width: 900px) {
+  :root {
+    --footer-h: 76px;
+  }
+
+  .exam-shell {
+    padding-bottom: var(--footer-h) !important;
+  }
+
+  .main-content {
+    padding-bottom: calc(var(--footer-h) + 24px) !important;
+  }
+
+  .bottom-nav {
+    display: flex !important;
+    flex-direction: row !important;
+    align-items: stretch !important;
+    grid-template-columns: none !important;
+    height: var(--footer-h) !important;
+    min-height: var(--footer-h) !important;
+    max-height: var(--footer-h) !important;
+    gap: 6px !important;
+    padding: 6px 8px !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+  }
+
+  .part-nav-card {
+    flex: 1 1 0 !important;
+    min-width: 0 !important;
+    min-height: 0 !important;
+    padding: 5px 7px !important;
+    align-content: start !important;
+  }
+
+  .part-nav-top {
+    min-width: 0;
+  }
+
+  .part-nav-title,
+  .part-nav-progress {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+  .question-bubbles {
+    flex-wrap: nowrap !important;
+    overflow-x: auto !important;
+    overflow-y: hidden !important;
+    padding-bottom: 2px;
+  }
+
+  .q-pill {
+    width: 24px !important;
+    height: 24px !important;
+    min-width: 24px !important;
+  }
+
+  .step-controls {
+    bottom: calc(var(--footer-h) + 12px) !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .start-screen {
+    min-height: 100dvh;
+    padding: 12px;
+    place-items: center !important;
+    align-items: center !important;
+  }
+
+  .start-card {
+    max-height: calc(100dvh - 24px);
+    overflow: auto;
+  }
+
+  .bottom-nav {
+    height: var(--footer-h) !important;
+    min-height: var(--footer-h) !important;
+    max-height: var(--footer-h) !important;
+  }
+}
