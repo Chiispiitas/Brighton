@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brighton B2 Listening</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-doodle bg-doodle-1" aria-hidden="true">✦</div>
+  <div class="bg-doodle bg-doodle-2" aria-hidden="true">☆</div>
+  <div class="bg-doodle bg-doodle-3" aria-hidden="true">⌁</div>
+
+  <section id="startScreen" class="start-screen">
+    <div class="start-card">
+      <div class="start-logo-row"><img src="../../assets/brighton-logo.png" alt="Brighton English School" /></div>
+      <div class="brand-strip" aria-hidden="true">
+        <span>☆</span><span>♡</span><span>✦</span><span>○</span><span>✶</span>
+      </div>
+      <div class="start-grid">
+        <div>
+          <p class="eyebrow">Brighton English School</p>
+          <h1>B2 Final Exam</h1>
+          <h2>Listening</h2>
+          <p class="start-copy">Enter your details to begin. You will listen to one audio file during this test.</p>
+          <div class="exam-meta">
+            <span>4 parts</span>
+            <span>30 questions</span>
+            <span>Audio exam</span>
+          </div>
+        </div>
+        <form id="studentForm" class="student-form">
+          <label for="studentName">Full name</label>
+          <input id="studentName" name="studentName" type="text" autocomplete="name" required placeholder="Student full name" />
+          <label for="classId">Class ID</label>
+          <input id="classId" name="classId" type="text" required placeholder="Example: B2-01" />
+          <button type="submit" class="primary-btn">Start exam</button>
+          <button type="button" id="continueSavedBtn" class="secondary-btn hidden">Continue saved exam</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="examShell" class="exam-shell hidden" aria-live="polite">
+    <header class="top-header">
+      <div class="header-left">
+        <button id="menuBtn" class="icon-btn" aria-label="Open menu">☰</button>
+        <a class="exam-header-brand" href="../../teacher.html" aria-label="Brighton English School"><img src="../../assets/brighton-logo.png" alt="Brighton English School" /></a>
+        <div class="student-chip">
+          <strong id="headerStudent">Student Name</strong>
+          <span id="headerClass">Class ID</span>
+        </div>
+      </div>
+      <div class="header-right">
+        <div id="audioBadge" class="audio-badge" aria-live="polite">Audio ready</div>
+        <button id="notesBtn" class="icon-btn" aria-label="Open notes" title="Notes">📝</button>
+        <button id="flagBtn" class="flag-btn" aria-label="Flag current question" title="Flag question">☆</button>
+      </div>
+    </header>
+
+    <main id="mainContent" class="main-content" tabindex="-1"></main>
+
+    <div class="step-controls" aria-label="Question navigation controls">
+      <button id="backBtn" class="round-nav" aria-label="Previous question">←</button>
+      <button id="nextBtn" class="round-nav" aria-label="Next question">→</button>
+    </div>
+
+    <footer id="bottomNav" class="bottom-nav"></footer>
+  </section>
+
+  <aside id="audioGate" class="audio-gate hidden" aria-hidden="true">
+    <div class="audio-gate-card" role="dialog" aria-modal="true" aria-labelledby="audioGateTitle">
+      <div class="headphones-icon" aria-hidden="true">🎧</div>
+      <h2 id="audioGateTitle">Listening audio</h2>
+      <p>You will be listening to an audio clip during this test. You will not be permitted to pause or rewind the audio while answering the questions.</p>
+      <p>To continue, click Play.</p>
+      <button id="playAudioBtn" class="primary-btn play-btn" type="button">▶ Play</button>
+      <p id="audioGateError" class="submit-error hidden"></p>
+    </div>
+  </aside>
+
+  <aside id="sideMenu" class="side-menu" aria-hidden="true">
+    <div class="side-menu-card">
+      <div class="side-menu-head">
+        <h3>Menu</h3>
+        <button id="closeMenuBtn" class="icon-btn" aria-label="Close menu">×</button>
+      </div>
+      <button id="overviewBtn" class="menu-option">Question overview</button>
+      <button id="resetBtn" class="menu-option danger">Reset test</button>
+      <button id="closeMenuOptionBtn" class="menu-option">Close menu</button>
+    </div>
+  </aside>
+
+  <audio id="examAudio" src="audio.mp3" preload="auto"></audio>
+  <div id="modalRoot" class="modal-root hidden" aria-hidden="true"></div>
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="../../config.js"></script>
+  <script src="listening-data.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
