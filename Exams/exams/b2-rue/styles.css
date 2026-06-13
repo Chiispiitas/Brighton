@@ -1497,3 +1497,123 @@ h1, h2, h3, p { margin-top: 0; }
   .exam-header-brand { width: 126px; min-width: 106px; }
   .student-chip { padding-left: 8px; }
 }
+
+/* RUOE final interaction fixes */
+.part-nav-card {
+  cursor: pointer;
+}
+
+.part-nav-card:focus-within,
+.part-nav-card:hover {
+  border-color: var(--yellow);
+}
+
+.part-one .article-card p,
+.part-two .article-card p,
+.part-three .article-card p {
+  line-height: 2.55 !important;
+}
+
+.cloze-gap,
+.inline-input {
+  vertical-align: baseline !important;
+  line-height: 1.2 !important;
+}
+
+.cloze-gap {
+  min-height: 32px !important;
+  padding: 4px 9px !important;
+}
+
+.cloze-gap .gap-answer {
+  font-weight: 900;
+}
+
+.option-btn {
+  font-weight: 900;
+}
+
+.step-controls .round-nav {
+  background: var(--yellow) !important;
+  color: #fff !important;
+  border: 0 !important;
+  box-shadow: 0 8px 0 var(--yellow-dark) !important;
+  transition: transform .14s ease, box-shadow .14s ease, filter .14s ease !important;
+}
+
+.step-controls .round-nav:hover:not(:disabled) {
+  filter: brightness(1.03);
+  transform: translateY(-1px);
+}
+
+.step-controls .round-nav:active:not(:disabled) {
+  transform: translateY(5px);
+  box-shadow: 0 3px 0 var(--yellow-dark) !important;
+}
+
+.step-controls .round-nav:disabled {
+  opacity: .45;
+  filter: grayscale(.15);
+  cursor: not-allowed;
+  box-shadow: 0 5px 0 #cfcfcf !important;
+}
+
+.step-controls .round-nav.finish {
+  background: var(--yellow) !important;
+}
+
+.keyword-under {
+  font-weight: 1000;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.part-seven .split-two {
+  min-height: min(560px, calc(100vh - var(--header-h) - var(--footer-h) - 76px));
+}
+
+.part-seven .split-two > .split-column,
+.part-seven .part-seven-questions {
+  max-height: calc(100vh - var(--header-h) - var(--footer-h) - 96px) !important;
+  overflow: auto !important;
+}
+
+.part-seven .part-seven-questions {
+  align-content: start;
+  padding: 0 6px 12px 6px !important;
+}
+
+.submission-status-line {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin: 10px auto 0;
+  padding: 10px 16px;
+  border-radius: 999px;
+  background: var(--yellow-soft);
+  color: var(--ink);
+  font-weight: 900;
+}
+
+.finish-confirmation-card .submission-success h3 {
+  margin-bottom: 6px;
+}
+
+.finish-confirmation-card .submission-result {
+  max-width: 520px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 900px) {
+  .part-seven .split-two {
+    min-height: 0;
+  }
+
+  .part-seven .split-two > .split-column,
+  .part-seven .part-seven-questions {
+    max-height: none !important;
+    overflow: visible !important;
+  }
+}

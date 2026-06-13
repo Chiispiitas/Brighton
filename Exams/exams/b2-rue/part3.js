@@ -34,8 +34,16 @@ window.PartRenderers.part3 = {
   },
 
   afterRender(part, state, helpers) {
+    const syncActive = q => {
+      document.querySelectorAll(".inline-input[data-q]").forEach(el => el.classList.toggle("active", Number(el.dataset.q) === q));
+      document.querySelectorAll("[data-keyword-q]").forEach(el => el.classList.toggle("active", Number(el.dataset.keywordQ) === q));
+    };
     document.querySelectorAll(".inline-input[data-q]").forEach(input => {
-      input.addEventListener("focus", () => helpers.goToQuestion(Number(input.dataset.q), { render: false }));
+      input.addEventListener("focus", () => {
+        const q = Number(input.dataset.q);
+        helpers.goToQuestion(q, { render: false });
+        syncActive(q);
+      });
       input.addEventListener("input", () => helpers.setAnswer(part.id, Number(input.dataset.q), input.value.trim(), { render: false }));
     });
     document.querySelectorAll("[data-keyword-q]").forEach(button => {

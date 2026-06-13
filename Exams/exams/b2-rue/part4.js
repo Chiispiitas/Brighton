@@ -19,7 +19,7 @@ window.PartRenderers.part4 = {
             <span class="q-badge">${item.q}</span>
           </div>
           <p class="transform-first">${helpers.escape(item.first)}</p>
-          <div class="keyword-under">Word given: <strong>${helpers.escape(item.keyword)}</strong></div>
+          <div class="keyword-under"><strong>${helpers.escape(item.keyword)}</strong></div>
           <p class="transform-second">
             ${helpers.escape(item.secondBefore)}
             <input class="transform-input auto-width-input" data-q="${item.q}" value="${helpers.escapeAttr(value)}" style="width:${widthCh}ch" aria-label="Question ${item.q}" autocomplete="off" spellcheck="false" />

@@ -244,10 +244,11 @@
     $$('[data-jump-q]', dom.bottomNav).forEach(button => {
       button.addEventListener("click", () => goToQuestion(Number(button.dataset.jumpQ)));
     });
-    $$('.part-nav-title', dom.bottomNav).forEach(button => {
-      button.addEventListener("click", () => {
-        const part = getPart(button.dataset.partId);
-        goToQuestion(part.items[0].q);
+    $$('.part-nav-card', dom.bottomNav).forEach(card => {
+      card.addEventListener("click", event => {
+        if (event.target.closest("[data-jump-q]")) return;
+        const part = getPart(card.dataset.partId);
+        if (part?.items?.[0]) goToQuestion(part.items[0].q);
       });
     });
   }
@@ -466,39 +467,21 @@
     saveState();
 
     const payload = buildExportPayload();
-    const total = allItems().length;
-    const answered = examParts.reduce((sum, part) => sum + getProgress(part).answered, 0);
-    const flagged = Object.keys(state.flagged).length;
-
     dom.mainContent.innerHTML = `
       <section class="finish-screen">
-        <div class="finish-card">
+        <div class="finish-card finish-confirmation-card">
           <p class="eyebrow">Exam finished</p>
           <h2>Submitting your answers</h2>
-          <p id="submitStatusText" class="start-copy" style="margin-left:auto;margin-right:auto;">Please wait while the platform saves your exam.</p>
-          <div class="summary-row">
-            <div class="summary-box"><strong>${answered}</strong><span>answered of ${total}</span></div>
-            <div class="summary-box"><strong>${flagged}</strong><span>flagged</span></div>
-            <div class="summary-box"><strong id="submitStatusBadge">Saving</strong><span>Wix CMS</span></div>
-          </div>
+          <p id="submitStatusText" class="start-copy" style="margin-left:auto;margin-right:auto;">Please wait while the platform records your exam in Wix.</p>
+          <div class="submission-status-line"><strong id="submitStatusBadge">Saving</strong><span>Wix CMS</span></div>
           <div id="submissionResult" class="submission-result"></div>
-          <details class="export-details">
-            <summary>Technical export payload</summary>
-            <pre id="exportJson" class="export-box">${escape(JSON.stringify({ type: "BRIGHTON_B2_RUE_SUBMIT", payload }, null, 2))}</pre>
-          </details>
-          <button id="copyExportBtn" class="copy-btn">Copy export JSON</button>
         </div>
       </section>
     `;
 
     dom.nextBtn.disabled = true;
-    dom.backBtn.disabled = false;
+    dom.backBtn.disabled = true;
     dom.bottomNav.innerHTML = "";
-
-    $("#copyExportBtn")?.addEventListener("click", async () => {
-      await navigator.clipboard?.writeText(JSON.stringify({ type: "BRIGHTON_B2_RUE_SUBMIT", payload }, null, 2));
-      showToast("Export JSON copied");
-    });
 
     submitPayload(payload);
   }
@@ -559,7 +542,7 @@
     if (!apiBase || apiBase.includes("YOUR-WIX")) {
       statusBadge.textContent = "Local";
       statusText.textContent = "The exam is complete. Configure API_BASE_URL in config.js to save directly to Wix CMS.";
-      resultBox.innerHTML = `<p class="muted-text">No Wix endpoint is configured yet. The payload was still generated and sent to the parent window with postMessage.</p>`;
+      resultBox.innerHTML = `<p class="muted-text">No Wix endpoint is configured yet. Tell your teacher before closing this page.</p>`;
       return;
     }
 
@@ -576,14 +559,10 @@
       }
 
       statusBadge.textContent = "Saved";
-      statusText.textContent = "Your exam was saved successfully.";
-      const scoreText = typeof data.score === "number" && typeof data.maxScore === "number"
-        ? `<strong>${data.score}/${data.maxScore}</strong> (${data.percentage}%)`
-        : "Saved for review";
+      statusText.textContent = "Your answers have been recorded successfully.";
       resultBox.innerHTML = `
         <div class="submission-success">
-          <h3>Submission saved</h3>
-          <p>Result: ${scoreText}</p>
+          <h3>Answers recorded</h3>
           <p class="muted-text">Submission ID: ${escape(data.submissionId || "")}</p>
         </div>
       `;

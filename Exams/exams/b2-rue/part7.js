@@ -35,7 +35,7 @@ window.PartRenderers.part7 = {
             <h3>${helpers.escape(part.articleTitle)}</h3>
             <div class="texts-list">${texts}</div>
           </section>
-          <aside class="question-stack">${questions}</aside>
+          <aside class="question-stack part-seven-questions split-column">${questions}</aside>
         </div>
       </section>
     `;

@@ -7,11 +7,11 @@ window.PartRenderers.part1 = {
       if (chunk.type === "text") return helpers.escape(chunk.value);
       const answer = helpers.getAnswer(part.id, chunk.q);
       const item = part.items.find(i => i.q === chunk.q);
-      const display = answer ? `${answer}. ${item.options[answer]}` : String(chunk.q);
+      const display = answer ? item.options[answer] : "";
       const classes = ["cloze-gap"];
       if (answer) classes.push("answered");
       if (activeQ === chunk.q) classes.push("active");
-      return `<button class="${classes.join(" ")}" data-gap="${chunk.q}" aria-label="Question ${chunk.q}, ${answer ? "answered" : "unanswered"}"><span class="gap-number">${chunk.q}</span><span>${helpers.escape(display)}</span></button>`;
+      return `<button class="${classes.join(" ")}" data-gap="${chunk.q}" aria-label="Question ${chunk.q}, ${answer ? "answered" : "unanswered"}"><span class="gap-number">${chunk.q}</span>${display ? `<span class="gap-answer">${helpers.escape(display)}</span>` : ""}</button>`;
     }).join("");
 
     return `
@@ -51,7 +51,7 @@ window.PartRenderers.part1 = {
         <div class="popover-options">
           ${Object.entries(item.options).map(([letter, text]) => `
             <button class="option-btn ${selected === letter ? "selected" : ""}" data-choice="${letter}">
-              <strong>${letter}</strong> ${helpers.escape(text)}
+              ${helpers.escape(text)}
             </button>
           `).join("")}
         </div>
