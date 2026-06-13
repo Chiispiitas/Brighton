@@ -21,34 +21,17 @@
   </header>
 
   <main class="portal-main">
-    <section class="hero-card teacher-hero">
-      <div class="brand-strip" aria-hidden="true">
+    <section class="toolbar-card exams-toolbar">
+      <div class="brand-strip available-ribbon" aria-hidden="true">
         <span>☆</span><span>♡</span><span>✦</span><span>○</span><span>✶</span>
       </div>
-      <div class="hero-content">
+      <div class="toolbar-content">
         <div>
-          <p class="eyebrow">Digital exams</p>
-          <h2>Share exams and review results from Wix CMS</h2>
-          <p>This teacher page is a static website. It reads exam data from your Wix HTTP functions and falls back to the local B2 RUOE example if the Wix API is not configured yet.</p>
+          <h2>Available exams</h2>
+          <p id="apiStatus" class="muted">Checking Brighton Database...</p>
         </div>
-        <div class="steps-card">
-          <strong>Workflow</strong>
-          <ol>
-            <li>Copy an exam link.</li>
-            <li>Send it to students.</li>
-            <li>Students finish the exam.</li>
-            <li>Results appear in the dashboard.</li>
-          </ol>
-        </div>
+        <button id="refreshBtn" class="primary-btn small">Refresh</button>
       </div>
-    </section>
-
-    <section class="toolbar-card">
-      <div>
-        <h2>Available exams</h2>
-        <p id="apiStatus" class="muted">Checking Wix API...</p>
-      </div>
-      <button id="refreshBtn" class="primary-btn small">Refresh</button>
     </section>
 
     <section id="examGrid" class="exam-grid" aria-live="polite"></section>

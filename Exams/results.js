@@ -32,13 +32,14 @@
 
   async function loadExams() {
     try {
-      if (!apiBase || apiBase.includes("YOUR-WIX")) throw new Error("Wix API not configured");
+      if (!apiBase || apiBase.includes("YOUR-WIX")) throw new Error("Brighton Database not configured");
       const res = await fetch(`${apiBase}/getExams`);
       const data = await res.json();
       if (!res.ok || data.success === false) throw new Error(data.error || `HTTP ${res.status}`);
       fillExamSelect(data.exams || []);
     } catch {
-      fillExamSelect(config.FALLBACK_EXAMS || []);
+      fillExamSelect([]);
+      status.textContent = "Failed to connect to Brighton Database. Check internet connection.";
     }
   }
 
@@ -59,7 +60,7 @@
       return;
     }
     if (!apiBase || apiBase.includes("YOUR-WIX")) {
-      status.textContent = "Configure API_BASE_URL in config.js to load real Wix CMS results.";
+      status.textContent = "Failed to connect to Brighton Database. Check internet connection.";
       rows = [];
       renderRows();
       updateSummary();
@@ -88,7 +89,6 @@
       updateSummary();
     }
   }
-
 
   async function applyLocalGrading(items) {
     if (!window.BrightonGrading) return items;
@@ -179,30 +179,212 @@
     document.querySelector("#summaryLowest").textContent = lowest === null ? "—" : `${lowest}%`;
   }
 
-  function openDetails(row) {
-    const answers = safeJson(row.answerListJson, row.answerList || []);
-    const flags = safeJson(row.flaggedJson, row.flagged || []);
-    const parts = safeJson(row.partScoresJson, row.partScores || {});
-    detailsContent.innerHTML = `
-      <div class="detail-grid">
-        <div class="detail-box"><span>Student</span><strong>${escapeHtml(row.studentName || "—")}</strong></div>
-        <div class="detail-box"><span>Class</span><strong>${escapeHtml(row.classId || "—")}</strong></div>
-        <div class="detail-box"><span>Score</span><strong>${row.score ?? "—"}/${row.maxScore ?? "—"}</strong></div>
-        <div class="detail-box"><span>Percentage</span><strong>${typeof row.percentage === "number" ? `${row.percentage}%` : "—"}</strong></div>
-      </div>
-      <h3>Part scores</h3>
-      <pre>${escapeHtml(JSON.stringify(parts, null, 2))}</pre>
-      <h3>Flagged questions</h3>
-      <p>${Array.isArray(flags) && flags.length ? flags.join(", ") : "None"}</p>
-      <h3>Notes</h3>
-      <p>${escapeHtml(row.notes || "No notes.")}</p>
-      <h3>Answers</h3>
-      <pre>${escapeHtml(JSON.stringify(answers, null, 2))}</pre>
-      <h3>Grading details</h3>
-      <pre>${escapeHtml(JSON.stringify(safeJson(row.gradingDetailsJson, row.gradingDetails || []), null, 2))}</pre>
-    `;
+  async function openDetails(row) {
     modal.classList.remove("hidden");
     modal.setAttribute("aria-hidden", "false");
+    detailsContent.innerHTML = `<div class="detail-loading">Loading submission details...</div>`;
+
+    const flags = safeJson(row.flaggedJson, row.flagged || []);
+    let parts = safeJson(row.partScoresJson, row.partScores || {});
+    let review;
+
+    try {
+      review = await buildAnswerReview(row);
+      if (review.partScores && Object.keys(review.partScores).length) parts = review.partScores;
+    } catch (error) {
+      review = { rows: [], error: error.message || String(error) };
+    }
+
+    detailsContent.innerHTML = `
+      <div class="detail-grid detail-grid-wide">
+        <div class="detail-box"><span>Student</span><strong>${escapeHtml(row.studentName || "—")}</strong></div>
+        <div class="detail-box"><span>Class</span><strong>${escapeHtml(row.classId || "—")}</strong></div>
+        <div class="detail-box"><span>Exam</span><strong>${escapeHtml(row.examTitle || row.examId || "—")}</strong></div>
+        <div class="detail-box"><span>Submitted</span><strong>${escapeHtml(row.submittedAtLocal || formatDate(row.submittedAt))}</strong></div>
+        <div class="detail-box"><span>Score</span><strong>${row.score ?? review?.score ?? "—"}/${row.maxScore ?? review?.maxScore ?? "—"}</strong></div>
+        <div class="detail-box"><span>Percentage</span><strong>${typeof row.percentage === "number" ? `${row.percentage}%` : typeof review?.percentage === "number" ? `${review.percentage}%` : "—"}</strong></div>
+      </div>
+
+      <section class="detail-section">
+        <h3>Part scores</h3>
+        ${renderPartScoreCards(parts)}
+      </section>
+
+      <section class="detail-section detail-two-column">
+        <div>
+          <h3>Flagged questions</h3>
+          <p>${Array.isArray(flags) && flags.length ? flags.map(escapeHtml).join(", ") : "None"}</p>
+        </div>
+        <div>
+          <h3>Notes</h3>
+          <p>${escapeHtml(row.notes || "No notes.")}</p>
+        </div>
+      </section>
+
+      <section class="detail-section">
+        <h3>Answers vs answer key</h3>
+        ${review?.error ? `<p class="detail-warning">${escapeHtml(review.error)}</p>` : ""}
+        ${renderAnswerReview(review.rows || [])}
+      </section>
+    `;
+  }
+
+  async function buildAnswerReview(row) {
+    const payload = payloadFromRow(row);
+    const flatAnswers = window.BrightonGrading?.flattenAnswers
+      ? window.BrightonGrading.flattenAnswers(payload)
+      : flattenAnswersFallback(payload);
+    const answersByQuestion = new Map(flatAnswers.map(item => [String(item.question), item.answer]));
+    const examId = row.examId || payload.examId || "brighton-b2-rue-final";
+
+    let answerKey = null;
+    let graded = null;
+    let gradingError = "";
+
+    if (window.BrightonGrading) {
+      try {
+        answerKey = await getAnswerKey(examId);
+        graded = window.BrightonGrading.gradeSubmission(payload, answerKey);
+      } catch (error) {
+        gradingError = `Could not load answer key for this exam. Showing submitted answers only. ${error.message || error}`;
+      }
+    } else {
+      gradingError = "Grading tools are not available on this page. Showing submitted answers only.";
+    }
+
+    const detailsByQuestion = new Map((graded?.details || safeJson(row.gradingDetailsJson, row.gradingDetails || []) || []).map(item => [String(item.question), item]));
+    const questionNumbers = getReviewQuestionNumbers(answerKey, flatAnswers);
+    const reviewRows = questionNumbers.map(question => {
+      const keyRule = answerKey?.answers?.[String(question)];
+      const detail = detailsByQuestion.get(String(question));
+      const studentAnswer = answersByQuestion.get(String(question)) ?? detail?.answer ?? "";
+      return {
+        question,
+        part: Number(keyRule?.part ?? detail?.part ?? findAnswerPart(flatAnswers, question) ?? 0),
+        studentAnswer,
+        expected: expectedAnswerText(keyRule),
+        earned: detail?.earned,
+        max: detail?.max ?? keyRule?.points,
+        status: answerStatus(detail)
+      };
+    });
+
+    return {
+      rows: reviewRows,
+      partScores: graded?.partScores,
+      score: graded?.score,
+      maxScore: graded?.maxScore,
+      percentage: graded?.percentage,
+      error: gradingError
+    };
+  }
+
+  function renderPartScoreCards(parts) {
+    const entries = Object.entries(parts || {}).sort(([a], [b]) => partSortValue(a) - partSortValue(b));
+    if (!entries.length) return `<p class="muted">No part score data available.</p>`;
+    return `<div class="part-score-grid">${entries.map(([key, value]) => {
+      const label = value?.label || key.replace(/part/i, "Part ");
+      const score = value?.score ?? "—";
+      const max = value?.maxScore ?? "—";
+      const correctText = Number.isFinite(Number(value?.correct)) && Number.isFinite(Number(value?.total))
+        ? `${value.correct}/${value.total} correct`
+        : "";
+      return `
+        <article class="part-score-card">
+          <span>${escapeHtml(label)}</span>
+          <strong>${escapeHtml(score)}/${escapeHtml(max)}</strong>
+          ${correctText ? `<small>${escapeHtml(correctText)}</small>` : ""}
+        </article>
+      `;
+    }).join("")}</div>`;
+  }
+
+  function renderAnswerReview(reviewRows) {
+    if (!reviewRows.length) return `<p class="muted">No submitted answers were found.</p>`;
+    return `
+      <div class="answer-review-wrap">
+        <table class="answer-review-table">
+          <thead>
+            <tr>
+              <th>Question</th>
+              <th>Part</th>
+              <th>Student answer</th>
+              <th>Expected answer</th>
+              <th>Score</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            ${reviewRows.map(item => `
+              <tr class="${escapeAttr(item.status.className)}">
+                <td><strong>${item.question}</strong></td>
+                <td>${item.part ? `Part ${item.part}` : "—"}</td>
+                <td>${escapeHtml(answerToText(item.studentAnswer) || "—")}</td>
+                <td>${escapeHtml(item.expected || "—")}</td>
+                <td>${item.earned ?? "—"}/${item.max ?? "—"}</td>
+                <td><span class="answer-status ${escapeAttr(item.status.className)}">${escapeHtml(item.status.label)}</span></td>
+              </tr>
+            `).join("")}
+          </tbody>
+        </table>
+      </div>
+    `;
+  }
+
+  function getReviewQuestionNumbers(answerKey, flatAnswers) {
+    const fromKey = Object.keys(answerKey?.answers || {}).map(Number).filter(Number.isFinite);
+    const fromAnswers = flatAnswers.map(item => Number(item.question)).filter(Number.isFinite);
+    return Array.from(new Set([...fromKey, ...fromAnswers])).sort((a, b) => a - b);
+  }
+
+  function expectedAnswerText(rule) {
+    if (!rule) return "—";
+    if (Array.isArray(rule.answers) && rule.answers.length) return rule.answers.map(answerToText).join(" / ");
+    if (Array.isArray(rule.components) && rule.components.length) {
+      return rule.components.map((component, index) => {
+        const variants = (component.any || []).map(answerToText).filter(Boolean).slice(0, 5).join(" / ");
+        return `Component ${index + 1}: ${variants || "—"}`;
+      }).join(" | ");
+    }
+    return "—";
+  }
+
+  function answerStatus(detail) {
+    if (!detail) return { label: "Not graded", className: "status-unknown" };
+    const earned = Number(detail.earned || 0);
+    const max = Number(detail.max || 0);
+    if (earned >= max && max > 0) return { label: "Correct", className: "status-correct" };
+    if (earned > 0) return { label: "Partial", className: "status-partial" };
+    return { label: "Incorrect", className: "status-incorrect" };
+  }
+
+  function findAnswerPart(flatAnswers, question) {
+    return flatAnswers.find(item => Number(item.question) === Number(question))?.part;
+  }
+
+  function flattenAnswersFallback(payload) {
+    if (Array.isArray(payload?.answerList)) return payload.answerList;
+    const answers = payload?.answers || {};
+    const flat = [];
+    Object.entries(answers).forEach(([partId, partAnswers]) => {
+      const part = Number(String(partId).replace(/\D+/g, "")) || null;
+      Object.entries(partAnswers || {}).forEach(([q, answer]) => {
+        flat.push({ part, partId, question: Number(q), answer });
+      });
+    });
+    return flat.sort((a, b) => Number(a.question) - Number(b.question));
+  }
+
+  function answerToText(value) {
+    if (value === undefined || value === null) return "";
+    if (Array.isArray(value)) return value.map(answerToText).join(", ");
+    if (typeof value === "object") return JSON.stringify(value);
+    return String(value);
+  }
+
+  function partSortValue(key) {
+    const number = Number(String(key).match(/\d+/)?.[0] || 0);
+    return Number.isFinite(number) ? number : 0;
   }
 
   function closeModal() {

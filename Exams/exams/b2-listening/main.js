@@ -262,11 +262,19 @@
     const activeQ = getCurrentQuestionNumber();
     const lines = part.items.map(item => {
       const value = getAnswer(part.id, item.q);
+      const afterText = String(item.after || "");
+      const afterClass = /^\s*[.,;:!?]+\s*$/.test(afterText)
+        ? "gap-after punctuation-only"
+        : /^\s*[.,;:!?]/.test(afterText)
+          ? "gap-after starts-punctuation"
+          : "gap-after";
       return `
         <p class="listening-gap-line ${activeQ === item.q ? "active" : ""}" data-gap-line-q="${item.q}">
-          <span>${escapeHtml(item.before)}</span>
-          <input class="inline-input listening-input ${activeQ === item.q ? "active" : ""}" data-q="${item.q}" aria-label="Question ${item.q}" placeholder="${item.q}" value="${escapeAttr(value)}" autocomplete="off" spellcheck="false" />
-          <span>${escapeHtml(item.after)}</span>
+          <span class="gap-before">${escapeHtml(item.before)}</span>
+          <span class="gap-input-wrap">
+            <input class="inline-input listening-input ${activeQ === item.q ? "active" : ""}" data-q="${item.q}" aria-label="Question ${item.q}" placeholder="${item.q}" value="${escapeAttr(value)}" autocomplete="off" spellcheck="false" />
+            <span class="${afterClass}">${escapeHtml(item.after)}</span>
+          </span>
         </p>
       `;
     }).join("");
@@ -562,6 +570,7 @@
       updateActiveHighlights();
       renderBottomNav();
       renderStepControls();
+      if (location.partId === "part1") requestAnimationFrame(scrollActiveCardIntoView);
       return;
     }
     renderApp({ restoreScroll: false });
@@ -572,7 +581,7 @@
     const location = getQuestionLocation(q);
     if (!location) return;
     state.current = location;
-    renderApp({ restoreScroll: previousPart === location.partId });
+    renderApp({ restoreScroll: previousPart === location.partId && location.partId !== "part1" });
   }
 
   function getLinearIndex() {

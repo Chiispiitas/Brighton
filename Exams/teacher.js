@@ -12,35 +12,40 @@
   async function loadExams() {
     examGrid.innerHTML = renderLoadingCards();
     try {
-      if (!apiBase || apiBase.includes("YOUR-WIX")) throw new Error("Wix API not configured");
+      if (!apiBase || apiBase.includes("YOUR-WIX")) throw new Error("Brighton Database not configured");
       const res = await fetch(`${apiBase}/getExams`, { headers: { "Accept": "application/json" } });
       const data = await res.json();
       if (!res.ok || data.success === false) throw new Error(data.error || `HTTP ${res.status}`);
-      apiStatus.textContent = `Connected to Wix API · ${data.exams.length} exam(s) loaded`;
-      renderExams(data.exams || []);
+      const exams = data.exams || [];
+      apiStatus.textContent = `Connected to Brighton Database · ${exams.length} exam(s) loaded`;
+      renderExams(exams);
     } catch (error) {
-      apiStatus.textContent = `Using local fallback exam list · ${error.message}`;
-      const fallback = (config.FALLBACK_EXAMS || []).map(exam => ({
-        ...exam,
-        shareUrl: buildLocalUrl(exam.relativeUrl || exam.shareUrl || "")
-      }));
-      renderExams(fallback);
+      apiStatus.textContent = "Failed to connect to Brighton Database. Check internet connection.";
+      renderConnectionError(error);
     }
   }
 
-  function buildLocalUrl(relativeUrl) {
-    const base = new URL(window.location.href);
-    return new URL(relativeUrl, base).toString();
+
+
+  function renderConnectionError(error) {
+    const detail = error?.message ? ` <span class="muted-small">${escapeHtml(error.message)}</span>` : "";
+    examGrid.innerHTML = `
+      <article class="exam-card status-card danger-card">
+        <span class="tag danger-tag">Connection failed</span>
+        <h2>Could not load exams</h2>
+        <p class="muted">Failed to connect to Brighton Database. Check internet connection.${detail}</p>
+      </article>
+    `;
   }
 
   function renderExams(exams) {
     if (!exams.length) {
-      examGrid.innerHTML = `<article class="exam-card"><h2>No exams found</h2><p class="muted">Add exams to the Wix Exams CMS collection or configure FALLBACK_EXAMS in config.js.</p></article>`;
+      examGrid.innerHTML = `<article class="exam-card"><h2>No exams found</h2><p class="muted">No exams were returned from Brighton Database.</p></article>`;
       return;
     }
 
     examGrid.innerHTML = exams.map(exam => {
-      const shareUrl = exam.shareUrl || exam.iframeUrl || buildLocalUrl(exam.relativeUrl || "");
+      const shareUrl = exam.shareUrl || exam.iframeUrl || "#";
       const resultsUrl = `results.html?examId=${encodeURIComponent(exam.examId || "")}`;
       return `
         <article class="exam-card">
@@ -85,7 +90,7 @@
       <article class="exam-card">
         <span class="tag">Loading</span>
         <h2>Loading exam...</h2>
-        <p class="muted">Checking the Wix CMS connection.</p>
+        <p class="muted">Checking Brighton Database.</p>
       </article>
     `).join("");
   }

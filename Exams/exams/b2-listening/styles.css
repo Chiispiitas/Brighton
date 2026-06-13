@@ -2124,3 +2124,111 @@ body {
     max-width: none !important;
   }
 }
+
+/* Listening polish: Part 1 auto-scroll target and clearer Part 2 rows */
+@media (min-width: 901px) {
+  .part2 .listening-gap-card {
+    max-width: 1100px !important;
+    text-align: left !important;
+    padding: 22px !important;
+  }
+
+  .part2 .listening-gap-card h3 {
+    text-align: center !important;
+    margin-bottom: 20px !important;
+  }
+
+  .part2 .listening-gap-line {
+    width: 100% !important;
+    display: grid !important;
+    grid-template-columns: minmax(250px, 0.9fr) minmax(380px, 1.1fr) !important;
+    align-items: center !important;
+    justify-content: stretch !important;
+    gap: 16px !important;
+    min-height: 62px !important;
+    padding: 12px 16px !important;
+    margin: 10px 0 !important;
+    border: 1px solid #f1e2ca !important;
+    border-radius: 16px !important;
+    background: #fffaf1 !important;
+    line-height: 1.45 !important;
+  }
+
+  .part2 .listening-gap-line.active {
+    background: var(--teal-soft) !important;
+    border-color: var(--teal) !important;
+  }
+
+  .part2 .gap-before {
+    text-align: right !important;
+    font-weight: 650 !important;
+  }
+
+  .part2 .gap-input-wrap {
+    display: flex !important;
+    align-items: center !important;
+    gap: 8px !important;
+    min-width: 0 !important;
+    flex-wrap: wrap !important;
+  }
+
+  .part2 .gap-input-wrap .listening-input {
+    flex: 0 0 270px !important;
+    width: 270px !important;
+    margin: 0 !important;
+    text-align: left !important;
+  }
+
+  .part2 .gap-after {
+    flex: 1 1 150px !important;
+    min-width: 0 !important;
+  }
+
+  .part2 .gap-after.punctuation-only {
+    flex: 0 0 auto !important;
+    min-width: 0 !important;
+    margin-left: -3px !important;
+  }
+}
+
+@media (max-width: 900px) {
+  .part2 .listening-gap-line {
+    display: block !important;
+  }
+
+  .part2 .gap-before {
+    display: block !important;
+  }
+
+  .part2 .gap-input-wrap {
+    display: flex !important;
+    align-items: center !important;
+    gap: 6px !important;
+    flex-wrap: wrap !important;
+    width: 100% !important;
+    margin-top: 8px !important;
+  }
+
+  .part2 .gap-input-wrap .listening-input {
+    flex: 1 1 190px !important;
+    min-width: 0 !important;
+    width: auto !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+  }
+
+  .part2 .gap-after {
+    flex: 1 1 130px !important;
+    min-width: 0 !important;
+  }
+
+  .part2 .gap-after.punctuation-only {
+    flex: 0 0 auto !important;
+    white-space: nowrap !important;
+    margin-left: -3px !important;
+  }
+
+  .part2 .gap-after.starts-punctuation {
+    flex-basis: 160px !important;
+  }
+}
