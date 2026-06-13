@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brighton Teacher Main</title>
+  <link rel="stylesheet" href="portal.css" />
+</head>
+<body>
+  <header class="portal-header">
+    <a class="portal-brand" href="teacher.html" aria-label="Brighton English School teacher area">
+      <img src="assets/brighton-logo.png" alt="Brighton English School" />
+    </a>
+    <div class="portal-title-block">
+      <p class="eyebrow">Teacher area</p>
+      <h1>Exam Control Panel</h1>
+    </div>
+    <nav class="header-actions">
+      <a class="secondary-btn" href="results.html">Results Dashboard</a>
+    </nav>
+  </header>
+
+  <main class="portal-main">
+    <section class="hero-card teacher-hero">
+      <div class="brand-strip" aria-hidden="true">
+        <span>☆</span><span>♡</span><span>✦</span><span>○</span><span>✶</span>
+      </div>
+      <div class="hero-content">
+        <div>
+          <p class="eyebrow">Digital exams</p>
+          <h2>Share exams and review results from Wix CMS</h2>
+          <p>This teacher page is a static iframe app. It reads exam data from your Wix HTTP functions and falls back to the local B2 RUOE example if the Wix API is not configured yet.</p>
+        </div>
+        <div class="steps-card">
+          <strong>Workflow</strong>
+          <ol>
+            <li>Copy an exam link.</li>
+            <li>Send it to students.</li>
+            <li>Students finish the exam.</li>
+            <li>Results appear in the dashboard.</li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <section class="toolbar-card">
+      <div>
+        <h2>Available exams</h2>
+        <p id="apiStatus" class="muted">Checking Wix API...</p>
+      </div>
+      <button id="refreshBtn" class="primary-btn small">Refresh</button>
+    </section>
+
+    <section id="examGrid" class="exam-grid" aria-live="polite"></section>
+  </main>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="config.js"></script>
+  <script src="teacher.js"></script>
+</body>
+</html>

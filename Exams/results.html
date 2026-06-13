@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brighton Results Dashboard</title>
+  <link rel="stylesheet" href="portal.css" />
+</head>
+<body>
+  <header class="portal-header">
+    <a class="portal-brand" href="teacher.html" aria-label="Brighton English School teacher area">
+      <img src="assets/brighton-logo.png" alt="Brighton English School" />
+    </a>
+    <div class="portal-title-block">
+      <p class="eyebrow">Teacher area</p>
+      <h1>Results Dashboard</h1>
+    </div>
+    <nav class="header-actions">
+      <a class="secondary-btn" href="teacher.html">Teacher Main</a>
+    </nav>
+  </header>
+
+  <main class="portal-main results-main">
+    <section class="dashboard-intro">
+      <div>
+        <p class="eyebrow">Wix CMS results</p>
+        <h2>Load submissions by class ID</h2>
+      </div>
+      <p class="muted">Scores are calculated by the Wix backend and displayed here for teachers.</p>
+    </section>
+
+    <section class="filter-card">
+      <label>
+        <span>Class ID</span>
+        <input id="classIdInput" type="text" placeholder="Example: B2-01" />
+      </label>
+      <label>
+        <span>Exam</span>
+        <select id="examSelect">
+          <option value="">All exams</option>
+        </select>
+      </label>
+      <button id="loadBtn" class="primary-btn">Load results</button>
+      <button id="clearBtn" class="secondary-btn">Clear</button>
+      <button id="exportBtn" class="secondary-btn">Export CSV</button>
+    </section>
+
+    <section class="summary-grid">
+      <article class="summary-card"><span>Total</span><strong id="summaryTotal">0</strong></article>
+      <article class="summary-card"><span>Average</span><strong id="summaryAverage">—</strong></article>
+      <article class="summary-card"><span>Highest</span><strong id="summaryHighest">—</strong></article>
+      <article class="summary-card"><span>Lowest</span><strong id="summaryLowest">—</strong></article>
+    </section>
+
+    <section class="results-card">
+      <div class="section-head">
+        <div>
+          <h2>Submissions</h2>
+          <p id="resultsStatus" class="muted">Enter a class ID and load results.</p>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table class="results-table">
+          <thead>
+            <tr>
+              <th>Student</th>
+              <th>Class</th>
+              <th>Exam</th>
+              <th>Submitted</th>
+              <th>Score</th>
+              <th>%</th>
+              <th>Parts</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="resultsBody"></tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <div id="detailsModal" class="modal hidden" aria-hidden="true">
+    <div class="modal-card">
+      <div class="modal-head">
+        <h2>Submission details</h2>
+        <button id="closeModalBtn" class="icon-btn" aria-label="Close">×</button>
+      </div>
+      <div id="detailsContent" class="details-content"></div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="config.js"></script>
+  <script src="results.js"></script>
+</body>
+</html>

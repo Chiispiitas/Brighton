@@ -1,0 +1,102 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <title>MONICA Web – Entrenamiento Contable</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="stylesheet" href="css/styles.css" />
+</head>
+<body>
+  <div class="layout">
+    <!-- Barra superior -->
+    <header class="topbar">
+      <div class="topbar-left">
+        <div class="logo-dual">
+          <img src="assets/logo-icon-white.png" alt="Logo fondo" class="logo-icon" />
+          <img src="assets/logo-text.png" alt="Logo texto" class="logo-text" />
+        </div>
+        <div class="logo-wrapper">
+          <div class="logo-title">VERÓNICA <span class="logo-badge">EDU</span></div>
+          <div class="logo-subtitle">Mi primer asistente contable</div>
+        </div>
+        <div class="company-selector">
+          <label for="companySelect">Empresa:</label>
+          <select id="companySelect"></select>
+        </div>
+      <div class="period-display">
+        Ejercicio: <span id="fiscalYearLabel"></span>
+        &nbsp;|&nbsp;
+        Período: <span id="periodLabel"></span>
+      </div>
+      </div>
+      <div class="topbar-right">
+        <button id="themeToggleBtn" class="ghost-button" title="Cambiar tema claro/oscuro">
+          🌓
+        </button>
+        <div class="user-menu">
+          <span id="userNameLabel"></span>
+          <span class="user-role-badge" id="userRoleLabel"></span>
+        </div>
+      </div>
+    </header>
+
+    <!-- Contenedor principal -->
+    <div class="body-wrapper">
+      <!-- Navegación lateral -->
+    <nav class="sidebar">
+      <ul>
+
+        <li><a href="#/dashboard" data-route>📊 Dashboard</a></li>
+
+        <li class="sidebar-section">Ventas</li>
+        <li><a href="#/ventas/facturas" data-route>🧾 Facturas de venta</a></li>
+        <li><a href="#/ventas/clientes" data-route>👥 Clientes</a></li>
+
+        <li class="sidebar-section">Compras / Proveedores</li>
+        <li><a href="#/compras/proveedores" data-route>🏪 Proveedores</a></li>
+
+        <li class="sidebar-section">Inventario</li>
+        <li><a href="#/inventario/productos" data-route>📦 Productos</a></li>
+        <li><a href="#/inventario/kardex" data-route>📚 Kardex</a></li>
+
+        <li class="sidebar-section">Bancos</li>
+        <li><a href="#/bancos/cuentas" data-route>🏦 Cuentas bancarias</a></li>
+
+        <li class="sidebar-section">Contabilidad</li>
+        <li><a href="#/contabilidad/plan-cuentas" data-route>🗂️ Plan de cuentas</a></li>
+        <li><a href="#/contabilidad/asientos" data-route>📝 Asientos contables</a></li>
+        <li><a href="#/contabilidad/informes" data-route>📑 Informes financieros</a></li>
+        <li><a href="#/contabilidad/parametros-contables" data-route>⚙️ Parámetros contables</a></li>
+
+        <li class="sidebar-section">Sistema</li>
+        <li><a href="#/configuracion/empresas" data-route>🏢 Empresas</a></li>
+        <li><a href="#/configuracion/usuarios" data-route>👤 Usuarios</a></li>
+
+      </ul>
+    </nav>
+
+      <!-- Área de contenido -->
+      <main id="appMain" class="view-container">
+        <!-- El contenido de las vistas se inyecta vía JS -->
+      </main>
+    </div>
+  </div>
+
+  <!-- Zona de notificaciones -->
+  <div id="toastContainer" class="toast-container"></div>
+
+  <!-- Modal genérico -->
+  <div id="modalOverlay" class="modal-overlay hidden">
+    <div class="modal">
+      <header class="modal-header">
+        <h2 id="modalTitle"></h2>
+        <button id="modalCloseBtn" class="icon-button" aria-label="Cerrar">✕</button>
+      </header>
+      <section id="modalBody" class="modal-body"></section>
+      <footer class="modal-footer" id="modalFooter"></footer>
+    </div>
+  </div>
+
+  <script type="module" src="js/app.js"></script>
+</body>
+</html>
