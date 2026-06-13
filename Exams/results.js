@@ -95,6 +95,10 @@
     const updated = [];
     for (const row of items) {
       const copy = { ...row };
+      if (isWritingSubmission(copy)) {
+        updated.push(copy);
+        continue;
+      }
       const shouldGrade = copy.score === undefined || copy.score === null || copy.maxScore === undefined || copy.maxScore === null || copy.status === "submitted_ungraded";
       if (!shouldGrade) {
         updated.push(copy);
@@ -148,15 +152,21 @@
 
     resultsBody.innerHTML = rows.map((row, index) => {
       const partScores = safeJson(row.partScoresJson, row.partScores || {});
+      const writing = isWritingSubmission(row);
+      const scoreCell = writing
+        ? `<span class="score-pill manual-score-pill">Manual review</span>`
+        : `<span class="score-pill">${row.score ?? "—"}/${row.maxScore ?? "—"}</span>`;
+      const percentCell = writing ? "—" : (typeof row.percentage === "number" ? `${row.percentage}%` : "—");
+      const partsCell = writing ? formatWritingMini(row) : formatParts(partScores);
       return `
         <tr>
           <td><strong>${escapeHtml(row.studentName || "—")}</strong></td>
           <td>${escapeHtml(row.classId || "—")}</td>
           <td>${escapeHtml(row.examTitle || row.examId || "—")}</td>
           <td>${escapeHtml(row.submittedAtLocal || formatDate(row.submittedAt))}</td>
-          <td><span class="score-pill">${row.score ?? "—"}/${row.maxScore ?? "—"}</span></td>
-          <td>${typeof row.percentage === "number" ? `${row.percentage}%` : "—"}</td>
-          <td><div class="parts-mini">${formatParts(partScores)}</div></td>
+          <td>${scoreCell}</td>
+          <td>${percentCell}</td>
+          <td><div class="parts-mini">${partsCell}</div></td>
           <td><button class="secondary-btn" data-details="${index}">Details</button></td>
         </tr>
       `;
@@ -183,6 +193,11 @@
     modal.classList.remove("hidden");
     modal.setAttribute("aria-hidden", "false");
     detailsContent.innerHTML = `<div class="detail-loading">Loading submission details...</div>`;
+
+    if (isWritingSubmission(row)) {
+      openWritingDetails(row);
+      return;
+    }
 
     const flags = safeJson(row.flaggedJson, row.flagged || []);
     let parts = safeJson(row.partScoresJson, row.partScores || {});
@@ -227,6 +242,183 @@
         ${renderAnswerReview(review.rows || [])}
       </section>
     `;
+  }
+
+
+  function openWritingDetails(row) {
+    const payload = payloadFromRow(row);
+    const flags = safeJson(row.flaggedJson, row.flagged || payload.flagged || []);
+    const samples = extractWritingSamples(row, payload);
+    const submittedAt = row.submittedAtLocal || formatDate(row.submittedAt || payload.submittedAt);
+
+    detailsContent.innerHTML = `
+      <div class="detail-grid detail-grid-wide">
+        <div class="detail-box"><span>Student</span><strong>${escapeHtml(row.studentName || payload.studentName || "—")}</strong></div>
+        <div class="detail-box"><span>Class</span><strong>${escapeHtml(row.classId || payload.classId || "—")}</strong></div>
+        <div class="detail-box"><span>Exam</span><strong>${escapeHtml(row.examTitle || payload.examTitle || row.examId || "—")}</strong></div>
+        <div class="detail-box"><span>Submitted</span><strong>${escapeHtml(submittedAt)}</strong></div>
+        <div class="detail-box"><span>Status</span><strong>Manual writing review</strong></div>
+        <div class="detail-box"><span>Selected Part 2</span><strong>${escapeHtml(payload.part2SelectedQuestion ? `Question ${payload.part2SelectedQuestion}` : "—")}</strong></div>
+      </div>
+
+      <section class="detail-section writing-review-actions">
+        <div>
+          <h3>B2 Writing marking</h3>
+          <p class="muted">Score each writing sample from 0–5 in the four Cambridge-style subscales. Totals are calculated here only and are not stored.</p>
+        </div>
+        <button class="secondary-btn" data-toggle-rubric type="button">Open B2 writing rubric</button>
+      </section>
+
+      <section class="detail-section writing-rubric-panel hidden" data-writing-rubric>
+        ${renderWritingRubric()}
+      </section>
+
+      <section class="detail-section writing-total-panel">
+        <article class="writing-total-card"><span>Total score</span><strong data-writing-total>0/40</strong></article>
+        <article class="writing-total-card"><span>Percentage</span><strong data-writing-percent>0%</strong></article>
+        <article class="writing-total-card"><span>Samples scored</span><strong data-writing-samples-scored>0/${samples.length}</strong></article>
+      </section>
+
+      <section class="detail-section">
+        <h3>Writing samples</h3>
+        ${samples.length ? samples.map(renderWritingSample).join("") : `<p class="muted">No writing samples were found in this submission.</p>`}
+      </section>
+
+      <section class="detail-section detail-two-column">
+        <div>
+          <h3>Flagged writing tasks</h3>
+          <p>${Array.isArray(flags) && flags.length ? flags.map(escapeHtml).join(", ") : "None"}</p>
+        </div>
+        <div>
+          <h3>Student notes</h3>
+          <p>${escapeHtml(row.notes || payload.notes || "No notes.")}</p>
+        </div>
+      </section>
+    `;
+
+    detailsContent.querySelector("[data-toggle-rubric]")?.addEventListener("click", () => {
+      const rubric = detailsContent.querySelector("[data-writing-rubric]");
+      rubric?.classList.toggle("hidden");
+    });
+    detailsContent.querySelectorAll("[data-writing-score]").forEach(input => {
+      input.addEventListener("input", updateWritingTotals);
+    });
+    updateWritingTotals();
+  }
+
+  function extractWritingSamples(row, payload) {
+    if (Array.isArray(payload?.writingSamples) && payload.writingSamples.length) return payload.writingSamples;
+    const answers = payload?.answers || safeJson(row.answersJson, row.answers || {});
+    const list = [];
+    const part1 = answers?.part1?.[1] || answers?.part1?.["1"];
+    if (part1) list.push({ part: 1, partId: "part1", question: 1, label: "Part 1", taskType: "Essay", title: "Part 1 essay", answer: part1, wordCount: countWords(part1) });
+    const part2Question = payload?.part2SelectedQuestion || Object.keys(answers?.part2 || {}).find(q => String(answers.part2[q] || "").trim());
+    const part2 = part2Question ? answers?.part2?.[part2Question] : "";
+    if (part2) list.push({ part: 2, partId: "part2", question: Number(part2Question), label: "Part 2", taskType: "Selected task", title: `Part 2 question ${part2Question}`, answer: part2, wordCount: countWords(part2) });
+    const answerList = safeJson(row.answerListJson, row.answerList || payload?.answerList || []);
+    if (!list.length && Array.isArray(answerList)) {
+      answerList.forEach(item => {
+        if (String(item.answer || "").trim()) list.push({ part: item.part, partId: item.partId, question: item.question, label: `Part ${item.part || ""}`, taskType: "Writing", title: `Question ${item.question}`, answer: item.answer, wordCount: countWords(item.answer) });
+      });
+    }
+    return list;
+  }
+
+  function renderWritingSample(sample, index) {
+    const answer = sample.answer || "";
+    const wordCount = Number(sample.wordCount ?? countWords(answer));
+    return `
+      <article class="writing-sample-card" data-writing-sample="${index}">
+        <div class="writing-sample-head">
+          <div>
+            <p class="eyebrow">${escapeHtml(sample.label || `Part ${sample.part || index + 1}`)} · Question ${escapeHtml(sample.question ?? "—")}</p>
+            <h4>${escapeHtml(sample.taskType || "Writing")} — ${escapeHtml(sample.title || "Writing task")}</h4>
+            <p class="muted">${escapeHtml(sample.targetReader ? `Target reader: ${sample.targetReader}` : "")}</p>
+          </div>
+          <span class="word-count-pill">${wordCount} words</span>
+        </div>
+        ${sample.prompt ? `<details class="writing-prompt-details"><summary>View task prompt</summary><p>${escapeHtml(sample.prompt).replace(/\n/g, "<br>")}</p></details>` : ""}
+        <div class="writing-answer-box">${escapeHtml(answer || "No answer submitted.").replace(/\n/g, "<br>")}</div>
+        <div class="writing-score-box">
+          <div class="subscale-grid">
+            ${["Content", "Communicative Achievement", "Organisation", "Language"].map(name => `
+              <label>
+                <span>${escapeHtml(name)}</span>
+                <input data-writing-score data-sample-index="${index}" data-subscale="${escapeAttr(name)}" type="number" min="0" max="5" step="1" inputmode="numeric" placeholder="0–5" />
+              </label>
+            `).join("")}
+          </div>
+          <div class="sample-score-line">Sample score: <strong data-sample-total="${index}">0/20</strong></div>
+        </div>
+      </article>
+    `;
+  }
+
+  function renderWritingRubric() {
+    const cards = [
+      ["Content", "Does the answer complete the task? Is everything relevant? Is the target reader fully informed?"],
+      ["Communicative Achievement", "Does the writing use the correct style, tone and format for the task? Does it hold the reader’s attention?"],
+      ["Organisation", "Is the text well organised and coherent? Are paragraphs, linking words and cohesive devices used effectively?"],
+      ["Language", "Is there a good range of vocabulary and grammar? Are errors controlled so communication is clear?"]
+    ];
+    return `
+      <h3>Short B2 Writing rubric</h3>
+      <p class="muted">Each subscale is scored from 0 to 5. Each writing sample is worth 20 marks: 5 Content + 5 Communicative Achievement + 5 Organisation + 5 Language.</p>
+      <div class="rubric-card-grid">
+        ${cards.map(([title, body]) => `<article class="rubric-card"><h4>${escapeHtml(title)}</h4><p>${escapeHtml(body)}</p></article>`).join("")}
+      </div>
+      <div class="rubric-band-box">
+        <strong>Band guide:</strong> 5 = strong B2 performance, 3 = acceptable but with omissions or limited range, 1 = minimally successful, 0 = not relevant or below task requirements. Bands 2 and 4 sit between the neighbouring bands.
+      </div>
+    `;
+  }
+
+  function updateWritingTotals() {
+    if (!detailsContent) return;
+    const sampleIndexes = Array.from(new Set(Array.from(detailsContent.querySelectorAll("[data-writing-score]")).map(input => input.dataset.sampleIndex)));
+    let total = 0;
+    let scoredSamples = 0;
+    sampleIndexes.forEach(index => {
+      const inputs = Array.from(detailsContent.querySelectorAll(`[data-writing-score][data-sample-index="${index}"]`));
+      let sampleTotal = 0;
+      let complete = true;
+      inputs.forEach(input => {
+        const value = input.value === "" ? NaN : Math.max(0, Math.min(5, Number(input.value)));
+        if (!Number.isFinite(value)) complete = false;
+        else sampleTotal += value;
+      });
+      const target = detailsContent.querySelector(`[data-sample-total="${index}"]`);
+      if (target) target.textContent = `${sampleTotal}/20`;
+      total += sampleTotal;
+      if (complete && inputs.length === 4) scoredSamples += 1;
+    });
+    const max = sampleIndexes.length * 20;
+    const percent = max ? Math.round((total / max) * 100) : 0;
+    const totalEl = detailsContent.querySelector("[data-writing-total]");
+    const percentEl = detailsContent.querySelector("[data-writing-percent]");
+    const samplesEl = detailsContent.querySelector("[data-writing-samples-scored]");
+    if (totalEl) totalEl.textContent = `${total}/${max}`;
+    if (percentEl) percentEl.textContent = `${percent}%`;
+    if (samplesEl) samplesEl.textContent = `${scoredSamples}/${sampleIndexes.length}`;
+  }
+
+  function formatWritingMini(row) {
+    const payload = payloadFromRow(row);
+    const samples = extractWritingSamples(row, payload);
+    if (!samples.length) return "Writing · manual review";
+    return samples.map(sample => `Q${sample.question}: ${sample.wordCount ?? countWords(sample.answer)} words`).join(" · ");
+  }
+
+  function countWords(text) {
+    return String(text || "").trim().split(/\s+/).filter(Boolean).length;
+  }
+
+  function isWritingSubmission(row) {
+    const id = String(row?.examId || "").toLowerCase();
+    if (id.includes("writing")) return true;
+    const raw = safeJson(row?.rawPayloadJson, row?.rawPayload || {});
+    const payload = raw?.payload || raw || {};
+    return String(payload.skill || "").toLowerCase() === "writing" || Array.isArray(payload.writingSamples);
   }
 
   async function buildAnswerReview(row) {

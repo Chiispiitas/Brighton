@@ -569,3 +569,179 @@ input:focus, select:focus {
     min-width: 760px;
   }
 }
+
+/* Writing submission review */
+.manual-score-pill {
+  color: #875400;
+}
+.writing-review-actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 14px;
+}
+.writing-rubric-panel.hidden {
+  display: none;
+}
+.rubric-card-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+  margin-top: 12px;
+}
+.rubric-card {
+  background: var(--cream);
+  border-radius: 18px;
+  padding: 14px;
+}
+.rubric-card h4 {
+  margin: 0 0 8px;
+  letter-spacing: -.03em;
+}
+.rubric-card p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+}
+.rubric-band-box {
+  margin-top: 12px;
+  padding: 12px 14px;
+  border-radius: 18px;
+  background: var(--yellow-soft);
+  color: #684005;
+  font-weight: 800;
+}
+.writing-total-panel {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 10px;
+}
+.writing-total-card {
+  background: var(--teal-soft);
+  border-radius: 20px;
+  padding: 16px;
+}
+.writing-total-card:nth-child(1) {
+  background: var(--yellow-soft);
+}
+.writing-total-card span {
+  display: block;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 1000;
+  text-transform: uppercase;
+  letter-spacing: .07em;
+}
+.writing-total-card strong {
+  display: block;
+  font-size: 34px;
+  letter-spacing: -.06em;
+  margin-top: 4px;
+}
+.writing-sample-card {
+  background: #fff;
+  border-radius: 24px;
+  padding: 18px;
+  margin-bottom: 16px;
+  box-shadow: 0 8px 22px rgba(32,38,49,.06);
+}
+.writing-sample-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+  margin-bottom: 12px;
+}
+.writing-sample-head h4 {
+  margin: 0;
+  font-size: 22px;
+  letter-spacing: -.04em;
+}
+.word-count-pill {
+  flex: 0 0 auto;
+  background: var(--yellow-soft);
+  color: #7a4a00;
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-weight: 1000;
+}
+.writing-prompt-details {
+  background: var(--cream);
+  border-radius: 18px;
+  padding: 12px 14px;
+  margin: 12px 0;
+}
+.writing-prompt-details summary {
+  cursor: pointer;
+  font-weight: 1000;
+  color: var(--yellow-dark);
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+.writing-answer-box {
+  background: #fbfcff;
+  border-radius: 18px;
+  padding: 16px;
+  line-height: 1.7;
+  white-space: normal;
+  margin: 12px 0;
+  border-left: 6px solid var(--teal);
+}
+.writing-score-box {
+  background: var(--panel);
+  border-radius: 20px;
+  padding: 14px;
+}
+.subscale-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 10px;
+}
+.subscale-grid label {
+  background: #fff;
+  border-radius: 16px;
+  padding: 12px;
+}
+.subscale-grid label span {
+  display: block;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 1000;
+  text-transform: uppercase;
+  letter-spacing: .06em;
+  margin-bottom: 8px;
+}
+.subscale-grid input {
+  background: var(--cream);
+  text-align: center;
+  font-weight: 1000;
+}
+.sample-score-line {
+  margin-top: 12px;
+  font-weight: 1000;
+  text-align: right;
+}
+
+@media (max-width: 900px) {
+  .rubric-card-grid,
+  .writing-total-panel,
+  .subscale-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+  .writing-review-actions,
+  .writing-sample-head {
+    display: block;
+  }
+  .word-count-pill {
+    display: inline-flex;
+    margin-top: 10px;
+  }
+}
+
+@media (max-width: 560px) {
+  .rubric-card-grid,
+  .writing-total-panel,
+  .subscale-grid {
+    grid-template-columns: 1fr;
+  }
+}
