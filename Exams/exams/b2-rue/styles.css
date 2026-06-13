@@ -1461,3 +1461,39 @@ h1, h2, h3, p { margin-top: 0; }
     max-width: max-content;
   }
 }
+
+/* Brighton logo integration */
+.start-logo-row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 24px 28px 6px;
+  background: #fff;
+}
+.start-logo-row img {
+  width: min(420px, 78vw);
+  max-height: 100px;
+  object-fit: contain;
+  display: block;
+}
+.exam-header-brand {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  height: 42px;
+  width: clamp(138px, 18vw, 230px);
+  min-width: 126px;
+  text-decoration: none;
+}
+.exam-header-brand img {
+  width: 100%;
+  max-height: 42px;
+  object-fit: contain;
+  display: block;
+}
+@media (max-width: 760px) {
+  .start-logo-row { padding: 16px 18px 4px; }
+  .start-logo-row img { width: min(300px, 82vw); }
+  .exam-header-brand { width: 126px; min-width: 106px; }
+  .student-chip { padding-left: 8px; }
+}

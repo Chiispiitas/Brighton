@@ -112,10 +112,10 @@ window.examParts = [
     items: [
       {
         q: 25,
-        first: "The presentation sounded professional, although the speaker was very nervous.",
+        first: "The speaker was very nervous, but the presentation sounded professional.",
         keyword: "AS",
-        secondBefore: "The presentation sounded ",
-        secondAfter: " very nervous.",
+        secondBefore: "The presentation sounded professional, ",
+        secondAfter: " the speaker was.",
         note: "Use between two and five words, including AS."
       },
       {

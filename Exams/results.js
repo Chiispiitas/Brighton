@@ -14,6 +14,7 @@
   const closeModalBtn = document.querySelector("#closeModalBtn");
 
   let rows = [];
+  const answerKeyCache = new Map();
 
   loadBtn.addEventListener("click", loadResults);
   clearBtn.addEventListener("click", clearFilters);
@@ -75,8 +76,9 @@
       const res = await fetch(url.toString());
       const data = await res.json();
       if (!res.ok || data.success === false) throw new Error(data.error || `HTTP ${res.status}`);
-      rows = data.items || [];
-      status.textContent = `${rows.length} submission(s) loaded for ${classId}.`;
+      rows = await applyLocalGrading(data.items || []);
+      const locallyGraded = rows.filter(row => row._gradedLocally).length;
+      status.textContent = `${rows.length} submission(s) loaded for ${classId}.${locallyGraded ? ` ${locallyGraded} row(s) graded locally from the answer key.` : ""}`;
       renderRows();
       updateSummary(data.summary);
     } catch (error) {
@@ -85,6 +87,57 @@
       renderRows();
       updateSummary();
     }
+  }
+
+
+  async function applyLocalGrading(items) {
+    if (!window.BrightonGrading) return items;
+    const updated = [];
+    for (const row of items) {
+      const copy = { ...row };
+      const shouldGrade = copy.score === undefined || copy.score === null || copy.maxScore === undefined || copy.maxScore === null || copy.status === "submitted_ungraded";
+      if (!shouldGrade) {
+        updated.push(copy);
+        continue;
+      }
+      try {
+        const examId = copy.examId || "brighton-b2-rue-final";
+        const key = await getAnswerKey(examId);
+        const payload = payloadFromRow(copy);
+        const graded = window.BrightonGrading.gradeSubmission(payload, key);
+        copy.score = graded.score;
+        copy.maxScore = graded.maxScore;
+        copy.percentage = graded.percentage;
+        copy.partScores = graded.partScores;
+        copy.partScoresJson = JSON.stringify(graded.partScores);
+        copy.gradingDetails = graded.details;
+        copy.gradingDetailsJson = JSON.stringify(graded.details);
+        copy._gradedLocally = true;
+        if (!copy.status || copy.status === "submitted_ungraded") copy.status = "graded_locally";
+      } catch (error) {
+        copy._localGradingError = error.message || String(error);
+      }
+      updated.push(copy);
+    }
+    return updated;
+  }
+
+  async function getAnswerKey(examId) {
+    if (answerKeyCache.has(examId)) return answerKeyCache.get(examId);
+    const key = await window.BrightonGrading.loadAnswerKey(examId);
+    answerKeyCache.set(examId, key);
+    return key;
+  }
+
+  function payloadFromRow(row) {
+    const raw = safeJson(row.rawPayloadJson, row.rawPayload || {});
+    const payload = raw?.payload || raw || {};
+    if (Array.isArray(payload.answerList) || payload.answers) return payload;
+    return {
+      examId: row.examId,
+      answerList: safeJson(row.answerListJson, row.answerList || []),
+      answers: safeJson(row.answersJson, row.answers || {})
+    };
   }
 
   function renderRows() {
@@ -145,6 +198,8 @@
       <p>${escapeHtml(row.notes || "No notes.")}</p>
       <h3>Answers</h3>
       <pre>${escapeHtml(JSON.stringify(answers, null, 2))}</pre>
+      <h3>Grading details</h3>
+      <pre>${escapeHtml(JSON.stringify(safeJson(row.gradingDetailsJson, row.gradingDetails || []), null, 2))}</pre>
     `;
     modal.classList.remove("hidden");
     modal.setAttribute("aria-hidden", "false");
