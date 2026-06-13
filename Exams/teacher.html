@@ -21,16 +21,18 @@
   </header>
 
   <main class="portal-main">
-    <section class="toolbar-card exams-toolbar">
+    <section class="available-exams-panel">
       <div class="brand-strip available-ribbon" aria-hidden="true">
         <span>☆</span><span>♡</span><span>✦</span><span>○</span><span>✶</span>
       </div>
-      <div class="toolbar-content">
-        <div>
-          <h2>Available exams</h2>
-          <p id="apiStatus" class="muted">Checking Brighton Database...</p>
+      <div class="toolbar-card exams-toolbar">
+        <div class="toolbar-content">
+          <div>
+            <h2>Available exams</h2>
+            <p id="apiStatus" class="muted">Checking Brighton Database...</p>
+          </div>
+          <button id="refreshBtn" class="primary-btn small">Refresh</button>
         </div>
-        <button id="refreshBtn" class="primary-btn small">Refresh</button>
       </div>
     </section>
 

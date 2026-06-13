@@ -369,14 +369,27 @@ input:focus, select:focus {
 }
 
 /* Teacher page: Available exams ribbon */
-.exams-toolbar {
-  display: block;
-  padding: 0;
+.available-exams-panel {
   overflow: hidden;
-  background: var(--white);
+  border-radius: var(--radius);
+  margin-bottom: 16px;
+  background: var(--yellow-soft);
 }
-.exams-toolbar .available-ribbon {
-  min-height: 50px;
+.available-exams-panel .available-ribbon {
+  width: 100%;
+  min-height: 54px;
+  margin: 0;
+  border-radius: 0;
+  display: flex;
+}
+.toolbar-card.exams-toolbar {
+  display: block !important;
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  background: transparent;
+  border-radius: 0;
 }
 .toolbar-content {
   display: flex;
