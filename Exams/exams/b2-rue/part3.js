@@ -3,10 +3,12 @@ window.PartRenderers = window.PartRenderers || {};
 window.PartRenderers.part3 = {
   render(part, state, helpers) {
     const activeQ = helpers.getCurrentQuestionNumber();
+    const rootByQuestion = Object.fromEntries(part.items.map(item => [item.q, item.root]));
     const passage = part.text.map(chunk => {
       if (chunk.type === "text") return helpers.escape(chunk.value);
       const value = helpers.getAnswer(part.id, chunk.q) || "";
-      return `<input class="inline-input ${activeQ === chunk.q ? "active" : ""}" data-q="${chunk.q}" value="${helpers.escapeAttr(value)}" placeholder="${chunk.q}" maxlength="32" aria-label="Question ${chunk.q}" />`;
+      const root = rootByQuestion[chunk.q] || "";
+      return `<span class="inline-keyword-wrap" data-root="${helpers.escapeAttr(root)}"><input class="inline-input ${activeQ === chunk.q ? "active" : ""}" data-q="${chunk.q}" value="${helpers.escapeAttr(value)}" placeholder="${chunk.q}" maxlength="32" aria-label="Question ${chunk.q}" /></span>`;
     }).join("");
 
     const keywords = part.items.map(item => `
