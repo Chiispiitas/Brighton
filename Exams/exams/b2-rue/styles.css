@@ -1230,7 +1230,6 @@ h1, h2, h3, p { margin-top: 0; }
 }
 
 
-/* Wix-ready compact final overrides */
 :root {
   --header-h: 56px;
   --footer-h: 70px;
@@ -1467,7 +1466,7 @@ h1, h2, h3, p { margin-top: 0; }
   }
 }
 
-/* Brighton logo integration */
+
 .start-logo-row {
   display: flex;
   justify-content: center;
@@ -1503,7 +1502,7 @@ h1, h2, h3, p { margin-top: 0; }
   .student-chip { padding-left: 8px; }
 }
 
-/* RUOE final interaction fixes */
+
 .part-nav-card {
   cursor: pointer;
 }
@@ -1623,7 +1622,7 @@ h1, h2, h3, p { margin-top: 0; }
   }
 }
 
-/* Final RUOE layout polish: desktop nav width + start/mobile fixes */
+
 html,
 body {
   min-height: 100%;

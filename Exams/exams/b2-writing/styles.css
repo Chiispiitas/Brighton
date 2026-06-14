@@ -191,7 +191,7 @@ h1, h2, h3, p { margin-top: 0; }
   .round-nav { width: 56px; height: 56px; border-radius: 20px; }
 }
 
-/* Brighton compact writing layout overrides */
+
 :root {
   --footer-h: 70px;
 }
@@ -353,7 +353,7 @@ h1, h2, h3, p { margin-top: 0; }
   }
 }
 
-/* Start card centering + mobile bottom navigation row fix */
+
 .start-screen {
   min-height: 100dvh;
   place-items: center !important;

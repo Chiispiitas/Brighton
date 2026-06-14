@@ -373,7 +373,7 @@ input:focus, select:focus {
   .card-actions { display: grid; }
 }
 
-/* Teacher page: Available exams ribbon */
+
 .available-exams-panel {
   overflow: hidden;
   border-radius: var(--radius);
@@ -421,7 +421,7 @@ input:focus, select:focus {
   max-width: 720px;
 }
 
-/* Results detail UI */
+
 .detail-loading {
   padding: 18px;
   background: var(--yellow-soft);
@@ -575,7 +575,7 @@ input:focus, select:focus {
   }
 }
 
-/* Writing submission review */
+
 .manual-score-pill {
   color: #875400;
 }
