@@ -1,3 +1,9 @@
+"use strict";
+/* ==============================================
+     Brighton English School
+     Made by: David Santana
+============================================== */
+
 window.BRIGHTON_SITE_CONFIG = {
   // Replace this with your published Wix site domain after you add http-functions.js.
   // Example: "https://www.brightonenglishschool.com/_functions"
@@ -17,6 +23,17 @@ window.BRIGHTON_SITE_CONFIG = {
       totalQuestions: 52,
       maxScore: 70,
       relativeUrl: "exams/b2-rue/index.html"
+    },
+    {
+      examId: "brighton-b2-listening-final",
+      title: "B2 Listening Final Exam",
+      level: "B2",
+      skill: "Listening",
+      description: "Four-part B2 First-style Listening final exam using one audio file.",
+      isActive: true,
+      totalQuestions: 30,
+      maxScore: 30,
+      relativeUrl: "exams/b2-listening/index.html"
     }
   ]
 };

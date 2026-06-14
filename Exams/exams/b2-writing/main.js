@@ -1,3 +1,9 @@
+"use strict";
+/* ==============================================
+     Brighton English School
+     Made by: David Santana
+============================================== */
+
 (() => {
   const exam = window.writingExam;
   const examParts = exam?.parts || [];
@@ -36,6 +42,9 @@
 
   boot();
 
+  /* ---------------------------------------------- 
+  BOOT 
+  ---------------------------------------------- */
   function boot() {
     const saved = loadState();
     if (saved && !saved.submitted) {
@@ -62,6 +71,9 @@
     dom.sideMenu.addEventListener("click", event => { if (event.target === dom.sideMenu) closeMenu(); });
   }
 
+  /* ---------------------------------------------- 
+  START EXAM 
+  ---------------------------------------------- */
   function startExam(continueSaved) {
     if (!continueSaved) {
       state = createDefaultState();
@@ -85,6 +97,9 @@
     dom.mainContent.focus();
   }
 
+  /* ---------------------------------------------- 
+  CREATE DEFAULT STATE 
+  ---------------------------------------------- */
   function createDefaultState() {
     const answers = {};
     examParts.forEach(part => {
@@ -104,6 +119,9 @@
     };
   }
 
+  /* ---------------------------------------------- 
+  LOAD STATE 
+  ---------------------------------------------- */
   function loadState() {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
@@ -117,6 +135,9 @@
     }
   }
 
+  /* ---------------------------------------------- 
+  MERGE STATE 
+  ---------------------------------------------- */
   function mergeState(base, saved) {
     const merged = { ...base, ...saved };
     merged.student = { ...base.student, ...(saved.student || {}) };
@@ -129,15 +150,24 @@
     return merged;
   }
 
+  /* ---------------------------------------------- 
+  SAVE STATE 
+  ---------------------------------------------- */
   function saveState() {
     clearTimeout(saveTimer);
     saveTimer = setTimeout(saveStateNow, 40);
   }
 
+  /* ---------------------------------------------- 
+  SAVE STATE NOW 
+  ---------------------------------------------- */
   function saveStateNow() {
     localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
   }
 
+  /* ---------------------------------------------- 
+  RENDER APP 
+  ---------------------------------------------- */
   function renderApp(options = {}) {
     ensureValidCurrent();
     updateHeader();
@@ -148,6 +178,9 @@
     if (options.scrollTop) dom.mainContent.scrollTo({ top: 0, behavior: "smooth" });
   }
 
+  /* ---------------------------------------------- 
+  ENSURE VALID CURRENT 
+  ---------------------------------------------- */
   function ensureValidCurrent() {
     const part = getCurrentPart();
     if (!part) state.current = { partId: "part1", question: 1 };
@@ -157,6 +190,9 @@
     }
   }
 
+  /* ---------------------------------------------- 
+  UPDATE HEADER 
+  ---------------------------------------------- */
   function updateHeader() {
     dom.headerStudent.textContent = state.student.name || "Student Name";
     dom.headerClass.textContent = state.student.classId || "Class ID";
@@ -164,6 +200,9 @@
     dom.flagBtn.classList.toggle("flagged", Boolean(state.flagged[q]));
   }
 
+  /* ---------------------------------------------- 
+  RENDER MAIN 
+  ---------------------------------------------- */
   function renderMain() {
     const part = getCurrentPart();
     if (!part) {
@@ -194,6 +233,9 @@
     bindPart2();
   }
 
+  /* ---------------------------------------------- 
+  RENDER WRITING WORKSPACE 
+  ---------------------------------------------- */
   function renderWritingWorkspace(part, item) {
     return `
       <div class="split-grid" style="--left: 44%;">
@@ -208,6 +250,9 @@
     `;
   }
 
+  /* ---------------------------------------------- 
+  RENDER PART2 WORKSPACE 
+  ---------------------------------------------- */
   function renderPart2Workspace(part) {
     const selected = getPart2Item();
     return `
@@ -227,6 +272,9 @@
     `;
   }
 
+  /* ---------------------------------------------- 
+  RENDER PROMPT 
+  ---------------------------------------------- */
   function renderPrompt(item, isPart1) {
     if (!item) return `<div class="prompt-card"><p>No task selected.</p></div>`;
     const notes = isPart1 ? `
@@ -260,6 +308,9 @@
     `;
   }
 
+  /* ---------------------------------------------- 
+  RENDER EDITOR 
+  ---------------------------------------------- */
   function renderEditor(partId, item) {
     const answer = getAnswer(partId, item.q);
     const wc = countWords(answer);
@@ -281,6 +332,9 @@
     `;
   }
 
+  /* ---------------------------------------------- 
+  RENDER CHOICE CARD 
+  ---------------------------------------------- */
   function renderChoiceCard(item) {
     const active = Number(state.selectedPart2Question) === Number(item.q);
     const words = countWords(getAnswer("part2", item.q));
@@ -296,6 +350,9 @@
     `;
   }
 
+  /* ---------------------------------------------- 
+  BIND EDITOR 
+  ---------------------------------------------- */
   function bindEditor(partId, question) {
     const textarea = $(".writing-textarea", dom.mainContent);
     if (!textarea) return;
@@ -312,6 +369,9 @@
     setTimeout(() => textarea.focus(), 40);
   }
 
+  /* ---------------------------------------------- 
+  BIND PART2 
+  ---------------------------------------------- */
   function bindPart2() {
     $$("[data-choice-question]", dom.mainContent).forEach(button => {
       button.addEventListener("click", () => {
@@ -324,6 +384,9 @@
     bindEditor("part2", selected.q);
   }
 
+  /* ---------------------------------------------- 
+  RENDER BOTTOM NAV 
+  ---------------------------------------------- */
   function renderBottomNav() {
     dom.bottomNav.innerHTML = examParts.map(part => {
       const progress = getProgress(part);
@@ -367,6 +430,9 @@
     });
   }
 
+  /* ---------------------------------------------- 
+  RENDER QUESTION PILL 
+  ---------------------------------------------- */
   function renderQuestionPill(part, item) {
     const active = part.id === state.current.partId && Number(item.q) === Number(getCurrentQuestionNumber());
     const answered = countWords(getAnswer(part.id, item.q)) > 0;
@@ -374,6 +440,9 @@
     return `<button class="q-pill ${active ? "active" : ""} ${answered ? "answered" : ""} ${flagged ? "flagged" : ""}" data-part-id="${escapeAttr(part.id)}" data-question-pill="${item.q}" type="button" aria-label="Question ${item.q}">${item.q}</button>`;
   }
 
+  /* ---------------------------------------------- 
+  RENDER STEP CONTROLS 
+  ---------------------------------------------- */
   function renderStepControls() {
     const order = getQuestionOrder();
     const currentIndex = order.findIndex(item => item.partId === state.current.partId && Number(item.question) === Number(getCurrentQuestionNumber()));
@@ -384,6 +453,9 @@
     dom.nextBtn.setAttribute("aria-label", isLast ? "Finish exam" : "Next task");
   }
 
+  /* ---------------------------------------------- 
+  GO BACK 
+  ---------------------------------------------- */
   function goBack() {
     const order = getQuestionOrder();
     const index = order.findIndex(item => item.partId === state.current.partId && Number(item.question) === Number(getCurrentQuestionNumber()));
@@ -395,6 +467,9 @@
     }
   }
 
+  /* ---------------------------------------------- 
+  GO NEXT 
+  ---------------------------------------------- */
   function goNext() {
     const order = getQuestionOrder();
     const index = order.findIndex(item => item.partId === state.current.partId && Number(item.question) === Number(getCurrentQuestionNumber()));
@@ -408,6 +483,9 @@
     finishExam();
   }
 
+  /* ---------------------------------------------- 
+  GET QUESTION ORDER 
+  ---------------------------------------------- */
   function getQuestionOrder() {
     return [
       { partId: "part1", question: 1 },
@@ -417,15 +495,24 @@
     ];
   }
 
+  /* ---------------------------------------------- 
+  GET CURRENT PART 
+  ---------------------------------------------- */
   function getCurrentPart() {
     return examParts.find(part => part.id === state.current.partId) || examParts[0];
   }
 
+  /* ---------------------------------------------- 
+  GET PART2 ITEM 
+  ---------------------------------------------- */
   function getPart2Item() {
     const part = examParts.find(p => p.id === "part2");
     return part.items.find(item => Number(item.q) === Number(state.selectedPart2Question)) || part.items[0];
   }
 
+  /* ---------------------------------------------- 
+  RESOLVE SELECTED PART2 FROM DRAFTS 
+  ---------------------------------------------- */
   function resolveSelectedPart2FromDrafts() {
     const part = examParts.find(p => p.id === "part2");
     if (!part) return;
@@ -443,27 +530,42 @@
     if (firstAnswered) state.selectedPart2Question = Number(firstAnswered.q);
   }
 
+  /* ---------------------------------------------- 
+  GET CURRENT QUESTION NUMBER 
+  ---------------------------------------------- */
   function getCurrentQuestionNumber() {
     if (state.current.partId === "part2") return Number(state.current.question || state.selectedPart2Question || 2);
     return 1;
   }
 
+  /* ---------------------------------------------- 
+  GET ANSWER 
+  ---------------------------------------------- */
   function getAnswer(partId, question) {
     return state.answers?.[partId]?.[question] || "";
   }
 
+  /* ---------------------------------------------- 
+  SET ANSWER 
+  ---------------------------------------------- */
   function setAnswer(partId, question, value) {
     if (!state.answers[partId]) state.answers[partId] = {};
     state.answers[partId][question] = value;
     saveState();
   }
 
+  /* ---------------------------------------------- 
+  GET PROGRESS 
+  ---------------------------------------------- */
   function getProgress(part) {
     if (part.id === "part1") return { done: countWords(getAnswer("part1", 1)) > 0 ? 1 : 0, total: 1 };
     const selected = state.selectedPart2Question;
     return { done: selected && countWords(getAnswer("part2", selected)) > 0 ? 1 : 0, total: 1 };
   }
 
+  /* ---------------------------------------------- 
+  TOGGLE FLAG 
+  ---------------------------------------------- */
   function toggleFlag() {
     const q = getCurrentQuestionNumber();
     if (state.flagged[q]) delete state.flagged[q];
@@ -473,6 +575,9 @@
     saveState();
   }
 
+  /* ---------------------------------------------- 
+  OPEN NOTES 
+  ---------------------------------------------- */
   function openNotes() {
     dom.modalRoot.classList.remove("hidden");
     dom.modalRoot.setAttribute("aria-hidden", "false");
@@ -496,6 +601,9 @@
     });
   }
 
+  /* ---------------------------------------------- 
+  OPEN OVERVIEW 
+  ---------------------------------------------- */
   function openOverview() {
     closeMenu();
     dom.modalRoot.classList.remove("hidden");
@@ -523,22 +631,34 @@
     $("[data-close-modal]", dom.modalRoot).addEventListener("click", closeModal);
   }
 
+  /* ---------------------------------------------- 
+  OPEN MENU 
+  ---------------------------------------------- */
   function openMenu() {
     dom.sideMenu.classList.add("open");
     dom.sideMenu.setAttribute("aria-hidden", "false");
   }
 
+  /* ---------------------------------------------- 
+  CLOSE MENU 
+  ---------------------------------------------- */
   function closeMenu() {
     dom.sideMenu.classList.remove("open");
     dom.sideMenu.setAttribute("aria-hidden", "true");
   }
 
+  /* ---------------------------------------------- 
+  CLOSE MODAL 
+  ---------------------------------------------- */
   function closeModal() {
     dom.modalRoot.classList.add("hidden");
     dom.modalRoot.setAttribute("aria-hidden", "true");
     dom.modalRoot.innerHTML = "";
   }
 
+  /* ---------------------------------------------- 
+  RESET TEST 
+  ---------------------------------------------- */
   function resetTest() {
     const confirmed = window.confirm("Reset this writing test? This will clear all answers, flags and notes saved on this device.");
     if (!confirmed) return;
@@ -546,6 +666,9 @@
     location.reload();
   }
 
+  /* ---------------------------------------------- 
+  FINISH EXAM 
+  ---------------------------------------------- */
   function finishExam() {
     resolveSelectedPart2FromDrafts();
     const p1Words = countWords(getAnswer("part1", 1));
@@ -580,6 +703,9 @@
     submitPayload(payload);
   }
 
+  /* ---------------------------------------------- 
+  BUILD EXPORT PAYLOAD 
+  ---------------------------------------------- */
   function buildExportPayload() {
     resolveSelectedPart2FromDrafts();
     const selectedPart2 = getPart2Item();
@@ -609,6 +735,9 @@
     };
   }
 
+  /* ---------------------------------------------- 
+  BUILD WRITING SAMPLE 
+  ---------------------------------------------- */
   function buildWritingSample(partId, item) {
     const partNumber = Number(String(partId).replace("part", ""));
     const answer = getAnswer(partId, item.q) || "";
@@ -627,12 +756,18 @@
     };
   }
 
+  /* ---------------------------------------------- 
+  BUILD PROMPT TEXT 
+  ---------------------------------------------- */
   function buildPromptText(item, isPart1) {
     const pieces = [item.promptIntro, item.question, item.task, item.message, item.announcementTitle, item.closingLine, item.finalInstruction].filter(Boolean);
     if (isPart1 && Array.isArray(item.notes)) pieces.push(`Notes: ${item.notes.join("; ")}`);
     return pieces.join("\n\n");
   }
 
+  /* ---------------------------------------------- 
+  CALCULATE TIME SPENT SECONDS 
+  ---------------------------------------------- */
   function calculateTimeSpentSeconds() {
     if (!state.student.startedAt || !state.submittedAt) return null;
     const started = new Date(state.student.startedAt).getTime();
@@ -641,6 +776,9 @@
     return Math.max(0, Math.round((submitted - started) / 1000));
   }
 
+  /* ---------------------------------------------- 
+  SUBMIT PAYLOAD 
+  ---------------------------------------------- */
   async function submitPayload(payload) {
     const message = { type: "BRIGHTON_B2_WRITING_SUBMIT", payload };
     try { window.parent?.postMessage(message, "*"); } catch (error) { console.warn("Could not post submission to parent window.", error); }
@@ -683,10 +821,16 @@
     }
   }
 
+  /* ---------------------------------------------- 
+  COUNT WORDS 
+  ---------------------------------------------- */
   function countWords(text) {
     return String(text || "").trim().split(/\s+/).filter(Boolean).length;
   }
 
+  /* ---------------------------------------------- 
+  WORD COUNT CLASS 
+  ---------------------------------------------- */
   function wordCountClass(count) {
     if (!count) return "";
     if (count < 140) return "too-short";
@@ -694,6 +838,9 @@
     return "ok";
   }
 
+  /* ---------------------------------------------- 
+  SHOW TOAST 
+  ---------------------------------------------- */
   function showToast(message) {
     dom.toast.textContent = message;
     dom.toast.classList.add("show");
@@ -701,12 +848,18 @@
     showToast.timer = setTimeout(() => dom.toast.classList.remove("show"), 1800);
   }
 
+  /* ---------------------------------------------- 
+  ESCAPE HTML 
+  ---------------------------------------------- */
   function escapeHtml(value) {
     return String(value ?? "").replace(/[&<>'"]/g, char => ({
       "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;"
     }[char]));
   }
 
+  /* ---------------------------------------------- 
+  ESCAPE ATTR 
+  ---------------------------------------------- */
   function escapeAttr(value) {
     return escapeHtml(value).replace(/`/g, "&#96;");
   }

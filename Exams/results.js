@@ -1,3 +1,9 @@
+"use strict";
+/* ==============================================
+     Brighton English School
+     Made by: David Santana
+============================================== */
+
 (() => {
   const config = window.BRIGHTON_SITE_CONFIG || {};
   const apiBase = String(config.API_BASE_URL || "").replace(/\/$/, "");
@@ -31,12 +37,18 @@
 
   init();
 
+  /* ---------------------------------------------- 
+  INIT 
+  ---------------------------------------------- */
   async function init() {
     const params = new URLSearchParams(location.search);
     if (params.get("examId")) examSelect.dataset.prefill = params.get("examId");
     await loadExams();
   }
 
+  /* ---------------------------------------------- 
+  LOAD EXAMS 
+  ---------------------------------------------- */
   async function loadExams() {
     try {
       if (!apiBase || apiBase.includes("YOUR-WIX")) throw new Error("Brighton Database not configured");
@@ -50,6 +62,9 @@
     }
   }
 
+  /* ---------------------------------------------- 
+  FILL EXAM SELECT 
+  ---------------------------------------------- */
   function fillExamSelect(exams) {
     const current = examSelect.dataset.prefill || "";
     examSelect.innerHTML = `<option value="">All exams</option>` + exams.map(exam => `
@@ -58,6 +73,9 @@
     if (current) examSelect.value = current;
   }
 
+  /* ---------------------------------------------- 
+  LOAD RESULTS 
+  ---------------------------------------------- */
   async function loadResults() {
     const classId = classIdInput.value.trim();
     const examId = examSelect.value.trim();
@@ -97,6 +115,9 @@
     }
   }
 
+  /* ---------------------------------------------- 
+  APPLY LOCAL GRADING 
+  ---------------------------------------------- */
   async function applyLocalGrading(items) {
     if (!window.BrightonGrading) return items;
     const updated = [];
@@ -133,6 +154,9 @@
     return updated;
   }
 
+  /* ---------------------------------------------- 
+  GET ANSWER KEY 
+  ---------------------------------------------- */
   async function getAnswerKey(examId) {
     if (answerKeyCache.has(examId)) return answerKeyCache.get(examId);
     const key = await window.BrightonGrading.loadAnswerKey(examId);
@@ -140,6 +164,9 @@
     return key;
   }
 
+  /* ---------------------------------------------- 
+  PAYLOAD FROM ROW 
+  ---------------------------------------------- */
   function payloadFromRow(row) {
     const raw = firstJsonFrom(row, ["rawPayloadJson", "rawPayload", "payloadJson", "payload"], {});
     const payload = raw?.payload || raw || {};
@@ -164,6 +191,9 @@
     };
   }
 
+  /* ---------------------------------------------- 
+  RENDER ROWS 
+  ---------------------------------------------- */
   function renderRows() {
     if (!rows.length) {
       resultsBody.innerHTML = `<tr><td colspan="8">No submissions found.</td></tr>`;
@@ -197,6 +227,9 @@
     });
   }
 
+  /* ---------------------------------------------- 
+  UPDATE SUMMARY 
+  ---------------------------------------------- */
   function updateSummary(serverSummary) {
     const total = serverSummary?.total ?? rows.length;
     const percentages = rows.map(r => Number(r.percentage)).filter(Number.isFinite);
@@ -209,6 +242,9 @@
     document.querySelector("#summaryLowest").textContent = lowest === null ? "—" : `${lowest}%`;
   }
 
+  /* ---------------------------------------------- 
+  OPEN DETAILS 
+  ---------------------------------------------- */
   async function openDetails(row) {
     modal.classList.remove("hidden");
     modal.setAttribute("aria-hidden", "false");
@@ -265,6 +301,9 @@
   }
 
 
+  /* ---------------------------------------------- 
+  OPEN WRITING DETAILS 
+  ---------------------------------------------- */
   function openWritingDetails(row) {
     const payload = payloadFromRow(row);
     const flags = safeJson(row.flaggedJson, row.flagged || payload.flagged || []);
@@ -326,6 +365,9 @@
     updateWritingTotals();
   }
 
+  /* ---------------------------------------------- 
+  EXTRACT WRITING SAMPLES 
+  ---------------------------------------------- */
   function extractWritingSamples(row, payload) {
     const samplesFromPayload = parseJsonDeep(payload?.writingSamples, []);
     if (Array.isArray(samplesFromPayload) && samplesFromPayload.length) {
@@ -365,6 +407,9 @@
     return list.sort((a, b) => Number(a.part || 0) - Number(b.part || 0) || Number(a.question || 0) - Number(b.question || 0));
   }
 
+  /* ---------------------------------------------- 
+  ENRICH WRITING SAMPLE 
+  ---------------------------------------------- */
   function enrichWritingSample(sample) {
     const question = Number(sample?.question || sample?.q || 0);
     const meta = WRITING_TASK_META[question] || {};
@@ -385,17 +430,26 @@
     };
   }
 
+  /* ---------------------------------------------- 
+  GET ANSWER FROM NESTED 
+  ---------------------------------------------- */
   function getAnswerFromNested(answers, partId, question) {
     const parsed = parseJsonDeep(answers, {});
     return parsed?.[partId]?.[question] ?? parsed?.[partId]?.[String(question)] ?? parsed?.[question] ?? parsed?.[String(question)] ?? "";
   }
 
+  /* ---------------------------------------------- 
+  INFER PART2 QUESTION FROM ANSWERS 
+  ---------------------------------------------- */
   function inferPart2QuestionFromAnswers(answers) {
     const parsed = parseJsonDeep(answers, {});
     const part2 = parsed?.part2 || {};
     return [2, 3, 4].find(question => String(part2?.[question] ?? part2?.[String(question)] ?? "").trim()) || null;
   }
 
+  /* ---------------------------------------------- 
+  RESOLVE PART2 SELECTED QUESTION 
+  ---------------------------------------------- */
   function resolvePart2SelectedQuestion(selected, answers) {
     const parsed = parseJsonDeep(answers, {});
     const selectedNumber = Number(selected);
@@ -406,6 +460,9 @@
     return inferPart2QuestionFromAnswers(parsed) || selectedNumber || null;
   }
 
+  /* ---------------------------------------------- 
+  SELECTED PART2 LABEL 
+  ---------------------------------------------- */
   function selectedPart2Label(payload, samples) {
     const question = Number(payload?.part2SelectedQuestion || samples.find(sample => Number(sample.part) === 2)?.question || 0);
     if (!question) return "—";
@@ -413,6 +470,9 @@
     return `Question ${question}${meta.taskType ? ` · ${meta.taskType}` : ""}`;
   }
 
+  /* ---------------------------------------------- 
+  RENDER WRITING SAMPLE 
+  ---------------------------------------------- */
   function renderWritingSample(sample, index) {
     const answer = sample.answer || "";
     const wordCount = Number(sample.wordCount ?? countWords(answer));
@@ -443,6 +503,9 @@
     `;
   }
 
+  /* ---------------------------------------------- 
+  RENDER WRITING RUBRIC 
+  ---------------------------------------------- */
   function renderWritingRubric() {
     const cards = [
       ["Content", "Does the answer complete the task? Is everything relevant? Is the target reader fully informed?"],
@@ -462,6 +525,9 @@
     `;
   }
 
+  /* ---------------------------------------------- 
+  UPDATE WRITING TOTALS 
+  ---------------------------------------------- */
   function updateWritingTotals() {
     if (!detailsContent) return;
     const sampleIndexes = Array.from(new Set(Array.from(detailsContent.querySelectorAll("[data-writing-score]")).map(input => input.dataset.sampleIndex)));
@@ -491,6 +557,9 @@
     if (samplesEl) samplesEl.textContent = `${scoredSamples}/${sampleIndexes.length}`;
   }
 
+  /* ---------------------------------------------- 
+  FORMAT WRITING MINI 
+  ---------------------------------------------- */
   function formatWritingMini(row) {
     const payload = payloadFromRow(row);
     const samples = extractWritingSamples(row, payload);
@@ -498,10 +567,16 @@
     return samples.map(sample => `Q${sample.question}: ${sample.wordCount ?? countWords(sample.answer)} words`).join(" · ");
   }
 
+  /* ---------------------------------------------- 
+  COUNT WORDS 
+  ---------------------------------------------- */
   function countWords(text) {
     return String(text || "").trim().split(/\s+/).filter(Boolean).length;
   }
 
+  /* ---------------------------------------------- 
+  IS WRITING SUBMISSION 
+  ---------------------------------------------- */
   function isWritingSubmission(row) {
     const id = String(row?.examId || "").toLowerCase();
     const title = String(row?.examTitle || "").toLowerCase();
@@ -514,6 +589,9 @@
     return Boolean(answers?.part1 || answers?.part2);
   }
 
+  /* ---------------------------------------------- 
+  BUILD ANSWER REVIEW 
+  ---------------------------------------------- */
   async function buildAnswerReview(row) {
     const payload = payloadFromRow(row);
     const flatAnswers = window.BrightonGrading?.flattenAnswers
@@ -564,6 +642,9 @@
     };
   }
 
+  /* ---------------------------------------------- 
+  RENDER PART SCORE CARDS 
+  ---------------------------------------------- */
   function renderPartScoreCards(parts) {
     const entries = Object.entries(parts || {}).sort(([a], [b]) => partSortValue(a) - partSortValue(b));
     if (!entries.length) return `<p class="muted">No part score data available.</p>`;
@@ -584,6 +665,9 @@
     }).join("")}</div>`;
   }
 
+  /* ---------------------------------------------- 
+  RENDER ANSWER REVIEW 
+  ---------------------------------------------- */
   function renderAnswerReview(reviewRows) {
     if (!reviewRows.length) return `<p class="muted">No submitted answers were found.</p>`;
     return `
@@ -616,12 +700,18 @@
     `;
   }
 
+  /* ---------------------------------------------- 
+  GET REVIEW QUESTION NUMBERS 
+  ---------------------------------------------- */
   function getReviewQuestionNumbers(answerKey, flatAnswers) {
     const fromKey = Object.keys(answerKey?.answers || {}).map(Number).filter(Number.isFinite);
     const fromAnswers = flatAnswers.map(item => Number(item.question)).filter(Number.isFinite);
     return Array.from(new Set([...fromKey, ...fromAnswers])).sort((a, b) => a - b);
   }
 
+  /* ---------------------------------------------- 
+  EXPECTED ANSWER TEXT 
+  ---------------------------------------------- */
   function expectedAnswerText(rule) {
     if (!rule) return "—";
     if (Array.isArray(rule.answers) && rule.answers.length) return rule.answers.map(answerToText).join(" / ");
@@ -634,6 +724,9 @@
     return "—";
   }
 
+  /* ---------------------------------------------- 
+  ANSWER STATUS 
+  ---------------------------------------------- */
   function answerStatus(detail) {
     if (!detail) return { label: "Not graded", className: "status-unknown" };
     const earned = Number(detail.earned || 0);
@@ -643,10 +736,16 @@
     return { label: "Incorrect", className: "status-incorrect" };
   }
 
+  /* ---------------------------------------------- 
+  FIND ANSWER PART 
+  ---------------------------------------------- */
   function findAnswerPart(flatAnswers, question) {
     return flatAnswers.find(item => Number(item.question) === Number(question))?.part;
   }
 
+  /* ---------------------------------------------- 
+  FLATTEN ANSWERS FALLBACK 
+  ---------------------------------------------- */
   function flattenAnswersFallback(payload) {
     if (Array.isArray(payload?.answerList)) return payload.answerList;
     const answers = payload?.answers || {};
@@ -660,6 +759,9 @@
     return flat.sort((a, b) => Number(a.question) - Number(b.question));
   }
 
+  /* ---------------------------------------------- 
+  ANSWER TO TEXT 
+  ---------------------------------------------- */
   function answerToText(value) {
     if (value === undefined || value === null) return "";
     if (Array.isArray(value)) return value.map(answerToText).join(", ");
@@ -667,16 +769,25 @@
     return String(value);
   }
 
+  /* ---------------------------------------------- 
+  PART SORT VALUE 
+  ---------------------------------------------- */
   function partSortValue(key) {
     const number = Number(String(key).match(/\d+/)?.[0] || 0);
     return Number.isFinite(number) ? number : 0;
   }
 
+  /* ---------------------------------------------- 
+  CLOSE MODAL 
+  ---------------------------------------------- */
   function closeModal() {
     modal.classList.add("hidden");
     modal.setAttribute("aria-hidden", "true");
   }
 
+  /* ---------------------------------------------- 
+  CLEAR FILTERS 
+  ---------------------------------------------- */
   function clearFilters() {
     classIdInput.value = "";
     examSelect.value = "";
@@ -686,6 +797,9 @@
     status.textContent = "Enter a class ID and load results.";
   }
 
+  /* ---------------------------------------------- 
+  EXPORT CSV 
+  ---------------------------------------------- */
   function exportCsv() {
     if (!rows.length) return showToast("No rows to export");
     const headers = ["studentName", "classId", "examTitle", "submittedAt", "score", "maxScore", "percentage", "partScoresJson"];
@@ -699,6 +813,9 @@
     URL.revokeObjectURL(url);
   }
 
+  /* ---------------------------------------------- 
+  FORMAT PARTS 
+  ---------------------------------------------- */
   function formatParts(parts) {
     if (!parts || typeof parts !== "object") return "—";
     return Object.entries(parts).map(([key, value]) => {
@@ -707,6 +824,9 @@
     }).join(" · ");
   }
 
+  /* ---------------------------------------------- 
+  FIRST JSON FROM 
+  ---------------------------------------------- */
   function firstJsonFrom(source, fieldNames, fallback) {
     for (const field of fieldNames) {
       if (source && Object.prototype.hasOwnProperty.call(source, field) && source[field] !== undefined && source[field] !== null && source[field] !== "") {
@@ -716,10 +836,16 @@
     return parseJsonDeep(fallback, fallback);
   }
 
+  /* ---------------------------------------------- 
+  SAFE JSON 
+  ---------------------------------------------- */
   function safeJson(value, fallback) {
     return parseJsonDeep(value, fallback);
   }
 
+  /* ---------------------------------------------- 
+  PARSE JSON DEEP 
+  ---------------------------------------------- */
   function parseJsonDeep(value, fallback) {
     if (value === undefined || value === null || value === "") return fallback;
     if (typeof value !== "string") return value;
@@ -737,17 +863,26 @@
     return current;
   }
 
+  /* ---------------------------------------------- 
+  FORMAT DATE 
+  ---------------------------------------------- */
   function formatDate(value) {
     if (!value) return "—";
     const date = new Date(value);
     return Number.isFinite(date.getTime()) ? date.toLocaleString() : String(value);
   }
 
+  /* ---------------------------------------------- 
+  CSV CELL 
+  ---------------------------------------------- */
   function csvCell(value) {
     const text = String(value ?? "");
     return `"${text.replace(/"/g, '""')}"`;
   }
 
+  /* ---------------------------------------------- 
+  SHOW TOAST 
+  ---------------------------------------------- */
   function showToast(message) {
     toast.textContent = message;
     toast.classList.add("show");
@@ -755,12 +890,18 @@
     showToast.timer = setTimeout(() => toast.classList.remove("show"), 1800);
   }
 
+  /* ---------------------------------------------- 
+  ESCAPE HTML 
+  ---------------------------------------------- */
   function escapeHtml(value) {
     return String(value ?? "").replace(/[&<>'"]/g, char => ({
       "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;"
     }[char]));
   }
 
+  /* ---------------------------------------------- 
+  ESCAPE ATTR 
+  ---------------------------------------------- */
   function escapeAttr(value) {
     return escapeHtml(value).replace(/`/g, "&#96;");
   }

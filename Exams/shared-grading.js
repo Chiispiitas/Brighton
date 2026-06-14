@@ -1,3 +1,9 @@
+"use strict";
+/* ==============================================
+     Brighton English School
+     Made by: David Santana
+============================================== */
+
 (function () {
   const COMMON_CONTRACTIONS = [
     [/\baren't\b/gi, "are not"], [/\bisn't\b/gi, "is not"], [/\bwasn't\b/gi, "was not"], [/\bweren't\b/gi, "were not"],
@@ -7,6 +13,9 @@
     [/\bit's\b/gi, "it is"], [/\bi'm\b/gi, "i am"], [/\bthey're\b/gi, "they are"], [/\bwe're\b/gi, "we are"], [/\byou're\b/gi, "you are"]
   ];
 
+  /* ---------------------------------------------- 
+  NORMALIZE ANSWER 
+  ---------------------------------------------- */
   function normalizeAnswer(value, options = {}) {
     let text = String(value ?? "")
       .normalize("NFKC")
@@ -23,12 +32,18 @@
     return text;
   }
 
+  /* ---------------------------------------------- 
+  COUNT ANSWER WORDS 
+  ---------------------------------------------- */
   function countAnswerWords(value) {
     const normalized = normalizeAnswer(value, { expandContractions: true });
     if (!normalized) return 0;
     return normalized.split(/\s+/).filter(Boolean).length;
   }
 
+  /* ---------------------------------------------- 
+  FLATTEN ANSWERS 
+  ---------------------------------------------- */
   function flattenAnswers(payload) {
     if (Array.isArray(payload?.answerList)) return payload.answerList;
     const answers = payload?.answers || {};
@@ -42,6 +57,9 @@
     return flat.sort((a, b) => Number(a.question) - Number(b.question));
   }
 
+  /* ---------------------------------------------- 
+  GRADE SUBMISSION 
+  ---------------------------------------------- */
   function gradeSubmission(payload, answerKey) {
     const answerList = flattenAnswers(payload);
     const byQuestion = new Map(answerList.map(item => [String(item.question), item.answer]));
@@ -82,6 +100,9 @@
     };
   }
 
+  /* ---------------------------------------------- 
+  GRADE ONE 
+  ---------------------------------------------- */
   function gradeOne(raw, rule) {
     const max = Number(rule.points || 1);
     const normalized = normalizeAnswer(raw, { expandContractions: rule.mode === "components" });
@@ -104,11 +125,17 @@
     return accepted.includes(normalized) ? max : 0;
   }
 
+  /* ---------------------------------------------- 
+  CONTAINS PHRASE 
+  ---------------------------------------------- */
   function containsPhrase(normalizedText, normalizedPhrase) {
     if (!normalizedText || !normalizedPhrase) return false;
     return (` ${normalizedText} `).includes(` ${normalizedPhrase} `);
   }
 
+  /* ---------------------------------------------- 
+  LOAD ANSWER KEY 
+  ---------------------------------------------- */
   async function loadAnswerKey(examId) {
     const response = await fetch(`answer-keys/${encodeURIComponent(examId)}.json`, { headers: { Accept: "application/json" } });
     if (!response.ok) throw new Error(`Could not load answer key for ${examId}`);

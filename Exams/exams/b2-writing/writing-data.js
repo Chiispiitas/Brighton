@@ -1,3 +1,9 @@
+"use strict";
+/* ==============================================
+     Brighton English School
+     Made by: David Santana
+============================================== */
+
 window.writingExam = {
   examId: "brighton-b2-writing-final",
   title: "Brighton B2 Writing Final Exam",

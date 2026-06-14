@@ -1,3 +1,9 @@
+"use strict";
+/* ==============================================
+     Brighton English School
+     Made by: David Santana
+============================================== */
+
 window.listeningExam = {
   examId: "brighton-b2-listening-final",
   title: "Brighton B2 Listening Final Exam",

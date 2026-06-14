@@ -1,3 +1,9 @@
+"use strict";
+/* ==============================================
+     Brighton English School
+     Made by: David Santana
+============================================== */
+
 window.PartRenderers = window.PartRenderers || {};
 
 window.PartRenderers.part6 = {
@@ -110,6 +116,9 @@ window.PartRenderers.part6 = {
 
     helpers.attachDivider("part6", ".split-grid[data-resizable='part6']", "part6Left");
 
+    /* ---------------------------------------------- 
+    PLACE OPTION 
+    ---------------------------------------------- */
     function placeOption(q, optionId) {
       if (!optionId) return;
       part.items.forEach(item => {

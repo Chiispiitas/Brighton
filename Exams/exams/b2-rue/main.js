@@ -1,3 +1,9 @@
+"use strict";
+/* ==============================================
+     Brighton English School
+     Made by: David Santana
+============================================== */
+
 (() => {
   const STORAGE_KEY = "brighton-b2-rue-exam-state-v1";
   const examParts = window.examParts || [];
@@ -49,6 +55,9 @@
 
   boot();
 
+  /* ---------------------------------------------- 
+  BOOT 
+  ---------------------------------------------- */
   function boot() {
     if (state.student.name) {
       dom.continueSavedBtn.classList.remove("hidden");
@@ -111,6 +120,9 @@
     }
   }
 
+  /* ---------------------------------------------- 
+  START EXAM 
+  ---------------------------------------------- */
   function startExam(name, classId) {
     if (!name || !classId) return;
     state.student.name = name;
@@ -120,12 +132,18 @@
     showExam();
   }
 
+  /* ---------------------------------------------- 
+  SHOW EXAM 
+  ---------------------------------------------- */
   function showExam() {
     dom.startScreen.classList.add("hidden");
     dom.examShell.classList.remove("hidden");
     renderApp();
   }
 
+  /* ---------------------------------------------- 
+  CREATE DEFAULT STATE 
+  ---------------------------------------------- */
   function createDefaultState() {
     const answers = {};
     examParts.forEach(part => {
@@ -148,6 +166,9 @@
     };
   }
 
+  /* ---------------------------------------------- 
+  LOAD STATE 
+  ---------------------------------------------- */
   function loadState() {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
@@ -161,6 +182,9 @@
     }
   }
 
+  /* ---------------------------------------------- 
+  MERGE STATE 
+  ---------------------------------------------- */
   function mergeState(base, saved) {
     const merged = { ...base, ...saved };
     merged.student = { ...base.student, ...(saved.student || {}) };
@@ -175,6 +199,9 @@
     return merged;
   }
 
+  /* ---------------------------------------------- 
+  SAVE STATE 
+  ---------------------------------------------- */
   function saveState() {
     clearTimeout(saveTimer);
     saveTimer = setTimeout(() => {
@@ -182,6 +209,9 @@
     }, 30);
   }
 
+  /* ---------------------------------------------- 
+  RENDER APP 
+  ---------------------------------------------- */
   function renderApp(options = {}) {
     const part = getCurrentPart();
     ensureValidCurrent();
@@ -192,6 +222,9 @@
     saveState();
   }
 
+  /* ---------------------------------------------- 
+  RENDER MAIN 
+  ---------------------------------------------- */
   function renderMain(part, options = {}) {
     const renderer = window.PartRenderers?.[part.id];
     if (!renderer) {
@@ -205,6 +238,9 @@
     }
   }
 
+  /* ---------------------------------------------- 
+  UPDATE HEADER 
+  ---------------------------------------------- */
   function updateHeader() {
     dom.headerStudent.textContent = state.student.name || "Student Name";
     dom.headerClass.textContent = state.student.classId || "Class ID";
@@ -215,6 +251,9 @@
     dom.flagBtn.setAttribute("aria-pressed", flagged ? "true" : "false");
   }
 
+  /* ---------------------------------------------- 
+  RENDER BOTTOM NAV 
+  ---------------------------------------------- */
   function renderBottomNav() {
     const currentQ = getCurrentQuestionNumber();
     dom.bottomNav.innerHTML = examParts.map(part => {
@@ -253,6 +292,9 @@
     });
   }
 
+  /* ---------------------------------------------- 
+  RENDER STEP CONTROLS 
+  ---------------------------------------------- */
   function renderStepControls() {
     dom.backBtn.disabled = isFirstQuestion();
     if (isFinalQuestion()) {
@@ -266,14 +308,23 @@
     }
   }
 
+  /* ---------------------------------------------- 
+  GET CURRENT PART 
+  ---------------------------------------------- */
   function getCurrentPart() {
     return getPart(state.current.partId) || examParts[0];
   }
 
+  /* ---------------------------------------------- 
+  GET PART 
+  ---------------------------------------------- */
   function getPart(partId) {
     return examParts.find(part => part.id === partId);
   }
 
+  /* ---------------------------------------------- 
+  ENSURE VALID CURRENT 
+  ---------------------------------------------- */
   function ensureValidCurrent() {
     const part = getCurrentPart();
     if (!part) return;
@@ -281,11 +332,17 @@
     if (state.current.itemIndex >= part.items.length) state.current.itemIndex = part.items.length - 1;
   }
 
+  /* ---------------------------------------------- 
+  GET CURRENT QUESTION NUMBER 
+  ---------------------------------------------- */
   function getCurrentQuestionNumber() {
     const part = getCurrentPart();
     return part.items[state.current.itemIndex]?.q;
   }
 
+  /* ---------------------------------------------- 
+  GET QUESTION LOCATION 
+  ---------------------------------------------- */
   function getQuestionLocation(q) {
     for (const part of examParts) {
       const itemIndex = part.items.findIndex(item => item.q === q);
@@ -294,6 +351,9 @@
     return null;
   }
 
+  /* ---------------------------------------------- 
+  GO TO QUESTION 
+  ---------------------------------------------- */
   function goToQuestion(q, options = {}) {
     const location = getQuestionLocation(q);
     if (!location) return;
@@ -308,39 +368,63 @@
     renderApp({ restoreScroll: false });
   }
 
+  /* ---------------------------------------------- 
+  GET LINEAR INDEX 
+  ---------------------------------------------- */
   function getLinearIndex() {
     const currentQ = getCurrentQuestionNumber();
     return allItems().findIndex(item => item.q === currentQ);
   }
 
+  /* ---------------------------------------------- 
+  ALL ITEMS 
+  ---------------------------------------------- */
   function allItems() {
     return examParts.flatMap(part => part.items.map(item => ({ ...item, partId: part.id })));
   }
 
+  /* ---------------------------------------------- 
+  GO PREVIOUS 
+  ---------------------------------------------- */
   function goPrevious() {
     const items = allItems();
     const index = getLinearIndex();
     if (index > 0) goToQuestion(items[index - 1].q);
   }
 
+  /* ---------------------------------------------- 
+  GO NEXT 
+  ---------------------------------------------- */
   function goNext() {
     const items = allItems();
     const index = getLinearIndex();
     if (index < items.length - 1) goToQuestion(items[index + 1].q);
   }
 
+  /* ---------------------------------------------- 
+  IS FIRST QUESTION 
+  ---------------------------------------------- */
   function isFirstQuestion() {
     return getLinearIndex() === 0;
   }
 
+  /* ---------------------------------------------- 
+  IS FINAL QUESTION 
+  ---------------------------------------------- */
   function isFinalQuestion() {
     return getLinearIndex() === allItems().length - 1;
   }
 
+  /* ---------------------------------------------- 
+  GET ANSWER 
+  ---------------------------------------------- */
   function getAnswer(partId, q) {
     return state.answers?.[partId]?.[q] || "";
   }
 
+  /* ---------------------------------------------- 
+  SET ANSWER 
+  ---------------------------------------------- */
   function setAnswer(partId, q, value, options = {}) {
     if (!state.answers[partId]) state.answers[partId] = {};
     state.answers[partId][q] = value;
@@ -353,17 +437,26 @@
     renderApp({ restoreScroll: true });
   }
 
+  /* ---------------------------------------------- 
+  IS ANSWERED 
+  ---------------------------------------------- */
   function isAnswered(part, q) {
     const value = getAnswer(part.id, q);
     return value !== null && value !== undefined && String(value).trim() !== "";
   }
 
+  /* ---------------------------------------------- 
+  GET PROGRESS 
+  ---------------------------------------------- */
   function getProgress(part) {
     const total = part.items.length;
     const answered = part.items.filter(item => isAnswered(part, item.q)).length;
     return { answered, total };
   }
 
+  /* ---------------------------------------------- 
+  TOGGLE FLAG 
+  ---------------------------------------------- */
   function toggleFlag() {
     const q = getCurrentQuestionNumber();
     if (!q) return;
@@ -372,6 +465,9 @@
     renderApp({ restoreScroll: true });
   }
 
+  /* ---------------------------------------------- 
+  OPEN NOTES 
+  ---------------------------------------------- */
   function openNotes() {
     openModal(`
       <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="notesTitle">
@@ -392,6 +488,9 @@
     setTimeout(() => area.focus(), 50);
   }
 
+  /* ---------------------------------------------- 
+  OPEN OVERVIEW 
+  ---------------------------------------------- */
   function openOverview() {
     const currentQ = getCurrentQuestionNumber();
     const content = examParts.map(part => `
@@ -427,6 +526,9 @@
     });
   }
 
+  /* ---------------------------------------------- 
+  OPEN MODAL 
+  ---------------------------------------------- */
   function openModal(html) {
     dom.modalRoot.innerHTML = html;
     dom.modalRoot.classList.remove("hidden");
@@ -437,22 +539,34 @@
     }, { once: true });
   }
 
+  /* ---------------------------------------------- 
+  CLOSE MODAL 
+  ---------------------------------------------- */
   function closeModal() {
     dom.modalRoot.classList.add("hidden");
     dom.modalRoot.setAttribute("aria-hidden", "true");
     dom.modalRoot.innerHTML = "";
   }
 
+  /* ---------------------------------------------- 
+  OPEN MENU 
+  ---------------------------------------------- */
   function openMenu() {
     dom.sideMenu.classList.add("open");
     dom.sideMenu.setAttribute("aria-hidden", "false");
   }
 
+  /* ---------------------------------------------- 
+  CLOSE MENU 
+  ---------------------------------------------- */
   function closeMenu() {
     dom.sideMenu.classList.remove("open");
     dom.sideMenu.setAttribute("aria-hidden", "true");
   }
 
+  /* ---------------------------------------------- 
+  RESET TEST 
+  ---------------------------------------------- */
   function resetTest() {
     const confirmed = window.confirm("Reset this test? This will clear all answers, flags and notes saved on this device.");
     if (!confirmed) return;
@@ -461,6 +575,9 @@
     window.location.reload();
   }
 
+  /* ---------------------------------------------- 
+  SHOW FINISH SCREEN 
+  ---------------------------------------------- */
   function showFinishScreen() {
     state.submitted = true;
     state.submittedAt = new Date().toISOString();
@@ -486,6 +603,9 @@
     submitPayload(payload);
   }
 
+  /* ---------------------------------------------- 
+  BUILD EXPORT PAYLOAD 
+  ---------------------------------------------- */
   function buildExportPayload() {
     const answerList = buildAnswerList();
     return {
@@ -504,6 +624,9 @@
     };
   }
 
+  /* ---------------------------------------------- 
+  BUILD ANSWER LIST 
+  ---------------------------------------------- */
   function buildAnswerList() {
     return examParts.flatMap(part => {
       const partNumber = Number(String(part.id).replace("part", ""));
@@ -516,6 +639,9 @@
     });
   }
 
+  /* ---------------------------------------------- 
+  CALCULATE TIME SPENT SECONDS 
+  ---------------------------------------------- */
   function calculateTimeSpentSeconds() {
     if (!state.student.startedAt || !state.submittedAt) return null;
     const started = new Date(state.student.startedAt).getTime();
@@ -524,6 +650,9 @@
     return Math.max(0, Math.round((submitted - started) / 1000));
   }
 
+  /* ---------------------------------------------- 
+  SUBMIT PAYLOAD 
+  ---------------------------------------------- */
   async function submitPayload(payload) {
     const message = { type: "BRIGHTON_B2_RUE_SUBMIT", payload };
 
@@ -575,6 +704,9 @@
     }
   }
 
+  /* ---------------------------------------------- 
+  PART HEADER 
+  ---------------------------------------------- */
   function partHeader(part) {
     return `
       <div class="part-title-row">
@@ -587,10 +719,16 @@
     `;
   }
 
+  /* ---------------------------------------------- 
+  INSTRUCTION 
+  ---------------------------------------------- */
   function instruction(text) {
     return `<div class="instruction-card"><strong>Instructions</strong><br>${escape(text)}</div>`;
   }
 
+  /* ---------------------------------------------- 
+  ATTACH DIVIDER 
+  ---------------------------------------------- */
   function attachDivider(partId, gridSelector, stateKey) {
     const grid = $(gridSelector);
     const divider = $(`[data-divider="${partId}"]`);
@@ -637,16 +775,25 @@
     });
   }
 
+  /* ---------------------------------------------- 
+  SHOW TOAST 
+  ---------------------------------------------- */
   function showToast(message) {
     dom.toast.textContent = message;
     dom.toast.classList.add("show");
     setTimeout(() => dom.toast.classList.remove("show"), 1600);
   }
 
+  /* ---------------------------------------------- 
+  COUNT WORDS 
+  ---------------------------------------------- */
   function countWords(text) {
     return String(text || "").trim().split(/\s+/).filter(Boolean).length;
   }
 
+  /* ---------------------------------------------- 
+  ESCAPE 
+  ---------------------------------------------- */
   function escape(value) {
     return String(value ?? "").replace(/[&<>"]/g, char => ({
       "&": "&amp;",
@@ -656,10 +803,16 @@
     }[char]));
   }
 
+  /* ---------------------------------------------- 
+  ESCAPE ATTR 
+  ---------------------------------------------- */
   function escapeAttr(value) {
     return escape(value).replace(/'/g, "&#39;");
   }
 
+  /* ---------------------------------------------- 
+  DEBOUNCE 
+  ---------------------------------------------- */
   function debounce(fn, delay) {
     let timer;
     return (...args) => {

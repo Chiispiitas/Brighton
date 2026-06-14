@@ -1,3 +1,9 @@
+"use strict";
+/* ==============================================
+     Brighton English School
+     Made by: David Santana
+============================================== */
+
 window.PartRenderers = window.PartRenderers || {};
 
 window.PartRenderers.part1 = {
@@ -39,6 +45,9 @@ window.PartRenderers.part1 = {
     const active = document.querySelector(`.cloze-gap[data-gap="${helpers.getCurrentQuestionNumber()}"]`);
     if (active) active.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
 
+    /* ---------------------------------------------- 
+    OPEN PANEL 
+    ---------------------------------------------- */
     function openPanel(anchor, q, partData, helpers) {
       closePanel();
       const item = partData.items.find(i => i.q === q);
@@ -82,6 +91,9 @@ window.PartRenderers.part1 = {
       setTimeout(() => document.addEventListener("click", closePanel, { once: true }), 0);
     }
 
+    /* ---------------------------------------------- 
+    CLOSE PANEL 
+    ---------------------------------------------- */
     function closePanel() {
       document.querySelectorAll(".choice-popover").forEach(el => el.remove());
     }

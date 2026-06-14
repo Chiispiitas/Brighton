@@ -1,3 +1,9 @@
+"use strict";
+/* ==============================================
+     Brighton English School
+     Made by: David Santana
+============================================== */
+
 (() => {
   const config = window.BRIGHTON_SITE_CONFIG || {};
   const apiBase = String(config.API_BASE_URL || "").replace(/\/$/, "");
@@ -9,6 +15,9 @@
   refreshBtn.addEventListener("click", loadExams);
   loadExams();
 
+  /* ---------------------------------------------- 
+  LOAD EXAMS 
+  ---------------------------------------------- */
   async function loadExams() {
     examGrid.innerHTML = renderLoadingCards();
     try {
@@ -27,6 +36,9 @@
 
 
 
+  /* ---------------------------------------------- 
+  RENDER CONNECTION ERROR 
+  ---------------------------------------------- */
   function renderConnectionError(error) {
     const detail = error?.message ? ` <span class="muted-small">${escapeHtml(error.message)}</span>` : "";
     examGrid.innerHTML = `
@@ -38,6 +50,9 @@
     `;
   }
 
+  /* ---------------------------------------------- 
+  RENDER EXAMS 
+  ---------------------------------------------- */
   function renderExams(exams) {
     if (!exams.length) {
       examGrid.innerHTML = `<article class="exam-card"><h2>No exams found</h2><p class="muted">No exams were returned from Brighton Database.</p></article>`;
@@ -85,6 +100,9 @@
     });
   }
 
+  /* ---------------------------------------------- 
+  RENDER LOADING CARDS 
+  ---------------------------------------------- */
   function renderLoadingCards() {
     return Array.from({ length: 2 }, () => `
       <article class="exam-card">
@@ -95,6 +113,9 @@
     `).join("");
   }
 
+  /* ---------------------------------------------- 
+  SHOW TOAST 
+  ---------------------------------------------- */
   function showToast(message) {
     toast.textContent = message;
     toast.classList.add("show");
@@ -102,12 +123,18 @@
     showToast.timer = setTimeout(() => toast.classList.remove("show"), 1800);
   }
 
+  /* ---------------------------------------------- 
+  ESCAPE HTML 
+  ---------------------------------------------- */
   function escapeHtml(value) {
     return String(value ?? "").replace(/[&<>'"]/g, char => ({
       "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;"
     }[char]));
   }
 
+  /* ---------------------------------------------- 
+  ESCAPE ATTR 
+  ---------------------------------------------- */
   function escapeAttr(value) {
     return escapeHtml(value).replace(/`/g, "&#96;");
   }

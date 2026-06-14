@@ -1,3 +1,9 @@
+"use strict";
+/* ==============================================
+     Brighton English School
+     Made by: David Santana
+============================================== */
+
 window.PartRenderers = window.PartRenderers || {};
 
 window.PartRenderers.part2 = {
