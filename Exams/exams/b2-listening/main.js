@@ -43,6 +43,7 @@
 
   let state = loadState() || createDefaultState();
   let saveTimer = null;
+  let liveProgress = null;
 
   boot();
 
@@ -671,7 +672,7 @@
     if (!location) return;
     state.current = location;
     saveState();
-    if (liveProgress) liveProgress.touch();
+    if (liveProgress && typeof liveProgress.touch === "function") liveProgress.touch();
     if (options.render === false) {
       updateActiveHighlights();
       renderBottomNav();
@@ -690,7 +691,7 @@
     const location = getQuestionLocation(q);
     if (!location) return;
     state.current = location;
-    if (liveProgress) liveProgress.touch();
+    if (liveProgress && typeof liveProgress.touch === "function") liveProgress.touch();
     renderApp({ restoreScroll: previousPart === location.partId && location.partId !== "part1" });
   }
 
@@ -755,7 +756,7 @@
     if (!state.answers[partId]) state.answers[partId] = {};
     state.answers[partId][q] = value;
     saveState();
-    if (liveProgress) liveProgress.touch();
+    if (liveProgress && typeof liveProgress.touch === "function") liveProgress.touch();
     if (options.render === false) {
       updateHeader();
       renderBottomNav();
@@ -936,7 +937,7 @@
   ---------------------------------------------- */
   function startLiveProgress() {
     if (!window.BrightonLiveProgress || state.submitted) return;
-    if (liveProgress) liveProgress.stop();
+    if (liveProgress && typeof liveProgress.stop === "function") liveProgress.stop();
     liveProgress = window.BrightonLiveProgress.create({
       examId: "brighton-b2-listening-final",
       examTitle: "Brighton B2 Listening Final Exam",
@@ -1061,7 +1062,7 @@
       if (!response.ok || data.success === false) {
         throw new Error(data.error || `HTTP ${response.status}`);
       }
-      if (liveProgress) await liveProgress.markSubmitted({ submissionId: data.submissionId || "", submittedAt: payload.submittedAt || new Date().toISOString() });
+      if (liveProgress && typeof liveProgress.markSubmitted === "function") await liveProgress.markSubmitted({ submissionId: data.submissionId || "", submittedAt: payload.submittedAt || new Date().toISOString() });
       statusBadge.textContent = "Saved";
       statusText.textContent = "Your answers have been recorded successfully.";
       resultBox.innerHTML = `

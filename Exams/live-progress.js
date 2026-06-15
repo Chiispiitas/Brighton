@@ -64,7 +64,6 @@
     SEND 
     ---------------------------------------------- */
     async function send(status, extra = {}) {
-      lastStatus = status;
       if (!apiBase || apiBase.includes("YOUR-WIX")) return;
       if (!navigator.onLine) {
         updateBadge("offline", "Connection lost. Your answers are saved on this device.");
@@ -153,8 +152,6 @@
   UPDATE BADGE 
   ---------------------------------------------- */
   function updateBadge(type, message) {
-    const badge = document.querySelector("#connectionStatus");
-    if (!badge) return;
     badge.className = `connection-status ${type}`;
     badge.textContent = message;
   }
