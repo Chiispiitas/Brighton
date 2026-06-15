@@ -157,6 +157,8 @@
     if (!badge) return;
     badge.className = `connection-status ${type}`;
     badge.textContent = message;
+    badge.title = message;
+    badge.setAttribute("aria-label", message);
   }
 
   /* ---------------------------------------------- 
@@ -186,13 +188,53 @@
         height: 8px;
         border-radius: 999px;
         background: currentColor;
+        flex: 0 0 auto;
       }
       .connection-status.online,
       .connection-status.submitted { background: #def9f7; color: #075f5f; }
       .connection-status.offline { background: #ffe6e6; color: #b32626; }
       .connection-status.syncing { background: #eef2ff; color: #3347a0; }
       @media (max-width: 720px) {
-        .connection-status { max-width: 118px; overflow: hidden; text-overflow: ellipsis; justify-content: center; }
+        .connection-status {
+          width: 18px;
+          min-width: 18px;
+          height: 18px;
+          min-height: 18px;
+          padding: 0;
+          border-radius: 999px;
+          font-size: 0;
+          line-height: 0;
+          overflow: visible;
+          justify-content: center;
+          background: transparent;
+          color: #8a6a00;
+        }
+        .connection-status::before {
+          width: 12px;
+          height: 12px;
+          box-shadow: 0 0 0 3px rgba(255, 190, 50, 0.18), 0 0 10px rgba(255, 190, 50, 0.45);
+        }
+        .connection-status.online,
+        .connection-status.submitted { background: transparent; color: #00a86b; }
+        .connection-status.online::before,
+        .connection-status.submitted::before { box-shadow: 0 0 0 3px rgba(0, 168, 107, 0.18), 0 0 12px rgba(0, 168, 107, 0.75); }
+        .connection-status.syncing { background: transparent; color: #3a56d4; }
+        .connection-status.syncing::before { box-shadow: 0 0 0 3px rgba(58, 86, 212, 0.16), 0 0 10px rgba(58, 86, 212, 0.5); }
+        .connection-status.offline { background: transparent; color: #d92d20; }
+        .connection-status.offline::before {
+          content: "!";
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          width: 16px;
+          height: 16px;
+          color: #fff;
+          background: #d92d20;
+          font-size: 11px;
+          line-height: 1;
+          font-weight: 900;
+          box-shadow: 0 0 0 3px rgba(217, 45, 32, 0.16), 0 0 10px rgba(217, 45, 32, 0.55);
+        }
       }
     `;
     document.head.appendChild(style);
