@@ -358,6 +358,7 @@
     const location = getQuestionLocation(q);
     if (!location) return;
     state.current = location;
+    if (liveProgress) liveProgress.touch();
     if (options.render === false) {
       updateHeader();
       renderBottomNav();
@@ -429,6 +430,7 @@
     if (!state.answers[partId]) state.answers[partId] = {};
     state.answers[partId][q] = value;
     saveState();
+    if (liveProgress) liveProgress.touch();
     if (options.render === false) {
       updateHeader();
       renderBottomNav();
@@ -603,6 +605,56 @@
     submitPayload(payload);
   }
 
+
+  /* ---------------------------------------------- 
+  START LIVE PROGRESS 
+  ---------------------------------------------- */
+  function startLiveProgress() {
+    if (!window.BrightonLiveProgress || state.submitted) return;
+    if (liveProgress) liveProgress.stop();
+    liveProgress = window.BrightonLiveProgress.create({
+      examId: "brighton-b2-rue-final",
+      examTitle: "Brighton B2 Reading and Use of English Final Exam",
+      skill: "Reading and Use of English",
+      level: "B2",
+      getProgress: buildLiveProgressSnapshot
+    });
+    liveProgress.start();
+  }
+
+  /* ---------------------------------------------- 
+  BUILD LIVE PROGRESS SNAPSHOT 
+  ---------------------------------------------- */
+  function buildLiveProgressSnapshot() {
+    const totals = examParts.reduce((summary, part) => {
+      const progress = getProgress(part);
+      summary.answered += Number(progress.answered ?? progress.done) || 0;
+      summary.total += Number(progress.total) || 0;
+      return summary;
+    }, { answered: 0, total: 0 });
+    return {
+      studentName: state.student.name,
+      classId: state.student.classId,
+      startedAt: state.student.startedAt,
+      currentPart: state.current.partId,
+      currentQuestion: getCurrentQuestionNumber(),
+      answeredCount: totals.answered,
+      totalQuestions: totals.total,
+      progressPercent: totals.total ? Math.round((totals.answered / totals.total) * 100) : 0,
+      timeSpentSeconds: calculateLiveTimeSpentSeconds()
+    };
+  }
+
+  /* ---------------------------------------------- 
+  CALCULATE LIVE TIME SPENT SECONDS 
+  ---------------------------------------------- */
+  function calculateLiveTimeSpentSeconds() {
+    if (!state.student.startedAt) return 0;
+    const started = new Date(state.student.startedAt).getTime();
+    if (!Number.isFinite(started)) return 0;
+    return Math.max(0, Math.round((Date.now() - started) / 1000));
+  }
+
   /* ---------------------------------------------- 
   BUILD EXPORT PAYLOAD 
   ---------------------------------------------- */
@@ -687,6 +739,7 @@
         throw new Error(data.error || `HTTP ${response.status}`);
       }
 
+      if (liveProgress) await liveProgress.markSubmitted({ submissionId: data.submissionId || "", submittedAt: payload.submittedAt || new Date().toISOString() });
       statusBadge.textContent = "Saved";
       statusText.textContent = "Your answers have been recorded successfully.";
       resultBox.innerHTML = `

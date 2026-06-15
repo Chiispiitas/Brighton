@@ -13,6 +13,9 @@
   const clearBtn = document.querySelector("#clearBtn");
   const exportBtn = document.querySelector("#exportBtn");
   const resultsBody = document.querySelector("#resultsBody");
+  const progressBody = document.querySelector("#progressBody");
+  const progressStatus = document.querySelector("#progressStatus");
+  const progressUpdatedAt = document.querySelector("#progressUpdatedAt");
   const status = document.querySelector("#resultsStatus");
   const toast = document.querySelector("#toast");
   const modal = document.querySelector("#detailsModal");
@@ -20,7 +23,11 @@
   const closeModalBtn = document.querySelector("#closeModalBtn");
 
   let rows = [];
+  let progressRows = [];
+  let progressTimer = null;
   const answerKeyCache = new Map();
+  const progressRefreshMs = Number(config.DASHBOARD_PROGRESS_REFRESH_MS) || 20000;
+  const progressStaleSeconds = Number(config.PROGRESS_STALE_SECONDS) || 90;
 
   const WRITING_TASK_META = {
     1: { part: 1, partId: "part1", question: 1, label: "Part 1", taskType: "Essay", title: "Essay: environment and everyday action", targetReader: "Your English teacher", prompt: "In your English class you have been talking about the environment.\n\nSome people say that schools and companies should do much more to reduce waste and pollution. Do you agree?\n\nNotes: transport; daily habits; your own idea\n\nWrite an essay using all the notes and giving reasons for your point of view." },
@@ -87,6 +94,9 @@
     if (!apiBase || apiBase.includes("YOUR-WIX")) {
       status.textContent = "Failed to connect to Brighton Database. Check internet connection.";
       rows = [];
+      progressRows = [];
+      stopProgressTimer();
+      renderProgressRows();
       renderRows();
       updateSummary();
       return;
@@ -103,6 +113,8 @@
       const data = await res.json();
       if (!res.ok || data.success === false) throw new Error(data.error || `HTTP ${res.status}`);
       rows = await applyLocalGrading(data.items || []);
+      await loadProgress();
+      startProgressTimer();
       const locallyGraded = rows.filter(row => row._gradedLocally).length;
       status.textContent = `${rows.length} submission(s) loaded for ${classId}.${locallyGraded ? ` ${locallyGraded} row(s) graded locally from the answer key.` : ""}`;
       renderRows();
@@ -110,6 +122,9 @@
     } catch (error) {
       status.textContent = `Could not load results: ${error.message}`;
       rows = [];
+      progressRows = [];
+      stopProgressTimer();
+      renderProgressRows();
       renderRows();
       updateSummary();
     }
@@ -189,6 +204,161 @@
       part2Drafts,
       part2SelectedQuestion: resolvePart2SelectedQuestion(payload.part2SelectedQuestion || row.part2SelectedQuestion || row.part2Selected, answers)
     };
+  }
+
+
+  /* ---------------------------------------------- 
+  LOAD PROGRESS 
+  ---------------------------------------------- */
+  async function loadProgress() {
+    const classId = classIdInput.value.trim();
+    const examId = examSelect.value.trim();
+    if (!classId || !apiBase || apiBase.includes("YOUR-WIX")) {
+      progressRows = [];
+      renderProgressRows();
+      return;
+    }
+
+    try {
+      const url = new URL(`${apiBase}/getProgress`);
+      url.searchParams.set("classId", classId);
+      if (examId) url.searchParams.set("examId", examId);
+      const res = await fetch(url.toString());
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || data.success === false) throw new Error(data.error || `HTTP ${res.status}`);
+      progressRows = mergeSubmittedIntoProgress(data.items || []);
+      renderProgressRows();
+      if (progressStatus) progressStatus.textContent = `${progressRows.length} student(s) monitored. Auto-refresh every ${Math.round(progressRefreshMs / 1000)} seconds.`;
+      if (progressUpdatedAt) progressUpdatedAt.textContent = `Updated ${new Date().toLocaleTimeString()}`;
+    } catch (error) {
+      if (progressStatus) progressStatus.textContent = `Could not load live progress: ${error.message}`;
+    }
+  }
+
+  /* ---------------------------------------------- 
+  START PROGRESS TIMER 
+  ---------------------------------------------- */
+  function startProgressTimer() {
+    stopProgressTimer();
+    progressTimer = window.setInterval(loadProgress, progressRefreshMs);
+  }
+
+  /* ---------------------------------------------- 
+  STOP PROGRESS TIMER 
+  ---------------------------------------------- */
+  function stopProgressTimer() {
+    if (progressTimer) window.clearInterval(progressTimer);
+    progressTimer = null;
+  }
+
+  /* ---------------------------------------------- 
+  MERGE SUBMITTED INTO PROGRESS 
+  ---------------------------------------------- */
+  function mergeSubmittedIntoProgress(items) {
+    const map = new Map(items.map(item => [progressKey(item), item]));
+    rows.forEach(row => {
+      const key = progressKey(row);
+      if (!map.has(key)) {
+        map.set(key, {
+          progressId: row.submissionId || key,
+          examId: row.examId,
+          examTitle: row.examTitle,
+          studentName: row.studentName,
+          classId: row.classId,
+          status: "submitted",
+          progressPercent: 100,
+          submittedAt: row.submittedAt,
+          lastSeenAt: row.submittedAt,
+          timeSpentSeconds: row.timeSpentSeconds,
+          answeredCount: row.totalQuestions || "",
+          totalQuestions: row.totalQuestions || ""
+        });
+      }
+    });
+    return Array.from(map.values()).sort((a, b) => new Date(b.lastSeenAt || b.submittedAt || 0) - new Date(a.lastSeenAt || a.submittedAt || 0));
+  }
+
+  /* ---------------------------------------------- 
+  PROGRESS KEY 
+  ---------------------------------------------- */
+  function progressKey(item) {
+    return `${item.examId || ""}|${item.classId || ""}|${item.studentName || ""}`.toLowerCase();
+  }
+
+  /* ---------------------------------------------- 
+  RENDER PROGRESS ROWS 
+  ---------------------------------------------- */
+  function renderProgressRows() {
+    if (!progressBody) return;
+    if (!progressRows.length) {
+      progressBody.innerHTML = `<tr><td colspan="7">No live progress found for this class yet.</td></tr>`;
+      return;
+    }
+
+    progressBody.innerHTML = progressRows.map(row => {
+      const liveStatus = progressStatusText(row);
+      const percent = clamp(Number(row.progressPercent) || 0, 0, 100);
+      const answered = row.answeredCount !== undefined && row.totalQuestions ? `${row.answeredCount}/${row.totalQuestions}` : `${percent}%`;
+      return `
+        <tr>
+          <td><strong>${escapeHtml(row.studentName || "—")}</strong><br><span class="muted tiny-text">${escapeHtml(row.classId || "")}</span></td>
+          <td>${escapeHtml(row.examTitle || row.examId || "—")}</td>
+          <td><span class="live-status ${liveStatus.className}">${liveStatus.label}</span></td>
+          <td>
+            <div class="live-progress-line"><span style="width:${percent}%"></span></div>
+            <span class="tiny-text">${escapeHtml(answered)}</span>
+          </td>
+          <td>${formatCurrent(row)}</td>
+          <td>${escapeHtml(formatDate(row.lastSeenAt || row.submittedAt))}</td>
+          <td>${formatSeconds(row.timeSpentSeconds)}</td>
+        </tr>
+      `;
+    }).join("");
+  }
+
+  /* ---------------------------------------------- 
+  PROGRESS STATUS TEXT 
+  ---------------------------------------------- */
+  function progressStatusText(row) {
+    if (String(row.status || "").toLowerCase() === "submitted") return { label: "Submitted", className: "submitted" };
+    if (isProgressStale(row)) return { label: "Connection lost", className: "lost" };
+    return { label: "In progress", className: "active" };
+  }
+
+  /* ---------------------------------------------- 
+  IS PROGRESS STALE 
+  ---------------------------------------------- */
+  function isProgressStale(row) {
+    const last = new Date(row.lastSeenAt || 0).getTime();
+    if (!Number.isFinite(last)) return true;
+    return (Date.now() - last) > progressStaleSeconds * 1000;
+  }
+
+  /* ---------------------------------------------- 
+  FORMAT CURRENT 
+  ---------------------------------------------- */
+  function formatCurrent(row) {
+    const part = row.currentPart ? String(row.currentPart).replace("part", "Part ") : "—";
+    const question = row.currentQuestion ? `Q${row.currentQuestion}` : "";
+    return `${escapeHtml(part)} ${escapeHtml(question)}`.trim();
+  }
+
+  /* ---------------------------------------------- 
+  FORMAT SECONDS 
+  ---------------------------------------------- */
+  function formatSeconds(value) {
+    const total = Number(value);
+    if (!Number.isFinite(total) || total < 0) return "—";
+    const minutes = Math.floor(total / 60);
+    const seconds = Math.round(total % 60);
+    return `${minutes}:${String(seconds).padStart(2, "0")}`;
+  }
+
+  /* ---------------------------------------------- 
+  CLAMP 
+  ---------------------------------------------- */
+  function clamp(value, min, max) {
+    return Math.max(min, Math.min(max, value));
   }
 
   /* ---------------------------------------------- 
@@ -792,9 +962,14 @@
     classIdInput.value = "";
     examSelect.value = "";
     rows = [];
+    progressRows = [];
+    stopProgressTimer();
+    renderProgressRows();
     renderRows();
     updateSummary();
     status.textContent = "Enter a class ID and load results.";
+    if (progressStatus) progressStatus.textContent = "Load a class to supervise exams in progress.";
+    if (progressUpdatedAt) progressUpdatedAt.textContent = "Not updated yet";
   }
 
   /* ---------------------------------------------- 
