@@ -140,6 +140,7 @@
     dom.startScreen.classList.add("hidden");
     dom.examShell.classList.remove("hidden");
     renderApp();
+    startLiveProgress();
   }
 
   /* ---------------------------------------------- 

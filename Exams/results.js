@@ -28,6 +28,8 @@
   const answerKeyCache = new Map();
   const progressRefreshMs = Number(config.DASHBOARD_PROGRESS_REFRESH_MS) || 20000;
   const progressStaleSeconds = Number(config.PROGRESS_STALE_SECONDS) || 90;
+  const progressActiveWindowMs = Number(config.PROGRESS_ACTIVE_WINDOW_MS) || 3 * 60 * 60 * 1000;
+  const progressSubmittedWindowMs = Number(config.PROGRESS_SUBMITTED_WINDOW_MS) || 15 * 60 * 1000;
 
   const WRITING_TASK_META = {
     1: { part: 1, partId: "part1", question: 1, label: "Part 1", taskType: "Essay", title: "Essay: environment and everyday action", targetReader: "Your English teacher", prompt: "In your English class you have been talking about the environment.\n\nSome people say that schools and companies should do much more to reduce waste and pollution. Do you agree?\n\nNotes: transport; daily habits; your own idea\n\nWrite an essay using all the notes and giving reasons for your point of view." },
@@ -226,7 +228,7 @@
       const res = await fetch(url.toString());
       const data = await res.json().catch(() => ({}));
       if (!res.ok || data.success === false) throw new Error(data.error || `HTTP ${res.status}`);
-      progressRows = mergeSubmittedIntoProgress(data.items || []);
+      progressRows = filterVisibleProgressRows(data.items || []);
       renderProgressRows();
       if (progressStatus) progressStatus.textContent = `${progressRows.length} student(s) monitored. Auto-refresh every ${Math.round(progressRefreshMs / 1000)} seconds.`;
       if (progressUpdatedAt) progressUpdatedAt.textContent = `Updated ${new Date().toLocaleTimeString()}`;
@@ -252,30 +254,20 @@
   }
 
   /* ---------------------------------------------- 
-  MERGE SUBMITTED INTO PROGRESS 
+  FILTER VISIBLE PROGRESS ROWS 
   ---------------------------------------------- */
-  function mergeSubmittedIntoProgress(items) {
-    const map = new Map(items.map(item => [progressKey(item), item]));
-    rows.forEach(row => {
-      const key = progressKey(row);
-      if (!map.has(key)) {
-        map.set(key, {
-          progressId: row.submissionId || key,
-          examId: row.examId,
-          examTitle: row.examTitle,
-          studentName: row.studentName,
-          classId: row.classId,
-          status: "submitted",
-          progressPercent: 100,
-          submittedAt: row.submittedAt,
-          lastSeenAt: row.submittedAt,
-          timeSpentSeconds: row.timeSpentSeconds,
-          answeredCount: row.totalQuestions || "",
-          totalQuestions: row.totalQuestions || ""
-        });
-      }
-    });
-    return Array.from(map.values()).sort((a, b) => new Date(b.lastSeenAt || b.submittedAt || 0) - new Date(a.lastSeenAt || a.submittedAt || 0));
+  function filterVisibleProgressRows(items) {
+    const now = Date.now();
+    return (items || [])
+      .filter(item => {
+        const last = new Date(item.lastSeenAt || item.submittedAt || 0).getTime();
+        if (!Number.isFinite(last)) return false;
+        const age = now - last;
+        const statusText = String(item.status || "").toLowerCase();
+        if (statusText === "submitted") return age <= progressSubmittedWindowMs;
+        return age <= progressActiveWindowMs;
+      })
+      .sort((a, b) => new Date(b.lastSeenAt || b.submittedAt || 0) - new Date(a.lastSeenAt || a.submittedAt || 0));
   }
 
   /* ---------------------------------------------- 
@@ -752,11 +744,13 @@
     const title = String(row?.examTitle || "").toLowerCase();
     const skill = String(row?.skill || "").toLowerCase();
     if (id.includes("writing") || title.includes("writing") || skill === "writing") return true;
+
     const payload = payloadFromRow(row);
-    if (String(payload.skill || "").toLowerCase() === "writing") return true;
-    if (Array.isArray(parseJsonDeep(payload.writingSamples, [])) && parseJsonDeep(payload.writingSamples, []).length) return true;
-    const answers = parseJsonDeep(payload.answers, {});
-    return Boolean(answers?.part1 || answers?.part2);
+    const payloadSkill = String(payload.skill || "").toLowerCase();
+    if (payloadSkill === "writing") return true;
+
+    const samples = parseJsonDeep(payload.writingSamples, []);
+    return Array.isArray(samples) && samples.some(sample => String(sample?.answer || "").trim());
   }
 
   /* ---------------------------------------------- 

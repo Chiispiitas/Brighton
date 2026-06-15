@@ -134,6 +134,7 @@
     dom.startScreen.classList.add("hidden");
     dom.examShell.classList.remove("hidden");
     renderApp({ restoreScroll: true });
+    startLiveProgress();
     if (needsAudioGate) openAudioGate();
   }
 
