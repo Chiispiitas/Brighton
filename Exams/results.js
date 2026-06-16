@@ -287,7 +287,7 @@
       return;
     }
 
-    progressBody.innerHTML = progressRows.map(row => {
+    progressBody.innerHTML = progressRows.map((row, index) => {
       const liveStatus = progressStatusText(row);
       const percent = clamp(Number(row.progressPercent) || 0, 0, 100);
       const answered = row.answeredCount !== undefined && row.totalQuestions ? `${row.answeredCount}/${row.totalQuestions}` : `${percent}%`;
