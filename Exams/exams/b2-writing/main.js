@@ -32,6 +32,7 @@
     closeMenuBtn: $("#closeMenuBtn"),
     closeMenuOptionBtn: $("#closeMenuOptionBtn"),
     overviewBtn: $("#overviewBtn"),
+    submitMenuBtn: $("#submitMenuBtn"),
     resetBtn: $("#resetBtn"),
     modalRoot: $("#modalRoot"),
     toast: $("#toast")
@@ -69,6 +70,7 @@
     dom.closeMenuBtn.addEventListener("click", closeMenu);
     dom.closeMenuOptionBtn.addEventListener("click", closeMenu);
     dom.overviewBtn.addEventListener("click", openOverview);
+    if (dom.submitMenuBtn) dom.submitMenuBtn.addEventListener("click", requestSubmitFromMenu);
     dom.resetBtn.addEventListener("click", resetTest);
     dom.sideMenu.addEventListener("click", event => { if (event.target === dom.sideMenu) closeMenu(); });
   }
@@ -229,13 +231,15 @@
 
     if (part.id === "part1") {
       const item = part.items[0];
-      dom.mainContent.innerHTML = `${panelHeader}${renderWritingWorkspace(part, item)}</section>`;
+      dom.mainContent.innerHTML = `${panelHeader}${renderWritingWorkspace(part, item)}${renderEndSubmitCard()}</section>`;
       bindEditor(part.id, item.q);
+      bindEndSubmitCard();
       return;
     }
 
-    dom.mainContent.innerHTML = `${panelHeader}${renderPart2Workspace(part)}</section>`;
+    dom.mainContent.innerHTML = `${panelHeader}${renderPart2Workspace(part)}${renderEndSubmitCard()}</section>`;
     bindPart2();
+    bindEndSubmitCard();
   }
 
   /* ---------------------------------------------- 
@@ -654,6 +658,47 @@
   function closeMenu() {
     dom.sideMenu.classList.remove("open");
     dom.sideMenu.setAttribute("aria-hidden", "true");
+  }
+
+  /* ---------------------------------------------- 
+  REQUEST SUBMIT FROM MENU 
+  ---------------------------------------------- */
+  function requestSubmitFromMenu() {
+    closeMenu();
+    confirmSubmitWriting();
+  }
+
+  /* ---------------------------------------------- 
+  CONFIRM SUBMIT WRITING 
+  ---------------------------------------------- */
+  function confirmSubmitWriting() {
+    const confirmed = window.confirm("Submit your writing now? You will not be able to change your answers after submitting.");
+    if (!confirmed) return;
+    finishExam();
+  }
+
+  /* ---------------------------------------------- 
+  RENDER END SUBMIT CARD 
+  ---------------------------------------------- */
+  function renderEndSubmitCard() {
+    if (state.current.partId !== "part2" || state.submitted) return "";
+    return `
+      <section class="end-submit-card" aria-label="Submit writing">
+        <p class="eyebrow">End of writing exam</p>
+        <h3>Ready to submit?</h3>
+        <p>Check your essay and selected Part 2 task first. When you are ready, send your writing to Brighton Database.</p>
+        <button class="primary-btn end-submit-btn" type="button" data-submit-writing>Submit writing</button>
+      </section>
+    `;
+  }
+
+  /* ---------------------------------------------- 
+  BIND END SUBMIT CARD 
+  ---------------------------------------------- */
+  function bindEndSubmitCard() {
+    const button = $("[data-submit-writing]", dom.mainContent);
+    if (!button) return;
+    button.addEventListener("click", confirmSubmitWriting);
   }
 
   /* ---------------------------------------------- 

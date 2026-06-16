@@ -25,7 +25,7 @@
 }
 
 * { box-sizing: border-box; }
-html, body { height: 100%; margin: 0; background: #fff; color: var(--ink); font-family: "Poppins", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif; font-size: 14px; }
+html, body { height: 100%; margin: 0; background: #fff; color: var(--ink); }
 body { overflow: hidden; }
 button, input, textarea, select { font: inherit; }
 button { cursor: pointer; }
@@ -444,4 +444,41 @@ h1, h2, h3, p { margin-top: 0; }
     min-height: var(--footer-h) !important;
     max-height: var(--footer-h) !important;
   }
+}
+
+
+/* ----------------------------------------------
+SUBMIT OPTIONS
+---------------------------------------------- */
+.menu-option.submit {
+  background: var(--blue-soft, #eef7ff);
+  color: var(--blue, #1266d6);
+  border-color: rgba(18,102,214,.22);
+}
+
+.end-submit-card {
+  margin: 26px auto 4px;
+  padding: clamp(20px, 4vw, 32px);
+  border: 3px solid var(--yellow);
+  border-radius: var(--radius);
+  background: rgba(255,255,255,.98);
+  box-shadow: var(--shadow);
+  text-align: center;
+}
+
+.end-submit-card h3 {
+  margin: 4px 0 8px;
+  color: var(--ink);
+  font-size: clamp(23px, 4vw, 34px);
+  letter-spacing: -.04em;
+}
+
+.end-submit-card p {
+  max-width: 560px;
+  margin: 0 auto 14px;
+  color: var(--muted);
+}
+
+.end-submit-btn {
+  min-width: 210px;
 }

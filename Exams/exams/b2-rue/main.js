@@ -30,6 +30,7 @@
     closeMenuBtn: $("#closeMenuBtn"),
     closeMenuOptionBtn: $("#closeMenuOptionBtn"),
     overviewBtn: $("#overviewBtn"),
+    submitMenuBtn: $("#submitMenuBtn"),
     resetBtn: $("#resetBtn"),
     modalRoot: $("#modalRoot"),
     toast: $("#toast")
@@ -88,6 +89,7 @@
     dom.closeMenuBtn.addEventListener("click", closeMenu);
     dom.closeMenuOptionBtn.addEventListener("click", closeMenu);
     dom.overviewBtn.addEventListener("click", () => { closeMenu(); openOverview(); });
+    if (dom.submitMenuBtn) dom.submitMenuBtn.addEventListener("click", requestSubmitFromMenu);
     dom.resetBtn.addEventListener("click", resetTest);
 
     dom.mainContent.addEventListener("scroll", debounce(() => {
@@ -236,8 +238,9 @@
       dom.mainContent.innerHTML = `<section class="exam-panel"><p>Renderer missing for ${escape(part.id)}</p></section>`;
       return;
     }
-    dom.mainContent.innerHTML = renderer.render(part, state, helpers);
+    dom.mainContent.innerHTML = `${renderer.render(part, state, helpers)}${renderEndSubmitCard()}`;
     renderer.afterRender?.(part, state, helpers);
+    bindEndSubmitCard();
     if (options.restoreScroll) {
       requestAnimationFrame(() => { dom.mainContent.scrollTop = state.scroll[part.id] || 0; });
     }
@@ -569,6 +572,47 @@
   function closeMenu() {
     dom.sideMenu.classList.remove("open");
     dom.sideMenu.setAttribute("aria-hidden", "true");
+  }
+
+  /* ---------------------------------------------- 
+  REQUEST SUBMIT FROM MENU 
+  ---------------------------------------------- */
+  function requestSubmitFromMenu() {
+    closeMenu();
+    confirmSubmitExam();
+  }
+
+  /* ---------------------------------------------- 
+  CONFIRM SUBMIT EXAM 
+  ---------------------------------------------- */
+  function confirmSubmitExam() {
+    const confirmed = window.confirm("Submit your exam now? You will not be able to change your answers after submitting.");
+    if (!confirmed) return;
+    showFinishScreen();
+  }
+
+  /* ---------------------------------------------- 
+  RENDER END SUBMIT CARD 
+  ---------------------------------------------- */
+  function renderEndSubmitCard() {
+    if (!isFinalQuestion() || state.submitted) return "";
+    return `
+      <section class="end-submit-card" aria-label="Submit exam">
+        <p class="eyebrow">End of exam</p>
+        <h3>Ready to submit?</h3>
+        <p>Review your answers first. When you are ready, send your exam to Brighton Database.</p>
+        <button class="primary-btn end-submit-btn" type="button" data-submit-exam>Submit exam</button>
+      </section>
+    `;
+  }
+
+  /* ---------------------------------------------- 
+  BIND END SUBMIT CARD 
+  ---------------------------------------------- */
+  function bindEndSubmitCard() {
+    const button = $("[data-submit-exam]", dom.mainContent);
+    if (!button) return;
+    button.addEventListener("click", confirmSubmitExam);
   }
 
   /* ---------------------------------------------- 
