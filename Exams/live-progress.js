@@ -100,7 +100,7 @@
   ---------------------------------------------- */
   function buildPayload(options, snapshot, status, extra) {
     const studentName = String(snapshot.studentName || options.studentName || "").trim();
-    const classId = String(snapshot.classId || options.classId || "").trim();
+    const classId = normalizeClassCode(snapshot.classId || options.classId || "");
     const startedAt = snapshot.startedAt || options.startedAt || new Date().toISOString();
     const progressId = snapshot.progressId || makeProgressId(options.examId, classId, studentName, startedAt);
     return {
@@ -130,6 +130,21 @@
       submittedAt: extra.submittedAt || "",
       submissionId: extra.submissionId || ""
     };
+  }
+
+
+
+  /* ---------------------------------------------- 
+  NORMALIZE CLASS CODE 
+  ---------------------------------------------- */
+  function normalizeClassCode(value) {
+    const raw = String(value || "").trim().toUpperCase();
+    const compact = raw.replace(/[^A-Z0-9]+/g, "");
+    const exact = compact.match(/^([A-Z])(\d+)$/);
+    if (exact) return `${exact[1]}-${exact[2]}`;
+    const loose = raw.match(/([A-Z])\D*(\d+)/);
+    if (loose) return `${loose[1]}-${loose[2]}`;
+    return raw;
   }
 
   /* ---------------------------------------------- 

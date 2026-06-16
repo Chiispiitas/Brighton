@@ -50,6 +50,7 @@
     const saved = loadState();
     if (saved && !saved.submitted) {
       state = saved;
+      state.student.classId = normalizeClassCode(state.student.classId);
       dom.continueSavedBtn.classList.remove("hidden");
       dom.studentName.value = state.student.name || "";
       dom.classId.value = state.student.classId || "";
@@ -79,11 +80,13 @@
     if (!continueSaved) {
       state = createDefaultState();
       state.student.name = dom.studentName.value.trim();
-      state.student.classId = dom.classId.value.trim();
+      state.student.classId = normalizeClassCode(dom.classId.value);
+      dom.classId.value = state.student.classId;
       state.student.startedAt = new Date().toISOString();
     } else {
       state.student.name = dom.studentName.value.trim() || state.student.name;
-      state.student.classId = dom.classId.value.trim() || state.student.classId;
+      state.student.classId = normalizeClassCode(dom.classId.value || state.student.classId);
+      dom.classId.value = state.student.classId;
       state.student.startedAt = state.student.startedAt || new Date().toISOString();
     }
 
@@ -938,6 +941,21 @@
       statusText.textContent = "The exam is complete, but it could not be saved to Brighton Database. Tell your teacher before closing this page.";
       resultBox.innerHTML = `<p class="submit-error">Save error: ${escapeHtml(error.message || String(error))}</p>`;
     }
+  }
+
+
+
+  /* ---------------------------------------------- 
+  NORMALIZE CLASS CODE 
+  ---------------------------------------------- */
+  function normalizeClassCode(value) {
+    const raw = String(value || "").trim().toUpperCase();
+    const compact = raw.replace(/[^A-Z0-9]+/g, "");
+    const exact = compact.match(/^([A-Z])(\d+)$/);
+    if (exact) return `${exact[1]}-${exact[2]}`;
+    const loose = raw.match(/([A-Z])\D*(\d+)/);
+    if (loose) return `${loose[1]}-${loose[2]}`;
+    return raw;
   }
 
   /* ---------------------------------------------- 

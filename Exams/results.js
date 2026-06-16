@@ -39,6 +39,7 @@
     4: { part: 2, partId: "part2", question: 4, label: "Part 2", taskType: "Review", title: "Review: a story that made you think", targetReader: "Readers of an English-language student website", prompt: "You see this announcement on an English-language website for students.\n\nReviews wanted\n\nHave you read a book, watched a film or seen a series which made you think about facts, fake news or real life? Write a review describing it and explaining why it made an impression on you. Say whether you would recommend it to other students.\n\nThe best reviews will be posted on the website.\n\nWrite your review." }
   };
 
+  classIdInput.addEventListener("blur", normalizeClassInput);
   loadBtn.addEventListener("click", loadResults);
   clearBtn.addEventListener("click", clearFilters);
   exportBtn.addEventListener("click", exportCsv);
@@ -87,7 +88,7 @@
   LOAD RESULTS 
   ---------------------------------------------- */
   async function loadResults() {
-    const classId = classIdInput.value.trim();
+    const classId = normalizeClassInput();
     const examId = examSelect.value.trim();
     if (!classId) {
       showToast("Enter a class ID first");
@@ -214,7 +215,7 @@
   LOAD PROGRESS 
   ---------------------------------------------- */
   async function loadProgress() {
-    const classId = classIdInput.value.trim();
+    const classId = normalizeClassInput();
     const examId = examSelect.value.trim();
     if (!classId || !apiBase || apiBase.includes("YOUR-WIX")) {
       progressRows = [];
@@ -1106,7 +1107,7 @@
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `brighton-results-${classIdInput.value.trim() || "class"}.csv`;
+    a.download = `brighton-results-${normalizeClassCode(classIdInput.value) || "class"}.csv`;
     a.click();
     URL.revokeObjectURL(url);
   }
@@ -1159,6 +1160,30 @@
       }
     }
     return current;
+  }
+
+
+
+  /* ---------------------------------------------- 
+  NORMALIZE CLASS INPUT 
+  ---------------------------------------------- */
+  function normalizeClassInput() {
+    const normalized = normalizeClassCode(classIdInput.value);
+    if (normalized) classIdInput.value = normalized;
+    return normalized;
+  }
+
+  /* ---------------------------------------------- 
+  NORMALIZE CLASS CODE 
+  ---------------------------------------------- */
+  function normalizeClassCode(value) {
+    const raw = String(value || "").trim().toUpperCase();
+    const compact = raw.replace(/[^A-Z0-9]+/g, "");
+    const exact = compact.match(/^([A-Z])(\d+)$/);
+    if (exact) return `${exact[1]}-${exact[2]}`;
+    const loose = raw.match(/([A-Z])\D*(\d+)/);
+    if (loose) return `${loose[1]}-${loose[2]}`;
+    return raw;
   }
 
   /* ---------------------------------------------- 

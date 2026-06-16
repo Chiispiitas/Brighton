@@ -52,6 +52,7 @@
   ---------------------------------------------- */
   function boot() {
     if (state.student.name) {
+      state.student.classId = normalizeClassCode(state.student.classId);
       dom.continueSavedBtn.classList.remove("hidden");
       dom.studentName.value = state.student.name;
       dom.classId.value = state.student.classId;
@@ -119,9 +120,11 @@
   START EXAM 
   ---------------------------------------------- */
   function startExam(name, classId) {
-    if (!name || !classId) return;
+    const normalizedClassId = normalizeClassCode(classId);
+    if (!name || !normalizedClassId) return;
     state.student.name = name;
-    state.student.classId = classId;
+    state.student.classId = normalizedClassId;
+    dom.classId.value = normalizedClassId;
     if (!state.student.startedAt) state.student.startedAt = new Date().toISOString();
     saveStateNow();
     showExam({ needsAudioGate: true });
@@ -1092,6 +1095,21 @@
     const active = dom.mainContent.querySelector(".question-card.active, .listening-gap-line.active, .matching-gap.active");
     if (!active) return;
     active.scrollIntoView({ behavior: "smooth", block: "center" });
+  }
+
+
+
+  /* ---------------------------------------------- 
+  NORMALIZE CLASS CODE 
+  ---------------------------------------------- */
+  function normalizeClassCode(value) {
+    const raw = String(value || "").trim().toUpperCase();
+    const compact = raw.replace(/[^A-Z0-9]+/g, "");
+    const exact = compact.match(/^([A-Z])(\d+)$/);
+    if (exact) return `${exact[1]}-${exact[2]}`;
+    const loose = raw.match(/([A-Z])\D*(\d+)/);
+    if (loose) return `${loose[1]}-${loose[2]}`;
+    return raw;
   }
 
   /* ---------------------------------------------- 
