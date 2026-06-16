@@ -553,6 +553,7 @@
   function setAnswer(partId, question, value) {
     if (!state.answers[partId]) state.answers[partId] = {};
     state.answers[partId][question] = value;
+    if (partId === "part2") state.selectedPart2Question = Number(question);
     saveState();
     if (liveProgress) liveProgress.touch();
   }
@@ -563,7 +564,9 @@
   function getProgress(part) {
     if (part.id === "part1") return { done: countWords(getAnswer("part1", 1)) > 0 ? 1 : 0, total: 1 };
     const selected = state.selectedPart2Question;
-    return { done: selected && countWords(getAnswer("part2", selected)) > 0 ? 1 : 0, total: 1 };
+    const selectedDone = selected && countWords(getAnswer("part2", selected)) > 0;
+    const anyDraftDone = part.items.some(item => countWords(getAnswer("part2", item.q)) > 0);
+    return { done: selectedDone || anyDraftDone ? 1 : 0, total: 1 };
   }
 
   /* ---------------------------------------------- 
@@ -718,6 +721,7 @@
       examTitle: exam.title,
       skill: exam.skill,
       level: exam.level,
+      touchDelayMs: 3500,
       getProgress: buildLiveProgressSnapshot
     });
     liveProgress.start();
@@ -783,10 +787,7 @@
     const part2 = examParts.find(item => item.id === "part2");
     const samples = [];
     if (part1 && part1.items[0]) samples.push(buildWritingSampleFromItem(part1, part1.items[0]));
-    if (part2) {
-      const selected = part2.items.find(item => Number(item.q) === Number(state.selectedPart2Question)) || part2.items[0];
-      if (selected) samples.push(buildWritingSampleFromItem(part2, selected));
-    }
+    if (part2) part2.items.forEach(item => samples.push(buildWritingSampleFromItem(part2, item)));
     return samples.filter(sample => String(sample.answer || "").trim());
   }
 
@@ -802,9 +803,9 @@
       label: part.label || "Part",
       taskType: item.type || item.taskType || "Writing",
       title: item.title || item.heading || `Question ${item.q}`,
-      targetReader: item.targetReader || "",
-      sourceTopic: item.sourceTopic || "",
-      prompt: item.prompt || item.text || "",
+      targetReader: "",
+      sourceTopic: "",
+      prompt: "",
       answer,
       wordCount: countWords(answer)
     };

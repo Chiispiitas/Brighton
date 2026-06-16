@@ -25,6 +25,7 @@
   let rows = [];
   let progressRows = [];
   let progressTimer = null;
+  let activeProgressPreviewId = "";
   const answerKeyCache = new Map();
   const progressRefreshMs = Number(config.DASHBOARD_PROGRESS_REFRESH_MS) || 20000;
   const progressStaleSeconds = Number(config.PROGRESS_STALE_SECONDS) || 90;
@@ -230,6 +231,7 @@
       if (!res.ok || data.success === false) throw new Error(data.error || `HTTP ${res.status}`);
       progressRows = filterVisibleProgressRows(data.items || []);
       renderProgressRows();
+      refreshOpenProgressDetails();
       if (progressStatus) progressStatus.textContent = `${progressRows.length} student(s) monitored. Auto-refresh every ${Math.round(progressRefreshMs / 1000)} seconds.`;
       if (progressUpdatedAt) progressUpdatedAt.textContent = `Updated ${new Date().toLocaleTimeString()}`;
     } catch (error) {
@@ -311,6 +313,16 @@
     document.querySelectorAll("[data-progress-details]").forEach(button => {
       button.addEventListener("click", () => openProgressDetails(progressRows[Number(button.dataset.progressDetails)]));
     });
+  }
+
+  /* ---------------------------------------------- 
+  REFRESH OPEN PROGRESS DETAILS 
+  ---------------------------------------------- */
+  function refreshOpenProgressDetails() {
+    if (!activeProgressPreviewId || modal.classList.contains("hidden")) return;
+    const latest = progressRows.find(row => (row.progressId || progressKey(row)) === activeProgressPreviewId);
+    if (!latest) return;
+    openProgressDetails(latest, { refreshing: true });
   }
 
   /* ---------------------------------------------- 
@@ -412,13 +424,14 @@
   /* ---------------------------------------------- 
   OPEN PROGRESS DETAILS 
   ---------------------------------------------- */
-  async function openProgressDetails(row) {
+  async function openProgressDetails(row, options = {}) {
+    activeProgressPreviewId = row.progressId || progressKey(row);
     const liveRow = progressRowToSubmissionRow(row);
     const payload = payloadFromRow(liveRow);
     const status = progressStatusText(row);
     modal.classList.remove("hidden");
     modal.setAttribute("aria-hidden", "false");
-    detailsContent.innerHTML = `<div class="detail-loading">Loading live answers...</div>`;
+    if (!options.refreshing) detailsContent.innerHTML = `<div class="detail-loading">Loading live answers...</div>`;
 
     const heading = modal.querySelector(".modal-head h2");
     if (heading) heading.textContent = "Live answer preview";
@@ -437,7 +450,7 @@
 
         <section class="detail-section">
           <h3>Live writing samples</h3>
-          ${samples.length ? samples.map(renderLiveWritingSample).join("") : `<p class="muted">No writing answers have been saved in live progress yet.</p>`}
+          ${samples.length ? samples.map(renderLiveWritingSample).join("") : `<p class="muted">No writing answers have been saved in live progress yet. Keep this window open and it will update automatically.</p>`}
         </section>
       `;
       return;
@@ -638,42 +651,49 @@
   EXTRACT WRITING SAMPLES 
   ---------------------------------------------- */
   function extractWritingSamples(row, payload) {
-    const samplesFromPayload = parseJsonDeep(payload?.writingSamples, []);
-    if (Array.isArray(samplesFromPayload) && samplesFromPayload.length) {
-      return samplesFromPayload.filter(sample => String(sample?.answer || "").trim()).map(enrichWritingSample);
-    }
+    const list = [];
+    const seen = new Set();
+
+    addWritingSamples(list, seen, parseJsonDeep(payload?.writingSamples, firstJsonFrom(row, ["writingSamplesJson", "writingSamples"], [])));
 
     const answers = parseJsonDeep(payload?.answers, firstJsonFrom(row, ["answersJson", "answers", "studentAnswersJson", "studentAnswers", "responsesJson", "responses"], {}));
-    const list = [];
     const part1 = getAnswerFromNested(answers, "part1", 1);
-    if (String(part1 || "").trim()) list.push(enrichWritingSample({ question: 1, answer: part1 }));
+    if (String(part1 || "").trim()) addWritingSample(list, seen, { question: 1, answer: part1 });
 
-    const selected = Number(resolvePart2SelectedQuestion(payload?.part2SelectedQuestion, answers) || 0);
-    const part2Questions = selected ? [selected] : [2, 3, 4];
-    part2Questions.forEach(question => {
+    [2, 3, 4].forEach(question => {
       const answer = getAnswerFromNested(answers, "part2", question);
-      if (String(answer || "").trim()) list.push(enrichWritingSample({ question, answer }));
+      if (String(answer || "").trim()) addWritingSample(list, seen, { part: 2, partId: "part2", question, answer });
     });
 
-    const drafts = parseJsonDeep(payload?.part2Drafts, firstJsonFrom(row, ["part2DraftsJson", "part2Drafts"], []));
-    if (Array.isArray(drafts) && drafts.length) {
-      drafts.forEach(draft => {
-        const question = Number(draft?.question || draft?.q);
-        if (!question || list.some(sample => Number(sample.question) === question)) return;
-        if (String(draft?.answer || "").trim()) list.push(enrichWritingSample(draft));
-      });
-    }
-
-    const answerList = parseJsonDeep(payload?.answerList, firstJsonFrom(row, ["answerListJson", "answerList"], []));
-    if (Array.isArray(answerList)) {
-      answerList.forEach(item => {
-        const question = Number(item?.question || item?.q);
-        if (!question || list.some(sample => Number(sample.question) === question)) return;
-        if (String(item?.answer || "").trim()) list.push(enrichWritingSample(item));
-      });
-    }
+    addWritingSamples(list, seen, parseJsonDeep(payload?.part2Drafts, firstJsonFrom(row, ["part2DraftsJson", "part2Drafts"], [])));
+    addWritingSamples(list, seen, parseJsonDeep(payload?.answerList, firstJsonFrom(row, ["answerListJson", "answerList"], [])));
 
     return list.sort((a, b) => Number(a.part || 0) - Number(b.part || 0) || Number(a.question || 0) - Number(b.question || 0));
+  }
+
+  /* ---------------------------------------------- 
+  ADD WRITING SAMPLES 
+  ---------------------------------------------- */
+  function addWritingSamples(list, seen, samples) {
+    if (!Array.isArray(samples)) return;
+    samples.forEach(sample => addWritingSample(list, seen, sample));
+  }
+
+  /* ---------------------------------------------- 
+  ADD WRITING SAMPLE 
+  ---------------------------------------------- */
+  function addWritingSample(list, seen, sample) {
+    const answer = sample?.answer ?? sample?.value ?? "";
+    if (!String(answer || "").trim()) return;
+    const enriched = enrichWritingSample({ ...sample, answer });
+    const key = `${enriched.partId || ""}-${enriched.question || ""}`;
+    const existingIndex = list.findIndex(item => `${item.partId || ""}-${item.question || ""}` === key);
+    if (existingIndex >= 0) {
+      if (String(answer).length > String(list[existingIndex].answer || "").length) list[existingIndex] = enriched;
+      return;
+    }
+    seen.add(key);
+    list.push(enriched);
   }
 
   /* ---------------------------------------------- 
@@ -1052,6 +1072,7 @@
   CLOSE MODAL 
   ---------------------------------------------- */
   function closeModal() {
+    activeProgressPreviewId = "";
     modal.classList.add("hidden");
     modal.setAttribute("aria-hidden", "true");
   }
@@ -1064,6 +1085,7 @@
     examSelect.value = "";
     rows = [];
     progressRows = [];
+    activeProgressPreviewId = "";
     stopProgressTimer();
     renderProgressRows();
     renderRows();

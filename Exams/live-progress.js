@@ -8,7 +8,7 @@
   const config = window.BRIGHTON_SITE_CONFIG || {};
   const apiBase = String(config.API_BASE_URL || "").replace(/\/$/, "");
   const intervalMs = Number(config.LIVE_PROGRESS_INTERVAL_MS) || 30000;
-  const touchDelayMs = Number(config.LIVE_PROGRESS_TOUCH_DELAY_MS) || 8000;
+  const defaultTouchDelayMs = Number(config.LIVE_PROGRESS_TOUCH_DELAY_MS) || 8000;
 
   /* ---------------------------------------------- 
   CREATE 
@@ -16,6 +16,7 @@
   function create(options) {
     let timer = null;
     let touchTimer = null;
+    const touchDelayMs = Number(options.touchDelayMs) || defaultTouchDelayMs;
     let running = false;
     let lastStatus = "waiting";
     const badge = createBadge();
