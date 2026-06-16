@@ -742,7 +742,71 @@
       answeredCount: totals.answered,
       totalQuestions: totals.total,
       progressPercent: totals.total ? Math.round((totals.answered / totals.total) * 100) : 0,
-      timeSpentSeconds: calculateLiveTimeSpentSeconds()
+      timeSpentSeconds: calculateLiveTimeSpentSeconds(),
+      answers: state.answers,
+      answerList: buildWritingAnswerList(),
+      writingSamples: buildWritingSamples(),
+      part2SelectedQuestion: state.selectedPart2Question || "",
+      part2Drafts: buildPart2Drafts(),
+      flagged: Object.keys(state.flagged || {}).map(Number).sort((a, b) => a - b),
+      notes: state.notes || ""
+    };
+  }
+
+  /* ---------------------------------------------- 
+  BUILD WRITING ANSWER LIST 
+  ---------------------------------------------- */
+  function buildWritingAnswerList() {
+    return buildWritingSamples().map(sample => ({
+      part: sample.part,
+      partId: sample.partId,
+      question: sample.question,
+      answer: sample.answer
+    }));
+  }
+
+  /* ---------------------------------------------- 
+  BUILD PART 2 DRAFTS 
+  ---------------------------------------------- */
+  function buildPart2Drafts() {
+    const part = examParts.find(item => item.id === "part2");
+    if (!part) return [];
+    return part.items.map(item => buildWritingSampleFromItem(part, item));
+  }
+
+  /* ---------------------------------------------- 
+  BUILD WRITING SAMPLES 
+  ---------------------------------------------- */
+  function buildWritingSamples() {
+    resolveSelectedPart2FromDrafts();
+    const part1 = examParts.find(item => item.id === "part1");
+    const part2 = examParts.find(item => item.id === "part2");
+    const samples = [];
+    if (part1 && part1.items[0]) samples.push(buildWritingSampleFromItem(part1, part1.items[0]));
+    if (part2) {
+      const selected = part2.items.find(item => Number(item.q) === Number(state.selectedPart2Question)) || part2.items[0];
+      if (selected) samples.push(buildWritingSampleFromItem(part2, selected));
+    }
+    return samples.filter(sample => String(sample.answer || "").trim());
+  }
+
+  /* ---------------------------------------------- 
+  BUILD WRITING SAMPLE FROM ITEM 
+  ---------------------------------------------- */
+  function buildWritingSampleFromItem(part, item) {
+    const answer = getAnswer(part.id, item.q) || "";
+    return {
+      part: Number(String(part.id).replace("part", "")) || 0,
+      partId: part.id,
+      question: item.q,
+      label: part.label || "Part",
+      taskType: item.type || item.taskType || "Writing",
+      title: item.title || item.heading || `Question ${item.q}`,
+      targetReader: item.targetReader || "",
+      sourceTopic: item.sourceTopic || "",
+      prompt: item.prompt || item.text || "",
+      answer,
+      wordCount: countWords(answer)
     };
   }
 

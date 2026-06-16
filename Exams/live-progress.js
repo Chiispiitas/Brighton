@@ -119,6 +119,13 @@
       totalQuestions: Number(snapshot.totalQuestions) || 0,
       progressPercent: Number(snapshot.progressPercent) || 0,
       timeSpentSeconds: Number(snapshot.timeSpentSeconds) || 0,
+      answers: snapshot.answers || {},
+      answerList: Array.isArray(snapshot.answerList) ? snapshot.answerList : [],
+      writingSamples: Array.isArray(snapshot.writingSamples) ? snapshot.writingSamples : [],
+      part2SelectedQuestion: snapshot.part2SelectedQuestion || "",
+      part2Drafts: Array.isArray(snapshot.part2Drafts) ? snapshot.part2Drafts : [],
+      flagged: Array.isArray(snapshot.flagged) ? snapshot.flagged : [],
+      notes: snapshot.notes || "",
       submittedAt: extra.submittedAt || "",
       submissionId: extra.submissionId || ""
     };

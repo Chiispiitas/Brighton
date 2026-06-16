@@ -185,7 +185,7 @@
   PAYLOAD FROM ROW 
   ---------------------------------------------- */
   function payloadFromRow(row) {
-    const raw = firstJsonFrom(row, ["rawPayloadJson", "rawPayload", "payloadJson", "payload"], {});
+    const raw = firstJsonFrom(row, ["rawPayloadJson", "rawProgressJson", "rawPayload", "payloadJson", "payload"], {});
     const payload = raw?.payload || raw || {};
     const answers = firstJsonFrom(row, ["answersJson", "answers", "studentAnswersJson", "studentAnswers", "responsesJson", "responses"], payload.answers || {});
     const answerList = firstJsonFrom(row, ["answerListJson", "answerList"], payload.answerList || []);
@@ -283,7 +283,7 @@
   function renderProgressRows() {
     if (!progressBody) return;
     if (!progressRows.length) {
-      progressBody.innerHTML = `<tr><td colspan="7">No live progress found for this class yet.</td></tr>`;
+      progressBody.innerHTML = `<tr><td colspan="8">No live progress found for this class yet.</td></tr>`;
       return;
     }
 
@@ -303,9 +303,14 @@
           <td>${formatCurrent(row)}</td>
           <td>${escapeHtml(formatDate(row.lastSeenAt || row.submittedAt))}</td>
           <td>${formatSeconds(row.timeSpentSeconds)}</td>
+          <td><button class="secondary-btn" data-progress-details="${index}" type="button">Preview</button></td>
         </tr>
       `;
     }).join("");
+
+    document.querySelectorAll("[data-progress-details]").forEach(button => {
+      button.addEventListener("click", () => openProgressDetails(progressRows[Number(button.dataset.progressDetails)]));
+    });
   }
 
   /* ---------------------------------------------- 
@@ -405,9 +410,111 @@
   }
 
   /* ---------------------------------------------- 
+  OPEN PROGRESS DETAILS 
+  ---------------------------------------------- */
+  async function openProgressDetails(row) {
+    const liveRow = progressRowToSubmissionRow(row);
+    const payload = payloadFromRow(liveRow);
+    const status = progressStatusText(row);
+    modal.classList.remove("hidden");
+    modal.setAttribute("aria-hidden", "false");
+    detailsContent.innerHTML = `<div class="detail-loading">Loading live answers...</div>`;
+
+    const heading = modal.querySelector(".modal-head h2");
+    if (heading) heading.textContent = "Live answer preview";
+
+    if (isWritingSubmission(liveRow)) {
+      const samples = extractWritingSamples(liveRow, payload);
+      detailsContent.innerHTML = `
+        <div class="detail-grid detail-grid-wide">
+          <div class="detail-box"><span>Student</span><strong>${escapeHtml(row.studentName || payload.studentName || "—")}</strong></div>
+          <div class="detail-box"><span>Class</span><strong>${escapeHtml(row.classId || payload.classId || "—")}</strong></div>
+          <div class="detail-box"><span>Exam</span><strong>${escapeHtml(row.examTitle || payload.examTitle || row.examId || "—")}</strong></div>
+          <div class="detail-box"><span>Status</span><strong>${escapeHtml(status.label)}</strong></div>
+          <div class="detail-box"><span>Progress</span><strong>${escapeHtml(row.answeredCount ?? "—")}/${escapeHtml(row.totalQuestions ?? "—")}</strong></div>
+          <div class="detail-box"><span>Last update</span><strong>${escapeHtml(formatDate(row.lastSeenAt || row.submittedAt))}</strong></div>
+        </div>
+
+        <section class="detail-section">
+          <h3>Live writing samples</h3>
+          ${samples.length ? samples.map(renderLiveWritingSample).join("") : `<p class="muted">No writing answers have been saved in live progress yet.</p>`}
+        </section>
+      `;
+      return;
+    }
+
+    let review;
+    try {
+      review = await buildAnswerReview(liveRow);
+    } catch (error) {
+      review = { rows: [], error: error.message || String(error) };
+    }
+
+    detailsContent.innerHTML = `
+      <div class="detail-grid detail-grid-wide">
+        <div class="detail-box"><span>Student</span><strong>${escapeHtml(row.studentName || payload.studentName || "—")}</strong></div>
+        <div class="detail-box"><span>Class</span><strong>${escapeHtml(row.classId || payload.classId || "—")}</strong></div>
+        <div class="detail-box"><span>Exam</span><strong>${escapeHtml(row.examTitle || payload.examTitle || row.examId || "—")}</strong></div>
+        <div class="detail-box"><span>Status</span><strong>${escapeHtml(status.label)}</strong></div>
+        <div class="detail-box"><span>Progress</span><strong>${escapeHtml(row.answeredCount ?? "—")}/${escapeHtml(row.totalQuestions ?? "—")}</strong></div>
+        <div class="detail-box"><span>Last update</span><strong>${escapeHtml(formatDate(row.lastSeenAt || row.submittedAt))}</strong></div>
+      </div>
+
+      <section class="detail-section">
+        <h3>Live answers vs answer key</h3>
+        ${review?.error ? `<p class="detail-warning">${escapeHtml(review.error)}</p>` : ""}
+        ${renderAnswerReview(review.rows || [])}
+      </section>
+    `;
+  }
+
+  /* ---------------------------------------------- 
+  PROGRESS ROW TO SUBMISSION ROW 
+  ---------------------------------------------- */
+  function progressRowToSubmissionRow(row) {
+    const raw = parseJsonDeep(row?.rawProgressJson, {});
+    return {
+      ...row,
+      rawPayloadJson: row.rawProgressJson || JSON.stringify(raw || {}),
+      answersJson: row.answersJson || JSON.stringify(raw.answers || {}),
+      answerListJson: row.answerListJson || JSON.stringify(raw.answerList || []),
+      writingSamplesJson: row.writingSamplesJson || JSON.stringify(raw.writingSamples || []),
+      flaggedJson: JSON.stringify(raw.flagged || []),
+      notes: raw.notes || "",
+      submittedAt: row.lastSeenAt || row.submittedAt,
+      submittedAtLocal: formatDate(row.lastSeenAt || row.submittedAt),
+      status: row.status || "in_progress"
+    };
+  }
+
+  /* ---------------------------------------------- 
+  RENDER LIVE WRITING SAMPLE 
+  ---------------------------------------------- */
+  function renderLiveWritingSample(sample) {
+    const answer = sample.answer || "";
+    const wordCount = Number(sample.wordCount ?? countWords(answer));
+    return `
+      <article class="writing-sample-card">
+        <div class="writing-sample-head">
+          <div>
+            <p class="eyebrow">${escapeHtml(sample.label || `Part ${sample.part || "—"}`)} · Question ${escapeHtml(sample.question ?? "—")}</p>
+            <h4>${escapeHtml(sample.taskType || "Writing")} — ${escapeHtml(sample.title || "Writing task")}</h4>
+            <p class="muted">${escapeHtml(sample.targetReader ? `Target reader: ${sample.targetReader}` : "")}</p>
+          </div>
+          <span class="word-count-pill">${wordCount} words</span>
+        </div>
+        ${sample.prompt ? `<details class="writing-prompt-details"><summary>View task prompt</summary><p>${escapeHtml(sample.prompt).replace(/\n/g, "<br>")}</p></details>` : ""}
+        <div class="writing-answer-box">${escapeHtml(answer || "No answer saved yet.").replace(/\n/g, "<br>")}</div>
+      </article>
+    `;
+  }
+
+  /* ---------------------------------------------- 
   OPEN DETAILS 
   ---------------------------------------------- */
   async function openDetails(row) {
+    const heading = modal.querySelector(".modal-head h2");
+    if (heading) heading.textContent = "Submission details";
     modal.classList.remove("hidden");
     modal.setAttribute("aria-hidden", "false");
     detailsContent.innerHTML = `<div class="detail-loading">Loading submission details...</div>`;

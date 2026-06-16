@@ -643,7 +643,11 @@
       answeredCount: totals.answered,
       totalQuestions: totals.total,
       progressPercent: totals.total ? Math.round((totals.answered / totals.total) * 100) : 0,
-      timeSpentSeconds: calculateLiveTimeSpentSeconds()
+      timeSpentSeconds: calculateLiveTimeSpentSeconds(),
+      answers: state.answers,
+      answerList: buildAnswerList(),
+      flagged: Object.keys(state.flagged).map(Number).sort((a, b) => a - b),
+      notes: state.notes || ""
     };
   }
 
