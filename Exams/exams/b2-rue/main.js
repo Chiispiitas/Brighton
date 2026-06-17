@@ -425,6 +425,14 @@
   }
 
   /* ---------------------------------------------- 
+  IS LAST PART 
+  ---------------------------------------------- */
+  function isLastPart() {
+    const lastPart = examParts[examParts.length - 1];
+    return Boolean(lastPart && state.current.partId === lastPart.id);
+  }
+
+  /* ---------------------------------------------- 
   GET ANSWER 
   ---------------------------------------------- */
   function getAnswer(partId, q) {
@@ -595,12 +603,12 @@
   RENDER END SUBMIT CARD 
   ---------------------------------------------- */
   function renderEndSubmitCard() {
-    if (!isFinalQuestion() || state.submitted) return "";
+    if (state.submitted || !isLastPart()) return "";
     return `
       <section class="end-submit-card" aria-label="Submit exam">
-        <p class="eyebrow">End of exam</p>
+        <p class="eyebrow">Submit exam</p>
         <h3>Ready to submit?</h3>
-        <p>Review your answers first. When you are ready, send your exam to Brighton Database.</p>
+        <p>You can submit from here at any time. Review your answers first, then send your exam to Brighton Database.</p>
         <button class="primary-btn end-submit-btn" type="button" data-submit-exam>Submit exam</button>
       </section>
     `;

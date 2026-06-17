@@ -512,6 +512,14 @@
   }
 
   /* ---------------------------------------------- 
+  IS LAST PART 
+  ---------------------------------------------- */
+  function isLastPart() {
+    const lastPart = examParts[examParts.length - 1];
+    return Boolean(lastPart && state.current.partId === lastPart.id);
+  }
+
+  /* ---------------------------------------------- 
   GET PART2 ITEM 
   ---------------------------------------------- */
   function getPart2Item() {
@@ -681,12 +689,12 @@
   RENDER END SUBMIT CARD 
   ---------------------------------------------- */
   function renderEndSubmitCard() {
-    if (state.current.partId !== "part2" || state.submitted) return "";
+    if (state.submitted || !isLastPart()) return "";
     return `
       <section class="end-submit-card" aria-label="Submit writing">
-        <p class="eyebrow">End of writing exam</p>
+        <p class="eyebrow">Submit writing</p>
         <h3>Ready to submit?</h3>
-        <p>Check your essay and selected Part 2 task first. When you are ready, send your writing to Brighton Database.</p>
+        <p>You can submit from here at any time. Check your essay and selected Part 2 task first, then send your writing to Brighton Database.</p>
         <button class="primary-btn end-submit-btn" type="button" data-submit-writing>Submit writing</button>
       </section>
     `;
