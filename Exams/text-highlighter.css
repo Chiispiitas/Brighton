@@ -40,9 +40,11 @@
 }
 
 .text-highlight-toolbar svg {
-  width: 21px;
-  height: 21px;
-  fill: currentColor;
+  width: 22px;
+  height: 22px;
+  display: block;
+  fill: none;
+  stroke: currentColor;
   pointer-events: none;
 }
 
@@ -73,7 +75,7 @@
   }
 
   .text-highlight-toolbar svg {
-    width: 20px;
-    height: 20px;
+    width: 21px;
+    height: 21px;
   }
 }
