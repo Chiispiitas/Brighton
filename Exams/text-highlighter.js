@@ -27,12 +27,16 @@ function createTextHighlightToolbar() {
   let highlightBtn = document.createElement("button");
   highlightBtn.type = "button";
   highlightBtn.className = "highlight-action";
-  highlightBtn.textContent = "Highlight";
+  highlightBtn.setAttribute("aria-label", "Highlight text");
+  highlightBtn.title = "Highlight text";
+  highlightBtn.innerHTML = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4.7 17.9 3 21l3.1-1.7L17.5 7.9l-1.4-1.4L4.7 17.9Zm14-13.2-1.4-1.4c-.5-.5-1.3-.5-1.8 0l-1 1 3.2 3.2 1-1c.5-.5.5-1.3 0-1.8ZM13.7 5.1 5.9 12.9l5.2 5.2 7.8-7.8-5.2-5.2Zm-2.1 14.8H21v-2.1h-7.3l-2.1 2.1Z"></path></svg>`;
 
   let clearBtn = document.createElement("button");
   clearBtn.type = "button";
   clearBtn.className = "highlight-clear";
-  clearBtn.textContent = "Clear";
+  clearBtn.setAttribute("aria-label", "Clear highlight");
+  clearBtn.title = "Clear highlight";
+  clearBtn.innerHTML = `<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.2 5 5 6.2l4.4 4.4L3 17v4h4l6.4-6.4 4.4 4.4 1.2-1.2L6.2 5Zm-.6 14H5v-.6l5.6-5.6 1.2 1.2L5.6 19ZM19.5 4.5l-2-2c-.4-.4-1.1-.4-1.5 0l-4.8 4.8 3.2 3.2 5.1-5.1c.2-.2.2-.6 0-.9ZM20.5 20.5 3.5 3.5 2.2 4.8l17 17 1.3-1.3Z"></path></svg>`;
 
   highlightBtn.addEventListener("mousedown", keepTextSelection);
   clearBtn.addEventListener("mousedown", keepTextSelection);

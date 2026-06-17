@@ -28,15 +28,22 @@
 }
 
 .text-highlight-toolbar button {
+  display: grid;
+  place-items: center;
+  width: 38px;
+  height: 38px;
   border: 0;
   border-radius: 999px;
-  padding: 8px 12px;
-  font-family: "Poppins", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
-  font-size: 11px;
-  font-weight: 900;
-  letter-spacing: 0.04em;
-  text-transform: uppercase;
+  padding: 0;
   cursor: pointer;
+  transition: 0.18s ease;
+}
+
+.text-highlight-toolbar svg {
+  width: 21px;
+  height: 21px;
+  fill: currentColor;
+  pointer-events: none;
 }
 
 .text-highlight-toolbar .highlight-action {
@@ -61,7 +68,12 @@
   }
 
   .text-highlight-toolbar button {
-    padding: 8px 10px;
-    font-size: 10px;
+    width: 36px;
+    height: 36px;
+  }
+
+  .text-highlight-toolbar svg {
+    width: 20px;
+    height: 20px;
   }
 }
