@@ -5,6 +5,7 @@
 ============================================== */
 
 (() => {
+  const App = window.BrightonApp || {};
   const config = window.BRIGHTON_SITE_CONFIG || {};
   const apiBase = String(config.API_BASE_URL || "").replace(/\/$/, "");
   const examGrid = document.querySelector("#examGrid");
@@ -126,15 +127,13 @@
   ESCAPE HTML 
   ---------------------------------------------- */
   function escapeHtml(value) {
-    return String(value ?? "").replace(/[&<>'"]/g, char => ({
-      "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;"
-    }[char]));
+    return App.escapeHtml ? App.escapeHtml(value) : String(value ?? "");
   }
 
   /* ---------------------------------------------- 
   ESCAPE ATTR 
   ---------------------------------------------- */
   function escapeAttr(value) {
-    return escapeHtml(value).replace(/`/g, "&#96;");
+    return App.escapeAttr ? App.escapeAttr(value) : escapeHtml(value).replace(/'/g, "&#39;");
   }
 })();

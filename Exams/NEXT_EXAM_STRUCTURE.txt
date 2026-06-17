@@ -1,0 +1,28 @@
+Brighton Exam Structure
+Made by: David Santana
+
+Shared files:
+- app-core.js: selectors, escaping, class code normalization, dates, CSV cells, common submit card.
+- live-progress.js: student progress sync and connection badge.
+- text-highlighter.js / text-highlighter.css: shared orange highlighter.
+- config.js: Brighton Database endpoint settings.
+- portal.css: teacher/results shared layout.
+
+Student exam folder:
+Exams/exams/[exam-id]/
+- index.html
+- styles.css
+- exam-data.js or skill-data.js
+- main.js
+
+Load order for student exams:
+1. ../../text-highlighter.css
+2. ../../app-core.js
+3. ../../config.js
+4. ../../live-progress.js
+5. ../../text-highlighter.js
+6. exam data files
+7. main.js
+
+Keep exam-specific files only for the skill logic and rendering.
+Common utilities should go in app-core.js.

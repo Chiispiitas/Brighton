@@ -5,6 +5,7 @@
 ============================================== */
 
 (() => {
+  const App = window.BrightonApp || {};
   const config = window.BRIGHTON_SITE_CONFIG || {};
   const apiBase = String(config.API_BASE_URL || "").replace(/\/$/, "");
   const intervalMs = Number(config.LIVE_PROGRESS_INTERVAL_MS) || 30000;
@@ -138,21 +139,15 @@
   NORMALIZE CLASS CODE 
   ---------------------------------------------- */
   function normalizeClassCode(value) {
-    const raw = String(value || "").trim().toUpperCase();
-    const compact = raw.replace(/[^A-Z0-9]+/g, "");
-    const exact = compact.match(/^([A-Z])(\d+)$/);
-    if (exact) return `${exact[1]}-${exact[2]}`;
-    const loose = raw.match(/([A-Z])\D*(\d+)/);
-    if (loose) return `${loose[1]}-${loose[2]}`;
-    return raw;
+    return App.normalizeClassCode ? App.normalizeClassCode(value) : String(value || "").trim().toUpperCase();
   }
 
   /* ---------------------------------------------- 
   MAKE PROGRESS ID 
   ---------------------------------------------- */
   function makeProgressId(examId, classId, studentName, startedAt) {
-    const base = `${examId}_${classId}_${studentName}_${startedAt}`.toLowerCase();
-    return base.normalize("NFKD").replace(/[\u0300-\u036f]/g, "").replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "").slice(0, 120);
+    const base = `${examId}_${classId}_${studentName}_${startedAt}`;
+    return App.makeSlug ? App.makeSlug(base, 120) : base.toLowerCase().replace(/[^a-z0-9]+/g, "_").slice(0, 120);
   }
 
   /* ---------------------------------------------- 

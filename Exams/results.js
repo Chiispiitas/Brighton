@@ -5,6 +5,7 @@
 ============================================== */
 
 (() => {
+  const App = window.BrightonApp || {};
   const config = window.BRIGHTON_SITE_CONFIG || {};
   const apiBase = String(config.API_BASE_URL || "").replace(/\/$/, "");
   const classIdInput = document.querySelector("#classIdInput");
@@ -1177,30 +1178,21 @@
   NORMALIZE CLASS CODE 
   ---------------------------------------------- */
   function normalizeClassCode(value) {
-    const raw = String(value || "").trim().toUpperCase();
-    const compact = raw.replace(/[^A-Z0-9]+/g, "");
-    const exact = compact.match(/^([A-Z])(\d+)$/);
-    if (exact) return `${exact[1]}-${exact[2]}`;
-    const loose = raw.match(/([A-Z])\D*(\d+)/);
-    if (loose) return `${loose[1]}-${loose[2]}`;
-    return raw;
+    return App.normalizeClassCode ? App.normalizeClassCode(value) : String(value || "").trim().toUpperCase();
   }
 
   /* ---------------------------------------------- 
   FORMAT DATE 
   ---------------------------------------------- */
   function formatDate(value) {
-    if (!value) return "—";
-    const date = new Date(value);
-    return Number.isFinite(date.getTime()) ? date.toLocaleString() : String(value);
+    return App.formatDate ? App.formatDate(value) : String(value || "—");
   }
 
   /* ---------------------------------------------- 
   CSV CELL 
   ---------------------------------------------- */
   function csvCell(value) {
-    const text = String(value ?? "");
-    return `"${text.replace(/"/g, '""')}"`;
+    return App.csvCell ? App.csvCell(value) : `"${String(value ?? "").replace(/"/g, '""')}"`;
   }
 
   /* ---------------------------------------------- 
@@ -1217,15 +1209,13 @@
   ESCAPE HTML 
   ---------------------------------------------- */
   function escapeHtml(value) {
-    return String(value ?? "").replace(/[&<>'"]/g, char => ({
-      "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;"
-    }[char]));
+    return App.escapeHtml ? App.escapeHtml(value) : String(value ?? "");
   }
 
   /* ---------------------------------------------- 
   ESCAPE ATTR 
   ---------------------------------------------- */
   function escapeAttr(value) {
-    return escapeHtml(value).replace(/`/g, "&#96;");
+    return App.escapeAttr ? App.escapeAttr(value) : escapeHtml(value).replace(/'/g, "&#39;");
   }
 })();

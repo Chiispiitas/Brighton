@@ -1,0 +1,67 @@
+/* ==============================================
+     Brighton Text Highlighter
+     Made by: David Santana
+============================================== */
+
+.student-highlight {
+  background: linear-gradient(180deg, rgba(255, 189, 89, 0.48), rgba(255, 145, 77, 0.58));
+  border-radius: 5px;
+  box-shadow: 0 0 0 2px rgba(255, 145, 77, 0.18);
+  padding: 0 0.06em;
+}
+
+.text-highlight-toolbar {
+  position: fixed;
+  z-index: 120;
+  display: none;
+  align-items: center;
+  gap: 6px;
+  padding: 7px;
+  border: 2px solid rgba(248, 168, 50, 0.7);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 14px 34px rgba(32, 38, 49, 0.18);
+}
+
+.text-highlight-toolbar.visible {
+  display: flex;
+}
+
+.text-highlight-toolbar button {
+  border: 0;
+  border-radius: 999px;
+  padding: 8px 12px;
+  font-family: "Poppins", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+  font-size: 11px;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  cursor: pointer;
+}
+
+.text-highlight-toolbar .highlight-action {
+  background: #ff9f2f;
+  color: #fff;
+  box-shadow: 0 5px 0 #d97813;
+}
+
+.text-highlight-toolbar .highlight-clear {
+  background: #fff3df;
+  color: #2f2418;
+}
+
+.text-highlight-toolbar button:active {
+  transform: translateY(2px);
+}
+
+@media (max-width: 760px) {
+  .text-highlight-toolbar {
+    padding: 6px;
+    gap: 5px;
+  }
+
+  .text-highlight-toolbar button {
+    padding: 8px 10px;
+    font-size: 10px;
+  }
+}

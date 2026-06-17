@@ -8,8 +8,9 @@
   const exam = window.listeningExam;
   const examParts = exam.parts || [];
   const STORAGE_KEY = "brighton-b2-listening-exam-state-v1";
-  const $ = (selector, root = document) => root.querySelector(selector);
-  const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
+  const App = window.BrightonApp || {};
+  const $ = App.$ || ((selector, root = document) => root.querySelector(selector));
+  const $$ = App.$$ || ((selector, root = document) => Array.from(root.querySelectorAll(selector)));
 
   const dom = {
     startScreen: $("#startScreen"),
@@ -931,20 +932,14 @@
   ---------------------------------------------- */
   function renderEndSubmitCard() {
     if (state.submitted || !isLastPart()) return "";
-    return `
-      <section class="end-submit-card" aria-label="Submit exam">
-        <p class="eyebrow">Submit exam</p>
-        <h3>Ready to submit?</h3>
-        <p>You can submit from here at any time. Review your answers first, then send your exam to Brighton Database.</p>
-        <button class="primary-btn end-submit-btn" type="button" data-submit-exam>Submit exam</button>
-      </section>
-    `;
+    return App.renderEndSubmitCard ? App.renderEndSubmitCard() : "";
   }
 
   /* ---------------------------------------------- 
   BIND END SUBMIT CARD 
   ---------------------------------------------- */
   function bindEndSubmitCard() {
+    if (App.bindEndSubmitCard) return App.bindEndSubmitCard(dom.mainContent, confirmSubmitExam);
     const button = $("[data-submit-exam]", dom.mainContent);
     if (!button) return;
     button.addEventListener("click", confirmSubmitExam);
@@ -1157,39 +1152,27 @@
   NORMALIZE CLASS CODE 
   ---------------------------------------------- */
   function normalizeClassCode(value) {
-    const raw = String(value || "").trim().toUpperCase();
-    const compact = raw.replace(/[^A-Z0-9]+/g, "");
-    const exact = compact.match(/^([A-Z])(\d+)$/);
-    if (exact) return `${exact[1]}-${exact[2]}`;
-    const loose = raw.match(/([A-Z])\D*(\d+)/);
-    if (loose) return `${loose[1]}-${loose[2]}`;
-    return raw;
+    return App.normalizeClassCode ? App.normalizeClassCode(value) : String(value || "").trim().toUpperCase();
   }
 
   /* ---------------------------------------------- 
   ESCAPE HTML 
   ---------------------------------------------- */
   function escapeHtml(value) {
-    return String(value ?? "").replace(/[&<>'"]/g, char => ({
-      "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;"
-    }[char]));
+    return App.escapeHtml ? App.escapeHtml(value) : String(value ?? "");
   }
 
   /* ---------------------------------------------- 
   ESCAPE ATTR 
   ---------------------------------------------- */
   function escapeAttr(value) {
-    return escapeHtml(value).replace(/`/g, "&#96;");
+    return App.escapeAttr ? App.escapeAttr(value) : escapeHtml(value).replace(/'/g, "&#39;");
   }
 
   /* ---------------------------------------------- 
   DEBOUNCE 
   ---------------------------------------------- */
   function debounce(fn, wait) {
-    let timer;
-    return (...args) => {
-      clearTimeout(timer);
-      timer = setTimeout(() => fn(...args), wait);
-    };
+    return App.debounce ? App.debounce(fn, wait) : (...args) => window.setTimeout(() => fn(...args), wait);
   }
 })();

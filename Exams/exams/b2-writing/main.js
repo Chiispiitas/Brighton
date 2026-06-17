@@ -9,8 +9,9 @@
   const examParts = exam?.parts || [];
   const STORAGE_KEY = `${exam?.examId || "brighton-b2-writing-final"}:state:v1`;
 
-  const $ = (selector, root = document) => root.querySelector(selector);
-  const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
+  const App = window.BrightonApp || {};
+  const $ = App.$ || ((selector, root = document) => root.querySelector(selector));
+  const $$ = App.$$ || ((selector, root = document) => Array.from(root.querySelectorAll(selector)));
 
   const dom = {
     startScreen: $("#startScreen"),
@@ -690,20 +691,20 @@
   ---------------------------------------------- */
   function renderEndSubmitCard() {
     if (state.submitted || !isLastPart()) return "";
-    return `
-      <section class="end-submit-card" aria-label="Submit writing">
-        <p class="eyebrow">Submit writing</p>
-        <h3>Ready to submit?</h3>
-        <p>You can submit from here at any time. Check your essay and selected Part 2 task first, then send your writing to Brighton Database.</p>
-        <button class="primary-btn end-submit-btn" type="button" data-submit-writing>Submit writing</button>
-      </section>
-    `;
+    if (!App.renderEndSubmitCard) return "";
+    return App.renderEndSubmitCard({
+      label: "Submit writing",
+      body: "You can submit from here at any time. Check your essay and selected Part 2 task first, then send your writing to Brighton Database.",
+      buttonText: "Submit writing",
+      dataAttr: "data-submit-writing"
+    });
   }
 
   /* ---------------------------------------------- 
   BIND END SUBMIT CARD 
   ---------------------------------------------- */
   function bindEndSubmitCard() {
+    if (App.bindEndSubmitCard) return App.bindEndSubmitCard(dom.mainContent, confirmSubmitWriting, "[data-submit-writing]");
     const button = $("[data-submit-writing]", dom.mainContent);
     if (!button) return;
     button.addEventListener("click", confirmSubmitWriting);
@@ -1002,20 +1003,14 @@
   NORMALIZE CLASS CODE 
   ---------------------------------------------- */
   function normalizeClassCode(value) {
-    const raw = String(value || "").trim().toUpperCase();
-    const compact = raw.replace(/[^A-Z0-9]+/g, "");
-    const exact = compact.match(/^([A-Z])(\d+)$/);
-    if (exact) return `${exact[1]}-${exact[2]}`;
-    const loose = raw.match(/([A-Z])\D*(\d+)/);
-    if (loose) return `${loose[1]}-${loose[2]}`;
-    return raw;
+    return App.normalizeClassCode ? App.normalizeClassCode(value) : String(value || "").trim().toUpperCase();
   }
 
   /* ---------------------------------------------- 
   COUNT WORDS 
   ---------------------------------------------- */
   function countWords(text) {
-    return String(text || "").trim().split(/\s+/).filter(Boolean).length;
+    return App.countWords ? App.countWords(text) : String(text || "").trim().split(/\s+/).filter(Boolean).length;
   }
 
   /* ---------------------------------------------- 
@@ -1042,15 +1037,13 @@
   ESCAPE HTML 
   ---------------------------------------------- */
   function escapeHtml(value) {
-    return String(value ?? "").replace(/[&<>'"]/g, char => ({
-      "&": "&amp;", "<": "&lt;", ">": "&gt;", "'": "&#39;", '"': "&quot;"
-    }[char]));
+    return App.escapeHtml ? App.escapeHtml(value) : String(value ?? "");
   }
 
   /* ---------------------------------------------- 
   ESCAPE ATTR 
   ---------------------------------------------- */
   function escapeAttr(value) {
-    return escapeHtml(value).replace(/`/g, "&#96;");
+    return App.escapeAttr ? App.escapeAttr(value) : escapeHtml(value).replace(/'/g, "&#39;");
   }
 })();
