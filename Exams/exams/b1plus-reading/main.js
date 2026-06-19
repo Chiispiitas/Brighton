@@ -59,8 +59,6 @@
     attachDivider
   };
 
-  boot();
-
   /* ---------------------------------------------- 
   BOOT 
   ---------------------------------------------- */
@@ -246,7 +244,7 @@
     bindMainEvents(part);
     bindEndSubmitCard();
     if (options.restoreScroll) {
-      requestAnimationFrame(() => { dom.mainContent.scrollTop = state.scroll[part.id] || 0; });
+      restoreScrollForPart(part.id);
     } else {
       dom.mainContent.scrollTop = 0;
     }
@@ -424,6 +422,8 @@
     part6: renderPartSix
   };
 
+  boot();
+
   /* ---------------------------------------------- 
   RENDER CHOICE ROWS 
   ---------------------------------------------- */
@@ -494,8 +494,6 @@
         openChoicePopover(button, q, part);
       });
     });
-    if (part.id === "part4") restorePart4ColumnScroll();
-
     let draggedSentence = null;
     $$('[data-sentence]', dom.mainContent).forEach(button => {
       button.addEventListener("dragstart", event => {
@@ -537,7 +535,10 @@
       });
     });
 
-    if (part.id === "part3") attachDivider("part3", ".split-grid[data-resizable='part3']", "part3Left");
+    if (part.id === "part3") {
+      attachDivider("part3", ".split-grid[data-resizable='part3']", "part3Left");
+      bindPart3ColumnScroll();
+    }
     if (part.id === "part4") {
       attachDivider("part4", ".split-grid[data-resizable='part4']", "part4Left");
       bindPart4ColumnScroll();
@@ -669,6 +670,66 @@
     saveState();
     if (liveProgress && typeof liveProgress.touch === "function") liveProgress.touch();
     renderApp({ restoreScroll: true });
+  }
+
+  /* ---------------------------------------------- 
+  REMEMBER CURRENT SCROLL 
+  ---------------------------------------------- */
+  function rememberCurrentScroll() {
+    rememberScrollForPart(state.current.partId);
+  }
+
+  /* ---------------------------------------------- 
+  REMEMBER SCROLL FOR PART 
+  ---------------------------------------------- */
+  function rememberScrollForPart(partId) {
+    if (!partId || !dom.mainContent) return;
+    state.scroll[partId] = dom.mainContent.scrollTop || 0;
+    if (partId === "part3") rememberPart3ColumnScroll();
+    if (partId === "part4") rememberPart4ColumnScroll();
+  }
+
+  /* ---------------------------------------------- 
+  RESTORE SCROLL FOR PART 
+  ---------------------------------------------- */
+  function restoreScrollForPart(partId) {
+    requestAnimationFrame(() => {
+      dom.mainContent.scrollTop = state.scroll[partId] || 0;
+      if (partId === "part3") restorePart3ColumnScroll();
+      if (partId === "part4") restorePart4ColumnScroll();
+    });
+  }
+
+  /* ---------------------------------------------- 
+  REMEMBER PART 3 COLUMN SCROLL 
+  ---------------------------------------------- */
+  function rememberPart3ColumnScroll() {
+    const columns = $$(".part-three .split-column", dom.mainContent);
+    if (columns[0]) state.scroll.part3LeftColumn = columns[0].scrollTop;
+    if (columns[1]) state.scroll.part3RightColumn = columns[1].scrollTop;
+  }
+
+  /* ---------------------------------------------- 
+  RESTORE PART 3 COLUMN SCROLL 
+  ---------------------------------------------- */
+  function restorePart3ColumnScroll() {
+    const columns = $$(".part-three .split-column", dom.mainContent);
+    if (columns[0] && Number.isFinite(state.scroll.part3LeftColumn)) columns[0].scrollTop = state.scroll.part3LeftColumn;
+    if (columns[1] && Number.isFinite(state.scroll.part3RightColumn)) columns[1].scrollTop = state.scroll.part3RightColumn;
+  }
+
+  /* ---------------------------------------------- 
+  BIND PART 3 COLUMN SCROLL 
+  ---------------------------------------------- */
+  function bindPart3ColumnScroll() {
+    const columns = $$(".part-three .split-column", dom.mainContent);
+    columns.forEach((column, index) => {
+      column.addEventListener("scroll", debounce(() => {
+        if (index === 0) state.scroll.part3LeftColumn = column.scrollTop;
+        if (index === 1) state.scroll.part3RightColumn = column.scrollTop;
+        saveState();
+      }, 120));
+    });
   }
 
   /* ---------------------------------------------- 
@@ -842,6 +903,8 @@
   function goToQuestion(q, options = {}) {
     const location = getQuestionLocation(q);
     if (!location) return;
+    const previousPartId = state.current.partId;
+    rememberCurrentScroll();
     state.current = location;
     if (liveProgress && typeof liveProgress.touch === "function") liveProgress.touch();
     if (options.render === false) {
@@ -851,7 +914,10 @@
       saveState();
       return;
     }
-    renderApp({ restoreScroll: false });
+    const shouldRestoreScroll = Object.prototype.hasOwnProperty.call(options, "restoreScroll")
+      ? Boolean(options.restoreScroll)
+      : previousPartId === location.partId;
+    renderApp({ restoreScroll: shouldRestoreScroll });
   }
 
   /* ---------------------------------------------- 
@@ -920,6 +986,7 @@
   SET ANSWER 
   ---------------------------------------------- */
   function setAnswer(partId, q, value, options = {}) {
+    rememberScrollForPart(partId);
     if (!state.answers[partId]) state.answers[partId] = {};
     state.answers[partId][q] = String(value || "");
     saveState();

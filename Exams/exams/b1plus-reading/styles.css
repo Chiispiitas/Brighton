@@ -2072,3 +2072,221 @@ B1+ READING RESPONSIVE
     width: 112px;
   }
 }
+
+/* ----------------------------------------------
+B1+ READING PART TWO RESTORE
+---------------------------------------------- */
+.exam-panel.part-two {
+  max-width: 1240px;
+}
+
+.part-two .matching-layout {
+  display: grid;
+  grid-template-columns: minmax(0, .92fr) minmax(420px, 1.08fr);
+  gap: 18px;
+  align-items: start;
+}
+
+.part-two .people-list,
+.part-two .texts-list {
+  display: grid;
+  gap: 12px;
+}
+
+.part-two .person-card,
+.part-two .option-text {
+  background: rgba(255,255,255,.96);
+  border: 2px solid #f1e2ca;
+  border-radius: var(--radius);
+  box-shadow: 0 12px 30px rgba(32,38,49,.08);
+}
+
+.part-two .person-card {
+  display: grid;
+  grid-template-columns: 84px minmax(0, 1fr);
+  gap: 14px;
+  padding: 14px;
+  transition: border .16s, background .16s, box-shadow .16s;
+}
+
+.part-two .person-card.active {
+  border-color: var(--teal);
+  background: var(--teal-soft);
+  box-shadow: 0 0 0 4px rgba(0,169,165,.14), 0 10px 24px rgba(32,38,49,.06);
+}
+
+.part-two .person-card img {
+  width: 84px;
+  height: 104px;
+  object-fit: cover;
+  border-radius: 18px;
+  border: 2px solid var(--line);
+  background: var(--cream);
+}
+
+.part-two .person-card h3,
+.part-two .option-text h4 {
+  margin: 0 0 12px;
+  font-size: 15px;
+  line-height: 1.25;
+}
+
+.part-two .person-card h3 {
+  color: var(--ink);
+}
+
+.part-two .option-text h4 {
+  color: var(--yellow-dark);
+}
+
+.part-two .person-card p,
+.part-two .option-text p {
+  line-height: 1.55;
+  margin-bottom: 10px;
+  font-size: 14.8px;
+}
+
+.part-two .match-select-label {
+  display: block;
+  font-weight: 1000;
+  text-transform: uppercase;
+  color: var(--yellow-dark);
+  letter-spacing: .04em;
+  font-size: 12px;
+  margin-bottom: 5px;
+}
+
+.part-two .match-select {
+  width: 100%;
+  border: 2px solid var(--line);
+  border-radius: 12px;
+  background: #fff;
+  color: var(--ink);
+  padding: 9px 10px;
+  margin-top: 5px;
+  font-weight: 800;
+  outline: none;
+  transition: border .16s, box-shadow .16s, background .16s;
+}
+
+.part-two .match-select:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 4px rgba(0,169,165,.16);
+}
+
+.part-two .options-panel {
+  padding: 16px;
+  position: sticky;
+  top: 12px;
+  align-self: start;
+}
+
+.part-two .options-panel > h3 {
+  margin: 0 0 12px;
+  font-size: 18px;
+  letter-spacing: -.02em;
+}
+
+.part-two .option-text {
+  padding: 12px 14px;
+  margin-bottom: 10px;
+  line-height: 1.55;
+}
+
+.part-two .option-text.used {
+  background: #f6fffd;
+  border-color: var(--teal);
+  opacity: 1;
+}
+
+@media (max-width: 900px) {
+  .exam-panel.part-two {
+    max-width: 100%;
+  }
+
+  .part-two .matching-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .part-two .options-panel {
+    position: static;
+    max-height: none;
+    overflow: visible;
+  }
+
+  .part-two .person-card {
+    grid-template-columns: 72px minmax(0, 1fr);
+  }
+
+  .part-two .person-card img {
+    width: 72px;
+    height: 90px;
+  }
+}
+
+/* ----------------------------------------------
+B1+ READING IMAGE SCALE FIX
+---------------------------------------------- */
+.part-one .short-text-layout {
+  grid-template-columns: minmax(0, 1fr) minmax(300px, 380px);
+  max-width: 1120px;
+  margin: 0 auto;
+}
+
+.part-one .short-text-card {
+  max-width: 560px;
+  justify-self: center;
+  padding: clamp(16px, 2vw, 22px);
+}
+
+.part-one .short-text-image {
+  max-height: 250px;
+  width: 100%;
+  object-fit: contain;
+  border-radius: 16px;
+}
+
+.part-three .article-image,
+.part-four .article-image {
+  max-height: 230px;
+  width: 100%;
+  object-fit: cover;
+  border-radius: 16px;
+  margin-bottom: 14px;
+}
+
+.part-three .reading-text,
+.part-four .reading-text {
+  max-width: 100%;
+}
+
+@media (max-width: 900px) {
+  .part-one .short-text-layout {
+    grid-template-columns: 1fr;
+    max-width: 100%;
+  }
+
+  .part-one .short-text-card {
+    max-width: 100%;
+  }
+
+  .part-one .short-text-image {
+    max-height: 205px;
+  }
+
+  .part-three .article-image,
+  .part-four .article-image {
+    max-height: 190px;
+  }
+}
+
+@media (max-width: 560px) {
+  .part-one .short-text-image {
+    max-height: 175px;
+  }
+
+  .part-three .article-image,
+  .part-four .article-image {
+    max-height: 160px;
+  }
+}
