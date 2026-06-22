@@ -16,70 +16,70 @@ window.listeningExam = {
       label: "Part 1",
       title: "Picture multiple choice",
       range: "Questions 1-7",
-      instruction: "For each question, choose the correct answer. Pictures will be added later; temporary placeholders are shown for now.",
+      instruction: "For each question, choose the correct answer.",
       type: "visualMultiple",
       items: [
         {
           q: 1,
           stem: "Which activity wasn't available?",
           options: {
-            A: { label: "Museum", placeholder: "Picture A\nMuseum" },
-            B: { label: "Gym", placeholder: "Picture B\nGym" },
-            C: { label: "Swimming pool", placeholder: "Picture C\nSwimming pool" }
+            A: { label: "Museum", image: "assets/part1/1A.png", alt: "Museum activity" },
+            B: { label: "Gym", image: "assets/part1/1B.png", alt: "Gym activity" },
+            C: { label: "Swimming pool", image: "assets/part1/1C.png", alt: "Swimming pool activity" }
           }
         },
         {
           q: 2,
           stem: "How does the man travel if there's a problem?",
           options: {
-            A: { label: "Train", placeholder: "Picture A\nTrain" },
-            B: { label: "Car", placeholder: "Picture B\nCar" },
-            C: { label: "Bus", placeholder: "Picture C\nBus" }
+            A: { label: "Train", image: "assets/part1/2A.png", alt: "Train travel" },
+            B: { label: "Car", image: "assets/part1/2B.png", alt: "Car travel" },
+            C: { label: "Bus", image: "assets/part1/2C.png", alt: "Bus travel" }
           }
         },
         {
           q: 3,
           stem: "What is the building going to be used for?",
           options: {
-            A: { label: "Apartment building", placeholder: "Picture A\nBuilding" },
-            B: { label: "Library", placeholder: "Picture B\nLibrary" },
-            C: { label: "Art gallery", placeholder: "Picture C\nArt gallery" }
+            A: { label: "Apartment building", image: "assets/part1/3A.png", alt: "Apartment building" },
+            B: { label: "Library", image: "assets/part1/3B.png", alt: "Library building" },
+            C: { label: "Art gallery", image: "assets/part1/3C.png", alt: "Art gallery building" }
           }
         },
         {
           q: 4,
           stem: "Which membership allows a person to attend a presentation?",
           options: {
-            A: { label: "Membership A", placeholder: "Picture A\nMembership calendar" },
-            B: { label: "Membership B", placeholder: "Picture B\nMembership calendar" },
-            C: { label: "Membership C", placeholder: "Picture C\nMembership calendar" }
+            A: { label: "Membership A", image: "assets/part1/4A.png", alt: "Membership calendar A" },
+            B: { label: "Membership B", image: "assets/part1/4B.png", alt: "Membership calendar B" },
+            C: { label: "Membership C", image: "assets/part1/4C.png", alt: "Membership calendar C" }
           }
         },
         {
           q: 5,
           stem: "When does the woman want to book a library computer?",
           options: {
-            A: { label: "Monday 19", placeholder: "Picture A\nMonday 19" },
-            B: { label: "Tuesday 20", placeholder: "Picture B\nTuesday 20" },
-            C: { label: "Wednesday 21", placeholder: "Picture C\nWednesday 21" }
+            A: { label: "Monday 19", image: "assets/part1/5A.png", alt: "Monday 19" },
+            B: { label: "Tuesday 20", image: "assets/part1/5B.png", alt: "Tuesday 20" },
+            C: { label: "Wednesday 21", image: "assets/part1/5C.png", alt: "Wednesday 21" }
           }
         },
         {
           q: 6,
           stem: "What is the man doing on Saturday?",
           options: {
-            A: { label: "Meeting someone", placeholder: "Picture A\nMeeting" },
-            B: { label: "Giving a present", placeholder: "Picture B\nPresent" },
-            C: { label: "Helping someone", placeholder: "Picture C\nWheelchair" }
+            A: { label: "Meeting someone", image: "assets/part1/6A.png", alt: "Meeting someone" },
+            B: { label: "Giving a present", image: "assets/part1/6B.png", alt: "Giving a present" },
+            C: { label: "Helping someone", image: "assets/part1/6C.png", alt: "Helping someone with a wheelchair" }
           }
         },
         {
           q: 7,
           stem: "Which item of food has the man's mother tried before?",
           options: {
-            A: { label: "Biscuits", placeholder: "Picture A\nBiscuits" },
-            B: { label: "Cheese", placeholder: "Picture B\nCheese" },
-            C: { label: "Chocolate", placeholder: "Picture C\nChocolate" }
+            A: { label: "Biscuits", image: "assets/part1/7A.png", alt: "Biscuits" },
+            B: { label: "Cheese", image: "assets/part1/7B.png", alt: "Cheese" },
+            C: { label: "Chocolate", image: "assets/part1/7C.png", alt: "Chocolate" }
           }
         }
       ]

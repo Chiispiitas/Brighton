@@ -287,13 +287,19 @@
     const activeQ = getCurrentQuestionNumber();
     const item = part.items.find(entry => entry.q === activeQ) || part.items[0];
     const selected = getAnswer(part.id, item.q);
-    const options = Object.entries(item.options).map(([letter, option]) => `
-      <label class="visual-option-card ${selected === letter ? "selected" : ""}">
-        <input type="radio" name="q${item.q}" value="${letter}" ${selected === letter ? "checked" : ""} />
-        <div class="visual-placeholder">${escapeHtml(option.placeholder || `Picture ${letter}`)}</div>
-        <div><span class="visual-option-letter">${letter}</span> <span class="visual-option-title">${escapeHtml(option.label || "Option")}</span></div>
-      </label>
-    `).join("");
+    const options = Object.entries(item.options).map(([letter, option]) => {
+      const picture = option.image
+        ? `<img class="visual-option-image" src="${escapeAttr(option.image)}" alt="${escapeAttr(option.alt || option.label || `Picture ${letter}`)}" loading="eager" />`
+        : `<div class="visual-placeholder">${escapeHtml(option.placeholder || `Picture ${letter}`)}</div>`;
+
+      return `
+        <label class="visual-option-card ${selected === letter ? "selected" : ""}">
+          <input type="radio" name="q${item.q}" value="${letter}" ${selected === letter ? "checked" : ""} />
+          <div class="visual-picture-frame">${picture}</div>
+          <div class="visual-option-letter-row"><span class="visual-option-letter">${letter}</span></div>
+        </label>
+      `;
+    }).join("");
 
     return `
       <section class="exam-panel part-visual part1">
