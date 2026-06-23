@@ -113,7 +113,7 @@
     const answers = {};
     examParts.forEach(part => {
       answers[part.id] = {};
-      part.items.forEach(item => { answers[part.id][item.q] = ""; });
+      part.items.forEach(item => { answers[part.id][item.q] = getInitialAnswer(item); });
     });
     const firstPart = examParts[0] || { id: "part1", items: [{ q: 1 }] };
     const firstQuestion = firstPart.items?.[0]?.q || 1;
@@ -263,9 +263,8 @@
   function renderPrompt(part, item) {
     if (!item) return `<div class="prompt-card"><p>No task selected.</p></div>`;
     const image = item.imageSrc ? `
-      <div class="picture-placeholder-wrap">
-        <img class="picture-placeholder-img" src="${escapeAttr(item.imageSrc)}" alt="${escapeAttr(item.imageAlt || item.title)}" />
-        <p class="picture-caption">Temporary placeholder image for this first version.</p>
+      <div class="picture-wrap">
+        <img class="picture-img" src="${escapeAttr(item.imageSrc)}" alt="${escapeAttr(item.imageAlt || item.title)}" />
       </div>
     ` : "";
     const email = item.message ? `
@@ -294,7 +293,6 @@
           ${details}
         </div>
         <p><strong>${escapeHtml(item.finalInstruction || item.task || "Write your answer.")}</strong></p>
-        <p class="muted-text"><strong>Target reader:</strong> ${escapeHtml(item.targetReader || "—")}</p>
       </article>
     `;
   }
@@ -337,7 +335,7 @@
   RENDER EDITOR 
   ---------------------------------------------- */
   function renderEditor(partId, item) {
-    const answer = getAnswer(partId, item.q);
+    const answer = getEditorAnswer(partId, item);
     const wc = countWords(answer);
     return `
       <article class="editor-card">
@@ -348,7 +346,7 @@
           </div>
           <span class="task-type-pill">${escapeHtml(item.taskType)}</span>
         </div>
-        <textarea class="writing-textarea" data-part-id="${escapeAttr(partId)}" data-question="${item.q}" spellcheck="false" placeholder="Write your ${escapeAttr(item.taskType.toLowerCase())} here...">${escapeHtml(answer)}</textarea>
+        <textarea class="writing-textarea" data-part-id="${escapeAttr(partId)}" data-question="${item.q}" data-story-starter="${escapeAttr(item.storyStarter || "")}" spellcheck="false" placeholder="Write your ${escapeAttr(item.taskType.toLowerCase())} here...">${escapeHtml(answer)}</textarea>
         <div class="editor-foot">
           <span>Question ${item.q}</span>
           <span class="word-count ${wordCountClass(wc, item)}" data-word-count>Words: ${wc}</span>
@@ -364,7 +362,9 @@
     const textarea = $(".writing-textarea", dom.mainContent);
     if (!textarea) return;
     const item = findItem(partId, question);
+    syncStoryStarter(textarea, item);
     textarea.addEventListener("input", () => {
+      syncStoryStarter(textarea, item);
       setAnswer(partId, question, textarea.value);
       const wc = countWords(textarea.value);
       const counter = $("[data-word-count]", dom.mainContent);
@@ -402,7 +402,7 @@
         if (event.target.closest("[data-question-pill]")) return;
         const partId = card.dataset.partCard;
         const part = examParts.find(p => p.id === partId);
-        const firstOpen = part.items.find(item => countWords(getAnswer(partId, item.q)) === 0) || part.items[0];
+        const firstOpen = part.items.find(item => !hasMeaningfulAnswer(partId, item)) || part.items[0];
         state.current = { partId, question: firstOpen.q };
         renderApp({ scrollTop: true });
       });
@@ -422,7 +422,7 @@
   ---------------------------------------------- */
   function renderQuestionPill(part, item) {
     const active = part.id === state.current.partId && Number(item.q) === Number(getCurrentQuestionNumber());
-    const answered = countWords(getAnswer(part.id, item.q)) > 0;
+    const answered = hasMeaningfulAnswer(part.id, item);
     const flagged = Boolean(state.flagged[item.q]);
     return `<button class="q-pill ${active ? "active" : ""} ${answered ? "answered" : ""} ${flagged ? "flagged" : ""}" data-part-id="${escapeAttr(part.id)}" data-question-pill="${item.q}" type="button" aria-label="Question ${item.q}">${item.q}</button>`;
   }
@@ -531,11 +531,74 @@
   }
 
   /* ---------------------------------------------- 
+  GET INITIAL ANSWER 
+  ---------------------------------------------- */
+  function getInitialAnswer(item) {
+    return item?.storyStarter ? `${item.storyStarter}\n\n` : "";
+  }
+
+  /* ---------------------------------------------- 
+  GET EDITOR ANSWER 
+  ---------------------------------------------- */
+  function getEditorAnswer(partId, item) {
+    const current = getAnswer(partId, item.q);
+    const fixed = enforceStoryStarter(current, item?.storyStarter);
+    if (fixed !== current) {
+      if (!state.answers[partId]) state.answers[partId] = {};
+      state.answers[partId][item.q] = fixed;
+    }
+    return fixed;
+  }
+
+  /* ---------------------------------------------- 
+  ENFORCE STORY STARTER 
+  ---------------------------------------------- */
+  function enforceStoryStarter(value, starter) {
+    const cleanStarter = String(starter || "").trim();
+    const text = String(value || "");
+    if (!cleanStarter) return text;
+    if (!text.trim()) return `${cleanStarter}\n\n`;
+    if (text.startsWith(cleanStarter)) {
+      const rest = text.slice(cleanStarter.length);
+      if (!rest || rest.startsWith("\n")) return text;
+      return `${cleanStarter}\n\n${rest.trimStart()}`;
+    }
+    const rest = text.replace(cleanStarter, "").trimStart();
+    return rest ? `${cleanStarter}\n\n${rest}` : `${cleanStarter}\n\n`;
+  }
+
+  /* ---------------------------------------------- 
+  SYNC STORY STARTER 
+  ---------------------------------------------- */
+  function syncStoryStarter(textarea, item) {
+    if (!item?.storyStarter) return;
+    const before = textarea.value;
+    const fixed = enforceStoryStarter(before, item.storyStarter);
+    if (fixed === before) return;
+    const oldCursor = textarea.selectionStart || before.length;
+    textarea.value = fixed;
+    const minCursor = item.storyStarter.length + 2;
+    const newCursor = Math.max(minCursor, Math.min(fixed.length, oldCursor + (fixed.length - before.length)));
+    try { textarea.setSelectionRange(newCursor, newCursor); } catch (error) { /* Ignore cursor errors on unsupported inputs. */ }
+  }
+
+  /* ---------------------------------------------- 
+  HAS MEANINGFUL ANSWER 
+  ---------------------------------------------- */
+  function hasMeaningfulAnswer(partId, item) {
+    if (!item) return false;
+    const answer = getAnswer(partId, item.q);
+    if (!item.storyStarter) return countWords(answer) > 0;
+    const body = String(answer || "").replace(String(item.storyStarter || "").trim(), "").trim();
+    return countWords(body) > 0;
+  }
+
+  /* ---------------------------------------------- 
   GET PROGRESS 
   ---------------------------------------------- */
   function getProgress(part) {
     const total = part.items.length;
-    const done = part.items.filter(item => countWords(getAnswer(part.id, item.q)) > 0).length;
+    const done = part.items.filter(item => hasMeaningfulAnswer(part.id, item)).length;
     return { done, answered: done, total };
   }
 
@@ -687,7 +750,7 @@
   FINISH EXAM 
   ---------------------------------------------- */
   function finishExam() {
-    const missing = getQuestionOrder().filter(item => countWords(getAnswer(item.partId, item.question)) === 0);
+    const missing = getQuestionOrder().filter(item => !hasMeaningfulAnswer(item.partId, findItem(item.partId, item.question)));
     if (missing.length) {
       const list = missing.map(item => `Question ${item.question}`).join(", ");
       const ok = window.confirm(`${list} appears to be empty. Submit anyway?`);
@@ -831,7 +894,6 @@
       label: `Part ${partNumber}`,
       taskType: item.taskType,
       title: item.title,
-      targetReader: item.targetReader,
       sourceTopic: item.sourceTopic,
       prompt: buildPromptText(item),
       answer,

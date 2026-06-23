@@ -28,12 +28,11 @@ window.writingExam = {
           promptIntro: "Look at the picture and describe what you can see.",
           task: "Write more than two sentences. Include as many details as you can.",
           finalInstruction: "Describe the picture.",
-          imageSrc: "assets/part1-picture-1.svg",
-          imageAlt: "Placeholder image for Picture description 1",
+          imageSrc: "assets/part1-picture-1.png",
+          imageAlt: "Photo for Picture description 1",
           wordRange: "More than two sentences",
           minWords: 20,
           maxWords: 160,
-          targetReader: "Your English teacher",
           sourceTopic: "Brighton Intermediate English Test: Picture description"
         },
         {
@@ -43,12 +42,11 @@ window.writingExam = {
           promptIntro: "Look at the picture and describe what you can see.",
           task: "Write more than two sentences. Include as many details as you can.",
           finalInstruction: "Describe the picture.",
-          imageSrc: "assets/part1-picture-2.svg",
-          imageAlt: "Placeholder image for Picture description 2",
+          imageSrc: "assets/part1-picture-2.png",
+          imageAlt: "Photo for Picture description 2",
           wordRange: "More than two sentences",
           minWords: 20,
           maxWords: 160,
-          targetReader: "Your English teacher",
           sourceTopic: "Brighton Intermediate English Test: Picture description"
         }
       ]
@@ -68,13 +66,26 @@ window.writingExam = {
           promptIntro: "Read this email from your English-speaking friend Tania.",
           emailFrom: "Tania",
           emailSubject: "Your party",
-          message: "Hi,\n\nI’m so pleased you’ve invited me to your birthday party.\n\nI’m really looking forward to seeing you.\n\nOf course I want to buy you a present. I don’t know what you’d prefer – something to wear perhaps, or would you like the money to buy something yourself?\n\nWhat time would you like me to arrive?\n\nAnd would you like me to bring some food?\n\nSee you soon!\n\nTania",
+          message: `Hi,
+
+I’m so pleased you’ve invited me to your birthday party.
+
+I’m really looking forward to seeing you.
+
+Of course I want to buy you a present. I don’t know what you’d prefer – something to wear perhaps, or would you like the money to buy something yourself?
+
+What time would you like me to arrive?
+
+And would you like me to bring some food?
+
+See you soon!
+
+Tania`,
           task: "Write your email replying to Tania.",
           finalInstruction: "Write your email.",
           wordRange: "About 100 words",
           minWords: 80,
           maxWords: 120,
-          targetReader: "An English-speaking friend",
           sourceTopic: "Brighton Intermediate English Test: Email reply"
         }
       ]
@@ -98,7 +109,6 @@ window.writingExam = {
           wordRange: "About 100 words",
           minWords: 80,
           maxWords: 120,
-          targetReader: "Your English teacher",
           sourceTopic: "Brighton Intermediate English Test: Story writing"
         }
       ]

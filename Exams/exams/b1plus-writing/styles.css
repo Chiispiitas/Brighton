@@ -485,28 +485,23 @@ SUBMIT OPTIONS
 
 
 /* ---------------------------------------------- 
-B1+ WRITING PLACEHOLDERS 
+B1+ WRITING PICTURES 
 ---------------------------------------------- */
-.picture-placeholder-wrap {
+.picture-wrap {
   display: grid;
   gap: 14px;
   margin: 18px 0;
 }
-.picture-placeholder-img {
+.picture-img {
   width: 100%;
-  max-height: 310px;
-  object-fit: contain;
+  aspect-ratio: 4 / 3;
+  max-height: 330px;
+  object-fit: cover;
   display: block;
-  border: 2px dashed var(--line);
+  border: 2px solid var(--line);
   border-radius: 22px;
   background: #fff;
-  box-shadow: inset 0 0 0 5px rgba(248,168,50,.07);
-}
-.picture-caption {
-  margin: 0;
-  color: var(--muted);
-  font-weight: 800;
-  text-align: center;
+  box-shadow: var(--shadow-soft, 0 16px 32px rgba(16, 24, 40, .08));
 }
 .email-card {
   display: grid;
@@ -549,5 +544,5 @@ B1+ WRITING PLACEHOLDERS
 }
 
 @media (max-width: 760px) {
-  .picture-placeholder-img { max-height: 240px; }
+  .picture-img { max-height: 240px; }
 }
