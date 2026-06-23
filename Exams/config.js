@@ -39,6 +39,28 @@ window.BRIGHTON_SITE_CONFIG = {
       totalQuestions: 30,
       maxScore: 30,
       relativeUrl: "exams/b2-listening/index.html"
+    },
+    {
+      examId: "brighton-b1plus-listening-final",
+      title: "Brighton B1+ Listening Final Exam",
+      level: "B1+",
+      skill: "Listening",
+      description: "Four-part B1 Preliminary-style Listening final exam.",
+      isActive: true,
+      totalQuestions: 25,
+      maxScore: 25,
+      relativeUrl: "exams/b1plus-listening/index.html"
+    },
+    {
+      examId: "brighton-b1plus-writing-final",
+      title: "Brighton B1+ Writing Final Exam",
+      level: "B1+",
+      skill: "Writing",
+      description: "Three-part Brighton Intermediate writing exam with picture descriptions, an email and a story.",
+      isActive: true,
+      totalQuestions: 4,
+      maxScore: 30,
+      relativeUrl: "exams/b1plus-writing/index.html"
     }
   ]
 };
