@@ -10,9 +10,11 @@
   const apiBase = String(config.API_BASE_URL || "").replace(/\/$/, "");
   const classIdInput = document.querySelector("#classIdInput");
   const examSelect = document.querySelector("#examSelect");
+  const studentInput = document.querySelector("#studentInput");
   const loadBtn = document.querySelector("#loadBtn");
   const clearBtn = document.querySelector("#clearBtn");
   const exportBtn = document.querySelector("#exportBtn");
+  const shareLinkBtn = document.querySelector("#shareLinkBtn");
   const resultsBody = document.querySelector("#resultsBody");
   const progressBody = document.querySelector("#progressBody");
   const progressStatus = document.querySelector("#progressStatus");
@@ -27,6 +29,8 @@
   let progressRows = [];
   let progressTimer = null;
   let activeProgressPreviewId = "";
+  let queryState = readQueryState();
+  let studentFilterTimer = null;
   const answerKeyCache = new Map();
   const progressRefreshMs = Number(config.DASHBOARD_PROGRESS_REFRESH_MS) || 20000;
   const progressStaleSeconds = Number(config.PROGRESS_STALE_SECONDS) || 90;
@@ -40,12 +44,16 @@
     4: { part: 2, partId: "part2", question: 4, label: "Part 2", taskType: "Review", title: "Review: a story that made you think", targetReader: "Readers of an English-language student website", prompt: "You see this announcement on an English-language website for students.\n\nReviews wanted\n\nHave you read a book, watched a film or seen a series which made you think about facts, fake news or real life? Write a review describing it and explaining why it made an impression on you. Say whether you would recommend it to other students.\n\nThe best reviews will be posted on the website.\n\nWrite your review." }
   };
 
-  classIdInput.addEventListener("blur", normalizeClassInput);
-  loadBtn.addEventListener("click", loadResults);
+  classIdInput.addEventListener("blur", () => { normalizeClassInput(); syncUrlFromControls({ replace: true, keepOpen: true }); });
+  examSelect.addEventListener("change", () => syncUrlFromControls({ replace: true, keepOpen: true }));
+  studentInput?.addEventListener("input", scheduleStudentFilterUpdate);
+  loadBtn.addEventListener("click", () => loadResults({ updateUrl: true, view: "submissions" }));
   clearBtn.addEventListener("click", clearFilters);
   exportBtn.addEventListener("click", exportCsv);
+  shareLinkBtn?.addEventListener("click", copyShareLink);
   closeModalBtn.addEventListener("click", closeModal);
   modal.addEventListener("click", event => { if (event.target === modal) closeModal(); });
+  window.addEventListener("popstate", handlePopState);
 
   init();
 
@@ -53,9 +61,12 @@
   INIT 
   ---------------------------------------------- */
   async function init() {
-    const params = new URLSearchParams(location.search);
-    if (params.get("examId")) examSelect.dataset.prefill = params.get("examId");
+    queryState = readQueryState();
+    applyQueryStateToControls(queryState);
     await loadExams();
+    applyQueryStateToControls(queryState);
+    if (queryState.classId && queryState.autoLoad) await loadResults({ updateUrl: false, fromQuery: true });
+    else scrollToRequestedScreen(queryState.view);
   }
 
   /* ---------------------------------------------- 
@@ -78,7 +89,7 @@
   FILL EXAM SELECT 
   ---------------------------------------------- */
   function fillExamSelect(exams) {
-    const current = examSelect.dataset.prefill || "";
+    const current = queryState.examId || examSelect.dataset.prefill || "";
     examSelect.innerHTML = `<option value="">All exams</option>` + exams.map(exam => `
       <option value="${escapeAttr(exam.examId)}">${escapeHtml(exam.title || exam.examId)}</option>
     `).join("");
@@ -88,9 +99,10 @@
   /* ---------------------------------------------- 
   LOAD RESULTS 
   ---------------------------------------------- */
-  async function loadResults() {
+  async function loadResults(options = {}) {
     const classId = normalizeClassInput();
     const examId = examSelect.value.trim();
+    if (options.updateUrl !== false) syncUrlFromControls({ replace: false, view: options.view || "submissions" });
     if (!classId) {
       showToast("Enter a class ID first");
       classIdInput.focus();
@@ -121,9 +133,12 @@
       await loadProgress();
       startProgressTimer();
       const locallyGraded = rows.filter(row => row._gradedLocally).length;
-      status.textContent = `${rows.length} submission(s) loaded for ${classId}.${locallyGraded ? ` ${locallyGraded} row(s) graded locally from the answer key.` : ""}`;
+      const visibleCount = getFilteredRows().length;
+      status.textContent = `${rows.length} submission(s) loaded for ${classId}.${getStudentFilter() ? ` Showing ${visibleCount} matching student row(s).` : ""}${locallyGraded ? ` ${locallyGraded} row(s) graded locally from the answer key.` : ""}`;
       renderRows();
       updateSummary(data.summary);
+      scrollToRequestedScreen(queryState.view);
+      openRequestedModal();
     } catch (error) {
       status.textContent = `Could not load results: ${error.message}`;
       rows = [];
@@ -234,7 +249,8 @@
       progressRows = filterVisibleProgressRows(data.items || []);
       renderProgressRows();
       refreshOpenProgressDetails();
-      if (progressStatus) progressStatus.textContent = `${progressRows.length} student(s) monitored. Auto-refresh every ${Math.round(progressRefreshMs / 1000)} seconds.`;
+      const visibleProgressCount = getFilteredProgressRows().length;
+      if (progressStatus) progressStatus.textContent = `${visibleProgressCount}${getStudentFilter() ? `/${progressRows.length}` : ""} student(s) monitored. Auto-refresh every ${Math.round(progressRefreshMs / 1000)} seconds.`;
       if (progressUpdatedAt) progressUpdatedAt.textContent = `Updated ${new Date().toLocaleTimeString()}`;
     } catch (error) {
       if (progressStatus) progressStatus.textContent = `Could not load live progress: ${error.message}`;
@@ -286,12 +302,14 @@
   ---------------------------------------------- */
   function renderProgressRows() {
     if (!progressBody) return;
-    if (!progressRows.length) {
-      progressBody.innerHTML = `<tr><td colspan="8">No live progress found for this class yet.</td></tr>`;
+    const visibleRows = getFilteredProgressRows();
+    if (!visibleRows.length) {
+      const message = progressRows.length && getStudentFilter() ? "No live progress matches this student filter." : "No live progress found for this class yet.";
+      progressBody.innerHTML = `<tr><td colspan="8">${escapeHtml(message)}</td></tr>`;
       return;
     }
 
-    progressBody.innerHTML = progressRows.map((row, index) => {
+    progressBody.innerHTML = visibleRows.map((row, index) => {
       const liveStatus = progressStatusText(row);
       const percent = clamp(Number(row.progressPercent) || 0, 0, 100);
       const answered = row.answeredCount !== undefined && row.totalQuestions ? `${row.answeredCount}/${row.totalQuestions}` : `${percent}%`;
@@ -313,7 +331,7 @@
     }).join("");
 
     document.querySelectorAll("[data-progress-details]").forEach(button => {
-      button.addEventListener("click", () => openProgressDetails(progressRows[Number(button.dataset.progressDetails)]));
+      button.addEventListener("click", () => openProgressDetails(getFilteredProgressRows()[Number(button.dataset.progressDetails)]));
     });
   }
 
@@ -376,12 +394,14 @@
   RENDER ROWS 
   ---------------------------------------------- */
   function renderRows() {
-    if (!rows.length) {
-      resultsBody.innerHTML = `<tr><td colspan="8">No submissions found.</td></tr>`;
+    const visibleRows = getFilteredRows();
+    if (!visibleRows.length) {
+      const message = rows.length && getStudentFilter() ? "No submissions match this student filter." : "No submissions found.";
+      resultsBody.innerHTML = `<tr><td colspan="8">${escapeHtml(message)}</td></tr>`;
       return;
     }
 
-    resultsBody.innerHTML = rows.map((row, index) => {
+    resultsBody.innerHTML = visibleRows.map((row, index) => {
       const partScores = safeJson(row.partScoresJson, row.partScores || {});
       const writing = isWritingSubmission(row);
       const scoreCell = writing
@@ -390,7 +410,7 @@
       const percentCell = writing ? "—" : (typeof row.percentage === "number" ? `${row.percentage}%` : "—");
       const partsCell = writing ? formatWritingMini(row) : formatParts(partScores);
       return `
-        <tr>
+        <tr class="${isHighlightedRow(row) ? "url-row-highlight" : ""}">
           <td><strong>${escapeHtml(row.studentName || "—")}</strong></td>
           <td>${escapeHtml(row.classId || "—")}</td>
           <td>${escapeHtml(row.examTitle || row.examId || "—")}</td>
@@ -404,7 +424,7 @@
     }).join("");
 
     document.querySelectorAll("[data-details]").forEach(button => {
-      button.addEventListener("click", () => openDetails(rows[Number(button.dataset.details)]));
+      button.addEventListener("click", () => openDetails(getFilteredRows()[Number(button.dataset.details)]));
     });
   }
 
@@ -412,11 +432,13 @@
   UPDATE SUMMARY 
   ---------------------------------------------- */
   function updateSummary(serverSummary) {
-    const total = serverSummary?.total ?? rows.length;
-    const percentages = rows.map(r => Number(r.percentage)).filter(Number.isFinite);
-    const average = serverSummary?.average ?? (percentages.length ? Math.round(percentages.reduce((a,b)=>a+b,0) / percentages.length) : null);
-    const highest = serverSummary?.highest ?? (percentages.length ? Math.max(...percentages) : null);
-    const lowest = serverSummary?.lowest ?? (percentages.length ? Math.min(...percentages) : null);
+    const visibleRows = getFilteredRows();
+    const useServerSummary = !getStudentFilter() && serverSummary;
+    const total = useServerSummary ? serverSummary.total : visibleRows.length;
+    const percentages = visibleRows.map(r => Number(r.percentage)).filter(Number.isFinite);
+    const average = useServerSummary ? serverSummary.average : (percentages.length ? Math.round(percentages.reduce((a,b)=>a+b,0) / percentages.length) : null);
+    const highest = useServerSummary ? serverSummary.highest : (percentages.length ? Math.max(...percentages) : null);
+    const lowest = useServerSummary ? serverSummary.lowest : (percentages.length ? Math.min(...percentages) : null);
     document.querySelector("#summaryTotal").textContent = total;
     document.querySelector("#summaryAverage").textContent = average === null ? "—" : `${average}%`;
     document.querySelector("#summaryHighest").textContent = highest === null ? "—" : `${highest}%`;
@@ -427,6 +449,8 @@
   OPEN PROGRESS DETAILS 
   ---------------------------------------------- */
   async function openProgressDetails(row, options = {}) {
+    if (!row) return;
+    if (!options.refreshing && !options.fromQuery) syncUrlFromControls({ replace: false, view: "live", open: "progress", row });
     activeProgressPreviewId = row.progressId || progressKey(row);
     const liveRow = progressRowToSubmissionRow(row);
     const payload = payloadFromRow(liveRow);
@@ -527,7 +551,9 @@
   /* ---------------------------------------------- 
   OPEN DETAILS 
   ---------------------------------------------- */
-  async function openDetails(row) {
+  async function openDetails(row, options = {}) {
+    if (!row) return;
+    if (!options.fromQuery) syncUrlFromControls({ replace: false, view: "submissions", open: "details", row });
     const heading = modal.querySelector(".modal-head h2");
     if (heading) heading.textContent = "Submission details";
     modal.classList.remove("hidden");
@@ -1074,6 +1100,14 @@
   CLOSE MODAL 
   ---------------------------------------------- */
   function closeModal() {
+    hideModalWithoutUrl();
+    syncUrlFromControls({ replace: true, clearOpen: true, keepOpen: false });
+  }
+
+  /* ---------------------------------------------- 
+  HIDE MODAL WITHOUT URL 
+  ---------------------------------------------- */
+  function hideModalWithoutUrl() {
     activeProgressPreviewId = "";
     modal.classList.add("hidden");
     modal.setAttribute("aria-hidden", "true");
@@ -1085,9 +1119,10 @@
   function clearFilters() {
     classIdInput.value = "";
     examSelect.value = "";
+    if (studentInput) studentInput.value = "";
     rows = [];
     progressRows = [];
-    activeProgressPreviewId = "";
+    hideModalWithoutUrl();
     stopProgressTimer();
     renderProgressRows();
     renderRows();
@@ -1095,15 +1130,18 @@
     status.textContent = "Enter a class ID and load results.";
     if (progressStatus) progressStatus.textContent = "Load a class to supervise exams in progress.";
     if (progressUpdatedAt) progressUpdatedAt.textContent = "Not updated yet";
+    history.pushState({}, "", location.pathname);
+    queryState = readQueryState();
   }
 
   /* ---------------------------------------------- 
   EXPORT CSV 
   ---------------------------------------------- */
   function exportCsv() {
-    if (!rows.length) return showToast("No rows to export");
+    const visibleRows = getFilteredRows();
+    if (!visibleRows.length) return showToast("No rows to export");
     const headers = ["studentName", "classId", "examTitle", "submittedAt", "score", "maxScore", "percentage", "partScoresJson"];
-    const csv = [headers.join(",")].concat(rows.map(row => headers.map(h => csvCell(row[h])).join(","))).join("\n");
+    const csv = [headers.join(",")].concat(visibleRows.map(row => headers.map(h => csvCell(row[h])).join(","))).join("\n");
     const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
@@ -1163,6 +1201,251 @@
     return current;
   }
 
+
+
+  /* ---------------------------------------------- 
+  READ QUERY STATE 
+  ---------------------------------------------- */
+  function readQueryState() {
+    const params = new URLSearchParams(location.search);
+    const pick = (...names) => names.map(name => params.get(name)).find(value => value !== null && value !== "") || "";
+    return {
+      classId: normalizeClassCode(pick("classId", "class", "c")),
+      examId: pick("examId", "exam", "e").trim(),
+      student: pick("student", "studentName", "s").trim(),
+      openStudent: pick("openStudent", "focusStudent").trim(),
+      submittedAt: pick("submittedAt", "submitted").trim(),
+      progressId: pick("progressId").trim(),
+      open: normalizeOpenMode(pick("open", "modal", "details")),
+      view: normalizeViewMode(pick("view", "screen", "tab")),
+      autoLoad: pick("auto") !== "0"
+    };
+  }
+
+  /* ---------------------------------------------- 
+  APPLY QUERY STATE TO CONTROLS 
+  ---------------------------------------------- */
+  function applyQueryStateToControls(state) {
+    if (state.classId) classIdInput.value = state.classId;
+    if (studentInput) studentInput.value = state.student || "";
+    if (state.examId) {
+      examSelect.dataset.prefill = state.examId;
+      examSelect.value = state.examId;
+    }
+  }
+
+  /* ---------------------------------------------- 
+  SYNC URL FROM CONTROLS 
+  ---------------------------------------------- */
+  function syncUrlFromControls(options = {}) {
+    const params = new URLSearchParams(location.search);
+    ["classId", "class", "c", "examId", "exam", "e", "student", "studentName", "s", "view", "screen", "tab", "open", "modal", "details", "openStudent", "focusStudent", "submittedAt", "submitted", "progressId", "auto"].forEach(key => params.delete(key));
+
+    const classId = normalizeClassCode(classIdInput.value);
+    const examId = examSelect.value.trim();
+    const student = getStudentFilterRaw();
+    const view = normalizeViewMode(options.view || queryState.view || "");
+
+    if (classId) params.set("classId", classId);
+    if (examId) params.set("examId", examId);
+    if (student) params.set("student", student);
+    if (view) params.set("view", view);
+
+    if (options.open && options.row) {
+      params.set("open", options.open);
+      params.set("openStudent", options.row.studentName || "");
+      if (options.open === "progress" && options.row.progressId) params.set("progressId", options.row.progressId);
+      if (options.open === "details" && options.row.submittedAt) params.set("submittedAt", options.row.submittedAt);
+    } else if (!options.clearOpen && options.keepOpen && queryState.open) {
+      params.set("open", queryState.open);
+      if (queryState.openStudent) params.set("openStudent", queryState.openStudent);
+      if (queryState.submittedAt) params.set("submittedAt", queryState.submittedAt);
+      if (queryState.progressId) params.set("progressId", queryState.progressId);
+    }
+
+    const next = `${location.pathname}${params.toString() ? `?${params.toString()}` : ""}`;
+    const method = options.replace === false ? "pushState" : "replaceState";
+    history[method]({}, "", next);
+    queryState = readQueryState();
+  }
+
+  /* ---------------------------------------------- 
+  HANDLE POP STATE 
+  ---------------------------------------------- */
+  async function handlePopState() {
+    queryState = readQueryState();
+    applyQueryStateToControls(queryState);
+    if (!queryState.open) hideModalWithoutUrl();
+    if (queryState.classId) await loadResults({ updateUrl: false, fromQuery: true });
+    else clearFiltersWithoutUrl();
+  }
+
+  /* ---------------------------------------------- 
+  SCHEDULE STUDENT FILTER UPDATE 
+  ---------------------------------------------- */
+  function scheduleStudentFilterUpdate() {
+    clearTimeout(studentFilterTimer);
+    studentFilterTimer = setTimeout(() => {
+      renderRows();
+      renderProgressRows();
+      updateSummary();
+      syncUrlFromControls({ replace: true, keepOpen: true });
+    }, 120);
+  }
+
+  /* ---------------------------------------------- 
+  GET FILTERED ROWS 
+  ---------------------------------------------- */
+  function getFilteredRows() {
+    const filter = getStudentFilter();
+    return rows.filter(row => matchesStudentFilter(row, filter));
+  }
+
+  /* ---------------------------------------------- 
+  GET FILTERED PROGRESS ROWS 
+  ---------------------------------------------- */
+  function getFilteredProgressRows() {
+    const filter = getStudentFilter();
+    return progressRows.filter(row => matchesStudentFilter(row, filter));
+  }
+
+  /* ---------------------------------------------- 
+  GET STUDENT FILTER 
+  ---------------------------------------------- */
+  function getStudentFilter() {
+    return getStudentFilterRaw().toLowerCase();
+  }
+
+  /* ---------------------------------------------- 
+  GET STUDENT FILTER RAW 
+  ---------------------------------------------- */
+  function getStudentFilterRaw() {
+    return String(studentInput?.value || "").trim();
+  }
+
+  /* ---------------------------------------------- 
+  MATCHES STUDENT FILTER 
+  ---------------------------------------------- */
+  function matchesStudentFilter(row, filter) {
+    if (!filter) return true;
+    return String(row?.studentName || "").toLowerCase().includes(filter);
+  }
+
+  /* ---------------------------------------------- 
+  OPEN REQUESTED MODAL 
+  ---------------------------------------------- */
+  function openRequestedModal() {
+    queryState = readQueryState();
+    if (!queryState.open) return;
+    if (queryState.open === "progress") {
+      const live = findProgressRowFromQuery(queryState);
+      if (live) openProgressDetails(live, { fromQuery: true });
+      return;
+    }
+    const submission = findSubmissionRowFromQuery(queryState);
+    if (submission) openDetails(submission, { fromQuery: true });
+  }
+
+  /* ---------------------------------------------- 
+  FIND SUBMISSION ROW FROM QUERY 
+  ---------------------------------------------- */
+  function findSubmissionRowFromQuery(state) {
+    const targetStudent = String(state.openStudent || state.student || "").toLowerCase();
+    const targetSubmitted = String(state.submittedAt || "");
+    const candidates = getFilteredRows().length ? getFilteredRows() : rows;
+    return candidates.find(row => {
+      const studentOk = !targetStudent || String(row.studentName || "").toLowerCase() === targetStudent || String(row.studentName || "").toLowerCase().includes(targetStudent);
+      const submittedOk = !targetSubmitted || String(row.submittedAt || "") === targetSubmitted || String(row.submittedAtLocal || "") === targetSubmitted;
+      return studentOk && submittedOk;
+    }) || null;
+  }
+
+  /* ---------------------------------------------- 
+  FIND PROGRESS ROW FROM QUERY 
+  ---------------------------------------------- */
+  function findProgressRowFromQuery(state) {
+    const targetStudent = String(state.openStudent || state.student || "").toLowerCase();
+    const targetProgressId = String(state.progressId || "");
+    const candidates = getFilteredProgressRows().length ? getFilteredProgressRows() : progressRows;
+    return candidates.find(row => {
+      const progressOk = !targetProgressId || String(row.progressId || "") === targetProgressId;
+      const studentOk = !targetStudent || String(row.studentName || "").toLowerCase() === targetStudent || String(row.studentName || "").toLowerCase().includes(targetStudent);
+      return progressOk && studentOk;
+    }) || null;
+  }
+
+  /* ---------------------------------------------- 
+  SCROLL TO REQUESTED SCREEN 
+  ---------------------------------------------- */
+  function scrollToRequestedScreen(view) {
+    const target = view === "live" ? document.querySelector(".progress-card") : view === "submissions" ? document.querySelector(".results-card:not(.progress-card)") : null;
+    if (!target) return;
+    document.querySelectorAll(".url-target-highlight").forEach(el => el.classList.remove("url-target-highlight"));
+    target.classList.add("url-target-highlight");
+    setTimeout(() => target.classList.remove("url-target-highlight"), 1800);
+    window.setTimeout(() => target.scrollIntoView({ behavior: "smooth", block: "start" }), 80);
+  }
+
+  /* ---------------------------------------------- 
+  IS HIGHLIGHTED ROW 
+  ---------------------------------------------- */
+  function isHighlightedRow(row) {
+    const target = String(queryState.openStudent || queryState.student || "").toLowerCase();
+    if (!target) return false;
+    return String(row?.studentName || "").toLowerCase().includes(target);
+  }
+
+  /* ---------------------------------------------- 
+  COPY SHARE LINK 
+  ---------------------------------------------- */
+  async function copyShareLink() {
+    syncUrlFromControls({ replace: true, keepOpen: true });
+    try {
+      await navigator.clipboard.writeText(location.href);
+      showToast("Link copied");
+    } catch {
+      showToast("Copy this URL from the address bar");
+    }
+  }
+
+  /* ---------------------------------------------- 
+  NORMALIZE VIEW MODE 
+  ---------------------------------------------- */
+  function normalizeViewMode(value) {
+    const view = String(value || "").trim().toLowerCase();
+    if (["live", "progress", "monitor", "monitoring"].includes(view)) return "live";
+    if (["submissions", "results", "submitted", "details"].includes(view)) return "submissions";
+    return "";
+  }
+
+  /* ---------------------------------------------- 
+  NORMALIZE OPEN MODE 
+  ---------------------------------------------- */
+  function normalizeOpenMode(value) {
+    const open = String(value || "").trim().toLowerCase();
+    if (["progress", "live", "preview"].includes(open)) return "progress";
+    if (["details", "submission", "student"].includes(open)) return "details";
+    return "";
+  }
+
+  /* ---------------------------------------------- 
+  CLEAR FILTERS WITHOUT URL 
+  ---------------------------------------------- */
+  function clearFiltersWithoutUrl() {
+    classIdInput.value = "";
+    examSelect.value = "";
+    if (studentInput) studentInput.value = "";
+    rows = [];
+    progressRows = [];
+    hideModalWithoutUrl();
+    stopProgressTimer();
+    renderProgressRows();
+    renderRows();
+    updateSummary();
+    status.textContent = "Enter a class ID and load results.";
+    if (progressStatus) progressStatus.textContent = "Load a class to supervise exams in progress.";
+    if (progressUpdatedAt) progressUpdatedAt.textContent = "Not updated yet";
+  }
 
 
   /* ---------------------------------------------- 
