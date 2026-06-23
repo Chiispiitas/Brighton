@@ -363,9 +363,31 @@
     if (!textarea) return;
     const item = findItem(partId, question);
     syncStoryStarter(textarea, item);
+    let lastSafeValue = textarea.value;
+    let lastSafeCursor = textarea.selectionStart || getStoryProtectedEnd(item);
+
+    textarea.addEventListener("beforeinput", event => {
+      if (!isProtectedStoryEdit(textarea, item, event.inputType)) return;
+      event.preventDefault();
+      keepCursorAfterStoryStarter(textarea, item);
+    });
+
+    textarea.addEventListener("keydown", event => {
+      if (!isProtectedStoryKey(textarea, item, event.key)) return;
+      event.preventDefault();
+      keepCursorAfterStoryStarter(textarea, item);
+    });
+
     textarea.addEventListener("input", () => {
+      if (item?.storyStarter && !textarea.value.startsWith(item.storyStarter)) {
+        textarea.value = lastSafeValue;
+        try { textarea.setSelectionRange(lastSafeCursor, lastSafeCursor); } catch (error) { /* Ignore cursor errors. */ }
+        return;
+      }
       syncStoryStarter(textarea, item);
       setAnswer(partId, question, textarea.value);
+      lastSafeValue = textarea.value;
+      lastSafeCursor = Math.max(getStoryProtectedEnd(item), textarea.selectionStart || getStoryProtectedEnd(item));
       const wc = countWords(textarea.value);
       const counter = $("[data-word-count]", dom.mainContent);
       if (counter) {
@@ -558,13 +580,34 @@
     const text = String(value || "");
     if (!cleanStarter) return text;
     if (!text.trim()) return `${cleanStarter}\n\n`;
+
     if (text.startsWith(cleanStarter)) {
-      const rest = text.slice(cleanStarter.length);
-      if (!rest || rest.startsWith("\n")) return text;
-      return `${cleanStarter}\n\n${rest.trimStart()}`;
+      const rest = cleanStoryStarterFragment(text.slice(cleanStarter.length), cleanStarter);
+      return rest ? `${cleanStarter}\n\n${rest}` : `${cleanStarter}\n\n`;
     }
-    const rest = text.replace(cleanStarter, "").trimStart();
-    return rest ? `${cleanStarter}\n\n${rest}` : `${cleanStarter}\n\n`;
+
+    const recovered = cleanStoryStarterFragment(text, cleanStarter);
+    return recovered ? `${cleanStarter}\n\n${recovered}` : `${cleanStarter}\n\n`;
+  }
+
+  /* ---------------------------------------------- 
+  CLEAN STORY STARTER FRAGMENT 
+  ---------------------------------------------- */
+  function cleanStoryStarterFragment(value, starter) {
+    let text = String(value || "").trimStart();
+    if (!starter) return text;
+
+    while (text.startsWith(starter)) {
+      text = text.slice(starter.length).trimStart();
+    }
+
+    for (let index = 1; index < starter.length; index += 1) {
+      const fragment = starter.slice(index);
+      if (fragment.length < 8) continue;
+      if (text.startsWith(fragment)) return text.slice(fragment.length).trimStart();
+    }
+
+    return text;
   }
 
   /* ---------------------------------------------- 
@@ -577,9 +620,51 @@
     if (fixed === before) return;
     const oldCursor = textarea.selectionStart || before.length;
     textarea.value = fixed;
-    const minCursor = item.storyStarter.length + 2;
+    const minCursor = getStoryProtectedEnd(item);
     const newCursor = Math.max(minCursor, Math.min(fixed.length, oldCursor + (fixed.length - before.length)));
     try { textarea.setSelectionRange(newCursor, newCursor); } catch (error) { /* Ignore cursor errors on unsupported inputs. */ }
+  }
+
+  /* ---------------------------------------------- 
+  GET STORY PROTECTED END 
+  ---------------------------------------------- */
+  function getStoryProtectedEnd(item) {
+    return item?.storyStarter ? String(item.storyStarter).trim().length + 2 : 0;
+  }
+
+  /* ---------------------------------------------- 
+  IS PROTECTED STORY EDIT 
+  ---------------------------------------------- */
+  function isProtectedStoryEdit(textarea, item, inputType = "") {
+    if (!item?.storyStarter) return false;
+    const protectedEnd = getStoryProtectedEnd(item);
+    const start = textarea.selectionStart ?? 0;
+    const end = textarea.selectionEnd ?? start;
+    if (start < protectedEnd) return true;
+    if (end < protectedEnd) return true;
+    if (start === protectedEnd && String(inputType).startsWith("deleteContentBackward")) return true;
+    return false;
+  }
+
+  /* ---------------------------------------------- 
+  IS PROTECTED STORY KEY 
+  ---------------------------------------------- */
+  function isProtectedStoryKey(textarea, item, key = "") {
+    if (!item?.storyStarter || (key !== "Backspace" && key !== "Delete")) return false;
+    const protectedEnd = getStoryProtectedEnd(item);
+    const start = textarea.selectionStart ?? 0;
+    const end = textarea.selectionEnd ?? start;
+    if (start < protectedEnd || end < protectedEnd) return true;
+    return key === "Backspace" && start === protectedEnd && end === protectedEnd;
+  }
+
+  /* ---------------------------------------------- 
+  KEEP CURSOR AFTER STORY STARTER 
+  ---------------------------------------------- */
+  function keepCursorAfterStoryStarter(textarea, item) {
+    const protectedEnd = getStoryProtectedEnd(item);
+    const cursor = Math.max(protectedEnd, textarea.selectionStart || protectedEnd);
+    try { textarea.setSelectionRange(cursor, cursor); } catch (error) { /* Ignore cursor errors. */ }
   }
 
   /* ---------------------------------------------- 
