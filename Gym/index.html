@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="theme-color" content="#111827" />
+  <title>Power Gymnastics Conditioning</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" aria-label="Main navigation">
+      <div class="brand">
+        <div class="brand-mark" aria-hidden="true">⚡</div>
+        <div>
+          <h1>Power Gym</h1>
+          <p>No equipment conditioning</p>
+        </div>
+      </div>
+      <nav class="nav-list" id="navList">
+        <button class="nav-item active" data-view="dashboard">Dashboard</button>
+        <button class="nav-item" data-view="plan">Plan</button>
+        <button class="nav-item" data-view="workout">Workout</button>
+        <button class="nav-item" data-view="skills">Skills</button>
+        <button class="nav-item" data-view="library">Library</button>
+        <button class="nav-item" data-view="progress">Progress</button>
+        <button class="nav-item" data-view="settings">Settings</button>
+      </nav>
+      <div class="side-note">
+        <strong>Safety rule</strong>
+        <span>Stop if you feel sharp pain. Use a mat for acrobatic skills.</span>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="icon-btn menu-toggle" id="menuToggle" aria-label="Open menu">☰</button>
+        <div>
+          <p class="eyebrow">Gymnastics strength • mobility • power</p>
+          <h2 id="viewTitle">Dashboard</h2>
+        </div>
+        <div class="top-actions">
+          <button class="ghost-btn" id="quickWorkoutBtn">Start today</button>
+          <button class="primary-btn" id="installBtn" hidden>Install</button>
+        </div>
+      </header>
+
+      <section id="dashboard" class="view active" aria-labelledby="dashboardTitle">
+        <div class="hero-card">
+          <div class="hero-copy">
+            <p class="eyebrow">12-week progression</p>
+            <h2 id="dashboardTitle">Condition your body for kip-ups, handstands, levers and power moves.</h2>
+            <p>Follow structured plans from beginner to advanced. Train strength, mobility, explosive power, and skill prerequisites with safe progressions.</p>
+            <div class="hero-actions">
+              <button class="primary-btn" data-go="plan">Build my plan</button>
+              <button class="secondary-btn" data-go="skills">View skill tree</button>
+            </div>
+          </div>
+          <div class="hero-visual" aria-hidden="true">
+            <div class="orb orb-one"></div>
+            <div class="orb orb-two"></div>
+            <div class="athlete-icon">🤸</div>
+            <div class="floating-chip chip-a">Core control</div>
+            <div class="floating-chip chip-b">Explosive legs</div>
+            <div class="floating-chip chip-c">Mobility</div>
+          </div>
+        </div>
+
+        <div class="stats-grid" id="statsGrid"></div>
+
+        <div class="grid-two">
+          <section class="panel">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Today</p>
+                <h3>Next workout</h3>
+              </div>
+              <button class="ghost-btn" id="regeneratePlanBtn">Refresh plan</button>
+            </div>
+            <div id="todayWorkout"></div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <div>
+                <p class="eyebrow">Weekly rhythm</p>
+                <h3>This week</h3>
+              </div>
+              <span class="pill" id="weekPill">Week 1</span>
+            </div>
+            <div id="weekPlan" class="week-plan"></div>
+          </section>
+        </div>
+
+        <section class="panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Progression rules</p>
+              <h3>How the plan advances</h3>
+            </div>
+          </div>
+          <div class="rule-grid">
+            <article><strong>1. Complete clean reps</strong><span>Only progress when form stays controlled and pain-free.</span></article>
+            <article><strong>2. Add reps before difficulty</strong><span>Add 1–2 reps first, then choose a harder variation.</span></article>
+            <article><strong>3. Skill before fatigue</strong><span>Practice kip-ups and handstands while fresh, not at the end of exhaustion.</span></article>
+            <article><strong>4. Deload every 4th week</strong><span>The app reduces volume to help recovery and prevent sudden spikes.</span></article>
+          </div>
+        </section>
+      </section>
+
+      <section id="plan" class="view" aria-labelledby="planTitle">
+        <section class="panel planner-panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Personal setup</p>
+              <h3 id="planTitle">Build your training plan</h3>
+            </div>
+            <span class="pill">No equipment required</span>
+          </div>
+
+          <form id="profileForm" class="profile-form">
+            <label>
+              Athlete name
+              <input type="text" id="athleteName" placeholder="Your name" />
+            </label>
+            <label>
+              Current level
+              <select id="levelSelect">
+                <option value="beginner">Beginner</option>
+                <option value="intermediate">Intermediate</option>
+                <option value="advanced">Advanced</option>
+              </select>
+            </label>
+            <label>
+              Main goal
+              <select id="goalSelect">
+                <option value="kipup">Kip-up</option>
+                <option value="handstand">Handstand</option>
+                <option value="planche">Planche</option>
+                <option value="frontlever">Front lever</option>
+                <option value="muscleup">Muscle-up prep</option>
+                <option value="cartwheel">Cartwheel / round-off</option>
+                <option value="swipes">Swipes</option>
+                <option value="windmill">Windmill</option>
+                <option value="backhandspring">Back handspring prep</option>
+                <option value="mobility">Mobility and injury resilience</option>
+              </select>
+            </label>
+            <label>
+              Training days per week
+              <select id="daysSelect">
+                <option value="3">3 days</option>
+                <option value="4">4 days</option>
+                <option value="5">5 days</option>
+              </select>
+            </label>
+            <label>
+              Session length
+              <select id="sessionSelect">
+                <option value="20">20 min</option>
+                <option value="30">30 min</option>
+                <option value="40">40 min</option>
+                <option value="50">50 min</option>
+              </select>
+            </label>
+            <label>
+              Weekly volume style
+              <select id="volumeSelect">
+                <option value="normal">Normal</option>
+                <option value="low">Low impact / cautious</option>
+                <option value="high">High challenge</option>
+              </select>
+            </label>
+            <button class="primary-btn form-submit" type="submit">Generate plan</button>
+          </form>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Current plan</p>
+              <h3>Workout schedule</h3>
+            </div>
+            <button class="secondary-btn" id="advanceWeekBtn">Advance week</button>
+          </div>
+          <div id="planSchedule" class="schedule-list"></div>
+        </section>
+      </section>
+
+      <section id="workout" class="view" aria-labelledby="workoutTitle">
+        <section class="panel workout-panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Training mode</p>
+              <h3 id="workoutTitle">Workout player</h3>
+            </div>
+            <select id="workoutSelect" class="compact-select" aria-label="Choose workout"></select>
+          </div>
+
+          <div id="workoutPlayer" class="workout-player"></div>
+        </section>
+      </section>
+
+      <section id="skills" class="view" aria-labelledby="skillsTitle">
+        <section class="panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Skill tree</p>
+              <h3 id="skillsTitle">Power move progressions</h3>
+            </div>
+            <span class="pill">Prerequisites matter</span>
+          </div>
+          <div id="skillTree" class="skill-tree"></div>
+        </section>
+      </section>
+
+      <section id="library" class="view" aria-labelledby="libraryTitle">
+        <section class="panel">
+          <div class="panel-head stacked-mobile">
+            <div>
+              <p class="eyebrow">Exercise library</p>
+              <h3 id="libraryTitle">Exercises, drills and regressions</h3>
+            </div>
+            <div class="filter-row">
+              <input id="librarySearch" type="search" placeholder="Search exercise..." />
+              <select id="libraryFilter" class="compact-select">
+                <option value="all">All</option>
+                <option value="strength">Strength</option>
+                <option value="power">Power</option>
+                <option value="mobility">Mobility</option>
+                <option value="skill">Skill</option>
+                <option value="core">Core</option>
+              </select>
+            </div>
+          </div>
+          <div class="guide-note">
+            <strong>Written guide mode:</strong> videos and embedded media have been removed. Each exercise now uses detailed written instructions with setup, steps, cues, mistakes, scaling and readiness checks.
+          </div>
+          <div id="exerciseLibrary" class="exercise-library"></div>
+        </section>
+      </section>
+
+      <section id="progress" class="view" aria-labelledby="progressTitle">
+        <section class="panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">Training history</p>
+              <h3 id="progressTitle">Progress and badges</h3>
+            </div>
+            <button class="secondary-btn" id="exportDataBtn">Export JSON</button>
+          </div>
+          <div id="progressView"></div>
+        </section>
+      </section>
+
+      <section id="settings" class="view" aria-labelledby="settingsTitle">
+        <section class="panel">
+          <div class="panel-head">
+            <div>
+              <p class="eyebrow">App settings</p>
+              <h3 id="settingsTitle">Preferences and safety</h3>
+            </div>
+          </div>
+          <div class="settings-grid">
+            <label class="toggle-row">
+              <span>
+                <strong>Sound cues</strong>
+                <small>Short beep after timers finish.</small>
+              </span>
+              <input type="checkbox" id="soundToggle" />
+            </label>
+            <label class="toggle-row">
+              <span>
+                <strong>Reduced motion</strong>
+                <small>Minimize visual animations.</small>
+              </span>
+              <input type="checkbox" id="motionToggle" />
+            </label>
+            <label class="toggle-row">
+              <span>
+                <strong>Safety reminders</strong>
+                <small>Show safety notes before power skills.</small>
+              </span>
+              <input type="checkbox" id="safetyToggle" />
+            </label>
+            <label class="toggle-row">
+              <span>
+                <strong>Auto-advance timers</strong>
+                <small>Move to the next set or exercise automatically after rest timers finish.</small>
+              </span>
+              <input type="checkbox" id="autoAdvanceToggle" />
+            </label>
+          </div>
+          <div class="danger-zone">
+            <h4>Reset data</h4>
+            <p>This removes saved workouts, progress, badges and plan settings from this browser.</p>
+            <button class="danger-btn" id="resetDataBtn">Reset app data</button>
+          </div>
+        </section>
+      </section>
+    </main>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="app.js"></script>
+</body>
+</html>
