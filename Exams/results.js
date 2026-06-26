@@ -37,12 +37,64 @@
   const progressActiveWindowMs = Number(config.PROGRESS_ACTIVE_WINDOW_MS) || 3 * 60 * 60 * 1000;
   const progressSubmittedWindowMs = Number(config.PROGRESS_SUBMITTED_WINDOW_MS) || 15 * 60 * 1000;
 
-  const WRITING_TASK_META = {
-    1: { part: 1, partId: "part1", question: 1, label: "Part 1", taskType: "Essay", title: "Essay: environment and everyday action", targetReader: "Your English teacher", prompt: "In your English class you have been talking about the environment.\n\nSome people say that schools and companies should do much more to reduce waste and pollution. Do you agree?\n\nNotes: transport; daily habits; your own idea\n\nWrite an essay using all the notes and giving reasons for your point of view." },
-    2: { part: 2, partId: "part2", question: 2, label: "Part 2", taskType: "Article", title: "Article: design that improves everyday life", targetReader: "Readers of a college English-language magazine", prompt: "You see this announcement in your college English-language magazine.\n\nArticles wanted: Better design, better lives\n\nWrite an article about a product, building or public place that you think is well designed. Explain what makes the design useful and say how it could be improved even more.\n\nThe best articles will be published in next month’s magazine.\n\nWrite your article." },
-    3: { part: 2, partId: "part2", question: 3, label: "Part 2", taskType: "Email", title: "Email: advice about learning and work", targetReader: "An English-speaking friend", prompt: "Your English-speaking friend Sam has written to you for advice.\n\nI’m thinking of taking an online course while doing a part-time job. I’m worried I won’t have enough time, but I also don’t want to miss a good opportunity. What do you think I should do?\n\nWrite an email to Sam giving your opinion. Suggest how Sam could organise the week and explain what problems to avoid." },
-    4: { part: 2, partId: "part2", question: 4, label: "Part 2", taskType: "Review", title: "Review: a story that made you think", targetReader: "Readers of an English-language student website", prompt: "You see this announcement on an English-language website for students.\n\nReviews wanted\n\nHave you read a book, watched a film or seen a series which made you think about facts, fake news or real life? Write a review describing it and explaining why it made an impression on you. Say whether you would recommend it to other students.\n\nThe best reviews will be posted on the website.\n\nWrite your review." }
+  const WRITING_TASK_META_BY_EXAM = {
+    b2: {
+      1: { part: 1, partId: "part1", question: 1, label: "Part 1", taskType: "Essay", title: "Essay: environment and everyday action", targetReader: "Your English teacher", prompt: "In your English class you have been talking about the environment.\n\nSome people say that schools and companies should do much more to reduce waste and pollution. Do you agree?\n\nNotes: transport; daily habits; your own idea\n\nWrite an essay using all the notes and giving reasons for your point of view." },
+      2: { part: 2, partId: "part2", question: 2, label: "Part 2", taskType: "Article", title: "Article: design that improves everyday life", targetReader: "Readers of a college English-language magazine", prompt: "You see this announcement in your college English-language magazine.\n\nArticles wanted: Better design, better lives\n\nWrite an article about a product, building or public place that you think is well designed. Explain what makes the design useful and say how it could be improved even more.\n\nThe best articles will be published in next month’s magazine.\n\nWrite your article." },
+      3: { part: 2, partId: "part2", question: 3, label: "Part 2", taskType: "Email", title: "Email: advice about learning and work", targetReader: "An English-speaking friend", prompt: "Your English-speaking friend Sam has written to you for advice.\n\nI’m thinking of taking an online course while doing a part-time job. I’m worried I won’t have enough time, but I also don’t want to miss a good opportunity. What do you think I should do?\n\nWrite an email to Sam giving your opinion. Suggest how Sam could organise the week and explain what problems to avoid." },
+      4: { part: 2, partId: "part2", question: 4, label: "Part 2", taskType: "Review", title: "Review: a story that made you think", targetReader: "Readers of an English-language student website", prompt: "You see this announcement on an English-language website for students.\n\nReviews wanted\n\nHave you read a book, watched a film or seen a series which made you think about facts, fake news or real life? Write a review describing it and explaining why it made an impression on you. Say whether you would recommend it to other students.\n\nThe best reviews will be posted on the website.\n\nWrite your review." }
+    },
+    b1plus: {
+      1: { part: 1, partId: "part1", question: 1, label: "Part 1", taskType: "Picture description", title: "Picture description 1", targetReader: "", prompt: "Look at picture 1 and describe what you can see. Write more than two sentences. Include as many details as you can." },
+      2: { part: 1, partId: "part1", question: 2, label: "Part 1", taskType: "Picture description", title: "Picture description 2", targetReader: "", prompt: "Look at picture 2 and describe what you can see. Write more than two sentences. Include as many details as you can." },
+      3: { part: 2, partId: "part2", question: 3, label: "Part 2", taskType: "Email", title: "Email: replying to Tania", targetReader: "An English-speaking friend", prompt: "Read this email from your English-speaking friend Tania.\n\nHi,\n\nI’m so pleased you’ve invited me to your birthday party.\n\nI’m really looking forward to seeing you.\n\nOf course I want to buy you a present. I don’t know what you’d prefer – something to wear perhaps, or would you like the money to buy something yourself?\n\nWhat time would you like me to arrive?\n\nAnd would you like me to bring some food?\n\nSee you soon!\n\nTania\n\nWrite your email replying to Tania." },
+      4: { part: 3, partId: "part3", question: 4, label: "Part 3", taskType: "Story", title: "Story: surprise at the door", targetReader: "Your English teacher", prompt: "Your English teacher has asked you to write a story.\n\nYour story must begin with this sentence:\n\nWhen I opened the door, I couldn’t believe my eyes.\n\nWrite your story." }
+    }
   };
+
+  const WRITING_RUBRIC_PROFILES = {
+    b2: {
+      id: "b2",
+      levelLabel: "B2",
+      title: "Short B2 Writing rubric",
+      actionTitle: "B2 Writing marking",
+      actionText: "Score each writing sample from 0–5 in the four Cambridge-style subscales. Totals are calculated here only and are not stored.",
+      buttonText: "Open B2 writing rubric",
+      choiceBased: true,
+      defaultSubscales: ["Content", "Communicative Achievement", "Organisation", "Language"],
+      cards: [
+        ["Content", "Does the answer complete the task? Is everything relevant? Is the target reader fully informed?"],
+        ["Communicative Achievement", "Does the writing use the correct style, tone and format for the task? Does it hold the reader’s attention?"],
+        ["Organisation", "Is the text well organised and coherent? Are paragraphs, linking words and cohesive devices used effectively?"],
+        ["Language", "Is there a good range of vocabulary and grammar? Are errors controlled so communication is clear?"]
+      ],
+      note: "Each subscale is scored from 0 to 5. Each writing sample is worth 20 marks: 5 Content + 5 Communicative Achievement + 5 Organisation + 5 Language.",
+      bandGuide: "5 = strong B2 performance, 3 = acceptable but with omissions or limited range, 1 = minimally successful, 0 = not relevant or below task requirements. Bands 2 and 4 sit between the neighbouring bands."
+    },
+    b1plus: {
+      id: "b1plus",
+      levelLabel: "B1+",
+      title: "Short B1+ Writing rubric",
+      actionTitle: "B1+ Writing marking",
+      actionText: "Score each writing sample from 0–5 in its required subscales. Picture descriptions use only Content and Organization. Email and story tasks use the four Cambridge-style writing subscales.",
+      buttonText: "Open B1+ writing rubric",
+      choiceBased: false,
+      defaultSubscales: ["Content", "Communicative Achievement", "Organization", "Language"],
+      pictureSubscales: ["Content", "Organization"],
+      cards: [
+        ["Picture description · Content", "The answer describes the picture clearly, includes relevant people, places, actions and objects, and gives more than two meaningful sentences."],
+        ["Picture description · Organization", "The description is easy to follow, with clear sentence order, logical details and simple linking where useful."],
+        ["Email/Story · Content", "The answer completes the task, answers the required points, and gives enough relevant detail for a B1+ reader."],
+        ["Email/Story · Communicative Achievement", "The writing uses a suitable format and tone: friendly and informal for the email, and clear narrative style for the story."],
+        ["Email/Story · Organization", "Ideas are connected clearly with paragraphs, sequencing and linking words such as because, so, then, after that, however or finally."],
+        ["Email/Story · Language", "The writing uses appropriate B1+ vocabulary and a range of simple and some complex grammar. Errors may appear but meaning should remain clear."]
+      ],
+      note: "Picture descriptions: Content + Organization only. Email and story: Content + Communicative Achievement + Organization + Language. Each subscale is scored from 0 to 5.",
+      bandGuide: "5 = strong B1+ performance with clear, developed ideas; 3 = generally successful but with some omissions or limited range; 1 = minimally successful; 0 = not attempted, not relevant or impossible to understand. Bands 2 and 4 sit between the neighbouring bands."
+    }
+  };
+
+  const WRITING_TASK_META = WRITING_TASK_META_BY_EXAM.b2;
 
   classIdInput.addEventListener("blur", () => { normalizeClassInput(); syncUrlFromControls({ replace: true, keepOpen: true }); });
   examSelect.addEventListener("change", () => syncUrlFromControls({ replace: true, keepOpen: true }));
@@ -617,7 +669,8 @@
   function openWritingDetails(row) {
     const payload = payloadFromRow(row);
     const flags = safeJson(row.flaggedJson, row.flagged || payload.flagged || []);
-    const samples = extractWritingSamples(row, payload);
+    const rubricProfile = getWritingRubricProfile(row, payload);
+    const samples = extractWritingSamples(row, payload, rubricProfile);
     const submittedAt = row.submittedAtLocal || formatDate(row.submittedAt || payload.submittedAt);
 
     detailsContent.innerHTML = `
@@ -627,30 +680,30 @@
         <div class="detail-box"><span>Exam</span><strong>${escapeHtml(row.examTitle || payload.examTitle || row.examId || "—")}</strong></div>
         <div class="detail-box"><span>Submitted</span><strong>${escapeHtml(submittedAt)}</strong></div>
         <div class="detail-box"><span>Status</span><strong>Manual writing review</strong></div>
-        <div class="detail-box"><span>Selected Part 2</span><strong>${escapeHtml(selectedPart2Label(payload, samples))}</strong></div>
+        <div class="detail-box"><span>${escapeHtml(rubricProfile.choiceBased ? "Selected Part 2" : "Writing tasks")}</span><strong>${escapeHtml(rubricProfile.choiceBased ? selectedPart2Label(payload, samples, rubricProfile) : `${samples.length} task(s) submitted`)}</strong></div>
       </div>
 
       <section class="detail-section writing-review-actions">
         <div>
-          <h3>B2 Writing marking</h3>
-          <p class="muted">Score each writing sample from 0–5 in the four Cambridge-style subscales. Totals are calculated here only and are not stored.</p>
+          <h3>${escapeHtml(rubricProfile.actionTitle)}</h3>
+          <p class="muted">${escapeHtml(rubricProfile.actionText)}</p>
         </div>
-        <button class="secondary-btn" data-toggle-rubric type="button">Open B2 writing rubric</button>
+        <button class="secondary-btn" data-toggle-rubric type="button">${escapeHtml(rubricProfile.buttonText)}</button>
       </section>
 
       <section class="detail-section writing-rubric-panel hidden" data-writing-rubric>
-        ${renderWritingRubric()}
+        ${renderWritingRubric(rubricProfile)}
       </section>
 
       <section class="detail-section writing-total-panel">
-        <article class="writing-total-card"><span>Total score</span><strong data-writing-total>0/40</strong></article>
+        <article class="writing-total-card"><span>Total score</span><strong data-writing-total>0/${getWritingMaxScore(samples, rubricProfile)}</strong></article>
         <article class="writing-total-card"><span>Percentage</span><strong data-writing-percent>0%</strong></article>
         <article class="writing-total-card"><span>Samples scored</span><strong data-writing-samples-scored>0/${samples.length}</strong></article>
       </section>
 
       <section class="detail-section">
         <h3>Writing samples</h3>
-        ${samples.length ? samples.map(renderWritingSample).join("") : `<p class="muted">No writing samples were found in this submission.</p>`}
+        ${samples.length ? samples.map((sample, index) => renderWritingSample(sample, index, rubricProfile)).join("") : `<p class="muted">No writing samples were found in this submission.</p>`}
       </section>
 
       <section class="detail-section detail-two-column">
@@ -678,23 +731,21 @@
   /* ---------------------------------------------- 
   EXTRACT WRITING SAMPLES 
   ---------------------------------------------- */
-  function extractWritingSamples(row, payload) {
+  function extractWritingSamples(row, payload, rubricProfile = getWritingRubricProfile(row, payload)) {
     const list = [];
     const seen = new Set();
 
-    addWritingSamples(list, seen, parseJsonDeep(payload?.writingSamples, firstJsonFrom(row, ["writingSamplesJson", "writingSamples"], [])));
+    addWritingSamples(list, seen, parseJsonDeep(payload?.writingSamples, firstJsonFrom(row, ["writingSamplesJson", "writingSamples"], [])), rubricProfile);
 
     const answers = parseJsonDeep(payload?.answers, firstJsonFrom(row, ["answersJson", "answers", "studentAnswersJson", "studentAnswers", "responsesJson", "responses"], {}));
-    const part1 = getAnswerFromNested(answers, "part1", 1);
-    if (String(part1 || "").trim()) addWritingSample(list, seen, { question: 1, answer: part1 });
-
-    [2, 3, 4].forEach(question => {
-      const answer = getAnswerFromNested(answers, "part2", question);
-      if (String(answer || "").trim()) addWritingSample(list, seen, { part: 2, partId: "part2", question, answer });
+    const metaByQuestion = getWritingTaskMetaMap(rubricProfile);
+    Object.values(metaByQuestion).forEach(meta => {
+      const answer = getAnswerFromNested(answers, meta.partId, meta.question);
+      if (String(answer || "").trim()) addWritingSample(list, seen, { part: meta.part, partId: meta.partId, question: meta.question, answer }, rubricProfile);
     });
 
-    addWritingSamples(list, seen, parseJsonDeep(payload?.part2Drafts, firstJsonFrom(row, ["part2DraftsJson", "part2Drafts"], [])));
-    addWritingSamples(list, seen, parseJsonDeep(payload?.answerList, firstJsonFrom(row, ["answerListJson", "answerList"], [])));
+    addWritingSamples(list, seen, parseJsonDeep(payload?.part2Drafts, firstJsonFrom(row, ["part2DraftsJson", "part2Drafts"], [])), rubricProfile);
+    addWritingSamples(list, seen, parseJsonDeep(payload?.answerList, firstJsonFrom(row, ["answerListJson", "answerList"], [])), rubricProfile);
 
     return list.sort((a, b) => Number(a.part || 0) - Number(b.part || 0) || Number(a.question || 0) - Number(b.question || 0));
   }
@@ -702,18 +753,18 @@
   /* ---------------------------------------------- 
   ADD WRITING SAMPLES 
   ---------------------------------------------- */
-  function addWritingSamples(list, seen, samples) {
+  function addWritingSamples(list, seen, samples, rubricProfile) {
     if (!Array.isArray(samples)) return;
-    samples.forEach(sample => addWritingSample(list, seen, sample));
+    samples.forEach(sample => addWritingSample(list, seen, sample, rubricProfile));
   }
 
   /* ---------------------------------------------- 
   ADD WRITING SAMPLE 
   ---------------------------------------------- */
-  function addWritingSample(list, seen, sample) {
+  function addWritingSample(list, seen, sample, rubricProfile) {
     const answer = sample?.answer ?? sample?.value ?? "";
     if (!String(answer || "").trim()) return;
-    const enriched = enrichWritingSample({ ...sample, answer });
+    const enriched = enrichWritingSample({ ...sample, answer }, rubricProfile);
     const key = `${enriched.partId || ""}-${enriched.question || ""}`;
     const existingIndex = list.findIndex(item => `${item.partId || ""}-${item.question || ""}` === key);
     if (existingIndex >= 0) {
@@ -727,9 +778,9 @@
   /* ---------------------------------------------- 
   ENRICH WRITING SAMPLE 
   ---------------------------------------------- */
-  function enrichWritingSample(sample) {
+  function enrichWritingSample(sample, rubricProfile = WRITING_RUBRIC_PROFILES.b2) {
     const question = Number(sample?.question || sample?.q || 0);
-    const meta = WRITING_TASK_META[question] || {};
+    const meta = getWritingTaskMetaMap(rubricProfile)[question] || {};
     const answer = sample?.answer || "";
     return {
       ...meta,
@@ -780,19 +831,58 @@
   /* ---------------------------------------------- 
   SELECTED PART2 LABEL 
   ---------------------------------------------- */
-  function selectedPart2Label(payload, samples) {
+  function selectedPart2Label(payload, samples, rubricProfile = WRITING_RUBRIC_PROFILES.b2) {
     const question = Number(payload?.part2SelectedQuestion || samples.find(sample => Number(sample.part) === 2)?.question || 0);
     if (!question) return "—";
-    const meta = WRITING_TASK_META[question] || {};
+    const meta = getWritingTaskMetaMap(rubricProfile)[question] || {};
     return `Question ${question}${meta.taskType ? ` · ${meta.taskType}` : ""}`;
+  }
+
+
+  /* ---------------------------------------------- 
+  GET WRITING RUBRIC PROFILE 
+  ---------------------------------------------- */
+  function getWritingRubricProfile(row = {}, payload = {}) {
+    const raw = [payload.rubricProfile, row.rubricProfile, payload.examId, row.examId, payload.examTitle, row.examTitle, payload.level, row.level]
+      .filter(Boolean)
+      .join(" ")
+      .toLowerCase();
+    if (raw.includes("b1plus") || raw.includes("b1+")) return WRITING_RUBRIC_PROFILES.b1plus;
+    return WRITING_RUBRIC_PROFILES.b2;
+  }
+
+  /* ---------------------------------------------- 
+  GET WRITING TASK META MAP 
+  ---------------------------------------------- */
+  function getWritingTaskMetaMap(rubricProfile = WRITING_RUBRIC_PROFILES.b2) {
+    return WRITING_TASK_META_BY_EXAM[rubricProfile.id] || WRITING_TASK_META_BY_EXAM.b2;
+  }
+
+  /* ---------------------------------------------- 
+  GET WRITING SUBSCALES 
+  ---------------------------------------------- */
+  function getWritingSubscales(sample, rubricProfile = WRITING_RUBRIC_PROFILES.b2) {
+    if (rubricProfile.id === "b1plus" && String(sample?.taskType || "").toLowerCase().includes("picture")) {
+      return rubricProfile.pictureSubscales || ["Content", "Organization"];
+    }
+    return rubricProfile.defaultSubscales || WRITING_RUBRIC_PROFILES.b2.defaultSubscales;
+  }
+
+  /* ---------------------------------------------- 
+  GET WRITING MAX SCORE 
+  ---------------------------------------------- */
+  function getWritingMaxScore(samples, rubricProfile = WRITING_RUBRIC_PROFILES.b2) {
+    return (samples || []).reduce((sum, sample) => sum + getWritingSubscales(sample, rubricProfile).length * 5, 0);
   }
 
   /* ---------------------------------------------- 
   RENDER WRITING SAMPLE 
   ---------------------------------------------- */
-  function renderWritingSample(sample, index) {
+  function renderWritingSample(sample, index, rubricProfile = WRITING_RUBRIC_PROFILES.b2) {
     const answer = sample.answer || "";
     const wordCount = Number(sample.wordCount ?? countWords(answer));
+    const subscales = getWritingSubscales(sample, rubricProfile);
+    const sampleMax = subscales.length * 5;
     return `
       <article class="writing-sample-card" data-writing-sample="${index}">
         <div class="writing-sample-head">
@@ -807,14 +897,14 @@
         <div class="writing-answer-box">${escapeHtml(answer || "No answer submitted.").replace(/\n/g, "<br>")}</div>
         <div class="writing-score-box">
           <div class="subscale-grid">
-            ${["Content", "Communicative Achievement", "Organisation", "Language"].map(name => `
+            ${subscales.map(name => `
               <label>
                 <span>${escapeHtml(name)}</span>
                 <input data-writing-score data-sample-index="${index}" data-subscale="${escapeAttr(name)}" type="number" min="0" max="5" step="1" inputmode="numeric" placeholder="0–5" />
               </label>
             `).join("")}
           </div>
-          <div class="sample-score-line">Sample score: <strong data-sample-total="${index}">0/20</strong></div>
+          <div class="sample-score-line">Sample score: <strong data-sample-total="${index}" data-sample-max="${sampleMax}">0/${sampleMax}</strong></div>
         </div>
       </article>
     `;
@@ -823,21 +913,16 @@
   /* ---------------------------------------------- 
   RENDER WRITING RUBRIC 
   ---------------------------------------------- */
-  function renderWritingRubric() {
-    const cards = [
-      ["Content", "Does the answer complete the task? Is everything relevant? Is the target reader fully informed?"],
-      ["Communicative Achievement", "Does the writing use the correct style, tone and format for the task? Does it hold the reader’s attention?"],
-      ["Organisation", "Is the text well organised and coherent? Are paragraphs, linking words and cohesive devices used effectively?"],
-      ["Language", "Is there a good range of vocabulary and grammar? Are errors controlled so communication is clear?"]
-    ];
+  function renderWritingRubric(rubricProfile = WRITING_RUBRIC_PROFILES.b2) {
+    const cards = rubricProfile.cards || WRITING_RUBRIC_PROFILES.b2.cards;
     return `
-      <h3>Short B2 Writing rubric</h3>
-      <p class="muted">Each subscale is scored from 0 to 5. Each writing sample is worth 20 marks: 5 Content + 5 Communicative Achievement + 5 Organisation + 5 Language.</p>
+      <h3>${escapeHtml(rubricProfile.title)}</h3>
+      <p class="muted">${escapeHtml(rubricProfile.note)}</p>
       <div class="rubric-card-grid">
         ${cards.map(([title, body]) => `<article class="rubric-card"><h4>${escapeHtml(title)}</h4><p>${escapeHtml(body)}</p></article>`).join("")}
       </div>
       <div class="rubric-band-box">
-        <strong>Band guide:</strong> 5 = strong B2 performance, 3 = acceptable but with omissions or limited range, 1 = minimally successful, 0 = not relevant or below task requirements. Bands 2 and 4 sit between the neighbouring bands.
+        <strong>Band guide:</strong> ${escapeHtml(rubricProfile.bandGuide)}
       </div>
     `;
   }
@@ -849,6 +934,7 @@
     if (!detailsContent) return;
     const sampleIndexes = Array.from(new Set(Array.from(detailsContent.querySelectorAll("[data-writing-score]")).map(input => input.dataset.sampleIndex)));
     let total = 0;
+    let max = 0;
     let scoredSamples = 0;
     sampleIndexes.forEach(index => {
       const inputs = Array.from(detailsContent.querySelectorAll(`[data-writing-score][data-sample-index="${index}"]`));
@@ -859,12 +945,16 @@
         if (!Number.isFinite(value)) complete = false;
         else sampleTotal += value;
       });
+      const sampleMax = inputs.length * 5;
       const target = detailsContent.querySelector(`[data-sample-total="${index}"]`);
-      if (target) target.textContent = `${sampleTotal}/20`;
+      if (target) {
+        target.dataset.sampleMax = String(sampleMax);
+        target.textContent = `${sampleTotal}/${sampleMax}`;
+      }
       total += sampleTotal;
-      if (complete && inputs.length === 4) scoredSamples += 1;
+      max += sampleMax;
+      if (complete && inputs.length > 0) scoredSamples += 1;
     });
-    const max = sampleIndexes.length * 20;
     const percent = max ? Math.round((total / max) * 100) : 0;
     const totalEl = detailsContent.querySelector("[data-writing-total]");
     const percentEl = detailsContent.querySelector("[data-writing-percent]");

@@ -952,6 +952,8 @@
       level: exam.level,
       skill: exam.skill,
       maxScore: exam.maxScore,
+      rubricProfile: exam.rubricProfile || "b1plus-writing",
+      rubric: exam.rubric || null,
       studentName: state.student.name,
       classId: state.student.classId,
       answers: state.answers,

@@ -10,6 +10,13 @@ window.writingExam = {
   level: "B1+",
   skill: "Writing",
   maxScore: 30,
+  rubricProfile: "b1plus-writing",
+  rubric: {
+    level: "B1+",
+    pictureDescriptionSubscales: ["Content", "Organization"],
+    extendedWritingSubscales: ["Content", "Communicative Achievement", "Organization", "Language"],
+    note: "Picture descriptions use only Content and Organization. Email and story tasks use the four writing subscales."
+  },
   timeLimitMinutes: 40,
   wordRange: "100 words",
   parts: [
