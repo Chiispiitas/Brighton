@@ -61,6 +61,17 @@ window.BRIGHTON_SITE_CONFIG = {
       totalQuestions: 4,
       maxScore: 30,
       relativeUrl: "exams/b1plus-writing/index.html"
+    },
+    {
+      examId: "brighton-b1-reading-final",
+      title: "Brighton B1 Reading Final Exam",
+      level: "B1",
+      skill: "Reading",
+      description: "Six-part B1 reading exam based on Personal Best B1 Units 1–8.",
+      isActive: true,
+      totalQuestions: 32,
+      maxScore: 32,
+      relativeUrl: "exams/b1-reading/index.html"
     }
   ]
 };

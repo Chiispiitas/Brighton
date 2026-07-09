@@ -1,0 +1,14 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="960" height="640" viewBox="0 0 960 640" role="img" aria-label="Lina Placeholder">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#fff4df"/>
+      <stop offset="1" stop-color="#def9f7"/>
+    </linearGradient>
+  </defs>
+  <rect width="960" height="640" rx="34" fill="url(#bg)"/>
+  <rect x="38" y="38" width="884" height="564" rx="28" fill="none" stroke="#f8a832" stroke-width="10" stroke-dasharray="28 18"/>
+  <circle cx="480" cy="258" r="96" fill="#ffffff" stroke="#00a9a5" stroke-width="8"/>
+  <path d="M414 258h132M480 192v132" stroke="#f8a832" stroke-width="18" stroke-linecap="round"/>
+  <text x="480" y="405" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-size="38" font-weight="800" fill="#202631">Image placeholder</text>
+  <text x="480" y="455" text-anchor="middle" font-family="Poppins, Arial, sans-serif" font-size="28" font-weight="600" fill="#667085">Lina Placeholder</text>
+</svg>
