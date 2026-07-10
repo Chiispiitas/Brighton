@@ -30,6 +30,17 @@ window.BRIGHTON_SITE_CONFIG = {
       relativeUrl: "exams/b2-rue/index.html"
     },
     {
+      examId: "brighton-a2-rw-final",
+      title: "Brighton A2 Reading and Writing Final Exam",
+      level: "A2",
+      skill: "Reading and Writing",
+      description: "Seven-part A2 Key-style Reading and Writing final exam.",
+      isActive: true,
+      totalQuestions: 32,
+      maxScore: 60,
+      relativeUrl: "exams/a2-rw/index.html"
+    },
+    {
       examId: "brighton-b2-listening-final",
       title: "B2 Listening Final Exam",
       level: "B2",
