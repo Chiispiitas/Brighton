@@ -17,6 +17,7 @@ window.examParts = [
         context: "Notice at a community centre",
         visualTitle: "Cooking club",
         visualText: "Cooking Club\nTonight's class starts at 6:30, not 6:00. Bring a small container if you want to take food home.",
+        image: "assets/part1-q1-cooking-club.png",
         stem: "What should people do?",
         options: {
           A: "Arrive half an hour earlier than usual.",
@@ -29,6 +30,7 @@ window.examParts = [
         context: "Text message",
         visualTitle: "From Maya",
         visualText: "Hi Leo. I can't find my history book. Is it in your bag? I need it for homework, but I can collect it tomorrow morning.",
+        image: "assets/part1-q2-maya-message.png",
         stem: "Why is Maya writing to Leo?",
         options: {
           A: "To ask if he has something of hers.",
@@ -41,6 +43,7 @@ window.examParts = [
         context: "Sign in a clothes shop",
         visualTitle: "Changing rooms",
         visualText: "Changing rooms are closed today. You can return clothes within seven days. Please keep your receipt.",
+        image: "assets/part1-q3-changing-rooms.png",
         stem: "What does the sign say?",
         options: {
           A: "Customers cannot try clothes on today.",
@@ -53,6 +56,7 @@ window.examParts = [
         context: "School website message",
         visualTitle: "Sports day",
         visualText: "Sports day will be in the gym because of the rain. Students should wear trainers and bring a bottle of water.",
+        image: "assets/part1-q4-sports-day.png",
         stem: "What has changed?",
         options: {
           A: "The place for the activity.",
@@ -65,6 +69,7 @@ window.examParts = [
         context: "Note on a restaurant table",
         visualTitle: "Lunch menu",
         visualText: "Lunch menu: choose soup or salad with any sandwich. Ask your waiter for today's vegetarian option.",
+        image: "assets/part1-q5-lunch-menu.png",
         stem: "What can customers do?",
         options: {
           A: "Choose two sandwiches for the same price.",
@@ -77,6 +82,7 @@ window.examParts = [
         context: "Message from a hotel",
         visualTitle: "Reception",
         visualText: "Reception closes at 10 p.m. If you arrive later, call us before 9 p.m. and we will send the door code.",
+        image: "assets/part1-q6-reception.png",
         stem: "Guests who arrive late should",
         options: {
           A: "wait outside until reception opens.",
@@ -127,6 +133,8 @@ window.examParts = [
     range: "Questions 14–18",
     instruction: "For each question, choose the correct answer. Read the article and choose A, B or C.",
     articleTitle: "My first week in a new city",
+    image: "assets/part3-new-city.png",
+    imageAlt: "Teenage student with a backpack in a new city street near a bus stop and bookshop.",
     text: [
       "When I moved to Bristol with my family, I felt excited and worried at the same time. Our new flat was above a small bookshop, and my bedroom window looked down onto a busy street. At first the buses and people made too much noise, but after a few nights I began to like hearing the city wake up in the morning.",
       "On my first day at college, I got lost because I took the wrong bus. I was late for my first class, and I thought everyone would laugh. Instead, a girl called Amira showed me where to sit and lent me a pen. At break time she asked if I wanted to see the library. It was much bigger than the one at my old school, with comfortable chairs and a quiet room for studying.",
@@ -227,9 +235,9 @@ window.examParts = [
         promptTitle: "Write the story shown in the pictures",
         minWords: 35,
         pictures: [
-          { title: "Picture 1", text: "A student is waiting at a bus stop in the rain. The bus is late." },
-          { title: "Picture 2", text: "The student meets a classmate and they share an umbrella." },
-          { title: "Picture 3", text: "They arrive at school together and laugh about the rainy morning." }
+          { title: "Picture 1", image: "assets/part7-picture1-bus-stop-rain.png", text: "A student is waiting at a bus stop in the rain. The bus is late." },
+          { title: "Picture 2", image: "assets/part7-picture2-umbrella.png", text: "The student meets a classmate and they share an umbrella." },
+          { title: "Picture 3", image: "assets/part7-picture3-school-arrival.png", text: "They arrive at school together and laugh about the rainy morning." }
         ],
         checklist: ["describe the rainy morning", "include the classmate", "finish at school"]
       }

@@ -10,6 +10,8 @@
   const EXAM_TITLE = "Brighton A2 Reading and Writing Final Exam";
   const SKILL = "Reading and Writing";
   const LEVEL = "A2";
+  const EXAM_TYPE = "reading-writing";
+  const RUBRIC_PROFILE = "a2rw";
 
   const examParts = window.examParts || [];
   const App = window.BrightonApp || {};
@@ -46,7 +48,6 @@
   let saveTimer = null;
   let liveProgress = null;
 
-  boot();
 
   /* ----------------------------------------------
   BOOT
@@ -242,6 +243,9 @@
   ---------------------------------------------- */
   function renderPartOne(part) {
     const item = getCurrentItem();
+    const visual = item.image
+      ? `<img class="exam-image part-one-image" src="${escapeAttr(item.image)}" alt="${escapeAttr(item.context || item.visualTitle || `Question ${item.q} visual`)}" />`
+      : `<div class="image-placeholder sign-placeholder"><div><strong>${escape(item.visualTitle)}</strong><span>${escape(item.visualText)}</span></div></div>`;
     return `
       <section class="exam-panel part-one">
         ${partHeader(part)}
@@ -249,12 +253,7 @@
         <div class="a2-sign-layout">
           <article class="visual-card sign-card">
             <p class="eyebrow">${escape(item.context)}</p>
-            <div class="image-placeholder sign-placeholder">
-              <div>
-                <strong>${escape(item.visualTitle)}</strong>
-                <span>${escape(item.visualText)}</span>
-              </div>
-            </div>
+            ${visual}
           </article>
           <aside class="question-card active fixed-question-card">
             <h4><span class="q-badge">${item.q}</span> ${escape(item.stem)}</h4>
@@ -305,6 +304,9 @@
   RENDER PART THREE
   ---------------------------------------------- */
   function renderPartThree(part) {
+    const image = part.image
+      ? `<img class="exam-image part-three-image" src="${escapeAttr(part.image)}" alt="${escapeAttr(part.imageAlt || part.articleTitle || "Reading image")}" />`
+      : `<div class="image-placeholder">Image placeholder: student in a new city / college street</div>`;
     return `
       <section class="exam-panel part-three">
         ${partHeader(part)}
@@ -312,7 +314,7 @@
         <div class="split-grid reading-split" style="--left: ${state.layout.part3Left || 56}%" data-resizable="part3">
           <article class="split-column">
             <div class="reading-text">
-              <div class="image-placeholder">Image placeholder: student in a new city / college street</div>
+              ${image}
               <h3>${escape(part.articleTitle)}</h3>
               ${part.text.map(paragraph => `<p>${escape(paragraph)}</p>`).join("")}
             </div>
@@ -402,7 +404,11 @@
   function renderPictureStory(pictures) {
     return `
       <div class="picture-story-row" aria-label="Picture story prompts">
-        ${pictures.map(picture => `
+        ${pictures.map(picture => picture.image ? `
+          <div class="picture-card has-image">
+            <img class="exam-image picture-story-image" src="${escapeAttr(picture.image)}" alt="${escapeAttr(picture.text || picture.title || "Picture story image")}" />
+          </div>
+        ` : `
           <div class="picture-card image-placeholder">
             <strong>${escape(picture.title)}</strong>
             <span>${escape(picture.text)}</span>
@@ -422,12 +428,20 @@
     part7: renderWritingPart
   };
 
+  boot();
+
   /* ----------------------------------------------
   BIND MAIN EVENTS
   ---------------------------------------------- */
   function bindMainEvents(part) {
     $$('[data-choice-answer]', dom.mainContent).forEach(input => {
-      input.addEventListener("change", () => setAnswer(input.dataset.partId, Number(input.dataset.q), input.value));
+      input.addEventListener("change", () => {
+        const q = Number(input.dataset.q);
+        goToQuestion(q, { render: false });
+        setAnswer(input.dataset.partId, q, input.value, { render: false });
+        syncChoiceRows(q, input.value);
+        syncActiveQuestionCards(q);
+      });
     });
 
     $$('[data-open-input]', dom.mainContent).forEach(input => {
@@ -491,6 +505,19 @@
     }).join("");
   }
 
+  function syncChoiceRows(q, value) {
+    $$(`[data-answer-row][data-q="${q}"]`, dom.mainContent).forEach(row => {
+      const input = row.querySelector("input[type='radio']");
+      row.classList.toggle("selected", input?.value === value);
+    });
+  }
+
+  function syncActiveQuestionCards(q) {
+    $$('[data-question-card]', dom.mainContent).forEach(card => {
+      card.classList.toggle("active", Number(card.dataset.questionCard) === Number(q));
+    });
+  }
+
   /* ----------------------------------------------
   RENDER INLINE TEXT
   ---------------------------------------------- */
@@ -499,7 +526,7 @@
       if (piece.type !== "gap") return escape(piece.value).replace(/\n/g, "<br>");
       const answer = getAnswer(part.id, piece.q);
       if (mode === "open-gap") {
-        return `<input class="inline-input open-input ${getCurrentQuestionNumber() === piece.q ? "active" : ""}" value="${escapeAttr(answer)}" data-open-input data-part-id="${part.id}" data-q="${piece.q}" maxlength="30" aria-label="Question ${piece.q}" />`;
+        return `<span class="open-gap-wrap"><input class="inline-input open-input ${getCurrentQuestionNumber() === piece.q ? "active" : ""}" value="${escapeAttr(answer)}" data-open-input data-part-id="${part.id}" data-q="${piece.q}" maxlength="30" placeholder="${piece.q}" aria-label="Question ${piece.q}" /></span>`;
       }
       const item = part.items.find(question => question.q === piece.q);
       const display = answer ? item?.options?.[answer] : "";
@@ -514,37 +541,58 @@
     closeChoicePopover();
     const item = part.items.find(question => question.q === q);
     if (!item) return;
-    const rect = anchor.getBoundingClientRect();
+    const selected = getAnswer(part.id, q);
     const popover = document.createElement("div");
     popover.className = "choice-popover";
-    popover.style.left = `${Math.min(window.innerWidth - 452, Math.max(12, rect.left))}px`;
-    popover.style.top = `${Math.max(12, rect.top - 18)}px`;
+    popover.setAttribute("role", "dialog");
     popover.innerHTML = `
       <div class="popover-title">Question ${q}</div>
       <div class="popover-options">
         ${Object.entries(item.options || {}).map(([letter, text]) => `
-          <button type="button" class="option-btn ${getAnswer(part.id, q) === letter ? "selected" : ""}" data-popover-choice="${escapeAttr(letter)}">
-            <strong>${escape(letter)}</strong> ${escape(text)}
+          <button type="button" class="option-btn ${selected === letter ? "selected" : ""}" data-popover-choice="${escapeAttr(letter)}">
+            ${escape(text)}
           </button>
         `).join("")}
       </div>
       <button type="button" class="clear-choice" data-popover-clear>Clear answer</button>
     `;
     document.body.appendChild(popover);
-    $$('[data-popover-choice]', popover).forEach(button => {
-      button.addEventListener("click", () => {
-        setAnswer(part.id, q, button.dataset.popoverChoice);
+    const rect = anchor.getBoundingClientRect();
+    const panelRect = popover.getBoundingClientRect();
+    const top = Math.max(10, rect.top - panelRect.height - 14);
+    const left = Math.min(window.innerWidth - panelRect.width - 12, Math.max(12, rect.left));
+    popover.style.top = `${top}px`;
+    popover.style.left = `${left}px`;
+
+    popover.addEventListener("click", event => {
+      event.stopPropagation();
+      const choiceBtn = event.target.closest("[data-popover-choice]");
+      const clearBtn = event.target.closest("[data-popover-clear]");
+      if (choiceBtn) {
+        const value = choiceBtn.dataset.popoverChoice;
+        setAnswer(part.id, q, value, { render: false });
+        updateChoiceGap(anchor, q, part, value);
         closeChoicePopover();
-      });
-    });
-    $('[data-popover-clear]', popover).addEventListener("click", () => {
-      setAnswer(part.id, q, "");
-      closeChoicePopover();
+      }
+      if (clearBtn) {
+        setAnswer(part.id, q, "", { render: false });
+        updateChoiceGap(anchor, q, part, "");
+        closeChoicePopover();
+      }
     });
   }
 
   function closeChoicePopover() {
     $$(".choice-popover").forEach(el => el.remove());
+  }
+
+  function updateChoiceGap(anchor, q, part, value) {
+    if (!anchor) return;
+    const item = part.items.find(question => question.q === q);
+    const display = value ? item?.options?.[value] : "";
+    anchor.classList.toggle("answered", Boolean(value));
+    anchor.innerHTML = `<span class="gap-number">${q}</span>${display ? `<span class="gap-answer">${escape(display)}</span>` : ""}`;
+    $$(".choice-popover .option-btn").forEach(btn => btn.classList.toggle("selected", btn.dataset.popoverChoice === value));
   }
 
   /* ----------------------------------------------
@@ -693,11 +741,33 @@
     saveState();
     if (liveProgress && typeof liveProgress.touch === "function") liveProgress.touch();
     if (options.render === false) {
+      const splitScrollState = captureSplitScrollState();
       updateHeader();
       renderBottomNav();
+      restoreSplitScrollState(splitScrollState);
       return;
     }
     renderApp({ restoreScroll: true });
+  }
+
+  function captureSplitScrollState() {
+    return $$(".split-column", dom.mainContent).map((column, index) => ({
+      index,
+      top: column.scrollTop,
+      left: column.scrollLeft
+    }));
+  }
+
+  function restoreSplitScrollState(scrollState) {
+    if (!Array.isArray(scrollState) || !scrollState.length) return;
+    requestAnimationFrame(() => {
+      $$(".split-column", dom.mainContent).forEach((column, index) => {
+        const saved = scrollState.find(item => item.index === index);
+        if (!saved) return;
+        column.scrollTop = saved.top;
+        column.scrollLeft = saved.left;
+      });
+    });
   }
 
   function isAnswered(part, q) {
@@ -936,6 +1006,8 @@
       examTitle: EXAM_TITLE,
       skill: SKILL,
       level: LEVEL,
+      examType: EXAM_TYPE,
+      rubricProfile: RUBRIC_PROFILE,
       getProgress: buildLiveProgressSnapshot
     });
     liveProgress.start();
@@ -958,8 +1030,11 @@
       totalQuestions: totals.total,
       progressPercent: totals.total ? Math.round((totals.answered / totals.total) * 100) : 0,
       timeSpentSeconds: calculateLiveTimeSpentSeconds(),
+      examType: EXAM_TYPE,
+      rubricProfile: RUBRIC_PROFILE,
       answers: state.answers,
       answerList: buildAnswerList(),
+      writingSamples: buildWritingSamples(),
       flagged: Object.keys(state.flagged).map(Number).sort((a, b) => a - b),
       notes: state.notes || ""
     };
@@ -976,10 +1051,15 @@
     return {
       examId: EXAM_ID,
       examTitle: EXAM_TITLE,
+      skill: SKILL,
+      level: LEVEL,
+      examType: EXAM_TYPE,
+      rubricProfile: RUBRIC_PROFILE,
       studentName: state.student.name,
       classId: state.student.classId,
       answers: state.answers,
       answerList: buildAnswerList(),
+      writingSamples: buildWritingSamples(),
       flagged: Object.keys(state.flagged).map(Number).sort((a, b) => a - b),
       notes: state.notes || "",
       startedAt: state.student.startedAt || "",
@@ -999,6 +1079,29 @@
         answer: getAnswer(part.id, item.q) || ""
       }));
     });
+  }
+
+  function buildWritingSamples() {
+    return examParts
+      .filter(part => Number(String(part.id).replace("part", "")) >= 6)
+      .flatMap(part => {
+        const partNumber = Number(String(part.id).replace("part", ""));
+        return part.items.map(item => {
+          const answer = getAnswer(part.id, item.q) || "";
+          return {
+            part: partNumber,
+            partId: part.id,
+            question: item.q,
+            label: part.label,
+            taskType: partNumber === 7 ? "Story" : "Email",
+            title: item.promptTitle || part.title || `Question ${item.q}`,
+            targetReader: partNumber === 6 ? "An English-speaking friend" : "Your English teacher",
+            prompt: item.prompt || item.promptTitle || part.instruction || "",
+            answer,
+            wordCount: countWords(answer)
+          };
+        });
+      });
   }
 
   function calculateTimeSpentSeconds() {

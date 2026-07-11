@@ -8,6 +8,7 @@
   const App = window.BrightonApp || {};
   const config = window.BRIGHTON_SITE_CONFIG || {};
   const apiBase = String(config.API_BASE_URL || "").replace(/\/$/, "");
+
   const classIdInput = document.querySelector("#classIdInput");
   const examSelect = document.querySelector("#examSelect");
   const studentInput = document.querySelector("#studentInput");
@@ -49,6 +50,10 @@
       2: { part: 1, partId: "part1", question: 2, label: "Part 1", taskType: "Picture description", title: "Picture description 2", targetReader: "", prompt: "Look at picture 2 and describe what you can see. Write more than two sentences. Include as many details as you can." },
       3: { part: 2, partId: "part2", question: 3, label: "Part 2", taskType: "Email", title: "Email: replying to Tania", targetReader: "An English-speaking friend", prompt: "Read this email from your English-speaking friend Tania.\n\nHi,\n\nI’m so pleased you’ve invited me to your birthday party.\n\nI’m really looking forward to seeing you.\n\nOf course I want to buy you a present. I don’t know what you’d prefer – something to wear perhaps, or would you like the money to buy something yourself?\n\nWhat time would you like me to arrive?\n\nAnd would you like me to bring some food?\n\nSee you soon!\n\nTania\n\nWrite your email replying to Tania." },
       4: { part: 3, partId: "part3", question: 4, label: "Part 3", taskType: "Story", title: "Story: surprise at the door", targetReader: "Your English teacher", prompt: "Your English teacher has asked you to write a story.\n\nYour story must begin with this sentence:\n\nWhen I opened the door, I couldn’t believe my eyes.\n\nWrite your story." }
+    },
+    a2rw: {
+      31: { part: 6, partId: "part6", question: 31, label: "Part 6", taskType: "Email", title: "Email: visiting a friend's city", targetReader: "An English-speaking friend", prompt: "You are going to visit your friend's city next weekend. Write an email to your friend. In your email, say when you will arrive, ask about the weather, and suggest one activity to do together." },
+      32: { part: 7, partId: "part7", question: 32, label: "Part 7", taskType: "Story", title: "Story: rainy morning", targetReader: "Your English teacher", prompt: "Look at the three pictures. Write the story shown in the pictures: a student waits for a late bus in the rain, meets a classmate and shares an umbrella, then arrives at school and laughs about the rainy morning." }
     }
   };
 
@@ -68,8 +73,8 @@
         ["Organisation", "Is the text well organised and coherent? Are paragraphs, linking words and cohesive devices used effectively?"],
         ["Language", "Is there a good range of vocabulary and grammar? Are errors controlled so communication is clear?"]
       ],
-      note: "Each subscale is scored from 0 to 5. Each writing sample is worth 20 marks: 5 Content + 5 Communicative Achievement + 5 Organisation + 5 Language.",
-      bandGuide: "5 = strong B2 performance, 3 = acceptable but with omissions or limited range, 1 = minimally successful, 0 = not relevant or below task requirements. Bands 2 and 4 sit between the neighbouring bands."
+      note: "Each subscale is scored from 0 to 5. Each writing sample is worth 20 marks.",
+      bandGuide: "5 = strong B2 performance, 3 = acceptable but with omissions or limited range, 1 = minimally successful, 0 = not relevant or below task requirements."
     },
     b1plus: {
       id: "b1plus",
@@ -89,29 +94,45 @@
         ["Email/Story · Organization", "Ideas are connected clearly with paragraphs, sequencing and linking words such as because, so, then, after that, however or finally."],
         ["Email/Story · Language", "The writing uses appropriate B1+ vocabulary and a range of simple and some complex grammar. Errors may appear but meaning should remain clear."]
       ],
-      note: "Picture descriptions: Content + Organization only. Email and story: Content + Communicative Achievement + Organization + Language. Each subscale is scored from 0 to 5.",
-      bandGuide: "5 = strong B1+ performance with clear, developed ideas; 3 = generally successful but with some omissions or limited range; 1 = minimally successful; 0 = not attempted, not relevant or impossible to understand. Bands 2 and 4 sit between the neighbouring bands."
+      note: "Picture descriptions: Content + Organization only. Email and story: Content + Communicative Achievement + Organization + Language.",
+      bandGuide: "5 = strong B1+ performance with clear, developed ideas; 3 = generally successful but with some omissions or limited range; 1 = minimally successful; 0 = not attempted, not relevant or impossible to understand."
+    },
+    a2rw: {
+      id: "a2rw",
+      levelLabel: "A2",
+      title: "Short A2 Writing rubric",
+      actionTitle: "A2 Writing marking",
+      actionText: "Score Parts 6 and 7 after checking the Reading answer table. Each A2 writing task uses Content, Organization and Language.",
+      buttonText: "Open A2 writing rubric",
+      choiceBased: false,
+      defaultSubscales: ["Content", "Organization", "Language"],
+      cards: [
+        ["Content", "The answer completes the required points and gives enough relevant detail for an A2 reader."],
+        ["Organization", "The text is easy to follow, with simple sentence order and basic linking such as and, but, because, then or after that."],
+        ["Language", "The writing uses appropriate A2 vocabulary and grammar. Errors may appear, but the meaning should be clear."],
+        ["Task length", "Part 6 should be at least 25 words. Part 7 should be at least 35 words."]
+      ],
+      note: "A2 Reading and Writing is mixed: Reading Parts 1–5 are checked against the answer key first. Writing Parts 6–7 are reviewed at the end.",
+      bandGuide: "5 = strong A2 performance, 3 = generally successful but with some omissions, 1 = minimally successful, 0 = not attempted, not relevant or impossible to understand. Bands 2 and 4 sit between neighbouring bands."
     }
   };
 
-  const WRITING_TASK_META = WRITING_TASK_META_BY_EXAM.b2;
-
-  classIdInput.addEventListener("blur", () => { normalizeClassInput(); syncUrlFromControls({ replace: true, keepOpen: true }); });
-  examSelect.addEventListener("change", () => syncUrlFromControls({ replace: true, keepOpen: true }));
-  studentInput?.addEventListener("input", scheduleStudentFilterUpdate);
-  loadBtn.addEventListener("click", () => loadResults({ updateUrl: true, view: "submissions" }));
-  clearBtn.addEventListener("click", clearFilters);
-  exportBtn.addEventListener("click", exportCsv);
-  shareLinkBtn?.addEventListener("click", copyShareLink);
-  closeModalBtn.addEventListener("click", closeModal);
-  modal.addEventListener("click", event => { if (event.target === modal) closeModal(); });
-  window.addEventListener("popstate", handlePopState);
-
+  bindEvents();
   init();
 
-  /* ---------------------------------------------- 
-  INIT 
-  ---------------------------------------------- */
+  function bindEvents() {
+    classIdInput?.addEventListener("blur", () => { normalizeClassInput(); syncUrlFromControls({ replace: true, keepOpen: true }); });
+    examSelect?.addEventListener("change", () => syncUrlFromControls({ replace: true, keepOpen: true }));
+    studentInput?.addEventListener("input", scheduleStudentFilterUpdate);
+    loadBtn?.addEventListener("click", () => loadResults({ updateUrl: true, view: "submissions" }));
+    clearBtn?.addEventListener("click", clearFilters);
+    exportBtn?.addEventListener("click", exportCsv);
+    shareLinkBtn?.addEventListener("click", copyShareLink);
+    closeModalBtn?.addEventListener("click", closeModal);
+    modal?.addEventListener("click", event => { if (event.target === modal) closeModal(); });
+    window.addEventListener("popstate", handlePopState);
+  }
+
   async function init() {
     queryState = readQueryState();
     applyQueryStateToControls(queryState);
@@ -121,9 +142,6 @@
     else scrollToRequestedScreen(queryState.view);
   }
 
-  /* ---------------------------------------------- 
-  LOAD EXAMS 
-  ---------------------------------------------- */
   async function loadExams() {
     try {
       if (!apiBase || apiBase.includes("YOUR-WIX")) throw new Error("Brighton Database not configured");
@@ -132,36 +150,31 @@
       if (!res.ok || data.success === false) throw new Error(data.error || `HTTP ${res.status}`);
       fillExamSelect(data.exams || []);
     } catch {
-      fillExamSelect([]);
-      status.textContent = "Failed to connect to Brighton Database. Check internet connection.";
+      fillExamSelect(config.FALLBACK_EXAMS || []);
+      if (status) status.textContent = "Failed to connect to Brighton Database. Check internet connection.";
     }
   }
 
-  /* ---------------------------------------------- 
-  FILL EXAM SELECT 
-  ---------------------------------------------- */
   function fillExamSelect(exams) {
-    const current = queryState.examId || examSelect.dataset.prefill || "";
-    examSelect.innerHTML = `<option value="">All exams</option>` + exams.map(exam => `
+    if (!examSelect) return;
+    const current = queryState.examId || examSelect.dataset.prefill || examSelect.value || "";
+    examSelect.innerHTML = `<option value="">All exams</option>` + (exams || []).map(exam => `
       <option value="${escapeAttr(exam.examId)}">${escapeHtml(exam.title || exam.examId)}</option>
     `).join("");
     if (current) examSelect.value = current;
   }
 
-  /* ---------------------------------------------- 
-  LOAD RESULTS 
-  ---------------------------------------------- */
   async function loadResults(options = {}) {
     const classId = normalizeClassInput();
-    const examId = examSelect.value.trim();
+    const examId = examSelect?.value.trim() || "";
     if (options.updateUrl !== false) syncUrlFromControls({ replace: false, view: options.view || "submissions" });
     if (!classId) {
       showToast("Enter a class ID first");
-      classIdInput.focus();
+      classIdInput?.focus();
       return;
     }
     if (!apiBase || apiBase.includes("YOUR-WIX")) {
-      status.textContent = "Failed to connect to Brighton Database. Check internet connection.";
+      if (status) status.textContent = "Failed to connect to Brighton Database. Check internet connection.";
       rows = [];
       progressRows = [];
       stopProgressTimer();
@@ -171,8 +184,8 @@
       return;
     }
 
-    status.textContent = "Loading results...";
-    resultsBody.innerHTML = `<tr><td colspan="8">Loading...</td></tr>`;
+    if (status) status.textContent = "Loading results...";
+    if (resultsBody) resultsBody.innerHTML = `<tr><td colspan="8">Loading...</td></tr>`;
 
     try {
       const url = new URL(`${apiBase}/getResults`);
@@ -186,13 +199,13 @@
       startProgressTimer();
       const locallyGraded = rows.filter(row => row._gradedLocally).length;
       const visibleCount = getFilteredRows().length;
-      status.textContent = `${rows.length} submission(s) loaded for ${classId}.${getStudentFilter() ? ` Showing ${visibleCount} matching student row(s).` : ""}${locallyGraded ? ` ${locallyGraded} row(s) graded locally from the answer key.` : ""}`;
+      if (status) status.textContent = `${rows.length} submission(s) loaded for ${classId}.${getStudentFilter() ? ` Showing ${visibleCount} matching student row(s).` : ""}${locallyGraded ? ` ${locallyGraded} row(s) graded locally from the answer key.` : ""}`;
       renderRows();
       updateSummary(data.summary);
       scrollToRequestedScreen(queryState.view);
       openRequestedModal();
     } catch (error) {
-      status.textContent = `Could not load results: ${error.message}`;
+      if (status) status.textContent = `Could not load results: ${error.message}`;
       rows = [];
       progressRows = [];
       stopProgressTimer();
@@ -202,9 +215,6 @@
     }
   }
 
-  /* ---------------------------------------------- 
-  APPLY LOCAL GRADING 
-  ---------------------------------------------- */
   async function applyLocalGrading(items) {
     if (!window.BrightonGrading) return items;
     const updated = [];
@@ -214,13 +224,13 @@
         updated.push(copy);
         continue;
       }
-      const shouldGrade = copy.score === undefined || copy.score === null || copy.maxScore === undefined || copy.maxScore === null || copy.status === "submitted_ungraded";
+      const shouldGrade = copy.score === undefined || copy.score === null || copy.maxScore === undefined || copy.maxScore === null || copy.status === "submitted_ungraded" || isMixedReadingWritingSubmission(copy);
       if (!shouldGrade) {
         updated.push(copy);
         continue;
       }
       try {
-        const examId = copy.examId || "brighton-b2-rue-final";
+        const examId = copy.examId || payloadFromRow(copy).examId || "brighton-b2-rue-final";
         const key = await getAnswerKey(examId);
         const payload = payloadFromRow(copy);
         const graded = window.BrightonGrading.gradeSubmission(payload, key);
@@ -241,9 +251,6 @@
     return updated;
   }
 
-  /* ---------------------------------------------- 
-  GET ANSWER KEY 
-  ---------------------------------------------- */
   async function getAnswerKey(examId) {
     if (answerKeyCache.has(examId)) return answerKeyCache.get(examId);
     const key = await window.BrightonGrading.loadAnswerKey(examId);
@@ -251,9 +258,6 @@
     return key;
   }
 
-  /* ---------------------------------------------- 
-  PAYLOAD FROM ROW 
-  ---------------------------------------------- */
   function payloadFromRow(row) {
     const raw = firstJsonFrom(row, ["rawPayloadJson", "rawProgressJson", "rawPayload", "payloadJson", "payload"], {});
     const payload = raw?.payload || raw || {};
@@ -265,6 +269,8 @@
       ...payload,
       examId: payload.examId || row.examId,
       examTitle: payload.examTitle || row.examTitle,
+      examType: payload.examType || row.examType,
+      rubricProfile: payload.rubricProfile || row.rubricProfile,
       level: payload.level || row.level,
       skill: payload.skill || row.skill,
       studentName: payload.studentName || row.studentName,
@@ -278,13 +284,9 @@
     };
   }
 
-
-  /* ---------------------------------------------- 
-  LOAD PROGRESS 
-  ---------------------------------------------- */
   async function loadProgress() {
     const classId = normalizeClassInput();
-    const examId = examSelect.value.trim();
+    const examId = examSelect?.value.trim() || "";
     if (!classId || !apiBase || apiBase.includes("YOUR-WIX")) {
       progressRows = [];
       renderProgressRows();
@@ -309,25 +311,16 @@
     }
   }
 
-  /* ---------------------------------------------- 
-  START PROGRESS TIMER 
-  ---------------------------------------------- */
   function startProgressTimer() {
     stopProgressTimer();
     progressTimer = window.setInterval(loadProgress, progressRefreshMs);
   }
 
-  /* ---------------------------------------------- 
-  STOP PROGRESS TIMER 
-  ---------------------------------------------- */
   function stopProgressTimer() {
     if (progressTimer) window.clearInterval(progressTimer);
     progressTimer = null;
   }
 
-  /* ---------------------------------------------- 
-  FILTER VISIBLE PROGRESS ROWS 
-  ---------------------------------------------- */
   function filterVisibleProgressRows(items) {
     const now = Date.now();
     return (items || [])
@@ -342,16 +335,10 @@
       .sort((a, b) => new Date(b.lastSeenAt || b.submittedAt || 0) - new Date(a.lastSeenAt || a.submittedAt || 0));
   }
 
-  /* ---------------------------------------------- 
-  PROGRESS KEY 
-  ---------------------------------------------- */
   function progressKey(item) {
     return `${item.examId || ""}|${item.classId || ""}|${item.studentName || ""}`.toLowerCase();
   }
 
-  /* ---------------------------------------------- 
-  RENDER PROGRESS ROWS 
-  ---------------------------------------------- */
   function renderProgressRows() {
     if (!progressBody) return;
     const visibleRows = getFilteredProgressRows();
@@ -387,65 +374,33 @@
     });
   }
 
-  /* ---------------------------------------------- 
-  REFRESH OPEN PROGRESS DETAILS 
-  ---------------------------------------------- */
   function refreshOpenProgressDetails() {
-    if (!activeProgressPreviewId || modal.classList.contains("hidden")) return;
+    if (!activeProgressPreviewId || modal?.classList.contains("hidden")) return;
     const latest = progressRows.find(row => (row.progressId || progressKey(row)) === activeProgressPreviewId);
     if (!latest) return;
     openProgressDetails(latest, { refreshing: true });
   }
 
-  /* ---------------------------------------------- 
-  PROGRESS STATUS TEXT 
-  ---------------------------------------------- */
   function progressStatusText(row) {
     if (String(row.status || "").toLowerCase() === "submitted") return { label: "Submitted", className: "submitted" };
     if (isProgressStale(row)) return { label: "Connection lost", className: "lost" };
     return { label: "In progress", className: "active" };
   }
 
-  /* ---------------------------------------------- 
-  IS PROGRESS STALE 
-  ---------------------------------------------- */
   function isProgressStale(row) {
     const last = new Date(row.lastSeenAt || 0).getTime();
     if (!Number.isFinite(last)) return true;
     return (Date.now() - last) > progressStaleSeconds * 1000;
   }
 
-  /* ---------------------------------------------- 
-  FORMAT CURRENT 
-  ---------------------------------------------- */
   function formatCurrent(row) {
     const part = row.currentPart ? String(row.currentPart).replace("part", "Part ") : "—";
     const question = row.currentQuestion ? `Q${row.currentQuestion}` : "";
     return `${escapeHtml(part)} ${escapeHtml(question)}`.trim();
   }
 
-  /* ---------------------------------------------- 
-  FORMAT SECONDS 
-  ---------------------------------------------- */
-  function formatSeconds(value) {
-    const total = Number(value);
-    if (!Number.isFinite(total) || total < 0) return "—";
-    const minutes = Math.floor(total / 60);
-    const seconds = Math.round(total % 60);
-    return `${minutes}:${String(seconds).padStart(2, "0")}`;
-  }
-
-  /* ---------------------------------------------- 
-  CLAMP 
-  ---------------------------------------------- */
-  function clamp(value, min, max) {
-    return Math.max(min, Math.min(max, value));
-  }
-
-  /* ---------------------------------------------- 
-  RENDER ROWS 
-  ---------------------------------------------- */
   function renderRows() {
+    if (!resultsBody) return;
     const visibleRows = getFilteredRows();
     if (!visibleRows.length) {
       const message = rows.length && getStudentFilter() ? "No submissions match this student filter." : "No submissions found.";
@@ -456,11 +411,12 @@
     resultsBody.innerHTML = visibleRows.map((row, index) => {
       const partScores = safeJson(row.partScoresJson, row.partScores || {});
       const writing = isWritingSubmission(row);
+      const mixed = isMixedReadingWritingSubmission(row);
       const scoreCell = writing
         ? `<span class="score-pill manual-score-pill">Manual review</span>`
         : `<span class="score-pill">${row.score ?? "—"}/${row.maxScore ?? "—"}</span>`;
       const percentCell = writing ? "—" : (typeof row.percentage === "number" ? `${row.percentage}%` : "—");
-      const partsCell = writing ? formatWritingMini(row) : formatParts(partScores);
+      const partsCell = writing ? formatWritingMini(row) : mixed ? formatMixedMini(row, partScores) : formatParts(partScores);
       return `
         <tr class="${isHighlightedRow(row) ? "url-row-highlight" : ""}">
           <td><strong>${escapeHtml(row.studentName || "—")}</strong></td>
@@ -480,57 +436,41 @@
     });
   }
 
-  /* ---------------------------------------------- 
-  UPDATE SUMMARY 
-  ---------------------------------------------- */
   function updateSummary(serverSummary) {
     const visibleRows = getFilteredRows();
     const useServerSummary = !getStudentFilter() && serverSummary;
     const total = useServerSummary ? serverSummary.total : visibleRows.length;
     const percentages = visibleRows.map(r => Number(r.percentage)).filter(Number.isFinite);
-    const average = useServerSummary ? serverSummary.average : (percentages.length ? Math.round(percentages.reduce((a,b)=>a+b,0) / percentages.length) : null);
+    const average = useServerSummary ? serverSummary.average : (percentages.length ? Math.round(percentages.reduce((a, b) => a + b, 0) / percentages.length) : null);
     const highest = useServerSummary ? serverSummary.highest : (percentages.length ? Math.max(...percentages) : null);
     const lowest = useServerSummary ? serverSummary.lowest : (percentages.length ? Math.min(...percentages) : null);
-    document.querySelector("#summaryTotal").textContent = total;
-    document.querySelector("#summaryAverage").textContent = average === null ? "—" : `${average}%`;
-    document.querySelector("#summaryHighest").textContent = highest === null ? "—" : `${highest}%`;
-    document.querySelector("#summaryLowest").textContent = lowest === null ? "—" : `${lowest}%`;
+    setText("#summaryTotal", total ?? 0);
+    setText("#summaryAverage", average === null || average === undefined ? "—" : `${average}%`);
+    setText("#summaryHighest", highest === null || highest === undefined ? "—" : `${highest}%`);
+    setText("#summaryLowest", lowest === null || lowest === undefined ? "—" : `${lowest}%`);
   }
 
-  /* ---------------------------------------------- 
-  OPEN PROGRESS DETAILS 
-  ---------------------------------------------- */
   async function openProgressDetails(row, options = {}) {
     if (!row) return;
     if (!options.refreshing && !options.fromQuery) syncUrlFromControls({ replace: false, view: "live", open: "progress", row });
     activeProgressPreviewId = row.progressId || progressKey(row);
     const liveRow = progressRowToSubmissionRow(row);
     const payload = payloadFromRow(liveRow);
-    const status = progressStatusText(row);
-    modal.classList.remove("hidden");
-    modal.setAttribute("aria-hidden", "false");
-    if (!options.refreshing) detailsContent.innerHTML = `<div class="detail-loading">Loading live answers...</div>`;
+    const rowStatus = progressStatusText(row);
+    openModal("Live answer preview", options.refreshing ? "" : "Loading live answers...");
 
-    const heading = modal.querySelector(".modal-head h2");
-    if (heading) heading.textContent = "Live answer preview";
+    if (isMixedReadingWritingSubmission(liveRow)) {
+      await openMixedReadingWritingProgressDetails(row, liveRow, payload, rowStatus);
+      return;
+    }
 
     if (isWritingSubmission(liveRow)) {
       const samples = extractWritingSamples(liveRow, payload);
-      detailsContent.innerHTML = `
-        <div class="detail-grid detail-grid-wide">
-          <div class="detail-box"><span>Student</span><strong>${escapeHtml(row.studentName || payload.studentName || "—")}</strong></div>
-          <div class="detail-box"><span>Class</span><strong>${escapeHtml(row.classId || payload.classId || "—")}</strong></div>
-          <div class="detail-box"><span>Exam</span><strong>${escapeHtml(row.examTitle || payload.examTitle || row.examId || "—")}</strong></div>
-          <div class="detail-box"><span>Status</span><strong>${escapeHtml(status.label)}</strong></div>
-          <div class="detail-box"><span>Progress</span><strong>${escapeHtml(row.answeredCount ?? "—")}/${escapeHtml(row.totalQuestions ?? "—")}</strong></div>
-          <div class="detail-box"><span>Last update</span><strong>${escapeHtml(formatDate(row.lastSeenAt || row.submittedAt))}</strong></div>
-        </div>
-
+      detailsContent.innerHTML = liveHeader(row, payload, rowStatus, true) + `
         <section class="detail-section">
           <h3>Live writing samples</h3>
           ${samples.length ? samples.map(renderLiveWritingSample).join("") : `<p class="muted">No writing answers have been saved in live progress yet. Keep this window open and it will update automatically.</p>`}
-        </section>
-      `;
+        </section>`;
       return;
     }
 
@@ -540,28 +480,26 @@
     } catch (error) {
       review = { rows: [], error: error.message || String(error) };
     }
-
-    detailsContent.innerHTML = `
-      <div class="detail-grid detail-grid-wide">
-        <div class="detail-box"><span>Student</span><strong>${escapeHtml(row.studentName || payload.studentName || "—")}</strong></div>
-        <div class="detail-box"><span>Class</span><strong>${escapeHtml(row.classId || payload.classId || "—")}</strong></div>
-        <div class="detail-box"><span>Exam</span><strong>${escapeHtml(row.examTitle || payload.examTitle || row.examId || "—")}</strong></div>
-        <div class="detail-box"><span>Status</span><strong>${escapeHtml(status.label)}</strong></div>
-        <div class="detail-box"><span>Progress</span><strong>${escapeHtml(row.answeredCount ?? "—")}/${escapeHtml(row.totalQuestions ?? "—")}</strong></div>
-        <div class="detail-box"><span>Last update</span><strong>${escapeHtml(formatDate(row.lastSeenAt || row.submittedAt))}</strong></div>
-      </div>
-
-      <section class="detail-section">
-        <h3>Live answers vs answer key</h3>
-        ${review?.error ? `<p class="detail-warning">${escapeHtml(review.error)}</p>` : ""}
-        ${renderAnswerReview(review.rows || [])}
-      </section>
-    `;
+    detailsContent.innerHTML = liveHeader(row, payload, rowStatus, true) + renderReadingReviewSection("Live answers vs answer key", review.rows || [], review.error);
   }
 
-  /* ---------------------------------------------- 
-  PROGRESS ROW TO SUBMISSION ROW 
-  ---------------------------------------------- */
+  async function openMixedReadingWritingProgressDetails(row, liveRow, payload, rowStatus) {
+    let review;
+    try {
+      review = await buildAnswerReview(liveRow);
+    } catch (error) {
+      review = { rows: [], error: error.message || String(error) };
+    }
+    const rubricProfile = getWritingRubricProfile(liveRow, payload);
+    const samples = extractWritingSamples(liveRow, payload, rubricProfile).filter(isA2WritingSample);
+    detailsContent.innerHTML = liveHeader(row, payload, rowStatus, true)
+      + renderReadingReviewSection("Live Reading answers · Parts 1–5", getMixedReadingRows(review.rows || []), review.error)
+      + `<section class="detail-section">
+          <h3>Live Writing answers · Parts 6–7</h3>
+          ${samples.length ? samples.map(renderLiveWritingSample).join("") : `<p class="muted">No writing answers have been saved in live progress yet. Keep this window open and it will update automatically.</p>`}
+        </section>`;
+  }
+
   function progressRowToSubmissionRow(row) {
     const raw = parseJsonDeep(row?.rawProgressJson, {});
     return {
@@ -578,39 +516,15 @@
     };
   }
 
-  /* ---------------------------------------------- 
-  RENDER LIVE WRITING SAMPLE 
-  ---------------------------------------------- */
-  function renderLiveWritingSample(sample) {
-    const answer = sample.answer || "";
-    const wordCount = Number(sample.wordCount ?? countWords(answer));
-    return `
-      <article class="writing-sample-card">
-        <div class="writing-sample-head">
-          <div>
-            <p class="eyebrow">${escapeHtml(sample.label || `Part ${sample.part || "—"}`)} · Question ${escapeHtml(sample.question ?? "—")}</p>
-            <h4>${escapeHtml(sample.taskType || "Writing")} — ${escapeHtml(sample.title || "Writing task")}</h4>
-            <p class="muted">${escapeHtml(sample.targetReader ? `Target reader: ${sample.targetReader}` : "")}</p>
-          </div>
-          <span class="word-count-pill">${wordCount} words</span>
-        </div>
-        ${sample.prompt ? `<details class="writing-prompt-details"><summary>View task prompt</summary><p>${escapeHtml(sample.prompt).replace(/\n/g, "<br>")}</p></details>` : ""}
-        <div class="writing-answer-box">${escapeHtml(answer || "No answer saved yet.").replace(/\n/g, "<br>")}</div>
-      </article>
-    `;
-  }
-
-  /* ---------------------------------------------- 
-  OPEN DETAILS 
-  ---------------------------------------------- */
   async function openDetails(row, options = {}) {
     if (!row) return;
     if (!options.fromQuery) syncUrlFromControls({ replace: false, view: "submissions", open: "details", row });
-    const heading = modal.querySelector(".modal-head h2");
-    if (heading) heading.textContent = "Submission details";
-    modal.classList.remove("hidden");
-    modal.setAttribute("aria-hidden", "false");
-    detailsContent.innerHTML = `<div class="detail-loading">Loading submission details...</div>`;
+    openModal("Submission details", "Loading submission details...");
+
+    if (isMixedReadingWritingSubmission(row)) {
+      await openMixedReadingWritingDetails(row);
+      return;
+    }
 
     if (isWritingSubmission(row)) {
       openWritingDetails(row);
@@ -618,6 +532,27 @@
     }
 
     const flags = safeJson(row.flaggedJson, row.flagged || []);
+    let parts = safeJson(row.partScoresJson, row.partScores || {});
+    let review;
+    try {
+      review = await buildAnswerReview(row);
+      if (review.partScores && Object.keys(review.partScores).length) parts = review.partScores;
+    } catch (error) {
+      review = { rows: [], error: error.message || String(error) };
+    }
+
+    detailsContent.innerHTML = submissionHeader(row, payloadFromRow(row), review)
+      + renderPartScoresSection(parts)
+      + renderFlagsNotesSection(flags, row.notes || payloadFromRow(row).notes)
+      + renderReadingReviewSection("Answers vs answer key", review.rows || [], review.error);
+  }
+
+  async function openMixedReadingWritingDetails(row) {
+    const payload = payloadFromRow(row);
+    const flags = safeJson(row.flaggedJson, row.flagged || payload.flagged || []);
+    const rubricProfile = getWritingRubricProfile(row, payload);
+    const samples = extractWritingSamples(row, payload, rubricProfile).filter(isA2WritingSample);
+    const submittedAt = row.submittedAtLocal || formatDate(row.submittedAt || payload.submittedAt);
     let parts = safeJson(row.partScoresJson, row.partScores || {});
     let review;
 
@@ -630,42 +565,21 @@
 
     detailsContent.innerHTML = `
       <div class="detail-grid detail-grid-wide">
-        <div class="detail-box"><span>Student</span><strong>${escapeHtml(row.studentName || "—")}</strong></div>
-        <div class="detail-box"><span>Class</span><strong>${escapeHtml(row.classId || "—")}</strong></div>
-        <div class="detail-box"><span>Exam</span><strong>${escapeHtml(row.examTitle || row.examId || "—")}</strong></div>
-        <div class="detail-box"><span>Submitted</span><strong>${escapeHtml(row.submittedAtLocal || formatDate(row.submittedAt))}</strong></div>
+        <div class="detail-box"><span>Student</span><strong>${escapeHtml(row.studentName || payload.studentName || "—")}</strong></div>
+        <div class="detail-box"><span>Class</span><strong>${escapeHtml(row.classId || payload.classId || "—")}</strong></div>
+        <div class="detail-box"><span>Exam</span><strong>${escapeHtml(row.examTitle || payload.examTitle || row.examId || "—")}</strong></div>
+        <div class="detail-box"><span>Submitted</span><strong>${escapeHtml(submittedAt)}</strong></div>
         <div class="detail-box"><span>Score</span><strong>${row.score ?? review?.score ?? "—"}/${row.maxScore ?? review?.maxScore ?? "—"}</strong></div>
         <div class="detail-box"><span>Percentage</span><strong>${typeof row.percentage === "number" ? `${row.percentage}%` : typeof review?.percentage === "number" ? `${review.percentage}%` : "—"}</strong></div>
-      </div>
+      </div>`
+      + renderPartScoresSection(parts)
+      + renderFlagsNotesSection(flags, row.notes || payload.notes)
+      + renderReadingReviewSection("Reading answers vs answer key · Parts 1–5", getMixedReadingRows(review.rows || []), review.error)
+      + renderMixedWritingReviewSection(samples, rubricProfile);
 
-      <section class="detail-section">
-        <h3>Part scores</h3>
-        ${renderPartScoreCards(parts)}
-      </section>
-
-      <section class="detail-section detail-two-column">
-        <div>
-          <h3>Flagged questions</h3>
-          <p>${Array.isArray(flags) && flags.length ? flags.map(escapeHtml).join(", ") : "None"}</p>
-        </div>
-        <div>
-          <h3>Notes</h3>
-          <p>${escapeHtml(row.notes || "No notes.")}</p>
-        </div>
-      </section>
-
-      <section class="detail-section">
-        <h3>Answers vs answer key</h3>
-        ${review?.error ? `<p class="detail-warning">${escapeHtml(review.error)}</p>` : ""}
-        ${renderAnswerReview(review.rows || [])}
-      </section>
-    `;
+    bindWritingScoringControls();
   }
 
-
-  /* ---------------------------------------------- 
-  OPEN WRITING DETAILS 
-  ---------------------------------------------- */
   function openWritingDetails(row) {
     const payload = payloadFromRow(row);
     const flags = safeJson(row.flaggedJson, row.flagged || payload.flagged || []);
@@ -681,86 +595,122 @@
         <div class="detail-box"><span>Submitted</span><strong>${escapeHtml(submittedAt)}</strong></div>
         <div class="detail-box"><span>Status</span><strong>Manual writing review</strong></div>
         <div class="detail-box"><span>${escapeHtml(rubricProfile.choiceBased ? "Selected Part 2" : "Writing tasks")}</span><strong>${escapeHtml(rubricProfile.choiceBased ? selectedPart2Label(payload, samples, rubricProfile) : `${samples.length} task(s) submitted`)}</strong></div>
-      </div>
+      </div>`
+      + renderWritingReviewActions(rubricProfile)
+      + renderWritingTotals(samples, rubricProfile)
+      + `<section class="detail-section"><h3>Writing samples</h3>${samples.length ? samples.map((sample, index) => renderWritingSample(sample, index, rubricProfile)).join("") : `<p class="muted">No writing samples were found in this submission.</p>`}</section>`
+      + renderFlagsNotesSection(flags, row.notes || payload.notes, "Flagged writing tasks", "Student notes");
 
-      <section class="detail-section writing-review-actions">
-        <div>
-          <h3>${escapeHtml(rubricProfile.actionTitle)}</h3>
-          <p class="muted">${escapeHtml(rubricProfile.actionText)}</p>
-        </div>
-        <button class="secondary-btn" data-toggle-rubric type="button">${escapeHtml(rubricProfile.buttonText)}</button>
-      </section>
-
-      <section class="detail-section writing-rubric-panel hidden" data-writing-rubric>
-        ${renderWritingRubric(rubricProfile)}
-      </section>
-
-      <section class="detail-section writing-total-panel">
-        <article class="writing-total-card"><span>Total score</span><strong data-writing-total>0/${getWritingMaxScore(samples, rubricProfile)}</strong></article>
-        <article class="writing-total-card"><span>Percentage</span><strong data-writing-percent>0%</strong></article>
-        <article class="writing-total-card"><span>Samples scored</span><strong data-writing-samples-scored>0/${samples.length}</strong></article>
-      </section>
-
-      <section class="detail-section">
-        <h3>Writing samples</h3>
-        ${samples.length ? samples.map((sample, index) => renderWritingSample(sample, index, rubricProfile)).join("") : `<p class="muted">No writing samples were found in this submission.</p>`}
-      </section>
-
-      <section class="detail-section detail-two-column">
-        <div>
-          <h3>Flagged writing tasks</h3>
-          <p>${Array.isArray(flags) && flags.length ? flags.map(escapeHtml).join(", ") : "None"}</p>
-        </div>
-        <div>
-          <h3>Student notes</h3>
-          <p>${escapeHtml(row.notes || payload.notes || "No notes.")}</p>
-        </div>
-      </section>
-    `;
-
-    detailsContent.querySelector("[data-toggle-rubric]")?.addEventListener("click", () => {
-      const rubric = detailsContent.querySelector("[data-writing-rubric]");
-      rubric?.classList.toggle("hidden");
-    });
-    detailsContent.querySelectorAll("[data-writing-score]").forEach(input => {
-      input.addEventListener("input", updateWritingTotals);
-    });
-    updateWritingTotals();
+    bindWritingScoringControls();
   }
 
-  /* ---------------------------------------------- 
-  EXTRACT WRITING SAMPLES 
-  ---------------------------------------------- */
+  function liveHeader(row, payload, rowStatus) {
+    return `
+      <div class="detail-grid detail-grid-wide">
+        <div class="detail-box"><span>Student</span><strong>${escapeHtml(row.studentName || payload.studentName || "—")}</strong></div>
+        <div class="detail-box"><span>Class</span><strong>${escapeHtml(row.classId || payload.classId || "—")}</strong></div>
+        <div class="detail-box"><span>Exam</span><strong>${escapeHtml(row.examTitle || payload.examTitle || row.examId || "—")}</strong></div>
+        <div class="detail-box"><span>Status</span><strong>${escapeHtml(rowStatus.label)}</strong></div>
+        <div class="detail-box"><span>Progress</span><strong>${escapeHtml(row.answeredCount ?? "—")}/${escapeHtml(row.totalQuestions ?? "—")}</strong></div>
+        <div class="detail-box"><span>Last update</span><strong>${escapeHtml(formatDate(row.lastSeenAt || row.submittedAt))}</strong></div>
+      </div>`;
+  }
+
+  function submissionHeader(row, payload, review) {
+    return `
+      <div class="detail-grid detail-grid-wide">
+        <div class="detail-box"><span>Student</span><strong>${escapeHtml(row.studentName || payload.studentName || "—")}</strong></div>
+        <div class="detail-box"><span>Class</span><strong>${escapeHtml(row.classId || payload.classId || "—")}</strong></div>
+        <div class="detail-box"><span>Exam</span><strong>${escapeHtml(row.examTitle || payload.examTitle || row.examId || "—")}</strong></div>
+        <div class="detail-box"><span>Submitted</span><strong>${escapeHtml(row.submittedAtLocal || formatDate(row.submittedAt || payload.submittedAt))}</strong></div>
+        <div class="detail-box"><span>Score</span><strong>${row.score ?? review?.score ?? "—"}/${row.maxScore ?? review?.maxScore ?? "—"}</strong></div>
+        <div class="detail-box"><span>Percentage</span><strong>${typeof row.percentage === "number" ? `${row.percentage}%` : typeof review?.percentage === "number" ? `${review.percentage}%` : "—"}</strong></div>
+      </div>`;
+  }
+
+  function renderPartScoresSection(parts) {
+    return `<section class="detail-section"><h3>Part scores</h3>${renderPartScoreCards(parts)}</section>`;
+  }
+
+  function renderFlagsNotesSection(flags, notes, flagTitle = "Flagged questions", notesTitle = "Notes") {
+    return `
+      <section class="detail-section detail-two-column">
+        <div><h3>${escapeHtml(flagTitle)}</h3><p>${Array.isArray(flags) && flags.length ? flags.map(escapeHtml).join(", ") : "None"}</p></div>
+        <div><h3>${escapeHtml(notesTitle)}</h3><p>${escapeHtml(notes || "No notes.")}</p></div>
+      </section>`;
+  }
+
+  function renderReadingReviewSection(title, rows, error) {
+    return `
+      <section class="detail-section">
+        <h3>${escapeHtml(title)}</h3>
+        ${error ? `<p class="detail-warning">${escapeHtml(error)}</p>` : ""}
+        ${renderAnswerReview(rows || [])}
+      </section>`;
+  }
+
+  function renderMixedWritingReviewSection(samples, rubricProfile) {
+    return renderWritingReviewActions(rubricProfile)
+      + renderWritingTotals(samples, rubricProfile)
+      + `<section class="detail-section"><h3>Writing samples · Parts 6–7</h3>${samples.length ? samples.map((sample, index) => renderWritingSample(sample, index, rubricProfile)).join("") : `<p class="muted">No writing samples were found in this submission.</p>`}</section>`;
+  }
+
+  function renderWritingReviewActions(rubricProfile) {
+    return `
+      <section class="detail-section writing-review-actions">
+        <div><h3>${escapeHtml(rubricProfile.actionTitle)}</h3><p class="muted">${escapeHtml(rubricProfile.actionText)}</p></div>
+        <button class="secondary-btn" data-toggle-rubric type="button">${escapeHtml(rubricProfile.buttonText)}</button>
+      </section>
+      <section class="detail-section writing-rubric-panel hidden" data-writing-rubric>${renderWritingRubric(rubricProfile)}</section>`;
+  }
+
+  function renderWritingTotals(samples, rubricProfile) {
+    return `
+      <section class="detail-section writing-total-panel">
+        <article class="writing-total-card"><span>Writing score</span><strong data-writing-total>0/${getWritingMaxScore(samples, rubricProfile)}</strong></article>
+        <article class="writing-total-card"><span>Writing percentage</span><strong data-writing-percent>0%</strong></article>
+        <article class="writing-total-card"><span>Samples scored</span><strong data-writing-samples-scored>0/${samples.length}</strong></article>
+      </section>`;
+  }
+
+  function renderLiveWritingSample(sample) {
+    const answer = sample.answer || "";
+    const wordCount = Number(sample.wordCount ?? countWords(answer));
+    return `
+      <article class="writing-sample-card">
+        <div class="writing-sample-head">
+          <div>
+            <p class="eyebrow">${escapeHtml(sample.label || `Part ${sample.part || "—"}`)} · Question ${escapeHtml(sample.question ?? "—")}</p>
+            <h4>${escapeHtml(sample.taskType || "Writing")} — ${escapeHtml(sample.title || "Writing task")}</h4>
+            <p class="muted">${escapeHtml(sample.targetReader ? `Target reader: ${sample.targetReader}` : "")}</p>
+          </div>
+          <span class="word-count-pill">${wordCount} words</span>
+        </div>
+        ${sample.prompt ? `<details class="writing-prompt-details"><summary>View task prompt</summary><p>${escapeHtml(sample.prompt).replace(/\n/g, "<br>")}</p></details>` : ""}
+        <div class="writing-answer-box">${escapeHtml(answer || "No answer saved yet.").replace(/\n/g, "<br>")}</div>
+      </article>`;
+  }
+
   function extractWritingSamples(row, payload, rubricProfile = getWritingRubricProfile(row, payload)) {
     const list = [];
     const seen = new Set();
-
     addWritingSamples(list, seen, parseJsonDeep(payload?.writingSamples, firstJsonFrom(row, ["writingSamplesJson", "writingSamples"], [])), rubricProfile);
-
     const answers = parseJsonDeep(payload?.answers, firstJsonFrom(row, ["answersJson", "answers", "studentAnswersJson", "studentAnswers", "responsesJson", "responses"], {}));
     const metaByQuestion = getWritingTaskMetaMap(rubricProfile);
     Object.values(metaByQuestion).forEach(meta => {
       const answer = getAnswerFromNested(answers, meta.partId, meta.question);
       if (String(answer || "").trim()) addWritingSample(list, seen, { part: meta.part, partId: meta.partId, question: meta.question, answer }, rubricProfile);
     });
-
     addWritingSamples(list, seen, parseJsonDeep(payload?.part2Drafts, firstJsonFrom(row, ["part2DraftsJson", "part2Drafts"], [])), rubricProfile);
     addWritingSamples(list, seen, parseJsonDeep(payload?.answerList, firstJsonFrom(row, ["answerListJson", "answerList"], [])), rubricProfile);
-
     return list.sort((a, b) => Number(a.part || 0) - Number(b.part || 0) || Number(a.question || 0) - Number(b.question || 0));
   }
 
-  /* ---------------------------------------------- 
-  ADD WRITING SAMPLES 
-  ---------------------------------------------- */
   function addWritingSamples(list, seen, samples, rubricProfile) {
     if (!Array.isArray(samples)) return;
     samples.forEach(sample => addWritingSample(list, seen, sample, rubricProfile));
   }
 
-  /* ---------------------------------------------- 
-  ADD WRITING SAMPLE 
-  ---------------------------------------------- */
   function addWritingSample(list, seen, sample, rubricProfile) {
     const answer = sample?.answer ?? sample?.value ?? "";
     if (!String(answer || "").trim()) return;
@@ -775,9 +725,6 @@
     list.push(enriched);
   }
 
-  /* ---------------------------------------------- 
-  ENRICH WRITING SAMPLE 
-  ---------------------------------------------- */
   function enrichWritingSample(sample, rubricProfile = WRITING_RUBRIC_PROFILES.b2) {
     const question = Number(sample?.question || sample?.q || 0);
     const meta = getWritingTaskMetaMap(rubricProfile)[question] || {};
@@ -798,26 +745,17 @@
     };
   }
 
-  /* ---------------------------------------------- 
-  GET ANSWER FROM NESTED 
-  ---------------------------------------------- */
   function getAnswerFromNested(answers, partId, question) {
     const parsed = parseJsonDeep(answers, {});
     return parsed?.[partId]?.[question] ?? parsed?.[partId]?.[String(question)] ?? parsed?.[question] ?? parsed?.[String(question)] ?? "";
   }
 
-  /* ---------------------------------------------- 
-  INFER PART2 QUESTION FROM ANSWERS 
-  ---------------------------------------------- */
   function inferPart2QuestionFromAnswers(answers) {
     const parsed = parseJsonDeep(answers, {});
     const part2 = parsed?.part2 || {};
     return [2, 3, 4].find(question => String(part2?.[question] ?? part2?.[String(question)] ?? "").trim()) || null;
   }
 
-  /* ---------------------------------------------- 
-  RESOLVE PART2 SELECTED QUESTION 
-  ---------------------------------------------- */
   function resolvePart2SelectedQuestion(selected, answers) {
     const parsed = parseJsonDeep(answers, {});
     const selectedNumber = Number(selected);
@@ -828,9 +766,6 @@
     return inferPart2QuestionFromAnswers(parsed) || selectedNumber || null;
   }
 
-  /* ---------------------------------------------- 
-  SELECTED PART2 LABEL 
-  ---------------------------------------------- */
   function selectedPart2Label(payload, samples, rubricProfile = WRITING_RUBRIC_PROFILES.b2) {
     const question = Number(payload?.part2SelectedQuestion || samples.find(sample => Number(sample.part) === 2)?.question || 0);
     if (!question) return "—";
@@ -838,46 +773,29 @@
     return `Question ${question}${meta.taskType ? ` · ${meta.taskType}` : ""}`;
   }
 
-
-  /* ---------------------------------------------- 
-  GET WRITING RUBRIC PROFILE 
-  ---------------------------------------------- */
   function getWritingRubricProfile(row = {}, payload = {}) {
-    const raw = [payload.rubricProfile, row.rubricProfile, payload.examId, row.examId, payload.examTitle, row.examTitle, payload.level, row.level]
+    const raw = [payload.rubricProfile, row.rubricProfile, payload.examType, row.examType, payload.examId, row.examId, payload.examTitle, row.examTitle, payload.level, row.level, payload.skill, row.skill]
       .filter(Boolean)
       .join(" ")
       .toLowerCase();
+    if (raw.includes("a2rw") || raw.includes("a2-rw") || raw.includes("a2 rw") || raw.includes("reading-writing") || raw.includes("reading and writing")) return WRITING_RUBRIC_PROFILES.a2rw;
     if (raw.includes("b1plus") || raw.includes("b1+")) return WRITING_RUBRIC_PROFILES.b1plus;
     return WRITING_RUBRIC_PROFILES.b2;
   }
 
-  /* ---------------------------------------------- 
-  GET WRITING TASK META MAP 
-  ---------------------------------------------- */
   function getWritingTaskMetaMap(rubricProfile = WRITING_RUBRIC_PROFILES.b2) {
     return WRITING_TASK_META_BY_EXAM[rubricProfile.id] || WRITING_TASK_META_BY_EXAM.b2;
   }
 
-  /* ---------------------------------------------- 
-  GET WRITING SUBSCALES 
-  ---------------------------------------------- */
   function getWritingSubscales(sample, rubricProfile = WRITING_RUBRIC_PROFILES.b2) {
-    if (rubricProfile.id === "b1plus" && String(sample?.taskType || "").toLowerCase().includes("picture")) {
-      return rubricProfile.pictureSubscales || ["Content", "Organization"];
-    }
+    if (rubricProfile.id === "b1plus" && String(sample?.taskType || "").toLowerCase().includes("picture")) return rubricProfile.pictureSubscales || ["Content", "Organization"];
     return rubricProfile.defaultSubscales || WRITING_RUBRIC_PROFILES.b2.defaultSubscales;
   }
 
-  /* ---------------------------------------------- 
-  GET WRITING MAX SCORE 
-  ---------------------------------------------- */
   function getWritingMaxScore(samples, rubricProfile = WRITING_RUBRIC_PROFILES.b2) {
     return (samples || []).reduce((sum, sample) => sum + getWritingSubscales(sample, rubricProfile).length * 5, 0);
   }
 
-  /* ---------------------------------------------- 
-  RENDER WRITING SAMPLE 
-  ---------------------------------------------- */
   function renderWritingSample(sample, index, rubricProfile = WRITING_RUBRIC_PROFILES.b2) {
     const answer = sample.answer || "";
     const wordCount = Number(sample.wordCount ?? countWords(answer));
@@ -901,18 +819,13 @@
               <label>
                 <span>${escapeHtml(name)}</span>
                 <input data-writing-score data-sample-index="${index}" data-subscale="${escapeAttr(name)}" type="number" min="0" max="5" step="1" inputmode="numeric" placeholder="0–5" />
-              </label>
-            `).join("")}
+              </label>`).join("")}
           </div>
           <div class="sample-score-line">Sample score: <strong data-sample-total="${index}" data-sample-max="${sampleMax}">0/${sampleMax}</strong></div>
         </div>
-      </article>
-    `;
+      </article>`;
   }
 
-  /* ---------------------------------------------- 
-  RENDER WRITING RUBRIC 
-  ---------------------------------------------- */
   function renderWritingRubric(rubricProfile = WRITING_RUBRIC_PROFILES.b2) {
     const cards = rubricProfile.cards || WRITING_RUBRIC_PROFILES.b2.cards;
     return `
@@ -921,15 +834,17 @@
       <div class="rubric-card-grid">
         ${cards.map(([title, body]) => `<article class="rubric-card"><h4>${escapeHtml(title)}</h4><p>${escapeHtml(body)}</p></article>`).join("")}
       </div>
-      <div class="rubric-band-box">
-        <strong>Band guide:</strong> ${escapeHtml(rubricProfile.bandGuide)}
-      </div>
-    `;
+      <div class="rubric-band-box"><strong>Band guide:</strong> ${escapeHtml(rubricProfile.bandGuide)}</div>`;
   }
 
-  /* ---------------------------------------------- 
-  UPDATE WRITING TOTALS 
-  ---------------------------------------------- */
+  function bindWritingScoringControls() {
+    detailsContent.querySelector("[data-toggle-rubric]")?.addEventListener("click", () => {
+      detailsContent.querySelector("[data-writing-rubric]")?.classList.toggle("hidden");
+    });
+    detailsContent.querySelectorAll("[data-writing-score]").forEach(input => input.addEventListener("input", updateWritingTotals));
+    updateWritingTotals();
+  }
+
   function updateWritingTotals() {
     if (!detailsContent) return;
     const sampleIndexes = Array.from(new Set(Array.from(detailsContent.querySelectorAll("[data-writing-score]")).map(input => input.dataset.sampleIndex)));
@@ -964,9 +879,6 @@
     if (samplesEl) samplesEl.textContent = `${scoredSamples}/${sampleIndexes.length}`;
   }
 
-  /* ---------------------------------------------- 
-  FORMAT WRITING MINI 
-  ---------------------------------------------- */
   function formatWritingMini(row) {
     const payload = payloadFromRow(row);
     const samples = extractWritingSamples(row, payload);
@@ -974,45 +886,48 @@
     return samples.map(sample => `Q${sample.question}: ${sample.wordCount ?? countWords(sample.answer)} words`).join(" · ");
   }
 
-  /* ---------------------------------------------- 
-  COUNT WORDS 
-  ---------------------------------------------- */
-  function countWords(text) {
-    return String(text || "").trim().split(/\s+/).filter(Boolean).length;
+  function formatMixedMini(row, partScores) {
+    const payload = payloadFromRow(row);
+    const samples = extractWritingSamples(row, payload, getWritingRubricProfile(row, payload)).filter(isA2WritingSample);
+    const reading = formatParts(partScores);
+    const writing = samples.length ? samples.map(sample => `Q${sample.question}: ${sample.wordCount ?? countWords(sample.answer)} words`).join(" · ") : "Writing pending";
+    return `${reading || "Reading"} · ${writing}`;
   }
 
-  /* ---------------------------------------------- 
-  IS WRITING SUBMISSION 
-  ---------------------------------------------- */
+  function isA2WritingSample(sample) {
+    return Number(sample.question) >= 31 || Number(sample.part) >= 6;
+  }
+
+  function isMixedReadingWritingSubmission(row) {
+    const payload = payloadFromRow(row || {});
+    const raw = [row?.examId, row?.examTitle, row?.skill, row?.examType, row?.rubricProfile, payload.examId, payload.examTitle, payload.skill, payload.examType, payload.rubricProfile]
+      .filter(Boolean)
+      .join(" ")
+      .toLowerCase();
+    return raw.includes("a2-rw") || raw.includes("a2 rw") || raw.includes("a2rw") || raw.includes("reading-writing") || raw.includes("reading and writing");
+  }
+
   function isWritingSubmission(row) {
+    if (isMixedReadingWritingSubmission(row)) return false;
     const id = String(row?.examId || "").toLowerCase();
     const title = String(row?.examTitle || "").toLowerCase();
     const skill = String(row?.skill || "").toLowerCase();
     if (id.includes("writing") || title.includes("writing") || skill === "writing") return true;
-
     const payload = payloadFromRow(row);
     const payloadSkill = String(payload.skill || "").toLowerCase();
     if (payloadSkill === "writing") return true;
-
     const samples = parseJsonDeep(payload.writingSamples, []);
     return Array.isArray(samples) && samples.some(sample => String(sample?.answer || "").trim());
   }
 
-  /* ---------------------------------------------- 
-  BUILD ANSWER REVIEW 
-  ---------------------------------------------- */
   async function buildAnswerReview(row) {
     const payload = payloadFromRow(row);
-    const flatAnswers = window.BrightonGrading?.flattenAnswers
-      ? window.BrightonGrading.flattenAnswers(payload)
-      : flattenAnswersFallback(payload);
+    const flatAnswers = window.BrightonGrading?.flattenAnswers ? window.BrightonGrading.flattenAnswers(payload) : flattenAnswersFallback(payload);
     const answersByQuestion = new Map(flatAnswers.map(item => [String(item.question), item.answer]));
     const examId = row.examId || payload.examId || "brighton-b2-rue-final";
-
     let answerKey = null;
     let graded = null;
     let gradingError = "";
-
     if (window.BrightonGrading) {
       try {
         answerKey = await getAnswerKey(examId);
@@ -1051,9 +966,10 @@
     };
   }
 
-  /* ---------------------------------------------- 
-  RENDER PART SCORE CARDS 
-  ---------------------------------------------- */
+  function getMixedReadingRows(reviewRows) {
+    return (reviewRows || []).filter(item => Number(item.part) <= 5 && Number(item.question) <= 30);
+  }
+
   function renderPartScoreCards(parts) {
     const entries = Object.entries(parts || {}).sort(([a], [b]) => partSortValue(a) - partSortValue(b));
     if (!entries.length) return `<p class="muted">No part score data available.</p>`;
@@ -1061,37 +977,17 @@
       const label = value?.label || key.replace(/part/i, "Part ");
       const score = value?.score ?? "—";
       const max = value?.maxScore ?? "—";
-      const correctText = Number.isFinite(Number(value?.correct)) && Number.isFinite(Number(value?.total))
-        ? `${value.correct}/${value.total} correct`
-        : "";
-      return `
-        <article class="part-score-card">
-          <span>${escapeHtml(label)}</span>
-          <strong>${escapeHtml(score)}/${escapeHtml(max)}</strong>
-          ${correctText ? `<small>${escapeHtml(correctText)}</small>` : ""}
-        </article>
-      `;
+      const correctText = Number.isFinite(Number(value?.correct)) && Number.isFinite(Number(value?.total)) ? `${value.correct}/${value.total} correct` : "";
+      return `<article class="part-score-card"><span>${escapeHtml(label)}</span><strong>${escapeHtml(score)}/${escapeHtml(max)}</strong>${correctText ? `<small>${escapeHtml(correctText)}</small>` : ""}</article>`;
     }).join("")}</div>`;
   }
 
-  /* ---------------------------------------------- 
-  RENDER ANSWER REVIEW 
-  ---------------------------------------------- */
   function renderAnswerReview(reviewRows) {
     if (!reviewRows.length) return `<p class="muted">No submitted answers were found.</p>`;
     return `
       <div class="answer-review-wrap">
         <table class="answer-review-table">
-          <thead>
-            <tr>
-              <th>Question</th>
-              <th>Part</th>
-              <th>Student answer</th>
-              <th>Expected answer</th>
-              <th>Score</th>
-              <th>Status</th>
-            </tr>
-          </thead>
+          <thead><tr><th>Question</th><th>Part</th><th>Student answer</th><th>Expected answer</th><th>Score</th><th>Status</th></tr></thead>
           <tbody>
             ${reviewRows.map(item => `
               <tr class="${escapeAttr(item.status.className)}">
@@ -1101,26 +997,18 @@
                 <td>${escapeHtml(item.expected || "—")}</td>
                 <td>${item.earned ?? "—"}/${item.max ?? "—"}</td>
                 <td><span class="answer-status ${escapeAttr(item.status.className)}">${escapeHtml(item.status.label)}</span></td>
-              </tr>
-            `).join("")}
+              </tr>`).join("")}
           </tbody>
         </table>
-      </div>
-    `;
+      </div>`;
   }
 
-  /* ---------------------------------------------- 
-  GET REVIEW QUESTION NUMBERS 
-  ---------------------------------------------- */
   function getReviewQuestionNumbers(answerKey, flatAnswers) {
     const fromKey = Object.keys(answerKey?.answers || {}).map(Number).filter(Number.isFinite);
     const fromAnswers = flatAnswers.map(item => Number(item.question)).filter(Number.isFinite);
     return Array.from(new Set([...fromKey, ...fromAnswers])).sort((a, b) => a - b);
   }
 
-  /* ---------------------------------------------- 
-  EXPECTED ANSWER TEXT 
-  ---------------------------------------------- */
   function expectedAnswerText(rule) {
     if (!rule) return "—";
     if (Array.isArray(rule.answers) && rule.answers.length) return rule.answers.map(answerToText).join(" / ");
@@ -1133,9 +1021,6 @@
     return "—";
   }
 
-  /* ---------------------------------------------- 
-  ANSWER STATUS 
-  ---------------------------------------------- */
   function answerStatus(detail) {
     if (!detail) return { label: "Not graded", className: "status-unknown" };
     const earned = Number(detail.earned || 0);
@@ -1145,32 +1030,21 @@
     return { label: "Incorrect", className: "status-incorrect" };
   }
 
-  /* ---------------------------------------------- 
-  FIND ANSWER PART 
-  ---------------------------------------------- */
   function findAnswerPart(flatAnswers, question) {
     return flatAnswers.find(item => Number(item.question) === Number(question))?.part;
   }
 
-  /* ---------------------------------------------- 
-  FLATTEN ANSWERS FALLBACK 
-  ---------------------------------------------- */
   function flattenAnswersFallback(payload) {
     if (Array.isArray(payload?.answerList)) return payload.answerList;
     const answers = payload?.answers || {};
     const flat = [];
     Object.entries(answers).forEach(([partId, partAnswers]) => {
       const part = Number(String(partId).replace(/\D+/g, "")) || null;
-      Object.entries(partAnswers || {}).forEach(([q, answer]) => {
-        flat.push({ part, partId, question: Number(q), answer });
-      });
+      Object.entries(partAnswers || {}).forEach(([q, answer]) => flat.push({ part, partId, question: Number(q), answer }));
     });
     return flat.sort((a, b) => Number(a.question) - Number(b.question));
   }
 
-  /* ---------------------------------------------- 
-  ANSWER TO TEXT 
-  ---------------------------------------------- */
   function answerToText(value) {
     if (value === undefined || value === null) return "";
     if (Array.isArray(value)) return value.map(answerToText).join(", ");
@@ -1178,37 +1052,72 @@
     return String(value);
   }
 
-  /* ---------------------------------------------- 
-  PART SORT VALUE 
-  ---------------------------------------------- */
   function partSortValue(key) {
     const number = Number(String(key).match(/\d+/)?.[0] || 0);
     return Number.isFinite(number) ? number : 0;
   }
 
-  /* ---------------------------------------------- 
-  CLOSE MODAL 
-  ---------------------------------------------- */
-  function closeModal() {
-    hideModalWithoutUrl();
-    syncUrlFromControls({ replace: true, clearOpen: true, keepOpen: false });
+  function formatParts(parts) {
+    if (!parts || typeof parts !== "object" || !Object.keys(parts).length) return "—";
+    return Object.entries(parts).sort(([a], [b]) => partSortValue(a) - partSortValue(b)).map(([key, value]) => {
+      const label = value?.label || key.replace(/part/i, "Part ");
+      const score = value?.score ?? "—";
+      const max = value?.maxScore ?? "—";
+      return `<span>${escapeHtml(label)} ${escapeHtml(score)}/${escapeHtml(max)}</span>`;
+    }).join("");
   }
 
-  /* ---------------------------------------------- 
-  HIDE MODAL WITHOUT URL 
-  ---------------------------------------------- */
-  function hideModalWithoutUrl() {
-    activeProgressPreviewId = "";
-    modal.classList.add("hidden");
-    modal.setAttribute("aria-hidden", "true");
+  function formatSeconds(value) {
+    const total = Number(value);
+    if (!Number.isFinite(total) || total < 0) return "—";
+    const minutes = Math.floor(total / 60);
+    const seconds = Math.round(total % 60);
+    return `${minutes}:${String(seconds).padStart(2, "0")}`;
   }
 
-  /* ---------------------------------------------- 
-  CLEAR FILTERS 
-  ---------------------------------------------- */
+  function countWords(text) {
+    return String(text || "").trim().split(/\s+/).filter(Boolean).length;
+  }
+
+  function getFilteredRows() {
+    const filter = getStudentFilter();
+    if (!filter) return rows;
+    return rows.filter(row => String(row.studentName || "").toLowerCase().includes(filter));
+  }
+
+  function getFilteredProgressRows() {
+    const filter = getStudentFilter();
+    if (!filter) return progressRows;
+    return progressRows.filter(row => String(row.studentName || "").toLowerCase().includes(filter));
+  }
+
+  function getStudentFilter() {
+    return String(studentInput?.value || "").trim().toLowerCase();
+  }
+
+  function scheduleStudentFilterUpdate() {
+    window.clearTimeout(studentFilterTimer);
+    studentFilterTimer = window.setTimeout(() => {
+      syncUrlFromControls({ replace: true, keepOpen: true });
+      renderRows();
+      renderProgressRows();
+      updateSummary();
+    }, 180);
+  }
+
+  function normalizeClassInput() {
+    if (!classIdInput) return "";
+    classIdInput.value = normalizeClassCode(classIdInput.value);
+    return classIdInput.value;
+  }
+
+  function normalizeClassCode(value) {
+    return App.normalizeClassCode ? App.normalizeClassCode(value) : String(value || "").trim().toUpperCase();
+  }
+
   function clearFilters() {
-    classIdInput.value = "";
-    examSelect.value = "";
+    if (classIdInput) classIdInput.value = "";
+    if (examSelect) examSelect.value = "";
     if (studentInput) studentInput.value = "";
     rows = [];
     progressRows = [];
@@ -1217,16 +1126,13 @@
     renderProgressRows();
     renderRows();
     updateSummary();
-    status.textContent = "Enter a class ID and load results.";
+    if (status) status.textContent = "Enter a class ID and load results.";
     if (progressStatus) progressStatus.textContent = "Load a class to supervise exams in progress.";
     if (progressUpdatedAt) progressUpdatedAt.textContent = "Not updated yet";
     history.pushState({}, "", location.pathname);
     queryState = readQueryState();
   }
 
-  /* ---------------------------------------------- 
-  EXPORT CSV 
-  ---------------------------------------------- */
   function exportCsv() {
     const visibleRows = getFilteredRows();
     if (!visibleRows.length) return showToast("No rows to export");
@@ -1236,359 +1142,161 @@
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
     a.href = url;
-    a.download = `brighton-results-${normalizeClassCode(classIdInput.value) || "class"}.csv`;
+    a.download = `brighton-results-${normalizeClassCode(classIdInput?.value) || "class"}.csv`;
     a.click();
     URL.revokeObjectURL(url);
   }
 
-  /* ---------------------------------------------- 
-  FORMAT PARTS 
-  ---------------------------------------------- */
-  function formatParts(parts) {
-    if (!parts || typeof parts !== "object") return "—";
-    return Object.entries(parts).map(([key, value]) => {
-      if (value && typeof value === "object") return `${key}: ${value.score ?? "—"}/${value.maxScore ?? "—"}`;
-      return `${key}: ${value}`;
-    }).join(" · ");
-  }
-
-  /* ---------------------------------------------- 
-  FIRST JSON FROM 
-  ---------------------------------------------- */
-  function firstJsonFrom(source, fieldNames, fallback) {
-    for (const field of fieldNames) {
-      if (source && Object.prototype.hasOwnProperty.call(source, field) && source[field] !== undefined && source[field] !== null && source[field] !== "") {
-        return parseJsonDeep(source[field], fallback);
-      }
-    }
-    return parseJsonDeep(fallback, fallback);
-  }
-
-  /* ---------------------------------------------- 
-  SAFE JSON 
-  ---------------------------------------------- */
-  function safeJson(value, fallback) {
-    return parseJsonDeep(value, fallback);
-  }
-
-  /* ---------------------------------------------- 
-  PARSE JSON DEEP 
-  ---------------------------------------------- */
-  function parseJsonDeep(value, fallback) {
-    if (value === undefined || value === null || value === "") return fallback;
-    if (typeof value !== "string") return value;
-    let current = value;
-    for (let i = 0; i < 3; i += 1) {
-      if (typeof current !== "string") return current;
-      const trimmed = current.trim();
-      if (!trimmed) return fallback;
-      try {
-        current = JSON.parse(trimmed);
-      } catch {
-        return i === 0 ? fallback : current;
-      }
-    }
-    return current;
-  }
-
-
-
-  /* ---------------------------------------------- 
-  READ QUERY STATE 
-  ---------------------------------------------- */
-  function readQueryState() {
-    const params = new URLSearchParams(location.search);
-    const pick = (...names) => names.map(name => params.get(name)).find(value => value !== null && value !== "") || "";
-    return {
-      classId: normalizeClassCode(pick("classId", "class", "c")),
-      examId: pick("examId", "exam", "e").trim(),
-      student: pick("student", "studentName", "s").trim(),
-      openStudent: pick("openStudent", "focusStudent").trim(),
-      submittedAt: pick("submittedAt", "submitted").trim(),
-      progressId: pick("progressId").trim(),
-      open: normalizeOpenMode(pick("open", "modal", "details")),
-      view: normalizeViewMode(pick("view", "screen", "tab")),
-      autoLoad: pick("auto") !== "0"
-    };
-  }
-
-  /* ---------------------------------------------- 
-  APPLY QUERY STATE TO CONTROLS 
-  ---------------------------------------------- */
-  function applyQueryStateToControls(state) {
-    if (state.classId) classIdInput.value = state.classId;
-    if (studentInput) studentInput.value = state.student || "";
-    if (state.examId) {
-      examSelect.dataset.prefill = state.examId;
-      examSelect.value = state.examId;
-    }
-  }
-
-  /* ---------------------------------------------- 
-  SYNC URL FROM CONTROLS 
-  ---------------------------------------------- */
-  function syncUrlFromControls(options = {}) {
-    const params = new URLSearchParams(location.search);
-    ["classId", "class", "c", "examId", "exam", "e", "student", "studentName", "s", "view", "screen", "tab", "open", "modal", "details", "openStudent", "focusStudent", "submittedAt", "submitted", "progressId", "auto"].forEach(key => params.delete(key));
-
-    const classId = normalizeClassCode(classIdInput.value);
-    const examId = examSelect.value.trim();
-    const student = getStudentFilterRaw();
-    const view = normalizeViewMode(options.view || queryState.view || "");
-
-    if (classId) params.set("classId", classId);
-    if (examId) params.set("examId", examId);
-    if (student) params.set("student", student);
-    if (view) params.set("view", view);
-
-    if (options.open && options.row) {
-      params.set("open", options.open);
-      params.set("openStudent", options.row.studentName || "");
-      if (options.open === "progress" && options.row.progressId) params.set("progressId", options.row.progressId);
-      if (options.open === "details" && options.row.submittedAt) params.set("submittedAt", options.row.submittedAt);
-    } else if (!options.clearOpen && options.keepOpen && queryState.open) {
-      params.set("open", queryState.open);
-      if (queryState.openStudent) params.set("openStudent", queryState.openStudent);
-      if (queryState.submittedAt) params.set("submittedAt", queryState.submittedAt);
-      if (queryState.progressId) params.set("progressId", queryState.progressId);
-    }
-
-    const next = `${location.pathname}${params.toString() ? `?${params.toString()}` : ""}`;
-    const method = options.replace === false ? "pushState" : "replaceState";
-    history[method]({}, "", next);
-    queryState = readQueryState();
-  }
-
-  /* ---------------------------------------------- 
-  HANDLE POP STATE 
-  ---------------------------------------------- */
-  async function handlePopState() {
-    queryState = readQueryState();
-    applyQueryStateToControls(queryState);
-    if (!queryState.open) hideModalWithoutUrl();
-    if (queryState.classId) await loadResults({ updateUrl: false, fromQuery: true });
-    else clearFiltersWithoutUrl();
-  }
-
-  /* ---------------------------------------------- 
-  SCHEDULE STUDENT FILTER UPDATE 
-  ---------------------------------------------- */
-  function scheduleStudentFilterUpdate() {
-    clearTimeout(studentFilterTimer);
-    studentFilterTimer = setTimeout(() => {
-      renderRows();
-      renderProgressRows();
-      updateSummary();
-      syncUrlFromControls({ replace: true, keepOpen: true });
-    }, 120);
-  }
-
-  /* ---------------------------------------------- 
-  GET FILTERED ROWS 
-  ---------------------------------------------- */
-  function getFilteredRows() {
-    const filter = getStudentFilter();
-    return rows.filter(row => matchesStudentFilter(row, filter));
-  }
-
-  /* ---------------------------------------------- 
-  GET FILTERED PROGRESS ROWS 
-  ---------------------------------------------- */
-  function getFilteredProgressRows() {
-    const filter = getStudentFilter();
-    return progressRows.filter(row => matchesStudentFilter(row, filter));
-  }
-
-  /* ---------------------------------------------- 
-  GET STUDENT FILTER 
-  ---------------------------------------------- */
-  function getStudentFilter() {
-    return getStudentFilterRaw().toLowerCase();
-  }
-
-  /* ---------------------------------------------- 
-  GET STUDENT FILTER RAW 
-  ---------------------------------------------- */
-  function getStudentFilterRaw() {
-    return String(studentInput?.value || "").trim();
-  }
-
-  /* ---------------------------------------------- 
-  MATCHES STUDENT FILTER 
-  ---------------------------------------------- */
-  function matchesStudentFilter(row, filter) {
-    if (!filter) return true;
-    return String(row?.studentName || "").toLowerCase().includes(filter);
-  }
-
-  /* ---------------------------------------------- 
-  OPEN REQUESTED MODAL 
-  ---------------------------------------------- */
-  function openRequestedModal() {
-    queryState = readQueryState();
-    if (!queryState.open) return;
-    if (queryState.open === "progress") {
-      const live = findProgressRowFromQuery(queryState);
-      if (live) openProgressDetails(live, { fromQuery: true });
-      return;
-    }
-    const submission = findSubmissionRowFromQuery(queryState);
-    if (submission) openDetails(submission, { fromQuery: true });
-  }
-
-  /* ---------------------------------------------- 
-  FIND SUBMISSION ROW FROM QUERY 
-  ---------------------------------------------- */
-  function findSubmissionRowFromQuery(state) {
-    const targetStudent = String(state.openStudent || state.student || "").toLowerCase();
-    const targetSubmitted = String(state.submittedAt || "");
-    const candidates = getFilteredRows().length ? getFilteredRows() : rows;
-    return candidates.find(row => {
-      const studentOk = !targetStudent || String(row.studentName || "").toLowerCase() === targetStudent || String(row.studentName || "").toLowerCase().includes(targetStudent);
-      const submittedOk = !targetSubmitted || String(row.submittedAt || "") === targetSubmitted || String(row.submittedAtLocal || "") === targetSubmitted;
-      return studentOk && submittedOk;
-    }) || null;
-  }
-
-  /* ---------------------------------------------- 
-  FIND PROGRESS ROW FROM QUERY 
-  ---------------------------------------------- */
-  function findProgressRowFromQuery(state) {
-    const targetStudent = String(state.openStudent || state.student || "").toLowerCase();
-    const targetProgressId = String(state.progressId || "");
-    const candidates = getFilteredProgressRows().length ? getFilteredProgressRows() : progressRows;
-    return candidates.find(row => {
-      const progressOk = !targetProgressId || String(row.progressId || "") === targetProgressId;
-      const studentOk = !targetStudent || String(row.studentName || "").toLowerCase() === targetStudent || String(row.studentName || "").toLowerCase().includes(targetStudent);
-      return progressOk && studentOk;
-    }) || null;
-  }
-
-  /* ---------------------------------------------- 
-  SCROLL TO REQUESTED SCREEN 
-  ---------------------------------------------- */
-  function scrollToRequestedScreen(view) {
-    const target = view === "live" ? document.querySelector(".progress-card") : view === "submissions" ? document.querySelector(".results-card:not(.progress-card)") : null;
-    if (!target) return;
-    document.querySelectorAll(".url-target-highlight").forEach(el => el.classList.remove("url-target-highlight"));
-    target.classList.add("url-target-highlight");
-    setTimeout(() => target.classList.remove("url-target-highlight"), 1800);
-    window.setTimeout(() => target.scrollIntoView({ behavior: "smooth", block: "start" }), 80);
-  }
-
-  /* ---------------------------------------------- 
-  IS HIGHLIGHTED ROW 
-  ---------------------------------------------- */
-  function isHighlightedRow(row) {
-    const target = String(queryState.openStudent || queryState.student || "").toLowerCase();
-    if (!target) return false;
-    return String(row?.studentName || "").toLowerCase().includes(target);
-  }
-
-  /* ---------------------------------------------- 
-  COPY SHARE LINK 
-  ---------------------------------------------- */
-  async function copyShareLink() {
-    syncUrlFromControls({ replace: true, keepOpen: true });
-    try {
-      await navigator.clipboard.writeText(location.href);
-      showToast("Link copied");
-    } catch {
-      showToast("Copy this URL from the address bar");
-    }
-  }
-
-  /* ---------------------------------------------- 
-  NORMALIZE VIEW MODE 
-  ---------------------------------------------- */
-  function normalizeViewMode(value) {
-    const view = String(value || "").trim().toLowerCase();
-    if (["live", "progress", "monitor", "monitoring"].includes(view)) return "live";
-    if (["submissions", "results", "submitted", "details"].includes(view)) return "submissions";
-    return "";
-  }
-
-  /* ---------------------------------------------- 
-  NORMALIZE OPEN MODE 
-  ---------------------------------------------- */
-  function normalizeOpenMode(value) {
-    const open = String(value || "").trim().toLowerCase();
-    if (["progress", "live", "preview"].includes(open)) return "progress";
-    if (["details", "submission", "student"].includes(open)) return "details";
-    return "";
-  }
-
-  /* ---------------------------------------------- 
-  CLEAR FILTERS WITHOUT URL 
-  ---------------------------------------------- */
-  function clearFiltersWithoutUrl() {
-    classIdInput.value = "";
-    examSelect.value = "";
-    if (studentInput) studentInput.value = "";
-    rows = [];
-    progressRows = [];
-    hideModalWithoutUrl();
-    stopProgressTimer();
-    renderProgressRows();
-    renderRows();
-    updateSummary();
-    status.textContent = "Enter a class ID and load results.";
-    if (progressStatus) progressStatus.textContent = "Load a class to supervise exams in progress.";
-    if (progressUpdatedAt) progressUpdatedAt.textContent = "Not updated yet";
-  }
-
-
-  /* ---------------------------------------------- 
-  NORMALIZE CLASS INPUT 
-  ---------------------------------------------- */
-  function normalizeClassInput() {
-    const normalized = normalizeClassCode(classIdInput.value);
-    if (normalized) classIdInput.value = normalized;
-    return normalized;
-  }
-
-  /* ---------------------------------------------- 
-  NORMALIZE CLASS CODE 
-  ---------------------------------------------- */
-  function normalizeClassCode(value) {
-    return App.normalizeClassCode ? App.normalizeClassCode(value) : String(value || "").trim().toUpperCase();
-  }
-
-  /* ---------------------------------------------- 
-  FORMAT DATE 
-  ---------------------------------------------- */
-  function formatDate(value) {
-    return App.formatDate ? App.formatDate(value) : String(value || "—");
-  }
-
-  /* ---------------------------------------------- 
-  CSV CELL 
-  ---------------------------------------------- */
   function csvCell(value) {
     return App.csvCell ? App.csvCell(value) : `"${String(value ?? "").replace(/"/g, '""')}"`;
   }
 
-  /* ---------------------------------------------- 
-  SHOW TOAST 
-  ---------------------------------------------- */
+  function copyShareLink() {
+    syncUrlFromControls({ replace: true, keepOpen: true });
+    navigator.clipboard?.writeText(location.href).then(() => showToast("Link copied"), () => showToast("Could not copy link"));
+  }
+
+  function readQueryState() {
+    const params = new URLSearchParams(location.search);
+    return {
+      classId: params.get("classId") || "",
+      examId: params.get("examId") || "",
+      student: params.get("student") || "",
+      view: params.get("view") || "",
+      open: params.get("open") || "",
+      rowKey: params.get("row") || "",
+      autoLoad: params.get("load") === "1" || Boolean(params.get("classId"))
+    };
+  }
+
+  function applyQueryStateToControls(state) {
+    if (classIdInput && state.classId) classIdInput.value = state.classId;
+    if (examSelect && state.examId) examSelect.value = state.examId;
+    if (studentInput && state.student) studentInput.value = state.student;
+  }
+
+  function syncUrlFromControls(options = {}) {
+    const params = new URLSearchParams();
+    const classId = normalizeClassCode(classIdInput?.value || "");
+    const examId = examSelect?.value || "";
+    const student = studentInput?.value.trim() || "";
+    if (classId) params.set("classId", classId);
+    if (examId) params.set("examId", examId);
+    if (student) params.set("student", student);
+    if (classId) params.set("load", "1");
+    if (options.view) params.set("view", options.view);
+    else if (queryState.view && options.keepOpen) params.set("view", queryState.view);
+    if (options.open && options.row && !options.clearOpen) {
+      params.set("open", options.open);
+      params.set("row", rowKey(options.row));
+    } else if (queryState.open && options.keepOpen) {
+      params.set("open", queryState.open);
+      if (queryState.rowKey) params.set("row", queryState.rowKey);
+    }
+    const url = `${location.pathname}${params.toString() ? `?${params.toString()}` : ""}`;
+    if (options.replace) history.replaceState({}, "", url);
+    else history.pushState({}, "", url);
+    queryState = readQueryState();
+  }
+
+  function handlePopState() {
+    queryState = readQueryState();
+    applyQueryStateToControls(queryState);
+    if (queryState.classId && queryState.autoLoad) loadResults({ updateUrl: false, fromQuery: true });
+  }
+
+  function rowKey(row) {
+    return makeSlug(`${row.examId || ""}_${row.classId || ""}_${row.studentName || ""}_${row.submittedAt || row.lastSeenAt || ""}`, 120);
+  }
+
+  function isHighlightedRow(row) {
+    return queryState.rowKey && rowKey(row) === queryState.rowKey;
+  }
+
+  function openRequestedModal() {
+    if (!queryState.open || !queryState.rowKey) return;
+    if (queryState.open === "progress") {
+      const row = getFilteredProgressRows().find(item => rowKey(item) === queryState.rowKey || progressKey(item) === queryState.rowKey);
+      if (row) openProgressDetails(row, { fromQuery: true });
+      return;
+    }
+    const row = getFilteredRows().find(item => rowKey(item) === queryState.rowKey);
+    if (row) openDetails(row, { fromQuery: true });
+  }
+
+  function scrollToRequestedScreen(view) {
+    if (view === "live") document.querySelector(".progress-card")?.scrollIntoView({ behavior: "smooth", block: "start" });
+  }
+
+  function closeModal() {
+    hideModalWithoutUrl();
+    syncUrlFromControls({ replace: true, clearOpen: true, keepOpen: false });
+  }
+
+  function hideModalWithoutUrl() {
+    activeProgressPreviewId = "";
+    modal?.classList.add("hidden");
+    modal?.setAttribute("aria-hidden", "true");
+  }
+
+  function openModal(title, loadingText = "") {
+    const heading = modal?.querySelector(".modal-head h2");
+    if (heading) heading.textContent = title;
+    modal?.classList.remove("hidden");
+    modal?.setAttribute("aria-hidden", "false");
+    if (loadingText && detailsContent) detailsContent.innerHTML = `<div class="detail-loading">${escapeHtml(loadingText)}</div>`;
+  }
+
   function showToast(message) {
+    if (!toast) return;
     toast.textContent = message;
     toast.classList.add("show");
-    clearTimeout(showToast.timer);
-    showToast.timer = setTimeout(() => toast.classList.remove("show"), 1800);
+    window.setTimeout(() => toast.classList.remove("show"), 2200);
   }
 
-  /* ---------------------------------------------- 
-  ESCAPE HTML 
-  ---------------------------------------------- */
+  function setText(selector, value) {
+    const el = document.querySelector(selector);
+    if (el) el.textContent = value;
+  }
+
+  function safeJson(value, fallback) {
+    return parseJsonDeep(value, fallback);
+  }
+
+  function firstJsonFrom(row, keys, fallback) {
+    for (const key of keys) {
+      if (row && row[key] !== undefined && row[key] !== null && row[key] !== "") return parseJsonDeep(row[key], row[key]);
+    }
+    return fallback;
+  }
+
+  function parseJsonDeep(value, fallback) {
+    if (value === undefined || value === null || value === "") return fallback;
+    if (typeof value !== "string") return value;
+    try {
+      return JSON.parse(value);
+    } catch {
+      return fallback;
+    }
+  }
+
   function escapeHtml(value) {
-    return App.escapeHtml ? App.escapeHtml(value) : String(value ?? "");
+    return App.escapeHtml ? App.escapeHtml(value) : String(value ?? "").replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[char]));
   }
 
-  /* ---------------------------------------------- 
-  ESCAPE ATTR 
-  ---------------------------------------------- */
   function escapeAttr(value) {
-    return App.escapeAttr ? App.escapeAttr(value) : escapeHtml(value).replace(/'/g, "&#39;");
+    return App.escapeAttr ? App.escapeAttr(value) : escapeHtml(value);
+  }
+
+  function formatDate(value) {
+    return App.formatDate ? App.formatDate(value) : (value ? new Date(value).toLocaleString() : "—");
+  }
+
+  function makeSlug(value, max = 120) {
+    return App.makeSlug ? App.makeSlug(value, max) : String(value || "").toLowerCase().replace(/[^a-z0-9]+/g, "_").replace(/^_+|_+$/g, "").slice(0, max);
+  }
+
+  function clamp(value, min, max) {
+    return Math.max(min, Math.min(max, value));
   }
 })();
