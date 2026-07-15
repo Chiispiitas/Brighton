@@ -1,0 +1,218 @@
+@import url("../b1plus-listening/styles.css");
+
+/* ----------------------------------------------
+   A2 Listening specific additions
+---------------------------------------------- */
+
+.visual-options-grid {
+  align-items: stretch;
+}
+
+.visual-placeholder {
+  min-height: 150px;
+  font-size: clamp(22px, 3.2vw, 42px);
+  line-height: 1.16;
+}
+
+.visual-question-card h3 {
+  align-items: flex-start;
+}
+
+.outside-lead {
+  max-width: 1040px;
+  margin: -6px auto 16px;
+  color: var(--muted);
+  font-weight: 800;
+}
+
+.sunshine-card {
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.sunshine-card h3 {
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.job-subheading {
+  text-align: center;
+  margin: 0 0 22px;
+  font-weight: 900;
+  color: var(--ink);
+  background: var(--yellow-soft);
+  border: 2px solid var(--line);
+  border-radius: 18px;
+  padding: 12px 16px;
+}
+
+.sunshine-card .listening-gap-line {
+  justify-content: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
+  border-bottom: 1px dashed rgba(32, 38, 49, .12);
+  padding: 11px 0;
+}
+
+.sunshine-card .listening-gap-line:last-child {
+  border-bottom: 0;
+}
+
+.sunshine-card .listening-gap-line > span:first-child {
+  min-width: min(390px, 100%);
+  font-weight: 800;
+}
+
+.sunshine-card .listening-input {
+  width: min(240px, 38vw);
+  flex: 0 1 240px;
+}
+
+.matching-card {
+  max-width: 1060px;
+  margin: 0 auto;
+}
+
+.matching-card h3 {
+  font-size: clamp(22px, 3vw, 32px);
+  margin-bottom: 20px;
+}
+
+.matching-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(260px, 340px);
+  gap: 22px;
+  align-items: start;
+}
+
+.matching-people-panel,
+.matching-options-panel {
+  border: 2px solid var(--line);
+  background: var(--cream);
+  border-radius: 22px;
+  padding: 18px;
+}
+
+.matching-example {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 14px;
+  padding: 13px 14px;
+  background: #fff;
+  border: 2px dashed rgba(32, 38, 49, .18);
+  border-radius: 16px;
+}
+
+.example-pill {
+  background: var(--ink);
+  color: #fff;
+  border-radius: 999px;
+  padding: 6px 10px;
+  font-weight: 900;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.matching-rows {
+  display: grid;
+  gap: 12px;
+}
+
+.matching-row {
+  display: grid;
+  grid-template-columns: minmax(150px, 1fr) minmax(180px, 260px);
+  gap: 14px;
+  align-items: center;
+  background: #fff;
+  border: 2px solid rgba(32, 38, 49, .10);
+  border-radius: 18px;
+  padding: 12px;
+  transition: border .18s, box-shadow .18s, background .18s, transform .18s;
+  cursor: pointer;
+}
+
+.matching-row:hover,
+.matching-row.active {
+  border-color: var(--teal);
+  background: var(--teal-soft);
+  box-shadow: 0 12px 24px rgba(0, 169, 165, .10);
+  transform: translateY(-1px);
+}
+
+.matching-person {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-weight: 900;
+}
+
+.matching-select {
+  width: 100%;
+  border: 2px solid var(--line);
+  border-radius: 14px;
+  background: #fff;
+  padding: 11px 12px;
+  font-weight: 800;
+  color: var(--ink);
+  outline: none;
+}
+
+.matching-select:focus {
+  border-color: var(--teal);
+  box-shadow: 0 0 0 4px rgba(0,169,165,.16);
+}
+
+.matching-options-panel h4 {
+  margin: 0 0 12px;
+  text-transform: uppercase;
+  letter-spacing: .05em;
+  color: var(--yellow-dark);
+}
+
+.matching-options-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: grid;
+  gap: 8px;
+}
+
+.matching-options-list li {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: #fff;
+  border: 1px solid rgba(32, 38, 49, .08);
+  font-weight: 800;
+}
+
+.matching-options-list strong {
+  display: inline-grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+  border-radius: 10px;
+  background: var(--yellow);
+  color: #fff;
+  flex: 0 0 auto;
+}
+
+@media (max-width: 880px) {
+  .matching-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .matching-row {
+    grid-template-columns: 1fr;
+  }
+
+  .sunshine-card .listening-input {
+    width: 100%;
+    flex-basis: 100%;
+  }
+}

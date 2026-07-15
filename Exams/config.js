@@ -41,6 +41,17 @@ window.BRIGHTON_SITE_CONFIG = {
       relativeUrl: "exams/a2-rw/index.html"
     },
     {
+      examId: "brighton-a2-listening-final",
+      title: "Brighton A2 Listening Final Exam",
+      level: "A2",
+      skill: "Listening",
+      description: "Five-part A2 Key-style Listening final exam using one audio file.",
+      isActive: true,
+      totalQuestions: 25,
+      maxScore: 25,
+      relativeUrl: "exams/a2-listening/index.html"
+    },
+    {
       examId: "brighton-b2-listening-final",
       title: "B2 Listening Final Exam",
       level: "B2",
