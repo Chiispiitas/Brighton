@@ -23,45 +23,45 @@ window.listeningExam = {
           q: 1,
           stem: "Where will Claire meet Alex?",
           options: {
-            A: { label: "Museum", placeholder: "Museum\nart exhibition", alt: "Museum art exhibition" },
-            B: { label: "Hairdresser's", placeholder: "Hairdresser's\nchairs and mirrors", alt: "Hairdresser's" },
-            C: { label: "Cafe", placeholder: "Cafe\ntables and sandwiches", alt: "Cafe" }
+            A: { label: "Museum", image: "assets/part1-q1-a-museum.png", alt: "Museum art exhibition" },
+            B: { label: "Hairdresser's", image: "assets/part1-q1-b-hairdressers.png", alt: "Hairdresser's" },
+            C: { label: "Cafe", image: "assets/part1-q1-c-cafe.png", alt: "Cafe" }
           }
         },
         {
           q: 2,
           stem: "What time should the man telephone again?",
           options: {
-            A: { label: "10:15", placeholder: "Clock\n10:15", alt: "Clock showing ten fifteen" },
-            B: { label: "12:00", placeholder: "Clock\n12:00", alt: "Clock showing twelve o'clock" },
-            C: { label: "12:30", placeholder: "Clock\n12:30", alt: "Clock showing half past twelve" }
+            A: { label: "10:15", image: "assets/part1-q2-a-1015.png", alt: "Clock showing ten fifteen" },
+            B: { label: "12:00", image: "assets/part1-q2-b-1200.png", alt: "Clock showing twelve o'clock" },
+            C: { label: "12:30", image: "assets/part1-q2-c-1230.png", alt: "Clock showing half past twelve" }
           }
         },
         {
           q: 3,
           stem: "When are they going to have the party?",
           options: {
-            A: { label: "July 11", placeholder: "July 11", alt: "July 11" },
-            B: { label: "July 18", placeholder: "July 18", alt: "July 18" },
-            C: { label: "July 25", placeholder: "July 25", alt: "July 25" }
+            A: { label: "July 11", image: "assets/part1-q3-a-july11.png", alt: "July 11 calendar" },
+            B: { label: "July 18", image: "assets/part1-q3-b-july18.png", alt: "July 18 calendar" },
+            C: { label: "July 25", image: "assets/part1-q3-c-july25.png", alt: "July 25 calendar" }
           }
         },
         {
           q: 4,
           stem: "What was the weather like on the picnic?",
           options: {
-            A: { label: "Sunny", placeholder: "Sunny\nweather", alt: "Sunny weather" },
-            B: { label: "Rainy", placeholder: "Rainy\nweather", alt: "Rainy weather" },
-            C: { label: "Windy", placeholder: "Windy\nweather", alt: "Windy weather" }
+            A: { label: "Sunny", image: "assets/part1-q4-a-sunny.png", alt: "Sunny picnic weather" },
+            B: { label: "Rainy", image: "assets/part1-q4-b-rainy.png", alt: "Rainy picnic weather" },
+            C: { label: "Windy", image: "assets/part1-q4-c-windy.png", alt: "Windy picnic weather" }
           }
         },
         {
           q: 5,
           stem: "How much are the shorts?",
           options: {
-            A: { label: "£5", placeholder: "£5", alt: "Five pounds" },
-            B: { label: "£15", placeholder: "£15", alt: "Fifteen pounds" },
-            C: { label: "£20", placeholder: "£20", alt: "Twenty pounds" }
+            A: { label: "£5", image: "assets/part1-q5-a-5pounds.png", alt: "Shorts costing five pounds" },
+            B: { label: "£15", image: "assets/part1-q5-b-15pounds.png", alt: "Shorts costing fifteen pounds" },
+            C: { label: "£20", image: "assets/part1-q5-c-20pounds.png", alt: "Shorts costing twenty pounds" }
           }
         }
       ]
