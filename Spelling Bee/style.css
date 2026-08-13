@@ -63,23 +63,29 @@ body::before {
 .topbar img { display: none; }
 
 .topbar::before {
-  content: "✦  ORTHOGRAPHIA!  ✦";
-  color: rgba(227,207,157,.75);
-  font-family: Georgia, "Palatino Linotype", serif;
-  font-size: .82rem;
-  font-weight: 600;
-  letter-spacing: .28em;
-  text-indent: .28em;
-  text-shadow: 0 0 20px rgba(200,169,107,.16);
+  content: "VERBA  •  RECTE  •  SCRIBE";
+  color: rgba(214,190,135,.72);
+  font-family: "Times New Roman", Georgia, "Palatino Linotype", serif;
+  font-size: .86rem;
+  font-weight: 700;
+  font-variant: small-caps;
+  letter-spacing: .31em;
+  text-indent: .31em;
+  text-shadow:
+    0 1px 0 rgba(255,236,187,.12),
+    0 -1px 0 rgba(57,38,20,.85),
+    0 0 16px rgba(200,169,107,.10);
 }
 
 .topbar::after {
-  content: "";
+  content: "◈──────────────◈";
   position: absolute;
-  bottom: 10px;
-  width: min(44vw, 560px);
-  height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(200,169,107,.36), transparent);
+  bottom: 5px;
+  color: rgba(200,169,107,.28);
+  font-family: Georgia, serif;
+  font-size: .7rem;
+  letter-spacing: .18em;
+  text-shadow: 0 -1px 0 rgba(0,0,0,.45);
 }
 
 /*--------------------------------------------------------------
