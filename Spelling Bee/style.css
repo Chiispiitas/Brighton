@@ -63,7 +63,7 @@ body::before {
 .topbar img { display: none; }
 
 .topbar::before {
-  content: "✦  SPELLING BEE  ✦";
+  content: "✦  ORTHOGRAPHIA!  ✦";
   color: rgba(227,207,157,.75);
   font-family: Georgia, "Palatino Linotype", serif;
   font-size: .82rem;
