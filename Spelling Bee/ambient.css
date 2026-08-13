@@ -1,0 +1,26 @@
+body {
+  background-size: 145% 145%, 138% 138%, 142% 142%, 132% 132%;
+  animation: mysticFlow 30s ease-in-out infinite alternate;
+}
+
+body::before {
+  inset: -8%;
+  animation: starFloat 38s ease-in-out infinite alternate, starGlow 10s ease-in-out infinite;
+}
+
+@keyframes mysticFlow {
+  0% { background-position: 50% 32%, 14% 18%, 88% 20%, 50% 50%; }
+  50% { background-position: 56% 42%, 22% 27%, 78% 30%, 54% 48%; }
+  100% { background-position: 45% 37%, 10% 25%, 92% 14%, 47% 54%; }
+}
+
+@keyframes starFloat {
+  0% { transform: translate3d(-1%, 1%, 0); background-position: 27px 15px, 93px 61px; }
+  50% { transform: translate3d(2.5%, -2.5%, 0) scale(1.035); background-position: 76px -22px, 48px 108px; }
+  100% { transform: translate3d(-.5%, -4%, 0); background-position: 118px -45px, 8px 151px; }
+}
+
+@keyframes starGlow {
+  0%, 100% { opacity: .43; }
+  50% { opacity: .64; }
+}
