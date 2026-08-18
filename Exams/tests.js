@@ -2,137 +2,123 @@
   const levelMenu = document.getElementById('levelMenu');
   const unitMenu = document.getElementById('unitMenu');
   const levelButtons = Array.from(document.querySelectorAll('.test-level-button'));
-  const unitButtons = Array.from(document.querySelectorAll('.unit-option-button'));
+  const unitCards = Array.from(document.querySelectorAll('.unit-test-card'));
   const backToLevels = document.getElementById('backToLevels');
   const selectedLevelLabel = document.getElementById('selectedLevelLabel');
   const pageTitle = document.getElementById('testsPageTitle');
   const pageIntro = document.getElementById('testsPageIntro');
-  const availabilityNote = document.getElementById('testAvailabilityNote');
-  const actionPanel = document.getElementById('testActionPanel');
-  const selectedTestMeta = document.getElementById('selectedTestMeta');
-  const selectedTestTitle = document.getElementById('selectedTestTitle');
-  const selectedTestDescription = document.getElementById('selectedTestDescription');
-  const copyStudentLinkBtn = document.getElementById('copyStudentLinkBtn');
-  const openSelectedTestBtn = document.getElementById('openSelectedTestBtn');
   const toast = document.getElementById('testToast');
   const config = window.BRIGHTON_SITE_CONFIG || {};
   const tests = Array.isArray(config.FALLBACK_TESTS) ? config.FALLBACK_TESTS : [];
 
   let activeLevelButton = null;
-  let selectedTest = null;
-  let selectedUnitButton = null;
 
   function openLevel(levelButton) {
-    const level = levelButton.dataset.level;
+    const level = String(levelButton.dataset.level || '').trim();
     if (!level) return;
 
     activeLevelButton = levelButton;
-    selectedTest = null;
-    selectedUnitButton = null;
     levelMenu.hidden = true;
     unitMenu.hidden = false;
-    actionPanel.hidden = true;
 
     selectedLevelLabel.textContent = `${level} level`;
     pageTitle.textContent = `${level} Tests`;
-    pageIntro.textContent = 'Choose the unit range you want to open.';
-    availabilityNote.textContent = '';
+    pageIntro.textContent = 'Choose a unit test. You can open it, copy the student link, or go directly to its results.';
 
-    unitButtons.forEach((button) => {
-      const units = button.dataset.units;
-      const available = Boolean(findTest(level, units));
-      button.dataset.level = level;
-      button.classList.remove('selected');
-      button.classList.toggle('available', available);
-      button.classList.toggle('coming-soon', !available);
-      button.setAttribute('aria-label', `${level} tests, Units ${units}${available ? '' : ', coming soon'}`);
-    });
-
+    renderUnitCards(level);
     backToLevels.focus({ preventScroll: true });
   }
 
   function closeLevel() {
     unitMenu.hidden = true;
     levelMenu.hidden = false;
-    actionPanel.hidden = true;
-    selectedTest = null;
-    selectedUnitButton = null;
     pageTitle.textContent = 'Choose your level';
     pageIntro.textContent = 'Select a CEFR level to continue to the available unit ranges.';
-    availabilityNote.textContent = '';
 
-    unitButtons.forEach((button) => button.classList.remove('selected'));
     if (activeLevelButton) activeLevelButton.focus({ preventScroll: true });
+  }
+
+  function renderUnitCards(level) {
+    unitCards.forEach((card) => {
+      const units = card.dataset.units || '';
+      const test = findTest(level, units);
+      card.className = 'unit-test-card';
+
+      if (!test) {
+        card.classList.add('coming-soon');
+        card.innerHTML = `
+          <div class="unit-test-card-head">
+            <span class="tag status-tag">Coming soon</span>
+            <span class="unit-test-level">${escapeHtml(level)}</span>
+          </div>
+          <div class="unit-test-card-copy">
+            <p class="unit-test-kicker">Units</p>
+            <h3>${escapeHtml(displayUnits(units))}</h3>
+            <p class="muted">No test has been added for this unit range yet.</p>
+          </div>
+        `;
+        return;
+      }
+
+      const studentUrl = resolveTestUrl(test);
+      const resultsUrl = `test-results.html?testId=${encodeURIComponent(test.testId || '')}`;
+      card.classList.add('available');
+      card.innerHTML = `
+        <div class="unit-test-card-head">
+          <span class="tag">Available</span>
+          <span class="unit-test-level">${escapeHtml(test.level || level)}</span>
+        </div>
+        <div class="unit-test-card-copy">
+          <p class="unit-test-kicker">Units ${escapeHtml(displayUnits(test.unitRange || units))}</p>
+          <h3>${escapeHtml(test.title || `${level} Units ${displayUnits(units)} Test`)}</h3>
+          <p class="muted">${escapeHtml(test.description || 'Brighton digital unit test.')}</p>
+        </div>
+        <div class="unit-test-meta">
+          <span class="tag">${Number(test.totalQuestions || 0)} questions</span>
+          <span class="tag">${Number(test.maxScore || 0)} points</span>
+        </div>
+        <div class="unit-test-actions">
+          <a class="primary-btn" href="${escapeAttr(studentUrl)}" target="_blank" rel="noopener">Open test</a>
+          <button class="secondary-btn" type="button" data-copy-student-link="${escapeAttr(studentUrl)}">Copy student link</button>
+          <a class="secondary-btn" href="${escapeAttr(resultsUrl)}">Results</a>
+        </div>
+      `;
+    });
+
+    bindCardActions();
+  }
+
+  function bindCardActions() {
+    document.querySelectorAll('[data-copy-student-link]').forEach((button) => {
+      button.addEventListener('click', async () => {
+        const url = button.getAttribute('data-copy-student-link') || '';
+        if (!url || url === '#') {
+          showToast('Student link is not configured');
+          return;
+        }
+
+        try {
+          await navigator.clipboard.writeText(url);
+          showToast('Student link copied');
+        } catch {
+          if (copyWithFallback(url)) showToast('Student link copied');
+          else window.prompt('Copy this student link:', url);
+        }
+      });
+    });
   }
 
   function findTest(level, units) {
     return tests.find((test) => test.level === level && test.unitRange === units && test.isActive !== false);
   }
 
-  function selectUnit(button) {
-    const level = button.dataset.level;
-    const units = button.dataset.units;
-    const test = findTest(level, units);
-
-    unitButtons.forEach((item) => item.classList.remove('selected'));
-
-    if (!test) {
-      selectedTest = null;
-      selectedUnitButton = null;
-      actionPanel.hidden = true;
-      availabilityNote.textContent = `${level} Units ${displayUnits(units)} is not available yet.`;
-      return;
-    }
-
-    const target = String(test.relativeUrl || '').trim();
-    if (!target) {
-      selectedTest = null;
-      selectedUnitButton = null;
-      actionPanel.hidden = true;
-      availabilityNote.textContent = 'This test is configured but does not have a page yet.';
-      return;
-    }
-
-    selectedTest = test;
-    selectedUnitButton = button;
-    button.classList.add('selected');
-    availabilityNote.textContent = '';
-
-    selectedTestMeta.textContent = `${test.level || level} · Units ${displayUnits(test.unitRange || units)}`;
-    selectedTestTitle.textContent = test.title || `${level} Units ${displayUnits(units)} Test`;
-    selectedTestDescription.textContent = test.description || 'Copy the student link before opening the test, or open it here for preview.';
-    actionPanel.hidden = false;
-
-    requestAnimationFrame(() => {
-      actionPanel.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
-    });
-  }
-
-  function getSelectedTestUrl() {
-    if (!selectedTest) return '';
-    const target = String(selectedTest.relativeUrl || '').trim();
-    if (!target) return '';
+  function resolveTestUrl(test) {
+    const target = String(test.shareUrl || test.iframeUrl || test.relativeUrl || '').trim();
+    if (!target) return '#';
     try {
       return new URL(target, window.location.href).href;
     } catch {
       return target;
-    }
-  }
-
-  async function copyStudentLink() {
-    const url = getSelectedTestUrl();
-    if (!url) {
-      showToast('Choose an available test first');
-      return;
-    }
-
-    try {
-      await navigator.clipboard.writeText(url);
-      showToast('Student link copied');
-    } catch {
-      const copied = copyWithFallback(url);
-      if (copied) showToast('Student link copied');
-      else window.prompt('Copy this student link:', url);
     }
   }
 
@@ -153,17 +139,21 @@
     }
   }
 
-  function openSelectedTest() {
-    const url = getSelectedTestUrl();
-    if (!url) {
-      showToast('Choose an available test first');
-      return;
-    }
-    window.location.href = url;
-  }
-
   function displayUnits(value) {
     return String(value || '').replace('-', '–');
+  }
+
+  function escapeHtml(value) {
+    return String(value ?? '').replace(/[&<>\"]/g, (char) => ({
+      '&': '&amp;',
+      '<': '&lt;',
+      '>': '&gt;',
+      '"': '&quot;'
+    }[char]));
+  }
+
+  function escapeAttr(value) {
+    return escapeHtml(value).replace(/'/g, '&#39;');
   }
 
   function showToast(message) {
@@ -175,8 +165,5 @@
   }
 
   levelButtons.forEach((button) => button.addEventListener('click', () => openLevel(button)));
-  unitButtons.forEach((button) => button.addEventListener('click', () => selectUnit(button)));
   backToLevels.addEventListener('click', closeLevel);
-  copyStudentLinkBtn?.addEventListener('click', copyStudentLink);
-  openSelectedTestBtn?.addEventListener('click', openSelectedTest);
 })();
