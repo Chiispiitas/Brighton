@@ -1,0 +1,51 @@
+.tests-results-main .filter-card {
+  grid-template-columns: minmax(160px, 1fr) minmax(220px, 1.3fr) minmax(180px, 1fr) auto auto auto;
+}
+
+.test-score-pages {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.test-score-pages span {
+  display: inline-flex;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: var(--teal-soft);
+  color: #075f5f;
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.test-detail-answer-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.test-detail-answer {
+  padding: 10px;
+  border-radius: 15px;
+  background: var(--panel);
+}
+
+.test-detail-answer strong,
+.test-detail-answer span {
+  display: block;
+}
+
+.test-detail-answer span {
+  margin-top: 3px;
+  color: var(--muted);
+  font-size: 11px;
+}
+
+@media (max-width: 1000px) {
+  .tests-results-main .filter-card { grid-template-columns: 1fr 1fr; }
+}
+
+@media (max-width: 620px) {
+  .tests-results-main .filter-card { grid-template-columns: 1fr; }
+}
