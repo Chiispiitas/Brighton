@@ -4,12 +4,13 @@
   <meta name="description" content="Brighton English School Digital Exams">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Brighton Teacher Main</title>
+  <title>Brighton Exam Control Panel</title>
   <link rel="stylesheet" href="portal.css" />
+  <link rel="stylesheet" href="exam-levels.css" />
 </head>
 <body>
   <header class="portal-header">
-    <a class="portal-brand" href="teacher.html" aria-label="Brighton English School teacher area">
+    <a class="portal-brand" href="index.html" aria-label="Brighton Assessment Center">
       <img src="assets/brighton-logo.png" alt="Brighton English School" />
     </a>
     <div class="portal-title-block">
@@ -17,27 +18,65 @@
       <h1>Exam Control Panel</h1>
     </div>
     <nav class="header-actions">
+      <a class="secondary-btn" href="index.html">Assessment Home</a>
       <a class="secondary-btn" href="results.html">Results Dashboard</a>
     </nav>
   </header>
 
-  <main class="portal-main">
-    <section class="available-exams-panel">
-      <div class="brand-strip available-ribbon" aria-hidden="true">
-        <span>☆</span><span>♡</span><span>✦</span><span>○</span><span>✶</span>
-      </div>
-      <div class="toolbar-card exams-toolbar">
-        <div class="toolbar-content">
-          <div>
-            <h2>Available exams</h2>
-            <p id="apiStatus" class="muted">Checking Brighton Database...</p>
-          </div>
-          <button id="refreshBtn" class="primary-btn small">Refresh</button>
-        </div>
+  <main class="portal-main exam-level-main">
+    <section id="examLevelScreen" class="exam-level-screen" aria-labelledby="examLevelTitle">
+      <header class="exam-level-intro">
+        <p class="eyebrow">Exams</p>
+        <h2 id="examLevelTitle">Choose a level</h2>
+        <p>Select a CEFR level to see the formal exams available for that level.</p>
+        <span id="catalogStatus" class="exam-catalog-status">Loading exam catalog...</span>
+      </header>
+
+      <div class="exam-level-grid" aria-label="CEFR exam levels">
+        <button class="exam-level-button level-a1" type="button" data-level="A1" aria-label="Choose A1 exams">
+          <strong>A1</strong><small data-level-count="A1">—</small>
+        </button>
+        <button class="exam-level-button level-a2" type="button" data-level="A2" aria-label="Choose A2 exams">
+          <strong>A2</strong><small data-level-count="A2">—</small>
+        </button>
+        <button class="exam-level-button level-b1" type="button" data-level="B1" aria-label="Choose B1 exams">
+          <strong>B1</strong><small data-level-count="B1">—</small>
+        </button>
+        <button class="exam-level-button level-b1plus" type="button" data-level="B1+" aria-label="Choose B1 plus exams">
+          <strong>B1+</strong><small data-level-count="B1+">—</small>
+        </button>
+        <button class="exam-level-button level-b2" type="button" data-level="B2" aria-label="Choose B2 exams">
+          <strong>B2</strong><small data-level-count="B2">—</small>
+        </button>
+        <button class="exam-level-button level-c1" type="button" data-level="C1" aria-label="Choose C1 exams">
+          <strong>C1</strong><small data-level-count="C1">—</small>
+        </button>
       </div>
     </section>
 
-    <section id="examGrid" class="exam-grid" aria-live="polite"></section>
+    <section id="selectedExamLevel" class="selected-exam-level" hidden aria-live="polite">
+      <button id="backToExamLevels" class="exam-level-back" type="button">
+        <span aria-hidden="true">←</span> Back to levels
+      </button>
+
+      <section class="available-exams-panel">
+        <div class="brand-strip available-ribbon" aria-hidden="true">
+          <span>☆</span><span>♡</span><span>✦</span><span>○</span><span>✶</span>
+        </div>
+        <div class="toolbar-card exams-toolbar">
+          <div class="toolbar-content">
+            <div>
+              <p id="selectedExamLevelLabel" class="eyebrow">A1 level</p>
+              <h2 id="selectedExamLevelTitle">A1 Exams</h2>
+              <p id="apiStatus" class="muted">Loading available exams...</p>
+            </div>
+            <button id="refreshBtn" class="primary-btn small" type="button">Refresh</button>
+          </div>
+        </div>
+      </section>
+
+      <section id="examGrid" class="exam-grid" aria-live="polite"></section>
+    </section>
   </main>
 
   <div id="toast" class="toast" role="status" aria-live="polite"></div>
