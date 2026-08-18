@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="description" content="Brighton English School Digital Tests by CEFR level">
+  <meta name="description" content="Brighton English School Digital Tests by CEFR level and unit range">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Brighton Tests</title>
@@ -15,11 +15,11 @@
         <img class="assessment-home-logo" src="assets/brighton-logo.png" alt="Brighton English School" />
       </a>
       <p class="eyebrow">Tests</p>
-      <h1>Choose your level</h1>
-      <p class="assessment-home-intro">Select a CEFR level to continue to the available tests.</p>
+      <h1 id="testsPageTitle">Choose your level</h1>
+      <p id="testsPageIntro" class="assessment-home-intro">Select a CEFR level to continue to the available unit ranges.</p>
     </header>
 
-    <section class="test-level-grid" aria-label="CEFR test levels">
+    <section id="levelMenu" class="test-level-grid" aria-label="CEFR test levels">
       <button class="test-level-button level-a1" type="button" data-level="A1" aria-label="Choose A1 tests">
         <span>A1</span>
       </button>
@@ -40,6 +40,39 @@
       </button>
     </section>
 
+    <section id="unitMenu" class="unit-submenu" aria-label="Test unit ranges" hidden>
+      <div class="unit-submenu-head">
+        <button id="backToLevels" class="unit-back-button" type="button" aria-label="Back to test levels">
+          <span aria-hidden="true">←</span> Back to levels
+        </button>
+        <div>
+          <p id="selectedLevelLabel" class="eyebrow">A1 level</p>
+          <h2>Choose units</h2>
+        </div>
+      </div>
+
+      <div class="unit-option-grid">
+        <button class="unit-option-button" type="button" data-units="1-2">
+          <span>Units</span><strong>1–2</strong>
+        </button>
+        <button class="unit-option-button" type="button" data-units="1-4">
+          <span>Units</span><strong>1–4</strong>
+        </button>
+        <button class="unit-option-button" type="button" data-units="5-6">
+          <span>Units</span><strong>5–6</strong>
+        </button>
+        <button class="unit-option-button" type="button" data-units="5-8">
+          <span>Units</span><strong>5–8</strong>
+        </button>
+        <button class="unit-option-button" type="button" data-units="9-10">
+          <span>Units</span><strong>9–10</strong>
+        </button>
+        <button class="unit-option-button" type="button" data-units="9-12">
+          <span>Units</span><strong>9–12</strong>
+        </button>
+      </div>
+    </section>
+
     <nav class="tests-home-actions" aria-label="Assessment navigation">
       <a class="secondary-btn" href="index.html">Back to Home</a>
       <a class="secondary-btn" href="teacher.html">Open Exams</a>
@@ -49,5 +82,7 @@
       Brighton English School · Digital Assessment Platform
     </footer>
   </main>
+
+  <script src="tests.js"></script>
 </body>
 </html>
