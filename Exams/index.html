@@ -1,21 +1,51 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="description" content="Brighton English School Digital Exams">
+  <meta name="description" content="Brighton English School Digital Assessment Center">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Brighton Exam Platform</title>
-  <meta http-equiv="refresh" content="0; url=teacher.html" />
+  <title>Brighton Assessment Center</title>
   <link rel="stylesheet" href="portal.css" />
+  <link rel="stylesheet" href="home.css" />
 </head>
-<body>
-  <main class="center-screen">
-    <div class="loader-card">
-      <img class="loader-logo" src="assets/brighton-logo.png" alt="Brighton English School" />
-      <h1>Exam Platform</h1>
-      <p>Opening teacher page...</p>
-      <a class="primary-btn" href="teacher.html">Open Teacher Main Page</a>
-    </div>
+<body class="assessment-home-body">
+  <main class="assessment-home">
+    <header class="assessment-home-header">
+      <img class="assessment-home-logo" src="assets/brighton-logo.png" alt="Brighton English School" />
+      <p class="eyebrow">Digital assessment platform</p>
+      <h1>Assessment Center</h1>
+      <p class="assessment-home-intro">Choose the type of assessment you want to manage.</p>
+    </header>
+
+    <section class="assessment-choice-grid" aria-label="Assessment areas">
+      <a class="assessment-choice-card assessment-choice-exams" href="teacher.html">
+        <div class="assessment-choice-topline">
+          <span class="assessment-choice-label">Exams</span>
+          <span class="assessment-choice-icon" aria-hidden="true">✦</span>
+        </div>
+        <div>
+          <h2>Exams</h2>
+          <p>Open the full exam platform for formal assessment sessions, student progress and results.</p>
+        </div>
+        <span class="assessment-choice-link">Open Exams <span aria-hidden="true">→</span></span>
+      </a>
+
+      <a class="assessment-choice-card assessment-choice-tests" href="tests.html">
+        <div class="assessment-choice-topline">
+          <span class="assessment-choice-label">Tests</span>
+          <span class="assessment-choice-icon" aria-hidden="true">☆</span>
+        </div>
+        <div>
+          <h2>Tests</h2>
+          <p>Open the test area for shorter assessments, quizzes and focused skill checks.</p>
+        </div>
+        <span class="assessment-choice-link">Open Tests <span aria-hidden="true">→</span></span>
+      </a>
+    </section>
+
+    <footer class="assessment-home-footer">
+      Brighton English School · Digital Assessment Platform
+    </footer>
   </main>
 </body>
 </html>
