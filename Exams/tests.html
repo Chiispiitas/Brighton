@@ -20,24 +20,12 @@
     </header>
 
     <section id="levelMenu" class="test-level-grid" aria-label="CEFR test levels">
-      <button class="test-level-button level-a1" type="button" data-level="A1" aria-label="Choose A1 tests">
-        <span>A1</span>
-      </button>
-      <button class="test-level-button level-a2" type="button" data-level="A2" aria-label="Choose A2 tests">
-        <span>A2</span>
-      </button>
-      <button class="test-level-button level-b1" type="button" data-level="B1" aria-label="Choose B1 tests">
-        <span>B1</span>
-      </button>
-      <button class="test-level-button level-b1plus" type="button" data-level="B1+" aria-label="Choose B1 plus tests">
-        <span>B1+</span>
-      </button>
-      <button class="test-level-button level-b2" type="button" data-level="B2" aria-label="Choose B2 tests">
-        <span>B2</span>
-      </button>
-      <button class="test-level-button level-c1" type="button" data-level="C1" aria-label="Choose C1 tests">
-        <span>C1</span>
-      </button>
+      <button class="test-level-button level-a1" type="button" data-level="A1" aria-label="Choose A1 tests"><span>A1</span></button>
+      <button class="test-level-button level-a2" type="button" data-level="A2" aria-label="Choose A2 tests"><span>A2</span></button>
+      <button class="test-level-button level-b1" type="button" data-level="B1" aria-label="Choose B1 tests"><span>B1</span></button>
+      <button class="test-level-button level-b1plus" type="button" data-level="B1+" aria-label="Choose B1 plus tests"><span>B1+</span></button>
+      <button class="test-level-button level-b2" type="button" data-level="B2" aria-label="Choose B2 tests"><span>B2</span></button>
+      <button class="test-level-button level-c1" type="button" data-level="C1" aria-label="Choose C1 tests"><span>C1</span></button>
     </section>
 
     <section id="unitMenu" class="unit-submenu" aria-label="Test unit ranges" hidden>
@@ -52,37 +40,26 @@
       </div>
 
       <div class="unit-option-grid">
-        <button class="unit-option-button" type="button" data-units="1-2">
-          <span>Units</span><strong>1–2</strong>
-        </button>
-        <button class="unit-option-button" type="button" data-units="1-4">
-          <span>Units</span><strong>1–4</strong>
-        </button>
-        <button class="unit-option-button" type="button" data-units="5-6">
-          <span>Units</span><strong>5–6</strong>
-        </button>
-        <button class="unit-option-button" type="button" data-units="5-8">
-          <span>Units</span><strong>5–8</strong>
-        </button>
-        <button class="unit-option-button" type="button" data-units="9-10">
-          <span>Units</span><strong>9–10</strong>
-        </button>
-        <button class="unit-option-button" type="button" data-units="9-12">
-          <span>Units</span><strong>9–12</strong>
-        </button>
+        <button class="unit-option-button" type="button" data-units="1-2"><span>Units</span><strong>1–2</strong></button>
+        <button class="unit-option-button" type="button" data-units="1-4"><span>Units</span><strong>1–4</strong></button>
+        <button class="unit-option-button" type="button" data-units="5-6"><span>Units</span><strong>5–6</strong></button>
+        <button class="unit-option-button" type="button" data-units="5-8"><span>Units</span><strong>5–8</strong></button>
+        <button class="unit-option-button" type="button" data-units="9-10"><span>Units</span><strong>9–10</strong></button>
+        <button class="unit-option-button" type="button" data-units="9-12"><span>Units</span><strong>9–12</strong></button>
       </div>
+      <p id="testAvailabilityNote" class="test-availability-note" aria-live="polite"></p>
     </section>
 
     <nav class="tests-home-actions" aria-label="Assessment navigation">
+      <a class="primary-btn" href="test-results.html">Tests Results</a>
       <a class="secondary-btn" href="index.html">Back to Home</a>
       <a class="secondary-btn" href="teacher.html">Open Exams</a>
     </nav>
 
-    <footer class="assessment-home-footer">
-      Brighton English School · Digital Assessment Platform
-    </footer>
+    <footer class="assessment-home-footer">Brighton English School · Digital Assessment Platform</footer>
   </main>
 
+  <script src="config.js"></script>
   <script src="tests.js"></script>
 </body>
 </html>
