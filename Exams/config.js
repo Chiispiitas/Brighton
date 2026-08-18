@@ -5,9 +5,6 @@
 ============================================== */
 
 window.BRIGHTON_SITE_CONFIG = {
-  
-  
-  
   API_BASE_URL: "https://chiispiitas.wixsite.com/brightonexams/_functions",
 
   SCHOOL_NAME: "Brighton English School",
@@ -16,6 +13,20 @@ window.BRIGHTON_SITE_CONFIG = {
   LIVE_PROGRESS_TOUCH_DELAY_MS: 8000,
   DASHBOARD_PROGRESS_REFRESH_MS: 20000,
   PROGRESS_STALE_SECONDS: 90,
+
+  FALLBACK_TESTS: [
+    {
+      testId: "brighton-a1-units-1-2",
+      title: "A1 Units 1–2 Test",
+      level: "A1",
+      unitRange: "1-2",
+      description: "Two-page A1 multiple-choice test covering Unit 1 and Unit 2.",
+      isActive: true,
+      totalQuestions: 40,
+      maxScore: 40,
+      relativeUrl: "tests/a1-units-1-2/index.html"
+    }
+  ],
 
   FALLBACK_EXAMS: [
     {
