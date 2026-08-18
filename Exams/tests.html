@@ -1,27 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="description" content="Brighton English School Digital Tests">
+  <meta name="description" content="Brighton English School Digital Tests by CEFR level">
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Brighton Tests</title>
   <link rel="stylesheet" href="portal.css" />
   <link rel="stylesheet" href="home.css" />
 </head>
-<body class="assessment-home-body">
-  <main class="assessment-home">
-    <section class="tests-placeholder">
-      <img class="assessment-home-logo" src="assets/brighton-logo.png" alt="Brighton English School" />
-      <div class="tests-placeholder-card">
-        <p class="eyebrow">Tests</p>
-        <h1>Tests Workspace</h1>
-        <p>The Tests area is now separated from the formal Exams platform and ready to be expanded with its own assessment flow.</p>
-        <div class="tests-placeholder-actions">
-          <a class="primary-btn" href="index.html">Back to Home</a>
-          <a class="secondary-btn" href="teacher.html">Open Exams</a>
-        </div>
-      </div>
+<body class="assessment-home-body tests-home-body">
+  <main class="assessment-home tests-home">
+    <header class="assessment-home-header tests-home-header">
+      <a href="index.html" aria-label="Back to Brighton Assessment Center">
+        <img class="assessment-home-logo" src="assets/brighton-logo.png" alt="Brighton English School" />
+      </a>
+      <p class="eyebrow">Tests</p>
+      <h1>Choose your level</h1>
+      <p class="assessment-home-intro">Select a CEFR level to continue to the available tests.</p>
+    </header>
+
+    <section class="test-level-grid" aria-label="CEFR test levels">
+      <button class="test-level-button level-a1" type="button" data-level="A1" aria-label="Choose A1 tests">
+        <span>A1</span>
+      </button>
+      <button class="test-level-button level-a2" type="button" data-level="A2" aria-label="Choose A2 tests">
+        <span>A2</span>
+      </button>
+      <button class="test-level-button level-b1" type="button" data-level="B1" aria-label="Choose B1 tests">
+        <span>B1</span>
+      </button>
+      <button class="test-level-button level-b1plus" type="button" data-level="B1+" aria-label="Choose B1 plus tests">
+        <span>B1+</span>
+      </button>
+      <button class="test-level-button level-b2" type="button" data-level="B2" aria-label="Choose B2 tests">
+        <span>B2</span>
+      </button>
+      <button class="test-level-button level-c1" type="button" data-level="C1" aria-label="Choose C1 tests">
+        <span>C1</span>
+      </button>
     </section>
+
+    <nav class="tests-home-actions" aria-label="Assessment navigation">
+      <a class="secondary-btn" href="index.html">Back to Home</a>
+      <a class="secondary-btn" href="teacher.html">Open Exams</a>
+    </nav>
+
+    <footer class="assessment-home-footer">
+      Brighton English School · Digital Assessment Platform
+    </footer>
   </main>
 </body>
 </html>
