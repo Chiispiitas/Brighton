@@ -36,31 +36,18 @@
         </button>
         <div>
           <p id="selectedLevelLabel" class="eyebrow">A1 level</p>
-          <h2>Choose units</h2>
+          <h2>Available tests</h2>
         </div>
       </div>
 
-      <div class="unit-option-grid">
-        <button class="unit-option-button" type="button" data-units="1-2"><span>Units</span><strong>1–2</strong></button>
-        <button class="unit-option-button" type="button" data-units="1-4"><span>Units</span><strong>1–4</strong></button>
-        <button class="unit-option-button" type="button" data-units="5-6"><span>Units</span><strong>5–6</strong></button>
-        <button class="unit-option-button" type="button" data-units="5-8"><span>Units</span><strong>5–8</strong></button>
-        <button class="unit-option-button" type="button" data-units="9-10"><span>Units</span><strong>9–10</strong></button>
-        <button class="unit-option-button" type="button" data-units="9-12"><span>Units</span><strong>9–12</strong></button>
+      <div id="unitTestGrid" class="unit-option-grid unit-test-grid" aria-live="polite">
+        <article class="unit-test-card" data-units="1-2"></article>
+        <article class="unit-test-card" data-units="1-4"></article>
+        <article class="unit-test-card" data-units="5-6"></article>
+        <article class="unit-test-card" data-units="5-8"></article>
+        <article class="unit-test-card" data-units="9-10"></article>
+        <article class="unit-test-card" data-units="9-12"></article>
       </div>
-      <p id="testAvailabilityNote" class="test-availability-note" aria-live="polite"></p>
-
-      <section id="testActionPanel" class="test-action-panel" aria-live="polite" hidden>
-        <div class="test-action-copy">
-          <p id="selectedTestMeta" class="eyebrow">A1 · Units 1–2</p>
-          <h3 id="selectedTestTitle">A1 Units 1–2 Test</h3>
-          <p id="selectedTestDescription" class="muted">Copy the student link before opening the test, or open it here for preview.</p>
-        </div>
-        <div class="test-action-buttons">
-          <button id="copyStudentLinkBtn" class="secondary-btn" type="button">Copy student link</button>
-          <button id="openSelectedTestBtn" class="primary-btn" type="button">Open test</button>
-        </div>
-      </section>
     </section>
 
     <nav class="tests-home-actions" aria-label="Assessment navigation">
