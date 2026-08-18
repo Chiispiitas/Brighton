@@ -1,0 +1,127 @@
+.unit-option-button.available {
+  position: relative;
+}
+
+.unit-option-button.available::after {
+  content: "Available";
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.76);
+  color: #16715f;
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.unit-option-button.coming-soon {
+  opacity: .48;
+  box-shadow: none;
+}
+
+.unit-option-button.coming-soon::after {
+  content: "Coming soon";
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  padding: 5px 8px;
+  border-radius: 999px;
+  background: rgba(255,255,255,.72);
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 900;
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.unit-option-button.selected {
+  transform: translateY(-4px);
+  box-shadow: 0 0 0 4px rgba(0,169,165,.16), 0 14px 28px rgba(32,38,49,.10);
+}
+
+.test-availability-note {
+  min-height: 22px;
+  margin: 14px 2px 0;
+  color: var(--muted);
+  font-size: 12px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.test-action-panel {
+  margin-top: 12px;
+  padding: 20px;
+  border-radius: 24px;
+  background: linear-gradient(135deg, var(--teal-soft), #fff 72%);
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: 18px;
+  box-shadow: inset 0 0 0 1px rgba(0,169,165,.10);
+}
+
+.test-action-panel[hidden] {
+  display: none;
+}
+
+.test-action-copy {
+  min-width: 0;
+}
+
+.test-action-copy .eyebrow {
+  margin-bottom: 7px;
+  color: var(--teal);
+}
+
+.test-action-copy h3 {
+  margin: 0;
+  font-size: clamp(20px, 2.6vw, 28px);
+}
+
+.test-action-copy .muted {
+  max-width: 520px;
+  margin-top: 8px;
+}
+
+.test-action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+}
+
+.test-action-buttons .primary-btn,
+.test-action-buttons .secondary-btn {
+  white-space: nowrap;
+}
+
+@media (max-width: 720px) {
+  .test-action-panel {
+    grid-template-columns: 1fr;
+    align-items: stretch;
+  }
+
+  .test-action-buttons {
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 560px) {
+  .test-action-panel {
+    padding: 17px;
+    border-radius: 20px;
+  }
+
+  .test-action-buttons {
+    display: grid;
+  }
+
+  .test-action-buttons .primary-btn,
+  .test-action-buttons .secondary-btn {
+    width: 100%;
+  }
+}
