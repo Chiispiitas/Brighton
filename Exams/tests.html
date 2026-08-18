@@ -48,6 +48,18 @@
         <button class="unit-option-button" type="button" data-units="9-12"><span>Units</span><strong>9–12</strong></button>
       </div>
       <p id="testAvailabilityNote" class="test-availability-note" aria-live="polite"></p>
+
+      <section id="testActionPanel" class="test-action-panel" aria-live="polite" hidden>
+        <div class="test-action-copy">
+          <p id="selectedTestMeta" class="eyebrow">A1 · Units 1–2</p>
+          <h3 id="selectedTestTitle">A1 Units 1–2 Test</h3>
+          <p id="selectedTestDescription" class="muted">Copy the student link before opening the test, or open it here for preview.</p>
+        </div>
+        <div class="test-action-buttons">
+          <button id="copyStudentLinkBtn" class="secondary-btn" type="button">Copy student link</button>
+          <button id="openSelectedTestBtn" class="primary-btn" type="button">Open test</button>
+        </div>
+      </section>
     </section>
 
     <nav class="tests-home-actions" aria-label="Assessment navigation">
@@ -58,6 +70,8 @@
 
     <footer class="assessment-home-footer">Brighton English School · Digital Assessment Platform</footer>
   </main>
+
+  <div id="testToast" class="toast" role="status" aria-live="polite"></div>
 
   <script src="config.js"></script>
   <script src="tests.js"></script>
