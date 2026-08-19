@@ -25,6 +25,17 @@ window.BRIGHTON_SITE_CONFIG = {
       totalQuestions: 40,
       maxScore: 40,
       relativeUrl: "tests/a1-units-1-2/index.html"
+    },
+    {
+      testId: "brighton-a1-units-1-4",
+      title: "A1 Units 1–4 Test",
+      level: "A1",
+      unitRange: "1-4",
+      description: "Four-page A1 multiple-choice progress test covering vocabulary, grammar, language in context, and reading from Units 1–4.",
+      isActive: true,
+      totalQuestions: 80,
+      maxScore: 80,
+      relativeUrl: "tests/a1-units-1-4/index.html"
     }
   ],
 
