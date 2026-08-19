@@ -1,16 +1,32 @@
 # Brighton Tests · Wix CMS setup
 
-The Tests system uses the same `API_BASE_URL` already configured in `Exams/config.js`, but it uses separate endpoints and a separate collection so formal Exams data and shorter unit Tests do not mix.
+The Tests system uses the same `API_BASE_URL` already configured in `Exams/config.js`, but it stores shorter unit-test submissions in a separate Wix CMS collection.
 
-## Recommended minimum setup
+## Answer-key architecture
 
-Create **one new CMS collection** with collection ID:
+Tests now follow the same answer-key pattern as Exams.
+
+There is **no `TEST_KEYS` object in Wix** and no hardcoded answer map in `http-functions.js`.
+
+Each test has an answer-key JSON file in:
+
+`Exams/answer-keys/[testId].json`
+
+Example:
+
+`Exams/answer-keys/brighton-a1-units-1-2.json`
+
+The Tests Results Dashboard loads that JSON through `shared-grading.js` and grades the raw Wix submission locally, exactly like the Exams Results Dashboard.
+
+When a new test is added, add its matching JSON answer-key file. No Wix backend answer-key changes are required.
+
+## Wix collection
+
+Create one CMS collection with collection ID:
 
 `TestResults`
 
-The test definitions remain static in GitHub (`FALLBACK_TESTS` in `config.js` and each test's `test-data.js`). This means a second `Tests` collection is not required yet.
-
-### TestResults fields
+### Required fields
 
 | Field name | Field ID | Type |
 | --- | --- | --- |
@@ -21,16 +37,8 @@ The test definitions remain static in GitHub (`FALLBACK_TESTS` in `config.js` an
 | Unit range | `unitRange` | Text |
 | Student name | `studentName` | Text |
 | Class ID | `classId` | Text |
-| Score | `score` | Number |
-| Maximum score | `maxScore` | Number |
-| Percentage | `percentage` | Number |
-| Page 1 score | `page1Score` | Number |
-| Page 1 maximum | `page1MaxScore` | Number |
-| Page 2 score | `page2Score` | Number |
-| Page 2 maximum | `page2MaxScore` | Number |
 | Answers JSON | `answersJson` | Text |
 | Answer list JSON | `answerListJson` | Text |
-| Page scores JSON | `pageScoresJson` | Text |
 | Started at | `startedAt` | Date and Time |
 | Submitted at | `submittedAt` | Date and Time |
 | Time spent seconds | `timeSpentSeconds` | Number |
@@ -39,90 +47,210 @@ The test definitions remain static in GitHub (`FALLBACK_TESTS` in `config.js` an
 
 Wix automatically supplies `_id`, `_createdDate`, and `_updatedDate`.
 
+### Optional legacy fields
+
+If you already imported the earlier CSV, these fields can remain in the collection:
+
+- `score`
+- `maxScore`
+- `percentage`
+- `page1Score`
+- `page1MaxScore`
+- `page2Score`
+- `page2MaxScore`
+- `pageScoresJson`
+
+They are no longer required for grading and may remain empty. The dashboard derives scores from the JSON answer key.
+
 ## Permissions
 
-Set the collection permissions as restrictively as possible (Admin only for read/write is preferred). The public browser should **not** write directly to the collection. The existing Wix backend HTTP functions should perform inserts and queries with backend permissions.
+Set the collection permissions as restrictively as possible. The public test page should not write directly to CMS. The Wix backend HTTP function receives the submission and inserts it using backend permissions.
 
 ## Required HTTP functions
 
-Add these to the existing Wix backend `http-functions.js` rather than replacing the existing Exam functions:
+Add these alongside the existing Exam HTTP functions:
 
-- `post_submitTest` — receives a student submission, grades it with a server-only answer key, inserts it into `TestResults`, and returns a submission ID.
-- `get_getTestResults` — returns test submissions for a required `classId` and optional `testId`.
-- CORS / OPTIONS handlers for the external Brighton static site when required.
+- `post_submitTest` — stores the raw student submission in `TestResults`.
+- `get_getTestResults` — returns raw submissions for a class and optional test ID.
+- OPTIONS handlers when needed for CORS.
 
-The public repository deliberately does **not** contain the correct-answer map. Keep `TEST_KEYS` only in Wix backend code so students cannot inspect the browser JavaScript to obtain answers.
+The backend does **not grade** the test.
 
-## Expected POST payload
+## Example Wix backend implementation
 
-```json
-{
-  "clientSubmissionId": "uuid",
-  "testId": "brighton-a1-units-1-2",
-  "testTitle": "A1 Units 1–2 Test",
-  "level": "A1",
-  "unitRange": "1-2",
-  "studentName": "Student Name",
-  "classId": "A-12",
-  "answers": { "1": "C", "2": "B" },
-  "answerList": [
-    { "page": 1, "unit": 1, "question": 1, "answer": "C" }
-  ],
-  "startedAt": "ISO date",
-  "submittedAt": "ISO date",
-  "timeSpentSeconds": 600,
-  "answeredCount": 40,
-  "totalQuestions": 40
+```js
+import wixData from "wix-data";
+import {
+  ok,
+  badRequest,
+  serverError,
+  response
+} from "wix-http-functions";
+
+const TEST_RESULTS_COLLECTION = "TestResults";
+
+const CORS_HEADERS = {
+  "Content-Type": "application/json",
+  "Access-Control-Allow-Origin": "*"
+};
+
+function jsonOK(data) {
+  return ok({
+    headers: CORS_HEADERS,
+    body: JSON.stringify(data)
+  });
 }
-```
 
-## Expected submit response
-
-```json
-{
-  "success": true,
-  "submissionId": "wix-item-id"
+function jsonBadRequest(message) {
+  return badRequest({
+    headers: CORS_HEADERS,
+    body: JSON.stringify({ success: false, error: message })
+  });
 }
-```
 
-The student page intentionally does not require the score in the response. Scores are shown in the teacher-facing Tests Results Dashboard.
+function jsonServerError(error) {
+  return serverError({
+    headers: CORS_HEADERS,
+    body: JSON.stringify({
+      success: false,
+      error: error?.message || String(error)
+    })
+  });
+}
 
-## Expected results response
-
-`GET /getTestResults?classId=A-12&testId=brighton-a1-units-1-2`
-
-```json
-{
-  "success": true,
-  "items": [
-    {
-      "_id": "wix-item-id",
-      "studentName": "Student Name",
-      "classId": "A-12",
-      "testId": "brighton-a1-units-1-2",
-      "testTitle": "A1 Units 1–2 Test",
-      "level": "A1",
-      "unitRange": "1-2",
-      "score": 36,
-      "maxScore": 40,
-      "percentage": 90,
-      "page1Score": 18,
-      "page1MaxScore": 20,
-      "page2Score": 18,
-      "page2MaxScore": 20,
-      "answerListJson": "[...]",
-      "pageScoresJson": "[...]",
-      "submittedAt": "ISO date",
-      "timeSpentSeconds": 600
+export function options_submitTest() {
+  return response({
+    status: 204,
+    headers: {
+      ...CORS_HEADERS,
+      "Access-Control-Allow-Methods": "POST, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type"
     }
-  ]
+  });
+}
+
+export function options_getTestResults() {
+  return response({
+    status: 204,
+    headers: {
+      ...CORS_HEADERS,
+      "Access-Control-Allow-Methods": "GET, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type"
+    }
+  });
+}
+
+export async function post_submitTest(request) {
+  try {
+    const payload = await request.body.json();
+
+    const clientSubmissionId = String(payload.clientSubmissionId || "").trim();
+    const testId = String(payload.testId || "").trim();
+    const studentName = String(payload.studentName || "").trim();
+    const classId = String(payload.classId || "").trim().toUpperCase();
+
+    if (!clientSubmissionId || !testId || !studentName || !classId) {
+      return jsonBadRequest("Missing required submission fields.");
+    }
+
+    const duplicate = await wixData
+      .query(TEST_RESULTS_COLLECTION)
+      .eq("clientSubmissionId", clientSubmissionId)
+      .limit(1)
+      .find({ suppressAuth: true });
+
+    if (duplicate.items.length) {
+      return jsonOK({
+        success: true,
+        submissionId: duplicate.items[0]._id,
+        duplicate: true
+      });
+    }
+
+    const item = {
+      clientSubmissionId,
+      testId,
+      testTitle: String(payload.testTitle || testId),
+      level: String(payload.level || ""),
+      unitRange: String(payload.unitRange || ""),
+      studentName,
+      classId,
+      answersJson: JSON.stringify(payload.answers || {}),
+      answerListJson: JSON.stringify(payload.answerList || []),
+      timeSpentSeconds: Number(payload.timeSpentSeconds) || 0,
+      answeredCount: Number(payload.answeredCount) || 0,
+      totalQuestions: Number(payload.totalQuestions) || 0,
+      submittedAt: payload.submittedAt ? new Date(payload.submittedAt) : new Date()
+    };
+
+    if (payload.startedAt) {
+      item.startedAt = new Date(payload.startedAt);
+    }
+
+    const inserted = await wixData.insert(
+      TEST_RESULTS_COLLECTION,
+      item,
+      { suppressAuth: true }
+    );
+
+    return jsonOK({
+      success: true,
+      submissionId: inserted._id
+    });
+  } catch (error) {
+    console.error("submitTest failed:", error);
+    return jsonServerError(error);
+  }
+}
+
+export async function get_getTestResults(request) {
+  try {
+    const classId = String(request.query.classId || "").trim().toUpperCase();
+    const testId = String(request.query.testId || "").trim();
+
+    if (!classId) {
+      return jsonBadRequest("classId is required.");
+    }
+
+    let query = wixData
+      .query(TEST_RESULTS_COLLECTION)
+      .eq("classId", classId);
+
+    if (testId) {
+      query = query.eq("testId", testId);
+    }
+
+    const results = await query
+      .descending("submittedAt")
+      .limit(250)
+      .find({ suppressAuth: true });
+
+    return jsonOK({
+      success: true,
+      items: results.items
+    });
+  } catch (error) {
+    console.error("getTestResults failed:", error);
+    return jsonServerError(error);
+  }
 }
 ```
 
-## CORS
+## Grading flow
 
-The Tests pages are static and call the Wix HTTP functions from a browser, so the Wix responses must allow the published Brighton site's origin. During testing `*` is convenient, but for production use the exact Brighton/GitHub Pages origin where possible.
+1. Student submits A/B/C answers.
+2. Wix stores the raw answers only.
+3. Tests Results Dashboard requests the submissions from Wix.
+4. The dashboard loads `answer-keys/[testId].json`.
+5. `shared-grading.js` calculates the total score, percentage, per-unit score and correct/incorrect status.
+6. CSV export uses those locally calculated scores.
+
+This keeps the Tests architecture aligned with the existing Exams grading system and means adding a new test does not require editing Wix grading code.
 
 ## Duplicate protection
 
-`clientSubmissionId` is generated once on the student's device. In `post_submitTest`, query for this ID before inserting. If it already exists, return the existing item ID instead of inserting a second result. This makes the Retry Saving button safe after network interruptions.
+`clientSubmissionId` is generated once on the student's device. `post_submitTest` checks for that ID before inserting, so retrying after a network failure does not create duplicate rows.
+
+## CORS
+
+During setup, `Access-Control-Allow-Origin: *` is convenient. For production, replace it with the exact origin hosting the Brighton static site when practical.
