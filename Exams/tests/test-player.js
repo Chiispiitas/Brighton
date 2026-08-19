@@ -174,10 +174,30 @@
           <div class="page-badge">Page ${state.pageIndex + 1} of ${data.pages.length}</div>
         </header>
         <div class="instructions"><strong>Instructions:</strong> ${escapeHtml(page.instructions || "Choose the correct answer: a, b, or c.")}</div>
+        ${page.passage ? renderPassage(page.passage) : ""}
         <div class="question-list">
           ${page.questions.map(renderQuestion).join("")}
         </div>
       </section>
+    `;
+  }
+
+  function renderPassage(passage) {
+    if (!passage || typeof passage !== "object") return "";
+    const paragraphs = Array.isArray(passage.paragraphs) ? passage.paragraphs : [];
+    if (!passage.title && !passage.byline && !paragraphs.length) return "";
+
+    return `
+      <article class="reading-passage">
+        <div class="reading-passage-head">
+          ${passage.kicker ? `<p class="eyebrow">${escapeHtml(passage.kicker)}</p>` : ""}
+          ${passage.title ? `<h3>${escapeHtml(passage.title)}</h3>` : ""}
+          ${passage.byline ? `<p class="reading-byline">${escapeHtml(passage.byline)}</p>` : ""}
+        </div>
+        <div class="reading-passage-body">
+          ${paragraphs.map((paragraph) => `<p>${escapeHtml(paragraph)}</p>`).join("")}
+        </div>
+      </article>
     `;
   }
 
