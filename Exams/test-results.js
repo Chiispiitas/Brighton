@@ -6,6 +6,7 @@
 
 (() => {
   const App = window.BrightonApp || {};
+  const Grading = window.BrightonGrading || {};
   const config = window.BRIGHTON_SITE_CONFIG || {};
   const apiBase = String(config.API_BASE_URL || "").replace(/\/$/, "");
   const tests = Array.isArray(config.FALLBACK_TESTS) ? config.FALLBACK_TESTS : [];
@@ -24,6 +25,7 @@
   const closeModalBtn = document.querySelector("#closeModalBtn");
   const toast = document.querySelector("#toast");
 
+  const answerKeyCache = new Map();
   let rows = [];
 
   init();
@@ -93,19 +95,94 @@
       const url = new URL(`${apiBase}/getTestResults`);
       url.searchParams.set("classId", classId);
       if (testId) url.searchParams.set("testId", testId);
+
       const response = await fetch(url.toString(), { headers: { "Accept": "application/json" } });
       const data = await response.json().catch(() => ({}));
       if (!response.ok || data.success === false) throw new Error(data.error || `HTTP ${response.status}`);
 
-      rows = Array.isArray(data.items) ? data.items : [];
+      const rawRows = Array.isArray(data.items) ? data.items : [];
+      rows = await applyLocalGrading(rawRows);
+
+      const gradedCount = rows.filter((row) => row._gradedLocally).length;
+      const missingKeyCount = rows.filter((row) => row._gradingError).length;
       connectionStatus.textContent = "Connected";
-      status.textContent = `${rows.length} test submission${rows.length === 1 ? "" : "s"} loaded for ${classId}.`;
+      status.textContent = `${rows.length} test submission${rows.length === 1 ? "" : "s"} loaded for ${classId}. ${gradedCount} graded from answer key${gradedCount === 1 ? "" : "s"}.${missingKeyCount ? ` ${missingKeyCount} could not be graded because its answer key was unavailable.` : ""}`;
+
       renderRows();
       updateSummary();
     } catch (error) {
       rows = [];
       setConnectionError(error.message || String(error));
     }
+  }
+
+  async function applyLocalGrading(items) {
+    return Promise.all((items || []).map(async (row) => {
+      const testId = String(row.testId || "").trim();
+      if (!testId) return { ...row, _gradingError: "Missing test ID" };
+      if (typeof Grading.loadAnswerKey !== "function" || typeof Grading.gradeSubmission !== "function") {
+        return { ...row, _gradingError: "Shared grading module unavailable" };
+      }
+
+      try {
+        const answerKey = await loadAnswerKey(testId);
+        const answerList = getSubmittedAnswerList(row);
+        const graded = Grading.gradeSubmission({ answerList }, answerKey);
+        const pageScores = Object.entries(graded.partScores || {}).map(([partId, part], index) => ({
+          page: index + 1,
+          partId,
+          label: part.label || `Page ${index + 1}`,
+          score: Number(part.score || 0),
+          maxScore: Number(part.maxScore || 0),
+          correct: Number(part.correct || 0),
+          total: Number(part.total || 0)
+        }));
+        const gradedDetails = (graded.details || []).map((item) => ({
+          page: Number(item.part || 0),
+          unit: Number(item.part || 0),
+          question: Number(item.question),
+          answer: item.answer || "",
+          earned: Number(item.earned || 0),
+          max: Number(item.max || 0),
+          correct: item.correct === true
+        }));
+
+        return {
+          ...row,
+          score: graded.score,
+          maxScore: graded.maxScore,
+          percentage: graded.percentage,
+          _pageScores: pageScores,
+          _gradedDetails: gradedDetails,
+          _gradedLocally: true,
+          _gradingError: ""
+        };
+      } catch (error) {
+        console.warn(`Could not grade test ${testId}`, error);
+        return { ...row, _gradingError: error.message || String(error) };
+      }
+    }));
+  }
+
+  async function loadAnswerKey(testId) {
+    if (answerKeyCache.has(testId)) return answerKeyCache.get(testId);
+    const key = await Grading.loadAnswerKey(testId);
+    answerKeyCache.set(testId, key);
+    return key;
+  }
+
+  function getSubmittedAnswerList(row) {
+    const storedList = safeJson(row.answerListJson, null) || row.answerList;
+    if (Array.isArray(storedList)) return storedList;
+
+    const storedAnswers = safeJson(row.answersJson, null) || row.answers;
+    if (storedAnswers && typeof storedAnswers === "object" && !Array.isArray(storedAnswers)) {
+      return Object.keys(storedAnswers)
+        .sort((a, b) => Number(a) - Number(b))
+        .map((question) => ({ question: Number(question), answer: storedAnswers[question] || "" }));
+    }
+
+    return [];
   }
 
   function setConnectionError(message) {
@@ -124,25 +201,30 @@
   function renderRows() {
     syncQueryParams();
     const visible = getVisibleRows();
+
     if (!visible.length) {
       resultsBody.innerHTML = `<tr><td colspan="9">No matching test submissions.</td></tr>`;
       updateSummary();
       return;
     }
 
-    resultsBody.innerHTML = visible.map((row, index) => {
+    resultsBody.innerHTML = visible.map((row) => {
       const score = numberOrNull(row.score);
       const maxScore = numberOrNull(row.maxScore);
       const percentage = numberOrNull(row.percentage);
       const pages = renderPageScores(row);
+      const scoreHtml = row._gradingError
+        ? `<span class="muted">Answer key unavailable</span>`
+        : `<span class="score-pill">${score === null ? "—" : `${score}/${maxScore ?? "—"}`}</span>`;
+
       return `
         <tr>
           <td><strong>${escapeHtml(row.studentName || "—")}</strong></td>
           <td>${escapeHtml(row.classId || "—")}</td>
           <td>${escapeHtml(row.testTitle || row.testId || "—")}</td>
           <td>${escapeHtml(formatDate(row.submittedAt || row._createdDate))}</td>
-          <td><span class="score-pill">${score === null ? "—" : `${score}/${maxScore ?? "—"}`}</span></td>
-          <td>${percentage === null ? "—" : `${Math.round(percentage)}%`}</td>
+          <td>${scoreHtml}</td>
+          <td>${percentage === null || row._gradingError ? "—" : `${Math.round(percentage)}%`}</td>
           <td>${pages}</td>
           <td>${formatDuration(row.timeSpentSeconds)}</td>
           <td><button class="secondary-btn small" type="button" data-row-index="${rows.indexOf(row)}">Details</button></td>
@@ -157,19 +239,21 @@
   }
 
   function renderPageScores(row) {
-    const pageScores = safeJson(row.pageScoresJson, null) || row.pageScores || [];
+    const pageScores = row._pageScores || safeJson(row.pageScoresJson, null) || row.pageScores || [];
     if (Array.isArray(pageScores) && pageScores.length) {
       return `<div class="test-score-pages">${pageScores.map((page) => `<span>${escapeHtml(page.label || `Page ${page.page}`)}: ${Number(page.score || 0)}/${Number(page.maxScore || page.total || 0)}</span>`).join("")}</div>`;
     }
-    const fallback = [];
-    if (row.page1Score !== undefined && row.page1Score !== null) fallback.push(`<span>Unit 1: ${Number(row.page1Score)}/${Number(row.page1MaxScore || 20)}</span>`);
-    if (row.page2Score !== undefined && row.page2Score !== null) fallback.push(`<span>Unit 2: ${Number(row.page2Score)}/${Number(row.page2MaxScore || 20)}</span>`);
-    return fallback.length ? `<div class="test-score-pages">${fallback.join("")}</div>` : "—";
+    if (row._gradingError) return "—";
+    return "—";
   }
 
   function updateSummary() {
     const visible = getVisibleRows();
-    const percentages = visible.map((row) => numberOrNull(row.percentage)).filter((value) => value !== null);
+    const percentages = visible
+      .filter((row) => !row._gradingError)
+      .map((row) => numberOrNull(row.percentage))
+      .filter((value) => value !== null);
+
     document.querySelector("#summaryTotal").textContent = String(visible.length);
     document.querySelector("#summaryAverage").textContent = percentages.length ? `${Math.round(percentages.reduce((a, b) => a + b, 0) / percentages.length)}%` : "—";
     document.querySelector("#summaryHighest").textContent = percentages.length ? `${Math.round(Math.max(...percentages))}%` : "—";
@@ -178,9 +262,14 @@
 
   function openDetails(row) {
     if (!row) return;
-    const answers = safeJson(row.answerListJson, null) || safeJson(row.answersJson, null) || row.answerList || row.answers || [];
-    const answerItems = normalizeAnswers(answers);
+
+    const answerItems = row._gradedDetails || getSubmittedAnswerList(row);
+    const gradingWarning = row._gradingError
+      ? `<p class="detail-warning">This submission could not be graded locally: ${escapeHtml(row._gradingError)}</p>`
+      : "";
+
     detailsContent.innerHTML = `
+      ${gradingWarning}
       <div class="detail-grid detail-grid-wide">
         <div class="detail-box"><span>Student</span><strong>${escapeHtml(row.studentName || "—")}</strong></div>
         <div class="detail-box"><span>Class</span><strong>${escapeHtml(row.classId || "—")}</strong></div>
@@ -213,14 +302,6 @@
     modal.setAttribute("aria-hidden", "false");
   }
 
-  function normalizeAnswers(value) {
-    if (Array.isArray(value)) return value;
-    if (value && typeof value === "object") {
-      return Object.keys(value).sort((a, b) => Number(a) - Number(b)).map((question) => ({ question, answer: value[question] }));
-    }
-    return [];
-  }
-
   function closeModal() {
     modal.classList.add("hidden");
     modal.setAttribute("aria-hidden", "true");
@@ -244,11 +325,21 @@
       showToast("No results to export");
       return;
     }
+
     const headers = ["Student", "Class ID", "Test", "Level", "Units", "Submitted", "Score", "Max Score", "Percentage", "Time Seconds"];
     const lines = [headers, ...visible.map((row) => [
-      row.studentName || "", row.classId || "", row.testTitle || row.testId || "", row.level || "", row.unitRange || "",
-      row.submittedAt || row._createdDate || "", row.score ?? "", row.maxScore ?? "", row.percentage ?? "", row.timeSpentSeconds ?? ""
+      row.studentName || "",
+      row.classId || "",
+      row.testTitle || row.testId || "",
+      row.level || "",
+      row.unitRange || "",
+      row.submittedAt || row._createdDate || "",
+      row._gradingError ? "" : row.score ?? "",
+      row._gradingError ? "" : row.maxScore ?? "",
+      row._gradingError ? "" : row.percentage ?? "",
+      row.timeSpentSeconds ?? ""
     ])].map((cells) => cells.map(csvCell).join(","));
+
     const blob = new Blob([lines.join("\n")], { type: "text/csv;charset=utf-8" });
     const url = URL.createObjectURL(blob);
     const link = document.createElement("a");
@@ -259,6 +350,7 @@
   }
 
   function scoreText(row) {
+    if (row._gradingError) return "Answer key unavailable";
     const score = numberOrNull(row.score);
     const maxScore = numberOrNull(row.maxScore);
     const percentage = numberOrNull(row.percentage);
