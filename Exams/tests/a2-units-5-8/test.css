@@ -1,0 +1,42 @@
+.reading-passage {
+  margin: 18px clamp(18px, 4vw, 34px) 4px;
+  padding: clamp(20px, 3vw, 30px);
+  border-radius: 24px;
+  background: linear-gradient(145deg, #fffdf8, #f6fbfb);
+  box-shadow: inset 0 0 0 1px rgba(32, 38, 49, .07);
+}
+
+.reading-passage-head {
+  margin-bottom: 14px;
+}
+
+.reading-passage-head h3 {
+  font-size: clamp(24px, 3vw, 34px);
+  color: var(--ink);
+}
+
+.reading-passage-body {
+  columns: 2 330px;
+  column-gap: 30px;
+}
+
+.reading-passage-body p {
+  margin: 0 0 14px;
+  color: #353c47;
+  font-size: 14px;
+  line-height: 1.72;
+  break-inside: avoid;
+}
+
+@media (max-width: 720px) {
+  .reading-passage {
+    margin-left: 12px;
+    margin-right: 12px;
+    padding: 18px;
+    border-radius: 20px;
+  }
+
+  .reading-passage-body {
+    columns: 1;
+  }
+}
