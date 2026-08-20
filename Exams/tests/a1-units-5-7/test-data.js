@@ -10,7 +10,6 @@ window.BRIGHTON_TEST_DATA = {
   unitRange: "5-7",
   totalQuestions: 80,
   maxScore: 80,
-  description: "Complete four pages covering vocabulary, grammar, language in context, and reading from Units 5–7. Your answers are saved automatically on this device until you submit.",
   pages: [
     {
       label: "Language 1",
@@ -18,7 +17,6 @@ window.BRIGHTON_TEST_DATA = {
       sourceLabel: "Units 5–7 · Page 1",
       title: "Vocabulary & Grammar",
       unit: "5-7",
-      description: "Places in town, body parts, rooms, everyday activities, technology, and prepositions.",
       instructions: "Choose the correct answer: a, b, or c.",
       questions: [
         q(1, "You can watch new movies in this place in town.", "movie theater", "bank", "bookstore"),
@@ -53,7 +51,6 @@ window.BRIGHTON_TEST_DATA = {
       sourceLabel: "Units 5–7 · Page 2",
       title: "Grammar & Transformations",
       unit: "5-7",
-      description: "Equivalent expressions, there is/are, can, simple present, and simple past.",
       instructions: "Choose the option that correctly completes or rewrites each sentence.",
       questions: [
         q(25, "I don't think he's a good actor. = In ________, he's not a good actor.", "the opinion", "my opinion", "an opinion"),
@@ -80,7 +77,6 @@ window.BRIGHTON_TEST_DATA = {
       sourceLabel: "Units 5–7 · Page 3",
       title: "Language in Context",
       unit: "5-7",
-      description: "Complete the ideas from Karina's travel blog and the Piano Day text.",
       instructions: "Choose the word or form that best completes each sentence.",
       questions: [
         q(41, "Karina's travel blog: We ________ in Buenos Aires last month.", "was", "are", "were"),
@@ -121,7 +117,6 @@ window.BRIGHTON_TEST_DATA = {
       sourceLabel: "Units 5–7 · Page 4",
       title: "Reading",
       unit: "5-7",
-      description: "Read about the inventors of the selfie stick, then decide if each statement is true, false, or not stated.",
       instructions: "Read the text. Choose True, False, or Not enough information.",
       passage: {
         title: "The inventors of the selfie stick",
