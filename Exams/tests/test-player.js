@@ -15,8 +15,12 @@
   const config = window.BRIGHTON_SITE_CONFIG || {};
   const $ = (selector, root = document) => root.querySelector(selector);
   const $$ = (selector, root = document) => Array.from(root.querySelectorAll(selector));
-  const escapeHtml = App.escapeHtml || ((value) => String(value ?? "").replace(/[&<>\"]/g, (char) => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[char])));
+  const escapeHtml = App.escapeHtml || ((value) => String(value ?? "").replace(/[&<>\"]/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[char])));
   const normalizeClassCode = App.normalizeClassCode || ((value) => String(value || "").trim().toUpperCase());
+
+  const TEST_TIME_LIMIT_SECONDS = 35 * 60;
+  const TIMER_WARNING_SECONDS = 5 * 60;
+  const TIMER_URGENT_SECONDS = 60;
   const STORAGE_KEY = `brighton-test-state-${data.testId}-v1`;
 
   const dom = {
@@ -28,6 +32,7 @@
     continueSavedBtn: $("#continueSavedBtn"),
     headerStudent: $("#headerStudent"),
     headerClass: $("#headerClass"),
+    headerProgress: $(".header-progress"),
     answeredCount: $("#answeredCount"),
     totalCount: $("#totalCount"),
     progressBar: $("#progressBar"),
@@ -36,15 +41,20 @@
     previousPageBtn: $("#previousPageBtn"),
     nextPageBtn: $("#nextPageBtn"),
     resetBtn: $("#resetBtn"),
-    bottomNav: $(".test-bottom-nav")
+    bottomNav: $(".test-bottom-nav"),
+    testMeta: $(".test-meta")
   };
 
   let state = loadState() || createDefaultState();
   let saveTimer = null;
+  let countdownTimer = null;
+  let autoSubmitting = false;
 
   boot();
 
   function boot() {
+    installTimerStyles();
+    installTimerUi();
     hydrateStaticText();
 
     if (state.student.name) {
@@ -74,9 +84,97 @@
 
     dom.mainContent.addEventListener("click", (event) => {
       const choice = event.target.closest("[data-answer-question]");
-      if (!choice) return;
+      if (!choice || state.submitted || autoSubmitting) return;
       setAnswer(Number(choice.dataset.answerQuestion), choice.dataset.answerValue);
     });
+
+    document.addEventListener("visibilitychange", () => {
+      if (!document.hidden && state.student.startedAt && !state.submitted) updateTimerDisplay();
+    });
+    window.addEventListener("beforeunload", persistStateNow);
+
+    if (state.student.startedAt && !state.submitted && getRemainingSeconds() <= 0) {
+      autoSubmitTest();
+    } else {
+      updateTimerDisplay();
+    }
+  }
+
+  function installTimerUi() {
+    if (dom.testMeta && !$("#metaTimeLimit")) {
+      const chip = document.createElement("span");
+      chip.id = "metaTimeLimit";
+      chip.textContent = "35 minute limit";
+      dom.testMeta.appendChild(chip);
+    }
+
+    if (dom.headerProgress && !$("#testTimer")) {
+      const timer = document.createElement("div");
+      timer.id = "testTimer";
+      timer.className = "test-timer";
+      timer.setAttribute("role", "timer");
+      timer.setAttribute("aria-live", "polite");
+      timer.innerHTML = `<span>Time left</span><strong id="testTimerValue">35:00</strong>`;
+      dom.headerProgress.insertBefore(timer, dom.headerProgress.firstChild);
+    }
+  }
+
+  function installTimerStyles() {
+    if ($("#brightonTestTimerStyles")) return;
+    const style = document.createElement("style");
+    style.id = "brightonTestTimerStyles";
+    style.textContent = `
+      .test-timer {
+        margin: 0 0 7px auto;
+        width: max-content;
+        min-width: 112px;
+        padding: 6px 10px;
+        border-radius: 14px;
+        display: flex;
+        align-items: baseline;
+        justify-content: flex-end;
+        gap: 7px;
+        background: var(--teal-soft, #def9f7);
+        color: #075f5f;
+        transition: background .2s ease, color .2s ease, transform .2s ease;
+      }
+      .test-timer span {
+        font-size: 9px;
+        font-weight: 900;
+        letter-spacing: .06em;
+        text-transform: uppercase;
+      }
+      .test-timer strong {
+        font-size: 18px;
+        line-height: 1;
+        font-variant-numeric: tabular-nums;
+        letter-spacing: -.02em;
+      }
+      .test-timer.warning {
+        background: var(--yellow-soft, #fff4df);
+        color: #8a5a00;
+      }
+      .test-timer.urgent {
+        background: rgba(179,38,38,.10);
+        color: var(--danger, #b32626);
+        animation: brightonTimerPulse 1s ease-in-out infinite alternate;
+      }
+      .time-up-note {
+        margin: 8px 0 0;
+        color: var(--danger, #b32626);
+        font-weight: 800;
+      }
+      @keyframes brightonTimerPulse {
+        from { transform: scale(1); }
+        to { transform: scale(1.035); }
+      }
+      @media (max-width: 620px) {
+        .test-timer { min-width: 100px; padding: 5px 8px; gap: 5px; }
+        .test-timer span { font-size: 8px; }
+        .test-timer strong { font-size: 16px; }
+      }
+    `;
+    document.head.appendChild(style);
   }
 
   function hydrateStaticText() {
@@ -94,13 +192,14 @@
     const answers = {};
     allQuestions().forEach((question) => { answers[question.q] = ""; });
     return {
-      version: 1,
+      version: 2,
       clientSubmissionId: createClientSubmissionId(),
       student: { name: "", classId: "", startedAt: "" },
       pageIndex: 0,
       answers,
       submitted: false,
-      submittedAt: ""
+      submittedAt: "",
+      timedOut: false
     };
   }
 
@@ -119,7 +218,8 @@
         ...base,
         ...saved,
         student: { ...base.student, ...(saved.student || {}) },
-        answers: { ...base.answers, ...(saved.answers || {}) }
+        answers: { ...base.answers, ...(saved.answers || {}) },
+        timedOut: saved.timedOut === true
       };
     } catch (error) {
       console.warn("Could not load saved test state", error);
@@ -129,9 +229,15 @@
 
   function saveState() {
     clearTimeout(saveTimer);
-    saveTimer = setTimeout(() => {
+    saveTimer = setTimeout(persistStateNow, 30);
+  }
+
+  function persistStateNow() {
+    try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
-    }, 30);
+    } catch (error) {
+      console.warn("Could not save test state", error);
+    }
   }
 
   function startTest(name, classId) {
@@ -141,18 +247,25 @@
     state.student.classId = normalized;
     if (!state.student.startedAt) state.student.startedAt = new Date().toISOString();
     dom.classId.value = normalized;
-    saveState();
+    persistStateNow();
     showTest();
   }
 
   function showTest() {
+    if (state.student.startedAt && !state.submitted && getRemainingSeconds() <= 0) {
+      autoSubmitTest();
+      return;
+    }
+
     dom.startScreen.classList.add("hidden");
     dom.testShell.classList.remove("hidden");
     dom.testShell.classList.remove("results-mode");
     dom.bottomNav?.classList.remove("hidden");
+    dom.headerProgress?.classList.remove("hidden");
     dom.headerStudent.textContent = state.student.name;
     dom.headerClass.textContent = state.student.classId;
     render();
+    startTimer();
   }
 
   function render() {
@@ -277,6 +390,7 @@
   }
 
   function setAnswer(questionNumber, value) {
+    if (state.submitted || autoSubmitting) return;
     state.answers[questionNumber] = value;
     const card = $(`#question-${questionNumber}`);
     if (card) {
@@ -293,39 +407,111 @@
   }
 
   function goToPage(index) {
-    if (index < 0 || index >= data.pages.length) return;
+    if (state.submitted || autoSubmitting || index < 0 || index >= data.pages.length) return;
     state.pageIndex = index;
     render();
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   function requestSubmit() {
+    if (state.submitted || autoSubmitting) return;
     const missing = (data.totalQuestions || allQuestions().length) - answeredQuestions();
     const message = missing > 0
       ? `You still have ${missing} unanswered question${missing === 1 ? "" : "s"}. Submit the test anyway?`
       : "Submit your test now? You will not be able to change your answers after submitting.";
     if (!window.confirm(message)) return;
+
+    stopTimer();
     state.submitted = true;
+    state.timedOut = false;
     state.submittedAt = new Date().toISOString();
-    saveState();
+    persistStateNow();
     showFinishScreen();
   }
 
+  function startTimer() {
+    stopTimer();
+    if (!state.student.startedAt || state.submitted) return;
+    updateTimerDisplay();
+    if (state.submitted || autoSubmitting) return;
+    countdownTimer = window.setInterval(updateTimerDisplay, 250);
+  }
+
+  function stopTimer() {
+    if (countdownTimer) {
+      window.clearInterval(countdownTimer);
+      countdownTimer = null;
+    }
+  }
+
+  function updateTimerDisplay() {
+    const timer = $("#testTimer");
+    const value = $("#testTimerValue");
+    const remaining = getRemainingSeconds();
+
+    if (value) value.textContent = formatTimer(remaining);
+    if (timer) {
+      timer.classList.toggle("warning", remaining > TIMER_URGENT_SECONDS && remaining <= TIMER_WARNING_SECONDS);
+      timer.classList.toggle("urgent", remaining <= TIMER_URGENT_SECONDS);
+      timer.setAttribute("aria-label", `${formatTimer(remaining)} remaining`);
+    }
+
+    if (remaining <= 0 && state.student.startedAt && !state.submitted && !autoSubmitting) {
+      autoSubmitTest();
+    }
+  }
+
+  function getRemainingSeconds() {
+    if (!state.student.startedAt) return TEST_TIME_LIMIT_SECONDS;
+    const start = new Date(state.student.startedAt).getTime();
+    if (!Number.isFinite(start)) return TEST_TIME_LIMIT_SECONDS;
+    const remainingMs = (TEST_TIME_LIMIT_SECONDS * 1000) - Math.max(0, Date.now() - start);
+    return Math.max(0, Math.ceil(remainingMs / 1000));
+  }
+
+  function formatTimer(seconds) {
+    const safe = Math.max(0, Number(seconds) || 0);
+    const minutes = Math.floor(safe / 60);
+    const secs = safe % 60;
+    return `${String(minutes).padStart(2, "0")}:${String(secs).padStart(2, "0")}`;
+  }
+
+  function autoSubmitTest() {
+    if (state.submitted || autoSubmitting || !state.student.startedAt) return;
+    autoSubmitting = true;
+    stopTimer();
+    state.submitted = true;
+    state.timedOut = true;
+    state.submittedAt = new Date().toISOString();
+    persistStateNow();
+    showFinishScreen({ timedOut: true });
+    autoSubmitting = false;
+  }
+
   function showFinishScreen(options = {}) {
+    stopTimer();
+    const timedOut = state.timedOut === true || options.timedOut === true;
+
     dom.startScreen.classList.add("hidden");
     dom.testShell.classList.remove("hidden");
     dom.testShell.classList.remove("results-mode");
     dom.bottomNav?.classList.remove("hidden");
+    dom.headerProgress?.classList.add("hidden");
     dom.pageTabs.innerHTML = "";
     dom.previousPageBtn.disabled = true;
     dom.nextPageBtn.disabled = true;
+
+    const heading = options.retry ? "Retrying submission" : (timedOut ? "Time is up" : "Test finished");
+    const statusCopy = timedOut
+      ? "The 35-minute limit was reached. Your answers are being submitted automatically."
+      : "Please wait while Brighton records your answers.";
 
     dom.mainContent.innerHTML = `
       <section class="finish-screen">
         <div class="finish-card">
           <p class="eyebrow">${escapeHtml(data.level)} · Units ${escapeHtml(displayUnits(data.unitRange))}</p>
-          <h2>${options.retry ? "Retrying submission" : "Test finished"}</h2>
-          <p id="submitStatusText" class="start-copy">Please wait while Brighton records your answers.</p>
+          <h2>${heading}</h2>
+          <p id="submitStatusText" class="start-copy">${statusCopy}</p>
           <div class="submission-status-line"><strong id="submitStatusBadge">Saving</strong><span>Wix CMS</span></div>
           <div id="submissionResult"></div>
         </div>
@@ -354,6 +540,8 @@
       startedAt: state.student.startedAt,
       submittedAt: state.submittedAt || new Date().toISOString(),
       timeSpentSeconds: calculateTimeSpentSeconds(),
+      timeLimitSeconds: TEST_TIME_LIMIT_SECONDS,
+      timedOut: state.timedOut === true,
       answeredCount: answeredQuestions(),
       totalQuestions: data.totalQuestions || allQuestions().length,
       pageProgress: data.pages.map((page, pageIndex) => ({
@@ -421,12 +609,13 @@
 
   async function renderStudentResults(payload, options = {}) {
     try {
+      stopTimer();
       const answerKey = await loadStudentAnswerKey();
       const grading = gradeStudentSubmission(payload.answers || {}, answerKey);
 
       dom.testShell.classList.add("results-mode");
       dom.bottomNav?.classList.add("hidden");
-      dom.headerProgress?.classList?.add?.("hidden");
+      dom.headerProgress?.classList.add("hidden");
 
       const saveNotice = options.saved
         ? `<span class="result-save-status saved">✓ Saved to Wix</span>`
@@ -436,6 +625,10 @@
         ? `<button id="retryResultSubmissionBtn" class="primary-btn" type="button">Retry saving</button>`
         : "";
 
+      const timeUpNote = payload.timedOut
+        ? `<p class="time-up-note">Submitted automatically when the 35-minute limit ended.</p>`
+        : "";
+
       dom.mainContent.innerHTML = `
         <section class="student-results">
           <header class="results-hero">
@@ -443,6 +636,7 @@
               <p class="eyebrow">${escapeHtml(data.level)} · Units ${escapeHtml(displayUnits(data.unitRange))}</p>
               <h2>Test results</h2>
               <p class="results-student-name">${escapeHtml(state.student.name || payload.studentName || "Student")}</p>
+              ${timeUpNote}
             </div>
             ${saveNotice}
           </header>
@@ -621,6 +815,7 @@
 
   function resetTest() {
     if (!window.confirm("Reset this test? All answers saved on this device will be deleted.")) return;
+    stopTimer();
     localStorage.removeItem(STORAGE_KEY);
     state = createDefaultState();
     window.location.reload();
@@ -630,7 +825,8 @@
     const start = new Date(state.student.startedAt).getTime();
     const end = new Date(state.submittedAt || Date.now()).getTime();
     if (!Number.isFinite(start) || !Number.isFinite(end)) return null;
-    return Math.max(0, Math.round((end - start) / 1000));
+    const elapsed = Math.max(0, Math.round((end - start) / 1000));
+    return Math.min(TEST_TIME_LIMIT_SECONDS, elapsed);
   }
 
   function answeredQuestions() {
