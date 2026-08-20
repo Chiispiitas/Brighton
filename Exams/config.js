@@ -306,3 +306,74 @@ window.BRIGHTON_SITE_CONFIG = {
     resumeFreshRetry();
   }, 0);
 })();
+
+/* ----------------------------------------------
+   Canonical True / False / Not enough information order
+   Student-facing order is always:
+   A = True, B = False, C = Not enough information.
+   Legacy stored answer values are preserved so existing keys/results stay valid.
+   ---------------------------------------------- */
+(() => {
+  if (!/\/Exams\/tests\/[^/]+\/?(?:index\.html)?$/i.test(window.location.pathname)) return;
+
+  const CANONICAL = [
+    { key: "true", letter: "A", text: "True" },
+    { key: "false", letter: "B", text: "False" },
+    { key: "not enough information", letter: "C", text: "Not enough information" }
+  ];
+
+  function normalize(value) {
+    return String(value || "").trim().toLowerCase().replace(/\s+/g, " ");
+  }
+
+  function choiceText(button) {
+    const spans = button.querySelectorAll("span");
+    return normalize(spans.length > 1 ? spans[spans.length - 1].textContent : button.textContent);
+  }
+
+  function canonicalizeQuestion(card) {
+    const grid = card.querySelector(".choice-grid");
+    if (!grid) return;
+
+    const buttons = Array.from(grid.querySelectorAll(".choice-button"));
+    if (buttons.length !== 3) return;
+
+    const byText = new Map(buttons.map((button) => [choiceText(button), button]));
+    if (!CANONICAL.every((item) => byText.has(item.key))) return;
+
+    CANONICAL.forEach((item) => {
+      const button = byText.get(item.key);
+      const letter = button.querySelector(".choice-letter");
+      if (letter) letter.textContent = item.letter;
+      grid.appendChild(button);
+    });
+  }
+
+  function canonicalizeReviewAnswer(answerBox) {
+    const strong = answerBox.querySelector("strong");
+    if (!strong) return;
+
+    const text = strong.textContent.trim();
+    if (!text || /^no answer$/i.test(text)) return;
+
+    const separator = text.indexOf("·");
+    if (separator < 0) return;
+
+    const semantic = normalize(text.slice(separator + 1));
+    const item = CANONICAL.find((candidate) => candidate.key === semantic);
+    if (!item) return;
+
+    strong.textContent = `${item.letter} · ${item.text}`;
+  }
+
+  function applyCanonicalReadingOrder() {
+    document.querySelectorAll(".question-card").forEach(canonicalizeQuestion);
+    document.querySelectorAll(".review-answer").forEach(canonicalizeReviewAnswer);
+  }
+
+  const target = document.querySelector("#mainContent") || document.body;
+  const observer = new MutationObserver(applyCanonicalReadingOrder);
+  observer.observe(target, { childList: true, subtree: true });
+
+  window.setTimeout(applyCanonicalReadingOrder, 0);
+})();
