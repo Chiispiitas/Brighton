@@ -96,6 +96,16 @@ window.BRIGHTON_SITE_CONFIG = {
       relativeUrl: "tests/a2-units-5-6/index.html"
     },
     {
+      testId: "brighton-a2-units-5-8",
+      title: "A2 Units 5–8 Test",
+      level: "A2",
+      unitRange: "5-8",
+      isActive: true,
+      totalQuestions: 80,
+      maxScore: 80,
+      relativeUrl: "tests/a2-units-5-8/index.html"
+    },
+    {
       testId: "brighton-a2-units-9-10",
       title: "A2 Units 9–10 Test",
       level: "A2",
