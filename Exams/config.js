@@ -36,6 +36,28 @@ window.BRIGHTON_SITE_CONFIG = {
       totalQuestions: 80,
       maxScore: 80,
       relativeUrl: "tests/a1-units-1-4/index.html"
+    },
+    {
+      testId: "brighton-a1-units-5-6",
+      title: "A1 Units 5–6 Test",
+      level: "A1",
+      unitRange: "5-6",
+      description: "Two-page A1 multiple-choice test using Unit 5 page 1 and Unit 6 page 2.",
+      isActive: true,
+      totalQuestions: 40,
+      maxScore: 40,
+      relativeUrl: "tests/a1-units-5-6/index.html"
+    },
+    {
+      testId: "brighton-a1-units-9-10",
+      title: "A1 Units 9–10 Test",
+      level: "A1",
+      unitRange: "9-10",
+      description: "Two-page A1 multiple-choice test using Unit 9 page 1 and Unit 10 page 2.",
+      isActive: true,
+      totalQuestions: 40,
+      maxScore: 40,
+      relativeUrl: "tests/a1-units-9-10/index.html"
     }
   ],
 
