@@ -40,12 +40,10 @@
 
   function renderUnitCards(level) {
     unitCards.forEach((card) => {
-      const baseUnits = card.dataset.units || '';
+      const units = card.dataset.units || '';
 
-      // Personal Best A1 has a Units 5–7 term test instead of Units 5–8,
-      // and the book ends at Unit 10, so Units 9–12 does not apply to A1.
-      const units = level === 'A1' && baseUnits === '5-8' ? '5-7' : baseUnits;
-      const hiddenForLevel = level === 'A1' && baseUnits === '9-12';
+      // Personal Best A1 ends at Unit 10, so Units 9–12 does not apply to A1.
+      const hiddenForLevel = level === 'A1' && units === '9-12';
       card.hidden = hiddenForLevel;
       if (hiddenForLevel) return;
 
@@ -62,7 +60,6 @@
           <div class="unit-test-card-copy">
             <p class="unit-test-kicker">Units</p>
             <h3>${escapeHtml(displayUnits(units))}</h3>
-            <p class="muted">No test has been added for this unit range yet.</p>
           </div>
         `;
         return;
@@ -79,7 +76,6 @@
         <div class="unit-test-card-copy">
           <p class="unit-test-kicker">Units ${escapeHtml(displayUnits(test.unitRange || units))}</p>
           <h3>${escapeHtml(test.title || `${level} Units ${displayUnits(units)} Test`)}</h3>
-          <p class="muted">${escapeHtml(test.description || 'Brighton digital unit test.')}</p>
         </div>
         <div class="unit-test-meta">
           <span class="tag">${Number(test.totalQuestions || 0)} questions</span>
