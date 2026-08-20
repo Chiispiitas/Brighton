@@ -76,6 +76,7 @@ h1, h2, h3 { margin: 0; line-height: 1.08; letter-spacing: -.045em; }
 .start-grid h1 { font-size: clamp(38px, 6vw, 62px); }
 .start-grid h2 { margin-top: 8px; color: var(--teal); font-size: clamp(22px, 3vw, 31px); }
 .start-copy { max-width: 590px; color: var(--muted); }
+#startDescription { display: none !important; }
 .test-meta { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
 .test-meta span {
   padding: 7px 11px;
