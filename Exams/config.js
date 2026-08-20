@@ -196,3 +196,113 @@ window.BRIGHTON_SITE_CONFIG = {
     }
   ]
 };
+
+/* ----------------------------------------------
+   Student test review safety controls
+   ---------------------------------------------- */
+(() => {
+  if (!/\/Exams\/tests\/[^/]+\/?(?:index\.html)?$/i.test(window.location.pathname)) return;
+
+  const RETRY_SESSION_KEY = "brighton-test-retry-pending";
+
+  function getTestData() {
+    return window.BRIGHTON_TEST_DATA || null;
+  }
+
+  function removeTeacherLinks(root = document) {
+    root.querySelectorAll?.('a[href="../../tests.html"], a[href="../../index.html"]').forEach((link) => {
+      if (link.closest(".student-results, .finish-screen")) link.remove();
+    });
+  }
+
+  function isSubmissionSaved(root) {
+    if (root.querySelector?.(".result-save-status.saved")) return true;
+    const badge = document.querySelector("#submitStatusBadge");
+    return badge?.textContent?.trim().toLowerCase() === "saved";
+  }
+
+  function startFreshRetry() {
+    const data = getTestData();
+    if (!data?.testId) return;
+
+    const name = document.querySelector("#headerStudent")?.textContent?.trim()
+      || document.querySelector("#studentName")?.value?.trim()
+      || "";
+    const classId = document.querySelector("#headerClass")?.textContent?.trim()
+      || document.querySelector("#classId")?.value?.trim()
+      || "";
+
+    try {
+      sessionStorage.setItem(RETRY_SESSION_KEY, JSON.stringify({
+        testId: data.testId,
+        path: window.location.pathname,
+        name,
+        classId
+      }));
+      localStorage.removeItem(`brighton-test-state-${data.testId}-v1`);
+    } catch (error) {
+      console.warn("Could not prepare test retry", error);
+    }
+
+    window.location.reload();
+  }
+
+  function installRetryButton(root) {
+    const data = getTestData();
+    if (!data?.testId || !isSubmissionSaved(root)) return;
+
+    const actions = root.querySelector?.(".results-actions, .finish-actions");
+    if (!actions || actions.querySelector("#retryTestBtn")) return;
+
+    const button = document.createElement("button");
+    button.id = "retryTestBtn";
+    button.type = "button";
+    button.className = "primary-btn";
+    button.textContent = "Retry test";
+    button.addEventListener("click", startFreshRetry);
+    actions.appendChild(button);
+  }
+
+  function applyStudentReviewControls() {
+    document.querySelectorAll(".student-results, .finish-screen").forEach((root) => {
+      removeTeacherLinks(root);
+      installRetryButton(root);
+    });
+  }
+
+  function resumeFreshRetry() {
+    let pending = null;
+    try {
+      pending = JSON.parse(sessionStorage.getItem(RETRY_SESSION_KEY) || "null");
+    } catch (error) {
+      pending = null;
+    }
+
+    const data = getTestData();
+    if (!pending || !data?.testId || pending.testId !== data.testId || pending.path !== window.location.pathname) return;
+
+    try { sessionStorage.removeItem(RETRY_SESSION_KEY); } catch (error) {}
+
+    const nameInput = document.querySelector("#studentName");
+    const classInput = document.querySelector("#classId");
+    const form = document.querySelector("#studentForm");
+    if (!nameInput || !classInput || !form) return;
+
+    nameInput.value = pending.name || "";
+    classInput.value = pending.classId || "";
+
+    if (nameInput.value.trim() && classInput.value.trim()) {
+      if (typeof form.requestSubmit === "function") form.requestSubmit();
+      else form.querySelector('button[type="submit"]')?.click();
+    }
+  }
+
+  const observer = new MutationObserver(applyStudentReviewControls);
+  const observeTarget = document.querySelector("#mainContent") || document.body;
+  observer.observe(observeTarget, { childList: true, subtree: true });
+
+  window.setTimeout(() => {
+    applyStudentReviewControls();
+    resumeFreshRetry();
+  }, 0);
+})();
