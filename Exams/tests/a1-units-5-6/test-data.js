@@ -10,7 +10,6 @@ window.BRIGHTON_TEST_DATA = {
   unitRange: "5-6",
   totalQuestions: 40,
   maxScore: 40,
-  description: "Complete two pages. Page 1 uses Unit 5 page 1 and Page 2 uses Unit 6 page 2. Your answers are saved automatically on this device until you submit.",
   pages: [
     {
       label: "Unit 5",
