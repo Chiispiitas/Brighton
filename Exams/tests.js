@@ -40,10 +40,13 @@
 
   function renderUnitCards(level) {
     unitCards.forEach((card) => {
-      const units = card.dataset.units || '';
+      const baseUnits = card.dataset.units || '';
+
+      // A1 uses a Units 5–7 cumulative test; A2–C1 use Units 5–8.
+      const units = level === 'A1' && baseUnits === '5-8' ? '5-7' : baseUnits;
 
       // Personal Best A1 ends at Unit 10, so Units 9–12 does not apply to A1.
-      const hiddenForLevel = level === 'A1' && units === '9-12';
+      const hiddenForLevel = level === 'A1' && baseUnits === '9-12';
       card.hidden = hiddenForLevel;
       if (hiddenForLevel) return;
 
