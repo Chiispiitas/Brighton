@@ -40,10 +40,12 @@
 
   function renderUnitCards(level) {
     unitCards.forEach((card) => {
-      const units = card.dataset.units || '';
+      const baseUnits = card.dataset.units || '';
 
-      // Personal Best A1 ends at Unit 10, so Units 9–12 does not apply to A1.
-      const hiddenForLevel = level === 'A1' && units === '9-12';
+      // Personal Best A1 has a Units 5–7 term test instead of Units 5–8,
+      // and the book ends at Unit 10, so Units 9–12 does not apply to A1.
+      const units = level === 'A1' && baseUnits === '5-8' ? '5-7' : baseUnits;
+      const hiddenForLevel = level === 'A1' && baseUnits === '9-12';
       card.hidden = hiddenForLevel;
       if (hiddenForLevel) return;
 
