@@ -35,7 +35,8 @@
     pageTabs: $("#pageTabs"),
     previousPageBtn: $("#previousPageBtn"),
     nextPageBtn: $("#nextPageBtn"),
-    resetBtn: $("#resetBtn")
+    resetBtn: $("#resetBtn"),
+    bottomNav: $(".test-bottom-nav")
   };
 
   let state = loadState() || createDefaultState();
@@ -82,7 +83,7 @@
     $("#startEyebrow").textContent = `${data.level} · Units ${displayUnits(data.unitRange)}`;
     $("#startTitle").textContent = data.title;
     $("#startSubtitle").textContent = data.subtitle || "Multiple Choice";
-    $("#startDescription").textContent = data.description || "Enter your details to begin.";
+    $("#startDescription").textContent = "";
     $("#metaPages").textContent = `${data.pages.length} pages`;
     $("#metaQuestions").textContent = `${data.totalQuestions} questions`;
     $("#metaType").textContent = "Multiple choice";
@@ -147,6 +148,8 @@
   function showTest() {
     dom.startScreen.classList.add("hidden");
     dom.testShell.classList.remove("hidden");
+    dom.testShell.classList.remove("results-mode");
+    dom.bottomNav?.classList.remove("hidden");
     dom.headerStudent.textContent = state.student.name;
     dom.headerClass.textContent = state.student.classId;
     render();
@@ -169,7 +172,6 @@
           <div>
             <p class="eyebrow">${escapeHtml(page.sourceLabel || `Page ${state.pageIndex + 1}`)}</p>
             <h2>${escapeHtml(page.title || page.label || `Page ${state.pageIndex + 1}`)}</h2>
-            <p>${escapeHtml(page.description || "Choose the correct answer for each question.")}</p>
           </div>
           <div class="page-badge">Page ${state.pageIndex + 1} of ${data.pages.length}</div>
         </header>
@@ -312,6 +314,8 @@
   function showFinishScreen(options = {}) {
     dom.startScreen.classList.add("hidden");
     dom.testShell.classList.remove("hidden");
+    dom.testShell.classList.remove("results-mode");
+    dom.bottomNav?.classList.remove("hidden");
     dom.pageTabs.innerHTML = "";
     dom.previousPageBtn.disabled = true;
     dom.nextPageBtn.disabled = true;
@@ -377,6 +381,7 @@
       statusBadge.textContent = "Local";
       statusText.textContent = "The test is complete, but the Wix endpoint is not configured.";
       resultBox.innerHTML = `<p class="submit-error">Tell your teacher before closing this page.</p>`;
+      await renderStudentResults(payload, { saved: false, saveMessage: "This result was not saved to Wix." });
       return;
     }
 
@@ -391,14 +396,12 @@
 
       statusBadge.textContent = "Saved";
       statusText.textContent = "Your answers have been recorded successfully.";
-      resultBox.innerHTML = `
-        <p>Submission ID: <strong>${escapeHtml(result.submissionId || payload.clientSubmissionId)}</strong></p>
-        <div class="finish-actions">
-          <a class="primary-btn" href="../../tests.html">Back to Tests</a>
-          <a class="secondary-btn" href="../../index.html">Assessment Home</a>
-        </div>
-      `;
+      resultBox.innerHTML = `<p>Submission ID: <strong>${escapeHtml(result.submissionId || payload.clientSubmissionId)}</strong></p>`;
       localStorage.removeItem(STORAGE_KEY);
+      await renderStudentResults(payload, {
+        saved: true,
+        submissionId: result.submissionId || payload.clientSubmissionId
+      });
     } catch (error) {
       console.error("Test submission failed", error);
       statusBadge.textContent = "Not saved";
@@ -408,7 +411,212 @@
         <div class="finish-actions"><button id="retrySubmissionBtn" class="primary-btn" type="button">Retry saving</button></div>
       `;
       $("#retrySubmissionBtn")?.addEventListener("click", () => submitPayload(payload));
+      await renderStudentResults(payload, {
+        saved: false,
+        saveMessage: "Your score is shown below, but the submission has not been saved to Wix yet.",
+        keepRetry: true
+      });
     }
+  }
+
+  async function renderStudentResults(payload, options = {}) {
+    try {
+      const answerKey = await loadStudentAnswerKey();
+      const grading = gradeStudentSubmission(payload.answers || {}, answerKey);
+
+      dom.testShell.classList.add("results-mode");
+      dom.bottomNav?.classList.add("hidden");
+      dom.headerProgress?.classList?.add?.("hidden");
+
+      const saveNotice = options.saved
+        ? `<span class="result-save-status saved">✓ Saved to Wix</span>`
+        : `<span class="result-save-status warning">⚠ ${escapeHtml(options.saveMessage || "Not saved to Wix")}</span>`;
+
+      const retryHtml = options.keepRetry
+        ? `<button id="retryResultSubmissionBtn" class="primary-btn" type="button">Retry saving</button>`
+        : "";
+
+      dom.mainContent.innerHTML = `
+        <section class="student-results">
+          <header class="results-hero">
+            <div>
+              <p class="eyebrow">${escapeHtml(data.level)} · Units ${escapeHtml(displayUnits(data.unitRange))}</p>
+              <h2>Test results</h2>
+              <p class="results-student-name">${escapeHtml(state.student.name || payload.studentName || "Student")}</p>
+            </div>
+            ${saveNotice}
+          </header>
+
+          <div class="score-summary">
+            <div class="score-main">
+              <span>Final score</span>
+              <strong>${grading.score}<small> / ${grading.maxScore}</small></strong>
+            </div>
+            <div class="score-stat">
+              <span>Percentage</span>
+              <strong>${grading.percentage}%</strong>
+            </div>
+            <div class="score-stat">
+              <span>Correct</span>
+              <strong>${grading.correctCount}<small> / ${grading.totalQuestions}</small></strong>
+            </div>
+          </div>
+
+          <div class="review-legend" aria-label="Answer review legend">
+            <span><i class="legend-dot correct"></i> Correct</span>
+            <span><i class="legend-dot incorrect"></i> Incorrect</span>
+            <span><i class="legend-dot unanswered"></i> Unanswered</span>
+          </div>
+
+          <div class="answer-review">
+            ${grading.pages.map(renderReviewPage).join("")}
+          </div>
+
+          <div class="results-actions">
+            ${retryHtml}
+            <a class="primary-btn" href="../../tests.html">Back to Tests</a>
+            <a class="secondary-btn" href="../../index.html">Assessment Home</a>
+          </div>
+        </section>
+      `;
+
+      $("#retryResultSubmissionBtn")?.addEventListener("click", () => showFinishScreen({ retry: true }));
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    } catch (error) {
+      console.error("Could not load student answer review", error);
+      const resultBox = $("#submissionResult");
+      if (resultBox) {
+        resultBox.insertAdjacentHTML("beforeend", `
+          <p class="submit-error">Your submission was completed, but the score review could not be loaded.</p>
+          <div class="finish-actions">
+            <a class="primary-btn" href="../../tests.html">Back to Tests</a>
+            <a class="secondary-btn" href="../../index.html">Assessment Home</a>
+          </div>
+        `);
+      }
+    }
+  }
+
+  async function loadStudentAnswerKey() {
+    const url = new URL(`../../answer-keys/${encodeURIComponent(data.testId)}.json`, window.location.href);
+    const response = await fetch(url.toString(), { headers: { Accept: "application/json" }, cache: "no-store" });
+    if (!response.ok) throw new Error(`Could not load answer key for ${data.testId}`);
+    return response.json();
+  }
+
+  function gradeStudentSubmission(answers, answerKey) {
+    const rules = answerKey?.answers || {};
+    let score = 0;
+    let correctCount = 0;
+    const pages = data.pages.map((page, pageIndex) => {
+      let pageScore = 0;
+      let pageMaxScore = 0;
+      let pageCorrect = 0;
+
+      const questions = page.questions.map((question) => {
+        const rule = rules[String(question.q)] || {};
+        const points = Number(rule.points || 1);
+        const accepted = (Array.isArray(rule.answers) ? rule.answers : []).map((answer) => String(answer || "").trim().toUpperCase());
+        const selected = String(answers[question.q] || "").trim().toUpperCase();
+        const isCorrect = Boolean(selected) && accepted.includes(selected);
+        const earned = isCorrect ? points : 0;
+        const correctLetter = accepted.find((answer) => /^[A-Z]$/.test(answer)) || accepted[0] || "";
+
+        score += earned;
+        pageScore += earned;
+        pageMaxScore += points;
+        if (isCorrect) {
+          correctCount += 1;
+          pageCorrect += 1;
+        }
+
+        return {
+          pageIndex,
+          question,
+          selected,
+          correctLetter,
+          isCorrect,
+          earned,
+          points
+        };
+      });
+
+      return {
+        label: page.label || page.shortLabel || `Page ${pageIndex + 1}`,
+        pageNumber: pageIndex + 1,
+        score: pageScore,
+        maxScore: pageMaxScore,
+        correct: pageCorrect,
+        total: questions.length,
+        questions
+      };
+    });
+
+    const calculatedMax = pages.reduce((sum, page) => sum + page.maxScore, 0);
+    const maxScore = Number(answerKey?.maxScore || calculatedMax || data.maxScore || data.totalQuestions || 0);
+    const totalQuestions = allQuestions().length;
+
+    return {
+      score,
+      maxScore,
+      percentage: maxScore ? Math.round((score / maxScore) * 100) : 0,
+      correctCount,
+      totalQuestions,
+      pages
+    };
+  }
+
+  function renderReviewPage(page) {
+    return `
+      <section class="review-page">
+        <header class="review-page-head">
+          <div>
+            <span>Page ${page.pageNumber}</span>
+            <h3>${escapeHtml(page.label)}</h3>
+          </div>
+          <strong>${page.score}/${page.maxScore}</strong>
+        </header>
+        <div class="review-question-list">
+          ${page.questions.map(renderReviewQuestion).join("")}
+        </div>
+      </section>
+    `;
+  }
+
+  function renderReviewQuestion(item) {
+    const { question, selected, correctLetter, isCorrect } = item;
+    const status = !selected ? "unanswered" : (isCorrect ? "correct" : "incorrect");
+    const statusText = !selected ? "Unanswered" : (isCorrect ? "Correct" : "Incorrect");
+    const selectedText = answerOptionText(question, selected);
+    const correctText = answerOptionText(question, correctLetter);
+
+    return `
+      <article class="review-question ${status}">
+        <div class="review-question-top">
+          <span class="review-number">${question.q}</span>
+          <p>${escapeHtml(question.text)}</p>
+          <span class="review-status ${status}">${statusText}</span>
+        </div>
+        <div class="review-answer-lines">
+          <div class="review-answer student-answer">
+            <span>Your answer</span>
+            <strong>${selected ? `${escapeHtml(selected)} · ${escapeHtml(selectedText)}` : "No answer"}</strong>
+          </div>
+          ${isCorrect ? "" : `
+            <div class="review-answer correct-answer">
+              <span>Correct answer</span>
+              <strong>${escapeHtml(correctLetter)} · ${escapeHtml(correctText)}</strong>
+            </div>
+          `}
+        </div>
+      </article>
+    `;
+  }
+
+  function answerOptionText(question, letter) {
+    const index = String(letter || "").toUpperCase().charCodeAt(0) - 65;
+    if (!Number.isInteger(index) || index < 0 || index >= question.options.length) return "";
+    return String(question.options[index] ?? "");
   }
 
   function resetTest() {
