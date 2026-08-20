@@ -10,12 +10,10 @@ window.BRIGHTON_TEST_DATA = {
   unitRange: "1-4",
   totalQuestions: 80,
   maxScore: 80,
-  description: "Complete four pages covering vocabulary, grammar, language in context, and reading from Units 1–4. Your answers are saved automatically on this device until you submit.",
   pages: [
     {
       label: "Language 1", shortLabel: "Page 1", sourceLabel: "Units 1–4 · Page 1",
       title: "Vocabulary & Grammar", unit: "1-4",
-      description: "Everyday vocabulary, opposites, countries, family words, and basic grammar.",
       instructions: "Choose the correct answer: a, b, or c.",
       questions: [
         q(1, "I go ________ bus because I don't have a car.", "at", "by", "on"),
@@ -41,7 +39,6 @@ window.BRIGHTON_TEST_DATA = {
     {
       label: "Language 2", shortLabel: "Page 2", sourceLabel: "Units 1–4 · Page 2",
       title: "Grammar & Everyday English", unit: "1-4",
-      description: "Simple present, possessives, everyday words, days, and numbers.",
       instructions: "Choose the correct answer: a, b, or c.",
       questions: [
         q(19, "Mariana and Stuart ________ a big family.", "has", "having", "have"),
@@ -71,8 +68,7 @@ window.BRIGHTON_TEST_DATA = {
     {
       label: "Language in Context", shortLabel: "Page 3", sourceLabel: "Units 1–4 · Page 3",
       title: "Language in Context", unit: "1-4",
-      description: "Choose the word or form that best completes each sentence from the two short texts.",
-      instructions: "Choose the correct answer: a, b, or c.",
+      instructions: "Choose the word or form that best completes each sentence from the two short texts.",
       questions: [
         q(41, "So, Christina, ________ do you live?", "where", "how", "who"),
         q(42, "And ________ do you live with?", "when", "where", "who"),
@@ -109,7 +105,6 @@ window.BRIGHTON_TEST_DATA = {
     {
       label: "Reading", shortLabel: "Page 4", sourceLabel: "Units 1–4 · Page 4",
       title: "Reading", unit: "1-4",
-      description: "Read Mario's job profile, then decide if each statement is true, false, or not stated.",
       instructions: "Read the text. Choose True, False, or Not enough information.",
       passage: {
         title: "My job profile", byline: "Mario Contadini",
