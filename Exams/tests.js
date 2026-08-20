@@ -41,6 +41,12 @@
   function renderUnitCards(level) {
     unitCards.forEach((card) => {
       const units = card.dataset.units || '';
+
+      // Personal Best A1 ends at Unit 10, so Units 9–12 does not apply to A1.
+      const hiddenForLevel = level === 'A1' && units === '9-12';
+      card.hidden = hiddenForLevel;
+      if (hiddenForLevel) return;
+
       const test = findTest(level, units);
       card.className = 'unit-test-card';
 
