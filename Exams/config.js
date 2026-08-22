@@ -124,6 +124,16 @@ window.BRIGHTON_SITE_CONFIG = {
       totalQuestions: 80,
       maxScore: 80,
       relativeUrl: "tests/a2-units-9-12/index.html"
+    },
+    {
+      testId: "brighton-b1plus-units-5-6",
+      title: "B1+ Units 5–6 Test",
+      level: "B1+",
+      unitRange: "5-6",
+      isActive: true,
+      totalQuestions: 40,
+      maxScore: 40,
+      relativeUrl: "tests/b1plus-units-5-6/index.html"
     }
   ],
 
