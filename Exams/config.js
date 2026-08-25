@@ -47,13 +47,30 @@ window.BRIGHTON_SITE_CONFIG = {
 };
 
 /* ----------------------------------------------
-   Student test review safety controls
+   Student test safety and review controls
    ---------------------------------------------- */
 (() => {
   if (!/\/Exams\/tests\/[^/]+\/?(?:index\.html)?$/i.test(window.location.pathname)) return;
   const RETRY_SESSION_KEY = "brighton-test-retry-pending";
 
   function getTestData() { return window.BRIGHTON_TEST_DATA || null; }
+
+  function lockStudentNavigation() {
+    // The Tests menu and Assessment Home are teacher-facing surfaces.
+    document.querySelectorAll('.student-form a[href="../../tests.html"]').forEach((link) => link.remove());
+
+    document.querySelectorAll('.test-brand[href="../../tests.html"]').forEach((link) => {
+      link.removeAttribute("href");
+      link.removeAttribute("aria-label");
+      link.setAttribute("tabindex", "-1");
+      link.style.cursor = "default";
+    });
+
+    // A strict timed attempt must not be restartable from inside the player.
+    // This runs after test-player.js has initialized, so removing the button
+    // cannot interrupt the player's startup code.
+    document.querySelector("#resetBtn")?.remove();
+  }
 
   function removeTeacherLinks(root = document) {
     root.querySelectorAll?.('a[href="../../tests.html"], a[href="../../index.html"]').forEach((link) => {
@@ -118,10 +135,18 @@ window.BRIGHTON_SITE_CONFIG = {
     }
   }
 
-  const observer = new MutationObserver(applyStudentReviewControls);
+  const observer = new MutationObserver(() => {
+    lockStudentNavigation();
+    applyStudentReviewControls();
+  });
   const observeTarget = document.querySelector("#mainContent") || document.body;
   observer.observe(observeTarget, { childList: true, subtree: true });
-  window.setTimeout(() => { applyStudentReviewControls(); resumeFreshRetry(); }, 0);
+
+  window.setTimeout(() => {
+    lockStudentNavigation();
+    applyStudentReviewControls();
+    resumeFreshRetry();
+  }, 0);
 })();
 
 /* ----------------------------------------------
