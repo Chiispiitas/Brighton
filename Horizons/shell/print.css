@@ -1,0 +1,59 @@
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
+@media print {
+  html,
+  body {
+    width: 210mm;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+  }
+
+  body.hz-book {
+    background: #fff !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .hz-page {
+    width: 210mm !important;
+    height: 297mm !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+    break-after: page;
+    page-break-after: always;
+  }
+
+  .hz-page:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+
+  .hz-no-print {
+    display: none !important;
+  }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img,
+  .hz-focus-box,
+  .hz-reading-card,
+  .hz-ui-card,
+  .hz-review-block,
+  .hz-exercise {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  /* Debug furniture is never part of publication output. */
+  body.hz-debug .hz-page::after {
+    display: none !important;
+  }
+}
