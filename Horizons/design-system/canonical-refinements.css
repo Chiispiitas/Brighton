@@ -31,6 +31,97 @@
 }
 
 /* -------------------------------------------------------------------------
+   Shared lesson geometry — Unit 1 prototypes
+   -------------------------------------------------------------------------
+
+   Art direction may vary substantially from lesson to lesson, but recurring
+   coursebook chrome must not drift. Headers, instructions, audio badges,
+   cross-references, continuation markers and Extra Practice alignment use one
+   shared geometry across the current 1A–1D prototypes.
+
+   Content density and page-specific editorial compositions may still vary when
+   needed to preserve source material or the pedagogy. */
+
+.l1a-page .hz-lesson-header,
+.l1b-page .hz-lesson-header,
+.l1c-page .hz-lesson-header,
+.l1d-page .hz-lesson-header {
+  padding-bottom: 3mm !important;
+}
+
+.l1a-page .hz-exercise__instruction,
+.l1b-page .hz-exercise__instruction,
+.l1c-page .hz-exercise__instruction,
+.l1d-page .hz-exercise__instruction {
+  font-size: 8.9pt !important;
+}
+
+.l1a-track,
+.l1b-track,
+.l1c-track {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: .7mm !important;
+  margin-right: 1.35mm !important;
+  padding: .6mm 1.15mm !important;
+  background: var(--hz-audio) !important;
+  color: #fff !important;
+  font-size: 6.4pt !important;
+  font-weight: var(--hz-fw-black) !important;
+  line-height: 1 !important;
+  vertical-align: .35mm !important;
+}
+
+.l1a-go-to,
+.l1b-go-to,
+.l1c-go-to {
+  margin: .35mm 0 .15mm calc(var(--hz-exercise-marker-size) + 3mm) !important;
+}
+
+.l1a-extra,
+.l1b-extra,
+.l1c-extra,
+.l1d-extra {
+  margin-left: calc(var(--hz-exercise-marker-size) + 3mm) !important;
+  margin-top: .6mm !important;
+}
+
+/* Continuation identity is one fixed piece of book chrome. Never resize,
+   restyle or reposition an individual lesson's continuation marker to solve a
+   local collision. Move the lesson content instead. */
+.l1a-page--2 .l1a-continuation,
+.l1b-page--2 .l1b-continuation,
+.l1c-page--2 .l1c-continuation,
+.l1d-page--2 .l1d-continuation {
+  position: absolute !important;
+  top: -1mm !important;
+  right: -14mm !important;
+  z-index: 4 !important;
+  display: grid !important;
+  place-items: end start !important;
+  width: 34mm !important;
+  height: 25mm !important;
+  padding: 0 0 3.2mm 5mm !important;
+  background: var(--hz-unit) !important;
+  color: #fff !important;
+  clip-path: polygon(28% 0, 100% 0, 100% 100%, 0 100%) !important;
+  font-size: 19pt !important;
+  font-weight: var(--hz-fw-black) !important;
+  line-height: normal !important;
+  letter-spacing: -.05em !important;
+}
+
+/* Every continuation page begins from the same top rhythm. The inline value in
+   the current prototypes is retained as a fallback; this rule makes the shared
+   behavior explicit and resistant to future drift. */
+.l1a-page--2 .hz-exercises,
+.l1b-page--2 .hz-exercises,
+.l1c-page--2 .hz-exercises,
+.l1d-page--2 .hz-exercises {
+  padding-top: 7mm !important;
+}
+
+/* -------------------------------------------------------------------------
    Permanent decoration rule
    -------------------------------------------------------------------------
 
@@ -72,9 +163,9 @@
    slightly while preserving every activity and the Guided Discovery sequence.
 
    IMPORTANT: the continuation marker on page 12 must remain the same size,
-   shape and typography as the continuation markers used elsewhere in Unit 1.
-   Do not solve collisions by shrinking the marker. Instead, move the nearby
-   lesson content clear of the canonical continuation marker. */
+   shape, position and typography as the continuation markers used elsewhere
+   in Unit 1. Do not solve collisions by changing the marker. Instead, move the
+   nearby lesson content clear of the canonical continuation marker. */
 
 .l1d-page:not(.l1d-page--2) .l1d-checkin-stage {
   min-height: 80mm !important;
@@ -151,9 +242,9 @@
   line-height: 1.25 !important;
 }
 
-/* Keep .l1d-continuation untouched so the page-local canonical dimensions
-   remain identical to the 1A/1B/1C continuation treatment. Give Exercise 5
-   enough internal clearance instead of altering the marker itself. */
+/* Keep Exercise 5 clear of the canonical continuation marker without altering
+   the marker itself. This is a content-specific spacing exception, not new
+   continuation chrome. */
 .l1d-page--2 .l1d-business-stage {
   padding-top: 8mm !important;
 }
