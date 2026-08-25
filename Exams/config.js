@@ -127,9 +127,16 @@ window.BRIGHTON_SITE_CONFIG = {
 /* ----------------------------------------------
    Canonical True / False / Not enough information order
    A = True, B = False, C = Not enough information.
+
+   Some legacy tests stored these three semantic choices in a shuffled
+   A/B/C order. We keep the underlying data-answer-value untouched so
+   their existing grading keys remain compatible, but present them to
+   students in the canonical visual order. Each rendered question is
+   canonicalized only once to avoid a MutationObserver render loop.
    ---------------------------------------------- */
 (() => {
   if (!/\/Exams\/tests\/[^/]+\/?(?:index\.html)?$/i.test(window.location.pathname)) return;
+
   const CANONICAL = [
     { key: "true", letter: "A", text: "True" },
     { key: "false", letter: "B", text: "False" },
@@ -143,30 +150,46 @@ window.BRIGHTON_SITE_CONFIG = {
   }
 
   function canonicalizeQuestion(card) {
+    if (card.dataset.tfnCanonicalized === "true") return;
+
     const grid = card.querySelector(".choice-grid");
     if (!grid) return;
+
     const buttons = Array.from(grid.querySelectorAll(".choice-button"));
     if (buttons.length !== 3) return;
+
     const byText = new Map(buttons.map((button) => [choiceText(button), button]));
     if (!CANONICAL.every((item) => byText.has(item.key))) return;
-    CANONICAL.forEach((item) => {
+
+    CANONICAL.forEach((item, index) => {
       const button = byText.get(item.key);
       const letter = button.querySelector(".choice-letter");
-      if (letter) letter.textContent = item.letter;
-      grid.appendChild(button);
+      if (letter && letter.textContent !== item.letter) letter.textContent = item.letter;
+      if (grid.children[index] !== button) grid.appendChild(button);
     });
+
+    card.dataset.tfnCanonicalized = "true";
   }
 
   function canonicalizeReviewAnswer(answerBox) {
+    if (answerBox.dataset.tfnCanonicalized === "true") return;
+
     const strong = answerBox.querySelector("strong");
     if (!strong) return;
+
     const text = strong.textContent.trim();
     if (!text || /^no answer$/i.test(text)) return;
+
     const separator = text.indexOf("·");
     if (separator < 0) return;
+
     const semantic = normalize(text.slice(separator + 1));
     const item = CANONICAL.find((candidate) => candidate.key === semantic);
-    if (item) strong.textContent = `${item.letter} · ${item.text}`;
+    if (!item) return;
+
+    const canonicalText = `${item.letter} · ${item.text}`;
+    if (strong.textContent !== canonicalText) strong.textContent = canonicalText;
+    answerBox.dataset.tfnCanonicalized = "true";
   }
 
   function applyCanonicalReadingOrder() {
