@@ -1,0 +1,88 @@
+{
+  "course": "Horizons",
+  "level": "A1",
+  "status": "LOCKED",
+  "rule": "Do not rename, reorder, replace, move or silently add syllabus objectives or real-world contexts without explicit author authorization.",
+  "units": [
+    {
+      "unit": 1,
+      "title": "New Friends",
+      "lessons": {
+        "A": { "title": "Hi, I’m Bri!", "focus": ["The verb to be", "alphabet", "numbers"], "real_world_context": null },
+        "B": { "title": "What’s your job?", "focus": ["Occupations", "verb to be contractions"], "real_world_context": null },
+        "C": { "title": "Where are you from?", "focus": ["Countries", "adjectives"], "real_world_context": null },
+        "D": { "title": "Let’s fill a form!", "focus": ["Personal info", "capitalization"], "real_world_context": null }
+      }
+    },
+    {
+      "unit": 2,
+      "title": "What’s in My Bag?",
+      "lessons": {
+        "A": { "title": "Look inside my bag!", "focus": ["Personal items", "demonstrative pronouns"], "real_world_context": null },
+        "B": { "title": "What time is the next bus?", "focus": ["Telling time", "articles"], "real_world_context": "Real transport apps such as Moovit and InDrive and how people use them." },
+        "C": { "title": "Meet my family!", "focus": ["Family members", "possessive case"], "real_world_context": "Based on real interviews about family businesses linking to jobs and occupations." },
+        "D": { "title": "Is that my phone?", "focus": ["Colors", "adjectives"], "real_world_context": "Asking about possessions in a Lost and Found office." }
+      }
+    },
+    {
+      "unit": 3,
+      "title": "My Life",
+      "lessons": {
+        "A": { "title": "What’s your routine?", "focus": ["Present simple (+)", "daily routine"], "real_world_context": "A day in the life of someone famous." },
+        "B": { "title": "Weekdays or weekends?", "focus": ["Days of the week", "present simple (-) (?)"], "real_world_context": "How different countries structure their workweeks, like siesta in Spain and overtime in Japan." },
+        "C": { "title": "Where do you go?", "focus": ["Wh- questions", "adjectives"], "real_world_context": "Google Maps reviews." },
+        "D": { "title": "My week in order", "focus": ["Frequency adverbs", "using connectors ‘after’, ‘before’"], "real_world_context": "A social media challenge about healthy daily habits." }
+      }
+    },
+    {
+      "unit": 4,
+      "title": "Let’s Eat!",
+      "lessons": {
+        "A": { "title": "What do you eat?", "focus": ["Food and drink", "uncountable and countable"], "real_world_context": "Traditional meals around the world." },
+        "B": { "title": "Tasty or not?", "focus": ["Flavors", "like/don’t like", "object pronouns"], "real_world_context": "The rise of vegan food trends." },
+        "C": { "title": "Cooking time!", "focus": ["Common verbs", "too much/many and enough"], "real_world_context": "Beginner-friendly cooking guides." },
+        "D": { "title": "Food for everyone!", "focus": ["Punctuation", "using connectors ‘because’, ‘so’"], "real_world_context": "Stories of food sharing apps and waste reduction." }
+      }
+    },
+    {
+      "unit": 5,
+      "title": "Shopping Time",
+      "lessons": {
+        "A": { "title": "What are you wearing?", "focus": ["Clothes and accessories", "present continuous"], "real_world_context": "A real story about a lucky thrift shop find." },
+        "B": { "title": "That’s my favorite!", "focus": ["Shopping verbs", "adjectives", "too and enough"], "real_world_context": "Reviews of online shopping experiences." },
+        "C": { "title": "How often do you shop?", "focus": ["Frequency expressions", "places in town"], "real_world_context": "Minimalist living and spending habits." },
+        "D": { "title": "At the store", "focus": ["Going grocery shopping"], "real_world_context": "Cashier-less stores and how they work compared to traditional ones." }
+      }
+    },
+    {
+      "unit": 6,
+      "title": "Moving Around",
+      "lessons": {
+        "A": { "title": "City life or country life?", "focus": ["Places in town 2"], "real_world_context": "Comparing two real small and big city lifestyles." },
+        "B": { "title": "My dream home", "focus": ["Prepositions of place", "rooms", "furniture"], "real_world_context": "Tiny homes and people who live in them." },
+        "C": { "title": "My neighborhood", "focus": ["Prepositions of movement", "giving directions"], "real_world_context": "Walkability scores and how people rate their areas." },
+        "D": { "title": "Where's the mall?", "focus": ["Can/can’t", "describing a city"], "real_world_context": "Exploring the world’s most unique shopping centers." }
+      }
+    },
+    {
+      "unit": 7,
+      "title": "Back in the Day",
+      "lessons": {
+        "A": { "title": "When I was little…", "focus": ["Past of verb to be"], "real_world_context": "Nostalgic interviews about childhood in different decades." },
+        "B": { "title": "I was born in July!", "focus": ["Dates", "ordinal numbers", "ago"], "real_world_context": "Celebrity birthdays and their stories." },
+        "C": { "title": "Life in the 80s", "focus": ["Regular past verbs (+) (-) (?)"], "real_world_context": "People sharing their past life experiences online." },
+        "D": { "title": "Dear Diary", "focus": ["Irregular past verbs", "writing about your day", "sequencers"], "real_world_context": "Famous personal diaries through history." }
+      }
+    },
+    {
+      "unit": 8,
+      "title": "Travel Adventures",
+      "lessons": {
+        "A": { "title": "Let’s go to Toronto!", "focus": ["Travel verbs", "animals"], "real_world_context": "Real travel vlogs about city experiences." },
+        "B": { "title": "It’s so cold!", "focus": ["Weather and seasons", "should/shouldn’t"], "real_world_context": "News articles about extreme weather events." },
+        "C": { "title": "Can you go tomorrow?", "focus": ["Health complaints", "body parts"], "real_world_context": "Real cases of people postponing trips due to health." },
+        "D": { "title": "Tickets, please!", "focus": ["Phone language", "buying a ticket"], "real_world_context": "Stories of people booking last-minute flights." }
+      }
+    }
+  ]
+}
