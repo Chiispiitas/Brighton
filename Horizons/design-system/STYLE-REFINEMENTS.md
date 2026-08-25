@@ -25,6 +25,29 @@ Examples:
 - cards or information exchanges in the same group should keep the same geometry even if their tones differ;
 - alphabet pairs may use stronger uppercase color and a faded lowercase version of the same hue instead of changing each letter pair into a different container.
 
+## Structural uniformity across lessons
+
+Horizons should be visually varied at the **activity and page-composition level**, but the recurring book chrome must remain stable from lesson to lesson.
+
+The following elements should use one shared treatment unless the design system itself is intentionally revised:
+
+- lesson tab geometry and hierarchy;
+- lesson-header spacing and rule treatment;
+- exercise-number lane;
+- normal exercise-instruction scale;
+- audio/track badge geometry;
+- `Go to:` cross-reference alignment;
+- continuation marker size, shape, typography and position;
+- continuation-page top rhythm;
+- Extra Practice alignment;
+- page footer and page-number treatment.
+
+Do not solve a local collision by changing one instance of shared chrome. For example, if a continuation marker overlaps an activity, **move or recompose the activity** rather than shrinking, stretching or relocating only that lesson's continuation marker.
+
+Content density may still vary slightly between pages when necessary to preserve source material, avoid clipping or support the pedagogy. Likewise, Lesson A, B, C and D should retain distinct compositions appropriate to their different pedagogical roles. Uniformity means stable navigation and structural mechanics, not identical page templates.
+
+The current Unit 1 prototypes are normalized through `canonical-refinements.css`, which acts as the final guard against accidental drift in shared layout mechanics.
+
 ## No translucent background words
 
 Do **not** use oversized translucent words, letters, punctuation marks or instructional phrases as decorative background elements behind lesson content.
