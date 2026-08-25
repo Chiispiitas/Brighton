@@ -3,146 +3,112 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Horizons A1 — Editorial A4 Showcase</title>
+  <title>Horizons A1 — Dynamic Editorial Media Showcase</title>
   <link rel="stylesheet" href="../shell/a4-shell.css">
   <link rel="stylesheet" href="../shell/print.css" media="print">
   <style>
-    /* Bespoke example-page CSS on purpose: not every composition should become a component. */
+    /* Bespoke demo-page composition is intentional. The reusable media
+       primitives live in components.css; page rhythm can vary by lesson. */
     .demo-note {
       margin: 0;
       color: var(--hz-muted);
-      font-size: 6.8pt;
+      font-size: 6.7pt;
       font-style: italic;
     }
 
-    .hero-copy {
+    .compact-copy {
       font-family: var(--hz-font-reading);
-      font-size: 9.5pt;
-      line-height: 1.5;
+      font-size: 8.7pt;
+      line-height: 1.45;
     }
 
     .routine-timeline {
       display: grid;
       grid-template-columns: repeat(5, 1fr);
-      margin-top: 3mm;
-      border-top: .6mm solid var(--hz-unit);
+      border-top: .7mm solid var(--hz-unit);
     }
 
     .routine-stop {
+      min-height: 18mm;
       padding: 2mm 2mm 0 0;
       border-right: var(--hz-border) solid var(--hz-line);
-      font-size: 7.8pt;
+      font-size: 7.6pt;
     }
 
     .routine-stop:last-child { border-right: 0; }
-    .routine-stop time { display:block; color:var(--hz-unit-dark); font-weight:800; margin-bottom:.6mm; }
-
-    .grammar-pairs {
-      display:grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 0 6mm;
-      font-size:8.6pt;
+    .routine-stop time {
+      display: block;
+      margin-bottom: .7mm;
+      color: var(--hz-unit-dark);
+      font-weight: var(--hz-fw-black);
     }
 
-    .grammar-pairs div {
-      display:grid;
-      grid-template-columns: 32mm 1fr;
-      gap:2mm;
-      padding:1.2mm 0;
-      border-bottom:var(--hz-border) solid var(--hz-line);
+    .review-row {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 4mm;
     }
 
-    .grammar-pairs strong { color:var(--hz-unit-dark); }
-
-    .audio-line {
-      display:grid;
-      grid-template-columns: 1fr auto;
-      gap:5mm;
-      align-items:center;
-      padding-top:2mm;
-      border-top:var(--hz-border) solid var(--hz-line);
+    .review-mini {
+      padding: 2.5mm 0;
+      border-top: .7mm solid var(--hz-unit);
     }
 
-    .review-interface {
-      overflow:hidden;
-      border:var(--hz-border) solid #cfd2d6;
-      border-radius:4mm;
-      background:#fff;
-      box-shadow:var(--hz-shadow-ui);
+    .review-mini strong {
+      display: block;
+      margin-bottom: 1mm;
+      font-size: 8pt;
     }
 
-    .review-interface__top {
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:2.3mm 3mm;
-      border-bottom:var(--hz-border) solid #e2e4e7;
-      background:#fafafa;
-      font-size:7.5pt;
-      font-weight:700;
+    .review-mini p {
+      margin-bottom: 0;
+      font-family: var(--hz-font-reading);
+      font-size: 8.2pt;
+      line-height: 1.4;
     }
 
-    .review-interface__body { padding:3mm; }
-    .review-stars { color:#c68a20; letter-spacing:.04em; }
-
-    .place-rating {
-      display:grid;
-      grid-template-columns:auto 1fr;
-      gap:3mm;
-      align-items:start;
-      margin-bottom:2mm;
+    .weather-facts {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3mm;
+      margin-top: 2mm;
     }
 
-    .place-rating strong {
-      color:var(--hz-unit-dark);
-      font-size:22pt;
-      line-height:1;
+    .weather-fact {
+      padding-top: 1.5mm;
+      border-top: .55mm solid var(--hz-unit);
+      font-size: 7.6pt;
     }
 
-    .review-quote {
-      margin:2mm 0 0;
-      padding-left:3mm;
-      border-left:.7mm solid var(--hz-unit);
-      font-size:8.5pt;
-      line-height:1.42;
+    .weather-fact strong {
+      display: block;
+      margin-bottom: .5mm;
+      color: var(--hz-unit-dark);
+      font-size: 10pt;
     }
 
-    .review-columns {
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:5mm;
+    .fashion-notes {
+      display: grid;
+      grid-template-columns: 1.1fr .9fr;
+      gap: 5mm;
+      align-items: start;
     }
 
-    .review-section h3 {
-      margin:0 0 1.5mm;
-      color:var(--hz-unit-dark);
-      font-size:8pt;
-      letter-spacing:.06em;
-      text-transform:uppercase;
+    .fashion-caption {
+      margin: 0;
+      padding: 3mm 0 0 3mm;
+      border-left: .8mm solid var(--hz-unit);
+      font-family: var(--hz-font-reading);
+      font-size: 8.8pt;
+      line-height: 1.45;
     }
 
-    .review-section ol { margin:0; padding-left:5mm; }
-    .review-section li { margin:1.3mm 0; }
-
-    .self-check {
-      display:flex;
-      gap:7mm;
-      align-items:center;
-      padding-top:2mm;
-      border-top:var(--hz-border) solid var(--hz-line-strong);
-      font-size:8pt;
-    }
-
-    .self-check span::before {
-      content:"□";
-      margin-right:1.3mm;
-      color:var(--hz-unit-dark);
-    }
+    .question-tight { gap: 1.2mm 5mm; }
   </style>
 </head>
 <body class="hz-book">
 
-  <!-- PAGE 1: deliberately editorial, with one vertical exercise sequence. -->
+  <!-- PAGE 1 — overlay hero + visual strip + timeline -->
   <article class="hz-page hz-content hz-unit-3" data-page="31">
     <main class="hz-page__content">
       <div class="hz-page-stack">
@@ -160,147 +126,33 @@
           </div>
         </header>
 
-        <p class="demo-note">Layout demonstration only. Final facts, photography and audio are produced separately.</p>
+        <div class="hz-mode-bar">
+          <span class="hz-mode-bar__title">Reading</span>
+          <span class="hz-mode-bar__descriptor">A day in the life of someone famous</span>
+        </div>
 
-        <section class="hz-exercises hz-fill" aria-label="Exercises">
-          <section class="hz-exercise">
-            <div class="hz-exercise-number" aria-hidden="true">1</div>
-            <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction"><span class="hz-audio-badge">▶ 3.1</span> Read and listen.</p>
-              <div class="hz-exercise__body">
-                <div class="hz-feature-panel">
-                  <figure class="hz-feature-panel__media" style="margin:0">
-                    <div class="hz-media-placeholder">Large free or generated raster photograph</div>
-                  </figure>
-                  <div class="hz-feature-panel__copy">
-                    <span class="hz-new-words">New words</span>
-                    <h2 class="hz-feature-panel__title" style="margin-top:2mm">A day in the life</h2>
-                    <p class="hero-copy">This space is for an A1 real-person feature. The design relies on the photograph, typography and white space instead of wrapping the story inside decorative cards.</p>
-                  </div>
-                </div>
-                <div class="routine-timeline" aria-label="Routine timeline">
-                  <div class="routine-stop"><time>6:30</time>wake up</div>
-                  <div class="routine-stop"><time>7:00</time>have breakfast</div>
-                  <div class="routine-stop"><time>8:00</time>start work</div>
-                  <div class="routine-stop"><time>1:00</time>have lunch</div>
-                  <div class="routine-stop"><time>8:00</time>relax</div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section class="hz-exercise">
-            <div class="hz-exercise-number" aria-hidden="true">2</div>
-            <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction">Match the routine verbs with the pictures.</p>
-              <div class="hz-exercise__body hz-content-grid hz-content-grid--3">
-                <figure style="margin:0"><div class="hz-media-frame" style="height:29mm"><div class="hz-media-placeholder">Photo A</div></div><figcaption class="hz-caption">a. __________</figcaption></figure>
-                <figure style="margin:0"><div class="hz-media-frame" style="height:29mm"><div class="hz-media-placeholder">Photo B</div></div><figcaption class="hz-caption">b. __________</figcaption></figure>
-                <figure style="margin:0"><div class="hz-media-frame" style="height:29mm"><div class="hz-media-placeholder">Photo C</div></div><figcaption class="hz-caption">c. __________</figcaption></figure>
-              </div>
-              <div class="hz-word-bank" style="margin-top:2mm">wake up · have breakfast · start work · have lunch · relax</div>
-            </div>
-          </section>
-
-          <section class="hz-exercise">
-            <div class="hz-exercise-number" aria-hidden="true">3</div>
-            <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction">Work in pairs. What do you do in the morning?</p>
-              <div class="hz-exercise__body hz-writing-lines"><span></span><span></span></div>
-            </div>
-          </section>
-        </section>
-      </div>
-    </main>
-    <footer class="hz-page__footer"><span class="hz-page-code">Horizons A1 · Unit 3 · 3A</span><span class="hz-page-number">31</span></footer>
-  </article>
-
-  <!-- PAGE 2: grammar is a single editorial block, not a dashboard panel. -->
-  <article class="hz-page hz-content hz-unit-3" data-page="32">
-    <main class="hz-page__content">
-      <div class="hz-page-stack">
-        <div class="hz-mode-bar"><span class="hz-mode-bar__title">Language focus</span><span class="hz-mode-bar__descriptor">Present simple (+)</span></div>
-
-        <section class="hz-exercises hz-fill">
-          <section class="hz-exercise">
-            <div class="hz-exercise-number" aria-hidden="true">4</div>
-            <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction">Read the Grammar box. Then complete the sentences.</p>
-              <div class="hz-exercise__body hz-content-grid hz-content-grid--2">
-                <section class="hz-focus-box">
-                  <header class="hz-focus-box__header">Grammar · Present simple (+)</header>
-                  <div class="hz-focus-box__body">
-                    <p>Use the present simple for routines and repeated actions.</p>
-                    <div class="grammar-pairs" style="display:block">
-                      <div><strong>I / You / We / They</strong><span>work in the morning.</span></div>
-                      <div><strong>He / She</strong><span>works in the morning.</span></div>
-                      <div><strong>I</strong><span>have breakfast at 7:00.</span></div>
-                      <div><strong>She</strong><span>has breakfast at 7:00.</span></div>
-                    </div>
-                  </div>
-                </section>
-                <div>
-                  <div class="hz-question"><span class="hz-question__number">1</span><span>I <span class="hz-answer-line"></span> breakfast at 7:00.</span></div>
-                  <div class="hz-question"><span class="hz-question__number">2</span><span>She <span class="hz-answer-line"></span> work at 8:00.</span></div>
-                  <div class="hz-question"><span class="hz-question__number">3</span><span>We <span class="hz-answer-line"></span> home in the afternoon.</span></div>
-                  <div class="hz-question"><span class="hz-question__number">4</span><span>He <span class="hz-answer-line"></span> TV at night.</span></div>
-                  <div class="hz-go-to">Grammar Reference · Present simple · page ---</div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section class="hz-exercise">
-            <div class="hz-exercise-number" aria-hidden="true">5</div>
-            <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction"><span class="hz-audio-badge">▶ 3.2</span> Listen and put the routine in order.</p>
-              <div class="hz-exercise__body hz-content-grid hz-content-grid--2">
-                <table class="hz-data-table">
-                  <thead><tr><th>Order</th><th>Routine</th></tr></thead>
-                  <tbody><tr><td></td><td>have lunch</td></tr><tr><td></td><td>go to work</td></tr><tr><td></td><td>wake up</td></tr><tr><td></td><td>go home</td></tr></tbody>
-                </table>
-                <div class="audio-line">
-                  <div><strong style="font-size:9pt">Audio 3.2</strong><p class="hz-caption">Scan or use the classroom audio pack.</p></div>
-                  <div class="hz-qr-slot">QR<br>3.2</div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section class="hz-exercise">
-            <div class="hz-exercise-number" aria-hidden="true">6</div>
-            <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction">Write three sentences about your routine.</p>
-              <div class="hz-exercise__body hz-writing-lines"><span></span><span></span><span></span></div>
-              <aside class="hz-extra-practice"><span class="hz-extra-practice__label">Extra practice</span><span class="hz-extra-practice__prompt">Tell a classmate about your morning routine.</span></aside>
-            </div>
-          </section>
-        </section>
-      </div>
-    </main>
-    <footer class="hz-page__footer"><span class="hz-page-code">Horizons A1 · Unit 3 · 3A</span><span class="hz-page-number">32</span></footer>
-  </article>
-
-  <!-- PAGE 3: rounded surfaces are reserved for the simulated real-world interface. -->
-  <article class="hz-page hz-content hz-unit-3" data-page="35">
-    <main class="hz-page__content">
-      <div class="hz-page-stack">
-        <header class="hz-lesson-header">
-          <div class="hz-lesson-tab"><span class="hz-lesson-tab__label">Lesson</span><span class="hz-lesson-tab__id">3C</span></div>
-          <div class="hz-lesson-heading">
-            <h1 class="hz-lesson-title">Where do you go?</h1>
-            <div class="hz-objectives"><span class="hz-objectives__item">Wh- questions</span><span class="hz-objectives__item">Adjectives</span></div>
-          </div>
-        </header>
-
-        <section class="hz-exercises hz-fill">
+        <div class="hz-exercises hz-fill">
           <section class="hz-exercise">
             <div class="hz-exercise-number">1</div>
             <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction">Look at the place. Choose two adjectives.</p>
-              <div class="hz-exercise__body hz-content-grid hz-content-grid--2">
-                <figure style="margin:0"><div class="hz-media-frame" style="height:55mm"><div class="hz-media-placeholder">Free licensed place photograph</div></div><figcaption class="hz-caption">Final page uses real raster photography.</figcaption></figure>
-                <div style="align-self:end"><div class="hz-word-bank">busy · quiet · beautiful · expensive · cheap</div><div class="hz-writing-lines"><span></span><span></span></div></div>
+              <p class="hz-exercise__instruction"><span class="hz-audio-badge">▶ 3.1</span> Read and listen.</p>
+              <div class="hz-exercise__body">
+                <figure class="hz-media-stage" style="margin:0;min-height:75mm">
+                  <div class="hz-media-stage__photo" style="min-height:75mm">
+                    <div class="hz-photo-placeholder" style="min-height:75mm">
+                      <span class="hz-photo-placeholder__meta">Wide lifestyle photograph · 16:7 crop</span>
+                    </div>
+                    <div class="hz-photo-scrim"></div>
+                    <div class="hz-photo-overlay">
+                      <span class="hz-photo-overlay__kicker">A day in the life</span>
+                      <h2 class="hz-photo-overlay__title">Morning starts early.</h2>
+                      <p class="hz-photo-overlay__text">Demonstration reading copy sits directly on the image. The final version would use a real person, verified facts and a carefully selected photograph.</p>
+                    </div>
+                    <div class="hz-photo-flag">6:30 a.m.<br>first activity</div>
+                    <div class="hz-photo-index">01</div>
+                  </div>
+                </figure>
+                <p class="demo-note">Overlay demo: functional dark scrim + title + time annotation.</p>
               </div>
             </div>
           </section>
@@ -308,15 +160,92 @@
           <section class="hz-exercise">
             <div class="hz-exercise-number">2</div>
             <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction">Read the reviews. Which place does each person like?</p>
-              <div class="hz-exercise__body review-columns">
-                <article class="review-interface">
-                  <header class="review-interface__top"><span>Jordan M.</span><span class="review-stars">★★★★★</span></header>
-                  <div class="review-interface__body"><div class="place-rating"><strong>4.9</strong><span>Riverside Park<br><span class="review-stars">★★★★★</span></span></div><p class="review-quote">This park is beautiful and quiet. I go here on Sundays.</p></div>
+              <p class="hz-exercise__instruction">Look at the photos. Match them with the routine verbs.</p>
+              <div class="hz-exercise__body">
+                <div class="hz-photo-strip" style="--hz-photo-count:3">
+                  <div class="hz-photo-strip__item">
+                    <div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Breakfast photo</span></div>
+                    <span class="hz-photo-strip__label">A</span>
+                  </div>
+                  <div class="hz-photo-strip__item">
+                    <div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Travel / commute photo</span></div>
+                    <span class="hz-photo-strip__label">B</span>
+                  </div>
+                  <div class="hz-photo-strip__item">
+                    <div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Evening photo</span></div>
+                    <span class="hz-photo-strip__label">C</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">3</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Read the times. Put the routine in order.</p>
+              <div class="hz-exercise__body routine-timeline">
+                <div class="routine-stop"><time>6:30</time>wake up</div>
+                <div class="routine-stop"><time>7:00</time>have breakfast</div>
+                <div class="routine-stop"><time>8:00</time>start work</div>
+                <div class="routine-stop"><time>1:00</time>have lunch</div>
+                <div class="routine-stop"><time>8:00</time>relax</div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer class="hz-page__footer"><span class="hz-page-code">Horizons A1 · 3A</span><span class="hz-page-number">31</span></footer>
+  </article>
+
+  <!-- PAGE 2 — offset copy + review grid + questions -->
+  <article class="hz-page hz-content hz-unit-3" data-page="35">
+    <main class="hz-page__content">
+      <div class="hz-page-stack">
+        <header class="hz-lesson-header">
+          <div class="hz-lesson-tab" aria-label="Lesson 3C"><span class="hz-lesson-tab__label">Lesson</span><span class="hz-lesson-tab__id">3C</span></div>
+          <div class="hz-lesson-heading">
+            <h1 class="hz-lesson-title">Where do you go?</h1>
+            <div class="hz-objectives"><span class="hz-objectives__item">Wh- questions</span><span class="hz-objectives__item">Adjectives</span></div>
+          </div>
+        </header>
+
+        <div class="hz-mode-bar"><span class="hz-mode-bar__title">Real world</span><span class="hz-mode-bar__descriptor">Google Maps reviews</span></div>
+
+        <div class="hz-exercises hz-fill">
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">1</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Look at the place. What adjectives can describe it?</p>
+              <div class="hz-exercise__body">
+                <div class="hz-media-stage hz-media-stage--offset">
+                  <div class="hz-media-stage__photo">
+                    <div class="hz-photo-placeholder" style="min-height:62mm"><span class="hz-photo-placeholder__meta">City / neighborhood photograph</span></div>
+                    <div class="hz-photo-index">A</div>
+                  </div>
+                  <aside class="hz-media-stage__offset-copy">
+                    <p class="hz-new-words">New words</p>
+                    <h3>Busy or quiet?</h3>
+                    <p class="compact-copy">The text block intentionally overlaps the lower-right corner of the future photograph.</p>
+                  </aside>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">2</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Read the reviews. Which place sounds better for you?</p>
+              <div class="hz-exercise__body review-row">
+                <article class="review-mini">
+                  <strong>★★★★★ Jordan</strong>
+                  <p>It’s beautiful and quiet. I go there on Sundays. There are trees, cafés and a nice walking path.</p>
                 </article>
-                <article class="review-interface">
-                  <header class="review-interface__top"><span>Casey R.</span><span class="review-stars">★★★★☆</span></header>
-                  <div class="review-interface__body"><div class="place-rating"><strong>4.2</strong><span>Central Market<br><span class="review-stars">★★★★☆</span></span></div><p class="review-quote">The market is busy, but the food is cheap. I go with my family.</p></div>
+                <article class="review-mini">
+                  <strong>★★★★☆ Casey</strong>
+                  <p>It’s busy, but the food is good and cheap. I usually go there with my family.</p>
                 </article>
               </div>
             </div>
@@ -326,32 +255,47 @@
             <div class="hz-exercise-number">3</div>
             <div class="hz-exercise__content">
               <p class="hz-exercise__instruction">Complete the questions.</p>
-              <div class="hz-exercise__body hz-question-grid hz-question-grid--3">
-                <div class="hz-question"><span class="hz-question__number">1</span><span><span class="hz-answer-line"></span> does Jordan go on Sundays?</span></div>
-                <div class="hz-question"><span class="hz-question__number">2</span><span><span class="hz-answer-line"></span> does Casey go with?</span></div>
-                <div class="hz-question"><span class="hz-question__number">3</span><span><span class="hz-answer-line"></span> is the market?</span></div>
+              <div class="hz-exercise__body hz-question-grid hz-question-grid--2 question-tight">
+                <div class="hz-question"><strong class="hz-question__number">1</strong><span><span class="hz-answer-line"></span> does Jordan go on Sundays?</span></div>
+                <div class="hz-question"><strong class="hz-question__number">2</strong><span><span class="hz-answer-line"></span> does Casey go with?</span></div>
+                <div class="hz-question"><strong class="hz-question__number">3</strong><span><span class="hz-answer-line"></span> is the market?</span></div>
+                <div class="hz-question"><strong class="hz-question__number">4</strong><span><span class="hz-answer-line"></span> place do you prefer?</span></div>
               </div>
             </div>
           </section>
-        </section>
+        </div>
       </div>
     </main>
-    <footer class="hz-page__footer"><span class="hz-page-code">Horizons A1 · Unit 3 · 3C</span><span class="hz-page-number">35</span></footer>
+    <footer class="hz-page__footer"><span class="hz-page-code">Horizons A1 · 3C</span><span class="hz-page-number">35</span></footer>
   </article>
 
-  <!-- PAGE 4: review page keeps the same exercise sequence rather than a tile dashboard. -->
-  <article class="hz-page hz-content hz-unit-3" data-page="39">
+  <!-- PAGE 3 — collage + quote overlap -->
+  <article class="hz-page hz-content hz-unit-5" data-page="51">
     <main class="hz-page__content">
       <div class="hz-page-stack">
-        <header class="hz-review-header"><div class="hz-review-header__unit">3</div><h1 class="hz-review-header__title">Unit Review</h1></header>
+        <header class="hz-lesson-header">
+          <div class="hz-lesson-tab" aria-label="Lesson 5A"><span class="hz-lesson-tab__label">Lesson</span><span class="hz-lesson-tab__id">5A</span></div>
+          <div class="hz-lesson-heading">
+            <h1 class="hz-lesson-title">What are you wearing?</h1>
+            <div class="hz-objectives"><span class="hz-objectives__item">Clothes and accessories</span><span class="hz-objectives__item">Present continuous</span></div>
+          </div>
+        </header>
 
-        <section class="hz-exercises hz-fill">
+        <div class="hz-mode-bar"><span class="hz-mode-bar__title">Reading</span><span class="hz-mode-bar__descriptor">A lucky thrift shop find</span></div>
+
+        <div class="hz-exercises hz-fill">
           <section class="hz-exercise">
             <div class="hz-exercise-number">1</div>
             <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction">Complete the daily routine words.</p>
-              <div class="hz-exercise__body hz-question-grid hz-question-grid--3">
-                <div>1 wake <span class="hz-answer-line"></span></div><div>2 have <span class="hz-answer-line"></span></div><div>3 go <span class="hz-answer-line"></span></div><div>4 start <span class="hz-answer-line"></span></div><div>5 come <span class="hz-answer-line"></span></div><div>6 relax <span class="hz-answer-line"></span></div>
+              <p class="hz-exercise__instruction">Look at the photos. What clothes can you name?</p>
+              <div class="hz-exercise__body">
+                <div class="hz-media-collage">
+                  <div class="hz-media-collage__main hz-photo-placeholder" style="min-height:60mm"><span class="hz-photo-placeholder__meta">Main thrift-store portrait</span></div>
+                  <div class="hz-media-collage__inset hz-media-collage__inset--top"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Detail crop</span></div></div>
+                  <div class="hz-media-collage__inset hz-media-collage__inset--bottom"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Accessory crop</span></div></div>
+                  <blockquote class="hz-photo-quote">“I’m wearing my favorite jacket today.”<cite>placeholder quote treatment</cite></blockquote>
+                </div>
+                <p class="demo-note">Collage demo: one dominant photo, two small independent crops and a quote crossing the bottom edge.</p>
               </div>
             </div>
           </section>
@@ -359,10 +303,10 @@
           <section class="hz-exercise">
             <div class="hz-exercise-number">2</div>
             <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction">Choose the correct present simple form.</p>
-              <div class="hz-exercise__body review-columns">
-                <div class="review-section"><h3>Set A</h3><ol><li>She work / works at 8:00.</li><li>We have / has lunch at 1:00.</li><li>He go / goes home at 5:00.</li></ol></div>
-                <div class="review-section"><h3>Set B</h3><ol start="4"><li>I watch / watches TV at night.</li><li>My father start / starts early.</li><li>They relax / relaxes at home.</li></ol></div>
+              <p class="hz-exercise__instruction">Read the story. Circle the clothes in the photos.</p>
+              <div class="hz-exercise__body fashion-notes">
+                <p class="compact-copy">This demonstration paragraph shows how reading text can remain plain and editorial next to a strong visual feature. The final story would follow the locked syllabus and use original A1 text.</p>
+                <p class="fashion-caption">Visual note: use close crops of textures, labels, shoes, bags or accessories instead of adding decorative shapes.</p>
               </div>
             </div>
           </section>
@@ -370,27 +314,85 @@
           <section class="hz-exercise">
             <div class="hz-exercise-number">3</div>
             <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction">Read the short review and answer the questions.</p>
-              <div class="hz-exercise__body hz-content-grid hz-content-grid--2">
-                <div class="hz-note">“I go to Green Park after work. It is quiet and beautiful. The café is small, but the coffee is good.”</div>
-                <div><div class="hz-question">1. Where does the writer go?</div><div class="hz-question">2. When does the writer go there?</div><div class="hz-question">3. What is the park like?</div></div>
+              <p class="hz-exercise__instruction">Complete the sentences with the present continuous.</p>
+              <div class="hz-exercise__body hz-question-grid hz-question-grid--2">
+                <div class="hz-question"><strong class="hz-question__number">1</strong><span>She <span class="hz-answer-line"></span> a jacket.</span></div>
+                <div class="hz-question"><strong class="hz-question__number">2</strong><span>They <span class="hz-answer-line"></span> for clothes.</span></div>
+                <div class="hz-question"><strong class="hz-question__number">3</strong><span>He <span class="hz-answer-line"></span> a hat.</span></div>
+                <div class="hz-question"><strong class="hz-question__number">4</strong><span>I <span class="hz-answer-line"></span> my new shoes.</span></div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer class="hz-page__footer"><span class="hz-page-code">Horizons A1 · 5A</span><span class="hz-page-number">51</span></footer>
+  </article>
+
+  <!-- PAGE 4 — lower-third band overlay + weather image strip -->
+  <article class="hz-page hz-content hz-unit-8" data-page="79">
+    <main class="hz-page__content">
+      <div class="hz-page-stack">
+        <header class="hz-lesson-header">
+          <div class="hz-lesson-tab" aria-label="Lesson 8B"><span class="hz-lesson-tab__label">Lesson</span><span class="hz-lesson-tab__id">8B</span></div>
+          <div class="hz-lesson-heading">
+            <h1 class="hz-lesson-title">It’s so cold!</h1>
+            <div class="hz-objectives"><span class="hz-objectives__item">Weather and seasons</span><span class="hz-objectives__item">Should / shouldn’t</span></div>
+          </div>
+        </header>
+
+        <div class="hz-mode-bar"><span class="hz-mode-bar__title">Reading</span><span class="hz-mode-bar__descriptor">Extreme weather news</span></div>
+
+        <div class="hz-exercises hz-fill">
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">1</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Look at the photo. What is the weather like?</p>
+              <div class="hz-exercise__body">
+                <div class="hz-media-stage hz-media-stage--band" style="min-height:66mm">
+                  <div class="hz-media-stage__photo" style="min-height:66mm">
+                    <div class="hz-photo-placeholder" style="min-height:66mm"><span class="hz-photo-placeholder__meta">Extreme-weather news photograph</span></div>
+                  </div>
+                  <div class="hz-photo-band">
+                    <span class="hz-photo-band__label">Weather brief</span>
+                    <span class="hz-photo-band__text">A lower-third information strip can carry the lead sentence while keeping the photograph dominant.</span>
+                  </div>
+                  <div class="hz-photo-index">8B</div>
+                </div>
               </div>
             </div>
           </section>
 
           <section class="hz-exercise">
-            <div class="hz-exercise-number">4</div>
+            <div class="hz-exercise-number">2</div>
             <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction">Write four sentences about your week.</p>
-              <div class="hz-exercise__body hz-writing-lines"><span></span><span></span><span></span><span></span></div>
+              <p class="hz-exercise__instruction">Match the weather words with the photos.</p>
+              <div class="hz-exercise__body">
+                <div class="hz-photo-strip" style="--hz-photo-count:4">
+                  <div class="hz-photo-strip__item"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Snow</span></div><span class="hz-photo-strip__label">1</span></div>
+                  <div class="hz-photo-strip__item"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Storm</span></div><span class="hz-photo-strip__label">2</span></div>
+                  <div class="hz-photo-strip__item"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Heat</span></div><span class="hz-photo-strip__label">3</span></div>
+                  <div class="hz-photo-strip__item"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Rain</span></div><span class="hz-photo-strip__label">4</span></div>
+                </div>
+              </div>
             </div>
           </section>
-        </section>
 
-        <div class="self-check"><strong>Self-check</strong><span>I can describe routines.</span><span>I can ask Wh- questions.</span><span>I can describe places.</span></div>
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">3</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Read the situation. What should people do?</p>
+              <div class="hz-exercise__body weather-facts">
+                <div class="weather-fact"><strong>Cold</strong>People should wear warm clothes.</div>
+                <div class="weather-fact"><strong>Storm</strong>People shouldn’t stay outside.</div>
+                <div class="weather-fact"><strong>Heat</strong>People should drink water.</div>
+              </div>
+            </div>
+          </section>
+        </div>
       </div>
     </main>
-    <footer class="hz-page__footer"><span class="hz-page-code">Horizons A1 · Unit 3 · Review</span><span class="hz-page-number">39</span></footer>
+    <footer class="hz-page__footer"><span class="hz-page-code">Horizons A1 · 8B</span><span class="hz-page-number">79</span></footer>
   </article>
 
 </body>
