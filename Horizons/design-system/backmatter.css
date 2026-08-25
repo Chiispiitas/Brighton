@@ -1,0 +1,151 @@
+/* Horizons A1 — back-matter system
+   Functional and denser than lesson pages while retaining Horizons typography. */
+
+.hz-backmatter-page .hz-page__content {
+  inset-top: 11mm;
+}
+
+.hz-backmatter-head {
+  display: grid;
+  grid-template-columns: 18mm 1fr auto;
+  gap: 4mm;
+  align-items: end;
+  padding-bottom: 3mm;
+  border-bottom: 1mm solid var(--hz-unit);
+}
+
+.hz-backmatter-head__unit {
+  color: var(--hz-unit);
+  font-size: 24pt;
+  font-weight: var(--hz-fw-black);
+  line-height: .85;
+}
+
+.hz-backmatter-head__title {
+  margin: 0;
+  font-size: 21pt;
+  font-weight: var(--hz-fw-black);
+  letter-spacing: -.03em;
+}
+
+.hz-backmatter-head__type {
+  color: var(--hz-muted);
+  font-size: 6.5pt;
+  font-weight: var(--hz-fw-bold);
+  letter-spacing: .09em;
+  text-transform: uppercase;
+}
+
+.hz-vocab-section {
+  padding: 3mm 0;
+  border-bottom: var(--hz-border) solid var(--hz-line);
+}
+
+.hz-vocab-section__title {
+  margin: 0 0 2mm;
+  color: var(--hz-unit-dark);
+  font-size: 9pt;
+  font-weight: var(--hz-fw-black);
+  letter-spacing: .04em;
+  text-transform: uppercase;
+}
+
+.hz-vocab-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.6mm 5mm;
+}
+
+.hz-vocab-item {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 1.5mm;
+  align-items: baseline;
+  min-width: 0;
+  font-size: 8.1pt;
+}
+
+.hz-vocab-item__index {
+  color: var(--hz-unit-dark);
+  font-size: 6.8pt;
+  font-weight: var(--hz-fw-black);
+}
+
+.hz-vocab-item__word { font-weight: var(--hz-fw-semibold); }
+
+.hz-vocab-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2mm;
+  margin-top: 2mm;
+}
+
+.hz-vocab-photo-grid figure { margin: 0; }
+.hz-vocab-photo-grid .hz-photo-placeholder { min-height: 28mm; }
+
+.hz-grammar-reference {
+  display: grid;
+  grid-template-columns: 44mm minmax(0, 1fr);
+  gap: 6mm;
+  padding: 3.5mm 0;
+  border-bottom: var(--hz-border) solid var(--hz-line);
+}
+
+.hz-grammar-reference__name {
+  color: var(--hz-unit-dark);
+  font-size: 12pt;
+  font-weight: var(--hz-fw-black);
+  line-height: 1.08;
+}
+
+.hz-grammar-reference__note {
+  margin-top: 1.5mm;
+  color: var(--hz-muted);
+  font-size: 7pt;
+  line-height: 1.35;
+}
+
+.hz-grammar-reference__content {
+  min-width: 0;
+  font-size: 8.5pt;
+}
+
+.hz-grammar-example-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 2mm 5mm;
+}
+
+.hz-grammar-formula {
+  padding: 1.7mm 2mm;
+  border-left: .8mm solid var(--hz-unit);
+  background: var(--hz-unit-soft);
+  font-weight: var(--hz-fw-semibold);
+}
+
+.hz-reference-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 8pt;
+}
+
+.hz-reference-table th,
+.hz-reference-table td {
+  padding: 1.5mm 2mm;
+  border-bottom: var(--hz-border) solid var(--hz-line);
+  text-align: left;
+}
+
+.hz-reference-table th {
+  color: var(--hz-unit-dark);
+  font-size: 6.6pt;
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.hz-backmatter-crossref {
+  margin-top: 1.5mm;
+  color: var(--hz-reference);
+  font-size: 6.6pt;
+  font-weight: var(--hz-fw-bold);
+}
