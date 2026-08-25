@@ -1,12 +1,12 @@
 # Horizons component contracts
 
-These patterns define how new Horizons pages call the native HTML5/CSS design system. They are structural contracts, not finished lesson content.
+These patterns define how new Horizons pages call the editorial HTML5/CSS system. They are structural contracts, not finished lesson content.
 
 ## Non-negotiable exercise-flow rule
 
-**All exercises on a page must live in one vertical column and appear in numerical order.**
+**All numbered exercises on a page live in one vertical sequence and appear in numerical order.**
 
-Do not place Exercise 1 beside Exercise 2, or Exercise 4 in one page column while Exercise 5 starts in another. The exercise lane is always linear and vertical.
+Do not place Exercise 1 beside Exercise 2, or Exercise 4 in one page column while Exercise 5 starts in another.
 
 Two- or three-column layouts are allowed **inside an exercise body only**, for example:
 
@@ -14,28 +14,27 @@ Two- or three-column layouts are allowed **inside an exercise body only**, for e
 - answer choices;
 - vocabulary items;
 - image matching;
-- short profile cards;
-- a photo beside a reading;
-- a table beside an audio/QR panel.
+- profiles;
+- a photograph beside a reading;
+- a table beside an audio/QR area.
 
-Use:
+Use `.hz-question-grid--2/--3` and `.hz-content-grid--2/--3` inside an exercise. Never use them to place sibling `.hz-exercise` elements side by side.
 
-- `.hz-question-grid--2`
-- `.hz-question-grid--3`
-- `.hz-content-grid--2`
-- `.hz-content-grid--3`
-- `.hz-inset-grid--2`
-- `.hz-inset-grid--3`
+## Editorial rule
 
-Never use those containers to place sibling `.hz-exercise` elements side by side.
+Do not assume that content needs a card, pill, gradient, shadow or decorative container.
+
+The default page language is typography + photography + white space + thin rules. Containers are reserved for content that genuinely benefits from them, especially grammar/pronunciation focus areas and simulated real-world interfaces.
+
+Bespoke CSS for a distinctive lesson feature is acceptable and should not automatically be promoted into a global component.
 
 ## Page
 
 ```html
-<article class="hz-page hz-content" data-page="31">
+<article class="hz-page hz-content hz-unit-1" data-page="1">
   <main class="hz-page__content">
     <div class="hz-page-stack">
-      <!-- page header / mode bar -->
+      <!-- header / unnumbered editorial matter -->
       <div class="hz-exercises" aria-label="Lesson exercises">
         <!-- Exercise 1 -->
         <!-- Exercise 2 -->
@@ -44,13 +43,13 @@ Never use those containers to place sibling `.hz-exercise` elements side by side
     </div>
   </main>
   <footer class="hz-page__footer">
-    <span class="hz-page-code">Horizons A1 · 3A</span>
-    <span class="hz-page-number">31</span>
+    <span class="hz-page-code">Horizons A1 · Unit 1 · 1A</span>
+    <span class="hz-page-number">1</span>
   </footer>
 </article>
 ```
 
-There are no mirrored left/right page classes.
+Use one `.hz-unit-*` identity on a normal page. Avoid mixing unit colors.
 
 ## Lesson header
 
@@ -60,7 +59,6 @@ There are no mirrored left/right page classes.
     <span class="hz-lesson-tab__label">Lesson</span>
     <span class="hz-lesson-tab__id">1A</span>
   </div>
-
   <div class="hz-lesson-heading">
     <h1 class="hz-lesson-title">Hi, I’m Bri!</h1>
     <div class="hz-objectives">
@@ -68,11 +66,6 @@ There are no mirrored left/right page classes.
       <span class="hz-objectives__item">Alphabet</span>
       <span class="hz-objectives__item">Numbers</span>
     </div>
-  </div>
-
-  <div class="hz-lesson-signal" aria-hidden="true">
-    <span class="hz-lesson-signal__label">Language</span>
-    <span class="hz-lesson-signal__rail"><span></span><span></span><span></span></span>
   </div>
 </header>
 ```
@@ -97,7 +90,7 @@ Titles and objectives must come from the locked syllabus or frozen pre-existing 
 
 Every production exercise receives a permanent semantic ID. Audio track IDs remain text, not artwork.
 
-## Two-column questions inside one exercise
+## Internal question columns
 
 ```html
 <section class="hz-exercise" id="HZN-A1-U01-LA-E04">
@@ -114,11 +107,9 @@ Every production exercise receives a permanent semantic ID. Audio track IDs rema
 </section>
 ```
 
-This is the preferred way to save space without breaking the single exercise lane.
+This saves space without breaking the vertical exercise sequence.
 
-## Feature panel inside one exercise
-
-A reading may feel visually rich without becoming a separate page column:
+## Editorial photo + text feature
 
 ```html
 <div class="hz-exercise__body">
@@ -126,34 +117,32 @@ A reading may feel visually rich without becoming a separate page column:
     <figure class="hz-feature-panel__media">...</figure>
     <div class="hz-feature-panel__copy">
       <h2 class="hz-feature-panel__title">A day in the life</h2>
-      <p>...</p>
+      <p class="hz-reading-copy">...</p>
     </div>
   </article>
 </div>
 ```
 
-The media/text split belongs to Exercise 1; Exercise 2 still starts below it.
+The split belongs to one exercise; the next numbered exercise still starts below it.
 
-## Skill / mode bar
+## Skill line
 
 ```html
 <div class="hz-mode-bar" aria-label="Reading focus">
-  <span class="hz-mode-bar__icon">R</span>
   <span class="hz-mode-bar__title">Reading</span>
   <span class="hz-mode-bar__descriptor">Finding simple information</span>
 </div>
 ```
 
-Skill labels are part of the Horizons identity, but their geometry and palette are original to this system.
+Use only when the skill label is pedagogically useful.
 
 ## New Words
 
 ```html
-<span class="hz-new-words">
-  <span class="hz-new-words__icon">+</span>
-  New words
-</span>
+<span class="hz-new-words">New words</span>
 ```
+
+Do not turn ordinary labels into decorative badges by default.
 
 ## Grammar or pronunciation focus
 
@@ -166,7 +155,7 @@ Skill labels are part of the Horizons identity, but their geometry and palette a
 </section>
 ```
 
-Use the same component for pronunciation or other explicit language-focus areas.
+Use the same restrained component for pronunciation or another explicit language-focus area.
 
 ## Cross-reference
 
@@ -185,6 +174,19 @@ Page numbers may remain placeholders until pagination is final.
 </aside>
 ```
 
+## Real-world UI recreation
+
+Rounded cards and shadows are appropriate when reproducing the *idea* of an app, review, ticket, form or similar interface:
+
+```html
+<article class="hz-ui-card hz-no-break" aria-label="Sample interface">
+  <header class="hz-ui-card__header">Reviews</header>
+  <div class="hz-ui-card__body">...</div>
+</article>
+```
+
+Prefer original semantic HTML/CSS recreations over copied proprietary interface artwork when the educational task does not require an actual screenshot.
+
 ## Raster image
 
 ```html
@@ -198,31 +200,6 @@ Page numbers may remain placeholders until pagination is final.
 
 Production images must follow `asset-policy.md`.
 
-## Native UI recreation
-
-```html
-<article class="hz-ui-card hz-no-break" aria-label="Sample interface">
-  <header class="hz-ui-card__header">Reviews</header>
-  <div class="hz-ui-card__body">...</div>
-</article>
-```
-
-Prefer original HTML/CSS recreations over copied proprietary screenshots when the educational task does not require an actual screenshot.
-
-## Visual inspiration boundary
-
-Reference coursebooks may inform general editorial principles such as:
-
-- visible lesson identity;
-- strong information hierarchy;
-- skill/focus labels;
-- varied media scale;
-- compact but readable exercise rhythm;
-- occasional full-width feature blocks;
-- distinct grammar, pronunciation, speaking, and review surfaces.
-
-Do **not** reproduce a reference book’s exact palette, tab shape, page chrome, exercise iconography, header geometry, typography, or page composition. Horizons uses its own indigo/aqua/coral/sun palette, asymmetric rounded geometry, horizon rails, offset lesson stamp, vertical exercise spine, and semantic HTML5 composition.
-
 ## Content protection
 
-The visual redesign does not authorize content changes. The syllabus and all pre-existing Student's Book pages remain frozen unless the author explicitly requests a change.
+The visual redesign does not authorize content changes. The syllabus and all pre-existing Student's Book pages remain frozen unless explicitly changed by the author.
