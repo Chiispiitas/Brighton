@@ -1,51 +1,45 @@
-/* Horizons A1 — native HTML/CSS design tokens
-   Original visual system for the new HTML master.
-   Inspired by modern editorial learning interfaces, not by any one coursebook.
-   System fonts only; no bundled or remote font dependency. */
+/* Horizons A1 — editorial HTML/CSS design tokens
+   Print-first, restrained and deliberately non-dashboard-like.
+   The book uses one dominant unit color at a time; supporting color is rare. */
 
 :root {
-  /* Core ink / paper */
-  --hz-ink: #182038;
-  --hz-ink-soft: #35405f;
-  --hz-muted: #6f7891;
-  --hz-paper: #fffdf8;
+  /* Paper and type */
+  --hz-paper: #fffefa;
   --hz-surface: #ffffff;
-  --hz-line: #dde2eb;
-  --hz-line-strong: #b7c0d3;
+  --hz-ink: #202124;
+  --hz-ink-soft: #414449;
+  --hz-muted: #74777d;
+  --hz-line: #d8d9dc;
+  --hz-line-strong: #a8abb0;
+  --hz-wash: #f3f2ee;
 
-  /* Signature Horizons palette */
-  --hz-indigo: #4457d9;
-  --hz-indigo-dark: #2e3aa7;
-  --hz-aqua: #3fc7b6;
-  --hz-aqua-dark: #167d74;
-  --hz-coral: #ff6b62;
-  --hz-coral-dark: #c8433d;
-  --hz-sun: #f7c84b;
-  --hz-plum: #8d5ed6;
-  --hz-sky: #66b7f2;
+  /* Default unit identity. Override with .hz-unit-* on a page. */
+  --hz-unit: #167f82;
+  --hz-unit-dark: #0c5e61;
+  --hz-unit-soft: #e9f3f2;
 
-  /* Soft editorial surfaces */
-  --hz-soft-indigo: #eef0ff;
-  --hz-soft-aqua: #e8f9f6;
-  --hz-soft-coral: #fff0ed;
-  --hz-soft-sun: #fff8dc;
-  --hz-soft-plum: #f3edff;
-  --hz-soft-sky: #edf7ff;
-  --hz-soft-gray: #f5f6f9;
+  /* Small functional accents — not a page-wide rainbow palette. */
+  --hz-audio: #355f9f;
+  --hz-practice: #a44d3c;
+  --hz-reference: #80622b;
+  --hz-success: #3f765d;
 
-  /* Semantic aliases */
-  --hz-primary: var(--hz-indigo);
-  --hz-primary-dark: var(--hz-indigo-dark);
-  --hz-accent: var(--hz-aqua);
-  --hz-accent-dark: var(--hz-aqua-dark);
-  --hz-success: #2f8068;
-  --hz-warning: #94651a;
+  /* Suggested unit colors. Each page should normally use only its unit color. */
+  --hz-unit-1: #167f82;
+  --hz-unit-2: #ba6a2d;
+  --hz-unit-3: #426a9e;
+  --hz-unit-4: #8b5a7b;
+  --hz-unit-5: #9a6538;
+  --hz-unit-6: #39786a;
+  --hz-unit-7: #866345;
+  --hz-unit-8: #526b91;
 
-  /* Native typography */
+  /* Native typography — no remote/font-file dependency. */
   --hz-font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  --hz-font-serif: ui-serif, Georgia, "Times New Roman", serif;
   --hz-font-body: var(--hz-font-sans);
   --hz-font-display: var(--hz-font-sans);
-  --hz-font-ui: var(--hz-font-sans);
+  --hz-font-reading: var(--hz-font-serif);
 
   /* Type scale */
   --hz-fs-2xs: 7pt;
@@ -54,23 +48,21 @@
   --hz-fs-body: 10pt;
   --hz-fs-md: 11.5pt;
   --hz-fs-lg: 14pt;
-  --hz-fs-xl: 18pt;
-  --hz-fs-2xl: 25pt;
-  --hz-fs-lesson-title: 30pt;
-  --hz-fs-lesson-id: 15pt;
+  --hz-fs-xl: 19pt;
+  --hz-fs-2xl: 28pt;
+  --hz-fs-lesson-title: 31pt;
+  --hz-fs-lesson-id: 13pt;
 
-  /* Font weights */
   --hz-fw-regular: 400;
-  --hz-fw-medium: 550;
-  --hz-fw-semibold: 650;
-  --hz-fw-bold: 760;
-  --hz-fw-black: 850;
+  --hz-fw-medium: 520;
+  --hz-fw-semibold: 620;
+  --hz-fw-bold: 720;
+  --hz-fw-black: 820;
 
-  /* Line heights */
-  --hz-lh-tight: 1.04;
-  --hz-lh-snug: 1.2;
-  --hz-lh-body: 1.4;
-  --hz-lh-relaxed: 1.56;
+  --hz-lh-tight: 1.05;
+  --hz-lh-snug: 1.22;
+  --hz-lh-body: 1.42;
+  --hz-lh-reading: 1.5;
 
   /* Spacing */
   --hz-space-1: 1mm;
@@ -83,30 +75,32 @@
   --hz-space-10: 10mm;
   --hz-space-12: 12mm;
 
-  /* Geometry: asymmetric editorial surfaces */
-  --hz-radius-xs: 1.5mm;
-  --hz-radius-sm: 2.5mm;
-  --hz-radius-md: 4mm;
-  --hz-radius-lg: 7mm;
-  --hz-radius-xl: 11mm;
-  --hz-radius-pill: 999px;
-  --hz-border: 0.3mm;
-  --hz-border-strong: 0.55mm;
+  /* Geometry: mostly square; noticeable rounding is reserved for real UI. */
+  --hz-radius-xs: .7mm;
+  --hz-radius-sm: 1.2mm;
+  --hz-radius-md: 2mm;
+  --hz-radius-ui: 4mm;
+  --hz-border: .28mm;
+  --hz-border-strong: .55mm;
 
-  /* Component dimensions */
-  --hz-exercise-marker-size: 8.5mm;
-  --hz-icon-size-sm: 4mm;
-  --hz-icon-size-md: 5.5mm;
-  --hz-answer-line: 0.28mm;
-  --hz-rail-width: 2.2mm;
+  --hz-exercise-marker-size: 9mm;
+  --hz-answer-line: .28mm;
 
-  /* Effects — restrained and print-safe */
-  --hz-shadow-card: 0 1mm 3mm rgb(24 32 56 / 8%);
-  --hz-shadow-float: 0 1.5mm 5mm rgb(24 32 56 / 11%);
+  /* Effects are intentionally minimal. */
+  --hz-shadow-ui: 0 .8mm 2.5mm rgb(32 33 36 / 10%);
 
-  /* Layering */
   --hz-z-base: 1;
   --hz-z-content: 10;
   --hz-z-label: 20;
   --hz-z-overlay: 30;
 }
+
+/* Unit identity classes: one dominant color per unit. */
+.hz-unit-1 { --hz-unit: var(--hz-unit-1); --hz-unit-dark: #0c5e61; --hz-unit-soft: #e9f3f2; }
+.hz-unit-2 { --hz-unit: var(--hz-unit-2); --hz-unit-dark: #884b1d; --hz-unit-soft: #f7eee6; }
+.hz-unit-3 { --hz-unit: var(--hz-unit-3); --hz-unit-dark: #2d4c75; --hz-unit-soft: #edf1f6; }
+.hz-unit-4 { --hz-unit: var(--hz-unit-4); --hz-unit-dark: #68405b; --hz-unit-soft: #f5eef3; }
+.hz-unit-5 { --hz-unit: var(--hz-unit-5); --hz-unit-dark: #704523; --hz-unit-soft: #f6f0ea; }
+.hz-unit-6 { --hz-unit: var(--hz-unit-6); --hz-unit-dark: #27594e; --hz-unit-soft: #ebf3f0; }
+.hz-unit-7 { --hz-unit: var(--hz-unit-7); --hz-unit-dark: #62472f; --hz-unit-soft: #f4f0eb; }
+.hz-unit-8 { --hz-unit: var(--hz-unit-8); --hz-unit-dark: #394c6b; --hz-unit-soft: #eef1f5; }
