@@ -45,7 +45,7 @@ window.BRIGHTON_TEST_DATA = {
       unit: "5-8",
       instructions: "Choose the correct answer: a, b, or c.",
       questions: [
-        q(17, "It's really cold – put your gloves, hat, and ________ on.", "scarf", "coat", "sweater"),
+        q(17, "It's really cold – put your gloves, hat, and ________ on.", "shorts", "coat", "sandals"),
         q(18, "The last day of the fourth month is the ________ of April.", "twentieth", "thirtieth", "thirteen"),
         q(19, "I have a lot of cabinets and ________ in my room for my books.", "stairs", "sofas", "shelves"),
         q(20, "I like ________ furniture, but my parents prefer traditional styles.", "modern", "metal", "messy"),
@@ -64,7 +64,7 @@ window.BRIGHTON_TEST_DATA = {
         q(33, "Choose the corrected sentence.", "They didn't enjoyed the concert.", "They didn't enjoy the concert.", "They don't enjoyed the concert."),
         q(34, "Choose the corrected sentence.", "There aren't many pasta for dinner.", "There isn't much pastas for dinner.", "There isn't much pasta for dinner."),
         q(35, "I hate watching soccer. It's really ________. I go to sleep when I watch it because I'm not interested.", "bored", "boring", "funny"),
-        q(36, "Lima is the ________ city of Peru.", "capital", "biggest", "center"),
+        q(36, "Lima is the ________ city of Peru.", "capital", "smallest", "center"),
         q(37, "Mia likes visiting her grandparents, but ________ house is very small.", "her", "their", "our"),
         q(38, "“Where's my phone?” “________'s in the living room.”", "It", "Its", "It's"),
         q(39, "Liu always goes running ________ breakfast at 5:30. It's the first thing she does.", "after", "during", "before"),
