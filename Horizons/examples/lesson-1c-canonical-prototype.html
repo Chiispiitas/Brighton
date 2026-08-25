@@ -1,0 +1,651 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Horizons A1 — Lesson 1C Canonical Prototype</title>
+  <link rel="stylesheet" href="../shell/a4-shell.css">
+  <link rel="stylesheet" href="../shell/print.css" media="print">
+  <style>
+    /*
+      LESSON 1C CANONICAL PROTOTYPE
+      -----------------------------
+      Page 9 reproduces the frozen Student's Book content exactly while adapting
+      the composition to the current canonical Horizons style.
+
+      The frozen source has no completed second page for Lesson 1C. Page 10 is
+      therefore newly authored to complete the lesson while staying inside the
+      locked focus: Countries + Adjectives. It follows the canonical Lesson C
+      rhythm: short vocabulary-focused activities, recycling, and pairwork.
+
+      Final photography is represented by crop-aware placeholders.
+    */
+
+    .l1c-page .hz-page__content { overflow: hidden; }
+    .l1c-page .hz-page-stack { gap: 2.2mm; }
+    .l1c-page .hz-lesson-header { padding-bottom: 3mm; }
+    .l1c-page .hz-exercises { gap: .2mm; }
+    .l1c-page .hz-exercise { padding: 1.35mm 0 1.95mm; }
+    .l1c-page .hz-exercise__body { margin-top: 1.35mm; }
+    .l1c-page .hz-exercise__instruction { font-size: 8.9pt; }
+    .l1c-target { color: var(--hz-unit-dark); font-weight: var(--hz-fw-black); }
+
+    .l1c-track {
+      display: inline-flex;
+      align-items: center;
+      margin-right: 1.35mm;
+      padding: .6mm 1.15mm;
+      background: var(--hz-audio);
+      color: #fff;
+      font-size: 6.4pt;
+      font-weight: var(--hz-fw-black);
+      line-height: 1;
+      vertical-align: .35mm;
+    }
+
+    /* ------------------------------------------------------------------
+       PAGE 9 — frozen source adapted into the canonical design
+       ------------------------------------------------------------------ */
+
+    .l1c-country-stage {
+      position: relative;
+      padding-top: .6mm;
+      isolation: isolate;
+    }
+
+    .l1c-country-stage::before {
+      content: "FROM?";
+      position: absolute;
+      z-index: -1;
+      right: -1mm;
+      top: -7mm;
+      color: var(--hz-unit-soft);
+      font-size: 43pt;
+      font-weight: var(--hz-fw-black);
+      line-height: 1;
+      letter-spacing: -.06em;
+    }
+
+    .l1c-country-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 4mm;
+      margin-bottom: 2mm;
+    }
+
+    .l1c-country-bank {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1mm 4.3mm;
+      padding: 1.8mm 2.7mm;
+      border-left: 1mm solid var(--hz-unit);
+      background: var(--hz-wash);
+      color: var(--hz-unit-dark);
+      font-size: 7.5pt;
+      font-weight: var(--hz-fw-bold);
+    }
+
+    .l1c-celebrities {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 2.2mm;
+      align-items: start;
+    }
+
+    .l1c-celebrity { min-width: 0; margin: 0; }
+
+    .l1c-celebrity__photo {
+      position: relative;
+      height: 35mm;
+      overflow: hidden;
+      background: var(--hz-wash);
+      clip-path: polygon(0 0, 100% 0, 100% 91%, 88% 100%, 0 100%);
+    }
+
+    .l1c-celebrity__photo .hz-photo-placeholder {
+      min-height: 35mm;
+      font-size: 4.7pt;
+      letter-spacing: .06em;
+    }
+
+    .l1c-celebrity__photo .hz-photo-placeholder::before { inset: 2.3mm; }
+    .l1c-celebrity__photo .hz-photo-placeholder::after { width: 20mm; }
+    .l1c-celebrity__photo .hz-photo-placeholder__meta { padding: .7mm 1mm; }
+
+    .l1c-celebrity__caption {
+      display: grid;
+      grid-template-columns: 4mm 1fr;
+      gap: .7mm;
+      margin-top: 1.25mm;
+      font-size: 6.35pt;
+      font-weight: var(--hz-fw-black);
+      line-height: 1.1;
+    }
+
+    .l1c-celebrity__caption b { color: var(--hz-unit-dark); }
+
+    .l1c-celebrity__line {
+      display: block;
+      height: 6mm;
+      margin-top: .6mm;
+      border-bottom: .28mm solid var(--hz-line-strong);
+    }
+
+    .l1c-nationalities {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5mm 7mm;
+      max-width: 150mm;
+      font-size: 7.7pt;
+    }
+
+    .l1c-nationality {
+      display: grid;
+      grid-template-columns: 5mm 1fr 25mm;
+      gap: 1mm;
+      align-items: end;
+      min-height: 5.5mm;
+    }
+
+    .l1c-nationality b { color: var(--hz-unit-dark); }
+    .l1c-nationality__line { border-bottom: .28mm solid var(--hz-line-strong); min-height: 4mm; }
+
+    .l1c-go-to { margin: .35mm 0 .1mm calc(var(--hz-exercise-marker-size) + 3mm); }
+
+    /* Exercise 3 uses a travel-editorial composition rather than three cards. */
+    .l1c-world-stage {
+      position: relative;
+      overflow: hidden;
+      min-height: 104mm;
+      padding: 10mm 3.5mm 3.5mm;
+      background: #eef3f4;
+      isolation: isolate;
+    }
+
+    .l1c-world-stage::before {
+      content: "WORLD";
+      position: absolute;
+      z-index: -1;
+      left: -2mm;
+      bottom: -7mm;
+      color: rgb(22 127 130 / 10%);
+      font-size: 57pt;
+      font-weight: var(--hz-fw-black);
+      line-height: 1;
+      letter-spacing: -.07em;
+    }
+
+    .l1c-world-masthead {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 8mm;
+      padding: 1.8mm 4mm;
+      background: var(--hz-unit);
+      color: #fff;
+      font-size: 14pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: -.025em;
+    }
+
+    .l1c-world-masthead span:last-child {
+      font-size: 6.2pt;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .l1c-city-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 4mm;
+      align-items: start;
+      padding-top: 3mm;
+    }
+
+    .l1c-city {
+      position: relative;
+      min-width: 0;
+      padding-top: 20mm;
+    }
+
+    .l1c-city__photo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      z-index: 2;
+      width: 29mm;
+      height: 29mm;
+      overflow: hidden;
+      border: 1.3mm solid #eef3f4;
+      border-radius: 50%;
+      background: var(--hz-wash);
+      transform: translateX(-50%);
+    }
+
+    .l1c-city__photo .hz-photo-placeholder {
+      min-height: 29mm;
+      font-size: 4.7pt;
+      letter-spacing: .06em;
+    }
+
+    .l1c-city__copy {
+      min-height: 69mm;
+      padding: 11.5mm 3.2mm 3.2mm;
+      border-top: 1.1mm solid var(--hz-unit);
+      background: var(--hz-paper);
+      font-family: var(--hz-font-reading);
+      font-size: 7.4pt;
+      line-height: 1.42;
+    }
+
+    .l1c-city__copy h3 {
+      margin: 0 0 2mm;
+      color: var(--hz-unit-dark);
+      font-family: var(--hz-font-sans);
+      font-size: 12.5pt;
+      font-weight: var(--hz-fw-black);
+      line-height: 1;
+      letter-spacing: -.03em;
+    }
+
+    .l1c-city__copy p { margin: 0 0 2mm; }
+    .l1c-city__copy p:last-child { margin-bottom: 0; }
+
+    /* ------------------------------------------------------------------
+       PAGE 10 — newly authored completion of Lesson 1C
+       ------------------------------------------------------------------ */
+
+    .l1c-continuation {
+      position: absolute;
+      top: -1mm;
+      right: -14mm;
+      z-index: 4;
+      display: grid;
+      place-items: end start;
+      width: 34mm;
+      height: 25mm;
+      padding: 0 0 3.2mm 5mm;
+      background: var(--hz-unit);
+      color: #fff;
+      clip-path: polygon(28% 0, 100% 0, 100% 100%, 0 100%);
+      font-size: 19pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: -.05em;
+    }
+
+    .l1c-adjective-field {
+      position: relative;
+      overflow: hidden;
+      padding: 3.2mm 4mm 3.5mm;
+      border-top: 1.1mm solid var(--hz-unit);
+      background: var(--hz-unit-soft);
+      isolation: isolate;
+    }
+
+    .l1c-adjective-field::after {
+      content: "ADJECTIVES";
+      position: absolute;
+      z-index: -1;
+      right: -4mm;
+      bottom: -6mm;
+      color: rgb(255 255 255 / 72%);
+      font-size: 31pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: -.06em;
+    }
+
+    .l1c-adjective-field__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.35fr 1fr;
+      gap: 4mm;
+      font-size: 7.4pt;
+      line-height: 1.3;
+    }
+
+    .l1c-word-map h3 {
+      margin: 0 0 1.4mm;
+      color: var(--hz-unit-dark);
+      font-size: 7pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .l1c-word-map__lines { display: grid; gap: 1.8mm; }
+    .l1c-word-map__line { min-height: 4mm; border-bottom: .28mm solid var(--hz-line-strong); }
+
+    .l1c-sentences {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1mm 7mm;
+      font-size: 7.75pt;
+      line-height: 1.3;
+    }
+
+    .l1c-sentence {
+      display: grid;
+      grid-template-columns: 5mm 1fr;
+      gap: 1mm;
+      min-height: 6mm;
+    }
+
+    .l1c-sentence b { color: var(--hz-unit-dark); }
+
+    .l1c-pair-stage {
+      position: relative;
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 5mm;
+      align-items: stretch;
+      min-height: 58mm;
+      isolation: isolate;
+    }
+
+    .l1c-pair-stage::before {
+      content: "PAIRWORK";
+      position: absolute;
+      z-index: -1;
+      left: -2mm;
+      bottom: -4mm;
+      color: var(--hz-unit-soft);
+      font-size: 34pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: -.06em;
+    }
+
+    .l1c-pair-photo {
+      min-height: 58mm;
+      overflow: hidden;
+      background: var(--hz-wash);
+      clip-path: polygon(0 0, 100% 0, 92% 100%, 0 100%);
+    }
+
+    .l1c-pair-photo .hz-photo-placeholder { min-height: 58mm; }
+
+    .l1c-pair-copy {
+      display: grid;
+      align-content: center;
+      gap: 2.2mm;
+      padding: 2mm 0;
+    }
+
+    .l1c-dialogue-line {
+      padding: 1.8mm 2.5mm;
+      border-left: .9mm solid var(--hz-unit);
+      background: var(--hz-paper);
+      font-size: 7.6pt;
+      line-height: 1.35;
+    }
+
+    .l1c-dialogue-line:nth-child(2) { background: var(--hz-unit-soft); }
+    .l1c-dialogue-line p { margin: 0; }
+
+    .l1c-guess-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3mm;
+      padding-top: .5mm;
+    }
+
+    .l1c-guess-city {
+      position: relative;
+      min-height: 31mm;
+      overflow: hidden;
+      background: var(--hz-wash);
+    }
+
+    .l1c-guess-city .hz-photo-placeholder { min-height: 31mm; font-size: 5pt; }
+
+    .l1c-guess-city__label {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 2;
+      padding: 1mm 1.6mm;
+      background: var(--hz-paper);
+      color: var(--hz-unit-dark);
+      font-size: 6.4pt;
+      font-weight: var(--hz-fw-black);
+    }
+
+    .l1c-extra {
+      margin-left: calc(var(--hz-exercise-marker-size) + 3mm);
+      margin-top: .6mm;
+    }
+
+    .l1c-page--2 .hz-page-stack { gap: 1.5mm; }
+    .l1c-page--2 .hz-exercise { padding-top: 1.15mm; padding-bottom: 1.55mm; }
+    .l1c-page--2 .hz-exercise__body { margin-top: 1.1mm; }
+    .l1c-page--2 .hz-exercise__instruction { font-size: 8.7pt; }
+  </style>
+</head>
+<body class="hz-book">
+
+  <!-- ===============================================================
+       PAGE 9 — LESSON 1C, FROZEN SOURCE ADAPTATION
+       =============================================================== -->
+  <article class="hz-page hz-content hz-unit-1 l1c-page" data-page="9">
+    <main class="hz-page__content">
+      <div class="hz-page-stack">
+        <header class="hz-lesson-header">
+          <div class="hz-lesson-tab" aria-label="Lesson 1C">
+            <span class="hz-lesson-tab__label">Lesson</span>
+            <span class="hz-lesson-tab__id">1C</span>
+          </div>
+          <div class="hz-lesson-heading">
+            <h1 class="hz-lesson-title">WHERE ARE YOU FROM?</h1>
+            <div class="hz-objectives">
+              <span class="hz-objectives__item">Countries</span>
+              <span class="hz-objectives__item">Adjectives</span>
+            </div>
+          </div>
+        </header>
+
+        <div class="hz-exercises hz-fill">
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">1</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction"><span class="l1c-track">♪ 1.10</span>Match the people with the countries.</p>
+              <div class="hz-exercise__body l1c-country-stage">
+                <div class="l1c-country-head">
+                  <div class="l1c-country-bank">
+                    <span>Argentina</span><span>the US</span><span>the UK</span><span>Canada</span><span>South Korea</span>
+                  </div>
+                  <span class="hz-new-words">NEW WORDS</span>
+                </div>
+
+                <div class="l1c-celebrities">
+                  <figure class="l1c-celebrity">
+                    <div class="l1c-celebrity__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Lionel Messi · portrait crop</span></div></div>
+                    <figcaption class="l1c-celebrity__caption"><b>1</b><span>Lionel Messi</span></figcaption>
+                    <span class="l1c-celebrity__line"></span>
+                  </figure>
+                  <figure class="l1c-celebrity">
+                    <div class="l1c-celebrity__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Taylor Swift · portrait crop</span></div></div>
+                    <figcaption class="l1c-celebrity__caption"><b>2</b><span>Taylor Swift</span></figcaption>
+                    <span class="l1c-celebrity__line"></span>
+                  </figure>
+                  <figure class="l1c-celebrity">
+                    <div class="l1c-celebrity__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Keanu Reeves · portrait crop</span></div></div>
+                    <figcaption class="l1c-celebrity__caption"><b>3</b><span>Keanu Reeves</span></figcaption>
+                    <span class="l1c-celebrity__line"></span>
+                  </figure>
+                  <figure class="l1c-celebrity">
+                    <div class="l1c-celebrity__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Millie B. Brown · portrait crop</span></div></div>
+                    <figcaption class="l1c-celebrity__caption"><b>4</b><span>Millie B. Brown</span></figcaption>
+                    <span class="l1c-celebrity__line"></span>
+                  </figure>
+                  <figure class="l1c-celebrity">
+                    <div class="l1c-celebrity__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Lee Jung-jae · portrait crop</span></div></div>
+                    <figcaption class="l1c-celebrity__caption"><b>5</b><span>Lee Jung-jae</span></figcaption>
+                    <span class="l1c-celebrity__line"></span>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">2</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Match the countries with the nationalities.</p>
+              <div class="hz-exercise__body l1c-nationalities">
+                <div class="l1c-nationality"><b>1</b><span>Canadian</span><span class="l1c-nationality__line"></span></div>
+                <div class="l1c-nationality"><b>2</b><span>American</span><span class="l1c-nationality__line"></span></div>
+                <div class="l1c-nationality"><b>3</b><span>South Korean</span><span class="l1c-nationality__line"></span></div>
+                <div class="l1c-nationality"><b>4</b><span>Argentinian</span><span class="l1c-nationality__line"></span></div>
+                <div class="l1c-nationality"><b>5</b><span>British</span><span class="l1c-nationality__line"></span></div>
+              </div>
+            </div>
+          </section>
+
+          <div class="l1c-go-to hz-go-to">Go to: Vocabulary - Countries, page ---</div>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">3</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Read the blogs.</p>
+              <div class="hz-exercise__body l1c-world-stage">
+                <div class="l1c-world-masthead"><span>CITIES AROUND THE WORLD</span><span>Travel notes</span></div>
+                <div class="l1c-city-grid">
+                  <article class="l1c-city">
+                    <div class="l1c-city__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Rio de Janeiro · landmark crop</span></div></div>
+                    <div class="l1c-city__copy">
+                      <h3>Rio de Janeiro</h3>
+                      <p>I love Rio de Janeiro!</p>
+                      <p>It’s a <span class="l1c-target">big</span> city with <span class="l1c-target">beautiful</span> beaches. The weather is <span class="l1c-target">hot</span>, and the people are very <span class="l1c-target">friendly</span>.</p>
+                    </div>
+                  </article>
+
+                  <article class="l1c-city">
+                    <div class="l1c-city__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Toronto · skyline crop</span></div></div>
+                    <div class="l1c-city__copy">
+                      <h3>Toronto</h3>
+                      <p>Toronto has many <span class="l1c-target">old</span> and <span class="l1c-target">new</span> buildings. Also, it’s very <span class="l1c-target">cold</span>!</p>
+                      <p>The food is <span class="l1c-target">expensive</span>, but it’s very good. Tomorrow, I will go to a <span class="l1c-target">famous</span> restaurant!</p>
+                    </div>
+                  </article>
+
+                  <article class="l1c-city">
+                    <div class="l1c-city__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Hong Kong · skyline at night</span></div></div>
+                    <div class="l1c-city__copy">
+                      <h3>Hong Kong</h3>
+                      <p>Hong Kong is a very <span class="l1c-target">busy</span> city, but some parks are <span class="l1c-target">calm</span>. The food is good and <span class="l1c-target">cheap</span>.</p>
+                      <p>The city is <span class="l1c-target">beautiful</span> at night, but hotels are very <span class="l1c-target">expensive</span>!</p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="l1c-go-to hz-go-to">Go to: Vocabulary - Adjectives, page ---</div>
+        </div>
+      </div>
+    </main>
+    <footer class="hz-page__footer"><span></span><span class="hz-page-number">9</span></footer>
+  </article>
+
+  <!-- ===============================================================
+       PAGE 10 — NEW COMPLETION OF LESSON 1C
+       =============================================================== -->
+  <article class="hz-page hz-content hz-unit-1 l1c-page l1c-page--2" data-page="10">
+    <main class="hz-page__content">
+      <div class="l1c-continuation">1C</div>
+      <div class="hz-page-stack">
+        <div class="hz-exercises hz-fill" style="padding-top:7mm">
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">4</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Read the blogs again. Underline the adjectives.</p>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">5</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Complete the word map with adjectives from the blogs.</p>
+              <div class="hz-exercise__body l1c-adjective-field">
+                <div class="l1c-adjective-field__grid">
+                  <div class="l1c-word-map">
+                    <h3>Weather</h3>
+                    <div class="l1c-word-map__lines"><span class="l1c-word-map__line"></span><span class="l1c-word-map__line"></span></div>
+                  </div>
+                  <div class="l1c-word-map">
+                    <h3>Prices</h3>
+                    <div class="l1c-word-map__lines"><span class="l1c-word-map__line"></span><span class="l1c-word-map__line"></span></div>
+                  </div>
+                  <div class="l1c-word-map">
+                    <h3>Cities and places</h3>
+                    <div class="l1c-word-map__lines"><span class="l1c-word-map__line"></span><span class="l1c-word-map__line"></span><span class="l1c-word-map__line"></span></div>
+                  </div>
+                  <div class="l1c-word-map">
+                    <h3>People</h3>
+                    <div class="l1c-word-map__lines"><span class="l1c-word-map__line"></span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">6</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Complete the sentences with adjectives from Exercise 3.</p>
+              <div class="hz-exercise__body l1c-sentences">
+                <div class="l1c-sentence"><b>1</b><span>Rio de Janeiro is a <span class="hz-answer-line" style="min-width:22mm"></span> city.</span></div>
+                <div class="l1c-sentence"><b>4</b><span>Hotels in Hong Kong are very <span class="hz-answer-line" style="min-width:22mm"></span>.</span></div>
+                <div class="l1c-sentence"><b>2</b><span>The people in Rio de Janeiro are very <span class="hz-answer-line" style="min-width:22mm"></span>.</span></div>
+                <div class="l1c-sentence"><b>5</b><span>Toronto has <span class="hz-answer-line" style="min-width:18mm"></span> and <span class="hz-answer-line" style="min-width:18mm"></span> buildings.</span></div>
+                <div class="l1c-sentence"><b>3</b><span>Some parks in Hong Kong are <span class="hz-answer-line" style="min-width:22mm"></span>.</span></div>
+                <div class="l1c-sentence"><b>6</b><span>Toronto is very <span class="hz-answer-line" style="min-width:22mm"></span>.</span></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">7</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Work in pairs. Ask and answer about the cities.</p>
+              <div class="hz-exercise__body l1c-pair-stage">
+                <div class="l1c-pair-photo">
+                  <div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Two students discussing city photos · wide portrait crop</span></div>
+                </div>
+                <div class="l1c-pair-copy">
+                  <div class="l1c-dialogue-line"><p><strong>A:</strong> What city do you like?</p><p><strong>B:</strong> I like Rio de Janeiro.</p></div>
+                  <div class="l1c-dialogue-line"><p><strong>A:</strong> What is it like?</p><p><strong>B:</strong> It’s big, hot and beautiful.</p></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">8</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Work in pairs. Choose a city from Exercise 3. Describe it. Your classmate will guess.</p>
+              <div class="hz-exercise__body l1c-guess-strip">
+                <div class="l1c-guess-city"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Rio de Janeiro · city crop</span></div><span class="l1c-guess-city__label">Rio de Janeiro</span></div>
+                <div class="l1c-guess-city"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Toronto · city crop</span></div><span class="l1c-guess-city__label">Toronto</span></div>
+                <div class="l1c-guess-city"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Hong Kong · city crop</span></div><span class="l1c-guess-city__label">Hong Kong</span></div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="l1c-extra hz-extra-practice">
+          <span class="hz-extra-practice__label">EXTRA PRACTICE</span>
+          <span class="hz-extra-practice__prompt">Ask a classmate: Where are you from? What is your city like?</span>
+        </div>
+      </div>
+    </main>
+    <footer class="hz-page__footer"><span></span><span class="hz-page-number">10</span></footer>
+  </article>
+
+</body>
+</html>
