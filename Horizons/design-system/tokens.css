@@ -1,35 +1,45 @@
 /* Horizons A1 — native HTML/CSS design tokens
-   New visual system: intentionally independent from the legacy book artwork.
+   Original visual system for the new HTML master.
+   Inspired by modern editorial learning interfaces, not by any one coursebook.
    System fonts only; no bundled or remote font dependency. */
 
 :root {
-  /* Core palette */
-  --hz-ink: #17212b;
-  --hz-muted: #61707f;
+  /* Core ink / paper */
+  --hz-ink: #182038;
+  --hz-ink-soft: #35405f;
+  --hz-muted: #6f7891;
   --hz-paper: #fffdf8;
   --hz-surface: #ffffff;
-  --hz-line: #dfe5e8;
-  --hz-line-strong: #bcc8ce;
+  --hz-line: #dde2eb;
+  --hz-line-strong: #b7c0d3;
 
-  /* Brand accents */
-  --hz-primary: #3f5bd8;      /* cobalt */
-  --hz-primary-dark: #2e45b8;
-  --hz-coral: #f26b5e;
-  --hz-mint: #bfe9d7;
-  --hz-mint-deep: #2f8068;
-  --hz-butter: #f5dfa0;
-  --hz-lavender: #e8e5ff;
-  --hz-sky: #dcecf8;
-  --hz-peach: #fde2d8;
-  --hz-success: #32795f;
-  --hz-warning: #9b6518;
+  /* Signature Horizons palette */
+  --hz-indigo: #4457d9;
+  --hz-indigo-dark: #2e3aa7;
+  --hz-aqua: #3fc7b6;
+  --hz-aqua-dark: #167d74;
+  --hz-coral: #ff6b62;
+  --hz-coral-dark: #c8433d;
+  --hz-sun: #f7c84b;
+  --hz-plum: #8d5ed6;
+  --hz-sky: #66b7f2;
 
-  /* Semantic surfaces */
-  --hz-soft-primary: #eef0ff;
+  /* Soft editorial surfaces */
+  --hz-soft-indigo: #eef0ff;
+  --hz-soft-aqua: #e8f9f6;
   --hz-soft-coral: #fff0ed;
-  --hz-soft-mint: #edf9f4;
-  --hz-soft-yellow: #fff8df;
-  --hz-soft-gray: #f4f6f7;
+  --hz-soft-sun: #fff8dc;
+  --hz-soft-plum: #f3edff;
+  --hz-soft-sky: #edf7ff;
+  --hz-soft-gray: #f5f6f9;
+
+  /* Semantic aliases */
+  --hz-primary: var(--hz-indigo);
+  --hz-primary-dark: var(--hz-indigo-dark);
+  --hz-accent: var(--hz-aqua);
+  --hz-accent-dark: var(--hz-aqua-dark);
+  --hz-success: #2f8068;
+  --hz-warning: #94651a;
 
   /* Native typography */
   --hz-font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
@@ -45,9 +55,9 @@
   --hz-fs-md: 11.5pt;
   --hz-fs-lg: 14pt;
   --hz-fs-xl: 18pt;
-  --hz-fs-2xl: 26pt;
-  --hz-fs-lesson-title: 29pt;
-  --hz-fs-lesson-id: 16pt;
+  --hz-fs-2xl: 25pt;
+  --hz-fs-lesson-title: 30pt;
+  --hz-fs-lesson-id: 15pt;
 
   /* Font weights */
   --hz-fw-regular: 400;
@@ -57,10 +67,10 @@
   --hz-fw-black: 850;
 
   /* Line heights */
-  --hz-lh-tight: 1.05;
+  --hz-lh-tight: 1.04;
   --hz-lh-snug: 1.2;
-  --hz-lh-body: 1.42;
-  --hz-lh-relaxed: 1.58;
+  --hz-lh-body: 1.4;
+  --hz-lh-relaxed: 1.56;
 
   /* Spacing */
   --hz-space-1: 1mm;
@@ -73,25 +83,26 @@
   --hz-space-10: 10mm;
   --hz-space-12: 12mm;
 
-  /* Geometry: soft, web-native cards and controls */
-  --hz-radius-xs: 1.8mm;
+  /* Geometry: asymmetric editorial surfaces */
+  --hz-radius-xs: 1.5mm;
   --hz-radius-sm: 2.5mm;
   --hz-radius-md: 4mm;
-  --hz-radius-lg: 6mm;
-  --hz-radius-xl: 9mm;
+  --hz-radius-lg: 7mm;
+  --hz-radius-xl: 11mm;
   --hz-radius-pill: 999px;
   --hz-border: 0.3mm;
   --hz-border-strong: 0.55mm;
 
   /* Component dimensions */
-  --hz-exercise-marker-size: 8mm;
+  --hz-exercise-marker-size: 8.5mm;
   --hz-icon-size-sm: 4mm;
   --hz-icon-size-md: 5.5mm;
   --hz-answer-line: 0.28mm;
+  --hz-rail-width: 2.2mm;
 
-  /* Effects — subtle enough for print */
-  --hz-shadow-card: 0 1mm 3mm rgb(23 33 43 / 8%);
-  --hz-shadow-float: 0 1.5mm 5mm rgb(23 33 43 / 10%);
+  /* Effects — restrained and print-safe */
+  --hz-shadow-card: 0 1mm 3mm rgb(24 32 56 / 8%);
+  --hz-shadow-float: 0 1.5mm 5mm rgb(24 32 56 / 11%);
 
   /* Layering */
   --hz-z-base: 1;
