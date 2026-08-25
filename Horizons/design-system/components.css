@@ -1,0 +1,423 @@
+@import url("./tokens.css");
+
+/* Horizons A1 — Stage 1 reusable components.
+   These styles express the existing visual language without yet defining
+   a fixed A4 page container or print pagination. */
+
+/* ---------- Global content defaults ---------- */
+
+.hz-content {
+  color: var(--hz-text);
+  font-family: var(--hz-font-body);
+  font-size: var(--hz-fs-body);
+  line-height: var(--hz-lh-body);
+}
+
+.hz-content *,
+.hz-content *::before,
+.hz-content *::after {
+  box-sizing: border-box;
+}
+
+/* ---------- Lesson identity ---------- */
+
+.hz-lesson-header {
+  position: relative;
+  min-height: 28mm;
+  border-top: 7mm solid var(--hz-magenta-soft);
+  padding: 5mm 6mm 2mm 29mm;
+  color: var(--hz-navy);
+}
+
+.hz-lesson-header::before {
+  content: "";
+  position: absolute;
+  top: -0.8mm;
+  right: 0;
+  left: 22mm;
+  height: 0.8mm;
+  background: var(--hz-gold);
+}
+
+.hz-lesson-tab {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 28mm;
+  height: 31mm;
+  padding-top: 5mm;
+  background: var(--hz-navy);
+  color: var(--hz-white);
+  text-align: center;
+  clip-path: polygon(0 0, 100% 0, 62% 58%, 42% 100%, 0 58%);
+  font-family: var(--hz-font-label);
+}
+
+.hz-lesson-tab__label {
+  display: block;
+  font-size: var(--hz-fs-md);
+  line-height: 1;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.hz-lesson-tab__id {
+  display: block;
+  margin-top: 1mm;
+  font-family: var(--hz-font-display);
+  font-size: var(--hz-fs-lesson-id);
+  line-height: 0.95;
+}
+
+.hz-lesson-title {
+  margin: 0;
+  font-family: var(--hz-font-title);
+  font-size: var(--hz-fs-lesson-title);
+  font-weight: 300;
+  line-height: var(--hz-lh-tight);
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.hz-objectives {
+  margin-top: 2mm;
+  font-family: var(--hz-font-label);
+  font-size: var(--hz-fs-sm);
+  line-height: var(--hz-lh-snug);
+}
+
+.hz-objectives__item + .hz-objectives__item::before {
+  content: "  ▪  ";
+  color: var(--hz-text);
+}
+
+/* ---------- Exercise rows ---------- */
+
+.hz-exercise {
+  display: grid;
+  grid-template-columns: var(--hz-exercise-marker-size) minmax(0, 1fr);
+  column-gap: 3mm;
+  align-items: start;
+  margin: 4mm 0;
+}
+
+.hz-exercise-number {
+  display: grid;
+  place-items: center;
+  width: var(--hz-exercise-marker-size);
+  min-height: var(--hz-exercise-marker-size);
+  padding-right: 1.4mm;
+  background: var(--hz-magenta);
+  color: var(--hz-white);
+  clip-path: polygon(0 0, 100% 50%, 0 100%);
+  font-family: var(--hz-font-label);
+  font-size: var(--hz-fs-xs);
+  font-weight: 700;
+  line-height: 1;
+}
+
+.hz-exercise__instruction {
+  margin: 0;
+  padding-top: 0.8mm;
+  font-size: var(--hz-fs-body);
+}
+
+.hz-exercise__body {
+  grid-column: 2;
+  margin-top: 2mm;
+}
+
+/* ---------- Audio ---------- */
+
+.hz-audio-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 1mm;
+  min-height: 4mm;
+  margin-right: 2mm;
+  padding: 0.5mm 1.3mm;
+  background: var(--hz-magenta);
+  color: var(--hz-white);
+  font-family: var(--hz-font-label);
+  font-size: var(--hz-fs-2xs);
+  font-weight: 700;
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.hz-audio-badge__icon {
+  width: var(--hz-icon-size-sm);
+  height: var(--hz-icon-size-sm);
+  flex: 0 0 auto;
+}
+
+.hz-audio-group {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5mm;
+}
+
+.hz-audio-qr {
+  width: 12mm;
+  height: 12mm;
+  object-fit: contain;
+}
+
+/* ---------- NEW WORDS ---------- */
+
+.hz-new-words {
+  display: inline-flex;
+  align-items: center;
+  gap: 1.5mm;
+  color: var(--hz-magenta);
+  font-family: var(--hz-font-label);
+  font-size: var(--hz-fs-xs);
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.hz-new-words__icon {
+  display: grid;
+  place-items: center;
+  width: 5.5mm;
+  height: 5.5mm;
+  border-radius: 50%;
+  background: var(--hz-magenta);
+  color: var(--hz-white);
+}
+
+/* ---------- Grammar / pronunciation focus ---------- */
+
+.hz-focus-box {
+  position: relative;
+  overflow: hidden;
+  border: var(--hz-border-strong) solid var(--hz-magenta);
+  border-top: 0;
+  background: var(--hz-white);
+  clip-path: polygon(0 0, 100% 0, 100% calc(100% - 5mm), calc(100% - 5mm) 100%, 0 100%);
+}
+
+.hz-focus-box__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  min-height: 9mm;
+  padding: 1.6mm 30mm 1.6mm 4mm;
+  background: var(--hz-magenta);
+  color: var(--hz-white);
+  font-family: var(--hz-font-body);
+  font-size: var(--hz-fs-md);
+  line-height: var(--hz-lh-snug);
+}
+
+.hz-focus-box__header::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 28mm;
+  height: 100%;
+  background: repeating-linear-gradient(
+    -40deg,
+    transparent 0 5mm,
+    rgb(255 255 255 / 35%) 5mm 9mm,
+    transparent 9mm 14mm
+  );
+}
+
+.hz-focus-box__icon {
+  width: var(--hz-icon-size-md);
+  height: var(--hz-icon-size-md);
+  margin-right: 2mm;
+  flex: 0 0 auto;
+}
+
+.hz-focus-box__label {
+  font-weight: 700;
+}
+
+.hz-focus-box__body {
+  padding: 3mm 4mm 4mm;
+}
+
+.hz-focus-box__body > :first-child {
+  margin-top: 0;
+}
+
+.hz-focus-box__body > :last-child {
+  margin-bottom: 0;
+}
+
+/* ---------- Cross references ---------- */
+
+.hz-go-to {
+  display: flex;
+  align-items: center;
+  gap: 2mm;
+  margin: 3mm 0;
+  color: var(--hz-magenta);
+  font-family: var(--hz-font-body);
+  font-size: var(--hz-fs-sm);
+  font-weight: 700;
+}
+
+.hz-go-to::before {
+  content: "»»»";
+  font-family: var(--hz-font-label);
+  font-size: var(--hz-fs-lg);
+  letter-spacing: -0.22em;
+}
+
+/* ---------- Extra practice ---------- */
+
+.hz-extra-practice {
+  display: flex;
+  align-items: center;
+  gap: 2mm;
+  margin-top: 5mm;
+  font-size: var(--hz-fs-2xs);
+}
+
+.hz-extra-practice__label {
+  display: inline-flex;
+  align-items: center;
+  min-height: 4mm;
+  padding: 0.6mm 1.5mm;
+  background: var(--hz-magenta);
+  color: var(--hz-white);
+  font-family: var(--hz-font-label);
+  font-weight: 700;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.hz-extra-practice__prompt {
+  color: var(--hz-text);
+}
+
+/* ---------- Photo treatments ---------- */
+
+.hz-photo-circle {
+  display: block;
+  width: 28mm;
+  aspect-ratio: 1;
+  border: var(--hz-photo-ring) solid var(--hz-magenta);
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.hz-photo-label {
+  margin-top: 1.2mm;
+  text-align: center;
+  font-weight: 700;
+}
+
+/* ---------- Reading / editorial cards ---------- */
+
+.hz-reading-card {
+  position: relative;
+  background: var(--hz-pale-blue);
+}
+
+.hz-reading-card__image {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.hz-reading-card__name {
+  margin: 0;
+  padding: 2mm 3mm 0;
+  color: var(--hz-navy);
+  font-family: var(--hz-font-body);
+  font-size: var(--hz-fs-xl);
+  font-weight: 700;
+  line-height: var(--hz-lh-snug);
+  text-transform: uppercase;
+}
+
+.hz-reading-card__body {
+  padding: 2mm 3mm 4mm;
+}
+
+.hz-highlight {
+  color: var(--hz-magenta);
+  font-weight: 700;
+}
+
+/* ---------- Answer mechanics ---------- */
+
+.hz-answer-line {
+  display: inline-block;
+  min-width: 24mm;
+  min-height: 1em;
+  border-bottom: var(--hz-answer-line) solid var(--hz-text);
+  vertical-align: baseline;
+}
+
+.hz-choice-box {
+  display: inline-block;
+  width: 4mm;
+  height: 4mm;
+  border: var(--hz-border-thin) solid var(--hz-text);
+  border-radius: 0.8mm;
+  vertical-align: middle;
+}
+
+/* ---------- Forms, tables, and real-world UI ---------- */
+
+.hz-form-card,
+.hz-ui-card {
+  border-radius: var(--hz-radius-md);
+  background: var(--hz-white);
+}
+
+.hz-ui-card {
+  box-shadow: var(--hz-shadow-ui);
+  font-family: var(--hz-font-ui);
+}
+
+.hz-ui-card__header {
+  padding: 2.5mm 3mm;
+  border-radius: var(--hz-radius-md) var(--hz-radius-md) 0 0;
+  background: var(--hz-green);
+  color: var(--hz-white);
+  font-weight: 700;
+}
+
+.hz-ui-card__body {
+  padding: 3mm;
+}
+
+.hz-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--hz-fs-sm);
+}
+
+.hz-data-table th,
+.hz-data-table td {
+  padding: 1.5mm 2mm;
+  border: var(--hz-border-thin) solid var(--hz-rule);
+  vertical-align: middle;
+}
+
+.hz-data-table th {
+  background: var(--hz-navy);
+  color: var(--hz-white);
+  font-family: var(--hz-font-label);
+  font-weight: 700;
+}
+
+/* ---------- Utility helpers ---------- */
+
+.hz-text-magenta { color: var(--hz-magenta); }
+.hz-text-navy { color: var(--hz-navy); }
+.hz-text-green { color: var(--hz-green); }
+.hz-bg-pale-blue { background: var(--hz-pale-blue); }
+.hz-bg-pale-green { background: var(--hz-pale-green); }
+.hz-bg-pale-pink { background: var(--hz-pale-pink); }
+.hz-bg-pale-yellow { background: var(--hz-pale-yellow); }
+.hz-uppercase { text-transform: uppercase; }
+.hz-center { text-align: center; }
+.hz-no-break { break-inside: avoid; page-break-inside: avoid; }
