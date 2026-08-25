@@ -1,7 +1,8 @@
 @import url("./accessibility.css");
 
 /* Horizons A1 — publication typography
-   Type is the primary hierarchy. Decorative containers are secondary. */
+   Type is the primary hierarchy. Decorative containers are secondary.
+   Print sizes are deterministic: do not derive publication type from viewport width. */
 
 :root {
   --hz-type-measure: 72ch;
@@ -14,11 +15,14 @@
   margin: 0;
   max-width: 145mm;
   color: var(--hz-ink);
-  font-size: clamp(24pt, 4vw, 38pt);
+  font-size: 34pt;
   font-weight: var(--hz-fw-black);
   line-height: .96;
   letter-spacing: -.045em;
 }
+
+.hz-display--small { font-size: 28pt; }
+.hz-display--large { font-size: 39pt; }
 
 .hz-deck {
   max-width: 115mm;
