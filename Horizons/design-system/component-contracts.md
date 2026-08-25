@@ -28,6 +28,25 @@ The default page language is typography + photography + white space + thin rules
 
 Bespoke CSS for a distinctive lesson feature is acceptable and should not automatically be promoted into a global component.
 
+## Photography and overlay rule
+
+Dynamic pages should come primarily from **photography, crop decisions, overlays and controlled overlap**.
+
+Allowed editorial treatments include:
+
+- title or lead text over a photograph;
+- a dark photo scrim solely to preserve text readability;
+- a small annotation crossing a photo edge;
+- a text block overlapping the lower-right or lower-left corner of a photo;
+- a lower-third information band over an image;
+- a dominant image with one or two independent inset crops;
+- a pull quote partially overlapping a photograph;
+- numbered/lettered image strips for matching activities.
+
+Do **not** use decorative gradients as page furniture. A gradient is acceptable only as a functional photographic scrim.
+
+Do **not** create fake visual complexity by stacking many cards. Prefer one strong image composition with a clear hierarchy.
+
 ## Page
 
 ```html
@@ -124,6 +143,96 @@ This saves space without breaking the vertical exercise sequence.
 ```
 
 The split belongs to one exercise; the next numbered exercise still starts below it.
+
+## Full-photo text overlay
+
+Use for a strong lesson lead when the image can support legible overlaid copy.
+
+```html
+<figure class="hz-media-stage">
+  <div class="hz-media-stage__photo">
+    <img src="..." alt="...">
+    <div class="hz-photo-scrim"></div>
+    <div class="hz-photo-overlay">
+      <span class="hz-photo-overlay__kicker">A day in the life</span>
+      <h2 class="hz-photo-overlay__title">Morning starts early.</h2>
+      <p class="hz-photo-overlay__text">...</p>
+    </div>
+    <div class="hz-photo-flag">6:30 a.m.</div>
+  </div>
+</figure>
+```
+
+Use `.hz-photo-scrim` only for image readability, not as general decoration.
+
+## Offset overlapping caption block
+
+```html
+<div class="hz-media-stage hz-media-stage--offset">
+  <div class="hz-media-stage__photo">
+    <img src="..." alt="...">
+  </div>
+  <aside class="hz-media-stage__offset-copy">
+    <h3>Busy or quiet?</h3>
+    <p>...</p>
+  </aside>
+</div>
+```
+
+The copy overlaps the image boundary and creates visual movement without introducing another card system.
+
+## Lower-third image band
+
+```html
+<div class="hz-media-stage hz-media-stage--band">
+  <div class="hz-media-stage__photo">
+    <img src="..." alt="...">
+  </div>
+  <div class="hz-photo-band">
+    <span class="hz-photo-band__label">Weather brief</span>
+    <span class="hz-photo-band__text">...</span>
+  </div>
+</div>
+```
+
+Use this when the overlaid text is short. Do not place long reading passages inside the band.
+
+## Photo collage with inset crops
+
+```html
+<div class="hz-media-collage">
+  <img class="hz-media-collage__main" src="..." alt="...">
+  <div class="hz-media-collage__inset hz-media-collage__inset--top"><img src="..." alt="..."></div>
+  <div class="hz-media-collage__inset hz-media-collage__inset--bottom"><img src="..." alt="..."></div>
+  <blockquote class="hz-photo-quote">...<cite>...</cite></blockquote>
+</div>
+```
+
+Inset crops should show meaningful details from the topic: an object, texture, food item, sign, accessory, map detail or secondary scene.
+
+## Photo strip
+
+```html
+<div class="hz-photo-strip" style="--hz-photo-count:3">
+  <div class="hz-photo-strip__item"><img src="..." alt="..."><span class="hz-photo-strip__label">A</span></div>
+  <div class="hz-photo-strip__item"><img src="..." alt="..."><span class="hz-photo-strip__label">B</span></div>
+  <div class="hz-photo-strip__item"><img src="..." alt="..."><span class="hz-photo-strip__label">C</span></div>
+</div>
+```
+
+Use 2–4 items. This is an internal activity layout, not an exercise-column layout.
+
+## Development placeholder
+
+Until final photography is sourced, use `.hz-photo-placeholder` inside the same production composition so layout QA happens against the **real intended crop**, not against a generic box.
+
+```html
+<div class="hz-photo-placeholder">
+  <span class="hz-photo-placeholder__meta">Wide travel photograph · 16:7 crop</span>
+</div>
+```
+
+When replacing it with an image, preserve the parent composition and crop dimensions.
 
 ## Skill line
 
