@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Horizons A1 — A4 Page Template</title>
+  <link rel="stylesheet" href="./a4-shell.css">
+  <link rel="stylesheet" href="./print.css" media="print">
+</head>
+<body class="hz-book">
+
+  <!--
+    Duplicate .hz-page for each printed page.
+    Use --left / --right for mirrored book margins.
+    Add hz-debug to <body> during layout QA if needed.
+  -->
+  <section class="hz-page hz-page--right hz-content" data-page="1">
+    <main class="hz-page__content">
+      <div class="hz-page-stack">
+        <!-- Page content goes here. -->
+      </div>
+    </main>
+
+    <footer class="hz-page__footer" aria-label="Page footer">
+      <span class="hz-page-number">1</span>
+      <span class="hz-page-code">1A</span>
+    </footer>
+  </section>
+
+</body>
+</html>
