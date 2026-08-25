@@ -71,8 +71,10 @@
    be clipped by the fixed A4 content viewport. Compress the model interaction
    slightly while preserving every activity and the Guided Discovery sequence.
 
-   Page 12's continuation tab is moved into the upper page margin so it no
-   longer sits on top of the business-choice photography. */
+   IMPORTANT: the continuation marker on page 12 must remain the same size,
+   shape and typography as the continuation markers used elsewhere in Unit 1.
+   Do not solve collisions by shrinking the marker. Instead, move the nearby
+   lesson content clear of the canonical continuation marker. */
 
 .l1d-page:not(.l1d-page--2) .l1d-checkin-stage {
   min-height: 80mm !important;
@@ -149,17 +151,11 @@
   line-height: 1.25 !important;
 }
 
-.l1d-page--2 .hz-page__content {
-  overflow: visible !important;
-}
-
-.l1d-page--2 .l1d-continuation {
-  top: -11mm !important;
-  right: -14mm !important;
-  width: 34mm !important;
-  height: 18mm !important;
-  padding: 0 0 2.3mm 5mm !important;
-  font-size: 16pt !important;
+/* Keep .l1d-continuation untouched so the page-local canonical dimensions
+   remain identical to the 1A/1B/1C continuation treatment. Give Exercise 5
+   enough internal clearance instead of altering the marker itself. */
+.l1d-page--2 .l1d-business-stage {
+  padding-top: 8mm !important;
 }
 
 /* -------------------------------------------------------------------------
