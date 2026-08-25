@@ -49,6 +49,29 @@ Available patterns include:
 
 These patterns are loaded automatically by the A4 shell.
 
+## Internal legacy compatibility layer
+
+`legacy-compat.css` is a separate, namespaced compatibility stylesheet used only by the internal structure lab.
+
+Its purpose is to prove that the HTML/CSS system can reproduce representative structures extracted from the frozen Student's Book, including:
+
+- magenta/navy lesson identity;
+- angled lesson tab;
+- triangular exercise-number markers;
+- audio badges;
+- `NEW WORDS` signal;
+- Grammar and Pronunciation focus boxes;
+- magenta cross-references;
+- Extra Practice strips;
+- circular image-led vocabulary;
+- pale reading/profile panels;
+- simplified real-world UI/table/form patterns;
+- Vocabulary Practice and Grammar Reference structures.
+
+This compatibility stylesheet is **not imported by `a4-shell.css`**. It therefore does not alter the current Stage 3 production design.
+
+See `legacy-compatibility.md` and `../examples/stage-3-legacy-structure-lab.html`.
+
 ## Shape rules
 
 1. Shapes must support hierarchy, reading flow, grouping or task meaning.
@@ -68,6 +91,8 @@ All numbered exercises run vertically in one `.hz-exercises` / `.hz-exercise-flo
 Two- and three-column layouts are allowed only **inside an exercise body** for questions, choices, images, tables, reviews, profiles, vocabulary or other activity content.
 
 A single exercise may therefore contain a full-page article, a poster, a question cloud or a complex internal composition; the next numbered exercise must still start below it.
+
+The internal legacy compatibility lab follows the same rule.
 
 ## Human-art-direction rules
 
@@ -92,6 +117,8 @@ To avoid templated or AI-like sameness:
 - `tokens.css` — neutral palette, unit colors, typography, spacing and geometry
 - `components.css` — lesson identity, one-column exercise lane, internal question grids, focus areas, audio, UI recreations, tables, writing mechanics and photography overlays
 - `editorial-layouts.css` — full-page text features, large shape compositions, quiz/poster layouts, question clouds and process strips
+- `legacy-compat.css` — internal-only reproduction of representative legacy visual structures
+- `legacy-compatibility.md` — source basis, scope and compatibility rules
 - `asset-policy.md` — visual asset rules
 - `component-contracts.md` — semantic HTML/component expectations
 
