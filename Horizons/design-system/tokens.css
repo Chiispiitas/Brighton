@@ -1,60 +1,68 @@
-/* Horizons A1 — Stage 1 design tokens
-   Extracted from the existing Student's Book visual language.
-   This file does not create the A4 page shell; that belongs to Stage 2. */
+/* Horizons A1 — native HTML/CSS design tokens
+   New visual system: intentionally independent from the legacy book artwork.
+   System fonts only; no bundled or remote font dependency. */
 
 :root {
-  /* Brand / structural colors */
-  --hz-magenta: #b5216b;
-  --hz-magenta-deep: #b3004a;
-  --hz-magenta-soft: #bc377a;
-  --hz-navy: #323e4f;
-  --hz-navy-deep: #1e4155;
-  --hz-text: #404040;
-  --hz-black: #000000;
-  --hz-white: #ffffff;
+  /* Core palette */
+  --hz-ink: #17212b;
+  --hz-muted: #61707f;
+  --hz-paper: #fffdf8;
+  --hz-surface: #ffffff;
+  --hz-line: #dfe5e8;
+  --hz-line-strong: #bcc8ce;
 
-  /* Secondary colors already present in the source */
-  --hz-green: #339966;
-  --hz-green-light: #78d2a5;
-  --hz-blue: #157bc1;
-  --hz-orange: #db820b;
-  --hz-gold: #f8aa00;
-  --hz-cream: #fbede1;
+  /* Brand accents */
+  --hz-primary: #3f5bd8;      /* cobalt */
+  --hz-primary-dark: #2e45b8;
+  --hz-coral: #f26b5e;
+  --hz-mint: #bfe9d7;
+  --hz-mint-deep: #2f8068;
+  --hz-butter: #f5dfa0;
+  --hz-lavender: #e8e5ff;
+  --hz-sky: #dcecf8;
+  --hz-peach: #fde2d8;
+  --hz-success: #32795f;
+  --hz-warning: #9b6518;
 
-  /* Useful pale fills derived from established page treatments */
-  --hz-pale-blue: #dce9ee;
-  --hz-pale-green: #e3f4e7;
-  --hz-pale-pink: #f7d5e3;
-  --hz-pale-yellow: #fff2c9;
-  --hz-rule: #d9d9d9;
+  /* Semantic surfaces */
+  --hz-soft-primary: #eef0ff;
+  --hz-soft-coral: #fff0ed;
+  --hz-soft-mint: #edf9f4;
+  --hz-soft-yellow: #fff8df;
+  --hz-soft-gray: #f4f6f7;
 
-  /* Typography roles — fonts are referenced, never bundled here */
-  --hz-font-title: "Montserrat ExtraLight", "Montserrat", "Century Gothic", Arial, sans-serif;
-  --hz-font-title-heavy: "Montserrat Black", "Montserrat", Arial, sans-serif;
-  --hz-font-display: "Anton", "Bebas Neue", "Arial Narrow", sans-serif;
-  --hz-font-label: "Century Gothic", "Poppins", Arial, sans-serif;
-  --hz-font-body: "Times New Roman", Georgia, serif;
-  --hz-font-ui: "Poppins", "Century Gothic", Arial, sans-serif;
+  /* Native typography */
+  --hz-font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  --hz-font-body: var(--hz-font-sans);
+  --hz-font-display: var(--hz-font-sans);
+  --hz-font-ui: var(--hz-font-sans);
 
-  /* Type scale. Stage 2 may adjust print-specific values after A4 QA. */
+  /* Type scale */
   --hz-fs-2xs: 7pt;
   --hz-fs-xs: 8pt;
   --hz-fs-sm: 9pt;
-  --hz-fs-body: 10.5pt;
-  --hz-fs-md: 12pt;
+  --hz-fs-body: 10pt;
+  --hz-fs-md: 11.5pt;
   --hz-fs-lg: 14pt;
   --hz-fs-xl: 18pt;
-  --hz-fs-2xl: 28pt;
-  --hz-fs-lesson-title: 32pt;
-  --hz-fs-lesson-id: 38pt;
+  --hz-fs-2xl: 26pt;
+  --hz-fs-lesson-title: 29pt;
+  --hz-fs-lesson-id: 16pt;
+
+  /* Font weights */
+  --hz-fw-regular: 400;
+  --hz-fw-medium: 550;
+  --hz-fw-semibold: 650;
+  --hz-fw-bold: 760;
+  --hz-fw-black: 850;
 
   /* Line heights */
   --hz-lh-tight: 1.05;
   --hz-lh-snug: 1.2;
-  --hz-lh-body: 1.35;
-  --hz-lh-relaxed: 1.5;
+  --hz-lh-body: 1.42;
+  --hz-lh-relaxed: 1.58;
 
-  /* Spacing scale */
+  /* Spacing */
   --hz-space-1: 1mm;
   --hz-space-2: 2mm;
   --hz-space-3: 3mm;
@@ -65,23 +73,25 @@
   --hz-space-10: 10mm;
   --hz-space-12: 12mm;
 
-  /* Borders and radii */
-  --hz-border-thin: 0.35mm;
-  --hz-border-strong: 0.7mm;
-  --hz-radius-sm: 1.5mm;
-  --hz-radius-md: 3mm;
+  /* Geometry: soft, web-native cards and controls */
+  --hz-radius-xs: 1.8mm;
+  --hz-radius-sm: 2.5mm;
+  --hz-radius-md: 4mm;
   --hz-radius-lg: 6mm;
+  --hz-radius-xl: 9mm;
   --hz-radius-pill: 999px;
+  --hz-border: 0.3mm;
+  --hz-border-strong: 0.55mm;
 
-  /* Repeated component dimensions */
+  /* Component dimensions */
   --hz-exercise-marker-size: 8mm;
   --hz-icon-size-sm: 4mm;
   --hz-icon-size-md: 5.5mm;
-  --hz-photo-ring: 0.7mm;
-  --hz-answer-line: 0.3mm;
+  --hz-answer-line: 0.28mm;
 
-  /* Effects: keep restrained for print */
-  --hz-shadow-ui: 0 0.8mm 2mm rgb(0 0 0 / 10%);
+  /* Effects — subtle enough for print */
+  --hz-shadow-card: 0 1mm 3mm rgb(23 33 43 / 8%);
+  --hz-shadow-float: 0 1.5mm 5mm rgb(23 33 43 / 10%);
 
   /* Layering */
   --hz-z-base: 1;
