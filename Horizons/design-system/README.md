@@ -4,28 +4,41 @@ This directory defines the new visual language for the HTML/CSS master of **Hori
 
 ## Design principle
 
-The new production system is **not a visual transcription of the legacy Word/PDF book**. Existing pages remain untouched and may be used only as content/structure references when required. New pages use an independent, native HTML5/CSS design language.
+The production system is **not a visual transcription of the legacy Word/PDF book** and is not a copy of any external coursebook reference. Reference material may inform broad editorial ideas such as hierarchy, pacing, skill labels and media variety; Horizons must express those ideas with its own visual identity.
 
-## Visual direction
+## Current visual direction
 
 - warm off-white A4 paper
-- cobalt primary accent
-- coral activity accent
-- mint, lavender, sky, and butter supporting surfaces
-- rounded cards and pills rather than cut tabs or decorative vector shapes
-- circular exercise numbering
-- quiet borders and subtle print-safe shadows
+- indigo primary accent
+- aqua secondary accent
+- coral, sun, plum and sky supporting accents
+- a multicolor "horizon" rail as recurring page furniture
+- asymmetric rounded cards instead of textbook tabs
+- offset lesson stamps with a small secondary shadow block
+- a subtle vertical exercise spine
+- compact dark skill/mode bars
+- editorial feature panels for photo + text combinations
 - system-native sans-serif typography
 - semantic HTML5 structures
-- CSS Grid and Flexbox for composition
+- CSS Grid and Flexbox
 - no vector illustrations; SVG is reserved for functional icons only
+
+## Non-negotiable exercise layout
+
+**Exercises themselves never form columns.**
+
+All numbered exercises run vertically in one `.hz-exercises` / `.hz-exercise-flow` lane and remain in numerical order.
+
+Two- and three-column layouts are allowed only **inside an exercise body** for questions, choices, image matching, tables, reviews, profiles, vocabulary or other activity content.
+
+This rule is encoded in `component-contracts.md` and demonstrated in `../examples/stage-2-showcase.html`.
 
 ## Files
 
-- `tokens.css` — palette, typography, spacing, radii, effects, and component dimensions
-- `components.css` — lesson headers, exercise blocks, focus cards, audio labels, UI cards, tables, writing mechanics, and utility surfaces
+- `tokens.css` — palette, typography, spacing, geometry, effects and component dimensions
+- `components.css` — lesson identity, exercise lane, internal question grids, focus cards, skill bars, media panels, audio labels, UI cards, tables and writing mechanics
 - `asset-policy.md` — visual asset rules
-- `component-contracts.md` — reusable component expectations
+- `component-contracts.md` — reusable semantic HTML/component expectations
 
 ## Locked project rules
 
