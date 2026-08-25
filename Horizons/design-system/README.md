@@ -128,6 +128,17 @@ They cover audio, reading, writing, speaking, pair/group work, video/watch, voca
 
 They are interface symbols, not illustrations.
 
+## Unit Review
+
+`review.css` gives Unit Reviews their own denser identity:
+
+- A–D lesson consolidation map;
+- review sections;
+- score/readiness areas;
+- final challenge treatment.
+
+Unit Review pages should feel more systematic than normal lessons.
+
 ## Back matter
 
 `backmatter.css` provides denser systems for:
@@ -146,6 +157,10 @@ See `image-direction.md` and `asset-policy.md`.
 
 Development placeholders must state crop intent. Production photography should target 300 ppi effective resolution where practical and must have provenance/license information recorded.
 
+## Accessibility and digital reuse
+
+`accessibility.css` provides visually-hidden text, keyboard-focus behavior and print/digital control hooks. Production HTML should use meaningful semantic elements and alt text so the master remains reusable for future digital exercises.
+
 ## QA
 
 `qa.css` provides optional development overlays.
@@ -153,25 +168,34 @@ Development placeholders must state crop intent. Production photography should t
 The `../qa/` directory contains:
 
 - `page-audit.js` — browser-side checks for overflow, exercise flow, IDs, alt text, placeholders and QR size;
+- `validate-content.mjs` — dependency-free structured-content validation;
 - `print-qa-checklist.md` — human publication review;
 - `README.md` — QA usage.
+
+## Implementation contracts
+
+- `component-contracts.md` — component-level HTML patterns;
+- `publication-contracts.md` — spread, density, bleed, icon, asset, content and QA rules.
 
 ## Files
 
 - `tokens.css` — neutral palette, unit colors, typography tokens, spacing and geometry
 - `components.css` — core lesson identity, one-column exercise lane, internal question grids, focus areas, audio, UI recreations, tables and writing mechanics
 - `typography.css` — editorial reading/type hierarchy
+- `accessibility.css` — semantic/digital reuse helpers
 - `editorial-layouts.css` — large reading, poster, quiz, process and shape-led compositions
 - `spreads.css` — two-page spread behavior, frame breaking and controlled bleed utilities
 - `archetypes.css` — density, archetype hooks, focus variants and page endings
 - `unit-identities.css` — optional unit-specific feature motifs
 - `icons.css` — functional SVG icon sizing/labels
+- `review.css` — Unit Review layouts
 - `backmatter.css` — Vocabulary Practice and Grammar Reference layouts
 - `qa.css` — development-only layout diagnostics
 - `asset-policy.md` — asset/audio/QR rules
 - `image-direction.md` — photography/crop art direction
 - `layout-archetypes.md` — lesson/spread archetype guidance
 - `component-contracts.md` — semantic HTML/component expectations
+- `publication-contracts.md` — production-level contracts
 
 ## Locked project rules
 
