@@ -1,0 +1,168 @@
+/* Horizons A1 — publication typography
+   Type is the primary hierarchy. Decorative containers are secondary. */
+
+:root {
+  --hz-type-measure: 72ch;
+  --hz-reading-measure: 58ch;
+  --hz-caption-measure: 42ch;
+  --hz-tracking-caps: .08em;
+}
+
+.hz-display {
+  margin: 0;
+  max-width: 145mm;
+  color: var(--hz-ink);
+  font-size: clamp(24pt, 4vw, 38pt);
+  font-weight: var(--hz-fw-black);
+  line-height: .96;
+  letter-spacing: -.045em;
+}
+
+.hz-deck {
+  max-width: 115mm;
+  margin: 2.5mm 0 0;
+  color: var(--hz-ink-soft);
+  font-family: var(--hz-font-reading);
+  font-size: 10.5pt;
+  line-height: 1.42;
+}
+
+.hz-reading {
+  max-width: var(--hz-reading-measure);
+  font-family: var(--hz-font-reading);
+  font-size: 9.2pt;
+  line-height: 1.5;
+  text-wrap: pretty;
+  widows: 3;
+  orphans: 3;
+}
+
+.hz-reading--large {
+  font-size: 10pt;
+  line-height: 1.52;
+}
+
+.hz-reading--columns-2 {
+  max-width: none;
+  columns: 2;
+  column-gap: 7mm;
+  column-rule: var(--hz-border) solid var(--hz-line);
+}
+
+.hz-reading--columns-3 {
+  max-width: none;
+  columns: 3;
+  column-gap: 5mm;
+  column-rule: var(--hz-border) solid var(--hz-line);
+  font-size: 8.4pt;
+}
+
+.hz-reading--dropcap > p:first-child::first-letter,
+.hz-dropcap::first-letter {
+  float: left;
+  margin: .5mm 1.6mm 0 0;
+  color: var(--hz-unit);
+  font-family: var(--hz-font-sans);
+  font-size: 31pt;
+  font-weight: var(--hz-fw-black);
+  line-height: .78;
+}
+
+.hz-subhead {
+  margin: 0 0 1.8mm;
+  color: var(--hz-ink);
+  font-size: 13pt;
+  font-weight: var(--hz-fw-black);
+  line-height: 1.08;
+  letter-spacing: -.015em;
+}
+
+.hz-eyebrow {
+  margin: 0 0 1.2mm;
+  color: var(--hz-unit-dark);
+  font-size: 6.6pt;
+  font-weight: var(--hz-fw-black);
+  letter-spacing: .11em;
+  text-transform: uppercase;
+}
+
+.hz-caption-strong {
+  max-width: var(--hz-caption-measure);
+  margin: 1.2mm 0 0;
+  color: var(--hz-ink-soft);
+  font-size: 7.2pt;
+  font-weight: var(--hz-fw-semibold);
+  line-height: 1.28;
+}
+
+.hz-pullquote {
+  margin: 0;
+  padding: 2.5mm 0 2.5mm 4mm;
+  border-left: 1.2mm solid var(--hz-unit);
+  color: var(--hz-unit-dark);
+  font-family: var(--hz-font-reading);
+  font-size: 13pt;
+  font-style: italic;
+  line-height: 1.25;
+}
+
+.hz-pullquote cite {
+  display: block;
+  margin-top: 1.5mm;
+  color: var(--hz-muted);
+  font-family: var(--hz-font-sans);
+  font-size: 6.4pt;
+  font-style: normal;
+  font-weight: var(--hz-fw-bold);
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.hz-big-number {
+  color: var(--hz-unit);
+  font-size: 46pt;
+  font-weight: var(--hz-fw-black);
+  line-height: .78;
+  letter-spacing: -.06em;
+}
+
+.hz-stat-line {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 3mm;
+  align-items: baseline;
+  padding: 2mm 0;
+  border-top: var(--hz-border) solid var(--hz-line-strong);
+}
+
+.hz-stat-line strong {
+  color: var(--hz-unit-dark);
+  font-size: 17pt;
+  font-weight: var(--hz-fw-black);
+  line-height: 1;
+}
+
+.hz-stat-line span {
+  color: var(--hz-ink-soft);
+  font-size: 7.8pt;
+  line-height: 1.3;
+}
+
+.hz-highlight-word {
+  box-shadow: inset 0 -.42em 0 color-mix(in srgb, var(--hz-unit) 22%, transparent);
+  font-weight: var(--hz-fw-semibold);
+}
+
+.hz-inline-definition {
+  color: var(--hz-unit-dark);
+  font-family: var(--hz-font-sans);
+  font-size: .86em;
+  font-weight: var(--hz-fw-semibold);
+}
+
+.hz-smallcaps {
+  font-size: .82em;
+  font-weight: var(--hz-fw-bold);
+  letter-spacing: var(--hz-tracking-caps);
+  text-transform: uppercase;
+}
