@@ -2,7 +2,10 @@
 
 /* Horizons A1 — editorial native HTML/CSS components.
    HARD RULE: numbered exercises are one vertical sequence.
-   Two/three columns are allowed only INSIDE an exercise body. */
+   Two/three columns are allowed only INSIDE an exercise body.
+
+   MEDIA RULE: dynamic composition should come mainly from photography,
+   cropping, overlays and typography — not from wrapping everything in cards. */
 
 .hz-content {
   color: var(--hz-ink);
@@ -262,6 +265,326 @@
   font-family: var(--hz-font-reading);
   font-size: 9.4pt;
   line-height: var(--hz-lh-reading);
+}
+
+/* ---------- Dynamic photography / overlay compositions ---------- */
+
+/* A media stage is intentionally more permissive than a normal frame.
+   It can hold labels and text that overlap the image edge. */
+.hz-media-stage {
+  position: relative;
+  min-height: 54mm;
+  isolation: isolate;
+}
+
+.hz-media-stage__photo {
+  position: relative;
+  overflow: hidden;
+  min-height: inherit;
+  background: #deded9;
+}
+
+.hz-media-stage__photo > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Development-only photo placeholder. Its typography and overlays should
+   survive when the gray block is replaced with a real raster image. */
+.hz-photo-placeholder {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: inherit;
+  overflow: hidden;
+  background: #ddded9;
+  color: #74766f;
+  font-size: 7pt;
+  font-weight: var(--hz-fw-bold);
+  letter-spacing: .12em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.hz-photo-placeholder::before,
+.hz-photo-placeholder::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.hz-photo-placeholder::before {
+  inset: 4mm;
+  border: .25mm solid rgb(32 33 36 / 18%);
+}
+
+.hz-photo-placeholder::after {
+  top: 50%;
+  left: 50%;
+  width: 44mm;
+  height: .25mm;
+  background: rgb(32 33 36 / 14%);
+  transform: translate(-50%, -50%) rotate(-18deg);
+}
+
+.hz-photo-placeholder__meta {
+  position: relative;
+  z-index: 1;
+  padding: 1.2mm 2mm;
+  background: rgb(255 255 255 / 72%);
+}
+
+/* Scrim is allowed only to support readable text over photography. */
+.hz-photo-scrim {
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  background: linear-gradient(to top, rgb(17 18 20 / 76%) 0, rgb(17 18 20 / 18%) 46%, transparent 72%);
+  pointer-events: none;
+}
+
+.hz-photo-overlay {
+  position: absolute;
+  z-index: 2;
+  right: 5mm;
+  bottom: 4.5mm;
+  left: 5mm;
+  color: white;
+}
+
+.hz-photo-overlay__kicker {
+  display: block;
+  margin-bottom: 1mm;
+  font-size: 6.6pt;
+  font-weight: var(--hz-fw-black);
+  letter-spacing: .1em;
+  text-transform: uppercase;
+}
+
+.hz-photo-overlay__title {
+  margin: 0;
+  max-width: 105mm;
+  font-size: 18pt;
+  font-weight: var(--hz-fw-black);
+  line-height: 1.02;
+  letter-spacing: -.025em;
+}
+
+.hz-photo-overlay__text {
+  max-width: 95mm;
+  margin: 1.5mm 0 0;
+  font-family: var(--hz-font-reading);
+  font-size: 8.5pt;
+  line-height: 1.38;
+}
+
+/* Small annotation intentionally crosses the photo boundary. */
+.hz-photo-flag {
+  position: absolute;
+  z-index: 3;
+  top: 6mm;
+  left: -3mm;
+  max-width: 42mm;
+  padding: 1.6mm 2.2mm;
+  border-left: 1.2mm solid var(--hz-unit);
+  background: var(--hz-paper);
+  color: var(--hz-ink);
+  font-size: 7pt;
+  font-weight: var(--hz-fw-bold);
+  line-height: 1.25;
+}
+
+.hz-photo-index {
+  position: absolute;
+  z-index: 3;
+  top: 4mm;
+  right: 4mm;
+  display: grid;
+  place-items: center;
+  width: 8mm;
+  height: 8mm;
+  background: var(--hz-unit);
+  color: white;
+  font-size: 7pt;
+  font-weight: var(--hz-fw-black);
+}
+
+/* Image left, text block overlapping its lower-right corner. */
+.hz-media-stage--offset {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) 58mm;
+  align-items: end;
+  min-height: 62mm;
+  padding-right: 3mm;
+}
+
+.hz-media-stage--offset .hz-media-stage__photo {
+  grid-column: 1 / -1;
+  grid-row: 1;
+  width: calc(100% - 25mm);
+  min-height: 62mm;
+}
+
+.hz-media-stage__offset-copy {
+  position: relative;
+  z-index: 3;
+  grid-column: 2;
+  grid-row: 1;
+  margin-bottom: -3mm;
+  padding: 4mm;
+  border-top: 1mm solid var(--hz-unit);
+  background: var(--hz-paper);
+}
+
+.hz-media-stage__offset-copy h3 {
+  margin: 0 0 1.5mm;
+  font-size: 15pt;
+  line-height: 1.05;
+}
+
+.hz-media-stage__offset-copy p:last-child { margin-bottom: 0; }
+
+/* Photo with an editorial strip crossing the lower third. */
+.hz-media-stage--band .hz-photo-band {
+  position: absolute;
+  z-index: 3;
+  right: -3mm;
+  bottom: 9mm;
+  left: 14mm;
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 3mm;
+  align-items: center;
+  padding: 2.5mm 3mm;
+  background: var(--hz-unit);
+  color: white;
+}
+
+.hz-photo-band__label {
+  padding-right: 3mm;
+  border-right: .3mm solid rgb(255 255 255 / 55%);
+  font-size: 6.5pt;
+  font-weight: var(--hz-fw-black);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+.hz-photo-band__text {
+  font-family: var(--hz-font-reading);
+  font-size: 8pt;
+  line-height: 1.3;
+}
+
+/* A dominant image plus two independent inset crops. Useful for travel,
+   food, city and lifestyle readings. */
+.hz-media-collage {
+  position: relative;
+  min-height: 66mm;
+  padding-right: 28mm;
+  padding-bottom: 9mm;
+}
+
+.hz-media-collage__main {
+  min-height: 60mm;
+}
+
+.hz-media-collage__inset {
+  position: absolute;
+  z-index: 3;
+  overflow: hidden;
+  border: 1.5mm solid var(--hz-paper);
+  background: #ddd;
+}
+
+.hz-media-collage__inset--top {
+  top: 5mm;
+  right: 0;
+  width: 36mm;
+  height: 28mm;
+}
+
+.hz-media-collage__inset--bottom {
+  right: 8mm;
+  bottom: 0;
+  width: 43mm;
+  height: 28mm;
+}
+
+.hz-media-collage__inset img,
+.hz-media-collage__inset .hz-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: 100%;
+  object-fit: cover;
+}
+
+/* Quote block may sit partly on top of photography but stays editorial,
+   not app-like. */
+.hz-photo-quote {
+  position: absolute;
+  z-index: 4;
+  right: 5mm;
+  bottom: -4mm;
+  width: 57mm;
+  padding: 3.2mm 3.5mm;
+  border-top: .9mm solid var(--hz-unit);
+  background: var(--hz-paper);
+  color: var(--hz-ink);
+  font-family: var(--hz-font-reading);
+  font-size: 9pt;
+  font-style: italic;
+  line-height: 1.35;
+}
+
+.hz-photo-quote cite {
+  display: block;
+  margin-top: 1.5mm;
+  color: var(--hz-muted);
+  font-family: var(--hz-font-sans);
+  font-size: 6.5pt;
+  font-style: normal;
+  font-weight: var(--hz-fw-bold);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+/* Numbered visual matching strip. It can hold 2–4 equal crops without
+   implying that the exercises themselves are in columns. */
+.hz-photo-strip {
+  display: grid;
+  grid-template-columns: repeat(var(--hz-photo-count, 3), minmax(0, 1fr));
+  gap: 1.5mm;
+}
+
+.hz-photo-strip__item {
+  position: relative;
+  min-height: 33mm;
+  overflow: hidden;
+  background: #ddd;
+}
+
+.hz-photo-strip__item > img,
+.hz-photo-strip__item > .hz-photo-placeholder {
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  object-fit: cover;
+}
+
+.hz-photo-strip__label {
+  position: absolute;
+  z-index: 3;
+  bottom: 0;
+  left: 0;
+  min-width: 8mm;
+  padding: 1.2mm 1.6mm;
+  background: var(--hz-paper);
+  color: var(--hz-unit-dark);
+  font-size: 7pt;
+  font-weight: var(--hz-fw-black);
 }
 
 /* ---------- Grammar / pronunciation focus ---------- */
