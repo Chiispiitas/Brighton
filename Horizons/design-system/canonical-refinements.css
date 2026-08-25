@@ -1,0 +1,97 @@
+/* Horizons A1 — canonical refinements
+   These rules refine the approved Stage 3 direction without replacing it.
+
+   PRINCIPLE: repeated items inside the same exercise should normally share
+   one silhouette and structural treatment. Variety should come from color,
+   crop, opacity, scale or typography rather than gratuitous shape changes. */
+
+/* Lesson tab hierarchy: everything centered; lesson ID is unmistakably primary. */
+.hz-lesson-tab {
+  place-items: center;
+  align-content: center;
+  justify-items: center;
+  padding: 1.4mm;
+  text-align: center;
+}
+
+.hz-lesson-tab__label {
+  width: 100%;
+  font-size: 5.1pt;
+  line-height: 1;
+  text-align: center;
+}
+
+.hz-lesson-tab__id {
+  width: 100%;
+  margin-top: .7mm;
+  font-size: 18pt;
+  font-weight: var(--hz-fw-black);
+  line-height: .9;
+  text-align: center;
+}
+
+/* -------------------------------------------------------------------------
+   Lesson 1A prototype refinements
+   These are intentionally scoped to the prototype until its patterns are
+   promoted into reusable components by a later production pass.
+   ------------------------------------------------------------------------- */
+
+/* Exercise 2: one image family = one silhouette. Keep all four crops circular. */
+.l1a-page .l1a-greeting__photo,
+.l1a-page .l1a-greeting:nth-child(1) .l1a-greeting__photo,
+.l1a-page .l1a-greeting:nth-child(2) .l1a-greeting__photo,
+.l1a-page .l1a-greeting:nth-child(3) .l1a-greeting__photo,
+.l1a-page .l1a-greeting:nth-child(4) .l1a-greeting__photo {
+  width: 27mm;
+  height: 27mm;
+  border: .45mm solid var(--hz-unit);
+  border-radius: 50%;
+  clip-path: none;
+}
+
+/* Exercise 5: all three personal-information exchanges belong to the same
+   family. Preserve one geometry and one visual grammar throughout. */
+.l1a-page .l1a-exchange,
+.l1a-page .l1a-exchange:nth-of-type(1),
+.l1a-page .l1a-exchange:nth-of-type(2),
+.l1a-page .l1a-exchange:nth-of-type(3),
+.l1a-page .l1a-exchange:nth-of-type(4) {
+  margin-right: 0;
+  margin-left: 0;
+  border: .3mm solid var(--hz-line);
+  border-left: 1mm solid var(--hz-unit);
+  background: var(--hz-unit-soft);
+}
+
+/* Exercise 6: subtle, meaningful typographic variety.
+   Uppercase carries the full unit color; lowercase is the same hue faded. */
+.l1a-page .l1a-alphabet > span {
+  display: inline-block;
+  color: color-mix(in srgb, var(--hz-unit) 46%, var(--hz-paper));
+}
+
+.l1a-page .l1a-alphabet > span::first-letter {
+  color: var(--hz-unit);
+}
+
+/* Exercise 9: all number markers stay circles. Visual variety is carried by
+   a vibrant background palette while the digits remain white. */
+.l1a-page .l1a-number__digit,
+.l1a-page .l1a-number:nth-child(3n) .l1a-number__digit,
+.l1a-page .l1a-number:nth-child(3n+2) .l1a-number__digit {
+  border: 0;
+  border-radius: 50%;
+  color: #fff;
+}
+
+.l1a-page .l1a-number:nth-child(1)  .l1a-number__digit { background: #0e7490; }
+.l1a-page .l1a-number:nth-child(2)  .l1a-number__digit { background: #e11d48; }
+.l1a-page .l1a-number:nth-child(3)  .l1a-number__digit { background: #7c3aed; }
+.l1a-page .l1a-number:nth-child(4)  .l1a-number__digit { background: #16a34a; }
+.l1a-page .l1a-number:nth-child(5)  .l1a-number__digit { background: #ca8a04; }
+.l1a-page .l1a-number:nth-child(6)  .l1a-number__digit { background: #e85d3f; }
+.l1a-page .l1a-number:nth-child(7)  .l1a-number__digit { background: #0891b2; }
+.l1a-page .l1a-number:nth-child(8)  .l1a-number__digit { background: #4f46e5; }
+.l1a-page .l1a-number:nth-child(9)  .l1a-number__digit { background: #a21caf; }
+.l1a-page .l1a-number:nth-child(10) .l1a-number__digit { background: #0f9f8f; }
+.l1a-page .l1a-number:nth-child(11) .l1a-number__digit { background: #c2410c; }
