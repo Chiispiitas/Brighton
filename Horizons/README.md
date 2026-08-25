@@ -6,39 +6,54 @@ This folder is intentionally separate from the existing `Horizons A1/` directory
 
 ## Current status
 
-- Stage 1: native design system established
+- Stage 1: editorial design system established
 - Stage 2: fixed A4 shell and print CSS established
-- Dynamic showcase: `examples/stage-2-showcase.html`
+- Editorial showcase: `examples/stage-2-showcase.html`
 
 ## Current design direction
 
-The new `Horizons/` workspace does **not** mirror the visual design of the legacy Student's Book and does not reproduce external reference coursebooks. It uses an original native HTML/CSS system:
+The new `Horizons/` workspace does **not** mirror the legacy Student's Book and does not reproduce external reference coursebooks.
+
+The visual goal is a professionally art-directed print coursebook rather than a collection of generic web cards:
 
 - warm off-white A4 paper
-- indigo + aqua core identity
-- coral, sun, plum and sky support accents
-- multicolor horizon rail as recurring page furniture
-- asymmetric rounded cards
-- offset lesson stamps
-- subtle vertical exercise spine
-- compact skill/mode bars
-- editorial photo/text feature panels
-- system-native sans-serif typography
+- mostly neutral black/gray typography
+- one dominant color per unit
+- straight edges and thin editorial rules
+- large raster photography and deliberate cropping
+- white space used intentionally
+- simple large exercise numerals
+- flat grammar/pronunciation focus areas
+- rounded/shadowed surfaces reserved mainly for simulated apps or real-world interfaces
+- almost no decorative gradients
+- very limited pills/badges
+- system-native typography
 - semantic HTML5
-- CSS Grid and Flexbox
+- CSS Grid/Flexbox
+- bespoke page CSS is allowed when a lesson needs a distinctive composition
 - no decorative vector illustration
 
-Reference screenshots may inspire only broad editorial ideas such as hierarchy, activity rhythm, skill labeling, information density and varied media scale. Their specific colors, shapes, page chrome, tab systems, typography and compositions must not be copied.
+Reference screenshots may inspire only broad editorial principles such as hierarchy, activity rhythm, information density, photography scale and skill signaling. Their specific colors, shapes, page chrome, typography and compositions must not be copied.
 
 ## Non-negotiable exercise layout
 
-**All numbered exercises must appear in one vertical column and remain in numerical order.**
+**All numbered exercises appear in one vertical sequence and remain in numerical order.**
 
 Exercises may not be placed side by side.
 
 Inside an individual exercise, questions or activity content may use two or three columns. This includes question sets, answer options, vocabulary, images, reviews, tables, profiles and photo/text layouts.
 
 Use the `.hz-exercises` lane and the internal `.hz-question-grid-*`, `.hz-content-grid-*` and `.hz-inset-grid-*` utilities.
+
+## Anti-template rules
+
+- Do not put a card around content by default.
+- Do not use a pill merely to label ordinary content.
+- Do not fill empty space simply because it exists.
+- Do not use several accent colors on the same normal lesson page.
+- Do not force every lesson into the same visual composition.
+- Do use consistent typography, numbering and learning mechanics across the book.
+- Do allow strong photography and bespoke editorial layouts to create variety.
 
 ## Locked production rules
 
