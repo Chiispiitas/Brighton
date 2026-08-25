@@ -8,41 +8,36 @@ This folder is intentionally separate from the existing `Horizons A1/` directory
 
 - Stage 1: editorial design system established
 - Stage 2: fixed A4 shell and print CSS established
-- Stage 3: shape-led editorial layouts established
-- Stage 4: publication system established — spreads, typography, archetypes, back matter, QA, icons and structured content
+- Stage 2 media showcase: `examples/stage-2-showcase.html`
+- Stage 3 shape-led editorial showcase: `examples/stage-3-shape-showcase.html`
 
-Showcases:
-
-- `examples/stage-2-showcase.html` — photography/overlay compositions
-- `examples/stage-3-shape-showcase.html` — shape-led/full-page editorial compositions
-- `examples/stage-4-publication-showcase.html` — spread-level publication system + back matter
-
-## Design direction
+## Current design direction
 
 The new `Horizons/` workspace does **not** mirror the legacy Student's Book and does not reproduce external reference coursebooks.
 
-The visual goal is a professionally art-directed print coursebook:
+The visual goal is a professionally art-directed print coursebook rather than a collection of generic web cards:
 
-- warm off-white A4 paper;
-- mostly neutral black/gray typography;
-- one dominant color per unit;
-- typography and photography as the main hierarchy;
-- large raster photography and deliberate cropping;
-- controlled overlays, full-page text features and structural shapes;
-- straight edges and thin editorial rules by default;
-- white space used intentionally;
-- simple large exercise numerals;
-- Grammar and Pronunciation visually differentiated;
-- rounded/shadowed surfaces reserved mainly for simulated apps or real-world interfaces;
-- almost no decorative gradients;
-- very limited pills/badges;
-- system-native typography;
-- semantic HTML5;
-- CSS Grid/Flexbox;
-- bespoke page CSS allowed when a lesson needs a distinctive composition;
-- no decorative vector illustration.
+- warm off-white A4 paper
+- mostly neutral black/gray typography
+- one dominant color per unit
+- straight edges and thin editorial rules
+- large raster photography and deliberate cropping
+- white space used intentionally
+- simple large exercise numerals
+- flat grammar/pronunciation focus areas
+- rounded/shadowed surfaces reserved mainly for simulated apps or real-world interfaces
+- almost no decorative gradients
+- very limited pills/badges
+- system-native typography
+- semantic HTML5
+- CSS Grid/Flexbox
+- bespoke page CSS is allowed when a lesson needs a distinctive composition
+- full-page and near-full-page readings are allowed when pedagogically justified
+- large CSS geometric fields, circles, clipped corners, folds, bands and speech bubbles can structure a page
+- text itself may become a major visual element through scale and placement
+- no decorative vector illustration
 
-Reference screenshots may inspire only broad editorial principles such as hierarchy, activity rhythm, information density, photography scale and skill signaling. Their specific colors, shapes, page chrome, typography and compositions must not be copied.
+Reference screenshots may inspire only broad editorial principles such as hierarchy, activity rhythm, information density, photography scale, skill signaling and the use of large feature texts. Their specific colors, shapes, page chrome, typography and compositions must not be copied.
 
 ## Non-negotiable exercise layout
 
@@ -50,100 +45,9 @@ Reference screenshots may inspire only broad editorial principles such as hierar
 
 Exercises may not be placed side by side.
 
-Inside an individual exercise, questions or activity content may use two or three columns. This includes question sets, answer options, vocabulary, images, reviews, tables, profiles and photo/text layouts.
+Inside an individual exercise, questions or activity content may use two or three columns. This includes question sets, answer options, vocabulary, images, reviews, tables, profiles, photo/text layouts, full-page article features, quiz panels and shape-led compositions.
 
-## Two-page lesson rule
-
-Lessons are authored as **two-page spreads**, not two unrelated pages.
-
-Use `.hz-spread` and give Page 1 / Page 2 complementary roles such as:
-
-- photo-led → practice-led
-- reading-feature → grammar/communication
-- real-world interface → language/practice
-- quiz → speaking/writing
-
-The master starter in `shell/page-template.html` now contains both A4 pages.
-
-## Layout archetypes
-
-Horizons supports controlled variety through:
-
-- standard language spreads;
-- photo-led vocabulary;
-- reading features;
-- interviews/profiles;
-- quizzes/questionnaires;
-- real-world interfaces;
-- processes/timelines;
-- collages/editorial features.
-
-See `design-system/layout-archetypes.md`.
-
-## Density
-
-Pages explicitly choose a density:
-
-- `.hz-density-light`
-- `.hz-density-medium`
-- `.hz-density-dense`
-
-This prevents every lesson from having the same visual rhythm.
-
-## Photography and assets
-
-Rules live in:
-
-- `design-system/asset-policy.md`
-- `design-system/image-direction.md`
-- `assets/asset-ledger.csv`
-
-Production assets are local, free for intended use, documented, and targeted at appropriate print resolution.
-
-## Audio
-
-Audio target remains American English with ElevenLabs production planned.
-
-Manifest template:
-
-`audio/audio-manifest.csv`
-
-Each recording receives a stable internal ID and printed track number. QR access remains optional but supported.
-
-## Functional icons
-
-The shared SVG sprite is:
-
-`assets/icons/horizons-icons.svg`
-
-It contains functional symbols only; vector illustration remains prohibited.
-
-## Structured content
-
-`content/` contains a schema and demonstration record for storing stable lesson/exercise metadata separately from presentation.
-
-This is intended to support the future:
-
-- Workbook
-- Teacher's Book
-- Answer Key
-- Audio scripts
-- Audio pack
-- Digital exercises
-- Tests
-- Vocabulary lists
-
-HTML/CSS remains the definitive Student's Book master.
-
-## QA
-
-`qa/` contains:
-
-- browser-side layout audit;
-- print QA checklist;
-- debug workflow documentation.
-
-The audit checks fixed-page overflow, duplicate IDs, exercise sequence/lane violations, alt text, unresolved placeholders and basic QR sizing.
+Use the `.hz-exercises` lane and the internal `.hz-question-grid-*`, `.hz-content-grid-*` and `.hz-inset-grid-*` utilities.
 
 ## Anti-template rules
 
@@ -153,8 +57,24 @@ The audit checks fixed-page overflow, duplicate IDs, exercise sequence/lane viol
 - Do not use several accent colors on the same normal lesson page.
 - Do not force every lesson into the same visual composition.
 - Do use consistent typography, numbering and learning mechanics across the book.
-- Do allow strong photography, structural shapes and bespoke editorial layouts to create variety.
-- Do not overlap/rotate answer mechanics or exercise numbers.
+- Do allow strong photography, oversized text, structural CSS shapes and bespoke editorial layouts to create variety.
+- Prefer one or two large structural shapes over many small decorative elements.
+
+## Shape-led layout library
+
+`design-system/editorial-layouts.css` is loaded automatically by the A4 shell and provides large-scale patterns for:
+
+- full-page interview/profile features
+- article mastheads with overlapping hero photography
+- multi-column readings
+- week/story modules
+- question clouds
+- questionnaire/quiz posters
+- poster-style travel/social features
+- process/timeline strips
+- folded-corner notes
+
+The Stage 3 showcase demonstrates these patterns using existing locked syllabus lesson titles and contexts.
 
 ## Locked production rules
 
@@ -182,20 +102,19 @@ The audit checks fixed-page overflow, duplicate IDs, exercise sequence/lane viol
 Horizons/
 ├── README.md
 ├── design-system/
+│   ├── tokens.css
+│   ├── components.css
+│   ├── editorial-layouts.css
+│   ├── component-contracts.md
+│   └── asset-policy.md
 ├── shell/
-├── examples/
-├── assets/
-│   ├── asset-ledger.csv
-│   └── icons/
-├── audio/
-│   └── audio-manifest.csv
-├── content/
-│   ├── content-schema.json
-│   ├── example-lesson.json
+│   ├── a4-shell.css
+│   ├── print.css
+│   ├── page-template.html
 │   └── README.md
-└── qa/
-    ├── page-audit.js
-    ├── print-qa-checklist.md
+└── examples/
+    ├── stage-2-showcase.html
+    ├── stage-3-shape-showcase.html
     └── README.md
 ```
 

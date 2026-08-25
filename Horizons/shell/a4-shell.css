@@ -1,17 +1,9 @@
 @import url("../design-system/components.css");
-@import url("../design-system/typography.css");
 @import url("../design-system/editorial-layouts.css");
-@import url("../design-system/spreads.css");
-@import url("../design-system/archetypes.css");
-@import url("../design-system/unit-identities.css");
-@import url("../design-system/icons.css");
-@import url("../design-system/backmatter.css");
-@import url("../design-system/qa.css");
 
-/* Horizons — publication HTML5/CSS A4 shell.
+/* Horizons — editorial HTML5/CSS A4 shell.
    One semantic .hz-page = one print page.
-   Sibling numbered exercises always stay in one vertical lane.
-   Two-page lessons should be art-directed as spreads. */
+   Sibling numbered exercises always stay in one vertical lane. */
 
 :root {
   --hz-page-width: 210mm;
@@ -50,7 +42,7 @@ body.hz-book {
   isolation: isolate;
 }
 
-/* Short unit-color registration mark: identity without a decorative banner. */
+/* A short unit-color registration mark gives the book identity without a decorative banner. */
 .hz-page::before {
   content: "";
   position: absolute;
@@ -240,6 +232,20 @@ body.hz-book {
   font-weight: var(--hz-fw-bold);
   line-height: 1.05;
   text-align: center;
+}
+
+/* ---------- QA ---------- */
+
+body.hz-debug .hz-page::after {
+  content: "CONTENT FRAME";
+  position: absolute;
+  inset: var(--hz-page-margin-top) var(--hz-page-margin-x)
+    calc(var(--hz-page-margin-bottom) + var(--hz-footer-height));
+  z-index: 999;
+  pointer-events: none;
+  border: .25mm dashed rgb(180 40 40 / 50%);
+  color: rgb(180 40 40 / 65%);
+  font: 6pt var(--hz-font-sans);
 }
 
 @media screen and (max-width: 220mm) {

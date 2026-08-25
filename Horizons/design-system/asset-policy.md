@@ -37,9 +37,7 @@ Before an external image becomes a production asset, record:
 - license/use terms;
 - attribution requirement;
 - date acquired;
-- any edits/crops made;
-- intended crop/composition;
-- alt text.
+- any edits/crops made.
 
 Do not hotlink production images. Download approved assets into the project asset structure during the relevant production stage.
 
@@ -70,18 +68,7 @@ Use authentic photography when real-world recognition is important, especially f
 
 Avoid watermarked preview images in all final material.
 
-Follow `image-direction.md` for crop, gaze, negative-space, overlay and inset-photo rules.
-
-## 5. Print quality
-
-- Target **300 ppi effective resolution at final print size** where practical.
-- Never knowingly ship a visibly low-resolution image.
-- Preserve the original source file separately from any production export.
-- Prefer CSS `object-fit` / `object-position` to destructive cropping so art direction remains editable.
-- Final image QA should be performed at actual A4 print size, not only zoomed on screen.
-- Use `.hz-qa-lowres` during layout review when an asset still needs replacement.
-
-## 6. Real brands and apps
+## 5. Real brands and apps
 
 The syllabus includes real-world contexts such as transport apps, maps/reviews, shopping systems, and social-media-like activities.
 
@@ -93,7 +80,7 @@ Default rule:
 - retain only the visual information necessary for the language task;
 - do not imply endorsement or affiliation.
 
-## 7. Functional SVG rule
+## 6. Functional SVG rule
 
 SVG is allowed for small functional symbols such as:
 
@@ -106,33 +93,11 @@ SVG is allowed for small functional symbols such as:
 - arrow/chevron;
 - calendar;
 - QR/scanner indicator;
-- reading/writing/speaking task signals;
-- pair/group work;
-- simple grammar/vocabulary/pronunciation symbols.
+- simple grammar/vocabulary section symbols.
 
 Icons should inherit Horizons colors where practical and remain secondary to content.
 
-The shared functional sprite lives at:
-
-`assets/icons/horizons-icons.svg`
-
-Do not add decorative character/scene artwork to the sprite.
-
-## 8. Development placeholders
-
-Placeholders must describe the **intended final composition**, not merely say “photo.”
-
-Good:
-
-`Toronto skyline + traveler · wide hero · subject right · text-safe space left`
-
-Bad:
-
-`Image here`
-
-This allows sourcing/generation to follow the pedagogy and page design.
-
-## 9. Audio policy
+## 7. Audio policy
 
 Planned audio production:
 
@@ -156,15 +121,7 @@ For each audio asset, retain:
 - generation date;
 - final filename.
 
-## 10. QR policy
-
-- QR codes must link to stable approved audio/digital destinations.
-- Maintain enough white quiet zone for reliable scanning.
-- Test from a physical A4 print before publication.
-- Do not place a QR too close to trim, page edge, fold/gutter or a high-contrast photograph.
-- Printed track number must remain visible even when QR access is offered.
-
-## 11. Asset naming convention
+## 8. Asset naming convention
 
 Recommended pattern:
 

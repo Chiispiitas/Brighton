@@ -33,10 +33,7 @@
     page-break-after: auto;
   }
 
-  .hz-spread { display: contents !important; }
-
-  .hz-no-print,
-  .hz-qa-density {
+  .hz-no-print {
     display: none !important;
   }
 
@@ -45,76 +42,21 @@
     text-decoration: none;
   }
 
-  p,
-  li {
-    widows: 3;
-    orphans: 3;
-  }
-
-  h1,
-  h2,
-  h3,
-  .hz-exercise__instruction,
-  .hz-focus-box__header {
-    break-after: avoid;
-    page-break-after: avoid;
-  }
-
   img,
   figure,
   table,
-  blockquote,
   .hz-focus-box,
   .hz-reading-card,
   .hz-ui-card,
   .hz-review-block,
   .hz-exercise,
   .hz-extra-practice,
-  .hz-feature-sheet,
-  .hz-article-panel,
-  .hz-quiz-panel,
-  .hz-poster-stage,
-  .hz-process-strip,
-  .hz-media-collage,
-  .hz-media-stage,
-  .hz-page-end,
-  .hz-grammar-reference,
-  .hz-vocab-section {
+  .hz-callout {
     break-inside: avoid;
     page-break-inside: avoid;
   }
 
-  /* Columns inside one exercise should remain together. */
-  .hz-question-grid,
-  .hz-content-grid,
-  .hz-inset-grid,
-  .hz-reading--columns-2,
-  .hz-reading--columns-3 {
-    break-inside: avoid;
-    page-break-inside: avoid;
-  }
-
-  /* QA/debug furniture never reaches the publication PDF. */
-  body.hz-debug .hz-page::after,
-  body.hz-debug-safe .hz-page::after,
-  .hz-qa-lowres::after,
-  .hz-qa-missing-asset::after {
+  body.hz-debug .hz-page::after {
     display: none !important;
-  }
-
-  .hz-qa-overflow,
-  .hz-qa-lowres,
-  .hz-qa-missing-asset {
-    outline: 0 !important;
-  }
-
-  /* Avoid accidental transforms causing rasterization or clipping in print. */
-  .hz-rotate-soft-left,
-  .hz-rotate-soft-right {
-    transform-origin: center;
-  }
-
-  svg.hz-icon {
-    overflow: visible;
   }
 }
