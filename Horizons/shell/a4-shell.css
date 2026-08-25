@@ -1,26 +1,18 @@
 @import url("../design-system/components.css");
 
-/* Horizons — Stage 2 master A4 shell
-   HTML/CSS is the definitive master format.
-   Each .hz-page is exactly one A4 page. */
+/* Horizons — native HTML5/CSS A4 shell
+   One semantic .hz-page = one print page.
+   The page system uses a single consistent content frame rather than mirrored
+   left/right book artwork. */
 
 :root {
   --hz-page-width: 210mm;
   --hz-page-height: 297mm;
-  --hz-page-bg: var(--hz-white);
-
-  /* Mirrored book margins */
-  --hz-margin-top: 12mm;
-  --hz-margin-bottom: 14mm;
-  --hz-margin-inner: 16mm;
-  --hz-margin-outer: 13mm;
-
-  /* Reserved page furniture */
+  --hz-page-margin-x: 14mm;
+  --hz-page-margin-top: 13mm;
+  --hz-page-margin-bottom: 16mm;
   --hz-footer-height: 8mm;
   --hz-content-gap: 4mm;
-
-  /* Editorial grid */
-  --hz-grid-columns: 12;
   --hz-grid-gap: 4mm;
 }
 
@@ -32,8 +24,8 @@ body {
 
 body.hz-book {
   min-height: 100%;
-  background: #ececec;
-  color: var(--hz-text);
+  background: #e7ebee;
+  color: var(--hz-ink);
   font-family: var(--hz-font-body);
   font-size: var(--hz-fs-body);
   line-height: var(--hz-lh-body);
@@ -47,8 +39,8 @@ body.hz-book {
   height: var(--hz-page-height);
   margin: 10mm auto;
   overflow: hidden;
-  background: var(--hz-page-bg);
-  box-shadow: 0 1mm 4mm rgb(0 0 0 / 14%);
+  background: var(--hz-paper);
+  box-shadow: 0 1mm 5mm rgb(23 33 43 / 14%);
   break-after: page;
   page-break-after: always;
   isolation: isolate;
@@ -59,76 +51,50 @@ body.hz-book {
   page-break-after: auto;
 }
 
-/* Left page: outside edge is left; binding edge is right. */
-.hz-page--left .hz-page__content {
-  inset: var(--hz-margin-top) var(--hz-margin-inner)
-         calc(var(--hz-margin-bottom) + var(--hz-footer-height)) var(--hz-margin-outer);
-}
-
-/* Right page: binding edge is left; outside edge is right. */
-.hz-page--right .hz-page__content {
-  inset: var(--hz-margin-top) var(--hz-margin-outer)
-         calc(var(--hz-margin-bottom) + var(--hz-footer-height)) var(--hz-margin-inner);
-}
-
-/* Neutral/single-page master uses equal horizontal margins. */
-.hz-page--single .hz-page__content {
-  inset: var(--hz-margin-top) 14.5mm
-         calc(var(--hz-margin-bottom) + var(--hz-footer-height)) 14.5mm;
-}
-
 .hz-page__content {
   position: absolute;
+  inset: var(--hz-page-margin-top) var(--hz-page-margin-x)
+    calc(var(--hz-page-margin-bottom) + var(--hz-footer-height));
   z-index: var(--hz-z-content);
   overflow: hidden;
 }
 
 .hz-page__footer {
   position: absolute;
+  right: var(--hz-page-margin-x);
   bottom: 6mm;
+  left: var(--hz-page-margin-x);
   z-index: var(--hz-z-label);
   display: flex;
   align-items: center;
-  gap: 2mm;
+  justify-content: space-between;
   height: var(--hz-footer-height);
-  color: var(--hz-navy);
-  font-family: var(--hz-font-label);
-  font-size: var(--hz-fs-xs);
-  line-height: 1;
+  padding-top: 2mm;
+  border-top: var(--hz-border) solid var(--hz-line);
+  color: var(--hz-muted);
+  font-family: var(--hz-font-ui);
+  font-size: var(--hz-fs-2xs);
 }
 
-.hz-page--left .hz-page__footer {
-  left: var(--hz-margin-outer);
-}
-
-.hz-page--right .hz-page__footer {
-  right: var(--hz-margin-outer);
-  flex-direction: row-reverse;
-}
-
-.hz-page--single .hz-page__footer {
-  right: 14.5mm;
+.hz-page-code {
+  font-weight: var(--hz-fw-bold);
+  letter-spacing: .06em;
+  text-transform: uppercase;
 }
 
 .hz-page-number {
   display: inline-grid;
   place-items: center;
-  min-width: 8mm;
-  height: 6mm;
+  min-width: 7mm;
+  height: 7mm;
   padding: 0 1.5mm;
-  background: var(--hz-navy);
-  color: var(--hz-white);
-  font-family: var(--hz-font-label);
-  font-weight: 700;
+  border-radius: var(--hz-radius-pill);
+  background: var(--hz-ink);
+  color: white;
+  font-weight: var(--hz-fw-bold);
 }
 
-.hz-page-code {
-  color: var(--hz-magenta);
-  font-weight: 700;
-  letter-spacing: .03em;
-}
-
-/* ---------- Page-level composition ---------- */
+/* ---------- Native layout primitives ---------- */
 
 .hz-page-stack {
   display: flex;
@@ -137,14 +103,14 @@ body.hz-book {
   gap: var(--hz-content-gap);
 }
 
-.hz-page-stack > .hz-fill {
+.hz-fill {
   flex: 1 1 auto;
   min-height: 0;
 }
 
 .hz-grid {
   display: grid;
-  grid-template-columns: repeat(var(--hz-grid-columns), minmax(0, 1fr));
+  grid-template-columns: repeat(12, minmax(0, 1fr));
   gap: var(--hz-grid-gap);
   min-width: 0;
 }
@@ -164,17 +130,17 @@ body.hz-book {
 
 .hz-two-column {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 6mm;
   min-height: 0;
 }
 
 .hz-two-column--wide-left {
-  grid-template-columns: 1.25fr .75fr;
+  grid-template-columns: 1.18fr .82fr;
 }
 
 .hz-two-column--wide-right {
-  grid-template-columns: .75fr 1.25fr;
+  grid-template-columns: .82fr 1.18fr;
 }
 
 .hz-three-column {
@@ -193,30 +159,29 @@ body.hz-book {
 
 .hz-section-title {
   margin: 0 0 2mm;
-  color: var(--hz-navy);
-  font-family: var(--hz-font-label);
+  color: var(--hz-ink);
   font-size: var(--hz-fs-md);
-  font-weight: 700;
+  font-weight: var(--hz-fw-bold);
   line-height: var(--hz-lh-snug);
 }
 
 .hz-kicker {
-  margin: 0 0 1mm;
-  color: var(--hz-magenta);
-  font-family: var(--hz-font-label);
+  margin: 0 0 1.2mm;
+  color: var(--hz-coral);
   font-size: var(--hz-fs-xs);
-  font-weight: 700;
-  letter-spacing: .06em;
+  font-weight: var(--hz-fw-bold);
+  letter-spacing: .08em;
   text-transform: uppercase;
 }
 
-/* ---------- Image slots for production ---------- */
+/* ---------- Media ---------- */
 
 .hz-media-frame {
   position: relative;
   overflow: hidden;
   min-height: 28mm;
-  background: #e9edf0;
+  border-radius: var(--hz-radius-lg);
+  background: var(--hz-soft-gray);
 }
 
 .hz-media-frame > img {
@@ -231,118 +196,110 @@ body.hz-book {
 .hz-media-frame--wide { aspect-ratio: 16 / 7; }
 .hz-media-frame--square { aspect-ratio: 1; }
 
-/* Only for layout prototypes. Replace with licensed/generated raster images. */
 .hz-media-placeholder {
   display: grid;
   place-items: center;
   width: 100%;
   height: 100%;
   min-height: inherit;
-  border: .35mm dashed #aeb7bf;
-  color: #7b8790;
+  padding: 5mm;
+  border: var(--hz-border) dashed var(--hz-line-strong);
+  border-radius: inherit;
   background:
-    linear-gradient(135deg, transparent 49.5%, #d7dde1 50%, transparent 50.5%),
-    linear-gradient(45deg, transparent 49.5%, #d7dde1 50%, transparent 50.5%),
-    #eef1f3;
-  font-family: var(--hz-font-label);
+    radial-gradient(circle at 18% 24%, rgb(63 91 216 / 9%) 0 10%, transparent 10.5%),
+    radial-gradient(circle at 78% 70%, rgb(242 107 94 / 10%) 0 12%, transparent 12.5%),
+    linear-gradient(135deg, var(--hz-soft-primary), var(--hz-soft-mint));
+  color: var(--hz-muted);
   font-size: var(--hz-fs-xs);
-  font-weight: 700;
-  letter-spacing: .06em;
-  text-transform: uppercase;
+  font-weight: var(--hz-fw-semibold);
+  text-align: center;
 }
 
 .hz-caption {
-  margin-top: 1mm;
-  color: #68717a;
-  font-family: var(--hz-font-label);
+  margin: 1.3mm 0 0;
+  color: var(--hz-muted);
   font-size: var(--hz-fs-2xs);
   line-height: var(--hz-lh-snug);
 }
 
-/* ---------- Review-page furniture ---------- */
+/* ---------- Unit review ---------- */
 
 .hz-review-header {
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  min-height: 22mm;
-  padding: 0 0 3mm;
-  border-bottom: 1.2mm solid var(--hz-magenta);
+  display: grid;
+  grid-template-columns: auto 1fr;
+  gap: 4mm;
+  align-items: center;
+  padding: 4mm;
+  border-radius: var(--hz-radius-lg);
+  background: linear-gradient(120deg, var(--hz-soft-primary), var(--hz-soft-mint));
 }
 
 .hz-review-header__unit {
-  color: var(--hz-magenta);
-  font-family: var(--hz-font-display);
-  font-size: 30pt;
-  line-height: .9;
+  display: grid;
+  place-items: center;
+  width: 16mm;
+  height: 16mm;
+  border-radius: 50%;
+  background: var(--hz-primary);
+  color: white;
+  font-size: var(--hz-fs-lg);
+  font-weight: var(--hz-fw-black);
 }
 
 .hz-review-header__title {
   margin: 0;
-  color: var(--hz-navy);
-  font-family: var(--hz-font-title-heavy);
-  font-size: 22pt;
+  color: var(--hz-ink);
+  font-size: 24pt;
+  font-weight: var(--hz-fw-black);
   line-height: 1;
-  text-transform: uppercase;
+  letter-spacing: -.02em;
 }
 
 .hz-review-block {
-  padding: 3mm;
-  border-top: 1mm solid var(--hz-navy);
-  background: #fff;
+  padding: 4mm;
+  border: var(--hz-border) solid var(--hz-line);
+  border-radius: var(--hz-radius-md);
+  background: var(--hz-surface);
 }
 
 .hz-review-block__label {
   margin: 0 0 2mm;
-  color: var(--hz-magenta);
-  font-family: var(--hz-font-label);
-  font-size: var(--hz-fs-sm);
-  font-weight: 700;
+  color: var(--hz-primary-dark);
+  font-size: var(--hz-fs-xs);
+  font-weight: var(--hz-fw-bold);
+  letter-spacing: .06em;
   text-transform: uppercase;
 }
 
-/* ---------- QR production slot ---------- */
+/* ---------- QR ---------- */
 
 .hz-qr-slot {
   display: inline-grid;
   place-items: center;
-  width: 13mm;
-  height: 13mm;
-  border: .35mm solid var(--hz-navy);
-  color: var(--hz-navy);
-  background: var(--hz-white);
-  font-family: var(--hz-font-label);
-  font-size: 5.5pt;
-  font-weight: 700;
-  line-height: 1;
+  width: 14mm;
+  height: 14mm;
+  border: var(--hz-border-strong) solid var(--hz-line-strong);
+  border-radius: var(--hz-radius-sm);
+  background: white;
+  color: var(--hz-muted);
+  font-size: 6pt;
+  font-weight: var(--hz-fw-bold);
+  line-height: 1.05;
   text-align: center;
 }
 
-/* ---------- Debug / QA ---------- */
+/* ---------- QA ---------- */
 
 body.hz-debug .hz-page::after {
-  content: "SAFE AREA";
+  content: "CONTENT FRAME";
   position: absolute;
+  inset: var(--hz-page-margin-top) var(--hz-page-margin-x)
+    calc(var(--hz-page-margin-bottom) + var(--hz-footer-height));
   z-index: 999;
   pointer-events: none;
-  color: rgb(255 0 0 / 45%);
-  border: .25mm dashed rgb(255 0 0 / 35%);
-  font: 6pt Arial, sans-serif;
-}
-
-body.hz-debug .hz-page--left::after {
-  inset: var(--hz-margin-top) var(--hz-margin-inner)
-         calc(var(--hz-margin-bottom) + var(--hz-footer-height)) var(--hz-margin-outer);
-}
-
-body.hz-debug .hz-page--right::after {
-  inset: var(--hz-margin-top) var(--hz-margin-outer)
-         calc(var(--hz-margin-bottom) + var(--hz-footer-height)) var(--hz-margin-inner);
-}
-
-body.hz-debug .hz-page--single::after {
-  inset: var(--hz-margin-top) 14.5mm
-         calc(var(--hz-margin-bottom) + var(--hz-footer-height)) 14.5mm;
+  border: .25mm dashed rgb(242 107 94 / 55%);
+  color: rgb(242 107 94 / 65%);
+  font: 6pt var(--hz-font-ui);
 }
 
 @media screen and (max-width: 220mm) {
