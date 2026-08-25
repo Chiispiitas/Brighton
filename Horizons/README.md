@@ -4,12 +4,26 @@ HTML5/CSS production workspace for the **Horizons A1 Student's Book**.
 
 This folder is intentionally separate from the existing `Horizons A1/` directory. The legacy files remain source/reference material and must not be modified unless explicitly authorized.
 
+## Canonical style status
+
+**The current Stage 3 design is the approved and desired visual style for the book.**
+
+It is no longer treated as an experimental direction. New Student's Book work should extend this visual language unless the author explicitly approves a redesign.
+
+Canonical references, in order:
+
+1. `design-system/CANONICAL-STYLE.md`
+2. `examples/stage-3-shape-showcase.html` — primary visual reference
+3. `examples/stage-2-showcase.html` — supporting photography/overlay reference
+4. current `design-system/components.css` and `design-system/editorial-layouts.css`
+
 ## Current status
 
 - Stage 1: editorial design system established
 - Stage 2: fixed A4 shell and print CSS established
 - Stage 2 media showcase: `examples/stage-2-showcase.html`
 - Stage 3 shape-led editorial showcase: `examples/stage-3-shape-showcase.html`
+- **Stage 3: APPROVED CANONICAL BOOK STYLE**
 
 ## Current design direction
 
@@ -74,7 +88,7 @@ Use the `.hz-exercises` lane and the internal `.hz-question-grid-*`, `.hz-conten
 - process/timeline strips
 - folded-corner notes
 
-The Stage 3 showcase demonstrates these patterns using existing locked syllabus lesson titles and contexts.
+The Stage 3 showcase demonstrates these patterns using existing locked syllabus lesson titles and contexts and is the **primary visual benchmark** for future page design.
 
 ## Locked production rules
 
@@ -95,6 +109,7 @@ The Stage 3 showcase demonstrates these patterns using existing locked syllabus 
 - External assets must be free for the intended use and recorded in an asset ledger
 - Audio target: American English with ElevenLabs production planned
 - Printed audio references support QR access
+- The canonical Stage 3 visual philosophy must not be silently replaced by a new design system
 
 ## Workspace
 
@@ -102,6 +117,7 @@ The Stage 3 showcase demonstrates these patterns using existing locked syllabus 
 Horizons/
 ├── README.md
 ├── design-system/
+│   ├── CANONICAL-STYLE.md
 │   ├── tokens.css
 │   ├── components.css
 │   ├── editorial-layouts.css
