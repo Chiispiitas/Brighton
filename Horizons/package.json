@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": {
-    "validate:example": "node qa/validate-content.mjs content/example-lesson.json"
+    "validate:example": "node qa/validate-content.mjs content/example-lesson.json",
+    "new:lesson": "node tools/new-lesson.mjs"
   }
 }
