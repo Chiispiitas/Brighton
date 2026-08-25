@@ -43,16 +43,19 @@
   }
 
   img,
+  figure,
+  table,
   .hz-focus-box,
   .hz-reading-card,
   .hz-ui-card,
   .hz-review-block,
-  .hz-exercise {
+  .hz-exercise,
+  .hz-extra-practice,
+  .hz-callout {
     break-inside: avoid;
     page-break-inside: avoid;
   }
 
-  /* Debug furniture is never part of publication output. */
   body.hz-debug .hz-page::after {
     display: none !important;
   }
