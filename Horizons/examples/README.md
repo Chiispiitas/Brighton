@@ -47,7 +47,19 @@ Demonstrates the system working as a real publication rather than isolated compo
 9. Vocabulary Practice back matter;
 10. Grammar Reference back matter.
 
-The showcase intentionally uses unresolved image placeholders so crop intent remains visible. It is not a final Student's Book lesson.
+## Unit Review
+
+`unit-review-showcase.html`
+
+Demonstrates a dedicated review identity with:
+
+- visible consolidation of Lessons A–D;
+- denser vocabulary/grammar practice;
+- reading recap;
+- final communicative/writing challenge;
+- simple readiness score.
+
+Unit Reviews intentionally prioritize consolidation and navigation over feature-page photography.
 
 ## Non-negotiable rule demonstrated by every stage
 
