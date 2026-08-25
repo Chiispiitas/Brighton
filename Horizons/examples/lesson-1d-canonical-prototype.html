@@ -1,0 +1,763 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Horizons A1 — Lesson 1D Canonical Prototype</title>
+  <link rel="stylesheet" href="../shell/a4-shell.css">
+  <link rel="stylesheet" href="../shell/print.css" media="print">
+  <style>
+    /*
+      LESSON 1D CANONICAL PROTOTYPE
+      -----------------------------
+      The frozen Student's Book provides only the lesson identity/focus:
+      LET'S FILL A FORM! — Personal information + Capitalization.
+
+      The unfinished lesson is completed here using the canonical Guided
+      Discovery methodology:
+      context → noticing → guided analysis → clarification → controlled
+      practice → communicative use → transfer to a real situation.
+
+      Lesson D culminates in a real transaction. Students create/choose a
+      simple business or service, role-play staff and customer/guest/member,
+      obtain a classmate's information, and complete the form as the product
+      of that interaction.
+
+      Final photography is represented by crop-aware placeholders.
+    */
+
+    .l1d-page .hz-page__content { overflow: hidden; }
+    .l1d-page .hz-page-stack { gap: 2mm; }
+    .l1d-page .hz-lesson-header { padding-bottom: 3mm; }
+    .l1d-page .hz-exercises { gap: .15mm; }
+    .l1d-page .hz-exercise { padding: 1.2mm 0 1.65mm; }
+    .l1d-page .hz-exercise__body { margin-top: 1.1mm; }
+    .l1d-page .hz-exercise__instruction { font-size: 8.8pt; }
+    .l1d-target { color: var(--hz-unit-dark); font-weight: var(--hz-fw-black); }
+
+    /* ------------------------------------------------------------------
+       PAGE 11 — encounter, discover, clarify, practice
+       ------------------------------------------------------------------ */
+
+    .l1d-checkin-stage {
+      position: relative;
+      display: grid;
+      grid-template-columns: .92fr 1.08fr;
+      gap: 0;
+      min-height: 92mm;
+      padding: 3mm 0 1mm;
+      isolation: isolate;
+    }
+
+    .l1d-checkin-stage::before {
+      content: "CHECK-IN";
+      position: absolute;
+      z-index: -1;
+      left: -3mm;
+      bottom: -5mm;
+      color: var(--hz-unit-soft);
+      font-size: 47pt;
+      font-weight: var(--hz-fw-black);
+      line-height: .9;
+      letter-spacing: -.07em;
+    }
+
+    .l1d-checkin-photo {
+      position: relative;
+      min-height: 86mm;
+      overflow: hidden;
+      background: var(--hz-wash);
+      clip-path: polygon(0 0, 100% 0, 91% 100%, 0 100%);
+    }
+
+    .l1d-checkin-photo .hz-photo-placeholder { min-height: 86mm; }
+
+    .l1d-checkin-copy {
+      position: relative;
+      z-index: 2;
+      align-self: center;
+      margin-left: -7mm;
+      padding: 4mm 4mm 3.8mm 7mm;
+      border-top: 1.1mm solid var(--hz-unit);
+      background: var(--hz-paper);
+      box-shadow: 0 0 0 .25mm var(--hz-line);
+    }
+
+    .l1d-checkin-copy__kicker {
+      display: inline-block;
+      margin-bottom: 2mm;
+      color: var(--hz-unit-dark);
+      font-size: 6.5pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .l1d-dialogue {
+      display: grid;
+      grid-template-columns: 17mm 1fr;
+      gap: .8mm 2mm;
+      margin: 0 0 3mm;
+      font-size: 7.25pt;
+      line-height: 1.3;
+    }
+
+    .l1d-dialogue dt { margin: 0; font-weight: var(--hz-fw-black); }
+    .l1d-dialogue dd { margin: 0; }
+
+    .l1d-model-form {
+      position: relative;
+      padding: 3mm 3.3mm 2.7mm;
+      border: .3mm solid var(--hz-line);
+      background: #fff;
+    }
+
+    .l1d-model-form__brand {
+      margin: 0 0 .8mm;
+      color: var(--hz-unit-dark);
+      font-size: 6.2pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .l1d-model-form h3 {
+      margin: 0 0 2mm;
+      font-size: 11pt;
+      line-height: 1;
+    }
+
+    .l1d-model-row {
+      display: grid;
+      grid-template-columns: 24mm 1fr;
+      gap: 2mm;
+      align-items: end;
+      min-height: 5.2mm;
+      font-size: 6.8pt;
+    }
+
+    .l1d-model-row span:first-child { color: var(--hz-muted); }
+    .l1d-model-row span:last-child {
+      min-height: 4mm;
+      padding-bottom: .35mm;
+      border-bottom: .28mm solid var(--hz-line-strong);
+      font-weight: var(--hz-fw-semibold);
+    }
+
+    /* Discovery questions are intentionally explicit and visible. */
+    .l1d-discovery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2mm 7mm;
+      padding: 1mm 0 .2mm;
+      font-size: 7.55pt;
+      line-height: 1.32;
+    }
+
+    .l1d-discovery__item {
+      display: grid;
+      grid-template-columns: 5mm 1fr;
+      gap: 1mm;
+      min-height: 9mm;
+    }
+
+    .l1d-discovery__item b { color: var(--hz-unit-dark); }
+    .l1d-discovery__choices { display: block; margin-top: .7mm; color: var(--hz-ink-soft); }
+
+    .l1d-pair-check {
+      margin-top: 1.4mm;
+      padding-left: 2.4mm;
+      border-left: .9mm solid var(--hz-practice);
+      color: var(--hz-practice);
+      font-size: 6.9pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: .03em;
+    }
+
+    /* Clarification follows discovery, not before it. */
+    .l1d-capitalization {
+      position: relative;
+      overflow: hidden;
+      margin: .5mm 0 .2mm calc(var(--hz-exercise-marker-size) + 3mm);
+      padding: 2.8mm 4mm 3mm;
+      border-top: 1.1mm solid var(--hz-unit);
+      border-bottom: .3mm solid var(--hz-line-strong);
+      background: var(--hz-unit-soft);
+      isolation: isolate;
+    }
+
+    .l1d-capitalization::after {
+      content: "Aa";
+      position: absolute;
+      z-index: -1;
+      right: 2mm;
+      bottom: -10mm;
+      color: rgb(255 255 255 / 65%);
+      font-size: 61pt;
+      font-weight: var(--hz-fw-black);
+      line-height: 1;
+    }
+
+    .l1d-capitalization__title {
+      margin: 0 0 1.8mm;
+      color: var(--hz-unit-dark);
+      font-size: 7.8pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: .065em;
+      text-transform: uppercase;
+    }
+
+    .l1d-capitalization__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3mm;
+      font-size: 7.05pt;
+      line-height: 1.3;
+    }
+
+    .l1d-cap-rule {
+      padding-top: 1.4mm;
+      border-top: .35mm solid rgb(32 33 36 / 20%);
+    }
+
+    .l1d-cap-rule strong { display: block; margin-bottom: .7mm; color: var(--hz-unit-dark); }
+    .l1d-cap-rule p { margin: 0; }
+
+    .l1d-practice-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .8mm 7mm;
+      font-size: 7.55pt;
+      line-height: 1.25;
+    }
+
+    .l1d-practice-item {
+      display: grid;
+      grid-template-columns: 5mm 1fr;
+      gap: 1mm;
+      min-height: 11mm;
+    }
+
+    .l1d-practice-item b { color: var(--hz-unit-dark); }
+    .l1d-practice-item p { margin: 0 0 .8mm; }
+    .l1d-practice-line { display: block; min-height: 4mm; border-bottom: .28mm solid var(--hz-line-strong); }
+
+    .l1d-question-match {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1mm 8mm;
+      max-width: 150mm;
+      font-size: 7.45pt;
+      line-height: 1.25;
+    }
+
+    .l1d-question-col { display: grid; gap: 1.1mm; }
+    .l1d-question-match__item { display: grid; grid-template-columns: 5mm 1fr; gap: 1mm; }
+    .l1d-question-match__item b { color: var(--hz-unit-dark); }
+
+    /* ------------------------------------------------------------------
+       PAGE 12 — prepare and perform the real-world transaction
+       ------------------------------------------------------------------ */
+
+    .l1d-continuation {
+      position: absolute;
+      top: -1mm;
+      right: -14mm;
+      z-index: 4;
+      display: grid;
+      place-items: end start;
+      width: 34mm;
+      height: 25mm;
+      padding: 0 0 3.2mm 5mm;
+      background: var(--hz-unit);
+      color: #fff;
+      clip-path: polygon(28% 0, 100% 0, 100% 100%, 0 100%);
+      font-size: 19pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: -.05em;
+    }
+
+    .l1d-business-stage {
+      position: relative;
+      padding-top: .5mm;
+      isolation: isolate;
+    }
+
+    .l1d-business-stage::before {
+      content: "YOUR BUSINESS";
+      position: absolute;
+      z-index: -1;
+      right: -1mm;
+      top: -8mm;
+      color: var(--hz-unit-soft);
+      font-size: 37pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: -.065em;
+    }
+
+    .l1d-business-options {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3mm;
+      margin-bottom: 2mm;
+    }
+
+    .l1d-business-option { text-align: center; }
+    .l1d-business-option__photo {
+      height: 27mm;
+      overflow: hidden;
+      border-radius: 50%;
+      background: var(--hz-wash);
+    }
+
+    .l1d-business-option__photo .hz-photo-placeholder {
+      min-height: 27mm;
+      font-size: 4.6pt;
+      letter-spacing: .06em;
+    }
+
+    .l1d-business-option strong {
+      display: block;
+      margin-top: 1mm;
+      font-size: 6.7pt;
+    }
+
+    .l1d-business-name {
+      display: grid;
+      grid-template-columns: 32mm 1fr;
+      gap: 3mm;
+      align-items: end;
+      max-width: 125mm;
+      font-size: 7.5pt;
+      font-weight: var(--hz-fw-bold);
+    }
+
+    .l1d-business-name__line { min-height: 5mm; border-bottom: .35mm solid var(--hz-line-strong); }
+
+    .l1d-info-select {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.4mm 5mm;
+      padding-top: .5mm;
+      font-size: 7.3pt;
+    }
+
+    .l1d-info-select span { white-space: nowrap; }
+
+    /* The final task is visually dominant because it is the practical outcome. */
+    .l1d-roleplay {
+      position: relative;
+      display: grid;
+      grid-template-columns: .78fr 1.22fr;
+      gap: 4.5mm;
+      min-height: 109mm;
+      padding: 3mm 0 .5mm;
+      isolation: isolate;
+    }
+
+    .l1d-roleplay::before {
+      content: "ASK · LISTEN · WRITE";
+      position: absolute;
+      z-index: -1;
+      left: -3mm;
+      bottom: -3mm;
+      color: var(--hz-unit-soft);
+      font-size: 31pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: -.055em;
+    }
+
+    .l1d-roleplay-left {
+      display: grid;
+      align-content: start;
+      gap: 2.5mm;
+    }
+
+    .l1d-role-photo {
+      height: 47mm;
+      overflow: hidden;
+      background: var(--hz-wash);
+      clip-path: polygon(0 0, 100% 0, 93% 100%, 0 100%);
+    }
+
+    .l1d-role-photo .hz-photo-placeholder { min-height: 47mm; }
+
+    .l1d-role-box {
+      padding: 2.7mm 3mm;
+      border-left: 1mm solid var(--hz-unit);
+      background: var(--hz-unit-soft);
+      font-size: 7.2pt;
+      line-height: 1.35;
+    }
+
+    .l1d-role-box h3 {
+      margin: 0 0 1.5mm;
+      color: var(--hz-unit-dark);
+      font-size: 8pt;
+      font-weight: var(--hz-fw-black);
+      text-transform: uppercase;
+    }
+
+    .l1d-role-box p { margin: 0 0 1.5mm; }
+    .l1d-role-box p:last-child { margin-bottom: 0; }
+
+    .l1d-role-questions {
+      display: grid;
+      gap: .8mm;
+      font-size: 6.85pt;
+      line-height: 1.25;
+    }
+
+    .l1d-role-questions span::before { content: "• "; color: var(--hz-unit-dark); font-weight: var(--hz-fw-black); }
+
+    .l1d-live-form {
+      position: relative;
+      align-self: stretch;
+      padding: 4mm 4.2mm 3.5mm;
+      border: .35mm solid var(--hz-line);
+      background: #fff;
+    }
+
+    .l1d-live-form::before {
+      content: "FORM";
+      position: absolute;
+      right: 3mm;
+      top: 1mm;
+      color: var(--hz-unit-soft);
+      font-size: 29pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: -.06em;
+    }
+
+    .l1d-live-form__business {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 22mm 1fr;
+      gap: 2mm;
+      align-items: end;
+      margin-bottom: 2mm;
+      font-size: 6.8pt;
+      font-weight: var(--hz-fw-black);
+      text-transform: uppercase;
+    }
+
+    .l1d-live-form__business span:last-child { min-height: 5mm; border-bottom: .35mm solid var(--hz-unit); }
+
+    .l1d-live-form h3 {
+      position: relative;
+      z-index: 1;
+      margin: 0 0 2.5mm;
+      color: var(--hz-unit-dark);
+      font-size: 16pt;
+      line-height: 1;
+      letter-spacing: -.035em;
+    }
+
+    .l1d-live-row {
+      display: grid;
+      grid-template-columns: 27mm 1fr;
+      gap: 2.5mm;
+      align-items: end;
+      min-height: 8.6mm;
+      font-size: 7.25pt;
+    }
+
+    .l1d-live-row span:first-child { color: var(--hz-ink-soft); font-weight: var(--hz-fw-semibold); }
+    .l1d-live-row span:last-child { min-height: 5.3mm; border-bottom: .3mm solid var(--hz-line-strong); }
+
+    .l1d-live-form__footer {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5mm;
+      margin-top: 2.5mm;
+      padding-top: 2mm;
+      border-top: .3mm solid var(--hz-line);
+      font-size: 6.5pt;
+      color: var(--hz-muted);
+    }
+
+    .l1d-live-form__footer span {
+      display: block;
+      min-height: 6mm;
+      padding-top: 1mm;
+      border-bottom: .28mm solid var(--hz-line-strong);
+    }
+
+    .l1d-peer-check {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3mm;
+      font-size: 7.1pt;
+      line-height: 1.25;
+    }
+
+    .l1d-peer-check__item {
+      display: grid;
+      grid-template-columns: 4mm 1fr;
+      gap: 1.3mm;
+      align-items: start;
+    }
+
+    .l1d-peer-check__box {
+      width: 3.3mm;
+      height: 3.3mm;
+      border: .45mm solid var(--hz-unit);
+    }
+
+    .l1d-extra {
+      margin-left: calc(var(--hz-exercise-marker-size) + 3mm);
+      margin-top: .5mm;
+    }
+
+    .l1d-page--2 .hz-page-stack { gap: 1.45mm; }
+    .l1d-page--2 .hz-exercise { padding-top: 1mm; padding-bottom: 1.4mm; }
+    .l1d-page--2 .hz-exercise__body { margin-top: .95mm; }
+    .l1d-page--2 .hz-exercise__instruction { font-size: 8.6pt; }
+  </style>
+</head>
+<body class="hz-book">
+
+  <!-- ===============================================================
+       PAGE 11 — LESSON 1D
+       =============================================================== -->
+  <article class="hz-page hz-content hz-unit-1 l1d-page" data-page="11">
+    <main class="hz-page__content">
+      <div class="hz-page-stack">
+        <header class="hz-lesson-header">
+          <div class="hz-lesson-tab" aria-label="Lesson 1D">
+            <span class="hz-lesson-tab__label">Lesson</span>
+            <span class="hz-lesson-tab__id">1D</span>
+          </div>
+          <div class="hz-lesson-heading">
+            <h1 class="hz-lesson-title">LET’S FILL A FORM!</h1>
+            <div class="hz-objectives">
+              <span class="hz-objectives__item">Personal information</span>
+              <span class="hz-objectives__item">Capitalization</span>
+            </div>
+          </div>
+        </header>
+
+        <div class="hz-exercises hz-fill">
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">1</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Read the conversation and the form.</p>
+              <div class="hz-exercise__body l1d-checkin-stage">
+                <div class="l1d-checkin-photo">
+                  <div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Hotel reception · receptionist and guest speaking · vertical environmental crop</span></div>
+                </div>
+
+                <div class="l1d-checkin-copy">
+                  <span class="l1d-checkin-copy__kicker">A guest arrives at Seaside Hotel</span>
+                  <dl class="l1d-dialogue">
+                    <dt>Receptionist:</dt><dd>Good afternoon. Welcome to Seaside Hotel. What’s your <span class="l1d-target">first name</span>?</dd>
+                    <dt>Guest:</dt><dd>I’m Emma.</dd>
+                    <dt>Receptionist:</dt><dd>And your <span class="l1d-target">last name</span>?</dd>
+                    <dt>Guest:</dt><dd>Carter. C-A-R-T-E-R.</dd>
+                    <dt>Receptionist:</dt><dd>Where are you from?</dd>
+                    <dt>Guest:</dt><dd>I’m from Canada. I live in Toronto.</dd>
+                    <dt>Receptionist:</dt><dd>What’s your <span class="l1d-target">phone number</span>?</dd>
+                    <dt>Guest:</dt><dd>It’s 416 555 0182.</dd>
+                    <dt>Receptionist:</dt><dd>And your <span class="l1d-target">email</span>?</dd>
+                    <dt>Guest:</dt><dd>emma.carter@email.com</dd>
+                    <dt>Receptionist:</dt><dd>Thank you, Ms. Carter.</dd>
+                  </dl>
+
+                  <div class="l1d-model-form" aria-label="Completed hotel check-in form">
+                    <p class="l1d-model-form__brand">SEASIDE HOTEL</p>
+                    <h3>Guest Check-in Form</h3>
+                    <div class="l1d-model-row"><span>First name</span><span>Emma</span></div>
+                    <div class="l1d-model-row"><span>Last name</span><span>Carter</span></div>
+                    <div class="l1d-model-row"><span>Country</span><span>Canada</span></div>
+                    <div class="l1d-model-row"><span>City</span><span>Toronto</span></div>
+                    <div class="l1d-model-row"><span>Phone number</span><span>416 555 0182</span></div>
+                    <div class="l1d-model-row"><span>Email</span><span>emma.carter@email.com</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">2</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Look at the conversation and form again. Answer the questions. Then compare with a partner.</p>
+              <div class="hz-exercise__body">
+                <div class="l1d-discovery">
+                  <div class="l1d-discovery__item"><b>1</b><div>Which question asks for Emma’s family name?<span class="l1d-discovery__choices">a What’s your first name? &nbsp;&nbsp; b And your last name?</span></div></div>
+                  <div class="l1d-discovery__item"><b>3</b><div>Look at <strong>Emma, Carter, Canada, Toronto</strong>. What is the same about the first letter?</div></div>
+                  <div class="l1d-discovery__item"><b>2</b><div>Which two questions ask where Emma lives or comes from?</div></div>
+                  <div class="l1d-discovery__item"><b>4</b><div>Does the email start with a capital letter?<span class="l1d-discovery__choices">Yes &nbsp;&nbsp; No</span></div></div>
+                </div>
+                <div class="l1d-pair-check">PAIR CHECK · Explain one answer to your partner.</div>
+              </div>
+            </div>
+          </section>
+
+          <aside class="l1d-capitalization">
+            <h2 class="l1d-capitalization__title">WRITING: CAPITALIZATION</h2>
+            <div class="l1d-capitalization__grid">
+              <div class="l1d-cap-rule"><strong>Names</strong><p>Emma Carter</p></div>
+              <div class="l1d-cap-rule"><strong>Cities</strong><p>Toronto</p></div>
+              <div class="l1d-cap-rule"><strong>Countries</strong><p>Canada</p></div>
+              <div class="l1d-cap-rule"><strong>Sentence starts + I</strong><p>I live in Toronto.</p></div>
+            </div>
+          </aside>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">3</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Rewrite with correct capitalization.</p>
+              <div class="hz-exercise__body l1d-practice-grid">
+                <div class="l1d-practice-item"><b>1</b><div><p>emma carter</p><span class="l1d-practice-line"></span></div></div>
+                <div class="l1d-practice-item"><b>4</b><div><p>my name is daniel.</p><span class="l1d-practice-line"></span></div></div>
+                <div class="l1d-practice-item"><b>2</b><div><p>manta, ecuador</p><span class="l1d-practice-line"></span></div></div>
+                <div class="l1d-practice-item"><b>5</b><div><p>i am from canada.</p><span class="l1d-practice-line"></span></div></div>
+                <div class="l1d-practice-item"><b>3</b><div><p>sofia lopez</p><span class="l1d-practice-line"></span></div></div>
+                <div class="l1d-practice-item"><b>6</b><div><p>i live in toronto.</p><span class="l1d-practice-line"></span></div></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">4</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Match the questions with the information.</p>
+              <div class="hz-exercise__body l1d-question-match">
+                <div class="l1d-question-col">
+                  <div class="l1d-question-match__item"><b>1</b><span>What’s your first name?</span></div>
+                  <div class="l1d-question-match__item"><b>2</b><span>And your last name?</span></div>
+                  <div class="l1d-question-match__item"><b>3</b><span>Where are you from?</span></div>
+                  <div class="l1d-question-match__item"><b>4</b><span>What city do you live in?</span></div>
+                  <div class="l1d-question-match__item"><b>5</b><span>What’s your phone number?</span></div>
+                  <div class="l1d-question-match__item"><b>6</b><span>What’s your email?</span></div>
+                </div>
+                <div class="l1d-question-col">
+                  <div class="l1d-question-match__item"><b>a</b><span>phone number</span></div>
+                  <div class="l1d-question-match__item"><b>b</b><span>country</span></div>
+                  <div class="l1d-question-match__item"><b>c</b><span>email</span></div>
+                  <div class="l1d-question-match__item"><b>d</b><span>first name</span></div>
+                  <div class="l1d-question-match__item"><b>e</b><span>city</span></div>
+                  <div class="l1d-question-match__item"><b>f</b><span>last name</span></div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer class="hz-page__footer"><span></span><span class="hz-page-number">11</span></footer>
+  </article>
+
+  <!-- ===============================================================
+       PAGE 12 — LESSON 1D CONTINUED
+       =============================================================== -->
+  <article class="hz-page hz-content hz-unit-1 l1d-page l1d-page--2" data-page="12">
+    <main class="hz-page__content">
+      <div class="l1d-continuation">1D</div>
+      <div class="hz-page-stack">
+        <div class="hz-exercises hz-fill" style="padding-top:7mm">
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">5</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Create your business. Choose one or invent your own. Write its name.</p>
+              <div class="hz-exercise__body l1d-business-stage">
+                <div class="l1d-business-options">
+                  <div class="l1d-business-option"><div class="l1d-business-option__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Gym reception · detail crop</span></div></div><strong>Gym</strong></div>
+                  <div class="l1d-business-option"><div class="l1d-business-option__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Hotel lobby · detail crop</span></div></div><strong>Hotel</strong></div>
+                  <div class="l1d-business-option"><div class="l1d-business-option__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Language school · detail crop</span></div></div><strong>Language school</strong></div>
+                  <div class="l1d-business-option"><div class="l1d-business-option__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Club / service · detail crop</span></div></div><strong>Club / Other</strong></div>
+                </div>
+                <div class="l1d-business-name"><span>Business name</span><span class="l1d-business-name__line"></span></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">6</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">What information does your business need? Check five or six items.</p>
+              <div class="hz-exercise__body l1d-info-select">
+                <span><i class="hz-choice-box"></i> first name</span>
+                <span><i class="hz-choice-box"></i> last name</span>
+                <span><i class="hz-choice-box"></i> country</span>
+                <span><i class="hz-choice-box"></i> city</span>
+                <span><i class="hz-choice-box"></i> phone number</span>
+                <span><i class="hz-choice-box"></i> email</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">7</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Work in pairs. Role-play the situation. Student A is the staff member. Student B is the customer, guest or member. Ask for the information and complete the form. Then swap roles.</p>
+              <div class="hz-exercise__body l1d-roleplay">
+                <div class="l1d-roleplay-left">
+                  <div class="l1d-role-photo">
+                    <div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Student-run reception desk · two classmates role-playing staff and customer · wide crop</span></div>
+                  </div>
+
+                  <div class="l1d-role-box">
+                    <h3>Student A · Staff</h3>
+                    <p>Welcome your customer. Ask only for the information your business needs.</p>
+                    <div class="l1d-role-questions">
+                      <span>What’s your first name?</span>
+                      <span>And your last name?</span>
+                      <span>Where are you from?</span>
+                      <span>What city do you live in?</span>
+                      <span>What’s your phone number?</span>
+                      <span>What’s your email?</span>
+                    </div>
+                  </div>
+
+                  <div class="l1d-role-box">
+                    <h3>Student B · Customer</h3>
+                    <p>Answer naturally. Use real or invented information. Spell your name if your partner asks.</p>
+                  </div>
+                </div>
+
+                <div class="l1d-live-form" aria-label="Student-created business registration form">
+                  <div class="l1d-live-form__business"><span>Business</span><span></span></div>
+                  <h3>Registration / Check-in Form</h3>
+                  <div class="l1d-live-row"><span>First name</span><span></span></div>
+                  <div class="l1d-live-row"><span>Last name</span><span></span></div>
+                  <div class="l1d-live-row"><span>Country</span><span></span></div>
+                  <div class="l1d-live-row"><span>City</span><span></span></div>
+                  <div class="l1d-live-row"><span>Phone number</span><span></span></div>
+                  <div class="l1d-live-row"><span>Email</span><span></span></div>
+                  <div class="l1d-live-form__footer">
+                    <div>Staff member<span></span></div>
+                    <div>Date<span></span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">8</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Give the form to your classmate. Check it together.</p>
+              <div class="hz-exercise__body l1d-peer-check">
+                <div class="l1d-peer-check__item"><span class="l1d-peer-check__box"></span><span>Is the information correct?</span></div>
+                <div class="l1d-peer-check__item"><span class="l1d-peer-check__box"></span><span>Are names, cities and countries capitalized?</span></div>
+                <div class="l1d-peer-check__item"><span class="l1d-peer-check__box"></span><span>Is the form complete?</span></div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="l1d-extra hz-extra-practice">
+          <span class="hz-extra-practice__label">EXTRA PRACTICE</span>
+          <span class="hz-extra-practice__prompt">Use your completed form to introduce your customer, guest or member to another pair.</span>
+        </div>
+      </div>
+    </main>
+    <footer class="hz-page__footer"><span></span><span class="hz-page-number">12</span></footer>
+  </article>
+
+</body>
+</html>
