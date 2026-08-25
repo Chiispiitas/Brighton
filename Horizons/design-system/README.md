@@ -2,6 +2,24 @@
 
 This directory defines the visual language for the HTML/CSS master of **Horizons A1**.
 
+## Canonical status
+
+**The current Stage 3 design system is the approved canonical style for the Student's Book.**
+
+Future design work should extend and refine this system rather than replace its visual philosophy without explicit author approval.
+
+The normative design contract is documented in:
+
+`CANONICAL-STYLE.md`
+
+Primary visual reference:
+
+`../examples/stage-3-shape-showcase.html`
+
+Supporting media/overlay reference:
+
+`../examples/stage-2-showcase.html`
+
 ## Design principle
 
 Horizons should look **art-directed for print**, not assembled from generic UI components.
@@ -47,7 +65,7 @@ Available patterns include:
 - `.hz-shape-note` — folded-corner editorial note
 - `.hz-text-columns--2/--3` — long-reading text columns
 
-These patterns are loaded automatically by the A4 shell.
+These patterns are loaded automatically by the A4 shell and are part of the approved book language.
 
 ## Shape rules
 
@@ -82,6 +100,7 @@ To avoid templated or AI-like sameness:
 7. Keep shadows for simulated interfaces only; ordinary book content should be flat.
 8. Bespoke CSS is acceptable for distinctive lesson features and should not automatically become a global component.
 9. Use large text, structural shapes and photography to create page identity instead of accumulating micro-components.
+10. Do not replace this Stage 3 philosophy with a new system unless the author explicitly requests a redesign.
 
 ## Unit colors
 
@@ -89,6 +108,7 @@ To avoid templated or AI-like sameness:
 
 ## Files
 
+- `CANONICAL-STYLE.md` — normative visual direction for all future Student's Book work
 - `tokens.css` — neutral palette, unit colors, typography, spacing and geometry
 - `components.css` — lesson identity, one-column exercise lane, internal question grids, focus areas, audio, UI recreations, tables, writing mechanics and photography overlays
 - `editorial-layouts.css` — full-page text features, large shape compositions, quiz/poster layouts, question clouds and process strips
@@ -106,5 +126,6 @@ To avoid templated or AI-like sameness:
 - free image assets only
 - raster photography/generated raster imagery for scenes
 - no vector illustrations
+- Stage 3 is the canonical visual baseline until explicitly superseded by the author
 
 The shell and examples live in `../shell/` and `../examples/`.
