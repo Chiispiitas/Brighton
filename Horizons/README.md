@@ -8,7 +8,8 @@ This folder is intentionally separate from the existing `Horizons A1/` directory
 
 - Stage 1: editorial design system established
 - Stage 2: fixed A4 shell and print CSS established
-- Editorial showcase: `examples/stage-2-showcase.html`
+- Stage 2 media showcase: `examples/stage-2-showcase.html`
+- Stage 3 shape-led editorial showcase: `examples/stage-3-shape-showcase.html`
 
 ## Current design direction
 
@@ -31,9 +32,12 @@ The visual goal is a professionally art-directed print coursebook rather than a 
 - semantic HTML5
 - CSS Grid/Flexbox
 - bespoke page CSS is allowed when a lesson needs a distinctive composition
+- full-page and near-full-page readings are allowed when pedagogically justified
+- large CSS geometric fields, circles, clipped corners, folds, bands and speech bubbles can structure a page
+- text itself may become a major visual element through scale and placement
 - no decorative vector illustration
 
-Reference screenshots may inspire only broad editorial principles such as hierarchy, activity rhythm, information density, photography scale and skill signaling. Their specific colors, shapes, page chrome, typography and compositions must not be copied.
+Reference screenshots may inspire only broad editorial principles such as hierarchy, activity rhythm, information density, photography scale, skill signaling and the use of large feature texts. Their specific colors, shapes, page chrome, typography and compositions must not be copied.
 
 ## Non-negotiable exercise layout
 
@@ -41,7 +45,7 @@ Reference screenshots may inspire only broad editorial principles such as hierar
 
 Exercises may not be placed side by side.
 
-Inside an individual exercise, questions or activity content may use two or three columns. This includes question sets, answer options, vocabulary, images, reviews, tables, profiles and photo/text layouts.
+Inside an individual exercise, questions or activity content may use two or three columns. This includes question sets, answer options, vocabulary, images, reviews, tables, profiles, photo/text layouts, full-page article features, quiz panels and shape-led compositions.
 
 Use the `.hz-exercises` lane and the internal `.hz-question-grid-*`, `.hz-content-grid-*` and `.hz-inset-grid-*` utilities.
 
@@ -53,7 +57,24 @@ Use the `.hz-exercises` lane and the internal `.hz-question-grid-*`, `.hz-conten
 - Do not use several accent colors on the same normal lesson page.
 - Do not force every lesson into the same visual composition.
 - Do use consistent typography, numbering and learning mechanics across the book.
-- Do allow strong photography and bespoke editorial layouts to create variety.
+- Do allow strong photography, oversized text, structural CSS shapes and bespoke editorial layouts to create variety.
+- Prefer one or two large structural shapes over many small decorative elements.
+
+## Shape-led layout library
+
+`design-system/editorial-layouts.css` is loaded automatically by the A4 shell and provides large-scale patterns for:
+
+- full-page interview/profile features
+- article mastheads with overlapping hero photography
+- multi-column readings
+- week/story modules
+- question clouds
+- questionnaire/quiz posters
+- poster-style travel/social features
+- process/timeline strips
+- folded-corner notes
+
+The Stage 3 showcase demonstrates these patterns using existing locked syllabus lesson titles and contexts.
 
 ## Locked production rules
 
@@ -83,6 +104,7 @@ Horizons/
 ├── design-system/
 │   ├── tokens.css
 │   ├── components.css
+│   ├── editorial-layouts.css
 │   ├── component-contracts.md
 │   └── asset-policy.md
 ├── shell/
@@ -92,6 +114,7 @@ Horizons/
 │   └── README.md
 └── examples/
     ├── stage-2-showcase.html
+    ├── stage-3-shape-showcase.html
     └── README.md
 ```
 
