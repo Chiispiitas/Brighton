@@ -1,0 +1,91 @@
+/* Horizons A1 — Stage 1 design tokens
+   Extracted from the existing Student's Book visual language.
+   This file does not create the A4 page shell; that belongs to Stage 2. */
+
+:root {
+  /* Brand / structural colors */
+  --hz-magenta: #b5216b;
+  --hz-magenta-deep: #b3004a;
+  --hz-magenta-soft: #bc377a;
+  --hz-navy: #323e4f;
+  --hz-navy-deep: #1e4155;
+  --hz-text: #404040;
+  --hz-black: #000000;
+  --hz-white: #ffffff;
+
+  /* Secondary colors already present in the source */
+  --hz-green: #339966;
+  --hz-green-light: #78d2a5;
+  --hz-blue: #157bc1;
+  --hz-orange: #db820b;
+  --hz-gold: #f8aa00;
+  --hz-cream: #fbede1;
+
+  /* Useful pale fills derived from established page treatments */
+  --hz-pale-blue: #dce9ee;
+  --hz-pale-green: #e3f4e7;
+  --hz-pale-pink: #f7d5e3;
+  --hz-pale-yellow: #fff2c9;
+  --hz-rule: #d9d9d9;
+
+  /* Typography roles — fonts are referenced, never bundled here */
+  --hz-font-title: "Montserrat ExtraLight", "Montserrat", "Century Gothic", Arial, sans-serif;
+  --hz-font-title-heavy: "Montserrat Black", "Montserrat", Arial, sans-serif;
+  --hz-font-display: "Anton", "Bebas Neue", "Arial Narrow", sans-serif;
+  --hz-font-label: "Century Gothic", "Poppins", Arial, sans-serif;
+  --hz-font-body: "Times New Roman", Georgia, serif;
+  --hz-font-ui: "Poppins", "Century Gothic", Arial, sans-serif;
+
+  /* Type scale. Stage 2 may adjust print-specific values after A4 QA. */
+  --hz-fs-2xs: 7pt;
+  --hz-fs-xs: 8pt;
+  --hz-fs-sm: 9pt;
+  --hz-fs-body: 10.5pt;
+  --hz-fs-md: 12pt;
+  --hz-fs-lg: 14pt;
+  --hz-fs-xl: 18pt;
+  --hz-fs-2xl: 28pt;
+  --hz-fs-lesson-title: 32pt;
+  --hz-fs-lesson-id: 38pt;
+
+  /* Line heights */
+  --hz-lh-tight: 1.05;
+  --hz-lh-snug: 1.2;
+  --hz-lh-body: 1.35;
+  --hz-lh-relaxed: 1.5;
+
+  /* Spacing scale */
+  --hz-space-1: 1mm;
+  --hz-space-2: 2mm;
+  --hz-space-3: 3mm;
+  --hz-space-4: 4mm;
+  --hz-space-5: 5mm;
+  --hz-space-6: 6mm;
+  --hz-space-8: 8mm;
+  --hz-space-10: 10mm;
+  --hz-space-12: 12mm;
+
+  /* Borders and radii */
+  --hz-border-thin: 0.35mm;
+  --hz-border-strong: 0.7mm;
+  --hz-radius-sm: 1.5mm;
+  --hz-radius-md: 3mm;
+  --hz-radius-lg: 6mm;
+  --hz-radius-pill: 999px;
+
+  /* Repeated component dimensions */
+  --hz-exercise-marker-size: 8mm;
+  --hz-icon-size-sm: 4mm;
+  --hz-icon-size-md: 5.5mm;
+  --hz-photo-ring: 0.7mm;
+  --hz-answer-line: 0.3mm;
+
+  /* Effects: keep restrained for print */
+  --hz-shadow-ui: 0 0.8mm 2mm rgb(0 0 0 / 10%);
+
+  /* Layering */
+  --hz-z-base: 1;
+  --hz-z-content: 10;
+  --hz-z-label: 20;
+  --hz-z-overlay: 30;
+}
