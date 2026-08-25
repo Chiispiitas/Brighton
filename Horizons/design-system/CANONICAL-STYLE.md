@@ -2,14 +2,18 @@
 
 **Status: APPROVED / CANONICAL**
 
-This document establishes the current **Stage 3 Horizons design** as the desired visual language for the Horizons A1 Student's Book.
+This document establishes the current **Stage 3 Horizons design plus the latest refinements** as the desired visual language for the Horizons A1 Student's Book.
 
-The canonical baseline is the repository state represented by the Stage 3 system currently on `main`, especially:
+For a new chat or a cold start, read `HANDOFF.md` first. It is the current resume document and summarizes the latest working rules.
 
-- `examples/stage-3-shape-showcase.html` — **primary visual reference**
+The canonical baseline is represented especially by:
+
+- `examples/lesson-1a-canonical-prototype.html` — first source-faithful existing lesson adapted into the canonical style
+- `examples/stage-3-shape-showcase.html` — primary large-scale visual reference
 - `examples/stage-2-showcase.html` — compatible supporting reference for photography, overlays, crops and media-led exercises
 - `design-system/components.css` — core lesson/exercise mechanics
 - `design-system/editorial-layouts.css` — approved shape-led and full-page editorial compositions
+- `design-system/canonical-refinements.css` — latest canonical behavior refinements
 - `shell/a4-shell.css` — approved A4 page framework
 
 These files define the direction to continue from. They are not temporary experiments.
@@ -155,6 +159,8 @@ Preferred behavior:
 - use subject direction/gaze to support page flow where possible;
 - avoid decorative stock photography that adds no task value.
 
+During prototype work, placeholders are allowed, but they should preserve the intended final crop, scale and composition.
+
 External assets must remain free for the intended use and comply with `asset-policy.md`.
 
 ## 8. Unit color
@@ -172,6 +178,8 @@ The unit color may appear in:
 
 Neutral typography and photography should still dominate the page.
 
+A repeated micro-system may use several vibrant colors when the exercise itself benefits from category or sequence distinction, provided the silhouette and layout remain consistent. The 0–10 number circles in Lesson 1A are the canonical example.
+
 ## 9. Human-art-direction rules
 
 To preserve the approved style:
@@ -181,7 +189,7 @@ To preserve the approved style:
 3. Do not make every block equally prominent.
 4. Do not force every lesson into the same composition.
 5. Do not fill every gap.
-6. Do not use several accent colors simply to create variety.
+6. Do not use several accent colors simply to create random variety.
 7. Do not add decorative gradients as generic page furniture.
 8. Do not add generic abstract blobs merely to make a page look creative.
 9. Do not use shadows on ordinary textbook content.
@@ -190,6 +198,7 @@ To preserve the approved style:
 12. Do use large-scale composition and controlled irregularity.
 13. Do let real photography carry visual weight.
 14. Do retain consistent exercise mechanics even when page composition changes.
+15. Do prefer controlled repetition over excessive shape variety inside repeated sets.
 
 ## 10. Relationship to reference screenshots and other books
 
@@ -224,6 +233,8 @@ The canonical Stage 3 style does **not** authorize modifying or replacing existi
 
 The supplied syllabus also remains immutable unless explicitly changed by the author.
 
+When visually adapting a frozen lesson, preserve the source educational content exactly unless the author explicitly asks for content changes. Do not silently rewrite instructions, questions, options, dialogue, grammar examples, numbering, track references or other source text.
+
 ## 12. What future improvements may change
 
 Future work may improve:
@@ -243,15 +254,69 @@ Future work should **not** silently replace the canonical visual philosophy with
 
 A major redesign should happen only after explicit author approval.
 
-## 13. Canonical reference priority
+## 13. Controlled repetition — canonical refinement
+
+When several items belong to the same exercise or visual family, they should normally share the same silhouette and structural treatment.
+
+Use variety through:
+
+- color;
+- crop;
+- opacity;
+- scale;
+- typography;
+- hierarchy.
+
+Avoid changing shape, border logic, alignment and color all at once simply to create novelty.
+
+Canonical examples:
+
+- four greeting images in one exercise use circular crops;
+- repeated personal-information exchanges use one shared panel geometry;
+- alphabet pairs use full-strength uppercase color with a faded lowercase version of the same hue;
+- number markers use identical circles, different vibrant backgrounds and white digits.
+
+See `STYLE-REFINEMENTS.md` and `canonical-refinements.css`.
+
+## 14. Lesson-tab hierarchy — canonical refinement
+
+Everything inside `.hz-lesson-tab` must be centered.
+
+The visual hierarchy is:
+
+1. `.hz-lesson-tab__id` — dominant and largest element;
+2. `.hz-lesson-tab__label` — small supporting label.
+
+The lesson ID should be the first thing the eye notices inside the tab.
+
+This behavior is implemented globally in `canonical-refinements.css`.
+
+## 15. Lesson 1A prototype as a practical benchmark
+
+`examples/lesson-1a-canonical-prototype.html` is the first practical source-faithful adaptation of an existing Student's Book lesson into the approved style.
+
+Its content is not a replacement for the frozen source. It is a design benchmark showing how to preserve existing exercise content while changing the page composition.
+
+The refinements learned from this prototype now apply beyond Lesson 1A:
+
+- repeated image sets should not use gratuitously different silhouettes;
+- repeated information panels should remain visually related;
+- meaningful typographic variation is preferred over arbitrary shape variation;
+- exercise source numbering must remain intact even when unusual;
+- image placeholders should encode the intended final crop and role.
+
+## 16. Canonical reference priority
 
 When there is ambiguity about how a new page should look, use this priority:
 
-1. `CANONICAL-STYLE.md`
-2. `examples/stage-3-shape-showcase.html`
-3. `examples/stage-2-showcase.html`
-4. current `components.css` and `editorial-layouts.css`
-5. documented project constraints and syllabus
-6. external references only as broad inspiration
+1. `HANDOFF.md`
+2. `CANONICAL-STYLE.md`
+3. `STYLE-REFINEMENTS.md`
+4. `examples/lesson-1a-canonical-prototype.html` for source-faithful adaptation behavior
+5. `examples/stage-3-shape-showcase.html` for large-scale art direction
+6. `examples/stage-2-showcase.html` for photography/overlay treatments
+7. current `components.css`, `editorial-layouts.css` and `canonical-refinements.css`
+8. documented project constraints, locked syllabus and frozen source content
+9. external references only as broad inspiration
 
-This Stage 3 direction is the **desired book style until explicitly superseded by the author**.
+This Stage 3 direction plus the latest refinements is the **desired book style until explicitly superseded by the author**.
