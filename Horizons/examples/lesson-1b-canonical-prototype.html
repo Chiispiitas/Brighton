@@ -1,0 +1,843 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Horizons A1 — Lesson 1B Canonical Prototype</title>
+  <link rel="stylesheet" href="../shell/a4-shell.css">
+  <link rel="stylesheet" href="../shell/print.css" media="print">
+  <style>
+    /*
+      LESSON 1B CANONICAL PROTOTYPE
+      -----------------------------
+      Frozen Student's Book wording, exercise numbering, track references,
+      questions and answer mechanics are preserved. Only the composition is
+      adapted to the current canonical Horizons Stage 3 style.
+      Development imagery remains crop-aware placeholders.
+    */
+
+    .l1b-page .hz-page__content { overflow: hidden; }
+    .l1b-page .hz-page-stack { gap: 2.25mm; }
+    .l1b-page .hz-lesson-header { padding-bottom: 3.1mm; }
+    .l1b-page .hz-exercises { gap: .25mm; }
+    .l1b-page .hz-exercise { padding: 1.35mm 0 1.95mm; }
+    .l1b-page .hz-exercise__body { margin-top: 1.3mm; }
+    .l1b-page .hz-exercise__instruction { font-size: 8.9pt; }
+    .l1b-target { color: var(--hz-unit-dark); font-weight: var(--hz-fw-black); }
+
+    .l1b-track {
+      display: inline-flex;
+      align-items: center;
+      gap: .7mm;
+      margin-right: 1.35mm;
+      padding: .6mm 1.15mm;
+      background: var(--hz-audio);
+      color: #fff;
+      font-size: 6.4pt;
+      font-weight: var(--hz-fw-black);
+      line-height: 1;
+      vertical-align: .35mm;
+    }
+
+    /* ------------------------------------------------------------------
+       PAGE 7 — vocabulary, a/an, chat repair, occupation mime
+       ------------------------------------------------------------------ */
+
+    .l1b-occupation-stage {
+      position: relative;
+      padding: 1mm 0 .4mm;
+      isolation: isolate;
+    }
+
+    .l1b-occupation-stage::before {
+      content: "WORK";
+      position: absolute;
+      z-index: -1;
+      right: -3mm;
+      top: -4mm;
+      color: var(--hz-unit-soft);
+      font-size: 42pt;
+      font-weight: var(--hz-fw-black);
+      line-height: 1;
+      letter-spacing: -.07em;
+    }
+
+    .l1b-occupation-head {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 1.5mm;
+    }
+
+    .l1b-occupation-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 2.4mm 2.2mm;
+      align-items: start;
+    }
+
+    .l1b-occupation {
+      min-width: 0;
+      text-align: center;
+    }
+
+    .l1b-occupation__photo {
+      width: 24mm;
+      height: 24mm;
+      margin: 0 auto 1.2mm;
+      overflow: hidden;
+      border: .45mm solid var(--hz-unit);
+      border-radius: 50%;
+      background: var(--hz-wash);
+    }
+
+    .l1b-occupation__photo .hz-photo-placeholder {
+      min-height: 24mm;
+      font-size: 4.8pt;
+      letter-spacing: .07em;
+    }
+
+    .l1b-occupation__photo .hz-photo-placeholder::before { inset: 2.3mm; }
+    .l1b-occupation__photo .hz-photo-placeholder::after { width: 18mm; }
+    .l1b-occupation__photo .hz-photo-placeholder__meta { padding: .7mm 1mm; }
+
+    .l1b-occupation figcaption {
+      font-size: 6.25pt;
+      font-weight: var(--hz-fw-black);
+      line-height: 1.05;
+    }
+
+    /* A / AN is a single editorial grammar field rather than a generic card. */
+    .l1b-aan {
+      position: relative;
+      overflow: hidden;
+      margin: .6mm 0 .4mm calc(var(--hz-exercise-marker-size) + 3mm);
+      padding: 3.1mm 4mm 3.25mm;
+      border-top: 1.15mm solid var(--hz-unit);
+      border-bottom: .3mm solid var(--hz-line-strong);
+      background: var(--hz-unit-soft);
+      isolation: isolate;
+    }
+
+    .l1b-aan::before,
+    .l1b-aan::after {
+      position: absolute;
+      z-index: -1;
+      color: rgb(255 255 255 / 68%);
+      font-size: 56pt;
+      font-weight: var(--hz-fw-black);
+      line-height: .8;
+    }
+
+    .l1b-aan::before {
+      content: "A";
+      left: -1mm;
+      bottom: -7mm;
+    }
+
+    .l1b-aan::after {
+      content: "AN";
+      right: -3mm;
+      top: -7mm;
+    }
+
+    .l1b-aan__title {
+      margin: 0 0 1.9mm;
+      color: var(--hz-unit-dark);
+      font-size: 8pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: .065em;
+      text-transform: uppercase;
+    }
+
+    .l1b-aan__lead {
+      margin: 0 0 2.2mm;
+      font-size: 7.75pt;
+      font-weight: var(--hz-fw-bold);
+      line-height: 1.3;
+    }
+
+    .l1b-aan__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8mm;
+      font-size: 7.45pt;
+      line-height: 1.32;
+    }
+
+    .l1b-aan__grid > div {
+      min-width: 0;
+      padding-top: 1.6mm;
+      border-top: .35mm solid rgb(32 33 36 / 22%);
+    }
+
+    .l1b-aan__grid strong {
+      display: block;
+      margin-bottom: .7mm;
+      color: var(--hz-unit-dark);
+    }
+
+    .l1b-aan__grid p { margin: 0; font-style: italic; }
+
+    .l1b-go-to {
+      margin: .3mm 0 .2mm calc(var(--hz-exercise-marker-size) + 3mm);
+    }
+
+    /* Exercise 2 is explicitly simulated real-world UI, so rounded chat
+       surfaces are appropriate under the canonical rules. */
+    .l1b-chats {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4.5mm;
+      align-items: start;
+    }
+
+    .l1b-chats::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      left: 50%;
+      top: 4mm;
+      width: 32mm;
+      height: 32mm;
+      border: 5mm solid var(--hz-unit-soft);
+      border-radius: 50%;
+      transform: translateX(-50%);
+    }
+
+    .l1b-chat {
+      overflow: hidden;
+      border: .28mm solid var(--hz-line);
+      border-radius: 4mm;
+      background: #f4f1df;
+      box-shadow: var(--hz-shadow-ui);
+    }
+
+    .l1b-chat__top {
+      display: flex;
+      align-items: center;
+      gap: 2mm;
+      min-height: 8.5mm;
+      padding: 1.8mm 3mm;
+      background: var(--hz-unit);
+      color: #fff;
+      font-size: 7.6pt;
+      font-weight: var(--hz-fw-black);
+    }
+
+    .l1b-chat__avatar {
+      display: grid;
+      place-items: center;
+      width: 5mm;
+      height: 5mm;
+      border-radius: 50%;
+      background: rgb(255 255 255 / 86%);
+      color: var(--hz-unit-dark);
+      font-size: 4.8pt;
+    }
+
+    .l1b-chat__messages {
+      display: flex;
+      flex-direction: column;
+      gap: 1.35mm;
+      min-height: 37mm;
+      padding: 2.4mm 3mm 2.2mm;
+      background:
+        linear-gradient(rgb(255 255 255 / 46%), rgb(255 255 255 / 46%)),
+        repeating-linear-gradient(45deg, transparent 0 8mm, rgb(22 127 130 / 5%) 8mm 9mm);
+    }
+
+    .l1b-bubble {
+      width: fit-content;
+      max-width: 91%;
+      margin: 0;
+      padding: 1.35mm 2mm;
+      border-radius: 1.8mm;
+      background: #fff;
+      font-size: 7.2pt;
+      line-height: 1.25;
+    }
+
+    .l1b-bubble--self {
+      align-self: flex-end;
+      background: var(--hz-unit-soft);
+    }
+
+    .l1b-chat__input {
+      margin: 0 2.5mm 2.2mm;
+      padding: 1.2mm 2mm;
+      border: .25mm solid var(--hz-line);
+      border-radius: 3mm;
+      background: #fff;
+      color: var(--hz-muted);
+      font-size: 6.7pt;
+    }
+
+    .l1b-clue-strip {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 3mm;
+      align-items: center;
+      padding: .8mm 0 0;
+    }
+
+    .l1b-clue {
+      height: 22mm;
+      overflow: hidden;
+      border-radius: 50%;
+      background: var(--hz-wash);
+    }
+
+    .l1b-clue .hz-photo-placeholder {
+      min-height: 22mm;
+      font-size: 4.5pt;
+      letter-spacing: .05em;
+    }
+
+    .l1b-clue .hz-photo-placeholder::before { inset: 2mm; }
+    .l1b-clue .hz-photo-placeholder::after { width: 16mm; }
+    .l1b-clue .hz-photo-placeholder__meta { padding: .5mm .8mm; }
+
+    /* ------------------------------------------------------------------
+       PAGE 8 — contractions, 4.1/4.2, pronunciation, matching
+       ------------------------------------------------------------------ */
+
+    .l1b-continuation {
+      position: absolute;
+      top: -1mm;
+      right: -14mm;
+      z-index: 4;
+      display: grid;
+      place-items: end start;
+      width: 34mm;
+      height: 25mm;
+      padding: 0 0 3.2mm 5mm;
+      background: var(--hz-unit);
+      color: #fff;
+      clip-path: polygon(28% 0, 100% 0, 100% 100%, 0 100%);
+      font-size: 19pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: -.05em;
+    }
+
+    .l1b-contractions {
+      position: relative;
+      overflow: hidden;
+      padding: 3.3mm 4.3mm 3.5mm;
+      border-top: 1.15mm solid var(--hz-unit);
+      border-bottom: .3mm solid var(--hz-line-strong);
+      background: var(--hz-unit-soft);
+      isolation: isolate;
+    }
+
+    .l1b-contractions::after {
+      content: "’";
+      position: absolute;
+      z-index: -1;
+      right: 3mm;
+      top: -13mm;
+      color: rgb(255 255 255 / 72%);
+      font-family: Georgia, serif;
+      font-size: 92pt;
+      line-height: 1;
+    }
+
+    .l1b-contractions__title {
+      margin: 0 0 1.7mm;
+      color: var(--hz-unit-dark);
+      font-size: 8pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: .065em;
+      text-transform: uppercase;
+    }
+
+    .l1b-contractions__lead {
+      margin: 0 0 2mm;
+      font-size: 7.7pt;
+      font-weight: var(--hz-fw-bold);
+    }
+
+    .l1b-contractions__rows {
+      display: grid;
+      gap: .7mm;
+      max-width: 126mm;
+      font-size: 7.55pt;
+      line-height: 1.25;
+    }
+
+    .l1b-contractions__row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6mm;
+      align-items: baseline;
+    }
+
+    .l1b-contractions__row span:first-child { font-style: italic; }
+    .l1b-contractions__row span:last-child { font-style: italic; }
+
+    .l1b-profile-stage {
+      position: relative;
+      padding-top: .6mm;
+    }
+
+    .l1b-profile-head {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 1.4mm;
+    }
+
+    .l1b-profiles {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 4.3mm;
+      align-items: start;
+    }
+
+    .l1b-profile {
+      position: relative;
+      min-width: 0;
+      padding-top: 24mm;
+      border-top: .8mm solid var(--hz-unit);
+    }
+
+    .l1b-profile__photo {
+      position: absolute;
+      top: 1.7mm;
+      left: 0;
+      width: 100%;
+      height: 26mm;
+      overflow: hidden;
+      background: var(--hz-wash);
+      clip-path: polygon(0 0, 100% 0, 100% 78%, 86% 100%, 0 100%);
+    }
+
+    .l1b-profile__photo .hz-photo-placeholder {
+      min-height: 26mm;
+      font-size: 5pt;
+      letter-spacing: .07em;
+    }
+
+    .l1b-profile__name {
+      position: relative;
+      z-index: 2;
+      display: inline-block;
+      margin: 0 0 1.5mm 3mm;
+      padding: .6mm 2mm .55mm 0;
+      background: var(--hz-paper);
+      color: var(--hz-unit-dark);
+      font-size: 15.5pt;
+      font-weight: var(--hz-fw-black);
+      line-height: .95;
+      letter-spacing: -.045em;
+    }
+
+    .l1b-profile__copy {
+      min-height: 50mm;
+      padding: 1.4mm 2.4mm 0 3mm;
+      border-left: .9mm solid var(--hz-unit-soft);
+      font-size: 7.35pt;
+      line-height: 1.38;
+    }
+
+    .l1b-profile__copy p { margin: 0 0 2.1mm; }
+    .l1b-profile__copy p:last-child { margin-bottom: 0; }
+
+    .l1b-subexercise {
+      display: grid;
+      grid-template-columns: var(--hz-exercise-marker-size) minmax(0, 1fr);
+      gap: 0 3mm;
+      width: 100%;
+      min-width: 0;
+      margin: 0;
+      padding: 1.2mm 0 1.7mm;
+      border-bottom: var(--hz-border) solid var(--hz-line);
+    }
+
+    .l1b-subexercise__number {
+      align-self: start;
+      color: var(--hz-unit);
+      font-size: 14pt;
+      font-weight: var(--hz-fw-black);
+      line-height: .95;
+      letter-spacing: -.04em;
+    }
+
+    .l1b-subexercise__instruction {
+      margin: .15mm 0 0;
+      color: var(--hz-ink);
+      font-size: 8.75pt;
+      font-weight: var(--hz-fw-semibold);
+      line-height: 1.35;
+    }
+
+    .l1b-pronunciation {
+      position: relative;
+      overflow: hidden;
+      margin-left: calc(var(--hz-exercise-marker-size) + 3mm);
+      padding: 2.8mm 4mm 3mm;
+      border-top: 1.15mm solid var(--hz-unit);
+      border-bottom: .3mm solid var(--hz-line-strong);
+      background: var(--hz-unit-soft);
+      isolation: isolate;
+    }
+
+    .l1b-pronunciation::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      right: -10mm;
+      bottom: -21mm;
+      width: 54mm;
+      height: 54mm;
+      border: 8mm solid rgb(255 255 255 / 56%);
+      border-radius: 50%;
+    }
+
+    .l1b-pronunciation__title {
+      margin: 0 0 1.7mm;
+      color: var(--hz-unit-dark);
+      font-size: 8pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .l1b-pronunciation__lead {
+      margin: 0 0 1.4mm;
+      font-size: 7.45pt;
+      font-weight: var(--hz-fw-bold);
+    }
+
+    .l1b-pronunciation__grid {
+      display: grid;
+      grid-template-columns: 18mm 29mm 1fr;
+      gap: .55mm 4mm;
+      max-width: 96mm;
+      font-size: 7.25pt;
+      line-height: 1.2;
+    }
+
+    .l1b-pronunciation__grid em { font-style: italic; }
+    .l1b-pronunciation__note {
+      margin: 1.6mm 0 0;
+      font-size: 7.35pt;
+      font-weight: var(--hz-fw-black);
+    }
+
+    .l1b-match-stage {
+      display: grid;
+      grid-template-columns: .98fr 1.02fr;
+      gap: 6mm;
+      align-items: end;
+    }
+
+    .l1b-match-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .95mm 7mm;
+      align-content: start;
+      font-size: 7.7pt;
+      line-height: 1.23;
+    }
+
+    .l1b-match-col {
+      display: grid;
+      gap: 1.8mm;
+    }
+
+    .l1b-match-item {
+      display: grid;
+      grid-template-columns: 5mm 1fr;
+      gap: 1mm;
+      min-height: 5mm;
+    }
+
+    .l1b-match-item b { color: var(--hz-unit-dark); }
+
+    .l1b-workers-photo {
+      position: relative;
+      height: 48mm;
+      overflow: hidden;
+      background: var(--hz-wash);
+      clip-path: polygon(8% 0, 100% 0, 100% 100%, 0 100%, 0 16%);
+    }
+
+    .l1b-workers-photo .hz-photo-placeholder { min-height: 48mm; }
+
+    .l1b-extra {
+      margin-left: calc(var(--hz-exercise-marker-size) + 3mm);
+      margin-top: .5mm;
+    }
+
+    /* Tighten the continuation page so all frozen source content stays on one A4 page. */
+    .l1b-page--2 .hz-page-stack { gap: 1.45mm; }
+    .l1b-page--2 .hz-exercises { gap: .15mm; }
+    .l1b-page--2 .hz-exercise { padding-top: 1.1mm; padding-bottom: 1.45mm; }
+    .l1b-page--2 .hz-exercise__body { margin-top: 1mm; }
+    .l1b-page--2 .hz-exercise__instruction { font-size: 8.65pt; }
+  </style>
+</head>
+
+<body class="hz-book">
+
+  <!--
+    SOURCE-FAITHFUL DESIGN PROTOTYPE ONLY.
+    The frozen Student's Book is not replaced or modified.
+    Numbered exercises remain in one vertical sequence; columns are used only
+    inside individual exercise bodies.
+  -->
+
+  <!-- ===============================================================
+       PAGE 7 — LESSON 1B
+       =============================================================== -->
+  <article class="hz-page hz-content hz-unit-1 l1b-page" data-page="7">
+    <main class="hz-page__content">
+      <div class="hz-page-stack">
+        <header class="hz-lesson-header">
+          <div class="hz-lesson-tab" aria-label="Lesson 1B">
+            <span class="hz-lesson-tab__label">Lesson</span>
+            <span class="hz-lesson-tab__id">1B</span>
+          </div>
+          <div class="hz-lesson-heading">
+            <h1 class="hz-lesson-title">WHAT’S YOUR JOB?</h1>
+            <div class="hz-objectives">
+              <span class="hz-objectives__item">Occupations</span>
+              <span class="hz-objectives__item">Verb “to be” contractions</span>
+            </div>
+          </div>
+        </header>
+
+        <div class="hz-exercises hz-fill">
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">1</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction"><span class="l1b-track">♪ 1.8</span>Read and listen.</p>
+              <div class="hz-exercise__body l1b-occupation-stage">
+                <div class="l1b-occupation-head"><span class="hz-new-words">NEW WORDS</span></div>
+                <div class="l1b-occupation-grid">
+                  <figure class="l1b-occupation">
+                    <div class="l1b-occupation__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Teacher portrait</span></div></div>
+                    <figcaption>A teacher</figcaption>
+                  </figure>
+                  <figure class="l1b-occupation">
+                    <div class="l1b-occupation__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Student portrait</span></div></div>
+                    <figcaption>A student</figcaption>
+                  </figure>
+                  <figure class="l1b-occupation">
+                    <div class="l1b-occupation__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Chef portrait</span></div></div>
+                    <figcaption>A chef</figcaption>
+                  </figure>
+                  <figure class="l1b-occupation">
+                    <div class="l1b-occupation__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Doctor portrait</span></div></div>
+                    <figcaption>A doctor</figcaption>
+                  </figure>
+                  <figure class="l1b-occupation">
+                    <div class="l1b-occupation__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Office worker portrait</span></div></div>
+                    <figcaption>An office worker</figcaption>
+                  </figure>
+                  <figure class="l1b-occupation">
+                    <div class="l1b-occupation__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Receptionist portrait</span></div></div>
+                    <figcaption>A receptionist</figcaption>
+                  </figure>
+                  <figure class="l1b-occupation">
+                    <div class="l1b-occupation__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Salesclerk portrait</span></div></div>
+                    <figcaption>A salesclerk</figcaption>
+                  </figure>
+                  <figure class="l1b-occupation">
+                    <div class="l1b-occupation__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Taxi driver portrait</span></div></div>
+                    <figcaption>A taxi driver</figcaption>
+                  </figure>
+                  <figure class="l1b-occupation">
+                    <div class="l1b-occupation__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Waiter/waitress portrait</span></div></div>
+                    <figcaption>A waiter/waitress</figcaption>
+                  </figure>
+                  <figure class="l1b-occupation">
+                    <div class="l1b-occupation__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Farmer portrait</span></div></div>
+                    <figcaption>A farmer</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <aside class="l1b-aan">
+            <h2 class="l1b-aan__title">GRAMMAR: A / AN</h2>
+            <p class="l1b-aan__lead">Use verb <span class="l1b-target">to be</span> with <span class="l1b-target">a/an</span> to say your occupation.</p>
+            <div class="l1b-aan__grid">
+              <div>
+                <strong>A with consonant sounds</strong>
+                <p>I am <span class="l1b-target">a</span> taxi driver.</p>
+              </div>
+              <div>
+                <strong>An with vowel sounds.</strong>
+                <p>My friend is <span class="l1b-target">an</span> office worker.</p>
+              </div>
+            </div>
+          </aside>
+
+          <div class="l1b-go-to hz-go-to">Go to: Vocabulary - Occupations, page ---</div>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">2</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Read and fix the mistakes.</p>
+              <div class="hz-exercise__body l1b-chats">
+                <div class="l1b-chat" aria-label="Work Group chat">
+                  <div class="l1b-chat__top"><span class="l1b-chat__avatar">WG</span><span>Work Group</span></div>
+                  <div class="l1b-chat__messages">
+                    <p class="l1b-bubble l1b-bubble--self">Good morning!</p>
+                    <p class="l1b-bubble l1b-bubble--self">Are you a teacher?</p>
+                    <p class="l1b-bubble">No, I’m not. I’m a office worker!</p>
+                    <p class="l1b-bubble">Miss Jessie is a teacher!</p>
+                  </div>
+                  <div class="l1b-chat__input">Message</div>
+                </div>
+
+                <div class="l1b-chat" aria-label="Class 4 Chat">
+                  <div class="l1b-chat__top"><span class="l1b-chat__avatar">4</span><span>Class 4 Chat</span></div>
+                  <div class="l1b-chat__messages">
+                    <p class="l1b-bubble">Hi! I’m Jessie.</p>
+                    <p class="l1b-bubble l1b-bubble--self">I’m Tom! I’m an teacher.</p>
+                    <p class="l1b-bubble l1b-bubble--self"><span class="l1b-target">What do you do?</span></p>
+                    <p class="l1b-bubble">I’m a receptionist!</p>
+                  </div>
+                  <div class="l1b-chat__input">Message</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">3</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Work in pairs. Mimic an occupation. Your classmate will guess.</p>
+              <div class="hz-exercise__body l1b-clue-strip" aria-label="Occupation mime image clues">
+                <div class="l1b-clue"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Taxi clue</span></div></div>
+                <div class="l1b-clue"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Reception bell clue</span></div></div>
+                <div class="l1b-clue"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Restaurant dish clue</span></div></div>
+                <div class="l1b-clue"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Classroom supplies clue</span></div></div>
+                <div class="l1b-clue"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Medical syringe clue</span></div></div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer class="hz-page__footer"><span></span><span class="hz-page-number">7</span></footer>
+  </article>
+
+  <!-- ===============================================================
+       PAGE 8 — LESSON 1B CONTINUED
+       =============================================================== -->
+  <article class="hz-page hz-content hz-unit-1 l1b-page l1b-page--2" data-page="8">
+    <main class="hz-page__content">
+      <div class="l1b-continuation">1B</div>
+      <div class="hz-page-stack">
+        <div class="hz-exercises hz-fill" style="padding-top:7mm">
+
+          <aside class="l1b-contractions">
+            <h2 class="l1b-contractions__title">GRAMMAR: CONTRACTIONS</h2>
+            <p class="l1b-contractions__lead">In English, use contractions to speak more naturally.</p>
+            <div class="l1b-contractions__rows">
+              <div class="l1b-contractions__row"><span>I am a teacher.</span><span>I’m a teacher.</span></div>
+              <div class="l1b-contractions__row"><span>She is my friend Mary.</span><span>She’s my friend Mary.</span></div>
+              <div class="l1b-contractions__row"><span>You are a student.</span><span>You’re a student.</span></div>
+            </div>
+          </aside>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">4.1</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction"><span class="l1b-track">♪ 1.8</span>Read and listen.</p>
+              <div class="hz-exercise__body l1b-profile-stage">
+                <div class="l1b-profile-head"><span class="hz-new-words">NEW WORDS</span></div>
+                <div class="l1b-profiles">
+                  <article class="l1b-profile">
+                    <div class="l1b-profile__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Tom · taxi driver portrait</span></div></div>
+                    <h3 class="l1b-profile__name">TOM</h3>
+                    <div class="l1b-profile__copy">
+                      <p>Hey! I’m Tom.</p>
+                      <p>I’m a taxi driver. I drive a taxi in the morning. But in the evening, I’m a teacher!</p>
+                      <p>I teach English to my students. They’re <span class="l1b-target">smart</span>!</p>
+                    </div>
+                  </article>
+
+                  <article class="l1b-profile">
+                    <div class="l1b-profile__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Sarah · doctor portrait</span></div></div>
+                    <h3 class="l1b-profile__name">SARAH</h3>
+                    <div class="l1b-profile__copy">
+                      <p>Hi! I’m Sarah.</p>
+                      <p>I’m a doctor, and work in a hospital.</p>
+                      <p>I’m <span class="l1b-target">busy</span> in the morning, but in the evening I’m with my friends. They’re doctors!</p>
+                    </div>
+                  </article>
+
+                  <article class="l1b-profile">
+                    <div class="l1b-profile__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Marco · chef portrait</span></div></div>
+                    <h3 class="l1b-profile__name">MARCO</h3>
+                    <div class="l1b-profile__copy">
+                      <p>Hello! I’m Marco.</p>
+                      <p>I am a chef, and work in a restaurant in the afternoon.</p>
+                      <p>But in the morning, I always talk with my friends and play soccer. It is very <span class="l1b-target">fun</span>!</p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="l1b-subexercise">
+            <div class="l1b-subexercise__number">4.2</div>
+            <p class="l1b-subexercise__instruction">Find the <span class="l1b-target">contractions</span> in the text. Write them in their full form.</p>
+          </div>
+
+          <aside class="l1b-pronunciation">
+            <h2 class="l1b-pronunciation__title">PRONUNCIATION: NEW WORDS</h2>
+            <p class="l1b-pronunciation__lead">In English, spelling and pronunciation are different.</p>
+            <div class="l1b-pronunciation__grid">
+              <em>Busy</em><span>/ˈbɪz.i/</span><span>(Not /buːsi/)</span>
+              <em>Fun</em><span>/fʌn/</span><span>(Not /fuːn/)</span>
+            </div>
+            <p class="l1b-pronunciation__note">Always write and practice the pronunciation of new words.</p>
+          </aside>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">5</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction"><span class="l1b-track">♪ 1.9</span>Listen and match the occupations.</p>
+              <div class="hz-exercise__body l1b-match-stage">
+                <div class="l1b-match-list">
+                  <div class="l1b-match-col">
+                    <div class="l1b-match-item"><b>1</b><span>Allison</span></div>
+                    <div class="l1b-match-item"><b>2</b><span>Mike</span></div>
+                    <div class="l1b-match-item"><b>3</b><span>John</span></div>
+                    <div class="l1b-match-item"><b>4</b><span>Lisa</span></div>
+                    <div class="l1b-match-item"><b>5</b><span>Bryan</span></div>
+                  </div>
+                  <div class="l1b-match-col">
+                    <div class="l1b-match-item"><b>a</b><span>office worker</span></div>
+                    <div class="l1b-match-item"><b>b</b><span>doctor</span></div>
+                    <div class="l1b-match-item"><b>c</b><span>waitress</span></div>
+                    <div class="l1b-match-item"><b>d</b><span>salesclerk</span></div>
+                    <div class="l1b-match-item"><b>e</b><span>farmer</span></div>
+                  </div>
+                </div>
+                <div class="l1b-workers-photo">
+                  <div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Image placeholder · two workers · waist-up overlapping crop</span></div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="l1b-extra hz-extra-practice">
+          <span class="hz-extra-practice__label">EXTRA PRACTICE</span>
+          <span class="hz-extra-practice__prompt">Speak about your occupation. What do you do? Where do you work?</span>
+        </div>
+      </div>
+    </main>
+    <footer class="hz-page__footer"><span></span><span class="hz-page-number">8</span></footer>
+  </article>
+
+</body>
+</html>
