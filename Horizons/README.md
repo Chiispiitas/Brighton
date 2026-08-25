@@ -8,24 +8,37 @@ This folder is intentionally separate from the existing `Horizons A1/` directory
 
 - Stage 1: native design system established
 - Stage 2: fixed A4 shell and print CSS established
-- Example A4 pages: available in `examples/stage-2-showcase.html`
+- Dynamic showcase: `examples/stage-2-showcase.html`
 
-## Design direction
+## Current design direction
 
-The new `Horizons/` workspace does **not** mirror the visual design of the legacy Student's Book. It uses an independent native HTML/CSS system:
+The new `Horizons/` workspace does **not** mirror the visual design of the legacy Student's Book and does not reproduce external reference coursebooks. It uses an original native HTML/CSS system:
 
-- warm off-white page surface
-- cobalt primary accent
-- coral activity accent
-- mint/lavender/sky/butter support colors
+- warm off-white A4 paper
+- indigo + aqua core identity
+- coral, sun, plum and sky support accents
+- multicolor horizon rail as recurring page furniture
+- asymmetric rounded cards
+- offset lesson stamps
+- subtle vertical exercise spine
+- compact skill/mode bars
+- editorial photo/text feature panels
 - system-native sans-serif typography
-- rounded cards, pills, and quiet borders
-- circular exercise numbers
 - semantic HTML5
 - CSS Grid and Flexbox
 - no decorative vector illustration
 
-The legacy book may still inform content structure where appropriate, but it is not the visual template for newly produced pages.
+Reference screenshots may inspire only broad editorial ideas such as hierarchy, activity rhythm, skill labeling, information density and varied media scale. Their specific colors, shapes, page chrome, tab systems, typography and compositions must not be copied.
+
+## Non-negotiable exercise layout
+
+**All numbered exercises must appear in one vertical column and remain in numerical order.**
+
+Exercises may not be placed side by side.
+
+Inside an individual exercise, questions or activity content may use two or three columns. This includes question sets, answer options, vocabulary, images, reviews, tables, profiles and photo/text layouts.
+
+Use the `.hz-exercises` lane and the internal `.hz-question-grid-*`, `.hz-content-grid-*` and `.hz-inset-grid-*` utilities.
 
 ## Locked production rules
 
