@@ -64,6 +64,105 @@
 }
 
 /* -------------------------------------------------------------------------
+   Lesson 1D layout corrections
+   -------------------------------------------------------------------------
+
+   Page 11 was too vertically dense, which caused the capitalization field to
+   be clipped by the fixed A4 content viewport. Compress the model interaction
+   slightly while preserving every activity and the Guided Discovery sequence.
+
+   Page 12's continuation tab is moved into the upper page margin so it no
+   longer sits on top of the business-choice photography. */
+
+.l1d-page:not(.l1d-page--2) .l1d-checkin-stage {
+  min-height: 80mm !important;
+  padding-top: 1.8mm !important;
+}
+
+.l1d-page:not(.l1d-page--2) .l1d-checkin-photo,
+.l1d-page:not(.l1d-page--2) .l1d-checkin-photo .hz-photo-placeholder {
+  min-height: 78mm !important;
+}
+
+.l1d-page:not(.l1d-page--2) .l1d-checkin-copy {
+  margin-left: -6mm !important;
+  padding: 2.8mm 3mm 2.6mm 6mm !important;
+}
+
+.l1d-page:not(.l1d-page--2) .l1d-checkin-copy__kicker {
+  margin-bottom: 1.2mm !important;
+  font-size: 6.1pt !important;
+}
+
+.l1d-page:not(.l1d-page--2) .l1d-dialogue {
+  grid-template-columns: 15.5mm 1fr !important;
+  gap: .45mm 1.5mm !important;
+  margin-bottom: 1.8mm !important;
+  font-size: 6.45pt !important;
+  line-height: 1.2 !important;
+}
+
+.l1d-page:not(.l1d-page--2) .l1d-model-form {
+  padding: 2.1mm 2.7mm 2.1mm !important;
+}
+
+.l1d-page:not(.l1d-page--2) .l1d-model-form__brand {
+  margin-bottom: .45mm !important;
+  font-size: 5.8pt !important;
+}
+
+.l1d-page:not(.l1d-page--2) .l1d-model-form h3 {
+  margin-bottom: 1.2mm !important;
+  font-size: 10pt !important;
+}
+
+.l1d-page:not(.l1d-page--2) .l1d-model-row {
+  min-height: 4.35mm !important;
+  font-size: 6.25pt !important;
+}
+
+.l1d-page:not(.l1d-page--2) .l1d-discovery {
+  gap: .8mm 6mm !important;
+  padding-top: .6mm !important;
+  font-size: 7.2pt !important;
+  line-height: 1.26 !important;
+}
+
+.l1d-page:not(.l1d-page--2) .l1d-discovery__item {
+  min-height: 8mm !important;
+}
+
+.l1d-page:not(.l1d-page--2) .l1d-pair-check {
+  margin-top: .9mm !important;
+}
+
+.l1d-page:not(.l1d-page--2) .l1d-capitalization {
+  overflow: visible !important;
+  margin-top: .25mm !important;
+  margin-bottom: .1mm !important;
+  padding: 2.25mm 3.5mm 2.35mm !important;
+}
+
+.l1d-page:not(.l1d-page--2) .l1d-capitalization__grid {
+  gap: 2.2mm !important;
+  font-size: 6.85pt !important;
+  line-height: 1.25 !important;
+}
+
+.l1d-page--2 .hz-page__content {
+  overflow: visible !important;
+}
+
+.l1d-page--2 .l1d-continuation {
+  top: -11mm !important;
+  right: -14mm !important;
+  width: 34mm !important;
+  height: 18mm !important;
+  padding: 0 0 2.3mm 5mm !important;
+  font-size: 16pt !important;
+}
+
+/* -------------------------------------------------------------------------
    Lesson 1A prototype refinements
    These are intentionally scoped to the prototype until its patterns are
    promoted into reusable components by a later production pass.
