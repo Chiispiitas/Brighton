@@ -47,17 +47,18 @@ Demonstrates the system working as a real publication rather than isolated compo
 9. Vocabulary Practice back matter;
 10. Grammar Reference back matter.
 
-## Unit Review
+## Unit Review spread
 
-`unit-review-showcase.html`
+`unit-review-spread-showcase.html`
 
-Demonstrates a dedicated review identity with:
+Demonstrates the full two-page review architecture with:
 
 - visible consolidation of Lessons A–D;
 - denser vocabulary/grammar practice;
-- reading recap;
+- integrated reading/listening slots;
 - final communicative/writing challenge;
-- simple readiness score.
+- readiness score;
+- spread-level continuation treatment.
 
 Unit Reviews intentionally prioritize consolidation and navigation over feature-page photography.
 
