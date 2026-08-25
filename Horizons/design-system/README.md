@@ -1,44 +1,65 @@
 # Horizons design system
 
-This directory defines the new visual language for the HTML/CSS master of **Horizons A1**.
+This directory defines the visual language for the HTML/CSS master of **Horizons A1**.
 
 ## Design principle
 
-The production system is **not a visual transcription of the legacy Word/PDF book** and is not a copy of any external coursebook reference. Reference material may inform broad editorial ideas such as hierarchy, pacing, skill labels and media variety; Horizons must express those ideas with its own visual identity.
+Horizons should look **art-directed for print**, not assembled from generic UI components.
 
-## Current visual direction
+The system is not a transcription of the legacy Word/PDF book and is not a copy of any external coursebook reference. References may inform broad editorial ideas such as hierarchy, pacing, skill labels, photography and activity density; Horizons must interpret those ideas independently.
+
+## Editorial direction
 
 - warm off-white A4 paper
-- indigo primary accent
-- aqua secondary accent
-- coral, sun, plum and sky supporting accents
-- a multicolor "horizon" rail as recurring page furniture
-- asymmetric rounded cards instead of textbook tabs
-- offset lesson stamps with a small secondary shadow block
-- a subtle vertical exercise spine
-- compact dark skill/mode bars
-- editorial feature panels for photo + text combinations
-- system-native sans-serif typography
-- semantic HTML5 structures
-- CSS Grid and Flexbox
-- no vector illustrations; SVG is reserved for functional icons only
+- mostly neutral black/gray typography
+- **one dominant unit color per unit/page**
+- typography and photography provide most of the hierarchy
+- straight edges, thin rules and open white space are the default
+- noticeable rounding is reserved mainly for simulated real-world interfaces
+- almost no decorative gradients
+- no rainbow accent system on normal lesson pages
+- no card around every activity
+- no pill around every label
+- large raster photography is preferred over decorative surfaces
+- exercise numbers are simple large colored numerals
+- grammar/pronunciation use restrained flat focus areas
+- page compositions may be bespoke when the lesson content benefits from it
+- system-native typography
+- semantic HTML5
+- CSS Grid/Flexbox for composition
+- no vector illustrations; SVG remains limited to functional icons
 
 ## Non-negotiable exercise layout
 
-**Exercises themselves never form columns.**
+**Numbered exercises never form page columns.**
 
 All numbered exercises run vertically in one `.hz-exercises` / `.hz-exercise-flow` lane and remain in numerical order.
 
-Two- and three-column layouts are allowed only **inside an exercise body** for questions, choices, image matching, tables, reviews, profiles, vocabulary or other activity content.
+Two- and three-column layouts are allowed only **inside an exercise body** for questions, choices, images, tables, reviews, profiles, vocabulary or other activity content.
 
-This rule is encoded in `component-contracts.md` and demonstrated in `../examples/stage-2-showcase.html`.
+## Human-art-direction rules
+
+To avoid templated or AI-like sameness:
+
+1. Do not wrap content in a card unless the content genuinely needs a container.
+2. Do not use a decorative label when typography alone communicates the hierarchy.
+3. Do not force every lesson to use the same composition; keep the exercise mechanics consistent while varying editorial arrangement.
+4. Prefer one strong photograph over several decorative boxes.
+5. Preserve deliberate white space rather than filling every available gap.
+6. Use unit color as an editorial signal, not as continuous decoration.
+7. Keep shadows for simulated interfaces only; ordinary book content should be flat.
+8. Bespoke CSS is acceptable for distinctive lesson features and should not automatically become a global component.
+
+## Unit colors
+
+`tokens.css` provides eight suggested unit identities through `.hz-unit-1` to `.hz-unit-8`. A normal page should inherit one of these and avoid mixing several unit colors.
 
 ## Files
 
-- `tokens.css` — palette, typography, spacing, geometry, effects and component dimensions
-- `components.css` — lesson identity, exercise lane, internal question grids, focus cards, skill bars, media panels, audio labels, UI cards, tables and writing mechanics
+- `tokens.css` — neutral palette, unit colors, typography, spacing and geometry
+- `components.css` — lesson identity, one-column exercise lane, internal question grids, focus areas, audio, UI recreations, tables and writing mechanics
 - `asset-policy.md` — visual asset rules
-- `component-contracts.md` — reusable semantic HTML/component expectations
+- `component-contracts.md` — semantic HTML/component expectations
 
 ## Locked project rules
 
