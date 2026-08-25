@@ -1,6 +1,6 @@
 # Horizons QA
 
-Horizons includes both visual debug CSS and a lightweight browser audit script.
+Horizons includes visual debug CSS, a browser layout audit and a dependency-free structured-content validator.
 
 ## Visual debug classes
 
@@ -19,7 +19,7 @@ Element-level QA markers:
 
 All QA furniture is suppressed by print CSS.
 
-## Browser audit
+## Browser layout audit
 
 Load:
 
@@ -46,6 +46,29 @@ Checks include:
 - approximate QR size.
 
 The script is development-only and should not be required by production pages.
+
+## Structured content validation
+
+Run from the `Horizons/` directory:
+
+```bash
+node qa/validate-content.mjs content/example-lesson.json
+```
+
+The validator checks:
+
+- course/level/unit/lesson metadata;
+- exactly two pages per normal lesson;
+- stable exercise ID format;
+- duplicate exercise IDs;
+- increasing exercise number sequence across the lesson;
+- required instructions;
+- broken audio references;
+- broken asset references;
+- audio printed-track/script presence;
+- basic asset metadata warnings.
+
+It intentionally has no npm dependency.
 
 ## Publication checklist
 
