@@ -1,12 +1,25 @@
 # Horizons A4 shell
 
-The shell turns semantic HTML5 into fixed A4 Student's Book pages.
+The shell turns semantic HTML5 into fixed A4 Student's Book pages and two-page lesson spreads.
 
 ## Core page rule
 
 Each `<article class="hz-page">` is exactly **210 × 297 mm** and becomes one printed/PDF page.
 
 The shell uses a single consistent content frame on every page. It does not mirror legacy page geometry and does not use left/right page classes.
+
+## Two-page lesson rule
+
+A normal lesson should use:
+
+```html
+<div class="hz-spread">
+  <article class="hz-page hz-page--opener">...</article>
+  <article class="hz-page hz-page--continuation">...</article>
+</div>
+```
+
+The two pages should be designed together, with purposeful contrast in density, image scale and activity type.
 
 ## Hard exercise-flow rule
 
@@ -24,38 +37,49 @@ Use:
 
 Do not put sibling exercises in two page columns.
 
-Two- and three-column layouts are allowed only **inside an exercise body**, for example with:
+Two- and three-column layouts are allowed only **inside an exercise body**.
 
-- `.hz-question-grid--2`
-- `.hz-question-grid--3`
-- `.hz-content-grid--2`
-- `.hz-content-grid--3`
-- `.hz-inset-grid--2`
-- `.hz-inset-grid--3`
+## Imported publication layers
 
-This keeps the learning sequence obvious while still allowing dense, varied page design.
+`a4-shell.css` imports:
 
-## Visual identity
+- core components/tokens;
+- publication typography;
+- shape-led editorial layouts;
+- two-page spread behavior;
+- archetypes/density/focus variants;
+- optional unit motifs;
+- functional icon styles;
+- Vocabulary Practice / Grammar Reference back matter;
+- development QA utilities.
 
-The current shell uses an original Horizons visual system:
+## Current visual identity
 
-- indigo, aqua, coral, sun and plum accents;
-- a thin multicolor "horizon" rail near the top of every page;
-- asymmetric rounded surfaces rather than textbook tabs;
-- offset lesson stamps;
-- a subtle vertical exercise spine;
-- compact skill/mode bars;
-- editorial feature panels;
-- system-native typography;
-- CSS Grid/Flexbox rather than manually positioned artwork.
+The system is deliberately print-editorial rather than dashboard-like:
+
+- warm off-white paper;
+- mostly neutral typography;
+- one dominant color per unit;
+- straight edges and thin rules as the default;
+- large raster photography;
+- controlled full-bleed/frame-breaking media;
+- structural shapes on feature pages;
+- simple large exercise numerals;
+- flat language-focus areas;
+- shadows/rounding mainly for simulated interfaces;
+- semantic HTML5 and CSS Grid/Flexbox.
 
 Reference coursebooks may inspire hierarchy, rhythm, density and variety, but their exact palette, tabs, page chrome, exercise icons, typography and compositions must not be reproduced.
 
-## Files
+## Master template
 
-- `a4-shell.css` — A4 page frame, internal layout primitives, media frames, review furniture, QR slots and QA overlay
-- `print.css` — browser-to-PDF rules
-- `page-template.html` — semantic HTML5 starter with the required exercise lane
+`page-template.html` now contains a complete two-page lesson spread with:
+
+- opener page;
+- continuation page;
+- density/archetype hooks;
+- vertical exercise lanes;
+- structured page-ending patterns.
 
 ## Print settings
 
@@ -66,4 +90,8 @@ Reference coursebooks may inspire hierarchy, rhythm, density and variety, but th
 - Background graphics: On
 - Browser headers/footers: Off
 
-Add `hz-debug` to `<body>` during QA to reveal the fixed content frame. The debug overlay never prints.
+## QA
+
+Visual QA classes and the browser audit are documented in `../qa/`.
+
+The publication PDF must not include development overlays or browser headers/footers.
