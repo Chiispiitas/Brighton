@@ -27,8 +27,11 @@ window.BRIGHTON_SITE_CONFIG = {
     { testId: "brighton-a2-units-9-12", title: "A2 Units 9–12 Test", level: "A2", unitRange: "9-12", isActive: true, totalQuestions: 80, maxScore: 80, relativeUrl: "tests/a2-units-9-12/index.html" },
 
     { testId: "brighton-b1-units-1-2", title: "B1 Units 1–2 Test", level: "B1", unitRange: "1-2", isActive: true, totalQuestions: 40, maxScore: 40, relativeUrl: "tests/b1-units-1-2/index.html" },
+    { testId: "brighton-b1-units-1-4", title: "B1 Units 1–4 Test", level: "B1", unitRange: "1-4", isActive: true, totalQuestions: 80, maxScore: 80, relativeUrl: "tests/b1-units-1-4/index.html" },
     { testId: "brighton-b1-units-5-6", title: "B1 Units 5–6 Test", level: "B1", unitRange: "5-6", isActive: true, totalQuestions: 40, maxScore: 40, relativeUrl: "tests/b1-units-5-6/index.html" },
+    { testId: "brighton-b1-units-5-8", title: "B1 Units 5–8 Test", level: "B1", unitRange: "5-8", isActive: true, totalQuestions: 80, maxScore: 80, relativeUrl: "tests/b1-units-5-8/index.html" },
     { testId: "brighton-b1-units-9-10", title: "B1 Units 9–10 Test", level: "B1", unitRange: "9-10", isActive: true, totalQuestions: 40, maxScore: 40, relativeUrl: "tests/b1-units-9-10/index.html" },
+    { testId: "brighton-b1-units-9-12", title: "B1 Units 9–12 Test", level: "B1", unitRange: "9-12", isActive: true, totalQuestions: 80, maxScore: 80, relativeUrl: "tests/b1-units-9-12/index.html" },
 
     { testId: "brighton-b1plus-units-5-6", title: "B1+ Units 5–6 Test", level: "B1+", unitRange: "5-6", isActive: true, totalQuestions: 40, maxScore: 40, relativeUrl: "tests/b1plus-units-5-6/index.html" }
   ],
