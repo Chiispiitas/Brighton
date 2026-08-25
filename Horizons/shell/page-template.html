@@ -3,53 +3,96 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Horizons A1 — A4 Page Template</title>
+  <title>Horizons A1 — Two-page A4 Lesson Template</title>
   <link rel="stylesheet" href="./a4-shell.css">
   <link rel="stylesheet" href="./print.css" media="print">
 </head>
 <body class="hz-book">
 
   <!--
-    One <article class="hz-page"> equals one printed A4 page.
+    MASTER RULES
 
-    HARD RULE:
-    All sibling exercises must be children of one .hz-exercises lane and flow
-    vertically from top to bottom. Never place exercises in side-by-side page
-    columns. Only material INSIDE .hz-exercise__body may use
-    .hz-question-grid--2 / --3, .hz-content-grid--2 / --3, or .hz-inset-grid.
+    1. One .hz-page = one printed A4 page.
+    2. A normal lesson is art-directed as one .hz-spread containing two pages.
+    3. All sibling numbered exercises live in one .hz-exercises lane per page
+       and flow vertically in numerical order.
+    4. Two/three columns are allowed only INSIDE one exercise body.
+    5. Add one .hz-unit-* class to both pages of the spread.
+    6. Choose a density and archetype intentionally; do not default every
+       lesson to the same composition.
   -->
-  <article class="hz-page hz-content" data-page="1">
-    <main class="hz-page__content">
-      <div class="hz-page-stack">
 
-        <header class="hz-lesson-header">
-          <div class="hz-lesson-tab" aria-label="Lesson 1A">
-            <span class="hz-lesson-tab__label">Lesson</span>
-            <span class="hz-lesson-tab__id">1A</span>
-          </div>
-          <div class="hz-lesson-heading">
-            <h1 class="hz-lesson-title">Lesson title</h1>
-            <div class="hz-objectives">
-              <span class="hz-objectives__item">Objective</span>
+  <div class="hz-spread hz-spread--photo-led" aria-label="Lesson spread">
+
+    <!-- PAGE 1 — opener -->
+    <article class="hz-page hz-content hz-unit-1 hz-page--opener hz-density-light hz-archetype-photo-led" data-page="1">
+      <main class="hz-page__content">
+        <div class="hz-page-stack">
+
+          <header class="hz-lesson-header">
+            <div class="hz-lesson-tab" aria-label="Lesson 1A">
+              <span class="hz-lesson-tab__label">Lesson</span>
+              <span class="hz-lesson-tab__id">1A</span>
             </div>
-          </div>
-          <div class="hz-lesson-signal" aria-hidden="true">
-            <span class="hz-lesson-signal__label">Language</span>
-            <span class="hz-lesson-signal__rail"><span></span><span></span><span></span></span>
-          </div>
-        </header>
+            <div class="hz-lesson-heading">
+              <h1 class="hz-lesson-title">Lesson title</h1>
+              <div class="hz-objectives">
+                <span class="hz-objectives__item">Objective 1</span>
+                <span class="hz-objectives__item">Objective 2</span>
+              </div>
+            </div>
+          </header>
 
-        <div class="hz-exercises hz-fill" aria-label="Lesson exercises">
-          <!-- Every .hz-exercise goes here, in numerical order. -->
+          <div class="hz-exercises hz-fill" aria-label="Lesson exercises">
+            <!-- Exercise 1 -->
+            <!-- Exercise 2 -->
+            <!-- Exercise 3 -->
+          </div>
+
+          <!-- Optional structured page ending. -->
+          <aside class="hz-page-end hz-page-end--communication">
+            <span class="hz-page-end__label">Communication</span>
+            <p class="hz-page-end__prompt">Optional closing prompt.</p>
+          </aside>
         </div>
-      </div>
-    </main>
+      </main>
 
-    <footer class="hz-page__footer" aria-label="Page footer">
-      <span class="hz-page-code">Horizons A1 · 1A</span>
-      <span class="hz-page-number">1</span>
-    </footer>
-  </article>
+      <footer class="hz-page__footer" aria-label="Page footer">
+        <span class="hz-page-code">Horizons A1 · Unit 1 · 1A</span>
+        <span class="hz-page-number">1</span>
+      </footer>
+    </article>
+
+    <!-- PAGE 2 — continuation -->
+    <article class="hz-page hz-content hz-unit-1 hz-page--continuation hz-density-medium hz-archetype-standard" data-page="2">
+      <main class="hz-page__content">
+        <div class="hz-page-stack">
+
+          <header class="hz-continuation-head">
+            <h2 class="hz-continuation-head__title">Language and practice</h2>
+            <span class="hz-continuation-head__code">1A · continued</span>
+          </header>
+
+          <div class="hz-exercises hz-fill" aria-label="Lesson exercises continued">
+            <!-- Continue exercise numbering from Page 1. -->
+          </div>
+
+          <aside class="hz-page-end hz-page-end--reflection">
+            <span class="hz-page-end__label">I can…</span>
+            <span class="hz-self-rating">Not yet</span>
+            <span class="hz-self-rating">Almost</span>
+            <span class="hz-self-rating">Yes</span>
+          </aside>
+        </div>
+      </main>
+
+      <footer class="hz-page__footer" aria-label="Page footer">
+        <span class="hz-page-code">Horizons A1 · Unit 1 · 1A</span>
+        <span class="hz-page-number">2</span>
+      </footer>
+    </article>
+
+  </div>
 
 </body>
 </html>
