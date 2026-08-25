@@ -25,6 +25,26 @@ Examples:
 - cards or information exchanges in the same group should keep the same geometry even if their tones differ;
 - alphabet pairs may use stronger uppercase color and a faded lowercase version of the same hue instead of changing each letter pair into a different container.
 
+## No translucent background words
+
+Do **not** use oversized translucent words, letters, punctuation marks or instructional phrases as decorative background elements behind lesson content.
+
+This includes treatments such as faded words like `WORK`, `WORLD`, `PAIRWORK`, `CHECK-IN`, `YOUR BUSINESS`, `FORM`, `ADJECTIVES`, or similar pseudo-element text used only to fill space or add visual texture.
+
+Functional typography is still encouraged when the text has an actual reading or navigation purpose, for example:
+
+- lesson titles;
+- exercise instructions;
+- section headings;
+- continuation markers such as `1B`, `1C`, `1D`;
+- labels inside real-world forms, chats, tickets or interfaces;
+- meaningful photo captions;
+- real task prompts.
+
+For visual energy, prefer photography, crop, whitespace, structural geometry, thin rules, scale, overlap and functional typography instead of ghosted background text.
+
+This is a permanent rule for all current and future Horizons lessons.
+
 ## Lesson tab hierarchy
 
 Everything inside `.hz-lesson-tab` must be visually centered.
