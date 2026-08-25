@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Horizons A1 — Native A4 Page Template</title>
+  <title>Horizons A1 — A4 Page Template</title>
   <link rel="stylesheet" href="./a4-shell.css">
   <link rel="stylesheet" href="./print.css" media="print">
 </head>
@@ -11,14 +11,37 @@
 
   <!--
     One <article class="hz-page"> equals one printed A4 page.
-    Use semantic HTML5 inside each page: header, main, section, article,
-    figure, table, aside, footer, etc. No mirrored left/right page classes.
-    Add hz-debug to <body> only during layout QA.
+
+    HARD RULE:
+    All sibling exercises must be children of one .hz-exercises lane and flow
+    vertically from top to bottom. Never place exercises in side-by-side page
+    columns. Only material INSIDE .hz-exercise__body may use
+    .hz-question-grid--2 / --3, .hz-content-grid--2 / --3, or .hz-inset-grid.
   -->
   <article class="hz-page hz-content" data-page="1">
     <main class="hz-page__content">
       <div class="hz-page-stack">
-        <!-- Semantic page content goes here. -->
+
+        <header class="hz-lesson-header">
+          <div class="hz-lesson-tab" aria-label="Lesson 1A">
+            <span class="hz-lesson-tab__label">Lesson</span>
+            <span class="hz-lesson-tab__id">1A</span>
+          </div>
+          <div class="hz-lesson-heading">
+            <h1 class="hz-lesson-title">Lesson title</h1>
+            <div class="hz-objectives">
+              <span class="hz-objectives__item">Objective</span>
+            </div>
+          </div>
+          <div class="hz-lesson-signal" aria-hidden="true">
+            <span class="hz-lesson-signal__label">Language</span>
+            <span class="hz-lesson-signal__rail"><span></span><span></span><span></span></span>
+          </div>
+        </header>
+
+        <div class="hz-exercises hz-fill" aria-label="Lesson exercises">
+          <!-- Every .hz-exercise goes here, in numerical order. -->
+        </div>
       </div>
     </main>
 
