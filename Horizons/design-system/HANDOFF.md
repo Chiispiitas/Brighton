@@ -9,14 +9,15 @@ This file is the quickest way to resume Horizons A1 design work in a new ChatGPT
 For any new Student's Book design work, use this order:
 
 1. `HANDOFF.md` — current working rules and latest refinements
-2. `CANONICAL-STYLE.md` — approved visual philosophy
-3. `STYLE-REFINEMENTS.md` — controlled repetition and micro-variety rules
-4. `components.css` — core exercise and media mechanics
-5. `editorial-layouts.css` — approved large-scale editorial compositions
-6. `canonical-refinements.css` — latest canonical CSS refinements
-7. `../examples/stage-3-shape-showcase.html` — primary visual benchmark
-8. `../examples/stage-2-showcase.html` — supporting photo/overlay benchmark
-9. `../examples/lesson-1a-canonical-prototype.html` — first source-faithful legacy lesson adapted into the canonical style
+2. `CANONICAL-STYLE.md` — approved visual philosophy and lesson architecture
+3. `GUIDED-DISCOVERY.md` — primary teaching methodology and real-situation task model
+4. `STYLE-REFINEMENTS.md` — controlled repetition and micro-variety rules
+5. `components.css` — core exercise and media mechanics
+6. `editorial-layouts.css` — approved large-scale editorial compositions
+7. `canonical-refinements.css` — latest canonical CSS refinements
+8. `../examples/stage-3-shape-showcase.html` — primary visual benchmark
+9. `../examples/stage-2-showcase.html` — supporting photo/overlay benchmark
+10. `../examples/lesson-1a-canonical-prototype.html` — first source-faithful legacy lesson adapted into the canonical style
 
 If any older experiment conflicts with these files, the files above take precedence.
 
@@ -122,9 +123,44 @@ The supplied syllabus remains immutable unless explicitly changed by the author.
 
 - two A4 pages per lesson
 - Lesson A → Lesson B → Lesson C → Lesson D → Unit Review
-- Vocabulary Practice and Grammar Reference remain back-of-book sections
+- Lesson A — Grammar and/or Vocabulary
+- Lesson B — Reading/Listening with some Vocabulary
+- Lesson C — Grammar and/or Vocabulary
+- Lesson D — Speaking or Writing with a strong real-world outcome
+- Vocabulary Practice and Grammar Reference/Practice remain back-of-book activity sections
 - American English
 - CEFR A1 while preserving the supplied syllabus
+
+## 6A. Guided Discovery — primary methodology
+
+**Guided Discovery is the central teaching method of Horizons and should shape every new lesson.**
+
+Students should normally encounter target language in meaningful context before receiving an explicit rule. The lesson then asks direct, A1-friendly questions that guide students to examine form, meaning, word order or use.
+
+Canonical learning direction:
+
+**context → noticing → guided analysis → clarification → controlled practice → communicative use → transfer to a real situation**
+
+Important consequences:
+
+- contexts must contain usable evidence, not merely decorate the page;
+- explicit discovery questions are expected, not optional;
+- grammar/vocabulary explanations should usually confirm or organize what students have already analyzed;
+- short exercises should form a connected learning sequence;
+- pairwork can support both discovery and communication;
+- students should ultimately use the language to accomplish something meaningful.
+
+Do not turn Guided Discovery into unsupported guessing. Students need enough examples and guidance to infer the intended pattern.
+
+### Lesson D real-situation rule
+
+Lesson D should normally culminate in a believable **real-world situation, simulation or role-play**, not generic classroom production.
+
+Students should have a role, a reason to communicate, information to exchange, a realistic artifact/interface to use, and a concrete outcome.
+
+For Lesson 1D, **LET'S FILL A FORM!**, the intended model is not simply filling a worksheet. Students can create or choose a simple business/service such as a gym, hotel, language school or club. One student represents the business; another is the customer/guest/member. They ask for personal information and complete a realistic form with the information obtained from the classmate. The form is the product of the interaction.
+
+See `GUIDED-DISCOVERY.md` for the full methodology, authoring test and additional examples.
 
 ## 7. Controlled repetition — important latest rule
 
@@ -300,17 +336,20 @@ The prototype is a design benchmark, not authorization to modify the frozen sour
 
 ## 17. Primary reference priority
 
-When unsure how a new page should look, use this order:
+When unsure how a new page should look or how a lesson should work, use this order:
 
 1. `HANDOFF.md`
 2. `CANONICAL-STYLE.md`
-3. `STYLE-REFINEMENTS.md`
-4. `../examples/lesson-1a-canonical-prototype.html` for source-faithful lesson adaptation behavior
-5. `../examples/stage-3-shape-showcase.html` for large-scale art direction
-6. `../examples/stage-2-showcase.html` for photography/overlay treatments
-7. `components.css`, `editorial-layouts.css`, `canonical-refinements.css`
-8. locked syllabus and frozen source content
-9. external references only for broad inspiration
+3. `GUIDED-DISCOVERY.md`
+4. `STYLE-REFINEMENTS.md`
+5. `../examples/lesson-1a-canonical-prototype.html` for source-faithful lesson adaptation behavior
+6. `../examples/stage-3-shape-showcase.html` for large-scale art direction
+7. `../examples/stage-2-showcase.html` for photography/overlay treatments
+8. `components.css`, `editorial-layouts.css`, `canonical-refinements.css`
+9. locked syllabus and frozen source content
+10. external references only for broad inspiration
+
+When a visual idea conflicts with the Guided Discovery learning sequence, **the pedagogy wins**.
 
 ## 18. Do not revive discarded directions
 
@@ -329,6 +368,7 @@ The current canonical Stage 3 direction plus the latest refinements is the appro
 Horizons/design-system/
 ├── HANDOFF.md
 ├── CANONICAL-STYLE.md
+├── GUIDED-DISCOVERY.md
 ├── STYLE-REFINEMENTS.md
 ├── README.md
 ├── tokens.css
@@ -353,8 +393,10 @@ Horizons/shell/
 
 ## 20. Resume rule for a new chat
 
-Before making a new lesson or redesigning an existing source lesson, read this handoff and the canonical style files first.
+Before making a new lesson or redesigning an existing source lesson, read this handoff, the canonical style file and `GUIDED-DISCOVERY.md` first.
 
 If adapting a frozen page, inspect the actual source page and reproduce its educational content exactly before applying the current visual system.
 
-**Design boldly; edit source content only when explicitly authorized.**
+If authoring missing lesson content, build the learning sequence around contextualized language, explicit Guided Discovery questions, short practice, pairwork and meaningful real-world transfer.
+
+**Design boldly; teach through discovery; edit source content only when explicitly authorized.**
