@@ -96,7 +96,156 @@ Two- and three-column layouts are allowed only **inside one exercise** for:
 
 A single exercise may contain a highly creative full-page composition. The next numbered exercise still begins below it.
 
-## 5. Approved Stage 3 layout vocabulary
+## 5. Canonical lesson architecture and pedagogical rhythm
+
+Horizons lessons are **two-page teaching sequences**, not collections of unrelated activities. The exact composition can vary, but the pedagogical role of each lesson letter is stable.
+
+### Lesson A — Grammar and/or Vocabulary
+
+Lesson A primarily introduces and practices a core grammar point, a core vocabulary set, or both.
+
+Typical ingredients may include:
+
+- short contextualized input such as a dialogue, mini-text, image set or listening;
+- a concise grammar or vocabulary presentation embedded in the lesson;
+- short noticing, matching, completion or controlled-practice activities;
+- pronunciation work when it directly supports the target language;
+- a short communicative or pairwork task that reuses the target language;
+- a cross-reference to Grammar Reference/Practice or Vocabulary Practice when additional consolidation is needed.
+
+Lesson A should not become a long grammar lecture. The main spread introduces, models and gives students enough guided practice to use the language.
+
+### Lesson B — Reading/Listening with Vocabulary
+
+Lesson B is primarily a **receptive-skills lesson** led by Reading or Listening, with a smaller vocabulary component that helps students understand and discuss the text or audio.
+
+Typical ingredients may include:
+
+- pre-reading or pre-listening vocabulary support;
+- a meaningful text, interview, profile, dialogue, message, article or listening situation;
+- short comprehension, matching, sequencing, identifying or information-transfer tasks;
+- vocabulary noticed or recycled from the input;
+- a short follow-up task in which students compare, discuss, match information or personalize the content with a partner.
+
+The reading/listening should carry the lesson. Vocabulary supports the receptive task rather than replacing it.
+
+### Lesson C — Grammar and/or Vocabulary
+
+Lesson C returns to a **language-system focus**, normally a second grammar point, a second vocabulary set, or a combination of both.
+
+Its role is similar to Lesson A but should not mechanically reproduce the same page composition. It can use a different context, media treatment or interaction pattern while retaining the same short-exercise rhythm and strong progression from input to use.
+
+Typical ingredients may include:
+
+- contextualized language input;
+- concise presentation or noticing;
+- short controlled exercises;
+- visual or lexical classification when useful;
+- pronunciation when relevant;
+- pairwork or another simple communicative application;
+- a cross-reference to the relevant Grammar Reference/Practice or Vocabulary Practice entry.
+
+### Lesson D — Speaking or Writing
+
+Lesson D is primarily a **productive-skills lesson**. Its main outcome is either Speaking or Writing.
+
+The lesson should prepare students for that productive outcome rather than asking them to produce language without support.
+
+A typical sequence may include:
+
+- a short model, example, prompt, form, conversation, message, post or other real-world text/interface;
+- useful language, functional phrases, planning support or organization cues;
+- one or more short preparation activities;
+- pair rehearsal, information exchange, peer checking or collaborative planning where appropriate;
+- the final Speaking or Writing task.
+
+For Speaking lessons, pairwork is especially central. For Writing lessons, pairwork can still support planning, idea generation, checking or comparison before or after writing.
+
+### Short-exercise rhythm inside the two-page lesson
+
+The established Horizons lesson style favors **several short, purposeful exercises** over a small number of very long worksheet-style tasks.
+
+Short exercises may:
+
+- introduce or notice language;
+- check comprehension;
+- isolate one small form or meaning point;
+- practice one manageable step;
+- move students from recognition toward production;
+- prepare the next exercise.
+
+Short does not mean disconnected. Exercises should form a clear learning sequence and reuse the same lesson language and context where useful.
+
+A lesson does **not** need to contain every possible practice item for its grammar or vocabulary target. Deeper consolidation belongs in the linked back-of-book practice sections.
+
+### Grammar Reference / Practice
+
+Grammar Reference is not a passive explanation page. It is a **reference-plus-practice section** linked to the main lessons.
+
+A grammar entry should normally combine:
+
+1. a concise beginner-friendly explanation;
+2. examples and/or a clear table or form summary;
+3. controlled activities such as choosing, completing, ordering or matching;
+4. transformation or application activities when appropriate;
+5. a link back to the lesson where the language was introduced.
+
+The purpose is to give students more concentrated grammar practice than can comfortably fit inside the two-page lesson.
+
+### Vocabulary Practice
+
+Vocabulary Practice is not a glossary or decorative word list. It is an **activity-led consolidation section** linked to the main lessons.
+
+A vocabulary entry should normally move through some combination of:
+
+1. recognition or recall;
+2. picture/word matching;
+3. categorization or classification;
+4. contextual completion or association;
+5. short written use;
+6. pairwork, guessing, comparison or personalization where useful.
+
+The purpose is to deepen and recycle the vocabulary introduced in the lesson without overloading the main two-page spread.
+
+### Pairwork and learner interaction
+
+**Pairwork is a core feature of Horizons and should be treated as part of the learning design, not as optional decoration.**
+
+Across the book, pairwork should appear frequently and should normally make students use, retrieve or negotiate the target language.
+
+Appropriate A1 pairwork includes:
+
+- ask-and-answer exchanges;
+- interviewing a classmate;
+- information gap tasks;
+- compare-and-check tasks;
+- guessing occupations, objects, people or places;
+- mime-and-guess activities;
+- role-play;
+- completing a form or table from a partner's information;
+- rehearsing a speaking outcome;
+- planning or checking a writing outcome;
+- personalized questions based on the lesson language.
+
+Pairwork should be simple enough for A1 students to understand quickly, but it should still have a genuine communicative purpose. Avoid pairwork that merely tells two students to read the same answers aloud with no information exchange or decision.
+
+### Design implication
+
+The page design must support this pedagogy. Visual creativity should make the lesson sequence easier to follow, not obscure it.
+
+A two-page spread should therefore make it visually clear:
+
+- where input begins;
+- where students notice or learn language;
+- where controlled practice happens;
+- where receptive comprehension happens in Lesson B;
+- where students interact with a partner;
+- where a productive outcome is being prepared in Lesson D;
+- when additional Grammar Reference/Practice or Vocabulary Practice is available.
+
+The four lesson letters have different pedagogical jobs, so they should **not** be forced into one identical page template. The design system remains consistent, but the composition should reflect the lesson type.
+
+## 6. Approved Stage 3 layout vocabulary
 
 The following design patterns are explicitly part of the desired style:
 
@@ -129,7 +278,7 @@ The following design patterns are explicitly part of the desired style:
 - floor-plan or spatial compositions;
 - oversized background numerals or text used compositionally.
 
-## 6. Typography
+## 7. Typography
 
 Typography should carry hierarchy before containers do.
 
@@ -144,7 +293,7 @@ Prefer:
 
 Avoid solving every hierarchy problem with a colored badge, pill, card or border.
 
-## 7. Photography
+## 8. Photography
 
 Photography is a major part of the desired Horizons identity.
 
@@ -163,7 +312,7 @@ During prototype work, placeholders are allowed, but they should preserve the in
 
 External assets must remain free for the intended use and comply with `asset-policy.md`.
 
-## 8. Unit color
+## 9. Unit color
 
 Each unit may have its own dominant color identity, but a normal lesson page should not become a multicolor component palette.
 
@@ -180,7 +329,7 @@ Neutral typography and photography should still dominate the page.
 
 A repeated micro-system may use several vibrant colors when the exercise itself benefits from category or sequence distinction, provided the silhouette and layout remain consistent. The 0–10 number circles in Lesson 1A are the canonical example.
 
-## 9. Human-art-direction rules
+## 10. Human-art-direction rules
 
 To preserve the approved style:
 
@@ -199,8 +348,10 @@ To preserve the approved style:
 13. Do let real photography carry visual weight.
 14. Do retain consistent exercise mechanics even when page composition changes.
 15. Do prefer controlled repetition over excessive shape variety inside repeated sets.
+16. Do let the pedagogical role of Lesson A, B, C or D influence page composition and activity rhythm.
+17. Do make pairwork and communicative moments visually easy to find and understand.
 
-## 10. Relationship to reference screenshots and other books
+## 11. Relationship to reference screenshots and other books
 
 External coursebook references may inform broad editorial ideas such as:
 
@@ -225,7 +376,7 @@ Do not reproduce their exact:
 
 Horizons should remain an independent design.
 
-## 11. Relationship to the legacy Student's Book
+## 12. Relationship to the legacy Student's Book
 
 The legacy files in `Horizons A1/` remain frozen source/reference material.
 
@@ -235,7 +386,7 @@ The supplied syllabus also remains immutable unless explicitly changed by the au
 
 When visually adapting a frozen lesson, preserve the source educational content exactly unless the author explicitly asks for content changes. Do not silently rewrite instructions, questions, options, dialogue, grammar examples, numbering, track references or other source text.
 
-## 12. What future improvements may change
+## 13. What future improvements may change
 
 Future work may improve:
 
@@ -254,7 +405,7 @@ Future work should **not** silently replace the canonical visual philosophy with
 
 A major redesign should happen only after explicit author approval.
 
-## 13. Controlled repetition — canonical refinement
+## 14. Controlled repetition — canonical refinement
 
 When several items belong to the same exercise or visual family, they should normally share the same silhouette and structural treatment.
 
@@ -278,7 +429,7 @@ Canonical examples:
 
 See `STYLE-REFINEMENTS.md` and `canonical-refinements.css`.
 
-## 14. Lesson-tab hierarchy — canonical refinement
+## 15. Lesson-tab hierarchy — canonical refinement
 
 Everything inside `.hz-lesson-tab` must be centered.
 
@@ -291,7 +442,7 @@ The lesson ID should be the first thing the eye notices inside the tab.
 
 This behavior is implemented globally in `canonical-refinements.css`.
 
-## 15. Lesson 1A prototype as a practical benchmark
+## 16. Lesson 1A prototype as a practical benchmark
 
 `examples/lesson-1a-canonical-prototype.html` is the first practical source-faithful adaptation of an existing Student's Book lesson into the approved style.
 
@@ -305,7 +456,7 @@ The refinements learned from this prototype now apply beyond Lesson 1A:
 - exercise source numbering must remain intact even when unusual;
 - image placeholders should encode the intended final crop and role.
 
-## 16. Canonical reference priority
+## 17. Canonical reference priority
 
 When there is ambiguity about how a new page should look, use this priority:
 
