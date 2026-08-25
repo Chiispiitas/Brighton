@@ -11,6 +11,17 @@ if (!files.length) {
   process.exit(2);
 }
 
+const lockPath = path.resolve(process.cwd(), 'content/syllabus-lock.json');
+let syllabusLock = null;
+try {
+  syllabusLock = JSON.parse(fs.readFileSync(lockPath, 'utf8'));
+} catch (err) {
+  console.error(`Cannot read syllabus lock at ${lockPath}: ${err.message}`);
+  process.exit(2);
+}
+
+const arraysEqual = (a, b) => Array.isArray(a) && Array.isArray(b) && a.length === b.length && a.every((value, index) => value === b[index]);
+
 let failed = false;
 
 for (const file of files) {
@@ -34,6 +45,25 @@ for (const file of files) {
   if (!data.title) errors.push('title is required');
   if (!Array.isArray(data.objectives) || !data.objectives.length) errors.push('at least one objective is required');
   if (!Array.isArray(data.pages) || data.pages.length !== 2) errors.push('a normal lesson must contain exactly two pages');
+
+  // Hard syllabus lock: title, focus/objectives and real-world context must match.
+  const lockedUnit = syllabusLock.units?.find((unit) => unit.unit === data.unit);
+  const lockedLesson = lockedUnit?.lessons?.[data.lesson];
+  if (!lockedLesson) {
+    errors.push(`no locked syllabus entry found for Unit ${data.unit} Lesson ${data.lesson}`);
+  } else {
+    if (data.title !== lockedLesson.title) {
+      errors.push(`syllabus title mismatch: expected "${lockedLesson.title}"`);
+    }
+    if (!arraysEqual(data.objectives, lockedLesson.focus)) {
+      errors.push(`syllabus focus mismatch: expected ${JSON.stringify(lockedLesson.focus)}`);
+    }
+    const expectedContext = lockedLesson.real_world_context ?? null;
+    const actualContext = data.real_world_context ?? null;
+    if (actualContext !== expectedContext) {
+      errors.push(`real-world context mismatch: expected ${JSON.stringify(expectedContext)}`);
+    }
+  }
 
   const exerciseIds = new Set();
   const audioIds = new Set((data.audio || []).map((a) => a.id));
