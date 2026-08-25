@@ -1,26 +1,25 @@
 @import url("../design-system/components.css");
 
-/* Horizons — native HTML5/CSS A4 shell
+/* Horizons — editorial HTML5/CSS A4 shell.
    One semantic .hz-page = one print page.
-   HARD LAYOUT RULE: sibling exercises never form page columns. They live in
-   one .hz-exercises / .hz-exercise-flow lane from top to bottom. */
+   Sibling numbered exercises always stay in one vertical lane. */
 
 :root {
   --hz-page-width: 210mm;
   --hz-page-height: 297mm;
   --hz-page-margin-x: 14mm;
-  --hz-page-margin-top: 13mm;
-  --hz-page-margin-bottom: 16mm;
+  --hz-page-margin-top: 12mm;
+  --hz-page-margin-bottom: 15mm;
   --hz-footer-height: 8mm;
   --hz-content-gap: 3.5mm;
 }
 
 html,
-body { margin:0; padding:0; }
+body { margin: 0; padding: 0; }
 
 body.hz-book {
   min-height: 100%;
-  background: #e9ebf1;
+  background: #ececec;
   color: var(--hz-ink);
   font-family: var(--hz-font-body);
   font-size: var(--hz-fs-body);
@@ -36,30 +35,24 @@ body.hz-book {
   margin: 10mm auto;
   overflow: hidden;
   background: var(--hz-paper);
-  box-shadow: 0 1mm 5mm rgb(24 32 56 / 14%);
+  box-shadow: 0 1mm 4mm rgb(0 0 0 / 12%);
   break-after: page;
   page-break-after: always;
   isolation: isolate;
 }
 
-/* Signature horizon line: decorative CSS only, not derived from legacy artwork. */
+/* A short unit-color registration mark gives the book identity without a decorative banner. */
 .hz-page::before {
   content: "";
   position: absolute;
   top: 7mm;
-  right: var(--hz-page-margin-x);
   left: var(--hz-page-margin-x);
-  height: 1.2mm;
-  border-radius: var(--hz-radius-pill);
-  background: linear-gradient(90deg,
-    var(--hz-indigo) 0 45%,
-    var(--hz-aqua) 45% 72%,
-    var(--hz-sun) 72% 86%,
-    var(--hz-coral) 86% 100%);
-  opacity: .92;
+  width: 22mm;
+  height: .9mm;
+  background: var(--hz-unit);
 }
 
-.hz-page:last-child { break-after:auto; page-break-after:auto; }
+.hz-page:last-child { break-after: auto; page-break-after: auto; }
 
 .hz-page__content {
   position: absolute;
@@ -72,43 +65,27 @@ body.hz-book {
 .hz-page__footer {
   position: absolute;
   right: var(--hz-page-margin-x);
-  bottom: 6mm;
+  bottom: 5.5mm;
   left: var(--hz-page-margin-x);
   z-index: var(--hz-z-label);
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  gap: 3mm;
+  display: flex;
   align-items: center;
+  justify-content: space-between;
   height: var(--hz-footer-height);
-  padding-top: 2mm;
+  padding-top: 1.8mm;
   border-top: var(--hz-border) solid var(--hz-line);
   color: var(--hz-muted);
   font-size: var(--hz-fs-2xs);
 }
 
-.hz-page__footer::before {
-  content: "";
-  width: 9mm;
-  height: 2mm;
-  border-radius: var(--hz-radius-pill);
-  background: linear-gradient(90deg, var(--hz-aqua), var(--hz-indigo));
-}
-
 .hz-page-code {
-  font-weight: var(--hz-fw-bold);
-  letter-spacing: .06em;
-  text-transform: uppercase;
+  font-weight: var(--hz-fw-semibold);
+  letter-spacing: .045em;
 }
 
 .hz-page-number {
-  display: inline-grid;
-  place-items: center;
-  min-width: 7mm;
-  height: 7mm;
-  padding: 0 1.5mm;
-  border-radius: 2.2mm 2.2mm 2.2mm .7mm;
-  background: var(--hz-ink);
-  color: white;
+  color: var(--hz-unit-dark);
+  font-size: var(--hz-fs-sm);
   font-weight: var(--hz-fw-black);
 }
 
@@ -121,10 +98,10 @@ body.hz-book {
   gap: var(--hz-content-gap);
 }
 
-.hz-fill { flex:1 1 auto; min-height:0; }
+.hz-fill { flex: 1 1 auto; min-height: 0; }
 
-/* Safe non-exercise layout utility. Use only inside editorial blocks or exercise
-   bodies. Never use this to place sibling .hz-exercise elements side by side. */
+/* Grids may be used for unnumbered editorial matter and inside exercises.
+   Never place sibling numbered exercises in these grids. */
 .hz-inset-grid {
   display: grid;
   gap: 4mm;
@@ -133,11 +110,11 @@ body.hz-book {
 
 .hz-inset-grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
 .hz-inset-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
-.hz-inset-grid--wide-left { grid-template-columns: 1.2fr .8fr; }
-.hz-inset-grid--wide-right { grid-template-columns: .8fr 1.2fr; }
+.hz-inset-grid--wide-left { grid-template-columns: 1.25fr .75fr; }
+.hz-inset-grid--wide-right { grid-template-columns: .75fr 1.25fr; }
 
-.hz-section { min-width:0; }
-.hz-section + .hz-section { margin-top:3mm; }
+.hz-section { min-width: 0; }
+.hz-section + .hz-section { margin-top: 3mm; }
 
 .hz-section-title {
   margin: 0 0 2mm;
@@ -148,8 +125,8 @@ body.hz-book {
 }
 
 .hz-kicker {
-  margin: 0 0 1.2mm;
-  color: var(--hz-coral-dark);
+  margin: 0 0 1mm;
+  color: var(--hz-unit-dark);
   font-size: var(--hz-fs-xs);
   font-weight: var(--hz-fw-black);
   letter-spacing: .08em;
@@ -162,133 +139,114 @@ body.hz-book {
   position: relative;
   overflow: hidden;
   min-height: 28mm;
-  border-radius: var(--hz-radius-lg) var(--hz-radius-sm) var(--hz-radius-lg) var(--hz-radius-sm);
-  background: var(--hz-soft-gray);
+  background: var(--hz-wash);
 }
 
-.hz-media-frame > img { display:block; width:100%; height:100%; object-fit:cover; }
-.hz-media-frame--portrait { aspect-ratio:3/4; }
-.hz-media-frame--landscape { aspect-ratio:4/3; }
-.hz-media-frame--wide { aspect-ratio:16/7; }
-.hz-media-frame--square { aspect-ratio:1; }
+.hz-media-frame > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hz-media-frame--portrait { aspect-ratio: 3 / 4; }
+.hz-media-frame--landscape { aspect-ratio: 4 / 3; }
+.hz-media-frame--wide { aspect-ratio: 16 / 7; }
+.hz-media-frame--square { aspect-ratio: 1; }
 
 .hz-media-placeholder {
-  display:grid;
-  place-items:center;
-  width:100%;
-  height:100%;
-  min-height:inherit;
-  padding:5mm;
-  border:var(--hz-border) dashed var(--hz-line-strong);
-  border-radius:inherit;
-  background:
-    radial-gradient(circle at 18% 24%, rgb(63 199 182 / 12%) 0 10%, transparent 10.5%),
-    radial-gradient(circle at 78% 70%, rgb(255 107 98 / 11%) 0 12%, transparent 12.5%),
-    linear-gradient(135deg, var(--hz-soft-indigo), var(--hz-soft-aqua));
-  color:var(--hz-muted);
-  font-size:var(--hz-fs-xs);
-  font-weight:var(--hz-fw-semibold);
-  text-align:center;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  padding: 5mm;
+  border: var(--hz-border) dashed var(--hz-line-strong);
+  background: #f0f0ed;
+  color: var(--hz-muted);
+  font-size: var(--hz-fs-xs);
+  font-weight: var(--hz-fw-semibold);
+  text-align: center;
 }
 
 .hz-caption {
-  margin:1.2mm 0 0;
-  color:var(--hz-muted);
-  font-size:var(--hz-fs-2xs);
-  line-height:var(--hz-lh-snug);
+  margin: 1mm 0 0;
+  color: var(--hz-muted);
+  font-size: var(--hz-fs-2xs);
+  line-height: var(--hz-lh-snug);
 }
 
 /* ---------- Unit review ---------- */
 
 .hz-review-header {
-  position: relative;
-  display:grid;
-  grid-template-columns:auto 1fr auto;
-  gap:4mm;
-  align-items:center;
-  padding:4mm;
-  overflow:hidden;
-  border-radius:var(--hz-radius-xl) var(--hz-radius-sm) var(--hz-radius-xl) var(--hz-radius-sm);
-  background:linear-gradient(115deg, var(--hz-soft-plum), var(--hz-soft-aqua));
-}
-
-.hz-review-header::after {
-  content:"";
-  width:28mm;
-  height:4mm;
-  border-radius:var(--hz-radius-pill);
-  background:linear-gradient(90deg, var(--hz-plum), var(--hz-aqua), var(--hz-sun));
+  display: grid;
+  grid-template-columns: 17mm minmax(0, 1fr);
+  gap: 4mm;
+  align-items: end;
+  padding-bottom: 3mm;
+  border-bottom: 1mm solid var(--hz-unit);
 }
 
 .hz-review-header__unit {
-  display:grid;
-  place-items:center;
-  width:16mm;
-  height:16mm;
-  border-radius:5mm 5mm 5mm 1.5mm;
-  background:var(--hz-plum);
-  color:white;
-  font-size:var(--hz-fs-lg);
-  font-weight:var(--hz-fw-black);
-  box-shadow:1.5mm 1.5mm 0 var(--hz-sun);
+  color: var(--hz-unit);
+  font-size: 25pt;
+  font-weight: var(--hz-fw-black);
+  line-height: .9;
 }
 
 .hz-review-header__title {
-  margin:0;
-  color:var(--hz-ink);
-  font-size:24pt;
-  font-weight:var(--hz-fw-black);
-  line-height:1;
-  letter-spacing:-.025em;
+  margin: 0;
+  color: var(--hz-ink);
+  font-size: 24pt;
+  font-weight: var(--hz-fw-black);
+  line-height: 1;
+  letter-spacing: -.025em;
 }
 
 .hz-review-block {
-  padding:3.5mm;
-  border:var(--hz-border) solid var(--hz-line);
-  border-radius:var(--hz-radius-sm) var(--hz-radius-lg) var(--hz-radius-sm) var(--hz-radius-lg);
-  background:white;
+  padding: 2.5mm 0 3mm;
+  border-top: var(--hz-border) solid var(--hz-line-strong);
 }
 
 .hz-review-block__label {
-  margin:0 0 2mm;
-  color:var(--hz-indigo-dark);
-  font-size:var(--hz-fs-xs);
-  font-weight:var(--hz-fw-black);
-  letter-spacing:.06em;
-  text-transform:uppercase;
+  margin: 0 0 2mm;
+  color: var(--hz-unit-dark);
+  font-size: var(--hz-fs-xs);
+  font-weight: var(--hz-fw-black);
+  letter-spacing: .06em;
+  text-transform: uppercase;
 }
 
 /* ---------- QR ---------- */
 
 .hz-qr-slot {
-  display:inline-grid;
-  place-items:center;
-  width:14mm;
-  height:14mm;
-  border:var(--hz-border-strong) solid var(--hz-line-strong);
-  border-radius:3.2mm 3.2mm 3.2mm 1mm;
-  background:white;
-  color:var(--hz-muted);
-  font-size:6pt;
-  font-weight:var(--hz-fw-black);
-  line-height:1.05;
-  text-align:center;
+  display: inline-grid;
+  place-items: center;
+  width: 14mm;
+  height: 14mm;
+  border: var(--hz-border-strong) solid var(--hz-line-strong);
+  background: white;
+  color: var(--hz-muted);
+  font-size: 6pt;
+  font-weight: var(--hz-fw-bold);
+  line-height: 1.05;
+  text-align: center;
 }
 
 /* ---------- QA ---------- */
 
 body.hz-debug .hz-page::after {
-  content:"CONTENT FRAME";
-  position:absolute;
-  inset:var(--hz-page-margin-top) var(--hz-page-margin-x)
+  content: "CONTENT FRAME";
+  position: absolute;
+  inset: var(--hz-page-margin-top) var(--hz-page-margin-x)
     calc(var(--hz-page-margin-bottom) + var(--hz-footer-height));
-  z-index:999;
-  pointer-events:none;
-  border:.25mm dashed rgb(255 107 98 / 55%);
-  color:rgb(255 107 98 / 65%);
-  font:6pt var(--hz-font-ui);
+  z-index: 999;
+  pointer-events: none;
+  border: .25mm dashed rgb(180 40 40 / 50%);
+  color: rgb(180 40 40 / 65%);
+  font: 6pt var(--hz-font-sans);
 }
 
-@media screen and (max-width:220mm) {
-  body.hz-book { overflow-x:auto; }
+@media screen and (max-width: 220mm) {
+  body.hz-book { overflow-x: auto; }
 }
