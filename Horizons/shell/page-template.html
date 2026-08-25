@@ -3,29 +3,30 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Horizons A1 — A4 Page Template</title>
+  <title>Horizons A1 — Native A4 Page Template</title>
   <link rel="stylesheet" href="./a4-shell.css">
   <link rel="stylesheet" href="./print.css" media="print">
 </head>
 <body class="hz-book">
 
   <!--
-    Duplicate .hz-page for each printed page.
-    Use --left / --right for mirrored book margins.
-    Add hz-debug to <body> during layout QA if needed.
+    One <article class="hz-page"> equals one printed A4 page.
+    Use semantic HTML5 inside each page: header, main, section, article,
+    figure, table, aside, footer, etc. No mirrored left/right page classes.
+    Add hz-debug to <body> only during layout QA.
   -->
-  <section class="hz-page hz-page--right hz-content" data-page="1">
+  <article class="hz-page hz-content" data-page="1">
     <main class="hz-page__content">
       <div class="hz-page-stack">
-        <!-- Page content goes here. -->
+        <!-- Semantic page content goes here. -->
       </div>
     </main>
 
     <footer class="hz-page__footer" aria-label="Page footer">
+      <span class="hz-page-code">Horizons A1 · 1A</span>
       <span class="hz-page-number">1</span>
-      <span class="hz-page-code">1A</span>
     </footer>
-  </section>
+  </article>
 
 </body>
 </html>
