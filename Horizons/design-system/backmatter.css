@@ -2,7 +2,7 @@
    Functional and denser than lesson pages while retaining Horizons typography. */
 
 .hz-backmatter-page .hz-page__content {
-  inset-top: 11mm;
+  top: 11mm;
 }
 
 .hz-backmatter-head {
