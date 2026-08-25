@@ -1,8 +1,8 @@
 @import url("./tokens.css");
 
-/* Horizons A1 — reusable native HTML/CSS components.
-   HARD RULE: exercises flow in one vertical lane. Only content INSIDE an
-   exercise may use two- or three-column question/media grids. */
+/* Horizons A1 — editorial native HTML/CSS components.
+   HARD RULE: numbered exercises are one vertical sequence.
+   Two/three columns are allowed only INSIDE an exercise body. */
 
 .hz-content {
   color: var(--hz-ink);
@@ -20,62 +20,37 @@
 .hz-content h3,
 .hz-content p { margin-top: 0; }
 
-/* ---------- Lesson identity: the Horizons signal ---------- */
+/* ---------- Lesson identity ---------- */
 
 .hz-lesson-header {
-  position: relative;
   display: grid;
-  grid-template-columns: 20mm minmax(0, 1fr) auto;
-  gap: 4mm;
-  align-items: center;
-  min-height: 30mm;
-  padding: 4.5mm 5mm 4.5mm 4mm;
-  overflow: hidden;
-  border: var(--hz-border) solid var(--hz-line);
-  border-radius: var(--hz-radius-xl) var(--hz-radius-sm) var(--hz-radius-xl) var(--hz-radius-sm);
-  background:
-    linear-gradient(108deg, var(--hz-soft-indigo) 0 56%, var(--hz-soft-aqua) 56% 100%);
-}
-
-.hz-lesson-header::after {
-  content: "";
-  position: absolute;
-  right: -9mm;
-  bottom: -13mm;
-  width: 38mm;
-  height: 38mm;
-  border: 5mm solid rgb(68 87 217 / 10%);
-  border-radius: 50%;
-  pointer-events: none;
+  grid-template-columns: 18mm minmax(0, 1fr);
+  gap: 5mm;
+  align-items: start;
+  padding: 0 0 4mm;
+  border-bottom: .9mm solid var(--hz-unit);
 }
 
 .hz-lesson-tab {
-  position: relative;
-  z-index: 1;
   display: grid;
-  place-items: center;
+  align-content: center;
   width: 18mm;
   height: 18mm;
-  border-radius: 5mm 5mm 5mm 1.6mm;
-  background: var(--hz-indigo);
+  padding: 2mm;
+  background: var(--hz-unit);
   color: white;
-  box-shadow: 2mm 2mm 0 var(--hz-sun);
-  font-family: var(--hz-font-ui);
   line-height: 1;
 }
 
 .hz-lesson-tab__label {
-  align-self: end;
-  margin-bottom: .4mm;
-  font-size: 5.7pt;
+  font-size: 5.8pt;
   font-weight: var(--hz-fw-semibold);
   letter-spacing: .08em;
   text-transform: uppercase;
-  opacity: .82;
 }
 
 .hz-lesson-tab__id {
-  align-self: start;
+  margin-top: 1.1mm;
   font-size: var(--hz-fs-lesson-id);
   font-weight: var(--hz-fw-black);
 }
@@ -88,164 +63,86 @@
   font-size: var(--hz-fs-lesson-title);
   font-weight: var(--hz-fw-black);
   line-height: var(--hz-lh-tight);
-  letter-spacing: -.038em;
+  letter-spacing: -.035em;
 }
 
 .hz-objectives {
   display: flex;
   flex-wrap: wrap;
-  gap: 1.5mm;
-  margin-top: 2.4mm;
-}
-
-.hz-objectives__item {
-  display: inline-flex;
-  align-items: center;
-  min-height: 5mm;
-  padding: .8mm 2mm;
-  border: var(--hz-border) solid rgb(68 87 217 / 15%);
-  border-radius: var(--hz-radius-pill);
-  background: rgb(255 255 255 / 72%);
-  color: var(--hz-indigo-dark);
+  gap: 1mm 4mm;
+  margin-top: 2.2mm;
+  color: var(--hz-muted);
   font-size: var(--hz-fs-xs);
-  font-weight: var(--hz-fw-semibold);
 }
 
-.hz-lesson-signal {
-  position: relative;
-  z-index: 1;
-  display: grid;
-  gap: 1mm;
-  justify-items: end;
-  min-width: 27mm;
+.hz-objectives__item + .hz-objectives__item::before {
+  content: "•";
+  margin-right: 4mm;
+  color: var(--hz-unit);
 }
 
-.hz-lesson-signal__label {
-  color: var(--hz-aqua-dark);
-  font-size: var(--hz-fs-2xs);
-  font-weight: var(--hz-fw-bold);
+/* ---------- Section / skill line ---------- */
+
+.hz-mode-bar {
+  display: flex;
+  align-items: baseline;
+  gap: 2.5mm;
+  min-height: 6mm;
+  padding: 0 0 1.4mm;
+  border-bottom: var(--hz-border) solid var(--hz-line-strong);
+}
+
+.hz-mode-bar__icon { display: none; }
+
+.hz-mode-bar__title {
+  color: var(--hz-unit-dark);
+  font-size: var(--hz-fs-xs);
+  font-weight: var(--hz-fw-black);
   letter-spacing: .08em;
   text-transform: uppercase;
 }
 
-.hz-lesson-signal__rail {
-  display: grid;
-  grid-template-columns: 1.2fr .8fr .45fr;
-  gap: .8mm;
-  width: 27mm;
-  height: 2.4mm;
-}
-
-.hz-lesson-signal__rail span { border-radius: var(--hz-radius-pill); }
-.hz-lesson-signal__rail span:nth-child(1) { background: var(--hz-indigo); }
-.hz-lesson-signal__rail span:nth-child(2) { background: var(--hz-aqua); }
-.hz-lesson-signal__rail span:nth-child(3) { background: var(--hz-coral); }
-
-/* ---------- Skill / mode banner ---------- */
-
-.hz-mode-bar {
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-  align-items: center;
-  gap: 2.5mm;
-  min-height: 8mm;
-  padding: 1.6mm 2.4mm 1.6mm 1.6mm;
-  border-radius: var(--hz-radius-sm) var(--hz-radius-lg) var(--hz-radius-lg) var(--hz-radius-sm);
-  background: var(--hz-ink);
-  color: white;
-}
-
-.hz-mode-bar__icon {
-  display: grid;
-  place-items: center;
-  width: 5.5mm;
-  height: 5.5mm;
-  border-radius: 1.5mm;
-  background: var(--hz-coral);
-  font-size: 7pt;
-  font-weight: var(--hz-fw-bold);
-}
-
-.hz-mode-bar__title {
-  font-size: var(--hz-fs-xs);
-  font-weight: var(--hz-fw-bold);
-  letter-spacing: .055em;
-  text-transform: uppercase;
-}
-
 .hz-mode-bar__descriptor {
-  color: #dbe1f2;
+  color: var(--hz-muted);
   font-size: var(--hz-fs-2xs);
-  text-align: right;
 }
 
 /* ---------- Single exercise lane ---------- */
 
 .hz-exercises,
 .hz-exercise-flow {
-  position: relative;
   display: flex;
   flex-direction: column;
   min-width: 0;
-  gap: 2mm;
-}
-
-.hz-exercises::before,
-.hz-exercise-flow::before {
-  content: "";
-  position: absolute;
-  top: 4mm;
-  bottom: 4mm;
-  left: calc(var(--hz-exercise-marker-size) / 2 - .3mm);
-  width: .55mm;
-  border-radius: var(--hz-radius-pill);
-  background: linear-gradient(var(--hz-indigo), var(--hz-aqua) 48%, var(--hz-coral));
-  opacity: .2;
-  pointer-events: none;
+  gap: 1mm;
 }
 
 .hz-exercise {
-  position: relative;
   display: grid;
   grid-template-columns: var(--hz-exercise-marker-size) minmax(0, 1fr);
   gap: 0 3mm;
   width: 100%;
   min-width: 0;
   margin: 0;
-  padding: 1.7mm 0 2.2mm;
+  padding: 2.2mm 0 3.4mm;
+  border-bottom: var(--hz-border) solid var(--hz-line);
 }
+
+.hz-exercise:last-child { border-bottom: 0; }
 
 .hz-exercise-number {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  place-items: center;
-  width: var(--hz-exercise-marker-size);
-  height: var(--hz-exercise-marker-size);
-  border: .8mm solid var(--hz-paper);
-  border-radius: 3mm 3mm 3mm 1mm;
-  background: var(--hz-indigo);
-  color: white;
-  box-shadow: 1.2mm 1.2mm 0 var(--hz-aqua);
-  font-size: var(--hz-fs-xs);
+  align-self: start;
+  color: var(--hz-unit);
+  font-size: 18pt;
   font-weight: var(--hz-fw-black);
-  line-height: 1;
-}
-
-.hz-exercise:nth-child(3n+2) .hz-exercise-number {
-  background: var(--hz-aqua-dark);
-  box-shadow: 1.2mm 1.2mm 0 var(--hz-sun);
-}
-
-.hz-exercise:nth-child(3n) .hz-exercise-number {
-  background: var(--hz-coral-dark);
-  box-shadow: 1.2mm 1.2mm 0 var(--hz-soft-plum);
+  line-height: .9;
+  letter-spacing: -.05em;
 }
 
 .hz-exercise__content { min-width: 0; }
 
 .hz-exercise__instruction {
-  margin: .6mm 0 0;
+  margin: .3mm 0 0;
   color: var(--hz-ink);
   font-size: var(--hz-fs-body);
   font-weight: var(--hz-fw-semibold);
@@ -258,12 +155,12 @@
   margin-top: 2mm;
 }
 
-/* INTERNAL grids: permitted only inside an exercise body. */
+/* Internal grids — only inside one exercise. */
 .hz-question-grid,
 .hz-content-grid {
   display: grid;
-  gap: 2.5mm 5mm;
   min-width: 0;
+  gap: 2.4mm 5mm;
 }
 
 .hz-question-grid--2,
@@ -278,13 +175,13 @@
 .hz-question {
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
-  gap: 1.6mm;
+  gap: 1.4mm;
   align-items: start;
-  padding: 1.4mm 0;
+  padding: .8mm 0;
 }
 
 .hz-question__number {
-  color: var(--hz-indigo-dark);
+  color: var(--hz-unit-dark);
   font-size: var(--hz-fs-xs);
   font-weight: var(--hz-fw-black);
 }
@@ -292,254 +189,179 @@
 .hz-option-grid {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1.7mm 4mm;
+  gap: 1.5mm 4mm;
 }
 
-/* ---------- Inline labels ---------- */
+/* ---------- Small functional labels ---------- */
 
-.hz-audio-badge,
-.hz-new-words,
-.hz-tag,
-.hz-skill-tag {
+.hz-audio-badge {
   display: inline-flex;
   align-items: center;
-  gap: 1mm;
-  border-radius: var(--hz-radius-pill);
-  font-family: var(--hz-font-ui);
-  font-weight: var(--hz-fw-semibold);
+  margin-right: 1.4mm;
+  padding: .7mm 1.4mm;
+  background: var(--hz-audio);
+  color: white;
+  font-size: var(--hz-fs-2xs);
+  font-weight: var(--hz-fw-bold);
   line-height: 1;
   vertical-align: middle;
 }
 
-.hz-audio-badge {
-  margin-right: 1.5mm;
-  padding: 1.1mm 1.8mm;
-  background: var(--hz-indigo);
-  color: white;
+.hz-new-words,
+.hz-skill-tag,
+.hz-tag {
+  display: inline-block;
+  color: var(--hz-unit-dark);
   font-size: var(--hz-fs-2xs);
-}
-
-.hz-new-words {
-  padding: 1mm 2mm;
-  background: var(--hz-soft-aqua);
-  color: var(--hz-aqua-dark);
-  font-size: var(--hz-fs-xs);
-  letter-spacing: .035em;
+  font-weight: var(--hz-fw-black);
+  letter-spacing: .07em;
   text-transform: uppercase;
 }
 
-.hz-new-words__icon {
-  display: grid;
-  place-items: center;
-  width: 4mm;
-  height: 4mm;
-  border-radius: 1.2mm;
-  background: var(--hz-aqua-dark);
-  color: white;
-  font-size: 6pt;
-}
+.hz-new-words { border-bottom: .55mm solid var(--hz-unit); padding-bottom: .5mm; }
+.hz-new-words__icon { display: none; }
+.hz-tag { color: var(--hz-muted); }
+.hz-skill-tag { color: var(--hz-practice); }
 
-.hz-tag,
-.hz-skill-tag {
-  padding: 1mm 2mm;
-  background: var(--hz-soft-gray);
-  color: var(--hz-muted);
-  font-size: var(--hz-fs-xs);
-}
-
-.hz-skill-tag {
-  background: var(--hz-soft-plum);
-  color: #6842a7;
-  letter-spacing: .05em;
-  text-transform: uppercase;
-}
-
-/* ---------- Feature panel: image/text may split INSIDE one exercise ---------- */
+/* ---------- Editorial feature ---------- */
 
 .hz-feature-panel {
   display: grid;
-  grid-template-columns: minmax(0, .9fr) minmax(0, 1.1fr);
-  gap: 0;
-  overflow: hidden;
-  border: var(--hz-border) solid var(--hz-line);
-  border-radius: var(--hz-radius-lg) var(--hz-radius-sm) var(--hz-radius-lg) var(--hz-radius-sm);
-  background: white;
-  box-shadow: var(--hz-shadow-card);
+  grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
+  gap: 5mm;
+  align-items: stretch;
 }
 
-.hz-feature-panel__media { min-height: 48mm; background: var(--hz-soft-sky); }
-.hz-feature-panel__media img { display:block; width:100%; height:100%; object-fit:cover; }
+.hz-feature-panel__media {
+  min-height: 47mm;
+  overflow: hidden;
+  background: var(--hz-wash);
+}
+
+.hz-feature-panel__media img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
 
 .hz-feature-panel__copy {
-  position: relative;
-  padding: 4mm;
-}
-
-.hz-feature-panel__copy::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  right: 0;
-  left: 0;
-  height: 1.2mm;
-  background: linear-gradient(90deg, var(--hz-aqua), var(--hz-indigo), var(--hz-coral));
+  align-self: center;
+  padding: 2mm 0;
 }
 
 .hz-feature-panel__title {
   margin: 0 0 2mm;
   color: var(--hz-ink);
-  font-size: var(--hz-fs-lg);
+  font-size: var(--hz-fs-xl);
   font-weight: var(--hz-fw-black);
-  line-height: 1.12;
+  line-height: 1.08;
 }
 
-/* ---------- Focus / grammar / pronunciation ---------- */
+.hz-reading-copy {
+  font-family: var(--hz-font-reading);
+  font-size: 9.4pt;
+  line-height: var(--hz-lh-reading);
+}
+
+/* ---------- Grammar / pronunciation focus ---------- */
 
 .hz-focus-box {
-  position: relative;
-  overflow: hidden;
-  border: var(--hz-border) solid var(--hz-line);
-  border-radius: var(--hz-radius-sm) var(--hz-radius-lg) var(--hz-radius-sm) var(--hz-radius-lg);
-  background: var(--hz-surface);
-  box-shadow: var(--hz-shadow-card);
-}
-
-.hz-focus-box::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  width: var(--hz-rail-width);
-  background: linear-gradient(var(--hz-indigo), var(--hz-aqua));
+  padding: 3.2mm 4mm 3.5mm;
+  border-top: 1.1mm solid var(--hz-unit);
+  border-bottom: var(--hz-border) solid var(--hz-line-strong);
+  background: var(--hz-unit-soft);
 }
 
 .hz-focus-box__header {
-  display: flex;
-  align-items: center;
-  gap: 2mm;
-  min-height: 8mm;
-  padding: 2.4mm 4mm 1.8mm 5mm;
-  color: var(--hz-indigo-dark);
-  font-size: var(--hz-fs-sm);
+  margin-bottom: 2mm;
+  color: var(--hz-unit-dark);
+  font-size: var(--hz-fs-xs);
   font-weight: var(--hz-fw-black);
-  letter-spacing: .05em;
+  letter-spacing: .065em;
   text-transform: uppercase;
 }
 
-.hz-focus-box__body { padding: 0 4mm 3.5mm 5mm; }
 .hz-focus-box__body > :last-child { margin-bottom: 0; }
 
 .hz-go-to {
-  display: inline-flex;
-  align-items: center;
-  gap: 1.4mm;
+  display: block;
+  width: max-content;
+  max-width: 100%;
   margin: 1.5mm 0;
-  padding: 1.3mm 2mm;
-  border: var(--hz-border) solid rgb(247 200 75 / 42%);
-  border-radius: var(--hz-radius-sm) var(--hz-radius-pill) var(--hz-radius-pill) var(--hz-radius-sm);
-  background: var(--hz-soft-sun);
-  color: var(--hz-warning);
+  color: var(--hz-reference);
   font-size: var(--hz-fs-2xs);
   font-weight: var(--hz-fw-bold);
 }
 
-.hz-go-to::before { content: "↗"; font-size: 8pt; }
+.hz-go-to::before { content: "→ "; }
 
-/* ---------- Dynamic info strips ---------- */
-
-.hz-info-strip {
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 2.5mm;
-  align-items: center;
-  padding: 2.5mm 3mm;
-  border-radius: var(--hz-radius-lg) var(--hz-radius-sm) var(--hz-radius-lg) var(--hz-radius-sm);
-  background: linear-gradient(100deg, var(--hz-soft-aqua), var(--hz-soft-indigo));
-}
-
-.hz-info-strip__label {
-  padding: 1mm 1.7mm;
-  border-radius: var(--hz-radius-sm);
-  background: var(--hz-ink);
-  color: white;
-  font-size: var(--hz-fs-2xs);
-  font-weight: var(--hz-fw-bold);
-  letter-spacing: .05em;
-  text-transform: uppercase;
-}
+/* ---------- Extra practice ---------- */
 
 .hz-extra-practice {
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 2.5mm;
-  align-items: center;
-  padding: 2.8mm 3mm;
-  border: var(--hz-border) solid rgb(255 107 98 / 20%);
-  border-radius: var(--hz-radius-sm) var(--hz-radius-lg) var(--hz-radius-lg) var(--hz-radius-sm);
-  background: var(--hz-soft-coral);
+  grid-template-columns: 25mm minmax(0, 1fr);
+  gap: 3mm;
+  margin-top: 3mm;
+  padding-top: 2mm;
+  border-top: .7mm solid var(--hz-practice);
 }
 
 .hz-extra-practice__label {
-  padding: 1mm 1.8mm;
-  border-radius: var(--hz-radius-sm);
-  background: var(--hz-coral);
-  color: white;
+  color: var(--hz-practice);
   font-size: var(--hz-fs-2xs);
   font-weight: var(--hz-fw-black);
-  letter-spacing: .045em;
+  letter-spacing: .07em;
   text-transform: uppercase;
 }
 
 .hz-extra-practice__prompt {
-  color: var(--hz-ink);
   font-size: var(--hz-fs-xs);
-  font-weight: var(--hz-fw-medium);
+  line-height: 1.35;
 }
 
-/* ---------- Editorial / UI cards ---------- */
+/* ---------- Reading cards: use sparingly ---------- */
 
-.hz-reading-card,
+.hz-reading-card {
+  border-top: .8mm solid var(--hz-unit);
+  background: white;
+}
+
+.hz-reading-card__image {
+  display: block;
+  width: 100%;
+  object-fit: cover;
+}
+
+.hz-reading-card__name {
+  margin: 2mm 0 0;
+  font-size: var(--hz-fs-lg);
+  font-weight: var(--hz-fw-black);
+}
+
+.hz-reading-card__body { padding-top: 1mm; }
+
+/* ---------- Real-world interfaces: rounded UI is allowed here ---------- */
+
 .hz-ui-card,
 .hz-form-card {
   overflow: hidden;
   border: var(--hz-border) solid var(--hz-line);
-  border-radius: var(--hz-radius-md);
+  border-radius: var(--hz-radius-ui);
   background: white;
-}
-
-.hz-reading-card { box-shadow: var(--hz-shadow-card); }
-.hz-reading-card__image { display:block; width:100%; object-fit:cover; }
-
-.hz-reading-card__name {
-  margin: 0;
-  padding: 3mm 4mm 0;
-  font-size: var(--hz-fs-lg);
-  font-weight: var(--hz-fw-black);
-  line-height: var(--hz-lh-snug);
-}
-
-.hz-reading-card__body,
-.hz-ui-card__body { padding: 3mm 4mm 4mm; }
-
-.hz-ui-card {
-  box-shadow: var(--hz-shadow-card);
-  font-family: var(--hz-font-ui);
+  box-shadow: var(--hz-shadow-ui);
 }
 
 .hz-ui-card__header {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 2mm;
-  padding: 2.3mm 3mm;
+  padding: 2.2mm 3mm;
   border-bottom: var(--hz-border) solid var(--hz-line);
-  background: var(--hz-soft-indigo);
-  color: var(--hz-indigo-dark);
+  background: #f7f8fa;
+  color: var(--hz-ink-soft);
+  font-size: var(--hz-fs-xs);
   font-weight: var(--hz-fw-bold);
 }
 
-.hz-highlight { color: var(--hz-indigo-dark); font-weight: var(--hz-fw-bold); }
+.hz-ui-card__body { padding: 3mm; }
 
 /* ---------- Answer mechanics ---------- */
 
@@ -553,92 +375,68 @@
 
 .hz-choice-box {
   display: inline-block;
-  width: 4mm;
-  height: 4mm;
+  width: 3.5mm;
+  height: 3.5mm;
   border: var(--hz-border-strong) solid var(--hz-line-strong);
-  border-radius: 1mm;
   vertical-align: middle;
 }
 
-.hz-writing-lines { display:grid; gap:3.2mm; margin-top:2.5mm; }
-.hz-writing-lines span { display:block; min-height:4.2mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
+.hz-writing-lines {
+  display: grid;
+  gap: 3.2mm;
+  margin-top: 2.5mm;
+}
+
+.hz-writing-lines span {
+  display: block;
+  min-height: 4.3mm;
+  border-bottom: var(--hz-answer-line) solid var(--hz-line-strong);
+}
 
 /* ---------- Tables ---------- */
 
 .hz-data-table {
   width: 100%;
-  border-collapse: separate;
-  border-spacing: 0;
-  overflow: hidden;
-  border: var(--hz-border) solid var(--hz-line);
-  border-radius: var(--hz-radius-sm);
+  border-collapse: collapse;
   font-size: var(--hz-fs-sm);
 }
 
 .hz-data-table th,
 .hz-data-table td {
-  padding: 1.8mm 2.3mm;
+  padding: 1.5mm 2mm;
   border-bottom: var(--hz-border) solid var(--hz-line);
   text-align: left;
   vertical-align: middle;
 }
 
-.hz-data-table tr:last-child td { border-bottom: 0; }
-.hz-data-table th { background:var(--hz-soft-indigo); color:var(--hz-indigo-dark); font-weight:var(--hz-fw-bold); }
+.hz-data-table th {
+  border-top: .7mm solid var(--hz-unit);
+  color: var(--hz-unit-dark);
+  font-weight: var(--hz-fw-bold);
+}
 
-/* ---------- Vocabulary / compact surfaces ---------- */
+/* ---------- Word banks / notes ---------- */
 
-.hz-chip-list { display:flex; flex-wrap:wrap; gap:1.4mm; }
-
-.hz-chip {
-  display:inline-flex;
-  align-items:center;
-  min-height:5.7mm;
-  padding:.9mm 2mm;
-  border:var(--hz-border) solid var(--hz-line);
-  border-radius:var(--hz-radius-pill);
-  background:white;
-  color:var(--hz-ink);
-  font-size:var(--hz-fs-xs);
-  font-weight:var(--hz-fw-semibold);
+.hz-word-bank {
+  padding: 2mm 2.5mm;
+  border-left: 1mm solid var(--hz-unit);
+  background: var(--hz-wash);
+  font-size: var(--hz-fs-sm);
+  line-height: 1.5;
 }
 
 .hz-note {
-  padding:2.7mm 3mm;
-  border-radius:var(--hz-radius-sm) var(--hz-radius-lg) var(--hz-radius-sm) var(--hz-radius-lg);
-  background:var(--hz-soft-sun);
-  color:#72551b;
-  font-size:var(--hz-fs-xs);
+  padding: 2.5mm 3mm;
+  border-left: .8mm solid var(--hz-reference);
+  background: #f7f3ea;
+  color: var(--hz-ink-soft);
+  font-size: var(--hz-fs-xs);
 }
 
-.hz-callout {
-  position: relative;
-  overflow: hidden;
-  padding: 3.5mm 4mm;
-  border-radius: var(--hz-radius-lg) var(--hz-radius-sm) var(--hz-radius-lg) var(--hz-radius-sm);
-  background: linear-gradient(120deg, var(--hz-soft-indigo), var(--hz-soft-aqua));
-}
+/* ---------- Utility ---------- */
 
-.hz-callout::after {
-  content:"";
-  position:absolute;
-  right:-8mm;
-  top:-14mm;
-  width:34mm;
-  height:34mm;
-  border:4mm solid rgb(255 107 98 / 11%);
-  border-radius:50%;
-}
-
-/* ---------- Utilities ---------- */
-
-.hz-text-primary { color: var(--hz-indigo-dark); }
-.hz-text-coral { color: var(--hz-coral-dark); }
-.hz-text-aqua { color: var(--hz-aqua-dark); }
+.hz-text-unit { color: var(--hz-unit-dark); }
 .hz-text-muted { color: var(--hz-muted); }
-.hz-bg-primary-soft { background: var(--hz-soft-indigo); }
-.hz-bg-aqua-soft { background: var(--hz-soft-aqua); }
-.hz-bg-coral-soft { background: var(--hz-soft-coral); }
-.hz-bg-yellow-soft { background: var(--hz-soft-sun); }
-.hz-center { text-align:center; }
-.hz-no-break { break-inside:avoid; page-break-inside:avoid; }
+.hz-bg-unit-soft { background: var(--hz-unit-soft); }
+.hz-center { text-align: center; }
+.hz-no-break { break-inside: avoid; page-break-inside: avoid; }
