@@ -13,19 +13,19 @@
   --hz-line-strong: #a8abb0;
   --hz-wash: #f3f2ee;
 
-  /* Default unit identity. Override with .hz-unit-* on a page. */
-  --hz-unit: #167f82;
-  --hz-unit-dark: #0c5e61;
-  --hz-unit-soft: #e9f3f2;
+  /* Default unit identity — crimson pink. Override with .hz-unit-* on a page. */
+  --hz-unit: #c2185b;
+  --hz-unit-dark: #8f123f;
+  --hz-unit-soft: #f8e6ee;
 
-  /* Small functional accents — not a page-wide rainbow palette. */
-  --hz-audio: #355f9f;
-  --hz-practice: #a44d3c;
-  --hz-reference: #80622b;
-  --hz-success: #3f765d;
+  /* Small functional accents — kept close to the crimson/berry family where possible. */
+  --hz-audio: #7d3154;
+  --hz-practice: #ad3f63;
+  --hz-reference: #86606b;
+  --hz-success: #48745f;
 
   /* Suggested unit colors. Each page should normally use only its unit color. */
-  --hz-unit-1: #167f82;
+  --hz-unit-1: #c2185b;
   --hz-unit-2: #ba6a2d;
   --hz-unit-3: #426a9e;
   --hz-unit-4: #8b5a7b;
@@ -96,7 +96,7 @@
 }
 
 /* Unit identity classes: one dominant color per unit. */
-.hz-unit-1 { --hz-unit: var(--hz-unit-1); --hz-unit-dark: #0c5e61; --hz-unit-soft: #e9f3f2; }
+.hz-unit-1 { --hz-unit: var(--hz-unit-1); --hz-unit-dark: #8f123f; --hz-unit-soft: #f8e6ee; }
 .hz-unit-2 { --hz-unit: var(--hz-unit-2); --hz-unit-dark: #884b1d; --hz-unit-soft: #f7eee6; }
 .hz-unit-3 { --hz-unit: var(--hz-unit-3); --hz-unit-dark: #2d4c75; --hz-unit-soft: #edf1f6; }
 .hz-unit-4 { --hz-unit: var(--hz-unit-4); --hz-unit-dark: #68405b; --hz-unit-soft: #f5eef3; }
