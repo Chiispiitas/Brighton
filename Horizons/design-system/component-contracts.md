@@ -1,6 +1,24 @@
-# Horizons Component Contracts
+# Horizons component contracts
 
-These semantic patterns define how Stage 2+ HTML should call the Stage 1 design system. They are examples of structure, not finished pages.
+These patterns define how new Horizons pages should call the native HTML5/CSS design system. They are structural contracts, not finished lesson content.
+
+## Page
+
+```html
+<article class="hz-page hz-content" data-page="31">
+  <main class="hz-page__content">
+    <div class="hz-page-stack">
+      <!-- semantic page content -->
+    </div>
+  </main>
+  <footer class="hz-page__footer">
+    <span class="hz-page-code">Horizons A1 · 3A</span>
+    <span class="hz-page-number">31</span>
+  </footer>
+</article>
+```
+
+There are no mirrored left/right page classes.
 
 ## Lesson header
 
@@ -10,159 +28,141 @@ These semantic patterns define how Stage 2+ HTML should call the Stage 1 design 
     <span class="hz-lesson-tab__label">Lesson</span>
     <span class="hz-lesson-tab__id">1A</span>
   </div>
-
-  <h1 class="hz-lesson-title">New Friends</h1>
-  <div class="hz-objectives">
-    <span class="hz-objectives__item">Verb “to be”</span>
-    <span class="hz-objectives__item">Alphabet</span>
-    <span class="hz-objectives__item">Numbers (0–10)</span>
+  <div class="hz-lesson-heading">
+    <h1 class="hz-lesson-title">Hi, I’m Bri!</h1>
+    <div class="hz-objectives">
+      <span class="hz-objectives__item">The verb to be</span>
+      <span class="hz-objectives__item">Alphabet</span>
+      <span class="hz-objectives__item">Numbers</span>
+    </div>
   </div>
 </header>
 ```
 
-The actual title/objectives must come from the locked syllabus or frozen pre-existing page. Do not use the example to rewrite existing content.
+Titles and objectives must come from the locked syllabus or frozen pre-existing page.
 
 ## Exercise
 
 ```html
 <section class="hz-exercise" id="HZN-A1-U01-LA-E06">
-  <div class="hz-exercise-number">6</div>
-  <p class="hz-exercise__instruction">
-    <span class="hz-audio-badge">
-      <span aria-hidden="true">♪</span>
-      <span>1.4</span>
-    </span>
-    Listen and repeat.
-  </p>
-  <div class="hz-exercise__body">
-    <!-- activity content -->
+  <div class="hz-exercise-number" aria-hidden="true">6</div>
+  <div>
+    <p class="hz-exercise__instruction">
+      <span class="hz-audio-badge">▶ 1.4</span>
+      Listen and repeat.
+    </p>
+    <div class="hz-exercise__body">
+      <!-- activity content -->
+    </div>
   </div>
 </section>
 ```
 
-Rules:
+Every production exercise receives a permanent semantic ID. Audio track IDs remain text, not artwork.
 
-- every production exercise receives a permanent semantic ID;
-- visual exercise number and semantic ID are separate concerns;
-- audio track IDs must remain explicit text rather than being baked into an image.
-
-## NEW WORDS label
+## New Words
 
 ```html
-<div class="hz-new-words">
-  <span class="hz-new-words__icon" aria-hidden="true">✦</span>
-  <span>New Words</span>
-</div>
+<span class="hz-new-words">
+  <span class="hz-new-words__icon">+</span>
+  New words
+</span>
 ```
 
-A functional SVG icon may replace the text glyph later.
-
-## Grammar focus box
+## Grammar or pronunciation focus
 
 ```html
-<aside class="hz-focus-box hz-no-break">
-  <div class="hz-focus-box__header">
-    <span class="hz-focus-box__label">GRAMMAR:</span>&nbsp; VERB TO BE
-  </div>
+<section class="hz-focus-box hz-no-break">
+  <header class="hz-focus-box__header">Grammar · Verb to be</header>
   <div class="hz-focus-box__body">
-    <!-- grammar explanation and examples -->
+    <!-- explanation and examples -->
   </div>
-</aside>
+</section>
 ```
 
-## Pronunciation focus box
-
-Use the same structural component as Grammar so the visual grammar remains consistent:
-
-```html
-<aside class="hz-focus-box hz-no-break">
-  <div class="hz-focus-box__header">
-    <span class="hz-focus-box__label">PRONUNCIATION:</span>&nbsp; THE ALPHABET
-  </div>
-  <div class="hz-focus-box__body">
-    <!-- pronunciation content -->
-  </div>
-</aside>
-```
+Use the same component for pronunciation or other explicit language-focus areas.
 
 ## Cross-reference
 
 ```html
-<p class="hz-go-to">Go to: Vocabulary - Occupations, page ---</p>
+<div class="hz-go-to">Grammar Reference · Verb to be · page ---</div>
 ```
 
-Page numbers may remain placeholders during composition and be resolved after pagination.
+Page numbers may remain placeholders until pagination is final.
 
-## Extra Practice
+## Extra practice
 
 ```html
-<div class="hz-extra-practice hz-no-break">
-  <span class="hz-extra-practice__label">Extra Practice</span>
-  <span class="hz-extra-practice__prompt">
-    Speak about your occupation. What do you do? Where do you work?
-  </span>
-</div>
+<aside class="hz-extra-practice hz-no-break">
+  <span class="hz-extra-practice__label">Extra practice</span>
+  <span class="hz-extra-practice__prompt">Ask a classmate about their job.</span>
+</aside>
 ```
-
-## Circular vocabulary photo
-
-```html
-<figure>
-  <img
-    class="hz-photo-circle"
-    src="../assets/images/example.webp"
-    alt="A doctor"
-  >
-  <figcaption class="hz-photo-label">A doctor</figcaption>
-</figure>
-```
-
-Production photos must follow `asset-policy.md`.
 
 ## Reading/profile card
 
 ```html
 <article class="hz-reading-card hz-no-break">
   <img class="hz-reading-card__image" src="..." alt="...">
-  <h3 class="hz-reading-card__name">Sarah</h3>
+  <h3 class="hz-reading-card__name">Profile title</h3>
   <div class="hz-reading-card__body">
-    <p>Hi! I’m Sarah.</p>
-    <p>I’m a doctor, and work in a hospital.</p>
+    <p>...</p>
   </div>
 </article>
 ```
 
-Cards are a layout component, not a recurring-character system.
+Cards are editorial surfaces, not a recurring-character system.
 
-## Answer line
+## Raster image
+
+```html
+<figure>
+  <div class="hz-media-frame hz-media-frame--landscape">
+    <img src="../assets/images/example.webp" alt="...">
+  </div>
+  <figcaption class="hz-caption">...</figcaption>
+</figure>
+```
+
+Production images must follow `asset-policy.md`.
+
+## Answer mechanics
 
 ```html
 <span class="hz-answer-line" aria-label="Answer space"></span>
 ```
 
-For accessible digital exercises, this visual element should later be paired with or replaced by an actual form control in the digital version.
-
-## Choice box
-
 ```html
 <span class="hz-choice-box" aria-hidden="true"></span>
 ```
 
-Printed choice boxes remain visual. Digital exercises should use real radio/checkbox controls.
+For digital exercises, visual print mechanics should be replaced or paired with real form controls.
 
-## UI recreation
+## Native UI recreation
 
 ```html
-<section class="hz-ui-card hz-no-break" aria-label="Sample chat">
-  <div class="hz-ui-card__header">Class 4 Chat</div>
+<article class="hz-ui-card hz-no-break" aria-label="Sample interface">
+  <header class="hz-ui-card__header">Reviews</header>
   <div class="hz-ui-card__body">
-    <!-- original pedagogical recreation -->
+    <!-- original semantic HTML/CSS recreation -->
   </div>
-</section>
+</article>
 ```
 
-Do not embed copied proprietary interface artwork when a simple original HTML/CSS recreation can serve the task.
+Prefer original HTML/CSS recreations over copied proprietary screenshots when the educational task does not require an actual screenshot.
 
-## Stage 2 contract
+## Layout
 
-When the A4 page shell is built, it should consume these components rather than redefining them page-by-page. New components may be added when the existing Student's Book demonstrates a repeated pattern not yet represented here.
+Use CSS Grid and Flexbox through the shell primitives:
+
+- `.hz-grid` + `.hz-col-*`
+- `.hz-two-column`
+- `.hz-two-column--wide-left`
+- `.hz-two-column--wide-right`
+- `.hz-three-column`
+
+Do not use manual absolute positioning for normal lesson content.
+
+## Content protection
+
+The native visual redesign does not authorize content changes. The syllabus and all pre-existing Student's Book pages remain frozen unless the author explicitly requests a change.
