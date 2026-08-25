@@ -20,7 +20,9 @@ It does **not** authorize automatic changes to the syllabus or frozen Student's 
 ## Files
 
 - `syllabus-lock.json` — immutable structured copy of the author-supplied Horizons A1 syllabus used for production validation.
+- `book-map.json` — locked structural plan: four 2-page lessons + 2-page Unit Review per unit, plus back matter placement.
 - `content-schema.json` — schema for lesson/spread metadata, exercises, assets and audio.
+- `review-schema.json` — schema for the 2-page Unit Review structure.
 - `example-lesson.json` — demonstration structure using the locked Unit 3A syllabus title/focus/context; it is not final lesson content.
 
 ## Syllabus lock
@@ -37,6 +39,18 @@ A mismatch is an error, not an automatic correction.
 
 The lock file does not replace `Horizons A1/Syllabus.txt`; it is a production-verification copy inside the new workspace. The legacy/source syllabus remains untouched.
 
+## Book map
+
+`book-map.json` records the current production architecture:
+
+- Lesson A — 2 pages
+- Lesson B — 2 pages
+- Lesson C — 2 pages
+- Lesson D — 2 pages
+- Unit Review — 2 pages
+
+That equals 10 core pages per unit before front/back matter. Final page numbers remain unresolved until production content and frozen existing pages are reconciled without modifying them.
+
 ## Stable IDs
 
 Production activity IDs follow:
@@ -51,7 +65,7 @@ Page numbers may change during pagination. Semantic activity IDs should not.
 
 ## Workflow
 
-1. Select the lesson from `syllabus-lock.json`.
+1. Select the lesson from `syllabus-lock.json` or scaffold it with `tools/new-lesson.mjs`.
 2. Author/approve lesson content without changing its locked title/focus/context.
 3. Assign stable exercise IDs.
 4. Record assets/audio against those IDs.
