@@ -161,12 +161,14 @@ window.BRIGHTON_SITE_CONFIG = {
     const byText = new Map(buttons.map((button) => [choiceText(button), button]));
     if (!CANONICAL.every((item) => byText.has(item.key))) return;
 
+    const orderedButtons = CANONICAL.map((item) => byText.get(item.key));
     CANONICAL.forEach((item, index) => {
-      const button = byText.get(item.key);
-      const letter = button.querySelector(".choice-letter");
+      const letter = orderedButtons[index].querySelector(".choice-letter");
       if (letter && letter.textContent !== item.letter) letter.textContent = item.letter;
-      if (grid.children[index] !== button) grid.appendChild(button);
     });
+
+    const alreadyOrdered = orderedButtons.every((button, index) => grid.children[index] === button);
+    if (!alreadyOrdered) grid.append(...orderedButtons);
 
     card.dataset.tfnCanonicalized = "true";
   }
