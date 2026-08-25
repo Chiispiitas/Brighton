@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://brighton.local/horizons/review-schema.json",
+  "title": "Horizons Unit Review content",
+  "type": "object",
+  "required": ["course", "level", "unit", "type", "pages"],
+  "properties": {
+    "course": { "const": "Horizons" },
+    "level": { "const": "A1" },
+    "unit": { "type": "integer", "minimum": 1, "maximum": 8 },
+    "type": { "const": "unit-review" },
+    "reviewed_lessons": {
+      "type": "array",
+      "const": ["A", "B", "C", "D"]
+    },
+    "pages": {
+      "type": "array",
+      "minItems": 2,
+      "maxItems": 2,
+      "items": {
+        "type": "object",
+        "required": ["sections"],
+        "properties": {
+          "sections": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "required": ["type", "content"],
+              "properties": {
+                "type": { "enum": ["vocabulary", "grammar", "reading", "listening", "speaking", "writing", "challenge", "self-check"] },
+                "content": { "type": ["object", "array", "string"] }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
