@@ -1,0 +1,87 @@
+{
+  "course": "Horizons",
+  "level": "A1",
+  "unit": 3,
+  "lesson": "A",
+  "title": "What’s your routine?",
+  "objectives": ["Present simple (+)", "Daily routine"],
+  "real_world_context": "A day in the life of someone famous.",
+  "archetype": "reading-feature",
+  "spread_density": ["light", "medium"],
+  "pages": [
+    {
+      "role": "opener",
+      "exercises": [
+        {
+          "id": "HZN-A1-U03-LA-E01",
+          "number": 1,
+          "instruction": "Read and listen.",
+          "type": "reading",
+          "layout": "article-panel",
+          "content": "Demonstration placeholder only; final lesson content must be authored from the locked syllabus.",
+          "audio_id": "HZN_A1_U03_LA_E01_AUD_01",
+          "asset_ids": ["HZN_A1_U03_LA_E01_IMG_01"]
+        },
+        {
+          "id": "HZN-A1-U03-LA-E02",
+          "number": 2,
+          "instruction": "Look at the photos. Match them with the routine verbs.",
+          "type": "vocabulary",
+          "layout": "photo-strip",
+          "content": []
+        }
+      ]
+    },
+    {
+      "role": "continuation",
+      "exercises": [
+        {
+          "id": "HZN-A1-U03-LA-E03",
+          "number": 3,
+          "instruction": "Complete the sentences.",
+          "type": "grammar",
+          "layout": "questions-2",
+          "content": []
+        },
+        {
+          "id": "HZN-A1-U03-LA-E04",
+          "number": 4,
+          "instruction": "Listen and check.",
+          "type": "listening",
+          "layout": "plain",
+          "content": [],
+          "audio_id": "HZN_A1_U03_LA_E04_AUD_01"
+        }
+      ],
+      "page_end": {
+        "type": "communication",
+        "prompt": "Tell a classmate about your morning routine."
+      }
+    }
+  ],
+  "assets": [
+    {
+      "id": "HZN_A1_U03_LA_E01_IMG_01",
+      "type": "photo",
+      "status": "placeholder",
+      "crop_intent": "Wide lifestyle portrait; subject right; text-safe negative space left.",
+      "alt": ""
+    }
+  ],
+  "audio": [
+    {
+      "id": "HZN_A1_U03_LA_E01_AUD_01",
+      "printed_track": "3.1",
+      "script": "Placeholder only.",
+      "speakers": ["American English speaker"],
+      "status": "draft"
+    },
+    {
+      "id": "HZN_A1_U03_LA_E04_AUD_01",
+      "printed_track": "3.2",
+      "script": "Placeholder only.",
+      "speakers": ["American English speaker"],
+      "status": "draft"
+    }
+  ]
+}
