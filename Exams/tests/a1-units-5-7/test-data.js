@@ -32,7 +32,7 @@ window.BRIGHTON_TEST_DATA = {
         q(11, "We don't have a TV in our ________ room.", "living", "local", "large"),
         q(12, "Your ________ is part of your leg.", "knee", "neck", "hand"),
         q(13, "We played tennis ________ morning.", "yesterday", "yellow", "year"),
-        q(14, "The bank is ________ to the post office.", "near", "next", "new"),
+        q(14, "The bank is ________ to the post office.", "between", "next", "new"),
         q(15, "There's a ________ in the kitchen.", "shelves", "stove", "shower"),
         q(16, "Patrick helps ________ with my English homework.", "me", "my", "I"),
         q(17, "Are there ________ vegetables in the refrigerator?", "some", "any", "a"),
@@ -42,7 +42,7 @@ window.BRIGHTON_TEST_DATA = {
         q(21, "We wait at the ________ stop every morning.", "bus", "train", "car"),
         q(22, "These chairs are ugly. I don't like ________.", "it", "them", "him"),
         q(23, "Do you use a desktop ________ at work?", "laptop", "computer", "tablet"),
-        q(24, "Our apartment is ________ a pizza restaurant!", "above", "between", "under")
+        q(24, "Our apartment is ________ a pizza restaurant!", "above", "between", "next")
       ]
     },
     {
