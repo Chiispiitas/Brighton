@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Horizons A1 — Stage 2 Shell Showcase</title>
+  <link rel="stylesheet" href="../shell/a4-shell.css">
+  <link rel="stylesheet" href="../shell/print.css" media="print">
+  <style>
+    .demo-note {
+      display: inline-block;
+      padding: 1mm 2mm;
+      background: var(--hz-pale-yellow);
+      color: var(--hz-navy);
+      font: 700 7pt var(--hz-font-label);
+      letter-spacing: .04em;
+      text-transform: uppercase;
+    }
+
+    .routine-list,
+    .review-list {
+      margin: 2mm 0 0;
+      padding-left: 5mm;
+    }
+
+    .routine-list li,
+    .review-list li {
+      margin: 1.5mm 0;
+    }
+
+    .mini-timeline {
+      display: grid;
+      grid-template-columns: 14mm 1fr;
+      gap: 1.5mm 3mm;
+      margin-top: 2mm;
+    }
+
+    .mini-timeline time {
+      color: var(--hz-magenta);
+      font: 700 8pt var(--hz-font-label);
+    }
+
+    .word-bank {
+      padding: 2.5mm 3mm;
+      background: var(--hz-pale-pink);
+      font-family: var(--hz-font-label);
+      font-size: var(--hz-fs-sm);
+      font-weight: 700;
+    }
+
+    .grammar-table {
+      width: 100%;
+      border-collapse: collapse;
+    }
+
+    .grammar-table td {
+      padding: 1.3mm 2mm;
+      border-bottom: .25mm solid var(--hz-rule);
+    }
+
+    .grammar-table td:first-child {
+      width: 34%;
+      color: var(--hz-magenta);
+      font-weight: 700;
+    }
+
+    .review-chip {
+      display: inline-block;
+      margin: 0 1mm 1mm 0;
+      padding: .8mm 1.5mm;
+      border-radius: var(--hz-radius-pill);
+      background: var(--hz-pale-blue);
+      font-family: var(--hz-font-label);
+      font-size: var(--hz-fs-xs);
+      font-weight: 700;
+    }
+
+    .maps-card {
+      border: .35mm solid #d9d9d9;
+      border-radius: 3mm;
+      overflow: hidden;
+      background: #fff;
+      box-shadow: var(--hz-shadow-ui);
+      font-family: var(--hz-font-ui);
+    }
+
+    .maps-card__top {
+      display: flex;
+      align-items: center;
+      gap: 2mm;
+      padding: 2.5mm 3mm;
+      border-bottom: .25mm solid #e2e2e2;
+    }
+
+    .maps-card__avatar {
+      width: 8mm;
+      height: 8mm;
+      border-radius: 50%;
+      background: var(--hz-pale-blue);
+    }
+
+    .maps-card__name {
+      font-size: 8pt;
+      font-weight: 700;
+    }
+
+    .maps-card__stars {
+      color: var(--hz-gold);
+      font-size: 8pt;
+      letter-spacing: .04em;
+    }
+
+    .maps-card__body {
+      padding: 2.5mm 3mm 3mm;
+      font-size: 8.5pt;
+      line-height: 1.35;
+    }
+
+    .line-stack {
+      display: grid;
+      gap: 3mm;
+      margin-top: 3mm;
+    }
+
+    .line-stack span {
+      display: block;
+      border-bottom: .3mm solid var(--hz-text);
+      min-height: 5mm;
+    }
+  </style>
+</head>
+<body class="hz-book">
+
+  <!-- PAGE 1: lesson opening example. Layout demonstration only. -->
+  <section class="hz-page hz-page--right hz-content" data-page="31">
+    <main class="hz-page__content">
+      <div class="hz-page-stack">
+        <header class="hz-lesson-header">
+          <div class="hz-lesson-tab">
+            <span class="hz-lesson-tab__label">Lesson</span>
+            <span class="hz-lesson-tab__id">3A</span>
+          </div>
+          <h1 class="hz-lesson-title">What’s your routine?</h1>
+          <div class="hz-objectives">
+            <span class="hz-objectives__item">Present simple (+)</span>
+            <span class="hz-objectives__item">Daily routine</span>
+          </div>
+        </header>
+
+        <div><span class="demo-note">Stage 2 layout demo — not final lesson content</span></div>
+
+        <section class="hz-grid hz-fill">
+          <div class="hz-col-7 hz-section">
+            <div class="hz-exercise">
+              <div class="hz-exercise-number">1</div>
+              <div>
+                <p class="hz-exercise__instruction"><span class="hz-audio-badge">▶ 3.1</span> Read and listen.</p>
+                <div class="hz-exercise__body">
+                  <span class="hz-new-words"><span class="hz-new-words__icon">+</span> New words</span>
+                  <h2 class="hz-section-title" style="margin-top:2mm">A day in the life</h2>
+                  <p>This sample block shows how a real-person feature can combine a large photo, short A1 text and a routine timeline. Final factual content and photography will be sourced separately.</p>
+                  <div class="mini-timeline">
+                    <time>6:30</time><span>wake up</span>
+                    <time>7:00</time><span>have breakfast</span>
+                    <time>8:00</time><span>start work</span>
+                    <time>1:00</time><span>have lunch</span>
+                    <time>8:00</time><span>relax at home</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="hz-go-to">Go to: Vocabulary — Daily routine, page ---</div>
+
+            <div class="hz-exercise">
+              <div class="hz-exercise-number">2</div>
+              <div>
+                <p class="hz-exercise__instruction">Match the routine verbs with the times.</p>
+                <div class="hz-exercise__body word-bank">wake up &nbsp; • &nbsp; have breakfast &nbsp; • &nbsp; start work &nbsp; • &nbsp; have lunch &nbsp; • &nbsp; relax</div>
+              </div>
+            </div>
+          </div>
+
+          <aside class="hz-col-5 hz-section">
+            <div class="hz-media-frame hz-media-frame--portrait" style="height:91mm">
+              <div class="hz-media-placeholder">Free / generated raster photo</div>
+            </div>
+            <p class="hz-caption">Large editorial image slot. No vector illustration.</p>
+
+            <div class="hz-exercise" style="margin-top:5mm">
+              <div class="hz-exercise-number">3</div>
+              <div>
+                <p class="hz-exercise__instruction">Work in pairs. What do you do in the morning?</p>
+                <div class="hz-exercise__body line-stack">
+                  <span></span><span></span>
+                </div>
+              </div>
+            </div>
+          </aside>
+        </section>
+      </div>
+    </main>
+
+    <footer class="hz-page__footer">
+      <span class="hz-page-number">31</span>
+      <span class="hz-page-code">3A</span>
+    </footer>
+  </section>
+
+  <!-- PAGE 2: second page of the same two-page lesson. -->
+  <section class="hz-page hz-page--left hz-content" data-page="32">
+    <main class="hz-page__content">
+      <div class="hz-page-stack">
+        <div class="hz-two-column hz-fill">
+          <section class="hz-section">
+            <div class="hz-focus-box">
+              <div class="hz-focus-box__header">
+                <span class="hz-focus-box__label">GRAMMAR: PRESENT SIMPLE (+)</span>
+              </div>
+              <div class="hz-focus-box__body">
+                <p>Use the present simple to talk about routines and repeated actions.</p>
+                <table class="grammar-table">
+                  <tr><td>I / You / We / They</td><td>work in the morning.</td></tr>
+                  <tr><td>He / She</td><td>works in the morning.</td></tr>
+                  <tr><td>I</td><td>have breakfast at 7:00.</td></tr>
+                  <tr><td>She</td><td>has breakfast at 7:00.</td></tr>
+                </table>
+              </div>
+            </div>
+
+            <div class="hz-go-to">Go to: Grammar Reference — Present simple, page ---</div>
+
+            <div class="hz-exercise">
+              <div class="hz-exercise-number">4</div>
+              <div>
+                <p class="hz-exercise__instruction">Complete the sentences with the correct verb.</p>
+                <div class="hz-exercise__body">
+                  <ol class="routine-list">
+                    <li>I <span class="hz-answer-line"></span> breakfast at 7:00.</li>
+                    <li>She <span class="hz-answer-line"></span> work at 8:00.</li>
+                    <li>We <span class="hz-answer-line"></span> home in the afternoon.</li>
+                    <li>He <span class="hz-answer-line"></span> TV at night.</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-section">
+            <div class="hz-exercise">
+              <div class="hz-exercise-number">5</div>
+              <div>
+                <p class="hz-exercise__instruction"><span class="hz-audio-badge">▶ 3.2</span> Listen and put the routine in order.</p>
+                <div class="hz-exercise__body">
+                  <table class="hz-data-table">
+                    <tr><th>Order</th><th>Routine</th></tr>
+                    <tr><td></td><td>have lunch</td></tr>
+                    <tr><td></td><td>go to work</td></tr>
+                    <tr><td></td><td>wake up</td></tr>
+                    <tr><td></td><td>go home</td></tr>
+                  </table>
+                  <div style="display:flex;align-items:center;gap:3mm;margin-top:3mm">
+                    <div class="hz-qr-slot">QR<br>3.2</div>
+                    <span class="hz-caption">Reserved QR/audio slot. Final QR is generated from the approved audio URL.</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div class="hz-exercise">
+              <div class="hz-exercise-number">6</div>
+              <div>
+                <p class="hz-exercise__instruction">Write three sentences about your routine.</p>
+                <div class="hz-exercise__body line-stack">
+                  <span></span><span></span><span></span>
+                </div>
+              </div>
+            </div>
+
+            <div class="hz-extra-practice">
+              <span class="hz-extra-practice__label">Extra practice</span>
+              <span class="hz-extra-practice__prompt">Tell a classmate about your morning routine.</span>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="hz-page__footer">
+      <span class="hz-page-number">32</span>
+      <span class="hz-page-code">3A</span>
+    </footer>
+  </section>
+
+  <!-- PAGE 3: real-world interface/editorial example for syllabus lesson 3C. -->
+  <section class="hz-page hz-page--right hz-content" data-page="35">
+    <main class="hz-page__content">
+      <div class="hz-page-stack">
+        <header class="hz-lesson-header">
+          <div class="hz-lesson-tab">
+            <span class="hz-lesson-tab__label">Lesson</span>
+            <span class="hz-lesson-tab__id">3C</span>
+          </div>
+          <h1 class="hz-lesson-title">Where do you go?</h1>
+          <div class="hz-objectives">
+            <span class="hz-objectives__item">Wh- questions</span>
+            <span class="hz-objectives__item">Adjectives</span>
+          </div>
+        </header>
+
+        <div><span class="demo-note">Real-world UI component example</span></div>
+
+        <div class="hz-two-column hz-two-column--wide-right hz-fill">
+          <section class="hz-section">
+            <div class="hz-media-frame hz-media-frame--landscape" style="height:52mm">
+              <div class="hz-media-placeholder">Place photograph</div>
+            </div>
+            <p class="hz-caption">Authentic place photography would be a free licensed raster asset.</p>
+
+            <div class="hz-exercise">
+              <div class="hz-exercise-number">1</div>
+              <div>
+                <p class="hz-exercise__instruction">Look at the photo. Choose two adjectives.</p>
+                <div class="hz-exercise__body word-bank">busy &nbsp; • &nbsp; quiet &nbsp; • &nbsp; beautiful &nbsp; • &nbsp; expensive &nbsp; • &nbsp; cheap</div>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-section">
+            <div class="hz-exercise" style="margin-top:0">
+              <div class="hz-exercise-number">2</div>
+              <div>
+                <p class="hz-exercise__instruction">Read the reviews.</p>
+                <div class="hz-exercise__body" style="display:grid;gap:3mm">
+                  <article class="maps-card">
+                    <div class="maps-card__top">
+                      <span class="maps-card__avatar"></span>
+                      <div><div class="maps-card__name">Jordan</div><div class="maps-card__stars">★★★★★</div></div>
+                    </div>
+                    <div class="maps-card__body">This park is beautiful and quiet. I go here on Sundays. The coffee shop is good, too.</div>
+                  </article>
+
+                  <article class="maps-card">
+                    <div class="maps-card__top">
+                      <span class="maps-card__avatar"></span>
+                      <div><div class="maps-card__name">Casey</div><div class="maps-card__stars">★★★★☆</div></div>
+                    </div>
+                    <div class="maps-card__body">The market is busy, but the food is cheap. I go there with my family.</div>
+                  </article>
+                </div>
+              </div>
+            </div>
+
+            <div class="hz-exercise">
+              <div class="hz-exercise-number">3</div>
+              <div>
+                <p class="hz-exercise__instruction">Complete the questions.</p>
+                <div class="hz-exercise__body">
+                  <ol class="routine-list">
+                    <li><span class="hz-answer-line"></span> does Jordan go on Sundays?</li>
+                    <li><span class="hz-answer-line"></span> does Casey go to the market with?</li>
+                    <li><span class="hz-answer-line"></span> is the market?</li>
+                  </ol>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="hz-page__footer">
+      <span class="hz-page-number">35</span>
+      <span class="hz-page-code">3C</span>
+    </footer>
+  </section>
+
+  <!-- PAGE 4: Unit Review shell example. -->
+  <section class="hz-page hz-page--left hz-content" data-page="40">
+    <main class="hz-page__content">
+      <div class="hz-page-stack">
+        <header class="hz-review-header">
+          <div>
+            <div class="hz-review-header__unit">UNIT 3</div>
+            <h1 class="hz-review-header__title">Review</h1>
+          </div>
+          <span class="demo-note">Layout demo</span>
+        </header>
+
+        <div class="hz-two-column hz-fill">
+          <section class="hz-section">
+            <div class="hz-review-block">
+              <h2 class="hz-review-block__label">Vocabulary</h2>
+              <p class="hz-kicker">Daily routine</p>
+              <div>
+                <span class="review-chip">wake up</span>
+                <span class="review-chip">have breakfast</span>
+                <span class="review-chip">go to work</span>
+                <span class="review-chip">have lunch</span>
+                <span class="review-chip">go home</span>
+              </div>
+              <ol class="review-list">
+                <li>I <span class="hz-answer-line"></span> at 6:30.</li>
+                <li>I <span class="hz-answer-line"></span> at 7:00.</li>
+                <li>I <span class="hz-answer-line"></span> in the afternoon.</li>
+              </ol>
+            </div>
+
+            <div class="hz-review-block" style="margin-top:5mm">
+              <h2 class="hz-review-block__label">Grammar</h2>
+              <p class="hz-kicker">Present simple</p>
+              <ol class="review-list">
+                <li>She work / <strong>works</strong> in the morning.</li>
+                <li>They don’t / doesn’t work on Sunday.</li>
+                <li>Do / Does he go home at 5:00?</li>
+              </ol>
+            </div>
+
+            <div class="hz-review-block" style="margin-top:5mm">
+              <h2 class="hz-review-block__label">Questions</h2>
+              <p>Complete with <strong>what, where, when, who</strong>.</p>
+              <ol class="review-list">
+                <li><span class="hz-answer-line"></span> do you work?</li>
+                <li><span class="hz-answer-line"></span> do you have lunch?</li>
+                <li><span class="hz-answer-line"></span> do you go with?</li>
+              </ol>
+            </div>
+          </section>
+
+          <section class="hz-section">
+            <div class="hz-review-block">
+              <h2 class="hz-review-block__label">Reading</h2>
+              <div class="hz-media-frame hz-media-frame--wide" style="height:38mm">
+                <div class="hz-media-placeholder">Review photo</div>
+              </div>
+              <p style="margin-bottom:1mm"><strong>My busy week</strong></p>
+              <p style="margin-top:0">This short sample shows the space available for an A1 review text that recycles Unit 3 grammar and vocabulary.</p>
+              <p>1. The writer is busy on weekdays. <span class="hz-choice-box"></span> True &nbsp; <span class="hz-choice-box"></span> False</p>
+              <p>2. The writer relaxes on the weekend. <span class="hz-choice-box"></span> True &nbsp; <span class="hz-choice-box"></span> False</p>
+            </div>
+
+            <div class="hz-review-block" style="margin-top:5mm">
+              <h2 class="hz-review-block__label">Writing</h2>
+              <p>Write four sentences about your week. Use <strong>before</strong> or <strong>after</strong>.</p>
+              <div class="line-stack">
+                <span></span><span></span><span></span><span></span>
+              </div>
+            </div>
+
+            <div class="hz-extra-practice">
+              <span class="hz-extra-practice__label">Check yourself</span>
+              <span class="hz-extra-practice__prompt">I can talk about my routine, ask questions and describe my week.</span>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+
+    <footer class="hz-page__footer">
+      <span class="hz-page-number">40</span>
+      <span class="hz-page-code">U3 REVIEW</span>
+    </footer>
+  </section>
+
+</body>
+</html>
