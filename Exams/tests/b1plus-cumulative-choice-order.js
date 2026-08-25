@@ -19,6 +19,19 @@
   const target = TARGETS[data.testId];
   if (!target) return;
 
+  // The three cumulative B1+ tests were only just introduced. Clear one
+  // pre-audit local attempt, if present, so an old saved A/B/C value can
+  // never be resumed against the new mixed option positions.
+  try {
+    const migrationKey = `brighton-b1plus-choice-order-v1-${data.testId}`;
+    if (!localStorage.getItem(migrationKey)) {
+      localStorage.removeItem(`brighton-test-state-${data.testId}-v1`);
+      localStorage.setItem(migrationKey, "1");
+    }
+  } catch (error) {
+    console.warn("Could not migrate B1+ cumulative test state", error);
+  }
+
   const LETTERS = "ABC";
 
   function permutationFor(questionNumber) {
