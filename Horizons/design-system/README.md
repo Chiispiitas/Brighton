@@ -1,6 +1,6 @@
 # Horizons design system
 
-This directory defines the approved visual language for the HTML/CSS master of **Horizons A1**.
+This directory defines the approved visual language and pedagogical method for the HTML/CSS master of **Horizons A1**.
 
 ## Start here in a new chat
 
@@ -8,21 +8,47 @@ Read:
 
 1. `HANDOFF.md`
 2. `CANONICAL-STYLE.md`
-3. `STYLE-REFINEMENTS.md`
+3. `GUIDED-DISCOVERY.md`
+4. `STYLE-REFINEMENTS.md`
 
 `HANDOFF.md` is the current resume document. It consolidates the latest design decisions, source-fidelity rules, discarded directions, reference priority, and the lessons learned from the Lesson 1A prototype.
 
+`GUIDED-DISCOVERY.md` defines the book's **primary teaching methodology**: contextualized language input, explicit noticing/analysis questions, clarification after discovery, short controlled practice, pairwork, and transfer into meaningful real-world use.
+
 ## Canonical status
 
-**The current Stage 3 design system plus the latest canonical refinements is the approved style for the Student's Book.**
+**The current Stage 3 design system plus the latest canonical refinements is the approved style for the Student's Book. Guided Discovery is the canonical pedagogical method that the design must support.**
 
-Future design work should extend and refine this system rather than silently replace its visual philosophy.
+Future design work should extend and refine this system rather than silently replace its visual philosophy or teaching methodology.
 
 Primary practical references:
 
 - `../examples/lesson-1a-canonical-prototype.html` — source-faithful adaptation of an existing lesson into the new style
 - `../examples/stage-3-shape-showcase.html` — primary large-scale visual benchmark
 - `../examples/stage-2-showcase.html` — supporting photography/overlay benchmark
+
+## Core methodology: Guided Discovery
+
+Horizons should normally **give students the language in context before giving them the rule**.
+
+The expected learning direction is:
+
+**context → noticing → guided analysis → clarification → controlled practice → communicative use → transfer to a real situation**
+
+This means:
+
+- dialogues, readings, listenings, forms, chats, maps, reviews and other real-world texts should contain evidence students can analyze;
+- lessons should include explicit A1-friendly questions about how the language is used, formed or organized;
+- grammar/vocabulary summaries should usually confirm or organize what students have already examined;
+- short exercises should form a connected discovery sequence rather than a set of unrelated worksheet items;
+- pairwork should support both analysis and communication;
+- the final use of the language should have a purpose beyond simply producing the target form.
+
+Lesson D has an especially strong real-world focus. Its Speaking/Writing outcome should normally be a believable situation, simulation or role-play with roles, information exchange and a concrete outcome.
+
+For example, **Lesson 1D: LET'S FILL A FORM!** should ultimately function as a real registration/check-in/membership scenario. Students may create or choose a simple business such as a gym, hotel, language school or club, interview classmates as customers/guests/members, and complete a realistic form with the information obtained through the role-play. The form is the product of the interaction, not merely a worksheet.
+
+See `GUIDED-DISCOVERY.md` for the full methodology and authoring test.
 
 ## Core design direction
 
@@ -152,11 +178,14 @@ Use free licensed raster photography or generated raster imagery where needed. F
 8. Do preserve consistent exercise mechanics.
 9. Do allow bespoke page CSS when the content benefits from it.
 10. Do not revive discarded Stage 4, legacy-compatibility, rainbow/dashboard or card-heavy directions without explicit approval.
+11. Do make the context, discovery questions, pairwork and final real-world outcome visually easy to follow.
+12. When pedagogy and visual novelty conflict, Guided Discovery takes priority.
 
 ## Files
 
 - `HANDOFF.md` — current resume document for future chats
-- `CANONICAL-STYLE.md` — normative visual philosophy
+- `CANONICAL-STYLE.md` — normative visual philosophy and lesson architecture
+- `GUIDED-DISCOVERY.md` — canonical teaching methodology and real-situation task model
 - `STYLE-REFINEMENTS.md` — controlled repetition and micro-variety rules
 - `tokens.css` — palette, unit colors, typography, spacing and geometry
 - `components.css` — core lesson/exercise mechanics, media and focus areas
@@ -171,7 +200,14 @@ Use free licensed raster photography or generated raster imagery where needed. F
 - HTML/CSS definitive master
 - two pages per lesson
 - Lesson A → B → C → D → Unit Review
-- Vocabulary Practice and Grammar Reference at the back
+- Lesson A and C: Grammar and/or Vocabulary
+- Lesson B: Reading/Listening with some Vocabulary
+- Lesson D: Speaking or Writing, normally culminating in a real-world situation or role-play
+- Guided Discovery is the primary teaching methodology
+- language normally appears in context before explicit rule explanation
+- explicit discovery/analysis questions are part of lesson design
+- pairwork is a core learning mechanism
+- Vocabulary Practice and Grammar Reference/Practice at the back and activity-led
 - American English
 - syllabus immutable unless explicitly changed
 - pre-existing Student's Book pages immutable unless explicitly changed
