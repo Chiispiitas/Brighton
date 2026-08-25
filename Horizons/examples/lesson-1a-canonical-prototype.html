@@ -1,0 +1,730 @@
+<!doctype html>
+<html lang="en-US">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Horizons A1 — Lesson 1A Canonical Prototype</title>
+  <link rel="stylesheet" href="../shell/a4-shell.css">
+  <link rel="stylesheet" href="../shell/print.css" media="print">
+  <style>
+    /*
+      LESSON 1A CANONICAL PROTOTYPE
+      -----------------------------
+      Source wording, questions, numbering, track references and answer mechanics
+      are preserved. Only composition is adapted to the approved Stage 3 style.
+      Development imagery is represented with crop-aware placeholders.
+    */
+
+    .l1a-page .hz-page__content { overflow: hidden; }
+    .l1a-page .hz-page-stack { gap: 2.7mm; }
+    .l1a-page .hz-lesson-header { padding-bottom: 3.2mm; }
+    .l1a-page .hz-exercises { gap: .2mm; }
+    .l1a-page .hz-exercise { padding: 1.6mm 0 2.15mm; }
+    .l1a-page .hz-exercise__body { margin-top: 1.5mm; }
+    .l1a-page .hz-exercise__instruction { font-size: 9.1pt; }
+    .l1a-page .hz-question { padding: .35mm 0; font-size: 8.25pt; }
+
+    .l1a-track {
+      display: inline-flex;
+      align-items: center;
+      gap: .8mm;
+      margin-right: 1.5mm;
+      padding: .6mm 1.15mm;
+      background: var(--hz-audio);
+      color: #fff;
+      font-size: 6.5pt;
+      font-weight: var(--hz-fw-black);
+      line-height: 1;
+      vertical-align: .35mm;
+    }
+
+    /* Page 5 — dialogue feature. */
+    .l1a-dialogue-feature {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.06fr .94fr;
+      min-height: 59mm;
+      isolation: isolate;
+    }
+
+    .l1a-dialogue-feature::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: -5mm;
+      right: 35mm;
+      width: 39mm;
+      height: 39mm;
+      border: 6mm solid var(--hz-unit-soft);
+      border-radius: 50%;
+    }
+
+    .l1a-dialogue-photo {
+      position: relative;
+      min-height: 59mm;
+      overflow: hidden;
+      clip-path: polygon(0 0, 100% 0, 93% 100%, 0 100%);
+    }
+
+    .l1a-dialogue-photo .hz-photo-placeholder { min-height: 59mm; }
+
+    .l1a-dialogue-copy {
+      position: relative;
+      align-self: center;
+      margin-left: -8mm;
+      padding: 5mm 5mm 4.5mm 8mm;
+      border-top: 1.2mm solid var(--hz-unit);
+      background: var(--hz-paper);
+      box-shadow: 0 0 0 .25mm var(--hz-line);
+    }
+
+    .l1a-dialogue-copy::after {
+      content: "";
+      position: absolute;
+      right: -5mm;
+      bottom: -5mm;
+      width: 17mm;
+      height: 17mm;
+      background: var(--hz-unit-soft);
+      clip-path: polygon(100% 0, 100% 100%, 0 100%);
+      z-index: -1;
+    }
+
+    .l1a-dialogue-copy .hz-new-words {
+      margin-bottom: 2.4mm;
+    }
+
+    .l1a-dialogue {
+      display: grid;
+      grid-template-columns: 12mm 1fr;
+      gap: 1.1mm 2mm;
+      margin: 0;
+      font-size: 8.5pt;
+      line-height: 1.37;
+    }
+
+    .l1a-dialogue dt {
+      margin: 0;
+      font-weight: var(--hz-fw-black);
+    }
+
+    .l1a-dialogue dd { margin: 0; }
+
+    /* Greetings are one exercise, but the four photos can be internally art-directed. */
+    .l1a-greetings {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 2.4mm;
+      align-items: end;
+    }
+
+    .l1a-greeting { text-align: center; }
+    .l1a-greeting__photo {
+      position: relative;
+      height: 27mm;
+      margin: 0 auto 1.3mm;
+      overflow: hidden;
+      background: var(--hz-wash);
+    }
+
+    .l1a-greeting:nth-child(1) .l1a-greeting__photo { width: 27mm; border-radius: 50%; }
+    .l1a-greeting:nth-child(2) .l1a-greeting__photo { width: 31mm; clip-path: polygon(0 11%, 89% 0, 100% 88%, 11% 100%); }
+    .l1a-greeting:nth-child(3) .l1a-greeting__photo { width: 27mm; border-radius: 50% 50% 10% 50%; }
+    .l1a-greeting:nth-child(4) .l1a-greeting__photo { width: 31mm; clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 86%); }
+    .l1a-greeting__photo .hz-photo-placeholder { min-height: 27mm; font-size: 5.5pt; }
+    .l1a-greeting strong { font-size: 7.4pt; line-height: 1.15; }
+
+    /* Grammar is deliberately one large structured field, not a generic card. */
+    .l1a-grammar {
+      position: relative;
+      overflow: hidden;
+      margin: 1.2mm 0 .8mm calc(var(--hz-exercise-marker-size) + 3mm);
+      padding: 3mm 4mm 3.3mm;
+      border-top: 1.15mm solid var(--hz-unit);
+      background: var(--hz-unit-soft);
+    }
+
+    .l1a-grammar::before {
+      content: "";
+      position: absolute;
+      top: -15mm;
+      right: -12mm;
+      width: 44mm;
+      height: 44mm;
+      border: 8mm solid rgb(255 255 255 / 55%);
+      border-radius: 50%;
+    }
+
+    .l1a-grammar__title {
+      position: relative;
+      margin: 0 0 2.2mm;
+      color: var(--hz-unit-dark);
+      font-size: 8pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: .065em;
+      text-transform: uppercase;
+    }
+
+    .l1a-grammar__grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4mm;
+      font-size: 7.5pt;
+      line-height: 1.35;
+    }
+
+    .l1a-grammar__grid strong {
+      display: block;
+      margin-bottom: .7mm;
+      color: var(--hz-ink);
+    }
+
+    .l1a-grammar__grid p { margin: 0 0 .6mm; }
+    .l1a-target { color: var(--hz-unit-dark); font-weight: var(--hz-fw-black); }
+
+    .l1a-go-to {
+      margin-left: calc(var(--hz-exercise-marker-size) + 3mm);
+      margin-bottom: .2mm;
+    }
+
+    .l1a-sentence-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .6mm 8mm;
+      font-size: 8.1pt;
+    }
+
+    .l1a-sentence {
+      display: grid;
+      grid-template-columns: 6mm 1fr;
+      gap: 1mm;
+      align-items: baseline;
+      min-height: 5.3mm;
+    }
+
+    .l1a-sentence b { color: var(--hz-unit-dark); }
+
+    .l1a-contractions {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2mm;
+    }
+
+    .l1a-contraction {
+      padding-top: 1.3mm;
+      border-top: .55mm solid var(--hz-unit);
+      font-size: 7.8pt;
+      line-height: 1.25;
+    }
+
+    .l1a-contraction b {
+      display: inline-block;
+      min-width: 4mm;
+      color: var(--hz-unit-dark);
+    }
+
+    /* Page 6 continuation marker. */
+    .l1a-continuation {
+      position: absolute;
+      top: -1mm;
+      right: -14mm;
+      display: grid;
+      place-items: end start;
+      width: 34mm;
+      height: 25mm;
+      padding: 0 0 3.2mm 5mm;
+      background: var(--hz-unit);
+      color: white;
+      clip-path: polygon(28% 0, 100% 0, 100% 100%, 0 100%);
+      font-size: 19pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: -.05em;
+      z-index: 4;
+    }
+
+    /* Exercise 5: conversational typography + large portrait placeholder. */
+    .l1a-identity-stage {
+      position: relative;
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 4mm;
+      align-items: stretch;
+      min-height: 58mm;
+    }
+
+    .l1a-identity-stage::before {
+      content: "";
+      position: absolute;
+      left: -10mm;
+      bottom: -9mm;
+      width: 44mm;
+      height: 44mm;
+      background: var(--hz-unit-soft);
+      border-radius: 50%;
+      z-index: -1;
+    }
+
+    .l1a-identity-copy {
+      display: grid;
+      align-content: center;
+      gap: 2.1mm;
+      padding: 2mm 0;
+    }
+
+    .l1a-identity-copy .hz-new-words { width: max-content; margin-bottom: .5mm; }
+
+    .l1a-exchange {
+      position: relative;
+      padding: 2.1mm 3mm;
+      border-left: 1mm solid var(--hz-unit);
+      background: var(--hz-paper);
+      font-size: 8.1pt;
+      line-height: 1.3;
+    }
+
+    .l1a-exchange:nth-of-type(3) { margin-left: 7mm; background: var(--hz-unit-soft); }
+    .l1a-exchange:nth-of-type(4) { margin-right: 8mm; background: var(--hz-wash); }
+    .l1a-exchange p { margin: 0; }
+    .l1a-exchange p + p { margin-top: 1mm; }
+
+    .l1a-identity-photo {
+      min-height: 58mm;
+      overflow: hidden;
+      clip-path: polygon(8% 0, 100% 0, 100% 91%, 0 100%);
+    }
+    .l1a-identity-photo .hz-photo-placeholder { min-height: 58mm; }
+
+    /* Pronunciation is typographic rather than boxed UI. */
+    .l1a-pronunciation {
+      position: relative;
+      overflow: hidden;
+      padding: 3mm 4mm 3.7mm;
+      border-top: 1.15mm solid var(--hz-unit);
+      border-bottom: .3mm solid var(--hz-line-strong);
+      background: var(--hz-unit-soft);
+    }
+
+    .l1a-pronunciation::after {
+      content: "";
+      position: absolute;
+      right: -10mm;
+      bottom: -18mm;
+      width: 48mm;
+      height: 48mm;
+      border: 8mm solid rgb(255 255 255 / 52%);
+      transform: rotate(18deg);
+    }
+
+    .l1a-pronunciation__title {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 2mm;
+      color: var(--hz-unit-dark);
+      font-size: 8pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: .065em;
+      text-transform: uppercase;
+    }
+
+    .l1a-alphabet {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.7mm 4.1mm;
+      font-size: 17pt;
+      font-weight: var(--hz-fw-black);
+      line-height: 1;
+      color: var(--hz-unit-dark);
+    }
+
+    .l1a-name-options {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3mm;
+      font-size: 7.7pt;
+    }
+
+    .l1a-name-options__item {
+      display: grid;
+      grid-template-columns: 4mm 1fr;
+      gap: 1mm;
+      align-items: start;
+    }
+
+    .l1a-name-options__number {
+      color: var(--hz-unit-dark);
+      font-weight: var(--hz-fw-black);
+      padding-top: .3mm;
+    }
+
+    .l1a-name-options__choices { display: grid; gap: .8mm; }
+    .l1a-name-options__choices span { white-space: nowrap; }
+
+    /* Numbers read as one rhythmic typographic horizon, all within Unit 1 color. */
+    .l1a-number-horizon {
+      display: grid;
+      grid-template-columns: repeat(11, minmax(0, 1fr));
+      gap: 1mm;
+      align-items: end;
+      padding-top: 1mm;
+    }
+
+    .l1a-number {
+      position: relative;
+      display: grid;
+      justify-items: center;
+      gap: .8mm;
+      min-width: 0;
+    }
+
+    .l1a-number__digit {
+      display: grid;
+      place-items: center;
+      width: 11mm;
+      height: 11mm;
+      border: .45mm solid var(--hz-unit);
+      border-radius: 50%;
+      color: var(--hz-unit-dark);
+      background: var(--hz-paper);
+      font-size: 14pt;
+      font-weight: var(--hz-fw-black);
+      line-height: 1;
+    }
+
+    .l1a-number:nth-child(3n+2) .l1a-number__digit { background: var(--hz-unit-soft); }
+    .l1a-number:nth-child(3n) .l1a-number__digit { border-radius: 18% 50% 50% 50%; }
+    .l1a-number__word { font-size: 5.9pt; line-height: 1; }
+
+    .l1a-profiles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5mm;
+      align-items: end;
+    }
+
+    .l1a-profile { position: relative; padding-top: 15mm; }
+    .l1a-profile__photo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 26mm;
+      height: 26mm;
+      overflow: hidden;
+      border: 1.6mm solid var(--hz-paper);
+      border-radius: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+    .l1a-profile__photo .hz-photo-placeholder { min-height: 100%; font-size: 5pt; }
+
+    .l1a-profile__form {
+      padding: 13mm 3mm 2.5mm;
+      border-top: 1mm solid var(--hz-unit);
+      background: var(--hz-unit-soft);
+      font-size: 7.4pt;
+    }
+
+    .l1a-profile:nth-child(2) .l1a-profile__form { background: var(--hz-wash); }
+    .l1a-profile:nth-child(3) .l1a-profile__form { background: #fff; border: .35mm solid var(--hz-line); border-top: 1mm solid var(--hz-unit); }
+
+    .l1a-profile__row {
+      display: grid;
+      grid-template-columns: 13mm 1fr;
+      gap: 1.2mm;
+      align-items: end;
+      min-height: 5mm;
+    }
+
+    .l1a-profile__blank { border-bottom: .3mm solid var(--hz-line-strong); min-height: 3.8mm; }
+
+    .l1a-extra {
+      margin-left: calc(var(--hz-exercise-marker-size) + 3mm);
+      margin-top: .8mm;
+    }
+
+    /* Tighten page 6 enough to preserve all source material on one A4 page. */
+    .l1a-page--2 .hz-exercise { padding-top: 1.25mm; padding-bottom: 1.75mm; }
+    .l1a-page--2 .hz-exercise__body { margin-top: 1.1mm; }
+    .l1a-page--2 .hz-page-stack { gap: 1.6mm; }
+    .l1a-page--2 .hz-exercise__instruction { font-size: 8.8pt; }
+    .l1a-page--2 .l1a-identity-stage { min-height: 53mm; }
+    .l1a-page--2 .l1a-identity-photo .hz-photo-placeholder { min-height: 53mm; }
+    .l1a-page--2 .l1a-identity-photo { min-height: 53mm; }
+    .l1a-page--2 .l1a-alphabet { font-size: 15.5pt; gap: 1.4mm 3.5mm; }
+    .l1a-page--2 .l1a-pronunciation { padding-top: 2.5mm; padding-bottom: 3mm; }
+    .l1a-page--2 .l1a-number__digit { width: 10mm; height: 10mm; font-size: 12.5pt; }
+    .l1a-page--2 .l1a-profile__photo { width: 23mm; height: 23mm; }
+    .l1a-page--2 .l1a-profile { padding-top: 13mm; }
+    .l1a-page--2 .l1a-profile__form { padding-top: 11.5mm; }
+  </style>
+</head>
+<body class="hz-book">
+
+  <!--
+    SOURCE-FAITHFUL DESIGN PROTOTYPE ONLY.
+    The frozen Student's Book is not replaced or modified.
+    Numbered exercises remain one vertical sequence; internal content may use columns.
+  -->
+
+  <!-- ===============================================================
+       PAGE 5 — LESSON 1A
+       =============================================================== -->
+  <article class="hz-page hz-content hz-unit-1 l1a-page" data-page="5">
+    <main class="hz-page__content">
+      <div class="hz-page-stack">
+        <header class="hz-lesson-header">
+          <div class="hz-lesson-tab" aria-label="Lesson 1A">
+            <span class="hz-lesson-tab__label">Lesson</span>
+            <span class="hz-lesson-tab__id">1A</span>
+          </div>
+          <div class="hz-lesson-heading">
+            <h1 class="hz-lesson-title">NEW FRIENDS</h1>
+            <div class="hz-objectives">
+              <span class="hz-objectives__item">Verb “to be”</span>
+              <span class="hz-objectives__item">Alphabet</span>
+              <span class="hz-objectives__item">Numbers (0-10)</span>
+            </div>
+          </div>
+        </header>
+
+        <div class="hz-exercises hz-fill">
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">1</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction"><span class="l1a-track">♪ 1.1</span>Read and listen.</p>
+              <div class="hz-exercise__body">
+                <div class="l1a-dialogue-feature">
+                  <div class="l1a-dialogue-photo">
+                    <div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Image placeholder · two students greeting each other · wide crop</span></div>
+                  </div>
+                  <div class="l1a-dialogue-copy">
+                    <span class="hz-new-words">NEW WORDS</span>
+                    <dl class="l1a-dialogue">
+                      <dt>Tom:</dt><dd>Hello! I <span class="l1a-target">am</span> Tom.</dd>
+                      <dt>Mary:</dt><dd>I am Mary. Nice to meet you.</dd>
+                      <dt>Tom:</dt><dd><span class="l1a-target">Are</span> you a student?</dd>
+                      <dt>Mary:</dt><dd>Yes, I am in Class 4.</dd>
+                      <dt>Tom:</dt><dd><span class="l1a-target">Is</span> your teacher Mr. Wilson?</dd>
+                      <dt>Mary:</dt><dd>Yes, he is!</dd>
+                      <dt>Tom:</dt><dd>Good! See you later.</dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">2</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Look at the <span class="l1a-target">greetings</span> and <span class="l1a-target">farewells</span>.</p>
+              <div class="hz-exercise__body l1a-greetings">
+                <figure class="l1a-greeting">
+                  <div class="l1a-greeting__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Image placeholder</span></div></div>
+                  <figcaption><strong>Good morning</strong></figcaption>
+                </figure>
+                <figure class="l1a-greeting">
+                  <div class="l1a-greeting__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Image placeholder</span></div></div>
+                  <figcaption><strong>Good afternoon</strong></figcaption>
+                </figure>
+                <figure class="l1a-greeting">
+                  <div class="l1a-greeting__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Image placeholder</span></div></div>
+                  <figcaption><strong>Good evening</strong></figcaption>
+                </figure>
+                <figure class="l1a-greeting">
+                  <div class="l1a-greeting__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Image placeholder</span></div></div>
+                  <figcaption><strong>See you later</strong></figcaption>
+                </figure>
+              </div>
+            </div>
+          </section>
+
+          <aside class="l1a-grammar">
+            <h2 class="l1a-grammar__title">GRAMMAR: VERB TO BE</h2>
+            <div class="l1a-grammar__grid">
+              <div>
+                <strong>Affirmative:</strong>
+                <p>Hello. I <span class="l1a-target">am</span> David.</p>
+                <p>She <span class="l1a-target">is</span> Lisa.</p>
+                <p>You <span class="l1a-target">are</span> a student.</p>
+              </div>
+              <div>
+                <strong>Negative:</strong>
+                <p>I am <span class="l1a-target">not</span> a teacher.</p>
+                <p>She is <span class="l1a-target">not</span> in Class 3.</p>
+                <p>You are <span class="l1a-target">not</span> American.</p>
+              </div>
+              <div>
+                <strong>Questions:</strong>
+                <p><span class="l1a-target">Is</span> she a teacher?</p>
+                <p><span class="l1a-target">Are</span> you in Class 4?</p>
+              </div>
+            </div>
+          </aside>
+
+          <div class="l1a-go-to hz-go-to">Go to: Grammar - Verb to be, page ---</div>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">3</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Complete the sentences with <span class="l1a-target">am, is, are</span>.</p>
+              <div class="hz-exercise__body l1a-sentence-grid">
+                <div class="l1a-sentence"><b>1</b><span>Good evening. I <span class="hz-answer-line" style="min-width:11mm"></span> Tom.</span></div>
+                <div class="l1a-sentence"><b>4</b><span>Simon and Lisa <span class="hz-answer-line" style="min-width:11mm"></span> friends.</span></div>
+                <div class="l1a-sentence"><b>2</b><span>You <span class="hz-answer-line" style="min-width:11mm"></span> in Class 3.</span></div>
+                <div class="l1a-sentence"><b>5</b><span><span class="hz-answer-line" style="min-width:11mm"></span> you a teacher?</span></div>
+                <div class="l1a-sentence"><b>3</b><span>Mary <span class="hz-answer-line" style="min-width:11mm"></span> American.</span></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">4</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction"><span class="l1a-track">♪ 1.2</span>Listen and repeat the contractions.</p>
+              <div class="hz-exercise__body l1a-contractions">
+                <div class="l1a-contraction"><b>1</b> I <strong>am</strong> = I’m</div>
+                <div class="l1a-contraction"><b>2</b> You <strong>are</strong> = You’re</div>
+                <div class="l1a-contraction"><b>3</b> He <strong>is</strong> = He’s</div>
+                <div class="l1a-contraction"><b>4</b> She <strong>is</strong> = She’s</div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer class="hz-page__footer"><span></span><span class="hz-page-number">5</span></footer>
+  </article>
+
+  <!-- ===============================================================
+       PAGE 6 — LESSON 1A CONTINUED
+       =============================================================== -->
+  <article class="hz-page hz-content hz-unit-1 l1a-page l1a-page--2" data-page="6">
+    <main class="hz-page__content">
+      <div class="l1a-continuation">1A</div>
+      <div class="hz-page-stack">
+        <div class="hz-exercises hz-fill" style="padding-top:7mm">
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">5</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction"><span class="l1a-track">♪ 1.3</span>Read and listen.</p>
+              <div class="hz-exercise__body">
+                <div class="l1a-identity-stage">
+                  <div class="l1a-identity-copy">
+                    <span class="hz-new-words">NEW WORDS</span>
+                    <div class="l1a-exchange">
+                      <p>What is your <span class="l1a-target">name</span>?</p>
+                      <p>My name is Ariana.</p>
+                    </div>
+                    <div class="l1a-exchange">
+                      <p>How do you <span class="l1a-target">spell</span> that?</p>
+                      <p><span class="l1a-target">A-R-I-A-N-A.</span></p>
+                    </div>
+                    <div class="l1a-exchange">
+                      <p>What is your <span class="l1a-target">phone number</span>?</p>
+                      <p>It’s 095 210 7168.</p>
+                    </div>
+                  </div>
+                  <div class="l1a-identity-photo">
+                    <div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Image placeholder · student giving personal information · portrait crop</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">6</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction"><span class="l1a-track">♪ 1.4</span>Listen and repeat.</p>
+              <div class="hz-exercise__body l1a-pronunciation">
+                <div class="l1a-pronunciation__title">PRONUNCIATION: THE ALPHABET</div>
+                <div class="l1a-alphabet" aria-label="Alphabet">
+                  <span>Aa</span><span>Bb</span><span>Cc</span><span>Dd</span><span>Ee</span><span>Ff</span><span>Gg</span><span>Hh</span><span>Ii</span><span>Jj</span>
+                  <span>Kk</span><span>Ll</span><span>Mm</span><span>Nn</span><span>Oo</span><span>Pp</span><span>Qq</span><span>Rr</span><span>Ss</span><span>Tt</span>
+                  <span>Uu</span><span>Vv</span><span>Ww</span><span>Xx</span><span>Yy</span><span>Zz</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">7</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction"><span class="l1a-track">♪ 1.5</span>Listen and choose the correct names.</p>
+              <div class="hz-exercise__body l1a-name-options">
+                <div class="l1a-name-options__item"><span class="l1a-name-options__number">1</span><div class="l1a-name-options__choices"><span><i class="hz-choice-box"></i> Steven</span><span><i class="hz-choice-box"></i> Stephen</span></div></div>
+                <div class="l1a-name-options__item"><span class="l1a-name-options__number">2</span><div class="l1a-name-options__choices"><span><i class="hz-choice-box"></i> Allison</span><span><i class="hz-choice-box"></i> Alisson</span></div></div>
+                <div class="l1a-name-options__item"><span class="l1a-name-options__number">3</span><div class="l1a-name-options__choices"><span><i class="hz-choice-box"></i> Bryan</span><span><i class="hz-choice-box"></i> Brayan</span></div></div>
+                <div class="l1a-name-options__item"><span class="l1a-name-options__number">4</span><div class="l1a-name-options__choices"><span><i class="hz-choice-box"></i> Lindsey</span><span><i class="hz-choice-box"></i> Lindsay</span></div></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">9</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction"><span class="l1a-track">♪ 1.6</span>Listen and repeat the numbers.</p>
+              <div class="hz-exercise__body l1a-number-horizon">
+                <div class="l1a-number"><span class="l1a-number__digit">0</span><span class="l1a-number__word">Zero</span></div>
+                <div class="l1a-number"><span class="l1a-number__digit">1</span><span class="l1a-number__word">One</span></div>
+                <div class="l1a-number"><span class="l1a-number__digit">2</span><span class="l1a-number__word">Two</span></div>
+                <div class="l1a-number"><span class="l1a-number__digit">3</span><span class="l1a-number__word">Three</span></div>
+                <div class="l1a-number"><span class="l1a-number__digit">4</span><span class="l1a-number__word">Four</span></div>
+                <div class="l1a-number"><span class="l1a-number__digit">5</span><span class="l1a-number__word">Five</span></div>
+                <div class="l1a-number"><span class="l1a-number__digit">6</span><span class="l1a-number__word">Six</span></div>
+                <div class="l1a-number"><span class="l1a-number__digit">7</span><span class="l1a-number__word">Seven</span></div>
+                <div class="l1a-number"><span class="l1a-number__digit">8</span><span class="l1a-number__word">Eight</span></div>
+                <div class="l1a-number"><span class="l1a-number__digit">9</span><span class="l1a-number__word">Nine</span></div>
+                <div class="l1a-number"><span class="l1a-number__digit">10</span><span class="l1a-number__word">Ten</span></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">10</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction"><span class="l1a-track">♪ 1.7</span>Listen and complete.</p>
+              <div class="hz-exercise__body l1a-profiles">
+                <div class="l1a-profile">
+                  <div class="l1a-profile__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Image placeholder</span></div></div>
+                  <div class="l1a-profile__form">
+                    <div class="l1a-profile__row"><span>Name</span><span class="l1a-profile__blank"></span></div>
+                    <div class="l1a-profile__row"><span>Class</span><span class="l1a-profile__blank"></span></div>
+                    <div class="l1a-profile__row"><span>Phone</span><span class="l1a-profile__blank"></span></div>
+                  </div>
+                </div>
+                <div class="l1a-profile">
+                  <div class="l1a-profile__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Image placeholder</span></div></div>
+                  <div class="l1a-profile__form">
+                    <div class="l1a-profile__row"><span>Name</span><span class="l1a-profile__blank"></span></div>
+                    <div class="l1a-profile__row"><span>Class</span><span class="l1a-profile__blank"></span></div>
+                    <div class="l1a-profile__row"><span>Phone</span><span class="l1a-profile__blank"></span></div>
+                  </div>
+                </div>
+                <div class="l1a-profile">
+                  <div class="l1a-profile__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Image placeholder</span></div></div>
+                  <div class="l1a-profile__form">
+                    <div class="l1a-profile__row"><span>Name</span><span class="l1a-profile__blank"></span></div>
+                    <div class="l1a-profile__row"><span>Class</span><span class="l1a-profile__blank"></span></div>
+                    <div class="l1a-profile__row"><span>Phone</span><span class="l1a-profile__blank"></span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="l1a-extra hz-extra-practice">
+          <span class="hz-extra-practice__label">EXTRA PRACTICE</span>
+          <span class="hz-extra-practice__prompt">Ask and write the name, class and phone of a classmate.</span>
+        </div>
+      </div>
+    </main>
+    <footer class="hz-page__footer"><span></span><span class="hz-page-number">6</span></footer>
+  </article>
+</body>
+</html>
