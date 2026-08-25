@@ -1,131 +1,183 @@
 # Horizons design system
 
-This directory defines the visual language for the HTML/CSS master of **Horizons A1**.
+This directory defines the approved visual language for the HTML/CSS master of **Horizons A1**.
+
+## Start here in a new chat
+
+Read:
+
+1. `HANDOFF.md`
+2. `CANONICAL-STYLE.md`
+3. `STYLE-REFINEMENTS.md`
+
+`HANDOFF.md` is the current resume document. It consolidates the latest design decisions, source-fidelity rules, discarded directions, reference priority, and the lessons learned from the Lesson 1A prototype.
 
 ## Canonical status
 
-**The current Stage 3 design system is the approved canonical style for the Student's Book.**
+**The current Stage 3 design system plus the latest canonical refinements is the approved style for the Student's Book.**
 
-Future design work should extend and refine this system rather than replace its visual philosophy without explicit author approval.
+Future design work should extend and refine this system rather than silently replace its visual philosophy.
 
-The normative design contract is documented in:
+Primary practical references:
 
-`CANONICAL-STYLE.md`
+- `../examples/lesson-1a-canonical-prototype.html` — source-faithful adaptation of an existing lesson into the new style
+- `../examples/stage-3-shape-showcase.html` — primary large-scale visual benchmark
+- `../examples/stage-2-showcase.html` — supporting photography/overlay benchmark
 
-Primary visual reference:
+## Core design direction
 
-`../examples/stage-3-shape-showcase.html`
+Horizons should look **art-directed for print**, not assembled from generic web UI.
 
-Supporting media/overlay reference:
-
-`../examples/stage-2-showcase.html`
-
-## Design principle
-
-Horizons should look **art-directed for print**, not assembled from generic UI components.
-
-The system is not a transcription of the legacy Word/PDF book and is not a copy of any external coursebook reference. References may inform broad editorial ideas such as hierarchy, pacing, skill labels, photography, full-page reading features and activity density; Horizons must interpret those ideas independently.
-
-## Editorial direction
+The approved language includes:
 
 - warm off-white A4 paper
 - mostly neutral black/gray typography
-- **one dominant unit color per unit/page**
-- typography and photography provide most of the hierarchy
-- straight edges, thin rules and open white space are the default
-- noticeable rounding is reserved mainly for simulated real-world interfaces
+- one dominant unit color per normal page
+- substantial white space
+- large raster photography and intentional cropping
+- oversized typography when useful
+- simple large exercise numerals
+- straight edges and thin editorial rules by default
+- large CSS shapes used structurally
+- controlled image/text overlap
+- full-page and near-full-page editorial readings
+- article, poster, collage, quiz, process and spatial compositions when appropriate
+- rounded/shadowed UI mainly for simulated real-world interfaces
 - almost no decorative gradients
-- no rainbow accent system on normal lesson pages
-- no card around every activity
-- no pill around every label
-- large raster photography is preferred over decorative surfaces
-- exercise numbers are simple large colored numerals
-- grammar/pronunciation use restrained flat focus areas
-- page compositions may be bespoke when the lesson content benefits from it
-- full-page and near-full-page text features are encouraged when a reading deserves visual prominence
-- large CSS shapes may structure a feature: circles, cut corners, color fields, folds, bands and speech bubbles
-- system-native typography
-- semantic HTML5
-- CSS Grid/Flexbox for composition
-- no vector illustrations; SVG remains limited to functional icons
+- very limited generic cards and pills
+- no decorative vector illustration; SVG only for functional icons
 
-## Shape-led editorial system
+## Controlled repetition
 
-`editorial-layouts.css` extends the basic component library with large-scale composition primitives. These are intentionally closer to magazine/coursebook art direction than to dashboard UI.
+Repeated items inside one exercise should usually share one silhouette and one structural treatment.
 
-Available patterns include:
+Create variety through:
 
-- `.hz-feature-sheet` — large interview/profile reading with geometric background shapes, substantial text and image/pull-quote areas
-- `.hz-article-panel` — strong full-width masthead, overlapping hero image and multi-column article text
-- `.hz-week-stack` / `.hz-week-panel` — vertically labeled story/week sections with text and image crops
-- `.hz-question-cloud` / `.hz-question-bubble` — interview or brainstorming prompts in controlled speech-bubble geometry
-- `.hz-quiz-panel` — poster-like questionnaire with angled side field and anchored photograph
-- `.hz-poster-stage` — large color-led feature with oversized typography and photo anchoring
-- `.hz-process-strip` — horizontal steps/process/timeline treatment
-- `.hz-shape-note` — folded-corner editorial note
-- `.hz-text-columns--2/--3` — long-reading text columns
+- color
+- crop
+- opacity
+- scale
+- typography
+- hierarchy
 
-These patterns are loaded automatically by the A4 shell and are part of the approved book language.
+Do not give every item a different shape simply to make the page look creative.
 
-## Shape rules
+Canonical examples:
 
-1. Shapes must support hierarchy, reading flow, grouping or task meaning.
-2. Prefer one or two large structural shapes over many small decorative elements.
-3. Do not use shapes merely to fill empty space.
-4. Text can become a visual object through scale, placement and contrast.
-5. A full-page reading may use one strong background field, one or two images and a multi-column text structure.
-6. CSS geometry is permitted; vector illustration remains prohibited.
-7. Photo crops and real raster imagery should still carry much of the visual character.
+- greeting images in the same set use circles
+- number markers use identical circles with different vibrant backgrounds and white digits
+- repeated information exchanges share one panel geometry
+- alphabet pairs use stronger uppercase color and faded lowercase color
+
+See `STYLE-REFINEMENTS.md` and `canonical-refinements.css`.
+
+## Lesson tab hierarchy
+
+Everything inside `.hz-lesson-tab` is centered.
+
+`.hz-lesson-tab__id` is the dominant and largest element. `.hz-lesson-tab__label` is secondary.
+
+This behavior is implemented globally in `canonical-refinements.css`.
 
 ## Non-negotiable exercise layout
 
-**Numbered exercises never form page columns.**
+**All numbered exercises run vertically in one sequence and stay in source numerical order.**
 
-All numbered exercises run vertically in one `.hz-exercises` / `.hz-exercise-flow` lane and remain in numerical order.
+Sibling numbered exercises must never be placed side by side.
 
-Two- and three-column layouts are allowed only **inside an exercise body** for questions, choices, images, tables, reviews, profiles, vocabulary or other activity content.
+Two- and three-column layouts are allowed only inside a single exercise body for questions, choices, vocabulary, images, profiles, tables, reading columns, forms, collages, quizzes, timelines and similar internal content.
 
-A single exercise may therefore contain a full-page article, a poster, a question cloud or a complex internal composition; the next numbered exercise must still start below it.
+## Source-fidelity rule
+
+When adapting an existing frozen Student's Book page into the new visual style, do not rewrite the educational content unless explicitly asked.
+
+Preserve source:
+
+- wording
+- questions
+- instructions
+- options
+- numbering, including unusual gaps
+- track references
+- dialogues/readings
+- grammar examples
+- vocabulary
+- form labels
+- cross-references
+- Extra Practice prompts
+
+Visual redesign is allowed; silent content editing is not.
+
+## Frozen-source boundary
+
+The existing source in `Horizons A1/` remains immutable unless explicitly authorized.
+
+Do not overwrite the legacy Student's Book PDF/DOCX, syllabus, or pre-existing pages as part of normal new-format work.
+
+New prototypes and production work belong in `Horizons/`.
+
+## Shape-led editorial system
+
+`editorial-layouts.css` provides approved large-scale patterns including:
+
+- `.hz-feature-sheet`
+- `.hz-article-panel`
+- `.hz-week-stack` / `.hz-week-panel`
+- `.hz-question-cloud` / `.hz-question-bubble`
+- `.hz-quiz-panel`
+- `.hz-poster-stage`
+- `.hz-process-strip`
+- `.hz-shape-note`
+- `.hz-text-columns--2/--3`
+
+Shapes must support hierarchy, grouping, reading flow, task meaning or image emphasis. Prefer one or two strong structural shapes over many unrelated small shapes.
+
+## Photography and placeholders
+
+Photography should carry substantial visual weight in final production.
+
+During prototype work, placeholders are acceptable, but their geometry should represent the intended final crop and composition. A placeholder should communicate whether the final asset is portrait, landscape, wide, detail, hero, overlay-safe, or part of a collage.
+
+Use free licensed raster photography or generated raster imagery where needed. Follow `asset-policy.md`.
 
 ## Human-art-direction rules
 
-To avoid templated or AI-like sameness:
-
-1. Do not wrap content in a card unless the content genuinely needs a container.
-2. Do not use a decorative label when typography alone communicates the hierarchy.
-3. Do not force every lesson to use the same composition; keep the exercise mechanics consistent while varying editorial arrangement.
-4. Prefer one strong photograph over several decorative boxes.
-5. Preserve deliberate white space rather than filling every available gap.
-6. Use unit color as an editorial signal, not as continuous decoration.
-7. Keep shadows for simulated interfaces only; ordinary book content should be flat.
-8. Bespoke CSS is acceptable for distinctive lesson features and should not automatically become a global component.
-9. Use large text, structural shapes and photography to create page identity instead of accumulating micro-components.
-10. Do not replace this Stage 3 philosophy with a new system unless the author explicitly requests a redesign.
-
-## Unit colors
-
-`tokens.css` provides eight suggested unit identities through `.hz-unit-1` to `.hz-unit-8`. A normal page should inherit one of these and avoid mixing several unit colors.
+1. Do not wrap ordinary content in a card by default.
+2. Do not use a pill just to label content.
+3. Do not fill empty space simply because it exists.
+4. Do not mix several accent colors on a normal page without a pedagogical reason.
+5. Do not force every lesson into the same composition.
+6. Do not create novelty by changing every repeated item's shape.
+7. Do use photography, typography, scale, overlap and structural shapes for variety.
+8. Do preserve consistent exercise mechanics.
+9. Do allow bespoke page CSS when the content benefits from it.
+10. Do not revive discarded Stage 4, legacy-compatibility, rainbow/dashboard or card-heavy directions without explicit approval.
 
 ## Files
 
-- `CANONICAL-STYLE.md` — normative visual direction for all future Student's Book work
-- `tokens.css` — neutral palette, unit colors, typography, spacing and geometry
-- `components.css` — lesson identity, one-column exercise lane, internal question grids, focus areas, audio, UI recreations, tables, writing mechanics and photography overlays
-- `editorial-layouts.css` — full-page text features, large shape compositions, quiz/poster layouts, question clouds and process strips
-- `asset-policy.md` — visual asset rules
+- `HANDOFF.md` — current resume document for future chats
+- `CANONICAL-STYLE.md` — normative visual philosophy
+- `STYLE-REFINEMENTS.md` — controlled repetition and micro-variety rules
+- `tokens.css` — palette, unit colors, typography, spacing and geometry
+- `components.css` — core lesson/exercise mechanics, media and focus areas
+- `editorial-layouts.css` — large-scale article/shape compositions
+- `canonical-refinements.css` — latest canonical behavior refinements
 - `component-contracts.md` — semantic HTML/component expectations
+- `asset-policy.md` — visual asset rules
 
-## Locked project rules
+## Locked production rules
 
 - A4
-- HTML/CSS is the definitive master
+- HTML/CSS definitive master
 - two pages per lesson
+- Lesson A → B → C → D → Unit Review
+- Vocabulary Practice and Grammar Reference at the back
 - American English
-- syllabus is immutable unless explicitly changed by the author
-- pre-existing Student's Book pages are immutable unless explicitly changed by the author
+- syllabus immutable unless explicitly changed
+- pre-existing Student's Book pages immutable unless explicitly changed
 - free image assets only
 - raster photography/generated raster imagery for scenes
 - no vector illustrations
-- Stage 3 is the canonical visual baseline until explicitly superseded by the author
+- current Stage 3 direction + refinements is canonical until explicitly superseded
 
 The shell and examples live in `../shell/` and `../examples/`.
