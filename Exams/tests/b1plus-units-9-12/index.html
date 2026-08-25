@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Brighton B1+ Units 9–12 Test</title>
+  <link rel="stylesheet" href="../test-player.css" />
+</head>
+<body>
+  <section id="startScreen" class="test-start">
+    <div class="start-card">
+      <div class="start-logo-row"><img src="../../assets/brighton-logo.png" alt="Brighton English School" /></div>
+      <div class="brand-strip" aria-hidden="true"><span>☆</span><span>♡</span><span>✦</span><span>○</span><span>✶</span></div>
+      <div class="start-grid">
+        <div>
+          <p id="startEyebrow" class="eyebrow">B1+ · Units 9–12</p>
+          <h1 id="startTitle">B1+ Units 9–12 Test</h1>
+          <h2 id="startSubtitle">Multiple Choice</h2>
+          <p id="startDescription" class="start-copy"></p>
+          <div class="test-meta">
+            <span id="metaPages">4 pages</span>
+            <span id="metaQuestions">80 questions</span>
+            <span id="metaType">Multiple choice</span>
+          </div>
+        </div>
+        <form id="studentForm" class="student-form">
+          <label for="studentName">Full name</label>
+          <input id="studentName" name="studentName" type="text" autocomplete="name" required placeholder="Student full name" />
+          <label for="classId">Class ID</label>
+          <input id="classId" name="classId" type="text" required placeholder="Example: A-12" />
+          <button type="submit" class="primary-btn">Start test</button>
+          <button type="button" id="continueSavedBtn" class="secondary-btn hidden">Continue saved test</button>
+          <a class="secondary-btn" href="../../tests.html">Back to Tests</a>
+        </form>
+      </div>
+    </div>
+  </section>
+
+  <section id="testShell" class="test-shell hidden" aria-live="polite">
+    <header class="test-header">
+      <a class="test-brand" href="../../tests.html" aria-label="Back to Brighton Tests">
+        <img src="../../assets/brighton-logo.png" alt="Brighton English School" />
+      </a>
+      <div class="student-chip">
+        <strong id="headerStudent">Student</strong>
+        <span id="headerClass">Class ID</span>
+      </div>
+      <div class="header-progress">
+        <strong><span id="answeredCount">0</span> / <span id="totalCount">80</span> answered</strong>
+        <div class="progress-track" aria-hidden="true"><div id="progressBar" class="progress-bar"></div></div>
+      </div>
+    </header>
+
+    <main id="mainContent" class="test-main"></main>
+
+    <footer class="test-bottom-nav">
+      <div id="pageTabs" class="page-tabs" aria-label="Test pages"></div>
+      <div class="nav-actions">
+        <button id="resetBtn" class="nav-btn" type="button">Reset</button>
+        <button id="previousPageBtn" class="nav-btn" type="button">← Previous</button>
+        <button id="nextPageBtn" class="nav-btn" type="button">Next page →</button>
+      </div>
+    </footer>
+  </section>
+
+  <script src="../../app-core.js"></script>
+  <script src="../../config.js"></script>
+  <script src="test-data.js"></script>
+  <script src="../test-player.js"></script>
+</body>
+</html>
