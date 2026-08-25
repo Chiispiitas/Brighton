@@ -31,6 +31,39 @@
 }
 
 /* -------------------------------------------------------------------------
+   Permanent decoration rule
+   -------------------------------------------------------------------------
+
+   Horizons does not use translucent oversized words, letters, punctuation or
+   instructional phrases as background decoration behind lesson content.
+
+   Page-level creativity should come from photography, crop, whitespace,
+   geometry, rules, scale and functional typography instead. Functional text
+   such as headings, labels, continuation markers and real interface text is
+   unaffected.
+
+   The selectors below neutralize the textual pseudo-elements already present
+   in the current Unit 1 prototypes. !important is deliberate: these lessons
+   contain page-local prototype CSS loaded after this stylesheet. */
+
+.l1b-page .l1b-occupation-stage::before,
+.l1b-page .l1b-aan::before,
+.l1b-page .l1b-aan::after,
+.l1b-page .l1b-contractions::after,
+.l1c-page .l1c-country-stage::before,
+.l1c-page .l1c-world-stage::before,
+.l1c-page .l1c-adjective-field::after,
+.l1c-page .l1c-pair-stage::before,
+.l1d-page .l1d-checkin-stage::before,
+.l1d-page .l1d-capitalization::after,
+.l1d-page .l1d-business-stage::before,
+.l1d-page .l1d-roleplay::before,
+.l1d-page .l1d-live-form::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* -------------------------------------------------------------------------
    Lesson 1A prototype refinements
    These are intentionally scoped to the prototype until its patterns are
    promoted into reusable components by a later production pass.
