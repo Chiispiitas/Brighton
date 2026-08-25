@@ -10,7 +10,6 @@ This folder is intentionally separate from the existing `Horizons A1/` directory
 - Stage 2: fixed A4 shell and print CSS established
 - Stage 2 media showcase: `examples/stage-2-showcase.html`
 - Stage 3 shape-led editorial showcase: `examples/stage-3-shape-showcase.html`
-- Stage 3 internal legacy structure reproduction: `examples/stage-3-legacy-structure-lab.html`
 
 ## Current design direction
 
@@ -40,19 +39,6 @@ The visual goal is a professionally art-directed print coursebook rather than a 
 
 Reference screenshots may inspire only broad editorial principles such as hierarchy, activity rhythm, information density, photography scale, skill signaling and the use of large feature texts. Their specific colors, shapes, page chrome, typography and compositions must not be copied.
 
-## Stage 3 internal compatibility principle
-
-The production design remains independent, but the HTML system must still be able to reproduce representative structures already established in the frozen Student's Book.
-
-For that reason, `design-system/legacy-compat.css` provides an **internal-only, namespaced compatibility layer** for source-derived motifs such as the original magenta/navy lesson identity, angled lesson tab, triangular exercise markers, audio badge, `NEW WORDS`, Grammar/Pronunciation focus boxes, cross-references, Extra Practice, circular image vocabulary, pale reading panels, and reference/practice structures.
-
-That stylesheet is not imported by the normal A4 shell. It exists only to prove capability and preserve structural knowledge; it does not roll the production design back toward the old book.
-
-See:
-
-- `design-system/legacy-compatibility.md`
-- `examples/stage-3-legacy-structure-lab.html`
-
 ## Non-negotiable exercise layout
 
 **All numbered exercises appear in one vertical sequence and remain in numerical order.**
@@ -61,7 +47,7 @@ Exercises may not be placed side by side.
 
 Inside an individual exercise, questions or activity content may use two or three columns. This includes question sets, answer options, vocabulary, images, reviews, tables, profiles, photo/text layouts, full-page article features, quiz panels and shape-led compositions.
 
-Use the `.hz-exercises` lane and the internal `.hz-question-grid-*`, `.hz-content-grid-*` and `.hz-inset-grid-*` utilities in production pages. The legacy compatibility lab enforces the same learning-flow rule with its own namespaced classes.
+Use the `.hz-exercises` lane and the internal `.hz-question-grid-*`, `.hz-content-grid-*` and `.hz-inset-grid-*` utilities.
 
 ## Anti-template rules
 
@@ -88,7 +74,7 @@ Use the `.hz-exercises` lane and the internal `.hz-question-grid-*`, `.hz-conten
 - process/timeline strips
 - folded-corner notes
 
-The Stage 3 production showcase demonstrates these patterns using existing locked syllabus lesson titles and contexts.
+The Stage 3 showcase demonstrates these patterns using existing locked syllabus lesson titles and contexts.
 
 ## Locked production rules
 
@@ -119,8 +105,6 @@ Horizons/
 │   ├── tokens.css
 │   ├── components.css
 │   ├── editorial-layouts.css
-│   ├── legacy-compat.css
-│   ├── legacy-compatibility.md
 │   ├── component-contracts.md
 │   └── asset-policy.md
 ├── shell/
@@ -131,7 +115,6 @@ Horizons/
 └── examples/
     ├── stage-2-showcase.html
     ├── stage-3-shape-showcase.html
-    ├── stage-3-legacy-structure-lab.html
     └── README.md
 ```
 
