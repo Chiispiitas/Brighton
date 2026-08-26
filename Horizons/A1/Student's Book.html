@@ -4492,7 +4492,6 @@ body {
     </svg>
   </button>
 
-  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/jspdf@4.2.1/dist/jspdf.umd.min.js"></script>
   <script>
 (function pdfRuntime() {
@@ -4503,6 +4502,7 @@ body {
   const A4_HEIGHT_MM = 297;
   const EXPORT_SCALE = 2.35;
   const JPEG_QUALITY = 0.97;
+  const assetDataCache = new Map();
 
   function setExportBusy(isBusy) {
     pdfButton.disabled = isBusy;
@@ -4520,30 +4520,109 @@ body {
     return new URL(trimmed, RAW_A1_ROOT).href;
   }
 
-  function prepareClone(clonedDoc) {
-    clonedDoc.querySelectorAll("style").forEach((style) => {
-      style.textContent = style.textContent.replace(
-        /url\(\s*(["']?)(.*?)\1\s*\)/gi,
-        (match, quote, value) => {
-          const remote = remoteAssetUrl(value);
-          return remote === value ? match : `url("${remote}")`;
-        }
-      );
+  function blobToDataUrl(blob) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.addEventListener("load", () => resolve(reader.result), { once: true });
+      reader.addEventListener("error", () => reject(reader.error || new Error("Could not read export asset.")), { once: true });
+      reader.readAsDataURL(blob);
     });
+  }
 
-    clonedDoc.querySelectorAll("img[src]").forEach((image) => {
-      const src = image.getAttribute("src");
-      if (src) image.src = remoteAssetUrl(src);
-    });
+  async function assetAsDataUrl(value) {
+    const remote = remoteAssetUrl(value);
+    if (!remote || /^(?:data:|blob:|#)/i.test(remote)) return remote;
+    if (assetDataCache.has(remote)) return assetDataCache.get(remote);
 
-    const cleanup = clonedDoc.createElement("style");
-    cleanup.textContent = `
-      html, body {
-        margin: 0 !important;
-        padding: 0 !important;
-        background: #fff !important;
+    const pending = fetch(remote, { cache: "force-cache", mode: "cors" })
+      .then((response) => {
+        if (!response.ok) throw new Error(`Could not load export asset: ${remote}`);
+        return response.blob();
+      })
+      .then(blobToDataUrl);
+
+    assetDataCache.set(remote, pending);
+    return pending;
+  }
+
+  async function inlineCssAssets(css) {
+    const pattern = /url\(\s*(["']?)(.*?)\1\s*\)/gi;
+    const matches = [...css.matchAll(pattern)];
+    const replacements = new Map();
+
+    for (const match of matches) {
+      const rawValue = (match[2] || "").trim();
+      if (!rawValue || /^(?:data:|blob:|#)/i.test(rawValue)) continue;
+      if (!replacements.has(match[0])) {
+        const dataUrl = await assetAsDataUrl(rawValue);
+        replacements.set(match[0], `url("${dataUrl}")`);
       }
-      .hz-page {
+    }
+
+    let output = css;
+    for (const [original, replacement] of replacements) {
+      output = output.split(original).join(replacement);
+    }
+    return output;
+  }
+
+  async function collectExportCss() {
+    const css = [...document.querySelectorAll("style")]
+      .map((style) => style.textContent || "")
+      .join("\n");
+    return inlineCssAssets(css);
+  }
+
+  async function clonePageForExport(page) {
+    const clone = page.cloneNode(true);
+
+    for (const image of clone.querySelectorAll("img[src]")) {
+      const src = image.getAttribute("src");
+      if (src) image.setAttribute("src", await assetAsDataUrl(src));
+    }
+
+    for (const source of clone.querySelectorAll("source[src], source[srcset]")) {
+      const src = source.getAttribute("src");
+      if (src) source.setAttribute("src", await assetAsDataUrl(src));
+
+      const srcset = source.getAttribute("srcset");
+      if (srcset && !srcset.includes(",")) {
+        source.setAttribute("srcset", await assetAsDataUrl(srcset.trim()));
+      }
+    }
+
+    for (const element of clone.querySelectorAll("[style]")) {
+      const style = element.getAttribute("style");
+      if (style && style.includes("url(")) {
+        element.setAttribute("style", await inlineCssAssets(style));
+      }
+    }
+
+    clone.style.margin = "0";
+    clone.style.boxShadow = "none";
+    return clone;
+  }
+
+  function escapeCdata(value) {
+    return value.replaceAll("]]>", "]]]]><![CDATA[>");
+  }
+
+  async function renderPage(page, exportCss) {
+    const rect = page.getBoundingClientRect();
+    const width = Math.max(1, Math.round(rect.width));
+    const height = Math.max(1, Math.round(rect.height));
+    const clone = await clonePageForExport(page);
+    const pageMarkup = new XMLSerializer().serializeToString(clone);
+    const cleanupCss = `
+      .hz-export-root {
+        width: ${width}px;
+        height: ${height}px;
+        margin: 0;
+        padding: 0;
+        overflow: hidden;
+        background: #fff;
+      }
+      .hz-export-root > .hz-page {
         margin: 0 !important;
         box-shadow: none !important;
       }
@@ -4551,30 +4630,58 @@ body {
         display: none !important;
       }
     `;
-    clonedDoc.head.appendChild(cleanup);
-  }
+    const svg = `
+      <svg xmlns="http://www.w3.org/2000/svg"
+           width="${width}"
+           height="${height}"
+           viewBox="0 0 ${width} ${height}">
+        <foreignObject x="0" y="0" width="100%" height="100%">
+          <div xmlns="http://www.w3.org/1999/xhtml" class="hz-book hz-export-root">
+            <style><![CDATA[${escapeCdata(exportCss + cleanupCss)}]]></style>
+            ${pageMarkup}
+          </div>
+        </foreignObject>
+      </svg>
+    `;
 
-  async function renderPage(page) {
-    return window.html2canvas(page, {
-      scale: EXPORT_SCALE,
-      useCORS: true,
-      allowTaint: false,
-      backgroundColor: "#ffffff",
-      logging: false,
-      imageTimeout: 30000,
-      removeContainer: true,
-      onclone: prepareClone
-    });
+    const svgBlob = new Blob([svg], { type: "image/svg+xml;charset=utf-8" });
+    const svgUrl = URL.createObjectURL(svgBlob);
+
+    try {
+      const image = new Image();
+      const loaded = new Promise((resolve, reject) => {
+        image.addEventListener("load", resolve, { once: true });
+        image.addEventListener("error", () => reject(new Error("Could not rasterize a book page.")), { once: true });
+      });
+      image.src = svgUrl;
+      await loaded;
+
+      const canvas = document.createElement("canvas");
+      canvas.width = Math.max(1, Math.round(width * EXPORT_SCALE));
+      canvas.height = Math.max(1, Math.round(height * EXPORT_SCALE));
+
+      const context = canvas.getContext("2d", { alpha: false });
+      if (!context) throw new Error("Canvas rendering is not available.");
+
+      context.fillStyle = "#ffffff";
+      context.fillRect(0, 0, canvas.width, canvas.height);
+      context.setTransform(EXPORT_SCALE, 0, 0, EXPORT_SCALE, 0, 0);
+      context.drawImage(image, 0, 0, width, height);
+      return canvas;
+    } finally {
+      URL.revokeObjectURL(svgUrl);
+    }
   }
 
   async function exportPdf() {
-    if (!window.html2canvas || !window.jspdf || !window.jspdf.jsPDF) {
-      throw new Error("The PDF libraries could not be loaded. Check your internet connection and try again.");
+    if (!window.jspdf || !window.jspdf.jsPDF) {
+      throw new Error("The PDF library could not be loaded. Check your internet connection and try again.");
     }
 
     const pages = [...book.querySelectorAll("article.hz-page")];
     if (!pages.length) throw new Error("No book pages are available to export.");
 
+    const exportCss = await collectExportCss();
     const { jsPDF } = window.jspdf;
     const pdf = new jsPDF({
       orientation: "portrait",
@@ -4592,7 +4699,7 @@ body {
     });
 
     for (let index = 0; index < pages.length; index += 1) {
-      const canvas = await renderPage(pages[index]);
+      const canvas = await renderPage(pages[index], exportCss);
       const imageData = canvas.toDataURL("image/jpeg", JPEG_QUALITY);
 
       if (index > 0) pdf.addPage("a4", "portrait");
