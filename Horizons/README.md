@@ -21,7 +21,7 @@ For current A1 lesson production, work in:
 
 Open `A1/Student's Book.html` directly in a browser to view the assembled book. It is a **compiled standalone HTML book**: lesson pages and required CSS are already embedded, so viewing it through `file://` does not use lesson iframes, sibling-file fetches, or cross-frame DOM access.
 
-Its download button does **not** use browser Print/Save as PDF. It builds a PDF with `html2canvas` + `jsPDF`, renders each `.hz-page` independently at high resolution, and inserts each render as one exact A4 PDF page. This page-by-page boundary must be preserved as the book grows; do not replace it with one long screenshot or automatic page slicing.
+Its download button does **not** use browser Print/Save as PDF or `html2canvas`. The exporter uses the browser's own SVG/`foreignObject` renderer to rasterize each compiled `.hz-page` independently at high resolution, then inserts each render into `jsPDF` as one exact A4 PDF page. Export assets are inlined as data URLs before rasterization. This page-by-page boundary must be preserved as the book grows; do not replace it with one long screenshot, automatic page slicing, or an iframe-based DOM clone.
 
 ## Structure
 
