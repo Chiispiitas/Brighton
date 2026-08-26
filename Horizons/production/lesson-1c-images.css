@@ -59,12 +59,15 @@
 
 /* Exercise 3 — travel feature. The supplied background establishes the
    editorial atmosphere while the three city photographs remain the focal
-   evidence students connect to the blog descriptions. */
+   evidence students connect to the blog descriptions. The map artwork itself
+   sat visually too high at a 50% crop, so bias the background upward within
+   the source image (42% focal position) to place the visible map lower in the
+   printed stage. */
 .l1c-page .l1c-world-stage {
   background-image:
     linear-gradient(rgb(255 255 255 / 34%), rgb(255 255 255 / 34%)),
     url("../Images/1C/Around%20the%20World%20BG.png") !important;
-  background-position: center center !important;
+  background-position: center 42% !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
 }
@@ -88,6 +91,14 @@
 .l1c-page .l1c-pair-photo .hz-photo-placeholder {
   background-image: url("../Images/1C/Pairwork.png") !important;
   background-position: center center !important;
+}
+
+/* Page 10 — Exercise 4 intentionally occupies the narrow space beside the
+   continuation tab. Start Exercise 5 slightly lower so the main activity flow
+   begins level with the continuation marker's bottom edge; because exercises
+   are in normal flex flow, 6–8 move with it automatically. */
+.l1c-page--2 .hz-exercises > .hz-exercise:nth-of-type(2) {
+  margin-top: 2mm !important;
 }
 
 /* Exercise 8 intentionally reuses the three cities from Exercise 3 as its
