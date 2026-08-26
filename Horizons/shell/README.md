@@ -8,7 +8,11 @@ Each `<article class="hz-page">` is exactly **210 × 297 mm** and becomes one pr
 
 The shell provides the page frame, margins, footer, review furniture, media-frame helpers and QA overlay. Reusable lesson components come from `../design-system/components.css`, which imports `tokens.css`.
 
-Lesson-specific CSS is loaded from adjacent files in `../examples/`.
+## CSS loading
+
+`a4-shell.css` imports the four existing Unit 1 local stylesheets only for compatibility with those current masters.
+
+**Do not add Unit 2 or later lesson-local stylesheets to the shell.** New lesson HTML links its own adjacent `lesson-*-local.css` directly. Reusable behavior belongs in `components.css`; one-off lesson composition remains local.
 
 ## Exercise flow
 
