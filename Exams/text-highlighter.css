@@ -3,6 +3,8 @@
      Made by: David Santana
 ============================================== */
 
+@import url("./exam-mobile.css");
+
 .student-highlight {
   background: linear-gradient(180deg, rgba(255, 189, 89, 0.48), rgba(255, 145, 77, 0.58));
   border-radius: 5px;
