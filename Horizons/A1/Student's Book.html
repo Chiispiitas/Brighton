@@ -135,11 +135,13 @@
         ? window.HORIZONS_A1_LESSONS
         : [];
 
-      const RAW_LESSONS_ROOT = "https://raw.githubusercontent.com/Chiispiitas/Brighton/main/Horizons/A1/Lessons/";
+      const RAW_REPO_ROOT = "https://raw.githubusercontent.com/Chiispiitas/Brighton/main/";
+      const RAW_LESSONS_ROOT = `${RAW_REPO_ROOT}Horizons/A1/Lessons/`;
       const A4_WIDTH_MM = 210;
       const A4_HEIGHT_MM = 297;
       const EXPORT_SCALE = 2.35;
       const JPEG_QUALITY = 0.97;
+      const stylesheetCache = new Map();
 
       lessons.forEach((filename) => {
         const frame = document.createElement("iframe");
@@ -160,16 +162,86 @@
         pdfButton.title = isBusy ? "Building PDF…" : "Download PDF";
       }
 
-      async function fetchLessonForExport(filename) {
-        const url = RAW_LESSONS_ROOT + encodeURIComponent(filename);
+      async function fetchText(url, label) {
         const response = await fetch(url, { cache: "no-store" });
         if (!response.ok) {
-          throw new Error(`Could not load ${filename} for PDF export.`);
+          throw new Error(`Could not load ${label || url}.`);
+        }
+        return response.text();
+      }
+
+      function rewriteCssAssetUrls(css, stylesheetUrl) {
+        return css.replace(/url\(\s*(["']?)(.*?)\1\s*\)/gi, (match, quote, rawValue) => {
+          const value = rawValue.trim();
+          if (!value || /^(?:data:|blob:|https?:|#)/i.test(value)) return match;
+
+          try {
+            return `url("${new URL(value, stylesheetUrl).href}")`;
+          } catch (error) {
+            console.warn("Could not resolve CSS asset URL", value, stylesheetUrl, error);
+            return match;
+          }
+        });
+      }
+
+      async function loadStylesheetInline(stylesheetUrl, stack = []) {
+        if (stylesheetCache.has(stylesheetUrl)) {
+          return stylesheetCache.get(stylesheetUrl);
         }
 
-        const html = await response.text();
-        const base = `<base href="${RAW_LESSONS_ROOT}">`;
-        return html.replace(/<head(\s[^>]*)?>/i, (match) => `${match}\n  ${base}`);
+        if (stack.includes(stylesheetUrl)) {
+          throw new Error(`Circular CSS import detected at ${stylesheetUrl}.`);
+        }
+
+        const nextStack = [...stack, stylesheetUrl];
+        let css = await fetchText(stylesheetUrl, stylesheetUrl.split("/").pop());
+        const importPattern = /@import\s+(?:url\(\s*)?["']([^"']+)["']\s*\)?\s*([^;]*);/gi;
+        const imports = [...css.matchAll(importPattern)];
+
+        for (const match of imports) {
+          const importUrl = new URL(match[1], stylesheetUrl).href;
+          let importedCss = await loadStylesheetInline(importUrl, nextStack);
+          const mediaQuery = (match[2] || "").trim();
+
+          if (mediaQuery) {
+            importedCss = `@media ${mediaQuery} {\n${importedCss}\n}`;
+          }
+
+          css = css.replace(match[0], importedCss);
+        }
+
+        css = rewriteCssAssetUrls(css, stylesheetUrl);
+        stylesheetCache.set(stylesheetUrl, css);
+        return css;
+      }
+
+      async function fetchLessonForExport(filename) {
+        const lessonUrl = RAW_LESSONS_ROOT + encodeURIComponent(filename);
+        const html = await fetchText(lessonUrl, filename);
+        const doc = new DOMParser().parseFromString(html, "text/html");
+
+        const base = doc.createElement("base");
+        base.href = lessonUrl;
+        doc.head.prepend(base);
+
+        const stylesheetLinks = [...doc.querySelectorAll('head link[rel="stylesheet"]')];
+        for (const link of stylesheetLinks) {
+          const href = link.getAttribute("href");
+          if (!href) {
+            link.remove();
+            continue;
+          }
+
+          const stylesheetUrl = new URL(href, lessonUrl).href;
+          const style = doc.createElement("style");
+          const media = link.getAttribute("media");
+          if (media) style.media = media;
+          style.dataset.sourceStylesheet = stylesheetUrl;
+          style.textContent = await loadStylesheetInline(stylesheetUrl);
+          link.replaceWith(style);
+        }
+
+        return `<!doctype html>\n${doc.documentElement.outerHTML}`;
       }
 
       async function waitForImages(doc) {
