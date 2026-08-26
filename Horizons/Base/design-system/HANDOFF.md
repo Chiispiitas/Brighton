@@ -44,13 +44,20 @@ For each new lesson:
 5. build on Base components and keep one-off composition in the lesson-local CSS;
 6. link that local stylesheet from the lesson HTML itself;
 7. add only the book-specific assets the task needs;
-8. compare the finished spread with neighboring approved lessons for language load, physical readability and visual weight.
+8. add the new definitive lesson filename to `../../A1/Lessons/manifest.js` so the local `Student's Book.html` includes it;
+9. compare the finished spread with neighboring approved lessons for language load, physical readability and visual weight.
 
 ## CSS loading boundary
 
 `Base/shell/a4-shell.css` imports only shared Base components. It must never import a level- or lesson-specific stylesheet.
 
 Each lesson HTML links its own adjacent local stylesheet. This prevents the shared shell from becoming a hidden override registry and lets future books use the same Base cleanly.
+
+## Local Student's Book boundary
+
+The A1 `Student's Book.html` must work when opened directly through `file://`; do not make it depend on GitHub, a local HTTP server, directory enumeration, `fetch()` of sibling lesson files, or cross-frame DOM access.
+
+Its ordered lesson list lives in `../../A1/Lessons/manifest.js`. Creating a new lesson and updating that manifest are one production action.
 
 ## Repository boundary
 
