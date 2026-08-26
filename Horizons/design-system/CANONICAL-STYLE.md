@@ -93,7 +93,7 @@ When adapting an existing Student’s Book page, preserve the educational source
 
 This includes lesson title/focus, numbering, instructions, questions, options, dialogue/reading wording, grammar examples, vocabulary, capitalization, audio references, form labels, cross-references and Extra Practice wording.
 
-The frozen source remains in `Horizons A1/`. Normal production work belongs in `Horizons/`.
+The frozen source remains in `Horizons A1/`. Active book work belongs in `Horizons/`.
 
 An explicit author correction overrides source fidelity for that requested item; do not keep stale documentation claiming the older source behavior after such a correction.
 
@@ -198,11 +198,15 @@ The visual setting should make that situation feel credible without turning the 
 
 Follow `GUIDED-DISCOVERY.md` for the canonical details.
 
-## 15. Production architecture
+## 15. Repository architecture
 
 Reusable cross-lesson rules belong in `design-system/`.
 
-Unit/lesson-specific fixes, crop tuning, image prompts and asset mappings belong in `../production/`.
+Lesson-specific composition and CSS belong directly in the corresponding lesson HTML under `examples/`, scoped to that lesson. Final raster assets belong in `Images/` and are referenced directly from the lesson that uses them.
+
+Image prompts, generation notes and temporary art direction remain outside the repository unless the author explicitly asks for them to be saved.
+
+Do **not** create a separate `production/`, `staging/`, compatibility-overrides or lesson-overrides folder. A lesson should not require a second hidden stylesheet layer to reveal its intended appearance.
 
 Do not promote a local correction into the design system merely because it was needed once. Do not duplicate an existing rule in a new file; link to the source of truth instead.
 
