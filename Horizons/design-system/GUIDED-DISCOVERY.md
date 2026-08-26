@@ -14,6 +14,10 @@ Students meet meaningful language before receiving a full rule. They inspect vis
 
 Guided Discovery is not unsupported guessing. The context must contain enough evidence for the intended conclusion.
 
+### Content standard
+
+Horizons uses **American English** as its default spelling/usage standard unless authorized source material explicitly requires otherwise. Do not create a recurring fictional cast by default; people and settings should serve the current lesson context. Real public figures should be used only when they are widely recognizable and pedagogically useful.
+
 ## 2. Early-A1 cumulative language rule
 
 In the first units, learner-facing English is deliberately much simpler than natural adult English. A page must not make students learn extra English merely to understand an instruction, discovery question or role-play.
