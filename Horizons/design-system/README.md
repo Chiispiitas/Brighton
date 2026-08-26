@@ -7,7 +7,7 @@ Start with `HANDOFF.md`. It defines authority order and the minimum resume check
 ## Source-of-truth map
 
 - `CANONICAL-STYLE.md` — visual language, lesson architecture, permanent layout principles and theme-neutral art direction.
-- `GUIDED-DISCOVERY.md` — pedagogy and lesson-authoring method.
+- `GUIDED-DISCOVERY.md` — pedagogy, lesson-authoring method, cumulative early-A1 language load and Spanish-bridge rules.
 - `STYLE-REFINEMENTS.md` — specific production refinements and QA rules; newer specific refinements supersede older illustrative examples.
 - `component-contracts.md` — semantic HTML/component contracts.
 - `tokens.css` — palette, type scale, spacing, geometry and A1 legibility floors.
@@ -34,6 +34,9 @@ The detailed wording lives in the source-of-truth files above. At minimum, every
 - numbered exercises stay in one vertical sequence;
 - Guided Discovery drives the learning sequence;
 - existing frozen source content changes only with explicit author approval;
+- **newly authored early-A1 learner language is cumulative: it recycles what Horizons has already taught instead of assuming general A1 vocabulary**;
+- **early units may deliberately use Spanish-parallel, borderline-unnatural but clear English instead of untaught native-like collocations**;
+- instructions do not introduce unnecessary vocabulary; outside the lesson target, new support language should be near zero;
 - student-facing language stays above the A1 print-legibility floors;
 - content redundancy is removed before typography is compressed;
 - repeated visual families use consistent geometry, adequate physical scale and verified centering;
@@ -43,6 +46,8 @@ The detailed wording lives in the source-of-truth files above. At minimum, every
 - shared chrome is changed globally, not patched differently in one lesson.
 
 Horizons may move visually between hospitality, travel, retail, fitness, transport, culture, home life, documentary, workplace, lifestyle and other subject-appropriate worlds. The design system provides continuity without forcing unrelated lessons into the same imagery or mood.
+
+For the first units, continuity also comes from a deliberately narrow language bank. Reuse exact words and sentence frames from previous pages whenever possible. Prefer transparent Spanish cognates and image-supported nouns when one new support word is unavoidable. Do not add vocabulary merely to make instructions sound more natural in English.
 
 ## Architecture rule
 
