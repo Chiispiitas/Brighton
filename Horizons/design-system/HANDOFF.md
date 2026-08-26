@@ -42,8 +42,13 @@ For each new lesson:
 3. design the Guided Discovery sequence before styling;
 4. choose a real/content-led visual world for the lesson;
 5. build on shared components and keep one-off composition in lesson-local CSS;
-6. add only the assets the task needs;
-7. compare the finished spread with neighboring approved lessons for language load, physical readability and visual weight.
+6. link that lesson-local stylesheet from the lesson HTML itself;
+7. add only the assets the task needs;
+8. compare the finished spread with neighboring approved lessons for language load, physical readability and visual weight.
+
+### CSS loading boundary
+
+The shell still imports the four existing Unit 1 local stylesheets as a compatibility measure for those masters. **Do not add Unit 2 or later lesson-local imports to `a4-shell.css`.** New lessons link their own adjacent stylesheet directly. This keeps the shell shared and prevents it from growing into a hidden global override registry.
 
 ## Hard boundaries
 
