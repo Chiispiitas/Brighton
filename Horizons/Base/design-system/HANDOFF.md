@@ -24,12 +24,12 @@ There is no refinements or override CSS layer.
 
 For the current A1 book, compare new work with the approved Unit 1 masters in `../../A1/Lessons/`:
 
-- `lesson-1a-canonical-prototype.html`
-- `lesson-1b-canonical-prototype.html`
-- `lesson-1c-canonical-prototype.html`
-- `lesson-1d-canonical-prototype.html`
+- `1A.html`
+- `1B.html`
+- `1C.html`
+- `1D.html`
 
-Their adjacent `lesson-*-local.css` files contain book/lesson-specific composition, crop tuning and corrections. They are precedents, not templates to copy mechanically.
+Lesson masters use the definitive lesson code as their filenames. Their adjacent `lesson-*-local.css` files contain book/lesson-specific composition, crop tuning and corrections. They are precedents, not templates to copy mechanically.
 
 For **early A1 learner-facing language**, 1A, 1B and the first page of 1C are especially important references for the deliberately narrow, Spanish-transparent register.
 
