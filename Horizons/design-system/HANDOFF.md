@@ -8,14 +8,15 @@ This file is intentionally short. It tells a new work session what to read and w
 
 Read and apply these in order:
 
-1. `CANONICAL-STYLE.md` — normative visual language, lesson architecture and permanent layout rules.
+1. `CANONICAL-STYLE.md` — normative visual language, content-led visual worlds, lesson architecture and permanent layout rules.
 2. `GUIDED-DISCOVERY.md` — normative pedagogy and lesson-authoring method.
 3. `STYLE-REFINEMENTS.md` — newer, more specific production refinements and QA rules. When a specific refinement conflicts with an older illustrative example, the refinement wins.
 4. `component-contracts.md` — semantic HTML/component usage.
-5. `tokens.css`, `components.css`, `editorial-layouts.css`, `canonical-refinements.css`, `guardrails.css` — reusable implementation.
-6. `../production/` — scoped production fixes and asset mappings. These are not design-system rules.
+5. `asset-policy.md` — image sourcing, generation and prompt construction.
+6. `tokens.css`, `components.css`, `editorial-layouts.css`, `canonical-refinements.css`, `guardrails.css` — reusable implementation.
+7. `../production/` — scoped production fixes, image prompts and asset mappings. These are not design-system rules.
 
-Do not copy lesson-specific selectors or image mappings into `design-system/`.
+Do not copy lesson-specific selectors, prompts or image mappings into `design-system/`.
 
 ## Non-negotiable production rules
 
@@ -28,6 +29,8 @@ Do not copy lesson-specific selectors or image mappings into `design-system/`.
 - Lesson D culminates in a believable productive situation with a role, purpose, information exchange and concrete outcome.
 - Normal pages use one dominant unit color; avoid decorative multicolor systems unless a task genuinely requires category distinction.
 - Photography, crop, typography, scale and whitespace create visual energy. Generic cards, pills, decorative gradients and ghosted background words do not.
+- **Horizons has no default educational/school visual theme.** Image art direction follows the actual world of the lesson; book consistency comes from the design system rather than repeated subject matter.
+- Do not add classroom, notebook, pencil, blackboard or other school-coded imagery merely because the asset will appear in a coursebook.
 - Repeated items in one visual family share geometry and alignment.
 - Student-facing text never gets shrunk below the A1 legibility floors in `tokens.css` merely to make a page fit.
 - Remove redundant content before reducing type or squeezing spacing.
@@ -46,6 +49,8 @@ When an exercise contains a repeated family of equal-status images:
 - after changing image size or column count, re-check centering and crop as a family.
 
 A repeated media grid that appears shifted, undersized or visually weaker than neighboring lesson imagery is a layout defect.
+
+Shared crop geometry does not require every image in a family to use the same location or thematic atmosphere. If the family represents different businesses, places or contexts, let those differences remain visible.
 
 ## Current production structure
 
@@ -67,12 +72,14 @@ Horizons/design-system/
 Horizons/production/
   unit-1-overrides.css
   lesson-1b-images.css
+  lesson-1c-images.css
+  lesson-1d-image-prompts.md
 ```
 
-`design-system/` contains reusable rules only. `production/` contains temporary/scoped corrections and asset bindings that should not become global design doctrine.
+`design-system/` contains reusable rules only. `production/` contains temporary/scoped corrections, prompt sheets and asset bindings that should not become global design doctrine.
 
 ## Resume checklist
 
-Before approving a spread, verify: source fidelity, exercise order, Guided Discovery flow, readable physical type, content economy, repeated-family alignment, consistent shared chrome, sufficient whitespace, functional real-world artifacts, and visual parity with neighboring lessons.
+Before approving a spread, verify: source fidelity, exercise order, Guided Discovery flow, readable physical type, content economy, repeated-family alignment, consistent shared chrome, sufficient whitespace, functional real-world artifacts, **credible content-led imagery**, and visual parity with neighboring lessons.
 
 If a layout problem can be solved by recomposition, cropping, removing redundancy or using an existing reusable helper, do that before adding another exception rule.
