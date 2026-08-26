@@ -53,6 +53,16 @@
   --hz-fs-lesson-title: 31pt;
   --hz-fs-lesson-id: 13pt;
 
+  /* A1 print-legibility floors.
+     These are guardrails, not targets to shrink toward. Student-facing text
+     should normally be larger; these values define the smallest acceptable
+     physical type for the specified role on an A4 printed page. */
+  --hz-fs-student-min: 7.75pt;
+  --hz-fs-dialogue-min: 8pt;
+  --hz-fs-task-min: 8pt;
+  --hz-fs-interface-min: 7pt;
+  --hz-fs-micro-min: 6.5pt;
+
   --hz-fw-regular: 400;
   --hz-fw-medium: 520;
   --hz-fw-semibold: 620;
