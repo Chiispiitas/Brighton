@@ -1,0 +1,88 @@
+/* ==============================================
+     Brighton Digital Exams — Final Mobile Edge Cases
+     Loaded after the shared base mobile layer
+============================================== */
+
+@media (max-width: 900px) {
+  /* Any desktop split panel must become natural-height content on mobile. */
+  .split-grid {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .split-column,
+  .part-seven .split-column,
+  .part-seven .part-seven-questions {
+    height: auto !important;
+    max-height: none !important;
+    overflow: visible !important;
+  }
+
+  .visual-option-card,
+  .matching-row,
+  .matching-people-panel,
+  .matching-options-panel,
+  .listening-gap-card,
+  .audio-gate-card {
+    min-width: 0;
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 760px) {
+  /* B1+/B2 listening lines used nowrap on desktop and could push past 100vw. */
+  .listening-gap-line,
+  .speakers-club-card .listening-gap-line,
+  .sunshine-card .listening-gap-line {
+    flex-wrap: wrap !important;
+    max-width: 100%;
+  }
+
+  .speakers-club-card .listening-gap-line {
+    justify-content: flex-start !important;
+  }
+
+  .listening-input,
+  .speakers-club-card .listening-input,
+  .sunshine-card .listening-input {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0 !important;
+    flex: 1 1 100% !important;
+  }
+
+  .matching-row {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
+  .matching-select,
+  .match-select {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .audio-player,
+  audio {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
+
+@media (max-width: 560px) {
+  .visual-option-card,
+  .choice-card,
+  .option-btn,
+  .radio-row,
+  .match-row {
+    min-width: 0 !important;
+    max-width: 100% !important;
+  }
+
+  .editor-card,
+  .prompt-card,
+  .writing-textarea {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+}
