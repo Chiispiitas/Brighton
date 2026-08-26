@@ -87,7 +87,7 @@ The family chooses its own columns/gaps locally. Equal-status items share geomet
 
 ## 6. Photography
 
-Standard frame:
+Standard shell frame:
 
 ```html
 <figure class="hz-media-frame hz-media-frame--landscape">
@@ -95,7 +95,9 @@ Standard frame:
 </figure>
 ```
 
-Prototype placeholders must occupy the intended final crop/scale. Use shared media-stage, strip, collage or feature components when appropriate; distinctive lesson compositions may remain lesson-local.
+Prototype placeholders use `.hz-photo-placeholder` and must occupy the intended final crop/scale.
+
+Distinctive collages, overlays, article treatments and other editorial compositions are **lesson-local by default**. Promote one into `components.css` only after it proves genuinely reusable across multiple production lessons.
 
 ## 7. Continuation page
 
@@ -156,8 +158,19 @@ The artifact must be used by the learner rather than included only for appearanc
 
 Use the role that matches the content. Never label ordinary learner content as interface/micro simply to bypass the physical type floor.
 
-## 12. Architecture boundary
+## 12. Lesson-local stylesheet
 
-Reusable cross-lesson components belong here/in `components.css`. Lesson-specific corrections, asset filenames and crop tuning stay beside the lesson in `../examples/`.
+New Unit 2+ lesson HTML links its adjacent stylesheet directly after the shell:
+
+```html
+<link rel="stylesheet" href="../shell/a4-shell.css">
+<link rel="stylesheet" href="./lesson-2a-local.css">
+```
+
+Do not add new lesson-local imports to `a4-shell.css`.
+
+## 13. Architecture boundary
+
+Reusable cross-lesson components belong here/in `components.css`. Lesson-specific composition, corrections, asset filenames and crop tuning stay beside the lesson in `../examples/`.
 
 Before creating a new shared component, search for an equivalent. Prefer one canonical component over near-duplicates.
