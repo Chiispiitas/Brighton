@@ -19,7 +19,7 @@ For current A1 lesson production, work in:
 
 `A1/Lessons/`
 
-Open `A1/Student's Book.html` directly in a browser to view the assembled book. The visible book is assembled from the lesson manifest and works through `file://` without a local server.
+Open `A1/Student's Book.html` directly in a browser to view the assembled book. It is a **compiled standalone HTML book**: lesson pages and required CSS are already embedded, so viewing it through `file://` does not use lesson iframes, sibling-file fetches, or cross-frame DOM access.
 
 Its download button does **not** use browser Print/Save as PDF. It builds a PDF with `html2canvas` + `jsPDF`, renders each `.hz-page` independently at high resolution, and inserts each render as one exact A4 PDF page. This page-by-page boundary must be preserved as the book grows; do not replace it with one long screenshot or automatic page slicing.
 
@@ -29,6 +29,8 @@ Its download button does **not** use browser Print/Save as PDF. It builds a PDF 
 Horizons/
 ├── README.md
 ├── Base/
+│   ├── build/
+│   │   └── build-students-book.mjs
 │   ├── design-system/
 │   │   ├── HANDOFF.md
 │   │   ├── CANONICAL-STYLE.md
@@ -55,6 +57,14 @@ Horizons/
     └── Syllabus.txt
 ```
 
+## Student's Book build
+
+`Base/build/build-students-book.mjs` scans `A1/Lessons/` for definitive lesson masters named like `1A.html`, `2C.html` or `10B.html`, sorts them naturally, resolves their shared/local CSS, rewrites local asset paths for the assembled book, and writes `A1/Student's Book.html`.
+
+The GitHub Actions workflow `.github/workflows/build-horizons-a1-student-book.yml` runs this automatically when lesson or shared production sources change and commits the generated book back to `main` when needed.
+
+No lesson manifest is required. Adding a correctly named lesson master is enough for the compiler to discover it.
+
 ## Boundary
 
 `Base/` contains only reusable series-wide infrastructure. It must not contain lesson-specific assets, crop positions, answer keys, tests, audio files or other material belonging to one book.
@@ -62,7 +72,6 @@ Horizons/
 Each level/book owns its own production resources. For A1:
 
 - lesson HTML and lesson-local CSS → `A1/Lessons/`;
-- lesson assembly order → `A1/Lessons/manifest.js`;
 - assembled local book + PDF export → `A1/Student's Book.html`;
 - raster assets → `A1/Images/`;
 - final audio → `A1/Audios/`;
@@ -72,7 +81,5 @@ Each level/book owns its own production resources. For A1:
 - progress tests → `A1/Progress test/`;
 - wordlists → `A1/Wordlists/`;
 - syllabus → `A1/Syllabus.txt`.
-
-When a new A1 lesson master is created, add it to `A1/Lessons/manifest.js` in book order so both the local viewer and the PDF exporter include it.
 
 Do not create `production/`, `staging/` or hidden override directories. Shared behavior belongs in `Base/`; book-specific behavior stays inside the book folder.
