@@ -14,9 +14,9 @@ Read and apply these in order:
 4. `component-contracts.md` — semantic HTML/component usage.
 5. `asset-policy.md` — image sourcing, generation and prompt construction.
 6. `tokens.css`, `components.css`, `editorial-layouts.css`, `canonical-refinements.css`, `guardrails.css` — reusable implementation.
-7. Individual lesson HTML files in `../examples/` — lesson-specific composition and scoped CSS.
+7. Individual lesson HTML files and adjacent lesson-scoped CSS in `../examples/` — lesson-specific composition, corrections and asset mappings.
 
-Do not create a separate `production/`, `staging/` or override folder. Lesson-specific styling belongs with the lesson HTML itself. Final raster assets belong in `../Images/`. Image prompts and temporary art-direction notes stay outside the repository unless the author explicitly asks to save them.
+Do not create a separate `production/`, `staging/` or override directory. Lesson-specific styling stays beside the lesson master in `../examples/`. Final raster assets belong in `../Images/`. Image prompts and temporary art-direction notes stay outside the repository unless the author explicitly asks to save them.
 
 ## Non-negotiable production rules
 
@@ -36,8 +36,6 @@ Do not create a separate `production/`, `staging/` or override folder. Lesson-sp
 - Remove redundant content before reducing type or squeezing spacing.
 
 ## Repeated-image family rule
-
-This is a permanent QA rule after the Lesson 1B production issue.
 
 When an exercise contains a repeated family of equal-status images:
 
@@ -73,11 +71,12 @@ Horizons/
     asset-policy.md
   examples/
     lesson-*.html
+    lesson-*-local.css
     stage-*.html
   shell/
 ```
 
-`design-system/` contains reusable rules. `examples/` contains the lesson-specific HTML/CSS masters. `Images/` contains final raster assets. There is no separate lesson-override folder.
+`design-system/` contains reusable rules. `examples/` contains lesson masters and any adjacent lesson-scoped CSS. `Images/` contains final raster assets. There is no separate lesson-override directory.
 
 ## Resume checklist
 
