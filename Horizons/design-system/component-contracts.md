@@ -166,9 +166,9 @@ Do not label ordinary learning content as interface/micro merely to bypass the A
 
 Reusable cross-lesson components belong in `design-system/`.
 
-Lesson-specific corrections, composition rules, asset filenames and crop tuning belong directly in the corresponding lesson HTML under `../examples/`. Final raster assets belong in `../Images/`.
+Lesson-specific corrections, composition rules, asset filenames and crop tuning stay with the corresponding lesson under `../examples/`, either inline in the HTML or in an adjacent lesson-scoped stylesheet. Final raster assets belong in `../Images/`.
 
-Do not create a separate production, staging or override stylesheet layer for lesson-specific work. Before creating a new component or override, search the existing system for an equivalent. Prefer extension of one canonical component over a near-duplicate.
+Do not create a separate production, staging or override directory for lesson-specific work. Before creating a new component or override, search the existing system for an equivalent. Prefer extension of one canonical component over a near-duplicate.
 
 ## 13. Content protection
 
