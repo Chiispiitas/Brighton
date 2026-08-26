@@ -180,6 +180,21 @@ body {
 }
 
 @media print {
+  html,
+  body,
+  body.hz-book,
+  #hz-book {
+    width: 210mm !important;
+    min-width: 0 !important;
+    max-width: 210mm !important;
+    margin: 0 !important;
+    padding: 0 !important;
+  }
+
+  #hz-book {
+    display: block !important;
+  }
+
   .hz-pdf-button { display: none !important; }
 }
 `;
