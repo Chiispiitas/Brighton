@@ -29,7 +29,24 @@ Shared book chrome stays consistent across lessons: lesson tabs, lesson headers,
 
 Fix local collisions by recomposing local content. Do not distort shared chrome in only one lesson.
 
-## 4. A1 legibility floor
+Structural uniformity does **not** mean thematic uniformity. Different lessons may inhabit visibly different real-world or editorial settings while using the same Horizons chrome.
+
+## 4. Content-led visual worlds
+
+Do not default photography or generated imagery to a generic educational, school or classroom aesthetic.
+
+Permanent rules:
+
+- let the actual lesson situation determine setting, props, people, atmosphere and photographic language;
+- do not add school-coded props unless they belong naturally in the scene;
+- prompt images as believable scenes from their own world rather than `coursebook illustrations`;
+- allow neighboring lessons to differ in mood and subject matter;
+- preserve book unity through composition, typography, unit color, crop discipline and shared chrome;
+- when a repeated family represents genuinely different choices or places, shared geometry is enough; the images do not need identical environments or moods.
+
+During QA, flag an image if it feels generically scholastic despite the activity taking place in a hotel, shop, street, gym, home, workplace, transport setting or another non-school context.
+
+## 5. A1 legibility floor
 
 Never solve density, clipping or page-fit problems by making important student-facing language uncomfortably small.
 
@@ -45,7 +62,7 @@ These are floors, not preferred targets.
 
 When a page is too dense, resolve it in this order: remove redundancy → remove decorative space → reframe oversized imagery → tighten nonessential gaps/padding → simplify geometry → recompose inside the exercise → redistribute across the two-page lesson. Typography is not the first compression tool.
 
-## 5. Content economy
+## 6. Content economy
 
 Use **minimal sufficient scaffolding**.
 
@@ -53,19 +70,19 @@ Do not repeat the same information in a dialogue, form, table, caption or interf
 
 Real-world artifacts must be functional. One strong model is preferable to two redundant models.
 
-## 6. No decorative ghost text
+## 7. No decorative ghost text
 
 Do not use oversized translucent words, letters, punctuation or instructional phrases as background decoration.
 
 Use photography, whitespace, crop, structural geometry, rules and functional typography instead.
 
-## 7. Unit-color discipline
+## 8. Unit-color discipline
 
 Normal lesson pages use one dominant unit color with neutral typography and photography. A repeated family should not become multicolored merely for novelty. Additional colors require a pedagogical reason such as meaningful categorization.
 
 This newer rule supersedes older examples that treated multicolor variation itself as a default source of micro-variety.
 
-## 8. Bold has pedagogical meaning
+## 9. Bold has pedagogical meaning
 
 Bold in learner-facing language is **functional emphasis, not decoration**. It should tell the student exactly what to notice.
 
@@ -81,7 +98,7 @@ Structural typography is separate: titles, exercise numbers, section labels and 
 
 A useful check is: **if a student looks only at the bold language, is the intended learning focus obvious?** If not, the emphasis is probably too broad or arbitrary.
 
-## 9. Exercise rhythm uses whitespace, not separators
+## 10. Exercise rhythm uses whitespace, not separators
 
 Numbered activities should read as one continuous editorial sequence. Separate them through exercise numbers, spacing, alignment and changes in content geometry, **not through horizontal divider lines**.
 
@@ -93,7 +110,7 @@ Permanent rules:
 - do not reintroduce dividers merely because a spread feels empty; solve rhythm with spacing and composition instead;
 - borders remain valid when they belong to an actual component, such as a grammar focus box, real-world interface, table, answer line or page/footer structure. This rule concerns separators whose only purpose is dividing one exercise from the next.
 
-## 10. Production QA checklist
+## 11. Production QA checklist
 
 Before approving a two-page lesson, check:
 
@@ -108,6 +125,7 @@ Before approving a two-page lesson, check:
 9. Does bold isolate the actual learning target rather than decorate whole sentences or paragraphs?
 10. Are normal exercises and cross-references free of decorative separator rules?
 11. Is shared chrome unchanged unless the global system itself was intentionally revised?
-12. Could an exception rule be replaced by an existing reusable component or guardrail?
+12. Does the imagery belong convincingly to the actual world of the lesson rather than defaulting to generic educational imagery?
+13. Could an exception rule be replaced by an existing reusable component or guardrail?
 
-A spread that is technically complete but visibly smaller, more crowded, misaligned or less coherent than neighboring lessons is not production-ready.
+A spread that is technically complete but visibly smaller, more crowded, misaligned, thematically generic or less coherent than neighboring lessons is not production-ready.
