@@ -1,0 +1,26 @@
+/* Horizons A1 — scoped lesson corrections
+   Small production fixes that must override page-local prototype CSS.
+   Keep these narrowly scoped and use !important only when the prototype's
+   later inline stylesheet would otherwise win. */
+
+/* Lesson 1A — Exercise 5
+   Personal-information exchanges use a clean white surface consistently. */
+.l1a-page .l1a-exchange,
+.l1a-page .l1a-exchange:nth-of-type(1),
+.l1a-page .l1a-exchange:nth-of-type(2),
+.l1a-page .l1a-exchange:nth-of-type(3),
+.l1a-page .l1a-exchange:nth-of-type(4) {
+  background: #fff !important;
+}
+
+/* Lesson 1A — Exercise 10
+   The three profile forms belong to one visual family. Keep their surface and
+   border treatment identical instead of giving the first form a separate tint. */
+.l1a-page .l1a-profile__form,
+.l1a-page .l1a-profile:nth-child(1) .l1a-profile__form,
+.l1a-page .l1a-profile:nth-child(2) .l1a-profile__form,
+.l1a-page .l1a-profile:nth-child(3) .l1a-profile__form {
+  background: #fff !important;
+  border: .35mm solid var(--hz-line) !important;
+  border-top: 1mm solid var(--hz-unit) !important;
+}
