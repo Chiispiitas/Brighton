@@ -1,22 +1,8 @@
 /* Horizons A1 — Lesson 1C scoped styles and asset mappings. */
 
-.l1c-page .hz-exercise__instruction {
-  color: var(--hz-ink) !important;
-  font-size: 8.9pt !important;
-  font-weight: var(--hz-fw-semibold) !important;
-  line-height: 1.35 !important;
-}
-
 .l1c-target {
   color: var(--hz-unit-dark) !important;
   font-weight: var(--hz-fw-black) !important;
-}
-
-.l1c-page .hz-new-words {
-  color: var(--hz-unit-dark) !important;
-  font-size: 7pt !important;
-  font-weight: var(--hz-fw-black) !important;
-  letter-spacing: .07em !important;
 }
 
 .l1c-page .l1c-country-stage::before,
