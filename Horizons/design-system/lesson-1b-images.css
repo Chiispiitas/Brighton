@@ -36,6 +36,37 @@
   display: none !important;
 }
 
+/* Exercise 1 — production layout correction.
+   The exercise body normally begins after the exercise-number lane, which made
+   the five-column image family look shifted to the right. Expand this one
+   internal image stage back across that lane so the ten-photo family is
+   visually centered on the page. Increase the circular crops from 24mm to
+   28mm so the in-action job photography carries enough visual weight. */
+.l1b-page:not(.l1b-page--2) .l1b-occupation-stage {
+  margin-left: calc(-1 * (var(--hz-exercise-marker-size) + 3mm)) !important;
+  width: calc(100% + var(--hz-exercise-marker-size) + 3mm) !important;
+  padding-top: .6mm !important;
+}
+
+.l1b-page:not(.l1b-page--2) .l1b-occupation-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  gap: 1.6mm 2.2mm !important;
+  width: 100% !important;
+  justify-items: center !important;
+}
+
+.l1b-page:not(.l1b-page--2) .l1b-occupation {
+  width: 100% !important;
+  min-width: 0 !important;
+  text-align: center !important;
+}
+
+.l1b-page:not(.l1b-page--2) .l1b-occupation__photo {
+  width: 28mm !important;
+  height: 28mm !important;
+  margin: 0 auto .9mm !important;
+}
+
 /* Exercise 1 — occupations in action. The order matches the ten frozen
    vocabulary items: teacher, student, chef, doctor, office worker,
    receptionist, salesclerk, taxi driver, waiter/waitress, farmer. */
