@@ -1,11 +1,9 @@
 @import url("./tokens.css");
 
-/* Horizons A1 — editorial native HTML/CSS components.
-   HARD RULE: numbered exercises are one vertical sequence.
-   Two/three columns are allowed only INSIDE an exercise body.
-
-   MEDIA RULE: dynamic composition should come mainly from photography,
-   cropping, overlays and typography — not from wrapping everything in cards. */
+/* Horizons A1 — reusable cross-lesson components.
+   Numbered sibling exercises always remain in one vertical sequence.
+   Dynamic composition comes from photography, crop, typography and lesson-local
+   composition rather than a growing library of override layers. */
 
 .hz-content {
   color: var(--hz-ink);
@@ -36,26 +34,35 @@
 
 .hz-lesson-tab {
   display: grid;
+  place-items: center;
   align-content: center;
+  justify-items: center;
   width: 18mm;
   height: 18mm;
-  padding: 2mm;
+  padding: 1.4mm;
   background: var(--hz-unit);
-  color: white;
+  color: #fff;
   line-height: 1;
+  text-align: center;
 }
 
 .hz-lesson-tab__label {
-  font-size: 5.8pt;
+  width: 100%;
+  font-size: 5.1pt;
   font-weight: var(--hz-fw-semibold);
+  line-height: 1;
   letter-spacing: .08em;
+  text-align: center;
   text-transform: uppercase;
 }
 
 .hz-lesson-tab__id {
-  margin-top: 1.1mm;
-  font-size: var(--hz-fs-lesson-id);
+  width: 100%;
+  margin-top: .7mm;
+  font-size: 18pt;
   font-weight: var(--hz-fw-black);
+  line-height: .9;
+  text-align: center;
 }
 
 .hz-lesson-heading { min-width: 0; }
@@ -82,6 +89,42 @@
   content: "•";
   margin-right: 4mm;
   color: var(--hz-unit);
+}
+
+/* ---------- Continuation chrome ---------- */
+
+.hz-continuation,
+.l1a-page--2 .l1a-continuation,
+.l1b-page--2 .l1b-continuation,
+.l1c-page--2 .l1c-continuation,
+.l1d-page--2 .l1d-continuation {
+  position: absolute !important;
+  top: -1mm !important;
+  right: -14mm !important;
+  z-index: 4 !important;
+  display: grid !important;
+  place-items: end start !important;
+  width: 34mm !important;
+  height: 25mm !important;
+  padding: 0 0 3.2mm 5mm !important;
+  background: var(--hz-unit) !important;
+  color: #fff !important;
+  clip-path: polygon(28% 0, 100% 0, 100% 100%, 0 100%) !important;
+  font-size: 19pt !important;
+  font-weight: var(--hz-fw-black) !important;
+  line-height: normal !important;
+  letter-spacing: -.05em !important;
+}
+
+/* Default continuation clearance. Lesson-local CSS may increase the content
+   offset when the first composition needs more room; the shared marker itself
+   remains unchanged. Unit 1 aliases remain only for current masters. */
+.hz-continuation-page .hz-exercises,
+.l1a-page--2 .hz-exercises,
+.l1b-page--2 .hz-exercises,
+.l1c-page--2 .hz-exercises,
+.l1d-page--2 .hz-exercises {
+  padding-top: 7mm !important;
 }
 
 /* ---------- Section / skill line ---------- */
@@ -155,7 +198,40 @@
   margin-top: 2mm;
 }
 
-/* Internal grids — only inside one exercise. */
+/* Ordinary learner language cannot inherit tiny prototype typography. */
+.hz-exercise__body :where(p, li, dt, dd, label) {
+  font-size: max(1em, var(--hz-fs-student-min));
+}
+
+/* ---------- Text-role floors ---------- */
+
+.hz-student-text,
+[data-hz-text-role="student"] {
+  font-size: max(1em, var(--hz-fs-student-min)) !important;
+}
+
+.hz-dialogue-text,
+[data-hz-text-role="dialogue"] {
+  font-size: max(1em, var(--hz-fs-dialogue-min)) !important;
+}
+
+.hz-task-text,
+[data-hz-text-role="task"] {
+  font-size: max(1em, var(--hz-fs-task-min)) !important;
+}
+
+.hz-interface-text,
+[data-hz-text-role="interface"] {
+  font-size: max(1em, var(--hz-fs-interface-min)) !important;
+}
+
+.hz-micro-text,
+[data-hz-text-role="micro"] {
+  font-size: max(1em, var(--hz-fs-micro-min)) !important;
+}
+
+/* ---------- Internal grids ---------- */
+
 .hz-question-grid,
 .hz-content-grid {
   display: grid;
@@ -192,6 +268,24 @@
   gap: 1.5mm 4mm;
 }
 
+/* ---------- Repeated-media alignment ---------- */
+
+.hz-media-family {
+  min-width: 0;
+  width: 100%;
+  justify-items: center;
+}
+
+.hz-media-family--full-lane {
+  margin-left: calc(-1 * (var(--hz-exercise-marker-size) + 3mm));
+  width: calc(100% + var(--hz-exercise-marker-size) + 3mm);
+}
+
+.hz-media-family > * {
+  min-width: 0;
+  justify-self: center;
+}
+
 /* ---------- Small functional labels ---------- */
 
 .hz-audio-badge {
@@ -207,19 +301,47 @@
   vertical-align: middle;
 }
 
-.hz-new-words,
+.hz-new-words {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: .75mm !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: var(--hz-unit-dark) !important;
+  font-size: 7pt !important;
+  font-weight: var(--hz-fw-black) !important;
+  line-height: 1 !important;
+  letter-spacing: .07em !important;
+  text-transform: uppercase !important;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.hz-new-words::before {
+  content: "✦" !important;
+  display: inline-block !important;
+  flex: none !important;
+  color: var(--hz-unit) !important;
+  font-size: 8pt !important;
+  font-weight: var(--hz-fw-black) !important;
+  line-height: 1 !important;
+}
+
+.hz-new-words__icon { display: none !important; }
+
 .hz-skill-tag,
 .hz-tag {
   display: inline-block;
-  color: var(--hz-unit-dark);
   font-size: var(--hz-fs-2xs);
   font-weight: var(--hz-fw-black);
   letter-spacing: .07em;
   text-transform: uppercase;
 }
 
-.hz-new-words { border-bottom: .55mm solid var(--hz-unit); padding-bottom: .5mm; }
-.hz-new-words__icon { display: none; }
 .hz-tag { color: var(--hz-muted); }
 .hz-skill-tag { color: var(--hz-practice); }
 
@@ -264,10 +386,8 @@
   line-height: var(--hz-lh-reading);
 }
 
-/* ---------- Dynamic photography / overlay compositions ---------- */
+/* ---------- Photography / overlay compositions ---------- */
 
-/* A media stage is intentionally more permissive than a normal frame.
-   It can hold labels and text that overlap the image edge. */
 .hz-media-stage {
   position: relative;
   min-height: 54mm;
@@ -288,8 +408,6 @@
   object-fit: cover;
 }
 
-/* Development-only photo placeholder. Its typography and overlays should
-   survive when the gray block is replaced with a real raster image. */
 .hz-photo-placeholder {
   position: relative;
   display: grid;
@@ -334,7 +452,6 @@
   background: rgb(255 255 255 / 72%);
 }
 
-/* Scrim is allowed only to support readable text over photography. */
 .hz-photo-scrim {
   position: absolute;
   inset: 0;
@@ -378,7 +495,6 @@
   line-height: 1.38;
 }
 
-/* Small annotation intentionally crosses the photo boundary. */
 .hz-photo-flag {
   position: absolute;
   z-index: 3;
@@ -409,7 +525,6 @@
   font-weight: var(--hz-fw-black);
 }
 
-/* Image left, text block overlapping its lower-right corner. */
 .hz-media-stage--offset {
   display: grid;
   grid-template-columns: minmax(0, 1fr) 58mm;
@@ -444,7 +559,6 @@
 
 .hz-media-stage__offset-copy p:last-child { margin-bottom: 0; }
 
-/* Photo with an editorial strip crossing the lower third. */
 .hz-media-stage--band .hz-photo-band {
   position: absolute;
   z-index: 3;
@@ -475,8 +589,6 @@
   line-height: 1.3;
 }
 
-/* A dominant image plus two independent inset crops. Useful for travel,
-   food, city and lifestyle readings. */
 .hz-media-collage {
   position: relative;
   min-height: 66mm;
@@ -484,9 +596,7 @@
   padding-bottom: 9mm;
 }
 
-.hz-media-collage__main {
-  min-height: 60mm;
-}
+.hz-media-collage__main { min-height: 60mm; }
 
 .hz-media-collage__inset {
   position: absolute;
@@ -518,8 +628,6 @@
   object-fit: cover;
 }
 
-/* Quote block may sit partly on top of photography but stays editorial,
-   not app-like. */
 .hz-photo-quote {
   position: absolute;
   z-index: 4;
@@ -548,8 +656,6 @@
   text-transform: uppercase;
 }
 
-/* Numbered visual matching strip. It can hold 2–4 equal crops without
-   implying that the exercises themselves are in columns. */
 .hz-photo-strip {
   display: grid;
   grid-template-columns: repeat(var(--hz-photo-count, 3), minmax(0, 1fr));
@@ -640,7 +746,7 @@
   line-height: 1.35;
 }
 
-/* ---------- Reading cards: use sparingly ---------- */
+/* ---------- Reading card: use sparingly ---------- */
 
 .hz-reading-card {
   border-top: .8mm solid var(--hz-unit);
@@ -661,7 +767,7 @@
 
 .hz-reading-card__body { padding-top: 1mm; }
 
-/* ---------- Real-world interfaces: rounded UI is allowed here ---------- */
+/* ---------- Real-world interfaces ---------- */
 
 .hz-ui-card,
 .hz-form-card {
