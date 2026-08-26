@@ -44,7 +44,7 @@ For each new lesson:
 5. build on Base components and keep one-off composition in the lesson-local CSS;
 6. link that local stylesheet from the lesson HTML itself;
 7. add only the book-specific assets the task needs;
-8. add the new definitive lesson filename to `../../A1/Lessons/manifest.js` so the local `Student's Book.html` includes it;
+8. use the definitive filename (`2A.html`, `2B.html`, etc.); the Student's Book compiler discovers it automatically;
 9. compare the finished spread with neighboring approved lessons for language load, physical readability and visual weight.
 
 ## CSS loading boundary
@@ -55,14 +55,19 @@ Each lesson HTML links its own adjacent local stylesheet. This prevents the shar
 
 ## Local Student's Book boundary
 
-The A1 `Student's Book.html` must work when opened directly through `file://`; do not make it depend on GitHub, a local HTTP server, directory enumeration, `fetch()` of sibling lesson files, or cross-frame DOM access.
+The A1 `Student's Book.html` is a **generated standalone file**. It must display correctly when opened directly through `file://` without embedding lesson files in iframes, fetching sibling local files, or using cross-frame DOM access.
 
-Its ordered lesson list lives in `../../A1/Lessons/manifest.js`. Creating a new lesson and updating that manifest are one production action.
+`../build/build-students-book.mjs` scans `../../A1/Lessons/` for definitive lesson masters, sorts them naturally, resolves/inlines required CSS, and writes the assembled book. The repository workflow `.github/workflows/build-horizons-a1-student-book.yml` runs the compiler automatically when lesson/shared production sources change.
+
+Do not reintroduce a manual lesson manifest. A correctly named lesson master is sufficient for discovery.
+
+The PDF download path must remain page-aware: render each compiled `.hz-page` independently and add it as one A4 page. Do not use browser Print/Save as PDF or slice a single long screenshot.
 
 ## Repository boundary
 
 - series-wide design rules/components → `Horizons/Base/design-system/`;
 - shared page shell → `Horizons/Base/shell/`;
+- shared book compiler → `Horizons/Base/build/`;
 - book-specific lessons, assets, audio, tests, keys and other resources → that book's folder, such as `Horizons/A1/`;
 - lesson-specific CSS → beside its lesson in the book's `Lessons/` folder.
 
