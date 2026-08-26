@@ -1,6 +1,7 @@
 @import url("../design-system/components.css");
 @import url("../design-system/editorial-layouts.css");
 @import url("../design-system/canonical-refinements.css");
+@import url("../design-system/lesson-overrides.css");
 
 /* Horizons — editorial HTML5/CSS A4 shell.
    One semantic .hz-page = one print page.
