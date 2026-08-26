@@ -54,6 +54,8 @@ Titles/objectives come from the locked syllabus or authorized source.
 
 Every numbered exercise stays in this single vertical lane. Never use a page-level grid to place sibling exercises side by side.
 
+Normal exercises do **not** carry horizontal divider rules. Their separation comes from numbering, whitespace and composition. A `Go to:` cross-reference also sits in open whitespace; do not add a separator immediately above or below it.
+
 ## 4. Internal grids
 
 Use `.hz-question-grid--2/--3` or `.hz-content-grid--2/--3` **inside one exercise only**.
