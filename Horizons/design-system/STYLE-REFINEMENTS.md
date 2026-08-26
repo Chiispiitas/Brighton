@@ -65,7 +65,23 @@ Normal lesson pages use one dominant unit color with neutral typography and phot
 
 This newer rule supersedes older examples that treated multicolor variation itself as a default source of micro-variety.
 
-## 8. Production QA checklist
+## 8. Bold has pedagogical meaning
+
+Bold in learner-facing language is **functional emphasis, not decoration**. It should tell the student exactly what to notice.
+
+Use bold surgically:
+
+- in grammar examples, bold the exact form, ending, auxiliary, article, pronoun or other language feature being contrasted or discovered;
+- when the learning point is a contraction, emphasize the contracted `be` element itself, for example `I**’m**`, `She**’s**`, `You**’re**`, rather than making the whole example sentence bold;
+- in vocabulary or reading text, bold a word or short phrase only when that emphasis has a clear learning purpose;
+- keep surrounding example language at normal weight so the target form has real contrast;
+- do not scatter bold across a paragraph simply to make it look lively, and do not use bold as a substitute for unnecessary boxes, pills or extra color.
+
+Structural typography is separate: titles, exercise numbers, section labels and other book chrome may use heavy weights for hierarchy. The rule above applies to **language the learner is expected to inspect, compare, understand or reuse**.
+
+A useful check is: **if a student looks only at the bold language, is the intended learning focus obvious?** If not, the emphasis is probably too broad or arbitrary.
+
+## 9. Production QA checklist
 
 Before approving a two-page lesson, check:
 
@@ -77,7 +93,8 @@ Before approving a two-page lesson, check:
 6. Does any image family appear shifted because of the exercise-number lane?
 7. Does the page retain enough whitespace to scan quickly?
 8. Are artifacts used by the learner rather than included only for authenticity?
-9. Is shared chrome unchanged unless the global system itself was intentionally revised?
-10. Could an exception rule be replaced by an existing reusable component or guardrail?
+9. Does bold isolate the actual learning target rather than decorate whole sentences or paragraphs?
+10. Is shared chrome unchanged unless the global system itself was intentionally revised?
+11. Could an exception rule be replaced by an existing reusable component or guardrail?
 
 A spread that is technically complete but visibly smaller, more crowded, misaligned or less coherent than neighboring lessons is not production-ready.
