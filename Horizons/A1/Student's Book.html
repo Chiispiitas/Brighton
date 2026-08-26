@@ -48,9 +48,10 @@
       color: #fff;
       box-shadow: 0 4px 16px rgb(0 0 0 / 24%);
       cursor: pointer;
+      transition: transform 120ms ease, box-shadow 120ms ease, opacity 120ms ease;
     }
 
-    .hz-pdf-button:hover {
+    .hz-pdf-button:hover:not(:disabled) {
       transform: translateY(-1px);
       box-shadow: 0 6px 20px rgb(0 0 0 / 28%);
     }
@@ -58,6 +59,11 @@
     .hz-pdf-button:focus-visible {
       outline: 3px solid #fff;
       outline-offset: 3px;
+    }
+
+    .hz-pdf-button:disabled {
+      opacity: .68;
+      cursor: progress;
     }
 
     .hz-pdf-button svg {
@@ -70,6 +76,25 @@
       stroke-linejoin: round;
     }
 
+    .hz-pdf-button.is-busy svg {
+      animation: hz-pdf-pulse 900ms ease-in-out infinite alternate;
+    }
+
+    .hz-export-frame {
+      position: fixed;
+      top: 0;
+      left: -10000px;
+      width: 230mm;
+      height: 620mm;
+      border: 0;
+      pointer-events: none;
+    }
+
+    @keyframes hz-pdf-pulse {
+      from { opacity: .35; }
+      to { opacity: 1; }
+    }
+
     @media print {
       html,
       body,
@@ -77,7 +102,8 @@
         background: #fff;
       }
 
-      .hz-pdf-button {
+      .hz-pdf-button,
+      .hz-export-frame {
         display: none !important;
       }
     }
@@ -94,8 +120,13 @@
     </svg>
   </button>
 
-  <!-- Classic local script: works when this file is opened directly via file://. -->
+  <!-- The visible book remains fully local and works directly through file://. -->
   <script src="./Lessons/manifest.js"></script>
+
+  <!-- PDF export libraries. The PDF is built deliberately one A4 page at a time. -->
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/jspdf@4.2.1/dist/jspdf.umd.min.js"></script>
+
   <script>
     (() => {
       const book = document.getElementById("hz-book");
@@ -103,6 +134,12 @@
       const lessons = Array.isArray(window.HORIZONS_A1_LESSONS)
         ? window.HORIZONS_A1_LESSONS
         : [];
+
+      const RAW_LESSONS_ROOT = "https://raw.githubusercontent.com/Chiispiitas/Brighton/main/Horizons/A1/Lessons/";
+      const A4_WIDTH_MM = 210;
+      const A4_HEIGHT_MM = 297;
+      const EXPORT_SCALE = 2.35;
+      const JPEG_QUALITY = 0.97;
 
       lessons.forEach((filename) => {
         const frame = document.createElement("iframe");
@@ -113,8 +150,199 @@
         book.appendChild(frame);
       });
 
-      pdfButton.addEventListener("click", () => {
-        window.print();
+      function setExportBusy(isBusy) {
+        pdfButton.disabled = isBusy;
+        pdfButton.classList.toggle("is-busy", isBusy);
+        pdfButton.setAttribute(
+          "aria-label",
+          isBusy ? "Building Student's Book PDF" : "Download Student's Book as PDF"
+        );
+        pdfButton.title = isBusy ? "Building PDF…" : "Download PDF";
+      }
+
+      async function fetchLessonForExport(filename) {
+        const url = RAW_LESSONS_ROOT + encodeURIComponent(filename);
+        const response = await fetch(url, { cache: "no-store" });
+        if (!response.ok) {
+          throw new Error(`Could not load ${filename} for PDF export.`);
+        }
+
+        const html = await response.text();
+        const base = `<base href="${RAW_LESSONS_ROOT}">`;
+        return html.replace(/<head(\s[^>]*)?>/i, (match) => `${match}\n  ${base}`);
+      }
+
+      async function waitForImages(doc) {
+        const imagePromises = [...doc.images].map((image) => {
+          if (image.complete) return Promise.resolve();
+          return new Promise((resolve) => {
+            image.addEventListener("load", resolve, { once: true });
+            image.addEventListener("error", resolve, { once: true });
+          });
+        });
+
+        await Promise.all(imagePromises);
+      }
+
+      async function preloadBackgroundImages(doc) {
+        const urls = new Set();
+        const view = doc.defaultView;
+        const urlPattern = /url\(["']?(.*?)["']?\)/g;
+
+        doc.querySelectorAll("*").forEach((element) => {
+          const background = view.getComputedStyle(element).backgroundImage;
+          let match;
+          while ((match = urlPattern.exec(background)) !== null) {
+            if (match[1] && match[1] !== "none") urls.add(match[1]);
+          }
+        });
+
+        await Promise.all([...urls].map((src) => new Promise((resolve) => {
+          const image = new Image();
+          image.crossOrigin = "anonymous";
+          image.onload = resolve;
+          image.onerror = resolve;
+          image.src = src;
+        })));
+      }
+
+      async function makeExportFrame(filename) {
+        const html = await fetchLessonForExport(filename);
+        const frame = document.createElement("iframe");
+        frame.className = "hz-export-frame";
+        frame.setAttribute("aria-hidden", "true");
+
+        const loaded = new Promise((resolve) => {
+          frame.addEventListener("load", resolve, { once: true });
+        });
+
+        document.body.appendChild(frame);
+        frame.srcdoc = html;
+        await loaded;
+
+        const doc = frame.contentDocument;
+        if (!doc) throw new Error(`Could not prepare ${filename} for PDF export.`);
+
+        if (doc.fonts && doc.fonts.ready) await doc.fonts.ready;
+        await waitForImages(doc);
+        await preloadBackgroundImages(doc);
+
+        await new Promise((resolve) => {
+          frame.contentWindow.requestAnimationFrame(() => {
+            frame.contentWindow.requestAnimationFrame(resolve);
+          });
+        });
+
+        return frame;
+      }
+
+      function renderCleanupStyles(clonedDoc) {
+        const style = clonedDoc.createElement("style");
+        style.textContent = `
+          html, body {
+            margin: 0 !important;
+            padding: 0 !important;
+            background: #fff !important;
+          }
+          .hz-page {
+            margin: 0 !important;
+            box-shadow: none !important;
+          }
+        `;
+        clonedDoc.head.appendChild(style);
+      }
+
+      async function renderPage(page) {
+        return window.html2canvas(page, {
+          scale: EXPORT_SCALE,
+          useCORS: true,
+          allowTaint: false,
+          backgroundColor: "#ffffff",
+          logging: false,
+          imageTimeout: 30000,
+          removeContainer: true,
+          onclone: renderCleanupStyles
+        });
+      }
+
+      async function exportPdf() {
+        if (!lessons.length) throw new Error("No lessons are listed in the A1 manifest.");
+        if (!window.html2canvas || !window.jspdf || !window.jspdf.jsPDF) {
+          throw new Error("The PDF libraries could not be loaded.");
+        }
+
+        const { jsPDF } = window.jspdf;
+        const pdf = new jsPDF({
+          orientation: "portrait",
+          unit: "mm",
+          format: "a4",
+          compress: true,
+          putOnlyUsedFonts: true
+        });
+
+        pdf.setProperties({
+          title: "Horizons A1 — Student's Book",
+          subject: "Horizons A1 Student's Book",
+          author: "Brighton",
+          creator: "Horizons Student's Book assembler"
+        });
+
+        let pageCount = 0;
+
+        for (const filename of lessons) {
+          const frame = await makeExportFrame(filename);
+          try {
+            const doc = frame.contentDocument;
+            const pages = [...doc.querySelectorAll("article.hz-page")];
+
+            if (!pages.length) {
+              throw new Error(`${filename} contains no .hz-page elements.`);
+            }
+
+            for (const page of pages) {
+              const canvas = await renderPage(page);
+              const imageData = canvas.toDataURL("image/jpeg", JPEG_QUALITY);
+
+              if (pageCount > 0) {
+                pdf.addPage("a4", "portrait");
+              }
+
+              pdf.addImage(
+                imageData,
+                "JPEG",
+                0,
+                0,
+                A4_WIDTH_MM,
+                A4_HEIGHT_MM,
+                undefined,
+                "FAST"
+              );
+
+              pageCount += 1;
+              canvas.width = 1;
+              canvas.height = 1;
+            }
+          } finally {
+            frame.remove();
+          }
+        }
+
+        if (!pageCount) throw new Error("No book pages were exported.");
+        pdf.save("Horizons A1 - Student's Book.pdf");
+      }
+
+      pdfButton.addEventListener("click", async () => {
+        if (pdfButton.disabled) return;
+        setExportBusy(true);
+
+        try {
+          await exportPdf();
+        } catch (error) {
+          console.error(error);
+          alert(`PDF export failed. ${error.message}`);
+        } finally {
+          setExportBusy(false);
+        }
       });
     })();
   </script>
