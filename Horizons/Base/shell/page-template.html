@@ -3,25 +3,29 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Horizons A1 — Lesson Template</title>
+  <title>Horizons — Lesson Template</title>
   <link rel="stylesheet" href="./a4-shell.css">
   <link rel="stylesheet" href="./print.css" media="print">
 </head>
 <body class="hz-book">
 
   <!--
+    Generic Base template.
+    Copy/adapt into the target book's Lessons folder, then link that lesson's
+    adjacent local stylesheet after the Base shell.
+
     One .hz-page equals one printed A4 page.
     Sibling numbered exercises remain in one .hz-exercises vertical lane.
     Columns/grids are allowed only inside an exercise body.
   -->
-  <article class="hz-page hz-content hz-unit-2" data-page="1">
+  <article class="hz-page hz-content hz-unit-1" data-page="1">
     <main class="hz-page__content">
       <div class="hz-page-stack">
 
         <header class="hz-lesson-header">
-          <div class="hz-lesson-tab" aria-label="Lesson 2A">
+          <div class="hz-lesson-tab" aria-label="Lesson">
             <span class="hz-lesson-tab__label">Lesson</span>
-            <span class="hz-lesson-tab__id">2A</span>
+            <span class="hz-lesson-tab__id">1A</span>
           </div>
           <div class="hz-lesson-heading">
             <h1 class="hz-lesson-title">LESSON TITLE</h1>
@@ -35,7 +39,7 @@
           <section class="hz-exercise">
             <div class="hz-exercise-number">1</div>
             <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction">Read and listen.</p>
+              <p class="hz-exercise__instruction">Instruction</p>
               <div class="hz-exercise__body">...</div>
             </div>
           </section>
@@ -44,7 +48,7 @@
     </main>
 
     <footer class="hz-page__footer" aria-label="Page footer">
-      <span class="hz-page-code">Horizons A1 · 2A</span>
+      <span class="hz-page-code">Horizons · Lesson</span>
       <span class="hz-page-number">1</span>
     </footer>
   </article>
