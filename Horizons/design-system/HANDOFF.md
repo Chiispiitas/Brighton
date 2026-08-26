@@ -162,6 +162,28 @@ For Lesson 1D, **LET'S FILL A FORM!**, the intended model is not simply filling 
 
 See `GUIDED-DISCOVERY.md` for the full methodology, authoring test and additional examples.
 
+## 6B. A1 legibility floor — permanent
+
+**Never make student-facing language smaller just to force a dense composition to fit.**
+
+Horizons is an A1 print coursebook. Students must be able to read, compare, underline and analyze the language comfortably at physical A4 size. This is especially important for Guided Discovery, where model language and discovery questions are not secondary decoration: they are the evidence students must inspect.
+
+The minimum design-token floors are:
+
+- normal student-facing text: **7.75pt** minimum;
+- dialogue and model language: **8pt** minimum;
+- task-support language: **8pt** minimum;
+- authentic form/interface text: **7pt** minimum;
+- genuine secondary microtext only: **6.5pt** minimum.
+
+These are lower bounds, not preferred sizes. Ordinary dialogue, questions, explanations, examples, discovery prompts, practice items, pairwork language and peer-check instructions should not live in the 6–7pt range.
+
+If a page is too dense, solve it in this order: remove decorative space → reduce/reframe oversized imagery → tighten nonessential gaps/padding → simplify geometry → recompose content inside the same exercise → redistribute material across the two-page lesson. **Do not preserve a composition by shrinking the learning content.**
+
+Before accepting a new lesson, compare its body/dialogue/discovery text against neighboring canonical lessons at the same print scale. A visibly smaller lesson is a layout defect.
+
+The relevant tokens live in `tokens.css`, and `lesson-overrides.css` includes semantic text-role helpers plus a common student-text floor for exercise-body language.
+
 ## 7. Controlled repetition — important latest rule
 
 When several items belong to the same exercise or visual family, they should normally share one silhouette and structural treatment.
