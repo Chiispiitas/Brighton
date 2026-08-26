@@ -1,173 +1,83 @@
 # Horizons A1 — Canonical Style Refinements
 
-These refinements extend the approved Stage 3 direction. They do not replace `CANONICAL-STYLE.md`.
+These are **specific production refinements** to `CANONICAL-STYLE.md`. They intentionally avoid repeating the whole design philosophy. When a specific rule here conflicts with an older illustrative example elsewhere, this file wins.
 
-## Controlled repetition
+## 1. Controlled repetition
 
-When several items belong to the same exercise or visual family, they should normally share the same silhouette and structural treatment.
+Items that belong to one visual family should normally share silhouette, border logic, alignment and basic scale.
 
-Use variety through:
+Create variety through crop, content, emphasis, opacity or limited typographic contrast rather than changing every structural property at once.
 
-- color;
-- image crop;
-- opacity;
-- scale;
-- type weight;
-- typographic contrast;
-- content hierarchy.
+## 2. Repeated-media alignment and scale
 
-Avoid giving every item a different geometric shape simply to create novelty. Repetition is useful when it improves scanning and makes the exercise feel intentional.
-
-Examples:
-
-- four greeting photographs in one matching/recognition exercise may all use circular crops;
-- a sequence of numbers may all use circles while varying their vibrant background colors;
-- cards or information exchanges in the same group should keep the same geometry even if their tones differ;
-- alphabet pairs may use stronger uppercase color and a faded lowercase version of the same hue instead of changing each letter pair into a different container.
-
-## Structural uniformity across lessons
-
-Horizons should be visually varied at the **activity and page-composition level**, but the recurring book chrome must remain stable from lesson to lesson.
-
-The following elements should use one shared treatment unless the design system itself is intentionally revised:
-
-- lesson tab geometry and hierarchy;
-- lesson-header spacing and rule treatment;
-- exercise-number lane;
-- normal exercise-instruction scale;
-- audio/track badge geometry;
-- `Go to:` cross-reference alignment;
-- continuation marker size, shape, typography and position;
-- continuation-page top rhythm;
-- Extra Practice alignment;
-- page footer and page-number treatment.
-
-Do not solve a local collision by changing one instance of shared chrome. For example, if a continuation marker overlaps an activity, **move or recompose the activity** rather than shrinking, stretching or relocating only that lesson's continuation marker.
-
-Content density may still vary slightly between pages when necessary to preserve source material, avoid clipping or support the pedagogy. Likewise, Lesson A, B, C and D should retain distinct compositions appropriate to their different pedagogical roles. Uniformity means stable navigation and structural mechanics, not identical page templates.
-
-The current Unit 1 prototypes are normalized through `canonical-refinements.css`, which acts as the final guard against accidental drift in shared layout mechanics.
-
-## A1 legibility floor — permanent
-
-**Never solve page-fit, clipping or density problems by making student-facing language uncomfortably small.**
-
-Horizons is an A1 coursebook that students must be able to inspect, compare, underline, analyze and reuse. This is especially important for Guided Discovery: the language evidence students are expected to notice must remain physically easy to read at printed A4 size.
-
-The design tokens in `tokens.css` define the minimum physical type sizes for each role:
-
-- normal student-facing text: `--hz-fs-student-min` = **7.75pt minimum**;
-- dialogue / model language: `--hz-fs-dialogue-min` = **8pt minimum**;
-- task-support language: `--hz-fs-task-min` = **8pt minimum**;
-- authentic interface/form text: `--hz-fs-interface-min` = **7pt minimum**;
-- genuinely secondary microtext only: `--hz-fs-micro-min` = **6.5pt minimum**.
-
-These are **floors, not preferred targets**. Normal body text should usually be larger. A value below 7.75pt is not acceptable for ordinary dialogue, questions, explanations, examples, discovery prompts, practice items, pairwork language, model sentences or peer-check instructions.
-
-The 6.5–7pt range is reserved for genuinely secondary interface metadata, tiny functional labels, captions or similar material that students are not expected to read as the main learning content.
-
-### Density-resolution order
-
-When a page does not fit, use this order before reducing typography:
-
-1. remove unnecessary decorative space;
-2. reduce oversized image height or change the crop;
-3. reduce redundant margins, gaps or padding;
-4. simplify non-pedagogical geometry;
-5. recompose columns **inside the same exercise**;
-6. shorten purely decorative/interface furniture that is not source content;
-7. redistribute the activity across the two-page lesson while preserving exercise order;
-8. only then consider a very small type adjustment, and never below the role-specific floor.
-
-Do not compress one lesson into visibly smaller typography than neighboring lessons simply to keep an existing composition intact. **The composition must adapt to the content, not the content to an undersized composition.**
-
-Before accepting a lesson page, compare its body, dialogue, form, discovery and pairwork text against at least one neighboring canonical lesson at the same physical zoom/print size. If the new lesson visibly reads smaller, treat that as a layout defect.
-
-## Content economy and density discipline — permanent
-
-**Do not make a lesson crowded by repeating information, over-scaffolding obvious questions, or preserving redundant artifacts just because they were already designed.**
-
-Every visible block on the two-page spread should earn its space pedagogically. A context, form, model, option set, hint, caption or support element should remain only when it gives the learner information that is necessary for the next step, reduces cognitive load, or supports the real-world outcome.
+A repeated image family must be evaluated as one composition, not as isolated thumbnails.
 
 Permanent rules:
 
-- do not show the same information twice in different formats unless students must explicitly compare the two formats;
-- do not repeat a completed form beside a dialogue when the dialogue already provides all of the evidence needed for the discovery task, unless reading the completed form itself is an explicit learning objective;
-- do not add answer choices to a Guided Discovery question when the learner can reasonably answer from the visible evidence without them;
-- do not add `Yes / No`, `a / b`, word banks, labels or hints by default; add them only when they are needed to make the A1 task achievable;
-- do not keep a redundant model, interface, caption or decorative support element if removing it gives the important language more room to breathe;
-- one strong model is preferable to two partially redundant models;
-- a real-world artifact should be functional, not duplicated as decorative proof of the context;
-- if a page feels crowded, first audit **content redundancy** before changing typography, spacing or image scale.
+- center the family against the usable page composition, not accidentally against a narrowed sub-column;
+- equal-status images should use a common size and crop family;
+- do not compensate for a shifted grid with arbitrary per-image nudges;
+- if the exercise number lane makes a dominant media family look offset, use the reusable full-lane geometry in `guardrails.css` (`.hz-media-family--full-lane`) or an equivalent structural solution;
+- action-based vocabulary imagery must remain large enough that the action is obvious at physical A4 print size;
+- after changing image diameter, aspect ratio, column count or gap, re-check the whole family for centering, crop and visual weight.
 
-Guided Discovery still requires enough evidence and support. The goal is **minimal sufficient scaffolding**, not minimal teaching. Remove support only when the remaining context still allows an A1 learner to reach the intended discovery reliably.
+As a practical benchmark, small action photographs generally need more physical area than simple object clues. Do not reduce them to decorative thumbnail size merely to preserve an existing grid.
 
-### Two-page density audit
+## 3. Structural uniformity
 
-Before a lesson is accepted, inspect both pages together and ask:
+Shared book chrome stays consistent across lessons: lesson tabs, lesson headers, exercise-number lane, instruction hierarchy, audio treatment, continuation markers, cross-references, Extra Practice and footer/page-number treatment.
 
-1. Is any information presented twice without a comparison purpose?
-2. Is any option set giving away an answer that students could discover from the context?
-3. Is any model or artifact present only because it looks authentic rather than because students use it?
-4. Are normal student-facing text sizes comparable to neighboring lessons?
-5. Does each exercise have enough white space to be scanned quickly?
-6. Is the most important context or final task visually dominant rather than surrounded by secondary clutter?
-7. Could one block be removed entirely without weakening the learning sequence? If yes, remove it.
+Fix local collisions by recomposing local content. Do not distort shared chrome in only one lesson.
 
-A lesson that is technically complete but visibly denser, smaller, or more cluttered than neighboring lessons is **not production-ready**.
+## 4. A1 legibility floor
 
-## No translucent background words
+Never solve density, clipping or page-fit problems by making important student-facing language uncomfortably small.
 
-Do **not** use oversized translucent words, letters, punctuation marks or instructional phrases as decorative background elements behind lesson content.
+The minimum physical sizes are defined once in `tokens.css`:
 
-This includes treatments such as faded words like `WORK`, `WORLD`, `PAIRWORK`, `CHECK-IN`, `YOUR BUSINESS`, `FORM`, `ADJECTIVES`, or similar pseudo-element text used only to fill space or add visual texture.
+- normal student-facing text: `--hz-fs-student-min`;
+- dialogue/model language: `--hz-fs-dialogue-min`;
+- task-support language: `--hz-fs-task-min`;
+- authentic interface text: `--hz-fs-interface-min`;
+- genuinely secondary microtext: `--hz-fs-micro-min`.
 
-Functional typography is still encouraged when the text has an actual reading or navigation purpose, for example:
+These are floors, not preferred targets.
 
-- lesson titles;
-- exercise instructions;
-- section headings;
-- continuation markers such as `1B`, `1C`, `1D`;
-- labels inside real-world forms, chats, tickets or interfaces;
-- meaningful photo captions;
-- real task prompts.
+When a page is too dense, resolve it in this order: remove redundancy → remove decorative space → reframe oversized imagery → tighten nonessential gaps/padding → simplify geometry → recompose inside the exercise → redistribute across the two-page lesson. Typography is not the first compression tool.
 
-For visual energy, prefer photography, crop, whitespace, structural geometry, thin rules, scale, overlap and functional typography instead of ghosted background text.
+## 5. Content economy
 
-This is a permanent rule for all current and future Horizons lessons.
+Use **minimal sufficient scaffolding**.
 
-## Lesson tab hierarchy
+Do not repeat the same information in a dialogue, form, table, caption or interface unless comparison between those forms is part of the task. Do not add `a / b`, `Yes / No`, word banks or hints automatically when the visible evidence already makes the A1 discovery achievable.
 
-Everything inside `.hz-lesson-tab` must be visually centered.
+Real-world artifacts must be functional. One strong model is preferable to two redundant models.
 
-The hierarchy is:
+## 6. No decorative ghost text
 
-1. `.hz-lesson-tab__id` — dominant element and largest type inside the tab;
-2. `.hz-lesson-tab__label` — small supporting label.
+Do not use oversized translucent words, letters, punctuation or instructional phrases as background decoration.
 
-The lesson ID should be the first thing the eye reads inside the tab.
+Use photography, whitespace, crop, structural geometry, rules and functional typography instead.
 
-## Meaningful micro-variety
+## 7. Unit-color discipline
 
-Small variation is encouraged when it communicates something.
+Normal lesson pages use one dominant unit color with neutral typography and photography. A repeated family should not become multicolored merely for novelty. Additional colors require a pedagogical reason such as meaningful categorization.
 
-Good examples:
+This newer rule supersedes older examples that treated multicolor variation itself as a default source of micro-variety.
 
-- uppercase letters use the full unit color while lowercase letters use a lighter/faded version;
-- repeated number circles use different vibrant colors but retain exactly the same circular shape;
-- photograph crops vary because the source image or pedagogy needs a different crop;
-- one key item may use scale contrast to establish hierarchy.
+## 8. Production QA checklist
 
-Avoid variation that changes shape, border logic, alignment and color all at once. A visual family should usually vary along one or two dimensions, not every available dimension.
+Before approving a two-page lesson, check:
 
-## Consistency before novelty
+1. Are numbered exercises in one vertical sequence?
+2. Is any information duplicated without a learning purpose?
+3. Are Guided Discovery prompts supported but not over-scaffolded?
+4. Is important text physically comparable in size to neighboring lessons?
+5. Do repeated image families share geometry, adequate scale and correct centering?
+6. Does any image family appear shifted because of the exercise-number lane?
+7. Does the page retain enough whitespace to scan quickly?
+8. Are artifacts used by the learner rather than included only for authenticity?
+9. Is shared chrome unchanged unless the global system itself was intentionally revised?
+10. Could an exception rule be replaced by an existing reusable component or guardrail?
 
-Before adding a new shape, ask:
-
-- Is this item part of a repeated set?
-- Would the exercise scan faster if the set shared one shape?
-- Can the desired variety be achieved with color, crop, opacity, typography or scale instead?
-
-If yes, prefer the repeated structure.
-
-These rules should be applied alongside the existing permanent rule that sibling numbered exercises remain in one vertical sequence.
+A spread that is technically complete but visibly smaller, more crowded, misaligned or less coherent than neighboring lessons is not production-ready.
