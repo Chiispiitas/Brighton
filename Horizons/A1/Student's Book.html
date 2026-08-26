@@ -32,11 +32,53 @@
       background: transparent;
     }
 
+    .hz-pdf-button {
+      position: fixed;
+      right: 20px;
+      bottom: 20px;
+      z-index: 9999;
+      display: grid;
+      place-items: center;
+      width: 52px;
+      height: 52px;
+      padding: 0;
+      border: 0;
+      border-radius: 50%;
+      background: #202124;
+      color: #fff;
+      box-shadow: 0 4px 16px rgb(0 0 0 / 24%);
+      cursor: pointer;
+    }
+
+    .hz-pdf-button:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgb(0 0 0 / 28%);
+    }
+
+    .hz-pdf-button:focus-visible {
+      outline: 3px solid #fff;
+      outline-offset: 3px;
+    }
+
+    .hz-pdf-button svg {
+      width: 24px;
+      height: 24px;
+      fill: none;
+      stroke: currentColor;
+      stroke-width: 2;
+      stroke-linecap: round;
+      stroke-linejoin: round;
+    }
+
     @media print {
       html,
       body,
       #hz-book {
         background: #fff;
+      }
+
+      .hz-pdf-button {
+        display: none !important;
       }
     }
   </style>
@@ -44,11 +86,20 @@
 <body>
   <main id="hz-book"></main>
 
+  <button class="hz-pdf-button" id="hz-pdf-button" type="button" aria-label="Download Student's Book as PDF" title="Download PDF">
+    <svg viewBox="0 0 24 24" aria-hidden="true">
+      <path d="M12 3v12"></path>
+      <path d="m7 10 5 5 5-5"></path>
+      <path d="M5 21h14"></path>
+    </svg>
+  </button>
+
   <!-- Classic local script: works when this file is opened directly via file://. -->
   <script src="./Lessons/manifest.js"></script>
   <script>
     (() => {
       const book = document.getElementById("hz-book");
+      const pdfButton = document.getElementById("hz-pdf-button");
       const lessons = Array.isArray(window.HORIZONS_A1_LESSONS)
         ? window.HORIZONS_A1_LESSONS
         : [];
@@ -60,6 +111,10 @@
         frame.title = `Horizons A1 ${filename.replace(/\.html$/i, "")}`;
         frame.loading = "eager";
         book.appendChild(frame);
+      });
+
+      pdfButton.addEventListener("click", () => {
+        window.print();
       });
     })();
   </script>
