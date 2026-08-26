@@ -55,13 +55,15 @@ Each lesson HTML links its own adjacent local stylesheet. This prevents the shar
 
 ## Local Student's Book boundary
 
-The A1 `Student's Book.html` is a **generated standalone file**. It must display correctly when opened directly through `file://` without embedding lesson files in iframes, fetching sibling local files, or using cross-frame DOM access.
+The A1 `Student's Book.html` is a **generated standalone file**. It must display correctly when opened directly through `file://` without embedding lesson files in iframes, fetching sibling local files, using cross-frame DOM access or requiring a local server.
 
-`../build/build-students-book.mjs` scans `../../A1/Lessons/` for definitive lesson masters, sorts them naturally, resolves/inlines required CSS, and writes the assembled book. The repository workflow `.github/workflows/build-horizons-a1-student-book.yml` runs the compiler automatically when lesson/shared production sources change.
+`../build/build-students-book.mjs` scans `../../A1/Lessons/` for definitive lesson masters, sorts them naturally, resolves/inlines required CSS, and writes the assembled HTML book. The repository workflow `.github/workflows/build-horizons-a1-student-book.yml` runs automatically when lesson/shared production sources change.
 
 Do not reintroduce a manual lesson manifest. A correctly named lesson master is sufficient for discovery.
 
-The PDF download path must remain page-aware: render each compiled `.hz-page` independently and add it as one A4 page. Do not use browser Print/Save as PDF or slice a single long screenshot.
+The local browser does **not** build the PDF. The workflow generates `../../A1/Student's Book.pdf` from the compiled HTML using the shared A4 print contract, optimizes it, verifies A4 size and exact `.hz-page` parity, and commits it beside the HTML. The floating download button in the HTML is only a local link to that validated sibling PDF.
+
+Do not reintroduce client-side PDF generation with canvas, SVG `foreignObject`, `html2canvas`, `jsPDF`, iframe cloning or browser Print/Save as PDF. Those approaches conflict with reliable `file://` operation and are outside the Student's Book boundary.
 
 ## Repository boundary
 
