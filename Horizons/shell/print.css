@@ -33,9 +33,7 @@
     page-break-after: auto;
   }
 
-  .hz-no-print {
-    display: none !important;
-  }
+  .hz-no-print { display: none !important; }
 
   a {
     color: inherit;
@@ -46,17 +44,14 @@
   figure,
   table,
   .hz-focus-box,
-  .hz-reading-card,
   .hz-ui-card,
+  .hz-form-card,
   .hz-review-block,
   .hz-exercise,
-  .hz-extra-practice,
-  .hz-callout {
+  .hz-extra-practice {
     break-inside: avoid;
     page-break-inside: avoid;
   }
 
-  body.hz-debug .hz-page::after {
-    display: none !important;
-  }
+  body.hz-debug .hz-page::after { display: none !important; }
 }

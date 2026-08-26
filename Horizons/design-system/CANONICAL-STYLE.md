@@ -1,221 +1,177 @@
 # Horizons A1 — Canonical Book Style
 
-**Status: APPROVED / CANONICAL**
+**Status: CANONICAL / VISUAL AND STRUCTURAL SOURCE OF TRUTH**
 
-This is the normative visual and structural specification for the Horizons A1 Student’s Book. Pedagogy is defined in `GUIDED-DISCOVERY.md`; specific production refinements and QA rules are in `STYLE-REFINEMENTS.md`.
+This file governs the visual and structural system of the Horizons A1 Student's Book. Pedagogy and learner-facing language progression are governed by `GUIDED-DISCOVERY.md`. Semantic implementation is governed by `component-contracts.md`; assets are governed by `asset-policy.md`.
 
-If an older illustrative example conflicts with a newer specific refinement, the newer refinement wins.
+There is no secondary “refinements” document. If a permanent cross-lesson rule changes, update this file and the reusable CSS/component contract together.
 
-## 1. Desired character
+## 1. Book character
 
-Horizons should feel like a professionally art-directed contemporary **print publication with coursebook usability**, not a web dashboard, worksheet template or imitation of another publisher.
+Horizons is a professionally art-directed **print publication with coursebook usability**.
 
-The balance is:
+It is:
 
-- editorial rather than interface-heavy;
-- creative rather than templated;
-- structured rather than chaotic;
+- A4 and print-first;
+- editorial rather than dashboard-like;
 - photographic rather than illustration-led;
-- dynamic rather than rigid;
-- print-first rather than screen-first;
-- visually varied while mechanically consistent;
-- **content-led rather than school-coded**.
+- structured but visually varied;
+- content-led rather than school-coded;
+- mechanically consistent without forcing every lesson into one template.
 
-The book’s identity comes from its typography, composition, photography, whitespace, color discipline and shared chrome. It does **not** depend on every spread looking educational, academic or classroom-themed.
+The book's identity comes from typography, composition, photography, whitespace, one-unit-color discipline and shared chrome.
 
-## 2. Core visual language
-
-Canonical traits:
-
-- A4 print-first pages;
-- warm off-white paper;
-- neutral black/gray typography;
-- one dominant unit color per normal lesson/page;
-- substantial whitespace;
-- large, deliberate raster photography;
-- intentional crops and controlled image/text overlap;
-- strong typographic hierarchy;
-- simple large exercise numerals;
-- straight edges and thin editorial rules by default;
-- large CSS geometry used structurally;
-- magazine, article, poster, catalog, documentary, travel, lifestyle or other editorial treatments when the content benefits;
-- rounded/shadowed UI mainly for simulated real-world interfaces;
-- almost no decorative gradients;
-- very limited generic cards and pills;
-- no decorative vector illustration;
-- SVG only for functional icons.
-
-Creativity should come from **composition, photography, crop, scale, typography, whitespace, structural geometry and the visual world of the lesson**, not from accumulating small decorative components.
-
-## 3. Theme and visual world
-
-Horizons has **no mandatory educational visual theme**.
-
-The visual world should follow the situation, topic, people and setting of the lesson. A spread may feel like hospitality, travel, street life, fitness, retail, food, transport, home life, work, culture, sports, technology, nature, entertainment, documentary photography, a magazine feature, a service counter, a social setting or another appropriate world.
-
-Permanent rules:
-
-- do not add classroom, notebook, pencil, blackboard, school-building or study-desk imagery merely to make a page look like a language book;
-- do not append phrases such as `educational style`, `school theme`, `classroom aesthetic` or equivalent to image prompts as a default;
-- a school or classroom setting is valid when the lesson itself genuinely takes place there;
-- image art direction should describe the **actual scene and mood**, not the fact that the image will appear in a coursebook;
-- neighboring lessons may have noticeably different visual atmospheres while still belonging to Horizons;
-- consistency across the book is carried by the design system, not by forcing every image into the same subject matter or mood.
-
-When choosing between a generic education-coded image and an image that makes the lesson’s real-world context feel believable, prefer the believable context.
-
-## 4. Exercise-flow rule
-
-**All numbered exercises remain in one vertical sequence.**
-
-Sibling numbered exercises are never placed side by side.
-
-Columns and grids are allowed only **inside one exercise** for questions, options, vocabulary, images, profiles, tables, readings, forms, collages, matching, reviews, timelines and similar internal material.
-
-## 5. Two-page lesson architecture
+## 2. Fixed lesson architecture
 
 Every lesson occupies two A4 pages.
 
 - Lesson A — Grammar and/or Vocabulary.
 - Lesson B — Reading/Listening with supporting Vocabulary.
 - Lesson C — Grammar and/or Vocabulary.
-- Lesson D — Speaking or Writing culminating in a believable real-world outcome.
-- Unit Review follows the four lessons.
-- Grammar Reference/Practice and Vocabulary Practice remain back-of-book activity sections.
+- Lesson D — Speaking or Writing with a believable real-world outcome.
+- Unit Review follows Lessons A–D.
+- Grammar Reference/Practice and Vocabulary Practice are back-of-book activity sections.
 
-The four lesson letters have different pedagogical jobs and should not be forced into one identical page template or one identical visual theme.
+The four lesson letters have different pedagogical jobs and must not be forced into identical page compositions.
 
-For the full learning sequence and Lesson D transaction model, follow `GUIDED-DISCOVERY.md` rather than duplicating methodology here.
+## 3. Exercise flow
 
-## 6. Source fidelity and frozen boundary
+**All sibling numbered exercises remain in one vertical sequence and numerical order.**
 
-When adapting an existing Student’s Book page, preserve the educational source exactly unless the author explicitly requests a content change.
+Columns/grids may appear **inside one exercise** for questions, options, vocabulary, readings, images, forms, tables, matching and similar internal content.
 
-This includes lesson title/focus, numbering, instructions, questions, options, dialogue/reading wording, grammar examples, vocabulary, capitalization, audio references, form labels, cross-references and Extra Practice wording.
+Normal numbered exercises are separated by numbering, whitespace and composition, not decorative horizontal dividers. `Go to:` cross-references also sit in open whitespace.
 
-The frozen source remains in `Horizons A1/`. Active book work belongs in `Horizons/`.
+## 4. Visual language
 
-An explicit author correction overrides source fidelity for that requested item; do not keep stale documentation claiming the older source behavior after such a correction.
+Default page language:
 
-## 7. Typography and legibility
+- warm off-white paper;
+- neutral black/gray typography;
+- one dominant unit color;
+- substantial whitespace;
+- deliberate raster photography;
+- strong typographic hierarchy;
+- large simple exercise numerals;
+- straight edges and thin editorial rules;
+- controlled CSS geometry when it supports structure;
+- rounded/shadowed surfaces mainly when reproducing a real interface;
+- almost no decorative gradients;
+- no generic card/pill system;
+- no decorative vector illustration;
+- SVG only for functional icons.
 
-Typography should establish hierarchy before containers do.
+Do not use oversized translucent words, letters, numerals or punctuation as background decoration. Do not add visual material merely to fill empty space.
 
-Prefer strong lesson titles, clear instructions, readable body language, restrained labels and meaningful size/weight contrast.
+## 5. Content-led visual worlds
 
-Do not solve page density by shrinking important learning content. Role-specific minimum physical sizes live in `tokens.css`; enforcement and QA guidance live in `guardrails.css` and `STYLE-REFINEMENTS.md`.
+Horizons has **no default school/classroom visual theme**.
+
+The lesson's actual world determines setting, props, people and photographic mood. A lesson may inhabit hospitality, travel, transport, home life, fitness, retail, food, work, culture, technology, sport, street life or another appropriate environment.
+
+Do not add notebooks, pencils, blackboards, school desks, classrooms or similar school-coded props unless they naturally belong to the scene. Do not describe generated images as `educational style`, `classroom aesthetic` or equivalent by default.
+
+Neighboring lessons may look atmospherically different. Book unity comes from the shared system, not repeated subject matter.
+
+## 6. Photography and media
+
+Photography carries major visual weight. Prefer one strong image to several weak decorative images unless the task genuinely requires a family or sequence.
+
+Crops must be intentional and must preserve the action/object needed by the learner. Real-world settings need enough environmental evidence to read immediately as the intended place.
+
+For occupation/action vocabulary, show the action when it improves recognition.
+
+### Repeated media families
+
+Equal-status images form one visual family:
+
+- use common geometry and basic scale;
+- center the family against the usable composition;
+- avoid arbitrary per-image nudges;
+- keep each item physically large enough to read at A4 print size;
+- different choices/places may retain different environments and moods.
+
+Use the shared full-lane media helper when the exercise-number lane would otherwise make a dominant family look shifted.
+
+## 7. Typography and emphasis
+
+Typography establishes hierarchy before containers do.
+
+Important learner-facing language must remain above the physical A1 floors defined in `tokens.css`. Do not solve density by shrinking important text.
+
+When a page is too dense, resolve it in this order: remove redundancy → remove decorative space → reframe imagery → tighten nonessential spacing → simplify geometry → recompose the exercise → redistribute content across the two-page lesson.
+
+### Bold
+
+Bold in learner-facing language has pedagogical meaning. Emphasize the exact form, word or feature the learner should notice; do not scatter bold merely for visual energy. Structural headings and chrome may use heavy weights normally.
 
 ## 8. Unit color
 
-A normal lesson uses one dominant unit color with neutral type and photography.
+A normal lesson uses one dominant unit color with neutral typography and photography.
 
-The unit color may appear in exercise numerals, structural rules, selected titles, language emphasis and one or two major fields.
+Use the unit color for exercise numerals, structural rules, selected titles, language emphasis and limited major fields. Additional colors require a pedagogical or authentic-interface reason.
 
-Repeated families should not become multicolored merely for novelty. Additional colors require a pedagogical reason, such as meaningful categorization.
+Repeated families do not become multicolored merely for novelty.
 
-The unit color is a unifying book device, not a requirement that the underlying photography share one literal scene palette.
+## 9. Containers, geometry and interfaces
 
-## 9. Photography
+Use a container when it clarifies language, organizes a functional artifact or enables a deliberate editorial composition.
 
-Photography carries substantial visual weight in final production.
+Avoid wrapping ordinary content in generic cards, chips or pills. Large shapes are valid only when they support hierarchy, grouping, reading flow, task meaning or image emphasis.
 
-Use real or generated raster photography when appropriate. Prefer one strong image over several weak decorative images unless comparison, matching, sequence or vocabulary recognition requires a set.
+Forms, chats, schedules, tickets, maps, reviews and app-like elements may use authentic UI geometry because the interface itself is part of the task. The learner must actually read, interpret, complete or use the artifact.
 
-Art-direct photographs as believable images from the world represented: documentary, editorial, lifestyle, commercial, environmental portraiture, travel, hospitality, food, workplace, sport, culture or another appropriate photographic language. Do not make photographs look scholastic simply because they are used for learning.
+## 10. Shared chrome
 
-Crops should be intentional. Subject direction, negative space and environmental context should support the page flow and task.
+The following are reusable cross-lesson components and should remain visually stable unless the system itself is intentionally revised:
 
-For occupation/action vocabulary, show people **doing the job**, not simply posing, when action makes the meaning clearer.
-
-For real-world situations, prioritize environmental evidence that makes the setting instantly legible: the hotel desk should feel like a hotel desk, the gym should feel like a gym, the bus stop should feel like public transport, and so on.
-
-Placeholders are allowed during prototyping but must preserve intended final crop, scale, composition and scene logic.
-
-## 10. Repeated media families
-
-Repeated equal-status images form one visual system.
-
-They should share geometry, basic size and alignment. Judge the family as a whole against the usable page composition.
-
-Shared geometry does **not** require identical subject matter, location, lighting or mood. A repeated family can contain distinct visual worlds when the choices themselves represent different contexts.
-
-Do not allow the exercise-number lane to make a dominant image family appear shifted. Use the reusable full-lane media geometry from `guardrails.css` when appropriate.
-
-Images must remain physically large enough that the required action/object is recognizable at A4 print size. Detailed production rules and QA checks live in `STYLE-REFINEMENTS.md`.
-
-## 11. Real-world interfaces
-
-Forms, chats, tickets, schedules, maps, reviews, menus and app-like elements may use more authentic UI geometry, including controlled rounding or shadow, because the interface itself is part of the task.
-
-They must be functional: students should read, interpret, complete, respond to or use them.
-
-Do not add an interface merely because it looks contemporary.
-
-## 12. Containers, shapes and effects
-
-Default page language is typography + photography + whitespace + thin rules.
-
-Use a container when it clarifies grammar/pronunciation, organizes a real-world interface, or supports a deliberate editorial composition.
-
-Avoid:
-
-- wrapping ordinary content in cards by default;
-- generic pills as labels;
-- decorative gradients;
-- random mixed silhouettes inside one repeated family;
-- decoration added only to fill empty space;
-- oversized translucent background words, letters or punctuation;
-- generic school/study motifs added only to signal `education`.
-
-Large CSS shapes are allowed when they support hierarchy, grouping, reading flow, task meaning or image emphasis.
-
-## 13. Shared chrome
-
-The following are stable across lessons unless the global system itself is intentionally revised:
-
-- lesson tab geometry and hierarchy;
-- lesson-header rhythm;
-- exercise-number lane;
-- instruction hierarchy;
+- lesson tab/header;
+- exercise-number lane and instruction hierarchy;
 - audio treatment;
-- cross-reference alignment;
-- continuation marker treatment;
-- continuation-page top rhythm;
-- Extra Practice alignment;
-- footer and page-number treatment.
+- `NEW WORDS` cue;
+- cross-reference treatment;
+- continuation marker;
+- Extra Practice treatment;
+- footer/page number.
 
-Local collisions are solved by recomposing local content, not by changing one instance of shared chrome.
+Continuation pages use the shared continuation marker and a default safe top offset. A lesson may increase that content offset when its first composition would collide with the marker; move the content, not the marker.
 
-Shared chrome is what allows a hotel-themed spread, a transport-themed spread and a lifestyle-themed spread to look like the same book without making their imagery artificially similar.
+Local content collisions are solved in lesson-scoped CSS, not by redefining shared chrome.
 
-## 14. Pairwork and productive outcomes
+## 11. Source fidelity
 
-Pairwork is a core learning mechanism, not decoration. It should normally involve retrieval, comparison, information exchange, checking, decision-making, rehearsal or role-play.
+When adapting an existing Student's Book page, preserve the source exactly unless the author explicitly requests a content change. This includes titles, focus, numbering, instructions, questions, options, dialogue/reading wording, examples, vocabulary, capitalization, audio references, form labels, cross-references and Extra Practice.
 
-Lesson D should culminate in a situation where the learner has a role, reason to communicate, information to exchange and a concrete product/outcome.
+An explicit author correction becomes the new authority for that item. Remove stale documentation that still describes the superseded behavior.
 
-The visual setting should make that situation feel credible without turning the page into a literal depiction of `students learning English` unless that is the situation itself.
+The frozen source remains in `Horizons A1/`; active production belongs in `Horizons/`.
 
-Follow `GUIDED-DISCOVERY.md` for the canonical details.
+## 12. Repository boundary
 
-## 15. Repository architecture
+- reusable cross-lesson rules/components → `design-system/`;
+- lesson-specific composition, corrections, asset mappings and crop tuning → the matching lesson under `examples/`;
+- final raster assets → `Images/`;
+- image prompts and temporary art-direction notes → outside the repository unless explicitly requested.
 
-Reusable cross-lesson rules belong in `design-system/`.
+Do not create `production/`, `staging/`, compatibility-override or lesson-override directories.
 
-Lesson-specific composition, corrections, crop tuning and asset mappings stay **with the corresponding lesson under `examples/`**, either inline in the lesson HTML or in an adjacent lesson-scoped stylesheet. Final raster assets belong in `Images/`.
+Do not promote a one-off lesson fix into the design system. Before adding a reusable component, check whether an existing component already solves the need.
 
-Image prompts, generation notes and temporary art direction remain outside the repository unless the author explicitly asks for them to be saved.
+## 13. Production approval
 
-Do **not** create a separate `production/`, `staging/`, compatibility-overrides or lesson-overrides directory. Lesson-specific implementation should stay visibly colocated with the lesson master instead of living in a second project layer.
+A spread is not production-ready if it is noticeably more crowded, smaller, misaligned, less readable or less coherent than neighboring approved lessons.
 
-Do not promote a local correction into the design system merely because it was needed once. Do not duplicate an existing rule in a new file; link to the source of truth instead.
+Before approval verify:
 
-## 16. Approval test
+1. source fidelity or explicit authorization for changes;
+2. numbered exercise order and single vertical lane;
+3. pedagogy/language load against `GUIDED-DISCOVERY.md`;
+4. readable physical type;
+5. no redundant evidence or decoration;
+6. repeated-media scale, crop and centering;
+7. shared chrome remains intact;
+8. sufficient whitespace;
+9. real-world artifacts are functional;
+10. imagery belongs convincingly to the lesson's actual world.
 
-A spread is not production-ready if it is noticeably more crowded, smaller, misaligned, less readable or less coherent than neighboring lessons.
-
-Before approval, verify source fidelity, exercise order, Guided Discovery flow, legibility, content economy, repeated-family alignment, shared chrome, whitespace, functional artifacts, image crop/scale and **visual-world fidelity**.
-
-Ask: could the photography plausibly belong to the real setting or editorial world being represented, or does it look like generic stock imagery selected because this is a school book?
-
-When a visual idea conflicts with the learning sequence, **the pedagogy wins**. When pedagogy does not require a specific visual theme, **the content world leads the art direction**.
+When visual novelty conflicts with the learning sequence, **pedagogy wins**. When pedagogy does not require a theme, **the content world leads the art direction**.

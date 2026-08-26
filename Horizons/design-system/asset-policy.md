@@ -1,10 +1,8 @@
-# Horizons Asset Policy
+# Horizons A1 — Asset Policy
 
-This policy applies to all new Student's Book production inside `Horizons/`.
+This file governs production assets inside `Horizons/`. Visual/art-direction principles come from `CANONICAL-STYLE.md`.
 
-## 1. Visual rule
-
-**Vector illustrations are prohibited.**
+## 1. Allowed / prohibited visuals
 
 Allowed:
 
@@ -12,38 +10,24 @@ Allowed:
 - generated raster imagery;
 - raster collages/composites;
 - screenshots or original UI recreations when functionally appropriate;
-- CSS shapes and geometric decoration;
-- SVG only for functional icons and simple interface symbols.
+- CSS geometry;
+- SVG only for small functional icons/interface symbols.
 
-Not allowed:
+Prohibited:
 
-- illustrated vector people;
-- flat-vector educational scenes;
-- cartoon/vector environments;
+- decorative vector people/scenes;
+- flat-vector educational environments;
 - decorative SVG character artwork;
-- generic corporate vector illustration packs.
+- generic corporate/education illustration packs;
+- watermarked preview images in final production.
 
-Horizons does **not** use a default school, classroom or `educational` visual theme. Assets should inherit their visual language from the actual subject and setting of the lesson.
+Assets follow the lesson's actual visual world. Do not add school-coded props or `educational style` prompting unless the lesson itself requires them.
 
-## 2. Theme-neutral art direction
+## 2. External images
 
-Image sourcing and generation should describe the **world being shown**, not the fact that the image will be used in a language coursebook.
+Only use assets permitted for the intended publication/use.
 
-A lesson may draw from hospitality, travel, documentary, lifestyle, workplace, sport, food, retail, transport, culture, home life, technology, entertainment, nature, street photography or another appropriate visual world.
-
-Permanent prompt rules:
-
-- do not append `educational style`, `school theme`, `classroom aesthetic`, `student textbook image` or equivalent as a default prompt instruction;
-- do not add books, pencils, notebooks, desks, chalkboards, backpacks or classrooms unless they belong naturally in the requested scene;
-- describe setting, people, action, mood, lighting, camera position, crop and negative space instead;
-- when a lesson genuinely takes place at school, school imagery is allowed because it is the subject, not because it is the house style;
-- book consistency should come from layout, crop, color system and typography rather than forcing unrelated images into one theme.
-
-## 3. External images
-
-Only assets that are free for the intended publication/use may be used.
-
-Before an external image becomes a production asset, record:
+For every external production asset record:
 
 - asset ID;
 - lesson/activity ID;
@@ -52,118 +36,70 @@ Before an external image becomes a production asset, record:
 - source page;
 - license/use terms;
 - attribution requirement;
-- date acquired;
-- any edits/crops made.
+- acquisition date;
+- edits/crops.
 
-Do not hotlink production images. Download approved assets into the project asset structure during the relevant production stage.
+Do not hotlink production images. Store approved assets locally under `Images/`.
 
-## 4. Generated raster imagery
+## 3. Generated raster imagery
 
-Generated imagery is preferred when the composition, action or object set must be exact, for example:
+Use generated imagery when the task needs exact objects, action, interaction, framing or negative space that is difficult to source reliably.
 
-- a hotel guest checking in at a reception desk with usable negative space for editorial copy;
-- a bag containing a controlled set of vocabulary objects;
-- a lost-and-found counter with required possessions;
-- a grocery scene with a specific number of countable/uncountable items;
-- a controlled set of people/items for matching or listening tasks;
-- a specific real-world interaction that is difficult to source with the required crop.
+Generated images must look like credible photography from the represented world and must be saved as raster (`.png`, `.jpg`, `.webp`) for production.
 
-Generated images should still look like credible photography from the world represented. Do not make them look like classroom posters or teaching materials unless the scene itself requires that.
+## 4. Prompt requirements
 
-Generated images must be rasterized for production (`.png`, `.jpg`, or `.webp`).
+A production prompt should specify only what materially affects the asset:
 
-## 5. Photography preference
-
-Use authentic photography when real-world recognition is important, especially for:
-
-- cities and countries;
-- transportation;
-- food;
-- weather;
-- architecture;
-- shopping environments;
-- tiny homes;
-- travel;
-- hospitality and services;
-- sports and fitness;
-- workplaces;
-- recognizable public figures where use is appropriate.
-
-Prefer images with clear environmental storytelling over generic posed stock photography.
-
-Avoid watermarked preview images in all final material.
-
-## 6. Prompt construction
-
-Production image prompts should normally specify:
-
-1. the real setting;
-2. the person/people or object(s);
-3. the action;
-4. the photographic language or mood;
-5. camera framing and crop needs;
-6. useful negative space or subject direction;
+1. real setting;
+2. people/objects;
+3. action;
+4. photographic language/mood;
+5. framing/crop;
+6. subject direction or useful negative space;
 7. realism constraints;
-8. exclusions such as visible text, logos, watermarks or unwanted school-coded props.
+8. exclusions such as readable text, logos, watermarks or unwanted props.
 
-Prompt the image as if commissioning a photographer or art director for that scene. Do not prompt it as `an image for an English lesson` unless that fact materially changes what must be visible.
+Prompt the scene as a photographer/art director commission, not as `an image for an English lesson`.
 
-## 7. Real brands and apps
+Image-generation prompts and temporary art-direction notes stay outside the repository unless the author explicitly asks to save them.
 
-The syllabus includes real-world contexts such as transport apps, maps/reviews, shopping systems, and social-media-like activities.
+## 5. Real brands and apps
 
-Default rule:
+Brand names may appear when pedagogically relevant.
 
-- factual references and brand names may be used when pedagogically relevant;
-- do not copy commercial screenshots merely for decoration;
-- prefer original HTML/CSS recreations of the needed interface concept;
-- retain only the visual information necessary for the language task;
-- do not imply endorsement or affiliation.
+Do not copy commercial interfaces merely for decoration. Prefer original HTML/CSS recreations containing only the information needed for the language task, and do not imply endorsement/affiliation.
 
-## 8. Functional SVG rule
+## 6. Functional SVG
 
-SVG is allowed for small functional symbols such as:
+SVG is limited to small functional symbols such as audio, play/pause, map pins, phone, arrows, calendar, QR/scanner cues and simple interface/section icons.
 
-- audio/headphones;
-- play/pause;
-- map pin;
-- phone;
-- pencil;
-- star;
-- arrow/chevron;
-- calendar;
-- QR/scanner indicator;
-- simple grammar/vocabulary section symbols.
+Icons remain secondary to learner content and should inherit Horizons colors where practical.
 
-Icons should inherit Horizons colors where practical and remain secondary to content.
+## 7. Audio
 
-## 9. Audio policy
+Planned production defaults:
 
-Planned audio production:
+- American English voices;
+- clear natural A1-appropriate delivery;
+- multiple voices where dialogue requires distinct speakers;
+- permanent internal audio ID plus printed track number;
+- QR access may be added to printed activities.
 
-- ElevenLabs;
-- American English voices by default;
-- clear natural delivery suitable for A1 learners;
-- no exaggeratedly slow speech unless the activity explicitly requires it;
-- multiple voices when a dialogue needs distinct speakers;
-- each audio item receives a permanent internal ID and a printed track number;
-- printed Student's Book activities may include a QR code for direct access.
-
-For each audio asset, retain:
+For each audio asset retain:
 
 - internal audio ID;
 - printed track number;
 - unit/lesson/activity ID;
-- script;
-- speaker labels;
+- script and speaker labels;
 - voice/voice ID;
-- generation settings relevant to reproducibility;
+- relevant generation settings;
 - generation date;
 - final filename.
 
-## 10. Asset naming convention
+## 8. Naming
 
-Recommended pattern:
+Recommended stable pattern:
 
 `HZN_A1_U##_L#_E##_TYPE_##`
 
@@ -173,4 +109,4 @@ Examples:
 - `HZN_A1_U03_LC_E04_ICON_01.svg`
 - `HZN_A1_U05_LD_E03_AUD_01.mp3`
 
-The semantic activity ID should remain stable even if page numbers change later.
+The activity ID should remain stable even if page numbers change.

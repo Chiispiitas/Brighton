@@ -1,17 +1,19 @@
 # Horizons A1 — Component Contracts
 
-This file defines semantic HTML/CSS usage. Visual philosophy belongs in `CANONICAL-STYLE.md`; production QA belongs in `STYLE-REFINEMENTS.md`.
+This file defines reusable semantic HTML/CSS usage. Visual rules belong in `CANONICAL-STYLE.md`; pedagogy/language rules belong in `GUIDED-DISCOVERY.md`.
+
+Reusable CSS lives in `components.css`; tokens live in `tokens.css`.
 
 ## 1. Page
 
 ```html
-<article class="hz-page hz-content hz-unit-1" data-page="1">
+<article class="hz-page hz-content hz-unit-2" data-page="13">
   <main class="hz-page__content">
     <div class="hz-page-stack">...</div>
   </main>
   <footer class="hz-page__footer">
-    <span class="hz-page-code">Horizons A1 · Unit 1</span>
-    <span class="hz-page-number">1</span>
+    <span class="hz-page-code">Horizons A1 · Unit 2</span>
+    <span class="hz-page-number">13</span>
   </footer>
 </article>
 ```
@@ -22,27 +24,27 @@ Use one `.hz-unit-*` identity on a normal page.
 
 ```html
 <header class="hz-lesson-header">
-  <div class="hz-lesson-tab" aria-label="Lesson 1A">
+  <div class="hz-lesson-tab" aria-label="Lesson 2A">
     <span class="hz-lesson-tab__label">Lesson</span>
-    <span class="hz-lesson-tab__id">1A</span>
+    <span class="hz-lesson-tab__id">2A</span>
   </div>
   <div class="hz-lesson-heading">
-    <h1 class="hz-lesson-title">Hi, I’m Bri!</h1>
+    <h1 class="hz-lesson-title">LOOK INSIDE MY BAG!</h1>
     <div class="hz-objectives">
-      <span class="hz-objectives__item">The verb to be</span>
-      <span class="hz-objectives__item">Alphabet</span>
+      <span class="hz-objectives__item">Personal items</span>
+      <span class="hz-objectives__item">Demonstratives</span>
     </div>
   </div>
 </header>
 ```
 
-Titles/objectives come from the locked syllabus or authorized source.
+Titles/objectives come from the authorized syllabus/source.
 
 ## 3. Numbered exercise lane
 
 ```html
 <div class="hz-exercises">
-  <section class="hz-exercise" id="HZN-A1-U01-LA-E01">
+  <section class="hz-exercise">
     <div class="hz-exercise-number">1</div>
     <div class="hz-exercise__content">
       <p class="hz-exercise__instruction">Read and listen.</p>
@@ -52,13 +54,13 @@ Titles/objectives come from the locked syllabus or authorized source.
 </div>
 ```
 
-Every numbered exercise stays in this single vertical lane. Never use a page-level grid to place sibling exercises side by side.
+Sibling numbered exercises always remain in this one vertical lane. Do not place them in a page-level grid.
 
-Normal exercises do **not** carry horizontal divider rules. Their separation comes from numbering, whitespace and composition. A `Go to:` cross-reference also sits in open whitespace; do not add a separator immediately above or below it.
+Normal exercises and `Go to:` references do not receive decorative separator lines.
 
 ## 4. Internal grids
 
-Use `.hz-question-grid--2/--3` or `.hz-content-grid--2/--3` **inside one exercise only**.
+Two/three-column grids are allowed **inside one exercise**:
 
 ```html
 <div class="hz-exercise__body hz-question-grid hz-question-grid--2">
@@ -67,28 +69,25 @@ Use `.hz-question-grid--2/--3` or `.hz-content-grid--2/--3` **inside one exercis
 </div>
 ```
 
-## 5. Repeated media families
+Use existing `.hz-question-grid-*` / `.hz-content-grid-*` helpers before inventing a local equivalent.
 
-For equal-status photographs or visual clues, treat the set as one composition.
+## 5. Repeated media family
 
 ```html
 <div class="hz-exercise__body hz-media-family hz-media-family--full-lane">
   <figure>...</figure>
   <figure>...</figure>
   <figure>...</figure>
-  <figure>...</figure>
 </div>
 ```
 
-Use `hz-media-family--full-lane` when the dominant family should be centered across the usable exercise/page lane rather than appearing shifted by the exercise-number column.
+Use `--full-lane` when a dominant equal-status family should center across the usable exercise lane rather than being visually shifted by the exercise-number column.
 
-Do not recreate this with arbitrary negative margins in every lesson. The reusable geometry lives in `guardrails.css`.
-
-The family itself still chooses its grid columns/gaps. Equal-status items should share size/crop treatment, and action vocabulary images must remain large enough to read at physical print size.
+The family chooses its own columns/gaps locally. Equal-status items share geometry/basic scale; crop position may differ per image.
 
 ## 6. Photography
 
-Standard frame:
+Standard shell frame:
 
 ```html
 <figure class="hz-media-frame hz-media-frame--landscape">
@@ -96,63 +95,60 @@ Standard frame:
 </figure>
 ```
 
-For prototypes, `.hz-photo-placeholder` must occupy the intended final crop rather than a generic temporary box.
+Prototype placeholders use `.hz-photo-placeholder` and must occupy the intended final crop/scale.
 
-For stronger editorial compositions use existing reusable patterns in `components.css` / `editorial-layouts.css` such as media stages, offsets, bands, collages and photo strips instead of inventing another near-duplicate component.
+Distinctive collages, overlays, article treatments and other editorial compositions are **lesson-local by default**. Promote one into `components.css` only after it proves genuinely reusable across multiple production lessons.
 
-## 7. Reading/editorial feature
+## 7. Continuation page
+
+Use the generic shared continuation marker for new lessons:
 
 ```html
-<article class="hz-feature-panel">
-  <figure class="hz-feature-panel__media">...</figure>
-  <div class="hz-feature-panel__copy">
-    <h2 class="hz-feature-panel__title">...</h2>
-    <p class="hz-reading-copy">...</p>
-  </div>
+<article class="hz-page hz-content hz-unit-2 hz-continuation-page">
+  <main class="hz-page__content">
+    <div class="hz-continuation">2A</div>
+    <div class="hz-page-stack">...</div>
+  </main>
 </article>
 ```
 
-The split belongs inside one exercise if the feature is numbered.
+`components.css` provides the marker and a default safe top offset. If the first content block needs more clearance, increase only the continuation page's content offset in lesson-local CSS. Do not move/reinvent the shared marker.
 
-## 8. Language-focus areas
+Unit 1 legacy continuation class aliases remain supported for existing masters.
+
+## 8. Language-focus area
 
 ```html
 <section class="hz-focus-box hz-no-break">
-  <header class="hz-focus-box__header">Grammar · Verb to be</header>
+  <header class="hz-focus-box__header">GRAMMAR: ...</header>
   <div class="hz-focus-box__body">...</div>
 </section>
 ```
 
-Use restrained focus treatment for grammar/pronunciation when explicit clarification is pedagogically useful.
+Use it when explicit clarification is pedagogically useful, not as a default wrapper.
 
 ## 9. Functional labels
 
 ```html
-<span class="hz-new-words">New words</span>
-<div class="hz-go-to">Grammar Reference · page ---</div>
+<span class="hz-new-words">NEW WORDS</span>
+<div class="hz-go-to">Vocabulary Practice · page ---</div>
 ```
 
-`NEW WORDS` is a recurring pedagogical cue inherited from the original book. Keep it visible whenever a lesson explicitly introduces new lexical items.
-
-Its treatment is deliberately simple: **plain NEW WORDS text plus a small sparkle icon**. It is not a badge, pill, chip, box, card or filled label. Do not give it a background, border, enclosing shape or container padding. The sparkle is supplied consistently by CSS, so lesson markup should not duplicate it manually.
-
-The normal rule against decorative pills applies without exception.
-
-Other ordinary labels should remain equally restrained.
+`NEW WORDS` is plain text with the shared small sparkle generated by CSS. Do not manually add the sparkle or turn the cue into a badge/pill/card.
 
 ## 10. Real-world UI
 
-Rounded/shadowed UI is appropriate when the content genuinely represents a form, chat, ticket, review, app or similar interface.
+Rounded/shadowed surfaces are appropriate for genuine forms, chats, tickets, apps and similar interfaces:
 
 ```html
 <article class="hz-ui-card" aria-label="Sample interface">...</article>
 ```
 
-The artifact must be used by the learner, not included only for visual authenticity.
+The artifact must be used by the learner rather than included only for appearance.
 
-## 11. Text roles
+## 11. Text roles / physical floors
 
-When local composition could otherwise compress text, use the semantic roles provided by `guardrails.css`:
+`components.css` provides:
 
 - `.hz-student-text`
 - `.hz-dialogue-text`
@@ -160,16 +156,21 @@ When local composition could otherwise compress text, use the semantic roles pro
 - `.hz-interface-text`
 - `.hz-micro-text`
 
-Do not label ordinary learning content as interface/micro merely to bypass the A1 legibility floor.
+Use the role that matches the content. Never label ordinary learner content as interface/micro simply to bypass the physical type floor.
 
-## 12. Architecture boundary
+## 12. Lesson-local stylesheet
 
-Reusable cross-lesson components belong in `design-system/`.
+New Unit 2+ lesson HTML links its adjacent stylesheet directly after the shell:
 
-Lesson-specific corrections, composition rules, asset filenames and crop tuning stay with the corresponding lesson under `../examples/`, either inline in the HTML or in an adjacent lesson-scoped stylesheet. Final raster assets belong in `../Images/`.
+```html
+<link rel="stylesheet" href="../shell/a4-shell.css">
+<link rel="stylesheet" href="./lesson-2a-local.css">
+```
 
-Do not create a separate production, staging or override directory for lesson-specific work. Before creating a new component or override, search the existing system for an equivalent. Prefer extension of one canonical component over a near-duplicate.
+Do not add new lesson-local imports to `a4-shell.css`.
 
-## 13. Content protection
+## 13. Architecture boundary
 
-Visual redesign does not authorize silent educational edits. Preserve frozen content unless the author explicitly requests a change.
+Reusable cross-lesson components belong here/in `components.css`. Lesson-specific composition, corrections, asset filenames and crop tuning stay beside the lesson in `../examples/`.
+
+Before creating a new shared component, search for an equivalent. Prefer one canonical component over near-duplicates.

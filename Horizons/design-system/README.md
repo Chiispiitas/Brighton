@@ -1,62 +1,27 @@
 # Horizons A1 design system
 
-This directory contains only **reusable, cross-lesson rules** for the Horizons A1 HTML/CSS master.
+This directory contains only **reusable cross-lesson rules and components**.
 
-Start with `HANDOFF.md`. It defines authority order and the minimum resume checklist without restating every rule.
+Start with `HANDOFF.md`.
 
-## Source-of-truth map
+## Source map
 
-- `CANONICAL-STYLE.md` — visual language, lesson architecture, permanent layout principles and theme-neutral art direction.
-- `GUIDED-DISCOVERY.md` — pedagogy, lesson-authoring method, cumulative early-A1 language load and Spanish-bridge rules.
-- `STYLE-REFINEMENTS.md` — specific production refinements and QA rules; newer specific refinements supersede older illustrative examples.
-- `component-contracts.md` — semantic HTML/component contracts.
-- `tokens.css` — palette, type scale, spacing, geometry and A1 legibility floors.
-- `components.css` — reusable exercise/media components.
-- `editorial-layouts.css` — reusable large editorial compositions.
-- `canonical-refinements.css` — stable shared-chrome refinements.
-- `guardrails.css` — reusable legibility and alignment safety rules.
-- `asset-policy.md` — image sourcing, generation, prompt construction and asset rules.
+- `CANONICAL-STYLE.md` — visual and structural source of truth.
+- `GUIDED-DISCOVERY.md` — pedagogy and learner-language source of truth.
+- `component-contracts.md` — semantic HTML/CSS contracts.
+- `asset-policy.md` — image/audio production policy.
+- `tokens.css` — shared tokens and physical text floors.
+- `components.css` — all reusable cross-lesson CSS.
 
-## What does not belong here
+No other file in this directory outranks or “refines” these sources.
 
-Do not put lesson-specific selectors, one-off fixes, asset filenames, crop positions, image prompts or content corrections in `design-system/`.
+## Boundary
 
-Lesson-specific styling belongs **with the corresponding lesson under `../examples/`**, either inline in the lesson HTML or in an adjacent, clearly named lesson-scoped stylesheet such as `lesson-1b-local.css`. Final raster assets belong in `../Images/` and should be referenced directly by the lesson styling that uses them.
+- reusable cross-lesson behavior → `design-system/`;
+- lesson-specific composition, corrections, asset mappings and crop tuning → matching lesson in `../examples/`;
+- final raster assets → `../Images/`;
+- prompts/temporary art direction → outside the repository unless explicitly requested.
 
-Image-generation prompts and temporary art-direction notes are **not repository files by default**. Keep them in the working conversation unless the author explicitly asks for them to be saved.
+Do not create `production/`, `staging/`, compatibility-override or lesson-override directories.
 
-Do not create a separate `production/`, `staging/` or override directory for lesson-specific work. This keeps each lesson’s implementation close to its master instead of creating a second hidden project layer.
-
-## Core invariants
-
-The detailed wording lives in the source-of-truth files above. At minimum, every production page must preserve these invariants:
-
-- numbered exercises stay in one vertical sequence;
-- Guided Discovery drives the learning sequence;
-- existing frozen source content changes only with explicit author approval;
-- **newly authored early-A1 learner language is cumulative: it recycles what Horizons has already taught instead of assuming general A1 vocabulary**;
-- **early units may deliberately use Spanish-parallel, borderline-unnatural but clear English instead of untaught native-like collocations**;
-- instructions do not introduce unnecessary vocabulary; outside the lesson target, new support language should be near zero;
-- student-facing language stays above the A1 print-legibility floors;
-- content redundancy is removed before typography is compressed;
-- repeated visual families use consistent geometry, adequate physical scale and verified centering;
-- one dominant unit color, strong photography, typography and whitespace define the visual identity;
-- **the visual world follows the lesson content rather than a default educational/school theme**;
-- real-world artifacts are functional rather than decorative;
-- shared chrome is changed globally, not patched differently in one lesson.
-
-Horizons may move visually between hospitality, travel, retail, fitness, transport, culture, home life, documentary, workplace, lifestyle and other subject-appropriate worlds. The design system provides continuity without forcing unrelated lessons into the same imagery or mood.
-
-For the first units, continuity also comes from a deliberately narrow language bank. Reuse exact words and sentence frames from previous pages whenever possible. Prefer transparent Spanish cognates and image-supported nouns when one new support word is unavoidable. Do not add vocabulary merely to make instructions sound more natural in English.
-
-## Architecture rule
-
-Before adding a new rule or file, ask whether it is:
-
-1. **Reusable across lessons** → `design-system/`.
-2. **Specific to one lesson** → keep it with that lesson in `examples/`, inline or in an adjacent lesson-scoped stylesheet.
-3. **A final raster asset** → `Images/`.
-4. **A prompt or temporary art-direction note** → keep it outside the repository unless explicitly requested.
-5. **Already expressed elsewhere** → do not duplicate it; link to the existing source of truth.
-
-If two files appear to govern the same behavior differently, resolve the contradiction instead of adding another override directory.
+Before adding a reusable rule/component, search the existing system first. If the need is unique to one lesson, keep it local.
