@@ -1,0 +1,43 @@
+name: Build Horizons A1 Student Book
+
+on:
+  push:
+    paths:
+      - "Horizons/A1/Lessons/**"
+      - "Horizons/Base/design-system/**"
+      - "Horizons/Base/shell/**"
+      - "Horizons/Base/build/build-students-book.mjs"
+      - ".github/workflows/build-horizons-a1-student-book.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+
+      - name: Set up Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+
+      - name: Compile Student's Book
+        run: node Horizons/Base/build/build-students-book.mjs
+
+      - name: Commit compiled book when changed
+        shell: bash
+        run: |
+          if git diff --quiet -- "Horizons/A1/Student's Book.html"; then
+            echo "Student's Book is already up to date."
+            exit 0
+          fi
+
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add "Horizons/A1/Student's Book.html"
+          git commit -m "Build A1 Student's Book [skip ci]"
+          git push
