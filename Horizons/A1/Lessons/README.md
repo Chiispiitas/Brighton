@@ -17,11 +17,17 @@ These pages demonstrate the system; they are **not templates that Unit 2 must co
 
 ## Student's Book assembly
 
-`../Student's Book.html` is intentionally file-protocol safe: it can be opened directly from Windows/macOS/Linux with no local server. It stacks lesson documents without reading inside their frames.
+`../Student's Book.html` is a compiled standalone book. It contains the lesson pages and required CSS directly, so it can be opened through `file://` with no local server and no lesson iframes.
 
-`manifest.js` is the ordered lesson index used by that assembler. Whenever a new definitive lesson master is created (for example `2A.html`), add its filename to `manifest.js` in the same change. Keep the manifest in book order.
+Do not manually maintain an ordered manifest. The compiler discovers every definitive lesson master matching names such as `1A.html`, `2C.html` or `10B.html`, sorts them naturally, and rebuilds the Student's Book.
 
-Do not make `Student's Book.html` fetch GitHub, enumerate directories, or inspect lesson-frame DOM. Browsers block those approaches under `file://`.
+The compiler is:
+
+`../../Base/build/build-students-book.mjs`
+
+GitHub Actions runs it automatically when lesson or shared production sources change. The generated `Student's Book.html` is committed back to `main` when its contents change.
+
+The Student's Book download button renders each compiled `.hz-page` independently and builds one A4 PDF page per Horizons page. Do not replace this with browser Print/Save as PDF or long-page screenshot slicing.
 
 ## Shared Base
 
