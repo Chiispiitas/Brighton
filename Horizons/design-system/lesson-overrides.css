@@ -3,6 +3,54 @@
    Keep these narrowly scoped and use !important only when the prototype's
    later inline stylesheet would otherwise win. */
 
+/* -------------------------------------------------------------------------
+   Unit 1 — shared visual-format normalization
+   -------------------------------------------------------------------------
+
+   Page composition can vary by lesson, but equivalent typographic roles use
+   the same scale and the same crimson-pink unit color logic throughout 1A–1D. */
+
+.l1a-page .hz-exercise__instruction,
+.l1b-page .hz-exercise__instruction,
+.l1c-page .hz-exercise__instruction,
+.l1d-page .hz-exercise__instruction {
+  color: var(--hz-ink) !important;
+  font-size: 8.9pt !important;
+  font-weight: var(--hz-fw-semibold) !important;
+  line-height: 1.35 !important;
+}
+
+.l1a-target,
+.l1b-target,
+.l1c-target,
+.l1d-target {
+  color: var(--hz-unit-dark) !important;
+  font-weight: var(--hz-fw-black) !important;
+}
+
+.l1a-page .hz-new-words,
+.l1b-page .hz-new-words,
+.l1c-page .hz-new-words,
+.l1d-page .hz-new-words {
+  color: var(--hz-unit-dark) !important;
+  font-size: 7pt !important;
+  font-weight: var(--hz-fw-black) !important;
+  letter-spacing: .07em !important;
+}
+
+.l1a-grammar__title,
+.l1a-pronunciation__title,
+.l1b-aan__title,
+.l1b-contractions__title,
+.l1b-pronunciation__title,
+.l1d-capitalization__title {
+  color: var(--hz-unit-dark) !important;
+  font-size: 8pt !important;
+  font-weight: var(--hz-fw-black) !important;
+  letter-spacing: .065em !important;
+  line-height: 1.2 !important;
+}
+
 /* Lesson 1A — Exercise 5
    Personal-information conversation surfaces use white rather than the unit
    soft pink so the dialogue reads cleanly against the photography. */
@@ -15,6 +63,12 @@
   background: #fff !important;
 }
 
+.l1a-page .l1a-exchange {
+  color: var(--hz-ink) !important;
+  font-size: 7.7pt !important;
+  line-height: 1.3 !important;
+}
+
 /* Lesson 1A — Exercise 6
    Keep the alphabet field white for maximum letter contrast. */
 .l1a-page .l1a-pronunciation {
@@ -23,7 +77,9 @@
 
 /* Lesson 1A — continuation-page numbering
    The current prototype source skips 8 and then shows 9/10. Present the page
-   as one continuous exercise sequence: 5, 6, 7, 8, 9. */
+   as one continuous exercise sequence: 5, 6, 7, 8, 9. The generated numbers
+   deliberately duplicate the canonical .hz-exercise-number typography so the
+   corrected sequence is visually indistinguishable from normal exercise IDs. */
 .l1a-page--2 .hz-exercises {
   counter-reset: l1a-exercise 4;
 }
@@ -33,21 +89,70 @@
 }
 
 .l1a-page--2 .hz-exercises > .hz-exercise > .hz-exercise-number {
+  color: var(--hz-unit) !important;
   font-size: 0 !important;
+  font-weight: var(--hz-fw-black) !important;
+  line-height: .9 !important;
+  letter-spacing: -.05em !important;
 }
 
 .l1a-page--2 .hz-exercises > .hz-exercise > .hz-exercise-number::after {
   content: counter(l1a-exercise);
-  color: var(--hz-unit);
-  font-size: 18pt;
-  font-weight: var(--hz-fw-black);
-  line-height: .9;
-  letter-spacing: -.05em;
+  color: var(--hz-unit) !important;
+  font-size: 18pt !important;
+  font-weight: var(--hz-fw-black) !important;
+  line-height: .9 !important;
+  letter-spacing: -.05em !important;
+}
+
+/* Lesson 1A — Exercises 7–9
+   Keep the compact continuation-page activity text on one coherent scale and
+   keep the number activity inside the Unit 1 crimson-pink palette rather than
+   the older rainbow treatment. */
+.l1a-page--2 .l1a-name-options,
+.l1a-page--2 .l1a-profile__form {
+  color: var(--hz-ink) !important;
+  font-size: 7.6pt !important;
+  line-height: 1.28 !important;
+}
+
+.l1a-page--2 .l1a-name-options__number {
+  color: var(--hz-unit-dark) !important;
+  font-size: 7.6pt !important;
+  font-weight: var(--hz-fw-black) !important;
+}
+
+.l1a-page--2 .l1a-number__digit,
+.l1a-page--2 .l1a-number:nth-child(1) .l1a-number__digit,
+.l1a-page--2 .l1a-number:nth-child(2) .l1a-number__digit,
+.l1a-page--2 .l1a-number:nth-child(3) .l1a-number__digit,
+.l1a-page--2 .l1a-number:nth-child(4) .l1a-number__digit,
+.l1a-page--2 .l1a-number:nth-child(5) .l1a-number__digit,
+.l1a-page--2 .l1a-number:nth-child(6) .l1a-number__digit,
+.l1a-page--2 .l1a-number:nth-child(7) .l1a-number__digit,
+.l1a-page--2 .l1a-number:nth-child(8) .l1a-number__digit,
+.l1a-page--2 .l1a-number:nth-child(9) .l1a-number__digit,
+.l1a-page--2 .l1a-number:nth-child(10) .l1a-number__digit,
+.l1a-page--2 .l1a-number:nth-child(11) .l1a-number__digit {
+  background: var(--hz-unit) !important;
+  color: #fff !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+  font-size: 12.5pt !important;
+  font-weight: var(--hz-fw-black) !important;
+}
+
+.l1a-page--2 .l1a-number__word {
+  color: var(--hz-ink) !important;
+  font-size: 6.1pt !important;
+  font-weight: var(--hz-fw-semibold) !important;
+  line-height: 1 !important;
 }
 
 /* Lesson 1A — final profile-form exercise
-   The three profile forms belong to one visual family. Keep their surface and
-   border treatment identical instead of giving individual forms separate tints. */
+   The three profile forms belong to one visual family. Keep their surface,
+   typography and border treatment identical instead of giving individual
+   forms separate tints. */
 .l1a-page .l1a-profile__form,
 .l1a-page .l1a-profile:nth-child(1) .l1a-profile__form,
 .l1a-page .l1a-profile:nth-child(2) .l1a-profile__form,
@@ -55,4 +160,7 @@
   background: #fff !important;
   border: .35mm solid var(--hz-line) !important;
   border-top: 1mm solid var(--hz-unit) !important;
+  color: var(--hz-ink) !important;
+  font-size: 7.6pt !important;
+  line-height: 1.28 !important;
 }
