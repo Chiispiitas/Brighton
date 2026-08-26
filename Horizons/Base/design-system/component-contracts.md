@@ -1,6 +1,6 @@
-# Horizons A1 — Component Contracts
+# Horizons — Component Contracts
 
-This file defines reusable semantic HTML/CSS usage. Visual rules belong in `CANONICAL-STYLE.md`; pedagogy/language rules belong in `GUIDED-DISCOVERY.md`.
+This file defines reusable semantic HTML/CSS usage shared across Horizons books. Visual rules belong in `CANONICAL-STYLE.md`; pedagogy and level-specific language rules belong in `GUIDED-DISCOVERY.md`.
 
 Reusable CSS lives in `components.css`; tokens live in `tokens.css`.
 
@@ -12,7 +12,7 @@ Reusable CSS lives in `components.css`; tokens live in `tokens.css`.
     <div class="hz-page-stack">...</div>
   </main>
   <footer class="hz-page__footer">
-    <span class="hz-page-code">Horizons A1 · Unit 2</span>
+    <span class="hz-page-code">Horizons · Unit 2</span>
     <span class="hz-page-number">13</span>
   </footer>
 </article>
@@ -29,16 +29,15 @@ Use one `.hz-unit-*` identity on a normal page.
     <span class="hz-lesson-tab__id">2A</span>
   </div>
   <div class="hz-lesson-heading">
-    <h1 class="hz-lesson-title">LOOK INSIDE MY BAG!</h1>
+    <h1 class="hz-lesson-title">LESSON TITLE</h1>
     <div class="hz-objectives">
-      <span class="hz-objectives__item">Personal items</span>
-      <span class="hz-objectives__item">Demonstratives</span>
+      <span class="hz-objectives__item">Objective</span>
     </div>
   </div>
 </header>
 ```
 
-Titles/objectives come from the authorized syllabus/source.
+Titles/objectives come from the authorized syllabus/source for the book.
 
 ## 3. Numbered exercise lane
 
@@ -83,7 +82,7 @@ Use existing `.hz-question-grid-*` / `.hz-content-grid-*` helpers before inventi
 
 Use `--full-lane` when a dominant equal-status family should center across the usable exercise lane rather than being visually shifted by the exercise-number column.
 
-The family chooses its own columns/gaps locally. Equal-status items share geometry/basic scale; crop position may differ per image.
+The family chooses its columns/gaps locally. Equal-status items share geometry/basic scale; crop position may differ per image.
 
 ## 6. Photography
 
@@ -97,11 +96,11 @@ Standard shell frame:
 
 Prototype placeholders use `.hz-photo-placeholder` and must occupy the intended final crop/scale.
 
-Distinctive collages, overlays, article treatments and other editorial compositions are **lesson-local by default**. Promote one into `components.css` only after it proves genuinely reusable across multiple production lessons.
+Distinctive collages, overlays, article treatments and other editorial compositions are **lesson-local by default**. Promote one into `components.css` only after it proves genuinely reusable across multiple production lessons/books.
 
 ## 7. Continuation page
 
-Use the generic shared continuation marker for new lessons:
+Use the generic shared continuation marker:
 
 ```html
 <article class="hz-page hz-content hz-unit-2 hz-continuation-page">
@@ -112,9 +111,7 @@ Use the generic shared continuation marker for new lessons:
 </article>
 ```
 
-`components.css` provides the marker and a default safe top offset. If the first content block needs more clearance, increase only the continuation page's content offset in lesson-local CSS. Do not move/reinvent the shared marker.
-
-Unit 1 legacy continuation class aliases remain supported for existing masters.
+`components.css` provides the marker and a default safe top offset. If the first content block needs more clearance, increase only that lesson's content offset in local CSS. Do not move/reinvent the shared marker.
 
 ## 8. Language-focus area
 
@@ -156,21 +153,22 @@ The artifact must be used by the learner rather than included only for appearanc
 - `.hz-interface-text`
 - `.hz-micro-text`
 
-Use the role that matches the content. Never label ordinary learner content as interface/micro simply to bypass the physical type floor.
+Use the role that matches the content. Never label ordinary learner content as interface/micro simply to bypass a physical type floor.
 
-## 12. Lesson-local stylesheet
+## 12. Book-local stylesheet
 
-New Unit 2+ lesson HTML links its adjacent stylesheet directly after the shell:
+A lesson links the shared Base shell plus its adjacent local stylesheet. For the current A1 book:
 
 ```html
-<link rel="stylesheet" href="../shell/a4-shell.css">
+<link rel="stylesheet" href="../../Base/shell/a4-shell.css">
 <link rel="stylesheet" href="./lesson-2a-local.css">
+<link rel="stylesheet" href="../../Base/shell/print.css" media="print">
 ```
 
-Do not add new lesson-local imports to `a4-shell.css`.
+Do not add book- or lesson-specific imports to `Base/shell/a4-shell.css`.
 
 ## 13. Architecture boundary
 
-Reusable cross-lesson components belong here/in `components.css`. Lesson-specific composition, corrections, asset filenames and crop tuning stay beside the lesson in `../examples/`.
+Reusable series-wide components belong in `Horizons/Base/design-system/`. Lesson-specific composition, corrections, asset filenames and crop tuning belong in that book's `Lessons/` folder; current A1 work lives in `../../A1/Lessons/`.
 
-Before creating a new shared component, search for an equivalent. Prefer one canonical component over near-duplicates.
+Before creating a new shared component, search the existing Base for an equivalent. Prefer one canonical component over near-duplicates.
