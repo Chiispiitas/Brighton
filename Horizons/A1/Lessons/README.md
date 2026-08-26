@@ -6,12 +6,12 @@ This folder contains the current A1 lesson masters and their lesson-scoped CSS.
 
 Use these Unit 1 lessons as practical precedents for new A1 work:
 
-- `lesson-1a-canonical-prototype.html`
-- `lesson-1b-canonical-prototype.html`
-- `lesson-1c-canonical-prototype.html`
-- `lesson-1d-canonical-prototype.html`
+- `1A.html`
+- `1B.html`
+- `1C.html`
+- `1D.html`
 
-Each adjacent `lesson-*-local.css` file contains composition, asset mappings, crop tuning or corrections specific to that lesson.
+The lesson master uses the definitive lesson code as its filename. Each adjacent `lesson-*-local.css` file contains composition, asset mappings, crop tuning or corrections specific to that lesson.
 
 These pages demonstrate the system; they are **not templates that Unit 2 must copy mechanically**. New lessons preserve shared Horizons chrome while letting the lesson's actual content determine its internal composition and visual world.
 
