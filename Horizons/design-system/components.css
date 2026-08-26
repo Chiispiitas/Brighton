@@ -187,7 +187,7 @@
 .hz-exercise__instruction {
   margin: .3mm 0 0;
   color: var(--hz-ink);
-  font-size: var(--hz-fs-body);
+  font-size: 8.9pt;
   font-weight: var(--hz-fw-semibold);
   line-height: 1.35;
 }
