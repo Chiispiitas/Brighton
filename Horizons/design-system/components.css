@@ -128,10 +128,7 @@
   min-width: 0;
   margin: 0;
   padding: 2.2mm 0 3.4mm;
-  border-bottom: var(--hz-border) solid var(--hz-line);
 }
-
-.hz-exercise:last-child { border-bottom: 0; }
 
 .hz-exercise-number {
   align-self: start;
