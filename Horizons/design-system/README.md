@@ -6,7 +6,7 @@ Start with `HANDOFF.md`. It defines authority order and the minimum resume check
 
 ## Source-of-truth map
 
-- `CANONICAL-STYLE.md` — visual language, lesson architecture, permanent layout principles.
+- `CANONICAL-STYLE.md` — visual language, lesson architecture, permanent layout principles and theme-neutral art direction.
 - `GUIDED-DISCOVERY.md` — pedagogy and lesson-authoring method.
 - `STYLE-REFINEMENTS.md` — specific production refinements and QA rules; newer specific refinements supersede older illustrative examples.
 - `component-contracts.md` — semantic HTML/component contracts.
@@ -15,13 +15,13 @@ Start with `HANDOFF.md`. It defines authority order and the minimum resume check
 - `editorial-layouts.css` — reusable large editorial compositions.
 - `canonical-refinements.css` — stable shared-chrome refinements.
 - `guardrails.css` — reusable legibility and alignment safety rules.
-- `asset-policy.md` — image sourcing and asset rules.
+- `asset-policy.md` — image sourcing, generation, prompt construction and asset rules.
 
 ## What does not belong here
 
-Do not put lesson-specific selectors, one-off fixes, asset filenames, crop positions or content corrections in `design-system/`.
+Do not put lesson-specific selectors, one-off fixes, asset filenames, crop positions, image prompts or content corrections in `design-system/`.
 
-Those belong in `../production/` and must remain explicitly scoped. Current examples include Unit 1 compatibility overrides and Lesson 1B image mappings.
+Those belong in `../production/` and must remain explicitly scoped. Current examples include Unit 1 compatibility overrides, lesson image mappings and lesson-specific prompt sheets.
 
 This separation prevents a local lesson fix from silently changing unrelated lessons and keeps the canonical system small enough to audit.
 
@@ -36,8 +36,11 @@ The detailed wording lives in the source-of-truth files above. At minimum, every
 - content redundancy is removed before typography is compressed;
 - repeated visual families use consistent geometry, adequate physical scale and verified centering;
 - one dominant unit color, strong photography, typography and whitespace define the visual identity;
+- **the visual world follows the lesson content rather than a default educational/school theme**;
 - real-world artifacts are functional rather than decorative;
 - shared chrome is changed globally, not patched differently in one lesson.
+
+Horizons may move visually between hospitality, travel, retail, fitness, transport, culture, home life, documentary, workplace, lifestyle and other subject-appropriate worlds. The design system provides continuity without forcing unrelated lessons into the same imagery or mood.
 
 ## Architecture rule
 
