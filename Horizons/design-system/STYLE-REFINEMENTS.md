@@ -46,7 +46,27 @@ Permanent rules:
 
 During QA, flag an image if it feels generically scholastic despite the activity taking place in a hotel, shop, street, gym, home, workplace, transport setting or another non-school context.
 
-## 5. A1 legibility floor
+## 5. Early-A1 language-load QA
+
+For newly authored material in the first units, compare learner-facing English directly with the pages before it. Do not judge difficulty only by CEFR level or by whether a word feels basic to an English teacher.
+
+Permanent rules:
+
+- reuse the exact instruction verb or sentence frame already established whenever it can do the job;
+- do not introduce synonyms for stylistic variety;
+- do not introduce an idiomatic English construction when a simpler Spanish-parallel structure communicates the same meaning;
+- prefer transparent Spanish cognates/near-cognates when one support word is unavoidable;
+- visually obvious nouns may be introduced when the image or artifact makes the meaning immediate;
+- keep new non-target support vocabulary as close to zero as possible;
+- fragments are acceptable when they reduce language load without creating ambiguity;
+- a realistic task may have sophisticated pedagogy behind it while its printed instruction remains extremely simple;
+- do not “naturalize” deliberate early-A1 wording during copyediting unless the replacement is equally accessible and already taught.
+
+A useful test is: **could the student complete the language task without first learning extra English from the instruction itself?** If not, simplify the instruction.
+
+A second test is: **did a rewrite become more native-like but less transparent to a Spanish-speaking beginner?** If yes, the earlier transparent form is normally preferable at this stage.
+
+## 6. A1 legibility floor
 
 Never solve density, clipping or page-fit problems by making important student-facing language uncomfortably small.
 
@@ -62,7 +82,7 @@ These are floors, not preferred targets.
 
 When a page is too dense, resolve it in this order: remove redundancy → remove decorative space → reframe oversized imagery → tighten nonessential gaps/padding → simplify geometry → recompose inside the exercise → redistribute across the two-page lesson. Typography is not the first compression tool.
 
-## 6. Content economy
+## 7. Content economy
 
 Use **minimal sufficient scaffolding**.
 
@@ -70,19 +90,19 @@ Do not repeat the same information in a dialogue, form, table, caption or interf
 
 Real-world artifacts must be functional. One strong model is preferable to two redundant models.
 
-## 7. No decorative ghost text
+## 8. No decorative ghost text
 
 Do not use oversized translucent words, letters, punctuation or instructional phrases as background decoration.
 
 Use photography, whitespace, crop, structural geometry, rules and functional typography instead.
 
-## 8. Unit-color discipline
+## 9. Unit-color discipline
 
 Normal lesson pages use one dominant unit color with neutral typography and photography. A repeated family should not become multicolored merely for novelty. Additional colors require a pedagogical reason such as meaningful categorization.
 
 This newer rule supersedes older examples that treated multicolor variation itself as a default source of micro-variety.
 
-## 9. Bold has pedagogical meaning
+## 10. Bold has pedagogical meaning
 
 Bold in learner-facing language is **functional emphasis, not decoration**. It should tell the student exactly what to notice.
 
@@ -98,7 +118,7 @@ Structural typography is separate: titles, exercise numbers, section labels and 
 
 A useful check is: **if a student looks only at the bold language, is the intended learning focus obvious?** If not, the emphasis is probably too broad or arbitrary.
 
-## 10. Exercise rhythm uses whitespace, not separators
+## 11. Exercise rhythm uses whitespace, not separators
 
 Numbered activities should read as one continuous editorial sequence. Separate them through exercise numbers, spacing, alignment and changes in content geometry, **not through horizontal divider lines**.
 
@@ -110,22 +130,24 @@ Permanent rules:
 - do not reintroduce dividers merely because a spread feels empty; solve rhythm with spacing and composition instead;
 - borders remain valid when they belong to an actual component, such as a grammar focus box, real-world interface, table, answer line or page/footer structure. This rule concerns separators whose only purpose is dividing one exercise from the next.
 
-## 11. Production QA checklist
+## 12. Production QA checklist
 
 Before approving a two-page lesson, check:
 
 1. Are numbered exercises in one vertical sequence?
 2. Is any information duplicated without a learning purpose?
 3. Are Guided Discovery prompts supported but not over-scaffolded?
-4. Is important text physically comparable in size to neighboring lessons?
-5. Do repeated image families share geometry, adequate scale and correct centering?
-6. Does any image family appear shifted because of the exercise-number lane?
-7. Does the page retain enough whitespace to scan quickly?
-8. Are artifacts used by the learner rather than included only for authenticity?
-9. Does bold isolate the actual learning target rather than decorate whole sentences or paragraphs?
-10. Are normal exercises and cross-references free of decorative separator rules?
-11. Is shared chrome unchanged unless the global system itself was intentionally revised?
-12. Does the imagery belong convincingly to the actual world of the lesson rather than defaulting to generic educational imagery?
-13. Could an exception rule be replaced by an existing reusable component or guardrail?
+4. For newly authored early-A1 material, has every non-target word/construction been checked against the actual preceding pages?
+5. Could any instruction be rewritten with an exact earlier verb/frame instead of new vocabulary or a new native-English collocation?
+6. Is important text physically comparable in size to neighboring lessons?
+7. Do repeated image families share geometry, adequate scale and correct centering?
+8. Does any image family appear shifted because of the exercise-number lane?
+9. Does the page retain enough whitespace to scan quickly?
+10. Are artifacts used by the learner rather than included only for authenticity?
+11. Does bold isolate the actual learning target rather than decorate whole sentences or paragraphs?
+12. Are normal exercises and cross-references free of decorative separator rules?
+13. Is shared chrome unchanged unless the global system itself was intentionally revised?
+14. Does the imagery belong convincingly to the actual world of the lesson rather than defaulting to generic educational imagery?
+15. Could an exception rule be replaced by an existing reusable component or guardrail?
 
-A spread that is technically complete but visibly smaller, more crowded, misaligned, thematically generic or less coherent than neighboring lessons is not production-ready.
+A spread that is technically complete but has unnecessary untaught language, is visibly smaller, more crowded, misaligned, thematically generic or less coherent than neighboring lessons is not production-ready.
