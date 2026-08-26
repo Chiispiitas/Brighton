@@ -1,69 +1,42 @@
-# Horizons examples
+# Horizons lesson masters
 
-The `examples/` folder contains the approved visual references for the current Horizons A1 book style.
+This folder contains the current approved lesson masters and their lesson-scoped CSS.
 
-## Canonical reference order
+## Current production references
 
-1. **`stage-3-shape-showcase.html` — PRIMARY visual benchmark.**
-2. **`stage-2-showcase.html` — supporting benchmark for photography, overlays, crops and media-led exercises.**
+Use these Unit 1 lessons as the practical precedent for new work:
 
-These showcases are no longer treated as temporary experiments. Together with `../design-system/CANONICAL-STYLE.md`, they define the desired visual direction for future Student's Book pages.
+- `lesson-1a-canonical-prototype.html`
+- `lesson-1b-canonical-prototype.html`
+- `lesson-1c-canonical-prototype.html`
+- `lesson-1d-canonical-prototype.html`
 
-## Stage 2 — photography and overlays
+Each adjacent `lesson-*-local.css` file contains composition, asset mappings, crop tuning or corrections that are specific to that lesson.
 
-`stage-2-showcase.html` demonstrates approved dynamic editorial media treatments:
+These pages demonstrate the system; they are **not templates that Unit 2 must copy mechanically**. New lessons should preserve shared Horizons chrome while letting the lesson's actual content determine its internal composition and visual world.
 
-1. **3A — What’s your routine?**: full-photo lead with title/text overlay, time annotation, photo index, visual matching strip and timeline.
-2. **3C — Where do you go?**: large neighborhood photo with an overlapping lower-right copy block, review layout and two-column questions.
-3. **5A — What are you wearing?**: dominant thrift-store image, two inset detail crops and a pull quote overlapping the photo edge.
-4. **8B — It’s so cold!**: weather-news photo with a lower-third editorial band, four-image matching strip and compact advice facts.
+## Language precedent
 
-## Stage 3 — canonical full-page text and shape-led composition
+For newly authored early-A1 learner-facing language, compare directly with what students have already seen.
 
-`stage-3-shape-showcase.html` is the **primary model for new page design**:
+In Unit 1, **1A, 1B and the first page of 1C** are especially important references for the intentionally narrow, Spanish-transparent register. Later authored material must not silently assume vocabulary or collocations simply because they are broadly considered A1.
 
-1. **2C — Meet my family!**: large interview feature sheet with oversized title, substantial reading text, geometric background shapes, portrait crops and a pull quote.
-2. **3B — Weekdays or weekends?**: full article masthead with a strong color field, overlapping hero image, two-column reading and vertically labeled weekday/weekend modules.
-3. **6B — My dream home**: floor-plan-inspired composition, folded-corner vocabulary note and a speech-bubble question cloud.
-4. **8A — Let’s go to Toronto!**: poster-style travel feature with oversized background numeral, anchored photo, large white-on-color title and a process strip.
+## Styling boundary
 
-## What the showcases establish
+Reusable cross-lesson behavior belongs in `../design-system/components.css`.
 
-Every numbered exercise still flows in one vertical sequence. Visual variety comes from layouts **inside** each exercise rather than by placing exercises beside one another.
+Lesson-local CSS may handle:
 
-The canonical design vocabulary includes:
+- a unique composition;
+- final image mapping;
+- crop/background position;
+- page-specific spacing needed to avoid a collision;
+- an explicit author correction that is unique to that lesson.
 
-- one dominant unit color;
-- neutral typography;
-- substantial white space;
-- large raster-photo areas;
-- simple exercise numerals;
-- full-page and near-full-page reading treatments;
-- oversized typography used as composition;
-- large CSS geometric fields and clipped panels;
-- circles, angled cuts, folded corners and speech-bubble shapes;
-- photo overlays and crop-driven composition;
-- controlled text/image overlap;
-- detail-photo insets and collages;
-- pull quotes crossing image edges;
-- lower-third information bands;
-- numbered/lettered photo strips;
-- two- and three-column internal question grids;
-- process/timeline strips;
-- bespoke page CSS instead of forcing every layout into the same template.
+Do not use lesson-local CSS to redefine shared lesson tabs, exercise numbering, `NEW WORDS`, continuation marker geometry, footer treatment or other shared chrome.
 
-## Shape rule
+## Source protection
 
-Shapes must support hierarchy, reading flow or task meaning. They are not filler decoration. Large shapes are preferred over many tiny decorative objects.
+Existing frozen source content changes only when the author explicitly requests it. Newly authored material must follow `../design-system/GUIDED-DISCOVERY.md` and the cumulative language audit.
 
-CSS shapes may use circles, polygons, clipped corners, bands, folds and speech-bubble geometry. Vector illustrations remain prohibited; SVG is still reserved for functional icons only.
-
-## Overlay rule
-
-Photography may carry text directly when the image composition supports it. A dark gradient/scrim is allowed only to preserve text legibility over a photograph; decorative gradients should not be used as general page furniture.
-
-Development placeholders use the same intended crop, overlay and overlap geometry as final raster photography so layout decisions survive asset replacement.
-
-External reference screenshots may inform broad editorial principles such as hierarchy, skill signaling, varied media scale, full-page reading features and activity rhythm. Their exact composition, colors, tabs, icons, typography and decorative structure must not be reproduced.
-
-These examples define the **desired visual style for new production pages**, but they do not replace, rewrite or modify pre-existing Student's Book pages and do not change the locked syllabus.
+For the complete authority order, start with `../design-system/HANDOFF.md`.
