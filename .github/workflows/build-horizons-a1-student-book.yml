@@ -101,11 +101,13 @@ jobs:
       - name: Commit compiled book when changed
         shell: bash
         run: |
-          if git diff --quiet -- "Horizons/A1/Student's Book.html" "Horizons/A1/Student's Book.pdf"; then
+          STATUS="$(git status --porcelain -- "Horizons/A1/Student's Book.html" "Horizons/A1/Student's Book.pdf")"
+          if [ -z "$STATUS" ]; then
             echo "Student's Book HTML and PDF are already up to date."
             exit 0
           fi
 
+          echo "$STATUS"
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add "Horizons/A1/Student's Book.html" "Horizons/A1/Student's Book.pdf"
