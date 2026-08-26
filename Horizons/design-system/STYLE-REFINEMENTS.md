@@ -83,6 +83,39 @@ Do not compress one lesson into visibly smaller typography than neighboring less
 
 Before accepting a lesson page, compare its body, dialogue, form, discovery and pairwork text against at least one neighboring canonical lesson at the same physical zoom/print size. If the new lesson visibly reads smaller, treat that as a layout defect.
 
+## Content economy and density discipline — permanent
+
+**Do not make a lesson crowded by repeating information, over-scaffolding obvious questions, or preserving redundant artifacts just because they were already designed.**
+
+Every visible block on the two-page spread should earn its space pedagogically. A context, form, model, option set, hint, caption or support element should remain only when it gives the learner information that is necessary for the next step, reduces cognitive load, or supports the real-world outcome.
+
+Permanent rules:
+
+- do not show the same information twice in different formats unless students must explicitly compare the two formats;
+- do not repeat a completed form beside a dialogue when the dialogue already provides all of the evidence needed for the discovery task, unless reading the completed form itself is an explicit learning objective;
+- do not add answer choices to a Guided Discovery question when the learner can reasonably answer from the visible evidence without them;
+- do not add `Yes / No`, `a / b`, word banks, labels or hints by default; add them only when they are needed to make the A1 task achievable;
+- do not keep a redundant model, interface, caption or decorative support element if removing it gives the important language more room to breathe;
+- one strong model is preferable to two partially redundant models;
+- a real-world artifact should be functional, not duplicated as decorative proof of the context;
+- if a page feels crowded, first audit **content redundancy** before changing typography, spacing or image scale.
+
+Guided Discovery still requires enough evidence and support. The goal is **minimal sufficient scaffolding**, not minimal teaching. Remove support only when the remaining context still allows an A1 learner to reach the intended discovery reliably.
+
+### Two-page density audit
+
+Before a lesson is accepted, inspect both pages together and ask:
+
+1. Is any information presented twice without a comparison purpose?
+2. Is any option set giving away an answer that students could discover from the context?
+3. Is any model or artifact present only because it looks authentic rather than because students use it?
+4. Are normal student-facing text sizes comparable to neighboring lessons?
+5. Does each exercise have enough white space to be scanned quickly?
+6. Is the most important context or final task visually dominant rather than surrounded by secondary clutter?
+7. Could one block be removed entirely without weakening the learning sequence? If yes, remove it.
+
+A lesson that is technically complete but visibly denser, smaller, or more cluttered than neighboring lessons is **not production-ready**.
+
 ## No translucent background words
 
 Do **not** use oversized translucent words, letters, punctuation marks or instructional phrases as decorative background elements behind lesson content.
