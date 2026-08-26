@@ -27,6 +27,24 @@
   display: none !important;
 }
 
+/* Page 10 uses only labels already encountered on page 9. */
+.l1c-page--2 .l1c-word-map:nth-child(2) h3,
+.l1c-page--2 .l1c-word-map:nth-child(3) h3 {
+  font-size: 0 !important;
+}
+
+.l1c-page--2 .l1c-word-map:nth-child(2) h3::after,
+.l1c-page--2 .l1c-word-map:nth-child(3) h3::after {
+  color: var(--hz-unit-dark);
+  font-size: 7pt;
+  font-weight: var(--hz-fw-black);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.l1c-page--2 .l1c-word-map:nth-child(2) h3::after { content: "FOOD / HOTELS"; }
+.l1c-page--2 .l1c-word-map:nth-child(3) h3::after { content: "CITY"; }
+
 .l1c-page .l1c-celebrity__photo .hz-photo-placeholder,
 .l1c-page .l1c-city__photo .hz-photo-placeholder,
 .l1c-page .l1c-pair-photo .hz-photo-placeholder {
