@@ -14,9 +14,9 @@ Read and apply these in order:
 4. `component-contracts.md` — semantic HTML/component usage.
 5. `asset-policy.md` — image sourcing, generation and prompt construction.
 6. `tokens.css`, `components.css`, `editorial-layouts.css`, `canonical-refinements.css`, `guardrails.css` — reusable implementation.
-7. `../production/` — scoped production fixes, image prompts and asset mappings. These are not design-system rules.
+7. Individual lesson HTML files in `../examples/` — lesson-specific composition and scoped CSS.
 
-Do not copy lesson-specific selectors, prompts or image mappings into `design-system/`.
+Do not create a separate `production/`, `staging/` or override folder. Lesson-specific styling belongs with the lesson HTML itself. Final raster assets belong in `../Images/`. Image prompts and temporary art-direction notes stay outside the repository unless the author explicitly asks to save them.
 
 ## Non-negotiable production rules
 
@@ -24,7 +24,7 @@ Do not copy lesson-specific selectors, prompts or image mappings into `design-sy
 - Two pages per lesson.
 - Numbered exercises remain one vertical sequence. Columns are allowed only inside one exercise.
 - Existing frozen source content is preserved unless the author explicitly requests a content change.
-- `Horizons A1/` remains frozen; production work belongs in `Horizons/`.
+- `Horizons A1/` remains frozen; active book work belongs in `Horizons/`.
 - Guided Discovery: context → noticing → guided analysis → clarification → controlled practice → communicative use → real-world transfer.
 - Lesson D culminates in a believable productive situation with a role, purpose, information exchange and concrete outcome.
 - Normal pages use one dominant unit color; avoid decorative multicolor systems unless a task genuinely requires category distinction.
@@ -52,31 +52,32 @@ A repeated media grid that appears shifted, undersized or visually weaker than n
 
 Shared crop geometry does not require every image in a family to use the same location or thematic atmosphere. If the family represents different businesses, places or contexts, let those differences remain visible.
 
-## Current production structure
+## Current repository structure
 
 ```text
-Horizons/design-system/
-  CANONICAL-STYLE.md
-  GUIDED-DISCOVERY.md
-  STYLE-REFINEMENTS.md
-  HANDOFF.md
+Horizons/
   README.md
-  tokens.css
-  components.css
-  editorial-layouts.css
-  canonical-refinements.css
-  guardrails.css
-  component-contracts.md
-  asset-policy.md
-
-Horizons/production/
-  unit-1-overrides.css
-  lesson-1b-images.css
-  lesson-1c-images.css
-  lesson-1d-image-prompts.md
+  Images/
+  design-system/
+    CANONICAL-STYLE.md
+    GUIDED-DISCOVERY.md
+    STYLE-REFINEMENTS.md
+    HANDOFF.md
+    README.md
+    tokens.css
+    components.css
+    editorial-layouts.css
+    canonical-refinements.css
+    guardrails.css
+    component-contracts.md
+    asset-policy.md
+  examples/
+    lesson-*.html
+    stage-*.html
+  shell/
 ```
 
-`design-system/` contains reusable rules only. `production/` contains temporary/scoped corrections, prompt sheets and asset bindings that should not become global design doctrine.
+`design-system/` contains reusable rules. `examples/` contains the lesson-specific HTML/CSS masters. `Images/` contains final raster assets. There is no separate lesson-override folder.
 
 ## Resume checklist
 
