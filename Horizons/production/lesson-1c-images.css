@@ -57,18 +57,22 @@
   background-position: center center !important;
 }
 
-/* Exercise 3 — travel feature. Extend the production stage slightly farther
-   downward and bias the map crop lower. The original 104mm stage ended before
-   the available parent area, which made the background's visual center read
-   too high even after adjusting its focal point. */
+/* Exercise 3 — travel feature. The first production pass made both the outer
+   stage and the three white city-copy panels much taller than their content,
+   leaving a large dead zone at the bottom. Keep enough shared panel height for
+   the longest blog, but let the composition finish soon after the text. */
 .l1c-page:not(.l1c-page--2) .l1c-world-stage {
-  min-height: 108mm !important;
+  min-height: 88mm !important;
   background-image:
     linear-gradient(rgb(255 255 255 / 34%), rgb(255 255 255 / 34%)),
     url("../Images/1C/Around%20the%20World%20BG.png") !important;
   background-position: center 30% !important;
   background-repeat: no-repeat !important;
   background-size: cover !important;
+}
+
+.l1c-page:not(.l1c-page--2) .l1c-city__copy {
+  min-height: 50mm !important;
 }
 
 .l1c-page .l1c-city:nth-child(1) .hz-photo-placeholder {
