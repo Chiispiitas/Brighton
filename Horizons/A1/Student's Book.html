@@ -5,103 +5,4486 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Horizons A1 — Student's Book</title>
   <style>
-    html,
-    body {
-      margin: 0;
-      padding: 0;
-      background: #ececec;
-    }
+/* Horizons/Base/shell/a4-shell.css */
+/* Horizons A1 — editorial HTML/CSS design tokens
+   Print-first, restrained and deliberately non-dashboard-like.
+   The book uses one dominant unit color at a time; supporting color is rare. */
 
-    #hz-book {
-      display: flex;
-      flex-direction: column;
+:root {
+  /* Paper and type */
+  --hz-paper: #fffefa;
+  --hz-surface: #ffffff;
+  --hz-ink: #202124;
+  --hz-ink-soft: #414449;
+  --hz-muted: #74777d;
+  --hz-line: #d8d9dc;
+  --hz-line-strong: #a8abb0;
+  --hz-wash: #f3f2ee;
+
+  /* Default unit identity — crimson pink. Override with .hz-unit-* on a page. */
+  --hz-unit: #c2185b;
+  --hz-unit-dark: #8f123f;
+  --hz-unit-soft: #f8e6ee;
+
+  /* Small functional accents — kept close to the crimson/berry family where possible. */
+  --hz-audio: #7d3154;
+  --hz-practice: #ad3f63;
+  --hz-reference: #86606b;
+  --hz-success: #48745f;
+
+  /* Suggested unit colors. Each page should normally use only its unit color. */
+  --hz-unit-1: #c2185b;
+  --hz-unit-2: #ba6a2d;
+  --hz-unit-3: #426a9e;
+  --hz-unit-4: #8b5a7b;
+  --hz-unit-5: #9a6538;
+  --hz-unit-6: #39786a;
+  --hz-unit-7: #866345;
+  --hz-unit-8: #526b91;
+
+  /* Native typography — no remote/font-file dependency. */
+  --hz-font-sans: ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Arial, sans-serif;
+  --hz-font-serif: ui-serif, Georgia, "Times New Roman", serif;
+  --hz-font-body: var(--hz-font-sans);
+  --hz-font-display: var(--hz-font-sans);
+  --hz-font-reading: var(--hz-font-serif);
+
+  /* Type scale */
+  --hz-fs-2xs: 7pt;
+  --hz-fs-xs: 8pt;
+  --hz-fs-sm: 9pt;
+  --hz-fs-body: 10pt;
+  --hz-fs-md: 11.5pt;
+  --hz-fs-lg: 14pt;
+  --hz-fs-xl: 19pt;
+  --hz-fs-2xl: 28pt;
+  --hz-fs-lesson-title: 31pt;
+  --hz-fs-lesson-id: 13pt;
+
+  /* A1 print-legibility floors.
+     These are guardrails, not targets to shrink toward. Student-facing text
+     should normally be larger; these values define the smallest acceptable
+     physical type for the specified role on an A4 printed page. */
+  --hz-fs-student-min: 7.75pt;
+  --hz-fs-dialogue-min: 8pt;
+  --hz-fs-task-min: 8pt;
+  --hz-fs-interface-min: 7pt;
+  --hz-fs-micro-min: 6.5pt;
+
+  --hz-fw-regular: 400;
+  --hz-fw-medium: 520;
+  --hz-fw-semibold: 620;
+  --hz-fw-bold: 720;
+  --hz-fw-black: 820;
+
+  --hz-lh-tight: 1.05;
+  --hz-lh-snug: 1.22;
+  --hz-lh-body: 1.42;
+  --hz-lh-reading: 1.5;
+
+  /* Spacing */
+  --hz-space-1: 1mm;
+  --hz-space-2: 2mm;
+  --hz-space-3: 3mm;
+  --hz-space-4: 4mm;
+  --hz-space-5: 5mm;
+  --hz-space-6: 6mm;
+  --hz-space-8: 8mm;
+  --hz-space-10: 10mm;
+  --hz-space-12: 12mm;
+
+  /* Geometry: mostly square; noticeable rounding is reserved for real UI. */
+  --hz-radius-xs: .7mm;
+  --hz-radius-sm: 1.2mm;
+  --hz-radius-md: 2mm;
+  --hz-radius-ui: 4mm;
+  --hz-border: .28mm;
+  --hz-border-strong: .55mm;
+
+  --hz-exercise-marker-size: 9mm;
+  --hz-answer-line: .28mm;
+
+  /* Effects are intentionally minimal. */
+  --hz-shadow-ui: 0 .8mm 2.5mm rgb(32 33 36 / 10%);
+
+  --hz-z-base: 1;
+  --hz-z-content: 10;
+  --hz-z-label: 20;
+  --hz-z-overlay: 30;
+}
+
+/* Unit identity classes: one dominant color per unit. */
+.hz-unit-1 { --hz-unit: var(--hz-unit-1); --hz-unit-dark: #8f123f; --hz-unit-soft: #f8e6ee; }
+.hz-unit-2 { --hz-unit: var(--hz-unit-2); --hz-unit-dark: #884b1d; --hz-unit-soft: #f7eee6; }
+.hz-unit-3 { --hz-unit: var(--hz-unit-3); --hz-unit-dark: #2d4c75; --hz-unit-soft: #edf1f6; }
+.hz-unit-4 { --hz-unit: var(--hz-unit-4); --hz-unit-dark: #68405b; --hz-unit-soft: #f5eef3; }
+.hz-unit-5 { --hz-unit: var(--hz-unit-5); --hz-unit-dark: #704523; --hz-unit-soft: #f6f0ea; }
+.hz-unit-6 { --hz-unit: var(--hz-unit-6); --hz-unit-dark: #27594e; --hz-unit-soft: #ebf3f0; }
+.hz-unit-7 { --hz-unit: var(--hz-unit-7); --hz-unit-dark: #62472f; --hz-unit-soft: #f4f0eb; }
+.hz-unit-8 { --hz-unit: var(--hz-unit-8); --hz-unit-dark: #394c6b; --hz-unit-soft: #eef1f5; }
+
+
+/* Horizons — stable reusable cross-book and cross-lesson components.
+   Distinctive editorial compositions belong in book-local lesson CSS unless
+   they prove reusable across multiple real lessons. */
+
+.hz-content {
+  color: var(--hz-ink);
+  font-family: var(--hz-font-body);
+  font-size: var(--hz-fs-body);
+  line-height: var(--hz-lh-body);
+}
+
+.hz-content *,
+.hz-content *::before,
+.hz-content *::after { box-sizing: border-box; }
+
+.hz-content h1,
+.hz-content h2,
+.hz-content h3,
+.hz-content p { margin-top: 0; }
+
+/* ---------- Lesson identity ---------- */
+
+.hz-lesson-header {
+  display: grid;
+  grid-template-columns: 18mm minmax(0, 1fr);
+  gap: 5mm;
+  align-items: start;
+  padding: 0 0 4mm;
+  border-bottom: .9mm solid var(--hz-unit);
+}
+
+.hz-lesson-tab {
+  display: grid;
+  place-items: center;
+  align-content: center;
+  justify-items: center;
+  width: 18mm;
+  height: 18mm;
+  padding: 1.4mm;
+  background: var(--hz-unit);
+  color: #fff;
+  line-height: 1;
+  text-align: center;
+}
+
+.hz-lesson-tab__label {
+  width: 100%;
+  font-size: 5.1pt;
+  font-weight: var(--hz-fw-semibold);
+  line-height: 1;
+  letter-spacing: .08em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.hz-lesson-tab__id {
+  width: 100%;
+  margin-top: .7mm;
+  font-size: 18pt;
+  font-weight: var(--hz-fw-black);
+  line-height: .9;
+  text-align: center;
+}
+
+.hz-lesson-heading { min-width: 0; }
+
+.hz-lesson-title {
+  margin: 0;
+  color: var(--hz-ink);
+  font-size: var(--hz-fs-lesson-title);
+  font-weight: var(--hz-fw-black);
+  line-height: var(--hz-lh-tight);
+  letter-spacing: -.035em;
+}
+
+.hz-objectives {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1mm 4mm;
+  margin-top: 2.2mm;
+  color: var(--hz-muted);
+  font-size: var(--hz-fs-xs);
+}
+
+.hz-objectives__item + .hz-objectives__item::before {
+  content: "•";
+  margin-right: 4mm;
+  color: var(--hz-unit);
+}
+
+/* ---------- Continuation chrome ---------- */
+
+.hz-continuation {
+  position: absolute !important;
+  top: -1mm !important;
+  right: -14mm !important;
+  z-index: 4 !important;
+  display: grid !important;
+  place-items: end start !important;
+  width: 34mm !important;
+  height: 25mm !important;
+  padding: 0 0 3.2mm 5mm !important;
+  background: var(--hz-unit) !important;
+  color: #fff !important;
+  clip-path: polygon(28% 0, 100% 0, 100% 100%, 0 100%) !important;
+  font-size: 19pt !important;
+  font-weight: var(--hz-fw-black) !important;
+  line-height: normal !important;
+  letter-spacing: -.05em !important;
+}
+
+/* Default continuation clearance. Book-local CSS may increase only the
+   content offset when its first composition needs more room. */
+.hz-continuation-page .hz-exercises {
+  padding-top: 7mm !important;
+}
+
+/* ---------- Exercise lane ---------- */
+
+.hz-exercises,
+.hz-exercise-flow {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  gap: 1mm;
+}
+
+.hz-exercise {
+  display: grid;
+  grid-template-columns: var(--hz-exercise-marker-size) minmax(0, 1fr);
+  gap: 0 3mm;
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  padding: 2.2mm 0 3.4mm;
+}
+
+.hz-exercise-number {
+  align-self: start;
+  color: var(--hz-unit);
+  font-size: 18pt;
+  font-weight: var(--hz-fw-black);
+  line-height: .9;
+  letter-spacing: -.05em;
+}
+
+.hz-exercise__content { min-width: 0; }
+
+.hz-exercise__instruction {
+  margin: .3mm 0 0;
+  color: var(--hz-ink);
+  font-size: 8.9pt;
+  font-weight: var(--hz-fw-semibold);
+  line-height: 1.35;
+}
+
+.hz-exercise__body {
+  grid-column: 2;
+  min-width: 0;
+  margin-top: 2mm;
+}
+
+.hz-exercise__body :where(p, li, dt, dd, label) {
+  font-size: max(1em, var(--hz-fs-student-min));
+}
+
+/* ---------- Physical text floors ---------- */
+
+.hz-student-text,
+[data-hz-text-role="student"] {
+  font-size: max(1em, var(--hz-fs-student-min)) !important;
+}
+
+.hz-dialogue-text,
+[data-hz-text-role="dialogue"] {
+  font-size: max(1em, var(--hz-fs-dialogue-min)) !important;
+}
+
+.hz-task-text,
+[data-hz-text-role="task"] {
+  font-size: max(1em, var(--hz-fs-task-min)) !important;
+}
+
+.hz-interface-text,
+[data-hz-text-role="interface"] {
+  font-size: max(1em, var(--hz-fs-interface-min)) !important;
+}
+
+.hz-micro-text,
+[data-hz-text-role="micro"] {
+  font-size: max(1em, var(--hz-fs-micro-min)) !important;
+}
+
+/* ---------- Internal exercise grids ---------- */
+
+.hz-question-grid,
+.hz-content-grid {
+  display: grid;
+  min-width: 0;
+  gap: 2.4mm 5mm;
+}
+
+.hz-question-grid--2,
+.hz-content-grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+
+.hz-question-grid--3,
+.hz-content-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+
+.hz-question-grid > *,
+.hz-content-grid > * { min-width: 0; }
+
+.hz-question {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1.4mm;
+  align-items: start;
+  padding: .8mm 0;
+}
+
+.hz-question__number {
+  color: var(--hz-unit-dark);
+  font-size: var(--hz-fs-xs);
+  font-weight: var(--hz-fw-black);
+}
+
+.hz-option-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.5mm 4mm;
+}
+
+/* ---------- Repeated-media alignment ---------- */
+
+.hz-media-family {
+  min-width: 0;
+  width: 100%;
+  justify-items: center;
+}
+
+.hz-media-family--full-lane {
+  margin-left: calc(-1 * (var(--hz-exercise-marker-size) + 3mm));
+  width: calc(100% + var(--hz-exercise-marker-size) + 3mm);
+}
+
+.hz-media-family > * {
+  min-width: 0;
+  justify-self: center;
+}
+
+/* ---------- Functional cues ---------- */
+
+.hz-audio-badge {
+  display: inline-flex;
+  align-items: center;
+  margin-right: 1.4mm;
+  padding: .7mm 1.4mm;
+  background: var(--hz-audio);
+  color: white;
+  font-size: var(--hz-fs-2xs);
+  font-weight: var(--hz-fw-bold);
+  line-height: 1;
+  vertical-align: middle;
+}
+
+.hz-new-words {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: .75mm !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  color: var(--hz-unit-dark) !important;
+  font-size: 7pt !important;
+  font-weight: var(--hz-fw-black) !important;
+  line-height: 1 !important;
+  letter-spacing: .07em !important;
+  text-transform: uppercase !important;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.hz-new-words::before {
+  content: "✦" !important;
+  display: inline-block !important;
+  flex: none !important;
+  color: var(--hz-unit) !important;
+  font-size: 8pt !important;
+  font-weight: var(--hz-fw-black) !important;
+  line-height: 1 !important;
+}
+
+.hz-new-words__icon { display: none !important; }
+
+.hz-tag,
+.hz-skill-tag {
+  display: inline-block;
+  font-size: var(--hz-fs-2xs);
+  font-weight: var(--hz-fw-black);
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.hz-tag { color: var(--hz-muted); }
+.hz-skill-tag { color: var(--hz-practice); }
+
+/* ---------- Development photography placeholder ---------- */
+
+.hz-photo-placeholder {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 100%;
+  min-height: inherit;
+  overflow: hidden;
+  background: #ddded9;
+  color: #74766f;
+  font-size: 7pt;
+  font-weight: var(--hz-fw-bold);
+  letter-spacing: .12em;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.hz-photo-placeholder::before,
+.hz-photo-placeholder::after {
+  content: "";
+  position: absolute;
+  pointer-events: none;
+}
+
+.hz-photo-placeholder::before {
+  inset: 4mm;
+  border: .25mm solid rgb(32 33 36 / 18%);
+}
+
+.hz-photo-placeholder::after {
+  top: 50%;
+  left: 50%;
+  width: 44mm;
+  height: .25mm;
+  background: rgb(32 33 36 / 14%);
+  transform: translate(-50%, -50%) rotate(-18deg);
+}
+
+.hz-photo-placeholder__meta {
+  position: relative;
+  z-index: 1;
+  padding: 1.2mm 2mm;
+  background: rgb(255 255 255 / 72%);
+}
+
+/* ---------- Language focus ---------- */
+
+.hz-focus-box {
+  padding: 3.2mm 4mm 3.5mm;
+  border-top: 1.1mm solid var(--hz-unit);
+  border-bottom: var(--hz-border) solid var(--hz-line-strong);
+  background: var(--hz-unit-soft);
+}
+
+.hz-focus-box__header {
+  margin-bottom: 2mm;
+  color: var(--hz-unit-dark);
+  font-size: var(--hz-fs-xs);
+  font-weight: var(--hz-fw-black);
+  letter-spacing: .065em;
+  text-transform: uppercase;
+}
+
+.hz-focus-box__body > :last-child { margin-bottom: 0; }
+
+.hz-go-to {
+  display: block;
+  width: max-content;
+  max-width: 100%;
+  margin: 1.5mm 0;
+  color: var(--hz-reference);
+  font-size: var(--hz-fs-2xs);
+  font-weight: var(--hz-fw-bold);
+}
+
+.hz-go-to::before { content: "→ "; }
+
+/* ---------- Extra practice ---------- */
+
+.hz-extra-practice {
+  display: grid;
+  grid-template-columns: 25mm minmax(0, 1fr);
+  gap: 3mm;
+  margin-top: 3mm;
+  padding-top: 2mm;
+  border-top: .7mm solid var(--hz-practice);
+}
+
+.hz-extra-practice__label {
+  color: var(--hz-practice);
+  font-size: var(--hz-fs-2xs);
+  font-weight: var(--hz-fw-black);
+  letter-spacing: .07em;
+  text-transform: uppercase;
+}
+
+.hz-extra-practice__prompt {
+  font-size: var(--hz-fs-xs);
+  line-height: 1.35;
+}
+
+/* ---------- Real-world interfaces ---------- */
+
+.hz-ui-card,
+.hz-form-card {
+  overflow: hidden;
+  border: var(--hz-border) solid var(--hz-line);
+  border-radius: var(--hz-radius-ui);
+  background: white;
+  box-shadow: var(--hz-shadow-ui);
+}
+
+.hz-ui-card__header {
+  padding: 2.2mm 3mm;
+  border-bottom: var(--hz-border) solid var(--hz-line);
+  background: #f7f8fa;
+  color: var(--hz-ink-soft);
+  font-size: var(--hz-fs-xs);
+  font-weight: var(--hz-fw-bold);
+}
+
+.hz-ui-card__body { padding: 3mm; }
+
+/* ---------- Answer mechanics ---------- */
+
+.hz-answer-line {
+  display: inline-block;
+  min-width: 24mm;
+  min-height: 1em;
+  border-bottom: var(--hz-answer-line) solid var(--hz-line-strong);
+  vertical-align: baseline;
+}
+
+.hz-choice-box {
+  display: inline-block;
+  width: 3.5mm;
+  height: 3.5mm;
+  border: var(--hz-border-strong) solid var(--hz-line-strong);
+  vertical-align: middle;
+}
+
+.hz-writing-lines {
+  display: grid;
+  gap: 3.2mm;
+  margin-top: 2.5mm;
+}
+
+.hz-writing-lines span {
+  display: block;
+  min-height: 4.3mm;
+  border-bottom: var(--hz-answer-line) solid var(--hz-line-strong);
+}
+
+/* ---------- Tables / banks / notes ---------- */
+
+.hz-data-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--hz-fs-sm);
+}
+
+.hz-data-table th,
+.hz-data-table td {
+  padding: 1.5mm 2mm;
+  border-bottom: var(--hz-border) solid var(--hz-line);
+  text-align: left;
+  vertical-align: middle;
+}
+
+.hz-data-table th {
+  border-top: .7mm solid var(--hz-unit);
+  color: var(--hz-unit-dark);
+  font-weight: var(--hz-fw-bold);
+}
+
+.hz-word-bank {
+  padding: 2mm 2.5mm;
+  border-left: 1mm solid var(--hz-unit);
+  background: var(--hz-wash);
+  font-size: var(--hz-fs-sm);
+  line-height: 1.5;
+}
+
+.hz-note {
+  padding: 2.5mm 3mm;
+  border-left: .8mm solid var(--hz-reference);
+  background: #f7f3ea;
+  color: var(--hz-ink-soft);
+  font-size: var(--hz-fs-xs);
+}
+
+/* ---------- Utility ---------- */
+
+.hz-text-unit { color: var(--hz-unit-dark); }
+.hz-text-muted { color: var(--hz-muted); }
+.hz-bg-unit-soft { background: var(--hz-unit-soft); }
+.hz-center { text-align: center; }
+.hz-no-break { break-inside: avoid; page-break-inside: avoid; }
+
+
+/* Horizons — editorial HTML5/CSS A4 shell.
+   One semantic .hz-page = one print page.
+   Sibling numbered exercises always stay in one vertical lane.
+   Book-specific lesson CSS is linked by each lesson file, not imported here. */
+
+:root {
+  --hz-page-width: 210mm;
+  --hz-page-height: 297mm;
+  --hz-page-margin-x: 14mm;
+  --hz-page-margin-top: 12mm;
+  --hz-page-margin-bottom: 15mm;
+  --hz-footer-height: 8mm;
+  --hz-content-gap: 3.5mm;
+}
+
+html,
+body { margin: 0; padding: 0; }
+
+body.hz-book {
+  min-height: 100%;
+  background: #ececec;
+  color: var(--hz-ink);
+  font-family: var(--hz-font-body);
+  font-size: var(--hz-fs-body);
+  line-height: var(--hz-lh-body);
+  -webkit-print-color-adjust: exact;
+  print-color-adjust: exact;
+}
+
+.hz-page {
+  position: relative;
+  width: var(--hz-page-width);
+  height: var(--hz-page-height);
+  margin: 10mm auto;
+  overflow: hidden;
+  background: var(--hz-paper);
+  box-shadow: 0 1mm 4mm rgb(0 0 0 / 12%);
+  break-after: page;
+  page-break-after: always;
+  isolation: isolate;
+}
+
+/* A short unit-color registration mark gives the book identity without a decorative banner. */
+.hz-page::before {
+  content: "";
+  position: absolute;
+  top: 7mm;
+  left: var(--hz-page-margin-x);
+  width: 22mm;
+  height: .9mm;
+  background: var(--hz-unit);
+}
+
+.hz-page:last-child { break-after: auto; page-break-after: auto; }
+
+.hz-page__content {
+  position: absolute;
+  inset: var(--hz-page-margin-top) var(--hz-page-margin-x)
+    calc(var(--hz-page-margin-bottom) + var(--hz-footer-height));
+  z-index: var(--hz-z-content);
+  overflow: hidden;
+}
+
+.hz-page__footer {
+  position: absolute;
+  right: var(--hz-page-margin-x);
+  bottom: 5.5mm;
+  left: var(--hz-page-margin-x);
+  z-index: var(--hz-z-label);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: var(--hz-footer-height);
+  padding-top: 1.8mm;
+  border-top: var(--hz-border) solid var(--hz-line);
+  color: var(--hz-muted);
+  font-size: var(--hz-fs-2xs);
+}
+
+.hz-page-code {
+  font-weight: var(--hz-fw-semibold);
+  letter-spacing: .045em;
+}
+
+.hz-page-number {
+  color: var(--hz-unit-dark);
+  font-size: var(--hz-fs-sm);
+  font-weight: var(--hz-fw-black);
+}
+
+/* ---------- Page composition ---------- */
+
+.hz-page-stack {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  gap: var(--hz-content-gap);
+}
+
+.hz-fill { flex: 1 1 auto; min-height: 0; }
+
+/* Grids may be used for unnumbered editorial matter and inside exercises.
+   Never place sibling numbered exercises in these grids. */
+.hz-inset-grid {
+  display: grid;
+  gap: 4mm;
+  min-width: 0;
+}
+
+.hz-inset-grid--2 { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+.hz-inset-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.hz-inset-grid--wide-left { grid-template-columns: 1.25fr .75fr; }
+.hz-inset-grid--wide-right { grid-template-columns: .75fr 1.25fr; }
+
+.hz-section { min-width: 0; }
+.hz-section + .hz-section { margin-top: 3mm; }
+
+.hz-section-title {
+  margin: 0 0 2mm;
+  color: var(--hz-ink);
+  font-size: var(--hz-fs-md);
+  font-weight: var(--hz-fw-black);
+  line-height: var(--hz-lh-snug);
+}
+
+.hz-kicker {
+  margin: 0 0 1mm;
+  color: var(--hz-unit-dark);
+  font-size: var(--hz-fs-xs);
+  font-weight: var(--hz-fw-black);
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+/* ---------- Media ---------- */
+
+.hz-media-frame {
+  position: relative;
+  overflow: hidden;
+  min-height: 28mm;
+  background: var(--hz-wash);
+}
+
+.hz-media-frame > img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hz-media-frame--portrait { aspect-ratio: 3 / 4; }
+.hz-media-frame--landscape { aspect-ratio: 4 / 3; }
+.hz-media-frame--wide { aspect-ratio: 16 / 7; }
+.hz-media-frame--square { aspect-ratio: 1; }
+
+.hz-media-placeholder {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  height: 100%;
+  min-height: inherit;
+  padding: 5mm;
+  border: var(--hz-border) dashed var(--hz-line-strong);
+  background: #f0f0ed;
+  color: var(--hz-muted);
+  font-size: var(--hz-fs-xs);
+  font-weight: var(--hz-fw-semibold);
+  text-align: center;
+}
+
+.hz-caption {
+  margin: 1mm 0 0;
+  color: var(--hz-muted);
+  font-size: var(--hz-fs-2xs);
+  line-height: var(--hz-lh-snug);
+}
+
+/* ---------- Unit review ---------- */
+
+.hz-review-header {
+  display: grid;
+  grid-template-columns: 17mm minmax(0, 1fr);
+  gap: 4mm;
+  align-items: end;
+  padding-bottom: 3mm;
+  border-bottom: 1mm solid var(--hz-unit);
+}
+
+.hz-review-header__unit {
+  color: var(--hz-unit);
+  font-size: 25pt;
+  font-weight: var(--hz-fw-black);
+  line-height: .9;
+}
+
+.hz-review-header__title {
+  margin: 0;
+  color: var(--hz-ink);
+  font-size: 24pt;
+  font-weight: var(--hz-fw-black);
+  line-height: 1;
+  letter-spacing: -.025em;
+}
+
+.hz-review-block {
+  padding: 2.5mm 0 3mm;
+  border-top: var(--hz-border) solid var(--hz-line-strong);
+}
+
+.hz-review-block__label {
+  margin: 0 0 2mm;
+  color: var(--hz-unit-dark);
+  font-size: var(--hz-fs-xs);
+  font-weight: var(--hz-fw-black);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+/* ---------- QR ---------- */
+
+.hz-qr-slot {
+  display: inline-grid;
+  place-items: center;
+  width: 14mm;
+  height: 14mm;
+  border: var(--hz-border-strong) solid var(--hz-line-strong);
+  background: white;
+  color: var(--hz-muted);
+  font-size: 6pt;
+  font-weight: var(--hz-fw-bold);
+  line-height: 1.05;
+  text-align: center;
+}
+
+/* ---------- QA ---------- */
+
+body.hz-debug .hz-page::after {
+  content: "CONTENT FRAME";
+  position: absolute;
+  inset: var(--hz-page-margin-top) var(--hz-page-margin-x)
+    calc(var(--hz-page-margin-bottom) + var(--hz-footer-height));
+  z-index: 999;
+  pointer-events: none;
+  border: .25mm dashed rgb(180 40 40 / 50%);
+  color: rgb(180 40 40 / 65%);
+  font: 6pt var(--hz-font-sans);
+}
+
+@media screen and (max-width: 220mm) {
+  body.hz-book { overflow-x: auto; }
+}
+
+
+/* Horizons/A1/Lessons/lesson-1a-local.css */
+/* Horizons A1 — Lesson 1A scoped styles and asset mappings. */
+
+.l1a-target {
+  color: var(--hz-unit-dark) !important;
+  font-weight: var(--hz-fw-black) !important;
+}
+
+.l1a-grammar__title,
+.l1a-pronunciation__title {
+  color: var(--hz-unit-dark) !important;
+  font-size: 8pt !important;
+  font-weight: var(--hz-fw-black) !important;
+  letter-spacing: .065em !important;
+  line-height: 1.2 !important;
+}
+
+.l1a-page .l1a-greeting__photo,
+.l1a-page .l1a-greeting:nth-child(1) .l1a-greeting__photo,
+.l1a-page .l1a-greeting:nth-child(2) .l1a-greeting__photo,
+.l1a-page .l1a-greeting:nth-child(3) .l1a-greeting__photo,
+.l1a-page .l1a-greeting:nth-child(4) .l1a-greeting__photo {
+  width: 27mm;
+  height: 27mm;
+  border: .45mm solid var(--hz-unit);
+  border-radius: 50%;
+  clip-path: none;
+}
+
+.l1a-page .l1a-identity-copy,
+.l1a-page .l1a-exchange,
+.l1a-page .l1a-exchange:nth-of-type(1),
+.l1a-page .l1a-exchange:nth-of-type(2),
+.l1a-page .l1a-exchange:nth-of-type(3),
+.l1a-page .l1a-exchange:nth-of-type(4) {
+  background: #fff !important;
+}
+
+.l1a-page .l1a-exchange,
+.l1a-page .l1a-exchange:nth-of-type(1),
+.l1a-page .l1a-exchange:nth-of-type(2),
+.l1a-page .l1a-exchange:nth-of-type(3),
+.l1a-page .l1a-exchange:nth-of-type(4) {
+  margin-right: 0;
+  margin-left: 0;
+  border: .3mm solid var(--hz-line);
+  border-left: 1mm solid var(--hz-unit);
+}
+
+.l1a-page .l1a-exchange {
+  color: var(--hz-ink) !important;
+  font-size: 7.7pt !important;
+  line-height: 1.3 !important;
+}
+
+.l1a-page .l1a-pronunciation { background: #fff !important; }
+
+.l1a-page .l1a-alphabet > span {
+  display: inline-block;
+  color: color-mix(in srgb, var(--hz-unit) 46%, var(--hz-paper));
+}
+
+.l1a-page .l1a-alphabet > span::first-letter { color: var(--hz-unit); }
+
+.l1a-page--2 .hz-exercises { counter-reset: l1a-exercise 4; }
+.l1a-page--2 .hz-exercises > .hz-exercise { counter-increment: l1a-exercise; }
+
+.l1a-page--2 .hz-exercises > .hz-exercise > .hz-exercise-number {
+  color: var(--hz-unit) !important;
+  font-size: 0 !important;
+  font-weight: var(--hz-fw-black) !important;
+  line-height: .9 !important;
+  letter-spacing: -.05em !important;
+}
+
+.l1a-page--2 .hz-exercises > .hz-exercise > .hz-exercise-number::after {
+  content: counter(l1a-exercise);
+  color: var(--hz-unit) !important;
+  font-size: 18pt !important;
+  font-weight: var(--hz-fw-black) !important;
+  line-height: .9 !important;
+  letter-spacing: -.05em !important;
+}
+
+.l1a-page--2 .l1a-name-options,
+.l1a-page--2 .l1a-profile__form {
+  color: var(--hz-ink) !important;
+  font-size: 7.6pt !important;
+  line-height: 1.28 !important;
+}
+
+.l1a-page--2 .l1a-name-options__number {
+  color: var(--hz-unit-dark) !important;
+  font-size: 7.6pt !important;
+  font-weight: var(--hz-fw-black) !important;
+}
+
+.l1a-page--2 .l1a-number__digit,
+.l1a-page--2 .l1a-number:nth-child(1) .l1a-number__digit,
+.l1a-page--2 .l1a-number:nth-child(2) .l1a-number__digit,
+.l1a-page--2 .l1a-number:nth-child(3) .l1a-number__digit,
+.l1a-page--2 .l1a-number:nth-child(4) .l1a-number__digit,
+.l1a-page--2 .l1a-number:nth-child(5) .l1a-number__digit,
+.l1a-page--2 .l1a-number:nth-child(6) .l1a-number__digit,
+.l1a-page--2 .l1a-number:nth-child(7) .l1a-number__digit,
+.l1a-page--2 .l1a-number:nth-child(8) .l1a-number__digit,
+.l1a-page--2 .l1a-number:nth-child(9) .l1a-number__digit,
+.l1a-page--2 .l1a-number:nth-child(10) .l1a-number__digit,
+.l1a-page--2 .l1a-number:nth-child(11) .l1a-number__digit {
+  background: var(--hz-unit) !important;
+  color: #fff !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+  font-size: 12.5pt !important;
+  font-weight: var(--hz-fw-black) !important;
+}
+
+.l1a-page--2 .l1a-number__word {
+  color: var(--hz-ink) !important;
+  font-size: 6.1pt !important;
+  font-weight: var(--hz-fw-semibold) !important;
+  line-height: 1 !important;
+}
+
+.l1a-page .l1a-profile__form,
+.l1a-page .l1a-profile:nth-child(1) .l1a-profile__form,
+.l1a-page .l1a-profile:nth-child(2) .l1a-profile__form,
+.l1a-page .l1a-profile:nth-child(3) .l1a-profile__form {
+  background: #fff !important;
+  border: .35mm solid var(--hz-line) !important;
+  border-top: 1mm solid var(--hz-unit) !important;
+  color: var(--hz-ink) !important;
+  font-size: 7.6pt !important;
+  line-height: 1.28 !important;
+}
+
+.l1a-page .l1a-dialogue-photo .hz-photo-placeholder,
+.l1a-page .l1a-greeting__photo .hz-photo-placeholder,
+.l1a-page .l1a-identity-photo .hz-photo-placeholder,
+.l1a-page .l1a-profile__photo .hz-photo-placeholder {
+  background-color: transparent !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  color: transparent !important;
+}
+
+.l1a-page .l1a-dialogue-photo .hz-photo-placeholder::before,
+.l1a-page .l1a-dialogue-photo .hz-photo-placeholder::after,
+.l1a-page .l1a-greeting__photo .hz-photo-placeholder::before,
+.l1a-page .l1a-greeting__photo .hz-photo-placeholder::after,
+.l1a-page .l1a-identity-photo .hz-photo-placeholder::before,
+.l1a-page .l1a-identity-photo .hz-photo-placeholder::after,
+.l1a-page .l1a-profile__photo .hz-photo-placeholder::before,
+.l1a-page .l1a-profile__photo .hz-photo-placeholder::after {
+  content: none !important;
+  display: none !important;
+}
+
+.l1a-page .l1a-dialogue-photo .hz-photo-placeholder__meta,
+.l1a-page .l1a-greeting__photo .hz-photo-placeholder__meta,
+.l1a-page .l1a-identity-photo .hz-photo-placeholder__meta,
+.l1a-page .l1a-profile__photo .hz-photo-placeholder__meta { display: none !important; }
+
+.l1a-page .l1a-dialogue-photo .hz-photo-placeholder { background-image: url("./Images/1A/Tom and Mary.png") !important; background-position: center !important; }
+.l1a-page .l1a-greeting:nth-child(1) .hz-photo-placeholder { background-image: url("./Images/1A/Good morning.png") !important; background-position: center 38% !important; }
+.l1a-page .l1a-greeting:nth-child(2) .hz-photo-placeholder { background-image: url("./Images/1A/Good afternoon.png") !important; background-position: center !important; }
+.l1a-page .l1a-greeting:nth-child(3) .hz-photo-placeholder { background-image: url("./Images/1A/Good evening.png") !important; background-position: center !important; }
+.l1a-page .l1a-greeting:nth-child(4) .hz-photo-placeholder { background-image: url("./Images/1A/See you later.png") !important; background-position: center !important; }
+.l1a-page .l1a-identity-photo .hz-photo-placeholder { background-image: url("./Images/1A/Giving personal information.png") !important; background-position: center 35% !important; }
+.l1a-page .l1a-profile:nth-child(1) .hz-photo-placeholder { background-image: url("./Images/1A/Profile photo 1.png") !important; background-position: center !important; }
+.l1a-page .l1a-profile:nth-child(2) .hz-photo-placeholder { background-image: url("./Images/1A/Profile photo 2.png") !important; background-position: center !important; }
+.l1a-page .l1a-profile:nth-child(3) .hz-photo-placeholder { background-image: url("./Images/1A/Profile photo 3.png") !important; background-position: center !important; }
+
+
+/* Horizons/Base/shell/print.css */
+@media print {
+@page {
+  size: A4 portrait;
+  margin: 0;
+}
+
+@media print {
+  html,
+  body {
+    width: 210mm;
+    margin: 0 !important;
+    padding: 0 !important;
+    background: #fff !important;
+  }
+
+  body.hz-book {
+    background: #fff !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+  }
+
+  .hz-page {
+    width: 210mm !important;
+    height: 297mm !important;
+    margin: 0 !important;
+    box-shadow: none !important;
+    overflow: hidden !important;
+    break-after: page;
+    page-break-after: always;
+  }
+
+  .hz-page:last-child {
+    break-after: auto;
+    page-break-after: auto;
+  }
+
+  .hz-no-print { display: none !important; }
+
+  a {
+    color: inherit;
+    text-decoration: none;
+  }
+
+  img,
+  figure,
+  table,
+  .hz-focus-box,
+  .hz-ui-card,
+  .hz-form-card,
+  .hz-review-block,
+  .hz-exercise,
+  .hz-extra-practice {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
+
+  body.hz-debug .hz-page::after { display: none !important; }
+}
+
+}
+
+/* 1A.html inline style 1 */
+
+    /*
+      LESSON 1A CANONICAL PROTOTYPE
+      -----------------------------
+      Source wording, questions, numbering, track references and answer mechanics
+      are preserved. Only composition is adapted to the approved Stage 3 style.
+      Development imagery is represented with crop-aware placeholders.
+    */
+
+    .l1a-page .hz-page__content { overflow: hidden; }
+    .l1a-page .hz-page-stack { gap: 2.7mm; }
+    .l1a-page .hz-lesson-header { padding-bottom: 3.2mm; }
+    .l1a-page .hz-exercises { gap: .2mm; }
+    .l1a-page .hz-exercise { padding: 1.6mm 0 2.15mm; }
+    .l1a-page .hz-exercise__body { margin-top: 1.5mm; }
+    .l1a-page .hz-exercise__instruction { font-size: 9.1pt; }
+    .l1a-page .hz-question { padding: .35mm 0; font-size: 8.25pt; }
+
+    .l1a-track {
+      display: inline-flex;
       align-items: center;
-      min-width: 230mm;
-      margin: 0;
-      padding: 0;
+      gap: .8mm;
+      margin-right: 1.5mm;
+      padding: .6mm 1.15mm;
+      background: var(--hz-audio);
+      color: #fff;
+      font-size: 6.5pt;
+      font-weight: var(--hz-fw-black);
+      line-height: 1;
+      vertical-align: .35mm;
     }
 
-    .hz-pdf-button {
-      position: fixed;
-      right: 20px;
-      bottom: 20px;
-      z-index: 9999;
+    /* Page 5 — dialogue feature. */
+    .l1a-dialogue-feature {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.06fr .94fr;
+      min-height: 59mm;
+      isolation: isolate;
+    }
+
+    .l1a-dialogue-feature::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      top: -5mm;
+      right: 35mm;
+      width: 39mm;
+      height: 39mm;
+      border: 6mm solid var(--hz-unit-soft);
+      border-radius: 50%;
+    }
+
+    .l1a-dialogue-photo {
+      position: relative;
+      min-height: 59mm;
+      overflow: hidden;
+      clip-path: polygon(0 0, 100% 0, 93% 100%, 0 100%);
+    }
+
+    .l1a-dialogue-photo .hz-photo-placeholder { min-height: 59mm; }
+
+    .l1a-dialogue-copy {
+      position: relative;
+      align-self: center;
+      margin-left: -8mm;
+      padding: 5mm 5mm 4.5mm 8mm;
+      border-top: 1.2mm solid var(--hz-unit);
+      background: var(--hz-paper);
+      box-shadow: 0 0 0 .25mm var(--hz-line);
+    }
+
+    .l1a-dialogue-copy::after {
+      content: "";
+      position: absolute;
+      right: -5mm;
+      bottom: -5mm;
+      width: 17mm;
+      height: 17mm;
+      background: var(--hz-unit-soft);
+      clip-path: polygon(100% 0, 100% 100%, 0 100%);
+      z-index: -1;
+    }
+
+    .l1a-dialogue-copy .hz-new-words {
+      margin-bottom: 2.4mm;
+    }
+
+    .l1a-dialogue {
+      display: grid;
+      grid-template-columns: 12mm 1fr;
+      gap: 1.1mm 2mm;
+      margin: 0;
+      font-size: 8.5pt;
+      line-height: 1.37;
+    }
+
+    .l1a-dialogue dt {
+      margin: 0;
+      font-weight: var(--hz-fw-black);
+    }
+
+    .l1a-dialogue dd { margin: 0; }
+
+    /* Greetings are one exercise, but the four photos can be internally art-directed. */
+    .l1a-greetings {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 2.4mm;
+      align-items: end;
+    }
+
+    .l1a-greeting { text-align: center; }
+    .l1a-greeting__photo {
+      position: relative;
+      height: 27mm;
+      margin: 0 auto 1.3mm;
+      overflow: hidden;
+      background: var(--hz-wash);
+    }
+
+    .l1a-greeting:nth-child(1) .l1a-greeting__photo { width: 27mm; border-radius: 50%; }
+    .l1a-greeting:nth-child(2) .l1a-greeting__photo { width: 31mm; clip-path: polygon(0 11%, 89% 0, 100% 88%, 11% 100%); }
+    .l1a-greeting:nth-child(3) .l1a-greeting__photo { width: 27mm; border-radius: 50% 50% 10% 50%; }
+    .l1a-greeting:nth-child(4) .l1a-greeting__photo { width: 31mm; clip-path: polygon(8% 0, 100% 0, 92% 100%, 0 86%); }
+    .l1a-greeting__photo .hz-photo-placeholder { min-height: 27mm; font-size: 5.5pt; }
+    .l1a-greeting strong { font-size: 7.4pt; line-height: 1.15; }
+
+    /* Grammar is deliberately one large structured field, not a generic card. */
+    .l1a-grammar {
+      position: relative;
+      overflow: hidden;
+      margin: 1.2mm 0 .8mm calc(var(--hz-exercise-marker-size) + 3mm);
+      padding: 3mm 4mm 3.3mm;
+      border-top: 1.15mm solid var(--hz-unit);
+      background: var(--hz-unit-soft);
+    }
+
+    .l1a-grammar::before {
+      content: "";
+      position: absolute;
+      top: -15mm;
+      right: -12mm;
+      width: 44mm;
+      height: 44mm;
+      border: 8mm solid rgb(255 255 255 / 55%);
+      border-radius: 50%;
+    }
+
+    .l1a-grammar__title {
+      position: relative;
+      margin: 0 0 2.2mm;
+      color: var(--hz-unit-dark);
+      font-size: 8pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: .065em;
+      text-transform: uppercase;
+    }
+
+    .l1a-grammar__grid {
+      position: relative;
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 4mm;
+      font-size: 7.5pt;
+      line-height: 1.35;
+    }
+
+    .l1a-grammar__grid strong {
+      display: block;
+      margin-bottom: .7mm;
+      color: var(--hz-ink);
+    }
+
+    .l1a-grammar__grid p { margin: 0 0 .6mm; }
+    .l1a-target { color: var(--hz-unit-dark); font-weight: var(--hz-fw-black); }
+
+    .l1a-go-to {
+      margin-left: calc(var(--hz-exercise-marker-size) + 3mm);
+      margin-bottom: .2mm;
+    }
+
+    .l1a-sentence-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .6mm 8mm;
+      font-size: 8.1pt;
+    }
+
+    .l1a-sentence {
+      display: grid;
+      grid-template-columns: 6mm 1fr;
+      gap: 1mm;
+      align-items: baseline;
+      min-height: 5.3mm;
+    }
+
+    .l1a-sentence b { color: var(--hz-unit-dark); }
+
+    .l1a-contractions {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 2mm;
+    }
+
+    .l1a-contraction {
+      padding-top: 1.3mm;
+      border-top: .55mm solid var(--hz-unit);
+      font-size: 7.8pt;
+      line-height: 1.25;
+    }
+
+    .l1a-contraction b {
+      display: inline-block;
+      min-width: 4mm;
+      color: var(--hz-unit-dark);
+    }
+
+    /* Page 6 continuation marker. */
+    .l1a-continuation {
+      position: absolute;
+      top: -1mm;
+      right: -14mm;
+      display: grid;
+      place-items: end start;
+      width: 34mm;
+      height: 25mm;
+      padding: 0 0 3.2mm 5mm;
+      background: var(--hz-unit);
+      color: white;
+      clip-path: polygon(28% 0, 100% 0, 100% 100%, 0 100%);
+      font-size: 19pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: -.05em;
+      z-index: 4;
+    }
+
+    /* Exercise 5: conversational typography + large portrait placeholder. */
+    .l1a-identity-stage {
+      position: relative;
+      display: grid;
+      grid-template-columns: .95fr 1.05fr;
+      gap: 4mm;
+      align-items: stretch;
+      min-height: 58mm;
+    }
+
+    .l1a-identity-stage::before {
+      content: "";
+      position: absolute;
+      left: -10mm;
+      bottom: -9mm;
+      width: 44mm;
+      height: 44mm;
+      background: var(--hz-unit-soft);
+      border-radius: 50%;
+      z-index: -1;
+    }
+
+    .l1a-identity-copy {
+      display: grid;
+      align-content: center;
+      gap: 2.1mm;
+      padding: 2mm 0;
+    }
+
+    .l1a-identity-copy .hz-new-words { width: max-content; margin-bottom: .5mm; }
+
+    .l1a-exchange {
+      position: relative;
+      padding: 2.1mm 3mm;
+      border-left: 1mm solid var(--hz-unit);
+      background: var(--hz-paper);
+      font-size: 8.1pt;
+      line-height: 1.3;
+    }
+
+    .l1a-exchange:nth-of-type(3) { margin-left: 7mm; background: var(--hz-unit-soft); }
+    .l1a-exchange:nth-of-type(4) { margin-right: 8mm; background: var(--hz-wash); }
+    .l1a-exchange p { margin: 0; }
+    .l1a-exchange p + p { margin-top: 1mm; }
+
+    .l1a-identity-photo {
+      min-height: 58mm;
+      overflow: hidden;
+      clip-path: polygon(8% 0, 100% 0, 100% 91%, 0 100%);
+    }
+    .l1a-identity-photo .hz-photo-placeholder { min-height: 58mm; }
+
+    /* Pronunciation is typographic rather than boxed UI. */
+    .l1a-pronunciation {
+      position: relative;
+      overflow: hidden;
+      padding: 3mm 4mm 3.7mm;
+      border-top: 1.15mm solid var(--hz-unit);
+      border-bottom: .3mm solid var(--hz-line-strong);
+      background: var(--hz-unit-soft);
+    }
+
+    .l1a-pronunciation::after {
+      content: "";
+      position: absolute;
+      right: -10mm;
+      bottom: -18mm;
+      width: 48mm;
+      height: 48mm;
+      border: 8mm solid rgb(255 255 255 / 52%);
+      transform: rotate(18deg);
+    }
+
+    .l1a-pronunciation__title {
+      position: relative;
+      z-index: 1;
+      margin-bottom: 2mm;
+      color: var(--hz-unit-dark);
+      font-size: 8pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: .065em;
+      text-transform: uppercase;
+    }
+
+    .l1a-alphabet {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 1.7mm 4.1mm;
+      font-size: 17pt;
+      font-weight: var(--hz-fw-black);
+      line-height: 1;
+      color: var(--hz-unit-dark);
+    }
+
+    .l1a-name-options {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3mm;
+      font-size: 7.7pt;
+    }
+
+    .l1a-name-options__item {
+      display: grid;
+      grid-template-columns: 4mm 1fr;
+      gap: 1mm;
+      align-items: start;
+    }
+
+    .l1a-name-options__number {
+      color: var(--hz-unit-dark);
+      font-weight: var(--hz-fw-black);
+      padding-top: .3mm;
+    }
+
+    .l1a-name-options__choices { display: grid; gap: .8mm; }
+    .l1a-name-options__choices span { white-space: nowrap; }
+
+    /* Numbers read as one rhythmic typographic horizon, all within Unit 1 color. */
+    .l1a-number-horizon {
+      display: grid;
+      grid-template-columns: repeat(11, minmax(0, 1fr));
+      gap: 1mm;
+      align-items: end;
+      padding-top: 1mm;
+    }
+
+    .l1a-number {
+      position: relative;
+      display: grid;
+      justify-items: center;
+      gap: .8mm;
+      min-width: 0;
+    }
+
+    .l1a-number__digit {
       display: grid;
       place-items: center;
-      width: 52px;
-      height: 52px;
-      padding: 0;
-      border: 0;
+      width: 11mm;
+      height: 11mm;
+      border: .45mm solid var(--hz-unit);
       border-radius: 50%;
-      background: #202124;
+      color: var(--hz-unit-dark);
+      background: var(--hz-paper);
+      font-size: 14pt;
+      font-weight: var(--hz-fw-black);
+      line-height: 1;
+    }
+
+    .l1a-number:nth-child(3n+2) .l1a-number__digit { background: var(--hz-unit-soft); }
+    .l1a-number:nth-child(3n) .l1a-number__digit { border-radius: 18% 50% 50% 50%; }
+    .l1a-number__word { font-size: 5.9pt; line-height: 1; }
+
+    .l1a-profiles {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 5mm;
+      align-items: end;
+    }
+
+    .l1a-profile { position: relative; padding-top: 15mm; }
+    .l1a-profile__photo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      width: 26mm;
+      height: 26mm;
+      overflow: hidden;
+      border: 1.6mm solid var(--hz-paper);
+      border-radius: 50%;
+      transform: translateX(-50%);
+      z-index: 2;
+    }
+    .l1a-profile__photo .hz-photo-placeholder { min-height: 100%; font-size: 5pt; }
+
+    .l1a-profile__form {
+      padding: 13mm 3mm 2.5mm;
+      border-top: 1mm solid var(--hz-unit);
+      background: var(--hz-unit-soft);
+      font-size: 7.4pt;
+    }
+
+    .l1a-profile:nth-child(2) .l1a-profile__form { background: var(--hz-wash); }
+    .l1a-profile:nth-child(3) .l1a-profile__form { background: #fff; border: .35mm solid var(--hz-line); border-top: 1mm solid var(--hz-unit); }
+
+    .l1a-profile__row {
+      display: grid;
+      grid-template-columns: 13mm 1fr;
+      gap: 1.2mm;
+      align-items: end;
+      min-height: 5mm;
+    }
+
+    .l1a-profile__blank { border-bottom: .3mm solid var(--hz-line-strong); min-height: 3.8mm; }
+
+    .l1a-extra {
+      margin-left: calc(var(--hz-exercise-marker-size) + 3mm);
+      margin-top: .8mm;
+    }
+
+    /* Tighten page 6 enough to preserve all source material on one A4 page. */
+    .l1a-page--2 .hz-exercise { padding-top: 1.25mm; padding-bottom: 1.75mm; }
+    .l1a-page--2 .hz-exercise__body { margin-top: 1.1mm; }
+    .l1a-page--2 .hz-page-stack { gap: 1.6mm; }
+    .l1a-page--2 .hz-exercise__instruction { font-size: 8.8pt; }
+    .l1a-page--2 .l1a-identity-stage { min-height: 53mm; }
+    .l1a-page--2 .l1a-identity-photo .hz-photo-placeholder { min-height: 53mm; }
+    .l1a-page--2 .l1a-identity-photo { min-height: 53mm; }
+    .l1a-page--2 .l1a-alphabet { font-size: 15.5pt; gap: 1.4mm 3.5mm; }
+    .l1a-page--2 .l1a-pronunciation { padding-top: 2.5mm; padding-bottom: 3mm; }
+    .l1a-page--2 .l1a-number__digit { width: 10mm; height: 10mm; font-size: 12.5pt; }
+    .l1a-page--2 .l1a-profile__photo { width: 23mm; height: 23mm; }
+    .l1a-page--2 .l1a-profile { padding-top: 13mm; }
+    .l1a-page--2 .l1a-profile__form { padding-top: 11.5mm; }
+  
+
+/* Horizons/A1/Lessons/lesson-1b-local.css */
+/* Horizons A1 — Lesson 1B scoped styles and asset mappings. */
+
+.l1b-target {
+  color: var(--hz-unit-dark) !important;
+  font-weight: var(--hz-fw-black) !important;
+}
+
+.l1b-aan__title,
+.l1b-contractions__title,
+.l1b-pronunciation__title {
+  color: var(--hz-unit-dark) !important;
+  font-size: 8pt !important;
+  font-weight: var(--hz-fw-black) !important;
+  letter-spacing: .065em !important;
+  line-height: 1.2 !important;
+}
+
+.l1b-page .l1b-occupation-stage::before,
+.l1b-page .l1b-aan::before,
+.l1b-page .l1b-aan::after,
+.l1b-page .l1b-contractions::after {
+  content: none !important;
+  display: none !important;
+}
+
+.l1b-page .l1b-occupation__photo .hz-photo-placeholder,
+.l1b-page .l1b-clue .hz-photo-placeholder,
+.l1b-page .l1b-profile__photo .hz-photo-placeholder,
+.l1b-page .l1b-workers-photo .hz-photo-placeholder {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  background-color: transparent !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  color: transparent !important;
+}
+
+.l1b-page .l1b-occupation__photo .hz-photo-placeholder::before,
+.l1b-page .l1b-occupation__photo .hz-photo-placeholder::after,
+.l1b-page .l1b-clue .hz-photo-placeholder::before,
+.l1b-page .l1b-clue .hz-photo-placeholder::after,
+.l1b-page .l1b-profile__photo .hz-photo-placeholder::before,
+.l1b-page .l1b-profile__photo .hz-photo-placeholder::after,
+.l1b-page .l1b-workers-photo .hz-photo-placeholder::before,
+.l1b-page .l1b-workers-photo .hz-photo-placeholder::after {
+  content: none !important;
+  display: none !important;
+}
+
+.l1b-page .l1b-occupation__photo .hz-photo-placeholder__meta,
+.l1b-page .l1b-clue .hz-photo-placeholder__meta,
+.l1b-page .l1b-profile__photo .hz-photo-placeholder__meta,
+.l1b-page .l1b-workers-photo .hz-photo-placeholder__meta { display: none !important; }
+
+.l1b-page:not(.l1b-page--2) .l1b-occupation-stage {
+  margin-left: calc(-1 * (var(--hz-exercise-marker-size) + 3mm)) !important;
+  width: calc(100% + var(--hz-exercise-marker-size) + 3mm) !important;
+  padding-top: .6mm !important;
+}
+
+.l1b-page:not(.l1b-page--2) .l1b-occupation-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr)) !important;
+  gap: 1.6mm 2.2mm !important;
+  width: 100% !important;
+  justify-items: center !important;
+}
+
+.l1b-page:not(.l1b-page--2) .l1b-occupation {
+  width: 100% !important;
+  min-width: 0 !important;
+  text-align: center !important;
+}
+
+.l1b-page:not(.l1b-page--2) .l1b-occupation__photo {
+  width: 28mm !important;
+  height: 28mm !important;
+  margin: 0 auto .9mm !important;
+}
+
+.l1b-page .l1b-occupation:nth-child(1) .hz-photo-placeholder { background-image: url("./Images/1B/Teacher.png") !important; background-position: center !important; }
+.l1b-page .l1b-occupation:nth-child(2) .hz-photo-placeholder { background-image: url("./Images/1B/Student.png") !important; background-position: center !important; }
+.l1b-page .l1b-occupation:nth-child(3) .hz-photo-placeholder { background-image: url("./Images/1B/Chef.png") !important; background-position: center !important; }
+.l1b-page .l1b-occupation:nth-child(4) .hz-photo-placeholder { background-image: url("./Images/1B/Doctor.png") !important; background-position: center !important; }
+.l1b-page .l1b-occupation:nth-child(5) .hz-photo-placeholder { background-image: url("./Images/1B/Office Worker.png") !important; background-position: center !important; }
+.l1b-page .l1b-occupation:nth-child(6) .hz-photo-placeholder { background-image: url("./Images/1B/Receptionist.png") !important; background-position: center !important; }
+.l1b-page .l1b-occupation:nth-child(7) .hz-photo-placeholder { background-image: url("./Images/1B/Salesclerk.png") !important; background-position: center !important; }
+.l1b-page .l1b-occupation:nth-child(8) .hz-photo-placeholder { background-image: url("./Images/1B/Taxi Driver.png") !important; background-position: center !important; }
+.l1b-page .l1b-occupation:nth-child(9) .hz-photo-placeholder { background-image: url("./Images/1B/Waiter Waitress.png") !important; background-position: center !important; }
+.l1b-page .l1b-occupation:nth-child(10) .hz-photo-placeholder { background-image: url("./Images/1B/Farmer.png") !important; background-position: center !important; }
+
+.l1b-page .l1b-clue:nth-child(1) .hz-photo-placeholder { background-image: url("./Images/1B/Taxi.png") !important; background-position: center !important; }
+.l1b-page .l1b-clue:nth-child(2) .hz-photo-placeholder { background-image: url("./Images/1B/Bell.png") !important; background-position: center !important; }
+.l1b-page .l1b-clue:nth-child(3) .hz-photo-placeholder { background-image: url("./Images/1B/Dish.png") !important; background-position: center !important; }
+.l1b-page .l1b-clue:nth-child(4) .hz-photo-placeholder { background-image: url("./Images/1B/Supplies.png") !important; background-position: center !important; }
+.l1b-page .l1b-clue:nth-child(5) .hz-photo-placeholder { background-image: url("./Images/1B/Syringe.png") !important; background-position: center !important; }
+
+.l1b-page .l1b-profile:nth-child(1) .hz-photo-placeholder { background-image: url("./Images/1B/Tom.png") !important; background-position: center 42% !important; }
+.l1b-page .l1b-profile:nth-child(2) .hz-photo-placeholder { background-image: url("./Images/1B/Sarah.png") !important; background-position: center 40% !important; }
+.l1b-page .l1b-profile:nth-child(3) .hz-photo-placeholder { background-image: url("./Images/1B/Marco.png") !important; background-position: center 42% !important; }
+
+.l1b-page .l1b-workers-photo .hz-photo-placeholder {
+  background-image: url("./Images/1B/Two Workers.png") !important;
+  background-position: center !important;
+}
+
+
+/* 1B.html inline style 1 */
+
+    /*
+      LESSON 1B CANONICAL PROTOTYPE
+      -----------------------------
+      Frozen Student's Book wording, exercise numbering, track references,
+      questions and answer mechanics are preserved. Only the composition is
+      adapted to the current canonical Horizons Stage 3 style.
+      Development imagery remains crop-aware placeholders.
+    */
+
+    .l1b-page .hz-page__content { overflow: hidden; }
+    .l1b-page .hz-page-stack { gap: 2.25mm; }
+    .l1b-page .hz-lesson-header { padding-bottom: 3.1mm; }
+    .l1b-page .hz-exercises { gap: .25mm; }
+    .l1b-page .hz-exercise { padding: 1.35mm 0 1.95mm; }
+    .l1b-page .hz-exercise__body { margin-top: 1.3mm; }
+    .l1b-page .hz-exercise__instruction { font-size: 8.9pt; }
+    .l1b-target { color: var(--hz-unit-dark); font-weight: var(--hz-fw-black); }
+
+    .l1b-track {
+      display: inline-flex;
+      align-items: center;
+      gap: .7mm;
+      margin-right: 1.35mm;
+      padding: .6mm 1.15mm;
+      background: var(--hz-audio);
       color: #fff;
-      box-shadow: 0 4px 16px rgb(0 0 0 / 24%);
-      cursor: pointer;
-      transition: transform 120ms ease, box-shadow 120ms ease, opacity 120ms ease;
+      font-size: 6.4pt;
+      font-weight: var(--hz-fw-black);
+      line-height: 1;
+      vertical-align: .35mm;
     }
 
-    .hz-pdf-button:hover:not(:disabled) {
-      transform: translateY(-1px);
-      box-shadow: 0 6px 20px rgb(0 0 0 / 28%);
+    /* ------------------------------------------------------------------
+       PAGE 7 — vocabulary, a/an, chat repair, occupation mime
+       ------------------------------------------------------------------ */
+
+    .l1b-occupation-stage {
+      position: relative;
+      padding: 1mm 0 .4mm;
+      isolation: isolate;
     }
 
-    .hz-pdf-button:focus-visible {
-      outline: 3px solid #fff;
-      outline-offset: 3px;
+    .l1b-occupation-stage::before {
+      content: "WORK";
+      position: absolute;
+      z-index: -1;
+      right: -3mm;
+      top: -4mm;
+      color: var(--hz-unit-soft);
+      font-size: 42pt;
+      font-weight: var(--hz-fw-black);
+      line-height: 1;
+      letter-spacing: -.07em;
     }
 
-    .hz-pdf-button:disabled {
-      opacity: .58;
-      cursor: progress;
+    .l1b-occupation-head {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 1.5mm;
     }
 
-    .hz-pdf-button svg {
-      width: 24px;
-      height: 24px;
-      fill: none;
-      stroke: currentColor;
-      stroke-width: 2;
-      stroke-linecap: round;
-      stroke-linejoin: round;
+    .l1b-occupation-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 2.4mm 2.2mm;
+      align-items: start;
     }
 
-    .hz-pdf-button.is-busy svg {
-      animation: hz-pdf-pulse 900ms ease-in-out infinite alternate;
+    .l1b-occupation {
+      min-width: 0;
+      text-align: center;
     }
 
-    .hz-book-error {
-      max-width: 720px;
-      margin: 32px auto;
-      padding: 16px 20px;
+    .l1b-occupation__photo {
+      width: 24mm;
+      height: 24mm;
+      margin: 0 auto 1.2mm;
+      overflow: hidden;
+      border: .45mm solid var(--hz-unit);
+      border-radius: 50%;
+      background: var(--hz-wash);
+    }
+
+    .l1b-occupation__photo .hz-photo-placeholder {
+      min-height: 24mm;
+      font-size: 4.8pt;
+      letter-spacing: .07em;
+    }
+
+    .l1b-occupation__photo .hz-photo-placeholder::before { inset: 2.3mm; }
+    .l1b-occupation__photo .hz-photo-placeholder::after { width: 18mm; }
+    .l1b-occupation__photo .hz-photo-placeholder__meta { padding: .7mm 1mm; }
+
+    .l1b-occupation figcaption {
+      font-size: 6.25pt;
+      font-weight: var(--hz-fw-black);
+      line-height: 1.05;
+    }
+
+    /* A / AN is a single editorial grammar field rather than a generic card. */
+    .l1b-aan {
+      position: relative;
+      overflow: hidden;
+      margin: .6mm 0 .4mm calc(var(--hz-exercise-marker-size) + 3mm);
+      padding: 3.1mm 4mm 3.25mm;
+      border-top: 1.15mm solid var(--hz-unit);
+      border-bottom: .3mm solid var(--hz-line-strong);
+      background: var(--hz-unit-soft);
+      isolation: isolate;
+    }
+
+    .l1b-aan::before,
+    .l1b-aan::after {
+      position: absolute;
+      z-index: -1;
+      color: rgb(255 255 255 / 68%);
+      font-size: 56pt;
+      font-weight: var(--hz-fw-black);
+      line-height: .8;
+    }
+
+    .l1b-aan::before {
+      content: "A";
+      left: -1mm;
+      bottom: -7mm;
+    }
+
+    .l1b-aan::after {
+      content: "AN";
+      right: -3mm;
+      top: -7mm;
+    }
+
+    .l1b-aan__title {
+      margin: 0 0 1.9mm;
+      color: var(--hz-unit-dark);
+      font-size: 8pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: .065em;
+      text-transform: uppercase;
+    }
+
+    .l1b-aan__lead {
+      margin: 0 0 2.2mm;
+      font-size: 7.75pt;
+      font-weight: var(--hz-fw-bold);
+      line-height: 1.3;
+    }
+
+    .l1b-aan__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8mm;
+      font-size: 7.45pt;
+      line-height: 1.32;
+    }
+
+    .l1b-aan__grid > div {
+      min-width: 0;
+      padding-top: 1.6mm;
+      border-top: .35mm solid rgb(32 33 36 / 22%);
+    }
+
+    .l1b-aan__grid strong {
+      display: block;
+      margin-bottom: .7mm;
+      color: var(--hz-unit-dark);
+    }
+
+    .l1b-aan__grid p { margin: 0; font-style: italic; }
+
+    .l1b-go-to {
+      margin: .3mm 0 .2mm calc(var(--hz-exercise-marker-size) + 3mm);
+    }
+
+    /* Exercise 2 is explicitly simulated real-world UI, so rounded chat
+       surfaces are appropriate under the canonical rules. */
+    .l1b-chats {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4.5mm;
+      align-items: start;
+    }
+
+    .l1b-chats::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      left: 50%;
+      top: 4mm;
+      width: 32mm;
+      height: 32mm;
+      border: 5mm solid var(--hz-unit-soft);
+      border-radius: 50%;
+      transform: translateX(-50%);
+    }
+
+    .l1b-chat {
+      overflow: hidden;
+      border: .28mm solid var(--hz-line);
+      border-radius: 4mm;
+      background: #f4f1df;
+      box-shadow: var(--hz-shadow-ui);
+    }
+
+    .l1b-chat__top {
+      display: flex;
+      align-items: center;
+      gap: 2mm;
+      min-height: 8.5mm;
+      padding: 1.8mm 3mm;
+      background: var(--hz-unit);
+      color: #fff;
+      font-size: 7.6pt;
+      font-weight: var(--hz-fw-black);
+    }
+
+    .l1b-chat__avatar {
+      display: grid;
+      place-items: center;
+      width: 5mm;
+      height: 5mm;
+      border-radius: 50%;
+      background: rgb(255 255 255 / 86%);
+      color: var(--hz-unit-dark);
+      font-size: 4.8pt;
+    }
+
+    .l1b-chat__messages {
+      display: flex;
+      flex-direction: column;
+      gap: 1.35mm;
+      min-height: 37mm;
+      padding: 2.4mm 3mm 2.2mm;
+      background:
+        linear-gradient(rgb(255 255 255 / 46%), rgb(255 255 255 / 46%)),
+        repeating-linear-gradient(45deg, transparent 0 8mm, rgb(22 127 130 / 5%) 8mm 9mm);
+    }
+
+    .l1b-bubble {
+      width: fit-content;
+      max-width: 91%;
+      margin: 0;
+      padding: 1.35mm 2mm;
+      border-radius: 1.8mm;
       background: #fff;
-      color: #202124;
-      font: 14px/1.45 Arial, sans-serif;
-      box-shadow: 0 2px 12px rgb(0 0 0 / 12%);
+      font-size: 7.2pt;
+      line-height: 1.25;
     }
 
-    @keyframes hz-pdf-pulse {
-      from { opacity: .35; }
-      to { opacity: 1; }
+    .l1b-bubble--self {
+      align-self: flex-end;
+      background: var(--hz-unit-soft);
     }
 
-    @media print {
-      html,
-      body,
-      #hz-book {
-        background: #fff;
-      }
-
-      .hz-pdf-button,
-      .hz-book-error {
-        display: none !important;
-      }
+    .l1b-chat__input {
+      margin: 0 2.5mm 2.2mm;
+      padding: 1.2mm 2mm;
+      border: .25mm solid var(--hz-line);
+      border-radius: 3mm;
+      background: #fff;
+      color: var(--hz-muted);
+      font-size: 6.7pt;
     }
+
+    .l1b-clue-strip {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 3mm;
+      align-items: center;
+      padding: .8mm 0 0;
+    }
+
+    .l1b-clue {
+      height: 22mm;
+      overflow: hidden;
+      border-radius: 50%;
+      background: var(--hz-wash);
+    }
+
+    .l1b-clue .hz-photo-placeholder {
+      min-height: 22mm;
+      font-size: 4.5pt;
+      letter-spacing: .05em;
+    }
+
+    .l1b-clue .hz-photo-placeholder::before { inset: 2mm; }
+    .l1b-clue .hz-photo-placeholder::after { width: 16mm; }
+    .l1b-clue .hz-photo-placeholder__meta { padding: .5mm .8mm; }
+
+    /* ------------------------------------------------------------------
+       PAGE 8 — contractions, 4.1/4.2, pronunciation, matching
+       ------------------------------------------------------------------ */
+
+    .l1b-continuation {
+      position: absolute;
+      top: -1mm;
+      right: -14mm;
+      z-index: 4;
+      display: grid;
+      place-items: end start;
+      width: 34mm;
+      height: 25mm;
+      padding: 0 0 3.2mm 5mm;
+      background: var(--hz-unit);
+      color: #fff;
+      clip-path: polygon(28% 0, 100% 0, 100% 100%, 0 100%);
+      font-size: 19pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: -.05em;
+    }
+
+    .l1b-contractions {
+      position: relative;
+      overflow: hidden;
+      padding: 3.3mm 4.3mm 3.5mm;
+      border-top: 1.15mm solid var(--hz-unit);
+      border-bottom: .3mm solid var(--hz-line-strong);
+      background: var(--hz-unit-soft);
+      isolation: isolate;
+    }
+
+    .l1b-contractions::after {
+      content: "’";
+      position: absolute;
+      z-index: -1;
+      right: 3mm;
+      top: -13mm;
+      color: rgb(255 255 255 / 72%);
+      font-family: Georgia, serif;
+      font-size: 92pt;
+      line-height: 1;
+    }
+
+    .l1b-contractions__title {
+      margin: 0 0 1.7mm;
+      color: var(--hz-unit-dark);
+      font-size: 8pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: .065em;
+      text-transform: uppercase;
+    }
+
+    .l1b-contractions__lead {
+      margin: 0 0 2mm;
+      font-size: 7.7pt;
+      font-weight: var(--hz-fw-bold);
+    }
+
+    .l1b-contractions__rows {
+      display: grid;
+      gap: .7mm;
+      max-width: 126mm;
+      font-size: 7.55pt;
+      line-height: 1.25;
+    }
+
+    .l1b-contractions__row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6mm;
+      align-items: baseline;
+    }
+
+    .l1b-contractions__row span:first-child { font-style: italic; }
+    .l1b-contractions__row span:last-child { font-style: italic; }
+    .l1b-contractions__row strong { font-weight: var(--hz-fw-black); }
+
+    .l1b-profile-stage {
+      position: relative;
+      padding-top: .6mm;
+    }
+
+    .l1b-profile-head {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 1.4mm;
+    }
+
+    .l1b-profiles {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 4.3mm;
+      align-items: start;
+    }
+
+    .l1b-profile {
+      position: relative;
+      min-width: 0;
+      padding-top: 24mm;
+      border-top: .8mm solid var(--hz-unit);
+    }
+
+    .l1b-profile__photo {
+      position: absolute;
+      top: 1.7mm;
+      left: 0;
+      width: 100%;
+      height: 26mm;
+      overflow: hidden;
+      background: var(--hz-wash);
+      clip-path: polygon(0 0, 100% 0, 100% 78%, 86% 100%, 0 100%);
+    }
+
+    .l1b-profile__photo .hz-photo-placeholder {
+      min-height: 26mm;
+      font-size: 5pt;
+      letter-spacing: .07em;
+    }
+
+    .l1b-profile__name {
+      position: relative;
+      z-index: 2;
+      display: inline-block;
+      margin: 0 0 1.5mm 3mm;
+      padding: .6mm 2mm .55mm 0;
+      background: var(--hz-paper);
+      color: var(--hz-unit-dark);
+      font-size: 15.5pt;
+      font-weight: var(--hz-fw-black);
+      line-height: .95;
+      letter-spacing: -.045em;
+    }
+
+    .l1b-profile__copy {
+      min-height: 50mm;
+      padding: 1.4mm 2.4mm 0 3mm;
+      border-left: .9mm solid var(--hz-unit-soft);
+      font-size: 7.35pt;
+      line-height: 1.38;
+    }
+
+    .l1b-profile__copy p { margin: 0 0 2.1mm; }
+    .l1b-profile__copy p:last-child { margin-bottom: 0; }
+
+    .l1b-subexercise {
+      display: grid;
+      grid-template-columns: var(--hz-exercise-marker-size) minmax(0, 1fr);
+      gap: 0 3mm;
+      width: 100%;
+      min-width: 0;
+      margin: 0;
+      padding: 1.2mm 0 1.7mm;
+      border-bottom: var(--hz-border) solid var(--hz-line);
+    }
+
+    .l1b-subexercise__number {
+      align-self: start;
+      color: var(--hz-unit);
+      font-size: 14pt;
+      font-weight: var(--hz-fw-black);
+      line-height: .95;
+      letter-spacing: -.04em;
+    }
+
+    .l1b-subexercise__instruction {
+      margin: .15mm 0 0;
+      color: var(--hz-ink);
+      font-size: 8.75pt;
+      font-weight: var(--hz-fw-semibold);
+      line-height: 1.35;
+    }
+
+    .l1b-pronunciation {
+      position: relative;
+      overflow: hidden;
+      margin-left: calc(var(--hz-exercise-marker-size) + 3mm);
+      padding: 2.8mm 4mm 3mm;
+      border-top: 1.15mm solid var(--hz-unit);
+      border-bottom: .3mm solid var(--hz-line-strong);
+      background: var(--hz-unit-soft);
+      isolation: isolate;
+    }
+
+    .l1b-pronunciation::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      right: -10mm;
+      bottom: -21mm;
+      width: 54mm;
+      height: 54mm;
+      border: 8mm solid rgb(255 255 255 / 56%);
+      border-radius: 50%;
+    }
+
+    .l1b-pronunciation__title {
+      margin: 0 0 1.7mm;
+      color: var(--hz-unit-dark);
+      font-size: 8pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .l1b-pronunciation__lead {
+      margin: 0 0 1.4mm;
+      font-size: 7.45pt;
+      font-weight: var(--hz-fw-bold);
+    }
+
+    .l1b-pronunciation__grid {
+      display: grid;
+      grid-template-columns: 18mm 29mm 1fr;
+      gap: .55mm 4mm;
+      max-width: 96mm;
+      font-size: 7.25pt;
+      line-height: 1.2;
+    }
+
+    .l1b-pronunciation__grid em { font-style: italic; }
+    .l1b-pronunciation__note {
+      margin: 1.6mm 0 0;
+      font-size: 7.35pt;
+      font-weight: var(--hz-fw-black);
+    }
+
+    .l1b-match-stage {
+      display: grid;
+      grid-template-columns: .98fr 1.02fr;
+      gap: 6mm;
+      align-items: end;
+    }
+
+    .l1b-match-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .95mm 7mm;
+      align-content: start;
+      font-size: 7.7pt;
+      line-height: 1.23;
+    }
+
+    .l1b-match-col {
+      display: grid;
+      gap: 1.8mm;
+    }
+
+    .l1b-match-item {
+      display: grid;
+      grid-template-columns: 5mm 1fr;
+      gap: 1mm;
+      min-height: 5mm;
+    }
+
+    .l1b-match-item b { color: var(--hz-unit-dark); }
+
+    .l1b-workers-photo {
+      position: relative;
+      height: 48mm;
+      overflow: hidden;
+      background: var(--hz-wash);
+      clip-path: polygon(8% 0, 100% 0, 100% 100%, 0 100%, 0 16%);
+    }
+
+    .l1b-workers-photo .hz-photo-placeholder { min-height: 48mm; }
+
+    .l1b-extra {
+      margin-left: calc(var(--hz-exercise-marker-size) + 3mm);
+      margin-top: .5mm;
+    }
+
+    /* Tighten the continuation page so all frozen source content stays on one A4 page. */
+    .l1b-page--2 .hz-page-stack { gap: 1.45mm; }
+    .l1b-page--2 .hz-exercises { gap: .15mm; }
+    .l1b-page--2 .hz-exercise { padding-top: 1.1mm; padding-bottom: 1.45mm; }
+    .l1b-page--2 .hz-exercise__body { margin-top: 1mm; }
+    .l1b-page--2 .hz-exercise__instruction { font-size: 8.65pt; }
+  
+
+/* Horizons/A1/Lessons/lesson-1c-local.css */
+/* Horizons A1 — Lesson 1C scoped styles and asset mappings. */
+
+.l1c-target {
+  color: var(--hz-unit-dark) !important;
+  font-weight: var(--hz-fw-black) !important;
+}
+
+.l1c-page .l1c-country-stage::before,
+.l1c-page .l1c-world-stage::before,
+.l1c-page .l1c-adjective-field::after,
+.l1c-page .l1c-pair-stage::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* Page 10 uses only labels already encountered on page 9. */
+.l1c-page--2 .l1c-word-map:nth-child(2) h3,
+.l1c-page--2 .l1c-word-map:nth-child(3) h3 {
+  font-size: 0 !important;
+}
+
+.l1c-page--2 .l1c-word-map:nth-child(2) h3::after,
+.l1c-page--2 .l1c-word-map:nth-child(3) h3::after {
+  color: var(--hz-unit-dark);
+  font-size: 7pt;
+  font-weight: var(--hz-fw-black);
+  letter-spacing: .06em;
+  text-transform: uppercase;
+}
+
+.l1c-page--2 .l1c-word-map:nth-child(2) h3::after { content: "FOOD / HOTELS"; }
+.l1c-page--2 .l1c-word-map:nth-child(3) h3::after { content: "CITY"; }
+
+.l1c-page .l1c-celebrity__photo .hz-photo-placeholder,
+.l1c-page .l1c-city__photo .hz-photo-placeholder,
+.l1c-page .l1c-pair-photo .hz-photo-placeholder {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  background-color: transparent !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  color: transparent !important;
+}
+
+.l1c-page .l1c-celebrity__photo .hz-photo-placeholder::before,
+.l1c-page .l1c-celebrity__photo .hz-photo-placeholder::after,
+.l1c-page .l1c-city__photo .hz-photo-placeholder::before,
+.l1c-page .l1c-city__photo .hz-photo-placeholder::after,
+.l1c-page .l1c-pair-photo .hz-photo-placeholder::before,
+.l1c-page .l1c-pair-photo .hz-photo-placeholder::after {
+  content: none !important;
+  display: none !important;
+}
+
+.l1c-page .l1c-celebrity__photo .hz-photo-placeholder__meta,
+.l1c-page .l1c-city__photo .hz-photo-placeholder__meta,
+.l1c-page .l1c-pair-photo .hz-photo-placeholder__meta { display: none !important; }
+
+.l1c-page .l1c-celebrity:nth-child(1) .hz-photo-placeholder { background-image: url("./Images/1C/Messi.png") !important; background-position: center center !important; }
+.l1c-page .l1c-celebrity:nth-child(2) .hz-photo-placeholder { background-image: url("./Images/1C/Taylor.png") !important; background-position: center center !important; }
+.l1c-page .l1c-celebrity:nth-child(3) .hz-photo-placeholder { background-image: url("./Images/1C/Keanu.png") !important; background-position: center center !important; }
+.l1c-page .l1c-celebrity:nth-child(4) .hz-photo-placeholder { background-image: url("./Images/1C/Millie.png") !important; background-position: center center !important; }
+.l1c-page .l1c-celebrity:nth-child(5) .hz-photo-placeholder { background-image: url("./Images/1C/Lee.png") !important; background-position: center center !important; }
+
+.l1c-page:not(.l1c-page--2) .l1c-world-stage {
+  min-height: 88mm !important;
+  background-image:
+    linear-gradient(rgb(255 255 255 / 34%), rgb(255 255 255 / 34%)),
+    url("./Images/1C/Around the World BG.png") !important;
+  background-position: center 30% !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
+.l1c-page:not(.l1c-page--2) .l1c-city__copy { min-height: 50mm !important; }
+
+.l1c-page .l1c-city:nth-child(1) .hz-photo-placeholder { background-image: url("./Images/1C/Rio.png") !important; background-position: center center !important; }
+.l1c-page .l1c-city:nth-child(2) .hz-photo-placeholder { background-image: url("./Images/1C/Toronto.png") !important; background-position: center center !important; }
+.l1c-page .l1c-city:nth-child(3) .hz-photo-placeholder { background-image: url("./Images/1C/Hong Kong.png") !important; background-position: center center !important; }
+
+.l1c-page .l1c-pair-photo .hz-photo-placeholder {
+  background-image: url("./Images/1C/Pairwork.png") !important;
+  background-position: center center !important;
+}
+
+.l1c-page--2 .hz-exercises > .hz-exercise:nth-of-type(2) { margin-top: 1mm !important; }
+.l1c-page--2 .l1c-guess-strip { display: none !important; }
+
+
+/* 1C.html inline style 1 */
+
+    /*
+      LESSON 1C CANONICAL PROTOTYPE
+      -----------------------------
+      Page 9 reproduces the frozen Student's Book content exactly while adapting
+      the composition to the current canonical Horizons style.
+
+      The frozen source has no completed second page for Lesson 1C. Page 10 is
+      therefore newly authored to complete the lesson while staying inside the
+      locked focus: Countries + Adjectives. It follows the canonical Lesson C
+      rhythm: short vocabulary-focused activities, recycling, and pairwork.
+
+      In the first units, authored support language deliberately stays extremely
+      simple and recycles forms already met by the learner. Natural-sounding but
+      untaught English collocations are avoided when a more transparent form works.
+
+      Final photography is represented by crop-aware placeholders.
+    */
+
+    .l1c-page .hz-page__content { overflow: hidden; }
+    .l1c-page .hz-page-stack { gap: 2.2mm; }
+    .l1c-page .hz-lesson-header { padding-bottom: 3mm; }
+    .l1c-page .hz-exercises { gap: .2mm; }
+    .l1c-page .hz-exercise { padding: 1.35mm 0 1.95mm; }
+    .l1c-page .hz-exercise__body { margin-top: 1.35mm; }
+    .l1c-page .hz-exercise__instruction { font-size: 8.9pt; }
+    .l1c-target { color: var(--hz-unit-dark); font-weight: var(--hz-fw-black); }
+
+    .l1c-track {
+      display: inline-flex;
+      align-items: center;
+      margin-right: 1.35mm;
+      padding: .6mm 1.15mm;
+      background: var(--hz-audio);
+      color: #fff;
+      font-size: 6.4pt;
+      font-weight: var(--hz-fw-black);
+      line-height: 1;
+      vertical-align: .35mm;
+    }
+
+    /* ------------------------------------------------------------------
+       PAGE 9 — frozen source adapted into the canonical design
+       ------------------------------------------------------------------ */
+
+    .l1c-country-stage {
+      position: relative;
+      padding-top: .6mm;
+      isolation: isolate;
+    }
+
+    .l1c-country-stage::before {
+      content: "FROM?";
+      position: absolute;
+      z-index: -1;
+      right: -1mm;
+      top: -7mm;
+      color: var(--hz-unit-soft);
+      font-size: 43pt;
+      font-weight: var(--hz-fw-black);
+      line-height: 1;
+      letter-spacing: -.06em;
+    }
+
+    .l1c-country-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 4mm;
+      margin-bottom: 2mm;
+    }
+
+    .l1c-country-bank {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1mm 4.3mm;
+      padding: 1.8mm 2.7mm;
+      border-left: 1mm solid var(--hz-unit);
+      background: var(--hz-wash);
+      color: var(--hz-unit-dark);
+      font-size: 7.5pt;
+      font-weight: var(--hz-fw-bold);
+    }
+
+    .l1c-celebrities {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 2.2mm;
+      align-items: start;
+    }
+
+    .l1c-celebrity { min-width: 0; margin: 0; }
+
+    .l1c-celebrity__photo {
+      position: relative;
+      height: 35mm;
+      overflow: hidden;
+      background: var(--hz-wash);
+      clip-path: polygon(0 0, 100% 0, 100% 91%, 88% 100%, 0 100%);
+    }
+
+    .l1c-celebrity__photo .hz-photo-placeholder {
+      min-height: 35mm;
+      font-size: 4.7pt;
+      letter-spacing: .06em;
+    }
+
+    .l1c-celebrity__photo .hz-photo-placeholder::before { inset: 2.3mm; }
+    .l1c-celebrity__photo .hz-photo-placeholder::after { width: 20mm; }
+    .l1c-celebrity__photo .hz-photo-placeholder__meta { padding: .7mm 1mm; }
+
+    .l1c-celebrity__caption {
+      display: grid;
+      grid-template-columns: 4mm 1fr;
+      gap: .7mm;
+      margin-top: 1.25mm;
+      font-size: 6.35pt;
+      font-weight: var(--hz-fw-black);
+      line-height: 1.1;
+    }
+
+    .l1c-celebrity__caption b { color: var(--hz-unit-dark); }
+
+    .l1c-celebrity__line {
+      display: block;
+      height: 6mm;
+      margin-top: .6mm;
+      border-bottom: .28mm solid var(--hz-line-strong);
+    }
+
+    .l1c-nationalities {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5mm 7mm;
+      max-width: 150mm;
+      font-size: 7.7pt;
+    }
+
+    .l1c-nationality {
+      display: grid;
+      grid-template-columns: 5mm 1fr 25mm;
+      gap: 1mm;
+      align-items: end;
+      min-height: 5.5mm;
+    }
+
+    .l1c-nationality b { color: var(--hz-unit-dark); }
+    .l1c-nationality__line { border-bottom: .28mm solid var(--hz-line-strong); min-height: 4mm; }
+
+    .l1c-go-to { margin: .35mm 0 .1mm calc(var(--hz-exercise-marker-size) + 3mm); }
+
+    /* Exercise 3 uses a travel-editorial composition rather than three cards. */
+    .l1c-world-stage {
+      position: relative;
+      overflow: hidden;
+      min-height: 104mm;
+      padding: 10mm 3.5mm 3.5mm;
+      background: #eef3f4;
+      isolation: isolate;
+    }
+
+    .l1c-world-stage::before {
+      content: "WORLD";
+      position: absolute;
+      z-index: -1;
+      left: -2mm;
+      bottom: -7mm;
+      color: rgb(22 127 130 / 10%);
+      font-size: 57pt;
+      font-weight: var(--hz-fw-black);
+      line-height: 1;
+      letter-spacing: -.07em;
+    }
+
+    .l1c-world-masthead {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 8mm;
+      padding: 1.8mm 4mm;
+      background: var(--hz-unit);
+      color: #fff;
+      font-size: 14pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: -.025em;
+    }
+
+    .l1c-world-masthead span:last-child {
+      font-size: 6.2pt;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+    }
+
+    .l1c-city-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 4mm;
+      align-items: start;
+      padding-top: 3mm;
+    }
+
+    .l1c-city {
+      position: relative;
+      min-width: 0;
+      padding-top: 20mm;
+    }
+
+    .l1c-city__photo {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      z-index: 2;
+      width: 29mm;
+      height: 29mm;
+      overflow: hidden;
+      border: 1.3mm solid #eef3f4;
+      border-radius: 50%;
+      background: var(--hz-wash);
+      transform: translateX(-50%);
+    }
+
+    .l1c-city__photo .hz-photo-placeholder {
+      min-height: 29mm;
+      font-size: 4.7pt;
+      letter-spacing: .06em;
+    }
+
+    .l1c-city__copy {
+      min-height: 69mm;
+      padding: 11.5mm 3.2mm 3.2mm;
+      border-top: 1.1mm solid var(--hz-unit);
+      background: var(--hz-paper);
+      font-family: var(--hz-font-reading);
+      font-size: 7.4pt;
+      line-height: 1.42;
+    }
+
+    .l1c-city__copy h3 {
+      margin: 0 0 2mm;
+      color: var(--hz-unit-dark);
+      font-family: var(--hz-font-sans);
+      font-size: 12.5pt;
+      font-weight: var(--hz-fw-black);
+      line-height: 1;
+      letter-spacing: -.03em;
+    }
+
+    .l1c-city__copy p { margin: 0 0 2mm; }
+    .l1c-city__copy p:last-child { margin-bottom: 0; }
+
+    /* ------------------------------------------------------------------
+       PAGE 10 — newly authored completion of Lesson 1C
+       ------------------------------------------------------------------ */
+
+    .l1c-continuation {
+      position: absolute;
+      top: -1mm;
+      right: -14mm;
+      z-index: 4;
+      display: grid;
+      place-items: end start;
+      width: 34mm;
+      height: 25mm;
+      padding: 0 0 3.2mm 5mm;
+      background: var(--hz-unit);
+      color: #fff;
+      clip-path: polygon(28% 0, 100% 0, 100% 100%, 0 100%);
+      font-size: 19pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: -.05em;
+    }
+
+    .l1c-adjective-field {
+      position: relative;
+      overflow: hidden;
+      padding: 3.2mm 4mm 3.5mm;
+      border-top: 1.1mm solid var(--hz-unit);
+      background: var(--hz-unit-soft);
+      isolation: isolate;
+    }
+
+    .l1c-adjective-field::after {
+      content: "ADJECTIVES";
+      position: absolute;
+      z-index: -1;
+      right: -4mm;
+      bottom: -6mm;
+      color: rgb(255 255 255 / 72%);
+      font-size: 31pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: -.06em;
+    }
+
+    .l1c-adjective-field__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.35fr 1fr;
+      gap: 4mm;
+      font-size: 7.4pt;
+      line-height: 1.3;
+    }
+
+    .l1c-word-map h3 {
+      margin: 0 0 1.4mm;
+      color: var(--hz-unit-dark);
+      font-size: 7pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .l1c-word-map__lines { display: grid; gap: 1.8mm; }
+    .l1c-word-map__line { min-height: 4mm; border-bottom: .28mm solid var(--hz-line-strong); }
+
+    .l1c-sentences {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1mm 7mm;
+      font-size: 7.75pt;
+      line-height: 1.3;
+    }
+
+    .l1c-sentence {
+      display: grid;
+      grid-template-columns: 5mm 1fr;
+      gap: 1mm;
+      min-height: 6mm;
+    }
+
+    .l1c-sentence b { color: var(--hz-unit-dark); }
+
+    .l1c-pair-stage {
+      position: relative;
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 5mm;
+      align-items: stretch;
+      min-height: 58mm;
+      isolation: isolate;
+    }
+
+    .l1c-pair-stage::before {
+      content: "PAIRWORK";
+      position: absolute;
+      z-index: -1;
+      left: -2mm;
+      bottom: -4mm;
+      color: var(--hz-unit-soft);
+      font-size: 34pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: -.06em;
+    }
+
+    .l1c-pair-photo {
+      min-height: 58mm;
+      overflow: hidden;
+      background: var(--hz-wash);
+      clip-path: polygon(0 0, 100% 0, 92% 100%, 0 100%);
+    }
+
+    .l1c-pair-photo .hz-photo-placeholder { min-height: 58mm; }
+
+    .l1c-pair-copy {
+      display: grid;
+      align-content: center;
+      gap: 2.2mm;
+      padding: 2mm 0;
+    }
+
+    .l1c-dialogue-line {
+      padding: 1.8mm 2.5mm;
+      border-left: .9mm solid var(--hz-unit);
+      background: var(--hz-paper);
+      font-size: 7.6pt;
+      line-height: 1.35;
+    }
+
+    .l1c-dialogue-line:nth-child(2) { background: var(--hz-unit-soft); }
+    .l1c-dialogue-line p { margin: 0; }
+
+    .l1c-guess-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3mm;
+      padding-top: .5mm;
+    }
+
+    .l1c-guess-city {
+      position: relative;
+      min-height: 31mm;
+      overflow: hidden;
+      background: var(--hz-wash);
+    }
+
+    .l1c-guess-city .hz-photo-placeholder { min-height: 31mm; font-size: 5pt; }
+
+    .l1c-guess-city__label {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 2;
+      padding: 1mm 1.6mm;
+      background: var(--hz-paper);
+      color: var(--hz-unit-dark);
+      font-size: 6.4pt;
+      font-weight: var(--hz-fw-black);
+    }
+
+    .l1c-extra {
+      margin-left: calc(var(--hz-exercise-marker-size) + 3mm);
+      margin-top: .6mm;
+    }
+
+    .l1c-page--2 .hz-page-stack { gap: 1.5mm; }
+    .l1c-page--2 .hz-exercise { padding-top: 1.15mm; padding-bottom: 1.55mm; }
+    .l1c-page--2 .hz-exercise__body { margin-top: 1.1mm; }
+    .l1c-page--2 .hz-exercise__instruction { font-size: 8.7pt; }
+  
+
+/* Horizons/A1/Lessons/lesson-1d-local.css */
+/* Horizons A1 — Lesson 1D scoped styles. */
+
+.l1d-target {
+  color: var(--hz-unit-dark) !important;
+  font-weight: var(--hz-fw-black) !important;
+}
+
+.l1d-capitalization__title {
+  color: var(--hz-unit-dark) !important;
+  font-size: 8pt !important;
+  font-weight: var(--hz-fw-black) !important;
+  letter-spacing: .065em !important;
+  line-height: 1.2 !important;
+}
+
+/* No decorative ghost text. */
+.l1d-page .l1d-checkin-stage::before,
+.l1d-page .l1d-capitalization::after,
+.l1d-page .l1d-business-stage::before,
+.l1d-page .l1d-roleplay::before,
+.l1d-page .l1d-live-form::before {
+  content: none !important;
+  display: none !important;
+}
+
+.l1d-page .l1d-dialogue :where(dt, dd) {
+  font-size: max(1em, var(--hz-fs-dialogue-min));
+}
+
+/* Page 11 — keep the real conversation visually dominant. */
+.l1d-page:not(.l1d-page--2) .l1d-model-form { display: none !important; }
+.l1d-page:not(.l1d-page--2) .l1d-checkin-stage { min-height: 72mm !important; padding: 1.2mm 0 .5mm !important; }
+.l1d-page:not(.l1d-page--2) .l1d-checkin-photo,
+.l1d-page:not(.l1d-page--2) .l1d-checkin-photo .hz-photo-placeholder { min-height: 71mm !important; }
+.l1d-page:not(.l1d-page--2) .l1d-checkin-copy { margin-left: -5mm !important; padding: 3.2mm 4mm 3.2mm 6mm !important; }
+.l1d-page:not(.l1d-page--2) .l1d-checkin-copy__kicker { margin-bottom: 1.4mm !important; font-size: 7pt !important; }
+.l1d-page:not(.l1d-page--2) .l1d-dialogue { grid-template-columns: 18mm 1fr !important; gap: .55mm 2mm !important; margin-bottom: 0 !important; font-size: 8.05pt !important; line-height: 1.25 !important; }
+.l1d-page:not(.l1d-page--2) .l1d-dialogue :where(dt, dd) { font-size: 8.05pt !important; line-height: 1.25 !important; }
+.l1d-page:not(.l1d-page--2) .l1d-discovery { gap: 1.4mm 8mm !important; padding-top: .8mm !important; font-size: 8pt !important; line-height: 1.28 !important; }
+.l1d-page:not(.l1d-page--2) .l1d-discovery__item { min-height: 10mm !important; }
+.l1d-page:not(.l1d-page--2) .l1d-discovery__choices { display: block !important; margin-top: .45mm !important; font-size: 7.5pt !important; }
+.l1d-page:not(.l1d-page--2) .l1d-pair-check { margin-top: 1mm !important; font-size: 7.75pt !important; line-height: 1.25 !important; }
+.l1d-page:not(.l1d-page--2) .l1d-capitalization { overflow: hidden !important; margin-top: .5mm !important; padding: 2.6mm 4mm 2.8mm !important; }
+.l1d-page:not(.l1d-page--2) .l1d-capitalization__grid { gap: 3mm !important; font-size: 7.8pt !important; line-height: 1.3 !important; }
+.l1d-page:not(.l1d-page--2) .l1d-practice-grid,
+.l1d-page:not(.l1d-page--2) .l1d-question-match { font-size: 8pt !important; line-height: 1.3 !important; }
+
+/* Page 12 — real situation, but with Unit 1 language load. */
+/* Keep the complete continuation-page flow below the 1D continuation tab. */
+.l1d-page--2 .hz-exercises { padding-top: 10mm !important; }
+.l1d-page--2 .l1d-business-stage { padding-top: 8mm !important; }
+.l1d-page--2 .l1d-business-option__photo {
+  width: 24mm !important;
+  height: 24mm !important;
+  min-height: 24mm !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  border-radius: 50% !important;
+}
+.l1d-page--2 .l1d-business-option__photo .hz-photo-placeholder {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  border-radius: 50% !important;
+}
+.l1d-page--2 .l1d-business-option strong { font-size: 7.75pt !important; line-height: 1.2 !important; }
+.l1d-page--2 .l1d-business-name,
+.l1d-page--2 .l1d-info-select { font-size: 8pt !important; line-height: 1.3 !important; }
+.l1d-page--2 .l1d-roleplay { min-height: 104mm !important; gap: 5mm !important; padding-top: 2mm !important; }
+.l1d-page--2 .l1d-role-photo,
+.l1d-page--2 .l1d-role-photo .hz-photo-placeholder { height: 39mm !important; min-height: 39mm !important; }
+.l1d-page--2 .l1d-role-box { padding: 3mm 3.2mm !important; font-size: 8pt !important; line-height: 1.35 !important; }
+.l1d-page--2 .l1d-role-questions { gap: 1mm !important; font-size: 8pt !important; line-height: 1.3 !important; }
+.l1d-page--2 .l1d-live-form__business { font-size: 7.3pt !important; }
+.l1d-page--2 .l1d-live-row { min-height: 8.2mm !important; font-size: 7.75pt !important; }
+.l1d-page--2 .l1d-live-form__footer { font-size: 7pt !important; }
+.l1d-page--2 .l1d-peer-check { font-size: 7.75pt !important; line-height: 1.3 !important; }
+
+/* ---------- Lesson 1D photography ---------- */
+.l1d-page .l1d-checkin-photo .hz-photo-placeholder,
+.l1d-page .l1d-business-option__photo .hz-photo-placeholder,
+.l1d-page .l1d-role-photo .hz-photo-placeholder {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  background-color: transparent !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  color: transparent !important;
+}
+
+.l1d-page .l1d-checkin-photo .hz-photo-placeholder::before,
+.l1d-page .l1d-checkin-photo .hz-photo-placeholder::after,
+.l1d-page .l1d-business-option__photo .hz-photo-placeholder::before,
+.l1d-page .l1d-business-option__photo .hz-photo-placeholder::after,
+.l1d-page .l1d-role-photo .hz-photo-placeholder::before,
+.l1d-page .l1d-role-photo .hz-photo-placeholder::after {
+  content: none !important;
+  display: none !important;
+}
+
+.l1d-page .l1d-checkin-photo .hz-photo-placeholder__meta,
+.l1d-page .l1d-business-option__photo .hz-photo-placeholder__meta,
+.l1d-page .l1d-role-photo .hz-photo-placeholder__meta {
+  display: none !important;
+}
+
+.l1d-page .l1d-checkin-photo .hz-photo-placeholder {
+  background-image: url("./Images/1D/Checkin.png") !important;
+  background-position: center center !important;
+}
+
+.l1d-page .l1d-business-option:nth-child(1) .hz-photo-placeholder {
+  background-image: url("./Images/1D/Gym.png") !important;
+  background-position: center center !important;
+}
+
+.l1d-page .l1d-business-option:nth-child(2) .hz-photo-placeholder {
+  background-image: url("./Images/1D/Hotel.png") !important;
+  background-position: center center !important;
+}
+
+.l1d-page .l1d-business-option:nth-child(3) .hz-photo-placeholder {
+  background-image: url("./Images/1D/Language School.png") !important;
+  background-position: center center !important;
+}
+
+.l1d-page .l1d-business-option:nth-child(4) .hz-photo-placeholder {
+  background-image: url("./Images/1D/Club.png") !important;
+  background-position: center center !important;
+}
+
+.l1d-page .l1d-role-photo .hz-photo-placeholder {
+  background-image: url("./Images/1D/Roleplay Staff Customer.png") !important;
+  background-position: center center !important;
+}
+
+
+/* 1D.html inline style 1 */
+
+    /*
+      LESSON 1D CANONICAL PROTOTYPE
+      -----------------------------
+      The frozen Student's Book provides only the lesson identity/focus:
+      LET'S FILL A FORM! — Personal information + Capitalization.
+
+      The unfinished lesson is completed here using the canonical Guided
+      Discovery methodology:
+      context → noticing → guided analysis → clarification → controlled
+      practice → communicative use → transfer to a real situation.
+
+      Lesson D culminates in a real transaction. Students choose a simple
+      place, ask a classmate for personal information, and complete a form.
+
+      Because this is Unit 1, support language is intentionally extremely
+      simple. It recycles words and sentence frames from Lessons 1A–1C and
+      avoids natural but untaught English collocations when a more transparent
+      form can do the same job.
+
+      Final photography is represented by crop-aware placeholders.
+    */
+
+    .l1d-page .hz-page__content { overflow: hidden; }
+    .l1d-page .hz-page-stack { gap: 2mm; }
+    .l1d-page .hz-lesson-header { padding-bottom: 3mm; }
+    .l1d-page .hz-exercises { gap: .15mm; }
+    .l1d-page .hz-exercise { padding: 1.2mm 0 1.65mm; }
+    .l1d-page .hz-exercise__body { margin-top: 1.1mm; }
+    .l1d-page .hz-exercise__instruction { font-size: 8.8pt; }
+    .l1d-target { color: var(--hz-unit-dark); font-weight: var(--hz-fw-black); }
+
+    /* ------------------------------------------------------------------
+       PAGE 11 — encounter, discover, clarify, practice
+       ------------------------------------------------------------------ */
+
+    .l1d-checkin-stage {
+      position: relative;
+      display: grid;
+      grid-template-columns: .92fr 1.08fr;
+      gap: 0;
+      min-height: 92mm;
+      padding: 3mm 0 1mm;
+      isolation: isolate;
+    }
+
+    .l1d-checkin-stage::before {
+      content: "CHECK-IN";
+      position: absolute;
+      z-index: -1;
+      left: -3mm;
+      bottom: -5mm;
+      color: var(--hz-unit-soft);
+      font-size: 47pt;
+      font-weight: var(--hz-fw-black);
+      line-height: .9;
+      letter-spacing: -.07em;
+    }
+
+    .l1d-checkin-photo {
+      position: relative;
+      min-height: 86mm;
+      overflow: hidden;
+      background: var(--hz-wash);
+      clip-path: polygon(0 0, 100% 0, 91% 100%, 0 100%);
+    }
+
+    .l1d-checkin-photo .hz-photo-placeholder { min-height: 86mm; }
+
+    .l1d-checkin-copy {
+      position: relative;
+      z-index: 2;
+      align-self: center;
+      margin-left: -7mm;
+      padding: 4mm 4mm 3.8mm 7mm;
+      border-top: 1.1mm solid var(--hz-unit);
+      background: var(--hz-paper);
+      box-shadow: 0 0 0 .25mm var(--hz-line);
+    }
+
+    .l1d-checkin-copy__kicker {
+      display: inline-block;
+      margin-bottom: 2mm;
+      color: var(--hz-unit-dark);
+      font-size: 6.5pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .l1d-dialogue {
+      display: grid;
+      grid-template-columns: 17mm 1fr;
+      gap: .8mm 2mm;
+      margin: 0 0 3mm;
+      font-size: 7.25pt;
+      line-height: 1.3;
+    }
+
+    .l1d-dialogue dt { margin: 0; font-weight: var(--hz-fw-black); }
+    .l1d-dialogue dd { margin: 0; }
+
+    .l1d-model-form {
+      position: relative;
+      padding: 3mm 3.3mm 2.7mm;
+      border: .3mm solid var(--hz-line);
+      background: #fff;
+    }
+
+    .l1d-model-form__brand {
+      margin: 0 0 .8mm;
+      color: var(--hz-unit-dark);
+      font-size: 6.2pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .l1d-model-form h3 {
+      margin: 0 0 2mm;
+      font-size: 11pt;
+      line-height: 1;
+    }
+
+    .l1d-model-row {
+      display: grid;
+      grid-template-columns: 24mm 1fr;
+      gap: 2mm;
+      align-items: end;
+      min-height: 5.2mm;
+      font-size: 6.8pt;
+    }
+
+    .l1d-model-row span:first-child { color: var(--hz-muted); }
+    .l1d-model-row span:last-child {
+      min-height: 4mm;
+      padding-bottom: .35mm;
+      border-bottom: .28mm solid var(--hz-line-strong);
+      font-weight: var(--hz-fw-semibold);
+    }
+
+    .l1d-discovery {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.2mm 7mm;
+      padding: 1mm 0 .2mm;
+      font-size: 7.55pt;
+      line-height: 1.32;
+    }
+
+    .l1d-discovery__item {
+      display: grid;
+      grid-template-columns: 5mm 1fr;
+      gap: 1mm;
+      min-height: 9mm;
+    }
+
+    .l1d-discovery__item b { color: var(--hz-unit-dark); }
+    .l1d-discovery__choices { display: block; margin-top: .7mm; color: var(--hz-ink-soft); }
+
+    .l1d-pair-check {
+      margin-top: 1.4mm;
+      padding-left: 2.4mm;
+      border-left: .9mm solid var(--hz-practice);
+      color: var(--hz-practice);
+      font-size: 6.9pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: .03em;
+    }
+
+    .l1d-capitalization {
+      position: relative;
+      overflow: hidden;
+      margin: .5mm 0 .2mm calc(var(--hz-exercise-marker-size) + 3mm);
+      padding: 2.8mm 4mm 3mm;
+      border-top: 1.1mm solid var(--hz-unit);
+      border-bottom: .3mm solid var(--hz-line-strong);
+      background: var(--hz-unit-soft);
+      isolation: isolate;
+    }
+
+    .l1d-capitalization::after {
+      content: "Aa";
+      position: absolute;
+      z-index: -1;
+      right: 2mm;
+      bottom: -10mm;
+      color: rgb(255 255 255 / 65%);
+      font-size: 61pt;
+      font-weight: var(--hz-fw-black);
+      line-height: 1;
+    }
+
+    .l1d-capitalization__title {
+      margin: 0 0 1.8mm;
+      color: var(--hz-unit-dark);
+      font-size: 7.8pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: .065em;
+      text-transform: uppercase;
+    }
+
+    .l1d-capitalization__grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3mm;
+      font-size: 7.05pt;
+      line-height: 1.3;
+    }
+
+    .l1d-cap-rule {
+      padding-top: 1.4mm;
+      border-top: .35mm solid rgb(32 33 36 / 20%);
+    }
+
+    .l1d-cap-rule strong { display: block; margin-bottom: .7mm; color: var(--hz-unit-dark); }
+    .l1d-cap-rule p { margin: 0; }
+
+    .l1d-practice-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .8mm 7mm;
+      font-size: 7.55pt;
+      line-height: 1.25;
+    }
+
+    .l1d-practice-item {
+      display: grid;
+      grid-template-columns: 5mm 1fr;
+      gap: 1mm;
+      min-height: 11mm;
+    }
+
+    .l1d-practice-item b { color: var(--hz-unit-dark); }
+    .l1d-practice-item p { margin: 0 0 .8mm; }
+    .l1d-practice-line { display: block; min-height: 4mm; border-bottom: .28mm solid var(--hz-line-strong); }
+
+    .l1d-question-match {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1mm 8mm;
+      max-width: 150mm;
+      font-size: 7.45pt;
+      line-height: 1.25;
+    }
+
+    .l1d-question-col { display: grid; gap: 1.1mm; }
+    .l1d-question-match__item { display: grid; grid-template-columns: 5mm 1fr; gap: 1mm; }
+    .l1d-question-match__item b { color: var(--hz-unit-dark); }
+
+    /* ------------------------------------------------------------------
+       PAGE 12 — prepare and perform the real-world transaction
+       ------------------------------------------------------------------ */
+
+    .l1d-continuation {
+      position: absolute;
+      top: -1mm;
+      right: -14mm;
+      z-index: 4;
+      display: grid;
+      place-items: end start;
+      width: 34mm;
+      height: 25mm;
+      padding: 0 0 3.2mm 5mm;
+      background: var(--hz-unit);
+      color: #fff;
+      clip-path: polygon(28% 0, 100% 0, 100% 100%, 0 100%);
+      font-size: 19pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: -.05em;
+    }
+
+    .l1d-business-stage {
+      position: relative;
+      padding-top: .5mm;
+      isolation: isolate;
+    }
+
+    .l1d-business-stage::before {
+      content: "YOUR BUSINESS";
+      position: absolute;
+      z-index: -1;
+      right: -1mm;
+      top: -8mm;
+      color: var(--hz-unit-soft);
+      font-size: 37pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: -.065em;
+    }
+
+    .l1d-business-options {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 3mm;
+      margin-bottom: 2mm;
+    }
+
+    .l1d-business-option { text-align: center; }
+    .l1d-business-option__photo {
+      height: 27mm;
+      overflow: hidden;
+      border-radius: 50%;
+      background: var(--hz-wash);
+    }
+
+    .l1d-business-option__photo .hz-photo-placeholder {
+      min-height: 27mm;
+      font-size: 4.6pt;
+      letter-spacing: .06em;
+    }
+
+    .l1d-business-option strong {
+      display: block;
+      margin-top: 1mm;
+      font-size: 6.7pt;
+    }
+
+    .l1d-business-name {
+      display: grid;
+      grid-template-columns: 32mm 1fr;
+      gap: 3mm;
+      align-items: end;
+      max-width: 125mm;
+      font-size: 7.5pt;
+      font-weight: var(--hz-fw-bold);
+    }
+
+    .l1d-business-name__line { min-height: 5mm; border-bottom: .35mm solid var(--hz-line-strong); }
+
+    .l1d-info-select {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 1.4mm 5mm;
+      padding-top: .5mm;
+      font-size: 7.3pt;
+    }
+
+    .l1d-info-select span { white-space: nowrap; }
+
+    .l1d-roleplay {
+      position: relative;
+      display: grid;
+      grid-template-columns: .78fr 1.22fr;
+      gap: 4.5mm;
+      min-height: 109mm;
+      padding: 3mm 0 .5mm;
+      isolation: isolate;
+    }
+
+    .l1d-roleplay::before {
+      content: "ASK · LISTEN · WRITE";
+      position: absolute;
+      z-index: -1;
+      left: -3mm;
+      bottom: -3mm;
+      color: var(--hz-unit-soft);
+      font-size: 31pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: -.055em;
+    }
+
+    .l1d-roleplay-left {
+      display: grid;
+      align-content: start;
+      gap: 2.5mm;
+    }
+
+    .l1d-role-photo {
+      height: 47mm;
+      overflow: hidden;
+      background: var(--hz-wash);
+      clip-path: polygon(0 0, 100% 0, 93% 100%, 0 100%);
+    }
+
+    .l1d-role-photo .hz-photo-placeholder { min-height: 47mm; }
+
+    .l1d-role-box {
+      padding: 2.7mm 3mm;
+      border-left: 1mm solid var(--hz-unit);
+      background: var(--hz-unit-soft);
+      font-size: 7.2pt;
+      line-height: 1.35;
+    }
+
+    .l1d-role-box h3 {
+      margin: 0 0 1.5mm;
+      color: var(--hz-unit-dark);
+      font-size: 8pt;
+      font-weight: var(--hz-fw-black);
+      text-transform: uppercase;
+    }
+
+    .l1d-role-box p { margin: 0 0 1.5mm; }
+    .l1d-role-box p:last-child { margin-bottom: 0; }
+
+    .l1d-role-questions {
+      display: grid;
+      gap: .8mm;
+      font-size: 6.85pt;
+      line-height: 1.25;
+    }
+
+    .l1d-role-questions span::before { content: "• "; color: var(--hz-unit-dark); font-weight: var(--hz-fw-black); }
+
+    .l1d-live-form {
+      position: relative;
+      align-self: stretch;
+      padding: 4mm 4.2mm 3.5mm;
+      border: .35mm solid var(--hz-line);
+      background: #fff;
+    }
+
+    .l1d-live-form::before {
+      content: "FORM";
+      position: absolute;
+      right: 3mm;
+      top: 1mm;
+      color: var(--hz-unit-soft);
+      font-size: 29pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: -.06em;
+    }
+
+    .l1d-live-form__business {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: 22mm 1fr;
+      gap: 2mm;
+      align-items: end;
+      margin-bottom: 2mm;
+      font-size: 6.8pt;
+      font-weight: var(--hz-fw-black);
+      text-transform: uppercase;
+    }
+
+    .l1d-live-form__business span:last-child { min-height: 5mm; border-bottom: .35mm solid var(--hz-unit); }
+
+    .l1d-live-form h3 {
+      position: relative;
+      z-index: 1;
+      margin: 0 0 2.5mm;
+      color: var(--hz-unit-dark);
+      font-size: 16pt;
+      line-height: 1;
+      letter-spacing: -.035em;
+    }
+
+    .l1d-live-row {
+      display: grid;
+      grid-template-columns: 27mm 1fr;
+      gap: 2.5mm;
+      align-items: end;
+      min-height: 8.6mm;
+      font-size: 7.25pt;
+    }
+
+    .l1d-live-row span:first-child { color: var(--hz-ink-soft); font-weight: var(--hz-fw-semibold); }
+    .l1d-live-row span:last-child { min-height: 5.3mm; border-bottom: .3mm solid var(--hz-line-strong); }
+
+    .l1d-live-form__footer {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 5mm;
+      margin-top: 2.5mm;
+      padding-top: 2mm;
+      border-top: .3mm solid var(--hz-line);
+      font-size: 6.5pt;
+      color: var(--hz-muted);
+    }
+
+    .l1d-live-form__footer span {
+      display: block;
+      min-height: 6mm;
+      padding-top: 1mm;
+      border-bottom: .28mm solid var(--hz-line-strong);
+    }
+
+    .l1d-peer-check {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3mm;
+      font-size: 7.1pt;
+      line-height: 1.25;
+    }
+
+    .l1d-peer-check__item {
+      display: grid;
+      grid-template-columns: 4mm 1fr;
+      gap: 1.3mm;
+      align-items: start;
+    }
+
+    .l1d-peer-check__box {
+      width: 3.3mm;
+      height: 3.3mm;
+      border: .45mm solid var(--hz-unit);
+    }
+
+    .l1d-extra {
+      margin-left: calc(var(--hz-exercise-marker-size) + 3mm);
+      margin-top: .5mm;
+    }
+
+    .l1d-page--2 .hz-page-stack { gap: 1.45mm; }
+    .l1d-page--2 .hz-exercise { padding-top: 1mm; padding-bottom: 1.4mm; }
+    .l1d-page--2 .hz-exercise__body { margin-top: .95mm; }
+    .l1d-page--2 .hz-exercise__instruction { font-size: 8.6pt; }
+  
+
+/* Student's Book unifier */
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #ececec;
+}
+
+#hz-book {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 230mm;
+  margin: 0;
+  padding: 0;
+}
+
+.hz-pdf-button {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #202124;
+  color: #fff;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 24%);
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease, opacity 120ms ease;
+}
+
+.hz-pdf-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgb(0 0 0 / 28%);
+}
+
+.hz-pdf-button:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+.hz-pdf-button:disabled {
+  opacity: .58;
+  cursor: progress;
+}
+
+.hz-pdf-button svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.hz-pdf-button.is-busy svg {
+  animation: hz-pdf-pulse 900ms ease-in-out infinite alternate;
+}
+
+@keyframes hz-pdf-pulse {
+  from { opacity: .35; }
+  to { opacity: 1; }
+}
+
+@media print {
+  .hz-pdf-button { display: none !important; }
+}
+
   </style>
 </head>
-<body>
-  <main id="hz-book"></main>
+<body class="hz-book">
+  <main id="hz-book">
+<!-- ===== 1A.html ===== -->
+<!--
+    SOURCE-FAITHFUL DESIGN PROTOTYPE ONLY.
+    The frozen Student's Book is not replaced or modified.
+    Numbered exercises remain one vertical sequence; internal content may use columns.
+  -->
 
-  <button class="hz-pdf-button" id="hz-pdf-button" type="button" aria-label="Download Student's Book as PDF" title="Download PDF" disabled>
+  <!-- ===============================================================
+       PAGE 5 — LESSON 1A
+       =============================================================== -->
+  <article class="hz-page hz-content hz-unit-1 l1a-page" data-page="5">
+    <main class="hz-page__content">
+      <div class="hz-page-stack">
+        <header class="hz-lesson-header">
+          <div class="hz-lesson-tab" aria-label="Lesson 1A">
+            <span class="hz-lesson-tab__label">Lesson</span>
+            <span class="hz-lesson-tab__id">1A</span>
+          </div>
+          <div class="hz-lesson-heading">
+            <h1 class="hz-lesson-title">NEW FRIENDS</h1>
+            <div class="hz-objectives">
+              <span class="hz-objectives__item">Verb “to be”</span>
+              <span class="hz-objectives__item">Alphabet</span>
+              <span class="hz-objectives__item">Numbers (0-10)</span>
+            </div>
+          </div>
+        </header>
+
+        <div class="hz-exercises hz-fill">
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">1</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction"><span class="l1a-track">♪ 1.1</span>Read and listen.</p>
+              <div class="hz-exercise__body">
+                <div class="l1a-dialogue-feature">
+                  <div class="l1a-dialogue-photo">
+                    <div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Image placeholder · two students greeting each other · wide crop</span></div>
+                  </div>
+                  <div class="l1a-dialogue-copy">
+                    <span class="hz-new-words">NEW WORDS</span>
+                    <dl class="l1a-dialogue">
+                      <dt>Tom:</dt><dd>Hello! I <span class="l1a-target">am</span> Tom.</dd>
+                      <dt>Mary:</dt><dd>I am Mary. Nice to meet you.</dd>
+                      <dt>Tom:</dt><dd><span class="l1a-target">Are</span> you a student?</dd>
+                      <dt>Mary:</dt><dd>Yes, I am in Class 4.</dd>
+                      <dt>Tom:</dt><dd><span class="l1a-target">Is</span> your teacher Mr. Wilson?</dd>
+                      <dt>Mary:</dt><dd>Yes, he is!</dd>
+                      <dt>Tom:</dt><dd>Good! See you later.</dd>
+                    </dl>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">2</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Look at the <span class="l1a-target">greetings</span> and <span class="l1a-target">farewells</span>.</p>
+              <div class="hz-exercise__body l1a-greetings">
+                <figure class="l1a-greeting">
+                  <div class="l1a-greeting__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Image placeholder</span></div></div>
+                  <figcaption><strong>Good morning</strong></figcaption>
+                </figure>
+                <figure class="l1a-greeting">
+                  <div class="l1a-greeting__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Image placeholder</span></div></div>
+                  <figcaption><strong>Good afternoon</strong></figcaption>
+                </figure>
+                <figure class="l1a-greeting">
+                  <div class="l1a-greeting__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Image placeholder</span></div></div>
+                  <figcaption><strong>Good evening</strong></figcaption>
+                </figure>
+                <figure class="l1a-greeting">
+                  <div class="l1a-greeting__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Image placeholder</span></div></div>
+                  <figcaption><strong>See you later</strong></figcaption>
+                </figure>
+              </div>
+            </div>
+          </section>
+
+          <aside class="l1a-grammar">
+            <h2 class="l1a-grammar__title">GRAMMAR: VERB TO BE</h2>
+            <div class="l1a-grammar__grid">
+              <div>
+                <strong>Affirmative:</strong>
+                <p>Hello. I <span class="l1a-target">am</span> David.</p>
+                <p>She <span class="l1a-target">is</span> Lisa.</p>
+                <p>You <span class="l1a-target">are</span> a student.</p>
+              </div>
+              <div>
+                <strong>Negative:</strong>
+                <p>I am <span class="l1a-target">not</span> a teacher.</p>
+                <p>She is <span class="l1a-target">not</span> in Class 3.</p>
+                <p>You are <span class="l1a-target">not</span> American.</p>
+              </div>
+              <div>
+                <strong>Questions:</strong>
+                <p><span class="l1a-target">Is</span> she a teacher?</p>
+                <p><span class="l1a-target">Are</span> you in Class 4?</p>
+              </div>
+            </div>
+          </aside>
+
+          <div class="l1a-go-to hz-go-to">Go to: Grammar - Verb to be, page ---</div>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">3</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Complete the sentences with <span class="l1a-target">am, is, are</span>.</p>
+              <div class="hz-exercise__body l1a-sentence-grid">
+                <div class="l1a-sentence"><b>1</b><span>Good evening. I <span class="hz-answer-line" style="min-width:11mm"></span> Tom.</span></div>
+                <div class="l1a-sentence"><b>4</b><span>Simon and Lisa <span class="hz-answer-line" style="min-width:11mm"></span> friends.</span></div>
+                <div class="l1a-sentence"><b>2</b><span>You <span class="hz-answer-line" style="min-width:11mm"></span> in Class 3.</span></div>
+                <div class="l1a-sentence"><b>5</b><span><span class="hz-answer-line" style="min-width:11mm"></span> you a teacher?</span></div>
+                <div class="l1a-sentence"><b>3</b><span>Mary <span class="hz-answer-line" style="min-width:11mm"></span> American.</span></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">4</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction"><span class="l1a-track">♪ 1.2</span>Listen and repeat the contractions.</p>
+              <div class="hz-exercise__body l1a-contractions">
+                <div class="l1a-contraction"><b>1</b> I <strong>am</strong> = I’m</div>
+                <div class="l1a-contraction"><b>2</b> You <strong>are</strong> = You’re</div>
+                <div class="l1a-contraction"><b>3</b> He <strong>is</strong> = He’s</div>
+                <div class="l1a-contraction"><b>4</b> She <strong>is</strong> = She’s</div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer class="hz-page__footer"><span></span><span class="hz-page-number">5</span></footer>
+  </article>
+
+  <!-- ===============================================================
+       PAGE 6 — LESSON 1A CONTINUED
+       =============================================================== -->
+  <article class="hz-page hz-content hz-unit-1 l1a-page l1a-page--2" data-page="6">
+    <main class="hz-page__content">
+      <div class="l1a-continuation">1A</div>
+      <div class="hz-page-stack">
+        <div class="hz-exercises hz-fill" style="padding-top:7mm">
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">5</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction"><span class="l1a-track">♪ 1.3</span>Read and listen.</p>
+              <div class="hz-exercise__body">
+                <div class="l1a-identity-stage">
+                  <div class="l1a-identity-copy">
+                    <span class="hz-new-words">NEW WORDS</span>
+                    <div class="l1a-exchange">
+                      <p>What is your <span class="l1a-target">name</span>?</p>
+                      <p>My name is Ariana.</p>
+                    </div>
+                    <div class="l1a-exchange">
+                      <p>How do you <span class="l1a-target">spell</span> that?</p>
+                      <p><span class="l1a-target">A-R-I-A-N-A.</span></p>
+                    </div>
+                    <div class="l1a-exchange">
+                      <p>What is your <span class="l1a-target">phone number</span>?</p>
+                      <p>It’s 095 210 7168.</p>
+                    </div>
+                  </div>
+                  <div class="l1a-identity-photo">
+                    <div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Image placeholder · student giving personal information · portrait crop</span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">6</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction"><span class="l1a-track">♪ 1.4</span>Listen and repeat.</p>
+              <div class="hz-exercise__body l1a-pronunciation">
+                <div class="l1a-pronunciation__title">PRONUNCIATION: THE ALPHABET</div>
+                <div class="l1a-alphabet" aria-label="Alphabet">
+                  <span>Aa</span><span>Bb</span><span>Cc</span><span>Dd</span><span>Ee</span><span>Ff</span><span>Gg</span><span>Hh</span><span>Ii</span><span>Jj</span>
+                  <span>Kk</span><span>Ll</span><span>Mm</span><span>Nn</span><span>Oo</span><span>Pp</span><span>Qq</span><span>Rr</span><span>Ss</span><span>Tt</span>
+                  <span>Uu</span><span>Vv</span><span>Ww</span><span>Xx</span><span>Yy</span><span>Zz</span>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">7</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction"><span class="l1a-track">♪ 1.5</span>Listen and choose the correct names.</p>
+              <div class="hz-exercise__body l1a-name-options">
+                <div class="l1a-name-options__item"><span class="l1a-name-options__number">1</span><div class="l1a-name-options__choices"><span><i class="hz-choice-box"></i> Steven</span><span><i class="hz-choice-box"></i> Stephen</span></div></div>
+                <div class="l1a-name-options__item"><span class="l1a-name-options__number">2</span><div class="l1a-name-options__choices"><span><i class="hz-choice-box"></i> Allison</span><span><i class="hz-choice-box"></i> Alisson</span></div></div>
+                <div class="l1a-name-options__item"><span class="l1a-name-options__number">3</span><div class="l1a-name-options__choices"><span><i class="hz-choice-box"></i> Bryan</span><span><i class="hz-choice-box"></i> Brayan</span></div></div>
+                <div class="l1a-name-options__item"><span class="l1a-name-options__number">4</span><div class="l1a-name-options__choices"><span><i class="hz-choice-box"></i> Lindsey</span><span><i class="hz-choice-box"></i> Lindsay</span></div></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">9</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction"><span class="l1a-track">♪ 1.6</span>Listen and repeat the numbers.</p>
+              <div class="hz-exercise__body l1a-number-horizon">
+                <div class="l1a-number"><span class="l1a-number__digit">0</span><span class="l1a-number__word">Zero</span></div>
+                <div class="l1a-number"><span class="l1a-number__digit">1</span><span class="l1a-number__word">One</span></div>
+                <div class="l1a-number"><span class="l1a-number__digit">2</span><span class="l1a-number__word">Two</span></div>
+                <div class="l1a-number"><span class="l1a-number__digit">3</span><span class="l1a-number__word">Three</span></div>
+                <div class="l1a-number"><span class="l1a-number__digit">4</span><span class="l1a-number__word">Four</span></div>
+                <div class="l1a-number"><span class="l1a-number__digit">5</span><span class="l1a-number__word">Five</span></div>
+                <div class="l1a-number"><span class="l1a-number__digit">6</span><span class="l1a-number__word">Six</span></div>
+                <div class="l1a-number"><span class="l1a-number__digit">7</span><span class="l1a-number__word">Seven</span></div>
+                <div class="l1a-number"><span class="l1a-number__digit">8</span><span class="l1a-number__word">Eight</span></div>
+                <div class="l1a-number"><span class="l1a-number__digit">9</span><span class="l1a-number__word">Nine</span></div>
+                <div class="l1a-number"><span class="l1a-number__digit">10</span><span class="l1a-number__word">Ten</span></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">10</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction"><span class="l1a-track">♪ 1.7</span>Listen and complete.</p>
+              <div class="hz-exercise__body l1a-profiles">
+                <div class="l1a-profile">
+                  <div class="l1a-profile__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Image placeholder</span></div></div>
+                  <div class="l1a-profile__form">
+                    <div class="l1a-profile__row"><span>Name</span><span class="l1a-profile__blank"></span></div>
+                    <div class="l1a-profile__row"><span>Class</span><span class="l1a-profile__blank"></span></div>
+                    <div class="l1a-profile__row"><span>Phone</span><span class="l1a-profile__blank"></span></div>
+                  </div>
+                </div>
+                <div class="l1a-profile">
+                  <div class="l1a-profile__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Image placeholder</span></div></div>
+                  <div class="l1a-profile__form">
+                    <div class="l1a-profile__row"><span>Name</span><span class="l1a-profile__blank"></span></div>
+                    <div class="l1a-profile__row"><span>Class</span><span class="l1a-profile__blank"></span></div>
+                    <div class="l1a-profile__row"><span>Phone</span><span class="l1a-profile__blank"></span></div>
+                  </div>
+                </div>
+                <div class="l1a-profile">
+                  <div class="l1a-profile__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Image placeholder</span></div></div>
+                  <div class="l1a-profile__form">
+                    <div class="l1a-profile__row"><span>Name</span><span class="l1a-profile__blank"></span></div>
+                    <div class="l1a-profile__row"><span>Class</span><span class="l1a-profile__blank"></span></div>
+                    <div class="l1a-profile__row"><span>Phone</span><span class="l1a-profile__blank"></span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="l1a-extra hz-extra-practice">
+          <span class="hz-extra-practice__label">EXTRA PRACTICE</span>
+          <span class="hz-extra-practice__prompt">Ask and write the name, class and phone of a classmate.</span>
+        </div>
+      </div>
+    </main>
+    <footer class="hz-page__footer"><span></span><span class="hz-page-number">6</span></footer>
+  </article>
+
+<!-- ===== 1B.html ===== -->
+<!--
+    SOURCE-FAITHFUL DESIGN PROTOTYPE ONLY.
+    The frozen Student's Book is not replaced or modified.
+    Numbered exercises remain in one vertical sequence; columns are used only
+    inside individual exercise bodies.
+  -->
+
+  <!-- ===============================================================
+       PAGE 7 — LESSON 1B
+       =============================================================== -->
+  <article class="hz-page hz-content hz-unit-1 l1b-page" data-page="7">
+    <main class="hz-page__content">
+      <div class="hz-page-stack">
+        <header class="hz-lesson-header">
+          <div class="hz-lesson-tab" aria-label="Lesson 1B">
+            <span class="hz-lesson-tab__label">Lesson</span>
+            <span class="hz-lesson-tab__id">1B</span>
+          </div>
+          <div class="hz-lesson-heading">
+            <h1 class="hz-lesson-title">WHAT’S YOUR JOB?</h1>
+            <div class="hz-objectives">
+              <span class="hz-objectives__item">Occupations</span>
+              <span class="hz-objectives__item">Verb “to be” contractions</span>
+            </div>
+          </div>
+        </header>
+
+        <div class="hz-exercises hz-fill">
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">1</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction"><span class="l1b-track">♪ 1.8</span>Read and listen.</p>
+              <div class="hz-exercise__body l1b-occupation-stage">
+                <div class="l1b-occupation-head"><span class="hz-new-words">NEW WORDS</span></div>
+                <div class="l1b-occupation-grid">
+                  <figure class="l1b-occupation">
+                    <div class="l1b-occupation__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Teacher portrait</span></div></div>
+                    <figcaption>A teacher</figcaption>
+                  </figure>
+                  <figure class="l1b-occupation">
+                    <div class="l1b-occupation__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Student portrait</span></div></div>
+                    <figcaption>A student</figcaption>
+                  </figure>
+                  <figure class="l1b-occupation">
+                    <div class="l1b-occupation__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Chef portrait</span></div></div>
+                    <figcaption>A chef</figcaption>
+                  </figure>
+                  <figure class="l1b-occupation">
+                    <div class="l1b-occupation__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Doctor portrait</span></div></div>
+                    <figcaption>A doctor</figcaption>
+                  </figure>
+                  <figure class="l1b-occupation">
+                    <div class="l1b-occupation__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Office worker portrait</span></div></div>
+                    <figcaption>An office worker</figcaption>
+                  </figure>
+                  <figure class="l1b-occupation">
+                    <div class="l1b-occupation__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Receptionist portrait</span></div></div>
+                    <figcaption>A receptionist</figcaption>
+                  </figure>
+                  <figure class="l1b-occupation">
+                    <div class="l1b-occupation__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Salesclerk portrait</span></div></div>
+                    <figcaption>A salesclerk</figcaption>
+                  </figure>
+                  <figure class="l1b-occupation">
+                    <div class="l1b-occupation__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Taxi driver portrait</span></div></div>
+                    <figcaption>A taxi driver</figcaption>
+                  </figure>
+                  <figure class="l1b-occupation">
+                    <div class="l1b-occupation__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Waiter/waitress portrait</span></div></div>
+                    <figcaption>A waiter/waitress</figcaption>
+                  </figure>
+                  <figure class="l1b-occupation">
+                    <div class="l1b-occupation__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Farmer portrait</span></div></div>
+                    <figcaption>A farmer</figcaption>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <aside class="l1b-aan">
+            <h2 class="l1b-aan__title">GRAMMAR: A / AN</h2>
+            <p class="l1b-aan__lead">Use verb <span class="l1b-target">to be</span> with <span class="l1b-target">a/an</span> to say your occupation.</p>
+            <div class="l1b-aan__grid">
+              <div>
+                <strong>A with consonant sounds</strong>
+                <p>I am <span class="l1b-target">a</span> taxi driver.</p>
+              </div>
+              <div>
+                <strong>An with vowel sounds.</strong>
+                <p>My friend is <span class="l1b-target">an</span> office worker.</p>
+              </div>
+            </div>
+          </aside>
+
+          <div class="l1b-go-to hz-go-to">Go to: Vocabulary - Occupations, page ---</div>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">2</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Read and fix the mistakes.</p>
+              <div class="hz-exercise__body l1b-chats">
+                <div class="l1b-chat" aria-label="Work Group chat">
+                  <div class="l1b-chat__top"><span class="l1b-chat__avatar">WG</span><span>Work Group</span></div>
+                  <div class="l1b-chat__messages">
+                    <p class="l1b-bubble l1b-bubble--self">Good morning!</p>
+                    <p class="l1b-bubble l1b-bubble--self">Are you a teacher?</p>
+                    <p class="l1b-bubble">No, I’m not. I’m a office worker!</p>
+                    <p class="l1b-bubble">Miss Jessie is a teacher!</p>
+                  </div>
+                  <div class="l1b-chat__input">Message</div>
+                </div>
+
+                <div class="l1b-chat" aria-label="Class 4 Chat">
+                  <div class="l1b-chat__top"><span class="l1b-chat__avatar">4</span><span>Class 4 Chat</span></div>
+                  <div class="l1b-chat__messages">
+                    <p class="l1b-bubble">Hi! I’m Jessie.</p>
+                    <p class="l1b-bubble l1b-bubble--self">I’m Tom! I’m an teacher.</p>
+                    <p class="l1b-bubble l1b-bubble--self"><span class="l1b-target">What do you do?</span></p>
+                    <p class="l1b-bubble">I’m a receptionist!</p>
+                  </div>
+                  <div class="l1b-chat__input">Message</div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">3</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Work in pairs. Mimic an occupation. Your classmate will guess.</p>
+              <div class="hz-exercise__body l1b-clue-strip" aria-label="Occupation mime image clues">
+                <div class="l1b-clue"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Taxi clue</span></div></div>
+                <div class="l1b-clue"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Reception bell clue</span></div></div>
+                <div class="l1b-clue"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Restaurant dish clue</span></div></div>
+                <div class="l1b-clue"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Classroom supplies clue</span></div></div>
+                <div class="l1b-clue"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Medical syringe clue</span></div></div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer class="hz-page__footer"><span></span><span class="hz-page-number">7</span></footer>
+  </article>
+
+  <!-- ===============================================================
+       PAGE 8 — LESSON 1B CONTINUED
+       =============================================================== -->
+  <article class="hz-page hz-content hz-unit-1 l1b-page l1b-page--2" data-page="8">
+    <main class="hz-page__content">
+      <div class="l1b-continuation">1B</div>
+      <div class="hz-page-stack">
+        <div class="hz-exercises hz-fill" style="padding-top:7mm">
+
+          <aside class="l1b-contractions">
+            <h2 class="l1b-contractions__title">GRAMMAR: CONTRACTIONS</h2>
+            <p class="l1b-contractions__lead">In English, use contractions to speak more naturally.</p>
+            <div class="l1b-contractions__rows">
+              <div class="l1b-contractions__row"><span>I am a teacher.</span><span>I<strong>’m</strong> a teacher.</span></div>
+              <div class="l1b-contractions__row"><span>She is my friend Mary.</span><span>She<strong>’s</strong> my friend Mary.</span></div>
+              <div class="l1b-contractions__row"><span>You are a student.</span><span>You<strong>’re</strong> a student.</span></div>
+            </div>
+          </aside>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">4.1</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction"><span class="l1b-track">♪ 1.8</span>Read and listen.</p>
+              <div class="hz-exercise__body l1b-profile-stage">
+                <div class="l1b-profile-head"><span class="hz-new-words">NEW WORDS</span></div>
+                <div class="l1b-profiles">
+                  <article class="l1b-profile">
+                    <div class="l1b-profile__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Tom · taxi driver portrait</span></div></div>
+                    <h3 class="l1b-profile__name">TOM</h3>
+                    <div class="l1b-profile__copy">
+                      <p>Hey! I’m Tom.</p>
+                      <p>I’m a taxi driver. I drive a taxi in the morning. But in the evening, I’m a teacher!</p>
+                      <p>I teach English to my students. They’re <span class="l1b-target">smart</span>!</p>
+                    </div>
+                  </article>
+
+                  <article class="l1b-profile">
+                    <div class="l1b-profile__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Sarah · doctor portrait</span></div></div>
+                    <h3 class="l1b-profile__name">SARAH</h3>
+                    <div class="l1b-profile__copy">
+                      <p>Hi! I’m Sarah.</p>
+                      <p>I’m a doctor, and work in a hospital.</p>
+                      <p>I’m <span class="l1b-target">busy</span> in the morning, but in the evening I’m with my friends. They’re doctors!</p>
+                    </div>
+                  </article>
+
+                  <article class="l1b-profile">
+                    <div class="l1b-profile__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Marco · chef portrait</span></div></div>
+                    <h3 class="l1b-profile__name">MARCO</h3>
+                    <div class="l1b-profile__copy">
+                      <p>Hello! I’m Marco.</p>
+                      <p>I am a chef, and work in a restaurant in the afternoon.</p>
+                      <p>But in the morning, I always talk with my friends and play soccer. It is very <span class="l1b-target">fun</span>!</p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="l1b-subexercise">
+            <div class="l1b-subexercise__number">4.2</div>
+            <p class="l1b-subexercise__instruction">Find the <span class="l1b-target">contractions</span> in the text. Write them in their full form.</p>
+          </div>
+
+          <aside class="l1b-pronunciation">
+            <h2 class="l1b-pronunciation__title">PRONUNCIATION: NEW WORDS</h2>
+            <p class="l1b-pronunciation__lead">In English, spelling and pronunciation are different.</p>
+            <div class="l1b-pronunciation__grid">
+              <em>Busy</em><span>/ˈbɪz.i/</span><span>(Not /buːsi/)</span>
+              <em>Fun</em><span>/fʌn/</span><span>(Not /fuːn/)</span>
+            </div>
+            <p class="l1b-pronunciation__note">Always write and practice the pronunciation of new words.</p>
+          </aside>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">5</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction"><span class="l1b-track">♪ 1.9</span>Listen and match the occupations.</p>
+              <div class="hz-exercise__body l1b-match-stage">
+                <div class="l1b-match-list">
+                  <div class="l1b-match-col">
+                    <div class="l1b-match-item"><b>1</b><span>Allison</span></div>
+                    <div class="l1b-match-item"><b>2</b><span>Mike</span></div>
+                    <div class="l1b-match-item"><b>3</b><span>John</span></div>
+                    <div class="l1b-match-item"><b>4</b><span>Lisa</span></div>
+                    <div class="l1b-match-item"><b>5</b><span>Bryan</span></div>
+                  </div>
+                  <div class="l1b-match-col">
+                    <div class="l1b-match-item"><b>a</b><span>office worker</span></div>
+                    <div class="l1b-match-item"><b>b</b><span>doctor</span></div>
+                    <div class="l1b-match-item"><b>c</b><span>waitress</span></div>
+                    <div class="l1b-match-item"><b>d</b><span>salesclerk</span></div>
+                    <div class="l1b-match-item"><b>e</b><span>farmer</span></div>
+                  </div>
+                </div>
+                <div class="l1b-workers-photo">
+                  <div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Image placeholder · two workers · waist-up overlapping crop</span></div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="l1b-extra hz-extra-practice">
+          <span class="hz-extra-practice__label">EXTRA PRACTICE</span>
+          <span class="hz-extra-practice__prompt">Speak about your occupation. What do you do? Where do you work?</span>
+        </div>
+      </div>
+    </main>
+    <footer class="hz-page__footer"><span></span><span class="hz-page-number">8</span></footer>
+  </article>
+
+<!-- ===== 1C.html ===== -->
+<!-- ===============================================================
+       PAGE 9 — LESSON 1C, FROZEN SOURCE ADAPTATION
+       =============================================================== -->
+  <article class="hz-page hz-content hz-unit-1 l1c-page" data-page="9">
+    <main class="hz-page__content">
+      <div class="hz-page-stack">
+        <header class="hz-lesson-header">
+          <div class="hz-lesson-tab" aria-label="Lesson 1C">
+            <span class="hz-lesson-tab__label">Lesson</span>
+            <span class="hz-lesson-tab__id">1C</span>
+          </div>
+          <div class="hz-lesson-heading">
+            <h1 class="hz-lesson-title">WHERE ARE YOU FROM?</h1>
+            <div class="hz-objectives">
+              <span class="hz-objectives__item">Countries</span>
+              <span class="hz-objectives__item">Adjectives</span>
+            </div>
+          </div>
+        </header>
+
+        <div class="hz-exercises hz-fill">
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">1</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction"><span class="l1c-track">♪ 1.10</span>Match the people with the countries.</p>
+              <div class="hz-exercise__body l1c-country-stage">
+                <div class="l1c-country-head">
+                  <div class="l1c-country-bank">
+                    <span>Argentina</span><span>the US</span><span>the UK</span><span>Canada</span><span>South Korea</span>
+                  </div>
+                  <span class="hz-new-words">NEW WORDS</span>
+                </div>
+
+                <div class="l1c-celebrities">
+                  <figure class="l1c-celebrity">
+                    <div class="l1c-celebrity__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Lionel Messi · portrait crop</span></div></div>
+                    <figcaption class="l1c-celebrity__caption"><b>1</b><span>Lionel Messi</span></figcaption>
+                    <span class="l1c-celebrity__line"></span>
+                  </figure>
+                  <figure class="l1c-celebrity">
+                    <div class="l1c-celebrity__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Taylor Swift · portrait crop</span></div></div>
+                    <figcaption class="l1c-celebrity__caption"><b>2</b><span>Taylor Swift</span></figcaption>
+                    <span class="l1c-celebrity__line"></span>
+                  </figure>
+                  <figure class="l1c-celebrity">
+                    <div class="l1c-celebrity__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Keanu Reeves · portrait crop</span></div></div>
+                    <figcaption class="l1c-celebrity__caption"><b>3</b><span>Keanu Reeves</span></figcaption>
+                    <span class="l1c-celebrity__line"></span>
+                  </figure>
+                  <figure class="l1c-celebrity">
+                    <div class="l1c-celebrity__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Millie B. Brown · portrait crop</span></div></div>
+                    <figcaption class="l1c-celebrity__caption"><b>4</b><span>Millie B. Brown</span></figcaption>
+                    <span class="l1c-celebrity__line"></span>
+                  </figure>
+                  <figure class="l1c-celebrity">
+                    <div class="l1c-celebrity__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Lee Jung-jae · portrait crop</span></div></div>
+                    <figcaption class="l1c-celebrity__caption"><b>5</b><span>Lee Jung-jae</span></figcaption>
+                    <span class="l1c-celebrity__line"></span>
+                  </figure>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">2</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Match the countries with the nationalities.</p>
+              <div class="hz-exercise__body l1c-nationalities">
+                <div class="l1c-nationality"><b>1</b><span>Canadian</span><span class="l1c-nationality__line"></span></div>
+                <div class="l1c-nationality"><b>2</b><span>American</span><span class="l1c-nationality__line"></span></div>
+                <div class="l1c-nationality"><b>3</b><span>South Korean</span><span class="l1c-nationality__line"></span></div>
+                <div class="l1c-nationality"><b>4</b><span>Argentinian</span><span class="l1c-nationality__line"></span></div>
+                <div class="l1c-nationality"><b>5</b><span>British</span><span class="l1c-nationality__line"></span></div>
+              </div>
+            </div>
+          </section>
+
+          <div class="l1c-go-to hz-go-to">Go to: Vocabulary - Countries, page ---</div>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">3</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Read the blogs.</p>
+              <div class="hz-exercise__body l1c-world-stage">
+                <div class="l1c-world-masthead"><span>CITIES AROUND THE WORLD</span><span>Travel notes</span></div>
+                <div class="l1c-city-grid">
+                  <article class="l1c-city">
+                    <div class="l1c-city__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Rio de Janeiro · landmark crop</span></div></div>
+                    <div class="l1c-city__copy">
+                      <h3>Rio de Janeiro</h3>
+                      <p>I love Rio de Janeiro!</p>
+                      <p>It’s a <span class="l1c-target">big</span> city with <span class="l1c-target">beautiful</span> beaches. The weather is <span class="l1c-target">hot</span>, and the people are very <span class="l1c-target">friendly</span>.</p>
+                    </div>
+                  </article>
+
+                  <article class="l1c-city">
+                    <div class="l1c-city__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Toronto · skyline crop</span></div></div>
+                    <div class="l1c-city__copy">
+                      <h3>Toronto</h3>
+                      <p>Toronto has many <span class="l1c-target">old</span> and <span class="l1c-target">new</span> buildings. Also, it’s very <span class="l1c-target">cold</span>!</p>
+                      <p>The food is <span class="l1c-target">expensive</span>, but it’s very good. Tomorrow, I will go to a <span class="l1c-target">famous</span> restaurant!</p>
+                    </div>
+                  </article>
+
+                  <article class="l1c-city">
+                    <div class="l1c-city__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Hong Kong · skyline at night</span></div></div>
+                    <div class="l1c-city__copy">
+                      <h3>Hong Kong</h3>
+                      <p>Hong Kong is a very <span class="l1c-target">busy</span> city, but some parks are <span class="l1c-target">calm</span>. The food is good and <span class="l1c-target">cheap</span>.</p>
+                      <p>The city is <span class="l1c-target">beautiful</span> at night, but hotels are very <span class="l1c-target">expensive</span>!</p>
+                    </div>
+                  </article>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="l1c-go-to hz-go-to">Go to: Vocabulary - Adjectives, page ---</div>
+        </div>
+      </div>
+    </main>
+    <footer class="hz-page__footer"><span></span><span class="hz-page-number">9</span></footer>
+  </article>
+
+  <!-- ===============================================================
+       PAGE 10 — NEW COMPLETION OF LESSON 1C
+       =============================================================== -->
+  <article class="hz-page hz-content hz-unit-1 l1c-page l1c-page--2" data-page="10">
+    <main class="hz-page__content">
+      <div class="l1c-continuation">1C</div>
+      <div class="hz-page-stack">
+        <div class="hz-exercises hz-fill" style="padding-top:7mm">
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">4</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Read the blogs again. Find the adjectives.</p>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">5</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Complete with adjectives from Exercise 3.</p>
+              <div class="hz-exercise__body l1c-adjective-field">
+                <div class="l1c-adjective-field__grid">
+                  <div class="l1c-word-map">
+                    <h3>Weather</h3>
+                    <div class="l1c-word-map__lines"><span class="l1c-word-map__line"></span><span class="l1c-word-map__line"></span></div>
+                  </div>
+                  <div class="l1c-word-map">
+                    <h3>Prices</h3>
+                    <div class="l1c-word-map__lines"><span class="l1c-word-map__line"></span><span class="l1c-word-map__line"></span></div>
+                  </div>
+                  <div class="l1c-word-map">
+                    <h3>Cities and places</h3>
+                    <div class="l1c-word-map__lines"><span class="l1c-word-map__line"></span><span class="l1c-word-map__line"></span><span class="l1c-word-map__line"></span></div>
+                  </div>
+                  <div class="l1c-word-map">
+                    <h3>People</h3>
+                    <div class="l1c-word-map__lines"><span class="l1c-word-map__line"></span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">6</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Complete with adjectives from Exercise 3.</p>
+              <div class="hz-exercise__body l1c-sentences">
+                <div class="l1c-sentence"><b>1</b><span>Rio de Janeiro is a <span class="hz-answer-line" style="min-width:22mm"></span> city.</span></div>
+                <div class="l1c-sentence"><b>4</b><span>Hotels in Hong Kong are very <span class="hz-answer-line" style="min-width:22mm"></span>.</span></div>
+                <div class="l1c-sentence"><b>2</b><span>The people in Rio de Janeiro are very <span class="hz-answer-line" style="min-width:22mm"></span>.</span></div>
+                <div class="l1c-sentence"><b>5</b><span>Toronto has <span class="hz-answer-line" style="min-width:18mm"></span> and <span class="hz-answer-line" style="min-width:18mm"></span> buildings.</span></div>
+                <div class="l1c-sentence"><b>3</b><span>Some parks in Hong Kong are <span class="hz-answer-line" style="min-width:22mm"></span>.</span></div>
+                <div class="l1c-sentence"><b>6</b><span>Toronto is very <span class="hz-answer-line" style="min-width:22mm"></span>.</span></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">7</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Work in pairs. Ask and answer.</p>
+              <div class="hz-exercise__body l1c-pair-stage">
+                <div class="l1c-pair-photo">
+                  <div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Two students discussing city photos · wide portrait crop</span></div>
+                </div>
+                <div class="l1c-pair-copy">
+                  <div class="l1c-dialogue-line"><p><strong>A:</strong> What city?</p><p><strong>B:</strong> Rio de Janeiro.</p></div>
+                  <div class="l1c-dialogue-line"><p><strong>A:</strong> Is it big?</p><p><strong>B:</strong> Yes. It is big, hot and beautiful.</p></div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">8</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Work in pairs. Student A: say three adjectives. Student B: guess the city.</p>
+              <div class="hz-exercise__body l1c-guess-strip">
+                <div class="l1c-guess-city"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Rio de Janeiro · city crop</span></div><span class="l1c-guess-city__label">Rio de Janeiro</span></div>
+                <div class="l1c-guess-city"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Toronto · city crop</span></div><span class="l1c-guess-city__label">Toronto</span></div>
+                <div class="l1c-guess-city"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Hong Kong · city crop</span></div><span class="l1c-guess-city__label">Hong Kong</span></div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="l1c-extra hz-extra-practice">
+          <span class="hz-extra-practice__label">EXTRA PRACTICE</span>
+          <span class="hz-extra-practice__prompt">Ask a classmate: Where are you from? Is your city big? Is it hot? Is it beautiful?</span>
+        </div>
+      </div>
+    </main>
+    <footer class="hz-page__footer"><span></span><span class="hz-page-number">10</span></footer>
+  </article>
+
+<!-- ===== 1D.html ===== -->
+<!-- ===============================================================
+       PAGE 11 — LESSON 1D
+       =============================================================== -->
+  <article class="hz-page hz-content hz-unit-1 l1d-page" data-page="11">
+    <main class="hz-page__content">
+      <div class="hz-page-stack">
+        <header class="hz-lesson-header">
+          <div class="hz-lesson-tab" aria-label="Lesson 1D">
+            <span class="hz-lesson-tab__label">Lesson</span>
+            <span class="hz-lesson-tab__id">1D</span>
+          </div>
+          <div class="hz-lesson-heading">
+            <h1 class="hz-lesson-title">LET’S FILL A FORM!</h1>
+            <div class="hz-objectives">
+              <span class="hz-objectives__item">Personal information</span>
+              <span class="hz-objectives__item">Capitalization</span>
+            </div>
+          </div>
+        </header>
+
+        <div class="hz-exercises hz-fill">
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">1</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Read the conversation.</p>
+              <div class="hz-exercise__body l1d-checkin-stage">
+                <div class="l1d-checkin-photo">
+                  <div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Hotel reception · receptionist and guest speaking · vertical environmental crop</span></div>
+                </div>
+
+                <div class="l1d-checkin-copy">
+                  <span class="l1d-checkin-copy__kicker">SEASIDE HOTEL</span>
+                  <dl class="l1d-dialogue">
+                    <dt>Receptionist:</dt><dd>Good afternoon. I’m Lisa. I’m a receptionist.</dd>
+                    <dt>Receptionist:</dt><dd>What is your <span class="l1d-target">first name</span>?</dd>
+                    <dt>Emma:</dt><dd>I’m Emma.</dd>
+                    <dt>Receptionist:</dt><dd>What is your <span class="l1d-target">last name</span>?</dd>
+                    <dt>Emma:</dt><dd>Carter. C-A-R-T-E-R.</dd>
+                    <dt>Receptionist:</dt><dd>Where are you from?</dd>
+                    <dt>Emma:</dt><dd>I’m from Canada.</dd>
+                    <dt>Receptionist:</dt><dd>What is your <span class="l1d-target">city</span>?</dd>
+                    <dt>Emma:</dt><dd>Toronto.</dd>
+                    <dt>Receptionist:</dt><dd>What is your <span class="l1d-target">phone number</span>?</dd>
+                    <dt>Emma:</dt><dd>It’s 416 555 0182.</dd>
+                    <dt>Receptionist:</dt><dd>What is your <span class="l1d-target">email</span>?</dd>
+                    <dt>Emma:</dt><dd>emma.carter@email.com</dd>
+                    <dt>Receptionist:</dt><dd>Thank you.</dd>
+                  </dl>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">2</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Look at the conversation again. Answer.</p>
+              <div class="hz-exercise__body">
+                <div class="l1d-discovery">
+                  <div class="l1d-discovery__item"><b>1</b><div>What question is for the last name?<span class="l1d-discovery__choices">a What is your first name? &nbsp;&nbsp; b What is your last name?</span></div></div>
+                  <div class="l1d-discovery__item"><b>3</b><div>Emma, Carter, Canada, Toronto: capital letter?<span class="l1d-discovery__choices">Yes &nbsp;&nbsp; No</span></div></div>
+                  <div class="l1d-discovery__item"><b>2</b><div>What question is for the country?<span class="l1d-discovery__choices">a Where are you from? &nbsp;&nbsp; b What is your city?</span></div></div>
+                  <div class="l1d-discovery__item"><b>4</b><div>emma.carter@email.com: capital letter?<span class="l1d-discovery__choices">Yes &nbsp;&nbsp; No</span></div></div>
+                </div>
+                <div class="l1d-pair-check">PAIRWORK · Work in pairs.</div>
+              </div>
+            </div>
+          </section>
+
+          <aside class="l1d-capitalization">
+            <h2 class="l1d-capitalization__title">WRITING: CAPITALIZATION</h2>
+            <div class="l1d-capitalization__grid">
+              <div class="l1d-cap-rule"><strong>Names</strong><p>Emma Carter</p></div>
+              <div class="l1d-cap-rule"><strong>Cities</strong><p>Toronto</p></div>
+              <div class="l1d-cap-rule"><strong>Countries</strong><p>Canada</p></div>
+              <div class="l1d-cap-rule"><strong>First word + I</strong><p>I am from Canada.</p></div>
+            </div>
+          </aside>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">3</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Write with capital letters.</p>
+              <div class="hz-exercise__body l1d-practice-grid">
+                <div class="l1d-practice-item"><b>1</b><div><p>emma carter</p><span class="l1d-practice-line"></span></div></div>
+                <div class="l1d-practice-item"><b>4</b><div><p>my name is daniel.</p><span class="l1d-practice-line"></span></div></div>
+                <div class="l1d-practice-item"><b>2</b><div><p>manta, ecuador</p><span class="l1d-practice-line"></span></div></div>
+                <div class="l1d-practice-item"><b>5</b><div><p>i am from canada.</p><span class="l1d-practice-line"></span></div></div>
+                <div class="l1d-practice-item"><b>3</b><div><p>sofia lopez</p><span class="l1d-practice-line"></span></div></div>
+                <div class="l1d-practice-item"><b>6</b><div><p>i am in toronto.</p><span class="l1d-practice-line"></span></div></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">4</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Match the questions with the words.</p>
+              <div class="hz-exercise__body l1d-question-match">
+                <div class="l1d-question-col">
+                  <div class="l1d-question-match__item"><b>1</b><span>What is your first name?</span></div>
+                  <div class="l1d-question-match__item"><b>2</b><span>What is your last name?</span></div>
+                  <div class="l1d-question-match__item"><b>3</b><span>Where are you from?</span></div>
+                  <div class="l1d-question-match__item"><b>4</b><span>What is your city?</span></div>
+                  <div class="l1d-question-match__item"><b>5</b><span>What is your phone number?</span></div>
+                  <div class="l1d-question-match__item"><b>6</b><span>What is your email?</span></div>
+                </div>
+                <div class="l1d-question-col">
+                  <div class="l1d-question-match__item"><b>a</b><span>phone number</span></div>
+                  <div class="l1d-question-match__item"><b>b</b><span>country</span></div>
+                  <div class="l1d-question-match__item"><b>c</b><span>email</span></div>
+                  <div class="l1d-question-match__item"><b>d</b><span>first name</span></div>
+                  <div class="l1d-question-match__item"><b>e</b><span>city</span></div>
+                  <div class="l1d-question-match__item"><b>f</b><span>last name</span></div>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </main>
+    <footer class="hz-page__footer"><span></span><span class="hz-page-number">11</span></footer>
+  </article>
+
+  <!-- ===============================================================
+       PAGE 12 — LESSON 1D CONTINUED
+       =============================================================== -->
+  <article class="hz-page hz-content hz-unit-1 l1d-page l1d-page--2" data-page="12">
+    <main class="hz-page__content">
+      <div class="l1d-continuation">1D</div>
+      <div class="hz-page-stack">
+        <div class="hz-exercises hz-fill" style="padding-top:7mm">
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">5</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Choose one. Write the name.</p>
+              <div class="hz-exercise__body l1d-business-stage">
+                <div class="l1d-business-options">
+                  <div class="l1d-business-option"><div class="l1d-business-option__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Gym reception · detail crop</span></div></div><strong>Gym</strong></div>
+                  <div class="l1d-business-option"><div class="l1d-business-option__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Hotel lobby · detail crop</span></div></div><strong>Hotel</strong></div>
+                  <div class="l1d-business-option"><div class="l1d-business-option__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Language school · detail crop</span></div></div><strong>English school</strong></div>
+                  <div class="l1d-business-option"><div class="l1d-business-option__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Club / service · detail crop</span></div></div><strong>Club / Your idea</strong></div>
+                </div>
+                <div class="l1d-business-name"><span>Name</span><span class="l1d-business-name__line"></span></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">6</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">What information? Choose five or six.</p>
+              <div class="hz-exercise__body l1d-info-select">
+                <span><i class="hz-choice-box"></i> first name</span>
+                <span><i class="hz-choice-box"></i> last name</span>
+                <span><i class="hz-choice-box"></i> country</span>
+                <span><i class="hz-choice-box"></i> city</span>
+                <span><i class="hz-choice-box"></i> phone number</span>
+                <span><i class="hz-choice-box"></i> email</span>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">7</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Work in pairs. Student A: ask and write. Student B: answer. Student B: ask and write. Student A: answer.</p>
+              <div class="hz-exercise__body l1d-roleplay">
+                <div class="l1d-roleplay-left">
+                  <div class="l1d-role-photo">
+                    <div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Student-run reception desk · two classmates role-playing staff and customer · wide crop</span></div>
+                  </div>
+
+                  <div class="l1d-role-box">
+                    <h3>Student A · Receptionist</h3>
+                    <p>Ask the questions. Write the information.</p>
+                    <div class="l1d-role-questions">
+                      <span>What is your first name?</span>
+                      <span>What is your last name?</span>
+                      <span>Where are you from?</span>
+                      <span>What is your city?</span>
+                      <span>What is your phone number?</span>
+                      <span>What is your email?</span>
+                    </div>
+                  </div>
+
+                  <div class="l1d-role-box">
+                    <h3>Student B</h3>
+                    <p>Answer the questions. Spell your name.</p>
+                  </div>
+                </div>
+
+                <div class="l1d-live-form" aria-label="Personal information form">
+                  <div class="l1d-live-form__business"><span>Gym / Hotel / School / Club</span><span></span></div>
+                  <h3>Personal Information Form</h3>
+                  <div class="l1d-live-row"><span>First name</span><span></span></div>
+                  <div class="l1d-live-row"><span>Last name</span><span></span></div>
+                  <div class="l1d-live-row"><span>Country</span><span></span></div>
+                  <div class="l1d-live-row"><span>City</span><span></span></div>
+                  <div class="l1d-live-row"><span>Phone number</span><span></span></div>
+                  <div class="l1d-live-row"><span>Email</span><span></span></div>
+                  <div class="l1d-live-form__footer">
+                    <div>Student A<span></span></div>
+                    <div>Student B<span></span></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">8</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Look at the form.</p>
+              <div class="hz-exercise__body l1d-peer-check">
+                <div class="l1d-peer-check__item"><span class="l1d-peer-check__box"></span><span>Information correct?</span></div>
+                <div class="l1d-peer-check__item"><span class="l1d-peer-check__box"></span><span>Capital letters?</span></div>
+                <div class="l1d-peer-check__item"><span class="l1d-peer-check__box"></span><span>Form complete?</span></div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="l1d-extra hz-extra-practice">
+          <span class="hz-extra-practice__label">EXTRA PRACTICE</span>
+          <span class="hz-extra-practice__prompt">Ask again. Complete a new form.</span>
+        </div>
+      </div>
+    </main>
+    <footer class="hz-page__footer"><span></span><span class="hz-page-number">12</span></footer>
+  </article>
+  </main>
+
+  <button class="hz-pdf-button" id="hz-pdf-button" type="button" aria-label="Download Student's Book as PDF" title="Download PDF">
     <svg viewBox="0 0 24 24" aria-hidden="true">
       <path d="M12 3v12"></path>
       <path d="m7 10 5 5 5-5"></path>
@@ -109,314 +4492,132 @@
     </svg>
   </button>
 
-  <!-- The local file only loads this small local manifest. No lesson is embedded as a file:// frame. -->
-  <script src="./Lessons/manifest.js"></script>
-
-  <!-- PDF libraries. -->
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/jspdf@4.2.1/dist/jspdf.umd.min.js"></script>
-
   <script>
-    (() => {
-      const book = document.getElementById("hz-book");
-      const pdfButton = document.getElementById("hz-pdf-button");
-      const lessons = Array.isArray(window.HORIZONS_A1_LESSONS)
-        ? window.HORIZONS_A1_LESSONS
-        : [];
+(function pdfRuntime() {
+  const pdfButton = document.getElementById("hz-pdf-button");
+  const book = document.getElementById("hz-book");
+  const RAW_A1_ROOT = "https://raw.githubusercontent.com/Chiispiitas/Brighton/main/Horizons/A1/";
+  const A4_WIDTH_MM = 210;
+  const A4_HEIGHT_MM = 297;
+  const EXPORT_SCALE = 2.35;
+  const JPEG_QUALITY = 0.97;
 
-      const RAW_REPO_ROOT = "https://raw.githubusercontent.com/Chiispiitas/Brighton/main/";
-      const RAW_LESSONS_ROOT = `${RAW_REPO_ROOT}Horizons/A1/Lessons/`;
-      const A4_WIDTH_MM = 210;
-      const A4_HEIGHT_MM = 297;
-      const EXPORT_SCALE = 2.35;
-      const JPEG_QUALITY = 0.97;
-      const stylesheetCache = new Map();
-      const installedStylesheets = new Set();
+  function setExportBusy(isBusy) {
+    pdfButton.disabled = isBusy;
+    pdfButton.classList.toggle("is-busy", isBusy);
+    pdfButton.setAttribute(
+      "aria-label",
+      isBusy ? "Building Student's Book PDF" : "Download Student's Book as PDF"
+    );
+    pdfButton.title = isBusy ? "Building PDF…" : "Download PDF";
+  }
 
-      function setExportBusy(isBusy) {
-        pdfButton.disabled = isBusy;
-        pdfButton.classList.toggle("is-busy", isBusy);
-        pdfButton.setAttribute(
-          "aria-label",
-          isBusy ? "Building Student's Book PDF" : "Download Student's Book as PDF"
-        );
-        pdfButton.title = isBusy ? "Building PDF…" : "Download PDF";
-      }
+  function remoteAssetUrl(value) {
+    const trimmed = value.trim();
+    if (!trimmed || /^(?:data:|blob:|https?:|#)/i.test(trimmed)) return trimmed;
+    return new URL(trimmed, RAW_A1_ROOT).href;
+  }
 
-      function showError(message) {
-        const error = document.createElement("div");
-        error.className = "hz-book-error";
-        error.textContent = message;
-        document.body.appendChild(error);
-      }
-
-      async function fetchText(url, label) {
-        const response = await fetch(url, { cache: "no-store" });
-        if (!response.ok) {
-          throw new Error(`Could not load ${label || url}.`);
+  function prepareClone(clonedDoc) {
+    clonedDoc.querySelectorAll("style").forEach((style) => {
+      style.textContent = style.textContent.replace(
+        /url\(\s*(["']?)(.*?)\1\s*\)/gi,
+        (match, quote, value) => {
+          const remote = remoteAssetUrl(value);
+          return remote === value ? match : `url("${remote}")`;
         }
-        return response.text();
+      );
+    });
+
+    clonedDoc.querySelectorAll("img[src]").forEach((image) => {
+      const src = image.getAttribute("src");
+      if (src) image.src = remoteAssetUrl(src);
+    });
+
+    const cleanup = clonedDoc.createElement("style");
+    cleanup.textContent = `
+      html, body {
+        margin: 0 !important;
+        padding: 0 !important;
+        background: #fff !important;
       }
-
-      function rewriteCssAssetUrls(css, stylesheetUrl) {
-        return css.replace(/url\(\s*(["']?)(.*?)\1\s*\)/gi, (match, quote, rawValue) => {
-          const value = rawValue.trim();
-          if (!value || /^(?:data:|blob:|https?:|#)/i.test(value)) return match;
-
-          try {
-            return `url("${new URL(value, stylesheetUrl).href}")`;
-          } catch (error) {
-            console.warn("Could not resolve CSS asset URL", value, stylesheetUrl, error);
-            return match;
-          }
-        });
+      .hz-page {
+        margin: 0 !important;
+        box-shadow: none !important;
       }
-
-      async function loadStylesheetInline(stylesheetUrl, stack = []) {
-        if (stylesheetCache.has(stylesheetUrl)) {
-          return stylesheetCache.get(stylesheetUrl);
-        }
-
-        if (stack.includes(stylesheetUrl)) {
-          throw new Error(`Circular CSS import detected at ${stylesheetUrl}.`);
-        }
-
-        const nextStack = [...stack, stylesheetUrl];
-        let css = await fetchText(stylesheetUrl, stylesheetUrl.split("/").pop());
-        const importPattern = /@import\s+(?:url\(\s*)?["']([^"']+)["']\s*\)?\s*([^;]*);/gi;
-        const imports = [...css.matchAll(importPattern)];
-
-        for (const match of imports) {
-          const importUrl = new URL(match[1], stylesheetUrl).href;
-          let importedCss = await loadStylesheetInline(importUrl, nextStack);
-          const mediaQuery = (match[2] || "").trim();
-
-          if (mediaQuery) {
-            importedCss = `@media ${mediaQuery} {\n${importedCss}\n}`;
-          }
-
-          css = css.replace(match[0], importedCss);
-        }
-
-        css = rewriteCssAssetUrls(css, stylesheetUrl);
-        stylesheetCache.set(stylesheetUrl, css);
-        return css;
+      .hz-pdf-button {
+        display: none !important;
       }
+    `;
+    clonedDoc.head.appendChild(cleanup);
+  }
 
-      async function loadLessonDocument(filename) {
-        const lessonUrl = RAW_LESSONS_ROOT + encodeURIComponent(filename);
-        const html = await fetchText(lessonUrl, filename);
-        const doc = new DOMParser().parseFromString(html, "text/html");
+  async function renderPage(page) {
+    return window.html2canvas(page, {
+      scale: EXPORT_SCALE,
+      useCORS: true,
+      allowTaint: false,
+      backgroundColor: "#ffffff",
+      logging: false,
+      imageTimeout: 30000,
+      removeContainer: true,
+      onclone: prepareClone
+    });
+  }
 
-        const stylesheetLinks = [...doc.querySelectorAll('head link[rel="stylesheet"]')];
-        for (const link of stylesheetLinks) {
-          const href = link.getAttribute("href");
-          if (!href) {
-            link.remove();
-            continue;
-          }
+  async function exportPdf() {
+    if (!window.html2canvas || !window.jspdf || !window.jspdf.jsPDF) {
+      throw new Error("The PDF libraries could not be loaded. Check your internet connection and try again.");
+    }
 
-          const stylesheetUrl = new URL(href, lessonUrl).href;
-          const style = doc.createElement("style");
-          const media = link.getAttribute("media");
-          if (media) style.media = media;
-          style.dataset.sourceStylesheet = stylesheetUrl;
-          style.textContent = await loadStylesheetInline(stylesheetUrl);
-          link.replaceWith(style);
-        }
+    const pages = [...book.querySelectorAll("article.hz-page")];
+    if (!pages.length) throw new Error("No book pages are available to export.");
 
-        return { filename, lessonUrl, doc };
-      }
+    const { jsPDF } = window.jspdf;
+    const pdf = new jsPDF({
+      orientation: "portrait",
+      unit: "mm",
+      format: "a4",
+      compress: true,
+      putOnlyUsedFonts: true
+    });
 
-      function installLessonStyles(lesson) {
-        const styles = [...lesson.doc.head.querySelectorAll("style")];
-        styles.forEach((sourceStyle, index) => {
-          const sourceStylesheet = sourceStyle.dataset.sourceStylesheet || "";
-          const key = sourceStylesheet || `${lesson.filename}:inline:${index}`;
-          if (installedStylesheets.has(key)) return;
-          installedStylesheets.add(key);
+    pdf.setProperties({
+      title: "Horizons A1 — Student's Book",
+      subject: "Horizons A1 Student's Book",
+      author: "Brighton",
+      creator: "Horizons Student's Book assembler"
+    });
 
-          const style = document.createElement("style");
-          const media = sourceStyle.getAttribute("media");
-          if (media) style.media = media;
-          style.dataset.hzBookStyle = key;
-          style.textContent = sourceStyle.textContent;
-          document.head.appendChild(style);
-        });
-      }
+    for (let index = 0; index < pages.length; index += 1) {
+      const canvas = await renderPage(pages[index]);
+      const imageData = canvas.toDataURL("image/jpeg", JPEG_QUALITY);
 
-      function installLessonPages(lesson) {
-        const pages = [...lesson.doc.querySelectorAll("article.hz-page")];
-        if (!pages.length) {
-          throw new Error(`${lesson.filename} contains no .hz-page elements.`);
-        }
+      if (index > 0) pdf.addPage("a4", "portrait");
+      pdf.addImage(imageData, "JPEG", 0, 0, A4_WIDTH_MM, A4_HEIGHT_MM, undefined, "FAST");
 
-        pages.forEach((page) => {
-          const imported = document.importNode(page, true);
-          imported.dataset.lessonSource = lesson.filename;
-          book.appendChild(imported);
-        });
-      }
+      canvas.width = 1;
+      canvas.height = 1;
+    }
 
-      async function waitForImages(doc) {
-        const imagePromises = [...doc.images].map((image) => {
-          if (image.complete) return Promise.resolve();
-          return new Promise((resolve) => {
-            image.addEventListener("load", resolve, { once: true });
-            image.addEventListener("error", resolve, { once: true });
-          });
-        });
+    pdf.save("Horizons A1 - Student's Book.pdf");
+  }
 
-        await Promise.all(imagePromises);
-      }
-
-      async function preloadBackgroundImages(doc) {
-        const urls = new Set();
-        const urlPattern = /url\(["']?(.*?)["']?\)/g;
-
-        doc.querySelectorAll("*").forEach((element) => {
-          const background = getComputedStyle(element).backgroundImage;
-          let match;
-          while ((match = urlPattern.exec(background)) !== null) {
-            if (match[1] && match[1] !== "none") urls.add(match[1]);
-          }
-        });
-
-        await Promise.all([...urls].map((src) => new Promise((resolve) => {
-          const image = new Image();
-          image.crossOrigin = "anonymous";
-          image.onload = resolve;
-          image.onerror = resolve;
-          image.src = src;
-        })));
-      }
-
-      async function assembleBook() {
-        if (!lessons.length) {
-          throw new Error("No lessons are listed in the A1 manifest.");
-        }
-
-        for (const filename of lessons) {
-          const lesson = await loadLessonDocument(filename);
-          installLessonStyles(lesson);
-          installLessonPages(lesson);
-        }
-
-        if (document.fonts && document.fonts.ready) await document.fonts.ready;
-        await waitForImages(document);
-        await preloadBackgroundImages(document);
-        await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
-      }
-
-      function renderCleanupStyles(clonedDoc) {
-        const style = clonedDoc.createElement("style");
-        style.textContent = `
-          html, body {
-            margin: 0 !important;
-            padding: 0 !important;
-            background: #fff !important;
-          }
-          .hz-page {
-            margin: 0 !important;
-            box-shadow: none !important;
-          }
-          .hz-pdf-button,
-          .hz-book-error {
-            display: none !important;
-          }
-        `;
-        clonedDoc.head.appendChild(style);
-      }
-
-      async function renderPage(page) {
-        return window.html2canvas(page, {
-          scale: EXPORT_SCALE,
-          useCORS: true,
-          allowTaint: false,
-          backgroundColor: "#ffffff",
-          logging: false,
-          imageTimeout: 30000,
-          removeContainer: true,
-          onclone: renderCleanupStyles
-        });
-      }
-
-      async function exportPdf() {
-        if (!window.html2canvas || !window.jspdf || !window.jspdf.jsPDF) {
-          throw new Error("The PDF libraries could not be loaded.");
-        }
-
-        const pages = [...book.querySelectorAll("article.hz-page")];
-        if (!pages.length) throw new Error("No book pages are available to export.");
-
-        const { jsPDF } = window.jspdf;
-        const pdf = new jsPDF({
-          orientation: "portrait",
-          unit: "mm",
-          format: "a4",
-          compress: true,
-          putOnlyUsedFonts: true
-        });
-
-        pdf.setProperties({
-          title: "Horizons A1 — Student's Book",
-          subject: "Horizons A1 Student's Book",
-          author: "Brighton",
-          creator: "Horizons Student's Book assembler"
-        });
-
-        for (let index = 0; index < pages.length; index += 1) {
-          const canvas = await renderPage(pages[index]);
-          const imageData = canvas.toDataURL("image/jpeg", JPEG_QUALITY);
-
-          if (index > 0) {
-            pdf.addPage("a4", "portrait");
-          }
-
-          pdf.addImage(
-            imageData,
-            "JPEG",
-            0,
-            0,
-            A4_WIDTH_MM,
-            A4_HEIGHT_MM,
-            undefined,
-            "FAST"
-          );
-
-          canvas.width = 1;
-          canvas.height = 1;
-        }
-
-        pdf.save("Horizons A1 - Student's Book.pdf");
-      }
-
-      const bookReady = assembleBook();
-
-      bookReady
-        .then(() => {
-          pdfButton.disabled = false;
-        })
-        .catch((error) => {
-          console.error(error);
-          showError(`The Student's Book could not be assembled. ${error.message}`);
-        });
-
-      pdfButton.addEventListener("click", async () => {
-        if (pdfButton.disabled) return;
-        setExportBusy(true);
-
-        try {
-          await bookReady;
-          await exportPdf();
-        } catch (error) {
-          console.error(error);
-          alert(`PDF export failed. ${error.message}`);
-        } finally {
-          setExportBusy(false);
-        }
-      });
-    })();
+  pdfButton.addEventListener("click", async () => {
+    if (pdfButton.disabled) return;
+    setExportBusy(true);
+    try {
+      await exportPdf();
+    } catch (error) {
+      console.error(error);
+      alert(`PDF export failed. ${error.message}`);
+    } finally {
+      setExportBusy(false);
+    }
+  });
+})();
   </script>
 </body>
 </html>
