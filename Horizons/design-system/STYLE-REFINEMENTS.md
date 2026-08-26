@@ -81,7 +81,19 @@ Structural typography is separate: titles, exercise numbers, section labels and 
 
 A useful check is: **if a student looks only at the bold language, is the intended learning focus obvious?** If not, the emphasis is probably too broad or arbitrary.
 
-## 9. Production QA checklist
+## 9. Exercise rhythm uses whitespace, not separators
+
+Numbered activities should read as one continuous editorial sequence. Separate them through exercise numbers, spacing, alignment and changes in content geometry, **not through horizontal divider lines**.
+
+Permanent rules:
+
+- do not place horizontal rules between normal numbered exercises;
+- do not add a rule immediately before or after a `Go to:` / Grammar Reference / Vocabulary Practice cross-reference;
+- cross-references should sit in open whitespace and feel connected to the activity they follow;
+- do not reintroduce dividers merely because a spread feels empty; solve rhythm with spacing and composition instead;
+- borders remain valid when they belong to an actual component, such as a grammar focus box, real-world interface, table, answer line or page/footer structure. This rule concerns separators whose only purpose is dividing one exercise from the next.
+
+## 10. Production QA checklist
 
 Before approving a two-page lesson, check:
 
@@ -94,7 +106,8 @@ Before approving a two-page lesson, check:
 7. Does the page retain enough whitespace to scan quickly?
 8. Are artifacts used by the learner rather than included only for authenticity?
 9. Does bold isolate the actual learning target rather than decorate whole sentences or paragraphs?
-10. Is shared chrome unchanged unless the global system itself was intentionally revised?
-11. Could an exception rule be replaced by an existing reusable component or guardrail?
+10. Are normal exercises and cross-references free of decorative separator rules?
+11. Is shared chrome unchanged unless the global system itself was intentionally revised?
+12. Could an exception rule be replaced by an existing reusable component or guardrail?
 
 A spread that is technically complete but visibly smaller, more crowded, misaligned or less coherent than neighboring lessons is not production-ready.
