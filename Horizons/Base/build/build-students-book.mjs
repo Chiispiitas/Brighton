@@ -108,99 +108,7 @@ function collectHeadStyles(headHtml, lessonPath, filename) {
   return output;
 }
 
-const lessons = fs.readdirSync(lessonsDir)
-  .filter((name) => lessonPattern.test(name))
-  .sort((a, b) => collator.compare(a, b));
-
-if (!lessons.length) throw new Error("No A1 lesson masters found.");
-
-const compiledStyles = [];
-const compiledBodies = [];
-
-for (const filename of lessons) {
-  const lessonPath = path.join(lessonsDir, filename);
-  const html = readText(lessonPath);
-  compiledStyles.push(...collectHeadStyles(extractHead(html), lessonPath, filename));
-  compiledBodies.push(`<!-- ===== ${filename} ===== -->\n${extractBody(html, filename)}`);
-}
-
-const viewerCss = `
-html,
-body {
-  margin: 0;
-  padding: 0;
-  background: #ececec;
-}
-
-#hz-book {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  min-width: 230mm;
-  margin: 0;
-  padding: 0;
-}
-
-.hz-pdf-button {
-  position: fixed;
-  right: 20px;
-  bottom: 20px;
-  z-index: 9999;
-  display: grid;
-  place-items: center;
-  width: 52px;
-  height: 52px;
-  padding: 0;
-  border: 0;
-  border-radius: 50%;
-  background: #202124;
-  color: #fff;
-  box-shadow: 0 4px 16px rgb(0 0 0 / 24%);
-  cursor: pointer;
-  transition: transform 120ms ease, box-shadow 120ms ease, opacity 120ms ease;
-}
-
-.hz-pdf-button:hover:not(:disabled) {
-  transform: translateY(-1px);
-  box-shadow: 0 6px 20px rgb(0 0 0 / 28%);
-}
-
-.hz-pdf-button:focus-visible {
-  outline: 3px solid #fff;
-  outline-offset: 3px;
-}
-
-.hz-pdf-button:disabled {
-  opacity: .58;
-  cursor: progress;
-}
-
-.hz-pdf-button svg {
-  width: 24px;
-  height: 24px;
-  fill: none;
-  stroke: currentColor;
-  stroke-width: 2;
-  stroke-linecap: round;
-  stroke-linejoin: round;
-}
-
-.hz-pdf-button.is-busy svg {
-  animation: hz-pdf-pulse 900ms ease-in-out infinite alternate;
-}
-
-@keyframes hz-pdf-pulse {
-  from { opacity: .35; }
-  to { opacity: 1; }
-}
-
-@media print {
-  .hz-pdf-button { display: none !important; }
-}
-`;
-
-const pdfScript = `
-(() => {
+function pdfRuntime() {
   const pdfButton = document.getElementById("hz-pdf-button");
   const book = document.getElementById("hz-book");
   const RAW_A1_ROOT = "https://raw.githubusercontent.com/Chiispiitas/Brighton/main/Horizons/A1/";
@@ -228,7 +136,7 @@ const pdfScript = `
   function prepareClone(clonedDoc) {
     clonedDoc.querySelectorAll("style").forEach((style) => {
       style.textContent = style.textContent.replace(
-        /url\\(\\s*(["']?)(.*?)\\1\\s*\\)/gi,
+        /url\(\s*(["']?)(.*?)\1\s*\)/gi,
         (match, quote, value) => {
           const remote = remoteAssetUrl(value);
           return remote === value ? match : `url("${remote}")`;
@@ -322,8 +230,100 @@ const pdfScript = `
       setExportBusy(false);
     }
   });
-})();
+}
+
+const lessons = fs.readdirSync(lessonsDir)
+  .filter((name) => lessonPattern.test(name))
+  .sort((a, b) => collator.compare(a, b));
+
+if (!lessons.length) throw new Error("No A1 lesson masters found.");
+
+const compiledStyles = [];
+const compiledBodies = [];
+
+for (const filename of lessons) {
+  const lessonPath = path.join(lessonsDir, filename);
+  const html = readText(lessonPath);
+  compiledStyles.push(...collectHeadStyles(extractHead(html), lessonPath, filename));
+  compiledBodies.push(`<!-- ===== ${filename} ===== -->\n${extractBody(html, filename)}`);
+}
+
+const viewerCss = `
+html,
+body {
+  margin: 0;
+  padding: 0;
+  background: #ececec;
+}
+
+#hz-book {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-width: 230mm;
+  margin: 0;
+  padding: 0;
+}
+
+.hz-pdf-button {
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  z-index: 9999;
+  display: grid;
+  place-items: center;
+  width: 52px;
+  height: 52px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #202124;
+  color: #fff;
+  box-shadow: 0 4px 16px rgb(0 0 0 / 24%);
+  cursor: pointer;
+  transition: transform 120ms ease, box-shadow 120ms ease, opacity 120ms ease;
+}
+
+.hz-pdf-button:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 6px 20px rgb(0 0 0 / 28%);
+}
+
+.hz-pdf-button:focus-visible {
+  outline: 3px solid #fff;
+  outline-offset: 3px;
+}
+
+.hz-pdf-button:disabled {
+  opacity: .58;
+  cursor: progress;
+}
+
+.hz-pdf-button svg {
+  width: 24px;
+  height: 24px;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+}
+
+.hz-pdf-button.is-busy svg {
+  animation: hz-pdf-pulse 900ms ease-in-out infinite alternate;
+}
+
+@keyframes hz-pdf-pulse {
+  from { opacity: .35; }
+  to { opacity: 1; }
+}
+
+@media print {
+  .hz-pdf-button { display: none !important; }
+}
 `;
+
+const pdfScript = `(${pdfRuntime.toString()})();`;
 
 const output = `<!doctype html>
 <html lang="en-US">
