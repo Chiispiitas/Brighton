@@ -25,19 +25,89 @@ jobs:
         with:
           node-version: "22"
 
-      - name: Compile Student's Book
+      - name: Compile Student's Book HTML
         run: node Horizons/Base/build/build-students-book.mjs
+
+      - name: Build Student's Book PDF
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          CHROME="$(command -v google-chrome || command -v google-chrome-stable || command -v chromium || command -v chromium-browser || true)"
+          if [ -z "$CHROME" ]; then
+            echo "No Chromium-compatible browser is available on the runner."
+            exit 1
+          fi
+
+          BOOK_HTML="$(python3 - <<'PY'
+          from pathlib import Path
+          print(Path("Horizons/A1/Student's Book.html").resolve().as_uri())
+          PY
+          )"
+          BOOK_PDF="$PWD/Horizons/A1/Student's Book.pdf"
+
+          "$CHROME" \
+            --headless=new \
+            --no-sandbox \
+            --disable-gpu \
+            --allow-file-access-from-files \
+            --run-all-compositor-stages-before-draw \
+            --no-pdf-header-footer \
+            --print-to-pdf-no-header \
+            --print-to-pdf="$BOOK_PDF" \
+            "$BOOK_HTML"
+
+          test -s "$BOOK_PDF"
+
+      - name: Validate assembled PDF
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if ! command -v pdfinfo >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install -y poppler-utils
+          fi
+
+          EXPECTED_PAGES="$(node - <<'NODE'
+          const fs = require('fs');
+          const html = fs.readFileSync("Horizons/A1/Student's Book.html", "utf8");
+          const pages = html.match(/<article\b[^>]*class=["'][^"']*\bhz-page\b[^"']*["'][^>]*>/gi) || [];
+          process.stdout.write(String(pages.length));
+          NODE
+          )"
+
+          ACTUAL_PAGES="$(pdfinfo "Horizons/A1/Student's Book.pdf" | awk '/^Pages:/ { print $2 }')"
+
+          echo "Expected A4 pages: $EXPECTED_PAGES"
+          echo "Generated PDF pages: $ACTUAL_PAGES"
+
+          if [ "$EXPECTED_PAGES" -lt 1 ]; then
+            echo "No .hz-page elements were found in the compiled book."
+            exit 1
+          fi
+
+          if [ "$EXPECTED_PAGES" != "$ACTUAL_PAGES" ]; then
+            echo "PDF page count does not match the compiled book."
+            exit 1
+          fi
+
+          pdfinfo "Horizons/A1/Student's Book.pdf" | grep -q "Page size:.*A4" || {
+            echo "Generated PDF is not A4."
+            pdfinfo "Horizons/A1/Student's Book.pdf"
+            exit 1
+          }
 
       - name: Commit compiled book when changed
         shell: bash
         run: |
-          if git diff --quiet -- "Horizons/A1/Student's Book.html"; then
-            echo "Student's Book is already up to date."
+          if git diff --quiet -- "Horizons/A1/Student's Book.html" "Horizons/A1/Student's Book.pdf"; then
+            echo "Student's Book HTML and PDF are already up to date."
             exit 0
           fi
 
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add "Horizons/A1/Student's Book.html"
-          git commit -m "Build A1 Student's Book [skip ci]"
+          git add "Horizons/A1/Student's Book.html" "Horizons/A1/Student's Book.pdf"
+          git commit -m "Build A1 Student's Book HTML and PDF [skip ci]"
           git push
