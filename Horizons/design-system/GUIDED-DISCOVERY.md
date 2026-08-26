@@ -1,228 +1,171 @@
 # Horizons A1 — Guided Discovery Methodology
 
-**Status: CANONICAL / PRIMARY PEDAGOGICAL METHOD**
+**Status: CANONICAL / PEDAGOGY AND LEARNER-LANGUAGE SOURCE OF TRUTH**
 
-This file governs how Horizons teaches. It is intentionally focused on pedagogy; visual rules live in `CANONICAL-STYLE.md` and production refinements in `STYLE-REFINEMENTS.md`.
+This file governs how Horizons teaches and how difficult learner-facing English may be. Visual/structural rules live in `CANONICAL-STYLE.md`.
 
-## 1. Core principle
+## 1. Core learning cycle
 
 Horizons normally teaches through:
 
-**context → noticing → guided analysis → clarification → controlled practice → communicative use → transfer to a real situation**
+**context → noticing → guided analysis → clarification → controlled practice → communicative use → real-world transfer**
 
-Students encounter meaningful language before receiving a full rule. They then answer explicit A1-friendly questions that help them notice form, meaning, use, word order or convention.
+Students meet meaningful language before receiving a full rule. They inspect visible evidence, answer short discovery questions, test the pattern and then use it for a purpose.
 
 Guided Discovery is not unsupported guessing. The context must contain enough evidence for the intended conclusion.
 
-## 2. Early-A1 language-load rule
+## 2. Early-A1 cumulative language rule
 
-In the first units of Horizons A1, **learner-facing English must be much simpler than natural adult English**. The page must not make students learn extra English merely to understand an instruction, discovery question or role-play.
+In the first units, learner-facing English is deliberately much simpler than natural adult English. A page must not make students learn extra English merely to understand an instruction, discovery question or role-play.
 
-The preferred order for authored learner-facing language is:
+For newly authored learner-facing language, use this priority:
 
-1. **exact language already taught or already used in the book**;
-2. **the current lesson target**;
-3. a very transparent **Spanish cognate or near-cognate** when a support word is unavoidable;
-4. an unavoidable new noun whose meaning is immediately clear from a photograph, label or real-world artifact.
+1. exact language already taught or already used in Horizons;
+2. the current lesson target;
+3. a transparent Spanish cognate/near-cognate when a support word is unavoidable;
+4. an unavoidable new noun whose meaning is immediately obvious from an image or functional artifact.
 
-If a word, phrase or construction does not fit one of those categories, simplify it or remove it.
+If a non-target word, phrase or construction fits none of these, simplify or remove it.
 
 ### Spanish bridge
 
-For early A1, Horizons may intentionally prefer a literal or Spanish-parallel English structure over a more idiomatic native-English collocation when the literal form is clear and does not teach a false core grammar rule.
+Early Horizons may intentionally prefer a literal or Spanish-parallel English structure over a more idiomatic native-English collocation when the literal form is clear and does not teach a false core grammar rule.
 
-This means learner language can be **borderline unnatural**. Do not automatically “improve” it simply because a native speaker would normally say something differently.
+This can produce **borderline unnatural but comprehensible English**. Do not automatically naturalize it.
 
-Examples of the intended principle:
+Examples:
 
-- early: `What is your city?` rather than introducing `What city do you live in?`;
-- early: `What city?` / `Is it big?` rather than introducing `What is it like?`;
-- early: `What information? Select five.` rather than `What information does your business need? Check five items.`;
-- early: `Student A: ask and write. Student B: answer.` rather than a paragraph containing `role-play`, `staff member`, `customer`, `swap roles` and similar untaught language.
+- `What is your city?` before `What city do you live in?`;
+- `What city?` / `Is it big?` before `What is it like?`;
+- `What information? Choose five.` before a longer professional-style instruction;
+- `Student A: ask and write. Student B: answer.` before language such as `role-play`, `staff member`, `customer` or `swap roles`.
 
-The objective is not bad English. The objective is **controlled English with the smallest possible distance from structures Spanish-speaking beginners can already process**.
+The goal is controlled English with the smallest possible distance from structures a Spanish-speaking beginner can already process.
 
-### Instruction vocabulary
+### Stable instruction bank
 
-Task instructions should recycle a small stable bank of verbs once they are established, for example:
+Once an instruction verb/frame is established, reuse it instead of adding synonyms for variety. Typical early items include:
 
-`read · listen · look · match · complete · find · write · work in pairs · ask · answer · spell · say · guess`
+`read · listen · look · match · complete · find · write · choose · work in pairs · ask · answer · spell · say · guess`
 
-Do not replace a known task verb with a synonym for stylistic variety. Early A1 does not need lexical variety in instructions.
+Short fragments are acceptable when they reduce language load without ambiguity, for example `Capital letter?`, `What information?` or `Form complete?`.
 
-Short fragments are acceptable when they reduce language load:
+Outside the lesson target, the preferred number of new learner-facing support words is **zero**. Authenticity never justifies a hidden vocabulary syllabus.
 
-- `What information?`
-- `Capital letter?`
-- `Student A: ask and write.`
-- `Form complete?`
+## 3. Context and evidence
 
-### Support-language budget
+Target language should first appear in meaningful context: a conversation, reading, listening, profile, message, form, schedule, map, ticket, menu, review, real-world interface or another recognizable situation.
 
-Outside the lesson target, the preferred number of new learner-facing support words is **zero**. When that is impossible, keep the number extremely small and make each new word transparent or visually supported.
+The context must do pedagogical work. It should contain the examples learners need to inspect rather than serving as decoration.
 
-A real-world task does not justify a hidden vocabulary syllabus. Authenticity comes from the situation and artifact, not from filling the page with authentic professional terminology.
+Use one strong source of evidence when one is sufficient. Do not repeat identical information in a dialogue, form, table and caption merely to make the page feel complete.
 
-## 3. Evidence comes before explanation
+In early A1, surrounding language inside the context must also respect the cumulative language rule.
 
-Useful evidence can come from a conversation, reading, listening, profile, message, form, schedule, map, review, menu, ticket, registration screen or another recognizable situation.
+## 4. Discovery questions
 
-The context must do pedagogical work. It should contain the examples students need to inspect, not simply decorate the page.
+Discovery questions are explicit, evidence-based and as simple as the learner's current English allows.
 
-Use **one strong source of evidence when one is enough**. Do not duplicate the same information in a dialogue and a completed form merely to make the context look more realistic.
-
-In early A1, the evidence itself should also respect the language-load rule. Context may introduce the current target and a very small number of necessary context words, but it should recycle familiar grammar and sentence frames around them.
-
-## 4. Explicit discovery questions
-
-Students should be directed toward the relevant evidence with the **simplest language available at that point in the book**.
-
-Later A1 questions may look like:
+Later A1 may use questions such as:
 
 - Which form goes with **I**?
 - What comes first in the question?
 - Which words have capital letters?
-- Compare the two examples. What changes?
-- Which words describe a person or place?
+- Compare the examples. What changes?
 
-In the first units, prefer even more reduced forms when needed:
+In the first units, reduced wording may be better:
 
 - `I: am, is or are?`
 - `Name: capital letter?`
 - `Email: capital letter?`
 - `What question is for the country?`
 
-Questions should be evidence-based and sequenced. Do not add sophisticated metalanguage simply to make Guided Discovery sound academic.
+Do not introduce sophisticated metalanguage simply to make Guided Discovery sound academic.
 
 ## 5. Minimal sufficient scaffolding
 
-A1 learners need support, but support must earn its space.
+Add support only when it makes the intended discovery or task possible.
 
-Add scaffolding when it reduces cognitive load or makes the intended discovery possible. Remove it when it merely repeats information, gives away an answer, or crowds the page.
+Remove support when it:
 
-The target is **minimal sufficient scaffolding**, not minimal teaching and not maximal prompting.
+- repeats visible evidence;
+- gives away the answer unnecessarily;
+- creates page crowding;
+- introduces more language than the task itself.
 
-Language simplicity is part of scaffolding. A task with a simple cognitive demand can become difficult if its instruction introduces several new words or an untaught English construction.
+A simple cognitive task can become difficult because of a complex instruction. Language simplicity is part of scaffolding.
 
-## 6. Short-exercise learning cycle
+## 6. Controlled and communicative practice
 
-Several short exercises are preferred when they form one connected learning sequence:
+A1 learners still need short controlled practice before freer use. Useful formats include choosing, matching, completing, ordering, categorizing, correcting and short transformations.
 
-1. encounter contextualized language;
-2. notice relevant examples;
-3. analyze with explicit questions;
-4. clarify with a concise rule/table/grouping when useful;
-5. practice one manageable point;
-6. compare/check with a partner when useful;
-7. use the language communicatively;
-8. transfer it to a believable situation.
+Several short exercises are preferred when they form one connected progression rather than unrelated worksheet items.
 
-Stages may be combined inside one exercise. The important feature is the progression, not the number of boxes or activities.
+Pairwork should add genuine value through retrieval, comparison, information exchange, checking, decision-making or rehearsal. Do not add pairwork when both students merely read identical answers.
 
 ## 7. Lesson-letter roles
 
 ### Lesson A — Grammar and/or Vocabulary
 
-Introduce core language in context, guide noticing/analysis, clarify concisely, provide controlled practice and finish with a short communicative use. Do not begin and end with grammar explanation alone.
+Introduce core language in context, guide noticing, clarify concisely, provide controlled practice and finish with short communicative use.
 
 ### Lesson B — Reading/Listening with Vocabulary
 
-The receptive text/audio carries the lesson. Vocabulary supports comprehension and later discussion. Guided Discovery may focus on useful words, phrases or patterns inside the input without displacing the receptive skill.
+The receptive text/audio carries the lesson. Vocabulary supports comprehension and later use without displacing the receptive skill.
 
 ### Lesson C — Grammar and/or Vocabulary
 
-Use the same discovery philosophy as Lesson A with a different context or composition. Avoid mechanical repetition of the same page structure.
+Use the same discovery philosophy as Lesson A with a different context/composition. Avoid mechanically repeating the same page pattern.
 
-### Lesson D — Speaking or Writing through real situations
+### Lesson D — Speaking or Writing through a real situation
 
-Prepare students for a productive outcome with a role, reason to communicate, information to obtain/give, a functional artifact when useful, and a concrete result.
+Prepare learners for a productive outcome with a role, reason to communicate, information to obtain/give, a functional artifact when useful and a concrete result.
 
-The final task should feel like accomplishing something, not merely producing a target form for the teacher.
+**Real-world complexity must not become language complexity.** A sophisticated situation may be represented through photography, labels and artifacts while the printed English remains extremely controlled.
 
-**Real-world complexity must not become language complexity.** A realistic situation can be represented with photographs, forms, labels and roles while the printed English remains extremely controlled.
+## 8. Real-world artifacts
 
-## 8. Lesson 1D canonical application
+Forms, chats, maps, schedules, tickets, menus, reviews and similar interfaces must be functional. Learners should read, interpret, complete, respond to or use them.
 
-**LET’S FILL A FORM!** uses a simple hotel/service interaction and then a student-created gym, hotel, English school or club context.
+Use only as much real-world terminology as the learner can currently process. Authenticity comes from the situation and function, not from reproducing every word a real business or app would use.
 
-The preferred sequence is:
+## 9. Back-of-book practice
 
-1. students read a short receptionist conversation using language from Lessons 1A–1C plus the new personal-information words;
-2. they identify the questions for first name, last name, country, city, phone number and email;
-3. they notice capital letters in names, cities, countries, the first word of a sentence and **I**;
-4. they practice capitalization briefly;
-5. they select a simple place and select which personal information to ask for;
-6. Student A asks the familiar questions and writes the answers in a form;
-7. Student B answers and spells the name when necessary;
-8. students change who asks and writes;
-9. they check the form with very short prompts.
+Grammar Reference/Practice and Vocabulary Practice provide deeper consolidation than fits comfortably in a two-page lesson.
 
-The form is the product of the interaction. Do not add professional terminology such as `registration`, `staff member`, `customer`, `guest`, `member`, `check-in procedure` or similar language unless it has been intentionally taught.
+Grammar practice should move from familiar examples to concise clarification and practice. Vocabulary practice should recycle vocabulary through recognition, classification, association, contextual use and purposeful pairwork where useful.
 
-## 9. Pairwork
+## 10. Cumulative language audit
 
-Pairwork supports both thinking and communication. Students may compare discoveries, justify a choice, check a pattern, exchange missing information, rehearse, role-play or verify a final product.
+Before approving newly authored material, compare every learner-facing word/construction with the actual preceding Horizons pages.
 
-The methodology may be sophisticated even when the learner-facing instruction is not. For early A1, the printed instruction can simply say `Work in pairs. Student A: ask. Student B: answer.`
+For each non-target item ask:
 
-Avoid pairwork where both learners simply read identical answers with no comparison, decision, retrieval or information gap.
+- Has the learner already seen this exact word/frame?
+- Can an earlier wording do the same job?
+- Is it a transparent Spanish cognate?
+- Is its meaning obvious from the image/artifact?
+- Am I adding a native-English collocation only because it sounds better?
+- Does the learner need this English to learn the target, or only to understand my instruction?
 
-## 10. Real-world artifacts
+If it exists only for the instruction, simplify the instruction.
 
-Forms, chats, maps, schedules, tickets, menus, reviews and similar interfaces must be functional.
+Do not treat teacher knowledge, a general CEFR A1 list or vocabulary from future units as prior teaching. The relevant language is what Horizons has actually taught up to that page.
 
-Students should read, interpret, complete, respond to or use the artifact. Authentic appearance alone is not enough.
+## 11. Authoring approval test
 
-Do not reproduce all of the terminology a real business would use. The artifact should be **authentic enough to create the situation, simplified enough to fit the learner's current language**.
-
-## 11. Controlled practice and back-of-book practice
-
-Guided Discovery does not remove controlled practice. A1 learners still need short choosing, matching, completing, ordering, categorizing, correcting or transformation tasks before freer use.
-
-Grammar Reference/Practice and Vocabulary Practice provide deeper consolidation than can comfortably fit in the two-page lesson.
-
-Grammar Reference/Practice should move from familiar examples to concise clarification and practice. Vocabulary Practice should recycle vocabulary through recognition, classification, association, contextual use and pairwork where useful.
-
-## 12. Cumulative language audit
-
-Before approving **newly authored** material, audit every learner-facing word and construction against the pages that come before it.
-
-For each non-target item, ask:
-
-- Has the learner already seen this exact word or frame?
-- Can I reuse an earlier wording instead?
-- Is this a transparent Spanish cognate?
-- Is its meaning obvious from the image or artifact?
-- Am I introducing a native-English collocation only because it sounds better to me?
-- Does the student need this English to learn the lesson target, or only to understand my instruction?
-
-If the last answer is “only to understand my instruction,” simplify the instruction.
-
-Do **not** count teacher knowledge, CEFR-wide A1 vocabulary or words that will appear in later units as prior teaching. The relevant vocabulary is what this book has actually taught up to that page.
-
-## 13. Authoring test
-
-Before approving a lesson, answer:
+Before approving a lesson, verify:
 
 1. Where does the learner first meet the target language in context?
 2. What exact evidence can the learner inspect?
-3. What question directs attention to the intended pattern/use?
-4. Is the scaffolding necessary, or is any of it redundant?
+3. What short question directs attention to the intended pattern/use?
+4. Is every scaffold necessary?
 5. Where is the discovery clarified?
 6. What controlled task lets the learner test it?
 7. Where does pairwork add genuine value?
-8. What does the learner ultimately accomplish with the language?
-9. For Lesson D, what real situation makes the productive outcome necessary?
-10. Which learner-facing words or constructions are new on this page?
-11. Are those new items target language, transparent cognates or visually unavoidable?
-12. Did I make any sentence more idiomatic at the cost of making it less accessible to a Spanish-speaking beginner?
+8. What does the learner ultimately accomplish?
+9. Which learner-facing words/constructions are new on this page?
+10. Are new non-target items genuinely necessary and accessible?
+11. Did any rewrite become more idiomatic but less transparent to a Spanish-speaking beginner?
 
-If the evidence is insufficient, add support. If the page repeats the same evidence or gives away the discovery unnecessarily, remove support. If the instruction creates unnecessary language load, rewrite it with already-taught English.
-
-## 14. Priority rule
-
-When page density, visual novelty or an existing prototype composition conflicts with the learning sequence, **the pedagogy wins**.
-
-When natural native-like phrasing conflicts with the deliberate early-A1 language progression, **the progression wins**.
-
-When pedagogy can be preserved with less duplication, fewer untaught words and clearer evidence, choose the simpler version.
+When natural native-like phrasing conflicts with the deliberate early-A1 progression, **the progression wins**.
