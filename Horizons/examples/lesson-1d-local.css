@@ -61,7 +61,7 @@
 
 /* Page 12 — real situation, but with Unit 1 language load. */
 /* Keep the complete continuation-page flow below the 1D continuation tab. */
-.l1d-page--2 .hz-exercises { padding-top: 27mm !important; }
+.l1d-page--2 .hz-exercises { padding-top: 9mm !important; }
 .l1d-page--2 .l1d-business-stage { padding-top: 8mm !important; }
 .l1d-page--2 .l1d-business-option__photo,
 .l1d-page--2 .l1d-business-option__photo .hz-photo-placeholder { height: 24mm !important; min-height: 24mm !important; }
