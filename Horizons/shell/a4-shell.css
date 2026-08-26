@@ -1,7 +1,4 @@
 @import url("../design-system/components.css");
-@import url("../design-system/editorial-layouts.css");
-@import url("../design-system/canonical-refinements.css");
-@import url("../design-system/guardrails.css");
 
 /* Lesson-scoped styles are colocated with their lesson masters in examples/. */
 @import url("../examples/lesson-1a-local.css");
