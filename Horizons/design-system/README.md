@@ -21,9 +21,11 @@ Start with `HANDOFF.md`. It defines authority order and the minimum resume check
 
 Do not put lesson-specific selectors, one-off fixes, asset filenames, crop positions, image prompts or content corrections in `design-system/`.
 
-Those belong in `../production/` and must remain explicitly scoped. Current examples include Unit 1 compatibility overrides, lesson image mappings and lesson-specific prompt sheets.
+Lesson-specific styling belongs directly in the corresponding lesson HTML under `../examples/`, scoped to that lesson. Final raster assets belong in `../Images/` and should be referenced directly by the lesson that uses them.
 
-This separation prevents a local lesson fix from silently changing unrelated lessons and keeps the canonical system small enough to audit.
+Image-generation prompts and temporary art-direction notes are **not repository files by default**. Keep them in the working conversation unless the author explicitly asks for them to be saved.
+
+Do not create a separate `production/`, `staging/` or override folder for lesson-specific work. This keeps each lesson’s appearance inspectable from the lesson itself and prevents a second hidden styling layer from becoming authoritative.
 
 ## Core invariants
 
@@ -44,10 +46,12 @@ Horizons may move visually between hospitality, travel, retail, fitness, transpo
 
 ## Architecture rule
 
-Before adding a new rule, ask whether it is:
+Before adding a new rule or file, ask whether it is:
 
-1. **Reusable across lessons** → design system.
-2. **Specific to a unit/lesson/asset** → `../production/`.
-3. **Already expressed elsewhere** → do not duplicate it; link to the existing source of truth.
+1. **Reusable across lessons** → `design-system/`.
+2. **Specific to one lesson** → the corresponding lesson HTML in `examples/`.
+3. **A final raster asset** → `Images/`.
+4. **A prompt or temporary art-direction note** → keep it outside the repository unless explicitly requested.
+5. **Already expressed elsewhere** → do not duplicate it; link to the existing source of truth.
 
-If two files appear to govern the same behavior differently, resolve the contradiction instead of adding a third override.
+If two files appear to govern the same behavior differently, resolve the contradiction instead of adding another override layer.
