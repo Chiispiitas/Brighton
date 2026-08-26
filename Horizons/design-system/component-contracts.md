@@ -130,11 +130,13 @@ Use restrained focus treatment for grammar/pronunciation when explicit clarifica
 <div class="hz-go-to">Grammar Reference · page ---</div>
 ```
 
-`NEW WORDS` is a special recurring pedagogical cue inherited from the original book, not ordinary metadata. Whenever a lesson explicitly introduces new lexical items, keep the `.hz-new-words` cue visible. Its canonical treatment includes the small sparkle token supplied by CSS and a compact gamified badge so it reads more like **NEW!** than like a quiet caption.
+`NEW WORDS` is a recurring pedagogical cue inherited from the original book. Keep it visible whenever a lesson explicitly introduces new lexical items.
 
-Do not manually insert an emoji or duplicate sparkle icon in lesson markup; the component supplies it consistently. This cue is a deliberate exception to the general rule against decorative pills because it has a repeated teaching function and a strong identity in the source book.
+Its treatment is deliberately simple: **plain NEW WORDS text plus a small sparkle icon**. It is not a badge, pill, chip, box, card or filled label. Do not give it a background, border, enclosing shape or container padding. The sparkle is supplied consistently by CSS, so lesson markup should not duplicate it manually.
 
-Other ordinary labels should remain restrained and should not be converted into decorative pills/cards.
+The normal rule against decorative pills applies without exception.
+
+Other ordinary labels should remain equally restrained.
 
 ## 10. Real-world UI
 
