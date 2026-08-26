@@ -15,6 +15,8 @@ Read:
 
 `GUIDED-DISCOVERY.md` defines the book's **primary teaching methodology**: contextualized language input, explicit noticing/analysis questions, clarification after discovery, short controlled practice, pairwork, and transfer into meaningful real-world use.
 
+`STYLE-REFINEMENTS.md` contains permanent production guardrails for structural uniformity, legibility, content economy, density control, and visual consistency.
+
 ## Canonical status
 
 **The current Stage 3 design system plus the latest canonical refinements is the approved style for the Student's Book. Guided Discovery is the canonical pedagogical method that the design must support.**
@@ -96,6 +98,22 @@ Canonical examples:
 - alphabet pairs use stronger uppercase color and faded lowercase color
 
 See `STYLE-REFINEMENTS.md` and `canonical-refinements.css`.
+
+## Content economy and page density
+
+Horizons uses **minimal sufficient scaffolding**. A page should not become crowded because the same information is repeated in multiple formats or because every discovery prompt is surrounded by unnecessary answer choices and hints.
+
+Permanent production rules:
+
+- do not duplicate the same information in a dialogue, completed form, table, caption or interface unless comparison between those formats is an explicit task;
+- do not add `a / b`, `Yes / No`, word banks or hints when the visible context already gives an A1 learner enough evidence to answer;
+- one strong model is preferable to two redundant models;
+- real-world artifacts must be used by the learner, not included merely for authenticity;
+- when a spread feels dense, audit and remove redundant content **before** shrinking type or squeezing spacing;
+- normal student-facing text must remain comparable in size to neighboring lessons;
+- a lesson that looks noticeably more crowded or visually smaller than neighboring lessons is not production-ready.
+
+This rule is defined in detail in `STYLE-REFINEMENTS.md` and works together with the A1 legibility-floor tokens in `tokens.css`.
 
 ## Lesson tab hierarchy
 
@@ -180,13 +198,15 @@ Use free licensed raster photography or generated raster imagery where needed. F
 10. Do not revive discarded Stage 4, legacy-compatibility, rainbow/dashboard or card-heavy directions without explicit approval.
 11. Do make the context, discovery questions, pairwork and final real-world outcome visually easy to follow.
 12. When pedagogy and visual novelty conflict, Guided Discovery takes priority.
+13. Do remove redundant models, forms, hints and answer scaffolds before compressing the page.
+14. Do compare each new spread against neighboring lessons for density, whitespace and apparent text size before approval.
 
 ## Files
 
 - `HANDOFF.md` — current resume document for future chats
 - `CANONICAL-STYLE.md` — normative visual philosophy and lesson architecture
 - `GUIDED-DISCOVERY.md` — canonical teaching methodology and real-situation task model
-- `STYLE-REFINEMENTS.md` — controlled repetition and micro-variety rules
+- `STYLE-REFINEMENTS.md` — structural uniformity, legibility, content economy and micro-variety rules
 - `tokens.css` — palette, unit colors, typography, spacing and geometry
 - `components.css` — core lesson/exercise mechanics, media and focus areas
 - `editorial-layouts.css` — large-scale article/shape compositions
@@ -207,6 +227,8 @@ Use free licensed raster photography or generated raster imagery where needed. F
 - language normally appears in context before explicit rule explanation
 - explicit discovery/analysis questions are part of lesson design
 - pairwork is a core learning mechanism
+- use minimal sufficient scaffolding; avoid redundant models, artifacts, choices and hints
+- resolve crowding by removing redundancy/recomposing before shrinking student-facing type
 - Vocabulary Practice and Grammar Reference/Practice at the back and activity-led
 - American English
 - syllabus immutable unless explicitly changed
