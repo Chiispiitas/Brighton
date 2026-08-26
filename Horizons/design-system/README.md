@@ -21,11 +21,11 @@ Start with `HANDOFF.md`. It defines authority order and the minimum resume check
 
 Do not put lesson-specific selectors, one-off fixes, asset filenames, crop positions, image prompts or content corrections in `design-system/`.
 
-Lesson-specific styling belongs directly in the corresponding lesson HTML under `../examples/`, scoped to that lesson. Final raster assets belong in `../Images/` and should be referenced directly by the lesson that uses them.
+Lesson-specific styling belongs **with the corresponding lesson under `../examples/`**, either inline in the lesson HTML or in an adjacent, clearly named lesson-scoped stylesheet such as `lesson-1b-local.css`. Final raster assets belong in `../Images/` and should be referenced directly by the lesson styling that uses them.
 
 Image-generation prompts and temporary art-direction notes are **not repository files by default**. Keep them in the working conversation unless the author explicitly asks for them to be saved.
 
-Do not create a separate `production/`, `staging/` or override folder for lesson-specific work. This keeps each lesson’s appearance inspectable from the lesson itself and prevents a second hidden styling layer from becoming authoritative.
+Do not create a separate `production/`, `staging/` or override directory for lesson-specific work. This keeps each lesson’s implementation close to its master instead of creating a second hidden project layer.
 
 ## Core invariants
 
@@ -49,9 +49,9 @@ Horizons may move visually between hospitality, travel, retail, fitness, transpo
 Before adding a new rule or file, ask whether it is:
 
 1. **Reusable across lessons** → `design-system/`.
-2. **Specific to one lesson** → the corresponding lesson HTML in `examples/`.
+2. **Specific to one lesson** → keep it with that lesson in `examples/`, inline or in an adjacent lesson-scoped stylesheet.
 3. **A final raster asset** → `Images/`.
 4. **A prompt or temporary art-direction note** → keep it outside the repository unless explicitly requested.
 5. **Already expressed elsewhere** → do not duplicate it; link to the existing source of truth.
 
-If two files appear to govern the same behavior differently, resolve the contradiction instead of adding another override layer.
+If two files appear to govern the same behavior differently, resolve the contradiction instead of adding another override directory.
