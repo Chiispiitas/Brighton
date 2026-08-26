@@ -4,87 +4,62 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Horizons A1 — Student's Book</title>
+  <style>
+    html,
+    body {
+      margin: 0;
+      padding: 0;
+      background: #ececec;
+    }
+
+    #hz-book {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      min-width: 230mm;
+      margin: 0;
+      padding: 0;
+    }
+
+    .hz-book-lesson {
+      display: block;
+      width: 230mm;
+      height: 614mm;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      border: 0;
+      background: transparent;
+    }
+
+    @media print {
+      html,
+      body,
+      #hz-book {
+        background: #fff;
+      }
+    }
+  </style>
 </head>
-<body class="hz-book">
+<body>
   <main id="hz-book"></main>
 
+  <!-- Classic local script: works when this file is opened directly via file://. -->
+  <script src="./Lessons/manifest.js"></script>
   <script>
     (() => {
-      const repository = "Chiispiitas/Brighton";
-      const branch = "main";
-      const lessonsPath = "Horizons/A1/Lessons";
-      const lessonPattern = /^\d+[A-Z]\.html$/i;
       const book = document.getElementById("hz-book");
-      const loadedStylesheets = new Set();
-      const collator = new Intl.Collator("en", { numeric: true, sensitivity: "base" });
+      const lessons = Array.isArray(window.HORIZONS_A1_LESSONS)
+        ? window.HORIZONS_A1_LESSONS
+        : [];
 
-      function addStylesheet(href, media) {
-        if (loadedStylesheets.has(href)) return;
-        loadedStylesheets.add(href);
-
-        const link = document.createElement("link");
-        link.rel = "stylesheet";
-        link.href = href;
-        if (media) link.media = media;
-        document.head.appendChild(link);
-      }
-
-      function addInlineStyles(doc, sourceUrl, lessonName) {
-        doc.querySelectorAll("head link[rel='stylesheet']").forEach((sourceLink) => {
-          const href = sourceLink.getAttribute("href");
-          if (!href) return;
-          addStylesheet(new URL(href, sourceUrl).href, sourceLink.media || "");
-        });
-
-        doc.querySelectorAll("head style").forEach((sourceStyle, index) => {
-          const style = document.createElement("style");
-          style.dataset.lesson = lessonName;
-          style.dataset.sourceStyle = String(index + 1);
-          style.textContent = sourceStyle.textContent;
-          document.head.appendChild(style);
-        });
-      }
-
-      async function loadLesson(item) {
-        const sourceUrl = item.download_url;
-        if (!sourceUrl) return;
-
-        const response = await fetch(sourceUrl);
-        if (!response.ok) throw new Error(`Could not load ${item.name}.`);
-
-        const html = await response.text();
-        const doc = new DOMParser().parseFromString(html, "text/html");
-        addInlineStyles(doc, sourceUrl, item.name);
-
-        const pages = [...doc.querySelectorAll("article.hz-page")];
-        pages.forEach((page) => {
-          const imported = document.importNode(page, true);
-          imported.dataset.lessonSource = item.name;
-          book.appendChild(imported);
-        });
-      }
-
-      async function assembleBook() {
-        const apiUrl = `https://api.github.com/repos/${repository}/contents/${lessonsPath}?ref=${branch}`;
-        const response = await fetch(apiUrl, { headers: { Accept: "application/vnd.github+json" } });
-        if (!response.ok) throw new Error("Could not read the Lessons folder.");
-
-        const entries = await response.json();
-        const lessons = entries
-          .filter((item) => item.type === "file" && lessonPattern.test(item.name))
-          .sort((a, b) => collator.compare(a.name, b.name));
-
-        for (const lesson of lessons) {
-          await loadLesson(lesson);
-        }
-      }
-
-      assembleBook().catch((error) => {
-        console.error(error);
-        const message = document.createElement("p");
-        message.textContent = "The Student's Book could not be assembled.";
-        message.style.cssText = "font: 16px sans-serif; margin: 24px;";
-        document.body.appendChild(message);
+      lessons.forEach((filename) => {
+        const frame = document.createElement("iframe");
+        frame.className = "hz-book-lesson";
+        frame.src = `./Lessons/${filename}`;
+        frame.title = `Horizons A1 ${filename.replace(/\.html$/i, "")}`;
+        frame.loading = "eager";
+        book.appendChild(frame);
       });
     })();
   </script>
