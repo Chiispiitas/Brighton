@@ -15,6 +15,14 @@ The lesson master uses the definitive lesson code as its filename. Each adjacent
 
 These pages demonstrate the system; they are **not templates that Unit 2 must copy mechanically**. New lessons preserve shared Horizons chrome while letting the lesson's actual content determine its internal composition and visual world.
 
+## Student's Book assembly
+
+`../Student's Book.html` is intentionally file-protocol safe: it can be opened directly from Windows/macOS/Linux with no local server. It stacks lesson documents without reading inside their frames.
+
+`manifest.js` is the ordered lesson index used by that assembler. Whenever a new definitive lesson master is created (for example `2A.html`), add its filename to `manifest.js` in the same change. Keep the manifest in book order.
+
+Do not make `Student's Book.html` fetch GitHub, enumerate directories, or inspect lesson-frame DOM. Browsers block those approaches under `file://`.
+
 ## Shared Base
 
 Every lesson loads the shared shell from `../../Base/shell/` and its own adjacent local stylesheet.
