@@ -1,8 +1,12 @@
 @import url("../design-system/components.css");
 @import url("../design-system/editorial-layouts.css");
 @import url("../design-system/canonical-refinements.css");
-@import url("../design-system/lesson-overrides.css");
-@import url("../design-system/lesson-1b-images.css");
+@import url("../design-system/guardrails.css");
+
+/* Transitional production compatibility layer.
+   Lesson-specific fixes and asset mappings live outside design-system/. */
+@import url("../production/unit-1-overrides.css");
+@import url("../production/lesson-1b-images.css");
 
 /* Horizons — editorial HTML5/CSS A4 shell.
    One semantic .hz-page = one print page.
