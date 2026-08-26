@@ -9,7 +9,7 @@ This file is intentionally short. It tells a new work session what to read and w
 Read and apply these in order:
 
 1. `CANONICAL-STYLE.md` — normative visual language, content-led visual worlds, lesson architecture and permanent layout rules.
-2. `GUIDED-DISCOVERY.md` — normative pedagogy and lesson-authoring method.
+2. `GUIDED-DISCOVERY.md` — normative pedagogy, **early-A1 language-load progression**, Spanish-bridge authoring rules and lesson-authoring method.
 3. `STYLE-REFINEMENTS.md` — newer, more specific production refinements and QA rules. When a specific refinement conflicts with an older illustrative example, the refinement wins.
 4. `component-contracts.md` — semantic HTML/component usage.
 5. `asset-policy.md` — image sourcing, generation and prompt construction.
@@ -27,6 +27,10 @@ Do not create a separate `production/`, `staging/` or override directory. Lesson
 - `Horizons A1/` remains frozen; active book work belongs in `Horizons/`.
 - Guided Discovery: context → noticing → guided analysis → clarification → controlled practice → communicative use → real-world transfer.
 - Lesson D culminates in a believable productive situation with a role, purpose, information exchange and concrete outcome.
+- **Early A1 learner-facing English follows the cumulative language actually taught by Horizons, not general CEFR assumptions.**
+- In the first units, reuse exact previously taught wording before introducing synonyms or natural collocations.
+- When support language is unavoidable, prefer transparent Spanish cognates, visually supported nouns and Spanish-parallel structures. Borderline unnatural but clear English is acceptable; unnecessary native-like sophistication is not.
+- Instructions must not become a hidden vocabulary syllabus. Outside the lesson target, the preferred new support-language count is zero.
 - Normal pages use one dominant unit color; avoid decorative multicolor systems unless a task genuinely requires category distinction.
 - Photography, crop, typography, scale and whitespace create visual energy. Generic cards, pills, decorative gradients and ghosted background words do not.
 - **Horizons has no default educational/school visual theme.** Image art direction follows the actual world of the lesson; book consistency comes from the design system rather than repeated subject matter.
@@ -34,6 +38,20 @@ Do not create a separate `production/`, `staging/` or override directory. Lesson
 - Repeated items in one visual family share geometry and alignment.
 - Student-facing text never gets shrunk below the A1 legibility floors in `tokens.css` merely to make a page fit.
 - Remove redundant content before reducing type or squeezing spacing.
+
+## Early-A1 language audit
+
+Before approving newly authored content in the first units, compare it directly with the learner-facing language on the preceding pages.
+
+Every new non-target word or construction should be one of these:
+
+1. already taught or already used;
+2. a transparent Spanish cognate/near-cognate;
+3. an unavoidable noun made obvious by an image or artifact.
+
+Otherwise simplify it.
+
+Do not “correct” deliberately transparent wording into a more idiomatic English construction simply because the new version sounds more natural. Examples such as `What is your city?`, `What information?`, `Student A: ask and write.` and short fragments are valid early-A1 authoring choices under this system.
 
 ## Repeated-image family rule
 
@@ -80,6 +98,6 @@ Horizons/
 
 ## Resume checklist
 
-Before approving a spread, verify: source fidelity, exercise order, Guided Discovery flow, readable physical type, content economy, repeated-family alignment, consistent shared chrome, sufficient whitespace, functional real-world artifacts, **credible content-led imagery**, and visual parity with neighboring lessons.
+Before approving a spread, verify: source fidelity, exercise order, Guided Discovery flow, **cumulative language load against earlier pages**, readable physical type, content economy, repeated-family alignment, consistent shared chrome, sufficient whitespace, functional real-world artifacts, credible content-led imagery, and visual parity with neighboring lessons.
 
 If a layout problem can be solved by recomposition, cropping, removing redundancy or using an existing reusable helper, do that before adding another exception rule.
