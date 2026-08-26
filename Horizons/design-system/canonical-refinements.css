@@ -27,6 +27,50 @@
   text-align: center;
 }
 
+/* ---------- NEW WORDS cue ----------
+   This is a recurring pedagogical identity element inherited from the original
+   book, not an ordinary metadata label. Keep it compact, playful and highly
+   scannable: sparkle token + NEW WORDS text. */
+.hz-new-words {
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: .8mm !important;
+  min-height: 5.8mm;
+  padding: .55mm 1.35mm .55mm .65mm !important;
+  border: .3mm solid color-mix(in srgb, var(--hz-unit) 44%, #fff) !important;
+  border-radius: 999px !important;
+  background: color-mix(in srgb, var(--hz-unit) 10%, #fff) !important;
+  color: var(--hz-unit-dark) !important;
+  font-size: 7pt !important;
+  font-weight: var(--hz-fw-black) !important;
+  line-height: 1 !important;
+  letter-spacing: .07em !important;
+  text-transform: uppercase !important;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+
+.hz-new-words::before {
+  content: "✦" !important;
+  display: grid !important;
+  place-items: center !important;
+  width: 4.35mm;
+  height: 4.35mm;
+  flex: 0 0 4.35mm;
+  border-radius: 50%;
+  background: var(--hz-unit);
+  color: #fff;
+  font-size: 7pt;
+  font-weight: var(--hz-fw-black);
+  line-height: 1;
+  letter-spacing: 0;
+  box-shadow: inset 0 0 0 .25mm rgb(255 255 255 / 22%);
+}
+
+/* Current markup does not need to carry a decorative icon node; the component
+   supplies it consistently. Keep any legacy icon child hidden to avoid doubles. */
+.hz-new-words__icon { display: none !important; }
+
 /* ---------- Continuation chrome ----------
    New lessons should use .hz-continuation. Current Unit 1 legacy aliases are
    retained only so existing prototypes render with the same shared chrome. */
