@@ -1,42 +1,44 @@
-# Horizons lesson masters
+# Horizons A1 lesson masters
 
-This folder contains the current approved lesson masters and their lesson-scoped CSS.
+This folder contains the current A1 lesson masters and their lesson-scoped CSS.
 
 ## Current production references
 
-Use these Unit 1 lessons as the practical precedent for new work:
+Use these Unit 1 lessons as practical precedents for new A1 work:
 
 - `lesson-1a-canonical-prototype.html`
 - `lesson-1b-canonical-prototype.html`
 - `lesson-1c-canonical-prototype.html`
 - `lesson-1d-canonical-prototype.html`
 
-Each adjacent `lesson-*-local.css` file contains composition, asset mappings, crop tuning or corrections that are specific to that lesson.
+Each adjacent `lesson-*-local.css` file contains composition, asset mappings, crop tuning or corrections specific to that lesson.
 
-These pages demonstrate the system; they are **not templates that Unit 2 must copy mechanically**. New lessons should preserve shared Horizons chrome while letting the lesson's actual content determine its internal composition and visual world.
+These pages demonstrate the system; they are **not templates that Unit 2 must copy mechanically**. New lessons preserve shared Horizons chrome while letting the lesson's actual content determine its internal composition and visual world.
 
-## Language precedent
+## Shared Base
 
-For newly authored early-A1 learner-facing language, compare directly with what students have already seen.
+Every lesson loads the shared shell from `../../Base/shell/` and its own adjacent local stylesheet.
 
-In Unit 1, **1A, 1B and the first page of 1C** are especially important references for the intentionally narrow, Spanish-transparent register. Later authored material must not silently assume vocabulary or collocations simply because they are broadly considered A1.
+Reusable visual behavior lives in `../../Base/design-system/components.css`. Shared pedagogy and the A1 language-load rules live in `../../Base/design-system/GUIDED-DISCOVERY.md`.
+
+For the complete authority order, start with `../../Base/design-system/HANDOFF.md`.
+
+## A1 assets
+
+Book-specific raster assets live in `../Images/`. Local lesson CSS maps and crops those assets.
+
+For newly authored early-A1 learner-facing language, compare directly with what students have already seen. In Unit 1, **1A, 1B and the first page of 1C** are especially important references for the intentionally narrow, Spanish-transparent register.
 
 ## Styling boundary
 
-Reusable cross-lesson behavior belongs in `../design-system/components.css`.
-
 Lesson-local CSS may handle:
 
-- a unique composition;
+- unique composition;
 - final image mapping;
 - crop/background position;
 - page-specific spacing needed to avoid a collision;
-- an explicit author correction that is unique to that lesson.
+- explicit author corrections unique to the lesson.
 
-Do not use lesson-local CSS to redefine shared lesson tabs, exercise numbering, `NEW WORDS`, continuation marker geometry, footer treatment or other shared chrome.
+Do not use lesson-local CSS to redefine shared lesson tabs, exercise numbering, `NEW WORDS`, continuation-marker geometry, footer treatment or other shared chrome.
 
-## Source protection
-
-Existing frozen source content changes only when the author explicitly requests it. Newly authored material must follow `../design-system/GUIDED-DISCOVERY.md` and the cumulative language audit.
-
-For the complete authority order, start with `../design-system/HANDOFF.md`.
+Existing frozen source content changes only when the author explicitly requests it.
