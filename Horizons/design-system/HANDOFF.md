@@ -1,103 +1,67 @@
 # Horizons A1 — Design System Handoff
 
-**Status: CURRENT / OPERATIONAL ENTRY POINT**
+**Status: OPERATIONAL ENTRY POINT**
 
-This file is intentionally short. It tells a new work session what to read and which rules are authoritative without duplicating the full design system.
+Use this file to resume work. Do not treat it as another rulebook.
 
 ## Authority order
 
-Read and apply these in order:
+Read these sources in order:
 
-1. `CANONICAL-STYLE.md` — normative visual language, content-led visual worlds, lesson architecture and permanent layout rules.
-2. `GUIDED-DISCOVERY.md` — normative pedagogy, **early-A1 language-load progression**, Spanish-bridge authoring rules and lesson-authoring method.
-3. `STYLE-REFINEMENTS.md` — newer, more specific production refinements and QA rules. When a specific refinement conflicts with an older illustrative example, the refinement wins.
-4. `component-contracts.md` — semantic HTML/component usage.
-5. `asset-policy.md` — image sourcing, generation and prompt construction.
-6. `tokens.css`, `components.css`, `editorial-layouts.css`, `canonical-refinements.css`, `guardrails.css` — reusable implementation.
-7. Individual lesson HTML files and adjacent lesson-scoped CSS in `../examples/` — lesson-specific composition, corrections and asset mappings.
+1. `CANONICAL-STYLE.md` — visual/structural rules.
+2. `GUIDED-DISCOVERY.md` — pedagogy and learner-language progression.
+3. `component-contracts.md` — reusable HTML/CSS semantics.
+4. `asset-policy.md` — image/audio sourcing and production.
 
-Do not create a separate `production/`, `staging/` or override directory. Lesson-specific styling stays beside the lesson master in `../examples/`. Final raster assets belong in `../Images/`. Image prompts and temporary art-direction notes stay outside the repository unless the author explicitly asks to save them.
+Implementation is intentionally small:
 
-## Non-negotiable production rules
+- `tokens.css` — colors, type, spacing and physical A1 floors;
+- `components.css` — all reusable cross-lesson CSS.
 
-- A4, print-first HTML/CSS master.
-- Two pages per lesson.
-- Numbered exercises remain one vertical sequence. Columns are allowed only inside one exercise.
-- Existing frozen source content is preserved unless the author explicitly requests a content change.
-- `Horizons A1/` remains frozen; active book work belongs in `Horizons/`.
-- Guided Discovery: context → noticing → guided analysis → clarification → controlled practice → communicative use → real-world transfer.
-- Lesson D culminates in a believable productive situation with a role, purpose, information exchange and concrete outcome.
-- **Early A1 learner-facing English follows the cumulative language actually taught by Horizons, not general CEFR assumptions.**
-- In the first units, reuse exact previously taught wording before introducing synonyms or natural collocations.
-- When support language is unavoidable, prefer transparent Spanish cognates, visually supported nouns and Spanish-parallel structures. Borderline unnatural but clear English is acceptable; unnecessary native-like sophistication is not.
-- Instructions must not become a hidden vocabulary syllabus. Outside the lesson target, the preferred new support-language count is zero.
-- Normal pages use one dominant unit color; avoid decorative multicolor systems unless a task genuinely requires category distinction.
-- Photography, crop, typography, scale and whitespace create visual energy. Generic cards, pills, decorative gradients and ghosted background words do not.
-- **Horizons has no default educational/school visual theme.** Image art direction follows the actual world of the lesson; book consistency comes from the design system rather than repeated subject matter.
-- Do not add classroom, notebook, pencil, blackboard or other school-coded imagery merely because the asset will appear in a coursebook.
-- Repeated items in one visual family share geometry and alignment.
-- Student-facing text never gets shrunk below the A1 legibility floors in `tokens.css` merely to make a page fit.
-- Remove redundant content before reducing type or squeezing spacing.
+There is no refinements/override CSS layer.
 
-## Early-A1 language audit
+## Current production precedent
 
-Before approving newly authored content in the first units, compare it directly with the learner-facing language on the preceding pages.
+For actual page behavior, compare new work with the approved Unit 1 lesson masters in `../examples/`:
 
-Every new non-target word or construction should be one of these:
+- `lesson-1a-canonical-prototype.html`
+- `lesson-1b-canonical-prototype.html`
+- `lesson-1c-canonical-prototype.html`
+- `lesson-1d-canonical-prototype.html`
 
-1. already taught or already used;
-2. a transparent Spanish cognate/near-cognate;
-3. an unavoidable noun made obvious by an image or artifact.
+Their adjacent `lesson-*-local.css` files contain lesson-specific composition, crop tuning and corrections. They are precedents, not templates to copy mechanically.
 
-Otherwise simplify it.
+For **early learner-facing language**, 1A, 1B and the first page of 1C are especially important references for the deliberately narrow, Spanish-transparent register.
 
-Do not “correct” deliberately transparent wording into a more idiomatic English construction simply because the new version sounds more natural. Examples such as `What is your city?`, `What information?`, `Student A: ask and write.` and short fragments are valid early-A1 authoring choices under this system.
+## Unit 2 workflow
 
-## Repeated-image family rule
+For each new lesson:
 
-When an exercise contains a repeated family of equal-status images:
+1. lock the syllabus focus and identify what language is genuinely new;
+2. audit what students have already met in Unit 1 and earlier Unit 2 pages;
+3. design the Guided Discovery sequence before styling;
+4. choose a real/content-led visual world for the lesson;
+5. build on shared components and keep one-off composition in lesson-local CSS;
+6. add only the assets the task needs;
+7. compare the finished spread with neighboring approved lessons for language load, physical readability and visual weight.
 
-- judge the family against the **usable page width**, not only the narrower exercise-content column after the exercise number;
-- center the family optically and mathematically;
-- avoid fixed left/right nudges that depend on one image size;
-- make images large enough that the required action/object remains immediately recognizable at physical A4 print size;
-- for a dominant multi-item family that should span the exercise lane, use the reusable `.hz-media-family--full-lane` geometry from `guardrails.css` rather than inventing a lesson-specific offset;
-- after changing image size or column count, re-check centering and crop as a family.
+## Hard boundaries
 
-A repeated media grid that appears shifted, undersized or visually weaker than neighboring lesson imagery is a layout defect.
+- A4, two pages per lesson.
+- Numbered exercises stay in one vertical lane.
+- Frozen source changes only with explicit authorization.
+- Early-A1 instructions do not become a hidden vocabulary syllabus.
+- One dominant unit color on normal lesson pages.
+- No generic school visual theme.
+- No decorative ghost text.
+- No generic card/pill system.
+- Shared chrome is not patched per lesson; local content moves around it.
+- Important learner text is never shrunk below the floors in `tokens.css` to force a page to fit.
+- Reusable rules belong in `design-system/`; lesson-specific rules stay beside the lesson in `examples/`.
+- Do not create `production/`, `staging/` or override directories.
 
-Shared crop geometry does not require every image in a family to use the same location or thematic atmosphere. If the family represents different businesses, places or contexts, let those differences remain visible.
+## Final spread check
 
-## Current repository structure
+Before calling a spread complete, verify: source fidelity, exercise order, cumulative language load, Guided Discovery evidence, readable type, content economy, functional artifacts, repeated-media crop/centering, shared chrome, whitespace, content-led imagery and parity with the surrounding lessons.
 
-```text
-Horizons/
-  README.md
-  Images/
-  design-system/
-    CANONICAL-STYLE.md
-    GUIDED-DISCOVERY.md
-    STYLE-REFINEMENTS.md
-    HANDOFF.md
-    README.md
-    tokens.css
-    components.css
-    editorial-layouts.css
-    canonical-refinements.css
-    guardrails.css
-    component-contracts.md
-    asset-policy.md
-  examples/
-    lesson-*.html
-    lesson-*-local.css
-    stage-*.html
-  shell/
-```
-
-`design-system/` contains reusable rules. `examples/` contains lesson masters and any adjacent lesson-scoped CSS. `Images/` contains final raster assets. There is no separate lesson-override directory.
-
-## Resume checklist
-
-Before approving a spread, verify: source fidelity, exercise order, Guided Discovery flow, **cumulative language load against earlier pages**, readable physical type, content economy, repeated-family alignment, consistent shared chrome, sufficient whitespace, functional real-world artifacts, credible content-led imagery, and visual parity with neighboring lessons.
-
-If a layout problem can be solved by recomposition, cropping, removing redundancy or using an existing reusable helper, do that before adding another exception rule.
+If a problem can be solved by simplifying language/content, recomposing, cropping or using an existing component, do that before adding another rule.
