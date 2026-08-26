@@ -48,6 +48,41 @@ Content density may still vary slightly between pages when necessary to preserve
 
 The current Unit 1 prototypes are normalized through `canonical-refinements.css`, which acts as the final guard against accidental drift in shared layout mechanics.
 
+## A1 legibility floor — permanent
+
+**Never solve page-fit, clipping or density problems by making student-facing language uncomfortably small.**
+
+Horizons is an A1 coursebook that students must be able to inspect, compare, underline, analyze and reuse. This is especially important for Guided Discovery: the language evidence students are expected to notice must remain physically easy to read at printed A4 size.
+
+The design tokens in `tokens.css` define the minimum physical type sizes for each role:
+
+- normal student-facing text: `--hz-fs-student-min` = **7.75pt minimum**;
+- dialogue / model language: `--hz-fs-dialogue-min` = **8pt minimum**;
+- task-support language: `--hz-fs-task-min` = **8pt minimum**;
+- authentic interface/form text: `--hz-fs-interface-min` = **7pt minimum**;
+- genuinely secondary microtext only: `--hz-fs-micro-min` = **6.5pt minimum**.
+
+These are **floors, not preferred targets**. Normal body text should usually be larger. A value below 7.75pt is not acceptable for ordinary dialogue, questions, explanations, examples, discovery prompts, practice items, pairwork language, model sentences or peer-check instructions.
+
+The 6.5–7pt range is reserved for genuinely secondary interface metadata, tiny functional labels, captions or similar material that students are not expected to read as the main learning content.
+
+### Density-resolution order
+
+When a page does not fit, use this order before reducing typography:
+
+1. remove unnecessary decorative space;
+2. reduce oversized image height or change the crop;
+3. reduce redundant margins, gaps or padding;
+4. simplify non-pedagogical geometry;
+5. recompose columns **inside the same exercise**;
+6. shorten purely decorative/interface furniture that is not source content;
+7. redistribute the activity across the two-page lesson while preserving exercise order;
+8. only then consider a very small type adjustment, and never below the role-specific floor.
+
+Do not compress one lesson into visibly smaller typography than neighboring lessons simply to keep an existing composition intact. **The composition must adapt to the content, not the content to an undersized composition.**
+
+Before accepting a lesson page, compare its body, dialogue, form, discovery and pairwork text against at least one neighboring canonical lesson at the same physical zoom/print size. If the new lesson visibly reads smaller, treat that as a layout defect.
+
 ## No translucent background words
 
 Do **not** use oversized translucent words, letters, punctuation marks or instructional phrases as decorative background elements behind lesson content.
