@@ -59,6 +59,60 @@ jobs:
 
           test -s "$BOOK_PDF"
 
+      - name: Optimize Student's Book PDF
+        shell: bash
+        run: |
+          set -euo pipefail
+
+          if ! command -v gs >/dev/null 2>&1; then
+            sudo apt-get update
+            sudo apt-get install -y ghostscript
+          fi
+
+          INPUT="$PWD/Horizons/A1/Student's Book.pdf"
+          OUTPUT="$PWD/Horizons/A1/Student's Book.optimized.pdf"
+
+          gs \
+            -sDEVICE=pdfwrite \
+            -dCompatibilityLevel=1.6 \
+            -dNOPAUSE \
+            -dQUIET \
+            -dBATCH \
+            -dDetectDuplicateImages=true \
+            -dCompressFonts=true \
+            -dSubsetFonts=true \
+            -dDownsampleColorImages=true \
+            -dColorImageDownsampleType=/Bicubic \
+            -dColorImageResolution=200 \
+            -dAutoFilterColorImages=false \
+            -dColorImageFilter=/DCTEncode \
+            -dJPEGQ=90 \
+            -dDownsampleGrayImages=true \
+            -dGrayImageDownsampleType=/Bicubic \
+            -dGrayImageResolution=200 \
+            -dAutoFilterGrayImages=false \
+            -dGrayImageFilter=/DCTEncode \
+            -dDownsampleMonoImages=true \
+            -dMonoImageResolution=300 \
+            -sOutputFile="$OUTPUT" \
+            "$INPUT"
+
+          test -s "$OUTPUT"
+          mv "$OUTPUT" "$INPUT"
+
+          PDF_BYTES="$(stat -c%s "$INPUT")"
+          PDF_MB="$(python3 - <<PY
+          size = $PDF_BYTES
+          print(f"{size / 1024 / 1024:.2f}")
+          PY
+          )"
+          echo "Optimized PDF size: ${PDF_MB} MB"
+
+          if [ "$PDF_BYTES" -ge 95000000 ]; then
+            echo "Optimized PDF is still too large for safe GitHub storage."
+            exit 1
+          fi
+
       - name: Validate assembled PDF
         shell: bash
         run: |
