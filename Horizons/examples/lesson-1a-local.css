@@ -1,0 +1,185 @@
+/* Horizons A1 — Lesson 1A scoped styles and asset mappings. */
+
+.l1a-page .hz-exercise__instruction {
+  color: var(--hz-ink) !important;
+  font-size: 8.9pt !important;
+  font-weight: var(--hz-fw-semibold) !important;
+  line-height: 1.35 !important;
+}
+
+.l1a-target {
+  color: var(--hz-unit-dark) !important;
+  font-weight: var(--hz-fw-black) !important;
+}
+
+.l1a-page .hz-new-words {
+  color: var(--hz-unit-dark) !important;
+  font-size: 7pt !important;
+  font-weight: var(--hz-fw-black) !important;
+  letter-spacing: .07em !important;
+}
+
+.l1a-grammar__title,
+.l1a-pronunciation__title {
+  color: var(--hz-unit-dark) !important;
+  font-size: 8pt !important;
+  font-weight: var(--hz-fw-black) !important;
+  letter-spacing: .065em !important;
+  line-height: 1.2 !important;
+}
+
+.l1a-page .l1a-greeting__photo,
+.l1a-page .l1a-greeting:nth-child(1) .l1a-greeting__photo,
+.l1a-page .l1a-greeting:nth-child(2) .l1a-greeting__photo,
+.l1a-page .l1a-greeting:nth-child(3) .l1a-greeting__photo,
+.l1a-page .l1a-greeting:nth-child(4) .l1a-greeting__photo {
+  width: 27mm;
+  height: 27mm;
+  border: .45mm solid var(--hz-unit);
+  border-radius: 50%;
+  clip-path: none;
+}
+
+.l1a-page .l1a-identity-copy,
+.l1a-page .l1a-exchange,
+.l1a-page .l1a-exchange:nth-of-type(1),
+.l1a-page .l1a-exchange:nth-of-type(2),
+.l1a-page .l1a-exchange:nth-of-type(3),
+.l1a-page .l1a-exchange:nth-of-type(4) {
+  background: #fff !important;
+}
+
+.l1a-page .l1a-exchange,
+.l1a-page .l1a-exchange:nth-of-type(1),
+.l1a-page .l1a-exchange:nth-of-type(2),
+.l1a-page .l1a-exchange:nth-of-type(3),
+.l1a-page .l1a-exchange:nth-of-type(4) {
+  margin-right: 0;
+  margin-left: 0;
+  border: .3mm solid var(--hz-line);
+  border-left: 1mm solid var(--hz-unit);
+}
+
+.l1a-page .l1a-exchange {
+  color: var(--hz-ink) !important;
+  font-size: 7.7pt !important;
+  line-height: 1.3 !important;
+}
+
+.l1a-page .l1a-pronunciation { background: #fff !important; }
+
+.l1a-page .l1a-alphabet > span {
+  display: inline-block;
+  color: color-mix(in srgb, var(--hz-unit) 46%, var(--hz-paper));
+}
+
+.l1a-page .l1a-alphabet > span::first-letter { color: var(--hz-unit); }
+
+.l1a-page--2 .hz-exercises { counter-reset: l1a-exercise 4; }
+.l1a-page--2 .hz-exercises > .hz-exercise { counter-increment: l1a-exercise; }
+
+.l1a-page--2 .hz-exercises > .hz-exercise > .hz-exercise-number {
+  color: var(--hz-unit) !important;
+  font-size: 0 !important;
+  font-weight: var(--hz-fw-black) !important;
+  line-height: .9 !important;
+  letter-spacing: -.05em !important;
+}
+
+.l1a-page--2 .hz-exercises > .hz-exercise > .hz-exercise-number::after {
+  content: counter(l1a-exercise);
+  color: var(--hz-unit) !important;
+  font-size: 18pt !important;
+  font-weight: var(--hz-fw-black) !important;
+  line-height: .9 !important;
+  letter-spacing: -.05em !important;
+}
+
+.l1a-page--2 .l1a-name-options,
+.l1a-page--2 .l1a-profile__form {
+  color: var(--hz-ink) !important;
+  font-size: 7.6pt !important;
+  line-height: 1.28 !important;
+}
+
+.l1a-page--2 .l1a-name-options__number {
+  color: var(--hz-unit-dark) !important;
+  font-size: 7.6pt !important;
+  font-weight: var(--hz-fw-black) !important;
+}
+
+.l1a-page--2 .l1a-number__digit,
+.l1a-page--2 .l1a-number:nth-child(1) .l1a-number__digit,
+.l1a-page--2 .l1a-number:nth-child(2) .l1a-number__digit,
+.l1a-page--2 .l1a-number:nth-child(3) .l1a-number__digit,
+.l1a-page--2 .l1a-number:nth-child(4) .l1a-number__digit,
+.l1a-page--2 .l1a-number:nth-child(5) .l1a-number__digit,
+.l1a-page--2 .l1a-number:nth-child(6) .l1a-number__digit,
+.l1a-page--2 .l1a-number:nth-child(7) .l1a-number__digit,
+.l1a-page--2 .l1a-number:nth-child(8) .l1a-number__digit,
+.l1a-page--2 .l1a-number:nth-child(9) .l1a-number__digit,
+.l1a-page--2 .l1a-number:nth-child(10) .l1a-number__digit,
+.l1a-page--2 .l1a-number:nth-child(11) .l1a-number__digit {
+  background: var(--hz-unit) !important;
+  color: #fff !important;
+  border: 0 !important;
+  border-radius: 50% !important;
+  font-size: 12.5pt !important;
+  font-weight: var(--hz-fw-black) !important;
+}
+
+.l1a-page--2 .l1a-number__word {
+  color: var(--hz-ink) !important;
+  font-size: 6.1pt !important;
+  font-weight: var(--hz-fw-semibold) !important;
+  line-height: 1 !important;
+}
+
+.l1a-page .l1a-profile__form,
+.l1a-page .l1a-profile:nth-child(1) .l1a-profile__form,
+.l1a-page .l1a-profile:nth-child(2) .l1a-profile__form,
+.l1a-page .l1a-profile:nth-child(3) .l1a-profile__form {
+  background: #fff !important;
+  border: .35mm solid var(--hz-line) !important;
+  border-top: 1mm solid var(--hz-unit) !important;
+  color: var(--hz-ink) !important;
+  font-size: 7.6pt !important;
+  line-height: 1.28 !important;
+}
+
+.l1a-page .l1a-dialogue-photo .hz-photo-placeholder,
+.l1a-page .l1a-greeting__photo .hz-photo-placeholder,
+.l1a-page .l1a-identity-photo .hz-photo-placeholder,
+.l1a-page .l1a-profile__photo .hz-photo-placeholder {
+  background-color: transparent !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  color: transparent !important;
+}
+
+.l1a-page .l1a-dialogue-photo .hz-photo-placeholder::before,
+.l1a-page .l1a-dialogue-photo .hz-photo-placeholder::after,
+.l1a-page .l1a-greeting__photo .hz-photo-placeholder::before,
+.l1a-page .l1a-greeting__photo .hz-photo-placeholder::after,
+.l1a-page .l1a-identity-photo .hz-photo-placeholder::before,
+.l1a-page .l1a-identity-photo .hz-photo-placeholder::after,
+.l1a-page .l1a-profile__photo .hz-photo-placeholder::before,
+.l1a-page .l1a-profile__photo .hz-photo-placeholder::after {
+  content: none !important;
+  display: none !important;
+}
+
+.l1a-page .l1a-dialogue-photo .hz-photo-placeholder__meta,
+.l1a-page .l1a-greeting__photo .hz-photo-placeholder__meta,
+.l1a-page .l1a-identity-photo .hz-photo-placeholder__meta,
+.l1a-page .l1a-profile__photo .hz-photo-placeholder__meta { display: none !important; }
+
+.l1a-page .l1a-dialogue-photo .hz-photo-placeholder { background-image: url("../Images/1A/Tom%20and%20Mary.png") !important; background-position: center !important; }
+.l1a-page .l1a-greeting:nth-child(1) .hz-photo-placeholder { background-image: url("../Images/1A/Good%20morning.png") !important; background-position: center 38% !important; }
+.l1a-page .l1a-greeting:nth-child(2) .hz-photo-placeholder { background-image: url("../Images/1A/Good%20afternoon.png") !important; background-position: center !important; }
+.l1a-page .l1a-greeting:nth-child(3) .hz-photo-placeholder { background-image: url("../Images/1A/Good%20evening.png") !important; background-position: center !important; }
+.l1a-page .l1a-greeting:nth-child(4) .hz-photo-placeholder { background-image: url("../Images/1A/See%20you%20later.png") !important; background-position: center !important; }
+.l1a-page .l1a-identity-photo .hz-photo-placeholder { background-image: url("../Images/1A/Giving%20personal%20information.png") !important; background-position: center 35% !important; }
+.l1a-page .l1a-profile:nth-child(1) .hz-photo-placeholder { background-image: url("../Images/1A/Profile%20photo%201.png") !important; background-position: center !important; }
+.l1a-page .l1a-profile:nth-child(2) .hz-photo-placeholder { background-image: url("../Images/1A/Profile%20photo%202.png") !important; background-position: center !important; }
+.l1a-page .l1a-profile:nth-child(3) .hz-photo-placeholder { background-image: url("../Images/1A/Profile%20photo%203.png") !important; background-position: center !important; }
