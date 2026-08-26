@@ -1,8 +1,8 @@
 @import url("./tokens.css");
 
-/* Horizons A1 — stable reusable cross-lesson components.
-   Distinctive editorial compositions belong in lesson-local CSS unless they
-   prove reusable across multiple real lessons. */
+/* Horizons — stable reusable cross-book and cross-lesson components.
+   Distinctive editorial compositions belong in book-local lesson CSS unless
+   they prove reusable across multiple real lessons. */
 
 .hz-content {
   color: var(--hz-ink);
@@ -92,11 +92,7 @@
 
 /* ---------- Continuation chrome ---------- */
 
-.hz-continuation,
-.l1a-page--2 .l1a-continuation,
-.l1b-page--2 .l1b-continuation,
-.l1c-page--2 .l1c-continuation,
-.l1d-page--2 .l1d-continuation {
+.hz-continuation {
   position: absolute !important;
   top: -1mm !important;
   right: -14mm !important;
@@ -115,13 +111,9 @@
   letter-spacing: -.05em !important;
 }
 
-/* Default continuation clearance. Lesson-local CSS may increase only the
+/* Default continuation clearance. Book-local CSS may increase only the
    content offset when its first composition needs more room. */
-.hz-continuation-page .hz-exercises,
-.l1a-page--2 .hz-exercises,
-.l1b-page--2 .hz-exercises,
-.l1c-page--2 .hz-exercises,
-.l1d-page--2 .hz-exercises {
+.hz-continuation-page .hz-exercises {
   padding-top: 7mm !important;
 }
 
