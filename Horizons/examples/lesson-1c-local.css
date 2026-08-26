@@ -1,0 +1,84 @@
+/* Horizons A1 — Lesson 1C scoped styles and asset mappings. */
+
+.l1c-page .hz-exercise__instruction {
+  color: var(--hz-ink) !important;
+  font-size: 8.9pt !important;
+  font-weight: var(--hz-fw-semibold) !important;
+  line-height: 1.35 !important;
+}
+
+.l1c-target {
+  color: var(--hz-unit-dark) !important;
+  font-weight: var(--hz-fw-black) !important;
+}
+
+.l1c-page .hz-new-words {
+  color: var(--hz-unit-dark) !important;
+  font-size: 7pt !important;
+  font-weight: var(--hz-fw-black) !important;
+  letter-spacing: .07em !important;
+}
+
+.l1c-page .l1c-country-stage::before,
+.l1c-page .l1c-world-stage::before,
+.l1c-page .l1c-adjective-field::after,
+.l1c-page .l1c-pair-stage::before {
+  content: none !important;
+  display: none !important;
+}
+
+.l1c-page .l1c-celebrity__photo .hz-photo-placeholder,
+.l1c-page .l1c-city__photo .hz-photo-placeholder,
+.l1c-page .l1c-pair-photo .hz-photo-placeholder {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  background-color: transparent !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  color: transparent !important;
+}
+
+.l1c-page .l1c-celebrity__photo .hz-photo-placeholder::before,
+.l1c-page .l1c-celebrity__photo .hz-photo-placeholder::after,
+.l1c-page .l1c-city__photo .hz-photo-placeholder::before,
+.l1c-page .l1c-city__photo .hz-photo-placeholder::after,
+.l1c-page .l1c-pair-photo .hz-photo-placeholder::before,
+.l1c-page .l1c-pair-photo .hz-photo-placeholder::after {
+  content: none !important;
+  display: none !important;
+}
+
+.l1c-page .l1c-celebrity__photo .hz-photo-placeholder__meta,
+.l1c-page .l1c-city__photo .hz-photo-placeholder__meta,
+.l1c-page .l1c-pair-photo .hz-photo-placeholder__meta { display: none !important; }
+
+.l1c-page .l1c-celebrity:nth-child(1) .hz-photo-placeholder { background-image: url("../Images/1C/Messi.png") !important; background-position: center center !important; }
+.l1c-page .l1c-celebrity:nth-child(2) .hz-photo-placeholder { background-image: url("../Images/1C/Taylor.png") !important; background-position: center center !important; }
+.l1c-page .l1c-celebrity:nth-child(3) .hz-photo-placeholder { background-image: url("../Images/1C/Keanu.png") !important; background-position: center center !important; }
+.l1c-page .l1c-celebrity:nth-child(4) .hz-photo-placeholder { background-image: url("../Images/1C/Millie.png") !important; background-position: center center !important; }
+.l1c-page .l1c-celebrity:nth-child(5) .hz-photo-placeholder { background-image: url("../Images/1C/Lee.png") !important; background-position: center center !important; }
+
+.l1c-page:not(.l1c-page--2) .l1c-world-stage {
+  min-height: 88mm !important;
+  background-image:
+    linear-gradient(rgb(255 255 255 / 34%), rgb(255 255 255 / 34%)),
+    url("../Images/1C/Around%20the%20World%20BG.png") !important;
+  background-position: center 30% !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+}
+
+.l1c-page:not(.l1c-page--2) .l1c-city__copy { min-height: 50mm !important; }
+
+.l1c-page .l1c-city:nth-child(1) .hz-photo-placeholder { background-image: url("../Images/1C/Rio.png") !important; background-position: center center !important; }
+.l1c-page .l1c-city:nth-child(2) .hz-photo-placeholder { background-image: url("../Images/1C/Toronto.png") !important; background-position: center center !important; }
+.l1c-page .l1c-city:nth-child(3) .hz-photo-placeholder { background-image: url("../Images/1C/Hong%20Kong.png") !important; background-position: center center !important; }
+
+.l1c-page .l1c-pair-photo .hz-photo-placeholder {
+  background-image: url("../Images/1C/Pairwork.png") !important;
+  background-position: center center !important;
+}
+
+.l1c-page--2 .hz-exercises > .hz-exercise:nth-of-type(2) { margin-top: 1mm !important; }
+.l1c-page--2 .l1c-guess-strip { display: none !important; }
