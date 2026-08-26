@@ -314,3 +314,84 @@
 .l1a-page .l1a-number:nth-child(9)  .l1a-number__digit { background: #a21caf; }
 .l1a-page .l1a-number:nth-child(10) .l1a-number__digit { background: #0f9f8f; }
 .l1a-page .l1a-number:nth-child(11) .l1a-number__digit { background: #c2410c; }
+
+/* -------------------------------------------------------------------------
+   Lesson 1A photography — uploaded production images
+   -------------------------------------------------------------------------
+
+   Keep the existing crop containers and replace only the development
+   placeholder surface. The image files live in Horizons/Images/1A. */
+
+.l1a-page .l1a-dialogue-photo .hz-photo-placeholder,
+.l1a-page .l1a-greeting__photo .hz-photo-placeholder,
+.l1a-page .l1a-identity-photo .hz-photo-placeholder,
+.l1a-page .l1a-profile__photo .hz-photo-placeholder {
+  background-color: transparent !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  color: transparent !important;
+}
+
+.l1a-page .l1a-dialogue-photo .hz-photo-placeholder::before,
+.l1a-page .l1a-dialogue-photo .hz-photo-placeholder::after,
+.l1a-page .l1a-greeting__photo .hz-photo-placeholder::before,
+.l1a-page .l1a-greeting__photo .hz-photo-placeholder::after,
+.l1a-page .l1a-identity-photo .hz-photo-placeholder::before,
+.l1a-page .l1a-identity-photo .hz-photo-placeholder::after,
+.l1a-page .l1a-profile__photo .hz-photo-placeholder::before,
+.l1a-page .l1a-profile__photo .hz-photo-placeholder::after {
+  content: none !important;
+  display: none !important;
+}
+
+.l1a-page .l1a-dialogue-photo .hz-photo-placeholder__meta,
+.l1a-page .l1a-greeting__photo .hz-photo-placeholder__meta,
+.l1a-page .l1a-identity-photo .hz-photo-placeholder__meta,
+.l1a-page .l1a-profile__photo .hz-photo-placeholder__meta {
+  display: none !important;
+}
+
+.l1a-page .l1a-dialogue-photo .hz-photo-placeholder {
+  background-image: url("../Images/1A/Tom%20and%20Mary.png") !important;
+  background-position: center center !important;
+}
+
+.l1a-page .l1a-greeting:nth-child(1) .hz-photo-placeholder {
+  background-image: url("../Images/1A/Good%20morning.png") !important;
+  background-position: center 38% !important;
+}
+
+.l1a-page .l1a-greeting:nth-child(2) .hz-photo-placeholder {
+  background-image: url("../Images/1A/Good%20afternoon.png") !important;
+  background-position: center center !important;
+}
+
+.l1a-page .l1a-greeting:nth-child(3) .hz-photo-placeholder {
+  background-image: url("../Images/1A/Good%20evening.png") !important;
+  background-position: center center !important;
+}
+
+.l1a-page .l1a-greeting:nth-child(4) .hz-photo-placeholder {
+  background-image: url("../Images/1A/See%20you%20later.png") !important;
+  background-position: center center !important;
+}
+
+.l1a-page .l1a-identity-photo .hz-photo-placeholder {
+  background-image: url("../Images/1A/Giving%20personal%20information.png") !important;
+  background-position: center 35% !important;
+}
+
+.l1a-page .l1a-profile:nth-child(1) .hz-photo-placeholder {
+  background-image: url("../Images/1A/Profile%20photo%201.png") !important;
+  background-position: center center !important;
+}
+
+.l1a-page .l1a-profile:nth-child(2) .hz-photo-placeholder {
+  background-image: url("../Images/1A/Profile%20photo%202.png") !important;
+  background-position: center center !important;
+}
+
+.l1a-page .l1a-profile:nth-child(3) .hz-photo-placeholder {
+  background-image: url("../Images/1A/Profile%20photo%203.png") !important;
+  background-position: center center !important;
+}
