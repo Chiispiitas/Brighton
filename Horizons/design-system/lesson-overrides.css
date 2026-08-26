@@ -4,6 +4,53 @@
    later inline stylesheet would otherwise win. */
 
 /* -------------------------------------------------------------------------
+   Global A1 legibility guardrails
+   -------------------------------------------------------------------------
+
+   A page-fit problem must be solved by recomposition before typography is
+   reduced. These helpers provide explicit semantic text roles for new lesson
+   work, while the exercise-body selector protects common student-facing text
+   nodes from inheriting undersized local prototype typography. */
+
+.hz-student-text,
+[data-hz-text-role="student"] {
+  font-size: max(1em, var(--hz-fs-student-min)) !important;
+}
+
+.hz-dialogue-text,
+[data-hz-text-role="dialogue"] {
+  font-size: max(1em, var(--hz-fs-dialogue-min)) !important;
+}
+
+.hz-task-text,
+[data-hz-text-role="task"] {
+  font-size: max(1em, var(--hz-fs-task-min)) !important;
+}
+
+.hz-interface-text,
+[data-hz-text-role="interface"] {
+  font-size: max(1em, var(--hz-fs-interface-min)) !important;
+}
+
+.hz-micro-text,
+[data-hz-text-role="micro"] {
+  font-size: max(1em, var(--hz-fs-micro-min)) !important;
+}
+
+/* Ordinary language students are expected to read/analyze should never become
+   tiny merely because a parent composition was compressed. Small labels and
+   interface metadata should use an explicit interface/micro role instead. */
+.hz-exercise__body :where(p, li, dt, dd, label) {
+  font-size: max(1em, var(--hz-fs-student-min));
+}
+
+/* Current Lesson 1D model dialogue is a Guided Discovery input, so it follows
+   the dialogue floor rather than inheriting the compressed parent size. */
+.l1d-page .l1d-dialogue :where(dt, dd) {
+  font-size: max(1em, var(--hz-fs-dialogue-min));
+}
+
+/* -------------------------------------------------------------------------
    Unit 1 — shared visual-format normalization
    -------------------------------------------------------------------------
 
