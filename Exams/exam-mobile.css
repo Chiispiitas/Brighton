@@ -1,6 +1,6 @@
 /* ==============================================
      Brighton Digital Exams — Shared Mobile Layer
-     Keeps every final-exam shell usable on phones
+     Non-invasive safeguards shared by every final exam
 ============================================== */
 
 html,
@@ -15,8 +15,13 @@ body {
 .start-screen,
 .start-card,
 .start-grid,
+.student-form,
+.top-header,
 .header-left,
 .header-right,
+.student-chip,
+.exam-header-brand,
+.bottom-nav,
 .split-grid,
 .split-two,
 .split-column,
@@ -31,30 +36,54 @@ body {
 .texts-list,
 .visual-card,
 .person-card,
-.option-text {
+.option-text,
+.prompt-card,
+.editor-card,
+.choice-card,
+.writing-layout,
+.visual-options-grid,
+.compact-choice-grid,
+.mcq-choice-grid {
   min-width: 0;
 }
 
 .main-content img,
 .start-screen img,
-.modal-root img {
+.modal-root img,
+.main-content video,
+.main-content canvas {
   max-width: 100%;
   height: auto;
 }
 
 @media (max-width: 900px) {
+  /*
+   * Do not set exam-shell height/overflow here.
+   * Reading/listening exams use a fixed viewport shell, while writing exams
+   * intentionally switch to normal document scrolling on phones.
+   */
   .exam-shell:not(.hidden) {
-    height: 100dvh !important;
-    min-height: 100dvh !important;
-    overflow: hidden !important;
+    width: 100%;
+    max-width: 100vw;
+    min-width: 0;
+  }
+
+  .top-header,
+  .bottom-nav,
+  .main-content {
+    max-width: 100vw;
+  }
+
+  .header-left,
+  .header-right,
+  .student-chip,
+  .exam-header-brand {
+    min-width: 0;
   }
 
   .main-content {
-    width: auto !important;
-    max-width: 100vw !important;
     overflow-x: hidden !important;
-    overflow-y: auto !important;
-    overscroll-behavior: contain;
+    overscroll-behavior-x: contain;
     -webkit-overflow-scrolling: touch;
   }
 
@@ -67,22 +96,29 @@ body {
   .options-panel,
   .visual-card,
   .person-card,
-  .option-text {
-    width: 100%;
+  .option-text,
+  .prompt-card,
+  .editor-card,
+  .choice-card,
+  .finish-card,
+  .end-submit-card,
+  .instruction-card {
     max-width: 100% !important;
   }
 
+  /* Primary two-column exam layouts must collapse before phone widths. */
   .short-text-layout,
   .matching-layout,
   .word-formation-grid,
-  .split-two {
+  .writing-layout,
+  .split-two,
+  .visual-options-grid {
     grid-template-columns: minmax(0, 1fr) !important;
   }
 
   .split-grid {
     display: block !important;
     min-height: 0 !important;
-    overflow: visible !important;
   }
 
   .split-divider {
@@ -93,8 +129,9 @@ body {
   .part-seven .split-column,
   .part-seven .part-seven-questions {
     width: 100% !important;
+    min-width: 0 !important;
+    max-width: 100% !important;
     max-height: none !important;
-    overflow: visible !important;
   }
 
   .fixed-question-card,
@@ -105,12 +142,29 @@ body {
     position: static !important;
     top: auto !important;
     max-height: none !important;
-    overflow: visible !important;
   }
 
   .part-title-row {
     flex-wrap: wrap;
     align-items: flex-start;
+  }
+
+  .question-stack,
+  .people-list,
+  .texts-list,
+  .choice-list {
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  .article-card,
+  .reading-text,
+  .question-card,
+  .prompt-card,
+  .option-text,
+  .person-card,
+  .instruction-card {
+    overflow-wrap: anywhere;
   }
 
   table {
@@ -123,11 +177,6 @@ body {
 }
 
 @media (max-width: 760px) {
-  :root {
-    --header-h: 58px !important;
-    --footer-h: 68px !important;
-  }
-
   html,
   body {
     width: 100%;
@@ -136,10 +185,11 @@ body {
   }
 
   .start-screen {
-    min-height: 100dvh !important;
+    min-height: 100svh !important;
     width: 100% !important;
     max-width: 100vw !important;
-    padding: 12px 12px 84px !important;
+    padding-left: 12px !important;
+    padding-right: 12px !important;
     overflow-x: hidden !important;
     overflow-y: auto !important;
     -webkit-overflow-scrolling: touch;
@@ -158,13 +208,16 @@ body {
     gap: 18px !important;
   }
 
+  .student-form {
+    width: 100%;
+    max-width: 100%;
+  }
+
   .top-header {
-    height: var(--header-h) !important;
-    min-height: var(--header-h) !important;
     max-width: 100vw;
-    padding: 7px 8px !important;
+    padding-left: 8px !important;
+    padding-right: 8px !important;
     gap: 6px !important;
-    overflow: hidden;
   }
 
   .header-left {
@@ -216,15 +269,15 @@ body {
     flex: 0 0 38px;
     width: 38px !important;
     height: 38px !important;
+    min-width: 38px !important;
     border-radius: 12px !important;
   }
 
+  /* Preserve each exam's own position/top/bottom rules. */
   .main-content {
-    top: var(--header-h) !important;
-    bottom: var(--footer-h) !important;
-    left: 0 !important;
-    right: 0 !important;
-    padding: 12px 10px 24px !important;
+    max-width: 100vw !important;
+    padding-left: 10px !important;
+    padding-right: 10px !important;
   }
 
   .article-card,
@@ -232,7 +285,9 @@ body {
   .question-card,
   .transform-card,
   .visual-card,
-  .options-panel {
+  .options-panel,
+  .prompt-card,
+  .editor-card {
     padding-left: 12px !important;
     padding-right: 12px !important;
   }
@@ -242,8 +297,6 @@ body {
     right: 0 !important;
     width: 100vw !important;
     max-width: 100vw !important;
-    height: var(--footer-h) !important;
-    padding: 5px 8px !important;
     overflow-x: auto !important;
     overflow-y: hidden !important;
     overscroll-behavior-x: contain;
@@ -256,28 +309,12 @@ body {
   }
 
   .part-nav-card {
-    flex: 0 0 56px !important;
-    min-width: 56px !important;
-    max-width: 72px !important;
-  }
-
-  .part-nav-card.active {
-    flex: 0 0 auto !important;
-    width: auto !important;
-    min-width: max-content !important;
-    max-width: none !important;
+    flex-shrink: 0;
   }
 
   .step-controls {
     right: 8px !important;
-    bottom: calc(var(--footer-h) + 8px) !important;
     gap: 6px !important;
-  }
-
-  .round-nav {
-    width: 44px !important;
-    height: 44px !important;
-    border-radius: 13px !important;
   }
 
   .choice-popover {
@@ -322,8 +359,9 @@ body {
 
   .transform-input.auto-width-input,
   .inline-input,
-  .open-input {
-    max-width: calc(100vw - 52px) !important;
+  .open-input,
+  .writing-textarea {
+    max-width: calc(100vw - 44px) !important;
   }
 
   .cloze-gap,
@@ -332,7 +370,7 @@ body {
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 560px) {
   .student-chip {
     display: none !important;
   }
@@ -359,6 +397,15 @@ body {
     white-space: normal;
   }
 
+  .compact-choice-grid,
+  .mcq-choice-grid,
+  .choice-grid,
+  .options-grid,
+  .question-grid,
+  .visual-options-grid {
+    grid-template-columns: minmax(0, 1fr) !important;
+  }
+
   .person-card,
   .part-two .person-card {
     grid-template-columns: 56px minmax(0, 1fr) !important;
@@ -374,5 +421,11 @@ body {
   .main-content {
     padding-left: 8px !important;
     padding-right: 8px !important;
+  }
+
+  .editor-head,
+  .editor-foot,
+  .choice-top {
+    flex-wrap: wrap;
   }
 }
