@@ -3,50 +3,48 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Horizons A1 — A4 Page Template</title>
+  <title>Horizons A1 — Lesson Template</title>
   <link rel="stylesheet" href="./a4-shell.css">
   <link rel="stylesheet" href="./print.css" media="print">
 </head>
 <body class="hz-book">
 
   <!--
-    One <article class="hz-page"> equals one printed A4 page.
-
-    HARD RULE:
-    All sibling exercises must be children of one .hz-exercises lane and flow
-    vertically from top to bottom. Never place exercises in side-by-side page
-    columns. Only material INSIDE .hz-exercise__body may use
-    .hz-question-grid--2 / --3, .hz-content-grid--2 / --3, or .hz-inset-grid.
+    One .hz-page equals one printed A4 page.
+    Sibling numbered exercises remain in one .hz-exercises vertical lane.
+    Columns/grids are allowed only inside an exercise body.
   -->
-  <article class="hz-page hz-content" data-page="1">
+  <article class="hz-page hz-content hz-unit-2" data-page="1">
     <main class="hz-page__content">
       <div class="hz-page-stack">
 
         <header class="hz-lesson-header">
-          <div class="hz-lesson-tab" aria-label="Lesson 1A">
+          <div class="hz-lesson-tab" aria-label="Lesson 2A">
             <span class="hz-lesson-tab__label">Lesson</span>
-            <span class="hz-lesson-tab__id">1A</span>
+            <span class="hz-lesson-tab__id">2A</span>
           </div>
           <div class="hz-lesson-heading">
-            <h1 class="hz-lesson-title">Lesson title</h1>
+            <h1 class="hz-lesson-title">LESSON TITLE</h1>
             <div class="hz-objectives">
               <span class="hz-objectives__item">Objective</span>
             </div>
           </div>
-          <div class="hz-lesson-signal" aria-hidden="true">
-            <span class="hz-lesson-signal__label">Language</span>
-            <span class="hz-lesson-signal__rail"><span></span><span></span><span></span></span>
-          </div>
         </header>
 
         <div class="hz-exercises hz-fill" aria-label="Lesson exercises">
-          <!-- Every .hz-exercise goes here, in numerical order. -->
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">1</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Read and listen.</p>
+              <div class="hz-exercise__body">...</div>
+            </div>
+          </section>
         </div>
       </div>
     </main>
 
     <footer class="hz-page__footer" aria-label="Page footer">
-      <span class="hz-page-code">Horizons A1 · 1A</span>
+      <span class="hz-page-code">Horizons A1 · 2A</span>
       <span class="hz-page-number">1</span>
     </footer>
   </article>
