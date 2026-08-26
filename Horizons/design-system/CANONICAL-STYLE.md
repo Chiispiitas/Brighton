@@ -202,11 +202,11 @@ Follow `GUIDED-DISCOVERY.md` for the canonical details.
 
 Reusable cross-lesson rules belong in `design-system/`.
 
-Lesson-specific composition and CSS belong directly in the corresponding lesson HTML under `examples/`, scoped to that lesson. Final raster assets belong in `Images/` and are referenced directly from the lesson that uses them.
+Lesson-specific composition, corrections, crop tuning and asset mappings stay **with the corresponding lesson under `examples/`**, either inline in the lesson HTML or in an adjacent lesson-scoped stylesheet. Final raster assets belong in `Images/`.
 
 Image prompts, generation notes and temporary art direction remain outside the repository unless the author explicitly asks for them to be saved.
 
-Do **not** create a separate `production/`, `staging/`, compatibility-overrides or lesson-overrides folder. A lesson should not require a second hidden stylesheet layer to reveal its intended appearance.
+Do **not** create a separate `production/`, `staging/`, compatibility-overrides or lesson-overrides directory. Lesson-specific implementation should stay visibly colocated with the lesson master instead of living in a second project layer.
 
 Do not promote a local correction into the design system merely because it was needed once. Do not duplicate an existing rule in a new file; link to the source of truth instead.
 
