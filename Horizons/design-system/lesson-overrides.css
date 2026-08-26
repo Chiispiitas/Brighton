@@ -4,7 +4,9 @@
    later inline stylesheet would otherwise win. */
 
 /* Lesson 1A — Exercise 5
-   Personal-information exchanges use a clean white surface consistently. */
+   Personal-information conversation surfaces use white rather than the unit
+   soft pink so the dialogue reads cleanly against the photography. */
+.l1a-page .l1a-identity-copy,
 .l1a-page .l1a-exchange,
 .l1a-page .l1a-exchange:nth-of-type(1),
 .l1a-page .l1a-exchange:nth-of-type(2),
@@ -13,9 +15,39 @@
   background: #fff !important;
 }
 
-/* Lesson 1A — Exercise 10
+/* Lesson 1A — Exercise 6
+   Keep the alphabet field white for maximum letter contrast. */
+.l1a-page .l1a-pronunciation {
+  background: #fff !important;
+}
+
+/* Lesson 1A — continuation-page numbering
+   The current prototype source skips 8 and then shows 9/10. Present the page
+   as one continuous exercise sequence: 5, 6, 7, 8, 9. */
+.l1a-page--2 .hz-exercises {
+  counter-reset: l1a-exercise 4;
+}
+
+.l1a-page--2 .hz-exercises > .hz-exercise {
+  counter-increment: l1a-exercise;
+}
+
+.l1a-page--2 .hz-exercises > .hz-exercise > .hz-exercise-number {
+  font-size: 0 !important;
+}
+
+.l1a-page--2 .hz-exercises > .hz-exercise > .hz-exercise-number::after {
+  content: counter(l1a-exercise);
+  color: var(--hz-unit);
+  font-size: 18pt;
+  font-weight: var(--hz-fw-black);
+  line-height: .9;
+  letter-spacing: -.05em;
+}
+
+/* Lesson 1A — final profile-form exercise
    The three profile forms belong to one visual family. Keep their surface and
-   border treatment identical instead of giving the first form a separate tint. */
+   border treatment identical instead of giving individual forms separate tints. */
 .l1a-page .l1a-profile__form,
 .l1a-page .l1a-profile:nth-child(1) .l1a-profile__form,
 .l1a-page .l1a-profile:nth-child(2) .l1a-profile__form,
