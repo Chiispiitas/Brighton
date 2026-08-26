@@ -1,14 +1,9 @@
 @import url("../design-system/components.css");
 
-/* Lesson-scoped styles are colocated with their lesson masters in examples/. */
-@import url("../examples/lesson-1a-local.css");
-@import url("../examples/lesson-1b-local.css");
-@import url("../examples/lesson-1c-local.css");
-@import url("../examples/lesson-1d-local.css");
-
 /* Horizons — editorial HTML5/CSS A4 shell.
    One semantic .hz-page = one print page.
-   Sibling numbered exercises always stay in one vertical lane. */
+   Sibling numbered exercises always stay in one vertical lane.
+   Book-specific lesson CSS is linked by each lesson file, not imported here. */
 
 :root {
   --hz-page-width: 210mm;
