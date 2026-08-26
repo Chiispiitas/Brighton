@@ -1,0 +1,138 @@
+/* Horizons A1 — Lesson 1B production photography
+   Maps the approved local image set in Horizons/Images/1B onto the existing
+   Lesson 1B prototype slots without changing the lesson structure. */
+
+/* Shared production-image surface. Preserve the existing crop containers and
+   remove development placeholder artwork/text once a real image is present. */
+.l1b-page .l1b-occupation__photo .hz-photo-placeholder,
+.l1b-page .l1b-clue .hz-photo-placeholder,
+.l1b-page .l1b-profile__photo .hz-photo-placeholder,
+.l1b-page .l1b-workers-photo .hz-photo-placeholder {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  background-color: transparent !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important;
+  color: transparent !important;
+}
+
+.l1b-page .l1b-occupation__photo .hz-photo-placeholder::before,
+.l1b-page .l1b-occupation__photo .hz-photo-placeholder::after,
+.l1b-page .l1b-clue .hz-photo-placeholder::before,
+.l1b-page .l1b-clue .hz-photo-placeholder::after,
+.l1b-page .l1b-profile__photo .hz-photo-placeholder::before,
+.l1b-page .l1b-profile__photo .hz-photo-placeholder::after,
+.l1b-page .l1b-workers-photo .hz-photo-placeholder::before,
+.l1b-page .l1b-workers-photo .hz-photo-placeholder::after {
+  content: none !important;
+  display: none !important;
+}
+
+.l1b-page .l1b-occupation__photo .hz-photo-placeholder__meta,
+.l1b-page .l1b-clue .hz-photo-placeholder__meta,
+.l1b-page .l1b-profile__photo .hz-photo-placeholder__meta,
+.l1b-page .l1b-workers-photo .hz-photo-placeholder__meta {
+  display: none !important;
+}
+
+/* Exercise 1 — occupations in action. The order matches the ten frozen
+   vocabulary items: teacher, student, chef, doctor, office worker,
+   receptionist, salesclerk, taxi driver, waiter/waitress, farmer. */
+.l1b-page .l1b-occupation:nth-child(1) .hz-photo-placeholder {
+  background-image: url("../Images/1B/Teacher.png") !important;
+  background-position: center center !important;
+}
+
+.l1b-page .l1b-occupation:nth-child(2) .hz-photo-placeholder {
+  background-image: url("../Images/1B/Student.png") !important;
+  background-position: center center !important;
+}
+
+.l1b-page .l1b-occupation:nth-child(3) .hz-photo-placeholder {
+  background-image: url("../Images/1B/Chef.png") !important;
+  background-position: center center !important;
+}
+
+.l1b-page .l1b-occupation:nth-child(4) .hz-photo-placeholder {
+  background-image: url("../Images/1B/Doctor.png") !important;
+  background-position: center center !important;
+}
+
+.l1b-page .l1b-occupation:nth-child(5) .hz-photo-placeholder {
+  background-image: url("../Images/1B/Office%20Worker.png") !important;
+  background-position: center center !important;
+}
+
+.l1b-page .l1b-occupation:nth-child(6) .hz-photo-placeholder {
+  background-image: url("../Images/1B/Receptionist.png") !important;
+  background-position: center center !important;
+}
+
+.l1b-page .l1b-occupation:nth-child(7) .hz-photo-placeholder {
+  background-image: url("../Images/1B/Salesclerk.png") !important;
+  background-position: center center !important;
+}
+
+.l1b-page .l1b-occupation:nth-child(8) .hz-photo-placeholder {
+  background-image: url("../Images/1B/Taxi%20Driver.png") !important;
+  background-position: center center !important;
+}
+
+.l1b-page .l1b-occupation:nth-child(9) .hz-photo-placeholder {
+  background-image: url("../Images/1B/Waiter%20Waitress.png") !important;
+  background-position: center center !important;
+}
+
+.l1b-page .l1b-occupation:nth-child(10) .hz-photo-placeholder {
+  background-image: url("../Images/1B/Farmer.png") !important;
+  background-position: center center !important;
+}
+
+/* Exercise 3 — occupation mime clues. */
+.l1b-page .l1b-clue:nth-child(1) .hz-photo-placeholder {
+  background-image: url("../Images/1B/Taxi.png") !important;
+  background-position: center center !important;
+}
+
+.l1b-page .l1b-clue:nth-child(2) .hz-photo-placeholder {
+  background-image: url("../Images/1B/Bell.png") !important;
+  background-position: center center !important;
+}
+
+.l1b-page .l1b-clue:nth-child(3) .hz-photo-placeholder {
+  background-image: url("../Images/1B/Dish.png") !important;
+  background-position: center center !important;
+}
+
+.l1b-page .l1b-clue:nth-child(4) .hz-photo-placeholder {
+  background-image: url("../Images/1B/Supplies.png") !important;
+  background-position: center center !important;
+}
+
+.l1b-page .l1b-clue:nth-child(5) .hz-photo-placeholder {
+  background-image: url("../Images/1B/Syringe.png") !important;
+  background-position: center center !important;
+}
+
+/* Exercise 4.1 — profile/environmental images. */
+.l1b-page .l1b-profile:nth-child(1) .hz-photo-placeholder {
+  background-image: url("../Images/1B/Tom.png") !important;
+  background-position: center 42% !important;
+}
+
+.l1b-page .l1b-profile:nth-child(2) .hz-photo-placeholder {
+  background-image: url("../Images/1B/Sarah.png") !important;
+  background-position: center 40% !important;
+}
+
+.l1b-page .l1b-profile:nth-child(3) .hz-photo-placeholder {
+  background-image: url("../Images/1B/Marco.png") !important;
+  background-position: center 42% !important;
+}
+
+/* Exercise 5 — supporting workers photograph. */
+.l1b-page .l1b-workers-photo .hz-photo-placeholder {
+  background-image: url("../Images/1B/Two%20Workers.png") !important;
+  background-position: center center !important;
+}
