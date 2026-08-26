@@ -61,10 +61,22 @@
 
 /* Page 12 — real situation, but with Unit 1 language load. */
 /* Keep the complete continuation-page flow below the 1D continuation tab. */
-.l1d-page--2 .hz-exercises { padding-top: 9mm !important; }
+.l1d-page--2 .hz-exercises { padding-top: 10mm !important; }
 .l1d-page--2 .l1d-business-stage { padding-top: 8mm !important; }
-.l1d-page--2 .l1d-business-option__photo,
-.l1d-page--2 .l1d-business-option__photo .hz-photo-placeholder { height: 24mm !important; min-height: 24mm !important; }
+.l1d-page--2 .l1d-business-option__photo {
+  width: 24mm !important;
+  height: 24mm !important;
+  min-height: 24mm !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  border-radius: 50% !important;
+}
+.l1d-page--2 .l1d-business-option__photo .hz-photo-placeholder {
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 100% !important;
+  border-radius: 50% !important;
+}
 .l1d-page--2 .l1d-business-option strong { font-size: 7.75pt !important; line-height: 1.2 !important; }
 .l1d-page--2 .l1d-business-name,
 .l1d-page--2 .l1d-info-select { font-size: 8pt !important; line-height: 1.3 !important; }
