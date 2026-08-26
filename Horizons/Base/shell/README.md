@@ -1,35 +1,34 @@
-# Horizons A4 shell
+# Horizons Base A4 shell
 
-The shell turns semantic Horizons HTML into fixed A4 Student's Book pages.
+The shell turns semantic Horizons HTML into fixed A4 Student's Book pages and is shared across books.
 
 ## Page rule
 
 Each `<article class="hz-page">` is exactly **210 × 297 mm** and becomes one printed/PDF page.
 
-The shell provides the page frame, margins, footer, review furniture, media-frame helpers and QA overlay. Reusable lesson components come from `../design-system/components.css`, which imports `tokens.css`.
+The shell provides the page frame, margins, footer, review furniture, media-frame helpers and QA overlay. Reusable components come from `../design-system/components.css`, which imports `tokens.css`.
 
 ## CSS loading
 
-`a4-shell.css` imports the four existing Unit 1 local stylesheets only for compatibility with those current masters.
+`a4-shell.css` imports **only shared Base components**.
 
-**Do not add Unit 2 or later lesson-local stylesheets to the shell.** New lesson HTML links its own adjacent `lesson-*-local.css` directly. Reusable behavior belongs in `components.css`; one-off lesson composition remains local.
+It must never import A1, A2 or other book/lesson-specific CSS. Each lesson HTML links its own adjacent local stylesheet after the Base shell.
+
+For a current A1 lesson in `Horizons/A1/Lessons/`:
+
+```html
+<link rel="stylesheet" href="../../Base/shell/a4-shell.css">
+<link rel="stylesheet" href="./lesson-2a-local.css">
+<link rel="stylesheet" href="../../Base/shell/print.css" media="print">
+```
 
 ## Exercise flow
 
-All sibling numbered exercises stay in one vertical lane and numerical order:
-
-```html
-<div class="hz-exercises">
-  <section class="hz-exercise">...</section>
-  <section class="hz-exercise">...</section>
-</div>
-```
-
-Two/three-column layouts are allowed only inside one exercise body.
+All sibling numbered exercises stay in one vertical lane and numerical order. Two/three-column layouts are allowed only inside one exercise body.
 
 ## Continuation pages
 
-New lesson continuation pages should use:
+Use the shared continuation marker:
 
 ```html
 <article class="hz-page hz-content hz-unit-2 hz-continuation-page">
@@ -40,13 +39,13 @@ New lesson continuation pages should use:
 </article>
 ```
 
-The shared component provides a default safe top offset. If a lesson's first composition needs extra clearance, adjust the content offset in that lesson's local CSS rather than moving the shared marker.
+The shared component provides a default safe top offset. If a lesson's first composition needs extra clearance, adjust only that lesson's content offset rather than moving the shared marker.
 
 ## Files
 
 - `a4-shell.css` — fixed page frame and page-level helpers;
 - `print.css` — browser-to-PDF rules;
-- `page-template.html` — semantic starter.
+- `page-template.html` — generic semantic starter.
 
 ## Print settings
 
