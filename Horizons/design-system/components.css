@@ -1,9 +1,8 @@
 @import url("./tokens.css");
 
-/* Horizons A1 — reusable cross-lesson components.
-   Numbered sibling exercises always remain in one vertical sequence.
-   Dynamic composition comes from photography, crop, typography and lesson-local
-   composition rather than a growing library of override layers. */
+/* Horizons A1 — stable reusable cross-lesson components.
+   Distinctive editorial compositions belong in lesson-local CSS unless they
+   prove reusable across multiple real lessons. */
 
 .hz-content {
   color: var(--hz-ink);
@@ -116,9 +115,8 @@
   letter-spacing: -.05em !important;
 }
 
-/* Default continuation clearance. Lesson-local CSS may increase the content
-   offset when the first composition needs more room; the shared marker itself
-   remains unchanged. Unit 1 aliases remain only for current masters. */
+/* Default continuation clearance. Lesson-local CSS may increase only the
+   content offset when its first composition needs more room. */
 .hz-continuation-page .hz-exercises,
 .l1a-page--2 .hz-exercises,
 .l1b-page--2 .hz-exercises,
@@ -127,33 +125,7 @@
   padding-top: 7mm !important;
 }
 
-/* ---------- Section / skill line ---------- */
-
-.hz-mode-bar {
-  display: flex;
-  align-items: baseline;
-  gap: 2.5mm;
-  min-height: 6mm;
-  padding: 0 0 1.4mm;
-  border-bottom: var(--hz-border) solid var(--hz-line-strong);
-}
-
-.hz-mode-bar__icon { display: none; }
-
-.hz-mode-bar__title {
-  color: var(--hz-unit-dark);
-  font-size: var(--hz-fs-xs);
-  font-weight: var(--hz-fw-black);
-  letter-spacing: .08em;
-  text-transform: uppercase;
-}
-
-.hz-mode-bar__descriptor {
-  color: var(--hz-muted);
-  font-size: var(--hz-fs-2xs);
-}
-
-/* ---------- Single exercise lane ---------- */
+/* ---------- Exercise lane ---------- */
 
 .hz-exercises,
 .hz-exercise-flow {
@@ -198,12 +170,11 @@
   margin-top: 2mm;
 }
 
-/* Ordinary learner language cannot inherit tiny prototype typography. */
 .hz-exercise__body :where(p, li, dt, dd, label) {
   font-size: max(1em, var(--hz-fs-student-min));
 }
 
-/* ---------- Text-role floors ---------- */
+/* ---------- Physical text floors ---------- */
 
 .hz-student-text,
 [data-hz-text-role="student"] {
@@ -230,7 +201,7 @@
   font-size: max(1em, var(--hz-fs-micro-min)) !important;
 }
 
-/* ---------- Internal grids ---------- */
+/* ---------- Internal exercise grids ---------- */
 
 .hz-question-grid,
 .hz-content-grid {
@@ -286,7 +257,7 @@
   justify-self: center;
 }
 
-/* ---------- Small functional labels ---------- */
+/* ---------- Functional cues ---------- */
 
 .hz-audio-badge {
   display: inline-flex;
@@ -333,8 +304,8 @@
 
 .hz-new-words__icon { display: none !important; }
 
-.hz-skill-tag,
-.hz-tag {
+.hz-tag,
+.hz-skill-tag {
   display: inline-block;
   font-size: var(--hz-fs-2xs);
   font-weight: var(--hz-fw-black);
@@ -345,68 +316,7 @@
 .hz-tag { color: var(--hz-muted); }
 .hz-skill-tag { color: var(--hz-practice); }
 
-/* ---------- Editorial feature ---------- */
-
-.hz-feature-panel {
-  display: grid;
-  grid-template-columns: minmax(0, .95fr) minmax(0, 1.05fr);
-  gap: 5mm;
-  align-items: stretch;
-}
-
-.hz-feature-panel__media {
-  min-height: 47mm;
-  overflow: hidden;
-  background: var(--hz-wash);
-}
-
-.hz-feature-panel__media img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
-
-.hz-feature-panel__copy {
-  align-self: center;
-  padding: 2mm 0;
-}
-
-.hz-feature-panel__title {
-  margin: 0 0 2mm;
-  color: var(--hz-ink);
-  font-size: var(--hz-fs-xl);
-  font-weight: var(--hz-fw-black);
-  line-height: 1.08;
-}
-
-.hz-reading-copy {
-  font-family: var(--hz-font-reading);
-  font-size: 9.4pt;
-  line-height: var(--hz-lh-reading);
-}
-
-/* ---------- Photography / overlay compositions ---------- */
-
-.hz-media-stage {
-  position: relative;
-  min-height: 54mm;
-  isolation: isolate;
-}
-
-.hz-media-stage__photo {
-  position: relative;
-  overflow: hidden;
-  min-height: inherit;
-  background: #deded9;
-}
-
-.hz-media-stage__photo > img {
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-}
+/* ---------- Development photography placeholder ---------- */
 
 .hz-photo-placeholder {
   position: relative;
@@ -452,245 +362,7 @@
   background: rgb(255 255 255 / 72%);
 }
 
-.hz-photo-scrim {
-  position: absolute;
-  inset: 0;
-  z-index: 1;
-  background: linear-gradient(to top, rgb(17 18 20 / 76%) 0, rgb(17 18 20 / 18%) 46%, transparent 72%);
-  pointer-events: none;
-}
-
-.hz-photo-overlay {
-  position: absolute;
-  z-index: 2;
-  right: 5mm;
-  bottom: 4.5mm;
-  left: 5mm;
-  color: white;
-}
-
-.hz-photo-overlay__kicker {
-  display: block;
-  margin-bottom: 1mm;
-  font-size: 6.6pt;
-  font-weight: var(--hz-fw-black);
-  letter-spacing: .1em;
-  text-transform: uppercase;
-}
-
-.hz-photo-overlay__title {
-  margin: 0;
-  max-width: 105mm;
-  font-size: 18pt;
-  font-weight: var(--hz-fw-black);
-  line-height: 1.02;
-  letter-spacing: -.025em;
-}
-
-.hz-photo-overlay__text {
-  max-width: 95mm;
-  margin: 1.5mm 0 0;
-  font-family: var(--hz-font-reading);
-  font-size: 8.5pt;
-  line-height: 1.38;
-}
-
-.hz-photo-flag {
-  position: absolute;
-  z-index: 3;
-  top: 6mm;
-  left: -3mm;
-  max-width: 42mm;
-  padding: 1.6mm 2.2mm;
-  border-left: 1.2mm solid var(--hz-unit);
-  background: var(--hz-paper);
-  color: var(--hz-ink);
-  font-size: 7pt;
-  font-weight: var(--hz-fw-bold);
-  line-height: 1.25;
-}
-
-.hz-photo-index {
-  position: absolute;
-  z-index: 3;
-  top: 4mm;
-  right: 4mm;
-  display: grid;
-  place-items: center;
-  width: 8mm;
-  height: 8mm;
-  background: var(--hz-unit);
-  color: white;
-  font-size: 7pt;
-  font-weight: var(--hz-fw-black);
-}
-
-.hz-media-stage--offset {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) 58mm;
-  align-items: end;
-  min-height: 62mm;
-  padding-right: 3mm;
-}
-
-.hz-media-stage--offset .hz-media-stage__photo {
-  grid-column: 1 / -1;
-  grid-row: 1;
-  width: calc(100% - 25mm);
-  min-height: 62mm;
-}
-
-.hz-media-stage__offset-copy {
-  position: relative;
-  z-index: 3;
-  grid-column: 2;
-  grid-row: 1;
-  margin-bottom: -3mm;
-  padding: 4mm;
-  border-top: 1mm solid var(--hz-unit);
-  background: var(--hz-paper);
-}
-
-.hz-media-stage__offset-copy h3 {
-  margin: 0 0 1.5mm;
-  font-size: 15pt;
-  line-height: 1.05;
-}
-
-.hz-media-stage__offset-copy p:last-child { margin-bottom: 0; }
-
-.hz-media-stage--band .hz-photo-band {
-  position: absolute;
-  z-index: 3;
-  right: -3mm;
-  bottom: 9mm;
-  left: 14mm;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 3mm;
-  align-items: center;
-  padding: 2.5mm 3mm;
-  background: var(--hz-unit);
-  color: white;
-}
-
-.hz-photo-band__label {
-  padding-right: 3mm;
-  border-right: .3mm solid rgb(255 255 255 / 55%);
-  font-size: 6.5pt;
-  font-weight: var(--hz-fw-black);
-  letter-spacing: .08em;
-  text-transform: uppercase;
-}
-
-.hz-photo-band__text {
-  font-family: var(--hz-font-reading);
-  font-size: 8pt;
-  line-height: 1.3;
-}
-
-.hz-media-collage {
-  position: relative;
-  min-height: 66mm;
-  padding-right: 28mm;
-  padding-bottom: 9mm;
-}
-
-.hz-media-collage__main { min-height: 60mm; }
-
-.hz-media-collage__inset {
-  position: absolute;
-  z-index: 3;
-  overflow: hidden;
-  border: 1.5mm solid var(--hz-paper);
-  background: #ddd;
-}
-
-.hz-media-collage__inset--top {
-  top: 5mm;
-  right: 0;
-  width: 36mm;
-  height: 28mm;
-}
-
-.hz-media-collage__inset--bottom {
-  right: 8mm;
-  bottom: 0;
-  width: 43mm;
-  height: 28mm;
-}
-
-.hz-media-collage__inset img,
-.hz-media-collage__inset .hz-photo-placeholder {
-  width: 100%;
-  height: 100%;
-  min-height: 100%;
-  object-fit: cover;
-}
-
-.hz-photo-quote {
-  position: absolute;
-  z-index: 4;
-  right: 5mm;
-  bottom: -4mm;
-  width: 57mm;
-  padding: 3.2mm 3.5mm;
-  border-top: .9mm solid var(--hz-unit);
-  background: var(--hz-paper);
-  color: var(--hz-ink);
-  font-family: var(--hz-font-reading);
-  font-size: 9pt;
-  font-style: italic;
-  line-height: 1.35;
-}
-
-.hz-photo-quote cite {
-  display: block;
-  margin-top: 1.5mm;
-  color: var(--hz-muted);
-  font-family: var(--hz-font-sans);
-  font-size: 6.5pt;
-  font-style: normal;
-  font-weight: var(--hz-fw-bold);
-  letter-spacing: .06em;
-  text-transform: uppercase;
-}
-
-.hz-photo-strip {
-  display: grid;
-  grid-template-columns: repeat(var(--hz-photo-count, 3), minmax(0, 1fr));
-  gap: 1.5mm;
-}
-
-.hz-photo-strip__item {
-  position: relative;
-  min-height: 33mm;
-  overflow: hidden;
-  background: #ddd;
-}
-
-.hz-photo-strip__item > img,
-.hz-photo-strip__item > .hz-photo-placeholder {
-  width: 100%;
-  height: 100%;
-  min-height: inherit;
-  object-fit: cover;
-}
-
-.hz-photo-strip__label {
-  position: absolute;
-  z-index: 3;
-  bottom: 0;
-  left: 0;
-  min-width: 8mm;
-  padding: 1.2mm 1.6mm;
-  background: var(--hz-paper);
-  color: var(--hz-unit-dark);
-  font-size: 7pt;
-  font-weight: var(--hz-fw-black);
-}
-
-/* ---------- Grammar / pronunciation focus ---------- */
+/* ---------- Language focus ---------- */
 
 .hz-focus-box {
   padding: 3.2mm 4mm 3.5mm;
@@ -746,27 +418,6 @@
   line-height: 1.35;
 }
 
-/* ---------- Reading card: use sparingly ---------- */
-
-.hz-reading-card {
-  border-top: .8mm solid var(--hz-unit);
-  background: white;
-}
-
-.hz-reading-card__image {
-  display: block;
-  width: 100%;
-  object-fit: cover;
-}
-
-.hz-reading-card__name {
-  margin: 2mm 0 0;
-  font-size: var(--hz-fs-lg);
-  font-weight: var(--hz-fw-black);
-}
-
-.hz-reading-card__body { padding-top: 1mm; }
-
 /* ---------- Real-world interfaces ---------- */
 
 .hz-ui-card,
@@ -819,7 +470,7 @@
   border-bottom: var(--hz-answer-line) solid var(--hz-line-strong);
 }
 
-/* ---------- Tables ---------- */
+/* ---------- Tables / banks / notes ---------- */
 
 .hz-data-table {
   width: 100%;
@@ -840,8 +491,6 @@
   color: var(--hz-unit-dark);
   font-weight: var(--hz-fw-bold);
 }
-
-/* ---------- Word banks / notes ---------- */
 
 .hz-word-bank {
   padding: 2mm 2.5mm;
