@@ -103,3 +103,136 @@
   background-image: url("../Images/1B/Two%20Workers.png") !important;
   background-position: center !important;
 }
+
+/* Exercise 2 — a recognizable WhatsApp-like chat treatment without changing content. */
+.l1b-page:not(.l1b-page--2) .l1b-chats {
+  gap: 4mm !important;
+}
+
+.l1b-page:not(.l1b-page--2) .l1b-chats::before {
+  content: none !important;
+  display: none !important;
+}
+
+.l1b-page:not(.l1b-page--2) .l1b-chat {
+  border: .22mm solid #d8dbdd !important;
+  border-radius: 3.2mm !important;
+  background: #f0f2f5 !important;
+  box-shadow: 0 .7mm 2.2mm rgb(32 33 36 / 13%) !important;
+}
+
+.l1b-page:not(.l1b-page--2) .l1b-chat__top {
+  position: relative;
+  gap: 2mm !important;
+  min-height: 9.2mm !important;
+  padding: 1.55mm 2.6mm !important;
+  background: #075e54 !important;
+  color: #fff !important;
+  font-size: 7.5pt !important;
+  letter-spacing: 0 !important;
+}
+
+.l1b-page:not(.l1b-page--2) .l1b-chat__top::after {
+  content: "☎  ⋮";
+  margin-left: auto;
+  color: rgb(255 255 255 / 92%);
+  font-size: 7.2pt;
+  font-weight: var(--hz-fw-regular);
+  letter-spacing: .14em;
+}
+
+.l1b-page:not(.l1b-page--2) .l1b-chat__avatar {
+  width: 6mm !important;
+  height: 6mm !important;
+  background: #e7f5ef !important;
+  color: #075e54 !important;
+  font-size: 4.9pt !important;
+  font-weight: var(--hz-fw-black) !important;
+}
+
+.l1b-page:not(.l1b-page--2) .l1b-chat__messages {
+  gap: 1.25mm !important;
+  min-height: 37mm !important;
+  padding: 2.5mm 3mm 2.3mm !important;
+  background-color: #efeae2 !important;
+  background-image:
+    radial-gradient(circle at 16% 22%, rgb(84 101 111 / 7%) 0 .25mm, transparent .3mm),
+    radial-gradient(circle at 74% 58%, rgb(84 101 111 / 6%) 0 .22mm, transparent .28mm),
+    linear-gradient(135deg, transparent 48%, rgb(84 101 111 / 3%) 49% 51%, transparent 52%) !important;
+  background-size: 12mm 12mm, 15mm 15mm, 18mm 18mm !important;
+}
+
+.l1b-page:not(.l1b-page--2) .l1b-bubble {
+  position: relative;
+  max-width: 88% !important;
+  padding: 1.35mm 2.1mm 1.45mm !important;
+  border-radius: 1.8mm !important;
+  background: #fff !important;
+  box-shadow: 0 .15mm .45mm rgb(32 33 36 / 12%) !important;
+  font-size: 7.2pt !important;
+  line-height: 1.25 !important;
+}
+
+.l1b-page:not(.l1b-page--2) .l1b-bubble::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -1.3mm;
+  width: 2.4mm;
+  height: 2.8mm;
+  background: #fff;
+  clip-path: polygon(100% 0, 100% 100%, 0 0);
+}
+
+.l1b-page:not(.l1b-page--2) .l1b-bubble--self {
+  align-self: flex-end !important;
+  background: #d9fdd3 !important;
+}
+
+.l1b-page:not(.l1b-page--2) .l1b-bubble--self::before {
+  right: -1.3mm;
+  left: auto;
+  background: #d9fdd3;
+  clip-path: polygon(0 0, 100% 0, 0 100%);
+}
+
+.l1b-page:not(.l1b-page--2) .l1b-chat__input {
+  position: relative;
+  margin: 1.4mm 2.2mm 1.8mm 7mm !important;
+  padding: 1.25mm 2.2mm !important;
+  border: 0 !important;
+  border-radius: 4mm !important;
+  background: #fff !important;
+  color: #667781 !important;
+  box-shadow: 0 0 0 .2mm rgb(84 101 111 / 8%) !important;
+  font-size: 6.7pt !important;
+}
+
+.l1b-page:not(.l1b-page--2) .l1b-chat__input::before {
+  content: "+";
+  position: absolute;
+  left: -4.6mm;
+  top: 50%;
+  color: #667781;
+  font-size: 10pt;
+  font-weight: var(--hz-fw-regular);
+  line-height: 1;
+  transform: translateY(-53%);
+}
+
+.l1b-page:not(.l1b-page--2) .l1b-chat__input::after {
+  content: "●";
+  position: absolute;
+  right: -4.2mm;
+  top: 50%;
+  color: #00a884;
+  font-size: 7pt;
+  line-height: 1;
+  transform: translateY(-50%);
+}
+
+/* Exercise 4.1 — let each profile end with its actual copy instead of a tall empty floor. */
+.l1b-page--2 .l1b-profile__copy {
+  min-height: 0 !important;
+  padding-bottom: 1.2mm !important;
+}
