@@ -229,3 +229,15 @@
   padding-top: 2.4mm !important;
   border-top: .3mm solid #c9cbd0 !important;
 }
+
+/* ---------- Exercise-body rhythm ---------- */
+
+/* Text-only discovery questions use natural paragraph spacing, not fixed-height rows. */
+.l1d-page:not(.l1d-page--2) .l1d-discovery {
+  row-gap: .8mm !important;
+}
+
+.l1d-page:not(.l1d-page--2) .l1d-discovery__item {
+  min-height: 0 !important;
+  padding: .25mm 0 !important;
+}
