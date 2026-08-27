@@ -3795,7 +3795,7 @@ body.hz-debug .hz-page::after {
 
 .l2a-discovery__item b { color: var(--hz-unit-dark); }
 
-/* ---------- Grammar: generated photography carries proximity and number ---------- */
+/* ---------- Grammar: generated imagery carries proximity and number ---------- */
 
 .l2a-grammar {
   margin: .3mm 0 .2mm calc(var(--hz-exercise-marker-size) + 3mm);
@@ -3845,7 +3845,7 @@ body.hz-debug .hz-page::after {
 .l2a-page--2 .hz-exercise { padding-top: 1mm; padding-bottom: 1.55mm; }
 .l2a-page--2 .hz-exercise__body { margin-top: 1mm; }
 
-/* Exercise 4: six generated-photo slots replace CSS person/object diagrams. */
+/* Exercise 4: six generated-image slots replace CSS person/object diagrams. */
 .l2a-choice-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -3886,7 +3886,7 @@ body.hz-debug .hz-page::after {
 
 .l2a-answer--long { min-width: 19mm; }
 
-/* Exercise 5: each completion pair receives a photographic distance cue. */
+/* Exercise 5: each completion pair receives a generated distance cue. */
 .l2a-complete-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -3963,6 +3963,39 @@ body.hz-debug .hz-page::after {
   font-size: 8pt;
   line-height: 1.32;
 }
+
+/* ---------- Production image bindings ---------- */
+
+.l2a-photo-slot {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+}
+
+.l2a-photo-slot > .hz-photo-placeholder { background: transparent; }
+.l2a-photo-slot .hz-photo-placeholder__meta { display: none; }
+
+[data-image-slot="2A-E01-BAG"] { background-image: url("./Images/2A/Open bag.png"); }
+[data-image-slot="2A-E02-DIALOGUE"] { background-image: url("./Images/2A/Friends with bag.png"); }
+
+[data-image-slot="2A-GRAMMAR-THIS"] { background-image: url("./Images/2A/This phone.png"); }
+[data-image-slot="2A-GRAMMAR-THAT"] { background-image: url("./Images/2A/That notebook.png"); }
+[data-image-slot="2A-GRAMMAR-THESE"] { background-image: url("./Images/2A/These keys.png"); }
+[data-image-slot="2A-GRAMMAR-THOSE"] { background-image: url("./Images/2A/Those headphones.png"); }
+
+[data-image-slot="2A-E04-01"] { background-image: url("./Images/2A/Close wallet.png"); }
+[data-image-slot="2A-E04-02"] { background-image: url("./Images/2A/Far notebook.png"); }
+[data-image-slot="2A-E04-03"] { background-image: url("./Images/2A/Close keys.png"); }
+[data-image-slot="2A-E04-04"] { background-image: url("./Images/2A/Far headphones.png"); }
+[data-image-slot="2A-E04-05"] { background-image: url("./Images/2A/Close bottle.png"); }
+[data-image-slot="2A-E04-06"] { background-image: url("./Images/2A/Far pens.png"); }
+
+[data-image-slot="2A-E05-01"] { background-image: url("./Images/2A/Close phone practice.png"); }
+[data-image-slot="2A-E05-02"] { background-image: url("./Images/2A/Close keys practice.png"); }
+[data-image-slot="2A-E05-03"] { background-image: url("./Images/2A/Far notebook practice.png"); }
+[data-image-slot="2A-E05-04"] { background-image: url("./Images/2A/Far headphones practice.png"); }
+
+[data-image-slot="2A-E06-PAIR-SCENE"] { background-image: url("./Images/2A/Pairwork bag scene.png"); }
 
 @media print {
   .l2a-page,
