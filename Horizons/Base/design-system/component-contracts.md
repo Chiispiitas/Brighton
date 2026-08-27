@@ -57,6 +57,8 @@ Sibling numbered exercises always remain in this one vertical lane. Do not place
 
 Normal exercises and `Go to:` references do not receive decorative separator lines.
 
+The exercise body should contain only the response mechanics the task actually needs. Do not add generic answer lines, boxes or check controls to a question-only task.
+
 ## 4. Internal grids
 
 Two/three-column grids are allowed **inside one exercise**:
@@ -69,6 +71,8 @@ Two/three-column grids are allowed **inside one exercise**:
 ```
 
 Use existing `.hz-question-grid-*` / `.hz-content-grid-*` helpers before inventing a local equivalent.
+
+When a short semantic label should remain intact, prefer a content-sized column or a local no-wrap rule for that label instead of widening every sibling or reducing type size.
 
 ## 5. Repeated media family
 
@@ -83,6 +87,8 @@ Use existing `.hz-question-grid-*` / `.hz-content-grid-*` helpers before inventi
 Use `--full-lane` when a dominant equal-status family should center across the usable exercise lane rather than being visually shifted by the exercise-number column.
 
 The family chooses its columns/gaps locally. Equal-status items share geometry/basic scale; crop position may differ per image.
+
+Do not force text/copy areas inside repeated items to a large equal `min-height` unless equal height is functionally necessary. Natural content height is the default.
 
 ## 6. Photography
 
@@ -142,6 +148,10 @@ Rounded/shadowed surfaces are appropriate for genuine forms, chats, tickets, app
 ```
 
 The artifact must be used by the learner rather than included only for appearance.
+
+`hz-ui-card` is only a semantic/shared starting point. A recognizable interface should usually receive lesson-local styling that reproduces the intended artifact's visual grammar: for example message direction, header hierarchy, field rhythm, input treatment, surface color and control placement. Do not settle for a generic rounded rectangle when recognizability matters to the task.
+
+For paper forms, prefer CSS-built structure before adding decorative imagery. Keep fields writable, labels readable and the artifact visually credible at print size.
 
 ## 11. Text roles / physical floors
 
