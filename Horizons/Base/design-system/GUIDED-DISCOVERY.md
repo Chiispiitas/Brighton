@@ -144,6 +144,20 @@ Introduce core language in context, guide noticing, clarify concisely, provide c
 
 The receptive text/audio carries the lesson. Vocabulary supports comprehension and later use without displacing the receptive skill.
 
+#### HORIZONS ON AIR — recurring listening-show identity
+
+`HORIZONS ON AIR` is the official recurring show identity for substantial listening-led Horizons lessons. Use the same show name across the book so learners recognize the feature immediately, while each episode receives its own short title.
+
+The **identity repeats; the format does not have to**. An episode may use street interviews, a studio conversation, a host with guests, short field segments, phone calls, vox-pop answers or another believable audio-show format. Do not force the same host, cast, setting or interaction pattern across lessons.
+
+When a Lesson B is listening-led, one longer `HORIZONS ON AIR` track may act as the spine of the two-page lesson. Reuse the same track across several tasks rather than fragmenting the lesson into unrelated mini-listenings. A useful progression is:
+
+**first listen for the main situation → listen again for specific information → inspect language from the same audio → controlled practice → communicative/real-world transfer**.
+
+The show should feel produced and adult through voice variety, a short recurring sting, light ambient sound, photography and authentic artifacts. **Do not create that sense of production by increasing learner-facing language complexity.** Early-A1 episodes must still obey the cumulative language ceiling and may use intentionally simple interview questions and repeated answers.
+
+The visible feature should use the official `HORIZONS ON AIR` name plus the episode title, not a generic genre label. Minor pronunciation tracks or tiny one-off audio drills do not need the full show identity; it is for listening features that carry meaningful lesson content.
+
 ### Lesson C — Grammar and/or Vocabulary
 
 Use the same discovery philosophy as Lesson A with a different context/composition. Avoid mechanically repeating the same page pattern.
