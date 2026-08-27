@@ -35,9 +35,24 @@
   height: 100%;
   min-height: 100%;
   object-fit: cover;
+  object-position: center center;
   border: 0;
   outline: 0;
   box-shadow: none;
+}
+
+/* Photographs can tolerate editorial cropping, but the flat illustrations
+   cannot: the complete person-object relationship is the grammar cue. Preserve
+   the whole authored composition and center it inside its slot. */
+.l2a-grammar-photo > img,
+.l2a-choice-photo > img {
+  object-fit: contain;
+  object-position: center center;
+}
+
+.l2a-grammar-photo,
+.l2a-choice-photo {
+  background: var(--hz-paper);
 }
 
 /* ---------- Exercise 1 ---------- */
