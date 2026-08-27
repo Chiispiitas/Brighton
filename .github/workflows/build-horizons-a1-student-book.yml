@@ -7,6 +7,7 @@ on:
       - "Horizons/Base/design-system/**"
       - "Horizons/Base/shell/**"
       - "Horizons/Base/build/build-students-book.mjs"
+      - "Horizons/Base/build/build-students-book-pdf.mjs"
       - ".github/workflows/build-horizons-a1-student-book.yml"
   workflow_dispatch:
 
@@ -18,8 +19,9 @@ concurrency:
   cancel-in-progress: true
 
 jobs:
-  build:
-    runs-on: ubuntu-latest
+  render-windows:
+    name: Render on Windows
+    runs-on: windows-latest
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
@@ -32,117 +34,35 @@ jobs:
       - name: Compile Student's Book HTML
         run: node Horizons/Base/build/build-students-book.mjs
 
-      - name: Build Student's Book PDF at true A4 scale
-        shell: bash
-        run: |
-          set -euo pipefail
+      - name: Install PDF renderer
+        run: npm install --no-save --no-package-lock puppeteer-core@24
 
-          CHROME="$(command -v google-chrome || command -v google-chrome-stable || command -v chromium || command -v chromium-browser || true)"
-          if [ -z "$CHROME" ]; then
-            echo "No Chromium-compatible browser is available on the runner."
-            exit 1
-          fi
+      - name: Render PDF with Windows native fonts
+        run: node Horizons/Base/build/build-students-book-pdf.mjs
 
-          npm install --no-save --no-package-lock puppeteer-core@24
+      - name: Upload Windows-rendered book
+        uses: actions/upload-artifact@v4
+        with:
+          name: horizons-a1-windows-render
+          path: |
+            Horizons/A1/Student's Book.html
+            Horizons/A1/Student's Book.pdf
+          if-no-files-found: error
+          retention-days: 1
 
-          CHROME="$CHROME" node - <<'NODE'
-          const path = require('node:path');
-          const { pathToFileURL } = require('node:url');
-          const puppeteer = require('puppeteer-core');
+  finalize:
+    name: Optimize, validate and commit
+    needs: render-windows
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
 
-          (async () => {
-            const htmlPath = path.resolve("Horizons/A1/Student's Book.html");
-            const pdfPath = path.resolve("Horizons/A1/Student's Book.pdf");
-            const browser = await puppeteer.launch({
-              executablePath: process.env.CHROME,
-              headless: true,
-              args: [
-                '--no-sandbox',
-                '--disable-gpu',
-                '--allow-file-access-from-files'
-              ]
-            });
-
-            try {
-              const page = await browser.newPage();
-              await page.goto(pathToFileURL(htmlPath).href, { waitUntil: 'networkidle0' });
-              await page.emulateMediaType('print');
-
-              // Print geometry is deliberately stricter than the screen viewer.
-              // No viewer width, screen spacing, zoom or fit-to-page behavior may
-              // reduce the physical 210 x 297 mm lesson page.
-              await page.addStyleTag({ content: `
-                @page {
-                  size: 210mm 297mm !important;
-                  margin: 0 !important;
-                }
-
-                @media print {
-                  html,
-                  body,
-                  body.hz-book,
-                  #hz-book {
-                    width: 210mm !important;
-                    min-width: 210mm !important;
-                    max-width: 210mm !important;
-                    margin: 0 !important;
-                    padding: 0 !important;
-                    zoom: 1 !important;
-                    transform: none !important;
-                  }
-
-                  #hz-book {
-                    display: block !important;
-                  }
-
-                  .hz-page {
-                    box-sizing: border-box !important;
-                    width: 210mm !important;
-                    min-width: 210mm !important;
-                    max-width: 210mm !important;
-                    height: 297mm !important;
-                    min-height: 297mm !important;
-                    max-height: 297mm !important;
-                    margin: 0 !important;
-                    padding: 0 !important;
-                    zoom: 1 !important;
-                    transform: none !important;
-                    box-shadow: none !important;
-                    break-after: page !important;
-                    page-break-after: always !important;
-                  }
-
-                  .hz-page:last-child {
-                    break-after: auto !important;
-                    page-break-after: auto !important;
-                  }
-
-                  .hz-pdf-button {
-                    display: none !important;
-                  }
-                }
-              ` });
-
-              await page.pdf({
-                path: pdfPath,
-                width: '210mm',
-                height: '297mm',
-                margin: { top: 0, right: 0, bottom: 0, left: 0 },
-                printBackground: true,
-                preferCSSPageSize: true,
-                scale: 1,
-                displayHeaderFooter: false
-              });
-            } finally {
-              await browser.close();
-            }
-          })().catch((error) => {
-            console.error(error);
-            process.exit(1);
-          });
-          NODE
-
-          test -s "Horizons/A1/Student's Book.pdf"
+      - name: Download Windows-rendered book
+        uses: actions/download-artifact@v4
+        with:
+          name: horizons-a1-windows-render
+          path: Horizons/A1
 
       - name: Optimize Student's Book PDF
         shell: bash
