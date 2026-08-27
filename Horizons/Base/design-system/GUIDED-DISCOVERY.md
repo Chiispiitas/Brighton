@@ -83,6 +83,8 @@ For early A1, reduced wording may be better:
 
 At later levels, questions may become more natural and analytical as long as the wording itself is accessible.
 
+A discovery question does **not** automatically require an answer line, checkbox, multiple-choice option or other response space. If the intended classroom behavior is oral noticing, teacher-led analysis, pair discussion or mental comparison, the question alone may be the complete exercise. Add a visible response affordance only when learners are actually expected to record or select a response on the page.
+
 ## 5. Minimal sufficient scaffolding
 
 Add support only when it makes the intended discovery or task possible.
@@ -92,7 +94,10 @@ Remove support when it:
 - repeats visible evidence;
 - gives away the answer unnecessarily;
 - creates page crowding;
-- introduces more language than the task itself.
+- introduces more language than the task itself;
+- invents a response behavior the task does not require.
+
+Removing one scaffold does not authorize replacing it with another. If answer choices are removed, do not automatically add answer lines. If a label is removed, do not invent a substitute heading. Treat the resulting simpler task as intentional unless another support element is explicitly needed.
 
 A simple cognitive task can become difficult because of a complex instruction. Language simplicity is part of scaffolding.
 
@@ -130,6 +135,8 @@ Forms, chats, maps, schedules, tickets, menus, reviews and similar interfaces mu
 
 Use only as much real-world terminology as the learner can currently process. Authenticity comes from the situation and function, not from reproducing every word a real business or app would use.
 
+A recognizable artifact may carry much of the situational meaning visually. Use its familiar structure, field rhythm, message alignment or interface hierarchy to reduce the amount of explanatory English required. Visual authenticity should lower the language burden, not add another layer of vocabulary.
+
 ## 9. Back-of-book practice
 
 Grammar Reference/Practice and Vocabulary Practice provide deeper consolidation than fits comfortably in a two-page lesson.
@@ -166,12 +173,14 @@ Before approving a lesson, verify:
 2. What exact evidence can the learner inspect?
 3. What question directs attention to the intended pattern/use?
 4. Is every scaffold necessary?
-5. Where is the discovery clarified?
-6. What controlled task lets the learner test it?
-7. Where does pairwork add genuine value?
-8. What does the learner ultimately accomplish?
-9. Which learner-facing words/constructions are new on this page?
-10. Are new non-target items genuinely necessary and level-appropriate?
-11. Did any rewrite become more idiomatic but less accessible than the book's established register?
+5. Does every visible response affordance match an actual expected learner action?
+6. If a scaffold was removed, did the page remain simple rather than silently replacing it with another?
+7. Where is the discovery clarified?
+8. What controlled task lets the learner test it?
+9. Where does pairwork add genuine value?
+10. What does the learner ultimately accomplish?
+11. Which learner-facing words/constructions are new on this page?
+12. Are new non-target items genuinely necessary and level-appropriate?
+13. Did any rewrite become more idiomatic but less accessible than the book's established register?
 
 When native-like phrasing conflicts with the deliberate language progression, **the progression wins**.
