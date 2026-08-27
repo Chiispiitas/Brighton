@@ -704,6 +704,30 @@
   line-height: 1.28;
 }
 
+/* ---------- Production photography ---------- */
+
+[data-image-slot="2B-CITY-WIDE"] .hz-photo-placeholder {
+  background: url("../Images/2B/2B-CITY-WIDE.png") center 52% / cover no-repeat;
+}
+
+[data-image-slot="2B-CITY-WIDE"] .hz-photo-placeholder::before,
+[data-image-slot="2B-CITY-WIDE"] .hz-photo-placeholder::after { display: none; }
+[data-image-slot="2B-CITY-WIDE"] .hz-photo-placeholder__meta { display: none; }
+
+[data-image-slot="2B-AIR-01-JULIA"] .l2b-photo-placeholder {
+  background: url("../Images/2B/2B-AIR-01-JULIA.png") center 38% / cover no-repeat;
+}
+
+[data-image-slot="2B-AIR-03-ANA"] .l2b-photo-placeholder {
+  background: url("../Images/2B/2B-AIR-03-ANA.png") center 38% / cover no-repeat;
+}
+
+[data-image-slot="2B-AIR-04-DIEGO"] .l2b-photo-placeholder {
+  background: url("../Images/2B/2B-AIR-04-DIEGO.png") center 38% / cover no-repeat;
+}
+
+[data-image-slot^="2B-AIR-"] .l2b-photo-placeholder > span { display: none; }
+
 @media print {
   .l2b-page,
   .l2b-page * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
