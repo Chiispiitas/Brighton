@@ -134,3 +134,107 @@
   background-image: url("../Images/1D/Roleplay%20Staff%20Customer.png") !important;
   background-position: center center !important;
 }
+
+/* Exercise 2 — remove multiple-choice prompting and leave room for discovered answers. */
+.l1d-page:not(.l1d-page--2) .l1d-discovery__choices {
+  display: none !important;
+}
+
+.l1d-page:not(.l1d-page--2) .l1d-discovery__item > div::after {
+  content: "";
+  display: block;
+  width: min(100%, 58mm);
+  min-height: 3.2mm;
+  margin-top: .7mm;
+  border-bottom: .3mm solid var(--hz-line-strong);
+}
+
+/* Exercise 7 — a more intentional real-world paper form, using CSS only. */
+.l1d-page--2 .l1d-live-form {
+  position: relative !important;
+  overflow: hidden !important;
+  padding: 4.6mm 4.5mm 4mm !important;
+  border: .32mm solid #c9cbd0 !important;
+  border-top: 1.6mm solid var(--hz-unit) !important;
+  background:
+    linear-gradient(180deg, var(--hz-unit-soft) 0 16mm, rgb(255 254 250 / 96%) 16mm 100%) !important;
+  box-shadow:
+    0 1mm 3.5mm rgb(32 33 36 / 10%),
+    inset 0 0 0 .45mm rgb(255 255 255 / 78%) !important;
+}
+
+.l1d-page--2 .l1d-live-form::after {
+  content: "";
+  position: absolute;
+  z-index: 0;
+  top: -20mm;
+  right: -16mm;
+  width: 42mm;
+  height: 42mm;
+  border: 6mm solid rgb(194 24 91 / 10%);
+  border-radius: 50%;
+  pointer-events: none;
+}
+
+.l1d-page--2 .l1d-live-form__business,
+.l1d-page--2 .l1d-live-form h3,
+.l1d-page--2 .l1d-live-row,
+.l1d-page--2 .l1d-live-form__footer {
+  position: relative;
+  z-index: 1;
+}
+
+.l1d-page--2 .l1d-live-form__business {
+  display: block !important;
+  width: 48mm;
+  margin: 0 0 2.5mm !important;
+}
+
+.l1d-page--2 .l1d-live-form__business span:first-child {
+  display: none !important;
+}
+
+.l1d-page--2 .l1d-live-form__business span:last-child {
+  display: block;
+  width: 100%;
+  min-height: 5mm !important;
+  border-bottom: .45mm solid var(--hz-unit) !important;
+}
+
+.l1d-page--2 .l1d-live-form h3 {
+  margin: 0 0 3mm !important;
+  padding-bottom: 2.1mm;
+  border-bottom: .55mm solid var(--hz-unit);
+  color: var(--hz-ink) !important;
+  font-size: 16pt !important;
+  line-height: 1 !important;
+  letter-spacing: -.035em !important;
+}
+
+.l1d-page--2 .l1d-live-row {
+  grid-template-columns: 28mm 1fr !important;
+  gap: 3mm !important;
+  min-height: 8mm !important;
+  padding: .7mm 1.2mm .8mm !important;
+  border-bottom: .2mm solid rgb(116 119 125 / 13%);
+}
+
+.l1d-page--2 .l1d-live-row:nth-of-type(even) {
+  background: rgb(248 230 238 / 30%);
+}
+
+.l1d-page--2 .l1d-live-row span:first-child {
+  color: var(--hz-ink-soft) !important;
+  font-weight: var(--hz-fw-semibold) !important;
+}
+
+.l1d-page--2 .l1d-live-row span:last-child {
+  min-height: 4.8mm !important;
+  border-bottom: .3mm solid #8f9298 !important;
+}
+
+.l1d-page--2 .l1d-live-form__footer {
+  margin-top: 3mm !important;
+  padding-top: 2.4mm !important;
+  border-top: .3mm solid #c9cbd0 !important;
+}
