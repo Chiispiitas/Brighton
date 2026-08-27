@@ -33,6 +33,14 @@ Lesson masters use the definitive lesson code as their filenames. Their adjacent
 
 For **early A1 learner-facing language**, 1A, 1B and the first page of 1C are especially important references for the deliberately narrow, Spanish-transparent register.
 
+Recent Unit 1 refinements establish additional production precedents:
+
+- simulated real-world UI should visually read as the intended artifact, not as a generic card;
+- text/profile bodies should normally end with their content rather than carrying large artificial `min-height` floors;
+- short semantic labels may use content-sized columns or no-wrap treatment when an awkward line break would damage readability;
+- when the author removes answer choices or response spaces, do not replace them with a different affordance unless explicitly requested;
+- forms should prefer restrained CSS-built structure and decoration before adding a background image that does no pedagogical work.
+
 ## Current A1 / Unit 2 workflow
 
 For each new lesson:
@@ -65,6 +73,14 @@ The local browser does **not** build the PDF. The workflow generates `../../A1/S
 
 Do not reintroduce client-side PDF generation with canvas, SVG `foreignObject`, `html2canvas`, `jsPDF`, iframe cloning or browser Print/Save as PDF. Those approaches conflict with reliable `file://` operation and are outside the Student's Book boundary.
 
+### PDF typography/render parity
+
+The production PDF must preserve the typography and layout of the approved HTML as closely as possible. A CSS stack containing `system-ui` is environment-sensitive, so rendering on a different operating system can change font families, weight interpolation, metrics, wrapping and spacing even when the CSS is identical.
+
+For the current A1 pipeline, render the PDF in a Windows Chrome environment compatible with the author's normal Windows browser environment. The renderer must wait for `document.fonts.ready`, image decoding and layout stabilization before capture. Keep true A4 output at 100% scale with print backgrounds and CSS page size honored.
+
+If a future book moves to an explicitly bundled cross-platform font family, the runner may change only after HTML/PDF parity is revalidated. Do not compensate for font-environment drift by locally changing lesson font sizes or weights.
+
 ## Repository boundary
 
 - series-wide design rules/components → `Horizons/Base/design-system/`;
@@ -84,8 +100,11 @@ Across Horizons books:
 - important learner text is not shrunk merely to force page fit;
 - visual worlds follow lesson content rather than a generic school theme;
 - no decorative ghost text or generic card/pill system;
+- real-world UI is recognizable and functional rather than generically decorative;
+- artificial content-height floors do not trap dead space;
+- removed scaffolding is not silently replaced by new answer mechanics;
 - reusable rules stay in Base and one-off decisions stay book-local.
 
 For A1 specifically, also enforce the cumulative early-A1 language rule in `GUIDED-DISCOVERY.md`.
 
-Before calling a spread complete, verify source fidelity, exercise order, level-appropriate language load, Guided Discovery evidence, readable type, content economy, functional artifacts, repeated-media crop/centering, shared chrome, whitespace, content-led imagery and parity with surrounding lessons.
+Before calling a spread complete, verify source fidelity, exercise order, level-appropriate language load, Guided Discovery evidence, readable type, content economy, functional artifacts, repeated-media crop/centering, natural content height, short-label wrapping, shared chrome, whitespace, content-led imagery and parity with surrounding lessons.
