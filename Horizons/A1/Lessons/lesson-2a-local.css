@@ -1,7 +1,6 @@
 /* Horizons A1 — Lesson 2A scoped styles.
    The current A1 book keeps its established crimson-pink identity across
-   units unless the author explicitly changes it. Generated raster imagery
-   carries people/object/distance cues; CSS does not approximate those scenes. */
+   units unless the author explicitly changes it. */
 
 .l2a-page {
   --hz-unit: var(--hz-unit-1);
@@ -19,21 +18,26 @@
 .l2a-target { color: var(--hz-unit-dark); font-weight: var(--hz-fw-black); }
 .l2a-go-to { margin-left: calc(var(--hz-exercise-marker-size) + 3mm); }
 
-/* Any production slot can contain either the development placeholder or a
-   real raster <img>. Replacing the placeholder never requires layout changes. */
+/* Production image containers contain real <img> elements, never visible
+   placeholder frames. */
 .l2a-photo-slot {
   position: relative;
   overflow: hidden;
-  background: var(--hz-wash);
+  background: transparent;
+  border: 0;
+  outline: 0;
+  box-shadow: none;
 }
 
-.l2a-photo-slot > img,
-.l2a-photo-slot > .hz-photo-placeholder {
+.l2a-photo-slot > img {
   display: block;
   width: 100%;
   height: 100%;
   min-height: 100%;
   object-fit: cover;
+  border: 0;
+  outline: 0;
+  box-shadow: none;
 }
 
 /* ---------- Exercise 1 ---------- */
@@ -113,26 +117,7 @@
 .l2a-dialogue dt { margin: 0; font-weight: var(--hz-fw-black); }
 .l2a-dialogue dd { margin: 0; }
 
-/* ---------- Exercise 3 ---------- */
-
-.l2a-discovery {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.2mm 8mm;
-  font-size: 8pt;
-  line-height: 1.3;
-}
-
-.l2a-discovery__item {
-  display: grid;
-  grid-template-columns: 5mm minmax(0, 1fr);
-  gap: 1mm;
-  min-height: 5.8mm;
-}
-
-.l2a-discovery__item b { color: var(--hz-unit-dark); }
-
-/* ---------- Grammar: generated imagery carries proximity and number ---------- */
+/* ---------- Grammar ---------- */
 
 .l2a-grammar {
   margin: .3mm 0 .2mm calc(var(--hz-exercise-marker-size) + 3mm);
@@ -154,15 +139,7 @@
   line-height: 1.24;
 }
 
-.l2a-grammar-photo {
-  height: 18mm;
-  background: #e8e6e2;
-}
-
-.l2a-grammar-photo .hz-photo-placeholder__meta {
-  font-size: 5.3pt;
-  letter-spacing: .06em;
-}
+.l2a-grammar-photo { height: 18mm; }
 
 .l2a-grammar-item > strong {
   display: block;
@@ -182,7 +159,7 @@
 .l2a-page--2 .hz-exercise { padding-top: 1mm; padding-bottom: 1.55mm; }
 .l2a-page--2 .hz-exercise__body { margin-top: 1mm; }
 
-/* Exercise 4: six generated-image slots replace CSS person/object diagrams. */
+/* Exercise 3 */
 .l2a-choice-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -195,15 +172,7 @@
   border-top: .5mm solid var(--hz-unit);
 }
 
-.l2a-choice-photo {
-  height: 22mm;
-  background: #e8e6e2;
-}
-
-.l2a-choice-photo .hz-photo-placeholder__meta {
-  font-size: 5.4pt;
-  letter-spacing: .06em;
-}
+.l2a-choice-photo { height: 22mm; }
 
 .l2a-choice-item p {
   margin: 1.2mm 0 0;
@@ -221,10 +190,8 @@
   vertical-align: -.4mm;
 }
 
-.l2a-answer--long { min-width: 19mm; }
-
-/* Exercise 5: each completion pair receives a generated distance cue. */
-.l2a-complete-grid {
+/* Exercise 4: pictureless listening. */
+.l2a-listening-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: 1.7mm 7mm;
@@ -232,24 +199,27 @@
   line-height: 1.3;
 }
 
-.l2a-complete-item {
+.l2a-listening-item {
   display: grid;
-  grid-template-columns: 5mm 27mm minmax(0, 1fr);
+  grid-template-columns: 5mm 22mm minmax(0, 1fr);
   gap: 1.2mm;
   align-items: center;
-  min-width: 0;
-  padding: 1.2mm 0;
+  min-height: 8mm;
+  padding: 1.1mm 0;
   border-bottom: .25mm solid var(--hz-line);
 }
 
-.l2a-complete-item > b { align-self: start; color: var(--hz-unit-dark); }
-.l2a-complete-photo { height: 18mm; }
-.l2a-complete-photo .hz-photo-placeholder__meta { font-size: 5pt; letter-spacing: .05em; }
-.l2a-complete-item p { margin: 0 0 1.2mm; }
-.l2a-complete-item p:last-child { margin-bottom: 0; }
+.l2a-listening-item > b { color: var(--hz-unit-dark); }
 
-/* Exercise 6: one large generated scene. Item numbers belong in the raster
-   asset itself, not as HTML/CSS overlays. */
+.l2a-listening-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5mm 5mm;
+}
+
+.l2a-listening-options > span { white-space: nowrap; }
+
+/* Exercise 5 */
 .l2a-pair-stage {
   display: grid;
   grid-template-columns: .82fr 1.18fr;
@@ -300,39 +270,6 @@
   font-size: 8pt;
   line-height: 1.32;
 }
-
-/* ---------- Production image bindings ---------- */
-
-.l2a-photo-slot {
-  background-repeat: no-repeat;
-  background-position: center;
-  background-size: cover;
-}
-
-.l2a-photo-slot > .hz-photo-placeholder { background: transparent; }
-.l2a-photo-slot .hz-photo-placeholder__meta { display: none; }
-
-[data-image-slot="2A-E01-BAG"] { background-image: url("../Images/2A/Open bag.png"); }
-[data-image-slot="2A-E02-DIALOGUE"] { background-image: url("../Images/2A/Friends with bag.png"); }
-
-[data-image-slot="2A-GRAMMAR-THIS"] { background-image: url("../Images/2A/This phone.png"); }
-[data-image-slot="2A-GRAMMAR-THAT"] { background-image: url("../Images/2A/That notebook.png"); }
-[data-image-slot="2A-GRAMMAR-THESE"] { background-image: url("../Images/2A/These keys.png"); }
-[data-image-slot="2A-GRAMMAR-THOSE"] { background-image: url("../Images/2A/Those headphones.png"); }
-
-[data-image-slot="2A-E04-01"] { background-image: url("../Images/2A/Close wallet.png"); }
-[data-image-slot="2A-E04-02"] { background-image: url("../Images/2A/Far notebook.png"); }
-[data-image-slot="2A-E04-03"] { background-image: url("../Images/2A/Close keys.png"); }
-[data-image-slot="2A-E04-04"] { background-image: url("../Images/2A/Far headphones.png"); }
-[data-image-slot="2A-E04-05"] { background-image: url("../Images/2A/Close bottle.png"); }
-[data-image-slot="2A-E04-06"] { background-image: url("../Images/2A/Far pens.png"); }
-
-[data-image-slot="2A-E05-01"] { background-image: url("../Images/2A/Close phone practice.png"); }
-[data-image-slot="2A-E05-02"] { background-image: url("../Images/2A/Close keys practice.png"); }
-[data-image-slot="2A-E05-03"] { background-image: url("../Images/2A/Far notebook practice.png"); }
-[data-image-slot="2A-E05-04"] { background-image: url("../Images/2A/Far headphones practice.png"); }
-
-[data-image-slot="2A-E06-PAIR-SCENE"] { background-image: url("../Images/2A/Pairwork bag scene.png"); }
 
 @media print {
   .l2a-page,
