@@ -24,6 +24,19 @@ function cleanLocalHref(href) {
   return decodeURIComponent(href.split("#")[0].split("?")[0]);
 }
 
+function rebaseLocalAssetUrl(value, sourcePath) {
+  const raw = value.trim();
+  if (!raw || /^(?:data:|blob:|https?:|file:|#|\/|mailto:|tel:|javascript:)/i.test(raw)) return value;
+
+  const suffixMatch = raw.match(/^([^?#]*)([?#].*)?$/);
+  const assetPart = suffixMatch?.[1] || raw;
+  const suffix = suffixMatch?.[2] || "";
+  const absoluteAsset = path.resolve(path.dirname(sourcePath), decodeURIComponent(assetPart));
+  let relativeAsset = path.relative(a1Dir, absoluteAsset).replaceAll(path.sep, "/");
+  if (!relativeAsset.startsWith(".")) relativeAsset = `./${relativeAsset}`;
+  return `${relativeAsset}${suffix}`;
+}
+
 function rewriteCssAssetUrls(css, stylesheetPath) {
   return css.replace(/url\(\s*(["']?)(.*?)\1\s*\)/gi, (match, quote, rawValue) => {
     const value = rawValue.trim();
@@ -34,6 +47,31 @@ function rewriteCssAssetUrls(css, stylesheetPath) {
     if (!relativeAsset.startsWith(".")) relativeAsset = `./${relativeAsset}`;
     return `url("${relativeAsset}")`;
   });
+}
+
+function rewriteBodyAssetUrls(bodyHtml, lessonPath) {
+  let output = bodyHtml.replace(/\b(src|poster)\s*=\s*(["'])(.*?)\2/gi, (match, attr, quote, value) => {
+    const rebased = rebaseLocalAssetUrl(value, lessonPath);
+    return `${attr}=${quote}${rebased}${quote}`;
+  });
+
+  output = output.replace(/\bsrcset\s*=\s*(["'])(.*?)\1/gi, (match, quote, value) => {
+    const rebasedSet = value
+      .split(",")
+      .map((candidate) => {
+        const trimmed = candidate.trim();
+        if (!trimmed) return trimmed;
+        const parts = trimmed.split(/\s+/);
+        const url = parts.shift();
+        const descriptor = parts.join(" ");
+        const rebased = rebaseLocalAssetUrl(url, lessonPath);
+        return descriptor ? `${rebased} ${descriptor}` : rebased;
+      })
+      .join(", ");
+    return `srcset=${quote}${rebasedSet}${quote}`;
+  });
+
+  return output;
 }
 
 function loadCss(cssPath, stack = []) {
@@ -119,7 +157,8 @@ for (const filename of lessons) {
   const lessonPath = path.join(lessonsDir, filename);
   const html = readText(lessonPath);
   compiledStyles.push(...collectHeadStyles(extractHead(html), lessonPath, filename));
-  compiledBodies.push(`<!-- ===== ${filename} ===== -->\n${extractBody(html, filename)}`);
+  const body = rewriteBodyAssetUrls(extractBody(html, filename), lessonPath);
+  compiledBodies.push(`<!-- ===== ${filename} ===== -->\n${body}`);
 }
 
 const viewerCss = `
