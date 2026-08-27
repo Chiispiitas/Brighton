@@ -53,6 +53,7 @@ Default page language:
 - one dominant unit color;
 - substantial whitespace;
 - deliberate raster photography;
+- selective approved classic ELT raster illustration when pedagogically useful;
 - strong typographic hierarchy;
 - large simple exercise numerals;
 - straight edges and thin editorial rules;
@@ -60,7 +61,7 @@ Default page language:
 - rounded/shadowed surfaces mainly when reproducing a real interface;
 - almost no decorative gradients;
 - no generic card/pill system;
-- no decorative vector illustration;
+- no decorative or generic vector illustration;
 - SVG only for functional icons.
 
 Do not use oversized translucent words, letters, numerals or punctuation as background decoration. Do not add visual material merely to fill empty space.
@@ -69,13 +70,13 @@ Do not use oversized translucent words, letters, numerals or punctuation as back
 
 Horizons has **no default school/classroom visual theme**.
 
-The lesson's actual world determines setting, props, people and photographic mood. A lesson may inhabit hospitality, travel, transport, home life, fitness, retail, food, work, culture, technology, sport, street life or another appropriate environment.
+The lesson's actual world determines setting, props, people and visual mood. A lesson may inhabit hospitality, travel, transport, home life, fitness, retail, food, work, culture, technology, sport, street life or another appropriate environment.
 
 Do not add notebooks, pencils, blackboards, school desks, classrooms or similar school-coded props unless they naturally belong to the scene. Do not describe generated images as `educational style`, `classroom aesthetic` or equivalent by default.
 
 Neighboring lessons may look atmospherically different. Series unity comes from the shared system, not repeated subject matter.
 
-## 6. Photography and media
+## 6. Photography, illustration and media
 
 Photography carries major visual weight. Prefer one strong image to several weak decorative images unless the task genuinely requires a family or sequence.
 
@@ -83,9 +84,39 @@ Crops must be intentional and preserve the action/object needed by the learner. 
 
 For occupation/action vocabulary, show the action when it improves recognition.
 
-When the learner must interpret a **person/object relationship, physical distance, quantity or pointing context**, prefer a real or generated raster scene over a CSS-built silhouette/object diagram. CSS geometry may organize or frame media, but it should not approximate people and concrete objects when believable photography can carry the same pedagogical evidence more clearly.
+When the learner must interpret a **person/object relationship, physical distance, quantity or pointing context**, prefer a real or generated raster scene over a CSS-built silhouette/object diagram. CSS geometry may organize or frame media, but it should not approximate people and concrete objects when raster imagery can carry the pedagogical evidence more clearly.
+
+For very basic concrete language, an approved flat ELT illustration may replace a realistic photo when simplification makes the teaching point substantially clearer. This is especially appropriate for one-step actions, concrete objects, basic adjectives, quantities, direction, simple spatial relationships or repeated comparison families in which photographic detail would introduce unnecessary ambiguity.
 
 For image-dependent exercises that will receive generated production art, structure the lesson around stable raster-image slots whose geometry survives placeholder replacement. Do not make the exercise depend on temporary CSS-drawn substitute characters or objects.
+
+### Selective ELT illustration
+
+Illustration is an **approved alternative, not the default visual language**. Horizons remains photographic rather than illustration-led.
+
+Realism **must still be used throughout the book**. Real photography or credible realistic generated raster imagery remains necessary when the learner benefits from a believable person, place, atmosphere, mature real-world situation, environmental context or authentic lifestyle scene. Major contextual imagery should normally remain realistic unless a specific pedagogical reason justifies another treatment.
+
+A lesson may mix realistic photography and drawn illustration. Use illustration because simplification improves comprehension, not because drawing is easier to source or generate.
+
+The approved illustration language is a classic English-language-coursebook / ELT style associated with professionally commissioned ESL materials from approximately the late 1990s through early 2010s. It should be:
+
+- flat 2D, clean and immediately readable;
+- diagrammatic and purposeful rather than decorative;
+- stylized but not childish;
+- based on simplified natural anatomy and clear body language;
+- built from clean vector-like shapes with soft or gently irregular edges;
+- minimal in facial detail and hair rendering;
+- lightly shaded, usually with no more than one simple darker tone;
+- restrained in detail so the target meaning dominates;
+- composed using overlap, placement and scale rather than realistic rendering;
+- supported by minimal functional backgrounds containing only information needed to understand the scene;
+- colored with a muted, friendly palette rather than glossy or highly saturated color;
+- balanced and uncluttered like a small professionally illustrated coursebook panel;
+- visibly intentional in its simplification, avoiding the polished synthetic look of generic AI art.
+
+Do not substitute generic corporate-vector characters, startup illustration, clip-art, anime, 3D rendering, painterly art, thick comic outlines, exaggerated cartoon anatomy, neon color, cinematic lighting, heavy texture or decorative complexity.
+
+The reusable illustration style prompt and detailed negative guidance live in `asset-policy.md`.
 
 ### Repeated media families
 
@@ -196,6 +227,7 @@ Before approval verify:
 9. sufficient whitespace;
 10. real-world artifacts are functional and visually recognizable as their intended artifact type;
 11. short lexical labels do not wrap awkwardly when the layout can preserve them intact;
-12. imagery belongs convincingly to the lesson's actual world.
+12. imagery belongs convincingly to the lesson's actual world;
+13. any use of illustration has a pedagogical reason and has not displaced the book's required realistic visual language.
 
 When visual novelty conflicts with the learning sequence, **pedagogy wins**. When pedagogy does not require a theme, **the content world leads the art direction**.
