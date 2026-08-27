@@ -135,18 +135,9 @@
   background-position: center center !important;
 }
 
-/* Exercise 2 — remove multiple-choice prompting and leave room for discovered answers. */
+/* Exercise 2 — show only the discovery questions. */
 .l1d-page:not(.l1d-page--2) .l1d-discovery__choices {
   display: none !important;
-}
-
-.l1d-page:not(.l1d-page--2) .l1d-discovery__item > div::after {
-  content: "";
-  display: block;
-  width: min(100%, 58mm);
-  min-height: 3.2mm;
-  margin-top: .7mm;
-  border-bottom: .3mm solid var(--hz-line-strong);
 }
 
 /* Exercise 7 — a more intentional real-world paper form, using CSS only. */
