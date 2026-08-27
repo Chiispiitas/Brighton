@@ -101,6 +101,31 @@ Removing one scaffold does not authorize replacing it with another. If answer ch
 
 A simple cognitive task can become difficult because of a complex instruction. Language simplicity is part of scaffolding.
 
+### Task depth is not instruction length
+
+Do **not** equate a more substantial activity with a longer learner-facing instruction.
+
+When a task needs more depth, add depth through what the learner actually does: richer context, meaningful choices, information exchange, physical objects, a real artifact, repetition with variation, a concrete outcome or transfer to the learner's own life. Do not automatically add prose explaining every turn, condition or obvious classroom behavior.
+
+Use this division of labor:
+
+- the **instruction line** names the task in the shortest established language that is sufficient;
+- the **model/example** shows the target exchange or expected product;
+- **steps** appear only when the learner genuinely needs them to perform the task;
+- the **visual, artifact or layout** carries information that does not need to be restated in English;
+- the **teacher/classroom routine** may supply obvious behaviors that do not need to be printed.
+
+A task can therefore be pedagogically rich while its instruction is only `Work in pairs.` If the model and visible task structure make the procedure clear, do not expand that line into a paragraph.
+
+For early A1, prefer essential procedure over exhaustive procedure. For example:
+
+- `Work in pairs.` + a model exchange + `Student A: choose a number. Ask. Student B: answer.`
+- not `Work in pairs. Student A chooses a number, does not say the item, asks about it, repeats six times, then Student B changes roles...` when those extra directions are inferable or nonessential.
+
+Likewise, freer transfer should usually become **more open**, not more scripted. `Use your real bag. Choose five items and practice a conversation.` is preferable to a long sequence that tells learners exactly where to put every item, how many turns to take, when to swap roles and what to write unless those details are genuinely necessary to the learning outcome.
+
+**Authoring rule:** when asked to make an activity more elaborate, first elaborate the **task design**, not the **instruction language**.
+
 ## 6. Controlled and communicative practice
 
 Learners need controlled practice before freer use when the target warrants it. Useful formats include choosing, matching, completing, ordering, categorizing, correcting and short transformations.
@@ -182,5 +207,7 @@ Before approving a lesson, verify:
 11. Which learner-facing words/constructions are new on this page?
 12. Are new non-target items genuinely necessary and level-appropriate?
 13. Did any rewrite become more idiomatic but less accessible than the book's established register?
+14. If an activity became more substantial, did the **task** become richer without the **instruction** becoming needlessly longer?
+15. Can any printed procedural sentence be removed because the model, visual, artifact or classroom routine already makes it clear?
 
 When native-like phrasing conflicts with the deliberate language progression, **the progression wins**.
