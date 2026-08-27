@@ -13,6 +13,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: horizons-a1-student-book
+  cancel-in-progress: true
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -235,6 +239,23 @@ jobs:
             exit 1
           }
 
+      - name: Render PDF QA previews
+        shell: bash
+        run: |
+          set -euo pipefail
+          mkdir -p /tmp/horizons-a1-pdf-preview
+          LAST_PAGE="$(pdfinfo "Horizons/A1/Student's Book.pdf" | awk '/^Pages:/ { print $2 }')"
+          pdftoppm -f 1 -singlefile -png -r 120 "Horizons/A1/Student's Book.pdf" /tmp/horizons-a1-pdf-preview/first-page
+          pdftoppm -f "$LAST_PAGE" -singlefile -png -r 120 "Horizons/A1/Student's Book.pdf" /tmp/horizons-a1-pdf-preview/last-page
+
+      - name: Upload PDF QA previews
+        uses: actions/upload-artifact@v4
+        with:
+          name: horizons-a1-pdf-preview
+          path: /tmp/horizons-a1-pdf-preview/*.png
+          if-no-files-found: error
+          retention-days: 3
+
       - name: Commit compiled book when changed
         shell: bash
         run: |
@@ -249,4 +270,6 @@ jobs:
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add "Horizons/A1/Student's Book.html" "Horizons/A1/Student's Book.pdf"
           git commit -m "Build A1 Student's Book HTML and PDF [skip ci]"
-          git push
+          git fetch origin main
+          git rebase origin/main
+          git push origin main
