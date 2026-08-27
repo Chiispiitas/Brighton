@@ -3956,471 +3956,709 @@ body.hz-debug .hz-page::after {
 
 /* Horizons/A1/Lessons/lesson-2b-local.css */
 /* Horizons A1 — Lesson 2B scoped styles.
-   The current A1 book keeps its established crimson-pink identity across
-   units unless the author explicitly changes it. */
+   HORIZONS ON AIR is the recurring listening-show identity. The A1 book keeps
+   its established crimson-pink identity; Moovit/inDrive colors appear only
+   inside authentic functional interface recreations. */
 
 .l2b-page {
   --hz-unit: var(--hz-unit-1);
   --hz-unit-dark: #8f123f;
   --hz-unit-soft: #f8e6ee;
-  --l2b-moovit: #d9673f;
-  --l2b-moovit-soft: #f8ece6;
-  --l2b-indrive: #7da63a;
-  --l2b-indrive-soft: #edf4df;
+  --l2b-moovit: #ff5a1f;
+  --l2b-indrive: #b7ff00;
+  --l2b-indrive-dark: #3d3d3d;
 }
 
 .l2b-page .hz-page__content { overflow: hidden; }
-.l2b-page .hz-page-stack { gap: 1.8mm; }
-.l2b-page .hz-lesson-header { padding-bottom: 3.1mm; }
-.l2b-page .hz-exercises { gap: .2mm; }
-.l2b-page .hz-exercise { padding: 1.2mm 0 1.7mm; }
-.l2b-page .hz-exercise__body { margin-top: 1.2mm; }
-.l2b-page .hz-exercise__instruction { font-size: 8.9pt; }
+.l2b-page .hz-page-stack { gap: 1.55mm; }
+.l2b-page .hz-lesson-header { padding-bottom: 3mm; }
+.l2b-page .hz-exercises { gap: .1mm; }
+.l2b-page .hz-exercise { padding: .95mm 0 1.35mm; }
+.l2b-page .hz-exercise__body { margin-top: .9mm; }
+.l2b-page .hz-exercise__instruction { font-size: 8.8pt; }
 .l2b-go-to { margin-left: calc(var(--hz-exercise-marker-size) + 3mm); }
 
-/* ---------- Exercise 1: telling time ---------- */
+/* ---------- Exercise 1: time preparation ---------- */
 
 .l2b-time-stage {
   display: grid;
-  grid-template-columns: 1.08fr .92fr;
-  gap: 3.6mm 6mm;
+  grid-template-columns: 1.04fr .96fr;
+  gap: 2.6mm 5mm;
   align-items: center;
 }
 
 .l2b-time-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
-  gap: 2.2mm;
+  gap: 1.8mm;
 }
 
 .l2b-time {
   position: relative;
   min-width: 0;
-  padding: 3.6mm 2mm 3.2mm;
-  border-top: 1mm solid var(--hz-unit);
-  border-bottom: .28mm solid var(--hz-line-strong);
+  padding: 3mm 1.6mm 2.6mm;
+  border-top: .9mm solid var(--hz-unit);
+  border-bottom: .25mm solid var(--hz-line-strong);
   text-align: center;
 }
 
 .l2b-time b {
   position: absolute;
-  top: .8mm;
-  left: 1mm;
+  top: .65mm;
+  left: .8mm;
   color: var(--hz-unit-dark);
-  font-size: 6.5pt;
-  line-height: 1;
+  font-size: 6pt;
 }
 
 .l2b-time span {
-  font-size: 16pt;
+  font-size: 14pt;
   font-weight: var(--hz-fw-black);
   line-height: 1;
-  letter-spacing: -.04em;
+  letter-spacing: -.035em;
 }
 
 .l2b-time-words {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 2.2mm 4mm;
-  font-size: 8pt;
-  line-height: 1.2;
+  gap: 1.7mm 3.5mm;
+  font-size: 7.8pt;
 }
 
 .l2b-time-words > div {
   display: grid;
-  grid-template-columns: 7mm minmax(0, 1fr);
-  gap: 1.5mm;
+  grid-template-columns: 6mm minmax(0, 1fr);
+  gap: 1.2mm;
   align-items: end;
 }
 
 .l2b-match-line {
-  min-height: 4.1mm;
-  border-bottom: .3mm solid var(--hz-line-strong);
+  min-height: 3.8mm;
+  border-bottom: .28mm solid var(--hz-line-strong);
 }
 
 .l2b-time-new {
   grid-column: 1 / -1;
   display: flex;
   align-items: center;
-  gap: 3mm;
-  padding-top: 1.2mm;
-  border-top: .28mm solid var(--hz-line);
-  font-size: 7.8pt;
+  gap: 2.6mm;
+  padding-top: 1mm;
+  border-top: .25mm solid var(--hz-line);
+  font-size: 7.4pt;
 }
 
-/* ---------- Shared app artifact ---------- */
+/* ---------- HORIZONS ON AIR identity ---------- */
 
-.l2b-app {
-  overflow: hidden;
-  border: .28mm solid var(--hz-line);
-  border-radius: 4.5mm;
-  background: #fff;
-  box-shadow: var(--hz-shadow-ui);
-}
+.l2b-onair-start { padding-top: 1.25mm; }
 
-.l2b-app__top {
+.l2b-show-head {
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  min-height: 9mm;
-  padding: 1.8mm 3mm;
-  color: #fff;
+  gap: 2mm;
+  margin-bottom: .7mm;
 }
 
-.l2b-app__top strong {
-  font-size: 9pt;
+.l2b-show-head .hz-audio-badge { margin-left: auto; }
+.l2b-show-head--small { margin-bottom: .45mm; }
+
+.l2b-show-brand {
+  display: inline-flex;
+  align-items: stretch;
+  line-height: 1;
+  font-style: normal;
+}
+
+.l2b-show-brand b {
+  padding: .9mm 1.4mm .8mm;
+  background: #202020;
+  color: #fff;
+  font-size: 6pt;
+  font-weight: var(--hz-fw-black);
+  letter-spacing: .07em;
+}
+
+.l2b-show-brand em {
+  padding: .9mm 1.35mm .8mm;
+  background: var(--hz-unit);
+  color: #fff;
+  font-size: 6pt;
+  font-weight: var(--hz-fw-black);
+  font-style: normal;
+  letter-spacing: .07em;
+}
+
+.l2b-show-episode {
+  font-size: 10pt;
   font-weight: var(--hz-fw-black);
   letter-spacing: -.02em;
 }
 
-.l2b-app__top span {
-  font-size: 5.9pt;
-  font-weight: var(--hz-fw-black);
-  letter-spacing: .08em;
+.l2b-show-head--small .l2b-show-episode { font-size: 9pt; }
+
+/* Stable raster slots for street-interview photography. */
+.l2b-street-strip {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 3mm;
 }
 
-.l2b-app--moovit .l2b-app__top { background: var(--l2b-moovit); }
-.l2b-app--indrive .l2b-app__top { background: var(--l2b-indrive); }
+.l2b-street-still,
+.l2b-interview-photo {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  background: #e5e1db;
+}
 
-/* ---------- Exercise 2: Moovit reading/listening ---------- */
+.l2b-street-still {
+  display: grid;
+  grid-template-rows: 34mm 6.5mm auto;
+  min-width: 0;
+}
+
+.l2b-photo-placeholder {
+  position: relative;
+  display: grid;
+  place-items: center;
+  min-height: 100%;
+  background: linear-gradient(145deg, rgb(255 255 255 / 28%), transparent 48%), #ddd9d2;
+  color: #77736e;
+  font-size: 6.2pt;
+  font-weight: var(--hz-fw-black);
+  letter-spacing: .09em;
+}
+
+.l2b-street-still figcaption,
+.l2b-interview-photo figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1mm 1.8mm;
+  background: #232323;
+  color: #fff;
+  font-size: 6.4pt;
+}
+
+.l2b-street-still figcaption b {
+  display: grid;
+  place-items: center;
+  width: 4.5mm;
+  height: 4.5mm;
+  background: var(--hz-unit);
+}
+
+.l2b-street-choice {
+  display: flex;
+  justify-content: center;
+  gap: 3.2mm;
+  padding: 1.25mm 1mm 1mm;
+  background: var(--hz-paper);
+  font-size: 6.6pt;
+}
+
+.l2b-street-choice span { white-space: nowrap; }
+
+.l2b-show-new {
+  display: flex;
+  align-items: center;
+  gap: 2.3mm;
+  margin-top: 1.5mm;
+  font-size: 7.2pt;
+}
+
+/* ---------- Shared phone shell ---------- */
+
+.l2b-phone {
+  position: relative;
+  width: 58mm;
+  height: 86mm;
+  margin: 0 auto;
+  padding: 4mm 2.2mm 2.4mm;
+  border: 1.1mm solid #171717;
+  border-radius: 7mm;
+  background: #0d0d0d;
+  box-shadow: 0 2mm 4mm rgb(0 0 0 / 12%);
+}
+
+.l2b-phone__speaker {
+  position: absolute;
+  top: 1.3mm;
+  left: 50%;
+  width: 15mm;
+  height: 1.2mm;
+  border-radius: 2mm;
+  background: #252525;
+  transform: translateX(-50%);
+}
+
+.l2b-phone__screen {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  border-radius: 4.4mm;
+  background: #fff;
+}
+
+.l2b-status {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  min-height: 5.6mm;
+  padding: .8mm 2.2mm;
+  background: #fff;
+  color: #181818;
+  font-size: 5.2pt;
+  font-weight: var(--hz-fw-bold);
+}
+
+/* ---------- Moovit ---------- */
 
 .l2b-moovit-stage {
   display: grid;
-  grid-template-columns: 62mm minmax(0, 1fr);
+  grid-template-columns: 63mm minmax(0, 1fr);
+  gap: 5mm;
+  align-items: center;
+}
+
+.l2b-moovit-brand {
+  display: flex;
+  align-items: center;
+  gap: 1.2mm;
+  min-height: 8.5mm;
+  padding: 1.2mm 2.3mm;
+  background: #fff;
+  border-bottom: .25mm solid #e8e8e8;
+}
+
+.l2b-moovit-brand i {
+  width: 4.3mm;
+  height: 5.2mm;
+  border-radius: 50% 50% 50% 15%;
+  background: var(--l2b-moovit);
+  transform: rotate(-14deg);
+}
+
+.l2b-moovit-brand strong {
+  color: #111;
+  font-size: 10.6pt;
+  font-weight: 900;
+  letter-spacing: -.07em;
+}
+
+.l2b-moovit-plan {
+  padding: 1.5mm 2.1mm 1.8mm;
+  background: #242529;
+}
+
+.l2b-moovit-plan__title {
+  margin-bottom: 1.2mm;
+  color: #fff;
+  font-size: 5.6pt;
+  font-weight: var(--hz-fw-black);
+}
+
+.l2b-moovit-field {
+  display: grid;
+  grid-template-columns: 4mm minmax(0, 1fr);
+  gap: 1.2mm;
+  align-items: center;
+  min-height: 7mm;
+  margin-bottom: .9mm;
+  padding: 1mm 1.4mm;
+  border-radius: .8mm;
+  background: #fff;
+  color: #333;
+  font-size: 5.8pt;
+}
+
+.l2b-dot {
+  width: 2.4mm;
+  height: 2.4mm;
+  border: .45mm solid #8a8a8a;
+  border-radius: 50%;
+}
+
+.l2b-dot--orange { border-color: var(--l2b-moovit); background: var(--l2b-moovit); }
+
+.l2b-moovit-button {
+  margin-top: 1.3mm;
+  padding: 1.6mm;
+  border-radius: .6mm;
+  background: var(--l2b-moovit);
+  color: #fff;
+  text-align: center;
+  font-size: 5.6pt;
+  font-weight: var(--hz-fw-black);
+}
+
+.l2b-moovit-results { padding: 1.1mm 2.1mm 0; }
+
+.l2b-moovit-result {
+  display: grid;
+  grid-template-columns: 8mm 1fr auto;
+  gap: 1.4mm;
+  align-items: center;
+  min-height: 7.6mm;
+  border-bottom: .2mm solid #e8e8e8;
+}
+
+.l2b-moovit-result--main { border-left: .8mm solid var(--l2b-moovit); padding-left: 1mm; }
+
+.l2b-route-badge {
+  display: grid;
+  place-items: center;
+  width: 7mm;
+  height: 5.4mm;
+  background: #43a9d7;
+  color: #fff;
+  font-size: 5.2pt;
+  font-weight: var(--hz-fw-black);
+}
+
+.l2b-moovit-result strong { font-size: 7.2pt; font-weight: var(--hz-fw-black); }
+.l2b-moovit-result small { color: #777; font-size: 4.6pt; }
+
+.l2b-mini-map {
+  position: relative;
+  height: 14mm;
+  margin: 1mm 2.1mm 1.3mm;
+  overflow: hidden;
+  background: #e7f1f4;
+}
+
+.l2b-map-road,
+.l2b-map-route {
+  position: absolute;
+  height: .8mm;
+  transform-origin: left center;
+}
+
+.l2b-map-road { background: #fff; }
+.l2b-map-road--1 { left: -4mm; top: 6mm; width: 54mm; transform: rotate(12deg); }
+.l2b-map-road--2 { left: 14mm; top: 13mm; width: 42mm; transform: rotate(-32deg); }
+.l2b-map-route { left: 6mm; top: 10mm; width: 39mm; height: 1.3mm; background: var(--l2b-moovit); transform: rotate(-13deg); }
+
+.l2b-map-pin {
+  position: absolute;
+  right: 8mm;
+  top: 4mm;
+  width: 3.6mm;
+  height: 3.6mm;
+  border: .8mm solid var(--l2b-moovit);
+  border-radius: 50%;
+  background: #fff;
+}
+
+.l2b-show-questions {
+  display: grid;
+  align-content: center;
+  gap: .35mm;
+  font-size: 7.65pt;
+}
+
+.l2b-show-questions > div {
+  display: grid;
+  grid-template-columns: 5mm 20mm 1fr 1fr;
+  gap: 1.4mm;
+  align-items: center;
+  min-height: 8.2mm;
+  padding: .5mm 0;
+  border-bottom: .25mm solid var(--hz-line);
+}
+
+.l2b-show-questions b { color: var(--hz-unit-dark); }
+.l2b-show-questions span:nth-child(3),
+.l2b-show-questions span:nth-child(4) { white-space: nowrap; }
+
+/* ---------- Page 16 / inDrive ---------- */
+
+.l2b-page--2 .hz-exercises { padding-top: 8.3mm !important; }
+.l2b-page--2 .hz-page-stack { gap: 1.15mm; }
+.l2b-page--2 .hz-exercise { padding-top: .85mm; padding-bottom: 1.3mm; }
+.l2b-page--2 .hz-exercise__body { margin-top: .85mm; }
+
+.l2b-indrive-stage {
+  display: grid;
+  grid-template-columns: 64mm minmax(0, 1fr);
   gap: 5mm;
   align-items: stretch;
 }
 
-.l2b-app__location {
-  padding: 2.1mm 3mm .8mm;
-  color: var(--hz-muted);
-  font-size: 6.2pt;
+.l2b-phone--indrive .l2b-phone__screen { background: var(--l2b-indrive-dark); }
+
+.l2b-indrive-top {
+  padding: 5mm 4mm 3mm;
+  color: #fff;
+  font-size: 15pt;
+  font-weight: 800;
+  line-height: .95;
+  letter-spacing: -.04em;
+}
+
+.l2b-indrive-map {
+  position: relative;
+  height: 27mm;
+  margin: 1mm 4mm 0;
+  overflow: hidden;
+  border-radius: 4mm 4mm 0 0;
+  background: #edf0ec;
+}
+
+.l2b-indrive-road,
+.l2b-indrive-route {
+  position: absolute;
+  height: .9mm;
+  border-radius: 1mm;
+  transform-origin: left center;
+}
+
+.l2b-indrive-road { background: #fff; }
+.l2b-indrive-road--1 { left: -5mm; top: 9mm; width: 52mm; transform: rotate(20deg); }
+.l2b-indrive-road--2 { left: 8mm; top: 26mm; width: 47mm; transform: rotate(-38deg); }
+.l2b-indrive-route { left: 12mm; top: 20mm; width: 35mm; height: 1.7mm; background: var(--l2b-indrive); transform: rotate(-27deg); }
+
+.l2b-indrive-map span {
+  position: absolute;
+  left: 19mm;
+  top: 10mm;
+  padding: 1.3mm 3mm;
+  border-radius: 5mm;
+  background: #4d8fd8;
+  color: #fff;
+  font-size: 6.8pt;
   font-weight: var(--hz-fw-black);
-  letter-spacing: .08em;
 }
 
-.l2b-app__label {
-  margin: 0 3mm 1.2mm;
-  color: var(--l2b-moovit);
-  font-size: 6.5pt;
-  font-weight: var(--hz-fw-black);
-  letter-spacing: .08em;
+.l2b-indrive-sheet {
+  margin: 0 4mm 3mm;
+  padding: 2.1mm 2.5mm 2.4mm;
+  border-radius: 0 0 3.5mm 3.5mm;
+  background: #f6f6f6;
 }
 
-.l2b-route-list {
+.l2b-car-tabs {
   display: grid;
-  padding: 0 3mm 3mm;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 1mm;
+  align-items: end;
+  min-height: 8mm;
+  margin-bottom: 1mm;
+  text-align: center;
 }
 
-.l2b-route {
+.l2b-car-tabs b { font-size: 6.1pt; }
+.l2b-car-tabs span { color: #8a8a8a; font-size: 4.8pt; }
+
+.l2b-place {
   display: grid;
-  grid-template-columns: 1fr auto;
+  grid-template-columns: 4mm minmax(0, 1fr);
+  gap: 1.3mm;
   align-items: center;
-  min-height: 10mm;
-  padding: 1.4mm 1.6mm;
-  border-bottom: .25mm solid var(--hz-line);
-  font-size: 8pt;
+  min-height: 6.6mm;
+  color: #6a6a6a;
+  font-size: 5.6pt;
 }
 
-.l2b-route b {
-  color: var(--hz-ink);
-  font-size: 10pt;
-  font-weight: var(--hz-fw-black);
+.l2b-place-dot {
+  width: 2.4mm;
+  height: 2.4mm;
+  border: .7mm solid #9bc5ee;
+  border-radius: 50%;
 }
 
-.l2b-route span {
-  font-size: 11pt;
-  font-weight: var(--hz-fw-black);
-}
+.l2b-place-dot--lime { border-color: var(--l2b-indrive); }
 
-.l2b-route--next {
-  margin-bottom: .7mm;
-  border-left: 1mm solid var(--l2b-moovit);
-  background: var(--l2b-moovit-soft);
-}
-
-.l2b-moovit-copy {
+.l2b-price {
   display: grid;
-  align-content: center;
-  gap: 3mm;
+  grid-template-columns: 5mm 1fr;
+  gap: 1mm;
+  align-items: center;
+  min-height: 8mm;
+  margin-top: 1mm;
+  padding: 1mm 1.5mm;
+  border-radius: 1.4mm;
+  background: #fff;
+  color: #1e1e1e;
+  font-size: 5.5pt;
+}
+
+.l2b-price b { font-size: 6pt; }
+
+.l2b-find-driver {
+  margin-top: 1mm;
+  padding: 1.6mm;
+  border-radius: 1.6mm;
+  background: var(--l2b-indrive);
+  color: #111;
+  text-align: center;
+  font-size: 6.4pt;
+  font-weight: var(--hz-fw-black);
+}
+
+.l2b-indrive-copy {
+  display: grid;
+  grid-template-rows: 39mm auto;
+  gap: 2.4mm;
   min-width: 0;
 }
 
-.l2b-dialogue {
+.l2b-interview-photo {
   display: grid;
-  grid-template-columns: 13mm minmax(0, 1fr);
-  gap: .8mm 1.8mm;
+  grid-template-rows: 32.5mm 6.5mm;
+  height: 39mm;
+}
+
+.l2b-interview-photo figcaption strong { font-size: 6.5pt; }
+
+.l2b-complete-lines {
+  display: grid;
+  align-content: start;
+  gap: 1.25mm;
+  font-size: 7.8pt;
+}
+
+.l2b-complete-lines p {
   margin: 0;
-  padding: 2.8mm 3.2mm;
-  border-left: 1mm solid var(--hz-unit);
-  background: var(--hz-paper);
-  box-shadow: 0 0 0 .25mm var(--hz-line);
-  font-size: 8.05pt;
-  line-height: 1.27;
-}
-
-.l2b-dialogue dt { margin: 0; font-weight: var(--hz-fw-black); }
-.l2b-dialogue dd { margin: 0; }
-.l2b-dialogue strong { color: var(--hz-unit-dark); }
-
-.l2b-read-check {
-  display: grid;
-  gap: .4mm;
-  font-size: 7.65pt;
-}
-
-.l2b-read-check > div {
-  display: grid;
-  grid-template-columns: 5mm 22mm 1fr 1fr;
-  gap: 1.4mm;
-  align-items: center;
-  min-height: 7.2mm;
+  padding-bottom: .9mm;
   border-bottom: .25mm solid var(--hz-line);
 }
 
-.l2b-read-check b { color: var(--hz-unit-dark); }
-.l2b-read-check span:nth-child(3),
-.l2b-read-check span:nth-child(4) { white-space: nowrap; }
+.l2b-complete-lines p b {
+  display: inline-block;
+  width: 5mm;
+  color: var(--hz-unit-dark);
+}
 
-/* ---------- A / AN / THE focus ---------- */
+.l2b-long-answer {
+  display: inline-block;
+  width: 28mm;
+  min-height: 3.8mm;
+  border-bottom: .3mm solid var(--hz-line-strong);
+  vertical-align: -.5mm;
+}
+
+.l2b-long-answer--short { width: 16mm; }
+
+.l2b-inline-choice {
+  display: inline-flex;
+  gap: 4mm;
+  margin-left: 1.5mm;
+}
+
+/* ---------- Language from HORIZONS ON AIR ---------- */
 
 .l2b-articles {
-  margin: .4mm 0 .2mm calc(var(--hz-exercise-marker-size) + 3mm);
-  padding-top: 2.7mm;
-  padding-bottom: 2.8mm;
+  margin: .2mm 0 .1mm calc(var(--hz-exercise-marker-size) + 3mm);
+  padding-top: 2.15mm;
+  padding-bottom: 2.25mm;
 }
 
 .l2b-article-grid {
   display: grid;
   grid-template-columns: 1fr .72fr 1.08fr;
-  gap: 5mm;
+  gap: 4.2mm;
 }
 
 .l2b-article-grid > div {
-  min-width: 0;
-  padding-top: 1.3mm;
+  padding-top: 1mm;
   border-top: .35mm solid rgb(32 33 36 / 20%);
-  font-size: 7.8pt;
-  line-height: 1.27;
+  font-size: 7.4pt;
+  line-height: 1.22;
 }
 
 .l2b-article-grid > div > strong {
   display: block;
-  margin-bottom: .9mm;
+  margin-bottom: .7mm;
   color: var(--hz-unit-dark);
-  font-size: 8.5pt;
+  font-size: 8.2pt;
   font-weight: var(--hz-fw-black);
 }
 
-.l2b-article-grid p { margin: 0 0 .65mm; }
+.l2b-article-grid p { margin: 0 0 .45mm; }
 .l2b-article-grid b { color: var(--hz-unit-dark); }
 
 .l2b-article-key {
   display: flex;
-  gap: 8mm;
-  margin-top: 2mm;
-  padding-top: 1.5mm;
-  border-top: .3mm solid var(--hz-line);
-  font-size: 7.6pt;
+  gap: 7mm;
+  margin-top: 1.5mm;
+  padding-top: 1.1mm;
+  border-top: .25mm solid var(--hz-line);
+  font-size: 7.2pt;
 }
 
 .l2b-article-key b { color: var(--hz-unit-dark); }
 
-/* ---------- Page 16 ---------- */
-
-.l2b-page--2 .hz-exercises { padding-top: 9mm !important; }
-.l2b-page--2 .hz-page-stack { gap: 1.35mm; }
-.l2b-page--2 .hz-exercise { padding-top: 1mm; padding-bottom: 1.55mm; }
-.l2b-page--2 .hz-exercise__body { margin-top: 1mm; }
-
-/* Exercise 3 */
+/* ---------- Exercise 5 ---------- */
 
 .l2b-article-practice {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 1.3mm 8mm;
-  font-size: 8.05pt;
-  line-height: 1.3;
+  gap: .8mm 7mm;
+  font-size: 7.7pt;
+  line-height: 1.25;
 }
 
 .l2b-article-practice > div {
   display: grid;
-  grid-template-columns: 5mm 17mm 13mm minmax(0, 1fr);
-  gap: 1.2mm;
+  grid-template-columns: 5mm 22mm 11mm minmax(0, 1fr);
+  gap: 1mm;
   align-items: end;
-  min-height: 8.2mm;
-  padding: .8mm 0;
-  border-bottom: .25mm solid var(--hz-line);
+  min-height: 6.7mm;
+  padding: .45mm 0;
+  border-bottom: .23mm solid var(--hz-line);
 }
 
 .l2b-article-practice > div > b { color: var(--hz-unit-dark); }
 
 .l2b-answer {
-  min-height: 4mm;
-  border-bottom: .3mm solid var(--hz-line-strong);
+  min-height: 3.7mm;
+  border-bottom: .28mm solid var(--hz-line-strong);
 }
 
-/* Exercise 4: inDrive listening */
-
-.l2b-indrive-stage {
-  display: grid;
-  grid-template-columns: 66mm minmax(0, 1fr);
-  gap: 6mm;
-  align-items: stretch;
-}
-
-.l2b-ride-status {
-  margin: 3mm 3mm 1.5mm;
-  padding-bottom: 1.4mm;
-  border-bottom: .7mm solid var(--l2b-indrive);
-  color: var(--l2b-indrive);
-  font-size: 7pt;
-  font-weight: var(--hz-fw-black);
-  letter-spacing: .09em;
-}
-
-.l2b-ride-field {
-  display: grid;
-  grid-template-columns: 19mm minmax(0, 1fr);
-  gap: 2mm;
-  align-items: end;
-  margin: 0 3mm;
-  min-height: 13mm;
-  padding: 2mm 0;
-  border-bottom: .25mm solid var(--hz-line);
-}
-
-.l2b-ride-field span {
-  color: var(--hz-muted);
-  font-size: 6pt;
-  font-weight: var(--hz-fw-black);
-  letter-spacing: .08em;
-}
-
-.l2b-ride-blank {
-  min-height: 5mm;
-  border-bottom: .35mm solid var(--hz-line-strong);
-}
-
-.l2b-listening-copy {
-  display: grid;
-  align-content: center;
-  grid-template-columns: max-content 1fr;
-  gap: 1.2mm 2mm;
-  min-width: 0;
-}
-
-.l2b-listening-copy > strong {
-  align-self: center;
-  font-size: 8pt;
-}
-
-.l2b-listening-lines {
-  grid-column: 1 / -1;
-  margin-top: 1mm;
-  padding: 2.8mm 3.2mm;
-  border-left: 1mm solid var(--hz-unit);
-  background: var(--hz-unit-soft);
-  font-size: 8.1pt;
-  line-height: 1.32;
-}
-
-.l2b-listening-lines p { margin: 0 0 1.3mm; }
-.l2b-listening-lines p:last-child { margin-bottom: 0; }
-
-.l2b-long-answer {
-  display: inline-block;
-  width: 38mm;
-  min-height: 4mm;
-  border-bottom: .3mm solid var(--hz-line-strong);
-  vertical-align: -.5mm;
-}
-
-.l2b-long-answer--short { width: 20mm; }
-
-/* Exercise 5 */
+/* ---------- Exercise 6 ---------- */
 
 .l2b-pair-stage {
   display: grid;
-  grid-template-columns: .76fr 1.24fr;
-  gap: 6mm;
+  grid-template-columns: .8fr 1.25fr .8fr;
+  gap: 3.5mm;
   align-items: stretch;
 }
 
-.l2b-pair-apps {
+.l2b-pair-card {
   display: grid;
-  gap: 3mm;
   align-content: center;
-}
-
-.l2b-mini-app {
-  display: grid;
-  grid-template-columns: 1fr auto;
-  gap: 1mm 3mm;
-  align-items: center;
-  min-height: 24mm;
-  padding: 2.7mm 3mm;
+  gap: 1mm;
+  min-height: 28mm;
+  padding: 2.5mm;
   border: .28mm solid var(--hz-line);
-  border-radius: 3mm;
-  box-shadow: var(--hz-shadow-ui);
+  font-size: 6.3pt;
 }
 
-.l2b-mini-app strong {
-  font-size: 8.2pt;
-  font-weight: var(--hz-fw-black);
-}
-
-.l2b-mini-app span {
-  grid-column: 1;
-  font-size: 6.4pt;
-  font-weight: var(--hz-fw-black);
-  letter-spacing: .07em;
-}
-
-.l2b-mini-app b {
-  grid-column: 2;
-  grid-row: 1 / span 2;
-  font-size: 14pt;
-  font-weight: var(--hz-fw-black);
-}
-
-.l2b-mini-app--moovit {
-  border-left: 1.2mm solid var(--l2b-moovit);
-  background: var(--l2b-moovit-soft);
-}
-
-.l2b-mini-app--indrive {
-  border-left: 1.2mm solid var(--l2b-indrive);
-  background: var(--l2b-indrive-soft);
-}
+.l2b-pair-card strong { font-size: 8.2pt; font-weight: var(--hz-fw-black); }
+.l2b-pair-card b { font-size: 13pt; font-weight: var(--hz-fw-black); }
+.l2b-pair-card--moovit { border-top: 1.2mm solid var(--l2b-moovit); background: #fff5f0; }
+.l2b-pair-card--indrive { border-top: 1.2mm solid var(--l2b-indrive); background: #f3f3f3; }
 
 .l2b-pair-copy {
-  display: grid;
-  align-content: center;
-  gap: 2mm;
-}
-
-.l2b-pair-example {
-  padding: 2mm 2.8mm;
+  align-self: center;
+  padding: 2.1mm 2.5mm;
   border-left: 1mm solid var(--hz-unit);
   background: var(--hz-paper);
-  font-size: 8pt;
-  line-height: 1.28;
+  font-size: 7.7pt;
+  line-height: 1.25;
 }
 
-.l2b-pair-example:nth-child(2) { background: var(--hz-unit-soft); }
-.l2b-pair-example--small { margin-right: 18mm; }
-.l2b-pair-example p { margin: 0; }
-.l2b-pair-example p + p { margin-top: .7mm; }
+.l2b-pair-copy p { margin: 0; }
+.l2b-pair-copy p + p { margin-top: .55mm; }
 
 .l2b-extra {
   margin-left: calc(var(--hz-exercise-marker-size) + 3mm);
-  margin-top: .65mm;
+  margin-top: .45mm;
 }
 
 .l2b-extra .hz-extra-practice__prompt {
-  font-size: 8pt;
-  line-height: 1.32;
+  font-size: 7.7pt;
+  line-height: 1.28;
 }
 
 @media print {
@@ -5705,7 +5943,7 @@ body {
 <!-- ===== 2B.html ===== -->
 <!-- ===============================================================
        PAGE 15 — LESSON 2B
-       WHAT TIME IS THE NEXT BUS? — Telling time + articles.
+       WHAT TIME IS THE NEXT BUS? — HORIZONS ON AIR listening feature.
        =============================================================== -->
   <article class="hz-page hz-content hz-unit-2 l2b-page" data-page="15">
     <main class="hz-page__content">
@@ -5732,15 +5970,15 @@ body {
               <div class="hz-exercise__body l2b-time-stage">
                 <div class="l2b-time-grid" aria-label="Digital times">
                   <div class="l2b-time"><b>A</b><span>6:20</span></div>
-                  <div class="l2b-time"><b>B</b><span>7:30</span></div>
-                  <div class="l2b-time"><b>C</b><span>8:40</span></div>
-                  <div class="l2b-time"><b>D</b><span>9:50</span></div>
+                  <div class="l2b-time"><b>B</b><span>6:40</span></div>
+                  <div class="l2b-time"><b>C</b><span>7:30</span></div>
+                  <div class="l2b-time"><b>D</b><span>8:50</span></div>
                 </div>
                 <div class="l2b-time-words">
                   <div><span class="l2b-match-line"></span><strong>six twenty</strong></div>
+                  <div><span class="l2b-match-line"></span><strong>six forty</strong></div>
                   <div><span class="l2b-match-line"></span><strong>seven thirty</strong></div>
-                  <div><span class="l2b-match-line"></span><strong>eight forty</strong></div>
-                  <div><span class="l2b-match-line"></span><strong>nine fifty</strong></div>
+                  <div><span class="l2b-match-line"></span><strong>eight fifty</strong></div>
                 </div>
                 <div class="l2b-time-new">
                   <span class="hz-new-words">NEW WORDS</span>
@@ -5752,58 +5990,80 @@ body {
 
           <div class="l2b-go-to hz-go-to">Vocabulary Practice · Telling time · page ---</div>
 
-          <section class="hz-exercise">
+          <section class="hz-exercise l2b-onair-start">
             <div class="hz-exercise-number">2</div>
             <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction"><span class="hz-audio-badge">♪ 2.3</span>Read and listen. Choose.</p>
+              <div class="l2b-show-head">
+                <span class="l2b-show-brand"><b>HORIZONS</b><em>ON AIR</em></span>
+                <strong class="l2b-show-episode">BUS OR CAR?</strong>
+                <span class="hz-audio-badge">♪ 2.3</span>
+              </div>
+              <p class="hz-exercise__instruction">Listen. Choose.</p>
+              <div class="hz-exercise__body l2b-street-strip">
+                <figure class="l2b-street-still" data-image-slot="2B-AIR-01-JULIA">
+                  <div class="l2b-photo-placeholder"><span>PHOTO A</span></div>
+                  <figcaption><b>A</b><span>Julia</span></figcaption>
+                  <div class="l2b-street-choice"><span><i class="hz-choice-box"></i> Moovit</span><span><i class="hz-choice-box"></i> inDrive</span></div>
+                </figure>
+                <figure class="l2b-street-still" data-image-slot="2B-AIR-02-DIEGO">
+                  <div class="l2b-photo-placeholder"><span>PHOTO B</span></div>
+                  <figcaption><b>B</b><span>Diego</span></figcaption>
+                  <div class="l2b-street-choice"><span><i class="hz-choice-box"></i> Moovit</span><span><i class="hz-choice-box"></i> inDrive</span></div>
+                </figure>
+                <figure class="l2b-street-still" data-image-slot="2B-AIR-03-ANA">
+                  <div class="l2b-photo-placeholder"><span>PHOTO C</span></div>
+                  <figcaption><b>C</b><span>Ana</span></figcaption>
+                  <div class="l2b-street-choice"><span><i class="hz-choice-box"></i> Moovit</span><span><i class="hz-choice-box"></i> inDrive</span></div>
+                </figure>
+              </div>
+              <div class="l2b-show-new"><span class="hz-new-words">NEW WORDS</span><span>app · bus · car · use</span></div>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">3</div>
+            <div class="hz-exercise__content">
+              <div class="l2b-show-head l2b-show-head--small">
+                <span class="l2b-show-brand"><b>HORIZONS</b><em>ON AIR</em></span>
+                <strong class="l2b-show-episode">BUS OR CAR?</strong>
+                <span class="hz-audio-badge">♪ 2.3</span>
+              </div>
+              <p class="hz-exercise__instruction">Listen again. Choose.</p>
               <div class="hz-exercise__body l2b-moovit-stage">
-                <article class="l2b-app l2b-app--moovit hz-ui-card" aria-label="Moovit-style bus app">
-                  <header class="l2b-app__top">
-                    <strong>Moovit</strong>
-                    <span>BUS</span>
-                  </header>
-                  <div class="l2b-app__location">CENTRAL</div>
-                  <div class="l2b-app__label">NEXT BUS</div>
-                  <div class="l2b-route-list">
-                    <div class="l2b-route l2b-route--next"><b>15</b><span>6:20</span></div>
-                    <div class="l2b-route"><b>8</b><span>6:40</span></div>
-                    <div class="l2b-route"><b>21</b><span>7:00</span></div>
+                <article class="l2b-phone l2b-phone--moovit" aria-label="Moovit-style route screen">
+                  <div class="l2b-phone__speaker"></div>
+                  <div class="l2b-phone__screen">
+                    <div class="l2b-status"><span>6:10</span><span>● ● ●</span></div>
+                    <div class="l2b-moovit-brand"><i>●</i><strong>moovit</strong></div>
+                    <div class="l2b-moovit-plan">
+                      <div class="l2b-moovit-plan__title">Plan a trip</div>
+                      <div class="l2b-moovit-field"><i class="l2b-dot l2b-dot--gray"></i><span>Central</span></div>
+                      <div class="l2b-moovit-field"><i class="l2b-dot l2b-dot--orange"></i><span>Brighton</span></div>
+                      <div class="l2b-moovit-button">Search routes</div>
+                    </div>
+                    <div class="l2b-moovit-results">
+                      <div class="l2b-moovit-result l2b-moovit-result--main"><span class="l2b-route-badge">15</span><strong>6:20</strong><small>bus</small></div>
+                      <div class="l2b-moovit-result"><span class="l2b-route-badge">8</span><strong>7:30</strong><small>bus</small></div>
+                      <div class="l2b-moovit-result"><span class="l2b-route-badge">21</span><strong>8:50</strong><small>bus</small></div>
+                    </div>
+                    <div class="l2b-mini-map" aria-hidden="true">
+                      <i class="l2b-map-road l2b-map-road--1"></i>
+                      <i class="l2b-map-road l2b-map-road--2"></i>
+                      <i class="l2b-map-route"></i>
+                      <i class="l2b-map-pin"></i>
+                    </div>
                   </div>
                 </article>
 
-                <div class="l2b-moovit-copy">
-                  <dl class="l2b-dialogue hz-dialogue-text">
-                    <dt>Mia:</dt><dd>What time is the next bus?</dd>
-                    <dt>Noah:</dt><dd>It is <strong>6:20</strong>.</dd>
-                    <dt>Mia:</dt><dd>What number?</dd>
-                    <dt>Noah:</dt><dd><strong>15</strong>.</dd>
-                    <dt>Mia:</dt><dd>What time is bus 8?</dd>
-                    <dt>Noah:</dt><dd>It is <strong>6:40</strong>.</dd>
-                  </dl>
-
-                  <div class="l2b-read-check">
-                    <div><b>1</b><span>Next bus</span><span><i class="hz-choice-box"></i> 6:20</span><span><i class="hz-choice-box"></i> 6:40</span></div>
-                    <div><b>2</b><span>Number</span><span><i class="hz-choice-box"></i> 15</span><span><i class="hz-choice-box"></i> 8</span></div>
-                    <div><b>3</b><span>Bus 8</span><span><i class="hz-choice-box"></i> 6:20</span><span><i class="hz-choice-box"></i> 6:40</span></div>
-                  </div>
+                <div class="l2b-show-questions">
+                  <div><b>1</b><span>Julia</span><span><i class="hz-choice-box"></i> 6:20</span><span><i class="hz-choice-box"></i> 6:40</span></div>
+                  <div><b>2</b><span>Julia</span><span><i class="hz-choice-box"></i> 15</span><span><i class="hz-choice-box"></i> 8</span></div>
+                  <div><b>3</b><span>Ana</span><span><i class="hz-choice-box"></i> 7:30</span><span><i class="hz-choice-box"></i> 8:50</span></div>
+                  <div><b>4</b><span>Ana</span><span><i class="hz-choice-box"></i> 8</span><span><i class="hz-choice-box"></i> 21</span></div>
                 </div>
               </div>
             </div>
           </section>
-
-          <section class="hz-focus-box l2b-articles hz-no-break" aria-label="Language: a, an, the">
-            <header class="hz-focus-box__header">LANGUAGE: A / AN / THE</header>
-            <div class="hz-focus-box__body">
-              <div class="l2b-article-grid">
-                <div><strong>A</strong><p>It is <b>a</b> bus.</p><p>It is <b>a</b> car.</p></div>
-                <div><strong>AN</strong><p>It is <b>an</b> app.</p></div>
-                <div><strong>THE</strong><p><b>The</b> bus is 15.</p><p><b>The</b> car is 6.</p></div>
-              </div>
-              <div class="l2b-article-key"><span><b>a / an</b> = one</span><span><b>the</b> = specific</span></div>
-            </div>
-          </section>
-
-          <div class="l2b-go-to hz-go-to">Grammar Practice · A / an / the · page ---</div>
         </div>
       </div>
     </main>
@@ -5820,72 +6080,92 @@ body {
         <div class="hz-exercises hz-fill">
 
           <section class="hz-exercise">
-            <div class="hz-exercise-number">3</div>
+            <div class="hz-exercise-number">4</div>
+            <div class="hz-exercise__content">
+              <div class="l2b-show-head l2b-show-head--small">
+                <span class="l2b-show-brand"><b>HORIZONS</b><em>ON AIR</em></span>
+                <strong class="l2b-show-episode">BUS OR CAR?</strong>
+                <span class="hz-audio-badge">♪ 2.3</span>
+              </div>
+              <p class="hz-exercise__instruction">Listen again. Complete.</p>
+              <div class="hz-exercise__body l2b-indrive-stage">
+                <article class="l2b-phone l2b-phone--indrive" aria-label="inDrive-style ride request screen">
+                  <div class="l2b-phone__speaker"></div>
+                  <div class="l2b-phone__screen">
+                    <div class="l2b-indrive-top">Request<br>your ride</div>
+                    <div class="l2b-indrive-map" aria-hidden="true">
+                      <i class="l2b-indrive-road l2b-indrive-road--1"></i>
+                      <i class="l2b-indrive-road l2b-indrive-road--2"></i>
+                      <i class="l2b-indrive-route"></i>
+                      <span>2 min</span>
+                    </div>
+                    <div class="l2b-indrive-sheet">
+                      <div class="l2b-car-tabs"><b>inDrive</b><span>Comfort</span><span>XL</span></div>
+                      <div class="l2b-place"><i class="l2b-place-dot l2b-place-dot--blue"></i><span>Central</span></div>
+                      <div class="l2b-place"><i class="l2b-place-dot l2b-place-dot--lime"></i><span>Brighton</span></div>
+                      <div class="l2b-price"><span>$</span><b>Offer your price</b></div>
+                      <div class="l2b-find-driver">Find a driver</div>
+                    </div>
+                  </div>
+                </article>
+
+                <div class="l2b-indrive-copy">
+                  <figure class="l2b-interview-photo" data-image-slot="2B-AIR-04-DIEGO">
+                    <div class="l2b-photo-placeholder"><span>PHOTO D</span></div>
+                    <figcaption><strong>Diego</strong><span>inDrive</span></figcaption>
+                  </figure>
+                  <div class="l2b-complete-lines">
+                    <p><b>1</b> Time: <span class="l2b-long-answer"></span></p>
+                    <p><b>2</b> Car number: <span class="l2b-long-answer l2b-long-answer--short"></span></p>
+                    <p><b>3</b> Diego: <span class="l2b-inline-choice"><span><i class="hz-choice-box"></i> bus</span><span><i class="hz-choice-box"></i> car</span></span></p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-focus-box l2b-articles hz-no-break" aria-label="Language from Horizons On Air: a, an, the">
+            <header class="hz-focus-box__header">LANGUAGE FROM HORIZONS ON AIR: A / AN / THE</header>
+            <div class="hz-focus-box__body">
+              <div class="l2b-article-grid">
+                <div><strong>A</strong><p>It is <b>a</b> bus app.</p><p>It is <b>a</b> car app.</p></div>
+                <div><strong>AN</strong><p>It is <b>an</b> app.</p></div>
+                <div><strong>THE</strong><p><b>The</b> bus is 15.</p><p><b>The</b> car is 6.</p></div>
+              </div>
+              <div class="l2b-article-key"><span><b>a / an</b> = one</span><span><b>the</b> = specific</span></div>
+            </div>
+          </section>
+
+          <div class="l2b-go-to hz-go-to">Grammar Practice · A / an / the · page ---</div>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">5</div>
             <div class="hz-exercise__content">
               <p class="hz-exercise__instruction">Complete a, an or the.</p>
               <div class="hz-exercise__body l2b-article-practice">
-                <div><b>1</b><span>It is</span><span class="l2b-answer"></span><span>bus.</span></div>
-                <div><b>2</b><span></span><span class="l2b-answer"></span><span>bus is 15.</span></div>
-                <div><b>3</b><span>It is</span><span class="l2b-answer"></span><span>app.</span></div>
-                <div><b>4</b><span></span><span class="l2b-answer"></span><span>app is Moovit.</span></div>
-                <div><b>5</b><span>It is</span><span class="l2b-answer"></span><span>car.</span></div>
+                <div><b>1</b><span>Moovit is</span><span class="l2b-answer"></span><span>app.</span></div>
+                <div><b>2</b><span>It is</span><span class="l2b-answer"></span><span>bus app.</span></div>
+                <div><b>3</b><span></span><span class="l2b-answer"></span><span>bus is 15.</span></div>
+                <div><b>4</b><span>inDrive is</span><span class="l2b-answer"></span><span>app.</span></div>
+                <div><b>5</b><span>It is</span><span class="l2b-answer"></span><span>car app.</span></div>
                 <div><b>6</b><span></span><span class="l2b-answer"></span><span>car is 6.</span></div>
               </div>
             </div>
           </section>
 
           <section class="hz-exercise">
-            <div class="hz-exercise-number">4</div>
-            <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction"><span class="hz-audio-badge">♪ 2.4</span>Listen and complete.</p>
-              <div class="hz-exercise__body l2b-indrive-stage">
-                <article class="l2b-app l2b-app--indrive hz-ui-card" aria-label="inDrive-style car app">
-                  <header class="l2b-app__top">
-                    <strong>inDrive</strong>
-                    <span>CAR</span>
-                  </header>
-                  <div class="l2b-ride-status">CAR</div>
-                  <div class="l2b-ride-field"><span>TIME</span><b class="l2b-ride-blank"></b></div>
-                  <div class="l2b-ride-field"><span>NUMBER</span><b class="l2b-ride-blank"></b></div>
-                </article>
-
-                <div class="l2b-listening-copy">
-                  <span class="hz-new-words">NEW WORDS</span>
-                  <strong>car</strong>
-                  <div class="l2b-listening-lines">
-                    <p><b>A:</b> What time is the car?</p>
-                    <p><b>B:</b> <span class="l2b-long-answer"></span></p>
-                    <p><b>A:</b> What number?</p>
-                    <p><b>B:</b> <span class="l2b-long-answer l2b-long-answer--short"></span></p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section class="hz-exercise">
-            <div class="hz-exercise-number">5</div>
+            <div class="hz-exercise-number">6</div>
             <div class="hz-exercise__content">
               <p class="hz-exercise__instruction">Work in pairs.</p>
               <div class="hz-exercise__body l2b-pair-stage">
-                <div class="l2b-pair-apps">
-                  <div class="l2b-mini-app l2b-mini-app--moovit"><strong>Moovit</strong><span>BUS 15</span><b>6:20</b></div>
-                  <div class="l2b-mini-app l2b-mini-app--indrive"><strong>inDrive</strong><span>CAR 6</span><b>6:40</b></div>
-                </div>
+                <div class="l2b-pair-card l2b-pair-card--moovit"><strong>moovit</strong><span>BUS 15</span><b>6:20</b></div>
                 <div class="l2b-pair-copy">
-                  <div class="l2b-pair-example">
-                    <p><strong>A:</strong> What time is the next bus?</p>
-                    <p><strong>B:</strong> It is 6:20.</p>
-                  </div>
-                  <div class="l2b-pair-example">
-                    <p><strong>A:</strong> What time is the car?</p>
-                    <p><strong>B:</strong> It is 6:40.</p>
-                  </div>
-                  <div class="l2b-pair-example l2b-pair-example--small">
-                    <p><strong>A:</strong> What number?</p>
-                    <p><strong>B:</strong> 15.</p>
-                  </div>
+                  <p><strong>A:</strong> What time is the next bus?</p>
+                  <p><strong>B:</strong> It is 6:20.</p>
+                  <p><strong>A:</strong> What number?</p>
+                  <p><strong>B:</strong> 15.</p>
                 </div>
+                <div class="l2b-pair-card l2b-pair-card--indrive"><strong>inDrive</strong><span>CAR 6</span><b>6:40</b></div>
               </div>
             </div>
           </section>
