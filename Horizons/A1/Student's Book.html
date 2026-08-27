@@ -3660,6 +3660,475 @@ body.hz-debug .hz-page::after {
     .l1d-page--2 .hz-exercise__instruction { font-size: 8.6pt; }
   
 
+/* Horizons/A1/Lessons/lesson-2a-local.css */
+/* Horizons A1 — Lesson 2A scoped styles.
+   Unit 2 begins with an everyday bag / personal-items visual world.
+   No decorative ghost text; all geometry supports vocabulary, proximity or use. */
+
+.l2a-page .hz-page__content { overflow: hidden; }
+.l2a-page .hz-page-stack { gap: 1.8mm; }
+.l2a-page .hz-lesson-header { padding-bottom: 3.1mm; }
+.l2a-page .hz-exercises { gap: .2mm; }
+.l2a-page .hz-exercise { padding: 1.25mm 0 1.8mm; }
+.l2a-page .hz-exercise__body { margin-top: 1.25mm; }
+.l2a-page .hz-exercise__instruction { font-size: 8.9pt; }
+.l2a-target { color: var(--hz-unit-dark); font-weight: var(--hz-fw-black); }
+.l2a-go-to { margin-left: calc(var(--hz-exercise-marker-size) + 3mm); }
+
+/* ---------- Exercise 1: one strong top-down bag scene + compact word bank ---------- */
+
+.l2a-vocab-stage {
+  display: grid;
+  grid-template-columns: 1.26fr .74fr;
+  gap: 5mm;
+  align-items: stretch;
+  min-height: 61mm;
+}
+
+.l2a-bag-photo {
+  position: relative;
+  min-height: 61mm;
+  overflow: hidden;
+  background: var(--hz-wash);
+  clip-path: polygon(0 0, 100% 0, 96% 100%, 4% 100%);
+}
+
+.l2a-bag-photo .hz-photo-placeholder { min-height: 61mm; }
+
+.l2a-callout,
+.l2a-photo-number {
+  position: absolute;
+  z-index: 3;
+  display: grid;
+  place-items: center;
+  width: 6.5mm;
+  height: 6.5mm;
+  border: .45mm solid #fff;
+  border-radius: 50%;
+  background: var(--hz-unit);
+  color: #fff;
+  font-size: 7pt;
+  font-weight: var(--hz-fw-black);
+  line-height: 1;
+  box-shadow: 0 .5mm 1.2mm rgb(32 33 36 / 14%);
+}
+
+.l2a-callout--1 { left: 9%; top: 14%; }
+.l2a-callout--2 { left: 39%; top: 10%; }
+.l2a-callout--3 { right: 13%; top: 18%; }
+.l2a-callout--4 { left: 18%; top: 47%; }
+.l2a-callout--5 { left: 48%; top: 42%; }
+.l2a-callout--6 { right: 9%; top: 49%; }
+.l2a-callout--7 { left: 31%; bottom: 8%; }
+.l2a-callout--8 { right: 24%; bottom: 8%; }
+
+.l2a-word-bank {
+  align-self: center;
+  padding: 2.5mm 0 2mm 3.6mm;
+  border-left: 1mm solid var(--hz-unit);
+}
+
+.l2a-word-bank .hz-new-words { margin-bottom: 2.4mm; }
+
+.l2a-word-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2.2mm 4mm;
+  font-size: 8pt;
+  line-height: 1.18;
+}
+
+.l2a-word {
+  display: grid;
+  grid-template-columns: 7mm minmax(0, 1fr);
+  gap: 1.5mm;
+  align-items: end;
+  min-width: 0;
+}
+
+.l2a-word strong { white-space: nowrap; }
+.l2a-match-line { min-height: 4.2mm; border-bottom: .3mm solid var(--hz-line-strong); }
+
+/* ---------- Exercise 2: demonstratives first appear in a visible spatial context ---------- */
+
+.l2a-dialogue-stage {
+  display: grid;
+  grid-template-columns: .94fr 1.06fr;
+  min-height: 49mm;
+  align-items: stretch;
+}
+
+.l2a-dialogue-photo {
+  min-height: 49mm;
+  overflow: hidden;
+  background: var(--hz-wash);
+  clip-path: polygon(0 0, 100% 0, 92% 100%, 0 100%);
+}
+
+.l2a-dialogue-photo .hz-photo-placeholder { min-height: 49mm; }
+
+.l2a-dialogue-copy {
+  align-self: center;
+  margin-left: -5mm;
+  padding: 3.2mm 3.5mm 3.1mm 6mm;
+  border-top: 1.1mm solid var(--hz-unit);
+  background: var(--hz-paper);
+  box-shadow: 0 0 0 .25mm var(--hz-line);
+}
+
+.l2a-dialogue {
+  display: grid;
+  grid-template-columns: 12mm minmax(0, 1fr);
+  gap: .65mm 1.8mm;
+  margin: 0;
+  font-size: 8pt;
+  line-height: 1.24;
+}
+
+.l2a-dialogue dt { margin: 0; font-weight: var(--hz-fw-black); }
+.l2a-dialogue dd { margin: 0; }
+
+/* ---------- Exercise 3: question-only noticing, no invented response widgets ---------- */
+
+.l2a-discovery {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2mm 8mm;
+  font-size: 8pt;
+  line-height: 1.3;
+}
+
+.l2a-discovery__item {
+  display: grid;
+  grid-template-columns: 5mm minmax(0, 1fr);
+  gap: 1mm;
+  min-height: 5.8mm;
+}
+
+.l2a-discovery__item b { color: var(--hz-unit-dark); }
+
+/* ---------- Grammar: visual proximity cues replace unnecessary metalanguage ---------- */
+
+.l2a-grammar {
+  margin: .3mm 0 .2mm calc(var(--hz-exercise-marker-size) + 3mm);
+  padding-top: 2.8mm;
+  padding-bottom: 3mm;
+}
+
+.l2a-grammar-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 3mm;
+}
+
+.l2a-grammar-item {
+  padding-top: 1.4mm;
+  border-top: .35mm solid rgb(32 33 36 / 20%);
+  font-size: 7.9pt;
+  line-height: 1.24;
+}
+
+.l2a-grammar-item > strong {
+  display: block;
+  margin: 1.1mm 0 .8mm;
+  color: var(--hz-unit-dark);
+  font-size: 8.6pt;
+  font-weight: var(--hz-fw-black);
+}
+
+.l2a-grammar-item p { margin: 0 0 .65mm; }
+.l2a-grammar-item b { color: var(--hz-unit-dark); }
+
+.l2a-grammar-cue {
+  position: relative;
+  width: 100%;
+  height: 10mm;
+  border-bottom: .28mm solid var(--hz-line);
+}
+
+.l2a-person-dot {
+  position: absolute;
+  left: 1mm;
+  bottom: 1.3mm;
+  width: 5.2mm;
+  height: 5.2mm;
+  border-radius: 50%;
+  background: var(--hz-unit-dark);
+}
+
+.l2a-person-dot::after {
+  content: "";
+  position: absolute;
+  left: 1.4mm;
+  top: 4.7mm;
+  width: 2.4mm;
+  height: 3.2mm;
+  background: var(--hz-unit-dark);
+}
+
+.l2a-object-dot {
+  position: absolute;
+  left: 12mm;
+  bottom: 1.5mm;
+  width: 6mm;
+  height: 4.2mm;
+  border: .45mm solid var(--hz-unit);
+  background: #fff;
+}
+
+.l2a-grammar-cue--far .l2a-object-dot { left: auto; right: 1mm; }
+
+.l2a-object-dot--two::after {
+  content: "";
+  position: absolute;
+  left: 7mm;
+  top: -.45mm;
+  width: 6mm;
+  height: 4.2mm;
+  border: .45mm solid var(--hz-unit);
+  background: #fff;
+}
+
+.l2a-grammar-cue--far .l2a-object-dot--two::after { left: auto; right: 7mm; }
+
+/* ---------- Page 14 controlled practice ---------- */
+
+.l2a-page--2 .hz-exercises { padding-top: 9mm !important; }
+.l2a-page--2 .hz-page-stack { gap: 1.6mm; }
+.l2a-page--2 .hz-exercise { padding-top: 1.2mm; padding-bottom: 2mm; }
+
+.l2a-choice-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 3.6mm 5mm;
+}
+
+.l2a-choice-item {
+  min-width: 0;
+  padding-top: 1.2mm;
+  border-top: .5mm solid var(--hz-unit);
+}
+
+.l2a-choice-item p {
+  margin: 1.4mm 0 0;
+  font-size: 8pt;
+  line-height: 1.3;
+}
+
+.l2a-choice-item p b { color: var(--hz-unit-dark); margin-right: 1mm; }
+
+.l2a-choice-cue {
+  position: relative;
+  height: 21mm;
+  background: var(--hz-unit-soft);
+}
+
+.l2a-choice-person {
+  position: absolute;
+  left: 3mm;
+  bottom: 3mm;
+  width: 6mm;
+  height: 6mm;
+  border-radius: 50%;
+  background: var(--hz-unit-dark);
+}
+
+.l2a-choice-person::after {
+  content: "";
+  position: absolute;
+  left: 1.7mm;
+  top: 5.4mm;
+  width: 2.6mm;
+  height: 5mm;
+  background: var(--hz-unit-dark);
+}
+
+.l2a-choice-object {
+  position: absolute;
+  left: 16mm;
+  bottom: 3mm;
+  display: grid;
+  place-items: center;
+  min-width: 19mm;
+  min-height: 8mm;
+  padding: 1mm 1.5mm;
+  border: .4mm solid var(--hz-unit);
+  background: #fff;
+  color: var(--hz-unit-dark);
+  font-size: 6.7pt;
+  font-weight: var(--hz-fw-black);
+  line-height: 1;
+  text-align: center;
+}
+
+.l2a-choice-cue--far .l2a-choice-object { left: auto; right: 3mm; }
+
+.l2a-choice-object--plural::after {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  left: 3mm;
+  top: -2.3mm;
+  width: 100%;
+  height: 100%;
+  border: .35mm solid rgb(186 106 45 / 45%);
+  background: #fff;
+}
+
+.l2a-answer {
+  display: inline-block;
+  min-width: 14mm;
+  min-height: 4mm;
+  border-bottom: .3mm solid var(--hz-line-strong);
+  vertical-align: -.4mm;
+}
+
+.l2a-answer--long { min-width: 19mm; }
+
+/* ---------- Exercise 5: productive form, with nonverbal cue key ---------- */
+
+.l2a-complete-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2mm 8mm;
+  font-size: 8.1pt;
+  line-height: 1.3;
+}
+
+.l2a-complete-item {
+  display: grid;
+  grid-template-columns: 5mm minmax(0, 1fr);
+  gap: 1.2mm;
+  padding: 1.5mm 0;
+  border-bottom: .25mm solid var(--hz-line);
+}
+
+.l2a-complete-item > b { color: var(--hz-unit-dark); }
+.l2a-complete-item p { margin: 0 0 1.3mm; }
+.l2a-complete-item p:last-child { margin-bottom: 0; }
+
+.l2a-complete-key {
+  display: grid;
+  grid-template-columns: auto 25mm auto 25mm auto 25mm auto 25mm;
+  gap: 2mm 2.6mm;
+  align-items: center;
+  margin-top: 2mm;
+  padding: 1.7mm 2.5mm;
+  border-left: .9mm solid var(--hz-unit);
+  background: var(--hz-unit-soft);
+  color: var(--hz-unit-dark);
+  font-size: 7pt;
+  font-weight: var(--hz-fw-black);
+}
+
+.l2a-mini-cue {
+  position: relative;
+  display: block;
+  width: 25mm;
+  height: 7mm;
+}
+
+.l2a-mini-cue::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 1mm;
+  width: 4mm;
+  height: 4mm;
+  border-radius: 50%;
+  background: var(--hz-unit-dark);
+}
+
+.l2a-mini-cue::after {
+  content: "";
+  position: absolute;
+  left: 8mm;
+  bottom: 1mm;
+  width: 5.4mm;
+  height: 3.6mm;
+  border: .35mm solid var(--hz-unit);
+  background: #fff;
+}
+
+.l2a-mini-cue--far::after { left: auto; right: 0; }
+
+.l2a-mini-cue--two {
+  background-image: linear-gradient(var(--hz-unit), var(--hz-unit));
+  background-size: 5.4mm .35mm;
+  background-position: 14.5mm 3.4mm;
+  background-repeat: no-repeat;
+}
+
+.l2a-mini-cue--far.l2a-mini-cue--two {
+  background-position: 13mm 3.4mm;
+}
+
+/* ---------- Exercise 6: short communicative use, then real bag transfer ---------- */
+
+.l2a-pair-stage {
+  display: grid;
+  grid-template-columns: .73fr 1.27fr;
+  gap: 5mm;
+  align-items: stretch;
+  min-height: 73mm;
+}
+
+.l2a-pair-copy {
+  display: grid;
+  align-content: center;
+  gap: 2.5mm;
+}
+
+.l2a-pair-example {
+  padding: 2.3mm 2.8mm;
+  border-left: 1mm solid var(--hz-unit);
+  background: var(--hz-paper);
+  font-size: 8.1pt;
+  line-height: 1.3;
+}
+
+.l2a-pair-example:nth-child(2) { background: var(--hz-unit-soft); }
+.l2a-pair-example p { margin: 0; }
+.l2a-pair-example p + p { margin-top: .8mm; }
+
+.l2a-pair-steps {
+  padding-top: 1.5mm;
+  border-top: .35mm solid var(--hz-line);
+  font-size: 8pt;
+  line-height: 1.3;
+}
+
+.l2a-pair-steps p { margin: 0 0 .9mm; }
+.l2a-pair-steps b { display: inline-block; width: 5mm; color: var(--hz-unit-dark); }
+
+.l2a-pair-photo {
+  position: relative;
+  min-height: 73mm;
+  overflow: hidden;
+  background: var(--hz-wash);
+  clip-path: polygon(6% 0, 100% 0, 100% 93%, 0 100%);
+}
+
+.l2a-pair-photo .hz-photo-placeholder { min-height: 73mm; }
+
+.l2a-photo-number--1 { left: 11%; top: 15%; }
+.l2a-photo-number--2 { left: 42%; top: 10%; }
+.l2a-photo-number--3 { right: 13%; top: 18%; }
+.l2a-photo-number--4 { left: 21%; bottom: 15%; }
+.l2a-photo-number--5 { left: 53%; bottom: 10%; }
+.l2a-photo-number--6 { right: 9%; bottom: 18%; }
+
+.l2a-extra {
+  margin-left: calc(var(--hz-exercise-marker-size) + 3mm);
+  margin-top: .8mm;
+}
+
+@media print {
+  .l2a-page,
+  .l2a-page * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+}
+
+
 /* Student's Book unifier */
 
 html,
@@ -4720,6 +5189,249 @@ body {
       </div>
     </main>
     <footer class="hz-page__footer"><span></span><span class="hz-page-number">12</span></footer>
+  </article>
+
+<!-- ===== 2A.html ===== -->
+<!-- ===============================================================
+       PAGE 13 — LESSON 2A
+       New authored lesson from the A1 syllabus:
+       LOOK INSIDE MY BAG! — Personal items + demonstrative pronouns.
+       Early-A1 learner language intentionally reuses the established
+       Unit 1 instruction bank and keeps support language extremely narrow.
+       =============================================================== -->
+  <article class="hz-page hz-content hz-unit-2 l2a-page" data-page="13">
+    <main class="hz-page__content">
+      <div class="hz-page-stack">
+        <header class="hz-lesson-header">
+          <div class="hz-lesson-tab" aria-label="Lesson 2A">
+            <span class="hz-lesson-tab__label">Lesson</span>
+            <span class="hz-lesson-tab__id">2A</span>
+          </div>
+          <div class="hz-lesson-heading">
+            <h1 class="hz-lesson-title">LOOK INSIDE MY BAG!</h1>
+            <div class="hz-objectives">
+              <span class="hz-objectives__item">Personal items</span>
+              <span class="hz-objectives__item">This / that / these / those</span>
+            </div>
+          </div>
+        </header>
+
+        <div class="hz-exercises hz-fill">
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">1</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Look and match.</p>
+              <div class="hz-exercise__body l2a-vocab-stage">
+                <div class="l2a-bag-photo" aria-label="Open everyday bag with personal items">
+                  <div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Open everyday bag · top-down lifestyle photo · phone, keys, wallet, notebook, pen, headphones, bottle and umbrella visible</span></div>
+                  <span class="l2a-callout l2a-callout--1">1</span>
+                  <span class="l2a-callout l2a-callout--2">2</span>
+                  <span class="l2a-callout l2a-callout--3">3</span>
+                  <span class="l2a-callout l2a-callout--4">4</span>
+                  <span class="l2a-callout l2a-callout--5">5</span>
+                  <span class="l2a-callout l2a-callout--6">6</span>
+                  <span class="l2a-callout l2a-callout--7">7</span>
+                  <span class="l2a-callout l2a-callout--8">8</span>
+                </div>
+
+                <div class="l2a-word-bank">
+                  <span class="hz-new-words">NEW WORDS</span>
+                  <div class="l2a-word-list">
+                    <div class="l2a-word"><span class="l2a-match-line"></span><strong>phone</strong></div>
+                    <div class="l2a-word"><span class="l2a-match-line"></span><strong>keys</strong></div>
+                    <div class="l2a-word"><span class="l2a-match-line"></span><strong>wallet</strong></div>
+                    <div class="l2a-word"><span class="l2a-match-line"></span><strong>notebook</strong></div>
+                    <div class="l2a-word"><span class="l2a-match-line"></span><strong>pen</strong></div>
+                    <div class="l2a-word"><span class="l2a-match-line"></span><strong>headphones</strong></div>
+                    <div class="l2a-word"><span class="l2a-match-line"></span><strong>bottle</strong></div>
+                    <div class="l2a-word"><span class="l2a-match-line"></span><strong>umbrella</strong></div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <div class="l2a-go-to hz-go-to">Vocabulary Practice · Personal items · page ---</div>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">2</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction"><span class="hz-audio-badge">♪ 2.1</span>Read and listen.</p>
+              <div class="hz-exercise__body l2a-dialogue-stage">
+                <div class="l2a-dialogue-photo">
+                  <div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Two friends with an open everyday bag · one friend holds a phone and keys close · notebook and headphones are farther away on the seat/table</span></div>
+                </div>
+                <div class="l2a-dialogue-copy">
+                  <dl class="l2a-dialogue hz-dialogue-text">
+                    <dt>Nora:</dt><dd>Look inside my bag!</dd>
+                    <dt>Eli:</dt><dd>What is <span class="l2a-target">this</span>?</dd>
+                    <dt>Nora:</dt><dd><span class="l2a-target">This</span> is my phone.</dd>
+                    <dt>Eli:</dt><dd>What are <span class="l2a-target">these</span>?</dd>
+                    <dt>Nora:</dt><dd><span class="l2a-target">These</span> are my keys.</dd>
+                    <dt>Eli:</dt><dd>What is <span class="l2a-target">that</span>?</dd>
+                    <dt>Nora:</dt><dd><span class="l2a-target">That</span> is my notebook.</dd>
+                    <dt>Eli:</dt><dd>What are <span class="l2a-target">those</span>?</dd>
+                    <dt>Nora:</dt><dd><span class="l2a-target">Those</span> are my headphones.</dd>
+                    <dt>Eli:</dt><dd>Nice!</dd>
+                  </dl>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">3</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Look at Exercise 2 again. Answer.</p>
+              <div class="hz-exercise__body l2a-discovery">
+                <div class="l2a-discovery__item"><b>1</b><span>Phone: this or that?</span></div>
+                <div class="l2a-discovery__item"><b>2</b><span>Keys: this or these?</span></div>
+                <div class="l2a-discovery__item"><b>3</b><span>Notebook: this or that?</span></div>
+                <div class="l2a-discovery__item"><b>4</b><span>Headphones: these or those?</span></div>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-focus-box l2a-grammar hz-no-break" aria-label="Grammar: this, that, these, those">
+            <header class="hz-focus-box__header">GRAMMAR: THIS / THAT / THESE / THOSE</header>
+            <div class="hz-focus-box__body l2a-grammar-grid">
+              <div class="l2a-grammar-item">
+                <div class="l2a-grammar-cue"><span class="l2a-person-dot"></span><span class="l2a-object-dot"></span></div>
+                <strong>THIS</strong>
+                <p>What is <b>this</b>?</p>
+                <p><b>This</b> is my phone.</p>
+              </div>
+              <div class="l2a-grammar-item">
+                <div class="l2a-grammar-cue l2a-grammar-cue--far"><span class="l2a-person-dot"></span><span class="l2a-object-dot"></span></div>
+                <strong>THAT</strong>
+                <p>What is <b>that</b>?</p>
+                <p><b>That</b> is my notebook.</p>
+              </div>
+              <div class="l2a-grammar-item">
+                <div class="l2a-grammar-cue"><span class="l2a-person-dot"></span><span class="l2a-object-dot l2a-object-dot--two"></span></div>
+                <strong>THESE</strong>
+                <p>What are <b>these</b>?</p>
+                <p><b>These</b> are my keys.</p>
+              </div>
+              <div class="l2a-grammar-item">
+                <div class="l2a-grammar-cue l2a-grammar-cue--far"><span class="l2a-person-dot"></span><span class="l2a-object-dot l2a-object-dot--two"></span></div>
+                <strong>THOSE</strong>
+                <p>What are <b>those</b>?</p>
+                <p><b>Those</b> are my headphones.</p>
+              </div>
+            </div>
+          </section>
+
+          <div class="l2a-go-to hz-go-to">Grammar Practice · This / that / these / those · page ---</div>
+        </div>
+      </div>
+    </main>
+    <footer class="hz-page__footer"><span></span><span class="hz-page-number">13</span></footer>
+  </article>
+
+  <!-- ===============================================================
+       PAGE 14 — LESSON 2A CONTINUED
+       =============================================================== -->
+  <article class="hz-page hz-content hz-unit-2 hz-continuation-page l2a-page l2a-page--2" data-page="14">
+    <main class="hz-page__content">
+      <div class="hz-continuation">2A</div>
+      <div class="hz-page-stack">
+        <div class="hz-exercises hz-fill">
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">4</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Choose this, that, these or those.</p>
+              <div class="hz-exercise__body l2a-choice-grid">
+                <div class="l2a-choice-item">
+                  <div class="l2a-choice-cue"><span class="l2a-choice-person"></span><span class="l2a-choice-object">wallet</span></div>
+                  <p><b>1</b> <span class="l2a-answer"></span> is my wallet.</p>
+                </div>
+                <div class="l2a-choice-item">
+                  <div class="l2a-choice-cue l2a-choice-cue--far"><span class="l2a-choice-person"></span><span class="l2a-choice-object">notebook</span></div>
+                  <p><b>2</b> <span class="l2a-answer"></span> is my notebook.</p>
+                </div>
+                <div class="l2a-choice-item">
+                  <div class="l2a-choice-cue"><span class="l2a-choice-person"></span><span class="l2a-choice-object l2a-choice-object--plural">keys</span></div>
+                  <p><b>3</b> <span class="l2a-answer"></span> are my keys.</p>
+                </div>
+                <div class="l2a-choice-item">
+                  <div class="l2a-choice-cue l2a-choice-cue--far"><span class="l2a-choice-person"></span><span class="l2a-choice-object l2a-choice-object--plural">headphones</span></div>
+                  <p><b>4</b> <span class="l2a-answer"></span> are my headphones.</p>
+                </div>
+                <div class="l2a-choice-item">
+                  <div class="l2a-choice-cue"><span class="l2a-choice-person"></span><span class="l2a-choice-object">bottle</span></div>
+                  <p><b>5</b> <span class="l2a-answer"></span> is my bottle.</p>
+                </div>
+                <div class="l2a-choice-item">
+                  <div class="l2a-choice-cue l2a-choice-cue--far"><span class="l2a-choice-person"></span><span class="l2a-choice-object l2a-choice-object--plural">pens</span></div>
+                  <p><b>6</b> <span class="l2a-answer"></span> are my pens.</p>
+                </div>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">5</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Complete.</p>
+              <div class="hz-exercise__body l2a-complete-grid">
+                <div class="l2a-complete-item"><b>1</b><div><p>What is <span class="l2a-answer"></span>?</p><p><span class="l2a-answer l2a-answer--long"></span> is my phone.</p></div></div>
+                <div class="l2a-complete-item"><b>2</b><div><p>What are <span class="l2a-answer"></span>?</p><p><span class="l2a-answer l2a-answer--long"></span> are my keys.</p></div></div>
+                <div class="l2a-complete-item"><b>3</b><div><p>What is <span class="l2a-answer"></span>?</p><p><span class="l2a-answer l2a-answer--long"></span> is my notebook.</p></div></div>
+                <div class="l2a-complete-item"><b>4</b><div><p>What are <span class="l2a-answer"></span>?</p><p><span class="l2a-answer l2a-answer--long"></span> are my headphones.</p></div></div>
+              </div>
+              <div class="l2a-complete-key" aria-hidden="true">
+                <span>1</span><span class="l2a-mini-cue"></span>
+                <span>2</span><span class="l2a-mini-cue l2a-mini-cue--two"></span>
+                <span>3</span><span class="l2a-mini-cue l2a-mini-cue--far"></span>
+                <span>4</span><span class="l2a-mini-cue l2a-mini-cue--far l2a-mini-cue--two"></span>
+              </div>
+            </div>
+          </section>
+
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">6</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Work in pairs. Look. Ask and answer.</p>
+              <div class="hz-exercise__body l2a-pair-stage">
+                <div class="l2a-pair-copy">
+                  <div class="l2a-pair-example">
+                    <p><strong>A:</strong> What is this?</p>
+                    <p><strong>B:</strong> This is a wallet.</p>
+                  </div>
+                  <div class="l2a-pair-example">
+                    <p><strong>A:</strong> What are those?</p>
+                    <p><strong>B:</strong> Those are keys.</p>
+                  </div>
+                  <div class="l2a-pair-steps">
+                    <p><b>1</b> Choose a number.</p>
+                    <p><b>2</b> Ask.</p>
+                    <p><b>3</b> Answer.</p>
+                  </div>
+                </div>
+
+                <div class="l2a-pair-photo" aria-label="Everyday bag and personal items on a café bench or table">
+                  <div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Everyday bag scene · café or travel setting · eight personal items placed at clearly different distances for this/that/these/those practice</span></div>
+                  <span class="l2a-photo-number l2a-photo-number--1">1</span>
+                  <span class="l2a-photo-number l2a-photo-number--2">2</span>
+                  <span class="l2a-photo-number l2a-photo-number--3">3</span>
+                  <span class="l2a-photo-number l2a-photo-number--4">4</span>
+                  <span class="l2a-photo-number l2a-photo-number--5">5</span>
+                  <span class="l2a-photo-number l2a-photo-number--6">6</span>
+                </div>
+              </div>
+            </div>
+          </section>
+        </div>
+
+        <div class="l2a-extra hz-extra-practice">
+          <span class="hz-extra-practice__label">EXTRA PRACTICE</span>
+          <span class="hz-extra-practice__prompt">Your bag: choose five. Ask and answer.</span>
+        </div>
+      </div>
+    </main>
+    <footer class="hz-page__footer"><span></span><span class="hz-page-number">14</span></footer>
   </article>
   </main>
 
