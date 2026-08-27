@@ -43,51 +43,75 @@ A lesson may therefore mix realistic imagery with illustration. Do not convert t
 
 ## 3. Approved illustration style
 
-When illustration is pedagogically preferable, use a **classic English-language-coursebook / ELT illustration style**, similar in visual logic to professionally commissioned ESL materials from roughly the late 1990s through early 2010s.
+When illustration is pedagogically preferable, use a **classic English-language-coursebook / ELT illustration style** with the visual logic of professionally commissioned ESL materials from roughly the late 1990s through early 2010s.
 
-The style is:
+The most important production rule is that this is **shape-painted editorial illustration, not outlined vector illustration**.
 
-- flat 2D and highly readable;
-- simple, diagrammatic and purposeful rather than decorative;
-- stylized but not childish;
-- based on simplified natural human proportions and clear body language;
-- built from clean vector-like shapes with soft or gently irregular edges;
-- minimal in facial detail: small eyes, simple noses and mouths, solid simplified hair shapes;
-- restrained in detail so the teaching point is obvious immediately;
-- lightly shaded with one simple darker tone at most;
-- composed with depth mainly through overlap, scale and placement rather than realistic rendering;
-- set against minimal functional backgrounds containing only the environmental information needed to understand the scene;
-- colored with a muted, friendly palette such as dusty blue, teal, muted orange, coral, beige, cream, soft gray and gentle green;
-- uncluttered, balanced and framed like a small professionally illustrated coursebook panel;
-- intentionally human-designed in its simplification and visual hierarchy.
+### Rendering grammar
 
-Avoid:
+The approved style is:
 
-- photorealistic rendering inside an illustration;
-- painterly or sketchbook treatment;
-- 3D rendering;
-- glossy corporate-vector or modern startup-character aesthetics;
-- anime influence;
-- thick comic outlines;
-- exaggerated cartoon proportions;
-- oversized expressive faces;
-- neon or highly saturated palettes;
-- gradients, cinematic lighting or dramatic realistic shadows;
-- excessive texture;
-- random decorative detail;
-- the polished synthetic look commonly associated with generic AI illustration.
+- flat 2D, highly readable and editorial rather than app-like;
+- constructed from **flat adjoining and overlapping color masses**;
+- **shape-defined, not line-defined**;
+- drawn with **NO contour outlines** around people, limbs, clothing, furniture, hair, architecture or objects;
+- separated through color, value, negative space and overlap rather than dark edge strokes;
+- similar in surface logic to digitally assembled **gouache or cut-paper shapes**: controlled enough for print, but subtly irregular rather than mathematically perfect;
+- based on simplified but believable natural human proportions and clear body language;
+- extremely restrained in facial rendering: tiny eyes, a small nose/nose shape and a minimal mouth only when useful;
+- built with hair as one or two solid irregular masses rather than strands;
+- built with clothing as broad flat shapes, usually with no more than one secondary shadow mass;
+- lightly shaded with flat secondary color masses only; no volumetric rendering;
+- composed with depth mainly through overlap, scale and placement;
+- supported by economical functional backgrounds containing only what is needed to understand the situation;
+- colored with a restrained, slightly desaturated printed-coursebook palette such as dusty blue, muted teal, warm ochre, brick red, coral, sage green, cream, beige, charcoal gray, muted brown and soft off-white;
+- intentionally asymmetrical or slightly quirky where appropriate, with confident negative space and human-made compositional judgment;
+- clear at small print size and focused on one immediately understandable situation.
 
-The key distinction is **intentional simplification**. The image should look as though an illustrator deliberately removed everything that does not help the learner understand the target meaning.
+**ABSOLUTELY NO visible contour outlines.** If an arm meets a shirt, a person meets a chair, or an object sits on a table, distinguish the forms through adjoining color masses, value contrast and overlap, never through a dark traced edge.
+
+Do **not** describe this style as `vector-like` in prompts. That wording tends to produce modern corporate-vector geometry, dark contours and synthetic AI aesthetics. Preferred vocabulary is:
+
+- `flat color-mass illustration`;
+- `shape-defined rather than line-defined`;
+- `cut-paper / gouache-like construction`;
+- `editorial textbook artwork`;
+- `subtly irregular human-made edges`.
+
+### Consistency across an image family
+
+Style consistency means repeating the **rendering grammar**, not repeating the same scene.
+
+Across a family, keep consistent:
+
+- edge treatment and absence of outlines;
+- anatomy simplification;
+- facial restraint;
+- color-mass construction;
+- shading amount;
+- palette character;
+- level of detail;
+- overall print-era ELT editorial character.
+
+Do **not** lock the same person, room, furniture, pose, camera angle, clothing, composition or object placement unless the task specifically requires a sequential scene. Different images should normally have natural visual variety while still looking as if the same illustrator made them for the same coursebook.
+
+When an approved image is supplied as a style reference, use it to match only its **rendering language** unless the author explicitly asks for scene continuity.
 
 ### Reusable style prompt
 
-When generating this kind of illustration, the following may be used as the stable style block and then followed by the scene-specific instructions:
+Use the following as the stable style block, followed by scene-specific instructions:
 
-> Create an illustration in the style of a classic English language coursebook image. Use a clean, flat 2D educational illustration style typical of professionally commissioned late-1990s to early-2010s ESL/ELT textbooks. The artwork should be simple, clear and highly readable, designed to communicate meaning instantly. Use stylized but not childish human figures, with simplified natural anatomy, minimal facial features, solid simplified hair shapes and clear body language. Build the image with flat vector-like shapes, soft clean edges and very limited shading. Use a muted, friendly palette with dusty blues, teals, muted oranges, coral reds, beige, cream, soft gray and gentle greens. Keep shadows subtle and flat, with no realistic rendering, texture-heavy surfaces or dramatic lighting. Backgrounds should be minimal and functional, showing only the essential environmental elements needed to explain the scene. The composition should be uncluttered, balanced and immediately understandable, like a professionally illustrated panel from an English-language coursebook. The image should feel human-designed, restrained and purposeful, not glossy, trendy, childish or obviously AI-generated.
+> Create a professionally commissioned English-language coursebook illustration with a late-1990s / early-2000s editorial textbook aesthetic. Construct the entire illustration from flat overlapping color masses with NO contour outlines. Do not trace people, objects, clothing, furniture, hair or architecture with black, brown, navy or colored linework. Shapes must be separated by differences in color, value and overlap rather than outlines. The artwork should resemble digitally assembled gouache or cut-paper shapes: clean enough for textbook reproduction, but with subtly irregular, human-made edges rather than mathematically perfect geometry. Human anatomy should be simplified yet believable, with relatively natural proportions. Faces should be extremely restrained: tiny eyes, a small nose or nose shape and a minimal mouth only when needed. Hair should appear as one or two solid irregular color masses rather than individual strands. Clothing should use broad flat shapes with perhaps one secondary shadow shape. Hands should be simplified and readable, not anatomically over-rendered. Use very limited flat shading: a base color and, when needed, one slightly darker or lighter color mass. Use a restrained, slightly desaturated printed-coursebook palette: dusty blue, muted teal, warm ochre, brick red, coral, sage green, cream, beige, charcoal gray, muted brown and soft off-white. Backgrounds should be economical and intentionally simplified, with only enough architecture, furniture or environmental detail to establish the situation. Use broad flat planes, confident negative space and a deliberately human editorial composition. The finished artwork must feel purpose-made for a professional language coursebook, not like modern corporate vector illustration or generic AI art. ABSOLUTELY NO visible contour outlines.
+
+Required final reinforcement for individual prompts:
+
+> Important: render every boundary through adjoining flat color shapes, never through an outline. If an arm touches a shirt, a person touches a chair, or an object sits on a table, distinguish them through contrasting color masses and overlap, not dark contour strokes.
 
 Negative guidance:
 
-> Do not use photorealism, painterly rendering, 3D rendering, glossy corporate-vector style, modern startup illustration style, cartoon exaggeration, anime influence, thick outlines, hand-drawn sketchiness, heavy texture, cinematic lighting, dramatic shadows, saturated neon colors, oversized expressive faces or decorative visual clutter. Avoid the polished synthetic look common in generic AI-generated illustrations.
+> Do not use thick outlines, thin outlines, dark edge strokes, comic linework, ink drawing, cel-shading outlines, modern corporate startup illustration, generic flat-vector people, rounded app mascots, oversized heads, anime, Disney-like characters, children's-book cartooning, 3D rendering, photorealism, painterly texture, glossy gradients, smooth plastic surfaces, perfect geometric vector shapes, cinematic lighting, excessive facial detail, individual hair strands, dramatic realistic shadows or generic AI smiles.
+
+The key distinction is **intentional simplification through color masses**. The image should look as though a human editorial illustrator deliberately removed everything that does not help the learner understand the target meaning.
 
 ## 4. External images
 
@@ -133,7 +157,7 @@ For realistic production imagery, specify only what materially affects the asset
 
 Prompt a realistic scene as a photographer/art director commission, not as `an image for an English lesson`.
 
-For approved illustration, use the stable ELT style block from Section 3 and then specify only the scene, action, required semantic evidence, framing/aspect ratio and exclusions.
+For approved illustration, use the stable ELT style block from Section 3 and then specify only the scene, action, required semantic evidence, framing/aspect ratio and exclusions. Do not add scene-locking language merely to enforce style consistency.
 
 Image-generation prompts and temporary art-direction notes stay outside the repository unless the author explicitly asks to save them. The reusable series-wide style specification above is part of the design system rather than a lesson-specific production prompt.
 
