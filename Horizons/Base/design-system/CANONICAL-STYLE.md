@@ -244,3 +244,16 @@ Before approval verify:
 14. approved ELT illustration is shape-defined, free of contour outlines and consistent in rendering grammar without forcing repeated scenes.
 
 When visual novelty conflicts with the learning sequence, **pedagogy wins**. When pedagogy does not require a theme, **the content world leads the art direction**.
+
+## 14. Exercise-body text rhythm
+
+Text-only content inside `.hz-exercise__body` should use **natural paragraph rhythm**, not artificial worksheet spacing.
+
+For short questions, discovery prompts, compact statements and similar text-only rows:
+
+- let content determine the row height;
+- use the normal learner-facing line-height and only a small paragraph-like gap between sibling items;
+- do not use large fixed `min-height` values simply to spread lines vertically or equalize columns;
+- do not create extra empty space between short questions when no writing area or functional geometry is required.
+
+A larger row height is appropriate only when the exercise genuinely needs physical response space, media alignment, a functional artifact, or another task-specific geometric reason. Otherwise, whitespace should live around the exercise or composition rather than between individual lines of learner-facing text.
