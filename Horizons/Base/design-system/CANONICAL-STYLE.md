@@ -83,6 +83,10 @@ Crops must be intentional and preserve the action/object needed by the learner. 
 
 For occupation/action vocabulary, show the action when it improves recognition.
 
+When the learner must interpret a **person/object relationship, physical distance, quantity or pointing context**, prefer a real or generated raster scene over a CSS-built silhouette/object diagram. CSS geometry may organize or frame media, but it should not approximate people and concrete objects when believable photography can carry the same pedagogical evidence more clearly.
+
+For image-dependent exercises that will receive generated production art, structure the lesson around stable raster-image slots whose geometry survives placeholder replacement. Do not make the exercise depend on temporary CSS-drawn substitute characters or objects.
+
 ### Repeated media families
 
 Equal-status images form one visual family:
@@ -122,6 +126,8 @@ A normal lesson uses one dominant unit color with neutral typography and photogr
 Use the unit color for exercise numerals, structural rules, selected titles, language emphasis and limited major fields. Additional colors require a pedagogical or authentic-interface reason.
 
 Repeated families do not become multicolored merely for novelty.
+
+For the **current Horizons A1 book**, crimson pink is the established book identity and remains consistent across units unless the author explicitly changes it. Do **not** infer a new Unit 2, Unit 3, etc. production color merely from the optional palette in `tokens.css`.
 
 ## 9. Containers, geometry and interfaces
 
