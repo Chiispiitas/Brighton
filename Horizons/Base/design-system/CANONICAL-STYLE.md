@@ -98,23 +98,35 @@ Realism **must still be used throughout the book**. Real photography or credible
 
 A lesson may mix realistic photography and drawn illustration. Use illustration because simplification improves comprehension, not because drawing is easier to source or generate.
 
-The approved illustration language is a classic English-language-coursebook / ELT style associated with professionally commissioned ESL materials from approximately the late 1990s through early 2010s. It should be:
+The approved illustration language is a classic English-language-coursebook / ELT style associated with professionally commissioned ESL materials from approximately the late 1990s through early 2010s. It is **shape-painted editorial illustration, not outlined vector illustration**.
+
+It should be:
 
 - flat 2D, clean and immediately readable;
 - diagrammatic and purposeful rather than decorative;
 - stylized but not childish;
 - based on simplified natural anatomy and clear body language;
-- built from clean vector-like shapes with soft or gently irregular edges;
+- constructed from flat adjoining and overlapping color masses;
+- **shape-defined rather than line-defined**;
+- free of visible contour outlines around people, limbs, clothing, furniture, hair, architecture and objects;
+- separated by color, value, negative space and overlap rather than dark traced edges;
+- subtly irregular in its edges, with the visual logic of digitally assembled gouache or cut-paper shapes rather than mathematically perfect geometry;
 - minimal in facial detail and hair rendering;
-- lightly shaded, usually with no more than one simple darker tone;
+- lightly shaded, usually with no more than one secondary flat color mass;
 - restrained in detail so the target meaning dominates;
 - composed using overlap, placement and scale rather than realistic rendering;
 - supported by minimal functional backgrounds containing only information needed to understand the scene;
-- colored with a muted, friendly palette rather than glossy or highly saturated color;
-- balanced and uncluttered like a small professionally illustrated coursebook panel;
+- colored with a muted, slightly desaturated printed-coursebook palette rather than glossy or highly saturated color;
+- balanced but not mechanically identical, allowing purposeful asymmetry and confident negative space;
 - visibly intentional in its simplification, avoiding the polished synthetic look of generic AI art.
 
-Do not substitute generic corporate-vector characters, startup illustration, clip-art, anime, 3D rendering, painterly art, thick comic outlines, exaggerated cartoon anatomy, neon color, cinematic lighting, heavy texture or decorative complexity.
+**Do not use contour outlines.** Forms must remain readable through adjoining color masses and overlap. Do not describe the approved illustration style as `vector-like`; that wording tends to push generation toward modern corporate-vector geometry, outlines and synthetic AI aesthetics.
+
+For repeated illustration families, consistency means repeating the **rendering grammar**, not repeating the same person, room, furniture, pose, camera angle or composition. Different images may vary naturally while retaining the same edge treatment, anatomy simplification, facial restraint, color-mass construction, shading amount, palette character and level of detail.
+
+When an approved illustration is supplied as a visual reference, match its **rendering language only** unless the task explicitly requires scene continuity.
+
+Do not substitute generic corporate-vector characters, startup illustration, clip-art, anime, 3D rendering, painterly art, thin or thick contour outlines, exaggerated cartoon anatomy, neon color, cinematic lighting, heavy texture, perfect geometric vector shapes or decorative complexity.
 
 The reusable illustration style prompt and detailed negative guidance live in `asset-policy.md`.
 
@@ -228,6 +240,7 @@ Before approval verify:
 10. real-world artifacts are functional and visually recognizable as their intended artifact type;
 11. short lexical labels do not wrap awkwardly when the layout can preserve them intact;
 12. imagery belongs convincingly to the lesson's actual world;
-13. any use of illustration has a pedagogical reason and has not displaced the book's required realistic visual language.
+13. any use of illustration has a pedagogical reason and has not displaced the book's required realistic visual language;
+14. approved ELT illustration is shape-defined, free of contour outlines and consistent in rendering grammar without forcing repeated scenes.
 
 When visual novelty conflicts with the learning sequence, **pedagogy wins**. When pedagogy does not require a theme, **the content world leads the art direction**.
