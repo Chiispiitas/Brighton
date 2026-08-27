@@ -3148,6 +3148,18 @@ body.hz-debug .hz-page::after {
   border-top: .3mm solid #c9cbd0 !important;
 }
 
+/* ---------- Exercise-body rhythm ---------- */
+
+/* Text-only discovery questions use natural paragraph spacing, not fixed-height rows. */
+.l1d-page:not(.l1d-page--2) .l1d-discovery {
+  row-gap: .8mm !important;
+}
+
+.l1d-page:not(.l1d-page--2) .l1d-discovery__item {
+  min-height: 0 !important;
+  padding: .25mm 0 !important;
+}
+
 
 /* 1D.html inline style 1 */
 
@@ -4685,6 +4697,37 @@ body.hz-debug .hz-page::after {
 }
 
 [data-image-slot^="2B-AIR-"] .l2b-photo-placeholder > span { display: none; }
+
+/* ---------- Exercise-body rhythm and enlarged photography ---------- */
+
+/* Text-only question bodies should flow like normal paragraphs, not fixed-height rows. */
+.l2b-onair-start .hz-exercise__body {
+  row-gap: .8mm !important;
+}
+
+.l2b-onair-start .hz-exercise__body > div {
+  min-height: 0 !important;
+  padding: .25mm 0;
+}
+
+/* Exercise 2 city photography. */
+[data-image-slot="2B-CITY-WIDE"] {
+  height: 40mm !important;
+}
+
+[data-image-slot="2B-CITY-WIDE"] .hz-photo-placeholder {
+  min-height: 40mm !important;
+}
+
+/* Interview photography: 39mm × 1.30 = 50.7mm total height. */
+.l2b-indrive-copy {
+  grid-template-rows: 50.7mm auto;
+}
+
+.l2b-interview-photo {
+  grid-template-rows: 44.2mm 6.5mm;
+  height: 50.7mm;
+}
 
 @media print {
   .l2b-page,
