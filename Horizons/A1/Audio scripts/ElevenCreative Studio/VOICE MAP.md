@@ -1,6 +1,6 @@
 # VOICE MAP — DO NOT IMPORT THIS FILE
 
-The `.txt` files in this folder contain only text that should be spoken plus supported `<break>` tags. Speaker names are intentionally kept out of those files because visible labels can be narrated by ElevenCreative Studio.
+The `.txt` files in this folder contain only text that should be spoken plus model-specific pause/delivery markup. Speaker names are intentionally kept out of those files because visible labels can be narrated by ElevenCreative Studio. See `README.md` for the model assigned to each track and the matching pause syntax.
 
 Paragraph numbers below are 1-based and follow the paragraph order after import.
 

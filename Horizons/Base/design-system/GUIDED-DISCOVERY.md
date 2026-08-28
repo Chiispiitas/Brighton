@@ -154,7 +154,11 @@ When a Lesson B is listening-led, one longer `HORIZONS ON AIR` track may act as 
 
 **first listen for the main situation → listen again for specific information → inspect language from the same audio → controlled practice → communicative/real-world transfer**.
 
-The show should feel produced and adult through voice variety, a short recurring sting, light ambient sound, photography and authentic artifacts. **Do not create that sense of production by increasing learner-facing language complexity.** Early-A1 episodes must still obey the cumulative language ceiling and may use intentionally simple interview questions and repeated answers.
+The show should feel produced and adult through voice variety, a short recurring sting, light ambient sound, photography and authentic artifacts. **Do not create that sense of production by increasing learner-facing printed language complexity.** The early-A1 cumulative ceiling governs instructions, questions, labels and expected learner production; it does **not** require the receptive audio itself to sound unnaturally minimal.
+
+For early A1, HORIZONS ON AIR may use natural **A1–A2 conversational English**, with occasional higher-level chunks, paraphrases or distractors when they are supported by context and are not essential to completing the task. Core target language and answer-bearing information must remain clear and recoverable. Extra language may add realism, personality and listening tolerance, but learners should not need to understand every word to succeed.
+
+Do not write HORIZONS ON AIR as a chain of bare textbook prompts and one-line answers. Natural greetings, reactions, reasons, small talk, clarification, paraphrase and one or two plausible distractors are welcome when they make the interaction believable without obscuring the task.
 
 The visible feature should use the official `HORIZONS ON AIR` name plus the episode title, not a generic genre label. Minor pronunciation tracks or tiny one-off audio drills do not need the full show identity; it is for listening features that carry meaningful lesson content.
 
