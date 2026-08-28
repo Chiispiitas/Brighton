@@ -1,28 +1,35 @@
 ELEVENCREATIVE STUDIO — HORIZONS A1 AUDIO WORKFLOW
 
-Use these files with ElevenCreative Studio, not the retired Voiceover Studio.
+Import only the `.txt` track files in this folder.
 
-Recommended workflow
-1. In ElevenCreative Studio, choose Generate audio > Narrate the article, or start a blank audio project.
-2. Upload or paste one track .txt file.
-3. Use Multilingual v2 when you want the break tags in these scripts to be followed reliably.
-4. For multi-speaker tracks, enable Auto-assign voices (Alpha) or assign voices to the character paragraphs manually.
-5. Character labels are on their own lines to make character detection and manual assignment obvious. Before generating, verify Studio has not included a character label as spoken narration; if it has, delete that label line.
-6. Generate and review the track. Regenerate any paragraph that sounds unnatural.
-7. Export the finished track as WAV or MP3.
+The track files contain only text that should be spoken plus supported `<break time="..." />` pause tags. They intentionally contain no speaker names, track titles, production notes, or other visible metadata because ElevenCreative Studio may narrate visible text.
+
+For multi-speaker tracks, open `VOICE MAP.md` separately after import and assign voices by paragraph number. Do not import `VOICE MAP.md`.
+
+Recommended model
+Use Multilingual v2 when exact break-tag pauses matter. Eleven v3 does not support SSML break tags in the same way.
 
 Pause policy
-- Normal punctuation and paragraph changes carry most conversational rhythm.
-- <break time="0.35s" /> to <break time="0.5s" /> = short conversational thinking/turn pause.
-- <break time="0.8s" /> to <break time="1.1s" /> = learner response/list-item pause.
-- <break time="1.2s" /> to <break time="1.5s" /> = new interview/scene transition.
-- Do not add breaks mechanically after every sentence. They are used only where the listening task benefits from them.
+- Normal punctuation carries most of the rhythm.
+- 0.3–0.5 s: short conversational turn or thinking space.
+- 0.7–1.0 s: separation between listening items.
+- 1.2–1.5 s: new interview or scene.
+- Break tags are used selectively rather than after every sentence.
 
-Why Multilingual v2
-ElevenCreative Studio supports multiple models, including v3. Studio break tags are reliable with Multilingual v2. Newer models can reduce or ignore break tags in favor of natural flow, so v3 is not the default for these pedagogically timed recordings.
+Studio also lets you adjust timing directly between paragraphs and individual sentences on the timeline. If a final pause needs exact adjustment after generation, use the timeline rather than adding excessive break tags.
 
-SFX and music
-ElevenCreative Studio handles music and sound effects on separate timeline tracks. Narration files therefore contain only speech. For HORIZONS ON AIR, add the show sting and light ambience on Studio's music/SFX tracks after importing the narration.
+Multi-speaker workflow
+1. Import the desired `.txt` track into ElevenCreative Studio.
+2. Keep each imported paragraph as its own narration paragraph.
+3. Open `VOICE MAP.md` outside Studio.
+4. Assign voices to the mapped paragraphs.
+5. Use Multilingual v2 for the supplied break tags.
+6. Generate and review.
+7. Adjust any final inter-paragraph timing on the timeline if needed.
+8. Export as WAV or MP3.
+
+HORIZONS ON AIR
+Music, ambience, and sound effects are not written inside narration files. Add them as separate Studio timeline tracks so no production instruction can ever be spoken accidentally.
 
 Master scripts
-The lesson-level files one folder up remain the human-readable source. This folder contains the Studio-ready per-track versions with natural pause markup.
+The lesson-level `.txt` files one folder up remain the human-readable source. This folder contains import-ready speech-only versions.
