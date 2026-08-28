@@ -130,6 +130,12 @@ Use the generic shared continuation marker:
 
 Use it when explicit clarification is pedagogically useful, not as a default wrapper.
 
+**Every `.hz-focus-box__header` must use exactly one of four canonical category labels: `GRAMMAR`, `VOCABULARY`, `PRONUNCIATION`, or `SKILLS`.** The category comes first, followed by a colon and an optional specific focus, for example `GRAMMAR: A / AN / THE` or `PRONUNCIATION: THE ALPHABET`.
+
+Do not invent alternate category labels such as `LANGUAGE FROM ...`, `LANGUAGE`, `USEFUL LANGUAGE`, `NOTICE`, `FOCUS`, or show/lesson-specific headings. A recurring feature such as `HORIZONS ON AIR` may organize the surrounding lesson, but it does not replace the canonical focus-box category label.
+
+The `aria-label` should use the same semantic category as the visible header.
+
 ## 9. Functional labels
 
 ```html
