@@ -40,8 +40,6 @@
   position: relative;
   min-width: 0;
   padding: 3mm 1.6mm 2.6mm;
-  border-top: .9mm solid var(--hz-unit);
-  border-bottom: .25mm solid var(--hz-line-strong);
   text-align: center;
 }
 
@@ -85,7 +83,6 @@
   align-items: center;
   gap: 2.6mm;
   padding-top: 1mm;
-  border-top: .25mm solid var(--hz-line);
   font-size: 7.4pt;
 }
 
@@ -563,7 +560,6 @@
 .l2b-complete-lines p {
   margin: 0;
   padding-bottom: .9mm;
-  border-bottom: .25mm solid var(--hz-line);
 }
 
 .l2b-complete-lines p b {
@@ -648,7 +644,6 @@
   align-items: end;
   min-height: 6.7mm;
   padding: .45mm 0;
-  border-bottom: .23mm solid var(--hz-line);
 }
 
 .l2b-article-practice > div > b { color: var(--hz-unit-dark); }
