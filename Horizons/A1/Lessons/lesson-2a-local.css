@@ -169,7 +169,7 @@
 
 /* ---------- Page 14 ---------- */
 
-.l2a-page--2 .hz-exercises { padding-top: 9mm !important; }
+.l2a-page--2 .hz-exercises { padding-top: 14mm !important; }
 .l2a-page--2 .hz-page-stack { gap: 1.35mm; }
 .l2a-page--2 .hz-exercise { padding-top: 1mm; padding-bottom: 1.55mm; }
 .l2a-page--2 .hz-exercise__body { margin-top: 1mm; }
@@ -221,7 +221,6 @@
   align-items: center;
   min-height: 8mm;
   padding: 1.1mm 0;
-  border-bottom: .25mm solid var(--hz-line);
 }
 
 .l2a-listening-item > b { color: var(--hz-unit-dark); }
