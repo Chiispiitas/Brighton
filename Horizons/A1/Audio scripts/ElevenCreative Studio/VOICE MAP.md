@@ -1,6 +1,6 @@
 # VOICE MAP — DO NOT IMPORT THIS FILE
 
-The `.txt` files in this folder contain only text that should be spoken plus model-specific pause/delivery markup. Speaker names are intentionally kept out of those files because visible labels can be narrated by ElevenCreative Studio. See `README.md` for the model assigned to each track and the matching pause syntax.
+The `.txt` files in this folder contain only text that should be spoken plus model-specific pause markup. Speaker names are intentionally kept out of those files because visible labels can be narrated by ElevenCreative Studio. See `README.md` for the model assigned to each track and the matching pause syntax. For Eleven v3, `[pause]` is the only bracketed control tag currently allowed in import-ready files.
 
 Paragraph numbers below are 1-based and follow the paragraph order after import.
 

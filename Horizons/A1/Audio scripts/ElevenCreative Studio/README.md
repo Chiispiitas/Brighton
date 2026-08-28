@@ -36,13 +36,15 @@ Tracks 1.3 and 1.7 remain on Multilingual v2 even though they contain dialogue b
 
 V3 PAUSE AND DELIVERY POLICY
 
-Eleven v3 does not support SSML `<break>` tags. For v3 tracks:
-- let punctuation, sentence structure and paragraph changes carry most of the rhythm;
-- use `[short pause]` only for a small intentional beat or extra learner-processing space;
-- use `[pause]` for a noticeable transition inside one speaker's paragraph;
-- use `[long pause]` for a real scene/interview transition;
-- use expressive tags such as `[curious]` sparingly and only when they make the performance more believable;
-- do not tag every turn mechanically.
+Eleven v3 does not support SSML `<break>` tags. In the current ElevenCreative Studio workflow, `[pause]` has been verified to work correctly.
+
+For v3 tracks:
+- use `[pause]` as the only bracketed control tag inside import-ready scripts;
+- do not use `[curious]`, `[short pause]`, `[long pause]`, or other unverified bracketed directions because Studio may read them aloud;
+- let punctuation, wording, sentence structure and paragraph changes carry most of the performance naturally;
+- create different delivery through the chosen voice, wording, punctuation and regeneration rather than narratable emotion labels;
+- use Studio's timeline when a pause needs to be distinctly shorter, longer or precisely timed;
+- do not insert `[pause]` mechanically after every turn.
 
 V2 PAUSE POLICY
 
