@@ -1,6 +1,7 @@
 /* Horizons A1 — Lesson 2C scoped styles.
-   Canonical Lesson C composition: contextual reading -> guided discovery ->
-   concise clarification -> controlled practice -> communicative use. */
+   Composition follows the compact editorial ELT spread rhythm used by the
+   approved coursebook reference: short lead-in -> photo family -> dominant
+   reading feature -> compact comprehension -> grammar/practice page. */
 
 .l2c-page {
   --hz-unit: var(--hz-unit-1);
@@ -9,249 +10,271 @@
 }
 
 .l2c-page .hz-page__content { overflow: hidden; }
-.l2c-page .hz-page-stack { gap: 1.55mm; }
-.l2c-page .hz-lesson-header { padding-bottom: 3mm; }
-.l2c-page .hz-exercises { gap: .1mm; }
-.l2c-page .hz-exercise { padding: 1.05mm 0 1.55mm; }
-.l2c-page .hz-exercise__body { margin-top: 1.1mm; }
-.l2c-page .hz-exercise__instruction { font-size: 8.9pt; }
+.l2c-page .hz-page-stack { gap: 1.2mm; }
+.l2c-page .hz-lesson-header { padding-bottom: 2.6mm; }
+.l2c-page .hz-exercises { gap: 0; }
+.l2c-page .hz-exercise { padding: .8mm 0 1.1mm; }
+.l2c-page .hz-exercise__body { margin-top: .8mm; }
+.l2c-page .hz-exercise__instruction { font-size: 8.8pt; }
 .l2c-go-to { margin-left: calc(var(--hz-exercise-marker-size) + 3mm); }
 
-/* ---------- Exercise 1: reading + functional family tree ---------- */
+/* ---------- Compact top-of-page lead-in ---------- */
 
-.l2c-context {
+.l2c-warmup { padding-bottom: .7mm; }
+.l2c-photo-lead { padding-top: .45mm; }
+
+.l2c-photo-strip {
   display: grid;
-  grid-template-columns: .94fr 1.06fr;
-  gap: 5mm;
-  align-items: start;
-}
-
-.l2c-reading {
-  padding-top: 2.2mm;
-  border-top: 1.1mm solid var(--hz-unit);
-  font-family: var(--hz-font-reading);
-  font-size: 8.2pt;
-  line-height: 1.46;
-}
-
-.l2c-reading__kicker {
-  display: block;
-  margin-bottom: 1.2mm;
-  color: var(--hz-muted);
-  font-family: var(--hz-font-sans);
-  font-size: 6.7pt;
-  font-weight: var(--hz-fw-bold);
-  letter-spacing: .08em;
-}
-
-.l2c-reading h2 {
-  margin: 0 0 2mm;
-  color: var(--hz-unit-dark);
-  font-family: var(--hz-font-sans);
-  font-size: 14pt;
-  font-weight: var(--hz-fw-black);
-  line-height: 1.05;
-  letter-spacing: -.025em;
-}
-
-.l2c-reading p { margin: 0 0 1.8mm; }
-.l2c-reading p:last-child { margin-bottom: 0; }
-
-.l2c-family-tree {
-  padding: 2.4mm 3mm 2.8mm;
-  border-top: .7mm solid var(--hz-unit);
-  background: var(--hz-wash);
-}
-
-.l2c-family-tree__heading {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 3mm;
-  margin-bottom: 2mm;
-  font-size: 6.8pt;
 }
 
-.l2c-family-tree__heading strong {
-  color: var(--hz-unit-dark);
-  font-size: 8.2pt;
-  font-weight: var(--hz-fw-black);
-  letter-spacing: .04em;
-}
-
-.l2c-family-tree__heading span { color: var(--hz-muted); }
-
-.l2c-family-row {
-  position: relative;
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 5mm;
-  width: 100%;
-}
-
-.l2c-family-row--parents { padding-bottom: 3.4mm; }
-
-.l2c-family-row--parents::after {
-  content: "";
-  position: absolute;
-  left: 25%;
-  right: 25%;
-  bottom: 0;
-  height: .28mm;
-  background: var(--hz-line-strong);
-}
-
-.l2c-family-connector {
-  position: relative;
-  width: 50%;
-  height: 7mm;
-  margin: 0 auto;
-}
-
-.l2c-family-connector::before,
-.l2c-family-connector::after {
-  content: "";
-  position: absolute;
-  background: var(--hz-line-strong);
-}
-
-.l2c-family-connector::before {
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: .28mm;
-  transform: translateX(-50%);
-}
-
-.l2c-family-connector::after {
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: .28mm;
-}
-
-.l2c-family-row--children .l2c-person::before {
-  content: "";
-  position: absolute;
-  top: -3.4mm;
-  left: 50%;
-  width: .28mm;
-  height: 3.4mm;
-  background: var(--hz-line-strong);
-  transform: translateX(-50%);
-}
-
-.l2c-person {
-  position: relative;
+.l2c-photo-strip figure {
   width: 100%;
   margin: 0;
 }
 
-.l2c-person .hz-photo-placeholder {
-  height: 25mm;
-  min-height: 25mm;
-  font-size: 5pt;
-  letter-spacing: .07em;
+.l2c-photo-strip .hz-photo-placeholder {
+  height: 29mm;
+  min-height: 29mm;
+  font-size: 5.2pt;
+  letter-spacing: .055em;
 }
 
-.l2c-person .hz-photo-placeholder::before { inset: 2.4mm; }
-.l2c-person .hz-photo-placeholder::after { width: 18mm; }
-.l2c-person .hz-photo-placeholder__meta { padding: .7mm 1mm; }
+.l2c-photo-strip .hz-photo-placeholder::before { inset: 2.5mm; }
+.l2c-photo-strip .hz-photo-placeholder::after { width: 24mm; }
+.l2c-photo-strip .hz-photo-placeholder__meta { padding: .8mm 1.2mm; }
 
-.l2c-person figcaption {
+/* ---------- Exercise 3: dominant reading feature ---------- */
+
+.l2c-reading-exercise { padding-top: .65mm; }
+
+.l2c-feature {
+  padding: 3mm 3.6mm 3.4mm;
+  border-top: .9mm solid var(--hz-unit);
+  background: #f2f0e8;
+}
+
+.l2c-feature__title {
   display: flex;
   align-items: baseline;
-  justify-content: space-between;
-  gap: 2mm;
-  margin-top: .8mm;
-  font-size: 7.2pt;
-  line-height: 1.2;
+  gap: 3mm;
+  margin-bottom: 2.2mm;
 }
 
-.l2c-person figcaption strong {
+.l2c-feature__title > span {
+  flex: none;
+  color: var(--hz-unit-dark);
+  font-size: 6.5pt;
+  font-weight: var(--hz-fw-black);
+  letter-spacing: .085em;
+  text-transform: uppercase;
+}
+
+.l2c-feature__title h2 {
+  margin: 0;
+  color: var(--hz-ink);
+  font-family: var(--hz-font-reading);
+  font-size: 18pt;
+  font-style: italic;
+  font-weight: var(--hz-fw-bold);
+  line-height: 1;
+  letter-spacing: -.025em;
+}
+
+.l2c-feature__body {
+  display: grid;
+  grid-template-columns: 72mm minmax(0, 1fr);
+  gap: 5mm;
+  align-items: start;
+}
+
+.l2c-feature__copy {
+  columns: 2;
+  column-gap: 5mm;
+  font-family: var(--hz-font-reading);
+  font-size: 8pt;
+  line-height: 1.42;
+}
+
+.l2c-feature__copy p {
+  margin: 0 0 1.7mm;
+  break-inside: avoid;
+}
+
+.l2c-feature__copy p:last-child { margin-bottom: 0; }
+
+.l2c-mini-tree {
+  position: relative;
+  padding: 1.7mm 2mm 2mm;
+  border: .25mm solid var(--hz-line);
+  background: var(--hz-paper);
+}
+
+.l2c-mini-tree__row {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.5mm;
+}
+
+.l2c-mini-tree__row--parents { padding-bottom: 3mm; }
+
+.l2c-mini-tree__row--parents::after {
+  content: "";
+  position: absolute;
+  right: 24%;
+  bottom: 0;
+  left: 24%;
+  height: .25mm;
+  background: var(--hz-line-strong);
+}
+
+.l2c-mini-tree__link {
+  position: relative;
+  width: 52%;
+  height: 6mm;
+  margin: 0 auto;
+}
+
+.l2c-mini-tree__link::before,
+.l2c-mini-tree__link::after {
+  content: "";
+  position: absolute;
+  background: var(--hz-line-strong);
+}
+
+.l2c-mini-tree__link::before {
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  width: .25mm;
+  transform: translateX(-50%);
+}
+
+.l2c-mini-tree__link::after {
+  right: 0;
+  bottom: 0;
+  left: 0;
+  height: .25mm;
+}
+
+.l2c-mini-tree__row--children .l2c-mini-person::before {
+  content: "";
+  position: absolute;
+  top: -3mm;
+  left: 50%;
+  width: .25mm;
+  height: 3mm;
+  background: var(--hz-line-strong);
+  transform: translateX(-50%);
+}
+
+.l2c-mini-person {
+  position: relative;
+  min-width: 0;
+  margin: 0;
+}
+
+.l2c-mini-person .hz-photo-placeholder {
+  height: 24mm;
+  min-height: 24mm;
+  font-size: 4.4pt;
+  letter-spacing: .045em;
+}
+
+.l2c-mini-person .hz-photo-placeholder::before { inset: 2mm; }
+.l2c-mini-person .hz-photo-placeholder::after { width: 16mm; }
+.l2c-mini-person .hz-photo-placeholder__meta { padding: .55mm .7mm; }
+
+.l2c-mini-person figcaption {
+  display: grid;
+  gap: .15mm;
+  margin-top: .65mm;
+  font-size: 6.5pt;
+  line-height: 1.12;
+}
+
+.l2c-mini-person figcaption strong {
   color: var(--hz-unit-dark);
   font-weight: var(--hz-fw-black);
 }
 
-.l2c-person figcaption span { color: var(--hz-muted); }
+.l2c-mini-person figcaption span { color: var(--hz-muted); }
 
-/* ---------- Exercise 2: reading comprehension ---------- */
+/* ---------- Exercise 4: compact comprehension ---------- */
 
-.l2c-reading-check { gap: 1mm 6mm; }
-.l2c-reading-check .hz-question { padding: .35mm 0; }
+.l2c-reading-check-exercise { padding-top: .55mm; }
+.l2c-reading-check { gap: .35mm 6mm; }
+.l2c-reading-check .hz-question {
+  padding: .25mm 0;
+  font-size: 7.9pt;
+  line-height: 1.25;
+}
+.l2c-reading-check strong { color: var(--hz-unit-dark); }
 
-.l2c-question-answer {
-  display: grid;
-  grid-template-columns: max-content minmax(20mm, 1fr);
-  gap: 1.5mm;
-  align-items: end;
-  min-width: 0;
-  font-size: 8pt;
+/* ---------- Page 18: grammar/practice density ---------- */
+
+.l2c-page--2 .hz-exercises { padding-top: 13.5mm !important; }
+.l2c-page--2 .hz-page-stack { gap: .9mm; }
+.l2c-page--2 .hz-exercise { padding-top: .7mm; padding-bottom: 1.05mm; }
+.l2c-page--2 .hz-exercise__body { margin-top: .75mm; }
+
+.l2c-notice { gap: .2mm; }
+.l2c-notice .hz-question {
+  padding: .2mm 0;
+  font-size: 7.9pt;
   line-height: 1.28;
 }
+.l2c-notice strong { color: var(--hz-unit-dark); }
 
-.l2c-reading-check .hz-answer-line { min-width: 20mm; }
-
-/* ---------- Exercise 3: guided discovery ---------- */
-
-.l2c-discovery { gap: .45mm; }
-
-.l2c-discovery .hz-question {
-  padding: .25mm 0;
-  font-size: 8pt;
-  line-height: 1.3;
-}
-
-.l2c-discovery strong { color: var(--hz-unit-dark); }
-
-/* ---------- Shared grammar focus ---------- */
+/* ---------- Grammar box ---------- */
 
 .l2c-grammar {
-  margin: .35mm 0 .2mm calc(var(--hz-exercise-marker-size) + 3mm);
+  margin: .35mm 0 .15mm calc(var(--hz-exercise-marker-size) + 3mm);
+  padding-top: 2.5mm;
+  padding-bottom: 2.6mm;
 }
 
 .l2c-grammar-body {
   display: grid;
-  gap: 1.5mm;
-  font-size: 8pt;
+  gap: 1mm;
 }
 
-.l2c-grammar-line {
-  display: flex;
-  flex-wrap: wrap;
+.l2c-grammar-row {
+  display: grid;
+  grid-template-columns: 17mm 1fr 6mm 1fr;
+  gap: 1.4mm;
   align-items: baseline;
-  gap: 1.2mm;
-  line-height: 1.35;
+  font-size: 7.9pt;
+  line-height: 1.25;
 }
 
-.l2c-grammar-line strong {
+.l2c-grammar-row strong,
+.l2c-grammar-row b {
   color: var(--hz-unit-dark);
-  font-size: 8.7pt;
   font-weight: var(--hz-fw-black);
 }
 
-.l2c-grammar-line b {
+.l2c-grammar-label {
   color: var(--hz-muted);
-  font-weight: var(--hz-fw-bold);
+  font-size: 6.7pt;
+  font-weight: var(--hz-fw-black);
+  letter-spacing: .055em;
+  text-transform: uppercase;
 }
 
-/* ---------- Page 18 ---------- */
+/* ---------- Exercise 6 ---------- */
 
-.l2c-page--2 .hz-exercises { padding-top: 14mm !important; }
-.l2c-page--2 .hz-page-stack { gap: 1.35mm; }
-.l2c-page--2 .hz-exercise { padding-top: 1mm; padding-bottom: 1.45mm; }
-.l2c-page--2 .hz-exercise__body { margin-top: 1mm; }
-
-/* Exercise 4 */
-.l2c-complete-grid { gap: .7mm 7mm; }
+.l2c-complete-grid { gap: .35mm 7mm; }
 
 .l2c-complete-item {
   display: grid;
   grid-template-columns: 5mm minmax(0, 1fr);
   gap: 1mm;
   align-items: baseline;
-  font-size: 8pt;
-  line-height: 1.3;
+  font-size: 7.9pt;
+  line-height: 1.28;
 }
 
 .l2c-complete-item > b {
@@ -262,48 +285,55 @@
 .l2c-insert-line {
   display: inline-block;
   width: 6mm;
-  min-height: 1em;
-  margin: 0 .45mm;
+  min-height: .95em;
+  margin: 0 .4mm;
   border-bottom: var(--hz-answer-line) solid var(--hz-line-strong);
   vertical-align: baseline;
 }
 
-/* Exercise 5 */
-.l2c-owner-table {
-  font-size: 8pt;
+/* ---------- Exercise 7 ---------- */
+
+.l2c-phrase-grid { gap: .55mm 7mm; }
+
+.l2c-phrase-grid > div {
+  display: grid;
+  grid-template-columns: 5mm 29mm minmax(24mm, 1fr);
+  gap: 1mm 2mm;
+  align-items: end;
+  font-size: 7.9pt;
 }
 
-.l2c-owner-table th,
-.l2c-owner-table td {
-  padding-top: 1.25mm;
-  padding-bottom: 1.25mm;
+.l2c-phrase-grid b {
+  color: var(--hz-unit-dark);
+  font-weight: var(--hz-fw-black);
 }
 
-.l2c-owner-table td:last-child { width: 42%; }
-.l2c-owner-table .hz-answer-line { min-width: 35mm; }
+.l2c-phrase-grid .hz-answer-line {
+  width: 100%;
+  min-width: 24mm;
+}
 
-/* Exercise 6 */
-.l2c-pair-models { gap: 5mm; }
+/* ---------- Exercise 8 ---------- */
+
+.l2c-pairwork {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5mm;
+}
 
 .l2c-pair-model {
-  padding-left: 3mm;
-  border-left: 1mm solid var(--hz-unit);
+  padding-left: 2.8mm;
+  border-left: .8mm solid var(--hz-unit);
   font-size: 8pt;
-  line-height: 1.32;
+  line-height: 1.3;
 }
 
 .l2c-pair-model p { margin: 0; }
-.l2c-pair-model p + p { margin-top: .7mm; }
-
-/* Exercise 7 */
-.l2c-writing-lines {
-  margin-top: 1.4mm;
-  gap: 3.4mm;
-}
+.l2c-pair-model p + p { margin-top: .5mm; }
 
 .l2c-extra {
   margin-left: calc(var(--hz-exercise-marker-size) + 3mm);
-  margin-top: 1.2mm;
+  margin-top: .8mm;
 }
 
 @media print {
