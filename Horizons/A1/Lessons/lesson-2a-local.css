@@ -114,7 +114,7 @@
 .l2a-dialogue-copy {
   align-self: center;
   margin-left: -5mm;
-  padding: 3.2mm 3.5mm 3.1mm 6mm;
+  padding: 3.2mm 3.5mm 3.1mm 8mm;
   border-top: 1.1mm solid var(--hz-unit);
   background: var(--hz-paper);
   box-shadow: 0 0 0 .25mm var(--hz-line);
