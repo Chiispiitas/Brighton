@@ -4757,7 +4757,7 @@ body.hz-debug .hz-page::after {
 
 /* Horizons/A1/Lessons/lesson-2c-local.css */
 /* Horizons A1 — Lesson 2C scoped styles.
-   Family members + possessive 's through a family-business context. */
+   Short family-business reading + possessive 's. */
 
 .l2c-page {
   --hz-unit: var(--hz-unit-1);
@@ -4769,112 +4769,130 @@ body.hz-debug .hz-page::after {
 .l2c-page .hz-page-stack { gap: 1.45mm; }
 .l2c-page .hz-lesson-header { padding-bottom: 3mm; }
 .l2c-page .hz-exercises { gap: .1mm; }
-.l2c-page .hz-exercise { padding: .95mm 0 1.45mm; }
+.l2c-page .hz-exercise { padding: 1mm 0 1.5mm; }
 .l2c-page .hz-exercise__body { margin-top: .9mm; }
 .l2c-page .hz-exercise__instruction { font-size: 8.9pt; }
 .l2c-target { color: var(--hz-unit-dark); font-weight: var(--hz-fw-black); }
 .l2c-go-to { margin-left: calc(var(--hz-exercise-marker-size) + 3mm); }
 
-/* ---------- Exercise 1: family tree ---------- */
+/* ---------- Exercise 1: reading + visual family tree ---------- */
 
-.l2c-family-stage {
-  position: relative;
-  overflow: hidden;
-  padding: 2.4mm 3mm 2.8mm;
-  border-top: 1mm solid var(--hz-unit);
-  background: linear-gradient(180deg, var(--hz-unit-soft), var(--hz-paper) 58%);
+.l2c-reading-stage {
+  display: grid;
+  grid-template-columns: 1.02fr .98fr;
+  gap: 5mm;
+  align-items: stretch;
 }
 
-.l2c-family-stage::after {
+.l2c-reading-copy {
+  position: relative;
+  min-height: 101mm;
+  padding: 4mm 4.3mm 3.7mm;
+  border-top: 1mm solid var(--hz-unit);
+  background: var(--hz-paper);
+  font-size: 8.2pt;
+  line-height: 1.42;
+  isolation: isolate;
+}
+
+.l2c-reading-copy::after {
   content: "FAMILY";
   position: absolute;
-  right: -2mm;
-  top: 13mm;
-  color: rgb(194 24 91 / 6%);
-  font-size: 41pt;
+  z-index: -1;
+  right: -1mm;
+  bottom: -5mm;
+  color: var(--hz-unit-soft);
+  font-size: 38pt;
   font-weight: var(--hz-fw-black);
+  line-height: 1;
   letter-spacing: -.06em;
-  pointer-events: none;
 }
 
-.l2c-family-head {
-  position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: auto 1fr;
-  gap: 7mm;
-  align-items: center;
-}
-
-.l2c-family-head > div:first-child {
-  display: grid;
-  gap: .3mm;
-}
-
-.l2c-family-head > div:first-child strong {
-  font-size: 9.4pt;
-  font-weight: var(--hz-fw-black);
-  letter-spacing: .02em;
-}
-
-.l2c-family-head > div:first-child span {
-  color: var(--hz-muted);
-  font-size: 7pt;
-}
-
-.l2c-family-bank {
-  display: flex;
-  flex-wrap: wrap;
-  gap: .8mm 3.4mm;
-  padding-left: 3.5mm;
-  border-left: .8mm solid var(--hz-unit);
+.l2c-reading-kicker {
+  display: inline-block;
+  margin-bottom: 1.4mm;
   color: var(--hz-unit-dark);
-  font-size: 7.8pt;
-  font-weight: var(--hz-fw-bold);
+  font-size: 6.6pt;
+  font-weight: var(--hz-fw-black);
+  letter-spacing: .11em;
 }
+
+.l2c-reading-copy h2 {
+  margin: 0 0 2.6mm;
+  font-size: 16pt;
+  font-weight: var(--hz-fw-black);
+  line-height: 1.05;
+  letter-spacing: -.03em;
+}
+
+.l2c-reading-copy p { margin: 0 0 2.2mm; }
+.l2c-reading-copy p:last-child { margin-bottom: 0; }
 
 .l2c-family-tree {
   position: relative;
-  z-index: 2;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: 28mm 28mm;
-  gap: 10mm 6mm;
-  max-width: 126mm;
-  margin: 3mm auto 2.4mm;
+  min-height: 101mm;
+  padding: 11mm 3mm 3mm;
+  border-top: 1mm solid var(--hz-unit);
+  background: linear-gradient(180deg, var(--hz-unit-soft), #fff 62%);
+}
+
+.l2c-tree-title {
+  position: absolute;
+  top: 2.5mm;
+  left: 3mm;
+  right: 3mm;
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 3mm;
+}
+
+.l2c-tree-title strong {
+  font-size: 8pt;
+  font-weight: var(--hz-fw-black);
+  letter-spacing: .04em;
+}
+
+.l2c-tree-title span {
+  color: var(--hz-muted);
+  font-size: 6.4pt;
 }
 
 .l2c-person {
-  position: relative;
+  position: absolute;
   z-index: 3;
-  display: grid;
-  justify-items: center;
-  align-content: center;
-  min-width: 0;
-  padding: 1.2mm;
-  background: var(--hz-paper);
+  width: 31mm;
+  margin: 0;
 }
 
-.l2c-person--mateo { grid-column: 2; grid-row: 1; }
-.l2c-person--rosa { grid-column: 3; grid-row: 1; }
-.l2c-person--luis { grid-column: 2; grid-row: 2; }
-.l2c-person--maya { grid-column: 3; grid-row: 2; }
+.l2c-person--diego { top: 14mm; left: 9mm; }
+.l2c-person--elena { top: 14mm; right: 9mm; }
+.l2c-person--nico { bottom: 4mm; left: 9mm; }
+.l2c-person--sofia { bottom: 4mm; right: 9mm; }
 
-.l2c-person__portrait {
-  display: grid;
-  place-items: center;
-  width: 13mm;
-  height: 13mm;
-  margin-bottom: .7mm;
-  border-radius: 50%;
-  background: var(--hz-unit);
-  color: #fff;
-  font-size: 8pt;
+.l2c-person .hz-photo-placeholder {
+  min-height: 27mm;
+  height: 27mm;
+  font-size: 4.6pt;
+  letter-spacing: .04em;
+}
+
+.l2c-person figcaption {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 2mm;
+  margin-top: .8mm;
+  font-size: 6.5pt;
+}
+
+.l2c-person figcaption strong {
+  color: var(--hz-unit-dark);
+  font-size: 7.6pt;
   font-weight: var(--hz-fw-black);
 }
 
-.l2c-person strong { font-size: 8pt; font-weight: var(--hz-fw-black); }
-.l2c-person small { color: var(--hz-muted); font-size: 6.5pt; }
+.l2c-person figcaption span { color: var(--hz-muted); }
 
 .l2c-tree-line {
   position: absolute;
@@ -4884,187 +4902,136 @@ body.hz-debug .hz-page::after {
 }
 
 .l2c-tree-line--couple {
-  top: 14mm;
-  left: 42.8%;
-  width: 14.4%;
+  top: 31mm;
+  left: 40mm;
+  width: calc(100% - 80mm);
   height: .35mm;
 }
 
 .l2c-tree-line--down {
-  top: 14mm;
+  top: 31mm;
   left: 50%;
   width: .35mm;
-  height: 27.5mm;
+  height: 28mm;
   transform: translateX(-50%);
 }
 
 .l2c-tree-line--children {
-  top: 41.3mm;
-  left: 42.8%;
-  width: 14.4%;
+  top: 59mm;
+  left: 24.5mm;
+  right: 24.5mm;
   height: .35mm;
 }
 
-.l2c-tree-line--luis,
-.l2c-tree-line--maya {
-  top: 41.3mm;
+.l2c-tree-line--nico,
+.l2c-tree-line--sofia {
+  top: 59mm;
   width: .35mm;
-  height: 8.6mm;
+  height: 10mm;
 }
 
-.l2c-tree-line--luis { left: 42.8%; }
-.l2c-tree-line--maya { left: 57.2%; }
+.l2c-tree-line--nico { left: 24.5mm; }
+.l2c-tree-line--sofia { right: 24.5mm; }
 
-.l2c-family-items {
-  position: relative;
-  z-index: 2;
+/* ---------- Exercise 2 ---------- */
+
+.l2c-reading-check {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: .7mm 7mm;
-  font-size: 7.8pt;
-  line-height: 1.25;
+  gap: .9mm 7mm;
+  font-size: 7.9pt;
+  line-height: 1.28;
 }
 
-.l2c-family-items > div {
+.l2c-reading-check > div {
   display: grid;
-  grid-template-columns: 5mm max-content minmax(14mm, 1fr);
+  grid-template-columns: 5mm max-content minmax(18mm, 1fr);
   gap: 1mm;
   align-items: end;
-  min-height: 5.2mm;
+  min-height: 6mm;
 }
 
-.l2c-family-items b { color: var(--hz-unit-dark); }
-.l2c-answer-line { min-height: 3.7mm; border-bottom: .28mm solid var(--hz-line-strong); }
-
-/* ---------- Exercise 2: family-business interview ---------- */
-
-.l2c-business-stage {
-  display: grid;
-  grid-template-columns: .86fr 1.14fr;
-  gap: 4.2mm;
-  align-items: stretch;
-}
-
-.l2c-business-photo {
-  display: grid;
-  grid-template-rows: 46mm 7mm;
-  min-width: 0;
-  height: 53mm;
-  margin: 0;
-  overflow: hidden;
-  background: var(--hz-wash);
-  clip-path: polygon(0 0, 100% 0, 100% 92%, 91% 100%, 0 100%);
-}
-
-.l2c-business-photo .hz-photo-placeholder {
-  min-height: 46mm;
-  font-size: 5.1pt;
-}
-
-.l2c-business-photo figcaption {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  padding: 1mm 1.8mm;
-  background: #232323;
-  color: #fff;
-  font-size: 6.2pt;
-}
-
-.l2c-business-photo figcaption strong { font-weight: var(--hz-fw-black); }
-
-.l2c-interview {
-  display: grid;
-  align-content: center;
-  gap: .5mm;
-  padding: 2mm 2.4mm;
-  border-top: .8mm solid var(--hz-unit);
-  background: var(--hz-paper);
-  font-size: 8pt;
-  line-height: 1.22;
-}
-
-.l2c-interview > div {
-  display: grid;
-  grid-template-columns: 19mm 1fr;
-  gap: 1.3mm;
-  min-width: 0;
-}
-
-.l2c-interview b { color: var(--hz-unit-dark); font-weight: var(--hz-fw-black); }
-.l2c-interview p { margin: 0; }
+.l2c-reading-check b { color: var(--hz-unit-dark); }
+.l2c-answer-line { min-height: 3.8mm; border-bottom: .28mm solid var(--hz-line-strong); }
 
 /* ---------- Exercise 3 + grammar ---------- */
 
-.l2c-notice-grid {
+.l2c-discovery {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: .8mm 7mm;
-  font-size: 7.9pt;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 3.5mm;
+  font-size: 7.75pt;
+  line-height: 1.3;
 }
 
-.l2c-notice-grid > div {
-  display: grid;
-  grid-template-columns: 5mm max-content minmax(14mm, 1fr);
-  gap: 1mm;
-  align-items: end;
-  min-height: 5.6mm;
+.l2c-discovery > div {
+  min-height: 19mm;
+  padding: 2mm 2.2mm;
+  border-top: .7mm solid var(--hz-unit);
+  background: var(--hz-paper);
 }
 
-.l2c-notice-grid > div:nth-child(n+3) { grid-template-columns: 5mm 1fr; }
-.l2c-notice-grid b { color: var(--hz-unit-dark); }
-.l2c-short-line { min-height: 3.7mm; border-bottom: .28mm solid var(--hz-line-strong); }
+.l2c-discovery b {
+  display: inline-block;
+  margin-right: 1mm;
+  color: var(--hz-unit-dark);
+}
 
 .l2c-grammar {
-  margin: .3mm 0 .15mm calc(var(--hz-exercise-marker-size) + 3mm);
-  padding-top: 2mm;
-  padding-bottom: 2.1mm;
+  margin: .25mm 0 .15mm calc(var(--hz-exercise-marker-size) + 3mm);
+  padding-top: 2.1mm;
+  padding-bottom: 2.3mm;
 }
 
 .l2c-grammar-body {
   display: grid;
-  grid-template-columns: 1fr 1fr 1.35fr;
-  gap: 3.4mm;
+  grid-template-columns: 1.2fr repeat(3, 1fr);
+  gap: 3mm;
   align-items: center;
+}
+
+.l2c-grammar-pattern {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.2mm;
+  min-height: 18mm;
+  padding: 2mm;
+  background: var(--hz-unit-soft);
+  font-size: 7.4pt;
+}
+
+.l2c-grammar-pattern strong {
+  color: var(--hz-unit-dark);
+  font-size: 10pt;
 }
 
 .l2c-grammar-example {
   display: grid;
-  grid-template-columns: auto 1fr;
-  gap: .5mm 1.2mm;
-  padding-top: .8mm;
+  gap: .5mm;
+  min-height: 18mm;
+  align-content: center;
+  padding: 1.6mm 1.8mm;
   border-top: .35mm solid rgb(32 33 36 / 18%);
-  font-size: 7.8pt;
+  font-size: 7.3pt;
+  line-height: 1.2;
 }
 
-.l2c-grammar-example strong { color: var(--hz-unit-dark); font-size: 9pt; }
-.l2c-grammar-example b { grid-column: 1 / -1; font-weight: var(--hz-fw-bold); }
-
-.l2c-grammar-rule {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 1.6mm;
-  min-height: 15mm;
-  padding: 2mm;
-  background: var(--hz-unit-soft);
-  font-size: 7.7pt;
-}
-
-.l2c-grammar-rule strong { color: var(--hz-unit-dark); font-size: 10pt; }
+.l2c-grammar-example strong { color: var(--hz-unit-dark); font-size: 8.4pt; }
+.l2c-grammar-example b { font-weight: var(--hz-fw-bold); }
 
 /* ---------- Page 18 ---------- */
 
 .l2c-page--2 .hz-exercises { padding-top: 14mm !important; }
-.l2c-page--2 .hz-page-stack { gap: 1.15mm; }
-.l2c-page--2 .hz-exercise { padding-top: .85mm; padding-bottom: 1.35mm; }
-.l2c-page--2 .hz-exercise__body { margin-top: .8mm; }
+.l2c-page--2 .hz-page-stack { gap: 1.25mm; }
+.l2c-page--2 .hz-exercise { padding-top: .9mm; padding-bottom: 1.45mm; }
+.l2c-page--2 .hz-exercise__body { margin-top: .85mm; }
 
 /* Exercise 4 */
 .l2c-apostrophe-grid {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: .9mm 7mm;
+  gap: 1.3mm 7mm;
   font-size: 8pt;
   line-height: 1.3;
 }
@@ -5074,163 +5041,151 @@ body.hz-debug .hz-page::after {
   grid-template-columns: 5mm 1fr;
   gap: 1mm;
   align-items: baseline;
-  min-height: 6.5mm;
+  min-height: 7mm;
   padding: .4mm 0;
 }
 
 .l2c-apostrophe-grid b { color: var(--hz-unit-dark); }
+
 .l2c-apostrophe-line {
   display: inline-block;
   width: 6mm;
   min-height: 3.8mm;
-  margin: 0 .5mm;
+  margin: 0 .4mm;
   border-bottom: .28mm solid var(--hz-line-strong);
   vertical-align: -.4mm;
 }
 
 /* Exercise 5 */
-.l2c-choice-grid {
+.l2c-owner-stage {
+  display: grid;
+  gap: 2.4mm;
+}
+
+.l2c-owner-board {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 3mm;
+}
+
+.l2c-owner-board article {
+  min-height: 45mm;
+  padding: 2mm;
+  border-top: .9mm solid var(--hz-unit);
+  background: var(--hz-paper);
+}
+
+.l2c-owner-board article > strong {
+  display: block;
+  margin-bottom: 1.4mm;
+  color: var(--hz-unit-dark);
+  font-size: 8pt;
+  font-weight: var(--hz-fw-black);
+}
+
+.l2c-item-visual {
+  display: grid;
+  place-items: end center;
+  min-height: 34mm;
+  padding: 2mm;
+  background: var(--hz-wash);
+  position: relative;
+  overflow: hidden;
+}
+
+.l2c-item-visual::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  top: 48%;
+  transform: translate(-50%, -50%);
+  border: .7mm solid var(--hz-unit);
+  opacity: .7;
+}
+
+.l2c-item-visual--phone::before { width: 10mm; height: 18mm; border-radius: 1.4mm; }
+.l2c-item-visual--keys::before { width: 15mm; height: 7mm; border-radius: 50%; }
+.l2c-item-visual--notebook::before { width: 17mm; height: 20mm; }
+.l2c-item-visual--bottle::before { width: 10mm; height: 21mm; border-radius: 3mm 3mm 1mm 1mm; }
+
+.l2c-item-visual span {
+  position: relative;
+  z-index: 2;
+  font-size: 6.6pt;
+  font-weight: var(--hz-fw-bold);
+}
+
+.l2c-owner-write {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: .8mm 7mm;
-  font-size: 7.9pt;
+  font-size: 8pt;
 }
 
-.l2c-choice-grid > div {
+.l2c-owner-write > div {
   display: grid;
-  grid-template-columns: 5mm 31mm max-content max-content;
-  gap: 1mm 2.4mm;
-  align-items: center;
+  grid-template-columns: 5mm 27mm auto;
+  gap: 1mm;
+  align-items: end;
   min-height: 6.5mm;
-  padding: .4mm 0;
 }
 
-.l2c-choice-grid b { color: var(--hz-unit-dark); }
-.l2c-choice-grid span:nth-child(n+3) { white-space: nowrap; }
+.l2c-owner-write b { color: var(--hz-unit-dark); }
+.l2c-owner-line { min-height: 4mm; border-bottom: .28mm solid var(--hz-line-strong); }
 
 /* Exercise 6 */
 .l2c-pair-stage {
   display: grid;
-  grid-template-columns: .92fr 1.08fr;
-  gap: 5mm;
+  grid-template-columns: 1fr 1fr;
+  gap: 3.6mm;
   align-items: stretch;
 }
 
 .l2c-pair-model {
-  padding: 2.1mm 2.6mm;
+  padding: 2.3mm 2.7mm;
   border-left: 1mm solid var(--hz-unit);
-  background: var(--hz-unit-soft);
+  background: var(--hz-paper);
   font-size: 8pt;
-  line-height: 1.28;
+  line-height: 1.3;
 }
 
+.l2c-pair-model--alt { background: var(--hz-unit-soft); }
 .l2c-pair-model p { margin: 0; }
-.l2c-pair-model p + p { margin-top: .45mm; }
+.l2c-pair-model p + p { margin-top: .65mm; }
 
-.l2c-pair-questions {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1.1mm 4mm;
-  align-content: center;
-  font-size: 7.8pt;
-}
-
-.l2c-pair-questions span {
-  padding: 1.25mm 1.5mm;
-  border-bottom: .28mm solid var(--hz-line-strong);
-}
-
-/* Exercise 7: family-business transfer */
-.l2c-create-stage {
-  display: grid;
-  gap: 2.2mm;
-}
-
-.l2c-create-top {
-  display: grid;
-  grid-template-columns: .75fr 1.25fr;
-  gap: 4mm;
-  align-items: stretch;
-}
-
-.l2c-business-choice {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 1.4mm;
-  align-items: stretch;
-}
-
-.l2c-business-choice span {
-  display: grid;
-  place-items: center;
-  min-height: 18mm;
-  border-top: .9mm solid var(--hz-unit);
-  background: var(--hz-paper);
-  font-size: 7.6pt;
-  font-weight: var(--hz-fw-black);
-}
-
-.l2c-create-model {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: .45mm 4mm;
-  align-content: center;
-  padding: 1.8mm 2.4mm;
-  background: var(--hz-unit-soft);
-  font-size: 7.8pt;
-  line-height: 1.24;
-}
-
-.l2c-create-model p { margin: 0; }
-
-.l2c-team-board {
-  border: .3mm solid var(--hz-line);
-  background: var(--hz-paper);
-}
-
-.l2c-team-board > header {
+.l2c-pair-task {
+  grid-column: 1 / -1;
   display: flex;
-  align-items: center;
-  justify-content: space-between;
-  min-height: 8mm;
-  padding: 1.4mm 2.5mm;
-  background: #232323;
-  color: #fff;
-  font-size: 7pt;
+  flex-wrap: wrap;
+  gap: 1mm 5mm;
+  padding: 1.5mm 2mm;
+  border-top: .3mm solid var(--hz-line);
+  font-size: 7.4pt;
+  font-weight: var(--hz-fw-bold);
 }
 
-.l2c-team-board > header strong {
-  font-size: 8.2pt;
-  font-weight: var(--hz-fw-black);
-  letter-spacing: .04em;
-}
-
-.l2c-team-grid {
+/* Exercise 7 */
+.l2c-write-stage {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 0 4mm;
-  padding: 2mm 2.5mm 2.4mm;
+  gap: 1.4mm;
 }
 
-.l2c-team-grid > div {
+.l2c-write-stage > div {
   display: grid;
-  grid-template-columns: 5mm 10mm 1fr 10mm 1fr 7mm 1fr;
-  gap: .8mm;
+  grid-template-columns: 5mm 19mm 1fr;
+  gap: 1mm;
   align-items: end;
-  min-height: 10.5mm;
-  font-size: 6.9pt;
+  min-height: 9mm;
+  font-size: 7.7pt;
 }
 
-.l2c-team-grid b { color: var(--hz-unit-dark); }
-.l2c-team-grid i {
-  display: block;
-  min-height: 4mm;
-  border-bottom: .28mm solid var(--hz-line-strong);
-}
+.l2c-write-stage b { color: var(--hz-unit-dark); }
+.l2c-write-stage span { color: var(--hz-muted); font-weight: var(--hz-fw-semibold); }
+.l2c-write-stage i { min-height: 5mm; border-bottom: .28mm solid var(--hz-line-strong); }
 
 .l2c-extra {
   margin-left: calc(var(--hz-exercise-marker-size) + 3mm);
-  margin-top: .45mm;
+  margin-top: .55mm;
 }
 
 .l2c-extra .hz-extra-practice__prompt {
@@ -6831,57 +6786,60 @@ body {
           <section class="hz-exercise">
             <div class="hz-exercise-number">1</div>
             <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction">Look and complete.</p>
-              <div class="hz-exercise__body l2c-family-stage">
-                <div class="l2c-family-head">
-                  <div>
-                    <strong>THE SALAS FAMILY</strong>
-                    <span>Restaurant</span>
-                  </div>
-                  <div class="l2c-family-bank" aria-label="Family words">
-                    <span>father</span><span>mother</span><span>brother</span><span>sister</span>
-                    <span>husband</span><span>wife</span><span>son</span><span>daughter</span>
-                  </div>
-                </div>
+              <p class="hz-exercise__instruction">Read and look.</p>
+              <div class="hz-exercise__body l2c-reading-stage">
+                <article class="l2c-reading-copy hz-student-text">
+                  <span class="l2c-reading-kicker">FAMILY BUSINESS</span>
+                  <h2>Meet the Rivera family</h2>
+                  <p>This is the Rivera family. The family business is Rivera Restaurant in Manta.</p>
+                  <p>Diego is the father. He is a chef. Elena is the mother. She is a receptionist.</p>
+                  <p>Nico and Sofía are students. Nico is the son and Sofía is the daughter.</p>
+                  <p>Diego is <strong class="l2c-target">Elena's husband</strong>. Elena is <strong class="l2c-target">Diego's wife</strong>.</p>
+                  <p>Nico is <strong class="l2c-target">Sofía's brother</strong>. Sofía is <strong class="l2c-target">Nico's sister</strong>.</p>
+                </article>
 
-                <div class="l2c-family-tree" aria-label="Salas family tree">
-                  <article class="l2c-person l2c-person--mateo">
-                    <span class="l2c-person__portrait">M</span>
-                    <strong>Mateo</strong>
-                    <small>chef</small>
-                  </article>
-                  <article class="l2c-person l2c-person--rosa">
-                    <span class="l2c-person__portrait">R</span>
-                    <strong>Rosa</strong>
-                    <small>receptionist</small>
-                  </article>
-                  <article class="l2c-person l2c-person--luis">
-                    <span class="l2c-person__portrait">L</span>
-                    <strong>Luis</strong>
-                    <small>waiter</small>
-                  </article>
-                  <article class="l2c-person l2c-person--maya">
-                    <span class="l2c-person__portrait">M</span>
-                    <strong>Maya</strong>
-                    <small>waitress</small>
-                  </article>
+                <div class="l2c-family-tree" aria-label="Rivera family tree">
+                  <div class="l2c-tree-title"><strong>RIVERA FAMILY</strong><span>Rivera Restaurant</span></div>
+
+                  <figure class="l2c-person l2c-person--diego" data-image-slot="2C-DIEGO">
+                    <div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Diego · adult man · restaurant portrait</span></div>
+                    <figcaption><strong>Diego</strong><span>chef</span></figcaption>
+                  </figure>
+
+                  <figure class="l2c-person l2c-person--elena" data-image-slot="2C-ELENA">
+                    <div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Elena · adult woman · restaurant portrait</span></div>
+                    <figcaption><strong>Elena</strong><span>receptionist</span></figcaption>
+                  </figure>
+
+                  <figure class="l2c-person l2c-person--nico" data-image-slot="2C-NICO">
+                    <div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Nico · teenage boy · portrait</span></div>
+                    <figcaption><strong>Nico</strong><span>student</span></figcaption>
+                  </figure>
+
+                  <figure class="l2c-person l2c-person--sofia" data-image-slot="2C-SOFIA">
+                    <div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Sofía · teenage girl · portrait</span></div>
+                    <figcaption><strong>Sofía</strong><span>student</span></figcaption>
+                  </figure>
+
                   <span class="l2c-tree-line l2c-tree-line--couple"></span>
                   <span class="l2c-tree-line l2c-tree-line--down"></span>
                   <span class="l2c-tree-line l2c-tree-line--children"></span>
-                  <span class="l2c-tree-line l2c-tree-line--luis"></span>
-                  <span class="l2c-tree-line l2c-tree-line--maya"></span>
+                  <span class="l2c-tree-line l2c-tree-line--nico"></span>
+                  <span class="l2c-tree-line l2c-tree-line--sofia"></span>
                 </div>
+              </div>
+            </div>
+          </section>
 
-                <div class="l2c-family-items">
-                  <div><b>1</b><span>Mateo is Luis's</span><span class="l2c-answer-line"></span></div>
-                  <div><b>5</b><span>Mateo is Rosa's</span><span class="l2c-answer-line"></span></div>
-                  <div><b>2</b><span>Rosa is Maya's</span><span class="l2c-answer-line"></span></div>
-                  <div><b>6</b><span>Rosa is Mateo's</span><span class="l2c-answer-line"></span></div>
-                  <div><b>3</b><span>Luis is Maya's</span><span class="l2c-answer-line"></span></div>
-                  <div><b>7</b><span>Luis is Rosa's</span><span class="l2c-answer-line"></span></div>
-                  <div><b>4</b><span>Maya is Luis's</span><span class="l2c-answer-line"></span></div>
-                  <div><b>8</b><span>Maya is Mateo's</span><span class="l2c-answer-line"></span></div>
-                </div>
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">2</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Read again. Answer.</p>
+              <div class="hz-exercise__body l2c-reading-check">
+                <div><b>1</b><span>What is the business?</span><span class="l2c-answer-line"></span></div>
+                <div><b>3</b><span>Who is Elena's husband?</span><span class="l2c-answer-line"></span></div>
+                <div><b>2</b><span>Who is the chef?</span><span class="l2c-answer-line"></span></div>
+                <div><b>4</b><span>Who is Nico's sister?</span><span class="l2c-answer-line"></span></div>
               </div>
             </div>
           </section>
@@ -6889,38 +6847,13 @@ body {
           <div class="l2c-go-to hz-go-to">Vocabulary Practice · Family members · page ---</div>
 
           <section class="hz-exercise">
-            <div class="hz-exercise-number">2</div>
-            <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction">Read the interview.</p>
-              <div class="hz-exercise__body l2c-business-stage">
-                <figure class="l2c-business-photo" data-image-slot="2C-FAMILY-BUSINESS">
-                  <div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Salas family in their restaurant · four people · natural workplace photo</span></div>
-                  <figcaption><strong>SALAS FAMILY RESTAURANT</strong><span>Manta</span></figcaption>
-                </figure>
-
-                <div class="l2c-interview hz-dialogue-text">
-                  <div><b>Interviewer:</b><p>Who is Mateo?</p></div>
-                  <div><b>Maya:</b><p>Mateo is my father. He is a chef.</p></div>
-                  <div><b>Interviewer:</b><p>So Mateo is <span class="l2c-target">Maya's father</span>.</p></div>
-                  <div><b>Interviewer:</b><p>Who is Rosa?</p></div>
-                  <div><b>Maya:</b><p>Rosa is my mother. She is a receptionist.</p></div>
-                  <div><b>Interviewer:</b><p>And Luis?</p></div>
-                  <div><b>Maya:</b><p>Luis is my brother. He is a waiter.</p></div>
-                  <div><b>Interviewer:</b><p>So Maya is <span class="l2c-target">Luis's sister</span>.</p></div>
-                </div>
-              </div>
-            </div>
-          </section>
-
-          <section class="hz-exercise">
             <div class="hz-exercise-number">3</div>
             <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction">Read again. Answer.</p>
-              <div class="hz-exercise__body l2c-notice-grid">
-                <div><b>1</b><span>Who is Maya's father?</span><span class="l2c-short-line"></span></div>
-                <div><b>2</b><span>Who is Luis's sister?</span><span class="l2c-short-line"></span></div>
-                <div><b>3</b><span>Maya's = Maya or Mateo?</span></div>
-                <div><b>4</b><span>Luis's = Luis or Maya?</span></div>
+              <p class="hz-exercise__instruction">Look at the bold phrases. Answer.</p>
+              <div class="hz-exercise__body l2c-discovery">
+                <div><b>1</b><span><strong>Elena's husband</strong> = Diego. Is <strong>'s</strong> after Elena or Diego?</span></div>
+                <div><b>2</b><span><strong>Nico's sister</strong> = Sofía. Is <strong>'s</strong> after Nico or Sofía?</span></div>
+                <div><b>3</b><span>After <strong>'s</strong>: name or family word?</span></div>
               </div>
             </div>
           </section>
@@ -6928,9 +6861,12 @@ body {
           <section class="hz-focus-box l2c-grammar hz-no-break" aria-label="Grammar: possessive 's">
             <header class="hz-focus-box__header">GRAMMAR: POSSESSIVE 'S</header>
             <div class="hz-focus-box__body l2c-grammar-body">
-              <div class="l2c-grammar-example"><strong>Maya's</strong><span>father</span><b>= Mateo</b></div>
-              <div class="l2c-grammar-example"><strong>Luis's</strong><span>sister</span><b>= Maya</b></div>
-              <div class="l2c-grammar-rule"><span>Name</span><b>+</b><strong>'s</strong><b>+</b><span>family word</span></div>
+              <div class="l2c-grammar-pattern">
+                <span>Name</span><b>+</b><strong>'s</strong><b>+</b><span>person / item</span>
+              </div>
+              <div class="l2c-grammar-example"><strong>Elena's</strong><span>husband</span><b>= Diego</b></div>
+              <div class="l2c-grammar-example"><strong>Nico's</strong><span>sister</span><b>= Sofía</b></div>
+              <div class="l2c-grammar-example"><span>This is</span><strong>Diego's</strong><span>phone.</span></div>
             </div>
           </section>
 
@@ -6955,12 +6891,12 @@ body {
             <div class="hz-exercise__content">
               <p class="hz-exercise__instruction">Complete with 's.</p>
               <div class="hz-exercise__body l2c-apostrophe-grid">
-                <div><b>1</b><span>Maya<span class="l2c-apostrophe-line"></span> father is Mateo.</span></div>
-                <div><b>4</b><span>Mateo<span class="l2c-apostrophe-line"></span> daughter is Maya.</span></div>
-                <div><b>2</b><span>Luis<span class="l2c-apostrophe-line"></span> mother is Rosa.</span></div>
-                <div><b>5</b><span>Maya<span class="l2c-apostrophe-line"></span> brother is Luis.</span></div>
-                <div><b>3</b><span>Rosa<span class="l2c-apostrophe-line"></span> husband is Mateo.</span></div>
-                <div><b>6</b><span>Luis<span class="l2c-apostrophe-line"></span> sister is Maya.</span></div>
+                <div><b>1</b><span>Diego<span class="l2c-apostrophe-line"></span> wife is Elena.</span></div>
+                <div><b>4</b><span>This is Elena<span class="l2c-apostrophe-line"></span> phone.</span></div>
+                <div><b>2</b><span>Nico<span class="l2c-apostrophe-line"></span> sister is Sofía.</span></div>
+                <div><b>5</b><span>These are Diego<span class="l2c-apostrophe-line"></span> keys.</span></div>
+                <div><b>3</b><span>Elena<span class="l2c-apostrophe-line"></span> son is Nico.</span></div>
+                <div><b>6</b><span>This is Sofía<span class="l2c-apostrophe-line"></span> notebook.</span></div>
               </div>
             </div>
           </section>
@@ -6968,14 +6904,33 @@ body {
           <section class="hz-exercise">
             <div class="hz-exercise-number">5</div>
             <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction">Choose.</p>
-              <div class="hz-exercise__body l2c-choice-grid">
-                <div><b>1</b><span>Mateo is Maya's</span><span><i class="hz-choice-box"></i> father</span><span><i class="hz-choice-box"></i> son</span></div>
-                <div><b>4</b><span>Maya is Rosa's</span><span><i class="hz-choice-box"></i> mother</span><span><i class="hz-choice-box"></i> daughter</span></div>
-                <div><b>2</b><span>Rosa is Luis's</span><span><i class="hz-choice-box"></i> mother</span><span><i class="hz-choice-box"></i> sister</span></div>
-                <div><b>5</b><span>Mateo is Rosa's</span><span><i class="hz-choice-box"></i> husband</span><span><i class="hz-choice-box"></i> brother</span></div>
-                <div><b>3</b><span>Luis is Maya's</span><span><i class="hz-choice-box"></i> brother</span><span><i class="hz-choice-box"></i> father</span></div>
-                <div><b>6</b><span>Rosa is Mateo's</span><span><i class="hz-choice-box"></i> wife</span><span><i class="hz-choice-box"></i> daughter</span></div>
+              <p class="hz-exercise__instruction">Look and write.</p>
+              <div class="hz-exercise__body l2c-owner-stage">
+                <div class="l2c-owner-board" aria-label="Personal items and owners">
+                  <article>
+                    <strong>Diego</strong>
+                    <div class="l2c-item-visual l2c-item-visual--phone"><span>phone</span></div>
+                  </article>
+                  <article>
+                    <strong>Elena</strong>
+                    <div class="l2c-item-visual l2c-item-visual--keys"><span>keys</span></div>
+                  </article>
+                  <article>
+                    <strong>Nico</strong>
+                    <div class="l2c-item-visual l2c-item-visual--notebook"><span>notebook</span></div>
+                  </article>
+                  <article>
+                    <strong>Sofía</strong>
+                    <div class="l2c-item-visual l2c-item-visual--bottle"><span>bottle</span></div>
+                  </article>
+                </div>
+
+                <div class="l2c-owner-write">
+                  <div><b>1</b><span class="l2c-owner-line"></span><span>phone</span></div>
+                  <div><b>2</b><span class="l2c-owner-line"></span><span>keys</span></div>
+                  <div><b>3</b><span class="l2c-owner-line"></span><span>notebook</span></div>
+                  <div><b>4</b><span class="l2c-owner-line"></span><span>bottle</span></div>
+                </div>
               </div>
             </div>
           </section>
@@ -6983,21 +6938,18 @@ body {
           <section class="hz-exercise">
             <div class="hz-exercise-number">6</div>
             <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction">Work in pairs. Ask and answer.</p>
+              <p class="hz-exercise__instruction">Work in pairs. Use real items. Ask and answer.</p>
               <div class="hz-exercise__body l2c-pair-stage">
                 <div class="l2c-pair-model">
-                  <p><strong>A:</strong> Who is Maya's brother?</p>
-                  <p><strong>B:</strong> Luis.</p>
-                  <p><strong>A:</strong> Who is Rosa's husband?</p>
-                  <p><strong>B:</strong> Mateo.</p>
+                  <p><strong>A:</strong> Is this Sara's phone?</p>
+                  <p><strong>B:</strong> Yes. It is Sara's phone.</p>
                 </div>
-                <div class="l2c-pair-questions">
-                  <span>Mateo's wife?</span>
-                  <span>Luis's father?</span>
-                  <span>Maya's mother?</span>
-                  <span>Rosa's daughter?</span>
-                  <span>Luis's sister?</span>
-                  <span>Mateo's son?</span>
+                <div class="l2c-pair-model l2c-pair-model--alt">
+                  <p><strong>A:</strong> Are these Leo's keys?</p>
+                  <p><strong>B:</strong> No. They are Ana's keys.</p>
+                </div>
+                <div class="l2c-pair-task">
+                  <span>phone</span><span>keys</span><span>notebook</span><span>pen</span><span>bottle</span><span>headphones</span>
                 </div>
               </div>
             </div>
@@ -7006,29 +6958,11 @@ body {
           <section class="hz-exercise">
             <div class="hz-exercise-number">7</div>
             <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction">Work in pairs. Make a family business.</p>
-              <div class="hz-exercise__body l2c-create-stage">
-                <div class="l2c-create-top">
-                  <div class="l2c-business-choice">
-                    <span>Restaurant</span><span>Farm</span><span>Taxi</span>
-                  </div>
-                  <div class="l2c-create-model">
-                    <p><strong>A:</strong> Who is Ana's son?</p>
-                    <p><strong>B:</strong> Leo.</p>
-                    <p><strong>A:</strong> What is Leo's job?</p>
-                    <p><strong>B:</strong> He is a waiter.</p>
-                  </div>
-                </div>
-
-                <div class="l2c-team-board" aria-label="Blank family business team board">
-                  <header><strong>FAMILY TEAM</strong><span>Business: ____________________</span></header>
-                  <div class="l2c-team-grid">
-                    <div><b>1</b><span>Name</span><i></i><span>Family</span><i></i><span>Job</span><i></i></div>
-                    <div><b>2</b><span>Name</span><i></i><span>Family</span><i></i><span>Job</span><i></i></div>
-                    <div><b>3</b><span>Name</span><i></i><span>Family</span><i></i><span>Job</span><i></i></div>
-                    <div><b>4</b><span>Name</span><i></i><span>Family</span><i></i><span>Job</span><i></i></div>
-                  </div>
-                </div>
+              <p class="hz-exercise__instruction">Write three true sentences with 's.</p>
+              <div class="hz-exercise__body l2c-write-stage">
+                <div><b>1</b><span>Family</span><i></i></div>
+                <div><b>2</b><span>Classroom</span><i></i></div>
+                <div><b>3</b><span>Classroom</span><i></i></div>
               </div>
             </div>
           </section>
@@ -7036,7 +6970,7 @@ body {
 
         <div class="l2c-extra hz-extra-practice">
           <span class="hz-extra-practice__label">EXTRA PRACTICE</span>
-          <span class="hz-extra-practice__prompt">Use your family. Write four sentences with 's.</span>
+          <span class="hz-extra-practice__prompt">Read your three sentences to a classmate.</span>
         </div>
       </div>
     </main>
