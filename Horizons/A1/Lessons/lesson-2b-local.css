@@ -638,17 +638,26 @@
 }
 
 .l2b-article-practice > div {
-  display: grid;
-  grid-template-columns: 5mm 22mm 11mm minmax(0, 1fr);
+  display: flex;
+  align-items: baseline;
   gap: 1mm;
-  align-items: end;
   min-height: 6.7mm;
   padding: .45mm 0;
+  white-space: nowrap;
 }
 
-.l2b-article-practice > div > b { color: var(--hz-unit-dark); }
+.l2b-article-practice > div > b {
+  flex: 0 0 5mm;
+  color: var(--hz-unit-dark);
+}
+
+.l2b-article-practice > div > span:nth-child(2):empty {
+  display: none;
+}
 
 .l2b-answer {
+  flex: 0 0 11mm;
+  display: inline-block;
   min-height: 3.7mm;
   border-bottom: .28mm solid var(--hz-line-strong);
 }
