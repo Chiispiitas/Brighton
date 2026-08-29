@@ -10,6 +10,7 @@ const lessonPattern = /^\d+[A-Z]\.html$/i;
 const collator = new Intl.Collator("en", { numeric: true, sensitivity: "base" });
 const cssCache = new Map();
 const installedStylesheets = new Set();
+const installedLiveLessonStylesheets = new Set();
 
 function readText(filePath) {
   return fs.readFileSync(filePath, "utf8");
@@ -144,6 +145,35 @@ function collectHeadStyles(headHtml, lessonPath, filename) {
   return output;
 }
 
+function collectLiveLessonStyles(headHtml, lessonPath) {
+  const output = [];
+  const lessonRoot = `${path.normalize(lessonsDir)}${path.sep}`;
+
+  for (const match of headHtml.matchAll(/<link\b[^>]*>/gi)) {
+    const tag = match[0];
+    if (attrValue(tag, "rel").toLowerCase() !== "stylesheet") continue;
+
+    const href = attrValue(tag, "href");
+    if (!href || /^https?:/i.test(href)) continue;
+
+    const stylesheetPath = path.normalize(path.resolve(path.dirname(lessonPath), cleanLocalHref(href)));
+    if (!stylesheetPath.startsWith(lessonRoot)) continue;
+
+    const media = attrValue(tag, "media").trim();
+    let relativeHref = path.relative(a1Dir, stylesheetPath).replaceAll(path.sep, "/");
+    if (!relativeHref.startsWith(".")) relativeHref = `./${relativeHref}`;
+
+    const key = `${relativeHref}|${media}`;
+    if (installedLiveLessonStylesheets.has(key)) continue;
+    installedLiveLessonStylesheets.add(key);
+
+    const mediaAttr = media ? ` media="${media}"` : "";
+    output.push(`<link rel="stylesheet" href="${relativeHref}"${mediaAttr}>`);
+  }
+
+  return output;
+}
+
 const lessons = fs.readdirSync(lessonsDir)
   .filter((name) => lessonPattern.test(name))
   .sort((a, b) => collator.compare(a, b));
@@ -152,11 +182,14 @@ if (!lessons.length) throw new Error("No A1 lesson masters found.");
 
 const compiledStyles = [];
 const compiledBodies = [];
+const liveLessonStyles = [];
 
 for (const filename of lessons) {
   const lessonPath = path.join(lessonsDir, filename);
   const html = readText(lessonPath);
-  compiledStyles.push(...collectHeadStyles(extractHead(html), lessonPath, filename));
+  const head = extractHead(html);
+  compiledStyles.push(...collectHeadStyles(head, lessonPath, filename));
+  liveLessonStyles.push(...collectLiveLessonStyles(head, lessonPath));
   const body = rewriteBodyAssetUrls(extractBody(html, filename), lessonPath);
   compiledBodies.push(`<!-- ===== ${filename} ===== -->\n${body}`);
 }
@@ -250,6 +283,9 @@ ${compiledStyles.join("\n\n")}
 /* Student's Book unifier */
 ${viewerCss}
   </style>
+  <!-- Canonical lesson CSS is linked after the compiled snapshot so local CSS edits
+       are reflected immediately when opening Student's Book.html during authoring. -->
+  ${liveLessonStyles.join("\n  ")}
 </head>
 <body class="hz-book">
   <main id="hz-book">
