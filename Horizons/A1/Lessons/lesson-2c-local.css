@@ -21,6 +21,13 @@
 
 .l2c-lead-exercise { padding-bottom: 1mm; }
 
+/* Exercise 1 stays inside the content lane so the first photo cannot enter
+   the exercise-number gutter. */
+.l2c-lead-exercise .l2c-lead-photos {
+  margin-left: 1.5mm !important;
+  width: calc(100% - 1.5mm) !important;
+}
+
 .l2c-lead-photos {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
