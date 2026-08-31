@@ -1,6 +1,6 @@
 /* Horizons A1 — Lesson 2C scoped styles.
-   Full rebuild: compact photo lead-in, editorial reading feature, subordinate
-   photo-based family tree, then focused possessive-case practice. */
+   Compact photo lead-in, editorial reading feature, functional family tree,
+   and possessive-form practice using canonical Horizons components. */
 
 .l2c-page {
   --hz-unit: var(--hz-unit-1);
@@ -21,8 +21,7 @@
 
 .l2c-lead-exercise { padding-bottom: 1mm; }
 
-/* Exercise 1 stays inside the content lane so the first photo cannot enter
-   the exercise-number gutter. */
+/* Keep the image family out of the exercise-number gutter. */
 .l2c-lead-exercise .l2c-lead-photos {
   margin-left: 1.5mm !important;
   width: calc(100% - 1.5mm) !important;
@@ -47,17 +46,6 @@
   object-fit: cover;
   object-position: center;
 }
-
-.l2c-lead-photos .hz-photo-placeholder {
-  height: 30mm;
-  min-height: 30mm;
-  font-size: 5.1pt;
-  letter-spacing: .05em;
-}
-
-.l2c-lead-photos .hz-photo-placeholder::before { inset: 2.5mm; }
-.l2c-lead-photos .hz-photo-placeholder::after { width: 23mm; }
-.l2c-lead-photos .hz-photo-placeholder__meta { padding: .8mm 1.2mm; }
 
 /* ---------- Exercise 2: editorial reading feature ---------- */
 
@@ -116,14 +104,6 @@
   object-position: center;
 }
 
-.l2c-family-photo .hz-photo-placeholder {
-  height: 60mm;
-  min-height: 60mm;
-  font-size: 5pt;
-  letter-spacing: .055em;
-}
-
-.l2c-family-photo .hz-photo-placeholder::before { inset: 3mm; }
 .l2c-family-photo figcaption {
   margin-top: .9mm;
   color: var(--hz-muted);
@@ -146,7 +126,7 @@
 
 .l2c-reading-copy p:last-child { margin-bottom: 0; }
 
-/* The family tree is support, not the dominant page composition. */
+/* The family tree remains support for the reading and now carries a task. */
 .l2c-family-strip {
   position: relative;
   display: grid;
@@ -179,22 +159,11 @@
   object-position: center 30%;
 }
 
-.l2c-family-strip .hz-photo-placeholder {
-  height: 17mm;
-  min-height: 17mm;
-  font-size: 4pt;
-  letter-spacing: .04em;
-}
-
-.l2c-family-strip .hz-photo-placeholder::before { inset: 1.7mm; }
-.l2c-family-strip .hz-photo-placeholder::after { width: 13mm; }
-.l2c-family-strip .hz-photo-placeholder__meta { padding: .45mm .6mm; }
-
 .l2c-family-strip figcaption {
   display: grid;
-  gap: .1mm;
+  gap: .25mm;
   margin-top: .5mm;
-  font-size: 5.9pt;
+  font-size: 5.8pt;
   line-height: 1.12;
 }
 
@@ -203,7 +172,19 @@
   font-weight: var(--hz-fw-black);
 }
 
-.l2c-family-strip figcaption span { color: var(--hz-muted); }
+.l2c-family-strip figcaption > span { color: var(--hz-muted); }
+
+.l2c-family-job {
+  display: flex;
+  align-items: end;
+  gap: .8mm;
+  white-space: nowrap;
+}
+
+.l2c-family-job .hz-answer-line {
+  width: 17mm;
+  min-width: 0;
+}
 
 .l2c-family-strip__branch {
   position: relative;
@@ -250,56 +231,28 @@
 .l2c-page--2 .hz-exercise { padding-top: .72mm; padding-bottom: 1.05mm; }
 .l2c-page--2 .hz-exercise__body { margin-top: .75mm; }
 
-/* Exercise 4: noticing */
-.l2c-notice-grid { gap: .2mm; }
-
-.l2c-notice-grid .hz-question {
-  padding: .2mm 0;
-  font-size: 7.9pt;
-  line-height: 1.28;
-}
-
-.l2c-notice-grid strong { color: var(--hz-unit-dark); }
-
-/* Grammar focus */
+/* Grammar focus: canonical shell, simple body grid, no local dividers. */
 .l2c-grammar {
   margin: .35mm 0 .15mm calc(var(--hz-exercise-marker-size) + 3mm);
-  padding-top: 2.3mm;
-  padding-bottom: 2.4mm;
 }
 
-.l2c-grammar-body { display: block; }
+.l2c-grammar-grid { gap: 4mm; }
 
-.l2c-grammar-rules {
-  display: grid;
-  gap: 0;
+.l2c-grammar-grid > div {
+  font-size: 7.6pt;
+  line-height: 1.25;
 }
 
-.l2c-grammar-rule {
-  display: grid;
-  grid-template-columns: 34mm 35mm minmax(0, 1fr);
-  gap: 3mm;
-  align-items: baseline;
-  padding: .7mm 0;
-  font-size: 7.7pt;
-  line-height: 1.2;
-}
-
-.l2c-grammar-rule + .l2c-grammar-rule {
-  border-top: .2mm solid rgb(32 33 36 / 13%);
-}
-
-.l2c-grammar-rule__label {
-  color: var(--hz-muted);
-  font-size: 6.6pt;
-  font-weight: var(--hz-fw-bold);
-  letter-spacing: .02em;
-}
-
-.l2c-grammar-rule strong {
+.l2c-grammar-grid > div > strong {
+  display: block;
+  margin-bottom: .7mm;
   color: var(--hz-unit-dark);
+  font-size: 7.5pt;
   font-weight: var(--hz-fw-black);
 }
+
+.l2c-grammar-grid p { margin: 0 0 .45mm; }
+.l2c-grammar-grid b { color: var(--hz-unit-dark); }
 
 /* Exercise 5 */
 .l2c-complete-grid { gap: .4mm 7mm; }
@@ -327,11 +280,10 @@
   vertical-align: baseline;
 }
 
-/* Exercise 6: visual ownership practice */
+/* Exercise 6: visual sentence-building practice */
 .l2c-items-exercise { padding-top: .6mm; }
 
-/* Exercise 6 stays inside the content lane. The shared full-lane utility
-   intentionally enters the number gutter, which is not appropriate here. */
+/* Keep the image family out of the exercise-number gutter. */
 .l2c-items-exercise .l2c-owner-photos {
   margin-left: 1.5mm !important;
   width: calc(100% - 1.5mm) !important;
@@ -358,37 +310,36 @@
   background: #fff;
 }
 
-.l2c-owner-photos .hz-photo-placeholder {
-  height: 23mm;
-  min-height: 23mm;
-  font-size: 4.7pt;
-  letter-spacing: .045em;
-}
-
-.l2c-owner-photos .hz-photo-placeholder::before { inset: 2mm; }
-.l2c-owner-photos .hz-photo-placeholder::after { width: 16mm; }
-.l2c-owner-photos .hz-photo-placeholder__meta { padding: .55mm .7mm; }
-
 .l2c-owner-photos figcaption {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1.4mm;
-  margin-top: .55mm;
-  font-size: 6.3pt;
-  line-height: 1.1;
+  display: grid;
+  justify-items: center;
+  gap: .35mm;
+  margin-top: .6mm;
+  font-size: 6pt;
+  line-height: 1.15;
+  text-align: center;
 }
 
-.l2c-owner-photos figcaption strong {
+.l2c-owner-number {
   color: var(--hz-unit-dark);
   font-weight: var(--hz-fw-black);
 }
 
-.l2c-owner-photos figcaption span { color: var(--hz-muted); }
+.l2c-owner-photos figcaption strong {
+  color: var(--hz-ink);
+  font-weight: var(--hz-fw-bold);
+}
+
+.l2c-owner-example {
+  color: var(--hz-muted);
+  font-size: 5.6pt;
+  font-style: italic;
+}
 
 .l2c-owner-lines {
-  gap: .7mm 7mm;
-  margin-top: 1.2mm;
+  display: grid;
+  gap: .75mm;
+  margin: 1.2mm 0 0 1.5mm;
 }
 
 .l2c-owner-lines > div {
@@ -409,18 +360,16 @@
   min-width: 0;
 }
 
-/* Exercise 7 */
+/* Exercise 7: plain dialogue models; no decorative side strips. */
 .l2c-pairwork { gap: 5mm; }
 
-.l2c-pair-model {
-  padding-left: 2.8mm;
-  border-left: .8mm solid var(--hz-unit);
+.l2c-pairwork .hz-dialogue-text {
   font-size: 8pt;
   line-height: 1.3;
 }
 
-.l2c-pair-model p { margin: 0; }
-.l2c-pair-model p + p { margin-top: .5mm; }
+.l2c-pairwork p { margin: 0; }
+.l2c-pairwork p + p { margin-top: .5mm; }
 
 .l2c-extra {
   margin-left: calc(var(--hz-exercise-marker-size) + 3mm);

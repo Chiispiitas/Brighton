@@ -136,6 +136,10 @@ Do not invent alternate category labels such as `LANGUAGE FROM ...`, `LANGUAGE`,
 
 The `aria-label` should use the same semantic category as the visible header.
 
+**The shared focus-box shell is visually canonical.** Lesson-local CSS may adjust only the box's outer placement/width when composition requires it. Do not locally override its background, top/bottom borders, shell padding, or header typography.
+
+Inside `.hz-focus-box__body`, use ordinary learner text plus existing shared grids/helpers whenever possible. Do **not** invent one-off separator rules, mini-label systems, pills, colored strips, card surfaces, or special typography solely for one grammar/vocabulary point. If a new internal treatment is genuinely reusable, define it in `Horizons/Base/design-system/` first; otherwise simplify the body to the established focus-box visual language.
+
 ## 9. Functional labels
 
 ```html
@@ -183,6 +187,8 @@ For paper forms, prefer CSS-built structure before adding decorative imagery. Ke
 - `.hz-micro-text`
 
 Use the role that matches the content. Never label ordinary learner content as interface/micro simply to bypass a physical type floor.
+
+Pairwork and dialogue models are normally plain exercise content. Use `.hz-dialogue-text` inside the existing exercise/grid structure. Do not add lesson-local colored side strips, badges, tinted cards, or other decorative markers merely to distinguish model exchanges. Such treatment is allowed only when an established shared component requires it or when the task reproduces an authentic real-world artifact.
 
 ## 12. Book-local stylesheet
 
