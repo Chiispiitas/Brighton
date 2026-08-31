@@ -5022,48 +5022,39 @@ body.hz-debug .hz-page::after {
 /* Grammar focus */
 .l2c-grammar {
   margin: .35mm 0 .15mm calc(var(--hz-exercise-marker-size) + 3mm);
-  padding-top: 2.5mm;
-  padding-bottom: 2.6mm;
+  padding-top: 2.3mm;
+  padding-bottom: 2.4mm;
 }
 
-.l2c-grammar-body {
+.l2c-grammar-body { display: block; }
+
+.l2c-grammar-rules {
   display: grid;
-  grid-template-columns: .9fr 1.1fr;
-  gap: 4mm;
-  align-items: center;
+  gap: 0;
 }
 
-.l2c-grammar-pattern {
-  display: flex;
+.l2c-grammar-rule {
+  display: grid;
+  grid-template-columns: 34mm 35mm minmax(0, 1fr);
+  gap: 3mm;
   align-items: baseline;
-  justify-content: center;
-  gap: 1.4mm;
-  min-height: 13mm;
-  padding-right: 4mm;
-  border-right: .25mm solid rgb(32 33 36 / 18%);
-  font-size: 8pt;
+  padding: .7mm 0;
+  font-size: 7.7pt;
+  line-height: 1.2;
 }
 
-.l2c-grammar-pattern strong {
-  color: var(--hz-unit-dark);
-  font-size: 10pt;
-  font-weight: var(--hz-fw-black);
+.l2c-grammar-rule + .l2c-grammar-rule {
+  border-top: .2mm solid rgb(32 33 36 / 13%);
 }
 
-.l2c-grammar-pattern b {
+.l2c-grammar-rule__label {
   color: var(--hz-muted);
+  font-size: 6.6pt;
   font-weight: var(--hz-fw-bold);
+  letter-spacing: .02em;
 }
 
-.l2c-grammar-examples {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: .8mm 4mm;
-  font-size: 7.8pt;
-  line-height: 1.25;
-}
-
-.l2c-grammar-examples strong {
+.l2c-grammar-rule strong {
   color: var(--hz-unit-dark);
   font-weight: var(--hz-fw-black);
 }
@@ -5198,7 +5189,6 @@ body.hz-debug .hz-page::after {
   .l2c-page,
   .l2c-page * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
 }
-
 
 /* Student's Book unifier */
 
@@ -6897,17 +6887,25 @@ body {
             </div>
           </section>
 
-          <section class="hz-focus-box hz-no-break l2c-grammar" aria-label="Grammar: possessive 's">
-            <header class="hz-focus-box__header">GRAMMAR: POSSESSIVE 'S</header>
+          <section class="hz-focus-box hz-no-break l2c-grammar" aria-label="Grammar: possessive forms">
+            <header class="hz-focus-box__header">GRAMMAR: POSSESSIVE FORMS</header>
             <div class="hz-focus-box__body l2c-grammar-body">
-              <div class="l2c-grammar-pattern">
-                <span>Name</span><b>+</b><strong>'s</strong><b>+</b><span>person / item</span>
-              </div>
-              <div class="l2c-grammar-examples">
-                <span><strong>Elena's</strong> husband</span>
-                <span><strong>Nico's</strong> sister</span>
-                <span><strong>Diego's</strong> phone</span>
-                <span><strong>Elena's</strong> keys</span>
+              <div class="l2c-grammar-rules">
+                <div class="l2c-grammar-rule">
+                  <span class="l2c-grammar-rule__label">name</span>
+                  <span>Diego + <strong>'s</strong></span>
+                  <span><strong>Diego's</strong> phone</span>
+                </div>
+                <div class="l2c-grammar-rule">
+                  <span class="l2c-grammar-rule__label">name ending in s</span>
+                  <span>Carlos + <strong>'s</strong></span>
+                  <span><strong>Carlos's</strong> keys</span>
+                </div>
+                <div class="l2c-grammar-rule">
+                  <span class="l2c-grammar-rule__label">plural ending in s</span>
+                  <span>parents + <strong>'</strong></span>
+                  <span><strong>parents'</strong> restaurant</span>
+                </div>
               </div>
             </div>
           </section>
@@ -6917,14 +6915,14 @@ body {
           <section class="hz-exercise">
             <div class="hz-exercise-number">5</div>
             <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction">Complete with 's.</p>
+              <p class="hz-exercise__instruction">Complete. Add <strong>'s</strong> or <strong>'</strong>.</p>
               <div class="hz-exercise__body hz-content-grid hz-content-grid--2 l2c-complete-grid">
                 <div class="l2c-complete-item"><b>1</b><span>Diego<span class="l2c-insert-line"></span> wife is Elena.</span></div>
-                <div class="l2c-complete-item"><b>2</b><span>Nico<span class="l2c-insert-line"></span> sister is Sofía.</span></div>
-                <div class="l2c-complete-item"><b>3</b><span>This is Diego<span class="l2c-insert-line"></span> phone.</span></div>
-                <div class="l2c-complete-item"><b>4</b><span>These are Elena<span class="l2c-insert-line"></span> keys.</span></div>
-                <div class="l2c-complete-item"><b>5</b><span>This is Nico<span class="l2c-insert-line"></span> notebook.</span></div>
-                <div class="l2c-complete-item"><b>6</b><span>That is Sofía<span class="l2c-insert-line"></span> bottle.</span></div>
+                <div class="l2c-complete-item"><b>2</b><span>Carlos<span class="l2c-insert-line"></span> sister is Ana.</span></div>
+                <div class="l2c-complete-item"><b>3</b><span>The parents<span class="l2c-insert-line"></span> restaurant is busy.</span></div>
+                <div class="l2c-complete-item"><b>4</b><span>This is Sofía<span class="l2c-insert-line"></span> bottle.</span></div>
+                <div class="l2c-complete-item"><b>5</b><span>These are Lucas<span class="l2c-insert-line"></span> keys.</span></div>
+                <div class="l2c-complete-item"><b>6</b><span>The students<span class="l2c-insert-line"></span> notebooks are on the table.</span></div>
               </div>
             </div>
           </section>
@@ -6932,24 +6930,24 @@ body {
           <section class="hz-exercise l2c-items-exercise">
             <div class="hz-exercise-number">6</div>
             <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction">Look and write.</p>
+              <p class="hz-exercise__instruction">Look. Use the prompts. Write complete sentences.</p>
               <div class="hz-exercise__body">
                 <div class="hz-media-family hz-media-family--full-lane l2c-owner-photos">
                   <figure data-image-slot="HZN_A1_U02_LC_E06_IMG_01">
                     <img src="./Images/2C/object_cellphone_white_background_1x1---96e0df3b-9856-499d-aed6-f45479e140a0.png" alt="A cell phone">
-                    <figcaption><strong>Diego</strong><span>phone</span></figcaption>
+                    <figcaption><strong>Diego</strong><span>this</span></figcaption>
                   </figure>
                   <figure data-image-slot="HZN_A1_U02_LC_E06_IMG_02">
                     <img src="./Images/2C/object_keys_white_background_1x1---371a739d-bc15-453f-b252-06bd997521db.png" alt="Keys">
-                    <figcaption><strong>Elena</strong><span>keys</span></figcaption>
+                    <figcaption><strong>Lucas</strong><span>those</span></figcaption>
                   </figure>
                   <figure data-image-slot="HZN_A1_U02_LC_E06_IMG_03">
                     <img src="./Images/2C/object_notebook_white_background_1x1---538237db-0921-4409-ad5d-42c85bc41df7.png" alt="A notebook">
-                    <figcaption><strong>Nico</strong><span>notebook</span></figcaption>
+                    <figcaption><strong>the students</strong><span>that</span></figcaption>
                   </figure>
                   <figure data-image-slot="HZN_A1_U02_LC_E06_IMG_04">
                     <img src="./Images/2C/object_bottle_white_background_1x1---99c75d3b-f8fc-47f7-892c-0784827f0f4c.png" alt="A bottle">
-                    <figcaption><strong>Sofía</strong><span>bottle</span></figcaption>
+                    <figcaption><strong>the parents</strong><span>this</span></figcaption>
                   </figure>
                 </div>
                 <div class="hz-content-grid hz-content-grid--2 l2c-owner-lines">
@@ -6972,8 +6970,8 @@ body {
                   <p><strong>B:</strong> Yes. It is Sara's phone.</p>
                 </div>
                 <div class="l2c-pair-model hz-dialogue-text">
-                  <p><strong>A:</strong> Are these Leo's keys?</p>
-                  <p><strong>B:</strong> No. They are Ana's keys.</p>
+                  <p><strong>A:</strong> Are these the students' keys?</p>
+                  <p><strong>B:</strong> No. They are Lucas's keys.</p>
                 </div>
               </div>
             </div>
@@ -6982,7 +6980,7 @@ body {
 
         <div class="l2c-extra hz-extra-practice">
           <span class="hz-extra-practice__label">EXTRA PRACTICE</span>
-          <span class="hz-extra-practice__prompt">Write four true sentences with 's.</span>
+          <span class="hz-extra-practice__prompt">Write four true sentences. Use possessive forms.</span>
         </div>
       </div>
     </main>
