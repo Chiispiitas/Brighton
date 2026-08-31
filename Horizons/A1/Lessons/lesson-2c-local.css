@@ -264,48 +264,39 @@
 /* Grammar focus */
 .l2c-grammar {
   margin: .35mm 0 .15mm calc(var(--hz-exercise-marker-size) + 3mm);
-  padding-top: 2.5mm;
-  padding-bottom: 2.6mm;
+  padding-top: 2.3mm;
+  padding-bottom: 2.4mm;
 }
 
-.l2c-grammar-body {
+.l2c-grammar-body { display: block; }
+
+.l2c-grammar-rules {
   display: grid;
-  grid-template-columns: .9fr 1.1fr;
-  gap: 4mm;
-  align-items: center;
+  gap: 0;
 }
 
-.l2c-grammar-pattern {
-  display: flex;
+.l2c-grammar-rule {
+  display: grid;
+  grid-template-columns: 34mm 35mm minmax(0, 1fr);
+  gap: 3mm;
   align-items: baseline;
-  justify-content: center;
-  gap: 1.4mm;
-  min-height: 13mm;
-  padding-right: 4mm;
-  border-right: .25mm solid rgb(32 33 36 / 18%);
-  font-size: 8pt;
+  padding: .7mm 0;
+  font-size: 7.7pt;
+  line-height: 1.2;
 }
 
-.l2c-grammar-pattern strong {
-  color: var(--hz-unit-dark);
-  font-size: 10pt;
-  font-weight: var(--hz-fw-black);
+.l2c-grammar-rule + .l2c-grammar-rule {
+  border-top: .2mm solid rgb(32 33 36 / 13%);
 }
 
-.l2c-grammar-pattern b {
+.l2c-grammar-rule__label {
   color: var(--hz-muted);
+  font-size: 6.6pt;
   font-weight: var(--hz-fw-bold);
+  letter-spacing: .02em;
 }
 
-.l2c-grammar-examples {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: .8mm 4mm;
-  font-size: 7.8pt;
-  line-height: 1.25;
-}
-
-.l2c-grammar-examples strong {
+.l2c-grammar-rule strong {
   color: var(--hz-unit-dark);
   font-weight: var(--hz-fw-black);
 }
