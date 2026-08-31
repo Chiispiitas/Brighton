@@ -360,6 +360,15 @@
   min-width: 0;
 }
 
+/* Prefilled model answer should resemble student handwriting, not print copy. */
+.l2c-owner-lines > div:first-child .hz-answer-line {
+  color: #7f8287;
+  font-family: "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive;
+  font-size: 8pt;
+  font-weight: 400;
+  letter-spacing: .01em;
+}
+
 /* Exercise 7: plain dialogue models; no decorative side strips. */
 .l2c-pairwork { gap: 5mm; }
 
