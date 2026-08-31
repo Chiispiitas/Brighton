@@ -1,7 +1,6 @@
 /* Horizons A1 — Lesson 2C scoped styles.
-   Composition follows the compact editorial ELT spread rhythm used by the
-   approved coursebook reference: short lead-in -> photo family -> dominant
-   reading feature -> compact comprehension -> grammar/practice page. */
+   Full rebuild: compact photo lead-in, editorial reading feature, subordinate
+   photo-based family tree, then focused possessive-case practice. */
 
 .l2c-page {
   --hz-unit: var(--hz-unit-1);
@@ -11,67 +10,66 @@
 
 .l2c-page .hz-page__content { overflow: hidden; }
 .l2c-page .hz-page-stack { gap: 1.2mm; }
-.l2c-page .hz-lesson-header { padding-bottom: 2.6mm; }
+.l2c-page .hz-lesson-header { padding-bottom: 2.7mm; }
 .l2c-page .hz-exercises { gap: 0; }
-.l2c-page .hz-exercise { padding: .8mm 0 1.1mm; }
+.l2c-page .hz-exercise { padding: .8mm 0 1.2mm; }
 .l2c-page .hz-exercise__body { margin-top: .8mm; }
 .l2c-page .hz-exercise__instruction { font-size: 8.8pt; }
 .l2c-go-to { margin-left: calc(var(--hz-exercise-marker-size) + 3mm); }
 
-/* ---------- Compact top-of-page lead-in ---------- */
+/* ---------- Exercise 1: compact photo lead-in ---------- */
 
-.l2c-warmup { padding-bottom: .7mm; }
-.l2c-photo-lead { padding-top: .45mm; }
+.l2c-lead-exercise { padding-bottom: 1mm; }
 
-.l2c-photo-strip {
+.l2c-lead-photos {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 3mm;
 }
 
-.l2c-photo-strip figure {
+.l2c-lead-photos figure {
   width: 100%;
   margin: 0;
 }
 
-.l2c-photo-strip .hz-photo-placeholder {
-  height: 29mm;
-  min-height: 29mm;
-  font-size: 5.2pt;
-  letter-spacing: .055em;
+.l2c-lead-photos .hz-photo-placeholder {
+  height: 30mm;
+  min-height: 30mm;
+  font-size: 5.1pt;
+  letter-spacing: .05em;
 }
 
-.l2c-photo-strip .hz-photo-placeholder::before { inset: 2.5mm; }
-.l2c-photo-strip .hz-photo-placeholder::after { width: 24mm; }
-.l2c-photo-strip .hz-photo-placeholder__meta { padding: .8mm 1.2mm; }
+.l2c-lead-photos .hz-photo-placeholder::before { inset: 2.5mm; }
+.l2c-lead-photos .hz-photo-placeholder::after { width: 23mm; }
+.l2c-lead-photos .hz-photo-placeholder__meta { padding: .8mm 1.2mm; }
 
-/* ---------- Exercise 3: dominant reading feature ---------- */
+/* ---------- Exercise 2: editorial reading feature ---------- */
 
 .l2c-reading-exercise { padding-top: .65mm; }
 
-.l2c-feature {
-  padding: 3mm 3.6mm 3.4mm;
-  border-top: .9mm solid var(--hz-unit);
-  background: #f2f0e8;
+.l2c-reading-feature {
+  padding: 3mm 3.5mm 3.2mm;
+  border-top: 1mm solid var(--hz-unit);
+  background: #f3f0ea;
 }
 
-.l2c-feature__title {
+.l2c-reading-feature__head {
   display: flex;
   align-items: baseline;
   gap: 3mm;
-  margin-bottom: 2.2mm;
+  margin-bottom: 2mm;
 }
 
-.l2c-feature__title > span {
+.l2c-reading-feature__head > span {
   flex: none;
   color: var(--hz-unit-dark);
-  font-size: 6.5pt;
+  font-size: 6.4pt;
   font-weight: var(--hz-fw-black);
-  letter-spacing: .085em;
+  letter-spacing: .08em;
   text-transform: uppercase;
 }
 
-.l2c-feature__title h2 {
+.l2c-reading-feature__head h2 {
   margin: 0;
   color: var(--hz-ink);
   font-family: var(--hz-font-reading);
@@ -82,14 +80,33 @@
   letter-spacing: -.025em;
 }
 
-.l2c-feature__body {
+.l2c-reading-feature__main {
   display: grid;
-  grid-template-columns: 72mm minmax(0, 1fr);
+  grid-template-columns: 62mm minmax(0, 1fr);
   gap: 5mm;
   align-items: start;
 }
 
-.l2c-feature__copy {
+.l2c-family-photo {
+  margin: 0;
+}
+
+.l2c-family-photo .hz-photo-placeholder {
+  height: 60mm;
+  min-height: 60mm;
+  font-size: 5pt;
+  letter-spacing: .055em;
+}
+
+.l2c-family-photo .hz-photo-placeholder::before { inset: 3mm; }
+.l2c-family-photo figcaption {
+  margin-top: .9mm;
+  color: var(--hz-muted);
+  font-size: 6.5pt;
+  font-weight: var(--hz-fw-bold);
+}
+
+.l2c-reading-copy {
   columns: 2;
   column-gap: 5mm;
   font-family: var(--hz-font-reading);
@@ -97,139 +114,120 @@
   line-height: 1.42;
 }
 
-.l2c-feature__copy p {
-  margin: 0 0 1.7mm;
+.l2c-reading-copy p {
+  margin: 0 0 1.6mm;
   break-inside: avoid;
 }
 
-.l2c-feature__copy p:last-child { margin-bottom: 0; }
+.l2c-reading-copy p:last-child { margin-bottom: 0; }
 
-.l2c-mini-tree {
-  position: relative;
-  padding: 1.7mm 2mm 2mm;
-  border: .25mm solid var(--hz-line);
-  background: var(--hz-paper);
-}
-
-.l2c-mini-tree__row {
+/* The family tree is support, not the dominant page composition. */
+.l2c-family-strip {
   position: relative;
   display: grid;
+  grid-template-columns: 1fr 12mm 1fr;
+  gap: 2.5mm;
+  align-items: center;
+  margin-top: 2.8mm;
+  padding-top: 2.5mm;
+  border-top: .25mm solid var(--hz-line);
+}
+
+.l2c-family-strip__parents,
+.l2c-family-strip__children {
+  display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 3.5mm;
+  gap: 2.4mm;
 }
 
-.l2c-mini-tree__row--parents { padding-bottom: 3mm; }
-
-.l2c-mini-tree__row--parents::after {
-  content: "";
-  position: absolute;
-  right: 24%;
-  bottom: 0;
-  left: 24%;
-  height: .25mm;
-  background: var(--hz-line-strong);
-}
-
-.l2c-mini-tree__link {
-  position: relative;
-  width: 52%;
-  height: 6mm;
-  margin: 0 auto;
-}
-
-.l2c-mini-tree__link::before,
-.l2c-mini-tree__link::after {
-  content: "";
-  position: absolute;
-  background: var(--hz-line-strong);
-}
-
-.l2c-mini-tree__link::before {
-  top: 0;
-  bottom: 0;
-  left: 50%;
-  width: .25mm;
-  transform: translateX(-50%);
-}
-
-.l2c-mini-tree__link::after {
-  right: 0;
-  bottom: 0;
-  left: 0;
-  height: .25mm;
-}
-
-.l2c-mini-tree__row--children .l2c-mini-person::before {
-  content: "";
-  position: absolute;
-  top: -3mm;
-  left: 50%;
-  width: .25mm;
-  height: 3mm;
-  background: var(--hz-line-strong);
-  transform: translateX(-50%);
-}
-
-.l2c-mini-person {
-  position: relative;
+.l2c-family-strip figure {
   min-width: 0;
   margin: 0;
 }
 
-.l2c-mini-person .hz-photo-placeholder {
-  height: 24mm;
-  min-height: 24mm;
-  font-size: 4.4pt;
-  letter-spacing: .045em;
+.l2c-family-strip .hz-photo-placeholder {
+  height: 17mm;
+  min-height: 17mm;
+  font-size: 4pt;
+  letter-spacing: .04em;
 }
 
-.l2c-mini-person .hz-photo-placeholder::before { inset: 2mm; }
-.l2c-mini-person .hz-photo-placeholder::after { width: 16mm; }
-.l2c-mini-person .hz-photo-placeholder__meta { padding: .55mm .7mm; }
+.l2c-family-strip .hz-photo-placeholder::before { inset: 1.7mm; }
+.l2c-family-strip .hz-photo-placeholder::after { width: 13mm; }
+.l2c-family-strip .hz-photo-placeholder__meta { padding: .45mm .6mm; }
 
-.l2c-mini-person figcaption {
+.l2c-family-strip figcaption {
   display: grid;
-  gap: .15mm;
-  margin-top: .65mm;
-  font-size: 6.5pt;
+  gap: .1mm;
+  margin-top: .5mm;
+  font-size: 5.9pt;
   line-height: 1.12;
 }
 
-.l2c-mini-person figcaption strong {
+.l2c-family-strip figcaption strong {
   color: var(--hz-unit-dark);
   font-weight: var(--hz-fw-black);
 }
 
-.l2c-mini-person figcaption span { color: var(--hz-muted); }
+.l2c-family-strip figcaption span { color: var(--hz-muted); }
 
-/* ---------- Exercise 4: compact comprehension ---------- */
+.l2c-family-strip__branch {
+  position: relative;
+  height: 18mm;
+}
 
-.l2c-reading-check-exercise { padding-top: .55mm; }
-.l2c-reading-check { gap: .35mm 6mm; }
-.l2c-reading-check .hz-question {
+.l2c-family-strip__branch::before,
+.l2c-family-strip__branch::after {
+  content: "";
+  position: absolute;
+  background: var(--hz-line-strong);
+}
+
+.l2c-family-strip__branch::before {
+  top: 50%;
+  right: 0;
+  left: 0;
+  height: .25mm;
+}
+
+.l2c-family-strip__branch::after {
+  top: 4mm;
+  bottom: 4mm;
+  left: 50%;
+  width: .25mm;
+  transform: translateX(-50%);
+}
+
+/* ---------- Exercise 3: reading check ---------- */
+
+.l2c-check-exercise { padding-top: .55mm; }
+.l2c-check-grid { gap: .35mm 6mm; }
+
+.l2c-check-grid .hz-question {
   padding: .25mm 0;
   font-size: 7.9pt;
   line-height: 1.25;
 }
-.l2c-reading-check strong { color: var(--hz-unit-dark); }
 
-/* ---------- Page 18: grammar/practice density ---------- */
+/* ---------- Page 18 ---------- */
 
 .l2c-page--2 .hz-exercises { padding-top: 13.5mm !important; }
-.l2c-page--2 .hz-page-stack { gap: .9mm; }
-.l2c-page--2 .hz-exercise { padding-top: .7mm; padding-bottom: 1.05mm; }
+.l2c-page--2 .hz-page-stack { gap: .95mm; }
+.l2c-page--2 .hz-exercise { padding-top: .72mm; padding-bottom: 1.05mm; }
 .l2c-page--2 .hz-exercise__body { margin-top: .75mm; }
 
-.l2c-notice { gap: .2mm; }
-.l2c-notice .hz-question {
+/* Exercise 4: noticing */
+.l2c-notice-grid { gap: .2mm; }
+
+.l2c-notice-grid .hz-question {
   padding: .2mm 0;
   font-size: 7.9pt;
   line-height: 1.28;
 }
-.l2c-notice strong { color: var(--hz-unit-dark); }
 
-/* ---------- Grammar box ---------- */
+.l2c-notice-grid strong { color: var(--hz-unit-dark); }
 
+/* Grammar focus */
 .l2c-grammar {
   margin: .35mm 0 .15mm calc(var(--hz-exercise-marker-size) + 3mm);
   padding-top: 2.5mm;
@@ -238,35 +236,48 @@
 
 .l2c-grammar-body {
   display: grid;
-  gap: 1mm;
+  grid-template-columns: .9fr 1.1fr;
+  gap: 4mm;
+  align-items: center;
 }
 
-.l2c-grammar-row {
-  display: grid;
-  grid-template-columns: 17mm 1fr 6mm 1fr;
-  gap: 1.4mm;
+.l2c-grammar-pattern {
+  display: flex;
   align-items: baseline;
-  font-size: 7.9pt;
+  justify-content: center;
+  gap: 1.4mm;
+  min-height: 13mm;
+  padding-right: 4mm;
+  border-right: .25mm solid rgb(32 33 36 / 18%);
+  font-size: 8pt;
+}
+
+.l2c-grammar-pattern strong {
+  color: var(--hz-unit-dark);
+  font-size: 10pt;
+  font-weight: var(--hz-fw-black);
+}
+
+.l2c-grammar-pattern b {
+  color: var(--hz-muted);
+  font-weight: var(--hz-fw-bold);
+}
+
+.l2c-grammar-examples {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: .8mm 4mm;
+  font-size: 7.8pt;
   line-height: 1.25;
 }
 
-.l2c-grammar-row strong,
-.l2c-grammar-row b {
+.l2c-grammar-examples strong {
   color: var(--hz-unit-dark);
   font-weight: var(--hz-fw-black);
 }
 
-.l2c-grammar-label {
-  color: var(--hz-muted);
-  font-size: 6.7pt;
-  font-weight: var(--hz-fw-black);
-  letter-spacing: .055em;
-  text-transform: uppercase;
-}
-
-/* ---------- Exercise 6 ---------- */
-
-.l2c-complete-grid { gap: .35mm 7mm; }
+/* Exercise 5 */
+.l2c-complete-grid { gap: .4mm 7mm; }
 
 .l2c-complete-item {
   display: grid;
@@ -291,35 +302,73 @@
   vertical-align: baseline;
 }
 
-/* ---------- Exercise 7 ---------- */
+/* Exercise 6: visual ownership practice */
+.l2c-items-exercise { padding-top: .6mm; }
 
-.l2c-phrase-grid { gap: .55mm 7mm; }
-
-.l2c-phrase-grid > div {
+.l2c-owner-photos {
   display: grid;
-  grid-template-columns: 5mm 29mm minmax(24mm, 1fr);
-  gap: 1mm 2mm;
-  align-items: end;
-  font-size: 7.9pt;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 2.6mm;
 }
 
-.l2c-phrase-grid b {
+.l2c-owner-photos figure {
+  width: 100%;
+  margin: 0;
+}
+
+.l2c-owner-photos .hz-photo-placeholder {
+  height: 23mm;
+  min-height: 23mm;
+  font-size: 4.7pt;
+  letter-spacing: .045em;
+}
+
+.l2c-owner-photos .hz-photo-placeholder::before { inset: 2mm; }
+.l2c-owner-photos .hz-photo-placeholder::after { width: 16mm; }
+.l2c-owner-photos .hz-photo-placeholder__meta { padding: .55mm .7mm; }
+
+.l2c-owner-photos figcaption {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 1.4mm;
+  margin-top: .55mm;
+  font-size: 6.3pt;
+  line-height: 1.1;
+}
+
+.l2c-owner-photos figcaption strong {
   color: var(--hz-unit-dark);
   font-weight: var(--hz-fw-black);
 }
 
-.l2c-phrase-grid .hz-answer-line {
-  width: 100%;
-  min-width: 24mm;
+.l2c-owner-photos figcaption span { color: var(--hz-muted); }
+
+.l2c-owner-lines {
+  gap: .7mm 7mm;
+  margin-top: 1.2mm;
 }
 
-/* ---------- Exercise 8 ---------- */
-
-.l2c-pairwork {
+.l2c-owner-lines > div {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 5mm;
+  grid-template-columns: 5mm minmax(0, 1fr);
+  gap: 1mm;
+  align-items: end;
 }
+
+.l2c-owner-lines b {
+  color: var(--hz-unit-dark);
+  font-size: 7pt;
+  font-weight: var(--hz-fw-black);
+}
+
+.l2c-owner-lines .hz-answer-line {
+  width: 100%;
+  min-width: 0;
+}
+
+/* Exercise 7 */
+.l2c-pairwork { gap: 5mm; }
 
 .l2c-pair-model {
   padding-left: 2.8mm;
