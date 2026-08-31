@@ -4757,8 +4757,8 @@ body.hz-debug .hz-page::after {
 
 /* Horizons/A1/Lessons/lesson-2c-local.css */
 /* Horizons A1 — Lesson 2C scoped styles.
-   Full rebuild: compact photo lead-in, editorial reading feature, subordinate
-   photo-based family tree, then focused possessive-case practice. */
+   Compact photo lead-in, editorial reading feature, functional family tree,
+   and possessive-form practice using canonical Horizons components. */
 
 .l2c-page {
   --hz-unit: var(--hz-unit-1);
@@ -4779,8 +4779,7 @@ body.hz-debug .hz-page::after {
 
 .l2c-lead-exercise { padding-bottom: 1mm; }
 
-/* Exercise 1 stays inside the content lane so the first photo cannot enter
-   the exercise-number gutter. */
+/* Keep the image family out of the exercise-number gutter. */
 .l2c-lead-exercise .l2c-lead-photos {
   margin-left: 1.5mm !important;
   width: calc(100% - 1.5mm) !important;
@@ -4805,17 +4804,6 @@ body.hz-debug .hz-page::after {
   object-fit: cover;
   object-position: center;
 }
-
-.l2c-lead-photos .hz-photo-placeholder {
-  height: 30mm;
-  min-height: 30mm;
-  font-size: 5.1pt;
-  letter-spacing: .05em;
-}
-
-.l2c-lead-photos .hz-photo-placeholder::before { inset: 2.5mm; }
-.l2c-lead-photos .hz-photo-placeholder::after { width: 23mm; }
-.l2c-lead-photos .hz-photo-placeholder__meta { padding: .8mm 1.2mm; }
 
 /* ---------- Exercise 2: editorial reading feature ---------- */
 
@@ -4874,14 +4862,6 @@ body.hz-debug .hz-page::after {
   object-position: center;
 }
 
-.l2c-family-photo .hz-photo-placeholder {
-  height: 60mm;
-  min-height: 60mm;
-  font-size: 5pt;
-  letter-spacing: .055em;
-}
-
-.l2c-family-photo .hz-photo-placeholder::before { inset: 3mm; }
 .l2c-family-photo figcaption {
   margin-top: .9mm;
   color: var(--hz-muted);
@@ -4904,7 +4884,7 @@ body.hz-debug .hz-page::after {
 
 .l2c-reading-copy p:last-child { margin-bottom: 0; }
 
-/* The family tree is support, not the dominant page composition. */
+/* The family tree remains support for the reading and now carries a task. */
 .l2c-family-strip {
   position: relative;
   display: grid;
@@ -4937,22 +4917,11 @@ body.hz-debug .hz-page::after {
   object-position: center 30%;
 }
 
-.l2c-family-strip .hz-photo-placeholder {
-  height: 17mm;
-  min-height: 17mm;
-  font-size: 4pt;
-  letter-spacing: .04em;
-}
-
-.l2c-family-strip .hz-photo-placeholder::before { inset: 1.7mm; }
-.l2c-family-strip .hz-photo-placeholder::after { width: 13mm; }
-.l2c-family-strip .hz-photo-placeholder__meta { padding: .45mm .6mm; }
-
 .l2c-family-strip figcaption {
   display: grid;
-  gap: .1mm;
+  gap: .25mm;
   margin-top: .5mm;
-  font-size: 5.9pt;
+  font-size: 5.8pt;
   line-height: 1.12;
 }
 
@@ -4961,7 +4930,19 @@ body.hz-debug .hz-page::after {
   font-weight: var(--hz-fw-black);
 }
 
-.l2c-family-strip figcaption span { color: var(--hz-muted); }
+.l2c-family-strip figcaption > span { color: var(--hz-muted); }
+
+.l2c-family-job {
+  display: flex;
+  align-items: end;
+  gap: .8mm;
+  white-space: nowrap;
+}
+
+.l2c-family-job .hz-answer-line {
+  width: 17mm;
+  min-width: 0;
+}
 
 .l2c-family-strip__branch {
   position: relative;
@@ -5008,56 +4989,28 @@ body.hz-debug .hz-page::after {
 .l2c-page--2 .hz-exercise { padding-top: .72mm; padding-bottom: 1.05mm; }
 .l2c-page--2 .hz-exercise__body { margin-top: .75mm; }
 
-/* Exercise 4: noticing */
-.l2c-notice-grid { gap: .2mm; }
-
-.l2c-notice-grid .hz-question {
-  padding: .2mm 0;
-  font-size: 7.9pt;
-  line-height: 1.28;
-}
-
-.l2c-notice-grid strong { color: var(--hz-unit-dark); }
-
-/* Grammar focus */
+/* Grammar focus: canonical shell, simple body grid, no local dividers. */
 .l2c-grammar {
   margin: .35mm 0 .15mm calc(var(--hz-exercise-marker-size) + 3mm);
-  padding-top: 2.3mm;
-  padding-bottom: 2.4mm;
 }
 
-.l2c-grammar-body { display: block; }
+.l2c-grammar-grid { gap: 4mm; }
 
-.l2c-grammar-rules {
-  display: grid;
-  gap: 0;
+.l2c-grammar-grid > div {
+  font-size: 7.6pt;
+  line-height: 1.25;
 }
 
-.l2c-grammar-rule {
-  display: grid;
-  grid-template-columns: 34mm 35mm minmax(0, 1fr);
-  gap: 3mm;
-  align-items: baseline;
-  padding: .7mm 0;
-  font-size: 7.7pt;
-  line-height: 1.2;
-}
-
-.l2c-grammar-rule + .l2c-grammar-rule {
-  border-top: .2mm solid rgb(32 33 36 / 13%);
-}
-
-.l2c-grammar-rule__label {
-  color: var(--hz-muted);
-  font-size: 6.6pt;
-  font-weight: var(--hz-fw-bold);
-  letter-spacing: .02em;
-}
-
-.l2c-grammar-rule strong {
+.l2c-grammar-grid > div > strong {
+  display: block;
+  margin-bottom: .7mm;
   color: var(--hz-unit-dark);
+  font-size: 7.5pt;
   font-weight: var(--hz-fw-black);
 }
+
+.l2c-grammar-grid p { margin: 0 0 .45mm; }
+.l2c-grammar-grid b { color: var(--hz-unit-dark); }
 
 /* Exercise 5 */
 .l2c-complete-grid { gap: .4mm 7mm; }
@@ -5085,11 +5038,10 @@ body.hz-debug .hz-page::after {
   vertical-align: baseline;
 }
 
-/* Exercise 6: visual ownership practice */
+/* Exercise 6: visual sentence-building practice */
 .l2c-items-exercise { padding-top: .6mm; }
 
-/* Exercise 6 stays inside the content lane. The shared full-lane utility
-   intentionally enters the number gutter, which is not appropriate here. */
+/* Keep the image family out of the exercise-number gutter. */
 .l2c-items-exercise .l2c-owner-photos {
   margin-left: 1.5mm !important;
   width: calc(100% - 1.5mm) !important;
@@ -5116,37 +5068,36 @@ body.hz-debug .hz-page::after {
   background: #fff;
 }
 
-.l2c-owner-photos .hz-photo-placeholder {
-  height: 23mm;
-  min-height: 23mm;
-  font-size: 4.7pt;
-  letter-spacing: .045em;
-}
-
-.l2c-owner-photos .hz-photo-placeholder::before { inset: 2mm; }
-.l2c-owner-photos .hz-photo-placeholder::after { width: 16mm; }
-.l2c-owner-photos .hz-photo-placeholder__meta { padding: .55mm .7mm; }
-
 .l2c-owner-photos figcaption {
-  display: flex;
-  align-items: baseline;
-  justify-content: space-between;
-  gap: 1.4mm;
-  margin-top: .55mm;
-  font-size: 6.3pt;
-  line-height: 1.1;
+  display: grid;
+  justify-items: center;
+  gap: .35mm;
+  margin-top: .6mm;
+  font-size: 6pt;
+  line-height: 1.15;
+  text-align: center;
 }
 
-.l2c-owner-photos figcaption strong {
+.l2c-owner-number {
   color: var(--hz-unit-dark);
   font-weight: var(--hz-fw-black);
 }
 
-.l2c-owner-photos figcaption span { color: var(--hz-muted); }
+.l2c-owner-photos figcaption strong {
+  color: var(--hz-ink);
+  font-weight: var(--hz-fw-bold);
+}
+
+.l2c-owner-example {
+  color: var(--hz-muted);
+  font-size: 5.6pt;
+  font-style: italic;
+}
 
 .l2c-owner-lines {
-  gap: .7mm 7mm;
-  margin-top: 1.2mm;
+  display: grid;
+  gap: .75mm;
+  margin: 1.2mm 0 0 1.5mm;
 }
 
 .l2c-owner-lines > div {
@@ -5167,18 +5118,16 @@ body.hz-debug .hz-page::after {
   min-width: 0;
 }
 
-/* Exercise 7 */
+/* Exercise 7: plain dialogue models; no decorative side strips. */
 .l2c-pairwork { gap: 5mm; }
 
-.l2c-pair-model {
-  padding-left: 2.8mm;
-  border-left: .8mm solid var(--hz-unit);
+.l2c-pairwork .hz-dialogue-text {
   font-size: 8pt;
   line-height: 1.3;
 }
 
-.l2c-pair-model p { margin: 0; }
-.l2c-pair-model p + p { margin-top: .5mm; }
+.l2c-pairwork p { margin: 0; }
+.l2c-pairwork p + p { margin-top: .5mm; }
 
 .l2c-extra {
   margin-left: calc(var(--hz-exercise-marker-size) + 3mm);
@@ -5189,6 +5138,7 @@ body.hz-debug .hz-page::after {
   .l2c-page,
   .l2c-page * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
 }
+
 
 /* Student's Book unifier */
 
@@ -6795,7 +6745,7 @@ body {
           <section class="hz-exercise l2c-reading-exercise">
             <div class="hz-exercise-number">2</div>
             <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction">Read.</p>
+              <p class="hz-exercise__instruction">Read. Write the occupations.</p>
               <div class="hz-exercise__body l2c-reading-feature">
                 <header class="l2c-reading-feature__head">
                   <span>FAMILY AT WORK</span>
@@ -6818,26 +6768,42 @@ body {
                   </article>
                 </div>
 
-                <div class="l2c-family-strip" aria-label="Rivera family tree">
+                <div class="l2c-family-strip" aria-label="Rivera family tree and occupations">
                   <div class="l2c-family-strip__parents">
                     <figure data-image-slot="HZN_A1_U02_LC_E02_IMG_02">
                       <img src="./Images/2C/2C_05_diego_portrait---d9bd7436-309f-44a9-a617-db0b14cc93a6.png" alt="Diego">
-                      <figcaption><strong>Diego</strong><span>father · chef</span></figcaption>
+                      <figcaption>
+                        <strong>Diego</strong>
+                        <span>father</span>
+                        <span class="l2c-family-job">Occupation: <span class="hz-answer-line"></span></span>
+                      </figcaption>
                     </figure>
                     <figure data-image-slot="HZN_A1_U02_LC_E02_IMG_03">
                       <img src="./Images/2C/2C_06_elena_portrait---0eb5ea54-a496-46ac-972e-b5f748c9454a.png" alt="Elena">
-                      <figcaption><strong>Elena</strong><span>mother · receptionist</span></figcaption>
+                      <figcaption>
+                        <strong>Elena</strong>
+                        <span>mother</span>
+                        <span class="l2c-family-job">Occupation: <span class="hz-answer-line"></span></span>
+                      </figcaption>
                     </figure>
                   </div>
                   <div class="l2c-family-strip__branch" aria-hidden="true"></div>
                   <div class="l2c-family-strip__children">
                     <figure data-image-slot="HZN_A1_U02_LC_E02_IMG_04">
                       <img src="./Images/2C/2C_07_nico_portrait---72fb51d5-7e92-4b2d-8331-534a0c76bbea.png" alt="Nico">
-                      <figcaption><strong>Nico</strong><span>son · student</span></figcaption>
+                      <figcaption>
+                        <strong>Nico</strong>
+                        <span>son</span>
+                        <span class="l2c-family-job">Occupation: <span class="hz-answer-line"></span></span>
+                      </figcaption>
                     </figure>
                     <figure data-image-slot="HZN_A1_U02_LC_E02_IMG_05">
                       <img src="./Images/2C/2C_08_sofia_portrait---4992441c-d0de-4403-af8a-652b1abbb860.png" alt="Sofía">
-                      <figcaption><strong>Sofía</strong><span>daughter · student</span></figcaption>
+                      <figcaption>
+                        <strong>Sofía</strong>
+                        <span>daughter</span>
+                        <span class="l2c-family-job">Occupation: <span class="hz-answer-line"></span></span>
+                      </figcaption>
                     </figure>
                   </div>
                 </div>
@@ -6889,22 +6855,22 @@ body {
 
           <section class="hz-focus-box hz-no-break l2c-grammar" aria-label="Grammar: possessive forms">
             <header class="hz-focus-box__header">GRAMMAR: POSSESSIVE FORMS</header>
-            <div class="hz-focus-box__body l2c-grammar-body">
-              <div class="l2c-grammar-rules">
-                <div class="l2c-grammar-rule">
-                  <span class="l2c-grammar-rule__label">name</span>
-                  <span>Diego + <strong>'s</strong></span>
-                  <span><strong>Diego's</strong> phone</span>
+            <div class="hz-focus-box__body">
+              <div class="hz-content-grid hz-content-grid--3 l2c-grammar-grid">
+                <div>
+                  <strong>NAME</strong>
+                  <p>Diego + <b>'s</b></p>
+                  <p><b>Diego's</b> phone</p>
                 </div>
-                <div class="l2c-grammar-rule">
-                  <span class="l2c-grammar-rule__label">name ending in s</span>
-                  <span>Carlos + <strong>'s</strong></span>
-                  <span><strong>Carlos's</strong> keys</span>
+                <div>
+                  <strong>NAME ENDING IN S</strong>
+                  <p>Carlos + <b>'s</b></p>
+                  <p><b>Carlos's</b> keys</p>
                 </div>
-                <div class="l2c-grammar-rule">
-                  <span class="l2c-grammar-rule__label">plural ending in s</span>
-                  <span>parents + <strong>'</strong></span>
-                  <span><strong>parents'</strong> restaurant</span>
+                <div>
+                  <strong>PLURAL ENDING IN S</strong>
+                  <p>parents + <b>'</b></p>
+                  <p><b>parents'</b> restaurant</p>
                 </div>
               </div>
             </div>
@@ -6930,28 +6896,40 @@ body {
           <section class="hz-exercise l2c-items-exercise">
             <div class="hz-exercise-number">6</div>
             <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction">Look. Use the prompts. Write complete sentences.</p>
+              <p class="hz-exercise__instruction">Look at the pictures and prompts. Write sentences.</p>
               <div class="hz-exercise__body">
                 <div class="hz-media-family hz-media-family--full-lane l2c-owner-photos">
                   <figure data-image-slot="HZN_A1_U02_LC_E06_IMG_01">
                     <img src="./Images/2C/object_cellphone_white_background_1x1---96e0df3b-9856-499d-aed6-f45479e140a0.png" alt="A cell phone">
-                    <figcaption><strong>Diego</strong><span>this</span></figcaption>
+                    <figcaption>
+                      <span class="l2c-owner-number">1</span>
+                      <strong>Diego / cellphone / black</strong>
+                      <span class="l2c-owner-example">Example: Diego's cellphone is black.</span>
+                    </figcaption>
                   </figure>
                   <figure data-image-slot="HZN_A1_U02_LC_E06_IMG_02">
                     <img src="./Images/2C/object_keys_white_background_1x1---371a739d-bc15-453f-b252-06bd997521db.png" alt="Keys">
-                    <figcaption><strong>Lucas</strong><span>those</span></figcaption>
+                    <figcaption>
+                      <span class="l2c-owner-number">2</span>
+                      <strong>Lucas / keys / silver</strong>
+                    </figcaption>
                   </figure>
                   <figure data-image-slot="HZN_A1_U02_LC_E06_IMG_03">
                     <img src="./Images/2C/object_notebook_white_background_1x1---538237db-0921-4409-ad5d-42c85bc41df7.png" alt="A notebook">
-                    <figcaption><strong>the students</strong><span>that</span></figcaption>
+                    <figcaption>
+                      <span class="l2c-owner-number">3</span>
+                      <strong>the students / notebook / blue</strong>
+                    </figcaption>
                   </figure>
                   <figure data-image-slot="HZN_A1_U02_LC_E06_IMG_04">
                     <img src="./Images/2C/object_bottle_white_background_1x1---99c75d3b-f8fc-47f7-892c-0784827f0f4c.png" alt="A bottle">
-                    <figcaption><strong>the parents</strong><span>this</span></figcaption>
+                    <figcaption>
+                      <span class="l2c-owner-number">4</span>
+                      <strong>the parents / bottle / white</strong>
+                    </figcaption>
                   </figure>
                 </div>
-                <div class="hz-content-grid hz-content-grid--2 l2c-owner-lines">
-                  <div><b>1</b><span class="hz-answer-line"></span></div>
+                <div class="l2c-owner-lines">
                   <div><b>2</b><span class="hz-answer-line"></span></div>
                   <div><b>3</b><span class="hz-answer-line"></span></div>
                   <div><b>4</b><span class="hz-answer-line"></span></div>
@@ -6965,11 +6943,11 @@ body {
             <div class="hz-exercise__content">
               <p class="hz-exercise__instruction">Work in pairs. Use real items. Ask and answer.</p>
               <div class="hz-exercise__body hz-content-grid hz-content-grid--2 l2c-pairwork">
-                <div class="l2c-pair-model hz-dialogue-text">
+                <div class="hz-dialogue-text">
                   <p><strong>A:</strong> Is this Sara's phone?</p>
                   <p><strong>B:</strong> Yes. It is Sara's phone.</p>
                 </div>
-                <div class="l2c-pair-model hz-dialogue-text">
+                <div class="hz-dialogue-text">
                   <p><strong>A:</strong> Are these the students' keys?</p>
                   <p><strong>B:</strong> No. They are Lucas's keys.</p>
                 </div>
