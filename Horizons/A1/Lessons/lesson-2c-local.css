@@ -305,6 +305,13 @@
 /* Exercise 6: visual ownership practice */
 .l2c-items-exercise { padding-top: .6mm; }
 
+/* Exercise 6 stays inside the content lane. The shared full-lane utility
+   intentionally enters the number gutter, which is not appropriate here. */
+.l2c-items-exercise .l2c-owner-photos {
+  margin-left: 1.5mm !important;
+  width: calc(100% - 1.5mm) !important;
+}
+
 .l2c-owner-photos {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
