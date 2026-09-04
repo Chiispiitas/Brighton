@@ -19,7 +19,11 @@ Paragraph numbers below are 1-based and follow the paragraph order after import.
 - NARRATOR: 1
 
 ## 1A — Track 1.5
-- NARRATOR: 1
+- INTERVIEWER: 1, 3, 5, 7, 9, 11, 13, 15
+- STEPHEN: 2, 4
+- ALLISON: 6, 8
+- BRYAN: 10, 12
+- LINDSAY: 14, 16
 
 ## 1A — Track 1.6
 - NARRATOR: 1
