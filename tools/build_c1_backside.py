@@ -81,14 +81,11 @@ def main():
     else:
         raise RuntimeError("Could not locate the grade-chart content stream")
 
-    # Reuse the exact embedded fonts from the B2 master.
+    # Capture the exact embedded fonts from the B2 master before redaction.
+    # They are re-registered afterward because redaction can rebuild resources.
     title_buffer = get_font_buffer(doc, page, "F2")
     body_buffer = get_font_buffer(doc, page, "F3")
     bold_buffer = get_font_buffer(doc, page, "F5")
-
-    page.insert_font(fontname="C1Title", fontbuffer=title_buffer)
-    page.insert_font(fontname="C1Body", fontbuffer=body_buffer)
-    page.insert_font(fontname="C1Bold", fontbuffer=bold_buffer)
 
     # Remove only the B2-specific text. Graphics, rules, images and the CEFR
     # alignment design remain untouched.
@@ -110,6 +107,12 @@ def main():
     except AttributeError:
         # Compatibility fallback for older PyMuPDF versions.
         page.apply_redactions(images=0, graphics=0)
+
+    # Re-register the original B2 fonts after redaction so inserted C1 copy
+    # uses the same typography as the master PDF.
+    page.insert_font(fontname="C1Title", fontbuffer=title_buffer)
+    page.insert_font(fontname="C1Body", fontbuffer=body_buffer)
+    page.insert_font(fontname="C1Bold", fontbuffer=bold_buffer)
 
     # Title - same baseline, size, font and color as B2.
     insert_line(page, 36, 790.32, "C1 ADVANCED", "C1Title", 15.96, TITLE_COLOR)
