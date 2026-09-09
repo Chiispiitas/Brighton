@@ -1,0 +1,22 @@
+name: Inspect certificate backsides
+
+on:
+  push:
+    branches:
+      - fix-c1-b1plus-backsides
+    paths:
+      - '.github/workflows/inspect-certificate-backsides.yml'
+      - 'tools/inspect_certificate_backsides.py'
+
+jobs:
+  inspect:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: fix-c1-b1plus-backsides
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - run: python -m pip install --upgrade pymupdf
+      - run: python tools/inspect_certificate_backsides.py
