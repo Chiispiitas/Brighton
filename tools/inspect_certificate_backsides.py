@@ -35,9 +35,10 @@ def main():
     c1 = fitz.open(C1)
     page = c1[0]
 
+    # Clear the entire two-column text region so no fragment of the old
+    # overflowing line can survive into the neighboring column.
     for rect in [
-        fitz.Rect(30, 150, 294, 232),   # left assessment paragraph
-        fitz.Rect(300, 225, 570, 262),  # further-information lines
+        fitz.Rect(30, 90, 570, 265),    # complete upper two-column text area
         fitz.Rect(300, 580, 570, 662),  # program-level paragraph containing B1+
     ]:
         page.add_redact_annot(rect, fill=(1, 1, 1))
@@ -54,8 +55,10 @@ def main():
     page.insert_font(fontname='C1Poppins', fontfile=str(FONT_REGULAR))
     page.insert_font(fontname='C1PoppinsBold', fontfile=str(FONT_BOLD))
 
-    # Re-wrap the C1 assessment copy so the first column never crosses x=294.
+    # Left column.
     left_lines = [
+        (736.30, 'C1 Advanced is a level on the Common European'),
+        (721.30, 'Framework of Reference for Languages (CEFR).'),
         (676.30, 'At the end of the course, students take an adapted'),
         (661.30, 'diagnostic version of the Cambridge English'),
         (646.30, 'Qualifications C1 Advanced exam, which tests'),
@@ -65,11 +68,28 @@ def main():
     for y, text in left_lines:
         draw(page, LEFT_X, y, text, 'C1Poppins')
 
-    # Keep the further-information note inside the right column too.
+    # Right column.
+    right_regular = [
+        (736.30, 'Results are reported using scores on the'),
+        (721.30, 'Cambridge English Scale and certificates are'),
+        (706.30, 'awarded to candidates who achieve the following'),
+        (691.30, 'grades:'),
+    ]
+    for y, text in right_regular:
+        draw(page, RIGHT_X, y, text, 'C1Poppins')
+
+    grade_lines = [
+        (661.30, 'Distinction   CEFR Level C2 (80%-100%)'),
+        (646.30, 'Merit        CEFR Level C1 (75%-79%)'),
+        (631.30, 'Pass         CEFR Level C1 (60%-74%)'),
+    ]
+    for y, text in grade_lines:
+        draw(page, RIGHT_X, y, text, 'C1PoppinsBold')
+
     draw(page, RIGHT_X, 601.30, 'Further information about C1 Advanced can be', 'C1Poppins')
     draw(page, RIGHT_X, 586.27, 'found at www.cambridgeenglish.org', 'C1PoppinsBold')
 
-    # Rebuild the program paragraph with a full font so B1+ renders correctly.
+    # Bottom-right copy rebuilt with a full font so B1+ renders correctly.
     bottom_lines = [
         (250.73, 'The program is composed of six levels: A1, A2, B1,'),
         (235.70, 'B1+, B2, and C1; each consisting of 82 hours of'),
@@ -88,6 +108,7 @@ def main():
     p = check[0]
     text = p.get_text()
     required = [
+        'C1 Advanced is a level on the Common European',
         'Qualifications C1 Advanced exam, which tests',
         'Reading and Use of English, Writing, and Listening.',
         'B1+, B2, and C1',
@@ -103,9 +124,9 @@ def main():
     right_overflow = []
     bottom_overflow = []
     for x0, y0, x1, y1, block_text, *_ in p.get_text('blocks'):
-        if 150 <= y0 <= 232 and x0 < 300 and x1 > 294:
+        if 90 <= y0 <= 265 and x0 < 300 and x1 > 294:
             left_overflow.append((x0, y0, x1, y1, block_text.strip()))
-        if 225 <= y0 <= 262 and x0 >= 300 and x1 > 570:
+        if 90 <= y0 <= 265 and x0 >= 300 and x1 > 570:
             right_overflow.append((x0, y0, x1, y1, block_text.strip()))
         if 580 <= y0 <= 662 and x0 >= 300 and x1 > 570:
             bottom_overflow.append((x0, y0, x1, y1, block_text.strip()))
@@ -116,7 +137,7 @@ def main():
     if bottom_overflow:
         raise RuntimeError(f'Bottom-right overflow remains: {bottom_overflow}')
 
-    # The original B1+ backside already encodes '+' correctly; verify we did not alter it.
+    # The separate B1+ backside already encodes '+' correctly; verify it remains untouched.
     donor_check = fitz.open(B1PLUS)
     donor_text = donor_check[0].get_text()
     donor_check.close()
@@ -126,7 +147,7 @@ def main():
     pix = p.get_pixmap(matrix=fitz.Matrix(1.5, 1.5), alpha=False)
     print(f'Verified corrected C1 backside: {C1} ({C1.stat().st_size} bytes)')
     print(f'Render: {pix.width} x {pix.height}px')
-    print('Corrected C1 text stays inside all intended columns.')
+    print('Corrected C1 text stays inside both columns and the bottom program area.')
     print('B1+ renders with an actual plus character in the C1 program text.')
     check.close()
 
