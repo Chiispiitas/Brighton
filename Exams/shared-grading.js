@@ -5,6 +5,7 @@
 ============================================== */
 
 (function () {
+  const VERSION_SEPARATOR = "@@";
   const COMMON_CONTRACTIONS = [
     [/\baren't\b/gi, "are not"], [/\bisn't\b/gi, "is not"], [/\bwasn't\b/gi, "was not"], [/\bweren't\b/gi, "were not"],
     [/\bdon't\b/gi, "do not"], [/\bdoesn't\b/gi, "does not"], [/\bdidn't\b/gi, "did not"],
@@ -133,17 +134,62 @@
     return (` ${normalizedText} `).includes(` ${normalizedPhrase} `);
   }
 
+  /* ----------------------------------------------
+  VERSIONED ASSESSMENT ID
+  ---------------------------------------------- */
+  function splitVersionedAssessmentId(value, explicitVersion = "") {
+    const raw = String(value || "").trim();
+    const requestedVersion = normalizeVersion(explicitVersion);
+    const separatorIndex = raw.lastIndexOf(VERSION_SEPARATOR);
+    if (separatorIndex < 0) return { assessmentId: raw, answerKeyVersion: requestedVersion };
+
+    const assessmentId = raw.slice(0, separatorIndex).trim();
+    const embeddedVersion = normalizeVersion(raw.slice(separatorIndex + VERSION_SEPARATOR.length));
+    return {
+      assessmentId,
+      answerKeyVersion: requestedVersion || embeddedVersion
+    };
+  }
+
+  function normalizeVersion(value) {
+    const version = String(value || "").trim();
+    return /^[A-Za-z0-9._-]{1,80}$/.test(version) ? version : "";
+  }
+
   /* ---------------------------------------------- 
   LOAD ANSWER KEY 
   ---------------------------------------------- */
-  async function loadAnswerKey(examId) {
-    const response = await fetch(`answer-keys/${encodeURIComponent(examId)}.json`, {
+  async function loadAnswerKey(examId, explicitVersion = "") {
+    const { assessmentId, answerKeyVersion } = splitVersionedAssessmentId(examId, explicitVersion);
+    if (!assessmentId) throw new Error("Missing assessment ID");
+
+    const path = answerKeyVersion
+      ? `answer-keys/versions/${encodeURIComponent(answerKeyVersion)}/${encodeURIComponent(assessmentId)}.json`
+      : `answer-keys/${encodeURIComponent(assessmentId)}.json`;
+
+    const response = await fetch(path, {
       cache: "no-store",
       headers: { Accept: "application/json" }
     });
-    if (!response.ok) throw new Error(`Could not load answer key for ${examId}`);
-    return response.json();
+    if (!response.ok) {
+      const versionLabel = answerKeyVersion ? ` version ${answerKeyVersion}` : "";
+      throw new Error(`Could not load answer key for ${assessmentId}${versionLabel}`);
+    }
+    const key = await response.json();
+    if (key && typeof key === "object") {
+      key._answerKeyVersion = answerKeyVersion || "current";
+      key._assessmentId = assessmentId;
+    }
+    return key;
   }
 
-  window.BrightonGrading = { normalizeAnswer, countAnswerWords, flattenAnswers, gradeSubmission, gradeOne, loadAnswerKey };
+  window.BrightonGrading = {
+    normalizeAnswer,
+    countAnswerWords,
+    flattenAnswers,
+    gradeSubmission,
+    gradeOne,
+    loadAnswerKey,
+    splitVersionedAssessmentId
+  };
 })();
