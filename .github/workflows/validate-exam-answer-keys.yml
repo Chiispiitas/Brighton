@@ -27,3 +27,5 @@ jobs:
           node-version: "20"
       - name: Audit Brighton test answer keys
         run: node Exams/validate-answer-keys.mjs
+      - name: Cross-check answers across overlapping tests
+        run: node Exams/validate-cross-test-answers.mjs
