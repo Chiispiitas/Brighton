@@ -3,26 +3,21 @@ import fitz
 
 C1 = Path('Certificate Generator/C1 Backside.pdf')
 B1PLUS = Path('Certificate Generator/B1+ Backside.pdf')
+FONT_REGULAR = Path('Certificate Generator/assets/fonts/Poppins-Regular.ttf')
+FONT_BOLD = Path('Certificate Generator/assets/fonts/Poppins-Bold.ttf')
 OUT = Path('Certificate Generator/C1 Backside.fixed.pdf')
 PAGE_H = 841.92
 LEFT_X = 36.0
 RIGHT_X = 304.85
 COLOR = (0.349, 0.349, 0.349)
+BODY_SIZE = 9.2
 
 
 def pdf_y(y):
     return PAGE_H - y
 
 
-def font_buffer(doc, page, resource_name):
-    for font in page.get_fonts(full=True):
-        if len(font) >= 5 and font[4] == resource_name:
-            _name, _ext, _type, buffer = doc.extract_font(font[0])
-            return buffer
-    raise RuntimeError(f'Font resource {resource_name} not found')
-
-
-def draw(page, x, y, text, fontname, size=9.96):
+def draw(page, x, y, text, fontname, size=BODY_SIZE):
     page.insert_text(
         fitz.Point(x, pdf_y(y)),
         text,
@@ -34,16 +29,11 @@ def draw(page, x, y, text, fontname, size=9.96):
 
 
 def main():
+    if not FONT_REGULAR.exists() or not FONT_BOLD.exists():
+        raise FileNotFoundError('Certificate Generator Poppins fonts are missing')
+
     c1 = fitz.open(C1)
     page = c1[0]
-
-    # Pull matching Calibri subsets from the existing B1+ backside. This keeps
-    # the original certificate type style while including the '+' glyph.
-    donor = fitz.open(B1PLUS)
-    donor_page = donor[0]
-    regular = font_buffer(donor, donor_page, 'F3')
-    bold = font_buffer(donor, donor_page, 'F5')
-    donor.close()
 
     for rect in [
         fitz.Rect(30, 150, 294, 232),   # left assessment paragraph
@@ -61,9 +51,10 @@ def main():
     except AttributeError:
         page.apply_redactions(images=0, graphics=0)
 
-    page.insert_font(fontname='C1BodyPlus', fontbuffer=regular)
-    page.insert_font(fontname='C1BoldPlus', fontbuffer=bold)
+    page.insert_font(fontname='C1Poppins', fontfile=str(FONT_REGULAR))
+    page.insert_font(fontname='C1PoppinsBold', fontfile=str(FONT_BOLD))
 
+    # Re-wrap the C1 assessment copy so the first column never crosses x=294.
     left_lines = [
         (676.30, 'At the end of the course, students take an adapted'),
         (661.30, 'diagnostic version of the Cambridge English'),
@@ -72,11 +63,13 @@ def main():
         (616.30, 'Speaking is assessed through an oral presentation.'),
     ]
     for y, text in left_lines:
-        draw(page, LEFT_X, y, text, 'C1BodyPlus')
+        draw(page, LEFT_X, y, text, 'C1Poppins')
 
-    draw(page, RIGHT_X, 601.30, 'Further information about C1 Advanced can be', 'C1BodyPlus')
-    draw(page, RIGHT_X, 586.27, 'found at www.cambridgeenglish.org', 'C1BoldPlus')
+    # Keep the further-information note inside the right column too.
+    draw(page, RIGHT_X, 601.30, 'Further information about C1 Advanced can be', 'C1Poppins')
+    draw(page, RIGHT_X, 586.27, 'found at www.cambridgeenglish.org', 'C1PoppinsBold')
 
+    # Rebuild the program paragraph with a full font so B1+ renders correctly.
     bottom_lines = [
         (250.73, 'The program is composed of six levels: A1, A2, B1,'),
         (235.70, 'B1+, B2, and C1; each consisting of 82 hours of'),
@@ -84,12 +77,13 @@ def main():
         (190.70, 'This certificate corresponds to the C1 level.'),
     ]
     for y, text in bottom_lines:
-        draw(page, RIGHT_X, y, text, 'C1BodyPlus')
+        draw(page, RIGHT_X, y, text, 'C1Poppins')
 
     c1.save(OUT, garbage=4, deflate=True, clean=True)
     c1.close()
     OUT.replace(C1)
 
+    # Verify the final PDF that will be committed.
     check = fitz.open(C1)
     p = check[0]
     text = p.get_text()
@@ -107,16 +101,22 @@ def main():
 
     left_overflow = []
     right_overflow = []
+    bottom_overflow = []
     for x0, y0, x1, y1, block_text, *_ in p.get_text('blocks'):
         if 150 <= y0 <= 232 and x0 < 300 and x1 > 294:
             left_overflow.append((x0, y0, x1, y1, block_text.strip()))
         if 225 <= y0 <= 262 and x0 >= 300 and x1 > 570:
             right_overflow.append((x0, y0, x1, y1, block_text.strip()))
+        if 580 <= y0 <= 662 and x0 >= 300 and x1 > 570:
+            bottom_overflow.append((x0, y0, x1, y1, block_text.strip()))
     if left_overflow:
         raise RuntimeError(f'Left-column overflow remains: {left_overflow}')
     if right_overflow:
         raise RuntimeError(f'Right-column overflow remains: {right_overflow}')
+    if bottom_overflow:
+        raise RuntimeError(f'Bottom-right overflow remains: {bottom_overflow}')
 
+    # The original B1+ backside already encodes '+' correctly; verify we did not alter it.
     donor_check = fitz.open(B1PLUS)
     donor_text = donor_check[0].get_text()
     donor_check.close()
@@ -126,8 +126,8 @@ def main():
     pix = p.get_pixmap(matrix=fitz.Matrix(1.5, 1.5), alpha=False)
     print(f'Verified corrected C1 backside: {C1} ({C1.stat().st_size} bytes)')
     print(f'Render: {pix.width} x {pix.height}px')
-    print('No left/right column overflow in corrected regions.')
-    print('B1+ renders as an actual plus character in C1 program text.')
+    print('Corrected C1 text stays inside all intended columns.')
+    print('B1+ renders with an actual plus character in the C1 program text.')
     check.close()
 
 
