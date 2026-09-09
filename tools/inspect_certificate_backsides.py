@@ -35,11 +35,11 @@ def main():
     c1 = fitz.open(C1)
     page = c1[0]
 
-    # Clear the entire two-column text region so no fragment of the old
-    # overflowing line can survive into the neighboring column.
+    # Clear through the page margin so no fragment of either original
+    # overflowing column can survive outside the intended text boxes.
     for rect in [
-        fitz.Rect(30, 90, 570, 265),    # complete upper two-column text area
-        fitz.Rect(300, 580, 570, 662),  # program-level paragraph containing B1+
+        fitz.Rect(30, 90, 590, 265),    # complete upper two-column text area
+        fitz.Rect(300, 580, 590, 662),  # program-level paragraph containing B1+
     ]:
         page.add_redact_annot(rect, fill=(1, 1, 1))
 
