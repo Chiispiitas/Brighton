@@ -21,11 +21,25 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - name: Set up Node.js
         uses: actions/setup-node@v4
         with:
           node-version: "24"
+      - name: Protect immutable answer-key releases
+        if: github.event_name == 'pull_request'
+        shell: bash
+        run: |
+          changed="$(git diff --name-status "origin/${{ github.base_ref }}...HEAD" -- 'Exams/answer-keys/versions/**' | awk '$1 !~ /^A/ { print }')"
+          if [ -n "$changed" ]; then
+            echo "Existing answer-key release snapshots are immutable. Create a new release directory instead of modifying or deleting an old one."
+            echo "$changed"
+            exit 1
+          fi
       - name: Audit Brighton test answer keys
         run: node Exams/validate-answer-keys.mjs
       - name: Cross-check answers across overlapping tests
         run: node Exams/validate-cross-test-answers.mjs
+      - name: Validate immutable answer-key releases
+        run: node Exams/validate-answer-key-releases.mjs

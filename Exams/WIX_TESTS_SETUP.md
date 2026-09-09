@@ -2,23 +2,25 @@
 
 The Tests system uses the same `API_BASE_URL` already configured in `Exams/config.js`, but it stores shorter unit-test submissions in a separate Wix CMS collection.
 
+> Answer-key releases are now versioned. Read `Exams/ANSWER_KEY_VERSIONING.md` before changing the Wix backend or any answer key.
+
 ## Answer-key architecture
 
-Tests now follow the same answer-key pattern as Exams.
+Tests follow the same answer-key pattern as Exams.
 
 There is **no `TEST_KEYS` object in Wix** and no hardcoded answer map in `http-functions.js`.
 
-Each test has an answer-key JSON file in:
+The editable current key for each test is:
 
 `Exams/answer-keys/[testId].json`
 
-Example:
+Immutable historical releases are stored at:
 
-`Exams/answer-keys/brighton-a1-units-1-2.json`
+`Exams/answer-keys/versions/[answerKeyVersion]/[testId].json`
 
-The Tests Results Dashboard loads that JSON through `shared-grading.js` and grades the raw Wix submission locally, exactly like the Exams Results Dashboard.
+The Tests Results Dashboard receives the server-stored `answerKeyVersion`, resolves the matching immutable JSON through `shared-grading.js`, and grades the raw Wix submission locally.
 
-When a new test is added, add its matching JSON answer-key file. No Wix backend answer-key changes are required.
+When a new test is added, add its matching current JSON answer-key file and include it in the next release snapshot. No Wix answer map is required.
 
 ## Wix collection
 
@@ -37,6 +39,8 @@ Create one CMS collection with collection ID:
 | Unit range | `unitRange` | Text |
 | Student name | `studentName` | Text |
 | Class ID | `classId` | Text |
+| Answer key version | `answerKeyVersion` | Text |
+| Test version | `testVersion` | Text |
 | Answers JSON | `answersJson` | Text |
 | Answer list JSON | `answerListJson` | Text |
 | Started at | `startedAt` | Date and Time |
@@ -60,7 +64,9 @@ If you already imported the earlier CSV, these fields can remain in the collecti
 - `page2MaxScore`
 - `pageScoresJson`
 
-They are no longer required for grading and may remain empty. The dashboard derives scores from the JSON answer key.
+They are no longer required for grading and may remain empty. The dashboard derives scores from the JSON answer key selected by the stored release version.
+
+Rows created before versioning may have blank `answerKeyVersion` / `testVersion`. Leave them blank unless you have independent evidence proving the exact historical release. The Brighton dashboard marks them `Legacy / unversioned`.
 
 ## Permissions
 
@@ -74,7 +80,7 @@ Add these alongside the existing Exam HTTP functions:
 - `get_getTestResults` — returns raw submissions for a class and optional test ID.
 - OPTIONS handlers when needed for CORS.
 
-The backend does **not grade** the test.
+The backend does **not grade** the test. It does, however, authoritatively stamp the answer-key release version.
 
 ## Example Wix backend implementation
 
@@ -88,6 +94,7 @@ import {
 } from "wix-http-functions";
 
 const TEST_RESULTS_COLLECTION = "TestResults";
+const ANSWER_KEY_VERSION = "2026-09-08.1";
 
 const CORS_HEADERS = {
   "Content-Type": "application/json",
@@ -175,6 +182,11 @@ export async function post_submitTest(request) {
       unitRange: String(payload.unitRange || ""),
       studentName,
       classId,
+
+      // IMPORTANT: server authority. Do not trust payload.answerKeyVersion.
+      answerKeyVersion: ANSWER_KEY_VERSION,
+      testVersion: ANSWER_KEY_VERSION,
+
       answersJson: JSON.stringify(payload.answers || {}),
       answerListJson: JSON.stringify(payload.answerList || []),
       timeSpentSeconds: Number(payload.timeSpentSeconds) || 0,
@@ -195,7 +207,8 @@ export async function post_submitTest(request) {
 
     return jsonOK({
       success: true,
-      submissionId: inserted._id
+      submissionId: inserted._id,
+      answerKeyVersion: ANSWER_KEY_VERSION
     });
   } catch (error) {
     console.error("submitTest failed:", error);
@@ -236,16 +249,23 @@ export async function get_getTestResults(request) {
 }
 ```
 
+## Why the server stamps the version
+
+`Exams/app-core.js` also adds the current release to the browser payload. That is useful for diagnostics and makes all current Brighton submission producers version-aware without duplicating code.
+
+It is **not** a security boundary. The Wix backend must set `answerKeyVersion` and `testVersion` from its own `ANSWER_KEY_VERSION` constant so a modified client cannot choose a historical grading key.
+
 ## Grading flow
 
-1. Student submits A/B/C answers.
-2. Wix stores the raw answers only.
+1. Student submits A/B/C answers; the client includes its release for diagnostics.
+2. Wix ignores the client value for authority and stores its own `ANSWER_KEY_VERSION` with the raw answers.
 3. Tests Results Dashboard requests the submissions from Wix.
-4. The dashboard loads `answer-keys/[testId].json`.
-5. `shared-grading.js` calculates the total score, percentage, per-unit score and correct/incorrect status.
-6. CSV export uses those locally calculated scores.
+4. The shared client layer decorates the internal test ID with the stored version.
+5. `shared-grading.js` loads `answer-keys/versions/[answerKeyVersion]/[testId].json`.
+6. The dashboard calculates the total score, percentage, per-unit score and correct/incorrect status.
+7. CSV export uses those locally calculated scores.
 
-This keeps the Tests architecture aligned with the existing Exams grading system and means adding a new test does not require editing Wix grading code.
+For a pre-migration row with no stored version, the dashboard displays `Legacy / unversioned` and uses the current key only as a compatibility fallback.
 
 ## Duplicate protection
 

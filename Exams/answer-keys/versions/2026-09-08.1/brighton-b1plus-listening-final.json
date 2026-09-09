@@ -1,0 +1,41 @@
+{
+  "examId": "brighton-b1plus-listening-final",
+  "title": "Brighton B1+ Listening Final Exam",
+  "maxScore": 25,
+  "parts": {
+    "1": { "label": "Part 1", "maxScore": 7, "questions": [1, 2, 3, 4, 5, 6, 7] },
+    "2": { "label": "Part 2", "maxScore": 6, "questions": [8, 9, 10, 11, 12, 13] },
+    "3": { "label": "Part 3", "maxScore": 6, "questions": [14, 15, 16, 17, 18, 19] },
+    "4": { "label": "Part 4", "maxScore": 6, "questions": [20, 21, 22, 23, 24, 25] }
+  },
+  "answers": {
+    "1": { "part": 1, "points": 1, "mode": "exact", "answers": ["B"] },
+    "2": { "part": 1, "points": 1, "mode": "exact", "answers": ["C"] },
+    "3": { "part": 1, "points": 1, "mode": "exact", "answers": ["C"] },
+    "4": { "part": 1, "points": 1, "mode": "exact", "answers": ["B"] },
+    "5": { "part": 1, "points": 1, "mode": "exact", "answers": ["C"] },
+    "6": { "part": 1, "points": 1, "mode": "exact", "answers": ["A"] },
+    "7": { "part": 1, "points": 1, "mode": "exact", "answers": ["A"] },
+
+    "8": { "part": 2, "points": 1, "mode": "exact", "answers": ["A"] },
+    "9": { "part": 2, "points": 1, "mode": "exact", "answers": ["B"] },
+    "10": { "part": 2, "points": 1, "mode": "exact", "answers": ["A"] },
+    "11": { "part": 2, "points": 1, "mode": "exact", "answers": ["B"] },
+    "12": { "part": 2, "points": 1, "mode": "exact", "answers": ["B"] },
+    "13": { "part": 2, "points": 1, "mode": "exact", "answers": ["C"] },
+
+    "14": { "part": 3, "points": 1, "mode": "exact", "answers": ["interview", "an interview"] },
+    "15": { "part": 3, "points": 1, "mode": "exact", "answers": ["entertainment"] },
+    "16": { "part": 3, "points": 1, "mode": "exact", "answers": ["7.00", "7:00", "7 pm", "7pm", "7 p.m.", "7 o'clock", "7 o’clock", "seven o'clock", "seven o’clock"] },
+    "17": { "part": 3, "points": 1, "mode": "exact", "answers": ["speech competitions", "speech competition"] },
+    "18": { "part": 3, "points": 1, "mode": "exact", "answers": ["free"] },
+    "19": { "part": 3, "points": 1, "mode": "exact", "answers": ["£170", "170", "170 pounds", "one hundred and seventy pounds"] },
+
+    "20": { "part": 4, "points": 1, "mode": "exact", "answers": ["B"] },
+    "21": { "part": 4, "points": 1, "mode": "exact", "answers": ["C"] },
+    "22": { "part": 4, "points": 1, "mode": "exact", "answers": ["A"] },
+    "23": { "part": 4, "points": 1, "mode": "exact", "answers": ["A"] },
+    "24": { "part": 4, "points": 1, "mode": "exact", "answers": ["C"] },
+    "25": { "part": 4, "points": 1, "mode": "exact", "answers": ["B"] }
+  }
+}
