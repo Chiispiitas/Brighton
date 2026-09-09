@@ -75,6 +75,7 @@
     const classId = normalizeClassInput();
     const testId = testSelect.value.trim();
     syncQueryParams();
+    answerKeyCache.clear();
 
     if (!classId) {
       showToast("Enter a class ID first");

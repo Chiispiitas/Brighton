@@ -137,7 +137,10 @@
   LOAD ANSWER KEY 
   ---------------------------------------------- */
   async function loadAnswerKey(examId) {
-    const response = await fetch(`answer-keys/${encodeURIComponent(examId)}.json`, { headers: { Accept: "application/json" } });
+    const response = await fetch(`answer-keys/${encodeURIComponent(examId)}.json`, {
+      cache: "no-store",
+      headers: { Accept: "application/json" }
+    });
     if (!response.ok) throw new Error(`Could not load answer key for ${examId}`);
     return response.json();
   }
