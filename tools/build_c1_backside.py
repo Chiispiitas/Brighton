@@ -114,8 +114,10 @@ def main():
     page.insert_font(fontname="C1Body", fontbuffer=body_buffer)
     page.insert_font(fontname="C1Bold", fontbuffer=bold_buffer)
 
-    # Title - same baseline, size, font and color as B2.
-    insert_line(page, 36, 790.32, "C1 ADVANCED", "C1Title", 15.96, TITLE_COLOR)
+    # The B2 title font is a subset that lacks some glyphs required by
+    # "C1 ADVANCED". Use the master's body Calibri subset for the title at
+    # the exact same B2 size, baseline and color so every glyph renders.
+    insert_line(page, 36, 790.32, "C1 ADVANCED", "C1Body", 15.96, TITLE_COLOR)
 
     # Left column - C1 / CEFR descriptor and adapted C1 Advanced assessment.
     left_lines = [
