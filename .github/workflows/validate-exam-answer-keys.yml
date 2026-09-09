@@ -1,0 +1,29 @@
+name: Validate Brighton exam answer keys
+
+on:
+  pull_request:
+    paths:
+      - "Exams/**"
+      - ".github/workflows/validate-exam-answer-keys.yml"
+  push:
+    branches:
+      - main
+    paths:
+      - "Exams/**"
+      - ".github/workflows/validate-exam-answer-keys.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate-answer-keys:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out repository
+        uses: actions/checkout@v4
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+      - name: Audit Brighton test answer keys
+        run: node Exams/validate-answer-keys.mjs
