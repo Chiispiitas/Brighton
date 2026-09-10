@@ -18,7 +18,15 @@
   const escapeHtml = App.escapeHtml || ((value) => String(value ?? "").replace(/[&<>\"]/g, (char) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;" }[char])));
   const normalizeClassCode = App.normalizeClassCode || ((value) => String(value || "").trim().toUpperCase());
 
-  const TEST_TIME_LIMIT_SECONDS = 35 * 60;
+  function resolveTestTimeLimitMinutes(unitRange) {
+    const match = String(unitRange || "").match(/^\s*(\d+)\s*-\s*(\d+)\s*$/);
+    if (!match) return 35;
+    const unitCount = Math.abs(Number(match[2]) - Number(match[1])) + 1;
+    return unitCount === 4 ? 60 : 35;
+  }
+
+  const TEST_TIME_LIMIT_MINUTES = resolveTestTimeLimitMinutes(data.unitRange);
+  const TEST_TIME_LIMIT_SECONDS = TEST_TIME_LIMIT_MINUTES * 60;
   const TIMER_WARNING_SECONDS = 5 * 60;
   const TIMER_URGENT_SECONDS = 60;
   const STORAGE_KEY = `brighton-test-state-${data.testId}-v1`;
@@ -104,7 +112,7 @@
     if (dom.testMeta && !$("#metaTimeLimit")) {
       const chip = document.createElement("span");
       chip.id = "metaTimeLimit";
-      chip.textContent = "35 minute limit";
+      chip.textContent = `${TEST_TIME_LIMIT_MINUTES} minute limit`;
       dom.testMeta.appendChild(chip);
     }
 
@@ -114,7 +122,7 @@
       timer.className = "test-timer";
       timer.setAttribute("role", "timer");
       timer.setAttribute("aria-live", "polite");
-      timer.innerHTML = `<span>Time left</span><strong id="testTimerValue">35:00</strong>`;
+      timer.innerHTML = `<span>Time left</span><strong id="testTimerValue">${formatTimer(TEST_TIME_LIMIT_SECONDS)}</strong>`;
       dom.headerProgress.insertBefore(timer, dom.headerProgress.firstChild);
     }
   }
@@ -503,7 +511,7 @@
 
     const heading = options.retry ? "Retrying submission" : (timedOut ? "Time is up" : "Test finished");
     const statusCopy = timedOut
-      ? "The 35-minute limit was reached. Your answers are being submitted automatically."
+      ? `The ${TEST_TIME_LIMIT_MINUTES}-minute limit was reached. Your answers are being submitted automatically.`
       : "Please wait while Brighton records your answers.";
 
     dom.mainContent.innerHTML = `
@@ -626,7 +634,7 @@
         : "";
 
       const timeUpNote = payload.timedOut
-        ? `<p class="time-up-note">Submitted automatically when the 35-minute limit ended.</p>`
+        ? `<p class="time-up-note">Submitted automatically when the ${TEST_TIME_LIMIT_MINUTES}-minute limit ended.</p>`
         : "";
 
       dom.mainContent.innerHTML = `
