@@ -28,6 +28,7 @@
 
   let rows = [];
   let progressRows = [];
+  let examCatalog = [];
   let progressTimer = null;
   let activeProgressPreviewId = "";
   let queryState = readQueryState();
@@ -37,6 +38,14 @@
   const progressStaleSeconds = Number(config.PROGRESS_STALE_SECONDS) || 90;
   const progressActiveWindowMs = Number(config.PROGRESS_ACTIVE_WINDOW_MS) || 3 * 60 * 60 * 1000;
   const progressSubmittedWindowMs = Number(config.PROGRESS_SUBMITTED_WINDOW_MS) || 15 * 60 * 1000;
+  const LEGACY_MARKER = "Legacy / unversioned";
+  const VERIFIED_LEGACY_KEY_VERSION_BY_EXAM = Object.freeze({
+    // Git history shows these A2 key files have not changed since their July creation.
+    // Therefore pre-version submissions can be tied to the first immutable snapshot
+    // without guessing which answer key was active.
+    "brighton-a2-rw-final": "2026-09-08.1",
+    "brighton-a2-listening-final": "2026-09-08.1"
+  });
 
   const WRITING_TASK_META_BY_EXAM = {
     b2: {
@@ -156,9 +165,10 @@
   }
 
   function fillExamSelect(exams) {
+    examCatalog = (exams || []).filter(exam => exam && exam.examId);
     if (!examSelect) return;
     const current = queryState.examId || examSelect.dataset.prefill || examSelect.value || "";
-    examSelect.innerHTML = `<option value="">All exams</option>` + (exams || []).map(exam => `
+    examSelect.innerHTML = `<option value="">All exams</option>` + examCatalog.map(exam => `
       <option value="${escapeAttr(exam.examId)}">${escapeHtml(exam.title || exam.examId)}</option>
     `).join("");
     if (current) examSelect.value = current;
@@ -166,7 +176,6 @@
 
   async function loadResults(options = {}) {
     const classId = normalizeClassInput();
-    const examId = examSelect?.value.trim() || "";
     if (options.updateUrl !== false) syncUrlFromControls({ replace: false, view: options.view || "submissions" });
     if (!classId) {
       showToast("Enter a class ID first");
@@ -190,16 +199,23 @@
     try {
       const url = new URL(`${apiBase}/getResults`);
       url.searchParams.set("classId", classId);
-      if (examId) url.searchParams.set("examId", examId);
+
+      // Do not ask Wix to filter by examId here. Older exam rows may have a
+      // blank/legacy ID even though their raw payload identifies the exam.
+      // Fetch the class once, recover the canonical identity, then filter locally.
       const res = await fetch(url.toString());
       const data = await res.json();
       if (!res.ok || data.success === false) throw new Error(data.error || `HTTP ${res.status}`);
-      rows = await applyLocalGrading(data.items || []);
+      const normalizedItems = (data.items || []).map(normalizeSubmissionIdentity);
+      rows = await applyLocalGrading(normalizedItems);
       await loadProgress();
       startProgressTimer();
-      const locallyGraded = rows.filter(row => row._gradedLocally).length;
-      const visibleCount = getFilteredRows().length;
-      if (status) status.textContent = `${rows.length} submission(s) loaded for ${classId}.${getStudentFilter() ? ` Showing ${visibleCount} matching student row(s).` : ""}${locallyGraded ? ` ${locallyGraded} row(s) graded locally from the answer key.` : ""}`;
+      const visibleRows = getFilteredRows();
+      const visibleCount = visibleRows.length;
+      const locallyGraded = visibleRows.filter(row => row._gradedLocally).length;
+      const selectedExam = getSelectedExamId();
+      const scopeText = selectedExam ? ` for the selected exam (${rows.length} total class submission(s) checked)` : "";
+      if (status) status.textContent = `${visibleCount} submission(s) loaded for ${classId}${scopeText}.${getStudentFilter() ? ` Student filter applied.` : ""}${locallyGraded ? ` ${locallyGraded} row(s) graded locally from the answer key.` : ""}`;
       renderRows();
       updateSummary(data.summary);
       scrollToRequestedScreen(queryState.view);
@@ -213,6 +229,137 @@
       renderRows();
       updateSummary();
     }
+  }
+
+  function normalizeSubmissionIdentity(row) {
+    if (!row || typeof row !== "object") return row;
+
+    const copy = { ...row };
+    const canonical = resolveCanonicalExam(copy);
+    if (!canonical) return copy;
+
+    const embeddedVersion = versionFromAssessmentId(copy.examId);
+    const serverVersion = normalizeVersion(copy._answerKeyVersion || copy.answerKeyVersion || copy.testVersion || embeddedVersion);
+    const recoveredVersion = !serverVersion ? VERIFIED_LEGACY_KEY_VERSION_BY_EXAM[canonical.examId] || "" : "";
+    const version = serverVersion || recoveredVersion;
+
+    copy._canonicalExamId = canonical.examId;
+    copy._canonicalExamTitle = canonical.title || canonical.examId;
+    copy.examTitle = canonical.title || stripLegacyMarker(copy.examTitle || canonical.examId);
+    copy.level = copy.level || canonical.level || "";
+    copy.skill = copy.skill || canonical.skill || "";
+
+    if (version && App.decorateVersionedAssessmentId) {
+      copy.examId = App.decorateVersionedAssessmentId(canonical.examId, version);
+    } else {
+      copy.examId = canonical.examId;
+    }
+
+    if (recoveredVersion) {
+      copy._answerKeyVersionStatus = "recovered";
+      copy._answerKeyVersion = recoveredVersion;
+      copy._legacyIdentityRecovered = true;
+    }
+
+    return copy;
+  }
+
+  function resolveCanonicalExam(row) {
+    const catalog = examCatalog.length ? examCatalog : (config.FALLBACK_EXAMS || []);
+    const payload = payloadFromRow(row);
+    const candidateIds = [row.examId, payload.examId].map(baseAssessmentId).filter(Boolean);
+
+    for (const id of candidateIds) {
+      const exact = catalog.find(exam => baseAssessmentId(exam.examId) === id);
+      if (exact) return exact;
+    }
+
+    const titleCandidates = [row.examTitle, payload.examTitle].map(value => normalizeIdentityText(stripLegacyMarker(value))).filter(Boolean);
+    for (const title of titleCandidates) {
+      const exact = catalog.find(exam => normalizeIdentityText(exam.title || exam.examId) === title);
+      if (exact) return exact;
+    }
+
+    const raw = normalizeIdentityText([
+      row.examId, row.examTitle, row.examType, row.rubricProfile, row.level, row.skill,
+      payload.examId, payload.examTitle, payload.examType, payload.rubricProfile, payload.level, payload.skill
+    ].filter(Boolean).join(" "));
+
+    if ((raw.includes("a2-rw") || raw.includes("a2rw") || (raw.includes("a2") && raw.includes("reading") && raw.includes("writing")))) {
+      const a2rw = catalog.find(exam => baseAssessmentId(exam.examId) === "brighton-a2-rw-final");
+      if (a2rw) return a2rw;
+    }
+    if (raw.includes("a2") && raw.includes("listening")) {
+      const a2Listening = catalog.find(exam => baseAssessmentId(exam.examId) === "brighton-a2-listening-final");
+      if (a2Listening) return a2Listening;
+    }
+
+    const level = String(payload.level || row.level || "").trim().toUpperCase();
+    const skill = normalizeIdentityText(payload.skill || row.skill || "");
+    if (level && skill) {
+      const levelSkillMatches = catalog.filter(exam =>
+        String(exam.level || "").trim().toUpperCase() === level &&
+        normalizeIdentityText(exam.skill || "") === skill
+      );
+      if (levelSkillMatches.length === 1) return levelSkillMatches[0];
+    }
+
+    const totalQuestions = Number(row.totalQuestions ?? payload.totalQuestions);
+    const maxScore = Number(row.maxScore ?? payload.maxScore);
+    if (level && Number.isFinite(totalQuestions) && totalQuestions > 0) {
+      const shapeMatches = catalog.filter(exam =>
+        String(exam.level || "").trim().toUpperCase() === level &&
+        Number(exam.totalQuestions) === totalQuestions &&
+        (!Number.isFinite(maxScore) || maxScore <= 0 || Number(exam.maxScore) === maxScore)
+      );
+      if (shapeMatches.length === 1) return shapeMatches[0];
+    }
+
+    return null;
+  }
+
+  function rowMatchesSelectedExam(row) {
+    const selected = getSelectedExamId();
+    if (!selected) return true;
+    const resolved = baseAssessmentId(row?._canonicalExamId || row?.examId || payloadFromRow(row || {}).examId);
+    return resolved === selected;
+  }
+
+  function getSelectedExamId() {
+    return baseAssessmentId(examSelect?.value || "");
+  }
+
+  function baseAssessmentId(value) {
+    return String(value || "").trim().split("@@")[0].trim();
+  }
+
+  function versionFromAssessmentId(value) {
+    const raw = String(value || "").trim();
+    const index = raw.lastIndexOf("@@");
+    return index < 0 ? "" : raw.slice(index + 2).trim();
+  }
+
+  function normalizeVersion(value) {
+    const version = String(value || "").trim();
+    return /^[A-Za-z0-9._-]{1,80}$/.test(version) ? version : "";
+  }
+
+  function stripLegacyMarker(value) {
+    return String(value || "")
+      .replace(/\s*·?\s*Legacy \/ unversioned\s*/gi, " ")
+      .replace(/\s+/g, " ")
+      .replace(/\s*·\s*$/g, "")
+      .trim();
+  }
+
+  function normalizeIdentityText(value) {
+    return String(value || "")
+      .normalize("NFKD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .toLowerCase()
+      .replace(/[^a-z0-9+]+/g, " ")
+      .replace(/\s+/g, " ")
+      .trim();
   }
 
   async function applyLocalGrading(items) {
@@ -286,7 +433,6 @@
 
   async function loadProgress() {
     const classId = normalizeClassInput();
-    const examId = examSelect?.value.trim() || "";
     if (!classId || !apiBase || apiBase.includes("YOUR-WIX")) {
       progressRows = [];
       renderProgressRows();
@@ -296,11 +442,10 @@
     try {
       const url = new URL(`${apiBase}/getProgress`);
       url.searchParams.set("classId", classId);
-      if (examId) url.searchParams.set("examId", examId);
       const res = await fetch(url.toString());
       const data = await res.json().catch(() => ({}));
       if (!res.ok || data.success === false) throw new Error(data.error || `HTTP ${res.status}`);
-      progressRows = filterVisibleProgressRows(data.items || []);
+      progressRows = filterVisibleProgressRows((data.items || []).map(normalizeSubmissionIdentity));
       renderProgressRows();
       refreshOpenProgressDetails();
       const visibleProgressCount = getFilteredProgressRows().length;
@@ -438,7 +583,7 @@
 
   function updateSummary(serverSummary) {
     const visibleRows = getFilteredRows();
-    const useServerSummary = !getStudentFilter() && serverSummary;
+    const useServerSummary = !getStudentFilter() && !getSelectedExamId() && serverSummary;
     const total = useServerSummary ? serverSummary.total : visibleRows.length;
     const percentages = visibleRows.map(r => Number(r.percentage)).filter(Number.isFinite);
     const average = useServerSummary ? serverSummary.average : (percentages.length ? Math.round(percentages.reduce((a, b) => a + b, 0) / percentages.length) : null);
@@ -1081,14 +1226,18 @@
 
   function getFilteredRows() {
     const filter = getStudentFilter();
-    if (!filter) return rows;
-    return rows.filter(row => String(row.studentName || "").toLowerCase().includes(filter));
+    return rows.filter(row => {
+      if (!rowMatchesSelectedExam(row)) return false;
+      return !filter || String(row.studentName || "").toLowerCase().includes(filter);
+    });
   }
 
   function getFilteredProgressRows() {
     const filter = getStudentFilter();
-    if (!filter) return progressRows;
-    return progressRows.filter(row => String(row.studentName || "").toLowerCase().includes(filter));
+    return progressRows.filter(row => {
+      if (!rowMatchesSelectedExam(row)) return false;
+      return !filter || String(row.studentName || "").toLowerCase().includes(filter);
+    });
   }
 
   function getStudentFilter() {
