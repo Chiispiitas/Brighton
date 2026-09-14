@@ -37,6 +37,8 @@ jobs:
             echo "$changed"
             exit 1
           fi
+      - name: Validate assessment dashboard JavaScript syntax
+        run: node --check Exams/results.js
       - name: Audit Brighton test answer keys
         run: node Exams/validate-answer-keys.mjs
       - name: Cross-check answers across overlapping tests
