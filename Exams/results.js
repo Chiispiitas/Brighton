@@ -345,7 +345,11 @@
   }
 
   function stripLegacyMarker(value) {
-    return String(value || "").replace(new RegExp(`\\s*·?\\s*${LEGACY_MARKER.replace(/[.*+?^$\{\}()|[\]\\]/g, "\\  async function applyLocalGrading(items) {")}\\s*`, "gi"), "").trim();
+    return String(value || "")
+      .replace(/\s*·?\s*Legacy \/ unversioned\s*/gi, " ")
+      .replace(/\s+/g, " ")
+      .replace(/\s*·\s*$/g, "")
+      .trim();
   }
 
   function normalizeIdentityText(value) {
