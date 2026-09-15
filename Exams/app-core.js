@@ -193,7 +193,7 @@
    Immutable answer-key release bridge
    ---------------------------------------------- */
 (() => {
-  const ANSWER_KEY_VERSION = "2026-09-08.1";
+  const ANSWER_KEY_VERSION = "2026-09-14.1";
   const VERSION_SEPARATOR = "@@";
   const VERSIONED_POST_ENDPOINT = /\/(?:submitExam|submitTest|updateProgress)(?:\?|$)/i;
   const VERSIONED_RESULT_ENDPOINT = /\/(?:getResults|getTestResults|getProgress)(?:\?|$)/i;
