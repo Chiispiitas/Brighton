@@ -44,6 +44,28 @@ jobs:
           node --check Exams/exams/a1-rw/main.js
           node --check Exams/exams/a1-rw/exam-data.js
           node --check Exams/config.js
+      - name: Validate A1 player boot wiring
+        run: |
+          node <<'NODE'
+          const fs = require("fs");
+          const source = fs.readFileSync("Exams/exams/a1-rw/main.js", "utf8");
+          const required = [
+            'dom.studentForm.addEventListener("submit"',
+            "const renderers = {",
+            "boot();",
+            "async function submitPayload",
+            "function calculateTimeSpentSeconds",
+            "BRIGHTON_A1_RW_SUBMIT"
+          ];
+          for (const token of required) {
+            if (!source.includes(token)) {
+              throw new Error(`A1 player wiring is incomplete: missing ${token}`);
+            }
+          }
+          if ((source.match(/\bboot\(\);/g) || []).length !== 1) {
+            throw new Error("A1 player must call boot() exactly once.");
+          }
+          NODE
       - name: Audit Brighton test answer keys
         run: node Exams/validate-answer-keys.mjs
       - name: Cross-check answers across overlapping tests
