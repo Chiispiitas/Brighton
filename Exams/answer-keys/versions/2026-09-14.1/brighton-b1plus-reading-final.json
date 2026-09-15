@@ -1,0 +1,307 @@
+{
+  "examId": "brighton-b1plus-reading-final",
+  "examTitle": "Brighton B1+ Reading Final Exam",
+  "maxScore": 32,
+  "totalQuestions": 32,
+  "normalization": {
+    "caseInsensitive": true,
+    "trimWhitespace": true,
+    "collapseInternalWhitespace": true
+  },
+  "parts": {
+    "1": {
+      "label": "Part 1",
+      "questions": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "maxScore": 5
+    },
+    "2": {
+      "label": "Part 2",
+      "questions": [
+        6,
+        7,
+        8,
+        9,
+        10
+      ],
+      "maxScore": 5
+    },
+    "3": {
+      "label": "Part 3",
+      "questions": [
+        11,
+        12,
+        13,
+        14,
+        15
+      ],
+      "maxScore": 5
+    },
+    "4": {
+      "label": "Part 4",
+      "questions": [
+        16,
+        17,
+        18,
+        19,
+        20
+      ],
+      "maxScore": 5
+    },
+    "5": {
+      "label": "Part 5",
+      "questions": [
+        21,
+        22,
+        23,
+        24,
+        25,
+        26
+      ],
+      "maxScore": 6
+    },
+    "6": {
+      "label": "Part 6",
+      "questions": [
+        27,
+        28,
+        29,
+        30,
+        31,
+        32
+      ],
+      "maxScore": 6
+    }
+  },
+  "answers": {
+    "1": {
+      "part": 1,
+      "points": 1,
+      "answers": [
+        "A"
+      ]
+    },
+    "2": {
+      "part": 1,
+      "points": 1,
+      "answers": [
+        "B"
+      ]
+    },
+    "3": {
+      "part": 1,
+      "points": 1,
+      "answers": [
+        "B"
+      ]
+    },
+    "4": {
+      "part": 1,
+      "points": 1,
+      "answers": [
+        "A"
+      ]
+    },
+    "5": {
+      "part": 1,
+      "points": 1,
+      "answers": [
+        "C"
+      ]
+    },
+    "6": {
+      "part": 2,
+      "points": 1,
+      "answers": [
+        "A"
+      ]
+    },
+    "7": {
+      "part": 2,
+      "points": 1,
+      "answers": [
+        "C"
+      ]
+    },
+    "8": {
+      "part": 2,
+      "points": 1,
+      "answers": [
+        "F"
+      ]
+    },
+    "9": {
+      "part": 2,
+      "points": 1,
+      "answers": [
+        "E"
+      ]
+    },
+    "10": {
+      "part": 2,
+      "points": 1,
+      "answers": [
+        "H"
+      ]
+    },
+    "11": {
+      "part": 3,
+      "points": 1,
+      "answers": [
+        "B"
+      ]
+    },
+    "12": {
+      "part": 3,
+      "points": 1,
+      "answers": [
+        "C"
+      ]
+    },
+    "13": {
+      "part": 3,
+      "points": 1,
+      "answers": [
+        "A"
+      ]
+    },
+    "14": {
+      "part": 3,
+      "points": 1,
+      "answers": [
+        "D"
+      ]
+    },
+    "15": {
+      "part": 3,
+      "points": 1,
+      "answers": [
+        "A"
+      ]
+    },
+    "16": {
+      "part": 4,
+      "points": 1,
+      "answers": [
+        "F"
+      ]
+    },
+    "17": {
+      "part": 4,
+      "points": 1,
+      "answers": [
+        "C"
+      ]
+    },
+    "18": {
+      "part": 4,
+      "points": 1,
+      "answers": [
+        "A"
+      ]
+    },
+    "19": {
+      "part": 4,
+      "points": 1,
+      "answers": [
+        "H"
+      ]
+    },
+    "20": {
+      "part": 4,
+      "points": 1,
+      "answers": [
+        "D"
+      ]
+    },
+    "21": {
+      "part": 5,
+      "points": 1,
+      "answers": [
+        "B"
+      ]
+    },
+    "22": {
+      "part": 5,
+      "points": 1,
+      "answers": [
+        "A"
+      ]
+    },
+    "23": {
+      "part": 5,
+      "points": 1,
+      "answers": [
+        "B"
+      ]
+    },
+    "24": {
+      "part": 5,
+      "points": 1,
+      "answers": [
+        "A"
+      ]
+    },
+    "25": {
+      "part": 5,
+      "points": 1,
+      "answers": [
+        "A"
+      ]
+    },
+    "26": {
+      "part": 5,
+      "points": 1,
+      "answers": [
+        "A"
+      ]
+    },
+    "27": {
+      "part": 6,
+      "points": 1,
+      "answers": [
+        "before"
+      ]
+    },
+    "28": {
+      "part": 6,
+      "points": 1,
+      "answers": [
+        "of"
+      ]
+    },
+    "29": {
+      "part": 6,
+      "points": 1,
+      "answers": [
+        "to"
+      ]
+    },
+    "30": {
+      "part": 6,
+      "points": 1,
+      "answers": [
+        "than"
+      ]
+    },
+    "31": {
+      "part": 6,
+      "points": 1,
+      "answers": [
+        "as"
+      ]
+    },
+    "32": {
+      "part": 6,
+      "points": 1,
+      "answers": [
+        "by"
+      ]
+    }
+  }
+}
