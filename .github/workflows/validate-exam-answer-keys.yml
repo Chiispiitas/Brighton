@@ -39,6 +39,11 @@ jobs:
           fi
       - name: Validate assessment dashboard JavaScript syntax
         run: node --check Exams/results.js
+      - name: Validate A1 Reading and Writing JavaScript syntax
+        run: |
+          node --check Exams/exams/a1-rw/main.js
+          node --check Exams/exams/a1-rw/exam-data.js
+          node --check Exams/config.js
       - name: Audit Brighton test answer keys
         run: node Exams/validate-answer-keys.mjs
       - name: Cross-check answers across overlapping tests
