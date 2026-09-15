@@ -416,6 +416,17 @@
   }
 
 
+  const renderers = {
+    part1: renderPartOne,
+    part2: renderPartTwo,
+    part3: renderPartThree,
+    part4: renderPartFour,
+    part5: renderPartFive,
+    part6: renderWritingPart
+  };
+
+  boot();
+
   /* ----------------------------------------------
   BIND MAIN EVENTS
   ---------------------------------------------- */
@@ -1089,6 +1100,67 @@
       });
   }
 
+
+  function calculateTimeSpentSeconds() {
+    if (!state.student.startedAt || !state.submittedAt) return null;
+    const started = new Date(state.student.startedAt).getTime();
+    const submitted = new Date(state.submittedAt).getTime();
+    if (!Number.isFinite(started) || !Number.isFinite(submitted)) return null;
+    return Math.max(0, Math.round((submitted - started) / 1000));
+  }
+
+  async function submitPayload(payload) {
+    const message = { type: "BRIGHTON_A1_RW_SUBMIT", payload };
+    try {
+      window.parent?.postMessage(message, "*");
+    } catch (error) {
+      console.warn("Could not post submission to parent window.", error);
+    }
+
+    const statusText = $("#submitStatusText");
+    const statusBadge = $("#submitStatusBadge");
+    const resultBox = $("#submissionResult");
+    const config = window.BRIGHTON_SITE_CONFIG || {};
+    const apiBase = (config.API_BASE_URL || "").replace(/\/$/, "");
+
+    if (!apiBase || apiBase.includes("YOUR-WIX")) {
+      statusBadge.textContent = "Local";
+      statusText.textContent = "The exam is complete. Configure API_BASE_URL in config.js to save directly to Wix CMS.";
+      resultBox.innerHTML = `<p class="muted-text">No Wix endpoint is configured yet. Tell your teacher before closing this page.</p>`;
+      return;
+    }
+
+    try {
+      const response = await fetch(`${apiBase}/submitExam`, {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify(payload)
+      });
+      const data = await response.json().catch(() => ({}));
+      if (!response.ok || data.success === false) throw new Error(data.error || `HTTP ${response.status}`);
+
+      if (liveProgress && typeof liveProgress.markSubmitted === "function") {
+        await liveProgress.markSubmitted({
+          submissionId: data.submissionId || "",
+          submittedAt: payload.submittedAt || new Date().toISOString()
+        });
+      }
+      statusBadge.textContent = "Saved";
+      statusText.textContent = "Your answers have been recorded successfully.";
+      resultBox.innerHTML = `
+        <div class="submission-success">
+          <h3>Answers recorded</h3>
+          <p class="muted-text">Submission ID: ${escape(data.submissionId || "")}</p>
+        </div>
+      `;
+      localStorage.removeItem(STORAGE_KEY);
+    } catch (error) {
+      console.error("Submission failed", error);
+      statusBadge.textContent = "Not saved";
+      statusText.textContent = "The exam is complete, but it could not be saved to Wix. Tell your teacher before closing this page.";
+      resultBox.innerHTML = `<p class="submit-error">Save error: ${escape(error.message || String(error))}</p>`;
+    }
+  }
 
   /* ----------------------------------------------
   SMALL HELPERS
