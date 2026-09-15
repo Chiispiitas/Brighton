@@ -60,6 +60,10 @@
       3: { part: 2, partId: "part2", question: 3, label: "Part 2", taskType: "Email", title: "Email: replying to Tania", targetReader: "An English-speaking friend", prompt: "Read this email from your English-speaking friend Tania.\n\nHi,\n\nI’m so pleased you’ve invited me to your birthday party.\n\nI’m really looking forward to seeing you.\n\nOf course I want to buy you a present. I don’t know what you’d prefer – something to wear perhaps, or would you like the money to buy something yourself?\n\nWhat time would you like me to arrive?\n\nAnd would you like me to bring some food?\n\nSee you soon!\n\nTania\n\nWrite your email replying to Tania." },
       4: { part: 3, partId: "part3", question: 4, label: "Part 3", taskType: "Story", title: "Story: surprise at the door", targetReader: "Your English teacher", prompt: "Your English teacher has asked you to write a story.\n\nYour story must begin with this sentence:\n\nWhen I opened the door, I couldn’t believe my eyes.\n\nWrite your story." }
     },
+    a1rw: {
+      34: { part: 6, partId: "part6", question: 34, label: "Part 6", taskType: "Picture sentence", title: "Picture sentence 1", targetReader: "Exam reader", prompt: "Write one complete sentence about the picture." },
+      35: { part: 6, partId: "part6", question: 35, label: "Part 6", taskType: "Picture sentence", title: "Picture sentence 2", targetReader: "Exam reader", prompt: "Write another complete sentence about the picture." }
+    },
     a2rw: {
       31: { part: 6, partId: "part6", question: 31, label: "Part 6", taskType: "Email", title: "Email: visiting a friend's city", targetReader: "An English-speaking friend", prompt: "You are going to visit your friend's city next weekend. Write an email to your friend. In your email, say when you will arrive, ask about the weather, and suggest one activity to do together." },
       32: { part: 7, partId: "part7", question: 32, label: "Part 7", taskType: "Story", title: "Story: rainy morning", targetReader: "Your English teacher", prompt: "Look at the three pictures. Write the story shown in the pictures: a student waits for a late bus in the rain, meets a classmate and shares an umbrella, then arrives at school and laughs about the rainy morning." }
@@ -105,6 +109,22 @@
       ],
       note: "Picture descriptions: Content + Organization only. Email and story: Content + Communicative Achievement + Organization + Language.",
       bandGuide: "5 = strong B1+ performance with clear, developed ideas; 3 = generally successful but with some omissions or limited range; 1 = minimally successful; 0 = not attempted, not relevant or impossible to understand."
+    },
+    a1rw: {
+      id: "a1rw",
+      levelLabel: "A1",
+      title: "Short A1 picture-writing rubric",
+      actionTitle: "A1 picture-writing check",
+      actionText: "Review Questions 34 and 35 after the objective answers. Each sentence is checked for clear picture content and understandable A1 language.",
+      buttonText: "Open A1 writing rubric",
+      choiceBased: false,
+      defaultSubscales: ["Content", "Language"],
+      cards: [
+        ["Content", "The sentence describes something that is clearly visible in the picture and communicates one complete idea."],
+        ["Language", "The sentence uses Personal Best A1 vocabulary and simple grammar clearly enough to understand."]
+      ],
+      note: "Questions 34 and 35 are short picture sentences. The answer key provides provisional automatic credit; use this rubric when you want to review sentence quality manually.",
+      bandGuide: "5 = fully clear A1 sentence, 3 = understandable with some errors, 1 = only minimally communicates the idea, 0 = blank, irrelevant or impossible to understand."
     },
     a2rw: {
       id: "a2rw",
@@ -636,11 +656,11 @@
       review = { rows: [], error: error.message || String(error) };
     }
     const rubricProfile = getWritingRubricProfile(liveRow, payload);
-    const samples = extractWritingSamples(liveRow, payload, rubricProfile).filter(isA2WritingSample);
+    const samples = extractWritingSamples(liveRow, payload, rubricProfile).filter(sample => isMixedWritingSample(sample, rubricProfile));
     detailsContent.innerHTML = liveHeader(row, payload, rowStatus, true)
-      + renderReadingReviewSection("Live Reading answers · Parts 1–5", getMixedReadingRows(review.rows || []), review.error)
+      + renderReadingReviewSection(mixedObjectiveTitle(rubricProfile, true), getMixedReadingRows(review.rows || [], rubricProfile), review.error)
       + `<section class="detail-section">
-          <h3>Live Writing answers · Parts 6–7</h3>
+          <h3>${escapeHtml(mixedWritingTitle(rubricProfile, true))}</h3>
           ${samples.length ? samples.map(renderLiveWritingSample).join("") : `<p class="muted">No writing answers have been saved in live progress yet. Keep this window open and it will update automatically.</p>`}
         </section>`;
   }
@@ -696,7 +716,7 @@
     const payload = payloadFromRow(row);
     const flags = safeJson(row.flaggedJson, row.flagged || payload.flagged || []);
     const rubricProfile = getWritingRubricProfile(row, payload);
-    const samples = extractWritingSamples(row, payload, rubricProfile).filter(isA2WritingSample);
+    const samples = extractWritingSamples(row, payload, rubricProfile).filter(sample => isMixedWritingSample(sample, rubricProfile));
     const submittedAt = row.submittedAtLocal || formatDate(row.submittedAt || payload.submittedAt);
     let parts = safeJson(row.partScoresJson, row.partScores || {});
     let review;
@@ -719,7 +739,7 @@
       </div>`
       + renderPartScoresSection(parts)
       + renderFlagsNotesSection(flags, row.notes || payload.notes)
-      + renderReadingReviewSection("Reading answers vs answer key · Parts 1–5", getMixedReadingRows(review.rows || []), review.error)
+      + renderReadingReviewSection(mixedObjectiveTitle(rubricProfile, false), getMixedReadingRows(review.rows || [], rubricProfile), review.error)
       + renderMixedWritingReviewSection(samples, rubricProfile);
 
     bindWritingScoringControls();
@@ -797,7 +817,7 @@
   function renderMixedWritingReviewSection(samples, rubricProfile) {
     return renderWritingReviewActions(rubricProfile)
       + renderWritingTotals(samples, rubricProfile)
-      + `<section class="detail-section"><h3>Writing samples · Parts 6–7</h3>${samples.length ? samples.map((sample, index) => renderWritingSample(sample, index, rubricProfile)).join("") : `<p class="muted">No writing samples were found in this submission.</p>`}</section>`;
+      + `<section class="detail-section"><h3>${escapeHtml(mixedWritingTitle(rubricProfile, false))}</h3>${samples.length ? samples.map((sample, index) => renderWritingSample(sample, index, rubricProfile)).join("") : `<p class="muted">No writing samples were found in this submission.</p>`}</section>`;
   }
 
   function renderWritingReviewActions(rubricProfile) {
@@ -923,6 +943,7 @@
       .filter(Boolean)
       .join(" ")
       .toLowerCase();
+    if (raw.includes("a1rw") || raw.includes("a1-rw") || raw.includes("a1 rw")) return WRITING_RUBRIC_PROFILES.a1rw;
     if (raw.includes("a2rw") || raw.includes("a2-rw") || raw.includes("a2 rw") || raw.includes("reading-writing") || raw.includes("reading and writing")) return WRITING_RUBRIC_PROFILES.a2rw;
     if (raw.includes("b1plus") || raw.includes("b1+")) return WRITING_RUBRIC_PROFILES.b1plus;
     return WRITING_RUBRIC_PROFILES.b2;
@@ -1033,14 +1054,10 @@
 
   function formatMixedMini(row, partScores) {
     const payload = payloadFromRow(row);
-    const samples = extractWritingSamples(row, payload, getWritingRubricProfile(row, payload)).filter(isA2WritingSample);
+    const samples = extractWritingSamples(row, payload, getWritingRubricProfile(row, payload)).filter(sample => isMixedWritingSample(sample, getWritingRubricProfile(row, payload)));
     const reading = formatParts(partScores);
     const writing = samples.length ? samples.map(sample => `Q${sample.question}: ${sample.wordCount ?? countWords(sample.answer)} words`).join(" · ") : "Writing pending";
     return `${reading || "Reading"} · ${writing}`;
-  }
-
-  function isA2WritingSample(sample) {
-    return Number(sample.question) >= 31 || Number(sample.part) >= 6;
   }
 
   function isMixedReadingWritingSubmission(row) {
@@ -1111,8 +1128,25 @@
     };
   }
 
-  function getMixedReadingRows(reviewRows) {
-    return (reviewRows || []).filter(item => Number(item.part) <= 5 && Number(item.question) <= 30);
+  function getMixedReadingRows(reviewRows, rubricProfile = WRITING_RUBRIC_PROFILES.a2rw) {
+    const maxObjectiveQuestion = rubricProfile?.id === "a1rw" ? 33 : 30;
+    return (reviewRows || []).filter(item => Number(item.question) <= maxObjectiveQuestion);
+  }
+
+  function isMixedWritingSample(sample, rubricProfile = WRITING_RUBRIC_PROFILES.a2rw) {
+    const question = Number(sample?.question || 0);
+    if (rubricProfile?.id === "a1rw") return question >= 34;
+    return question >= 31 || Number(sample?.part) >= 6;
+  }
+
+  function mixedObjectiveTitle(rubricProfile, live = false) {
+    if (rubricProfile?.id === "a1rw") return `${live ? "Live " : ""}Objective answers · Questions 1–33`;
+    return `${live ? "Live " : ""}Reading answers · Parts 1–5`;
+  }
+
+  function mixedWritingTitle(rubricProfile, live = false) {
+    if (rubricProfile?.id === "a1rw") return `${live ? "Live " : ""}Picture writing · Questions 34–35`;
+    return `${live ? "Live " : ""}Writing answers · Parts 6–7`;
   }
 
   function renderPartScoreCards(parts) {
