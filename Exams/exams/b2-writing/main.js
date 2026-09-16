@@ -993,7 +993,18 @@
       console.error("Submission failed", error);
       statusBadge.textContent = "Not saved";
       statusText.textContent = "The exam is complete, but it could not be saved to Brighton Database. Tell your teacher before closing this page.";
-      resultBox.innerHTML = `<p class="submit-error">Save error: ${escapeHtml(error.message || String(error))}</p>`;
+      resultBox.innerHTML = `
+        <p class="submit-error">Save error: ${escapeHtml(error.message || String(error))}</p>
+        <button class="primary-btn" type="button" data-retry-submission style="margin-top:16px;">Retry submission</button>
+      `;
+      const retryButton = resultBox.querySelector("[data-retry-submission]");
+      retryButton?.addEventListener("click", () => {
+        retryButton.disabled = true;
+        statusBadge.textContent = "Saving";
+        statusText.textContent = "Retrying submission...";
+        resultBox.innerHTML = `<p class="muted-text">Trying again...</p>`;
+        submitPayload(payload);
+      });
     }
   }
 
