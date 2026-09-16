@@ -46,6 +46,49 @@ const btnEasy = document.getElementById('btn-easy');
 const btnMedium = document.getElementById('btn-medium');
 const btnHard = document.getElementById('btn-hard');
 const elPoolSelect = document.getElementById('pool-select');
+const elVolumeSlider = document.getElementById('volume-slider');
+const elVolumeValue = document.getElementById('volume-value');
+
+// Word-pronunciation audio is routed through Web Audio so the slider can
+// amplify above the HTMLMediaElement 100% ceiling (up to 200% / gain 2.0).
+let wordAudioContext = null;
+let wordAudioSource = null;
+let wordAudioGain = null;
+let wordVolume = 1;
+
+async function ensureWordAudioGraph() {
+    if (!wordAudioContext) {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContextClass) return;
+
+        wordAudioContext = new AudioContextClass();
+        wordAudioSource = wordAudioContext.createMediaElementSource(elAudio);
+        wordAudioGain = wordAudioContext.createGain();
+        wordAudioSource.connect(wordAudioGain);
+        wordAudioGain.connect(wordAudioContext.destination);
+        wordAudioGain.gain.value = wordVolume;
+    }
+
+    if (wordAudioContext.state === 'suspended') {
+        await wordAudioContext.resume();
+    }
+}
+
+function setWordVolume(percent) {
+    const value = Math.max(0, Math.min(200, Number(percent) || 0));
+    wordVolume = value / 100;
+
+    if (elVolumeSlider) elVolumeSlider.value = String(value);
+    if (elVolumeValue) elVolumeValue.textContent = `${Math.round(value)}%`;
+
+    if (wordAudioGain) {
+        wordAudioGain.gain.value = wordVolume;
+    } else {
+        // Native media volume supports 0–100%. Values above 100% become
+        // effective as soon as Web Audio is initialized on first playback.
+        elAudio.volume = Math.min(1, wordVolume);
+    }
+}
 
 /* ==============================================
    Wordlist Loading
@@ -154,9 +197,21 @@ function setCurrentWord(w) {
     resetMarks();
 }
 
-function playAudio() {
+async function playAudio() {
+    elAudio.pause();
     elAudio.currentTime = 0;
-    elAudio.playbackRate = 0.75;
+
+    // Pronunciation must always play at the recorded, regular speed.
+    elAudio.defaultPlaybackRate = 1;
+    elAudio.playbackRate = 1;
+
+    try {
+        await ensureWordAudioGraph();
+    } catch (err) {
+        console.warn('Could not initialize amplified audio; using native volume.', err);
+    }
+
+    elAudio.playbackRate = 1;
     elAudio.play().catch(() => {});
 }
 
@@ -436,6 +491,21 @@ btnMedium.addEventListener('click', () => changeDifficulty('medium'));
 btnHard.addEventListener('click', () => changeDifficulty('hard'));
 elWord.addEventListener('click', toggleWordMode);
 elPoolSelect.addEventListener('change', () => { changeDifficulty(currentDifficulty); });
+
+if (elVolumeSlider) {
+    elVolumeSlider.addEventListener('input', () => setWordVolume(elVolumeSlider.value));
+}
+
+// Lock pronunciation playback to 1× even if another script or browser action
+// tries to alter the media element's playback rate.
+elAudio.defaultPlaybackRate = 1;
+elAudio.playbackRate = 1;
+elAudio.addEventListener('ratechange', () => {
+    if (elAudio.defaultPlaybackRate !== 1) elAudio.defaultPlaybackRate = 1;
+    if (elAudio.playbackRate !== 1) elAudio.playbackRate = 1;
+});
+
+setWordVolume(elVolumeSlider ? elVolumeSlider.value : 100);
 
 /* ==============================================
    Initialize
