@@ -243,6 +243,41 @@ body::before {
   font-size: 1.25rem;
 }
 
+.volume-control {
+  display: flex;
+  align-items: center;
+  gap: .38rem;
+  min-width: 10.5rem;
+  color: var(--muted);
+}
+
+.volume-icon {
+  font-size: .92rem;
+  line-height: 1;
+  filter: grayscale(.35);
+}
+
+.volume-slider {
+  width: 7rem;
+  accent-color: var(--accent);
+  cursor: pointer;
+}
+
+.volume-slider:focus-visible {
+  outline: 2px solid rgba(200,169,107,.65);
+  outline-offset: 3px;
+  border-radius: .25rem;
+}
+
+#volume-value {
+  min-width: 3.15rem;
+  color: #efe1bd;
+  font-family: Georgia, "Palatino Linotype", serif;
+  font-size: .8rem;
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+}
+
 .legend {
   color: var(--muted);
   font-size: .9rem;
