@@ -190,29 +190,45 @@
 })();
 
 /* ----------------------------------------------
-   Mobile/touch radio activation bridge
+   Mobile/touch assessment choice activation bridge
    ---------------------------------------------- */
 (() => {
-  if (window.__BRIGHTON_MOBILE_RADIO_BRIDGE__) return;
-  window.__BRIGHTON_MOBILE_RADIO_BRIDGE__ = true;
+  if (window.__BRIGHTON_MOBILE_CHOICE_BRIDGE__) return;
+  window.__BRIGHTON_MOBILE_CHOICE_BRIDGE__ = true;
 
   const MAX_TAP_MOVE = 14;
   const activePointers = new Map();
   let legacyTouch = null;
 
-  function findRadio(target) {
+  function findChoiceTarget(target) {
     if (!(target instanceof Element)) return null;
-    if (target.matches('input[type="radio"]')) return target;
-    const label = target.closest("label");
-    if (!label) return null;
-    return label.querySelector('input[type="radio"]:not(:disabled)');
+
+    const directRadio = target.matches('input[type="radio"]') ? target : null;
+    const labelRadio = directRadio ? null : target.closest("label")?.querySelector('input[type="radio"]:not(:disabled)');
+    const radio = directRadio || labelRadio;
+    if (radio && !radio.disabled) return { type: "radio", element: radio };
+
+    const testChoice = target.closest('button[data-answer-question][data-answer-value]');
+    if (testChoice && !testChoice.disabled) return { type: "test-choice", element: testChoice };
+
+    return null;
   }
 
-  function commitRadio(radio) {
-    if (!radio || radio.disabled || radio.checked) return;
-    radio.checked = true;
-    radio.dispatchEvent(new Event("input", { bubbles: true }));
-    radio.dispatchEvent(new Event("change", { bubbles: true }));
+  function commitChoice(target) {
+    const element = target?.element;
+    if (!element || element.disabled || !element.isConnected) return;
+
+    if (target.type === "radio") {
+      if (element.checked) return;
+      element.checked = true;
+      element.dispatchEvent(new Event("input", { bubbles: true }));
+      element.dispatchEvent(new Event("change", { bubbles: true }));
+      return;
+    }
+
+    if (target.type === "test-choice") {
+      element.click();
+    }
   }
 
   function movedTooFar(startX, startY, endX, endY) {
@@ -222,10 +238,10 @@
   if ("PointerEvent" in window) {
     document.addEventListener("pointerdown", event => {
       if (event.pointerType === "mouse") return;
-      const radio = findRadio(event.target);
-      if (!radio) return;
+      const target = findChoiceTarget(event.target);
+      if (!target) return;
       activePointers.set(event.pointerId, {
-        radio,
+        target,
         x: event.clientX,
         y: event.clientY
       });
@@ -237,7 +253,7 @@
       activePointers.delete(event.pointerId);
       if (!start) return;
       if (movedTooFar(start.x, start.y, event.clientX, event.clientY)) return;
-      commitRadio(start.radio);
+      commitChoice(start.target);
     }, true);
 
     document.addEventListener("pointercancel", event => {
@@ -246,9 +262,9 @@
   } else {
     document.addEventListener("touchstart", event => {
       const touch = event.changedTouches?.[0];
-      const radio = findRadio(event.target);
-      legacyTouch = touch && radio ? {
-        radio,
+      const target = findChoiceTarget(event.target);
+      legacyTouch = touch && target ? {
+        target,
         identifier: touch.identifier,
         x: touch.clientX,
         y: touch.clientY
@@ -262,7 +278,7 @@
       legacyTouch = null;
       if (!touch) return;
       if (movedTooFar(start.x, start.y, touch.clientX, touch.clientY)) return;
-      commitRadio(start.radio);
+      commitChoice(start.target);
     }, { capture: true, passive: true });
 
     document.addEventListener("touchcancel", () => {
