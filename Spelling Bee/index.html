@@ -87,6 +87,23 @@
     <!-- JavaScript -->
     <script src="js/main.js"></script>
     <script>
+        // Keep feedback sounds independent from the pronunciation volume slider.
+        // Correct and wrong-answer effects always play at 75% volume.
+        const wrongAudio = document.getElementById('wrong-audio');
+        const correctAudio = document.getElementById('correct-audio');
+
+        function lockFeedbackVolume(audio) {
+            audio.volume = 0.75;
+            audio.addEventListener('volumechange', () => {
+                if (Math.abs(audio.volume - 0.75) > 0.001) {
+                    audio.volume = 0.75;
+                }
+            });
+        }
+
+        lockFeedbackVolume(wrongAudio);
+        lockFeedbackVolume(correctAudio);
+
         // Preserve the correct-word sound when a word is completed entirely
         // through the neutral Next Letter reveal sequence.
         document.getElementById('next-letter').addEventListener('click', () => {
@@ -94,7 +111,6 @@
             const word = document.getElementById('word');
 
             if (nextLetter.disabled && !word.querySelector('.char.err')) {
-                const correctAudio = document.getElementById('correct-audio');
                 correctAudio.currentTime = 0;
                 correctAudio.play().catch(() => {});
             }
