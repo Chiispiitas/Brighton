@@ -40,6 +40,7 @@ const btnHard = document.getElementById('btn-hard');
 const elPoolSelect = document.getElementById('pool-select');
 const elVolumeSlider = document.getElementById('volume-slider');
 const elVolumeValue = document.getElementById('volume-value');
+const elSpellContainer = document.getElementById('spell-container');
 
 // Word-pronunciation audio is routed through Web Audio so the slider can
 // amplify above the HTMLMediaElement 100% ceiling (up to 200% / gain 2.0).
@@ -239,12 +240,12 @@ function mark(type) {
     // A neutral Next Letter reveal still celebrates completion, but does not
     // add a correct/incorrect color or play a correctness sound.
     if (type === 'reveal') {
-        if (!hadAnyError()) launchConfetti();
+        if (!hadAnyError()) launchSpellEffect();
         return;
     }
 
     if (!hadAnyError()) {
-        launchConfetti();
+        launchSpellEffect();
         playCorrectAudio();
     } else {
         playWrongAudio();
@@ -279,33 +280,80 @@ function hadAnyError() {
 }
 
 /* ==============================================
-   Confetti Effect
+   Spell Completion Effect
 ============================================== */
-function launchConfetti() {
-    const container = document.getElementById('confetti-container');
-    const colors = ['#ef233c', '#21c55d', '#ffd166', '#3a86ff', '#ff006e'];
-    const pieces = 70;
+function launchSpellEffect() {
+    if (!elSpellContainer) return;
 
-    for (let i = 0; i < pieces; i++) {
-        const conf = document.createElement('div');
-        conf.className = 'confetti';
-        conf.style.background = colors[Math.floor(Math.random() * colors.length)];
+    const rect = elWord.getBoundingClientRect();
+    const x = rect.left + rect.width / 2;
+    const y = rect.top + rect.height / 2;
+    const lowPower = window.innerWidth <= 760 ||
+        (window.matchMedia && window.matchMedia('(pointer: coarse)').matches);
 
-        const angle = Math.random() * 2 * Math.PI;
-        const radius = 200 + Math.random() * 400;
+    elSpellContainer.replaceChildren();
+
+    const addCore = (className) => {
+        const node = document.createElement('div');
+        node.className = className;
+        node.style.setProperty('--x', `${x}px`);
+        node.style.setProperty('--y', `${y}px`);
+        elSpellContainer.appendChild(node);
+        return node;
+    };
+
+    addCore('spell-flash');
+    addCore('spell-ring');
+
+    // Long luminous streaks make the burst read like a cast spell rather than confetti.
+    const sparkCount = lowPower ? 14 : 28;
+    for (let i = 0; i < sparkCount; i++) {
+        const spark = document.createElement('div');
+        const angle = (360 / sparkCount) * i + (Math.random() * 18 - 9);
+        const distance = (lowPower ? 95 : 135) + Math.random() * (lowPower ? 105 : 235);
+        const length = (lowPower ? 20 : 28) + Math.random() * (lowPower ? 30 : 55);
+        const thickness = 1 + Math.random() * 2.2;
+        const duration = 620 + Math.random() * 380;
+        const delay = Math.random() * 90;
+
+        spark.className = 'spell-spark';
+        spark.style.setProperty('--x', `${x}px`);
+        spark.style.setProperty('--y', `${y}px`);
+        spark.style.setProperty('--angle', `${angle}deg`);
+        spark.style.setProperty('--distance', `${distance}px`);
+        spark.style.setProperty('--length', `${length}px`);
+        spark.style.setProperty('--thickness', `${thickness}px`);
+        spark.style.setProperty('--duration', `${duration}ms`);
+        spark.style.setProperty('--delay', `${delay}ms`);
+        elSpellContainer.appendChild(spark);
+    }
+
+    // Small drifting points leave a brief magical afterglow around the word.
+    const starCount = lowPower ? 8 : 18;
+    for (let i = 0; i < starCount; i++) {
+        const star = document.createElement('div');
+        const angle = Math.random() * Math.PI * 2;
+        const radius = 45 + Math.random() * (lowPower ? 105 : 185);
         const dx = Math.cos(angle) * radius;
         const dy = Math.sin(angle) * radius;
-        conf.style.setProperty('--dx', dx);
-        conf.style.setProperty('--dy', dy);
+        const size = 2 + Math.random() * 4;
+        const duration = 650 + Math.random() * 420;
+        const delay = 40 + Math.random() * 170;
 
-        conf.style.width = 6 + Math.random() * 8 + 'px';
-        conf.style.height = 6 + Math.random() * 8 + 'px';
-        conf.style.animationDelay = (Math.random() * 0.15) + 's';
-        conf.style.transform = `translate(-50%, -50%) rotate(${Math.random() * 360}deg)`;
-
-        container.appendChild(conf);
-        setTimeout(() => conf.remove(), 1200);
+        star.className = 'spell-star';
+        star.style.setProperty('--x', `${x}px`);
+        star.style.setProperty('--y', `${y}px`);
+        star.style.setProperty('--dx', `${dx}px`);
+        star.style.setProperty('--dy', `${dy}px`);
+        star.style.setProperty('--size', `${size}px`);
+        star.style.setProperty('--duration', `${duration}ms`);
+        star.style.setProperty('--delay', `${delay}ms`);
+        elSpellContainer.appendChild(star);
     }
+
+    window.setTimeout(() => {
+        elSpellContainer.replaceChildren();
+    }, 1350);
 }
 
 /* ==============================================
