@@ -23,7 +23,7 @@
      *  Body
 ============================================== -->
 <body>
-    <div id="confetti-container"></div>
+    <div id="spell-container" aria-hidden="true"></div>
 
     <div id="secret-word"></div>
 
@@ -37,7 +37,7 @@
 
     <section class="controls" role="group" aria-label="Controls">
         <!-- Audio controls -->
-        <div class="group" aria-label="Audio">
+        <div class="group audio-group" aria-label="Audio">
             <span class="label">Audio</span>
             <button class="btn" id="play-audio" title="Play pronunciation (Space)">▶︎ Play</button>
             <label class="volume-control" for="volume-slider" title="Pronunciation volume">
@@ -52,11 +52,6 @@
             <button class="btn primary" id="next-letter" title="Reveal the next letter without marking it correct or incorrect">Next Letter</button>
             <button class="btn success" id="next-word" title="Next word (N)">Next Word</button>
         </div>
-
-        <!-- Legend
-        <div class="legend">
-            <span class="pill">Keyboard: O = ✅, P = ❌, Backspace = Undo</span>
-        </div> -->
 
         <!-- Difficulty selection -->
         <div class="group" aria-label="Difficulty">
@@ -76,10 +71,6 @@
             </select>
         </div>
     </section>
-
-    <!-- <div class="help">
-        <div>Speller Things - 1st Interscholastic Spelling Bee U.E.P Lev Vigotsky.</div>
-    </div> -->
 
     <audio id="audio" preload="auto"></audio>
     <audio id="wrong-audio" preload="auto" src="audio/wrong-answer.mp3"></audio>
