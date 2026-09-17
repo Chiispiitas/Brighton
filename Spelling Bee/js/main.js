@@ -4,7 +4,7 @@
    Configuration & State
 ============================================== */
 let hiddenMode = true; // default: hidden word mode
-let currentDifficulty = 'easy';  // default
+let currentDifficulty = 'easy';
 let WORDLIST_PATH = `wordlists/4TH-5TH/${currentDifficulty}.txt`;
 const AUDIO_DIR = 'audio';
 const AUDIO_EXT = '.mp3';
@@ -19,16 +19,11 @@ function wordToAudioBasename(word) {
     return word.trim().toLowerCase().replace(/\s+/g, '-');
 }
 
-/** @typedef {'pending'|'ok'|'err'|'skip'} Mark */
-let pool = [];        // remaining words
-let current = null;   // current word string
-let marks = [];       // per-character marks
-let ptr = 0;          // index of next character to mark
-
-// Timer state
-let t0 = 0;           // epoch ms when started
-let acc = 0;          // accumulated ms when paused
-let raf = null;       // requestAnimationFrame id
+/** @typedef {'pending'|'ok'|'err'|'reveal'|'skip'} Mark */
+let pool = [];
+let current = null;
+let marks = [];
+let ptr = 0;
 
 // DOM references
 const elWord = document.getElementById('word');
@@ -38,10 +33,7 @@ const elWrongAudio = document.getElementById('wrong-audio');
 const elCorrectAudio = document.getElementById('correct-audio');
 const btnPlay = document.getElementById('play-audio');
 const btnNext = document.getElementById('next-word');
-const elTimer = document.getElementById('timer');
-const btnTStart = document.getElementById('timer-start');
-const btnTStop = document.getElementById('timer-stop');
-const btnTReset = document.getElementById('timer-reset');
+const btnNextLetter = document.getElementById('next-letter');
 const btnEasy = document.getElementById('btn-easy');
 const btnMedium = document.getElementById('btn-medium');
 const btnHard = document.getElementById('btn-hard');
@@ -98,10 +90,11 @@ async function loadWordlist() {
     if (!res.ok) {
         throw new Error('Failed to load wordlist.txt');
     }
+
     const text = await res.text();
-    // split lines, trim, ignore empties, keep unique
     const seen = new Set();
     const words = [];
+
     for (const raw of text.split(/\r?\n/)) {
         const w = raw.trim();
         if (!w) continue;
@@ -110,6 +103,7 @@ async function loadWordlist() {
             words.push(w);
         }
     }
+
     return words;
 }
 
@@ -119,11 +113,11 @@ async function loadWordlist() {
 function renderWord() {
     if (!current) {
         elWord.textContent = '—';
+        if (btnNextLetter) btnNextLetter.disabled = true;
         return;
     }
-    const frag = document.createDocumentFragment();
 
-    // reflect mode in a data-attribute (optional, useful for CSS targeting)
+    const frag = document.createDocumentFragment();
     elWord.dataset.mode = hiddenMode ? 'hidden' : 'normal';
 
     [...current].forEach((ch, i) => {
@@ -133,27 +127,20 @@ function renderWord() {
         const m = marks[i] || 'pending';
         if (m === 'ok') span.classList.add('ok');
         else if (m === 'err') span.classList.add('err');
+        else if (m === 'reveal') span.classList.add('revealed');
         else if (m === 'skip') span.classList.add('skip');
 
-        // Determine what to display
         let displayCh = ch;
 
         if (hiddenMode) {
-            // In hidden mode: letters are dots until revealed (ok/err)
             if (/[A-Za-z]/.test(ch)) {
                 if (m === 'pending') {
-                    displayCh = '•';         // dot for unrevealed letter
+                    displayCh = '•';
                     span.classList.add('dot');
                 } else {
-                    displayCh = ch;          // reveal when marked ok/err
+                    displayCh = ch;
                 }
-            } else {
-                // Non-letters (spaces, hyphens, punctuation) remain visible
-                displayCh = ch;
             }
-        } else {
-            // Normal mode: show characters as-is
-            displayCh = ch;
         }
 
         span.textContent = displayCh;
@@ -161,16 +148,18 @@ function renderWord() {
         if (i === ptr) span.classList.add('active');
         frag.appendChild(span);
     });
+
     elWord.replaceChildren(frag);
+    if (btnNextLetter) btnNextLetter.disabled = ptr >= current.length;
 }
 
-    // Move pointer to next markable character; auto-skip non-letters
+// Move pointer to next markable character; auto-skip non-letters.
 function advancePtr() {
     while (ptr < current.length) {
         const ch = current[ptr];
-        if (/[A-Za-z]/.test(ch)) return; // stop on a letter
-        // otherwise auto-mark as skip and advance
-        if (!marks[ptr]) {
+        if (/[A-Za-z]/.test(ch)) return;
+
+        if (!marks[ptr] || marks[ptr] === 'pending') {
             marks[ptr] = 'skip';
         }
         ptr++;
@@ -192,8 +181,7 @@ function toggleWordMode() {
 function setCurrentWord(w) {
     current = w;
     elSecretWord.textContent = w;
-    const src = `${AUDIO_DIR}/${wordToAudioBasename(w)}${AUDIO_EXT}`;
-    elAudio.src = src;
+    elAudio.src = `${AUDIO_DIR}/${wordToAudioBasename(w)}${AUDIO_EXT}`;
     resetMarks();
 }
 
@@ -226,12 +214,11 @@ function playCorrectAudio() {
 }
 
 /* ==============================================
-   Marking Logic (O/P/Backspace)
+   Letter Progress (O / P / Next Letter / Backspace)
 ============================================== */
 function mark(type) {
-    if (!current) return;
-    if (ptr >= current.length) return;
-    // ensure we are at a letter; advancePtr already does skipping
+    if (!current || ptr >= current.length) return;
+
     if (!/[A-Za-z]/.test(current[ptr])) {
         advancePtr();
         renderWord();
@@ -243,18 +230,30 @@ function mark(type) {
     advancePtr();
     renderWord();
 
-    // Trigger confetti when all are correct
-    if (isAllMarked() && !hadAnyError()) {
+    if (!isAllMarked()) return;
+
+    // A neutral Next Letter reveal still celebrates completion, but does not
+    // add a correct/incorrect color or play a correctness sound.
+    if (type === 'reveal') {
+        if (!hadAnyError()) launchConfetti();
+        return;
+    }
+
+    if (!hadAnyError()) {
         launchConfetti();
         playCorrectAudio();
-    } else if (isAllMarked()) {
+    } else {
         playWrongAudio();
     }
 }
 
+function revealNextLetter() {
+    mark('reveal');
+}
+
 function undo() {
     if (!current) return;
-    // step back to previous index that is not skip
+
     do {
         if (ptr <= 0) break;
         ptr--;
@@ -263,7 +262,7 @@ function undo() {
     if (ptr >= 0) {
         marks[ptr] = 'pending';
     }
-    // also clear any trailing skips if we stepped before them
+
     renderWord();
 }
 
@@ -281,22 +280,20 @@ function hadAnyError() {
 function launchConfetti() {
     const container = document.getElementById('confetti-container');
     const colors = ['#ef233c', '#21c55d', '#ffd166', '#3a86ff', '#ff006e'];
-    const pieces = 70; // number of pieces
+    const pieces = 70;
 
     for (let i = 0; i < pieces; i++) {
         const conf = document.createElement('div');
         conf.className = 'confetti';
         conf.style.background = colors[Math.floor(Math.random() * colors.length)];
 
-        // random direction (circle)
         const angle = Math.random() * 2 * Math.PI;
-        const radius = 200 + Math.random() * 400; // how far each piece flies
+        const radius = 200 + Math.random() * 400;
         const dx = Math.cos(angle) * radius;
         const dy = Math.sin(angle) * radius;
         conf.style.setProperty('--dx', dx);
         conf.style.setProperty('--dy', dy);
 
-        // random size, rotation, delay
         conf.style.width = 6 + Math.random() * 8 + 'px';
         conf.style.height = 6 + Math.random() * 8 + 'px';
         conf.style.animationDelay = (Math.random() * 0.15) + 's';
@@ -305,54 +302,6 @@ function launchConfetti() {
         container.appendChild(conf);
         setTimeout(() => conf.remove(), 1200);
     }
-}
-
-/* ==============================================
-   Timer
-============================================== */
-function fmt(ms) {
-    const total = Math.max(0, Math.floor(ms));
-    const tenths = Math.floor((total % 1000) / 100);
-    const s = Math.floor(total / 1000);
-    const mm = String(Math.floor(s / 60)).padStart(2, '0');
-    const ss = String(s % 60).padStart(2, '0');
-    return `${mm}:${ss}.${tenths}`;
-}
-
-function tick() {
-    const now = performance.now();
-    elTimer.textContent = fmt(acc + (now - t0));
-    raf = requestAnimationFrame(tick);
-}
-
-function timerStart() {
-    if (raf) return;
-    t0 = performance.now();
-    raf = requestAnimationFrame(tick);
-}
-
-function timerStop() {
-    if (!raf) return;
-    cancelAnimationFrame(raf);
-    raf = null;
-    acc = parseTime(elTimer.textContent);
-}
-
-function timerReset() {
-    if (raf) {
-        cancelAnimationFrame(raf);
-        raf = null;
-    }
-    acc = 0;
-    elTimer.textContent = '00:00.0';
-}
-
-function parseTime(txt) {
-    // mm:ss.t (tenths)
-    const m = txt.match(/(\d{2}):(\d{2})\.(\d)/);
-    if (!m) return 0;
-    const mm = +m[1], ss = +m[2], t = +m[3];
-    return ((mm * 60) + ss) * 1000 + t * 100;
 }
 
 /* ==============================================
@@ -367,14 +316,12 @@ function nextWord() {
     const complete = isAllMarked();
     const anyErr = hadAnyError();
 
-    // Remove if complete and no errors
+    // Remove from the remaining pool when the word was completed without errors.
     if (complete && !anyErr) {
         pool = pool.filter(w => w !== current);
     }
 
-    // Draw next from remaining pool; if empty, reload from original file (optional)
     if (pool.length === 0) {
-        // Optional: keep current displayed and disable next
         btnNext.disabled = true;
         return;
     }
@@ -385,7 +332,6 @@ function nextWord() {
 function drawRandom() {
     const idx = Math.floor(Math.random() * pool.length);
     setCurrentWord(pool[idx]);
-    timerReset();
 }
 
 async function changeDifficulty(level) {
@@ -394,26 +340,31 @@ async function changeDifficulty(level) {
     const selectedPool = elPoolSelect ? elPoolSelect.value : 'default';
     WORDLIST_PATH = `wordlists/${selectedPool}/${level}.txt`;
 
-    // Visually highlight active difficulty
     [btnEasy, btnMedium, btnHard].forEach(b => b.classList.remove('primary'));
     if (level === 'easy') btnEasy.classList.add('primary');
     if (level === 'medium') btnMedium.classList.add('primary');
     if (level === 'hard') btnHard.classList.add('primary');
 
-    // Reload the word pool
     try {
         const words = await loadWordlist();
         pool = words.slice();
+
         if (pool.length === 0) {
+            current = null;
             elWord.textContent = `No words in ${WORDLIST_PATH}`;
             btnNext.disabled = true;
+            if (btnNextLetter) btnNextLetter.disabled = true;
             return;
         }
+
         btnNext.disabled = false;
         drawRandom();
     } catch (err) {
         console.error(err);
+        current = null;
         elWord.textContent = `Could not load ${WORDLIST_PATH}`;
+        btnNext.disabled = true;
+        if (btnNextLetter) btnNextLetter.disabled = true;
     }
 }
 
@@ -421,7 +372,6 @@ async function changeDifficulty(level) {
    Keyboard Bindings
 ============================================== */
 function onKey(e) {
-    // Avoid using inputs (none in UI, but safeguard)
     if (['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName)) return;
 
     if (e.key === 'o' || e.key === 'O') {
@@ -429,52 +379,41 @@ function onKey(e) {
         mark('ok');
         return;
     }
+
     if (e.key === 'p' || e.key === 'P') {
         e.preventDefault();
         mark('err');
         return;
     }
+
     if (e.key === 'Backspace') {
         e.preventDefault();
         undo();
         return;
     }
 
-    // Quality of life: Space = play audio, S = Start, T = Stop, R = Reset, N = Next
     if (e.code === 'Space') {
         e.preventDefault();
         playAudio();
         return;
     }
-    if (e.key === 's' || e.key === 'S') {
-        timerStart();
-        return;
-    }
-    if (e.key === 't' || e.key === 'T') {
-        timerStop();
-        return;
-    }
-    if (e.key === 'r' || e.key === 'R') {
-        timerReset();
-        return;
-    }
-    if (e.key === 'n' || e.key === 'N') {
-        nextWord();
-        return;
-    }
 
-    // Show secret word while holding "I"
-    window.addEventListener('keydown', e => {
+    if (e.key === 'n' || e.key === 'N') {
+        e.preventDefault();
+        nextWord();
+    }
+}
+
+function showSecretWord(e) {
     if (e.key === 'i' || e.key === 'I') {
         elSecretWord.classList.add('visible');
     }
-    });
+}
 
-    window.addEventListener('keyup', e => {
+function hideSecretWord(e) {
     if (e.key === 'i' || e.key === 'I') {
         elSecretWord.classList.remove('visible');
     }
-    });
 }
 
 /* ==============================================
@@ -482,10 +421,10 @@ function onKey(e) {
 ============================================== */
 btnPlay.addEventListener('click', playAudio);
 btnNext.addEventListener('click', nextWord);
-btnTStart.addEventListener('click', timerStart);
-btnTStop.addEventListener('click', timerStop);
-btnTReset.addEventListener('click', timerReset);
+btnNextLetter.addEventListener('click', revealNextLetter);
 window.addEventListener('keydown', onKey, { capture: true });
+window.addEventListener('keydown', showSecretWord);
+window.addEventListener('keyup', hideSecretWord);
 btnEasy.addEventListener('click', () => changeDifficulty('easy'));
 btnMedium.addEventListener('click', () => changeDifficulty('medium'));
 btnHard.addEventListener('click', () => changeDifficulty('hard'));
@@ -514,15 +453,20 @@ setWordVolume(elVolumeSlider ? elVolumeSlider.value : 100);
     try {
         const words = await loadWordlist();
         pool = words.slice();
+
         if (pool.length === 0) {
             elWord.textContent = 'Add words to wordlist.txt';
             btnNext.disabled = true;
+            btnNextLetter.disabled = true;
             return;
         }
-        // drawRandom();
+
+        btnNextLetter.disabled = true;
+        // The first word is still drawn when Next Word is pressed.
     } catch (err) {
         console.error(err);
         elWord.textContent = 'Could not load wordlist.txt';
         btnNext.disabled = true;
+        btnNextLetter.disabled = true;
     }
 })();
