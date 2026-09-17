@@ -94,6 +94,28 @@ body::after {
   68% { opacity: .31; }
 }
 
+@media (max-width: 900px), (hover: none) and (pointer: coarse) {
+  body {
+    animation: none;
+    background-size: auto;
+  }
+
+  body::before {
+    position: absolute;
+    inset: 0;
+    animation: none;
+    transform: none;
+    filter: none;
+  }
+
+  body::after {
+    display: none;
+    animation: none;
+    transform: none;
+    filter: none;
+  }
+}
+
 @media (prefers-reduced-motion: reduce) {
   body,
   body::before,
