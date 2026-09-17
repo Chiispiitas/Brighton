@@ -127,8 +127,12 @@ function renderWord() {
         const m = marks[i] || 'pending';
         if (m === 'ok') span.classList.add('ok');
         else if (m === 'err') span.classList.add('err');
-        else if (m === 'reveal') span.classList.add('revealed');
-        else if (m === 'skip') span.classList.add('skip');
+        else if (m === 'reveal') {
+            // Neutral reveal: fully visible, but no green/red correctness color.
+            span.style.opacity = '1';
+            span.style.color = 'inherit';
+            span.style.textShadow = 'none';
+        } else if (m === 'skip') span.classList.add('skip');
 
         let displayCh = ch;
 
