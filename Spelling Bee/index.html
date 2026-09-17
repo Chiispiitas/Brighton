@@ -77,7 +77,8 @@
     <audio id="correct-audio" preload="auto" src="audio/correct-answer-hp.mp3"></audio>
 
     <div class="lev-logo-container">
-        <img src="assets/logo.png">
+        <img src="assets/logo.png" style="height: calc(100% - 9px);">
+        <span id="cheat-word" aria-hidden="true" style="position:absolute;left:0;right:0;bottom:1px;height:7px;line-height:7px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis;text-align:center;font-family:Georgia,'Palatino Linotype',serif;font-size:6px;font-weight:600;letter-spacing:.05em;color:rgba(239,225,189,.16);text-shadow:0 1px 2px rgba(0,0,0,.55);user-select:none;pointer-events:none;"></span>
     </div>
 
     <div class="english-logo-container">
@@ -103,6 +104,19 @@
 
         lockFeedbackVolume(wrongAudio);
         lockFeedbackVolume(correctAudio);
+
+        // Mirror the current word in a tiny, faint label beneath the Lev logo.
+        const cheatWord = document.getElementById('cheat-word');
+        const secretWordMirrorSource = document.getElementById('secret-word');
+        const syncCheatWord = () => {
+            cheatWord.textContent = secretWordMirrorSource.textContent;
+        };
+        new MutationObserver(syncCheatWord).observe(secretWordMirrorSource, {
+            childList: true,
+            characterData: true,
+            subtree: true
+        });
+        syncCheatWord();
 
         // Preserve the correct-word sound when a word is completed entirely
         // through the neutral Next Letter reveal sequence.
