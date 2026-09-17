@@ -86,5 +86,19 @@
 
     <!-- JavaScript -->
     <script src="js/main.js"></script>
+    <script>
+        // Preserve the correct-word sound when a word is completed entirely
+        // through the neutral Next Letter reveal sequence.
+        document.getElementById('next-letter').addEventListener('click', () => {
+            const nextLetter = document.getElementById('next-letter');
+            const word = document.getElementById('word');
+
+            if (nextLetter.disabled && !word.querySelector('.char.err')) {
+                const correctAudio = document.getElementById('correct-audio');
+                correctAudio.currentTime = 0;
+                correctAudio.play().catch(() => {});
+            }
+        });
+    </script>
 </body>
 </html>
