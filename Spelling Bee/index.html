@@ -88,15 +88,15 @@
     <script src="js/main.js"></script>
     <script>
         // Keep feedback sounds independent from the pronunciation volume slider.
-        // Correct and wrong-answer effects always play at 75% volume.
+        // Correct and wrong-answer effects always play at 45% volume.
         const wrongAudio = document.getElementById('wrong-audio');
         const correctAudio = document.getElementById('correct-audio');
 
         function lockFeedbackVolume(audio) {
-            audio.volume = 0.75;
+            audio.volume = 0.45;
             audio.addEventListener('volumechange', () => {
-                if (Math.abs(audio.volume - 0.75) > 0.001) {
-                    audio.volume = 0.75;
+                if (Math.abs(audio.volume - 0.45) > 0.001) {
+                    audio.volume = 0.45;
                 }
             });
         }
