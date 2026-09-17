@@ -190,6 +190,88 @@
 })();
 
 /* ----------------------------------------------
+   Mobile/touch radio activation bridge
+   ---------------------------------------------- */
+(() => {
+  if (window.__BRIGHTON_MOBILE_RADIO_BRIDGE__) return;
+  window.__BRIGHTON_MOBILE_RADIO_BRIDGE__ = true;
+
+  const MAX_TAP_MOVE = 14;
+  const activePointers = new Map();
+  let legacyTouch = null;
+
+  function findRadio(target) {
+    if (!(target instanceof Element)) return null;
+    if (target.matches('input[type="radio"]')) return target;
+    const label = target.closest("label");
+    if (!label) return null;
+    return label.querySelector('input[type="radio"]:not(:disabled)');
+  }
+
+  function commitRadio(radio) {
+    if (!radio || radio.disabled || radio.checked) return;
+    radio.checked = true;
+    radio.dispatchEvent(new Event("input", { bubbles: true }));
+    radio.dispatchEvent(new Event("change", { bubbles: true }));
+  }
+
+  function movedTooFar(startX, startY, endX, endY) {
+    return Math.hypot(endX - startX, endY - startY) > MAX_TAP_MOVE;
+  }
+
+  if ("PointerEvent" in window) {
+    document.addEventListener("pointerdown", event => {
+      if (event.pointerType === "mouse") return;
+      const radio = findRadio(event.target);
+      if (!radio) return;
+      activePointers.set(event.pointerId, {
+        radio,
+        x: event.clientX,
+        y: event.clientY
+      });
+    }, true);
+
+    document.addEventListener("pointerup", event => {
+      if (event.pointerType === "mouse") return;
+      const start = activePointers.get(event.pointerId);
+      activePointers.delete(event.pointerId);
+      if (!start) return;
+      if (movedTooFar(start.x, start.y, event.clientX, event.clientY)) return;
+      commitRadio(start.radio);
+    }, true);
+
+    document.addEventListener("pointercancel", event => {
+      activePointers.delete(event.pointerId);
+    }, true);
+  } else {
+    document.addEventListener("touchstart", event => {
+      const touch = event.changedTouches?.[0];
+      const radio = findRadio(event.target);
+      legacyTouch = touch && radio ? {
+        radio,
+        identifier: touch.identifier,
+        x: touch.clientX,
+        y: touch.clientY
+      } : null;
+    }, { capture: true, passive: true });
+
+    document.addEventListener("touchend", event => {
+      if (!legacyTouch) return;
+      const touch = Array.from(event.changedTouches || []).find(item => item.identifier === legacyTouch.identifier);
+      const start = legacyTouch;
+      legacyTouch = null;
+      if (!touch) return;
+      if (movedTooFar(start.x, start.y, touch.clientX, touch.clientY)) return;
+      commitRadio(start.radio);
+    }, { capture: true, passive: true });
+
+    document.addEventListener("touchcancel", () => {
+      legacyTouch = null;
+    }, { capture: true, passive: true });
+  }
+})();
+
+/* ----------------------------------------------
    Immutable answer-key release bridge
    ---------------------------------------------- */
 (() => {
