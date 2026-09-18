@@ -152,8 +152,11 @@
     } else if (type === "difficulty" && ["easy", "medium", "hard"].includes(command.value) && typeof changeDifficulty === "function") {
       await changeDifficulty(command.value);
     } else if (type === "feedback" && ["correct", "incorrect"].includes(command.value)) {
-      // Reveal the complete word before showing either feedback animation.
-      if (typeof hiddenMode !== "undefined" && hiddenMode && typeof toggleWordMode === "function") {
+      // Finalize the Presenter word before feedback: no pending letters and no
+      // active pointer left behind when Admin reveals the word.
+      if (typeof finalizeWordForFeedback === "function") {
+        finalizeWordForFeedback(command.value);
+      } else if (typeof hiddenMode !== "undefined" && hiddenMode && typeof toggleWordMode === "function") {
         toggleWordMode();
       }
       runFeedback(command.value);
