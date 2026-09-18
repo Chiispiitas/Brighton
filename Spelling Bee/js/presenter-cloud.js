@@ -132,6 +132,57 @@
     }
   }
 
+  function applyRemoteWordState(command) {
+    if (
+      typeof current === "undefined" ||
+      !current ||
+      typeof marks === "undefined" ||
+      !Array.isArray(marks) ||
+      typeof ptr === "undefined"
+    ) {
+      return;
+    }
+
+    const remote = command?.wordState;
+    if (!remote || !Array.isArray(remote.letterMarks)) return;
+
+    const letters = Array.from(String(current));
+    if (remote.letterMarks.length !== letters.length) return;
+
+    const wasComplete = typeof isAllMarked === "function" ? isAllMarked() : false;
+
+    const nextMarks = letters.map((char, index) => {
+      if (!/[A-Za-z]/.test(char)) return "skip";
+
+      const value = remote.letterMarks[index];
+      if (value === "correct") return "ok";
+      if (value === "incorrect") return "err";
+      if (value === "reveal") return "reveal";
+      return "pending";
+    });
+
+    marks = nextMarks;
+    ptr = Number.isFinite(Number(remote.pointer))
+      ? Math.max(0, Math.min(letters.length, Number(remote.pointer)))
+      : 0;
+
+    if (typeof finalizedFeedbackOutcome !== "undefined") {
+      finalizedFeedbackOutcome = null;
+    }
+    if (typeof renderWord === "function") renderWord();
+
+    const nowComplete = typeof isAllMarked === "function" ? isAllMarked() : false;
+    if (!wasComplete && nowComplete) {
+      const hasError = typeof hadAnyError === "function" ? hadAnyError() : marks.some(mark => mark === "err");
+      if (hasError) {
+        if (typeof playWrongAudio === "function") playWrongAudio();
+      } else {
+        if (typeof launchSpellEffect === "function") launchSpellEffect();
+        if (typeof playCorrectAudio === "function") playCorrectAudio();
+      }
+    }
+  }
+
   async function applyRemoteCommand(command) {
     if (!command || Number(command.commandSeq || 0) <= lastRemoteCommandSeq) return;
     const seq = Number(command.commandSeq || 0);
@@ -151,8 +202,12 @@
       nextWord();
     } else if (type === "difficulty" && ["easy", "medium", "hard"].includes(command.value) && typeof changeDifficulty === "function") {
       await changeDifficulty(command.value);
+    } else if (type === "word-state") {
+      // Admin sends the latest complete word judgement. Intermediate taps can
+      // be skipped safely because this snapshot contains every mark + pointer.
+      applyRemoteWordState(command);
     } else if (type === "letter-mark" && ["correct", "incorrect"].includes(command.value) && typeof mark === "function") {
-      // Admin judging mirrors the Presenter's native O/P behavior exactly.
+      // Compatibility with older Admin clients.
       mark(command.value === "incorrect" ? "err" : "ok", false);
     } else if (type === "play-audio" && typeof playAudio === "function") {
       // Replay the current word through the Presenter's existing locked-1x audio path.
@@ -262,7 +317,7 @@
 
   window.setInterval(() => publishPresenter(false), 300);
   window.setInterval(() => publishPresenter(true), 3000);
-  window.setInterval(pollRemoteCommands, 350);
+  window.setInterval(pollRemoteCommands, 180);
 
   updateViewLinks();
   const saved = Cloud.normalizeSessionCode(localStorage.getItem("brighton-spelling-presenter-session"));
