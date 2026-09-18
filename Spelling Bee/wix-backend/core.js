@@ -3,7 +3,11 @@ import { ok, badRequest, serverError, response } from "wix-http-functions";
 
 export const CORS_HEADERS = {
   "Content-Type": "application/json",
-  "Access-Control-Allow-Origin": "*"
+  "Access-Control-Allow-Origin": "*",
+  // Keep the API response policy explicit and limited to stable directives.
+  // This prevents browsers from inheriting/advertising unsupported Privacy
+  // Sandbox directives such as run-ad-auction or attribution-reporting.
+  "Permissions-Policy": "geolocation=(), camera=(), microphone=()"
 };
 
 export function jsonOK(data = {}) {
