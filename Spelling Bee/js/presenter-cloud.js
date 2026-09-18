@@ -19,8 +19,13 @@
   let sessionStartedAt = "";
   let lastStateFingerprint = "";
   let lastRemoteCommandSeq = 0;
-  let publishChain = Promise.resolve();
+  let presenterWriteBusy = false;
+  let pendingPresenterSnapshot = null;
+  let pendingPresenterFingerprint = "";
+  let presenterWritePromise = Promise.resolve();
   let pollBusy = false;
+  let remotePollTimer = null;
+  let remotePollLoopActive = false;
 
   function judgementMeta() {
     return {
@@ -121,25 +126,62 @@
     ]);
   }
 
+  function flushPresenterSnapshot() {
+    if (!sessionCode || presenterWriteBusy || !pendingPresenterSnapshot) {
+      return presenterWritePromise;
+    }
+
+    const snapshot = pendingPresenterSnapshot;
+    const snapshotFingerprint = pendingPresenterFingerprint;
+    const snapshotSessionCode = sessionCode;
+    pendingPresenterSnapshot = null;
+    pendingPresenterFingerprint = "";
+    presenterWriteBusy = true;
+
+    presenterWritePromise = Cloud.writeState({
+      sessionCode: snapshotSessionCode,
+      role: "presenter",
+      actorId: "main",
+      state: snapshot
+    })
+      .then(() => {
+        setStatus(`Session ${snapshotSessionCode} · synced`, "online");
+      })
+      .catch(error => {
+        // Retry only when no newer Presenter state has already replaced it.
+        if (!pendingPresenterSnapshot && sessionCode === snapshotSessionCode) {
+          pendingPresenterSnapshot = snapshot;
+          pendingPresenterFingerprint = snapshotFingerprint;
+        }
+        setStatus(`Sync problem: ${error.message}`, "error");
+      })
+      .finally(() => {
+        presenterWriteBusy = false;
+        if (pendingPresenterSnapshot) {
+          window.setTimeout(flushPresenterSnapshot, 0);
+        }
+      });
+
+    return presenterWritePromise;
+  }
+
   function publishPresenter(force = false) {
     if (!sessionCode) return Promise.resolve();
+
     const snapshot = presenterSnapshot();
     const nextFingerprint = fingerprint(snapshot);
-    if (!force && nextFingerprint === lastStateFingerprint) return publishChain;
+    if (!force && nextFingerprint === lastStateFingerprint) {
+      return presenterWritePromise;
+    }
+
+    // Latest-state wins: local O/P/Backspace can happen much faster than a Wix
+    // POST. Never build a queue of obsolete Presenter states.
     lastStateFingerprint = nextFingerprint;
+    pendingPresenterSnapshot = snapshot;
+    pendingPresenterFingerprint = nextFingerprint;
 
-    publishChain = publishChain
-      .catch(() => {})
-      .then(() => Cloud.writeState({
-        sessionCode,
-        role: "presenter",
-        actorId: "main",
-        state: snapshot
-      }))
-      .then(() => setStatus(`Session ${sessionCode} · synced`, "online"))
-      .catch(error => setStatus(`Sync problem: ${error.message}`, "error"));
-
-    return publishChain;
+    if (!presenterWriteBusy) flushPresenterSnapshot();
+    return presenterWritePromise;
   }
 
   function currentWordToken() {
@@ -278,19 +320,53 @@
 
   async function pollRemoteCommands() {
     if (!sessionCode || pollBusy) return;
+    const pollSessionCode = sessionCode;
     pollBusy = true;
+
     try {
       const remote = typeof Cloud.fetchCommand === "function"
-        ? await Cloud.fetchCommand(sessionCode)
-        : Cloud.latestRoleState(await Cloud.fetchRows(sessionCode), "remote");
+        ? await Cloud.fetchCommand(pollSessionCode)
+        : Cloud.latestRoleState(await Cloud.fetchRows(pollSessionCode), "remote");
+
+      // Ignore a response from a session that was disconnected/replaced while
+      // its request was in flight.
+      if (pollSessionCode !== sessionCode) return;
+
       if (remote && Number(remote.commandSeq || 0) > lastRemoteCommandSeq) {
         await applyRemoteCommand(remote);
       }
     } catch (error) {
-      setStatus(`Cloud unavailable: ${error.message}`, "error");
+      if (pollSessionCode === sessionCode) {
+        setStatus(`Cloud unavailable: ${error.message}`, "error");
+      }
     } finally {
       pollBusy = false;
     }
+  }
+
+  function stopRemotePollLoop() {
+    remotePollLoopActive = false;
+    window.clearTimeout(remotePollTimer);
+    remotePollTimer = null;
+  }
+
+  function startRemotePollLoop() {
+    stopRemotePollLoop();
+    remotePollLoopActive = true;
+
+    const tick = async () => {
+      if (!remotePollLoopActive || !sessionCode) return;
+      await pollRemoteCommands();
+
+      // The next lightweight command GET starts almost as soon as the previous
+      // one finishes. This is faster than a fixed interval when network RTT is
+      // longer than the interval itself.
+      if (remotePollLoopActive && sessionCode) {
+        remotePollTimer = window.setTimeout(tick, 12);
+      }
+    };
+
+    tick();
   }
 
   async function connect(code) {
@@ -318,6 +394,7 @@
 
     lastStateFingerprint = "";
     await publishPresenter(true);
+    startRemotePollLoop();
   }
 
   function disconnect() {
@@ -325,6 +402,9 @@
     sessionStartedAt = "";
     lastStateFingerprint = "";
     lastRemoteCommandSeq = 0;
+    stopRemotePollLoop();
+    pendingPresenterSnapshot = null;
+    pendingPresenterFingerprint = "";
     localStorage.removeItem("brighton-spelling-presenter-session");
     updateViewLinks();
     setStatus("Cloud session disconnected.");
@@ -359,9 +439,8 @@
   // without waiting for the periodic state scan.
   window.requestSpellingPresenterSync = () => publishPresenter(false);
 
-  window.setInterval(() => publishPresenter(false), 200);
-  window.setInterval(() => publishPresenter(true), 3000);
-  window.setInterval(pollRemoteCommands, 90);
+  window.setInterval(() => publishPresenter(false), 100);
+  window.setInterval(() => publishPresenter(true), 2500);
 
   updateViewLinks();
   const saved = Cloud.normalizeSessionCode(localStorage.getItem("brighton-spelling-presenter-session"));
