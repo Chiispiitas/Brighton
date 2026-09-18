@@ -748,7 +748,7 @@
       // Full refresh includes judges + commands and is intentionally slower.
       // Presenter-only sync keeps O/P progress responsive without flooding mobile.
       pollTimer = window.setInterval(refresh, 1100);
-      presenterSyncTimer = window.setInterval(refreshPresenterOnly, 240);
+      presenterSyncTimer = window.setInterval(refreshPresenterOnly, 120);
 
       if (canJudge) {
         await publishJudgeState({ increment: true });
@@ -768,7 +768,7 @@
     adminJudgePublishTimer = window.setTimeout(() => {
       adminJudgePublishTimer = null;
       publishJudgeState({ increment: true });
-    }, 90);
+    }, 40);
   }
 
   function adminWordStateSnapshot() {
@@ -836,7 +836,7 @@
       })
       .finally(() => {
         if (pendingAdminWordState && !adminWordStateFlushTimer) {
-          adminWordStateFlushTimer = window.setTimeout(flushPendingAdminWordState, 25);
+          adminWordStateFlushTimer = window.setTimeout(flushPendingAdminWordState, 10);
         }
       });
 
@@ -850,7 +850,7 @@
     // One very short debounce collapses rapid taps into a single whole-word
     // snapshot. While a write is in flight, only the newest state is retained.
     if (!adminWordStateFlushTimer) {
-      adminWordStateFlushTimer = window.setTimeout(flushPendingAdminWordState, 18);
+      adminWordStateFlushTimer = window.setTimeout(flushPendingAdminWordState, 0);
     }
   }
 
@@ -906,7 +906,7 @@
     const deadline = Date.now() + timeoutMs;
 
     while (Date.now() < deadline) {
-      await new Promise(resolve => window.setTimeout(resolve, 180));
+      await new Promise(resolve => window.setTimeout(resolve, 100));
 
       try {
         const latestPresenter = typeof Cloud.fetchPresenter === "function"
@@ -1047,7 +1047,7 @@
   joinButton?.addEventListener("click", joinSession);
 
   function bindVerdictButton(button) {
-    let lastTouchActivation = 0;
+    let suppressSyntheticClickUntil = 0;
 
     const activate = () => {
       if (button.disabled) return;
@@ -1058,32 +1058,34 @@
       submitJudgeMark(button.dataset.verdict === "incorrect" ? "incorrect" : "correct");
     };
 
-    const activateTouch = event => {
-      const now = Date.now();
-      if (now - lastTouchActivation < 450) return;
-      lastTouchActivation = now;
+    const activateTouchLike = event => {
       if (event?.cancelable) event.preventDefault();
+      suppressSyntheticClickUntil = performance.now() + 650;
       activate();
     };
 
-    const activateClick = event => {
-      if (Date.now() - lastTouchActivation < 700) {
+    if (window.PointerEvent) {
+      // Fire as soon as the finger/stylus goes down. There is deliberately no
+      // inter-press cooldown, so fast spelling cadence is accepted.
+      button.addEventListener("pointerdown", event => {
+        if (event.pointerType === "touch" || event.pointerType === "pen") {
+          activateTouchLike(event);
+        }
+      });
+    } else {
+      // Older iOS/WebKit fallback when Pointer Events are unavailable.
+      button.addEventListener("touchstart", activateTouchLike, { passive: false });
+    }
+
+    // Mouse and keyboard activation still use click. A touch-generated click
+    // is ignored without blocking the next real touch press.
+    button.addEventListener("click", event => {
+      if (performance.now() < suppressSyntheticClickUntil) {
         event.preventDefault();
         return;
       }
       activate();
-    };
-
-    button.addEventListener("pointerup", event => {
-      if (event.pointerType === "touch" || event.pointerType === "pen") {
-        activateTouch(event);
-      }
     });
-
-    // iOS/WebKit fallback. Deduplication above prevents double marks on
-    // browsers that fire both touchend and pointerup.
-    button.addEventListener("touchend", activateTouch, { passive: false });
-    button.addEventListener("click", activateClick);
   }
 
   document.querySelectorAll(".verdict-button").forEach(bindVerdictButton);
