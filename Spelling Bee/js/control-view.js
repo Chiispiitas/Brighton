@@ -31,6 +31,7 @@
   let voteSeq = 0;
   let commandSeq = 0;
   let busy = false;
+  let judgePublishChain = Promise.resolve();
 
   let judgeWordToken = "";
   let judgeMarks = [];
@@ -86,16 +87,23 @@
     judgeStartedAt = new Date().toISOString();
   }
 
-  function hydrateJudgeState(state) {
+  function hydrateJudgeState(state, { force = false } = {}) {
     if (!state || state.wordToken !== currentToken() || !Array.isArray(state.letterMarks)) {
-      resetJudgeWord();
       return false;
     }
 
     const expectedLength = Array.from(String(presenter?.word || "")).length;
     if (state.letterMarks.length !== expectedLength) {
-      resetJudgeWord();
       return false;
+    }
+
+    const incomingVoteSeq = Number(state.voteSeq || 0);
+
+    // The local Judge UI is optimistic. Wix may briefly return the previous
+    // CMS row while a newer mark is still being written. Never let an older
+    // server snapshot repaint newer local progress.
+    if (!force && state.wordToken === judgeWordToken && incomingVoteSeq < voteSeq) {
+      return true;
     }
 
     judgeWordToken = state.wordToken;
@@ -105,7 +113,7 @@
       : firstMarkableIndex(presenter?.word || "", 0);
     judgeVerdict = ["correct", "incorrect", "pending"].includes(state.verdict) ? state.verdict : "pending";
     judgeStartedAt = state.startedAt || judgeStartedAt || new Date().toISOString();
-    voteSeq = Math.max(voteSeq, Number(state.voteSeq || 0));
+    voteSeq = Math.max(voteSeq, incomingVoteSeq);
     return true;
   }
 
@@ -214,31 +222,42 @@
     }).join("");
   }
 
-  async function publishJudgeState({ increment = false } = {}) {
-    if (role !== "judge" || !sessionCode || !presenter?.wordToken || judgeWordToken !== presenter.wordToken) return;
+  function publishJudgeState({ increment = false } = {}) {
+    if (role !== "judge" || !sessionCode || !presenter?.wordToken || judgeWordToken !== presenter.wordToken) {
+      return Promise.resolve();
+    }
+
     if (increment) voteSeq += 1;
 
-    try {
-      await Cloud.writeState({
-        sessionCode,
+    // Capture exactly what the Judge saw when this write was queued. Sending
+    // through one chain prevents fast ✓/× presses from reaching Wix out of order.
+    const snapshotSessionCode = sessionCode;
+    const snapshot = {
+      startedAt: judgeStartedAt || new Date().toISOString(),
+      level: presenter.level || "",
+      difficulty: presenter.difficulty || "",
+      word: presenter.word || "",
+      wordToken: presenter.wordToken,
+      wordSequence: Number(presenter.wordSequence || 0),
+      voteSeq,
+      pointer: judgePointer,
+      letterMarks: judgeMarks.slice(),
+      verdict: judgeVerdict
+    };
+
+    judgePublishChain = judgePublishChain
+      .catch(() => {})
+      .then(() => Cloud.writeState({
+        sessionCode: snapshotSessionCode,
         role: "judge",
         actorId: deviceId,
-        state: {
-          startedAt: judgeStartedAt || new Date().toISOString(),
-          level: presenter.level || "",
-          difficulty: presenter.difficulty || "",
-          word: presenter.word || "",
-          wordToken: presenter.wordToken,
-          wordSequence: Number(presenter.wordSequence || 0),
-          voteSeq,
-          pointer: judgePointer,
-          letterMarks: judgeMarks.slice(),
-          verdict: judgeVerdict
-        }
+        state: snapshot
+      }))
+      .catch(error => {
+        setConnection("Judge sync failed", "error");
       });
-    } catch (error) {
-      setConnection("Judge sync failed", "error");
-    }
+
+    return judgePublishChain;
   }
 
   async function refresh() {
@@ -264,7 +283,13 @@
 
       if (role === "judge") {
         const mine = Cloud.roleStates(rows, "judge").find(state => state.actorId === normalizedDeviceId);
-        if (tokenChanged || !hydrateJudgeState(mine)) {
+
+        if (tokenChanged) {
+          resetJudgeWord();
+          needsJudgeInit = Boolean(presenter.wordToken);
+        } else if (mine) {
+          hydrateJudgeState(mine);
+        } else if (judgeWordToken !== currentToken()) {
           resetJudgeWord();
           needsJudgeInit = Boolean(presenter.wordToken);
         }
@@ -304,7 +329,7 @@
 
       if (role === "judge") {
         const mine = Cloud.roleStates(rows, "judge").find(state => state.actorId === normalizedDeviceId);
-        if (!hydrateJudgeState(mine)) resetJudgeWord();
+        if (!hydrateJudgeState(mine, { force: true })) resetJudgeWord();
       } else {
         const remote = Cloud.latestRoleState(rows, "remote");
         commandSeq = Number(remote?.commandSeq || 0);
