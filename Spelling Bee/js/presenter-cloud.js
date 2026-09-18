@@ -153,7 +153,7 @@
       await changeDifficulty(command.value);
     } else if (type === "letter-mark" && ["correct", "incorrect"].includes(command.value) && typeof mark === "function") {
       // Admin judging mirrors the Presenter's native O/P behavior exactly.
-      mark(command.value === "incorrect" ? "err" : "ok");
+      mark(command.value === "incorrect" ? "err" : "ok", false);
     } else if (type === "play-audio" && typeof playAudio === "function") {
       // Replay the current word through the Presenter's existing locked-1x audio path.
       await playAudio();
@@ -181,8 +181,9 @@
     if (!sessionCode || pollBusy) return;
     pollBusy = true;
     try {
-      const rows = await Cloud.fetchRows(sessionCode);
-      const remote = Cloud.latestRoleState(rows, "remote");
+      const remote = typeof Cloud.fetchCommand === "function"
+        ? await Cloud.fetchCommand(sessionCode)
+        : Cloud.latestRoleState(await Cloud.fetchRows(sessionCode), "remote");
       if (remote && Number(remote.commandSeq || 0) > lastRemoteCommandSeq) {
         await applyRemoteCommand(remote);
       }
@@ -255,9 +256,13 @@
     controlsToggle.setAttribute("aria-label", controlsToggle.title);
   });
 
-  window.setInterval(() => publishPresenter(false), 450);
+  // Local O/P changes request an immediate publish so Admin mirrors Presenter
+  // without waiting for the periodic state scan.
+  window.requestSpellingPresenterSync = () => publishPresenter(false);
+
+  window.setInterval(() => publishPresenter(false), 200);
   window.setInterval(() => publishPresenter(true), 3000);
-  window.setInterval(pollRemoteCommands, 850);
+  window.setInterval(pollRemoteCommands, 220);
 
   updateViewLinks();
   const saved = Cloud.normalizeSessionCode(localStorage.getItem("brighton-spelling-presenter-session"));
