@@ -42,7 +42,6 @@ body.control-view {
   gap: .5rem;
 }
 
-.session-pill,
 .connection-pill,
 .difficulty-pill {
   padding: .42rem .62rem;
@@ -86,9 +85,17 @@ body.control-view {
   font-size: clamp(3.1rem, 8.5vw, 8rem);
   font-weight: 700;
   line-height: .98;
-  overflow-wrap: anywhere;
+  white-space: nowrap;
+  overflow-wrap: normal;
+  word-break: normal;
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  scrollbar-width: none;
   text-shadow: 0 8px 30px rgba(0,0,0,.45);
 }
+
+.control-word::-webkit-scrollbar { display: none; }
 
 .word-meta {
   margin: .9rem 0 0;
@@ -170,7 +177,7 @@ button:disabled { opacity: .45; cursor: not-allowed; }
   display: flex;
   gap: .55rem;
   align-items: center;
-  justify-content: space-between;
+  justify-content: center;
   margin-top: .75rem;
 }
 
@@ -334,7 +341,6 @@ button:disabled { opacity: .45; cursor: not-allowed; }
 
 @media (max-width: 520px) {
   .control-brand img { width: 190px; }
-  .session-pill { display: none; }
   .pool-word-list { columns: 2; }
   .join-row { flex-direction: column; }
 }
