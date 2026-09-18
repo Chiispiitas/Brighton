@@ -542,6 +542,44 @@
     return true;
   }
 
+  function installPresenterSnapshot(nextPresenter, { render = false } = {}) {
+    if (!nextPresenter) return false;
+
+    const previousToken = String(presenter?.wordToken || "");
+    const previousSequence = Number(presenter?.wordSequence || 0);
+    const previousWord = String(presenter?.word || "");
+    const nextToken = String(nextPresenter.wordToken || "");
+    const nextSequence = Number(nextPresenter.wordSequence || 0);
+    const nextWord = String(nextPresenter.word || "");
+
+    const tokenChanged =
+      previousToken !== nextToken ||
+      previousSequence !== nextSequence ||
+      previousWord !== nextWord;
+
+    presenter = nextPresenter;
+
+    if (role === "remote" && tokenChanged) {
+      // A new word is a hard state boundary. Nothing queued for the previous
+      // word is allowed to seed marks/pointer/verdict into the new word.
+      pendingAdminWordState = null;
+      window.clearTimeout(adminWordStateFlushTimer);
+      adminWordStateFlushTimer = null;
+
+      window.clearTimeout(adminJudgePublishTimer);
+      adminJudgePublishTimer = null;
+
+      // Start from a brand-new pending array sized for the NEW word, then
+      // optionally adopt genuine Presenter progress belonging to this token.
+      resetJudgeWord();
+      syncAdminJudgeFromPresenter({ force: true });
+
+      if (render) renderPresenterState();
+    }
+
+    return tokenChanged;
+  }
+
   function publishJudgeState({ increment = false } = {}) {
     if (!canJudge || !sessionCode || !presenter?.wordToken || judgeWordToken !== presenter.wordToken) {
       return Promise.resolve();
@@ -593,24 +631,12 @@
         : Cloud.presenterState(await Cloud.fetchRows(sessionCode));
       if (!nextPresenter) return;
 
-      const tokenChanged = presenter?.wordToken !== nextPresenter.wordToken;
-      presenter = nextPresenter;
-
-      if (role === "remote" && tokenChanged) {
-        pendingAdminWordState = null;
-        window.clearTimeout(adminWordStateFlushTimer);
-        adminWordStateFlushTimer = null;
-        adoptJudgementMeta(presenterJudgementMeta());
-      }
+      const tokenChanged = installPresenterSnapshot(nextPresenter);
 
       if (role === "remote") {
-        let changed = false;
-        if (tokenChanged) {
-          judgeStartedAt = new Date().toISOString();
-          changed = syncAdminJudgeFromPresenter({ force: true });
-        } else {
-          changed = syncAdminJudgeFromPresenter();
-        }
+        const changed = tokenChanged
+          ? Boolean(presenter.wordToken)
+          : syncAdminJudgeFromPresenter();
 
         renderPresenterState();
         if (changed) publishJudgeState({ increment: true });
@@ -640,15 +666,7 @@
         return;
       }
 
-      const tokenChanged = presenter?.wordToken !== nextPresenter.wordToken;
-      presenter = nextPresenter;
-
-      if (role === "remote" && tokenChanged) {
-        pendingAdminWordState = null;
-        window.clearTimeout(adminWordStateFlushTimer);
-        adminWordStateFlushTimer = null;
-        adoptJudgementMeta(presenterJudgementMeta());
-      }
+      const tokenChanged = installPresenterSnapshot(nextPresenter);
 
       setConnection(
         Cloud.isFresh(presenter, 9000) ? "Presenter online" : "Presenter stale",
@@ -669,8 +687,7 @@
         }
       } else if (role === "remote") {
         if (tokenChanged) {
-          judgeStartedAt = new Date().toISOString();
-          if (syncAdminJudgeFromPresenter({ force: true })) needsJudgeInit = Boolean(presenter.wordToken);
+          needsJudgeInit = Boolean(presenter.wordToken);
         } else if (syncAdminJudgeFromPresenter()) {
           needsJudgeInit = true;
         }
@@ -915,8 +932,14 @@
         if (!latestPresenter) continue;
 
         const ack = Number(latestPresenter.lastCommandSeq || 0);
+        const tokenChanged = installPresenterSnapshot(latestPresenter, { render: true });
+
+        if (tokenChanged && role === "remote" && presenter?.wordToken) {
+          // Publish a clean Admin judge row for the new word immediately.
+          publishJudgeState({ increment: true });
+        }
+
         if (ack >= seq) {
-          presenter = latestPresenter;
           return true;
         }
 
@@ -926,7 +949,6 @@
           latestPresenter.wordToken &&
           latestPresenter.wordToken !== targetWordToken
         ) {
-          presenter = latestPresenter;
           return true;
         }
       } catch (error) {
