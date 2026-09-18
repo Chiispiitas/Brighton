@@ -5,6 +5,7 @@
   if (!Cloud) return;
 
   const role = document.body.dataset.role === "remote" ? "remote" : "judge";
+  const canJudge = role === "judge" || role === "remote";
   const joinGate = document.getElementById("join-gate");
   const app = document.getElementById("control-app");
   const codeInput = document.getElementById("join-session-code");
@@ -26,7 +27,10 @@
   const deviceId = Cloud.getDeviceId(role === "judge"
     ? "brighton-spelling-judge-device"
     : "brighton-spelling-remote-device");
-  const normalizedDeviceId = String(deviceId).toLowerCase().replace(/[^a-z0-9_-]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 48);
+  const judgeActorId = role === "judge"
+    ? deviceId
+    : Cloud.getDeviceId("brighton-spelling-admin-judge-device");
+  const normalizedJudgeActorId = String(judgeActorId).toLowerCase().replace(/[^a-z0-9_-]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 48);
 
   let sessionCode = "";
   let presenter = null;
@@ -45,7 +49,7 @@
   let judgeStartedAt = "";
   let judgeName = role === "judge"
     ? String(localStorage.getItem("brighton-spelling-judge-name") || "").trim()
-    : "";
+    : "Admin";
 
   function setJoinStatus(message, error = false) {
     if (!joinStatus) return;
@@ -267,7 +271,7 @@
       return;
     }
 
-    if (role === "judge") renderJudgeWord();
+    if (canJudge) renderJudgeWord();
     else if (word) {
       word.textContent = presenter.word || "—";
       scheduleWordFit();
@@ -276,7 +280,7 @@
     if (wordMeta) {
       const level = presenter.level || "—";
       const difficulty = presenter.difficulty || "easy";
-      const judgeSuffix = role === "judge"
+      const judgeSuffix = canJudge
         ? judgeVerdict === "correct"
           ? " · WORD COMPLETE"
           : judgeVerdict === "incorrect"
@@ -301,7 +305,7 @@
       button.classList.toggle("selected", button.dataset.difficulty === presenter.difficulty);
     });
 
-    if (role === "judge") {
+    if (canJudge) {
       const finished = judgePointer >= Array.from(String(presenter.word || "")).length;
       document.querySelectorAll(".verdict-button").forEach(button => {
         button.disabled = finished;
@@ -385,7 +389,7 @@
   }
 
   function publishJudgeState({ increment = false } = {}) {
-    if (role !== "judge" || !sessionCode || !presenter?.wordToken || judgeWordToken !== presenter.wordToken) {
+    if (!canJudge || !sessionCode || !presenter?.wordToken || judgeWordToken !== presenter.wordToken) {
       return Promise.resolve();
     }
 
@@ -413,7 +417,7 @@
       .then(() => Cloud.writeState({
         sessionCode: snapshotSessionCode,
         role: "judge",
-        actorId: deviceId,
+        actorId: judgeActorId,
         state: snapshot
       }))
       .catch(error => {
@@ -444,8 +448,8 @@
         Cloud.isFresh(presenter, 9000) ? "online" : "stale"
       );
 
-      if (role === "judge") {
-        const mine = Cloud.roleStates(rows, "judge").find(state => state.actorId === normalizedDeviceId);
+      if (canJudge) {
+        const mine = Cloud.roleStates(rows, "judge").find(state => state.actorId === normalizedJudgeActorId);
 
         if (tokenChanged) {
           resetJudgeWord();
@@ -456,7 +460,9 @@
           resetJudgeWord();
           needsJudgeInit = Boolean(presenter.wordToken);
         }
-      } else {
+      }
+
+      if (role === "remote") {
         const remote = Cloud.latestRoleState(rows, "remote");
         commandSeq = Math.max(commandSeq, Number(remote?.commandSeq || 0));
       }
@@ -500,10 +506,12 @@
       sessionCode = code;
       presenter = found;
 
-      if (role === "judge") {
-        const mine = Cloud.roleStates(rows, "judge").find(state => state.actorId === normalizedDeviceId);
+      if (canJudge) {
+        const mine = Cloud.roleStates(rows, "judge").find(state => state.actorId === normalizedJudgeActorId);
         if (!hydrateJudgeState(mine, { force: true })) resetJudgeWord();
-      } else {
+      }
+
+      if (role === "remote") {
         const remote = Cloud.latestRoleState(rows, "remote");
         commandSeq = Number(remote?.commandSeq || 0);
       }
@@ -519,7 +527,7 @@
       window.clearInterval(pollTimer);
       pollTimer = window.setInterval(refresh, 900);
 
-      if (role === "judge") {
+      if (canJudge) {
         await publishJudgeState({ increment: true });
         window.clearInterval(judgeHeartbeatTimer);
         judgeHeartbeatTimer = window.setInterval(() => publishJudgeState(), 3000);
@@ -532,7 +540,7 @@
   }
 
   async function submitJudgeMark(mark) {
-    if (role !== "judge" || !sessionCode || !presenter?.wordToken || judgeWordToken !== presenter.wordToken) return;
+    if (!canJudge || !sessionCode || !presenter?.wordToken || judgeWordToken !== presenter.wordToken) return;
 
     const letters = Array.from(String(presenter.word || ""));
     if (judgePointer >= letters.length) return;
@@ -635,7 +643,7 @@
   });
 
   window.addEventListener("keydown", event => {
-    if (role !== "judge" || ["INPUT", "TEXTAREA"].includes(document.activeElement?.tagName)) return;
+    if (!canJudge || ["INPUT", "TEXTAREA"].includes(document.activeElement?.tagName)) return;
     if (event.key === "o" || event.key === "O") {
       event.preventDefault();
       submitJudgeMark("correct");
