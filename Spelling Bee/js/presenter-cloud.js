@@ -22,6 +22,32 @@
   let publishChain = Promise.resolve();
   let pollBusy = false;
 
+  function judgementMeta() {
+    return {
+      revision: typeof judgementRevision !== "undefined" ? Number(judgementRevision) || 0 : 0,
+      source: typeof judgementSource !== "undefined" ? String(judgementSource || "presenter") : "presenter",
+      updatedAt: typeof judgementUpdatedAt !== "undefined" ? Number(judgementUpdatedAt) || 0 : 0
+    };
+  }
+
+  function compareJudgementMeta(incoming, local = judgementMeta()) {
+    const incomingTime = Number(incoming?.updatedAt || 0);
+    const localTime = Number(local?.updatedAt || 0);
+    if (incomingTime !== localTime) return incomingTime > localTime ? 1 : -1;
+
+    const incomingRevision = Number(incoming?.revision || 0);
+    const localRevision = Number(local?.revision || 0);
+    if (incomingRevision !== localRevision) return incomingRevision > localRevision ? 1 : -1;
+
+    const incomingSource = String(incoming?.source || "");
+    const localSource = String(local?.source || "");
+    if (incomingSource === localSource) return 0;
+
+    // Deterministic last-resort tie breaker for the extremely unlikely case
+    // of identical timestamps + revisions from two devices.
+    return incomingSource === "admin" ? 1 : -1;
+  }
+
   function setStatus(message, type = "") {
     if (!status) return;
     status.textContent = message;
@@ -73,7 +99,10 @@
       hiddenMode: hidden,
       poolCount,
       usedWords: usedWordsSnapshot(),
-      lastCommandSeq: lastRemoteCommandSeq
+      lastCommandSeq: lastRemoteCommandSeq,
+      judgementRevision: judgementMeta().revision,
+      judgementSource: judgementMeta().source,
+      judgementUpdatedAt: judgementMeta().updatedAt
     };
   }
 
@@ -87,7 +116,10 @@
       snapshot.hiddenMode,
       snapshot.poolCount,
       snapshot.usedWords,
-      snapshot.lastCommandSeq
+      snapshot.lastCommandSeq,
+      snapshot.judgementRevision,
+      snapshot.judgementSource,
+      snapshot.judgementUpdatedAt
     ]);
   }
 
@@ -146,6 +178,16 @@
     const remote = command?.wordState;
     if (!remote || !Array.isArray(remote.letterMarks)) return;
 
+    const incomingMeta = {
+      revision: Number(remote.judgementRevision || 0),
+      source: String(remote.judgementSource || "admin"),
+      updatedAt: Number(remote.judgementUpdatedAt || 0)
+    };
+
+    // A late Wix command must never overwrite a newer O/P/Backspace input
+    // that happened directly on Presenter.
+    if (compareJudgementMeta(incomingMeta) <= 0) return;
+
     const letters = Array.from(String(current));
     if (remote.letterMarks.length !== letters.length) return;
 
@@ -165,6 +207,10 @@
     ptr = Number.isFinite(Number(remote.pointer))
       ? Math.max(0, Math.min(letters.length, Number(remote.pointer)))
       : 0;
+
+    if (typeof judgementRevision !== "undefined") judgementRevision = incomingMeta.revision;
+    if (typeof judgementSource !== "undefined") judgementSource = incomingMeta.source;
+    if (typeof judgementUpdatedAt !== "undefined") judgementUpdatedAt = incomingMeta.updatedAt;
 
     if (typeof finalizedFeedbackOutcome !== "undefined") {
       finalizedFeedbackOutcome = null;
