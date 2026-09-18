@@ -10,7 +10,7 @@ import {
   readJsonBody,
   findOne,
   upsertOne
-} from "./core.js";
+} from "backend/core.js";
 
 const SESSIONS = "SpellingBeeSessions";
 const JUDGES = "SpellingBeeJudges";
