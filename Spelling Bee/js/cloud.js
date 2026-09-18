@@ -157,6 +157,43 @@
     return result;
   }
 
+  const wordDataCache = new Map();
+
+  async function loadWordData(level, difficulty) {
+    const safeLevel = String(level || "4TH-5TH").replace(/[^A-Za-z0-9+-]/g, "");
+    const safeDifficulty = ["easy", "medium", "hard"].includes(difficulty) ? difficulty : "easy";
+    const cacheKey = `${safeLevel}|${safeDifficulty}`;
+
+    if (wordDataCache.has(cacheKey)) {
+      return wordDataCache.get(cacheKey);
+    }
+
+    const request = fetch(
+      `word-data/${safeLevel}/${safeDifficulty}.json`,
+      { cache: "no-store" }
+    ).then(async response => {
+      if (response.status === 404) return {};
+      if (!response.ok) {
+        throw new Error(`Could not load word information for ${safeLevel} ${safeDifficulty}.`);
+      }
+      return response.json();
+    });
+
+    wordDataCache.set(cacheKey, request);
+
+    try {
+      return await request;
+    } catch (error) {
+      wordDataCache.delete(cacheKey);
+      throw error;
+    }
+  }
+
+  async function getWordInfo(level, difficulty, word) {
+    const data = await loadWordData(level, difficulty);
+    return data[String(word || "").trim().toLowerCase()] || null;
+  }
+
   window.SpellingCloud = {
     API_BASE,
     ENDPOINTS,
@@ -170,6 +207,8 @@
     fetchRows,
     writeState,
     loadWordList,
-    loadRemainingPools
+    loadRemainingPools,
+    loadWordData,
+    getWordInfo
   };
 })();
