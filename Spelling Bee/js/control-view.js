@@ -10,7 +10,6 @@
   const codeInput = document.getElementById("join-session-code");
   const joinButton = document.getElementById("join-session-button");
   const joinStatus = document.getElementById("join-status");
-  const sessionPill = document.getElementById("session-pill");
   const connectionPill = document.getElementById("connection-pill");
   const word = document.getElementById("control-word");
   const wordMeta = document.getElementById("word-meta");
@@ -154,6 +153,15 @@
 
     if (difficultyPill) difficultyPill.textContent = String(presenter.difficulty || "easy").toUpperCase();
 
+    if (role === "remote") {
+      const visibilityButton = document.getElementById("word-visibility-button");
+      if (visibilityButton) {
+        const hidden = presenter.hiddenMode !== false;
+        visibilityButton.textContent = hidden ? "Reveal word" : "Hide word";
+        visibilityButton.dataset.nextVisibility = hidden ? "reveal" : "hide";
+      }
+    }
+
     document.querySelectorAll("[data-difficulty]").forEach(button => {
       button.classList.toggle("selected", button.dataset.difficulty === presenter.difficulty);
     });
@@ -293,7 +301,6 @@
 
       sessionCode = code;
       presenter = found;
-      if (sessionPill) sessionPill.textContent = `SESSION ${sessionCode}`;
 
       if (role === "judge") {
         const mine = Cloud.roleStates(rows, "judge").find(state => state.actorId === normalizedDeviceId);
@@ -429,6 +436,10 @@
   });
 
   document.getElementById("new-word-button")?.addEventListener("click", () => sendRemoteCommand("new-word"));
+  document.getElementById("word-visibility-button")?.addEventListener("click", event => {
+    const value = event.currentTarget.dataset.nextVisibility || (presenter?.hiddenMode === false ? "hide" : "reveal");
+    sendRemoteCommand("visibility", value);
+  });
   document.querySelectorAll("[data-difficulty]").forEach(button => {
     button.addEventListener("click", () => sendRemoteCommand("difficulty", button.dataset.difficulty));
   });
