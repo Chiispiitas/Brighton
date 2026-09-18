@@ -66,6 +66,8 @@ jobs:
             throw new Error("A1 player must call boot() exactly once.");
           }
           NODE
+      - name: Audit A1 Reading and Writing consistency
+        run: node Exams/validate-a1-rw-consistency.mjs
       - name: Audit Brighton test answer keys
         run: node Exams/validate-answer-keys.mjs
       - name: Cross-check answers across overlapping tests
