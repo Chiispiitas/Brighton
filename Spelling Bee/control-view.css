@@ -374,3 +374,113 @@ button:disabled { opacity: .45; cursor: not-allowed; }
   box-shadow: 0 0 0 2px rgba(200,169,107,.14), inset 0 1px 0 rgba(255,255,255,.06);
   color: #fff3d4;
 }
+
+
+/* Judge identity */
+.judge-name-row {
+  margin: .85rem 0 .55rem;
+}
+
+.judge-name-row input {
+  width: 100%;
+  box-sizing: border-box;
+  border: 1px solid var(--control-border);
+  border-radius: .62rem;
+  background: rgba(255,255,255,.04);
+  color: #fff2d1;
+  padding: .72rem .75rem;
+  font: 700 1rem/1 Georgia, serif;
+}
+
+/* Admin live judge tracking */
+.admin-judge-list {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: .55rem;
+  margin-top: .75rem;
+}
+
+.admin-judge-card {
+  min-width: 0;
+  padding: .72rem .78rem;
+  border: 1px solid rgba(200,169,107,.18);
+  border-radius: .7rem;
+  background: rgba(255,255,255,.025);
+}
+
+.admin-judge-card.review {
+  border-color: rgba(213,111,115,.48);
+}
+
+.admin-judge-card.complete {
+  border-color: rgba(121,173,133,.45);
+}
+
+.admin-judge-card-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: .75rem;
+  margin-bottom: .45rem;
+}
+
+.admin-judge-card-head strong {
+  margin: 0;
+  color: #f0e2bd;
+  font-size: .9rem;
+}
+
+.admin-judge-card-head span {
+  color: #9f947f;
+  font-size: .68rem;
+  text-align: right;
+}
+
+.admin-judge-word {
+  max-width: 100%;
+  overflow-x: auto;
+  overflow-y: hidden;
+  white-space: nowrap;
+  scrollbar-width: none;
+  color: #c8bda7;
+  font: 700 clamp(1.35rem, 3.6vw, 2.1rem)/1.15 Georgia, "Palatino Linotype", serif;
+  letter-spacing: .025em;
+  text-align: center;
+}
+
+.admin-judge-word::-webkit-scrollbar { display: none; }
+
+.admin-judge-letter {
+  display: inline-block;
+  transition: color .14s ease, transform .14s ease, text-shadow .14s ease;
+}
+
+.admin-judge-letter.correct {
+  color: #9ec4a6;
+  text-shadow: 0 0 12px rgba(121,173,133,.16);
+}
+
+.admin-judge-letter.incorrect {
+  color: #e58b8f;
+  text-shadow: 0 0 14px rgba(213,111,115,.2);
+}
+
+.admin-judge-letter.active {
+  color: #fff3d4;
+  transform: translateY(-2px);
+  text-decoration: underline;
+  text-decoration-color: rgba(200,169,107,.72);
+  text-underline-offset: .16em;
+}
+
+@media (max-width: 520px) {
+  .admin-judge-card-head {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: .2rem;
+  }
+
+  .admin-judge-card-head span {
+    text-align: left;
+  }
+}
