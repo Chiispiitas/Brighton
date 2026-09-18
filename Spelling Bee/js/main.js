@@ -38,6 +38,7 @@ let pool = [];
 let current = null;
 let marks = [];
 let ptr = 0;
+let finalizedFeedbackOutcome = null;
 
 // DOM references
 const elWord = document.getElementById('word');
@@ -188,7 +189,29 @@ function advancePtr() {
 function resetMarks() {
     marks = new Array(current.length).fill('pending');
     ptr = 0;
+    finalizedFeedbackOutcome = null;
     advancePtr();
+    renderWord();
+}
+
+function finalizeWordForFeedback(kind) {
+    if (!current || !['correct', 'incorrect'].includes(kind)) return;
+
+    hiddenMode = false;
+    finalizedFeedbackOutcome = kind;
+
+    marks = [...current].map((ch, index) => {
+        if (!/[A-Za-z]/.test(ch)) return 'skip';
+
+        // A correct Admin verdict completes the whole spelling in green.
+        if (kind === 'correct') return 'ok';
+
+        // On incorrect, preserve any letter the Presenter already marked red,
+        // but neutrally reveal all unfinished letters instead of leaving them pending.
+        return marks[index] === 'err' ? 'err' : 'reveal';
+    });
+
+    ptr = current.length;
     renderWord();
 }
 
@@ -238,6 +261,7 @@ function playCorrectAudio() {
 ============================================== */
 function mark(type) {
     if (!current || ptr >= current.length) return;
+    finalizedFeedbackOutcome = null;
 
     if (!/[A-Za-z]/.test(current[ptr])) {
         advancePtr();
@@ -273,6 +297,7 @@ function revealNextLetter() {
 
 function undo() {
     if (!current) return;
+    finalizedFeedbackOutcome = null;
 
     do {
         if (ptr <= 0) break;
@@ -381,7 +406,7 @@ function nextWord() {
     }
 
     const complete = isAllMarked();
-    const anyErr = hadAnyError();
+    const anyErr = hadAnyError() || finalizedFeedbackOutcome === 'incorrect';
 
     // Remove from the remaining pool when the word was completed without errors.
     if (complete && !anyErr) {
