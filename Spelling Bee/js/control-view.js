@@ -35,6 +35,7 @@
   let sessionCode = "";
   let presenter = null;
   let pollTimer = null;
+  let presenterSyncTimer = null;
   let judgeHeartbeatTimer = null;
   let voteSeq = 0;
   let commandSeq = 0;
@@ -470,6 +471,42 @@
     return judgePublishChain;
   }
 
+  async function refreshPresenterOnly() {
+    if (!sessionCode) return;
+
+    try {
+      const nextPresenter = typeof Cloud.fetchPresenter === "function"
+        ? await Cloud.fetchPresenter(sessionCode)
+        : Cloud.presenterState(await Cloud.fetchRows(sessionCode));
+      if (!nextPresenter) return;
+
+      const tokenChanged = presenter?.wordToken !== nextPresenter.wordToken;
+      presenter = nextPresenter;
+
+      if (role === "remote") {
+        let changed = false;
+        if (tokenChanged) {
+          judgeStartedAt = new Date().toISOString();
+          changed = syncAdminJudgeFromPresenter({ force: true });
+        } else {
+          changed = syncAdminJudgeFromPresenter();
+        }
+
+        renderPresenterState();
+        if (changed) publishJudgeState({ increment: true });
+      } else {
+        renderPresenterState();
+      }
+
+      setConnection(
+        Cloud.isFresh(presenter, 9000) ? "Presenter online" : "Presenter stale",
+        Cloud.isFresh(presenter, 9000) ? "online" : "stale"
+      );
+    } catch {
+      // Full refresh handles connection errors. Keep this fast path quiet.
+    }
+  }
+
   async function refresh() {
     if (!sessionCode || busy) return;
     busy = true;
@@ -578,7 +615,12 @@
       );
 
       window.clearInterval(pollTimer);
-      pollTimer = window.setInterval(refresh, 400);
+      window.clearInterval(presenterSyncTimer);
+
+      // Full refresh includes judges + commands and is intentionally slower.
+      // Presenter-only sync keeps O/P progress responsive without flooding mobile.
+      pollTimer = window.setInterval(refresh, 1100);
+      presenterSyncTimer = window.setInterval(refreshPresenterOnly, 320);
 
       if (canJudge) {
         await publishJudgeState({ increment: true });
@@ -613,11 +655,11 @@
     await Promise.all(writes);
   }
 
-  async function waitForPresenterCommandAck(seq, targetWordToken, timeoutMs = 3000) {
+  async function waitForPresenterCommandAck(seq, targetWordToken, timeoutMs = 4000) {
     const deadline = Date.now() + timeoutMs;
 
     while (Date.now() < deadline) {
-      await new Promise(resolve => window.setTimeout(resolve, 75));
+      await new Promise(resolve => window.setTimeout(resolve, 180));
 
       try {
         const latestPresenter = typeof Cloud.fetchPresenter === "function"
@@ -698,7 +740,7 @@
         }
 
         setConnection("Command sent", "online");
-        window.setTimeout(refresh, 40);
+        window.setTimeout(refreshPresenterOnly, 20);
         return true;
       })
       .catch(error => {
@@ -767,30 +809,34 @@
   function bindVerdictButton(button) {
     let lastTouchActivation = 0;
 
-    const activate = () => {
+    const activateTouch = event => {
+      const now = Date.now();
+      if (now - lastTouchActivation < 450) return;
+      lastTouchActivation = now;
+      if (event?.cancelable) event.preventDefault();
       if (button.disabled) return;
       submitJudgeMark(button.dataset.verdict === "incorrect" ? "incorrect" : "correct");
     };
 
-    // On touch devices, act on the real pointer release instead of waiting for
-    // the browser to synthesize a click. Some mobile browsers show the pressed
-    // state but fail to dispatch the click reliably on these controls.
-    button.addEventListener("pointerup", event => {
-      if (event.pointerType !== "touch" && event.pointerType !== "pen") return;
-      event.preventDefault();
-      lastTouchActivation = Date.now();
-      activate();
-    });
-
-    // Keep normal mouse clicks and keyboard activation. Ignore the synthetic
-    // click that commonly follows a handled touch/pointer event.
-    button.addEventListener("click", event => {
+    const activateClick = event => {
       if (Date.now() - lastTouchActivation < 700) {
         event.preventDefault();
         return;
       }
-      activate();
+      if (button.disabled) return;
+      submitJudgeMark(button.dataset.verdict === "incorrect" ? "incorrect" : "correct");
+    };
+
+    button.addEventListener("pointerup", event => {
+      if (event.pointerType === "touch" || event.pointerType === "pen") {
+        activateTouch(event);
+      }
     });
+
+    // iOS/WebKit fallback. Deduplication above prevents double marks on
+    // browsers that fire both touchend and pointerup.
+    button.addEventListener("touchend", activateTouch, { passive: false });
+    button.addEventListener("click", activateClick);
   }
 
   document.querySelectorAll(".verdict-button").forEach(bindVerdictButton);
