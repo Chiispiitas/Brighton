@@ -108,18 +108,18 @@
   }
 
   function compareJudgementMeta(incoming, local = localJudgementMeta()) {
-    const incomingTime = Number(incoming?.updatedAt || 0);
-    const localTime = Number(local?.updatedAt || 0);
-    if (incomingTime !== localTime) return incomingTime > localTime ? 1 : -1;
-
     const incomingRevision = Number(incoming?.revision || 0);
     const localRevision = Number(local?.revision || 0);
-    if (incomingRevision !== localRevision) return incomingRevision > localRevision ? 1 : -1;
 
-    const incomingSource = String(incoming?.source || "");
-    const localSource = String(local?.source || "");
-    if (incomingSource === localSource) return 0;
-    return incomingSource === "admin" ? 1 : -1;
+    // Revisions, not device wall-clock time, decide authority. Mobile and
+    // desktop clocks can differ enough for an older Presenter snapshot to
+    // otherwise overwrite newer Admin input.
+    if (incomingRevision !== localRevision) {
+      return incomingRevision > localRevision ? 1 : -1;
+    }
+
+    // Equal revision is an unresolved/concurrent state. Keep local progress.
+    return 0;
   }
 
   function adoptJudgementMeta(meta) {
