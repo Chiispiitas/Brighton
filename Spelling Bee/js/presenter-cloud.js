@@ -11,7 +11,7 @@
   const disconnectButton = document.getElementById("session-disconnect");
   const status = document.getElementById("session-status");
   const judgeLink = document.getElementById("judge-view-link");
-  const remoteLink = document.getElementById("remote-view-link");
+  const adminLink = document.getElementById("admin-view-link");
   const controls = document.querySelector(".controls");
   const controlsToggle = document.getElementById("controls-toggle");
 
@@ -37,7 +37,7 @@
   function updateViewLinks() {
     const suffix = sessionCode ? `?session=${encodeURIComponent(sessionCode)}` : "";
     if (judgeLink) judgeLink.href = `judge.html${suffix}`;
-    if (remoteLink) remoteLink.href = `admin.html${suffix}`;
+    if (adminLink) adminLink.href = `admin.html${suffix}`;
   }
 
   function usedWordsSnapshot() {
