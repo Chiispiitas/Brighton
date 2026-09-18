@@ -41,6 +41,7 @@
   let busy = false;
   let judgePublishChain = Promise.resolve();
   let commandPublishChain = Promise.resolve();
+  let pendingAdminLetterCommands = 0;
   let wordInfoKey = "";
 
   let judgeWordToken = "";
@@ -389,6 +390,47 @@
     scheduleWordFit();
   }
 
+  function syncAdminJudgeFromPresenter({ force = false } = {}) {
+    if (role !== "remote" || !presenter?.wordToken) return false;
+    if (!force && pendingAdminLetterCommands > 0) return false;
+
+    const sourceMarks = Array.isArray(presenter.marks) ? presenter.marks : [];
+    const letters = Array.from(String(presenter.word || ""));
+    const mapped = letters.map((char, index) => {
+      if (!/[A-Za-z]/.test(char)) return "skip";
+      const mark = sourceMarks[index] || "pending";
+      if (mark === "ok") return "correct";
+      if (mark === "err") return "incorrect";
+      if (mark === "reveal") return "reveal";
+      return "pending";
+    });
+
+    const nextPointer = Number.isFinite(Number(presenter.pointer))
+      ? Math.max(0, Math.min(letters.length, Number(presenter.pointer)))
+      : firstMarkableIndex(presenter.word || "", 0);
+    const markable = mapped.filter(mark => mark !== "skip");
+    const nextVerdict = markable.some(mark => mark === "incorrect")
+      ? "incorrect"
+      : markable.length > 0 && markable.every(mark => mark === "correct")
+        ? "correct"
+        : "pending";
+
+    const changed =
+      judgeWordToken !== presenter.wordToken ||
+      judgePointer !== nextPointer ||
+      judgeVerdict !== nextVerdict ||
+      JSON.stringify(judgeMarks) !== JSON.stringify(mapped);
+
+    if (!changed) return false;
+
+    judgeWordToken = presenter.wordToken;
+    judgeMarks = mapped;
+    judgePointer = nextPointer;
+    judgeVerdict = nextVerdict;
+    judgeStartedAt = judgeStartedAt || new Date().toISOString();
+    return true;
+  }
+
   function publishJudgeState({ increment = false } = {}) {
     if (!canJudge || !sessionCode || !presenter?.wordToken || judgeWordToken !== presenter.wordToken) {
       return Promise.resolve();
@@ -449,7 +491,7 @@
         Cloud.isFresh(presenter, 9000) ? "online" : "stale"
       );
 
-      if (canJudge) {
+      if (role === "judge") {
         const mine = Cloud.roleStates(rows, "judge").find(state => state.actorId === normalizedJudgeActorId);
 
         if (tokenChanged) {
@@ -460,6 +502,13 @@
         } else if (judgeWordToken !== currentToken()) {
           resetJudgeWord();
           needsJudgeInit = Boolean(presenter.wordToken);
+        }
+      } else if (role === "remote") {
+        if (tokenChanged) {
+          judgeStartedAt = new Date().toISOString();
+          if (syncAdminJudgeFromPresenter({ force: true })) needsJudgeInit = Boolean(presenter.wordToken);
+        } else if (syncAdminJudgeFromPresenter()) {
+          needsJudgeInit = true;
         }
       }
 
@@ -507,9 +556,12 @@
       sessionCode = code;
       presenter = found;
 
-      if (canJudge) {
+      if (role === "judge") {
         const mine = Cloud.roleStates(rows, "judge").find(state => state.actorId === normalizedJudgeActorId);
         if (!hydrateJudgeState(mine, { force: true })) resetJudgeWord();
+      } else if (role === "remote") {
+        judgeStartedAt = new Date().toISOString();
+        syncAdminJudgeFromPresenter({ force: true });
       }
 
       if (role === "remote") {
@@ -526,7 +578,7 @@
       );
 
       window.clearInterval(pollTimer);
-      pollTimer = window.setInterval(refresh, 900);
+      pollTimer = window.setInterval(refresh, 400);
 
       if (canJudge) {
         await publishJudgeState({ increment: true });
@@ -561,15 +613,16 @@
     await Promise.all(writes);
   }
 
-  async function waitForPresenterCommandAck(seq, targetWordToken, timeoutMs = 4500) {
+  async function waitForPresenterCommandAck(seq, targetWordToken, timeoutMs = 3000) {
     const deadline = Date.now() + timeoutMs;
 
     while (Date.now() < deadline) {
-      await new Promise(resolve => window.setTimeout(resolve, 120));
+      await new Promise(resolve => window.setTimeout(resolve, 75));
 
       try {
-        const rows = await Cloud.fetchRows(sessionCode);
-        const latestPresenter = Cloud.presenterState(rows);
+        const latestPresenter = typeof Cloud.fetchPresenter === "function"
+          ? await Cloud.fetchPresenter(sessionCode)
+          : Cloud.presenterState(await Cloud.fetchRows(sessionCode));
         if (!latestPresenter) continue;
 
         const ack = Number(latestPresenter.lastCommandSeq || 0);
@@ -598,6 +651,8 @@
   function sendRemoteCommand(commandType, value = "") {
     if (role !== "remote" || !sessionCode || !presenter) return Promise.resolve(false);
 
+    const isLetterCommand = commandType === "letter-mark";
+    if (isLetterCommand) pendingAdminLetterCommands += 1;
     commandSeq += 1;
     const seq = commandSeq;
     const snapshotSessionCode = sessionCode;
@@ -634,11 +689,20 @@
           throw new Error("Presenter did not acknowledge command.");
         }
 
+        if (isLetterCommand) {
+          pendingAdminLetterCommands = Math.max(0, pendingAdminLetterCommands - 1);
+          if (pendingAdminLetterCommands === 0 && syncAdminJudgeFromPresenter({ force: true })) {
+            renderPresenterState();
+            publishJudgeState({ increment: true });
+          }
+        }
+
         setConnection("Command sent", "online");
-        window.setTimeout(refresh, 100);
+        window.setTimeout(refresh, 40);
         return true;
       })
       .catch(error => {
+        if (isLetterCommand) pendingAdminLetterCommands = Math.max(0, pendingAdminLetterCommands - 1);
         setConnection("Command failed", "error");
         return false;
       });
