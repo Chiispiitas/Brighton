@@ -1,0 +1,702 @@
+{
+  "abrupt": {
+    "ipa": "[ə.ˈbɹʌpt̚]",
+    "definition": "Sudden and unexpected.",
+    "example": "The meeting came to an abrupt end."
+  },
+  "absorbed": {
+    "ipa": "[əb.ˈzɔɹbd]",
+    "definition": "Completely interested or occupied by something.",
+    "example": "She was absorbed in the novel."
+  },
+  "abundance": {
+    "ipa": "[ə.ˈbʌ̃n.ɾə̃ns]",
+    "definition": "A very large amount of something.",
+    "example": "The garden produced an abundance of tomatoes."
+  },
+  "academic": {
+    "ipa": "[ˌæ.kə.ˈdɛ.mɪk̚]",
+    "definition": "Related to education, study, or schools.",
+    "example": "He received an academic award."
+  },
+  "accuracy": {
+    "ipa": "[ˈæ.kjɚ.ə.si]",
+    "definition": "The quality of being correct or exact.",
+    "example": "The experiment requires great accuracy."
+  },
+  "accurate": {
+    "ipa": "[ˈæ.kjɚ.ət̚]",
+    "definition": "Correct and free from mistakes.",
+    "example": "The map gives accurate directions."
+  },
+  "adequate": {
+    "ipa": "[ˈæ.ɾə.kwət̚]",
+    "definition": "Enough or satisfactory for a particular purpose.",
+    "example": "We had adequate time to finish the task."
+  },
+  "adjacent": {
+    "ipa": "[ə.ˈdʒeɪ.sə̃nt̚]",
+    "definition": "Next to or very near something.",
+    "example": "Our classroom is adjacent to the library."
+  },
+  "aerial": {
+    "ipa": "[ˈɛ.ɹi.ɫ̩]",
+    "definition": "Related to the air or seen from above.",
+    "example": "The drone captured an aerial view of the stadium."
+  },
+  "algebra": {
+    "ipa": "[ˈæɫ.dʒə.bɹə]",
+    "definition": "A branch of mathematics that uses symbols and letters to represent numbers.",
+    "example": "We learned how to solve equations in algebra."
+  },
+  "allocate": {
+    "ipa": "[ˈæ.lə.ˌkeɪt̚]",
+    "definition": "To give or assign something for a particular purpose.",
+    "example": "The school will allocate more money for books."
+  },
+  "allowance": {
+    "ipa": "[ə.ˈlaʊ.ə̃ns]",
+    "definition": "An amount of money or something else given regularly.",
+    "example": "She saves part of her weekly allowance."
+  },
+  "amateur": {
+    "ipa": "[ˈæ.mə.ˌtɝ]",
+    "definition": "A person who does an activity for enjoyment rather than as a profession.",
+    "example": "The amateur photographer won a local prize."
+  },
+  "ambiguous": {
+    "ipa": "[æ̃m.ˈbɪ.ɡju.əs]",
+    "definition": "Having more than one possible meaning; not clear.",
+    "example": "The question was ambiguous, so students asked for clarification."
+  },
+  "ambition": {
+    "ipa": "[æ̃m.ˈbɪ.ʃə̃n]",
+    "definition": "A strong desire to achieve something.",
+    "example": "Her ambition is to become an engineer."
+  },
+  "amplify": {
+    "ipa": "[ˈæ̃m.plə.ˌfaɪ]",
+    "definition": "To make something stronger, louder, or larger.",
+    "example": "The microphone will amplify your voice."
+  },
+  "analysis": {
+    "ipa": "[ə.ˈnæ.lə.səs]",
+    "definition": "A careful examination of something to understand it better.",
+    "example": "The report includes an analysis of the results."
+  },
+  "ancestor": {
+    "ipa": "[ˈæ̃n.ˌsɛ.stɚ]",
+    "definition": "A person in your family who lived in the past.",
+    "example": "One of her ancestors came from Italy."
+  },
+  "annual": {
+    "ipa": "[ˈæ̃n.ju.ɫ̩]",
+    "definition": "Happening once every year.",
+    "example": "The school holds an annual science fair."
+  },
+  "anxiety": {
+    "ipa": "[æ̃ŋ.ˈzaɪ.ə.ɾi]",
+    "definition": "A feeling of worry or nervousness.",
+    "example": "He felt anxiety before the final exam."
+  },
+  "apparatus": {
+    "ipa": "[ˌæ.pɚ.ˈæ.ɾəs]",
+    "definition": "Equipment designed for a particular purpose.",
+    "example": "The laboratory apparatus was cleaned after the experiment."
+  },
+  "apparent": {
+    "ipa": "[ə.ˈpʰɛ.ɹə̃nt̚]",
+    "definition": "Easy to notice or understand; seeming to be true.",
+    "example": "It became apparent that the road was closed."
+  },
+  "argument": {
+    "ipa": "[ˈɑɹ.ɡjə.mə̃nt̚]",
+    "definition": "A disagreement, or a set of reasons supporting an idea.",
+    "example": "They had an argument about the rules."
+  },
+  "assistant": {
+    "ipa": "[ə.ˈsɪ.stə̃nt̚]",
+    "definition": "A person who helps another person with work.",
+    "example": "The teacher's assistant prepared the materials."
+  },
+  "athletic": {
+    "ipa": "[æθ.ˈlɛ.ɾɪk̚]",
+    "definition": "Strong, active, and good at sports.",
+    "example": "She is athletic and enjoys several sports."
+  },
+  "athletics": {
+    "ipa": "[æθ.ˈlɛ.ɾɪks]",
+    "definition": "Sports involving physical skill, especially running, jumping, and throwing.",
+    "example": "He competes in school athletics."
+  },
+  "attitude": {
+    "ipa": "[ˈæ.ɾə.ˌtud]",
+    "definition": "A way of thinking or feeling about something.",
+    "example": "A positive attitude can help during difficult tasks."
+  },
+  "authority": {
+    "ipa": "[ə.ˈθɔ.ɹə.ɾi]",
+    "definition": "The power or right to give orders or make decisions.",
+    "example": "The principal has authority to change the schedule."
+  },
+  "automatic": {
+    "ipa": "[ˌɔ.ɾə.ˈmæ.ɾɪk̚]",
+    "definition": "Working by itself with little or no direct control.",
+    "example": "The doors are automatic."
+  },
+  "awkward": {
+    "ipa": "[ˈɑ.kwɚd]",
+    "definition": "Uncomfortable, difficult, or clumsy.",
+    "example": "There was an awkward silence after the question."
+  },
+  "bachelor": {
+    "ipa": "[ˈbæ.tʃə.lɚ]",
+    "definition": "An unmarried adult man.",
+    "example": "Her uncle remained a bachelor for many years."
+  },
+  "bacteria": {
+    "ipa": "[bæk.ˈtʰɪ.ɹi.ə]",
+    "definition": "Very small living organisms, some of which can cause disease.",
+    "example": "Some bacteria are helpful to humans."
+  },
+  "baggage": {
+    "ipa": "[ˈbæ.ɡədʒ]",
+    "definition": "Bags and suitcases used when traveling.",
+    "example": "Our baggage was loaded onto the plane."
+  },
+  "barbecue": {
+    "ipa": "[ˈbɑɹ.bɪ.ˌkju]",
+    "definition": "A meal or method of cooking food outdoors over a fire or grill.",
+    "example": "We had a barbecue in the backyard."
+  },
+  "barrier": {
+    "ipa": "[ˈbæ.ɹi.ɚ]",
+    "definition": "Something that blocks movement or makes progress difficult.",
+    "example": "A fence formed a barrier around the field."
+  },
+  "basically": {
+    "ipa": "[ˈbeɪ.sɪ.kli]",
+    "definition": "In the most important or simplest way.",
+    "example": "The two plans are basically the same."
+  },
+  "behavior": {
+    "ipa": "[bɪ.ˈheɪv.jɚ]",
+    "definition": "The way a person or animal acts.",
+    "example": "The teacher praised the class for good behavior."
+  },
+  "beverage": {
+    "ipa": "[ˈbɛ.vɚ.ɪdʒ]",
+    "definition": "A drink of any kind except usually water.",
+    "example": "Juice is a popular breakfast beverage."
+  },
+  "bilingual": {
+    "ipa": "[baɪ.ˈlɪ̃ŋ.ɡwɫ̩]",
+    "definition": "Able to use two languages.",
+    "example": "She is bilingual in English and Spanish."
+  },
+  "boundary": {
+    "ipa": "[ˈbaʊ̃n.ɾɚ.i]",
+    "definition": "A line that marks the edge or limit of an area.",
+    "example": "The river forms the boundary between the two regions."
+  },
+  "brilliant": {
+    "ipa": "[ˈbɹɪɫ.jə̃nt̚]",
+    "definition": "Extremely intelligent, skillful, or impressive.",
+    "example": "The scientist had a brilliant idea."
+  },
+  "broadcast": {
+    "ipa": "[ˈbɹɔd.ˌkæst̚]",
+    "definition": "To send a program by television, radio, or the internet.",
+    "example": "The station will broadcast the match live."
+  },
+  "broccoli": {
+    "ipa": "[ˈbɹɑ.kə.li]",
+    "definition": "A green vegetable with thick stems and clusters of flower buds.",
+    "example": "We added broccoli to the soup."
+  },
+  "cafeteria": {
+    "ipa": "[ˌkæ.fə.ˈtʰɪ.ɹi.ə]",
+    "definition": "A place where people choose and buy food from a counter.",
+    "example": "Students eat lunch in the cafeteria."
+  },
+  "calculate": {
+    "ipa": "[ˈkʰæɫ.kjə.ˌleɪt̚]",
+    "definition": "To find an answer by using mathematics.",
+    "example": "Calculate the total cost before paying."
+  },
+  "campaign": {
+    "ipa": "[kæ̃m.ˈpʰeɪ̃n]",
+    "definition": "An organized series of actions designed to achieve a goal.",
+    "example": "The students started a recycling campaign."
+  },
+  "candidate": {
+    "ipa": "[ˈkʰæ̃n.ɾə.ɾeɪt̚]",
+    "definition": "A person who is being considered for a position, award, or election.",
+    "example": "Each candidate gave a short speech."
+  },
+  "capacity": {
+    "ipa": "[kə.ˈpʰæ.sə.ɾi]",
+    "definition": "The maximum amount something can contain, produce, or do.",
+    "example": "The theater has a capacity of five hundred people."
+  },
+  "carefully": {
+    "ipa": "[ˈkʰɛɹ.fə.li]",
+    "definition": "With attention and caution.",
+    "example": "Read the instructions carefully."
+  },
+  "category": {
+    "ipa": "[ˈkʰæ.ɾə.ˌɡɔ.ɹi]",
+    "definition": "A group of things that share similar features.",
+    "example": "Place each word in the correct category."
+  },
+  "celebrity": {
+    "ipa": "[sə.ˈlɛ.bɹɪ.ɾi]",
+    "definition": "A famous person, especially in entertainment or sports.",
+    "example": "The celebrity signed autographs after the event."
+  },
+  "ceremony": {
+    "ipa": "[ˈsɛ.ɹə.ˌmoʊ.ni]",
+    "definition": "A formal event held for a special occasion.",
+    "example": "Families attended the graduation ceremony."
+  },
+  "challenge": {
+    "ipa": "[ˈtʃæ.lə̃ndʒ]",
+    "definition": "A difficult task or situation that tests ability.",
+    "example": "Learning the new routine was a challenge."
+  },
+  "chemical": {
+    "ipa": "[ˈkʰɛ.mə.kɫ̩]",
+    "definition": "A substance with a particular composition and set of properties.",
+    "example": "The experiment uses a harmless chemical."
+  },
+  "civilian": {
+    "ipa": "[sə.ˈvɪɫ.jə̃n]",
+    "definition": "A person who is not a member of the armed forces or police.",
+    "example": "The area was reopened to civilians."
+  },
+  "clarify": {
+    "ipa": "[ˈkʰlɛ.ɹə.ˌfaɪ]",
+    "definition": "To make something easier to understand.",
+    "example": "The teacher gave an example to clarify the rule."
+  },
+  "classical": {
+    "ipa": "[ˈkʰlæ.sɪ.kɫ̩]",
+    "definition": "Related to traditional forms of art, music, or ancient cultures.",
+    "example": "She enjoys listening to classical music."
+  },
+  "colony": {
+    "ipa": "[ˈkʰɑ.lə.ni]",
+    "definition": "A territory or settlement controlled by another country or group.",
+    "example": "The island was once a European colony."
+  },
+  "companion": {
+    "ipa": "[kə̃m.ˈpʰæ̃n.jə̃n]",
+    "definition": "A person or animal that spends time with another.",
+    "example": "The dog was his constant companion."
+  },
+  "competent": {
+    "ipa": "[ˈkʰɑ̃m.pə.ɾɪ̃nt̚]",
+    "definition": "Having enough skill or ability to do something well.",
+    "example": "She is a competent and reliable technician."
+  },
+  "complaint": {
+    "ipa": "[kə̃m.ˈpʰleɪ̃nt̚]",
+    "definition": "A statement that something is wrong or unsatisfactory.",
+    "example": "The manager listened to the customer's complaint."
+  },
+  "confident": {
+    "ipa": "[ˈkʰɑ̃n.fə.ɾə̃nt̚]",
+    "definition": "Feeling sure about your ability or about what will happen.",
+    "example": "He felt confident before the presentation."
+  },
+  "conflict": {
+    "ipa": "[ˈkʰɑ̃n.flɪkt̚]",
+    "definition": "A serious disagreement or struggle.",
+    "example": "The two groups resolved their conflict peacefully."
+  },
+  "consistent": {
+    "ipa": "[kə̃n.ˈsɪ.stə̃nt̚]",
+    "definition": "Staying the same in quality, behavior, or standard.",
+    "example": "Her work has been consistently accurate."
+  },
+  "constant": {
+    "ipa": "[ˈkʰɑ̃n.stə̃nt̚]",
+    "definition": "Continuing without stopping or changing much.",
+    "example": "The machine makes a constant humming sound."
+  },
+  "continent": {
+    "ipa": "[ˈkʰɑ̃n.ɾə.nə̃nt̚]",
+    "definition": "One of the world's main large land areas.",
+    "example": "Africa is a continent."
+  },
+  "cooperate": {
+    "ipa": "[koʊ.ˈɑ.pɚ.ˌeɪt̚]",
+    "definition": "To work together toward the same goal.",
+    "example": "The teams must cooperate to finish the project."
+  },
+  "creative": {
+    "ipa": "[kɹi.ˈeɪ.ɾɪv]",
+    "definition": "Able to produce original and imaginative ideas.",
+    "example": "The students found a creative solution."
+  },
+  "criminal": {
+    "ipa": "[ˈkʰɹɪ.mə.nɫ̩]",
+    "definition": "A person who has committed a crime.",
+    "example": "The criminal was arrested by police."
+  },
+  "cultural": {
+    "ipa": "[ˈkʰʌɫ.tʃɚ.ɫ̩]",
+    "definition": "Related to the customs, arts, and ideas of a society.",
+    "example": "The festival celebrates cultural traditions."
+  },
+  "curiosity": {
+    "ipa": "[ˌkjʊ.ɹi.ˈɑ.sə.ɾi]",
+    "definition": "A strong desire to know or learn something.",
+    "example": "Curiosity led her to ask more questions."
+  },
+  "decorate": {
+    "ipa": "[ˈdɛ.kɚ.ˌeɪt̚]",
+    "definition": "To make something more attractive by adding things to it.",
+    "example": "We will decorate the hall for the celebration."
+  },
+  "decrease": {
+    "ipa": "[dɪ.ˈkʰɹis]",
+    "definition": "To become smaller or less in amount.",
+    "example": "The temperature will decrease tonight."
+  },
+  "delicate": {
+    "ipa": "[ˈdɛ.lə.kət̚]",
+    "definition": "Easily damaged or requiring careful treatment.",
+    "example": "Handle the delicate glass carefully."
+  },
+  "dependent": {
+    "ipa": "[dɪ.ˈpʰɛ̃n.ɾə̃nt̚]",
+    "definition": "Needing someone or something for support.",
+    "example": "Young children are dependent on adults."
+  },
+  "desperate": {
+    "ipa": "[ˈdɛ.spɹɪt̚]",
+    "definition": "Feeling that a situation is very serious and that few choices remain.",
+    "example": "They were desperate to find shelter before the storm."
+  },
+  "detective": {
+    "ipa": "[dɪ.ˈtʰɛk.tɪv]",
+    "definition": "A person whose job is to investigate crimes or mysteries.",
+    "example": "The detective examined the evidence."
+  },
+  "disaster": {
+    "ipa": "[dɪ.ˈzæ.stɚ]",
+    "definition": "A sudden event that causes great damage or suffering.",
+    "example": "The earthquake was a major disaster."
+  },
+  "disease": {
+    "ipa": "[dɪ.ˈziz]",
+    "definition": "An illness affecting people, animals, or plants.",
+    "example": "Vaccines can prevent some diseases."
+  },
+  "disgusting": {
+    "ipa": "[dɪs.ˈɡʌ.stɪ̃ŋ]",
+    "definition": "Extremely unpleasant or offensive.",
+    "example": "The spoiled food smelled disgusting."
+  },
+  "effective": {
+    "ipa": "[ɪ.ˈfɛk.tɪv]",
+    "definition": "Successful in producing the intended result.",
+    "example": "This method is simple but effective."
+  },
+  "emergency": {
+    "ipa": "[ɪ.ˈmɝ.dʒə̃n.si]",
+    "definition": "A serious and unexpected situation needing immediate action.",
+    "example": "Call for help in an emergency."
+  },
+  "encourage": {
+    "ipa": "[ɛ̃n.ˈkʰɝ.ɪdʒ]",
+    "definition": "To give someone confidence or support.",
+    "example": "Teachers encourage students to keep trying."
+  },
+  "equality": {
+    "ipa": "[ɪ.ˈkʰwɑ.lə.ɾi]",
+    "definition": "The state of having the same rights, status, or opportunities.",
+    "example": "The law promotes equality for all citizens."
+  },
+  "evidence": {
+    "ipa": "[ˈɛ.və.ɾə̃ns]",
+    "definition": "Facts or information showing that something is true.",
+    "example": "The police collected evidence from the scene."
+  },
+  "exhausted": {
+    "ipa": "[ɪɡ.ˈzɔ.stɪd]",
+    "definition": "Extremely tired.",
+    "example": "After the long hike, everyone was exhausted."
+  },
+  "flexible": {
+    "ipa": "[ˈflɛk.sə.bɫ̩]",
+    "definition": "Able to bend easily or adapt to change.",
+    "example": "The schedule is flexible."
+  },
+  "fluently": {
+    "ipa": "[ˈflu.ə̃nt.li]",
+    "definition": "Smoothly and easily, especially when speaking a language.",
+    "example": "She speaks English fluently."
+  },
+  "forbidden": {
+    "ipa": "[ˈfɔɹ.bɪ.ɾə̃n]",
+    "definition": "Not allowed.",
+    "example": "Photography is forbidden inside the exhibit."
+  },
+  "generally": {
+    "ipa": "[ˈdʒɛ.nɚ.ə.li]",
+    "definition": "Usually or in most situations.",
+    "example": "The library is generally quiet."
+  },
+  "gradually": {
+    "ipa": "[ˈɡɹæ.dʒu.ə.li]",
+    "definition": "Slowly over a period of time.",
+    "example": "The sky gradually became darker."
+  },
+  "guidance": {
+    "ipa": "[ˈɡaɪ.ɾə̃ns]",
+    "definition": "Advice or help that shows what to do.",
+    "example": "The counselor gave us guidance about university choices."
+  },
+  "honesty": {
+    "ipa": "[ˈɑ.nə.sti]",
+    "definition": "The quality of being truthful.",
+    "example": "Honesty is important in a friendship."
+  },
+  "honorable": {
+    "ipa": "[ˈɑ.nɚ.ə.bɫ̩]",
+    "definition": "Deserving respect because of good character or actions.",
+    "example": "Helping others was an honorable act."
+  },
+  "humanity": {
+    "ipa": "[hju.ˈmæ.nɪ.ɾi]",
+    "definition": "All human beings considered together.",
+    "example": "The discovery could benefit humanity."
+  },
+  "identify": {
+    "ipa": "[aɪ.ˈdɛ̃n.ɾə.ˌfaɪ]",
+    "definition": "To recognize or name someone or something.",
+    "example": "Can you identify the animal in the picture?"
+  },
+  "ignorance": {
+    "ipa": "[ˈɪɡ.nɚ.ə̃ns]",
+    "definition": "A lack of knowledge or information.",
+    "example": "The lesson helped reduce ignorance about the issue."
+  },
+  "immigrant": {
+    "ipa": "[ˈɪ.mə.ɡɹə̃nt̚]",
+    "definition": "A person who moves to another country to live there.",
+    "example": "The immigrant family opened a small restaurant."
+  },
+  "impatient": {
+    "ipa": "[ˌɪ̃m.ˈpʰeɪ.ʃə̃nt̚]",
+    "definition": "Annoyed because you do not want to wait.",
+    "example": "The children became impatient in the long line."
+  },
+  "influence": {
+    "ipa": "[ˈɪ̃n.flu.ə̃ns]",
+    "definition": "The power to affect how someone thinks or what happens.",
+    "example": "Friends can have a strong influence on our choices."
+  },
+  "innocent": {
+    "ipa": "[ˈɪ.nə.sə̃nt̚]",
+    "definition": "Not guilty of a crime or wrongdoing.",
+    "example": "The evidence showed that he was innocent."
+  },
+  "interrupt": {
+    "ipa": "[ˌɪ̃n.ɾɚ.ˈʌpt̚]",
+    "definition": "To stop someone while they are speaking or doing something.",
+    "example": "Please do not interrupt the speaker."
+  },
+  "jealousy": {
+    "ipa": "[ˈdʒɛ.lə.si]",
+    "definition": "An unhappy feeling caused by wanting what someone else has or fearing loss of affection.",
+    "example": "Jealousy caused tension between the friends."
+  },
+  "majority": {
+    "ipa": "[mə.ˈdʒɔ.ɹə.ɾi]",
+    "definition": "The larger number or part of a group.",
+    "example": "The majority of students voted yes."
+  },
+  "mechanic": {
+    "ipa": "[mə.ˈkʰæ.nɪk̚]",
+    "definition": "A person who repairs machines or vehicles.",
+    "example": "The mechanic fixed the car's engine."
+  },
+  "memorize": {
+    "ipa": "[ˈmɛ.mɚ.ˌaɪz]",
+    "definition": "To learn something so that you can remember it exactly.",
+    "example": "We had to memorize the poem."
+  },
+  "miserable": {
+    "ipa": "[ˈmɪ.zɚ.ə.bɫ̩]",
+    "definition": "Very unhappy or uncomfortable.",
+    "example": "The cold rain made us miserable."
+  },
+  "naturally": {
+    "ipa": "[ˈnæ.tʃɚ.ə.li]",
+    "definition": "In a normal, expected, or natural way.",
+    "example": "Plants naturally grow toward light."
+  },
+  "patience": {
+    "ipa": "[ˈpʰeɪ.ʃə̃ns]",
+    "definition": "The ability to wait or deal with difficulty calmly.",
+    "example": "Learning an instrument requires patience."
+  },
+  "persuade": {
+    "ipa": "[pɚ.ˈsweɪd]",
+    "definition": "To convince someone to do or believe something.",
+    "example": "She persuaded her friend to join the team."
+  },
+  "politely": {
+    "ipa": "[pə.ˈlaɪt.li]",
+    "definition": "In a respectful and well-mannered way.",
+    "example": "He politely asked for permission."
+  },
+  "poverty": {
+    "ipa": "[ˈpʰɑ.vɚ.ɾi]",
+    "definition": "The condition of being extremely poor.",
+    "example": "The organization works to reduce poverty."
+  },
+  "practical": {
+    "ipa": "[ˈpʰɹæk.tə.kɫ̩]",
+    "definition": "Useful, realistic, and suitable for a real situation.",
+    "example": "We need a practical solution to the problem."
+  },
+  "precious": {
+    "ipa": "[ˈpʰɹɛ.ʃəs]",
+    "definition": "Very valuable or greatly loved.",
+    "example": "The old photographs are precious to the family."
+  },
+  "procedure": {
+    "ipa": "[pɹə.ˈsi.dʒɚ]",
+    "definition": "A set of steps for doing something.",
+    "example": "Follow the safety procedure carefully."
+  },
+  "publicity": {
+    "ipa": "[pə.ˈblɪ.sə.ɾi]",
+    "definition": "Public attention given to a person, event, or product.",
+    "example": "The event received a lot of publicity."
+  },
+  "punctual": {
+    "ipa": "[ˈpʰʌ̃ŋk.tʃu.ɫ̩]",
+    "definition": "Arriving or happening at the expected time.",
+    "example": "She is always punctual for class."
+  },
+  "quantity": {
+    "ipa": "[ˈkʰwɑ̃n.ɾə.ɾi]",
+    "definition": "An amount or number of something.",
+    "example": "We need a larger quantity of water."
+  },
+  "reaction": {
+    "ipa": "[ɹi.ˈæk.ʃə̃n]",
+    "definition": "A response to something that happens.",
+    "example": "His reaction to the news was surprise."
+  },
+  "realistic": {
+    "ipa": "[ˌɹi.ə.ˈlɪ.stɪk̚]",
+    "definition": "Showing things as they are or being sensible and practical.",
+    "example": "The painting is very realistic."
+  },
+  "recovery": {
+    "ipa": "[ɹɪ.ˈkʰʌ.vɹi]",
+    "definition": "The process of returning to health or a normal condition.",
+    "example": "Her recovery after surgery was quick."
+  },
+  "reference": {
+    "ipa": "[ˈɹɛ.fɚ.ə̃ns]",
+    "definition": "A source of information or a mention of something.",
+    "example": "Use the dictionary as a reference."
+  },
+  "regularly": {
+    "ipa": "[ˈɹɛ.ɡjə.lɚ.li]",
+    "definition": "Often or at repeated, usual times.",
+    "example": "She exercises regularly."
+  },
+  "research": {
+    "ipa": "[ˈɹi.sɝtʃ]",
+    "definition": "Careful study done to discover facts or new information.",
+    "example": "The students conducted research for their science project."
+  },
+  "solution": {
+    "ipa": "[sə.ˈlu.ʃə̃n]",
+    "definition": "An answer to a problem.",
+    "example": "We finally found a solution."
+  },
+  "specific": {
+    "ipa": "[spə.ˈsɪ.fɪk̚]",
+    "definition": "Exact, particular, and clearly defined.",
+    "example": "Please give a specific example."
+  },
+  "strategy": {
+    "ipa": "[ˈstɹæ.ɾə.dʒi]",
+    "definition": "A carefully planned way to achieve a goal.",
+    "example": "The team changed its strategy at halftime."
+  },
+  "symbolic": {
+    "ipa": "[sɪ̃m.ˈbɑ.lɪk̚]",
+    "definition": "Representing an idea rather than only its literal meaning.",
+    "example": "The white dove is symbolic of peace."
+  },
+  "teenager": {
+    "ipa": "[ˈtʰi.ˌneɪ.dʒɚ]",
+    "definition": "A person from thirteen to nineteen years old.",
+    "example": "The teenager volunteered at the library."
+  },
+  "terrible": {
+    "ipa": "[ˈtʰɛ.ɹə.bɫ̩]",
+    "definition": "Extremely bad or unpleasant.",
+    "example": "The storm caused terrible damage."
+  },
+  "tourism": {
+    "ipa": "[ˈtʰʊ.ˌɹɪ.zə̃m]",
+    "definition": "Travel for pleasure and the business connected with it.",
+    "example": "Tourism is important to the local economy."
+  },
+  "unusual": {
+    "ipa": "[ə̃n.ˈju.ˌʒu.ɫ̩]",
+    "definition": "Different from what is common or expected.",
+    "example": "We saw an unusual bird in the garden."
+  },
+  "valuable": {
+    "ipa": "[ˈvæɫ.jə.bɫ̩]",
+    "definition": "Worth a lot of money or very useful.",
+    "example": "The museum protects its valuable paintings."
+  },
+  "variety": {
+    "ipa": "[vɚ.ˈaɪ.ə.ɾi]",
+    "definition": "A number of different kinds of something.",
+    "example": "The market sells a variety of fruits."
+  },
+  "vehicle": {
+    "ipa": "[ˈvi.hɪ.kɫ̩]",
+    "definition": "A machine used to transport people or goods.",
+    "example": "The emergency vehicle stopped outside the building."
+  },
+  "violence": {
+    "ipa": "[ˈvaɪ.ə.lə̃ns]",
+    "definition": "Physical force intended to hurt or damage.",
+    "example": "The campaign promotes solutions without violence."
+  },
+  "visible": {
+    "ipa": "[ˈvɪ.zə.bɫ̩]",
+    "definition": "Able to be seen.",
+    "example": "The mountains were visible from our window."
+  },
+  "volunteer": {
+    "ipa": "[ˌvɑ.lə̃n.ˈtʰɪɹ]",
+    "definition": "A person who freely offers to help without being paid.",
+    "example": "A volunteer showed us where to register."
+  },
+  "whisper": {
+    "ipa": "[ˈwɪ.spɚ]",
+    "definition": "To speak very quietly.",
+    "example": "She had to whisper during the performance."
+  },
+  "youthful": {
+    "ipa": "[ˈjuθ.fɫ̩]",
+    "definition": "Young or having qualities associated with being young.",
+    "example": "His youthful energy impressed the team."
+  }
+}
