@@ -1,0 +1,637 @@
+{
+  "abhor": {
+    "ipa": "[əbˈhɔɹ]",
+    "definition": "To hate or strongly disapprove of something.",
+    "example": "She abhors cruelty in any form."
+  },
+  "abject": {
+    "ipa": "[ˈæb.dʒɛkt̚]",
+    "definition": "Extremely bad, miserable, or lacking dignity.",
+    "example": "The refugees were living in abject poverty."
+  },
+  "abrogate": {
+    "ipa": "[ˈæ.bɹə.ˌɡeɪt̚]",
+    "definition": "To formally cancel or abolish a law, agreement, or custom.",
+    "example": "The court refused to abrogate the treaty."
+  },
+  "accede": {
+    "ipa": "[ækˈsid]",
+    "definition": "To agree to a request or assume an office or position.",
+    "example": "The minister acceded to the committee's request."
+  },
+  "accrue": {
+    "ipa": "[əˈkʰɹu]",
+    "definition": "To accumulate or increase gradually over time.",
+    "example": "Interest will accrue on the unpaid balance."
+  },
+  "acerbic": {
+    "ipa": "[əˈsɛɹ.bɪk̚]",
+    "definition": "Sharp, critical, and often sarcastic in tone.",
+    "example": "The critic was known for her acerbic remarks."
+  },
+  "admonish": {
+    "ipa": "[ædˈmɑ.nɪʃ]",
+    "definition": "To warn or criticize someone firmly.",
+    "example": "The coach admonished the players for arriving late."
+  },
+  "admonition": {
+    "ipa": "[ˌæd.məˈnɪ.ʃən]",
+    "definition": "A firm warning or piece of advice.",
+    "example": "He ignored his teacher's admonition to study."
+  },
+  "adulterate": {
+    "ipa": "[əˈdʌɫ.ɾɚˌeɪt̚]",
+    "definition": "To make something poorer in quality by adding an inferior substance.",
+    "example": "The supplier was accused of adulterating the product."
+  },
+  "algorithm": {
+    "ipa": "[ˈæɫ.ɡɚˌɪ.ðəm]",
+    "definition": "A step-by-step procedure for solving a problem or completing a calculation.",
+    "example": "The program uses an algorithm to sort the data."
+  },
+  "ambivalent": {
+    "ipa": "[æmˈbɪ.və.lənt̚]",
+    "definition": "Having mixed or conflicting feelings about something.",
+    "example": "She felt ambivalent about leaving her hometown."
+  },
+  "ameliorate": {
+    "ipa": "[əˈmiɫ.jɚˌeɪt̚]",
+    "definition": "To improve a difficult or unpleasant situation.",
+    "example": "The new policy aims to ameliorate working conditions."
+  },
+  "anecdotal": {
+    "ipa": "[ˌæ.nəkˈdoʊ.ɾəɫ]",
+    "definition": "Based on personal stories rather than systematic evidence.",
+    "example": "The claim was supported only by anecdotal evidence."
+  },
+  "animosity": {
+    "ipa": "[ˌæ.nəˈmɑ.sə.ɾi]",
+    "definition": "Strong hostility or dislike.",
+    "example": "Years of rivalry created animosity between the groups."
+  },
+  "anomalous": {
+    "ipa": "[əˈnɑ.mə.ləs]",
+    "definition": "Different from what is normal or expected.",
+    "example": "The researchers investigated the anomalous result."
+  },
+  "antecedent": {
+    "ipa": "[ˌænˈtʰɛ.sə.dənt̚]",
+    "definition": "Something that existed or happened earlier and influenced what followed.",
+    "example": "The earlier movement was an antecedent of modern reform."
+  },
+  "antipathy": {
+    "ipa": "[ænˈtʰɪ.pə.θi]",
+    "definition": "A strong feeling of dislike or opposition.",
+    "example": "He had a deep antipathy toward corruption."
+  },
+  "archetypal": {
+    "ipa": "[ˌɑɹ.kəˈtʰaɪ.pəɫ]",
+    "definition": "Representing a perfect or typical example of a particular kind.",
+    "example": "The story features an archetypal hero."
+  },
+  "ascetic": {
+    "ipa": "[əˈsɛ.ɾɪk̚]",
+    "definition": "Practicing strict self-discipline and avoiding physical comforts.",
+    "example": "The monk lived an ascetic life."
+  },
+  "austere": {
+    "ipa": "[ɔˈstɪɹ]",
+    "definition": "Severe, plain, or without unnecessary comfort or decoration.",
+    "example": "The room had an austere appearance."
+  },
+  "axiomatic": {
+    "ipa": "[ˌæk.si.əˈmæ.ɾɪk̚]",
+    "definition": "Accepted as obviously true or self-evident.",
+    "example": "It is axiomatic that evidence should support a claim."
+  },
+  "boisterous": {
+    "ipa": "[ˈbɔɪ.stɚ.əs]",
+    "definition": "Very noisy, energetic, and cheerful.",
+    "example": "The boisterous crowd filled the hall."
+  },
+  "bombastic": {
+    "ipa": "[bɑmˈbæ.stɪk̚]",
+    "definition": "Using grand or exaggerated language to sound important.",
+    "example": "His bombastic speech impressed few listeners."
+  },
+  "capitulate": {
+    "ipa": "[kəˈpʰɪ.tʃu.lət̚]",
+    "definition": "To stop resisting and accept an opponent's demands.",
+    "example": "The defenders eventually capitulated."
+  },
+  "caustic": {
+    "ipa": "[ˈkʰɑ.stɪk̚]",
+    "definition": "Extremely critical or sarcastic; also able to burn chemically.",
+    "example": "Her caustic comments upset the committee."
+  },
+  "censure": {
+    "ipa": "[ˈsɛn.ʃɚ]",
+    "definition": "Strong official criticism.",
+    "example": "The council voted to censure the official."
+  },
+  "circumvent": {
+    "ipa": "[ˌsɝ.kəmˈvɛnt̚]",
+    "definition": "To avoid or get around a rule, obstacle, or problem.",
+    "example": "They tried to circumvent the regulations."
+  },
+  "cogent": {
+    "ipa": "[ˈkʰoʊ.dʒənt̚]",
+    "definition": "Clear, logical, and convincing.",
+    "example": "She presented a cogent argument."
+  },
+  "cohesion": {
+    "ipa": "[koʊˈhi.ʒən]",
+    "definition": "The state of sticking together or forming a united whole.",
+    "example": "Team cohesion improved after the retreat."
+  },
+  "complacent": {
+    "ipa": "[kəmˈpʰleɪ.sənt̚]",
+    "definition": "Too satisfied with a situation and unaware of possible problems.",
+    "example": "Success made the company complacent."
+  },
+  "conducive": {
+    "ipa": "[kənˈdu.sɪv]",
+    "definition": "Making a particular result more likely.",
+    "example": "A quiet room is conducive to concentration."
+  },
+  "confluence": {
+    "ipa": "[ˈkʰɑn.flu.əns]",
+    "definition": "A coming together of rivers, ideas, or influences.",
+    "example": "The city stands at the confluence of two rivers."
+  },
+  "confluent": {
+    "ipa": "[kɑnˈflu.ənt̚]",
+    "definition": "Flowing or coming together into one.",
+    "example": "The confluent streams formed a larger river."
+  },
+  "convivial": {
+    "ipa": "[kənˈvɪ.vi.əɫ]",
+    "definition": "Friendly, lively, and enjoyable, especially at a gathering.",
+    "example": "The dinner had a convivial atmosphere."
+  },
+  "credulous": {
+    "ipa": "[ˈkʰɹɛ.dʒə.ləs]",
+    "definition": "Too ready to believe things without enough evidence.",
+    "example": "Credulous readers accepted the false story."
+  },
+  "cryptic": {
+    "ipa": "[ˈkʰɹɪp.ɾɪk̚]",
+    "definition": "Mysterious or difficult to understand.",
+    "example": "The message was brief and cryptic."
+  },
+  "culpable": {
+    "ipa": "[ˈkʰʌɫ.pə.bəɫ]",
+    "definition": "Deserving blame for a fault or wrongdoing.",
+    "example": "The investigation found the manager culpable."
+  },
+  "debacle": {
+    "ipa": "[dəˈbɑ.kəɫ]",
+    "definition": "A sudden and embarrassing failure.",
+    "example": "The product launch became a public debacle."
+  },
+  "debilitate": {
+    "ipa": "[dəˈbɪ.ləˌtʰeɪt̚]",
+    "definition": "To make someone or something weak.",
+    "example": "The illness can severely debilitate patients."
+  },
+  "decadent": {
+    "ipa": "[ˈdɛ.kə.dənt̚]",
+    "definition": "Marked by excessive luxury or moral decline.",
+    "example": "The novel describes a decadent royal court."
+  },
+  "decorum": {
+    "ipa": "[dɪˈkʰɔ.ɹəm]",
+    "definition": "Proper and polite behavior.",
+    "example": "Guests were expected to maintain decorum."
+  },
+  "defamation": {
+    "ipa": "[ˌdɛ.fəˈmeɪ.ʃən]",
+    "definition": "A false statement that damages someone's reputation.",
+    "example": "The actor filed a lawsuit for defamation."
+  },
+  "deference": {
+    "ipa": "[ˈdɛ.fɚ.əns]",
+    "definition": "Respect shown by accepting another person's judgment or wishes.",
+    "example": "Out of deference to the chair, he remained silent."
+  },
+  "delineate": {
+    "ipa": "[dɪˈlɪ.niˌeɪt̚]",
+    "definition": "To describe or mark something precisely.",
+    "example": "The report clearly delineates each department's duties."
+  },
+  "depravity": {
+    "ipa": "[dɪˈpʰɹæ.və.ɾi]",
+    "definition": "Extreme moral corruption or wickedness.",
+    "example": "The crime shocked people because of its depravity."
+  },
+  "deprecate": {
+    "ipa": "[ˈdɛ.pɹəˌkeɪt̚]",
+    "definition": "To express disapproval of or belittle something.",
+    "example": "She deprecated the use of misleading statistics."
+  },
+  "derelict": {
+    "ipa": "[ˈdɛ.ɹəˌlɪkt̚]",
+    "definition": "Neglected and in very poor condition, or failing in duty.",
+    "example": "They renovated a derelict warehouse."
+  },
+  "diffident": {
+    "ipa": "[ˈdɪ.fə.dənt̚]",
+    "definition": "Shy and lacking confidence.",
+    "example": "The diffident student rarely volunteered an answer."
+  },
+  "disparate": {
+    "ipa": "[ˈdɪ.spɚ.ət̚]",
+    "definition": "Fundamentally different from one another.",
+    "example": "The committee combined several disparate ideas."
+  },
+  "dissident": {
+    "ipa": "[ˈdɪ.sə.dənt̚]",
+    "definition": "A person who publicly opposes an established authority or policy.",
+    "example": "The dissident criticized the government openly."
+  },
+  "divisive": {
+    "ipa": "[dɪˈvaɪ.sɪv]",
+    "definition": "Likely to cause disagreement or hostility.",
+    "example": "The proposal proved highly divisive."
+  },
+  "eclectic": {
+    "ipa": "[ɪˈkʰlɛk.ɾɪk̚]",
+    "definition": "Combining ideas or styles from many different sources.",
+    "example": "Her music collection is extremely eclectic."
+  },
+  "effusive": {
+    "ipa": "[ɪˈfju.sɪv]",
+    "definition": "Expressing feelings in an enthusiastic and unrestrained way.",
+    "example": "He was effusive in his praise."
+  },
+  "elucidate": {
+    "ipa": "[ɪˈlu.səˌdeɪt̚]",
+    "definition": "To explain something and make it clearer.",
+    "example": "The diagram helps elucidate the process."
+  },
+  "elusive": {
+    "ipa": "[ɪˈlu.sɪv]",
+    "definition": "Difficult to find, achieve, remember, or understand.",
+    "example": "A final agreement remained elusive."
+  },
+  "emancipate": {
+    "ipa": "[ɪˈmæn.səˌpʰeɪt̚]",
+    "definition": "To free someone from legal, social, or political control.",
+    "example": "The law helped emancipate enslaved people."
+  },
+  "enigma": {
+    "ipa": "[ɪˈnɪɡ.mə]",
+    "definition": "A person or thing that is mysterious or difficult to understand.",
+    "example": "The disappearance remains an enigma."
+  },
+  "enigmatic": {
+    "ipa": "[ˌɛ.nɪɡˈmæ.ɾɪk̚]",
+    "definition": "Mysterious and difficult to interpret.",
+    "example": "She gave an enigmatic smile."
+  },
+  "epitome": {
+    "ipa": "[ɪˈpʰɪ.ɾə.mi]",
+    "definition": "A perfect example of a particular quality or type.",
+    "example": "He was the epitome of professionalism."
+  },
+  "exemplary": {
+    "ipa": "[ɪɡˈzɛm.plɚ.i]",
+    "definition": "Excellent and worthy of imitation.",
+    "example": "Her exemplary conduct earned an award."
+  },
+  "exonerate": {
+    "ipa": "[ɪɡˈzɑ.nɚˌeɪt̚]",
+    "definition": "To officially clear someone from blame or wrongdoing.",
+    "example": "New evidence may exonerate the accused."
+  },
+  "flagrant": {
+    "ipa": "[ˈfleɪ.ɡɹənt̚]",
+    "definition": "Obviously and shockingly wrong or offensive.",
+    "example": "It was a flagrant violation of the rules."
+  },
+  "flamboyant": {
+    "ipa": "[flæmˈbɔɪ.ənt̚]",
+    "definition": "Very colorful, confident, or attention-grabbing.",
+    "example": "The performer wore a flamboyant costume."
+  },
+  "flippant": {
+    "ipa": "[ˈflɪ.pənt̚]",
+    "definition": "Not showing proper seriousness or respect.",
+    "example": "His flippant response annoyed the judge."
+  },
+  "formidable": {
+    "ipa": "[ˈfɔɹ.mə.də.bəɫ]",
+    "definition": "Inspiring respect or fear because of great strength or difficulty.",
+    "example": "They faced a formidable opponent."
+  },
+  "frivolous": {
+    "ipa": "[ˈfɹɪ.və.ləs]",
+    "definition": "Not serious, useful, or sensible.",
+    "example": "The court dismissed the frivolous complaint."
+  },
+  "furtive": {
+    "ipa": "[ˈfɝ.ɾɪv]",
+    "definition": "Secretive and trying to avoid attention.",
+    "example": "He cast a furtive glance toward the door."
+  },
+  "germane": {
+    "ipa": "[dʒɚˈmeɪn]",
+    "definition": "Directly relevant to the matter being discussed.",
+    "example": "Her question was germane to the debate."
+  },
+  "heresy": {
+    "ipa": "[ˈhɛ.ɹə.si]",
+    "definition": "A belief strongly opposed to accepted religious or established doctrine.",
+    "example": "At the time, the idea was condemned as heresy."
+  },
+  "immutable": {
+    "ipa": "[ˌɪmˈju.ɾə.bəɫ]",
+    "definition": "Unable to be changed.",
+    "example": "The basic principle was treated as immutable."
+  },
+  "impassive": {
+    "ipa": "[ˌɪmˈpʰæ.sɪv]",
+    "definition": "Showing no visible emotion.",
+    "example": "She remained impassive during the verdict."
+  },
+  "inane": {
+    "ipa": "[ɪˈneɪn]",
+    "definition": "Silly, empty, or lacking meaning.",
+    "example": "They grew tired of the inane conversation."
+  },
+  "incumbent": {
+    "ipa": "[ɪnˈkʰʌm.bənt̚]",
+    "definition": "Currently holding an office or position.",
+    "example": "The incumbent mayor is seeking another term."
+  },
+  "indictment": {
+    "ipa": "[ɪnˈdaɪt.mənt̚]",
+    "definition": "A formal accusation that someone committed a serious crime.",
+    "example": "The grand jury issued an indictment."
+  },
+  "indigenous": {
+    "ipa": "[ɪnˈdɪ.dʒə.nəs]",
+    "definition": "Originating naturally in a particular place or belonging to its earliest inhabitants.",
+    "example": "The region is home to many indigenous species."
+  },
+  "insolent": {
+    "ipa": "[ˈɪn.sə.lənt̚]",
+    "definition": "Rude and disrespectful.",
+    "example": "The officer objected to the insolent reply."
+  },
+  "intrepid": {
+    "ipa": "[ɪnˈtʰɹɛ.pəd]",
+    "definition": "Fearless and adventurous.",
+    "example": "The intrepid explorers continued through the storm."
+  },
+  "intrinsic": {
+    "ipa": "[ɪnˈtʰɹɪn.sɪk̚]",
+    "definition": "Belonging naturally to something as an essential quality.",
+    "example": "Curiosity has intrinsic value in learning."
+  },
+  "inundate": {
+    "ipa": "[ˈɪ.nənˌdeɪt̚]",
+    "definition": "To overwhelm with a large amount or flood with water.",
+    "example": "The office was inundated with applications."
+  },
+  "invincible": {
+    "ipa": "[ɪnˈvɪn.sə.bəɫ]",
+    "definition": "Too powerful to be defeated or overcome.",
+    "example": "The champion seemed invincible."
+  },
+  "jeopardy": {
+    "ipa": "[ˈdʒɛ.pɚ.di]",
+    "definition": "Danger of loss, harm, or failure.",
+    "example": "The error placed the entire project in jeopardy."
+  },
+  "laconic": {
+    "ipa": "[ləˈkʰɑ.nɪk̚]",
+    "definition": "Using very few words.",
+    "example": "His laconic answer ended the discussion."
+  },
+  "malevolent": {
+    "ipa": "[məˈlɛ.və.lənt̚]",
+    "definition": "Having or showing a desire to cause harm.",
+    "example": "The story features a malevolent ruler."
+  },
+  "malleable": {
+    "ipa": "[ˈmæ.li.ə.bəɫ]",
+    "definition": "Able to be shaped easily or influenced.",
+    "example": "Gold is a highly malleable metal."
+  },
+  "miscreant": {
+    "ipa": "[ˈmɪs.kɹi.ənt̚]",
+    "definition": "A person who behaves badly or breaks the law.",
+    "example": "The miscreant fled before police arrived."
+  },
+  "monotonous": {
+    "ipa": "[məˈnɑ.ɾə.nəs]",
+    "definition": "Dull because it is repetitive and unchanging.",
+    "example": "The long, monotonous speech exhausted the audience."
+  },
+  "myriad": {
+    "ipa": "[ˈmɪ.ɹi.əd]",
+    "definition": "A very large number or great variety.",
+    "example": "The city offers a myriad of cultural events."
+  },
+  "nonchalant": {
+    "ipa": "[ˌnɑn.ʃəˈlɑnt̚]",
+    "definition": "Calm and casually unconcerned.",
+    "example": "She appeared nonchalant despite the pressure."
+  },
+  "onerous": {
+    "ipa": "[ˈoʊ.nɚ.əs]",
+    "definition": "Difficult and requiring a great deal of effort or responsibility.",
+    "example": "The contract imposed onerous obligations."
+  },
+  "paltry": {
+    "ipa": "[ˈpʰɔɫ.tɹi]",
+    "definition": "Very small, inadequate, or of little value.",
+    "example": "They received a paltry sum for the work."
+  },
+  "panacea": {
+    "ipa": "[ˌpæ.nəˈsi.ə]",
+    "definition": "A supposed solution for every problem.",
+    "example": "Technology is not a panacea for poor planning."
+  },
+  "paradigm": {
+    "ipa": "[ˈpʰɛ.ɹəˌdaɪm]",
+    "definition": "A model or typical pattern used to understand something.",
+    "example": "The discovery created a new scientific paradigm."
+  },
+  "partisan": {
+    "ipa": "[ˈpʰɑɹ.ɾə.zən]",
+    "definition": "Strongly supporting one side, group, or political party.",
+    "example": "The report was criticized as partisan."
+  },
+  "pedantic": {
+    "ipa": "[pəˈdæn.ɾɪk̚]",
+    "definition": "Too concerned with minor rules or details, especially in teaching or writing.",
+    "example": "His pedantic corrections interrupted the discussion."
+  },
+  "penchant": {
+    "ipa": "[ˈpʰɛn.tʃənt̚]",
+    "definition": "A strong or habitual liking for something.",
+    "example": "She has a penchant for historical novels."
+  },
+  "petulant": {
+    "ipa": "[ˈpʰɛ.tʃə.lənt̚]",
+    "definition": "Childishly bad-tempered or irritable.",
+    "example": "The petulant child refused to cooperate."
+  },
+  "plausible": {
+    "ipa": "[ˈpʰlɔ.zə.bəɫ]",
+    "definition": "Seeming reasonable or likely to be true.",
+    "example": "The witness gave a plausible explanation."
+  },
+  "portentous": {
+    "ipa": "[pɔɹˈtʰɛn.ɾəs]",
+    "definition": "Suggesting that something important or unpleasant may happen.",
+    "example": "The speech ended on a portentous note."
+  },
+  "pragmatic": {
+    "ipa": "[pɹæɡˈmæ.ɾɪk̚]",
+    "definition": "Focused on practical results rather than theory.",
+    "example": "They chose a pragmatic solution."
+  },
+  "proclivity": {
+    "ipa": "[pɹoʊˈkʰlɪ.və.ɾi]",
+    "definition": "A natural tendency or inclination.",
+    "example": "He has a proclivity for taking risks."
+  },
+  "prosaic": {
+    "ipa": "[pɹoʊˈzeɪ.ɪk̚]",
+    "definition": "Ordinary, dull, or lacking imagination.",
+    "example": "The reality was more prosaic than the legend."
+  },
+  "puerile": {
+    "ipa": "[ˈpjʊɹ.aɪɫ]",
+    "definition": "Childishly silly or immature.",
+    "example": "The editor rejected the puerile joke."
+  },
+  "repudiate": {
+    "ipa": "[ɹɪˈpju.diˌeɪt̚]",
+    "definition": "To reject or refuse to accept something.",
+    "example": "The organization repudiated the false statement."
+  },
+  "reticent": {
+    "ipa": "[ˈɹɛ.ɾɪ.sənt̚]",
+    "definition": "Unwilling to speak freely or reveal thoughts.",
+    "example": "She was reticent about her plans."
+  },
+  "sanctity": {
+    "ipa": "[ˈsæŋk.ɾə.ɾi]",
+    "definition": "The quality of being sacred or extremely important.",
+    "example": "The law protects the sanctity of private correspondence."
+  },
+  "sardonic": {
+    "ipa": "[sɑɹˈdɑ.nɪk̚]",
+    "definition": "Mocking or cynical in a grim way.",
+    "example": "He gave a sardonic laugh."
+  },
+  "solace": {
+    "ipa": "[ˈsɑ.ləs]",
+    "definition": "Comfort during sadness or distress.",
+    "example": "She found solace in music."
+  },
+  "solicitous": {
+    "ipa": "[səˈlɪ.sə.təs]",
+    "definition": "Showing great care or concern for someone.",
+    "example": "The nurse was solicitous toward the patient."
+  },
+  "soporific": {
+    "ipa": "[ˌsɑ.pɚˈɪ.fɪk̚]",
+    "definition": "Tending to cause sleep or drowsiness.",
+    "example": "The lecturer's slow voice was almost soporific."
+  },
+  "sporadic": {
+    "ipa": "[spɚˈæ.ɾɪk̚]",
+    "definition": "Occurring occasionally and irregularly.",
+    "example": "Sporadic rain continued throughout the day."
+  },
+  "spurious": {
+    "ipa": "[ˈspjʊɹ.i.əs]",
+    "definition": "False or not based on valid reasoning.",
+    "example": "The article made several spurious claims."
+  },
+  "staunch": {
+    "ipa": "[ˈstɔntʃ]",
+    "definition": "Very loyal, committed, or firm.",
+    "example": "She remained a staunch supporter of the project."
+  },
+  "stoic": {
+    "ipa": "[ˈstoʊ.ɪk̚]",
+    "definition": "A person who endures pain or difficulty without showing emotion.",
+    "example": "He remained stoic despite the setback."
+  },
+  "succinct": {
+    "ipa": "[səkˈsɪŋkt̚]",
+    "definition": "Brief and clearly expressed.",
+    "example": "Her summary was succinct and accurate."
+  },
+  "synonymous": {
+    "ipa": "[səˈnɑ.nə.məs]",
+    "definition": "Having the same or nearly the same meaning.",
+    "example": "For many people, the brand became synonymous with quality."
+  },
+  "temperance": {
+    "ipa": "[ˈtʰɛm.pɚ.əns]",
+    "definition": "Moderation and self-restraint.",
+    "example": "The movement promoted temperance."
+  },
+  "tenacity": {
+    "ipa": "[təˈnæ.sə.ɾi]",
+    "definition": "Persistent determination.",
+    "example": "Her tenacity helped her finish the difficult project."
+  },
+  "tirade": {
+    "ipa": "[taɪˈɹeɪd]",
+    "definition": "A long, angry speech of criticism.",
+    "example": "The manager launched into a tirade."
+  },
+  "truculent": {
+    "ipa": "[ˈtʰɹʌk.jə.lənt̚]",
+    "definition": "Aggressively defiant or eager to argue.",
+    "example": "The truculent customer refused to leave."
+  },
+  "undulate": {
+    "ipa": "[ˈʌn.dʒəˌleɪt̚]",
+    "definition": "To move in a smooth wave-like pattern.",
+    "example": "The fields seemed to undulate in the wind."
+  },
+  "vehemence": {
+    "ipa": "[ˈvi.ə.məns]",
+    "definition": "Great force or intensity of feeling.",
+    "example": "He denied the accusation with vehemence."
+  },
+  "verbose": {
+    "ipa": "[vɚˈboʊs]",
+    "definition": "Using more words than necessary.",
+    "example": "The report was accurate but unnecessarily verbose."
+  },
+  "vindictive": {
+    "ipa": "[vɪnˈdɪk.ɾɪv]",
+    "definition": "Having a strong desire for revenge.",
+    "example": "Her vindictive behavior damaged the team."
+  },
+  "virulent": {
+    "ipa": "[ˈvɪɹ.jə.lənt̚]",
+    "definition": "Extremely harmful, hostile, or infectious.",
+    "example": "The disease was caused by a virulent strain."
+  },
+  "whimsical": {
+    "ipa": "[ˈwɪm.zɪ.kəɫ]",
+    "definition": "Playfully unusual or imaginative.",
+    "example": "The artist created a whimsical sculpture."
+  },
+  "zealot": {
+    "ipa": "[ˈzɛ.lət̚]",
+    "definition": "A person with extreme and uncompromising enthusiasm for a cause.",
+    "example": "The character is portrayed as a political zealot."
+  },
+  "zealotry": {
+    "ipa": "[ˈzɛ.lə.tɹi]",
+    "definition": "Excessive and uncompromising devotion to a cause.",
+    "example": "The novel warns against ideological zealotry."
+  }
+}
