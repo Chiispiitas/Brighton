@@ -91,6 +91,79 @@
     return Array.from(String(value || "")).map(char => /[A-Za-z]/.test(char) ? "pending" : "skip");
   }
 
+  function measureWordContentWidth(element) {
+    if (!element) return 0;
+
+    const children = Array.from(element.children);
+    if (children.length) {
+      return children.reduce((total, child) => {
+        const rect = child.getBoundingClientRect();
+        return total + rect.width;
+      }, 0);
+    }
+
+    const text = String(element.textContent || "");
+    if (!text) return 0;
+
+    const probe = document.createElement("span");
+    const styles = getComputedStyle(element);
+    probe.textContent = text;
+    probe.style.position = "fixed";
+    probe.style.left = "-99999px";
+    probe.style.top = "-99999px";
+    probe.style.visibility = "hidden";
+    probe.style.whiteSpace = "nowrap";
+    probe.style.fontFamily = styles.fontFamily;
+    probe.style.fontWeight = styles.fontWeight;
+    probe.style.fontStyle = styles.fontStyle;
+    probe.style.fontSize = styles.fontSize;
+    probe.style.letterSpacing = styles.letterSpacing;
+    document.body.appendChild(probe);
+    const width = probe.getBoundingClientRect().width;
+    probe.remove();
+    return width;
+  }
+
+  function fitWordToWidth(element, minFontPx = 26) {
+    if (!element || !element.isConnected) return;
+
+    // Always begin from the CSS-defined maximum size so a shorter new word
+    // can grow back after a previous long word reduced the inline font size.
+    element.style.removeProperty("font-size");
+
+    const styles = getComputedStyle(element);
+    const baseFontPx = parseFloat(styles.fontSize) || minFontPx;
+    const padding =
+      (parseFloat(styles.paddingLeft) || 0) +
+      (parseFloat(styles.paddingRight) || 0);
+    const available = Math.max(1, element.clientWidth - padding);
+
+    let contentWidth = measureWordContentWidth(element);
+    if (!contentWidth || contentWidth <= available) return;
+
+    let fitted = Math.max(minFontPx, baseFontPx * (available / contentWidth) * 0.96);
+    element.style.fontSize = `${fitted}px`;
+
+    // Font metrics and letter spacing can make the first estimate a little
+    // optimistic. Re-measure and make one final correction if necessary.
+    contentWidth = measureWordContentWidth(element);
+    if (contentWidth > available && fitted > minFontPx) {
+      fitted = Math.max(minFontPx, fitted * (available / contentWidth) * 0.98);
+      element.style.fontSize = `${fitted}px`;
+    }
+  }
+
+  function fitAllVisibleWords() {
+    if (word) fitWordToWidth(word, 30);
+    document.querySelectorAll(".admin-judge-word").forEach(element => {
+      fitWordToWidth(element, 18);
+    });
+  }
+
+  function scheduleWordFit() {
+    requestAnimationFrame(() => requestAnimationFrame(fitAllVisibleWords));
+  }
+
   function resetJudgeWord() {
     judgeWordToken = currentToken();
     judgeMarks = createJudgeMarks(presenter?.word || "");
@@ -146,17 +219,7 @@
     });
 
     word.replaceChildren(frag);
-
-    const activeLetter = word.querySelector(".judge-letter.active");
-    if (activeLetter) {
-      requestAnimationFrame(() => {
-        activeLetter.scrollIntoView({
-          behavior: "smooth",
-          block: "nearest",
-          inline: "nearest"
-        });
-      });
-    }
+    scheduleWordFit();
   }
 
   async function renderWordInfo() {
@@ -205,7 +268,10 @@
     }
 
     if (role === "judge") renderJudgeWord();
-    else if (word) word.textContent = presenter.word || "—";
+    else if (word) {
+      word.textContent = presenter.word || "—";
+      scheduleWordFit();
+    }
 
     if (wordMeta) {
       const level = presenter.level || "—";
@@ -314,6 +380,8 @@
         </article>
       `;
     }).join("");
+
+    scheduleWordFit();
   }
 
   function publishJudgeState({ increment = false } = {}) {
@@ -593,6 +661,16 @@
   poolModal?.addEventListener("click", event => {
     if (event.target === poolModal) poolModal.classList.add("hidden");
   });
+
+  let resizeFitTimer = null;
+  window.addEventListener("resize", () => {
+    window.clearTimeout(resizeFitTimer);
+    resizeFitTimer = window.setTimeout(scheduleWordFit, 80);
+  });
+
+  if (document.fonts?.ready) {
+    document.fonts.ready.then(scheduleWordFit).catch(() => {});
+  }
 
   const queryCode = Cloud.normalizeSessionCode(new URLSearchParams(location.search).get("session"));
   if (queryCode && codeInput) codeInput.value = queryCode;
