@@ -9,15 +9,20 @@ import {
   saveCommand
 } from "./spelling-bee.js";
 
-export function options_spellingBeeSession() {
+/*
+  Wix routes GET/POST to the method-specific exports below.
+  use_<name> acts as the catch-all and handles browser OPTIONS preflight
+  requests for the cross-origin Brighton frontend.
+*/
+export function use_spellingBeeSession() {
   return corsOptions("GET, POST");
 }
 
-export function options_spellingBeeJudge() {
+export function use_spellingBeeJudge() {
   return corsOptions("GET, POST");
 }
 
-export function options_spellingBeeCommand() {
+export function use_spellingBeeCommand() {
   return corsOptions("GET, POST");
 }
 
