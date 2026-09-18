@@ -39,16 +39,16 @@ window.examParts = [
     label: "Part 1",
     title: "Vocabulary in context",
     range: "Questions 1–5",
-    instruction: "Look at the picture placeholders and words. Read each definition and choose the correct word or phrase.",
+    instruction: "Look at the pictures and words. Read each definition and choose the correct word or phrase.",
     visualOptions: [
-      { label: "a receptionist", imageDescription: "Picture placeholder: an adult hotel receptionist standing behind a reception desk." },
-      { label: "a wallet", imageDescription: "Picture placeholder: a simple wallet with money and cards visible." },
-      { label: "a department store", imageDescription: "Picture placeholder: the entrance of a large modern department store with clothing displays." },
-      { label: "a train station", imageDescription: "Picture placeholder: a train station platform with a train and a station sign area, but no readable text." },
-      { label: "an umbrella", imageDescription: "Picture placeholder: an open umbrella being used in the rain." },
-      { label: "a sweater", imageDescription: "Picture placeholder: a folded sweater on a clothing display." },
-      { label: "a museum", imageDescription: "Picture placeholder: the exterior of a modern museum building." },
-      { label: "a taxi driver", imageDescription: "Picture placeholder: an adult taxi driver beside a city taxi." }
+      { label: "a receptionist", image: "assets/a1_part1_01_receptionist---65055399-df7b-4e01-b367-93d20ba14f6b.png", imageDescription: "An adult hotel receptionist standing behind a reception desk." },
+      { label: "a wallet", image: "assets/a1_part1_02_wallet---d81468dc-21a1-4264-87a2-4471c799c32b.png", imageDescription: "A simple wallet with money and cards visible." },
+      { label: "a department store", image: "assets/a1_part1_03_department_store---9354ae7c-6977-4d88-9464-9e7d92a3f117.png", imageDescription: "The entrance of a large modern department store with clothing displays." },
+      { label: "a train station", image: "assets/a1_part1_04_train_station---19be91b5-ef80-4677-bc0e-07901e41fee3.png", imageDescription: "A train station platform with a train." },
+      { label: "an umbrella", image: "assets/a1_part1_05_umbrella---c1ff7ad1-e937-492e-8332-8acf3585a119.png", imageDescription: "An open umbrella being used in the rain." },
+      { label: "a sweater", image: "assets/a1_part1_06_sweater---83d56b28-948a-4ddd-91b5-78c8eceef730.png", imageDescription: "A folded sweater on a clothing display." },
+      { label: "a museum", image: "assets/a1_part1_07_museum---f650f297-6593-46ea-8f45-24ffaeef453e.png", imageDescription: "The exterior of a modern museum building." },
+      { label: "a taxi driver", image: "assets/a1_part1_08_taxi_driver---1780d79c-002b-413e-aa41-f48ff59c8c85.png", imageDescription: "An adult taxi driver beside a city taxi." }
     ],
     items: [
       {
@@ -130,6 +130,7 @@ window.examParts = [
     range: "Questions 6–11",
     instruction: "Look at the picture and read the conversation. For each question, choose the best answer: A, B or C.",
     context: "Leo is talking to Mia about her weekend and her plans.",
+    image: "assets/a1_part2_conversation_leo_mia---929a2bf6-5009-4c5d-a347-b04ffd2546eb.png",
     imageDescription: "Picture placeholder: two young adults, Leo and Mia, talking in a modern shopping area. Mia is holding a shopping bag and a new jacket; a department store is visible behind them. Neutral contemporary style, not childish, no text.",
     items: [
       { q: 6, stem: "Leo: What did you do on Saturday?", replyLabel: "Mia", options: { A: "I went shopping with my sister.", B: "I go shopping every Saturday.", C: "I'm shopping now." } },
@@ -147,6 +148,7 @@ window.examParts = [
     range: "Questions 12–17",
     instruction: "Look at the picture and read the story. Choose the correct answer for each gap. Then choose the best title for Question 17.",
     articleTitle: "Sofia and Daniel's weekend",
+    image: "assets/a1_part3_story_sofia_daniel_coastal_town---8e79634d-d167-4b76-8d05-f1deb87e85e7.png",
     imageDescription: "Picture placeholder: Sofia and Daniel, two young adults, visiting a small coastal town. Show a small hotel, a local market, rainy weather later in the day and a museum they can visit. Contemporary realistic style, not childish, no text.",
     text: [
       { type: "text", value: "Last weekend, Sofia and her brother Daniel took a bus to a small town near the ocean. They booked a room in a " },
@@ -206,9 +208,9 @@ window.examParts = [
     instruction: "Read the story and complete the answers. Write one, two or three words.",
     articleTitle: "Elena's first day at the hotel",
     picturePanels: [
-      { title: "Picture 1", text: "Elena leaves home early. A city bus is arriving, and a small hotel near the beach can be seen in the distance." },
-      { title: "Picture 2", text: "Elena works at the hotel reception desk. At lunchtime she is at the café next to the hotel with a sandwich and orange juice." },
-      { title: "Picture 3", text: "After work Elena meets her sister at a shopping mall. Later, the two women leave in a taxi." }
+      { title: "Picture 1", image: "assets/a1_part5_panel1_elena_leaves_home---7df7b20b-4206-4ddb-b0a6-31927226e3f8.png", text: "Elena leaves home early. A city bus is arriving, and a small hotel near the beach can be seen in the distance." },
+      { title: "Picture 2", image: "assets/a1_part5_panel2_elena_hotel_cafe---c41d8c57-2360-4a43-a43c-7c08603de345.png", text: "Elena works at the hotel reception desk. At lunchtime she is at the café next to the hotel with a sandwich and orange juice." },
+      { title: "Picture 3", image: "assets/a1_part5_panel3_elena_sister_mall_taxi---cefd227d-f332-4a31-8b9e-78a52dbc7f4c.png", text: "After work Elena meets her sister at a shopping mall. Later, the two women leave in a taxi." }
     ],
     paragraphs: [
       "Last Monday, Elena started a new job as a receptionist at a small hotel near the beach. She got up at six o'clock, took a shower and got dressed. She left home at seven and went to work by bus.",
@@ -232,6 +234,7 @@ window.examParts = [
     range: "Questions 30–35",
     instruction: "Look at the picture. Complete the sentences, answer the questions, and write two complete sentences about the picture.",
     imageTitle: "City café and market",
+    image: "assets/a1_part6_main_city_square_cafe---78fea76a-59f2-4c3f-aea1-1207bea4210f.png",
     imageDescription: "Image placeholder: an adult/teen city café and market scene. A woman in a red jacket is paying at a market stall; a man with a dark backpack is beside a bus stop; two friends are at a café and one is drinking coffee; a blue bicycle is next to a tree.",
     items: [
       { q: 30, type: "short", stem: "The woman at the market is wearing a red ________." },

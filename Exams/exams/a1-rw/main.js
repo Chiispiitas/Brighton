@@ -249,13 +249,23 @@
 
         <article class="article-card">
           <h3>Picture choices</h3>
-          <div class="picture-story-row" aria-label="Part 1 picture placeholders">
-            ${(part.visualOptions || []).map(option => `
-              <div class="picture-card image-placeholder">
-                <div>
-                  <strong>${escape(option.label)}</strong>
-                  <span>${escape(option.imageDescription)}</span>
+          <div class="picture-story-row" aria-label="Part 1 picture choices">
+            ${(part.visualOptions || []).map(option => option.image ? `
+              <div class="picture-card has-image">
+                <img
+                  class="exam-image picture-story-image"
+                  src="${escapeAttr(option.image)}"
+                  alt="${escapeAttr(option.imageDescription || option.label || "Vocabulary picture")}"
+                  data-image-with-fallback
+                />
+                <div class="image-placeholder hidden" data-image-fallback>
+                  <div><strong>${escape(option.label)}</strong><span>${escape(option.imageDescription || "")}</span></div>
                 </div>
+                <div style="padding:8px 4px 2px;text-align:center;font-weight:900;">${escape(option.label)}</div>
+              </div>
+            ` : `
+              <div class="picture-card image-placeholder">
+                <div><strong>${escape(option.label)}</strong><span>${escape(option.imageDescription || "")}</span></div>
               </div>
             `).join("")}
           </div>
@@ -296,12 +306,21 @@
         ${instruction(part.instruction)}
         <article class="article-card">
           <h3>${escape(part.context || "Conversation")}</h3>
-          <div class="image-placeholder sign-placeholder">
-            <div>
-              <strong>Image placeholder</strong>
-              <span>${escape(part.imageDescription || "")}</span>
+          ${part.image ? `
+            <img
+              class="exam-image part-three-image"
+              src="${escapeAttr(part.image)}"
+              alt="${escapeAttr(part.imageDescription || "Leo and Mia talking")}"
+              data-image-with-fallback
+            />
+            <div class="image-placeholder sign-placeholder hidden" data-image-fallback>
+              <div><strong>Image unavailable</strong><span>${escape(part.imageDescription || "")}</span></div>
             </div>
-          </div>
+          ` : `
+            <div class="image-placeholder sign-placeholder">
+              <div><strong>Image placeholder</strong><span>${escape(part.imageDescription || "")}</span></div>
+            </div>
+          `}
           <div class="question-stack">
             ${part.items.map(item => `
               <article class="question-card ${getCurrentQuestionNumber() === item.q ? "active" : ""}" data-question-card="${item.q}">
@@ -329,12 +348,21 @@
         ${instruction(part.instruction)}
 
         <article class="article-card">
-          <div class="image-placeholder sign-placeholder">
-            <div>
-              <strong>Image placeholder</strong>
-              <span>${escape(part.imageDescription || "")}</span>
+          ${part.image ? `
+            <img
+              class="exam-image part-three-image"
+              src="${escapeAttr(part.image)}"
+              alt="${escapeAttr(part.imageDescription || "Sofia and Daniel in a coastal town")}"
+              data-image-with-fallback
+            />
+            <div class="image-placeholder sign-placeholder hidden" data-image-fallback>
+              <div><strong>Image unavailable</strong><span>${escape(part.imageDescription || "")}</span></div>
             </div>
-          </div>
+          ` : `
+            <div class="image-placeholder sign-placeholder">
+              <div><strong>Image placeholder</strong><span>${escape(part.imageDescription || "")}</span></div>
+            </div>
+          `}
         </article>
 
         <article class="article-card cloze-text" style="margin-top:14px">
@@ -377,8 +405,20 @@
         <div class="writing-layout">
           <article class="article-card">
             <h3>${escape(part.articleTitle)}</h3>
-            <div class="picture-story-row" aria-label="Part 5 image placeholders">
-              ${(part.picturePanels || []).map(panel => `
+            <div class="picture-story-row" aria-label="Part 5 story pictures">
+              ${(part.picturePanels || []).map(panel => panel.image ? `
+                <div class="picture-card has-image">
+                  <img
+                    class="exam-image picture-story-image"
+                    src="${escapeAttr(panel.image)}"
+                    alt="${escapeAttr(panel.text || panel.title || "Story picture")}"
+                    data-image-with-fallback
+                  />
+                  <div class="image-placeholder hidden" data-image-fallback>
+                    <div><strong>${escape(panel.title)}</strong><span>${escape(panel.text)}</span></div>
+                  </div>
+                </div>
+              ` : `
                 <div class="picture-card image-placeholder">
                   <div><strong>${escape(panel.title)}</strong><span>${escape(panel.text)}</span></div>
                 </div>
@@ -403,7 +443,6 @@
     `;
   }
 
-
   /* ----------------------------------------------
   RENDER WRITING TASK
   ---------------------------------------------- */
@@ -415,9 +454,21 @@
         <div class="writing-layout">
           <article class="article-card">
             <p class="eyebrow">${escape(part.imageTitle || "Picture")}</p>
-            <div class="image-placeholder sign-placeholder">
-              <div><strong>Image placeholder</strong><span>${escape(part.imageDescription || "")}</span></div>
-            </div>
+            ${part.image ? `
+              <img
+                class="exam-image"
+                src="${escapeAttr(part.image)}"
+                alt="${escapeAttr(part.imageDescription || part.imageTitle || "Exam picture")}"
+                data-image-with-fallback
+              />
+              <div class="image-placeholder sign-placeholder hidden" data-image-fallback>
+                <div><strong>Image unavailable</strong><span>${escape(part.imageDescription || "")}</span></div>
+              </div>
+            ` : `
+              <div class="image-placeholder sign-placeholder">
+                <div><strong>Image placeholder</strong><span>${escape(part.imageDescription || "")}</span></div>
+              </div>
+            `}
           </article>
           <aside class="article-card">
             <div class="question-stack">
@@ -443,7 +494,6 @@
     `;
   }
 
-
   const renderers = {
     part1: renderPartOne,
     part2: renderPartTwo,
@@ -459,6 +509,14 @@
   BIND MAIN EVENTS
   ---------------------------------------------- */
   function bindMainEvents(part) {
+    $$("[data-image-with-fallback]", dom.mainContent).forEach(image => {
+      const fallback = image.nextElementSibling;
+      image.addEventListener("error", () => {
+        image.classList.add("hidden");
+        fallback?.classList.remove("hidden");
+      }, { once: true });
+    });
+
     $$('[data-choice-answer]', dom.mainContent).forEach(input => {
       input.addEventListener("change", () => {
         const q = Number(input.dataset.q);
