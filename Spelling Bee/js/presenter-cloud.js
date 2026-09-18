@@ -31,21 +31,19 @@
   }
 
   function compareJudgementMeta(incoming, local = judgementMeta()) {
-    const incomingTime = Number(incoming?.updatedAt || 0);
-    const localTime = Number(local?.updatedAt || 0);
-    if (incomingTime !== localTime) return incomingTime > localTime ? 1 : -1;
-
     const incomingRevision = Number(incoming?.revision || 0);
     const localRevision = Number(local?.revision || 0);
-    if (incomingRevision !== localRevision) return incomingRevision > localRevision ? 1 : -1;
 
-    const incomingSource = String(incoming?.source || "");
-    const localSource = String(local?.source || "");
-    if (incomingSource === localSource) return 0;
+    // Judgement revisions are the cross-device authority clock. Never compare
+    // Date.now() values from different devices: their clocks can be skewed.
+    if (incomingRevision !== localRevision) {
+      return incomingRevision > localRevision ? 1 : -1;
+    }
 
-    // Deterministic last-resort tie breaker for the extremely unlikely case
-    // of identical timestamps + revisions from two devices.
-    return incomingSource === "admin" ? 1 : -1;
+    // Same revision means neither side has proof that its input happened after
+    // the other. Preserve the current local state instead of letting polling
+    // or a heartbeat overwrite a human input.
+    return 0;
   }
 
   function setStatus(message, type = "") {
