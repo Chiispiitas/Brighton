@@ -89,10 +89,17 @@ body::before {
   display: grid;
   place-items: center;
   text-align: center;
+  min-width: 0;
   padding: 5rem 2rem 2rem;
 }
 
 .word {
+  width: 100%;
+  max-width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+  white-space: nowrap;
   padding-top: 2%;
   font-family: Georgia, "Palatino Linotype", "Book Antiqua", serif;
   font-size: clamp(3rem, 11.2vw, 11.5rem);
