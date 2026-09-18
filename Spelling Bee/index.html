@@ -17,6 +17,7 @@
     <!-- Main -->
     <link href="style.css" rel="stylesheet">
     <link href="ambient.css" rel="stylesheet">
+    <link href="presenter-cloud.css" rel="stylesheet">
 </head>
 
 <!-- ==============================================
@@ -24,6 +25,22 @@
 ============================================== -->
 <body>
     <div id="spell-container" aria-hidden="true"></div>
+
+    <button class="session-tray-toggle" id="session-tray-toggle" type="button" aria-label="Open cloud session" aria-expanded="false">›</button>
+    <aside class="session-tray" id="session-tray" aria-label="Cloud session">
+        <h2>Cloud Session</h2>
+        <p>Enter a numerical code to connect Presenter, Judge and Remote Control views.</p>
+        <div class="session-code-row">
+            <input id="session-code-input" inputmode="numeric" autocomplete="off" placeholder="Session code" aria-label="Numerical session code">
+            <button id="session-connect" type="button">Connect</button>
+        </div>
+        <p class="session-status" id="session-status">Local presenter mode.</p>
+        <div class="session-tray-links">
+            <a id="judge-view-link" href="judge.html">Judge View</a>
+            <a id="remote-view-link" href="remote.html">Remote Control</a>
+        </div>
+        <button id="session-disconnect" type="button">Disconnect cloud session</button>
+    </aside>
 
     <div id="secret-word"></div>
 
@@ -36,6 +53,7 @@
     </main>
 
     <section class="controls" role="group" aria-label="Controls">
+        <button class="controls-toggle" id="controls-toggle" type="button" title="Hide controls" aria-label="Hide controls">⌄</button>
         <!-- Audio controls -->
         <div class="group audio-group" aria-label="Audio">
             <span class="label">Audio</span>
@@ -87,6 +105,8 @@
 
     <!-- JavaScript -->
     <script src="js/main.js"></script>
+    <script src="js/cloud.js"></script>
+    <script src="js/presenter-cloud.js"></script>
     <script>
         // Keep feedback sounds independent from the pronunciation volume slider.
         // Correct and wrong-answer effects always play at 45% volume.

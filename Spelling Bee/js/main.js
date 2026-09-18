@@ -5,7 +5,21 @@
 ============================================== */
 let hiddenMode = true; // default: hidden word mode
 let currentDifficulty = 'easy';
+let currentLevel = '4TH-5TH';
+let wordSequence = 0;
+const usedWordsByPool = new Map();
 let WORDLIST_PATH = `wordlists/4TH-5TH/${currentDifficulty}.txt`;
+
+function currentPoolKey(level = currentLevel, difficulty = currentDifficulty) {
+    return `${level}|${difficulty}`;
+}
+
+function rememberUsedWord(word) {
+    if (!word) return;
+    const key = currentPoolKey();
+    if (!usedWordsByPool.has(key)) usedWordsByPool.set(key, new Set());
+    usedWordsByPool.get(key).add(word);
+}
 const AUDIO_DIR = 'audio';
 const AUDIO_EXT = '.mp3';
 
@@ -185,6 +199,7 @@ function toggleWordMode() {
 
 function setCurrentWord(w) {
     current = w;
+    wordSequence += 1;
     elSecretWord.textContent = w;
     elAudio.src = `${AUDIO_DIR}/${wordToAudioBasename(w)}${AUDIO_EXT}`;
     resetMarks();
@@ -370,6 +385,7 @@ function nextWord() {
 
     // Remove from the remaining pool when the word was completed without errors.
     if (complete && !anyErr) {
+        rememberUsedWord(current);
         pool = pool.filter(w => w !== current);
     }
 
@@ -389,7 +405,8 @@ function drawRandom() {
 async function changeDifficulty(level) {
     currentDifficulty = level;
 
-    const selectedPool = elPoolSelect ? elPoolSelect.value : 'default';
+    const selectedPool = elPoolSelect ? elPoolSelect.value : currentLevel;
+    currentLevel = selectedPool;
     WORDLIST_PATH = `wordlists/${selectedPool}/${level}.txt`;
 
     [btnEasy, btnMedium, btnHard].forEach(b => b.classList.remove('primary'));
@@ -399,7 +416,8 @@ async function changeDifficulty(level) {
 
     try {
         const words = await loadWordlist();
-        pool = words.slice();
+        const used = usedWordsByPool.get(currentPoolKey()) || new Set();
+        pool = words.filter(word => !used.has(word));
 
         if (pool.length === 0) {
             current = null;
@@ -504,7 +522,9 @@ setWordVolume(elVolumeSlider ? elVolumeSlider.value : 100);
 (async function init() {
     try {
         const words = await loadWordlist();
-        pool = words.slice();
+        currentLevel = elPoolSelect ? elPoolSelect.value : currentLevel;
+        const used = usedWordsByPool.get(currentPoolKey()) || new Set();
+        pool = words.filter(word => !used.has(word));
 
         if (pool.length === 0) {
             elWord.textContent = 'Add words to wordlist.txt';
