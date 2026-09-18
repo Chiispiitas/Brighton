@@ -36,6 +36,8 @@
   let presenter = null;
   let pollTimer = null;
   let presenterSyncTimer = null;
+  let presenterSyncLoopActive = false;
+  let presenterSyncBusy = false;
   let judgeHeartbeatTimer = null;
   let voteSeq = 0;
   let commandSeq = 0;
@@ -44,6 +46,8 @@
   let commandPublishChain = Promise.resolve();
   let pendingAdminWordState = null;
   let adminWordStateFlushTimer = null;
+  let adminWordStateWriteBusy = false;
+  let adminWordStateWritePromise = Promise.resolve();
   let adminJudgePublishTimer = null;
   let judgementRevision = 0;
   let judgementSource = "presenter";
@@ -623,7 +627,8 @@
   }
 
   async function refreshPresenterOnly() {
-    if (!sessionCode) return;
+    if (!sessionCode || presenterSyncBusy) return;
+    presenterSyncBusy = true;
 
     try {
       const nextPresenter = typeof Cloud.fetchPresenter === "function"
@@ -650,7 +655,33 @@
       );
     } catch {
       // Full refresh handles connection errors. Keep this fast path quiet.
+    } finally {
+      presenterSyncBusy = false;
     }
+  }
+
+  function stopPresenterSyncLoop() {
+    presenterSyncLoopActive = false;
+    window.clearTimeout(presenterSyncTimer);
+    presenterSyncTimer = null;
+  }
+
+  function startPresenterSyncLoop() {
+    stopPresenterSyncLoop();
+    presenterSyncLoopActive = true;
+
+    const tick = async () => {
+      if (!presenterSyncLoopActive || !sessionCode) return;
+      await refreshPresenterOnly();
+
+      // No fixed-interval dead time: as soon as one lightweight Presenter GET
+      // finishes, start the next one almost immediately.
+      if (presenterSyncLoopActive && sessionCode) {
+        presenterSyncTimer = window.setTimeout(tick, 12);
+      }
+    };
+
+    tick();
   }
 
   async function refresh() {
@@ -760,12 +791,12 @@
       );
 
       window.clearInterval(pollTimer);
-      window.clearInterval(presenterSyncTimer);
+      stopPresenterSyncLoop();
 
-      // Full refresh includes judges + commands and is intentionally slower.
-      // Presenter-only sync keeps O/P progress responsive without flooding mobile.
+      // Full refresh still handles judges/consensus. The Presenter state itself
+      // uses a continuous lightweight loop for much lower latency.
       pollTimer = window.setInterval(refresh, 1100);
-      presenterSyncTimer = window.setInterval(refreshPresenterOnly, 120);
+      startPresenterSyncLoop();
 
       if (canJudge) {
         await publishJudgeState({ increment: true });
@@ -813,8 +844,14 @@
     window.clearTimeout(adminWordStateFlushTimer);
     adminWordStateFlushTimer = null;
 
-    if (role !== "remote" || !sessionCode || !pendingAdminWordState) {
-      return commandPublishChain;
+    if (role !== "remote" || !sessionCode) {
+      return adminWordStateWritePromise;
+    }
+
+    // Critical latency rule: never queue another network write behind the one
+    // already in flight. Keep only ONE newest pending full-word snapshot.
+    if (adminWordStateWriteBusy || !pendingAdminWordState) {
+      return adminWordStateWritePromise;
     }
 
     const snapshot = pendingAdminWordState;
@@ -822,51 +859,68 @@
 
     // Never send an old word snapshot after Presenter has already moved on.
     if (!presenter?.wordToken || snapshot.wordToken !== presenter.wordToken) {
-      return commandPublishChain;
+      if (pendingAdminWordState) {
+        adminWordStateFlushTimer = window.setTimeout(flushPendingAdminWordState, 0);
+      }
+      return adminWordStateWritePromise;
     }
 
     commandSeq += 1;
     const seq = commandSeq;
     const snapshotSessionCode = sessionCode;
+    adminWordStateWriteBusy = true;
 
-    commandPublishChain = commandPublishChain
-      .catch(() => {})
-      .then(() => Cloud.writeState({
-        sessionCode: snapshotSessionCode,
-        role: "remote",
-        actorId: "main",
-        state: {
-          ...snapshot,
-          commandSeq: seq
-        }
-      }))
+    adminWordStateWritePromise = Cloud.writeState({
+      sessionCode: snapshotSessionCode,
+      role: "remote",
+      actorId: "main",
+      state: {
+        ...snapshot,
+        commandSeq: seq
+      }
+    })
       .then(() => {
         setConnection("Judgement synced", "online");
       })
       .catch(() => {
-        // Keep the newest local snapshot for one retry. If a newer snapshot
-        // already exists, that newer one wins automatically.
+        // Retry only if there is not already a newer local state waiting.
         if (!pendingAdminWordState && presenter?.wordToken === snapshot.wordToken) {
           pendingAdminWordState = adminWordStateSnapshot();
         }
         setConnection("Sync retrying", "error");
       })
       .finally(() => {
-        if (pendingAdminWordState && !adminWordStateFlushTimer) {
-          adminWordStateFlushTimer = window.setTimeout(flushPendingAdminWordState, 10);
+        adminWordStateWriteBusy = false;
+
+        // If several taps happened during the request, they have already
+        // collapsed into pendingAdminWordState. Send that ONE latest snapshot
+        // immediately rather than replaying intermediate states.
+        if (pendingAdminWordState) {
+          adminWordStateFlushTimer = window.setTimeout(flushPendingAdminWordState, 0);
         }
       });
 
-    return commandPublishChain;
+    return adminWordStateWritePromise;
+  }
+
+  async function drainAdminWordState() {
+    // Used only before non-judgement commands where ordering matters.
+    while (adminWordStateWriteBusy || pendingAdminWordState) {
+      if (!adminWordStateWriteBusy && pendingAdminWordState) {
+        flushPendingAdminWordState();
+      }
+      await adminWordStateWritePromise.catch(() => {});
+      if (pendingAdminWordState) await Promise.resolve();
+    }
   }
 
   function queueAdminWordState() {
     if (role !== "remote" || !sessionCode || !presenter?.wordToken) return;
+
+    // Always replace the unsent snapshot with the newest complete word state.
     pendingAdminWordState = adminWordStateSnapshot();
 
-    // One very short debounce collapses rapid taps into a single whole-word
-    // snapshot. While a write is in flight, only the newest state is retained.
-    if (!adminWordStateFlushTimer) {
+    if (!adminWordStateWriteBusy && !adminWordStateFlushTimer) {
       adminWordStateFlushTimer = window.setTimeout(flushPendingAdminWordState, 0);
     }
   }
@@ -962,12 +1016,6 @@
   function sendRemoteCommand(commandType, value = "") {
     if (role !== "remote" || !sessionCode || !presenter) return Promise.resolve(false);
 
-    // Preserve action ordering: if Admin has newer judging progress, enqueue
-    // that whole-word snapshot before New Word / Feedback / Audio / Visibility.
-    flushPendingAdminWordState();
-
-    commandSeq += 1;
-    const seq = commandSeq;
     const snapshotSessionCode = sessionCode;
     const snapshotPresenter = {
       level: presenter.level || "",
@@ -980,6 +1028,13 @@
     commandPublishChain = commandPublishChain
       .catch(() => {})
       .then(async () => {
+        // New Word / feedback / visibility must come after the latest judgement,
+        // but rapid ✓/×/Backspace never wait on this slower control-command path.
+        await drainAdminWordState();
+
+        commandSeq += 1;
+        const seq = commandSeq;
+
         await Cloud.writeState({
           sessionCode: snapshotSessionCode,
           role: "remote",
