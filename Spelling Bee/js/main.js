@@ -40,6 +40,25 @@ let marks = [];
 let ptr = 0;
 let finalizedFeedbackOutcome = null;
 
+// Shared judgement clock. This changes only when a human changes letter
+// progress locally, or when a newer remote judgement is explicitly adopted.
+// Periodic cloud publishes do NOT advance it.
+let judgementRevision = 0;
+let judgementSource = "presenter";
+let judgementUpdatedAt = 0;
+
+function resetJudgementClock() {
+    judgementRevision = 0;
+    judgementSource = "presenter";
+    judgementUpdatedAt = 0;
+}
+
+function recordPresenterJudgementInput() {
+    judgementRevision = Math.max(0, Number(judgementRevision) || 0) + 1;
+    judgementSource = "presenter";
+    judgementUpdatedAt = Date.now();
+}
+
 // DOM references
 const elWord = document.getElementById('word');
 const elSecretWord = document.getElementById('secret-word');
@@ -190,6 +209,7 @@ function resetMarks() {
     marks = new Array(current.length).fill('pending');
     ptr = 0;
     finalizedFeedbackOutcome = null;
+    resetJudgementClock();
     advancePtr();
     renderWord();
 }
@@ -269,6 +289,10 @@ function mark(type, syncCloud = true) {
     if (!current || ptr >= current.length) return;
     finalizedFeedbackOutcome = null;
 
+    // syncCloud=false means this state came from Admin and is replication,
+    // not a new Presenter input. Never steal last-input authority for replicas.
+    if (syncCloud) recordPresenterJudgementInput();
+
     if (!/[A-Za-z]/.test(current[ptr])) {
         advancePtr();
         renderWord();
@@ -305,6 +329,7 @@ function revealNextLetter() {
 function undo() {
     if (!current) return;
     finalizedFeedbackOutcome = null;
+    recordPresenterJudgementInput();
 
     do {
         if (ptr <= 0) break;
