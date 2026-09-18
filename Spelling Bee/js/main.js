@@ -259,7 +259,13 @@ function playCorrectAudio() {
 /* ==============================================
    Letter Progress (O / P / Next Letter / Backspace)
 ============================================== */
-function mark(type) {
+function requestPresenterCloudSync() {
+    if (typeof window.requestSpellingPresenterSync === 'function') {
+        window.requestSpellingPresenterSync();
+    }
+}
+
+function mark(type, syncCloud = true) {
     if (!current || ptr >= current.length) return;
     finalizedFeedbackOutcome = null;
 
@@ -273,6 +279,7 @@ function mark(type) {
     ptr++;
     advancePtr();
     renderWord();
+    if (syncCloud) requestPresenterCloudSync();
 
     if (!isAllMarked()) return;
 
@@ -309,6 +316,7 @@ function undo() {
     }
 
     renderWord();
+    requestPresenterCloudSync();
 }
 
 function isAllMarked() {
