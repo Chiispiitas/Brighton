@@ -37,7 +37,7 @@
   function updateViewLinks() {
     const suffix = sessionCode ? `?session=${encodeURIComponent(sessionCode)}` : "";
     if (judgeLink) judgeLink.href = `judge.html${suffix}`;
-    if (remoteLink) remoteLink.href = `remote.html${suffix}`;
+    if (remoteLink) remoteLink.href = `admin.html${suffix}`;
   }
 
   function usedWordsSnapshot() {
