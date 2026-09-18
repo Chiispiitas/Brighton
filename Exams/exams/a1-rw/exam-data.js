@@ -131,7 +131,7 @@ window.examParts = [
     instruction: "Look at the picture and read the conversation. For each question, choose the best answer: A, B or C.",
     context: "Leo is talking to Mia about her weekend and her plans.",
     image: "assets/a1_part2_conversation_leo_mia---929a2bf6-5009-4c5d-a347-b04ffd2546eb.png",
-    imageDescription: "Picture placeholder: two young adults, Leo and Mia, talking in a modern shopping area. Mia is holding a shopping bag and a new jacket; a department store is visible behind them. Neutral contemporary style, not childish, no text.",
+    imageDescription: "Two young adults, Leo and Mia, talking in a modern shopping area. Mia is holding a shopping bag and a new jacket; a department store is visible behind them. Neutral contemporary style, not childish, no text.",
     items: [
       { q: 6, stem: "Leo: What did you do on Saturday?", replyLabel: "Mia", options: { A: "I went shopping with my sister.", B: "I go shopping every Saturday.", C: "I'm shopping now." } },
       { q: 7, stem: "Leo: Where did you buy that jacket?", replyLabel: "Mia", options: { A: "It was very cheap.", B: "At the new department store.", C: "I paid with cash." } },
@@ -149,7 +149,7 @@ window.examParts = [
     instruction: "Look at the picture and read the story. Choose the correct answer for each gap. Then choose the best title for Question 17.",
     articleTitle: "Sofia and Daniel's weekend",
     image: "assets/a1_part3_story_sofia_daniel_coastal_town---8e79634d-d167-4b76-8d05-f1deb87e85e7.png",
-    imageDescription: "Picture placeholder: Sofia and Daniel, two young adults, visiting a small coastal town. Show a small hotel, a local market, rainy weather later in the day and a museum they can visit. Contemporary realistic style, not childish, no text.",
+    imageDescription: "Sofia and Daniel, two young adults, visiting a small coastal town. The scene includes a small hotel, a local market, rainy weather later in the day and a museum they can visit. Contemporary realistic style, not childish, no text.",
     text: [
       { type: "text", value: "Last weekend, Sofia and her brother Daniel took a bus to a small town near the ocean. They booked a room in a " },
       { type: "gap", q: 12 },
@@ -232,10 +232,10 @@ window.examParts = [
     label: "Part 6",
     title: "Picture reading and writing",
     range: "Questions 30–35",
-    instruction: "Look at the picture. Complete the sentences, answer the questions, and write two complete sentences about the picture.",
+    instruction: "Look at the picture. Complete the sentences, answer the question, choose the correct preposition, and write two complete sentences about the picture.",
     imageTitle: "City café and market",
     image: "assets/a1_part6_main_city_square_cafe---78fea76a-59f2-4c3f-aea1-1207bea4210f.png",
-    imageDescription: "Image placeholder: an adult/teen city café and market scene. A woman in a red jacket is paying at a market stall; a man with a dark backpack is beside a bus stop; two friends are at a café and one is drinking coffee; a blue bicycle is next to a tree.",
+    imageDescription: "An adult/teen city café and market scene. A woman in a red jacket is paying at a market stall; a man with a dark backpack is beside a bus stop; two friends are at a café; a blue bicycle is next to a tree.",
     items: [
       { q: 30, type: "short", stem: "The woman at the market is wearing a red ________." },
       { q: 31, type: "short", stem: "The man near the bus stop has a ________ on his back." },

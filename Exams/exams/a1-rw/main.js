@@ -713,9 +713,18 @@
     if (!anchor) return;
     const item = part.items.find(question => question.q === q);
     const display = value ? item?.options?.[value] : "";
+    const emptyLabel = item?.type === "preposition-choice"
+      ? "Choose"
+      : part.id === "part1"
+        ? "Choose answer"
+        : "";
     anchor.classList.toggle("answered", Boolean(value));
-    anchor.innerHTML = `<span class="gap-number">${q}</span>${display ? `<span class="gap-answer">${escape(display)}</span>` : ""}`;
-    $$(".choice-popover .option-btn").forEach(btn => btn.classList.toggle("selected", btn.dataset.popoverChoice === value));
+    anchor.innerHTML = `<span class="gap-number">${q}</span>${display
+      ? `<span class="gap-answer">${escape(display)}</span>`
+      : emptyLabel
+        ? `<span class="gap-answer">${escape(emptyLabel)}</span>`
+        : ""}`;
+    $(".choice-popover .option-btn").forEach(btn => btn.classList.toggle("selected", btn.dataset.popoverChoice === value));
   }
 
   /* ----------------------------------------------
@@ -990,7 +999,7 @@
           <h3 id="notesTitle">Private notes</h3>
           <button class="icon-btn" data-close-modal aria-label="Close notes">×</button>
         </div>
-        <p class="muted-text">Notes are saved locally on this device and are included in the final export placeholder.</p>
+        <p class="muted-text">Notes are saved locally on this device and are included with your submission.</p>
         <textarea id="notesArea" class="notes-area" placeholder="Type your private notes here..."></textarea>
       </div>
     `);
