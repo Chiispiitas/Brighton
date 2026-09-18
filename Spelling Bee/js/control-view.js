@@ -527,6 +527,11 @@
       judgeVerdict !== nextVerdict ||
       JSON.stringify(judgeMarks) !== JSON.stringify(mapped);
 
+    // Even when the letters happen to be visually identical, the newer
+    // input-source metadata still matters. Remember who edited last so the
+    // next real input is ordered from the correct authority.
+    adoptJudgementMeta(incomingMeta);
+
     if (!changed) return false;
 
     judgeWordToken = presenter.wordToken;
@@ -534,7 +539,6 @@
     judgePointer = nextPointer;
     judgeVerdict = nextVerdict;
     judgeStartedAt = judgeStartedAt || new Date().toISOString();
-    adoptJudgementMeta(incomingMeta);
     return true;
   }
 
