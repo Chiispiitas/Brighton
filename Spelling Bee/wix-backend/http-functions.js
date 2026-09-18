@@ -1,4 +1,4 @@
-import { corsOptions } from "./core.js";
+import { corsOptions } from "backend/core.js";
 
 import {
   getSession,
@@ -7,7 +7,7 @@ import {
   saveJudge,
   getCommand,
   saveCommand
-} from "./spelling-bee.js";
+} from "backend/spelling-bee.js";
 
 /*
   Wix routes GET/POST to the method-specific exports below.
