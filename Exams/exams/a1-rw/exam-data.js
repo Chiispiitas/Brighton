@@ -240,7 +240,7 @@ window.examParts = [
       { q: 30, type: "short", stem: "The woman at the market is wearing a red ________." },
       { q: 31, type: "short", stem: "The man near the bus stop has a ________ on his back." },
       { q: 32, type: "short", stem: "What is one person at the café drinking?" },
-      { q: 33, type: "short", stem: "Where is the blue bicycle?" },
+      { q: 33, type: "preposition-choice", stem: "The blue bicycle is", suffix: "the tree.", options: { "next to the tree": "next to", "behind the tree": "behind", "in front of the tree": "in front of", "under the tree": "under" } },
       { q: 34, type: "sentence", stem: "Write one complete sentence about the picture." },
       { q: 35, type: "sentence", stem: "Write another complete sentence about the picture." }
     ]

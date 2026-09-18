@@ -481,6 +481,28 @@
                       <textarea class="notes-area" rows="3" data-writing-input data-part-id="${part.id}" data-q="${item.q}" placeholder="Write one complete sentence...">${escape(answer)}</textarea>
                     </article>`;
                 }
+                if (item.type === "preposition-choice") {
+                  const display = answer ? item.options?.[answer] : "";
+                  return `
+                    <article class="question-card ${getCurrentQuestionNumber() === item.q ? "active" : ""}" data-question-card="${item.q}">
+                      <h4><span class="q-badge">${item.q}</span> Choose the correct preposition.</h4>
+                      <div style="font-size:16px;font-weight:800;line-height:1.9;">
+                        ${escape(item.stem)}
+                        <button
+                          class="cloze-gap choice-gap ${answer ? "answered" : ""} ${getCurrentQuestionNumber() === item.q ? "active" : ""}"
+                          type="button"
+                          data-choice-gap
+                          data-part-id="${part.id}"
+                          data-q="${item.q}"
+                          aria-label="Question ${item.q}, ${answer ? "answered" : "unanswered"}"
+                        >
+                          <span class="gap-number">${item.q}</span>
+                          ${display ? `<span class="gap-answer">${escape(display)}</span>` : `<span class="gap-answer">Choose</span>`}
+                        </button>
+                        ${escape(item.suffix || "")}
+                      </div>
+                    </article>`;
+                }
                 return `
                   <article class="question-card ${getCurrentQuestionNumber() === item.q ? "active" : ""}" data-question-card="${item.q}">
                     <h4><span class="q-badge">${item.q}</span> ${escape(item.stem)}</h4>
@@ -630,7 +652,7 @@
 
     const selected = getAnswer(part.id, q);
     const rawEntries = Object.entries(item.options || {});
-    const entries = part.id === "part1" || part.id === "part3"
+    const entries = part.id === "part1" || part.id === "part3" || item.type === "preposition-choice"
       ? stableShuffle(rawEntries, `${part.id}-q${q}-popover-options`)
       : rawEntries;
 
