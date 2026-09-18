@@ -256,7 +256,7 @@
   }
 
   function fitAllVisibleWords() {
-    if (word) fitWordToWidth(word, 30);
+    if (word) fitWordToWidth(word, 20);
     document.querySelectorAll(".admin-judge-word").forEach(element => {
       fitWordToWidth(element, 18);
     });
