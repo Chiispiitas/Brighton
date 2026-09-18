@@ -40,6 +40,7 @@
   let commandSeq = 0;
   let busy = false;
   let judgePublishChain = Promise.resolve();
+  let commandPublishChain = Promise.resolve();
   let wordInfoKey = "";
 
   let judgeWordToken = "";
@@ -552,36 +553,97 @@
     if (judgePointer >= letters.length && judgeVerdict !== "incorrect") judgeVerdict = "correct";
 
     renderPresenterState();
-    await publishJudgeState({ increment: true });
+
+    const writes = [publishJudgeState({ increment: true })];
+    if (role === "remote") {
+      writes.push(sendRemoteCommand("letter-mark", mark));
+    }
+    await Promise.all(writes);
   }
 
-  async function sendRemoteCommand(commandType, value = "") {
-    if (role !== "remote" || !sessionCode || !presenter) return;
-    commandSeq += 1;
+  async function waitForPresenterCommandAck(seq, targetWordToken, timeoutMs = 4500) {
+    const deadline = Date.now() + timeoutMs;
 
-    try {
-      await Cloud.writeState({
-        sessionCode,
-        role: "remote",
-        actorId: "main",
-        state: {
-          startedAt: new Date().toISOString(),
-          level: presenter.level || "",
-          difficulty: presenter.difficulty || "",
-          word: presenter.word || "",
-          wordToken: presenter.wordToken || "",
-          wordSequence: Number(presenter.wordSequence || 0),
-          commandSeq,
-          commandType,
-          value
+    while (Date.now() < deadline) {
+      await new Promise(resolve => window.setTimeout(resolve, 120));
+
+      try {
+        const rows = await Cloud.fetchRows(sessionCode);
+        const latestPresenter = Cloud.presenterState(rows);
+        if (!latestPresenter) continue;
+
+        const ack = Number(latestPresenter.lastCommandSeq || 0);
+        if (ack >= seq) {
+          presenter = latestPresenter;
+          return true;
         }
-      });
-      setConnection("Command sent", "online");
-      window.setTimeout(refresh, 260);
-    } catch (error) {
-      commandSeq -= 1;
-      setConnection("Command failed", "error");
+
+        // A new word means a stale word-targeted command should not block the queue.
+        if (
+          targetWordToken &&
+          latestPresenter.wordToken &&
+          latestPresenter.wordToken !== targetWordToken
+        ) {
+          presenter = latestPresenter;
+          return true;
+        }
+      } catch (error) {
+        // Keep waiting until timeout; normal refresh will surface connectivity.
+      }
     }
+
+    return false;
+  }
+
+  function sendRemoteCommand(commandType, value = "") {
+    if (role !== "remote" || !sessionCode || !presenter) return Promise.resolve(false);
+
+    commandSeq += 1;
+    const seq = commandSeq;
+    const snapshotSessionCode = sessionCode;
+    const snapshotPresenter = {
+      level: presenter.level || "",
+      difficulty: presenter.difficulty || "",
+      word: presenter.word || "",
+      wordToken: presenter.wordToken || "",
+      wordSequence: Number(presenter.wordSequence || 0)
+    };
+
+    commandPublishChain = commandPublishChain
+      .catch(() => {})
+      .then(async () => {
+        await Cloud.writeState({
+          sessionCode: snapshotSessionCode,
+          role: "remote",
+          actorId: "main",
+          state: {
+            startedAt: new Date().toISOString(),
+            ...snapshotPresenter,
+            commandSeq: seq,
+            commandType,
+            value
+          }
+        });
+
+        const acknowledged = await waitForPresenterCommandAck(
+          seq,
+          commandType === "difficulty" ? "" : snapshotPresenter.wordToken
+        );
+
+        if (!acknowledged) {
+          throw new Error("Presenter did not acknowledge command.");
+        }
+
+        setConnection("Command sent", "online");
+        window.setTimeout(refresh, 100);
+        return true;
+      })
+      .catch(error => {
+        setConnection("Command failed", "error");
+        return false;
+      });
+
+    return commandPublishChain;
   }
 
   async function openPools() {
