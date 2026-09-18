@@ -494,6 +494,17 @@
     `;
   }
 
+  const renderers = {
+    part1: renderPartOne,
+    part2: renderPartTwo,
+    part3: renderPartThree,
+    part4: renderPartFour,
+    part5: renderPartFive,
+    part6: renderWritingPart
+  };
+
+  boot();
+
   /* ----------------------------------------------
   BIND MAIN EVENTS
   ---------------------------------------------- */
