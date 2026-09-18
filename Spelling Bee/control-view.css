@@ -95,14 +95,10 @@ body.control-view {
   box-sizing: border-box;
   display: flex;
   flex-wrap: nowrap;
-  justify-content: safe center;
+  justify-content: center;
   align-items: baseline;
-  overflow-x: auto;
-  overflow-y: hidden;
-  overscroll-behavior-x: contain;
-  scroll-padding-inline: 1rem;
+  overflow: hidden;
   padding: .18em 1rem .22em;
-  scrollbar-width: none;
   text-shadow: 0 8px 30px rgba(0,0,0,.45);
 }
 
@@ -455,15 +451,11 @@ button:disabled { opacity: .45; cursor: not-allowed; }
   box-sizing: border-box;
   display: flex;
   flex-wrap: nowrap;
-  justify-content: safe center;
+  justify-content: center;
   align-items: baseline;
-  overflow-x: auto;
-  overflow-y: hidden;
-  overscroll-behavior-x: contain;
-  scroll-padding-inline: .75rem;
+  overflow: hidden;
   padding: .12em .75rem .2em;
   white-space: nowrap;
-  scrollbar-width: none;
   color: #c8bda7;
   font: 700 clamp(1.35rem, 3.6vw, 2.1rem)/1.15 Georgia, "Palatino Linotype", serif;
   letter-spacing: .025em;
@@ -511,11 +503,9 @@ button:disabled { opacity: .45; cursor: not-allowed; }
 @media (max-width: 520px) {
   .control-word {
     padding-inline: .55rem;
-    scroll-padding-inline: .55rem;
   }
 
   .admin-judge-word {
     padding-inline: .45rem;
-    scroll-padding-inline: .45rem;
   }
 }
