@@ -18,6 +18,9 @@
   const poolModal = document.getElementById("pool-modal");
   const poolClose = document.getElementById("pool-close");
   const poolColumns = document.getElementById("pool-columns");
+  const ipaValue = document.getElementById("ipa-value");
+  const definitionValue = document.getElementById("definition-value");
+  const exampleValue = document.getElementById("example-value");
 
   const deviceId = Cloud.getDeviceId(role === "judge"
     ? "brighton-spelling-judge-device"
@@ -32,6 +35,7 @@
   let commandSeq = 0;
   let busy = false;
   let judgePublishChain = Promise.resolve();
+  let wordInfoKey = "";
 
   let judgeWordToken = "";
   let judgeMarks = [];
@@ -136,6 +140,44 @@
     word.replaceChildren(frag);
   }
 
+  async function renderWordInfo() {
+    if (!ipaValue || !definitionValue || !exampleValue) return;
+
+    if (!presenter?.word) {
+      wordInfoKey = "";
+      ipaValue.textContent = "—";
+      definitionValue.textContent = "—";
+      exampleValue.textContent = "—";
+      return;
+    }
+
+    const level = presenter.level || "4TH-5TH";
+    const difficulty = presenter.difficulty || "easy";
+    const currentWord = presenter.word || "";
+    const key = `${level}|${difficulty}|${currentWord.toLowerCase()}`;
+
+    if (key === wordInfoKey) return;
+    wordInfoKey = key;
+
+    ipaValue.textContent = "Loading…";
+    definitionValue.textContent = "Loading…";
+    exampleValue.textContent = "Loading…";
+
+    try {
+      const info = await Cloud.getWordInfo(level, difficulty, currentWord);
+      if (wordInfoKey !== key) return;
+
+      ipaValue.textContent = info?.ipa || "—";
+      definitionValue.textContent = info?.definition || "No definition available.";
+      exampleValue.textContent = info?.example || "No example sentence available.";
+    } catch (error) {
+      if (wordInfoKey !== key) return;
+      ipaValue.textContent = "—";
+      definitionValue.textContent = "Word information unavailable.";
+      exampleValue.textContent = "Word information unavailable.";
+    }
+  }
+
   function renderPresenterState() {
     if (!presenter) {
       if (word) word.textContent = "—";
@@ -180,6 +222,8 @@
         button.disabled = finished;
       });
     }
+
+    renderWordInfo();
   }
 
   function parseJudgeStates(rows) {
