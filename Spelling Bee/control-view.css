@@ -150,6 +150,11 @@ body.control-view {
   background: linear-gradient(180deg, rgba(100,48,57,.9), rgba(58,29,36,.96));
 }
 
+.verdict-button.undo {
+  border-color: rgba(200,169,107,.48);
+  background: linear-gradient(180deg, rgba(91,72,45,.9), rgba(49,39,28,.96));
+}
+
 .verdict-button.selected { outline: 3px solid rgba(255,243,212,.18); transform: translateY(-1px); }
 button:disabled { opacity: .45; cursor: not-allowed; }
 
@@ -528,5 +533,15 @@ button:disabled { opacity: .45; cursor: not-allowed; }
   .verdict-button:active {
     transform: scale(.98);
     filter: brightness(1.12);
+  }
+}
+
+
+@media (max-width: 520px) {
+  body[data-role="remote"] .verdict-row .verdict-button {
+    min-width: 0;
+    flex: 1 1 calc(33.333% - .5rem);
+    padding-inline: .45rem;
+    font-size: .88rem;
   }
 }
