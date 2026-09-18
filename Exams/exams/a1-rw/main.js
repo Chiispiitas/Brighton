@@ -509,7 +509,7 @@
   BIND MAIN EVENTS
   ---------------------------------------------- */
   function bindMainEvents(part) {
-    $("[data-image-with-fallback]", dom.mainContent).forEach(image => {
+    $$("[data-image-with-fallback]", dom.mainContent).forEach(image => {
       const fallback = image.nextElementSibling;
       image.addEventListener("error", () => {
         image.classList.add("hidden");
