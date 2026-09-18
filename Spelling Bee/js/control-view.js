@@ -716,6 +716,7 @@
   });
 
   document.getElementById("new-word-button")?.addEventListener("click", () => sendRemoteCommand("new-word"));
+  document.getElementById("replay-audio-button")?.addEventListener("click", () => sendRemoteCommand("play-audio"));
   document.getElementById("word-visibility-button")?.addEventListener("click", event => {
     const value = event.currentTarget.dataset.nextVisibility || (presenter?.hiddenMode === false ? "hide" : "reveal");
     sendRemoteCommand("visibility", value);
