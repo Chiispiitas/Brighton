@@ -1,0 +1,632 @@
+{
+  "abeyance": {
+    "ipa": "[əˈbeɪ.əns]",
+    "definition": "A temporary state of suspension or inactivity.",
+    "example": "The project was held in abeyance until funding returned."
+  },
+  "abnegation": {
+    "ipa": "[ˌæb.nɛˈɡeɪ.ʃən]",
+    "definition": "The act of denying oneself something or giving up a claim.",
+    "example": "Her abnegation of personal credit impressed the team."
+  },
+  "abstemious": {
+    "ipa": "[æbˈsti.mi.əs]",
+    "definition": "Moderate and restrained, especially in eating or drinking.",
+    "example": "He maintained an abstemious diet."
+  },
+  "abstruse": {
+    "ipa": "[əbˈstɹus]",
+    "definition": "Difficult to understand because it is highly complex.",
+    "example": "The article was too abstruse for most readers."
+  },
+  "acclimatize": {
+    "ipa": "[əˈkʰlaɪ.məˌtaɪz]",
+    "definition": "To become accustomed to a new climate or environment.",
+    "example": "The athletes arrived early to acclimatize to the altitude."
+  },
+  "acquiesce": {
+    "ipa": "[ˌæ.kwiˈɛs]",
+    "definition": "To accept something reluctantly without protest.",
+    "example": "They finally acquiesced to the revised terms."
+  },
+  "acquiescence": {
+    "ipa": "[ˌæ.kwiˈɛ.səns]",
+    "definition": "Reluctant acceptance without active opposition.",
+    "example": "Her silence was interpreted as acquiescence."
+  },
+  "aggrandize": {
+    "ipa": "[əˈɡɹænˌdaɪz]",
+    "definition": "To increase the power, status, or importance of someone or something.",
+    "example": "The ruler used propaganda to aggrandize himself."
+  },
+  "alacrity": {
+    "ipa": "[əˈlæ.kɹə.ɾi]",
+    "definition": "Cheerful readiness and quick willingness.",
+    "example": "She accepted the assignment with alacrity."
+  },
+  "anachronism": {
+    "ipa": "[əˈnæ.kɹəˌnɪ.zəm]",
+    "definition": "Something placed in a time period where it does not belong.",
+    "example": "A smartphone in a medieval film would be an anachronism."
+  },
+  "anachronistic": {
+    "ipa": "[əˌnæ.kɹəˈnɪ.stɪk̚]",
+    "definition": "Belonging to a different historical period than the one in question.",
+    "example": "The custom now seems anachronistic."
+  },
+  "antediluvian": {
+    "ipa": "[ˌæn.ti.dəˈlu.vi.ən]",
+    "definition": "Extremely old-fashioned or ancient.",
+    "example": "His antediluvian computer finally stopped working."
+  },
+  "apocryphal": {
+    "ipa": "[əˈpʰɑ.kɹə.fəɫ]",
+    "definition": "Of doubtful truth or authenticity, though widely repeated.",
+    "example": "The famous story is probably apocryphal."
+  },
+  "apotheosis": {
+    "ipa": "[əˌpɑ.θiˈoʊ.səs]",
+    "definition": "The highest point of development or elevation to divine status.",
+    "example": "The performance was the apotheosis of her career."
+  },
+  "assiduous": {
+    "ipa": "[əˈsɪ.dʒu.əs]",
+    "definition": "Showing persistent care and effort.",
+    "example": "His assiduous study produced excellent results."
+  },
+  "avaricious": {
+    "ipa": "[ˌæ.vəˈɹɪ.ʃəs]",
+    "definition": "Having an excessive desire for wealth or possessions.",
+    "example": "The avaricious merchant cared only about profit."
+  },
+  "bellwether": {
+    "ipa": "[ˈbɛɫˌwɛ.ðɚ]",
+    "definition": "A person or thing that indicates future trends.",
+    "example": "The industry is often a bellwether for the economy."
+  },
+  "bourgeois": {
+    "ipa": "[bʊɹˈʒwɑ]",
+    "definition": "Relating to the middle class, especially its conventional values.",
+    "example": "The novel mocks bourgeois respectability."
+  },
+  "calumny": {
+    "ipa": "[ˈkʰæ.ləm.ni]",
+    "definition": "A false statement intended to damage someone's reputation.",
+    "example": "The accusation was dismissed as calumny."
+  },
+  "capricious": {
+    "ipa": "[kəˈpʰɹɪ.ʃəs]",
+    "definition": "Changing suddenly and unpredictably.",
+    "example": "The region is known for capricious weather."
+  },
+  "chicanery": {
+    "ipa": "[ʃɪˈkʰeɪ.nɚ.i]",
+    "definition": "Deception or trickery used to achieve a purpose.",
+    "example": "The deal was completed through legal chicanery."
+  },
+  "circumlocution": {
+    "ipa": "[ˌsɝ.kəm.loʊˈkju.ʃən]",
+    "definition": "The use of many words to avoid saying something directly.",
+    "example": "His answer was a masterpiece of circumlocution."
+  },
+  "commensurate": {
+    "ipa": "[kəˈmɛn.sɚ.ət̚]",
+    "definition": "Corresponding in size, degree, or proportion.",
+    "example": "Salary should be commensurate with experience."
+  },
+  "concomitant": {
+    "ipa": "[kənˈkʰɑ.mə.tənt̚]",
+    "definition": "Naturally accompanying or associated with something.",
+    "example": "Stress is often a concomitant of rapid change."
+  },
+  "conflagration": {
+    "ipa": "[ˌkɑn.fləˈɡɹeɪ.ʃən]",
+    "definition": "A large and destructive fire.",
+    "example": "The conflagration destroyed several buildings."
+  },
+  "connoisseurship": {
+    "ipa": "[ˌkɑ.nəˈsɝˌʃɪp̚]",
+    "definition": "Expert knowledge and judgment, especially in art or taste.",
+    "example": "Her connoisseurship of fine art was widely respected."
+  },
+  "consternation": {
+    "ipa": "[ˌkɑn.stɚˈneɪ.ʃən]",
+    "definition": "Sudden anxiety or dismay caused by something unexpected.",
+    "example": "The announcement caused consternation among employees."
+  },
+  "contravene": {
+    "ipa": "[ˌkɑn.tɹəˈvin]",
+    "definition": "To violate or conflict with a law or rule.",
+    "example": "The policy may contravene existing regulations."
+  },
+  "corporeal": {
+    "ipa": "[kɔɹˈpɔɹ.i.əɫ]",
+    "definition": "Relating to the physical body rather than the spirit.",
+    "example": "The sculpture gives a corporeal form to an abstract idea."
+  },
+  "deleterious": {
+    "ipa": "[ˌdɛ.ləˈtʰɪɹ.i.əs]",
+    "definition": "Causing harm or damage.",
+    "example": "The chemical has deleterious effects on wildlife."
+  },
+  "denouement": {
+    "ipa": "[ˌdeɪ.nuˈmɑn]",
+    "definition": "The final resolution of a story or complex situation.",
+    "example": "The novel's denouement reveals the hidden motive."
+  },
+  "desiccate": {
+    "ipa": "[ˈdɛ.səˌkeɪt̚]",
+    "definition": "To remove moisture and make completely dry.",
+    "example": "The intense heat can desiccate the soil."
+  },
+  "desultory": {
+    "ipa": "[ˈdɛ.səɫˌtɔɹ.i]",
+    "definition": "Lacking a plan, purpose, or steady effort.",
+    "example": "They held a desultory conversation."
+  },
+  "diatribe": {
+    "ipa": "[ˈdaɪ.əˌtɹaɪb]",
+    "definition": "A bitter and forceful verbal attack.",
+    "example": "The article became a diatribe against modern education."
+  },
+  "diffidence": {
+    "ipa": "[ˈdɪ.fə.dəns]",
+    "definition": "Shyness or lack of self-confidence.",
+    "example": "His diffidence made public speaking difficult."
+  },
+  "discomfit": {
+    "ipa": "[dɪsˈkʌm.fɪt̚]",
+    "definition": "To make someone feel uneasy or embarrassed.",
+    "example": "The unexpected question discomfited the speaker."
+  },
+  "disingenuous": {
+    "ipa": "[ˌdɪs.ɪnˈdʒɛn.ju.əs]",
+    "definition": "Not completely honest or sincere.",
+    "example": "It was disingenuous to pretend the mistake was accidental."
+  },
+  "ebullient": {
+    "ipa": "[ɪˈbʊl.jənt̚]",
+    "definition": "Cheerful, energetic, and enthusiastic.",
+    "example": "Her ebullient personality energized the group."
+  },
+  "ecclesiastical": {
+    "ipa": "[ɪˌkli.ziˈæ.stɪ.kəɫ]",
+    "definition": "Relating to the Christian Church or its clergy.",
+    "example": "The archive contains ecclesiastical records."
+  },
+  "efficacy": {
+    "ipa": "[ˈɛ.fə.kə.si]",
+    "definition": "The ability to produce the intended result.",
+    "example": "Researchers tested the efficacy of the treatment."
+  },
+  "effrontery": {
+    "ipa": "[ɪˈfɹʌn.tɚ.i]",
+    "definition": "Shameless boldness or disrespectful behavior.",
+    "example": "He had the effrontery to demand an apology."
+  },
+  "emollient": {
+    "ipa": "[ɪˈmɑ.li.ənt̚]",
+    "definition": "A substance that softens or soothes the skin.",
+    "example": "The cream contains a natural emollient."
+  },
+  "encumbrance": {
+    "ipa": "[ɪnˈkʌm.bɹəns]",
+    "definition": "A burden, obstacle, or legal claim that restricts something.",
+    "example": "The debt became a serious encumbrance."
+  },
+  "equanimity": {
+    "ipa": "[ˌi.kwəˈnɪ.mə.ɾi]",
+    "definition": "Calmness and mental balance, especially under pressure.",
+    "example": "She received the criticism with equanimity."
+  },
+  "equilibrium": {
+    "ipa": "[ˌi.kwəˈlɪ.bɹi.əm]",
+    "definition": "A state of balance between opposing forces.",
+    "example": "The market eventually returned to equilibrium."
+  },
+  "equivocal": {
+    "ipa": "[ɪˈkʰwɪ.və.kəɫ]",
+    "definition": "Ambiguous or deliberately unclear.",
+    "example": "His equivocal answer satisfied neither side."
+  },
+  "erudite": {
+    "ipa": "[ˈɛɹ.jəˌdaɪt̚]",
+    "definition": "Having or showing extensive scholarly knowledge.",
+    "example": "The professor delivered an erudite lecture."
+  },
+  "esoteric": {
+    "ipa": "[ˌɛ.səˈtʰɛɹ.ɪk̚]",
+    "definition": "Understood by only a small group with specialized knowledge.",
+    "example": "The discussion became increasingly esoteric."
+  },
+  "euphemism": {
+    "ipa": "[ˈju.fəˌmɪ.zəm]",
+    "definition": "A mild expression used instead of one considered harsh or unpleasant.",
+    "example": "'Passed away' is a euphemism for 'died.'"
+  },
+  "exacerbate": {
+    "ipa": "[ɪɡˈzæ.sɚˌbeɪt̚]",
+    "definition": "To make a problem or bad situation worse.",
+    "example": "The delay will exacerbate existing shortages."
+  },
+  "exculpate": {
+    "ipa": "[ˈɛk.skəɫˌpeɪt̚]",
+    "definition": "To clear someone from blame or guilt.",
+    "example": "The new evidence may exculpate the defendant."
+  },
+  "extemporaneous": {
+    "ipa": "[ɪkˌstɛm.pəˈɹeɪ.ni.əs]",
+    "definition": "Spoken or done with little or no preparation.",
+    "example": "She gave an extemporaneous speech."
+  },
+  "fortuitous": {
+    "ipa": "[fɔɹˈtʰu.ɪ.təs]",
+    "definition": "Happening by chance, often with a favorable result.",
+    "example": "A fortuitous meeting led to the partnership."
+  },
+  "garrulous": {
+    "ipa": "[ˈɡɛɹ.ə.ləs]",
+    "definition": "Excessively talkative.",
+    "example": "The garrulous passenger spoke throughout the flight."
+  },
+  "gauche": {
+    "ipa": "[ˈɡoʊʃ]",
+    "definition": "Socially awkward or lacking tact.",
+    "example": "His gauche remark embarrassed the guests."
+  },
+  "grandiloquent": {
+    "ipa": "[ɡɹænˈdɪ.lə.kwənt̚]",
+    "definition": "Using pompous or elaborate language.",
+    "example": "The speech sounded grandiloquent but said little."
+  },
+  "gratuitous": {
+    "ipa": "[ɡɹəˈtʰu.ə.təs]",
+    "definition": "Unnecessary, unjustified, or given without payment.",
+    "example": "The film contained gratuitous violence."
+  },
+  "heterogeneous": {
+    "ipa": "[ˌhɛ.tɚ.əˈdʒi.ni.əs]",
+    "definition": "Composed of many different kinds or elements.",
+    "example": "The class was a heterogeneous group."
+  },
+  "idiosyncrasy": {
+    "ipa": "[ˌɪ.di.oʊˈsɪŋ.kɹə.si]",
+    "definition": "A distinctive habit or unusual feature of a person or thing.",
+    "example": "His habit of humming while working is an idiosyncrasy."
+  },
+  "ignominious": {
+    "ipa": "[ˌɪɡ.nəˈmɪ.ni.əs]",
+    "definition": "Deserving or causing public shame or disgrace.",
+    "example": "The campaign ended in ignominious defeat."
+  },
+  "imperturbable": {
+    "ipa": "[ˌɪm.pɚˈtɝ.bə.bəɫ]",
+    "definition": "Remaining calm and not easily upset.",
+    "example": "The pilot stayed imperturbable during the emergency."
+  },
+  "impetuosity": {
+    "ipa": "[ɪmˌpɛtʃ.uˈɑ.sə.ɾi]",
+    "definition": "The quality of acting quickly without enough thought.",
+    "example": "His impetuosity often led to mistakes."
+  },
+  "incongruous": {
+    "ipa": "[ɪnˈkʰɑŋ.ɡɹu.əs]",
+    "definition": "Not fitting or consistent with the surroundings or situation.",
+    "example": "The modern tower looked incongruous beside the old church."
+  },
+  "incorrigible": {
+    "ipa": "[ɪnˈkʰɔɹ.ɪ.dʒə.bəɫ]",
+    "definition": "Unable to be corrected or reformed.",
+    "example": "He was an incorrigible practical joker."
+  },
+  "indefatigable": {
+    "ipa": "[ˌɪn.dɪˈfæ.ɾɪ.ɡə.bəɫ]",
+    "definition": "Persisting tirelessly without becoming discouraged.",
+    "example": "She was an indefatigable campaigner."
+  },
+  "ineffable": {
+    "ipa": "[ɪˈnɛ.fə.bəɫ]",
+    "definition": "Too great or extraordinary to be expressed in words.",
+    "example": "The view inspired an ineffable sense of wonder."
+  },
+  "inexorable": {
+    "ipa": "[ɪˈnɛk.sɚ.ə.bəɫ]",
+    "definition": "Impossible to stop, prevent, or persuade.",
+    "example": "The inexorable rise in costs worried managers."
+  },
+  "infinitesimal": {
+    "ipa": "[ˌɪn.fɪ.nəˈtʰɛ.sə.məɫ]",
+    "definition": "Extremely small.",
+    "example": "Only an infinitesimal amount remained."
+  },
+  "ingenious": {
+    "ipa": "[ɪnˈdʒi.ni.əs]",
+    "definition": "Clever, original, and inventive.",
+    "example": "The engineer devised an ingenious solution."
+  },
+  "ingenuous": {
+    "ipa": "[ɪnˈdʒɛn.ju.əs]",
+    "definition": "Innocent, sincere, and not deceptive.",
+    "example": "Her ingenuous question surprised the panel."
+  },
+  "inimical": {
+    "ipa": "[ɪˈnɪ.mɪ.kəɫ]",
+    "definition": "Hostile to or harmful toward something.",
+    "example": "The harsh conditions were inimical to growth."
+  },
+  "insouciant": {
+    "ipa": "[ɪnˈsu.si.ənt̚]",
+    "definition": "Casually unconcerned or carefree.",
+    "example": "He remained insouciant despite the deadline."
+  },
+  "intransigent": {
+    "ipa": "[ɪnˈtʰɹæn.sə.dʒənt̚]",
+    "definition": "Unwilling to compromise or change one's views.",
+    "example": "Both sides remained intransigent."
+  },
+  "inveterate": {
+    "ipa": "[ɪnˈvɛ.ɾɚ.ət̚]",
+    "definition": "Long-established and unlikely to change.",
+    "example": "He is an inveterate traveler."
+  },
+  "irascible": {
+    "ipa": "[ɪˈɹæ.sə.bəɫ]",
+    "definition": "Easily angered.",
+    "example": "The irascible director often shouted at staff."
+  },
+  "labyrinthine": {
+    "ipa": "[ˌlæ.bəˈɹɪn.θaɪn]",
+    "definition": "Extremely complicated or maze-like.",
+    "example": "The building has a labyrinthine network of corridors."
+  },
+  "legerdemain": {
+    "ipa": "[ˌlɛ.dʒɚ.dəˈmeɪn]",
+    "definition": "Skillful deception or sleight of hand.",
+    "example": "The magician amazed the audience with legerdemain."
+  },
+  "legerity": {
+    "ipa": "[ləˈdʒɛɹ.ə.ɾi]",
+    "definition": "Lightness and quickness of movement or mind.",
+    "example": "The dancer moved with remarkable legerity."
+  },
+  "lexicography": {
+    "ipa": "[ˌlɛk.səˈkɑ.ɡɹə.fi]",
+    "definition": "The practice of compiling and editing dictionaries.",
+    "example": "She specialized in historical lexicography."
+  },
+  "licentious": {
+    "ipa": "[laɪˈsɛn.tʃəs]",
+    "definition": "Morally unrestrained, especially in sexual behavior.",
+    "example": "The novel portrays a licentious aristocracy."
+  },
+  "loquacious": {
+    "ipa": "[loʊˈkʰweɪ.ʃəs]",
+    "definition": "Very talkative.",
+    "example": "The loquacious host kept the conversation moving."
+  },
+  "magniloquent": {
+    "ipa": "[mæɡˈnɪ.lə.kwənt̚]",
+    "definition": "Using lofty, grand, or pompous language.",
+    "example": "His magniloquent speech sounded overly theatrical."
+  },
+  "malfeasance": {
+    "ipa": "[ˌmæɫˈfi.zəns]",
+    "definition": "Wrongdoing, especially by a public official or professional.",
+    "example": "The investigation uncovered financial malfeasance."
+  },
+  "mendacity": {
+    "ipa": "[mɛnˈdæ.sə.ɾi]",
+    "definition": "The habit or quality of lying.",
+    "example": "The witness's mendacity undermined his credibility."
+  },
+  "mercurial": {
+    "ipa": "[mɚˈkjʊɹ.i.əɫ]",
+    "definition": "Changing mood or behavior quickly and unpredictably.",
+    "example": "Her mercurial temperament kept colleagues guessing."
+  },
+  "multifarious": {
+    "ipa": "[ˌmʌɫ.təˈfɛɹ.i.əs]",
+    "definition": "Having many varied forms or aspects.",
+    "example": "The museum holds multifarious collections."
+  },
+  "munificent": {
+    "ipa": "[mjuˈnɪ.fə.sənt̚]",
+    "definition": "Extremely generous.",
+    "example": "The university benefited from a munificent donation."
+  },
+  "nomenclature": {
+    "ipa": "[ˈnoʊ.mənˌkleɪ.tʃɚ]",
+    "definition": "A system of names or terms used in a field.",
+    "example": "Biological nomenclature follows specific rules."
+  },
+  "obfuscate": {
+    "ipa": "[ˈɑb.fəˌskeɪt̚]",
+    "definition": "To make something unclear or difficult to understand.",
+    "example": "The vague wording seemed designed to obfuscate the issue."
+  },
+  "obstreperous": {
+    "ipa": "[əbˈstɹɛ.pɚ.əs]",
+    "definition": "Noisy, difficult to control, and defiant.",
+    "example": "The obstreperous crowd ignored repeated warnings."
+  },
+  "opprobrium": {
+    "ipa": "[əˈpʰɹoʊ.bɹi.əm]",
+    "definition": "Harsh public criticism or disgrace.",
+    "example": "The scandal brought opprobrium upon the organization."
+  },
+  "ostentatious": {
+    "ipa": "[ˌɑ.stənˈtʰeɪ.ʃəs]",
+    "definition": "Designed to attract attention through excessive display.",
+    "example": "They lived in an ostentatious mansion."
+  },
+  "paradigmatic": {
+    "ipa": "[ˌpɛɹ.ə.dɪɡˈmæ.ɾɪk̚]",
+    "definition": "Serving as a typical or model example.",
+    "example": "The case is paradigmatic of the broader problem."
+  },
+  "paraphernalia": {
+    "ipa": "[ˌpɛɹ.ə.fɚˈneɪɫ.jə]",
+    "definition": "A collection of equipment or objects used for a particular activity.",
+    "example": "Camping paraphernalia filled the garage."
+  },
+  "peremptory": {
+    "ipa": "[pɚˈɛmp.tɚ.i]",
+    "definition": "Insisting on immediate obedience and allowing no discussion.",
+    "example": "She issued a peremptory command."
+  },
+  "perfidious": {
+    "ipa": "[pɚˈfɪ.di.əs]",
+    "definition": "Dishonest and disloyal; treacherous.",
+    "example": "The alliance collapsed after a perfidious betrayal."
+  },
+  "perfunctory": {
+    "ipa": "[pɚˈfʌŋk.tɚ.i]",
+    "definition": "Done with little care or interest, merely as a routine.",
+    "example": "He gave the document a perfunctory glance."
+  },
+  "perquisite": {
+    "ipa": "[ˈpʰɝ.kwə.zɪt̚]",
+    "definition": "A special benefit or privilege attached to a job or position.",
+    "example": "Free housing was a perquisite of the post."
+  },
+  "perspicacity": {
+    "ipa": "[ˌpɝ.spəˈkæ.sə.ɾi]",
+    "definition": "The ability to understand things quickly and accurately.",
+    "example": "Her financial perspicacity impressed the board."
+  },
+  "phlegmatic": {
+    "ipa": "[flɛɡˈmæ.ɾɪk̚]",
+    "definition": "Calm and unemotional, even in difficult situations.",
+    "example": "His phlegmatic manner reassured the team."
+  },
+  "plethora": {
+    "ipa": "[ˈpʰlɛ.θɚ.ə]",
+    "definition": "An excessive or very large amount.",
+    "example": "The website offers a plethora of options."
+  },
+  "poignant": {
+    "ipa": "[ˈpʰɔɪn.jənt̚]",
+    "definition": "Deeply touching or emotionally moving.",
+    "example": "The final scene was especially poignant."
+  },
+  "precipitous": {
+    "ipa": "[pɹɪˈsɪ.pə.təs]",
+    "definition": "Very steep or dangerously sudden.",
+    "example": "They climbed a precipitous slope."
+  },
+  "predilection": {
+    "ipa": "[ˌpɹɛ.dəˈlɛk.ʃən]",
+    "definition": "A preference or special liking for something.",
+    "example": "She has a predilection for complex puzzles."
+  },
+  "prerogative": {
+    "ipa": "[pɹɪˈɹɑ.ɡə.ɾɪv]",
+    "definition": "A special right or privilege belonging to a person or group.",
+    "example": "Choosing the final design is the director's prerogative."
+  },
+  "prescience": {
+    "ipa": "[ˈpʰɹɛʃ.əns]",
+    "definition": "Knowledge of events before they happen; foresight.",
+    "example": "The prediction seemed to show remarkable prescience."
+  },
+  "prevaricate": {
+    "ipa": "[pɹɪˈvɛɹ.əˌkeɪt̚]",
+    "definition": "To avoid telling the truth by speaking evasively.",
+    "example": "The witness began to prevaricate under questioning."
+  },
+  "pusillanimous": {
+    "ipa": "[ˌpju.səˈlæ.nə.məs]",
+    "definition": "Cowardly or lacking courage.",
+    "example": "His pusillanimous retreat disappointed his supporters."
+  },
+  "quiescent": {
+    "ipa": "[kwaɪˈɛ.sənt̚]",
+    "definition": "Inactive or temporarily quiet.",
+    "example": "The volcano has remained quiescent for decades."
+  },
+  "quintessence": {
+    "ipa": "[kwɪnˈtʰɛ.səns]",
+    "definition": "The most perfect or typical example of a quality.",
+    "example": "The cottage is the quintessence of rural charm."
+  },
+  "raconteur": {
+    "ipa": "[ˌɹæ.kɑnˈtʰɝ]",
+    "definition": "A person skilled at telling entertaining stories.",
+    "example": "The host was a gifted raconteur."
+  },
+  "recalcitrant": {
+    "ipa": "[ɹɪˈkʰæɫ.sə.tɹənt̚]",
+    "definition": "Stubbornly resistant to authority or control.",
+    "example": "The recalcitrant student refused to follow instructions."
+  },
+  "recondite": {
+    "ipa": "[ˈɹɛ.kənˌdaɪt̚]",
+    "definition": "Little known and difficult to understand.",
+    "example": "The lecture dealt with a recondite philosophical issue."
+  },
+  "recrimination": {
+    "ipa": "[ɹɪˌkɹɪ.məˈneɪ.ʃən]",
+    "definition": "An accusation made in response to another accusation.",
+    "example": "The meeting dissolved into mutual recrimination."
+  },
+  "refractory": {
+    "ipa": "[ɹɪˈfɹæk.tɚ.i]",
+    "definition": "Stubbornly resistant to control or treatment.",
+    "example": "The condition proved refractory to standard therapy."
+  },
+  "remuneration": {
+    "ipa": "[ɹɪˌmju.nɚˈeɪ.ʃən]",
+    "definition": "Payment received for work or services.",
+    "example": "The contract specifies annual remuneration."
+  },
+  "salubrious": {
+    "ipa": "[səˈlu.bɹi.əs]",
+    "definition": "Healthy, pleasant, or beneficial to health.",
+    "example": "The village is known for its salubrious climate."
+  },
+  "sanguinary": {
+    "ipa": "[ˈsæŋ.ɡwəˌnɛɹ.i]",
+    "definition": "Involving or causing much bloodshed.",
+    "example": "The battle was exceptionally sanguinary."
+  },
+  "scurrilous": {
+    "ipa": "[ˈskɝ.ə.ləs]",
+    "definition": "Grossly insulting or making scandalous accusations.",
+    "example": "The newspaper printed a scurrilous attack."
+  },
+  "surreptitious": {
+    "ipa": "[ˌsɝ.əpˈtʰɪ.ʃəs]",
+    "definition": "Kept secret because it would not be approved.",
+    "example": "He took a surreptitious photograph."
+  },
+  "sycophant": {
+    "ipa": "[ˈsɪ.kə.fənt̚]",
+    "definition": "A person who flatters powerful people for personal advantage.",
+    "example": "The ruler surrounded himself with sycophants."
+  },
+  "unconscionable": {
+    "ipa": "[ʌnˈkʰɑn.ʃə.nə.bəɫ]",
+    "definition": "Shockingly unfair, unreasonable, or morally wrong.",
+    "example": "The court condemned the unconscionable contract."
+  },
+  "verisimilitude": {
+    "ipa": "[ˌvɛɹ.ə.səˈmɪ.ləˌtud]",
+    "definition": "The appearance of being true or realistic.",
+    "example": "Careful detail gives the novel verisimilitude."
+  },
+  "vicissitude": {
+    "ipa": "[vɪˈsɪ.səˌtud]",
+    "definition": "A change in circumstances, often unpleasant or unexpected.",
+    "example": "The business survived many economic vicissitudes."
+  },
+  "vitriolic": {
+    "ipa": "[ˌvɪ.tɹiˈɑ.lɪk̚]",
+    "definition": "Filled with bitter criticism or hostility.",
+    "example": "The debate became increasingly vitriolic."
+  },
+  "vociferous": {
+    "ipa": "[voʊˈsɪ.fɚ.əs]",
+    "definition": "Expressing opinions loudly and forcefully.",
+    "example": "A vociferous crowd demanded change."
+  }
+}
