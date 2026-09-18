@@ -2,11 +2,13 @@
 
 Spelling Bee has its **own backend contract and its own CMS collections**. It must not use the Brighton Exams `updateProgress` / `getProgress` endpoints or the Exams progress/results collections.
 
-The static frontend currently targets:
+The static frontend targets this dedicated Wix backend:
 
-`https://chiispiitas.wixsite.com/brightonexams/_functions`
+`https://chiispiitas.wixsite.com/cms-server/_functions`
 
-That Wix project may host the functions, but the Spelling Bee data layer is separate.
+The Wix site is:
+
+`https://chiispiitas.wixsite.com/cms-server`
 
 ## CMS collections
 
@@ -91,16 +93,16 @@ The implementation is in:
 
 `Spelling Bee/wix-http-functions.js`
 
-Add those exports to the Wix Velo backend `http-functions.js` file and publish the Wix site.
+Add those exports to the Wix Velo backend `http-functions.js` file on `cms-server` and publish the Wix site.
 
-The frontend uses these endpoints:
+The frontend uses these full endpoints:
 
-- `GET /_functions/spellingBeeSession?sessionCode=1234`
-- `POST /_functions/spellingBeeSession`
-- `GET /_functions/spellingBeeJudge?sessionCode=1234`
-- `POST /_functions/spellingBeeJudge`
-- `GET /_functions/spellingBeeCommand?sessionCode=1234`
-- `POST /_functions/spellingBeeCommand`
+- `GET https://chiispiitas.wixsite.com/cms-server/_functions/spellingBeeSession?sessionCode=1234`
+- `POST https://chiispiitas.wixsite.com/cms-server/_functions/spellingBeeSession`
+- `GET https://chiispiitas.wixsite.com/cms-server/_functions/spellingBeeJudge?sessionCode=1234`
+- `POST https://chiispiitas.wixsite.com/cms-server/_functions/spellingBeeJudge`
+- `GET https://chiispiitas.wixsite.com/cms-server/_functions/spellingBeeCommand?sessionCode=1234`
+- `POST https://chiispiitas.wixsite.com/cms-server/_functions/spellingBeeCommand`
 
 ## Responsibilities
 
@@ -116,8 +118,8 @@ This avoids the race condition that would occur if Presenter, Remote Control, an
 
 ## First deployment check
 
-1. Create the three collections with the exact IDs and fields above.
-2. Add the backend functions.
+1. Create the three collections with the exact IDs and fields above on the `cms-server` Wix site.
+2. Add the backend functions to `http-functions.js`.
 3. Publish the Wix site.
 4. Open Presenter View and connect a numerical code.
 5. Confirm one row appears in `SpellingBeeSessions`.
