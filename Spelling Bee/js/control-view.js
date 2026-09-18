@@ -21,6 +21,7 @@
   const ipaValue = document.getElementById("ipa-value");
   const definitionValue = document.getElementById("definition-value");
   const exampleValue = document.getElementById("example-value");
+  const judgeNameInput = document.getElementById("judge-name");
 
   const deviceId = Cloud.getDeviceId(role === "judge"
     ? "brighton-spelling-judge-device"
@@ -42,6 +43,9 @@
   let judgePointer = 0;
   let judgeVerdict = "pending";
   let judgeStartedAt = "";
+  let judgeName = role === "judge"
+    ? String(localStorage.getItem("brighton-spelling-judge-name") || "").trim()
+    : "";
 
   function setJoinStatus(message, error = false) {
     if (!joinStatus) return;
@@ -53,6 +57,10 @@
     if (!connectionPill) return;
     connectionPill.textContent = message;
     connectionPill.className = `connection-pill ${type}`.trim();
+  }
+
+  function cleanJudgeName(value) {
+    return String(value || "").replace(/\s+/g, " ").trim().slice(0, 50);
   }
 
   function cleanCodeInput() {
@@ -260,9 +268,40 @@
       host.querySelector("span").textContent = `${correct.length} complete · ${pending.length} still judging.`;
     }
 
+    const presenterLetters = Array.from(String(presenter?.word || ""));
+    const totalMarkable = presenterLetters.filter(char => /[A-Za-z]/.test(char)).length;
+
     chips.innerHTML = votes.map((vote, index) => {
-      const symbol = vote.verdict === "incorrect" ? "×" : vote.verdict === "correct" ? "✓" : "…";
-      return `<span class="judge-vote-chip">Judge ${index + 1}: ${symbol}</span>`;
+      const displayName = cleanJudgeName(vote.judgeName) || `Judge ${index + 1}`;
+      const marks = Array.isArray(vote.letterMarks) ? vote.letterMarks : [];
+      const pointer = Number.isFinite(Number(vote.pointer)) ? Number(vote.pointer) : 0;
+      const reviewed = marks.filter(mark => mark === "correct" || mark === "incorrect").length;
+      const status = vote.verdict === "incorrect"
+        ? "Mistake marked"
+        : vote.verdict === "correct"
+          ? "Complete"
+          : pointer < presenterLetters.length
+            ? `At letter ${Math.min(reviewed + 1, totalMarkable)} of ${totalMarkable}`
+            : "Judging";
+
+      const renderedWord = presenterLetters.map((char, letterIndex) => {
+        const mark = marks[letterIndex] || "pending";
+        const classes = ["admin-judge-letter"];
+        if (mark === "correct") classes.push("correct");
+        if (mark === "incorrect") classes.push("incorrect");
+        if (letterIndex === pointer && vote.verdict === "pending") classes.push("active");
+        return `<span class="${classes.join(" ")}">${escapeHtml(char)}</span>`;
+      }).join("");
+
+      return `
+        <article class="admin-judge-card ${vote.verdict === "incorrect" ? "review" : vote.verdict === "correct" ? "complete" : ""}">
+          <div class="admin-judge-card-head">
+            <strong>${escapeHtml(displayName)}</strong>
+            <span>${escapeHtml(status)} · ${reviewed}/${totalMarkable}</span>
+          </div>
+          <div class="admin-judge-word" aria-label="${escapeHtml(displayName)} judging progress">${renderedWord}</div>
+        </article>
+      `;
     }).join("");
   }
 
@@ -286,7 +325,8 @@
       voteSeq,
       pointer: judgePointer,
       letterMarks: judgeMarks.slice(),
-      verdict: judgeVerdict
+      verdict: judgeVerdict,
+      judgeName
     };
 
     judgePublishChain = judgePublishChain
@@ -355,6 +395,16 @@
 
   async function joinSession() {
     const code = cleanCodeInput();
+
+    if (role === "judge") {
+      judgeName = cleanJudgeName(judgeNameInput?.value);
+      if (!judgeName) {
+        setJoinStatus("Enter your judge name.", true);
+        judgeNameInput?.focus();
+        return;
+      }
+      localStorage.setItem("brighton-spelling-judge-name", judgeName);
+    }
     if (!code) {
       setJoinStatus("Enter the numerical session code.", true);
       codeInput?.focus();
@@ -479,6 +529,18 @@
       '"': "&quot;"
     }[char]));
   }
+
+  if (judgeNameInput && judgeName) judgeNameInput.value = judgeName;
+
+  judgeNameInput?.addEventListener("input", () => {
+    judgeNameInput.value = String(judgeNameInput.value || "").slice(0, 50);
+  });
+  judgeNameInput?.addEventListener("keydown", event => {
+    if (event.key === "Enter") {
+      event.preventDefault();
+      codeInput?.focus();
+    }
+  });
 
   codeInput?.addEventListener("input", cleanCodeInput);
   codeInput?.addEventListener("keydown", event => {
