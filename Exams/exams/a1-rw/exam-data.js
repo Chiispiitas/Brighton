@@ -234,8 +234,8 @@ window.examParts = [
     range: "Questions 30–35",
     instruction: "Look at the picture. Complete the sentences, answer the questions, and write two complete sentences about the picture.",
     imageTitle: "City café and market",
-    image: "assets/a1_part6_main_city_square_cafe_1980s.webp",
-    imageDescription: "A hand-drawn 1980s English-textbook-style city café and market scene. A woman in a red jacket is paying at a market stall; a man with a dark backpack is beside a bus stop; one café customer is visibly drinking coffee with a coffee pot on the table; a blue bicycle is next to a tree.",
+    image: "assets/a1_part6_main_city_square_cafe---78fea76a-59f2-4c3f-aea1-1207bea4210f.png",
+    imageDescription: "Image placeholder: an adult/teen city café and market scene. A woman in a red jacket is paying at a market stall; a man with a dark backpack is beside a bus stop; two friends are at a café and one is drinking coffee; a blue bicycle is next to a tree.",
     items: [
       { q: 30, type: "short", stem: "The woman at the market is wearing a red ________." },
       { q: 31, type: "short", stem: "The man near the bus stop has a ________ on his back." },
