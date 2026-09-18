@@ -359,9 +359,9 @@
   // without waiting for the periodic state scan.
   window.requestSpellingPresenterSync = () => publishPresenter(false);
 
-  window.setInterval(() => publishPresenter(false), 300);
+  window.setInterval(() => publishPresenter(false), 200);
   window.setInterval(() => publishPresenter(true), 3000);
-  window.setInterval(pollRemoteCommands, 180);
+  window.setInterval(pollRemoteCommands, 90);
 
   updateViewLinks();
   const saved = Cloud.normalizeSessionCode(localStorage.getItem("brighton-spelling-presenter-session"));
