@@ -101,6 +101,45 @@
     return Array.from(String(value || "")).map(char => /[A-Za-z]/.test(char) ? "pending" : "skip");
   }
 
+  function previousReviewedIndex() {
+    const letters = Array.from(String(presenter?.word || ""));
+    let index = Math.min(judgePointer - 1, letters.length - 1);
+
+    while (index >= 0) {
+      if (
+        /[A-Za-z]/.test(letters[index]) &&
+        ["correct", "incorrect", "reveal"].includes(judgeMarks[index])
+      ) {
+        return index;
+      }
+      index -= 1;
+    }
+
+    return -1;
+  }
+
+  function canUndoJudgeMark() {
+    return previousReviewedIndex() >= 0;
+  }
+
+  function recomputeJudgeVerdict() {
+    const letters = Array.from(String(presenter?.word || ""));
+    const markableMarks = letters
+      .map((char, index) => /[A-Za-z]/.test(char) ? judgeMarks[index] : null)
+      .filter(Boolean);
+
+    if (markableMarks.some(mark => mark === "incorrect")) {
+      judgeVerdict = "incorrect";
+    } else if (
+      markableMarks.length > 0 &&
+      markableMarks.every(mark => mark === "correct")
+    ) {
+      judgeVerdict = "correct";
+    } else {
+      judgeVerdict = "pending";
+    }
+  }
+
   function measureWordContentWidth(element) {
     if (!element) return 0;
 
@@ -313,9 +352,12 @@
 
     if (canJudge) {
       const finished = judgePointer >= Array.from(String(presenter.word || "")).length;
-      document.querySelectorAll(".verdict-button").forEach(button => {
+      document.querySelectorAll(".verdict-button[data-verdict]").forEach(button => {
         button.disabled = finished;
       });
+
+      const undoButton = document.getElementById("undo-letter-button");
+      if (undoButton) undoButton.disabled = !canUndoJudgeMark();
     }
 
     renderWordInfo();
@@ -773,6 +815,27 @@
     await publishJudgeState({ increment: true });
   }
 
+  async function undoJudgeMark() {
+    if (!canJudge || !sessionCode || !presenter?.wordToken || judgeWordToken !== presenter.wordToken) return;
+
+    const previousIndex = previousReviewedIndex();
+    if (previousIndex < 0) return;
+
+    judgeMarks[previousIndex] = "pending";
+    judgePointer = previousIndex;
+    recomputeJudgeVerdict();
+    renderPresenterState();
+
+    if (role === "remote") {
+      // Same transport as Admin ✓/×: send the complete revised word state.
+      queueAdminWordState();
+      scheduleAdminJudgePublish();
+      return;
+    }
+
+    await publishJudgeState({ increment: true });
+  }
+
   async function waitForPresenterCommandAck(seq, targetWordToken, timeoutMs = 4000) {
     const deadline = Date.now() + timeoutMs;
 
@@ -920,13 +983,21 @@
   function bindVerdictButton(button) {
     let lastTouchActivation = 0;
 
+    const activate = () => {
+      if (button.disabled) return;
+      if (button.dataset.action === "undo") {
+        undoJudgeMark();
+        return;
+      }
+      submitJudgeMark(button.dataset.verdict === "incorrect" ? "incorrect" : "correct");
+    };
+
     const activateTouch = event => {
       const now = Date.now();
       if (now - lastTouchActivation < 450) return;
       lastTouchActivation = now;
       if (event?.cancelable) event.preventDefault();
-      if (button.disabled) return;
-      submitJudgeMark(button.dataset.verdict === "incorrect" ? "incorrect" : "correct");
+      activate();
     };
 
     const activateClick = event => {
@@ -934,8 +1005,7 @@
         event.preventDefault();
         return;
       }
-      if (button.disabled) return;
-      submitJudgeMark(button.dataset.verdict === "incorrect" ? "incorrect" : "correct");
+      activate();
     };
 
     button.addEventListener("pointerup", event => {
@@ -960,6 +1030,9 @@
     } else if (event.key === "p" || event.key === "P") {
       event.preventDefault();
       submitJudgeMark("incorrect");
+    } else if (event.key === "Backspace") {
+      event.preventDefault();
+      undoJudgeMark();
     }
   });
 
