@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8">
   <meta content="width=device-width, initial-scale=1" name="viewport">
-  <title>Spelling Bee Remote Control</title>
+  <title>Spelling Bee Admin View</title>
   <link href="assets/favicon.png" rel="icon">
   <link href="style.css" rel="stylesheet">
   <link href="control-view.css" rel="stylesheet">
@@ -11,8 +11,8 @@
 <body class="control-view" data-role="remote">
   <section class="join-gate" id="join-gate">
     <div class="join-card">
-      <h1>Remote Control View</h1>
-      <p>Enter the presenter’s numerical session code. Remote controls remain locked until that session is found.</p>
+      <h1>Admin View</h1>
+      <p>Enter the presenter’s numerical session code. Admin controls remain locked until that session is found.</p>
       <div class="join-row">
         <input id="join-session-code" inputmode="numeric" autocomplete="off" aria-label="Session code" placeholder="Session code">
         <button class="control-button" id="join-session-button" type="button">Join</button>
@@ -51,7 +51,7 @@
           <div class="judge-result" id="judge-result">
             <strong>Awaiting judge decisions</strong>
             <span>No judge has submitted a decision for this word yet.</span>
-            <div class="judge-vote-list" id="judge-vote-list"></div>
+            <div class="judge-vote-list admin-judge-list" id="judge-vote-list"></div>
           </div>
 
           <div class="remote-action-row" aria-label="Presenter feedback">
