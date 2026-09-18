@@ -146,6 +146,17 @@
     });
 
     word.replaceChildren(frag);
+
+    const activeLetter = word.querySelector(".judge-letter.active");
+    if (activeLetter) {
+      requestAnimationFrame(() => {
+        activeLetter.scrollIntoView({
+          behavior: "smooth",
+          block: "nearest",
+          inline: "nearest"
+        });
+      });
+    }
   }
 
   async function renderWordInfo() {
