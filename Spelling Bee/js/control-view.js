@@ -700,9 +700,36 @@
   });
   joinButton?.addEventListener("click", joinSession);
 
-  document.querySelectorAll(".verdict-button").forEach(button => {
-    button.addEventListener("click", () => submitJudgeMark(button.dataset.verdict === "incorrect" ? "incorrect" : "correct"));
-  });
+  function bindVerdictButton(button) {
+    let lastTouchActivation = 0;
+
+    const activate = () => {
+      if (button.disabled) return;
+      submitJudgeMark(button.dataset.verdict === "incorrect" ? "incorrect" : "correct");
+    };
+
+    // On touch devices, act on the real pointer release instead of waiting for
+    // the browser to synthesize a click. Some mobile browsers show the pressed
+    // state but fail to dispatch the click reliably on these controls.
+    button.addEventListener("pointerup", event => {
+      if (event.pointerType !== "touch" && event.pointerType !== "pen") return;
+      event.preventDefault();
+      lastTouchActivation = Date.now();
+      activate();
+    });
+
+    // Keep normal mouse clicks and keyboard activation. Ignore the synthetic
+    // click that commonly follows a handled touch/pointer event.
+    button.addEventListener("click", event => {
+      if (Date.now() - lastTouchActivation < 700) {
+        event.preventDefault();
+        return;
+      }
+      activate();
+    });
+  }
+
+  document.querySelectorAll(".verdict-button").forEach(bindVerdictButton);
 
   window.addEventListener("keydown", event => {
     if (!canJudge || ["INPUT", "TEXTAREA"].includes(document.activeElement?.tagName)) return;
