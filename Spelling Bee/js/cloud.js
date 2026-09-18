@@ -2,7 +2,7 @@
 
 (() => {
   // Dedicated Spelling Bee backend. This does NOT use Brighton Exams progress/results CMS.
-  const API_BASE = "https://chiispiitas.wixsite.com/brightonexams/_functions";
+  const API_BASE = "https://chiispiitas.wixsite.com/cms-server/_functions";
   const ENDPOINTS = {
     session: `${API_BASE}/spellingBeeSession`,
     judge: `${API_BASE}/spellingBeeJudge`,
