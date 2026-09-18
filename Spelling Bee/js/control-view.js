@@ -44,8 +44,10 @@
   let commandPublishChain = Promise.resolve();
   let pendingAdminWordState = null;
   let adminWordStateFlushTimer = null;
-  let latestAdminWordStateSeq = 0;
   let adminJudgePublishTimer = null;
+  let judgementRevision = 0;
+  let judgementSource = "presenter";
+  let judgementUpdatedAt = 0;
   let wordInfoKey = "";
 
   let judgeWordToken = "";
@@ -87,6 +89,53 @@
 
   function currentToken() {
     return String(presenter?.wordToken || "");
+  }
+
+  function presenterJudgementMeta(state = presenter) {
+    return {
+      revision: Number(state?.judgementRevision || 0),
+      source: String(state?.judgementSource || "presenter"),
+      updatedAt: Number(state?.judgementUpdatedAt || 0)
+    };
+  }
+
+  function localJudgementMeta() {
+    return {
+      revision: Number(judgementRevision || 0),
+      source: String(judgementSource || "presenter"),
+      updatedAt: Number(judgementUpdatedAt || 0)
+    };
+  }
+
+  function compareJudgementMeta(incoming, local = localJudgementMeta()) {
+    const incomingTime = Number(incoming?.updatedAt || 0);
+    const localTime = Number(local?.updatedAt || 0);
+    if (incomingTime !== localTime) return incomingTime > localTime ? 1 : -1;
+
+    const incomingRevision = Number(incoming?.revision || 0);
+    const localRevision = Number(local?.revision || 0);
+    if (incomingRevision !== localRevision) return incomingRevision > localRevision ? 1 : -1;
+
+    const incomingSource = String(incoming?.source || "");
+    const localSource = String(local?.source || "");
+    if (incomingSource === localSource) return 0;
+    return incomingSource === "admin" ? 1 : -1;
+  }
+
+  function adoptJudgementMeta(meta) {
+    judgementRevision = Number(meta?.revision || 0);
+    judgementSource = String(meta?.source || "presenter");
+    judgementUpdatedAt = Number(meta?.updatedAt || 0);
+  }
+
+  function recordAdminJudgementInput() {
+    const observedRevision = Math.max(
+      Number(judgementRevision || 0),
+      Number(presenter?.judgementRevision || 0)
+    );
+    judgementRevision = observedRevision + 1;
+    judgementSource = "admin";
+    judgementUpdatedAt = Date.now();
   }
 
   function firstMarkableIndex(value, start = 0) {
@@ -219,6 +268,7 @@
     judgePointer = firstMarkableIndex(presenter?.word || "", 0);
     judgeVerdict = "pending";
     judgeStartedAt = new Date().toISOString();
+    if (role === "remote") adoptJudgementMeta(presenterJudgementMeta());
   }
 
   function hydrateJudgeState(state, { force = false } = {}) {
@@ -439,13 +489,16 @@
   function syncAdminJudgeFromPresenter({ force = false } = {}) {
     if (role !== "remote" || !presenter?.wordToken) return false;
 
-    const presenterAck = Number(presenter.lastCommandSeq || 0);
-    const localWordStatePending =
-      Boolean(pendingAdminWordState) ||
-      Boolean(adminWordStateFlushTimer) ||
-      presenterAck < latestAdminWordStateSeq;
+    const incomingMeta = presenterJudgementMeta();
+    if (!force && compareJudgementMeta(incomingMeta) <= 0) return false;
 
-    if (!force && localWordStatePending) return false;
+    // Presenter contains a genuinely newer HUMAN input. Any unsent Admin
+    // snapshot is now stale and must not be allowed to arrive later and win.
+    if (!force) {
+      pendingAdminWordState = null;
+      window.clearTimeout(adminWordStateFlushTimer);
+      adminWordStateFlushTimer = null;
+    }
 
     const sourceMarks = Array.isArray(presenter.marks) ? presenter.marks : [];
     const letters = Array.from(String(presenter.word || ""));
@@ -481,6 +534,7 @@
     judgePointer = nextPointer;
     judgeVerdict = nextVerdict;
     judgeStartedAt = judgeStartedAt || new Date().toISOString();
+    adoptJudgementMeta(incomingMeta);
     return true;
   }
 
@@ -505,7 +559,10 @@
       pointer: judgePointer,
       letterMarks: judgeMarks.slice(),
       verdict: judgeVerdict,
-      judgeName
+      judgeName,
+      judgementRevision,
+      judgementSource,
+      judgementUpdatedAt
     };
 
     judgePublishChain = judgePublishChain
@@ -539,7 +596,7 @@
         pendingAdminWordState = null;
         window.clearTimeout(adminWordStateFlushTimer);
         adminWordStateFlushTimer = null;
-        latestAdminWordStateSeq = Number(presenter.lastCommandSeq || 0);
+        adoptJudgementMeta(presenterJudgementMeta());
       }
 
       if (role === "remote") {
@@ -586,7 +643,7 @@
         pendingAdminWordState = null;
         window.clearTimeout(adminWordStateFlushTimer);
         adminWordStateFlushTimer = null;
-        latestAdminWordStateSeq = Number(presenter.lastCommandSeq || 0);
+        adoptJudgementMeta(presenterJudgementMeta());
       }
 
       setConnection(
@@ -664,6 +721,7 @@
         if (!hydrateJudgeState(mine, { force: true })) resetJudgeWord();
       } else if (role === "remote") {
         judgeStartedAt = new Date().toISOString();
+        adoptJudgementMeta(presenterJudgementMeta());
         syncAdminJudgeFromPresenter({ force: true });
       }
 
@@ -722,7 +780,10 @@
       wordState: {
         pointer: judgePointer,
         verdict: judgeVerdict,
-        letterMarks: judgeMarks.slice()
+        letterMarks: judgeMarks.slice(),
+        judgementRevision,
+        judgementSource,
+        judgementUpdatedAt
       }
     };
   }
@@ -745,7 +806,6 @@
 
     commandSeq += 1;
     const seq = commandSeq;
-    latestAdminWordStateSeq = seq;
     const snapshotSessionCode = sessionCode;
 
     commandPublishChain = commandPublishChain
@@ -802,6 +862,7 @@
     judgePointer = firstMarkableIndex(presenter.word || "", judgePointer + 1);
     if (judgePointer >= letters.length && judgeVerdict !== "incorrect") judgeVerdict = "correct";
 
+    if (role === "remote") recordAdminJudgementInput();
     renderPresenterState();
 
     if (role === "remote") {
@@ -824,6 +885,7 @@
     judgeMarks[previousIndex] = "pending";
     judgePointer = previousIndex;
     recomputeJudgeVerdict();
+    if (role === "remote") recordAdminJudgementInput();
     renderPresenterState();
 
     if (role === "remote") {
