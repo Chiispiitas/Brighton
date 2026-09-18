@@ -1,50 +1,242 @@
 {
-  "adventure":{"ipa":"/ædvɛntʃɚ/","definition":"An exciting or unusual experience, often involving travel or risk.","example":"The camping trip became an unforgettable adventure."},
-  "alphabet":{"ipa":"/ælfəbɛt/","definition":"The set of letters used for writing a language, arranged in a fixed order.","example":"The English alphabet has twenty-six letters."},
-  "ancient":{"ipa":"/eɪntʃənt/","definition":"Very old; belonging to a time long ago.","example":"We studied an ancient civilization in class."},
-  "audience":{"ipa":"/ɑdiəns/","definition":"The group of people watching or listening to a performance or event.","example":"The audience applauded at the end of the play."},
-  "breathe":{"ipa":"/bɹið/","definition":"To take air into the lungs and let it out again.","example":"Breathe slowly before you begin your speech."},
-  "ceiling":{"ipa":"/silɪŋ/","definition":"The inside surface at the top of a room.","example":"A fan was attached to the ceiling."},
-  "certainly":{"ipa":"/sɝtənli/","definition":"Without doubt; definitely.","example":"I will certainly help you with the project."},
-  "chocolate":{"ipa":"/tʃɔklət/","definition":"A sweet food made from cocoa, often eaten as candy or used in desserts.","example":"She shared a piece of chocolate with her friend."},
-  "classroom":{"ipa":"/klæsɹum/","definition":"A room where students are taught.","example":"The students decorated their classroom for the event."},
-  "comfortable":{"ipa":"/kʌmfɚtəbəl/","definition":"Feeling relaxed and physically at ease.","example":"These shoes are comfortable enough for a long walk."},
-  "creature":{"ipa":"/kɹitʃɚ/","definition":"A living being, especially an animal.","example":"A tiny sea creature moved across the rock."},
-  "curious":{"ipa":"/kjʊɹiəs/","definition":"Wanting to know or learn something.","example":"The curious child asked many questions."},
-  "daughter":{"ipa":"/dɔtɚ/","definition":"A person's female child.","example":"Their daughter is learning to play the piano."},
-  "daylight":{"ipa":"/deɪlaɪt/","definition":"Natural light from the sun during the day.","example":"We reached the campsite before daylight disappeared."},
-  "different":{"ipa":"/dɪfɚənt/","definition":"Not the same as another person or thing.","example":"The two pictures look similar but are slightly different."},
-  "disappear":{"ipa":"/dɪsəpɪɹ/","definition":"To stop being visible or to go away.","example":"The rainbow began to disappear behind the clouds."},
-  "discover":{"ipa":"/dɪskʌvɚ/","definition":"To find or learn something for the first time.","example":"Scientists continue to discover new species."},
-  "eighth":{"ipa":"/eɪtθ/","definition":"In position number eight in a series.","example":"She finished in eighth place."},
-  "enormous":{"ipa":"/ɪnɔɹməs/","definition":"Extremely large.","example":"An enormous tree stood in the center of the park."},
-  "environment":{"ipa":"/ɪnvaɪɹənmənt/","definition":"The natural world and the conditions in which people, animals, and plants live.","example":"We should protect the environment by reducing waste."},
-  "excellent":{"ipa":"/ɛksələnt/","definition":"Extremely good.","example":"Her presentation was excellent."},
-  "foreign":{"ipa":"/fɔɹən/","definition":"From or connected with another country.","example":"He enjoys learning foreign languages."},
-  "furniture":{"ipa":"/fɝnɪtʃɚ/","definition":"Large movable objects such as tables, chairs, and beds used in a room.","example":"The new apartment has very little furniture."},
-  "government":{"ipa":"/ɡʌvɚmənt/","definition":"The group of people and system that officially control a country or region.","example":"The government announced a new public program."},
-  "height":{"ipa":"/haɪt/","definition":"The measurement of how tall a person or thing is.","example":"We measured the height of the plant each week."},
-  "invitation":{"ipa":"/ɪnvɪteɪʃən/","definition":"A spoken or written request asking someone to attend an event.","example":"I received an invitation to her birthday party."},
-  "knowledge":{"ipa":"/nɑlədʒ/","definition":"Information and understanding gained through learning or experience.","example":"Reading can increase your knowledge of the world."},
-  "laughter":{"ipa":"/læftɚ/","definition":"The sound or act of laughing.","example":"Their laughter filled the room."},
-  "magazine":{"ipa":"/mæɡəzin/","definition":"A publication with articles and pictures that is issued regularly.","example":"She read a science magazine on the bus."},
-  "midnight":{"ipa":"/mɪdnaɪt/","definition":"Twelve o'clock at night.","example":"The clock struck midnight."},
-  "national":{"ipa":"/næʃənəl/","definition":"Related to an entire country or nation.","example":"The national team played an important match."},
-  "newspaper":{"ipa":"/nuzpeɪpɚ/","definition":"A printed or digital publication that reports news and information.","example":"My grandfather reads the newspaper every morning."},
-  "orchestra":{"ipa":"/ɔɹkəstɹə/","definition":"A large group of musicians who play different instruments together.","example":"The orchestra performed a famous piece of music."},
-  "schedule":{"ipa":"/skɛdʒʊl/","definition":"A plan that shows the times when activities or events will happen.","example":"Check the schedule to see when the next class begins."},
-  "science":{"ipa":"/saɪəns/","definition":"The study of the natural world through observation and experiments.","example":"We did an experiment in science class."},
-  "scissors":{"ipa":"/sɪzɚz/","definition":"A tool with two blades used for cutting.","example":"Use the scissors carefully when cutting the paper."},
-  "separate":{"ipa":"/sɛpɚeɪt/","definition":"To divide or keep things apart, or existing apart from something else.","example":"Please separate the paper from the plastic."},
-  "september":{"ipa":"/sɛptɛmbɚ/","definition":"The ninth month of the year.","example":"The new school term begins in September."},
-  "something":{"ipa":"/sʌmθɪŋ/","definition":"An unknown or unspecified thing.","example":"I heard something moving outside."},
-  "straight":{"ipa":"/stɹeɪt/","definition":"Without a curve or bend; in a direct line.","example":"Draw a straight line across the page."},
-  "strawberry":{"ipa":"/stɹɔbɛɹi/","definition":"A small red fruit with tiny seeds on its surface.","example":"She added a strawberry to the fruit salad."},
-  "through":{"ipa":"/θɹu/","definition":"From one side or end of something to the other.","example":"We walked through the tunnel."},
-  "toothbrush":{"ipa":"/tuθbɹəʃ/","definition":"A small brush used for cleaning the teeth.","example":"Remember to replace your toothbrush regularly."},
-  "tradition":{"ipa":"/tɹədɪʃən/","definition":"A custom or belief that is passed from one generation to another.","example":"Making this special meal is a family tradition."},
-  "vegetable":{"ipa":"/vɛdʒtəbəl/","definition":"A plant or part of a plant that is eaten as food.","example":"Carrots are her favorite vegetable."},
-  "volleyball":{"ipa":"/vɑlibɔl/","definition":"A team sport in which players hit a ball over a high net.","example":"We played volleyball after school."},
-  "waterfall":{"ipa":"/wɔtɚfɔl/","definition":"A place where water flows over the edge of a steep drop.","example":"The trail ended near a beautiful waterfall."},
-  "whole":{"ipa":"/hoʊl/","definition":"Complete; including every part.","example":"She read the whole book in one weekend."}
+  "adventure": {
+    "ipa": "[ədˈvɛ̃ntʃɚ]",
+    "definition": "An exciting or unusual experience, often involving travel or risk.",
+    "example": "The camping trip became an unforgettable adventure."
+  },
+  "alphabet": {
+    "ipa": "[ˈæɫfəˌbɛt̚]",
+    "definition": "The set of letters used for writing a language, arranged in a fixed order.",
+    "example": "The English alphabet has twenty-six letters."
+  },
+  "ancient": {
+    "ipa": "[ˈeɪntʃənt̚]",
+    "definition": "Very old; belonging to a time long ago.",
+    "example": "We studied an ancient civilization in class."
+  },
+  "audience": {
+    "ipa": "[ˈɔdiə̃ns]",
+    "definition": "The group of people watching or listening to a performance or event.",
+    "example": "The audience applauded at the end of the play."
+  },
+  "breathe": {
+    "ipa": "[ˈbɹið]",
+    "definition": "To take air into the lungs and let it out again.",
+    "example": "Breathe slowly before you begin your speech."
+  },
+  "ceiling": {
+    "ipa": "[ˈsilɪ̃ŋ]",
+    "definition": "The inside surface at the top of a room.",
+    "example": "A fan was attached to the ceiling."
+  },
+  "certainly": {
+    "ipa": "[ˈsɝʔn̩li]",
+    "definition": "Without doubt; definitely.",
+    "example": "I will certainly help you with the project."
+  },
+  "chocolate": {
+    "ipa": "[ˈtʃɔklət̚]",
+    "definition": "A sweet food made from cocoa, often eaten as candy or used in desserts.",
+    "example": "She shared a piece of chocolate with her friend."
+  },
+  "classroom": {
+    "ipa": "[ˈkʰlæsˌɹũm]",
+    "definition": "A room where students are taught.",
+    "example": "The students decorated their classroom for the event."
+  },
+  "comfortable": {
+    "ipa": "[ˈkʰʌmfɚɾəbɫ̩]",
+    "definition": "Feeling relaxed and physically at ease.",
+    "example": "These shoes are comfortable enough for a long walk."
+  },
+  "creature": {
+    "ipa": "[ˈkʰɹitʃɚ]",
+    "definition": "A living being, especially an animal.",
+    "example": "A tiny sea creature moved across the rock."
+  },
+  "curious": {
+    "ipa": "[ˈkjʊɹiəs]",
+    "definition": "Wanting to know or learn something.",
+    "example": "The curious child asked many questions."
+  },
+  "daughter": {
+    "ipa": "[ˈdɔɾɚ]",
+    "definition": "A person's female child.",
+    "example": "Their daughter is learning to play the piano."
+  },
+  "daylight": {
+    "ipa": "[ˈdeɪˌlaɪt̚]",
+    "definition": "Natural light from the sun during the day.",
+    "example": "We reached the campsite before daylight disappeared."
+  },
+  "different": {
+    "ipa": "[ˈdɪfɚə̃nt̚]",
+    "definition": "Not the same as another person or thing.",
+    "example": "The two pictures look similar but are slightly different."
+  },
+  "disappear": {
+    "ipa": "[ˌdɪsəˈpʰɪɹ]",
+    "definition": "To stop being visible or to go away.",
+    "example": "The rainbow began to disappear behind the clouds."
+  },
+  "discover": {
+    "ipa": "[dɪˈskʌvɚ]",
+    "definition": "To find or learn something for the first time.",
+    "example": "Scientists continue to discover new species."
+  },
+  "eighth": {
+    "ipa": "[ˈeɪtθ]",
+    "definition": "In position number eight in a series.",
+    "example": "She finished in eighth place."
+  },
+  "enormous": {
+    "ipa": "[ɪˈnɔɹməs]",
+    "definition": "Extremely large.",
+    "example": "An enormous tree stood in the center of the park."
+  },
+  "environment": {
+    "ipa": "[ɪ̃nˈvaɪɹənmənt̚]",
+    "definition": "The natural world and the conditions in which people, animals, and plants live.",
+    "example": "We should protect the environment by reducing waste."
+  },
+  "excellent": {
+    "ipa": "[ˈɛksələnt̚]",
+    "definition": "Extremely good.",
+    "example": "Her presentation was excellent."
+  },
+  "foreign": {
+    "ipa": "[ˈfɔɹən]",
+    "definition": "From or connected with another country.",
+    "example": "He enjoys learning foreign languages."
+  },
+  "furniture": {
+    "ipa": "[ˈfɝnɪtʃɚ]",
+    "definition": "Large movable objects such as tables, chairs, and beds used in a room.",
+    "example": "The new apartment has very little furniture."
+  },
+  "government": {
+    "ipa": "[ˈɡʌvɚnmənt̚]",
+    "definition": "The group of people and system that officially control a country or region.",
+    "example": "The government announced a new public program."
+  },
+  "height": {
+    "ipa": "[ˈhaɪt̚]",
+    "definition": "The measurement of how tall a person or thing is.",
+    "example": "We measured the height of the plant each week."
+  },
+  "invitation": {
+    "ipa": "[ˌɪ̃nvəˈtʰeɪʃən]",
+    "definition": "A spoken or written request asking someone to attend an event.",
+    "example": "I received an invitation to her birthday party."
+  },
+  "knowledge": {
+    "ipa": "[ˈnɑlədʒ]",
+    "definition": "Information and understanding gained through learning or experience.",
+    "example": "Reading can increase your knowledge of the world."
+  },
+  "laughter": {
+    "ipa": "[ˈlæftɚ]",
+    "definition": "The sound or act of laughing.",
+    "example": "Their laughter filled the room."
+  },
+  "magazine": {
+    "ipa": "[ˈmæɡəˌzĩn]",
+    "definition": "A publication with articles and pictures that is issued regularly.",
+    "example": "She read a science magazine on the bus."
+  },
+  "midnight": {
+    "ipa": "[ˈmɪdˌnaɪt̚]",
+    "definition": "Twelve o'clock at night.",
+    "example": "The clock struck midnight."
+  },
+  "national": {
+    "ipa": "[ˈnæʃənəl]",
+    "definition": "Related to an entire country or nation.",
+    "example": "The national team played an important match."
+  },
+  "newspaper": {
+    "ipa": "[ˈnuzˌpʰeɪpɚ]",
+    "definition": "A printed or digital publication that reports news and information.",
+    "example": "My grandfather reads the newspaper every morning."
+  },
+  "orchestra": {
+    "ipa": "[ˈɔɹkəstɹə]",
+    "definition": "A large group of musicians who play different instruments together.",
+    "example": "The orchestra performed a famous piece of music."
+  },
+  "schedule": {
+    "ipa": "[ˈskɛdʒʊɫ]",
+    "definition": "A plan that shows the times when activities or events will happen.",
+    "example": "Check the schedule to see when the next class begins."
+  },
+  "science": {
+    "ipa": "[ˈsaɪə̃ns]",
+    "definition": "The study of the natural world through observation and experiments.",
+    "example": "We did an experiment in science class."
+  },
+  "scissors": {
+    "ipa": "[ˈsɪzɚz]",
+    "definition": "A tool with two blades used for cutting.",
+    "example": "Use the scissors carefully when cutting the paper."
+  },
+  "separate": {
+    "ipa": "[ˈsɛpɚˌeɪt̚]",
+    "definition": "To divide or keep things apart, or existing apart from something else.",
+    "example": "Please separate the paper from the plastic."
+  },
+  "september": {
+    "ipa": "[sɛpˈtʰɛ̃mbɚ]",
+    "definition": "The ninth month of the year.",
+    "example": "The new school term begins in September."
+  },
+  "something": {
+    "ipa": "[ˈsʌ̃mθɪ̃ŋ]",
+    "definition": "An unknown or unspecified thing.",
+    "example": "I heard something moving outside."
+  },
+  "straight": {
+    "ipa": "[ˈstɹeɪt̚]",
+    "definition": "Without a curve or bend; in a direct line.",
+    "example": "Draw a straight line across the page."
+  },
+  "strawberry": {
+    "ipa": "[ˈstɹɔˌbɛɹi]",
+    "definition": "A small red fruit with tiny seeds on its surface.",
+    "example": "She added a strawberry to the fruit salad."
+  },
+  "through": {
+    "ipa": "[ˈθɹu]",
+    "definition": "From one side or end of something to the other.",
+    "example": "We walked through the tunnel."
+  },
+  "toothbrush": {
+    "ipa": "[ˈtʰuθbɹəʃ]",
+    "definition": "A small brush used for cleaning the teeth.",
+    "example": "Remember to replace your toothbrush regularly."
+  },
+  "tradition": {
+    "ipa": "[tɹəˈdɪʃən]",
+    "definition": "A custom or belief that is passed from one generation to another.",
+    "example": "Making this special meal is a family tradition."
+  },
+  "vegetable": {
+    "ipa": "[ˈvɛdʒtəbɫ̩]",
+    "definition": "A plant or part of a plant that is eaten as food.",
+    "example": "Carrots are her favorite vegetable."
+  },
+  "volleyball": {
+    "ipa": "[ˈvɑliˌbɔɫ]",
+    "definition": "A team sport in which players hit a ball over a high net.",
+    "example": "We played volleyball after school."
+  },
+  "waterfall": {
+    "ipa": "[ˈwɔɾɚˌfɔɫ]",
+    "definition": "A place where water flows over the edge of a steep drop.",
+    "example": "The trail ended near a beautiful waterfall."
+  },
+  "whole": {
+    "ipa": "[ˈhoʊɫ]",
+    "definition": "Complete; including every part.",
+    "example": "She read the whole book in one weekend."
+  }
 }
