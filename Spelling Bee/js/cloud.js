@@ -72,6 +72,22 @@
     return Number.isFinite(time) && Date.now() - time <= maxAgeMs;
   }
 
+  async function fetchPresenter(sessionCode) {
+    const code = normalizeSessionCode(sessionCode);
+    if (!code) return null;
+    const query = `sessionCode=${encodeURIComponent(code)}`;
+    const data = await apiJson(`${ENDPOINTS.session}?${query}`, { cache: "no-store" });
+    return data.session ? stateFromRow(data.session) : null;
+  }
+
+  async function fetchCommand(sessionCode) {
+    const code = normalizeSessionCode(sessionCode);
+    if (!code) return null;
+    const query = `sessionCode=${encodeURIComponent(code)}`;
+    const data = await apiJson(`${ENDPOINTS.command}?${query}`, { cache: "no-store" });
+    return data.command ? stateFromRow(data.command) : null;
+  }
+
   async function fetchRows(sessionCode) {
     const code = normalizeSessionCode(sessionCode);
     if (!code) return [];
@@ -204,6 +220,8 @@
     latestRoleState,
     presenterState,
     isFresh,
+    fetchPresenter,
+    fetchCommand,
     fetchRows,
     writeState,
     loadWordList,
