@@ -250,7 +250,7 @@
         <article class="article-card">
           <h3>Picture choices</h3>
           <div class="picture-story-row" aria-label="Part 1 picture choices">
-            ${(part.visualOptions || []).map(option => option.image ? `
+            ${stableShuffle(part.visualOptions || [], "part1-picture-order").map(option => option.image ? `
               <div class="picture-card has-image">
                 <img
                   class="exam-image picture-story-image"
@@ -565,7 +565,10 @@
   RENDER CHOICE ROWS
   ---------------------------------------------- */
   function renderChoiceRows(partId, item) {
-    return Object.entries(item.options || {}).map(([letter, text]) => {
+    const entries = partId === "part3"
+      ? stableShuffle(Object.entries(item.options || {}), `${partId}-q${item.q}-radio-options`)
+      : Object.entries(item.options || {});
+    return entries.map(([letter, text]) => {
       const checked = getAnswer(partId, item.q) === letter;
       return `
         <label class="radio-row ${checked ? "selected" : ""}" data-answer-row data-q="${item.q}">
@@ -624,14 +627,20 @@
     closeChoicePopover();
     const item = part.items.find(question => question.q === q);
     if (!item) return;
+
     const selected = getAnswer(part.id, q);
+    const rawEntries = Object.entries(item.options || {});
+    const entries = part.id === "part1" || part.id === "part3"
+      ? stableShuffle(rawEntries, `${part.id}-q${q}-popover-options`)
+      : rawEntries;
+
     const popover = document.createElement("div");
     popover.className = "choice-popover";
     popover.setAttribute("role", "dialog");
     popover.innerHTML = `
       <div class="popover-title">Question ${q}</div>
       <div class="popover-options">
-        ${Object.entries(item.options || {}).map(([letter, text]) => `
+        ${entries.map(([letter, text]) => `
           <button type="button" class="option-btn ${selected === letter ? "selected" : ""}" data-popover-choice="${escapeAttr(letter)}">
             ${escape(text)}
           </button>
@@ -640,12 +649,21 @@
       <button type="button" class="clear-choice" data-popover-clear>Clear answer</button>
     `;
     document.body.appendChild(popover);
+
+    // Keep the question itself visible and open the choices underneath it.
+    anchor.scrollIntoView({ block: "center", inline: "nearest" });
     const rect = anchor.getBoundingClientRect();
     const panelRect = popover.getBoundingClientRect();
-    const top = Math.max(10, rect.top - panelRect.height - 14);
+    const footerTop = dom.bottomNav?.getBoundingClientRect().top || window.innerHeight;
+    const viewportBottom = Math.min(window.innerHeight - 12, footerTop - 12);
+    const top = rect.bottom + 10;
     const left = Math.min(window.innerWidth - panelRect.width - 12, Math.max(12, rect.left));
+    const availableHeight = Math.max(110, viewportBottom - top);
+
     popover.style.top = `${top}px`;
     popover.style.left = `${left}px`;
+    popover.style.maxHeight = `${availableHeight}px`;
+    popover.style.overflowY = "auto";
 
     popover.addEventListener("click", event => {
       event.stopPropagation();
@@ -1257,6 +1275,39 @@
         submitPayload(payload);
       });
     }
+  }
+
+  function stableShuffle(values, salt) {
+    const original = Array.from(values || []);
+    if (original.length < 2) return original;
+
+    const shuffled = [...original];
+    let seed = hashShuffleSeed([
+      state.student.startedAt || "",
+      state.student.name || "",
+      state.student.classId || "",
+      salt || ""
+    ].join("|"));
+
+    for (let index = shuffled.length - 1; index > 0; index -= 1) {
+      seed = (Math.imul(seed, 1664525) + 1013904223) >>> 0;
+      const swapIndex = seed % (index + 1);
+      [shuffled[index], shuffled[swapIndex]] = [shuffled[swapIndex], shuffled[index]];
+    }
+
+    if (shuffled.every((value, index) => value === original[index])) {
+      shuffled.push(shuffled.shift());
+    }
+    return shuffled;
+  }
+
+  function hashShuffleSeed(value) {
+    let hash = 2166136261;
+    for (const char of String(value || "")) {
+      hash ^= char.charCodeAt(0);
+      hash = Math.imul(hash, 16777619);
+    }
+    return hash >>> 0;
   }
 
   /* ----------------------------------------------
