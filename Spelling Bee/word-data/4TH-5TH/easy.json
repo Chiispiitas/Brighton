@@ -1,44 +1,212 @@
 {
-  "bell": {"ipa":"/bɛl/","definition":"A hollow object that makes a ringing sound.","example":"The school bell rang at eight o'clock."},
-  "bike": {"ipa":"/baɪk/","definition":"A bicycle with two wheels that you ride by pedaling.","example":"Mia rides her bike to the park."},
-  "boat": {"ipa":"/boʊt/","definition":"A small vehicle used for traveling on water.","example":"We crossed the lake in a small boat."},
-  "book": {"ipa":"/bʊk/","definition":"A set of written or printed pages bound together.","example":"He borrowed a book from the library."},
-  "cage": {"ipa":"/keɪdʒ/","definition":"A container made of bars or wire for keeping an animal inside.","example":"The bird flew out of its cage."},
-  "coat": {"ipa":"/koʊt/","definition":"A warm piece of clothing worn over other clothes.","example":"Put on your coat because it is cold outside."},
-  "cold": {"ipa":"/koʊld/","definition":"Having a low temperature; not warm or hot.","example":"The water in the pool was very cold."},
-  "cook": {"ipa":"/kʊk/","definition":"To prepare food by heating it.","example":"My father likes to cook dinner on Sundays."},
-  "corn": {"ipa":"/kɔɹn/","definition":"A tall plant that produces yellow kernels that can be eaten.","example":"We ate grilled corn at the picnic."},
-  "door": {"ipa":"/dɔɹ/","definition":"A movable panel used to enter or leave a room or building.","example":"Please close the door behind you."},
-  "duck": {"ipa":"/dʌk/","definition":"A water bird with a broad bill and webbed feet.","example":"A duck swam across the pond."},
-  "face": {"ipa":"/feɪs/","definition":"The front part of the head, where the eyes, nose, and mouth are.","example":"She washed her face before breakfast."},
-  "farm": {"ipa":"/fɑɹm/","definition":"An area of land used for growing crops or raising animals.","example":"My grandparents keep chickens on their farm."},
-  "food": {"ipa":"/fud/","definition":"Things that people or animals eat for energy and growth.","example":"We packed enough food for the trip."},
-  "foot": {"ipa":"/fʊt/","definition":"The part at the end of your leg that you stand and walk on.","example":"He hurt his foot while playing soccer."},
-  "four": {"ipa":"/fɔɹ/","definition":"The number that comes after three and before five.","example":"There are four chairs around the table."},
-  "frog": {"ipa":"/fɹɑɡ/","definition":"A small animal with long back legs that lives on land and in water.","example":"A green frog jumped into the pond."},
-  "hair": {"ipa":"/hɛɹ/","definition":"The strands that grow from the skin, especially on the head.","example":"Her hair was wet after swimming."},
-  "hand": {"ipa":"/hænd/","definition":"The body part at the end of your arm, with fingers and a thumb.","example":"Raise your hand if you know the answer."},
-  "hen": {"ipa":"/hɛn/","definition":"An adult female chicken.","example":"The hen laid an egg this morning."},
-  "home": {"ipa":"/hoʊm/","definition":"The place where a person lives.","example":"We went home after the movie."},
-  "kind": {"ipa":"/kaɪnd/","definition":"Friendly, caring, and helpful toward others.","example":"It was kind of you to help your classmate."},
-  "king": {"ipa":"/kɪŋ/","definition":"A male ruler of a kingdom.","example":"The king lived in a large castle."},
-  "kite": {"ipa":"/kaɪt/","definition":"A light frame covered with material that is flown in the wind on a string.","example":"The children flew a kite at the beach."},
-  "lake": {"ipa":"/leɪk/","definition":"A large area of water surrounded by land.","example":"We went fishing at the lake."},
-  "lamp": {"ipa":"/læmp/","definition":"A device that gives light.","example":"I turned on the lamp to read my book."},
-  "milk": {"ipa":"/mɪlk/","definition":"A white liquid produced by mammals and commonly used as a drink.","example":"She poured milk into her cereal."},
-  "moon": {"ipa":"/mun/","definition":"The natural object that moves around Earth and can be seen in the night sky.","example":"The full moon looked bright tonight."},
-  "name": {"ipa":"/neɪm/","definition":"A word used to identify a person, place, or thing.","example":"Please write your name at the top of the page."},
-  "nose": {"ipa":"/noʊz/","definition":"The part of the face used for smelling and breathing.","example":"The clown wore a red nose."},
-  "park": {"ipa":"/pɑɹk/","definition":"A public outdoor area with grass, trees, or places to play.","example":"We had lunch in the park."},
-  "pink": {"ipa":"/pɪŋk/","definition":"A light red color.","example":"She chose a pink backpack."},
-  "rain": {"ipa":"/ɹeɪn/","definition":"Water that falls from clouds in drops.","example":"The rain stopped before recess."},
-  "rice": {"ipa":"/ɹaɪs/","definition":"Small grains from a plant that are cooked and eaten as food.","example":"We had chicken and rice for lunch."},
-  "room": {"ipa":"/ɹum/","definition":"A part of a building separated by walls.","example":"My room has a desk near the window."},
-  "sand": {"ipa":"/sænd/","definition":"Tiny grains of rock found on beaches and in deserts.","example":"The children built a castle in the sand."},
-  "six": {"ipa":"/sɪks/","definition":"The number that comes after five and before seven.","example":"There are six apples in the basket."},
-  "sky": {"ipa":"/skaɪ/","definition":"The space above Earth that we see when we look upward.","example":"The sky was clear and blue."},
-  "snow": {"ipa":"/snoʊ/","definition":"Soft white pieces of frozen water that fall from clouds.","example":"The children played in the snow."},
-  "song": {"ipa":"/sɔŋ/","definition":"A piece of music with words that are sung.","example":"That is my favorite song."},
-  "ten": {"ipa":"/tɛn/","definition":"The number that comes after nine.","example":"She counted ten stars in the picture."},
-  "town": {"ipa":"/taʊn/","definition":"A place where people live that is smaller than a city.","example":"Their town has a small train station."}
+  "bell": {
+    "ipa": "[ˈbɛɫ]",
+    "definition": "A hollow object that makes a ringing sound.",
+    "example": "The school bell rang at eight o'clock."
+  },
+  "bike": {
+    "ipa": "[ˈbaɪk̚]",
+    "definition": "A bicycle with two wheels that you ride by pedaling.",
+    "example": "Mia rides her bike to the park."
+  },
+  "boat": {
+    "ipa": "[ˈboʊt̚]",
+    "definition": "A small vehicle used for traveling on water.",
+    "example": "We crossed the lake in a small boat."
+  },
+  "book": {
+    "ipa": "[ˈbʊk̚]",
+    "definition": "A set of written or printed pages bound together.",
+    "example": "He borrowed a book from the library."
+  },
+  "cage": {
+    "ipa": "[ˈkʰeɪdʒ]",
+    "definition": "A container made of bars or wire for keeping an animal inside.",
+    "example": "The bird flew out of its cage."
+  },
+  "coat": {
+    "ipa": "[ˈkʰoʊt̚]",
+    "definition": "A warm piece of clothing worn over other clothes.",
+    "example": "Put on your coat because it is cold outside."
+  },
+  "cold": {
+    "ipa": "[ˈkʰoʊɫd]",
+    "definition": "Having a low temperature; not warm or hot.",
+    "example": "The water in the pool was very cold."
+  },
+  "cook": {
+    "ipa": "[ˈkʰʊk̚]",
+    "definition": "To prepare food by heating it.",
+    "example": "My father likes to cook dinner on Sundays."
+  },
+  "corn": {
+    "ipa": "[ˈkʰɔɹn]",
+    "definition": "A tall plant that produces yellow kernels that can be eaten.",
+    "example": "We ate grilled corn at the picnic."
+  },
+  "door": {
+    "ipa": "[ˈdɔɹ]",
+    "definition": "A movable panel used to enter or leave a room or building.",
+    "example": "Please close the door behind you."
+  },
+  "duck": {
+    "ipa": "[ˈdʌk̚]",
+    "definition": "A water bird with a broad bill and webbed feet.",
+    "example": "A duck swam across the pond."
+  },
+  "face": {
+    "ipa": "[ˈfeɪs]",
+    "definition": "The front part of the head, where the eyes, nose, and mouth are.",
+    "example": "She washed her face before breakfast."
+  },
+  "farm": {
+    "ipa": "[ˈfɑɹm]",
+    "definition": "An area of land used for growing crops or raising animals.",
+    "example": "My grandparents keep chickens on their farm."
+  },
+  "food": {
+    "ipa": "[ˈfud]",
+    "definition": "Things that people or animals eat for energy and growth.",
+    "example": "We packed enough food for the trip."
+  },
+  "foot": {
+    "ipa": "[ˈfʊt̚]",
+    "definition": "The part at the end of your leg that you stand and walk on.",
+    "example": "He hurt his foot while playing soccer."
+  },
+  "four": {
+    "ipa": "[ˈfɔɹ]",
+    "definition": "The number that comes after three and before five.",
+    "example": "There are four chairs around the table."
+  },
+  "frog": {
+    "ipa": "[ˈfɹɑɡ]",
+    "definition": "A small animal with long back legs that lives on land and in water.",
+    "example": "A green frog jumped into the pond."
+  },
+  "hair": {
+    "ipa": "[ˈhɛɹ]",
+    "definition": "The strands that grow from the skin, especially on the head.",
+    "example": "Her hair was wet after swimming."
+  },
+  "hand": {
+    "ipa": "[ˈhæ̃nd]",
+    "definition": "The body part at the end of your arm, with fingers and a thumb.",
+    "example": "Raise your hand if you know the answer."
+  },
+  "hen": {
+    "ipa": "[ˈhɛ̃n]",
+    "definition": "An adult female chicken.",
+    "example": "The hen laid an egg this morning."
+  },
+  "home": {
+    "ipa": "[ˈhoʊm]",
+    "definition": "The place where a person lives.",
+    "example": "We went home after the movie."
+  },
+  "kind": {
+    "ipa": "[ˈkʰaɪnd]",
+    "definition": "Friendly, caring, and helpful toward others.",
+    "example": "It was kind of you to help your classmate."
+  },
+  "king": {
+    "ipa": "[ˈkʰɪ̃ŋ]",
+    "definition": "A male ruler of a kingdom.",
+    "example": "The king lived in a large castle."
+  },
+  "kite": {
+    "ipa": "[ˈkʰaɪt̚]",
+    "definition": "A light frame covered with material that is flown in the wind on a string.",
+    "example": "The children flew a kite at the beach."
+  },
+  "lake": {
+    "ipa": "[ˈleɪk̚]",
+    "definition": "A large area of water surrounded by land.",
+    "example": "We went fishing at the lake."
+  },
+  "lamp": {
+    "ipa": "[ˈlæ̃mp̚]",
+    "definition": "A device that gives light.",
+    "example": "I turned on the lamp to read my book."
+  },
+  "milk": {
+    "ipa": "[ˈmɪɫk̚]",
+    "definition": "A white liquid produced by mammals and commonly used as a drink.",
+    "example": "She poured milk into her cereal."
+  },
+  "moon": {
+    "ipa": "[ˈmũn]",
+    "definition": "The natural object that moves around Earth and can be seen in the night sky.",
+    "example": "The full moon looked bright tonight."
+  },
+  "name": {
+    "ipa": "[ˈneɪm]",
+    "definition": "A word used to identify a person, place, or thing.",
+    "example": "Please write your name at the top of the page."
+  },
+  "nose": {
+    "ipa": "[ˈnoʊz]",
+    "definition": "The part of the face used for smelling and breathing.",
+    "example": "The clown wore a red nose."
+  },
+  "park": {
+    "ipa": "[ˈpʰɑɹk̚]",
+    "definition": "A public outdoor area with grass, trees, or places to play.",
+    "example": "We had lunch in the park."
+  },
+  "pink": {
+    "ipa": "[ˈpʰɪ̃ŋk̚]",
+    "definition": "A light red color.",
+    "example": "She chose a pink backpack."
+  },
+  "rain": {
+    "ipa": "[ˈɹeɪn]",
+    "definition": "Water that falls from clouds in drops.",
+    "example": "The rain stopped before recess."
+  },
+  "rice": {
+    "ipa": "[ˈɹaɪs]",
+    "definition": "Small grains from a plant that are cooked and eaten as food.",
+    "example": "We had chicken and rice for lunch."
+  },
+  "room": {
+    "ipa": "[ˈɹũm]",
+    "definition": "A part of a building separated by walls.",
+    "example": "My room has a desk near the window."
+  },
+  "sand": {
+    "ipa": "[ˈsæ̃nd]",
+    "definition": "Tiny grains of rock found on beaches and in deserts.",
+    "example": "The children built a castle in the sand."
+  },
+  "six": {
+    "ipa": "[ˈsɪks]",
+    "definition": "The number that comes after five and before seven.",
+    "example": "There are six apples in the basket."
+  },
+  "sky": {
+    "ipa": "[ˈskaɪ]",
+    "definition": "The space above Earth that we see when we look upward.",
+    "example": "The sky was clear and blue."
+  },
+  "snow": {
+    "ipa": "[ˈsnoʊ]",
+    "definition": "Soft white pieces of frozen water that fall from clouds.",
+    "example": "The children played in the snow."
+  },
+  "song": {
+    "ipa": "[ˈsɔ̃ŋ]",
+    "definition": "A piece of music with words that are sung.",
+    "example": "That is my favorite song."
+  },
+  "ten": {
+    "ipa": "[ˈtʰɛ̃n]",
+    "definition": "The number that comes after nine.",
+    "example": "She counted ten stars in the picture."
+  },
+  "town": {
+    "ipa": "[ˈtʰaʊn]",
+    "definition": "A place where people live that is smaller than a city.",
+    "example": "Their town has a small train station."
+  }
 }
