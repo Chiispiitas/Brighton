@@ -150,6 +150,11 @@
       await changeDifficulty(command.value);
     } else if (type === "feedback" && ["correct", "incorrect"].includes(command.value)) {
       runFeedback(command.value);
+    } else if (type === "visibility" && ["reveal", "hide"].includes(command.value) && typeof toggleWordMode === "function") {
+      const shouldHide = command.value === "hide";
+      if (typeof hiddenMode !== "undefined" && Boolean(hiddenMode) !== shouldHide) {
+        toggleWordMode();
+      }
     }
 
     lastRemoteCommandSeq = seq;
