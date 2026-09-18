@@ -145,10 +145,17 @@
     }
 
     if (type === "new-word" && typeof nextWord === "function") {
+      // A remotely-called word must always begin hidden, even if the
+      // previous word was revealed for feedback.
+      if (typeof hiddenMode !== "undefined") hiddenMode = true;
       nextWord();
     } else if (type === "difficulty" && ["easy", "medium", "hard"].includes(command.value) && typeof changeDifficulty === "function") {
       await changeDifficulty(command.value);
     } else if (type === "feedback" && ["correct", "incorrect"].includes(command.value)) {
+      // Reveal the complete word before showing either feedback animation.
+      if (typeof hiddenMode !== "undefined" && hiddenMode && typeof toggleWordMode === "function") {
+        toggleWordMode();
+      }
       runFeedback(command.value);
     } else if (type === "visibility" && ["reveal", "hide"].includes(command.value) && typeof toggleWordMode === "function") {
       const shouldHide = command.value === "hide";
