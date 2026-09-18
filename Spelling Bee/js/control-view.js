@@ -42,7 +42,10 @@
   let busy = false;
   let judgePublishChain = Promise.resolve();
   let commandPublishChain = Promise.resolve();
-  let pendingAdminLetterCommands = 0;
+  let pendingAdminWordState = null;
+  let adminWordStateFlushTimer = null;
+  let latestAdminWordStateSeq = 0;
+  let adminJudgePublishTimer = null;
   let wordInfoKey = "";
 
   let judgeWordToken = "";
@@ -393,7 +396,14 @@
 
   function syncAdminJudgeFromPresenter({ force = false } = {}) {
     if (role !== "remote" || !presenter?.wordToken) return false;
-    if (!force && pendingAdminLetterCommands > 0) return false;
+
+    const presenterAck = Number(presenter.lastCommandSeq || 0);
+    const localWordStatePending =
+      Boolean(pendingAdminWordState) ||
+      Boolean(adminWordStateFlushTimer) ||
+      presenterAck < latestAdminWordStateSeq;
+
+    if (!force && localWordStatePending) return false;
 
     const sourceMarks = Array.isArray(presenter.marks) ? presenter.marks : [];
     const letters = Array.from(String(presenter.word || ""));
@@ -483,6 +493,13 @@
       const tokenChanged = presenter?.wordToken !== nextPresenter.wordToken;
       presenter = nextPresenter;
 
+      if (role === "remote" && tokenChanged) {
+        pendingAdminWordState = null;
+        window.clearTimeout(adminWordStateFlushTimer);
+        adminWordStateFlushTimer = null;
+        latestAdminWordStateSeq = Number(presenter.lastCommandSeq || 0);
+      }
+
       if (role === "remote") {
         let changed = false;
         if (tokenChanged) {
@@ -522,6 +539,13 @@
 
       const tokenChanged = presenter?.wordToken !== nextPresenter.wordToken;
       presenter = nextPresenter;
+
+      if (role === "remote" && tokenChanged) {
+        pendingAdminWordState = null;
+        window.clearTimeout(adminWordStateFlushTimer);
+        adminWordStateFlushTimer = null;
+        latestAdminWordStateSeq = Number(presenter.lastCommandSeq || 0);
+      }
 
       setConnection(
         Cloud.isFresh(presenter, 9000) ? "Presenter online" : "Presenter stale",
@@ -620,7 +644,7 @@
       // Full refresh includes judges + commands and is intentionally slower.
       // Presenter-only sync keeps O/P progress responsive without flooding mobile.
       pollTimer = window.setInterval(refresh, 1100);
-      presenterSyncTimer = window.setInterval(refreshPresenterOnly, 320);
+      presenterSyncTimer = window.setInterval(refreshPresenterOnly, 240);
 
       if (canJudge) {
         await publishJudgeState({ increment: true });
@@ -631,6 +655,96 @@
       setJoinStatus(error.message || "Session not found.", true);
     } finally {
       joinButton.disabled = false;
+    }
+  }
+
+  function scheduleAdminJudgePublish() {
+    if (role !== "remote") return;
+    window.clearTimeout(adminJudgePublishTimer);
+    adminJudgePublishTimer = window.setTimeout(() => {
+      adminJudgePublishTimer = null;
+      publishJudgeState({ increment: true });
+    }, 90);
+  }
+
+  function adminWordStateSnapshot() {
+    return {
+      startedAt: new Date().toISOString(),
+      level: presenter?.level || "",
+      difficulty: presenter?.difficulty || "",
+      word: presenter?.word || "",
+      wordToken: presenter?.wordToken || "",
+      wordSequence: Number(presenter?.wordSequence || 0),
+      commandType: "word-state",
+      value: "",
+      wordState: {
+        pointer: judgePointer,
+        verdict: judgeVerdict,
+        letterMarks: judgeMarks.slice()
+      }
+    };
+  }
+
+  function flushPendingAdminWordState() {
+    window.clearTimeout(adminWordStateFlushTimer);
+    adminWordStateFlushTimer = null;
+
+    if (role !== "remote" || !sessionCode || !pendingAdminWordState) {
+      return commandPublishChain;
+    }
+
+    const snapshot = pendingAdminWordState;
+    pendingAdminWordState = null;
+
+    // Never send an old word snapshot after Presenter has already moved on.
+    if (!presenter?.wordToken || snapshot.wordToken !== presenter.wordToken) {
+      return commandPublishChain;
+    }
+
+    commandSeq += 1;
+    const seq = commandSeq;
+    latestAdminWordStateSeq = seq;
+    const snapshotSessionCode = sessionCode;
+
+    commandPublishChain = commandPublishChain
+      .catch(() => {})
+      .then(() => Cloud.writeState({
+        sessionCode: snapshotSessionCode,
+        role: "remote",
+        actorId: "main",
+        state: {
+          ...snapshot,
+          commandSeq: seq
+        }
+      }))
+      .then(() => {
+        setConnection("Judgement synced", "online");
+      })
+      .catch(() => {
+        // Keep the newest local snapshot for one retry. If a newer snapshot
+        // already exists, that newer one wins automatically.
+        if (!pendingAdminWordState && presenter?.wordToken === snapshot.wordToken) {
+          pendingAdminWordState = adminWordStateSnapshot();
+        }
+        setConnection("Sync retrying", "error");
+      })
+      .finally(() => {
+        if (pendingAdminWordState && !adminWordStateFlushTimer) {
+          adminWordStateFlushTimer = window.setTimeout(flushPendingAdminWordState, 25);
+        }
+      });
+
+    return commandPublishChain;
+  }
+
+  function queueAdminWordState() {
+    if (role !== "remote" || !sessionCode || !presenter?.wordToken) return;
+    pendingAdminWordState = adminWordStateSnapshot();
+
+    // One very short debounce collapses rapid taps into a single whole-word
+    // snapshot. While a write is in flight, only the newest state is retained.
+    if (!adminWordStateFlushTimer) {
+      adminWordStateFlushTimer = window.setTimeout(flushPendingAdminWordState, 18);
     }
   }
 
@@ -648,11 +762,15 @@
 
     renderPresenterState();
 
-    const writes = [publishJudgeState({ increment: true })];
     if (role === "remote") {
-      writes.push(sendRemoteCommand("letter-mark", mark));
+      // Admin is optimistic locally. Presenter receives the complete latest
+      // word state, not one command per letter.
+      queueAdminWordState();
+      scheduleAdminJudgePublish();
+      return;
     }
-    await Promise.all(writes);
+
+    await publishJudgeState({ increment: true });
   }
 
   async function waitForPresenterCommandAck(seq, targetWordToken, timeoutMs = 4000) {
@@ -693,8 +811,10 @@
   function sendRemoteCommand(commandType, value = "") {
     if (role !== "remote" || !sessionCode || !presenter) return Promise.resolve(false);
 
-    const isLetterCommand = commandType === "letter-mark";
-    if (isLetterCommand) pendingAdminLetterCommands += 1;
+    // Preserve action ordering: if Admin has newer judging progress, enqueue
+    // that whole-word snapshot before New Word / Feedback / Audio / Visibility.
+    flushPendingAdminWordState();
+
     commandSeq += 1;
     const seq = commandSeq;
     const snapshotSessionCode = sessionCode;
@@ -731,20 +851,11 @@
           throw new Error("Presenter did not acknowledge command.");
         }
 
-        if (isLetterCommand) {
-          pendingAdminLetterCommands = Math.max(0, pendingAdminLetterCommands - 1);
-          if (pendingAdminLetterCommands === 0 && syncAdminJudgeFromPresenter({ force: true })) {
-            renderPresenterState();
-            publishJudgeState({ increment: true });
-          }
-        }
-
         setConnection("Command sent", "online");
         window.setTimeout(refreshPresenterOnly, 20);
         return true;
       })
       .catch(error => {
-        if (isLetterCommand) pendingAdminLetterCommands = Math.max(0, pendingAdminLetterCommands - 1);
         setConnection("Command failed", "error");
         return false;
       });
