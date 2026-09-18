@@ -246,26 +246,45 @@
       <section class="exam-panel part-one">
         ${partHeader(part)}
         ${instruction(part.instruction)}
+
         <article class="article-card">
-          <h3>Word bank</h3>
-          <div class="exam-meta">
-            ${(part.wordBank || []).map(word => `<span>${escape(word)}</span>`).join("")}
+          <h3>Picture choices</h3>
+          <div class="picture-story-row" aria-label="Part 1 picture placeholders">
+            ${(part.visualOptions || []).map(option => `
+              <div class="picture-card image-placeholder">
+                <div>
+                  <strong>${escape(option.label)}</strong>
+                  <span>${escape(option.imageDescription)}</span>
+                </div>
+              </div>
+            `).join("")}
           </div>
         </article>
+
         <div class="question-stack" style="margin-top:14px">
           ${part.items.map(item => {
             const answer = getAnswer(part.id, item.q);
+            const display = answer ? item.options?.[answer] : "";
             return `
               <article class="question-card ${getCurrentQuestionNumber() === item.q ? "active" : ""}" data-question-card="${item.q}">
                 <h4><span class="q-badge">${item.q}</span> ${escape(item.stem)}</h4>
-                <input class="inline-input ${getCurrentQuestionNumber() === item.q ? "active" : ""}" value="${escapeAttr(answer)}" data-open-input data-part-id="${part.id}" data-q="${item.q}" maxlength="40" placeholder="Write the word or phrase" aria-label="Question ${item.q}" />
+                <button
+                  class="cloze-gap choice-gap ${answer ? "answered" : ""} ${getCurrentQuestionNumber() === item.q ? "active" : ""}"
+                  type="button"
+                  data-choice-gap
+                  data-part-id="${part.id}"
+                  data-q="${item.q}"
+                  aria-label="Question ${item.q}, ${answer ? "answered" : "unanswered"}"
+                >
+                  <span class="gap-number">${item.q}</span>
+                  ${display ? `<span class="gap-answer">${escape(display)}</span>` : `<span class="gap-answer">Choose answer</span>`}
+                </button>
               </article>`;
           }).join("")}
         </div>
       </section>
     `;
   }
-
 
   /* ----------------------------------------------
   RENDER PART TWO
@@ -277,6 +296,12 @@
         ${instruction(part.instruction)}
         <article class="article-card">
           <h3>${escape(part.context || "Conversation")}</h3>
+          <div class="image-placeholder sign-placeholder">
+            <div>
+              <strong>Image placeholder</strong>
+              <span>${escape(part.imageDescription || "")}</span>
+            </div>
+          </div>
           <div class="question-stack">
             ${part.items.map(item => `
               <article class="question-card ${getCurrentQuestionNumber() === item.q ? "active" : ""}" data-question-card="${item.q}">
@@ -293,7 +318,6 @@
     `;
   }
 
-
   /* ----------------------------------------------
   RENDER PART THREE
   ---------------------------------------------- */
@@ -303,16 +327,21 @@
       <section class="exam-panel part-three">
         ${partHeader(part)}
         ${instruction(part.instruction)}
+
         <article class="article-card">
-          <h3>Word bank</h3>
-          <div class="exam-meta">
-            ${(part.wordBank || []).map(word => `<span>${escape(word)}</span>`).join("")}
+          <div class="image-placeholder sign-placeholder">
+            <div>
+              <strong>Image placeholder</strong>
+              <span>${escape(part.imageDescription || "")}</span>
+            </div>
           </div>
         </article>
-        <article class="article-card open-cloze-text" style="margin-top:14px">
+
+        <article class="article-card cloze-text" style="margin-top:14px">
           <h3>${escape(part.articleTitle)}</h3>
-          <p>${renderInlineText(part, "open-gap")}</p>
+          <p>${renderInlineText(part, "choice-gap")}</p>
         </article>
+
         <article class="question-card ${getCurrentQuestionNumber() === 17 ? "active" : ""}" data-question-card="17" style="margin-top:14px">
           <h4><span class="q-badge">17</span> ${escape(titleItem?.stem || "Choose the best title.")}</h4>
           ${renderChoiceRows(part.id, titleItem || {})}
@@ -320,7 +349,6 @@
       </section>
     `;
   }
-
 
   /* ----------------------------------------------
   RENDER PART FOUR

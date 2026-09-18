@@ -39,14 +39,88 @@ window.examParts = [
     label: "Part 1",
     title: "Vocabulary in context",
     range: "Questions 1–5",
-    instruction: "Look at the words. Read each definition and write the correct word or phrase.",
-    wordBank: ["a receptionist", "a wallet", "a department store", "a train station", "an umbrella", "a sweater", "a museum", "a taxi driver"],
+    instruction: "Look at the picture placeholders and words. Read each definition and choose the correct word or phrase.",
+    visualOptions: [
+      { label: "a receptionist", imageDescription: "Picture placeholder: an adult hotel receptionist standing behind a reception desk." },
+      { label: "a wallet", imageDescription: "Picture placeholder: a simple wallet with money and cards visible." },
+      { label: "a department store", imageDescription: "Picture placeholder: the entrance of a large modern department store with clothing displays." },
+      { label: "a train station", imageDescription: "Picture placeholder: a train station platform with a train and a station sign area, but no readable text." },
+      { label: "an umbrella", imageDescription: "Picture placeholder: an open umbrella being used in the rain." },
+      { label: "a sweater", imageDescription: "Picture placeholder: a folded sweater on a clothing display." },
+      { label: "a museum", imageDescription: "Picture placeholder: the exterior of a modern museum building." },
+      { label: "a taxi driver", imageDescription: "Picture placeholder: an adult taxi driver beside a city taxi." }
+    ],
     items: [
-      { q: 1, stem: "This person welcomes people and answers questions in a hotel or office." },
-      { q: 2, stem: "You keep money and cards in this personal item." },
-      { q: 3, stem: "You can buy clothes, shoes and other things in this large shop." },
-      { q: 4, stem: "You go here to catch a train." },
-      { q: 5, stem: "You use this when it is raining." }
+      {
+        q: 1,
+        stem: "This person welcomes people and answers questions in a hotel or office.",
+        options: {
+          "a receptionist": "a receptionist",
+          "a taxi driver": "a taxi driver",
+          "a department store": "a department store",
+          "a museum": "a museum",
+          "a wallet": "a wallet",
+          "a train station": "a train station",
+          "an umbrella": "an umbrella",
+          "a sweater": "a sweater"
+        }
+      },
+      {
+        q: 2,
+        stem: "You keep money and cards in this personal item.",
+        options: {
+          "a wallet": "a wallet",
+          "an umbrella": "an umbrella",
+          "a sweater": "a sweater",
+          "a receptionist": "a receptionist",
+          "a museum": "a museum",
+          "a train station": "a train station",
+          "a department store": "a department store",
+          "a taxi driver": "a taxi driver"
+        }
+      },
+      {
+        q: 3,
+        stem: "You can buy clothes, shoes and other things in this large shop.",
+        options: {
+          "a department store": "a department store",
+          "a museum": "a museum",
+          "a train station": "a train station",
+          "a wallet": "a wallet",
+          "a sweater": "a sweater",
+          "an umbrella": "an umbrella",
+          "a receptionist": "a receptionist",
+          "a taxi driver": "a taxi driver"
+        }
+      },
+      {
+        q: 4,
+        stem: "You go here to catch a train.",
+        options: {
+          "a train station": "a train station",
+          "a department store": "a department store",
+          "a museum": "a museum",
+          "a taxi driver": "a taxi driver",
+          "a receptionist": "a receptionist",
+          "a wallet": "a wallet",
+          "an umbrella": "an umbrella",
+          "a sweater": "a sweater"
+        }
+      },
+      {
+        q: 5,
+        stem: "You use this when it is raining.",
+        options: {
+          "an umbrella": "an umbrella",
+          "a sweater": "a sweater",
+          "a wallet": "a wallet",
+          "a receptionist": "a receptionist",
+          "a train station": "a train station",
+          "a department store": "a department store",
+          "a museum": "a museum",
+          "a taxi driver": "a taxi driver"
+        }
+      }
     ]
   },
   {
@@ -54,8 +128,9 @@ window.examParts = [
     label: "Part 2",
     title: "Everyday conversation",
     range: "Questions 6–11",
-    instruction: "Read the conversation. For each question, choose the best answer: A, B or C.",
+    instruction: "Look at the picture and read the conversation. For each question, choose the best answer: A, B or C.",
     context: "Leo is talking to Mia about her weekend and her plans.",
+    imageDescription: "Picture placeholder: two young adults, Leo and Mia, talking in a modern shopping area. Mia is holding a shopping bag and a new jacket; a department store is visible behind them. Neutral contemporary style, not childish, no text.",
     items: [
       { q: 6, stem: "Leo: What did you do on Saturday?", replyLabel: "Mia", options: { A: "I went shopping with my sister.", B: "I go shopping every Saturday.", C: "I'm shopping now." } },
       { q: 7, stem: "Leo: Where did you buy that jacket?", replyLabel: "Mia", options: { A: "It was very cheap.", B: "At the new department store.", C: "I paid with cash." } },
@@ -70,9 +145,9 @@ window.examParts = [
     label: "Part 3",
     title: "Story vocabulary",
     range: "Questions 12–17",
-    instruction: "Read the story. Choose words from the box for Questions 12–16. Then choose the best title for Question 17.",
+    instruction: "Look at the picture and read the story. Choose the correct answer for each gap. Then choose the best title for Question 17.",
     articleTitle: "Sofia and Daniel's weekend",
-    wordBank: ["hotel", "sunny", "market", "rain", "museum", "restaurant", "cloudy", "train station"],
+    imageDescription: "Picture placeholder: Sofia and Daniel, two young adults, visiting a small coastal town. Show a small hotel, a local market, rainy weather later in the day and a museum they can visit. Contemporary realistic style, not childish, no text.",
     text: [
       { type: "text", value: "Last weekend, Sofia and her brother Daniel took a bus to a small town near the ocean. They booked a room in a " },
       { type: "gap", q: 12 },
@@ -87,7 +162,11 @@ window.examParts = [
       { type: "text", value: ". On Sunday, they walked on the beach before taking the bus home. They were tired but happy." }
     ],
     items: [
-      { q: 12 }, { q: 13 }, { q: 14 }, { q: 15 }, { q: 16 },
+      { q: 12, options: { hotel: "hotel", restaurant: "restaurant", "train station": "train station" } },
+      { q: 13, options: { sunny: "sunny", cloudy: "cloudy", tired: "tired" } },
+      { q: 14, options: { market: "market", museum: "museum", restaurant: "restaurant" } },
+      { q: 15, options: { rain: "rain", shop: "shop", walk: "walk" } },
+      { q: 16, options: { museum: "museum", restaurant: "restaurant", "train station": "train station" } },
       { q: 17, stem: "Choose the best title for the story.", options: { A: "A weekend near the ocean", B: "A day at work", C: "Shopping online" } }
     ]
   },
