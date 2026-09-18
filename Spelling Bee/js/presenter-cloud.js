@@ -154,6 +154,9 @@
     } else if (type === "letter-mark" && ["correct", "incorrect"].includes(command.value) && typeof mark === "function") {
       // Admin judging mirrors the Presenter's native O/P behavior exactly.
       mark(command.value === "incorrect" ? "err" : "ok");
+    } else if (type === "play-audio" && typeof playAudio === "function") {
+      // Replay the current word through the Presenter's existing locked-1x audio path.
+      await playAudio();
     } else if (type === "feedback" && ["correct", "incorrect"].includes(command.value)) {
       // Finalize the Presenter word before feedback: no pending letters and no
       // active pointer left behind when Admin reveals the word.
