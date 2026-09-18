@@ -132,6 +132,10 @@ body.control-view {
   color: #f2ead6;
   font: 800 1rem/1 Georgia, serif;
   cursor: pointer;
+  touch-action: manipulation;
+  -webkit-tap-highlight-color: transparent;
+  user-select: none;
+  -webkit-user-select: none;
 }
 
 .verdict-button.correct,
@@ -507,5 +511,22 @@ button:disabled { opacity: .45; cursor: not-allowed; }
 
   .admin-judge-word {
     padding-inline: .45rem;
+  }
+}
+
+
+@media (max-width: 520px) {
+  .verdict-button {
+    min-height: 64px;
+    min-width: min(44vw, 180px);
+    position: relative;
+    z-index: 2;
+    pointer-events: auto;
+    touch-action: manipulation;
+  }
+
+  .verdict-button:active {
+    transform: scale(.98);
+    filter: brightness(1.12);
   }
 }
