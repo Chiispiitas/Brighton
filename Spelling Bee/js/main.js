@@ -145,8 +145,50 @@ async function loadWordlist() {
 /* ==============================================
    Rendering
 ============================================== */
+let presenterWordFitFrame = 0;
+
+function fitPresenterWord() {
+    if (!elWord || !elWord.isConnected) return;
+
+    // Always start from the normal CSS size so a shorter next word grows back
+    // after a long word (e.g. "connoisseurship") had to shrink.
+    elWord.style.removeProperty('font-size');
+
+    const styles = getComputedStyle(elWord);
+    const baseFontPx = parseFloat(styles.fontSize) || 48;
+    const horizontalPadding =
+        (parseFloat(styles.paddingLeft) || 0) +
+        (parseFloat(styles.paddingRight) || 0);
+    const available = Math.max(1, elWord.clientWidth - horizontalPadding);
+
+    // scrollWidth gives us the real one-line rendered width of all letter spans.
+    let contentWidth = Math.max(1, elWord.scrollWidth - horizontalPadding);
+    if (contentWidth <= available) return;
+
+    // Keep a little safety room for the active letter's scale/glow.
+    let fitted = Math.max(22, baseFontPx * (available / contentWidth) * 0.93);
+    elWord.style.fontSize = `${fitted}px`;
+
+    // Font metrics/letter-spacing can make the first estimate slightly
+    // optimistic, so remeasure a few times until it is definitely inside.
+    for (let pass = 0; pass < 4; pass += 1) {
+        contentWidth = Math.max(1, elWord.scrollWidth - horizontalPadding);
+        if (contentWidth <= available) break;
+        fitted = Math.max(22, fitted * (available / contentWidth) * 0.96);
+        elWord.style.fontSize = `${fitted}px`;
+    }
+}
+
+function schedulePresenterWordFit() {
+    cancelAnimationFrame(presenterWordFitFrame);
+    presenterWordFitFrame = requestAnimationFrame(() => {
+        presenterWordFitFrame = requestAnimationFrame(fitPresenterWord);
+    });
+}
+
 function renderWord() {
     if (!current) {
+        elWord.style.removeProperty('font-size');
         elWord.textContent = '—';
         if (btnNextLetter) btnNextLetter.disabled = true;
         return;
@@ -189,6 +231,7 @@ function renderWord() {
     });
 
     elWord.replaceChildren(frag);
+    schedulePresenterWordFit();
     if (btnNextLetter) btnNextLetter.disabled = ptr >= current.length;
 }
 
@@ -573,6 +616,16 @@ elAudio.addEventListener('ratechange', () => {
 });
 
 setWordVolume(elVolumeSlider ? elVolumeSlider.value : 100);
+
+let presenterFitResizeTimer = null;
+window.addEventListener('resize', () => {
+    window.clearTimeout(presenterFitResizeTimer);
+    presenterFitResizeTimer = window.setTimeout(schedulePresenterWordFit, 60);
+});
+
+if (document.fonts?.ready) {
+    document.fonts.ready.then(schedulePresenterWordFit).catch(() => {});
+}
 
 /* ==============================================
    Initialize
