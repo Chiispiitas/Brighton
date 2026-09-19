@@ -1,10 +1,31 @@
 # Brighton Placement — Wix setup
 
-This setup is for the adaptive placement app at `/Placement/`.
+Final frontend/backend contract: `2026-09-19.7`
 
-The browser renders questions, but **answer keys, scoring, routing, final placement and speaking grades remain server-authoritative**.
+The browser renders visible questions. Wix remains authoritative for answer keys, objective scoring, adaptive routing, Speaking acceptance, final placement, resume state and the shareable result summary.
 
-Current contract version: `2026-09-19.6`
+## Backend file
+
+Use the complete backend from:
+
+`Placement/wix-backend/http-functions.js`
+
+The same code is mirrored in:
+
+`Placement/wix-http-functions.example.js`
+
+HTTP endpoints:
+
+- `POST /_functions/startPlacement`
+- `POST /_functions/resumePlacement`
+- `POST /_functions/placementStep`
+- `POST /_functions/submitSpeaking`
+- `POST /_functions/skipSpeaking`
+- `POST /_functions/placementResult`
+
+`placementStep` is idempotent for the most recently completed module, so a network failure after Wix saves the route no longer breaks the Retry button.
+
+The frontend also verifies saved sessions against Wix on reload instead of trusting Local Storage alone.
 
 ## PlacementSessions
 
@@ -15,6 +36,7 @@ Collection ID: `PlacementSessions`
 | Client session ID | `clientSessionId` | Text |
 | Student name | `studentName` | Text |
 | Placement version | `placementVersion` | Text |
+| Status | `status` | Text |
 | Phase | `phase` | Text |
 | Module ID | `moduleId` | Text |
 | Route JSON | `routeJson` | Text |
@@ -26,6 +48,8 @@ Collection ID: `PlacementSessions`
 | Provisional level | `provisionalLevel` | Text |
 | Final level | `finalLevel` | Text |
 | Confidence | `confidence` | Number |
+
+Runtime collection. Normally starts empty.
 
 ## PlacementResponses
 
@@ -46,13 +70,13 @@ Collection ID: `PlacementResponses`
 | Response time ms | `responseTimeMs` | Number |
 | Answered at | `answeredAt` | Date and Time |
 
-## PlacementItems — private answer keys
+Runtime collection. Normally starts empty.
+
+## PlacementItems — PRIVATE answer keys
 
 Collection ID: `PlacementItems`
 
-This collection must be **backend-only / private**. Do not make it readable from the public site.
-
-The visible question text lives in `Placement/item-bank.js`. This collection stores only the grading metadata.
+This collection must be backend-only/private.
 
 | Field name | Field ID | Type |
 | --- | --- | --- |
@@ -64,31 +88,17 @@ The visible question text lives in `Placement/item-bank.js`. This collection sto
 | Weight | `weight` | Number |
 | Active | `isActive` | Boolean |
 
-Every visible item in these modules needs one matching private row:
+Current answer-key version:
 
-- `calibration-01`
-- `lang-a1`
-- `lang-a2`
-- `lang-b1`
-- `lang-b2`
-- `reading-prea1`
-- `reading-a1`
-- `reading-a2`
-- `reading-b1`
-- `reading-b1plus`
-- `reading-b2`
-- `reading-c1`
-- `listening-prea1`
-- `listening-a1`
-- `listening-a2`
-- `listening-b1`
-- `listening-b1plus`
-- `listening-b2`
-- `listening-c1`
+`2026-09-19.7`
 
-Set `placementVersion` to `2026-09-19.6`, `weight` to `1`, and `isActive` to `true`.
+The production backend uses a separate `ITEM_KEY_VERSION`, so future frontend-only changes do not require duplicating the answer-key rows.
 
-Do **not** place `correctOptionId` values in the public GitHub repository.
+The real populated `PlacementItems.csv` is intentionally **not committed to this public GitHub repository** because it contains the correct answers. Import the private CSV supplied separately into Wix.
+
+Public schema/template files live under:
+
+`Placement/wix-cms/`
 
 ## PlacementSpeaking
 
@@ -116,59 +126,52 @@ Collection ID: `PlacementSpeaking`
 | Communication | `communication` | Number |
 | Speaking level | `speakingLevel` | Text |
 | Grader version | `graderVersion` | Text |
-| Status | `status` | Text |
 | Metrics JSON | `metricsJson` | Text |
 | Created at | `createdAt` | Date and Time |
 
-## HTTP functions
+Runtime collection. Normally starts empty.
 
-Copy `Placement/wix-http-functions.example.js` into the site's existing backend `http-functions.js`.
+V1 does not upload the raw microphone recording, so `audioUrl` remains blank.
 
-The current app uses:
+## Final result screen
 
-- `POST /_functions/startPlacement`
-- `POST /_functions/placementStep`
-- `POST /_functions/submitSpeaking`
-- `POST /_functions/skipSpeaking`
+When a placement finishes, Wix rebuilds the result from stored responses and returns:
 
-`placementStep` verifies the active session and module, loads the private answer keys from `PlacementItems`, stores item telemetry in `PlacementResponses`, and chooses the next module.
+- student name;
+- final level;
+- result ID;
+- completion date;
+- Language Use result;
+- Reading result;
+- Listening result;
+- Speaking result, or `Not scored` when Speaking was skipped after a detected technical error.
 
-The first routing pass is intentionally simple and auditable:
+The public result screen can then be screenshotted, saved as PNG or shared through the browser's native Share sheet.
 
-- Calibration chooses one of four Language bands: A1, A2, B1 or B2.
-- The selected Language module produces a provisional PRE-A1 through C1 estimate and routes the student into the matching Reading band.
-- Reading contains one short level-matched text and four questions.
-- A Reading result of 0–1/4 moves the provisional level down one band, 2–3/4 keeps it stable, and 4/4 moves it up one band.
-- Reading then routes into the matching Listening band.
-- Listening uses three independent MP3 clips, one question per clip.
-- Each clip may be started a maximum of three times. The frontend saves that count locally and the response telemetry stores the number of plays used.
-- The backend rejects Listening answers that report zero plays.
-- A Listening result of 0/3 moves the provisional level down one band, 1–2/3 keeps it stable, and 3/3 moves it up one band.
-- Listening then routes into a level-matched Speaking module such as `speaking-b1plus`.
+The screen is deliberately labelled **Placement result · not a CEFR certification**.
 
-Speaking is graded without a paid AI service. The browser records the answer and, where supported, uses the browser's built-in English speech-recognition capability to produce a transcript. Wix then calculates the rubric deterministically from the transcript plus measurable recording features.
+## Adaptive routing
 
-The deterministic rubric uses:
-- fluency: duration, speech activity, pace and filler rate;
-- grammar: a **structural-range proxy** based on length, clause markers and speech segments; it does not detect grammatical errors;
-- vocabulary: response length, lexical variety and longer-word usage;
-- pronunciation: an **intelligibility proxy** based on recognition success, speech activity and plausible pace; it is not phoneme-level pronunciation scoring;
-- communication: a task-completion/coherence proxy based on length, connectors and speech segments.
-
-Speaking can move the objective estimate by at most one adjacent Brighton band.
-
-If a real Speaking error is detected — for example microphone access fails, browser speech recognition is unavailable, the answer cannot be transcribed, or the recording has too little usable speech — the student sees **I cannot speak now**. That button only appears on the Speaking error screen. Choosing it skips Speaking and finalizes the existing Language + Reading + Listening level through `skipSpeaking`.
-
-Skipping Speaking does not create any teacher-review flag or placement-status label. The final screen simply shows the resulting level.
-
-The current version does **not upload the raw recording** to Wix. The audio is used in-browser for measurement and then discarded after submission. `audioUrl` remains blank.
+- Calibration: 5 items → routes to A1, A2, B1 or B2 Language.
+- Language: 5 items → produces provisional PRE-A1 through C1 band.
+- Reading: 4 items → 0–1 down one band, 2–3 stable, 4 up one band.
+- Listening: 3 independent clips → 0 down one band, 1–2 stable, 3 up one band.
+- Speaking: deterministic browser/Wix grading may move one adjacent band.
+- Speaking technical failure: `I cannot speak now` becomes available and finalizes the objective Language + Reading + Listening band.
 
 ## Permissions
 
 Use restrictive CMS permissions for every Placement collection.
 
-The public GitHub app should never write directly to CMS and must never be able to read `PlacementItems`.
+The public site must never read `PlacementItems` directly. Only Wix backend code should query it.
 
-## Versioning
+## CSV files
 
-When routing logic or the private item keys change materially, increment `PLACEMENT_VERSION` in both the frontend and Wix backend. Keep old sessions tied to the version under which they were taken.
+Public templates:
+
+- `Placement/wix-cms/PlacementSessions.csv`
+- `Placement/wix-cms/PlacementResponses.csv`
+- `Placement/wix-cms/PlacementSpeaking.csv`
+- `Placement/wix-cms/PlacementItems.PRIVATE.template.csv`
+
+The populated private answer-key CSV is supplied separately and should be kept out of public source control.
