@@ -12,14 +12,14 @@ Use the same modular layout as the other Brighton/Wix systems:
 ```
 Backend/
 ├── http-functions.js   ← the site's existing public router
-├── core.js             ← reusable HTTP/CORS/CMS helpers
+├── placement-core.js   ← Placement-only HTTP/CORS/CMS helpers
 ├── placement.js        ← Placement business logic
 └── ...existing Tests/Exams modules
 ```
 
 Files supplied under `Placement/wix-backend/`:
 
-- `core.js`
+- `placement-core.js`
 - `placement.js`
 - `http-functions-placement-routes.js` — merge this into the existing `Backend/http-functions.js`; do **not** replace existing Tests/Exams routes.
 
