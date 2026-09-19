@@ -1,7 +1,7 @@
 "use strict";
 
 (() => {
-  const PLACEMENT_VERSION = "2026-09-19.6";
+  const PLACEMENT_VERSION = "2026-09-19.7";
   const STORAGE_KEY = "brighton-placement-session-v1";
   const MAX_LISTENING_PLAYS = 3;
   const modules = window.BRIGHTON_PLACEMENT_MODULES || {};
@@ -113,6 +113,22 @@
     });
   }
 
+  async function resumeRemoteSession(saved) {
+    return apiPost("resumePlacement", {
+      sessionId: saved.sessionId,
+      clientSessionId: saved.clientSessionId,
+      placementVersion: PLACEMENT_VERSION
+    });
+  }
+
+  async function fetchPlacementResult() {
+    return apiPost("placementResult", {
+      sessionId: session.sessionId,
+      clientSessionId: session.clientSessionId,
+      placementVersion: PLACEMENT_VERSION
+    });
+  }
+
   function setTransition(stage, label) {
     els.transitionStage.textContent = stage;
     els.transitionLabel.textContent = label;
@@ -212,29 +228,62 @@
     renderQuestion();
   }
 
-  function resumeSavedSession(saved) {
+  async function resumeSavedSession(saved) {
+    let remote = null;
+
+    try {
+      remote = await resumeRemoteSession(saved);
+    } catch (error) {
+      console.warn("Could not verify saved placement session.", error);
+    }
+
     session = {
       clientSessionId: saved.clientSessionId,
       sessionId: saved.sessionId,
-      placementVersion: saved.placementVersion,
-      studentName: saved.studentName || "",
-      phase: saved.phase || "calibration",
-      moduleId: saved.moduleId || saved.currentModuleId || "calibration-01",
-      provisionalLevel: saved.provisionalLevel || "",
-      startedAt: saved.startedAt || ""
+      placementVersion: remote?.placementVersion || saved.placementVersion,
+      studentName: remote?.studentName || saved.studentName || "",
+      status: remote?.status || saved.status || "active",
+      phase: remote?.phase || saved.phase || "calibration",
+      moduleId: remote?.moduleId || saved.moduleId || saved.currentModuleId || "calibration-01",
+      provisionalLevel: remote?.provisionalLevel || saved.provisionalLevel || "",
+      finalLevel: remote?.finalLevel || saved.finalLevel || "",
+      completedAt: remote?.completedAt || saved.completedAt || "",
+      startedAt: saved.startedAt || "",
+      resultSummary: remote?.result || saved.resultSummary || null
     };
 
-    currentModuleId = saved.currentModuleId || session.moduleId;
-    currentQuestionIndex = Math.max(0, Number(saved.currentQuestionIndex) || 0);
-    moduleAnswers = Array.isArray(saved.moduleAnswers) ? saved.moduleAnswers : [];
+    const serverModuleId = session.moduleId;
+    const sameModule = saved.currentModuleId === serverModuleId;
+
+    currentModuleId = serverModuleId;
+    currentQuestionIndex = sameModule ? Math.max(0, Number(saved.currentQuestionIndex) || 0) : 0;
+    moduleAnswers = sameModule && Array.isArray(saved.moduleAnswers) ? saved.moduleAnswers : [];
     listeningPlays = saved.listeningPlays && typeof saved.listeningPlays === "object"
       ? saved.listeningPlays
       : {};
 
     els.candidateName.textContent = session.studentName;
+    saveLocalSession();
 
-    if (session.phase === "result" && session.finalLevel) {
-      renderPlacementResult({ finalLevel: session.finalLevel });
+    if (session.status === "completed" || session.phase === "result") {
+      let result = session.resultSummary;
+
+      if (!result) {
+        try {
+          const response = await fetchPlacementResult();
+          result = response.result;
+          session.resultSummary = result;
+          saveLocalSession();
+        } catch (error) {
+          console.warn("Could not reload placement result details.", error);
+        }
+      }
+
+      renderPlacementResult(result || {
+        studentName: session.studentName,
+        finalLevel: session.finalLevel || session.provisionalLevel,
+        completedAt: session.completedAt
+      });
       return;
     }
 
@@ -902,10 +951,12 @@
       session.finalLevel = result.finalLevel;
       session.status = "completed";
       session.confidence = result.confidence;
+      session.completedAt = result.result?.completedAt || new Date().toISOString();
+      session.resultSummary = result.result || null;
       saveLocalSession();
 
       cleanupSpeakingMedia();
-      renderPlacementResult(result);
+      renderPlacementResult(result.result || result);
     } catch (error) {
       console.error(error);
       renderSpeakingSubmitRetry({
@@ -953,10 +1004,12 @@
       session.phase = "result";
       session.finalLevel = result.finalLevel || session.provisionalLevel;
       session.status = "completed";
+      session.completedAt = result.result?.completedAt || new Date().toISOString();
+      session.resultSummary = result.result || null;
       saveLocalSession();
 
       cleanupSpeakingMedia();
-      renderPlacementResult({ finalLevel: session.finalLevel });
+      renderPlacementResult(result.result || { finalLevel: session.finalLevel });
     } catch (error) {
       console.error(error);
       if (button) button.disabled = false;
@@ -993,10 +1046,12 @@
         session.finalLevel = result.finalLevel;
         session.status = "completed";
         session.confidence = result.confidence;
+        session.completedAt = result.result?.completedAt || new Date().toISOString();
+        session.resultSummary = result.result || null;
         saveLocalSession();
 
         cleanupSpeakingMedia();
-        renderPlacementResult(result);
+        renderPlacementResult(result.result || result);
       } catch (error) {
         console.error(error);
       }
@@ -1025,24 +1080,258 @@
     }
   }
 
-  function renderPlacementResult(result) {
+  function levelDescription(level) {
+    return ({
+      "PRE-A1": "Starter",
+      "A1": "Beginner",
+      "A2": "Elementary",
+      "B1": "Intermediate",
+      "B1+": "Intermediate Plus",
+      "B2": "Upper Intermediate",
+      "C1": "Advanced"
+    })[level] || "";
+  }
+
+  function resultDate(value) {
+    const date = value ? new Date(value) : new Date();
+    if (Number.isNaN(date.getTime())) return "";
+    return date.toLocaleDateString("en-GB", {
+      day: "2-digit",
+      month: "short",
+      year: "numeric"
+    });
+  }
+
+  function resultSkillCard(skill, key) {
+    const safeSkill = skill || {};
+    const skipped = Boolean(safeSkill.skipped);
+    const score = Number.isFinite(Number(safeSkill.score))
+      ? Math.max(0, Math.min(100, Number(safeSkill.score)))
+      : 0;
+    const level = safeSkill.level || "—";
+    const description = safeSkill.description || (safeSkill.level ? levelDescription(safeSkill.level) : "");
+
+    return `
+      <div class="certificate-skill ${skipped ? "skipped" : ""}">
+        <div class="skill-ring" style="--skill-score:${skipped ? 0 : score}">
+          <span>${escapeHtml(safeSkill.displayScore || "—")}</span>
+        </div>
+        <strong>${escapeHtml(safeSkill.label || key)}</strong>
+        <span class="skill-level">${escapeHtml(skipped ? "Not scored" : level)}</span>
+        <small>${escapeHtml(skipped ? "Speaking skipped" : description)}</small>
+      </div>
+    `;
+  }
+
+  function resultScale(level) {
+    const bands = ["PRE-A1", "A1", "A2", "B1", "B1+", "B2", "C1"];
+    return bands.map((band) => `
+      <div class="certificate-band ${band === level ? "active" : ""}">
+        <strong>${escapeHtml(band)}</strong>
+        <span>${escapeHtml(levelDescription(band))}</span>
+      </div>
+    `).join("");
+  }
+
+  function resultFilename(result) {
+    const name = String(result.studentName || "student")
+      .trim()
+      .replace(/[^a-z0-9]+/gi, "-")
+      .replace(/^-|-$/g, "")
+      .toLowerCase() || "student";
+    return `brighton-placement-${name}.png`;
+  }
+
+  async function captureResultImage() {
+    const certificate = document.querySelector("#resultCertificate");
+    if (!certificate) throw new Error("Result is not available.");
+    if (!window.html2canvas) throw new Error("Image export is unavailable.");
+
+    if (document.fonts?.ready) {
+      try { await document.fonts.ready; } catch {}
+    }
+
+    const canvas = await window.html2canvas(certificate, {
+      backgroundColor: "#ffffff",
+      scale: Math.min(2.5, Math.max(2, window.devicePixelRatio || 1)),
+      useCORS: true,
+      logging: false,
+      windowWidth: certificate.scrollWidth,
+      windowHeight: certificate.scrollHeight
+    });
+
+    return new Promise((resolve, reject) => {
+      canvas.toBlob((blob) => {
+        if (blob) resolve(blob);
+        else reject(new Error("Could not create result image."));
+      }, "image/png", .96);
+    });
+  }
+
+  async function saveResultImage(result) {
+    const button = document.querySelector("#saveResultBtn");
+    if (button) button.disabled = true;
+
+    try {
+      const blob = await captureResultImage();
+      const url = URL.createObjectURL(blob);
+      const link = document.createElement("a");
+      link.href = url;
+      link.download = resultFilename(result);
+      document.body.appendChild(link);
+      link.click();
+      link.remove();
+      window.setTimeout(() => URL.revokeObjectURL(url), 1000);
+    } catch (error) {
+      console.error(error);
+    } finally {
+      if (button) button.disabled = false;
+    }
+  }
+
+  async function shareResultImage(result) {
+    const button = document.querySelector("#shareResultBtn");
+    if (button) button.disabled = true;
+
+    try {
+      const blob = await captureResultImage();
+      const file = new File([blob], resultFilename(result), { type: "image/png" });
+
+      if (navigator.share && navigator.canShare?.({ files: [file] })) {
+        await navigator.share({
+          title: "Brighton Placement Result",
+          text: `${result.studentName || "Student"} · ${result.finalLevel || ""}`,
+          files: [file]
+        });
+        return;
+      }
+
+      if (navigator.share) {
+        await navigator.share({
+          title: "Brighton Placement Result",
+          text: `${result.studentName || "Student"} · ${result.finalLevel || ""}`,
+          url: window.location.href
+        });
+        return;
+      }
+
+      await saveResultImage(result);
+    } catch (error) {
+      if (error?.name !== "AbortError") console.error(error);
+    } finally {
+      if (button) button.disabled = false;
+    }
+  }
+
+  function renderPlacementResult(payload) {
+    const result = payload?.result || payload || {};
+    const finalLevel = result.finalLevel || session?.finalLevel || session?.provisionalLevel || "—";
+    const finalDescription = result.finalDescription || levelDescription(finalLevel);
+    const studentName = result.studentName || session?.studentName || "";
+    const completedAt = result.completedAt || session?.completedAt || new Date().toISOString();
+    const resultId = result.resultId || `BR-${String(session?.sessionId || "").slice(-8).toUpperCase()}`;
+    const skills = result.skills || {};
+
+    session.resultSummary = {
+      ...result,
+      studentName,
+      finalLevel,
+      finalDescription,
+      completedAt,
+      resultId
+    };
+    session.finalLevel = finalLevel;
+    session.phase = "result";
+    session.status = "completed";
+    session.completedAt = completedAt;
+    saveLocalSession();
+
     openShell();
+    els.placementShell.classList.add("result-shell");
     setShellStage(4);
     els.stageCard.classList.remove("question-mode", "reading-mode", "listening-mode", "speaking-mode");
     els.stageCard.classList.add("result-mode");
     els.stageIndex.textContent = "✓";
     els.stageEyebrow.textContent = "Placement complete";
-    els.stageTitle.textContent = "Your level.";
+    els.stageTitle.textContent = "";
     els.stageNote.textContent = "";
     els.introScan.classList.add("hidden");
 
     els.stageRoot.innerHTML = `
-      <div class="placement-result">
-        <span class="result-level">${escapeHtml(result.finalLevel || session.provisionalLevel || "—")}</span>
-        <strong>PLACEMENT COMPLETE</strong>
-        <p>Your placement is ready.</p>
+      <div class="result-page">
+        <article id="resultCertificate" class="result-certificate">
+          <header class="certificate-header">
+            <img src="../Exams/assets/brighton-logo.png" alt="Brighton English School" />
+            <div>
+              <span>Adaptive Placement Test</span>
+              <strong>English placement result</strong>
+            </div>
+          </header>
+
+          <section class="certificate-hero">
+            <p class="certificate-kicker">This result belongs to</p>
+            <h3>${escapeHtml(studentName)}</h3>
+            <p class="certificate-copy">and reflects the level reached in the Brighton adaptive placement assessment.</p>
+
+            <div class="level-art" aria-hidden="true">
+              <i></i><i></i><i></i><i></i>
+              <div class="level-art-core">
+                <span>English level</span>
+                <strong>${escapeHtml(finalLevel)}</strong>
+                <small>${escapeHtml(finalDescription)}</small>
+              </div>
+            </div>
+
+            <div class="certificate-completed">
+              <span>✓ Language Use</span>
+              <span>✓ Reading</span>
+              <span>✓ Listening</span>
+              <span>${skills.speaking?.skipped ? "— Speaking" : "✓ Speaking"}</span>
+            </div>
+          </section>
+
+          <section class="certificate-results">
+            <h4>Understanding the result</h4>
+            <div class="certificate-scale">
+              ${resultScale(finalLevel)}
+            </div>
+
+            <p class="certificate-explainer">
+              ${finalLevel === "B1+"
+                ? "B1+ is Brighton English School's internal bridge band between CEFR B1 and B2."
+                : "The overall band is produced by Brighton's adaptive Language Use, Reading and Listening route, with Speaking included when it can be processed."}
+            </p>
+
+            <div class="certificate-skills">
+              ${resultSkillCard(skills.language, "Language Use")}
+              ${resultSkillCard(skills.reading, "Reading")}
+              ${resultSkillCard(skills.listening, "Listening")}
+              ${resultSkillCard(skills.speaking, "Speaking")}
+            </div>
+          </section>
+
+          <footer class="certificate-footer">
+            <div><span>Result ID</span><strong>${escapeHtml(resultId)}</strong></div>
+            <div><span>Completed</span><strong>${escapeHtml(resultDate(completedAt))}</strong></div>
+            <p>Placement result · not a CEFR certification</p>
+          </footer>
+        </article>
+
+        <div class="result-actions" data-html2canvas-ignore="true">
+          <button id="saveResultBtn" class="result-action primary-result-action" type="button">
+            <span>Save image</span><span aria-hidden="true">↓</span>
+          </button>
+          <button id="shareResultBtn" class="result-action" type="button">
+            <span>Share</span><span aria-hidden="true">↗</span>
+          </button>
+        </div>
       </div>
     `;
+
+    document.querySelector("#saveResultBtn")?.addEventListener("click", () => saveResultImage(session.resultSummary));
+    document.querySelector("#shareResultBtn")?.addEventListener("click", () => shareResultImage(session.resultSummary));
+
+    window.scrollTo({ top: 0, behavior: "smooth" });
   }
 
   function enterCalibration(name) {
