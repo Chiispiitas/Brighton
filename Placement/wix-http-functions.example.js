@@ -463,6 +463,17 @@ export function options_placementStep() {
   });
 }
 
+export function options_submitSpeaking() {
+  return response({
+    status: 204,
+    headers: {
+      ...CORS_HEADERS,
+      "Access-Control-Allow-Methods": "POST, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type"
+    }
+  });
+}
+
 export async function post_startPlacement(request) {
   try {
     const payload = await request.body.json();
@@ -649,6 +660,137 @@ export async function post_placementStep(request) {
     });
   } catch (error) {
     console.error("placementStep failed:", error);
+    return placementServerError(error);
+  }
+}
+
+
+export async function post_submitSpeaking(request) {
+  try {
+    const payload = await request.body.json();
+
+    const sessionId = String(payload.sessionId || "").trim();
+    const clientSessionId = String(payload.clientSessionId || "").trim();
+    const moduleId = String(payload.moduleId || "").trim();
+    const promptId = String(payload.promptId || "").trim();
+
+    if (!sessionId || !clientSessionId || !moduleId || !promptId) {
+      return placementBadRequest("Incomplete speaking submission.");
+    }
+
+    const session = await getPlacementSession(sessionId, clientSessionId);
+    if (!session || session.status !== "active") {
+      return placementBadRequest("Placement session not found.");
+    }
+
+    if (session.placementVersion !== PLACEMENT_VERSION) {
+      return placementBadRequest("Placement version changed. Start a new placement.");
+    }
+
+    if (String(session.moduleId || "") !== moduleId || !/^speaking-/.test(moduleId)) {
+      return placementBadRequest("This speaking module is no longer active.");
+    }
+
+    const level = SPEAKING_LEVEL_BY_MODULE[moduleId];
+    const expectedPromptId = SPEAKING_PROMPT_BY_MODULE[moduleId];
+
+    if (!level || promptId !== expectedPromptId) {
+      return placementBadRequest("Invalid speaking prompt.");
+    }
+
+    const grade = gradeSpeakingDeterministically(payload, level);
+    const now = new Date();
+
+    const existing = await wixData
+      .query("PlacementSpeaking")
+      .eq("sessionId", session._id)
+      .limit(1)
+      .find({ suppressAuth: true });
+
+    const speakingRecord = {
+      ...(existing.items[0] || {}),
+      sessionId: session._id,
+      clientSessionId: session.clientSessionId,
+      placementVersion: session.placementVersion,
+      promptId,
+      promptLevel: level,
+      audioUrl: "",
+      transcript: grade.transcript,
+      durationSeconds: grade.durationSeconds,
+      speechSeconds: grade.speechSeconds,
+      wordCount: grade.wordCount,
+      wpm: grade.wpm,
+      recognitionConfidence: grade.recognitionConfidence,
+      segmentCount: grade.segmentCount,
+      fluency: grade.fluency,
+      grammar: grade.grammar,
+      vocabulary: grade.vocabulary,
+      pronunciation: grade.pronunciation,
+      communication: grade.communication,
+      speakingLevel: grade.speakingLevel,
+      graderVersion: "deterministic-browser-v1",
+      needsReview: grade.reviewRequired,
+      status: grade.status,
+      metricsJson: JSON.stringify({
+        composite: grade.composite,
+        speechRatio: grade.speechRatio,
+        uniqueWords: grade.uniqueWords,
+        uniqueRatio: grade.uniqueRatio,
+        longWordRatio: grade.longWordRatio,
+        connectorCount: grade.connectorCount,
+        complexCount: grade.complexCount,
+        fillerCount: grade.fillerCount,
+        transcriptAvailable: grade.transcriptAvailable
+      }),
+      createdAt: existing.items[0]?.createdAt || now
+    };
+
+    if (existing.items.length) {
+      await wixData.update("PlacementSpeaking", speakingRecord, { suppressAuth: true });
+    } else {
+      await wixData.insert("PlacementSpeaking", speakingRecord, { suppressAuth: true });
+    }
+
+    const updatedSession = {
+      ...session,
+      status: "completed",
+      phase: "result",
+      finalLevel: grade.finalLevel,
+      confidence: grade.confidence,
+      reviewRequired: grade.reviewRequired,
+      placementStatus: grade.status,
+      updatedAt: now,
+      completedAt: now,
+      progressJson: JSON.stringify({
+        stage: 4,
+        totalStages: 4,
+        completed: true,
+        speakingLevel: grade.speakingLevel,
+        speakingComposite: grade.composite,
+        placementStatus: grade.status
+      })
+    };
+
+    await wixData.update(PLACEMENT_SESSIONS, updatedSession, { suppressAuth: true });
+
+    return placementJsonOK({
+      success: true,
+      finalLevel: grade.finalLevel,
+      speakingLevel: grade.speakingLevel,
+      status: grade.status,
+      reviewRequired: grade.reviewRequired,
+      confidence: grade.confidence,
+      rubric: {
+        fluency: grade.fluency,
+        grammar: grade.grammar,
+        vocabulary: grade.vocabulary,
+        pronunciation: grade.pronunciation,
+        communication: grade.communication,
+        composite: grade.composite
+      }
+    });
+  } catch (error) {
+    console.error("submitSpeaking failed:", error);
     return placementServerError(error);
   }
 }
