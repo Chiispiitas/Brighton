@@ -1013,32 +1013,36 @@ button { cursor: pointer; }
 }
 
 .mic-mark {
-  width: 72px;
-  height: 92px;
+  width: 58px;
+  height: 66px;
   position: relative;
+  background:
+    linear-gradient(var(--ink), var(--ink)) 50% 52px / 4px 10px no-repeat,
+    linear-gradient(var(--ink), var(--ink)) 50% 62px / 28px 4px no-repeat;
 }
 
 .mic-mark::before {
   content: "";
   position: absolute;
-  left: 21px;
-  top: 0;
-  width: 30px;
-  height: 54px;
-  border-radius: 18px;
+  left: 17px;
+  top: 2px;
+  width: 24px;
+  height: 38px;
+  border-radius: 14px;
   background: var(--teal);
 }
 
 .mic-mark::after {
   content: "";
   position: absolute;
-  left: 12px;
-  top: 30px;
-  width: 46px;
-  height: 40px;
+  left: 8px;
+  top: 21px;
+  width: 42px;
+  height: 30px;
   border: 4px solid var(--ink);
   border-top: 0;
-  border-radius: 0 0 28px 28px;
+  border-radius: 0 0 24px 24px;
+  box-sizing: border-box;
 }
 
 .speaking-handoff strong,
@@ -1471,10 +1475,9 @@ button { cursor: pointer; }
 }
 
 .certificate-hero {
-  padding: clamp(42px, 7vw, 76px) clamp(24px, 6vw, 64px) 42px;
+  padding: clamp(42px, 7vw, 76px) clamp(24px, 6vw, 64px) 48px;
   text-align: center;
-  background:
-    linear-gradient(180deg, #fff 0 82%, #f3fbfa 82% 100%);
+  background: #fff;
 }
 
 .certificate-kicker {
