@@ -33,6 +33,8 @@ Public Placement routes:
 - `POST /_functions/brightonPlacementSubmitSpeaking`
 - `POST /_functions/brightonPlacementSkipSpeaking`
 - `POST /_functions/brightonPlacementResult`
+- `GET /_functions/brightonPlacementResults` — teacher results list
+- `GET /_functions/brightonPlacementDashboardResult?sessionId=...` — teacher result details
 
 After adding/changing backend code, publish the Wix site before testing the production `/_functions/` URLs.
 
