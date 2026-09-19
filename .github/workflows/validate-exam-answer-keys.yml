@@ -44,6 +44,10 @@ jobs:
           node --check Exams/exams/a1-rw/main.js
           node --check Exams/exams/a1-rw/exam-data.js
           node --check Exams/config.js
+      - name: Validate A1 Listening JavaScript syntax
+        run: |
+          node --check Exams/exams/a1-listening/main.js
+          node --check Exams/exams/a1-listening/listening-data.js
       - name: Validate A1 player boot wiring
         run: |
           node <<'NODE'
@@ -68,6 +72,8 @@ jobs:
           NODE
       - name: Audit A1 Reading and Writing consistency
         run: node Exams/validate-a1-rw-consistency.mjs
+      - name: Audit A1 Listening consistency
+        run: node Exams/validate-a1-listening-consistency.mjs
       - name: Audit Brighton test answer keys
         run: node Exams/validate-answer-keys.mjs
       - name: Cross-check answers across overlapping tests
