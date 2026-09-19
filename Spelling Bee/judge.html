@@ -5,8 +5,8 @@
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <title>Spelling Bee Judge View</title>
   <link href="assets/favicon.png" rel="icon">
-  <link href="style.css?v=20260918-longword1" rel="stylesheet">
-  <link href="control-view.css" rel="stylesheet">
+  <link href="style.css?v=20260919-judgeundo-descenders1" rel="stylesheet">
+  <link href="control-view.css?v=20260919-judgeundo-descenders1" rel="stylesheet">
 </head>
 <body class="control-view" data-role="judge">
   <section class="join-gate" id="join-gate">
@@ -40,6 +40,7 @@
           <p class="word-meta" id="word-meta">Waiting for presenter</p>
           <div class="verdict-row" aria-label="Judge current-letter decision">
             <button class="verdict-button incorrect" type="button" data-verdict="incorrect" title="Mark current letter incorrect (P)">×</button>
+            <button class="verdict-button undo" id="undo-letter-button" type="button" data-action="undo" title="Undo previous letter (Backspace)">⌫</button>
             <button class="verdict-button correct" type="button" data-verdict="correct" title="Mark current letter correct (O)">✓</button>
           </div>
           <div class="control-toolbar">
