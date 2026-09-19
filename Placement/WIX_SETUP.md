@@ -1,177 +1,168 @@
 # Brighton Placement — Wix setup
 
-Final frontend/backend contract: `2026-09-19.7`
+Frontend/backend contract: `2026-09-19.8`  
+Private answer-key version: `2026-09-19.7`
 
-The browser renders visible questions. Wix remains authoritative for answer keys, objective scoring, adaptive routing, Speaking acceptance, final placement, resume state and the shareable result summary.
+## Brighton Exams Wix site
 
-## Backend file
+Target site:
 
-Use the complete backend from:
+- Site: **Brighton Exams**
+- Site ID: `06a80236-67d7-4837-b4c8-2a62b29ee79b`
+- URL: `https://chiispiitas.wixsite.com/brightonexams`
 
-`Placement/wix-backend/http-functions.js`
+## CMS status — configured
 
-The same code is mirrored in:
+The Placement system uses four new, isolated CMS collections:
 
-`Placement/wix-http-functions.example.js`
+- `BrightonPlacementSessions`
+- `BrightonPlacementResponses`
+- `BrightonPlacementItems`
+- `BrightonPlacementSpeaking`
 
-HTTP endpoints:
+They were created with ADMIN-only read/insert/update/remove permissions.
 
-- `POST /_functions/startPlacement`
-- `POST /_functions/resumePlacement`
-- `POST /_functions/placementStep`
-- `POST /_functions/submitSpeaking`
-- `POST /_functions/skipSpeaking`
-- `POST /_functions/placementResult`
+`BrightonPlacementItems` has been seeded with **74/74** private answer-key rows for item-key version `2026-09-19.7`.
 
-`placementStep` is idempotent for the most recently completed module, so a network failure after Wix saves the route no longer breaks the Retry button.
+No existing Tests/Exams collection was renamed, patched, truncated, deleted, or reseeded.
 
-The frontend also verifies saved sessions against Wix on reload instead of trusting Local Storage alone.
+## Backend isolation
 
-## PlacementSessions
+Wix requires externally exposed Velo HTTP functions to be exported from the single reserved site file:
 
-Collection ID: `PlacementSessions`
+`Backend/http-functions.js`
 
-| Field name | Field ID | Type |
-| --- | --- | --- |
-| Client session ID | `clientSessionId` | Text |
-| Student name | `studentName` | Text |
-| Placement version | `placementVersion` | Text |
-| Status | `status` | Text |
-| Phase | `phase` | Text |
-| Module ID | `moduleId` | Text |
-| Route JSON | `routeJson` | Text |
-| Progress JSON | `progressJson` | Text |
-| Started at | `startedAt` | Date and Time |
-| Updated at | `updatedAt` | Date and Time |
-| Completed at | `completedAt` | Date and Time |
-| Time spent seconds | `timeSpentSeconds` | Number |
-| Provisional level | `provisionalLevel` | Text |
-| Final level | `finalLevel` | Text |
-| Confidence | `confidence` | Number |
+So Placement does **not** replace that file.
 
-Runtime collection. Normally starts empty.
+All Placement implementation lives in the separate module:
 
-## PlacementResponses
+`Backend/placement-api.js`
 
-Collection ID: `PlacementResponses`
+Source:
 
-| Field name | Field ID | Type |
-| --- | --- | --- |
-| Response key | `responseKey` | Text |
-| Session ID | `sessionId` | Text |
-| Client session ID | `clientSessionId` | Text |
-| Placement version | `placementVersion` | Text |
-| Module ID | `moduleId` | Text |
-| Phase | `phase` | Text |
-| Item ID | `itemId` | Text |
-| Response JSON | `responseJson` | Text |
-| Correct | `correct` | Boolean |
-| Score | `score` | Number |
-| Response time ms | `responseTimeMs` | Number |
-| Answered at | `answeredAt` | Date and Time |
+`Placement/wix-backend/placement-api.js`
 
-Runtime collection. Normally starts empty.
+The existing Tests/Exams `Backend/http-functions.js` should retain every current import and function. Add only the small namespaced adapter from:
 
-## PlacementItems — PRIVATE answer keys
+`Placement/wix-backend/http-functions-placement-adapter.example.js`
 
-Collection ID: `PlacementItems`
+This adds the following Placement-only endpoints:
 
-This collection must be backend-only/private.
+- `POST /_functions/brightonPlacementStart`
+- `POST /_functions/brightonPlacementResume`
+- `POST /_functions/brightonPlacementStep`
+- `POST /_functions/brightonPlacementSubmitSpeaking`
+- `POST /_functions/brightonPlacementSkipSpeaking`
+- `POST /_functions/brightonPlacementResult`
 
-| Field name | Field ID | Type |
-| --- | --- | --- |
-| Item ID | `itemId` | Text |
-| Module ID | `moduleId` | Text |
-| Placement version | `placementVersion` | Text |
-| Correct option ID | `correctOptionId` | Text |
-| Target level | `targetLevel` | Text |
-| Weight | `weight` | Number |
-| Active | `isActive` | Boolean |
+No existing Tests/Exams endpoint name is reused.
 
-Current answer-key version:
+## BrightonPlacementSessions
 
-`2026-09-19.7`
+Runtime collection. Starts empty.
 
-The production backend uses a separate `ITEM_KEY_VERSION`, so future frontend-only changes do not require duplicating the answer-key rows.
+| Field ID | Type |
+| --- | --- |
+| `clientSessionId` | Text |
+| `studentName` | Text |
+| `placementVersion` | Text |
+| `status` | Text |
+| `phase` | Text |
+| `moduleId` | Text |
+| `routeJson` | Text |
+| `progressJson` | Text |
+| `startedAt` | Date and Time |
+| `updatedAt` | Date and Time |
+| `completedAt` | Date and Time |
+| `timeSpentSeconds` | Number |
+| `provisionalLevel` | Text |
+| `finalLevel` | Text |
+| `confidence` | Number |
 
-The real populated `PlacementItems.csv` is intentionally **not committed to this public GitHub repository** because it contains the correct answers. Import the private CSV supplied separately into Wix.
+## BrightonPlacementResponses
 
-Public schema/template files live under:
+Runtime collection. Starts empty.
 
-`Placement/wix-cms/`
+| Field ID | Type |
+| --- | --- |
+| `responseKey` | Text |
+| `sessionId` | Text |
+| `clientSessionId` | Text |
+| `placementVersion` | Text |
+| `moduleId` | Text |
+| `phase` | Text |
+| `itemId` | Text |
+| `responseJson` | Text |
+| `correct` | Boolean |
+| `score` | Number |
+| `responseTimeMs` | Number |
+| `answeredAt` | Date and Time |
 
-## PlacementSpeaking
+## BrightonPlacementItems
 
-Collection ID: `PlacementSpeaking`
+Private answer-key collection.
 
-| Field name | Field ID | Type |
-| --- | --- | --- |
-| Session ID | `sessionId` | Text |
-| Client session ID | `clientSessionId` | Text |
-| Placement version | `placementVersion` | Text |
-| Prompt ID | `promptId` | Text |
-| Prompt level | `promptLevel` | Text |
-| Audio URL | `audioUrl` | URL |
-| Transcript | `transcript` | Text |
-| Duration seconds | `durationSeconds` | Number |
-| Speech seconds | `speechSeconds` | Number |
-| Word count | `wordCount` | Number |
-| Words per minute | `wpm` | Number |
-| Recognition confidence | `recognitionConfidence` | Number |
-| Segment count | `segmentCount` | Number |
-| Fluency | `fluency` | Number |
-| Grammar | `grammar` | Number |
-| Vocabulary | `vocabulary` | Number |
-| Pronunciation | `pronunciation` | Number |
-| Communication | `communication` | Number |
-| Speaking level | `speakingLevel` | Text |
-| Grader version | `graderVersion` | Text |
-| Metrics JSON | `metricsJson` | Text |
-| Created at | `createdAt` | Date and Time |
+| Field ID | Type |
+| --- | --- |
+| `itemId` | Text |
+| `moduleId` | Text |
+| `placementVersion` | Text |
+| `correctOptionId` | Text |
+| `targetLevel` | Text |
+| `weight` | Number |
+| `isActive` | Boolean |
 
-Runtime collection. Normally starts empty.
+The public GitHub repository must never contain the populated answer-key CSV.
 
-V1 does not upload the raw microphone recording, so `audioUrl` remains blank.
+The backend uses:
 
-## Final result screen
+`ITEM_KEY_VERSION = "2026-09-19.7"`
 
-When a placement finishes, Wix rebuilds the result from stored responses and returns:
+This is deliberately independent from the frontend/backend contract version.
 
-- student name;
-- final level;
-- result ID;
-- completion date;
-- Language Use result;
-- Reading result;
-- Listening result;
-- Speaking result, or `Not scored` when Speaking was skipped after a detected technical error.
+## BrightonPlacementSpeaking
 
-The public result screen can then be screenshotted, saved as PNG or shared through the browser's native Share sheet.
+Runtime collection. Starts empty.
 
-The screen is deliberately labelled **Placement result · not a CEFR certification**.
+| Field ID | Type |
+| --- | --- |
+| `sessionId` | Text |
+| `clientSessionId` | Text |
+| `placementVersion` | Text |
+| `promptId` | Text |
+| `promptLevel` | Text |
+| `audioUrl` | URL |
+| `transcript` | Text |
+| `durationSeconds` | Number |
+| `speechSeconds` | Number |
+| `wordCount` | Number |
+| `wpm` | Number |
+| `recognitionConfidence` | Number |
+| `segmentCount` | Number |
+| `fluency` | Number |
+| `grammar` | Number |
+| `vocabulary` | Number |
+| `pronunciation` | Number |
+| `communication` | Number |
+| `speakingLevel` | Text |
+| `graderVersion` | Text |
+| `metricsJson` | Text |
+| `createdAt` | Date and Time |
 
-## Adaptive routing
+V1 does not upload raw Speaking audio, so `audioUrl` remains blank.
 
-- Calibration: 5 items → routes to A1, A2, B1 or B2 Language.
-- Language: 5 items → produces provisional PRE-A1 through C1 band.
-- Reading: 4 items → 0–1 down one band, 2–3 stable, 4 up one band.
-- Listening: 3 independent clips → 0 down one band, 1–2 stable, 3 up one band.
-- Speaking: deterministic browser/Wix grading may move one adjacent band.
-- Speaking technical failure: `I cannot speak now` becomes available and finalizes the objective Language + Reading + Listening band.
+## Current routing
 
-## Permissions
+- Calibration: 5 items.
+- Language: 5 adaptive items.
+- Reading: 4 adaptive items.
+- Listening: 3 independent MP3 questions, maximum 3 plays each.
+- Speaking: browser recording/transcription plus deterministic server grading.
+- Speaking technical failure only: enables **I cannot speak now**, which preserves the objective level.
+- Result: shareable certificate-style placement result.
 
-Use restrictive CMS permissions for every Placement collection.
+## Public CMS templates
 
-The public site must never read `PlacementItems` directly. Only Wix backend code should query it.
+The public templates under `Placement/wix-cms/` contain schemas only.
 
-## CSV files
-
-Public templates:
-
-- `Placement/wix-cms/PlacementSessions.csv`
-- `Placement/wix-cms/PlacementResponses.csv`
-- `Placement/wix-cms/PlacementSpeaking.csv`
-- `Placement/wix-cms/PlacementItems.PRIVATE.template.csv`
-
-The populated private answer-key CSV is supplied separately and should be kept out of public source control.
+The real private answer keys are stored only in Wix.
