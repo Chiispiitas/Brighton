@@ -91,9 +91,11 @@
   async function apiPost(path, body) {
     if (!apiBase) throw new Error("Placement service is unavailable.");
 
+    // Use a CORS-safelisted content type so external GitHub Pages requests
+    // do not depend on an OPTIONS preflight before reaching the Wix function.
     const response = await fetch(`${apiBase}/${path}`, {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "text/plain;charset=UTF-8" },
       body: JSON.stringify(body)
     });
 
