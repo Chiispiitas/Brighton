@@ -11,3 +11,12 @@ Do not replace the existing Brighton Exams `http-functions.js`. Keep its Tests/E
 The frontend sends JSON as `text/plain;charset=UTF-8` to avoid unnecessary CORS preflight from GitHub Pages. `placement-core.readJsonBody()` accepts both JSON and text JSON bodies.
 
 The live Wix site must be **published** after backend changes before production `/_functions/` routes exist.
+
+
+## Deployment smoke test
+
+After merging the routes and publishing Wix, open:
+
+`https://chiispiitas.wixsite.com/brightonexams/_functions/brightonPlacementPing`
+
+A correctly loaded backend returns JSON with `service: "brighton-placement"`. If this URL is 404, Wix has not registered the Placement route block or one of its imported backend modules failed to load.
