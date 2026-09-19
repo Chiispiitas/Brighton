@@ -13,7 +13,7 @@ import {
 const PLACEMENT_SESSIONS = "PlacementSessions";
 const PLACEMENT_RESPONSES = "PlacementResponses";
 const PLACEMENT_ITEMS = "PlacementItems";
-const PLACEMENT_VERSION = "2026-09-19.4";
+const PLACEMENT_VERSION = "2026-09-19.5";
 
 const CORS_HEADERS = {
   "Content-Type": "application/json",
@@ -109,6 +109,47 @@ function estimateAfterLanguage(moduleId, correct) {
 }
 
 const LEVELS = ["PRE-A1", "A1", "A2", "B1", "B1+", "B2", "C1"];
+
+const SPEAKING_LEVEL_BY_MODULE = {
+  "speaking-prea1": "PRE-A1",
+  "speaking-a1": "A1",
+  "speaking-a2": "A2",
+  "speaking-b1": "B1",
+  "speaking-b1plus": "B1+",
+  "speaking-b2": "B2",
+  "speaking-c1": "C1"
+};
+
+const SPEAKING_PROMPT_BY_MODULE = {
+  "speaking-prea1": "sp-prea1-01",
+  "speaking-a1": "sp-a1-01",
+  "speaking-a2": "sp-a2-01",
+  "speaking-b1": "sp-b1-01",
+  "speaking-b1plus": "sp-b1plus-01",
+  "speaking-b2": "sp-b2-01",
+  "speaking-c1": "sp-c1-01"
+};
+
+const SPEAKING_PROFILES = {
+  "PRE-A1": { minSeconds: 12, targetSeconds: 20, targetWords: 12, wpmLow: 25, wpmHigh: 100, uniqueTarget: .72, longWordTarget: .02, connectorTarget: 0, complexTarget: 0, segmentTarget: 1 },
+  "A1":     { minSeconds: 15, targetSeconds: 25, targetWords: 20, wpmLow: 35, wpmHigh: 110, uniqueTarget: .68, longWordTarget: .03, connectorTarget: 1, complexTarget: 0, segmentTarget: 2 },
+  "A2":     { minSeconds: 20, targetSeconds: 35, targetWords: 32, wpmLow: 45, wpmHigh: 125, uniqueTarget: .63, longWordTarget: .05, connectorTarget: 2, complexTarget: 1, segmentTarget: 2 },
+  "B1":     { minSeconds: 25, targetSeconds: 40, targetWords: 45, wpmLow: 55, wpmHigh: 145, uniqueTarget: .60, longWordTarget: .07, connectorTarget: 3, complexTarget: 2, segmentTarget: 3 },
+  "B1+":    { minSeconds: 30, targetSeconds: 45, targetWords: 55, wpmLow: 60, wpmHigh: 155, uniqueTarget: .58, longWordTarget: .08, connectorTarget: 4, complexTarget: 3, segmentTarget: 3 },
+  "B2":     { minSeconds: 35, targetSeconds: 50, targetWords: 65, wpmLow: 65, wpmHigh: 165, uniqueTarget: .56, longWordTarget: .10, connectorTarget: 5, complexTarget: 4, segmentTarget: 4 },
+  "C1":     { minSeconds: 40, targetSeconds: 55, targetWords: 75, wpmLow: 70, wpmHigh: 175, uniqueTarget: .54, longWordTarget: .12, connectorTarget: 6, complexTarget: 5, segmentTarget: 4 }
+};
+
+const CONNECTOR_WORDS = new Set([
+  "and", "but", "because", "so", "although", "however", "therefore", "while",
+  "whereas", "instead", "also", "first", "second", "finally", "unless", "despite",
+  "though", "since", "then", "besides", "moreover", "furthermore", "otherwise"
+]);
+
+const COMPLEX_MARKERS = new Set([
+  "although", "however", "therefore", "whereas", "unless", "despite", "though",
+  "because", "while", "which", "who", "whose", "whether", "if", "since", "rather"
+]);
 
 function levelSlug(level) {
   return String(level || "A2").toLowerCase().replace("+", "plus").replace(/[^a-z0-9]+/g, "");
