@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Brighton English School adaptive placement test" />
+  <title>Brighton Placement</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="placement-app">
+    <section id="startScreen" class="start-screen" aria-labelledby="placementTitle">
+      <div class="start-card">
+        <header class="brand-row">
+          <img src="../Exams/assets/brighton-logo.png" alt="Brighton English School" />
+          <span class="time-chip">≈ 15 min</span>
+        </header>
+
+        <div class="start-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Adaptive placement</p>
+            <h1 id="placementTitle">Find your level.</h1>
+            <p class="lead">A short challenge that changes as you go.</p>
+
+            <div class="route-preview" aria-label="Placement stages">
+              <div class="route-stage active">
+                <span class="route-number">01</span>
+                <span>Language</span>
+              </div>
+              <div class="route-line" aria-hidden="true"></div>
+              <div class="route-stage">
+                <span class="route-number">02</span>
+                <span>Reading</span>
+              </div>
+              <div class="route-line" aria-hidden="true"></div>
+              <div class="route-stage">
+                <span class="route-number">03</span>
+                <span>Listening</span>
+              </div>
+              <div class="route-line" aria-hidden="true"></div>
+              <div class="route-stage">
+                <span class="route-number">04</span>
+                <span>Speaking</span>
+              </div>
+            </div>
+          </div>
+
+          <form id="studentForm" class="player-card" novalidate>
+            <div class="player-card-head">
+              <span class="player-slot">Player</span>
+              <span class="status-dot" aria-hidden="true"></span>
+            </div>
+
+            <label for="studentName">Full name</label>
+            <input
+              id="studentName"
+              name="studentName"
+              type="text"
+              autocomplete="name"
+              maxlength="90"
+              placeholder="Your name"
+              required
+            />
+
+            <button id="startBtn" class="primary-btn" type="submit">
+              <span>Start</span>
+              <span aria-hidden="true">→</span>
+            </button>
+
+            <p class="micro-copy">Use headphones. You'll speak at the end.</p>
+            <p id="formError" class="form-error" role="alert" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="transitionScreen" class="transition-screen hidden" aria-live="polite">
+      <img src="../Exams/assets/brighton-logo.png" alt="" aria-hidden="true" />
+      <div class="transition-stage">01</div>
+      <p>Calibration</p>
+      <div class="scan-line" aria-hidden="true"><span></span></div>
+    </section>
+
+    <section id="placementShell" class="placement-shell hidden" aria-labelledby="stageTitle">
+      <header class="shell-header">
+        <img src="../Exams/assets/brighton-logo.png" alt="Brighton English School" />
+        <div class="shell-route" aria-label="Placement progress">
+          <span class="shell-node active">01</span>
+          <span class="shell-track"></span>
+          <span class="shell-node">02</span>
+          <span class="shell-track"></span>
+          <span class="shell-node">03</span>
+          <span class="shell-track"></span>
+          <span class="shell-node">04</span>
+        </div>
+        <span id="candidateName" class="candidate-name"></span>
+      </header>
+
+      <main class="stage-main">
+        <section class="stage-card">
+          <div class="stage-index">01</div>
+          <p class="eyebrow">Calibration</p>
+          <h2 id="stageTitle">Find your starting point.</h2>
+          <p class="stage-note">5 quick questions.</p>
+
+          <div class="level-scan" aria-hidden="true">
+            <span>A1</span>
+            <span>A2</span>
+            <span>B1</span>
+            <span>B2</span>
+            <i></i>
+          </div>
+
+          <div class="handoff-slot" id="placementStageRoot" aria-live="polite"></div>
+        </section>
+      </main>
+    </section>
+  </main>
+
+  <script src="../Exams/config.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>
