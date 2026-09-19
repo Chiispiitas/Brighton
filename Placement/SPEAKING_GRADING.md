@@ -94,6 +94,12 @@ Uses:
 - connector usage;
 - recognised speech segments.
 
+## Scoring calibration
+
+Browser-native speech recognition can slightly under-credit fluent answers because recognition confidence, segmentation and activity detection vary by browser and microphone. The deterministic grader therefore applies a **+1.0 point calibration buffer** to each Speaking rubric dimension and to the final weighted composite, capped at 10.0.
+
+This keeps the grader deterministic while making strong answers less sensitive to browser-recognition noise.
+
 ## Placement rule
 
 For a processable recording:
