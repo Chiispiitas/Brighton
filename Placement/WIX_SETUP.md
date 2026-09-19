@@ -20,9 +20,9 @@ The Placement system uses four new, isolated CMS collections:
 - `BrightonPlacementItems`
 - `BrightonPlacementSpeaking`
 
-They were created with ADMIN-only read/insert/update/remove permissions.
+They are currently configured with `ANYONE` permission for read, insert, update, and remove. Anonymous visitors can perform all four item operations.
 
-`BrightonPlacementItems` has been seeded with **74/74** private answer-key rows for item-key version `2026-09-19.7`.
+`BrightonPlacementItems` has been seeded with **74/74** answer-key rows for item-key version `2026-09-19.7`. Its Wix collection permissions are also `ANYONE` for read, insert, update, and remove.
 
 No existing Tests/Exams collection was renamed, patched, truncated, deleted, or reseeded.
 
@@ -100,7 +100,7 @@ Runtime collection. Starts empty.
 
 ## BrightonPlacementItems
 
-Private answer-key collection.
+Answer-key collection. Its Wix item permissions are intentionally fully open (`ANYONE` for read/insert/update/remove).
 
 | Field ID | Type |
 | --- | --- |
@@ -112,7 +112,7 @@ Private answer-key collection.
 | `weight` | Number |
 | `isActive` | Boolean |
 
-The public GitHub repository must never contain the populated answer-key CSV.
+The populated answer-key CSV is still not committed to the public GitHub repository; however, the live Wix collection itself is currently readable and writable by anyone.
 
 The backend uses:
 
@@ -165,4 +165,4 @@ V1 does not upload raw Speaking audio, so `audioUrl` remains blank.
 
 The public templates under `Placement/wix-cms/` contain schemas only.
 
-The real private answer keys are stored only in Wix.
+The populated answer keys are stored in Wix and are not committed to this public repository. The Wix collection itself currently has fully open item permissions.
