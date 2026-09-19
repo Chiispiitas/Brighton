@@ -334,9 +334,8 @@ function gradeSpeakingDeterministically(payload, level) {
   const speechRecognitionAvailable = payload.speechRecognitionAvailable !== false;
   const recorderMimeType = String(payload.recorderMimeType || "").slice(0, 120);
   const hasUsableRecording =
-    durationSeconds >= profile.minSeconds * .60 &&
-    recordedBytes >= 1800 &&
-    (!audioActivityAvailable || speechRatio >= .10);
+    durationSeconds >= Math.max(5, profile.minSeconds * .45) &&
+    recordedBytes >= 1200;
   const transcriptUsable = transcriptAvailable && wordCount >= 4;
   const compatibilityMode = hasUsableRecording && !transcriptUsable;
 
@@ -1045,7 +1044,7 @@ export async function submitSpeaking(request) {
         communication: grade.communication
       }),
       speakingLevel: grade.speakingLevel,
-      graderVersion: "deterministic-browser-v3-compatible",
+      graderVersion: "deterministic-browser-v4-mobile",
       metricsJson: JSON.stringify({
         composite: grade.composite,
         compatibilityMode: grade.compatibilityMode,
