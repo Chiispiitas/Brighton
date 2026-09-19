@@ -538,7 +538,8 @@ button:disabled { opacity: .45; cursor: not-allowed; }
 
 
 @media (max-width: 520px) {
-  body[data-role="remote"] .verdict-row .verdict-button {
+  body[data-role="remote"] .verdict-row .verdict-button,
+  body[data-role="judge"] .verdict-row .verdict-button {
     min-width: 0;
     flex: 1 1 calc(33.333% - .5rem);
     padding-inline: .45rem;
