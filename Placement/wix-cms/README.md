@@ -1,17 +1,14 @@
-# Brighton Placement Wix CMS templates
+# Brighton Placement Wix CMS CSVs
 
-These templates correspond to the isolated CMS collections already created in the **Brighton Exams** Wix project.
+Create/import these collections manually in the Brighton Exams Wix project:
 
-Current app contract: `2026-09-19.8`  
-Private answer-key version: `2026-09-19.7`
+- `BrightonPlacementSessions.csv`
+- `BrightonPlacementResponses.csv`
+- `BrightonPlacementSpeaking.csv`
+- `BrightonPlacementItems.PRIVATE.template.csv`
 
-Collections:
+The three runtime CSVs are header-only because they begin empty.
 
-- `BrightonPlacementSessions`
-- `BrightonPlacementResponses`
-- `BrightonPlacementItems`
-- `BrightonPlacementSpeaking`
+The populated 74-row `BrightonPlacementItems.csv` answer-key seed is intentionally **not committed to this public repository**. Keep it private and import it manually.
 
-The three runtime CSVs are header-only templates. The private Items template contains only the schema.
-
-The populated 74-row answer-key file is deliberately **not stored in this public GitHub repository**. The keys are seeded in `BrightonPlacementItems`. That live Wix collection currently allows `ANYONE` to read, insert, update, and remove items.
+No live Wix permissions are assumed or changed by the repository setup.
