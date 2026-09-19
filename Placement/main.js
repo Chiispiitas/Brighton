@@ -1,7 +1,7 @@
 "use strict";
 
 (() => {
-  const PLACEMENT_VERSION = "2026-09-19.2";
+  const PLACEMENT_VERSION = "2026-09-19.3";
   const STORAGE_KEY = "brighton-placement-session-v1";
   const modules = window.BRIGHTON_PLACEMENT_MODULES || {};
 
@@ -55,13 +55,18 @@
 
   async function apiPost(path, body) {
     if (!apiBase) throw new Error("Placement service is unavailable.");
+
     const response = await fetch(`${apiBase}/${path}`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(body)
     });
+
     const payload = await response.json().catch(() => ({}));
-    if (!response.ok || !payload?.success) throw new Error(payload?.error || "Placement service error.");
+    if (!response.ok || !payload?.success) {
+      throw new Error(payload?.error || "Placement service error.");
+    }
+
     return payload;
   }
 
@@ -78,7 +83,7 @@
     els.transitionLabel.textContent = label;
   }
 
-  function showTransition(stage, label, callback, delay = 950) {
+  function showTransition(stage, label, callback, delay = 900) {
     setTransition(stage, label);
     els.placementShell.classList.add("hidden");
     els.startScreen.classList.add("hidden");
@@ -94,14 +99,54 @@
     els.placementShell.classList.remove("hidden");
   }
 
+  function setShellStage(stageNumber) {
+    const nodes = Array.from(document.querySelectorAll(".shell-node"));
+    const tracks = Array.from(document.querySelectorAll(".shell-track"));
+
+    nodes.forEach((node, index) => {
+      const number = index + 1;
+      node.classList.toggle("active", number === stageNumber);
+      node.classList.toggle("done", number < stageNumber);
+    });
+
+    tracks.forEach((track, index) => {
+      track.classList.toggle("done", index < stageNumber - 1);
+    });
+  }
+
   function moduleData(moduleId) {
     return modules[moduleId] || null;
   }
 
+  function configureStage(data) {
+    const isReading = data.phase === "reading";
+    const isCalibration = data.phase === "calibration";
+
+    els.stageCard.classList.add("question-mode");
+    els.stageCard.classList.toggle("reading-mode", isReading);
+    els.introScan.classList.add("hidden");
+
+    if (isReading) {
+      setShellStage(2);
+      els.stageIndex.textContent = "02";
+      els.stageEyebrow.textContent = "Reading";
+      els.stageTitle.textContent = "Read.";
+      els.stageNote.textContent = "";
+      return;
+    }
+
+    setShellStage(1);
+    els.stageIndex.textContent = "01";
+    els.stageEyebrow.textContent = isCalibration ? "Calibration" : "Language";
+    els.stageTitle.textContent = isCalibration ? "Find your starting point." : "Keep going.";
+    els.stageNote.textContent = "Choose the best answer.";
+  }
+
   function startModule(moduleId) {
     const data = moduleData(moduleId);
+
     if (!data?.items?.length) {
-      renderReadingHandoff();
+      renderListeningHandoff();
       return;
     }
 
@@ -109,16 +154,11 @@
     currentQuestionIndex = 0;
     moduleAnswers = [];
     session.phase = data.phase;
+    session.moduleId = moduleId;
     saveLocalSession();
 
     openShell();
-    els.stageIndex.textContent = "01";
-    els.stageEyebrow.textContent = data.phase === "calibration" ? "Calibration" : "Language";
-    els.stageTitle.textContent = data.phase === "calibration" ? "Find your starting point." : "Keep going.";
-    els.stageNote.textContent = "Choose the best answer.";
-    els.introScan.classList.add("hidden");
-    els.stageCard.classList.add("question-mode");
-
+    configureStage(data);
     renderQuestion();
   }
 
@@ -126,8 +166,49 @@
     return `
       <div class="question-progress" aria-label="Question ${currentQuestionIndex + 1} of ${total}">
         <span class="question-counter">${String(currentQuestionIndex + 1).padStart(2, "0")} / ${String(total).padStart(2, "0")}</span>
-        <div class="question-pips" aria-hidden="true">
+        <div class="question-pips" style="--question-count:${total}" aria-hidden="true">
           ${Array.from({ length: total }, (_, index) => `<i class="${index < currentQuestionIndex ? "done" : index === currentQuestionIndex ? "active" : ""}"></i>`).join("")}
+        </div>
+      </div>
+    `;
+  }
+
+  function renderOptions(item, gridClass = "answer-grid") {
+    return `
+      <div class="${gridClass}">
+        ${item.options.map((option, index) => `
+          <button class="answer-choice" type="button" data-option-id="${escapeAttr(option.id)}">
+            <span class="choice-key">${index + 1}</span>
+            <span>${escapeHtml(option.text)}</span>
+          </button>
+        `).join("")}
+      </div>
+    `;
+  }
+
+  function renderStandardQuestion(data, item) {
+    return `
+      <div class="question-screen">
+        ${renderProgress(data.items.length)}
+        <h3 class="question-prompt">${escapeHtml(item.prompt)}</h3>
+        ${renderOptions(item)}
+      </div>
+    `;
+  }
+
+  function renderReadingQuestion(data, item) {
+    return `
+      <div class="question-screen reading-screen">
+        ${renderProgress(data.items.length)}
+        <div class="reading-layout">
+          <article class="reading-passage">
+            <span class="reading-label">${escapeHtml(data.title || "Text")}</span>
+            <p>${escapeHtml(data.passage || "")}</p>
+          </article>
+          <section class="reading-question">
+            <h3 class="question-prompt reading-question-prompt">${escapeHtml(item.prompt)}</h3>
+            ${renderOptions(item, "answer-grid reading-answer-grid")}
+          </section>
         </div>
       </div>
     `;
@@ -136,6 +217,7 @@
   function renderQuestion() {
     const data = moduleData(currentModuleId);
     const item = data?.items?.[currentQuestionIndex];
+
     if (!item) {
       finishModule();
       return;
@@ -144,20 +226,9 @@
     locked = false;
     questionStartedAt = performance.now();
 
-    els.stageRoot.innerHTML = `
-      <div class="question-screen">
-        ${renderProgress(data.items.length)}
-        <h3 class="question-prompt">${escapeHtml(item.prompt)}</h3>
-        <div class="answer-grid">
-          ${item.options.map((option, index) => `
-            <button class="answer-choice" type="button" data-option-id="${escapeAttr(option.id)}">
-              <span class="choice-key">${index + 1}</span>
-              <span>${escapeHtml(option.text)}</span>
-            </button>
-          `).join("")}
-        </div>
-      </div>
-    `;
+    els.stageRoot.innerHTML = data.phase === "reading"
+      ? renderReadingQuestion(data, item)
+      : renderStandardQuestion(data, item);
 
     els.stageRoot.querySelectorAll(".answer-choice").forEach((button) => {
       button.addEventListener("click", () => chooseAnswer(button.dataset.optionId, button));
@@ -189,7 +260,7 @@
       currentQuestionIndex += 1;
       if (currentQuestionIndex >= data.items.length) finishModule();
       else renderQuestion();
-    }, 260);
+    }, 240);
   }
 
   async function finishModule() {
@@ -199,7 +270,7 @@
     els.stageRoot.innerHTML = `
       <div class="module-finish">
         <div class="module-finish-mark">✓</div>
-        <p>${submittedModuleId === "calibration-01" ? "Adapting" : "Checking route"}</p>
+        <p>Adapting</p>
         <div class="mini-loader" aria-hidden="true"><span></span></div>
       </div>
     `;
@@ -222,12 +293,17 @@
       saveLocalSession();
 
       if (result.nextPhase === "language" && moduleData(result.nextModuleId)) {
-        showTransition("01", "Adapting", () => startModule(result.nextModuleId), 900);
+        showTransition("01", "Adapting", () => startModule(result.nextModuleId));
         return;
       }
 
-      if (result.nextPhase === "reading") {
-        showTransition("02", "Reading", renderReadingHandoff, 900);
+      if (result.nextPhase === "reading" && moduleData(result.nextModuleId)) {
+        showTransition("02", "Reading", () => startModule(result.nextModuleId));
+        return;
+      }
+
+      if (result.nextPhase === "listening") {
+        showTransition("03", "Listening", renderListeningHandoff);
         return;
       }
 
@@ -253,19 +329,19 @@
     });
   }
 
-  function renderReadingHandoff() {
+  function renderListeningHandoff() {
     openShell();
-    els.stageCard.classList.remove("question-mode");
-    els.stageIndex.textContent = "02";
-    els.stageEyebrow.textContent = "Reading";
-    els.stageTitle.textContent = "Reading.";
+    setShellStage(3);
+    els.stageCard.classList.remove("question-mode", "reading-mode");
+    els.stageIndex.textContent = "03";
+    els.stageEyebrow.textContent = "Listening";
+    els.stageTitle.textContent = "Listen.";
     els.stageNote.textContent = "";
     els.introScan.classList.add("hidden");
     els.stageRoot.innerHTML = `
-      <div class="reading-handoff">
-        <span>02</span>
-        <div class="handoff-line"></div>
-        <strong>Reading</strong>
+      <div class="listening-handoff">
+        <span class="listening-ring"><i></i></span>
+        <strong>Listening</strong>
       </div>
     `;
   }
@@ -291,8 +367,10 @@
 
   document.addEventListener("keydown", (event) => {
     if (locked || els.placementShell.classList.contains("hidden")) return;
+
     const number = Number(event.key);
     if (!Number.isInteger(number) || number < 1 || number > 4) return;
+
     const buttons = els.stageRoot.querySelectorAll(".answer-choice");
     buttons[number - 1]?.click();
   });
@@ -314,6 +392,7 @@
 
     try {
       const result = await startRemoteSession(name, clientSessionId);
+
       session = {
         clientSessionId,
         sessionId: result.sessionId,
@@ -324,6 +403,7 @@
         provisionalLevel: "",
         startedAt: new Date().toISOString()
       };
+
       saveLocalSession();
       enterCalibration(name);
     } catch (error) {
