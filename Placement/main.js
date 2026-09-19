@@ -258,8 +258,8 @@
     els.stageCard.classList.remove("question-mode");
     els.stageIndex.textContent = "02";
     els.stageEyebrow.textContent = "Reading";
-    els.stageTitle.textContent = "Next: read the signal.";
-    els.stageNote.textContent = "Stage 02 is ready for the next build.";
+    els.stageTitle.textContent = "Reading.";
+    els.stageNote.textContent = "";
     els.introScan.classList.add("hidden");
     els.stageRoot.innerHTML = `
       <div class="reading-handoff">
