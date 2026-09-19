@@ -37,9 +37,7 @@ A normal Speaking screen does not show the skip option.
 
 Choosing **I cannot speak now** calls `POST /_functions/skipSpeaking`. Wix then finalizes the current objective level from Language + Reading + Listening.
 
-No `REVIEW RECOMMENDED`, `BORDERLINE PLACEMENT`, or `CONFIRMED PLACEMENT` labels are used.
-
-No teacher-review flag is created when Speaking is skipped.
+No placement-status labels are used, and no teacher-review flag is created when Speaking is skipped.
 
 ## Adaptive prompts
 
@@ -111,7 +109,7 @@ If the recording cannot be processed, no Speaking grade is stored. The user must
 
 The result screen only shows the final level and a simple placement-complete message.
 
-There are no review/borderline/confirmed status labels.
+There are no placement-status labels.
 
 ## Audio storage
 
