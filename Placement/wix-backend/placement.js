@@ -330,13 +330,24 @@ function gradeSpeakingDeterministically(payload, level) {
   const segmentCount = Math.max(0, Math.min(100, Number(payload.segmentCount) || 0));
   const recordedBytes = Math.max(0, Number(payload.recordedBytes) || 0);
   const transcriptAvailable = Boolean(payload.transcriptAvailable && transcript);
+  const transcriptUsable = transcriptAvailable && wordCount >= 4;
   const audioActivityAvailable = payload.audioActivityAvailable !== false;
   const speechRecognitionAvailable = payload.speechRecognitionAvailable !== false;
   const recorderMimeType = String(payload.recorderMimeType || "").slice(0, 120);
-  const hasUsableRecording =
+  const captureMode = String(payload.captureMode || "recorder+recognition").slice(0, 80);
+  const recognitionOnly = captureMode === "mobile-recognition";
+  const recordingEvidence =
     durationSeconds >= Math.max(5, profile.minSeconds * .45) &&
     recordedBytes >= 1200;
-  const transcriptUsable = transcriptAvailable && wordCount >= 4;
+  const recognitionEvidence =
+    recognitionOnly &&
+    durationSeconds >= Math.max(5, profile.minSeconds * .45) &&
+    transcriptUsable;
+  const acousticEvidence =
+    durationSeconds >= Math.max(5, profile.minSeconds * .55) &&
+    audioActivityAvailable &&
+    speechRatio >= .16;
+  const hasUsableRecording = recordingEvidence || recognitionEvidence || acousticEvidence;
   const compatibilityMode = hasUsableRecording && !transcriptUsable;
 
   const wpm = durationSeconds > 0 && wordCount > 0 ? wordCount / (durationSeconds / 60) : 0;
@@ -400,6 +411,16 @@ function gradeSpeakingDeterministically(payload, level) {
   const pronunciation = round1(clamp(rawPronunciation + SPEAKING_SCORE_LENIENCY, 0, 10));
   const communication = round1(clamp(rawCommunication + SPEAKING_SCORE_LENIENCY, 0, 10));
   const composite = round1(clamp(rawComposite + SPEAKING_SCORE_LENIENCY, 0, 10));
+  const compatibilityComposite = round1(clamp(
+    10 * (
+      .32 * minimumDurationScore +
+      .28 * durationScore +
+      .40 * (audioActivityAvailable ? speechActivityScore : .72)
+    ) + SPEAKING_SCORE_LENIENCY,
+    0,
+    8.5
+  ));
+  const effectiveComposite = compatibilityMode ? compatibilityComposite : composite;
 
   const inputError = !hasUsableRecording;
 
@@ -409,9 +430,9 @@ function gradeSpeakingDeterministically(payload, level) {
   // Without a reliable browser transcript, accept the microphone answer but
   // keep the objective placement band unchanged rather than penalising the
   // student for device/browser speech-recognition limitations.
-  if (!inputError && !compatibilityMode && composite >= 7.6 && wordCount >= profile.targetWords * .78) {
+  if (!inputError && !compatibilityMode && effectiveComposite >= 7.6 && wordCount >= profile.targetWords * .78) {
     speakingLevel = LEVELS[Math.min(LEVELS.length - 1, currentIndex + 1)];
-  } else if (!inputError && !compatibilityMode && composite < 4.4) {
+  } else if (!inputError && effectiveComposite < 4.4) {
     speakingLevel = LEVELS[Math.max(0, currentIndex - 1)];
   }
 
@@ -431,12 +452,12 @@ function gradeSpeakingDeterministically(payload, level) {
     recognitionConfidence: round1(recognitionConfidence),
     segmentCount,
     transcriptAvailable,
-    fluency: compatibilityMode ? null : round1(fluency),
+    fluency: compatibilityMode ? compatibilityComposite : round1(fluency),
     grammar: compatibilityMode ? null : round1(grammar),
     vocabulary: compatibilityMode ? null : round1(vocabulary),
     pronunciation: compatibilityMode ? null : round1(pronunciation),
-    communication: compatibilityMode ? null : round1(communication),
-    composite: compatibilityMode ? null : composite,
+    communication: compatibilityMode ? compatibilityComposite : round1(communication),
+    composite: effectiveComposite,
     speakingLevel,
     finalLevel: inputError ? level : speakingLevel,
     inputError,
@@ -444,6 +465,11 @@ function gradeSpeakingDeterministically(payload, level) {
     audioActivityAvailable,
     speechRecognitionAvailable,
     recorderMimeType,
+    captureMode,
+    recognitionError: String(payload.recognitionError || "").slice(0, 80),
+    recognitionStarts: Math.max(0, Number(payload.recognitionStarts) || 0),
+    recognitionResults: Math.max(0, Number(payload.recognitionResults) || 0),
+    legacyCaptureEstimate: Boolean(payload.legacyCaptureEstimate),
     confidence: round1(clamp(
       .56 +
       .16 * minimumDurationScore +
@@ -583,19 +609,17 @@ async function buildResultSummary(session) {
   const speakingMetrics = safeJson(speakingRecord?.metricsJson, {});
   const speakingComposite = Number(speakingMetrics?.composite);
   const speakingCompatibilityMode = Boolean(speakingMetrics?.compatibilityMode);
-  const hasSpeakingComposite = !speakingCompatibilityMode && Number.isFinite(speakingComposite);
+  const hasSpeakingComposite = Number.isFinite(speakingComposite);
 
   const speakingSkill = speakingRecord
     ? {
         label: "Speaking",
         level: String(speakingRecord.speakingLevel || session.finalLevel || session.provisionalLevel || "A2"),
         description: speakingCompatibilityMode
-          ? "Recorded · browser transcript unavailable"
+          ? "Mobile audio score · language transcript unavailable"
           : (LEVEL_DESCRIPTIONS[String(speakingRecord.speakingLevel || "")] || ""),
         score: hasSpeakingComposite ? Math.round(speakingComposite * 10) : null,
-        displayScore: speakingCompatibilityMode
-          ? "Recorded"
-          : (hasSpeakingComposite ? `${speakingComposite.toFixed(1)}/10` : "—"),
+        displayScore: hasSpeakingComposite ? `${speakingComposite.toFixed(1)}/10` : "—",
         skipped: false
       }
     : {
@@ -1044,13 +1068,18 @@ export async function submitSpeaking(request) {
         communication: grade.communication
       }),
       speakingLevel: grade.speakingLevel,
-      graderVersion: "deterministic-browser-v4-mobile",
+      graderVersion: "deterministic-browser-v5-mobile-recognition",
       metricsJson: JSON.stringify({
         composite: grade.composite,
         compatibilityMode: grade.compatibilityMode,
         audioActivityAvailable: grade.audioActivityAvailable,
         speechRecognitionAvailable: grade.speechRecognitionAvailable,
         recorderMimeType: grade.recorderMimeType,
+        captureMode: grade.captureMode,
+        recognitionError: grade.recognitionError,
+        recognitionStarts: grade.recognitionStarts,
+        recognitionResults: grade.recognitionResults,
+        legacyCaptureEstimate: grade.legacyCaptureEstimate,
         speechRatio: grade.speechRatio,
         uniqueWords: grade.uniqueWords,
         uniqueRatio: grade.uniqueRatio,
@@ -1379,7 +1408,11 @@ export async function placementDashboardResult(request) {
           audioActivityAvailable: speakingMetrics?.audioActivityAvailable !== false,
           speechRecognitionAvailable: speakingMetrics?.speechRecognitionAvailable !== false,
           recorderMimeType: String(speakingMetrics?.recorderMimeType || ""),
-          composite: !speakingMetrics?.compatibilityMode && Number.isFinite(Number(speakingMetrics?.composite))
+          captureMode: String(speakingMetrics?.captureMode || ""),
+          recognitionError: String(speakingMetrics?.recognitionError || ""),
+          recognitionStarts: placementDashboardNumber(speakingMetrics?.recognitionStarts),
+          recognitionResults: placementDashboardNumber(speakingMetrics?.recognitionResults),
+          composite: Number.isFinite(Number(speakingMetrics?.composite))
             ? Number(speakingMetrics.composite)
             : null
         }
