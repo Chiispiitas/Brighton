@@ -13,7 +13,7 @@ import {
 const PLACEMENT_SESSIONS = "PlacementSessions";
 const PLACEMENT_RESPONSES = "PlacementResponses";
 const PLACEMENT_ITEMS = "PlacementItems";
-const PLACEMENT_VERSION = "2026-09-19.5";
+const PLACEMENT_VERSION = "2026-09-19.6";
 
 const CORS_HEADERS = {
   "Content-Type": "application/json",
@@ -303,7 +303,7 @@ function gradeSpeakingDeterministically(payload, level) {
     communication * .20
   );
 
-  const reviewRequired =
+  const inputError =
     !transcriptAvailable ||
     wordCount < 5 ||
     durationSeconds < profile.minSeconds * .72 ||
@@ -313,30 +313,16 @@ function gradeSpeakingDeterministically(payload, level) {
   const currentIndex = Math.max(0, LEVELS.indexOf(level));
   let speakingLevel = level;
 
-  if (!reviewRequired && composite >= 7.6 && wordCount >= profile.targetWords * .78) {
+  if (!inputError && composite >= 7.6 && wordCount >= profile.targetWords * .78) {
     speakingLevel = LEVELS[Math.min(LEVELS.length - 1, currentIndex + 1)];
-  } else if (!reviewRequired && composite < 4.4) {
+  } else if (!inputError && composite < 4.4) {
     speakingLevel = LEVELS[Math.max(0, currentIndex - 1)];
   }
 
-  const finalLevel = reviewRequired ? level : speakingLevel;
-  const shifted = finalLevel !== level;
-  const borderline = !reviewRequired && (
-    shifted ||
-    (composite >= 4.4 && composite < 5.1) ||
-    (composite >= 7.0 && composite < 7.6)
-  );
-
-  const status = reviewRequired
-    ? "REVIEW RECOMMENDED"
-    : borderline
-      ? "BORDERLINE PLACEMENT"
-      : "CONFIRMED PLACEMENT";
+  const finalLevel = inputError ? level : speakingLevel;
 
   const confidence = round1(clamp(
-    reviewRequired
-      ? .45
-      : .60 + .16 * minimumDurationScore + .14 * speechActivityScore + .10 * (transcriptAvailable ? 1 : 0),
+    .60 + .16 * minimumDurationScore + .14 * speechActivityScore + .10 * (transcriptAvailable ? 1 : 0),
     .35,
     .92
   ));
@@ -365,8 +351,7 @@ function gradeSpeakingDeterministically(payload, level) {
     composite,
     speakingLevel,
     finalLevel,
-    reviewRequired,
-    status,
+    inputError,
     confidence
   };
 }
@@ -464,6 +449,17 @@ export function options_placementStep() {
 }
 
 export function options_submitSpeaking() {
+  return response({
+    status: 204,
+    headers: {
+      ...CORS_HEADERS,
+      "Access-Control-Allow-Methods": "POST, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type"
+    }
+  });
+}
+
+export function options_skipSpeaking() {
   return response({
     status: 204,
     headers: {
@@ -699,6 +695,14 @@ export async function post_submitSpeaking(request) {
     }
 
     const grade = gradeSpeakingDeterministically(payload, level);
+
+    if (grade.inputError) {
+      return placementJsonOK({
+        success: true,
+        speakingError: true
+      });
+    }
+
     const now = new Date();
 
     const existing = await wixData
@@ -729,8 +733,6 @@ export async function post_submitSpeaking(request) {
       communication: grade.communication,
       speakingLevel: grade.speakingLevel,
       graderVersion: "deterministic-browser-v1",
-      needsReview: grade.reviewRequired,
-      status: grade.status,
       metricsJson: JSON.stringify({
         composite: grade.composite,
         speechRatio: grade.speechRatio,
@@ -757,8 +759,6 @@ export async function post_submitSpeaking(request) {
       phase: "result",
       finalLevel: grade.finalLevel,
       confidence: grade.confidence,
-      reviewRequired: grade.reviewRequired,
-      placementStatus: grade.status,
       updatedAt: now,
       completedAt: now,
       progressJson: JSON.stringify({
@@ -766,8 +766,7 @@ export async function post_submitSpeaking(request) {
         totalStages: 4,
         completed: true,
         speakingLevel: grade.speakingLevel,
-        speakingComposite: grade.composite,
-        placementStatus: grade.status
+        speakingComposite: grade.composite
       })
     };
 
@@ -777,8 +776,6 @@ export async function post_submitSpeaking(request) {
       success: true,
       finalLevel: grade.finalLevel,
       speakingLevel: grade.speakingLevel,
-      status: grade.status,
-      reviewRequired: grade.reviewRequired,
       confidence: grade.confidence,
       rubric: {
         fluency: grade.fluency,
@@ -791,6 +788,61 @@ export async function post_submitSpeaking(request) {
     });
   } catch (error) {
     console.error("submitSpeaking failed:", error);
+    return placementServerError(error);
+  }
+}
+
+
+export async function post_skipSpeaking(request) {
+  try {
+    const payload = await request.body.json();
+
+    const sessionId = String(payload.sessionId || "").trim();
+    const clientSessionId = String(payload.clientSessionId || "").trim();
+    const moduleId = String(payload.moduleId || "").trim();
+
+    if (!sessionId || !clientSessionId || !moduleId) {
+      return placementBadRequest("Incomplete speaking skip.");
+    }
+
+    const session = await getPlacementSession(sessionId, clientSessionId);
+    if (!session || session.status !== "active") {
+      return placementBadRequest("Placement session not found.");
+    }
+
+    if (session.placementVersion !== PLACEMENT_VERSION) {
+      return placementBadRequest("Placement version changed. Start a new placement.");
+    }
+
+    if (String(session.moduleId || "") !== moduleId || !/^speaking-/.test(moduleId)) {
+      return placementBadRequest("This speaking module is no longer active.");
+    }
+
+    const finalLevel = String(session.provisionalLevel || SPEAKING_LEVEL_BY_MODULE[moduleId] || "A2");
+    const now = new Date();
+
+    const updatedSession = {
+      ...session,
+      status: "completed",
+      phase: "result",
+      finalLevel,
+      updatedAt: now,
+      completedAt: now,
+      progressJson: JSON.stringify({
+        stage: 4,
+        totalStages: 4,
+        completed: true
+      })
+    };
+
+    await wixData.update(PLACEMENT_SESSIONS, updatedSession, { suppressAuth: true });
+
+    return placementJsonOK({
+      success: true,
+      finalLevel
+    });
+  } catch (error) {
+    console.error("skipSpeaking failed:", error);
     return placementServerError(error);
   }
 }
