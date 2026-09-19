@@ -10,7 +10,9 @@ import {
   placementStep,
   submitSpeaking,
   skipSpeaking,
-  placementResult
+  placementResult,
+  listPlacementResults,
+  placementDashboardResult
 } from "backend/placement.js";
 
 /* CORS / catch-all */
@@ -21,6 +23,8 @@ export function use_brightonPlacementStep() { return placementCors(); }
 export function use_brightonPlacementSubmitSpeaking() { return placementCors(); }
 export function use_brightonPlacementSkipSpeaking() { return placementCors(); }
 export function use_brightonPlacementResult() { return placementCors(); }
+export function use_brightonPlacementResults() { return placementCors("GET"); }
+export function use_brightonPlacementDashboardResult() { return placementCors("GET"); }
 
 /* Diagnostic route: open /_functions/brightonPlacementPing in a browser. */
 export function get_brightonPlacementPing() {
@@ -50,4 +54,14 @@ export async function post_brightonPlacementSkipSpeaking(request) {
 
 export async function post_brightonPlacementResult(request) {
   return placementResult(request);
+}
+
+
+/* Teacher Placement results dashboard */
+export async function get_brightonPlacementResults(request) {
+  return listPlacementResults(request);
+}
+
+export async function get_brightonPlacementDashboardResult(request) {
+  return placementDashboardResult(request);
 }
