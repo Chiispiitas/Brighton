@@ -33,3 +33,18 @@ The teacher dashboard at `Placement/results.html` uses:
 - `GET /_functions/brightonPlacementDashboardResult?sessionId=...`
 
 The detailed result returns the stored speaking transcript and deterministic Speaking metrics. It also exposes `audioUrl` when a record has one; the current Placement frontend normally leaves `audioUrl` blank and does not upload raw recording audio.
+
+
+## Inactivity cleanup
+
+Active Placement attempts expire after **1 hour of inactivity**.
+
+- The browser stores a `lastActivityAt` timestamp and clears its local Placement progress after one inactive hour.
+- While an active student is interacting with the test, the browser sends a throttled activity touch to Wix so `updatedAt` reflects real activity.
+- When the one-hour timer expires on an open device, the browser calls `POST /_functions/brightonPlacementExpire`, which deletes the active session plus its response/speaking rows.
+- Stale active sessions are also cascade-deleted whenever Placement starts or the teacher Placement dashboard is loaded.
+- Completed Placement results are never removed by this inactivity rule.
+
+Additional routes:
+- `POST /_functions/brightonPlacementActivity`
+- `POST /_functions/brightonPlacementExpire`
