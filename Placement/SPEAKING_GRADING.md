@@ -35,7 +35,7 @@ The error screen offers:
 
 A normal Speaking screen does not show the skip option.
 
-Choosing **I cannot speak now** calls `POST /_functions/skipSpeaking`. Wix then finalizes the current objective level from Language + Reading + Listening.
+Choosing **I cannot speak now** calls `POST /_functions/brightonPlacementSkipSpeaking`. Wix then finalizes the current objective level from Language + Reading + Listening.
 
 No placement-status labels are used, and no teacher-review flag is created when Speaking is skipped.
 
