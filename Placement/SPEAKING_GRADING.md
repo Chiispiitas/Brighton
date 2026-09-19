@@ -1,6 +1,6 @@
 # Brighton Placement — Speaking grading without a paid AI API
 
-Version: `2026-09-19.6`
+Version: `2026-09-19.7`
 
 The Speaking stage does **not** call a paid AI grading service.
 
@@ -116,3 +116,17 @@ There are no placement-status labels.
 V1 does not upload the raw microphone recording.
 
 The MediaRecorder blob exists only during the browser session and is discarded after submission or skip.
+
+
+## Result presentation
+
+The completed placement now renders a certificate-style Brighton result screen with:
+
+- student name;
+- final placement band;
+- PRE-A1 through C1 scale;
+- Language Use, Reading, Listening and Speaking summaries;
+- result ID and completion date;
+- PNG export and native Share support.
+
+This is deliberately described as a placement result rather than a CEFR certificate.
