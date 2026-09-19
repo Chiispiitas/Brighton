@@ -4,7 +4,7 @@ This setup is for the adaptive placement app at `/Placement/`.
 
 The browser renders questions, but **answer keys, scoring, routing, final placement and speaking grades remain server-authoritative**.
 
-Current contract version: `2026-09-19.5`
+Current contract version: `2026-09-19.6`
 
 ## PlacementSessions
 
@@ -15,7 +15,6 @@ Collection ID: `PlacementSessions`
 | Client session ID | `clientSessionId` | Text |
 | Student name | `studentName` | Text |
 | Placement version | `placementVersion` | Text |
-| Status | `status` | Text |
 | Phase | `phase` | Text |
 | Module ID | `moduleId` | Text |
 | Route JSON | `routeJson` | Text |
@@ -27,8 +26,6 @@ Collection ID: `PlacementSessions`
 | Provisional level | `provisionalLevel` | Text |
 | Final level | `finalLevel` | Text |
 | Confidence | `confidence` | Number |
-| Review required | `reviewRequired` | Boolean |
-| Placement status | `placementStatus` | Text |
 
 ## PlacementResponses
 
@@ -89,7 +86,7 @@ Every visible item in these modules needs one matching private row:
 - `listening-b2`
 - `listening-c1`
 
-Set `placementVersion` to `2026-09-19.4`, `weight` to `1`, and `isActive` to `true`.
+Set `placementVersion` to `2026-09-19.6`, `weight` to `1`, and `isActive` to `true`.
 
 Do **not** place `correctOptionId` values in the public GitHub repository.
 
@@ -119,7 +116,6 @@ Collection ID: `PlacementSpeaking`
 | Communication | `communication` | Number |
 | Speaking level | `speakingLevel` | Text |
 | Grader version | `graderVersion` | Text |
-| Needs review | `needsReview` | Boolean |
 | Status | `status` | Text |
 | Metrics JSON | `metricsJson` | Text |
 | Created at | `createdAt` | Date and Time |
@@ -133,6 +129,7 @@ The current app uses:
 - `POST /_functions/startPlacement`
 - `POST /_functions/placementStep`
 - `POST /_functions/submitSpeaking`
+- `POST /_functions/skipSpeaking`
 
 `placementStep` verifies the active session and module, loads the private answer keys from `PlacementItems`, stores item telemetry in `PlacementResponses`, and chooses the next module.
 
@@ -158,7 +155,11 @@ The deterministic rubric uses:
 - pronunciation: an **intelligibility proxy** based on recognition success, speech activity and plausible pace; it is not phoneme-level pronunciation scoring;
 - communication: a task-completion/coherence proxy based on length, connectors and speech segments.
 
-Speaking can move the objective estimate by at most one adjacent Brighton band. If transcription is unavailable, the recording is too short, or speech activity is too low, the objective estimate is preserved and the result becomes `REVIEW RECOMMENDED`.
+Speaking can move the objective estimate by at most one adjacent Brighton band.
+
+If a real Speaking error is detected — for example microphone access fails, browser speech recognition is unavailable, the answer cannot be transcribed, or the recording has too little usable speech — the student sees **I cannot speak now**. That button only appears on the Speaking error screen. Choosing it skips Speaking and finalizes the existing Language + Reading + Listening level through `skipSpeaking`.
+
+Skipping Speaking does not create a review flag, review status, borderline status, or teacher follow-up task. The final screen simply shows the resulting level.
 
 The current version does **not upload the raw recording** to Wix. The audio is used in-browser for measurement and then discarded after submission. `audioUrl` remains blank.
 
