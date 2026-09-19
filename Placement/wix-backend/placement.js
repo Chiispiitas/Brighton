@@ -10,7 +10,6 @@ import {
   jsonOK,
   jsonBadRequest,
   jsonServerError,
-  corsOptions,
   readJsonBody
 } from "./core.js";
 
