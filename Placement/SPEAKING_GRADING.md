@@ -109,9 +109,9 @@ Uses:
 
 ## Scoring calibration
 
-Browser-native speech recognition can slightly under-credit fluent answers because recognition confidence, segmentation and activity detection vary by browser and microphone. The deterministic grader therefore applies a **+1.0 point calibration buffer** to each Speaking rubric dimension and to the final weighted composite, capped at 10.0.
+Speaking has returned to the **original deterministic scoring strictness**. There is no +1.0 grading buffer. Fluency, Grammar, Vocabulary, Pronunciation, Communication, and the weighted composite use their raw deterministic scores, capped normally from 0 to 10.
 
-This keeps the grader deterministic while making strong answers less sensitive to browser-recognition noise.
+Mobile/browser compatibility still affects whether a valid answer can be captured and processed, but it does not make the rubric more lenient.
 
 ## Placement rule
 
