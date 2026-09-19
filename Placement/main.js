@@ -806,6 +806,120 @@
     }
   }
 
+  const SPEAKING_COPY_STOPWORDS = new Set([
+    "a", "an", "the", "and", "or", "but", "to", "of", "in", "on", "at", "for", "with",
+    "is", "am", "are", "was", "were", "be", "been", "being", "i", "you", "he", "she",
+    "it", "we", "they", "my", "your", "his", "her", "our", "their", "this", "that",
+    "these", "those", "do", "does", "did", "what", "where", "when", "why", "how",
+    "there", "here", "one", "thing", "say", "tell", "talk", "describe", "explain", "give"
+  ]);
+
+  const SPEAKING_ORIGINAL_WORD_TARGET = {
+    "speaking-prea1": 2,
+    "speaking-a1": 4,
+    "speaking-a2": 6,
+    "speaking-b1": 8,
+    "speaking-b1plus": 10,
+    "speaking-b2": 12,
+    "speaking-c1": 14
+  };
+
+  function speakingTokens(text) {
+    return String(text || "")
+      .toLowerCase()
+      .match(/[a-z]+(?:'[a-z]+)?/g) || [];
+  }
+
+  function ngramCopyRatio(answerTokens, promptTokens, size) {
+    if (answerTokens.length < size || promptTokens.length < size) return 0;
+
+    const promptNgrams = new Set();
+    for (let i = 0; i <= promptTokens.length - size; i += 1) {
+      promptNgrams.add(promptTokens.slice(i, i + size).join(" "));
+    }
+
+    let copied = 0;
+    const total = answerTokens.length - size + 1;
+
+    for (let i = 0; i <= answerTokens.length - size; i += 1) {
+      if (promptNgrams.has(answerTokens.slice(i, i + size).join(" "))) copied += 1;
+    }
+
+    return total ? copied / total : 0;
+  }
+
+  function analysePromptRepeating(transcript, prompt, moduleId = currentModuleId) {
+    const answerTokens = speakingTokens(transcript);
+    const promptTokens = speakingTokens(prompt);
+
+    if (answerTokens.length < 5 || !promptTokens.length) {
+      return {
+        shouldRetry: false,
+        promptCopyRatio: 0,
+        bigramCopyRatio: 0,
+        originalMeaningfulWords: 0
+      };
+    }
+
+    const availablePromptWords = new Map();
+    promptTokens.forEach((word) => {
+      availablePromptWords.set(word, (availablePromptWords.get(word) || 0) + 1);
+    });
+
+    let copiedWords = 0;
+    for (const word of answerTokens) {
+      const left = availablePromptWords.get(word) || 0;
+      if (left > 0) {
+        copiedWords += 1;
+        availablePromptWords.set(word, left - 1);
+      }
+    }
+
+    const promptWordSet = new Set(promptTokens);
+    const originalWords = new Set(
+      answerTokens.filter((word) =>
+        !promptWordSet.has(word) &&
+        !SPEAKING_COPY_STOPWORDS.has(word) &&
+        word.length > 2
+      )
+    );
+
+    const promptCopyRatio = copiedWords / answerTokens.length;
+    const bigramCopyRatio = ngramCopyRatio(answerTokens, promptTokens, 2);
+    const originalTarget = SPEAKING_ORIGINAL_WORD_TARGET[moduleId] || 6;
+
+    const shouldRetry =
+      promptCopyRatio >= .82 ||
+      (
+        promptCopyRatio >= .65 &&
+        bigramCopyRatio >= .42 &&
+        originalWords.size < originalTarget
+      );
+
+    return {
+      shouldRetry,
+      promptCopyRatio,
+      bigramCopyRatio,
+      originalMeaningfulWords: originalWords.size
+    };
+  }
+
+  function renderSpeakingAnswerRetry() {
+    cleanupSpeakingMedia();
+
+    els.stageRoot.innerHTML = `
+      <div class="speaking-retry">
+        <strong>Give your answer.</strong>
+        <p class="speaking-status">Answer the question. Do not read or repeat the question. Say your ideas. Give your answer again.</p>
+        <div class="speaking-error-actions">
+          <button id="retrySpeakingAnswerBtn" class="secondary-action" type="button">Try again</button>
+        </div>
+      </div>
+    `;
+
+    els.stageRoot.querySelector("#retrySpeakingAnswerBtn")?.addEventListener("click", renderSpeakingPrompt);
+  }
+
   function mobileTranscriptSpeechRatio(transcript, durationSeconds) {
     const words = String(transcript || "").trim().split(/\s+/).filter(Boolean).length;
     if (!words || durationSeconds <= 0) return 0;
@@ -960,7 +1074,7 @@
             <span class="record-dot" aria-hidden="true"></span>
             <span>Record answer</span>
           </button>
-          <p class="speaking-status">One answer.</p>
+          <p class="speaking-status">Answer the question. Do not read or repeat it.</p>
         </div>
       </div>
     `;
@@ -1255,6 +1369,15 @@
       return;
     }
 
+    const promptRepeat = transcriptAvailable
+      ? analysePromptRepeating(transcript, data.prompt, currentModuleId)
+      : { shouldRetry: false };
+
+    if (promptRepeat.shouldRetry) {
+      renderSpeakingAnswerRetry();
+      return;
+    }
+
     els.stageRoot.innerHTML = `
       <div class="module-finish speaking-analysis">
         <div class="module-finish-mark">✓</div>
@@ -1287,6 +1410,11 @@
         recognitionResults: speakingRecognitionResults,
         legacyCaptureEstimate: recognitionOnly
       });
+
+      if (result.speakingRetryReason === "prompt-repeat") {
+        renderSpeakingAnswerRetry();
+        return;
+      }
 
       if (result.speakingError) {
         renderSpeakingTechnicalError("We couldn't process your answer. Try again.");
@@ -1391,6 +1519,11 @@
           promptId: data.promptId,
           ...metrics
         });
+
+        if (result.speakingRetryReason === "prompt-repeat") {
+          renderSpeakingAnswerRetry();
+          return;
+        }
 
         if (result.speakingError) {
           renderSpeakingTechnicalError("We couldn't process your answer.");
