@@ -518,3 +518,217 @@ button { cursor: pointer; }
   .stage-card { min-height: 430px; border-radius: 26px; }
   .stage-index { opacity: .75; }
 }
+
+/* Placement question player */
+.stage-card.question-mode {
+  min-height: 560px;
+}
+
+.question-screen {
+  margin-top: 42px;
+  position: relative;
+  z-index: 2;
+}
+
+.question-progress {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.question-counter {
+  min-width: 52px;
+  color: var(--muted);
+  font-size: 10px;
+  font-weight: 900;
+  letter-spacing: .08em;
+}
+
+.question-pips {
+  flex: 1;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 7px;
+}
+
+.question-pips i {
+  height: 5px;
+  border-radius: 999px;
+  background: #eceff2;
+  transition: background .18s ease, transform .18s ease;
+}
+
+.question-pips i.done { background: var(--teal); }
+.question-pips i.active {
+  background: var(--yellow);
+  transform: scaleY(1.35);
+}
+
+.question-prompt {
+  max-width: 720px;
+  margin: 0 0 30px;
+  font-size: clamp(27px, 4vw, 42px);
+  line-height: 1.18;
+  letter-spacing: -.035em;
+}
+
+.answer-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.answer-choice {
+  min-height: 72px;
+  border: 2px solid #e5e8ec;
+  border-radius: 19px;
+  background: #fff;
+  color: var(--ink);
+  padding: 14px 16px;
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  text-align: left;
+  font-weight: 800;
+  transition: transform .12s ease, border-color .12s ease, background .12s ease, box-shadow .12s ease;
+}
+
+.answer-choice:hover {
+  transform: translateY(-2px);
+  border-color: var(--yellow);
+  box-shadow: 0 9px 22px rgba(32,38,49,.07);
+}
+
+.answer-choice:disabled { cursor: default; opacity: 1; }
+
+.answer-choice.selected {
+  border-color: var(--yellow);
+  background: var(--yellow-soft);
+  transform: scale(.985);
+}
+
+.choice-key {
+  flex: 0 0 auto;
+  width: 30px;
+  height: 30px;
+  border-radius: 10px;
+  display: grid;
+  place-items: center;
+  background: #f2f4f6;
+  color: #727b88;
+  font-size: 10px;
+  font-weight: 900;
+}
+
+.answer-choice.selected .choice-key {
+  background: var(--yellow);
+  color: #fff;
+}
+
+.module-finish {
+  min-height: 230px;
+  margin-top: 50px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 13px;
+}
+
+.module-finish-mark {
+  width: 58px;
+  height: 58px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--teal-soft);
+  color: var(--teal);
+  font-size: 24px;
+  font-weight: 900;
+}
+
+.module-finish p {
+  margin: 0;
+  font-size: 12px;
+  font-weight: 900;
+  letter-spacing: .12em;
+  text-transform: uppercase;
+}
+
+.mini-loader {
+  width: min(280px, 70vw);
+  height: 4px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #edf0f2;
+}
+
+.mini-loader span {
+  display: block;
+  width: 38%;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--yellow);
+  animation: scan .9s cubic-bezier(.65,0,.35,1) infinite alternate;
+}
+
+.retry-card {
+  min-height: 220px;
+  margin-top: 42px;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 14px;
+}
+
+.secondary-action {
+  min-height: 44px;
+  border: 0;
+  border-radius: 15px;
+  background: var(--cream);
+  color: var(--ink);
+  padding: 11px 18px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.reading-handoff {
+  margin-top: 56px;
+  display: grid;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 14px;
+  max-width: 560px;
+}
+
+.reading-handoff span {
+  width: 46px;
+  height: 46px;
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  background: var(--teal);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 900;
+}
+
+.handoff-line {
+  height: 3px;
+  border-radius: 999px;
+  background: linear-gradient(90deg, var(--teal), var(--yellow));
+}
+
+.reading-handoff strong {
+  font-size: 12px;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+}
+
+@media (max-width: 640px) {
+  .stage-card.question-mode { min-height: 530px; }
+  .question-screen { margin-top: 28px; }
+  .answer-grid { grid-template-columns: 1fr; }
+  .answer-choice { min-height: 60px; }
+  .question-prompt { margin-bottom: 22px; }
+}
