@@ -1,7 +1,7 @@
 "use strict";
 
 (() => {
-  const PLACEMENT_VERSION = "2026-09-19.7";
+  const PLACEMENT_VERSION = "2026-09-19.8";
   const STORAGE_KEY = "brighton-placement-session-v1";
   const MAX_LISTENING_PLAYS = 3;
   const modules = window.BRIGHTON_PLACEMENT_MODULES || {};
@@ -106,7 +106,7 @@
   }
 
   async function startRemoteSession(name, clientSessionId) {
-    return apiPost("startPlacement", {
+    return apiPost("brightonPlacementStart", {
       clientSessionId,
       studentName: name,
       placementVersion: PLACEMENT_VERSION
@@ -114,7 +114,7 @@
   }
 
   async function resumeRemoteSession(saved) {
-    return apiPost("resumePlacement", {
+    return apiPost("brightonPlacementResume", {
       sessionId: saved.sessionId,
       clientSessionId: saved.clientSessionId,
       placementVersion: PLACEMENT_VERSION
@@ -122,7 +122,7 @@
   }
 
   async function fetchPlacementResult() {
-    return apiPost("placementResult", {
+    return apiPost("brightonPlacementResult", {
       sessionId: session.sessionId,
       clientSessionId: session.clientSessionId,
       placementVersion: PLACEMENT_VERSION
@@ -550,7 +550,7 @@
     `;
 
     try {
-      const result = await apiPost("placementStep", {
+      const result = await apiPost("brightonPlacementStep", {
         sessionId: session.sessionId,
         clientSessionId: session.clientSessionId,
         placementVersion: PLACEMENT_VERSION,
@@ -926,7 +926,7 @@
     `;
 
     try {
-      const result = await apiPost("submitSpeaking", {
+      const result = await apiPost("brightonPlacementSubmitSpeaking", {
         sessionId: session.sessionId,
         clientSessionId: session.clientSessionId,
         placementVersion: PLACEMENT_VERSION,
@@ -994,7 +994,7 @@
     if (button) button.disabled = true;
 
     try {
-      const result = await apiPost("skipSpeaking", {
+      const result = await apiPost("brightonPlacementSkipSpeaking", {
         sessionId: session.sessionId,
         clientSessionId: session.clientSessionId,
         placementVersion: PLACEMENT_VERSION,
@@ -1028,7 +1028,7 @@
       const data = speakingModule();
 
       try {
-        const result = await apiPost("submitSpeaking", {
+        const result = await apiPost("brightonPlacementSubmitSpeaking", {
           sessionId: session.sessionId,
           clientSessionId: session.clientSessionId,
           placementVersion: PLACEMENT_VERSION,
