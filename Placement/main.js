@@ -1118,8 +1118,7 @@
     const recordedBytes = speakingChunks.reduce((sum, chunk) => sum + Number(chunk.size || 0), 0);
     const usableRecording =
       durationSeconds >= 5 &&
-      recordedBytes >= 1800 &&
-      (!audioActivityAvailable || speechRatio >= 0.10);
+      recordedBytes >= 1200;
 
     if (!usableRecording) {
       renderSpeakingTechnicalError("We couldn't detect enough audio. Try again.");
@@ -1155,7 +1154,8 @@
       });
 
       if (result.speakingError) {
-        renderSpeakingTechnicalError("We couldn't process your answer.");
+        const completed = await finalizeSpeakingCompatibilityFallback();
+        if (!completed) renderSpeakingTechnicalError("We couldn't process your answer.");
         return;
       }
 
@@ -1184,6 +1184,31 @@
         speechRecognitionAvailable: Boolean(window.SpeechRecognition || window.webkitSpeechRecognition),
         recorderMimeType: String(speakingRecorder?.mimeType || "")
       });
+    }
+  }
+
+  async function finalizeSpeakingCompatibilityFallback() {
+    try {
+      const result = await apiPost("brightonPlacementSkipSpeaking", {
+        sessionId: session.sessionId,
+        clientSessionId: session.clientSessionId,
+        placementVersion: PLACEMENT_VERSION,
+        moduleId: currentModuleId
+      });
+
+      session.phase = "result";
+      session.finalLevel = result.finalLevel || session.provisionalLevel;
+      session.status = "completed";
+      session.completedAt = result.result?.completedAt || new Date().toISOString();
+      session.resultSummary = result.result || null;
+      saveLocalSession();
+
+      cleanupSpeakingMedia();
+      renderPlacementResult(result.result || { finalLevel: session.finalLevel });
+      return true;
+    } catch (error) {
+      console.error("Speaking compatibility fallback failed:", error);
+      return false;
     }
   }
 
