@@ -459,5 +459,138 @@ window.BRIGHTON_PLACEMENT_MODULES = {
       ]}
     ]
   }
+,
+  "listening-prea1": {
+    phase: "listening",
+    label: "Listening",
+    items: [
+      { id: "lpa-01", audio: "audio/listening/prea1-01.mp3", prompt: "Where does Emma live?", options: [
+        { id: "lpa-01-a", text: "Near the park" }, { id: "lpa-01-b", text: "Near the school" },
+        { id: "lpa-01-c", text: "Near the beach" }, { id: "lpa-01-d", text: "Near the hospital" }
+      ]},
+      { id: "lpa-02", audio: "audio/listening/prea1-02.mp3", prompt: "What time does the bus leave?", options: [
+        { id: "lpa-02-a", text: "7:45" }, { id: "lpa-02-b", text: "8:00" },
+        { id: "lpa-02-c", text: "8:15" }, { id: "lpa-02-d", text: "8:30" }
+      ]},
+      { id: "lpa-03", audio: "audio/listening/prea1-03.mp3", prompt: "When is the café closed?", options: [
+        { id: "lpa-03-a", text: "Friday" }, { id: "lpa-03-b", text: "Saturday" },
+        { id: "lpa-03-c", text: "Sunday" }, { id: "lpa-03-d", text: "Monday" }
+      ]}
+    ]
+  },
+
+  "listening-a1": {
+    phase: "listening",
+    label: "Listening",
+    items: [
+      { id: "la1-01", audio: "audio/listening/a1-01.mp3", prompt: "What does the woman order?", options: [
+        { id: "la1-01-a", text: "Coffee" }, { id: "la1-01-b", text: "Orange juice" },
+        { id: "la1-01-c", text: "Tea" }, { id: "la1-01-d", text: "Water" }
+      ]},
+      { id: "la1-02", audio: "audio/listening/a1-02.mp3", prompt: "What time will they meet?", options: [
+        { id: "la1-02-a", text: "4:00" }, { id: "la1-02-b", text: "4:15" },
+        { id: "la1-02-c", text: "4:30" }, { id: "la1-02-d", text: "5:00" }
+      ]},
+      { id: "la1-03", audio: "audio/listening/a1-03.mp3", prompt: "Where were the keys?", options: [
+        { id: "la1-03-a", text: "In her bag" }, { id: "la1-03-b", text: "On the kitchen table" },
+        { id: "la1-03-c", text: "Next to the front door" }, { id: "la1-03-d", text: "In her bedroom" }
+      ]}
+    ]
+  },
+
+  "listening-a2": {
+    phase: "listening",
+    label: "Listening",
+    items: [
+      { id: "la2-01", audio: "audio/listening/a2-01.mp3", prompt: "Where will they meet?", options: [
+        { id: "la2-01-a", text: "At the café" }, { id: "la2-01-b", text: "Outside the cinema" },
+        { id: "la2-01-c", text: "At the station" }, { id: "la2-01-d", text: "Across from the park" }
+      ]},
+      { id: "la2-02", audio: "audio/listening/a2-02.mp3", prompt: "Why was the man late?", options: [
+        { id: "la2-02-a", text: "There was heavy traffic" }, { id: "la2-02-b", text: "He missed the bus" },
+        { id: "la2-02-c", text: "He returned home for his phone" }, { id: "la2-02-d", text: "He couldn't find the address" }
+      ]},
+      { id: "la2-03", audio: "audio/listening/a2-03.mp3", prompt: "What do participants need to bring?", options: [
+        { id: "la2-03-a", text: "Paper" }, { id: "la2-03-b", text: "A phone or camera" },
+        { id: "la2-03-c", text: "A laptop" }, { id: "la2-03-d", text: "A printed photo" }
+      ]}
+    ]
+  },
+
+  "listening-b1": {
+    phase: "listening",
+    label: "Listening",
+    items: [
+      { id: "lb1-01", audio: "audio/listening/b1-01.mp3", prompt: "Why did the speaker change gyms?", options: [
+        { id: "lb1-01-a", text: "The old gym became too crowded" }, { id: "lb1-01-b", text: "The new gym is cheaper" },
+        { id: "lb1-01-c", text: "She moved to another neighbourhood" }, { id: "lb1-01-d", text: "The old gym closed" }
+      ]},
+      { id: "lb1-02", audio: "audio/listening/b1-02.mp3", prompt: "Why was the meeting moved?", options: [
+        { id: "lb1-02-a", text: "The meeting room was unavailable" }, { id: "lb1-02-b", text: "Maya's flight was delayed" },
+        { id: "lb1-02-c", text: "The project was not ready" }, { id: "lb1-02-d", text: "The man had another appointment" }
+      ]},
+      { id: "lb1-03", audio: "audio/listening/b1-03.mp3", prompt: "How did the speaker's attitude change?", options: [
+        { id: "lb1-03-a", text: "He became more interested in the class" }, { id: "lb1-03-b", text: "He decided recipes were always necessary" },
+        { id: "lb1-03-c", text: "He thought the teacher was too strict" }, { id: "lb1-03-d", text: "He stopped attending the lessons" }
+      ]}
+    ]
+  },
+
+  "listening-b1plus": {
+    phase: "listening",
+    label: "Listening",
+    items: [
+      { id: "lbp-01", audio: "audio/listening/b1plus-01.mp3", prompt: "What do they decide to do?", options: [
+        { id: "lbp-01-a", text: "Take the early train" }, { id: "lbp-01-b", text: "Drive after breakfast" },
+        { id: "lbp-01-c", text: "Buy cheaper train tickets later" }, { id: "lbp-01-d", text: "Cancel the trip" }
+      ]},
+      { id: "lbp-02", audio: "audio/listening/b1plus-02.mp3", prompt: "What has changed about the training session?", options: [
+        { id: "lbp-02-a", text: "Its starting time" }, { id: "lbp-02-b", text: "Its day" },
+        { id: "lbp-02-c", text: "Its location" }, { id: "lbp-02-d", text: "Its instructor" }
+      ]},
+      { id: "lbp-03", audio: "audio/listening/b1plus-03.mp3", prompt: "What is the speaker's overall view of the hotel's location?", options: [
+        { id: "lbp-03-a", text: "It was inconvenient throughout the trip" }, { id: "lbp-03-b", text: "It had disadvantages but worked out well" },
+        { id: "lbp-03-c", text: "It was exactly as advertised" }, { id: "lbp-03-d", text: "It was too noisy to recommend" }
+      ]}
+    ]
+  },
+
+  "listening-b2": {
+    phase: "listening",
+    label: "Listening",
+    items: [
+      { id: "lb2-01", audio: "audio/listening/b2-01.mp3", prompt: "What is the speaker mainly criticising?", options: [
+        { id: "lb2-01-a", text: "Working with colleagues in person" }, { id: "lb2-01-b", text: "Having online meetings" },
+        { id: "lb2-01-c", text: "Commuting when physical presence adds little value" }, { id: "lb2-01-d", text: "Working from home too frequently" }
+      ]},
+      { id: "lb2-02", audio: "audio/listening/b2-02.mp3", prompt: "What does the woman imply?", options: [
+        { id: "lb2-02-a", text: "The campaign succeeded completely" }, { id: "lb2-02-b", text: "Website traffic was measured incorrectly" },
+        { id: "lb2-02-c", text: "Increased attention did not produce the intended business result" }, { id: "lb2-02-d", text: "The company should stop advertising online" }
+      ]},
+      { id: "lb2-03", audio: "audio/listening/b2-03.mp3", prompt: "What should passengers do?", options: [
+        { id: "lb2-03-a", text: "Move to another platform" }, { id: "lb2-03-b", text: "Wait on Platform Six" },
+        { id: "lb2-03-c", text: "Return in twenty minutes" }, { id: "lb2-03-d", text: "Take the next scheduled service" }
+      ]}
+    ]
+  },
+
+  "listening-c1": {
+    phase: "listening",
+    label: "Listening",
+    items: [
+      { id: "lc1-01", audio: "audio/listening/c1-01.mp3", prompt: "What is the speaker's main point?", options: [
+        { id: "lc1-01-a", text: "Convenient systems always produce better decisions" }, { id: "lc1-01-b", text: "Minor obstacles can sometimes encourage more deliberate choices" },
+        { id: "lc1-01-c", text: "People generally dislike making quick decisions" }, { id: "lc1-01-d", text: "Technology should make every action more difficult" }
+      ]},
+      { id: "lc1-02", audio: "audio/listening/c1-02.mp3", prompt: "What concern does the woman express?", options: [
+        { id: "lc1-02-a", text: "The product is already complete" }, { id: "lc1-02-b", text: "A delay without a clear plan may achieve little" },
+        { id: "lc1-02-c", text: "Two weeks is far too long a delay" }, { id: "lc1-02-d", text: "The launch date should never change" }
+      ]},
+      { id: "lc1-03", audio: "audio/listening/c1-03.mp3", prompt: "According to the speaker, what is now scarce?", options: [
+        { id: "lc1-03-a", text: "Information itself" }, { id: "lc1-03-b", text: "Reliable technology" },
+        { id: "lc1-03-c", text: "The attention needed to evaluate information" }, { id: "lc1-03-d", text: "Opportunities to express opinions" }
+      ]}
+    ]
+  }
 
 };
