@@ -70,7 +70,7 @@ Rows created before versioning may have blank `answerKeyVersion` / `testVersion`
 
 ## Permissions
 
-Current Brighton Exams CMS configuration: all editable native collections use `ANYONE` for read, insert, update, and remove. This includes `TestResults`, `Exams`, `ExamSubmissions`, `ExamProgress`, and the Brighton Placement collections. The backend flow remains in place, but CMS item permissions themselves are fully open.
+Set the collection permissions as restrictively as possible. The public test page should not write directly to CMS. The Wix backend HTTP function receives the submission and inserts it using backend permissions.
 
 ## Required HTTP functions
 
