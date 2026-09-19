@@ -6,7 +6,7 @@
   <meta name="description" content="Brighton English School adaptive placement test" />
   <title>Brighton Placement</title>
   <link rel="icon" type="image/png" href="../Exams/assets/brighton-logo.png" />
-  <link rel="stylesheet" href="styles.css?v=20260919-8" />
+  <link rel="stylesheet" href="styles.css?v=20260919-13" />
 </head>
 <body>
   <main class="placement-app">
@@ -35,10 +35,6 @@
           </div>
 
           <form id="studentForm" class="player-card" novalidate>
-            <div class="player-card-head">
-              <span class="player-slot">Player</span>
-              <span class="status-dot" aria-hidden="true"></span>
-            </div>
             <label for="studentName">Full name</label>
             <input id="studentName" name="studentName" type="text" autocomplete="name" maxlength="90" placeholder="Your name" required />
             <button id="startBtn" class="primary-btn" type="submit"><span>Start</span><span aria-hidden="true">→</span></button>
@@ -65,7 +61,10 @@
           <span class="shell-node">03</span><span class="shell-track"></span>
           <span class="shell-node">04</span>
         </div>
-        <span id="candidateName" class="candidate-name"></span>
+        <div class="shell-actions">
+          <span id="candidateName" class="candidate-name"></span>
+          <button id="restartTestBtn" class="restart-test-btn" type="button">Restart test</button>
+        </div>
       </header>
 
       <main class="stage-main">
@@ -88,6 +87,6 @@
   <script src="../Exams/config.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
   <script src="item-bank.js?v=20260919-8"></script>
-  <script src="main.js?v=20260919-11"></script>
+  <script src="main.js?v=20260919-13"></script>
 </body>
 </html>
