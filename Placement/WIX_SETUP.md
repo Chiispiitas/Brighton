@@ -4,7 +4,7 @@ This setup is for the adaptive placement app at `/Placement/`.
 
 The browser renders questions, but **answer keys, scoring, routing, final placement and speaking grades remain server-authoritative**.
 
-Current contract version: `2026-09-19.3`
+Current contract version: `2026-09-19.4`
 
 ## PlacementSessions
 
@@ -80,8 +80,15 @@ Every visible item in these modules needs one matching private row:
 - `reading-b1plus`
 - `reading-b2`
 - `reading-c1`
+- `listening-prea1`
+- `listening-a1`
+- `listening-a2`
+- `listening-b1`
+- `listening-b1plus`
+- `listening-b2`
+- `listening-c1`
 
-Set `placementVersion` to `2026-09-19.3`, `weight` to `1`, and `isActive` to `true`.
+Set `placementVersion` to `2026-09-19.4`, `weight` to `1`, and `isActive` to `true`.
 
 Do **not** place `correctOptionId` values in the public GitHub repository.
 
@@ -127,8 +134,13 @@ The first routing pass is intentionally simple and auditable:
 - Reading contains one short level-matched text and four questions.
 - A Reading result of 0–1/4 moves the provisional level down one band, 2–3/4 keeps it stable, and 4/4 moves it up one band.
 - Reading then routes into the matching Listening band.
+- Listening uses three independent MP3 clips, one question per clip.
+- Each clip may be started a maximum of three times. The frontend saves that count locally and the response telemetry stores the number of plays used.
+- The backend rejects Listening answers that report zero plays.
+- A Listening result of 0/3 moves the provisional level down one band, 1–2/3 keeps it stable, and 3/3 moves it up one band.
+- Listening then routes into a level-matched Speaking module such as `speaking-b1plus`.
 
-The estimate is still provisional. Listening and Speaking will continue to modify or confirm it.
+The estimate remains provisional until Speaking is graded.
 
 ## Permissions
 
