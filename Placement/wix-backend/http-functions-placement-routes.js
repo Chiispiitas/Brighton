@@ -1,9 +1,9 @@
-// Paste/merge this block into the EXISTING Backend/http-functions.js.
-// Do not remove the existing Tests/Exams imports or routes.
-
-import { corsOptions } from "backend/core.js";
+// Merge this block into the EXISTING Backend/http-functions.js.
+// Keep all existing Tests/Exams imports and routes.
+// IMPORTANT: do not add a second core.js import here.
 
 import {
+  placementCors,
   startPlacement,
   resumePlacement,
   placementStep,
@@ -12,38 +12,15 @@ import {
   placementResult
 } from "backend/placement.js";
 
-/* =========================================================
-   BRIGHTON PLACEMENT — CORS / FALLBACK VERB
-========================================================= */
+/* CORS / catch-all */
+export function use_brightonPlacementStart() { return placementCors(); }
+export function use_brightonPlacementResume() { return placementCors(); }
+export function use_brightonPlacementStep() { return placementCors(); }
+export function use_brightonPlacementSubmitSpeaking() { return placementCors(); }
+export function use_brightonPlacementSkipSpeaking() { return placementCors(); }
+export function use_brightonPlacementResult() { return placementCors(); }
 
-export function use_brightonPlacementStart() {
-  return corsOptions("POST");
-}
-
-export function use_brightonPlacementResume() {
-  return corsOptions("POST");
-}
-
-export function use_brightonPlacementStep() {
-  return corsOptions("POST");
-}
-
-export function use_brightonPlacementSubmitSpeaking() {
-  return corsOptions("POST");
-}
-
-export function use_brightonPlacementSkipSpeaking() {
-  return corsOptions("POST");
-}
-
-export function use_brightonPlacementResult() {
-  return corsOptions("POST");
-}
-
-/* =========================================================
-   BRIGHTON PLACEMENT — POST ROUTES
-========================================================= */
-
+/* POST routes */
 export async function post_brightonPlacementStart(request) {
   return startPlacement(request);
 }
