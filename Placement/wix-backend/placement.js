@@ -10,9 +10,8 @@ import {
   jsonOK,
   jsonBadRequest,
   jsonServerError,
-  corsOptions,
   readJsonBody
-} from "backend/placement-core.js";
+} from "backend/core.js";
 
 const PLACEMENT_SESSIONS = "BrightonPlacementSessions";
 const PLACEMENT_RESPONSES = "BrightonPlacementResponses";
@@ -532,19 +531,6 @@ async function buildResultSummary(session) {
   };
 }
 
-
-export function placementCors(methods = "POST") {
-  return corsOptions(methods);
-}
-
-export function pingPlacement() {
-  return jsonOK({
-    success: true,
-    service: "brighton-placement",
-    contract: PLACEMENT_VERSION,
-    answerKeyVersion: ITEM_KEY_VERSION
-  });
-}
 
 export async function startPlacement(request) {
   try {
