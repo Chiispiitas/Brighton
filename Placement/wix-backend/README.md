@@ -49,3 +49,14 @@ It does not query or mutate the Tests/Exams collections.
 `PLACEMENT_VERSION` is `2026-09-19.8`.
 
 `ITEM_KEY_VERSION` remains `2026-09-19.7`, matching the 74 private answer-key rows already seeded in Wix.
+
+
+## Cross-origin frontend requests
+
+The Placement frontend is hosted at `exams.bebrighton.net` while the backend lives on the Wix site.
+
+The frontend sends JSON text using the CORS-safelisted content type:
+
+`Content-Type: text/plain;charset=UTF-8`
+
+This keeps Placement POST requests preflight-independent. The Wix functions still return `Access-Control-Allow-Origin: *`, and the existing OPTIONS handlers remain available, but a missing/lagging OPTIONS deployment no longer blocks the browser before the POST reaches Wix.
