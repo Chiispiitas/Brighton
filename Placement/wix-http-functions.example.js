@@ -13,7 +13,7 @@ import {
 const PLACEMENT_SESSIONS = "PlacementSessions";
 const PLACEMENT_RESPONSES = "PlacementResponses";
 const PLACEMENT_ITEMS = "PlacementItems";
-const PLACEMENT_VERSION = "2026-09-19.3";
+const PLACEMENT_VERSION = "2026-09-19.4";
 
 const CORS_HEADERS = {
   "Content-Type": "application/json",
@@ -61,7 +61,8 @@ function cleanAnswers(value) {
     .map((answer) => ({
       itemId: String(answer?.itemId || "").trim(),
       optionId: String(answer?.optionId || "").trim(),
-      responseTimeMs: Math.max(0, Math.min(120000, Number(answer?.responseTimeMs) || 0))
+      responseTimeMs: Math.max(0, Math.min(120000, Number(answer?.responseTimeMs) || 0)),
+      plays: Math.max(0, Math.min(3, Number(answer?.plays) || 0))
     }))
     .filter((answer) => {
       if (!answer.itemId || !answer.optionId || seen.has(answer.itemId)) return false;
@@ -121,6 +122,10 @@ function listeningModuleFor(level) {
   return `listening-${levelSlug(level)}`;
 }
 
+function speakingModuleFor(level) {
+  return `speaking-${levelSlug(level)}`;
+}
+
 function adjustAfterReading(level, correct) {
   const currentIndex = Math.max(0, LEVELS.indexOf(level));
   if (correct <= 1) return LEVELS[Math.max(0, currentIndex - 1)];
@@ -128,8 +133,17 @@ function adjustAfterReading(level, correct) {
   return LEVELS[currentIndex];
 }
 
+function adjustAfterListening(level, correct) {
+  const currentIndex = Math.max(0, LEVELS.indexOf(level));
+  if (correct === 0) return LEVELS[Math.max(0, currentIndex - 1)];
+  if (correct === 3) return LEVELS[Math.min(LEVELS.length - 1, currentIndex + 1)];
+  return LEVELS[currentIndex];
+}
+
 function expectedAnswerCount(moduleId) {
-  return /^reading-/.test(moduleId) ? 4 : 5;
+  if (/^listening-/.test(moduleId)) return 3;
+  if (/^reading-/.test(moduleId)) return 4;
+  return 5;
 }
 
 async function getPlacementSession(sessionId, clientSessionId) {
@@ -186,7 +200,10 @@ async function saveResponses({
           moduleId,
           phase: session.phase || "language",
           itemId: answer.itemId,
-          responseJson: JSON.stringify({ optionId: answer.optionId }),
+          responseJson: JSON.stringify({
+            optionId: answer.optionId,
+            plays: answer.plays
+          }),
           correct,
           score: correct ? Number(key?.weight) || 1 : 0,
           responseTimeMs: answer.responseTimeMs,
@@ -309,6 +326,10 @@ export async function post_placementStep(request) {
       return placementBadRequest("Incomplete placement module.");
     }
 
+    if (/^listening-/.test(moduleId) && answers.some((answer) => answer.plays < 1)) {
+      return placementBadRequest("Each listening question must be played before answering.");
+    }
+
     const session = await getPlacementSession(sessionId, clientSessionId);
     if (!session || session.status !== "active") {
       return placementBadRequest("Placement session not found.");
@@ -364,6 +385,11 @@ export async function post_placementStep(request) {
       provisionalLevel = adjustAfterReading(provisionalLevel || "A2", correct);
       nextModuleId = listeningModuleFor(provisionalLevel);
       route.push(nextModuleId);
+    } else if (/^listening-/.test(moduleId)) {
+      nextPhase = "speaking";
+      provisionalLevel = adjustAfterListening(provisionalLevel || "A2", correct);
+      nextModuleId = speakingModuleFor(provisionalLevel);
+      route.push(nextModuleId);
     } else {
       return placementBadRequest("Unsupported placement module.");
     }
@@ -374,7 +400,7 @@ export async function post_placementStep(request) {
       moduleId: nextModuleId,
       routeJson: JSON.stringify(route),
       progressJson: JSON.stringify({
-        stage: nextPhase === "listening" ? 3 : nextPhase === "reading" ? 2 : 1,
+        stage: nextPhase === "speaking" ? 4 : nextPhase === "listening" ? 3 : nextPhase === "reading" ? 2 : 1,
         totalStages: 4,
         lastCompletedModule: moduleId,
         lastModuleScore: correct,
