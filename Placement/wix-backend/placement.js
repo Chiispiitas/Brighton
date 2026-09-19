@@ -533,8 +533,17 @@ async function buildResultSummary(session) {
 }
 
 
-export function placementCors() {
-  return corsOptions("POST");
+export function placementCors(methods = "POST") {
+  return corsOptions(methods);
+}
+
+export function pingPlacement() {
+  return jsonOK({
+    success: true,
+    service: "brighton-placement",
+    contract: PLACEMENT_VERSION,
+    answerKeyVersion: ITEM_KEY_VERSION
+  });
 }
 
 export async function startPlacement(request) {
