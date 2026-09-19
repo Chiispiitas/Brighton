@@ -263,8 +263,17 @@ function gradeSpeakingDeterministically(payload, level) {
   const segmentCount = Math.max(0, Math.min(100, Number(payload.segmentCount) || 0));
   const recordedBytes = Math.max(0, Number(payload.recordedBytes) || 0);
   const transcriptAvailable = Boolean(payload.transcriptAvailable && transcript);
+  const audioActivityAvailable = payload.audioActivityAvailable !== false;
+  const speechRecognitionAvailable = payload.speechRecognitionAvailable !== false;
+  const recorderMimeType = String(payload.recorderMimeType || "").slice(0, 120);
+  const hasUsableRecording =
+    durationSeconds >= profile.minSeconds * .60 &&
+    recordedBytes >= 1800 &&
+    (!audioActivityAvailable || speechRatio >= .10);
+  const transcriptUsable = transcriptAvailable && wordCount >= 4;
+  const compatibilityMode = hasUsableRecording && !transcriptUsable;
 
-  const wpm = durationSeconds > 0 ? wordCount / (durationSeconds / 60) : 0;
+  const wpm = durationSeconds > 0 && wordCount > 0 ? wordCount / (durationSeconds / 60) : 0;
   const durationScore = clamp(durationSeconds / profile.targetSeconds);
   const minimumDurationScore = clamp(durationSeconds / profile.minSeconds);
   const speechActivityScore = clamp((speechRatio - .16) / .62);
@@ -326,19 +335,17 @@ function gradeSpeakingDeterministically(payload, level) {
   const communication = round1(clamp(rawCommunication + SPEAKING_SCORE_LENIENCY, 0, 10));
   const composite = round1(clamp(rawComposite + SPEAKING_SCORE_LENIENCY, 0, 10));
 
-  const inputError =
-    !transcriptAvailable ||
-    wordCount < 5 ||
-    durationSeconds < profile.minSeconds * .72 ||
-    speechRatio < .25 ||
-    recordedBytes < 4000;
+  const inputError = !hasUsableRecording;
 
   const currentIndex = Math.max(0, LEVELS.indexOf(level));
   let speakingLevel = level;
 
-  if (!inputError && composite >= 7.6 && wordCount >= profile.targetWords * .78) {
+  // Without a reliable browser transcript, accept the microphone answer but
+  // keep the objective placement band unchanged rather than penalising the
+  // student for device/browser speech-recognition limitations.
+  if (!inputError && !compatibilityMode && composite >= 7.6 && wordCount >= profile.targetWords * .78) {
     speakingLevel = LEVELS[Math.min(LEVELS.length - 1, currentIndex + 1)];
-  } else if (!inputError && composite < 4.4) {
+  } else if (!inputError && !compatibilityMode && composite < 4.4) {
     speakingLevel = LEVELS[Math.max(0, currentIndex - 1)];
   }
 
@@ -358,20 +365,24 @@ function gradeSpeakingDeterministically(payload, level) {
     recognitionConfidence: round1(recognitionConfidence),
     segmentCount,
     transcriptAvailable,
-    fluency: round1(fluency),
-    grammar: round1(grammar),
-    vocabulary: round1(vocabulary),
-    pronunciation: round1(pronunciation),
-    communication: round1(communication),
-    composite,
+    fluency: compatibilityMode ? null : round1(fluency),
+    grammar: compatibilityMode ? null : round1(grammar),
+    vocabulary: compatibilityMode ? null : round1(vocabulary),
+    pronunciation: compatibilityMode ? null : round1(pronunciation),
+    communication: compatibilityMode ? null : round1(communication),
+    composite: compatibilityMode ? null : composite,
     speakingLevel,
     finalLevel: inputError ? level : speakingLevel,
     inputError,
+    compatibilityMode,
+    audioActivityAvailable,
+    speechRecognitionAvailable,
+    recorderMimeType,
     confidence: round1(clamp(
-      .60 +
+      .56 +
       .16 * minimumDurationScore +
-      .14 * speechActivityScore +
-      .10 * (transcriptAvailable ? 1 : 0),
+      .14 * (audioActivityAvailable ? speechActivityScore : .75) +
+      .10 * (transcriptUsable ? 1 : .45),
       .35,
       .92
     ))
@@ -500,14 +511,20 @@ async function buildResultSummary(session) {
   const speakingRecord = speakingQuery.items[0] || null;
   const speakingMetrics = safeJson(speakingRecord?.metricsJson, {});
   const speakingComposite = Number(speakingMetrics?.composite);
+  const speakingCompatibilityMode = Boolean(speakingMetrics?.compatibilityMode);
+  const hasSpeakingComposite = !speakingCompatibilityMode && Number.isFinite(speakingComposite);
 
   const speakingSkill = speakingRecord
     ? {
         label: "Speaking",
         level: String(speakingRecord.speakingLevel || session.finalLevel || session.provisionalLevel || "A2"),
-        description: LEVEL_DESCRIPTIONS[String(speakingRecord.speakingLevel || "")] || "",
-        score: Number.isFinite(speakingComposite) ? Math.round(speakingComposite * 10) : null,
-        displayScore: Number.isFinite(speakingComposite) ? `${speakingComposite.toFixed(1)}/10` : "—",
+        description: speakingCompatibilityMode
+          ? "Recorded · browser transcript unavailable"
+          : (LEVEL_DESCRIPTIONS[String(speakingRecord.speakingLevel || "")] || ""),
+        score: hasSpeakingComposite ? Math.round(speakingComposite * 10) : null,
+        displayScore: speakingCompatibilityMode
+          ? "Recorded"
+          : (hasSpeakingComposite ? `${speakingComposite.toFixed(1)}/10` : "—"),
         skipped: false
       }
     : {
@@ -861,15 +878,21 @@ export async function submitSpeaking(request) {
       wpm: grade.wpm,
       recognitionConfidence: grade.recognitionConfidence,
       segmentCount: grade.segmentCount,
-      fluency: grade.fluency,
-      grammar: grade.grammar,
-      vocabulary: grade.vocabulary,
-      pronunciation: grade.pronunciation,
-      communication: grade.communication,
+      ...(grade.compatibilityMode ? {} : {
+        fluency: grade.fluency,
+        grammar: grade.grammar,
+        vocabulary: grade.vocabulary,
+        pronunciation: grade.pronunciation,
+        communication: grade.communication
+      }),
       speakingLevel: grade.speakingLevel,
-      graderVersion: "deterministic-browser-v2-lenient",
+      graderVersion: "deterministic-browser-v3-compatible",
       metricsJson: JSON.stringify({
         composite: grade.composite,
+        compatibilityMode: grade.compatibilityMode,
+        audioActivityAvailable: grade.audioActivityAvailable,
+        speechRecognitionAvailable: grade.speechRecognitionAvailable,
+        recorderMimeType: grade.recorderMimeType,
         speechRatio: grade.speechRatio,
         uniqueWords: grade.uniqueWords,
         uniqueRatio: grade.uniqueRatio,
@@ -920,7 +943,8 @@ export async function submitSpeaking(request) {
         vocabulary: grade.vocabulary,
         pronunciation: grade.pronunciation,
         communication: grade.communication,
-        composite: grade.composite
+        composite: grade.composite,
+        compatibilityMode: grade.compatibilityMode
       }
     });
   } catch (error) {
@@ -1191,7 +1215,11 @@ export async function placementDashboardResult(request) {
           communication: placementDashboardNumber(speakingRecord.communication),
           speakingLevel: String(speakingRecord.speakingLevel || ""),
           graderVersion: String(speakingRecord.graderVersion || ""),
-          composite: Number.isFinite(Number(speakingMetrics?.composite))
+          compatibilityMode: Boolean(speakingMetrics?.compatibilityMode),
+          audioActivityAvailable: speakingMetrics?.audioActivityAvailable !== false,
+          speechRecognitionAvailable: speakingMetrics?.speechRecognitionAvailable !== false,
+          recorderMimeType: String(speakingMetrics?.recorderMimeType || ""),
+          composite: !speakingMetrics?.compatibilityMode && Number.isFinite(Number(speakingMetrics?.composite))
             ? Number(speakingMetrics.composite)
             : null
         }
