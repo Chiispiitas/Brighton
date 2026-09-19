@@ -382,7 +382,13 @@
     try {
       remote = await resumeRemoteSession(saved);
     } catch (error) {
+      const message = String(error?.message || "");
       console.warn("Could not verify saved placement session.", error);
+
+      if (/placement session not found|completed placement not found/i.test(message)) {
+        clearLocalPlacementProgress();
+        return;
+      }
     }
 
     if (remote?.expired) {
