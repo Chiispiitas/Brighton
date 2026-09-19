@@ -155,18 +155,30 @@ async function deletePlacementSessionCascade(session) {
 }
 
 async function purgeStalePlacementSessions() {
-  const cutoff = new Date(Date.now() - PLACEMENT_INACTIVITY_MS);
-
   try {
     const found = await wixData
       .query(PLACEMENT_SESSIONS)
-      .eq("status", "active")
-      .lt("updatedAt", cutoff)
       .limit(1000)
       .find({ suppressAuth: true });
 
-    await Promise.all(found.items.map(deletePlacementSessionCascade));
-    return found.items.length;
+    const stale = found.items.filter((session) => {
+      const status = String(session?.status || "active");
+      if (status !== "active") return false;
+      return placementSessionIsStale(session);
+    });
+
+    const results = await Promise.all(
+      stale.map(async (session) => {
+        try {
+          return await deletePlacementSessionCascade(session);
+        } catch (error) {
+          console.warn("Could not delete stale Placement session:", session?._id, error);
+          return false;
+        }
+      })
+    );
+
+    return results.filter(Boolean).length;
   } catch (error) {
     console.warn("Could not purge stale Placement sessions:", error);
     return 0;
