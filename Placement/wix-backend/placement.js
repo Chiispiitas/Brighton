@@ -1022,3 +1022,200 @@ export async function placementResult(request) {
     return jsonServerError(error);
   }
 }
+
+
+function placementDashboardDate(value) {
+  if (!value) return "";
+  try {
+    const date = value instanceof Date ? value : new Date(value);
+    return Number.isNaN(date.getTime()) ? String(value) : date.toISOString();
+  } catch {
+    return String(value || "");
+  }
+}
+
+function placementDashboardNumber(value) {
+  const number = Number(value);
+  return Number.isFinite(number) ? number : 0;
+}
+
+function placementDashboardResultId(sessionId) {
+  return `BR-${String(sessionId || "")
+    .replace(/[^a-z0-9]/gi, "")
+    .slice(-8)
+    .toUpperCase()}`;
+}
+
+function placementDashboardSessionRow(session) {
+  return {
+    sessionId: String(session?._id || ""),
+    studentName: String(session?.studentName || ""),
+    status: String(session?.status || "active"),
+    phase: String(session?.phase || ""),
+    moduleId: String(session?.moduleId || ""),
+    provisionalLevel: String(session?.provisionalLevel || ""),
+    finalLevel: String(session?.finalLevel || ""),
+    confidence: placementDashboardNumber(session?.confidence),
+    startedAt: placementDashboardDate(session?.startedAt),
+    updatedAt: placementDashboardDate(session?.updatedAt),
+    completedAt: placementDashboardDate(session?.completedAt),
+    timeSpentSeconds: placementDashboardNumber(session?.timeSpentSeconds),
+    placementVersion: String(session?.placementVersion || ""),
+    resultId: placementDashboardResultId(session?._id)
+  };
+}
+
+function placementDashboardModules(responses) {
+  const groups = new Map();
+
+  for (const responseItem of responses || []) {
+    const moduleId = String(responseItem?.moduleId || "unknown");
+    if (!groups.has(moduleId)) {
+      groups.set(moduleId, {
+        moduleId,
+        correct: 0,
+        total: 0,
+        responseTimeSeconds: 0
+      });
+    }
+
+    const group = groups.get(moduleId);
+    group.total += 1;
+    const isCorrect = responseItem?.correct === true || String(responseItem?.correct).toLowerCase() === "true";
+    if (isCorrect) group.correct += 1;
+    group.responseTimeSeconds += Math.max(0, placementDashboardNumber(responseItem?.responseTimeMs)) / 1000;
+  }
+
+  return [...groups.values()].map((group) => ({
+    ...group,
+    responseTimeSeconds: Math.round(group.responseTimeSeconds)
+  }));
+}
+
+export async function listPlacementResults(request) {
+  try {
+    const query = request?.query || {};
+    const studentFilter = String(query.student || "").trim().toLowerCase();
+    const levelFilter = String(query.level || "").trim();
+    const statusFilter = String(query.status || "").trim().toLowerCase();
+
+    const found = await wixData
+      .query(PLACEMENT_SESSIONS)
+      .limit(1000)
+      .find({ suppressAuth: true });
+
+    let results = found.items.map(placementDashboardSessionRow);
+
+    if (studentFilter) {
+      results = results.filter((item) =>
+        item.studentName.toLowerCase().includes(studentFilter)
+      );
+    }
+
+    if (levelFilter) {
+      results = results.filter((item) =>
+        (item.finalLevel || item.provisionalLevel) === levelFilter
+      );
+    }
+
+    if (statusFilter) {
+      results = results.filter((item) =>
+        item.status.toLowerCase() === statusFilter
+      );
+    }
+
+    results.sort((a, b) => {
+      const aTime = Date.parse(a.completedAt || a.updatedAt || a.startedAt || "") || 0;
+      const bTime = Date.parse(b.completedAt || b.updatedAt || b.startedAt || "") || 0;
+      return bTime - aTime;
+    });
+
+    return jsonOK({
+      success: true,
+      results,
+      total: results.length
+    });
+  } catch (error) {
+    console.error("listPlacementResults failed:", error);
+    return jsonServerError(error);
+  }
+}
+
+export async function placementDashboardResult(request) {
+  try {
+    const sessionId = String(request?.query?.sessionId || "").trim();
+
+    if (!sessionId) {
+      return jsonBadRequest("Placement session ID is required.");
+    }
+
+    const sessionQuery = await wixData
+      .query(PLACEMENT_SESSIONS)
+      .eq("_id", sessionId)
+      .limit(1)
+      .find({ suppressAuth: true });
+
+    const session = sessionQuery.items[0];
+
+    if (!session) {
+      return jsonBadRequest("Placement session not found.");
+    }
+
+    const [responseQuery, speakingQuery] = await Promise.all([
+      wixData
+        .query(PLACEMENT_RESPONSES)
+        .eq("sessionId", sessionId)
+        .limit(1000)
+        .find({ suppressAuth: true }),
+      wixData
+        .query(PLACEMENT_SPEAKING)
+        .eq("sessionId", sessionId)
+        .limit(1)
+        .find({ suppressAuth: true })
+    ]);
+
+    const speakingRecord = speakingQuery.items[0] || null;
+    const speakingMetrics = safeJson(speakingRecord?.metricsJson, {});
+    const speaking = speakingRecord
+      ? {
+          promptId: String(speakingRecord.promptId || ""),
+          promptLevel: String(speakingRecord.promptLevel || ""),
+          audioUrl: String(speakingRecord.audioUrl || ""),
+          transcript: String(speakingRecord.transcript || ""),
+          durationSeconds: placementDashboardNumber(speakingRecord.durationSeconds),
+          speechSeconds: placementDashboardNumber(speakingRecord.speechSeconds),
+          wordCount: placementDashboardNumber(speakingRecord.wordCount),
+          wpm: placementDashboardNumber(speakingRecord.wpm),
+          recognitionConfidence: placementDashboardNumber(speakingRecord.recognitionConfidence),
+          segmentCount: placementDashboardNumber(speakingRecord.segmentCount),
+          fluency: placementDashboardNumber(speakingRecord.fluency),
+          grammar: placementDashboardNumber(speakingRecord.grammar),
+          vocabulary: placementDashboardNumber(speakingRecord.vocabulary),
+          pronunciation: placementDashboardNumber(speakingRecord.pronunciation),
+          communication: placementDashboardNumber(speakingRecord.communication),
+          speakingLevel: String(speakingRecord.speakingLevel || ""),
+          graderVersion: String(speakingRecord.graderVersion || ""),
+          composite: Number.isFinite(Number(speakingMetrics?.composite))
+            ? Number(speakingMetrics.composite)
+            : null
+        }
+      : null;
+
+    const result = String(session.status || "") === "completed"
+      ? await buildResultSummary(session)
+      : null;
+
+    return jsonOK({
+      success: true,
+      session: placementDashboardSessionRow(session),
+      result,
+      route: safeJson(session.routeJson, []),
+      progress: safeJson(session.progressJson, {}),
+      modules: placementDashboardModules(responseQuery.items),
+      speaking
+    });
+  } catch (error) {
+    console.error("placementDashboardResult failed:", error);
+    return jsonServerError(error);
+  }
+}
