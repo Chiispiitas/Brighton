@@ -4,6 +4,8 @@
   const PLACEMENT_VERSION = "2026-09-19.8";
   const STORAGE_KEY = "brighton-placement-session-v1";
   const RESTART_NAME_KEY = "brighton-placement-restart-name";
+  const INACTIVITY_LIMIT_MS = 60 * 60 * 1000;
+  const ACTIVITY_SYNC_INTERVAL_MS = 5 * 60 * 1000;
   const MAX_LISTENING_PLAYS = 3;
   const modules = window.BRIGHTON_PLACEMENT_MODULES || {};
 
@@ -57,18 +59,60 @@
   let speakingTotalFrames = 0;
   let speakingNoiseFloor = 0.018;
   let speakingThreshold = 0.035;
+  let lastActivityAt = 0;
+  let lastActivitySyncAt = 0;
+  let inactivityTimer = null;
+  let expiringForInactivity = false;
 
   function makeClientSessionId() {
     if (window.crypto?.randomUUID) return window.crypto.randomUUID();
     return `placement-${Date.now()}-${Math.random().toString(36).slice(2)}-${Math.random().toString(36).slice(2)}`;
   }
 
+  function localActivityTimestamp(saved) {
+    const explicit = Number(saved?.lastActivityAt);
+    if (Number.isFinite(explicit) && explicit > 0) return explicit;
+
+    const fallback = Date.parse(saved?.updatedAt || saved?.startedAt || "");
+    return Number.isFinite(fallback) ? fallback : 0;
+  }
+
+  function clearLocalPlacementProgress() {
+    window.clearTimeout(inactivityTimer);
+    inactivityTimer = null;
+
+    clearLocalPlacementProgress();
+  }
+
   function loadLocalSession() {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
       if (!raw) return null;
+
       const saved = JSON.parse(raw);
-      if (!saved?.sessionId || !saved?.clientSessionId || saved.placementVersion !== PLACEMENT_VERSION) return null;
+      if (!saved?.sessionId || !saved?.clientSessionId || saved.placementVersion !== PLACEMENT_VERSION) {
+        localStorage.removeItem(STORAGE_KEY);
+        return null;
+      }
+
+      const isActive = saved.status !== "completed" && saved.phase !== "result";
+      const savedActivityAt = localActivityTimestamp(saved);
+
+      if (isActive && savedActivityAt && Date.now() - savedActivityAt >= INACTIVITY_LIMIT_MS) {
+        const expired = {
+          sessionId: saved.sessionId,
+          clientSessionId: saved.clientSessionId,
+          placementVersion: saved.placementVersion
+        };
+
+        localStorage.removeItem(STORAGE_KEY);
+        window.setTimeout(() => {
+          expireRemoteSession(expired).catch(() => {});
+        }, 0);
+        return null;
+      }
+
+      lastActivityAt = savedActivityAt || Date.now();
       return saved;
     } catch (error) {
       console.warn("Could not restore placement session.", error);
@@ -82,6 +126,7 @@
     try {
       localStorage.setItem(STORAGE_KEY, JSON.stringify({
         ...session,
+        lastActivityAt: lastActivityAt || Date.now(),
         currentModuleId,
         currentQuestionIndex,
         moduleAnswers,
@@ -134,6 +179,93 @@
       clientSessionId: session.clientSessionId,
       placementVersion: PLACEMENT_VERSION
     });
+  }
+
+  async function touchRemoteActivity() {
+    if (!session || session.status === "completed" || session.phase === "result") return;
+
+    try {
+      const result = await apiPost("brightonPlacementActivity", {
+        sessionId: session.sessionId,
+        clientSessionId: session.clientSessionId,
+        placementVersion: PLACEMENT_VERSION
+      });
+
+      if (result.expired) {
+        clearLocalPlacementProgress();
+        cleanupSpeakingMedia();
+        session = null;
+        window.location.reload();
+      }
+    } catch (error) {
+      console.warn("Could not sync placement activity.", error);
+    }
+  }
+
+  async function expireRemoteSession(savedSession = session) {
+    if (!savedSession?.sessionId || !savedSession?.clientSessionId) return;
+
+    await apiPost("brightonPlacementExpire", {
+      sessionId: savedSession.sessionId,
+      clientSessionId: savedSession.clientSessionId,
+      placementVersion: savedSession.placementVersion || PLACEMENT_VERSION
+    });
+  }
+
+  function scheduleInactivityExpiry() {
+    window.clearTimeout(inactivityTimer);
+    inactivityTimer = null;
+
+    if (!session || session.status === "completed" || session.phase === "result") return;
+
+    const remaining = Math.max(0, INACTIVITY_LIMIT_MS - (Date.now() - lastActivityAt));
+
+    inactivityTimer = window.setTimeout(() => {
+      expirePlacementForInactivity();
+    }, remaining + 50);
+  }
+
+  function markPlacementActivity({ syncServer = true } = {}) {
+    if (!session || session.status === "completed" || session.phase === "result") return;
+
+    lastActivityAt = Date.now();
+    session.lastActivityAt = lastActivityAt;
+    saveLocalSession();
+    scheduleInactivityExpiry();
+
+    if (syncServer && lastActivityAt - lastActivitySyncAt >= ACTIVITY_SYNC_INTERVAL_MS) {
+      lastActivitySyncAt = lastActivityAt;
+      touchRemoteActivity();
+    }
+  }
+
+  async function expirePlacementForInactivity() {
+    if (expiringForInactivity || !session || session.status === "completed" || session.phase === "result") return;
+    if (Date.now() - lastActivityAt < INACTIVITY_LIMIT_MS) {
+      scheduleInactivityExpiry();
+      return;
+    }
+
+    expiringForInactivity = true;
+    const expiredSession = {
+      sessionId: session.sessionId,
+      clientSessionId: session.clientSessionId,
+      placementVersion: session.placementVersion || PLACEMENT_VERSION
+    };
+
+    stopActiveAudio();
+    cleanupSpeakingMedia();
+    clearLocalPlacementProgress();
+    session = null;
+
+    try {
+      await Promise.race([
+        expireRemoteSession(expiredSession),
+        new Promise((resolve) => window.setTimeout(resolve, 1500))
+      ]);
+    } catch {}
+
+    window.location.reload();
   }
 
   function setTransition(stage, label) {
@@ -270,7 +402,16 @@
       : {};
 
     els.candidateName.textContent = session.studentName;
-    saveLocalSession();
+
+    if (session.status !== "completed" && session.phase !== "result") {
+      lastActivityAt = Date.now();
+      session.lastActivityAt = lastActivityAt;
+      lastActivitySyncAt = lastActivityAt;
+      saveLocalSession();
+      scheduleInactivityExpiry();
+    } else {
+      saveLocalSession();
+    }
 
     if (session.status === "completed" || session.phase === "result") {
       let result = session.resultSummary;
@@ -1341,6 +1482,8 @@
     session.phase = "result";
     session.status = "completed";
     session.completedAt = completedAt;
+    window.clearTimeout(inactivityTimer);
+    inactivityTimer = null;
     saveLocalSession();
 
     openShell();
@@ -1447,6 +1590,13 @@
     return escapeHtml(value);
   }
 
+  ["pointerdown", "touchstart", "keydown"].forEach((eventName) => {
+    document.addEventListener(eventName, () => markPlacementActivity(), {
+      capture: true,
+      passive: eventName !== "keydown"
+    });
+  });
+
   document.addEventListener("keydown", (event) => {
     if (locked || els.placementShell.classList.contains("hidden")) return;
 
@@ -1485,14 +1635,19 @@
         phase: "calibration",
         moduleId: result.moduleId || "calibration-01",
         provisionalLevel: "",
-        startedAt: new Date().toISOString()
+        status: "active",
+        startedAt: new Date().toISOString(),
+        lastActivityAt: Date.now()
       };
 
       currentModuleId = "calibration-01";
       currentQuestionIndex = 0;
       moduleAnswers = [];
       listeningPlays = {};
+      lastActivityAt = Date.now();
+      lastActivitySyncAt = lastActivityAt;
       saveLocalSession();
+      scheduleInactivityExpiry();
       enterCalibration(name);
     } catch (error) {
       console.error(error);
