@@ -2,13 +2,13 @@
 
 This setup is for the adaptive placement app at `/Placement/`.
 
-The browser may create the session and report progress, but **placement scoring, answer keys, routing, final levels and speaking grades must remain server-authoritative**.
+The browser renders questions, but **answer keys, scoring, routing, final placement and speaking grades remain server-authoritative**.
 
-## 1. CMS collection: PlacementSessions
+Current contract version: `2026-09-19.2`
+
+## PlacementSessions
 
 Collection ID: `PlacementSessions`
-
-Set permissions as restrictively as possible. The public page must not write directly to CMS; only backend HTTP functions should write with backend permissions.
 
 | Field name | Field ID | Type |
 | --- | --- | --- |
@@ -29,16 +29,13 @@ Set permissions as restrictively as possible. The public page must not write dir
 | Confidence | `confidence` | Number |
 | Review required | `reviewRequired` | Boolean |
 
-For the current first step, only the identity/session fields are populated. Keep the later fields now so the collection does not need to be restructured when adaptive routing is added.
-
-## 2. CMS collection: PlacementResponses
+## PlacementResponses
 
 Collection ID: `PlacementResponses`
 
-This will store item-level telemetry when Calibration is wired.
-
 | Field name | Field ID | Type |
 | --- | --- | --- |
+| Response key | `responseKey` | Text |
 | Session ID | `sessionId` | Text |
 | Client session ID | `clientSessionId` | Text |
 | Placement version | `placementVersion` | Text |
@@ -51,13 +48,39 @@ This will store item-level telemetry when Calibration is wired.
 | Response time ms | `responseTimeMs` | Number |
 | Answered at | `answeredAt` | Date and Time |
 
-Do not trust `correct`, `score`, level or difficulty values sent by the browser. They should be calculated by the Wix backend from a private item bank.
+## PlacementItems — private answer keys
 
-## 3. CMS collection: PlacementSpeaking
+Collection ID: `PlacementItems`
+
+This collection must be **backend-only / private**. Do not make it readable from the public site.
+
+The visible question text lives in `Placement/item-bank.js`. This collection stores only the grading metadata.
+
+| Field name | Field ID | Type |
+| --- | --- | --- |
+| Item ID | `itemId` | Text |
+| Module ID | `moduleId` | Text |
+| Placement version | `placementVersion` | Text |
+| Correct option ID | `correctOptionId` | Text |
+| Target level | `targetLevel` | Text |
+| Weight | `weight` | Number |
+| Active | `isActive` | Boolean |
+
+Every visible item in these modules needs one matching private row:
+
+- `calibration-01`
+- `lang-a1`
+- `lang-a2`
+- `lang-b1`
+- `lang-b2`
+
+Set `placementVersion` to `2026-09-19.2`, `weight` to `1`, and `isActive` to `true`.
+
+Do **not** place `correctOptionId` values in the public GitHub repository.
+
+## PlacementSpeaking
 
 Collection ID: `PlacementSpeaking`
-
-Create this now for the final speaking phase.
 
 | Field name | Field ID | Type |
 | --- | --- | --- |
@@ -79,28 +102,30 @@ Create this now for the final speaking phase.
 | Needs review | `needsReview` | Boolean |
 | Created at | `createdAt` | Date and Time |
 
-The current frontend does not upload audio yet.
+## HTTP functions
 
-## 4. Wix HTTP functions
+Copy `Placement/wix-http-functions.example.js` into the site's existing backend `http-functions.js`.
 
-Copy the functions in `Placement/wix-http-functions.example.js` into the site's existing backend `http-functions.js`.
-
-The current frontend calls:
+The current app uses:
 
 - `POST /_functions/startPlacement`
-
-The next Placement slice can add:
-
 - `POST /_functions/placementStep`
-- `POST /_functions/savePlacementProgress`
-- speaking upload / grading endpoints
 
-## 5. Versioning
+`placementStep` verifies the active session and module, loads the private answer keys from `PlacementItems`, stores item telemetry in `PlacementResponses`, and chooses the next module.
 
-The first frontend/backend contract uses:
+The first routing pass is intentionally simple and auditable:
 
-`2026-09-19.1`
+- Calibration chooses one of four Language bands: A1, A2, B1 or B2.
+- The selected Language module then produces a provisional PRE-A1 through C1 estimate and routes the student into the matching Reading band.
 
-The Wix backend is authoritative for the stored `placementVersion`. Do not trust a version supplied by the browser.
+The estimate is not final. Reading, Listening and Speaking will continue to modify/confirm it.
 
-When the routing logic or item bank changes materially, increment the placement version and keep old sessions tied to their original version.
+## Permissions
+
+Use restrictive CMS permissions for every Placement collection.
+
+The public GitHub app should never write directly to CMS and must never be able to read `PlacementItems`.
+
+## Versioning
+
+When routing logic or the private item keys change materially, increment `PLACEMENT_VERSION` in both the frontend and Wix backend. Keep old sessions tied to the version under which they were taken.
