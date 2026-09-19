@@ -15,6 +15,19 @@ The Speaking stage does **not** call a paid AI grading service.
 7. Wix calculates the rubric with fixed deterministic rules.
 8. A valid Speaking result may keep the current level or move it by **one adjacent band only**.
 
+## Mobile/browser compatibility
+
+Speaking now treats browser speech recognition as an enhancement rather than a hard requirement. This is important on Android devices, Samsung Internet and other mobile browsers where microphone recording may work while `SpeechRecognition` is unavailable, ends early, or never returns a final transcript.
+
+The browser now:
+- retries microphone capture with plain `audio: true` when optional audio constraints fail;
+- accepts additional MediaRecorder formats (WebM/Opus, Ogg/Opus, MP4/AAC);
+- preserves interim recognition text when a mobile recognizer ends without a final result;
+- automatically restarts recognition while the recording is still running;
+- allows a valid recording to finish even when browser transcription fails.
+
+When the recording itself is valid but no usable transcript is available, Wix uses **compatibility mode**: the Speaking attempt is recorded as completed, the student's objective Language/Reading/Listening band is kept unchanged, and no fake grammar/vocabulary/pronunciation score is generated. The result shows Speaking as **Recorded** rather than failing the entire Placement.
+
 ## Error-only skip
 
 There is **no permanent Skip Speaking button**.
