@@ -1,6 +1,6 @@
 # Brighton Placement — Speaking grading without a paid AI API
 
-Version: `2026-09-19.7`
+Version: `2026-09-19.8`
 
 The Speaking stage does **not** call a paid AI grading service.
 
