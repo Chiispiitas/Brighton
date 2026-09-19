@@ -4,7 +4,7 @@ This setup is for the adaptive placement app at `/Placement/`.
 
 The browser renders questions, but **answer keys, scoring, routing, final placement and speaking grades remain server-authoritative**.
 
-Current contract version: `2026-09-19.2`
+Current contract version: `2026-09-19.3`
 
 ## PlacementSessions
 
@@ -73,8 +73,15 @@ Every visible item in these modules needs one matching private row:
 - `lang-a2`
 - `lang-b1`
 - `lang-b2`
+- `reading-prea1`
+- `reading-a1`
+- `reading-a2`
+- `reading-b1`
+- `reading-b1plus`
+- `reading-b2`
+- `reading-c1`
 
-Set `placementVersion` to `2026-09-19.2`, `weight` to `1`, and `isActive` to `true`.
+Set `placementVersion` to `2026-09-19.3`, `weight` to `1`, and `isActive` to `true`.
 
 Do **not** place `correctOptionId` values in the public GitHub repository.
 
@@ -116,9 +123,12 @@ The current app uses:
 The first routing pass is intentionally simple and auditable:
 
 - Calibration chooses one of four Language bands: A1, A2, B1 or B2.
-- The selected Language module then produces a provisional PRE-A1 through C1 estimate and routes the student into the matching Reading band.
+- The selected Language module produces a provisional PRE-A1 through C1 estimate and routes the student into the matching Reading band.
+- Reading contains one short level-matched text and four questions.
+- A Reading result of 0–1/4 moves the provisional level down one band, 2–3/4 keeps it stable, and 4/4 moves it up one band.
+- Reading then routes into the matching Listening band.
 
-The estimate is not final. Reading, Listening and Speaking will continue to modify/confirm it.
+The estimate is still provisional. Listening and Speaking will continue to modify or confirm it.
 
 ## Permissions
 
