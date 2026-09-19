@@ -75,3 +75,13 @@ The public repository keeps only the **schema template** for `BrightonPlacementI
 The current Brighton backend uses one shared `Backend/core.js` for Exams, Tests and Placement. Do not add `placement-core.js`.
 
 For Placement results, merge the latest `Placement/wix-backend/http-functions-placement-routes.js` into the current modular `Backend/http-functions.js`.
+
+
+## One-hour inactive-session cleanup
+
+The current Placement frontend/backend expire **active** attempts after 60 minutes without student activity. Merge the latest Placement routes into `Backend/http-functions.js`, including:
+
+- `POST /_functions/brightonPlacementActivity`
+- `POST /_functions/brightonPlacementExpire`
+
+The expiry deletes the active `BrightonPlacementSessions` row and its related `BrightonPlacementResponses` / `BrightonPlacementSpeaking` rows. Completed results are preserved.
