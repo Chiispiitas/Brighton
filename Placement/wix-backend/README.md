@@ -1,32 +1,35 @@
 # Brighton Placement Wix backend
 
-This folder mirrors the modular Wix backend structure used by the other Brighton systems.
+These files now follow the **current modular Brighton assessment backend** supplied in `Brighton-Assessment-Wix-Modular-Backend-FIXED`.
 
-- `placement-core.js` — Placement-only HTTP/CORS/request/CMS helpers; this avoids colliding with any existing Tests/Exams `core.js`.
-- `placement.js` — all Placement routing, scoring, session, response and Speaking logic.
-- `http-functions-placement-routes.js` — small route block to merge into the site's existing `Backend/http-functions.js`.
+The live/backend structure is:
 
-Do not replace the existing Brighton Exams `http-functions.js`. Keep its Tests/Exams routes and add the Placement imports/exports from the route block.
+```
+Backend/
+├── http-functions.js
+├── core.js
+├── exams.js
+├── tests.js
+└── placement.js
+```
 
-The frontend sends JSON as `text/plain;charset=UTF-8` to avoid unnecessary CORS preflight from GitHub Pages. `placement-core.readJsonBody()` accepts both JSON and text JSON bodies.
+Placement uses the same shared `Backend/core.js` as Exams and Tests. There is no Placement-specific core module.
 
-The live Wix site must be **published** after backend changes before production `/_functions/` routes exist.
+- `placement.js` — Placement business logic plus the teacher results-dashboard queries.
+- `http-functions-placement-routes.js` — only the Placement imports/routes to merge into the current modular `Backend/http-functions.js`.
 
+The student Placement endpoints remain:
 
-## Deployment smoke test
+- `POST /_functions/brightonPlacementStart`
+- `POST /_functions/brightonPlacementResume`
+- `POST /_functions/brightonPlacementStep`
+- `POST /_functions/brightonPlacementSubmitSpeaking`
+- `POST /_functions/brightonPlacementSkipSpeaking`
+- `POST /_functions/brightonPlacementResult`
 
-After merging the routes and publishing Wix, open:
-
-`https://chiispiitas.wixsite.com/brightonexams/_functions/brightonPlacementPing`
-
-A correctly loaded backend returns JSON with `service: "brighton-placement"`. If this URL is 404, Wix has not registered the Placement route block or one of its imported backend modules failed to load.
-
-
-## Placement results dashboard
-
-`Placement/results.html` uses two read-only teacher endpoints:
+The teacher dashboard at `Placement/results.html` uses:
 
 - `GET /_functions/brightonPlacementResults`
 - `GET /_functions/brightonPlacementDashboardResult?sessionId=...`
 
-The detailed response includes the saved browser speech transcript and deterministic Speaking metrics. If `audioUrl` is populated in `BrightonPlacementSpeaking`, the dashboard also renders the recording; current Placement v1 normally leaves `audioUrl` blank.
+The detailed result returns the stored speaking transcript and deterministic Speaking metrics. It also exposes `audioUrl` when a record has one; the current Placement frontend normally leaves `audioUrl` blank and does not upload raw recording audio.
