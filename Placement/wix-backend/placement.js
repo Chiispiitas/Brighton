@@ -54,9 +54,9 @@ const SPEAKING_PROMPT_BY_MODULE = {
   "speaking-c1": "sp-c1-01"
 };
 
-// Browser speech recognition can under-credit otherwise strong spoken answers.
-// Apply a one-point calibration buffer to rubric scores and the final composite.
-const SPEAKING_SCORE_LENIENCY = 1;
+// Keep the original deterministic Speaking strictness.
+// Mobile capture compatibility remains separate from score calibration.
+const SPEAKING_SCORE_LENIENCY = 0;
 
 const SPEAKING_PROFILES = {
   "PRE-A1": { minSeconds: 12, targetSeconds: 20, targetWords: 12, wpmLow: 25, wpmHigh: 100, uniqueTarget: .72, longWordTarget: .02, connectorTarget: 0, complexTarget: 0, segmentTarget: 1 },
@@ -1080,7 +1080,7 @@ export async function submitSpeaking(request) {
         communication: grade.communication
       }),
       speakingLevel: grade.speakingLevel,
-      graderVersion: "deterministic-browser-v5-mobile-recognition",
+      graderVersion: "deterministic-browser-v5-mobile-recognition-strict",
       metricsJson: JSON.stringify({
         composite: grade.composite,
         compatibilityMode: grade.compatibilityMode,
