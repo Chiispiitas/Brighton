@@ -158,3 +158,16 @@ The browser and backend now treat a valid MediaRecorder payload as the primary p
 A recording is accepted for compatibility when it has a plausible duration and non-empty encoded audio bytes. If browser speech recognition cannot provide a usable transcript, the result stays in compatibility mode and the objective placement band is preserved rather than inventing a Speaking score.
 
 The frontend also has a legacy-backend safety path: if an older published Wix grader returns `speakingError: true` for a recording that already passed the client MediaRecorder checks, the attempt is finalized through the existing Speaking-skip endpoint so the student is not trapped on the error screen. This fallback does not fabricate a transcript or Speaking score.
+
+
+## v5 mobile recognition-first
+
+Mobile browsers now use a different capture strategy from desktop. On Android, Samsung Internet, iPhone and iPad, the answer uses browser SpeechRecognition as the primary capture path **without MediaRecorder running at the same time**. This avoids the common mobile failure where microphone permission and the mic check work but simultaneous MediaRecorder + Web Speech causes recognition to return no transcript.
+
+Mobile recognition uses short recognition sessions that restart while the answer is active instead of continuous recognition. The pre-existing getUserMedia stream from the microphone check is released before recognition begins so there is only one active microphone consumer.
+
+For compatibility with the older published Wix grader, the client derives its legacy capture checks from the active recognition session: duration, recognized words and an equivalent 16 kHz PCM byte estimate. This value is only a legacy capture sanity signal; no raw audio is claimed to be uploaded or stored.
+
+The frontend no longer auto-skips Speaking when the grader rejects a submission. A failed Speaking submission stays in Speaking and offers Retry / I cannot speak now, so a browser failure cannot silently complete the test without a Speaking result.
+
+The v5 backend additionally accepts transcript-only mobile recognition as valid evidence. If a browser truly cannot provide a transcript but Web Audio produced usable speech activity, compatibility scoring is conservative: it can keep or lower the routed level, but it cannot promote a student without language-content evidence.
