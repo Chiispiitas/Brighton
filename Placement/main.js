@@ -3,6 +3,7 @@
 (() => {
   const PLACEMENT_VERSION = "2026-09-19.8";
   const STORAGE_KEY = "brighton-placement-session-v1";
+  const RESTART_NAME_KEY = "brighton-placement-restart-name";
   const MAX_LISTENING_PLAYS = 3;
   const modules = window.BRIGHTON_PLACEMENT_MODULES || {};
 
@@ -13,6 +14,7 @@
     studentForm: document.querySelector("#studentForm"),
     studentName: document.querySelector("#studentName"),
     startBtn: document.querySelector("#startBtn"),
+    restartTestBtn: document.querySelector("#restartTestBtn"),
     formError: document.querySelector("#formError"),
     candidateName: document.querySelector("#candidateName"),
     transitionStage: document.querySelector("#transitionStage"),
@@ -1226,6 +1228,33 @@
     }
   }
 
+  function restartPlacementTest() {
+    const inProgress = Boolean(session && session.status !== "completed" && session.phase !== "result");
+    const message = inProgress
+      ? "Restart this placement test from the beginning? Your current progress will be lost."
+      : "Start a new placement test?";
+
+    if (!window.confirm(message)) return;
+
+    const name = String(session?.studentName || els.studentName.value || "").trim();
+
+    stopActiveAudio();
+    cleanupSpeakingMedia();
+
+    try {
+      localStorage.removeItem(STORAGE_KEY);
+    } catch (error) {
+      console.warn("Could not clear saved placement session.", error);
+    }
+
+    try {
+      if (name) sessionStorage.setItem(RESTART_NAME_KEY, name);
+      else sessionStorage.removeItem(RESTART_NAME_KEY);
+    } catch {}
+
+    window.location.reload();
+  }
+
   function renderPlacementResult(payload) {
     const result = payload?.result || payload || {};
     const finalLevel = result.finalLevel || session?.finalLevel || session?.provisionalLevel || "—";
@@ -1284,13 +1313,6 @@
                 <small>${escapeHtml(finalDescription)}</small>
               </div>
             </div>
-
-            <div class="certificate-completed">
-              <span>✓ Language Use</span>
-              <span>✓ Reading</span>
-              <span>✓ Listening</span>
-              <span>${skills.speaking?.skipped ? "— Speaking" : "✓ Speaking"}</span>
-            </div>
           </section>
 
           <section class="certificate-results">
@@ -1327,12 +1349,16 @@
           <button id="shareResultBtn" class="result-action" type="button">
             <span>Share</span><span aria-hidden="true">↗</span>
           </button>
+          <button id="restartResultBtn" class="result-action restart-result-action" type="button">
+            <span>Restart test</span><span aria-hidden="true">↻</span>
+          </button>
         </div>
       </div>
     `;
 
     document.querySelector("#saveResultBtn")?.addEventListener("click", () => saveResultImage(session.resultSummary));
     document.querySelector("#shareResultBtn")?.addEventListener("click", () => shareResultImage(session.resultSummary));
+    document.querySelector("#restartResultBtn")?.addEventListener("click", restartPlacementTest);
 
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
@@ -1365,6 +1391,8 @@
     const buttons = els.stageRoot.querySelectorAll(".answer-choice");
     buttons[number - 1]?.click();
   });
+
+  els.restartTestBtn?.addEventListener("click", restartPlacementTest);
 
   els.studentForm.addEventListener("submit", async (event) => {
     event.preventDefault();
@@ -1407,6 +1435,14 @@
       els.startBtn.disabled = false;
     }
   });
+
+  try {
+    const restartName = sessionStorage.getItem(RESTART_NAME_KEY);
+    if (restartName) {
+      els.studentName.value = restartName;
+      sessionStorage.removeItem(RESTART_NAME_KEY);
+    }
+  } catch {}
 
   const savedSession = loadLocalSession();
   if (savedSession) resumeSavedSession(savedSession);
