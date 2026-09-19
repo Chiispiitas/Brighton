@@ -524,8 +524,7 @@ export async function post_startPlacement(request) {
         timeSpentSeconds: 0,
         provisionalLevel: "",
         finalLevel: "",
-        confidence: 0,
-        reviewRequired: false
+        confidence: 0
       },
       { suppressAuth: true }
     );
