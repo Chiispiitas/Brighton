@@ -53,6 +53,10 @@ const SPEAKING_PROMPT_BY_MODULE = {
   "speaking-c1": "sp-c1-01"
 };
 
+// Browser speech recognition can under-credit otherwise strong spoken answers.
+// Apply a one-point calibration buffer to rubric scores and the final composite.
+const SPEAKING_SCORE_LENIENCY = 1;
+
 const SPEAKING_PROFILES = {
   "PRE-A1": { minSeconds: 12, targetSeconds: 20, targetWords: 12, wpmLow: 25, wpmHigh: 100, uniqueTarget: .72, longWordTarget: .02, connectorTarget: 0, complexTarget: 0, segmentTarget: 1 },
   "A1":     { minSeconds: 15, targetSeconds: 25, targetWords: 20, wpmLow: 35, wpmHigh: 110, uniqueTarget: .68, longWordTarget: .03, connectorTarget: 1, complexTarget: 0, segmentTarget: 2 },
@@ -273,20 +277,20 @@ function gradeSpeakingDeterministically(payload, level) {
   const segmentScore = clamp(segmentCount / profile.segmentTarget);
   const fillerRate = wordCount ? fillerCount / wordCount : 1;
 
-  const fluency = clamp(
+  const rawFluency = clamp(
     10 * (.34 * durationScore + .36 * speechActivityScore + .30 * speedScore) -
       Math.min(2, fillerRate * 28),
     0,
     10
   );
 
-  const grammar = clamp(
+  const rawGrammar = clamp(
     10 * (.42 * wordScore + .38 * complexScore + .20 * segmentScore),
     0,
     10
   );
 
-  const vocabulary = clamp(
+  const rawVocabulary = clamp(
     10 * (.40 * wordScore + .38 * lexicalScore + .22 * longWordScore),
     0,
     10
@@ -296,25 +300,31 @@ function gradeSpeakingDeterministically(payload, level) {
     ? recognitionConfidence
     : (transcriptAvailable ? .72 : .20);
 
-  const pronunciation = clamp(
+  const rawPronunciation = clamp(
     10 * (.48 * recognitionSignal + .30 * speechActivityScore + .22 * speedScore),
     0,
     10
   );
 
-  const communication = clamp(
+  const rawCommunication = clamp(
     10 * (.46 * wordScore + .34 * connectorScore + .20 * segmentScore),
     0,
     10
   );
 
-  const composite = round1(
-    fluency * .25 +
-    grammar * .20 +
-    vocabulary * .20 +
-    pronunciation * .15 +
-    communication * .20
-  );
+  const rawComposite =
+    rawFluency * .25 +
+    rawGrammar * .20 +
+    rawVocabulary * .20 +
+    rawPronunciation * .15 +
+    rawCommunication * .20;
+
+  const fluency = round1(clamp(rawFluency + SPEAKING_SCORE_LENIENCY, 0, 10));
+  const grammar = round1(clamp(rawGrammar + SPEAKING_SCORE_LENIENCY, 0, 10));
+  const vocabulary = round1(clamp(rawVocabulary + SPEAKING_SCORE_LENIENCY, 0, 10));
+  const pronunciation = round1(clamp(rawPronunciation + SPEAKING_SCORE_LENIENCY, 0, 10));
+  const communication = round1(clamp(rawCommunication + SPEAKING_SCORE_LENIENCY, 0, 10));
+  const composite = round1(clamp(rawComposite + SPEAKING_SCORE_LENIENCY, 0, 10));
 
   const inputError =
     !transcriptAvailable ||
@@ -857,7 +867,7 @@ export async function submitSpeaking(request) {
       pronunciation: grade.pronunciation,
       communication: grade.communication,
       speakingLevel: grade.speakingLevel,
-      graderVersion: "deterministic-browser-v1",
+      graderVersion: "deterministic-browser-v2-lenient",
       metricsJson: JSON.stringify({
         composite: grade.composite,
         speechRatio: grade.speechRatio,
