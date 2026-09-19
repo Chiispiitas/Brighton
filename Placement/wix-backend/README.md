@@ -20,3 +20,13 @@ After merging the routes and publishing Wix, open:
 `https://chiispiitas.wixsite.com/brightonexams/_functions/brightonPlacementPing`
 
 A correctly loaded backend returns JSON with `service: "brighton-placement"`. If this URL is 404, Wix has not registered the Placement route block or one of its imported backend modules failed to load.
+
+
+## Placement results dashboard
+
+`Placement/results.html` uses two read-only teacher endpoints:
+
+- `GET /_functions/brightonPlacementResults`
+- `GET /_functions/brightonPlacementDashboardResult?sessionId=...`
+
+The detailed response includes the saved browser speech transcript and deterministic Speaking metrics. If `audioUrl` is populated in `BrightonPlacementSpeaking`, the dashboard also renders the recording; current Placement v1 normally leaves `audioUrl` blank.
