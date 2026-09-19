@@ -1,0 +1,420 @@
+{
+  "examId": "brighton-a1-rw-final",
+  "examTitle": "Brighton A1 Reading and Writing Final Exam",
+  "maxScore": 39,
+  "totalQuestions": 35,
+  "normalization": {
+    "caseInsensitive": true,
+    "trimWhitespace": true,
+    "collapseInternalWhitespace": true
+  },
+  "parts": {
+    "1": {
+      "label": "Part 1",
+      "questions": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ],
+      "maxScore": 5
+    },
+    "2": {
+      "label": "Part 2",
+      "questions": [
+        6,
+        7,
+        8,
+        9,
+        10,
+        11
+      ],
+      "maxScore": 6
+    },
+    "3": {
+      "label": "Part 3",
+      "questions": [
+        12,
+        13,
+        14,
+        15,
+        16,
+        17
+      ],
+      "maxScore": 6
+    },
+    "4": {
+      "label": "Part 4",
+      "questions": [
+        18,
+        19,
+        20,
+        21,
+        22
+      ],
+      "maxScore": 5
+    },
+    "5": {
+      "label": "Part 5",
+      "questions": [
+        23,
+        24,
+        25,
+        26,
+        27,
+        28,
+        29
+      ],
+      "maxScore": 7
+    },
+    "6": {
+      "label": "Part 6",
+      "questions": [
+        30,
+        31,
+        32,
+        33,
+        34,
+        35
+      ],
+      "maxScore": 10
+    }
+  },
+  "answers": {
+    "1": {
+      "part": 1,
+      "points": 1,
+      "answers": [
+        "receptionist",
+        "a receptionist"
+      ]
+    },
+    "2": {
+      "part": 1,
+      "points": 1,
+      "answers": [
+        "wallet",
+        "a wallet"
+      ]
+    },
+    "3": {
+      "part": 1,
+      "points": 1,
+      "answers": [
+        "department store",
+        "a department store"
+      ]
+    },
+    "4": {
+      "part": 1,
+      "points": 1,
+      "answers": [
+        "train station",
+        "a train station"
+      ]
+    },
+    "5": {
+      "part": 1,
+      "points": 1,
+      "answers": [
+        "umbrella",
+        "an umbrella"
+      ]
+    },
+    "6": {
+      "part": 2,
+      "points": 1,
+      "answers": [
+        "A"
+      ]
+    },
+    "7": {
+      "part": 2,
+      "points": 1,
+      "answers": [
+        "B"
+      ]
+    },
+    "8": {
+      "part": 2,
+      "points": 1,
+      "answers": [
+        "A"
+      ]
+    },
+    "9": {
+      "part": 2,
+      "points": 1,
+      "answers": [
+        "B"
+      ]
+    },
+    "10": {
+      "part": 2,
+      "points": 1,
+      "answers": [
+        "C"
+      ]
+    },
+    "11": {
+      "part": 2,
+      "points": 1,
+      "answers": [
+        "B"
+      ]
+    },
+    "12": {
+      "part": 3,
+      "points": 1,
+      "answers": [
+        "hotel",
+        "a hotel"
+      ]
+    },
+    "13": {
+      "part": 3,
+      "points": 1,
+      "answers": [
+        "sunny"
+      ]
+    },
+    "14": {
+      "part": 3,
+      "points": 1,
+      "answers": [
+        "market",
+        "local market",
+        "the local market"
+      ]
+    },
+    "15": {
+      "part": 3,
+      "points": 1,
+      "answers": [
+        "rain"
+      ]
+    },
+    "16": {
+      "part": 3,
+      "points": 1,
+      "answers": [
+        "museum",
+        "a museum"
+      ]
+    },
+    "17": {
+      "part": 3,
+      "points": 1,
+      "answers": [
+        "A"
+      ]
+    },
+    "18": {
+      "part": 4,
+      "points": 1,
+      "answers": [
+        "B"
+      ]
+    },
+    "19": {
+      "part": 4,
+      "points": 1,
+      "answers": [
+        "C"
+      ]
+    },
+    "20": {
+      "part": 4,
+      "points": 1,
+      "answers": [
+        "B"
+      ]
+    },
+    "21": {
+      "part": 4,
+      "points": 1,
+      "answers": [
+        "B"
+      ]
+    },
+    "22": {
+      "part": 4,
+      "points": 1,
+      "answers": [
+        "C"
+      ]
+    },
+    "23": {
+      "part": 5,
+      "points": 1,
+      "answers": [
+        "receptionist",
+        "a receptionist"
+      ]
+    },
+    "24": {
+      "part": 5,
+      "points": 1,
+      "answers": [
+        "near the beach",
+        "the beach",
+        "near beach"
+      ]
+    },
+    "25": {
+      "part": 5,
+      "points": 1,
+      "answers": [
+        "by bus",
+        "bus"
+      ]
+    },
+    "26": {
+      "part": 5,
+      "points": 1,
+      "answers": [
+        "a cafe",
+        "cafe",
+        "a café",
+        "café"
+      ]
+    },
+    "27": {
+      "part": 5,
+      "points": 1,
+      "answers": [
+        "museum and market",
+        "the museum and market",
+        "museum and the market",
+        "the museum and the market"
+      ]
+    },
+    "28": {
+      "part": 5,
+      "points": 1,
+      "answers": [
+        "her sister",
+        "sister"
+      ]
+    },
+    "29": {
+      "part": 5,
+      "points": 1,
+      "answers": [
+        "by taxi",
+        "taxi"
+      ]
+    },
+    "30": {
+      "part": 6,
+      "points": 1,
+      "answers": [
+        "jacket",
+        "a jacket",
+        "red jacket",
+        "a red jacket"
+      ]
+    },
+    "31": {
+      "part": 6,
+      "points": 1,
+      "answers": [
+        "backpack",
+        "a backpack",
+        "dark backpack",
+        "a dark backpack"
+      ]
+    },
+    "32": {
+      "part": 6,
+      "points": 2,
+      "answers": [
+        "coffee",
+        "some coffee"
+      ]
+    },
+    "33": {
+      "part": 6,
+      "points": 2,
+      "answers": [
+        "next to the tree",
+        "beside the tree",
+        "by the tree",
+        "near the tree"
+      ]
+    },
+    "34": {
+      "part": 6,
+      "points": 2,
+      "mode": "components",
+      "minWords": 3,
+      "components": [
+        {
+          "points": 2,
+          "any": [
+            "woman",
+            "man",
+            "friends",
+            "friend",
+            "cafe",
+            "café",
+            "coffee",
+            "market",
+            "jacket",
+            "backpack",
+            "bus stop",
+            "bicycle",
+            "bike",
+            "tree",
+            "shopping bag",
+            "taxi",
+            "wearing",
+            "drinking",
+            "sitting",
+            "standing",
+            "looking",
+            "paying"
+          ]
+        }
+      ],
+      "answers": []
+    },
+    "35": {
+      "part": 6,
+      "points": 2,
+      "mode": "components",
+      "minWords": 3,
+      "components": [
+        {
+          "points": 2,
+          "any": [
+            "woman",
+            "man",
+            "friends",
+            "friend",
+            "cafe",
+            "café",
+            "coffee",
+            "market",
+            "jacket",
+            "backpack",
+            "bus stop",
+            "bicycle",
+            "bike",
+            "tree",
+            "shopping bag",
+            "taxi",
+            "wearing",
+            "drinking",
+            "sitting",
+            "standing",
+            "looking",
+            "paying"
+          ]
+        }
+      ],
+      "answers": []
+    }
+  }
+}
