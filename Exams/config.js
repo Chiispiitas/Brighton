@@ -49,6 +49,7 @@ window.BRIGHTON_SITE_CONFIG = {
   ],
 
   FALLBACK_EXAMS: [
+    { examId: "brighton-a1-listening-final", title: "Brighton A1 Listening Final Exam", level: "A1", skill: "Listening", description: "Five-part A1 Movers-style Listening final exam aligned to Personal Best A1.", isActive: true, totalQuestions: 25, maxScore: 25, relativeUrl: "exams/a1-listening/index.html" },
     { examId: "brighton-a1-rw-final", title: "Brighton A1 Reading and Writing Final Exam", level: "A1", skill: "Reading and Writing", description: "Six-part A1 Movers-style Reading and Writing final exam aligned to Personal Best A1.", isActive: true, totalQuestions: 35, maxScore: 39, relativeUrl: "exams/a1-rw/index.html" },
     { examId: "brighton-b2-rue-final", title: "B2 Reading and Use of English Final Exam", level: "B2", skill: "Reading and Use of English", description: "Seven-part B2 First-style Reading and Use of English final exam.", isActive: true, totalQuestions: 52, maxScore: 70, relativeUrl: "exams/b2-rue/index.html" },
     { examId: "brighton-a2-rw-final", title: "Brighton A2 Reading and Writing Final Exam", level: "A2", skill: "Reading and Writing", description: "Seven-part A2 Key-style Reading and Writing final exam.", isActive: true, totalQuestions: 32, maxScore: 60, relativeUrl: "exams/a2-rw/index.html" },
