@@ -25,6 +25,8 @@ Files supplied under `Placement/wix-backend/`:
 
 Public Placement routes:
 
+- `GET /_functions/brightonPlacementPing` — deployment smoke test
+
 - `POST /_functions/brightonPlacementStart`
 - `POST /_functions/brightonPlacementResume`
 - `POST /_functions/brightonPlacementStep`
