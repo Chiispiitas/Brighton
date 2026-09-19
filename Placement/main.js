@@ -1,7 +1,7 @@
 "use strict";
 
 (() => {
-  const PLACEMENT_VERSION = "2026-09-19.4";
+  const PLACEMENT_VERSION = "2026-09-19.5";
   const STORAGE_KEY = "brighton-placement-session-v1";
   const MAX_LISTENING_PLAYS = 3;
   const modules = window.BRIGHTON_PLACEMENT_MODULES || {};
@@ -36,6 +36,23 @@
   let questionStartedAt = 0;
   let locked = false;
   let activeAudio = null;
+
+  let speakingStream = null;
+  let speakingRecorder = null;
+  let speakingChunks = [];
+  let speakingRecognition = null;
+  let speakingTranscriptParts = [];
+  let speakingConfidenceSamples = [];
+  let speakingSegmentCount = 0;
+  let speakingAudioContext = null;
+  let speakingAnalyser = null;
+  let speakingMeterTimer = null;
+  let speakingTimer = null;
+  let speakingStartedAt = 0;
+  let speakingSpeechFrames = 0;
+  let speakingTotalFrames = 0;
+  let speakingNoiseFloor = 0.018;
+  let speakingThreshold = 0.035;
 
   function makeClientSessionId() {
     if (window.crypto?.randomUUID) return window.crypto.randomUUID();
@@ -215,6 +232,16 @@
       : {};
 
     els.candidateName.textContent = session.studentName;
+
+    if (session.phase === "result" && session.finalLevel) {
+      renderPlacementResult({
+        finalLevel: session.finalLevel,
+        reviewRequired: session.reviewRequired,
+        status: session.status,
+        confidence: session.confidence
+      });
+      return;
+    }
 
     if (session.phase === "speaking" || /^speaking-/.test(currentModuleId || "")) {
       renderSpeakingHandoff();
@@ -537,20 +564,446 @@
     });
   }
 
+  function speakingModule() {
+    return moduleData(currentModuleId) || moduleData(session?.moduleId);
+  }
+
+  async function ensureSpeakingMic() {
+    if (speakingStream?.active) return speakingStream;
+
+    if (!navigator.mediaDevices?.getUserMedia || !window.MediaRecorder) {
+      throw new Error("Microphone recording is not supported in this browser.");
+    }
+
+    speakingStream = await navigator.mediaDevices.getUserMedia({
+      audio: {
+        echoCancellation: true,
+        noiseSuppression: true,
+        autoGainControl: true
+      }
+    });
+
+    return speakingStream;
+  }
+
+  async function setupSpeakingAnalyser() {
+    const stream = await ensureSpeakingMic();
+
+    if (!speakingAudioContext) {
+      const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+      if (!AudioContextClass) return null;
+      speakingAudioContext = new AudioContextClass();
+      const source = speakingAudioContext.createMediaStreamSource(stream);
+      speakingAnalyser = speakingAudioContext.createAnalyser();
+      speakingAnalyser.fftSize = 1024;
+      source.connect(speakingAnalyser);
+    }
+
+    if (speakingAudioContext.state === "suspended") {
+      await speakingAudioContext.resume();
+    }
+
+    return speakingAnalyser;
+  }
+
+  function rmsFromAnalyser(analyser) {
+    if (!analyser) return 0;
+    const data = new Uint8Array(analyser.fftSize);
+    analyser.getByteTimeDomainData(data);
+
+    let sum = 0;
+    for (const sample of data) {
+      const normalized = (sample - 128) / 128;
+      sum += normalized * normalized;
+    }
+
+    return Math.sqrt(sum / data.length);
+  }
+
+  async function runMicCheck() {
+    const button = els.stageRoot.querySelector("#micCheckBtn");
+    const status = els.stageRoot.querySelector("#micCheckStatus");
+    const meter = els.stageRoot.querySelector("#micCheckMeter");
+
+    if (button) button.disabled = true;
+    if (status) status.textContent = "Checking";
+
+    try {
+      const analyser = await setupSpeakingAnalyser();
+      const samples = [];
+
+      await new Promise((resolve) => {
+        const started = performance.now();
+        const timer = window.setInterval(() => {
+          const rms = rmsFromAnalyser(analyser);
+          samples.push(rms);
+          if (meter) meter.style.setProperty("--mic-level", String(Math.min(1, rms * 10)));
+
+          if (performance.now() - started >= 1200) {
+            window.clearInterval(timer);
+            resolve();
+          }
+        }, 80);
+      });
+
+      const sorted = samples.slice().sort((a, b) => a - b);
+      speakingNoiseFloor = sorted[Math.floor(sorted.length * 0.45)] || 0.018;
+      speakingThreshold = Math.max(0.028, speakingNoiseFloor * 2.2);
+
+      if (status) status.textContent = "Microphone ready";
+      window.setTimeout(renderSpeakingPrompt, 450);
+    } catch (error) {
+      console.error(error);
+      if (button) button.disabled = false;
+      if (status) status.textContent = "Microphone unavailable.";
+    }
+  }
+
   function renderSpeakingHandoff() {
     stopActiveAudio();
+    currentModuleId = session?.moduleId || currentModuleId;
     openShell();
     setShellStage(4);
     els.stageCard.classList.remove("question-mode", "reading-mode", "listening-mode");
+    els.stageCard.classList.add("speaking-mode");
     els.stageIndex.textContent = "04";
     els.stageEyebrow.textContent = "Speaking";
     els.stageTitle.textContent = "Speak.";
     els.stageNote.textContent = "";
     els.introScan.classList.add("hidden");
+
     els.stageRoot.innerHTML = `
-      <div class="speaking-handoff">
-        <span class="mic-mark" aria-hidden="true"></span>
-        <strong>Speaking</strong>
+      <div class="speaking-check">
+        <div class="mic-check-visual" id="micCheckMeter" aria-hidden="true">
+          <span class="mic-mark"></span>
+          <i></i>
+        </div>
+        <button id="micCheckBtn" class="primary-btn speaking-primary" type="button">
+          <span>Check microphone</span><span aria-hidden="true">→</span>
+        </button>
+        <p id="micCheckStatus" class="speaking-status" aria-live="polite"></p>
+      </div>
+    `;
+
+    els.stageRoot.querySelector("#micCheckBtn")?.addEventListener("click", runMicCheck);
+  }
+
+  function renderSpeakingPrompt() {
+    const data = speakingModule();
+    if (!data?.prompt) return;
+
+    els.stageRoot.innerHTML = `
+      <div class="speaking-prompt-screen">
+        <div class="speaking-prompt-card">
+          <span class="speaking-prompt-label">Your prompt</span>
+          <h3>${escapeHtml(data.prompt)}</h3>
+        </div>
+        <div class="speaking-record-panel">
+          <span class="speaking-target">≈ ${Number(data.targetSeconds) || 40}s</span>
+          <button id="startSpeakingBtn" class="record-btn" type="button">
+            <span class="record-dot" aria-hidden="true"></span>
+            <span>Record answer</span>
+          </button>
+          <p class="speaking-status">One answer.</p>
+        </div>
+      </div>
+    `;
+
+    els.stageRoot.querySelector("#startSpeakingBtn")?.addEventListener("click", startSpeakingRecording);
+  }
+
+  function startSpeechRecognition() {
+    const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
+    if (!Recognition || speakingRecorder?.state !== "recording") return;
+
+    try {
+      const recognition = new Recognition();
+      speakingRecognition = recognition;
+      recognition.lang = "en-US";
+      recognition.continuous = true;
+      recognition.interimResults = true;
+      recognition.maxAlternatives = 1;
+
+      recognition.onresult = (event) => {
+        for (let i = event.resultIndex; i < event.results.length; i += 1) {
+          const result = event.results[i];
+          if (!result.isFinal || !result[0]) continue;
+
+          const text = String(result[0].transcript || "").trim();
+          if (text) {
+            speakingTranscriptParts.push(text);
+            speakingSegmentCount += 1;
+          }
+
+          const confidence = Number(result[0].confidence);
+          if (Number.isFinite(confidence) && confidence > 0) {
+            speakingConfidenceSamples.push(confidence);
+          }
+        }
+      };
+
+      recognition.onend = () => {
+        if (speakingRecorder?.state === "recording") {
+          window.setTimeout(startSpeechRecognition, 180);
+        }
+      };
+
+      recognition.onerror = () => {};
+      recognition.start();
+    } catch {}
+  }
+
+  function stopSpeechRecognition() {
+    if (!speakingRecognition) return;
+    try { speakingRecognition.onend = null; speakingRecognition.stop(); } catch {}
+    speakingRecognition = null;
+  }
+
+  function startSpeakingMeter() {
+    window.clearInterval(speakingMeterTimer);
+
+    speakingMeterTimer = window.setInterval(() => {
+      const rms = rmsFromAnalyser(speakingAnalyser);
+      speakingTotalFrames += 1;
+      if (rms >= speakingThreshold) speakingSpeechFrames += 1;
+
+      const meter = els.stageRoot.querySelector("#recordingMeter");
+      if (meter) meter.style.setProperty("--mic-level", String(Math.min(1, rms * 9)));
+    }, 90);
+  }
+
+  async function startSpeakingRecording() {
+    const data = speakingModule();
+
+    try {
+      const stream = await ensureSpeakingMic();
+      await setupSpeakingAnalyser();
+
+      speakingChunks = [];
+      speakingTranscriptParts = [];
+      speakingConfidenceSamples = [];
+      speakingSegmentCount = 0;
+      speakingSpeechFrames = 0;
+      speakingTotalFrames = 0;
+      speakingStartedAt = performance.now();
+
+      const preferredTypes = [
+        "audio/webm;codecs=opus",
+        "audio/webm",
+        "audio/mp4"
+      ];
+      const mimeType = preferredTypes.find((type) => MediaRecorder.isTypeSupported?.(type)) || "";
+      speakingRecorder = mimeType ? new MediaRecorder(stream, { mimeType }) : new MediaRecorder(stream);
+
+      speakingRecorder.addEventListener("dataavailable", (event) => {
+        if (event.data?.size) speakingChunks.push(event.data);
+      });
+
+      speakingRecorder.addEventListener("stop", finishSpeakingRecording, { once: true });
+      speakingRecorder.start(250);
+      startSpeechRecognition();
+      startSpeakingMeter();
+
+      renderSpeakingRecording(data);
+    } catch (error) {
+      console.error(error);
+      renderSpeakingTechnicalRetry("Microphone unavailable.");
+    }
+  }
+
+  function renderSpeakingRecording(data) {
+    const maximumSeconds = Math.max(Number(data.targetSeconds) || 40, Number(data.minimumSeconds) || 20) + 15;
+
+    els.stageRoot.innerHTML = `
+      <div class="speaking-recording">
+        <div id="recordingMeter" class="recording-meter" aria-hidden="true">
+          <i></i><i></i><i></i><i></i><i></i><i></i><i></i>
+        </div>
+        <span class="recording-live"><i></i> Recording</span>
+        <strong id="speakingTimer">00:00</strong>
+        <p class="speaking-recording-prompt">${escapeHtml(data.prompt)}</p>
+        <button id="stopSpeakingBtn" class="stop-record-btn" type="button" disabled>Finish answer</button>
+      </div>
+    `;
+
+    const button = els.stageRoot.querySelector("#stopSpeakingBtn");
+    const timer = els.stageRoot.querySelector("#speakingTimer");
+    const minimumSeconds = Number(data.minimumSeconds) || 15;
+
+    window.clearInterval(speakingTimer);
+    speakingTimer = window.setInterval(() => {
+      const elapsed = Math.max(0, (performance.now() - speakingStartedAt) / 1000);
+      const seconds = Math.floor(elapsed);
+      if (timer) timer.textContent = `${String(Math.floor(seconds / 60)).padStart(2, "0")}:${String(seconds % 60).padStart(2, "0")}`;
+      if (button && elapsed >= minimumSeconds) button.disabled = false;
+      if (elapsed >= maximumSeconds) stopSpeakingRecording();
+    }, 200);
+
+    button?.addEventListener("click", stopSpeakingRecording);
+  }
+
+  function stopSpeakingRecording() {
+    if (!speakingRecorder || speakingRecorder.state !== "recording") return;
+    window.clearInterval(speakingTimer);
+    window.clearInterval(speakingMeterTimer);
+    stopSpeechRecognition();
+    speakingRecorder.stop();
+  }
+
+  async function finishSpeakingRecording() {
+    const data = speakingModule();
+    const durationSeconds = Math.max(0, (performance.now() - speakingStartedAt) / 1000);
+    const speechRatio = speakingTotalFrames
+      ? speakingSpeechFrames / speakingTotalFrames
+      : 0;
+    const speechSeconds = durationSeconds * speechRatio;
+    const transcript = speakingTranscriptParts.join(" ").replace(/\s+/g, " ").trim();
+    const recognitionConfidence = speakingConfidenceSamples.length
+      ? speakingConfidenceSamples.reduce((sum, value) => sum + value, 0) / speakingConfidenceSamples.length
+      : 0;
+    const transcriptAvailable = Boolean((window.SpeechRecognition || window.webkitSpeechRecognition) && transcript);
+
+    if (durationSeconds < 6 || speechRatio < 0.16) {
+      renderSpeakingTechnicalRetry("We couldn't hear enough.");
+      return;
+    }
+
+    els.stageRoot.innerHTML = `
+      <div class="module-finish speaking-analysis">
+        <div class="module-finish-mark">✓</div>
+        <p>Checking answer</p>
+        <div class="mini-loader" aria-hidden="true"><span></span></div>
+      </div>
+    `;
+
+    try {
+      const result = await apiPost("submitSpeaking", {
+        sessionId: session.sessionId,
+        clientSessionId: session.clientSessionId,
+        placementVersion: PLACEMENT_VERSION,
+        moduleId: currentModuleId,
+        promptId: data.promptId,
+        durationSeconds,
+        speechSeconds,
+        speechRatio,
+        transcript,
+        transcriptAvailable,
+        recognitionConfidence,
+        segmentCount: speakingSegmentCount,
+        recordedBytes: speakingChunks.reduce((sum, chunk) => sum + Number(chunk.size || 0), 0)
+      });
+
+      session.phase = "result";
+      session.finalLevel = result.finalLevel;
+      session.reviewRequired = Boolean(result.reviewRequired);
+      session.status = result.status;
+      session.confidence = result.confidence;
+      saveLocalSession();
+
+      cleanupSpeakingMedia();
+      renderPlacementResult(result);
+    } catch (error) {
+      console.error(error);
+      renderSpeakingSubmitRetry({
+        durationSeconds,
+        speechSeconds,
+        speechRatio,
+        transcript,
+        transcriptAvailable,
+        recognitionConfidence,
+        segmentCount: speakingSegmentCount,
+        recordedBytes: speakingChunks.reduce((sum, chunk) => sum + Number(chunk.size || 0), 0)
+      });
+    }
+  }
+
+  function renderSpeakingTechnicalRetry(message) {
+    cleanupSpeakingRecorderOnly();
+
+    els.stageRoot.innerHTML = `
+      <div class="speaking-retry">
+        <strong>${escapeHtml(message)}</strong>
+        <button id="retrySpeakingBtn" class="secondary-action" type="button">Try again</button>
+      </div>
+    `;
+
+    els.stageRoot.querySelector("#retrySpeakingBtn")?.addEventListener("click", renderSpeakingPrompt);
+  }
+
+  function renderSpeakingSubmitRetry(metrics) {
+    els.stageRoot.innerHTML = `
+      <div class="retry-card">
+        <strong>Connection lost.</strong>
+        <button id="retrySpeakingSubmitBtn" class="secondary-action" type="button">Retry</button>
+      </div>
+    `;
+
+    els.stageRoot.querySelector("#retrySpeakingSubmitBtn")?.addEventListener("click", async () => {
+      const data = speakingModule();
+
+      try {
+        const result = await apiPost("submitSpeaking", {
+          sessionId: session.sessionId,
+          clientSessionId: session.clientSessionId,
+          placementVersion: PLACEMENT_VERSION,
+          moduleId: currentModuleId,
+          promptId: data.promptId,
+          ...metrics
+        });
+
+        session.phase = "result";
+        session.finalLevel = result.finalLevel;
+        session.reviewRequired = Boolean(result.reviewRequired);
+        session.status = result.status;
+        session.confidence = result.confidence;
+        saveLocalSession();
+
+        cleanupSpeakingMedia();
+        renderPlacementResult(result);
+      } catch (error) {
+        console.error(error);
+      }
+    });
+  }
+
+  function cleanupSpeakingRecorderOnly() {
+    window.clearInterval(speakingTimer);
+    window.clearInterval(speakingMeterTimer);
+    stopSpeechRecognition();
+    speakingRecorder = null;
+  }
+
+  function cleanupSpeakingMedia() {
+    cleanupSpeakingRecorderOnly();
+
+    if (speakingStream) {
+      speakingStream.getTracks().forEach((track) => track.stop());
+      speakingStream = null;
+    }
+
+    if (speakingAudioContext) {
+      try { speakingAudioContext.close(); } catch {}
+      speakingAudioContext = null;
+      speakingAnalyser = null;
+    }
+  }
+
+  function renderPlacementResult(result) {
+    openShell();
+    setShellStage(4);
+    els.stageCard.classList.remove("question-mode", "reading-mode", "listening-mode", "speaking-mode");
+    els.stageCard.classList.add("result-mode");
+    els.stageIndex.textContent = "✓";
+    els.stageEyebrow.textContent = "Placement complete";
+    els.stageTitle.textContent = "Your level.";
+    els.stageNote.textContent = "";
+    els.introScan.classList.add("hidden");
+
+    els.stageRoot.innerHTML = `
+      <div class="placement-result">
+        <span class="result-level">${escapeHtml(result.finalLevel || session.provisionalLevel || "—")}</span>
+        <strong>${escapeHtml(result.status || "PLACEMENT COMPLETE")}</strong>
+        <p>${result.reviewRequired ? "A teacher should confirm this result." : "Your placement is ready."}</p>
       </div>
     `;
   }
