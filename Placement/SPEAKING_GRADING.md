@@ -149,3 +149,12 @@ The completed placement now renders a certificate-style Brighton result screen w
 - PNG export and native Share support.
 
 This is deliberately described as a placement result rather than a CEFR certificate.
+
+
+## v4 mobile compatibility
+
+The browser and backend now treat a valid MediaRecorder payload as the primary proof that a Speaking answer was captured. Web Audio speech-activity ratios are no longer allowed to reject an otherwise valid recording because some Android and Samsung devices report unreliable analyser levels.
+
+A recording is accepted for compatibility when it has a plausible duration and non-empty encoded audio bytes. If browser speech recognition cannot provide a usable transcript, the result stays in compatibility mode and the objective placement band is preserved rather than inventing a Speaking score.
+
+The frontend also has a legacy-backend safety path: if an older published Wix grader returns `speakingError: true` for a recording that already passed the client MediaRecorder checks, the attempt is finalized through the existing Speaking-skip endpoint so the student is not trapped on the error screen. This fallback does not fabricate a transcript or Speaking score.
