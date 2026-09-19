@@ -54,6 +54,34 @@ const SPEAKING_PROMPT_BY_MODULE = {
   "speaking-c1": "sp-c1-01"
 };
 
+const SPEAKING_PROMPT_TEXT_BY_ID = {
+  "sp-prea1-01": "Tell us about yourself. Say where you live and one thing you like doing.",
+  "sp-a1-01": "Describe a normal weekday for you. What do you do in the morning, afternoon and evening?",
+  "sp-a2-01": "Talk about a place you enjoy visiting. Describe it, say what you do there and explain why you like it.",
+  "sp-b1-01": "Talk about a challenge you faced. Explain what happened, what you did and what you learned from it.",
+  "sp-b1plus-01": "Do students learn better online or in person? Give your opinion, compare both options and support your answer with an example.",
+  "sp-b2-01": "Some people think technology has improved communication, while others think it has made communication less meaningful. Discuss both views and give your own position.",
+  "sp-c1-01": "Should convenience always be the main goal when technology is designed? Discuss possible trade-offs, use examples and reach a clear conclusion."
+};
+
+const SPEAKING_ORIGINAL_WORD_TARGET = {
+  "PRE-A1": 2,
+  "A1": 4,
+  "A2": 6,
+  "B1": 8,
+  "B1+": 10,
+  "B2": 12,
+  "C1": 14
+};
+
+const SPEAKING_COPY_STOPWORDS = new Set([
+  "a", "an", "the", "and", "or", "but", "to", "of", "in", "on", "at", "for", "with",
+  "is", "am", "are", "was", "were", "be", "been", "being", "i", "you", "he", "she",
+  "it", "we", "they", "my", "your", "his", "her", "our", "their", "this", "that",
+  "these", "those", "do", "does", "did", "what", "where", "when", "why", "how",
+  "there", "here", "one", "thing", "say", "tell", "talk", "describe", "explain", "give"
+]);
+
 // Keep the original deterministic Speaking strictness.
 // Mobile capture compatibility remains separate from score calibration.
 const SPEAKING_SCORE_LENIENCY = 0;
@@ -300,6 +328,80 @@ function tokeniseTranscript(transcript) {
     .match(/[a-z]+(?:'[a-z]+)?/g) || [];
 }
 
+function speakingNgramCopyRatio(answerTokens, promptTokens, size) {
+  if (answerTokens.length < size || promptTokens.length < size) return 0;
+
+  const promptNgrams = new Set();
+  for (let i = 0; i <= promptTokens.length - size; i += 1) {
+    promptNgrams.add(promptTokens.slice(i, i + size).join(" "));
+  }
+
+  let copied = 0;
+  const total = answerTokens.length - size + 1;
+
+  for (let i = 0; i <= answerTokens.length - size; i += 1) {
+    if (promptNgrams.has(answerTokens.slice(i, i + size).join(" "))) copied += 1;
+  }
+
+  return total ? copied / total : 0;
+}
+
+function analyseSpeakingPromptRepeat(transcript, promptId, level) {
+  const answerTokens = tokeniseTranscript(transcript);
+  const promptTokens = tokeniseTranscript(SPEAKING_PROMPT_TEXT_BY_ID[promptId] || "");
+
+  if (answerTokens.length < 5 || !promptTokens.length) {
+    return {
+      shouldRetry: false,
+      promptCopyRatio: 0,
+      bigramCopyRatio: 0,
+      originalMeaningfulWords: 0
+    };
+  }
+
+  const availablePromptWords = new Map();
+  promptTokens.forEach((word) => {
+    availablePromptWords.set(word, (availablePromptWords.get(word) || 0) + 1);
+  });
+
+  let copiedWords = 0;
+  for (const word of answerTokens) {
+    const left = availablePromptWords.get(word) || 0;
+    if (left > 0) {
+      copiedWords += 1;
+      availablePromptWords.set(word, left - 1);
+    }
+  }
+
+  const promptWordSet = new Set(promptTokens);
+  const originalWords = new Set(
+    answerTokens.filter((word) =>
+      !promptWordSet.has(word) &&
+      !SPEAKING_COPY_STOPWORDS.has(word) &&
+      word.length > 2
+    )
+  );
+
+  const promptCopyRatio = copiedWords / answerTokens.length;
+  const bigramCopyRatio = speakingNgramCopyRatio(answerTokens, promptTokens, 2);
+  const originalTarget = SPEAKING_ORIGINAL_WORD_TARGET[level] || 6;
+
+  const shouldRetry =
+    promptCopyRatio >= .82 ||
+    (
+      promptCopyRatio >= .65 &&
+      bigramCopyRatio >= .42 &&
+      originalWords.size < originalTarget
+    );
+
+  return {
+    shouldRetry,
+    promptCopyRatio: round1(promptCopyRatio),
+    bigramCopyRatio: round1(bigramCopyRatio),
+    originalMeaningfulWords: originalWords.size
+  };
+}
+
 function countPhrase(text, phrase) {
   const source = String(text || "").toLowerCase();
   const needle = String(phrase || "").toLowerCase();
@@ -343,6 +445,14 @@ function gradeSpeakingDeterministically(payload, level) {
   const recordedBytes = Math.max(0, Number(payload.recordedBytes) || 0);
   const transcriptAvailable = Boolean(payload.transcriptAvailable && transcript);
   const transcriptUsable = transcriptAvailable && wordCount >= 4;
+  const promptRepeat = transcriptUsable
+    ? analyseSpeakingPromptRepeat(transcript, String(payload.promptId || ""), level)
+    : {
+        shouldRetry: false,
+        promptCopyRatio: 0,
+        bigramCopyRatio: 0,
+        originalMeaningfulWords: 0
+      };
   const audioActivityAvailable = payload.audioActivityAvailable !== false;
   const speechRecognitionAvailable = payload.speechRecognitionAvailable !== false;
   const recorderMimeType = String(payload.recorderMimeType || "").slice(0, 120);
@@ -464,6 +574,8 @@ function gradeSpeakingDeterministically(payload, level) {
     recognitionConfidence: round1(recognitionConfidence),
     segmentCount,
     transcriptAvailable,
+    promptRepeat,
+    answerRetryReason: promptRepeat.shouldRetry ? "prompt-repeat" : "",
     fluency: compatibilityMode ? compatibilityComposite : round1(fluency),
     grammar: compatibilityMode ? null : round1(grammar),
     vocabulary: compatibilityMode ? null : round1(vocabulary),
@@ -1050,6 +1162,17 @@ export async function submitSpeaking(request) {
       });
     }
 
+    if (grade.answerRetryReason === "prompt-repeat") {
+      return jsonOK({
+        success: true,
+        speakingRetry: true,
+        speakingRetryReason: "prompt-repeat",
+        promptCopyRatio: grade.promptRepeat.promptCopyRatio,
+        bigramCopyRatio: grade.promptRepeat.bigramCopyRatio,
+        originalMeaningfulWords: grade.promptRepeat.originalMeaningfulWords
+      });
+    }
+
     const now = new Date();
     const existing = await wixData
       .query(PLACEMENT_SPEAKING)
@@ -1080,7 +1203,7 @@ export async function submitSpeaking(request) {
         communication: grade.communication
       }),
       speakingLevel: grade.speakingLevel,
-      graderVersion: "deterministic-browser-v5-mobile-recognition-strict",
+      graderVersion: "deterministic-browser-v6-anti-parrot-strict",
       metricsJson: JSON.stringify({
         composite: grade.composite,
         compatibilityMode: grade.compatibilityMode,
