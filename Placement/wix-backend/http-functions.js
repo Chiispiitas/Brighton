@@ -217,15 +217,15 @@ function levelFromModule(moduleId) {
 }
 
 function readingModuleFor(level) {
-  return \`reading-\${levelSlug(level)}\`;
+  return `reading-${levelSlug(level)}`;
 }
 
 function listeningModuleFor(level) {
-  return \`listening-\${levelSlug(level)}\`;
+  return `listening-${levelSlug(level)}`;
 }
 
 function speakingModuleFor(level) {
-  return \`speaking-\${levelSlug(level)}\`;
+  return `speaking-${levelSlug(level)}`;
 }
 
 function adjustAfterReading(level, correct) {
@@ -447,7 +447,7 @@ async function saveResponses({ session, moduleId, answers, keyByItem }) {
       return wixData.insert(
         PLACEMENT_RESPONSES,
         {
-          responseKey: \`\${session._id}:\${moduleId}:\${answer.itemId}\`,
+          responseKey: `${session._id}:${moduleId}:${answer.itemId}`,
           sessionId: session._id,
           clientSessionId: session.clientSessionId,
           placementVersion: session.placementVersion,
@@ -483,7 +483,7 @@ function ratioSkill(label, rows, level) {
     level,
     description: LEVEL_DESCRIPTIONS[level] || "",
     score: total ? Math.round((correct / total) * 100) : null,
-    displayScore: total ? \`\${correct}/\${total}\` : "—",
+    displayScore: total ? `${correct}/${total}` : "—",
     correct,
     total,
     skipped: false
@@ -534,7 +534,7 @@ async function buildResultSummary(session) {
         level: String(speakingRecord.speakingLevel || session.finalLevel || session.provisionalLevel || "A2"),
         description: LEVEL_DESCRIPTIONS[String(speakingRecord.speakingLevel || "")] || "",
         score: Number.isFinite(speakingComposite) ? Math.round(speakingComposite * 10) : null,
-        displayScore: Number.isFinite(speakingComposite) ? \`\${speakingComposite.toFixed(1)}/10\` : "—",
+        displayScore: Number.isFinite(speakingComposite) ? `${speakingComposite.toFixed(1)}/10` : "—",
         skipped: false
       }
     : {
@@ -547,10 +547,10 @@ async function buildResultSummary(session) {
       };
 
   const finalLevel = String(session.finalLevel || session.provisionalLevel || listeningLevel || "A2");
-  const resultId = \`BR-\${String(session._id || "")
+  const resultId = `BR-${String(session._id || "")
     .replace(/[^a-z0-9]/gi, "")
     .slice(-8)
-    .toUpperCase()}\`;
+    .toUpperCase()}`;
 
   return {
     studentName: String(session.studentName || ""),
@@ -753,7 +753,7 @@ export async function post_placementStep(request) {
     const keyByItem = new Map(keys.map((item) => [String(item.itemId || ""), item]));
 
     if (keyByItem.size < expectedCount || answers.some((answer) => !keyByItem.has(answer.itemId))) {
-      throw new Error(\`Private answer key is incomplete for \${moduleId}.\`);
+      throw new Error(`Private answer key is incomplete for ${moduleId}.`);
     }
 
     const correct = answers.reduce((total, answer) => {
