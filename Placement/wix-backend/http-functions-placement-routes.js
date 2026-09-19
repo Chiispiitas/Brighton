@@ -11,6 +11,8 @@ import {
   submitSpeaking,
   skipSpeaking,
   placementResult,
+  touchPlacementActivity,
+  expirePlacementSession,
   listPlacementResults,
   placementDashboardResult
 } from "backend/placement.js";
@@ -22,6 +24,8 @@ export function use_brightonPlacementStep() { return corsOptions("POST"); }
 export function use_brightonPlacementSubmitSpeaking() { return corsOptions("POST"); }
 export function use_brightonPlacementSkipSpeaking() { return corsOptions("POST"); }
 export function use_brightonPlacementResult() { return corsOptions("POST"); }
+export function use_brightonPlacementActivity() { return corsOptions("POST"); }
+export function use_brightonPlacementExpire() { return corsOptions("POST"); }
 export function use_brightonPlacementResults() { return corsOptions("GET"); }
 export function use_brightonPlacementDashboardResult() { return corsOptions("GET"); }
 
@@ -48,6 +52,14 @@ export async function post_brightonPlacementSkipSpeaking(request) {
 
 export async function post_brightonPlacementResult(request) {
   return placementResult(request);
+}
+
+export async function post_brightonPlacementActivity(request) {
+  return touchPlacementActivity(request);
+}
+
+export async function post_brightonPlacementExpire(request) {
+  return expirePlacementSession(request);
 }
 
 /* Teacher Placement results dashboard */
