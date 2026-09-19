@@ -1,7 +1,7 @@
 "use strict";
 
 (() => {
-  const PLACEMENT_VERSION = "2026-09-19.5";
+  const PLACEMENT_VERSION = "2026-09-19.6";
   const STORAGE_KEY = "brighton-placement-session-v1";
   const MAX_LISTENING_PLAYS = 3;
   const modules = window.BRIGHTON_PLACEMENT_MODULES || {};
@@ -234,12 +234,7 @@
     els.candidateName.textContent = session.studentName;
 
     if (session.phase === "result" && session.finalLevel) {
-      renderPlacementResult({
-        finalLevel: session.finalLevel,
-        reviewRequired: session.reviewRequired,
-        status: session.status,
-        confidence: session.confidence
-      });
+      renderPlacementResult({ finalLevel: session.finalLevel });
       return;
     }
 
@@ -630,6 +625,12 @@
 
     try {
       const analyser = await setupSpeakingAnalyser();
+
+      if (!(window.SpeechRecognition || window.webkitSpeechRecognition)) {
+        renderSpeakingTechnicalError("Speaking isn't available on this device.");
+        return;
+      }
+
       const samples = [];
 
       await new Promise((resolve) => {
@@ -654,8 +655,7 @@
       window.setTimeout(renderSpeakingPrompt, 450);
     } catch (error) {
       console.error(error);
-      if (button) button.disabled = false;
-      if (status) status.textContent = "Microphone unavailable.";
+      renderSpeakingTechnicalError("Microphone unavailable.");
     }
   }
 
@@ -807,7 +807,7 @@
       renderSpeakingRecording(data);
     } catch (error) {
       console.error(error);
-      renderSpeakingTechnicalRetry("Microphone unavailable.");
+      renderSpeakingTechnicalError("Microphone unavailable.");
     }
   }
 
@@ -863,8 +863,8 @@
       : 0;
     const transcriptAvailable = Boolean((window.SpeechRecognition || window.webkitSpeechRecognition) && transcript);
 
-    if (durationSeconds < 6 || speechRatio < 0.16) {
-      renderSpeakingTechnicalRetry("We couldn't hear enough.");
+    if (durationSeconds < 6 || speechRatio < 0.16 || !transcriptAvailable) {
+      renderSpeakingTechnicalError("We couldn't process your answer.");
       return;
     }
 
@@ -893,10 +893,14 @@
         recordedBytes: speakingChunks.reduce((sum, chunk) => sum + Number(chunk.size || 0), 0)
       });
 
+      if (result.speakingError) {
+        renderSpeakingTechnicalError("We couldn't process your answer.");
+        return;
+      }
+
       session.phase = "result";
       session.finalLevel = result.finalLevel;
-      session.reviewRequired = Boolean(result.reviewRequired);
-      session.status = result.status;
+      session.status = "completed";
       session.confidence = result.confidence;
       saveLocalSession();
 
@@ -917,17 +921,46 @@
     }
   }
 
-  function renderSpeakingTechnicalRetry(message) {
+  function renderSpeakingTechnicalError(message) {
     cleanupSpeakingRecorderOnly();
 
     els.stageRoot.innerHTML = `
       <div class="speaking-retry">
         <strong>${escapeHtml(message)}</strong>
-        <button id="retrySpeakingBtn" class="secondary-action" type="button">Try again</button>
+        <div class="speaking-error-actions">
+          <button id="retrySpeakingBtn" class="secondary-action" type="button">Try again</button>
+          <button id="skipSpeakingBtn" class="secondary-action speaking-skip-action" type="button">I cannot speak now</button>
+        </div>
       </div>
     `;
 
     els.stageRoot.querySelector("#retrySpeakingBtn")?.addEventListener("click", renderSpeakingPrompt);
+    els.stageRoot.querySelector("#skipSpeakingBtn")?.addEventListener("click", skipSpeakingAfterError);
+  }
+
+  async function skipSpeakingAfterError() {
+    const button = els.stageRoot.querySelector("#skipSpeakingBtn");
+    if (button) button.disabled = true;
+
+    try {
+      const result = await apiPost("skipSpeaking", {
+        sessionId: session.sessionId,
+        clientSessionId: session.clientSessionId,
+        placementVersion: PLACEMENT_VERSION,
+        moduleId: currentModuleId
+      });
+
+      session.phase = "result";
+      session.finalLevel = result.finalLevel || session.provisionalLevel;
+      session.status = "completed";
+      saveLocalSession();
+
+      cleanupSpeakingMedia();
+      renderPlacementResult({ finalLevel: session.finalLevel });
+    } catch (error) {
+      console.error(error);
+      if (button) button.disabled = false;
+    }
   }
 
   function renderSpeakingSubmitRetry(metrics) {
@@ -951,10 +984,14 @@
           ...metrics
         });
 
+        if (result.speakingError) {
+          renderSpeakingTechnicalError("We couldn't process your answer.");
+          return;
+        }
+
         session.phase = "result";
         session.finalLevel = result.finalLevel;
-        session.reviewRequired = Boolean(result.reviewRequired);
-        session.status = result.status;
+        session.status = "completed";
         session.confidence = result.confidence;
         saveLocalSession();
 
@@ -1002,8 +1039,8 @@
     els.stageRoot.innerHTML = `
       <div class="placement-result">
         <span class="result-level">${escapeHtml(result.finalLevel || session.provisionalLevel || "—")}</span>
-        <strong>${escapeHtml(result.status || "PLACEMENT COMPLETE")}</strong>
-        <p>${result.reviewRequired ? "A teacher should confirm this result." : "Your placement is ready."}</p>
+        <strong>PLACEMENT COMPLETE</strong>
+        <p>Your placement is ready.</p>
       </div>
     `;
   }
