@@ -98,13 +98,13 @@ body::before {
   max-width: 100%;
   min-width: 0;
   box-sizing: border-box;
-  overflow: hidden;
+  overflow: visible;
   white-space: nowrap;
-  padding-top: 2%;
+  padding: 2% .04em .12em;
   font-family: Georgia, "Palatino Linotype", "Book Antiqua", serif;
   font-size: clamp(3rem, 11.2vw, 11.5rem);
   font-weight: 700;
-  line-height: .98;
+  line-height: 1.08;
   letter-spacing: .045em;
   color: #f3ead8;
   text-shadow: 0 8px 30px rgba(0,0,0,.5), 0 0 40px rgba(200,169,107,.06);
