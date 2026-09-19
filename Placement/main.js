@@ -81,7 +81,11 @@
     window.clearTimeout(inactivityTimer);
     inactivityTimer = null;
 
-    clearLocalPlacementProgress();
+    try {
+      localStorage.removeItem(STORAGE_KEY);
+    } catch (error) {
+      console.warn("Could not clear saved placement session.", error);
+    }
   }
 
   function loadLocalSession() {
@@ -374,6 +378,11 @@
       remote = await resumeRemoteSession(saved);
     } catch (error) {
       console.warn("Could not verify saved placement session.", error);
+    }
+
+    if (remote?.expired) {
+      clearLocalPlacementProgress();
+      return;
     }
 
     session = {
@@ -1434,7 +1443,7 @@
     }
   }
 
-  function restartPlacementTest() {
+  async function restartPlacementTest() {
     const inProgress = Boolean(session && session.status !== "completed" && session.phase !== "result");
     const message = inProgress
       ? "Restart this placement test from the beginning? Your current progress will be lost."
@@ -1443,20 +1452,31 @@
     if (!window.confirm(message)) return;
 
     const name = String(session?.studentName || els.studentName.value || "").trim();
+    const activeSession = inProgress
+      ? {
+          sessionId: session.sessionId,
+          clientSessionId: session.clientSessionId,
+          placementVersion: session.placementVersion || PLACEMENT_VERSION
+        }
+      : null;
 
     stopActiveAudio();
     cleanupSpeakingMedia();
-
-    try {
-      localStorage.removeItem(STORAGE_KEY);
-    } catch (error) {
-      console.warn("Could not clear saved placement session.", error);
-    }
+    clearLocalPlacementProgress();
 
     try {
       if (name) sessionStorage.setItem(RESTART_NAME_KEY, name);
       else sessionStorage.removeItem(RESTART_NAME_KEY);
     } catch {}
+
+    if (activeSession) {
+      try {
+        await Promise.race([
+          expireRemoteSession(activeSession),
+          new Promise((resolve) => window.setTimeout(resolve, 1200))
+        ]);
+      } catch {}
+    }
 
     window.location.reload();
   }
