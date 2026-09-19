@@ -12,14 +12,14 @@ Use the same modular layout as the other Brighton/Wix systems:
 ```
 Backend/
 ├── http-functions.js   ← the site's existing public router
-├── placement-core.js   ← Placement-only HTTP/CORS/CMS helpers
-├── placement.js        ← Placement business logic
-└── ...existing Tests/Exams modules
+├── core.js             ← shared Exams / Tests / Placement helpers
+├── exams.js
+├── tests.js
+└── placement.js
 ```
 
 Files supplied under `Placement/wix-backend/`:
 
-- `placement-core.js`
 - `placement.js`
 - `http-functions-placement-routes.js` — merge this into the existing `Backend/http-functions.js`; do **not** replace existing Tests/Exams routes.
 
@@ -68,3 +68,10 @@ The backend uses `suppressAuth: true` for its Wix Data operations, so the Placem
 ## Important
 
 The public repository keeps only the **schema template** for `BrightonPlacementItems`. Do not commit the populated answer-key CSV to a public repository.
+
+
+## Current modular backend
+
+The current Brighton backend uses one shared `Backend/core.js` for Exams, Tests and Placement. Do not add `placement-core.js`.
+
+For Placement results, merge the latest `Placement/wix-backend/http-functions-placement-routes.js` into the current modular `Backend/http-functions.js`.
