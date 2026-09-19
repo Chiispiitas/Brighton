@@ -532,7 +532,6 @@ async function buildResultSummary(session) {
   };
 }
 
-export function placementCors() { return corsOptions(); }
 
 export async function startPlacement(request) {
   try {
