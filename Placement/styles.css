@@ -1352,3 +1352,23 @@ button { cursor: pointer; }
     width: 100%;
   }
 }
+
+
+.speaking-error-actions {
+  width: min(360px, 100%);
+  display: grid;
+  gap: 10px;
+}
+
+.speaking-error-actions .secondary-action {
+  width: 100%;
+}
+
+.speaking-skip-action {
+  background: #fff;
+  border: 2px solid #e3e7ea;
+}
+
+.speaking-skip-action:hover {
+  border-color: var(--yellow);
+}
