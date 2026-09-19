@@ -48,3 +48,10 @@ Active Placement attempts expire after **1 hour of inactivity**.
 Additional routes:
 - `POST /_functions/brightonPlacementActivity`
 - `POST /_functions/brightonPlacementExpire`
+
+
+## Legacy stale-session cleanup
+
+The stale-session purge is intentionally tolerant of sessions created before the inactivity feature. It scans Placement sessions and evaluates inactivity in JavaScript using `updatedAt` with `startedAt` as fallback instead of depending on a database `lt(updatedAt)` filter. Active sessions older than one hour are cascade-deleted with their Placement response/speaking rows.
+
+If a device still has a local copy of a session that has already been deleted from Wix, resume now detects the backend's `Placement session not found` response and clears that local progress instead of resurrecting it.
