@@ -187,6 +187,190 @@ function expectedAnswerCount(moduleId) {
   return 5;
 }
 
+function clamp(value, min = 0, max = 1) {
+  return Math.min(max, Math.max(min, Number(value) || 0));
+}
+
+function round1(value) {
+  return Math.round((Number(value) || 0) * 10) / 10;
+}
+
+function tokeniseTranscript(transcript) {
+  return String(transcript || "")
+    .toLowerCase()
+    .match(/[a-z]+(?:'[a-z]+)?/g) || [];
+}
+
+function countPhrase(text, phrase) {
+  const source = String(text || "").toLowerCase();
+  const needle = String(phrase || "").toLowerCase();
+  if (!needle) return 0;
+  return Math.max(0, source.split(needle).length - 1);
+}
+
+function paceScore(wpm, low, high) {
+  if (!wpm) return 0;
+  if (wpm < low) return clamp(wpm / low);
+  if (wpm > high) return clamp(high / wpm);
+  return 1;
+}
+
+function gradeSpeakingDeterministically(payload, level) {
+  const profile = SPEAKING_PROFILES[level] || SPEAKING_PROFILES.A2;
+
+  const transcript = String(payload.transcript || "")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 5000);
+
+  const tokens = tokeniseTranscript(transcript);
+  const wordCount = tokens.length;
+  const uniqueWords = new Set(tokens).size;
+  const uniqueRatio = wordCount ? uniqueWords / wordCount : 0;
+  const longWordRatio = wordCount ? tokens.filter((word) => word.length >= 7).length / wordCount : 0;
+  const connectorCount = tokens.filter((word) => CONNECTOR_WORDS.has(word)).length;
+  const complexCount = tokens.filter((word) => COMPLEX_MARKERS.has(word)).length;
+
+  const fillerCount =
+    tokens.filter((word) => ["um", "uh", "erm", "hmm"].includes(word)).length +
+    countPhrase(transcript, "you know") +
+    countPhrase(transcript, "i mean");
+
+  const durationSeconds = clamp(payload.durationSeconds, 0, 180);
+  const speechSeconds = clamp(payload.speechSeconds, 0, 180);
+  const speechRatio = clamp(payload.speechRatio, 0, 1);
+  const recognitionConfidence = clamp(payload.recognitionConfidence, 0, 1);
+  const segmentCount = Math.max(0, Math.min(100, Number(payload.segmentCount) || 0));
+  const recordedBytes = Math.max(0, Number(payload.recordedBytes) || 0);
+  const transcriptAvailable = Boolean(payload.transcriptAvailable && transcript);
+
+  const wpm = durationSeconds > 0 ? wordCount / (durationSeconds / 60) : 0;
+  const durationScore = clamp(durationSeconds / profile.targetSeconds);
+  const minimumDurationScore = clamp(durationSeconds / profile.minSeconds);
+  const speechActivityScore = clamp((speechRatio - .16) / .62);
+  const speedScore = paceScore(wpm, profile.wpmLow, profile.wpmHigh);
+  const wordScore = clamp(wordCount / profile.targetWords);
+  const lexicalScore = clamp(uniqueRatio / profile.uniqueTarget);
+  const longWordScore = profile.longWordTarget ? clamp(longWordRatio / profile.longWordTarget) : 1;
+  const connectorScore = profile.connectorTarget ? clamp(connectorCount / profile.connectorTarget) : 1;
+  const complexScore = profile.complexTarget ? clamp(complexCount / profile.complexTarget) : 1;
+  const segmentScore = clamp(segmentCount / profile.segmentTarget);
+  const fillerRate = wordCount ? fillerCount / wordCount : 1;
+
+  const fluency = clamp(
+    10 * (.34 * durationScore + .36 * speechActivityScore + .30 * speedScore) -
+    Math.min(2, fillerRate * 28),
+    0,
+    10
+  );
+
+  // Range proxy only: this does not detect grammatical errors.
+  const grammar = clamp(
+    10 * (.42 * wordScore + .38 * complexScore + .20 * segmentScore),
+    0,
+    10
+  );
+
+  const vocabulary = clamp(
+    10 * (.40 * wordScore + .38 * lexicalScore + .22 * longWordScore),
+    0,
+    10
+  );
+
+  // No pronunciation AI is used. This is an intelligibility proxy.
+  const recognitionSignal = recognitionConfidence > 0
+    ? recognitionConfidence
+    : (transcriptAvailable ? .72 : .20);
+
+  const pronunciation = clamp(
+    10 * (.48 * recognitionSignal + .30 * speechActivityScore + .22 * speedScore),
+    0,
+    10
+  );
+
+  // Coherence/task-completion proxy; no semantic AI grading is used.
+  const communication = clamp(
+    10 * (.46 * wordScore + .34 * connectorScore + .20 * segmentScore),
+    0,
+    10
+  );
+
+  const composite = round1(
+    fluency * .25 +
+    grammar * .20 +
+    vocabulary * .20 +
+    pronunciation * .15 +
+    communication * .20
+  );
+
+  const reviewRequired =
+    !transcriptAvailable ||
+    wordCount < 5 ||
+    durationSeconds < profile.minSeconds * .72 ||
+    speechRatio < .25 ||
+    recordedBytes < 4000;
+
+  const currentIndex = Math.max(0, LEVELS.indexOf(level));
+  let speakingLevel = level;
+
+  if (!reviewRequired && composite >= 7.6 && wordCount >= profile.targetWords * .78) {
+    speakingLevel = LEVELS[Math.min(LEVELS.length - 1, currentIndex + 1)];
+  } else if (!reviewRequired && composite < 4.4) {
+    speakingLevel = LEVELS[Math.max(0, currentIndex - 1)];
+  }
+
+  const finalLevel = reviewRequired ? level : speakingLevel;
+  const shifted = finalLevel !== level;
+  const borderline = !reviewRequired && (
+    shifted ||
+    (composite >= 4.4 && composite < 5.1) ||
+    (composite >= 7.0 && composite < 7.6)
+  );
+
+  const status = reviewRequired
+    ? "REVIEW RECOMMENDED"
+    : borderline
+      ? "BORDERLINE PLACEMENT"
+      : "CONFIRMED PLACEMENT";
+
+  const confidence = round1(clamp(
+    reviewRequired
+      ? .45
+      : .60 + .16 * minimumDurationScore + .14 * speechActivityScore + .10 * (transcriptAvailable ? 1 : 0),
+    .35,
+    .92
+  ));
+
+  return {
+    transcript,
+    wordCount,
+    uniqueWords,
+    uniqueRatio: round1(uniqueRatio),
+    longWordRatio: round1(longWordRatio),
+    connectorCount,
+    complexCount,
+    fillerCount,
+    durationSeconds: round1(durationSeconds),
+    speechSeconds: round1(speechSeconds),
+    speechRatio: round1(speechRatio),
+    wpm: round1(wpm),
+    recognitionConfidence: round1(recognitionConfidence),
+    segmentCount,
+    transcriptAvailable,
+    fluency: round1(fluency),
+    grammar: round1(grammar),
+    vocabulary: round1(vocabulary),
+    pronunciation: round1(pronunciation),
+    communication: round1(communication),
+    composite,
+    speakingLevel,
+    finalLevel,
+    reviewRequired,
+    status,
+    confidence
+  };
+}
+
 async function getPlacementSession(sessionId, clientSessionId) {
   const session = await wixData.get(PLACEMENT_SESSIONS, sessionId, { suppressAuth: true });
 
