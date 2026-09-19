@@ -592,5 +592,68 @@ window.BRIGHTON_PLACEMENT_MODULES = {
       ]}
     ]
   }
+,
+  "speaking-prea1": {
+    phase: "speaking",
+    label: "Speaking",
+    promptId: "sp-prea1-01",
+    prompt: "Tell us about yourself. Say where you live and one thing you like doing.",
+    targetSeconds: 20,
+    minimumSeconds: 12
+  },
+
+  "speaking-a1": {
+    phase: "speaking",
+    label: "Speaking",
+    promptId: "sp-a1-01",
+    prompt: "Describe a normal weekday for you. What do you do in the morning, afternoon and evening?",
+    targetSeconds: 25,
+    minimumSeconds: 15
+  },
+
+  "speaking-a2": {
+    phase: "speaking",
+    label: "Speaking",
+    promptId: "sp-a2-01",
+    prompt: "Talk about a place you enjoy visiting. Describe it, say what you do there and explain why you like it.",
+    targetSeconds: 35,
+    minimumSeconds: 20
+  },
+
+  "speaking-b1": {
+    phase: "speaking",
+    label: "Speaking",
+    promptId: "sp-b1-01",
+    prompt: "Talk about a challenge you faced. Explain what happened, what you did and what you learned from it.",
+    targetSeconds: 40,
+    minimumSeconds: 25
+  },
+
+  "speaking-b1plus": {
+    phase: "speaking",
+    label: "Speaking",
+    promptId: "sp-b1plus-01",
+    prompt: "Do students learn better online or in person? Give your opinion, compare both options and support your answer with an example.",
+    targetSeconds: 45,
+    minimumSeconds: 30
+  },
+
+  "speaking-b2": {
+    phase: "speaking",
+    label: "Speaking",
+    promptId: "sp-b2-01",
+    prompt: "Some people think technology has improved communication, while others think it has made communication less meaningful. Discuss both views and give your own position.",
+    targetSeconds: 50,
+    minimumSeconds: 35
+  },
+
+  "speaking-c1": {
+    phase: "speaking",
+    label: "Speaking",
+    promptId: "sp-c1-01",
+    prompt: "Should convenience always be the main goal when technology is designed? Discuss possible trade-offs, use examples and reach a clear conclusion.",
+    targetSeconds: 55,
+    minimumSeconds: 40
+  }
 
 };
