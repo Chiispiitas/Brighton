@@ -1,62 +1,13 @@
 # Brighton Placement Wix backend
 
-Contract: `2026-09-19.8`
+This folder mirrors the modular Wix backend structure used by the other Brighton systems.
 
-The Placement backend is intentionally isolated from the existing Brighton Tests/Exams backend.
+- `core.js` — reusable HTTP/CORS/request/CMS helpers.
+- `placement.js` — all Placement routing, scoring, session, response and Speaking logic.
+- `http-functions-placement-routes.js` — small route block to merge into the site's existing `Backend/http-functions.js`.
 
-## Wix files
+Do not replace the existing Brighton Exams `http-functions.js`. Keep its Tests/Exams routes and add the Placement imports/exports from the route block.
 
-Create this new backend module in the **Brighton Exams** Wix project:
+The frontend sends JSON as `text/plain;charset=UTF-8` to avoid unnecessary CORS preflight from GitHub Pages. `core.readJsonBody()` accepts both JSON and text JSON bodies.
 
-`Backend/placement-api.js`
-
-Use the complete contents of:
-
-`Placement/wix-backend/placement-api.js`
-
-Wix exposes custom Velo HTTP functions only from the site's reserved:
-
-`Backend/http-functions.js`
-
-Therefore, **do not replace the existing file**. Keep every current Tests/Exams import and handler exactly as it is, then add only the Placement adapter contained in:
-
-`Placement/wix-backend/http-functions-placement-adapter.example.js`
-
-The adapter only imports `backend/placement-api` and adds namespaced Placement exports.
-
-## Placement endpoints
-
-- `POST /_functions/brightonPlacementStart`
-- `POST /_functions/brightonPlacementResume`
-- `POST /_functions/brightonPlacementStep`
-- `POST /_functions/brightonPlacementSubmitSpeaking`
-- `POST /_functions/brightonPlacementSkipSpeaking`
-- `POST /_functions/brightonPlacementResult`
-
-Each also has its matching `OPTIONS` export for CORS.
-
-## Placement-only CMS
-
-The module reads and writes only these collections:
-
-- `BrightonPlacementSessions`
-- `BrightonPlacementResponses`
-- `BrightonPlacementItems`
-- `BrightonPlacementSpeaking`
-
-It does not query or mutate the Tests/Exams collections.
-
-`PLACEMENT_VERSION` is `2026-09-19.8`.
-
-`ITEM_KEY_VERSION` remains `2026-09-19.7`, matching the 74 private answer-key rows already seeded in Wix.
-
-
-## Cross-origin frontend requests
-
-The Placement frontend is hosted at `exams.bebrighton.net` while the backend lives on the Wix site.
-
-The frontend sends JSON text using the CORS-safelisted content type:
-
-`Content-Type: text/plain;charset=UTF-8`
-
-This keeps Placement POST requests preflight-independent. The Wix functions still return `Access-Control-Allow-Origin: *`, and the existing OPTIONS handlers remain available, but a missing/lagging OPTIONS deployment no longer blocks the browser before the POST reaches Wix.
+The live Wix site must be **published** after backend changes before production `/_functions/` routes exist.
