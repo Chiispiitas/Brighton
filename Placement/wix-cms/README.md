@@ -14,4 +14,4 @@ Collections:
 
 The three runtime CSVs are header-only templates. The private Items template contains only the schema.
 
-The populated 74-row answer-key file is deliberately **not stored in this public GitHub repository**. The real keys are already seeded in the private `BrightonPlacementItems` Wix collection.
+The populated 74-row answer-key file is deliberately **not stored in this public GitHub repository**. The keys are seeded in `BrightonPlacementItems`. That live Wix collection currently allows `ANYONE` to read, insert, update, and remove items.
