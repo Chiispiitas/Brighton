@@ -159,7 +159,7 @@ Speaking can move the objective estimate by at most one adjacent Brighton band.
 
 If a real Speaking error is detected — for example microphone access fails, browser speech recognition is unavailable, the answer cannot be transcribed, or the recording has too little usable speech — the student sees **I cannot speak now**. That button only appears on the Speaking error screen. Choosing it skips Speaking and finalizes the existing Language + Reading + Listening level through `skipSpeaking`.
 
-Skipping Speaking does not create a review flag, review status, borderline status, or teacher follow-up task. The final screen simply shows the resulting level.
+Skipping Speaking does not create any teacher-review flag or placement-status label. The final screen simply shows the resulting level.
 
 The current version does **not upload the raw recording** to Wix. The audio is used in-browser for measurement and then discarded after submission. `audioUrl` remains blank.
 
