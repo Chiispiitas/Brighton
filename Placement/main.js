@@ -43,6 +43,8 @@
   let speakingRecorder = null;
   let speakingChunks = [];
   let speakingRecognition = null;
+  let speakingRecognitionDisabled = false;
+  let speakingInterimTranscript = "";
   let speakingTranscriptParts = [];
   let speakingConfidenceSamples = [];
   let speakingSegmentCount = 0;
@@ -624,13 +626,20 @@
       throw new Error("Microphone recording is not supported in this browser.");
     }
 
-    speakingStream = await navigator.mediaDevices.getUserMedia({
-      audio: {
-        echoCancellation: true,
-        noiseSuppression: true,
-        autoGainControl: true
-      }
-    });
+    try {
+      speakingStream = await navigator.mediaDevices.getUserMedia({
+        audio: {
+          echoCancellation: true,
+          noiseSuppression: true,
+          autoGainControl: true
+        }
+      });
+    } catch (error) {
+      // Some mobile browsers reject optional audio constraints even though
+      // plain microphone capture works correctly.
+      if (["NotAllowedError", "SecurityError"].includes(String(error?.name || ""))) throw error;
+      speakingStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+    }
 
     return speakingStream;
   }
@@ -679,31 +688,30 @@
 
     try {
       const analyser = await setupSpeakingAnalyser();
-
-      if (!(window.SpeechRecognition || window.webkitSpeechRecognition)) {
-        renderSpeakingTechnicalError("Speaking isn't available on this device.");
-        return;
-      }
-
       const samples = [];
 
-      await new Promise((resolve) => {
-        const started = performance.now();
-        const timer = window.setInterval(() => {
-          const rms = rmsFromAnalyser(analyser);
-          samples.push(rms);
-          if (meter) meter.style.setProperty("--mic-level", String(Math.min(1, rms * 10)));
+      if (analyser) {
+        await new Promise((resolve) => {
+          const started = performance.now();
+          const timer = window.setInterval(() => {
+            const rms = rmsFromAnalyser(analyser);
+            samples.push(rms);
+            if (meter) meter.style.setProperty("--mic-level", String(Math.min(1, rms * 10)));
 
-          if (performance.now() - started >= 1200) {
-            window.clearInterval(timer);
-            resolve();
-          }
-        }, 80);
-      });
+            if (performance.now() - started >= 1200) {
+              window.clearInterval(timer);
+              resolve();
+            }
+          }, 80);
+        });
 
-      const sorted = samples.slice().sort((a, b) => a - b);
-      speakingNoiseFloor = sorted[Math.floor(sorted.length * 0.45)] || 0.018;
-      speakingThreshold = Math.max(0.028, speakingNoiseFloor * 2.2);
+        const sorted = samples.slice().sort((a, b) => a - b);
+        speakingNoiseFloor = sorted[Math.floor(sorted.length * 0.45)] || 0.018;
+        speakingThreshold = Math.max(0.024, speakingNoiseFloor * 1.9);
+      } else {
+        // MediaRecorder can work even when Web Audio analysis is unavailable.
+        await new Promise((resolve) => window.setTimeout(resolve, 250));
+      }
 
       if (status) status.textContent = "Microphone ready";
       window.setTimeout(renderSpeakingPrompt, 450);
@@ -766,48 +774,82 @@
     els.stageRoot.querySelector("#startSpeakingBtn")?.addEventListener("click", startSpeakingRecording);
   }
 
+  function commitInterimTranscript() {
+    const text = String(speakingInterimTranscript || "").trim();
+    if (!text) return;
+    speakingTranscriptParts.push(text);
+    speakingSegmentCount += 1;
+    speakingInterimTranscript = "";
+  }
+
   function startSpeechRecognition() {
     const Recognition = window.SpeechRecognition || window.webkitSpeechRecognition;
-    if (!Recognition || speakingRecorder?.state !== "recording") return;
+    if (!Recognition || speakingRecognitionDisabled || speakingRecorder?.state !== "recording") return;
 
     try {
       const recognition = new Recognition();
       speakingRecognition = recognition;
       recognition.lang = "en-US";
-      recognition.continuous = true;
+
+      // Samsung Internet / Android Chrome can be unreliable with continuous
+      // recognition. We still request it, but safely restart when the service
+      // ends and preserve interim text if the browser never emits a final result.
+      try { recognition.continuous = true; } catch {}
       recognition.interimResults = true;
       recognition.maxAlternatives = 1;
 
       recognition.onresult = (event) => {
+        const interimParts = [];
+
         for (let i = event.resultIndex; i < event.results.length; i += 1) {
           const result = event.results[i];
-          if (!result.isFinal || !result[0]) continue;
+          if (!result?.[0]) continue;
 
           const text = String(result[0].transcript || "").trim();
-          if (text) {
+          if (!text) continue;
+
+          if (result.isFinal) {
             speakingTranscriptParts.push(text);
             speakingSegmentCount += 1;
-          }
 
-          const confidence = Number(result[0].confidence);
-          if (Number.isFinite(confidence) && confidence > 0) {
-            speakingConfidenceSamples.push(confidence);
+            const confidence = Number(result[0].confidence);
+            if (Number.isFinite(confidence) && confidence > 0) {
+              speakingConfidenceSamples.push(confidence);
+            }
+          } else {
+            interimParts.push(text);
           }
+        }
+
+        speakingInterimTranscript = interimParts.join(" ").trim();
+      };
+
+      recognition.onerror = (event) => {
+        const code = String(event?.error || "");
+        if (["not-allowed", "service-not-allowed", "audio-capture"].includes(code)) {
+          speakingRecognitionDisabled = true;
+          speakingInterimTranscript = "";
+          recognition.onend = null;
         }
       };
 
       recognition.onend = () => {
-        if (speakingRecorder?.state === "recording") {
-          window.setTimeout(startSpeechRecognition, 180);
+        // Some mobile implementations end with only interim text.
+        commitInterimTranscript();
+        if (!speakingRecognitionDisabled && speakingRecorder?.state === "recording") {
+          window.setTimeout(startSpeechRecognition, 220);
         }
       };
 
-      recognition.onerror = () => {};
       recognition.start();
-    } catch {}
+    } catch {
+      // Recognition is enhancement-only. MediaRecorder remains the fallback.
+      speakingRecognitionDisabled = true;
+    }
   }
 
   function stopSpeechRecognition() {
+    commitInterimTranscript();
     if (!speakingRecognition) return;
     try { speakingRecognition.onend = null; speakingRecognition.stop(); } catch {}
     speakingRecognition = null;
@@ -835,6 +877,8 @@
 
       speakingChunks = [];
       speakingTranscriptParts = [];
+      speakingInterimTranscript = "";
+      speakingRecognitionDisabled = false;
       speakingConfidenceSamples = [];
       speakingSegmentCount = 0;
       speakingSpeechFrames = 0;
@@ -844,7 +888,11 @@
       const preferredTypes = [
         "audio/webm;codecs=opus",
         "audio/webm",
-        "audio/mp4"
+        "audio/ogg;codecs=opus",
+        "audio/ogg",
+        "audio/mp4;codecs=mp4a.40.2",
+        "audio/mp4",
+        "audio/aac"
       ];
       const mimeType = preferredTypes.find((type) => MediaRecorder.isTypeSupported?.(type)) || "";
       speakingRecorder = mimeType ? new MediaRecorder(stream, { mimeType }) : new MediaRecorder(stream);
@@ -915,10 +963,16 @@
     const recognitionConfidence = speakingConfidenceSamples.length
       ? speakingConfidenceSamples.reduce((sum, value) => sum + value, 0) / speakingConfidenceSamples.length
       : 0;
-    const transcriptAvailable = Boolean((window.SpeechRecognition || window.webkitSpeechRecognition) && transcript);
+    const transcriptAvailable = Boolean(transcript);
+    const audioActivityAvailable = Boolean(speakingAnalyser && speakingTotalFrames > 0);
+    const recordedBytes = speakingChunks.reduce((sum, chunk) => sum + Number(chunk.size || 0), 0);
+    const usableRecording =
+      durationSeconds >= 5 &&
+      recordedBytes >= 1800 &&
+      (!audioActivityAvailable || speechRatio >= 0.10);
 
-    if (durationSeconds < 6 || speechRatio < 0.16 || !transcriptAvailable) {
-      renderSpeakingTechnicalError("We couldn't process your answer.");
+    if (!usableRecording) {
+      renderSpeakingTechnicalError("We couldn't detect enough audio. Try again.");
       return;
     }
 
@@ -944,7 +998,10 @@
         transcriptAvailable,
         recognitionConfidence,
         segmentCount: speakingSegmentCount,
-        recordedBytes: speakingChunks.reduce((sum, chunk) => sum + Number(chunk.size || 0), 0)
+        recordedBytes,
+        audioActivityAvailable,
+        speechRecognitionAvailable: Boolean(window.SpeechRecognition || window.webkitSpeechRecognition),
+        recorderMimeType: String(speakingRecorder?.mimeType || "")
       });
 
       if (result.speakingError) {
@@ -972,7 +1029,10 @@
         transcriptAvailable,
         recognitionConfidence,
         segmentCount: speakingSegmentCount,
-        recordedBytes: speakingChunks.reduce((sum, chunk) => sum + Number(chunk.size || 0), 0)
+        recordedBytes,
+        audioActivityAvailable,
+        speechRecognitionAvailable: Boolean(window.SpeechRecognition || window.webkitSpeechRecognition),
+        recorderMimeType: String(speakingRecorder?.mimeType || "")
       });
     }
   }
@@ -1110,7 +1170,12 @@
   function resultSkillCard(skill, key) {
     const safeSkill = skill || {};
     const skipped = Boolean(safeSkill.skipped);
-    const score = Number.isFinite(Number(safeSkill.score))
+    const hasNumericScore =
+      safeSkill.score !== null &&
+      safeSkill.score !== undefined &&
+      safeSkill.score !== "" &&
+      Number.isFinite(Number(safeSkill.score));
+    const score = hasNumericScore
       ? Math.max(0, Math.min(100, Number(safeSkill.score)))
       : 0;
     const level = safeSkill.level || "—";
