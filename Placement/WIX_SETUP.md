@@ -4,7 +4,7 @@ This setup is for the adaptive placement app at `/Placement/`.
 
 The browser renders questions, but **answer keys, scoring, routing, final placement and speaking grades remain server-authoritative**.
 
-Current contract version: `2026-09-19.4`
+Current contract version: `2026-09-19.5`
 
 ## PlacementSessions
 
@@ -28,6 +28,7 @@ Collection ID: `PlacementSessions`
 | Final level | `finalLevel` | Text |
 | Confidence | `confidence` | Number |
 | Review required | `reviewRequired` | Boolean |
+| Placement status | `placementStatus` | Text |
 
 ## PlacementResponses
 
@@ -106,6 +107,11 @@ Collection ID: `PlacementSpeaking`
 | Audio URL | `audioUrl` | URL |
 | Transcript | `transcript` | Text |
 | Duration seconds | `durationSeconds` | Number |
+| Speech seconds | `speechSeconds` | Number |
+| Word count | `wordCount` | Number |
+| Words per minute | `wpm` | Number |
+| Recognition confidence | `recognitionConfidence` | Number |
+| Segment count | `segmentCount` | Number |
 | Fluency | `fluency` | Number |
 | Grammar | `grammar` | Number |
 | Vocabulary | `vocabulary` | Number |
@@ -114,6 +120,8 @@ Collection ID: `PlacementSpeaking`
 | Speaking level | `speakingLevel` | Text |
 | Grader version | `graderVersion` | Text |
 | Needs review | `needsReview` | Boolean |
+| Status | `status` | Text |
+| Metrics JSON | `metricsJson` | Text |
 | Created at | `createdAt` | Date and Time |
 
 ## HTTP functions
@@ -124,6 +132,7 @@ The current app uses:
 
 - `POST /_functions/startPlacement`
 - `POST /_functions/placementStep`
+- `POST /_functions/submitSpeaking`
 
 `placementStep` verifies the active session and module, loads the private answer keys from `PlacementItems`, stores item telemetry in `PlacementResponses`, and chooses the next module.
 
@@ -140,7 +149,18 @@ The first routing pass is intentionally simple and auditable:
 - A Listening result of 0/3 moves the provisional level down one band, 1–2/3 keeps it stable, and 3/3 moves it up one band.
 - Listening then routes into a level-matched Speaking module such as `speaking-b1plus`.
 
-The estimate remains provisional until Speaking is graded.
+Speaking is graded without a paid AI service. The browser records the answer and, where supported, uses the browser's built-in English speech-recognition capability to produce a transcript. Wix then calculates the rubric deterministically from the transcript plus measurable recording features.
+
+The deterministic rubric uses:
+- fluency: duration, speech activity, pace and filler rate;
+- grammar: a **structural-range proxy** based on length, clause markers and speech segments; it does not detect grammatical errors;
+- vocabulary: response length, lexical variety and longer-word usage;
+- pronunciation: an **intelligibility proxy** based on recognition success, speech activity and plausible pace; it is not phoneme-level pronunciation scoring;
+- communication: a task-completion/coherence proxy based on length, connectors and speech segments.
+
+Speaking can move the objective estimate by at most one adjacent Brighton band. If transcription is unavailable, the recording is too short, or speech activity is too low, the objective estimate is preserved and the result becomes `REVIEW RECOMMENDED`.
+
+The current version does **not upload the raw recording** to Wix. The audio is used in-browser for measurement and then discarded after submission. `audioUrl` remains blank.
 
 ## Permissions
 
