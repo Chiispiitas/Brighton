@@ -89,49 +89,23 @@
   }
 
   async function apiPost(path, body) {
-    let remoteError = null;
+    if (!apiBase) throw new Error("Placement service is unavailable.");
 
-    if (apiBase) {
-      try {
-        // Use a CORS-safelisted content type so external GitHub Pages requests
-        // do not depend on an OPTIONS preflight before reaching the Wix function.
-        const response = await fetch(`${apiBase}/${path}`, {
-          method: "POST",
-          headers: { "Content-Type": "text/plain;charset=UTF-8" },
-          body: JSON.stringify(body)
-        });
+    // text/plain is deliberately used so GitHub Pages/file previews do not
+    // require a browser OPTIONS preflight before the Wix HTTP function.
+    const response = await fetch(`${apiBase}/${path}`, {
+      method: "POST",
+      headers: { "Content-Type": "text/plain;charset=UTF-8" },
+      body: JSON.stringify(body)
+    });
 
-        const payload = await response.json().catch(() => ({}));
+    const payload = await response.json().catch(() => ({}));
 
-        if (response.ok && payload?.success) {
-          return payload;
-        }
-
-        const message = payload?.error || `Placement service returned ${response.status}.`;
-        const error = new Error(message);
-        error.status = response.status;
-
-        // Validation/business errors from a working Wix backend should remain authoritative.
-        if (response.status >= 400 && response.status < 500 && response.status !== 404) {
-          throw error;
-        }
-
-        remoteError = error;
-      } catch (error) {
-        // A CORS/network failure or an unpublished Wix route lands here.
-        remoteError = error;
-      }
+    if (!response.ok || !payload?.success) {
+      throw new Error(payload?.error || `Placement service returned ${response.status}.`);
     }
 
-    const localPost = window.BRIGHTON_PLACEMENT_LOCAL_API?.post;
-    if (typeof localPost === "function") {
-      if (remoteError) {
-        console.warn("Wix Placement API unavailable; using local fallback.", remoteError);
-      }
-      return localPost(path, body);
-    }
-
-    throw remoteError || new Error("Placement service is unavailable.");
+    return payload;
   }
 
   async function startRemoteSession(name, clientSessionId) {
