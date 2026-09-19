@@ -171,3 +171,29 @@ For compatibility with the older published Wix grader, the client derives its le
 The frontend no longer auto-skips Speaking when the grader rejects a submission. A failed Speaking submission stays in Speaking and offers Retry / I cannot speak now, so a browser failure cannot silently complete the test without a Speaking result.
 
 The v5 backend additionally accepts transcript-only mobile recognition as valid evidence. If a browser truly cannot provide a transcript but Web Audio produced usable speech activity, compatibility scoring is conservative: it can keep or lower the routed level, but it cannot promote a student without language-content evidence.
+
+
+## Prompt-repetition protection
+
+Speaking answers are checked before rubric scoring to make sure the student **answers the question instead of reading or repeating it**.
+
+The detector compares the recognized transcript with the assigned prompt using:
+- prompt-word overlap;
+- copied two-word sequences;
+- the number of meaningful words that are new and not simply taken from the prompt.
+
+The original-content target rises with level so PRE-A1/A1 speakers are not expected to produce the same amount of new language as B2/C1 speakers.
+
+A response is treated as prompt repetition when either:
+- at least about 82% of the answer is copied from prompt vocabulary; or
+- at least about 65% is copied, copied two-word sequences are substantial, and the answer contains too little original meaningful content for the routed level.
+
+Prompt repetition is **not graded as weak English**. No Speaking record or score is saved for that attempt. The student receives a retry screen with deliberately simple instructions:
+
+> Answer the question. Do not read or repeat the question. Say your ideas. Give your answer again.
+
+The normal prompt screen also says:
+
+> Answer the question. Do not read or repeat it.
+
+This keeps the command understandable for low-level learners while preventing a repeated prompt from receiving artificial Vocabulary/Fluency credit.
