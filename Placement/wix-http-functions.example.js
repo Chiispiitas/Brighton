@@ -1,6 +1,6 @@
-// Brighton Placement
-// Copy into the existing Wix backend/http-functions.js file.
-// Keep shared imports only once if that file already imports them.
+// Brighton Adaptive Placement — Wix Velo HTTP backend
+// Contract: 2026-09-19.7
+// Paste this into Backend/http-functions.js in the Brighton Wix site.
 
 import wixData from "wix-data";
 import {
@@ -13,12 +13,68 @@ import {
 const PLACEMENT_SESSIONS = "PlacementSessions";
 const PLACEMENT_RESPONSES = "PlacementResponses";
 const PLACEMENT_ITEMS = "PlacementItems";
-const PLACEMENT_VERSION = "2026-09-19.6";
+const PLACEMENT_SPEAKING = "PlacementSpeaking";
+
+const PLACEMENT_VERSION = "2026-09-19.7";
+const ITEM_KEY_VERSION = "2026-09-19.7";
 
 const CORS_HEADERS = {
   "Content-Type": "application/json",
   "Access-Control-Allow-Origin": "*"
 };
+
+const LEVELS = ["PRE-A1", "A1", "A2", "B1", "B1+", "B2", "C1"];
+
+const LEVEL_DESCRIPTIONS = {
+  "PRE-A1": "Starter",
+  "A1": "Beginner",
+  "A2": "Elementary",
+  "B1": "Intermediate",
+  "B1+": "Intermediate Plus",
+  "B2": "Upper Intermediate",
+  "C1": "Advanced"
+};
+
+const SPEAKING_LEVEL_BY_MODULE = {
+  "speaking-prea1": "PRE-A1",
+  "speaking-a1": "A1",
+  "speaking-a2": "A2",
+  "speaking-b1": "B1",
+  "speaking-b1plus": "B1+",
+  "speaking-b2": "B2",
+  "speaking-c1": "C1"
+};
+
+const SPEAKING_PROMPT_BY_MODULE = {
+  "speaking-prea1": "sp-prea1-01",
+  "speaking-a1": "sp-a1-01",
+  "speaking-a2": "sp-a2-01",
+  "speaking-b1": "sp-b1-01",
+  "speaking-b1plus": "sp-b1plus-01",
+  "speaking-b2": "sp-b2-01",
+  "speaking-c1": "sp-c1-01"
+};
+
+const SPEAKING_PROFILES = {
+  "PRE-A1": { minSeconds: 12, targetSeconds: 20, targetWords: 12, wpmLow: 25, wpmHigh: 100, uniqueTarget: .72, longWordTarget: .02, connectorTarget: 0, complexTarget: 0, segmentTarget: 1 },
+  "A1":     { minSeconds: 15, targetSeconds: 25, targetWords: 20, wpmLow: 35, wpmHigh: 110, uniqueTarget: .68, longWordTarget: .03, connectorTarget: 1, complexTarget: 0, segmentTarget: 2 },
+  "A2":     { minSeconds: 20, targetSeconds: 35, targetWords: 32, wpmLow: 45, wpmHigh: 125, uniqueTarget: .63, longWordTarget: .05, connectorTarget: 2, complexTarget: 1, segmentTarget: 2 },
+  "B1":     { minSeconds: 25, targetSeconds: 40, targetWords: 45, wpmLow: 55, wpmHigh: 145, uniqueTarget: .60, longWordTarget: .07, connectorTarget: 3, complexTarget: 2, segmentTarget: 3 },
+  "B1+":    { minSeconds: 30, targetSeconds: 45, targetWords: 55, wpmLow: 60, wpmHigh: 155, uniqueTarget: .58, longWordTarget: .08, connectorTarget: 4, complexTarget: 3, segmentTarget: 3 },
+  "B2":     { minSeconds: 35, targetSeconds: 50, targetWords: 65, wpmLow: 65, wpmHigh: 165, uniqueTarget: .56, longWordTarget: .10, connectorTarget: 5, complexTarget: 4, segmentTarget: 4 },
+  "C1":     { minSeconds: 40, targetSeconds: 55, targetWords: 75, wpmLow: 70, wpmHigh: 175, uniqueTarget: .54, longWordTarget: .12, connectorTarget: 6, complexTarget: 5, segmentTarget: 4 }
+};
+
+const CONNECTOR_WORDS = new Set([
+  "and", "but", "because", "so", "although", "however", "therefore", "while",
+  "whereas", "instead", "also", "first", "second", "finally", "unless", "despite",
+  "though", "since", "then", "besides", "moreover", "furthermore", "otherwise"
+]);
+
+const COMPLEX_MARKERS = new Set([
+  "although", "however", "therefore", "whereas", "unless", "despite", "though",
+  "because", "while", "which", "who", "whose", "whether", "if", "since", "rather"
+]);
 
 function placementJsonOK(data) {
   return ok({
@@ -44,12 +100,43 @@ function placementServerError(error) {
   });
 }
 
+function corsOptions() {
+  return response({
+    status: 204,
+    headers: {
+      ...CORS_HEADERS,
+      "Access-Control-Allow-Methods": "POST, OPTIONS",
+      "Access-Control-Allow-Headers": "Content-Type"
+    }
+  });
+}
+
 function safeJson(value, fallback) {
   try {
     return value ? JSON.parse(value) : fallback;
   } catch {
     return fallback;
   }
+}
+
+function clamp(value, min = 0, max = 1) {
+  return Math.min(max, Math.max(min, Number(value) || 0));
+}
+
+function round1(value) {
+  return Math.round((Number(value) || 0) * 10) / 10;
+}
+
+function isoDate(value) {
+  try {
+    return value instanceof Date ? value.toISOString() : new Date(value).toISOString();
+  } catch {
+    return new Date().toISOString();
+  }
+}
+
+function validateVersion(payload) {
+  return !payload?.placementVersion || payload.placementVersion === PLACEMENT_VERSION;
 }
 
 function cleanAnswers(value) {
@@ -108,91 +195,57 @@ function estimateAfterLanguage(moduleId, correct) {
   return "A2";
 }
 
-const LEVELS = ["PRE-A1", "A1", "A2", "B1", "B1+", "B2", "C1"];
-
-const SPEAKING_LEVEL_BY_MODULE = {
-  "speaking-prea1": "PRE-A1",
-  "speaking-a1": "A1",
-  "speaking-a2": "A2",
-  "speaking-b1": "B1",
-  "speaking-b1plus": "B1+",
-  "speaking-b2": "B2",
-  "speaking-c1": "C1"
-};
-
-const SPEAKING_PROMPT_BY_MODULE = {
-  "speaking-prea1": "sp-prea1-01",
-  "speaking-a1": "sp-a1-01",
-  "speaking-a2": "sp-a2-01",
-  "speaking-b1": "sp-b1-01",
-  "speaking-b1plus": "sp-b1plus-01",
-  "speaking-b2": "sp-b2-01",
-  "speaking-c1": "sp-c1-01"
-};
-
-const SPEAKING_PROFILES = {
-  "PRE-A1": { minSeconds: 12, targetSeconds: 20, targetWords: 12, wpmLow: 25, wpmHigh: 100, uniqueTarget: .72, longWordTarget: .02, connectorTarget: 0, complexTarget: 0, segmentTarget: 1 },
-  "A1":     { minSeconds: 15, targetSeconds: 25, targetWords: 20, wpmLow: 35, wpmHigh: 110, uniqueTarget: .68, longWordTarget: .03, connectorTarget: 1, complexTarget: 0, segmentTarget: 2 },
-  "A2":     { minSeconds: 20, targetSeconds: 35, targetWords: 32, wpmLow: 45, wpmHigh: 125, uniqueTarget: .63, longWordTarget: .05, connectorTarget: 2, complexTarget: 1, segmentTarget: 2 },
-  "B1":     { minSeconds: 25, targetSeconds: 40, targetWords: 45, wpmLow: 55, wpmHigh: 145, uniqueTarget: .60, longWordTarget: .07, connectorTarget: 3, complexTarget: 2, segmentTarget: 3 },
-  "B1+":    { minSeconds: 30, targetSeconds: 45, targetWords: 55, wpmLow: 60, wpmHigh: 155, uniqueTarget: .58, longWordTarget: .08, connectorTarget: 4, complexTarget: 3, segmentTarget: 3 },
-  "B2":     { minSeconds: 35, targetSeconds: 50, targetWords: 65, wpmLow: 65, wpmHigh: 165, uniqueTarget: .56, longWordTarget: .10, connectorTarget: 5, complexTarget: 4, segmentTarget: 4 },
-  "C1":     { minSeconds: 40, targetSeconds: 55, targetWords: 75, wpmLow: 70, wpmHigh: 175, uniqueTarget: .54, longWordTarget: .12, connectorTarget: 6, complexTarget: 5, segmentTarget: 4 }
-};
-
-const CONNECTOR_WORDS = new Set([
-  "and", "but", "because", "so", "although", "however", "therefore", "while",
-  "whereas", "instead", "also", "first", "second", "finally", "unless", "despite",
-  "though", "since", "then", "besides", "moreover", "furthermore", "otherwise"
-]);
-
-const COMPLEX_MARKERS = new Set([
-  "although", "however", "therefore", "whereas", "unless", "despite", "though",
-  "because", "while", "which", "who", "whose", "whether", "if", "since", "rather"
-]);
-
 function levelSlug(level) {
-  return String(level || "A2").toLowerCase().replace("+", "plus").replace(/[^a-z0-9]+/g, "");
+  return String(level || "A2")
+    .toLowerCase()
+    .replace("+", "plus")
+    .replace(/[^a-z0-9]+/g, "");
+}
+
+function levelFromModule(moduleId) {
+  const slug = String(moduleId || "").replace(/^[^-]+-/, "");
+  const map = {
+    prea1: "PRE-A1",
+    a1: "A1",
+    a2: "A2",
+    b1: "B1",
+    b1plus: "B1+",
+    b2: "B2",
+    c1: "C1"
+  };
+  return map[slug] || "A2";
 }
 
 function readingModuleFor(level) {
-  return `reading-${levelSlug(level)}`;
+  return \`reading-\${levelSlug(level)}\`;
 }
 
 function listeningModuleFor(level) {
-  return `listening-${levelSlug(level)}`;
+  return \`listening-\${levelSlug(level)}\`;
 }
 
 function speakingModuleFor(level) {
-  return `speaking-${levelSlug(level)}`;
+  return \`speaking-\${levelSlug(level)}\`;
 }
 
 function adjustAfterReading(level, correct) {
-  const currentIndex = Math.max(0, LEVELS.indexOf(level));
-  if (correct <= 1) return LEVELS[Math.max(0, currentIndex - 1)];
-  if (correct === 4) return LEVELS[Math.min(LEVELS.length - 1, currentIndex + 1)];
-  return LEVELS[currentIndex];
+  const index = Math.max(0, LEVELS.indexOf(level));
+  if (correct <= 1) return LEVELS[Math.max(0, index - 1)];
+  if (correct === 4) return LEVELS[Math.min(LEVELS.length - 1, index + 1)];
+  return LEVELS[index];
 }
 
 function adjustAfterListening(level, correct) {
-  const currentIndex = Math.max(0, LEVELS.indexOf(level));
-  if (correct === 0) return LEVELS[Math.max(0, currentIndex - 1)];
-  if (correct === 3) return LEVELS[Math.min(LEVELS.length - 1, currentIndex + 1)];
-  return LEVELS[currentIndex];
+  const index = Math.max(0, LEVELS.indexOf(level));
+  if (correct === 0) return LEVELS[Math.max(0, index - 1)];
+  if (correct === 3) return LEVELS[Math.min(LEVELS.length - 1, index + 1)];
+  return LEVELS[index];
 }
 
 function expectedAnswerCount(moduleId) {
   if (/^listening-/.test(moduleId)) return 3;
   if (/^reading-/.test(moduleId)) return 4;
   return 5;
-}
-
-function clamp(value, min = 0, max = 1) {
-  return Math.min(max, Math.max(min, Number(value) || 0));
-}
-
-function round1(value) {
-  return Math.round((Number(value) || 0) * 10) / 10;
 }
 
 function tokeniseTranscript(transcript) {
@@ -259,12 +312,11 @@ function gradeSpeakingDeterministically(payload, level) {
 
   const fluency = clamp(
     10 * (.34 * durationScore + .36 * speechActivityScore + .30 * speedScore) -
-    Math.min(2, fillerRate * 28),
+      Math.min(2, fillerRate * 28),
     0,
     10
   );
 
-  // Range proxy only: this does not detect grammatical errors.
   const grammar = clamp(
     10 * (.42 * wordScore + .38 * complexScore + .20 * segmentScore),
     0,
@@ -277,7 +329,6 @@ function gradeSpeakingDeterministically(payload, level) {
     10
   );
 
-  // No pronunciation AI is used. This is an intelligibility proxy.
   const recognitionSignal = recognitionConfidence > 0
     ? recognitionConfidence
     : (transcriptAvailable ? .72 : .20);
@@ -288,7 +339,6 @@ function gradeSpeakingDeterministically(payload, level) {
     10
   );
 
-  // Coherence/task-completion proxy; no semantic AI grading is used.
   const communication = clamp(
     10 * (.46 * wordScore + .34 * connectorScore + .20 * segmentScore),
     0,
@@ -319,14 +369,6 @@ function gradeSpeakingDeterministically(payload, level) {
     speakingLevel = LEVELS[Math.max(0, currentIndex - 1)];
   }
 
-  const finalLevel = inputError ? level : speakingLevel;
-
-  const confidence = round1(clamp(
-    .60 + .16 * minimumDurationScore + .14 * speechActivityScore + .10 * (transcriptAvailable ? 1 : 0),
-    .35,
-    .92
-  ));
-
   return {
     transcript,
     wordCount,
@@ -350,9 +392,16 @@ function gradeSpeakingDeterministically(payload, level) {
     communication: round1(communication),
     composite,
     speakingLevel,
-    finalLevel,
+    finalLevel: inputError ? level : speakingLevel,
     inputError,
-    confidence
+    confidence: round1(clamp(
+      .60 +
+      .16 * minimumDurationScore +
+      .14 * speechActivityScore +
+      .10 * (transcriptAvailable ? 1 : 0),
+      .35,
+      .92
+    ))
   };
 }
 
@@ -366,11 +415,11 @@ async function getPlacementSession(sessionId, clientSessionId) {
   return session;
 }
 
-async function getModuleKeys(moduleId, placementVersion) {
+async function getModuleKeys(moduleId) {
   const result = await wixData
     .query(PLACEMENT_ITEMS)
     .eq("moduleId", moduleId)
-    .eq("placementVersion", placementVersion)
+    .eq("placementVersion", ITEM_KEY_VERSION)
     .eq("isActive", true)
     .limit(50)
     .find({ suppressAuth: true });
@@ -378,12 +427,7 @@ async function getModuleKeys(moduleId, placementVersion) {
   return result.items;
 }
 
-async function saveResponses({
-  session,
-  moduleId,
-  answers,
-  keyByItem
-}) {
+async function saveResponses({ session, moduleId, answers, keyByItem }) {
   const existing = await wixData
     .query(PLACEMENT_RESPONSES)
     .eq("sessionId", session._id)
@@ -403,7 +447,7 @@ async function saveResponses({
       return wixData.insert(
         PLACEMENT_RESPONSES,
         {
-          responseKey: `${session._id}:${moduleId}:${answer.itemId}`,
+          responseKey: \`\${session._id}:\${moduleId}:\${answer.itemId}\`,
           sessionId: session._id,
           clientSessionId: session.clientSessionId,
           placementVersion: session.placementVersion,
@@ -426,53 +470,118 @@ async function saveResponses({
   await Promise.all(inserts);
 }
 
-export function options_startPlacement() {
-  return response({
-    status: 204,
-    headers: {
-      ...CORS_HEADERS,
-      "Access-Control-Allow-Methods": "POST, OPTIONS",
-      "Access-Control-Allow-Headers": "Content-Type"
-    }
-  });
+function correctCount(rows) {
+  return rows.reduce((sum, row) => sum + (row.correct ? 1 : 0), 0);
 }
 
-export function options_placementStep() {
-  return response({
-    status: 204,
-    headers: {
-      ...CORS_HEADERS,
-      "Access-Control-Allow-Methods": "POST, OPTIONS",
-      "Access-Control-Allow-Headers": "Content-Type"
-    }
-  });
+function ratioSkill(label, rows, level) {
+  const total = rows.length;
+  const correct = correctCount(rows);
+
+  return {
+    label,
+    level,
+    description: LEVEL_DESCRIPTIONS[level] || "",
+    score: total ? Math.round((correct / total) * 100) : null,
+    displayScore: total ? \`\${correct}/\${total}\` : "—",
+    correct,
+    total,
+    skipped: false
+  };
 }
 
-export function options_submitSpeaking() {
-  return response({
-    status: 204,
-    headers: {
-      ...CORS_HEADERS,
-      "Access-Control-Allow-Methods": "POST, OPTIONS",
-      "Access-Control-Allow-Headers": "Content-Type"
+async function buildResultSummary(session) {
+  const responses = await wixData
+    .query(PLACEMENT_RESPONSES)
+    .eq("sessionId", session._id)
+    .limit(100)
+    .find({ suppressAuth: true });
+
+  const rows = responses.items;
+  const languageRows = rows.filter((row) => /^lang-/.test(String(row.moduleId || "")));
+  const readingRows = rows.filter((row) => /^reading-/.test(String(row.moduleId || "")));
+  const listeningRows = rows.filter((row) => /^listening-/.test(String(row.moduleId || "")));
+
+  const languageModule = String(languageRows[0]?.moduleId || "");
+  const readingModule = String(readingRows[0]?.moduleId || "");
+  const listeningModule = String(listeningRows[0]?.moduleId || "");
+
+  const languageLevel = languageRows.length
+    ? estimateAfterLanguage(languageModule, correctCount(languageRows))
+    : String(session.finalLevel || session.provisionalLevel || "A2");
+
+  const readingLevel = readingRows.length
+    ? adjustAfterReading(levelFromModule(readingModule), correctCount(readingRows))
+    : languageLevel;
+
+  const listeningLevel = listeningRows.length
+    ? adjustAfterListening(levelFromModule(listeningModule), correctCount(listeningRows))
+    : readingLevel;
+
+  const speakingQuery = await wixData
+    .query(PLACEMENT_SPEAKING)
+    .eq("sessionId", session._id)
+    .limit(1)
+    .find({ suppressAuth: true });
+
+  const speakingRecord = speakingQuery.items[0] || null;
+  const speakingMetrics = safeJson(speakingRecord?.metricsJson, {});
+  const speakingComposite = Number(speakingMetrics?.composite);
+
+  const speakingSkill = speakingRecord
+    ? {
+        label: "Speaking",
+        level: String(speakingRecord.speakingLevel || session.finalLevel || session.provisionalLevel || "A2"),
+        description: LEVEL_DESCRIPTIONS[String(speakingRecord.speakingLevel || "")] || "",
+        score: Number.isFinite(speakingComposite) ? Math.round(speakingComposite * 10) : null,
+        displayScore: Number.isFinite(speakingComposite) ? \`\${speakingComposite.toFixed(1)}/10\` : "—",
+        skipped: false
+      }
+    : {
+        label: "Speaking",
+        level: null,
+        description: "",
+        score: null,
+        displayScore: "—",
+        skipped: true
+      };
+
+  const finalLevel = String(session.finalLevel || session.provisionalLevel || listeningLevel || "A2");
+  const resultId = \`BR-\${String(session._id || "")
+    .replace(/[^a-z0-9]/gi, "")
+    .slice(-8)
+    .toUpperCase()}\`;
+
+  return {
+    studentName: String(session.studentName || ""),
+    finalLevel,
+    finalDescription: LEVEL_DESCRIPTIONS[finalLevel] || "",
+    completedAt: isoDate(session.completedAt || session.updatedAt || new Date()),
+    resultId,
+    placementVersion: session.placementVersion || PLACEMENT_VERSION,
+    skills: {
+      language: ratioSkill("Language Use", languageRows, languageLevel),
+      reading: ratioSkill("Reading", readingRows, readingLevel),
+      listening: ratioSkill("Listening", listeningRows, listeningLevel),
+      speaking: speakingSkill
     }
-  });
+  };
 }
 
-export function options_skipSpeaking() {
-  return response({
-    status: 204,
-    headers: {
-      ...CORS_HEADERS,
-      "Access-Control-Allow-Methods": "POST, OPTIONS",
-      "Access-Control-Allow-Headers": "Content-Type"
-    }
-  });
-}
+export function options_startPlacement() { return corsOptions(); }
+export function options_resumePlacement() { return corsOptions(); }
+export function options_placementStep() { return corsOptions(); }
+export function options_submitSpeaking() { return corsOptions(); }
+export function options_skipSpeaking() { return corsOptions(); }
+export function options_placementResult() { return corsOptions(); }
 
 export async function post_startPlacement(request) {
   try {
     const payload = await request.body.json();
+
+    if (!validateVersion(payload)) {
+      return placementBadRequest("Placement version changed. Refresh the page.");
+    }
 
     const clientSessionId = String(payload.clientSessionId || "").trim();
     const studentName = String(payload.studentName || "").trim().replace(/\s+/g, " ");
@@ -497,8 +606,13 @@ export async function post_startPlacement(request) {
         success: true,
         sessionId: session._id,
         placementVersion: session.placementVersion || PLACEMENT_VERSION,
+        studentName: session.studentName || studentName,
+        status: session.status || "active",
         phase: session.phase || "calibration",
         moduleId: session.moduleId || "calibration-01",
+        provisionalLevel: session.provisionalLevel || "",
+        finalLevel: session.finalLevel || "",
+        completedAt: session.completedAt || null,
         duplicate: true
       });
     }
@@ -521,6 +635,7 @@ export async function post_startPlacement(request) {
         }),
         startedAt: now,
         updatedAt: now,
+        completedAt: null,
         timeSpentSeconds: 0,
         provisionalLevel: "",
         finalLevel: "",
@@ -533,11 +648,54 @@ export async function post_startPlacement(request) {
       success: true,
       sessionId: inserted._id,
       placementVersion: PLACEMENT_VERSION,
+      studentName,
+      status: "active",
       phase: "calibration",
-      moduleId: "calibration-01"
+      moduleId: "calibration-01",
+      provisionalLevel: "",
+      finalLevel: ""
     });
   } catch (error) {
     console.error("startPlacement failed:", error);
+    return placementServerError(error);
+  }
+}
+
+export async function post_resumePlacement(request) {
+  try {
+    const payload = await request.body.json();
+
+    if (!validateVersion(payload)) {
+      return placementBadRequest("Placement version changed. Refresh the page.");
+    }
+
+    const sessionId = String(payload.sessionId || "").trim();
+    const clientSessionId = String(payload.clientSessionId || "").trim();
+    const session = await getPlacementSession(sessionId, clientSessionId);
+
+    if (!session) {
+      return placementBadRequest("Placement session not found.");
+    }
+
+    const result = session.status === "completed"
+      ? await buildResultSummary(session)
+      : null;
+
+    return placementJsonOK({
+      success: true,
+      sessionId: session._id,
+      placementVersion: session.placementVersion,
+      studentName: session.studentName || "",
+      status: session.status || "active",
+      phase: session.phase || "calibration",
+      moduleId: session.moduleId || "calibration-01",
+      provisionalLevel: session.provisionalLevel || "",
+      finalLevel: session.finalLevel || "",
+      completedAt: session.completedAt || null,
+      result
+    });
+  } catch (error) {
+    console.error("resumePlacement failed:", error);
     return placementServerError(error);
   }
 }
@@ -546,11 +704,14 @@ export async function post_placementStep(request) {
   try {
     const payload = await request.body.json();
 
+    if (!validateVersion(payload)) {
+      return placementBadRequest("Placement version changed. Refresh the page.");
+    }
+
     const sessionId = String(payload.sessionId || "").trim();
     const clientSessionId = String(payload.clientSessionId || "").trim();
     const moduleId = String(payload.moduleId || "").trim();
     const answers = cleanAnswers(payload.answers);
-
     const expectedCount = expectedAnswerCount(moduleId);
 
     if (!sessionId || !clientSessionId || !moduleId || answers.length !== expectedCount) {
@@ -562,23 +723,37 @@ export async function post_placementStep(request) {
     }
 
     const session = await getPlacementSession(sessionId, clientSessionId);
+
     if (!session || session.status !== "active") {
       return placementBadRequest("Placement session not found.");
     }
 
     if (session.placementVersion !== PLACEMENT_VERSION) {
-      return placementBadRequest("Placement version changed. Start a new placement.");
+      return placementBadRequest("Placement version changed. Refresh the page.");
     }
 
     if (String(session.moduleId || "") !== moduleId) {
+      const progress = safeJson(session.progressJson, {});
+
+      if (String(progress.lastCompletedModule || "") === moduleId) {
+        return placementJsonOK({
+          success: true,
+          completedModuleId: moduleId,
+          nextPhase: session.phase,
+          nextModuleId: session.moduleId,
+          provisionalLevel: session.provisionalLevel || "",
+          replayed: true
+        });
+      }
+
       return placementBadRequest("This placement module is no longer active.");
     }
 
-    const keys = await getModuleKeys(moduleId, session.placementVersion);
+    const keys = await getModuleKeys(moduleId);
     const keyByItem = new Map(keys.map((item) => [String(item.itemId || ""), item]));
 
     if (keyByItem.size < expectedCount || answers.some((answer) => !keyByItem.has(answer.itemId))) {
-      throw new Error(`Private answer key is incomplete for ${moduleId}.`);
+      throw new Error(\`Private answer key is incomplete for \${moduleId}.\`);
     }
 
     const correct = answers.reduce((total, answer) => {
@@ -586,12 +761,7 @@ export async function post_placementStep(request) {
       return total + (answer.optionId === String(key.correctOptionId || "") ? 1 : 0);
     }, 0);
 
-    await saveResponses({
-      session,
-      moduleId,
-      answers,
-      keyByItem
-    });
+    await saveResponses({ session, moduleId, answers, keyByItem });
 
     const elapsedSeconds = Math.round(
       answers.reduce((total, answer) => total + answer.responseTimeMs, 0) / 1000
@@ -605,25 +775,23 @@ export async function post_placementStep(request) {
     if (moduleId === "calibration-01") {
       nextPhase = "language";
       nextModuleId = routeAfterCalibration(correct);
-      route.push(nextModuleId);
     } else if (/^lang-/.test(moduleId)) {
       nextPhase = "reading";
       provisionalLevel = estimateAfterLanguage(moduleId, correct);
       nextModuleId = readingModuleFor(provisionalLevel);
-      route.push(nextModuleId);
     } else if (/^reading-/.test(moduleId)) {
       nextPhase = "listening";
       provisionalLevel = adjustAfterReading(provisionalLevel || "A2", correct);
       nextModuleId = listeningModuleFor(provisionalLevel);
-      route.push(nextModuleId);
     } else if (/^listening-/.test(moduleId)) {
       nextPhase = "speaking";
       provisionalLevel = adjustAfterListening(provisionalLevel || "A2", correct);
       nextModuleId = speakingModuleFor(provisionalLevel);
-      route.push(nextModuleId);
     } else {
       return placementBadRequest("Unsupported placement module.");
     }
+
+    if (!route.includes(nextModuleId)) route.push(nextModuleId);
 
     const updated = {
       ...session,
@@ -647,8 +815,6 @@ export async function post_placementStep(request) {
     return placementJsonOK({
       success: true,
       completedModuleId: moduleId,
-      correct,
-      total: expectedCount,
       nextPhase,
       nextModuleId,
       provisionalLevel
@@ -659,10 +825,13 @@ export async function post_placementStep(request) {
   }
 }
 
-
 export async function post_submitSpeaking(request) {
   try {
     const payload = await request.body.json();
+
+    if (!validateVersion(payload)) {
+      return placementBadRequest("Placement version changed. Refresh the page.");
+    }
 
     const sessionId = String(payload.sessionId || "").trim();
     const clientSessionId = String(payload.clientSessionId || "").trim();
@@ -674,12 +843,13 @@ export async function post_submitSpeaking(request) {
     }
 
     const session = await getPlacementSession(sessionId, clientSessionId);
+
     if (!session || session.status !== "active") {
       return placementBadRequest("Placement session not found.");
     }
 
     if (session.placementVersion !== PLACEMENT_VERSION) {
-      return placementBadRequest("Placement version changed. Start a new placement.");
+      return placementBadRequest("Placement version changed. Refresh the page.");
     }
 
     if (String(session.moduleId || "") !== moduleId || !/^speaking-/.test(moduleId)) {
@@ -703,9 +873,8 @@ export async function post_submitSpeaking(request) {
     }
 
     const now = new Date();
-
     const existing = await wixData
-      .query("PlacementSpeaking")
+      .query(PLACEMENT_SPEAKING)
       .eq("sessionId", session._id)
       .limit(1)
       .find({ suppressAuth: true });
@@ -747,9 +916,9 @@ export async function post_submitSpeaking(request) {
     };
 
     if (existing.items.length) {
-      await wixData.update("PlacementSpeaking", speakingRecord, { suppressAuth: true });
+      await wixData.update(PLACEMENT_SPEAKING, speakingRecord, { suppressAuth: true });
     } else {
-      await wixData.insert("PlacementSpeaking", speakingRecord, { suppressAuth: true });
+      await wixData.insert(PLACEMENT_SPEAKING, speakingRecord, { suppressAuth: true });
     }
 
     const updatedSession = {
@@ -770,12 +939,14 @@ export async function post_submitSpeaking(request) {
     };
 
     await wixData.update(PLACEMENT_SESSIONS, updatedSession, { suppressAuth: true });
+    const result = await buildResultSummary(updatedSession);
 
     return placementJsonOK({
       success: true,
       finalLevel: grade.finalLevel,
       speakingLevel: grade.speakingLevel,
       confidence: grade.confidence,
+      result,
       rubric: {
         fluency: grade.fluency,
         grammar: grade.grammar,
@@ -791,10 +962,13 @@ export async function post_submitSpeaking(request) {
   }
 }
 
-
 export async function post_skipSpeaking(request) {
   try {
     const payload = await request.body.json();
+
+    if (!validateVersion(payload)) {
+      return placementBadRequest("Placement version changed. Refresh the page.");
+    }
 
     const sessionId = String(payload.sessionId || "").trim();
     const clientSessionId = String(payload.clientSessionId || "").trim();
@@ -805,12 +979,13 @@ export async function post_skipSpeaking(request) {
     }
 
     const session = await getPlacementSession(sessionId, clientSessionId);
+
     if (!session || session.status !== "active") {
       return placementBadRequest("Placement session not found.");
     }
 
     if (session.placementVersion !== PLACEMENT_VERSION) {
-      return placementBadRequest("Placement version changed. Start a new placement.");
+      return placementBadRequest("Placement version changed. Refresh the page.");
     }
 
     if (String(session.moduleId || "") !== moduleId || !/^speaking-/.test(moduleId)) {
@@ -830,18 +1005,49 @@ export async function post_skipSpeaking(request) {
       progressJson: JSON.stringify({
         stage: 4,
         totalStages: 4,
-        completed: true
+        completed: true,
+        speakingSkipped: true
       })
     };
 
     await wixData.update(PLACEMENT_SESSIONS, updatedSession, { suppressAuth: true });
+    const result = await buildResultSummary(updatedSession);
 
     return placementJsonOK({
       success: true,
-      finalLevel
+      finalLevel,
+      result
     });
   } catch (error) {
     console.error("skipSpeaking failed:", error);
+    return placementServerError(error);
+  }
+}
+
+export async function post_placementResult(request) {
+  try {
+    const payload = await request.body.json();
+
+    if (!validateVersion(payload)) {
+      return placementBadRequest("Placement version changed. Refresh the page.");
+    }
+
+    const sessionId = String(payload.sessionId || "").trim();
+    const clientSessionId = String(payload.clientSessionId || "").trim();
+    const session = await getPlacementSession(sessionId, clientSessionId);
+
+    if (!session || session.status !== "completed") {
+      return placementBadRequest("Completed placement not found.");
+    }
+
+    const result = await buildResultSummary(session);
+
+    return placementJsonOK({
+      success: true,
+      result
+    });
+  } catch (error) {
+    console.error("placementResult failed:", error);
     return placementServerError(error);
   }
 }
