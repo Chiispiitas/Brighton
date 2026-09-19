@@ -13,7 +13,7 @@ import {
 const PLACEMENT_SESSIONS = "PlacementSessions";
 const PLACEMENT_RESPONSES = "PlacementResponses";
 const PLACEMENT_ITEMS = "PlacementItems";
-const PLACEMENT_VERSION = "2026-09-19.2";
+const PLACEMENT_VERSION = "2026-09-19.3";
 
 const CORS_HEADERS = {
   "Content-Type": "application/json",
@@ -107,9 +107,29 @@ function estimateAfterLanguage(moduleId, correct) {
   return "A2";
 }
 
+const LEVELS = ["PRE-A1", "A1", "A2", "B1", "B1+", "B2", "C1"];
+
+function levelSlug(level) {
+  return String(level || "A2").toLowerCase().replace("+", "plus").replace(/[^a-z0-9]+/g, "");
+}
+
 function readingModuleFor(level) {
-  const slug = String(level || "A2").toLowerCase().replace("+", "plus").replace(/[^a-z0-9]+/g, "");
-  return `reading-${slug}`;
+  return `reading-${levelSlug(level)}`;
+}
+
+function listeningModuleFor(level) {
+  return `listening-${levelSlug(level)}`;
+}
+
+function adjustAfterReading(level, correct) {
+  const currentIndex = Math.max(0, LEVELS.indexOf(level));
+  if (correct <= 1) return LEVELS[Math.max(0, currentIndex - 1)];
+  if (correct === 4) return LEVELS[Math.min(LEVELS.length - 1, currentIndex + 1)];
+  return LEVELS[currentIndex];
+}
+
+function expectedAnswerCount(moduleId) {
+  return /^reading-/.test(moduleId) ? 4 : 5;
 }
 
 async function getPlacementSession(sessionId, clientSessionId) {
@@ -283,7 +303,9 @@ export async function post_placementStep(request) {
     const moduleId = String(payload.moduleId || "").trim();
     const answers = cleanAnswers(payload.answers);
 
-    if (!sessionId || !clientSessionId || !moduleId || answers.length !== 5) {
+    const expectedCount = expectedAnswerCount(moduleId);
+
+    if (!sessionId || !clientSessionId || !moduleId || answers.length !== expectedCount) {
       return placementBadRequest("Incomplete placement module.");
     }
 
@@ -303,7 +325,7 @@ export async function post_placementStep(request) {
     const keys = await getModuleKeys(moduleId, session.placementVersion);
     const keyByItem = new Map(keys.map((item) => [String(item.itemId || ""), item]));
 
-    if (keyByItem.size < 5 || answers.some((answer) => !keyByItem.has(answer.itemId))) {
+    if (keyByItem.size < expectedCount || answers.some((answer) => !keyByItem.has(answer.itemId))) {
       throw new Error(`Private answer key is incomplete for ${moduleId}.`);
     }
 
@@ -337,6 +359,11 @@ export async function post_placementStep(request) {
       provisionalLevel = estimateAfterLanguage(moduleId, correct);
       nextModuleId = readingModuleFor(provisionalLevel);
       route.push(nextModuleId);
+    } else if (/^reading-/.test(moduleId)) {
+      nextPhase = "listening";
+      provisionalLevel = adjustAfterReading(provisionalLevel || "A2", correct);
+      nextModuleId = listeningModuleFor(provisionalLevel);
+      route.push(nextModuleId);
     } else {
       return placementBadRequest("Unsupported placement module.");
     }
@@ -347,11 +374,11 @@ export async function post_placementStep(request) {
       moduleId: nextModuleId,
       routeJson: JSON.stringify(route),
       progressJson: JSON.stringify({
-        stage: nextPhase === "reading" ? 2 : 1,
+        stage: nextPhase === "listening" ? 3 : nextPhase === "reading" ? 2 : 1,
         totalStages: 4,
         lastCompletedModule: moduleId,
         lastModuleScore: correct,
-        lastModuleTotal: 5
+        lastModuleTotal: expectedCount
       }),
       updatedAt: new Date(),
       timeSpentSeconds: Number(session.timeSpentSeconds || 0) + elapsedSeconds,
@@ -364,7 +391,7 @@ export async function post_placementStep(request) {
       success: true,
       completedModuleId: moduleId,
       correct,
-      total: 5,
+      total: expectedCount,
       nextPhase,
       nextModuleId,
       provisionalLevel
