@@ -922,7 +922,7 @@
   }
 
   function renderSpeakingTechnicalError(message) {
-    cleanupSpeakingRecorderOnly();
+    cleanupSpeakingMedia();
 
     els.stageRoot.innerHTML = `
       <div class="speaking-retry">
@@ -934,7 +934,7 @@
       </div>
     `;
 
-    els.stageRoot.querySelector("#retrySpeakingBtn")?.addEventListener("click", renderSpeakingPrompt);
+    els.stageRoot.querySelector("#retrySpeakingBtn")?.addEventListener("click", renderSpeakingHandoff);
     els.stageRoot.querySelector("#skipSpeakingBtn")?.addEventListener("click", skipSpeakingAfterError);
   }
 
