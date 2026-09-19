@@ -4,6 +4,7 @@
 
 import {
   placementCors,
+  pingPlacement,
   startPlacement,
   resumePlacement,
   placementStep,
@@ -13,12 +14,18 @@ import {
 } from "backend/placement.js";
 
 /* CORS / catch-all */
+export function use_brightonPlacementPing() { return placementCors("GET"); }
 export function use_brightonPlacementStart() { return placementCors(); }
 export function use_brightonPlacementResume() { return placementCors(); }
 export function use_brightonPlacementStep() { return placementCors(); }
 export function use_brightonPlacementSubmitSpeaking() { return placementCors(); }
 export function use_brightonPlacementSkipSpeaking() { return placementCors(); }
 export function use_brightonPlacementResult() { return placementCors(); }
+
+/* Diagnostic route: open /_functions/brightonPlacementPing in a browser. */
+export function get_brightonPlacementPing() {
+  return pingPlacement();
+}
 
 /* POST routes */
 export async function post_brightonPlacementStart(request) {
