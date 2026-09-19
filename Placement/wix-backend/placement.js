@@ -20,6 +20,7 @@ const PLACEMENT_SPEAKING = "BrightonPlacementSpeaking";
 
 const PLACEMENT_VERSION = "2026-09-19.8";
 const ITEM_KEY_VERSION = "2026-09-19.7";
+const PLACEMENT_INACTIVITY_MS = 60 * 60 * 1000;
 
 const LEVELS = ["PRE-A1", "A1", "A2", "B1", "B1+", "B2", "C1"];
 
@@ -104,6 +105,72 @@ function isoDate(value) {
 
 function validateVersion(payload) {
   return !payload?.placementVersion || payload.placementVersion === PLACEMENT_VERSION;
+}
+
+function placementActivityTime(session) {
+  const value = session?.updatedAt || session?.startedAt;
+  if (!value) return 0;
+
+  const date = value instanceof Date ? value : new Date(value);
+  const time = date.getTime();
+  return Number.isFinite(time) ? time : 0;
+}
+
+function placementSessionIsStale(session, now = Date.now()) {
+  return String(session?.status || "active") === "active" &&
+    placementActivityTime(session) > 0 &&
+    now - placementActivityTime(session) >= PLACEMENT_INACTIVITY_MS;
+}
+
+async function removePlacementRows(collectionId, sessionId) {
+  try {
+    const found = await wixData
+      .query(collectionId)
+      .eq("sessionId", sessionId)
+      .limit(1000)
+      .find({ suppressAuth: true });
+
+    await Promise.all(found.items.map(async (item) => {
+      try {
+        await wixData.remove(collectionId, item._id, { suppressAuth: true });
+      } catch {}
+    }));
+  } catch {}
+}
+
+async function deletePlacementSessionCascade(session) {
+  const sessionId = String(session?._id || "");
+  if (!sessionId) return false;
+
+  await Promise.all([
+    removePlacementRows(PLACEMENT_RESPONSES, sessionId),
+    removePlacementRows(PLACEMENT_SPEAKING, sessionId)
+  ]);
+
+  try {
+    await wixData.remove(PLACEMENT_SESSIONS, sessionId, { suppressAuth: true });
+  } catch {}
+
+  return true;
+}
+
+async function purgeStalePlacementSessions() {
+  const cutoff = new Date(Date.now() - PLACEMENT_INACTIVITY_MS);
+
+  try {
+    const found = await wixData
+      .query(PLACEMENT_SESSIONS)
+      .eq("status", "active")
+      .lt("updatedAt", cutoff)
+      .limit(1000)
+      .find({ suppressAuth: true });
+
+    await Promise.all(found.items.map(deletePlacementSessionCascade));
+    return found.items.length;
+  } catch (error) {
+    console.warn("Could not purge stale Placement sessions:", error);
+    return 0;
+  }
 }
 
 function cleanAnswers(value) {
@@ -396,6 +463,11 @@ async function getPlacementSession(sessionId, clientSessionId) {
     return null;
   }
 
+  if (placementSessionIsStale(session)) {
+    await deletePlacementSessionCascade(session);
+    return null;
+  }
+
   return session;
 }
 
@@ -561,6 +633,7 @@ async function buildResultSummary(session) {
 
 export async function startPlacement(request) {
   try {
+    await purgeStalePlacementSessions();
     const payload = await readJsonBody(request);
 
     if (!validateVersion(payload)) {
@@ -658,7 +731,15 @@ export async function resumePlacement(request) {
     const session = await getPlacementSession(sessionId, clientSessionId);
 
     if (!session) {
-      return jsonBadRequest("Placement session not found.");
+      return jsonOK({
+        success: true,
+        expired: true
+      });
+    }
+
+    if (String(session.status || "") === "active") {
+      session.updatedAt = new Date();
+      await wixData.update(PLACEMENT_SESSIONS, session, { suppressAuth: true });
     }
 
     const result = session.status === "completed"
@@ -680,6 +761,84 @@ export async function resumePlacement(request) {
     });
   } catch (error) {
     console.error("resumePlacement failed:", error);
+    return jsonServerError(error);
+  }
+}
+
+
+export async function touchPlacementActivity(request) {
+  try {
+    const payload = await readJsonBody(request);
+
+    if (!validateVersion(payload)) {
+      return jsonBadRequest("Placement version changed. Refresh the page.");
+    }
+
+    const sessionId = String(payload.sessionId || "").trim();
+    const clientSessionId = String(payload.clientSessionId || "").trim();
+    const session = await getPlacementSession(sessionId, clientSessionId);
+
+    if (!session) {
+      return jsonOK({
+        success: true,
+        expired: true
+      });
+    }
+
+    if (String(session.status || "") !== "active") {
+      return jsonOK({
+        success: true,
+        expired: false
+      });
+    }
+
+    session.updatedAt = new Date();
+    await wixData.update(PLACEMENT_SESSIONS, session, { suppressAuth: true });
+
+    return jsonOK({
+      success: true,
+      expired: false
+    });
+  } catch (error) {
+    console.error("touchPlacementActivity failed:", error);
+    return jsonServerError(error);
+  }
+}
+
+export async function expirePlacementSession(request) {
+  try {
+    const payload = await readJsonBody(request);
+
+    if (!validateVersion(payload)) {
+      return jsonBadRequest("Placement version changed. Refresh the page.");
+    }
+
+    const sessionId = String(payload.sessionId || "").trim();
+    const clientSessionId = String(payload.clientSessionId || "").trim();
+    const session = await wixData.get(PLACEMENT_SESSIONS, sessionId, { suppressAuth: true });
+
+    if (!session || String(session.clientSessionId || "") !== clientSessionId) {
+      return jsonOK({
+        success: true,
+        deleted: false
+      });
+    }
+
+    if (String(session.status || "") !== "active") {
+      return jsonOK({
+        success: true,
+        deleted: false
+      });
+    }
+
+    await deletePlacementSessionCascade(session);
+
+    return jsonOK({
+      success: true,
+      deleted: true
+    });
+  } catch (error) {
+    console.error("expirePlacementSession failed:", error);
     return jsonServerError(error);
   }
 }
@@ -1114,6 +1273,7 @@ function placementDashboardModules(responses) {
 
 export async function listPlacementResults(request) {
   try {
+    await purgeStalePlacementSessions();
     const query = request?.query || {};
     const studentFilter = String(query.student || "").trim().toLowerCase();
     const levelFilter = String(query.level || "").trim();
@@ -1163,6 +1323,7 @@ export async function listPlacementResults(request) {
 
 export async function placementDashboardResult(request) {
   try {
+    await purgeStalePlacementSessions();
     const sessionId = String(request?.query?.sessionId || "").trim();
 
     if (!sessionId) {
