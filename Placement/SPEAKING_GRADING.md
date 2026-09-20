@@ -1,240 +1,220 @@
-# Brighton Placement — Speaking grading without a paid AI API
+# Brighton Placement — Gemini audio speaking grading
 
-Version: `2026-09-19.8`
+Version: `2026-09-20.1`  
+Rubric: `brighton-speaking-rubric-1.0`  
+Model: `gemini-3.8-flash`
 
-The Speaking stage does **not** call a paid AI grading service.
+## Overview
 
-## Browser flow
+Speaking is assessed from the candidate's **actual microphone audio**. Browser speech recognition is no longer used as the grader.
+
+The browser records a short audio response with `MediaRecorder`, sends it to the Brighton Wix backend, and the backend sends the anonymous audio inline to Gemini. Gemini returns a structured rubric assessment. Wix validates the response, calculates the weighted composite itself, applies the one-adjacent-band placement rule, stores the assessment, and discards the raw recording.
+
+The Gemini API key is stored only in Wix Secrets Manager as:
+
+`BRIGHTON_PLACEMENT_GEMINI_API_KEY`
+
+No API key is present in the GitHub frontend.
+
+## Privacy and storage
+
+The Gemini request contains only:
+
+- the speaking prompt;
+- the routed Brighton level;
+- the recording duration;
+- the audio recording.
+
+The request does **not** include the student's name, email, Wix session ID, school name, or other account data.
+
+Brighton does not persist the raw audio. `BrightonPlacementSpeaking.audioUrl` remains empty. The CMS record stores the transcript, scores, rubric evidence, model/rubric version and limited API usage metadata.
+
+The request uses `store: false` in the Gemini Interactions API.
+
+## Capture flow
 
 1. The student checks the microphone.
-2. The app verifies that microphone recording and browser speech recognition are available.
-3. The app displays one prompt matched to the provisional placement band.
-4. The student records one answer.
-5. The browser measures duration and speech activity with Web Audio.
-6. Browser-native `SpeechRecognition` / `webkitSpeechRecognition` produces the transcript when available.
-7. Wix calculates the rubric with fixed deterministic rules.
-8. A valid Speaking result may keep the current level or move it by **one adjacent band only**.
+2. Brighton records the answer with `MediaRecorder`.
+3. Web Audio may measure speech activity for diagnostics only. It does not determine the rubric grade.
+4. The student cannot finish before the prompt's minimum duration.
+5. The recording is encoded in memory and sent to the Wix backend.
+6. Wix retrieves the Gemini key from Secrets Manager.
+7. Gemini listens to the audio and returns rubric JSON.
+8. Wix calculates the composite and final routing adjustment.
+9. Raw audio is discarded.
 
-## Mobile/browser compatibility
+Browser `SpeechRecognition` is no longer required for assessment. This removes the former Chrome/Samsung/Opera recognition-confidence dependency.
 
-Speaking now treats browser speech recognition as an enhancement rather than a hard requirement. This is important on Android devices, Samsung Internet and other mobile browsers where microphone recording may work while `SpeechRecognition` is unavailable, ends early, or never returns a final transcript.
+## What Gemini assesses
 
-The browser now:
-- retries microphone capture with plain `audio: true` when optional audio constraints fail;
-- accepts additional MediaRecorder formats (WebM/Opus, Ogg/Opus, MP4/AAC);
-- preserves interim recognition text when a mobile recognizer ends without a final result;
-- automatically restarts recognition while the recording is still running;
-- allows a valid recording to finish even when browser transcription fails.
+### Fluency — 20%
 
-When the recording itself is valid but no usable transcript is available, Wix uses **compatibility mode**: the Speaking attempt is recorded as completed, the student's objective Language/Reading/Listening band is kept unchanged, and no fake grammar/vocabulary/pronunciation score is generated. The result shows Speaking as **Recorded** rather than failing the entire Placement.
+Evidence includes:
 
-## Error-only skip
+- continuity and ability to sustain speech;
+- natural pausing;
+- hesitation and searching;
+- reformulation and self-repair;
+- natural speaking rate.
 
-There is **no permanent Skip Speaking button**.
+Speed alone never earns a high Fluency score.
 
-The button **I cannot speak now** appears only after a Speaking error has been detected, including cases such as:
+### Grammar — 25%
 
-- microphone permission or microphone access failure;
-- browser speech recognition unavailable;
-- no usable transcript;
-- recording too short to process;
-- too little detectable speech;
-- server-side validation concludes that the Speaking evidence is unusable.
+Evidence includes both **range and accuracy**:
 
-The error screen offers:
+- tense and aspect;
+- agreement;
+- articles and prepositions;
+- morphology and word order;
+- clause structure and subordination;
+- control of complex syntax;
+- frequency, systematicity and communicative impact of errors.
 
-- **Try again**
-- **I cannot speak now**
+Connector counts and sentence length are not used as substitutes for grammar.
 
-A normal Speaking screen does not show the skip option.
+### Vocabulary — 20%
 
-Choosing **I cannot speak now** calls `POST /_functions/brightonPlacementSkipSpeaking`. Wix then finalizes the current objective level from Language + Reading + Listening.
+Evidence includes:
 
-No placement-status labels are used, and no teacher-review flag is created when Speaking is skipped.
+- lexical range;
+- precision;
+- appropriacy;
+- collocation;
+- repetition;
+- paraphrasing;
+- lexical control.
 
-## Adaptive prompts
+Word length is not used as a vocabulary proxy.
 
-- PRE-A1: short personal introduction.
-- A1: normal weekday.
-- A2: describe a place and explain why.
-- B1: narrate a challenge and lesson learned.
-- B1+: compare online and in-person learning.
-- B2: discuss two views about technology and communication.
-- C1: discuss trade-offs around convenience in technology design.
+### Pronunciation — 15%
 
-Target recording length rises from about 20 seconds at PRE-A1 to about 55 seconds at C1.
+Gemini judges the audio itself:
 
-## What is measured
+- overall intelligibility;
+- sound clarity where audible;
+- word stress;
+- sentence stress;
+- rhythm;
+- connected speech;
+- prosodic control.
 
-### Fluency
+A non-native accent is not penalized simply for being non-native. Only features that reduce clarity, natural phrasing or listener comprehension lower the score.
 
-Uses:
-- total response duration;
-- proportion of frames containing speech;
-- recognised words per minute;
-- filler frequency.
+### Communication — 20%
 
-### Grammar
+Evidence includes:
 
-This is a structural-range proxy rather than grammatical error correction.
+- actual task fulfilment;
+- relevance;
+- organization and coherence;
+- development of ideas;
+- reasons and explanations;
+- examples and comparisons where required;
+- conclusion where required by the prompt.
 
-It uses:
-- response length;
-- clause/complexity markers;
-- number of final recognised speech segments.
+Speaking at length without answering the task does not earn a high Communication score.
 
-### Vocabulary
+## Absolute scoring anchors
 
-Uses:
-- response length;
-- unique-word ratio;
-- proportion of longer lexical items.
+The routed prompt does not determine the speaking score. Gemini applies one absolute scale:
 
-### Pronunciation / intelligibility
+| Score | Brighton speaking band | Broad interpretation |
+|---|---|---|
+| 0.0–1.9 | PRE-A1 | Little or no assessable independent language |
+| 2.0–3.4 | A1 | Very limited basic language |
+| 3.5–4.9 | A2 | Simple connected language with limited range/control |
+| 5.0–6.4 | B1 | Sustained familiar communication with clear limitations |
+| 6.5–7.4 | B1+ | Stronger than secure B1 but not consistently B2 |
+| 7.5–8.7 | B2 | Clear, developed and reasonably flexible speech with good control |
+| 8.8–10.0 | C1 | Fluent, flexible, precise, well-developed speech with consistently strong control |
 
-This is an intelligibility proxy, not phoneme-level pronunciation scoring.
+A candidate answering the C1 prompt therefore does **not** receive C1 merely because the prompt is C1.
 
-Uses:
-- transcript success;
-- browser recognition confidence when supplied;
-- speech activity;
-- plausible speaking pace.
+## Examiner consistency controls
 
-### Communication
+The request uses a fixed, versioned examiner handbook and a strict JSON schema.
 
-Uses:
-- task-length completion;
-- connector usage;
-- recognised speech segments.
+The examiner must:
 
-## Scoring calibration
+1. listen to the full recording;
+2. transcribe conservatively without silently correcting the candidate;
+3. determine whether enough independent evidence exists;
+4. detect prompt reading/repetition;
+5. match evidence to the descriptors;
+6. score the five dimensions independently;
+7. re-check that the scores agree with the evidence;
+8. return only the required structured result.
 
-Speaking has returned to the **original deterministic scoring strictness**. There is no +1.0 grading buffer. Fluency, Grammar, Vocabulary, Pronunciation, Communication, and the weighted composite use their raw deterministic scores, capped normally from 0 to 10.
+A fixed generation seed is supplied and Gemini uses medium thinking. The rubric version and model version are stored with each result so later calibration changes remain traceable.
 
-Mobile/browser compatibility still affects whether a valid answer can be captured and processed, but it does not make the rubric more lenient.
+## Composite
+
+Gemini does **not** choose the final composite. Wix calculates it deterministically:
+
+```text
+Fluency        20%
+Grammar        25%
+Vocabulary     20%
+Pronunciation  15%
+Communication  20%
+```
+
+The backend then maps the composite to the absolute Brighton speaking band shown above.
 
 ## Placement rule
 
-For a processable recording:
+Speaking remains a refinement stage rather than an override of the objective test.
 
-- strong Speaking evidence can move the result up one adjacent band;
-- weak Speaking evidence can move it down one adjacent band;
-- otherwise the objective band stays unchanged;
-- Speaking never jumps two or more bands.
+If the absolute speaking band differs from the Language + Reading + Listening routed level, the final placement may move **one adjacent Brighton band only**.
 
-If the recording cannot be processed, no Speaking grade is stored. The user must either try again or use **I cannot speak now**.
+Examples:
 
-## Result screen
+- objective B1 + speaking B2 → final B1+
+- objective B1 + speaking A2 → final A2
+- objective C1 + speaking B1 → final B2
+- objective A2 + speaking C1 → final B1
 
-The result screen only shows the final level and a simple placement-complete message.
+The raw independent Speaking level is still stored for teachers to inspect.
 
-There are no placement-status labels.
+## Prompt repetition and insufficient evidence
 
-## Audio storage
+Gemini returns `promptRepeat=true` when the candidate mainly reads/repeats the question with too little original content.
 
-V1 does not upload the raw microphone recording.
+Prompt repetition is not graded as weak English. The attempt is rejected and the student is asked to answer again.
 
-The MediaRecorder blob exists only during the browser session and is discarded after submission or skip.
+The attempt is also rejected when evidence is insufficient, for example:
 
+- mostly silence or noise;
+- essentially no English;
+- too little meaningful independent speech;
+- unusable audio.
 
-## Result presentation
+For technical/insufficient-evidence errors, the existing **Try again** / **I cannot speak now** path remains available.
 
-The completed placement now renders a certificate-style Brighton result screen with:
+## Result storage
 
-- student name;
-- final placement band;
-- PRE-A1 through C1 scale;
-- Language Use, Reading, Listening and Speaking summaries;
-- result ID and completion date;
-- PNG export and native Share support.
+`BrightonPlacementSpeaking` continues to store the existing headline fields:
 
-This is deliberately described as a placement result rather than a CEFR certificate.
+- transcript;
+- duration and word count;
+- Fluency;
+- Grammar;
+- Vocabulary;
+- Pronunciation;
+- Communication;
+- independent Speaking level;
+- grader version.
 
+`metricsJson` stores:
 
-## v4 mobile compatibility
+- composite;
+- rubric version;
+- Gemini model;
+- evidence quality;
+- detailed dimension evidence;
+- identified grammar errors;
+- communication sub-scores;
+- limited token-usage metadata.
 
-The browser and backend now treat a valid MediaRecorder payload as the primary proof that a Speaking answer was captured. Web Audio speech-activity ratios are no longer allowed to reject an otherwise valid recording because some Android and Samsung devices report unreliable analyser levels.
-
-A recording is accepted for compatibility when it has a plausible duration and non-empty encoded audio bytes. If browser speech recognition cannot provide a usable transcript, the result stays in compatibility mode and the objective placement band is preserved rather than inventing a Speaking score.
-
-The frontend also has a legacy-backend safety path: if an older published Wix grader returns `speakingError: true` for a recording that already passed the client MediaRecorder checks, the attempt is finalized through the existing Speaking-skip endpoint so the student is not trapped on the error screen. This fallback does not fabricate a transcript or Speaking score.
-
-
-## v5 mobile recognition-first
-
-Mobile browsers now use a different capture strategy from desktop. On Android, Samsung Internet, iPhone and iPad, the answer uses browser SpeechRecognition as the primary capture path **without MediaRecorder running at the same time**. This avoids the common mobile failure where microphone permission and the mic check work but simultaneous MediaRecorder + Web Speech causes recognition to return no transcript.
-
-Mobile recognition uses short recognition sessions that restart while the answer is active instead of continuous recognition. The pre-existing getUserMedia stream from the microphone check is released before recognition begins so there is only one active microphone consumer.
-
-For compatibility with the older published Wix grader, the client derives its legacy capture checks from the active recognition session: duration, recognized words and an equivalent 16 kHz PCM byte estimate. This value is only a legacy capture sanity signal; no raw audio is claimed to be uploaded or stored.
-
-The frontend no longer auto-skips Speaking when the grader rejects a submission. A failed Speaking submission stays in Speaking and offers Retry / I cannot speak now, so a browser failure cannot silently complete the test without a Speaking result.
-
-The v5 backend additionally accepts transcript-only mobile recognition as valid evidence. If a browser truly cannot provide a transcript but Web Audio produced usable speech activity, compatibility scoring is conservative: it can keep or lower the routed level, but it cannot promote a student without language-content evidence.
-
-
-## Prompt-repetition protection
-
-Speaking answers are checked before rubric scoring to make sure the student **answers the question instead of reading or repeating it**.
-
-The detector compares the recognized transcript with the assigned prompt using:
-- prompt-word overlap;
-- copied two-word sequences;
-- the number of meaningful words that are new and not simply taken from the prompt.
-
-The original-content target rises with level so PRE-A1/A1 speakers are not expected to produce the same amount of new language as B2/C1 speakers.
-
-A response is treated as prompt repetition when either:
-- at least about 82% of the answer is copied from prompt vocabulary; or
-- at least about 65% is copied, copied two-word sequences are substantial, and the answer contains too little original meaningful content for the routed level.
-
-Prompt repetition is **not graded as weak English**. No Speaking record or score is saved for that attempt. The student receives a retry screen with deliberately simple instructions:
-
-> Answer the question. Do not read or repeat the question. Say your ideas. Give your answer again.
-
-The normal prompt screen also says:
-
-> Answer the question. Do not read or repeat it.
-
-This keeps the command understandable for low-level learners while preventing a repeated prompt from receiving artificial Vocabulary/Fluency credit.
-
-
-## v7 scoring and cross-browser calibration
-
-### Speaking evidence confidence
-
-The old `confidence` field was **not a probability that the final placement was correct**. It was a coarse Speaking-capture heuristic, and because it was rounded to one decimal place and heavily rewarded any usable transcript, many successful attempts collapsed to `0.9`.
-
-From v7 the field is explicitly treated as **Speaking evidence confidence**. It is stored to two decimal places and varies with:
-- browser recognition quality when the browser actually reports confidence;
-- transcript coverage relative to the routed level;
-- whether the answer reaches the minimum speaking duration;
-- recognition stability;
-- prompt originality.
-
-Audio-only compatibility attempts are capped below transcript-backed attempts because they provide weaker language evidence.
-
-### Pronunciation
-
-Pronunciation remains an **intelligibility proxy**, not phoneme-level accent scoring. The old formula incorrectly mixed speech activity and speaking speed into Pronunciation. v7 removes those factors. Pronunciation now uses:
-- calibrated browser recognition confidence;
-- recognition stability;
-- how much usable speech was successfully transcribed.
-
-High browser recognition confidence (about 0.88+) is treated as strong intelligibility evidence instead of mechanically capping a native-like answer around 9/10. When the browser returns `0` because it does not expose a confidence value, a clean usable transcript is treated as strong evidence instead of being penalized merely for the missing browser metric.
-
-### Fluency
-
-Fluency now focuses on:
-- meeting the minimum response length;
-- continuous speech rather than silence-heavy delivery;
-- a broad natural speaking-rate range;
-- filler frequency.
-
-Fast natural speech is no longer penalized merely for going above the old level-specific WPM ceiling. Only genuinely extreme rates are reduced.
-
-### Opera / macOS
-
-Opera is now treated like mobile browsers when it exposes Web Speech: SpeechRecognition runs without MediaRecorder competing for the microphone. If Opera does not expose browser speech recognition, the recording still uses MediaRecorder + Web Audio and the v7 backend accepts it in compatibility mode rather than rejecting the submission.
-
-Browser family, platform, capture mode, recognition error, and recognition support are stored with Speaking metrics. If the student explicitly chooses **I cannot speak now** after an error, those diagnostics are saved in session progress so the failed browser path can be investigated later.
+No CMS schema change is required for this release.
