@@ -120,10 +120,10 @@ Target clip length: 5–7 seconds.
 **Question:** What does the woman order?
 
 Options:
-- Coffee
+- Black coffee
 - Orange juice
-- Tea
-- Water
+- Green tea
+- Cold water
 
 Target clip length: 8–10 seconds.
 
@@ -210,10 +210,10 @@ Target clip length: 11–13 seconds.
 **Question:** Why was the man late?
 
 Options:
-- Traffic was heavy on the way
-- He missed his usual bus
-- He had to go back for his phone
-- He could not find the address
+- The traffic was unusually heavy on his route
+- He missed the bus he normally takes
+- He went back home for his phone
+- He had trouble finding the correct address
 
 Target clip length: 10–12 seconds.
 
@@ -230,10 +230,10 @@ Target clip length: 10–12 seconds.
 **Question:** What do participants need to bring?
 
 Options:
-- Paper for taking notes
+- Some paper for taking notes
 - A phone or a camera
-- A laptop for editing
-- A printed photograph
+- A laptop for editing pictures
+- A printed photograph to use
 
 Target clip length: 10–12 seconds.
 
@@ -342,10 +342,10 @@ Target clip length: 13–15 seconds.
 **Question:** What has changed about the training session?
 
 Options:
-- The session will begin at a different time
-- The session has been moved to another day
+- The session will now begin at a different time
+- The session has been moved to a different day
 - The session will take place in a different room
-- A different instructor will lead the session
+- The session will now be led by another instructor
 
 Target clip length: 12–14 seconds.
 
@@ -384,10 +384,10 @@ Target clip length: 16–18 seconds.
 **Question:** What is the speaker mainly criticising?
 
 Options:
-- The loss of informal contact with office colleagues
-- The amount of time spent in online meetings
+- The loss of informal conversations with colleagues in the office
+- The large amount of time employees spend in online meetings
 - Commuting to an office when being there adds little
-- The tendency to work from home too frequently
+- The tendency for employees to work from home too often
 
 Target clip length: 16–18 seconds.
 
@@ -406,10 +406,10 @@ Target clip length: 16–18 seconds.
 **Question:** What does the woman imply?
 
 Options:
-- The campaign met its goals despite weak sales growth
-- The reported increase in website visits is unreliable
+- The campaign achieved its main goal even though sales barely increased
+- The reported growth in website traffic may not have been accurate
 - More attention did not translate into the intended commercial result
-- Online advertising is no longer useful for the company
+- The company should reconsider whether online advertising is worth continuing
 
 Target clip length: 15–17 seconds.
 
@@ -448,10 +448,10 @@ Target clip length: 16–18 seconds.
 **Question:** What is the speaker's main point?
 
 Options:
-- Convenience generally improves the quality of our decisions
+- Convenience generally leads people to make better and more rational decisions
 - Small obstacles can create space for more deliberate choices
-- People tend to regret decisions made too slowly
-- Digital systems should deliberately make every action difficult
+- People tend to regret choices when they take too long to decide
+- Digital systems should make ordinary actions deliberately more difficult for users
 
 Target clip length: 17–20 seconds.
 
