@@ -4,7 +4,7 @@
 import wixSecretsBackend from "wix-secrets-backend";
 import { fetch } from "wix-fetch";
 
-export const SPEAKING_RUBRIC_VERSION = "brighton-speaking-rubric-1.0";
+export const SPEAKING_RUBRIC_VERSION = "brighton-speaking-rubric-1.1";
 export const GEMINI_SPEAKING_MODEL = "gemini-3.8-flash";
 
 const GEMINI_SECRET_NAME = "BRIGHTON_PLACEMENT_GEMINI_API_KEY";
@@ -40,6 +40,19 @@ const SCORE_WEIGHTS = {
   communication: 0.20
 };
 
+const ASSESSMENT_BANDS = ["PRE-A1", "A1", "A2", "B1", "B1+", "B2", "C1", "ABOVE-C1"];
+const BAND_POSITIONS = ["low", "mid", "high"];
+const BAND_SCORES = {
+  "PRE-A1": { low: 0.6, mid: 1.2, high: 1.8 },
+  "A1": { low: 2.2, mid: 2.8, high: 3.3 },
+  "A2": { low: 3.7, mid: 4.3, high: 4.8 },
+  "B1": { low: 5.2, mid: 5.8, high: 6.3 },
+  "B1+": { low: 6.7, mid: 7.1, high: 7.4 },
+  "B2": { low: 7.7, mid: 8.2, high: 8.7 },
+  "C1": { low: 8.9, mid: 9.3, high: 9.6 },
+  "ABOVE-C1": { low: 9.7, mid: 9.9, high: 10.0 }
+};
+
 const RESPONSE_SCHEMA = {
   type: "object",
   additionalProperties: false,
@@ -54,7 +67,14 @@ const RESPONSE_SCHEMA = {
       type: "object",
       additionalProperties: false,
       properties: {
-        score: { type: "number", minimum: 0, maximum: 10 },
+        band: {
+          type: "string",
+          enum: ASSESSMENT_BANDS
+        },
+        position: {
+          type: "string",
+          enum: BAND_POSITIONS
+        },
         evidence: {
           type: "array",
           items: { type: "string" },
@@ -62,13 +82,20 @@ const RESPONSE_SCHEMA = {
           maxItems: 3
         }
       },
-      required: ["score", "evidence"]
+      required: ["band", "position", "evidence"]
     },
     grammar: {
       type: "object",
       additionalProperties: false,
       properties: {
-        score: { type: "number", minimum: 0, maximum: 10 },
+        band: {
+          type: "string",
+          enum: ASSESSMENT_BANDS
+        },
+        position: {
+          type: "string",
+          enum: BAND_POSITIONS
+        },
         evidence: {
           type: "array",
           items: { type: "string" },
@@ -93,13 +120,20 @@ const RESPONSE_SCHEMA = {
           }
         }
       },
-      required: ["score", "evidence", "errors"]
+      required: ["band", "position", "evidence", "errors"]
     },
     vocabulary: {
       type: "object",
       additionalProperties: false,
       properties: {
-        score: { type: "number", minimum: 0, maximum: 10 },
+        band: {
+          type: "string",
+          enum: ASSESSMENT_BANDS
+        },
+        position: {
+          type: "string",
+          enum: BAND_POSITIONS
+        },
         evidence: {
           type: "array",
           items: { type: "string" },
@@ -107,13 +141,20 @@ const RESPONSE_SCHEMA = {
           maxItems: 3
         }
       },
-      required: ["score", "evidence"]
+      required: ["band", "position", "evidence"]
     },
     pronunciation: {
       type: "object",
       additionalProperties: false,
       properties: {
-        score: { type: "number", minimum: 0, maximum: 10 },
+        band: {
+          type: "string",
+          enum: ASSESSMENT_BANDS
+        },
+        position: {
+          type: "string",
+          enum: BAND_POSITIONS
+        },
         intelligibility: {
           type: "string",
           enum: ["high", "adequate", "limited", "very-limited"]
@@ -125,13 +166,20 @@ const RESPONSE_SCHEMA = {
           maxItems: 3
         }
       },
-      required: ["score", "intelligibility", "evidence"]
+      required: ["band", "position", "intelligibility", "evidence"]
     },
     communication: {
       type: "object",
       additionalProperties: false,
       properties: {
-        score: { type: "number", minimum: 0, maximum: 10 },
+        band: {
+          type: "string",
+          enum: ASSESSMENT_BANDS
+        },
+        position: {
+          type: "string",
+          enum: BAND_POSITIONS
+        },
         taskAchievement: { type: "number", minimum: 0, maximum: 10 },
         coherence: { type: "number", minimum: 0, maximum: 10 },
         development: { type: "number", minimum: 0, maximum: 10 },
@@ -142,7 +190,7 @@ const RESPONSE_SCHEMA = {
           maxItems: 3
         }
       },
-      required: ["score", "taskAchievement", "coherence", "development", "evidence"]
+      required: ["band", "position", "taskAchievement", "coherence", "development", "evidence"]
     },
     overallEvidence: {
       type: "array",
@@ -169,25 +217,36 @@ You are the Brighton English Placement speaking examiner. Assess ONE unscripted 
 
 Your job is measurement, not encouragement. Use the same standard for every candidate. The routed prompt level is context only; NEVER assume the candidate has that level merely because they received that prompt.
 
+CORE SCORING RULE
+For EACH dimension, choose the CEFR-aligned BAND FIRST, then choose position low/mid/high inside that band. Do not invent a free numeric score. Brighton converts your band + position into a deterministic number after you respond.
+
 ASSESSMENT PROCESS
 1. Listen to the full recording before scoring.
 2. Produce a conservative verbatim transcript. Do not silently repair grammar or vocabulary. When a word is genuinely unclear, use [unclear] rather than inventing a word.
 3. Decide whether there is enough independent English to assess.
 4. Check whether the candidate mainly reads/repeats the prompt instead of answering it.
-5. Match audible evidence to the descriptors below.
-6. Assign each score only after matching evidence to descriptors.
-7. Re-check the five scores against the transcript and audio before returning JSON.
+5. For each dimension, identify the BEST-FIT band from the descriptors.
+6. Then select low/mid/high according to how securely the performance fits that band.
+7. Re-check that your chosen band agrees with the evidence you cite.
+8. Return only the required JSON.
 
-GENERAL SCORE ANCHORS
-0.0-1.9  PRE-A1: little or no assessable independent language.
-2.0-3.4  A1: very limited basic language; short familiar utterances; heavy dependence on memorized/simple forms.
-3.5-4.9  A2: simple connected language on familiar matters; limited range and control.
-5.0-6.4  B1: sustained familiar communication with workable control, but clear limitations in range, accuracy, precision, or development.
-6.5-7.4  B1+: stronger than secure B1 but not consistently B2; broader control with noticeable limitations.
-7.5-8.7  B2: clear, sustained, developed and reasonably flexible speech with good control; errors/hesitation do not normally obstruct communication.
-8.8-10.0 C1: fluent, flexible, precise, well-developed speech with consistently strong control; occasional slips are possible.
+BAND MEANINGS
+PRE-A1: little or no assessable independent language.
+A1: very limited basic language; short familiar utterances; heavy dependence on memorized/simple forms.
+A2: simple connected language on familiar matters; limited range and control.
+B1: sustained familiar communication with workable control, but clear limitations in range, accuracy, precision, or development.
+B1+: stronger than secure B1 but not consistently B2; broader control with noticeable limitations.
+B2: clear, sustained, developed and reasonably flexible speech with good control; errors/hesitation do not normally obstruct communication.
+C1: fluent, flexible, precise, well-developed speech with consistently strong control; occasional slips are possible.
+ABOVE-C1: exceptional C2-like evidence: effortless flexibility, very high precision, nuanced control and virtually no meaningful weakness for the dimension. Brighton still reports the public placement ceiling as C1.
 
-These anchors are ABSOLUTE. Do not raise a score merely because the candidate attempts advanced content, speaks for a long time, uses long words, or was routed to B2/C1.
+BAND-POSITION DISCIPLINE
+- low: just securely inside the band; evidence also shows some features of the band below.
+- mid: clearly representative of the band.
+- high: strong performance near the top of the band; some features of the band above may appear.
+Do not use ABOVE-C1 merely because the candidate sounds educated, speaks quickly, or uses sophisticated vocabulary.
+If the qualitative evidence matches C1, return C1. Do NOT demote to B2 simply because there is one isolated minor slip.
+A C1 performance may contain occasional non-systematic errors, self-repairs or momentary lexical imprecision.
 
 FLUENCY
 Judge continuity, pausing, hesitation, searching, reformulation, natural pace and ability to sustain speech.
@@ -196,6 +255,7 @@ Judge continuity, pausing, hesitation, searching, reformulation, natural pace an
 - B1/B1+: can sustain connected speech but has noticeable pauses, reformulation or uneven pace.
 - A2: frequent pauses and short runs; delivery relies on simple chunks.
 - A1/PRE-A1: isolated or very short utterances with extensive pausing.
+- ABOVE-C1: highly effortless, flexible delivery with precise pacing and near-seamless reformulation even while expressing nuanced ideas.
 Do not reward speed by itself. Do not penalize a natural accent.
 
 GRAMMAR
@@ -205,7 +265,9 @@ Judge BOTH RANGE and ACCURACY: tense/aspect, agreement, articles, prepositions, 
 - B1/B1+: good control of common structures; attempts some complexity, but recurrent errors or restricted range are noticeable.
 - A2: mainly simple structures with regular errors; meaning is usually recoverable.
 - A1/PRE-A1: very limited structures; frequent errors and fragments.
+- ABOVE-C1: extensive and flexible structural repertoire with consistently precise control; any errors are rare slips.
 Never treat connector words or sentence length as proof of grammatical control. Penalize malformed complexity rather than rewarding it.
+IMPORTANT: one or two isolated MINOR agreement/article/preposition slips must not by themselves push otherwise C1 grammatical control down to B2.
 
 VOCABULARY
 Judge range, precision, appropriacy, collocation, repetition, paraphrasing and lexical control.
@@ -214,6 +276,7 @@ Judge range, precision, appropriacy, collocation, repetition, paraphrasing and l
 - B1/B1+: enough range to explain familiar and some abstract ideas, but repetition, imprecision or circumlocution is noticeable.
 - A2: adequate basic vocabulary for everyday topics; limited precision and frequent repetition.
 - A1/PRE-A1: very small repertoire of isolated/basic words and memorized phrases.
+- ABOVE-C1: exceptionally broad, idiomatic, nuanced and precise lexical control with highly natural collocation.
 Do not use word length as evidence of vocabulary level. Advanced words only count when they are appropriate and correctly controlled.
 
 PRONUNCIATION
@@ -223,16 +286,26 @@ Judge the AUDIO, not the transcript. Consider overall intelligibility, sound cla
 - B1/B1+: generally intelligible but some recurring pronunciation/prosody features require listener adjustment.
 - A2: usually understandable in short stretches, with frequent pronunciation/stress issues.
 - A1/PRE-A1: intelligibility is often limited.
+- ABOVE-C1: highly controlled, expressive prosody and connected speech with virtually no listener effort.
 Do NOT penalize a non-native accent merely for being non-native. Penalize only features that reduce clarity, natural phrasing or listener comprehension.
 
 COMMUNICATION
 Judge whether the candidate ACTUALLY answers this prompt: relevance, task fulfilment, organization, coherence, development, explanations, reasons, examples, comparisons and conclusion when requested.
-- C1: fully addresses all demands; ideas are nuanced, well organized and substantially developed; relationships between ideas are clear.
+- C1: fully addresses the substantive demands; ideas are nuanced, well organized and substantially developed; relationships between ideas are clear.
 - B2: addresses the task clearly and develops relevant points with reasons/examples; organization is effective.
 - B1/B1+: communicates a clear main message with some development; parts may be underdeveloped, repetitive or loosely connected.
 - A2: communicates simple relevant information with limited development.
 - A1/PRE-A1: only fragments of the task are addressed.
+- ABOVE-C1: develops and qualifies ideas with exceptional control, precision and rhetorical flexibility.
 Do not give high Communication merely for speaking at length.
+
+AUTOMATIC CUTOFF FAIRNESS
+The candidate context tells you whether the platform automatically stopped the recording at its hard time limit.
+If autoStoppedByTimeLimit=true:
+- do NOT penalize the candidate merely because the final sentence is cut off;
+- do NOT penalize a missing final conclusion solely because the platform ended the recording;
+- judge task achievement from the substantive content completed BEFORE cutoff;
+- you may still lower Communication if major task requirements were genuinely not addressed before cutoff for reasons other than the abrupt ending.
 
 PROMPT REPETITION
 Set promptRepeat=true when the answer consists mainly of reading/repeating/paraphrasing the prompt with too little original meaningful content to assess. Quoting a small part of the prompt while genuinely answering it is fine.
@@ -243,8 +316,11 @@ EVIDENCE QUALITY
 - insufficient: mostly silence/noise, essentially no English, too little meaningful speech, or otherwise not enough evidence to score responsibly.
 
 SCORING DISCIPLINE
-Use one decimal precision conceptually, but return a numeric score. Keep dimensions independent: sophisticated vocabulary must not rescue weak grammar; excellent pronunciation must not rescue poor task fulfilment. A 10 is exceptional evidence for the top descriptor, not merely "no obvious problem." Scores above 8.8 require clear C1-level evidence in that dimension.
-`;
+Keep dimensions independent: sophisticated vocabulary must not rescue weak grammar; excellent pronunciation must not rescue poor task fulfilment.
+Choose the band from evidence, not from the routed level.
+C1 does NOT mean perfect English.
+ABOVE-C1 is reserved for clearly exceptional evidence, not simply a strong C1 performance.
+`
 
 function clamp10(value) {
   const number = Number(value);
@@ -254,6 +330,20 @@ function clamp10(value) {
 
 function round1(value) {
   return Math.round(clamp10(value) * 10) / 10;
+}
+
+function normalizeAssessmentBand(value) {
+  return ASSESSMENT_BANDS.includes(value) ? value : "PRE-A1";
+}
+
+function normalizeBandPosition(value) {
+  return BAND_POSITIONS.includes(value) ? value : "low";
+}
+
+function scoreFromBand(band, position) {
+  const safeBand = normalizeAssessmentBand(band);
+  const safePosition = normalizeBandPosition(position);
+  return BAND_SCORES[safeBand][safePosition];
 }
 
 function safeArray(value, max = 3) {
@@ -351,27 +441,37 @@ function sanitizeAssessment(raw) {
     transcript: String(raw?.transcript || "").replace(/\s+/g, " ").trim().slice(0, 6000),
     promptRepeat: Boolean(raw?.promptRepeat),
     fluency: {
-      score: round1(raw?.fluency?.score),
+      band: normalizeAssessmentBand(raw?.fluency?.band),
+      position: normalizeBandPosition(raw?.fluency?.position),
+      score: scoreFromBand(raw?.fluency?.band, raw?.fluency?.position),
       evidence: safeArray(raw?.fluency?.evidence)
     },
     grammar: {
-      score: round1(raw?.grammar?.score),
+      band: normalizeAssessmentBand(raw?.grammar?.band),
+      position: normalizeBandPosition(raw?.grammar?.position),
+      score: scoreFromBand(raw?.grammar?.band, raw?.grammar?.position),
       evidence: safeArray(raw?.grammar?.evidence),
       errors: grammarErrors
     },
     vocabulary: {
-      score: round1(raw?.vocabulary?.score),
+      band: normalizeAssessmentBand(raw?.vocabulary?.band),
+      position: normalizeBandPosition(raw?.vocabulary?.position),
+      score: scoreFromBand(raw?.vocabulary?.band, raw?.vocabulary?.position),
       evidence: safeArray(raw?.vocabulary?.evidence)
     },
     pronunciation: {
-      score: round1(raw?.pronunciation?.score),
+      band: normalizeAssessmentBand(raw?.pronunciation?.band),
+      position: normalizeBandPosition(raw?.pronunciation?.position),
+      score: scoreFromBand(raw?.pronunciation?.band, raw?.pronunciation?.position),
       intelligibility: ["high", "adequate", "limited", "very-limited"].includes(raw?.pronunciation?.intelligibility)
         ? raw.pronunciation.intelligibility
         : "limited",
       evidence: safeArray(raw?.pronunciation?.evidence)
     },
     communication: {
-      score: round1(raw?.communication?.score),
+      band: normalizeAssessmentBand(raw?.communication?.band),
+      position: normalizeBandPosition(raw?.communication?.position),
+      score: scoreFromBand(raw?.communication?.band, raw?.communication?.position),
       taskAchievement: round1(raw?.communication?.taskAchievement),
       coherence: round1(raw?.communication?.coherence),
       development: round1(raw?.communication?.development),
@@ -437,10 +537,15 @@ export async function gradeSpeakingWithGemini(payload, objectiveLevel, promptId)
 
   const apiKey = await getGeminiApiKey();
 
+  const maximumSeconds = Math.max(0, Math.min(180, Number(payload?.maximumSeconds) || 0));
+  const autoStoppedByTimeLimit = Boolean(payload?.autoStoppedByTimeLimit);
+
   const candidateContext =
     "Assigned Brighton route: " + objectiveLevel + "\n" +
     "Prompt: " + prompt + "\n" +
     "Recorded duration: " + durationSeconds.toFixed(1) + " seconds.\n" +
+    "Platform hard time limit: " + (maximumSeconds ? maximumSeconds.toFixed(1) + " seconds" : "not supplied") + ".\n" +
+    "autoStoppedByTimeLimit: " + (autoStoppedByTimeLimit ? "true" : "false") + "\n" +
     "Assess the candidate from the attached audio. Return only the required JSON.";
 
   const response = await fetch(GEMINI_ENDPOINT, {
