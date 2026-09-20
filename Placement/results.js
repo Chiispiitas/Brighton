@@ -325,7 +325,7 @@
         <div class="examiner-dimension">
           <div class="examiner-dimension-head">
             <strong>${escapeHtml(label)}</strong>
-            <span>${escapeHtml(score10(value?.score))}/10</span>
+            <span>${escapeHtml(value?.band ? `${value.band} ${value.position || ""} · ` : "")}${escapeHtml(score10(value?.score))}/10</span>
           </div>
           ${evidence.length
             ? `<ul>${evidence.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`
