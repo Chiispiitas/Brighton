@@ -320,7 +320,7 @@ Keep dimensions independent: sophisticated vocabulary must not rescue weak gramm
 Choose the band from evidence, not from the routed level.
 C1 does NOT mean perfect English.
 ABOVE-C1 is reserved for clearly exceptional evidence, not simply a strong C1 performance.
-`
+`;
 
 function clamp10(value) {
   const number = Number(value);
