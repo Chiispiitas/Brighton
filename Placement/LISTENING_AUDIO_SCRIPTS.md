@@ -253,7 +253,7 @@ Target clip length: 10–12 seconds.
 
 Options:
 - She was spending too long waiting for equipment
-- The new gym offered a much cheaper membership
+- The new gym offered a much cheaper monthly membership plan
 - She had moved farther away from the old gym
 - The old gym had reduced its opening hours
 
@@ -276,7 +276,7 @@ Target clip length: 14–16 seconds.
 **Question:** Why was the meeting moved?
 
 Options:
-- The usual meeting room could not be used
+- The usual meeting room was unavailable at the scheduled time
 - Maya's delayed flight meant she would arrive late
 - The project materials would not be ready by two
 - The man already had another appointment at two
@@ -470,7 +470,7 @@ Target clip length: 17–20 seconds.
 Options:
 - The product may already be complete enough to launch
 - Postponing without a specific repair plan may achieve little
-- A two-week delay would make the launch unacceptably late
+- A two-week delay would make the planned launch unacceptably late
 - Any change to the agreed launch date is a mistake
 
 Target clip length: 16–19 seconds.
