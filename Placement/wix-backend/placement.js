@@ -431,7 +431,10 @@ function paceScore(wpm, low, high) {
 
 function recognitionQualityScore(confidence, transcriptUsable) {
   if (!transcriptUsable) return .15;
-  if (!(confidence > 0)) return .78;
+  // Several Chromium/WebKit implementations return 0 when confidence is
+  // simply unavailable. A clean usable transcript is therefore strong
+  // intelligibility evidence rather than a reason to penalise pronunciation.
+  if (!(confidence > 0)) return .95;
 
   // Browser SpeechRecognition confidence is not calibrated like a test score.
   // Treat values above ~0.88 as strong intelligibility evidence rather than
