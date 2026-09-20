@@ -1,8 +1,7 @@
 // Brighton Placement — Gemini audio speaking examiner
 // Keep the API key in Wix Secrets Manager only. This module never returns it.
 
-import { secrets } from "@wix/secrets";
-import { auth } from "@wix/essentials";
+import wixSecretsBackend from "wix-secrets-backend";
 import { fetch } from "wix-fetch";
 
 export const SPEAKING_RUBRIC_VERSION = "brighton-speaking-rubric-1.0";
@@ -383,9 +382,12 @@ function sanitizeAssessment(raw) {
 }
 
 async function getGeminiApiKey() {
-  const elevatedGetSecretValue = auth.elevate(secrets.getSecretValue);
-  const result = await elevatedGetSecretValue(GEMINI_SECRET_NAME);
-  const apiKey = String(result?.value || "").trim();
+  // Use the Velo-native backend module here instead of @wix/* SDK imports.
+  // This keeps Classic Editor HTTP functions deployable even when the SDK
+  // packages are unavailable to the site's backend build environment.
+  const apiKey = String(
+    await wixSecretsBackend.getSecret(GEMINI_SECRET_NAME) || ""
+  ).trim();
 
   if (!apiKey) {
     throw new Error("Gemini API key is unavailable.");
