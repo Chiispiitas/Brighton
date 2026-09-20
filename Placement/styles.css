@@ -1281,6 +1281,33 @@ button { cursor: pointer; }
   font-weight: 700;
 }
 
+.speaking-cutoff-warning {
+  min-height: 44px;
+  margin: 0;
+  padding: 10px 14px;
+  border: 1px solid transparent;
+  border-radius: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: transparent;
+  background: transparent;
+  font-size: 13px;
+  font-weight: 900;
+  line-height: 1.35;
+  transition: opacity .18s ease, transform .18s ease, background .18s ease, border-color .18s ease;
+  opacity: 0;
+  transform: translateY(3px);
+}
+
+.speaking-cutoff-warning.is-visible {
+  color: #765700;
+  background: rgba(255, 201, 61, .17);
+  border-color: rgba(202, 148, 0, .28);
+  opacity: 1;
+  transform: translateY(0);
+}
+
 .stop-record-btn {
   min-height: 48px;
   border: 0;
