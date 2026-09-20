@@ -19,11 +19,11 @@ Backend/
 └── gemini-speaking.js  ← Placement speaking examiner
 ```
 
-Placement backend source is mirrored under `wix-backend/`. For the Gemini speaking release, copy/update:
+Placement backend source is mirrored under `Placement/wix-backend/`. For the Gemini speaking release, copy/update:
 
-- `wix-backend/gemini-speaking.js` → `Backend/gemini-speaking.js`
-- `wix-backend/placement.js` → `Backend/placement.js`
-- merge the Placement changes from `wix-backend/http-functions.js` into the site's existing `Backend/http-functions.js`; do **not** remove Tests/Exams routes.
+- `Placement/wix-backend/gemini-speaking.js` → `Backend/gemini-speaking.js`
+- `Placement/wix-backend/placement.js` → `Backend/placement.js`
+- merge the Placement changes from `Placement/wix-backend/http-functions.js` into the site's existing `Backend/http-functions.js`; do **not** remove Tests/Exams routes.
 
 ### Gemini speaking secret
 
@@ -81,13 +81,11 @@ The backend uses `suppressAuth: true` for its Wix Data operations, so the Placem
 
 The public repository keeps only the **schema template** for `BrightonPlacementItems`. Do not commit the populated answer-key CSV to a public repository.
 
-
 ## Current modular backend
 
 The current Brighton backend uses one shared `Backend/core.js` for Exams, Tests and Placement. Do not add `placement-core.js`.
 
-For Placement results, merge the latest `Placement/wix-backend/http-functions-placement-routes.js` into the current modular `Backend/http-functions.js`.
-
+For Placement backend updates, use the files in `Placement/wix-backend/` and merge the current Placement routes from `Placement/wix-backend/http-functions.js` into the live modular `Backend/http-functions.js`.
 
 ## One-hour inactive-session cleanup
 
