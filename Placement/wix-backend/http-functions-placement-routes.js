@@ -18,16 +18,16 @@ import {
 } from "backend/placement.js";
 
 /* Placement CORS / catch-all */
-export function use_brightonPlacementStart() { return corsOptions("POST"); }
-export function use_brightonPlacementResume() { return corsOptions("POST"); }
-export function use_brightonPlacementStep() { return corsOptions("POST"); }
-export function use_brightonPlacementSubmitSpeaking() { return corsOptions("POST"); }
-export function use_brightonPlacementSkipSpeaking() { return corsOptions("POST"); }
-export function use_brightonPlacementResult() { return corsOptions("POST"); }
-export function use_brightonPlacementActivity() { return corsOptions("POST"); }
-export function use_brightonPlacementExpire() { return corsOptions("POST"); }
-export function use_brightonPlacementResults() { return corsOptions("GET"); }
-export function use_brightonPlacementDashboardResult() { return corsOptions("GET"); }
+export function options_brightonPlacementStart() { return corsOptions("POST"); }
+export function options_brightonPlacementResume() { return corsOptions("POST"); }
+export function options_brightonPlacementStep() { return corsOptions("POST"); }
+export function options_brightonPlacementSubmitSpeaking() { return corsOptions("POST"); }
+export function options_brightonPlacementSkipSpeaking() { return corsOptions("POST"); }
+export function options_brightonPlacementResult() { return corsOptions("POST"); }
+export function options_brightonPlacementActivity() { return corsOptions("POST"); }
+export function options_brightonPlacementExpire() { return corsOptions("POST"); }
+export function options_brightonPlacementResults() { return corsOptions("GET, POST"); }
+export function options_brightonPlacementDashboardResult() { return corsOptions("GET, POST"); }
 
 /* Student Placement routes */
 export async function post_brightonPlacementStart(request) {
@@ -62,7 +62,17 @@ export async function post_brightonPlacementExpire(request) {
   return expirePlacementSession(request);
 }
 
-/* Teacher Placement results dashboard */
+/* Teacher Placement results dashboard
+   POST is the preferred transport from GitHub Pages because text/plain JSON
+   avoids browser preflight edge cases. GET remains for compatibility. */
+export async function post_brightonPlacementResults(request) {
+  return listPlacementResults(request);
+}
+
+export async function post_brightonPlacementDashboardResult(request) {
+  return placementDashboardResult(request);
+}
+
 export async function get_brightonPlacementResults(request) {
   return listPlacementResults(request);
 }
