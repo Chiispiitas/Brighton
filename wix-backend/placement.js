@@ -66,10 +66,6 @@ function safeJson(value, fallback) {
   }
 }
 
-function clamp(value, min = 0, max = 1) {
-  return Math.min(max, Math.max(min, Number(value) || 0));
-}
-
 function round1(value) {
   return Math.round((Number(value) || 0) * 10) / 10;
 }
