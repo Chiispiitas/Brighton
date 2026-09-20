@@ -182,7 +182,7 @@
         ${detailBox("Started", formatDate(session.startedAt))}
         ${detailBox("Completed", formatDate(session.completedAt))}
         ${detailBox("Time", formatDuration(session.timeSpentSeconds))}
-        ${detailBox("Confidence", formatConfidence(session.confidence))}
+        ${detailBox("Speaking evidence", formatConfidence(session.confidence))}
       </section>
 
       <section class="detail-section">
@@ -309,7 +309,7 @@
       return;
     }
 
-    const headers = ["Student", "Status", "Final level", "Provisional level", "Started", "Completed", "Time seconds", "Confidence", "Session ID"];
+    const headers = ["Student", "Status", "Final level", "Provisional level", "Started", "Completed", "Time seconds", "Speaking evidence confidence", "Session ID"];
     const data = rows.map((row) => [
       row.studentName,
       row.status,
