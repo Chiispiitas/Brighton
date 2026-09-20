@@ -51,6 +51,16 @@
 
   loadResults();
 
+  async function readApiResponse(response) {
+    const payload = await response.json().catch(() => ({}));
+    if (!response.ok || !payload?.success) {
+      const error = new Error(payload?.error || `Request failed (${response.status}).`);
+      error.status = response.status;
+      throw error;
+    }
+    return payload;
+  }
+
   async function apiGet(path, params = {}) {
     if (!apiBase) throw new Error("Brighton Database is not configured.");
 
@@ -61,19 +71,30 @@
       }
     });
 
-    const response = await fetch(url.toString(), {
-      method: "GET",
-      headers: {
-        "Accept": "application/json"
-      },
-      cache: "no-store"
-    });
+    try {
+      const response = await fetch(url.toString(), {
+        method: "GET",
+        headers: {
+          "Accept": "application/json"
+        },
+        cache: "no-store"
+      });
 
-    const payload = await response.json().catch(() => ({}));
-    if (!response.ok || !payload?.success) {
-      throw new Error(payload?.error || `Request failed (${response.status}).`);
+      return await readApiResponse(response);
+    } catch (getError) {
+      console.warn(`GET ${path} failed; trying POST compatibility transport.`, getError);
+
+      const response = await fetch(`${apiBase}/${path}`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "text/plain;charset=UTF-8"
+        },
+        body: JSON.stringify(params),
+        cache: "no-store"
+      });
+
+      return await readApiResponse(response);
     }
-    return payload;
   }
 
   async function loadResults() {
