@@ -104,3 +104,8 @@ export async function post_brightonPlacementExpire(request) { return expirePlace
 
 export async function get_brightonPlacementResults(request) { return getPlacementResults(request); }
 export async function get_brightonPlacementDashboardResult(request) { return getPlacementDashboardResult(request); }
+
+// Compatibility transport for browsers/sites where the published GET route is stale.
+// Frontend sends text/plain, so these POST calls do not require a CORS preflight.
+export async function post_brightonPlacementResults(request) { return getPlacementResults(request); }
+export async function post_brightonPlacementDashboardResult(request) { return getPlacementDashboardResult(request); }
