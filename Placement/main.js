@@ -51,6 +51,7 @@
   let speakingRecognitionResults = 0;
   let speakingRecordingActive = false;
   let speakingCaptureMode = "recorder+recognition";
+  let lastSpeakingAttemptMetrics = null;
   let speakingInterimTranscript = "";
   let speakingTranscriptParts = [];
   let speakingConfidenceSamples = [];
@@ -791,6 +792,32 @@
     return window.SpeechRecognition || window.webkitSpeechRecognition || null;
   }
 
+  function isOperaBrowser() {
+    const ua = String(navigator.userAgent || "");
+    return /\bOPR\//i.test(ua) || /Opera/i.test(ua);
+  }
+
+  function speakingBrowserFamily() {
+    const ua = String(navigator.userAgent || "");
+    if (/\bOPR\//i.test(ua) || /Opera/i.test(ua)) return "Opera";
+    if (/Edg\//i.test(ua)) return "Edge";
+    if (/CriOS\//i.test(ua) || /Chrome\//i.test(ua)) return "Chrome";
+    if (/FxiOS\//i.test(ua) || /Firefox\//i.test(ua)) return "Firefox";
+    if (/Safari\//i.test(ua)) return "Safari";
+    return "Other";
+  }
+
+  function speakingPlatformFamily() {
+    const ua = String(navigator.userAgent || "");
+    const platform = String(navigator.platform || "");
+    if (/iPhone|iPad|iPod/i.test(ua)) return "iOS";
+    if (/Android/i.test(ua)) return "Android";
+    if (/Mac/i.test(platform) || /Macintosh/i.test(ua)) return "macOS";
+    if (/Win/i.test(platform) || /Windows/i.test(ua)) return "Windows";
+    if (/Linux/i.test(platform) || /Linux/i.test(ua)) return "Linux";
+    return "Other";
+  }
+
   function releaseSpeakingCaptureStream() {
     if (speakingStream) {
       speakingStream.getTracks().forEach((track) => {
@@ -1185,6 +1212,7 @@
 
     try {
       speakingChunks = [];
+      lastSpeakingAttemptMetrics = null;
       speakingTranscriptParts = [];
       speakingInterimTranscript = "";
       speakingRecognitionDisabled = false;
@@ -1199,8 +1227,10 @@
       speakingRecordingActive = true;
 
       const Recognition = speechRecognitionConstructor();
-      const useRecognitionOnly = isMobileSpeechDevice() && Boolean(Recognition);
-      speakingCaptureMode = useRecognitionOnly ? "mobile-recognition" : "recorder+recognition";
+      const useRecognitionOnly = Boolean(Recognition) && (isMobileSpeechDevice() || isOperaBrowser());
+      speakingCaptureMode = useRecognitionOnly
+        ? (isOperaBrowser() ? "opera-recognition" : "mobile-recognition")
+        : "recorder+recognition";
 
       if (useRecognitionOnly) {
         // Critical mobile compatibility path: do not keep getUserMedia /
@@ -1387,12 +1417,7 @@
     `;
 
     try {
-      const result = await apiPost("brightonPlacementSubmitSpeaking", {
-        sessionId: session.sessionId,
-        clientSessionId: session.clientSessionId,
-        placementVersion: PLACEMENT_VERSION,
-        moduleId: currentModuleId,
-        promptId: data.promptId,
+      const speakingMetrics = {
         durationSeconds,
         speechSeconds,
         speechRatio,
@@ -1402,13 +1427,25 @@
         segmentCount: speakingSegmentCount,
         recordedBytes,
         audioActivityAvailable,
-        speechRecognitionAvailable: Boolean(window.SpeechRecognition || window.webkitSpeechRecognition),
+        speechRecognitionAvailable: Boolean(speechRecognitionConstructor()),
         recorderMimeType: recognitionOnly ? "speech-recognition" : String(speakingRecorder?.mimeType || ""),
         captureMode: speakingCaptureMode,
         recognitionError: speakingRecognitionError,
         recognitionStarts: speakingRecognitionStarts,
         recognitionResults: speakingRecognitionResults,
-        legacyCaptureEstimate: recognitionOnly
+        legacyCaptureEstimate: recognitionOnly,
+        browserFamily: speakingBrowserFamily(),
+        platformFamily: speakingPlatformFamily()
+      };
+      lastSpeakingAttemptMetrics = speakingMetrics;
+
+      const result = await apiPost("brightonPlacementSubmitSpeaking", {
+        sessionId: session.sessionId,
+        clientSessionId: session.clientSessionId,
+        placementVersion: PLACEMENT_VERSION,
+        moduleId: currentModuleId,
+        promptId: data.promptId,
+        ...speakingMetrics
       });
 
       if (result.speakingRetryReason === "prompt-repeat") {
@@ -1433,7 +1470,7 @@
       renderPlacementResult(result.result || result);
     } catch (error) {
       console.error(error);
-      renderSpeakingSubmitRetry({
+      renderSpeakingSubmitRetry(lastSpeakingAttemptMetrics || {
         durationSeconds,
         speechSeconds,
         speechRatio,
@@ -1443,13 +1480,15 @@
         segmentCount: speakingSegmentCount,
         recordedBytes,
         audioActivityAvailable,
-        speechRecognitionAvailable: Boolean(window.SpeechRecognition || window.webkitSpeechRecognition),
+        speechRecognitionAvailable: Boolean(speechRecognitionConstructor()),
         recorderMimeType: recognitionOnly ? "speech-recognition" : String(speakingRecorder?.mimeType || ""),
         captureMode: speakingCaptureMode,
         recognitionError: speakingRecognitionError,
         recognitionStarts: speakingRecognitionStarts,
         recognitionResults: speakingRecognitionResults,
-        legacyCaptureEstimate: recognitionOnly
+        legacyCaptureEstimate: recognitionOnly,
+        browserFamily: speakingBrowserFamily(),
+        platformFamily: speakingPlatformFamily()
       });
     }
   }
@@ -1481,7 +1520,14 @@
         sessionId: session.sessionId,
         clientSessionId: session.clientSessionId,
         placementVersion: PLACEMENT_VERSION,
-        moduleId: currentModuleId
+        moduleId: currentModuleId,
+        diagnostics: lastSpeakingAttemptMetrics || {
+          browserFamily: speakingBrowserFamily(),
+          platformFamily: speakingPlatformFamily(),
+          speechRecognitionAvailable: Boolean(speechRecognitionConstructor()),
+          recognitionError: speakingRecognitionError,
+          captureMode: speakingCaptureMode
+        }
       });
 
       session.phase = "result";
