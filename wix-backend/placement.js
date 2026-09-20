@@ -1069,10 +1069,21 @@ function dashboardModules(responses) {
   }));
 }
 
+async function placementRequestParams(request) {
+  const query = request?.query || {};
+  if (Object.keys(query).length) return query;
+
+  try {
+    return await readJsonBody(request);
+  } catch {
+    return {};
+  }
+}
+
 export async function getPlacementResults(request) {
   try {
     await purgeStalePlacementSessions();
-    const query = request?.query || {};
+    const query = await placementRequestParams(request);
     const studentFilter = String(query.student || "").trim().toLowerCase();
     const levelFilter = String(query.level || "").trim();
     const statusFilter = String(query.status || "").trim().toLowerCase();
@@ -1122,7 +1133,8 @@ export async function getPlacementResults(request) {
 export async function getPlacementDashboardResult(request) {
   try {
     await purgeStalePlacementSessions();
-    const sessionId = String(request?.query?.sessionId || "").trim();
+    const params = await placementRequestParams(request);
+    const sessionId = String(params?.sessionId || "").trim();
 
     if (!sessionId) {
       return jsonBadRequest("Placement session ID is required.");
