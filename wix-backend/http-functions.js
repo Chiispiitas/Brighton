@@ -17,12 +17,15 @@ import {
 } from "backend/tests.js";
 
 import {
+  pingPlacement,
   startPlacement,
   resumePlacement,
   placementStep,
   submitSpeaking,
   skipSpeaking,
   placementResult,
+  touchPlacementActivity,
+  expirePlacementSession,
   getPlacementResults,
   getPlacementDashboardResult
 } from "backend/placement.js";
@@ -55,12 +58,15 @@ export function use_getProgress() { return corsOptions("GET"); }
 export function use_submitTest() { return corsOptions("POST"); }
 export function use_getTestResults() { return corsOptions("GET"); }
 
+export function use_brightonPlacementPing() { return corsOptions("GET"); }
 export function use_brightonPlacementStart() { return corsOptions("POST"); }
 export function use_brightonPlacementResume() { return corsOptions("POST"); }
 export function use_brightonPlacementStep() { return corsOptions("POST"); }
 export function use_brightonPlacementSubmitSpeaking() { return corsOptions("POST"); }
 export function use_brightonPlacementSkipSpeaking() { return corsOptions("POST"); }
 export function use_brightonPlacementResult() { return corsOptions("POST"); }
+export function use_brightonPlacementActivity() { return corsOptions("POST"); }
+export function use_brightonPlacementExpire() { return corsOptions("POST"); }
 export function use_brightonPlacementResults() { return corsOptions("GET"); }
 export function use_brightonPlacementDashboardResult() { return corsOptions("GET"); }
 
@@ -85,12 +91,16 @@ export async function get_getTestResults(request) { return getTestResults(reques
    PLACEMENT
 ========================================================= */
 
+export function get_brightonPlacementPing() { return pingPlacement(); }
+
 export async function post_brightonPlacementStart(request) { return startPlacement(request); }
 export async function post_brightonPlacementResume(request) { return resumePlacement(request); }
 export async function post_brightonPlacementStep(request) { return placementStep(request); }
 export async function post_brightonPlacementSubmitSpeaking(request) { return submitSpeaking(request); }
 export async function post_brightonPlacementSkipSpeaking(request) { return skipSpeaking(request); }
 export async function post_brightonPlacementResult(request) { return placementResult(request); }
+export async function post_brightonPlacementActivity(request) { return touchPlacementActivity(request); }
+export async function post_brightonPlacementExpire(request) { return expirePlacementSession(request); }
 
 export async function get_brightonPlacementResults(request) { return getPlacementResults(request); }
 export async function get_brightonPlacementDashboardResult(request) { return getPlacementDashboardResult(request); }
