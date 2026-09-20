@@ -280,7 +280,93 @@
           ${metric("Pronunciation", score10(speaking.pronunciation))}
           ${metric("Communication", score10(speaking.communication))}
         </div>
+
+        ${renderSpeakingAssessment(speaking)}
       </article>
+    `;
+  }
+
+  function renderSpeakingAssessment(speaking) {
+    const assessment = speaking?.assessment;
+    if (!assessment) return "";
+
+    const dimensions = [
+      ["Fluency", assessment.fluency],
+      ["Grammar", assessment.grammar],
+      ["Vocabulary", assessment.vocabulary],
+      ["Pronunciation", assessment.pronunciation],
+      ["Communication", assessment.communication]
+    ];
+
+    const evidenceCards = dimensions.map(([label, value]) => {
+      const evidence = Array.isArray(value?.evidence) ? value.evidence : [];
+      return `
+        <div class="examiner-dimension">
+          <div class="examiner-dimension-head">
+            <strong>${escapeHtml(label)}</strong>
+            <span>${escapeHtml(score10(value?.score))}/10</span>
+          </div>
+          ${evidence.length
+            ? `<ul>${evidence.map((item) => `<li>${escapeHtml(item)}</li>`).join("")}</ul>`
+            : '<p class="muted">No examiner evidence recorded.</p>'}
+        </div>
+      `;
+    }).join("");
+
+    const grammarErrors = Array.isArray(assessment.grammar?.errors)
+      ? assessment.grammar.errors
+      : [];
+
+    const errors = grammarErrors.length
+      ? `
+        <div class="examiner-errors">
+          <strong>Grammar observations</strong>
+          <ul>
+            ${grammarErrors.map((item) => `
+              <li>
+                <b>${escapeHtml(item.heard || "—")}</b>
+                — ${escapeHtml(item.issue || "")}
+                <small>${escapeHtml(item.severity || "")}</small>
+              </li>
+            `).join("")}
+          </ul>
+        </div>
+      `
+      : "";
+
+    const communication = assessment.communication || {};
+    const communicationSubscores = [
+      ["Task", communication.taskAchievement],
+      ["Coherence", communication.coherence],
+      ["Development", communication.development]
+    ].map(([label, value]) => `<span>${escapeHtml(label)} <b>${escapeHtml(score10(value))}</b></span>`).join("");
+
+    return `
+      <div class="examiner-report">
+        <div class="examiner-report-head">
+          <div>
+            <span>AI examiner evidence</span>
+            <strong>${escapeHtml(speaking.graderVersion || "Gemini")}</strong>
+          </div>
+          <div>
+            <span>Evidence quality</span>
+            <strong>${escapeHtml(speaking.evidenceQuality || "—")}</strong>
+          </div>
+          <div>
+            <span>Rubric</span>
+            <strong>${escapeHtml(speaking.rubricVersion || "—")}</strong>
+          </div>
+        </div>
+
+        <div class="examiner-dimensions">${evidenceCards}</div>
+
+        <div class="communication-subscores">
+          <strong>Communication detail</strong>
+          <div>${communicationSubscores}</div>
+        </div>
+
+        ${errors}
+      </div>
     `;
   }
 
