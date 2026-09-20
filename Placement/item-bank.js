@@ -350,7 +350,7 @@ window.BRIGHTON_PLACEMENT_MODULES = {
         { id: "ra2-02-c", text: "They exchanged clothes they no longer wore" }, { id: "ra2-02-d", text: "They collected unwanted furniture from homes" }
       ]},
       { id: "ra2-03", prompt: "What are they doing this week?", options: [
-        { id: "ra2-03-a", text: "They are repairing old furniture again" }, { id: "ra2-03-b", text: "They are planting trees around the city" },
+        { id: "ra2-03-a", text: "They are repairing old furniture again this week" }, { id: "ra2-03-b", text: "They are planting new trees around the city this week" },
         { id: "ra2-03-c", text: "They are exchanging clothes they no longer wear" }, { id: "ra2-03-d", text: "They are holding the meeting online this week" }
       ]},
       { id: "ra2-04", prompt: "Why should new members register first?", options: [
@@ -400,7 +400,7 @@ window.BRIGHTON_PLACEMENT_MODULES = {
         { id: "rbp-02-c", text: "They visited the physical store more frequently" }, { id: "rbp-02-d", text: "They began choosing more expensive products online" }
       ]},
       { id: "rbp-03", prompt: "What disadvantage did some customers mention?", options: [
-        { id: "rbp-03-a", text: "Collecting orders sometimes took longer than promised" }, { id: "rbp-03-b", text: "Changing quantities after ordering was too difficult" },
+        { id: "rbp-03-a", text: "Collecting orders sometimes took longer than promised" }, { id: "rbp-03-b", text: "Changing quantities after ordering was too difficult to manage" },
         { id: "rbp-03-c", text: "They missed discovering products while browsing shelves" }, { id: "rbp-03-d", text: "The ordering app required too many steps" }
       ]},
       { id: "rbp-04", prompt: "Why is the store adding recommendations?", options: [
@@ -442,7 +442,7 @@ window.BRIGHTON_PLACEMENT_MODULES = {
     passage: "Digital services often treat friction as something to eliminate: fewer clicks, faster decisions, less interruption. Yet some designers are deliberately reintroducing small obstacles. A banking app might ask users to pause before moving money from savings, or a news platform might delay the sharing of an article that has not been opened. Such features can appear inefficient, but that is partly the point. Their value lies in creating a moment in which automatic behaviour becomes a conscious choice. The difficulty, of course, is distinguishing useful reflection from irritation; friction that merely wastes time is unlikely to change behaviour for long.",
     items: [
       { id: "rc1-01", prompt: "Why are some designers adding friction?", options: [
-        { id: "rc1-01-a", text: "To make users spend more time inside digital services" }, { id: "rc1-01-b", text: "To interrupt automatic behaviour and prompt conscious choice" },
+        { id: "rc1-01-a", text: "To make users spend more time actively engaging with digital services" }, { id: "rc1-01-b", text: "To interrupt automatic behaviour and prompt conscious choice" },
         { id: "rc1-01-c", text: "To compensate for technical delays that cannot be removed" }, { id: "rc1-01-d", text: "To reduce the number of choices available to users" }
       ]},
       { id: "rc1-02", prompt: "What do the examples have in common?", options: [
@@ -522,11 +522,11 @@ window.BRIGHTON_PLACEMENT_MODULES = {
     label: "Listening",
     items: [
       { id: "lb1-01", audio: "audio/listening/b1-01.mp3", prompt: "Why did the speaker change gyms?", options: [
-        { id: "lb1-01-a", text: "She was spending too long waiting for equipment" }, { id: "lb1-01-b", text: "The new gym offered a much cheaper membership" },
+        { id: "lb1-01-a", text: "She was spending too long waiting for equipment" }, { id: "lb1-01-b", text: "The new gym offered a much cheaper monthly membership plan" },
         { id: "lb1-01-c", text: "She had moved farther away from the old gym" }, { id: "lb1-01-d", text: "The old gym had reduced its opening hours" }
       ]},
       { id: "lb1-02", audio: "audio/listening/b1-02.mp3", prompt: "Why was the meeting moved?", options: [
-        { id: "lb1-02-a", text: "The usual meeting room could not be used" }, { id: "lb1-02-b", text: "Maya's delayed flight meant she would arrive late" },
+        { id: "lb1-02-a", text: "The usual meeting room was unavailable at the scheduled time" }, { id: "lb1-02-b", text: "Maya's delayed flight meant she would arrive late" },
         { id: "lb1-02-c", text: "The project materials would not be ready by two" }, { id: "lb1-02-d", text: "The man already had another appointment at two" }
       ]},
       { id: "lb1-03", audio: "audio/listening/b1-03.mp3", prompt: "How did the speaker's attitude change?", options: [
@@ -584,7 +584,7 @@ window.BRIGHTON_PLACEMENT_MODULES = {
       ]},
       { id: "lc1-02", audio: "audio/listening/c1-02.mp3", prompt: "What concern does the woman express?", options: [
         { id: "lc1-02-a", text: "The product may already be complete enough to launch" }, { id: "lc1-02-b", text: "Postponing without a specific repair plan may achieve little" },
-        { id: "lc1-02-c", text: "A two-week delay would make the launch unacceptably late" }, { id: "lc1-02-d", text: "Any change to the agreed launch date is a mistake" }
+        { id: "lc1-02-c", text: "A two-week delay would make the planned launch unacceptably late" }, { id: "lc1-02-d", text: "Any change to the agreed launch date is a mistake" }
       ]},
       { id: "lc1-03", audio: "audio/listening/c1-03.mp3", prompt: "According to the speaker, what is now scarce?", options: [
         { id: "lc1-03-a", text: "Access to large amounts of reliable information" }, { id: "lc1-03-b", text: "Technology capable of organizing information effectively" },
