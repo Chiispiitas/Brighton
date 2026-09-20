@@ -123,6 +123,10 @@ function round1(value) {
   return Math.round((Number(value) || 0) * 10) / 10;
 }
 
+function round2(value) {
+  return Math.round((Number(value) || 0) * 100) / 100;
+}
+
 function isoDate(value) {
   try {
     return value instanceof Date ? value.toISOString() : new Date(value).toISOString();
@@ -411,9 +415,31 @@ function countPhrase(text, phrase) {
 
 function paceScore(wpm, low, high) {
   if (!wpm) return 0;
-  if (wpm < low) return clamp(wpm / low);
-  if (wpm > high) return clamp(high / wpm);
-  return 1;
+
+  const comfortableLow = Math.max(20, low * .88);
+  const comfortableHigh = Math.max(190, high * 1.18);
+  const slowFloor = Math.max(8, comfortableLow * .45);
+  const fastCeiling = comfortableHigh * 1.38;
+
+  if (wpm >= comfortableLow && wpm <= comfortableHigh) return 1;
+  if (wpm < comfortableLow) {
+    return clamp((wpm - slowFloor) / Math.max(1, comfortableLow - slowFloor));
+  }
+
+  return clamp((fastCeiling - wpm) / Math.max(1, fastCeiling - comfortableHigh));
+}
+
+function recognitionQualityScore(confidence, transcriptUsable) {
+  if (!transcriptUsable) return .15;
+  if (!(confidence > 0)) return .78;
+
+  // Browser SpeechRecognition confidence is not calibrated like a test score.
+  // Treat values above ~0.88 as strong intelligibility evidence rather than
+  // capping an otherwise native-like answer below 10.
+  if (confidence >= .88) return 1;
+  if (confidence >= .75) return .82 + ((confidence - .75) / .13) * .18;
+  if (confidence >= .55) return .58 + ((confidence - .55) / .20) * .24;
+  return clamp((confidence / .55) * .58);
 }
 
 function gradeSpeakingDeterministically(payload, level) {
@@ -457,7 +483,12 @@ function gradeSpeakingDeterministically(payload, level) {
   const speechRecognitionAvailable = payload.speechRecognitionAvailable !== false;
   const recorderMimeType = String(payload.recorderMimeType || "").slice(0, 120);
   const captureMode = String(payload.captureMode || "recorder+recognition").slice(0, 80);
-  const recognitionOnly = captureMode === "mobile-recognition";
+  const browserFamily = String(payload.browserFamily || "").slice(0, 40);
+  const platformFamily = String(payload.platformFamily || "").slice(0, 40);
+  const recognitionError = String(payload.recognitionError || "").slice(0, 80);
+  const recognitionStarts = Math.max(0, Number(payload.recognitionStarts) || 0);
+  const recognitionResults = Math.max(0, Number(payload.recognitionResults) || 0);
+  const recognitionOnly = /recognition$/.test(captureMode) || captureMode === "recognition-only";
   const recordingEvidence =
     durationSeconds >= Math.max(5, profile.minSeconds * .45) &&
     recordedBytes >= 1200;
@@ -476,8 +507,12 @@ function gradeSpeakingDeterministically(payload, level) {
   const durationScore = clamp(durationSeconds / profile.targetSeconds);
   const minimumDurationScore = clamp(durationSeconds / profile.minSeconds);
   const speechActivityScore = clamp((speechRatio - .16) / .62);
+  const continuityScore = audioActivityAvailable
+    ? clamp((speechRatio - .28) / .38)
+    : (transcriptUsable ? .84 : .25);
   const speedScore = paceScore(wpm, profile.wpmLow, profile.wpmHigh);
   const wordScore = clamp(wordCount / profile.targetWords);
+  const transcriptCoverage = clamp(wordCount / Math.max(5, profile.targetWords * .75));
   const lexicalScore = clamp(uniqueRatio / profile.uniqueTarget);
   const longWordScore = profile.longWordTarget ? clamp(longWordRatio / profile.longWordTarget) : 1;
   const connectorScore = profile.connectorTarget ? clamp(connectorCount / profile.connectorTarget) : 1;
@@ -486,8 +521,8 @@ function gradeSpeakingDeterministically(payload, level) {
   const fillerRate = wordCount ? fillerCount / wordCount : 1;
 
   const rawFluency = clamp(
-    10 * (.34 * durationScore + .36 * speechActivityScore + .30 * speedScore) -
-      Math.min(2, fillerRate * 28),
+    10 * (.18 * minimumDurationScore + .42 * continuityScore + .40 * speedScore) -
+      Math.min(1.5, fillerRate * 24),
     0,
     10
   );
@@ -504,12 +539,21 @@ function gradeSpeakingDeterministically(payload, level) {
     10
   );
 
-  const recognitionSignal = recognitionConfidence > 0
-    ? recognitionConfidence
-    : (transcriptAvailable ? .72 : .20);
+  const recognitionQuality = recognitionQualityScore(recognitionConfidence, transcriptUsable);
+  const recognitionStability = transcriptUsable
+    ? clamp(
+        .58 +
+        .22 * clamp(segmentCount / Math.max(1, profile.segmentTarget)) +
+        .20 * (recognitionError ? .35 : 1)
+      )
+    : .15;
 
   const rawPronunciation = clamp(
-    10 * (.48 * recognitionSignal + .30 * speechActivityScore + .22 * speedScore),
+    10 * (
+      .74 * recognitionQuality +
+      .16 * recognitionStability +
+      .10 * transcriptCoverage
+    ),
     0,
     10
   );
@@ -543,6 +587,30 @@ function gradeSpeakingDeterministically(payload, level) {
     8.5
   ));
   const effectiveComposite = compatibilityMode ? compatibilityComposite : composite;
+
+  const promptOriginality = transcriptUsable
+    ? clamp(1 - Number(promptRepeat.promptCopyRatio || 0))
+    : 0;
+  const transcriptEvidenceConfidence = clamp(
+    .38 * recognitionQuality +
+    .20 * transcriptCoverage +
+    .16 * minimumDurationScore +
+    .14 * recognitionStability +
+    .12 * promptOriginality,
+    .35,
+    .98
+  );
+  const compatibilityEvidenceConfidence = clamp(
+    .28 +
+    .18 * minimumDurationScore +
+    .14 * (audioActivityAvailable ? continuityScore : .45) +
+    .08 * (recordedBytes >= 4000 ? 1 : .5),
+    .30,
+    .68
+  );
+  const evidenceConfidence = round2(
+    compatibilityMode ? compatibilityEvidenceConfidence : transcriptEvidenceConfidence
+  );
 
   const inputError = !hasUsableRecording;
 
@@ -590,18 +658,16 @@ function gradeSpeakingDeterministically(payload, level) {
     speechRecognitionAvailable,
     recorderMimeType,
     captureMode,
-    recognitionError: String(payload.recognitionError || "").slice(0, 80),
-    recognitionStarts: Math.max(0, Number(payload.recognitionStarts) || 0),
-    recognitionResults: Math.max(0, Number(payload.recognitionResults) || 0),
+    browserFamily,
+    platformFamily,
+    recognitionError,
+    recognitionStarts,
+    recognitionResults,
     legacyCaptureEstimate: Boolean(payload.legacyCaptureEstimate),
-    confidence: round1(clamp(
-      .56 +
-      .16 * minimumDurationScore +
-      .14 * (audioActivityAvailable ? speechActivityScore : .75) +
-      .10 * (transcriptUsable ? 1 : .45),
-      .35,
-      .92
-    ))
+    recognitionQuality: round2(recognitionQuality),
+    recognitionStability: round2(recognitionStability),
+    evidenceConfidence,
+    confidence: evidenceConfidence
   };
 }
 
@@ -1203,7 +1269,7 @@ export async function submitSpeaking(request) {
         communication: grade.communication
       }),
       speakingLevel: grade.speakingLevel,
-      graderVersion: "deterministic-browser-v6-anti-parrot-strict",
+      graderVersion: "deterministic-browser-v7-crossbrowser-calibrated",
       metricsJson: JSON.stringify({
         composite: grade.composite,
         compatibilityMode: grade.compatibilityMode,
@@ -1211,9 +1277,14 @@ export async function submitSpeaking(request) {
         speechRecognitionAvailable: grade.speechRecognitionAvailable,
         recorderMimeType: grade.recorderMimeType,
         captureMode: grade.captureMode,
+        browserFamily: grade.browserFamily,
+        platformFamily: grade.platformFamily,
         recognitionError: grade.recognitionError,
         recognitionStarts: grade.recognitionStarts,
         recognitionResults: grade.recognitionResults,
+        recognitionQuality: grade.recognitionQuality,
+        recognitionStability: grade.recognitionStability,
+        evidenceConfidence: grade.evidenceConfidence,
         legacyCaptureEstimate: grade.legacyCaptureEstimate,
         speechRatio: grade.speechRatio,
         uniqueWords: grade.uniqueWords,
