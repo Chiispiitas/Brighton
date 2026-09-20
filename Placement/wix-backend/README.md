@@ -55,3 +55,17 @@ Additional routes:
 The stale-session purge is intentionally tolerant of sessions created before the inactivity feature. It scans Placement sessions and evaluates inactivity in JavaScript using `updatedAt` with `startedAt` as fallback instead of depending on a database `lt(updatedAt)` filter. Active sessions older than one hour are cascade-deleted with their Placement response/speaking rows.
 
 If a device still has a local copy of a session that has already been deleted from Wix, resume now detects the backend's `Placement session not found` response and clears that local progress instead of resurrecting it.
+
+
+## Dashboard transport
+
+The Placement results dashboard now uses **POST + text/plain JSON** for its two data routes:
+
+- `POST /_functions/brightonPlacementResults`
+- `POST /_functions/brightonPlacementDashboardResult`
+
+GET versions remain available for compatibility. The POST transport matches the proven student Placement endpoints and avoids browser preflight/CORS edge cases on GitHub Pages.
+
+The dashboard endpoints are read-only. They no longer run stale-session deletion inline; stale cleanup is handled by the Placement lifecycle/activity/expiry flow instead.
+
+Use `options_...` exports in `Backend/http-functions.js` for CORS OPTIONS handling. Do not use `use_...` catch-all exports for these routes.
