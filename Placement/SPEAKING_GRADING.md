@@ -1,7 +1,7 @@
 # Brighton Placement — Gemini audio speaking grading
 
 Version: `2026-09-20.1`  
-Rubric: `brighton-speaking-rubric-1.0`  
+Rubric: `brighton-speaking-rubric-1.1`  
 Model: `gemini-3.8-flash`
 
 ## Overview
@@ -37,11 +37,13 @@ The request uses `store: false` in the Gemini Interactions API.
 2. Brighton records the answer with `MediaRecorder`.
 3. Web Audio may measure speech activity for diagnostics only. It does not determine the rubric grade.
 4. The student cannot finish before the prompt's minimum duration.
-5. The recording is encoded in memory and sent to the Wix backend.
-6. Wix retrieves the Gemini key from Secrets Manager.
-7. Gemini listens to the audio and returns rubric JSON.
-8. Wix calculates the composite and final routing adjustment.
-9. Raw audio is discarded.
+5. Each speaking level has an explicit hard maximum. Ten seconds before that limit, the UI warns that the answer will be submitted automatically.
+6. If the hard limit is reached, the frontend sends `autoStoppedByTimeLimit=true` so the examiner does not unfairly penalize an abrupt ending caused by the platform.
+7. The recording is encoded in memory and sent to the Wix backend.
+8. Wix retrieves the Gemini key from Secrets Manager.
+9. Gemini listens to the audio and returns rubric JSON.
+10. Wix converts the examiner's CEFR band decisions into deterministic numeric scores, calculates the composite and applies the routing adjustment.
+11. Raw audio is discarded.
 
 Browser `SpeechRecognition` is no longer required for assessment. This removes the former Chrome/Samsung/Opera recognition-confidence dependency.
 
@@ -115,38 +117,72 @@ Evidence includes:
 
 Speaking at length without answering the task does not earn a high Communication score.
 
-## Absolute scoring anchors
+## Band-first scoring and consistency controls
 
-The routed prompt does not determine the speaking score. Gemini applies one absolute scale:
+Rubric 1.1 no longer asks Gemini to invent free-form numeric scores for the five main dimensions.
 
-| Score | Brighton speaking band | Broad interpretation |
-|---|---|---|
-| 0.0–1.9 | PRE-A1 | Little or no assessable independent language |
-| 2.0–3.4 | A1 | Very limited basic language |
-| 3.5–4.9 | A2 | Simple connected language with limited range/control |
-| 5.0–6.4 | B1 | Sustained familiar communication with clear limitations |
-| 6.5–7.4 | B1+ | Stronger than secure B1 but not consistently B2 |
-| 7.5–8.7 | B2 | Clear, developed and reasonably flexible speech with good control |
-| 8.8–10.0 | C1 | Fluent, flexible, precise, well-developed speech with consistently strong control |
+For each dimension, Gemini must first choose a best-fit band:
 
-A candidate answering the C1 prompt therefore does **not** receive C1 merely because the prompt is C1.
+- PRE-A1
+- A1
+- A2
+- B1
+- B1+
+- B2
+- C1
+- ABOVE-C1
 
-## Examiner consistency controls
+It then chooses `low`, `mid` or `high` within that band. Wix maps that decision to a deterministic score:
 
-The request uses a fixed, versioned examiner handbook and a strict JSON schema.
+| Examiner band | Low | Mid | High |
+|---|---:|---:|---:|
+| PRE-A1 | 0.6 | 1.2 | 1.8 |
+| A1 | 2.2 | 2.8 | 3.3 |
+| A2 | 3.7 | 4.3 | 4.8 |
+| B1 | 5.2 | 5.8 | 6.3 |
+| B1+ | 6.7 | 7.1 | 7.4 |
+| B2 | 7.7 | 8.2 | 8.7 |
+| C1 | 8.9 | 9.3 | 9.6 |
+| ABOVE-C1 | 9.7 | 9.9 | 10.0 |
 
-The examiner must:
+`ABOVE-C1` is an internal ceiling marker for clearly C2-like evidence. Brighton still reports the public placement ceiling as **C1**.
 
-1. listen to the full recording;
-2. transcribe conservatively without silently correcting the candidate;
-3. determine whether enough independent evidence exists;
-4. detect prompt reading/repetition;
-5. match evidence to the descriptors;
-6. score the five dimensions independently;
-7. re-check that the scores agree with the evidence;
-8. return only the required structured result.
+This prevents contradictions such as the examiner describing C1 grammar or fluency but then returning a B2-range number.
 
-A fixed generation seed is supplied and Gemini uses medium thinking. The rubric version and model version are stored with each result so later calibration changes remain traceable.
+The rubric also states explicitly that:
+
+- C1 does **not** mean perfect English;
+- one or two isolated minor slips do not automatically demote otherwise C1 grammatical control to B2;
+- advanced vocabulary cannot rescue weak grammar;
+- speed alone cannot produce a high Fluency band;
+- a non-native accent is not penalized simply for being non-native;
+- `ABOVE-C1` is reserved for exceptional evidence, not merely a strong C1 performance.
+
+## Automatic-cutoff fairness
+
+The candidate context sent to Gemini includes the hard recording limit and whether the platform itself stopped the recording.
+
+When `autoStoppedByTimeLimit=true`, the examiner must **not** lower Communication merely because:
+
+- the final sentence is cut off;
+- the candidate does not get to deliver a final conclusion;
+- the recording ends abruptly at the system limit.
+
+The examiner still judges whether the substantive task requirements were addressed before cutoff.
+
+## Speaking time windows
+
+| Route | Target | Minimum | Hard maximum |
+|---|---:|---:|---:|
+| PRE-A1 | 20 s | 12 s | 35 s |
+| A1 | 25 s | 15 s | 40 s |
+| A2 | 35 s | 20 s | 50 s |
+| B1 | 40 s | 25 s | 65 s |
+| B1+ | 45 s | 30 s | 75 s |
+| B2 | 50 s | 35 s | 85 s |
+| C1 | 55 s | 40 s | 90 s |
+
+A visible countdown warning appears during the final 10 seconds.
 
 ## Composite
 
@@ -160,7 +196,7 @@ Pronunciation  15%
 Communication  20%
 ```
 
-The backend then maps the composite to the absolute Brighton speaking band shown above.
+The backend then maps the composite to Brighton's public speaking bands. Scores below 8.8 remain below C1; C1 and internal ABOVE-C1 evidence both ultimately report at the public ceiling of C1.
 
 ## Placement rule
 
