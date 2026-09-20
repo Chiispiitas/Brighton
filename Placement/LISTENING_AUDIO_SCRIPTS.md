@@ -54,10 +54,10 @@ File path planned for the app:
 **Question:** Where does Emma live?
 
 Options:
-- Near the park
-- Near the school
-- Near the beach
-- Near the hospital
+- In a small house near the park
+- In a small house near the school
+- In a small house near the beach
+- In a small house near the hospital
 
 Target clip length: 8–10 seconds.
 
@@ -74,7 +74,7 @@ Target clip length: 8–10 seconds.
 **Question:** What time does the bus leave?
 
 Options:
-- 7:45
+- 8:10
 - 8:00
 - 8:15
 - 8:30
@@ -164,10 +164,10 @@ Target clip length: 9–11 seconds.
 **Question:** Where were the keys?
 
 Options:
-- In her bag
-- On the kitchen table
+- At the bottom of her bag
+- On top of the kitchen table
 - Next to the front door
-- In her bedroom
+- Beside the bed in her room
 
 Target clip length: 10–12 seconds.
 
@@ -186,10 +186,10 @@ Target clip length: 10–12 seconds.
 **Question:** Where will they meet?
 
 Options:
-- At the café
+- Outside the closed café
 - Outside the cinema
-- At the station
-- Across from the park
+- At the station entrance
+- By the park entrance
 
 Target clip length: 11–13 seconds.
 
@@ -210,10 +210,10 @@ Target clip length: 11–13 seconds.
 **Question:** Why was the man late?
 
 Options:
-- There was heavy traffic
-- He missed the bus
-- He returned home for his phone
-- He couldn't find the address
+- Traffic was heavy on the way
+- He missed his usual bus
+- He had to go back for his phone
+- He could not find the address
 
 Target clip length: 10–12 seconds.
 
@@ -230,10 +230,10 @@ Target clip length: 10–12 seconds.
 **Question:** What do participants need to bring?
 
 Options:
-- Paper
-- A phone or camera
-- A laptop
-- A printed photo
+- Paper for taking notes
+- A phone or a camera
+- A laptop for editing
+- A printed photograph
 
 Target clip length: 10–12 seconds.
 
@@ -252,10 +252,10 @@ Target clip length: 10–12 seconds.
 **Question:** Why did the speaker change gyms?
 
 Options:
-- The old gym became too crowded
-- The new gym is cheaper
-- She moved to another neighbourhood
-- The old gym closed
+- She was spending too long waiting for equipment
+- The new gym offered a much cheaper membership
+- She had moved farther away from the old gym
+- The old gym had reduced its opening hours
 
 Target clip length: 14–16 seconds.
 
@@ -276,10 +276,10 @@ Target clip length: 14–16 seconds.
 **Question:** Why was the meeting moved?
 
 Options:
-- The meeting room was unavailable
-- Maya's flight was delayed
-- The project was not ready
-- The man had another appointment
+- The usual meeting room could not be used
+- Maya's delayed flight meant she would arrive late
+- The project materials would not be ready by two
+- The man already had another appointment at two
 
 Target clip length: 13–15 seconds.
 
@@ -296,10 +296,10 @@ Target clip length: 13–15 seconds.
 **Question:** How did the speaker's attitude change?
 
 Options:
-- He became more interested in the class
-- He decided recipes were always necessary
-- He thought the teacher was too strict
-- He stopped attending the lessons
+- He became increasingly enthusiastic about the class
+- He decided that following recipes exactly was essential
+- He became frustrated by the teacher's flexible approach
+- He lost interest and stopped attending the lessons
 
 Target clip length: 15–17 seconds.
 
@@ -322,10 +322,10 @@ Target clip length: 15–17 seconds.
 **Question:** What do they decide to do?
 
 Options:
-- Take the early train
-- Drive after breakfast
-- Buy cheaper train tickets later
-- Cancel the trip
+- Take the early train despite the higher price
+- Drive after breakfast instead of taking the train
+- Wait and buy cheaper train tickets later
+- Cancel the trip because both options are inconvenient
 
 Target clip length: 13–15 seconds.
 
@@ -342,10 +342,10 @@ Target clip length: 13–15 seconds.
 **Question:** What has changed about the training session?
 
 Options:
-- Its starting time
-- Its day
-- Its location
-- Its instructor
+- The session will begin at a different time
+- The session has been moved to another day
+- The session will take place in a different room
+- A different instructor will lead the session
 
 Target clip length: 12–14 seconds.
 
@@ -362,10 +362,10 @@ Target clip length: 12–14 seconds.
 **Question:** What is the speaker's overall view of the hotel's location?
 
 Options:
-- It was inconvenient throughout the trip
-- It had disadvantages but worked out well
-- It was exactly as advertised
-- It was too noisy to recommend
+- The location remained inconvenient for most of the trip
+- The location had drawbacks, but they were manageable
+- The location was as central as the website suggested
+- The area was too noisy for a comfortable stay
 
 Target clip length: 16–18 seconds.
 
@@ -384,10 +384,10 @@ Target clip length: 16–18 seconds.
 **Question:** What is the speaker mainly criticising?
 
 Options:
-- Working with colleagues in person
-- Having online meetings
-- Commuting when physical presence adds little value
-- Working from home too frequently
+- The loss of informal contact with office colleagues
+- The amount of time spent in online meetings
+- Commuting to an office when being there adds little
+- The tendency to work from home too frequently
 
 Target clip length: 16–18 seconds.
 
@@ -406,10 +406,10 @@ Target clip length: 16–18 seconds.
 **Question:** What does the woman imply?
 
 Options:
-- The campaign succeeded completely
-- Website traffic was measured incorrectly
-- Increased attention did not produce the intended business result
-- The company should stop advertising online
+- The campaign met its goals despite weak sales growth
+- The reported increase in website visits is unreliable
+- More attention did not translate into the intended commercial result
+- Online advertising is no longer useful for the company
 
 Target clip length: 15–17 seconds.
 
@@ -426,10 +426,10 @@ Target clip length: 15–17 seconds.
 **Question:** What should passengers do?
 
 Options:
-- Move to another platform
-- Wait on Platform Six
-- Return in twenty minutes
-- Take the next scheduled service
+- Move to another platform before the replacement arrives
+- Remain on Platform Six and wait for the replacement
+- Leave the station and return in about twenty minutes
+- Ignore the replacement and take the next scheduled service
 
 Target clip length: 16–18 seconds.
 
@@ -448,10 +448,10 @@ Target clip length: 16–18 seconds.
 **Question:** What is the speaker's main point?
 
 Options:
-- Convenient systems always produce better decisions
-- Minor obstacles can sometimes encourage more deliberate choices
-- People generally dislike making quick decisions
-- Technology should make every action more difficult
+- Convenience generally improves the quality of our decisions
+- Small obstacles can create space for more deliberate choices
+- People tend to regret decisions made too slowly
+- Digital systems should deliberately make every action difficult
 
 Target clip length: 17–20 seconds.
 
@@ -468,10 +468,10 @@ Target clip length: 17–20 seconds.
 **Question:** What concern does the woman express?
 
 Options:
-- The product is already complete
-- A delay without a clear plan may achieve little
-- Two weeks is far too long a delay
-- The launch date should never change
+- The product may already be complete enough to launch
+- Postponing without a specific repair plan may achieve little
+- A two-week delay would make the launch unacceptably late
+- Any change to the agreed launch date is a mistake
 
 Target clip length: 16–19 seconds.
 
@@ -488,10 +488,10 @@ Target clip length: 16–19 seconds.
 **Question:** According to the speaker, what is now scarce?
 
 Options:
-- Information itself
-- Reliable technology
-- The attention needed to evaluate information
-- Opportunities to express opinions
+- Access to large amounts of reliable information
+- Technology capable of organizing information effectively
+- Attention for examining and judging abundant information
+- Opportunities for people to contribute their own opinions
 
 Target clip length: 17–20 seconds.
 
