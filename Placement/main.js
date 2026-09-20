@@ -1,7 +1,7 @@
 "use strict";
 
 (() => {
-  const PLACEMENT_VERSION = "2026-09-19.8";
+  const PLACEMENT_VERSION = "2026-09-20.1";
   const STORAGE_KEY = "brighton-placement-session-v1";
   const RESTART_NAME_KEY = "brighton-placement-restart-name";
   const INACTIVITY_LIMIT_MS = 60 * 60 * 1000;
@@ -165,6 +165,24 @@
     }
 
     return payload;
+  }
+
+  function blobToBase64(blob) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+
+      reader.addEventListener("load", () => {
+        const result = String(reader.result || "");
+        const comma = result.indexOf(",");
+        resolve(comma >= 0 ? result.slice(comma + 1) : result);
+      }, { once: true });
+
+      reader.addEventListener("error", () => {
+        reject(reader.error || new Error("Could not prepare the audio recording."));
+      }, { once: true });
+
+      reader.readAsDataURL(blob);
+    });
   }
 
   async function startRemoteSession(name, clientSessionId) {
@@ -1215,7 +1233,7 @@
       lastSpeakingAttemptMetrics = null;
       speakingTranscriptParts = [];
       speakingInterimTranscript = "";
-      speakingRecognitionDisabled = false;
+      speakingRecognitionDisabled = true;
       speakingRecognitionError = "";
       speakingRecognitionStarts = 0;
       speakingRecognitionResults = 0;
@@ -1225,25 +1243,14 @@
       speakingTotalFrames = 0;
       speakingStartedAt = performance.now();
       speakingRecordingActive = true;
-
-      const Recognition = speechRecognitionConstructor();
-      const useRecognitionOnly = Boolean(Recognition) && (isMobileSpeechDevice() || isOperaBrowser());
-      speakingCaptureMode = useRecognitionOnly
-        ? (isOperaBrowser() ? "opera-recognition" : "mobile-recognition")
-        : "recorder+recognition";
-
-      if (useRecognitionOnly) {
-        // Critical mobile compatibility path: do not keep getUserMedia /
-        // MediaRecorder open at the same time as Web Speech. Many phones allow
-        // mic check but fail recognition when two capture stacks compete.
-        releaseSpeakingCaptureStream();
-        startSpeechRecognition();
-        renderSpeakingRecording(data);
-        return;
-      }
+      speakingCaptureMode = "media-recorder";
 
       const stream = await ensureSpeakingMic();
       await setupSpeakingAnalyser();
+
+      if (!window.MediaRecorder) {
+        throw new Error("MediaRecorder is unavailable.");
+      }
 
       const preferredTypes = [
         "audio/webm;codecs=opus",
@@ -1255,7 +1262,16 @@
         "audio/aac"
       ];
       const mimeType = preferredTypes.find((type) => MediaRecorder.isTypeSupported?.(type)) || "";
-      speakingRecorder = mimeType ? new MediaRecorder(stream, { mimeType }) : new MediaRecorder(stream);
+
+      const recorderOptions = mimeType
+        ? { mimeType, audioBitsPerSecond: 48000 }
+        : { audioBitsPerSecond: 48000 };
+
+      try {
+        speakingRecorder = new MediaRecorder(stream, recorderOptions);
+      } catch {
+        speakingRecorder = mimeType ? new MediaRecorder(stream, { mimeType }) : new MediaRecorder(stream);
+      }
 
       speakingRecorder.addEventListener("dataavailable", (event) => {
         if (event.data?.size) speakingChunks.push(event.data);
@@ -1263,9 +1279,7 @@
 
       speakingRecorder.addEventListener("stop", finishSpeakingRecording, { once: true });
       speakingRecorder.start(250);
-      startSpeechRecognition();
       startSpeakingMeter();
-
       renderSpeakingRecording(data);
     } catch (error) {
       speakingRecordingActive = false;
@@ -1343,68 +1357,28 @@
     window.clearInterval(speakingTimer);
     window.clearInterval(speakingMeterTimer);
 
-    if (speakingCaptureMode === "mobile-recognition") {
-      await settleMobileSpeechRecognition();
-      await finishSpeakingRecording();
-      return;
-    }
-
     if (!speakingRecorder || speakingRecorder.state !== "recording") {
-      stopSpeechRecognition();
       renderSpeakingTechnicalError("We couldn't process your answer.");
       return;
     }
 
-    stopSpeechRecognition();
     speakingRecorder.stop();
   }
 
   async function finishSpeakingRecording() {
     const data = speakingModule();
     const durationSeconds = Math.max(0, (performance.now() - speakingStartedAt) / 1000);
-    const measuredSpeechRatio = speakingTotalFrames
+    const speechRatio = speakingTotalFrames
       ? speakingSpeechFrames / speakingTotalFrames
       : 0;
-    const transcript = speakingTranscriptParts.join(" ").replace(/\s+/g, " ").trim();
-    const transcriptAvailable = Boolean(transcript);
-    const recognitionConfidence = speakingConfidenceSamples.length
-      ? speakingConfidenceSamples.reduce((sum, value) => sum + value, 0) / speakingConfidenceSamples.length
-      : 0;
-    const audioActivityAvailable = Boolean(speakingAnalyser && speakingTotalFrames > 0);
-    const actualRecordedBytes = speakingChunks.reduce((sum, chunk) => sum + Number(chunk.size || 0), 0);
-    const recognitionOnly = speakingCaptureMode === "mobile-recognition";
-
-    // The published legacy grader uses recordedBytes/speechRatio as capture
-    // sanity checks. In recognition-only mode there is deliberately no
-    // MediaRecorder competing for the mobile microphone, so use equivalent
-    // capture estimates derived from the active recognition session.
-    const legacyCaptureBytesEstimate = recognitionOnly
-      ? Math.round(durationSeconds * 16000 * 2)
-      : 0;
-    const recordedBytes = Math.max(actualRecordedBytes, legacyCaptureBytesEstimate);
-    const speechRatio = recognitionOnly && transcriptAvailable
-      ? Math.max(measuredSpeechRatio, mobileTranscriptSpeechRatio(transcript, durationSeconds))
-      : measuredSpeechRatio;
     const speechSeconds = durationSeconds * speechRatio;
+    const audioActivityAvailable = Boolean(speakingAnalyser && speakingTotalFrames > 0);
+    const recorderMimeType = String(speakingRecorder?.mimeType || speakingChunks[0]?.type || "audio/webm");
+    const audioBlob = new Blob(speakingChunks, { type: recorderMimeType });
+    const recordedBytes = audioBlob.size;
 
-    const usableRecording = recognitionOnly
-      ? durationSeconds >= 5 && transcript.trim().split(/\s+/).filter(Boolean).length >= 5
-      : durationSeconds >= 5 && recordedBytes >= 1200;
-
-    if (!usableRecording) {
-      const message = recognitionOnly
-        ? "We couldn't transcribe enough of your answer. Try again."
-        : "We couldn't detect enough audio. Try again.";
-      renderSpeakingTechnicalError(message);
-      return;
-    }
-
-    const promptRepeat = transcriptAvailable
-      ? analysePromptRepeating(transcript, data.prompt, currentModuleId)
-      : { shouldRetry: false };
-
-    if (promptRepeat.shouldRetry) {
-      renderSpeakingAnswerRetry();
+    if (durationSeconds < 5 || recordedBytes < 1200) {
+      renderSpeakingTechnicalError("We couldn't detect enough audio. Try again.");
       return;
     }
 
@@ -1417,23 +1391,32 @@
     `;
 
     try {
+      const audioBase64 = await blobToBase64(audioBlob);
+
+      if (!audioBase64 || audioBase64.length > 15000000) {
+        renderSpeakingTechnicalError("The recording is too large to process. Try again.");
+        return;
+      }
+
       const speakingMetrics = {
         durationSeconds,
         speechSeconds,
         speechRatio,
-        transcript,
-        transcriptAvailable,
-        recognitionConfidence,
-        segmentCount: speakingSegmentCount,
+        transcript: "",
+        transcriptAvailable: false,
+        recognitionConfidence: 0,
+        segmentCount: 0,
         recordedBytes,
+        audioBase64,
+        audioMimeType: recorderMimeType,
         audioActivityAvailable,
         speechRecognitionAvailable: Boolean(speechRecognitionConstructor()),
-        recorderMimeType: recognitionOnly ? "speech-recognition" : String(speakingRecorder?.mimeType || ""),
+        recorderMimeType,
         captureMode: speakingCaptureMode,
-        recognitionError: speakingRecognitionError,
-        recognitionStarts: speakingRecognitionStarts,
-        recognitionResults: speakingRecognitionResults,
-        legacyCaptureEstimate: recognitionOnly,
+        recognitionError: "",
+        recognitionStarts: 0,
+        recognitionResults: 0,
+        legacyCaptureEstimate: false,
         browserFamily: speakingBrowserFamily(),
         platformFamily: speakingPlatformFamily()
       };
@@ -1470,26 +1453,12 @@
       renderPlacementResult(result.result || result);
     } catch (error) {
       console.error(error);
-      renderSpeakingSubmitRetry(lastSpeakingAttemptMetrics || {
-        durationSeconds,
-        speechSeconds,
-        speechRatio,
-        transcript,
-        transcriptAvailable,
-        recognitionConfidence,
-        segmentCount: speakingSegmentCount,
-        recordedBytes,
-        audioActivityAvailable,
-        speechRecognitionAvailable: Boolean(speechRecognitionConstructor()),
-        recorderMimeType: recognitionOnly ? "speech-recognition" : String(speakingRecorder?.mimeType || ""),
-        captureMode: speakingCaptureMode,
-        recognitionError: speakingRecognitionError,
-        recognitionStarts: speakingRecognitionStarts,
-        recognitionResults: speakingRecognitionResults,
-        legacyCaptureEstimate: recognitionOnly,
-        browserFamily: speakingBrowserFamily(),
-        platformFamily: speakingPlatformFamily()
-      });
+
+      if (lastSpeakingAttemptMetrics) {
+        renderSpeakingSubmitRetry(lastSpeakingAttemptMetrics);
+      } else {
+        renderSpeakingTechnicalError("We couldn't prepare your answer. Try again.");
+      }
     }
   }
 
@@ -1521,13 +1490,23 @@
         clientSessionId: session.clientSessionId,
         placementVersion: PLACEMENT_VERSION,
         moduleId: currentModuleId,
-        diagnostics: lastSpeakingAttemptMetrics || {
-          browserFamily: speakingBrowserFamily(),
-          platformFamily: speakingPlatformFamily(),
-          speechRecognitionAvailable: Boolean(speechRecognitionConstructor()),
-          recognitionError: speakingRecognitionError,
-          captureMode: speakingCaptureMode
-        }
+        diagnostics: lastSpeakingAttemptMetrics
+          ? {
+              durationSeconds: lastSpeakingAttemptMetrics.durationSeconds,
+              recordedBytes: lastSpeakingAttemptMetrics.recordedBytes,
+              audioMimeType: lastSpeakingAttemptMetrics.audioMimeType,
+              captureMode: lastSpeakingAttemptMetrics.captureMode,
+              browserFamily: lastSpeakingAttemptMetrics.browserFamily,
+              platformFamily: lastSpeakingAttemptMetrics.platformFamily,
+              audioActivityAvailable: lastSpeakingAttemptMetrics.audioActivityAvailable
+            }
+          : {
+              browserFamily: speakingBrowserFamily(),
+              platformFamily: speakingPlatformFamily(),
+              speechRecognitionAvailable: Boolean(speechRecognitionConstructor()),
+              recognitionError: speakingRecognitionError,
+              captureMode: speakingCaptureMode
+            }
       });
 
       session.phase = "result";
