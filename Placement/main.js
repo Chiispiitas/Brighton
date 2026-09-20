@@ -335,7 +335,7 @@
       setShellStage(2);
       els.stageIndex.textContent = "02";
       els.stageEyebrow.textContent = "Reading";
-      els.stageTitle.textContent = "Read.";
+      els.stageTitle.textContent = "Reading";
       els.stageNote.textContent = "";
       return;
     }
@@ -344,7 +344,7 @@
       setShellStage(3);
       els.stageIndex.textContent = "03";
       els.stageEyebrow.textContent = "Listening";
-      els.stageTitle.textContent = "Listen.";
+      els.stageTitle.textContent = "Listening";
       els.stageNote.textContent = "";
       return;
     }
@@ -352,7 +352,7 @@
     setShellStage(1);
     els.stageIndex.textContent = "01";
     els.stageEyebrow.textContent = isCalibration ? "Calibration" : "Language";
-    els.stageTitle.textContent = isCalibration ? "Find your starting point." : "Keep going.";
+    els.stageTitle.textContent = "Grammar";
     els.stageNote.textContent = "Choose the best answer.";
   }
 
@@ -1065,7 +1065,7 @@
     els.stageCard.classList.add("speaking-mode");
     els.stageIndex.textContent = "04";
     els.stageEyebrow.textContent = "Speaking";
-    els.stageTitle.textContent = "Speak.";
+    els.stageTitle.textContent = "Speaking";
     els.stageNote.textContent = "";
     els.introScan.classList.add("hidden");
 
