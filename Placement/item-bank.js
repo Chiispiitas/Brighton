@@ -292,16 +292,16 @@ window.BRIGHTON_PLACEMENT_MODULES = {
     passage: "Leo works at a small café. He starts at eight in the morning. At twelve, he eats lunch with his friend Mia. Leo finishes work at three. After work, he takes the bus home and plays with his dog.",
     items: [
       { id: "rpa-01", prompt: "Where does Leo work?", options: [
-        { id: "rpa-01-a", text: "At a school" }, { id: "rpa-01-b", text: "At a café" },
-        { id: "rpa-01-c", text: "At a hotel" }, { id: "rpa-01-d", text: "At a shop" }
+        { id: "rpa-01-a", text: "At a small school" }, { id: "rpa-01-b", text: "At a small café" },
+        { id: "rpa-01-c", text: "At a small hotel" }, { id: "rpa-01-d", text: "At a small shop" }
       ]},
       { id: "rpa-02", prompt: "What time does he start work?", options: [
         { id: "rpa-02-a", text: "8:00" }, { id: "rpa-02-b", text: "12:00" },
         { id: "rpa-02-c", text: "3:00" }, { id: "rpa-02-d", text: "6:00" }
       ]},
       { id: "rpa-03", prompt: "Who eats lunch with Leo?", options: [
-        { id: "rpa-03-a", text: "His dog" }, { id: "rpa-03-b", text: "His boss" },
-        { id: "rpa-03-c", text: "Mia" }, { id: "rpa-03-d", text: "His brother" }
+        { id: "rpa-03-a", text: "His work friend" }, { id: "rpa-03-b", text: "His brother" },
+        { id: "rpa-03-c", text: "His friend Mia" }, { id: "rpa-03-d", text: "His café manager" }
       ]},
       { id: "rpa-04", prompt: "How does Leo go home?", options: [
         { id: "rpa-04-a", text: "By bus" }, { id: "rpa-04-b", text: "By bike" },
@@ -317,20 +317,20 @@ window.BRIGHTON_PLACEMENT_MODULES = {
     passage: "Hi Sara! I can't meet you in the morning because I have a swimming class at ten. After lunch, I'm free. We can go to the new bookshop near Central Park. It closes at six, so let's meet outside the park at three. Bring an umbrella because the weather report says it may rain. — Nina",
     items: [
       { id: "ra1-01", prompt: "Why can't Nina meet in the morning?", options: [
-        { id: "ra1-01-a", text: "She is working" }, { id: "ra1-01-b", text: "She has a swimming class" },
-        { id: "ra1-01-c", text: "She is visiting Sara" }, { id: "ra1-01-d", text: "She is going to the park" }
+        { id: "ra1-01-a", text: "She has a morning work shift" }, { id: "ra1-01-b", text: "She has a swimming class" },
+        { id: "ra1-01-c", text: "She is meeting Sara for lunch" }, { id: "ra1-01-d", text: "She is visiting the new bookshop" }
       ]},
       { id: "ra1-02", prompt: "Where do they plan to go?", options: [
-        { id: "ra1-02-a", text: "A bookshop" }, { id: "ra1-02-b", text: "A swimming pool" },
-        { id: "ra1-02-c", text: "A café" }, { id: "ra1-02-d", text: "A cinema" }
+        { id: "ra1-02-a", text: "The new bookshop" }, { id: "ra1-02-b", text: "The swimming pool" },
+        { id: "ra1-02-c", text: "A café near the park" }, { id: "ra1-02-d", text: "Central Park itself" }
       ]},
       { id: "ra1-03", prompt: "What time will they meet?", options: [
         { id: "ra1-03-a", text: "10:00" }, { id: "ra1-03-b", text: "12:00" },
         { id: "ra1-03-c", text: "3:00" }, { id: "ra1-03-d", text: "6:00" }
       ]},
       { id: "ra1-04", prompt: "What should Sara bring?", options: [
-        { id: "ra1-04-a", text: "A book" }, { id: "ra1-04-b", text: "A towel" },
-        { id: "ra1-04-c", text: "An umbrella" }, { id: "ra1-04-d", text: "Lunch" }
+        { id: "ra1-04-a", text: "A new book" }, { id: "ra1-04-b", text: "A swimming towel" },
+        { id: "ra1-04-c", text: "An umbrella" }, { id: "ra1-04-d", text: "A packed lunch" }
       ]}
     ]
   },
@@ -342,20 +342,20 @@ window.BRIGHTON_PLACEMENT_MODULES = {
     passage: "The Green Street Club meets every Wednesday evening. Members learn simple ways to reduce waste at home and around the city. Last month, they repaired old chairs instead of throwing them away. This week, they are exchanging clothes they no longer wear. Anyone can join, but new members should register online before their first visit because the room is quite small.",
     items: [
       { id: "ra2-01", prompt: "What is the club mainly about?", options: [
-        { id: "ra2-01-a", text: "Saving money on clothes" }, { id: "ra2-01-b", text: "Reducing waste" },
-        { id: "ra2-01-c", text: "Learning to cook" }, { id: "ra2-01-d", text: "Selling furniture" }
+        { id: "ra2-01-a", text: "Finding cheaper second-hand clothes" }, { id: "ra2-01-b", text: "Finding ways to reduce everyday waste" },
+        { id: "ra2-01-c", text: "Learning practical home-repair skills" }, { id: "ra2-01-d", text: "Selling unwanted furniture for money" }
       ]},
       { id: "ra2-02", prompt: "What did members do last month?", options: [
-        { id: "ra2-02-a", text: "They fixed old chairs" }, { id: "ra2-02-b", text: "They bought new chairs" },
-        { id: "ra2-02-c", text: "They exchanged clothes" }, { id: "ra2-02-d", text: "They cleaned the city" }
+        { id: "ra2-02-a", text: "They repaired old chairs for reuse" }, { id: "ra2-02-b", text: "They bought newer chairs for the room" },
+        { id: "ra2-02-c", text: "They exchanged clothes they no longer wore" }, { id: "ra2-02-d", text: "They collected unwanted furniture from homes" }
       ]},
       { id: "ra2-03", prompt: "What are they doing this week?", options: [
-        { id: "ra2-03-a", text: "Repairing furniture" }, { id: "ra2-03-b", text: "Planting trees" },
-        { id: "ra2-03-c", text: "Exchanging clothes" }, { id: "ra2-03-d", text: "Meeting online" }
+        { id: "ra2-03-a", text: "They are repairing old furniture again" }, { id: "ra2-03-b", text: "They are planting trees around the city" },
+        { id: "ra2-03-c", text: "They are exchanging clothes they no longer wear" }, { id: "ra2-03-d", text: "They are holding the meeting online this week" }
       ]},
       { id: "ra2-04", prompt: "Why should new members register first?", options: [
-        { id: "ra2-04-a", text: "The club is expensive" }, { id: "ra2-04-b", text: "The room has limited space" },
-        { id: "ra2-04-c", text: "The club meets rarely" }, { id: "ra2-04-d", text: "Only adults can enter" }
+        { id: "ra2-04-a", text: "New members must pay before attending" }, { id: "ra2-04-b", text: "The meeting room has limited space" },
+        { id: "ra2-04-c", text: "Meetings only happen once each month" }, { id: "ra2-04-d", text: "Only registered adults are allowed inside" }
       ]}
     ]
   },
@@ -367,20 +367,20 @@ window.BRIGHTON_PLACEMENT_MODULES = {
     passage: "When the town library began opening until 10 p.m. twice a week, staff expected mostly university students to use the extra hours. Instead, the evenings attracted a much wider group. Some parents came after putting their children to bed, while shift workers used the computers before starting work. The library also noticed that people stayed longer than they did during the day. As a result, it has added small discussion events and plans to test a third late-opening night next month.",
     items: [
       { id: "rb1-01", prompt: "What surprised the library staff?", options: [
-        { id: "rb1-01-a", text: "Students stopped visiting" }, { id: "rb1-01-b", text: "Different kinds of people used the late hours" },
-        { id: "rb1-01-c", text: "People refused to use computers" }, { id: "rb1-01-d", text: "The library became quieter" }
+        { id: "rb1-01-a", text: "University students stayed much later than expected" }, { id: "rb1-01-b", text: "The late hours attracted a wider mix of people" },
+        { id: "rb1-01-c", text: "Computer use dropped sharply during the evening" }, { id: "rb1-01-d", text: "Parents regularly brought their children after bedtime" }
       ]},
       { id: "rb1-02", prompt: "Why did some parents visit late?", options: [
-        { id: "rb1-02-a", text: "They worked at the library" }, { id: "rb1-02-b", text: "They wanted to meet students" },
-        { id: "rb1-02-c", text: "Their children were already asleep" }, { id: "rb1-02-d", text: "They had evening classes" }
+        { id: "rb1-02-a", text: "They had just finished evening work" }, { id: "rb1-02-b", text: "They wanted to attend the discussion events" },
+        { id: "rb1-02-c", text: "Their children had already gone to bed" }, { id: "rb1-02-d", text: "They needed to use the library computers" }
       ]},
       { id: "rb1-03", prompt: "What difference did staff notice at night?", options: [
-        { id: "rb1-03-a", text: "Visitors stayed longer" }, { id: "rb1-03-b", text: "Visitors borrowed fewer books" },
-        { id: "rb1-03-c", text: "Only workers used the computers" }, { id: "rb1-03-d", text: "There were fewer activities" }
+        { id: "rb1-03-a", text: "Visitors tended to stay for longer periods" }, { id: "rb1-03-b", text: "Visitors borrowed more books than in daytime" },
+        { id: "rb1-03-c", text: "Visitors used the computers much less often" }, { id: "rb1-03-d", text: "Visitors attended more organized events than expected" }
       ]},
       { id: "rb1-04", prompt: "What will the library probably do next?", options: [
-        { id: "rb1-04-a", text: "Close earlier" }, { id: "rb1-04-b", text: "Stop evening events" },
-        { id: "rb1-04-c", text: "Try another late-opening night" }, { id: "rb1-04-d", text: "Allow only students at night" }
+        { id: "rb1-04-a", text: "Extend late opening to every weekday" }, { id: "rb1-04-b", text: "Replace late hours with more discussion events" },
+        { id: "rb1-04-c", text: "Test an additional late-opening night" }, { id: "rb1-04-d", text: "Reserve late evenings mainly for university students" }
       ]}
     ]
   },
@@ -392,20 +392,20 @@ window.BRIGHTON_PLACEMENT_MODULES = {
     passage: "A local grocery store recently introduced a service that lets customers collect pre-packed orders in less than two minutes. Managers expected the service to appeal mainly to people in a hurry. It did, but they also noticed an unexpected effect: customers began planning their shopping more carefully because they had to choose items before arriving. Some said they bought fewer unnecessary products, while others missed discovering new things on the shelves. The store is now experimenting with optional weekly recommendations in the ordering app.",
     items: [
       { id: "rbp-01", prompt: "What was the service originally designed to offer?", options: [
-        { id: "rbp-01-a", text: "Cheaper products" }, { id: "rbp-01-b", text: "Faster collection" },
-        { id: "rbp-01-c", text: "Home delivery" }, { id: "rbp-01-d", text: "Personal shopping advice" }
+        { id: "rbp-01-a", text: "Lower prices for customers who order online" }, { id: "rbp-01-b", text: "Quicker collection for customers in a hurry" },
+        { id: "rbp-01-c", text: "Home delivery without entering the store" }, { id: "rbp-01-d", text: "Personal shopping advice before customers order" }
       ]},
       { id: "rbp-02", prompt: "What unexpected change did managers notice?", options: [
-        { id: "rbp-02-a", text: "Customers planned purchases more carefully" }, { id: "rbp-02-b", text: "Customers stopped using the app" },
-        { id: "rbp-02-c", text: "Customers visited more often" }, { id: "rbp-02-d", text: "Customers bought more expensive food" }
+        { id: "rbp-02-a", text: "They planned what to buy more carefully" }, { id: "rbp-02-b", text: "They stopped using the ordering app regularly" },
+        { id: "rbp-02-c", text: "They visited the physical store more frequently" }, { id: "rbp-02-d", text: "They began choosing more expensive products online" }
       ]},
       { id: "rbp-03", prompt: "What disadvantage did some customers mention?", options: [
-        { id: "rbp-03-a", text: "Collection took too long" }, { id: "rbp-03-b", text: "They could not choose quantities" },
-        { id: "rbp-03-c", text: "They discovered fewer new products" }, { id: "rbp-03-d", text: "The app was difficult to use" }
+        { id: "rbp-03-a", text: "Collecting orders sometimes took longer than promised" }, { id: "rbp-03-b", text: "Changing quantities after ordering was too difficult" },
+        { id: "rbp-03-c", text: "They missed discovering products while browsing shelves" }, { id: "rbp-03-d", text: "The ordering app required too many steps" }
       ]},
       { id: "rbp-04", prompt: "Why is the store adding recommendations?", options: [
-        { id: "rbp-04-a", text: "To recreate some product discovery" }, { id: "rbp-04-b", text: "To make customers arrive earlier" },
-        { id: "rbp-04-c", text: "To reduce collection time" }, { id: "rbp-04-d", text: "To replace the ordering app" }
+        { id: "rbp-04-a", text: "To bring some product discovery back into online ordering" }, { id: "rbp-04-b", text: "To make customers collect their orders even faster" },
+        { id: "rbp-04-c", text: "To encourage customers to buy larger quantities" }, { id: "rbp-04-d", text: "To replace the store's physical shelves completely" }
       ]}
     ]
   },
@@ -417,20 +417,20 @@ window.BRIGHTON_PLACEMENT_MODULES = {
     passage: "Several companies that once planned to abandon offices entirely have recently adopted a different approach. Rather than requiring staff to return full-time, they are redesigning offices around tasks that are harder to do remotely: mentoring new employees, resolving complex problems and building relationships across teams. Individual desk space has decreased, while rooms for small-group work have multiplied. Critics argue that scheduled office days can still feel artificial. Supporters respond that the aim is no longer to prove people are working, but to make physical presence useful when it happens.",
     items: [
       { id: "rb2-01", prompt: "What change in strategy does the text describe?", options: [
-        { id: "rb2-01-a", text: "Companies are ending remote work completely" }, { id: "rb2-01-b", text: "Companies are using offices for selected collaborative tasks" },
-        { id: "rb2-01-c", text: "Companies are reducing mentoring" }, { id: "rb2-01-d", text: "Companies are giving everyone private offices" }
+        { id: "rb2-01-a", text: "Requiring most employees to return to offices full-time" }, { id: "rb2-01-b", text: "Using office time mainly for work that benefits from presence" },
+        { id: "rb2-01-c", text: "Reducing office space primarily to lower operating costs" }, { id: "rb2-01-d", text: "Moving mentoring and team-building activities entirely online" }
       ]},
       { id: "rb2-02", prompt: "Why has individual desk space decreased?", options: [
-        { id: "rb2-02-a", text: "Fewer employees have jobs" }, { id: "rb2-02-b", text: "Offices are becoming smaller" },
-        { id: "rb2-02-c", text: "More space is being used for group work" }, { id: "rb2-02-d", text: "Staff prefer standing desks" }
+        { id: "rb2-02-a", text: "More employees are permanently working from home" }, { id: "rb2-02-b", text: "Companies are moving into physically smaller buildings" },
+        { id: "rb2-02-c", text: "More floor space is being devoted to collaborative work" }, { id: "rb2-02-d", text: "Individual work is now expected to happen in meeting rooms" }
       ]},
       { id: "rb2-03", prompt: "What concern do critics raise?", options: [
-        { id: "rb2-03-a", text: "Office days may feel forced rather than purposeful" }, { id: "rb2-03-b", text: "Remote work costs too much" },
-        { id: "rb2-03-c", text: "New employees receive too much mentoring" }, { id: "rb2-03-d", text: "Teams meet too frequently online" }
+        { id: "rb2-03-a", text: "Scheduled office days can feel artificial rather than useful" }, { id: "rb2-03-b", text: "Face-to-face collaboration can make complex problems harder" },
+        { id: "rb2-03-c", text: "Mentoring new employees takes too much time away from work" }, { id: "rb2-03-d", text: "Remote employees are being excluded from important decisions" }
       ]},
       { id: "rb2-04", prompt: "What is the supporters' main argument?", options: [
-        { id: "rb2-04-a", text: "Employees work harder when watched" }, { id: "rb2-04-b", text: "All work should happen in person" },
-        { id: "rb2-04-c", text: "Office attendance should have a clear purpose" }, { id: "rb2-04-d", text: "Physical offices will soon disappear" }
+        { id: "rb2-04-a", text: "Visible supervision is still necessary for strong productivity" }, { id: "rb2-04-b", text: "Most professional work is more effective when done in person" },
+        { id: "rb2-04-c", text: "Being in the office should serve a specific purpose" }, { id: "rb2-04-d", text: "Physical offices are mainly valuable for newly hired staff" }
       ]}
     ]
   },
@@ -442,20 +442,20 @@ window.BRIGHTON_PLACEMENT_MODULES = {
     passage: "Digital services often treat friction as something to eliminate: fewer clicks, faster decisions, less interruption. Yet some designers are deliberately reintroducing small obstacles. A banking app might ask users to pause before moving money from savings, or a news platform might delay the sharing of an article that has not been opened. Such features can appear inefficient, but that is partly the point. Their value lies in creating a moment in which automatic behaviour becomes a conscious choice. The difficulty, of course, is distinguishing useful reflection from irritation; friction that merely wastes time is unlikely to change behaviour for long.",
     items: [
       { id: "rc1-01", prompt: "Why are some designers adding friction?", options: [
-        { id: "rc1-01-a", text: "To make services technically slower" }, { id: "rc1-01-b", text: "To interrupt automatic decisions" },
-        { id: "rc1-01-c", text: "To reduce the number of users" }, { id: "rc1-01-d", text: "To imitate older technology" }
+        { id: "rc1-01-a", text: "To make users spend more time inside digital services" }, { id: "rc1-01-b", text: "To interrupt automatic behaviour and prompt conscious choice" },
+        { id: "rc1-01-c", text: "To compensate for technical delays that cannot be removed" }, { id: "rc1-01-d", text: "To reduce the number of choices available to users" }
       ]},
       { id: "rc1-02", prompt: "What do the examples have in common?", options: [
-        { id: "rc1-02-a", text: "They prevent users from completing an action" }, { id: "rc1-02-b", text: "They create a brief pause before an action" },
-        { id: "rc1-02-c", text: "They require users to pay extra" }, { id: "rc1-02-d", text: "They remove choices from users" }
+        { id: "rc1-02-a", text: "They permanently block an action judged to be risky" }, { id: "rc1-02-b", text: "They insert a short pause before the user proceeds" },
+        { id: "rc1-02-c", text: "They make users pay a cost before continuing" }, { id: "rc1-02-d", text: "They remove the option once the action has begun" }
       ]},
       { id: "rc1-03", prompt: "In the text, 'that is partly the point' means the inefficiency is...", options: [
-        { id: "rc1-03-a", text: "an accidental technical problem" }, { id: "rc1-03-b", text: "expected to disappear later" },
-        { id: "rc1-03-c", text: "deliberate and potentially useful" }, { id: "rc1-03-d", text: "too small for users to notice" }
+        { id: "rc1-03-a", text: "an unavoidable cost of improving system security" }, { id: "rc1-03-b", text: "a temporary flaw that designers expect to remove" },
+        { id: "rc1-03-c", text: "a deliberate feature that can serve a useful purpose" }, { id: "rc1-03-d", text: "evidence that the service has been poorly optimized" }
       ]},
       { id: "rc1-04", prompt: "What limitation does the writer identify?", options: [
-        { id: "rc1-04-a", text: "Any delay will improve behaviour" }, { id: "rc1-04-b", text: "Useful friction can be hard to separate from annoyance" },
-        { id: "rc1-04-c", text: "Users never notice design choices" }, { id: "rc1-04-d", text: "News platforms cannot slow sharing" }
+        { id: "rc1-04-a", text: "Small delays inevitably improve users' long-term behaviour" }, { id: "rc1-04-b", text: "Helpful friction can be difficult to distinguish from annoyance" },
+        { id: "rc1-04-c", text: "Users eventually stop noticing any deliberate design obstacle" }, { id: "rc1-04-d", text: "Different digital services require completely different principles" }
       ]}
     ]
   }
@@ -465,11 +465,11 @@ window.BRIGHTON_PLACEMENT_MODULES = {
     label: "Listening",
     items: [
       { id: "lpa-01", audio: "audio/listening/prea1-01.mp3", prompt: "Where does Emma live?", options: [
-        { id: "lpa-01-a", text: "Near the park" }, { id: "lpa-01-b", text: "Near the school" },
-        { id: "lpa-01-c", text: "Near the beach" }, { id: "lpa-01-d", text: "Near the hospital" }
+        { id: "lpa-01-a", text: "In a small house near the park" }, { id: "lpa-01-b", text: "In a small house near the school" },
+        { id: "lpa-01-c", text: "In a small house near the beach" }, { id: "lpa-01-d", text: "In a small house near the hospital" }
       ]},
       { id: "lpa-02", audio: "audio/listening/prea1-02.mp3", prompt: "What time does the bus leave?", options: [
-        { id: "lpa-02-a", text: "7:45" }, { id: "lpa-02-b", text: "8:00" },
+        { id: "lpa-02-a", text: "8:10" }, { id: "lpa-02-b", text: "8:00" },
         { id: "lpa-02-c", text: "8:15" }, { id: "lpa-02-d", text: "8:30" }
       ]},
       { id: "lpa-03", audio: "audio/listening/prea1-03.mp3", prompt: "When is the café closed?", options: [
@@ -492,8 +492,8 @@ window.BRIGHTON_PLACEMENT_MODULES = {
         { id: "la1-02-c", text: "4:30" }, { id: "la1-02-d", text: "5:00" }
       ]},
       { id: "la1-03", audio: "audio/listening/a1-03.mp3", prompt: "Where were the keys?", options: [
-        { id: "la1-03-a", text: "In her bag" }, { id: "la1-03-b", text: "On the kitchen table" },
-        { id: "la1-03-c", text: "Next to the front door" }, { id: "la1-03-d", text: "In her bedroom" }
+        { id: "la1-03-a", text: "At the bottom of her bag" }, { id: "la1-03-b", text: "On top of the kitchen table" },
+        { id: "la1-03-c", text: "Next to the front door" }, { id: "la1-03-d", text: "Beside the bed in her room" }
       ]}
     ]
   },
@@ -503,16 +503,16 @@ window.BRIGHTON_PLACEMENT_MODULES = {
     label: "Listening",
     items: [
       { id: "la2-01", audio: "audio/listening/a2-01.mp3", prompt: "Where will they meet?", options: [
-        { id: "la2-01-a", text: "At the café" }, { id: "la2-01-b", text: "Outside the cinema" },
-        { id: "la2-01-c", text: "At the station" }, { id: "la2-01-d", text: "Across from the park" }
+        { id: "la2-01-a", text: "Outside the closed café" }, { id: "la2-01-b", text: "Outside the cinema" },
+        { id: "la2-01-c", text: "At the station entrance" }, { id: "la2-01-d", text: "By the park entrance" }
       ]},
       { id: "la2-02", audio: "audio/listening/a2-02.mp3", prompt: "Why was the man late?", options: [
-        { id: "la2-02-a", text: "There was heavy traffic" }, { id: "la2-02-b", text: "He missed the bus" },
-        { id: "la2-02-c", text: "He returned home for his phone" }, { id: "la2-02-d", text: "He couldn't find the address" }
+        { id: "la2-02-a", text: "Traffic was heavy on the way" }, { id: "la2-02-b", text: "He missed his usual bus" },
+        { id: "la2-02-c", text: "He had to go back for his phone" }, { id: "la2-02-d", text: "He could not find the address" }
       ]},
       { id: "la2-03", audio: "audio/listening/a2-03.mp3", prompt: "What do participants need to bring?", options: [
-        { id: "la2-03-a", text: "Paper" }, { id: "la2-03-b", text: "A phone or camera" },
-        { id: "la2-03-c", text: "A laptop" }, { id: "la2-03-d", text: "A printed photo" }
+        { id: "la2-03-a", text: "Paper for taking notes" }, { id: "la2-03-b", text: "A phone or a camera" },
+        { id: "la2-03-c", text: "A laptop for editing" }, { id: "la2-03-d", text: "A printed photograph" }
       ]}
     ]
   },
@@ -522,16 +522,16 @@ window.BRIGHTON_PLACEMENT_MODULES = {
     label: "Listening",
     items: [
       { id: "lb1-01", audio: "audio/listening/b1-01.mp3", prompt: "Why did the speaker change gyms?", options: [
-        { id: "lb1-01-a", text: "The old gym became too crowded" }, { id: "lb1-01-b", text: "The new gym is cheaper" },
-        { id: "lb1-01-c", text: "She moved to another neighbourhood" }, { id: "lb1-01-d", text: "The old gym closed" }
+        { id: "lb1-01-a", text: "She was spending too long waiting for equipment" }, { id: "lb1-01-b", text: "The new gym offered a much cheaper membership" },
+        { id: "lb1-01-c", text: "She had moved farther away from the old gym" }, { id: "lb1-01-d", text: "The old gym had reduced its opening hours" }
       ]},
       { id: "lb1-02", audio: "audio/listening/b1-02.mp3", prompt: "Why was the meeting moved?", options: [
-        { id: "lb1-02-a", text: "The meeting room was unavailable" }, { id: "lb1-02-b", text: "Maya's flight was delayed" },
-        { id: "lb1-02-c", text: "The project was not ready" }, { id: "lb1-02-d", text: "The man had another appointment" }
+        { id: "lb1-02-a", text: "The usual meeting room could not be used" }, { id: "lb1-02-b", text: "Maya's delayed flight meant she would arrive late" },
+        { id: "lb1-02-c", text: "The project materials would not be ready by two" }, { id: "lb1-02-d", text: "The man already had another appointment at two" }
       ]},
       { id: "lb1-03", audio: "audio/listening/b1-03.mp3", prompt: "How did the speaker's attitude change?", options: [
-        { id: "lb1-03-a", text: "He became more interested in the class" }, { id: "lb1-03-b", text: "He decided recipes were always necessary" },
-        { id: "lb1-03-c", text: "He thought the teacher was too strict" }, { id: "lb1-03-d", text: "He stopped attending the lessons" }
+        { id: "lb1-03-a", text: "He became increasingly enthusiastic about the class" }, { id: "lb1-03-b", text: "He decided that following recipes exactly was essential" },
+        { id: "lb1-03-c", text: "He became frustrated by the teacher's flexible approach" }, { id: "lb1-03-d", text: "He lost interest and stopped attending the lessons" }
       ]}
     ]
   },
@@ -541,16 +541,16 @@ window.BRIGHTON_PLACEMENT_MODULES = {
     label: "Listening",
     items: [
       { id: "lbp-01", audio: "audio/listening/b1plus-01.mp3", prompt: "What do they decide to do?", options: [
-        { id: "lbp-01-a", text: "Take the early train" }, { id: "lbp-01-b", text: "Drive after breakfast" },
-        { id: "lbp-01-c", text: "Buy cheaper train tickets later" }, { id: "lbp-01-d", text: "Cancel the trip" }
+        { id: "lbp-01-a", text: "Take the early train despite the higher price" }, { id: "lbp-01-b", text: "Drive after breakfast instead of taking the train" },
+        { id: "lbp-01-c", text: "Wait and buy cheaper train tickets later" }, { id: "lbp-01-d", text: "Cancel the trip because both options are inconvenient" }
       ]},
       { id: "lbp-02", audio: "audio/listening/b1plus-02.mp3", prompt: "What has changed about the training session?", options: [
-        { id: "lbp-02-a", text: "Its starting time" }, { id: "lbp-02-b", text: "Its day" },
-        { id: "lbp-02-c", text: "Its location" }, { id: "lbp-02-d", text: "Its instructor" }
+        { id: "lbp-02-a", text: "The session will begin at a different time" }, { id: "lbp-02-b", text: "The session has been moved to another day" },
+        { id: "lbp-02-c", text: "The session will take place in a different room" }, { id: "lbp-02-d", text: "A different instructor will lead the session" }
       ]},
       { id: "lbp-03", audio: "audio/listening/b1plus-03.mp3", prompt: "What is the speaker's overall view of the hotel's location?", options: [
-        { id: "lbp-03-a", text: "It was inconvenient throughout the trip" }, { id: "lbp-03-b", text: "It had disadvantages but worked out well" },
-        { id: "lbp-03-c", text: "It was exactly as advertised" }, { id: "lbp-03-d", text: "It was too noisy to recommend" }
+        { id: "lbp-03-a", text: "The location remained inconvenient for most of the trip" }, { id: "lbp-03-b", text: "The location had drawbacks, but they were manageable" },
+        { id: "lbp-03-c", text: "The location was as central as the website suggested" }, { id: "lbp-03-d", text: "The area was too noisy for a comfortable stay" }
       ]}
     ]
   },
@@ -560,16 +560,16 @@ window.BRIGHTON_PLACEMENT_MODULES = {
     label: "Listening",
     items: [
       { id: "lb2-01", audio: "audio/listening/b2-01.mp3", prompt: "What is the speaker mainly criticising?", options: [
-        { id: "lb2-01-a", text: "Working with colleagues in person" }, { id: "lb2-01-b", text: "Having online meetings" },
-        { id: "lb2-01-c", text: "Commuting when physical presence adds little value" }, { id: "lb2-01-d", text: "Working from home too frequently" }
+        { id: "lb2-01-a", text: "The loss of informal contact with office colleagues" }, { id: "lb2-01-b", text: "The amount of time spent in online meetings" },
+        { id: "lb2-01-c", text: "Commuting to an office when being there adds little" }, { id: "lb2-01-d", text: "The tendency to work from home too frequently" }
       ]},
       { id: "lb2-02", audio: "audio/listening/b2-02.mp3", prompt: "What does the woman imply?", options: [
-        { id: "lb2-02-a", text: "The campaign succeeded completely" }, { id: "lb2-02-b", text: "Website traffic was measured incorrectly" },
-        { id: "lb2-02-c", text: "Increased attention did not produce the intended business result" }, { id: "lb2-02-d", text: "The company should stop advertising online" }
+        { id: "lb2-02-a", text: "The campaign met its goals despite weak sales growth" }, { id: "lb2-02-b", text: "The reported increase in website visits is unreliable" },
+        { id: "lb2-02-c", text: "More attention did not translate into the intended commercial result" }, { id: "lb2-02-d", text: "Online advertising is no longer useful for the company" }
       ]},
       { id: "lb2-03", audio: "audio/listening/b2-03.mp3", prompt: "What should passengers do?", options: [
-        { id: "lb2-03-a", text: "Move to another platform" }, { id: "lb2-03-b", text: "Wait on Platform Six" },
-        { id: "lb2-03-c", text: "Return in twenty minutes" }, { id: "lb2-03-d", text: "Take the next scheduled service" }
+        { id: "lb2-03-a", text: "Move to another platform before the replacement arrives" }, { id: "lb2-03-b", text: "Remain on Platform Six and wait for the replacement" },
+        { id: "lb2-03-c", text: "Leave the station and return in about twenty minutes" }, { id: "lb2-03-d", text: "Ignore the replacement and take the next scheduled service" }
       ]}
     ]
   },
@@ -579,16 +579,16 @@ window.BRIGHTON_PLACEMENT_MODULES = {
     label: "Listening",
     items: [
       { id: "lc1-01", audio: "audio/listening/c1-01.mp3", prompt: "What is the speaker's main point?", options: [
-        { id: "lc1-01-a", text: "Convenient systems always produce better decisions" }, { id: "lc1-01-b", text: "Minor obstacles can sometimes encourage more deliberate choices" },
-        { id: "lc1-01-c", text: "People generally dislike making quick decisions" }, { id: "lc1-01-d", text: "Technology should make every action more difficult" }
+        { id: "lc1-01-a", text: "Convenience generally improves the quality of our decisions" }, { id: "lc1-01-b", text: "Small obstacles can create space for more deliberate choices" },
+        { id: "lc1-01-c", text: "People tend to regret decisions made too slowly" }, { id: "lc1-01-d", text: "Digital systems should deliberately make every action difficult" }
       ]},
       { id: "lc1-02", audio: "audio/listening/c1-02.mp3", prompt: "What concern does the woman express?", options: [
-        { id: "lc1-02-a", text: "The product is already complete" }, { id: "lc1-02-b", text: "A delay without a clear plan may achieve little" },
-        { id: "lc1-02-c", text: "Two weeks is far too long a delay" }, { id: "lc1-02-d", text: "The launch date should never change" }
+        { id: "lc1-02-a", text: "The product may already be complete enough to launch" }, { id: "lc1-02-b", text: "Postponing without a specific repair plan may achieve little" },
+        { id: "lc1-02-c", text: "A two-week delay would make the launch unacceptably late" }, { id: "lc1-02-d", text: "Any change to the agreed launch date is a mistake" }
       ]},
       { id: "lc1-03", audio: "audio/listening/c1-03.mp3", prompt: "According to the speaker, what is now scarce?", options: [
-        { id: "lc1-03-a", text: "Information itself" }, { id: "lc1-03-b", text: "Reliable technology" },
-        { id: "lc1-03-c", text: "The attention needed to evaluate information" }, { id: "lc1-03-d", text: "Opportunities to express opinions" }
+        { id: "lc1-03-a", text: "Access to large amounts of reliable information" }, { id: "lc1-03-b", text: "Technology capable of organizing information effectively" },
+        { id: "lc1-03-c", text: "Attention for examining and judging abundant information" }, { id: "lc1-03-d", text: "Opportunities for people to contribute their own opinions" }
       ]}
     ]
   }
