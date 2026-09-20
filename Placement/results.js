@@ -51,14 +51,17 @@
 
   loadResults();
 
-  async function apiGet(path, params = {}) {
+  async function apiPost(path, body = {}) {
     if (!apiBase) throw new Error("Brighton Database is not configured.");
-    const url = new URL(`${apiBase}/${path}`);
-    Object.entries(params).forEach(([key, value]) => {
-      if (value !== "" && value != null) url.searchParams.set(key, String(value));
+
+    const response = await fetch(`${apiBase}/${path}`, {
+      method: "POST",
+      headers: {
+        "Content-Type": "text/plain;charset=UTF-8"
+      },
+      body: JSON.stringify(body)
     });
 
-    const response = await fetch(url);
     const payload = await response.json().catch(() => ({}));
     if (!response.ok || !payload?.success) {
       throw new Error(payload?.error || `Request failed (${response.status}).`);
@@ -72,7 +75,7 @@
     resultsBody.innerHTML = '<tr><td colspan="8">Loading…</td></tr>';
 
     try {
-      const payload = await apiGet("brightonPlacementResults", {
+      const payload = await apiPost("brightonPlacementResults", {
         student: studentInput.value.trim(),
         level: levelSelect.value,
         status: statusSelect.value
@@ -146,7 +149,7 @@
     detailsContent.innerHTML = '<div class="detail-loading">Loading placement details…</div>';
 
     try {
-      const payload = await apiGet("brightonPlacementDashboardResult", { sessionId });
+      const payload = await apiPost("brightonPlacementDashboardResult", { sessionId });
       renderDetails(payload);
     } catch (error) {
       console.error(error);
