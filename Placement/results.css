@@ -227,6 +227,109 @@
   font-size: 18px;
 }
 
+.examiner-report {
+  margin-top: 16px;
+  padding: 16px;
+  border-radius: 20px;
+  background: #fbfcff;
+  border: 1px solid rgba(32,38,49,.08);
+}
+
+.examiner-report-head {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 8px;
+  margin-bottom: 12px;
+}
+
+.examiner-report-head > div {
+  padding: 10px 12px;
+  border-radius: 14px;
+  background: var(--panel);
+}
+
+.examiner-report-head span {
+  display: block;
+  color: var(--muted);
+  font-size: 9px;
+  font-weight: 900;
+  text-transform: uppercase;
+}
+
+.examiner-report-head strong {
+  display: block;
+  margin-top: 3px;
+  font-size: 12px;
+}
+
+.examiner-dimensions {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.examiner-dimension {
+  padding: 13px;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid rgba(32,38,49,.07);
+}
+
+.examiner-dimension-head {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+}
+
+.examiner-dimension-head span {
+  color: var(--teal);
+  font-weight: 900;
+}
+
+.examiner-dimension ul,
+.examiner-errors ul {
+  margin: 8px 0 0;
+  padding-left: 18px;
+}
+
+.examiner-dimension li,
+.examiner-errors li {
+  margin: 4px 0;
+  color: var(--muted);
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.communication-subscores,
+.examiner-errors {
+  margin-top: 10px;
+  padding: 13px;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid rgba(32,38,49,.07);
+}
+
+.communication-subscores > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 7px;
+}
+
+.communication-subscores span {
+  padding: 6px 9px;
+  border-radius: 999px;
+  background: var(--panel);
+  color: var(--muted);
+  font-size: 10px;
+}
+
+.examiner-errors small {
+  margin-left: 5px;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
 .empty-speaking {
   padding: 16px;
   border-radius: 18px;
@@ -245,6 +348,10 @@
   }
   .speaking-metrics {
     grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .examiner-report-head,
+  .examiner-dimensions {
+    grid-template-columns: 1fr;
   }
 }
 

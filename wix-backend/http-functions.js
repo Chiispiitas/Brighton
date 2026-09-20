@@ -37,7 +37,7 @@ export function get_brightonBackendHealth() {
     success: true,
     service: "brighton-assessment-backend",
     answerKeyVersion: ANSWER_KEY_VERSION,
-    placementContract: "2026-09-19.8"
+    placementContract: "2026-09-20.1"
   });
 }
 

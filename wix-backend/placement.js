@@ -1,5 +1,5 @@
 // Brighton Adaptive Placement — business logic module
-// Contract: 2026-09-19.8
+// Contract: 2026-09-20.1
 // Wix file: Backend/placement.js
 //
 // Keep HTTP routing in Backend/http-functions.js.
@@ -12,13 +12,18 @@ import {
   jsonServerError,
   readJsonBody
 } from "backend/core.js";
+import {
+  gradeSpeakingWithGemini,
+  GEMINI_SPEAKING_MODEL,
+  SPEAKING_RUBRIC_VERSION
+} from "backend/gemini-speaking.js";
 
 const PLACEMENT_SESSIONS = "BrightonPlacementSessions";
 const PLACEMENT_RESPONSES = "BrightonPlacementResponses";
 const PLACEMENT_ITEMS = "BrightonPlacementItems";
 const PLACEMENT_SPEAKING = "BrightonPlacementSpeaking";
 
-const PLACEMENT_VERSION = "2026-09-19.8";
+const PLACEMENT_VERSION = "2026-09-20.1";
 const ITEM_KEY_VERSION = "2026-09-19.7";
 
 const LEVELS = ["PRE-A1", "A1", "A2", "B1", "B1+", "B2", "C1"];
@@ -53,37 +58,12 @@ const SPEAKING_PROMPT_BY_MODULE = {
   "speaking-c1": "sp-c1-01"
 };
 
-const SPEAKING_PROFILES = {
-  "PRE-A1": { minSeconds: 12, targetSeconds: 20, targetWords: 12, wpmLow: 25, wpmHigh: 100, uniqueTarget: .72, longWordTarget: .02, connectorTarget: 0, complexTarget: 0, segmentTarget: 1 },
-  "A1":     { minSeconds: 15, targetSeconds: 25, targetWords: 20, wpmLow: 35, wpmHigh: 110, uniqueTarget: .68, longWordTarget: .03, connectorTarget: 1, complexTarget: 0, segmentTarget: 2 },
-  "A2":     { minSeconds: 20, targetSeconds: 35, targetWords: 32, wpmLow: 45, wpmHigh: 125, uniqueTarget: .63, longWordTarget: .05, connectorTarget: 2, complexTarget: 1, segmentTarget: 2 },
-  "B1":     { minSeconds: 25, targetSeconds: 40, targetWords: 45, wpmLow: 55, wpmHigh: 145, uniqueTarget: .60, longWordTarget: .07, connectorTarget: 3, complexTarget: 2, segmentTarget: 3 },
-  "B1+":    { minSeconds: 30, targetSeconds: 45, targetWords: 55, wpmLow: 60, wpmHigh: 155, uniqueTarget: .58, longWordTarget: .08, connectorTarget: 4, complexTarget: 3, segmentTarget: 3 },
-  "B2":     { minSeconds: 35, targetSeconds: 50, targetWords: 65, wpmLow: 65, wpmHigh: 165, uniqueTarget: .56, longWordTarget: .10, connectorTarget: 5, complexTarget: 4, segmentTarget: 4 },
-  "C1":     { minSeconds: 40, targetSeconds: 55, targetWords: 75, wpmLow: 70, wpmHigh: 175, uniqueTarget: .54, longWordTarget: .12, connectorTarget: 6, complexTarget: 5, segmentTarget: 4 }
-};
-
-const CONNECTOR_WORDS = new Set([
-  "and", "but", "because", "so", "although", "however", "therefore", "while",
-  "whereas", "instead", "also", "first", "second", "finally", "unless", "despite",
-  "though", "since", "then", "besides", "moreover", "furthermore", "otherwise"
-]);
-
-const COMPLEX_MARKERS = new Set([
-  "although", "however", "therefore", "whereas", "unless", "despite", "though",
-  "because", "while", "which", "who", "whose", "whether", "if", "since", "rather"
-]);
-
 function safeJson(value, fallback) {
   try {
     return value ? JSON.parse(value) : fallback;
   } catch {
     return fallback;
   }
-}
-
-function clamp(value, min = 0, max = 1) {
-  return Math.min(max, Math.max(min, Number(value) || 0));
 }
 
 function round1(value) {
@@ -209,163 +189,6 @@ function expectedAnswerCount(moduleId) {
   if (/^listening-/.test(moduleId)) return 3;
   if (/^reading-/.test(moduleId)) return 4;
   return 5;
-}
-
-function tokeniseTranscript(transcript) {
-  return String(transcript || "")
-    .toLowerCase()
-    .match(/[a-z]+(?:'[a-z]+)?/g) || [];
-}
-
-function countPhrase(text, phrase) {
-  const source = String(text || "").toLowerCase();
-  const needle = String(phrase || "").toLowerCase();
-  if (!needle) return 0;
-  return Math.max(0, source.split(needle).length - 1);
-}
-
-function paceScore(wpm, low, high) {
-  if (!wpm) return 0;
-  if (wpm < low) return clamp(wpm / low);
-  if (wpm > high) return clamp(high / wpm);
-  return 1;
-}
-
-function gradeSpeakingDeterministically(payload, level) {
-  const profile = SPEAKING_PROFILES[level] || SPEAKING_PROFILES.A2;
-
-  const transcript = String(payload.transcript || "")
-    .replace(/\s+/g, " ")
-    .trim()
-    .slice(0, 5000);
-
-  const tokens = tokeniseTranscript(transcript);
-  const wordCount = tokens.length;
-  const uniqueWords = new Set(tokens).size;
-  const uniqueRatio = wordCount ? uniqueWords / wordCount : 0;
-  const longWordRatio = wordCount ? tokens.filter((word) => word.length >= 7).length / wordCount : 0;
-  const connectorCount = tokens.filter((word) => CONNECTOR_WORDS.has(word)).length;
-  const complexCount = tokens.filter((word) => COMPLEX_MARKERS.has(word)).length;
-
-  const fillerCount =
-    tokens.filter((word) => ["um", "uh", "erm", "hmm"].includes(word)).length +
-    countPhrase(transcript, "you know") +
-    countPhrase(transcript, "i mean");
-
-  const durationSeconds = clamp(payload.durationSeconds, 0, 180);
-  const speechSeconds = clamp(payload.speechSeconds, 0, 180);
-  const speechRatio = clamp(payload.speechRatio, 0, 1);
-  const recognitionConfidence = clamp(payload.recognitionConfidence, 0, 1);
-  const segmentCount = Math.max(0, Math.min(100, Number(payload.segmentCount) || 0));
-  const recordedBytes = Math.max(0, Number(payload.recordedBytes) || 0);
-  const transcriptAvailable = Boolean(payload.transcriptAvailable && transcript);
-
-  const wpm = durationSeconds > 0 ? wordCount / (durationSeconds / 60) : 0;
-  const durationScore = clamp(durationSeconds / profile.targetSeconds);
-  const minimumDurationScore = clamp(durationSeconds / profile.minSeconds);
-  const speechActivityScore = clamp((speechRatio - .16) / .62);
-  const speedScore = paceScore(wpm, profile.wpmLow, profile.wpmHigh);
-  const wordScore = clamp(wordCount / profile.targetWords);
-  const lexicalScore = clamp(uniqueRatio / profile.uniqueTarget);
-  const longWordScore = profile.longWordTarget ? clamp(longWordRatio / profile.longWordTarget) : 1;
-  const connectorScore = profile.connectorTarget ? clamp(connectorCount / profile.connectorTarget) : 1;
-  const complexScore = profile.complexTarget ? clamp(complexCount / profile.complexTarget) : 1;
-  const segmentScore = clamp(segmentCount / profile.segmentTarget);
-  const fillerRate = wordCount ? fillerCount / wordCount : 1;
-
-  const fluency = clamp(
-    10 * (.34 * durationScore + .36 * speechActivityScore + .30 * speedScore) -
-      Math.min(2, fillerRate * 28),
-    0,
-    10
-  );
-
-  const grammar = clamp(
-    10 * (.42 * wordScore + .38 * complexScore + .20 * segmentScore),
-    0,
-    10
-  );
-
-  const vocabulary = clamp(
-    10 * (.40 * wordScore + .38 * lexicalScore + .22 * longWordScore),
-    0,
-    10
-  );
-
-  const recognitionSignal = recognitionConfidence > 0
-    ? recognitionConfidence
-    : (transcriptAvailable ? .72 : .20);
-
-  const pronunciation = clamp(
-    10 * (.48 * recognitionSignal + .30 * speechActivityScore + .22 * speedScore),
-    0,
-    10
-  );
-
-  const communication = clamp(
-    10 * (.46 * wordScore + .34 * connectorScore + .20 * segmentScore),
-    0,
-    10
-  );
-
-  const composite = round1(
-    fluency * .25 +
-    grammar * .20 +
-    vocabulary * .20 +
-    pronunciation * .15 +
-    communication * .20
-  );
-
-  const inputError =
-    !transcriptAvailable ||
-    wordCount < 5 ||
-    durationSeconds < profile.minSeconds * .72 ||
-    speechRatio < .25 ||
-    recordedBytes < 4000;
-
-  const currentIndex = Math.max(0, LEVELS.indexOf(level));
-  let speakingLevel = level;
-
-  if (!inputError && composite >= 7.6 && wordCount >= profile.targetWords * .78) {
-    speakingLevel = LEVELS[Math.min(LEVELS.length - 1, currentIndex + 1)];
-  } else if (!inputError && composite < 4.4) {
-    speakingLevel = LEVELS[Math.max(0, currentIndex - 1)];
-  }
-
-  return {
-    transcript,
-    wordCount,
-    uniqueWords,
-    uniqueRatio: round1(uniqueRatio),
-    longWordRatio: round1(longWordRatio),
-    connectorCount,
-    complexCount,
-    fillerCount,
-    durationSeconds: round1(durationSeconds),
-    speechSeconds: round1(speechSeconds),
-    speechRatio: round1(speechRatio),
-    wpm: round1(wpm),
-    recognitionConfidence: round1(recognitionConfidence),
-    segmentCount,
-    transcriptAvailable,
-    fluency: round1(fluency),
-    grammar: round1(grammar),
-    vocabulary: round1(vocabulary),
-    pronunciation: round1(pronunciation),
-    communication: round1(communication),
-    composite,
-    speakingLevel,
-    finalLevel: inputError ? level : speakingLevel,
-    inputError,
-    confidence: round1(clamp(
-      .60 +
-      .16 * minimumDurationScore +
-      .14 * speechActivityScore +
-      .10 * (transcriptAvailable ? 1 : 0),
-      .35,
-      .92
-    ))
-  };
 }
 
 async function getPlacementSession(sessionId, clientSessionId) {
@@ -819,12 +642,13 @@ export async function submitSpeaking(request) {
       return jsonBadRequest("Invalid speaking prompt.");
     }
 
-    const grade = gradeSpeakingDeterministically(payload, level);
+    const grade = await gradeSpeakingWithGemini(payload, level, promptId);
 
     if (grade.inputError) {
       return jsonOK({
         success: true,
-        speakingError: true
+        speakingError: grade.retryReason !== "prompt-repeat",
+        speakingRetryReason: grade.retryReason === "prompt-repeat" ? "prompt-repeat" : ""
       });
     }
 
@@ -856,17 +680,14 @@ export async function submitSpeaking(request) {
       pronunciation: grade.pronunciation,
       communication: grade.communication,
       speakingLevel: grade.speakingLevel,
-      graderVersion: "deterministic-browser-v1",
+      graderVersion: GEMINI_SPEAKING_MODEL,
       metricsJson: JSON.stringify({
         composite: grade.composite,
-        speechRatio: grade.speechRatio,
-        uniqueWords: grade.uniqueWords,
-        uniqueRatio: grade.uniqueRatio,
-        longWordRatio: grade.longWordRatio,
-        connectorCount: grade.connectorCount,
-        complexCount: grade.complexCount,
-        fillerCount: grade.fillerCount,
-        transcriptAvailable: grade.transcriptAvailable
+        rubricVersion: SPEAKING_RUBRIC_VERSION,
+        model: GEMINI_SPEAKING_MODEL,
+        evidenceQuality: grade.assessment?.evidenceQuality || "",
+        assessment: grade.assessment || null,
+        usage: grade.usage || null
       }),
       createdAt: existing.items[0]?.createdAt || now
     };
@@ -1193,7 +1014,10 @@ export async function getPlacementDashboardResult(request) {
           graderVersion: String(speakingRecord.graderVersion || ""),
           composite: Number.isFinite(Number(speakingMetrics?.composite))
             ? Number(speakingMetrics.composite)
-            : null
+            : null,
+          rubricVersion: String(speakingMetrics?.rubricVersion || ""),
+          evidenceQuality: String(speakingMetrics?.evidenceQuality || ""),
+          assessment: speakingMetrics?.assessment || null
         }
       : null;
 
