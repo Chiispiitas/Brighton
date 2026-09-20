@@ -197,3 +197,44 @@ The normal prompt screen also says:
 > Answer the question. Do not read or repeat it.
 
 This keeps the command understandable for low-level learners while preventing a repeated prompt from receiving artificial Vocabulary/Fluency credit.
+
+
+## v7 scoring and cross-browser calibration
+
+### Speaking evidence confidence
+
+The old `confidence` field was **not a probability that the final placement was correct**. It was a coarse Speaking-capture heuristic, and because it was rounded to one decimal place and heavily rewarded any usable transcript, many successful attempts collapsed to `0.9`.
+
+From v7 the field is explicitly treated as **Speaking evidence confidence**. It is stored to two decimal places and varies with:
+- browser recognition quality when the browser actually reports confidence;
+- transcript coverage relative to the routed level;
+- whether the answer reaches the minimum speaking duration;
+- recognition stability;
+- prompt originality.
+
+Audio-only compatibility attempts are capped below transcript-backed attempts because they provide weaker language evidence.
+
+### Pronunciation
+
+Pronunciation remains an **intelligibility proxy**, not phoneme-level accent scoring. The old formula incorrectly mixed speech activity and speaking speed into Pronunciation. v7 removes those factors. Pronunciation now uses:
+- calibrated browser recognition confidence;
+- recognition stability;
+- how much usable speech was successfully transcribed.
+
+High browser recognition confidence (about 0.88+) is treated as strong intelligibility evidence instead of mechanically capping a native-like answer around 9/10.
+
+### Fluency
+
+Fluency now focuses on:
+- meeting the minimum response length;
+- continuous speech rather than silence-heavy delivery;
+- a broad natural speaking-rate range;
+- filler frequency.
+
+Fast natural speech is no longer penalized merely for going above the old level-specific WPM ceiling. Only genuinely extreme rates are reduced.
+
+### Opera / macOS
+
+Opera is now treated like mobile browsers when it exposes Web Speech: SpeechRecognition runs without MediaRecorder competing for the microphone. If Opera does not expose browser speech recognition, the recording still uses MediaRecorder + Web Audio and the v7 backend accepts it in compatibility mode rather than rejecting the submission.
+
+Browser family, platform, capture mode, recognition error, and recognition support are stored with Speaking metrics. If the student explicitly chooses **I cannot speak now** after an error, those diagnostics are saved in session progress so the failed browser path can be investigated later.
