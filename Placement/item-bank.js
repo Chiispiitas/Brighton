@@ -599,7 +599,8 @@ window.BRIGHTON_PLACEMENT_MODULES = {
     promptId: "sp-prea1-01",
     prompt: "Tell us about yourself. Say where you live and one thing you like doing.",
     targetSeconds: 20,
-    minimumSeconds: 12
+    minimumSeconds: 12,
+    maximumSeconds: 35
   },
 
   "speaking-a1": {
@@ -608,7 +609,8 @@ window.BRIGHTON_PLACEMENT_MODULES = {
     promptId: "sp-a1-01",
     prompt: "Describe a normal weekday for you. What do you do in the morning, afternoon and evening?",
     targetSeconds: 25,
-    minimumSeconds: 15
+    minimumSeconds: 15,
+    maximumSeconds: 40
   },
 
   "speaking-a2": {
@@ -617,7 +619,8 @@ window.BRIGHTON_PLACEMENT_MODULES = {
     promptId: "sp-a2-01",
     prompt: "Talk about a place you enjoy visiting. Describe it, say what you do there and explain why you like it.",
     targetSeconds: 35,
-    minimumSeconds: 20
+    minimumSeconds: 20,
+    maximumSeconds: 50
   },
 
   "speaking-b1": {
@@ -626,7 +629,8 @@ window.BRIGHTON_PLACEMENT_MODULES = {
     promptId: "sp-b1-01",
     prompt: "Talk about a challenge you faced. Explain what happened, what you did and what you learned from it.",
     targetSeconds: 40,
-    minimumSeconds: 25
+    minimumSeconds: 25,
+    maximumSeconds: 65
   },
 
   "speaking-b1plus": {
@@ -635,7 +639,8 @@ window.BRIGHTON_PLACEMENT_MODULES = {
     promptId: "sp-b1plus-01",
     prompt: "Do students learn better online or in person? Give your opinion, compare both options and support your answer with an example.",
     targetSeconds: 45,
-    minimumSeconds: 30
+    minimumSeconds: 30,
+    maximumSeconds: 75
   },
 
   "speaking-b2": {
@@ -644,7 +649,8 @@ window.BRIGHTON_PLACEMENT_MODULES = {
     promptId: "sp-b2-01",
     prompt: "Some people think technology has improved communication, while others think it has made communication less meaningful. Discuss both views and give your own position.",
     targetSeconds: 50,
-    minimumSeconds: 35
+    minimumSeconds: 35,
+    maximumSeconds: 85
   },
 
   "speaking-c1": {
@@ -653,7 +659,8 @@ window.BRIGHTON_PLACEMENT_MODULES = {
     promptId: "sp-c1-01",
     prompt: "Should convenience always be the main goal when technology is designed? Discuss possible trade-offs, use examples and reach a clear conclusion.",
     targetSeconds: 55,
-    minimumSeconds: 40
+    minimumSeconds: 40,
+    maximumSeconds: 90
   }
 
 };
