@@ -1510,8 +1510,11 @@ function placementDashboardModules(responses) {
 
 export async function listPlacementResults(request) {
   try {
-    await purgeStalePlacementSessions();
-    const query = request?.query || {};
+    const body = await readJsonBody(request);
+    const query = {
+      ...(request?.query || {}),
+      ...(body && typeof body === "object" ? body : {})
+    };
     const studentFilter = String(query.student || "").trim().toLowerCase();
     const levelFilter = String(query.level || "").trim();
     const statusFilter = String(query.status || "").trim().toLowerCase();
@@ -1560,8 +1563,12 @@ export async function listPlacementResults(request) {
 
 export async function placementDashboardResult(request) {
   try {
-    await purgeStalePlacementSessions();
-    const sessionId = String(request?.query?.sessionId || "").trim();
+    const body = await readJsonBody(request);
+    const sessionId = String(
+      body?.sessionId ||
+      request?.query?.sessionId ||
+      ""
+    ).trim();
 
     if (!sessionId) {
       return jsonBadRequest("Placement session ID is required.");
