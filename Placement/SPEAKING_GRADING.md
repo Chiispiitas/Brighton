@@ -221,7 +221,7 @@ Pronunciation remains an **intelligibility proxy**, not phoneme-level accent sco
 - recognition stability;
 - how much usable speech was successfully transcribed.
 
-High browser recognition confidence (about 0.88+) is treated as strong intelligibility evidence instead of mechanically capping a native-like answer around 9/10.
+High browser recognition confidence (about 0.88+) is treated as strong intelligibility evidence instead of mechanically capping a native-like answer around 9/10. When the browser returns `0` because it does not expose a confidence value, a clean usable transcript is treated as strong evidence instead of being penalized merely for the missing browser metric.
 
 ### Fluency
 
