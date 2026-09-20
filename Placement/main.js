@@ -61,6 +61,7 @@
   let speakingMeterTimer = null;
   let speakingTimer = null;
   let speakingStartedAt = 0;
+  let speakingAutoStoppedByTimeLimit = false;
   let speakingSpeechFrames = 0;
   let speakingTotalFrames = 0;
   let speakingNoiseFloor = 0.018;
@@ -1242,6 +1243,7 @@
       speakingSpeechFrames = 0;
       speakingTotalFrames = 0;
       speakingStartedAt = performance.now();
+      speakingAutoStoppedByTimeLimit = false;
       speakingRecordingActive = true;
       speakingCaptureMode = "media-recorder";
 
@@ -1289,7 +1291,11 @@
   }
 
   function renderSpeakingRecording(data) {
-    const maximumSeconds = Math.max(Number(data.targetSeconds) || 40, Number(data.minimumSeconds) || 20) + 15;
+    const fallbackMaximum = Math.max(Number(data.targetSeconds) || 40, Number(data.minimumSeconds) || 20) + 15;
+    const maximumSeconds = Math.max(
+      Number(data.maximumSeconds) || fallbackMaximum,
+      Number(data.minimumSeconds) || 15
+    );
 
     els.stageRoot.innerHTML = `
       <div class="speaking-recording">
@@ -1299,24 +1305,45 @@
         <span class="recording-live"><i></i> Recording</span>
         <strong id="speakingTimer">00:00</strong>
         <p class="speaking-recording-prompt">${escapeHtml(data.prompt)}</p>
+        <p id="speakingCutoffWarning" class="speaking-cutoff-warning" role="status" aria-live="polite"></p>
         <button id="stopSpeakingBtn" class="stop-record-btn" type="button" disabled>Finish answer</button>
       </div>
     `;
 
     const button = els.stageRoot.querySelector("#stopSpeakingBtn");
     const timer = els.stageRoot.querySelector("#speakingTimer");
+    const warning = els.stageRoot.querySelector("#speakingCutoffWarning");
     const minimumSeconds = Number(data.minimumSeconds) || 15;
 
     window.clearInterval(speakingTimer);
     speakingTimer = window.setInterval(() => {
       const elapsed = Math.max(0, (performance.now() - speakingStartedAt) / 1000);
       const seconds = Math.floor(elapsed);
+      const remainingSeconds = Math.max(0, Math.ceil(maximumSeconds - elapsed));
+
       if (timer) timer.textContent = `${String(Math.floor(seconds / 60)).padStart(2, "0")}:${String(seconds % 60).padStart(2, "0")}`;
       if (button && elapsed >= minimumSeconds) button.disabled = false;
-      if (elapsed >= maximumSeconds) stopSpeakingRecording();
+
+      if (warning) {
+        if (remainingSeconds <= 10 && remainingSeconds > 0) {
+          warning.textContent = `Your response will be submitted automatically in ${remainingSeconds} second${remainingSeconds === 1 ? "" : "s"}.`;
+          warning.classList.add("is-visible");
+        } else {
+          warning.textContent = "";
+          warning.classList.remove("is-visible");
+        }
+      }
+
+      if (elapsed >= maximumSeconds) {
+        speakingAutoStoppedByTimeLimit = true;
+        stopSpeakingRecording();
+      }
     }, 200);
 
-    button?.addEventListener("click", stopSpeakingRecording);
+    button?.addEventListener("click", () => {
+      speakingAutoStoppedByTimeLimit = false;
+      stopSpeakingRecording();
+    });
   }
 
   async function settleMobileSpeechRecognition() {
@@ -1409,6 +1436,8 @@
         recordedBytes,
         audioBase64,
         audioMimeType: recorderMimeType,
+        autoStoppedByTimeLimit: speakingAutoStoppedByTimeLimit,
+        maximumSeconds: Number(data.maximumSeconds) || null,
         audioActivityAvailable,
         speechRecognitionAvailable: Boolean(speechRecognitionConstructor()),
         recorderMimeType,
