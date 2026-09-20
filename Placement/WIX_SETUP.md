@@ -1,6 +1,6 @@
 # Brighton Placement — manual Wix setup
 
-Frontend/backend contract: `2026-09-19.8`  
+Frontend/backend contract: `2026-09-20.1`  
 Answer-key version: `2026-09-19.7`
 
 The Wix-side setup is intentionally manual. The repository contains the files to paste/import, but it does not create, delete, seed, or change permissions on the live Brighton Exams Wix project.
@@ -15,13 +15,25 @@ Backend/
 ├── core.js             ← shared Exams / Tests / Placement helpers
 ├── exams.js
 ├── tests.js
-└── placement.js
+├── placement.js
+└── gemini-speaking.js  ← Placement speaking examiner
 ```
 
-Files supplied under `Placement/wix-backend/`:
+Placement backend source is mirrored under `wix-backend/`. For the Gemini speaking release, copy/update:
 
-- `placement.js`
-- `http-functions-placement-routes.js` — merge this into the existing `Backend/http-functions.js`; do **not** replace existing Tests/Exams routes.
+- `wix-backend/gemini-speaking.js` → `Backend/gemini-speaking.js`
+- `wix-backend/placement.js` → `Backend/placement.js`
+- merge the Placement changes from `wix-backend/http-functions.js` into the site's existing `Backend/http-functions.js`; do **not** remove Tests/Exams routes.
+
+### Gemini speaking secret
+
+The Wix site must contain this exact Secrets Manager entry:
+
+`BRIGHTON_PLACEMENT_GEMINI_API_KEY`
+
+The secret is read only by backend code. Never place the Gemini key in GitHub, frontend JavaScript, CMS fields, logs, or HTTP responses.
+
+Speaking recordings are sent to Gemini inline for assessment and are not written to `BrightonPlacementSpeaking`; `audioUrl` remains empty. The stored record contains the transcript, rubric scores and assessment evidence.
 
 Public Placement routes:
 
