@@ -1,5 +1,5 @@
 // Brighton Adaptive Placement — business logic module
-// Contract: 2026-09-19.8
+// Contract: 2026-09-20.1
 // Wix file: Backend/placement.js
 //
 // Keep HTTP routing in Backend/http-functions.js.
@@ -12,13 +12,18 @@ import {
   jsonServerError,
   readJsonBody
 } from "backend/core.js";
+import {
+  gradeSpeakingWithGemini,
+  GEMINI_SPEAKING_MODEL,
+  SPEAKING_RUBRIC_VERSION
+} from "backend/gemini-speaking.js";
 
 const PLACEMENT_SESSIONS = "BrightonPlacementSessions";
 const PLACEMENT_RESPONSES = "BrightonPlacementResponses";
 const PLACEMENT_ITEMS = "BrightonPlacementItems";
 const PLACEMENT_SPEAKING = "BrightonPlacementSpeaking";
 
-const PLACEMENT_VERSION = "2026-09-19.8";
+const PLACEMENT_VERSION = "2026-09-20.1";
 const ITEM_KEY_VERSION = "2026-09-19.7";
 
 const LEVELS = ["PRE-A1", "A1", "A2", "B1", "B1+", "B2", "C1"];
@@ -819,12 +824,13 @@ export async function submitSpeaking(request) {
       return jsonBadRequest("Invalid speaking prompt.");
     }
 
-    const grade = gradeSpeakingDeterministically(payload, level);
+    const grade = await gradeSpeakingWithGemini(payload, level, promptId);
 
     if (grade.inputError) {
       return jsonOK({
         success: true,
-        speakingError: true
+        speakingError: grade.retryReason !== "prompt-repeat",
+        speakingRetryReason: grade.retryReason === "prompt-repeat" ? "prompt-repeat" : ""
       });
     }
 
@@ -856,17 +862,14 @@ export async function submitSpeaking(request) {
       pronunciation: grade.pronunciation,
       communication: grade.communication,
       speakingLevel: grade.speakingLevel,
-      graderVersion: "deterministic-browser-v1",
+      graderVersion: GEMINI_SPEAKING_MODEL,
       metricsJson: JSON.stringify({
         composite: grade.composite,
-        speechRatio: grade.speechRatio,
-        uniqueWords: grade.uniqueWords,
-        uniqueRatio: grade.uniqueRatio,
-        longWordRatio: grade.longWordRatio,
-        connectorCount: grade.connectorCount,
-        complexCount: grade.complexCount,
-        fillerCount: grade.fillerCount,
-        transcriptAvailable: grade.transcriptAvailable
+        rubricVersion: SPEAKING_RUBRIC_VERSION,
+        model: GEMINI_SPEAKING_MODEL,
+        evidenceQuality: grade.assessment?.evidenceQuality || "",
+        assessment: grade.assessment || null,
+        usage: grade.usage || null
       }),
       createdAt: existing.items[0]?.createdAt || now
     };
@@ -1193,7 +1196,10 @@ export async function getPlacementDashboardResult(request) {
           graderVersion: String(speakingRecord.graderVersion || ""),
           composite: Number.isFinite(Number(speakingMetrics?.composite))
             ? Number(speakingMetrics.composite)
-            : null
+            : null,
+          rubricVersion: String(speakingMetrics?.rubricVersion || ""),
+          evidenceQuality: String(speakingMetrics?.evidenceQuality || ""),
+          assessment: speakingMetrics?.assessment || null
         }
       : null;
 
