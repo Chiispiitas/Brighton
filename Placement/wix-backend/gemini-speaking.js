@@ -4,7 +4,7 @@
 import wixSecretsBackend from "wix-secrets-backend";
 import { fetch } from "wix-fetch";
 
-export const SPEAKING_RUBRIC_VERSION = "brighton-speaking-rubric-1.2";
+export const SPEAKING_RUBRIC_VERSION = "brighton-speaking-rubric-1.3";
 export const GEMINI_SPEAKING_MODEL = "gemini-3.8-flash";
 export const GEMINI_SPEAKING_FALLBACK_MODEL = "gemini-3.5-flash-lite";
 
@@ -458,17 +458,44 @@ function parseProviderError(status, rawText) {
   return { status: Number(status) || 0, code, message };
 }
 
+function toGenerateContentSchema(value) {
+  if (Array.isArray(value)) {
+    return value.map(toGenerateContentSchema);
+  }
+
+  if (!value || typeof value !== "object") {
+    return value;
+  }
+
+  const result = {};
+  for (const [key, nested] of Object.entries(value)) {
+    if (key === "type" && typeof nested === "string") {
+      result[key] = nested.toUpperCase();
+    } else {
+      result[key] = toGenerateContentSchema(nested);
+    }
+  }
+
+  return result;
+}
+
 function makeGenerateContentBody(candidateContext, audioBase64, audioMimeType, includeSchema, model) {
-  const responseText = {
-    mimeType: "application/json"
+  const generationConfig = {
+    responseMimeType: "application/json"
   };
 
   if (includeSchema) {
-    responseText.schema = RESPONSE_SCHEMA;
+    generationConfig.responseSchema = toGenerateContentSchema(RESPONSE_SCHEMA);
+  }
+
+  if (model === GEMINI_SPEAKING_MODEL) {
+    generationConfig.thinkingConfig = {
+      thinkingLevel: "medium"
+    };
   }
 
   return {
-    system_instruction: {
+    systemInstruction: {
       parts: [{ text: EXAMINER_INSTRUCTIONS }]
     },
     contents: [{
@@ -476,32 +503,26 @@ function makeGenerateContentBody(candidateContext, audioBase64, audioMimeType, i
       parts: [
         { text: candidateContext },
         {
-          inline_data: {
-            mime_type: audioMimeType,
+          inlineData: {
+            mimeType: audioMimeType,
             data: audioBase64
           }
         }
       ]
     }],
-    generationConfig: {
-      thinkingConfig: {
-        thinkingLevel: model === GEMINI_SPEAKING_MODEL ? "medium" : "low"
-      },
-      responseFormat: {
-        text: responseText
-      }
-    }
+    generationConfig,
+    store: false
   };
 }
 
 async function callInteractions(apiKey, model, candidateContext, audioBase64, audioMimeType, includeSchema) {
-  const responseFormat = {
+  const responseFormatItem = {
     type: "text",
     mime_type: "application/json"
   };
 
   if (includeSchema) {
-    responseFormat.schema = RESPONSE_SCHEMA;
+    responseFormatItem.schema = RESPONSE_SCHEMA;
   }
 
   const response = await fetch(
@@ -523,10 +544,10 @@ async function callInteractions(apiKey, model, candidateContext, audioBase64, au
             mime_type: audioMimeType
           }
         ],
-        response_format: responseFormat,
-        generation_config: {
-          thinking_level: model === GEMINI_SPEAKING_MODEL ? "medium" : "low"
-        },
+        response_format: [responseFormatItem],
+        ...(model === GEMINI_SPEAKING_MODEL
+          ? { generation_config: { thinking_level: "medium" } }
+          : {}),
         store: false
       })
     }
@@ -628,7 +649,7 @@ async function callGenerateContent(apiKey, model, candidateContext, audioBase64,
       })
     );
 
-    return { ok: false, model, includeSchema, error };
+    return { ok: false, transport: "generateContent", model, includeSchema, error };
   }
 
   let result;
@@ -637,6 +658,7 @@ async function callGenerateContent(apiKey, model, candidateContext, audioBase64,
   } catch {
     return {
       ok: false,
+      transport: "generateContent",
       model,
       includeSchema,
       error: {
@@ -651,6 +673,7 @@ async function callGenerateContent(apiKey, model, candidateContext, audioBase64,
   if (!outputText) {
     return {
       ok: false,
+      transport: "generateContent",
       model,
       includeSchema,
       error: {
@@ -663,6 +686,7 @@ async function callGenerateContent(apiKey, model, candidateContext, audioBase64,
 
   return {
     ok: true,
+    transport: "generateContent",
     model,
     includeSchema,
     outputText,
