@@ -2075,15 +2075,36 @@
 
   els.restartTestBtn?.addEventListener("click", restartPlacementTest);
 
+  function flagInvalidStudentName() {
+    els.studentName.setAttribute("aria-invalid", "true");
+    els.studentName.classList.remove("name-input-invalid");
+    // Force a reflow so repeated invalid submissions replay the shake.
+    void els.studentName.offsetWidth;
+    els.studentName.classList.add("name-input-invalid");
+    els.studentName.focus();
+  }
+
+  els.studentName.addEventListener("input", () => {
+    els.studentName.classList.remove("name-input-invalid");
+    els.studentName.removeAttribute("aria-invalid");
+    els.formError.textContent = "";
+  });
+
+  els.studentName.addEventListener("animationend", () => {
+    els.studentName.classList.remove("name-input-invalid");
+  });
+
   els.studentForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const name = els.studentName.value.trim().replace(/\s+/g, " ");
+    const nameParts = name ? name.split(" ").filter(Boolean) : [];
     els.formError.textContent = "";
 
-    if (name.length < 2) {
-      els.studentName.focus();
-      els.formError.textContent = "Enter your full name.";
+    if (nameParts.length < 2) {
+      window.alert("Please write your full name.");
+      els.formError.textContent = "Please write your full name.";
+      flagInvalidStudentName();
       return;
     }
 
