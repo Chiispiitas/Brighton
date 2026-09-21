@@ -35,6 +35,10 @@ The secret is read only by backend code. Never place the Gemini key in GitHub, f
 
 Speaking recordings are sent to Gemini inline for assessment and are not written to `BrightonPlacementSpeaking`; `audioUrl` remains empty. The stored record contains the transcript, rubric scores and assessment evidence.
 
+### Speaking transport limit
+
+Wix Velo HTTP functions accept request bodies up to **512 KB**. The Placement frontend therefore records Speaking at a 24 kbps target bitrate and refuses Base64 audio above 400,000 characters before calling `brightonPlacementSubmitSpeaking`. Do not raise that frontend/backend guard unless the audio transport is redesigned; the previous multi-megabyte allowance caused the browser to show `Connection lost.` because Wix rejected the request before the handler ran.
+
 Public Placement routes:
 
 - `GET /_functions/brightonPlacementPing` — deployment smoke test
