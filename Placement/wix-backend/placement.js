@@ -804,13 +804,27 @@ export async function submitSpeaking(request) {
     const grade = await gradeSpeakingWithGemini(payload, level, promptId);
 
     if (grade.inputError) {
+      const providerStatus = Number(grade.providerStatus) || 0;
+      let speakingErrorCode = String(grade.retryReason || "technical");
+
+      if ([401, 403].includes(providerStatus)) {
+        speakingErrorCode = "provider-auth";
+      } else if (providerStatus === 429) {
+        speakingErrorCode = "provider-quota";
+      } else if ([400, 422].includes(providerStatus)) {
+        speakingErrorCode = "provider-request";
+      } else if (providerStatus >= 500) {
+        speakingErrorCode = "provider-server";
+      }
+
       return jsonOK({
         success: true,
         speakingError: grade.retryReason !== "prompt-repeat",
         speakingRetryReason: grade.retryReason === "prompt-repeat" ? "prompt-repeat" : "",
-        speakingErrorCode: String(grade.retryReason || "technical"),
-        providerStatus: Number(grade.providerStatus) || 0,
-        providerCode: String(grade.providerCode || "")
+        speakingErrorCode,
+        providerStatus,
+        providerCode: String(grade.providerCode || ""),
+        providerTransport: String(grade.providerTransport || "")
       });
     }
 
