@@ -1,0 +1,50 @@
+name: Package Placement Phone Backend
+
+on:
+  push:
+    paths:
+      - ".github/workflows/package-placement-phone-backend.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare Wix replacement
+        shell: bash
+        run: |
+          mkdir -p release/Backend
+          cp Placement/wix-backend/placement.js release/Backend/placement.js
+          cat > release/README.txt <<'EOF'
+          Brighton Placement phone number backend update
+
+          Replace ONLY:
+          Backend/placement.js
+
+          Do NOT replace:
+          Backend/gemini-speaking.js
+          Backend/http-functions.js
+          Backend/core.js
+          Backend/exams.js
+          Backend/tests.js
+
+          The live BrightonPlacementSessions CMS collection has already been
+          updated with the Text field:
+          phoneNumber
+
+          After replacing Backend/placement.js, Publish the Wix site.
+
+          Accepted phone format:
+          09XXXXXXXX
+          Exactly 10 digits, starting with 09.
+          +593 format is intentionally rejected.
+          EOF
+      - uses: actions/upload-artifact@v4
+        with:
+          name: brighton-placement-phone-wix-backend
+          path: release/
+          retention-days: 7
