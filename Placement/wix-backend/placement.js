@@ -807,7 +807,10 @@ export async function submitSpeaking(request) {
       return jsonOK({
         success: true,
         speakingError: grade.retryReason !== "prompt-repeat",
-        speakingRetryReason: grade.retryReason === "prompt-repeat" ? "prompt-repeat" : ""
+        speakingRetryReason: grade.retryReason === "prompt-repeat" ? "prompt-repeat" : "",
+        speakingErrorCode: String(grade.retryReason || "technical"),
+        providerStatus: Number(grade.providerStatus) || 0,
+        providerCode: String(grade.providerCode || "")
       });
     }
 
@@ -839,11 +842,11 @@ export async function submitSpeaking(request) {
       pronunciation: grade.pronunciation,
       communication: grade.communication,
       speakingLevel: grade.speakingLevel,
-      graderVersion: GEMINI_SPEAKING_MODEL,
+      graderVersion: grade.modelUsed || GEMINI_SPEAKING_MODEL,
       metricsJson: JSON.stringify({
         composite: grade.composite,
         rubricVersion: SPEAKING_RUBRIC_VERSION,
-        model: GEMINI_SPEAKING_MODEL,
+        model: grade.modelUsed || GEMINI_SPEAKING_MODEL,
         evidenceQuality: grade.assessment?.evidenceQuality || "",
         assessment: grade.assessment || null,
         usage: grade.usage || null
