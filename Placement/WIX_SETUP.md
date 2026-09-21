@@ -67,7 +67,7 @@ The backend uses `suppressAuth: true` for its Wix Data operations, so the Placem
 
 ### BrightonPlacementSessions
 
-`clientSessionId` Text; `studentName` Text; `placementVersion` Text; `status` Text; `phase` Text; `moduleId` Text; `routeJson` Text; `progressJson` Text; `startedAt` Date and Time; `updatedAt` Date and Time; `completedAt` Date and Time; `timeSpentSeconds` Number; `provisionalLevel` Text; `finalLevel` Text; `confidence` Number.
+`clientSessionId` Text; `studentName` Text; `phoneNumber` Text; `placementVersion` Text; `status` Text; `phase` Text; `moduleId` Text; `routeJson` Text; `progressJson` Text; `startedAt` Date and Time; `updatedAt` Date and Time; `completedAt` Date and Time; `timeSpentSeconds` Number; `provisionalLevel` Text; `finalLevel` Text; `confidence` Number.
 
 ### BrightonPlacementResponses
 
