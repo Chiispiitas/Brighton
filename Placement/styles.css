@@ -27,11 +27,20 @@ html, body {
 body {
   min-height: 100vh;
   overflow-x: hidden;
-  background-color: #fff;
+  background: #fff;
+}
+
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
   background-image: url("../Exams/assets/bg.png");
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
+  opacity: .5;
+  pointer-events: none;
+  z-index: 0;
 }
 
 button, input { font: inherit; }
@@ -40,6 +49,8 @@ button { cursor: pointer; }
 
 .placement-app {
   min-height: 100vh;
+  position: relative;
+  z-index: 1;
   background: transparent;
 }
 
