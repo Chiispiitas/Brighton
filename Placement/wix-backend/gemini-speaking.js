@@ -4,11 +4,12 @@
 import wixSecretsBackend from "wix-secrets-backend";
 import { fetch } from "wix-fetch";
 
-export const SPEAKING_RUBRIC_VERSION = "brighton-speaking-rubric-1.1";
+export const SPEAKING_RUBRIC_VERSION = "brighton-speaking-rubric-1.2";
 export const GEMINI_SPEAKING_MODEL = "gemini-3.8-flash";
+export const GEMINI_SPEAKING_FALLBACK_MODEL = "gemini-3.5-flash-lite";
 
 const GEMINI_SECRET_NAME = "BRIGHTON_PLACEMENT_GEMINI_API_KEY";
-const GEMINI_ENDPOINT = "https://generativelanguage.googleapis.com/v1beta/interactions";
+const GEMINI_GENERATE_BASE = "https://generativelanguage.googleapis.com/v1beta/models";
 
 const LEVELS = ["PRE-A1", "A1", "A2", "B1", "B1+", "B2", "C1"];
 
@@ -404,16 +405,14 @@ function adjacentFinalLevel(objectiveLevel, speakingLevel) {
   return LEVELS[objectiveIndex];
 }
 
-function extractInteractionText(interaction) {
-  const steps = Array.isArray(interaction?.steps) ? interaction.steps : [];
+function extractGenerateContentText(result) {
+  const candidates = Array.isArray(result?.candidates) ? result.candidates : [];
 
-  for (let i = steps.length - 1; i >= 0; i -= 1) {
-    const step = steps[i];
-    if (step?.type !== "model_output" || !Array.isArray(step.content)) continue;
-
-    const text = step.content
-      .filter((item) => item?.type === "text" && typeof item.text === "string")
-      .map((item) => item.text)
+  for (const candidate of candidates) {
+    const parts = Array.isArray(candidate?.content?.parts) ? candidate.content.parts : [];
+    const text = parts
+      .filter((part) => typeof part?.text === "string" && !part?.thought)
+      .map((part) => part.text)
       .join("")
       .trim();
 
@@ -421,6 +420,183 @@ function extractInteractionText(interaction) {
   }
 
   return "";
+}
+
+function parseProviderError(status, rawText) {
+  let parsed = null;
+
+  try {
+    parsed = JSON.parse(rawText || "{}");
+  } catch {}
+
+  const provider = parsed?.error || parsed || {};
+  const code = String(provider?.status || provider?.code || "GEMINI_ERROR").slice(0, 80);
+  const message = String(provider?.message || "Gemini request failed.")
+    .replace(/\s+/g, " ")
+    .trim()
+    .slice(0, 500);
+
+  return { status: Number(status) || 0, code, message };
+}
+
+function makeGenerateContentBody(candidateContext, audioBase64, audioMimeType, includeSchema, model) {
+  const responseText = {
+    mimeType: "application/json"
+  };
+
+  if (includeSchema) {
+    responseText.schema = RESPONSE_SCHEMA;
+  }
+
+  return {
+    system_instruction: {
+      parts: [{ text: EXAMINER_INSTRUCTIONS }]
+    },
+    contents: [{
+      role: "user",
+      parts: [
+        { text: candidateContext },
+        {
+          inline_data: {
+            mime_type: audioMimeType,
+            data: audioBase64
+          }
+        }
+      ]
+    }],
+    generationConfig: {
+      thinkingConfig: {
+        thinkingLevel: model === GEMINI_SPEAKING_MODEL ? "medium" : "low"
+      },
+      responseFormat: {
+        text: responseText
+      }
+    }
+  };
+}
+
+async function callGenerateContent(apiKey, model, candidateContext, audioBase64, audioMimeType, includeSchema) {
+  const response = await fetch(
+    GEMINI_GENERATE_BASE + "/" + encodeURIComponent(model) + ":generateContent",
+    {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+        "x-goog-api-key": apiKey
+      },
+      body: JSON.stringify(
+        makeGenerateContentBody(
+          candidateContext,
+          audioBase64,
+          audioMimeType,
+          includeSchema,
+          model
+        )
+      )
+    }
+  );
+
+  const rawText = await response.text();
+
+  if (!response.ok) {
+    const error = parseProviderError(response.status, rawText);
+    console.error(
+      "Gemini speaking request failed:",
+      JSON.stringify({
+        model,
+        includeSchema,
+        status: error.status,
+        code: error.code,
+        message: error.message
+      })
+    );
+
+    return { ok: false, model, includeSchema, error };
+  }
+
+  let result;
+  try {
+    result = JSON.parse(rawText);
+  } catch {
+    return {
+      ok: false,
+      model,
+      includeSchema,
+      error: {
+        status: 502,
+        code: "INVALID_PROVIDER_JSON",
+        message: "Gemini returned unreadable JSON."
+      }
+    };
+  }
+
+  const outputText = extractGenerateContentText(result);
+  if (!outputText) {
+    return {
+      ok: false,
+      model,
+      includeSchema,
+      error: {
+        status: 502,
+        code: "EMPTY_PROVIDER_OUTPUT",
+        message: "Gemini returned no speaking assessment."
+      }
+    };
+  }
+
+  return {
+    ok: true,
+    model,
+    includeSchema,
+    outputText,
+    usage: result?.usageMetadata || null
+  };
+}
+
+async function requestSpeakingAssessment(apiKey, candidateContext, audioBase64, audioMimeType) {
+  const models = [GEMINI_SPEAKING_MODEL, GEMINI_SPEAKING_FALLBACK_MODEL];
+  let lastFailure = null;
+
+  for (const model of models) {
+    const structured = await callGenerateContent(
+      apiKey,
+      model,
+      candidateContext,
+      audioBase64,
+      audioMimeType,
+      true
+    );
+
+    if (structured.ok) return structured;
+    lastFailure = structured;
+
+    // A 400/422 commonly means the provider rejected schema complexity or
+    // validation. Retry once with JSON mode but without an enforced schema.
+    if ([400, 422].includes(Number(structured.error?.status))) {
+      const jsonOnly = await callGenerateContent(
+        apiKey,
+        model,
+        candidateContext,
+        audioBase64,
+        audioMimeType,
+        false
+      );
+
+      if (jsonOnly.ok) return jsonOnly;
+      lastFailure = jsonOnly;
+    }
+  }
+
+  return lastFailure || {
+    ok: false,
+    model: GEMINI_SPEAKING_MODEL,
+    includeSchema: true,
+    error: {
+      status: 503,
+      code: "GEMINI_UNAVAILABLE",
+      message: "Gemini speaking assessment is unavailable."
+    }
+  };
 }
 
 function sanitizeAssessment(raw) {
@@ -550,61 +726,77 @@ export async function gradeSpeakingWithGemini(payload, objectiveLevel, promptId)
     "autoStoppedByTimeLimit: " + (autoStoppedByTimeLimit ? "true" : "false") + "\n" +
     "Assess the candidate from the attached audio. Return only the required JSON.";
 
-  const response = await fetch(GEMINI_ENDPOINT, {
-    method: "post",
-    headers: {
-      "Content-Type": "application/json",
-      "x-goog-api-key": apiKey
-    },
-    body: JSON.stringify({
-      model: GEMINI_SPEAKING_MODEL,
-      system_instruction: EXAMINER_INSTRUCTIONS,
-      input: [
-        { type: "text", text: candidateContext },
-        { type: "audio", data: audioBase64, mime_type: audioMimeType }
-      ],
-      response_format: {
-        type: "text",
-        mime_type: "application/json",
-        schema: RESPONSE_SCHEMA
-      },
-      generation_config: {
-        thinking_level: "medium",
-        seed: 20260920
-      },
-      store: false
-    })
-  });
+  const providerResult = await requestSpeakingAssessment(
+    apiKey,
+    candidateContext,
+    audioBase64,
+    audioMimeType
+  );
 
-  const rawText = await response.text();
-
-  if (!response.ok) {
-    console.error("Gemini speaking request failed:", response.status, rawText.slice(0, 500));
-    throw new Error("Gemini speaking assessment failed.");
-  }
-
-  let interaction;
-  try {
-    interaction = JSON.parse(rawText);
-  } catch {
-    throw new Error("Gemini returned an unreadable response.");
-  }
-
-  if (interaction?.status !== "completed") {
-    console.error("Gemini speaking interaction incomplete:", interaction?.status || "unknown");
-    throw new Error("Gemini speaking assessment did not complete.");
-  }
-
-  const outputText = extractInteractionText(interaction);
-  if (!outputText) {
-    throw new Error("Gemini returned no speaking assessment.");
+  if (!providerResult?.ok) {
+    const providerError = providerResult?.error || {};
+    return {
+      inputError: true,
+      retryReason: "provider-unavailable",
+      transcript: "",
+      durationSeconds: Math.round(durationSeconds * 10) / 10,
+      speechSeconds: 0,
+      wordCount: 0,
+      wpm: 0,
+      recognitionConfidence: 0,
+      segmentCount: 0,
+      fluency: 0,
+      grammar: 0,
+      vocabulary: 0,
+      pronunciation: 0,
+      communication: 0,
+      composite: 0,
+      speakingLevel: objectiveLevel,
+      finalLevel: objectiveLevel,
+      confidence: 0.35,
+      assessment: null,
+      usage: null,
+      modelUsed: providerResult?.model || GEMINI_SPEAKING_MODEL,
+      providerStatus: Number(providerError?.status) || 0,
+      providerCode: String(providerError?.code || "GEMINI_UNAVAILABLE").slice(0, 80)
+    };
   }
 
   let rawAssessment;
   try {
-    rawAssessment = JSON.parse(outputText);
+    rawAssessment = JSON.parse(providerResult.outputText);
   } catch {
-    throw new Error("Gemini returned invalid speaking JSON.");
+    console.error(
+      "Gemini speaking JSON parse failed:",
+      JSON.stringify({
+        model: providerResult.model,
+        includeSchema: providerResult.includeSchema
+      })
+    );
+
+    return {
+      inputError: true,
+      retryReason: "provider-invalid-json",
+      transcript: "",
+      durationSeconds: Math.round(durationSeconds * 10) / 10,
+      speechSeconds: 0,
+      wordCount: 0,
+      wpm: 0,
+      recognitionConfidence: 0,
+      segmentCount: 0,
+      fluency: 0,
+      grammar: 0,
+      vocabulary: 0,
+      pronunciation: 0,
+      communication: 0,
+      composite: 0,
+      speakingLevel: objectiveLevel,
+      finalLevel: objectiveLevel,
+      confidence: 0.35,
+      assessment: null,
+      usage: providerResult.usage || null,
+      modelUsed: providerResult.model
+    };
   }
 
   const assessment = sanitizeAssessment(rawAssessment);
@@ -648,7 +840,8 @@ export async function gradeSpeakingWithGemini(payload, objectiveLevel, promptId)
       finalLevel: objectiveLevel,
       confidence: 0.45,
       assessment,
-      usage: interaction?.usage || null
+      usage: providerResult.usage || null,
+      modelUsed: providerResult.model
     };
   }
 
@@ -676,6 +869,7 @@ export async function gradeSpeakingWithGemini(payload, objectiveLevel, promptId)
     finalLevel,
     confidence: Math.round(confidence * 100) / 100,
     assessment,
-    usage: interaction?.usage || null
+    usage: providerResult.usage || null,
+    modelUsed: providerResult.model
   };
 }
