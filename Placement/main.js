@@ -1603,13 +1603,22 @@
       }
 
       if (result.speakingError) {
-        console.error("Brighton Speaking provider error", {
+        const providerDiagnostic = {
           speakingErrorCode: result.speakingErrorCode || "technical",
           providerStatus: Number(result.providerStatus) || 0,
           providerCode: result.providerCode || "",
           providerTransport: result.providerTransport || ""
-        });
-        renderSpeakingTechnicalError("We couldn't process your answer. Try again.");
+        };
+        console.error("Brighton Speaking provider error", providerDiagnostic);
+        const technicalReference = [
+          providerDiagnostic.providerStatus || "",
+          providerDiagnostic.providerCode || providerDiagnostic.speakingErrorCode || "",
+          providerDiagnostic.providerTransport || ""
+        ].filter(Boolean).join(" · ");
+        renderSpeakingTechnicalError(
+          "We couldn't process your answer. Try again.",
+          technicalReference
+        );
         return;
       }
 
@@ -1637,12 +1646,15 @@
   }
 
 
-  function renderSpeakingTechnicalError(message) {
+  function renderSpeakingTechnicalError(message, technicalReference = "") {
     cleanupSpeakingMedia();
 
     els.stageRoot.innerHTML = `
       <div class="speaking-retry">
         <strong>${escapeHtml(message)}</strong>
+        ${technicalReference
+          ? `<small class="speaking-technical-reference">Technical code: ${escapeHtml(technicalReference)}</small>`
+          : ""}
         <div class="speaking-error-actions">
           <button id="retrySpeakingBtn" class="secondary-action" type="button">Try again</button>
           <button id="skipSpeakingBtn" class="secondary-action speaking-skip-action" type="button">I cannot speak now</button>
