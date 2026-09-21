@@ -755,7 +755,10 @@
       saveLocalSession();
 
       if (result.nextPhase === "language" && moduleData(result.nextModuleId)) {
-        showTransition("01", "Adapting", () => startModule(result.nextModuleId));
+        // The stage card already shows the "Adapting" loader while the next
+        // language route is calculated. Do not add a second full-screen
+        // transition here.
+        startModule(result.nextModuleId);
         return;
       }
 
