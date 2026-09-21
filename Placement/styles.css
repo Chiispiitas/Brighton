@@ -1907,3 +1907,14 @@ button { cursor: pointer; }
     border-radius: 0;
   }
 }
+
+
+.speaking-technical-reference {
+  display: block;
+  margin-top: -10px;
+  margin-bottom: 4px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: #8d939c;
+}
