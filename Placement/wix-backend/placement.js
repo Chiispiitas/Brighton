@@ -26,6 +26,7 @@ const PLACEMENT_SPEAKING = "BrightonPlacementSpeaking";
 const PLACEMENT_VERSION = "2026-09-20.1";
 const ITEM_KEY_VERSION = "2026-09-19.7";
 const PLACEMENT_INACTIVITY_MS = 60 * 60 * 1000;
+const ECUADOR_MOBILE_REGEX = /^09\d{8}$/;
 
 const LEVELS = ["PRE-A1", "A1", "A2", "B1", "B1+", "B2", "C1"];
 
@@ -412,6 +413,7 @@ async function buildResultSummary(session) {
 
   return {
     studentName: String(session.studentName || ""),
+    phoneNumber: String(session.phoneNumber || ""),
     finalLevel,
     finalDescription: LEVEL_DESCRIPTIONS[finalLevel] || "",
     completedAt: isoDate(session.completedAt || session.updatedAt || new Date()),
@@ -446,6 +448,7 @@ export async function startPlacement(request) {
 
     const clientSessionId = String(payload.clientSessionId || "").trim();
     const studentName = String(payload.studentName || "").trim().replace(/\s+/g, " ");
+    const phoneNumber = String(payload.phoneNumber || "").trim();
 
     if (!clientSessionId || clientSessionId.length < 16) {
       return jsonBadRequest("Invalid placement session.");
@@ -453,6 +456,10 @@ export async function startPlacement(request) {
 
     if (studentName.length < 2 || studentName.length > 90) {
       return jsonBadRequest("Invalid student name.");
+    }
+
+    if (!ECUADOR_MOBILE_REGEX.test(phoneNumber)) {
+      return jsonBadRequest("Invalid Ecuadorian phone number.");
     }
 
     const existing = await wixData
@@ -468,6 +475,7 @@ export async function startPlacement(request) {
         sessionId: session._id,
         placementVersion: session.placementVersion || PLACEMENT_VERSION,
         studentName: session.studentName || studentName,
+        phoneNumber: session.phoneNumber || phoneNumber,
         status: session.status || "active",
         phase: session.phase || "calibration",
         moduleId: session.moduleId || "calibration-01",
@@ -484,6 +492,7 @@ export async function startPlacement(request) {
       {
         clientSessionId,
         studentName,
+        phoneNumber,
         placementVersion: PLACEMENT_VERSION,
         status: "active",
         phase: "calibration",
@@ -510,6 +519,7 @@ export async function startPlacement(request) {
       sessionId: inserted._id,
       placementVersion: PLACEMENT_VERSION,
       studentName,
+      phoneNumber,
       status: "active",
       phase: "calibration",
       moduleId: "calibration-01",
@@ -547,6 +557,7 @@ export async function resumePlacement(request) {
       sessionId: session._id,
       placementVersion: session.placementVersion,
       studentName: session.studentName || "",
+      phoneNumber: session.phoneNumber || "",
       status: session.status || "active",
       phase: session.phase || "calibration",
       moduleId: session.moduleId || "calibration-01",
@@ -1037,6 +1048,7 @@ function dashboardSessionRow(session) {
   return {
     sessionId: String(session?._id || ""),
     studentName: String(session?.studentName || ""),
+    phoneNumber: String(session?.phoneNumber || ""),
     status: String(session?.status || "active"),
     phase: String(session?.phase || ""),
     moduleId: String(session?.moduleId || ""),
