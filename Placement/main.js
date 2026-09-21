@@ -973,49 +973,111 @@
     return Math.max(.35, Math.min(.88, estimatedSpeechSeconds / durationSeconds));
   }
 
+  function hasLiveAudioTrack(stream) {
+    return Boolean(
+      stream?.active &&
+      stream.getAudioTracks?.().some((track) => track.readyState === "live")
+    );
+  }
+
   async function ensureSpeakingMic() {
-    if (speakingStream?.active) return speakingStream;
+    if (hasLiveAudioTrack(speakingStream)) return speakingStream;
 
-    if (!navigator.mediaDevices?.getUserMedia || !window.MediaRecorder) {
-      throw new Error("Microphone recording is not supported in this browser.");
+    if (!navigator.mediaDevices?.getUserMedia) {
+      throw new Error("Microphone capture is not supported in this browser.");
     }
 
-    try {
-      speakingStream = await navigator.mediaDevices.getUserMedia({
-        audio: {
-          echoCancellation: true,
-          noiseSuppression: true,
-          autoGainControl: true
-        }
+    // Dispose of stale/ended tracks before asking Android for the microphone
+    // again. Some Chromium-based mobile browsers keep a dead MediaStream
+    // object around after backgrounding or switching apps.
+    if (speakingStream) {
+      speakingStream.getTracks?.().forEach((track) => {
+        try { track.stop(); } catch {}
       });
-    } catch (error) {
-      // Some mobile browsers reject optional audio constraints even though
-      // plain microphone capture works correctly.
-      if (["NotAllowedError", "SecurityError"].includes(String(error?.name || ""))) throw error;
-      speakingStream = await navigator.mediaDevices.getUserMedia({ audio: true });
+      speakingStream = null;
     }
 
-    return speakingStream;
+    const enhancedConstraints = {
+      audio: {
+        echoCancellation: true,
+        noiseSuppression: true,
+        autoGainControl: true
+      }
+    };
+
+    // Android/vendor Chromium browsers are more reliable when microphone
+    // permission is requested with the simplest constraint first. Desktop
+    // browsers can still use the enhanced constraints first.
+    const attempts = speakingPlatformFamily() === "Android"
+      ? [{ audio: true }, enhancedConstraints]
+      : [enhancedConstraints, { audio: true }];
+
+    let lastError = null;
+
+    for (const constraints of attempts) {
+      try {
+        const stream = await navigator.mediaDevices.getUserMedia(constraints);
+        if (hasLiveAudioTrack(stream)) {
+          speakingStream = stream;
+          return speakingStream;
+        }
+
+        stream?.getTracks?.().forEach((track) => {
+          try { track.stop(); } catch {}
+        });
+        lastError = new Error("The browser returned no live microphone track.");
+      } catch (error) {
+        lastError = error;
+
+        // A real permission/security denial will not be fixed by changing
+        // optional audio constraints, so do not trigger a second prompt.
+        if (["NotAllowedError", "SecurityError"].includes(String(error?.name || ""))) {
+          break;
+        }
+      }
+    }
+
+    throw lastError || new Error("Microphone capture failed.");
   }
 
   async function setupSpeakingAnalyser() {
     const stream = await ensureSpeakingMic();
+    const AudioContextClass = window.AudioContext || window.webkitAudioContext;
 
-    if (!speakingAudioContext) {
-      const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-      if (!AudioContextClass) return null;
-      speakingAudioContext = new AudioContextClass();
-      const source = speakingAudioContext.createMediaStreamSource(stream);
-      speakingAnalyser = speakingAudioContext.createAnalyser();
-      speakingAnalyser.fftSize = 1024;
-      source.connect(speakingAnalyser);
+    // Metering is enhancement-only. A Web Audio failure must never make a
+    // working microphone look unavailable on Android.
+    if (!AudioContextClass) return null;
+
+    try {
+      if (!speakingAudioContext || speakingAudioContext.state === "closed") {
+        speakingAudioContext = new AudioContextClass();
+        const source = speakingAudioContext.createMediaStreamSource(stream);
+        speakingAnalyser = speakingAudioContext.createAnalyser();
+        speakingAnalyser.fftSize = 1024;
+        source.connect(speakingAnalyser);
+      }
+
+      if (speakingAudioContext.state === "suspended") {
+        try {
+          await speakingAudioContext.resume();
+        } catch (error) {
+          console.warn("Speaking meter could not resume; recording can continue.", error);
+          return null;
+        }
+      }
+
+      return speakingAnalyser;
+    } catch (error) {
+      console.warn("Speaking meter unavailable; recording can continue.", error);
+      speakingAnalyser = null;
+
+      if (speakingAudioContext) {
+        try { await speakingAudioContext.close(); } catch {}
+        speakingAudioContext = null;
+      }
+
+      return null;
     }
-
-    if (speakingAudioContext.state === "suspended") {
-      await speakingAudioContext.resume();
-    }
-
-    return speakingAnalyser;
   }
 
   function rmsFromAnalyser(analyser) {
@@ -1226,6 +1288,68 @@
     }, 90);
   }
 
+  function createSpeakingMediaRecorder(stream) {
+    if (!window.MediaRecorder) {
+      throw new Error("Audio recording is not supported in this browser.");
+    }
+
+    const preferredTypes = [
+      "audio/webm;codecs=opus",
+      "audio/webm",
+      "audio/ogg;codecs=opus",
+      "audio/ogg",
+      "audio/mp4;codecs=mp4a.40.2",
+      "audio/mp4",
+      "audio/aac"
+    ];
+
+    const supportedTypes = preferredTypes.filter((type) => {
+      try {
+        return typeof MediaRecorder.isTypeSupported !== "function" ||
+          MediaRecorder.isTypeSupported(type);
+      } catch {
+        return false;
+      }
+    });
+
+    const attempts = [
+      ...supportedTypes.map((mimeType) => ({ mimeType, audioBitsPerSecond: 48000 })),
+      ...supportedTypes.map((mimeType) => ({ mimeType })),
+      { audioBitsPerSecond: 48000 },
+      {}
+    ];
+
+    let lastError = null;
+
+    for (const options of attempts) {
+      try {
+        return Object.keys(options).length
+          ? new MediaRecorder(stream, options)
+          : new MediaRecorder(stream);
+      } catch (error) {
+        lastError = error;
+      }
+    }
+
+    throw lastError || new Error("Could not create an audio recorder.");
+  }
+
+  function startSpeakingMediaRecorder(recorder) {
+    try {
+      recorder.start(250);
+      return;
+    } catch (error) {
+      console.warn("Timed MediaRecorder start failed; retrying without timeslice.", error);
+    }
+
+    if (recorder.state === "inactive") {
+      recorder.start();
+      return;
+    }
+
+    throw new Error("Could not start audio recording.");
+  }
+
   async function startSpeakingRecording() {
     const data = speakingModule();
 
@@ -1248,45 +1372,36 @@
       speakingCaptureMode = "media-recorder";
 
       const stream = await ensureSpeakingMic();
-      await setupSpeakingAnalyser();
 
-      if (!window.MediaRecorder) {
-        throw new Error("MediaRecorder is unavailable.");
-      }
-
-      const preferredTypes = [
-        "audio/webm;codecs=opus",
-        "audio/webm",
-        "audio/ogg;codecs=opus",
-        "audio/ogg",
-        "audio/mp4;codecs=mp4a.40.2",
-        "audio/mp4",
-        "audio/aac"
-      ];
-      const mimeType = preferredTypes.find((type) => MediaRecorder.isTypeSupported?.(type)) || "";
-
-      const recorderOptions = mimeType
-        ? { mimeType, audioBitsPerSecond: 48000 }
-        : { audioBitsPerSecond: 48000 };
-
+      // Metering is best-effort; it must not block recording on Android.
       try {
-        speakingRecorder = new MediaRecorder(stream, recorderOptions);
-      } catch {
-        speakingRecorder = mimeType ? new MediaRecorder(stream, { mimeType }) : new MediaRecorder(stream);
+        await setupSpeakingAnalyser();
+      } catch (error) {
+        console.warn("Speaking meter setup failed; continuing without it.", error);
       }
+
+      speakingRecorder = createSpeakingMediaRecorder(stream);
 
       speakingRecorder.addEventListener("dataavailable", (event) => {
         if (event.data?.size) speakingChunks.push(event.data);
       });
 
       speakingRecorder.addEventListener("stop", finishSpeakingRecording, { once: true });
-      speakingRecorder.start(250);
+      startSpeakingMediaRecorder(speakingRecorder);
       startSpeakingMeter();
       renderSpeakingRecording(data);
     } catch (error) {
       speakingRecordingActive = false;
-      console.error(error);
-      renderSpeakingTechnicalError("Microphone unavailable.");
+      console.error("Speaking recording start failed:", error);
+
+      const name = String(error?.name || "");
+      const message = /MediaRecorder|audio recorder|recording is not supported/i.test(String(error?.message || ""))
+        ? "Audio recording is unavailable in this browser."
+        : ["NotAllowedError", "SecurityError"].includes(name)
+          ? "Microphone access was blocked by the browser."
+          : "Microphone unavailable.";
+
+      renderSpeakingTechnicalError(message);
     }
   }
 
