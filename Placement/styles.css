@@ -45,7 +45,11 @@ button { cursor: pointer; }
 
 .start-card {
   width: min(1080px, 100%);
-  background: rgba(255,255,255,.97);
+  background-color: rgba(255,255,255,.97);
+  background-image: url("./assets/doodle-background.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
   border-radius: 34px;
   overflow: hidden;
   border: 1px solid rgba(32, 38, 49, .06);
@@ -395,7 +399,11 @@ button { cursor: pointer; }
   overflow: hidden;
   padding: clamp(34px, 6vw, 64px);
   border-radius: 34px;
-  background: #fff;
+  background-color: #fff;
+  background-image: url("./assets/doodle-background.svg");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 100% 100%;
   border: 1px solid #eceef1;
 }
 
