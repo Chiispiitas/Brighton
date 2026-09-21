@@ -19,7 +19,7 @@
 html, body {
   min-height: 100%;
   margin: 0;
-  background: #fff;
+  background: #000;
   color: var(--ink);
   font-family: "Poppins", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
 }
@@ -27,14 +27,21 @@ html, body {
 body {
   min-height: 100vh;
   overflow-x: hidden;
-  background: #fff;
+  background-color: #000;
+  background-image: url("../Exams/assets/bg.png");
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
 }
 
 button, input { font: inherit; }
 button { cursor: pointer; }
 .hidden { display: none !important; }
 
-.placement-app { min-height: 100vh; }
+.placement-app {
+  min-height: 100vh;
+  background: transparent;
+}
 
 .start-screen {
   min-height: 100vh;
@@ -240,7 +247,7 @@ button { cursor: pointer; }
   align-content: center;
   gap: 12px;
   padding: 24px;
-  background: #fff;
+  background: transparent;
   text-align: center;
 }
 
@@ -296,7 +303,7 @@ button { cursor: pointer; }
 
 .placement-shell {
   min-height: 100vh;
-  background: #fff;
+  background: transparent;
 }
 
 .shell-header {
@@ -1391,7 +1398,7 @@ button { cursor: pointer; }
 /* Shareable Placement Result */
 .placement-shell.result-shell {
   min-height: 100vh;
-  background: #f6f9fb;
+  background: transparent;
 }
 
 .result-shell .shell-header {
