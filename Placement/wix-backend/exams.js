@@ -30,6 +30,15 @@ const COLLECTIONS = {
 const ACTIVE_PROGRESS_HOURS = 3;
 const SUBMITTED_PROGRESS_MINUTES = 15;
 
+const EXAM_ID_ALIASES = Object.freeze({
+  "brighton-a2-reading-and-writing-final": "brighton-a2-rw-final"
+});
+
+function canonicalExamId(value) {
+  const examId = cleanText(value);
+  return EXAM_ID_ALIASES[examId] || examId;
+}
+
 // Snapshot of the live published getExams response captured while this package was built.
 const FALLBACK_EXAMS = [
   {
@@ -45,16 +54,16 @@ const FALLBACK_EXAMS = [
     "maxScore": 25
   },
   {
-    "examId": "brighton-a2-reading-and-writing-final",
-    "title": "A2 Reading and Writing Exam",
+    "examId": "brighton-a2-rw-final",
+    "title": "Brighton A2 Reading and Writing Final Exam",
     "level": "A2",
     "skill": "Reading and Writing",
-    "description": "KET-based Reading and Writing final exam.",
+    "description": "Seven-part A2 Key-style Reading and Writing final exam.",
     "shareUrl": "https://chiispiitas.github.io/Brighton/Exams/exams/a2-rw/index.html",
     "iframeUrl": "https://chiispiitas.github.io/Brighton/Exams/exams/a2-rw/index.html",
     "isActive": true,
     "totalQuestions": 32,
-    "maxScore": 70
+    "maxScore": 60
   },
   {
     "examId": "brighton-b1plus-writing-final",
@@ -131,6 +140,399 @@ const FALLBACK_EXAMS = [
 ];
 
 const FALLBACK_ANSWER_KEYS = {
+  "brighton-a2-rw-final": {
+    "examId": "brighton-a2-rw-final",
+    "examTitle": "Brighton A2 Reading and Writing Final Exam",
+    "maxScore": 60,
+    "totalQuestions": 32,
+    "normalization": {
+      "caseInsensitive": true,
+      "trimWhitespace": true,
+      "collapseInternalWhitespace": true
+    },
+    "parts": {
+      "1": {
+        "label": "Part 1",
+        "questions": [
+          1,
+          2,
+          3,
+          4,
+          5,
+          6
+        ],
+        "maxScore": 6
+      },
+      "2": {
+        "label": "Part 2",
+        "questions": [
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13
+        ],
+        "maxScore": 7
+      },
+      "3": {
+        "label": "Part 3",
+        "questions": [
+          14,
+          15,
+          16,
+          17,
+          18
+        ],
+        "maxScore": 5
+      },
+      "4": {
+        "label": "Part 4",
+        "questions": [
+          19,
+          20,
+          21,
+          22,
+          23,
+          24
+        ],
+        "maxScore": 6
+      },
+      "5": {
+        "label": "Part 5",
+        "questions": [
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "maxScore": 6
+      },
+      "6": {
+        "label": "Part 6",
+        "questions": [
+          31
+        ],
+        "maxScore": 15
+      },
+      "7": {
+        "label": "Part 7",
+        "questions": [
+          32
+        ],
+        "maxScore": 15
+      }
+    },
+    "answers": {
+      "1": {
+        "part": 1,
+        "points": 1,
+        "answers": [
+          "B"
+        ]
+      },
+      "2": {
+        "part": 1,
+        "points": 1,
+        "answers": [
+          "A"
+        ]
+      },
+      "3": {
+        "part": 1,
+        "points": 1,
+        "answers": [
+          "A"
+        ]
+      },
+      "4": {
+        "part": 1,
+        "points": 1,
+        "answers": [
+          "A"
+        ]
+      },
+      "5": {
+        "part": 1,
+        "points": 1,
+        "answers": [
+          "B"
+        ]
+      },
+      "6": {
+        "part": 1,
+        "points": 1,
+        "answers": [
+          "B"
+        ]
+      },
+      "7": {
+        "part": 2,
+        "points": 1,
+        "answers": [
+          "A"
+        ]
+      },
+      "8": {
+        "part": 2,
+        "points": 1,
+        "answers": [
+          "B"
+        ]
+      },
+      "9": {
+        "part": 2,
+        "points": 1,
+        "answers": [
+          "A"
+        ]
+      },
+      "10": {
+        "part": 2,
+        "points": 1,
+        "answers": [
+          "C"
+        ]
+      },
+      "11": {
+        "part": 2,
+        "points": 1,
+        "answers": [
+          "B"
+        ]
+      },
+      "12": {
+        "part": 2,
+        "points": 1,
+        "answers": [
+          "C"
+        ]
+      },
+      "13": {
+        "part": 2,
+        "points": 1,
+        "answers": [
+          "A"
+        ]
+      },
+      "14": {
+        "part": 3,
+        "points": 1,
+        "answers": [
+          "C"
+        ]
+      },
+      "15": {
+        "part": 3,
+        "points": 1,
+        "answers": [
+          "A"
+        ]
+      },
+      "16": {
+        "part": 3,
+        "points": 1,
+        "answers": [
+          "B"
+        ]
+      },
+      "17": {
+        "part": 3,
+        "points": 1,
+        "answers": [
+          "B"
+        ]
+      },
+      "18": {
+        "part": 3,
+        "points": 1,
+        "answers": [
+          "A"
+        ]
+      },
+      "19": {
+        "part": 4,
+        "points": 1,
+        "answers": [
+          "A"
+        ]
+      },
+      "20": {
+        "part": 4,
+        "points": 1,
+        "answers": [
+          "B"
+        ]
+      },
+      "21": {
+        "part": 4,
+        "points": 1,
+        "answers": [
+          "A"
+        ]
+      },
+      "22": {
+        "part": 4,
+        "points": 1,
+        "answers": [
+          "C"
+        ]
+      },
+      "23": {
+        "part": 4,
+        "points": 1,
+        "answers": [
+          "B"
+        ]
+      },
+      "24": {
+        "part": 4,
+        "points": 1,
+        "answers": [
+          "A"
+        ]
+      },
+      "25": {
+        "part": 5,
+        "points": 1,
+        "answers": [
+          "between"
+        ]
+      },
+      "26": {
+        "part": 5,
+        "points": 1,
+        "answers": [
+          "is"
+        ]
+      },
+      "27": {
+        "part": 5,
+        "points": 1,
+        "answers": [
+          "to"
+        ]
+      },
+      "28": {
+        "part": 5,
+        "points": 1,
+        "answers": [
+          "which",
+          "that"
+        ]
+      },
+      "29": {
+        "part": 5,
+        "points": 1,
+        "answers": [
+          "their",
+          "the"
+        ]
+      },
+      "30": {
+        "part": 5,
+        "points": 1,
+        "answers": [
+          "your"
+        ]
+      },
+      "31": {
+        "part": 6,
+        "points": 15,
+        "mode": "components",
+        "minWords": 25,
+        "components": [
+          {
+            "points": 5,
+            "any": [
+              "arrive",
+              "get there",
+              "come",
+              "will be there",
+              "on saturday",
+              "on sunday",
+              "next weekend"
+            ]
+          },
+          {
+            "points": 5,
+            "any": [
+              "weather",
+              "rain",
+              "rainy",
+              "sunny",
+              "hot",
+              "cold",
+              "warm"
+            ]
+          },
+          {
+            "points": 5,
+            "any": [
+              "go to",
+              "visit",
+              "watch",
+              "play",
+              "eat",
+              "restaurant",
+              "park",
+              "museum",
+              "cinema",
+              "together"
+            ]
+          }
+        ],
+        "answers": []
+      },
+      "32": {
+        "part": 7,
+        "points": 15,
+        "mode": "components",
+        "minWords": 35,
+        "components": [
+          {
+            "points": 5,
+            "any": [
+              "rain",
+              "rainy",
+              "bus stop",
+              "bus was late",
+              "waiting",
+              "umbrella"
+            ]
+          },
+          {
+            "points": 5,
+            "any": [
+              "classmate",
+              "friend",
+              "met",
+              "shared",
+              "umbrella",
+              "together"
+            ]
+          },
+          {
+            "points": 5,
+            "any": [
+              "school",
+              "arrived",
+              "arrive",
+              "laughed",
+              "laugh",
+              "morning",
+              "lesson",
+              "class"
+            ]
+          }
+        ],
+        "answers": []
+      }
+    }
+  },
   "brighton-b2-rue-final": {
     examId: "brighton-b2-rue-final",
     examTitle:
@@ -446,6 +848,11 @@ async function loadAnswerKey(
   answerKeyVersion = ""
 ) {
 
+  const canonicalId =
+    canonicalExamId(
+      examId
+    );
+
   const requestedVersion =
     normalizeAnswerKeyVersion(
       answerKeyVersion
@@ -485,7 +892,7 @@ async function loadAnswerKey(
         )
         .eq(
           "examId",
-          examId
+          canonicalId
         )
         .limit(1)
         .find(DATA_OPTIONS);
@@ -514,13 +921,13 @@ async function loadAnswerKey(
 
   if (
     FALLBACK_ANSWER_KEYS[
-      examId
+      canonicalId
     ]
   ) {
 
     return (
       FALLBACK_ANSWER_KEYS[
-        examId
+        canonicalId
       ]
     );
 
@@ -528,7 +935,7 @@ async function loadAnswerKey(
 
 
   throw new Error(
-    `No answer key found for examId: ${examId}`
+    `No answer key found for examId: ${canonicalId}`
   );
 
 }
@@ -1641,6 +2048,11 @@ export async function submitExam(
       payload.classId
     );
 
+  payload.examId =
+    canonicalExamId(
+      payload.examId
+    );
+
 
   const validationError =
     validateExamPayload(
@@ -1878,7 +2290,7 @@ export async function getResults(
 
 
   const examId =
-    cleanText(
+    canonicalExamId(
       request.query?.examId
     );
 
@@ -2134,6 +2546,11 @@ export async function updateProgress(
   payload.classId =
     normalizeClassCode(
       payload.classId
+    );
+
+  payload.examId =
+    canonicalExamId(
+      payload.examId
     );
 
 
@@ -2414,7 +2831,7 @@ export async function getProgress(
 
 
   const examId =
-    cleanText(
+    canonicalExamId(
       request.query?.examId
     );
 
