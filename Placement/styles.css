@@ -28,10 +28,7 @@ html, body {
 body {
   min-height: 100vh;
   overflow-x: hidden;
-  background:
-    radial-gradient(circle at 12% 12%, rgba(248, 168, 50, .13), transparent 27%),
-    radial-gradient(circle at 88% 84%, rgba(0, 169, 165, .09), transparent 26%),
-    linear-gradient(180deg, #fffdf9 0%, #fff 55%, #f8fbfb 100%);
+  background: #fff;
 }
 
 button, input { font: inherit; }
@@ -60,7 +57,7 @@ button { cursor: pointer; }
   content: "";
   display: block;
   height: 7px;
-  background: linear-gradient(90deg, var(--yellow) 0 68%, var(--teal) 68% 100%);
+  background: var(--yellow);
 }
 
 .brand-row {
@@ -304,9 +301,7 @@ button { cursor: pointer; }
 
 .placement-shell {
   min-height: 100vh;
-  background:
-    linear-gradient(90deg, rgba(248,168,50,.04) 0 1px, transparent 1px) 0 0 / 44px 44px,
-    #fff;
+  background: #fff;
 }
 
 .shell-header {
@@ -722,7 +717,7 @@ button { cursor: pointer; }
 .handoff-line {
   height: 3px;
   border-radius: 999px;
-  background: linear-gradient(90deg, var(--teal), var(--yellow));
+  background: var(--teal);
 }
 
 .reading-handoff strong {
@@ -880,9 +875,7 @@ button { cursor: pointer; }
   min-height: 315px;
   border-radius: 26px;
   border: 1px solid #e4e8eb;
-  background:
-    radial-gradient(circle at 50% 34%, rgba(0,169,165,.10), transparent 34%),
-    #f9fbfb;
+  background: #f9fbfb;
   display: grid;
   place-items: center;
   align-content: center;
@@ -1016,9 +1009,7 @@ button { cursor: pointer; }
   width: 58px;
   height: 66px;
   position: relative;
-  background:
-    linear-gradient(var(--ink), var(--ink)) 50% 52px / 4px 10px no-repeat,
-    linear-gradient(var(--ink), var(--ink)) 50% 62px / 28px 4px no-repeat;
+  background: transparent;
 }
 
 .mic-mark::before {
@@ -1414,10 +1405,7 @@ button { cursor: pointer; }
 /* Shareable Placement Result */
 .placement-shell.result-shell {
   min-height: 100vh;
-  background:
-    radial-gradient(circle at 8% 8%, rgba(248,168,50,.12), transparent 24%),
-    radial-gradient(circle at 92% 12%, rgba(0,169,165,.10), transparent 24%),
-    #f6f9fb;
+  background: #f6f9fb;
 }
 
 .result-shell .shell-header {
@@ -1663,7 +1651,7 @@ button { cursor: pointer; }
 }
 
 .certificate-band.active {
-  background: linear-gradient(145deg, var(--yellow), var(--yellow-dark));
+  background: var(--yellow);
   color: #fff;
   border-color: transparent;
   box-shadow: 0 10px 24px rgba(232,145,24,.24);
@@ -1707,18 +1695,16 @@ button { cursor: pointer; }
   height: 92px;
   margin-bottom: 7px;
   border-radius: 50%;
+  border: 7px solid var(--teal);
+  box-sizing: border-box;
   display: grid;
   place-items: center;
   position: relative;
-  background: conic-gradient(var(--teal) calc(var(--skill-score) * 1%), #e7eeee 0);
+  background: #fff;
 }
 
 .skill-ring::after {
-  content: "";
-  position: absolute;
-  inset: 7px;
-  border-radius: 50%;
-  background: #fff;
+  content: none;
 }
 
 .skill-ring span {
