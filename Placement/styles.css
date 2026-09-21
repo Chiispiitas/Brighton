@@ -19,7 +19,7 @@
 html, body {
   min-height: 100%;
   margin: 0;
-  background: #000;
+  background: #fff;
   color: var(--ink);
   font-family: "Poppins", "Segoe UI", system-ui, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
 }
@@ -27,7 +27,7 @@ html, body {
 body {
   min-height: 100vh;
   overflow-x: hidden;
-  background-color: #000;
+  background-color: #fff;
   background-image: url("../Exams/assets/bg.png");
   background-repeat: no-repeat;
   background-position: center;
