@@ -92,7 +92,7 @@
         dropdownParent: document.body,
         separateDialCode: true,
         matchDropdownWidth: true,
-        strictMode: true,
+        strictMode: false,
         placeholderNumberPolicy: "AGGRESSIVE",
         placeholderNumberType: "MOBILE",
         customPlaceholder: (exampleNumber) => exampleNumber
