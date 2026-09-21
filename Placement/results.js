@@ -484,8 +484,11 @@
   }
 
   function phoneHref(value) {
-    const phone = String(value || "").trim();
-    return /^09\d{8}$/.test(phone) ? `tel:${phone}` : "#";
+    const phone = String(value || "").trim().replace(/[\s().-]/g, "");
+    if (/^\+[1-9]\d{7,14}$/.test(phone)) return `tel:${phone}`;
+    if (/^09\d{8}$/.test(phone)) return `tel:+593${phone.slice(1)}`;
+    if (/^9\d{8}$/.test(phone)) return `tel:+593${phone}`;
+    return "#";
   }
 
   function formatDate(value) {
