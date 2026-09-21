@@ -89,6 +89,7 @@
         countryOrder: [ECUADOR_ISO2],
         countrySearch: true,
         countrySelectorMode: "DROPDOWN",
+        dropdownParent: document.body,
         separateDialCode: true,
         matchDropdownWidth: true,
         strictMode: true,
