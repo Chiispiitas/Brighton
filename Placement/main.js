@@ -4,6 +4,8 @@
   const PLACEMENT_VERSION = "2026-09-20.1";
   const STORAGE_KEY = "brighton-placement-session-v1";
   const RESTART_NAME_KEY = "brighton-placement-restart-name";
+  const RESTART_PHONE_KEY = "brighton-placement-restart-phone";
+  const ECUADOR_MOBILE_REGEX = /^09\d{8}$/;
   const INACTIVITY_LIMIT_MS = 60 * 60 * 1000;
   const ACTIVITY_SYNC_INTERVAL_MS = 5 * 60 * 1000;
   const MAX_LISTENING_PLAYS = 3;
@@ -20,6 +22,7 @@
     placementShell: document.querySelector("#placementShell"),
     studentForm: document.querySelector("#studentForm"),
     studentName: document.querySelector("#studentName"),
+    phoneNumber: document.querySelector("#phoneNumber"),
     startBtn: document.querySelector("#startBtn"),
     restartTestBtn: document.querySelector("#restartTestBtn"),
     formError: document.querySelector("#formError"),
@@ -202,10 +205,11 @@
     });
   }
 
-  async function startRemoteSession(name, clientSessionId) {
+  async function startRemoteSession(name, phoneNumber, clientSessionId) {
     return apiPost("brightonPlacementStart", {
       clientSessionId,
       studentName: name,
+      phoneNumber,
       placementVersion: PLACEMENT_VERSION
     });
   }
@@ -437,6 +441,7 @@
       sessionId: saved.sessionId,
       placementVersion: remote?.placementVersion || saved.placementVersion,
       studentName: remote?.studentName || saved.studentName || "",
+      phoneNumber: remote?.phoneNumber || saved.phoneNumber || "",
       status: remote?.status || saved.status || "active",
       phase: remote?.phase || saved.phase || "calibration",
       moduleId: remote?.moduleId || saved.moduleId || saved.currentModuleId || "calibration-01",
@@ -485,6 +490,7 @@
 
       renderPlacementResult(result || {
         studentName: session.studentName,
+        phoneNumber: session.phoneNumber || "",
         finalLevel: session.finalLevel || session.provisionalLevel,
         completedAt: session.completedAt
       });
@@ -1937,6 +1943,7 @@
     if (!window.confirm(message)) return;
 
     const name = String(session?.studentName || els.studentName.value || "").trim();
+    const phoneNumber = String(session?.phoneNumber || els.phoneNumber?.value || "").trim();
     const activeSession = inProgress
       ? {
           sessionId: session.sessionId,
@@ -1952,6 +1959,8 @@
     try {
       if (name) sessionStorage.setItem(RESTART_NAME_KEY, name);
       else sessionStorage.removeItem(RESTART_NAME_KEY);
+      if (phoneNumber) sessionStorage.setItem(RESTART_PHONE_KEY, phoneNumber);
+      else sessionStorage.removeItem(RESTART_PHONE_KEY);
     } catch {}
 
     if (activeSession) {
@@ -1971,6 +1980,7 @@
     const finalLevel = result.finalLevel || session?.finalLevel || session?.provisionalLevel || "—";
     const finalDescription = result.finalDescription || levelDescription(finalLevel);
     const studentName = result.studentName || session?.studentName || "";
+    const phoneNumber = result.phoneNumber || session?.phoneNumber || "";
     const completedAt = result.completedAt || session?.completedAt || new Date().toISOString();
     const resultId = result.resultId || `BR-${String(session?.sessionId || "").slice(-8).toUpperCase()}`;
     const skills = result.skills || {};
@@ -1978,6 +1988,7 @@
     session.resultSummary = {
       ...result,
       studentName,
+      phoneNumber,
       finalLevel,
       finalDescription,
       completedAt,
@@ -2114,35 +2125,45 @@
 
   els.restartTestBtn?.addEventListener("click", restartPlacementTest);
 
-  function flagInvalidStudentName() {
-    els.studentName.setAttribute("aria-invalid", "true");
-    els.studentName.classList.remove("name-input-invalid");
+  function flagInvalidField(input) {
+    if (!input) return;
+    input.setAttribute("aria-invalid", "true");
+    input.classList.remove("name-input-invalid");
     // Force a reflow so repeated invalid submissions replay the shake.
-    void els.studentName.offsetWidth;
-    els.studentName.classList.add("name-input-invalid");
-    els.studentName.focus();
+    void input.offsetWidth;
+    input.classList.add("name-input-invalid");
+    input.focus();
   }
 
-  els.studentName.addEventListener("input", () => {
-    els.studentName.classList.remove("name-input-invalid");
-    els.studentName.removeAttribute("aria-invalid");
-    els.formError.textContent = "";
-  });
+  [els.studentName, els.phoneNumber].forEach((input) => {
+    input?.addEventListener("input", () => {
+      input.classList.remove("name-input-invalid");
+      input.removeAttribute("aria-invalid");
+      els.formError.textContent = "";
+    });
 
-  els.studentName.addEventListener("animationend", () => {
-    els.studentName.classList.remove("name-input-invalid");
+    input?.addEventListener("animationend", () => {
+      input.classList.remove("name-input-invalid");
+    });
   });
 
   els.studentForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const name = els.studentName.value.trim().replace(/\s+/g, " ");
+    const phoneNumber = els.phoneNumber.value.trim();
     const nameParts = name ? name.split(" ").filter(Boolean) : [];
     els.formError.textContent = "";
 
     if (nameParts.length < 2) {
       els.formError.textContent = "Please write your full name.";
-      flagInvalidStudentName();
+      flagInvalidField(els.studentName);
+      return;
+    }
+
+    if (!ECUADOR_MOBILE_REGEX.test(phoneNumber)) {
+      els.formError.textContent = "Enter a valid Ecuadorian phone number: 09XXXXXXXX.";
+      flagInvalidField(els.phoneNumber);
       return;
     }
 
@@ -2150,13 +2171,14 @@
     const clientSessionId = makeClientSessionId();
 
     try {
-      const result = await startRemoteSession(name, clientSessionId);
+      const result = await startRemoteSession(name, phoneNumber, clientSessionId);
 
       session = {
         clientSessionId,
         sessionId: result.sessionId,
         placementVersion: result.placementVersion || PLACEMENT_VERSION,
         studentName: name,
+        phoneNumber,
         phase: "calibration",
         moduleId: result.moduleId || "calibration-01",
         provisionalLevel: "",
@@ -2183,10 +2205,11 @@
 
   try {
     const restartName = sessionStorage.getItem(RESTART_NAME_KEY);
-    if (restartName) {
-      els.studentName.value = restartName;
-      sessionStorage.removeItem(RESTART_NAME_KEY);
-    }
+    const restartPhone = sessionStorage.getItem(RESTART_PHONE_KEY);
+    if (restartName) els.studentName.value = restartName;
+    if (restartPhone) els.phoneNumber.value = restartPhone;
+    sessionStorage.removeItem(RESTART_NAME_KEY);
+    sessionStorage.removeItem(RESTART_PHONE_KEY);
   } catch {}
 
   const savedSession = loadLocalSession();
