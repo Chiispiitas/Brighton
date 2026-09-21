@@ -67,7 +67,9 @@ The backend uses `suppressAuth: true` for its Wix Data operations, so the Placem
 
 ### BrightonPlacementSessions
 
-`clientSessionId` Text; `studentName` Text; `phoneNumber` Text; `placementVersion` Text; `status` Text; `phase` Text; `moduleId` Text; `routeJson` Text; `progressJson` Text; `startedAt` Date and Time; `updatedAt` Date and Time; `completedAt` Date and Time; `timeSpentSeconds` Number; `provisionalLevel` Text; `finalLevel` Text; `confidence` Number.
+International phone input uses a country selector (Ecuador by default) and stores one canonical E.164 value. For Ecuador, both `0991234567` and `991234567` are accepted and normalized to `+593991234567`. Other countries are validated against the selected country's numbering rules in the frontend. The backend accepts canonical E.164 and also normalizes legacy Ecuador local input.
+
+`clientSessionId` Text; `studentName` Text; `phoneNumber` Text (normalized E.164, e.g. `+593991234567`); `placementVersion` Text; `status` Text; `phase` Text; `moduleId` Text; `routeJson` Text; `progressJson` Text; `startedAt` Date and Time; `updatedAt` Date and Time; `completedAt` Date and Time; `timeSpentSeconds` Number; `provisionalLevel` Text; `finalLevel` Text; `confidence` Number.
 
 ### BrightonPlacementResponses
 
