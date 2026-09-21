@@ -507,7 +507,9 @@ export async function gradeSpeakingWithGemini(payload, objectiveLevel, promptId)
     !prompt ||
     !audioMimeType ||
     audioBase64.length < 1600 ||
-    audioBase64.length > 15000000 ||
+    // Public Velo HTTP functions cap the entire request body at 512 KB.
+    // Frontend keeps Base64 audio <= 400k chars so metadata still fits safely.
+    audioBase64.length > 400000 ||
     durationSeconds < Math.max(5, profile.minSeconds * 0.72);
 
   if (preflightError) {
