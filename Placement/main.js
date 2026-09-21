@@ -1603,6 +1603,12 @@
       }
 
       if (result.speakingError) {
+        console.error("Brighton Speaking provider error", {
+          speakingErrorCode: result.speakingErrorCode || "technical",
+          providerStatus: Number(result.providerStatus) || 0,
+          providerCode: result.providerCode || "",
+          providerTransport: result.providerTransport || ""
+        });
         renderSpeakingTechnicalError("We couldn't process your answer. Try again.");
         return;
       }
