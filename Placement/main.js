@@ -7,6 +7,11 @@
   const INACTIVITY_LIMIT_MS = 60 * 60 * 1000;
   const ACTIVITY_SYNC_INTERVAL_MS = 5 * 60 * 1000;
   const MAX_LISTENING_PLAYS = 3;
+  // Wix Velo HTTP functions reject request bodies above 512 KB. Speaking audio
+  // is sent inline as Base64, so keep a deliberate safety margin below that cap.
+  const WIX_HTTP_BODY_SAFE_BYTES = 480 * 1024;
+  const SPEAKING_AUDIO_BITS_PER_SECOND = 24000;
+  const SPEAKING_MAX_BASE64_CHARS = 400000;
   const modules = window.BRIGHTON_PLACEMENT_MODULES || {};
 
   const els = {
@@ -153,13 +158,24 @@
 
     // text/plain is deliberately used so GitHub Pages/file previews do not
     // require a browser OPTIONS preflight before the Wix HTTP function.
+    const serializedBody = JSON.stringify(body);
+    const requestBytes = new Blob([serializedBody]).size;
+
+    if (requestBytes > WIX_HTTP_BODY_SAFE_BYTES) {
+      const error = new Error("Placement request is too large for the Wix HTTP endpoint.");
+      error.code = "WIX_BODY_TOO_LARGE";
+      throw error;
+    }
+
     const response = await fetch(`${apiBase}/${path}`, {
       method: "POST",
       headers: { "Content-Type": "text/plain;charset=UTF-8" },
-      body: JSON.stringify(body)
+      body: serializedBody
     });
 
-    const payload = await response.json().catch(() => ({}));
+    const responseText = await response.text();
+    let payload = {};
+    try { payload = responseText ? JSON.parse(responseText) : {}; } catch {}
 
     if (!response.ok || !payload?.success) {
       throw new Error(payload?.error || `Placement service returned ${response.status}.`);
@@ -1316,9 +1332,9 @@
     });
 
     const attempts = [
-      ...supportedTypes.map((mimeType) => ({ mimeType, audioBitsPerSecond: 48000 })),
+      ...supportedTypes.map((mimeType) => ({ mimeType, audioBitsPerSecond: SPEAKING_AUDIO_BITS_PER_SECOND })),
       ...supportedTypes.map((mimeType) => ({ mimeType })),
-      { audioBitsPerSecond: 48000 },
+      { audioBitsPerSecond: SPEAKING_AUDIO_BITS_PER_SECOND },
       {}
     ];
 
@@ -1339,7 +1355,9 @@
 
   function startSpeakingMediaRecorder(recorder) {
     try {
-      recorder.start(250);
+      // A longer timeslice reduces WebM/MP4 container overhead while still
+      // yielding data often enough for stable mobile recording.
+      recorder.start(1000);
       return;
     } catch (error) {
       console.warn("Timed MediaRecorder start failed; retrying without timeslice.", error);
@@ -1538,8 +1556,8 @@
     try {
       const audioBase64 = await blobToBase64(audioBlob);
 
-      if (!audioBase64 || audioBase64.length > 15000000) {
-        renderSpeakingTechnicalError("The recording is too large to process. Try again.");
+      if (!audioBase64 || audioBase64.length > SPEAKING_MAX_BASE64_CHARS) {
+        renderSpeakingTechnicalError("The recording is too large to send. Try again.");
         return;
       }
 
@@ -1559,6 +1577,7 @@
         audioActivityAvailable,
         speechRecognitionAvailable: Boolean(speechRecognitionConstructor()),
         recorderMimeType,
+        audioBitsPerSecond: Number(speakingRecorder?.audioBitsPerSecond) || SPEAKING_AUDIO_BITS_PER_SECOND,
         captureMode: speakingCaptureMode,
         recognitionError: "",
         recognitionStarts: 0,
@@ -1601,7 +1620,9 @@
     } catch (error) {
       console.error(error);
 
-      if (lastSpeakingAttemptMetrics) {
+      if (error?.code === "WIX_BODY_TOO_LARGE") {
+        renderSpeakingTechnicalError("The recording is too large to send. Try again.");
+      } else if (lastSpeakingAttemptMetrics) {
         renderSpeakingSubmitRetry(lastSpeakingAttemptMetrics);
       } else {
         renderSpeakingTechnicalError("We couldn't prepare your answer. Try again.");
