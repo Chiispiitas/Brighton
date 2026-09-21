@@ -1,7 +1,7 @@
 # Brighton Placement — Gemini audio speaking grading
 
 Version: `2026-09-20.1`  
-Rubric: `brighton-speaking-rubric-1.2`  
+Rubric: `brighton-speaking-rubric-1.3`  
 Primary model: `gemini-3.8-flash`  
 Fallback model: `gemini-3.5-flash-lite`
 
@@ -30,9 +30,11 @@ The request does **not** include the student's name, email, Wix session ID, scho
 
 Brighton does not persist the raw audio. `BrightonPlacementSpeaking.audioUrl` remains empty. The CMS record stores the transcript, scores, rubric evidence, model/rubric version and limited API usage metadata.
 
-Speaking uses Gemini's `generateContent` API with inline audio and JSON structured output. The backend first tries `gemini-3.8-flash`; if the provider rejects the request or is quota/server limited, it automatically falls back to `gemini-3.5-flash-lite`. If Google rejects the structured schema with HTTP 400/422, the same model is retried once in JSON mode without an enforced schema.
+Speaking uses Gemini's Interactions API as the primary path with inline audio and a top-level `response_format` array, matching Google's current REST contract. `generateContent` remains an independent fallback and uses the REST fields `systemInstruction`, `inlineData`, `responseMimeType`, and `responseSchema`.
 
-Provider failures are converted into a controlled Speaking technical error rather than an HTTP 500, so the Placement client can offer Try again / I cannot speak now instead of incorrectly showing Connection lost.
+The backend first tries `gemini-3.8-flash`; if the provider rejects the request or is quota/server limited, it can fall back to `gemini-3.5-flash-lite`. Structured-output validation failures can retry in JSON mode without an enforced schema.
+
+Provider failures are converted into a controlled Speaking technical error rather than an HTTP 500. The client also exposes a safe technical reference (HTTP status, provider code, transport) on the retry screen without exposing the Gemini API key.
 
 ## Capture flow
 
