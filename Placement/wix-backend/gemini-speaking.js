@@ -422,6 +422,25 @@ function extractGenerateContentText(result) {
   return "";
 }
 
+function extractInteractionText(interaction) {
+  const steps = Array.isArray(interaction?.steps) ? interaction.steps : [];
+
+  for (let i = steps.length - 1; i >= 0; i -= 1) {
+    const step = steps[i];
+    if (step?.type !== "model_output" || !Array.isArray(step.content)) continue;
+
+    const text = step.content
+      .filter((item) => item?.type === "text" && typeof item.text === "string")
+      .map((item) => item.text)
+      .join("")
+      .trim();
+
+    if (text) return text;
+  }
+
+  return String(interaction?.output_text || "").trim();
+}
+
 function parseProviderError(status, rawText) {
   let parsed = null;
 
@@ -472,6 +491,104 @@ function makeGenerateContentBody(candidateContext, audioBase64, audioMimeType, i
         text: responseText
       }
     }
+  };
+}
+
+async function callInteractions(apiKey, model, candidateContext, audioBase64, audioMimeType, includeSchema) {
+  const responseFormat = {
+    type: "text",
+    mime_type: "application/json"
+  };
+
+  if (includeSchema) {
+    responseFormat.schema = RESPONSE_SCHEMA;
+  }
+
+  const response = await fetch(
+    "https://generativelanguage.googleapis.com/v1beta/interactions",
+    {
+      method: "post",
+      headers: {
+        "Content-Type": "application/json",
+        "x-goog-api-key": apiKey
+      },
+      body: JSON.stringify({
+        model,
+        system_instruction: EXAMINER_INSTRUCTIONS,
+        input: [
+          { type: "text", text: candidateContext },
+          {
+            type: "audio",
+            data: audioBase64,
+            mime_type: audioMimeType
+          }
+        ],
+        response_format: responseFormat,
+        generation_config: {
+          thinking_level: model === GEMINI_SPEAKING_MODEL ? "medium" : "low"
+        },
+        store: false
+      })
+    }
+  );
+
+  const rawText = await response.text();
+
+  if (!response.ok) {
+    const error = parseProviderError(response.status, rawText);
+    console.error(
+      "Gemini Interactions speaking request failed:",
+      JSON.stringify({
+        model,
+        includeSchema,
+        status: error.status,
+        code: error.code,
+        message: error.message
+      })
+    );
+
+    return { ok: false, transport: "interactions", model, includeSchema, error };
+  }
+
+  let interaction;
+  try {
+    interaction = JSON.parse(rawText);
+  } catch {
+    return {
+      ok: false,
+      transport: "interactions",
+      model,
+      includeSchema,
+      error: {
+        status: 502,
+        code: "INVALID_PROVIDER_JSON",
+        message: "Gemini returned unreadable JSON."
+      }
+    };
+  }
+
+  const outputText = extractInteractionText(interaction);
+  if (!outputText || (interaction?.status && interaction.status !== "completed")) {
+    return {
+      ok: false,
+      transport: "interactions",
+      model,
+      includeSchema,
+      error: {
+        status: 502,
+        code: String(interaction?.status || "EMPTY_PROVIDER_OUTPUT").toUpperCase(),
+        message: "Gemini returned no completed speaking assessment."
+      }
+    };
+  }
+
+  return {
+    ok: true,
+    transport: "interactions",
+    model,
+    includeSchema,
+    outputText,
+    usage: interaction?.usage || null
   };
 }
 
@@ -558,7 +675,8 @@ async function requestSpeakingAssessment(apiKey, candidateContext, audioBase64, 
   let lastFailure = null;
 
   for (const model of models) {
-    const structured = await callGenerateContent(
+    // Interactions is Google's current recommended API for new Gemini projects.
+    const interactionStructured = await callInteractions(
       apiKey,
       model,
       candidateContext,
@@ -567,13 +685,11 @@ async function requestSpeakingAssessment(apiKey, candidateContext, audioBase64, 
       true
     );
 
-    if (structured.ok) return structured;
-    lastFailure = structured;
+    if (interactionStructured.ok) return interactionStructured;
+    lastFailure = interactionStructured;
 
-    // A 400/422 commonly means the provider rejected schema complexity or
-    // validation. Retry once with JSON mode but without an enforced schema.
-    if ([400, 422].includes(Number(structured.error?.status))) {
-      const jsonOnly = await callGenerateContent(
+    if ([400, 422].includes(Number(interactionStructured.error?.status))) {
+      const interactionJsonOnly = await callInteractions(
         apiKey,
         model,
         candidateContext,
@@ -582,13 +698,47 @@ async function requestSpeakingAssessment(apiKey, candidateContext, audioBase64, 
         false
       );
 
-      if (jsonOnly.ok) return jsonOnly;
-      lastFailure = jsonOnly;
+      if (interactionJsonOnly.ok) return interactionJsonOnly;
+      lastFailure = interactionJsonOnly;
+    }
+
+    // Keep GenerateContent as an independent transport fallback.
+    const generateStructured = await callGenerateContent(
+      apiKey,
+      model,
+      candidateContext,
+      audioBase64,
+      audioMimeType,
+      true
+    );
+
+    if (generateStructured.ok) return generateStructured;
+    lastFailure = generateStructured;
+
+    if ([400, 422].includes(Number(generateStructured.error?.status))) {
+      const generateJsonOnly = await callGenerateContent(
+        apiKey,
+        model,
+        candidateContext,
+        audioBase64,
+        audioMimeType,
+        false
+      );
+
+      if (generateJsonOnly.ok) return generateJsonOnly;
+      lastFailure = generateJsonOnly;
+    }
+
+    // Authentication/project configuration failures won't be fixed by trying
+    // more models. Stop early and return the real safe provider status.
+    if ([401, 403].includes(Number(lastFailure?.error?.status))) {
+      break;
     }
   }
 
   return lastFailure || {
     ok: false,
+    transport: "none",
     model: GEMINI_SPEAKING_MODEL,
     includeSchema: true,
     error: {
@@ -758,7 +908,8 @@ export async function gradeSpeakingWithGemini(payload, objectiveLevel, promptId)
       usage: null,
       modelUsed: providerResult?.model || GEMINI_SPEAKING_MODEL,
       providerStatus: Number(providerError?.status) || 0,
-      providerCode: String(providerError?.code || "GEMINI_UNAVAILABLE").slice(0, 80)
+      providerCode: String(providerError?.code || "GEMINI_UNAVAILABLE").slice(0, 80),
+      providerTransport: String(providerResult?.transport || "")
     };
   }
 
