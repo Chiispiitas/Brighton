@@ -1,0 +1,55 @@
+name: Package Placement Country Phone Backend
+
+on:
+  push:
+    paths:
+      - ".github/workflows/package-placement-country-phone-backend.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare Wix replacement
+        shell: bash
+        run: |
+          mkdir -p release/Backend
+          cp Placement/wix-backend/placement.js release/Backend/placement.js
+          cat > release/README.txt <<'EOF'
+          Brighton Placement international phone input backend update
+
+          Replace ONLY:
+          Backend/placement.js
+
+          Do NOT replace:
+          Backend/gemini-speaking.js
+          Backend/http-functions.js
+          Backend/core.js
+          Backend/exams.js
+          Backend/tests.js
+
+          No CMS schema change is required. BrightonPlacementSessions.phoneNumber
+          remains a Text field.
+
+          New storage format:
+          Canonical E.164, e.g. +593991234567
+
+          Ecuador compatibility:
+          0991234567 -> +593991234567
+          991234567  -> +593991234567
+
+          Other countries:
+          The frontend validates according to the selected country's numbering
+          rules and sends canonical E.164 to this backend.
+
+          After replacing Backend/placement.js, Publish the Wix site.
+          EOF
+      - uses: actions/upload-artifact@v4
+        with:
+          name: brighton-placement-country-phone-wix-backend
+          path: release/
+          retention-days: 7
