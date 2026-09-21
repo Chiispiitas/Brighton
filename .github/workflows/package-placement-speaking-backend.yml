@@ -1,0 +1,50 @@
+name: Package Placement Speaking Backend
+
+on:
+  push:
+    paths:
+      - ".github/workflows/package-placement-speaking-backend.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Prepare Wix replacement package
+        shell: bash
+        run: |
+          mkdir -p release/Backend
+          cp Placement/wix-backend/gemini-speaking.js release/Backend/gemini-speaking.js
+          cp Placement/wix-backend/placement.js release/Backend/placement.js
+          cat > release/README.txt <<'EOF'
+          Brighton Placement Speaking backend replacement v4
+
+          Replace ONLY:
+          Backend/gemini-speaking.js
+          Backend/placement.js
+
+          Keep:
+          Backend/http-functions.js
+          Backend/core.js
+          Backend/exams.js
+          Backend/tests.js
+
+          Then Publish Wix.
+
+          v4 fixes:
+          - Interactions response_format is now an array as required by Google's current REST contract
+          - GenerateContent fallback now uses systemInstruction, inlineData/mimeType,
+            responseMimeType and responseSchema
+          - GenerateContent schema types are normalized for the REST Schema enum
+          - Gemini 3.8 Flash uses medium thinking; fallback model avoids unsupported thinking config
+          - provider failures remain controlled and return safe status/code/transport diagnostics
+          EOF
+      - uses: actions/upload-artifact@v4
+        with:
+          name: brighton-placement-speaking-wix-backend-fix-v4
+          path: release/
+          retention-days: 7
