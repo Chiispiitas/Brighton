@@ -100,7 +100,7 @@
   async function loadResults() {
     loadBtn.disabled = true;
     resultsStatus.textContent = "Loading placement results…";
-    resultsBody.innerHTML = '<tr><td colspan="8">Loading…</td></tr>';
+    resultsBody.innerHTML = '<tr><td colspan="9">Loading…</td></tr>';
 
     try {
       const payload = await apiGet("brightonPlacementResults", {
@@ -118,7 +118,7 @@
       console.error(error);
       rows = [];
       renderSummary();
-      resultsBody.innerHTML = '<tr><td colspan="8">Could not load placement results.</td></tr>';
+      resultsBody.innerHTML = '<tr><td colspan="9">Could not load placement results.</td></tr>';
       resultsStatus.textContent = error.message || "Could not load placement results.";
     } finally {
       loadBtn.disabled = false;
@@ -127,7 +127,7 @@
 
   function renderRows() {
     if (!rows.length) {
-      resultsBody.innerHTML = '<tr><td colspan="8">No placement attempts found.</td></tr>';
+      resultsBody.innerHTML = '<tr><td colspan="9">No placement attempts found.</td></tr>';
       return;
     }
 
@@ -137,6 +137,7 @@
       return `
         <tr>
           <td><strong>${escapeHtml(row.studentName || "—")}</strong></td>
+          <td><a class="placement-phone-link" href="${escapeAttr(phoneHref(row.phoneNumber))}">${escapeHtml(row.phoneNumber || "—")}</a></td>
           <td><span class="placement-status ${status}">${status === "completed" ? "Completed" : "In progress"}</span></td>
           <td><span class="placement-level-pill">${escapeHtml(level)}</span></td>
           <td>${escapeHtml(formatDate(row.startedAt))}</td>
@@ -210,6 +211,7 @@
       </section>
 
       <section class="detail-grid placement-meta-grid">
+        ${detailBox("Phone", session.phoneNumber || "—")}
         ${detailBox("Started", formatDate(session.startedAt))}
         ${detailBox("Completed", formatDate(session.completedAt))}
         ${detailBox("Time", formatDuration(session.timeSpentSeconds))}
@@ -426,9 +428,10 @@
       return;
     }
 
-    const headers = ["Student", "Status", "Final level", "Provisional level", "Started", "Completed", "Time seconds", "Speaking evidence confidence", "Session ID"];
+    const headers = ["Student", "Phone", "Status", "Final level", "Provisional level", "Started", "Completed", "Time seconds", "Speaking evidence confidence", "Session ID"];
     const data = rows.map((row) => [
       row.studentName,
+      row.phoneNumber,
       row.status,
       row.finalLevel,
       row.provisionalLevel,
@@ -478,6 +481,11 @@
   function score10(value) {
     const number = Number(value);
     return Number.isFinite(number) ? number.toFixed(1) : "—";
+  }
+
+  function phoneHref(value) {
+    const phone = String(value || "").trim();
+    return /^09\\d{8}$/.test(phone) ? `tel:${phone}` : "#";
   }
 
   function formatDate(value) {
