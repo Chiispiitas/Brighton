@@ -210,6 +210,23 @@ button { cursor: pointer; }
   border-color: var(--teal);
 }
 
+.player-card input[aria-invalid="true"],
+.player-card input.name-input-invalid {
+  border-color: #d92d20;
+}
+
+.player-card input.name-input-invalid {
+  animation: name-input-shake .36s ease-in-out;
+}
+
+@keyframes name-input-shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-8px); }
+  40% { transform: translateX(7px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(3px); }
+}
+
 .primary-btn {
   min-height: 52px;
   margin-top: 5px;
