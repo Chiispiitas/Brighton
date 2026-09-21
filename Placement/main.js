@@ -5,7 +5,7 @@
   const STORAGE_KEY = "brighton-placement-session-v1";
   const RESTART_NAME_KEY = "brighton-placement-restart-name";
   const RESTART_PHONE_KEY = "brighton-placement-restart-phone";
-  const ECUADOR_MOBILE_REGEX = /^09\d{8}$/;
+  const ECUADOR_ISO2 = "ec";
   const INACTIVITY_LIMIT_MS = 60 * 60 * 1000;
   const ACTIVITY_SYNC_INTERVAL_MS = 5 * 60 * 1000;
   const MAX_LISTENING_PLAYS = 3;
@@ -39,6 +39,7 @@
   };
 
   const apiBase = String(window.BRIGHTON_SITE_CONFIG?.API_BASE_URL || "").replace(/\/$/, "");
+  const phoneInput = initialisePhoneInput();
 
   let session = null;
   let currentModuleId = null;
@@ -78,6 +79,91 @@
   let lastActivitySyncAt = 0;
   let inactivityTimer = null;
   let expiringForInactivity = false;
+
+  function initialisePhoneInput() {
+    if (!els.phoneNumber || typeof window.intlTelInput !== "function") return null;
+
+    try {
+      return window.intlTelInput(els.phoneNumber, {
+        initialCountry: ECUADOR_ISO2,
+        countryOrder: [ECUADOR_ISO2],
+        countrySearch: true,
+        countrySelectorMode: "DROPDOWN",
+        separateDialCode: true,
+        matchDropdownWidth: true,
+        strictMode: true,
+        placeholderNumberPolicy: "AGGRESSIVE",
+        placeholderNumberType: "MOBILE",
+        customPlaceholder: (exampleNumber) => exampleNumber
+          ? exampleNumber.replace(/\d/g, "0")
+          : "Phone number"
+      });
+    } catch (error) {
+      console.warn("Could not initialise international phone input.", error);
+      return null;
+    }
+  }
+
+  function ecuadorPhoneFromDigits(value) {
+    const digits = String(value || "").replace(/\D/g, "");
+    if (/^09\d{8}$/.test(digits)) return `+593${digits.slice(1)}`;
+    if (/^9\d{8}$/.test(digits)) return `+593${digits}`;
+    return "";
+  }
+
+  function normalisePhoneForSubmit() {
+    const rawValue = String(els.phoneNumber?.value || "").trim();
+
+    if (!phoneInput) {
+      return ecuadorPhoneFromDigits(rawValue);
+    }
+
+    const selectedCountry = phoneInput.getSelectedCountryData?.() || {};
+    if (String(selectedCountry.iso2 || "").toLowerCase() === ECUADOR_ISO2) {
+      const ecuadorNumber = ecuadorPhoneFromDigits(rawValue);
+      if (!ecuadorNumber) return "";
+
+      try {
+        phoneInput.setNumber(ecuadorNumber);
+      } catch {}
+      return ecuadorNumber;
+    }
+
+    try {
+      if (phoneInput.isValidNumber() !== true) return "";
+      const normalized = String(phoneInput.getNumber() || "").trim();
+      return /^\+[1-9]\d{7,14}$/.test(normalized) ? normalized : "";
+    } catch (error) {
+      console.warn("Could not validate phone number.", error);
+      return "";
+    }
+  }
+
+  function phoneValidationMessage() {
+    const selectedCountry = phoneInput?.getSelectedCountryData?.() || {};
+    if (String(selectedCountry.iso2 || "").toLowerCase() === ECUADOR_ISO2) {
+      return "Enter a valid Ecuadorian phone number: 09XXXXXXXX or 9XXXXXXXX.";
+    }
+
+    const countryName = String(selectedCountry.name || "").trim();
+    return countryName
+      ? `Enter a valid phone number for ${countryName}.`
+      : "Enter a valid phone number.";
+  }
+
+  function restorePhoneInput(value) {
+    const phone = String(value || "").trim();
+    if (!phone) return;
+
+    if (phoneInput) {
+      try {
+        phoneInput.setNumber(phone);
+        return;
+      } catch {}
+    }
+
+    els.phoneNumber.value = phone;
+  }
 
   function makeClientSessionId() {
     if (window.crypto?.randomUUID) return window.crypto.randomUUID();
@@ -2135,23 +2221,26 @@
     input.focus();
   }
 
+  function clearFieldError(input) {
+    input?.classList.remove("name-input-invalid");
+    input?.removeAttribute("aria-invalid");
+    els.formError.textContent = "";
+  }
+
   [els.studentName, els.phoneNumber].forEach((input) => {
-    input?.addEventListener("input", () => {
-      input.classList.remove("name-input-invalid");
-      input.removeAttribute("aria-invalid");
-      els.formError.textContent = "";
-    });
+    input?.addEventListener("input", () => clearFieldError(input));
 
     input?.addEventListener("animationend", () => {
       input.classList.remove("name-input-invalid");
     });
   });
 
+  els.phoneNumber?.addEventListener("countrychange", () => clearFieldError(els.phoneNumber));
+
   els.studentForm.addEventListener("submit", async (event) => {
     event.preventDefault();
 
     const name = els.studentName.value.trim().replace(/\s+/g, " ");
-    const phoneNumber = els.phoneNumber.value.trim();
     const nameParts = name ? name.split(" ").filter(Boolean) : [];
     els.formError.textContent = "";
 
@@ -2161,8 +2250,9 @@
       return;
     }
 
-    if (!ECUADOR_MOBILE_REGEX.test(phoneNumber)) {
-      els.formError.textContent = "Enter a valid Ecuadorian phone number: 09XXXXXXXX.";
+    const phoneNumber = normalisePhoneForSubmit();
+    if (!phoneNumber) {
+      els.formError.textContent = phoneValidationMessage();
       flagInvalidField(els.phoneNumber);
       return;
     }
@@ -2207,7 +2297,7 @@
     const restartName = sessionStorage.getItem(RESTART_NAME_KEY);
     const restartPhone = sessionStorage.getItem(RESTART_PHONE_KEY);
     if (restartName) els.studentName.value = restartName;
-    if (restartPhone) els.phoneNumber.value = restartPhone;
+    if (restartPhone) restorePhoneInput(restartPhone);
     sessionStorage.removeItem(RESTART_NAME_KEY);
     sessionStorage.removeItem(RESTART_PHONE_KEY);
   } catch {}
