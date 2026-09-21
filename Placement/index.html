@@ -6,7 +6,7 @@
   <meta name="description" content="Brighton English School adaptive placement test" />
   <title>Brighton Placement</title>
   <link rel="icon" type="image/png" href="../Exams/assets/favicon.png" />
-  <link rel="stylesheet" href="styles.css?v=20260921-speaking-provider4" />
+  <link rel="stylesheet" href="styles.css?v=20260921-phone1" />
 </head>
 <body>
   <main class="placement-app">
@@ -35,6 +35,8 @@
           <form id="studentForm" class="player-card" novalidate>
             <label for="studentName">Full name</label>
             <input id="studentName" name="studentName" type="text" autocomplete="name" maxlength="90" placeholder="Your name" required />
+            <label for="phoneNumber">Phone number</label>
+            <input id="phoneNumber" name="phoneNumber" type="tel" inputmode="numeric" autocomplete="tel-national" maxlength="10" pattern="09[0-9]{8}" placeholder="09XXXXXXXX" aria-describedby="formError" required />
             <button id="startBtn" class="primary-btn" type="submit"><span>Start</span><span aria-hidden="true">→</span></button>
             <p class="micro-copy">Use headphones. You'll speak at the end.</p>
             <p id="formError" class="form-error" role="alert" aria-live="polite"></p>
@@ -85,6 +87,6 @@
   <script src="../Exams/config.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
   <script src="item-bank.js?v=20260920-speaking-rubric11"></script>
-  <script src="main.js?v=20260921-speaking-provider4"></script>
+  <script src="main.js?v=20260921-phone1"></script>
 </body>
 </html>
