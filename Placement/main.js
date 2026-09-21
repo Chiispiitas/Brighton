@@ -2102,7 +2102,6 @@
     els.formError.textContent = "";
 
     if (nameParts.length < 2) {
-      window.alert("Please write your full name.");
       els.formError.textContent = "Please write your full name.";
       flagInvalidStudentName();
       return;
