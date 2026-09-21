@@ -26,7 +26,7 @@ const PLACEMENT_SPEAKING = "BrightonPlacementSpeaking";
 const PLACEMENT_VERSION = "2026-09-20.1";
 const ITEM_KEY_VERSION = "2026-09-19.7";
 const PLACEMENT_INACTIVITY_MS = 60 * 60 * 1000;
-const ECUADOR_MOBILE_REGEX = /^09\d{8}$/;
+const E164_PHONE_REGEX = /^\+[1-9]\d{7,14}$/;
 
 const LEVELS = ["PRE-A1", "A1", "A2", "B1", "B1+", "B2", "C1"];
 
@@ -78,6 +78,20 @@ function isoDate(value) {
   } catch {
     return new Date().toISOString();
   }
+}
+
+function normalizePlacementPhone(value) {
+  const raw = String(value || "").trim();
+  if (!raw) return "";
+
+  const compact = raw.replace(/[\s().-]/g, "");
+  if (E164_PHONE_REGEX.test(compact)) return compact;
+
+  const digits = compact.replace(/\D/g, "");
+  if (/^09\d{8}$/.test(digits)) return `+593${digits.slice(1)}`;
+  if (/^9\d{8}$/.test(digits)) return `+593${digits}`;
+
+  return "";
 }
 
 function validateVersion(payload) {
@@ -448,7 +462,7 @@ export async function startPlacement(request) {
 
     const clientSessionId = String(payload.clientSessionId || "").trim();
     const studentName = String(payload.studentName || "").trim().replace(/\s+/g, " ");
-    const phoneNumber = String(payload.phoneNumber || "").trim();
+    const phoneNumber = normalizePlacementPhone(payload.phoneNumber);
 
     if (!clientSessionId || clientSessionId.length < 16) {
       return jsonBadRequest("Invalid placement session.");
@@ -458,8 +472,8 @@ export async function startPlacement(request) {
       return jsonBadRequest("Invalid student name.");
     }
 
-    if (!ECUADOR_MOBILE_REGEX.test(phoneNumber)) {
-      return jsonBadRequest("Invalid Ecuadorian phone number.");
+    if (!phoneNumber) {
+      return jsonBadRequest("Invalid phone number.");
     }
 
     const existing = await wixData
