@@ -143,7 +143,7 @@
           <td>${escapeHtml(formatDate(row.startedAt))}</td>
           <td>${escapeHtml(formatDate(row.completedAt))}</td>
           <td>${escapeHtml(formatDuration(row.timeSpentSeconds))}</td>
-          <td>${escapeHtml(formatConfidence(row.confidence))}</td>
+          <td>${escapeHtml(hasSpeakingEvidence(row) ? "YES" : "NO")}</td>
           <td><button class="secondary-btn" type="button" data-session-id="${escapeAttr(row.sessionId)}">View</button></td>
         </tr>
       `;
@@ -215,7 +215,7 @@
         ${detailBox("Started", formatDate(session.startedAt))}
         ${detailBox("Completed", formatDate(session.completedAt))}
         ${detailBox("Time", formatDuration(session.timeSpentSeconds))}
-        ${detailBox("Speaking evidence", formatConfidence(session.confidence))}
+        ${detailBox("Speaking evidence", speaking || hasSpeakingEvidence(session) ? "YES" : "NO")}
       </section>
 
       <section class="detail-section">
@@ -481,6 +481,10 @@
   function score10(value) {
     const number = Number(value);
     return Number.isFinite(number) ? number.toFixed(1) : "—";
+  }
+
+  function hasSpeakingEvidence(value) {
+    return Number(value?.confidence) > 0;
   }
 
   function phoneHref(value) {
