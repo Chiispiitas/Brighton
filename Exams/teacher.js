@@ -8,6 +8,7 @@
   const App = window.BrightonApp || {};
   const config = window.BRIGHTON_SITE_CONFIG || {};
   const apiBase = String(config.API_BASE_URL || "").replace(/\/$/, "");
+  const PUBLIC_EXAMS_BASE_URL = "https://exams.bebrighton.net/Exams/";
 
   const levelScreen = document.querySelector("#examLevelScreen");
   const selectedLevelSection = document.querySelector("#selectedExamLevel");
@@ -230,8 +231,18 @@
   function resolveExamUrl(exam) {
     const target = String(exam.shareUrl || exam.iframeUrl || exam.relativeUrl || "").trim();
     if (!target) return "#";
+    return canonicalPublicExamUrl(target);
+  }
+
+  function canonicalPublicExamUrl(target) {
     try {
-      return new URL(target, window.location.href).href;
+      const url = new URL(target, PUBLIC_EXAMS_BASE_URL);
+      let path = url.pathname.replace(/^\/Brighton(?=\/|$)/, "");
+      if (!/^\/Exams(?:\/|$)/i.test(path)) {
+        path = new URL(target, PUBLIC_EXAMS_BASE_URL).pathname;
+      }
+      const origin = new URL(PUBLIC_EXAMS_BASE_URL).origin;
+      return `${origin}${path}${url.search}${url.hash}`;
     } catch {
       return target;
     }
