@@ -45,6 +45,7 @@ jobs:
       - name: Harden Open Graph metadata
         shell: bash
         run: |
+          python - <<'PY'
           from pathlib import Path
           import re
 
