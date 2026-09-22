@@ -807,12 +807,32 @@ export async function submitSpeaking(request) {
 
     const session = await getPlacementSession(sessionId, clientSessionId);
 
-    if (!session || session.status !== "active") {
+    if (!session) {
       return jsonBadRequest("Placement session not found.");
     }
 
     if (session.placementVersion !== PLACEMENT_VERSION) {
       return jsonBadRequest("Placement version changed. Refresh the page.");
+    }
+
+    // Make Speaking retries idempotent. Wix can occasionally drop the public
+    // HTTP response after Gemini grading has already completed and been saved.
+    // Older clients may retry the same recording; return the saved result
+    // instead of rejecting a completed session.
+    if (session.status === "completed") {
+      const result = await buildResultSummary(session);
+      return jsonOK({
+        success: true,
+        finalLevel: result.finalLevel || session.finalLevel || session.provisionalLevel || "A2",
+        speakingLevel: result.skills?.speaking?.level || "",
+        confidence: Number(session.confidence) || 0,
+        result,
+        duplicate: true
+      });
+    }
+
+    if (session.status !== "active") {
+      return jsonBadRequest("Placement session not found.");
     }
 
     if (String(session.moduleId || "") !== moduleId || !/^speaking-/.test(moduleId)) {
