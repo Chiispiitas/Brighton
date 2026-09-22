@@ -324,11 +324,15 @@
       }
 
       try {
-        const payload = await fetchPlacementResult();
-        if (payload?.result?.finalLevel) return payload.result;
+        // Resume is intentionally used for polling because an in-progress
+        // session returns a normal success response instead of a 400.
+        const payload = await resumeRemoteSession(session);
+        if (payload?.status === "completed" && payload?.result?.finalLevel) {
+          return payload.result;
+        }
       } catch {
-        // The speaking request may still be finishing server-side. Keep polling
-        // briefly before asking the student to retry the recording.
+        // The speaking request may still be finishing server-side, or the
+        // network may still be recovering. Keep polling before showing retry.
       }
     }
 
