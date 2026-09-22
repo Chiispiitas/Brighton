@@ -317,7 +317,7 @@
     });
   }
 
-  async function recoverCompletedPlacementResult({ attempts = 8, delayMs = 900 } = {}) {
+  async function recoverCompletedPlacementResult({ attempts = 60, delayMs = 1000 } = {}) {
     for (let attempt = 0; attempt < attempts; attempt += 1) {
       if (attempt > 0) {
         await new Promise((resolve) => window.setTimeout(resolve, delayMs));
@@ -1856,7 +1856,24 @@
     `;
 
     els.stageRoot.querySelector("#retrySpeakingSubmitBtn")?.addEventListener("click", async () => {
+      const button = els.stageRoot.querySelector("#retrySpeakingSubmitBtn");
       const data = speakingModule();
+
+      if (button) {
+        button.disabled = true;
+        button.textContent = "Checking result…";
+      }
+
+      // A dropped Wix response can arrive after the backend has already
+      // finished grading. Always recover the existing completed result before
+      // sending the same audio again.
+      const existingResult = await recoverCompletedPlacementResult({ attempts: 4, delayMs: 600 });
+      if (existingResult) {
+        acceptRecoveredPlacementResult(existingResult);
+        return;
+      }
+
+      if (button) button.textContent = "Retrying…";
 
       try {
         const result = await apiPost("brightonPlacementSubmitSpeaking", {
@@ -1890,6 +1907,17 @@
         renderPlacementResult(result.result || result);
       } catch (error) {
         console.error(error);
+
+        const recoveredResult = await recoverCompletedPlacementResult();
+        if (recoveredResult) {
+          acceptRecoveredPlacementResult(recoveredResult);
+          return;
+        }
+
+        if (button) {
+          button.disabled = false;
+          button.textContent = "Retry";
+        }
       }
     });
   }
