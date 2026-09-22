@@ -8,6 +8,7 @@
   const App = window.BrightonApp || {};
   const config = window.BRIGHTON_SITE_CONFIG || {};
   const apiBase = String(config.API_BASE_URL || "").replace(/\/$/, "");
+  const PUBLIC_EXAMS_ORIGIN = "https://exams.bebrighton.net";
 
   const classIdInput = document.querySelector("#classIdInput");
   const examSelect = document.querySelector("#examSelect");
@@ -1336,7 +1337,15 @@
 
   function copyShareLink() {
     syncUrlFromControls({ replace: true, keepOpen: true });
-    navigator.clipboard?.writeText(location.href).then(() => showToast("Link copied"), () => showToast("Could not copy link"));
+
+    const current = new URL(window.location.href);
+    const path = current.pathname.replace(/^\/Brighton(?=\/|$)/, "");
+    const shareUrl = `${PUBLIC_EXAMS_ORIGIN}${path}${current.search}${current.hash}`;
+
+    navigator.clipboard?.writeText(shareUrl).then(
+      () => showToast("Link copied"),
+      () => showToast("Could not copy link")
+    );
   }
 
   function readQueryState() {
