@@ -317,6 +317,37 @@
     });
   }
 
+  async function recoverCompletedPlacementResult({ attempts = 8, delayMs = 900 } = {}) {
+    for (let attempt = 0; attempt < attempts; attempt += 1) {
+      if (attempt > 0) {
+        await new Promise((resolve) => window.setTimeout(resolve, delayMs));
+      }
+
+      try {
+        const payload = await fetchPlacementResult();
+        if (payload?.result?.finalLevel) return payload.result;
+      } catch {
+        // The speaking request may still be finishing server-side. Keep polling
+        // briefly before asking the student to retry the recording.
+      }
+    }
+
+    return null;
+  }
+
+  function acceptRecoveredPlacementResult(result) {
+    session.phase = "result";
+    session.finalLevel = result.finalLevel || session.finalLevel || session.provisionalLevel || "";
+    session.status = "completed";
+    session.confidence = result.confidence ?? session.confidence ?? 0;
+    session.completedAt = result.completedAt || new Date().toISOString();
+    session.resultSummary = result;
+    saveLocalSession();
+
+    cleanupSpeakingMedia();
+    renderPlacementResult(result);
+  }
+
   async function touchRemoteActivity() {
     if (!session || session.status === "completed" || session.phase === "result") return;
 
@@ -1730,7 +1761,20 @@
 
       if (error?.code === "WIX_BODY_TOO_LARGE") {
         renderSpeakingTechnicalError("The recording is too large to send. Try again.");
-      } else if (lastSpeakingAttemptMetrics) {
+        return;
+      }
+
+      // Wix can occasionally close the public HTTP response before a long
+      // Gemini grading request finishes. The backend may still complete and
+      // save the speaking result successfully. Recover that completed result
+      // before showing a retry error to the student.
+      const recoveredResult = await recoverCompletedPlacementResult();
+      if (recoveredResult) {
+        acceptRecoveredPlacementResult(recoveredResult);
+        return;
+      }
+
+      if (lastSpeakingAttemptMetrics) {
         renderSpeakingSubmitRetry(lastSpeakingAttemptMetrics);
       } else {
         renderSpeakingTechnicalError("We couldn't prepare your answer. Try again.");
