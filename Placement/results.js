@@ -14,7 +14,6 @@
   const resultsStatus = document.querySelector("#resultsStatus");
   const summaryTotal = document.querySelector("#summaryTotal");
   const summaryCompleted = document.querySelector("#summaryCompleted");
-  const summaryConfidence = document.querySelector("#summaryConfidence");
   const summaryLevel = document.querySelector("#summaryLevel");
   const modal = document.querySelector("#detailsModal");
   const detailsTitle = document.querySelector("#detailsTitle");
@@ -154,13 +153,6 @@
     summaryTotal.textContent = String(rows.length);
     const completed = rows.filter((row) => row.status === "completed");
     summaryCompleted.textContent = String(completed.length);
-
-    const confidences = completed
-      .map((row) => Number(row.confidence))
-      .filter((value) => Number.isFinite(value) && value > 0);
-    summaryConfidence.textContent = confidences.length
-      ? `${Math.round((confidences.reduce((a, b) => a + b, 0) / confidences.length) * 100)}%`
-      : "—";
 
     const counts = new Map();
     completed.forEach((row) => {
