@@ -10,6 +10,7 @@
   const toast = document.getElementById('testToast');
   const config = window.BRIGHTON_SITE_CONFIG || {};
   const tests = Array.isArray(config.FALLBACK_TESTS) ? config.FALLBACK_TESTS : [];
+  const PUBLIC_EXAMS_BASE_URL = "https://exams.bebrighton.net/Exams/";
 
   let activeLevelButton = null;
 
@@ -122,8 +123,15 @@
   function resolveTestUrl(test) {
     const target = String(test.shareUrl || test.iframeUrl || test.relativeUrl || '').trim();
     if (!target) return '#';
+
     try {
-      return new URL(target, window.location.href).href;
+      const url = new URL(target, PUBLIC_EXAMS_BASE_URL);
+      let path = url.pathname.replace(/^\/Brighton(?=\/|$)/, '');
+      if (!/^\/Exams(?:\/|$)/i.test(path)) {
+        path = new URL(target, PUBLIC_EXAMS_BASE_URL).pathname;
+      }
+      const origin = new URL(PUBLIC_EXAMS_BASE_URL).origin;
+      return `${origin}${path}${url.search}${url.hash}`;
     } catch {
       return target;
     }
