@@ -8,7 +8,7 @@
   Brighton A1 Listening Final
   Task architecture adapted from the five-part A1 Movers Listening format.
   Language scope is aligned to Personal Best A1 vocabulary and everyday situations.
-  Visual assets are placeholders until final artwork is approved.
+  Visual assets are stored in ./assets and are used directly by the exam player.
 */
 
 window.listeningExam = {
@@ -25,10 +25,11 @@ window.listeningExam = {
       range: "Questions 1-5",
       instruction: "Listen and match each name to the correct person in the picture.",
       type: "matching",
-      lead: "Look at the city-square picture. The people will be labelled A-H in the final artwork.",
+      lead: "Look at the city-square picture and match each name to the correct person.",
       taskQuestion: "Which person is each name?",
       optionsTitle: "People in the picture",
-      imageDescription: "IMAGE PLACEHOLDER - a busy Saturday city square with a market stall, outdoor cafe, bus stop, museum entrance, taxi, tree and bicycle. Show eight clearly separated young-adult or adult people labelled A-H. Clothing, objects, actions and positions must be easy to identify at A1 level.",
+      image: "assets/part1_scene_matching_main---b632be08-ab3e-4b43-a183-b5a3d68ef8c4.png",
+      imageDescription: "A Saturday city-square scene with a market stall, cafe, bus stop, museum, taxi, tree and bicycle. The people are distinguished by their positions, clothing, objects and actions.",
       example: { person: "Mia", answer: "H", text: "Person H" },
       options: {
         A: "Person A",
@@ -86,6 +87,16 @@ window.listeningExam = {
         F: "play chess",
         G: "go bike riding",
         H: "have a barbecue"
+      },
+      optionImages: {
+        A: "assets/part3_A_hiking---893c4835-ef71-42c7-af82-42a1fa052afc.png",
+        B: "assets/part3_B_cinema---a3c6e6dd-df19-4f2f-b412-6778fe2882f3.png",
+        C: "assets/part3_C_soccer---372211ba-649f-4a51-9677-bb3de52e7fd0.png",
+        D: "assets/part3_D_swimming---bd7f0325-1961-4e97-9203-c1dc5ae8015c.png",
+        E: "assets/part3_E_museum---e0b00e85-7fdc-4a0a-a08e-f9bf44834206.png",
+        F: "assets/part3_F_chess---7dd6ae7c-b5ac-4e15-a76c-ca1719aa80ad.png",
+        G: "assets/part3_G_bike_riding---edf50d09-76b4-457c-b940-0f2639763b55.png",
+        H: "assets/part3_H_barbecue---9158796b-6c20-4738-a9d6-2688a018e295.png"
       },
       items: [
         { q: 11, person: "Her uncle" },
@@ -157,7 +168,8 @@ window.listeningExam = {
       range: "Questions 21-25",
       instruction: "Look at the picture. Listen and choose the colour you hear, or write the word for Question 24.",
       type: "pictureAction",
-      imageDescription: "IMAGE PLACEHOLDER - a clear city park and cafe scene. Include a woman near a market stall with a shopping bag and jacket, a backpack next to a bench, a bicycle next to a tree, a small cafe building with an empty sign, an open umbrella near a bus stop, and a woman near the cafe wearing a hat for the example.",
+      image: "assets/part5_colour_write_main---ef4753e4-8fd1-4c04-8251-50c8b6ada09e.png",
+      imageDescription: "A black-and-white city park and cafe worksheet scene with the target hat, jacket, backpack, bicycle, blank building sign and umbrella clearly visible for the colour-and-write task.",
       example: { target: "Hat on the woman near the cafe", answer: "yellow" },
       items: [
         { q: 21, action: "color", target: "Woman's jacket", options: ["red", "blue", "green", "brown", "purple", "yellow", "orange", "pink"] },
