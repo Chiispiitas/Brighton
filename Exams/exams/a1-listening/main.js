@@ -7,6 +7,7 @@
 (() => {
   const exam = window.listeningExam;
   const examParts = exam.parts || [];
+  const visualLayouts = window.A1ListeningVisualLayouts || {};
   const STORAGE_KEY = "brighton-a1-listening-exam-state-v1";
   const App = window.BrightonApp || {};
   const $ = App.$ || ((selector, root = document) => root.querySelector(selector));
@@ -46,6 +47,7 @@
   let state = loadState() || createDefaultState();
   let saveTimer = null;
   let liveProgress = null;
+  let openColorPaletteQ = null;
 
   boot();
 
@@ -256,6 +258,7 @@
     if (part.type === "pictureAction") content = renderPictureActionPart(part);
     dom.mainContent.innerHTML = `${content}${renderEndSubmitCard()}`;
     attachMainHandlers(part);
+    hydrateInteractiveCutouts(part);
     bindEndSubmitCard();
     if (options.restoreScroll) {
       requestAnimationFrame(() => { dom.mainContent.scrollTop = state.scroll[part.id] || 0; });
@@ -325,6 +328,10 @@
 
   function renderGapPart(part) {
     const activeQ = getCurrentQuestionNumber();
+    const part2Image = visualLayouts.part2Image || part.image || "";
+    const picture = part2Image
+      ? `<img class="part2-support-image" src="${escapeAttr(resolveLayoutAsset(part2Image))}" alt="${escapeAttr(part.imageDescription || "Weekend trip listening picture")}" />`
+      : "";
     const lines = part.items.map(item => {
       const value = getAnswer(part.id, item.q);
       return `
@@ -342,6 +349,7 @@
         ${instruction(part.instruction)}
         <article class="article-card listening-gap-card sunshine-card">
           ${part.lead ? `<p class="listening-lead">${escapeHtml(part.lead)}</p>` : ""}
+          ${picture}
           <h3>${escapeHtml(part.heading)}</h3>
           ${part.subheading ? `<p class="job-subheading">${escapeHtml(part.subheading)}</p>` : ""}
           ${lines}
@@ -351,6 +359,8 @@
   }
 
   function renderMatchingPart(part) {
+    const layout = part.id === "part1" ? visualLayouts.part1 : null;
+    if (layout?.mode === "part1-hotspots") return renderPart1HotspotLayout(part, layout);
     const activeQ = getCurrentQuestionNumber();
     const optionItems = Object.entries(part.options || {}).map(([letter, text]) => {
       const imagePath = part.optionImages?.[letter];
@@ -410,6 +420,8 @@
   }
 
   function renderPictureActionPart(part) {
+    const layout = part.id === "part5" ? visualLayouts.part5 : null;
+    if (layout?.mode === "part5-color") return renderPart5ColorLayout(part, layout);
     const activeQ = getCurrentQuestionNumber();
     const visual = part.image
       ? `<img class="exam-scene-image" src="${escapeAttr(part.image)}" alt="${escapeAttr(part.imageDescription || "Listening picture")}" />`
@@ -444,7 +456,237 @@
     `;
   }
 
+  function resolveLayoutAsset(asset) {
+    const value = String(asset || "").trim();
+    if (!value) return "";
+    if (/^(?:https?:|data:|blob:|\/)/i.test(value) || value.includes("/")) return value;
+    return `assets/${value}`;
+  }
+
+  function layoutRectStyle(item) {
+    return `left:${Number(item.x) || 0}%;top:${Number(item.y) || 0}%;width:${Number(item.w) || 1}%;height:${Number(item.h) || 1}%;`;
+  }
+
+  function renderPart1HotspotLayout(part, layout) {
+    const activeQ = getCurrentQuestionNumber();
+    const activeItem = part.items.find(item => item.q === activeQ) || part.items[0];
+    const selected = getAnswer(part.id, activeQ);
+    const background = resolveLayoutAsset(layout.canvas?.background || part.image);
+    const hotspots = (layout.elements || []).filter(item => item.kind === "hotspot").map(item => {
+      const answer = String(item.answer || "");
+      const isExample = item.role === "example";
+      return `
+        <button
+          type="button"
+          class="part1-hotspot ${selected === answer ? "selected" : ""} ${isExample ? "example" : ""}"
+          style="${layoutRectStyle(item)}"
+          data-hotspot-answer="${escapeAttr(answer)}"
+          ${isExample ? "disabled" : ""}
+          aria-label="${escapeAttr(isExample ? `Example ${item.label || answer}` : `Choose person ${item.label || answer}`)}"
+          title="${escapeAttr(isExample ? "Example" : (item.label || answer))}"
+        >${escapeHtml(item.label || answer)}</button>
+      `;
+    }).join("");
+
+    return `
+      <section class="exam-panel part1 part1-hotspot-mode">
+        ${partHeader(part)}
+        ${instruction("Listen and click the button on the correct person in the picture.")}
+        <article class="article-card hotspot-focus-card">
+          <div class="visual-question-focus">
+            <span class="q-badge">${activeQ}</span>
+            <div><small>Who is this?</small><strong>${escapeHtml(activeItem?.person || "")}</strong></div>
+          </div>
+          <div class="interactive-picture-stage" style="aspect-ratio:${escapeAttr(layout.canvas?.aspect || "4 / 3")}">
+            <img src="${escapeAttr(background)}" alt="${escapeAttr(part.imageDescription || "City-square listening picture")}" />
+            ${hotspots}
+          </div>
+          <p class="interaction-help">Click a letter directly on the person. The yellow example button is already completed.</p>
+        </article>
+      </section>
+    `;
+  }
+
+  function renderPart5ColorLayout(part, layout) {
+    const activeQ = getCurrentQuestionNumber();
+    const background = resolveLayoutAsset(layout.canvas?.background || part.image);
+    const palette = layout.palette || {
+      red:"#d24a43", blue:"#3f70b7", green:"#4f8a52", brown:"#8a5d3b",
+      purple:"#76559e", yellow:"#e7bb35", orange:"#dc7c36", pink:"#d9809c"
+    };
+    const elements = layout.elements || [];
+
+    const overlays = elements.map(item => {
+      if (item.kind === "cutout") {
+        const q = Number(item.q) || 0;
+        const example = item.role === "example";
+        const answer = example ? (item.color || "yellow") : getAnswer(part.id, q);
+        return `
+          <button
+            type="button"
+            class="part5-cutout-button ${answer ? "answered" : ""} ${example ? "example" : ""}"
+            style="${layoutRectStyle(item)}"
+            data-cutout-q="${q}"
+            data-cutout-src="${escapeAttr(resolveLayoutAsset(item.asset))}"
+            data-cutout-color="${escapeAttr(answer || "")}"
+            ${example ? "disabled" : ""}
+            aria-label="${escapeAttr(example ? `Example: ${item.label || "colour item"}` : `Question ${q}: ${item.label || "choose a colour"}`)}"
+          ><canvas class="part5-cutout-canvas"></canvas><span class="cutout-q-badge">${example ? "Example" : q}</span></button>
+        `;
+      }
+      if (item.kind === "text") {
+        const q = Number(item.q) || 24;
+        const value = getAnswer(part.id, q);
+        return `
+          <input
+            class="part5-overlay-input"
+            style="${layoutRectStyle(item)}"
+            data-q="${q}"
+            value="${escapeAttr(value)}"
+            placeholder="${escapeAttr(item.placeholder || "Type one word")}"
+            autocomplete="off"
+            spellcheck="false"
+            aria-label="Question ${q}, type one word"
+          />
+        `;
+      }
+      return "";
+    }).join("");
+
+    const activeCutout = elements.find(item => item.kind === "cutout" && Number(item.q) === Number(openColorPaletteQ));
+    const paletteUi = activeCutout ? `
+      <div class="canvas-color-palette" role="dialog" aria-label="Choose a colour">
+        <strong>Q${Number(activeCutout.q)} · ${escapeHtml(activeCutout.label || "Choose a colour")}</strong>
+        <div class="canvas-color-swatches">
+          ${Object.entries(palette).map(([name, hex]) => `
+            <button type="button" class="canvas-color-swatch" data-color-q="${Number(activeCutout.q)}" data-color-name="${escapeAttr(name)}" style="--swatch:${escapeAttr(hex)}" aria-label="${escapeAttr(name)}" title="${escapeAttr(name)}"></button>
+          `).join("")}
+        </div>
+      </div>
+    ` : "";
+
+    return `
+      <section class="exam-panel part5 part5-canvas-mode">
+        ${partHeader(part)}
+        ${instruction("Listen, then click each object to choose its colour. Type the word directly in the blank sign for Question 24.")}
+        <article class="article-card hotspot-focus-card">
+          <div class="visual-question-focus">
+            <span class="q-badge">${activeQ}</span>
+            <div><small>Current task</small><strong>${escapeHtml(part.items.find(item => item.q === activeQ)?.target || "")}</strong></div>
+          </div>
+          <div class="interactive-picture-stage part5-interactive-stage" style="aspect-ratio:${escapeAttr(layout.canvas?.aspect || "4 / 3")}">
+            <img src="${escapeAttr(background)}" alt="${escapeAttr(part.imageDescription || "Colour and write listening picture")}" />
+            ${overlays}
+            ${paletteUi}
+          </div>
+          <p class="interaction-help">Click a cutout to open the colour palette. Your chosen colour is applied directly to the object.</p>
+        </article>
+      </section>
+    `;
+  }
+
+  function hydrateInteractiveCutouts(part) {
+    if (part.id !== "part5" || visualLayouts.part5?.mode !== "part5-color") return;
+    $(".part5-cutout-button").forEach(button => {
+      const canvas = $(".part5-cutout-canvas", button);
+      if (!canvas) return;
+      paintCutoutCanvas(canvas, button.dataset.cutoutSrc, button.dataset.cutoutColor || "");
+    });
+  }
+
+  function paintCutoutCanvas(canvas, src, colorName) {
+    if (!src) return;
+    const image = new Image();
+    image.onload = () => {
+      canvas.width = image.naturalWidth || image.width;
+      canvas.height = image.naturalHeight || image.height;
+      const ctx = canvas.getContext("2d", { willReadFrequently: true });
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.drawImage(image, 0, 0);
+      const hex = getPaletteHex(colorName);
+      if (!hex) return;
+      try {
+        const rgb = hexToRgb(hex);
+        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
+        const data = imageData.data;
+        for (let i = 0; i < data.length; i += 4) {
+          if (data[i + 3] < 5) continue;
+          const lum = 0.299 * data[i] + 0.587 * data[i + 1] + 0.114 * data[i + 2];
+          if (lum < 92) continue;
+          const shade = 0.58 + 0.42 * (lum / 255);
+          data[i] = Math.round(rgb.r * shade);
+          data[i + 1] = Math.round(rgb.g * shade);
+          data[i + 2] = Math.round(rgb.b * shade);
+        }
+        ctx.putImageData(imageData, 0, 0);
+      } catch (error) {
+        console.warn("Could not recolour cutout", error);
+      }
+    };
+    image.src = src;
+  }
+
+  function getPaletteHex(name) {
+    const palette = visualLayouts.part5?.palette || {};
+    return palette[name] || ({
+      red:"#d24a43", blue:"#3f70b7", green:"#4f8a52", brown:"#8a5d3b",
+      purple:"#76559e", yellow:"#e7bb35", orange:"#dc7c36", pink:"#d9809c"
+    })[name] || "";
+  }
+
+  function hexToRgb(hex) {
+    const value = parseInt(String(hex).replace("#", ""), 16);
+    return { r:(value >> 16) & 255, g:(value >> 8) & 255, b:value & 255 };
+  }
+
   function attachMainHandlers(part) {
+    if (part.id === "part1" && visualLayouts.part1?.mode === "part1-hotspots") {
+      $(".part1-hotspot:not(.example)").forEach(button => {
+        button.addEventListener("click", () => {
+          const q = getCurrentQuestionNumber();
+          setAnswer(part.id, q, button.dataset.hotspotAnswer || "", { render: false });
+          $(".part1-hotspot").forEach(node => node.classList.toggle("selected", node === button));
+          renderBottomNav();
+          renderStepControls();
+        });
+      });
+    }
+
+    if (part.id === "part5" && visualLayouts.part5?.mode === "part5-color") {
+      $(".part5-cutout-button:not(.example)").forEach(button => {
+        button.addEventListener("click", () => {
+          const q = Number(button.dataset.cutoutQ);
+          if (!q) return;
+          setCurrentQuestion(q, { render: false });
+          openColorPaletteQ = openColorPaletteQ === q ? null : q;
+          renderMain({ restoreScroll: true });
+          renderBottomNav();
+          renderStepControls();
+        });
+      });
+      $(".canvas-color-swatch").forEach(button => {
+        button.addEventListener("click", () => {
+          const q = Number(button.dataset.colorQ);
+          setCurrentQuestion(q, { render: false });
+          setAnswer(part.id, q, button.dataset.colorName || "", { render: false });
+          openColorPaletteQ = null;
+          renderApp({ restoreScroll: true });
+        });
+      });
+      $(".part5-overlay-input").forEach(input => {
+        input.addEventListener("focus", () => {
+          openColorPaletteQ = null;
+          setCurrentQuestion(Number(input.dataset.q), { render: false });
+          renderBottomNav();
+          renderStepControls();
+        });
+        input.addEventListener("input", () => {
+          setAnswer(part.id, Number(input.dataset.q), input.value, { render: false });
+          renderBottomNav();
+        });
+      });
+    }
+
     if (part.type === "visualMultiple" || part.type === "multiple") {
       $$(".radio-group").forEach(group => {
         group.addEventListener("change", event => {

@@ -48,6 +48,8 @@ jobs:
         run: |
           node --check Exams/exams/a1-listening/main.js
           node --check Exams/exams/a1-listening/listening-data.js
+          node --check Exams/exams/a1-listening/visual-layouts.js
+          node --check Exams/exams/a1-listening/layout-editor/app.js
       - name: Validate A1 player boot wiring
         run: |
           node <<'NODE'

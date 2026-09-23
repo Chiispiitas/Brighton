@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>A1 Listening Visual Layout Editor</title>
+<link rel="icon" type="image/png" href="../../../assets/favicon.png" />
+<link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+<header class="topbar">
+  <div>
+    <p class="eyebrow">Brighton English School · A1 Listening</p>
+    <h1>Visual Layout Editor</h1>
+  </div>
+  <div class="top-actions">
+    <button id="copyCompactBtn" class="primary">Copy parameter string</button>
+    <button id="copyPrettyBtn">Copy pretty JSON</button>
+  </div>
+</header>
+
+<main class="app">
+  <aside class="sidebar left">
+    <section class="panel">
+      <h2>1. Mode</h2>
+      <label>Editor mode
+        <select id="modeSelect">
+          <option value="part1-hotspots">Part 1 · character hotspots</option>
+          <option value="part5-color">Part 5 · colour cutouts + text</option>
+        </select>
+      </label>
+      <p class="hint">All positions and sizes are exported as percentages, so they stay aligned when the exam resizes.</p>
+    </section>
+
+    <section class="panel">
+      <h2>2. Background</h2>
+      <div class="button-stack">
+        <button id="loadDefaultBgBtn">Load exam background</button>
+        <label class="file-btn">Import another background
+          <input id="backgroundInput" type="file" accept="image/*" hidden />
+        </label>
+      </div>
+      <label>Exported background path / filename
+        <input id="backgroundName" type="text" />
+      </label>
+    </section>
+
+    <section id="part1Tools" class="panel">
+      <h2>3. Part 1 buttons</h2>
+      <button id="seedHotspotsBtn" class="primary">Create A–H buttons</button>
+      <button id="addHotspotBtn">Add one button</button>
+      <p class="hint">Place A–H directly over the people. H starts as the non-selectable example.</p>
+    </section>
+
+    <section id="part5Tools" class="panel hidden">
+      <h2>3. Part 5 overlays</h2>
+      <label class="file-btn primary">Import cutout PNG(s)
+        <input id="cutoutInput" type="file" accept="image/png,image/webp" multiple hidden />
+      </label>
+      <button id="addTextBtn">Add Q24 text field</button>
+      <p class="hint">Best recolouring: transparent PNG/WebP, black/dark outlines, white or light-gray interior.</p>
+    </section>
+
+    <section class="panel">
+      <h2>Selection</h2>
+      <div id="emptyInspector" class="hint">Select an item on the canvas.</div>
+      <div id="inspector" class="hidden inspector-grid">
+        <label>ID <input id="propId" type="text" /></label>
+        <label>Label <input id="propLabel" type="text" /></label>
+        <label>Answer / question
+          <input id="propAnswer" type="text" />
+        </label>
+        <label>Role
+          <select id="propRole">
+            <option value="answer">Answer</option>
+            <option value="example">Example</option>
+          </select>
+        </label>
+        <label>X % <input id="propX" type="number" step="0.01" /></label>
+        <label>Y % <input id="propY" type="number" step="0.01" /></label>
+        <label>Width % <input id="propW" type="number" step="0.01" /></label>
+        <label>Height % <input id="propH" type="number" step="0.01" /></label>
+        <label id="assetRow" class="wide">Asset filename
+          <input id="propAsset" type="text" />
+        </label>
+        <div id="colorRow" class="wide hidden">
+          <span class="field-label">Preview colour</span>
+          <div id="previewPalette" class="palette"></div>
+        </div>
+        <button id="duplicateBtn">Duplicate</button>
+        <button id="deleteBtn" class="danger">Delete</button>
+      </div>
+    </section>
+  </aside>
+
+  <section class="workspace">
+    <div class="canvas-toolbar">
+      <span id="modeBadge">Part 1 hotspots</span>
+      <span>Drag items · drag the corner handle to resize</span>
+    </div>
+    <div id="stageShell" class="stage-shell">
+      <div id="stage" class="stage" aria-label="Visual layout canvas">
+        <img id="backgroundImage" class="stage-bg" alt="" draggable="false" />
+        <div id="itemsLayer" class="items-layer"></div>
+      </div>
+    </div>
+  </section>
+
+  <aside class="sidebar right">
+    <section class="panel">
+      <h2>Export</h2>
+      <textarea id="output" spellcheck="false" aria-label="Exported layout JSON"></textarea>
+      <button id="copyCompactBtn2" class="primary">Copy parameter string</button>
+      <p id="copyStatus" class="status"></p>
+    </section>
+    <section class="panel">
+      <h2>Import / restore</h2>
+      <textarea id="importBox" spellcheck="false" placeholder="Paste a previously exported layout string here..."></textarea>
+      <button id="importBtn">Load pasted layout</button>
+      <p class="hint">Imported cutout positions are restored. If the local cutout image is not available, re-import a file with the same filename and it will reconnect automatically.</p>
+    </section>
+    <section class="panel">
+      <h2>What to send me</h2>
+      <p class="hint">When finished, click <strong>Copy parameter string</strong> and paste that single line into ChatGPT. For Part 5, also upload the cutout PNGs to the A1 Listening assets folder.</p>
+    </section>
+  </aside>
+</main>
+
+<script src="app.js"></script>
+</body>
+</html>
