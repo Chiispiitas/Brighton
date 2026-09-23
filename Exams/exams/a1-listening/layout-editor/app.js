@@ -435,7 +435,7 @@
         if (variants[name]) parts.push(`${name}: ${variants[name]}`);
       });
       el.variantSummary.textContent = parts.length ? parts.join(" · ") : "No variants imported yet.";
-      $(".swatch", el.previewPalette).forEach(sw => {
+      $$(".swatch", el.previewPalette).forEach(sw => {
         const available = Boolean(variants[sw.dataset.color]);
         sw.disabled = !available;
         sw.classList.toggle("unavailable", !available);
@@ -443,7 +443,7 @@
       });
     } else {
       el.variantSummary.textContent = "";
-      $(".swatch", el.previewPalette).forEach(sw => {
+      $$(".swatch", el.previewPalette).forEach(sw => {
         sw.disabled = false;
         sw.classList.remove("unavailable", "active");
       });
