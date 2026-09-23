@@ -42,7 +42,8 @@
     inspector: $("#inspector"), emptyInspector: $("#emptyInspector"),
     propId: $("#propId"), propLabel: $("#propLabel"), propAnswer: $("#propAnswer"), propRole: $("#propRole"),
     propX: $("#propX"), propY: $("#propY"), propW: $("#propW"), propH: $("#propH"), propAsset: $("#propAsset"),
-    assetRow: $("#assetRow"), colorRow: $("#colorRow"), previewPalette: $("#previewPalette"),
+    assetRow: $("#assetRow"), variantRow: $("#variantRow"), variantSummary: $("#variantSummary"),
+    colorRow: $("#colorRow"), previewPalette: $("#previewPalette"),
     duplicate: $("#duplicateBtn"), del: $("#deleteBtn"), output: $("#output"), importBox: $("#importBox"),
     importBtn: $("#importBtn"), copyStatus: $("#copyStatus"), modeBadge: $("#modeBadge"),
     copyCompact: $("#copyCompactBtn"), copyCompact2: $("#copyCompactBtn2"), copyPretty: $("#copyPrettyBtn")
@@ -205,27 +206,85 @@
 
   async function importPart5Cutouts(event) {
     const files = Array.from(event.target.files || []);
+    let imported = 0;
+    let ignored = 0;
+
     for (const file of files) {
+      const meta = identifyPart5Variant(file.name);
+      if (!meta) {
+        ignored++;
+        continue;
+      }
+
       const url = URL.createObjectURL(file);
       assetUrls.set(file.name, url);
       const image = await loadImage(url);
       sourceImages.set(file.name, image);
-      const idBase = file.name.replace(/\.[^.]+$/, "").replace(/[^a-z0-9]+/gi, "-").replace(/^-|-$/g, "").toLowerCase();
-      const item = {
-        id: uniqueId(idBase || "cutout"), kind: "cutout", q: guessQuestion(file.name),
-        label: file.name.replace(/\.[^.]+$/, ""), role: "answer",
-        x: 38, y: 38, w: 15, h: 15, asset: file.name, previewColor: "red"
-      };
-      items.push(item);
+
+      let item = meta.role === "example"
+        ? items.find(entry => entry.kind === "cutout" && entry.role === "example")
+        : items.find(entry => entry.kind === "cutout" && Number(entry.q) === meta.q && entry.role !== "example");
+
+      if (!item) {
+        item = {
+          id: meta.role === "example" ? "example-hat" : `q${meta.q}-${meta.object}`,
+          kind: "cutout",
+          q: meta.q,
+          label: meta.label,
+          role: meta.role,
+          x: 38,
+          y: 38,
+          w: 15,
+          h: 15,
+          asset: "",
+          variants: {},
+          color: meta.role === "example" ? "yellow" : "",
+          previewColor: meta.color === "base" ? "" : meta.color
+        };
+        items.push(item);
+      }
+
+      item.variants = { ...(item.variants || {}) };
+      if (meta.color === "base") {
+        item.asset = file.name;
+      } else {
+        item.variants[meta.color] = file.name;
+        if (!item.previewColor) item.previewColor = meta.color;
+      }
+      item.label = meta.label;
       selectedId = item.id;
+      imported++;
     }
+
+    if (ignored) status(`${ignored} file(s) ignored because the question/object/colour could not be detected.`, true);
+    else if (imported) status(`${imported} colour-variation file(s) imported.`);
     event.target.value = "";
     render();
   }
 
-  function guessQuestion(name) {
-    const m = name.match(/(?:q|question)[-_ ]?(21|22|23|25)/i) || name.match(/\b(21|22|23|25)\b/);
-    return m ? Number(m[1]) : 21;
+  function identifyPart5Variant(fileName) {
+    const normalized = String(fileName)
+      .toLowerCase()
+      .normalize("NFD")
+      .replace(/[\u0300-\u036f]/g, "")
+      .replace(/\.[^.]+$/, "");
+
+    const colorNames = ["red","blue","green","brown","purple","yellow","orange","pink","base"];
+    const color = colorNames.find(name => new RegExp(`(?:^|[_\\- .])${name}(?:$|[_\\- .])`).test(normalized));
+    if (!color) return null;
+
+    if (normalized.includes("example") && normalized.includes("hat")) {
+      return { q: 0, object: "hat", label: "Example hat", role: "example", color };
+    }
+
+    const rules = [
+      { q: 21, object: "jacket", label: "Woman's jacket", words: ["q21","question21","jacket"] },
+      { q: 22, object: "backpack", label: "Backpack next to the bench", words: ["q22","question22","backpack"] },
+      { q: 23, object: "bicycle", label: "Bicycle next to the tree", words: ["q23","question23","bicycle","bike"] },
+      { q: 25, object: "umbrella", label: "Umbrella near the bus stop", words: ["q25","question25","umbrella"] }
+    ];
+    const rule = rules.find(entry => entry.words.some(word => normalized.includes(word)));
+    return rule ? { ...rule, role: "answer", color } : null;
   }
 
   function uniqueId(base) {
@@ -355,8 +414,30 @@
     el.propX.value = item.x; el.propY.value = item.y; el.propW.value = item.w; el.propH.value = item.h;
     el.propAsset.value = item.asset || "";
     el.assetRow.classList.toggle("hidden", item.kind !== "cutout" && item.kind !== "person-cutout");
-    el.colorRow.classList.toggle("hidden", item.kind !== "cutout" || mode !== "part5-color");
-    $$(".swatch", el.previewPalette).forEach(sw => sw.classList.toggle("active", sw.dataset.color === item.previewColor));
+    const part5Cutout = item.kind === "cutout" && mode === "part5-color";
+    el.variantRow.classList.toggle("hidden", !part5Cutout);
+    el.colorRow.classList.toggle("hidden", !part5Cutout);
+    if (part5Cutout) {
+      const variants = item.variants || {};
+      const parts = [];
+      if (item.asset) parts.push(`base: ${item.asset}`);
+      Object.keys(palette).forEach(name => {
+        if (variants[name]) parts.push(`${name}: ${variants[name]}`);
+      });
+      el.variantSummary.textContent = parts.length ? parts.join(" · ") : "No variants imported yet.";
+      $(".swatch", el.previewPalette).forEach(sw => {
+        const available = Boolean(variants[sw.dataset.color]);
+        sw.disabled = !available;
+        sw.classList.toggle("unavailable", !available);
+        sw.classList.toggle("active", sw.dataset.color === item.previewColor);
+      });
+    } else {
+      el.variantSummary.textContent = "";
+      $(".swatch", el.previewPalette).forEach(sw => {
+        sw.disabled = false;
+        sw.classList.remove("unavailable", "active");
+      });
+    }
   }
 
   function applyInspector() {
@@ -381,7 +462,13 @@
   function duplicateSelected() {
     const item = selected();
     if (!item) return;
-    const copy = { ...item, id: uniqueId(item.id + "-copy"), x: clamp(item.x + 2, 0, 100 - item.w), y: clamp(item.y + 2, 0, 100 - item.h) };
+    const copy = {
+      ...item,
+      variants: item.variants ? { ...item.variants } : undefined,
+      id: uniqueId(item.id + "-copy"),
+      x: clamp(item.x + 2, 0, 100 - item.w),
+      y: clamp(item.y + 2, 0, 100 - item.h)
+    };
     items.push(copy);
     selectedId = copy.id;
     render();
@@ -404,7 +491,7 @@
       b.style.background = hex;
       b.addEventListener("click", () => {
         const item = selected();
-        if (!item || item.kind !== "cutout") return;
+        if (!item || item.kind !== "cutout" || !item.variants?.[name]) return;
         item.previewColor = name;
         render();
       });
@@ -413,39 +500,29 @@
   }
 
   async function renderCutout(canvas, item) {
-    const src = assetUrls.get(item.asset);
-    const image = sourceImages.get(item.asset) || (src ? await loadImage(src) : null);
-    if (!image) {
-      canvas.width = 400; canvas.height = 300;
-      const ctx = canvas.getContext("2d");
-      ctx.fillStyle = "#f2f4f7"; ctx.fillRect(0,0,400,300);
-      ctx.fillStyle = "#667085"; ctx.font = "22px sans-serif"; ctx.textAlign = "center";
-      ctx.fillText(item.asset || "Re-import cutout", 200, 150);
+    const variantAsset = item.kind === "cutout" && item.previewColor
+      ? item.variants?.[item.previewColor]
+      : "";
+    const asset = variantAsset || item.asset || Object.values(item.variants || {})[0] || "";
+    const src = assetUrls.get(asset);
+    const image = sourceImages.get(asset) || (src ? await loadImage(src) : null);
+
+    canvas.width = image?.naturalWidth || image?.width || 400;
+    canvas.height = image?.naturalHeight || image?.height || 300;
+    const ctx = canvas.getContext("2d");
+    ctx.clearRect(0,0,canvas.width,canvas.height);
+
+    if (image) {
+      ctx.drawImage(image,0,0);
       return;
     }
-    tintImageToCanvas(canvas, image, item.kind === "person-cutout" ? null : (palette[item.previewColor] || null));
-  }
 
-  function tintImageToCanvas(canvas, image, hex) {
-    canvas.width = image.naturalWidth || image.width;
-    canvas.height = image.naturalHeight || image.height;
-    const ctx = canvas.getContext("2d", { willReadFrequently: true });
-    ctx.clearRect(0,0,canvas.width,canvas.height);
-    ctx.drawImage(image,0,0);
-    if (!hex) return;
-    const rgb = hexToRgb(hex);
-    const img = ctx.getImageData(0,0,canvas.width,canvas.height);
-    const d = img.data;
-    for (let i=0;i<d.length;i+=4) {
-      if (d[i+3] < 5) continue;
-      const lum = 0.299*d[i] + 0.587*d[i+1] + 0.114*d[i+2];
-      if (lum < 92) continue;
-      const shade = 0.58 + 0.42 * (lum / 255);
-      d[i] = Math.round(rgb.r * shade);
-      d[i+1] = Math.round(rgb.g * shade);
-      d[i+2] = Math.round(rgb.b * shade);
-    }
-    ctx.putImageData(img,0,0);
+    ctx.fillStyle = "#f2f4f7";
+    ctx.fillRect(0,0,canvas.width,canvas.height);
+    ctx.fillStyle = "#667085";
+    ctx.font = "20px sans-serif";
+    ctx.textAlign = "center";
+    ctx.fillText(asset || "Import cutout variant", canvas.width / 2, canvas.height / 2);
   }
 
   function loadImage(src) {
@@ -457,15 +534,10 @@
     });
   }
 
-  function hexToRgb(hex) {
-    const n = parseInt(hex.replace("#",""),16);
-    return { r:(n>>16)&255, g:(n>>8)&255, b:n&255 };
-  }
-
   function exportObject() {
     return {
       schema: "brighton-a1-listening-layout",
-      version: 1,
+      version: 2,
       mode,
       canvas: { width: 1600, height: 1200, aspect: "4:3", background: backgroundExport },
       palette: mode === "part5-color" ? palette : undefined,
@@ -475,7 +547,12 @@
           label: item.label || "", role: item.role || "answer"
         };
         if (item.kind === "person-cutout") { base.answer = item.answer || ""; base.asset = item.asset || ""; }
-        if (item.kind === "cutout") { base.q = Number(item.q) || 0; base.asset = item.asset || ""; }
+        if (item.kind === "cutout") {
+          base.q = Number(item.q) || 0;
+          base.asset = item.asset || "";
+          base.variants = { ...(item.variants || {}) };
+          if (item.role === "example") base.color = item.color || "yellow";
+        }
         if (item.kind === "text") { base.q = Number(item.q) || 24; base.placeholder = "Type one word"; }
         return base;
       })
@@ -492,7 +569,11 @@
       if (parsed.schema !== "brighton-a1-listening-layout") throw new Error("Not an A1 Listening layout string.");
       mode = parsed.mode === "part1-hotspots" ? "part1-cutouts" : parsed.mode;
       el.mode.value = mode;
-      items = (parsed.elements || []).map(item => ({ ...item, previewColor: item.previewColor || "red" }));
+      items = (parsed.elements || []).map(item => ({
+        ...item,
+        variants: item.variants ? { ...item.variants } : {},
+        previewColor: item.previewColor || Object.keys(item.variants || {})[0] || ""
+      }));
       selectedId = items[0]?.id || null;
       backgroundExport = parsed.canvas?.background || defaults[mode]?.exportBackground || "";
       el.bgName.value = backgroundExport;
