@@ -1189,9 +1189,11 @@
   }
 
   function hasLiveAudioTrack(stream) {
+    // Do not rely on MediaStream.active here. Some Android Chromium builds can
+    // briefly report active=false even while the microphone track itself is
+    // already live. The track state is the useful signal for capture.
     return Boolean(
-      stream?.active &&
-      stream.getAudioTracks?.().some((track) => track.readyState === "live")
+      stream?.getAudioTracks?.().some((track) => track.readyState === "live")
     );
   }
 
@@ -1202,14 +1204,20 @@
       throw new Error("Microphone capture is not supported in this browser.");
     }
 
-    // Dispose of stale/ended tracks before asking Android for the microphone
-    // again. Some Chromium-based mobile browsers keep a dead MediaStream
-    // object around after backgrounding or switching apps.
+    const isAndroid = speakingPlatformFamily() === "Android";
+
+    // Dispose of stale/ended tracks before asking for capture again. Android
+    // sometimes needs a short release window before the same physical mic can
+    // be opened a second time.
     if (speakingStream) {
       speakingStream.getTracks?.().forEach((track) => {
         try { track.stop(); } catch {}
       });
       speakingStream = null;
+
+      if (isAndroid) {
+        await new Promise((resolve) => window.setTimeout(resolve, 180));
+      }
     }
 
     const enhancedConstraints = {
@@ -1220,34 +1228,65 @@
       }
     };
 
-    // Android/vendor Chromium browsers are more reliable when microphone
-    // permission is requested with the simplest constraint first. Desktop
-    // browsers can still use the enhanced constraints first.
-    const attempts = speakingPlatformFamily() === "Android"
-      ? [{ audio: true }, enhancedConstraints]
+    // On Android, keep getUserMedia deliberately simple. Optional DSP
+    // constraints have caused vendor Chromium builds to return a stream whose
+    // active flag is false or to throw NotReadableError immediately after a
+    // previous capture. Desktop keeps the enhanced-first fallback.
+    const attempts = isAndroid
+      ? [{ audio: true }, { audio: true }]
       : [enhancedConstraints, { audio: true }];
 
     let lastError = null;
 
-    for (const constraints of attempts) {
+    for (let index = 0; index < attempts.length; index += 1) {
       try {
-        const stream = await navigator.mediaDevices.getUserMedia(constraints);
-        if (hasLiveAudioTrack(stream)) {
+        const stream = await navigator.mediaDevices.getUserMedia(attempts[index]);
+        const audioTracks = stream?.getAudioTracks?.() || [];
+        const liveTrack = audioTracks.find((track) => track.readyState === "live");
+
+        if (liveTrack) {
           speakingStream = stream;
+
+          // Keep Android constraints best-effort and post-acquisition. Failure
+          // to apply them must never invalidate a working microphone.
+          if (isAndroid && typeof liveTrack.applyConstraints === "function") {
+            try {
+              await liveTrack.applyConstraints({
+                echoCancellation: true,
+                noiseSuppression: true,
+                autoGainControl: true
+              });
+            } catch (error) {
+              console.warn("Android microphone enhancements unavailable; using raw capture.", error);
+            }
+          }
+
           return speakingStream;
         }
 
         stream?.getTracks?.().forEach((track) => {
           try { track.stop(); } catch {}
         });
+
         lastError = new Error("The browser returned no live microphone track.");
       } catch (error) {
         lastError = error;
+        const name = String(error?.name || "");
 
-        // A real permission/security denial will not be fixed by changing
-        // optional audio constraints, so do not trigger a second prompt.
-        if (["NotAllowedError", "SecurityError"].includes(String(error?.name || ""))) {
+        // Permission/security failures need user action; retrying in code can
+        // make Android suppress the prompt entirely.
+        if (["NotAllowedError", "SecurityError"].includes(name)) {
           break;
+        }
+
+        // A busy audio device on Android often clears after the previous
+        // MediaStream is released. Give it one short retry with audio:true.
+        if (
+          isAndroid &&
+          index === 0 &&
+          ["NotReadableError", "AbortError", "TrackStartError"].includes(name)
+        ) {
+          await new Promise((resolve) => window.setTimeout(resolve, 350));
         }
       }
     }
@@ -1347,8 +1386,14 @@
       if (status) status.textContent = "Microphone ready";
       window.setTimeout(renderSpeakingPrompt, 450);
     } catch (error) {
-      console.error(error);
-      renderSpeakingTechnicalError("Microphone unavailable.");
+      console.error("Microphone check failed:", error);
+
+      const name = String(error?.name || "");
+      const message = ["NotAllowedError", "SecurityError"].includes(name)
+        ? "Microphone access was blocked by the browser."
+        : "Microphone unavailable.";
+
+      renderSpeakingTechnicalError(message, name || "MIC_CAPTURE");
     }
   }
 
