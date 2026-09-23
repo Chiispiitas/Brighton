@@ -7,6 +7,7 @@ const EXAMS_DIR = path.dirname(fileURLToPath(import.meta.url));
 const EXAM_DIR = path.join(EXAMS_DIR, "exams", "a1-listening");
 const DATA_PATH = path.join(EXAM_DIR, "listening-data.js");
 const MAIN_PATH = path.join(EXAM_DIR, "main.js");
+const LAYOUT_PATH = path.join(EXAM_DIR, "visual-layouts.js");
 const KEY_PATH = path.join(EXAMS_DIR, "answer-keys", "brighton-a1-listening-final.json");
 const CONFIG_PATH = path.join(EXAMS_DIR, "config.js");
 const errors = [];
@@ -22,7 +23,9 @@ function sameNumbers(a, b) {
 const sandbox = { window: {}, console };
 vm.createContext(sandbox);
 vm.runInContext(read(DATA_PATH), sandbox, { filename: DATA_PATH });
+vm.runInContext(read(LAYOUT_PATH), sandbox, { filename: LAYOUT_PATH });
 const exam = sandbox.window.listeningExam;
+const layouts = sandbox.window.A1ListeningVisualLayouts;
 const key = JSON.parse(read(KEY_PATH));
 
 if (!exam) fail("listening-data.js did not define window.listeningExam.");
@@ -100,6 +103,51 @@ if (part4?.items?.find(item => item.q === 18)?.options?.A?.label !== "Rainy" ||
 }
 if (part4?.items?.find(item => item.q === 20)?.options?.C?.label !== "Go to a concert") {
   fail("Question 20 option C label must match the final concert artwork.");
+}
+
+if (!layouts) {
+  fail("visual-layouts.js did not define window.A1ListeningVisualLayouts.");
+} else {
+  if (layouts.part1?.mode !== "part1-cutouts") fail("Part 1 visual layout must use part1-cutouts mode.");
+  const part1Cutouts = (layouts.part1?.elements || []).filter(item => item.kind === "person-cutout");
+  if (part1Cutouts.length !== 5) fail(`Part 1 visual layout must contain exactly 5 person cutouts; found ${part1Cutouts.length}.`);
+
+  const expectedPart1Answers = ["C", "D", "E", "F", "G"];
+  const actualPart1Answers = part1Cutouts.map(item => String(item.answer || "")).sort();
+  if (JSON.stringify(actualPart1Answers) !== JSON.stringify(expectedPart1Answers)) {
+    fail(`Part 1 cutout answers must be C,D,E,F,G; found ${actualPart1Answers.join(",")}.`);
+  }
+  for (const item of part1Cutouts) {
+    assertImage(`assets/${item.asset}`, `Part 1 cutout ${item.label || item.answer}`);
+  }
+
+  if (layouts.part5?.mode !== "part5-color") fail("Part 5 visual layout must use part5-color mode.");
+  const part5Elements = layouts.part5?.elements || [];
+  const colorNames = ["red", "blue", "green", "brown", "purple", "yellow", "orange", "pink"];
+  for (const q of [21, 22, 23, 25]) {
+    const item = part5Elements.find(entry => entry.kind === "cutout" && Number(entry.q) === q);
+    if (!item) {
+      fail(`Part 5 visual layout is missing cutout Q${q}.`);
+      continue;
+    }
+    for (const color of colorNames) {
+      const asset = item.variants?.[color];
+      if (!asset) fail(`Part 5 Q${q} is missing ${color} variant.`);
+      else assertImage(`assets/${asset}`, `Part 5 Q${q} ${color} variant`);
+    }
+    const correctColor = String(key.answers?.[String(q)]?.answers?.[0] || "").toLowerCase();
+    if (correctColor && !item.variants?.[correctColor]) {
+      fail(`Part 5 Q${q} has no image variant for keyed answer ${correctColor}.`);
+    }
+  }
+
+  const q24 = part5Elements.find(entry => entry.kind === "text" && Number(entry.q) === 24);
+  if (!q24) fail("Part 5 visual layout is missing the Q24 text field.");
+
+  const part1Background = layouts.part1?.canvas?.background;
+  const part5Background = layouts.part5?.canvas?.background;
+  if (part1Background) assertImage(part1Background, "Part 1 layout background");
+  if (part5Background) assertImage(part5Background, "Part 5 layout background");
 }
 
 for (const fileName of [
