@@ -48,6 +48,7 @@
   let saveTimer = null;
   let liveProgress = null;
   let openColorPaletteQ = null;
+  let openPersonAnswer = null;
 
   boot();
 
@@ -476,43 +477,71 @@
   }
 
   function renderPart1CutoutLayout(part, layout) {
-    const activeQ = getCurrentQuestionNumber();
-    const activeItem = part.items.find(item => item.q === activeQ) || part.items[0];
-    const selected = getAnswer(part.id, activeQ);
     const background = resolveLayoutAsset(layout.canvas?.background || part.image);
     const allowedAnswers = new Set(["C", "D", "E", "F", "G"]);
+    const names = part.items.map(item => ({ q: Number(item.q), name: item.person }));
+
     const cutouts = (layout.elements || [])
       .filter(item => item.kind === "person-cutout" && item.asset && allowedAnswers.has(String(item.answer || "")))
       .map(item => {
         const answer = String(item.answer || "");
+        const assignedItem = part.items.find(entry => getAnswer(part.id, entry.q) === answer);
+        const assignedName = assignedItem?.person || "";
+        const isOpen = openPersonAnswer === answer;
         return `
           <button
             type="button"
-            class="part1-person-cutout ${selected === answer ? "selected" : ""}"
+            class="part1-person-cutout alpha-target ${assignedName ? "assigned" : ""} ${isOpen ? "menu-open" : ""}"
             style="${layoutRectStyle(item)}"
             data-person-answer="${escapeAttr(answer)}"
-            aria-pressed="${selected === answer ? "true" : "false"}"
-            aria-label="Selectable person"
+            aria-expanded="${isOpen ? "true" : "false"}"
+            aria-label="${escapeAttr(assignedName ? `${assignedName}; change name` : "Choose this person")}"
           >
-            <img src="${escapeAttr(resolveLayoutAsset(item.asset))}" alt="" draggable="false" />
+            <img class="part1-person-silhouette" src="${escapeAttr(resolveLayoutAsset(item.asset))}" alt="" draggable="false" />
+            ${assignedName ? `<span class="part1-assigned-name">${escapeHtml(assignedName)}</span>` : ""}
           </button>
         `;
       }).join("");
 
+    const openItem = (layout.elements || []).find(item =>
+      item.kind === "person-cutout" && String(item.answer || "") === String(openPersonAnswer || "")
+    );
+    let nameMenu = "";
+    if (openItem) {
+      const answer = String(openItem.answer || "");
+      const assignedItem = part.items.find(entry => getAnswer(part.id, entry.q) === answer);
+      const center = Math.max(18, Math.min(82, Number(openItem.x) + Number(openItem.w) / 2));
+      const top = Number(openItem.y) + Number(openItem.h) + 1.2;
+      nameMenu = `
+        <div class="part1-name-menu" style="left:${center}%;top:${top}%;" role="menu" aria-label="Choose a name">
+          <div class="part1-name-menu-title">Choose the name</div>
+          <div class="part1-name-options">
+            ${names.map(entry => {
+              const selected = assignedItem?.q === entry.q;
+              return `<button type="button" class="part1-name-option ${selected ? "selected" : ""}" data-person-q="${entry.q}" data-person-answer="${escapeAttr(answer)}">${escapeHtml(entry.name)}</button>`;
+            }).join("")}
+            ${assignedItem ? `<button type="button" class="part1-name-option clear" data-person-clear="${escapeAttr(answer)}">Clear</button>` : ""}
+          </div>
+        </div>
+      `;
+    }
+
+    const answered = getProgress(part).answered;
     return `
       <section class="exam-panel part1 part1-cutout-mode">
         ${partHeader(part)}
-        ${instruction("Listen and click the correct person in the picture.")}
-        <article class="article-card hotspot-focus-card">
-          <div class="visual-question-focus">
-            <span class="q-badge">${activeQ}</span>
-            <div><small>Who is this?</small><strong>${escapeHtml(activeItem?.person || "")}</strong></div>
+        ${instruction("Listen to the five names. Click a highlighted person in the picture, then choose that person's name from the list.")}
+        <article class="article-card hotspot-focus-card scene-assignment-card">
+          <div class="scene-assignment-summary">
+            <strong>${answered} of 5 matched</strong>
+            <span>All five people are answered on this one picture.</span>
           </div>
-          <div class="interactive-picture-stage" style="aspect-ratio:${escapeAttr(layoutAspectRatio(layout))}">
+          <div class="interactive-picture-stage part1-interactive-stage ${openPersonAnswer ? "menu-open" : ""}" style="aspect-ratio:${escapeAttr(layoutAspectRatio(layout))}">
             <img src="${escapeAttr(background)}" alt="${escapeAttr(part.imageDescription || "City-square listening picture")}" />
             ${cutouts}
+            ${nameMenu}
           </div>
-          <p class="interaction-help">Click directly on one of the five selectable people. Other people in the scene are distractors and are not clickable.</p>
+          <p class="interaction-help">The transparent teal silhouettes are the five selectable people. Background distractors are not selectable.</p>
         </article>
       </section>
     `;
@@ -569,34 +598,39 @@
     }).join("");
 
     const activeCutout = elements.find(item => item.kind === "cutout" && Number(item.q) === Number(openColorPaletteQ));
-    const paletteUi = activeCutout ? `
-      <div class="canvas-color-palette" role="dialog" aria-label="Choose a colour">
-        <strong>Q${Number(activeCutout.q)} · ${escapeHtml(activeCutout.label || "Choose a colour")}</strong>
-        <div class="canvas-color-swatches">
-          ${Object.entries(palette)
-            .filter(([name]) => Boolean(activeCutout.variants?.[name]))
-            .map(([name, hex]) => `
-              <button type="button" class="canvas-color-swatch" data-color-q="${Number(activeCutout.q)}" data-color-name="${escapeAttr(name)}" style="--swatch:${escapeAttr(hex)}" aria-label="${escapeAttr(name)}" title="${escapeAttr(name)}"></button>
-            `).join("")}
+    let paletteUi = "";
+    if (activeCutout) {
+      const center = Math.max(20, Math.min(80, Number(activeCutout.x) + Number(activeCutout.w) / 2));
+      const top = Number(activeCutout.y) + Number(activeCutout.h) + 1.4;
+      paletteUi = `
+        <div class="canvas-color-palette" style="left:${center}%;top:${top}%;" role="dialog" aria-label="Choose a colour">
+          <strong>${escapeHtml(activeCutout.label || "Choose a colour")}</strong>
+          <div class="canvas-color-swatches">
+            ${Object.entries(palette)
+              .filter(([name]) => Boolean(activeCutout.variants?.[name]))
+              .map(([name, hex]) => `
+                <button type="button" class="canvas-color-swatch" data-color-q="${Number(activeCutout.q)}" data-color-name="${escapeAttr(name)}" style="--swatch:${escapeAttr(hex)}" aria-label="${escapeAttr(name)}" title="${escapeAttr(name)}"></button>
+              `).join("")}
+          </div>
         </div>
-      </div>
-    ` : "";
+      `;
+    }
 
     return `
       <section class="exam-panel part5 part5-canvas-mode">
         ${partHeader(part)}
         ${instruction("Listen, then click each object to choose its colour. Type the word directly in the blank sign for Question 24.")}
-        <article class="article-card hotspot-focus-card">
-          <div class="visual-question-focus">
-            <span class="q-badge">${activeQ}</span>
-            <div><small>Current task</small><strong>${escapeHtml(part.items.find(item => item.q === activeQ)?.target || "")}</strong></div>
+        <article class="article-card hotspot-focus-card scene-assignment-card">
+          <div class="scene-assignment-summary">
+            <strong>${getProgress(part).answered} of 5 answered</strong>
+            <span>Click a highlighted object to choose its colour. Type Question 24 directly in the sign.</span>
           </div>
-          <div class="interactive-picture-stage part5-interactive-stage" style="aspect-ratio:${escapeAttr(layoutAspectRatio(layout))}">
+          <div class="interactive-picture-stage part5-interactive-stage ${activeCutout ? "palette-open" : ""}" style="aspect-ratio:${escapeAttr(layoutAspectRatio(layout))}">
             <img src="${escapeAttr(background)}" alt="${escapeAttr(part.imageDescription || "Colour and write listening picture")}" />
             ${overlays}
             ${paletteUi}
           </div>
-          <p class="interaction-help">Click a cutout to open the colour palette. Your chosen colour is applied directly to the object.</p>
+          <p class="interaction-help">The translucent outlines show the four colourable objects. The colour palette opens directly below the object you select.</p>
         </article>
       </section>
     `;
@@ -608,19 +642,53 @@
 
   function attachMainHandlers(part) {
     if (part.id === "part1" && visualLayouts.part1?.mode === "part1-cutouts") {
-      $$(".part1-person-cutout").forEach(button => {
-        button.addEventListener("click", () => {
-          const q = getCurrentQuestionNumber();
+      $(".part1-person-cutout").forEach(button => {
+        button.addEventListener("click", event => {
+          event.stopPropagation();
           const answer = button.dataset.personAnswer || "";
-          setAnswer(part.id, q, answer, { render: false });
-          $$(".part1-person-cutout").forEach(node => {
-            const selected = node === button;
-            node.classList.toggle("selected", selected);
-            node.setAttribute("aria-pressed", selected ? "true" : "false");
-          });
-          renderBottomNav();
-          renderStepControls();
+          openPersonAnswer = openPersonAnswer === answer ? null : answer;
+          renderMain({ restoreScroll: true });
         });
+      });
+
+      $(".part1-name-option[data-person-q]").forEach(button => {
+        button.addEventListener("click", event => {
+          event.stopPropagation();
+          const q = Number(button.dataset.personQ);
+          const answer = button.dataset.personAnswer || "";
+          for (const item of part.items) {
+            if (item.q !== q && getAnswer(part.id, item.q) === answer) {
+              state.answers[part.id][item.q] = "";
+            }
+          }
+          state.answers[part.id][q] = answer;
+          state.current = { partId: part.id, itemIndex: part.items.findIndex(item => item.q === q) };
+          openPersonAnswer = null;
+          saveState();
+          if (liveProgress && typeof liveProgress.touch === "function") liveProgress.touch();
+          renderApp({ restoreScroll: true });
+        });
+      });
+
+      $(".part1-name-option[data-person-clear]").forEach(button => {
+        button.addEventListener("click", event => {
+          event.stopPropagation();
+          const answer = button.dataset.personClear || "";
+          for (const item of part.items) {
+            if (getAnswer(part.id, item.q) === answer) state.answers[part.id][item.q] = "";
+          }
+          openPersonAnswer = null;
+          saveState();
+          renderApp({ restoreScroll: true });
+        });
+      });
+
+      $(".part1-interactive-stage")?.addEventListener("click", event => {
+        if (event.target.closest(".part1-person-cutout, .part1-name-menu")) return;
+        if (openPersonAnswer) {
+          openPersonAnswer = null;
+          renderMain({ restoreScroll: true });
+        }
       });
     }
 
@@ -795,7 +863,8 @@
     dom.bottomNav.innerHTML = examParts.map(part => {
       const progress = getProgress(part);
       const active = part.id === state.current.partId;
-      const bubbles = active ? `
+      const singleScenePart = active && part.id === "part1" && visualLayouts.part1?.mode === "part1-cutouts";
+      const bubbles = active && !singleScenePart ? `
         <div class="question-bubbles" aria-label="Questions in ${part.label}">
           ${part.items.map(item => {
             const classes = ["q-pill"];
@@ -892,17 +961,32 @@
     return allItems().findIndex(item => item.q === currentQ);
   }
   function allItems() { return examParts.flatMap(part => part.items.map(item => ({ ...item, partId: part.id }))); }
+  function isPart1SceneMode() {
+    return visualLayouts.part1?.mode === "part1-cutouts";
+  }
   function goPrevious() {
+    const currentQ = getCurrentQuestionNumber();
+    if (isPart1SceneMode() && currentQ === 6) {
+      goToQuestion(1);
+      return;
+    }
     const items = allItems();
     const index = getLinearIndex();
     if (index > 0) goToQuestion(items[index - 1].q);
   }
   function goNext() {
+    if (isPart1SceneMode() && state.current.partId === "part1") {
+      goToQuestion(6);
+      return;
+    }
     const items = allItems();
     const index = getLinearIndex();
     if (index < items.length - 1) goToQuestion(items[index + 1].q);
   }
-  function isFirstQuestion() { return getLinearIndex() === 0; }
+  function isFirstQuestion() {
+    if (isPart1SceneMode() && state.current.partId === "part1") return true;
+    return getLinearIndex() === 0;
+  }
   function isFinalQuestion() { return getLinearIndex() === allItems().length - 1; }
   function isLastPart() {
     const lastPart = examParts[examParts.length - 1];
