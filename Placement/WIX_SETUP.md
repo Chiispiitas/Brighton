@@ -37,7 +37,9 @@ Speaking recordings are sent to Gemini inline for assessment and are not written
 
 ### Speaking transport limit
 
-Wix Velo HTTP functions accept request bodies up to **512 KB**. The Placement frontend therefore records Speaking at a 24 kbps target bitrate and refuses Base64 audio above 400,000 characters before calling `brightonPlacementSubmitSpeaking`. Do not raise that frontend/backend guard unless the audio transport is redesigned; the previous multi-megabyte allowance caused the browser to show `Connection lost.` because Wix rejected the request before the handler ran.
+Wix Velo HTTP functions accept request bodies up to **512 KB**. The Placement frontend still targets 24 kbps, but mobile browsers (especially Safari/iPhone) may produce a larger recording than requested. Small recordings are sent inline; larger Base64 recordings are split into 180,000-character chunks and sent through `brightonPlacementSpeakingChunk`. Wix stores those chunks temporarily in `BrightonPlacementSpeakingChunks`, reassembles them server-side when `brightonPlacementSubmitSpeaking` runs, and deletes the temporary chunk rows after a successful assessment or when an inactive Placement session is purged.
+
+Do not replace this with one large HTTP body. The chunk transport exists specifically to stay below Wix's per-request body limit while preserving the full audio for Gemini grading.
 
 Public Placement routes:
 
@@ -46,6 +48,7 @@ Public Placement routes:
 - `POST /_functions/brightonPlacementStart`
 - `POST /_functions/brightonPlacementResume`
 - `POST /_functions/brightonPlacementStep`
+- `POST /_functions/brightonPlacementSpeakingChunk` — temporary chunk upload for larger mobile recordings
 - `POST /_functions/brightonPlacementSubmitSpeaking`
 - `POST /_functions/brightonPlacementSkipSpeaking`
 - `POST /_functions/brightonPlacementResult`
@@ -60,6 +63,7 @@ After adding/changing backend code, publish the Wix site before testing the prod
 - `BrightonPlacementResponses`
 - `BrightonPlacementItems`
 - `BrightonPlacementSpeaking`
+- `BrightonPlacementSpeakingChunks` — temporary raw-audio transport only; ADMIN-only CMS permissions
 
 The runtime collections begin empty. `BrightonPlacementItems` must be populated with the 74-row answer-key CSV supplied separately.
 
@@ -83,6 +87,12 @@ International phone input uses a country selector (Ecuador by default) and store
 
 `sessionId` Text; `clientSessionId` Text; `placementVersion` Text; `promptId` Text; `promptLevel` Text; `audioUrl` URL; `transcript` Text; `durationSeconds` Number; `speechSeconds` Number; `wordCount` Number; `wpm` Number; `recognitionConfidence` Number; `segmentCount` Number; `fluency` Number; `grammar` Number; `vocabulary` Number; `pronunciation` Number; `communication` Number; `speakingLevel` Text; `graderVersion` Text; `metricsJson` Text; `createdAt` Date and Time.
 
+### BrightonPlacementSpeakingChunks
+
+`uploadId` Text; `sessionId` Text; `clientSessionId` Text; `moduleId` Text; `chunkIndex` Number; `totalChunks` Number; `audioMimeType` Text; `chunkBase64` Text.
+
+This collection is transport-only. Keep insert/update/remove/read permissions at **ADMIN**. The backend uses `suppressAuth: true`; the browser never accesses the collection directly.
+
 ## Important
 
 The public repository keeps only the **schema template** for `BrightonPlacementItems`. Do not commit the populated answer-key CSV to a public repository.
@@ -100,4 +110,4 @@ The current Placement frontend/backend expire **active** attempts after 60 minut
 - `POST /_functions/brightonPlacementActivity`
 - `POST /_functions/brightonPlacementExpire`
 
-The expiry deletes the active `BrightonPlacementSessions` row and its related `BrightonPlacementResponses` / `BrightonPlacementSpeaking` rows. Completed results are preserved.
+The expiry deletes the active `BrightonPlacementSessions` row and its related `BrightonPlacementResponses` / `BrightonPlacementSpeaking` / `BrightonPlacementSpeakingChunks` rows. Completed results are preserved.
