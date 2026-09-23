@@ -608,12 +608,12 @@
 
   function attachMainHandlers(part) {
     if (part.id === "part1" && visualLayouts.part1?.mode === "part1-cutouts") {
-      $(".part1-person-cutout").forEach(button => {
+      $$(".part1-person-cutout").forEach(button => {
         button.addEventListener("click", () => {
           const q = getCurrentQuestionNumber();
           const answer = button.dataset.personAnswer || "";
           setAnswer(part.id, q, answer, { render: false });
-          $(".part1-person-cutout").forEach(node => {
+          $$(".part1-person-cutout").forEach(node => {
             const selected = node === button;
             node.classList.toggle("selected", selected);
             node.setAttribute("aria-pressed", selected ? "true" : "false");
@@ -625,7 +625,7 @@
     }
 
     if (part.id === "part5" && visualLayouts.part5?.mode === "part5-color") {
-      $(".part5-cutout-button:not(.example)").forEach(button => {
+      $$(".part5-cutout-button:not(.example)").forEach(button => {
         button.addEventListener("click", () => {
           const q = Number(button.dataset.cutoutQ);
           if (!q) return;
@@ -636,7 +636,7 @@
           renderStepControls();
         });
       });
-      $(".canvas-color-swatch").forEach(button => {
+      $$(".canvas-color-swatch").forEach(button => {
         button.addEventListener("click", () => {
           const q = Number(button.dataset.colorQ);
           setCurrentQuestion(q, { render: false });
@@ -645,7 +645,7 @@
           renderApp({ restoreScroll: true });
         });
       });
-      $(".part5-overlay-input").forEach(input => {
+      $$(".part5-overlay-input").forEach(input => {
         input.addEventListener("focus", () => {
           openColorPaletteQ = null;
           setCurrentQuestion(Number(input.dataset.q), { render: false });
@@ -752,9 +752,9 @@
     $$(".question-card[data-card-q]").forEach(card => card.classList.toggle("active", Number(card.dataset.cardQ) === q));
     $$(".listening-gap-line[data-gap-line-q]").forEach(line => line.classList.toggle("active", Number(line.dataset.gapLineQ) === q));
     $$(".listening-input[data-q]").forEach(input => input.classList.toggle("active", Number(input.dataset.q) === q));
-    $(".matching-row[data-card-q]").forEach(row => row.classList.toggle("active", Number(row.dataset.cardQ) === q));
-    $(".picture-action-row[data-card-q]").forEach(row => row.classList.toggle("active", Number(row.dataset.cardQ) === q));
-    $(".picture-write-input[data-q]").forEach(input => input.classList.toggle("active", Number(input.dataset.q) === q));
+    $$(".matching-row[data-card-q]").forEach(row => row.classList.toggle("active", Number(row.dataset.cardQ) === q));
+    $$(".picture-action-row[data-card-q]").forEach(row => row.classList.toggle("active", Number(row.dataset.cardQ) === q));
+    $$(".picture-write-input[data-q]").forEach(input => input.classList.toggle("active", Number(input.dataset.q) === q));
     updateHeader();
   }
 
