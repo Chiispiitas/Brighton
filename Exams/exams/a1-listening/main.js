@@ -539,6 +539,18 @@
               <feMergeNode in="yellowOutline" />
             </feMerge>
           </filter>
+          <filter id="part1-yellow-outline-fill" x="-20%" y="-20%" width="140%" height="140%" primitiveUnits="objectBoundingBox" color-interpolation-filters="sRGB">
+            <feMorphology in="SourceAlpha" operator="dilate" radius="0.014" result="dilated" />
+            <feComposite in="dilated" in2="SourceAlpha" operator="out" result="outline" />
+            <feFlood flood-color="#ffd400" result="yellow" />
+            <feComposite in="yellow" in2="outline" operator="in" result="yellowOutline" />
+            <feFlood flood-color="#ffd400" flood-opacity="0.26" result="yellowFill" />
+            <feComposite in="yellowFill" in2="SourceAlpha" operator="in" result="yellowInterior" />
+            <feMerge>
+              <feMergeNode in="yellowInterior" />
+              <feMergeNode in="yellowOutline" />
+            </feMerge>
+          </filter>
         </defs>
       </svg>
       <section class="exam-panel part1 part1-cutout-mode">
@@ -554,7 +566,7 @@
             ${cutouts}
             ${nameMenu}
           </div>
-          <p class="interaction-help">The yellow outlines show the five selectable people. Hover over a person to preview the full cutout; background distractors are not selectable.</p>
+          <p class="interaction-help">The yellow outlines show the five selectable people. Hover over a person to add a transparent yellow fill; the original cutout image stays hidden. Background distractors are not selectable.</p>
         </article>
       </section>
     `;
@@ -638,6 +650,18 @@
             <feFlood flood-color="#ffd400" result="yellow" />
             <feComposite in="yellow" in2="outline" operator="in" result="yellowOutline" />
             <feMerge>
+              <feMergeNode in="yellowOutline" />
+            </feMerge>
+          </filter>
+          <filter id="part5-yellow-outline-fill" x="-20%" y="-20%" width="140%" height="140%" primitiveUnits="objectBoundingBox" color-interpolation-filters="sRGB">
+            <feMorphology in="SourceAlpha" operator="dilate" radius="0.014" result="dilated" />
+            <feComposite in="dilated" in2="SourceAlpha" operator="out" result="outline" />
+            <feFlood flood-color="#ffd400" result="yellow" />
+            <feComposite in="yellow" in2="outline" operator="in" result="yellowOutline" />
+            <feFlood flood-color="#ffd400" flood-opacity="0.26" result="yellowFill" />
+            <feComposite in="yellowFill" in2="SourceAlpha" operator="in" result="yellowInterior" />
+            <feMerge>
+              <feMergeNode in="yellowInterior" />
               <feMergeNode in="yellowOutline" />
             </feMerge>
           </filter>
