@@ -280,6 +280,11 @@
   user-select: none;
 }
 
+.part5-cutout-image.unselected {
+  filter: grayscale(1) saturate(0) brightness(1.08) contrast(1.05);
+  opacity: .96;
+}
+
 .cutout-q-badge {
   position: absolute;
   right: 2px;
