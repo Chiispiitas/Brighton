@@ -360,7 +360,7 @@
 
   function renderMatchingPart(part) {
     const layout = part.id === "part1" ? visualLayouts.part1 : null;
-    if (layout?.mode === "part1-hotspots") return renderPart1HotspotLayout(part, layout);
+    if (layout?.mode === "part1-cutouts") return renderPart1CutoutLayout(part, layout);
     const activeQ = getCurrentQuestionNumber();
     const optionItems = Object.entries(part.options || {}).map(([letter, text]) => {
       const imagePath = part.optionImages?.[letter];
@@ -467,31 +467,33 @@
     return `left:${Number(item.x) || 0}%;top:${Number(item.y) || 0}%;width:${Number(item.w) || 1}%;height:${Number(item.h) || 1}%;`;
   }
 
-  function renderPart1HotspotLayout(part, layout) {
+  function renderPart1CutoutLayout(part, layout) {
     const activeQ = getCurrentQuestionNumber();
     const activeItem = part.items.find(item => item.q === activeQ) || part.items[0];
     const selected = getAnswer(part.id, activeQ);
     const background = resolveLayoutAsset(layout.canvas?.background || part.image);
-    const hotspots = (layout.elements || []).filter(item => item.kind === "hotspot").map(item => {
-      const answer = String(item.answer || "");
-      const isExample = item.role === "example";
-      return `
-        <button
-          type="button"
-          class="part1-hotspot ${selected === answer ? "selected" : ""} ${isExample ? "example" : ""}"
-          style="${layoutRectStyle(item)}"
-          data-hotspot-answer="${escapeAttr(answer)}"
-          ${isExample ? "disabled" : ""}
-          aria-label="${escapeAttr(isExample ? `Example ${item.label || answer}` : `Choose person ${item.label || answer}`)}"
-          title="${escapeAttr(isExample ? "Example" : (item.label || answer))}"
-        >${escapeHtml(item.label || answer)}</button>
-      `;
-    }).join("");
+    const cutouts = (layout.elements || [])
+      .filter(item => item.kind === "person-cutout" && item.asset && item.answer)
+      .map(item => {
+        const answer = String(item.answer || "");
+        return `
+          <button
+            type="button"
+            class="part1-person-cutout ${selected === answer ? "selected" : ""}"
+            style="${layoutRectStyle(item)}"
+            data-person-answer="${escapeAttr(answer)}"
+            aria-pressed="${selected === answer ? "true" : "false"}"
+            aria-label="Selectable person"
+          >
+            <img src="${escapeAttr(resolveLayoutAsset(item.asset))}" alt="" draggable="false" />
+          </button>
+        `;
+      }).join("");
 
     return `
-      <section class="exam-panel part1 part1-hotspot-mode">
+      <section class="exam-panel part1 part1-cutout-mode">
         ${partHeader(part)}
-        ${instruction("Listen and click the button on the correct person in the picture.")}
+        ${instruction("Listen and click the correct person in the picture.")}
         <article class="article-card hotspot-focus-card">
           <div class="visual-question-focus">
             <span class="q-badge">${activeQ}</span>
@@ -499,9 +501,9 @@
           </div>
           <div class="interactive-picture-stage" style="aspect-ratio:${escapeAttr(layout.canvas?.aspect || "4 / 3")}">
             <img src="${escapeAttr(background)}" alt="${escapeAttr(part.imageDescription || "City-square listening picture")}" />
-            ${hotspots}
+            ${cutouts}
           </div>
-          <p class="interaction-help">Click a letter directly on the person. The yellow example button is already completed.</p>
+          <p class="interaction-help">Click directly on one of the five selectable people. Other people in the scene are distractors and are not clickable.</p>
         </article>
       </section>
     `;
@@ -640,12 +642,17 @@
   }
 
   function attachMainHandlers(part) {
-    if (part.id === "part1" && visualLayouts.part1?.mode === "part1-hotspots") {
-      $(".part1-hotspot:not(.example)").forEach(button => {
+    if (part.id === "part1" && visualLayouts.part1?.mode === "part1-cutouts") {
+      $(".part1-person-cutout").forEach(button => {
         button.addEventListener("click", () => {
           const q = getCurrentQuestionNumber();
-          setAnswer(part.id, q, button.dataset.hotspotAnswer || "", { render: false });
-          $(".part1-hotspot").forEach(node => node.classList.toggle("selected", node === button));
+          const answer = button.dataset.personAnswer || "";
+          setAnswer(part.id, q, answer, { render: false });
+          $(".part1-person-cutout").forEach(node => {
+            const selected = node === button;
+            node.classList.toggle("selected", selected);
+            node.setAttribute("aria-pressed", selected ? "true" : "false");
+          });
           renderBottomNav();
           renderStepControls();
         });
