@@ -528,6 +528,19 @@
 
     const answered = getProgress(part).answered;
     return `
+      <svg class="part1-filter-defs" aria-hidden="true" focusable="false" width="0" height="0">
+        <defs>
+          <filter id="part1-yellow-outline" x="-20%" y="-20%" width="140%" height="140%" primitiveUnits="objectBoundingBox" color-interpolation-filters="sRGB">
+            <feMorphology in="SourceAlpha" operator="dilate" radius="0.014" result="dilated" />
+            <feComposite in="dilated" in2="SourceAlpha" operator="out" result="outline" />
+            <feFlood flood-color="#ffd400" result="yellow" />
+            <feComposite in="yellow" in2="outline" operator="in" result="yellowOutline" />
+            <feMerge>
+              <feMergeNode in="yellowOutline" />
+            </feMerge>
+          </filter>
+        </defs>
+      </svg>
       <section class="exam-panel part1 part1-cutout-mode">
         ${partHeader(part)}
         ${instruction("Listen to the five names. Click a highlighted person in the picture, then choose that person's name from the list.")}
@@ -541,7 +554,7 @@
             ${cutouts}
             ${nameMenu}
           </div>
-          <p class="interaction-help">The transparent teal silhouettes are the five selectable people. Background distractors are not selectable.</p>
+          <p class="interaction-help">The yellow outlines show the five selectable people. Hover over a person to preview the full cutout; background distractors are not selectable.</p>
         </article>
       </section>
     `;
