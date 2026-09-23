@@ -49,7 +49,10 @@
   let liveProgress = null;
   let openColorPaletteQ = null;
   let openPersonAnswer = null;
+  let activePart1AreaAnswer = null;
   let part1NameOrder = null;
+
+  const PART1_AREA_ANSWERS = ["C", "D", "E", "F", "G"];
 
   boot();
 
@@ -494,11 +497,29 @@
     return part1NameOrder;
   }
 
+  function getPart1AreaQ(answer) {
+    const index = PART1_AREA_ANSWERS.indexOf(String(answer || ""));
+    return index >= 0 ? index + 1 : null;
+  }
+
+  function getActivePart1AreaAnswer() {
+    if (PART1_AREA_ANSWERS.includes(activePart1AreaAnswer)) return activePart1AreaAnswer;
+    if (state.current.partId === "part1") {
+      return PART1_AREA_ANSWERS[state.current.itemIndex] || PART1_AREA_ANSWERS[0];
+    }
+    return null;
+  }
+
+  function isPart1AreaAnswered(part, answer) {
+    return part.items.some(item => getAnswer(part.id, item.q) === answer);
+  }
+
   function renderPart1CutoutLayout(part, layout) {
     const background = resolveLayoutAsset(layout.canvas?.background || part.image);
     const allowedAnswers = new Set(["C", "D", "E", "F", "G"]);
     const names = getPart1NameOptions(part);
-    const areaNumbers = new Map([["C", 1], ["D", 2], ["E", 3], ["F", 4], ["G", 5]]);
+    const areaNumbers = new Map(PART1_AREA_ANSWERS.map((answer, index) => [answer, index + 1]));
+    const activeAreaAnswer = getActivePart1AreaAnswer();
 
     const cutouts = (layout.elements || [])
       .filter(item => item.kind === "person-cutout" && item.asset && allowedAnswers.has(String(item.answer || "")))
@@ -518,7 +539,7 @@
             aria-label="${escapeAttr(assignedName ? `Area ${areaNumber}: ${assignedName}; change name` : `Area ${areaNumber}: choose this person`)}"
           >
             <img class="part1-person-silhouette" src="${escapeAttr(resolveLayoutAsset(item.asset))}" alt="" draggable="false" />
-            <span class="part1-area-number" aria-hidden="true">${areaNumber}</span>
+            <span class="q-pill part1-area-number ${activeAreaAnswer === answer ? "active" : ""} ${assignedName ? "answered" : ""}" aria-hidden="true">${areaNumber}</span>
             ${assignedName ? `<span class="part1-assigned-name">${escapeHtml(assignedName)}</span>` : ""}
           </button>
         `;
@@ -714,8 +735,12 @@
         button.addEventListener("click", event => {
           event.stopPropagation();
           const answer = button.dataset.personAnswer || "";
+          activePart1AreaAnswer = answer;
+          const areaQ = getPart1AreaQ(answer);
+          if (areaQ) setCurrentQuestion(areaQ, { render: false });
           openPersonAnswer = openPersonAnswer === answer ? null : answer;
           renderMain({ restoreScroll: true });
+          renderBottomNav();
         });
       });
 
@@ -730,7 +755,9 @@
             }
           }
           state.answers[part.id][q] = answer;
-          state.current = { partId: part.id, itemIndex: part.items.findIndex(item => item.q === q) };
+          activePart1AreaAnswer = answer;
+          const areaQ = getPart1AreaQ(answer);
+          if (areaQ) state.current = { partId: part.id, itemIndex: areaQ - 1 };
           openPersonAnswer = null;
           saveState();
           if (liveProgress && typeof liveProgress.touch === "function") liveProgress.touch();
@@ -745,6 +772,9 @@
           for (const item of part.items) {
             if (getAnswer(part.id, item.q) === answer) state.answers[part.id][item.q] = "";
           }
+          activePart1AreaAnswer = answer;
+          const areaQ = getPart1AreaQ(answer);
+          if (areaQ) state.current = { partId: part.id, itemIndex: areaQ - 1 };
           openPersonAnswer = null;
           saveState();
           renderApp({ restoreScroll: true });
@@ -931,16 +961,31 @@
     dom.bottomNav.innerHTML = examParts.map(part => {
       const progress = getProgress(part);
       const active = part.id === state.current.partId;
-      const bubbles = active ? `
-        <div class="question-bubbles" aria-label="Questions in ${part.label}">
-          ${part.items.map(item => {
-            const classes = ["q-pill"];
-            if (item.q === currentQ) classes.push("active");
-            if (isAnswered(part, item.q)) classes.push("answered");
-            if (state.flagged[item.q]) classes.push("flagged");
-            return `<button class="${classes.join(" ")}" data-jump-q="${item.q}" title="Question ${item.q}">${item.q}</button>`;
-          }).join("")}
-        </div>` : "";
+      const isPart1AreaNav = active && part.id === "part1" && visualLayouts.part1?.mode === "part1-cutouts";
+      const bubbles = active ? (
+        isPart1AreaNav
+          ? `
+            <div class="question-bubbles" aria-label="Selectable areas in ${part.label}">
+              ${PART1_AREA_ANSWERS.map((answer, index) => {
+                const areaQ = index + 1;
+                const classes = ["q-pill"];
+                if (getActivePart1AreaAnswer() === answer) classes.push("active");
+                if (isPart1AreaAnswered(part, answer)) classes.push("answered");
+                if (state.flagged[areaQ]) classes.push("flagged");
+                return `<button class="${classes.join(" ")}" data-part1-area-answer="${answer}" data-part1-area-q="${areaQ}" title="Area ${areaQ}">${areaQ}</button>`;
+              }).join("")}
+            </div>`
+          : `
+            <div class="question-bubbles" aria-label="Questions in ${part.label}">
+              ${part.items.map(item => {
+                const classes = ["q-pill"];
+                if (item.q === currentQ) classes.push("active");
+                if (isAnswered(part, item.q)) classes.push("answered");
+                if (state.flagged[item.q]) classes.push("flagged");
+                return `<button class="${classes.join(" ")}" data-jump-q="${item.q}" title="Question ${item.q}">${item.q}</button>`;
+              }).join("")}
+            </div>`
+      ) : "";
       return `
         <section class="part-nav-card ${active ? "active" : ""}" data-part-id="${part.id}">
           <div class="part-nav-top">
@@ -951,6 +996,19 @@
         </section>
       `;
     }).join("");
+
+    $$('[data-part1-area-answer]', dom.bottomNav).forEach(button => {
+      button.addEventListener("click", event => {
+        event.stopPropagation();
+        const answer = button.dataset.part1AreaAnswer || "";
+        const areaQ = Number(button.dataset.part1AreaQ);
+        activePart1AreaAnswer = answer;
+        openPersonAnswer = answer;
+        if (areaQ) setCurrentQuestion(areaQ, { render: false });
+        renderMain({ restoreScroll: true });
+        renderBottomNav();
+      });
+    });
 
     $$('[data-jump-q]', dom.bottomNav).forEach(button => {
       button.addEventListener("click", event => {
