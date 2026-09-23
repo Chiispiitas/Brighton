@@ -642,7 +642,7 @@
 
   function attachMainHandlers(part) {
     if (part.id === "part1" && visualLayouts.part1?.mode === "part1-cutouts") {
-      $(".part1-person-cutout").forEach(button => {
+      $$(".part1-person-cutout").forEach(button => {
         button.addEventListener("click", event => {
           event.stopPropagation();
           const answer = button.dataset.personAnswer || "";
@@ -651,7 +651,7 @@
         });
       });
 
-      $(".part1-name-option[data-person-q]").forEach(button => {
+      $$(".part1-name-option[data-person-q]").forEach(button => {
         button.addEventListener("click", event => {
           event.stopPropagation();
           const q = Number(button.dataset.personQ);
@@ -670,7 +670,7 @@
         });
       });
 
-      $(".part1-name-option[data-person-clear]").forEach(button => {
+      $$(".part1-name-option[data-person-clear]").forEach(button => {
         button.addEventListener("click", event => {
           event.stopPropagation();
           const answer = button.dataset.personClear || "";
