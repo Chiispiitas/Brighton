@@ -472,8 +472,9 @@
     const activeItem = part.items.find(item => item.q === activeQ) || part.items[0];
     const selected = getAnswer(part.id, activeQ);
     const background = resolveLayoutAsset(layout.canvas?.background || part.image);
+    const allowedAnswers = new Set(["C", "D", "E", "F", "G"]);
     const cutouts = (layout.elements || [])
-      .filter(item => item.kind === "person-cutout" && item.asset && item.answer)
+      .filter(item => item.kind === "person-cutout" && item.asset && allowedAnswers.has(String(item.answer || "")))
       .map(item => {
         const answer = String(item.answer || "");
         return `
@@ -523,17 +524,20 @@
         const q = Number(item.q) || 0;
         const example = item.role === "example";
         const answer = example ? (item.color || "yellow") : getAnswer(part.id, q);
+        const variants = item.variants || {};
+        const displayAsset = (answer && variants[answer]) || item.asset || "";
+        const image = displayAsset
+          ? `<img class="part5-cutout-image" src="${escapeAttr(resolveLayoutAsset(displayAsset))}" alt="" draggable="false" />`
+          : "";
         return `
           <button
             type="button"
             class="part5-cutout-button ${answer ? "answered" : ""} ${example ? "example" : ""}"
             style="${layoutRectStyle(item)}"
             data-cutout-q="${q}"
-            data-cutout-src="${escapeAttr(resolveLayoutAsset(item.asset))}"
-            data-cutout-color="${escapeAttr(answer || "")}"
             ${example ? "disabled" : ""}
             aria-label="${escapeAttr(example ? `Example: ${item.label || "colour item"}` : `Question ${q}: ${item.label || "choose a colour"}`)}"
-          ><canvas class="part5-cutout-canvas"></canvas><span class="cutout-q-badge">${example ? "Example" : q}</span></button>
+          >${image}<span class="cutout-q-badge">${example ? "Example" : q}</span></button>
         `;
       }
       if (item.kind === "text") {
@@ -560,9 +564,11 @@
       <div class="canvas-color-palette" role="dialog" aria-label="Choose a colour">
         <strong>Q${Number(activeCutout.q)} · ${escapeHtml(activeCutout.label || "Choose a colour")}</strong>
         <div class="canvas-color-swatches">
-          ${Object.entries(palette).map(([name, hex]) => `
-            <button type="button" class="canvas-color-swatch" data-color-q="${Number(activeCutout.q)}" data-color-name="${escapeAttr(name)}" style="--swatch:${escapeAttr(hex)}" aria-label="${escapeAttr(name)}" title="${escapeAttr(name)}"></button>
-          `).join("")}
+          ${Object.entries(palette)
+            .filter(([name]) => Boolean(activeCutout.variants?.[name]))
+            .map(([name, hex]) => `
+              <button type="button" class="canvas-color-swatch" data-color-q="${Number(activeCutout.q)}" data-color-name="${escapeAttr(name)}" style="--swatch:${escapeAttr(hex)}" aria-label="${escapeAttr(name)}" title="${escapeAttr(name)}"></button>
+            `).join("")}
         </div>
       </div>
     ` : "";
@@ -588,57 +594,7 @@
   }
 
   function hydrateInteractiveCutouts(part) {
-    if (part.id !== "part5" || visualLayouts.part5?.mode !== "part5-color") return;
-    $(".part5-cutout-button").forEach(button => {
-      const canvas = $(".part5-cutout-canvas", button);
-      if (!canvas) return;
-      paintCutoutCanvas(canvas, button.dataset.cutoutSrc, button.dataset.cutoutColor || "");
-    });
-  }
-
-  function paintCutoutCanvas(canvas, src, colorName) {
-    if (!src) return;
-    const image = new Image();
-    image.onload = () => {
-      canvas.width = image.naturalWidth || image.width;
-      canvas.height = image.naturalHeight || image.height;
-      const ctx = canvas.getContext("2d", { willReadFrequently: true });
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.drawImage(image, 0, 0);
-      const hex = getPaletteHex(colorName);
-      if (!hex) return;
-      try {
-        const rgb = hexToRgb(hex);
-        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-        const data = imageData.data;
-        for (let i = 0; i < data.length; i += 4) {
-          if (data[i + 3] < 5) continue;
-          const lum = 0.299 * data[i] + 0.587 * data[i + 1] + 0.114 * data[i + 2];
-          if (lum < 92) continue;
-          const shade = 0.58 + 0.42 * (lum / 255);
-          data[i] = Math.round(rgb.r * shade);
-          data[i + 1] = Math.round(rgb.g * shade);
-          data[i + 2] = Math.round(rgb.b * shade);
-        }
-        ctx.putImageData(imageData, 0, 0);
-      } catch (error) {
-        console.warn("Could not recolour cutout", error);
-      }
-    };
-    image.src = src;
-  }
-
-  function getPaletteHex(name) {
-    const palette = visualLayouts.part5?.palette || {};
-    return palette[name] || ({
-      red:"#d24a43", blue:"#3f70b7", green:"#4f8a52", brown:"#8a5d3b",
-      purple:"#76559e", yellow:"#e7bb35", orange:"#dc7c36", pink:"#d9809c"
-    })[name] || "";
-  }
-
-  function hexToRgb(hex) {
-    const value = parseInt(String(hex).replace("#", ""), 16);
-    return { r:(value >> 16) & 255, g:(value >> 8) & 255, b:value & 255 };
+    // Colour variants are pre-rendered image assets; no pixel recolouring is needed.
   }
 
   function attachMainHandlers(part) {
