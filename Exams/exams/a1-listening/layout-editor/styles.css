@@ -31,7 +31,7 @@ button.danger{color:var(--danger)}
 .editor-item.selected{outline:2px solid var(--teal);outline-offset:2px}
 .editor-item.hotspot{display:grid;place-items:center;border-radius:999px;background:rgba(255,255,255,.9);border:3px solid var(--teal);color:var(--ink);font-weight:950;box-shadow:0 2px 8px rgba(0,0,0,.18)}
 .editor-item.hotspot.example{border-color:var(--yellow);background:#fff8d7}
-.editor-item.cutout canvas{width:100%;height:100%;display:block;object-fit:fill;pointer-events:none}
+.editor-item.cutout canvas{width:100%;height:100%;display:block;object-fit:contain;pointer-events:none}
 .editor-item.person-cutout .person-cutout-image{width:100%;height:100%;display:block;object-fit:contain;pointer-events:none;user-select:none}
 .editor-item.text-field{display:flex;align-items:center;justify-content:center;border:2px dashed var(--teal);background:rgba(255,255,255,.9);border-radius:8px;font-weight:800;color:#667085}
 .resize-handle{position:absolute;width:16px;height:16px;right:-7px;bottom:-7px;border-radius:50%;background:var(--teal);border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.3);cursor:nwse-resize}
