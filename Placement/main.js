@@ -1917,15 +1917,12 @@
   }
 
 
-  function renderSpeakingTechnicalError(message, technicalReference = "") {
+  function renderSpeakingTechnicalError(message) {
     cleanupSpeakingMedia();
 
     els.stageRoot.innerHTML = `
       <div class="speaking-retry">
         <strong>${escapeHtml(message)}</strong>
-        ${technicalReference
-          ? `<small class="speaking-technical-reference">Technical code: ${escapeHtml(technicalReference)}</small>`
-          : ""}
         <div class="speaking-error-actions">
           <button id="retrySpeakingBtn" class="secondary-action" type="button">Try again</button>
           <button id="skipSpeakingBtn" class="secondary-action speaking-skip-action" type="button">I cannot speak now</button>
