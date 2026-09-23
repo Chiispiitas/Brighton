@@ -63,3 +63,81 @@
 @media (max-width: 760px) {
   .picture-action-row { grid-template-columns: 1fr; }
 }
+
+
+/* Final A1 Listening artwork */
+.part1 .exam-scene-image,
+.part5 .exam-scene-image {
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+}
+
+.part3 .matching-layout {
+  grid-template-columns: 1fr;
+}
+
+.part3 .matching-options-panel {
+  order: -1;
+}
+
+.part3 .matching-options-list {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 12px;
+}
+
+.part3 .matching-options-list .matching-option-with-image {
+  display: grid;
+  gap: 8px;
+  align-items: stretch;
+  padding: 8px;
+}
+
+.matching-option-image {
+  display: block;
+  width: 100%;
+  aspect-ratio: 4 / 3;
+  object-fit: contain;
+  border-radius: 10px;
+  background: #fff;
+}
+
+.matching-option-caption {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  min-width: 0;
+}
+
+.matching-option-caption span {
+  min-width: 0;
+  line-height: 1.2;
+}
+
+.part4 .visual-picture-frame {
+  aspect-ratio: 1 / 1;
+  overflow: hidden;
+}
+
+.part4 .visual-option-image {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  background: #fff;
+}
+
+@media (max-width: 900px) {
+  .part3 .matching-options-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 520px) {
+  .part3 .matching-options-list {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .part3 .matching-option-caption span {
+    font-size: 12px;
+  }
+}

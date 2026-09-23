@@ -63,6 +63,45 @@ for (const question of questions) {
 }
 if (points !== 25) fail(`Answer-key points total ${points}; expected 25.`);
 
+const part1 = parts[0];
+const part3 = parts[2];
+const part4 = parts[3];
+const part5 = parts[4];
+
+function assertImage(relativePath, label) {
+  if (!relativePath) {
+    fail(`${label} is missing an image path.`);
+    return;
+  }
+  const fullPath = path.join(EXAM_DIR, relativePath);
+  if (!fs.existsSync(fullPath)) fail(`${label} references missing image: ${relativePath}`);
+}
+
+assertImage(part1?.image, "Part 1 scene");
+assertImage(part5?.image, "Part 5 worksheet");
+
+for (const [letter, text] of Object.entries(part3?.options || {})) {
+  assertImage(part3?.optionImages?.[letter], `Part 3 option ${letter} (${text})`);
+}
+
+for (const item of part4?.items || []) {
+  for (const [letter, option] of Object.entries(item.options || {})) {
+    assertImage(option?.image, `Question ${item.q} option ${letter}`);
+    if (option?.placeholder) fail(`Question ${item.q} option ${letter} still uses placeholder artwork.`);
+  }
+}
+
+if (part4?.items?.find(item => item.q === 16)?.options?.B?.label !== "Green sweater and jeans") {
+  fail("Question 16 option B label must match the final artwork.");
+}
+if (part4?.items?.find(item => item.q === 18)?.options?.A?.label !== "Rainy" ||
+    part4?.items?.find(item => item.q === 18)?.options?.C?.label !== "Sunny") {
+  fail("Question 18 weather labels must match the final A/B/C artwork.");
+}
+if (part4?.items?.find(item => item.q === 20)?.options?.C?.label !== "Go to a concert") {
+  fail("Question 20 option C label must match the final concert artwork.");
+}
+
 for (const fileName of [
   "README_A1_Listening_Scripts.txt",
   "A1_Listening_Part_1_Scene_Matching.txt",

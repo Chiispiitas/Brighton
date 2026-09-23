@@ -352,9 +352,18 @@
 
   function renderMatchingPart(part) {
     const activeQ = getCurrentQuestionNumber();
-    const optionItems = Object.entries(part.options || {}).map(([letter, text]) => `
-      <li><strong>${letter}</strong> ${escapeHtml(text)}</li>
-    `).join("");
+    const optionItems = Object.entries(part.options || {}).map(([letter, text]) => {
+      const imagePath = part.optionImages?.[letter];
+      const optionImage = imagePath
+        ? `<img class="matching-option-image" src="${escapeAttr(imagePath)}" alt="${escapeAttr(text)}" loading="eager" />`
+        : "";
+      return `
+        <li class="${imagePath ? "matching-option-with-image" : ""}">
+          ${optionImage}
+          <div class="matching-option-caption"><strong>${letter}</strong><span>${escapeHtml(text)}</span></div>
+        </li>
+      `;
+    }).join("");
 
     const rows = part.items.map(item => {
       const selected = getAnswer(part.id, item.q);
