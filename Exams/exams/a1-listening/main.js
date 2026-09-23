@@ -360,7 +360,7 @@
 
   function renderMatchingPart(part) {
     const layout = part.id === "part1" ? visualLayouts.part1 : null;
-    if (layout?.mode === "part1-hotspots") return renderPart1HotspotLayout(part, layout);
+    if (layout?.mode === "part1-cutouts") return renderPart1CutoutLayout(part, layout);
     const activeQ = getCurrentQuestionNumber();
     const optionItems = Object.entries(part.options || {}).map(([letter, text]) => {
       const imagePath = part.optionImages?.[letter];
@@ -467,31 +467,34 @@
     return `left:${Number(item.x) || 0}%;top:${Number(item.y) || 0}%;width:${Number(item.w) || 1}%;height:${Number(item.h) || 1}%;`;
   }
 
-  function renderPart1HotspotLayout(part, layout) {
+  function renderPart1CutoutLayout(part, layout) {
     const activeQ = getCurrentQuestionNumber();
     const activeItem = part.items.find(item => item.q === activeQ) || part.items[0];
     const selected = getAnswer(part.id, activeQ);
     const background = resolveLayoutAsset(layout.canvas?.background || part.image);
-    const hotspots = (layout.elements || []).filter(item => item.kind === "hotspot").map(item => {
-      const answer = String(item.answer || "");
-      const isExample = item.role === "example";
-      return `
-        <button
-          type="button"
-          class="part1-hotspot ${selected === answer ? "selected" : ""} ${isExample ? "example" : ""}"
-          style="${layoutRectStyle(item)}"
-          data-hotspot-answer="${escapeAttr(answer)}"
-          ${isExample ? "disabled" : ""}
-          aria-label="${escapeAttr(isExample ? `Example ${item.label || answer}` : `Choose person ${item.label || answer}`)}"
-          title="${escapeAttr(isExample ? "Example" : (item.label || answer))}"
-        >${escapeHtml(item.label || answer)}</button>
-      `;
-    }).join("");
+    const allowedAnswers = new Set(["C", "D", "E", "F", "G"]);
+    const cutouts = (layout.elements || [])
+      .filter(item => item.kind === "person-cutout" && item.asset && allowedAnswers.has(String(item.answer || "")))
+      .map(item => {
+        const answer = String(item.answer || "");
+        return `
+          <button
+            type="button"
+            class="part1-person-cutout ${selected === answer ? "selected" : ""}"
+            style="${layoutRectStyle(item)}"
+            data-person-answer="${escapeAttr(answer)}"
+            aria-pressed="${selected === answer ? "true" : "false"}"
+            aria-label="Selectable person"
+          >
+            <img src="${escapeAttr(resolveLayoutAsset(item.asset))}" alt="" draggable="false" />
+          </button>
+        `;
+      }).join("");
 
     return `
-      <section class="exam-panel part1 part1-hotspot-mode">
+      <section class="exam-panel part1 part1-cutout-mode">
         ${partHeader(part)}
-        ${instruction("Listen and click the button on the correct person in the picture.")}
+        ${instruction("Listen and click the correct person in the picture.")}
         <article class="article-card hotspot-focus-card">
           <div class="visual-question-focus">
             <span class="q-badge">${activeQ}</span>
@@ -499,9 +502,9 @@
           </div>
           <div class="interactive-picture-stage" style="aspect-ratio:${escapeAttr(layout.canvas?.aspect || "4 / 3")}">
             <img src="${escapeAttr(background)}" alt="${escapeAttr(part.imageDescription || "City-square listening picture")}" />
-            ${hotspots}
+            ${cutouts}
           </div>
-          <p class="interaction-help">Click a letter directly on the person. The yellow example button is already completed.</p>
+          <p class="interaction-help">Click directly on one of the five selectable people. Other people in the scene are distractors and are not clickable.</p>
         </article>
       </section>
     `;
@@ -521,17 +524,20 @@
         const q = Number(item.q) || 0;
         const example = item.role === "example";
         const answer = example ? (item.color || "yellow") : getAnswer(part.id, q);
+        const variants = item.variants || {};
+        const displayAsset = (answer && variants[answer]) || item.asset || "";
+        const image = displayAsset
+          ? `<img class="part5-cutout-image" src="${escapeAttr(resolveLayoutAsset(displayAsset))}" alt="" draggable="false" />`
+          : "";
         return `
           <button
             type="button"
             class="part5-cutout-button ${answer ? "answered" : ""} ${example ? "example" : ""}"
             style="${layoutRectStyle(item)}"
             data-cutout-q="${q}"
-            data-cutout-src="${escapeAttr(resolveLayoutAsset(item.asset))}"
-            data-cutout-color="${escapeAttr(answer || "")}"
             ${example ? "disabled" : ""}
             aria-label="${escapeAttr(example ? `Example: ${item.label || "colour item"}` : `Question ${q}: ${item.label || "choose a colour"}`)}"
-          ><canvas class="part5-cutout-canvas"></canvas><span class="cutout-q-badge">${example ? "Example" : q}</span></button>
+          >${image}<span class="cutout-q-badge">${example ? "Example" : q}</span></button>
         `;
       }
       if (item.kind === "text") {
@@ -558,9 +564,11 @@
       <div class="canvas-color-palette" role="dialog" aria-label="Choose a colour">
         <strong>Q${Number(activeCutout.q)} · ${escapeHtml(activeCutout.label || "Choose a colour")}</strong>
         <div class="canvas-color-swatches">
-          ${Object.entries(palette).map(([name, hex]) => `
-            <button type="button" class="canvas-color-swatch" data-color-q="${Number(activeCutout.q)}" data-color-name="${escapeAttr(name)}" style="--swatch:${escapeAttr(hex)}" aria-label="${escapeAttr(name)}" title="${escapeAttr(name)}"></button>
-          `).join("")}
+          ${Object.entries(palette)
+            .filter(([name]) => Boolean(activeCutout.variants?.[name]))
+            .map(([name, hex]) => `
+              <button type="button" class="canvas-color-swatch" data-color-q="${Number(activeCutout.q)}" data-color-name="${escapeAttr(name)}" style="--swatch:${escapeAttr(hex)}" aria-label="${escapeAttr(name)}" title="${escapeAttr(name)}"></button>
+            `).join("")}
         </div>
       </div>
     ` : "";
@@ -586,66 +594,21 @@
   }
 
   function hydrateInteractiveCutouts(part) {
-    if (part.id !== "part5" || visualLayouts.part5?.mode !== "part5-color") return;
-    $(".part5-cutout-button").forEach(button => {
-      const canvas = $(".part5-cutout-canvas", button);
-      if (!canvas) return;
-      paintCutoutCanvas(canvas, button.dataset.cutoutSrc, button.dataset.cutoutColor || "");
-    });
-  }
-
-  function paintCutoutCanvas(canvas, src, colorName) {
-    if (!src) return;
-    const image = new Image();
-    image.onload = () => {
-      canvas.width = image.naturalWidth || image.width;
-      canvas.height = image.naturalHeight || image.height;
-      const ctx = canvas.getContext("2d", { willReadFrequently: true });
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
-      ctx.drawImage(image, 0, 0);
-      const hex = getPaletteHex(colorName);
-      if (!hex) return;
-      try {
-        const rgb = hexToRgb(hex);
-        const imageData = ctx.getImageData(0, 0, canvas.width, canvas.height);
-        const data = imageData.data;
-        for (let i = 0; i < data.length; i += 4) {
-          if (data[i + 3] < 5) continue;
-          const lum = 0.299 * data[i] + 0.587 * data[i + 1] + 0.114 * data[i + 2];
-          if (lum < 92) continue;
-          const shade = 0.58 + 0.42 * (lum / 255);
-          data[i] = Math.round(rgb.r * shade);
-          data[i + 1] = Math.round(rgb.g * shade);
-          data[i + 2] = Math.round(rgb.b * shade);
-        }
-        ctx.putImageData(imageData, 0, 0);
-      } catch (error) {
-        console.warn("Could not recolour cutout", error);
-      }
-    };
-    image.src = src;
-  }
-
-  function getPaletteHex(name) {
-    const palette = visualLayouts.part5?.palette || {};
-    return palette[name] || ({
-      red:"#d24a43", blue:"#3f70b7", green:"#4f8a52", brown:"#8a5d3b",
-      purple:"#76559e", yellow:"#e7bb35", orange:"#dc7c36", pink:"#d9809c"
-    })[name] || "";
-  }
-
-  function hexToRgb(hex) {
-    const value = parseInt(String(hex).replace("#", ""), 16);
-    return { r:(value >> 16) & 255, g:(value >> 8) & 255, b:value & 255 };
+    // Colour variants are pre-rendered image assets; no pixel recolouring is needed.
   }
 
   function attachMainHandlers(part) {
-    if (part.id === "part1" && visualLayouts.part1?.mode === "part1-hotspots") {
-      $(".part1-hotspot:not(.example)").forEach(button => {
+    if (part.id === "part1" && visualLayouts.part1?.mode === "part1-cutouts") {
+      $(".part1-person-cutout").forEach(button => {
         button.addEventListener("click", () => {
           const q = getCurrentQuestionNumber();
-          setAnswer(part.id, q, button.dataset.hotspotAnswer || "", { render: false });
-          $(".part1-hotspot").forEach(node => node.classList.toggle("selected", node === button));
+          const answer = button.dataset.personAnswer || "";
+          setAnswer(part.id, q, answer, { render: false });
+          $(".part1-person-cutout").forEach(node => {
+            const selected = node === button;
+            node.classList.toggle("selected", selected);
+            node.setAttribute("aria-pressed", selected ? "true" : "false");
+          });
           renderBottomNav();
           renderStepControls();
         });

@@ -31,7 +31,7 @@ button.danger{color:var(--danger)}
 .editor-item.selected{outline:2px solid var(--teal);outline-offset:2px}
 .editor-item.hotspot{display:grid;place-items:center;border-radius:999px;background:rgba(255,255,255,.9);border:3px solid var(--teal);color:var(--ink);font-weight:950;box-shadow:0 2px 8px rgba(0,0,0,.18)}
 .editor-item.hotspot.example{border-color:var(--yellow);background:#fff8d7}
-.editor-item.cutout canvas{width:100%;height:100%;display:block;object-fit:contain;pointer-events:none}
+.editor-item.cutout canvas,.editor-item.person-cutout canvas{width:100%;height:100%;display:block;object-fit:contain;pointer-events:none}
 .editor-item.text-field{display:flex;align-items:center;justify-content:center;border:2px dashed var(--teal);background:rgba(255,255,255,.9);border-radius:8px;font-weight:800;color:#667085}
 .resize-handle{position:absolute;width:16px;height:16px;right:-7px;bottom:-7px;border-radius:50%;background:var(--teal);border:2px solid #fff;box-shadow:0 1px 4px rgba(0,0,0,.3);cursor:nwse-resize}
 .inspector-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}.inspector-grid label{margin:0}.wide{grid-column:1/-1}.field-label{font-size:12px;font-weight:750;display:block;margin-bottom:6px}
@@ -44,3 +44,11 @@ button.danger{color:var(--danger)}
 @media(max-width:760px){
   .topbar{position:static;align-items:flex-start;flex-direction:column}.app{display:block}.sidebar{position:static;max-height:none;border:0!important}.workspace{padding:10px}.stage-shell{padding:6px}.top-actions{width:100%}.top-actions button{flex:1}
 }
+
+.editor-item.person-cutout{background:transparent}
+.editor-item.person-cutout canvas{filter:drop-shadow(0 1px 2px rgba(0,0,0,.15))}
+.person-cutout-tag{position:absolute;left:50%;bottom:-23px;transform:translateX(-50%);padding:3px 7px;border-radius:999px;background:rgba(32,38,49,.9);color:#fff;font-size:11px;font-weight:850;white-space:nowrap;pointer-events:none}
+
+.variant-summary{font-size:11px;line-height:1.45;color:var(--muted);word-break:break-word;padding:7px 8px;border:1px dashed var(--line);border-radius:8px;background:#fafbfc}
+.swatch.unavailable{opacity:.22;cursor:not-allowed;filter:grayscale(1)}
+.swatch:disabled{pointer-events:none}

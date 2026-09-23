@@ -270,11 +270,14 @@
   cursor: default;
 }
 
-.part5-cutout-canvas {
+.part5-cutout-canvas,
+.part5-cutout-image {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: contain;
+  pointer-events: none;
+  user-select: none;
 }
 
 .cutout-q-badge {
@@ -369,4 +372,57 @@
     font-size: 12px;
     padding: 2px 5px;
   }
+}
+
+
+/* Part 1 person-cutout interaction */
+.part1-person-cutout {
+  position: absolute;
+  z-index: 4;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: filter .15s ease, transform .15s ease, outline-color .15s ease;
+  outline: 3px solid transparent;
+  outline-offset: 2px;
+}
+
+.part1-person-cutout img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+}
+
+.part1-person-cutout:hover,
+.part1-person-cutout:focus-visible {
+  filter: drop-shadow(0 0 5px rgba(0,169,165,.6));
+  outline-color: rgba(0,169,165,.55);
+}
+
+.part1-person-cutout.selected {
+  filter: drop-shadow(0 0 7px rgba(0,169,165,.8));
+  outline-color: var(--teal);
+  background: rgba(0,169,165,.07);
+}
+
+.part1-person-cutout.selected::after {
+  content: "✓";
+  position: absolute;
+  right: 2px;
+  top: 2px;
+  width: 24px;
+  height: 24px;
+  display: grid;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--teal);
+  color: #fff;
+  font-size: 14px;
+  font-weight: 950;
+  box-shadow: 0 2px 6px rgba(0,0,0,.22);
 }
