@@ -49,6 +49,7 @@
   let liveProgress = null;
   let openColorPaletteQ = null;
   let openPersonAnswer = null;
+  let part1NameOrder = null;
 
   boot();
 
@@ -476,10 +477,28 @@
     return raw.includes(":") ? raw.replace(":", " / ") : raw;
   }
 
+  function getPart1NameOptions(part) {
+    if (!Array.isArray(part1NameOrder) || part1NameOrder.length !== part.items.length) {
+      const shuffled = part.items.map(item => ({ q: Number(item.q), name: item.person }));
+      for (let i = shuffled.length - 1; i > 0; i -= 1) {
+        const j = Math.floor(Math.random() * (i + 1));
+        [shuffled[i], shuffled[j]] = [shuffled[j], shuffled[i]];
+      }
+      const original = part.items.map(item => item.person).join("|");
+      const randomized = shuffled.map(item => item.name).join("|");
+      if (shuffled.length > 1 && randomized === original) {
+        shuffled.push(shuffled.shift());
+      }
+      part1NameOrder = shuffled;
+    }
+    return part1NameOrder;
+  }
+
   function renderPart1CutoutLayout(part, layout) {
     const background = resolveLayoutAsset(layout.canvas?.background || part.image);
     const allowedAnswers = new Set(["C", "D", "E", "F", "G"]);
-    const names = part.items.map(item => ({ q: Number(item.q), name: item.person }));
+    const names = getPart1NameOptions(part);
+    const areaNumbers = new Map([["C", 1], ["D", 2], ["E", 3], ["F", 4], ["G", 5]]);
 
     const cutouts = (layout.elements || [])
       .filter(item => item.kind === "person-cutout" && item.asset && allowedAnswers.has(String(item.answer || "")))
@@ -488,6 +507,7 @@
         const assignedItem = part.items.find(entry => getAnswer(part.id, entry.q) === answer);
         const assignedName = assignedItem?.person || "";
         const isOpen = openPersonAnswer === answer;
+        const areaNumber = areaNumbers.get(answer) || "";
         return `
           <button
             type="button"
@@ -495,9 +515,10 @@
             style="${layoutRectStyle(item)}"
             data-person-answer="${escapeAttr(answer)}"
             aria-expanded="${isOpen ? "true" : "false"}"
-            aria-label="${escapeAttr(assignedName ? `${assignedName}; change name` : "Choose this person")}"
+            aria-label="${escapeAttr(assignedName ? `Area ${areaNumber}: ${assignedName}; change name` : `Area ${areaNumber}: choose this person`)}"
           >
             <img class="part1-person-silhouette" src="${escapeAttr(resolveLayoutAsset(item.asset))}" alt="" draggable="false" />
+            <span class="part1-area-number" aria-hidden="true">${areaNumber}</span>
             ${assignedName ? `<span class="part1-assigned-name">${escapeHtml(assignedName)}</span>` : ""}
           </button>
         `;
@@ -511,7 +532,7 @@
       const answer = String(openItem.answer || "");
       const assignedItem = part.items.find(entry => getAnswer(part.id, entry.q) === answer);
       const center = Math.max(18, Math.min(82, Number(openItem.x) + Number(openItem.w) / 2));
-      const top = Number(openItem.y) + Number(openItem.h) + 1.2;
+      const top = Number(openItem.y) + Number(openItem.h) + 4.5;
       nameMenu = `
         <div class="part1-name-menu" style="left:${center}%;top:${top}%;" role="menu" aria-label="Choose a name">
           <div class="part1-name-menu-title">Choose the name</div>
@@ -559,7 +580,6 @@
         <article class="article-card hotspot-focus-card scene-assignment-card">
           <div class="scene-assignment-summary">
             <strong>${answered} of 5 matched</strong>
-            <span>All five people are answered on this one picture.</span>
           </div>
           <div class="interactive-picture-stage part1-interactive-stage ${openPersonAnswer ? "menu-open" : ""}" style="aspect-ratio:${escapeAttr(layoutAspectRatio(layout))}">
             <img src="${escapeAttr(background)}" alt="${escapeAttr(part.imageDescription || "City-square listening picture")}" />
