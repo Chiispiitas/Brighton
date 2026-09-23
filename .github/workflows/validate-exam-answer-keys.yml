@@ -50,6 +50,18 @@ jobs:
           node --check Exams/exams/a1-listening/listening-data.js
           node --check Exams/exams/a1-listening/visual-layouts.js
           node --check Exams/exams/a1-listening/layout-editor/app.js
+      - name: Validate A1 Listening layout editor selector usage
+        run: |
+          node <<'NODE'
+          const fs = require("fs");
+          const source = fs.readFileSync("Exams/exams/a1-listening/layout-editor/app.js", "utf8");
+          const bad = source.split("\n").filter(line =>
+            /(^|[^$])\$\([^\n]*\)\.forEach\(/.test(line)
+          );
+          if (bad.length) {
+            throw new Error("Layout editor calls .forEach() on $() instead of $():\n" + bad.join("\n"));
+          }
+          NODE
       - name: Validate A1 player boot wiring
         run: |
           node <<'NODE'
