@@ -912,7 +912,9 @@ export async function gradeSpeakingWithGemini(payload, objectiveLevel, promptId)
   );
 
   if (!providerResult?.ok) {
-    const providerError = providerResult?.error || {};
+    const providerError = /** @type {{ status?: number, code?: string }} */ (
+      providerResult?.error || {}
+    );
     return {
       inputError: true,
       retryReason: "provider-unavailable",
