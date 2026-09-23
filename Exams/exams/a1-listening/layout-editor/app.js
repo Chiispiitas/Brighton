@@ -189,7 +189,11 @@
       imported++;
     }
 
-    if (files.length > imported) status("Only five scored Part 1 people are supported; extra files were ignored.", true);
+    if (files.length > imported) {
+      status("Only five scored Part 1 people are supported; extra files were ignored.", true);
+    } else if (imported) {
+      status(`${imported} Part 1 person cutout(s) imported and ready to position.`);
+    }
     event.target.value = "";
     render();
   }
@@ -319,16 +323,16 @@
 
       if (item.kind === "text") {
         node.textContent = item.label || "Text field";
-      } else if (item.kind === "cutout" || item.kind === "person-cutout") {
+      } else if (item.kind === "person-cutout") {
+        renderPersonCutoutPreview(node, item);
+        const tag = document.createElement("span");
+        tag.className = "person-cutout-tag";
+        tag.textContent = item.label || item.answer || "";
+        node.appendChild(tag);
+      } else if (item.kind === "cutout") {
         const canvas = document.createElement("canvas");
         node.appendChild(canvas);
         renderCutout(canvas, item);
-        if (item.kind === "person-cutout") {
-          const tag = document.createElement("span");
-          tag.className = "person-cutout-tag";
-          tag.textContent = item.label || item.answer || "";
-          node.appendChild(tag);
-        }
       }
 
       const handle = document.createElement("span");
@@ -497,6 +501,35 @@
       });
       el.previewPalette.appendChild(b);
     }
+  }
+
+  function renderPersonCutoutPreview(node, item) {
+    const img = document.createElement("img");
+    img.className = "person-cutout-image";
+    img.alt = item.label || "Imported person cutout";
+    img.draggable = false;
+
+    const localSrc = assetUrls.get(item.asset);
+    const repoSrc = item.asset
+      ? (item.asset.includes("/") ? item.asset : `../assets/${encodeURIComponent(item.asset)}`)
+      : "";
+
+    const src = localSrc || repoSrc;
+    if (src) {
+      img.src = src;
+      img.addEventListener("load", () => node.classList.remove("missing-asset"));
+      img.addEventListener("error", () => {
+        if (localSrc && repoSrc && img.src !== new URL(repoSrc, location.href).href) {
+          img.src = repoSrc;
+          return;
+        }
+        node.classList.add("missing-asset");
+      });
+    } else {
+      node.classList.add("missing-asset");
+    }
+
+    node.appendChild(img);
   }
 
   async function renderCutout(canvas, item) {
