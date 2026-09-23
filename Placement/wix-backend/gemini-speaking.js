@@ -10,6 +10,10 @@ export const GEMINI_SPEAKING_FALLBACK_MODEL = "gemini-3.5-flash-lite";
 
 const GEMINI_SECRET_NAME = "BRIGHTON_PLACEMENT_GEMINI_API_KEY";
 const GEMINI_GENERATE_BASE = "https://generativelanguage.googleapis.com/v1beta/models";
+// Chunked Wix transport reassembles audio server-side. Keep this well below
+// Gemini's inline request ceiling while allowing Safari/iPhone recordings that
+// exceed Wix's 512 KB inbound HTTP-function limit.
+const SPEAKING_MAX_AUDIO_BASE64_CHARS = 12000000;
 
 const LEVELS = ["PRE-A1", "A1", "A2", "B1", "B1+", "B2", "C1"];
 
@@ -857,9 +861,9 @@ export async function gradeSpeakingWithGemini(payload, objectiveLevel, promptId)
     !prompt ||
     !audioMimeType ||
     audioBase64.length < 1600 ||
-    // Public Velo HTTP functions cap the entire request body at 512 KB.
-    // Frontend keeps Base64 audio <= 400k chars so metadata still fits safely.
-    audioBase64.length > 400000 ||
+    // The frontend chunks large recordings before they cross Wix's inbound
+    // request limit; by this point the backend has safely reassembled them.
+    audioBase64.length > SPEAKING_MAX_AUDIO_BASE64_CHARS ||
     durationSeconds < Math.max(5, profile.minSeconds * 0.72);
 
   if (preflightError) {
