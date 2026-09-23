@@ -1,0 +1,40 @@
+name: Package Placement Speaking Chunk Backend Fix
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/package-placement-speaking-chunks.yml"
+
+jobs:
+  package:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - name: Build Wix backend package
+        run: |
+          mkdir -p package/Backend
+          cp Placement/wix-backend/placement.js package/Backend/placement.js
+          cp Placement/wix-backend/gemini-speaking.js package/Backend/gemini-speaking.js
+          cp Placement/wix-backend/http-functions.js package/Backend/http-functions.js
+          cat > package/README.txt <<'EOF'
+          Brighton Placement Speaking chunk transport backend fix
+
+          Wix CMS collection BrightonPlacementSpeakingChunks has already been created.
+
+          In the Brighton Exams Wix Classic Editor:
+          1. Replace Backend/placement.js with this package's Backend/placement.js.
+          2. Replace Backend/gemini-speaking.js with this package's Backend/gemini-speaking.js.
+          3. Replace Backend/http-functions.js with this package's Backend/http-functions.js.
+          4. Publish the Wix site.
+
+          This preserves the existing Exams and Tests routes in http-functions.js.
+          EOF
+          cd package
+          zip -r ../brighton-placement-speaking-chunk-backend-fix.zip .
+      - name: Upload backend fix
+        uses: actions/upload-artifact@v4
+        with:
+          name: brighton-placement-speaking-chunk-backend-fix
+          path: brighton-placement-speaking-chunk-backend-fix.zip
+          if-no-files-found: error
