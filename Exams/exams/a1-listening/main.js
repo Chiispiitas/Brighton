@@ -617,6 +617,19 @@
     }
 
     return `
+      <svg class="part5-filter-defs" aria-hidden="true" focusable="false" width="0" height="0">
+        <defs>
+          <filter id="part5-yellow-outline" x="-20%" y="-20%" width="140%" height="140%" primitiveUnits="objectBoundingBox" color-interpolation-filters="sRGB">
+            <feMorphology in="SourceAlpha" operator="dilate" radius="0.014" result="dilated" />
+            <feComposite in="dilated" in2="SourceAlpha" operator="out" result="outline" />
+            <feFlood flood-color="#ffd400" result="yellow" />
+            <feComposite in="yellow" in2="outline" operator="in" result="yellowOutline" />
+            <feMerge>
+              <feMergeNode in="yellowOutline" />
+            </feMerge>
+          </filter>
+        </defs>
+      </svg>
       <section class="exam-panel part5 part5-canvas-mode">
         ${partHeader(part)}
         ${instruction("Listen, then click each object to choose its colour. Type the word directly in the blank sign for Question 24.")}
