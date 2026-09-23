@@ -931,8 +931,7 @@
     dom.bottomNav.innerHTML = examParts.map(part => {
       const progress = getProgress(part);
       const active = part.id === state.current.partId;
-      const singleScenePart = active && part.id === "part1" && visualLayouts.part1?.mode === "part1-cutouts";
-      const bubbles = active && !singleScenePart ? `
+      const bubbles = active ? `
         <div class="question-bubbles" aria-label="Questions in ${part.label}">
           ${part.items.map(item => {
             const classes = ["q-pill"];
