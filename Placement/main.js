@@ -1189,12 +1189,12 @@
   }
 
   function hasLiveAudioTrack(stream) {
-    // Do not rely on MediaStream.active here. Some Android Chromium builds can
-    // briefly report active=false even while the microphone track itself is
-    // already live. The track state is the useful signal for capture.
-    return Boolean(
-      stream?.getAudioTracks?.().some((track) => track.readyState === "live")
-    );
+    // Android Chromium variants are inconsistent about MediaStream.active and
+    // can briefly expose a microphone track before readyState settles. Treat
+    // any audio track that is not explicitly ended as usable; MediaRecorder is
+    // the final authority on whether that track can actually be recorded.
+    const tracks = stream?.getAudioTracks?.() || [];
+    return tracks.some((track) => String(track?.readyState || "live") !== "ended");
   }
 
   async function ensureSpeakingMic() {
@@ -1228,10 +1228,9 @@
       }
     };
 
-    // On Android, keep getUserMedia deliberately simple. Optional DSP
-    // constraints have caused vendor Chromium builds to return a stream whose
-    // active flag is false or to throw NotReadableError immediately after a
-    // previous capture. Desktop keeps the enhanced-first fallback.
+    // Android gets the least opinionated request possible. Do not call
+    // applyConstraints() after acquisition either: on some Android devices that
+    // can transition an otherwise valid track into a non-recordable state.
     const attempts = isAndroid
       ? [{ audio: true }, { audio: true }]
       : [enhancedConstraints, { audio: true }];
@@ -1242,25 +1241,9 @@
       try {
         const stream = await navigator.mediaDevices.getUserMedia(attempts[index]);
         const audioTracks = stream?.getAudioTracks?.() || [];
-        const liveTrack = audioTracks.find((track) => track.readyState === "live");
 
-        if (liveTrack) {
+        if (audioTracks.length && hasLiveAudioTrack(stream)) {
           speakingStream = stream;
-
-          // Keep Android constraints best-effort and post-acquisition. Failure
-          // to apply them must never invalidate a working microphone.
-          if (isAndroid && typeof liveTrack.applyConstraints === "function") {
-            try {
-              await liveTrack.applyConstraints({
-                echoCancellation: true,
-                noiseSuppression: true,
-                autoGainControl: true
-              });
-            } catch (error) {
-              console.warn("Android microphone enhancements unavailable; using raw capture.", error);
-            }
-          }
-
           return speakingStream;
         }
 
@@ -1268,7 +1251,13 @@
           try { track.stop(); } catch {}
         });
 
-        lastError = new Error("The browser returned no live microphone track.");
+        const missingTrackError = new Error(
+          audioTracks.length
+            ? "The microphone track ended before recording could start."
+            : "The browser returned no microphone audio track."
+        );
+        missingTrackError.code = audioTracks.length ? "AUDIO_TRACK_ENDED" : "NO_AUDIO_TRACK";
+        lastError = missingTrackError;
       } catch (error) {
         lastError = error;
         const name = String(error?.name || "");
@@ -1279,19 +1268,21 @@
           break;
         }
 
-        // A busy audio device on Android often clears after the previous
-        // MediaStream is released. Give it one short retry with audio:true.
-        if (
-          isAndroid &&
-          index === 0 &&
-          ["NotReadableError", "AbortError", "TrackStartError"].includes(name)
-        ) {
-          await new Promise((resolve) => window.setTimeout(resolve, 350));
+        if (isAndroid && index === 0) {
+          // Give Android one fresh attempt even for vendor-specific generic
+          // errors whose name is only "Error".
+          await new Promise((resolve) => window.setTimeout(resolve, 450));
         }
       }
     }
 
-    throw lastError || new Error("Microphone capture failed.");
+    if (lastError && !lastError.code && String(lastError?.name || "") === "Error") {
+      lastError.code = "ANDROID_MIC_CAPTURE";
+    }
+
+    throw lastError || Object.assign(new Error("Microphone capture failed."), {
+      code: "MIC_CAPTURE_FAILED"
+    });
   }
 
   async function setupSpeakingAnalyser() {
@@ -1393,7 +1384,8 @@
         ? "Microphone access was blocked by the browser."
         : "Microphone unavailable.";
 
-      renderSpeakingTechnicalError(message, name || "MIC_CAPTURE");
+      const technicalCode = String(error?.code || (name && name !== "Error" ? name : "") || "MIC_CAPTURE_FAILED");
+      renderSpeakingTechnicalError(message, technicalCode);
     }
   }
 
@@ -1663,7 +1655,12 @@
           ? "Microphone access was blocked by the browser."
           : "Microphone unavailable.";
 
-      renderSpeakingTechnicalError(message);
+      const technicalCode = String(
+        error?.code ||
+        (name && name !== "Error" ? name : "") ||
+        "MIC_RECORD_START"
+      );
+      renderSpeakingTechnicalError(message, technicalCode);
     }
   }
 
