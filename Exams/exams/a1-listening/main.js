@@ -997,7 +997,7 @@
       `;
     }).join("");
 
-    $('[data-part1-area-answer]', dom.bottomNav).forEach(button => {
+    $$('[data-part1-area-answer]', dom.bottomNav).forEach(button => {
       button.addEventListener("click", event => {
         event.stopPropagation();
         const answer = button.dataset.part1AreaAnswer || "";
@@ -1010,7 +1010,7 @@
       });
     });
 
-    $('[data-jump-q]', dom.bottomNav).forEach(button => {
+    $$('[data-jump-q]', dom.bottomNav).forEach(button => {
       button.addEventListener("click", event => {
         event.stopPropagation();
         goToQuestion(Number(button.dataset.jumpQ));
