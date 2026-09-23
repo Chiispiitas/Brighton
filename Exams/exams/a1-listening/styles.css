@@ -270,11 +270,14 @@
   cursor: default;
 }
 
-.part5-cutout-canvas {
+.part5-cutout-canvas,
+.part5-cutout-image {
   display: block;
   width: 100%;
   height: 100%;
   object-fit: contain;
+  pointer-events: none;
+  user-select: none;
 }
 
 .cutout-q-badge {
