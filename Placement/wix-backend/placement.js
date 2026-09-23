@@ -1207,6 +1207,10 @@ export async function skipSpeaking(request) {
     await wixData.update(PLACEMENT_SESSIONS, updatedSession, { suppressAuth: true });
     const result = await buildResultSummary(updatedSession);
 
+    // If the student skips after an upload/provider error, do not leave raw
+    // transport chunks behind on a completed session.
+    await removePlacementRows(PLACEMENT_SPEAKING_CHUNKS, session._id);
+
     return jsonOK({
       success: true,
       finalLevel,
