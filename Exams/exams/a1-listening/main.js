@@ -532,7 +532,7 @@
       const answer = String(openItem.answer || "");
       const assignedItem = part.items.find(entry => getAnswer(part.id, entry.q) === answer);
       const center = Math.max(18, Math.min(82, Number(openItem.x) + Number(openItem.w) / 2));
-      const top = Number(openItem.y) + Number(openItem.h) + 1.2;
+      const top = Number(openItem.y) + Number(openItem.h) + 4.5;
       nameMenu = `
         <div class="part1-name-menu" style="left:${center}%;top:${top}%;" role="menu" aria-label="Choose a name">
           <div class="part1-name-menu-title">Choose the name</div>
