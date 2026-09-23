@@ -570,7 +570,7 @@
         return `
           <button
             type="button"
-            class="part5-cutout-button ${answer ? "answered" : ""} ${example ? "example" : ""}"
+            class="part5-cutout-button ${answer ? "answered" : ""} ${example ? "example" : ""} ${Number(openColorPaletteQ) === q ? "palette-target" : ""}"
             style="${layoutRectStyle(item)}"
             data-cutout-q="${q}"
             ${example ? "disabled" : ""}
