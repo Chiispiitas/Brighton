@@ -431,3 +431,260 @@
   font-weight: 950;
   box-shadow: 0 2px 6px rgba(0,0,0,.22);
 }
+
+
+/* A1 scene-assignment interaction refinement */
+.scene-assignment-card {
+  overflow: visible;
+}
+
+.scene-assignment-summary {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 9px 12px;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  background: rgba(255,255,255,.88);
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.scene-assignment-summary strong {
+  color: var(--ink);
+  font-size: 14px;
+}
+
+.part1-interactive-stage,
+.part5-interactive-stage {
+  overflow: hidden;
+  transition: margin-bottom .18s ease;
+}
+
+.part1-interactive-stage.menu-open {
+  overflow: visible;
+  margin-bottom: 210px;
+}
+
+.part5-interactive-stage.palette-open {
+  overflow: visible;
+  margin-bottom: 118px;
+}
+
+/* Use the exported layout box exactly for colour cutouts.
+   The editor preview stretches its canvas to the box, so contain() caused
+   visible size differences in the live exam. */
+.part5-cutout-image {
+  object-fit: fill;
+}
+
+.part1-person-cutout {
+  overflow: visible;
+  outline: none;
+  background: transparent;
+}
+
+.part1-person-cutout .part1-person-silhouette {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  opacity: .30;
+  filter:
+    grayscale(1)
+    saturate(0)
+    brightness(.72)
+    drop-shadow(1px 0 0 rgba(0,169,165,.98))
+    drop-shadow(-1px 0 0 rgba(0,169,165,.98))
+    drop-shadow(0 1px 0 rgba(0,169,165,.98))
+    drop-shadow(0 -1px 0 rgba(0,169,165,.98))
+    drop-shadow(0 0 4px rgba(0,169,165,.75));
+  transition: opacity .14s ease, filter .14s ease, transform .14s ease;
+}
+
+.part1-person-cutout:hover .part1-person-silhouette,
+.part1-person-cutout:focus-visible .part1-person-silhouette,
+.part1-person-cutout.menu-open .part1-person-silhouette {
+  opacity: .48;
+  filter:
+    grayscale(1)
+    saturate(0)
+    brightness(.76)
+    drop-shadow(1px 0 0 rgba(0,169,165,1))
+    drop-shadow(-1px 0 0 rgba(0,169,165,1))
+    drop-shadow(0 1px 0 rgba(0,169,165,1))
+    drop-shadow(0 -1px 0 rgba(0,169,165,1))
+    drop-shadow(0 0 7px rgba(0,169,165,.95));
+}
+
+.part1-person-cutout.assigned .part1-person-silhouette {
+  opacity: .38;
+}
+
+.part1-person-cutout.menu-open .part1-person-silhouette {
+  transform: scale(1.018);
+}
+
+.part1-assigned-name {
+  position: absolute;
+  left: 50%;
+  bottom: -7px;
+  transform: translate(-50%, 100%);
+  z-index: 8;
+  padding: 4px 8px;
+  border-radius: 999px;
+  background: rgba(0,169,165,.96);
+  color: #fff;
+  font-size: clamp(10px, 1.1vw, 13px);
+  font-weight: 900;
+  line-height: 1;
+  white-space: nowrap;
+  box-shadow: 0 2px 8px rgba(0,0,0,.18);
+  pointer-events: none;
+}
+
+.part1-name-menu {
+  position: absolute;
+  z-index: 30;
+  width: min(190px, 34vw);
+  transform: translateX(-50%);
+  padding: 8px;
+  border: 2px solid rgba(0,169,165,.52);
+  border-radius: 14px;
+  background: rgba(255,255,255,.985);
+  box-shadow: 0 12px 30px rgba(32,38,49,.24);
+}
+
+.part1-name-menu-title {
+  padding: 3px 5px 8px;
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 850;
+  text-transform: uppercase;
+  letter-spacing: .04em;
+}
+
+.part1-name-options {
+  display: grid;
+  gap: 5px;
+}
+
+.part1-name-option {
+  width: 100%;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+  background: #fff;
+  color: var(--ink);
+  padding: 7px 10px;
+  text-align: left;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.part1-name-option:hover,
+.part1-name-option:focus-visible,
+.part1-name-option.selected {
+  border-color: var(--teal);
+  background: var(--teal-soft);
+}
+
+.part1-name-option.clear {
+  color: #b42318;
+  font-size: 11px;
+  text-align: center;
+}
+
+/* Part 5 alpha targets */
+.part5-cutout-button {
+  overflow: visible;
+  outline: none;
+}
+
+.part5-cutout-button .part5-cutout-image.unselected {
+  opacity: .40;
+  filter:
+    grayscale(1)
+    saturate(0)
+    brightness(.82)
+    contrast(1.15)
+    drop-shadow(1px 0 0 rgba(0,169,165,.96))
+    drop-shadow(-1px 0 0 rgba(0,169,165,.96))
+    drop-shadow(0 1px 0 rgba(0,169,165,.96))
+    drop-shadow(0 -1px 0 rgba(0,169,165,.96))
+    drop-shadow(0 0 4px rgba(0,169,165,.72));
+}
+
+.part5-cutout-button:hover .part5-cutout-image.unselected,
+.part5-cutout-button:focus-visible .part5-cutout-image.unselected,
+.part5-cutout-button.palette-target .part5-cutout-image.unselected {
+  opacity: .58;
+  filter:
+    grayscale(1)
+    saturate(0)
+    brightness(.82)
+    contrast(1.2)
+    drop-shadow(1px 0 0 rgba(0,169,165,1))
+    drop-shadow(-1px 0 0 rgba(0,169,165,1))
+    drop-shadow(0 1px 0 rgba(0,169,165,1))
+    drop-shadow(0 -1px 0 rgba(0,169,165,1))
+    drop-shadow(0 0 7px rgba(0,169,165,.96));
+}
+
+.part5-cutout-button.palette-target .part5-cutout-image:not(.unselected) {
+  filter: drop-shadow(0 0 6px rgba(0,169,165,.85));
+}
+
+.canvas-color-palette {
+  bottom: auto;
+  transform: translateX(-50%);
+  width: min(370px, 76vw);
+  padding: 10px 12px;
+}
+
+.canvas-color-palette > strong {
+  font-size: 12px;
+  margin-bottom: 8px;
+}
+
+.canvas-color-swatches {
+  gap: 7px;
+}
+
+.canvas-color-swatch {
+  width: 32px;
+  height: 32px;
+}
+
+/* Keep the object/question marker secondary to the alpha outline. */
+.cutout-q-badge {
+  opacity: .72;
+  transform: scale(.88);
+  transform-origin: top right;
+}
+
+@media (max-width: 700px) {
+  .scene-assignment-summary {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .part1-name-menu {
+    width: min(180px, 48vw);
+  }
+
+  .part1-interactive-stage.menu-open {
+    margin-bottom: 200px;
+  }
+
+  .part5-interactive-stage.palette-open {
+    margin-bottom: 108px;
+  }
+
+  .canvas-color-palette {
+    width: min(330px, 84vw);
+  }
+}
