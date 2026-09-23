@@ -566,7 +566,6 @@
             ${cutouts}
             ${nameMenu}
           </div>
-          <p class="interaction-help">The yellow outlines show the five selectable people. Hover over a person to add a transparent yellow fill; the original cutout image stays hidden. Background distractors are not selectable.</p>
         </article>
       </section>
     `;
@@ -680,7 +679,6 @@
             ${overlays}
             ${paletteUi}
           </div>
-          <p class="interaction-help">The translucent outlines show the four colourable objects. The colour palette opens directly below the object you select.</p>
         </article>
       </section>
     `;
