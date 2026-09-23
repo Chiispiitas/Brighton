@@ -452,11 +452,10 @@
   margin-bottom: 118px;
 }
 
-/* Use the exported layout box exactly for colour cutouts.
-   The editor preview stretches its canvas to the box, so contain() caused
-   visible size differences in the live exam. */
+/* Preserve each cutout's intrinsic aspect ratio.
+   This matches the layout editor behavior used when the saved coordinates were created. */
 .part5-cutout-image {
-  object-fit: fill;
+  object-fit: contain;
 }
 
 .part1-person-cutout {
