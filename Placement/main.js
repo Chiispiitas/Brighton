@@ -1197,12 +1197,36 @@
     return tracks.some((track) => String(track?.readyState || "live") !== "ended");
   }
 
+  function requestSpeakingMicrophone(constraints) {
+    const modernGetUserMedia = navigator.mediaDevices?.getUserMedia;
+
+    if (typeof modernGetUserMedia === "function") {
+      return navigator.mediaDevices.getUserMedia(constraints);
+    }
+
+    const legacyGetUserMedia =
+      navigator.getUserMedia ||
+      navigator.webkitGetUserMedia ||
+      navigator.mozGetUserMedia;
+
+    if (typeof legacyGetUserMedia === "function") {
+      return new Promise((resolve, reject) => {
+        legacyGetUserMedia.call(navigator, constraints, resolve, reject);
+      });
+    }
+
+    const insecure = window.isSecureContext === false;
+    const error = new Error(
+      insecure
+        ? "Microphone capture is unavailable because this page is not a secure context."
+        : "This browser does not expose a microphone capture API."
+    );
+    error.code = insecure ? "INSECURE_CONTEXT" : "MIC_API_UNAVAILABLE";
+    throw error;
+  }
+
   async function ensureSpeakingMic() {
     if (hasLiveAudioTrack(speakingStream)) return speakingStream;
-
-    if (!navigator.mediaDevices?.getUserMedia) {
-      throw new Error("Microphone capture is not supported in this browser.");
-    }
 
     const isAndroid = speakingPlatformFamily() === "Android";
 
@@ -1239,7 +1263,7 @@
 
     for (let index = 0; index < attempts.length; index += 1) {
       try {
-        const stream = await navigator.mediaDevices.getUserMedia(attempts[index]);
+        const stream = await requestSpeakingMicrophone(attempts[index]);
         const audioTracks = stream?.getAudioTracks?.() || [];
 
         if (audioTracks.length && hasLiveAudioTrack(stream)) {
