@@ -471,8 +471,8 @@
 .part1-person-cutout:hover .part1-person-silhouette,
 .part1-person-cutout:focus-visible .part1-person-silhouette,
 .part1-person-cutout.menu-open .part1-person-silhouette {
-  opacity: .34;
-  filter: none;
+  opacity: 1;
+  filter: url("#part1-yellow-outline-fill");
 }
 
 .part1-person-cutout.menu-open .part1-person-silhouette {
@@ -562,8 +562,8 @@
 .part5-cutout-button:hover .part5-cutout-image.unselected,
 .part5-cutout-button:focus-visible .part5-cutout-image.unselected,
 .part5-cutout-button.palette-target .part5-cutout-image.unselected {
-  opacity: .34;
-  filter: none;
+  opacity: 1;
+  filter: url("#part5-yellow-outline-fill");
 }
 
 .part5-cutout-button.palette-target .part5-cutout-image:not(.unselected) {
