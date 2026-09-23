@@ -9,11 +9,14 @@
   const INACTIVITY_LIMIT_MS = 60 * 60 * 1000;
   const ACTIVITY_SYNC_INTERVAL_MS = 5 * 60 * 1000;
   const MAX_LISTENING_PLAYS = 3;
-  // Wix Velo HTTP functions reject request bodies above 512 KB. Speaking audio
-  // is sent inline as Base64, so keep a deliberate safety margin below that cap.
+  // Wix Velo HTTP functions reject request bodies above 512 KB. Small speaking
+  // recordings can still travel inline, but larger mobile/Safari recordings are
+  // split into transport-only chunks and reassembled by the Wix backend.
   const WIX_HTTP_BODY_SAFE_BYTES = 480 * 1024;
   const SPEAKING_AUDIO_BITS_PER_SECOND = 24000;
-  const SPEAKING_MAX_BASE64_CHARS = 400000;
+  const SPEAKING_INLINE_BASE64_CHARS = 360000;
+  const SPEAKING_CHUNK_BASE64_CHARS = 180000;
+  const SPEAKING_MAX_BASE64_CHARS = 12000000;
   const modules = window.BRIGHTON_PLACEMENT_MODULES || {};
 
   const els = {
@@ -290,6 +293,71 @@
 
       reader.readAsDataURL(blob);
     });
+  }
+
+  function makeSpeakingUploadId() {
+    if (window.crypto?.randomUUID) return window.crypto.randomUUID();
+    return `speaking-${Date.now()}-${Math.random().toString(36).slice(2)}`;
+  }
+
+  function setSpeakingAnalysisStatus(message) {
+    const status = els.stageRoot.querySelector("#speakingAnalysisStatus");
+    if (status) status.textContent = message;
+  }
+
+  async function prepareSpeakingAudioTransport(audioBase64, audioMimeType) {
+    if (!audioBase64) {
+      throw new Error("Could not prepare the audio recording.");
+    }
+
+    if (audioBase64.length > SPEAKING_MAX_BASE64_CHARS) {
+      const error = new Error("The recording is too large to process.");
+      error.code = "SPEAKING_AUDIO_TOO_LARGE";
+      throw error;
+    }
+
+    if (audioBase64.length <= SPEAKING_INLINE_BASE64_CHARS) {
+      return {
+        audioBase64,
+        audioUploadId: "",
+        audioChunkCount: 0,
+        audioTransport: "inline"
+      };
+    }
+
+    const uploadId = makeSpeakingUploadId();
+    const chunks = [];
+
+    for (let offset = 0; offset < audioBase64.length; offset += SPEAKING_CHUNK_BASE64_CHARS) {
+      chunks.push(audioBase64.slice(offset, offset + SPEAKING_CHUNK_BASE64_CHARS));
+    }
+
+    setSpeakingAnalysisStatus(`Uploading answer 0/${chunks.length}…`);
+
+    for (let index = 0; index < chunks.length; index += 1) {
+      await apiPost("brightonPlacementSpeakingChunk", {
+        sessionId: session.sessionId,
+        clientSessionId: session.clientSessionId,
+        placementVersion: PLACEMENT_VERSION,
+        moduleId: currentModuleId,
+        uploadId,
+        chunkIndex: index,
+        totalChunks: chunks.length,
+        audioMimeType,
+        chunkBase64: chunks[index]
+      });
+
+      setSpeakingAnalysisStatus(`Uploading answer ${index + 1}/${chunks.length}…`);
+    }
+
+    setSpeakingAnalysisStatus("Checking answer");
+
+    return {
+      audioBase64: "",
+      audioUploadId: uploadId,
+      audioChunkCount: chunks.length,
+      audioTransport: "chunked"
+    };
   }
 
   async function startRemoteSession(name, phoneNumber, clientSessionId) {
@@ -1676,18 +1744,14 @@
     els.stageRoot.innerHTML = `
       <div class="module-finish speaking-analysis">
         <div class="module-finish-mark">✓</div>
-        <p>Checking answer</p>
+        <p id="speakingAnalysisStatus">Checking answer</p>
         <div class="mini-loader" aria-hidden="true"><span></span></div>
       </div>
     `;
 
     try {
       const audioBase64 = await blobToBase64(audioBlob);
-
-      if (!audioBase64 || audioBase64.length > SPEAKING_MAX_BASE64_CHARS) {
-        renderSpeakingTechnicalError("The recording is too large to send. Try again.");
-        return;
-      }
+      const audioTransport = await prepareSpeakingAudioTransport(audioBase64, recorderMimeType);
 
       const speakingMetrics = {
         durationSeconds,
@@ -1698,7 +1762,7 @@
         recognitionConfidence: 0,
         segmentCount: 0,
         recordedBytes,
-        audioBase64,
+        ...audioTransport,
         audioMimeType: recorderMimeType,
         autoStoppedByTimeLimit: speakingAutoStoppedByTimeLimit,
         maximumSeconds: Number(data.maximumSeconds) || null,
@@ -1763,8 +1827,8 @@
     } catch (error) {
       console.error(error);
 
-      if (error?.code === "WIX_BODY_TOO_LARGE") {
-        renderSpeakingTechnicalError("The recording is too large to send. Try again.");
+      if (error?.code === "WIX_BODY_TOO_LARGE" || error?.code === "SPEAKING_AUDIO_TOO_LARGE") {
+        renderSpeakingTechnicalError("The recording is too large to process. Try again.");
         return;
       }
 
