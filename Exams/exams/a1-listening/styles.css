@@ -258,8 +258,7 @@
 
 .part5-cutout-button:hover,
 .part5-cutout-button:focus-visible {
-  outline: 3px solid rgba(0,169,165,.45);
-  outline-offset: 2px;
+  outline: none;
 }
 
 .part5-cutout-button.answered {
@@ -281,8 +280,8 @@
 }
 
 .part5-cutout-image.unselected {
-  filter: grayscale(1) saturate(0) brightness(1.08) contrast(1.05);
-  opacity: .96;
+  filter: url("#part5-yellow-outline");
+  opacity: 1;
 }
 
 .cutout-q-badge {
@@ -604,33 +603,15 @@
 }
 
 .part5-cutout-button .part5-cutout-image.unselected {
-  opacity: .40;
-  filter:
-    grayscale(1)
-    saturate(0)
-    brightness(.82)
-    contrast(1.15)
-    drop-shadow(1px 0 0 rgba(0,169,165,.96))
-    drop-shadow(-1px 0 0 rgba(0,169,165,.96))
-    drop-shadow(0 1px 0 rgba(0,169,165,.96))
-    drop-shadow(0 -1px 0 rgba(0,169,165,.96))
-    drop-shadow(0 0 4px rgba(0,169,165,.72));
+  opacity: 1;
+  filter: url("#part5-yellow-outline");
 }
 
 .part5-cutout-button:hover .part5-cutout-image.unselected,
 .part5-cutout-button:focus-visible .part5-cutout-image.unselected,
 .part5-cutout-button.palette-target .part5-cutout-image.unselected {
-  opacity: .58;
-  filter:
-    grayscale(1)
-    saturate(0)
-    brightness(.82)
-    contrast(1.2)
-    drop-shadow(1px 0 0 rgba(0,169,165,1))
-    drop-shadow(-1px 0 0 rgba(0,169,165,1))
-    drop-shadow(0 1px 0 rgba(0,169,165,1))
-    drop-shadow(0 -1px 0 rgba(0,169,165,1))
-    drop-shadow(0 0 7px rgba(0,169,165,.96));
+  opacity: .34;
+  filter: none;
 }
 
 .part5-cutout-button.palette-target .part5-cutout-image:not(.unselected) {
@@ -687,4 +668,13 @@
   .canvas-color-palette {
     width: min(330px, 84vw);
   }
+}
+
+
+.part5-filter-defs {
+  position: absolute;
+  width: 0;
+  height: 0;
+  overflow: hidden;
+  pointer-events: none;
 }
