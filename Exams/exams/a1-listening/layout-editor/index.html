@@ -25,7 +25,7 @@
       <h2>1. Mode</h2>
       <label>Editor mode
         <select id="modeSelect">
-          <option value="part1-hotspots">Part 1 · character hotspots</option>
+          <option value="part1-cutouts">Part 1 · five person cutouts</option>
           <option value="part5-color">Part 5 · colour cutouts + text</option>
         </select>
       </label>
@@ -46,10 +46,12 @@
     </section>
 
     <section id="part1Tools" class="panel">
-      <h2>3. Part 1 buttons</h2>
-      <button id="seedHotspotsBtn" class="primary">Create A–H buttons</button>
-      <button id="addHotspotBtn">Add one button</button>
-      <p class="hint">Place A–H directly over the people. H starts as the non-selectable example.</p>
+      <h2>3. Part 1 person cutouts</h2>
+      <label class="file-btn primary">Import the five person cutout PNGs
+        <input id="part1CutoutInput" type="file" accept="image/png,image/webp" multiple hidden />
+      </label>
+      <button id="seedPart1Btn">Create five empty person slots</button>
+      <p class="hint">Only Leo, Ana, Diego, Sofia and Carlos are selectable. Import transparent cutouts, then drag and resize each one over the matching person in the main scene. Background distractors and Mia remain non-clickable.</p>
     </section>
 
     <section id="part5Tools" class="panel hidden">
@@ -95,7 +97,7 @@
 
   <section class="workspace">
     <div class="canvas-toolbar">
-      <span id="modeBadge">Part 1 hotspots</span>
+      <span id="modeBadge">Part 1 person cutouts</span>
       <span>Drag items · drag the corner handle to resize</span>
     </div>
     <div id="stageShell" class="stage-shell">
@@ -121,7 +123,7 @@
     </section>
     <section class="panel">
       <h2>What to send me</h2>
-      <p class="hint">When finished, click <strong>Copy parameter string</strong> and paste that single line into ChatGPT. For Part 5, also upload the cutout PNGs to the A1 Listening assets folder.</p>
+      <p class="hint">When finished, click <strong>Copy parameter string</strong> and paste that single line into ChatGPT. For Part 1 and Part 5, also upload the corresponding transparent cutout PNGs to the A1 Listening assets folder.</p>
     </section>
   </aside>
 </main>
