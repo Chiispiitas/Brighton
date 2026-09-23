@@ -170,8 +170,14 @@
 
       const url = URL.createObjectURL(file);
       assetUrls.set(file.name, url);
-      const image = await loadImage(url);
-      sourceImages.set(file.name, image);
+      try {
+        const image = await loadImage(url);
+        sourceImages.set(file.name, image);
+      } catch (error) {
+        console.error("Could not load Part 1 cutout:", file.name, error);
+        status(`Could not preview ${file.name}. Try exporting it again as PNG or WebP.`, true);
+        continue;
+      }
 
       let item = items.find(entry => entry.kind === "person-cutout" && entry.answer === person.answer);
       if (!item) {
@@ -509,22 +515,26 @@
     img.alt = item.label || "Imported person cutout";
     img.draggable = false;
 
-    const localSrc = assetUrls.get(item.asset);
+    const localSrc = assetUrls.get(item.asset) || "";
     const repoSrc = item.asset
       ? (item.asset.includes("/") ? item.asset : `../assets/${encodeURIComponent(item.asset)}`)
       : "";
+    const canUseRepoFallback = location.protocol !== "file:";
 
-    const src = localSrc || repoSrc;
-    if (src) {
-      img.src = src;
-      img.addEventListener("load", () => node.classList.remove("missing-asset"));
-      img.addEventListener("error", () => {
-        if (localSrc && repoSrc && img.src !== new URL(repoSrc, location.href).href) {
-          img.src = repoSrc;
-          return;
-        }
-        node.classList.add("missing-asset");
-      });
+    img.addEventListener("load", () => node.classList.remove("missing-asset"));
+    img.addEventListener("error", () => {
+      if (localSrc && canUseRepoFallback && repoSrc && img.dataset.fallbackTried !== "1") {
+        img.dataset.fallbackTried = "1";
+        img.src = repoSrc;
+        return;
+      }
+      node.classList.add("missing-asset");
+    });
+
+    if (localSrc) {
+      img.src = localSrc;
+    } else if (canUseRepoFallback && repoSrc) {
+      img.src = repoSrc;
     } else {
       node.classList.add("missing-asset");
     }
