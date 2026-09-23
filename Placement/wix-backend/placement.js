@@ -22,6 +22,11 @@ const PLACEMENT_SESSIONS = "BrightonPlacementSessions";
 const PLACEMENT_RESPONSES = "BrightonPlacementResponses";
 const PLACEMENT_ITEMS = "BrightonPlacementItems";
 const PLACEMENT_SPEAKING = "BrightonPlacementSpeaking";
+const PLACEMENT_SPEAKING_CHUNKS = "BrightonPlacementSpeakingChunks";
+
+const MAX_SPEAKING_CHUNKS = 80;
+const MAX_SPEAKING_CHUNK_BASE64_CHARS = 200000;
+const MAX_SPEAKING_AUDIO_BASE64_CHARS = 12000000;
 
 const PLACEMENT_VERSION = "2026-09-20.1";
 const ITEM_KEY_VERSION = "2026-09-19.7";
@@ -135,7 +140,8 @@ async function deletePlacementSessionCascade(session) {
 
   await Promise.all([
     removePlacementRows(PLACEMENT_RESPONSES, sessionId),
-    removePlacementRows(PLACEMENT_SPEAKING, sessionId)
+    removePlacementRows(PLACEMENT_SPEAKING, sessionId),
+    removePlacementRows(PLACEMENT_SPEAKING_CHUNKS, sessionId)
   ]);
 
   try {
@@ -286,6 +292,181 @@ async function getPlacementSession(sessionId, clientSessionId) {
   }
 
   return session;
+}
+
+function cleanSpeakingUploadId(value) {
+  const uploadId = String(value || "").trim();
+  return /^[a-z0-9][a-z0-9-]{7,119}$/i.test(uploadId) ? uploadId : "";
+}
+
+async function removeSpeakingUpload(sessionId, uploadId) {
+  const cleanSessionId = String(sessionId || "").trim();
+  const cleanUploadId = cleanSpeakingUploadId(uploadId);
+
+  if (!cleanSessionId || !cleanUploadId) return 0;
+
+  const found = await wixData
+    .query(PLACEMENT_SPEAKING_CHUNKS)
+    .eq("sessionId", cleanSessionId)
+    .eq("uploadId", cleanUploadId)
+    .limit(MAX_SPEAKING_CHUNKS)
+    .find({ suppressAuth: true });
+
+  await Promise.all(found.items.map((item) =>
+    wixData.remove(PLACEMENT_SPEAKING_CHUNKS, item._id, { suppressAuth: true })
+      .catch(() => null)
+  ));
+
+  return found.items.length;
+}
+
+async function resolveSpeakingAudioBase64(payload, session) {
+  const inlineAudio = String(payload?.audioBase64 || "").trim();
+
+  if (inlineAudio) {
+    if (inlineAudio.length > MAX_SPEAKING_AUDIO_BASE64_CHARS) {
+      throw new Error("Speaking recording is too large.");
+    }
+    return inlineAudio;
+  }
+
+  const uploadId = cleanSpeakingUploadId(payload?.audioUploadId);
+  const expectedChunks = Number(payload?.audioChunkCount);
+
+  if (
+    !uploadId ||
+    !Number.isInteger(expectedChunks) ||
+    expectedChunks < 1 ||
+    expectedChunks > MAX_SPEAKING_CHUNKS
+  ) {
+    return "";
+  }
+
+  const found = await wixData
+    .query(PLACEMENT_SPEAKING_CHUNKS)
+    .eq("sessionId", session._id)
+    .eq("uploadId", uploadId)
+    .limit(MAX_SPEAKING_CHUNKS)
+    .find({ suppressAuth: true });
+
+  if (found.items.length !== expectedChunks) {
+    throw new Error("Speaking upload is incomplete.");
+  }
+
+  const rows = found.items
+    .slice()
+    .sort((a, b) => Number(a.chunkIndex) - Number(b.chunkIndex));
+
+  let totalChars = 0;
+  const parts = [];
+
+  for (let index = 0; index < rows.length; index += 1) {
+    const row = rows[index];
+    const chunk = String(row.chunkBase64 || "");
+
+    if (
+      Number(row.chunkIndex) !== index ||
+      Number(row.totalChunks) !== expectedChunks ||
+      String(row.clientSessionId || "") !== String(session.clientSessionId || "") ||
+      chunk.length < 1 ||
+      chunk.length > MAX_SPEAKING_CHUNK_BASE64_CHARS
+    ) {
+      throw new Error("Speaking upload is invalid.");
+    }
+
+    totalChars += chunk.length;
+    if (totalChars > MAX_SPEAKING_AUDIO_BASE64_CHARS) {
+      throw new Error("Speaking recording is too large.");
+    }
+
+    parts.push(chunk);
+  }
+
+  return parts.join("");
+}
+
+export async function uploadSpeakingChunk(request) {
+  try {
+    const payload = await readJsonBody(request);
+
+    if (!validateVersion(payload)) {
+      return jsonBadRequest("Placement version changed. Refresh the page.");
+    }
+
+    const sessionId = String(payload.sessionId || "").trim();
+    const clientSessionId = String(payload.clientSessionId || "").trim();
+    const moduleId = String(payload.moduleId || "").trim();
+    const uploadId = cleanSpeakingUploadId(payload.uploadId);
+    const chunkIndex = Number(payload.chunkIndex);
+    const totalChunks = Number(payload.totalChunks);
+    const chunkBase64 = String(payload.chunkBase64 || "");
+    const audioMimeType = String(payload.audioMimeType || "").trim().slice(0, 100);
+
+    if (
+      !sessionId ||
+      !clientSessionId ||
+      !moduleId ||
+      !uploadId ||
+      !Number.isInteger(chunkIndex) ||
+      !Number.isInteger(totalChunks) ||
+      chunkIndex < 0 ||
+      totalChunks < 1 ||
+      totalChunks > MAX_SPEAKING_CHUNKS ||
+      chunkIndex >= totalChunks ||
+      chunkBase64.length < 1 ||
+      chunkBase64.length > MAX_SPEAKING_CHUNK_BASE64_CHARS ||
+      !/^[A-Za-z0-9+/=]+$/.test(chunkBase64)
+    ) {
+      return jsonBadRequest("Invalid speaking audio chunk.");
+    }
+
+    const session = await getPlacementSession(sessionId, clientSessionId);
+
+    if (
+      !session ||
+      session.status !== "active" ||
+      String(session.moduleId || "") !== moduleId ||
+      !/^speaking-/.test(moduleId)
+    ) {
+      return jsonBadRequest("This speaking module is no longer active.");
+    }
+
+    const existing = await wixData
+      .query(PLACEMENT_SPEAKING_CHUNKS)
+      .eq("sessionId", session._id)
+      .eq("uploadId", uploadId)
+      .eq("chunkIndex", chunkIndex)
+      .limit(1)
+      .find({ suppressAuth: true });
+
+    const row = {
+      ...(existing.items[0] || {}),
+      uploadId,
+      sessionId: session._id,
+      clientSessionId: session.clientSessionId,
+      moduleId,
+      chunkIndex,
+      totalChunks,
+      audioMimeType,
+      chunkBase64
+    };
+
+    if (existing.items.length) {
+      await wixData.update(PLACEMENT_SPEAKING_CHUNKS, row, { suppressAuth: true });
+    } else {
+      await wixData.insert(PLACEMENT_SPEAKING_CHUNKS, row, { suppressAuth: true });
+    }
+
+    return jsonOK({
+      success: true,
+      uploadId,
+      chunkIndex,
+      totalChunks
+    });
+  } catch (error) {
+    console.error("uploadSpeakingChunk failed:", error);
+    return jsonServerError(error);
+  }
 }
 
 async function getModuleKeys(moduleId) {
@@ -846,7 +1027,18 @@ export async function submitSpeaking(request) {
       return jsonBadRequest("Invalid speaking prompt.");
     }
 
-    const grade = await gradeSpeakingWithGemini(payload, level, promptId);
+    const audioBase64 = await resolveSpeakingAudioBase64(payload, session);
+
+    if (!audioBase64) {
+      return jsonBadRequest("Speaking audio is missing.");
+    }
+
+    const gradingPayload = {
+      ...payload,
+      audioBase64
+    };
+
+    const grade = await gradeSpeakingWithGemini(gradingPayload, level, promptId);
 
     if (grade.inputError) {
       const providerStatus = Number(grade.providerStatus) || 0;
@@ -938,6 +1130,10 @@ export async function submitSpeaking(request) {
 
     await wixData.update(PLACEMENT_SESSIONS, updatedSession, { suppressAuth: true });
     const result = await buildResultSummary(updatedSession);
+
+    // Raw chunk rows are transport-only. Remove them after the assessment has
+    // been saved; transcript/rubric evidence remain in BrightonPlacementSpeaking.
+    await removePlacementRows(PLACEMENT_SPEAKING_CHUNKS, session._id);
 
     return jsonOK({
       success: true,
