@@ -56,11 +56,12 @@
 
     <section id="part5Tools" class="panel hidden">
       <h2>3. Part 5 overlays</h2>
-      <label class="file-btn primary">Import cutout PNG(s)
+      <label class="file-btn primary">Import colour-variation PNGs
         <input id="cutoutInput" type="file" accept="image/png,image/webp" multiple hidden />
       </label>
       <button id="addTextBtn">Add Q24 text field</button>
-      <p class="hint">Best recolouring: transparent PNG/WebP, black/dark outlines, white or light-gray interior.</p>
+      <p class="hint">Import separate transparent files for each colour. Required palette: red, blue, green, brown, purple, yellow, orange and pink. Optional <strong>base</strong> files can be used before the student chooses a colour. The example hat only needs yellow.</p>
+      <p class="hint"><strong>Recommended names:</strong> <code>q21_jacket_red.png</code>, <code>q22_backpack_blue.png</code>, <code>q23_bicycle_green.png</code>, <code>q25_umbrella_purple.png</code>, etc. Use <code>_base</code> for an uncoloured version and <code>example_hat_yellow.png</code> for the example.</p>
     </section>
 
     <section class="panel">
@@ -82,11 +83,15 @@
         <label>Y % <input id="propY" type="number" step="0.01" /></label>
         <label>Width % <input id="propW" type="number" step="0.01" /></label>
         <label>Height % <input id="propH" type="number" step="0.01" /></label>
-        <label id="assetRow" class="wide">Asset filename
+        <label id="assetRow" class="wide">Base / primary asset filename
           <input id="propAsset" type="text" />
         </label>
+        <div id="variantRow" class="wide hidden">
+          <span class="field-label">Imported colour variants</span>
+          <div id="variantSummary" class="variant-summary"></div>
+        </div>
         <div id="colorRow" class="wide hidden">
-          <span class="field-label">Preview colour</span>
+          <span class="field-label">Preview variation</span>
           <div id="previewPalette" class="palette"></div>
         </div>
         <button id="duplicateBtn">Duplicate</button>
