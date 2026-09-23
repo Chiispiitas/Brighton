@@ -118,45 +118,45 @@ window.listeningExam = {
           q: 16,
           stem: "What is Laura wearing to the concert?",
           options: {
-            A: { label: "Dress", placeholder: "IMAGE A - a young woman wearing a dress" },
-            B: { label: "T-shirt and jeans", placeholder: "IMAGE B - a young woman wearing a T-shirt and jeans" },
-            C: { label: "Jacket and skirt", placeholder: "IMAGE C - a young woman wearing a jacket and skirt" }
+            A: { label: "Red dress", image: "assets/part4_q16_A_red_dress---29bbbe03-e680-4f66-aaed-5fdb5471b4f8.png", alt: "Laura wearing a red dress" },
+            B: { label: "Green sweater and jeans", image: "assets/part4_q16_B_green_sweater_jeans---3d2bbbe1-e69f-4091-9e1f-1ddb7fbe1bfa.png", alt: "Laura wearing a green sweater and jeans" },
+            C: { label: "Black jacket and blue skirt", image: "assets/part4_q16_C_black_jacket_blue_skirt---aaee8172-6c6e-45c7-b30c-1066b7ad32d4.png", alt: "Laura wearing a black jacket and blue skirt" }
           }
         },
         {
           q: 17,
           stem: "How is Marco going to the train station?",
           options: {
-            A: { label: "Bus", placeholder: "IMAGE A - city bus" },
-            B: { label: "Taxi", placeholder: "IMAGE B - city taxi" },
-            C: { label: "On foot", placeholder: "IMAGE C - person walking" }
+            A: { label: "Bus", image: "assets/part4_q17_A_bus---3c6ee34a-2c34-4806-9b8d-dad03fa4f1f0.png", alt: "Marco travelling by bus" },
+            B: { label: "Taxi", image: "assets/part4_q17_B_taxi---f68197ec-3f16-4284-9538-713b4af1ff0e.png", alt: "Marco getting into a taxi" },
+            C: { label: "On foot", image: "assets/part4_q17_C_walking---feee305b-305e-4c23-aef8-e6d16a772cd5.png", alt: "Marco walking to the train station" }
           }
         },
         {
           q: 18,
           stem: "What was the weather like at the beach yesterday?",
           options: {
-            A: { label: "Sunny", placeholder: "IMAGE A - sunny beach" },
-            B: { label: "Windy", placeholder: "IMAGE B - very windy beach" },
-            C: { label: "Rainy", placeholder: "IMAGE C - rainy beach" }
+            A: { label: "Rainy", image: "assets/part4_q18_A_rainy---54f8d534-3e81-4293-bff6-0c264fa482a1.png", alt: "Rainy weather at the beach" },
+            B: { label: "Windy", image: "assets/part4_q18_B_windy---11282ea2-39d7-4691-a236-211f7c19b91a.png", alt: "Very windy weather at the beach" },
+            C: { label: "Sunny", image: "assets/part4_q18_C_sunny---41ff5e7a-a997-4a3a-b0ba-a7a436c63cda.png", alt: "Sunny calm weather at the beach" }
           }
         },
         {
           q: 19,
           stem: "What did Mia buy at the market?",
           options: {
-            A: { label: "Hat", placeholder: "IMAGE A - red hat" },
-            B: { label: "Boots", placeholder: "IMAGE B - pair of boots" },
-            C: { label: "Sweater", placeholder: "IMAGE C - sweater" }
+            A: { label: "Hat", image: "assets/part4_q19_A_hat---142ceae2-b561-48a3-a6c8-935f7ae0c7d3.png", alt: "A red hat" },
+            B: { label: "Boots", image: "assets/part4_q19_B_boots---cfc9a210-b7e8-4860-94c8-f8a8dd9c9446.png", alt: "A pair of brown boots" },
+            C: { label: "Sweater", image: "assets/part4_q19_C_sweater---237e66b2-d210-4fe2-891c-7501017346e3.png", alt: "A green sweater" }
           }
         },
         {
           q: 20,
           stem: "What are they doing this evening?",
           options: {
-            A: { label: "Watch a movie", placeholder: "IMAGE A - friends watching a movie at a movie theater" },
-            B: { label: "Play videogames", placeholder: "IMAGE B - friends playing videogames" },
-            C: { label: "Visit a museum", placeholder: "IMAGE C - friends visiting a museum" }
+            A: { label: "Watch a movie", image: "assets/part4_q20_A_movie---ad0028d3-17e4-49d3-ae35-e8c804a822ba.png", alt: "Two friends watching a movie at a movie theater" },
+            B: { label: "Play videogames", image: "assets/part4_q20_B_video_games---c74954e2-b435-42ce-a756-7894f47b0744.png", alt: "Two friends playing video games" },
+            C: { label: "Go to a concert", image: "assets/part4_q20_C_concert---9897b159-0a33-4df6-8467-215df4a2a424.png", alt: "Two friends at a live music concert" }
           }
         }
       ]
