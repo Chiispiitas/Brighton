@@ -76,19 +76,45 @@ const elVolumeSlider = document.getElementById('volume-slider');
 const elVolumeValue = document.getElementById('volume-value');
 const elSpellContainer = document.getElementById('spell-container');
 
-// Pronunciation uses native HTMLMediaElement audio only.
-// Never route this element through Web Audio: some Chromium/Windows output
-// devices can fail the renderer and leave pronunciation silent for the page.
+// Word-pronunciation audio is routed through Web Audio so the slider can
+// amplify above the HTMLMediaElement 100% ceiling (up to 200% / gain 2.0).
+let wordAudioContext = null;
+let wordAudioSource = null;
+let wordAudioGain = null;
 let wordVolume = 1;
 
+async function ensureWordAudioGraph() {
+    if (!wordAudioContext) {
+        const AudioContextClass = window.AudioContext || window.webkitAudioContext;
+        if (!AudioContextClass) return;
+
+        wordAudioContext = new AudioContextClass();
+        wordAudioSource = wordAudioContext.createMediaElementSource(elAudio);
+        wordAudioGain = wordAudioContext.createGain();
+        wordAudioSource.connect(wordAudioGain);
+        wordAudioGain.connect(wordAudioContext.destination);
+        wordAudioGain.gain.value = wordVolume;
+    }
+
+    if (wordAudioContext.state === 'suspended') {
+        await wordAudioContext.resume();
+    }
+}
+
 function setWordVolume(percent) {
-    const value = Math.max(0, Math.min(100, Number(percent) || 0));
+    const value = Math.max(0, Math.min(200, Number(percent) || 0));
     wordVolume = value / 100;
 
     if (elVolumeSlider) elVolumeSlider.value = String(value);
     if (elVolumeValue) elVolumeValue.textContent = `${Math.round(value)}%`;
 
-    elAudio.volume = wordVolume;
+    if (wordAudioGain) {
+        wordAudioGain.gain.value = wordVolume;
+    } else {
+        // Native media volume supports 0–100%. Values above 100% become
+        // effective as soon as Web Audio is initialized on first playback.
+        elAudio.volume = Math.min(1, wordVolume);
+    }
 }
 
 /* ==============================================
@@ -273,11 +299,14 @@ async function playAudio() {
     elAudio.defaultPlaybackRate = 1;
     elAudio.playbackRate = 1;
 
-    elAudio.volume = wordVolume;
+    try {
+        await ensureWordAudioGraph();
+    } catch (err) {
+        console.warn('Could not initialize amplified audio; using native volume.', err);
+    }
+
     elAudio.playbackRate = 1;
-    elAudio.play().catch((err) => {
-        console.warn('Pronunciation audio could not play.', err);
-    });
+    elAudio.play().catch(() => {});
 }
 
 function playWrongAudio() {
