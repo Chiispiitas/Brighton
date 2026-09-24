@@ -196,7 +196,12 @@
   if (window.__BRIGHTON_MOBILE_CHOICE_BRIDGE__) return;
   window.__BRIGHTON_MOBILE_CHOICE_BRIDGE__ = true;
 
-  const MAX_TAP_MOVE = 14;
+  // Real finger taps often drift more than a few CSS pixels. The old 14px
+  // threshold rejected legitimate taps on phones and left only the :hover /
+  // pressed visual state. 32px is still small enough to distinguish a tap
+  // from an intentional swipe; scrolling gestures are also cancelled by the
+  // browser through pointercancel/touchcancel.
+  const MAX_TAP_MOVE = 32;
   const activePointers = new Map();
   let legacyTouch = null;
 
@@ -206,10 +211,15 @@
     const directRadio = target.matches('input[type="radio"]') ? target : null;
     const labelRadio = directRadio ? null : target.closest("label")?.querySelector('input[type="radio"]:not(:disabled)');
     const radio = directRadio || labelRadio;
-    if (radio && !radio.disabled) return { type: "radio", element: radio };
+    if (radio && !radio.disabled) return { type: "choice", element: radio };
 
+    // Brighton Tests.
     const testChoice = target.closest('button[data-answer-question][data-answer-value]');
-    if (testChoice && !testChoice.disabled) return { type: "test-choice", element: testChoice };
+    if (testChoice && !testChoice.disabled) return { type: "choice", element: testChoice };
+
+    // Brighton Exams popover/button choices.
+    const examChoice = target.closest('button[data-popover-choice], button.option-btn[data-choice]');
+    if (examChoice && !examChoice.disabled) return { type: "choice", element: examChoice };
 
     return null;
   }
@@ -218,17 +228,10 @@
     const element = target?.element;
     if (!element || element.disabled || !element.isConnected) return;
 
-    if (target.type === "radio") {
-      if (element.checked) return;
-      element.checked = true;
-      element.dispatchEvent(new Event("input", { bubbles: true }));
-      element.dispatchEvent(new Event("change", { bubbles: true }));
-      return;
-    }
-
-    if (target.type === "test-choice") {
-      element.click();
-    }
+    // Use the element's native click activation instead of manually setting
+    // radio.checked. This preserves the exact click/change sequence expected
+    // by every exam/test player and keeps selection state + visuals in sync.
+    element.click();
   }
 
   function movedTooFar(startX, startY, endX, endY) {
@@ -285,6 +288,32 @@
       legacyTouch = null;
     }, { capture: true, passive: true });
   }
+
+  // Avoid the misleading sticky desktop-style hover state on touch devices.
+  // touch-action: manipulation keeps normal vertical scrolling available.
+  const style = document.createElement("style");
+  style.id = "brightonMobileChoiceStyles";
+  style.textContent = `
+    @media (hover: none), (pointer: coarse) {
+      .choice-button,
+      .option-btn,
+      .radio-row,
+      .match-row,
+      .visual-option-card {
+        touch-action: manipulation;
+        -webkit-tap-highlight-color: transparent;
+      }
+
+      .choice-button:hover,
+      .option-btn:hover,
+      .radio-row:hover,
+      .match-row:hover,
+      .visual-option-card:hover {
+        transform: none !important;
+      }
+    }
+  `;
+  document.head.appendChild(style);
 })();
 
 /* ----------------------------------------------
