@@ -76,97 +76,19 @@ const elVolumeSlider = document.getElementById('volume-slider');
 const elVolumeValue = document.getElementById('volume-value');
 const elSpellContainer = document.getElementById('spell-container');
 
-// Native HTML audio handles the normal 0–100% range. Web Audio is created
-// lazily only when amplification above 100% is actually requested. This avoids
-// opening an AudioContext on every device just to play ordinary pronunciation
-// audio, which can trigger Chromium's audio-device/WebAudio renderer errors.
-let wordAudioContext = null;
-let wordAudioSource = null;
-let wordAudioGain = null;
-let wordAudioWebAudioDisabled = false;
+// Pronunciation uses native HTMLMediaElement audio only.
+// Never route this element through Web Audio: some Chromium/Windows output
+// devices can fail the renderer and leave pronunciation silent for the page.
 let wordVolume = 1;
 
-function disableWordWebAudio() {
-    wordAudioWebAudioDisabled = true;
-
-    try {
-        wordAudioSource?.disconnect();
-    } catch (_) {}
-
-    try {
-        wordAudioGain?.disconnect();
-    } catch (_) {}
-
-    const contextToClose = wordAudioContext;
-    wordAudioContext = null;
-    wordAudioSource = null;
-    wordAudioGain = null;
-
-    if (contextToClose && contextToClose.state !== 'closed') {
-        contextToClose.close().catch(() => {});
-    }
-
-    // Keep pronunciation usable even when amplified playback is unavailable.
-    elAudio.volume = Math.min(1, wordVolume);
-}
-
-async function ensureWordAudioGraph() {
-    // Do not touch Web Audio for normal volume. This is the important path for
-    // machines whose output device/driver rejects an AudioContext renderer.
-    if (wordVolume <= 1 || wordAudioWebAudioDisabled) {
-        elAudio.volume = Math.min(1, wordVolume);
-        return false;
-    }
-
-    try {
-        if (!wordAudioContext) {
-            const AudioContextClass = window.AudioContext || window.webkitAudioContext;
-            if (!AudioContextClass) {
-                wordAudioWebAudioDisabled = true;
-                elAudio.volume = 1;
-                return false;
-            }
-
-            wordAudioContext = new AudioContextClass();
-            wordAudioSource = wordAudioContext.createMediaElementSource(elAudio);
-            wordAudioGain = wordAudioContext.createGain();
-            wordAudioSource.connect(wordAudioGain);
-            wordAudioGain.connect(wordAudioContext.destination);
-        }
-
-        wordAudioGain.gain.value = wordVolume;
-
-        if (wordAudioContext.state === 'suspended') {
-            await wordAudioContext.resume();
-        }
-
-        if (wordAudioContext.state !== 'running') {
-            disableWordWebAudio();
-            return false;
-        }
-
-        return true;
-    } catch (err) {
-        console.warn('Amplified pronunciation unavailable; using native audio.', err);
-        disableWordWebAudio();
-        return false;
-    }
-}
-
 function setWordVolume(percent) {
-    const value = Math.max(0, Math.min(200, Number(percent) || 0));
+    const value = Math.max(0, Math.min(100, Number(percent) || 0));
     wordVolume = value / 100;
 
     if (elVolumeSlider) elVolumeSlider.value = String(value);
     if (elVolumeValue) elVolumeValue.textContent = `${Math.round(value)}%`;
 
-    if (wordAudioGain && !wordAudioWebAudioDisabled) {
-        wordAudioGain.gain.value = wordVolume;
-    } else {
-        // Native media volume is the stable path and supports 0–100%.
-        // Values above 100% are attempted lazily on the next playback.
-        elAudio.volume = Math.min(1, wordVolume);
-    }
+    elAudio.volume = wordVolume;
 }
 
 /* ==============================================
@@ -351,14 +273,11 @@ async function playAudio() {
     elAudio.defaultPlaybackRate = 1;
     elAudio.playbackRate = 1;
 
-    try {
-        await ensureWordAudioGraph();
-    } catch (err) {
-        console.warn('Could not initialize amplified audio; using native volume.', err);
-    }
-
+    elAudio.volume = wordVolume;
     elAudio.playbackRate = 1;
-    elAudio.play().catch(() => {});
+    elAudio.play().catch((err) => {
+        console.warn('Pronunciation audio could not play.', err);
+    });
 }
 
 function playWrongAudio() {
