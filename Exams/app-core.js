@@ -196,55 +196,131 @@
   if (window.__BRIGHTON_MOBILE_CHOICE_BRIDGE__) return;
   window.__BRIGHTON_MOBILE_CHOICE_BRIDGE__ = true;
 
-  // Real finger taps often drift more than a few CSS pixels. The old 14px
-  // threshold rejected legitimate taps on phones and left only the :hover /
-  // pressed visual state. 32px is still small enough to distinguish a tap
-  // from an intentional swipe; scrolling gestures are also cancelled by the
-  // browser through pointercancel/touchcancel.
-  const MAX_TAP_MOVE = 32;
+  /*
+    Cross-browser strategy:
+    1. Let the browser's native click/change activation happen first.
+    2. Observe click/change and cancel any fallback when native activation works.
+    3. Independently observe BOTH Pointer Events and Touch Events.
+       Do not assume that merely having PointerEvent means that path is reliable.
+    4. If a valid tap finishes but no native activation arrives, call .click()
+       after a short compatibility grace period.
+
+    This avoids depending on browser-specific ordering between touch, pointer,
+    compatibility-mouse and label/radio activation events.
+  */
+  const FALLBACK_DELAY_MS = 360;
+  const MAX_TAP_MOVE = 48;
   const activePointers = new Map();
-  let legacyTouch = null;
+  const fallbackTimers = new WeakMap();
+  let activeTouch = null;
 
-  function findChoiceTarget(target) {
-    if (!(target instanceof Element)) return null;
-
-    const directRadio = target.matches('input[type="radio"]') ? target : null;
-    const labelRadio = directRadio ? null : target.closest("label")?.querySelector('input[type="radio"]:not(:disabled)');
-    const radio = directRadio || labelRadio;
-    if (radio && !radio.disabled) return { type: "choice", element: radio };
-
-    // Brighton Tests.
-    const testChoice = target.closest('button[data-answer-question][data-answer-value]');
-    if (testChoice && !testChoice.disabled) return { type: "choice", element: testChoice };
-
-    // Brighton Exams popover/button choices.
-    const examChoice = target.closest('button[data-popover-choice], button.option-btn[data-choice]');
-    if (examChoice && !examChoice.disabled) return { type: "choice", element: examChoice };
-
-    return null;
+  function asElement(target) {
+    if (!target) return null;
+    if (target.nodeType === 1) return target;
+    return target.parentElement || null;
   }
 
-  function commitChoice(target) {
-    const element = target?.element;
-    if (!element || element.disabled || !element.isConnected) return;
+  function findChoiceElement(target) {
+    const element = asElement(target);
+    if (!element) return null;
 
-    // Use the element's native click activation instead of manually setting
-    // radio.checked. This preserves the exact click/change sequence expected
-    // by every exam/test player and keeps selection state + visuals in sync.
-    element.click();
+    if (element.matches?.('input[type="radio"]:not(:disabled)')) {
+      return element;
+    }
+
+    const label = element.closest?.("label");
+    const labelRadio = label?.querySelector?.('input[type="radio"]:not(:disabled)');
+    if (labelRadio) return labelRadio;
+
+    const button = element.closest?.(
+      'button[data-answer-question][data-answer-value]:not(:disabled), ' +
+      'button[data-popover-choice]:not(:disabled), ' +
+      'button.option-btn[data-choice]:not(:disabled)'
+    );
+    return button || null;
+  }
+
+  function isRadio(element) {
+    return Boolean(element?.matches?.('input[type="radio"]'));
+  }
+
+  function cancelFallback(element) {
+    const timer = element ? fallbackTimers.get(element) : null;
+    if (!timer) return;
+    window.clearTimeout(timer);
+    fallbackTimers.delete(element);
+  }
+
+  function scheduleFallback(element) {
+    if (!element || element.disabled || !element.isConnected) return;
+    if (fallbackTimers.has(element)) return;
+
+    const timer = window.setTimeout(() => {
+      fallbackTimers.delete(element);
+      if (!element.isConnected || element.disabled) return;
+
+      /*
+        HTMLElement.click() is the compatibility endpoint here. It triggers the
+        control's standard click/default activation behavior, including radio
+        input/change events, without manufacturing a browser-specific event
+        sequence ourselves.
+      */
+      element.click();
+    }, FALLBACK_DELAY_MS);
+
+    fallbackTimers.set(element, timer);
   }
 
   function movedTooFar(startX, startY, endX, endY) {
     return Math.hypot(endX - startX, endY - startY) > MAX_TAP_MOVE;
   }
 
+  function endedOnSameChoice(choice, x, y) {
+    if (!choice || typeof document.elementFromPoint !== "function") return true;
+    const endTarget = document.elementFromPoint(x, y);
+    return findChoiceElement(endTarget) === choice;
+  }
+
+  /*
+    Buttons are successfully activated by a click event. Radios are considered
+    successfully activated by their input/change event (or a direct click on
+    the radio itself). This distinction matters for Safari/WebKit label taps:
+    a click on the label is not enough proof that the radio was actually
+    activated.
+  */
+  document.addEventListener("click", event => {
+    const direct = asElement(event.target);
+    const choice = findChoiceElement(event.target);
+    if (!choice) return;
+
+    if (!isRadio(choice) || direct === choice) {
+      cancelFallback(choice);
+    }
+  }, true);
+
+  document.addEventListener("input", event => {
+    const target = asElement(event.target);
+    if (target?.matches?.('input[type="radio"]')) cancelFallback(target);
+  }, true);
+
+  document.addEventListener("change", event => {
+    const target = asElement(event.target);
+    if (target?.matches?.('input[type="radio"]')) cancelFallback(target);
+  }, true);
+
+  /*
+    Pointer Events path. Kept even when Touch Events are also available.
+    Some Android browsers/WebViews expose PointerEvent but differ in how they
+    synthesize/cancel compatibility clicks.
+  */
   if ("PointerEvent" in window) {
     document.addEventListener("pointerdown", event => {
       if (event.pointerType === "mouse") return;
-      const target = findChoiceTarget(event.target);
-      if (!target) return;
+      const choice = findChoiceElement(event.target);
+      if (!choice) return;
+
       activePointers.set(event.pointerId, {
-        target,
+        choice,
         x: event.clientX,
         y: event.clientY
       });
@@ -252,22 +328,30 @@
 
     document.addEventListener("pointerup", event => {
       if (event.pointerType === "mouse") return;
-      const start = activePointers.get(event.pointerId);
+      const startState = activePointers.get(event.pointerId);
       activePointers.delete(event.pointerId);
-      if (!start) return;
-      if (movedTooFar(start.x, start.y, event.clientX, event.clientY)) return;
-      commitChoice(start.target);
+      if (!startState) return;
+      if (movedTooFar(startState.x, startState.y, event.clientX, event.clientY)) return;
+      if (!endedOnSameChoice(startState.choice, event.clientX, event.clientY)) return;
+      scheduleFallback(startState.choice);
     }, true);
 
     document.addEventListener("pointercancel", event => {
       activePointers.delete(event.pointerId);
     }, true);
-  } else {
+  }
+
+  /*
+    Touch Events path is ALSO installed instead of being an "else" fallback.
+    That gives iOS Safari and Android WebView a second independent route when
+    Pointer Events are present but their compatibility click is unreliable.
+  */
+  if ("ontouchstart" in window || navigator.maxTouchPoints > 0) {
     document.addEventListener("touchstart", event => {
       const touch = event.changedTouches?.[0];
-      const target = findChoiceTarget(event.target);
-      legacyTouch = touch && target ? {
-        target,
+      const choice = findChoiceElement(event.target);
+      activeTouch = touch && choice ? {
+        choice,
         identifier: touch.identifier,
         x: touch.clientX,
         y: touch.clientY
@@ -275,22 +359,31 @@
     }, { capture: true, passive: true });
 
     document.addEventListener("touchend", event => {
-      if (!legacyTouch) return;
-      const touch = Array.from(event.changedTouches || []).find(item => item.identifier === legacyTouch.identifier);
-      const start = legacyTouch;
-      legacyTouch = null;
+      if (!activeTouch) return;
+
+      const touch = Array.from(event.changedTouches || [])
+        .find(item => item.identifier === activeTouch.identifier);
+      const startState = activeTouch;
+      activeTouch = null;
+
       if (!touch) return;
-      if (movedTooFar(start.x, start.y, touch.clientX, touch.clientY)) return;
-      commitChoice(start.target);
+      if (movedTooFar(startState.x, startState.y, touch.clientX, touch.clientY)) return;
+      if (!endedOnSameChoice(startState.choice, touch.clientX, touch.clientY)) return;
+      scheduleFallback(startState.choice);
     }, { capture: true, passive: true });
 
     document.addEventListener("touchcancel", () => {
-      legacyTouch = null;
+      activeTouch = null;
     }, { capture: true, passive: true });
   }
 
-  // Avoid the misleading sticky desktop-style hover state on touch devices.
-  // touch-action: manipulation keeps normal vertical scrolling available.
+  /*
+    Mobile CSS compatibility:
+    - remove sticky desktop hover movement on coarse/no-hover devices;
+    - keep scrolling/zooming browser-controlled;
+    - stop WebKit text selection/callout from stealing an answer tap;
+    - keep the whole label/card as an obvious interactive target.
+  */
   const style = document.createElement("style");
   style.id = "brightonMobileChoiceStyles";
   style.textContent = `
@@ -300,8 +393,12 @@
       .radio-row,
       .match-row,
       .visual-option-card {
+        cursor: pointer;
         touch-action: manipulation;
         -webkit-tap-highlight-color: transparent;
+        -webkit-touch-callout: none;
+        -webkit-user-select: none;
+        user-select: none;
       }
 
       .choice-button:hover,
