@@ -1978,3 +1978,39 @@ button { cursor: pointer; }
   letter-spacing: 0.02em;
   color: #8d939c;
 }
+
+
+/* Speaking assessment progress */
+.speaking-analysis {
+  text-align: center;
+}
+
+.speaking-analysis-progress {
+  width: min(360px, 78vw);
+  height: 8px;
+  overflow: hidden;
+  border-radius: 999px;
+  background: #edf0f2;
+}
+
+.speaking-analysis-progress span {
+  display: block;
+  width: 8%;
+  height: 100%;
+  border-radius: inherit;
+  background: var(--yellow);
+  transition: width .5s ease;
+}
+
+.speaking-analysis-estimate {
+  color: var(--muted);
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.45;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .speaking-analysis-progress span {
+    transition: none;
+  }
+}
