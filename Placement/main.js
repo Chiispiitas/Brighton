@@ -72,6 +72,8 @@
   let speakingAnalyser = null;
   let speakingMeterTimer = null;
   let speakingTimer = null;
+  let speakingAnalysisTimer = null;
+  let speakingAnalysisProgress = 0;
   let speakingStartedAt = 0;
   let speakingAutoStoppedByTimeLimit = false;
   let speakingSpeechFrames = 0;
@@ -300,9 +302,65 @@
     return `speaking-${Date.now()}-${Math.random().toString(36).slice(2)}`;
   }
 
-  function setSpeakingAnalysisStatus(message) {
+  function stopSpeakingAnalysisProgress() {
+    window.clearInterval(speakingAnalysisTimer);
+    speakingAnalysisTimer = null;
+  }
+
+  function setSpeakingAnalysisStatus(message, progress = null) {
     const status = els.stageRoot.querySelector("#speakingAnalysisStatus");
+    const bar = els.stageRoot.querySelector("#speakingAnalysisProgressBar");
+    const progressRoot = els.stageRoot.querySelector("#speakingAnalysisProgress");
+
     if (status) status.textContent = message;
+
+    if (Number.isFinite(progress)) {
+      speakingAnalysisProgress = Math.max(speakingAnalysisProgress, Math.min(100, Number(progress)));
+    }
+
+    if (bar) bar.style.width = `${speakingAnalysisProgress}%`;
+    if (progressRoot) progressRoot.setAttribute("aria-valuenow", String(Math.round(speakingAnalysisProgress)));
+  }
+
+  function startSpeakingAnalysisProgress() {
+    stopSpeakingAnalysisProgress();
+    speakingAnalysisProgress = 8;
+    setSpeakingAnalysisStatus("Preparing your response", 8);
+
+    const startedAt = performance.now();
+    speakingAnalysisTimer = window.setInterval(() => {
+      const elapsedSeconds = Math.max(0, (performance.now() - startedAt) / 1000);
+
+      let targetProgress = 18;
+      let message = "Preparing your response";
+
+      if (elapsedSeconds >= 3) {
+        targetProgress = 34;
+        message = "Sending your response";
+      }
+
+      if (elapsedSeconds >= 7) {
+        targetProgress = 62;
+        message = "Reviewing your answer";
+      }
+
+      if (elapsedSeconds >= 18) {
+        targetProgress = 82;
+        message = "Reviewing your answer";
+      }
+
+      if (elapsedSeconds >= 32) {
+        targetProgress = 92;
+        message = "Finalizing your result";
+      }
+
+      const easedTarget = Math.min(
+        targetProgress,
+        speakingAnalysisProgress + Math.max(.35, (targetProgress - speakingAnalysisProgress) * .08)
+      );
+
+      setSpeakingAnalysisStatus(message, easedTarget);
+    }, 500);
   }
 
   async function prepareSpeakingAudioTransport(audioBase64, audioMimeType) {
@@ -332,7 +390,7 @@
       chunks.push(audioBase64.slice(offset, offset + SPEAKING_CHUNK_BASE64_CHARS));
     }
 
-    setSpeakingAnalysisStatus(`Uploading answer 0/${chunks.length}…`);
+    setSpeakingAnalysisStatus(`Sending your response · 0/${chunks.length}`, 24);
 
     for (let index = 0; index < chunks.length; index += 1) {
       await apiPost("brightonPlacementSpeakingChunk", {
@@ -347,10 +405,14 @@
         chunkBase64: chunks[index]
       });
 
-      setSpeakingAnalysisStatus(`Uploading answer ${index + 1}/${chunks.length}…`);
+      const uploadProgress = 24 + Math.round(((index + 1) / chunks.length) * 22);
+      setSpeakingAnalysisStatus(
+        `Sending your response · ${index + 1}/${chunks.length}`,
+        uploadProgress
+      );
     }
 
-    setSpeakingAnalysisStatus("Checking answer");
+    setSpeakingAnalysisStatus("Reviewing your answer", 52);
 
     return {
       audioBase64: "",
@@ -1810,10 +1872,23 @@
     els.stageRoot.innerHTML = `
       <div class="module-finish speaking-analysis">
         <div class="module-finish-mark">✓</div>
-        <p id="speakingAnalysisStatus">Checking answer</p>
-        <div class="mini-loader" aria-hidden="true"><span></span></div>
+        <p id="speakingAnalysisStatus">Preparing your response</p>
+        <div
+          id="speakingAnalysisProgress"
+          class="speaking-analysis-progress"
+          role="progressbar"
+          aria-label="Speaking assessment progress"
+          aria-valuemin="0"
+          aria-valuemax="100"
+          aria-valuenow="8"
+        >
+          <span id="speakingAnalysisProgressBar"></span>
+        </div>
+        <small class="speaking-analysis-estimate">This usually takes less than a minute.</small>
       </div>
     `;
+
+    startSpeakingAnalysisProgress();
 
     try {
       const audioBase64 = await blobToBase64(audioBlob);
@@ -1846,6 +1921,8 @@
       };
       lastSpeakingAttemptMetrics = speakingMetrics;
 
+      setSpeakingAnalysisStatus("Reviewing your answer", 58);
+
       const result = await apiPost("brightonPlacementSubmitSpeaking", {
         sessionId: session.sessionId,
         clientSessionId: session.clientSessionId,
@@ -1854,6 +1931,9 @@
         promptId: data.promptId,
         ...speakingMetrics
       });
+
+      stopSpeakingAnalysisProgress();
+      setSpeakingAnalysisStatus("Finalizing your result", 100);
 
       if (result.speakingRetryReason === "prompt-repeat") {
         renderSpeakingAnswerRetry();
@@ -1891,6 +1971,7 @@
       cleanupSpeakingMedia();
       renderPlacementResult(result.result || result);
     } catch (error) {
+      stopSpeakingAnalysisProgress();
       console.error(error);
 
       if (error?.code === "WIX_BODY_TOO_LARGE" || error?.code === "SPEAKING_AUDIO_TOO_LARGE") {
@@ -2054,6 +2135,7 @@
   }
 
   function cleanupSpeakingRecorderOnly() {
+    stopSpeakingAnalysisProgress();
     speakingRecordingActive = false;
     window.clearInterval(speakingTimer);
     window.clearInterval(speakingMeterTimer);
