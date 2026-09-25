@@ -328,39 +328,25 @@
     setSpeakingAnalysisStatus("Preparing your response", 8);
 
     const startedAt = performance.now();
+
     speakingAnalysisTimer = window.setInterval(() => {
       const elapsedSeconds = Math.max(0, (performance.now() - startedAt) / 1000);
 
-      let targetProgress = 18;
       let message = "Preparing your response";
+      if (elapsedSeconds >= 2.5) message = "Sending your response";
+      if (elapsedSeconds >= 7) message = "Reviewing your answer";
+      if (elapsedSeconds >= 30) message = "Finalizing your result";
 
-      if (elapsedSeconds >= 3) {
-        targetProgress = 34;
-        message = "Sending your response";
-      }
+      // Keep the bar visibly moving while the request is in flight.
+      // It approaches 92% gradually and never completes before the server responds.
+      const timedProgress = 8 + (84 * (1 - Math.exp(-elapsedSeconds / 16)));
+      const nextProgress = Math.min(92, Math.max(
+        speakingAnalysisProgress + 0.12,
+        timedProgress
+      ));
 
-      if (elapsedSeconds >= 7) {
-        targetProgress = 62;
-        message = "Reviewing your answer";
-      }
-
-      if (elapsedSeconds >= 18) {
-        targetProgress = 82;
-        message = "Reviewing your answer";
-      }
-
-      if (elapsedSeconds >= 32) {
-        targetProgress = 92;
-        message = "Finalizing your result";
-      }
-
-      const easedTarget = Math.min(
-        targetProgress,
-        speakingAnalysisProgress + Math.max(.35, (targetProgress - speakingAnalysisProgress) * .08)
-      );
-
-      setSpeakingAnalysisStatus(message, easedTarget);
-    }, 500);
+      setSpeakingAnalysisStatus(message, nextProgress);
+    }, 120);
   }
 
   async function prepareSpeakingAudioTransport(audioBase64, audioMimeType) {
