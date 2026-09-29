@@ -324,43 +324,53 @@
 
   function startSpeakingAnalysisProgress() {
     stopSpeakingAnalysisProgress();
-    speakingAnalysisProgress = 8;
-    setSpeakingAnalysisStatus("Preparing your response", 8);
+    speakingAnalysisProgress = 0;
+    setSpeakingAnalysisStatus("Preparing your response", 0);
 
     const startedAt = performance.now();
+
+    // Start from a genuinely empty bar, then let the first painted frame
+    // transition forward instead of rendering halfway across immediately.
+    window.requestAnimationFrame(() => {
+      window.requestAnimationFrame(() => {
+        setSpeakingAnalysisStatus("Preparing your response", 1);
+      });
+    });
+
     speakingAnalysisTimer = window.setInterval(() => {
       const elapsedSeconds = Math.max(0, (performance.now() - startedAt) / 1000);
 
-      let targetProgress = 18;
       let message = "Preparing your response";
+      let targetProgress = Math.min(18, elapsedSeconds * 6);
 
       if (elapsedSeconds >= 3) {
-        targetProgress = 34;
         message = "Sending your response";
+        targetProgress = Math.min(38, 18 + ((elapsedSeconds - 3) * 5));
       }
 
       if (elapsedSeconds >= 7) {
-        targetProgress = 62;
         message = "Reviewing your answer";
+        targetProgress = Math.min(88, 38 + ((elapsedSeconds - 7) * 2.15));
       }
 
-      if (elapsedSeconds >= 18) {
-        targetProgress = 82;
-        message = "Reviewing your answer";
-      }
-
-      if (elapsedSeconds >= 32) {
-        targetProgress = 92;
+      if (elapsedSeconds >= 30) {
         message = "Finalizing your result";
+        targetProgress = Math.min(96, 88 + ((elapsedSeconds - 30) * .45));
       }
 
-      const easedTarget = Math.min(
-        targetProgress,
-        speakingAnalysisProgress + Math.max(.35, (targetProgress - speakingAnalysisProgress) * .08)
-      );
+      const nextProgress = Math.min(96, Math.max(
+        speakingAnalysisProgress + .18,
+        targetProgress
+      ));
 
-      setSpeakingAnalysisStatus(message, easedTarget);
-    }, 500);
+      setSpeakingAnalysisStatus(message, nextProgress);
+    }, 120);
+  }
+
+  async function completeSpeakingAnalysisProgress() {
+    stopSpeakingAnalysisProgress();
+    setSpeakingAnalysisStatus("Finalizing your result", 100);
+    await new Promise((resolve) => window.setTimeout(resolve, 420));
   }
 
   async function prepareSpeakingAudioTransport(audioBase64, audioMimeType) {
@@ -1880,7 +1890,7 @@
           aria-label="Speaking assessment progress"
           aria-valuemin="0"
           aria-valuemax="100"
-          aria-valuenow="8"
+          aria-valuenow="0"
         >
           <span id="speakingAnalysisProgressBar"></span>
         </div>
@@ -1933,7 +1943,6 @@
       });
 
       stopSpeakingAnalysisProgress();
-      setSpeakingAnalysisStatus("Finalizing your result", 100);
 
       if (result.speakingRetryReason === "prompt-repeat") {
         renderSpeakingAnswerRetry();
@@ -1959,6 +1968,8 @@
         );
         return;
       }
+
+      await completeSpeakingAnalysisProgress();
 
       session.phase = "result";
       session.finalLevel = result.finalLevel;
