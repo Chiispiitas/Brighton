@@ -481,7 +481,7 @@ window.examParts = [
       },
       {
         "q": 34,
-        "stem": "What does ‘It’ refer to in the fourth paragraph?",
+        "stem": "What does ‘It’ refer to in line 24?",
         "options": {
           "A": "getting very little sleep",
           "B": "the volume on people's radios",
@@ -518,9 +518,10 @@ window.examParts = [
     "range": "Questions 37–42",
     "instruction": "You are going to read an article about an expedition to look at a mountain under the sea. Six sentences have been removed from the article. Choose from sentences A–G the one which fits each gap. There is one extra sentence which you do not need to use.",
     "articleTitle": "Mountains in the sea",
+    "articleSubtitle": "An ocean scientist visits a mountain, or ‘seamount’, deep under the ocean.",
     "paragraphs": [
       {
-        "text": "An ocean scientist visits a mountain, or ‘seamount’, deep under the ocean. Sealed in our special deep-sea sphere, we wait until we are untied, drifting, a tiny dot on the immense Pacific Ocean. Then we sink into the water, surrounded by bubbles. A diver pokes through the bubbles to make a final adjustment to the camera mounted on the outside of the submersible sphere (known as a ‘sub’). Out there with the camera are hydraulics, thrusters, and hundreds of other essential parts that will keep us safe."
+        "text": "Sealed in our special deep-sea sphere, we wait until we are untied, drifting, a tiny dot on the immense Pacific Ocean. Then we sink into the water, surrounded by bubbles. A diver pokes through the bubbles to make a final adjustment to the camera mounted on the outside of the submersible sphere (known as a ‘sub’). Out there with the camera are hydraulics, thrusters, and hundreds of other essential parts that will keep us safe."
       },
       {
         "text": "Three of us are crammed inside a sphere 1.5 metres in diameter, surrounded by communication equipment, controls, snacks, cameras."
@@ -632,6 +633,7 @@ window.examParts = [
     "range": "Questions 43–52",
     "instruction": "You are going to read an article in which four young people talk about the experience of taking their driving test. For questions 43–52, choose from the people A–D. The people may be chosen more than once.",
     "articleTitle": "First steps at driving",
+    "articleSubtitle": "How do young people feel about learning to drive? We asked four youngsters who have recently passed the test.",
     "texts": [
       {
         "id": "A",
