@@ -448,6 +448,22 @@ window.examParts = [
       "I struggle against my instinct to isolate myself in a cocoon of silence. I really don't want to cut myself off from the thrill of human noise. But I don't want to go crazy, either. Nowadays, unwanted – and largely non-human – sounds push and shove travellers from all directions. Cars, subways, construction, jet engines: their clamour seems omnipresent. Yet instead of lowering the volume of everyday living, we seem to layer noise upon noise. The hotel bar jacks up its techno music to counteract the babble in the lobby. The traveller walking along traffic-choked streets retreats into her iPod.",
       "On the plane, I press my foam earplug deep into my ear. As it slowly expands to fill my ear canal, I savour the journey into the bliss of noiselessness. Thank goodness the convenience store at the airport stocks one of travel's most essential items. The headache-inducing whine of the jet engines magically fades away, and I'm once again the master of my private sonic world. To appreciate the comfort of noise, you also need the comfort of silence. I'll unplug when I get to where I'm going."
     ],
+    "sourceReferences": [
+      {
+        "paragraph": 3,
+        "type": "highlight",
+        "text": "ideal traveller's world"
+      },
+      {
+        "paragraph": 4,
+        "type": "line",
+        "line": 24,
+        "text": "over the din, then turned up the volume on their radios. It was a non-stop celebration, during which I",
+        "highlights": [
+          "It"
+        ]
+      }
+    ],
     "items": [
       {
         "q": 31,
