@@ -162,6 +162,16 @@ Short semantic labels that must read as one lexical item may use `white-space: n
 
 Bold in learner-facing language has pedagogical meaning. Emphasize the exact form, word or feature the learner should notice; do not scatter bold merely for visual energy. Structural headings and chrome may use heavy weights normally.
 
+Inside grammar/language-focus boxes, bold text uses the unit's dark accent color, never plain black. This applies to both target forms and bold internal labels. The shared focus-box component supplies the color; do not introduce a lesson-specific black emphasis treatment.
+
+### Answer choices
+
+Multiple-choice and circle-the-answer options use italics and normal lowercase wording, for example `item *after / before* adjective?`. Do not set options in display capitals or bold. Preserve capitals required by the language itself, such as personal names, days, countries, the pronoun I and abbreviations. Mark only the selectable options with `<em class="hz-answer-option">`; the sentence stem stays in ordinary text. The shared option class keeps options in regular-weight italics even inside a bold instruction. Apply the same option typography when selection uses a checkbox.
+
+### Scene captions
+
+Do not print small gray descriptive captions beneath lesson images, such as `LOST AND FOUND · Bus terminal`, office/location notes or other scene labels. Remove them rather than recoloring or replacing them with another caption. Keep image descriptions in alt text and asset records. Task-bearing names, numbers, vocabulary and functional labels remain part of the exercise and use normal learner ink or the unit accent.
+
 ## 8. Unit color
 
 A normal lesson uses one dominant unit color with neutral typography and photography.

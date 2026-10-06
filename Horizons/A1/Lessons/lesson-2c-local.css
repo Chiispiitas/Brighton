@@ -104,13 +104,6 @@
   object-position: center;
 }
 
-.l2c-family-photo figcaption {
-  margin-top: .9mm;
-  color: var(--hz-muted);
-  font-size: 6.5pt;
-  font-weight: var(--hz-fw-bold);
-}
-
 .l2c-reading-copy {
   columns: 2;
   column-gap: 5mm;
@@ -172,7 +165,7 @@
   font-weight: var(--hz-fw-black);
 }
 
-.l2c-family-strip figcaption > span { color: var(--hz-muted); }
+.l2c-family-strip figcaption > span { color: var(--hz-ink); }
 
 .l2c-family-job {
   display: flex;

@@ -140,6 +140,8 @@ The `aria-label` should use the same semantic category as the visible header.
 
 Inside `.hz-focus-box__body`, use ordinary learner text plus existing shared grids/helpers whenever possible. Do **not** invent one-off separator rules, mini-label systems, pills, colored strips, card surfaces, or special typography solely for one grammar/vocabulary point. If a new internal treatment is genuinely reusable, define it in `Horizons/Base/design-system/` first; otherwise simplify the body to the established focus-box visual language.
 
+Bold (`<b>` or `<strong>`) inside the focus-box body inherits the shared unit-dark accent treatment. It must not render as plain black. For multiple-choice or circle-the-answer content, wrap the options in `<em class="hz-answer-option">` and use normal lowercase wording, retaining only grammatically necessary capitals. The shared class prevents options from inheriting a bold instruction weight. Descriptive gray scene/location captions are omitted from printed lesson imagery; alt text retains the image description.
+
 ## 9. Functional labels
 
 ```html

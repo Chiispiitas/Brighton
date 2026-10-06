@@ -373,6 +373,8 @@
 }
 
 .hz-focus-box__body > :last-child { margin-bottom: 0; }
+.hz-focus-box__body b,
+.hz-focus-box__body strong { color: var(--hz-unit-dark); }
 
 .hz-go-to {
   display: block;
@@ -502,6 +504,7 @@
 
 /* ---------- Utility ---------- */
 
+.hz-answer-option { font-style: italic; font-weight: 400; text-transform: none; }
 .hz-text-unit { color: var(--hz-unit-dark); }
 .hz-text-muted { color: var(--hz-muted); }
 .hz-bg-unit-soft { background: var(--hz-unit-soft); }

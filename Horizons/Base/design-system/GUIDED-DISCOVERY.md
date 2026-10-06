@@ -81,7 +81,7 @@ For early A1, reduced wording may be better:
 - `Email: capital letter?`
 - `What question is for the country?`
 
-For questions about word position, use direct BEFORE / AFTER choices, such as `item AFTER / BEFORE adjective?` or `adjective AFTER / BEFORE is?`. Avoid formula-like alternatives such as `adjective + item or item + adjective?`; the question should name the relationship learners are noticing.
+For questions about word position, use direct lowercase italic choices, such as `item *after / before* adjective?` or `adjective *after / before* is?`. Avoid formula-like alternatives such as `adjective + item or item + adjective?`; the question should name the relationship learners are noticing. Multiple-choice/circle-the-answer options follow this italic treatment throughout the book; capitals are retained only where the language itself requires them.
 
 At later levels, questions may become more natural and analytical as long as the wording itself is accessible.
 
