@@ -15,3 +15,7 @@ images were supplied. Production prompts are retained outside the repository.
 Every filename uses the listed stem plus `.png`. The inventory numbers are
 live HTML text, so the photographed objects contain no labels or numbers.
 Colors and relative sizes were visually checked against the activity key.
+
+Exercise 1 uses a reusable CSS paint-splash silhouette, filled with the ten
+vocabulary colors. Its shape and white-color edge treatment live in
+`../../Lessons/lesson-2d-local.css`; it does not require another raster asset.
