@@ -52,22 +52,26 @@
 .l2c-reading-exercise { padding-top: .65mm; }
 
 .l2c-reading-feature {
-  padding: 3mm 3.5mm 3.2mm;
-  border-top: 1mm solid var(--hz-unit);
-  background: #f3f0ea;
+  padding: 0 0 3mm;
+  border-bottom: .28mm solid var(--hz-line);
+  background: transparent;
 }
 
 .l2c-reading-feature__head {
   display: flex;
-  align-items: baseline;
-  gap: 3mm;
-  margin-bottom: 2mm;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4mm;
+  margin-bottom: 3mm;
+  padding: 2.5mm 3mm;
+  background: var(--hz-unit);
 }
 
 .l2c-reading-feature__head > span {
   flex: none;
-  color: var(--hz-unit-dark);
-  font-size: 6.4pt;
+  color: #fff;
+  font-size: 7pt;
   font-weight: var(--hz-fw-black);
   letter-spacing: .08em;
   text-transform: uppercase;
@@ -75,18 +79,18 @@
 
 .l2c-reading-feature__head h2 {
   margin: 0;
-  color: var(--hz-ink);
-  font-family: var(--hz-font-reading);
-  font-size: 18pt;
-  font-style: italic;
-  font-weight: var(--hz-fw-bold);
+  color: #fff;
+  font-family: var(--hz-font-body);
+  font-size: 20pt;
+  font-style: normal;
+  font-weight: var(--hz-fw-black);
   line-height: 1;
   letter-spacing: -.025em;
 }
 
 .l2c-reading-feature__main {
   display: grid;
-  grid-template-columns: 62mm minmax(0, 1fr);
+  grid-template-columns: 72mm minmax(0, 1fr);
   gap: 5mm;
   align-items: start;
 }
@@ -99,17 +103,16 @@
 .l2c-family-photo img {
   display: block;
   width: 100%;
-  height: 60mm;
+  height: 88mm;
   object-fit: cover;
-  object-position: center;
+  object-position: 46% center;
 }
 
 .l2c-reading-copy {
-  columns: 2;
-  column-gap: 5mm;
+  columns: auto;
   font-family: var(--hz-font-reading);
-  font-size: 8pt;
-  line-height: 1.42;
+  font-size: 8.5pt;
+  line-height: 1.38;
 }
 
 .l2c-reading-copy p {
@@ -146,23 +149,26 @@
 
 .l2c-family-strip img {
   display: block;
-  width: 100%;
-  height: 17mm;
+  width: 27mm;
+  height: 27mm;
+  margin: 0 auto;
+  border-radius: 50%;
   object-fit: cover;
   object-position: center 30%;
 }
 
 .l2c-family-strip figcaption {
   display: grid;
-  gap: .25mm;
-  margin-top: .5mm;
-  font-size: 5.8pt;
-  line-height: 1.12;
+  gap: .8mm;
+  margin-top: 1.2mm;
+  font-size: 8pt;
+  line-height: 1.18;
 }
 
 .l2c-family-strip figcaption strong {
   color: var(--hz-unit-dark);
   font-weight: var(--hz-fw-black);
+  font-size: 9pt;
 }
 
 .l2c-family-strip figcaption > span { color: var(--hz-ink); }
@@ -172,6 +178,7 @@
   align-items: end;
   gap: .8mm;
   white-space: nowrap;
+  font-size: 7.75pt;
 }
 
 .l2c-family-job .hz-answer-line {
@@ -181,7 +188,7 @@
 
 .l2c-family-strip__branch {
   position: relative;
-  height: 18mm;
+  height: 29mm;
 }
 
 .l2c-family-strip__branch::before,
@@ -232,7 +239,7 @@
 .l2c-grammar-grid { gap: 4mm; }
 
 .l2c-grammar-grid > div {
-  font-size: 7.6pt;
+  font-size: 8pt;
   line-height: 1.25;
 }
 
@@ -297,7 +304,7 @@
 .l2c-owner-photos img {
   display: block;
   width: 100%;
-  height: 23mm;
+  height: 28mm;
   object-fit: contain;
   object-position: center;
   background: #fff;
@@ -306,10 +313,10 @@
 .l2c-owner-photos figcaption {
   display: grid;
   justify-items: center;
-  gap: .35mm;
-  margin-top: .6mm;
-  font-size: 6pt;
-  line-height: 1.15;
+  gap: .8mm;
+  margin-top: 1mm;
+  font-size: 8pt;
+  line-height: 1.2;
   text-align: center;
 }
 
@@ -362,8 +369,13 @@
   letter-spacing: .01em;
 }
 
-/* Exercise 7: plain dialogue models; no decorative side strips. */
-.l2c-pairwork { gap: 5mm; }
+/* Exercise 7: the ownership exchange carries the visual context. */
+.l2c-pairwork { grid-template-columns: 1.08fr .92fr; gap: 5mm; align-items: center; }
+.l2c-pair-photo { margin: 0; overflow: hidden; }
+.l2c-pair-photo img { display: block; width: 100%; height: 60mm; object-fit: cover; object-position: center; }
+.l2c-pair-models { display: grid; gap: 3mm; }
+.l2c-pair-models > div { padding: 2mm 2.5mm; border-left: .8mm solid var(--hz-unit); }
+.l2c-pair-models > div:last-child { background: var(--hz-unit-soft); }
 
 .l2c-pairwork .hz-dialogue-text {
   font-size: 8pt;

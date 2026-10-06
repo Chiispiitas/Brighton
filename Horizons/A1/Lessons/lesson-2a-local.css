@@ -66,8 +66,26 @@
 }
 
 .l2a-bag-photo {
-  min-height: 61mm;
-  clip-path: polygon(0 0, 100% 0, 96% 100%, 4% 100%);
+  min-height: 0;
+  aspect-ratio: 1402 / 1122;
+}
+
+/* Live labels belong to the matching task, not to the photograph. */
+.l2a-object-label {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  display: grid;
+  place-items: center;
+  width: 4.8mm;
+  height: 4.8mm;
+  border: .25mm solid var(--hz-unit);
+  border-radius: 50%;
+  background: var(--hz-paper);
+  color: var(--hz-unit-dark);
+  font-size: 8pt;
+  font-weight: var(--hz-fw-black);
+  transform: translate(-50%, -50%);
 }
 
 .l2a-word-bank {
@@ -80,16 +98,16 @@
 
 .l2a-word-list {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.2mm 4mm;
-  font-size: 8pt;
+  grid-template-columns: 1fr;
+  gap: 3mm;
+  font-size: 10pt;
   line-height: 1.18;
 }
 
 .l2a-word {
   display: grid;
-  grid-template-columns: 7mm minmax(0, 1fr);
-  gap: 1.5mm;
+  grid-template-columns: 9mm minmax(0, 1fr);
+  gap: 2.5mm;
   align-items: end;
   min-width: 0;
 }
@@ -154,7 +172,7 @@
   line-height: 1.24;
 }
 
-.l2a-grammar-photo { height: 18mm; }
+.l2a-grammar-photo { height: 24mm; }
 
 .l2a-grammar-item > strong {
   display: block;
@@ -184,10 +202,9 @@
 .l2a-choice-item {
   min-width: 0;
   padding-top: 1mm;
-  border-top: .5mm solid var(--hz-unit);
 }
 
-.l2a-choice-photo { height: 22mm; }
+.l2a-choice-photo { height: 30mm; }
 
 .l2a-choice-item p {
   margin: 1.2mm 0 0;
@@ -239,7 +256,7 @@
   grid-template-columns: .82fr 1.18fr;
   gap: 5mm;
   align-items: stretch;
-  min-height: 68mm;
+  min-height: 76mm;
 }
 
 .l2a-pair-copy {
@@ -271,7 +288,8 @@
 .l2a-pair-steps b { display: inline-block; width: 5mm; color: var(--hz-unit-dark); }
 
 .l2a-pair-photo {
-  min-height: 68mm;
+  height: 76mm;
+  min-height: 0;
   clip-path: polygon(6% 0, 100% 0, 100% 93%, 0 100%);
 }
 

@@ -55,6 +55,26 @@ For each new lesson:
 8. use the definitive filename (`2A.html`, `2B.html`, etc.); the Student's Book compiler discovers it automatically;
 9. compare the finished spread with neighboring approved lessons for language load, physical readability and visual weight.
 
+## A1 visual calibration from the Unit 2 review
+
+The author-made Unit 1 spreads remain the reference for visual finish. Unit 2's
+2026-10-06 revision demonstrates how to apply that standard without making every
+lesson use the same template:
+
+- Give the lesson's real scene or reading/listening feature a clear visual lead.
+  Use the established crimson for major editorial headings and pale pink for
+  canonical language focus; do not invent another unit palette.
+- Make contextual people and task-bearing objects prominent. Crop only when the
+  learner's evidence survives; preserve complete person/object distance scenes.
+- Keep app chrome subordinate to its readable information and the people using it.
+  Check all screen content for clipping, including the lowest fields and controls.
+- Use Unit 1's purposeful variety of portrait circles, environmental photographs,
+  paper conversations and functional artifacts. Avoid an uninterrupted sequence
+  of small rectangular picture panels.
+- Whitespace is useful. Add a new image when it models a task or establishes a
+  needed scene, rather than filling a gap. Compare the finished two-page spread
+  with Unit 1 at the same physical scale before publishing.
+
 ## CSS loading boundary
 
 `Base/shell/a4-shell.css` imports only shared Base components. It must never import a level- or lesson-specific stylesheet.

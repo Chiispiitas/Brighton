@@ -29,10 +29,10 @@
 }
 .l2d-swatch--white { filter: drop-shadow(0 0 .45px #92918e); }
 
-.l2d-counter { display: grid; grid-template-columns: 69mm minmax(0, 1fr); gap: 5mm; align-items: start; }
-.l2d-counter figure { margin: 0; }
-.l2d-counter img { display: block; width: 100%; height: 71mm; object-fit: cover; object-position: 47% center; }
-.l2d-dialogue { display: grid; grid-template-columns: 22mm minmax(0, 1fr); gap: 1.25mm 1.5mm; margin: 0; }
+.l2d-counter { display: grid; grid-template-columns: 78mm minmax(0, 1fr); gap: 0; align-items: center; }
+.l2d-counter figure { margin: 0; clip-path: polygon(0 0,100% 0,94% 100%,0 100%); }
+.l2d-counter img { display: block; width: 100%; height: 75mm; object-fit: cover; object-position: 47% center; }
+.l2d-dialogue { display: grid; grid-template-columns: 22mm minmax(0, 1fr); gap: 1.05mm 1.5mm; margin: 0 0 0 -5mm; padding: 3mm 2.5mm 3mm 6mm; border-top: 1mm solid var(--hz-unit); border-bottom: .25mm solid var(--hz-line); background: var(--hz-paper); }
 .l2d-dialogue dt, .l2d-dialogue dd { margin: 0; }
 .l2d-dialogue dt { font-weight: 720; }
 .l2d-notice { gap: 1.5mm 5mm; }
@@ -49,9 +49,9 @@
 .l2d-mini-models p + p { margin-top: .8mm; }
 
 .l2d-page--2 .hz-exercises { padding-top: 19mm !important; }
-.l2d-inventory { border-top: .5mm solid var(--hz-ink); border-bottom: .28mm solid var(--hz-line); padding: 2mm 0; }
-.l2d-inventory header { display: flex; justify-content: space-between; align-items: baseline; gap: 3mm; margin-bottom: 1mm; }
-.l2d-inventory h2 { margin: 0; font-size: 12pt; line-height: 1.1; letter-spacing: .01em; }
+.l2d-inventory { border-bottom: .28mm solid var(--hz-line); padding: 0 0 2mm; }
+.l2d-inventory header { display: flex; align-items: center; gap: 3mm; margin-bottom: 3mm; padding: 2.5mm 3mm; background: var(--hz-unit); color: #fff; }
+.l2d-inventory h2 { margin: 0; font-size: 17pt; font-weight: var(--hz-fw-black); line-height: 1.1; letter-spacing: -.01em; }
 .l2d-item-pairs { gap: 2mm 4mm; }
 .l2d-item-pairs figure { margin: 0; min-width: 0; }
 .l2d-item-pairs img { display: block; width: 100%; height: 43mm; object-fit: contain; background: #fff; }
@@ -60,6 +60,7 @@
 .l2d-transaction { gap: 7mm; align-items: start; }
 .l2d-task-model p { margin: 0 0 .9mm; }
 .l2d-task-model p:last-child { margin-bottom: 0; }
+.l2d-task-model { border-left: .8mm solid var(--hz-unit); padding: 2mm 3mm; }
 .l2d-office-record { margin: 0; }
 .l2d-office-record img { display: block; width: 100%; height: auto; }
 
