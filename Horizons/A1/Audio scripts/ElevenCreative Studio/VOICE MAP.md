@@ -38,7 +38,29 @@ Preserve the author-selected **HORIZONS ON AIR — EPISODE: BUS OR CAR?**, Track
 | DIEGO | Luis Vega - Engaging, Neutral and Clear | `E3MrNtjUaYrNQEr9YqXs` |
 | ANA | Fernanda Sanmiguel - Neutral and Serious | `1aJyZpkt0vxhGPBnPyrs` |
 
-Prefer the exam pool for new dialogue roles. Preserve already established character assignments; the pool does not automatically recast existing recordings. The paragraph maps below identify speakers, and do not invent voice assignments for other existing characters.
+Prefer the exam pool for dialogue roles. For the author's full A1 audio regeneration on 2026-10-06, the current production cast below assigns the earlier named characters from that approved pool, keeps returning characters consistent and retains the established BUS OR CAR? cast. The paragraph maps below identify their speech turns.
+
+## Current production cast — full A1 regeneration
+
+| Roles | Voice | Voice ID |
+| --- | --- | --- |
+| Narrator; HOST/Lucy | Jessica | `cgSgspJ2msm6clMCkdW9` |
+| Interviewer; Sarah; receptionist | Juniper | `aMSt68OGf4xUZAnLpTU8` |
+| Mary; Ariana; Allison | Amy | `OZxMHsGaBmV5pjMIDIn0` |
+| Lindsay; Lisa; Nora | Adeline | `5l5f8iK3YPeGga21rQIX` |
+| Tom; Bryan; Eli | Jarnathan | `c6SfcYrb2t09NHXiT80T` |
+| Speaker A in 1.3; Marco; Mike; Leo | Mark - Natural Conversations | `UgBBYS2sOqTuMpoF3BR0` |
+| Stephen; John | Mark - Casual, Relaxed and Light | `1SM7GgM6IMuvQlz2BwM3` |
+| Julia | Claudia | `t9v2PYmkh4GaweGzpWNw` |
+| Diego | Luis Vega | `E3MrNtjUaYrNQEr9YqXs` |
+| Ana | Fernanda Sanmiguel | `1aJyZpkt0vxhGPBnPyrs` |
+
+Track 1.8 has two exercise recordings with the same printed track number.
+The vocabulary is `Track 1.8.mp3`; the profiles are
+`Track 1.8 - Exercise 4.1.mp3`. Track 1.11 is an existing duplicate of the
+country models, retained under its old number for file compatibility; the
+current lesson uses Track 1.10. Generation records are in
+`../A1-production.json`.
 
 Use `eleven_v3` for current A1 generation and follow the clarity/pacing guidance in `README.md`. Voice IDs are authoritative; display names may change. Do not silently substitute the narrator or established character voices.
 
@@ -97,6 +119,9 @@ Source Studio project: `73VSiMr366uhy5XOEUZ5`; chapter: `X7TiPgEd9ZDacTlciube`. 
 - BRYAN: 27, 29, 31
 
 ## 1C — Track 1.10
+- NARRATOR (Jessica): 1, 2
+
+## 1C — Track 1.11 — Legacy duplicate
 - NARRATOR (Jessica): 1, 2
 
 ## 2A — Track 2.1

@@ -59,6 +59,18 @@ Eleven v3
 - 2D — Track 2.4 — Colors
 - 2D — Track 2.5 — Lost and Found conversation
 
+Full A1 recordings were regenerated on 2026-10-06 after the author banned
+the clarity tag. The earlier dialogue characters now use the approved exam
+pool assignments in `VOICE MAP.md`; Bus/Car retains its established cast.
+Jessica remains every spoken track label and all controlled narration.
+Generation records are in `../A1-production.json`.
+
+Track 1.8 has two recordings for its two exercises: the vocabulary remains
+`Track 1.8.mp3`, and the profiles use `Track 1.8 - Exercise 4.1.mp3`.
+The pre-existing country-model duplicate `Track 1.11.mp3` is retained under
+its old number; the current 1C page refers to Track 1.10. Its import script
+is marked Legacy duplicate.
+
 Lesson 2D was authored directly for v3. Track 2.4 uses Jessica throughout;
 Track 2.5 uses Jessica for the spoken label, Juniper for the receptionist
 and Mark - Natural Conversations for Leo. The two new tracks were generated
@@ -70,11 +82,13 @@ V3 AUDIO-TAG STANDARD
 ElevenLabs treats audio tags as natural-language auditory instructions rather than a closed enum. Use them strategically to guide delivery without turning the script into a wall of directions.
 
 Current Horizons palette
-- emotion/delivery: `[happy]`, `[excited]`, `[curious]`, `[thoughtful]`, `[surprised]`, `[softly]`, `[slowly]`, `[clearly]`, `[whispers]` when genuinely appropriate;
+- emotion/delivery: `[happy]`, `[excited]`, `[curious]`, `[thoughtful]`, `[surprised]`, `[softly]`, `[slowly]`, `[whispers]` when genuinely appropriate;
 - human reactions: `[laughs]`, `[chuckles]`, `[sighs]`, `[clears throat]` only when the moment naturally calls for them;
 - pacing: `[short pause]`, `[pause]`, `[long pause]`.
 
 Tagging rules
+- NEVER use `[clearly]`. The author has observed that it produces a throat-clearing sound. Reject scripts containing it before generation. Remove it and regenerate affected recordings; do not substitute a throat-clearing reaction tag.
+- Before generation, run `node Horizons/Base/build/validate-audio-scripts.mjs` from the repository root. It must pass. The book workflow also runs this check and fails if a `.txt` script reintroduces the banned tag.
 - Tags must describe something auditory: emotion, vocal delivery, breathing/reaction or pacing.
 - Place a delivery tag immediately before the words it should affect; place a reaction where that reaction would naturally occur.
 - Do not tag every sentence. Use tags where they create a believable or pedagogically useful shift in performance.
@@ -88,12 +102,13 @@ A1 CONTROLLED-LISTENING POLICY
 For beginner material, clarity takes priority over theatricality.
 
 - Use `[slowly]` for spelling, phone numbers, alphabet work and other sequences where learners must identify individual units.
-- Use `[clearly]` for answer-bearing vocabulary and short model sentences.
+- Keep answer-bearing vocabulary and model sentences intelligible through the approved voice, punctuation, short phrasing and suitable pacing. Do not add a tag to request clarity.
 - Use `[short pause]` between tightly related elements, such as a question and its model answer or a word and its spelling.
 - Use `[pause]` for ordinary learner-processing space.
 - Use `[long pause]` between separate listening items, profiles or larger sections.
 - Do not rely on v3 pause tags for frame-accurate timing. If a task needs a longer or more exact gap, adjust timing in Studio after generation rather than reintroducing SSML.
-- Keep spelling hyphenated and phone-number groups visually separated so v3 has additional pronunciation and pacing cues.
+- Keep phone-number groups visually separated and spell letters as separate units. Hyphenation usually works; if a letter sequence is dropped, use punctuation between individual letters and check the result again. The letters and answer-bearing information must stay unchanged.
+- A decimal-looking track label may be written out in words if the model misreads it. Track 1.10 uses `Track one point ten.` to preserve the intended spoken number.
 
 V3 STABILITY
 

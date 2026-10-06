@@ -183,6 +183,12 @@ Production defaults:
 - permanent internal audio ID plus printed track number;
 - QR access may be added to printed activities.
 
+The tag `[clearly]` is forbidden in production scripts and API inputs. The
+author has observed that it generates a throat-clearing sound. Reject it
+before generation and regenerate affected audio after removing it. Use the
+approved voice, punctuation and pacing for intelligibility; do not replace
+it with a throat-clearing reaction tag.
+
 For each audio asset retain:
 
 - internal audio ID;

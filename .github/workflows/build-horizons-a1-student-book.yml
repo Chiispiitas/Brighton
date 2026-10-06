@@ -4,10 +4,12 @@ on:
   push:
     paths:
       - "Horizons/A1/Lessons/**"
+      - "Horizons/A1/Audio scripts/**"
       - "Horizons/Base/design-system/**"
       - "Horizons/Base/shell/**"
       - "Horizons/Base/build/build-students-book.mjs"
       - "Horizons/Base/build/build-students-book-pdf.mjs"
+      - "Horizons/Base/build/validate-audio-scripts.mjs"
       - ".github/workflows/build-horizons-a1-student-book.yml"
   workflow_dispatch:
 
@@ -30,6 +32,9 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: "22"
+
+      - name: Check audio scripts for forbidden tags
+        run: node Horizons/Base/build/validate-audio-scripts.mjs
 
       - name: Compile Student's Book HTML
         run: node Horizons/Base/build/build-students-book.mjs

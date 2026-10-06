@@ -9,16 +9,19 @@
     "stability": 0.5,
     "language": "en",
     "output_format": "mp3_44100_128",
-    "generation_utc": "2026-10-06T11:31:40.537593+00:00",
+    "generation_utc": "2026-10-06T15:39:58.724525+00:00",
     "paragraph_voice_ids": [
       "cgSgspJ2msm6clMCkdW9",
       "cgSgspJ2msm6clMCkdW9"
     ],
-    "request_id": "xRCDTIZBnh8VclM2gbr3",
-    "bytes": 354473,
+    "request_id": "wxvZHyLdGkmwKxjEB93C",
+    "bytes": 447678,
     "transcript_checked": true,
-    "revision": "Final approved 2D script and cast",
-    "duration_seconds": 21.98
+    "revision": "Regenerated without the forbidden clarity tag",
+    "duration_seconds": 27.86,
+    "forbidden_tag_preflight_passed": true,
+    "audio_events_checked": true,
+    "throat_clearing_events_detected": false
   },
   {
     "asset_id": "HZN_A1_U02_LD_E02_AUD_01",
@@ -30,7 +33,7 @@
     "stability": 0.5,
     "language": "en",
     "output_format": "mp3_44100_128",
-    "generation_utc": "2026-10-06T11:31:43.674838+00:00",
+    "generation_utc": "2026-10-06T15:39:59.132087+00:00",
     "paragraph_voice_ids": [
       "cgSgspJ2msm6clMCkdW9",
       "aMSt68OGf4xUZAnLpTU8",
@@ -46,10 +49,13 @@
       "aMSt68OGf4xUZAnLpTU8",
       "UgBBYS2sOqTuMpoF3BR0"
     ],
-    "request_id": "DeGkNcLD4yBvKsnhPh5r",
-    "bytes": 386238,
+    "request_id": "vN8nvEh92kd5kK0VxLoZ",
+    "bytes": 395433,
     "transcript_checked": true,
-    "revision": "Final approved 2D script and cast",
-    "duration_seconds": 24.02
+    "revision": "Regenerated without the forbidden clarity tag",
+    "duration_seconds": 24.58,
+    "forbidden_tag_preflight_passed": true,
+    "audio_events_checked": true,
+    "throat_clearing_events_detected": false
   }
 ]
