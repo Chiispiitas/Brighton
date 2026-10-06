@@ -61,9 +61,7 @@
 .l2d-transaction { gap: 7mm; align-items: start; }
 .l2d-task-model p { margin: 0 0 .9mm; }
 .l2d-task-model p:last-child { margin-bottom: 0; }
-.l2d-office-form { padding: 3mm 3.5mm 2.5mm; border: .3mm solid var(--hz-line-strong); background: #fff; font-size: 8.3pt; }
-.l2d-office-form h3 { margin: 0 0 2mm; font-size: 10pt; line-height: 1.15; }
-.l2d-form-row { display: grid; grid-template-columns: 22mm minmax(0, 1fr); align-items: end; gap: 2mm; margin-top: 2mm; }
-.l2d-form-line { height: 5.2mm; border-bottom: .25mm solid var(--hz-line-strong); }
+.l2d-office-record { margin: 0; }
+.l2d-office-record img { display: block; width: 100%; height: auto; }
 
 @media print { .l2d-page, .l2d-page * { print-color-adjust: exact; -webkit-print-color-adjust: exact; } }

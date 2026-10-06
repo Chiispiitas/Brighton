@@ -11,10 +11,16 @@ images were supplied. Production prompts are retained outside the repository.
 | HZN_A1_U02_LD_E06_IMG_02 | 6 | Small brown wallet / big red wallet; complete pair, contain |
 | HZN_A1_U02_LD_E06_IMG_03 | 6 | Small green bottle / big blue bottle; complete pair, contain |
 | HZN_A1_U02_LD_E06_IMG_04 | 6 | Small yellow umbrella / big orange umbrella; complete pair, contain |
+| HZN_A1_U02_LD_E07_IMG_01 | 7 | Photographed office clipboard with a crimson LOST AND FOUND heading and five blank fields; complete artifact, no crop |
 
 Every filename uses the listed stem plus `.png`. The inventory numbers are
 live HTML text, so the photographed objects contain no labels or numbers.
 Colors and relative sizes were visually checked against the activity key.
+
+The Exercise 7 record is a complete generated raster artifact. Its printed
+heading and five field labels are part of the image: LOST AND FOUND; Name;
+Item; Color; Big / small; Number. The words, writing space and legibility
+were visually checked. HTML/CSS only places and scales this artwork.
 
 Exercise 1 uses a reusable CSS paint-splash silhouette, filled with the ten
 vocabulary colors. Its shape and white-color edge treatment live in
