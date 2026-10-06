@@ -1,0 +1,60 @@
+/* Horizons A1 — Lesson 2D. Color evidence, a Lost and Found encounter,
+   and an item-identification transaction. Shared chrome remains canonical. */
+.l2d-page {
+  --hz-unit: var(--hz-unit-1);
+  --hz-unit-dark: #8f123f;
+  --hz-unit-soft: #f8e6ee;
+}
+.l2d-page .hz-page-stack { gap: 2mm; }
+.l2d-page .hz-exercises { gap: .6mm; }
+.l2d-page .hz-exercise { padding: 1.2mm 0 1.8mm; }
+.l2d-page .hz-exercise__body { margin-top: 1.4mm; }
+.l2d-page .hz-exercise__instruction { font-size: 9pt; }
+.l2d-page .hz-student-text { font-size: 8.8pt; line-height: 1.3; }
+.l2d-page .hz-dialogue-text { font-size: 8.8pt; line-height: 1.28; }
+.l2d-inset { margin-left: calc(var(--hz-exercise-marker-size) + 3mm); }
+
+.l2d-colors { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 2mm 4mm; }
+.l2d-colors > div { display: flex; align-items: center; gap: 2mm; }
+.l2d-colors strong { font-weight: 520; }
+.l2d-swatch { display: block; flex: none; width: 10mm; height: 7.5mm; background: var(--color); border: .2mm solid rgb(32 33 36 / 16%); }
+
+.l2d-counter { display: grid; grid-template-columns: 69mm minmax(0, 1fr); gap: 5mm; align-items: start; }
+.l2d-counter figure { margin: 0; }
+.l2d-counter img { display: block; width: 100%; height: 71mm; object-fit: cover; object-position: 47% center; }
+.l2d-counter figcaption { margin-top: 1.2mm; color: var(--hz-muted); font-size: 7pt; font-weight: 620; line-height: 1.2; }
+.l2d-dialogue { display: grid; grid-template-columns: 22mm minmax(0, 1fr); gap: 1.25mm 1.5mm; margin: 0; }
+.l2d-dialogue dt, .l2d-dialogue dd { margin: 0; }
+.l2d-dialogue dt { font-weight: 720; }
+.l2d-notice { gap: 5mm; }
+.l2d-notice p { margin: 0; }
+.l2d-focus { margin: .3mm 0 .5mm calc(var(--hz-exercise-marker-size) + 3mm); }
+.l2d-focus p { margin: 0 0 1mm; }
+.l2d-focus p:last-child { margin-bottom: 0; }
+.l2d-order { gap: 2mm 6mm; }
+.l2d-order p { margin: 0 0 .8mm; }
+.l2d-order b { color: var(--hz-unit-dark); margin-right: 1.5mm; }
+.l2d-writing-line { display: block; height: 5mm; border-bottom: var(--hz-answer-line) solid var(--hz-line-strong); }
+.l2d-example { color: #7f8287; font-family: "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive; font-size: 8.4pt; }
+.l2d-mini-models p { margin: 0; }
+.l2d-mini-models p + p { margin-top: .8mm; }
+
+.l2d-page--2 .hz-exercises { padding-top: 19mm !important; }
+.l2d-inventory { border-top: .5mm solid var(--hz-ink); border-bottom: .28mm solid var(--hz-line); padding: 2mm 0; }
+.l2d-inventory header { display: flex; justify-content: space-between; align-items: baseline; gap: 3mm; margin-bottom: 1mm; }
+.l2d-inventory h2 { margin: 0; font-size: 12pt; line-height: 1.1; letter-spacing: .01em; }
+.l2d-inventory header > span { color: var(--hz-muted); font-size: 7.5pt; }
+.l2d-item-pairs { gap: 2mm 4mm; }
+.l2d-item-pairs figure { margin: 0; min-width: 0; }
+.l2d-item-pairs img { display: block; width: 100%; height: 43mm; object-fit: contain; background: #fff; }
+.l2d-item-pairs figcaption { display: grid; grid-template-columns: 1fr 1fr; text-align: center; margin-top: .5mm; color: var(--hz-unit-dark); font-size: 8.8pt; font-weight: 820; }
+.l2d-inventory-example { margin: 1.5mm 0 0; }
+.l2d-transaction { gap: 7mm; align-items: start; }
+.l2d-task-model p { margin: 0 0 .9mm; }
+.l2d-task-model p:last-child { margin-bottom: 0; }
+.l2d-office-form { padding: 3mm 3.5mm 2.5mm; border: .3mm solid var(--hz-line-strong); background: #fff; font-size: 8.3pt; }
+.l2d-office-form h3 { margin: 0 0 2mm; font-size: 10pt; line-height: 1.15; }
+.l2d-form-row { display: grid; grid-template-columns: 22mm minmax(0, 1fr); align-items: end; gap: 2mm; margin-top: 2mm; }
+.l2d-form-line { height: 5.2mm; border-bottom: .25mm solid var(--hz-line-strong); }
+
+@media print { .l2d-page, .l2d-page * { print-color-adjust: exact; -webkit-print-color-adjust: exact; } }

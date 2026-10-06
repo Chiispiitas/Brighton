@@ -56,6 +56,14 @@ Eleven v3
 - 2A — Track 2.1
 - 2A — Track 2.2
 - 2B — Track 2.3 — HORIZONS ON AIR
+- 2D — Track 2.4 — Colors
+- 2D — Track 2.5 — Lost and Found conversation
+
+Lesson 2D was authored directly for v3. Track 2.4 uses Jessica throughout;
+Track 2.5 uses Jessica for the spoken label, Juniper for the receptionist
+and Mark - Natural Conversations for Leo. The two new tracks were generated
+through the ElevenLabs speech/dialogue API at Natural Stability (0.5).
+Generation records are in `../2D-production.json`.
 
 V3 AUDIO-TAG STANDARD
 

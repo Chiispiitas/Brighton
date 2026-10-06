@@ -113,3 +113,15 @@ Source Studio project: `73VSiMr366uhy5XOEUZ5`; chapter: `X7TiPgEd9ZDacTlciube`. 
 - JULIA: 3, 5, 7, 9, 11, 13, 15
 - DIEGO: 17, 19, 21, 23, 25, 27, 29, 31
 - ANA: 33, 35, 37, 39, 41, 43, 45, 47, 49
+
+## 2D — Track 2.4
+- NARRATOR (Jessica): 1, 2
+
+## 2D — Track 2.5
+- NARRATOR (Jessica): 1
+- RECEPTIONIST (Juniper - Grounded and Professional, `aMSt68OGf4xUZAnLpTU8`): 2, 4, 6, 8, 10, 12
+- LEO (Mark - Natural Conversations, `UgBBYS2sOqTuMpoF3BR0`): 3, 5, 7, 9, 11, 13
+
+These new 2D dialogue roles use the preferred Brighton A1 exam pool. Retain
+their recorded IDs if either role returns. Track labels and color models
+remain Jessica. Generation records live in `../2D-production.json`.
