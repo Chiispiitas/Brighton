@@ -81,6 +81,8 @@ For early A1, reduced wording may be better:
 - `Email: capital letter?`
 - `What question is for the country?`
 
+For questions about word position, use direct BEFORE / AFTER choices, such as `item AFTER / BEFORE adjective?` or `adjective AFTER / BEFORE is?`. Avoid formula-like alternatives such as `adjective + item or item + adjective?`; the question should name the relationship learners are noticing.
+
 At later levels, questions may become more natural and analytical as long as the wording itself is accessible.
 
 A discovery question does **not** automatically require an answer line, checkbox, multiple-choice option or other response space. If the intended classroom behavior is oral noticing, teacher-led analysis, pair discussion or mental comparison, the question alone may be the complete exercise. Add a visible response affordance only when learners are actually expected to record or select a response on the page.
