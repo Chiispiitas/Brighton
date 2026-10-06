@@ -3761,8 +3761,26 @@ body.hz-debug .hz-page::after {
 }
 
 .l2a-bag-photo {
-  min-height: 61mm;
-  clip-path: polygon(0 0, 100% 0, 96% 100%, 4% 100%);
+  min-height: 0;
+  aspect-ratio: 1402 / 1122;
+}
+
+/* Live labels belong to the matching task, not to the photograph. */
+.l2a-object-label {
+  position: absolute;
+  left: var(--x);
+  top: var(--y);
+  display: grid;
+  place-items: center;
+  width: 4.8mm;
+  height: 4.8mm;
+  border: .25mm solid var(--hz-unit);
+  border-radius: 50%;
+  background: var(--hz-paper);
+  color: var(--hz-unit-dark);
+  font-size: 8pt;
+  font-weight: var(--hz-fw-black);
+  transform: translate(-50%, -50%);
 }
 
 .l2a-word-bank {
@@ -3775,16 +3793,16 @@ body.hz-debug .hz-page::after {
 
 .l2a-word-list {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2.2mm 4mm;
-  font-size: 8pt;
+  grid-template-columns: 1fr;
+  gap: 3mm;
+  font-size: 10pt;
   line-height: 1.18;
 }
 
 .l2a-word {
   display: grid;
-  grid-template-columns: 7mm minmax(0, 1fr);
-  gap: 1.5mm;
+  grid-template-columns: 9mm minmax(0, 1fr);
+  gap: 2.5mm;
   align-items: end;
   min-width: 0;
 }
@@ -3849,7 +3867,7 @@ body.hz-debug .hz-page::after {
   line-height: 1.24;
 }
 
-.l2a-grammar-photo { height: 18mm; }
+.l2a-grammar-photo { height: 24mm; }
 
 .l2a-grammar-item > strong {
   display: block;
@@ -3879,10 +3897,9 @@ body.hz-debug .hz-page::after {
 .l2a-choice-item {
   min-width: 0;
   padding-top: 1mm;
-  border-top: .5mm solid var(--hz-unit);
 }
 
-.l2a-choice-photo { height: 22mm; }
+.l2a-choice-photo { height: 30mm; }
 
 .l2a-choice-item p {
   margin: 1.2mm 0 0;
@@ -3934,7 +3951,7 @@ body.hz-debug .hz-page::after {
   grid-template-columns: .82fr 1.18fr;
   gap: 5mm;
   align-items: stretch;
-  min-height: 68mm;
+  min-height: 76mm;
 }
 
 .l2a-pair-copy {
@@ -3966,7 +3983,8 @@ body.hz-debug .hz-page::after {
 .l2a-pair-steps b { display: inline-block; width: 5mm; color: var(--hz-unit-dark); }
 
 .l2a-pair-photo {
-  min-height: 68mm;
+  height: 76mm;
+  min-height: 0;
   clip-path: polygon(6% 0, 100% 0, 100% 93%, 0 100%);
 }
 
@@ -4037,7 +4055,7 @@ body.hz-debug .hz-page::after {
   top: .65mm;
   left: .8mm;
   color: var(--hz-unit-dark);
-  font-size: 6pt;
+  font-size: 7pt;
 }
 
 .l2b-time span {
@@ -4100,7 +4118,7 @@ body.hz-debug .hz-page::after {
   padding: .9mm 1.4mm .8mm;
   background: #202020;
   color: #fff;
-  font-size: 6pt;
+  font-size: 7.5pt;
   font-weight: var(--hz-fw-black);
   letter-spacing: .07em;
 }
@@ -4109,7 +4127,7 @@ body.hz-debug .hz-page::after {
   padding: .9mm 1.35mm .8mm;
   background: var(--hz-unit);
   color: #fff;
-  font-size: 6pt;
+  font-size: 7.5pt;
   font-weight: var(--hz-fw-black);
   font-style: normal;
   letter-spacing: .07em;
@@ -4121,7 +4139,40 @@ body.hz-debug .hz-page::after {
   letter-spacing: -.02em;
 }
 
-.l2b-show-head--small .l2b-show-episode { font-size: 9pt; }
+.l2b-show-head--small .l2b-show-episode { font-size: 10pt; }
+
+.l2b-onair-start .l2b-show-head {
+  padding: 2.6mm 3mm;
+  margin-bottom: 1.3mm;
+  background: var(--hz-unit);
+  color: #fff;
+}
+.l2b-onair-start .l2b-show-episode {
+  order: -1;
+  font-size: 17pt;
+}
+.l2b-onair-start .l2b-show-brand { margin-left: auto; }
+.l2b-onair-start .l2b-show-brand em { background: #fff; color: var(--hz-unit-dark); }
+.l2b-episode-questions {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1mm 7mm;
+  padding: 1mm 0 .2mm;
+  font-size: 8pt;
+  line-height: 1.32;
+}
+.l2b-episode-questions > div {
+  display: grid;
+  grid-template-columns: 5mm 1fr;
+  gap: 1mm;
+}
+.l2b-episode-questions b { color: var(--hz-unit-dark); }
+.l2b-interviews {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3.5mm;
+  align-items: start;
+}
 
 /* Stable raster slots for street-interview photography. */
 .l2b-street-strip {
@@ -4198,14 +4249,14 @@ body.hz-debug .hz-page::after {
 
 .l2b-phone {
   position: relative;
-  width: 58mm;
-  height: 86mm;
+  width: 49mm;
+  height: 82mm;
   margin: 0 auto;
-  padding: 4mm 2.2mm 2.4mm;
-  border: 1.1mm solid #171717;
-  border-radius: 7mm;
+  padding: 3.3mm 1.2mm 1.3mm;
+  border: .8mm solid #171717;
+  border-radius: 5mm;
   background: #0d0d0d;
-  box-shadow: 0 2mm 4mm rgb(0 0 0 / 12%);
+  box-shadow: 0 1mm 2mm rgb(0 0 0 / 10%);
 }
 
 .l2b-phone__speaker {
@@ -4224,7 +4275,7 @@ body.hz-debug .hz-page::after {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  border-radius: 4.4mm;
+  border-radius: 3mm;
   background: #fff;
 }
 
@@ -4232,11 +4283,11 @@ body.hz-debug .hz-page::after {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  min-height: 5.6mm;
-  padding: .8mm 2.2mm;
+  min-height: 3.5mm;
+  padding: .3mm 1.5mm;
   background: #fff;
   color: #181818;
-  font-size: 5.2pt;
+  font-size: 6.5pt;
   font-weight: var(--hz-fw-bold);
 }
 
@@ -4244,17 +4295,17 @@ body.hz-debug .hz-page::after {
 
 .l2b-moovit-stage {
   display: grid;
-  grid-template-columns: 63mm minmax(0, 1fr);
+  grid-template-columns: 52mm minmax(0, 1fr);
   gap: 5mm;
-  align-items: center;
+  align-items: start;
 }
 
 .l2b-moovit-brand {
   display: flex;
   align-items: center;
   gap: 1.2mm;
-  min-height: 8.5mm;
-  padding: 1.2mm 2.3mm;
+  min-height: 8mm;
+  padding: .5mm 1.5mm;
   background: #fff;
   border-bottom: .25mm solid #e8e8e8;
 }
@@ -4275,14 +4326,14 @@ body.hz-debug .hz-page::after {
 }
 
 .l2b-moovit-plan {
-  padding: 1.5mm 2.1mm 1.8mm;
+  padding: 1mm 1.5mm 1.2mm;
   background: #242529;
 }
 
 .l2b-moovit-plan__title {
-  margin-bottom: 1.2mm;
+  margin-bottom: .8mm;
   color: #fff;
-  font-size: 5.6pt;
+  font-size: 7pt;
   font-weight: var(--hz-fw-black);
 }
 
@@ -4291,13 +4342,13 @@ body.hz-debug .hz-page::after {
   grid-template-columns: 4mm minmax(0, 1fr);
   gap: 1.2mm;
   align-items: center;
-  min-height: 7mm;
-  margin-bottom: .9mm;
-  padding: 1mm 1.4mm;
+  min-height: 5.5mm;
+  margin-bottom: .6mm;
+  padding: .6mm 1mm;
   border-radius: .8mm;
   background: #fff;
   color: #333;
-  font-size: 5.8pt;
+  font-size: 7pt;
 }
 
 .l2b-dot {
@@ -4310,24 +4361,24 @@ body.hz-debug .hz-page::after {
 .l2b-dot--orange { border-color: var(--l2b-moovit); background: var(--l2b-moovit); }
 
 .l2b-moovit-button {
-  margin-top: 1.3mm;
-  padding: 1.6mm;
+  margin-top: .8mm;
+  padding: 1.1mm;
   border-radius: .6mm;
   background: var(--l2b-moovit);
   color: #fff;
   text-align: center;
-  font-size: 5.6pt;
+  font-size: 7pt;
   font-weight: var(--hz-fw-black);
 }
 
-.l2b-moovit-results { padding: 1.1mm 2.1mm 0; }
+.l2b-moovit-results { padding: .8mm 1.5mm 0; }
 
 .l2b-moovit-result {
   display: grid;
   grid-template-columns: 8mm 1fr auto;
   gap: 1.4mm;
   align-items: center;
-  min-height: 7.6mm;
+  min-height: 6mm;
   border-bottom: .2mm solid #e8e8e8;
 }
 
@@ -4340,17 +4391,17 @@ body.hz-debug .hz-page::after {
   height: 5.4mm;
   background: #43a9d7;
   color: #fff;
-  font-size: 5.2pt;
+  font-size: 7pt;
   font-weight: var(--hz-fw-black);
 }
 
-.l2b-moovit-result strong { font-size: 7.2pt; font-weight: var(--hz-fw-black); }
-.l2b-moovit-result small { color: #777; font-size: 4.6pt; }
+.l2b-moovit-result strong { font-size: 9pt; font-weight: var(--hz-fw-black); }
+.l2b-moovit-result small { color: #555; font-size: 7pt; }
 
 .l2b-mini-map {
   position: relative;
-  height: 14mm;
-  margin: 1mm 2.1mm 1.3mm;
+  height: 10mm;
+  margin: 1mm 1.5mm;
   overflow: hidden;
   background: #e7f1f4;
 }
@@ -4408,7 +4459,7 @@ body.hz-debug .hz-page::after {
 
 .l2b-indrive-stage {
   display: grid;
-  grid-template-columns: 64mm minmax(0, 1fr);
+  grid-template-columns: 52mm minmax(0, 1fr);
   gap: 5mm;
   align-items: stretch;
 }
@@ -4416,9 +4467,9 @@ body.hz-debug .hz-page::after {
 .l2b-phone--indrive .l2b-phone__screen { background: var(--l2b-indrive-dark); }
 
 .l2b-indrive-top {
-  padding: 5mm 4mm 3mm;
+  padding: 2.5mm 2.5mm 1.5mm;
   color: #fff;
-  font-size: 15pt;
+  font-size: 12pt;
   font-weight: 800;
   line-height: .95;
   letter-spacing: -.04em;
@@ -4426,8 +4477,8 @@ body.hz-debug .hz-page::after {
 
 .l2b-indrive-map {
   position: relative;
-  height: 27mm;
-  margin: 1mm 4mm 0;
+  height: 17mm;
+  margin: .8mm 2.5mm 0;
   overflow: hidden;
   border-radius: 4mm 4mm 0 0;
   background: #edf0ec;
@@ -4448,19 +4499,19 @@ body.hz-debug .hz-page::after {
 
 .l2b-indrive-map span {
   position: absolute;
-  left: 19mm;
-  top: 10mm;
-  padding: 1.3mm 3mm;
+  left: 14mm;
+  top: 6mm;
+  padding: 1mm 2mm;
   border-radius: 5mm;
   background: #4d8fd8;
   color: #fff;
-  font-size: 6.8pt;
+  font-size: 7pt;
   font-weight: var(--hz-fw-black);
 }
 
 .l2b-indrive-sheet {
-  margin: 0 4mm 3mm;
-  padding: 2.1mm 2.5mm 2.4mm;
+  margin: 0 2.5mm 1.5mm;
+  padding: 1mm 1.5mm 1.4mm;
   border-radius: 0 0 3.5mm 3.5mm;
   background: #f6f6f6;
 }
@@ -4475,17 +4526,17 @@ body.hz-debug .hz-page::after {
   text-align: center;
 }
 
-.l2b-car-tabs b { font-size: 6.1pt; }
-.l2b-car-tabs span { color: #8a8a8a; font-size: 4.8pt; }
+.l2b-car-tabs b { font-size: 7pt; }
+.l2b-car-tabs span { color: #555; font-size: 6.5pt; }
 
 .l2b-place {
   display: grid;
   grid-template-columns: 4mm minmax(0, 1fr);
   gap: 1.3mm;
   align-items: center;
-  min-height: 6.6mm;
-  color: #6a6a6a;
-  font-size: 5.6pt;
+  min-height: 5.5mm;
+  color: #454545;
+  font-size: 7pt;
 }
 
 .l2b-place-dot {
@@ -4502,42 +4553,43 @@ body.hz-debug .hz-page::after {
   grid-template-columns: 5mm 1fr;
   gap: 1mm;
   align-items: center;
-  min-height: 8mm;
+  min-height: 6mm;
   margin-top: 1mm;
   padding: 1mm 1.5mm;
   border-radius: 1.4mm;
   background: #fff;
   color: #1e1e1e;
-  font-size: 5.5pt;
+  font-size: 7pt;
 }
 
-.l2b-price b { font-size: 6pt; }
+.l2b-price b { font-size: 7pt; }
 
 .l2b-find-driver {
   margin-top: 1mm;
-  padding: 1.6mm;
+  padding: 1.1mm;
   border-radius: 1.6mm;
   background: var(--l2b-indrive);
   color: #111;
   text-align: center;
-  font-size: 6.4pt;
+  font-size: 7pt;
   font-weight: var(--hz-fw-black);
 }
 
 .l2b-indrive-copy {
   display: grid;
-  grid-template-rows: 39mm auto;
+  grid-template-rows: 62mm auto;
   gap: 2.4mm;
   min-width: 0;
 }
 
 .l2b-interview-photo {
   display: grid;
-  grid-template-rows: 32.5mm 6.5mm;
-  height: 39mm;
+  grid-template-rows: 55mm 7mm;
+  height: 62mm;
 }
 
-.l2b-interview-photo figcaption strong { font-size: 6.5pt; }
+.l2b-interview-photo figcaption { padding: 1mm 2mm; font-size: 7.5pt; }
+.l2b-interview-photo figcaption strong { font-size: 9pt; }
 
 .l2b-complete-lines {
   display: grid;
@@ -4590,7 +4642,7 @@ body.hz-debug .hz-page::after {
 .l2b-article-grid > div {
   padding-top: 1mm;
   border-top: .35mm solid rgb(32 33 36 / 20%);
-  font-size: 7.4pt;
+  font-size: 7.8pt;
   line-height: 1.22;
 }
 
@@ -4611,7 +4663,7 @@ body.hz-debug .hz-page::after {
   margin-top: 1.5mm;
   padding-top: 1.1mm;
   border-top: .25mm solid var(--hz-line);
-  font-size: 7.2pt;
+  font-size: 7.8pt;
 }
 
 .l2b-article-key b { color: var(--hz-unit-dark); }
@@ -4622,7 +4674,7 @@ body.hz-debug .hz-page::after {
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: .8mm 7mm;
-  font-size: 7.7pt;
+  font-size: 7.9pt;
   line-height: 1.25;
 }
 
@@ -4664,13 +4716,17 @@ body.hz-debug .hz-page::after {
   display: grid;
   align-content: center;
   gap: 1mm;
-  min-height: 28mm;
-  padding: 2.5mm;
-  border: .28mm solid var(--hz-line);
-  font-size: 6.3pt;
+  padding: 2.5mm 3mm 3mm;
+  border: 0;
+  border-bottom: .28mm solid var(--hz-line);
+  font-size: 8pt;
 }
 
 .l2b-pair-card strong { font-size: 8.2pt; font-weight: var(--hz-fw-black); }
+.l2b-pair-field { display: grid; grid-template-columns: 27mm 1fr; gap: 2mm; align-items: end; font-size: 8pt; }
+.l2b-pair-field > span:last-child { min-height: 5mm; border-bottom: .3mm solid var(--hz-line-strong); }
+.l2b-plate { display:flex; justify-content:space-between; align-items:center; margin-top:1mm; padding:1mm; background:#fff; color:#222; font-size:7pt; }
+.l2b-plate b { letter-spacing:.03em; }
 .l2b-pair-card b { font-size: 13pt; font-weight: var(--hz-fw-black); }
 .l2b-pair-card--moovit { border-top: 1.2mm solid var(--l2b-moovit); background: #fff5f0; }
 .l2b-pair-card--indrive { border-top: 1.2mm solid var(--l2b-indrive); background: #f3f3f3; }
@@ -4699,27 +4755,9 @@ body.hz-debug .hz-page::after {
 
 /* ---------- Production photography ---------- */
 
-[data-image-slot="2B-CITY-WIDE"] .hz-photo-placeholder {
-  background: url("./Images/2B/2B-CITY-WIDE.png") center 52% / cover no-repeat;
-}
-
-[data-image-slot="2B-CITY-WIDE"] .hz-photo-placeholder::before,
-[data-image-slot="2B-CITY-WIDE"] .hz-photo-placeholder::after { display: none; }
-[data-image-slot="2B-CITY-WIDE"] .hz-photo-placeholder__meta { display: none; }
-
-[data-image-slot="2B-AIR-01-JULIA"] .l2b-photo-placeholder {
-  background: url("./Images/2B/2B-AIR-01-JULIA.png") center 38% / cover no-repeat;
-}
-
-[data-image-slot="2B-AIR-03-ANA"] .l2b-photo-placeholder {
-  background: url("./Images/2B/2B-AIR-03-ANA.png") center 38% / cover no-repeat;
-}
-
-[data-image-slot="2B-AIR-04-DIEGO"] .l2b-photo-placeholder {
-  background: url("./Images/2B/2B-AIR-04-DIEGO.png") center 38% / cover no-repeat;
-}
-
-[data-image-slot^="2B-AIR-"] .l2b-photo-placeholder > span { display: none; }
+.l2b-city-photo { margin: 1mm 0 1.5mm; overflow: hidden; }
+.l2b-city-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 52%; }
+.l2b-interview-photo > img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 38%; min-height: 0; }
 
 /* ---------- Exercise-body rhythm and enlarged photography ---------- */
 
@@ -4735,21 +4773,7 @@ body.hz-debug .hz-page::after {
 
 /* Exercise 2 city photography. */
 [data-image-slot="2B-CITY-WIDE"] {
-  height: 40mm !important;
-}
-
-[data-image-slot="2B-CITY-WIDE"] .hz-photo-placeholder {
-  min-height: 40mm !important;
-}
-
-/* Interview photography: 39mm × 1.30 = 50.7mm total height. */
-.l2b-indrive-copy {
-  grid-template-rows: 50.7mm auto;
-}
-
-.l2b-interview-photo {
-  grid-template-rows: 44.2mm 6.5mm;
-  height: 50.7mm;
+  height: 43mm !important;
 }
 
 @media print {
@@ -4813,22 +4837,26 @@ body.hz-debug .hz-page::after {
 .l2c-reading-exercise { padding-top: .65mm; }
 
 .l2c-reading-feature {
-  padding: 3mm 3.5mm 3.2mm;
-  border-top: 1mm solid var(--hz-unit);
-  background: #f3f0ea;
+  padding: 0 0 3mm;
+  border-bottom: .28mm solid var(--hz-line);
+  background: transparent;
 }
 
 .l2c-reading-feature__head {
   display: flex;
-  align-items: baseline;
-  gap: 3mm;
-  margin-bottom: 2mm;
+  flex-direction: row-reverse;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4mm;
+  margin-bottom: 3mm;
+  padding: 2.5mm 3mm;
+  background: var(--hz-unit);
 }
 
 .l2c-reading-feature__head > span {
   flex: none;
-  color: var(--hz-unit-dark);
-  font-size: 6.4pt;
+  color: #fff;
+  font-size: 7pt;
   font-weight: var(--hz-fw-black);
   letter-spacing: .08em;
   text-transform: uppercase;
@@ -4836,18 +4864,18 @@ body.hz-debug .hz-page::after {
 
 .l2c-reading-feature__head h2 {
   margin: 0;
-  color: var(--hz-ink);
-  font-family: var(--hz-font-reading);
-  font-size: 18pt;
-  font-style: italic;
-  font-weight: var(--hz-fw-bold);
+  color: #fff;
+  font-family: var(--hz-font-body);
+  font-size: 20pt;
+  font-style: normal;
+  font-weight: var(--hz-fw-black);
   line-height: 1;
   letter-spacing: -.025em;
 }
 
 .l2c-reading-feature__main {
   display: grid;
-  grid-template-columns: 62mm minmax(0, 1fr);
+  grid-template-columns: 72mm minmax(0, 1fr);
   gap: 5mm;
   align-items: start;
 }
@@ -4860,17 +4888,16 @@ body.hz-debug .hz-page::after {
 .l2c-family-photo img {
   display: block;
   width: 100%;
-  height: 60mm;
+  height: 88mm;
   object-fit: cover;
-  object-position: center;
+  object-position: 46% center;
 }
 
 .l2c-reading-copy {
-  columns: 2;
-  column-gap: 5mm;
+  columns: auto;
   font-family: var(--hz-font-reading);
-  font-size: 8pt;
-  line-height: 1.42;
+  font-size: 8.5pt;
+  line-height: 1.38;
 }
 
 .l2c-reading-copy p {
@@ -4907,23 +4934,26 @@ body.hz-debug .hz-page::after {
 
 .l2c-family-strip img {
   display: block;
-  width: 100%;
-  height: 17mm;
+  width: 27mm;
+  height: 27mm;
+  margin: 0 auto;
+  border-radius: 50%;
   object-fit: cover;
   object-position: center 30%;
 }
 
 .l2c-family-strip figcaption {
   display: grid;
-  gap: .25mm;
-  margin-top: .5mm;
-  font-size: 5.8pt;
-  line-height: 1.12;
+  gap: .8mm;
+  margin-top: 1.2mm;
+  font-size: 8pt;
+  line-height: 1.18;
 }
 
 .l2c-family-strip figcaption strong {
   color: var(--hz-unit-dark);
   font-weight: var(--hz-fw-black);
+  font-size: 9pt;
 }
 
 .l2c-family-strip figcaption > span { color: var(--hz-ink); }
@@ -4933,6 +4963,7 @@ body.hz-debug .hz-page::after {
   align-items: end;
   gap: .8mm;
   white-space: nowrap;
+  font-size: 7.75pt;
 }
 
 .l2c-family-job .hz-answer-line {
@@ -4942,7 +4973,7 @@ body.hz-debug .hz-page::after {
 
 .l2c-family-strip__branch {
   position: relative;
-  height: 18mm;
+  height: 29mm;
 }
 
 .l2c-family-strip__branch::before,
@@ -4993,7 +5024,7 @@ body.hz-debug .hz-page::after {
 .l2c-grammar-grid { gap: 4mm; }
 
 .l2c-grammar-grid > div {
-  font-size: 7.6pt;
+  font-size: 8pt;
   line-height: 1.25;
 }
 
@@ -5058,7 +5089,7 @@ body.hz-debug .hz-page::after {
 .l2c-owner-photos img {
   display: block;
   width: 100%;
-  height: 23mm;
+  height: 28mm;
   object-fit: contain;
   object-position: center;
   background: #fff;
@@ -5067,10 +5098,10 @@ body.hz-debug .hz-page::after {
 .l2c-owner-photos figcaption {
   display: grid;
   justify-items: center;
-  gap: .35mm;
-  margin-top: .6mm;
-  font-size: 6pt;
-  line-height: 1.15;
+  gap: .8mm;
+  margin-top: 1mm;
+  font-size: 8pt;
+  line-height: 1.2;
   text-align: center;
 }
 
@@ -5123,8 +5154,13 @@ body.hz-debug .hz-page::after {
   letter-spacing: .01em;
 }
 
-/* Exercise 7: plain dialogue models; no decorative side strips. */
-.l2c-pairwork { gap: 5mm; }
+/* Exercise 7: the ownership exchange carries the visual context. */
+.l2c-pairwork { grid-template-columns: 1.08fr .92fr; gap: 5mm; align-items: center; }
+.l2c-pair-photo { margin: 0; overflow: hidden; }
+.l2c-pair-photo img { display: block; width: 100%; height: 60mm; object-fit: cover; object-position: center; }
+.l2c-pair-models { display: grid; gap: 3mm; }
+.l2c-pair-models > div { padding: 2mm 2.5mm; border-left: .8mm solid var(--hz-unit); }
+.l2c-pair-models > div:last-child { background: var(--hz-unit-soft); }
 
 .l2c-pairwork .hz-dialogue-text {
   font-size: 8pt;
@@ -5177,10 +5213,10 @@ body.hz-debug .hz-page::after {
 }
 .l2d-swatch--white { filter: drop-shadow(0 0 .45px #92918e); }
 
-.l2d-counter { display: grid; grid-template-columns: 69mm minmax(0, 1fr); gap: 5mm; align-items: start; }
-.l2d-counter figure { margin: 0; }
-.l2d-counter img { display: block; width: 100%; height: 71mm; object-fit: cover; object-position: 47% center; }
-.l2d-dialogue { display: grid; grid-template-columns: 22mm minmax(0, 1fr); gap: 1.25mm 1.5mm; margin: 0; }
+.l2d-counter { display: grid; grid-template-columns: 78mm minmax(0, 1fr); gap: 0; align-items: center; }
+.l2d-counter figure { margin: 0; clip-path: polygon(0 0,100% 0,94% 100%,0 100%); }
+.l2d-counter img { display: block; width: 100%; height: 75mm; object-fit: cover; object-position: 47% center; }
+.l2d-dialogue { display: grid; grid-template-columns: 22mm minmax(0, 1fr); gap: 1.05mm 1.5mm; margin: 0 0 0 -5mm; padding: 3mm 2.5mm 3mm 6mm; border-top: 1mm solid var(--hz-unit); border-bottom: .25mm solid var(--hz-line); background: var(--hz-paper); }
 .l2d-dialogue dt, .l2d-dialogue dd { margin: 0; }
 .l2d-dialogue dt { font-weight: 720; }
 .l2d-notice { gap: 1.5mm 5mm; }
@@ -5197,9 +5233,9 @@ body.hz-debug .hz-page::after {
 .l2d-mini-models p + p { margin-top: .8mm; }
 
 .l2d-page--2 .hz-exercises { padding-top: 19mm !important; }
-.l2d-inventory { border-top: .5mm solid var(--hz-ink); border-bottom: .28mm solid var(--hz-line); padding: 2mm 0; }
-.l2d-inventory header { display: flex; justify-content: space-between; align-items: baseline; gap: 3mm; margin-bottom: 1mm; }
-.l2d-inventory h2 { margin: 0; font-size: 12pt; line-height: 1.1; letter-spacing: .01em; }
+.l2d-inventory { border-bottom: .28mm solid var(--hz-line); padding: 0 0 2mm; }
+.l2d-inventory header { display: flex; align-items: center; gap: 3mm; margin-bottom: 3mm; padding: 2.5mm 3mm; background: var(--hz-unit); color: #fff; }
+.l2d-inventory h2 { margin: 0; font-size: 17pt; font-weight: var(--hz-fw-black); line-height: 1.1; letter-spacing: -.01em; }
 .l2d-item-pairs { gap: 2mm 4mm; }
 .l2d-item-pairs figure { margin: 0; min-width: 0; }
 .l2d-item-pairs img { display: block; width: 100%; height: 43mm; object-fit: contain; background: #fff; }
@@ -5208,6 +5244,7 @@ body.hz-debug .hz-page::after {
 .l2d-transaction { gap: 7mm; align-items: start; }
 .l2d-task-model p { margin: 0 0 .9mm; }
 .l2d-task-model p:last-child { margin-bottom: 0; }
+.l2d-task-model { border-left: .8mm solid var(--hz-unit); padding: 2mm 3mm; }
 .l2d-office-record { margin: 0; }
 .l2d-office-record img { display: block; width: 100%; height: auto; }
 
@@ -6317,6 +6354,14 @@ body {
               <div class="hz-exercise__body l2a-vocab-stage">
                 <div class="l2a-bag-photo l2a-photo-slot" data-image-slot="2A-E01-BAG">
                   <img src="./Images/2A/Open bag.png" alt="Open bag with personal items">
+                  <span class="l2a-object-label" style="--x:16%;--y:26%">A</span>
+                  <span class="l2a-object-label" style="--x:24%;--y:45%">B</span>
+                  <span class="l2a-object-label" style="--x:14%;--y:64%">C</span>
+                  <span class="l2a-object-label" style="--x:48%;--y:48%">D</span>
+                  <span class="l2a-object-label" style="--x:60%;--y:38%">E</span>
+                  <span class="l2a-object-label" style="--x:65%;--y:13%">F</span>
+                  <span class="l2a-object-label" style="--x:39%;--y:73%">G</span>
+                  <span class="l2a-object-label" style="--x:68%;--y:80%">H</span>
                 </div>
 
                 <div class="l2a-word-bank">
@@ -6367,27 +6412,27 @@ body {
           <section class="hz-focus-box l2a-grammar hz-no-break" aria-label="Grammar: this, that, these, those">
             <header class="hz-focus-box__header">GRAMMAR: THIS / THAT / THESE / THOSE</header>
             <div class="hz-focus-box__body l2a-grammar-grid">
-              <!-- CROP CONTROL: edit the second percentage in object-position to move an illustration vertically. -->
+              <!-- CROP CONTROL: preserve the full person/object scene with object-fit: contain. -->
               <div class="l2a-grammar-item">
-                <div class="l2a-grammar-photo l2a-photo-slot" data-image-slot="2A-GRAMMAR-THIS"><img src="./Images/2A/This phone.png" alt="A phone close to a person" style="object-fit: cover; object-position: 50% 30%;"></div>
+                <div class="l2a-grammar-photo l2a-photo-slot" data-image-slot="2A-GRAMMAR-THIS"><img src="./Images/2A/This phone.png" alt="A phone close to a person" style="object-fit: contain; object-position: center;"></div>
                 <strong>THIS</strong>
                 <p>What is <b>this</b>?</p>
                 <p><b>This</b> is my phone.</p>
               </div>
               <div class="l2a-grammar-item">
-                <div class="l2a-grammar-photo l2a-photo-slot" data-image-slot="2A-GRAMMAR-THAT"><img src="./Images/2A/That notebook.png" alt="A notebook far from a person" style="object-fit: cover; object-position: 50% 64%;"></div>
+                <div class="l2a-grammar-photo l2a-photo-slot" data-image-slot="2A-GRAMMAR-THAT"><img src="./Images/2A/That notebook.png" alt="A notebook far from a person" style="object-fit: contain; object-position: center;"></div>
                 <strong>THAT</strong>
                 <p>What is <b>that</b>?</p>
                 <p><b>That</b> is my notebook.</p>
               </div>
               <div class="l2a-grammar-item">
-                <div class="l2a-grammar-photo l2a-photo-slot" data-image-slot="2A-GRAMMAR-THESE"><img src="./Images/2A/These keys.png" alt="Keys close to a person" style="object-fit: cover; object-position: 50% 58%;"></div>
+                <div class="l2a-grammar-photo l2a-photo-slot" data-image-slot="2A-GRAMMAR-THESE"><img src="./Images/2A/These keys.png" alt="Keys close to a person" style="object-fit: contain; object-position: center;"></div>
                 <strong>THESE</strong>
                 <p>What are <b>these</b>?</p>
                 <p><b>These</b> are my keys.</p>
               </div>
               <div class="l2a-grammar-item">
-                <div class="l2a-grammar-photo l2a-photo-slot" data-image-slot="2A-GRAMMAR-THOSE"><img src="./Images/2A/Those headphones.png" alt="Headphones far from a person" style="object-fit: cover; object-position: 50% 40%;"></div>
+                <div class="l2a-grammar-photo l2a-photo-slot" data-image-slot="2A-GRAMMAR-THOSE"><img src="./Images/2A/Those headphones.png" alt="Headphones far from a person" style="object-fit: contain; object-position: center;"></div>
                 <strong>THOSE</strong>
                 <p>What are <b>those</b>?</p>
                 <p><b>Those</b> are my headphones.</p>
@@ -6416,29 +6461,29 @@ body {
             <div class="hz-exercise__content">
               <p class="hz-exercise__instruction">Choose this, that, these or those.</p>
               <div class="hz-exercise__body l2a-choice-grid">
-                <!-- CROP CONTROL: edit the second percentage in object-position to move an illustration vertically. -->
+                <!-- CROP CONTROL: preserve the full person/object scene with object-fit: contain. -->
                 <div class="l2a-choice-item">
-                  <div class="l2a-choice-photo l2a-photo-slot" data-image-slot="2A-E04-01"><img src="./Images/2A/Close wallet.png" alt="A wallet close to a person" style="object-fit: cover; object-position: 50% 30%;"></div>
+                  <div class="l2a-choice-photo l2a-photo-slot" data-image-slot="2A-E04-01"><img src="./Images/2A/Close wallet.png" alt="A wallet close to a person" style="object-fit: contain; object-position: center;"></div>
                   <p><b>1</b> <span class="l2a-answer"></span> is my wallet.</p>
                 </div>
                 <div class="l2a-choice-item">
-                  <div class="l2a-choice-photo l2a-photo-slot" data-image-slot="2A-E04-02"><img src="./Images/2A/Far notebook.png" alt="A notebook far from a person" style="object-fit: cover; object-position: 50% 15%;"></div>
+                  <div class="l2a-choice-photo l2a-photo-slot" data-image-slot="2A-E04-02"><img src="./Images/2A/Far notebook.png" alt="A notebook far from a person" style="object-fit: contain; object-position: center;"></div>
                   <p><b>2</b> <span class="l2a-answer"></span> is my notebook.</p>
                 </div>
                 <div class="l2a-choice-item">
-                  <div class="l2a-choice-photo l2a-photo-slot" data-image-slot="2A-E04-03"><img src="./Images/2A/Close keys.png" alt="Keys close to a person" style="object-fit: cover; object-position: 50% 30%;"></div>
+                  <div class="l2a-choice-photo l2a-photo-slot" data-image-slot="2A-E04-03"><img src="./Images/2A/Close keys.png" alt="Keys close to a person" style="object-fit: contain; object-position: center;"></div>
                   <p><b>3</b> <span class="l2a-answer"></span> are my keys.</p>
                 </div>
                 <div class="l2a-choice-item">
-                  <div class="l2a-choice-photo l2a-photo-slot" data-image-slot="2A-E04-04"><img src="./Images/2A/Far headphones.png" alt="Headphones far from a person" style="object-fit: cover; object-position: 50% 40%;"></div>
+                  <div class="l2a-choice-photo l2a-photo-slot" data-image-slot="2A-E04-04"><img src="./Images/2A/Far headphones.png" alt="Headphones far from a person" style="object-fit: contain; object-position: center;"></div>
                   <p><b>4</b> <span class="l2a-answer"></span> are my headphones.</p>
                 </div>
                 <div class="l2a-choice-item">
-                  <div class="l2a-choice-photo l2a-photo-slot" data-image-slot="2A-E04-05"><img src="./Images/2A/Close bottle.png" alt="A bottle close to a person" style="object-fit: cover; object-position: 50% 20%;"></div>
+                  <div class="l2a-choice-photo l2a-photo-slot" data-image-slot="2A-E04-05"><img src="./Images/2A/Close bottle.png" alt="A bottle close to a person" style="object-fit: contain; object-position: center;"></div>
                   <p><b>5</b> <span class="l2a-answer"></span> is my bottle.</p>
                 </div>
                 <div class="l2a-choice-item">
-                  <div class="l2a-choice-photo l2a-photo-slot" data-image-slot="2A-E04-06"><img src="./Images/2A/Far pens.png" alt="Pens far from a person" style="object-fit: cover; object-position: 50% 25%;"></div>
+                  <div class="l2a-choice-photo l2a-photo-slot" data-image-slot="2A-E04-06"><img src="./Images/2A/Far pens.png" alt="Pens far from a person" style="object-fit: contain; object-position: center;"></div>
                   <p><b>6</b> <span class="l2a-answer"></span> are my pens.</p>
                 </div>
               </div>
@@ -6553,18 +6598,15 @@ body {
               <div class="l2b-show-head">
                 <span class="l2b-show-brand"><b>HORIZONS</b><em>ON AIR</em></span>
                 <strong class="l2b-show-episode">BUS OR CAR?</strong>
-                <span class="hz-audio-badge">♪ 2.3</span>
               </div>
-              <p class="hz-exercise__instruction">Listen. Answer.</p>
-              <figure data-image-slot="2B-CITY-WIDE" style="margin:1mm 0 1.5mm;height:25mm;overflow:hidden">
-                <div class="hz-photo-placeholder" style="min-height:25mm"><span class="hz-photo-placeholder__meta">Manta city · wide city photo · no people</span></div>
-              </figure>
-              <div class="hz-exercise__body" style="display:grid;grid-template-columns:1fr 1fr;gap:1.2mm 7mm;padding:1mm 0 .2mm;font-size:7.55pt;line-height:1.32">
-                <div style="display:grid;grid-template-columns:5mm 1fr;gap:1mm;min-height:9mm"><b style="color:var(--hz-unit-dark)">1</b><div>What is Moovit?</div></div>
-                <div style="display:grid;grid-template-columns:5mm 1fr;gap:1mm;min-height:9mm"><b style="color:var(--hz-unit-dark)">4</b><div>What is the <strong class="hz-text-unit">same</strong> for Julia and Ana?</div></div>
-                <div style="display:grid;grid-template-columns:5mm 1fr;gap:1mm;min-height:9mm"><b style="color:var(--hz-unit-dark)">2</b><div>What is inDrive?</div></div>
-                <div style="display:grid;grid-template-columns:5mm 1fr;gap:1mm;min-height:9mm"><b style="color:var(--hz-unit-dark)">5</b><div>Who is <strong class="hz-text-unit">different</strong>?</div></div>
-                <div style="display:grid;grid-template-columns:5mm 1fr;gap:1mm;min-height:9mm"><b style="color:var(--hz-unit-dark)">3</b><div>What city?</div></div>
+              <p class="hz-exercise__instruction"><span class="hz-audio-badge">♪ 2.3</span>Listen. Answer.</p>
+              <figure class="l2b-city-photo" data-image-slot="2B-CITY-WIDE"><img src="./Images/2B/2B-CITY-WIDE.png" alt="Buses and cars in Manta"></figure>
+              <div class="hz-exercise__body l2b-episode-questions">
+                <div><b>1</b><div>What is Moovit?</div></div>
+                <div><b>4</b><div>What is the <strong class="hz-text-unit">same</strong> for Julia and Ana?</div></div>
+                <div><b>2</b><div>What is inDrive?</div></div>
+                <div><b>5</b><div>Who is <strong class="hz-text-unit">different</strong>?</div></div>
+                <div><b>3</b><div>What city?</div></div>
               </div>
               <div class="l2b-show-new"><span class="hz-new-words">NEW WORDS</span></div>
             </div>
@@ -6616,10 +6658,10 @@ body {
                   </div>
                 </article>
 
-                <div style="display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:2.6mm;align-items:start">
+                <div class="l2b-interviews">
                   <div class="l2b-indrive-copy">
                     <figure class="l2b-interview-photo" data-image-slot="2B-AIR-01-JULIA">
-                      <div class="l2b-photo-placeholder"><span>PHOTO A</span></div>
+                      <img src="./Images/2B/2B-AIR-01-JULIA.png" alt="Julia speaks about transport in Manta">
                       <figcaption><strong>Julia</strong><span>Moovit</span></figcaption>
                     </figure>
                     <div class="l2b-complete-lines">
@@ -6631,7 +6673,7 @@ body {
 
                   <div class="l2b-indrive-copy">
                     <figure class="l2b-interview-photo" data-image-slot="2B-AIR-03-ANA">
-                      <div class="l2b-photo-placeholder"><span>PHOTO C</span></div>
+                      <img src="./Images/2B/2B-AIR-03-ANA.png" alt="Ana speaks about transport in Manta">
                       <figcaption><strong>Ana</strong><span>Moovit</span></figcaption>
                     </figure>
                     <div class="l2b-complete-lines">
@@ -6694,7 +6736,7 @@ body {
                       <div class="l2b-place"><i class="l2b-place-dot l2b-place-dot--blue"></i><span>Central</span></div>
                       <div class="l2b-place"><i class="l2b-place-dot l2b-place-dot--lime"></i><span>Brighton</span></div>
                       <div class="l2b-price"><span>$</span><b>Offer your price</b></div>
-                      <div style="display:flex;justify-content:space-between;align-items:center;margin-top:1mm;padding:1.1mm 1.5mm;border-radius:1.2mm;background:#fff;color:#222;font-size:5.4pt"><span>plate</span><b style="letter-spacing:.05em">MAB-3997</b></div>
+                      <div class="l2b-plate"><span>plate</span><b>MAB-3997</b></div>
                       <div class="l2b-find-driver">Find a driver</div>
                     </div>
                   </div>
@@ -6702,7 +6744,7 @@ body {
 
                 <div class="l2b-indrive-copy">
                   <figure class="l2b-interview-photo" data-image-slot="2B-AIR-04-DIEGO">
-                    <div class="l2b-photo-placeholder"><span>PHOTO D</span></div>
+                      <img src="./Images/2B/2B-AIR-04-DIEGO.png" alt="Diego speaks about transport in Manta">
                     <figcaption><strong>Diego</strong><span>inDrive</span></figcaption>
                   </figure>
                   <div class="l2b-complete-lines">
@@ -6751,16 +6793,16 @@ body {
               <div class="hz-exercise__body l2b-pair-stage" style="grid-template-columns:1fr 1fr">
                 <div class="l2b-pair-card" style="border-top:1.2mm solid var(--hz-unit);background:var(--hz-unit-soft)">
                   <strong>YOUR INFORMATION</strong>
-                  <span style="display:grid;grid-template-columns:18mm 1fr;gap:1.5mm;align-items:end;font-size:7pt"><span>App:</span><span style="min-height:4mm;border-bottom:.3mm solid var(--hz-line-strong)"></span></span>
-                  <span style="display:grid;grid-template-columns:18mm 1fr;gap:1.5mm;align-items:end;font-size:7pt"><span>Time:</span><span style="min-height:4mm;border-bottom:.3mm solid var(--hz-line-strong)"></span></span>
-                  <span style="display:grid;grid-template-columns:18mm 1fr;gap:1.5mm;align-items:end;font-size:7pt"><span>Number / Plate:</span><span style="min-height:4mm;border-bottom:.3mm solid var(--hz-line-strong)"></span></span>
+                  <span class="l2b-pair-field"><span>App:</span><span></span></span>
+                  <span class="l2b-pair-field"><span>Time:</span><span></span></span>
+                  <span class="l2b-pair-field"><span>Number / Plate:</span><span></span></span>
                 </div>
 
                 <div class="l2b-pair-card" style="border-top:1.2mm solid var(--hz-unit);background:#fff">
                   <strong>YOUR CLASSMATE</strong>
-                  <span style="display:grid;grid-template-columns:18mm 1fr;gap:1.5mm;align-items:end;font-size:7pt"><span>App:</span><span style="min-height:4mm;border-bottom:.3mm solid var(--hz-line-strong)"></span></span>
-                  <span style="display:grid;grid-template-columns:18mm 1fr;gap:1.5mm;align-items:end;font-size:7pt"><span>Time:</span><span style="min-height:4mm;border-bottom:.3mm solid var(--hz-line-strong)"></span></span>
-                  <span style="display:grid;grid-template-columns:18mm 1fr;gap:1.5mm;align-items:end;font-size:7pt"><span>Number / Plate:</span><span style="min-height:4mm;border-bottom:.3mm solid var(--hz-line-strong)"></span></span>
+                  <span class="l2b-pair-field"><span>App:</span><span></span></span>
+                  <span class="l2b-pair-field"><span>Time:</span><span></span></span>
+                  <span class="l2b-pair-field"><span>Number / Plate:</span><span></span></span>
                 </div>
               </div>
             </div>
@@ -7017,13 +7059,18 @@ body {
             <div class="hz-exercise__content">
               <p class="hz-exercise__instruction">Work in pairs. Use real items. Ask and answer.</p>
               <div class="hz-exercise__body hz-content-grid hz-content-grid--2 l2c-pairwork">
-                <div class="hz-dialogue-text">
-                  <p><strong>A:</strong> Is this Sara's phone?</p>
-                  <p><strong>B:</strong> Yes. It is Sara's phone.</p>
-                </div>
-                <div class="hz-dialogue-text">
-                  <p><strong>A:</strong> Are these the students' keys?</p>
-                  <p><strong>B:</strong> No. They are Lucas's keys.</p>
+                <figure class="l2c-pair-photo" data-image-slot="HZN_A1_U02_LC_E07_IMG_01">
+                  <img src="./Images/2C/HZN_A1_U02_LC_E07_IMG_01.png" alt="Two friends in a café identify a phone and a set of keys">
+                </figure>
+                <div class="l2c-pair-models">
+                  <div class="hz-dialogue-text">
+                    <p><strong>A:</strong> Is this Sara's phone?</p>
+                    <p><strong>B:</strong> Yes. It is Sara's phone.</p>
+                  </div>
+                  <div class="hz-dialogue-text">
+                    <p><strong>A:</strong> Are these the students' keys?</p>
+                    <p><strong>B:</strong> No. They are Lucas's keys.</p>
+                  </div>
                 </div>
               </div>
             </div>
