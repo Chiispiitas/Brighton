@@ -53,7 +53,6 @@
 .l2d-inventory { border-top: .5mm solid var(--hz-ink); border-bottom: .28mm solid var(--hz-line); padding: 2mm 0; }
 .l2d-inventory header { display: flex; justify-content: space-between; align-items: baseline; gap: 3mm; margin-bottom: 1mm; }
 .l2d-inventory h2 { margin: 0; font-size: 12pt; line-height: 1.1; letter-spacing: .01em; }
-.l2d-inventory header > span { color: var(--hz-muted); font-size: 7.5pt; }
 .l2d-item-pairs { gap: 2mm 4mm; }
 .l2d-item-pairs figure { margin: 0; min-width: 0; }
 .l2d-item-pairs img { display: block; width: 100%; height: 43mm; object-fit: contain; background: #fff; }
