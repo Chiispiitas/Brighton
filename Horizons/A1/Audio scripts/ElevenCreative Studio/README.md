@@ -2,9 +2,21 @@ ELEVENCREATIVE STUDIO — HORIZONS A1 AUDIO WORKFLOW
 
 Import only the `.txt` track files in this folder.
 
-The track files contain only text that should be spoken plus Eleven v3 control markup. They intentionally contain no speaker names, track titles, production notes, or other visible metadata because ElevenCreative Studio may narrate visible text.
+The track files contain only text that should be spoken plus Eleven v3 control markup. They intentionally contain no speaker names, unspoken titles, production notes, or other visible metadata because ElevenCreative Studio may narrate visible text. Each current track file begins with an intentional spoken `Track N.N.` paragraph; assign that paragraph to Jessica, the default narrator.
 
-For multi-speaker tracks, open `VOICE MAP.md` separately after import and assign voices by paragraph number. Do not import `VOICE MAP.md`.
+For multi-speaker tracks, open `VOICE MAP.md` separately after import and assign voices by paragraph number, counting the leading spoken track-label paragraph. Do not import `VOICE MAP.md`.
+
+APPROVED A1 CAST AND DEFAULT NARRATOR
+
+Use the voices verified in HORIZONS ON AIR — EPISODE: BUS OR CAR?, Track 2.3:
+- all A1 narration and the episode's HOST/Lucy: Jessica - Playful, Bright, Warm;
+- JULIA: Claudia - Calm Latin;
+- DIEGO: Luis Vega - Engaging, Neutral and Clear;
+- ANA: Fernanda Sanmiguel - Neutral and Serious.
+
+Jessica is the default narrator for every A1 track, including spoken track numbers, instructions, vocabulary and pronunciation models. Reuse the approved cast for compatible new dialogue roles and keep returning characters' voices consistent. Use the exact voice IDs in `VOICE MAP.md`; do not silently substitute voices.
+
+The current import files include the spoken track label as paragraph 1. The voice map counts that paragraph, so character assignments begin after it. For an existing Studio project with the label omitted or with split/merged paragraphs, match the voice to its speaker text.
 
 ELEVEN V3 STANDARD
 
@@ -48,7 +60,7 @@ Tagging rules
 - Do not invent dialogue or alter answer-bearing information just to create a more expressive performance.
 - Keep visual actions and production instructions out of narration text. Do not use non-auditory directions such as `[standing]`, `[grinning]` or `[pacing]`.
 - Music, ambience and environmental SFX belong on separate Studio timeline tracks rather than inside narration text.
-- If Studio reads a tag aloud, regenerate first. If it persists, test a nearby natural-language tag or another voice; v3 behavior is voice- and context-dependent.
+- If Studio reads a tag aloud, regenerate first. If it persists, test a nearby natural-language tag or delivery setting; v3 behavior is voice- and context-dependent. Keep the approved narrator and established character voice IDs.
 
 A1 CONTROLLED-LISTENING POLICY
 

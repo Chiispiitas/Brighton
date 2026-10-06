@@ -257,3 +257,15 @@ For short questions, discovery prompts, compact statements and similar text-only
 - do not create extra empty space between short questions when no writing area or functional geometry is required.
 
 A larger row height is appropriate only when the exercise genuinely needs physical response space, media alignment, a functional artifact, or another task-specific geometric reason. Otherwise, whitespace should live around the exercise or composition rather than between individual lines of learner-facing text.
+
+## 15. Audio identity
+
+Voice continuity is part of the book's identity. Keep a stable narrator across a book's tracks and retain established dialogue voices for returning characters. Book-specific casting and exact provider voice IDs belong in that book's audio voice map.
+
+For the **current Horizons A1 book**, the approved voice reference is **HORIZONS ON AIR — EPISODE: BUS OR CAR?**, Track 2.3. Its host, Lucy, uses **Jessica - Playful, Bright, Warm**. Use Jessica as the default narrator for **all A1 tracks**, including spoken track numbers, instructions, vocabulary lists, pronunciation models and other narration.
+
+Retain the episode's supporting cast: Julia uses Claudia - Calm Latin; Diego uses Luis Vega - Engaging, Neutral and Clear; Ana uses Fernanda Sanmiguel - Neutral and Serious. Reuse this approved cast for compatible new dialogue roles and keep returning characters consistent.
+
+The exact ElevenLabs voice IDs and import paragraph assignments are maintained in [the A1 voice map](../../A1/Audio%20scripts/ElevenCreative%20Studio/VOICE%20MAP.md). Select voices by ID rather than relying only on display names. Do not substitute the narrator or an established character's voice without an explicit author correction.
+
+Keep the same voice identity while adjusting delivery to the task: clear, natural beginner pacing for controlled listening; more expressive delivery for HORIZONS ON AIR. The A1 model and generation workflow are governed by [the audio workflow](../../A1/Audio%20scripts/ElevenCreative%20Studio/README.md) and [the asset policy](asset-policy.md).

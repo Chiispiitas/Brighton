@@ -175,9 +175,9 @@ Icons remain secondary to learner content and should inherit Horizons colors whe
 
 ## 9. Audio
 
-Planned production defaults:
+Production defaults:
 
-- American English voices;
+- American English narration; established dialogue voices follow the approved book cast;
 - clear natural A1-appropriate delivery;
 - multiple voices where dialogue requires distinct speakers;
 - permanent internal audio ID plus printed track number;
@@ -193,6 +193,14 @@ For each audio asset retain:
 - relevant generation settings;
 - generation date;
 - final filename.
+
+### Current Horizons A1 voice reference
+
+Use the cast from **HORIZONS ON AIR — EPISODE: BUS OR CAR?**, Track 2.3, as the current A1 voice reference. **Jessica - Playful, Bright, Warm**, the episode's host voice, is the default narrator for all A1 tracks, including spoken track numbers and controlled-listening narration.
+
+Retain Claudia for Julia, Luis Vega for Diego and Fernanda Sanmiguel for Ana. The approved supporting cast keeps its established voice identities and accents; the American English narration default does not require replacing those voices.
+
+Exact voice IDs and speaker assignments live in [the A1 voice map](../../A1/Audio%20scripts/ElevenCreative%20Studio/VOICE%20MAP.md). Use those IDs for generation and preserve them for returning characters. If an approved voice is unavailable, resolve that voice's availability rather than silently selecting a replacement. Follow the A1 audio workflow for Eleven v3, clarity, pacing and generation settings.
 
 ## 10. Naming
 
