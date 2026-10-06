@@ -75,6 +75,27 @@ lesson use the same template:
   needed scene, rather than filling a gap. Compare the finished two-page spread
   with Unit 1 at the same physical scale before publishing.
 
+## Whole-book editorial redesign preview
+
+The 2026-10-06 author request authorizes a reversible visual overhaul of all
+current A1 lessons, 1A through 2D, informed by the supplied Personal Best series.
+The preview is isolated on `codex/horizons-editorial-redesign`. The checkpoint
+`horizons-before-editorial-redesign-2026-10-06` preserves the preceding book.
+Do not treat a preview branch as permission to replace `main`.
+
+This revision keeps the complete teaching content and audio resources while
+recomposing every spread. It adds a bounded Rivera reading, a clean photographic
+opening cutout, profile and travel features, and refined functional paper
+artifacts. All focus boxes inherit the canonical shared title tab and shell.
+The reusable reading surface lives in Base; feature geometry stays local.
+
+Compare the whole book at print scale. Check source-text and exercise parity,
+response affordances, image loading, phone-screen clipping, grammar emphasis,
+option typography and every rendered PDF spread before publication. The GitHub
+book publisher runs on `main` only; a manually rendered preview branch cannot
+publish its compiled artifacts to `main`. PDF photo downsampling uses 300 dpi
+and JPEG quality 94 to retain detail in printed crops.
+
 ## CSS loading boundary
 
 `Base/shell/a4-shell.css` imports only shared Base components. It must never import a level- or lesson-specific stylesheet.

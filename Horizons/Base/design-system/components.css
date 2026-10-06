@@ -364,17 +364,30 @@
 }
 
 .hz-focus-box__header {
+  display: table;
+  margin-top: -3.2mm;
+  margin-left: -4mm;
+  padding: 1.2mm 2.5mm;
   margin-bottom: 2mm;
-  color: var(--hz-unit-dark);
+  background: var(--hz-unit-dark);
+  color: #fff;
   font-size: var(--hz-fs-xs);
   font-weight: var(--hz-fw-black);
   letter-spacing: .065em;
   text-transform: uppercase;
+  line-height: 1.2;
 }
 
 .hz-focus-box__body > :last-child { margin-bottom: 0; }
 .hz-focus-box__body b,
 .hz-focus-box__body strong { color: var(--hz-unit-dark); }
+
+/* Bounded editorial readings may carry a paper surface while exercise flow
+   remains open. This is used by profile features and longer contextual texts. */
+.hz-reading-panel {
+  border: .3mm solid var(--hz-panel-line);
+  background: var(--hz-panel-paper);
+}
 
 .hz-go-to {
   display: block;

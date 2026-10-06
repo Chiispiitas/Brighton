@@ -138,6 +138,11 @@ The `aria-label` should use the same semantic category as the visible header.
 
 **The shared focus-box shell is visually canonical.** Lesson-local CSS may adjust only the box's outer placement/width when composition requires it. Do not locally override its background, top/bottom borders, shell padding, or header typography.
 
+The shared header is a compact dark-crimson tab with white text, aligned to the
+shell's top-left edge. Its label remains readable at print size. The body uses
+the pale-pink focus surface, with dark-crimson bold. Legacy lesson compositions
+must use this shared shell rather than maintain visually similar local copies.
+
 Inside `.hz-focus-box__body`, use ordinary learner text plus existing shared grids/helpers whenever possible. Do **not** invent one-off separator rules, mini-label systems, pills, colored strips, card surfaces, or special typography solely for one grammar/vocabulary point. If a new internal treatment is genuinely reusable, define it in `Horizons/Base/design-system/` first; otherwise simplify the body to the established focus-box visual language.
 
 Bold (`<b>` or `<strong>`) inside the focus-box body inherits the shared unit-dark accent treatment. It must not render as plain black. For multiple-choice or circle-the-answer content, wrap the options in `<em class="hz-answer-option">` and use normal lowercase wording, retaining only grammatically necessary capitals. The shared class prevents options from inheriting a bold instruction weight. Descriptive gray scene/location captions are omitted from printed lesson imagery; alt text retains the image description.
@@ -209,3 +214,18 @@ Do not add book- or lesson-specific imports to `Base/shell/a4-shell.css`.
 Reusable series-wide components belong in `Horizons/Base/design-system/`. Lesson-specific composition, corrections, asset filenames and crop tuning belong in that book's `Lessons/` folder; current A1 work lives in `../../A1/Lessons/`.
 
 Before creating a new shared component, search the existing Base for an equivalent. Prefer one canonical component over near-duplicates.
+
+## 14. Bounded editorial reading
+
+```html
+<article class="hz-reading-panel hz-no-break" aria-label="Contextual reading">
+  <!-- Lesson-local article heading, photography, reading and related task. -->
+</article>
+```
+
+Use this for a coherent reading feature, such as profiles or a family article,
+when a paper surface and thin outline clarify its extent. Shared tokens
+`--hz-panel-paper` and `--hz-panel-line` supply the warm neutral surface and
+outline. The feature's heading and internal composition remain book-local.
+This is not a general-purpose exercise card. Preserve open numbered exercise
+flow and do not reduce reading type or writing space to fit a panel.

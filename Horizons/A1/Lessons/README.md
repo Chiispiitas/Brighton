@@ -25,9 +25,9 @@ The compiler is:
 
 `../../Base/build/build-students-book.mjs`
 
-GitHub Actions runs it automatically when lesson or shared production sources change. The generated `Student's Book.html` is committed back to `main` when its contents change.
+GitHub Actions runs it automatically when lesson or shared production sources change on `main`. Preview branches remain separate and do not publish to `main`.
 
-The Student's Book download button renders each compiled `.hz-page` independently and builds one A4 PDF page per Horizons page. Do not replace this with browser Print/Save as PDF or long-page screenshot slicing.
+The Student's Book download button links to the validated sibling PDF. The shared build renders one A4 PDF page per `.hz-page`; the browser does not generate a PDF. Do not introduce client-side screenshot slicing or PDF generation.
 
 ## Shared Base
 

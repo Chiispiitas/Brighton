@@ -2,6 +2,8 @@ name: Build Horizons A1 Student Book
 
 on:
   push:
+    branches:
+      - main
     paths:
       - "Horizons/A1/Lessons/**"
       - "Horizons/A1/Audio scripts/**"
@@ -17,7 +19,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: horizons-a1-student-book
+  group: horizons-a1-student-book-${{ github.ref }}
   cancel-in-progress: true
 
 jobs:
@@ -57,6 +59,7 @@ jobs:
 
   finalize:
     name: Optimize, validate and commit
+    if: github.ref == 'refs/heads/main'
     needs: render-windows
     runs-on: ubuntu-latest
     steps:
@@ -93,13 +96,13 @@ jobs:
             -dSubsetFonts=true \
             -dDownsampleColorImages=true \
             -dColorImageDownsampleType=/Bicubic \
-            -dColorImageResolution=200 \
+            -dColorImageResolution=300 \
             -dAutoFilterColorImages=false \
             -dColorImageFilter=/DCTEncode \
-            -dJPEGQ=90 \
+            -dJPEGQ=94 \
             -dDownsampleGrayImages=true \
             -dGrayImageDownsampleType=/Bicubic \
-            -dGrayImageResolution=200 \
+            -dGrayImageResolution=300 \
             -dAutoFilterGrayImages=false \
             -dGrayImageFilter=/DCTEncode \
             -dDownsampleMonoImages=true \

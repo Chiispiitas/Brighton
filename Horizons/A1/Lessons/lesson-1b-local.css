@@ -1,3 +1,543 @@
+
+    /*
+      LESSON 1B CANONICAL PROTOTYPE
+      -----------------------------
+      Frozen Student's Book wording, exercise numbering, track references,
+      questions and answer mechanics are preserved. Only the composition is
+      adapted to the current canonical Horizons Stage 3 style.
+      Development imagery remains crop-aware placeholders.
+    */
+
+    .l1b-page .hz-page__content { overflow: hidden; }
+    .l1b-page .hz-page-stack { gap: 2.25mm; }
+    .l1b-page .hz-lesson-header { padding-bottom: 3.1mm; }
+    .l1b-page .hz-exercises { gap: .25mm; }
+    .l1b-page .hz-exercise { padding: 1.35mm 0 1.95mm; }
+    .l1b-page .hz-exercise__body { margin-top: 1.3mm; }
+    .l1b-page .hz-exercise__instruction { font-size: 8.9pt; }
+    .l1b-target { color: var(--hz-unit-dark); font-weight: var(--hz-fw-black); }
+
+    .l1b-track {
+      display: inline-flex;
+      align-items: center;
+      gap: .7mm;
+      margin-right: 1.35mm;
+      padding: .6mm 1.15mm;
+      background: var(--hz-audio);
+      color: #fff;
+      font-size: 6.4pt;
+      font-weight: var(--hz-fw-black);
+      line-height: 1;
+      vertical-align: .35mm;
+    }
+
+    /* ------------------------------------------------------------------
+       PAGE 7 — vocabulary, a/an, chat repair, occupation mime
+       ------------------------------------------------------------------ */
+
+    .l1b-occupation-stage {
+      position: relative;
+      padding: 1mm 0 .4mm;
+      isolation: isolate;
+    }
+
+    .l1b-occupation-stage::before {
+      content: "WORK";
+      position: absolute;
+      z-index: -1;
+      right: -3mm;
+      top: -4mm;
+      color: var(--hz-unit-soft);
+      font-size: 42pt;
+      font-weight: var(--hz-fw-black);
+      line-height: 1;
+      letter-spacing: -.07em;
+    }
+
+    .l1b-occupation-head {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 1.5mm;
+    }
+
+    .l1b-occupation-grid {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 2.4mm 2.2mm;
+      align-items: start;
+    }
+
+    .l1b-occupation {
+      min-width: 0;
+      text-align: center;
+    }
+
+    .l1b-occupation__photo {
+      width: 24mm;
+      height: 24mm;
+      margin: 0 auto 1.2mm;
+      overflow: hidden;
+      border: .45mm solid var(--hz-unit);
+      border-radius: 50%;
+      background: var(--hz-wash);
+    }
+
+    .l1b-occupation__photo .hz-photo-placeholder {
+      min-height: 24mm;
+      font-size: 4.8pt;
+      letter-spacing: .07em;
+    }
+
+    .l1b-occupation__photo .hz-photo-placeholder::before { inset: 2.3mm; }
+    .l1b-occupation__photo .hz-photo-placeholder::after { width: 18mm; }
+    .l1b-occupation__photo .hz-photo-placeholder__meta { padding: .7mm 1mm; }
+
+    .l1b-occupation figcaption {
+      font-size: 6.25pt;
+      font-weight: var(--hz-fw-black);
+      line-height: 1.05;
+    }
+
+    /* A / AN is a single editorial grammar field rather than a generic card. */
+    .l1b-aan {
+      position: relative;
+      overflow: hidden;
+      margin: .6mm 0 .4mm calc(var(--hz-exercise-marker-size) + 3mm);
+
+
+
+
+      isolation: isolate;
+    }
+
+    .l1b-aan::before {
+      position: absolute;
+      z-index: -1;
+      color: rgb(255 255 255 / 68%);
+      font-size: 56pt;
+      font-weight: var(--hz-fw-black);
+      line-height: .8;
+    }
+
+    .l1b-aan::before {
+      content: "A";
+      left: -1mm;
+      bottom: -7mm;
+    }
+
+    .l1b-aan__lead {
+      margin: 0 0 2.2mm;
+      font-size: 7.75pt;
+      font-weight: var(--hz-fw-bold);
+      line-height: 1.3;
+    }
+
+    .l1b-aan__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 8mm;
+      font-size: 7.45pt;
+      line-height: 1.32;
+    }
+
+    .l1b-aan__grid > div {
+      min-width: 0;
+      padding-top: 1.6mm;
+      border-top: .35mm solid rgb(32 33 36 / 22%);
+    }
+
+    .l1b-aan__grid strong {
+      display: block;
+      margin-bottom: .7mm;
+      color: var(--hz-unit-dark);
+    }
+
+    .l1b-aan__grid p { margin: 0; font-style: italic; }
+
+    .l1b-go-to {
+      margin: .3mm 0 .2mm calc(var(--hz-exercise-marker-size) + 3mm);
+    }
+
+    /* Exercise 2 is explicitly simulated real-world UI, so rounded chat
+       surfaces are appropriate under the canonical rules. */
+    .l1b-chats {
+      position: relative;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4.5mm;
+      align-items: start;
+    }
+
+    .l1b-chats::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      left: 50%;
+      top: 4mm;
+      width: 32mm;
+      height: 32mm;
+      border: 5mm solid var(--hz-unit-soft);
+      border-radius: 50%;
+      transform: translateX(-50%);
+    }
+
+    .l1b-chat {
+      overflow: hidden;
+      border: .28mm solid var(--hz-line);
+      border-radius: 4mm;
+      background: #f4f1df;
+      box-shadow: var(--hz-shadow-ui);
+    }
+
+    .l1b-chat__top {
+      display: flex;
+      align-items: center;
+      gap: 2mm;
+      min-height: 8.5mm;
+      padding: 1.8mm 3mm;
+      background: var(--hz-unit);
+      color: #fff;
+      font-size: 7.6pt;
+      font-weight: var(--hz-fw-black);
+    }
+
+    .l1b-chat__avatar {
+      display: grid;
+      place-items: center;
+      width: 5mm;
+      height: 5mm;
+      border-radius: 50%;
+      background: rgb(255 255 255 / 86%);
+      color: var(--hz-unit-dark);
+      font-size: 4.8pt;
+    }
+
+    .l1b-chat__messages {
+      display: flex;
+      flex-direction: column;
+      gap: 1.35mm;
+      min-height: 37mm;
+      padding: 2.4mm 3mm 2.2mm;
+      background:
+        linear-gradient(rgb(255 255 255 / 46%), rgb(255 255 255 / 46%)),
+        repeating-linear-gradient(45deg, transparent 0 8mm, rgb(22 127 130 / 5%) 8mm 9mm);
+    }
+
+    .l1b-bubble {
+      width: fit-content;
+      max-width: 91%;
+      margin: 0;
+      padding: 1.35mm 2mm;
+      border-radius: 1.8mm;
+      background: #fff;
+      font-size: 7.2pt;
+      line-height: 1.25;
+    }
+
+    .l1b-bubble--self {
+      align-self: flex-end;
+      background: var(--hz-unit-soft);
+    }
+
+    .l1b-chat__input {
+      margin: 0 2.5mm 2.2mm;
+      padding: 1.2mm 2mm;
+      border: .25mm solid var(--hz-line);
+      border-radius: 3mm;
+      background: #fff;
+      color: var(--hz-muted);
+      font-size: 6.7pt;
+    }
+
+    .l1b-clue-strip {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 3mm;
+      align-items: center;
+      padding: .8mm 0 0;
+    }
+
+    .l1b-clue {
+      height: 22mm;
+      overflow: hidden;
+      border-radius: 50%;
+      background: var(--hz-wash);
+    }
+
+    .l1b-clue .hz-photo-placeholder {
+      min-height: 22mm;
+      font-size: 4.5pt;
+      letter-spacing: .05em;
+    }
+
+    .l1b-clue .hz-photo-placeholder::before { inset: 2mm; }
+    .l1b-clue .hz-photo-placeholder::after { width: 16mm; }
+    .l1b-clue .hz-photo-placeholder__meta { padding: .5mm .8mm; }
+
+    /* ------------------------------------------------------------------
+       PAGE 8 — contractions, 4.1/4.2, pronunciation, matching
+       ------------------------------------------------------------------ */
+
+    .l1b-continuation {
+      position: absolute;
+      top: -1mm;
+      right: -14mm;
+      z-index: 4;
+      display: grid;
+      place-items: end start;
+      width: 34mm;
+      height: 25mm;
+      padding: 0 0 3.2mm 5mm;
+      background: var(--hz-unit);
+      color: #fff;
+      clip-path: polygon(28% 0, 100% 0, 100% 100%, 0 100%);
+      font-size: 19pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: -.05em;
+    }
+
+    .l1b-contractions {
+      position: relative;
+      overflow: hidden;
+
+
+
+
+      isolation: isolate;
+    }
+
+    .l1b-contractions__lead {
+      margin: 0 0 2mm;
+      font-size: 7.7pt;
+      font-weight: var(--hz-fw-bold);
+    }
+
+    .l1b-contractions__rows {
+      display: grid;
+      gap: .7mm;
+      max-width: 126mm;
+      font-size: 7.55pt;
+      line-height: 1.25;
+    }
+
+    .l1b-contractions__row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 6mm;
+      align-items: baseline;
+    }
+
+    .l1b-contractions__row span:first-child { font-style: italic; }
+    .l1b-contractions__row span:last-child { font-style: italic; }
+    .l1b-contractions__row strong { font-weight: var(--hz-fw-black); }
+
+    .l1b-profile-stage {
+      position: relative;
+      padding-top: .6mm;
+    }
+
+    .l1b-profile-head {
+      display: flex;
+      justify-content: flex-end;
+      margin-bottom: 1.4mm;
+    }
+
+    .l1b-profiles {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 3.5mm;
+      align-items: start;
+
+  padding: 3mm;
+}
+
+    .l1b-profile {
+      position: relative;
+      min-width: 0;
+      padding-top: 30mm;
+      border-top: 0;
+
+  background: transparent;
+}
+
+    .l1b-profile__photo {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 29mm;
+      overflow: hidden;
+      background: var(--hz-wash);
+      clip-path: none;
+
+  border-radius: 0 0 6mm 0;
+}
+
+    .l1b-profile__photo .hz-photo-placeholder {
+      min-height: 29mm;
+      font-size: 5pt;
+      letter-spacing: .07em;
+    }
+
+    .l1b-profile__name {
+      position: relative;
+      z-index: 2;
+      display: inline-block;
+      margin: -3mm 0 1mm 2mm;
+      padding: 1mm 2mm;
+      background: var(--hz-panel-paper);
+      color: var(--hz-unit-dark);
+      font-size: 14pt;
+      font-weight: var(--hz-fw-black);
+      line-height: .95;
+      letter-spacing: -.045em;
+    }
+
+    .l1b-profile__copy {
+      min-height: 50mm;
+      padding: 1mm 2mm 2mm;
+      border-left: 0;
+      font-size: 8pt;
+      line-height: 1.36;
+    }
+
+    .l1b-profile__copy p { margin: 0 0 2.1mm; }
+    .l1b-profile__copy p:last-child { margin-bottom: 0; }
+
+    .l1b-subexercise {
+      display: grid;
+      grid-template-columns: var(--hz-exercise-marker-size) minmax(0, 1fr);
+      gap: 0 3mm;
+      width: 100%;
+      min-width: 0;
+      margin: 0;
+      padding: 1.2mm 0 1.7mm;
+      border-bottom: var(--hz-border) solid var(--hz-line);
+    }
+
+    .l1b-subexercise__number {
+      align-self: start;
+      color: var(--hz-unit);
+      font-size: 14pt;
+      font-weight: var(--hz-fw-black);
+      line-height: .95;
+      letter-spacing: -.04em;
+    }
+
+    .l1b-subexercise__instruction {
+      margin: .15mm 0 0;
+      color: var(--hz-ink);
+      font-size: 8.75pt;
+      font-weight: var(--hz-fw-semibold);
+      line-height: 1.35;
+    }
+
+    .l1b-pronunciation {
+      position: relative;
+      overflow: hidden;
+      margin-left: calc(var(--hz-exercise-marker-size) + 3mm);
+      padding: 2.8mm 4mm 3mm;
+      border-top: 1.15mm solid var(--hz-unit);
+      border-bottom: .3mm solid var(--hz-line-strong);
+      background: var(--hz-unit-soft);
+      isolation: isolate;
+    }
+
+    .l1b-pronunciation::after {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      right: -10mm;
+      bottom: -21mm;
+      width: 54mm;
+      height: 54mm;
+      border: 8mm solid rgb(255 255 255 / 56%);
+      border-radius: 50%;
+    }
+
+    .l1b-pronunciation__title {
+      margin: 0 0 1.7mm;
+      color: var(--hz-unit-dark);
+      font-size: 8pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+    }
+
+    .l1b-pronunciation__lead {
+      margin: 0 0 1.4mm;
+      font-size: 7.45pt;
+      font-weight: var(--hz-fw-bold);
+    }
+
+    .l1b-pronunciation__grid {
+      display: grid;
+      grid-template-columns: 18mm 29mm 1fr;
+      gap: .55mm 4mm;
+      max-width: 96mm;
+      font-size: 7.25pt;
+      line-height: 1.2;
+    }
+
+    .l1b-pronunciation__grid em { font-style: italic; }
+    .l1b-pronunciation__note {
+      margin: 1.6mm 0 0;
+      font-size: 7.35pt;
+      font-weight: var(--hz-fw-black);
+    }
+
+    .l1b-match-stage {
+      display: grid;
+      grid-template-columns: .98fr 1.02fr;
+      gap: 6mm;
+      align-items: end;
+    }
+
+    .l1b-match-list {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: .95mm 7mm;
+      align-content: start;
+      font-size: 7.7pt;
+      line-height: 1.23;
+    }
+
+    .l1b-match-col {
+      display: grid;
+      gap: 1.8mm;
+    }
+
+    .l1b-match-item {
+      display: grid;
+      grid-template-columns: 5mm 1fr;
+      gap: 1mm;
+      min-height: 5mm;
+    }
+
+    .l1b-match-item b { color: var(--hz-unit-dark); }
+
+    .l1b-workers-photo {
+      position: relative;
+      height: 48mm;
+      overflow: hidden;
+      background: var(--hz-wash);
+      clip-path: polygon(0 0,100% 0,100% 100%,6% 100%);
+    }
+
+    .l1b-workers-photo .hz-photo-placeholder { min-height: 48mm; }
+
+    .l1b-extra {
+      margin-left: calc(var(--hz-exercise-marker-size) + 3mm);
+      margin-top: .5mm;
+    }
+
+    /* Tighten the continuation page so all frozen source content stays on one A4 page. */
+    .l1b-page--2 .hz-page-stack { gap: 1.45mm; }
+    .l1b-page--2 .hz-exercises { gap: .15mm; }
+    .l1b-page--2 .hz-exercise { padding-top: 1.1mm; padding-bottom: 1.45mm; }
+    .l1b-page--2 .hz-exercise__body { margin-top: 1mm; }
+    .l1b-page--2 .hz-exercise__instruction { font-size: 8.65pt; }
+
 /* Horizons A1 — Lesson 1B scoped styles and asset mappings. */
 
 .l1b-target {
@@ -5,14 +545,14 @@
   font-weight: var(--hz-fw-black) !important;
 }
 
-.l1b-aan__title,
-.l1b-contractions__title,
 .l1b-pronunciation__title {
-  color: var(--hz-unit-dark) !important;
+  color: #fff !important;
   font-size: 8pt !important;
   font-weight: var(--hz-fw-black) !important;
   letter-spacing: .065em !important;
   line-height: 1.2 !important;
+
+  margin-bottom: 2mm;
 }
 
 .l1b-page--2 .l1b-contractions__row strong {
@@ -61,6 +601,10 @@
   margin-left: calc(-1 * (var(--hz-exercise-marker-size) + 3mm)) !important;
   width: calc(100% + var(--hz-exercise-marker-size) + 3mm) !important;
   padding-top: .6mm !important;
+
+  background: var(--hz-panel-paper);
+
+  padding: 2mm 1.5mm 2.5mm;
 }
 
 .l1b-page:not(.l1b-page--2) .l1b-occupation-grid {
@@ -77,9 +621,11 @@
 }
 
 .l1b-page:not(.l1b-page--2) .l1b-occupation__photo {
-  width: 28mm !important;
-  height: 28mm !important;
+  width: 31mm !important;
+  height: 26mm !important;
   margin: 0 auto .9mm !important;
+
+  border-radius: 3mm 0 3mm 0;
 }
 
 .l1b-page .l1b-occupation:nth-child(1) .hz-photo-placeholder { background-image: url("../Images/1B/Teacher.png") !important; background-position: center !important; }
@@ -252,3 +798,5 @@
   line-height: 2.05;
   white-space: pre;
 }
+
+.l1b-page .l1b-pronunciation__title { color: var(--hz-unit-dark) !important; }

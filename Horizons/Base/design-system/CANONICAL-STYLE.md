@@ -76,6 +76,36 @@ Do not add notebooks, pencils, blackboards, school desks, classrooms or similar 
 
 Neighboring lessons may look atmospherically different. Series unity comes from the shared system, not repeated subject matter.
 
+### Creative but sober editorial composition
+
+The author's Personal Best series references establish the desired level of
+editorial creativity: varied article treatments, photographs integrated with
+text, selective cutouts, and recognizable real-world artifacts. They are design
+references, not sources of learner text, photographs, branding or a new palette.
+
+Keep Horizons' warm paper, crimson, dark crimson, charcoal, pale pink and shared
+chrome. A restrained warm cream paper surface may bind a reading or functional
+feature; it does not introduce a second unit color. Avoid adding a box around
+every exercise or repeating one feature template across the book.
+
+Give each major feature a composition appropriate to its content: profiles may
+read as a magazine feature, travel entries as photographic postcards, a family
+reading as a bounded article, and a transport interview as a podcast feature.
+Photos, text and task labels should form one readable composition. Use an
+occasional corner crop, modest diagonal or clean transparent photographic
+cutout only when it strengthens that composition and preserves learner evidence.
+
+Use `.hz-reading-panel` for a bounded editorial reading. Its paper and outline
+come from shared tokens; its heading, image placement and internal columns remain
+lesson-local. Ordinary exercises stay in the open vertical sequence. Functional
+forms retain clear white writing surfaces and enough physical answer space.
+
+All grammar/language-focus headers use the shared dark-crimson title tab above
+the pale-pink body. Local CSS does not redefine this tab or its shell. Bold in
+the body remains dark crimson. A layout overhaul preserves the authorized
+language, exercise sequence, options, examples, track references and response
+affordances unless the author separately requests a content change.
+
 ## 6. Photography, illustration and media
 
 Photography carries major visual weight. Prefer one strong image to several weak decorative images unless the task genuinely requires a family or sequence.

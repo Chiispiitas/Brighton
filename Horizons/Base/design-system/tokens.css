@@ -12,6 +12,8 @@
   --hz-line: #d8d9dc;
   --hz-line-strong: #a8abb0;
   --hz-wash: #f3f2ee;
+  --hz-panel-paper: #f4eee5;
+  --hz-panel-line: #d8cdc1;
 
   /* Default unit identity — crimson pink. Override with .hz-unit-* on a page. */
   --hz-unit: #c2185b;

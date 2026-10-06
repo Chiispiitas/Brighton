@@ -136,9 +136,11 @@
 
 .l2b-onair-start .l2b-show-head {
   padding: 2.6mm 3mm;
-  margin-bottom: 1.3mm;
-  background: var(--hz-unit);
+  margin-bottom: 0;
+  background: #29272b;
   color: #fff;
+
+  border-left: 1.4mm solid var(--hz-unit);
 }
 .l2b-onair-start .l2b-show-episode {
   order: -1;
@@ -206,9 +208,11 @@
   align-items: center;
   justify-content: space-between;
   padding: 1mm 1.8mm;
-  background: #232323;
-  color: #fff;
+  background: var(--hz-unit-soft);
+  color: var(--hz-ink);
   font-size: 6.4pt;
+
+  border-bottom: .5mm solid var(--hz-unit);
 }
 
 .l2b-street-still figcaption b {
@@ -571,7 +575,7 @@
 .l2b-indrive-copy {
   display: grid;
   grid-template-rows: 62mm auto;
-  gap: 2.4mm;
+  gap: 0;
   min-width: 0;
 }
 
@@ -581,7 +585,13 @@
   height: 62mm;
 }
 
-.l2b-interview-photo figcaption { padding: 1mm 2mm; font-size: 7.5pt; }
+.l2b-interview-photo figcaption { padding: 1mm 2mm; font-size: 7.5pt;
+  background: var(--hz-unit-soft);
+
+  color: var(--hz-ink);
+
+  border-bottom: .5mm solid var(--hz-unit);
+}
 .l2b-interview-photo figcaption strong { font-size: 9pt; }
 
 .l2b-complete-lines {
@@ -589,6 +599,10 @@
   align-content: start;
   gap: 1.25mm;
   font-size: 7.8pt;
+
+  background: var(--hz-panel-paper);
+
+  padding: 2mm;
 }
 
 .l2b-complete-lines p {
@@ -622,8 +636,8 @@
 
 .l2b-articles {
   margin: .2mm 0 .1mm calc(var(--hz-exercise-marker-size) + 3mm);
-  padding-top: 2.15mm;
-  padding-bottom: 2.25mm;
+
+
 }
 
 .l2b-article-grid {
@@ -709,13 +723,19 @@
   display: grid;
   align-content: center;
   gap: 1mm;
-  padding: 2.5mm 3mm 3mm;
-  border: 0;
+  padding: 3mm;
+  border: 1px solid var(--hz-panel-line);
   border-bottom: .28mm solid var(--hz-line);
   font-size: 8pt;
+
+  border-right: 1.2mm dashed var(--hz-panel-line);
+
+  background: var(--hz-panel-paper);
 }
 
-.l2b-pair-card strong { font-size: 8.2pt; font-weight: var(--hz-fw-black); }
+.l2b-pair-card strong { font-size: 8.2pt; font-weight: var(--hz-fw-black);
+  color: var(--hz-unit-dark);
+}
 .l2b-pair-field { display: grid; grid-template-columns: 27mm 1fr; gap: 2mm; align-items: end; font-size: 8pt; }
 .l2b-pair-field > span:last-child { min-height: 5mm; border-bottom: .3mm solid var(--hz-line-strong); }
 .l2b-plate { display:flex; justify-content:space-between; align-items:center; margin-top:1mm; padding:1mm; background:#fff; color:#222; font-size:7pt; }
@@ -748,7 +768,9 @@
 
 /* ---------- Production photography ---------- */
 
-.l2b-city-photo { margin: 1mm 0 1.5mm; overflow: hidden; }
+.l2b-city-photo { margin: 1mm 0 1.5mm; overflow: hidden;
+  clip-path: polygon(0 0,100% 0,100% 100%,3% 100%);
+}
 .l2b-city-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 52%; }
 .l2b-interview-photo > img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 38%; min-height: 0; }
 

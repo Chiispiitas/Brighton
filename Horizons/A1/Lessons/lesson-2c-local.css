@@ -42,9 +42,11 @@
 .l2c-lead-photos img {
   display: block;
   width: 100%;
-  height: 30mm;
+  height: 25mm;
   object-fit: cover;
   object-position: center;
+
+  border-radius: 0 0 5mm 0;
 }
 
 /* ---------- Exercise 2: editorial reading feature ---------- */
@@ -52,9 +54,11 @@
 .l2c-reading-exercise { padding-top: .65mm; }
 
 .l2c-reading-feature {
-  padding: 0 0 3mm;
+  padding: 0 3mm 3mm;
   border-bottom: .28mm solid var(--hz-line);
-  background: transparent;
+  background: var(--hz-panel-paper);
+
+  border: .3mm solid var(--hz-panel-line);
 }
 
 .l2c-reading-feature__head {
@@ -65,12 +69,14 @@
   gap: 4mm;
   margin-bottom: 3mm;
   padding: 2.5mm 3mm;
-  background: var(--hz-unit);
+  background: var(--hz-unit-soft);
+
+  margin: 0 -3mm 3mm;
 }
 
 .l2c-reading-feature__head > span {
   flex: none;
-  color: #fff;
+  color: var(--hz-unit-dark);
   font-size: 7pt;
   font-weight: var(--hz-fw-black);
   letter-spacing: .08em;
@@ -79,9 +85,9 @@
 
 .l2c-reading-feature__head h2 {
   margin: 0;
-  color: #fff;
+  color: var(--hz-unit-dark);
   font-family: var(--hz-font-body);
-  font-size: 20pt;
+  font-size: 22pt;
   font-style: normal;
   font-weight: var(--hz-fw-black);
   line-height: 1;
@@ -90,8 +96,8 @@
 
 .l2c-reading-feature__main {
   display: grid;
-  grid-template-columns: 72mm minmax(0, 1fr);
-  gap: 5mm;
+  grid-template-columns: 68mm minmax(0,1fr);
+  gap: 4mm;
   align-items: start;
 }
 
@@ -129,9 +135,13 @@
   grid-template-columns: 1fr 12mm 1fr;
   gap: 2.5mm;
   align-items: center;
-  margin-top: 2.8mm;
+  margin-top: 2.5mm;
   padding-top: 2.5mm;
   border-top: .25mm solid var(--hz-line);
+
+  background: var(--hz-paper);
+
+  padding: 2.5mm 1mm 0;
 }
 
 .l2c-family-strip__parents,
@@ -196,6 +206,8 @@
   content: "";
   position: absolute;
   background: var(--hz-line-strong);
+
+  display: none;
 }
 
 .l2c-family-strip__branch::before {
@@ -211,6 +223,8 @@
   left: 50%;
   width: .25mm;
   transform: translateX(-50%);
+
+  display: none;
 }
 
 /* ---------- Exercise 3: reading check ---------- */
@@ -293,6 +307,10 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 2.6mm;
+
+  background: var(--hz-panel-paper);
+
+  padding: 2mm;
 }
 
 .l2c-owner-photos figure {
@@ -304,10 +322,12 @@
 .l2c-owner-photos img {
   display: block;
   width: 100%;
-  height: 28mm;
+  height: 26mm;
   object-fit: contain;
   object-position: center;
   background: #fff;
+
+  mix-blend-mode: multiply;
 }
 
 .l2c-owner-photos figcaption {
@@ -371,7 +391,9 @@
 
 /* Exercise 7: the ownership exchange carries the visual context. */
 .l2c-pairwork { grid-template-columns: 1.08fr .92fr; gap: 5mm; align-items: center; }
-.l2c-pair-photo { margin: 0; overflow: hidden; }
+.l2c-pair-photo { margin: 0; overflow: hidden;
+  clip-path: polygon(0 0,100% 0,100% 100%,5% 100%);
+}
 .l2c-pair-photo img { display: block; width: 100%; height: 60mm; object-fit: cover; object-position: center; }
 .l2c-pair-models { display: grid; gap: 3mm; }
 .l2c-pair-models > div { padding: 2mm 2.5mm; border-left: .8mm solid var(--hz-unit); }
