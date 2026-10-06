@@ -497,6 +497,8 @@
 }
 
 .hz-focus-box__body > :last-child { margin-bottom: 0; }
+.hz-focus-box__body b,
+.hz-focus-box__body strong { color: var(--hz-unit-dark); }
 
 .hz-go-to {
   display: block;
@@ -626,6 +628,7 @@
 
 /* ---------- Utility ---------- */
 
+.hz-answer-option { font-style: italic; font-weight: 400; text-transform: none; }
 .hz-text-unit { color: var(--hz-unit-dark); }
 .hz-text-muted { color: var(--hz-muted); }
 .hz-bg-unit-soft { background: var(--hz-unit-soft); }
@@ -4862,13 +4865,6 @@ body.hz-debug .hz-page::after {
   object-position: center;
 }
 
-.l2c-family-photo figcaption {
-  margin-top: .9mm;
-  color: var(--hz-muted);
-  font-size: 6.5pt;
-  font-weight: var(--hz-fw-bold);
-}
-
 .l2c-reading-copy {
   columns: 2;
   column-gap: 5mm;
@@ -4930,7 +4926,7 @@ body.hz-debug .hz-page::after {
   font-weight: var(--hz-fw-black);
 }
 
-.l2c-family-strip figcaption > span { color: var(--hz-muted); }
+.l2c-family-strip figcaption > span { color: var(--hz-ink); }
 
 .l2c-family-job {
   display: flex;
@@ -5184,7 +5180,6 @@ body.hz-debug .hz-page::after {
 .l2d-counter { display: grid; grid-template-columns: 69mm minmax(0, 1fr); gap: 5mm; align-items: start; }
 .l2d-counter figure { margin: 0; }
 .l2d-counter img { display: block; width: 100%; height: 71mm; object-fit: cover; object-position: 47% center; }
-.l2d-counter figcaption { margin-top: 1.2mm; color: var(--hz-muted); font-size: 7pt; font-weight: 620; line-height: 1.2; }
 .l2d-dialogue { display: grid; grid-template-columns: 22mm minmax(0, 1fr); gap: 1.25mm 1.5mm; margin: 0; }
 .l2d-dialogue dt, .l2d-dialogue dd { margin: 0; }
 .l2d-dialogue dt { font-weight: 720; }
@@ -5504,10 +5499,10 @@ body {
             <div class="hz-exercise__content">
               <p class="hz-exercise__instruction"><span class="l1a-track">♪ 1.5</span>Listen and choose the correct names.</p>
               <div class="hz-exercise__body l1a-name-options">
-                <div class="l1a-name-options__item"><span class="l1a-name-options__number">1</span><div class="l1a-name-options__choices"><span><i class="hz-choice-box"></i> Steven</span><span><i class="hz-choice-box"></i> Stephen</span></div></div>
-                <div class="l1a-name-options__item"><span class="l1a-name-options__number">2</span><div class="l1a-name-options__choices"><span><i class="hz-choice-box"></i> Allison</span><span><i class="hz-choice-box"></i> Alisson</span></div></div>
-                <div class="l1a-name-options__item"><span class="l1a-name-options__number">3</span><div class="l1a-name-options__choices"><span><i class="hz-choice-box"></i> Bryan</span><span><i class="hz-choice-box"></i> Brayan</span></div></div>
-                <div class="l1a-name-options__item"><span class="l1a-name-options__number">4</span><div class="l1a-name-options__choices"><span><i class="hz-choice-box"></i> Lindsey</span><span><i class="hz-choice-box"></i> Lindsay</span></div></div>
+                <div class="l1a-name-options__item"><span class="l1a-name-options__number">1</span><div class="l1a-name-options__choices"><span><i class="hz-choice-box"></i> <em class="hz-answer-option">Steven</em></span><span><i class="hz-choice-box"></i> <em class="hz-answer-option">Stephen</em></span></div></div>
+                <div class="l1a-name-options__item"><span class="l1a-name-options__number">2</span><div class="l1a-name-options__choices"><span><i class="hz-choice-box"></i> <em class="hz-answer-option">Allison</em></span><span><i class="hz-choice-box"></i> <em class="hz-answer-option">Alisson</em></span></div></div>
+                <div class="l1a-name-options__item"><span class="l1a-name-options__number">3</span><div class="l1a-name-options__choices"><span><i class="hz-choice-box"></i> <em class="hz-answer-option">Bryan</em></span><span><i class="hz-choice-box"></i> <em class="hz-answer-option">Brayan</em></span></div></div>
+                <div class="l1a-name-options__item"><span class="l1a-name-options__number">4</span><div class="l1a-name-options__choices"><span><i class="hz-choice-box"></i> <em class="hz-answer-option">Lindsey</em></span><span><i class="hz-choice-box"></i> <em class="hz-answer-option">Lindsay</em></span></div></div>
               </div>
             </div>
           </section>
@@ -6455,12 +6450,12 @@ body {
             <div class="hz-exercise__content">
               <p class="hz-exercise__instruction"><span class="hz-audio-badge">♪ 2.2</span>Listen and choose.</p>
               <div class="hz-exercise__body l2a-listening-grid">
-                <div class="l2a-listening-item"><b>1</b><span>phone</span><span class="l2a-listening-options"><span><i class="hz-choice-box"></i> this</span><span><i class="hz-choice-box"></i> that</span></span></div>
-                <div class="l2a-listening-item"><b>2</b><span>keys</span><span class="l2a-listening-options"><span><i class="hz-choice-box"></i> these</span><span><i class="hz-choice-box"></i> those</span></span></div>
-                <div class="l2a-listening-item"><b>3</b><span>notebook</span><span class="l2a-listening-options"><span><i class="hz-choice-box"></i> this</span><span><i class="hz-choice-box"></i> that</span></span></div>
-                <div class="l2a-listening-item"><b>4</b><span>headphones</span><span class="l2a-listening-options"><span><i class="hz-choice-box"></i> these</span><span><i class="hz-choice-box"></i> those</span></span></div>
-                <div class="l2a-listening-item"><b>5</b><span>bottle</span><span class="l2a-listening-options"><span><i class="hz-choice-box"></i> this</span><span><i class="hz-choice-box"></i> that</span></span></div>
-                <div class="l2a-listening-item"><b>6</b><span>pens</span><span class="l2a-listening-options"><span><i class="hz-choice-box"></i> these</span><span><i class="hz-choice-box"></i> those</span></span></div>
+                <div class="l2a-listening-item"><b>1</b><span>phone</span><span class="l2a-listening-options"><span><i class="hz-choice-box"></i> <em class="hz-answer-option">this</em></span><span><i class="hz-choice-box"></i> <em class="hz-answer-option">that</em></span></span></div>
+                <div class="l2a-listening-item"><b>2</b><span>keys</span><span class="l2a-listening-options"><span><i class="hz-choice-box"></i> <em class="hz-answer-option">these</em></span><span><i class="hz-choice-box"></i> <em class="hz-answer-option">those</em></span></span></div>
+                <div class="l2a-listening-item"><b>3</b><span>notebook</span><span class="l2a-listening-options"><span><i class="hz-choice-box"></i> <em class="hz-answer-option">this</em></span><span><i class="hz-choice-box"></i> <em class="hz-answer-option">that</em></span></span></div>
+                <div class="l2a-listening-item"><b>4</b><span>headphones</span><span class="l2a-listening-options"><span><i class="hz-choice-box"></i> <em class="hz-answer-option">these</em></span><span><i class="hz-choice-box"></i> <em class="hz-answer-option">those</em></span></span></div>
+                <div class="l2a-listening-item"><b>5</b><span>bottle</span><span class="l2a-listening-options"><span><i class="hz-choice-box"></i> <em class="hz-answer-option">this</em></span><span><i class="hz-choice-box"></i> <em class="hz-answer-option">that</em></span></span></div>
+                <div class="l2a-listening-item"><b>6</b><span>pens</span><span class="l2a-listening-options"><span><i class="hz-choice-box"></i> <em class="hz-answer-option">these</em></span><span><i class="hz-choice-box"></i> <em class="hz-answer-option">those</em></span></span></div>
               </div>
             </div>
           </section>
@@ -6630,7 +6625,7 @@ body {
                     <div class="l2b-complete-lines">
                       <p><b>1</b> Time: <span class="l2b-long-answer"></span></p>
                       <p><b>2</b> Number: <span class="l2b-long-answer l2b-long-answer--short"></span></p>
-                      <p><b>3</b> <span class="l2b-inline-choice"><span><i class="hz-choice-box"></i> bus</span><span><i class="hz-choice-box"></i> car</span></span></p>
+                      <p><b>3</b> <span class="l2b-inline-choice"><span><i class="hz-choice-box"></i> <em class="hz-answer-option">bus</em></span><span><i class="hz-choice-box"></i> <em class="hz-answer-option">car</em></span></span></p>
                     </div>
                   </div>
 
@@ -6642,7 +6637,7 @@ body {
                     <div class="l2b-complete-lines">
                       <p><b>1</b> Time: <span class="l2b-long-answer"></span></p>
                       <p><b>2</b> Number: <span class="l2b-long-answer l2b-long-answer--short"></span></p>
-                      <p><b>3</b> <span class="l2b-inline-choice"><span><i class="hz-choice-box"></i> bus</span><span><i class="hz-choice-box"></i> car</span></span></p>
+                      <p><b>3</b> <span class="l2b-inline-choice"><span><i class="hz-choice-box"></i> <em class="hz-answer-option">bus</em></span><span><i class="hz-choice-box"></i> <em class="hz-answer-option">car</em></span></span></p>
                     </div>
                   </div>
                 </div>
@@ -6713,7 +6708,7 @@ body {
                   <div class="l2b-complete-lines">
                     <p><b>1</b> Time: <span class="l2b-long-answer"></span></p>
                     <p><b>2</b> Plate: <span class="l2b-long-answer l2b-long-answer--short"></span></p>
-                    <p><b>3</b> Diego: <span class="l2b-inline-choice"><span><i class="hz-choice-box"></i> bus</span><span><i class="hz-choice-box"></i> car</span></span></p>
+                    <p><b>3</b> Diego: <span class="l2b-inline-choice"><span><i class="hz-choice-box"></i> <em class="hz-answer-option">bus</em></span><span><i class="hz-choice-box"></i> <em class="hz-answer-option">car</em></span></span></p>
                   </div>
                 </div>
               </div>
@@ -6807,7 +6802,7 @@ body {
           <section class="hz-exercise l2c-lead-exercise">
             <div class="hz-exercise-number">1</div>
             <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction">Look at the photos. Family or friends?</p>
+              <p class="hz-exercise__instruction">Look at the photos. <em class="hz-answer-option">family</em> or <em class="hz-answer-option">friends</em>?</p>
               <div class="hz-exercise__body hz-media-family hz-media-family--full-lane l2c-lead-photos">
                 <figure data-image-slot="HZN_A1_U02_LC_E01_IMG_01">
                   <img src="./Images/2C/2C_independent_01_lead_in_family_of_four---60b2df99-9580-45ec-ab0e-87db308edaf4.png" alt="A family of four together">
@@ -6835,7 +6830,6 @@ body {
                 <div class="l2c-reading-feature__main">
                   <figure class="l2c-family-photo" data-image-slot="HZN_A1_U02_LC_E02_IMG_01">
                     <img src="./Images/2C/2C_04_main_reading_rivera_family_restaurant---d2c83374-a7d8-459c-919b-cd560669adc3.png" alt="The Rivera family together in their restaurant">
-                    <figcaption>Rivera Restaurant · Manta</figcaption>
                   </figure>
 
                   <article class="l2c-reading-copy hz-student-text">
@@ -6896,10 +6890,10 @@ body {
             <div class="hz-exercise__content">
               <p class="hz-exercise__instruction">Read again. Choose.</p>
               <div class="hz-exercise__body hz-question-grid hz-question-grid--2 l2c-check-grid">
-                <div class="hz-question"><span class="hz-question__number">1</span><span>Diego and Elena work Monday to Saturday / on Sunday.</span></div>
-                <div class="hz-question"><span class="hz-question__number">2</span><span>Nico and Sofía are at the restaurant every day / on Saturdays.</span></div>
-                <div class="hz-question"><span class="hz-question__number">3</span><span>Nico is Sofía's brother / father.</span></div>
-                <div class="hz-question"><span class="hz-question__number">4</span><span>The keys are Diego's / Elena's.</span></div>
+                <div class="hz-question"><span class="hz-question__number">1</span><span>Diego and Elena work <em class="hz-answer-option">Monday to Saturday</em> / <em class="hz-answer-option">on Sunday</em>.</span></div>
+                <div class="hz-question"><span class="hz-question__number">2</span><span>Nico and Sofía are at the restaurant <em class="hz-answer-option">every day</em> / <em class="hz-answer-option">on Saturdays</em>.</span></div>
+                <div class="hz-question"><span class="hz-question__number">3</span><span>Nico is Sofía's <em class="hz-answer-option">brother</em> / <em class="hz-answer-option">father</em>.</span></div>
+                <div class="hz-question"><span class="hz-question__number">4</span><span>The keys are <em class="hz-answer-option">Diego's</em> / <em class="hz-answer-option">Elena's</em>.</span></div>
               </div>
             </div>
           </section>
@@ -7086,11 +7080,10 @@ body {
           <section class="hz-exercise">
             <div class="hz-exercise-number">2</div>
             <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction"><span class="hz-audio-badge">♪ 2.5</span>Read and listen. Leo's phone: black or white?</p>
+              <p class="hz-exercise__instruction"><span class="hz-audio-badge">♪ 2.5</span>Read and listen. Leo's phone: <em class="hz-answer-option">black</em> or <em class="hz-answer-option">white</em>?</p>
               <div class="hz-exercise__body l2d-counter">
                 <figure data-image-slot="HZN_A1_U02_LD_E02_IMG_01">
                   <img src="./Images/2D/HZN_A1_U02_LD_E02_IMG_01.png" alt="A receptionist shows a visitor a white phone at a Lost and Found counter; a black phone is on the counter">
-                  <figcaption>LOST AND FOUND · Bus terminal</figcaption>
                 </figure>
                 <dl class="l2d-dialogue hz-dialogue-text">
                   <dt>Receptionist:</dt><dd>Good afternoon.</dd>
@@ -7115,9 +7108,9 @@ body {
             <div class="hz-exercise__content">
               <p class="hz-exercise__instruction">Read again. Answer.</p>
               <div class="hz-exercise__body hz-content-grid hz-content-grid--2 l2d-notice hz-student-text">
-                <p>1 <em>A white phone</em>:<br>item AFTER / BEFORE adjective?</p>
-                <p>2 <em>My phone is black</em>:<br>adjective AFTER / BEFORE <em>is</em>?</p>
-                <p>3 <em lang="es">Un teléfono negro</em>:<br>item AFTER / BEFORE adjective?</p>
+                <p>1 <em>A white phone</em>:<br>item <em class="hz-answer-option">after / before</em> adjective?</p>
+                <p>2 <em>My phone is black</em>:<br>adjective <em class="hz-answer-option">after / before</em> <em>is</em>?</p>
+                <p>3 <em lang="es">Un teléfono negro</em>:<br>item <em class="hz-answer-option">after / before</em> adjective?</p>
               </div>
             </div>
           </section>
