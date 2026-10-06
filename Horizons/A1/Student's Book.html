@@ -5169,7 +5169,17 @@ body.hz-debug .hz-page::after {
 .l2d-colors { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 2mm 4mm; }
 .l2d-colors > div { display: flex; align-items: center; gap: 2mm; }
 .l2d-colors strong { font-weight: 520; }
-.l2d-swatch { display: block; flex: none; width: 10mm; height: 7.5mm; background: var(--color); border: .2mm solid rgb(32 33 36 / 16%); }
+.l2d-swatch { position: relative; display: block; flex: none; width: 11.6mm; height: 9mm; }
+/* One reusable paint-splash silhouette, filled with each vocabulary color.
+   The separate small contours are droplets; there is no square backing. */
+.l2d-swatch::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--color);
+  clip-path: path("M13 10 C11 8 9 6 8 7 C7 8 10 11 9 13 C7 14 3 12 2 14 C1 16 8 17 8 19 C8 21 3 22 4 24 C5 26 10 22 12 24 C13 26 11 31 13 32 C15 33 17 27 20 27 C22 28 24 33 26 32 C28 31 25 26 29 25 C31 25 35 29 37 27 C38 25 33 23 34 21 C36 20 43 20 43 17 C43 15 37 17 35 14 C34 12 40 8 38 6 C36 4 31 10 28 8 C26 6 29 1 26 1 C23 0 23 6 20 7 C18 7 17 3 15 3 C12 3 16 8 13 10 Z M3 5 a1.25 1.25 0 1 0 2.5 0 a1.25 1.25 0 1 0 -2.5 0 Z M39 31 a1.25 1.25 0 1 0 2.5 0 a1.25 1.25 0 1 0 -2.5 0 Z M39 2 a1 1 0 1 0 2 0 a1 1 0 1 0 -2 0 Z");
+}
+.l2d-swatch--white { filter: drop-shadow(0 0 .45px #92918e); }
 
 .l2d-counter { display: grid; grid-template-columns: 69mm minmax(0, 1fr); gap: 5mm; align-items: start; }
 .l2d-counter figure { margin: 0; }
@@ -5178,14 +5188,14 @@ body.hz-debug .hz-page::after {
 .l2d-dialogue { display: grid; grid-template-columns: 22mm minmax(0, 1fr); gap: 1.25mm 1.5mm; margin: 0; }
 .l2d-dialogue dt, .l2d-dialogue dd { margin: 0; }
 .l2d-dialogue dt { font-weight: 720; }
-.l2d-notice { gap: 5mm; }
+.l2d-notice { gap: 1.5mm 5mm; }
 .l2d-notice p { margin: 0; }
 .l2d-focus { margin: .3mm 0 .5mm calc(var(--hz-exercise-marker-size) + 3mm); }
 .l2d-focus p { margin: 0 0 1mm; }
 .l2d-focus p:last-child { margin-bottom: 0; }
-.l2d-order { gap: 2mm 6mm; }
-.l2d-order p { margin: 0 0 .8mm; }
-.l2d-order b { color: var(--hz-unit-dark); margin-right: 1.5mm; }
+.l2d-positions { gap: 2mm 6mm; }
+.l2d-positions p { margin: 0 0 .8mm; }
+.l2d-positions b { color: var(--hz-unit-dark); margin-right: 1.5mm; }
 .l2d-writing-line { display: block; height: 5mm; border-bottom: var(--hz-answer-line) solid var(--hz-line-strong); }
 .l2d-example { color: #7f8287; font-family: "Segoe Print", "Bradley Hand", "Comic Sans MS", cursive; font-size: 8.4pt; }
 .l2d-mini-models p { margin: 0; }
@@ -7067,7 +7077,7 @@ body {
                 <div><span class="l2d-swatch" style="--color:#40864f" aria-hidden="true"></span><strong>green</strong></div>
                 <div><span class="l2d-swatch" style="--color:#f2cf35" aria-hidden="true"></span><strong>yellow</strong></div>
                 <div><span class="l2d-swatch" style="--color:#292b30" aria-hidden="true"></span><strong>black</strong></div>
-                <div><span class="l2d-swatch" style="--color:#fff" aria-hidden="true"></span><strong>white</strong></div>
+                <div><span class="l2d-swatch l2d-swatch--white" style="--color:#fff" aria-hidden="true"></span><strong>white</strong></div>
                 <div><span class="l2d-swatch" style="--color:#885537" aria-hidden="true"></span><strong>brown</strong></div>
                 <div><span class="l2d-swatch" style="--color:#e98328" aria-hidden="true"></span><strong>orange</strong></div>
                 <div><span class="l2d-swatch" style="--color:#8a8d92" aria-hidden="true"></span><strong>gray</strong></div>
@@ -7089,11 +7099,11 @@ body {
                   <dt>Receptionist:</dt><dd>Good afternoon.</dd>
                   <dt>Leo:</dt><dd>Hello. Is that my phone?</dd>
                   <dt>Receptionist:</dt><dd><strong class="hz-text-unit">What color is your phone?</strong></dd>
-                  <dt>Leo:</dt><dd>It's black. It's small.</dd>
+                  <dt>Leo:</dt><dd>My phone is <strong class="hz-text-unit">black</strong>. It's small.</dd>
                   <dt>Receptionist:</dt><dd>Is this your phone?</dd>
-                  <dt>Leo:</dt><dd>No. That's a <strong class="hz-text-unit">big white phone</strong>.</dd>
+                  <dt>Leo:</dt><dd>No. That's a <strong class="hz-text-unit">white</strong> phone.</dd>
                   <dt>Receptionist:</dt><dd>Is this your phone?</dd>
-                  <dt>Leo:</dt><dd>Yes! That's my <strong class="hz-text-unit">small black phone</strong>.</dd>
+                  <dt>Leo:</dt><dd>Yes! That's my <strong class="hz-text-unit">black</strong> phone.</dd>
                   <dt>Receptionist:</dt><dd>What is your name?</dd>
                   <dt>Leo:</dt><dd>Leo Martin.</dd>
                   <dt>Receptionist:</dt><dd>Thank you, Leo.</dd>
@@ -7108,17 +7118,18 @@ body {
             <div class="hz-exercise__content">
               <p class="hz-exercise__instruction">Read again. Answer.</p>
               <div class="hz-exercise__body hz-content-grid hz-content-grid--2 l2d-notice hz-student-text">
-                <p>1 What question is for the color?</p>
-                <p>2 <em>A big white phone</em>:<br>big or white first?</p>
+                <p>1 <em>A white phone</em>:<br>adjective + item or item + adjective?</p>
+                <p>2 <em>My phone is black</em>:<br>is + adjective or adjective + is?</p>
+                <p>3 <em lang="es">Un teléfono negro</em>:<br>adjective + item or item + adjective?</p>
               </div>
             </div>
           </section>
 
-          <section class="hz-focus-box hz-no-break l2d-focus" aria-label="Grammar: adjectives">
-            <header class="hz-focus-box__header">GRAMMAR: ADJECTIVES</header>
+          <section class="hz-focus-box hz-no-break l2d-focus" aria-label="Grammar: adjective position">
+            <header class="hz-focus-box__header">GRAMMAR: ADJECTIVE POSITION</header>
             <div class="hz-focus-box__body hz-content-grid hz-content-grid--2 hz-student-text">
-              <div><p>It's <strong>small</strong>. It's <strong>black</strong>.</p><p>It's a <strong>small black</strong> phone.</p></div>
-              <div><p>They're <strong>big</strong>. They're <strong>orange</strong>.</p><p>They're <strong>big orange</strong> umbrellas.</p></div>
+              <div><p><b>ENGLISH</b></p><p>a <strong>black</strong> phone</p><p>My phone is <strong>black</strong>.</p></div>
+              <div lang="es"><p><b>ESPAÑOL</b></p><p>un teléfono <strong>negro</strong></p><p>Mi teléfono es <strong>negro</strong>.</p></div>
             </div>
           </section>
 
@@ -7126,11 +7137,11 @@ body {
             <div class="hz-exercise-number">4</div>
             <div class="hz-exercise__content">
               <p class="hz-exercise__instruction">Write the sentences.</p>
-              <div class="hz-exercise__body hz-content-grid hz-content-grid--2 l2d-order hz-student-text">
-                <div><p><b>1</b> phone / small / a / black / It's</p><span class="l2d-writing-line l2d-example">It's a small black phone.</span></div>
-                <div><p><b>2</b> wallet / big / a / red / It's</p><span class="l2d-writing-line"></span></div>
-                <div><p><b>3</b> umbrellas / orange / big / They're</p><span class="l2d-writing-line"></span></div>
-                <div><p><b>4</b> bottle / green / small / a / It's</p><span class="l2d-writing-line"></span></div>
+              <div class="hz-exercise__body hz-content-grid hz-content-grid--2 l2d-positions hz-student-text">
+                <div><p><b>1</b> phone / black / a / It's</p><span class="l2d-writing-line l2d-example">It's a black phone.</span></div>
+                <div><p><b>2</b> wallet / is / red / The</p><span class="l2d-writing-line"></span></div>
+                <div><p><b>3</b> bottle / green / a / It's</p><span class="l2d-writing-line"></span></div>
+                <div><p><b>4</b> headphones / black / are / My</p><span class="l2d-writing-line"></span></div>
               </div>
             </div>
           </section>
@@ -7164,13 +7175,13 @@ body {
               <div class="hz-exercise__body l2d-inventory">
                 <header><h2>LOST AND FOUND</h2><span>Bus terminal · Office 2</span></header>
                 <div class="hz-media-family hz-content-grid hz-content-grid--2 l2d-item-pairs">
-                  <figure data-image-slot="HZN_A1_U02_LD_E06_IMG_01"><img src="./Images/2D/HZN_A1_U02_LD_E06_IMG_01.png" alt="A small black phone on the left and a big white phone on the right"><figcaption><span>1</span><span>2</span></figcaption></figure>
-                  <figure data-image-slot="HZN_A1_U02_LD_E06_IMG_02"><img src="./Images/2D/HZN_A1_U02_LD_E06_IMG_02.png" alt="A small brown wallet on the left and a big red wallet on the right"><figcaption><span>3</span><span>4</span></figcaption></figure>
-                  <figure data-image-slot="HZN_A1_U02_LD_E06_IMG_03"><img src="./Images/2D/HZN_A1_U02_LD_E06_IMG_03.png" alt="A small green bottle on the left and a big blue bottle on the right"><figcaption><span>5</span><span>6</span></figcaption></figure>
-                  <figure data-image-slot="HZN_A1_U02_LD_E06_IMG_04"><img src="./Images/2D/HZN_A1_U02_LD_E06_IMG_04.png" alt="A small yellow umbrella on the left and a big orange umbrella on the right"><figcaption><span>7</span><span>8</span></figcaption></figure>
+                  <figure data-image-slot="HZN_A1_U02_LD_E06_IMG_01"><img src="./Images/2D/HZN_A1_U02_LD_E06_IMG_01.png" alt="Left: the black phone is small. Right: the white phone is big."><figcaption><span>1</span><span>2</span></figcaption></figure>
+                  <figure data-image-slot="HZN_A1_U02_LD_E06_IMG_02"><img src="./Images/2D/HZN_A1_U02_LD_E06_IMG_02.png" alt="Left: the brown wallet is small. Right: the red wallet is big."><figcaption><span>3</span><span>4</span></figcaption></figure>
+                  <figure data-image-slot="HZN_A1_U02_LD_E06_IMG_03"><img src="./Images/2D/HZN_A1_U02_LD_E06_IMG_03.png" alt="Left: the green bottle is small. Right: the blue bottle is big."><figcaption><span>5</span><span>6</span></figcaption></figure>
+                  <figure data-image-slot="HZN_A1_U02_LD_E06_IMG_04"><img src="./Images/2D/HZN_A1_U02_LD_E06_IMG_04.png" alt="Left: the yellow umbrella is small. Right: the orange umbrella is big."><figcaption><span>7</span><span>8</span></figcaption></figure>
                 </div>
               </div>
-              <p class="l2d-inventory-example hz-dialogue-text"><b>1:</b> It's a small black phone.</p>
+              <p class="l2d-inventory-example hz-dialogue-text"><b>1:</b> It's a black phone. It's small.</p>
             </div>
           </section>
 
