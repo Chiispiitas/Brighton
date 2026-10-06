@@ -6,7 +6,30 @@ Paragraph numbers below are 1-based and follow the paragraph order after importi
 
 ## Approved A1 voices
 
-The author-selected reference is **HORIZONS ON AIR — EPISODE: BUS OR CAR?**, Track 2.3. These assignments were verified in its ElevenCreative Studio project on **2026-10-05** and matched to the connected ElevenLabs voice library.
+Use **Jessica - Playful, Bright, Warm** (`cgSgspJ2msm6clMCkdW9`) as the default narrator for **all A1 tracks**: spoken track labels, instructions, vocabulary, pronunciation models and other narration. The HOST/Lucy role in HORIZONS ON AIR also uses Jessica. Generic interviewer narration may use this same voice while dialogue participants retain distinct voices.
+
+### Preferred dialogue pool — Brighton A1 exam
+
+The author selected **Brighton English School A1 exam** as the preferred voice pool for new A1 dialogue roles. The following voices were verified in the exam's ElevenCreative Studio speech paragraphs on **2026-10-05** and matched to the connected ElevenLabs voice library.
+
+| ElevenLabs voice | Voice ID |
+| --- | --- |
+| Juniper - Grounded and Professional | `aMSt68OGf4xUZAnLpTU8` |
+| Adeline - Feminine and Conversational | `5l5f8iK3YPeGga21rQIX` |
+| Amy - Natural and Sweet | `OZxMHsGaBmV5pjMIDIn0` |
+| Arabella - Mysterious and Emotive | `Z3R5wn05IrDiVCyEkUrK` |
+| Jarnathan - Confident and Versatile | `c6SfcYrb2t09NHXiT80T` |
+| Mark - Natural Conversations | `UgBBYS2sOqTuMpoF3BR0` |
+| Mark - Casual, Relaxed and Light | `1SM7GgM6IMuvQlz2BwM3` |
+| Bradford - Expressive and Articulate | `NNl6r8mD7vthiJatiJt1` |
+
+The two Mark entries are **different voices**, not alternative names for one voice. Bradford is the exam's narrator and may be used for a dialogue character in Horizons; **Jessica remains the Horizons A1 narrator**. Bradford has a British English accent; the other exam-pool voices have American English accents. Choose an appropriate voice for each role and record its exact ID before generation. Keep the same voice for that character across returning appearances and repeated performances.
+
+Source: [Brighton English School A1 exam](https://elevenlabs.io/app/studio/MFVMJE8ClXokURnpes9t), Studio project `MFVMJE8ClXokURnpes9t`.
+
+### Established HORIZONS ON AIR cast
+
+Preserve the author-selected **HORIZONS ON AIR — EPISODE: BUS OR CAR?**, Track 2.3, cast for its established roles. These assignments were verified in its ElevenCreative Studio project on **2026-10-05** and matched to the connected ElevenLabs voice library.
 
 | Role | ElevenLabs voice | Voice ID |
 | --- | --- | --- |
@@ -15,9 +38,7 @@ The author-selected reference is **HORIZONS ON AIR — EPISODE: BUS OR CAR?**, T
 | DIEGO | Luis Vega - Engaging, Neutral and Clear | `E3MrNtjUaYrNQEr9YqXs` |
 | ANA | Fernanda Sanmiguel - Neutral and Serious | `1aJyZpkt0vxhGPBnPyrs` |
 
-Use **Jessica** as the default narrator for **all A1 tracks**: spoken track labels, instructions, vocabulary, pronunciation models and other narration. The HOST/Lucy role in HORIZONS ON AIR also uses Jessica. Generic interviewer narration may use this same voice while dialogue participants retain distinct voices.
-
-Use the approved episode cast for compatible new dialogue roles and preserve its established characters. Record each additional role's chosen voice ID before generation; the table above identifies the verified episode roles and does not invent assignments for other existing characters.
+Prefer the exam pool for new dialogue roles. Preserve already established character assignments; the pool does not automatically recast existing recordings. The paragraph maps below identify speakers, and do not invent voice assignments for other existing characters.
 
 Use `eleven_v3` for current A1 generation and follow the clarity/pacing guidance in `README.md`. Voice IDs are authoritative; display names may change. Do not silently substitute the narrator or established character voices.
 

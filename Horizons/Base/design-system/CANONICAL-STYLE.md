@@ -262,9 +262,11 @@ A larger row height is appropriate only when the exercise genuinely needs physic
 
 Voice continuity is part of the book's identity. Keep a stable narrator across a book's tracks and retain established dialogue voices for returning characters. Book-specific casting and exact provider voice IDs belong in that book's audio voice map.
 
-For the **current Horizons A1 book**, the approved voice reference is **HORIZONS ON AIR — EPISODE: BUS OR CAR?**, Track 2.3. Its host, Lucy, uses **Jessica - Playful, Bright, Warm**. Use Jessica as the default narrator for **all A1 tracks**, including spoken track numbers, instructions, vocabulary lists, pronunciation models and other narration.
+For the **current Horizons A1 book**, **Jessica - Playful, Bright, Warm** is the approved narrator, retained from Lucy's host voice in **HORIZONS ON AIR — EPISODE: BUS OR CAR?**, Track 2.3. Use Jessica for **all A1 tracks**, including spoken track numbers, instructions, vocabulary lists, pronunciation models and other narration.
 
-Retain the episode's supporting cast: Julia uses Claudia - Calm Latin; Diego uses Luis Vega - Engaging, Neutral and Clear; Ana uses Fernanda Sanmiguel - Neutral and Serious. Reuse this approved cast for compatible new dialogue roles and keep returning characters consistent.
+The author-selected preferred pool for **new A1 dialogue roles** comes from **Brighton English School A1 exam**: Juniper, Adeline, Amy, Arabella, Jarnathan, Mark - Natural Conversations, Mark - Casual, Relaxed and Light, and Bradford. The two Mark voices are distinct and must be selected by their exact IDs. The exam's narrator is Bradford; Horizons A1 narration remains Jessica. Bradford is available for dialogue roles.
+
+Retain the established BUS OR CAR? supporting cast: Julia uses Claudia - Calm Latin; Diego uses Luis Vega - Engaging, Neutral and Clear; Ana uses Fernanda Sanmiguel - Neutral and Serious. Prefer the exam pool when casting new roles, and keep each returning character and repeated performance on its recorded voice.
 
 The exact ElevenLabs voice IDs and import paragraph assignments are maintained in [the A1 voice map](../../A1/Audio%20scripts/ElevenCreative%20Studio/VOICE%20MAP.md). Select voices by ID rather than relying only on display names. Do not substitute the narrator or an established character's voice without an explicit author correction.
 

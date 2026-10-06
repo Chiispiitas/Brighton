@@ -196,9 +196,11 @@ For each audio asset retain:
 
 ### Current Horizons A1 voice reference
 
-Use the cast from **HORIZONS ON AIR — EPISODE: BUS OR CAR?**, Track 2.3, as the current A1 voice reference. **Jessica - Playful, Bright, Warm**, the episode's host voice, is the default narrator for all A1 tracks, including spoken track numbers and controlled-listening narration.
+**Jessica - Playful, Bright, Warm**, the host voice in **HORIZONS ON AIR — EPISODE: BUS OR CAR?**, Track 2.3, is the default narrator for all A1 tracks, including spoken track numbers and controlled-listening narration.
 
-Retain Claudia for Julia, Luis Vega for Diego and Fernanda Sanmiguel for Ana. The approved supporting cast keeps its established voice identities and accents; the American English narration default does not require replacing those voices.
+Use the author-approved **Brighton English School A1 exam** voice pool as the preferred source for new A1 dialogue roles: Juniper, Adeline, Amy, Arabella, Jarnathan, the two distinct Mark voices, and Bradford. The exact display names and IDs are recorded in the A1 voice map. Bradford narrates the exam but is a dialogue option here; all Horizons A1 narration uses Jessica.
+
+Retain Claudia for Julia, Luis Vega for Diego and Fernanda Sanmiguel for Ana in the established BUS OR CAR? cast. Record each new character's voice ID before generation and keep that identity consistent across returning appearances and repeated dialogue. Approved dialogue voices retain their established accents.
 
 Exact voice IDs and speaker assignments live in [the A1 voice map](../../A1/Audio%20scripts/ElevenCreative%20Studio/VOICE%20MAP.md). Use those IDs for generation and preserve them for returning characters. If an approved voice is unavailable, resolve that voice's availability rather than silently selecting a replacement. Follow the A1 audio workflow for Eleven v3, clarity, pacing and generation settings.
 

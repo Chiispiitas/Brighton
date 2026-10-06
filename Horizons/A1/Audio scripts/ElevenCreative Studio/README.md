@@ -8,13 +8,26 @@ For multi-speaker tracks, open `VOICE MAP.md` separately after import and assign
 
 APPROVED A1 CAST AND DEFAULT NARRATOR
 
-Use the voices verified in HORIZONS ON AIR — EPISODE: BUS OR CAR?, Track 2.3:
-- all A1 narration and the episode's HOST/Lucy: Jessica - Playful, Bright, Warm;
+Jessica - Playful, Bright, Warm is the default narrator for every A1 track, including spoken track numbers, instructions, vocabulary and pronunciation models. Retain Jessica for the HOST/Lucy role in HORIZONS ON AIR.
+
+Use the author-approved Brighton English School A1 exam pool as the preferred source for new dialogue roles:
+- Juniper - Grounded and Professional;
+- Adeline - Feminine and Conversational;
+- Amy - Natural and Sweet;
+- Arabella - Mysterious and Emotive;
+- Jarnathan - Confident and Versatile;
+- Mark - Natural Conversations;
+- Mark - Casual, Relaxed and Light;
+- Bradford - Expressive and Articulate.
+
+The two Mark entries have different voice IDs. Bradford narrates the exam, but may be used only as a dialogue character here; Horizons A1 narration remains Jessica.
+
+Preserve the established HORIZONS ON AIR — EPISODE: BUS OR CAR?, Track 2.3, supporting cast:
 - JULIA: Claudia - Calm Latin;
 - DIEGO: Luis Vega - Engaging, Neutral and Clear;
 - ANA: Fernanda Sanmiguel - Neutral and Serious.
 
-Jessica is the default narrator for every A1 track, including spoken track numbers, instructions, vocabulary and pronunciation models. Reuse the approved cast for compatible new dialogue roles and keep returning characters' voices consistent. Use the exact voice IDs in `VOICE MAP.md`; do not silently substitute voices.
+Record each new character's chosen voice ID before generation and keep returning characters and repeated dialogue on that voice. Use the exact voice IDs and verified source projects in `VOICE MAP.md`; do not silently substitute voices.
 
 The current import files include the spoken track label as paragraph 1. The voice map counts that paragraph, so character assignments begin after it. For an existing Studio project with the label omitted or with split/merged paragraphs, match the voice to its speaker text.
 
