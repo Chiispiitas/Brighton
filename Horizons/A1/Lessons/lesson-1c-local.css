@@ -153,9 +153,9 @@
     .l1c-world-stage {
       position: relative;
       overflow: hidden;
-      min-height: 104mm;
-      padding: 12mm 3mm 4mm;
-      background: #eef3f4;
+      min-height: 0;
+      padding: 0 0 3mm;
+      background: transparent;
       isolation: isolate;
     }
 
@@ -173,34 +173,50 @@
     }
 
     .l1c-world-masthead {
-      position: absolute;
+      position: relative;
       top: 0;
       right: 0;
       left: 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      min-height: 8mm;
-      padding: 1.8mm 4mm;
-      background: var(--l1c-feature);
-      color: #fff;
-      font-size: 14pt;
-      font-weight: var(--hz-fw-black);
+      min-height: 0;
+      padding: 0 0 3mm;
+      background: transparent;
+      color: var(--l1c-feature);
+      font-size: 23pt;
+      font-weight: 700;
       letter-spacing: -.025em;
-    }
+
+  font-family: var(--hz-font-reading);
+
+  line-height: 1.1;
+
+  border-bottom: .7mm solid #bd8646;
+
+  margin-bottom: 4mm;
+
+  gap: 5mm;
+}
 
     .l1c-world-masthead span:last-child {
-      font-size: 6.2pt;
+      font-size: 7pt;
       letter-spacing: .13em;
       text-transform: uppercase;
-    }
+
+  font-family: var(--hz-font-sans);
+
+  color: var(--l1c-feature);
+
+  white-space: nowrap;
+}
 
     .l1c-city-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 4mm;
+      gap: 5mm;
       align-items: start;
-      padding-top: 3mm;
+      padding-top: 0;
     }
 
     .l1c-city {
@@ -208,9 +224,9 @@
       min-width: 0;
       padding-top: 0;
 
-  background: var(--hz-paper);
+  background: transparent;
 
-  border-bottom: .65mm solid var(--city-accent,#234f76);
+  border-bottom: 0;
 }
 
     .l1c-city__photo {
@@ -219,25 +235,25 @@
       left: 0;
       z-index: 2;
       width: 100%;
-      height: 32mm;
+      height: 43mm;
       overflow: hidden;
-      border: 1mm solid var(--hz-paper);
+      border: .8mm solid var(--hz-paper);
       border-radius: 0;
       background: var(--hz-wash);
       transform: none;
     }
 
     .l1c-city__photo .hz-photo-placeholder {
-      min-height: 32mm;
+      min-height: 43mm;
       font-size: 4.7pt;
       letter-spacing: .06em;
     }
 
     .l1c-city__copy {
       min-height: 0;
-      padding: 3mm;
+      padding: 3mm 1mm 0;
       border-top: 0;
-      background: var(--hz-paper);
+      background: transparent;
       font-family: var(--hz-font-reading);
       font-size: 8pt;
       line-height: 1.42;
@@ -246,10 +262,10 @@
     .l1c-city__copy h3 {
       margin: 0 0 2mm;
       color: var(--city-accent,#234f76);
-      font-family: var(--hz-font-sans);
-      font-size: 12.5pt;
-      font-weight: var(--hz-fw-black);
-      line-height: 1;
+      font-family: var(--hz-font-reading);
+      font-size: 18pt;
+      font-weight: 700;
+      line-height: 1.1;
       letter-spacing: -.03em;
     }
 
@@ -553,4 +569,12 @@
 
 .l1c-city:nth-child(2) {
   --city-accent: #95602e;
+}
+
+.l1c-city:nth-child(1) .l1c-city__photo {
+  transform: rotate(-1.5deg);
+}
+
+.l1c-city:nth-child(3) .l1c-city__photo {
+  transform: rotate(1.5deg);
 }

@@ -96,12 +96,21 @@ This revision keeps the complete teaching content and audio resources while
 recomposing every spread. The author's color correction authorizes independent
 feature palettes and rejects repeated background boxes. Readings, dialogues,
 photo families, response areas and pair models default to open page paper.
-The Rivera reading uses green editorial type and a partial sage photo mat;
-travel uses blue, work profiles coordinated individual accents, and transport
-orange and blue. The photographic opening cutout remains. Grammar focus keeps
+The closer study of all six supplied Personal Best levels gives work profiles
+circular portraits and individual serif name accents. Travel combines a large
+open headline, map and photographs; the hotel uses an arched scene; transport
+uses an orange publication title and open photographic interviews. The Rivera
+article integrates a generated family cutout and mixed serif title; the bag and
+Lost and Found objects have transparent photographic extractions. The approved
+opening cutout and complete 1A master remain intact. Grammar focus keeps
 its canonical title tab and shell; functional artifacts retain needed structure.
 Feature colors and geometry stay lesson-local. The previous preview is preserved
 at `horizons-editorial-preview-v1-2026-10-06` as an additional rollback point.
+
+The complete spacing-approved preview before the closer reference study is
+preserved at `horizons-before-personal-best-study-2026-10-07`. Image edits use
+versioned sibling filenames; original images remain available. No Personal Best
+learner text, photographic assets or branding are used in the book.
 
 Compare the whole book at print scale. Check source-text and exercise parity,
 response affordances, image loading, phone-screen clipping, grammar emphasis,

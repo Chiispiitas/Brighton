@@ -67,18 +67,20 @@
 
   border-bottom: .65mm solid var(--l2d-feature);
 }
-.l2d-inventory h2 { margin: 0; font-size: 20pt; font-weight: 720; line-height: 1.1; letter-spacing: .025em;
+.l2d-inventory h2 { margin: 0; font-size: 28pt; font-weight: 720; line-height: 1.05; letter-spacing: 0;
   font-family: var(--hz-font-reading);
 }
-.l2d-item-pairs { gap: 3.5mm 6mm; }
+.l2d-item-pairs { gap: 5mm 6mm; }
 .l2d-item-pairs figure { margin: 0; min-width: 0; }
 .l2d-item-pairs img { display: block; width: 100%; height: 42mm; object-fit: contain; background: transparent; }
-.l2d-item-pairs figcaption { display: grid; grid-template-columns: 1fr 1fr; text-align: center; margin-top: 1.2mm; color: var(--l2d-item); font-size: 8.8pt; font-weight: 820;
+.l2d-item-pairs figcaption { display: grid; grid-template-columns: 1fr 1fr; text-align: center; margin-top: 1.2mm; color: var(--l2d-item); font-size: 11pt; font-weight: 820;
   background: transparent;
 
   padding: .5mm 0;
 
   border-bottom: 0;
+
+  font-family: var(--hz-font-reading);
 }
 .l2d-inventory-example { margin: 2.5mm 0 0; }
 .l2d-transaction { gap: 7mm; align-items: start; }
@@ -99,4 +101,10 @@
 
 .l2d-page .hz-lesson-header {
   padding-bottom: 3.2mm;
+}
+
+.l2d-inventory h2 em {
+  font-size: 20pt;
+  font-style: italic;
+  font-weight: 500;
 }

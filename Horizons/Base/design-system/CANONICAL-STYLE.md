@@ -91,7 +91,7 @@ Color does not need a separate pedagogical justification to serve art direction.
 
 Give each major feature a composition appropriate to its content: profiles may
 read as a magazine feature, travel entries as photographic postcards, a family
-reading as a bounded article, and a transport interview as a podcast feature.
+reading as a portrait-led article, and a transport interview as a podcast feature.
 Photos, text and task labels should form one readable composition. Use an
 occasional corner crop, modest diagonal or clean transparent photographic
 cutout only when it strengthens that composition and preserves learner evidence.
@@ -103,6 +103,20 @@ type, a purposeful rule or a selective color field. A full background panel is
 an occasional deliberate composition, never a default wrapper. A partial photo
 mat can give atmosphere while the reading remains open and readable. Functional
 forms retain clear white writing surfaces and enough physical answer space.
+
+Judge editorial creativity through composition, not just an accent-color change.
+Vary the main feature's visual idea within the shared system: portrait-led
+profiles, an open photographic object arrangement, a travel feature integrating
+a map and photographs, or an article title with a cutout. A sober contrast
+between serif display type, italic secondary words and the established learner
+type can give a feature its own voice. Display typography belongs to feature
+titles and task-bearing names; instructions and grammar retain their hierarchy.
+
+Use cutouts selectively and keep environmental photographs elsewhere in the
+lesson. Check identities, objects, colors, quantity, relative scale and task
+labels after image edits. Check native alpha on the actual page paper. Circle
+and arch crops must preserve faces, gestures and relevant objects; tune the
+crop instead of accepting the default center. Preserve approved spacing.
 
 Grammar/focus component headers use the shared dark-crimson title tab above
 the pale-pink body. Local CSS does not redefine this tab or its shell. Bold in

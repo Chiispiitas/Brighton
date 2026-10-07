@@ -139,16 +139,26 @@
 .l2b-show-head--small .l2b-show-episode { font-size: 10pt; }
 
 .l2b-onair-start .l2b-show-head {
-  padding: 2.6mm 3mm;
-  margin-bottom: 1.2mm;
-  background: #29272b;
-  color: #fff;
+  padding: 0 0 2mm;
+  margin-bottom: 2.5mm;
+  background: transparent;
+  color: var(--hz-ink);
 
-  border-left: 1.4mm solid var(--l2b-feature);
+  border-left: 0;
+
+  border-bottom: .65mm solid var(--l2b-feature);
 }
 .l2b-onair-start .l2b-show-episode {
   order: -1;
-  font-size: 17pt;
+  font-size: 27pt;
+
+  font-family: var(--hz-font-sans);
+
+  font-weight: 700;
+
+  line-height: 1.1;
+
+  color: var(--l2b-feature);
 }
 .l2b-onair-start .l2b-show-brand { margin-left: auto; }
 .l2b-onair-start .l2b-show-brand em { background: #fff; color: var(--hz-unit-dark); }
@@ -180,12 +190,20 @@
   gap: 3mm;
 }
 
-.l2b-street-still,
+.l2b-street-still {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  background: #e5e1db;
+}
 .l2b-interview-photo {
   position: relative;
   margin: 0;
   overflow: hidden;
   background: #e5e1db;
+
+  border-radius: 0 15mm 0 0;
+  background: transparent;
 }
 
 .l2b-street-still {
@@ -221,7 +239,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.4mm 0;
+  padding: 1.5mm 0;
   background: transparent;
   color: var(--hz-ink);
   font-size: 6.4pt;
@@ -597,9 +615,11 @@
   display: grid;
   grid-template-rows: 55mm 7mm;
   height: 62mm;
+
+  border-radius: 0 15mm 0 0;
 }
 
-.l2b-interview-photo figcaption { padding: 1.4mm 0; font-size: 7.5pt;
+.l2b-interview-photo figcaption { padding: 1.5mm 0; font-size: 7.5pt;
   background: transparent;
 
   color: var(--hz-ink);
@@ -786,7 +806,9 @@
 /* ---------- Production photography ---------- */
 
 .l2b-city-photo { margin: 1.5mm 0 2mm; overflow: hidden;
-  clip-path: polygon(0 0,100% 0,100% 100%,3% 100%);
+  clip-path: none;
+
+  border-radius: 0 16mm 0 0;
 }
 .l2b-city-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 52%; }
 .l2b-interview-photo > img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 38%; min-height: 0; }

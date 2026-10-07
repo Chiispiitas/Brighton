@@ -70,6 +70,8 @@
 .l2a-bag-photo {
   min-height: 0;
   aspect-ratio: 1402 / 1122;
+
+  overflow: visible;
 }
 
 /* Live labels belong to the matching task, not to the photograph. */
@@ -93,7 +95,7 @@
 .l2a-word-bank {
   align-self: center;
   padding: 3mm 0 3mm 3mm;
-  border-left: 0;
+  border-left: .65mm solid var(--l2a-feature);
 
   background: transparent;
 }

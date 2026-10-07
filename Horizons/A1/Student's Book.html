@@ -1983,27 +1983,33 @@ body.hz-debug .hz-page::after {
     .l1b-profile {
       position: relative;
       min-width: 0;
-      padding-top: 35mm;
+      padding-top: 43mm;
       border-top: 0;
 
   background: transparent;
+
+  --profile-accent: #245b62;
 }
 
     .l1b-profile__photo {
       position: absolute;
       top: 0;
-      left: 0;
-      width: 100%;
-      height: 34mm;
+      left: 50%;
+      width: 40mm;
+      height: 40mm;
       overflow: hidden;
-      background: var(--hz-wash);
+      background: transparent;
       clip-path: none;
 
-  border-radius: 0;
+  border-radius: 50%;
+
+  transform: translateX(-50%);
+
+  border: .6mm solid var(--profile-accent);
 }
 
     .l1b-profile__photo .hz-photo-placeholder {
-      min-height: 34mm;
+      min-height: 40mm;
       font-size: 5pt;
       letter-spacing: .07em;
     }
@@ -2013,14 +2019,18 @@ body.hz-debug .hz-page::after {
       z-index: 2;
       display: inline-block;
       margin: 1.5mm 0 1.5mm;
-      padding: 1mm 2mm 0 0;
-      background: var(--hz-paper);
-      color: var(--l1b-feature);
-      font-size: 15pt;
-      font-weight: var(--hz-fw-black);
+      padding: 0 0 1.2mm;
+      background: transparent;
+      color: var(--profile-accent);
+      font-size: 21pt;
+      font-weight: 700;
       line-height: .95;
-      letter-spacing: -.045em;
-    }
+      letter-spacing: -.025em;
+
+  font-family: var(--hz-font-reading);
+
+  border-bottom: .55mm solid var(--profile-accent);
+}
 
     .l1b-profile__copy {
       min-height: 50mm;
@@ -2278,7 +2288,7 @@ body.hz-debug .hz-page::after {
 .l1b-page .l1b-clue:nth-child(5) .hz-photo-placeholder { background-image: url("./Images/1B/Syringe.png") !important; background-position: center !important; }
 
 .l1b-page .l1b-profile:nth-child(1) .hz-photo-placeholder { background-image: url("./Images/1B/Tom.png") !important; background-position: center 42% !important; }
-.l1b-page .l1b-profile:nth-child(2) .hz-photo-placeholder { background-image: url("./Images/1B/Sarah.png") !important; background-position: center 40% !important; }
+.l1b-page .l1b-profile:nth-child(2) .hz-photo-placeholder { background-image: url("./Images/1B/Sarah.png") !important; background-position: 14% 40% !important; }
 .l1b-page .l1b-profile:nth-child(3) .hz-photo-placeholder { background-image: url("./Images/1B/Marco.png") !important; background-position: center 42% !important; }
 
 .l1b-page .l1b-workers-photo .hz-photo-placeholder {
@@ -2446,11 +2456,19 @@ body.hz-debug .hz-page::after {
 }
 
 .l1b-profile:nth-child(1) .l1b-profile__photo {
-  border-radius: 0 0 9mm 0;
+  border-radius: 50%;
 }
 
 .l1b-profile:nth-child(3) .l1b-profile__photo {
-  clip-path: polygon(0 0,100% 0,100% 100%,5% 100%);
+  clip-path: none;
+}
+
+.l1b-profile:nth-child(2) {
+  --profile-accent: #315b88;
+}
+
+.l1b-profile:nth-child(3) {
+  --profile-accent: #98572c;
 }
 
 
@@ -2610,9 +2628,9 @@ body.hz-debug .hz-page::after {
     .l1c-world-stage {
       position: relative;
       overflow: hidden;
-      min-height: 104mm;
-      padding: 12mm 3mm 4mm;
-      background: #eef3f4;
+      min-height: 0;
+      padding: 0 0 3mm;
+      background: transparent;
       isolation: isolate;
     }
 
@@ -2630,34 +2648,50 @@ body.hz-debug .hz-page::after {
     }
 
     .l1c-world-masthead {
-      position: absolute;
+      position: relative;
       top: 0;
       right: 0;
       left: 0;
       display: flex;
       align-items: center;
       justify-content: space-between;
-      min-height: 8mm;
-      padding: 1.8mm 4mm;
-      background: var(--l1c-feature);
-      color: #fff;
-      font-size: 14pt;
-      font-weight: var(--hz-fw-black);
+      min-height: 0;
+      padding: 0 0 3mm;
+      background: transparent;
+      color: var(--l1c-feature);
+      font-size: 23pt;
+      font-weight: 700;
       letter-spacing: -.025em;
-    }
+
+  font-family: var(--hz-font-reading);
+
+  line-height: 1.1;
+
+  border-bottom: .7mm solid #bd8646;
+
+  margin-bottom: 4mm;
+
+  gap: 5mm;
+}
 
     .l1c-world-masthead span:last-child {
-      font-size: 6.2pt;
+      font-size: 7pt;
       letter-spacing: .13em;
       text-transform: uppercase;
-    }
+
+  font-family: var(--hz-font-sans);
+
+  color: var(--l1c-feature);
+
+  white-space: nowrap;
+}
 
     .l1c-city-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 4mm;
+      gap: 5mm;
       align-items: start;
-      padding-top: 3mm;
+      padding-top: 0;
     }
 
     .l1c-city {
@@ -2665,9 +2699,9 @@ body.hz-debug .hz-page::after {
       min-width: 0;
       padding-top: 0;
 
-  background: var(--hz-paper);
+  background: transparent;
 
-  border-bottom: .65mm solid var(--city-accent,#234f76);
+  border-bottom: 0;
 }
 
     .l1c-city__photo {
@@ -2676,25 +2710,25 @@ body.hz-debug .hz-page::after {
       left: 0;
       z-index: 2;
       width: 100%;
-      height: 32mm;
+      height: 43mm;
       overflow: hidden;
-      border: 1mm solid var(--hz-paper);
+      border: .8mm solid var(--hz-paper);
       border-radius: 0;
       background: var(--hz-wash);
       transform: none;
     }
 
     .l1c-city__photo .hz-photo-placeholder {
-      min-height: 32mm;
+      min-height: 43mm;
       font-size: 4.7pt;
       letter-spacing: .06em;
     }
 
     .l1c-city__copy {
       min-height: 0;
-      padding: 3mm;
+      padding: 3mm 1mm 0;
       border-top: 0;
-      background: var(--hz-paper);
+      background: transparent;
       font-family: var(--hz-font-reading);
       font-size: 8pt;
       line-height: 1.42;
@@ -2703,10 +2737,10 @@ body.hz-debug .hz-page::after {
     .l1c-city__copy h3 {
       margin: 0 0 2mm;
       color: var(--city-accent,#234f76);
-      font-family: var(--hz-font-sans);
-      font-size: 12.5pt;
-      font-weight: var(--hz-fw-black);
-      line-height: 1;
+      font-family: var(--hz-font-reading);
+      font-size: 18pt;
+      font-weight: 700;
+      line-height: 1.1;
       letter-spacing: -.03em;
     }
 
@@ -3012,6 +3046,14 @@ body.hz-debug .hz-page::after {
   --city-accent: #95602e;
 }
 
+.l1c-city:nth-child(1) .l1c-city__photo {
+  transform: rotate(-1.5deg);
+}
+
+.l1c-city:nth-child(3) .l1c-city__photo {
+  transform: rotate(1.5deg);
+}
+
 
 /* Horizons/A1/Lessons/lesson-1d-local.css */
 
@@ -3079,8 +3121,10 @@ body.hz-debug .hz-page::after {
       min-height: 86mm;
       overflow: hidden;
       background: var(--hz-wash);
-      clip-path: polygon(0 0, 100% 0, 91% 100%, 0 100%);
-    }
+      clip-path: none;
+
+  border-radius: 26mm 26mm 0 0;
+}
 
     .l1d-checkin-photo .hz-photo-placeholder { min-height: 86mm; }
 
@@ -3531,7 +3575,13 @@ body.hz-debug .hz-page::after {
 .l1d-page:not(.l1d-page--2) .l1d-checkin-photo,
 .l1d-page:not(.l1d-page--2) .l1d-checkin-photo .hz-photo-placeholder { min-height: 71mm !important; }
 .l1d-page:not(.l1d-page--2) .l1d-checkin-copy { margin-left: -5mm !important; padding: 3.2mm 4mm 3.2mm 9mm !important; }
-.l1d-page:not(.l1d-page--2) .l1d-checkin-copy__kicker { margin-bottom: 1.4mm !important; font-size: 7pt !important; }
+.l1d-page:not(.l1d-page--2) .l1d-checkin-copy__kicker { margin-bottom: 2.5mm !important; font-size: 14pt !important;
+  font-family: var(--hz-font-reading);
+
+  line-height: 1.1;
+
+  letter-spacing: 0;
+}
 .l1d-page:not(.l1d-page--2) .l1d-dialogue { grid-template-columns: 18mm 1fr !important; gap: .55mm 2mm !important; margin-bottom: 0 !important; font-size: 8.05pt !important; line-height: 1.25 !important; }
 .l1d-page:not(.l1d-page--2) .l1d-dialogue :where(dt, dd) { font-size: 8.05pt !important; line-height: 1.25 !important; }
 .l1d-page:not(.l1d-page--2) .l1d-discovery { gap: 1.4mm 8mm !important; padding-top: .8mm !important; font-size: 8pt !important; line-height: 1.28 !important; }
@@ -3851,6 +3901,8 @@ body.hz-debug .hz-page::after {
 .l2a-bag-photo {
   min-height: 0;
   aspect-ratio: 1402 / 1122;
+
+  overflow: visible;
 }
 
 /* Live labels belong to the matching task, not to the photograph. */
@@ -3874,7 +3926,7 @@ body.hz-debug .hz-page::after {
 .l2a-word-bank {
   align-self: center;
   padding: 3mm 0 3mm 3mm;
-  border-left: 0;
+  border-left: .65mm solid var(--l2a-feature);
 
   background: transparent;
 }
@@ -4245,16 +4297,26 @@ body.hz-debug .hz-page::after {
 .l2b-show-head--small .l2b-show-episode { font-size: 10pt; }
 
 .l2b-onair-start .l2b-show-head {
-  padding: 2.6mm 3mm;
-  margin-bottom: 1.2mm;
-  background: #29272b;
-  color: #fff;
+  padding: 0 0 2mm;
+  margin-bottom: 2.5mm;
+  background: transparent;
+  color: var(--hz-ink);
 
-  border-left: 1.4mm solid var(--l2b-feature);
+  border-left: 0;
+
+  border-bottom: .65mm solid var(--l2b-feature);
 }
 .l2b-onair-start .l2b-show-episode {
   order: -1;
-  font-size: 17pt;
+  font-size: 27pt;
+
+  font-family: var(--hz-font-sans);
+
+  font-weight: 700;
+
+  line-height: 1.1;
+
+  color: var(--l2b-feature);
 }
 .l2b-onair-start .l2b-show-brand { margin-left: auto; }
 .l2b-onair-start .l2b-show-brand em { background: #fff; color: var(--hz-unit-dark); }
@@ -4286,12 +4348,20 @@ body.hz-debug .hz-page::after {
   gap: 3mm;
 }
 
-.l2b-street-still,
+.l2b-street-still {
+  position: relative;
+  margin: 0;
+  overflow: hidden;
+  background: #e5e1db;
+}
 .l2b-interview-photo {
   position: relative;
   margin: 0;
   overflow: hidden;
   background: #e5e1db;
+
+  border-radius: 0 15mm 0 0;
+  background: transparent;
 }
 
 .l2b-street-still {
@@ -4327,7 +4397,7 @@ body.hz-debug .hz-page::after {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding: 1.4mm 0;
+  padding: 1.5mm 0;
   background: transparent;
   color: var(--hz-ink);
   font-size: 6.4pt;
@@ -4703,9 +4773,11 @@ body.hz-debug .hz-page::after {
   display: grid;
   grid-template-rows: 55mm 7mm;
   height: 62mm;
+
+  border-radius: 0 15mm 0 0;
 }
 
-.l2b-interview-photo figcaption { padding: 1.4mm 0; font-size: 7.5pt;
+.l2b-interview-photo figcaption { padding: 1.5mm 0; font-size: 7.5pt;
   background: transparent;
 
   color: var(--hz-ink);
@@ -4892,7 +4964,9 @@ body.hz-debug .hz-page::after {
 /* ---------- Production photography ---------- */
 
 .l2b-city-photo { margin: 1.5mm 0 2mm; overflow: hidden;
-  clip-path: polygon(0 0,100% 0,100% 100%,3% 100%);
+  clip-path: none;
+
+  border-radius: 0 16mm 0 0;
 }
 .l2b-city-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 52%; }
 .l2b-interview-photo > img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 38%; min-height: 0; }
@@ -4995,14 +5069,14 @@ body.hz-debug .hz-page::after {
 .l2c-reading-feature__head {
   display: flex;
   flex-direction: row-reverse;
-  align-items: center;
+  align-items: end;
   justify-content: space-between;
   gap: 4mm;
   margin-bottom: 3mm;
   padding: 1mm 0 0;
   background: transparent;
 
-  margin: 0 0 4mm;
+  margin: 0 0 4.5mm;
 }
 
 .l2c-reading-feature__head > span {
@@ -5018,17 +5092,17 @@ body.hz-debug .hz-page::after {
   margin: 0;
   color: var(--l2c-feature);
   font-family: var(--hz-font-reading);
-  font-size: 23pt;
+  font-size: 31pt;
   font-style: normal;
   font-weight: 720;
-  line-height: 1;
+  line-height: 1.1;
   letter-spacing: -.025em;
 }
 
 .l2c-reading-feature__main {
   display: grid;
-  grid-template-columns: 68mm minmax(0,1fr);
-  gap: 5mm;
+  grid-template-columns: 74mm minmax(0,1fr);
+  gap: 6.5mm;
   align-items: start;
 }
 
@@ -5044,11 +5118,11 @@ body.hz-debug .hz-page::after {
 .l2c-family-photo img {
   display: block;
   width: 100%;
-  height: 88mm;
-  object-fit: cover;
-  object-position: 46% center;
+  height: 94mm;
+  object-fit: contain;
+  object-position: center bottom;
 
-  border-radius: 0 0 7mm 0;
+  border-radius: 0;
 }
 
 .l2c-reading-copy {
@@ -5367,6 +5441,18 @@ body.hz-debug .hz-page::after {
   bottom: 8mm;
   width: 58%;
   background: var(--l2c-photo-mat);
+
+  display: none;
+}
+
+.l2c-reading-feature__head h2 em {
+  font-size: 22pt;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.l2c-reading-feature__head h2 span {
+  color: #a16732;
 }
 
 
@@ -5440,18 +5526,20 @@ body.hz-debug .hz-page::after {
 
   border-bottom: .65mm solid var(--l2d-feature);
 }
-.l2d-inventory h2 { margin: 0; font-size: 20pt; font-weight: 720; line-height: 1.1; letter-spacing: .025em;
+.l2d-inventory h2 { margin: 0; font-size: 28pt; font-weight: 720; line-height: 1.05; letter-spacing: 0;
   font-family: var(--hz-font-reading);
 }
-.l2d-item-pairs { gap: 3.5mm 6mm; }
+.l2d-item-pairs { gap: 5mm 6mm; }
 .l2d-item-pairs figure { margin: 0; min-width: 0; }
 .l2d-item-pairs img { display: block; width: 100%; height: 42mm; object-fit: contain; background: transparent; }
-.l2d-item-pairs figcaption { display: grid; grid-template-columns: 1fr 1fr; text-align: center; margin-top: 1.2mm; color: var(--l2d-item); font-size: 8.8pt; font-weight: 820;
+.l2d-item-pairs figcaption { display: grid; grid-template-columns: 1fr 1fr; text-align: center; margin-top: 1.2mm; color: var(--l2d-item); font-size: 11pt; font-weight: 820;
   background: transparent;
 
   padding: .5mm 0;
 
   border-bottom: 0;
+
+  font-family: var(--hz-font-reading);
 }
 .l2d-inventory-example { margin: 2.5mm 0 0; }
 .l2d-transaction { gap: 7mm; align-items: start; }
@@ -5472,6 +5560,12 @@ body.hz-debug .hz-page::after {
 
 .l2d-page .hz-lesson-header {
   padding-bottom: 3.2mm;
+}
+
+.l2d-inventory h2 em {
+  font-size: 20pt;
+  font-style: italic;
+  font-weight: 500;
 }
 
 
@@ -6576,7 +6670,7 @@ body {
               <p class="hz-exercise__instruction">Look and match.</p>
               <div class="hz-exercise__body l2a-vocab-stage">
                 <div class="l2a-bag-photo l2a-photo-slot" data-image-slot="2A-E01-BAG">
-                  <img src="./Images/2A/Open bag.png" alt="Open bag with personal items">
+                  <img src="./Images/2A/Open-bag-cutout-v2.png" alt="Open bag with personal items">
                   <span class="l2a-object-label" style="--x:16%;--y:26%">A</span>
                   <span class="l2a-object-label" style="--x:24%;--y:45%">B</span>
                   <span class="l2a-object-label" style="--x:14%;--y:64%">C</span>
@@ -7089,12 +7183,12 @@ body {
               <div class="hz-exercise__body l2c-reading-feature">
                 <header class="l2c-reading-feature__head">
                   <span>FAMILY AT WORK</span>
-                  <h2>The Rivera family</h2>
+                  <h2><em>The Rivera</em> <span>family</span></h2>
                 </header>
 
                 <div class="l2c-reading-feature__main">
                   <figure class="l2c-family-photo" data-image-slot="HZN_A1_U02_LC_E02_IMG_01">
-                    <img src="./Images/2C/2C_04_main_reading_rivera_family_restaurant---d2c83374-a7d8-459c-919b-cd560669adc3.png" alt="The Rivera family together in their restaurant">
+                    <img src="./Images/2C/Rivera-family-cutout-v2.png" alt="The four Rivera family members together">
                   </figure>
 
                   <article class="l2c-reading-copy hz-student-text">
@@ -7433,12 +7527,12 @@ body {
             <div class="hz-exercise__content">
               <p class="hz-exercise__instruction">Look at the items. Describe.</p>
               <div class="hz-exercise__body l2d-inventory">
-                <header><h2>LOST AND FOUND</h2></header>
+                <header><h2><span>LOST</span> <em>AND FOUND</em></h2></header>
                 <div class="hz-media-family hz-content-grid hz-content-grid--2 l2d-item-pairs">
-                  <figure data-image-slot="HZN_A1_U02_LD_E06_IMG_01"><img src="./Images/2D/HZN_A1_U02_LD_E06_IMG_01.png" alt="Left: the black phone is small. Right: the white phone is big."><figcaption><span>1</span><span>2</span></figcaption></figure>
-                  <figure data-image-slot="HZN_A1_U02_LD_E06_IMG_02"><img src="./Images/2D/HZN_A1_U02_LD_E06_IMG_02.png" alt="Left: the brown wallet is small. Right: the red wallet is big."><figcaption><span>3</span><span>4</span></figcaption></figure>
-                  <figure data-image-slot="HZN_A1_U02_LD_E06_IMG_03"><img src="./Images/2D/HZN_A1_U02_LD_E06_IMG_03.png" alt="Left: the green bottle is small. Right: the blue bottle is big."><figcaption><span>5</span><span>6</span></figcaption></figure>
-                  <figure data-image-slot="HZN_A1_U02_LD_E06_IMG_04"><img src="./Images/2D/HZN_A1_U02_LD_E06_IMG_04.png" alt="Left: the yellow umbrella is small. Right: the orange umbrella is big."><figcaption><span>7</span><span>8</span></figcaption></figure>
+                  <figure data-image-slot="HZN_A1_U02_LD_E06_IMG_01"><img src="./Images/2D/HZN_A1_U02_LD_E06_IMG_01-cutout-v2.png" alt="Left: the black phone is small. Right: the white phone is big."><figcaption><span>1</span><span>2</span></figcaption></figure>
+                  <figure data-image-slot="HZN_A1_U02_LD_E06_IMG_02"><img src="./Images/2D/HZN_A1_U02_LD_E06_IMG_02-cutout-v2.png" alt="Left: the brown wallet is small. Right: the red wallet is big."><figcaption><span>3</span><span>4</span></figcaption></figure>
+                  <figure data-image-slot="HZN_A1_U02_LD_E06_IMG_03"><img src="./Images/2D/HZN_A1_U02_LD_E06_IMG_03-cutout-v2.png" alt="Left: the green bottle is small. Right: the blue bottle is big."><figcaption><span>5</span><span>6</span></figcaption></figure>
+                  <figure data-image-slot="HZN_A1_U02_LD_E06_IMG_04"><img src="./Images/2D/HZN_A1_U02_LD_E06_IMG_04-cutout-v2.png" alt="Left: the yellow umbrella is small. Right: the orange umbrella is big."><figcaption><span>7</span><span>8</span></figcaption></figure>
                 </div>
               </div>
               <p class="l2d-inventory-example hz-dialogue-text"><b>1:</b> It's a black phone. It's small.</p>

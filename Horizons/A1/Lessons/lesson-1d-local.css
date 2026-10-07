@@ -63,8 +63,10 @@
       min-height: 86mm;
       overflow: hidden;
       background: var(--hz-wash);
-      clip-path: polygon(0 0, 100% 0, 91% 100%, 0 100%);
-    }
+      clip-path: none;
+
+  border-radius: 26mm 26mm 0 0;
+}
 
     .l1d-checkin-photo .hz-photo-placeholder { min-height: 86mm; }
 
@@ -515,7 +517,13 @@
 .l1d-page:not(.l1d-page--2) .l1d-checkin-photo,
 .l1d-page:not(.l1d-page--2) .l1d-checkin-photo .hz-photo-placeholder { min-height: 71mm !important; }
 .l1d-page:not(.l1d-page--2) .l1d-checkin-copy { margin-left: -5mm !important; padding: 3.2mm 4mm 3.2mm 9mm !important; }
-.l1d-page:not(.l1d-page--2) .l1d-checkin-copy__kicker { margin-bottom: 1.4mm !important; font-size: 7pt !important; }
+.l1d-page:not(.l1d-page--2) .l1d-checkin-copy__kicker { margin-bottom: 2.5mm !important; font-size: 14pt !important;
+  font-family: var(--hz-font-reading);
+
+  line-height: 1.1;
+
+  letter-spacing: 0;
+}
 .l1d-page:not(.l1d-page--2) .l1d-dialogue { grid-template-columns: 18mm 1fr !important; gap: .55mm 2mm !important; margin-bottom: 0 !important; font-size: 8.05pt !important; line-height: 1.25 !important; }
 .l1d-page:not(.l1d-page--2) .l1d-dialogue :where(dt, dd) { font-size: 8.05pt !important; line-height: 1.25 !important; }
 .l1d-page:not(.l1d-page--2) .l1d-discovery { gap: 1.4mm 8mm !important; padding-top: .8mm !important; font-size: 8pt !important; line-height: 1.28 !important; }

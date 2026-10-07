@@ -68,14 +68,14 @@
 .l2c-reading-feature__head {
   display: flex;
   flex-direction: row-reverse;
-  align-items: center;
+  align-items: end;
   justify-content: space-between;
   gap: 4mm;
   margin-bottom: 3mm;
   padding: 1mm 0 0;
   background: transparent;
 
-  margin: 0 0 4mm;
+  margin: 0 0 4.5mm;
 }
 
 .l2c-reading-feature__head > span {
@@ -91,17 +91,17 @@
   margin: 0;
   color: var(--l2c-feature);
   font-family: var(--hz-font-reading);
-  font-size: 23pt;
+  font-size: 31pt;
   font-style: normal;
   font-weight: 720;
-  line-height: 1;
+  line-height: 1.1;
   letter-spacing: -.025em;
 }
 
 .l2c-reading-feature__main {
   display: grid;
-  grid-template-columns: 68mm minmax(0,1fr);
-  gap: 5mm;
+  grid-template-columns: 74mm minmax(0,1fr);
+  gap: 6.5mm;
   align-items: start;
 }
 
@@ -117,11 +117,11 @@
 .l2c-family-photo img {
   display: block;
   width: 100%;
-  height: 88mm;
-  object-fit: cover;
-  object-position: 46% center;
+  height: 94mm;
+  object-fit: contain;
+  object-position: center bottom;
 
-  border-radius: 0 0 7mm 0;
+  border-radius: 0;
 }
 
 .l2c-reading-copy {
@@ -440,4 +440,16 @@
   bottom: 8mm;
   width: 58%;
   background: var(--l2c-photo-mat);
+
+  display: none;
+}
+
+.l2c-reading-feature__head h2 em {
+  font-size: 22pt;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.l2c-reading-feature__head h2 span {
+  color: #a16732;
 }

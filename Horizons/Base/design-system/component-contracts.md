@@ -94,6 +94,12 @@ Use `--full-lane` when a dominant equal-status family should center across the u
 
 The family chooses its columns/gaps locally. Equal-status items share geometry/basic scale; crop position may differ per image.
 
+A feature can be portrait-led or use photographic extractions on open paper.
+Keep names and matching markers as live task text. Display type and photo
+framing stay lesson-local, with canonical spacing and learner hierarchy retained.
+Inspect circle/arch crops for complete faces and check extracted silhouettes
+on the actual page background.
+
 Do not force text/copy areas inside repeated items to a large equal `min-height` unless equal height is functionally necessary. Natural content height is the default.
 
 ## 6. Photography
