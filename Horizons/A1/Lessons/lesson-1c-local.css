@@ -1,3 +1,458 @@
+
+    /*
+      LESSON 1C CANONICAL PROTOTYPE
+      -----------------------------
+      Page 9 reproduces the frozen Student's Book content exactly while adapting
+      the composition to the current canonical Horizons style.
+
+      The frozen source has no completed second page for Lesson 1C. Page 10 is
+      therefore newly authored to complete the lesson while staying inside the
+      locked focus: Countries + Adjectives. It follows the canonical Lesson C
+      rhythm: short vocabulary-focused activities, recycling, and pairwork.
+
+      In the first units, authored support language deliberately stays extremely
+      simple and recycles forms already met by the learner. Natural-sounding but
+      untaught English collocations are avoided when a more transparent form works.
+
+      Final photography is represented by crop-aware placeholders.
+    */
+
+    .l1c-page .hz-page__content { overflow: hidden; }
+    .l1c-page .hz-page-stack { gap: 2.7mm; }
+    .l1c-page .hz-lesson-header { padding-bottom: 3.2mm; }
+    .l1c-page .hz-exercises { gap: .2mm; }
+    .l1c-page .hz-exercise { padding: 1.6mm 0 2.15mm; }
+    .l1c-page .hz-exercise__body { margin-top: 1.5mm; }
+    .l1c-page .hz-exercise__instruction { font-size: 8.9pt; }
+    .l1c-target { color: var(--hz-unit-dark); font-weight: var(--hz-fw-black); }
+
+    .l1c-track {
+      display: inline-flex;
+      align-items: center;
+      margin-right: 1.35mm;
+      padding: .6mm 1.15mm;
+      background: var(--hz-audio);
+      color: #fff;
+      font-size: 6.4pt;
+      font-weight: var(--hz-fw-black);
+      line-height: 1;
+      vertical-align: .35mm;
+    }
+
+    /* ------------------------------------------------------------------
+       PAGE 9 — frozen source adapted into the canonical design
+       ------------------------------------------------------------------ */
+
+    .l1c-country-stage {
+      position: relative;
+      padding-top: .6mm;
+      isolation: isolate;
+    }
+
+    .l1c-country-stage::before {
+      content: "FROM?";
+      position: absolute;
+      z-index: -1;
+      right: -1mm;
+      top: -7mm;
+      color: var(--hz-unit-soft);
+      font-size: 43pt;
+      font-weight: var(--hz-fw-black);
+      line-height: 1;
+      letter-spacing: -.06em;
+    }
+
+    .l1c-country-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 4mm;
+      margin-bottom: 2mm;
+    }
+
+    .l1c-country-bank {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1mm 4.3mm;
+      padding: 1.8mm 2.7mm;
+      border-left: 1mm solid var(--hz-unit);
+      background: var(--hz-wash);
+      color: var(--hz-unit-dark);
+      font-size: 7.5pt;
+      font-weight: var(--hz-fw-bold);
+    }
+
+    .l1c-celebrities {
+      display: grid;
+      grid-template-columns: repeat(5, minmax(0, 1fr));
+      gap: 2.2mm;
+      align-items: start;
+    }
+
+    .l1c-celebrity { min-width: 0; margin: 0; }
+
+    .l1c-celebrity__photo {
+      position: relative;
+      height: 35mm;
+      overflow: hidden;
+      background: var(--hz-wash);
+      clip-path: polygon(0 0, 100% 0, 100% 91%, 88% 100%, 0 100%);
+    }
+
+    .l1c-celebrity__photo .hz-photo-placeholder {
+      min-height: 35mm;
+      font-size: 4.7pt;
+      letter-spacing: .06em;
+    }
+
+    .l1c-celebrity__photo .hz-photo-placeholder::before { inset: 2.3mm; }
+    .l1c-celebrity__photo .hz-photo-placeholder::after { width: 20mm; }
+    .l1c-celebrity__photo .hz-photo-placeholder__meta { padding: .7mm 1mm; }
+
+    .l1c-celebrity__caption {
+      display: grid;
+      grid-template-columns: 4mm 1fr;
+      gap: .7mm;
+      margin-top: 1.25mm;
+      font-size: 6.35pt;
+      font-weight: var(--hz-fw-black);
+      line-height: 1.1;
+    }
+
+    .l1c-celebrity__caption b { color: var(--hz-unit-dark); }
+
+    .l1c-celebrity__line {
+      display: block;
+      height: 6mm;
+      margin-top: .6mm;
+      border-bottom: .28mm solid var(--hz-line-strong);
+    }
+
+    .l1c-nationalities {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5mm 7mm;
+      max-width: 150mm;
+      font-size: 7.7pt;
+    }
+
+    .l1c-nationality {
+      display: grid;
+      grid-template-columns: 5mm 1fr 25mm;
+      gap: 1mm;
+      align-items: end;
+      min-height: 5.5mm;
+    }
+
+    .l1c-nationality b { color: var(--hz-unit-dark); }
+    .l1c-nationality__line { border-bottom: .28mm solid var(--hz-line-strong); min-height: 4mm; }
+
+    .l1c-go-to { margin: 1.5mm 0 .2mm calc(var(--hz-exercise-marker-size) + 3mm); }
+
+    /* Exercise 3 uses a travel-editorial composition rather than three cards. */
+    .l1c-world-stage {
+      position: relative;
+      overflow: hidden;
+      min-height: 0;
+      padding: 0 0 3mm;
+      background: transparent;
+      isolation: isolate;
+    }
+
+    .l1c-world-stage::before {
+      content: "WORLD";
+      position: absolute;
+      z-index: -1;
+      left: -2mm;
+      bottom: -7mm;
+      color: rgb(22 127 130 / 10%);
+      font-size: 57pt;
+      font-weight: var(--hz-fw-black);
+      line-height: 1;
+      letter-spacing: -.07em;
+    }
+
+    .l1c-world-masthead {
+      position: relative;
+      top: 0;
+      right: 0;
+      left: 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      min-height: 0;
+      padding: 0 0 3mm;
+      background: transparent;
+      color: var(--l1c-feature);
+      font-size: 23pt;
+      font-weight: 700;
+      letter-spacing: -.025em;
+
+  font-family: var(--hz-font-reading);
+
+  line-height: 1.1;
+
+  border-bottom: .7mm solid #bd8646;
+
+  margin-bottom: 4mm;
+
+  gap: 5mm;
+}
+
+    .l1c-world-masthead span:last-child {
+      font-size: 7pt;
+      letter-spacing: .13em;
+      text-transform: uppercase;
+
+  font-family: var(--hz-font-sans);
+
+  color: var(--l1c-feature);
+
+  white-space: nowrap;
+}
+
+    .l1c-city-grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 5mm;
+      align-items: start;
+      padding-top: 0;
+    }
+
+    .l1c-city {
+      position: relative;
+      min-width: 0;
+      padding-top: 0;
+
+  background: transparent;
+
+  border-bottom: 0;
+}
+
+    .l1c-city__photo {
+      position: relative;
+      top: 0;
+      left: 0;
+      z-index: 2;
+      width: 100%;
+      height: 43mm;
+      overflow: hidden;
+      border: .8mm solid var(--hz-paper);
+      border-radius: 0;
+      background: var(--hz-wash);
+      transform: none;
+    }
+
+    .l1c-city__photo .hz-photo-placeholder {
+      min-height: 43mm;
+      font-size: 4.7pt;
+      letter-spacing: .06em;
+    }
+
+    .l1c-city__copy {
+      min-height: 0;
+      padding: 3mm 1mm 0;
+      border-top: 0;
+      background: transparent;
+      font-family: var(--hz-font-reading);
+      font-size: 8pt;
+      line-height: 1.42;
+    }
+
+    .l1c-city__copy h3 {
+      margin: 0 0 2mm;
+      color: var(--city-accent,#234f76);
+      font-family: var(--hz-font-reading);
+      font-size: 18pt;
+      font-weight: 700;
+      line-height: 1.1;
+      letter-spacing: -.03em;
+    }
+
+    .l1c-city__copy p { margin: 0 0 2mm; }
+    .l1c-city__copy p:last-child { margin-bottom: 0; }
+
+    /* ------------------------------------------------------------------
+       PAGE 10 — newly authored completion of Lesson 1C
+       ------------------------------------------------------------------ */
+
+    .l1c-continuation {
+      position: absolute;
+      top: -1mm;
+      right: -14mm;
+      z-index: 4;
+      display: grid;
+      place-items: end start;
+      width: 34mm;
+      height: 25mm;
+      padding: 0 0 3.2mm 5mm;
+      background: var(--hz-unit);
+      color: #fff;
+      clip-path: polygon(28% 0, 100% 0, 100% 100%, 0 100%);
+      font-size: 19pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: -.05em;
+    }
+
+    .l1c-adjective-field {
+      position: relative;
+      overflow: hidden;
+      padding: 2mm 0 2.5mm;
+      border-top: 0;
+      background: transparent;
+      isolation: isolate;
+    }
+
+    .l1c-adjective-field::after {
+      content: "ADJECTIVES";
+      position: absolute;
+      z-index: -1;
+      right: -4mm;
+      bottom: -6mm;
+      color: rgb(255 255 255 / 72%);
+      font-size: 31pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: -.06em;
+    }
+
+    .l1c-adjective-field__grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1.35fr 1fr;
+      gap: 4mm;
+      font-size: 7.4pt;
+      line-height: 1.3;
+    }
+
+    .l1c-word-map h3 {
+      margin: 0 0 1.4mm;
+      color: var(--l1c-feature);
+      font-size: 7pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: .06em;
+      text-transform: uppercase;
+
+  border-bottom: .45mm solid var(--l1c-feature);
+
+  padding-bottom: 1.2mm;
+}
+
+    .l1c-word-map__lines { display: grid; gap: 1.8mm; }
+    .l1c-word-map__line { min-height: 4mm; border-bottom: .28mm solid var(--hz-line-strong); }
+
+    .l1c-sentences {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1mm 7mm;
+      font-size: 7.75pt;
+      line-height: 1.3;
+    }
+
+    .l1c-sentence {
+      display: grid;
+      grid-template-columns: 5mm 1fr;
+      gap: 1mm;
+      min-height: 6mm;
+    }
+
+    .l1c-sentence b { color: var(--hz-unit-dark); }
+
+    .l1c-pair-stage {
+      position: relative;
+      display: grid;
+      grid-template-columns: .9fr 1.1fr;
+      gap: 5mm;
+      align-items: stretch;
+      min-height: 58mm;
+      isolation: isolate;
+
+  background: transparent;
+
+  padding: 0;
+}
+
+    .l1c-pair-stage::before {
+      content: "PAIRWORK";
+      position: absolute;
+      z-index: -1;
+      left: -2mm;
+      bottom: -4mm;
+      color: var(--hz-unit-soft);
+      font-size: 34pt;
+      font-weight: var(--hz-fw-black);
+      letter-spacing: -.06em;
+    }
+
+    .l1c-pair-photo {
+      min-height: 58mm;
+      overflow: hidden;
+      background: var(--hz-wash);
+      clip-path: polygon(0 0, 100% 0, 92% 100%, 0 100%);
+    }
+
+    .l1c-pair-photo .hz-photo-placeholder { min-height: 58mm; }
+
+    .l1c-pair-copy {
+      display: grid;
+      align-content: center;
+      gap: 2.2mm;
+      padding: 2mm 0;
+
+  background: transparent;
+
+  border: 0;
+
+  box-shadow: none;
+}
+
+    .l1c-dialogue-line {
+      padding: 1.8mm 0;
+      border-left: 0;
+      background: transparent;
+      font-size: 7.6pt;
+      line-height: 1.35;
+    }
+
+    .l1c-dialogue-line:nth-child(2) { background: transparent; }
+    .l1c-dialogue-line p { margin: 0; }
+
+    .l1c-guess-strip {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 3mm;
+      padding-top: .5mm;
+    }
+
+    .l1c-guess-city {
+      position: relative;
+      min-height: 31mm;
+      overflow: hidden;
+      background: var(--hz-wash);
+    }
+
+    .l1c-guess-city .hz-photo-placeholder { min-height: 31mm; font-size: 5pt; }
+
+    .l1c-guess-city__label {
+      position: absolute;
+      left: 0;
+      bottom: 0;
+      z-index: 2;
+      padding: 1mm 1.6mm;
+      background: var(--hz-paper);
+      color: var(--hz-unit-dark);
+      font-size: 6.4pt;
+      font-weight: var(--hz-fw-black);
+    }
+
+    .l1c-extra {
+      margin-left: calc(var(--hz-exercise-marker-size) + 3mm);
+      margin-top: .6mm;
+    }
+
+    .l1c-page--2 .hz-page-stack { gap: 1.6mm; }
+    .l1c-page--2 .hz-exercise { padding-top: 1.6mm; padding-bottom: 2.15mm; }
+    .l1c-page--2 .hz-exercise__body { margin-top: 1.5mm; }
+    .l1c-page--2 .hz-exercise__instruction { font-size: 8.7pt; }
+
 /* Horizons A1 — Lesson 1C scoped styles and asset mappings. */
 
 .l1c-target {
@@ -73,7 +528,7 @@
   background-size: cover !important;
 }
 
-.l1c-page:not(.l1c-page--2) .l1c-city__copy { min-height: 50mm !important; }
+.l1c-page:not(.l1c-page--2) .l1c-city__copy { min-height: 0 !important; }
 
 .l1c-page .l1c-city:nth-child(1) .hz-photo-placeholder { background-image: url("../Images/1C/Rio.png") !important; background-position: center center !important; }
 .l1c-page .l1c-city:nth-child(2) .hz-photo-placeholder { background-image: url("../Images/1C/Toronto.png") !important; background-position: center center !important; }
@@ -94,4 +549,32 @@
 
 .l1c-page:not(.l1c-page--2) .l1c-nationality > span:nth-child(2) {
   white-space: nowrap !important;
+}
+
+.l1c-city:nth-child(1) {
+  transform: rotate(-1deg);
+
+  --city-accent: #227369;
+}
+
+.l1c-city:nth-child(3) {
+  transform: rotate(1deg);
+
+  --city-accent: #315781;
+}
+
+.l1c-page {
+  --l1c-feature: #234f76;
+}
+
+.l1c-city:nth-child(2) {
+  --city-accent: #95602e;
+}
+
+.l1c-city:nth-child(1) .l1c-city__photo {
+  transform: rotate(-1.5deg);
+}
+
+.l1c-city:nth-child(3) .l1c-city__photo {
+  transform: rotate(1.5deg);
 }

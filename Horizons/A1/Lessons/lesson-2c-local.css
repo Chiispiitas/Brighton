@@ -6,14 +6,18 @@
   --hz-unit: var(--hz-unit-1);
   --hz-unit-dark: #8f123f;
   --hz-unit-soft: #f8e6ee;
+
+  --l2c-feature: #38624c;
+
+  --l2c-photo-mat: #dbe6ce;
 }
 
 .l2c-page .hz-page__content { overflow: hidden; }
-.l2c-page .hz-page-stack { gap: 1.2mm; }
-.l2c-page .hz-lesson-header { padding-bottom: 2.7mm; }
-.l2c-page .hz-exercises { gap: 0; }
-.l2c-page .hz-exercise { padding: .8mm 0 1.2mm; }
-.l2c-page .hz-exercise__body { margin-top: .8mm; }
+.l2c-page .hz-page-stack { gap: 2.7mm; }
+.l2c-page .hz-lesson-header { padding-bottom: 3.2mm; }
+.l2c-page .hz-exercises { gap: .2mm; }
+.l2c-page .hz-exercise { padding: 1.6mm 0 2.15mm; }
+.l2c-page .hz-exercise__body { margin-top: 1.5mm; }
 .l2c-page .hz-exercise__instruction { font-size: 8.8pt; }
 .l2c-go-to { margin-left: calc(var(--hz-exercise-marker-size) + 3mm); }
 
@@ -42,9 +46,11 @@
 .l2c-lead-photos img {
   display: block;
   width: 100%;
-  height: 30mm;
+  height: 25mm;
   object-fit: cover;
   object-position: center;
+
+  border-radius: 0 0 5mm 0;
 }
 
 /* ---------- Exercise 2: editorial reading feature ---------- */
@@ -53,24 +59,28 @@
 
 .l2c-reading-feature {
   padding: 0 0 3mm;
-  border-bottom: .28mm solid var(--hz-line);
+  border-bottom: .5mm solid #b5c7a8;
   background: transparent;
+
+  border: 0;
 }
 
 .l2c-reading-feature__head {
   display: flex;
   flex-direction: row-reverse;
-  align-items: center;
+  align-items: end;
   justify-content: space-between;
   gap: 4mm;
   margin-bottom: 3mm;
-  padding: 2.5mm 3mm;
-  background: var(--hz-unit);
+  padding: 1mm 0 0;
+  background: transparent;
+
+  margin: 0 0 4.5mm;
 }
 
 .l2c-reading-feature__head > span {
   flex: none;
-  color: #fff;
+  color: var(--l2c-feature);
   font-size: 7pt;
   font-weight: var(--hz-fw-black);
   letter-spacing: .08em;
@@ -79,33 +89,39 @@
 
 .l2c-reading-feature__head h2 {
   margin: 0;
-  color: #fff;
-  font-family: var(--hz-font-body);
-  font-size: 20pt;
+  color: var(--l2c-feature);
+  font-family: var(--hz-font-reading);
+  font-size: 31pt;
   font-style: normal;
-  font-weight: var(--hz-fw-black);
-  line-height: 1;
+  font-weight: 720;
+  line-height: 1.1;
   letter-spacing: -.025em;
 }
 
 .l2c-reading-feature__main {
   display: grid;
-  grid-template-columns: 72mm minmax(0, 1fr);
-  gap: 5mm;
+  grid-template-columns: 74mm minmax(0,1fr);
+  gap: 6.5mm;
   align-items: start;
 }
 
 .l2c-family-photo {
   margin: 0;
-  overflow: hidden;
+  overflow: visible;
+
+  position: relative;
+
+  isolation: isolate;
 }
 
 .l2c-family-photo img {
   display: block;
   width: 100%;
-  height: 88mm;
-  object-fit: cover;
-  object-position: 46% center;
+  height: 94mm;
+  object-fit: contain;
+  object-position: center bottom;
+
+  border-radius: 0;
 }
 
 .l2c-reading-copy {
@@ -129,9 +145,13 @@
   grid-template-columns: 1fr 12mm 1fr;
   gap: 2.5mm;
   align-items: center;
-  margin-top: 2.8mm;
+  margin-top: 4mm;
   padding-top: 2.5mm;
-  border-top: .25mm solid var(--hz-line);
+  border-top: 0;
+
+  background: transparent;
+
+  padding: 0;
 }
 
 .l2c-family-strip__parents,
@@ -166,7 +186,7 @@
 }
 
 .l2c-family-strip figcaption strong {
-  color: var(--hz-unit-dark);
+  color: var(--l2c-feature);
   font-weight: var(--hz-fw-black);
   font-size: 9pt;
 }
@@ -196,6 +216,8 @@
   content: "";
   position: absolute;
   background: var(--hz-line-strong);
+
+  display: none;
 }
 
 .l2c-family-strip__branch::before {
@@ -211,12 +233,14 @@
   left: 50%;
   width: .25mm;
   transform: translateX(-50%);
+
+  display: none;
 }
 
 /* ---------- Exercise 3: reading check ---------- */
 
 .l2c-check-exercise { padding-top: .55mm; }
-.l2c-check-grid { gap: .35mm 6mm; }
+.l2c-check-grid { gap: .7mm 6mm; }
 
 .l2c-check-grid .hz-question {
   padding: .25mm 0;
@@ -227,13 +251,13 @@
 /* ---------- Page 18 ---------- */
 
 .l2c-page--2 .hz-exercises { padding-top: 13.5mm !important; }
-.l2c-page--2 .hz-page-stack { gap: .95mm; }
-.l2c-page--2 .hz-exercise { padding-top: .72mm; padding-bottom: 1.05mm; }
-.l2c-page--2 .hz-exercise__body { margin-top: .75mm; }
+.l2c-page--2 .hz-page-stack { gap: 1.6mm; }
+.l2c-page--2 .hz-exercise { padding-top: 1.6mm; padding-bottom: 2.15mm; }
+.l2c-page--2 .hz-exercise__body { margin-top: 1.5mm; }
 
 /* Grammar focus: canonical shell, simple body grid, no local dividers. */
 .l2c-grammar {
-  margin: .35mm 0 .15mm calc(var(--hz-exercise-marker-size) + 3mm);
+  margin: 1.2mm 0 .8mm calc(var(--hz-exercise-marker-size) + 3mm);
 }
 
 .l2c-grammar-grid { gap: 4mm; }
@@ -255,7 +279,7 @@
 .l2c-grammar-grid b { color: var(--hz-unit-dark); }
 
 /* Exercise 5 */
-.l2c-complete-grid { gap: .4mm 7mm; }
+.l2c-complete-grid { gap: 1mm 7mm; }
 
 .l2c-complete-item {
   display: grid;
@@ -293,6 +317,10 @@
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 2.6mm;
+
+  background: transparent;
+
+  padding: 0;
 }
 
 .l2c-owner-photos figure {
@@ -304,17 +332,19 @@
 .l2c-owner-photos img {
   display: block;
   width: 100%;
-  height: 28mm;
+  height: 26mm;
   object-fit: contain;
   object-position: center;
   background: #fff;
+
+  mix-blend-mode: multiply;
 }
 
 .l2c-owner-photos figcaption {
   display: grid;
   justify-items: center;
   gap: .8mm;
-  margin-top: 1mm;
+  margin-top: 1.2mm;
   font-size: 8pt;
   line-height: 1.2;
   text-align: center;
@@ -339,7 +369,7 @@
 .l2c-owner-lines {
   display: grid;
   gap: .75mm;
-  margin: 1.2mm 0 0 1.5mm;
+  margin: 2mm 0 0 1.5mm;
 }
 
 .l2c-owner-lines > div {
@@ -371,11 +401,13 @@
 
 /* Exercise 7: the ownership exchange carries the visual context. */
 .l2c-pairwork { grid-template-columns: 1.08fr .92fr; gap: 5mm; align-items: center; }
-.l2c-pair-photo { margin: 0; overflow: hidden; }
+.l2c-pair-photo { margin: 0; overflow: hidden;
+  clip-path: polygon(0 0,100% 0,100% 100%,5% 100%);
+}
 .l2c-pair-photo img { display: block; width: 100%; height: 60mm; object-fit: cover; object-position: center; }
 .l2c-pair-models { display: grid; gap: 3mm; }
-.l2c-pair-models > div { padding: 2mm 2.5mm; border-left: .8mm solid var(--hz-unit); }
-.l2c-pair-models > div:last-child { background: var(--hz-unit-soft); }
+.l2c-pair-models > div { padding: 2mm 0; border-left: 0; }
+.l2c-pair-models > div:last-child { background: transparent; }
 
 .l2c-pairwork .hz-dialogue-text {
   font-size: 8pt;
@@ -391,6 +423,33 @@
 }
 
 @media print {
-  .l2c-page,
   .l2c-page * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+.l2c-page { print-color-adjust: exact; -webkit-print-color-adjust: exact;
+  --l2c-feature: #38624c;
+
+  --l2c-photo-mat: #dbe6ce;
+}
+}
+
+.l2c-family-photo::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: -2mm;
+  right: -2mm;
+  bottom: 8mm;
+  width: 58%;
+  background: var(--l2c-photo-mat);
+
+  display: none;
+}
+
+.l2c-reading-feature__head h2 em {
+  font-size: 22pt;
+  font-weight: 500;
+  font-style: italic;
+}
+
+.l2c-reading-feature__head h2 span {
+  color: #a16732;
 }

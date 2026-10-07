@@ -59,6 +59,12 @@ Normal exercises and `Go to:` references do not receive decorative separator lin
 
 The exercise body should contain only the response mechanics the task actually needs. Do not add generic answer lines, boxes or check controls to a question-only task.
 
+Spacing is produced by the exercise's top/bottom padding, the instruction-to-body
+margin, and the parent flow gap together. Do not tighten only one of these
+without checking the resulting visible separation. For the current A1 book,
+calibrate lesson-local styles against the author-approved 1A master and the
+physical values in `CANONICAL-STYLE.md`. Keep shared Base defaults stable.
+
 ## 4. Internal grids
 
 Two/three-column grids are allowed **inside one exercise**:
@@ -87,6 +93,12 @@ When a short semantic label should remain intact, prefer a content-sized column 
 Use `--full-lane` when a dominant equal-status family should center across the usable exercise lane rather than being visually shifted by the exercise-number column.
 
 The family chooses its columns/gaps locally. Equal-status items share geometry/basic scale; crop position may differ per image.
+
+A feature can be portrait-led or use photographic extractions on open paper.
+Keep names and matching markers as live task text. Display type and photo
+framing stay lesson-local, with canonical spacing and learner hierarchy retained.
+Inspect circle/arch crops for complete faces and check extracted silhouettes
+on the actual page background.
 
 Do not force text/copy areas inside repeated items to a large equal `min-height` unless equal height is functionally necessary. Natural content height is the default.
 
@@ -137,6 +149,11 @@ Do not invent alternate category labels such as `LANGUAGE FROM ...`, `LANGUAGE`,
 The `aria-label` should use the same semantic category as the visible header.
 
 **The shared focus-box shell is visually canonical.** Lesson-local CSS may adjust only the box's outer placement/width when composition requires it. Do not locally override its background, top/bottom borders, shell padding, or header typography.
+
+The shared header is a compact dark-crimson tab with white text, aligned to the
+shell's top-left edge. Its label remains readable at print size. The body uses
+the pale-pink focus surface, with dark-crimson bold. Legacy lesson compositions
+must use this shared shell rather than maintain visually similar local copies.
 
 Inside `.hz-focus-box__body`, use ordinary learner text plus existing shared grids/helpers whenever possible. Do **not** invent one-off separator rules, mini-label systems, pills, colored strips, card surfaces, or special typography solely for one grammar/vocabulary point. If a new internal treatment is genuinely reusable, define it in `Horizons/Base/design-system/` first; otherwise simplify the body to the established focus-box visual language.
 
@@ -209,3 +226,14 @@ Do not add book- or lesson-specific imports to `Base/shell/a4-shell.css`.
 Reusable series-wide components belong in `Horizons/Base/design-system/`. Lesson-specific composition, corrections, asset filenames and crop tuning belong in that book's `Lessons/` folder; current A1 work lives in `../../A1/Lessons/`.
 
 Before creating a new shared component, search the existing Base for an equivalent. Prefer one canonical component over near-duplicates.
+
+## 14. Open editorial features
+
+Use a semantic article or section with a lesson-local feature class. Its title,
+photographs, color accents and internal columns form the composition. There is
+no default shared reading-panel background or border. Readings, dialogues,
+photo families and pair models normally sit on open page paper.
+
+Feature palettes may vary independently from crimson navigation. A partial photo
+mat or an occasional full article background must serve a specific composition.
+Preserve open numbered exercise flow, reading legibility and writing space.

@@ -72,6 +72,11 @@ The GitHub Actions workflow `.github/workflows/build-horizons-a1-student-book.ym
 
 The PDF build uses `Base/shell/print.css` as the page contract: A4 portrait, zero page margins, exact print colors and one `.hz-page` per PDF page.
 
+Automatic publication is restricted to `main`. Preview branches can be rendered
+locally or through a manual Windows render, but cannot publish to `main`.
+The production optimizer targets 300 dpi photographs and JPEG quality 94 while
+retaining the existing repository-size guard.
+
 No lesson manifest is required. Adding a correctly named lesson master is enough for the compiler to discover it, and the HTML/PDF pair scale with the lesson folder automatically.
 
 ## Boundary

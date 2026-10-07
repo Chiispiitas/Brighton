@@ -6,14 +6,16 @@
   --hz-unit: var(--hz-unit-1);
   --hz-unit-dark: #8f123f;
   --hz-unit-soft: #f8e6ee;
+
+  --l2a-feature: #4d7254;
 }
 
 .l2a-page .hz-page__content { overflow: hidden; }
-.l2a-page .hz-page-stack { gap: 1.8mm; }
-.l2a-page .hz-lesson-header { padding-bottom: 3.1mm; }
+.l2a-page .hz-page-stack { gap: 2.7mm; }
+.l2a-page .hz-lesson-header { padding-bottom: 3.2mm; }
 .l2a-page .hz-exercises { gap: .2mm; }
-.l2a-page .hz-exercise { padding: 1.2mm 0 1.75mm; }
-.l2a-page .hz-exercise__body { margin-top: 1.2mm; }
+.l2a-page .hz-exercise { padding: 1.6mm 0 2.15mm; }
+.l2a-page .hz-exercise__body { margin-top: 1.5mm; }
 .l2a-page .hz-exercise__instruction { font-size: 8.9pt; }
 .l2a-target { color: var(--hz-unit-dark); font-weight: var(--hz-fw-black); }
 .l2a-go-to { margin-left: calc(var(--hz-exercise-marker-size) + 3mm); }
@@ -68,6 +70,8 @@
 .l2a-bag-photo {
   min-height: 0;
   aspect-ratio: 1402 / 1122;
+
+  overflow: visible;
 }
 
 /* Live labels belong to the matching task, not to the photograph. */
@@ -90,8 +94,10 @@
 
 .l2a-word-bank {
   align-self: center;
-  padding: 2.5mm 0 2mm 3.6mm;
-  border-left: 1mm solid var(--hz-unit);
+  padding: 3mm 0 3mm 3mm;
+  border-left: .65mm solid var(--l2a-feature);
+
+  background: transparent;
 }
 
 .l2a-word-bank .hz-new-words { margin-bottom: 2.4mm; }
@@ -133,9 +139,9 @@
   align-self: center;
   margin-left: -5mm;
   padding: 3.2mm 3.5mm 3.1mm 12mm;
-  border-top: 1.1mm solid var(--hz-unit);
-  background: var(--hz-paper);
-  box-shadow: 0 0 0 .25mm var(--hz-line);
+  border-top: .8mm solid var(--l2a-feature);
+  background: transparent;
+  box-shadow: none;
 }
 
 .l2a-dialogue {
@@ -153,9 +159,8 @@
 /* ---------- Grammar ---------- */
 
 .l2a-grammar {
-  margin: .3mm 0 .2mm calc(var(--hz-exercise-marker-size) + 3mm);
-  padding-top: 2.6mm;
-  padding-bottom: 2.8mm;
+  margin: 1.2mm 0 .8mm calc(var(--hz-exercise-marker-size) + 3mm);
+
 }
 
 .l2a-grammar-grid {
@@ -188,15 +193,15 @@
 /* ---------- Page 14 ---------- */
 
 .l2a-page--2 .hz-exercises { padding-top: 14mm !important; }
-.l2a-page--2 .hz-page-stack { gap: 1.35mm; }
-.l2a-page--2 .hz-exercise { padding-top: 1mm; padding-bottom: 1.55mm; }
-.l2a-page--2 .hz-exercise__body { margin-top: 1mm; }
+.l2a-page--2 .hz-page-stack { gap: 1.6mm; }
+.l2a-page--2 .hz-exercise { padding-top: 1.6mm; padding-bottom: 2.15mm; }
+.l2a-page--2 .hz-exercise__body { margin-top: 1.5mm; }
 
 /* Exercise 3 */
 .l2a-choice-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 3mm 5mm;
+  gap: 4mm 5mm;
 }
 
 .l2a-choice-item {
@@ -254,7 +259,7 @@
 .l2a-pair-stage {
   display: grid;
   grid-template-columns: .82fr 1.18fr;
-  gap: 5mm;
+  gap: 3mm;
   align-items: stretch;
   min-height: 76mm;
 }
@@ -263,17 +268,25 @@
   display: grid;
   align-content: center;
   gap: 2mm;
+
+  background: transparent;
+
+  padding: 2mm 0 2mm 1mm;
 }
 
 .l2a-pair-example {
-  padding: 2mm 2.6mm;
-  border-left: 1mm solid var(--hz-unit);
-  background: var(--hz-paper);
+  padding: 1.8mm 0;
+  border-left: 0;
+  background: transparent;
   font-size: 8pt;
   line-height: 1.28;
 }
 
-.l2a-pair-example:nth-child(2) { background: var(--hz-unit-soft); }
+.l2a-pair-example:nth-child(2) { background: transparent;
+  border-left: 0;
+
+  padding: 1.8mm 0;
+}
 .l2a-pair-example p { margin: 0; }
 .l2a-pair-example p + p { margin-top: .7mm; }
 
@@ -290,7 +303,7 @@
 .l2a-pair-photo {
   height: 76mm;
   min-height: 0;
-  clip-path: polygon(6% 0, 100% 0, 100% 93%, 0 100%);
+  clip-path: polygon(0 0,100% 0,100% 100%,5% 100%);
 }
 
 .l2a-extra {
@@ -304,6 +317,8 @@
 }
 
 @media print {
-  .l2a-page,
   .l2a-page * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+.l2a-page { print-color-adjust: exact; -webkit-print-color-adjust: exact;
+  --l2a-feature: #4d7254;
+}
 }

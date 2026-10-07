@@ -31,6 +31,15 @@ For the current A1 book, compare new work with the approved Unit 1 masters in `.
 
 Lesson masters use the definitive lesson code as their filenames. Their adjacent `lesson-*-local.css` files contain book/lesson-specific composition, crop tuning and corrections. They are precedents, not templates to copy mechanically.
 
+**Spacing authority: Lesson 1A.** The author specifically selected its spacing
+as the A1 reference. Leave 1A intact when calibrating other spreads. Follow the
+A1 spacing reference in `CANONICAL-STYLE.md`, inspect the combined exercise
+padding and gaps at print scale, and check photograph-to-text clearance.
+The 2026-10-06 spacing revision brings 1B-2D toward 1A's opening-page rhythm,
+including continuation pages, without reducing type or response spaces.
+The preceding creative preview is preserved at
+`horizons-before-spacing-review-2026-10-06` for an independent rollback.
+
 For **early A1 learner-facing language**, 1A, 1B and the first page of 1C are especially important references for the deliberately narrow, Spanish-transparent register.
 
 Recent Unit 1 refinements establish additional production precedents:
@@ -62,8 +71,8 @@ The author-made Unit 1 spreads remain the reference for visual finish. Unit 2's
 lesson use the same template:
 
 - Give the lesson's real scene or reading/listening feature a clear visual lead.
-  Use the established crimson for major editorial headings and pale pink for
-  canonical language focus; do not invent another unit palette.
+  Keep crimson for shared lesson navigation and pale pink for canonical grammar
+  focus. Editorial features may use their own coordinated palette.
 - Make contextual people and task-bearing objects prominent. Crop only when the
   learner's evidence survives; preserve complete person/object distance scenes.
 - Keep app chrome subordinate to its readable information and the people using it.
@@ -74,6 +83,41 @@ lesson use the same template:
 - Whitespace is useful. Add a new image when it models a task or establishes a
   needed scene, rather than filling a gap. Compare the finished two-page spread
   with Unit 1 at the same physical scale before publishing.
+
+## Whole-book editorial redesign preview
+
+The 2026-10-06 author request authorizes a reversible visual overhaul of all
+current A1 lessons, 1A through 2D, informed by the supplied Personal Best series.
+The preview is isolated on `codex/horizons-editorial-redesign`. The checkpoint
+`horizons-before-editorial-redesign-2026-10-06` preserves the preceding book.
+Do not treat a preview branch as permission to replace `main`.
+
+This revision keeps the complete teaching content and audio resources while
+recomposing every spread. The author's color correction authorizes independent
+feature palettes and rejects repeated background boxes. Readings, dialogues,
+photo families, response areas and pair models default to open page paper.
+The closer study of all six supplied Personal Best levels gives work profiles
+circular portraits and individual serif name accents. Travel combines a large
+open headline, map and photographs; the hotel uses an arched scene; transport
+uses an orange publication title and open photographic interviews. The Rivera
+article integrates a generated family cutout and mixed serif title; the bag and
+Lost and Found objects have transparent photographic extractions. The approved
+opening cutout and complete 1A master remain intact. Grammar focus keeps
+its canonical title tab and shell; functional artifacts retain needed structure.
+Feature colors and geometry stay lesson-local. The previous preview is preserved
+at `horizons-editorial-preview-v1-2026-10-06` as an additional rollback point.
+
+The complete spacing-approved preview before the closer reference study is
+preserved at `horizons-before-personal-best-study-2026-10-07`. Image edits use
+versioned sibling filenames; original images remain available. No Personal Best
+learner text, photographic assets or branding are used in the book.
+
+Compare the whole book at print scale. Check source-text and exercise parity,
+response affordances, image loading, phone-screen clipping, grammar emphasis,
+option typography and every rendered PDF spread before publication. The GitHub
+book publisher runs on `main` only; a manually rendered preview branch cannot
+publish its compiled artifacts to `main`. PDF photo downsampling uses 300 dpi
+and JPEG quality 94 to retain detail in printed crops.
 
 ## CSS loading boundary
 

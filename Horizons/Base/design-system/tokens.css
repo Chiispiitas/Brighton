@@ -1,6 +1,6 @@
 /* Horizons A1 — editorial HTML/CSS design tokens
    Print-first, restrained and deliberately non-dashboard-like.
-   The book uses one dominant unit color at a time; supporting color is rare. */
+   Crimson anchors navigation; feature palettes follow their own visual worlds. */
 
 :root {
   /* Paper and type */
@@ -18,13 +18,13 @@
   --hz-unit-dark: #8f123f;
   --hz-unit-soft: #f8e6ee;
 
-  /* Small functional accents — kept close to the crimson/berry family where possible. */
+  /* Shared navigation accents; editorial features may use independent palettes. */
   --hz-audio: #7d3154;
   --hz-practice: #ad3f63;
   --hz-reference: #86606b;
   --hz-success: #48745f;
 
-  /* Suggested unit colors. Each page should normally use only its unit color. */
+  /* Optional palette references, independent of feature art direction. */
   --hz-unit-1: #c2185b;
   --hz-unit-2: #ba6a2d;
   --hz-unit-3: #426a9e;
@@ -105,7 +105,7 @@
   --hz-z-overlay: 30;
 }
 
-/* Unit identity classes: one dominant color per unit. */
+/* Unit identity classes set navigation defaults; feature palettes stay independent. */
 .hz-unit-1 { --hz-unit: var(--hz-unit-1); --hz-unit-dark: #8f123f; --hz-unit-soft: #f8e6ee; }
 .hz-unit-2 { --hz-unit: var(--hz-unit-2); --hz-unit-dark: #884b1d; --hz-unit-soft: #f7eee6; }
 .hz-unit-3 { --hz-unit: var(--hz-unit-3); --hz-unit-dark: #2d4c75; --hz-unit-soft: #edf1f6; }
