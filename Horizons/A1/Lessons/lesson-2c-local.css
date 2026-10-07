@@ -475,3 +475,22 @@
   padding: 2mm 2.5mm !important;
   border-left: .8mm solid var(--hz-unit) !important;
 }
+
+/* Selected author-approved editorial details, 2026-10-07. */
+.l2c-reading-feature__head { flex-direction: row; align-items: center; gap: 5mm; background: #fffefa !important; padding: 1mm 0 2mm !important; border-top: .55mm solid #38624c; border-bottom: .8mm solid #b96c38; margin-bottom: 4mm; }
+.l2c-restaurant-identity { min-width: 0; }
+.l2c-restaurant-wordmark { display: flex; align-items: baseline; gap: 3mm; margin-bottom: 1.5mm; }
+.l2c-restaurant-wordmark > span:first-child { color: #38624c; font-family: var(--hz-font-reading); font-size: 28pt; font-weight: 700; font-style: italic; letter-spacing: -.035em; line-height: 1; }
+.l2c-restaurant-wordmark > span:last-child { color: #a55b2a; font-family: var(--hz-font-sans); font-size: 12pt; font-weight: 620; letter-spacing: .065em; }
+.l2c-reading-feature__head .l2c-restaurant-identity h2 { font-family: var(--hz-font-sans); font-size: 11pt; line-height: 1.2; letter-spacing: 0; color: #38624c !important; }
+.l2c-reading-feature__head .l2c-restaurant-identity h2 em { font-family: inherit; font-size: inherit; font-style: normal; font-weight: 520; }
+.l2c-reading-feature__head .l2c-restaurant-identity h2 span { color: #38624c !important; }
+.l2c-restaurant-detail { display: block; flex: none; width: 17mm; height: 17mm; margin-left: auto; object-fit: contain; }
+.l2c-family-strip { gap: 0; margin-top: 4.5mm; }
+.l2c-family-strip figure { overflow: visible; }
+.l2c-family-strip img { width: 30mm; height: 28mm; padding: 1.3mm; border: .25mm solid #d7d1c5; border-radius: 0; background: #fff; object-fit: cover; object-position: center 30%; }
+.l2c-family-strip__parents figure:first-child img { transform: rotate(-2deg); }
+.l2c-family-strip__parents figure:last-child img { transform: rotate(1deg); }
+.l2c-family-strip__children figure:first-child img { transform: rotate(-1deg); }
+.l2c-family-strip__children figure:last-child img { transform: rotate(2deg); }
+.l2c-family-strip figcaption { margin-top: 2.5mm; }

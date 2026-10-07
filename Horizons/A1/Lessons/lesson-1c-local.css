@@ -199,18 +199,6 @@
   gap: 5mm;
 }
 
-    .l1c-world-masthead span:last-child {
-      font-size: 7pt;
-      letter-spacing: .13em;
-      text-transform: uppercase;
-
-  font-family: var(--hz-font-sans);
-
-  color: var(--l1c-feature);
-
-  white-space: nowrap;
-}
-
     .l1c-city-grid {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -615,3 +603,17 @@
   background: var(--hz-unit-soft) !important;
 }
 .l1c-world-masthead span:last-child { color: #fff !important; }
+
+/* Selected author-approved editorial details, 2026-10-07. */
+.l1c-world-masthead { display: block; padding: 2.4mm 4mm 2.6mm !important; border-bottom: .7mm solid #bd8646; margin-bottom: 0; }
+.l1c-world-masthead h2 { display: flex; align-items: baseline; gap: 4mm; margin: 0; font-family: var(--hz-font-reading); font-weight: 700; line-height: 1; }
+.l1c-world-masthead .l1c-world-masthead__cities { color: #fff !important; font-size: 32pt; letter-spacing: -.05em; }
+.l1c-world-masthead .l1c-world-masthead__rest { color: #fff !important; font-family: var(--hz-font-reading); font-size: 15pt; font-style: italic; font-weight: 400; letter-spacing: 0; text-transform: none; white-space: nowrap; }
+.l1c-world-route { display: block; width: 100%; height: 6mm; margin: 1mm 0; overflow: visible; color: #356978; }
+.l1c-world-route path { fill: none; stroke: currentColor; stroke-width: 1.25; stroke-dasharray: 3 5; }
+.l1c-world-route circle { fill: #fffefa; stroke: #95602e; stroke-width: 2; }
+.l1c-city__heading { margin-bottom: 2mm; }
+.l1c-city__signature { display: block; width: 19mm; height: 4.5mm; margin-bottom: 1.4mm; color: var(--city-accent); fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linejoin: round; stroke-linecap: round; }
+.l1c-city__heading h3 { margin-bottom: 0; min-height: 14mm; display: flex; align-items: start; }
+.l1c-city__photo { height: 37mm; }
+.l1c-city__photo .hz-photo-placeholder { min-height: 37mm; }

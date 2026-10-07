@@ -133,3 +133,19 @@
   border-left: .8mm solid var(--hz-unit) !important;
   padding: 2mm 3mm !important;
 }
+
+/* Selected author-approved editorial details, 2026-10-07. */
+.l2d-swatch { width: 11.6mm; height: 11.6mm; background-image: url("../Images/2D/Paint-daubs-palette-v1.png"); background-repeat: no-repeat; background-size: 500% 200%; }
+.l2d-swatch::before { display: none; content: none; }
+.l2d-colors > div:nth-child(1) .l2d-swatch { background-position: 0% 0%; }
+.l2d-colors > div:nth-child(2) .l2d-swatch { background-position: 25% 0%; }
+.l2d-colors > div:nth-child(3) .l2d-swatch { background-position: 50% 0%; }
+.l2d-colors > div:nth-child(4) .l2d-swatch { background-position: 75% 0%; }
+.l2d-colors > div:nth-child(5) .l2d-swatch { background-position: 100% 0%; }
+.l2d-colors > div:nth-child(6) .l2d-swatch { background-position: 0% 100%; }
+.l2d-colors > div:nth-child(7) .l2d-swatch { background-position: 25% 100%; }
+.l2d-colors > div:nth-child(8) .l2d-swatch { background-position: 50% 100%; }
+.l2d-colors > div:nth-child(9) .l2d-swatch { background-position: 75% 100%; }
+.l2d-colors > div:nth-child(10) .l2d-swatch { background-position: 100% 100%; }
+.l2d-item-pairs figcaption { font-family: var(--hz-font-sans); font-size: var(--hz-fs-xs); font-weight: var(--hz-fw-black); font-style: normal; color: var(--hz-unit-dark); line-height: 1.2; letter-spacing: 0; padding: 0; }
+.l2d-inventory-example > .hz-question__number { font-family: var(--hz-font-sans); }

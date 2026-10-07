@@ -784,3 +784,12 @@
   border-left: 1mm solid var(--hz-unit) !important;
   padding: 2.7mm 3mm !important;
 }
+
+/* Selected author-approved editorial details, 2026-10-07. */
+.l1d-checkin-copy__kicker { display: flex; align-items: center; gap: 2.5mm; }
+.l1d-hotel-emblem { display: block; flex: none; width: 10mm; height: 10mm; object-fit: contain; }
+.l1d-page--2 .l1d-live-form { border-top: 1.2mm solid #266e70 !important; }
+.l1d-form-masthead { display: flex; align-items: center; gap: 3mm; margin: 0 -1mm 3.5mm; padding: 2mm 0 2.5mm; border-bottom: .65mm solid #b36d3b; }
+.l1d-form-mark { display: block; flex: none; width: 9mm; height: 9mm; color: #b36d3b; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.l1d-page--2 .l1d-form-masthead h3 { margin: 0 !important; padding: 0 !important; border: 0 !important; font-size: 15pt !important; line-height: 1.12 !important; letter-spacing: -.025em !important; }
+.l1d-page--2 .l1d-live-row { border-bottom: .2mm solid #dedfdc; background: #fff !important; }

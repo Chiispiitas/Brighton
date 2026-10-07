@@ -872,3 +872,7 @@
 }
 .l2b-pair-card:first-child { background: var(--hz-unit-soft) !important; }
 .l2b-pair-card:last-child { background: #fff !important; }
+
+/* Selected author-approved editorial details, 2026-10-07. */
+.l2b-show-waveform { display: block; flex: none; width: 17mm; height: 5.5mm; color: var(--hz-unit); fill: none; stroke: currentColor; stroke-width: 2.1; stroke-linecap: round; }
+.l2b-onair-start .l2b-show-waveform { order: -1; width: 23mm; height: 7mm; margin-left: 3mm; color: #fff; }

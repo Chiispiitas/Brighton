@@ -103,6 +103,17 @@ fills, borders and readable text insets rather than adding a new universal
 wrapper to exercises. Keep the calibrated spacing and varied feature layouts.
 Functional forms retain clear white writing surfaces and enough answer space.
 
+The author-selected details of 2026-10-07 are specific exceptions to feature-band
+restoration: 1C uses a travel-magazine masthead, a dotted map route and small
+destination skyline identifiers; 2C uses Rivera Restaurant lettering, a small
+plate detail and rectangular family photo prints. These exceptions do not
+authorize removing other dialogue or photographic backgrounds. Small occupation
+identifiers, the Seaside Hotel emblem, the white reception form masthead and the
+Horizons On Air waveform remain secondary to the learner material. 2D colour
+vocabulary uses generated paint texture with live text labels; numbered objects
+use the shared small sans-serif dark-crimson question numerals.
+
+
 Judge editorial creativity through composition, not just an accent-color change.
 Vary the main feature's visual idea within the shared system: portrait-led
 profiles, a photographic object arrangement, a travel feature integrating
