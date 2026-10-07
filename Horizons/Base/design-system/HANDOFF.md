@@ -102,7 +102,8 @@ open headline, map and photographs; the hotel uses an arched scene; transport
 uses an orange publication title and open photographic interviews. The Rivera
 article integrates a generated family cutout and mixed serif title; the bag and
 Lost and Found objects have transparent photographic extractions. The approved
-opening cutout and complete 1A master remain intact. Grammar focus keeps
+opening conversation now uses the original full hallway photograph at the
+author's request; 1A's spacing remains intact. Grammar focus keeps
 its canonical title tab and shell; functional artifacts retain needed structure.
 Feature colors and geometry stay lesson-local. The previous preview is preserved
 at `horizons-editorial-preview-v1-2026-10-06` as an additional rollback point.

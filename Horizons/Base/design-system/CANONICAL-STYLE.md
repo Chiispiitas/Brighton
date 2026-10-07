@@ -113,7 +113,9 @@ type can give a feature its own voice. Display typography belongs to feature
 titles and task-bearing names; instructions and grammar retain their hierarchy.
 
 Use cutouts selectively and keep environmental photographs elsewhere in the
-lesson. Check identities, objects, colors, quantity, relative scale and task
+lesson. Lesson 1A's opening Tom and Mary conversation uses the original full
+hallway photograph rather than the transparent cutout.
+Check identities, objects, colors, quantity, relative scale and task
 labels after image edits. Check native alpha on the actual page paper. Circle
 and arch crops must preserve faces, gestures and relevant objects; tune the
 crop instead of accepting the default center. Preserve approved spacing.
