@@ -2415,11 +2415,11 @@ body.hz-debug .hz-page::after {
 .l1b-page .l1b-occupation:nth-child(9) .hz-photo-placeholder { background-image: url("./Images/1B/Waiter Waitress.png") !important; background-position: center !important; }
 .l1b-page .l1b-occupation:nth-child(10) .hz-photo-placeholder { background-image: url("./Images/1B/Farmer.png") !important; background-position: center !important; }
 
-.l1b-page .l1b-clue:nth-child(1) .hz-photo-placeholder { background-image: url("./Images/1B/Taxi.png") !important; background-position: center !important; }
-.l1b-page .l1b-clue:nth-child(2) .hz-photo-placeholder { background-image: url("./Images/1B/Bell.png") !important; background-position: center !important; }
-.l1b-page .l1b-clue:nth-child(3) .hz-photo-placeholder { background-image: url("./Images/1B/Dish.png") !important; background-position: center !important; }
-.l1b-page .l1b-clue:nth-child(4) .hz-photo-placeholder { background-image: url("./Images/1B/Supplies.png") !important; background-position: center !important; }
-.l1b-page .l1b-clue:nth-child(5) .hz-photo-placeholder { background-image: url("./Images/1B/Syringe.png") !important; background-position: center !important; }
+.l1b-page .l1b-clue:nth-child(1) .hz-photo-placeholder { background-image: url("./Images/1B/Taxi-cutout-v1.png") !important; background-position: center !important; }
+.l1b-page .l1b-clue:nth-child(2) .hz-photo-placeholder { background-image: url("./Images/1B/Bell-cutout-v1.png") !important; background-position: center !important; }
+.l1b-page .l1b-clue:nth-child(3) .hz-photo-placeholder { background-image: url("./Images/1B/Dish-cutout-v1.png") !important; background-position: center !important; }
+.l1b-page .l1b-clue:nth-child(4) .hz-photo-placeholder { background-image: url("./Images/1B/Supplies-cutout-v1.png") !important; background-position: center !important; }
+.l1b-page .l1b-clue:nth-child(5) .hz-photo-placeholder { background-image: url("./Images/1B/Syringe-cutout-v1.png") !important; background-position: center !important; }
 
 .l1b-page .l1b-profile:nth-child(1) .hz-photo-placeholder { background-image: url("./Images/1B/Tom.png") !important; background-position: center 42% !important; }
 .l1b-page .l1b-profile:nth-child(2) .hz-photo-placeholder { background-image: url("./Images/1B/Sarah.png") !important; background-position: 14% 40% !important; }
@@ -2631,9 +2631,9 @@ body.hz-debug .hz-page::after {
 .l1b-profile__identity .l1b-profile__name { margin: 0; padding: 0; border-bottom: 0; }
 .l1b-profile__motif { flex: none; width: 9mm; height: 7mm; color: var(--profile-accent); fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .l1b-profile__motif--medical { width: 7mm; fill: currentColor; stroke: none; }
-/* 8: the full photographs read as small prints, without the oval masks. */
-.l1b-clue { height: 24mm; border-radius: 0; padding: 1.1mm; border: .25mm solid #d3d1c9; background: #fff; }
-.l1b-page .l1b-clue .hz-photo-placeholder { background-size: contain !important; background-color: #fff !important; }
+/* Author correction: 1B activity 3 is a borderless transparent object family. */
+.l1b-clue { height: 26mm; border-radius: 0; padding: 0; border: 0; background: transparent; }
+.l1b-page .l1b-clue .hz-photo-placeholder { background-size: contain !important; background-color: transparent !important; }
 
 
 /* Horizons/A1/Lessons/lesson-1c-local.css */
@@ -4054,6 +4054,10 @@ body.hz-debug .hz-page::after {
 .l1d-form-mark { display: block; flex: none; width: 9mm; height: 9mm; color: #b36d3b; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 .l1d-page--2 .l1d-form-masthead h3 { margin: 0 !important; padding: 0 !important; border: 0 !important; font-size: 15pt !important; line-height: 1.12 !important; letter-spacing: -.025em !important; }
 .l1d-page--2 .l1d-live-row { border-bottom: .2mm solid #dedfdc; background: #fff !important; }
+
+/* Author-requested generated reception artifact replaces the visible CSS form. */
+.l1d-reception-form { margin: 0; padding: 0; border: 0; background: transparent; align-self: start; }
+.l1d-reception-form img { display: block; width: 100%; height: auto; }
 
 
 /* Horizons/A1/Lessons/lesson-2a-local.css */
@@ -6975,20 +6979,9 @@ body {
                   </div>
                 </div>
 
-                <div class="l1d-live-form" aria-label="Personal information form">
-                  <div class="l1d-live-form__business"><span>Gym / Hotel / School / Club</span><span></span></div>
-                  <div class="l1d-form-masthead"><svg class="l1d-form-mark" viewBox="0 0 28 28" aria-hidden="true" focusable="false"><rect x="5" y="5" width="18" height="20" rx="1"/><path d="M10 5V2h8v3M9 11h10M9 16h10M9 21h6"/></svg><h3>Personal Information Form</h3></div>
-                  <div class="l1d-live-row"><span>First name</span><span></span></div>
-                  <div class="l1d-live-row"><span>Last name</span><span></span></div>
-                  <div class="l1d-live-row"><span>Country</span><span></span></div>
-                  <div class="l1d-live-row"><span>City</span><span></span></div>
-                  <div class="l1d-live-row"><span>Phone number</span><span></span></div>
-                  <div class="l1d-live-row"><span>Email</span><span></span></div>
-                  <div class="l1d-live-form__footer">
-                    <div>Student A<span></span></div>
-                    <div>Student B<span></span></div>
-                  </div>
-                </div>
+                <figure class="l1d-reception-form" data-image-slot="HZN_A1_U01_LD_E07_FORM_01" data-form-fields="First name|Last name|Country|City|Phone number|Email" data-writing-areas="9">
+                  <img src="./Images/1D/Reception-form-v1.png" alt="Reception clipboard with white writing space. A blank venue-name line, Personal Information Form heading, six blank fields: First name, Last name, Country, City, Phone number, Email. Student A and Student B each have a blank writing line.">
+                </figure>
               </div>
             </div>
           </section>

@@ -650,11 +650,11 @@
 .l1b-page .l1b-occupation:nth-child(9) .hz-photo-placeholder { background-image: url("../Images/1B/Waiter%20Waitress.png") !important; background-position: center !important; }
 .l1b-page .l1b-occupation:nth-child(10) .hz-photo-placeholder { background-image: url("../Images/1B/Farmer.png") !important; background-position: center !important; }
 
-.l1b-page .l1b-clue:nth-child(1) .hz-photo-placeholder { background-image: url("../Images/1B/Taxi.png") !important; background-position: center !important; }
-.l1b-page .l1b-clue:nth-child(2) .hz-photo-placeholder { background-image: url("../Images/1B/Bell.png") !important; background-position: center !important; }
-.l1b-page .l1b-clue:nth-child(3) .hz-photo-placeholder { background-image: url("../Images/1B/Dish.png") !important; background-position: center !important; }
-.l1b-page .l1b-clue:nth-child(4) .hz-photo-placeholder { background-image: url("../Images/1B/Supplies.png") !important; background-position: center !important; }
-.l1b-page .l1b-clue:nth-child(5) .hz-photo-placeholder { background-image: url("../Images/1B/Syringe.png") !important; background-position: center !important; }
+.l1b-page .l1b-clue:nth-child(1) .hz-photo-placeholder { background-image: url("../Images/1B/Taxi-cutout-v1.png") !important; background-position: center !important; }
+.l1b-page .l1b-clue:nth-child(2) .hz-photo-placeholder { background-image: url("../Images/1B/Bell-cutout-v1.png") !important; background-position: center !important; }
+.l1b-page .l1b-clue:nth-child(3) .hz-photo-placeholder { background-image: url("../Images/1B/Dish-cutout-v1.png") !important; background-position: center !important; }
+.l1b-page .l1b-clue:nth-child(4) .hz-photo-placeholder { background-image: url("../Images/1B/Supplies-cutout-v1.png") !important; background-position: center !important; }
+.l1b-page .l1b-clue:nth-child(5) .hz-photo-placeholder { background-image: url("../Images/1B/Syringe-cutout-v1.png") !important; background-position: center !important; }
 
 .l1b-page .l1b-profile:nth-child(1) .hz-photo-placeholder { background-image: url("../Images/1B/Tom.png") !important; background-position: center 42% !important; }
 .l1b-page .l1b-profile:nth-child(2) .hz-photo-placeholder { background-image: url("../Images/1B/Sarah.png") !important; background-position: 14% 40% !important; }
@@ -866,6 +866,6 @@
 .l1b-profile__identity .l1b-profile__name { margin: 0; padding: 0; border-bottom: 0; }
 .l1b-profile__motif { flex: none; width: 9mm; height: 7mm; color: var(--profile-accent); fill: none; stroke: currentColor; stroke-width: 1.8; stroke-linecap: round; stroke-linejoin: round; }
 .l1b-profile__motif--medical { width: 7mm; fill: currentColor; stroke: none; }
-/* 8: the full photographs read as small prints, without the oval masks. */
-.l1b-clue { height: 24mm; border-radius: 0; padding: 1.1mm; border: .25mm solid #d3d1c9; background: #fff; }
-.l1b-page .l1b-clue .hz-photo-placeholder { background-size: contain !important; background-color: #fff !important; }
+/* Author correction: 1B activity 3 is a borderless transparent object family. */
+.l1b-clue { height: 26mm; border-radius: 0; padding: 0; border: 0; background: transparent; }
+.l1b-page .l1b-clue .hz-photo-placeholder { background-size: contain !important; background-color: transparent !important; }

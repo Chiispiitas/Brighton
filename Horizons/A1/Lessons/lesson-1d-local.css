@@ -793,3 +793,7 @@
 .l1d-form-mark { display: block; flex: none; width: 9mm; height: 9mm; color: #b36d3b; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 .l1d-page--2 .l1d-form-masthead h3 { margin: 0 !important; padding: 0 !important; border: 0 !important; font-size: 15pt !important; line-height: 1.12 !important; letter-spacing: -.025em !important; }
 .l1d-page--2 .l1d-live-row { border-bottom: .2mm solid #dedfdc; background: #fff !important; }
+
+/* Author-requested generated reception artifact replaces the visible CSS form. */
+.l1d-reception-form { margin: 0; padding: 0; border: 0; background: transparent; align-self: start; }
+.l1d-reception-form img { display: block; width: 100%; height: auto; }

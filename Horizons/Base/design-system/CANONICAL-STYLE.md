@@ -102,6 +102,11 @@ reversed the blanket removal of these backgrounds. Restore their original
 fills, borders and readable text insets rather than adding a new universal
 wrapper to exercises. Keep the calibrated spacing and varied feature layouts.
 Functional forms retain clear white writing surfaces and enough answer space.
+The author explicitly requested the 1D activity 7 reception form as a generated
+raster artifact, analogous to the approved 2D clipboard. Keep its transparent
+exterior, white paper, blank venue-name line, six information fields, and the
+Student A / Student B writing lines. This is a specific exception to CSS-first
+form construction, not a reason to rasterize other learner text or forms.
 
 The author-selected details of 2026-10-07 are specific exceptions to feature-band
 restoration: 1C uses a travel-magazine masthead, a dotted map route and small
@@ -122,8 +127,11 @@ between serif display type, italic secondary words and the established learner
 type can give a feature its own voice. Display typography belongs to feature
 titles and task-bearing names; instructions and grammar retain their hierarchy.
 
-The only approved removal of a picture background in this overhaul is the bag
-in **2A activity 1**. Keep its transparent `Open-bag-cutout-v2.png`. Lesson 1A's
+The approved removals of picture backgrounds are the bag in **2A activity 1**
+and the five object clues in **1B activity 3**, explicitly requested on
+2026-10-07. Keep the bag's transparent `Open-bag-cutout-v2.png`; the 1B clues use
+native-alpha photographic cutouts with no visible border, backing or frame.
+Lesson 1A's
 opening conversation, the Rivera family article and 2D activity 6 use their
 original full photographs. Previously approved transparent paper artifacts,
 including 2D's clipboard with its white writing space, retain their transparency.
