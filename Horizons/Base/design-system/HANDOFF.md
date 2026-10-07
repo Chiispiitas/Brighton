@@ -31,6 +31,15 @@ For the current A1 book, compare new work with the approved Unit 1 masters in `.
 
 Lesson masters use the definitive lesson code as their filenames. Their adjacent `lesson-*-local.css` files contain book/lesson-specific composition, crop tuning and corrections. They are precedents, not templates to copy mechanically.
 
+**Spacing authority: Lesson 1A.** The author specifically selected its spacing
+as the A1 reference. Leave 1A intact when calibrating other spreads. Follow the
+A1 spacing reference in `CANONICAL-STYLE.md`, inspect the combined exercise
+padding and gaps at print scale, and check photograph-to-text clearance.
+The 2026-10-06 spacing revision brings 1B-2D toward 1A's opening-page rhythm,
+including continuation pages, without reducing type or response spaces.
+The preceding creative preview is preserved at
+`horizons-before-spacing-review-2026-10-06` for an independent rollback.
+
 For **early A1 learner-facing language**, 1A, 1B and the first page of 1C are especially important references for the deliberately narrow, Spanish-transparent register.
 
 Recent Unit 1 refinements establish additional production precedents:

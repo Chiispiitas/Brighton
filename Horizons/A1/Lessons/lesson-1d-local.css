@@ -22,11 +22,11 @@
     */
 
     .l1d-page .hz-page__content { overflow: hidden; }
-    .l1d-page .hz-page-stack { gap: 2mm; }
-    .l1d-page .hz-lesson-header { padding-bottom: 3mm; }
-    .l1d-page .hz-exercises { gap: .15mm; }
-    .l1d-page .hz-exercise { padding: 1.2mm 0 1.65mm; }
-    .l1d-page .hz-exercise__body { margin-top: 1.1mm; }
+    .l1d-page .hz-page-stack { gap: 2.7mm; }
+    .l1d-page .hz-lesson-header { padding-bottom: 3.2mm; }
+    .l1d-page .hz-exercises { gap: .2mm; }
+    .l1d-page .hz-exercise { padding: 1.6mm 0 2.15mm; }
+    .l1d-page .hz-exercise__body { margin-top: 1.5mm; }
     .l1d-page .hz-exercise__instruction { font-size: 8.8pt; }
     .l1d-target { color: var(--hz-unit-dark); font-weight: var(--hz-fw-black); }
     .l1d-new-words { margin-top: 1.2mm; }
@@ -174,7 +174,7 @@
     .l1d-capitalization {
       position: relative;
       overflow: hidden;
-      margin: .5mm 0 .2mm calc(var(--hz-exercise-marker-size) + 3mm);
+      margin: 1.2mm 0 .8mm calc(var(--hz-exercise-marker-size) + 3mm);
 
       isolation: isolate;
     }
@@ -290,7 +290,7 @@
 
     .l1d-business-option strong {
       display: block;
-      margin-top: 1mm;
+      margin-top: 1.2mm;
       font-size: 6.7pt;
     }
 
@@ -483,9 +483,9 @@
       margin-top: .5mm;
     }
 
-    .l1d-page--2 .hz-page-stack { gap: 1.45mm; }
-    .l1d-page--2 .hz-exercise { padding-top: 1mm; padding-bottom: 1.4mm; }
-    .l1d-page--2 .hz-exercise__body { margin-top: .95mm; }
+    .l1d-page--2 .hz-page-stack { gap: 1.6mm; }
+    .l1d-page--2 .hz-exercise { padding-top: 1.6mm; padding-bottom: 2.15mm; }
+    .l1d-page--2 .hz-exercise__body { margin-top: 1.5mm; }
     .l1d-page--2 .hz-exercise__instruction { font-size: 8.6pt; }
 
 /* Horizons A1 — Lesson 1D scoped styles. */
@@ -514,7 +514,7 @@
 .l1d-page:not(.l1d-page--2) .l1d-checkin-stage { min-height: 72mm !important; padding: 1.2mm 0 .5mm !important; }
 .l1d-page:not(.l1d-page--2) .l1d-checkin-photo,
 .l1d-page:not(.l1d-page--2) .l1d-checkin-photo .hz-photo-placeholder { min-height: 71mm !important; }
-.l1d-page:not(.l1d-page--2) .l1d-checkin-copy { margin-left: -5mm !important; padding: 3.2mm 4mm 3.2mm 6mm !important; }
+.l1d-page:not(.l1d-page--2) .l1d-checkin-copy { margin-left: -5mm !important; padding: 3.2mm 4mm 3.2mm 9mm !important; }
 .l1d-page:not(.l1d-page--2) .l1d-checkin-copy__kicker { margin-bottom: 1.4mm !important; font-size: 7pt !important; }
 .l1d-page:not(.l1d-page--2) .l1d-dialogue { grid-template-columns: 18mm 1fr !important; gap: .55mm 2mm !important; margin-bottom: 0 !important; font-size: 8.05pt !important; line-height: 1.25 !important; }
 .l1d-page:not(.l1d-page--2) .l1d-dialogue :where(dt, dd) { font-size: 8.05pt !important; line-height: 1.25 !important; }
@@ -522,7 +522,7 @@
 .l1d-page:not(.l1d-page--2) .l1d-discovery__item { min-height: 10mm !important; }
 .l1d-page:not(.l1d-page--2) .l1d-discovery__choices { display: block !important; margin-top: .45mm !important; font-size: 7.5pt !important; }
 .l1d-page:not(.l1d-page--2) .l1d-pair-check { margin-top: 1mm !important; font-size: 7.75pt !important; line-height: 1.25 !important; }
-.l1d-page:not(.l1d-page--2) .l1d-capitalization { overflow: hidden !important; margin-top: .5mm !important;  }
+.l1d-page:not(.l1d-page--2) .l1d-capitalization { overflow: hidden !important; margin-top: 1.2mm !important;  }
 .l1d-page:not(.l1d-page--2) .l1d-capitalization__grid { gap: 3mm !important; font-size: 7.8pt !important; line-height: 1.3 !important; }
 .l1d-page:not(.l1d-page--2) .l1d-practice-grid,
 .l1d-page:not(.l1d-page--2) .l1d-question-match { font-size: 8pt !important; line-height: 1.3 !important; }

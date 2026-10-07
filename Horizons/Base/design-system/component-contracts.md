@@ -59,6 +59,12 @@ Normal exercises and `Go to:` references do not receive decorative separator lin
 
 The exercise body should contain only the response mechanics the task actually needs. Do not add generic answer lines, boxes or check controls to a question-only task.
 
+Spacing is produced by the exercise's top/bottom padding, the instruction-to-body
+margin, and the parent flow gap together. Do not tighten only one of these
+without checking the resulting visible separation. For the current A1 book,
+calibrate lesson-local styles against the author-approved 1A master and the
+physical values in `CANONICAL-STYLE.md`. Keep shared Base defaults stable.
+
 ## 4. Internal grids
 
 Two/three-column grids are allowed **inside one exercise**:

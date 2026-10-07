@@ -312,6 +312,36 @@ For short questions, discovery prompts, compact statements and similar text-only
 
 A larger row height is appropriate only when the exercise genuinely needs physical response space, media alignment, a functional artifact, or another task-specific geometric reason. Otherwise, whitespace should live around the exercise or composition rather than between individual lines of learner-facing text.
 
+### A1 spacing reference
+
+The author-approved **Lesson 1A** is the definitive reference for spacing in the
+current A1 book. Preserve that master when calibrating other lessons. Compare
+the physical gaps at A4 print scale, including the space below an instruction,
+between exercises, around grammar focus, and between photographs and text.
+
+Use 1A's opening-page rhythm as the starting point: **1.5 mm** from an exercise
+instruction to its body, **1.6 mm** top and **2.15 mm** bottom exercise padding,
+and **0.2 mm** between exercise containers. The padding combines with the gap
+to separate neighboring exercises; the container gap alone is not the visible
+separation. After a lesson header, use **2.7 mm** before the exercise flow.
+Allow **1.2 mm** top and **0.8 mm** bottom margin around a grammar focus in
+addition to neighboring exercise padding. These are A1 calibration values,
+not a requirement to give every level or feature the same composition.
+
+Keep photographed scenes and adjacent reading/dialogue ink visibly apart.
+When an angled photograph or negative margin is part of the composition,
+measure the resulting text clearance, not just the grid gap. In A1's side-by-side
+dialogue scenes, retain at least **4 mm** of clearance from the full photo edge
+to the first ink column. Ordinary captions should have about **1.2 mm** or more
+of space below the image. A purposefully integrated artifact caption may use
+its own readable internal padding.
+
+Do not restore compact continuation-page overrides merely to save space.
+Keep short question rows natural and put breathing room around the task.
+Maintain type size, required writing space and complete visual evidence.
+If a spread becomes crowded, revise its composition rather than shrinking
+learner text. Verify all pages for clipping and crowding after recompiling.
+
 ## 15. Audio identity
 
 Voice continuity is part of the book's identity. Keep a stable narrator across a book's tracks and retain established dialogue voices for returning characters. Book-specific casting and exact provider voice IDs belong in that book's audio voice map.

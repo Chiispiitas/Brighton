@@ -17,11 +17,11 @@
 }
 
 .l2b-page .hz-page__content { overflow: hidden; }
-.l2b-page .hz-page-stack { gap: 1.55mm; }
-.l2b-page .hz-lesson-header { padding-bottom: 3mm; }
-.l2b-page .hz-exercises { gap: .1mm; }
-.l2b-page .hz-exercise { padding: .95mm 0 1.35mm; }
-.l2b-page .hz-exercise__body { margin-top: .9mm; }
+.l2b-page .hz-page-stack { gap: 2.7mm; }
+.l2b-page .hz-lesson-header { padding-bottom: 3.2mm; }
+.l2b-page .hz-exercises { gap: .2mm; }
+.l2b-page .hz-exercise { padding: 1.6mm 0 2.15mm; }
+.l2b-page .hz-exercise__body { margin-top: 1.5mm; }
 .l2b-page .hz-exercise__instruction { font-size: 8.8pt; }
 .l2b-go-to { margin-left: calc(var(--hz-exercise-marker-size) + 3mm); }
 
@@ -102,7 +102,7 @@
 }
 
 .l2b-show-head .hz-audio-badge { margin-left: auto; }
-.l2b-show-head--small { margin-bottom: .45mm; }
+.l2b-show-head--small { margin-bottom: 1.2mm; }
 
 .l2b-show-brand {
   display: inline-flex;
@@ -140,7 +140,7 @@
 
 .l2b-onair-start .l2b-show-head {
   padding: 2.6mm 3mm;
-  margin-bottom: 0;
+  margin-bottom: 1.2mm;
   background: #29272b;
   color: #fff;
 
@@ -464,9 +464,9 @@
 /* ---------- Page 16 / inDrive ---------- */
 
 .l2b-page--2 .hz-exercises { padding-top: 14mm !important; }
-.l2b-page--2 .hz-page-stack { gap: 1.15mm; }
-.l2b-page--2 .hz-exercise { padding-top: .85mm; padding-bottom: 1.3mm; }
-.l2b-page--2 .hz-exercise__body { margin-top: .85mm; }
+.l2b-page--2 .hz-page-stack { gap: 1.6mm; }
+.l2b-page--2 .hz-exercise { padding-top: 1.6mm; padding-bottom: 2.15mm; }
+.l2b-page--2 .hz-exercise__body { margin-top: 1.5mm; }
 
 .l2b-indrive-stage {
   display: grid;
@@ -651,7 +651,7 @@
 /* ---------- Language from HORIZONS ON AIR ---------- */
 
 .l2b-articles {
-  margin: .2mm 0 .1mm calc(var(--hz-exercise-marker-size) + 3mm);
+  margin: 1.2mm 0 .8mm calc(var(--hz-exercise-marker-size) + 3mm);
 
 }
 
@@ -785,7 +785,7 @@
 
 /* ---------- Production photography ---------- */
 
-.l2b-city-photo { margin: 1mm 0 1.5mm; overflow: hidden;
+.l2b-city-photo { margin: 1.5mm 0 2mm; overflow: hidden;
   clip-path: polygon(0 0,100% 0,100% 100%,3% 100%);
 }
 .l2b-city-photo img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: center 52%; }

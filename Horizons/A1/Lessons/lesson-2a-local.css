@@ -11,11 +11,11 @@
 }
 
 .l2a-page .hz-page__content { overflow: hidden; }
-.l2a-page .hz-page-stack { gap: 1.8mm; }
-.l2a-page .hz-lesson-header { padding-bottom: 3.1mm; }
+.l2a-page .hz-page-stack { gap: 2.7mm; }
+.l2a-page .hz-lesson-header { padding-bottom: 3.2mm; }
 .l2a-page .hz-exercises { gap: .2mm; }
-.l2a-page .hz-exercise { padding: 1.2mm 0 1.75mm; }
-.l2a-page .hz-exercise__body { margin-top: 1.2mm; }
+.l2a-page .hz-exercise { padding: 1.6mm 0 2.15mm; }
+.l2a-page .hz-exercise__body { margin-top: 1.5mm; }
 .l2a-page .hz-exercise__instruction { font-size: 8.9pt; }
 .l2a-target { color: var(--hz-unit-dark); font-weight: var(--hz-fw-black); }
 .l2a-go-to { margin-left: calc(var(--hz-exercise-marker-size) + 3mm); }
@@ -157,7 +157,7 @@
 /* ---------- Grammar ---------- */
 
 .l2a-grammar {
-  margin: .3mm 0 .2mm calc(var(--hz-exercise-marker-size) + 3mm);
+  margin: 1.2mm 0 .8mm calc(var(--hz-exercise-marker-size) + 3mm);
 
 }
 
@@ -191,9 +191,9 @@
 /* ---------- Page 14 ---------- */
 
 .l2a-page--2 .hz-exercises { padding-top: 14mm !important; }
-.l2a-page--2 .hz-page-stack { gap: 1.35mm; }
-.l2a-page--2 .hz-exercise { padding-top: 1mm; padding-bottom: 1.55mm; }
-.l2a-page--2 .hz-exercise__body { margin-top: 1mm; }
+.l2a-page--2 .hz-page-stack { gap: 1.6mm; }
+.l2a-page--2 .hz-exercise { padding-top: 1.6mm; padding-bottom: 2.15mm; }
+.l2a-page--2 .hz-exercise__body { margin-top: 1.5mm; }
 
 /* Exercise 3 */
 .l2a-choice-grid {

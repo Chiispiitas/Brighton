@@ -13,11 +13,11 @@
 }
 
 .l2c-page .hz-page__content { overflow: hidden; }
-.l2c-page .hz-page-stack { gap: 1.2mm; }
-.l2c-page .hz-lesson-header { padding-bottom: 2.7mm; }
-.l2c-page .hz-exercises { gap: 0; }
-.l2c-page .hz-exercise { padding: .8mm 0 1.2mm; }
-.l2c-page .hz-exercise__body { margin-top: .8mm; }
+.l2c-page .hz-page-stack { gap: 2.7mm; }
+.l2c-page .hz-lesson-header { padding-bottom: 3.2mm; }
+.l2c-page .hz-exercises { gap: .2mm; }
+.l2c-page .hz-exercise { padding: 1.6mm 0 2.15mm; }
+.l2c-page .hz-exercise__body { margin-top: 1.5mm; }
 .l2c-page .hz-exercise__instruction { font-size: 8.8pt; }
 .l2c-go-to { margin-left: calc(var(--hz-exercise-marker-size) + 3mm); }
 
@@ -145,7 +145,7 @@
   grid-template-columns: 1fr 12mm 1fr;
   gap: 2.5mm;
   align-items: center;
-  margin-top: 3mm;
+  margin-top: 4mm;
   padding-top: 2.5mm;
   border-top: 0;
 
@@ -240,7 +240,7 @@
 /* ---------- Exercise 3: reading check ---------- */
 
 .l2c-check-exercise { padding-top: .55mm; }
-.l2c-check-grid { gap: .35mm 6mm; }
+.l2c-check-grid { gap: .7mm 6mm; }
 
 .l2c-check-grid .hz-question {
   padding: .25mm 0;
@@ -251,13 +251,13 @@
 /* ---------- Page 18 ---------- */
 
 .l2c-page--2 .hz-exercises { padding-top: 13.5mm !important; }
-.l2c-page--2 .hz-page-stack { gap: .95mm; }
-.l2c-page--2 .hz-exercise { padding-top: .72mm; padding-bottom: 1.05mm; }
-.l2c-page--2 .hz-exercise__body { margin-top: .75mm; }
+.l2c-page--2 .hz-page-stack { gap: 1.6mm; }
+.l2c-page--2 .hz-exercise { padding-top: 1.6mm; padding-bottom: 2.15mm; }
+.l2c-page--2 .hz-exercise__body { margin-top: 1.5mm; }
 
 /* Grammar focus: canonical shell, simple body grid, no local dividers. */
 .l2c-grammar {
-  margin: .35mm 0 .15mm calc(var(--hz-exercise-marker-size) + 3mm);
+  margin: 1.2mm 0 .8mm calc(var(--hz-exercise-marker-size) + 3mm);
 }
 
 .l2c-grammar-grid { gap: 4mm; }
@@ -279,7 +279,7 @@
 .l2c-grammar-grid b { color: var(--hz-unit-dark); }
 
 /* Exercise 5 */
-.l2c-complete-grid { gap: .4mm 7mm; }
+.l2c-complete-grid { gap: 1mm 7mm; }
 
 .l2c-complete-item {
   display: grid;
@@ -344,7 +344,7 @@
   display: grid;
   justify-items: center;
   gap: .8mm;
-  margin-top: 1mm;
+  margin-top: 1.2mm;
   font-size: 8pt;
   line-height: 1.2;
   text-align: center;
@@ -369,7 +369,7 @@
 .l2c-owner-lines {
   display: grid;
   gap: .75mm;
-  margin: 1.2mm 0 0 1.5mm;
+  margin: 2mm 0 0 1.5mm;
 }
 
 .l2c-owner-lines > div {

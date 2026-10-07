@@ -18,11 +18,11 @@
     */
 
     .l1c-page .hz-page__content { overflow: hidden; }
-    .l1c-page .hz-page-stack { gap: 2.2mm; }
-    .l1c-page .hz-lesson-header { padding-bottom: 3mm; }
+    .l1c-page .hz-page-stack { gap: 2.7mm; }
+    .l1c-page .hz-lesson-header { padding-bottom: 3.2mm; }
     .l1c-page .hz-exercises { gap: .2mm; }
-    .l1c-page .hz-exercise { padding: 1.35mm 0 1.95mm; }
-    .l1c-page .hz-exercise__body { margin-top: 1.35mm; }
+    .l1c-page .hz-exercise { padding: 1.6mm 0 2.15mm; }
+    .l1c-page .hz-exercise__body { margin-top: 1.5mm; }
     .l1c-page .hz-exercise__instruction { font-size: 8.9pt; }
     .l1c-target { color: var(--hz-unit-dark); font-weight: var(--hz-fw-black); }
 
@@ -147,7 +147,7 @@
     .l1c-nationality b { color: var(--hz-unit-dark); }
     .l1c-nationality__line { border-bottom: .28mm solid var(--hz-line-strong); min-height: 4mm; }
 
-    .l1c-go-to { margin: .35mm 0 .1mm calc(var(--hz-exercise-marker-size) + 3mm); }
+    .l1c-go-to { margin: 1.5mm 0 .2mm calc(var(--hz-exercise-marker-size) + 3mm); }
 
     /* Exercise 3 uses a travel-editorial composition rather than three cards. */
     .l1c-world-stage {
@@ -432,9 +432,9 @@
       margin-top: .6mm;
     }
 
-    .l1c-page--2 .hz-page-stack { gap: 1.5mm; }
-    .l1c-page--2 .hz-exercise { padding-top: 1.15mm; padding-bottom: 1.55mm; }
-    .l1c-page--2 .hz-exercise__body { margin-top: 1.1mm; }
+    .l1c-page--2 .hz-page-stack { gap: 1.6mm; }
+    .l1c-page--2 .hz-exercise { padding-top: 1.6mm; padding-bottom: 2.15mm; }
+    .l1c-page--2 .hz-exercise__body { margin-top: 1.5mm; }
     .l1c-page--2 .hz-exercise__instruction { font-size: 8.7pt; }
 
 /* Horizons A1 — Lesson 1C scoped styles and asset mappings. */

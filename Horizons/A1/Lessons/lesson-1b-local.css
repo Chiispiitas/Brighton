@@ -9,11 +9,11 @@
     */
 
     .l1b-page .hz-page__content { overflow: hidden; }
-    .l1b-page .hz-page-stack { gap: 2.25mm; }
-    .l1b-page .hz-lesson-header { padding-bottom: 3.1mm; }
-    .l1b-page .hz-exercises { gap: .25mm; }
-    .l1b-page .hz-exercise { padding: 1.35mm 0 1.95mm; }
-    .l1b-page .hz-exercise__body { margin-top: 1.3mm; }
+    .l1b-page .hz-page-stack { gap: 2.7mm; }
+    .l1b-page .hz-lesson-header { padding-bottom: 3.2mm; }
+    .l1b-page .hz-exercises { gap: .2mm; }
+    .l1b-page .hz-exercise { padding: 1.6mm 0 2.15mm; }
+    .l1b-page .hz-exercise__body { margin-top: 1.5mm; }
     .l1b-page .hz-exercise__instruction { font-size: 8.9pt; }
     .l1b-target { color: var(--hz-unit-dark); font-weight: var(--hz-fw-black); }
 
@@ -102,7 +102,7 @@
     .l1b-aan {
       position: relative;
       overflow: hidden;
-      margin: .6mm 0 .4mm calc(var(--hz-exercise-marker-size) + 3mm);
+      margin: 1.2mm 0 .8mm calc(var(--hz-exercise-marker-size) + 3mm);
 
       isolation: isolate;
     }
@@ -152,7 +152,7 @@
     .l1b-aan__grid p { margin: 0; font-style: italic; }
 
     .l1b-go-to {
-      margin: .3mm 0 .2mm calc(var(--hz-exercise-marker-size) + 3mm);
+      margin: 1.5mm 0 .2mm calc(var(--hz-exercise-marker-size) + 3mm);
     }
 
     /* Exercise 2 is explicitly simulated real-world UI, so rounded chat
@@ -381,7 +381,7 @@
       position: relative;
       z-index: 2;
       display: inline-block;
-      margin: -2mm 0 1mm;
+      margin: 1.5mm 0 1.5mm;
       padding: 1mm 2mm 0 0;
       background: var(--hz-paper);
       color: var(--l1b-feature);
@@ -409,8 +409,8 @@
       width: 100%;
       min-width: 0;
       margin: 0;
-      padding: 1.2mm 0 1.7mm;
-      border-bottom: var(--hz-border) solid var(--hz-line);
+      padding: 1.6mm 0 2.15mm;
+      border-bottom: 0;
     }
 
     .l1b-subexercise__number {
@@ -423,7 +423,7 @@
     }
 
     .l1b-subexercise__instruction {
-      margin: .15mm 0 0;
+      margin: .3mm 0 0;
       color: var(--hz-ink);
       font-size: 8.75pt;
       font-weight: var(--hz-fw-semibold);
@@ -439,6 +439,7 @@
       border-bottom: 0;
       background: transparent;
       isolation: isolate;
+      margin-top: 1.2mm;
     }
 
     .l1b-pronunciation::after {
@@ -531,11 +532,11 @@
       margin-top: .5mm;
     }
 
-    /* Tighten the continuation page so all frozen source content stays on one A4 page. */
-    .l1b-page--2 .hz-page-stack { gap: 1.45mm; }
-    .l1b-page--2 .hz-exercises { gap: .15mm; }
-    .l1b-page--2 .hz-exercise { padding-top: 1.1mm; padding-bottom: 1.45mm; }
-    .l1b-page--2 .hz-exercise__body { margin-top: 1mm; }
+    /* Continuation spacing follows the approved 1A opening-page rhythm. */
+    .l1b-page--2 .hz-page-stack { gap: 1.6mm; }
+    .l1b-page--2 .hz-exercises { gap: .2mm; }
+    .l1b-page--2 .hz-exercise { padding-top: 1.6mm; padding-bottom: 2.15mm; }
+    .l1b-page--2 .hz-exercise__body { margin-top: 1.5mm; }
     .l1b-page--2 .hz-exercise__instruction { font-size: 8.65pt; }
 
 /* Horizons A1 — Lesson 1B scoped styles and asset mappings. */
@@ -623,7 +624,7 @@
 .l1b-page:not(.l1b-page--2) .l1b-occupation__photo {
   width: 31mm !important;
   height: 26mm !important;
-  margin: 0 auto .9mm !important;
+  margin: 0 auto 1.2mm !important;
 
   border-radius: 3mm 0 3mm 0;
 }
