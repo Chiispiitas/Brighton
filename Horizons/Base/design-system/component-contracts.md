@@ -94,7 +94,9 @@ Use `--full-lane` when a dominant equal-status family should center across the u
 
 The family chooses its columns/gaps locally. Equal-status items share geometry/basic scale; crop position may differ per image.
 
-A feature can be portrait-led or use photographic extractions on open paper.
+A feature can be portrait-led and keep its original photographic setting.
+For the current A1 book, only 2A activity 1 uses a newly extracted photograph;
+other photos retain their approved original backgrounds.
 Keep names and matching markers as live task text. Display type and photo
 framing stay lesson-local, with canonical spacing and learner hierarchy retained.
 Inspect circle/arch crops for complete faces and check extracted silhouettes
@@ -227,12 +229,14 @@ Reusable series-wide components belong in `Horizons/Base/design-system/`. Lesson
 
 Before creating a new shared component, search the existing Base for an equivalent. Prefer one canonical component over near-duplicates.
 
-## 14. Open editorial features
+## 14. Editorial feature backgrounds
 
 Use a semantic article or section with a lesson-local feature class. Its title,
 photographs, color accents and internal columns form the composition. There is
-no default shared reading-panel background or border. Readings, dialogues,
-photo families and pair models normally sit on open page paper.
+no default shared reading-panel background or border. The author has restored
+the original A1 dialogue panels, photo backgrounds and feature bands from the
+pre-overhaul checkpoint. Keep those lesson-local treatments and their text
+insets; do not remove them under the previous open-paper default.
 
 Feature palettes may vary independently from crimson navigation. A partial photo
 mat or an occasional full article background must serve a specific composition.

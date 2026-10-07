@@ -453,3 +453,25 @@
 .l2c-reading-feature__head h2 span {
   color: #a16732;
 }
+
+/* Author-requested restoration of original backgrounds.
+   Source: horizons-before-editorial-redesign-2026-10-06.
+   Keep the approved spacing and current learner content. */
+.l2c-reading-feature__head {
+  background: var(--hz-unit) !important;
+  padding: 2.5mm 3mm !important;
+}
+
+.l2c-pair-models > div:last-child {
+  background: var(--hz-unit-soft) !important;
+}
+
+.l2c-reading-feature__head > span,
+.l2c-reading-feature__head h2,
+.l2c-reading-feature__head h2 span { color: #fff !important; }
+.l2c-family-photo { overflow: hidden; }
+.l2c-family-photo img { object-fit: cover; object-position: center; }
+.l2c-pair-models > div {
+  padding: 2mm 2.5mm !important;
+  border-left: .8mm solid var(--hz-unit) !important;
+}

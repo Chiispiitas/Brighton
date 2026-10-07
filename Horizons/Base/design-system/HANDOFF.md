@@ -94,16 +94,19 @@ Do not treat a preview branch as permission to replace `main`.
 
 This revision keeps the complete teaching content and audio resources while
 recomposing every spread. The author's color correction authorizes independent
-feature palettes and rejects repeated background boxes. Readings, dialogues,
-photo families, response areas and pair models default to open page paper.
+feature palettes and rejects newly added repetitive background boxes. The
+latest author correction restores the original dialogue panels, photographic
+backgrounds and feature bands from the pre-overhaul checkpoint; do not remove
+them under the earlier open-paper guidance. Preserve current content and spacing.
 The closer study of all six supplied Personal Best levels gives work profiles
 circular portraits and individual serif name accents. Travel combines a large
-open headline, map and photographs; the hotel uses an arched scene; transport
-uses an orange publication title and open photographic interviews. The Rivera
-article integrates a generated family cutout and mixed serif title; the bag and
-Lost and Found objects have transparent photographic extractions. The approved
-opening conversation now uses the original full hallway photograph at the
-author's request; 1A's spacing remains intact. Grammar focus keeps
+headline, map and photographs; the hotel uses an arched scene; transport
+retains its original title band and interview caption backgrounds. The Rivera
+article and Lost and Found object pairs now use their original full photographs.
+Only **2A activity 1** keeps the generated photographic bag cutout. Existing
+transparent paper artifacts retain their approved surfaces. The opening
+conversation uses the full hallway photograph. All four 1A greeting photos
+have matching circular crops and centered, aligned captions. Grammar focus keeps
 its canonical title tab and shell; functional artifacts retain needed structure.
 Feature colors and geometry stay lesson-local. The previous preview is preserved
 at `horizons-editorial-preview-v1-2026-10-06` as an additional rollback point.

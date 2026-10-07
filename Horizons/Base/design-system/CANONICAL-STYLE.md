@@ -93,28 +93,32 @@ Give each major feature a composition appropriate to its content: profiles may
 read as a magazine feature, travel entries as photographic postcards, a family
 reading as a portrait-led article, and a transport interview as a podcast feature.
 Photos, text and task labels should form one readable composition. Use an
-occasional corner crop, modest diagonal or clean transparent photographic
-cutout only when it strengthens that composition and preserves learner evidence.
+occasional corner crop or modest diagonal when it strengthens that composition
+and preserves learner evidence. Retain approved photographic backgrounds.
 
-Default to open page paper around readings, dialogues, vocabulary families,
-response areas and pairwork. Repeated background rectangles flatten the visual
-hierarchy. Build a feature through its title, photographs, crop, scale, alignment,
-type, a purposeful rule or a selective color field. A full background panel is
-an occasional deliberate composition, never a default wrapper. A partial photo
-mat can give atmosphere while the reading remains open and readable. Functional
-forms retain clear white writing surfaces and enough physical answer space.
+Retain the original dialogue panels, photo backgrounds and feature bands from
+`horizons-before-editorial-redesign-2026-10-06`. The author has explicitly
+reversed the blanket removal of these backgrounds. Restore their original
+fills, borders and readable text insets rather than adding a new universal
+wrapper to exercises. Keep the calibrated spacing and varied feature layouts.
+Functional forms retain clear white writing surfaces and enough answer space.
 
 Judge editorial creativity through composition, not just an accent-color change.
 Vary the main feature's visual idea within the shared system: portrait-led
-profiles, an open photographic object arrangement, a travel feature integrating
-a map and photographs, or an article title with a cutout. A sober contrast
+profiles, a photographic object arrangement, a travel feature integrating
+a map and photographs, or a portrait-led family article. A sober contrast
 between serif display type, italic secondary words and the established learner
 type can give a feature its own voice. Display typography belongs to feature
 titles and task-bearing names; instructions and grammar retain their hierarchy.
 
-Use cutouts selectively and keep environmental photographs elsewhere in the
-lesson. Lesson 1A's opening Tom and Mary conversation uses the original full
-hallway photograph rather than the transparent cutout.
+The only approved removal of a picture background in this overhaul is the bag
+in **2A activity 1**. Keep its transparent `Open-bag-cutout-v2.png`. Lesson 1A's
+opening conversation, the Rivera family article and 2D activity 6 use their
+original full photographs. Previously approved transparent paper artifacts,
+including 2D's clipboard with its white writing space, retain their transparency.
+Lesson 1A's four greeting pictures share the same circular crop, size, border,
+centered position and caption baseline; captions must not cause one photo to
+shift vertically or sit off-center.
 Check identities, objects, colors, quantity, relative scale and task
 labels after image edits. Check native alpha on the actual page paper. Circle
 and arch crops must preserve faces, gestures and relevant objects; tune the
@@ -241,10 +245,11 @@ its editorial character. Authentic interfaces retain their recognizable colors.
 
 Use a container when it clarifies language, organizes a functional artifact or enables a deliberate editorial composition.
 
-Open composition is the default. Do not enclose ordinary dialogue models,
-question groups or image families in colored background rectangles. Use filled
-panels selectively for a specific article idea, a canonical grammar focus or a
-working real-world artifact. A color accent is not a reason to add a box.
+Retain the original lesson-local dialogue panels and photographic backgrounds,
+as explicitly restored by the author. Keep ordinary numbered exercise flow
+open, and do not add new generic rectangles around question groups or image
+families. Filled panels support an existing dialogue, a specific article idea,
+a canonical grammar focus or a working real-world artifact.
 
 Avoid wrapping ordinary content in generic cards, chips or pills. Large shapes are valid only when they support hierarchy, grouping, reading flow, task meaning or image emphasis.
 

@@ -838,3 +838,37 @@
   --l2b-interview: #27506d;
 }
 }
+
+/* Author-requested restoration of original backgrounds.
+   Source: horizons-before-editorial-redesign-2026-10-06.
+   Keep the approved spacing and current learner content. */
+.l2b-onair-start .l2b-show-head {
+  background: var(--hz-unit) !important;
+  padding: 2.6mm 3mm !important;
+  color: #fff !important;
+}
+
+.l2b-interview-photo {
+  background: #e5e1db !important;
+}
+
+.l2b-street-still figcaption {
+  background: #232323 !important;
+  padding: 1mm 1.8mm !important;
+  color: #fff !important;
+}
+
+.l2b-interview-photo figcaption {
+  background: #232323 !important;
+  padding: 1mm 2mm !important;
+  color: #fff !important;
+}
+
+.l2b-onair-start .l2b-show-episode { color: #fff !important; }
+.l2b-interview-photo figcaption strong { color: inherit !important; }
+
+.l2b-pair-card {
+  padding: 2.5mm 3mm 3mm !important;
+}
+.l2b-pair-card:first-child { background: var(--hz-unit-soft) !important; }
+.l2b-pair-card:last-child { background: #fff !important; }

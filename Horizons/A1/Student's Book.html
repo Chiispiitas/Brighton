@@ -1565,6 +1565,140 @@ body.hz-debug .hz-page::after {
   --l1a-feature: #176d78;
 }
 
+/* Author-requested restoration of original backgrounds.
+   Source: horizons-before-editorial-redesign-2026-10-06.
+   Keep the approved spacing and current learner content. */
+.l1a-dialogue-copy {
+  background: var(--hz-paper) !important;
+  border-top: 1.2mm solid var(--hz-unit) !important;
+  box-shadow: 0 0 0 .25mm var(--hz-line) !important;
+  padding: 5mm 5mm 4.5mm 8mm !important;
+}
+
+.l1a-exchange {
+  background: var(--hz-paper) !important;
+  border-left: 1mm solid var(--hz-unit) !important;
+  padding: 2.1mm 3mm !important;
+}
+
+.l1a-exchange:nth-of-type(3) {
+  background: var(--hz-unit-soft) !important;
+}
+
+.l1a-exchange:nth-of-type(4) {
+  background: var(--hz-wash) !important;
+}
+
+.l1a-pronunciation {
+  background: var(--hz-unit-soft) !important;
+  border-top: 1.15mm solid var(--hz-unit) !important;
+  border-bottom: .3mm solid var(--hz-line-strong) !important;
+  padding: 3mm 4mm 3.7mm !important;
+}
+
+.l1a-profile__form {
+  background: var(--hz-unit-soft) !important;
+  border-top: 1mm solid var(--hz-unit) !important;
+}
+
+.l1a-profile:nth-child(2) .l1a-profile__form {
+  background: var(--hz-wash) !important;
+}
+
+.l1a-profile:nth-child(3) .l1a-profile__form {
+  background: #fff !important;
+  border: .35mm solid var(--hz-line) !important;
+  border-top: 1mm solid var(--hz-unit) !important;
+}
+
+.l1a-page .l1a-identity-copy {
+  background: #fff !important;
+}
+
+.l1a-page .l1a-exchange {
+  background: #fff !important;
+  border: .3mm solid var(--hz-line) !important;
+  border-left: 1mm solid var(--hz-unit) !important;
+}
+
+.l1a-page .l1a-exchange:nth-of-type(1) {
+  background: #fff !important;
+  border: .3mm solid var(--hz-line) !important;
+  border-left: 1mm solid var(--hz-unit) !important;
+}
+
+.l1a-page .l1a-exchange:nth-of-type(2) {
+  background: #fff !important;
+  border: .3mm solid var(--hz-line) !important;
+  border-left: 1mm solid var(--hz-unit) !important;
+}
+
+.l1a-page .l1a-exchange:nth-of-type(3) {
+  background: #fff !important;
+  border: .3mm solid var(--hz-line) !important;
+  border-left: 1mm solid var(--hz-unit) !important;
+}
+
+.l1a-page .l1a-exchange:nth-of-type(4) {
+  background: #fff !important;
+  border: .3mm solid var(--hz-line) !important;
+  border-left: 1mm solid var(--hz-unit) !important;
+}
+
+.l1a-page .l1a-pronunciation {
+  background: #fff !important;
+}
+
+.l1a-page .l1a-profile__form {
+  background: #fff !important;
+  border: .35mm solid var(--hz-line) !important;
+  border-top: 1mm solid var(--hz-unit) !important;
+}
+
+.l1a-page .l1a-profile:nth-child(1) .l1a-profile__form {
+  background: #fff !important;
+  border: .35mm solid var(--hz-line) !important;
+  border-top: 1mm solid var(--hz-unit) !important;
+}
+
+.l1a-page .l1a-profile:nth-child(2) .l1a-profile__form {
+  background: #fff !important;
+  border: .35mm solid var(--hz-line) !important;
+  border-top: 1mm solid var(--hz-unit) !important;
+}
+
+.l1a-page .l1a-profile:nth-child(3) .l1a-profile__form {
+  background: #fff !important;
+  border: .35mm solid var(--hz-line) !important;
+  border-top: 1mm solid var(--hz-unit) !important;
+}
+
+.l1a-page .l1a-greetings { align-items: start; }
+.l1a-page .l1a-greeting { margin: 0; min-width: 0; }
+.l1a-page .l1a-greeting__photo,
+.l1a-page .l1a-greeting:nth-child(1) .l1a-greeting__photo,
+.l1a-page .l1a-greeting:nth-child(2) .l1a-greeting__photo,
+.l1a-page .l1a-greeting:nth-child(3) .l1a-greeting__photo,
+.l1a-page .l1a-greeting:nth-child(4) .l1a-greeting__photo {
+  width: 27mm;
+  height: 27mm;
+  margin: 0 auto;
+  border: .45mm solid var(--hz-unit);
+  border-radius: 50%;
+  clip-path: none;
+}
+.l1a-page .l1a-greeting figcaption {
+  margin-top: 1.3mm;
+  font-size: 7.4pt;
+  line-height: 1.15;
+}
+.l1a-page .l1a-greeting figcaption strong { white-space: nowrap; }
+.l1a-dialogue-feature::before,
+.l1a-dialogue-copy::after,
+.l1a-identity-stage::before,
+.l1a-pronunciation::after { display: block; }
+.l1a-page .l1a-pronunciation__title { color: var(--hz-unit-dark) !important; }
+
 
 /* Horizons/Base/shell/print.css */
 @media print {
@@ -2471,6 +2605,27 @@ body.hz-debug .hz-page::after {
   --profile-accent: #98572c;
 }
 
+/* Author-requested restoration of original backgrounds.
+   Source: horizons-before-editorial-redesign-2026-10-06.
+   Keep the approved spacing and current learner content. */
+.l1b-profile__photo {
+  background: var(--hz-wash) !important;
+}
+
+.l1b-profile__name {
+  background: var(--hz-paper) !important;
+}
+
+.l1b-pronunciation {
+  background: var(--hz-unit-soft) !important;
+  border-top: 1.15mm solid var(--hz-unit) !important;
+  border-bottom: .3mm solid var(--hz-line-strong) !important;
+  padding: 2.8mm 4mm 3mm !important;
+}
+
+.l1b-pronunciation::after { display: block; }
+.l1b-page .l1b-pronunciation__title { color: var(--hz-unit-dark) !important; }
+
 
 /* Horizons/A1/Lessons/lesson-1c-local.css */
 
@@ -3053,6 +3208,43 @@ body.hz-debug .hz-page::after {
 .l1c-city:nth-child(3) .l1c-city__photo {
   transform: rotate(1.5deg);
 }
+
+/* Author-requested restoration of original backgrounds.
+   Source: horizons-before-editorial-redesign-2026-10-06.
+   Keep the approved spacing and current learner content. */
+.l1c-world-stage {
+  background: #eef3f4 !important;
+  padding: 3.5mm !important;
+}
+
+.l1c-world-masthead {
+  background: var(--hz-unit) !important;
+  padding: 1.8mm 4mm !important;
+  color: #fff !important;
+}
+
+.l1c-city__copy {
+  background: var(--hz-paper) !important;
+  border-top: 1.1mm solid var(--hz-unit) !important;
+  padding: 3mm 3.2mm 3.2mm !important;
+}
+
+.l1c-adjective-field {
+  background: var(--hz-unit-soft) !important;
+  border-top: 1.1mm solid var(--hz-unit) !important;
+  padding: 3.2mm 4mm 3.5mm !important;
+}
+
+.l1c-dialogue-line {
+  background: var(--hz-paper) !important;
+  border-left: .9mm solid var(--hz-unit) !important;
+  padding: 1.8mm 2.5mm !important;
+}
+
+.l1c-dialogue-line:nth-child(2) {
+  background: var(--hz-unit-soft) !important;
+}
+.l1c-world-masthead span:last-child { color: #fff !important; }
 
 
 /* Horizons/A1/Lessons/lesson-1d-local.css */
@@ -3827,6 +4019,22 @@ body.hz-debug .hz-page::after {
   --l1d-form: #266e70;
 }
 
+/* Author-requested restoration of original backgrounds.
+   Source: horizons-before-editorial-redesign-2026-10-06.
+   Keep the approved spacing and current learner content. */
+.l1d-checkin-copy {
+  background: var(--hz-paper) !important;
+  border-top: 1.1mm solid var(--hz-unit) !important;
+  box-shadow: 0 0 0 .25mm var(--hz-line) !important;
+  padding: 4mm 4mm 3.8mm 7mm !important;
+}
+
+.l1d-role-box {
+  background: var(--hz-unit-soft) !important;
+  border-left: 1mm solid var(--hz-unit) !important;
+  padding: 2.7mm 3mm !important;
+}
+
 
 /* Horizons/A1/Lessons/lesson-2a-local.css */
 /* Horizons A1 — Lesson 2A scoped styles.
@@ -4152,6 +4360,31 @@ body.hz-debug .hz-page::after {
 .l2a-page { print-color-adjust: exact; -webkit-print-color-adjust: exact;
   --l2a-feature: #4d7254;
 }
+}
+
+/* Author-requested restoration of original backgrounds.
+   Source: horizons-before-editorial-redesign-2026-10-06.
+   Keep the approved spacing and current learner content. */
+.l2a-dialogue-copy {
+  background: var(--hz-paper) !important;
+  border-top: 1.1mm solid var(--hz-unit) !important;
+  box-shadow: 0 0 0 .25mm var(--hz-line) !important;
+  padding: 3.2mm 3.5mm 3.1mm 12mm !important;
+}
+
+.l2a-pair-example {
+  background: var(--hz-paper) !important;
+  border-left: 1mm solid var(--hz-unit) !important;
+  padding: 2mm 2.6mm !important;
+}
+
+.l2a-pair-example:nth-child(2) {
+  background: var(--hz-unit-soft) !important;
+}
+
+.l2a-pair-example:nth-child(2) {
+  border-left: 1mm solid var(--hz-unit) !important;
+  padding: 2mm 2.6mm !important;
 }
 
 
@@ -4997,6 +5230,40 @@ body.hz-debug .hz-page::after {
 }
 }
 
+/* Author-requested restoration of original backgrounds.
+   Source: horizons-before-editorial-redesign-2026-10-06.
+   Keep the approved spacing and current learner content. */
+.l2b-onair-start .l2b-show-head {
+  background: var(--hz-unit) !important;
+  padding: 2.6mm 3mm !important;
+  color: #fff !important;
+}
+
+.l2b-interview-photo {
+  background: #e5e1db !important;
+}
+
+.l2b-street-still figcaption {
+  background: #232323 !important;
+  padding: 1mm 1.8mm !important;
+  color: #fff !important;
+}
+
+.l2b-interview-photo figcaption {
+  background: #232323 !important;
+  padding: 1mm 2mm !important;
+  color: #fff !important;
+}
+
+.l2b-onair-start .l2b-show-episode { color: #fff !important; }
+.l2b-interview-photo figcaption strong { color: inherit !important; }
+
+.l2b-pair-card {
+  padding: 2.5mm 3mm 3mm !important;
+}
+.l2b-pair-card:first-child { background: var(--hz-unit-soft) !important; }
+.l2b-pair-card:last-child { background: #fff !important; }
+
 
 /* Horizons/A1/Lessons/lesson-2c-local.css */
 /* Horizons A1 — Lesson 2C scoped styles.
@@ -5455,6 +5722,28 @@ body.hz-debug .hz-page::after {
   color: #a16732;
 }
 
+/* Author-requested restoration of original backgrounds.
+   Source: horizons-before-editorial-redesign-2026-10-06.
+   Keep the approved spacing and current learner content. */
+.l2c-reading-feature__head {
+  background: var(--hz-unit) !important;
+  padding: 2.5mm 3mm !important;
+}
+
+.l2c-pair-models > div:last-child {
+  background: var(--hz-unit-soft) !important;
+}
+
+.l2c-reading-feature__head > span,
+.l2c-reading-feature__head h2,
+.l2c-reading-feature__head h2 span { color: #fff !important; }
+.l2c-family-photo { overflow: hidden; }
+.l2c-family-photo img { object-fit: cover; object-position: center; }
+.l2c-pair-models > div {
+  padding: 2mm 2.5mm !important;
+  border-left: .8mm solid var(--hz-unit) !important;
+}
+
 
 /* Horizons/A1/Lessons/lesson-2d-local.css */
 /* Horizons A1 — Lesson 2D. Color evidence, a Lost and Found encounter,
@@ -5566,6 +5855,31 @@ body.hz-debug .hz-page::after {
   font-size: 20pt;
   font-style: italic;
   font-weight: 500;
+}
+
+/* Author-requested restoration of original backgrounds.
+   Source: horizons-before-editorial-redesign-2026-10-06.
+   Keep the approved spacing and current learner content. */
+.l2d-dialogue {
+  background: var(--hz-paper) !important;
+  border-top: 1mm solid var(--hz-unit) !important;
+  border-bottom: .25mm solid var(--hz-line) !important;
+  padding: 3mm 2.5mm 3mm 6mm !important;
+}
+
+.l2d-inventory header {
+  background: var(--hz-unit) !important;
+  padding: 2.5mm 3mm !important;
+  color: #fff !important;
+}
+
+.l2d-item-pairs img {
+  background: #fff !important;
+}
+
+.l2d-task-model {
+  border-left: .8mm solid var(--hz-unit) !important;
+  padding: 2mm 3mm !important;
 }
 
 
@@ -7188,7 +7502,7 @@ body {
 
                 <div class="l2c-reading-feature__main">
                   <figure class="l2c-family-photo" data-image-slot="HZN_A1_U02_LC_E02_IMG_01">
-                    <img src="./Images/2C/Rivera-family-cutout-v2.png" alt="The four Rivera family members together">
+                    <img src="./Images/2C/2C_04_main_reading_rivera_family_restaurant---d2c83374-a7d8-459c-919b-cd560669adc3.png" alt="The Rivera family together in their restaurant">
                   </figure>
 
                   <article class="l2c-reading-copy hz-student-text">
@@ -7528,10 +7842,10 @@ body {
               <p class="hz-exercise__instruction">Look at the items. Describe.</p>
               <div class="hz-exercise__body l2d-inventory">
                 <div class="hz-media-family hz-content-grid hz-content-grid--2 l2d-item-pairs">
-                  <figure data-image-slot="HZN_A1_U02_LD_E06_IMG_01"><img src="./Images/2D/HZN_A1_U02_LD_E06_IMG_01-cutout-v2.png" alt="Left: the black phone is small. Right: the white phone is big."><figcaption><span>1</span><span>2</span></figcaption></figure>
-                  <figure data-image-slot="HZN_A1_U02_LD_E06_IMG_02"><img src="./Images/2D/HZN_A1_U02_LD_E06_IMG_02-cutout-v2.png" alt="Left: the brown wallet is small. Right: the red wallet is big."><figcaption><span>3</span><span>4</span></figcaption></figure>
-                  <figure data-image-slot="HZN_A1_U02_LD_E06_IMG_03"><img src="./Images/2D/HZN_A1_U02_LD_E06_IMG_03-cutout-v2.png" alt="Left: the green bottle is small. Right: the blue bottle is big."><figcaption><span>5</span><span>6</span></figcaption></figure>
-                  <figure data-image-slot="HZN_A1_U02_LD_E06_IMG_04"><img src="./Images/2D/HZN_A1_U02_LD_E06_IMG_04-cutout-v2.png" alt="Left: the yellow umbrella is small. Right: the orange umbrella is big."><figcaption><span>7</span><span>8</span></figcaption></figure>
+                  <figure data-image-slot="HZN_A1_U02_LD_E06_IMG_01"><img src="./Images/2D/HZN_A1_U02_LD_E06_IMG_01.png" alt="Left: the black phone is small. Right: the white phone is big."><figcaption><span>1</span><span>2</span></figcaption></figure>
+                  <figure data-image-slot="HZN_A1_U02_LD_E06_IMG_02"><img src="./Images/2D/HZN_A1_U02_LD_E06_IMG_02.png" alt="Left: the brown wallet is small. Right: the red wallet is big."><figcaption><span>3</span><span>4</span></figcaption></figure>
+                  <figure data-image-slot="HZN_A1_U02_LD_E06_IMG_03"><img src="./Images/2D/HZN_A1_U02_LD_E06_IMG_03.png" alt="Left: the green bottle is small. Right: the blue bottle is big."><figcaption><span>5</span><span>6</span></figcaption></figure>
+                  <figure data-image-slot="HZN_A1_U02_LD_E06_IMG_04"><img src="./Images/2D/HZN_A1_U02_LD_E06_IMG_04.png" alt="Left: the yellow umbrella is small. Right: the orange umbrella is big."><figcaption><span>7</span><span>8</span></figcaption></figure>
                 </div>
               </div>
               <p class="l2d-inventory-example hz-dialogue-text"><b>1:</b> It's a black phone. It's small.</p>

@@ -17,13 +17,19 @@ Every filename uses the listed stem plus `.png`. The inventory numbers are
 live HTML text, so the photographed objects contain no labels or numbers.
 Colors and relative sizes were visually checked against the activity key.
 
-The 2026-10-07 UTC reference study introduces transparent versions of the four
+Activity 6 uses the original full photographs of all four object pairs,
+including their tabletop backgrounds, at the author's request. The feature
+title remains removed. The transparent clipboard and white writing space in
+activity 7 retain their previously approved treatment.
+
+The 2026-10-07 UTC reference study introduced transparent versions of the four
 Exercise 6 pairs, with `-cutout-v2.png` added to each original filename stem.
 These 1536 x 1024 RGBA files were edited with the built-in image generator.
 Prompts preserve the left/right pair, colors, relative sizes, orientation and
 complete silhouettes while removing the tabletop. Native alpha is retained;
 no programmatic mask was applied. The results were checked on warm page paper.
-Original files remain alongside them. Exact prompts are recorded with the
+Original files are restored in the lesson; the cutouts remain as previous
+versions alongside them. Exact prompts are recorded with the
 production deliverables outside the repository. The clipboard is unchanged.
 
 The Exercise 7 record is a complete generated raster artifact. Its printed

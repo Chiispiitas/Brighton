@@ -108,3 +108,28 @@
   font-style: italic;
   font-weight: 500;
 }
+
+/* Author-requested restoration of original backgrounds.
+   Source: horizons-before-editorial-redesign-2026-10-06.
+   Keep the approved spacing and current learner content. */
+.l2d-dialogue {
+  background: var(--hz-paper) !important;
+  border-top: 1mm solid var(--hz-unit) !important;
+  border-bottom: .25mm solid var(--hz-line) !important;
+  padding: 3mm 2.5mm 3mm 6mm !important;
+}
+
+.l2d-inventory header {
+  background: var(--hz-unit) !important;
+  padding: 2.5mm 3mm !important;
+  color: #fff !important;
+}
+
+.l2d-item-pairs img {
+  background: #fff !important;
+}
+
+.l2d-task-model {
+  border-left: .8mm solid var(--hz-unit) !important;
+  padding: 2mm 3mm !important;
+}

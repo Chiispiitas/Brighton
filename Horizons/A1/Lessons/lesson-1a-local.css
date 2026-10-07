@@ -666,3 +666,137 @@
 .l1a-page {
   --l1a-feature: #176d78;
 }
+
+/* Author-requested restoration of original backgrounds.
+   Source: horizons-before-editorial-redesign-2026-10-06.
+   Keep the approved spacing and current learner content. */
+.l1a-dialogue-copy {
+  background: var(--hz-paper) !important;
+  border-top: 1.2mm solid var(--hz-unit) !important;
+  box-shadow: 0 0 0 .25mm var(--hz-line) !important;
+  padding: 5mm 5mm 4.5mm 8mm !important;
+}
+
+.l1a-exchange {
+  background: var(--hz-paper) !important;
+  border-left: 1mm solid var(--hz-unit) !important;
+  padding: 2.1mm 3mm !important;
+}
+
+.l1a-exchange:nth-of-type(3) {
+  background: var(--hz-unit-soft) !important;
+}
+
+.l1a-exchange:nth-of-type(4) {
+  background: var(--hz-wash) !important;
+}
+
+.l1a-pronunciation {
+  background: var(--hz-unit-soft) !important;
+  border-top: 1.15mm solid var(--hz-unit) !important;
+  border-bottom: .3mm solid var(--hz-line-strong) !important;
+  padding: 3mm 4mm 3.7mm !important;
+}
+
+.l1a-profile__form {
+  background: var(--hz-unit-soft) !important;
+  border-top: 1mm solid var(--hz-unit) !important;
+}
+
+.l1a-profile:nth-child(2) .l1a-profile__form {
+  background: var(--hz-wash) !important;
+}
+
+.l1a-profile:nth-child(3) .l1a-profile__form {
+  background: #fff !important;
+  border: .35mm solid var(--hz-line) !important;
+  border-top: 1mm solid var(--hz-unit) !important;
+}
+
+.l1a-page .l1a-identity-copy {
+  background: #fff !important;
+}
+
+.l1a-page .l1a-exchange {
+  background: #fff !important;
+  border: .3mm solid var(--hz-line) !important;
+  border-left: 1mm solid var(--hz-unit) !important;
+}
+
+.l1a-page .l1a-exchange:nth-of-type(1) {
+  background: #fff !important;
+  border: .3mm solid var(--hz-line) !important;
+  border-left: 1mm solid var(--hz-unit) !important;
+}
+
+.l1a-page .l1a-exchange:nth-of-type(2) {
+  background: #fff !important;
+  border: .3mm solid var(--hz-line) !important;
+  border-left: 1mm solid var(--hz-unit) !important;
+}
+
+.l1a-page .l1a-exchange:nth-of-type(3) {
+  background: #fff !important;
+  border: .3mm solid var(--hz-line) !important;
+  border-left: 1mm solid var(--hz-unit) !important;
+}
+
+.l1a-page .l1a-exchange:nth-of-type(4) {
+  background: #fff !important;
+  border: .3mm solid var(--hz-line) !important;
+  border-left: 1mm solid var(--hz-unit) !important;
+}
+
+.l1a-page .l1a-pronunciation {
+  background: #fff !important;
+}
+
+.l1a-page .l1a-profile__form {
+  background: #fff !important;
+  border: .35mm solid var(--hz-line) !important;
+  border-top: 1mm solid var(--hz-unit) !important;
+}
+
+.l1a-page .l1a-profile:nth-child(1) .l1a-profile__form {
+  background: #fff !important;
+  border: .35mm solid var(--hz-line) !important;
+  border-top: 1mm solid var(--hz-unit) !important;
+}
+
+.l1a-page .l1a-profile:nth-child(2) .l1a-profile__form {
+  background: #fff !important;
+  border: .35mm solid var(--hz-line) !important;
+  border-top: 1mm solid var(--hz-unit) !important;
+}
+
+.l1a-page .l1a-profile:nth-child(3) .l1a-profile__form {
+  background: #fff !important;
+  border: .35mm solid var(--hz-line) !important;
+  border-top: 1mm solid var(--hz-unit) !important;
+}
+
+.l1a-page .l1a-greetings { align-items: start; }
+.l1a-page .l1a-greeting { margin: 0; min-width: 0; }
+.l1a-page .l1a-greeting__photo,
+.l1a-page .l1a-greeting:nth-child(1) .l1a-greeting__photo,
+.l1a-page .l1a-greeting:nth-child(2) .l1a-greeting__photo,
+.l1a-page .l1a-greeting:nth-child(3) .l1a-greeting__photo,
+.l1a-page .l1a-greeting:nth-child(4) .l1a-greeting__photo {
+  width: 27mm;
+  height: 27mm;
+  margin: 0 auto;
+  border: .45mm solid var(--hz-unit);
+  border-radius: 50%;
+  clip-path: none;
+}
+.l1a-page .l1a-greeting figcaption {
+  margin-top: 1.3mm;
+  font-size: 7.4pt;
+  line-height: 1.15;
+}
+.l1a-page .l1a-greeting figcaption strong { white-space: nowrap; }
+.l1a-dialogue-feature::before,
+.l1a-dialogue-copy::after,
+.l1a-identity-stage::before,
+.l1a-pronunciation::after { display: block; }
+.l1a-page .l1a-pronunciation__title { color: var(--hz-unit-dark) !important; }

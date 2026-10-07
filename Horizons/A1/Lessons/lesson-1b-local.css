@@ -839,3 +839,24 @@
 .l1b-profile:nth-child(3) {
   --profile-accent: #98572c;
 }
+
+/* Author-requested restoration of original backgrounds.
+   Source: horizons-before-editorial-redesign-2026-10-06.
+   Keep the approved spacing and current learner content. */
+.l1b-profile__photo {
+  background: var(--hz-wash) !important;
+}
+
+.l1b-profile__name {
+  background: var(--hz-paper) !important;
+}
+
+.l1b-pronunciation {
+  background: var(--hz-unit-soft) !important;
+  border-top: 1.15mm solid var(--hz-unit) !important;
+  border-bottom: .3mm solid var(--hz-line-strong) !important;
+  padding: 2.8mm 4mm 3mm !important;
+}
+
+.l1b-pronunciation::after { display: block; }
+.l1b-page .l1b-pronunciation__title { color: var(--hz-unit-dark) !important; }
