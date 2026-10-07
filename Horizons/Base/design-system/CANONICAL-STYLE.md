@@ -19,7 +19,7 @@ It is:
 - content-led rather than school-coded;
 - mechanically consistent without forcing every lesson into one template.
 
-The series identity comes from typography, composition, photography, whitespace, disciplined unit color and shared chrome.
+The series identity comes from typography, composition, photography, whitespace and shared chrome. Editorial features have freedom in their color and visual treatment.
 
 ## 2. Lesson architecture
 
@@ -50,7 +50,7 @@ Default page language:
 
 - warm off-white paper;
 - neutral black/gray typography;
-- one dominant unit color;
+- stable crimson navigation with independent editorial feature palettes;
 - substantial whitespace;
 - deliberate raster photography;
 - selective approved classic ELT raster illustration when pedagogically useful;
@@ -81,12 +81,13 @@ Neighboring lessons may look atmospherically different. Series unity comes from 
 The author's Personal Best series references establish the desired level of
 editorial creativity: varied article treatments, photographs integrated with
 text, selective cutouts, and recognizable real-world artifacts. They are design
-references, not sources of learner text, photographs, branding or a new palette.
+references, not sources of learner text, photographs or branding.
 
-Keep Horizons' warm paper, crimson, dark crimson, charcoal, pale pink and shared
-chrome. A restrained warm cream paper surface may bind a reading or functional
-feature; it does not introduce a second unit color. Avoid adding a box around
-every exercise or repeating one feature template across the book.
+Keep Horizons' warm paper, typography, exercise lane and shared chrome. Crimson
+anchors lesson navigation and language emphasis. Feature colors are free to
+follow the photographs, setting, mood and editorial idea: blue, teal, green,
+ochre, orange and other suitable colors are allowed beyond the book palette.
+Color does not need a separate pedagogical justification to serve art direction.
 
 Give each major feature a composition appropriate to its content: profiles may
 read as a magazine feature, travel entries as photographic postcards, a family
@@ -95,12 +96,15 @@ Photos, text and task labels should form one readable composition. Use an
 occasional corner crop, modest diagonal or clean transparent photographic
 cutout only when it strengthens that composition and preserves learner evidence.
 
-Use `.hz-reading-panel` for a bounded editorial reading. Its paper and outline
-come from shared tokens; its heading, image placement and internal columns remain
-lesson-local. Ordinary exercises stay in the open vertical sequence. Functional
+Default to open page paper around readings, dialogues, vocabulary families,
+response areas and pairwork. Repeated background rectangles flatten the visual
+hierarchy. Build a feature through its title, photographs, crop, scale, alignment,
+type, a purposeful rule or a selective color field. A full background panel is
+an occasional deliberate composition, never a default wrapper. A partial photo
+mat can give atmosphere while the reading remains open and readable. Functional
 forms retain clear white writing surfaces and enough physical answer space.
 
-All grammar/language-focus headers use the shared dark-crimson title tab above
+Grammar/focus component headers use the shared dark-crimson title tab above
 the pale-pink body. Local CSS does not redefine this tab or its shell. Bold in
 the body remains dark crimson. A layout overhaul preserves the authorized
 language, exercise sequence, options, examples, track references and response
@@ -200,21 +204,31 @@ Multiple-choice and circle-the-answer options use italics and normal lowercase w
 
 ### Scene captions
 
-Do not print small gray descriptive captions beneath lesson images, such as `LOST AND FOUND · Bus terminal`, office/location notes or other scene labels. Remove them rather than recoloring or replacing them with another caption. Keep image descriptions in alt text and asset records. Task-bearing names, numbers, vocabulary and functional labels remain part of the exercise and use normal learner ink or the unit accent.
+Do not print small gray descriptive captions beneath lesson images, such as `LOST AND FOUND · Bus terminal`, office/location notes or other scene labels. Remove them rather than recoloring or replacing them with another caption. Keep image descriptions in alt text and asset records. Task-bearing names, numbers, vocabulary and functional labels remain part of the exercise and use normal learner ink, the unit accent or a coordinated feature accent.
 
-## 8. Unit color
+## 8. Book identity and feature color
 
-A normal lesson uses one dominant unit color with neutral typography and photography.
+For the current Horizons A1 book, crimson remains the anchor for shared lesson
+tabs, exercise numerals, navigation, cross-references and language emphasis.
+Grammar bold retains the established dark accent.
 
-Use the unit color for exercise numerals, structural rules, selected titles, language emphasis and limited major fields. Additional colors require a pedagogical or authentic-interface reason.
+Major editorial headings, article details, photographic frames and functional
+artifacts may have their own coordinated colors. Choose those colors from the
+feature's visual world and composition. A whole lesson does not need to obey
+the book palette, and neighboring features may have different palettes.
 
-Repeated families do not become multicolored merely for novelty.
-
-For the **current Horizons A1 book**, crimson pink is the established book identity and remains consistent across units unless the author explicitly changes it. Do **not** infer a new Unit 2, Unit 3, etc. production color merely from the optional palette in `tokens.css`.
+Keep contrast and print legibility strong. A repeated photo family should feel
+deliberately composed; it may use several coordinated accents when that helps
+its editorial character. Authentic interfaces retain their recognizable colors.
 
 ## 9. Containers, geometry and interfaces
 
 Use a container when it clarifies language, organizes a functional artifact or enables a deliberate editorial composition.
+
+Open composition is the default. Do not enclose ordinary dialogue models,
+question groups or image families in colored background rectangles. Use filled
+panels selectively for a specific article idea, a canonical grammar focus or a
+working real-world artifact. A color accent is not a reason to add a box.
 
 Avoid wrapping ordinary content in generic cards, chips or pills. Large shapes are valid only when they support hierarchy, grouping, reading flow, task meaning or image emphasis.
 

@@ -6,6 +6,8 @@
   --hz-unit: var(--hz-unit-1);
   --hz-unit-dark: #8f123f;
   --hz-unit-soft: #f8e6ee;
+
+  --l2a-feature: #4d7254;
 }
 
 .l2a-page .hz-page__content { overflow: hidden; }
@@ -90,10 +92,10 @@
 
 .l2a-word-bank {
   align-self: center;
-  padding: 4mm;
-  border-left: .6mm solid var(--hz-unit);
+  padding: 3mm 0 3mm 3mm;
+  border-left: 0;
 
-  background: var(--hz-panel-paper);
+  background: transparent;
 }
 
 .l2a-word-bank .hz-new-words { margin-bottom: 2.4mm; }
@@ -135,8 +137,8 @@
   align-self: center;
   margin-left: -5mm;
   padding: 3.2mm 3.5mm 3.1mm 12mm;
-  border-top: 1.1mm solid var(--hz-unit);
-  background: var(--hz-panel-paper);
+  border-top: .8mm solid var(--l2a-feature);
+  background: transparent;
   box-shadow: none;
 }
 
@@ -156,7 +158,6 @@
 
 .l2a-grammar {
   margin: .3mm 0 .2mm calc(var(--hz-exercise-marker-size) + 3mm);
-
 
 }
 
@@ -266,20 +267,24 @@
   align-content: center;
   gap: 2mm;
 
-  background: var(--hz-panel-paper);
+  background: transparent;
 
-  padding: 3mm;
+  padding: 2mm 0 2mm 1mm;
 }
 
 .l2a-pair-example {
-  padding: 2mm 2.6mm;
-  border-left: 1mm solid var(--hz-unit);
-  background: var(--hz-paper);
+  padding: 1.8mm 0;
+  border-left: 0;
+  background: transparent;
   font-size: 8pt;
   line-height: 1.28;
 }
 
-.l2a-pair-example:nth-child(2) { background: var(--hz-unit-soft); }
+.l2a-pair-example:nth-child(2) { background: transparent;
+  border-left: 0;
+
+  padding: 1.8mm 0;
+}
 .l2a-pair-example p { margin: 0; }
 .l2a-pair-example p + p { margin-top: .7mm; }
 
@@ -310,6 +315,8 @@
 }
 
 @media print {
-  .l2a-page,
   .l2a-page * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+.l2a-page { print-color-adjust: exact; -webkit-print-color-adjust: exact;
+  --l2a-feature: #4d7254;
+}
 }

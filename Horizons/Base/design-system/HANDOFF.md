@@ -62,8 +62,8 @@ The author-made Unit 1 spreads remain the reference for visual finish. Unit 2's
 lesson use the same template:
 
 - Give the lesson's real scene or reading/listening feature a clear visual lead.
-  Use the established crimson for major editorial headings and pale pink for
-  canonical language focus; do not invent another unit palette.
+  Keep crimson for shared lesson navigation and pale pink for canonical grammar
+  focus. Editorial features may use their own coordinated palette.
 - Make contextual people and task-bearing objects prominent. Crop only when the
   learner's evidence survives; preserve complete person/object distance scenes.
 - Keep app chrome subordinate to its readable information and the people using it.
@@ -84,10 +84,15 @@ The preview is isolated on `codex/horizons-editorial-redesign`. The checkpoint
 Do not treat a preview branch as permission to replace `main`.
 
 This revision keeps the complete teaching content and audio resources while
-recomposing every spread. It adds a bounded Rivera reading, a clean photographic
-opening cutout, profile and travel features, and refined functional paper
-artifacts. All focus boxes inherit the canonical shared title tab and shell.
-The reusable reading surface lives in Base; feature geometry stays local.
+recomposing every spread. The author's color correction authorizes independent
+feature palettes and rejects repeated background boxes. Readings, dialogues,
+photo families, response areas and pair models default to open page paper.
+The Rivera reading uses green editorial type and a partial sage photo mat;
+travel uses blue, work profiles coordinated individual accents, and transport
+orange and blue. The photographic opening cutout remains. Grammar focus keeps
+its canonical title tab and shell; functional artifacts retain needed structure.
+Feature colors and geometry stay lesson-local. The previous preview is preserved
+at `horizons-editorial-preview-v1-2026-10-06` as an additional rollback point.
 
 Compare the whole book at print scale. Check source-text and exercise parity,
 response affordances, image loading, phone-screen clipping, grammar emphasis,

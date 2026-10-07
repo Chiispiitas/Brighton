@@ -382,13 +382,6 @@
 .hz-focus-box__body b,
 .hz-focus-box__body strong { color: var(--hz-unit-dark); }
 
-/* Bounded editorial readings may carry a paper surface while exercise flow
-   remains open. This is used by profile features and longer contextual texts. */
-.hz-reading-panel {
-  border: .3mm solid var(--hz-panel-line);
-  background: var(--hz-panel-paper);
-}
-
 .hz-go-to {
   display: block;
   width: max-content;

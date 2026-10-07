@@ -77,7 +77,7 @@
       height: 24mm;
       margin: 0 auto 1.2mm;
       overflow: hidden;
-      border: .45mm solid var(--hz-unit);
+      border: 0;
       border-radius: 50%;
       background: var(--hz-wash);
     }
@@ -103,9 +103,6 @@
       position: relative;
       overflow: hidden;
       margin: .6mm 0 .4mm calc(var(--hz-exercise-marker-size) + 3mm);
-
-
-
 
       isolation: isolate;
     }
@@ -300,9 +297,6 @@
       position: relative;
       overflow: hidden;
 
-
-
-
       isolation: isolate;
     }
 
@@ -345,16 +339,20 @@
     .l1b-profiles {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 3.5mm;
+      gap: 5mm;
       align-items: start;
 
-  padding: 3mm;
+  padding: 0;
+
+  background: transparent;
+
+  border: 0;
 }
 
     .l1b-profile {
       position: relative;
       min-width: 0;
-      padding-top: 30mm;
+      padding-top: 35mm;
       border-top: 0;
 
   background: transparent;
@@ -365,16 +363,16 @@
       top: 0;
       left: 0;
       width: 100%;
-      height: 29mm;
+      height: 34mm;
       overflow: hidden;
       background: var(--hz-wash);
       clip-path: none;
 
-  border-radius: 0 0 6mm 0;
+  border-radius: 0;
 }
 
     .l1b-profile__photo .hz-photo-placeholder {
-      min-height: 29mm;
+      min-height: 34mm;
       font-size: 5pt;
       letter-spacing: .07em;
     }
@@ -383,11 +381,11 @@
       position: relative;
       z-index: 2;
       display: inline-block;
-      margin: -3mm 0 1mm 2mm;
-      padding: 1mm 2mm;
-      background: var(--hz-panel-paper);
-      color: var(--hz-unit-dark);
-      font-size: 14pt;
+      margin: -2mm 0 1mm;
+      padding: 1mm 2mm 0 0;
+      background: var(--hz-paper);
+      color: var(--l1b-feature);
+      font-size: 15pt;
       font-weight: var(--hz-fw-black);
       line-height: .95;
       letter-spacing: -.045em;
@@ -395,7 +393,7 @@
 
     .l1b-profile__copy {
       min-height: 50mm;
-      padding: 1mm 2mm 2mm;
+      padding: 1mm 0 2mm;
       border-left: 0;
       font-size: 8pt;
       line-height: 1.36;
@@ -437,9 +435,9 @@
       overflow: hidden;
       margin-left: calc(var(--hz-exercise-marker-size) + 3mm);
       padding: 2.8mm 4mm 3mm;
-      border-top: 1.15mm solid var(--hz-unit);
-      border-bottom: .3mm solid var(--hz-line-strong);
-      background: var(--hz-unit-soft);
+      border-top: .6mm solid #315b88;
+      border-bottom: 0;
+      background: transparent;
       isolation: isolate;
     }
 
@@ -453,7 +451,9 @@
       height: 54mm;
       border: 8mm solid rgb(255 255 255 / 56%);
       border-radius: 50%;
-    }
+
+  display: none;
+}
 
     .l1b-pronunciation__title {
       margin: 0 0 1.7mm;
@@ -602,9 +602,9 @@
   width: calc(100% + var(--hz-exercise-marker-size) + 3mm) !important;
   padding-top: .6mm !important;
 
-  background: var(--hz-panel-paper);
+  background: transparent;
 
-  padding: 2mm 1.5mm 2.5mm;
+  padding: 1mm 0 2.5mm;
 }
 
 .l1b-page:not(.l1b-page--2) .l1b-occupation-grid {
@@ -799,4 +799,24 @@
   white-space: pre;
 }
 
-.l1b-page .l1b-pronunciation__title { color: var(--hz-unit-dark) !important; }
+.l1b-page .l1b-pronunciation__title { color: #315b88 !important; }
+
+.l1b-page {
+  --l1b-feature: #245b62;
+}
+
+.l1b-profile:nth-child(2) .l1b-profile__name {
+  color: #315b88;
+}
+
+.l1b-profile:nth-child(3) .l1b-profile__name {
+  color: #98572c;
+}
+
+.l1b-profile:nth-child(1) .l1b-profile__photo {
+  border-radius: 0 0 9mm 0;
+}
+
+.l1b-profile:nth-child(3) .l1b-profile__photo {
+  clip-path: polygon(0 0,100% 0,100% 100%,5% 100%);
+}

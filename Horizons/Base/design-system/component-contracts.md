@@ -215,17 +215,13 @@ Reusable series-wide components belong in `Horizons/Base/design-system/`. Lesson
 
 Before creating a new shared component, search the existing Base for an equivalent. Prefer one canonical component over near-duplicates.
 
-## 14. Bounded editorial reading
+## 14. Open editorial features
 
-```html
-<article class="hz-reading-panel hz-no-break" aria-label="Contextual reading">
-  <!-- Lesson-local article heading, photography, reading and related task. -->
-</article>
-```
+Use a semantic article or section with a lesson-local feature class. Its title,
+photographs, color accents and internal columns form the composition. There is
+no default shared reading-panel background or border. Readings, dialogues,
+photo families and pair models normally sit on open page paper.
 
-Use this for a coherent reading feature, such as profiles or a family article,
-when a paper surface and thin outline clarify its extent. Shared tokens
-`--hz-panel-paper` and `--hz-panel-line` supply the warm neutral surface and
-outline. The feature's heading and internal composition remain book-local.
-This is not a general-purpose exercise card. Preserve open numbered exercise
-flow and do not reduce reading type or writing space to fit a panel.
+Feature palettes may vary independently from crimson navigation. A partial photo
+mat or an occasional full article background must serve a specific composition.
+Preserve open numbered exercise flow, reading legibility and writing space.

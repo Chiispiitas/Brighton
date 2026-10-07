@@ -1,8 +1,8 @@
 # 2C image usage
 
 The existing Rivera family photographs and portraits retain the same identities.
-The reading feature uses a larger contextual crop inside a bounded cream article
-panel; its portrait strip retains circular portraits and occupation answer lines.
+The reading feature uses a larger contextual crop in an open article with a
+partial sage photo mat; its portrait strip retains circular portraits and occupation answer lines.
 Existing lead-in and ownership-practice images remain in use. No Rivera identity
 has been regenerated as part of the editorial redesign.
 

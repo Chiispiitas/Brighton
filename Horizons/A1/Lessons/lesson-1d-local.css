@@ -74,17 +74,17 @@
       align-self: center;
       margin-left: -7mm;
       padding: 4mm 4mm 3.8mm 7mm;
-      border-top: 1.1mm solid var(--hz-unit);
-      background: var(--hz-panel-paper);
+      border-top: .8mm solid var(--l1d-feature);
+      background: transparent;
       box-shadow: none;
 
-  border-bottom: .3mm solid var(--hz-panel-line);
+  border-bottom: 0;
 }
 
     .l1d-checkin-copy__kicker {
       display: inline-block;
       margin-bottom: 2mm;
-      color: var(--hz-unit-dark);
+      color: var(--l1d-feature);
       font-size: 6.5pt;
       font-weight: var(--hz-fw-black);
       letter-spacing: .08em;
@@ -175,9 +175,6 @@
       position: relative;
       overflow: hidden;
       margin: .5mm 0 .2mm calc(var(--hz-exercise-marker-size) + 3mm);
-
-
-
 
       isolation: isolate;
     }
@@ -358,15 +355,15 @@
 
     .l1d-role-box {
       padding: 2.7mm 3mm;
-      border-left: 1mm solid var(--hz-unit);
-      background: var(--hz-unit-soft);
+      border-left: 0;
+      background: transparent;
       font-size: 7.2pt;
       line-height: 1.35;
     }
 
     .l1d-role-box h3 {
       margin: 0 0 1.5mm;
-      color: var(--hz-unit-dark);
+      color: var(--l1d-feature);
       font-size: 8pt;
       font-weight: var(--hz-fw-black);
       text-transform: uppercase;
@@ -456,7 +453,9 @@
       min-height: 6mm;
       padding-top: 1mm;
       border-bottom: .28mm solid var(--hz-line-strong);
-    }
+
+  color: var(--l1d-form);
+}
 
     .l1d-peer-check {
       display: grid;
@@ -532,9 +531,9 @@
 /* Keep the complete continuation-page flow below the 1D continuation tab. */
 .l1d-page--2 .hz-exercises { padding-top: 10mm !important; }
 .l1d-page--2 .l1d-business-stage { padding-top: 8mm !important;
-  background: var(--hz-panel-paper);
+  background: transparent;
 
-  padding: 3mm 2.5mm;
+  padding: 3mm 0;
 }
 .l1d-page--2 .l1d-business-option__photo {
   width: 24mm !important;
@@ -556,8 +555,10 @@
 .l1d-page--2 .l1d-roleplay { min-height: 104mm !important; gap: 5mm !important; padding-top: 2mm !important; }
 .l1d-page--2 .l1d-role-photo,
 .l1d-page--2 .l1d-role-photo .hz-photo-placeholder { height: 39mm !important; min-height: 39mm !important; }
-.l1d-page--2 .l1d-role-box { padding: 2.5mm 3mm !important; font-size: 8pt !important; line-height: 1.35 !important;
-  background: var(--hz-panel-paper);
+.l1d-page--2 .l1d-role-box { padding: 2mm 0 !important; font-size: 8pt !important; line-height: 1.35 !important;
+  background: transparent;
+
+  border-left: 0;
 }
 .l1d-page--2 .l1d-role-questions { gap: 1mm !important; font-size: 8pt !important; line-height: 1.3 !important; }
 .l1d-page--2 .l1d-live-form__business { font-size: 7.3pt !important; }
@@ -635,12 +636,10 @@
   overflow: hidden !important;
   padding: 4.6mm 4.5mm 4mm !important;
   border: .32mm solid #c9cbd0 !important;
-  border-top: 1.6mm solid var(--hz-unit) !important;
+  border-top: 1mm solid var(--l1d-form) !important;
   background:
     linear-gradient(180deg, var(--hz-unit-soft) 0 16mm, rgb(255 254 250 / 96%) 16mm 100%) !important;
-  box-shadow:
-    0 1mm 3.5mm rgb(32 33 36 / 10%),
-    inset 0 0 0 .45mm rgb(255 255 255 / 78%) !important;
+  box-shadow: 0 .7mm 2mm rgb(32 33 36 / 7%) !important;
 }
 
 .l1d-page--2 .l1d-live-form::after {
@@ -657,11 +656,22 @@
 }
 
 .l1d-page--2 .l1d-live-form__business,
-.l1d-page--2 .l1d-live-form h3,
 .l1d-page--2 .l1d-live-row,
 .l1d-page--2 .l1d-live-form__footer {
   position: relative;
   z-index: 1;
+}
+.l1d-page--2 .l1d-live-form h3 {
+  position: relative;
+  z-index: 1;
+
+  background: transparent;
+
+  color: var(--l1d-form) !important;
+
+  border-bottom: .5mm solid var(--l1d-form);
+
+  padding: 1mm 0 2.1mm;
 }
 
 .l1d-page--2 .l1d-live-form__business {
@@ -678,21 +688,21 @@
   display: block;
   width: 100%;
   min-height: 5mm !important;
-  border-bottom: .45mm solid var(--hz-unit) !important;
+  border-bottom: .3mm solid var(--l1d-form) !important;
 }
 
 .l1d-page--2 .l1d-live-form h3 {
   margin: 0 -1mm 3mm !important;
   padding-bottom: 2.1mm;
-  border-bottom: .55mm solid var(--hz-unit);
-  color: var(--hz-unit-dark) !important;
+  border-bottom: .5mm solid var(--l1d-form);
+  color: var(--l1d-form) !important;
   font-size: 16pt !important;
   line-height: 1 !important;
   letter-spacing: -.035em !important;
 
-  background: var(--hz-unit-soft);
+  background: transparent;
 
-  padding: 2.5mm;
+  padding: 1mm 0 2.1mm;
 }
 
 .l1d-page--2 .l1d-live-row {
@@ -736,8 +746,17 @@
 }
 
 /* A writable paper artifact: the hierarchy comes from its title and field rules. */
-.l1d-page--2 .l1d-live-form { background: #fff !important; }
+.l1d-page--2 .l1d-live-form { background: #fff !important;
+  border-top: 1mm solid var(--l1d-form);
+
+  box-shadow: 0 .7mm 2mm rgb(32 33 36 / 7%);
+}
 .l1d-page--2 .l1d-live-form::after { display: none; }
 .l1d-page--2 .l1d-live-row,
 .l1d-page--2 .l1d-live-row:nth-of-type(even),
 .l1d-page--2 .l1d-live-form__footer { background: #fff; }
+
+.l1d-page {
+  --l1d-feature: #91632d;
+  --l1d-form: #266e70;
+}

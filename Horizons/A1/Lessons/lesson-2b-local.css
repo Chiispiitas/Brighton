@@ -1,7 +1,7 @@
 /* Horizons A1 — Lesson 2B scoped styles.
    HORIZONS ON AIR is the recurring listening-show identity. The A1 book keeps
-   its established crimson-pink identity; Moovit/inDrive colors appear only
-   inside authentic functional interface recreations. */
+   crimson navigation identity while transport features use orange and blue.
+   Moovit/inDrive interfaces retain their authentic functional colors. */
 
 .l2b-page {
   --hz-unit: var(--hz-unit-1);
@@ -10,6 +10,10 @@
   --l2b-moovit: #ff5a1f;
   --l2b-indrive: #b7ff00;
   --l2b-indrive-dark: #3d3d3d;
+
+  --l2b-feature: #bf561e;
+
+  --l2b-interview: #27506d;
 }
 
 .l2b-page .hz-page__content { overflow: hidden; }
@@ -140,7 +144,7 @@
   background: #29272b;
   color: #fff;
 
-  border-left: 1.4mm solid var(--hz-unit);
+  border-left: 1.4mm solid var(--l2b-feature);
 }
 .l2b-onair-start .l2b-show-episode {
   order: -1;
@@ -202,8 +206,7 @@
   letter-spacing: .09em;
 }
 
-.l2b-street-still figcaption,
-.l2b-interview-photo figcaption {
+.l2b-street-still figcaption {
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -213,6 +216,17 @@
   font-size: 6.4pt;
 
   border-bottom: .5mm solid var(--hz-unit);
+}
+.l2b-interview-photo figcaption {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1.4mm 0;
+  background: transparent;
+  color: var(--hz-ink);
+  font-size: 6.4pt;
+
+  border-bottom: .55mm solid var(--l2b-feature);
 }
 
 .l2b-street-still figcaption b {
@@ -585,14 +599,16 @@
   height: 62mm;
 }
 
-.l2b-interview-photo figcaption { padding: 1mm 2mm; font-size: 7.5pt;
-  background: var(--hz-unit-soft);
+.l2b-interview-photo figcaption { padding: 1.4mm 0; font-size: 7.5pt;
+  background: transparent;
 
   color: var(--hz-ink);
 
-  border-bottom: .5mm solid var(--hz-unit);
+  border-bottom: .55mm solid var(--l2b-feature);
 }
-.l2b-interview-photo figcaption strong { font-size: 9pt; }
+.l2b-interview-photo figcaption strong { font-size: 9pt;
+  color: var(--l2b-interview);
+}
 
 .l2b-complete-lines {
   display: grid;
@@ -600,9 +616,9 @@
   gap: 1.25mm;
   font-size: 7.8pt;
 
-  background: var(--hz-panel-paper);
+  background: transparent;
 
-  padding: 2mm;
+  padding: 2mm 0;
 }
 
 .l2b-complete-lines p {
@@ -636,7 +652,6 @@
 
 .l2b-articles {
   margin: .2mm 0 .1mm calc(var(--hz-exercise-marker-size) + 3mm);
-
 
 }
 
@@ -723,18 +738,20 @@
   display: grid;
   align-content: center;
   gap: 1mm;
-  padding: 3mm;
-  border: 1px solid var(--hz-panel-line);
+  padding: 2.5mm 0;
+  border: 0;
   border-bottom: .28mm solid var(--hz-line);
   font-size: 8pt;
 
-  border-right: 1.2mm dashed var(--hz-panel-line);
+  border-right: 0;
 
-  background: var(--hz-panel-paper);
+  background: transparent;
+
+  border-top: .7mm solid var(--l2b-feature);
 }
 
 .l2b-pair-card strong { font-size: 8.2pt; font-weight: var(--hz-fw-black);
-  color: var(--hz-unit-dark);
+  color: var(--l2b-interview);
 }
 .l2b-pair-field { display: grid; grid-template-columns: 27mm 1fr; gap: 2mm; align-items: end; font-size: 8pt; }
 .l2b-pair-field > span:last-child { min-height: 5mm; border-bottom: .3mm solid var(--hz-line-strong); }
@@ -792,6 +809,10 @@
 }
 
 @media print {
-  .l2b-page,
   .l2b-page * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+.l2b-page { print-color-adjust: exact; -webkit-print-color-adjust: exact;
+  --l2b-feature: #bf561e;
+
+  --l2b-interview: #27506d;
+}
 }

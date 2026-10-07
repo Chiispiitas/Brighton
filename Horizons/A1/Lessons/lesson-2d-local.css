@@ -4,6 +4,10 @@
   --hz-unit: var(--hz-unit-1);
   --hz-unit-dark: #8f123f;
   --hz-unit-soft: #f8e6ee;
+
+  --l2d-feature: #236c73;
+
+  --l2d-item: #93622f;
 }
 .l2d-page .hz-page-stack { gap: 2mm; }
 .l2d-page .hz-exercises { gap: .6mm; }
@@ -30,11 +34,11 @@
 .l2d-swatch--white { filter: drop-shadow(0 0 .45px #92918e); }
 
 .l2d-counter { display: grid; grid-template-columns: 78mm minmax(0, 1fr); gap: 0; align-items: center;
-  background: var(--hz-panel-paper);
+  background: transparent;
 }
 .l2d-counter figure { margin: 0; clip-path: polygon(0 0,100% 0,94% 100%,0 100%); }
 .l2d-counter img { display: block; width: 100%; height: 75mm; object-fit: cover; object-position: 47% center; }
-.l2d-dialogue { display: grid; grid-template-columns: 22mm minmax(0, 1fr); gap: 1.05mm 1.5mm; margin: 0 0 0 -5mm; padding: 3mm 2.5mm 3mm 6mm; border-top: 1mm solid var(--hz-unit); border-bottom: 0; background: var(--hz-panel-paper); }
+.l2d-dialogue { display: grid; grid-template-columns: 22mm minmax(0, 1fr); gap: 1.05mm 1.5mm; margin: 0 0 0 -5mm; padding: 3mm 2.5mm 3mm 6mm; border-top: .8mm solid var(--l2d-feature); border-bottom: 0; background: transparent; }
 .l2d-dialogue dt, .l2d-dialogue dd { margin: 0; }
 .l2d-dialogue dt { font-weight: 720; }
 .l2d-notice { gap: 1.5mm 5mm; }
@@ -51,35 +55,44 @@
 .l2d-mini-models p + p { margin-top: .8mm; }
 
 .l2d-page--2 .hz-exercises { padding-top: 19mm !important; }
-.l2d-inventory { border-bottom: .28mm solid var(--hz-line); padding: 0 3mm 3mm;
-  background: var(--hz-panel-paper);
+.l2d-inventory { border-bottom: 0; padding: 0;
+  background: transparent;
 
-  border: .3mm solid var(--hz-panel-line);
+  border: 0;
 }
-.l2d-inventory header { display: flex; align-items: center; gap: 3mm; margin-bottom: 3mm; padding: 2.5mm 3mm; background: #29272b; color: #fff;
-  margin: 0 -3mm 2mm;
+.l2d-inventory header { display: flex; align-items: center; gap: 3mm; margin-bottom: 3mm; padding: 0 0 2mm; background: transparent; color: var(--l2d-feature);
+  margin: 0 0 3mm;
 
-  border-left: 1.4mm solid var(--hz-unit);
+  border-left: 0;
+
+  border-bottom: .65mm solid var(--l2d-feature);
 }
-.l2d-inventory h2 { margin: 0; font-size: 17pt; font-weight: var(--hz-fw-black); line-height: 1.1; letter-spacing: -.01em; }
-.l2d-item-pairs { gap: 3mm 4mm; }
+.l2d-inventory h2 { margin: 0; font-size: 20pt; font-weight: 720; line-height: 1.1; letter-spacing: .025em;
+  font-family: var(--hz-font-reading);
+}
+.l2d-item-pairs { gap: 3.5mm 6mm; }
 .l2d-item-pairs figure { margin: 0; min-width: 0; }
-.l2d-item-pairs img { display: block; width: 100%; height: 39mm; object-fit: contain; background: transparent; }
-.l2d-item-pairs figcaption { display: grid; grid-template-columns: 1fr 1fr; text-align: center; margin-top: .5mm; color: var(--hz-unit-dark); font-size: 8.8pt; font-weight: 820;
-  background: var(--hz-paper);
+.l2d-item-pairs img { display: block; width: 100%; height: 42mm; object-fit: contain; background: transparent; }
+.l2d-item-pairs figcaption { display: grid; grid-template-columns: 1fr 1fr; text-align: center; margin-top: .5mm; color: var(--l2d-item); font-size: 8.8pt; font-weight: 820;
+  background: transparent;
 
-  padding: .8mm 0;
+  padding: .5mm 0;
 
-  border-bottom: .3mm solid var(--hz-panel-line);
+  border-bottom: 0;
 }
 .l2d-inventory-example { margin: 1.5mm 0 0; }
 .l2d-transaction { gap: 7mm; align-items: start; }
 .l2d-task-model p { margin: 0 0 .9mm; }
 .l2d-task-model p:last-child { margin-bottom: 0; }
-.l2d-task-model { border-left: .8mm solid var(--hz-unit); padding: 3mm;
-  background: var(--hz-panel-paper);
+.l2d-task-model { border-left: 0; padding: 2mm 0;
+  background: transparent;
 }
 .l2d-office-record { margin: 0; }
 .l2d-office-record img { display: block; width: 100%; height: auto; }
 
-@media print { .l2d-page, .l2d-page * { print-color-adjust: exact; -webkit-print-color-adjust: exact; } }
+@media print { .l2d-page * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
+.l2d-page { print-color-adjust: exact; -webkit-print-color-adjust: exact;
+  --l2d-feature: #236c73;
+
+  --l2d-item: #93622f;
+} }
