@@ -142,6 +142,24 @@ Generated production imagery must be saved as raster (`.png`, `.jpg`, `.webp`). 
 
 Do not choose illustration simply because it is easier to generate. Choose it because the teaching point benefits from drawing rather than photographic complexity.
 
+### Approved physical details and object cutouts
+
+The 2026-10-07 author-approved creativity reference in `CANONICAL-STYLE.md`
+includes generated paper artifacts, photographic object cutouts, tactile paint
+marks and small feature-specific emblems. These are approved ways to give an
+activity a distinctive visual identity while preserving its teaching purpose.
+Follow the material and atmosphere of the actual scene rather than applying
+one book-wide decorative palette or a generic stock illustration style.
+
+Object cutouts must preserve complete, recognizable subjects and true native
+alpha. Do not bake in white rectangles, checkerboards, borders or backing
+frames. Preserve environmental backgrounds when the context carries meaning.
+Generated forms and clipboards require transparent exterior space, fully white
+writing areas, every authorized field/line, exact label spelling and legible
+print-scale type. Keep texture and wear on physical edges, clips or backing
+materials; keep response areas clean. Inspect the asset on actual page paper
+and inspect the resulting PDF at print size.
+
 ## 6. Prompt requirements
 
 For realistic production imagery, specify only what materially affects the asset:

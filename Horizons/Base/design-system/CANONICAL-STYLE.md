@@ -83,6 +83,53 @@ editorial creativity: varied article treatments, photographs integrated with
 text, selective cutouts, and recognizable real-world artifacts. They are design
 references, not sources of learner text, photographs or branding.
 
+### Author-approved creativity reference
+
+On 2026-10-07, the author explicitly identified the two latest A1 revisions as
+the desired creative standard for future book work. Use their actual rendered
+results as the practical reference, alongside Personal Best:
+
+- 1B's small occupation motifs and five borderless photographic object cutouts;
+- 1C's travel-magazine masthead, dotted route and small city signatures;
+- 1D's Seaside Hotel emblem and generated teal-and-brass reception clipboard;
+- 2B's Horizons On Air waveform;
+- 2C's Rivera Restaurant lettering, small plate detail and family photo prints;
+- 2D's textured paint daubs and established generated Lost and Found clipboard.
+
+Be inventive at the level of individual features. Give a heading, photograph,
+object family or working document a distinctive idea tied to its setting.
+Small emblems, meaningful motifs, varied lettering, photographic prints and
+believable physical artifacts can supply personality without a large redesign.
+Choose a few deliberate details; preserve generous spacing and a sober adult
+publication character. Do not make every element decorative or repeat the same
+new treatment across every lesson.
+
+The desired character is tangible and specific: a reception clipboard should
+feel like reception stationery, paint should look like pigment, and a travel
+feature should have a travel-editorial identity. Use image generation when real
+material, texture or physical character is part of the visual idea, rather than
+approximating every artifact with a flat CSS rectangle. Keep text-driven
+interfaces in HTML/CSS when their clarity and structure are the main purpose.
+
+Isolated vocabulary objects and object clues may use genuine native-alpha
+cutouts directly on the page, without generic borders, backing boxes or frames.
+Preserve full environmental photographs where the setting, interaction or
+learner evidence matters. Intentional photo-print edges, such as the approved
+Rivera family collection, are appropriate when the print itself is the idea;
+they are not the default framing for isolated objects. Existing approved
+dialogue panels remain valid.
+
+Feature colors may follow their own setting and materials, including teal,
+ochre, green, orange and other coordinated accents. Do not force every detail
+into crimson and pink. Shared navigation, exercise numerals, grammar emphasis
+and learner-language conventions retain the Horizons identity.
+
+Generated working documents must have transparent exteriors and fully white,
+unobstructed writing areas. Preserve every authorized field and blank line;
+check exact spelling and physical print legibility. Decorative material belongs
+on the board, clip, emblem or margins, not inside response space. Preserve the
+teaching language, task mechanics, identities, object colors and quantities.
+
 Keep Horizons' warm paper, typography, exercise lane and shared chrome. Crimson
 anchors lesson navigation and language emphasis. Feature colors are free to
 follow the photographs, setting, mood and editorial idea: blue, teal, green,
@@ -105,8 +152,10 @@ Functional forms retain clear white writing surfaces and enough answer space.
 The author explicitly requested the 1D activity 7 reception form as a generated
 raster artifact, analogous to the approved 2D clipboard. Keep its transparent
 exterior, white paper, blank venue-name line, six information fields, and the
-Student A / Student B writing lines. This is a specific exception to CSS-first
-form construction, not a reason to rasterize other learner text or forms.
+Student A / Student B writing lines. This is an approved example of
+physical-artifact creativity.
+Choose the medium for future forms using the author-approved creativity
+reference above; ordinary learner text remains live HTML text.
 
 The author-selected details of 2026-10-07 are specific exceptions to feature-band
 restoration: 1C uses a travel-magazine masthead, a dotted map route and small
@@ -127,7 +176,7 @@ between serif display type, italic secondary words and the established learner
 type can give a feature its own voice. Display typography belongs to feature
 titles and task-bearing names; instructions and grammar retain their hierarchy.
 
-The approved removals of picture backgrounds are the bag in **2A activity 1**
+The existing approved removals of picture backgrounds are the bag in **2A activity 1**
 and the five object clues in **1B activity 3**, explicitly requested on
 2026-10-07. Keep the bag's transparent `Open-bag-cutout-v2.png`; the 1B clues use
 native-alpha photographic cutouts with no visible border, backing or frame.
@@ -276,7 +325,13 @@ Forms, chats, schedules, tickets, maps, reviews and app-like elements may use au
 
 When simulating a recognizable interface, reproduce its **visual grammar**, not a vague generic card: hierarchy, spacing, message alignment, surface colors, controls, field rhythm, header treatment and interaction cues should make the artifact immediately legible as that kind of interface. Do not copy branding or add UI complexity that the learner does not need.
 
-For forms and other paper artifacts, prefer CSS structure first: rules, bands, fields, subtle tints, spacing and restrained geometry. Add a photographic/background asset only when it contributes real contextual meaning that CSS cannot provide. Decorative treatments must never reduce writing space or field legibility.
+For forms and paper artifacts, choose the medium for the intended visual idea.
+Generated raster imagery is appropriate when a believable physical document,
+clipboard, texture or material gives the activity its character, as in the
+approved 1D and 2D clipboards. HTML/CSS is appropriate when readable structure
+and interface behavior dominate. Neither medium defaults to a generic boxed
+layout. Keep every authorized label and response space, fully white writing
+surfaces and ample clearance; decoration must never reduce their usability.
 
 ## 10. Shared chrome
 

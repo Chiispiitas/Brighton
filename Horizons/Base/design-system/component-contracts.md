@@ -195,7 +195,21 @@ The artifact must be used by the learner rather than included only for appearanc
 
 `hz-ui-card` is only a semantic/shared starting point. A recognizable interface should usually receive lesson-local styling that reproduces the intended artifact's visual grammar: for example message direction, header hierarchy, field rhythm, input treatment, surface color and control placement. Do not settle for a generic rounded rectangle when recognizability matters to the task.
 
-For paper forms, prefer CSS-built structure before adding decorative imagery. Keep fields writable, labels readable and the artifact visually credible at print size.
+For paper forms, select HTML/CSS or generated raster artwork according to the
+author-approved creativity reference in `CANONICAL-STYLE.md`. Use generated
+artwork for a believable physical artifact when its material and personality
+are part of the intended composition; use HTML/CSS for text-driven interfaces.
+Keep all authorized fields and writing areas, readable labels and credible
+physical scale. Do not default every form to a generic CSS rectangle.
+
+A generated working document uses a stable image slot inside the existing
+exercise flow, with a descriptive image alternative identifying its purpose
+and fields. Record the field names and writing-area count on the artifact
+element, as in the approved `l1d-reception-form`, so the raster replacement can
+be checked against the original response mechanics. Its native-alpha exterior
+and fully white writing surface must survive asset mapping, PDF generation and
+print optimization. Captions and ordinary lesson language remain live text;
+do not rasterize an entire exercise because one artifact uses generated art.
 
 ## 11. Text roles / physical floors
 

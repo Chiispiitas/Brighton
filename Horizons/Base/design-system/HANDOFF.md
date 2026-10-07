@@ -48,7 +48,7 @@ Recent Unit 1 refinements establish additional production precedents:
 - text/profile bodies should normally end with their content rather than carrying large artificial `min-height` floors;
 - short semantic labels may use content-sized columns or no-wrap treatment when an awkward line break would damage readability;
 - when the author removes answer choices or response spaces, do not replace them with a different affordance unless explicitly requested;
-- forms should prefer restrained CSS-built structure and decoration before adding a background image that does no pedagogical work.
+- forms may use generated physical-artifact imagery or restrained HTML/CSS according to their intended character; preserve clean writing space and all task fields.
 
 ## Current A1 / Unit 2 workflow
 
@@ -103,7 +103,8 @@ circular portraits and individual serif name accents. Travel combines a large
 headline, map and photographs; the hotel uses an arched scene; transport
 retains its original title band and interview caption backgrounds. The Rivera
 article and Lost and Found object pairs now use their original full photographs.
-Only **2A activity 1** keeps the generated photographic bag cutout. Existing
+**2A activity 1** keeps the generated photographic bag cutout, and **1B activity
+3** uses the five author-requested transparent, borderless object clues. Existing
 transparent paper artifacts retain their approved surfaces. The opening
 conversation uses the full hallway photograph. All four 1A greeting photos
 have matching circular crops and centered, aligned captions. Grammar focus keeps
@@ -115,6 +116,17 @@ The complete spacing-approved preview before the closer reference study is
 preserved at `horizons-before-personal-best-study-2026-10-07`. Image edits use
 versioned sibling filenames; original images remain available. No Personal Best
 learner text, photographic assets or branding are used in the book.
+
+### Latest approved creativity reference
+
+The author explicitly approved the two latest A1 feature revisions on
+2026-10-07 as the creative direction for future work. Start with
+**Author-approved creativity reference** in `CANONICAL-STYLE.md`: it records the
+small content-led motifs, travel details, restaurant lettering/photo prints,
+paint textures and generated reception/Lost and Found artifacts as practical
+examples. Use that standard for new features while preserving spacing, context
+and the shared book identity. Asset production and generated working-document
+semantics are aligned in `asset-policy.md` and `component-contracts.md`.
 
 Compare the whole book at print scale. Check source-text and exercise parity,
 response affordances, image loading, phone-screen clipping, grammar emphasis,
