@@ -146,19 +146,24 @@ The answer key and teacher notes are in
 Personal Best's review balance and Cambridge Movers task principles inform
 the original activities; their text, photography and branding are not reused.
 The 2026-10-07 author correction replaces the first worksheet-like review's
-activities and layout in full. The current master uses two explicitly ordered
-columns (left, then right), an original photo-exhibition feature, a colored
+activities and layout in full. The 2026-10-08 identity correction restores
+Horizons' shared lesson header, paper, continuation tab and single vertical
+exercise lane. Columns occur inside individual exercises. The original
+photo-exhibition feature, a colored
 vocabulary sorting table, two visitors' exhibition conversation, new studio
 photographs for demonstratives and an eight-lesson photo-project challenge
-panel. The fresh theme is **The Color Project at Studio 8**, with new fictional
+task are retained without the foreign tan panel or colored circles.
+The fresh theme is **The Color Project at Studio 8**, with new fictional
 people Luz, Ben and Ari. It replaces the proposed Toronto/student-profile and
 hotel/reception content in response to the author's explicit anti-recycling
-correction. Follow the paired-unit review exception
-in `CANONICAL-STYLE.md`; ordinary lessons keep their single exercise lane.
+correction. Follow the updated paired-review identity rules in
+`CANONICAL-STYLE.md`; every lesson and review keeps its own single exercise lane.
 The review consolidates existing Units 1-2 language and uses two original
 photographic assets recorded in `A1/Images/Review/ASSETS.md`. It has no new audio
 dependency. The pre-rebuild main state is preserved
-at `horizons-before-review-rebuild-2026-10-07` for rollback.
+at `horizons-before-review-rebuild-2026-10-07` for rollback. The preceding
+Personal Best-like review is independently preserved at
+`horizons-before-review-identity-2026-10-08`.
 
 ## CSS loading boundary
 

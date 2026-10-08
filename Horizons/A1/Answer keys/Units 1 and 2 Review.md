@@ -1,7 +1,7 @@
 # Horizons A1 - Units 1 & 2 Review and Practice
 
 Student's Book pages 21-22. Master: `Lessons/2R.html`.
-Read down the left column, then the right, on each page. Seven main activities.
+Read down each page in exercise order. Columns are internal to individual tasks. Seven main activities.
 
 ## 1. Grammar
 
@@ -83,9 +83,9 @@ Students choose a starting mission and practise several; the panel is not a time
 
 All activities were reauthored for the 2026-10-07 author correction. The review reuses the language objectives, not the stories, settings, characters or pictures from the preceding lessons.
 
-- Personal Best A1 PDF pages 22-23, A2 pages 20-21 and B2 pages 20-21 informed the clear practice columns, colored section hierarchy, framed photographic reading, word-bank/table surfaces and a substantial personal-retrieval feature. No text, photographs, logos or brand name from those references are embedded in Horizons.
+- Personal Best A1 PDF pages 22-23, A2 pages 20-21 and B2 pages 20-21 informed the creative photographic reading, word-bank/table surfaces and personal-retrieval task. The 2026-10-08 author correction restores Horizons' own shared page design and single exercise lane. No text, photographs, logos or brand name from those references are embedded in Horizons.
 - Cambridge A1 Movers Reading and Writing Parts 2-4 and 6, and Speaking Part 4, informed dialogue response selection, word-bank/gist reading, grammar recognition, picture sentence completion and personal interaction. This is original cumulative review material, not an official Cambridge paper or full Movers mock exam.
 - Official format reference: https://www.cambridgeenglish.org/exams-and-tests/qualifications/young-learners/paper/movers/format/
 - Context: a community photography exhibition at Studio 8 connects portrait/object reading, visitor responses, studio picture practice and a photo-pass information exchange. Studio, exhibition and photo pass are supported contextual labels; they do not establish an additional vocabulary syllabus.
 - New original generated assets: `Images/Review/Color-project-portraits-v1.png` and `Images/Review/Studio-contact-sheet-v1.png`. See `Images/Review/ASSETS.md` for IDs and provenance. Both preserve full photographic backgrounds; no new audio is required.
-- The paired review's explicit two-column exception is documented in the canonical style guide. All layout rules are scoped to `.rr-page`; lessons 1A-2D retain their approved layout, imagery, text and audio.
+- The canonical style guide records the identity correction: shared Horizons chrome and one vertical exercise sequence, with columns inside individual tasks. All layout rules are scoped to `.rr-page`; lessons 1A-2D retain their approved layout, imagery, text and audio. All seven tasks and their answers, as well as the two original photographs, are retained.
