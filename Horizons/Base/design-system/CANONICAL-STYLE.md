@@ -40,6 +40,33 @@ The lesson letters have different pedagogical jobs and must not be forced into i
 
 Columns/grids may appear **inside one exercise** for questions, options, vocabulary, readings, images, forms, tables, matching and similar internal content.
 
+### Author-directed paired-unit reviews
+
+The author's 2026-10-07 review correction specifically requests the visual
+composition of the supplied Personal Best reviews: strong colored section
+headings, a substantial photographic reading feature, purposeful word-bank,
+table and conversation surfaces, and a prominent personal-challenge feature.
+Creativity must be visible in the composition and task design, not only in
+small accent colors. Do not flatten that review into a generic full-width
+worksheet. Use warm review paper and independent coordinated feature colors;
+retain the Horizons typography, navigational identity and readable writing space.
+
+For these paired-unit reviews only, two clearly ordered vertical exercise
+columns are permitted: read down the left column, then down the right. Keep
+DOM order, exercise numbering and the visual reading order consistent. This
+author-directed exception does not authorize page-level exercise grids in
+ordinary lessons. Each review feature must have its own purpose; do not add
+a universal decorative box around every question group. Reference books
+inform design principles and task formats, never copied text, art or branding.
+
+The author's subsequent content correction requires **fresh review themes**:
+recycle the taught grammar and vocabulary, not the preceding lessons' stories,
+cast, settings or tasks. A new name inside another student/city profile or
+hotel reception exchange is not a new thematic idea. Choose a genuinely
+different context and activity purpose while keeping the cumulative language
+ceiling. Use new scene-specific imagery when the new context needs it; do not
+fill the review with the lesson photographs merely because they are available.
+
 Normal numbered exercises are separated by numbering, whitespace and composition, not decorative horizontal dividers. `Go to:` cross-references also sit in open whitespace.
 
 Do not invent response mechanics that the authorized task does not ask for. If an exercise is meant to contain only questions, show only the questions: no answer lines, boxes, check circles or other response affordances unless explicitly required by the source or task design.
