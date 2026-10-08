@@ -5947,87 +5947,113 @@ body.hz-debug .hz-page::after {
 
 
 /* Horizons/A1/Lessons/review-1-2-local.css */
-/* Paired-unit review: open practice, a small hospitality feature and personal transfer.
-   Scoped to the review. Existing lessons retain their approved composition. */
-.r12-page {
-  --hz-unit: #c2185b;
-  --hz-unit-dark: #8f123f;
-  --r12-teal: #246b6e;
-  --r12-ochre: #a86429;
-  font-size: 9pt;
-}
-.r12-page .hz-page-stack { gap: 2.7mm; }
-.r12-page .hz-exercises { gap: .2mm; }
-.r12-page .hz-exercise { padding: 1.6mm 0 2.15mm; }
-.r12-page .hz-exercise__body { margin-top: 1.5mm; }
-.r12-page .hz-exercise__instruction { font-size: 8.9pt; }
-.r12-header { display: grid; grid-template-columns: 23mm 1fr; gap: 5mm; align-items: center; padding: 0 0 3mm; }
-.r12-units { color: var(--hz-unit); border-left: 1.2mm solid var(--hz-unit); padding-left: 3mm; line-height: 1; }
-.r12-units span { display: block; font-size: 7pt; font-weight: 720; letter-spacing: .08em; margin-bottom: 1.5mm; }
-.r12-units b { font-size: 20pt; white-space: nowrap; }
-.r12-header h1 { font-size: 29pt; line-height: 1; letter-spacing: -.025em; margin: 0 0 1.7mm; }
-.r12-header p { font-size: 9pt; margin: 0; }
-.r12-header p span { color: var(--r12-ochre); margin: 0 1mm; }
-.r12-page figure { margin: 0; }
-.r12-page .r12-items { margin: 0; padding: 0; list-style: none; counter-reset: item; }
-.r12-page .r12-items > li { counter-increment: item; position: relative; padding-left: 5mm; }
-.r12-page .r12-items > li::before { content: counter(item); position: absolute; left: 0; color: var(--hz-unit-dark); font-size: 8pt; font-weight: 620; }
-.r12-page .r12-definitions { counter-reset: item -1; }
-.r12-match { display: grid; grid-template-columns: 81mm 1fr; gap: 5mm; }
-.r12-people { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3.5mm 3mm; align-content: start; }
-.r12-people img { display: block; width: 23mm; height: 23mm; border-radius: 50%; object-fit: cover; object-position: center 35%; }
-.r12-people figcaption { font-size: 8pt; text-align: center; margin-top: 1.2mm; white-space: nowrap; }
-.r12-definitions > li { margin-bottom: 1.1mm; line-height: 1.3; font-size: 8.5pt; }
-.r12-line { display: block; height: 5.2mm; border-bottom: .24mm solid #989da0; }
-.r12-definitions .r12-line { height: 4.1mm; }
-.r12-model { color: var(--r12-teal); font-style: italic; font-weight: 400; }
-.r12-odd > li { display: grid; grid-template-columns: repeat(4, 1fr); column-gap: 3mm; margin-bottom: 1.8mm; }
-.r12-odd > li:last-child { margin-bottom: 0; }
-.r12-word-bank { display: flex; gap: 5mm; flex-wrap: wrap; margin: 0 0 2.5mm; color: var(--r12-teal); font-size: 8.5pt; }
-.r12-word-bank s { color: #51585a; }
-.r12-reading { display: grid; grid-template-columns: 43mm 1fr; gap: 4mm; }
-.r12-reading > img { width: 43mm; height: 54mm; object-fit: cover; object-position: center; }
-.r12-reading h2 { margin: 0 0 1.4mm; color: var(--r12-teal); font-family: Georgia, serif; font-weight: 400; font-size: 20pt; line-height: 1.05; }
-.r12-reading p { margin: 0 0 2mm; font-size: 9pt; line-height: 1.6; }
-.r12-reading p:last-child { margin-bottom: 0; }
-.r12-inline { display: inline-block; min-width: 19mm; height: 4.8mm; border-bottom: .24mm solid #989da0; vertical-align: baseline; }
-.r12-reading sup { font: 7pt var(--hz-font-body); color: var(--hz-unit-dark); margin-right: .5mm; }
-.r12-gap { white-space: nowrap; }
-.r12-title-choice { display: flex; align-items: baseline; flex-wrap: wrap; gap: 2mm 4mm; margin-top: 2mm; font-size: 8.25pt; }
-.r12-title-choice label { display: inline-flex; align-items: center; gap: 1.5mm; font-size: 8.25pt; }
-.r12-check { display: inline-block; width: 2.8mm; height: 2.8mm; border: .24mm solid var(--hz-unit); flex: 0 0 auto; }
-.r12-small-number { color: var(--hz-unit-dark); font-size: 8pt; font-weight: 620; }
-.r12-grammar > li { margin-bottom: 2mm; }
-.r12-grammar > li:last-child { margin-bottom: 0; }
-.r12-options { color: var(--hz-ink); margin: 0 .4mm; }
-.r12-header--continuation h1 { font-size: 25pt; }
-.r12-reception { display: grid; grid-template-columns: 29mm 1fr; gap: 4mm; }
-.r12-reception-identity { padding: 2mm 0; }
-.r12-reception-identity img { display: block; width: 28mm; height: 20mm; object-fit: contain; }
-.r12-reception-identity h2 { margin: 1.8mm 0 0; text-align: center; color: var(--r12-teal); font-family: Georgia, serif; font-size: 10pt; font-weight: 400; letter-spacing: .05em; line-height: 1.4; }
-.r12-dialogue > li { margin-bottom: 3mm; }
-.r12-dialogue > li:last-child { margin-bottom: 0; }
-.r12-dialogue p { margin: 0 0 1mm; font-size: 8.5pt; }
-.r12-dialogue li > div { display: flex; flex-wrap: wrap; gap: 1mm 4mm; font-size: 8pt; }
-.r12-dialogue li > div span { white-space: nowrap; }
-.r12-objects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5mm; margin-bottom: 2mm; }
-.r12-objects img { width: 52.5mm; height: 35mm; margin: 0 auto; display: block; object-fit: contain; }
-.r12-objects figcaption { display: grid; grid-template-columns: repeat(2, 1fr); width: 52.5mm; padding: 0 8.75mm; text-align: center; margin: 1.2mm auto 0; color: var(--hz-unit-dark); font-size: 8pt; font-weight: 620; }
-.r12-picture-answers { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5mm 5mm; }
-.r12-picture-answers .r12-line { height: 5.8mm; }
-.r12-info { display: grid; grid-template-columns: .85fr 1.15fr; gap: 6mm; align-items: start; }
-.r12-message { padding-left: 3mm; border-left: .6mm solid var(--r12-ochre); }
-.r12-message p { margin: 0; font-family: Georgia, serif; font-size: 10pt; line-height: 1.5; }
-.r12-form { border-top: .7mm solid var(--r12-teal); padding-top: 1mm; }
-.r12-form > div { display: grid; grid-template-columns: 17mm 1fr; gap: 3mm; align-items: end; margin-bottom: 1mm; font-size: 8.5pt; }
-.r12-form .r12-line { height: 5.4mm; }
-.r12-personal h2 { margin: 0 0 2mm; color: var(--r12-teal); font: 22pt/1.1 Georgia, serif; }
-.r12-challenges { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3mm 5mm; }
-.r12-challenges > div { display: grid; grid-template-columns: 9mm 1fr; gap: 2mm; }
-.r12-challenge-number { color: var(--r12-ochre); font: 18pt/1 Georgia, serif; }
-.r12-challenges p { margin: 0; font-size: 8.5pt; line-height: 1.5; }
-.r12-transfer { margin: 3mm 0 0; font-size: 8.5pt; }
-.r12-transfer .r12-line { height: 5.8mm; }
+/* Original paired-unit review. Two explicit reading lanes, a framed photographic
+   feature and a retrieval panel. All rules remain review-local. */
+.rr-page { --hz-unit:#c2185b; --hz-unit-dark:#8f123f; --rr-plum:#79476f; --rr-teal:#276b70; --rr-ochre:#a2572e; --rr-wine:#913d54; --hz-paper:#faf6ee; --hz-ink:#292b2e; font-size:9pt; }
+.rr-page::before { top:0; left:0; width:210mm; height:10mm; background:#dbcdb7; }
+.rr-review-bar { display:flex; width:max-content; align-items:stretch; gap:1.5mm; margin:0 0 6mm; }
+.rr-review-bar h1 { display:flex; gap:1.8mm; align-items:center; margin:0; padding:2.5mm 3mm; color:#fff; background:var(--rr-wine); font-size:13pt; font-weight:720; line-height:1; }
+.rr-review-bar h1 span { font-weight:400; font-family:Georgia,serif; font-style:italic; }
+.rr-units { display:flex; gap:2.5mm; align-items:center; padding:1.5mm 3mm; border:.55mm solid var(--rr-wine); background:#fff; color:var(--rr-wine); font-size:9pt; }
+.rr-units b { font-size:17pt; font-weight:720; }
+.rr-review-bar--right { flex-direction:row-reverse; margin-left:auto; }
+.rr-spread-columns { display:grid; grid-template-columns:minmax(0,1fr) minmax(0,1fr); gap:8mm; align-items:start; }
+.rr-column { min-width:0; }
+.rr-page .hz-exercise { grid-template-columns:6mm minmax(0,1fr); gap:0 2mm; padding:1.6mm 0 2.15mm; }
+.rr-page .hz-exercise-number { font-size:15pt; line-height:1; }
+.rr-page .hz-exercise__instruction { font-size:8.7pt; line-height:1.4; margin-top:0; }
+.rr-page .hz-exercise__body { margin-top:2mm; }
+.rr-section-heading { margin:0 0 1.6mm; color:var(--rr-plum); font-size:20pt; font-weight:720; line-height:1.05; letter-spacing:-.03em; }
+.rr-section-heading--vocab { color:var(--rr-teal); margin-top:3mm; }
+.rr-section-heading--reading { color:var(--rr-teal); }
+.rr-section-heading--pictures { color:var(--rr-plum); margin-top:4mm; }
+.rr-page .rr-list { list-style:none; margin:0; padding:0; counter-reset:question; }
+.rr-page .rr-with-example { counter-reset:question -1; }
+.rr-list > li { counter-increment:question; position:relative; padding-left:4.5mm; }
+.rr-list > li::before { content:counter(question); position:absolute; left:0; top:.05mm; color:var(--hz-unit-dark); font-size:8pt; font-weight:620; }
+.rr-choices-list > li { font-size:9pt; line-height:1.75; margin-bottom:2.6mm; }
+.rr-choices-list > li:last-child { margin-bottom:0; }
+.rr-circled { border:.3mm solid var(--rr-teal); border-radius:50%; padding:.1mm 1mm; }
+.rr-write { display:block; height:6.3mm; border-bottom:.23mm solid #959b9f; }
+.rr-example { color:#2c737b; font-style:italic; font-weight:400; }
+.rr-sentences > li { margin-bottom:2.5mm; font-size:8.75pt; line-height:1.45; }
+.rr-sentences > li:last-child { margin-bottom:0; }
+.rr-sentences .rr-write { height:6mm; }
+.rr-word-bank { display:flex; flex-wrap:wrap; gap:1.4mm 3mm; padding:2.3mm 2.8mm; color:#293a3c; font-size:8.5pt; line-height:1.5; }
+.rr-word-bank s { color:#5a6366; }
+.rr-word-bank--vocab { background:#e5d7c0; margin-bottom:2mm; }
+.rr-vocab-table { width:100%; border-collapse:collapse; table-layout:fixed; background:#fff; font-size:8pt; }
+.rr-vocab-table th { background:#478985; color:#fff; height:7mm; font-weight:620; border-right:.25mm solid #dbeae7; }
+.rr-vocab-table td { height:7mm; padding:.8mm 1mm; border-right:.25mm solid #abc7c4; border-bottom:.23mm solid #dce8e5; vertical-align:middle; }
+.rr-vocab-table th:last-child,.rr-vocab-table td:last-child { border-right:0; }
+.rr-reading-exercise .hz-exercise__body { margin-left:-8mm; width:calc(100% + 8mm); }
+.rr-postcard { margin:0; border:1.2mm solid var(--rr-wine); background:#fff; }
+.rr-postcard-head { position:relative; padding:3.3mm 4mm 3.7mm; background:var(--rr-wine); color:#fff; }
+.rr-postcard-head h3 { margin:0; line-height:1; font-weight:400; }
+.rr-postcard-head h3 em { display:block; font:italic 29pt/.95 Georgia,serif; color:#fff2d5; }
+.rr-postcard-head h3 > span { display:block; margin-top:1.6mm; font-size:16pt; letter-spacing:-.015em; }
+.rr-country-stamp { position:absolute; top:5mm; right:3mm; transform:rotate(5deg); padding:1.4mm 2mm; background:#f0d7a4; color:#643a32; border:.4mm double #805445; font-size:7.75pt; font-weight:720; letter-spacing:.065em; }
+.rr-toronto { display:block; width:100%; height:50mm; object-fit:cover; object-position:48% 52%; }
+.rr-word-bank--reading { background:#f0e7d6; border-bottom:.25mm solid #d7c9b2; }
+.rr-postcard-copy { padding:3mm 3.2mm; }
+.rr-postcard-copy p { font-size:9pt; line-height:1.85; margin:0 0 2.5mm; }
+.rr-postcard-copy p:last-of-type { margin-bottom:0; }
+.rr-gap { display:inline-block; min-width:15mm; height:4.8mm; border-bottom:.23mm solid #959b9f; vertical-align:baseline; }
+.rr-gap--short { min-width:9mm; }
+.rr-numbered-gap { white-space:nowrap; }
+.rr-numbered-gap sup { color:var(--hz-unit-dark); font-size:7pt; margin-right:.7mm; }
+.rr-class-card { margin-top:3mm; padding:1.5mm 2.3mm 2mm; border-top:.65mm solid var(--rr-teal); background:#e7efec; }
+.rr-class-card > span { color:var(--rr-teal); font-size:7.5pt; letter-spacing:.04em; font-weight:620; }
+.rr-class-card > div { display:flex; align-items:baseline; justify-content:space-between; font-size:10pt; padding-top:1mm; }
+.rr-class-card b { font-weight:620; color:#244f54; }
+.rr-class-card > div > span { color:var(--rr-teal); font-size:17pt; font-weight:620; line-height:1; }
+.rr-reading-check { margin-top:3.5mm; padding-left:8mm; }
+.rr-subtask { font-size:8.5pt; line-height:1.4; margin:0 0 1.8mm; }
+.rr-question-number { color:var(--hz-unit-dark); font-size:8pt; font-weight:620; }
+.rr-subtask .rr-question-number { margin-right:2mm; }
+.rr-title-options { display:flex; flex-direction:column; gap:1.6mm; }
+.rr-title-options label { display:flex; align-items:center; gap:2mm; font-size:8.5pt; }
+.rr-check { flex:0 0 auto; display:inline-block; width:2.8mm; height:2.8mm; border:.25mm solid var(--hz-unit); }
+.rr-subtask--second { margin-top:3.4mm; }
+.rr-page .rr-reading-answers { counter-reset:question 6; }
+.rr-reading-answers > li { font-size:8.75pt; margin-bottom:2.5mm; line-height:1.5; }
+.rr-reception-dialogue { padding:0 2.8mm 3mm; background:#e4efec; }
+.rr-reception-dialogue > header { display:flex; align-items:center; gap:3mm; border-bottom:.3mm solid #95b7b1; padding:2mm 0; margin-bottom:2mm; }
+.rr-reception-dialogue > header img { display:block; width:12mm; height:10mm; object-fit:contain; }
+.rr-reception-dialogue > header > span { color:#245c61; font:10pt Georgia,serif; letter-spacing:.055em; }
+.rr-conversation-model { margin:0 0 3mm; font-size:8.5pt; line-height:1.65; }
+.rr-dialogue-questions > li { margin-bottom:3mm; }
+.rr-dialogue-questions > li:last-child { margin-bottom:0; }
+.rr-dialogue-questions p { font-size:8.5pt; margin:0 0 1mm; line-height:1.45; }
+.rr-dialogue-questions li > div { display:flex; flex-wrap:wrap; gap:1.1mm 3mm; font-size:8pt; line-height:1.5; }
+.rr-dialogue-questions li > div > span { white-space:nowrap; }
+.rr-picture-exercise .hz-exercise__body { margin-left:-8mm; width:calc(100% + 8mm); }
+.rr-scene-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:3.5mm 3mm; }
+.rr-scene-grid figure { margin:0; min-width:0; }
+.rr-scene-grid img { display:block; width:100%; height:23.5mm; object-fit:cover; }
+.rr-scene-grid figcaption { display:flex; gap:1mm; align-items:baseline; padding-top:1mm; font-size:8pt; line-height:1.4; }
+.rr-scene-grid figcaption > span:last-child { flex:1; }
+.rr-scene-grid .rr-gap { min-width:11mm; }
+.rr-picture-write-label { margin:4.5mm 0 1.8mm 8mm; }
+.rr-picture-model { margin:0 0 1mm 8mm; font-size:8.5pt; color:#2c737b; font-style:italic; }
+.rr-free-writing { padding-left:8mm; }
+.rr-free-writing .rr-write { height:7mm; }
+.rr-challenge-panel { border:.45mm solid #b68559; padding:4mm 3.5mm 3mm; background:#e9dfcc; }
+.rr-challenge-title { display:flex; align-items:center; gap:2mm; margin-bottom:2mm; }
+.rr-challenge-title h2 { margin:0; color:var(--rr-plum); font-size:16pt; font-weight:400; white-space:nowrap; letter-spacing:-.045em; }
+.rr-challenge-title h2 em { font:italic 22pt Georgia,serif; color:var(--rr-teal); }
+.rr-challenge-instruction { font-size:8.25pt; line-height:1.45; margin:0 0 4mm; }
+.rr-challenge-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:3mm 4mm; }
+.rr-mission h3 { color:#293333; font-size:8pt; font-weight:620; text-align:center; margin:0 0 1.5mm; line-height:1.25; }
+.rr-disc { display:grid; place-items:center; width:35.5mm; height:35.5mm; margin:0 auto; padding:4mm; border:1.2mm solid #fff; border-radius:50%; outline:.35mm solid #8ba9af; background:#72446c; color:#fff; }
+.rr-disc p { margin:0; font-size:8.5pt; font-weight:620; line-height:1.3; text-align:center; }
+.rr-disc--mint { background:#d8e7e1; color:#243d39; }
+.rr-disc--ochre { background:#9e502b; }
+.rr-disc--blue { background:#435e78; }
+.rr-challenge-form { margin-top:4mm; padding:2mm 2.2mm; background:#fff; border-top:.6mm solid var(--rr-teal); }
+.rr-challenge-form > div { display:grid; grid-template-columns:17mm 1fr; gap:2mm; align-items:end; font-size:8pt; padding-bottom:.8mm; }
+.rr-challenge-form .rr-write { height:6mm; }
+.rr-challenge-check { font-size:8pt; line-height:1.4; margin:2mm 0 0; }
 
 
 /* Student's Book unifier */
@@ -8033,162 +8059,164 @@ body {
   </article>
 
 <!-- ===== 2R.html ===== -->
-<article class="hz-page hz-content hz-unit-1 r12-page" data-page="21">
+<!-- Paired-unit review: read down the left column, then the right.
+       This author-requested review exception does not alter normal lesson flow. -->
+  <article class="hz-page hz-content hz-unit-1 rr-page" data-page="21">
     <main class="hz-page__content">
-      <div class="hz-page-stack">
-        <header class="r12-header">
-          <div class="r12-units"><span>UNITS</span><b>1 &amp; 2</b></div>
-          <div><h1>REVIEW</h1><p>New friends <span>·</span> What's in my bag?</p></div>
-        </header>
-        <div class="hz-exercises">
-          <section class="hz-exercise" data-review-skill="picture-word matching">
+      <header class="rr-review-bar"><span class="rr-units">Units <b>1 &amp; 2</b></span><h1>REVIEW <span>and</span> PRACTICE</h1></header>
+      <div class="rr-spread-columns">
+        <div class="rr-column rr-practice-column" aria-label="Exercises 1 to 3">
+          <h2 class="rr-section-heading">Grammar</h2>
+          <section class="hz-exercise" data-review-skill="grammar selection">
             <div class="hz-exercise-number">1</div>
-            <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction">Read. Look at the photos. Write the occupation.</p>
-              <div class="hz-exercise__body r12-match">
-                <div class="r12-people">
-                  <figure><img src="./Images/1B/Teacher.png" alt="A teacher at work"><figcaption>teacher</figcaption></figure>
-                  <figure><img src="./Images/1B/Doctor.png" alt="A doctor in a hospital"><figcaption>doctor</figcaption></figure>
-                  <figure><img src="./Images/1B/Chef.png" alt="A chef in a kitchen"><figcaption>chef</figcaption></figure>
-                  <figure><img src="./Images/1B/Taxi Driver.png" alt="A taxi driver with a taxi"><figcaption>taxi driver</figcaption></figure>
-                  <figure><img src="./Images/1B/Student.png" alt="A student"><figcaption>student</figcaption></figure>
-                  <figure><img src="./Images/1B/Receptionist.png" alt="A receptionist at a counter"><figcaption>receptionist</figcaption></figure>
-                </div>
-                <ol class="r12-items r12-definitions" start="0">
-                  <li><span>I teach English.</span><span class="r12-line r12-model">teacher</span></li>
-                  <li><span>I work in a hospital.</span><span class="r12-line"></span></li>
-                  <li><span>I drive a taxi.</span><span class="r12-line"></span></li>
-                  <li><span>I make the food in a restaurant.</span><span class="r12-line"></span></li>
-                  <li><span>I am in Class 4.</span><span class="r12-line"></span></li>
-                  <li><span>Good afternoon. What is your first name?</span><span class="r12-line"></span></li>
-                </ol>
-              </div>
-            </div>
-          </section>
-          <section class="hz-exercise" data-review-skill="odd one out">
-            <div class="hz-exercise-number">2</div>
-            <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction">Which word is different? Circle.</p>
-              <div class="hz-exercise__body">
-                <ol class="r12-odd r12-items">
-                  <li><em class="hz-answer-option">Canada</em><em class="hz-answer-option">the UK</em><em class="hz-answer-option">American</em><em class="hz-answer-option">Argentina</em></li>
-                  <li><em class="hz-answer-option">mother</em><em class="hz-answer-option">brother</em><em class="hz-answer-option">doctor</em><em class="hz-answer-option">sister</em></li>
-                  <li><em class="hz-answer-option">blue</em><em class="hz-answer-option">green</em><em class="hz-answer-option">small</em><em class="hz-answer-option">yellow</em></li>
-                  <li><em class="hz-answer-option">phone</em><em class="hz-answer-option">wallet</em><em class="hz-answer-option">keys</em><em class="hz-answer-option">friendly</em></li>
-                </ol>
-              </div>
-            </div>
-          </section>
-          <section class="hz-exercise" data-review-skill="word-bank reading and gist">
-            <div class="hz-exercise-number">3</div>
-            <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction">Read and complete with the words. Choose a title.</p>
-              <div class="hz-exercise__body">
-                <p class="r12-word-bank"><s>Canada</s><span>blue</span><span>chef</span><span>keys</span><span>sister</span><span>small</span><span>teacher</span></p>
-                <div class="r12-reading">
-                  <img src="./Images/1D/Hotel.png" alt="A hotel lobby; the text describes Emma and her family">
-                  <div class="r12-reading-copy">
-                    <h2>Meet Emma</h2>
-                    <p>Hi! I'm Emma Carter. I'm from <span class="r12-inline r12-model">Canada</span>. Toronto is my city. My father is <span class="r12-gap">a <sup>1</sup><span class="r12-inline"></span></span>. He makes the food at Seaside Hotel. My mother is a receptionist.</p>
-                    <p>My <span class="r12-gap"><sup>2</sup><span class="r12-inline"></span></span> is Anna. Anna and I are students. Anna's notebook is <span class="r12-gap"><sup>3</sup><span class="r12-inline"></span></span>. These are my mother's <span class="r12-gap"><sup>4</sup><span class="r12-inline"></span></span>. My phone is black. It's <span class="r12-gap"><sup>5</sup><span class="r12-inline"></span></span>, not big.</p>
-                  </div>
-                </div>
-                <div class="r12-title-choice"><span class="r12-small-number">6</span><span>Title:</span><label><span class="r12-check"></span><em class="hz-answer-option">my family</em></label><label><span class="r12-check"></span><em class="hz-answer-option">my city</em></label><label><span class="r12-check"></span><em class="hz-answer-option">my class</em></label></div>
-              </div>
-            </div>
-          </section>
-          <section class="hz-exercise" data-review-skill="grammar choices">
-            <div class="hz-exercise-number">4</div>
             <div class="hz-exercise__content">
               <p class="hz-exercise__instruction">Choose and circle.</p>
               <div class="hz-exercise__body">
-                <ol class="r12-grammar r12-items">
-                  <li>I <span class="r12-options"><em class="hz-answer-option">am / is / are</em></span> from Canada.</li>
-                  <li>My mother is <span class="r12-options"><em class="hz-answer-option">a / an / the</em></span> office worker.</li>
-                  <li>These <span class="r12-options"><em class="hz-answer-option">am / is / are</em></span> my keys.</li>
-                  <li>It's a bus. <span class="r12-options"><em class="hz-answer-option">A / An / The</em></span> bus is number 15.</li>
-                  <li>My parents' restaurant: <span class="r12-options"><em class="hz-answer-option">one parent / two parents</em></span>?</li>
-                  <li>It's <span class="r12-options"><em class="hz-answer-option">a blue notebook / a notebook blue</em></span>.</li>
-                  <li><span class="r12-options"><em class="hz-answer-option">That / Those</em></span> are my headphones.</li>
+                <ol class="rr-list rr-choices-list rr-with-example">
+                  <li>I <em class="hz-answer-option rr-circled">am</em> / <em class="hz-answer-option">is</em> / <em class="hz-answer-option">are</em> a student.</li>
+                  <li>You <em class="hz-answer-option">am / is / are</em> in Class 6.</li>
+                  <li>My father <em class="hz-answer-option">isn't / aren't / am not</em> a doctor.</li>
+                  <li>“Are you a teacher?”<br>“Yes, <em class="hz-answer-option">I am / she is / you are</em>.”</li>
+                  <li>Leo<em class="hz-answer-option">'m / 's / 're</em> a chef.</li>
+                  <li>My friend is <em class="hz-answer-option">a / an</em> office worker.</li>
+                  <li>Moovit is an app. <em class="hz-answer-option">A / An / The</em> app is for buses.</li>
+                  <li><em class="hz-answer-option">This / That / These</em> are my phones.</li>
+                  <li>My mother and father work here. It's my <em class="hz-answer-option">parents / parent's / parents'</em> restaurant.</li>
                 </ol>
+              </div>
+            </div>
+          </section>
+          <section class="hz-exercise rr-sentence-exercise" data-review-skill="sentence reconstruction">
+            <div class="hz-exercise-number">2</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Write the sentences.</p>
+              <div class="hz-exercise__body">
+                <ol class="rr-list rr-sentences rr-with-example">
+                  <li>phone / black / is / my<span class="rr-write rr-example">My phone is black.</span></li>
+                  <li>Canadian / is / she<span class="rr-write"></span></li>
+                  <li>the parents' / restaurant / small / is<span class="rr-write"></span></li>
+                  <li>are / those / headphones / my<span class="rr-write"></span></li>
+                  <li>is / Ana's / phone / white<span class="rr-write"></span></li>
+                </ol>
+              </div>
+            </div>
+          </section>
+          <h2 class="rr-section-heading rr-section-heading--vocab">Vocabulary</h2>
+          <section class="hz-exercise rr-vocab-exercise" data-review-skill="vocabulary classification">
+            <div class="hz-exercise-number">3</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Write the words in the table.</p>
+              <div class="hz-exercise__body">
+                <div class="rr-word-bank rr-word-bank--vocab"><span>chef</span><span>father</span><span><s>phone</s></span><span>red</span><span>doctor</span><span>wife</span><span>keys</span><span>gray</span><span>farmer</span><span>daughter</span><span>umbrella</span><span>pink</span></div>
+                <table class="rr-vocab-table" aria-label="Sort the words into occupations, family members, personal items and colors">
+                  <thead><tr><th>Jobs</th><th>Family</th><th>Items</th><th>Colors</th></tr></thead>
+                  <tbody><tr><td></td><td></td><td class="rr-example">phone</td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody>
+                </table>
+              </div>
+            </div>
+          </section>
+        </div>
+        <div class="rr-column rr-reading-column" aria-label="Exercise 4">
+          <h2 class="rr-section-heading rr-section-heading--reading">Reading</h2>
+          <section class="hz-exercise rr-reading-exercise" data-review-skill="word-bank reading, gist and information retrieval">
+            <div class="hz-exercise-number">4</div>
+            <div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Read and complete with the words.</p>
+              <div class="hz-exercise__body">
+                <article class="rr-postcard">
+                  <header class="rr-postcard-head"><h3><em>Maya</em><span>in Toronto</span></h3><span class="rr-country-stamp">CANADA</span></header>
+                  <img class="rr-toronto" src="./Images/1C/Toronto.png" alt="Toronto's skyline and waterfront at sunset">
+                  <div class="rr-word-bank rr-word-bank--reading"><s>Canada</s><span>cold</span><span>chef</span><span>mother</span><span>phone</span><span>keys</span><span>teacher</span><span>Canadian</span></div>
+                  <div class="rr-postcard-copy">
+                    <p>Hi! I'm Maya Chen. I'm from <span class="rr-gap rr-example">Canada</span>. Toronto is my city. It is big and very <span class="rr-numbered-gap"><sup>1</sup><span class="rr-gap"></span></span> in the morning.</p>
+                    <p>My brother Leo is a <span class="rr-numbered-gap"><sup>2</sup><span class="rr-gap"></span></span>. He makes the food at a small restaurant. My <span class="rr-numbered-gap"><sup>3</sup><span class="rr-gap"></span></span> is a doctor. Her name is Anna. My father is a taxi driver.</p>
+                    <p>This is my blue <span class="rr-numbered-gap"><sup>4</sup><span class="rr-gap"></span></span>. It's small. These are my brother's <span class="rr-numbered-gap"><sup>5</sup><span class="rr-gap"></span></span>. They're silver.</p>
+                    <div class="rr-class-card"><span>ENGLISH CLASS</span><div><b>Class 6</b><span>6:40</span></div></div>
+                  </div>
+                </article>
+                <div class="rr-reading-check">
+                  <p class="rr-subtask"><span class="rr-question-number">6</span>Choose a title.</p>
+                  <div class="rr-title-options"><label><span class="rr-check"></span><em class="hz-answer-option">my family and my things</em></label><label><span class="rr-check"></span><em class="hz-answer-option">a hospital in Toronto</em></label><label><span class="rr-check"></span><em class="hz-answer-option">my father's taxi</em></label></div>
+                  <p class="rr-subtask rr-subtask--second">Read again. Complete.</p>
+                  <ol class="rr-list rr-reading-answers" start="7">
+                    <li>Leo is Maya's <span class="rr-gap"></span>.</li>
+                    <li>Maya is in Class <span class="rr-gap rr-gap--short"></span>.</li>
+                    <li>Her class is at <span class="rr-gap"></span>.</li>
+                  </ol>
+                </div>
               </div>
             </div>
           </section>
         </div>
       </div>
     </main>
-    <footer class="hz-page__footer"><span class="hz-page-code">UNITS 1 &amp; 2 · REVIEW</span><span class="hz-page-number">21</span></footer>
+    <footer class="hz-page__footer"><span class="hz-page-code">UNITS 1 &amp; 2 · REVIEW AND PRACTICE</span><span class="hz-page-number">21</span></footer>
   </article>
-  <article class="hz-page hz-content hz-unit-1 r12-page r12-page--2" data-page="22">
+  <article class="hz-page hz-content hz-unit-1 rr-page rr-page--2" data-page="22">
     <main class="hz-page__content">
-      <div class="hz-page-stack">
-        <header class="r12-header r12-header--continuation"><div class="r12-units"><span>UNITS</span><b>1 &amp; 2</b></div><div><h1>REVIEW</h1><p>Read <span>·</span> write <span>·</span> speak</p></div></header>
-        <div class="hz-exercises">
-          <section class="hz-exercise" data-review-skill="dialogue response choices">
+      <header class="rr-review-bar rr-review-bar--right"><span class="rr-units">Units <b>1 &amp; 2</b></span><h1>REVIEW <span>and</span> PRACTICE</h1></header>
+      <div class="rr-spread-columns">
+        <div class="rr-column rr-skills-column" aria-label="Exercises 5 and 6">
+          <h2 class="rr-section-heading rr-section-heading--reading">Conversation</h2>
+          <section class="hz-exercise rr-conversation-exercise" data-review-skill="dialogue response choices and cross-text information">
             <div class="hz-exercise-number">5</div>
             <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction">Choose the answers. Circle <em class="hz-answer-option">a, b</em> or <em class="hz-answer-option">c</em>.</p>
-              <div class="hz-exercise__body r12-reception">
-                <div class="r12-reception-identity"><img src="./Images/1D/Seaside-emblem-v1.png" alt="Seaside Hotel sun and waves emblem"><h2>SEASIDE<br>HOTEL</h2></div>
-                <ol class="r12-dialogue r12-items">
-                  <li><p>Receptionist: Good afternoon. What is your last name?</p><div><span>a <em class="hz-answer-option">It's 416 555 0182.</em></span><span>b <em class="hz-answer-option">Carter.</em></span><span>c <em class="hz-answer-option">I'm from Canada.</em></span></div></li>
-                  <li><p>Receptionist: How do you spell that?</p><div><span>a <em class="hz-answer-option">I'm Emma.</em></span><span>b <em class="hz-answer-option">Toronto.</em></span><span>c <em class="hz-answer-option">C-A-R-T-E-R.</em></span></div></li>
-                  <li><p>Receptionist: Are you a teacher?</p><div><span>a <em class="hz-answer-option">No, I'm not. I'm a student.</em></span><span>b <em class="hz-answer-option">Yes, she is.</em></span><span>c <em class="hz-answer-option">This is my phone.</em></span></div></li>
-                  <li><p>Receptionist: What time is the next bus?</p><div><span>a <em class="hz-answer-option">It's a bus app.</em></span><span>b <em class="hz-answer-option">It's six twenty.</em></span><span>c <em class="hz-answer-option">I'm in Class 4.</em></span></div></li>
-                </ol>
+              <p class="hz-exercise__instruction">Maya at the hotel. Choose <em class="hz-answer-option">a, b</em> or <em class="hz-answer-option">c</em>.</p>
+              <div class="hz-exercise__body">
+                <div class="rr-reception-dialogue">
+                  <header><img src="./Images/1D/Seaside-emblem-v1.png" alt="" aria-hidden="true"><span>SEASIDE HOTEL</span></header>
+                  <p class="rr-conversation-model">Receptionist: Good afternoon.<br>Maya: Good afternoon.</p>
+                  <ol class="rr-list rr-dialogue-questions">
+                    <li><p>What is your first name?</p><div><span>a <em class="hz-answer-option">Chen.</em></span><span>b <em class="hz-answer-option">Maya.</em></span><span>c <em class="hz-answer-option">Anna.</em></span></div></li>
+                    <li><p>How do you spell your last name?</p><div><span>a <em class="hz-answer-option">C-H-A-N.</em></span><span>b <em class="hz-answer-option">C-H-E-N.</em></span><span>c <em class="hz-answer-option">C-H-I-N.</em></span></div></li>
+                    <li><p>Where are you from?</p><div><span>a <em class="hz-answer-option">Toronto.</em></span><span>b <em class="hz-answer-option">Canadian.</em></span><span>c <em class="hz-answer-option">Canada.</em></span></div></li>
+                    <li><p>What color is your phone?</p><div><span>a <em class="hz-answer-option">It's small.</em></span><span>b <em class="hz-answer-option">It's blue.</em></span><span>c <em class="hz-answer-option">It's silver.</em></span></div></li>
+                    <li><p>What time is your class?</p><div><span>a <em class="hz-answer-option">Six twenty.</em></span><span>b <em class="hz-answer-option">Seven thirty.</em></span><span>c <em class="hz-answer-option">Six forty.</em></span></div></li>
+                  </ol>
+                </div>
               </div>
             </div>
           </section>
-          <section class="hz-exercise" data-review-skill="picture-based sentence completion and writing">
+          <h2 class="rr-section-heading rr-section-heading--pictures">Picture practice</h2>
+          <section class="hz-exercise rr-picture-exercise" data-review-skill="picture-based demonstratives and short sentence writing">
             <div class="hz-exercise-number">6</div>
             <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction">Look at the photos. Complete. Then write two sentences.</p>
+              <p class="hz-exercise__instruction">Look. Complete: <em class="hz-answer-option">this, that, these, those</em>.</p>
               <div class="hz-exercise__body">
-                <div class="r12-objects">
-                  <figure><img src="./Images/2D/HZN_A1_U02_LD_E06_IMG_01.png" alt="A small black phone on the left and a big white phone on the right"><figcaption><span>A</span><span>B</span></figcaption></figure>
-                  <figure><img src="./Images/2D/HZN_A1_U02_LD_E06_IMG_03.png" alt="A small green bottle on the left and a big blue bottle on the right"><figcaption><span>C</span><span>D</span></figcaption></figure>
+                <div class="rr-scene-grid">
+                  <figure><img src="./Images/2A/Close wallet.png" alt="A person holds a wallet close in his hand"><figcaption><span class="rr-question-number">0</span><span><span class="rr-gap rr-example">This</span> is my wallet.</span></figcaption></figure>
+                  <figure><img src="./Images/2A/Far notebook.png" alt="A person points to a blue notebook across the room, far from him"><figcaption><span class="rr-question-number">1</span><span><span class="rr-gap"></span> is my notebook.</span></figcaption></figure>
+                  <figure><img src="./Images/2A/Close keys.png" alt="A person holds several keys close in his hand"><figcaption><span class="rr-question-number">2</span><span><span class="rr-gap"></span> are my keys.</span></figcaption></figure>
+                  <figure><img src="./Images/2A/Far headphones.png" alt="A person points to headphones on a chair, far from him"><figcaption><span class="rr-question-number">3</span><span><span class="rr-gap"></span> are my headphones.</span></figcaption></figure>
                 </div>
-                <ol class="r12-picture-answers r12-items">
-                  <li>A: It's a <span class="r12-inline"></span> phone.</li>
-                  <li>B: The phone is <span class="r12-inline"></span>, not small.</li>
-                  <li>C: What color is the bottle? <span class="r12-line"></span></li>
-                  <li>D: Write two sentences. <span class="r12-line"></span><span class="r12-line"></span></li>
-                </ol>
-              </div>
-            </div>
-          </section>
-          <section class="hz-exercise" data-review-skill="capitalization and personal-information transfer">
-            <div class="hz-exercise-number">7</div>
-            <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction">Read. Complete the form. Use capital letters.</p>
-              <div class="hz-exercise__body r12-info">
-                <div class="r12-message"><p>“my name is lucas martin. i'm from argentina. my city is buenos aires. my email is lucas.martin@email.com.”</p></div>
-                <div class="r12-form" aria-label="Personal information form with four blank fields">
-                  <div><span>Name</span><span class="r12-line"></span></div><div><span>Country</span><span class="r12-line"></span></div><div><span>City</span><span class="r12-line"></span></div><div><span>Email</span><span class="r12-line"></span></div>
-                </div>
-              </div>
-            </div>
-          </section>
-          <section class="hz-exercise r12-personal" data-review-skill="personal speaking and retrieval">
-            <div class="hz-exercise-number">8</div>
-            <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction">Work in pairs. Ask and answer. Use your information.</p>
-              <div class="hz-exercise__body">
-                <h2>Your Horizons</h2>
-                <div class="r12-challenges">
-                  <div><span class="r12-challenge-number">01</span><p>What is your last name?<br>How do you spell that?</p></div>
-                  <div><span class="r12-challenge-number">02</span><p>Where are you from?<br>Is your city big?</p></div>
-                  <div><span class="r12-challenge-number">03</span><p>What time is it?<br>What is your occupation?</p></div>
-                  <div><span class="r12-challenge-number">04</span><p>What color is your phone?<br>Is it big or small?</p></div>
-                </div>
-                <p class="r12-transfer">Write two sentences about your family. <span class="r12-line"></span><span class="r12-line"></span></p>
+                <p class="rr-subtask rr-picture-write-label">Write two sentences about the items.</p>
+                <p class="rr-picture-model">My wallet is brown.</p>
+                <div class="rr-free-writing"><span class="rr-write"></span><span class="rr-write"></span></div>
               </div>
             </div>
           </section>
         </div>
+        <div class="rr-column rr-challenge-column" aria-label="Exercise 7">
+          <section class="rr-challenge-panel" data-review-skill="personal retrieval, spoken interaction and information exchange">
+            <div class="rr-challenge-title"><span class="hz-exercise-number">7</span><h2>Your <em>Horizons</em></h2></div>
+            <p class="rr-challenge-instruction">Work in pairs. Choose and practice.</p>
+            <div class="rr-challenge-grid">
+              <div class="rr-mission"><h3>1A · Names</h3><div class="rr-disc rr-disc--plum"><p>Say your name.<br>Spell your last name.</p></div></div>
+              <div class="rr-mission"><h3>2A · My bag</h3><div class="rr-disc rr-disc--mint"><p>Choose three items from your bag.<br>Say the names.</p></div></div>
+              <div class="rr-mission"><h3>1B · Jobs</h3><div class="rr-disc rr-disc--ochre"><p>Describe a friend.<br>Say their name and occupation.</p></div></div>
+              <div class="rr-mission"><h3>2B · Time</h3><div class="rr-disc rr-disc--blue"><p>Say these times:<br>6:20<br>7:30<br>8:50</p></div></div>
+              <div class="rr-mission"><h3>1C · Countries</h3><div class="rr-disc rr-disc--mint"><p>Say a country and a nationality.<br>Describe a city.</p></div></div>
+              <div class="rr-mission"><h3>2C · Family</h3><div class="rr-disc rr-disc--plum"><p>Describe two people in your family.<br>Use their names.</p></div></div>
+              <div class="rr-mission"><h3>1D · Information</h3><div class="rr-disc rr-disc--blue"><p>Ask your classmate.<br>Complete the form.</p></div></div>
+              <div class="rr-mission"><h3>2D · Colors</h3><div class="rr-disc rr-disc--ochre"><p>Describe your phone and your classmate's phone.</p></div></div>
+            </div>
+            <div class="rr-challenge-form" aria-label="Record your classmate's personal information for challenge 1D"><div><span>First name</span><span class="rr-write"></span></div><div><span>Last name</span><span class="rr-write"></span></div><div><span>Country</span><span class="rr-write"></span></div></div>
+            <p class="rr-challenge-check">Capital letters? Information correct?</p>
+          </section>
+        </div>
       </div>
     </main>
-    <footer class="hz-page__footer"><span class="hz-page-code">UNITS 1 &amp; 2 · REVIEW</span><span class="hz-page-number">22</span></footer>
+    <footer class="hz-page__footer"><span class="hz-page-code">UNITS 1 &amp; 2 · REVIEW AND PRACTICE</span><span class="hz-page-number">22</span></footer>
   </article>
   </main>
 

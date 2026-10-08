@@ -1,66 +1,90 @@
-# Horizons A1 - Units 1 & 2 Review
+# Horizons A1 - Units 1 & 2 Review and Practice
 
-Student's Book pages 21-22. Source master: `Lessons/2R.html`.
+Student's Book pages 21-22. Master: `Lessons/2R.html`.
+Read down the left column, then the right, on each page. Seven main activities.
 
-## 1. Occupations
+## 1. Grammar
 
-Example 0: teacher. 1 doctor; 2 taxi driver; 3 chef; 4 student; 5 receptionist.
+Example 0: am. 1 are; 2 isn't; 3 I am; 4 's; 5 an; 6 The; 7 These; 8 parents'.
+Item 5 intentionally offers only a/an: the would also be grammatically possible without a wider definite-reference context. The plural possessive in item 8 is explicitly supported by both mother and father in the preceding sentence.
 
-## 2. Different word
+## 2. Sentence reconstruction
 
-1 American (nationality; the others are countries).
-2 doctor (occupation; the others are family members).
-3 small (size; the others are colors).
-4 friendly (adjective; the others are personal items).
+Example 0: My phone is black.
+1 She is Canadian.
+2 The parents' restaurant is small.
+3 Those are my headphones.
+4 Ana's phone is white.
 
-Students circle the word; explanations may be discussed orally and are not a required written response.
+Capitalize the first word, preserve the proper names and possessive apostrophes, and add a final period. Each response line has 6 mm of vertical writing space.
 
-## 3. Meet Emma
+## 3. Vocabulary table
 
-Example: Canada. 1 chef; 2 sister; 3 blue; 4 keys; 5 small.
-6 my family. Unused bank word: teacher.
+| Jobs | Family | Items | Colors |
+| --- | --- | --- | --- |
+| chef | father | phone (example) | red |
+| doctor | wife | keys | gray |
+| farmer | daughter | umbrella | pink |
 
-## 4. Grammar
+Order within each column may vary. The bank has twelve words, exactly three in each category, and the given example is crossed out in the bank. All words were introduced in Units 1-2.
 
-1 am; 2 an; 3 are; 4 The; 5 two parents; 6 a blue notebook; 7 Those.
+## 4. Maya in Toronto
 
-The capital letters in item 4 are required because the options begin a sentence.
-The plural possessive item contrasts one parent with two parents, following the two-parent convention already modeled in 2C.
+Example: Canada.
+1 cold; 2 chef; 3 mother; 4 phone; 5 keys.
+Unused words: teacher, Canadian.
+6 my family and my things.
+7 brother.
+8 6 / six.
+9 6:40 / six forty.
 
-## 5. Reception dialogue
+The class card belongs to Maya and supplies her class number and time. The text is an original fictional student profile, not a factual article about a real person. For item 4, bottle is deliberately excluded from the bank because it would also fit the blue/small description and create a second reasonable answer.
 
-1 b; 2 c; 3 a; 4 b.
+## 5. Maya at the hotel
 
-## 6. Picture descriptions
+1 b (Maya); 2 b (C-H-E-N); 3 c (Canada); 4 b (It's blue); 5 c (Six forty).
 
-1 black. 2 big.
-3 It's green. / The bottle is green. / Green.
-4 Possible answer: It's a blue bottle. It's big. Also accept: The bottle is blue. The bottle is big.
+Use Maya's profile and class card from activity 4. These are context-dependent responses, not a generic question matching task. The hotel receptionist's questions carry forward first/last names, spelling, country versus city/nationality, item color and time. Students may circle the letter or its response. No recording is required.
 
-A = small black phone; B = big white phone; C = small green bottle; D = big blue bottle.
-The complete photographs deliberately preserve the visible size comparisons and background context.
+## 6. Picture practice
 
-## 7. Information form
+Example 0: This.
+1 That (singular notebook across the room).
+2 These (several keys in the person's hand).
+3 Those (plural headphones on a distant chair).
 
-Name: Lucas Martin
-Country: Argentina
-City: Buenos Aires
-Email: lucas.martin@email.com
+Two final sentences vary. Possible answers:
+- My notebook is blue. / That is a blue notebook.
+- These are my keys.
+- Those are my headphones. / My headphones are black.
+- My wallet is brown. / This is a brown wallet.
 
-Keep the email lowercase. Capitalize the proper names. The quoted message is intentionally lowercase input for the capitalization task.
+Check the demonstrative against the pictured person's distance and the object's grammatical number, not its position on the printed page. The complete contextual illustrations preserve the person, gesture and near/far evidence. Accept any two accurate sentences; do not require adjective order beyond the adjective position already taught.
 
-## 8. Your Horizons
+## 7. Your Horizons
 
-Answers vary. Check intelligible spelling, country/city information, time, occupation and phone descriptions.
-Possible final writing: My mother is a doctor. My father's phone is black.
-Accept other true sentences within the language already taught. Do not require a particular family arrangement; learners may use another family member.
+Answers vary. Every mission uses taught language and has a distinct product:
 
-## Teacher / production notes
+| Lesson | Product / evidence |
+| --- | --- |
+| 1A | Say a name and spell a last name intelligibly. |
+| 1B | Describe a friend using the person's name and an occupation. |
+| 1C | Give a country/nationality pair and a simple city description. |
+| 1D | Ask a real classmate and complete three information fields; check capitals. |
+| 2A | Name three real bag items accurately. |
+| 2B | Say 6:20, 7:30, 8:50 (six twenty, seven thirty, eight fifty). |
+| 2C | Describe two family members with accurate names and relationships/jobs. |
+| 2D | Describe two phones, using color and/or size as appropriate. |
 
-- This is original cumulative review material, not an official Cambridge exam or copied Personal Best content.
-- Personal Best A1 review spread (PDF pages 22-23) informs the mix of short practice, a recognizable reading feature and personal retrieval. Only visual/task principles are borrowed.
-- Cambridge A1 Movers Reading and Writing Parts 1-4 and 6, and Speaking Parts 3-4, inform matching, dialogue responses, word-bank/gist reading, grammar selection, short picture writing and personal questions. Formats are simplified to the actual Horizons Units 1-2 language; this is not a full Movers mock test.
-- Source: https://www.cambridgeenglish.org/exams-and-tests/qualifications/young-learners/paper/movers/format/
-- No new tense or adjective-order instruction is introduced. Pictures and texts use existing local approved assets; no new image or audio generation is required.
-- Existing occupational photographs, the Seaside Hotel emblem/lobby, and 2D object comparison photographs are reused by reference. No Personal Best/Cambridge images, text, logos or branding are embedded.
-- The compiler already discovers `2R.html` and sorts it after `2D.html`, before future `3A.html`. Review exercise numbering is continuous, 1-8, in the canonical vertical lane.
+Students choose a starting mission and practice several; the panel is not a timed test. The printed three-field form belongs to the 1D mission. Teacher support may allow another meaningful person instead of a family member. Do not assume one family arrangement or require learners to own a phone; a partner's or a pictured item can be used.
+
+## Design and pedagogy provenance
+
+All activities were reauthored for the 2026-10-07 author correction. This replaces the initial review rather than restyling the same tasks.
+
+- Personal Best A1 PDF pages 22-23, A2 pages 20-21 and B2 pages 20-21 informed the clear practice columns, colored section hierarchy, framed photographic reading, word-bank/table surfaces and a substantial personal-retrieval feature. No text, photographs, logos or brand name from those references are embedded in Horizons.
+- Cambridge A1 Movers Reading and Writing Parts 2-4 and 6, and Speaking Part 4, informed dialogue response selection, word-bank/gist reading, grammar recognition, picture sentence completion and personal interaction. This is original cumulative review material, not an official Cambridge paper or full Movers mock exam.
+- Official format reference: https://www.cambridgeenglish.org/exams-and-tests/qualifications/young-learners/paper/movers/format/
+- Context: an original Maya Chen profile in Toronto links reading, reception responses and practical information. Independent practice consolidates the Units 1-2 grammar/vocabulary ceiling without introducing a new tense, adjective-order lesson or hidden support vocabulary syllabus.
+- Reused assets: `Images/1C/Toronto.png`; `Images/1D/Seaside-emblem-v1.png`; and `Images/2A/Close wallet.png`, `Far notebook.png`, `Close keys.png`, `Far headphones.png`. Their original local asset records and approvals continue to apply. No new image or audio generation is needed.
+- The paired review's explicit two-column exception is documented in the canonical style guide. All layout rules are scoped to `.rr-page`; lessons 1A-2D retain their approved layout, imagery, text and audio.

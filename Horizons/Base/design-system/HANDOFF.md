@@ -145,8 +145,15 @@ The answer key and teacher notes are in
 `A1/Answer keys/Units 1 and 2 Review.md` (paths relative to `Horizons/`).
 Personal Best's review balance and Cambridge Movers task principles inform
 the original activities; their text, photography and branding are not reused.
+The 2026-10-07 author correction replaces the first worksheet-like review's
+activities and layout in full. The current master uses two explicitly ordered
+columns (left, then right), a framed Toronto reading, a colored vocabulary
+sorting table, a hotel conversation, contextual demonstrative pictures and an
+eight-lesson personal challenge panel. Follow the paired-unit review exception
+in `CANONICAL-STYLE.md`; ordinary lessons keep their single exercise lane.
 The review consolidates existing Units 1-2 language, reuses approved local
-images, and has no new audio dependency.
+images, and has no new audio dependency. The pre-rebuild main state is preserved
+at `horizons-before-review-rebuild-2026-10-07` for rollback.
 
 ## CSS loading boundary
 
