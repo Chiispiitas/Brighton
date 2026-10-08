@@ -52,6 +52,13 @@ multicolored subject headings or a full-height panel of colored challenge circle
 Use columns inside individual exercises for choices, writing, photographs and
 pair-work prompts; keep the main exercise sequence vertical and numerical.
 
+The final paired-review challenge section is titled **BEYOND HORIZONS**.
+The author's subsequent 2026-10-08 correction requests small colored circular
+challenge shapes within this exercise, with lesson labels beside or above them.
+Keep them compact, legible and spaced in the normal Horizons exercise lane;
+they do not replace the page chrome or require a full-page background panel.
+Do not add a Speaking category label, photo-pass form or photo-pass challenge.
+
 Personal Best supplies the desired creative ambition and useful task principles.
 Horizons retains its own visual identity. Creativity belongs in specific
 photographic compositions, article titles, meaningful feature colors and

@@ -151,8 +151,11 @@ Horizons' shared lesson header, paper, continuation tab and single vertical
 exercise lane. Columns occur inside individual exercises. The original
 photo-exhibition feature, a colored
 vocabulary sorting table, two visitors' exhibition conversation, new studio
-photographs for demonstratives and an eight-lesson photo-project challenge
-task are retained without the foreign tan panel or colored circles.
+photographs for demonstratives and an eight-lesson challenge task are retained.
+The final section is **BEYOND HORIZONS**, with the author's subsequently
+requested compact colored circles, no Speaking label and no photo-pass form.
+Its 1D challenge asks three personal-information questions instead of completing
+a pass. Keep the circles inside this exercise, without a full-height background panel.
 The fresh theme is **The Color Project at Studio 8**, with new fictional
 people Luz, Ben and Ari. It replaces the proposed Toronto/student-profile and
 hotel/reception content in response to the author's explicit anti-recycling
@@ -164,6 +167,8 @@ dependency. The pre-rebuild main state is preserved
 at `horizons-before-review-rebuild-2026-10-07` for rollback. The preceding
 Personal Best-like review is independently preserved at
 `horizons-before-review-identity-2026-10-08`.
+The version before BEYOND HORIZONS is preserved at
+`horizons-before-beyond-review-2026-10-08`.
 
 ## CSS loading boundary
 

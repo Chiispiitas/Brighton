@@ -89,11 +89,11 @@
 .rr-page .rr-picture-write-label { margin:2.5mm 0 1mm; }
 .rr-picture-model { margin:0 0 .5mm; font-size:8.4pt; color:#7f8287; font-family:"Segoe Print","Bradley Hand","Comic Sans MS",cursive; }
 .rr-free-writing .rr-write { height:7mm; }
-.rr-challenge-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:3mm 5mm; }
-.rr-mission h3 { color:var(--hz-unit-dark); font-size:8.5pt; font-weight:820; margin:0 0 1.5mm; line-height:1.3; }
-.rr-mission p { margin:0; font-size:8.75pt; font-weight:400; line-height:1.4; }
-.rr-challenge-form { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1mm 4mm; margin-top:3mm; padding:2mm 3mm; background:#fff; border:.28mm solid var(--hz-line); border-top:.75mm solid var(--rr-teal); }
-.rr-pass-title { grid-column:1/-1; font-size:8pt; color:var(--rr-teal); font-weight:820; letter-spacing:.06em; }
-.rr-challenge-form > div { font-size:8.5pt; }
-.rr-challenge-form .rr-write { height:6mm; }
-.rr-page .rr-challenge-check { font-size:8pt; line-height:1.4; margin:1.5mm 0 0; }
+.rr-beyond-title { margin:0 0 1mm; color:var(--hz-unit-dark); font-size:12pt; font-weight:820; line-height:1.15; letter-spacing:.035em; }
+.rr-challenge-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:4mm 5mm; }
+.rr-mission h3 { color:var(--hz-unit-dark); font-size:8pt; font-weight:820; margin:0 0 1.5mm; line-height:1.3; text-align:center; white-space:nowrap; }
+.rr-challenge-ball { display:grid; place-items:center; width:32mm; height:32mm; padding:4mm; margin:0 auto; border-radius:50%; background:var(--hz-unit-soft); }
+.rr-mission:nth-child(4n + 2) .rr-challenge-ball { background:#f5e4d6; }
+.rr-mission:nth-child(4n + 3) .rr-challenge-ball { background:#e3eeea; }
+.rr-mission:nth-child(4n + 4) .rr-challenge-ball { background:#e3eaf1; }
+.rr-challenge-ball p { margin:0; font-size:8.5pt; font-weight:400; line-height:1.25; text-align:center; }

@@ -62,7 +62,7 @@ Two final sentences vary. Possible answers:
 
 Check the demonstrative against the pictured speaker's distance and the object's grammatical number, not its position on the printed page. The complete contextual photographs preserve the person, gesture and near/far evidence. Accept any two accurate sentences; do not introduce adjective order.
 
-## 7. Your photo project
+## 7. BEYOND HORIZONS
 
 Answers vary. Every mission uses taught language and has a distinct product:
 
@@ -71,13 +71,13 @@ Answers vary. Every mission uses taught language and has a distinct product:
 | 1A | Choose a name for a photo and spell it intelligibly. |
 | 1B | Say Luz, Ben or Ari's name and occupation accurately. |
 | 1C | Give two accurate country/nationality pairs. |
-| 1D | Ask a real classmate and complete the first-name, last-name and country fields; check capitals. |
+| 1D | Ask a real classmate three personal-information questions using the forms from 1D. |
 | 2A | Use this/these accurately to describe three real items. |
-| 2B | Choose and say an exhibition time; the partner writes it in the photo pass. |
+| 2B | Choose and say an exhibition time; the partner writes it on separate paper. |
 | 2C | Describe two people in a family photo with accurate relationships and taught language. |
 | 2D | Describe two items' colors using an adjective before a noun or after be. |
 
-Students choose a starting mission and practise several; the panel is not a timed test. The four-field photo pass supports missions 1D and 2B. Teachers may supply a fictional or pictured family instead of requiring a personal photograph. Any real classroom objects can be used; learners do not have to own a phone or other particular possession.
+Students choose a challenge and practise several; this is not a timed test. Eight small circles hold the challenges. There is no Speaking label or photo-pass form. For the 1D challenge, accept any three taught questions about first name, last name, country, city, phone number or email; learners can use fictional details. Teachers may supply a fictional or pictured family instead of requiring a personal photograph. Any real classroom objects can be used; learners do not have to own a phone or other particular possession.
 
 ## Design and pedagogy provenance
 
@@ -86,6 +86,6 @@ All activities were reauthored for the 2026-10-07 author correction. The review 
 - Personal Best A1 PDF pages 22-23, A2 pages 20-21 and B2 pages 20-21 informed the creative photographic reading, word-bank/table surfaces and personal-retrieval task. The 2026-10-08 author correction restores Horizons' own shared page design and single exercise lane. No text, photographs, logos or brand name from those references are embedded in Horizons.
 - Cambridge A1 Movers Reading and Writing Parts 2-4 and 6, and Speaking Part 4, informed dialogue response selection, word-bank/gist reading, grammar recognition, picture sentence completion and personal interaction. This is original cumulative review material, not an official Cambridge paper or full Movers mock exam.
 - Official format reference: https://www.cambridgeenglish.org/exams-and-tests/qualifications/young-learners/paper/movers/format/
-- Context: a community photography exhibition at Studio 8 connects portrait/object reading, visitor responses, studio picture practice and a photo-pass information exchange. Studio, exhibition and photo pass are supported contextual labels; they do not establish an additional vocabulary syllabus.
+- Context: a community photography exhibition at Studio 8 connects portrait/object reading, visitor responses, studio picture practice and BEYOND HORIZONS challenges. Studio and exhibition are supported contextual labels; they do not establish an additional vocabulary syllabus.
 - New original generated assets: `Images/Review/Color-project-portraits-v1.png` and `Images/Review/Studio-contact-sheet-v1.png`. See `Images/Review/ASSETS.md` for IDs and provenance. Both preserve full photographic backgrounds; no new audio is required.
-- The canonical style guide records the identity correction: shared Horizons chrome and one vertical exercise sequence, with columns inside individual tasks. All layout rules are scoped to `.rr-page`; lessons 1A-2D retain their approved layout, imagery, text and audio. All seven tasks and their answers, as well as the two original photographs, are retained.
+- The canonical style guide records the identity correction and the final BEYOND HORIZONS treatment: shared Horizons chrome and one vertical exercise sequence, with columns inside individual tasks. All layout rules are scoped to `.rr-page`; lessons 1A-2D retain their approved layout, imagery, text and audio. Activities 1-6 and both original photographs are retained; challenge 1D now asks personal questions without a photo pass.
