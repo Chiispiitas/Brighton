@@ -1,0 +1,81 @@
+/* Paired-unit review: open practice, a small hospitality feature and personal transfer.
+   Scoped to the review. Existing lessons retain their approved composition. */
+.r12-page {
+  --hz-unit: #c2185b;
+  --hz-unit-dark: #8f123f;
+  --r12-teal: #246b6e;
+  --r12-ochre: #a86429;
+  font-size: 9pt;
+}
+.r12-page .hz-page-stack { gap: 2.7mm; }
+.r12-page .hz-exercises { gap: .2mm; }
+.r12-page .hz-exercise { padding: 1.6mm 0 2.15mm; }
+.r12-page .hz-exercise__body { margin-top: 1.5mm; }
+.r12-page .hz-exercise__instruction { font-size: 8.9pt; }
+.r12-header { display: grid; grid-template-columns: 23mm 1fr; gap: 5mm; align-items: center; padding: 0 0 3mm; }
+.r12-units { color: var(--hz-unit); border-left: 1.2mm solid var(--hz-unit); padding-left: 3mm; line-height: 1; }
+.r12-units span { display: block; font-size: 7pt; font-weight: 720; letter-spacing: .08em; margin-bottom: 1.5mm; }
+.r12-units b { font-size: 20pt; white-space: nowrap; }
+.r12-header h1 { font-size: 29pt; line-height: 1; letter-spacing: -.025em; margin: 0 0 1.7mm; }
+.r12-header p { font-size: 9pt; margin: 0; }
+.r12-header p span { color: var(--r12-ochre); margin: 0 1mm; }
+.r12-page figure { margin: 0; }
+.r12-page .r12-items { margin: 0; padding: 0; list-style: none; counter-reset: item; }
+.r12-page .r12-items > li { counter-increment: item; position: relative; padding-left: 5mm; }
+.r12-page .r12-items > li::before { content: counter(item); position: absolute; left: 0; color: var(--hz-unit-dark); font-size: 8pt; font-weight: 620; }
+.r12-page .r12-definitions { counter-reset: item -1; }
+.r12-match { display: grid; grid-template-columns: 81mm 1fr; gap: 5mm; }
+.r12-people { display: grid; grid-template-columns: repeat(3, 1fr); gap: 3.5mm 3mm; align-content: start; }
+.r12-people img { display: block; width: 23mm; height: 23mm; border-radius: 50%; object-fit: cover; object-position: center 35%; }
+.r12-people figcaption { font-size: 8pt; text-align: center; margin-top: 1.2mm; white-space: nowrap; }
+.r12-definitions > li { margin-bottom: 1.1mm; line-height: 1.3; font-size: 8.5pt; }
+.r12-line { display: block; height: 5.2mm; border-bottom: .24mm solid #989da0; }
+.r12-definitions .r12-line { height: 4.1mm; }
+.r12-model { color: var(--r12-teal); font-style: italic; font-weight: 400; }
+.r12-odd > li { display: grid; grid-template-columns: repeat(4, 1fr); column-gap: 3mm; margin-bottom: 1.8mm; }
+.r12-odd > li:last-child { margin-bottom: 0; }
+.r12-word-bank { display: flex; gap: 5mm; flex-wrap: wrap; margin: 0 0 2.5mm; color: var(--r12-teal); font-size: 8.5pt; }
+.r12-word-bank s { color: #51585a; }
+.r12-reading { display: grid; grid-template-columns: 43mm 1fr; gap: 4mm; }
+.r12-reading > img { width: 43mm; height: 54mm; object-fit: cover; object-position: center; }
+.r12-reading h2 { margin: 0 0 1.4mm; color: var(--r12-teal); font-family: Georgia, serif; font-weight: 400; font-size: 20pt; line-height: 1.05; }
+.r12-reading p { margin: 0 0 2mm; font-size: 9pt; line-height: 1.6; }
+.r12-reading p:last-child { margin-bottom: 0; }
+.r12-inline { display: inline-block; min-width: 19mm; height: 4.8mm; border-bottom: .24mm solid #989da0; vertical-align: baseline; }
+.r12-reading sup { font: 7pt var(--hz-font-body); color: var(--hz-unit-dark); margin-right: .5mm; }
+.r12-gap { white-space: nowrap; }
+.r12-title-choice { display: flex; align-items: baseline; flex-wrap: wrap; gap: 2mm 4mm; margin-top: 2mm; font-size: 8.25pt; }
+.r12-title-choice label { display: inline-flex; align-items: center; gap: 1.5mm; font-size: 8.25pt; }
+.r12-check { display: inline-block; width: 2.8mm; height: 2.8mm; border: .24mm solid var(--hz-unit); flex: 0 0 auto; }
+.r12-small-number { color: var(--hz-unit-dark); font-size: 8pt; font-weight: 620; }
+.r12-grammar > li { margin-bottom: 2mm; }
+.r12-grammar > li:last-child { margin-bottom: 0; }
+.r12-options { color: var(--hz-ink); margin: 0 .4mm; }
+.r12-header--continuation h1 { font-size: 25pt; }
+.r12-reception { display: grid; grid-template-columns: 29mm 1fr; gap: 4mm; }
+.r12-reception-identity { padding: 2mm 0; }
+.r12-reception-identity img { display: block; width: 28mm; height: 20mm; object-fit: contain; }
+.r12-reception-identity h2 { margin: 1.8mm 0 0; text-align: center; color: var(--r12-teal); font-family: Georgia, serif; font-size: 10pt; font-weight: 400; letter-spacing: .05em; line-height: 1.4; }
+.r12-dialogue > li { margin-bottom: 3mm; }
+.r12-dialogue > li:last-child { margin-bottom: 0; }
+.r12-dialogue p { margin: 0 0 1mm; font-size: 8.5pt; }
+.r12-dialogue li > div { display: flex; flex-wrap: wrap; gap: 1mm 4mm; font-size: 8pt; }
+.r12-dialogue li > div span { white-space: nowrap; }
+.r12-objects { display: grid; grid-template-columns: repeat(2, 1fr); gap: 5mm; margin-bottom: 2mm; }
+.r12-objects img { width: 52.5mm; height: 35mm; margin: 0 auto; display: block; object-fit: contain; }
+.r12-objects figcaption { display: grid; grid-template-columns: repeat(2, 1fr); width: 52.5mm; padding: 0 8.75mm; text-align: center; margin: 1.2mm auto 0; color: var(--hz-unit-dark); font-size: 8pt; font-weight: 620; }
+.r12-picture-answers { display: grid; grid-template-columns: repeat(2, 1fr); gap: 2.5mm 5mm; }
+.r12-picture-answers .r12-line { height: 5.8mm; }
+.r12-info { display: grid; grid-template-columns: .85fr 1.15fr; gap: 6mm; align-items: start; }
+.r12-message { padding-left: 3mm; border-left: .6mm solid var(--r12-ochre); }
+.r12-message p { margin: 0; font-family: Georgia, serif; font-size: 10pt; line-height: 1.5; }
+.r12-form { border-top: .7mm solid var(--r12-teal); padding-top: 1mm; }
+.r12-form > div { display: grid; grid-template-columns: 17mm 1fr; gap: 3mm; align-items: end; margin-bottom: 1mm; font-size: 8.5pt; }
+.r12-form .r12-line { height: 5.4mm; }
+.r12-personal h2 { margin: 0 0 2mm; color: var(--r12-teal); font: 22pt/1.1 Georgia, serif; }
+.r12-challenges { display: grid; grid-template-columns: repeat(2, 1fr); gap: 3mm 5mm; }
+.r12-challenges > div { display: grid; grid-template-columns: 9mm 1fr; gap: 2mm; }
+.r12-challenge-number { color: var(--r12-ochre); font: 18pt/1 Georgia, serif; }
+.r12-challenges p { margin: 0; font-size: 8.5pt; line-height: 1.5; }
+.r12-transfer { margin: 3mm 0 0; font-size: 8.5pt; }
+.r12-transfer .r12-line { height: 5.8mm; }

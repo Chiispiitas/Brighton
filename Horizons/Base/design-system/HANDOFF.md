@@ -135,6 +135,19 @@ book publisher runs on `main` only; a manually rendered preview branch cannot
 publish its compiled artifacts to `main`. PDF photo downsampling uses 300 dpi
 and JPEG quality 94 to retain detail in printed crops.
 
+## A1 paired-unit review
+
+`A1/Lessons/2R.html` is the original Units 1 & 2 Review, printed pages 21-22.
+Its adjacent `review-1-2-local.css` keeps all review composition scoped locally.
+The existing compiler discovers this definitive master automatically after 2D
+and before a future 3A; no lesson manifest or shell override is required.
+The answer key and teacher notes are in
+`A1/Answer keys/Units 1 and 2 Review.md` (paths relative to `Horizons/`).
+Personal Best's review balance and Cambridge Movers task principles inform
+the original activities; their text, photography and branding are not reused.
+The review consolidates existing Units 1-2 language, reuses approved local
+images, and has no new audio dependency.
+
 ## CSS loading boundary
 
 `Base/shell/a4-shell.css` imports only shared Base components. It must never import a level- or lesson-specific stylesheet.
