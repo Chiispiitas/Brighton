@@ -81,6 +81,26 @@ Do not invent response mechanics that the authorized task does not ask for. If a
 
 ## 4. Visual language
 
+### Rich color, preserved identity
+
+The author's 2026-10-08 color correction rejects the gradual shift toward a
+pastel-led book. Use rich, saturated crimson, teal, blue, green, orange, violet
+and gold for meaningful feature titles, review word banks and tables, title
+activities, practice accents and BEYOND HORIZONS circles. These features should
+look lively and confident. Do not replace their primary colors with pale pink,
+peach, mint or powder-blue washes. The shared `--hz-feature-*` tokens supply
+the reusable palette; editorial features can still choose their own colors.
+
+Keep the Horizons near-white paper, bold black lesson titles, crimson navigation,
+exercise flow, approved photographic backgrounds and calibrated spacing. Use
+strong color in existing feature bands and task elements, with open whitespace
+around ordinary exercises. Do not add a colored wrapper to every activity.
+Pale grammar/focus fills may remain as subordinate reading surfaces, rather
+than defining the overall palette. Writing areas stay white or near-white.
+Use white text on dark saturated fills and dark ink on gold, checking contrast
+at the actual learner type size. Keep answer-option italics and normal weight;
+color must never reveal the correct choice.
+
 Default page language:
 
 - warm off-white paper;

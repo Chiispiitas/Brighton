@@ -19,10 +19,19 @@
   --hz-unit-soft: #f8e6ee;
 
   /* Shared navigation accents; editorial features may use independent palettes. */
-  --hz-audio: #7d3154;
-  --hz-practice: #ad3f63;
-  --hz-reference: #86606b;
-  --hz-success: #48745f;
+  --hz-audio: #a0144e;
+  --hz-practice: #c2185b;
+  --hz-reference: #8f123f;
+  --hz-success: #087a46;
+
+  /* Rich editorial color. Use white text on blue, teal, green, orange and
+     violet; use the shared dark ink on gold. Pale focus fills stay subordinate. */
+  --hz-feature-blue: #1767aa;
+  --hz-feature-teal: #007b83;
+  --hz-feature-green: #087a46;
+  --hz-feature-orange: #bf4e08;
+  --hz-feature-violet: #7640a0;
+  --hz-feature-gold: #ffc42b;
 
   /* Optional palette references, independent of feature art direction. */
   --hz-unit-1: #c2185b;

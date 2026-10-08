@@ -170,6 +170,18 @@ Personal Best-like review is independently preserved at
 The version before BEYOND HORIZONS is preserved at
 `horizons-before-beyond-review-2026-10-08`.
 
+## Rich color correction
+
+The 2026-10-08 color correction restores rich feature color across the current
+A1 book. Use the shared saturated feature tokens rather than a default pastel
+palette. The review uses strong word banks, table headers, the teal-and-gold
+Color Project masthead and saturated BEYOND HORIZONS circles. Unit features
+use richer local accents; Rivera Restaurant has a green title band. Keep the
+approved page identity, lesson text, images, type size, spacing and white writing
+areas. Subordinate pale grammar bodies remain useful for reading.
+The preceding color treatment is preserved at
+`horizons-before-color-restoration-2026-10-08`.
+
 ## CSS loading boundary
 
 `Base/shell/a4-shell.css` imports only shared Base components. It must never import a level- or lesson-specific stylesheet.

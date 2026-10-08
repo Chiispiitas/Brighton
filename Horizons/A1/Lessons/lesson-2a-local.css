@@ -7,7 +7,7 @@
   --hz-unit-dark: #8f123f;
   --hz-unit-soft: #f8e6ee;
 
-  --l2a-feature: #4d7254;
+  --l2a-feature: var(--hz-feature-green);
 }
 
 .l2a-page .hz-page__content { overflow: hidden; }
@@ -319,7 +319,7 @@
 @media print {
   .l2a-page * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
 .l2a-page { print-color-adjust: exact; -webkit-print-color-adjust: exact;
-  --l2a-feature: #4d7254;
+  --l2a-feature: var(--hz-feature-green);
 }
 }
 

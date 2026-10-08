@@ -5,9 +5,9 @@
   --hz-unit-dark: #8f123f;
   --hz-unit-soft: #f8e6ee;
 
-  --l2d-feature: #236c73;
+  --l2d-feature: var(--hz-feature-teal);
 
-  --l2d-item: #93622f;
+  --l2d-item: var(--hz-feature-orange);
 }
 .l2d-page .hz-page-stack { gap: 2.7mm; }
 .l2d-page .hz-exercises { gap: .2mm; }
@@ -94,9 +94,9 @@
 
 @media print { .l2d-page * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
 .l2d-page { print-color-adjust: exact; -webkit-print-color-adjust: exact;
-  --l2d-feature: #236c73;
+  --l2d-feature: var(--hz-feature-teal);
 
-  --l2d-item: #93622f;
+  --l2d-item: var(--hz-feature-orange);
 } }
 
 .l2d-page .hz-lesson-header {

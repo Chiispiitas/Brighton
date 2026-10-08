@@ -4,6 +4,17 @@ This file defines reusable semantic HTML/CSS usage shared across Horizons books.
 
 Reusable CSS lives in `components.css`; tokens live in `tokens.css`.
 
+### Editorial color roles
+
+Use the shared `--hz-feature-blue`, `--hz-feature-teal`, `--hz-feature-green`,
+`--hz-feature-orange`, `--hz-feature-violet` and `--hz-feature-gold` tokens for
+rich feature accents and task-bearing bands. White text works on the five dark
+fills; gold requires `--hz-ink` or another verified dark foreground. Preserve
+the shared page/title/navigation geometry when changing color. Writing surfaces
+stay white or near-white, and answer options retain their italic, normal-weight
+contract. Pale language-focus bodies are subordinate surfaces, not the default
+feature palette. Do not color the correct answer differently from distractors.
+
 ## 1. Page
 
 ```html
