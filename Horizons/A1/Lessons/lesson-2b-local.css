@@ -11,7 +11,7 @@
   --l2b-indrive: #b7ff00;
   --l2b-indrive-dark: #3d3d3d;
 
-  --l2b-feature: #bf561e;
+  --l2b-feature: var(--hz-feature-orange);
 
   --l2b-interview: #27506d;
 }
@@ -833,7 +833,7 @@
 @media print {
   .l2b-page * { print-color-adjust: exact; -webkit-print-color-adjust: exact; }
 .l2b-page { print-color-adjust: exact; -webkit-print-color-adjust: exact;
-  --l2b-feature: #bf561e;
+  --l2b-feature: var(--hz-feature-orange);
 
   --l2b-interview: #27506d;
 }

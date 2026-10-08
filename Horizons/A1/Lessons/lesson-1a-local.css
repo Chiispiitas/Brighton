@@ -664,7 +664,7 @@
 .l1a-page .l1a-pronunciation__title { color: var(--l1a-feature) !important; }
 
 .l1a-page {
-  --l1a-feature: #176d78;
+  --l1a-feature: var(--hz-feature-teal);
 }
 
 /* Author-requested restoration of original backgrounds.
@@ -800,3 +800,7 @@
 .l1a-identity-stage::before,
 .l1a-pronunciation::after { display: block; }
 .l1a-page .l1a-pronunciation__title { color: var(--hz-unit-dark) !important; }
+
+/* Rich color correction: preserve the canonical number-circle geometry. */
+.l1a-page--2 .l1a-number:nth-child(3n + 2) .l1a-number__digit { background: var(--hz-feature-blue) !important; }
+.l1a-page--2 .l1a-number:nth-child(3n) .l1a-number__digit { background: var(--hz-feature-teal) !important; }

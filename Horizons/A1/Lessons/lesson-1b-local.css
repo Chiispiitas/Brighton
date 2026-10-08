@@ -357,7 +357,7 @@
 
   background: transparent;
 
-  --profile-accent: #245b62;
+  --profile-accent: var(--hz-feature-teal);
 }
 
     .l1b-profile__photo {
@@ -445,7 +445,7 @@
       overflow: hidden;
       margin-left: calc(var(--hz-exercise-marker-size) + 3mm);
       padding: 2.8mm 4mm 3mm;
-      border-top: .6mm solid #315b88;
+      border-top: .6mm solid var(--hz-feature-blue);
       border-bottom: 0;
       background: transparent;
       isolation: isolate;
@@ -810,18 +810,18 @@
   white-space: pre;
 }
 
-.l1b-page .l1b-pronunciation__title { color: #315b88 !important; }
+.l1b-page .l1b-pronunciation__title { color: var(--hz-feature-blue) !important; }
 
 .l1b-page {
-  --l1b-feature: #245b62;
+  --l1b-feature: var(--hz-feature-teal);
 }
 
 .l1b-profile:nth-child(2) .l1b-profile__name {
-  color: #315b88;
+  color: var(--hz-feature-blue);
 }
 
 .l1b-profile:nth-child(3) .l1b-profile__name {
-  color: #98572c;
+  color: var(--hz-feature-orange);
 }
 
 .l1b-profile:nth-child(1) .l1b-profile__photo {
@@ -833,11 +833,11 @@
 }
 
 .l1b-profile:nth-child(2) {
-  --profile-accent: #315b88;
+  --profile-accent: var(--hz-feature-blue);
 }
 
 .l1b-profile:nth-child(3) {
-  --profile-accent: #98572c;
+  --profile-accent: var(--hz-feature-orange);
 }
 
 /* Author-requested restoration of original backgrounds.

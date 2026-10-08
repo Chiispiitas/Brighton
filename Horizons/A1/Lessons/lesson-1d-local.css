@@ -765,8 +765,8 @@
 .l1d-page--2 .l1d-live-form__footer { background: #fff; }
 
 .l1d-page {
-  --l1d-feature: #91632d;
-  --l1d-form: #266e70;
+  --l1d-feature: var(--hz-feature-teal);
+  --l1d-form: var(--hz-feature-teal);
 }
 
 /* Author-requested restoration of original backgrounds.
@@ -788,12 +788,21 @@
 /* Selected author-approved editorial details, 2026-10-07. */
 .l1d-checkin-copy__kicker { display: flex; align-items: center; gap: 2.5mm; }
 .l1d-hotel-emblem { display: block; flex: none; width: 10mm; height: 10mm; object-fit: contain; }
-.l1d-page--2 .l1d-live-form { border-top: 1.2mm solid #266e70 !important; }
-.l1d-form-masthead { display: flex; align-items: center; gap: 3mm; margin: 0 -1mm 3.5mm; padding: 2mm 0 2.5mm; border-bottom: .65mm solid #b36d3b; }
-.l1d-form-mark { display: block; flex: none; width: 9mm; height: 9mm; color: #b36d3b; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
+.l1d-page--2 .l1d-live-form { border-top: 1.2mm solid var(--hz-feature-teal) !important; }
+.l1d-form-masthead { display: flex; align-items: center; gap: 3mm; margin: 0 -1mm 3.5mm; padding: 2mm 0 2.5mm; border-bottom: .65mm solid var(--hz-feature-orange); }
+.l1d-form-mark { display: block; flex: none; width: 9mm; height: 9mm; color: var(--hz-feature-orange); fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; }
 .l1d-page--2 .l1d-form-masthead h3 { margin: 0 !important; padding: 0 !important; border: 0 !important; font-size: 15pt !important; line-height: 1.12 !important; letter-spacing: -.025em !important; }
 .l1d-page--2 .l1d-live-row { border-bottom: .2mm solid #dedfdc; background: #fff !important; }
 
 /* Author-requested generated reception artifact replaces the visible CSS form. */
 .l1d-reception-form { margin: 0; padding: 0; border: 0; background: transparent; align-self: start; }
 .l1d-reception-form img { display: block; width: 100%; height: auto; }
+
+/* Rich color for the name-writing task, with its response surface unchanged. */
+.l1d-business-option:nth-child(1) strong { color: var(--hz-feature-blue); }
+.l1d-business-option:nth-child(2) strong { color: var(--hz-feature-teal); }
+.l1d-business-option:nth-child(3) strong { color: var(--hz-feature-violet); }
+.l1d-business-option:nth-child(4) strong { color: var(--hz-feature-orange); }
+.l1d-business-name > span:first-child { color: var(--hz-feature-blue); }
+.l1d-business-name__line { border-bottom-color: var(--hz-feature-blue); }
+.l1d-role-box h3 { color: #00636b; }

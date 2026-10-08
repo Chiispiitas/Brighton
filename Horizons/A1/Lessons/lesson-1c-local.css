@@ -192,7 +192,7 @@
 
   line-height: 1.1;
 
-  border-bottom: .7mm solid #bd8646;
+  border-bottom: .7mm solid var(--hz-feature-gold);
 
   margin-bottom: 4mm;
 
@@ -249,7 +249,7 @@
 
     .l1c-city__copy h3 {
       margin: 0 0 2mm;
-      color: var(--city-accent,#234f76);
+      color: var(--city-accent,var(--hz-feature-blue));
       font-family: var(--hz-font-reading);
       font-size: 18pt;
       font-weight: 700;
@@ -548,15 +548,15 @@
 .l1c-city:nth-child(3) {
   transform: rotate(1deg);
 
-  --city-accent: #315781;
+  --city-accent: var(--hz-feature-blue);
 }
 
 .l1c-page {
-  --l1c-feature: #234f76;
+  --l1c-feature: var(--hz-feature-blue);
 }
 
 .l1c-city:nth-child(2) {
-  --city-accent: #95602e;
+  --city-accent: var(--hz-feature-orange);
 }
 
 .l1c-city:nth-child(1) .l1c-city__photo {
@@ -605,13 +605,13 @@
 .l1c-world-masthead span:last-child { color: #fff !important; }
 
 /* Selected author-approved editorial details, 2026-10-07. */
-.l1c-world-masthead { display: block; padding: 2.4mm 4mm 2.6mm !important; border-bottom: .7mm solid #bd8646; margin-bottom: 0; }
+.l1c-world-masthead { display: block; padding: 2.4mm 4mm 2.6mm !important; border-bottom: .7mm solid var(--hz-feature-gold); margin-bottom: 0; }
 .l1c-world-masthead h2 { display: flex; align-items: baseline; gap: 4mm; margin: 0; font-family: var(--hz-font-reading); font-weight: 700; line-height: 1; }
 .l1c-world-masthead .l1c-world-masthead__cities { color: #fff !important; font-size: 32pt; letter-spacing: -.05em; }
 .l1c-world-masthead .l1c-world-masthead__rest { color: #fff !important; font-family: var(--hz-font-reading); font-size: 15pt; font-style: italic; font-weight: 400; letter-spacing: 0; text-transform: none; white-space: nowrap; }
-.l1c-world-route { display: block; width: 100%; height: 6mm; margin: 1mm 0; overflow: visible; color: #356978; }
+.l1c-world-route { display: block; width: 100%; height: 6mm; margin: 1mm 0; overflow: visible; color: var(--hz-feature-teal); }
 .l1c-world-route path { fill: none; stroke: currentColor; stroke-width: 1.25; stroke-dasharray: 3 5; }
-.l1c-world-route circle { fill: #fffefa; stroke: #95602e; stroke-width: 2; }
+.l1c-world-route circle { fill: #fffefa; stroke: var(--hz-feature-orange); stroke-width: 2; }
 .l1c-city__heading { margin-bottom: 2mm; }
 .l1c-city__signature { display: block; width: 19mm; height: 4.5mm; margin-bottom: 1.4mm; color: var(--city-accent); fill: none; stroke: currentColor; stroke-width: 1.5; stroke-linejoin: round; stroke-linecap: round; }
 .l1c-city__heading h3 { margin-bottom: 0; min-height: 14mm; display: flex; align-items: start; }
