@@ -59,6 +59,14 @@ ordinary lessons. Each review feature must have its own purpose; do not add
 a universal decorative box around every question group. Reference books
 inform design principles and task formats, never copied text, art or branding.
 
+The author's subsequent content correction requires **fresh review themes**:
+recycle the taught grammar and vocabulary, not the preceding lessons' stories,
+cast, settings or tasks. A new name inside another student/city profile or
+hotel reception exchange is not a new thematic idea. Choose a genuinely
+different context and activity purpose while keeping the cumulative language
+ceiling. Use new scene-specific imagery when the new context needs it; do not
+fill the review with the lesson photographs merely because they are available.
+
 Normal numbered exercises are separated by numbering, whitespace and composition, not decorative horizontal dividers. `Go to:` cross-references also sit in open whitespace.
 
 Do not invent response mechanics that the authorized task does not ask for. If an exercise is meant to contain only questions, show only the questions: no answer lines, boxes, check circles or other response affordances unless explicitly required by the source or task design.
