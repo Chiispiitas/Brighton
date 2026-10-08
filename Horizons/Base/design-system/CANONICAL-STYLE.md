@@ -42,22 +42,23 @@ Columns/grids may appear **inside one exercise** for questions, options, vocabul
 
 ### Author-directed paired-unit reviews
 
-The author's 2026-10-07 review correction specifically requests the visual
-composition of the supplied Personal Best reviews: strong colored section
-headings, a substantial photographic reading feature, purposeful word-bank,
-table and conversation surfaces, and a prominent personal-challenge feature.
-Creativity must be visible in the composition and task design, not only in
-small accent colors. Do not flatten that review into a generic full-width
-worksheet. Use warm review paper and independent coordinated feature colors;
-retain the Horizons typography, navigational identity and readable writing space.
+The author's 2026-10-08 identity correction supersedes the earlier paired-review
+layout exception. Reviews use the same Horizons page system as the approved
+lessons: near-white paper, the short crimson registration mark, the crimson
+unit tab, bold black sans-serif title, crimson header rule, native continuation
+tab, shared exercise numerals and a single vertical numbered exercise lane.
+Do not replace this chrome with tan page bands, foreign review badges, large
+multicolored subject headings or a full-height panel of colored challenge circles.
+Use columns inside individual exercises for choices, writing, photographs and
+pair-work prompts; keep the main exercise sequence vertical and numerical.
 
-For these paired-unit reviews only, two clearly ordered vertical exercise
-columns are permitted: read down the left column, then down the right. Keep
-DOM order, exercise numbering and the visual reading order consistent. This
-author-directed exception does not authorize page-level exercise grids in
-ordinary lessons. Each review feature must have its own purpose; do not add
-a universal decorative box around every question group. Reference books
-inform design principles and task formats, never copied text, art or branding.
+Personal Best supplies the desired creative ambition and useful task principles.
+Horizons retains its own visual identity. Creativity belongs in specific
+photographic compositions, article titles, meaningful feature colors and
+task-bearing artifacts. Keep the existing learner type size and response space;
+do not solve layout pressure by shrinking them. Every feature needs a purpose,
+and ordinary practice remains in open whitespace. Reference books inform
+design principles and task formats, never copied text, art or branding.
 
 The author's subsequent content correction requires **fresh review themes**:
 recycle the taught grammar and vocabulary, not the preceding lessons' stories,
