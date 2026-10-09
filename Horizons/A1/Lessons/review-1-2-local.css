@@ -1,6 +1,7 @@
 /* Horizons A1 review. Shared paper, navigation, type and exercise lane stay
    canonical. Photography and the exhibition artifact carry the local character. */
 .rr-page { font-size:9pt; --rr-teal:var(--hz-feature-teal); }
+.rr-page .hz-page__footer { justify-content:flex-end; }
 .rr-page .hz-page-stack { gap:2.7mm; }
 .rr-page .hz-lesson-header { padding-bottom:3.2mm; }
 .rr-review-header .hz-lesson-tab__id { font-size:16.5pt; letter-spacing:-.055em; }
