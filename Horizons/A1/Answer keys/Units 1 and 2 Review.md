@@ -68,16 +68,18 @@ Answers vary. Every mission uses taught language and has a distinct product:
 
 | Lesson | Product / evidence |
 | --- | --- |
-| 1A | Choose a name for a photo and spell it intelligibly. |
-| 1B | Say Luz, Ben or Ari's name and occupation accurately. |
+| 1A | Say and spell your name; your classmate writes it. Accept a fictional name. |
+| 1B | Refer to activity 4: Luz is a doctor. Ben is a teacher. Ari is a student. |
 | 1C | Give two accurate country/nationality pairs. |
 | 1D | Ask a real classmate three personal-information questions using the forms from 1D. |
 | 2A | Use this/these accurately to describe three real items. |
-| 2B | Choose and say an exhibition time; the partner writes it on separate paper. |
+| 2B | Say three clock times; the partner writes them in numerals on separate paper. For example, seven thirty becomes 7:30. |
 | 2C | Describe two people in a family photo with accurate relationships and taught language. |
 | 2D | Describe two items' colors using an adjective before a noun or after be. |
 
 Students choose a challenge and practise several; this is not a timed test. Eight small circles hold the challenges. There is no Speaking label or photo-pass form. For the 1D challenge, accept any three taught questions about first name, last name, country, city, phone number or email; learners can use fictional details. Teachers may supply a fictional or pictured family instead of requiring a personal photograph. Any real classroom objects can be used; learners do not have to own a phone or other particular possession.
+
+For 1A and 2B, partners compare the written response with the speaker's intended name or times, then change roles. For 1B, use the written facts in activity 4 and ask for complete sentences with a/an; do not guess jobs from appearances. Lesson codes above the circles identify the language being reviewed, not extra exercise numbers.
 
 ## Design and pedagogy provenance
 

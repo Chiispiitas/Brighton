@@ -27,8 +27,7 @@
 .rr-sentence-model .rr-example { margin-left:4mm; }
 .rr-word-bank { display:flex; flex-wrap:wrap; gap:1.2mm 3mm; padding:1.7mm 2.5mm; color:var(--hz-ink); font-size:8.5pt; line-height:1.4; }
 .rr-word-bank s { color:var(--hz-muted); }
-.rr-word-bank--vocab { background:var(--hz-feature-blue); color:#fff; margin-bottom:1.5mm; }
-.rr-word-bank--vocab s { color:#fff; }
+.rr-word-bank--vocab { color:var(--hz-unit-dark); font-weight:var(--hz-fw-bold); margin-bottom:1.5mm; }
 .rr-vocab-table { width:100%; border-collapse:collapse; table-layout:fixed; background:#fff; font-size:8.5pt; }
 .rr-vocab-table th { background:var(--rr-teal); color:#fff; height:6mm; font-weight:620; border-right:.25mm solid #dbeae7; }
 .rr-vocab-table th:nth-child(1) { background:var(--hz-unit); }
@@ -76,7 +75,6 @@
 .rr-exhibition-dialogue > header { display:flex; align-items:center; gap:2mm; margin-bottom:2mm; }
 .rr-exhibition-dialogue > header > span { color:var(--rr-teal); font:620 9pt var(--hz-font-body); }
 .rr-exhibition-dialogue > header small { font:7.75pt var(--hz-font-body); letter-spacing:.04em; }
-.rr-exhibition-dialogue > header .rr-studio-mark { display:grid; place-items:center; width:7mm; height:8mm; background:var(--rr-teal); color:#fff; font:820 17pt/1 var(--hz-font-body); }
 .rr-conversation-model { margin:0 0 2.5mm; font-size:8.5pt; line-height:1.5; }
 .rr-dialogue-questions { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:2.5mm 7mm; }
 .rr-dialogue-questions p { font-size:9pt; margin:0 0 1mm; line-height:1.4; }

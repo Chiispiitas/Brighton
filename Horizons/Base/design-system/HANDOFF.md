@@ -174,7 +174,7 @@ The version before BEYOND HORIZONS is preserved at
 
 The 2026-10-08 color correction restores rich feature color across the current
 A1 book. Use the shared saturated feature tokens rather than a default pastel
-palette. The review uses strong word banks, table headers, the teal-and-gold
+palette. The review uses strong table headers, the teal-and-gold
 Color Project masthead and saturated BEYOND HORIZONS circles. Unit features
 use richer local accents; Rivera Restaurant has a green title band. Keep the
 approved page identity, lesson text, images, type size, spacing and white writing

@@ -59,6 +59,11 @@ Keep them compact, legible and spaced in the normal Horizons exercise lane;
 they do not replace the page chrome or require a full-page background panel.
 Do not add a Speaking category label, photo-pass form or photo-pass challenge.
 
+Challenge instructions must name a concrete action and its object. Identify any
+source activity explicitly, and use full sentences to distinguish what each
+partner says or writes. Avoid vague inventions such as naming a photograph or
+choosing an unspecified exhibition time. Lesson codes identify review coverage.
+
 Personal Best supplies the desired creative ambition and useful task principles.
 Horizons retains its own visual identity. Creativity belongs in specific
 photographic compositions, article titles, meaningful feature colors and
@@ -85,7 +90,7 @@ Do not invent response mechanics that the authorized task does not ask for. If a
 
 The author's 2026-10-08 color correction rejects the gradual shift toward a
 pastel-led book. Use rich, saturated crimson, teal, blue, green, orange, violet
-and gold for meaningful feature titles, review word banks and tables, title
+and gold for meaningful feature titles, review table headers, title
 activities, practice accents and BEYOND HORIZONS circles. These features should
 look lively and confident. Do not replace their primary colors with pale pink,
 peach, mint or powder-blue washes. The shared `--hz-feature-*` tokens supply
@@ -100,6 +105,12 @@ than defining the overall palette. Writing areas stay white or near-white.
 Use white text on dark saturated fills and dark ink on gold, checking contrast
 at the actual learner type size. Keep answer-option italics and normal weight;
 color must never reveal the correct choice.
+
+Standalone "words in the box" tasks retain the established word-bank colors:
+the neutral `--hz-wash` fill, crimson left rule, and dark-crimson vocabulary
+text seen in 1C. Use the shared `.hz-word-bank` rather than a new saturated
+wrapper for each exercise. Rich color belongs in feature titles, table headers
+and challenge circles without changing this familiar functional cue.
 
 Default page language:
 
@@ -120,6 +131,9 @@ Default page language:
 - SVG only for functional icons.
 
 Do not use oversized translucent words, letters, numerals or punctuation as background decoration. Do not add visual material merely to fill empty space.
+
+Avoid decorative number badges beside dialogue titles: they can be mistaken
+for exercise numbers. Keep exercise and question numbering unambiguous.
 
 ## 5. Content-led visual worlds
 

@@ -194,6 +194,13 @@ Use the existing `.hz-text-unit` utility together with semantic bold (`<strong>`
 
 If the unfamiliar item exists only in audio and is not printed in the exercise, do **not** invent a printed vocabulary list just to accompany `NEW WORDS`. Either let the listening context carry it or place the cue only where the new item is actually visible in learner-facing text.
 
+### Standalone word banks
+
+Standalone word banks use `.hz-word-bank`: neutral `--hz-wash` background and
+crimson left rule. Follow 1C's dark-crimson vocabulary text; lesson-local CSS
+may tune spacing and wrapping, but must not replace those established colors
+with an unrelated feature palette.
+
 ## 10. Real-world UI
 
 Rounded/shadowed surfaces are appropriate for genuine forms, chats, tickets, apps and similar interfaces:
