@@ -6085,6 +6085,70 @@ body.hz-debug .hz-page::after {
 .rr-challenge-ball p { margin:0; font-size:8.5pt; font-weight:400; line-height:1.25; text-align:center; }
 
 
+/* Horizons/A1/Lessons/lesson-3a-local.css */
+/* Lesson 3A follows the current A1 crimson navigation identity. Blue, gold
+   and genuine photography give the day-in-the-life feature its own character. */
+.l3a-page { --hz-unit:var(--hz-unit-1); --hz-unit-dark:#8f123f; --hz-unit-soft:#f8e6ee; font-size:9.5pt; }
+.l3a-page .hz-page-stack { gap:2.7mm; }
+.l3a-page .hz-lesson-header { padding-bottom:3.2mm; }
+.l3a-page .hz-exercises { gap:.2mm; }
+.l3a-page .hz-exercise { padding:1.6mm 0 2.15mm; }
+.l3a-page .hz-exercise__body { margin-top:1.5mm; }
+.l3a-routine-sheet { position:relative; margin:0 0 2mm; }
+.l3a-routine-sheet img { display:block; width:100%; height:auto; }
+.l3a-photo-letter { position:absolute; left:calc(var(--x) + 1mm); top:calc(var(--y) + 1mm); display:grid; place-items:center; width:4.8mm; height:4.8mm; background:#fff; color:var(--hz-unit-dark); font-size:8.5pt; font-weight:620; }
+.l3a-routine-bank { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1.5mm 2mm; padding:1.7mm 2.5mm; color:var(--hz-unit-dark); font-size:8.5pt; }
+.l3a-routine-bank > span { display:flex; align-items:baseline; gap:1mm; white-space:nowrap; }
+.l3a-routine-bank strong { font-weight:720; }
+.l3a-letter-answer { display:inline-block; width:4mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); text-align:center; }
+.l3a-example { color:#74777d; font-family:"Segoe Print","Bradley Hand","Comic Sans MS",cursive; font-weight:400; font-style:normal; }
+.l3a-leo-feature { margin:0; background:#fff; border-bottom:.28mm solid var(--hz-line); }
+.l3a-feature-head { display:flex; justify-content:space-between; align-items:center; gap:4mm; background:var(--hz-feature-blue); color:#fff; padding:2.2mm 3mm; }
+.l3a-feature-head h2 { margin:0; font-size:21pt; font-weight:820; line-height:1.1; letter-spacing:-.025em; }
+.l3a-feature-head h2 em { color:var(--hz-feature-gold); font:italic 26pt/1 Georgia,serif; }
+.l3a-feature-head p { margin:1mm 0 0; font-size:8pt; letter-spacing:.08em; }
+.l3a-feature-time { display:flex; flex-direction:column; align-items:center; color:var(--hz-ink); background:var(--hz-feature-gold); padding:1mm 3mm; font-size:19pt; font-weight:720; line-height:1; }
+.l3a-feature-time > span { margin-top:1mm; font-size:8pt; font-weight:400; }
+.l3a-feature-layout { display:grid; grid-template-columns:50mm minmax(0,1fr); align-items:start; gap:4mm; padding:2.5mm 3mm 1.5mm; font-size:11.5pt; }
+.l3a-feature-layout figure { margin:0; }
+.l3a-feature-layout img { display:block; width:100%; height:52mm; object-fit:cover; object-position:center 15%; }
+.l3a-feature-copy { line-height:1.5; }
+.l3a-feature-copy p { margin:0 0 2mm; }
+.l3a-feature-copy p:last-child { margin-bottom:0; }
+.l3a-feature-sources { display:flex; flex-wrap:wrap; justify-content:space-between; gap:1mm 3mm; padding:0 3mm 1.8mm; color:var(--hz-feature-blue); font-size:7pt; line-height:1.35; }
+.l3a-feature-sources a { color:inherit; text-decoration:none; }
+.l3a-list { list-style:none; counter-reset:item; padding:0; margin:0; }
+.l3a-list > li { counter-increment:item; padding-left:4.5mm; position:relative; line-height:1.45; }
+.l3a-list > li::before { content:counter(item); position:absolute; top:0; left:0; color:var(--hz-unit-dark); font-weight:620; font-size:8.5pt; }
+.l3a-two-columns { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.8mm 7mm; }
+.l3a-gap { display:inline-block; min-width:18mm; height:4.5mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); vertical-align:baseline; }
+.l3a-notice { display:grid; gap:1.4mm; }
+.l3a-notice b { color:var(--hz-unit-dark); }
+.l3a-continuation-content { padding-top:24mm; }
+.l3a-page--2 .hz-exercises { padding-top:0 !important; }
+.l3a-page--2 .hz-focus-box { margin:1.2mm 0 .8mm; }
+.l3a-grammar p { margin:0 0 1mm; }
+.l3a-grammar p:last-child { margin-bottom:0; }
+.l3a-write { display:block; height:7mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
+.l3a-model { margin:0 0 2mm; font-size:9pt; line-height:1.4; }
+.l3a-model .l3a-example { margin-left:4mm; }
+.l3a-sentence-lines .l3a-write { height:7mm; }
+.l3a-listening-head { display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:1.5mm 3mm; margin:0 0 2mm; }
+.l3a-listening-head h2 { margin:0; color:var(--hz-feature-teal); font-size:15pt; line-height:1.2; font-weight:820; letter-spacing:-.02em; }
+.l3a-listening-head h2 em { color:var(--hz-feature-orange); font:italic 16pt/1.2 Georgia,serif; }
+.l3a-listening-head > span { color:var(--hz-ink); font-size:8.5pt; }
+.l3a-time-table { width:100%; border-collapse:collapse; table-layout:fixed; font-size:9pt; }
+.l3a-time-table thead { background:var(--hz-feature-teal); color:#fff; }
+.l3a-time-table th { padding:1.2mm 1.5mm; font-weight:620; text-align:center; }
+.l3a-time-table tbody th { text-align:left; color:var(--hz-unit-dark); }
+.l3a-time-table td { height:8mm; background:#fff; text-align:center; border-bottom:.25mm solid var(--hz-line-strong); border-left:.25mm solid var(--hz-line); }
+.l3a-time-table tbody tr:last-child th { border-bottom:.25mm solid var(--hz-line-strong); }
+.l3a-personal-model { margin:0 0 1mm; }
+.l3a-free-writing { display:grid; gap:0; }
+.l3a-pair-model { margin-bottom:1mm; }
+.l3a-pair-model p { margin:0 0 .8mm; }
+
+
 /* Student's Book unifier */
 
 html,
@@ -6174,6 +6238,7 @@ body {
   <link rel="stylesheet" href="./Lessons/lesson-2c-local.css">
   <link rel="stylesheet" href="./Lessons/lesson-2d-local.css">
   <link rel="stylesheet" href="./Lessons/review-1-2-local.css">
+  <link rel="stylesheet" href="./Lessons/lesson-3a-local.css">
 </head>
 <body class="hz-book">
   <main id="hz-book">
@@ -8222,6 +8287,125 @@ body {
   </div>
 </section></div>
     </main><footer class="hz-page__footer"><span class="hz-page-number">22</span></footer>
+  </article>
+
+<!-- ===== 3A.html ===== -->
+<article class="hz-page hz-content hz-unit-3 l3a-page" data-page="23">
+    <main class="hz-page__content"><div class="hz-page-stack">
+      <header class="hz-lesson-header">
+        <div class="hz-lesson-tab" aria-label="Lesson 3A"><span class="hz-lesson-tab__label">Lesson</span><span class="hz-lesson-tab__id">3A</span></div>
+        <div class="hz-lesson-heading"><h1 class="hz-lesson-title">WHAT'S YOUR ROUTINE?</h1><div class="hz-objectives"><span class="hz-objectives__item">Daily routines</span><span class="hz-objectives__item">Present simple: affirmative</span></div></div>
+      </header>
+      <div class="hz-exercises">
+        <section class="hz-exercise">
+          <div class="hz-exercise-number">1</div><div class="hz-exercise__content">
+            <p class="hz-exercise__instruction"><span class="hz-audio-badge">♪ 3.1</span>Listen and repeat. Look and match.</p>
+            <div class="hz-exercise__body">
+              <figure class="l3a-routine-sheet" data-image-slot="HZN_A1_U03_LA_E01_IMG_01">
+                <img src="./Images/3A/Daily-routines-contact-sheet-v1.png" alt="Eight everyday scenes. Top row: A a man gets up; B a woman has breakfast; C a woman goes to work; D a man has lunch. Bottom row: E a man goes home; F a woman has dinner; G a man watches TV; H a woman goes to bed.">
+                <span class="l3a-photo-letter" style="--x:0%;--y:0%">A</span><span class="l3a-photo-letter" style="--x:25%;--y:0%">B</span><span class="l3a-photo-letter" style="--x:50%;--y:0%">C</span><span class="l3a-photo-letter" style="--x:75%;--y:0%">D</span>
+                <span class="l3a-photo-letter" style="--x:0%;--y:50%">E</span><span class="l3a-photo-letter" style="--x:25%;--y:50%">F</span><span class="l3a-photo-letter" style="--x:50%;--y:50%">G</span><span class="l3a-photo-letter" style="--x:75%;--y:50%">H</span>
+              </figure>
+              <div class="hz-word-bank l3a-routine-bank">
+                <span><b>1</b><span class="l3a-letter-answer l3a-example">B</span><strong>have breakfast</strong></span><span><b>2</b><span class="l3a-letter-answer"></span><strong>go to bed</strong></span><span><b>3</b><span class="l3a-letter-answer"></span><strong>go to work</strong></span><span><b>4</b><span class="l3a-letter-answer"></span><strong>get up</strong></span>
+                <span><b>5</b><span class="l3a-letter-answer"></span><strong>watch TV</strong></span><span><b>6</b><span class="l3a-letter-answer"></span><strong>have lunch</strong></span><span><b>7</b><span class="l3a-letter-answer"></span><strong>go home</strong></span><span><b>8</b><span class="l3a-letter-answer"></span><strong>have dinner</strong></span>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="hz-exercise">
+          <div class="hz-exercise-number">2</div><div class="hz-exercise__content">
+            <p class="hz-exercise__instruction"><span class="hz-audio-badge">♪ 3.2</span>Read and listen.</p>
+            <div class="hz-exercise__body">
+              <article class="l3a-leo-feature">
+                <header class="l3a-feature-head"><div><h2>A day with <em>Leo</em></h2><p>MIAMI · 2023</p></div><span class="l3a-feature-time">7:00<span>the morning</span></span></header>
+                <div class="l3a-feature-layout">
+                  <figure data-image-slot="HZN_A1_U03_LA_E02_IMG_01"><img src="./Images/3A/Leo-Messi-2023.jpg" alt="A real photograph of Lionel Messi in his pink Inter Miami shirt in 2023."></figure>
+                  <div class="l3a-feature-copy hz-student-text">
+                    <p>Leo Messi is from Argentina. This is his routine in Miami in 2023.</p>
+                    <p>He <strong class="hz-text-unit">gets up</strong> at seven. He <strong class="hz-text-unit">has breakfast</strong> with his family. His children <strong class="hz-text-unit">go</strong> to school.</p>
+                    <p>Leo <strong class="hz-text-unit">goes to work</strong>. He trains at the club. He <strong class="hz-text-unit">goes home</strong> at one.</p>
+                    <p>He <strong class="hz-text-unit">has lunch</strong> with Antonela. They <strong class="hz-text-unit">watch TV</strong> at home.</p>
+                  </div>
+                </div>
+                <div class="l3a-feature-sources"><a href="https://www.youtube.com/watch?v=qYwlqx-JLok">Adapted from an OLGA interview, 2023.</a><span>Photo: <a href="https://commons.wikimedia.org/wiki/File:CINvMIA_2023-08-23_-_Lionel_Messi,_Tata_Martino_(PXL_20230824_010525464)_(Messi_crop).jpg">Hayden Schiff</a> · <a href="https://creativecommons.org/licenses/by/4.0/">CC BY 4.0</a> · cropped</span></div>
+              </article>
+            </div>
+          </div>
+        </section>
+        <section class="hz-exercise">
+          <div class="hz-exercise-number">3</div><div class="hz-exercise__content">
+            <p class="hz-exercise__instruction">Read again. Complete.</p>
+            <div class="hz-exercise__body"><ol class="l3a-list l3a-two-columns">
+              <li>Leo gets up at <span class="l3a-gap"></span>.</li><li>Leo goes home at <span class="l3a-gap"></span>.</li><li>Leo has lunch with <span class="l3a-gap"></span>.</li><li>His children go to <span class="l3a-gap"></span>.</li>
+            </ol></div>
+          </div>
+        </section>
+        <section class="hz-exercise">
+          <div class="hz-exercise-number">4</div><div class="hz-exercise__content">
+            <p class="hz-exercise__instruction">Look at the text. Choose and circle.</p>
+            <div class="hz-exercise__body"><ol class="l3a-list l3a-notice">
+              <li>The text is about <em class="hz-answer-option">a routine / one special day</em>.</li>
+              <li>Choose the verb with <b>he</b>: <em class="hz-answer-option">get / gets</em>.</li>
+              <li>Choose the verb with <b>they</b>: <em class="hz-answer-option">watch / watches</em>.</li>
+            </ol></div>
+          </div>
+        </section>
+      </div>
+    </div></main><footer class="hz-page__footer"><span></span><span class="hz-page-number">23</span></footer>
+  </article>
+  <article class="hz-page hz-content hz-unit-3 hz-continuation-page l3a-page l3a-page--2" data-page="24">
+    <main class="hz-page__content"><span class="hz-continuation" aria-label="Lesson 3A continued">3A</span><div class="hz-page-stack">
+      <div class="l3a-continuation-content">
+        <section class="hz-focus-box hz-no-break" aria-label="Grammar: present simple affirmative">
+          <header class="hz-focus-box__header">GRAMMAR: PRESENT SIMPLE (+)</header>
+          <div class="hz-focus-box__body hz-content-grid hz-content-grid--2 l3a-grammar">
+            <div><p><strong>I / you / we / they</strong></p><p>I <b>get up</b> at seven.</p><p>You <b>go</b> to work.</p><p>We <b>have</b> breakfast.</p><p>They <b>watch</b> TV.</p></div>
+            <div><p><strong>He / she / it</strong></p><p>He <b>gets up</b> at seven.</p><p>She <b>goes</b> to work.</p><p>He <b>has</b> breakfast.</p><p>She <b>watches</b> TV.</p></div>
+          </div>
+        </section>
+        <div class="hz-exercises">
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">5</div><div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Choose and circle.</p>
+              <div class="hz-exercise__body"><ol class="l3a-list l3a-two-columns">
+                <li>I <em class="hz-answer-option">get / gets</em> up at six.</li><li>My father <em class="hz-answer-option">go / goes</em> to work.</li><li>Nina and Omar <em class="hz-answer-option">have / has</em> breakfast.</li><li>She <em class="hz-answer-option">watch / watches</em> TV.</li><li>You <em class="hz-answer-option">go / goes</em> home at five.</li><li>Leo <em class="hz-answer-option">have / has</em> lunch at one.</li>
+              </ol></div>
+            </div>
+          </section>
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">6</div><div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Write the sentences.</p>
+              <div class="hz-exercise__body">
+                <p class="l3a-model">0 &nbsp; he / watch TV / at home <span class="l3a-example">He watches TV at home.</span></p>
+                <ol class="l3a-list l3a-two-columns l3a-sentence-lines"><li>I / get up / at 6:30<span class="l3a-write"></span></li><li>Mia / go to work / at 8:00<span class="l3a-write"></span></li><li>we / have dinner / at 7:30<span class="l3a-write"></span></li><li>my brother / go to bed / at 10:00<span class="l3a-write"></span></li></ol>
+              </div>
+            </div>
+          </section>
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">7</div><div class="hz-exercise__content">
+              <p class="hz-exercise__instruction"><span class="hz-audio-badge">♪ 3.3</span>Listen. Complete with the times.</p>
+              <div class="hz-exercise__body">
+                <header class="l3a-listening-head"><h2>Two people. <em>Two routines.</em></h2><span>Nina · a teacher &nbsp; / &nbsp; Omar · a chef</span></header>
+                <table class="l3a-time-table" aria-label="Listen for Nina and Omar's routine times"><colgroup><col style="width:17%"><col style="width:20.75%"><col style="width:20.75%"><col style="width:20.75%"><col style="width:20.75%"></colgroup><thead><tr><th></th><th>get up</th><th>go to work</th><th>go home</th><th>go to bed</th></tr></thead><tbody><tr><th>Nina</th><td class="l3a-example">6:30</td><td></td><td></td><td></td></tr><tr><th>Omar</th><td></td><td></td><td></td><td></td></tr></tbody></table>
+              </div>
+            </div>
+          </section>
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">8</div><div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Write four sentences about your routine.</p>
+              <div class="hz-exercise__body"><p class="l3a-personal-model l3a-example">I have breakfast at seven.</p><div class="l3a-free-writing"><span class="l3a-write"></span><span class="l3a-write"></span><span class="l3a-write"></span><span class="l3a-write"></span></div></div>
+            </div>
+          </section>
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">9</div><div class="hz-exercise__content">
+              <p class="hz-exercise__instruction">Work in pairs. Read your sentences. Write two sentences about your classmate.</p>
+              <div class="hz-exercise__body"><div class="l3a-pair-model hz-dialogue-text"><p><b>Nina:</b> I go to work at eight.</p><p><b>Omar:</b> Nina goes to work at eight.</p></div><div class="l3a-free-writing"><span class="l3a-write"></span><span class="l3a-write"></span></div></div>
+            </div>
+          </section>
+        </div>
+      </div>
+    </div></main><footer class="hz-page__footer"><span></span><span class="hz-page-number">24</span></footer>
   </article>
   </main>
 
