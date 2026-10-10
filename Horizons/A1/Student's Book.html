@@ -6151,7 +6151,8 @@ body.hz-debug .hz-page::after {
 
 
 /* Horizons/A1/Lessons/lesson-3b-local.css */
-/* Native Horizons navigation; cobalt/gold radio feature and open practice. */
+/* Open radio editorial: mixed photo proportions, serif names and schedule
+   entries. Shared Horizons chrome and grammar shell remain canonical. */
 .l3b-page { --hz-unit:var(--hz-unit-1); --hz-unit-dark:#8f123f; --hz-unit-soft:#f8e6ee; font-size:9.5pt; }
 .l3b-page .hz-page-stack { gap:2.7mm; }
 .l3b-page .hz-lesson-header { padding-bottom:3.2mm; }
@@ -6162,40 +6163,58 @@ body.hz-debug .hz-page::after {
 .l3b-week > span { display:flex; flex-direction:column; align-items:center; gap:1.5mm; padding:2mm .5mm 3mm; font-size:9pt; font-weight:400; border-right:.25mm solid var(--hz-line); }
 .l3b-week > span:last-child { border-right:0; }
 .l3b-week b { color:var(--hz-feature-blue); font-size:8pt; }
-.l3b-air-head { display:flex; justify-content:space-between; gap:5mm; padding:3mm 4mm; background:#135dac; color:#fff; }
-.l3b-air-head p { margin:0 0 1.5mm; font-weight:800; font-size:8pt; letter-spacing:.1em; }
-.l3b-air-head h2 { margin:0; font-size:23pt; line-height:1.04; font-weight:800; letter-spacing:-.025em; }
-.l3b-air-head h2 em { color:var(--hz-feature-gold); font:italic 26pt/1.04 Georgia,serif; }
-.l3b-air-days { display:flex; align-items:center; gap:2mm; transform:rotate(-7deg); }
-.l3b-air-days span { display:grid; place-items:center; width:12mm; height:15mm; background:var(--hz-feature-gold); color:#10375d; border-top:1.5mm solid #f0a912; font-size:10pt; font-weight:800; }
-.l3b-guest-photo { margin:0; }
-.l3b-guest-photo img { width:100%; height:auto; display:block; }
-.l3b-guests { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:3mm; padding:2mm 0 .5mm; }
-.l3b-guests > div { display:flex; align-items:baseline; flex-wrap:wrap; gap:.7mm 2mm; }
-.l3b-guests strong { color:var(--hz-feature-blue); font-size:11pt; }
-.l3b-guests span { font-size:8.5pt; }
-.l3b-listening-table,.l3b-survey { width:100%; border-collapse:collapse; table-layout:fixed; font-size:9pt; }
-.l3b-listening-table thead { background:var(--hz-feature-blue); color:#fff; }
-.l3b-listening-table th,.l3b-listening-table td { padding:2mm 2.2mm; border-bottom:.25mm solid var(--hz-line); text-align:left; }
-.l3b-listening-table tbody th { color:var(--hz-feature-blue); font-weight:650; }
-.l3b-listening-table tbody tr { height:11mm; }
+.l3b-air-head { padding:1mm 0 .7mm; color:var(--hz-feature-blue); }
+.l3b-air-head p { margin:0 0 1.5mm; font-weight:800; font-size:8.5pt; letter-spacing:.1em; }
+.l3b-air-head h2 { display:flex; align-items:baseline; flex-wrap:wrap; gap:1mm 4mm; margin:0; font-size:30pt; line-height:1.05; font-weight:800; letter-spacing:-.035em; }
+.l3b-air-head h2 em { color:var(--hz-feature-orange); font:italic 32pt/1.05 Georgia,serif; letter-spacing:-.025em; }
+.l3b-week-stories { display:grid; gap:4mm; }
+.l3b-week-story { display:grid; grid-template-columns:40mm minmax(0,1fr); align-items:center; gap:6mm; }
+.l3b-week-story figure { margin:0; }
+.l3b-week-story img { display:block; width:100%; height:33mm; object-fit:cover; }
+.l3b-week-story--lucia { grid-template-columns:43mm minmax(0,1fr); }
+.l3b-week-story--lucia img { height:45mm; object-position:center 46%; }
+.l3b-week-story--ken { grid-template-columns:minmax(0,1fr) 59mm; padding-left:12mm; }
+.l3b-week-story--ken figure { grid-column:2; grid-row:1; }
+.l3b-week-story--ken .l3b-story-copy { grid-column:1; grid-row:1; }
+.l3b-week-story--ken img { height:41mm; object-position:70% 39%; }
+.l3b-week-story--maryam { grid-template-columns:60mm minmax(0,1fr); }
+.l3b-week-story--maryam img { height:40mm; object-position:center; }
+.l3b-story-copy header { display:flex; flex-wrap:wrap; align-items:baseline; gap:1mm 3mm; margin:0 0 2mm; }
+.l3b-story-copy h3 { margin:0; font:italic 21pt/1.1 Georgia,serif; color:var(--hz-feature-orange); }
+.l3b-week-story--ken h3 { color:var(--hz-feature-blue); }
+.l3b-week-story--maryam h3 { color:var(--hz-feature-teal); }
+.l3b-story-copy header p { margin:0; color:var(--hz-ink); font-size:9pt; }
+.l3b-story-copy blockquote { margin:0; font:11.5pt/1.5 Georgia,serif; color:var(--hz-ink); }
+.l3b-story-copy blockquote p { margin:0 0 1.5mm; }
+.l3b-story-copy blockquote p:last-child { margin-bottom:0; }
+.l3b-survey { width:100%; border-collapse:collapse; table-layout:fixed; font-size:9pt; }
 .l3b-gap { display:inline-block; width:20mm; height:4.2mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); vertical-align:baseline; }
 .l3b-example { color:#74777d; font-family:"Segoe Print","Bradley Hand","Comic Sans MS",cursive; font-weight:400; font-style:normal; }
 .l3b-extracts { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:5mm; }
-.l3b-extracts p { margin:0 0 1mm; }
-.l3b-extracts b,.l3b-pair-model b,.l3b-lunch-layout b { color:var(--hz-unit-dark); }
+.l3b-extracts dl { display:grid; grid-template-columns:11mm minmax(0,1fr); gap:1mm 2mm; margin:0; }
+.l3b-extracts dt { color:var(--hz-unit-dark); font-weight:650; font-size:8.5pt; }
+.l3b-extracts dd { margin:0; }
+.l3b-pair-model b,.l3b-lunch-layout b { color:var(--hz-unit-dark); }
 .l3b-list { list-style:none; counter-reset:item; padding:0; margin:0; }
 .l3b-list > li { counter-increment:item; position:relative; padding-left:4.5mm; line-height:1.45; }
 .l3b-list > li::before { content:counter(item); position:absolute; left:0; top:0; color:var(--hz-unit-dark); font-size:8.5pt; font-weight:620; }
-.l3b-notice { margin-top:2.4mm; display:grid; gap:1.1mm; }
+.l3b-notice { margin-top:2.8mm; display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:4mm; }
 .l3b-continuation-content { padding-top:7mm; }
 .l3b-page--2 .hz-exercises { padding-top:0 !important; }
 .l3b-page--2 .hz-focus-box { margin:1.2mm 0 1.6mm; }
-.l3b-grammar p { margin:0 0 1.2mm; }
+.l3b-grammar p { margin:0 0 .9mm; }
 .l3b-grammar p:last-child { margin-bottom:0; }
 .l3b-two-columns { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:2.3mm 6mm; }
 .l3b-write { display:block; height:7mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
 .l3b-model { margin:0 0 2mm; line-height:1.45; }
+.l3b-model .l3b-example { margin-left:3mm; }
+.l3b-complete-dialogues { display:grid; gap:2.4mm; }
+.l3b-complete-dialogues > li { display:grid; grid-template-columns:minmax(0,1fr) 42mm; gap:5mm; }
+.l3b-complete-dialogues .l3b-gap { width:16mm; }
+.l3b-corrections { display:grid; gap:1.5mm; }
+.l3b-corrections > li { display:grid; grid-template-columns:62mm minmax(0,1fr); gap:4mm; align-items:center; min-height:8mm; }
+.l3b-corrections > li::before { top:50%; transform:translateY(-50%); }
+.l3b-corrections .l3b-write { height:7mm; }
 .l3b-pair-model { display:flex; gap:5mm; margin-bottom:2mm; }
 .l3b-pair-model p { margin:0; }
 .l3b-survey th,.l3b-survey td { padding:1.8mm 2mm; text-align:left; border-bottom:.25mm solid var(--hz-line); }
@@ -6209,7 +6228,7 @@ body.hz-debug .hz-page::after {
 .l3b-lunch-note h2 { margin:0 0 2mm; font-size:17pt; font-weight:800; line-height:1.2; color:var(--hz-feature-teal); }
 .l3b-lunch-note h2 em { color:var(--hz-feature-orange); font:italic 18pt/1.2 Georgia,serif; }
 .l3b-lunch-note .l3b-gap { width:38mm; margin-left:2mm; }
-.l3b-inset { margin-left:calc(var(--hz-exercise-marker-size) + 3mm); }
+.l3b-inset { margin-left:calc(var(--hz-exercise-marker-size) + 3mm); margin-top:.8mm; }
 
 
 /* Student's Book unifier */
@@ -8494,23 +8513,34 @@ body {
           <div class="hz-exercise-number">2</div><div class="hz-exercise__content">
             <p class="hz-exercise__instruction"><span class="hz-audio-badge">♪ 3.5</span>Listen. The three weeks: <em class="hz-answer-option">the same / different</em>?</p>
             <div class="hz-exercise__body l3b-air">
-              <header class="l3b-air-head"><div><p>HORIZONS ON AIR</p><h2>Three people.<br><em>Three weeks.</em></h2></div><div class="l3b-air-days" aria-hidden="true"><span>MON</span><span>FRI</span><span>SUN</span></div></header>
-              <figure class="l3b-guest-photo" data-image-slot="HZN_A1_U03_LB_E02_IMG_01"><img src="./Images/3B/Three-working-weeks-v1.png" alt="Three fictional podcast guests in their workplaces: Lucía in a Valencia bookshop, Ken in an Osaka design studio, and Maryam in an Abu Dhabi office."></figure>
-              <div class="l3b-guests"><div><strong>Lucía</strong><span>Valencia · Spain</span></div><div><strong>Ken</strong><span>Osaka · Japan</span></div><div><strong>Maryam</strong><span>Abu Dhabi · UAE</span></div></div>
+              <header class="l3b-air-head"><p>HORIZONS ON AIR</p><h2><span>Three people.</span><em>Three weeks.</em></h2></header>
             </div>
           </div>
         </section>
         <section class="hz-exercise">
           <div class="hz-exercise-number">3</div><div class="hz-exercise__content">
             <p class="hz-exercise__instruction"><span class="hz-audio-badge">♪ 3.5</span>Listen again. Complete with days and times.</p>
-            <div class="hz-exercise__body"><table class="l3b-listening-table"><colgroup><col style="width:18%"><col style="width:47%"><col style="width:35%"></colgroup><thead><tr><th></th><th>Work days</th><th>Go home</th></tr></thead><tbody><tr><th>Lucía</th><td>from <span class="l3b-gap l3b-example">Tuesday</span> to <span class="l3b-gap"></span></td><td>evening: <span class="l3b-gap"></span></td></tr><tr><th>Ken</th><td>from Monday to <span class="l3b-gap"></span></td><td>at <span class="l3b-gap"></span></td></tr><tr><th>Maryam</th><td>from Monday to Friday</td><td>on Friday: <span class="l3b-gap"></span></td></tr></tbody></table></div>
+            <div class="hz-exercise__body l3b-week-stories">
+              <article class="l3b-week-story l3b-week-story--lucia">
+                <figure data-image-slot="HZN_A1_U03_LB_E03_IMG_01"><img src="./Images/3B/Bookshop-cottonbro-4855559.jpg" alt="Real stock photograph by cottonbro studio: a woman holding books in a bookshop, illustrating the fictional Lucía role."></figure>
+                <div class="l3b-story-copy"><header><h3>Lucía</h3><p>Valencia · Spain</p></header><blockquote><p>I don't work on Monday. I work from <span class="l3b-gap l3b-example">Tuesday</span> to <span class="l3b-gap"></span>.</p><p>I go home at <span class="l3b-gap"></span> in the evening.</p></blockquote></div>
+              </article>
+              <article class="l3b-week-story l3b-week-story--ken">
+                <figure data-image-slot="HZN_A1_U03_LB_E03_IMG_02"><img src="./Images/3B/Office-Felicity-Tai-7964239.jpg" alt="Real stock photograph by Felicity Tai: a man working at a desk, illustrating the fictional Ken role."></figure>
+                <div class="l3b-story-copy"><header><h3>Ken</h3><p>Osaka · Japan</p></header><blockquote><p>I work from Monday to <span class="l3b-gap"></span>.</p><p>I don't go home at five.<br>I go home at <span class="l3b-gap"></span>.</p></blockquote></div>
+              </article>
+              <article class="l3b-week-story l3b-week-story--maryam">
+                <figure data-image-slot="HZN_A1_U03_LB_E03_IMG_03"><img src="./Images/3B/Office-Cedric-Fauntleroy-8154237.jpg" alt="Real stock photograph by Cedric Fauntleroy: a woman reading papers in an office, illustrating the fictional Maryam role."></figure>
+                <div class="l3b-story-copy"><header><h3>Maryam</h3><p>Abu Dhabi · UAE</p></header><blockquote><p>We work from Monday to Friday.</p><p>On Friday, we go home at <span class="l3b-gap"></span>.</p></blockquote></div>
+              </article>
+            </div>
           </div>
         </section>
         <section class="hz-exercise">
           <div class="hz-exercise-number">4</div><div class="hz-exercise__content">
             <p class="hz-exercise__instruction">Read. Look at the words in bold. Choose and circle.</p>
             <div class="hz-exercise__body">
-              <div class="l3b-extracts hz-dialogue-text"><div><p><b>Lucy:</b> <strong class="hz-text-unit">Do</strong> you work on Monday?</p><p><b>Lucía:</b> No, I <strong class="hz-text-unit">don't</strong>. I <strong class="hz-text-unit">don't work</strong> on Monday.</p></div><div><p><b>Lucy:</b> <strong class="hz-text-unit">Does</strong> Ken go home at five?</p><p><b>Lucía:</b> No, he <strong class="hz-text-unit">doesn't</strong>. He <strong class="hz-text-unit">doesn't go</strong> home at five.</p></div></div>
+              <div class="l3b-extracts hz-dialogue-text"><dl><dt>Lucy</dt><dd><strong class="hz-text-unit">Do</strong> you work on Monday?</dd><dt>Lucía</dt><dd>No, I <strong class="hz-text-unit">don't</strong>. I <strong class="hz-text-unit">don't work</strong> on Monday.</dd></dl><dl><dt>Lucy</dt><dd><strong class="hz-text-unit">Does</strong> Ken go home at five?</dd><dt>Lucía</dt><dd>No, he <strong class="hz-text-unit">doesn't</strong>. He <strong class="hz-text-unit">doesn't go</strong> home at five.</dd></dl></div>
               <ol class="l3b-list l3b-notice"><li>Question with <em>you</em>: <em class="hz-answer-option">do / does</em>?</li><li>Negative with <em>he</em>: <em class="hz-answer-option">don't / doesn't</em>?</li><li>After <em>doesn't</em>: <em class="hz-answer-option">go / goes</em>?</li></ol>
             </div>
           </div>
@@ -8523,17 +8553,17 @@ body {
       <div class="l3b-continuation-content">
         <section class="hz-focus-box hz-no-break" aria-label="Grammar: present simple negatives and questions">
           <header class="hz-focus-box__header">GRAMMAR: PRESENT SIMPLE (− / ?)</header>
-          <div class="hz-focus-box__body hz-content-grid hz-content-grid--2 l3b-grammar"><div><p><strong>I / you / we / they</strong></p><p>I <b>don't work</b> on Monday.</p><p><b>Do</b> you work on Saturday?</p><p>Yes, I <b>do</b>. / No, I <b>don't</b>.</p></div><div><p><strong>He / she / it</strong></p><p>She <b>doesn't work</b> on Monday.</p><p><b>Does</b> he work on Saturday?</p><p>Yes, he <b>does</b>. / No, he <b>doesn't</b>.</p></div></div>
+          <div class="hz-focus-box__body hz-content-grid hz-content-grid--3 l3b-grammar"><div><p><strong>I / you / we / they</strong></p><p>I <b>don't work</b> on Monday.</p><p><strong>He / she / it</strong></p><p>She <b>doesn't work</b> on Monday.</p></div><div><p><b>Do</b> you work on Saturday?</p><p><b>Does</b> he work on Saturday?</p></div><div><p>Yes, I <b>do</b>.<br>No, I <b>don't</b>.</p><p>Yes, he <b>does</b>.<br>No, he <b>doesn't</b>.</p></div></div>
         </section>
         <div class="hz-exercises">
           <section class="hz-exercise">
             <div class="hz-exercise-number">5</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Choose and circle.</p><div class="hz-exercise__body"><ol class="l3b-list l3b-two-columns"><li>I <em class="hz-answer-option">don't / doesn't</em> work on Sunday.</li><li><em class="hz-answer-option">Do / Does</em> she get up at six?</li><li>Ken doesn't <em class="hz-answer-option">go / goes</em> home at five.</li><li><em class="hz-answer-option">Do / Does</em> they work on Friday?</li><li>My father <em class="hz-answer-option">don't / doesn't</em> watch TV.</li><li>Does Maryam <em class="hz-answer-option">work / works</em> on Friday?</li></ol></div></div>
           </section>
           <section class="hz-exercise">
-            <div class="hz-exercise-number">6</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Complete with <em class="hz-answer-option">do, does, don't</em> or <em class="hz-answer-option">doesn't</em>.</p><div class="hz-exercise__body"><ol class="l3b-list l3b-two-columns"><li><span class="l3b-gap"></span> you go to work on Saturday?<br>No, I <span class="l3b-gap"></span>.</li><li><span class="l3b-gap"></span> Lucía work on Monday?<br>No, she <span class="l3b-gap"></span>.</li><li><span class="l3b-gap"></span> Ken and Maryam work on Friday?<br>Yes, they <span class="l3b-gap"></span>.</li><li><span class="l3b-gap"></span> Maryam go home at twelve on Friday?<br>Yes, she <span class="l3b-gap"></span>.</li></ol></div></div>
+            <div class="hz-exercise-number">6</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Complete with <em class="hz-answer-option">do, does, don't</em> or <em class="hz-answer-option">doesn't</em>.</p><div class="hz-exercise__body"><ol class="l3b-list l3b-complete-dialogues"><li><span><span class="l3b-gap"></span> you go to work on Saturday?</span><span>No, I <span class="l3b-gap"></span>.</span></li><li><span><span class="l3b-gap"></span> Lucía work on Monday?</span><span>No, she <span class="l3b-gap"></span>.</span></li><li><span><span class="l3b-gap"></span> Ken and Maryam work on Friday?</span><span>Yes, they <span class="l3b-gap"></span>.</span></li><li><span><span class="l3b-gap"></span> Maryam go home at twelve on Friday?</span><span>Yes, she <span class="l3b-gap"></span>.</span></li></ol></div></div>
           </section>
           <section class="hz-exercise">
-            <div class="hz-exercise-number">7</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Write negative sentences.</p><div class="hz-exercise__body"><p class="l3b-model">0 &nbsp; Lucía works on Monday.<br><span class="l3b-example">Lucía doesn't work on Monday.</span></p><ol class="l3b-list l3b-two-columns l3b-corrections"><li>Ken goes home at five.<span class="l3b-write"></span></li><li>Maryam works on Sunday.<span class="l3b-write"></span></li><li>Lucía works on Sunday.<span class="l3b-write"></span></li><li>Ken and Maryam work on Saturday.<span class="l3b-write"></span></li></ol></div></div>
+            <div class="hz-exercise-number">7</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Write negative sentences.</p><div class="hz-exercise__body"><p class="l3b-model">0 &nbsp; Lucía works on Monday. <span class="l3b-example">Lucía doesn't work on Monday.</span></p><ol class="l3b-list l3b-corrections"><li><span>Ken goes home at five.</span><span class="l3b-write"></span></li><li><span>Maryam works on Sunday.</span><span class="l3b-write"></span></li><li><span>Lucía works on Sunday.</span><span class="l3b-write"></span></li><li><span>Ken and Maryam work on Saturday.</span><span class="l3b-write"></span></li></ol></div></div>
           </section>
           <section class="hz-exercise">
             <div class="hz-exercise-number">8</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Work in pairs. Ask and write.</p><div class="hz-exercise__body"><div class="l3b-pair-model hz-dialogue-text"><p><b>A:</b> Do you work on Saturday?</p><p><b>B:</b> No, I don't.</p></div><table class="l3b-survey"><thead><tr><th>Do you ...?</th><th>You</th><th>Your classmate</th></tr></thead><tbody><tr><th>work on Saturday</th><td></td><td></td></tr><tr><th>go to school on Monday</th><td></td><td></td></tr><tr><th>get up at seven on Sunday</th><td></td><td></td></tr></tbody></table></div></div>

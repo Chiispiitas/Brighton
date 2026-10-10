@@ -115,6 +115,10 @@ The key distinction is **intentional simplification through color masses**. The 
 
 ## 4. External images
 
+For new photographic contexts, search suitable real photography before choosing image generation. The author's 2026-10-10 3B revision demonstrates this route with three real Pexels photographs. Select assets for the teaching context, composition and print quality, rather than using the first search result. A free download alone is not a license: inspect the original source page and current terms, record the photographer and publication permissions, and distinguish free assets from paid/Plus assets or generated uploads. Where available, retain evidence of the original photographic date/camera metadata.
+
+Stock models may illustrate fictional learner texts without being presented as the actual interviewees. Record this in provenance/teacher notes, avoid asserting the model's nationality or actual location, and do not imply endorsement. Keep a local, versioned file and source/license manifest. The 3B demonstration required public image search and permitted download links, with no additional connector or API key.
+
 Only use assets permitted for the intended publication/use.
 
 For every external production asset record:

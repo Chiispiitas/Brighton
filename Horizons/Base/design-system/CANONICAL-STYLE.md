@@ -152,6 +152,10 @@ editorial creativity: varied article treatments, photographs integrated with
 text, selective cutouts, and recognizable real-world artifacts. They are design
 references, not sources of learner text, photographs or branding.
 
+The author's 2026-10-10 correction requires distinct **text composition** between neighboring lessons, not merely different images or accent colors. Compare the dominant article/listening layout before publication. If both spreads repeat a masthead, uniform portrait strip, response table and two-column copy, redesign the composition. Vary paragraph measure, heading scale, image proportions, text/image placement and the way learners encounter the source text while preserving readable type and functional response space. Keep the native lesson chrome, exercise sequence and grammar shell; shared identity does not require copying the previous lesson's internal text arrangement.
+
+3B's revised precedent uses an open typographic radio title, staggered real photographs and readable serif audio-adaptation entries with embedded gaps. Ordinary practice remains on paper rather than acquiring a background card for every task.
+
 ### Author-approved creativity reference
 
 On 2026-10-07, the author explicitly identified the two latest A1 revisions as
