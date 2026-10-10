@@ -1,0 +1,11 @@
+# 3B — contextual image provenance
+
+- Asset ID: `HZN_A1_U03_LB_E02_IMG_01`.
+- Use: activity 2, HORIZONS ON AIR feature. Original fictional characters; not documentary photographs of real interviewees.
+- File: `Three-working-weeks-v1.png`, 2172 × 724 pixels.
+- Created 2026-10-10 using the built-in ImageGen tool. Saved in the project; full workplace backgrounds retained, no image editing or programmatic background removal.
+- Exact production prompt:
+
+> Create a photorealistic editorial contact strip for an adult English coursebook: three equal portrait-oriented panels side by side in one wide image, total aspect ratio 3:1. Three distinct fictional podcast guests photographed naturally in their workplaces, real full environmental backgrounds. Left: Lucía, a Spanish woman about 35 with short dark curly hair, in an independent bookshop in Valencia, warm afternoon sunlight, colorful books, rust cotton blouse; she is looking naturally toward the photographer, calm candid expression, no staged cheesy smile. Center: Ken, Japanese man about 32 with short dark hair, in a modest Osaka design studio at dusk, drawing papers and computer nearby, blue shirt, natural tired but friendly expression; no stereotype costumes, no visible screen text. Right: Maryam, Emirati woman about 30 in a deep teal hijab and cream blouse in a light modern Abu Dhabi government office, tasteful glass and warm stone architecture, daylight; professional and approachable. Each panel has chest-up composition with generous environmental background and the person's head fully visible, no cropped crown, natural skin pores and fabric texture. Eye-level genuine-looking photography, consistent coursebook print quality but distinct scene light. Each photo fills its third edge to edge, fine straight boundaries, absolutely NO borders, rounded corners, cards, captions, titles, flags, logos, watermarks or readable text. No illustration, no cartoon, no cutout, no pastel wash. Vibrant but believable rich colors. This is one contact sheet of contextual photography, not a designed textbook page.
+
+No third-party stock asset, stock attribution or stock license is claimed. Live names/location labels belong to the listening task and remain outside the image. The day strip, response tables and lunch-planning fields are native functional page elements, not generated images of learner text.

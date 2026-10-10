@@ -198,6 +198,10 @@ in the fictional listening. Exact scripts/casting/checks and the answer key
 are in the A1 folders. The pre-3A book is preserved at
 `horizons-before-lesson-3a-2026-10-08`.
 
+## A1 Lesson 3B draft
+
+`3B.html` / `lesson-3b-local.css` add printed pages 25–26. The days strip introduces vocabulary with the shared NEW WORDS cue. HORIZONS ON AIR — Three people. Three weeks. uses original fictional guests in Valencia, Osaka and Abu Dhabi, with the UAE federal schedule verified separately. Listening for gist/details leads to printed discovery evidence, negatives/do-does clarification, controlled practice, a personal survey and a lunch-planning outcome. The full environmental guest photo, saturated blue/gold feature and open practice retain the existing identity. Jessica narrates 3.4 and hosts 3.5; Amy/Lucía, Mark Natural/Ken and Juniper/Maryam use the approved voice pool. See the 3B answer key, image provenance and production record. The pre-3B book is preserved at `horizons-before-lesson-3b-2026-10-10`.
+
 ## Remaining A1 readings recorded (2026-10-10)
 
 The previously unrecorded 1D hotel conversation is track 1.12, with Jessica announcing the track, Juniper as Lisa and Adeline as Emma. The 2C Rivera family reading is track 2.6, read by Jessica. Their scripts, completed MP3s and production records are in the A1 audio folders. The telephone number is spoken digit by digit and the email address uses "dot" and "at". All existing numbered listening tracks are now present; the Units 1 & 2 Review has no listening task requiring a recording. Production records retain the transcript normalization used for proper names. Neither script contains the forbidden clarity tag.

@@ -151,6 +151,17 @@ These new 2D dialogue roles use the preferred Brighton A1 exam pool. Retain
 their recorded IDs if either role returns. Track labels and color models
 remain Jessica. Generation records live in `../2D-production.json`.
 
+## 3B — Track 3.4
+- NARRATOR (Jessica, `cgSgspJ2msm6clMCkdW9`): 1, 2.
+
+## 3B — Track 3.5 — Three people. Three weeks.
+- NARRATOR / HOST (Lucy; Jessica, `cgSgspJ2msm6clMCkdW9`): 1, 2, 4, 6, 8, 10, 12, 14, 16, 18, 20.
+- LUCÍA (Amy, `OZxMHsGaBmV5pjMIDIn0`): 3, 5, 7, 13.
+- KEN (Mark - Natural Conversations, `UgBBYS2sOqTuMpoF3BR0`): 9, 11.
+- MARYAM (Juniper, `aMSt68OGf4xUZAnLpTU8`): 15, 17, 19.
+
+All three guests are new fictional roles. Retain these exact voices if they return. Jessica remains the track announcer and radio host. Production records: `../3B-production.json`.
+
 ## 3A - Tracks 3.1 and 3.2
 - NARRATOR (Jessica, `cgSgspJ2msm6clMCkdW9`): 1, 2 in each track.
 
