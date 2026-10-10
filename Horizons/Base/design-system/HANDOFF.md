@@ -200,6 +200,10 @@ are in the A1 folders. The pre-3A book is preserved at
 
 ## CSS loading boundary
 
+### Remaining A1 readings recorded (2026-10-10)
+
+The previously unrecorded 1D hotel conversation is track 1.12, with Jessica announcing the track, Juniper as Lisa and Adeline as Emma. The 2C Rivera family reading is track 2.6, read by Jessica. Their scripts, completed MP3s and production records are in the A1 audio folders. The telephone number is spoken digit by digit and the email address uses "dot" and "at". All existing numbered listening tracks are now present; the Units 1 & 2 Review has no listening task requiring a recording. Production records retain the transcript normalization used for proper names. Neither script contains the forbidden clarity tag.
+
 `Base/shell/a4-shell.css` imports only shared Base components. It must never import a level- or lesson-specific stylesheet.
 
 Each lesson HTML links its own adjacent local stylesheet. This prevents the shared shell from becoming a hidden override registry and lets future books use the same Base cleanly.

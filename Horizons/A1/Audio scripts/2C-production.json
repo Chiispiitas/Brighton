@@ -1,0 +1,33 @@
+[
+  {
+    "lesson": "2C",
+    "track": "2.6",
+    "filename": "Track 2.6.mp3",
+    "script": "ElevenCreative Studio/2C - Track 2.6.txt",
+    "model": "eleven_v3",
+    "stability": 0.5,
+    "paragraph_voice_names": [
+      "Jessica",
+      "Jessica"
+    ],
+    "paragraph_voice_ids": [
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9"
+    ],
+    "generation_utc": "2026-10-10T20:04:29.208101+00:00",
+    "request_id": "Casg1G8UfV1d24fxtUlf",
+    "script_sha256": "20ec618083673ae8eeea8c0558972d90fbb6769f1b709b7f7d648db69bdbc618",
+    "bytes": 952155,
+    "duration_seconds": 59.48,
+    "transcript_checked": true,
+    "transcript_similarity": 1.0,
+    "answer_bearing_phrases_checked": true,
+    "audio_events_checked": true,
+    "throat_clearing_events_detected": false,
+    "forbidden_tag_preflight_passed": true,
+    "transcription_name_aliases": {
+      "Sophia": "Sof\u00eda",
+      "Mantha": "Manta"
+    }
+  }
+]
