@@ -183,7 +183,7 @@ Bold (`<b>` or `<strong>`) inside the focus-box body inherits the shared unit-da
 
 **`NEW WORDS` is only a signal. It never introduces, defines or lists vocabulary.** Never place a word bank, glossary string or sequence such as `word · word · word` after the cue.
 
-The unfamiliar words must already occur naturally **inside the exercise itself**. Mark those exact words in bold unit color where they occur, for example:
+The unfamiliar words must already occur naturally **inside the exercise itself**. In connected reading text, mark those exact words in bold unit color where appropriate, for example:
 
 ```html
 <span class="hz-new-words">NEW WORDS</span>
@@ -191,6 +191,8 @@ The unfamiliar words must already occur naturally **inside the exercise itself**
 ```
 
 Use the existing `.hz-text-unit` utility together with semantic bold (`<strong>`) for this treatment. The cue tells the learner to notice unfamiliar vocabulary; the exercise/context still does the teaching.
+
+The cue is required at each new vocabulary set's first printed introduction. Check both opening and continuation pages before exporting. Place it beside the relevant instruction or in the existing feature heading; do not repeat it for subsequent practice or cumulative reviews of the same words. Matching choices may use regular-weight body ink when directed by the author: 3A activity 1 uses this treatment, without a surrounding box. Adding the cue must not automatically recolor or embolden those choices.
 
 If the unfamiliar item exists only in audio and is not printed in the exercise, do **not** invent a printed vocabulary list just to accompany `NEW WORDS`. Either let the listening context carry it or place the cue only where the new item is actually visible in learner-facing text.
 
