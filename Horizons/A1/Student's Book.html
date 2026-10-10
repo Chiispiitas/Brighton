@@ -6097,7 +6097,7 @@ body.hz-debug .hz-page::after {
 .l3a-routine-sheet { position:relative; margin:0 0 2mm; }
 .l3a-routine-sheet img { display:block; width:100%; height:auto; }
 .l3a-photo-letter { position:absolute; left:calc(var(--x) + 1mm); top:calc(var(--y) + 1mm); display:grid; place-items:center; width:4.8mm; height:4.8mm; background:#fff; color:var(--hz-unit-dark); font-size:8.5pt; font-weight:620; }
-.l3a-routine-bank { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1.5mm 2mm; padding:1.7mm 2.5mm; color:var(--hz-unit-dark); font-size:8.5pt; }
+.l3a-routine-bank { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1.5mm 2mm; padding:1.7mm 0; color:var(--hz-unit-dark); font-size:8.5pt; }
 .l3a-routine-bank > span { display:flex; align-items:baseline; gap:1mm; white-space:nowrap; }
 .l3a-routine-bank strong { font-weight:720; }
 .l3a-letter-answer { display:inline-block; width:4mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); text-align:center; }
@@ -6124,7 +6124,7 @@ body.hz-debug .hz-page::after {
 .l3a-gap { display:inline-block; min-width:18mm; height:4.5mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); vertical-align:baseline; }
 .l3a-notice { display:grid; gap:1.4mm; }
 .l3a-notice b { color:var(--hz-unit-dark); }
-.l3a-continuation-content { padding-top:24mm; }
+.l3a-continuation-content { padding-top:7mm; }
 .l3a-page--2 .hz-exercises { padding-top:0 !important; }
 .l3a-page--2 .hz-focus-box { margin:1.2mm 0 .8mm; }
 .l3a-grammar p { margin:0 0 1mm; }
@@ -6147,6 +6147,7 @@ body.hz-debug .hz-page::after {
 .l3a-free-writing { display:grid; gap:0; }
 .l3a-pair-model { margin-bottom:1mm; }
 .l3a-pair-model p { margin:0 0 .8mm; }
+.l3a-extra { margin-left:calc(var(--hz-exercise-marker-size) + 3mm); margin-top:.65mm; }
 
 
 /* Student's Book unifier */
@@ -8306,7 +8307,7 @@ body {
                 <span class="l3a-photo-letter" style="--x:0%;--y:0%">A</span><span class="l3a-photo-letter" style="--x:25%;--y:0%">B</span><span class="l3a-photo-letter" style="--x:50%;--y:0%">C</span><span class="l3a-photo-letter" style="--x:75%;--y:0%">D</span>
                 <span class="l3a-photo-letter" style="--x:0%;--y:50%">E</span><span class="l3a-photo-letter" style="--x:25%;--y:50%">F</span><span class="l3a-photo-letter" style="--x:50%;--y:50%">G</span><span class="l3a-photo-letter" style="--x:75%;--y:50%">H</span>
               </figure>
-              <div class="hz-word-bank l3a-routine-bank">
+              <div class="l3a-routine-bank">
                 <span><b>1</b><span class="l3a-letter-answer l3a-example">B</span><strong>have breakfast</strong></span><span><b>2</b><span class="l3a-letter-answer"></span><strong>go to bed</strong></span><span><b>3</b><span class="l3a-letter-answer"></span><strong>go to work</strong></span><span><b>4</b><span class="l3a-letter-answer"></span><strong>get up</strong></span>
                 <span><b>5</b><span class="l3a-letter-answer"></span><strong>watch TV</strong></span><span><b>6</b><span class="l3a-letter-answer"></span><strong>have lunch</strong></span><span><b>7</b><span class="l3a-letter-answer"></span><strong>go home</strong></span><span><b>8</b><span class="l3a-letter-answer"></span><strong>have dinner</strong></span>
               </div>
@@ -8404,6 +8405,10 @@ body {
             </div>
           </section>
         </div>
+      </div>
+      <div class="l3a-extra hz-extra-practice">
+        <span class="hz-extra-practice__label">EXTRA PRACTICE</span>
+        <span class="hz-extra-practice__prompt">Choose a person in your family. Write five sentences about their routine.</span>
       </div>
     </div></main><footer class="hz-page__footer"><span></span><span class="hz-page-number">24</span></footer>
   </article>
