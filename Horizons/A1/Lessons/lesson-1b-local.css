@@ -639,16 +639,16 @@
   border-radius: 3mm 0 3mm 0;
 }
 
-.l1b-page .l1b-occupation:nth-child(1) .hz-photo-placeholder { background-image: url("../Images/Stock/Pexels-5212339.jpg") !important; background-position: center !important; }
-.l1b-page .l1b-occupation:nth-child(2) .hz-photo-placeholder { background-image: url("../Images/Stock/Pexels-9158503.jpg") !important; background-position: center !important; }
-.l1b-page .l1b-occupation:nth-child(3) .hz-photo-placeholder { background-image: url("../Images/Stock/Pexels-8629122.jpg") !important; background-position: center !important; }
-.l1b-page .l1b-occupation:nth-child(4) .hz-photo-placeholder { background-image: url("../Images/Stock/Pexels-5998476.jpg") !important; background-position: center !important; }
-.l1b-page .l1b-occupation:nth-child(5) .hz-photo-placeholder { background-image: url("../Images/Stock/Pexels-3860641.jpg") !important; background-position: center !important; }
-.l1b-page .l1b-occupation:nth-child(6) .hz-photo-placeholder { background-image: url("../Images/Stock/Pexels-4269271.jpg") !important; background-position: center !important; }
-.l1b-page .l1b-occupation:nth-child(7) .hz-photo-placeholder { background-image: url("../Images/Stock/Pexels-3801439.jpg") !important; background-position: center !important; }
-.l1b-page .l1b-occupation:nth-child(8) .hz-photo-placeholder { background-image: url("../Images/Stock/Pexels-5835453.jpg") !important; background-position: center !important; }
-.l1b-page .l1b-occupation:nth-child(9) .hz-photo-placeholder { background-image: url("../Images/Stock/Pexels-9977092.jpg") !important; background-position: center !important; }
-.l1b-page .l1b-occupation:nth-child(10) .hz-photo-placeholder { background-image: url("../Images/Stock/Pexels-32705892.jpg") !important; background-position: center !important; }
+.l1b-page .l1b-occupation:nth-child(1) .hz-photo-placeholder { background-image: url("../Images/1B/Teacher.png") !important; background-position: center !important; }
+.l1b-page .l1b-occupation:nth-child(2) .hz-photo-placeholder { background-image: url("../Images/1B/Student.png") !important; background-position: center !important; }
+.l1b-page .l1b-occupation:nth-child(3) .hz-photo-placeholder { background-image: url("../Images/1B/Chef.png") !important; background-position: center !important; }
+.l1b-page .l1b-occupation:nth-child(4) .hz-photo-placeholder { background-image: url("../Images/1B/Doctor.png") !important; background-position: center !important; }
+.l1b-page .l1b-occupation:nth-child(5) .hz-photo-placeholder { background-image: url("../Images/1B/Office%20Worker.png") !important; background-position: center !important; }
+.l1b-page .l1b-occupation:nth-child(6) .hz-photo-placeholder { background-image: url("../Images/1B/Receptionist.png") !important; background-position: center !important; }
+.l1b-page .l1b-occupation:nth-child(7) .hz-photo-placeholder { background-image: url("../Images/1B/Salesclerk.png") !important; background-position: center !important; }
+.l1b-page .l1b-occupation:nth-child(8) .hz-photo-placeholder { background-image: url("../Images/1B/Taxi%20Driver.png") !important; background-position: center !important; }
+.l1b-page .l1b-occupation:nth-child(9) .hz-photo-placeholder { background-image: url("../Images/1B/Waiter%20Waitress.png") !important; background-position: center !important; }
+.l1b-page .l1b-occupation:nth-child(10) .hz-photo-placeholder { background-image: url("../Images/1B/Farmer.png") !important; background-position: center !important; }
 
 .l1b-page .l1b-clue:nth-child(1) .hz-photo-placeholder { background-image: url("../Images/1B/Taxi-cutout-v1.png") !important; background-position: center !important; }
 .l1b-page .l1b-clue:nth-child(2) .hz-photo-placeholder { background-image: url("../Images/1B/Bell-cutout-v1.png") !important; background-position: center !important; }
@@ -870,11 +870,6 @@
 .l1b-clue { height: 26mm; border-radius: 0; padding: 0; border: 0; background: transparent; }
 .l1b-page .l1b-clue .hz-photo-placeholder { background-size: contain !important; background-color: transparent !important; }
 
-/* Crops for licensed real photography. */
-.l1b-page .l1b-occupation:nth-child(1) .hz-photo-placeholder { background-position:center 37% !important; }
-.l1b-page .l1b-occupation:nth-child(2) .hz-photo-placeholder { background-position:center 20% !important; }
-.l1b-page .l1b-occupation:nth-child(3) .hz-photo-placeholder { background-position:center 18% !important; }
-.l1b-page .l1b-occupation:nth-child(4) .hz-photo-placeholder { background-position:center 10% !important; }
-.l1b-page .l1b-occupation:nth-child(9) .hz-photo-placeholder { background-position:center 43% !important; }
+/* Retained real-photo crops in activity 4.1 only. */
 .l1b-page .l1b-profile:nth-child(2) .hz-photo-placeholder { background-position:center 30% !important; }
 .l1b-page .l1b-profile:nth-child(3) .hz-photo-placeholder { background-position:center 28% !important; }
