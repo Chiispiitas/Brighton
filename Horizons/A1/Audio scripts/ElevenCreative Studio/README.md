@@ -61,6 +61,10 @@ Eleven v3
 - 3A - Track 3.1 - Daily routines
 - 3A - Track 3.2 - A day with Leo, third-person narration
 - 3A - Track 3.3 - Two people, two routines
+- 1D - Track 1.12 - Hotel conversation
+- 2C - Track 2.6 - Rivera family reading
+- 3B - Track 3.4 - Days of the week
+- 3B - Track 3.5 - HORIZONS ON AIR: Three people. Three weeks.
 
 Full A1 recordings were regenerated on 2026-10-06 after the author banned
 the clarity tag. The earlier dialogue characters now use the approved exam
