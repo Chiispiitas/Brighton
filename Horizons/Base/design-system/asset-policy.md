@@ -121,6 +121,8 @@ Stock models may illustrate fictional learner texts without being presented as t
 
 Only use assets permitted for the intended publication/use.
 
+The author's selective correction on 2026-10-10 retains the original generated imagery for **1A activities 2 and 5, 1B activity 1, and 2A activity 5**. Keep these approved exceptions; do not automatically replace them when sourcing real photographs elsewhere. Other approved real-photo replacements remain in place. Avoid repeating a stock model across unrelated characters: the Units 1 & 2 Review doctor uses its own photograph, distinct from the lesson doctor.
+
 For every external production asset record:
 
 - asset ID;
@@ -188,7 +190,8 @@ Image-generation prompts and temporary art-direction notes stay outside the repo
 The author prefers real, freely licensed photography for photographic lesson
 scenes and vocabulary pictures. The October 10, 2026 replacements are recorded
 in `Horizons/A1/Images/Stock/ASSETS.md` and its source manifest. Keep those slots
-photographic when revising them. Preserve environmental backgrounds and the
+photographic when revising them, except the author's explicit restorations of
+1A.2, 1A.5, 1B.1 and 2A.5 recorded above. Preserve environmental backgrounds and the
 approved dialogue backing, spacing and page geometry.
 
 When a task depends on an exact object, colour, action, quantity or relationship,

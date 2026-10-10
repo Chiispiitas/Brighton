@@ -154,7 +154,11 @@ references, not sources of learner text, photographs or branding.
 
 The author's 2026-10-10 correction requires distinct **text composition** between neighboring lessons, not merely different images or accent colors. Compare the dominant article/listening layout before publication. If both spreads repeat a masthead, uniform portrait strip, response table and two-column copy, redesign the composition. Vary paragraph measure, heading scale, image proportions, text/image placement and the way learners encounter the source text while preserving readable type and functional response space. Keep the native lesson chrome, exercise sequence and grammar shell; shared identity does not require copying the previous lesson's internal text arrangement.
 
-3B's revised precedent uses an open typographic radio title, staggered real photographs and readable serif audio-adaptation entries with embedded gaps. Ordinary practice remains on paper rather than acquiring a background card for every task.
+3B's corrected precedent retains 2B's Horizons on Air masthead and adds a deep petrol transcript area, strong upright guest names, real photographs, individual name strips and generous writing gaps. A feature may have a purposeful background that makes its content stand out; ordinary practice remains on paper rather than acquiring a background card for every task.
+
+**Recurring Horizons on Air identity:** Lesson 2B is the approved reference. Use its crimson main banner, white upright sans-serif episode title, black HORIZONS block paired with a white ON AIR block in dark crimson, and white rounded-stroke waveform. ON AIR is upright, despite the semantic `em` element. Preserve the compact badge lettering and waveform proportions. Episode titles may wrap to suit their length; photographs, transcript layouts and supporting feature colors may vary. Do not invent a different show logo, a petrol/gold masthead or a new waveform style for each episode. Creativity belongs within the episode while the recurring show remains recognizable.
+
+Do not repeat the same bold heading plus italic accent-word treatment across reading and listening features. The author specifically rejected its repetition from “A day with Leo” and “The Color Project” into 3B. Choose a typographic voice and composition appropriate to each feature, retaining Horizons' lesson chrome, readable learner type and rich colors. Creativity includes text layout, functional surfaces and meaningful visual motifs, not only image selection.
 
 ### Author-approved creativity reference
 

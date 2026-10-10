@@ -66,3 +66,7 @@ Review.4: Luz’s portrait is paired with a separate red wallet detail; Ben’s 
 Original AI files are retained for reversal. Git tag `horizons-before-real-photo-replacement-2026-10-10` preserves the complete previous book. This change lives on `codex/horizons-real-photos`; it does not merge to main.
 
 The JSON manifest lists each replaced path, source ID, original file hash, dimensions and derivative crop geometry. Source-page dates/camera fields are retained where available; absent metadata is not invented.
+
+## Author correction — October 10, 2026
+
+The author restored the preceding AI images in **1A.2, 1A.5, 1B.1 and 2A.5**. Historical source records above remain for reversal; the JSON manifest records active uses. Other real photographs remain. Review.4 now uses a distinct stock model, photographed by **Antoni Shkraba**, instead of reusing Sarah’s photograph from 1B.4.1. [Original new doctor photo](https://www.pexels.com/photo/woman-smiling-while-holding-a-stethoscope-6749778/). The unchanged red wallet, Ben and Ari details are retained in `Color-project-real-v2.jpg`.
