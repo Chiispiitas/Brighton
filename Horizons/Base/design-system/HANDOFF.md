@@ -198,11 +198,11 @@ in the fictional listening. Exact scripts/casting/checks and the answer key
 are in the A1 folders. The pre-3A book is preserved at
 `horizons-before-lesson-3a-2026-10-08`.
 
-## CSS loading boundary
-
-### Remaining A1 readings recorded (2026-10-10)
+## Remaining A1 readings recorded (2026-10-10)
 
 The previously unrecorded 1D hotel conversation is track 1.12, with Jessica announcing the track, Juniper as Lisa and Adeline as Emma. The 2C Rivera family reading is track 2.6, read by Jessica. Their scripts, completed MP3s and production records are in the A1 audio folders. The telephone number is spoken digit by digit and the email address uses "dot" and "at". All existing numbered listening tracks are now present; the Units 1 & 2 Review has no listening task requiring a recording. Production records retain the transcript normalization used for proper names. Neither script contains the forbidden clarity tag.
+
+## CSS loading boundary
 
 `Base/shell/a4-shell.css` imports only shared Base components. It must never import a level- or lesson-specific stylesheet.
 
