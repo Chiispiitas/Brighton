@@ -643,15 +643,15 @@
 .l1a-page .l1a-identity-photo .hz-photo-placeholder__meta,
 .l1a-page .l1a-profile__photo .hz-photo-placeholder__meta { display: none !important; }
 
-.l1a-page .l1a-dialogue-photo .hz-photo-placeholder { background-image: url("../Images/1A/Tom%20and%20Mary.png") !important; background-position: center !important; }
-.l1a-page .l1a-greeting:nth-child(1) .hz-photo-placeholder { background-image: url("../Images/1A/Good%20morning.png") !important; background-position: center 38% !important; }
-.l1a-page .l1a-greeting:nth-child(2) .hz-photo-placeholder { background-image: url("../Images/1A/Good%20afternoon.png") !important; background-position: center !important; }
-.l1a-page .l1a-greeting:nth-child(3) .hz-photo-placeholder { background-image: url("../Images/1A/Good%20evening.png") !important; background-position: center !important; }
-.l1a-page .l1a-greeting:nth-child(4) .hz-photo-placeholder { background-image: url("../Images/1A/See%20you%20later.png") !important; background-position: center !important; }
-.l1a-page .l1a-identity-photo .hz-photo-placeholder { background-image: url("../Images/1A/Giving%20personal%20information.png") !important; background-position: center 35% !important; }
-.l1a-page .l1a-profile:nth-child(1) .hz-photo-placeholder { background-image: url("../Images/1A/Profile%20photo%201.png") !important; background-position: center !important; }
-.l1a-page .l1a-profile:nth-child(2) .hz-photo-placeholder { background-image: url("../Images/1A/Profile%20photo%202.png") !important; background-position: center !important; }
-.l1a-page .l1a-profile:nth-child(3) .hz-photo-placeholder { background-image: url("../Images/1A/Profile%20photo%203.png") !important; background-position: center !important; }
+.l1a-page .l1a-dialogue-photo .hz-photo-placeholder { background-image: url("../Images/Stock/Pexels-7972645.jpg") !important; background-position: center !important; }
+.l1a-page .l1a-greeting:nth-child(1) .hz-photo-placeholder { background-image: url("../Images/Stock/Pexels-4259198.jpg") !important; background-position: center 38% !important; }
+.l1a-page .l1a-greeting:nth-child(2) .hz-photo-placeholder { background-image: url("../Images/Stock/Pexels-14618486.jpg") !important; background-position: center !important; }
+.l1a-page .l1a-greeting:nth-child(3) .hz-photo-placeholder { background-image: url("../Images/Stock/Pexels-5876619.jpg") !important; background-position: center !important; }
+.l1a-page .l1a-greeting:nth-child(4) .hz-photo-placeholder { background-image: url("../Images/Stock/Pexels-7578980.jpg") !important; background-position: center !important; }
+.l1a-page .l1a-identity-photo .hz-photo-placeholder { background-image: url("../Images/Stock/Pexels-5668869.jpg") !important; background-position: center 35% !important; }
+.l1a-page .l1a-profile:nth-child(1) .hz-photo-placeholder { background-image: url("../Images/Stock/Pexels-3764397.jpg") !important; background-position: center !important; }
+.l1a-page .l1a-profile:nth-child(2) .hz-photo-placeholder { background-image: url("../Images/Stock/Pexels-3764545.jpg") !important; background-position: center !important; }
+.l1a-page .l1a-profile:nth-child(3) .hz-photo-placeholder { background-image: url("../Images/Stock/Pexels-3785843.jpg") !important; background-position: center !important; }
 
 .l1a-dialogue-photo > img {
   display: block;
@@ -804,3 +804,9 @@
 /* Rich color correction: preserve the canonical number-circle geometry. */
 .l1a-page--2 .l1a-number:nth-child(3n + 2) .l1a-number__digit { background: var(--hz-feature-blue) !important; }
 .l1a-page--2 .l1a-number:nth-child(3n) .l1a-number__digit { background: var(--hz-feature-teal) !important; }
+
+/* Crops for licensed real photography. */
+.l1a-page .l1a-greeting:nth-child(1) .hz-photo-placeholder { background-position:45% 58% !important; }
+.l1a-page .l1a-greeting:nth-child(2) .hz-photo-placeholder { background-position:center 44% !important; }
+.l1a-page .l1a-greeting:nth-child(3) .hz-photo-placeholder { background-position:center 42% !important; }
+.l1a-page .l1a-identity-photo .hz-photo-placeholder { background-position:center !important; }

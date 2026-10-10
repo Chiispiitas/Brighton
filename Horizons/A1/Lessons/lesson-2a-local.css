@@ -347,3 +347,11 @@
   border-left: 1mm solid var(--hz-unit) !important;
   padding: 2mm 2.6mm !important;
 }
+
+/* Real photo sheet: functional live exercise numbers, never baked into photos. */
+.l2a-pair-photo { position:relative; clip-path:none; }
+.l2a-real-photo-number { position:absolute; left:var(--x); top:var(--y); display:grid; place-items:center; width:5mm; height:5mm; background:#fff; color:var(--hz-unit-dark); font-size:9pt; font-weight:620; line-height:1; border-radius:50%; }
+
+/* Crops for licensed real photography. */
+.l2a-dialogue-photo { height:49mm; min-height:49mm; }
+.l2a-dialogue-photo img { height:49mm; min-height:0; object-position:center 65%; }

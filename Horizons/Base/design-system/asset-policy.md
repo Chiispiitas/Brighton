@@ -183,6 +183,28 @@ For approved illustration, use the stable ELT style block from Section 3 and the
 
 Image-generation prompts and temporary art-direction notes stay outside the repository unless the author explicitly asks to save them. The reusable series-wide style specification above is part of the design system rather than a lesson-specific production prompt.
 
+### Real-photo replacements and functional collages
+
+The author prefers real, freely licensed photography for photographic lesson
+scenes and vocabulary pictures. The October 10, 2026 replacements are recorded
+in `Horizons/A1/Images/Stock/ASSETS.md` and its source manifest. Keep those slots
+photographic when revising them. Preserve environmental backgrounds and the
+approved dialogue backing, spacing and page geometry.
+
+When a task depends on an exact object, colour, action, quantity or relationship,
+check the actual downloaded photograph at print size. A search description is
+not evidence that a bottle is blue or a phone is white. If one authentic photo
+cannot communicate all required details, pair separately sourced photographs
+in a restrained editorial collage. Do not fabricate model/object interactions,
+recolour objects, or use generative retouching to make a source fit the task.
+Keep exercise numbers and letters live in the shared Horizons typography.
+
+Constrain replacement image dimensions: portrait stock must not enlarge a
+previous landscape slot and push grammar or activities outside the page. Check
+all affected pages, heads and functional props after cropping, including CSS
+background images. Retain originals, credits, source URLs, permission records,
+hashes and derivative crop geometry; save a rollback before bulk replacements.
+
 ## 7. Real brands and apps
 
 Brand names may appear when pedagogically relevant.
