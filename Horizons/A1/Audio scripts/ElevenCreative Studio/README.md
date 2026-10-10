@@ -58,6 +58,9 @@ Eleven v3
 - 2B — Track 2.3 — HORIZONS ON AIR
 - 2D — Track 2.4 — Colors
 - 2D — Track 2.5 — Lost and Found conversation
+- 3A - Track 3.1 - Daily routines
+- 3A - Track 3.2 - A day with Leo, third-person narration
+- 3A - Track 3.3 - Two people, two routines
 
 Full A1 recordings were regenerated on 2026-10-06 after the author banned
 the clarity tag. The earlier dialogue characters now use the approved exam

@@ -182,6 +182,26 @@ areas. Subordinate pale grammar bodies remain useful for reading.
 The preceding color treatment is preserved at
 `horizons-before-color-restoration-2026-10-08`.
 
+## Current Lesson 3A
+
+`A1/Lessons/3A.html` and `lesson-3a-local.css` introduce daily routines and
+affirmative present simple on printed pages 23-24, after the paired-unit review.
+The original A1 adaptation of Messi's September 2023 OLGA interview is dated
+explicitly and uses a licensed real photograph. The eight routine pictures
+are an original photographic contact sheet, with full backgrounds and live
+letter labels. See `A1/Images/3A/ASSETS.md` for sources and licensing.
+Discovery precedes the shared grammar clarification, then controlled practice,
+listening, personal writing and partner reporting. Questions with do/does,
+negatives and frequency adverbs remain for the later syllabus lessons.
+Tracks 3.1-3.3 use Jessica for narration, with Adeline/Nina and Jarnathan/Omar
+in the fictional listening. Exact scripts/casting/checks and the answer key
+are in the A1 folders. The pre-3A book is preserved at
+`horizons-before-lesson-3a-2026-10-08`.
+
+## Remaining A1 readings recorded (2026-10-10)
+
+The previously unrecorded 1D hotel conversation is track 1.12, with Jessica announcing the track, Juniper as Lisa and Adeline as Emma. The 2C Rivera family reading is track 2.6, read by Jessica. Their scripts, completed MP3s and production records are in the A1 audio folders. The telephone number is spoken digit by digit and the email address uses "dot" and "at". All existing numbered listening tracks are now present; the Units 1 & 2 Review has no listening task requiring a recording. Production records retain the transcript normalization used for proper names. Neither script contains the forbidden clarity tag.
+
 ## CSS loading boundary
 
 `Base/shell/a4-shell.css` imports only shared Base components. It must never import a level- or lesson-specific stylesheet.

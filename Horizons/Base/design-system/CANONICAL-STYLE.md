@@ -415,6 +415,12 @@ The following are reusable series-wide components and should remain visually sta
 - Extra Practice treatment;
 - footer/page number.
 
+### Required NEW WORDS check
+
+Include the shared `hz-new-words` cue at the first printed introduction of each new vocabulary set, beside the relevant exercise instruction or within its established feature heading. Audit every new lesson and continuation page before publication: identify the vocabulary being introduced, then verify that its first learner-facing context carries the cue. A continuation page needs a cue if it introduces another set; repeated practice and cumulative reviews do not need duplicate cues for already taught words. Never omit the cue simply because a page has a new layout or generated artwork.
+
+Keep the familiar small sparkle and text treatment. The cue does not require a colored box or bold vocabulary choices. In 3A activity 1, the matching phrases remain regular-weight body ink on plain paper; retain this author-directed treatment. Grammar highlights remain a separate convention.
+
 Continuation pages use the shared marker and a default safe top offset. A lesson may increase its content offset when the first composition would collide with the marker; move the local content, not the shared marker.
 
 Local content collisions are solved in lesson-scoped CSS, not by redefining shared chrome.

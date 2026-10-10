@@ -150,3 +150,18 @@ Source Studio project: `73VSiMr366uhy5XOEUZ5`; chapter: `X7TiPgEd9ZDacTlciube`. 
 These new 2D dialogue roles use the preferred Brighton A1 exam pool. Retain
 their recorded IDs if either role returns. Track labels and color models
 remain Jessica. Generation records live in `../2D-production.json`.
+
+## 3A - Tracks 3.1 and 3.2
+- NARRATOR (Jessica, `cgSgspJ2msm6clMCkdW9`): 1, 2 in each track.
+
+Track 3.2 is third-person narration of an A1 adaptation of Messi's 2023 routine,
+not a celebrity voice imitation or a fabricated first-person interview.
+
+## 3A - Track 3.3
+- NARRATOR (Jessica, `cgSgspJ2msm6clMCkdW9`): 1, 2, 4.
+- NINA (Adeline, `5l5f8iK3YPeGga21rQIX`): 3.
+- OMAR (Jarnathan, `c6SfcYrb2t09NHXiT80T`): 5.
+
+Nina and Omar are original fictional characters. Keep these approved exam-pool
+voice IDs if they return. All three tracks use Eleven v3, Natural Stability
+(0.5). Generation and transcription checks are in `../3A-production.json`.

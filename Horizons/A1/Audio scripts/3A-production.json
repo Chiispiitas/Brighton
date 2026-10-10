@@ -1,0 +1,101 @@
+[
+  {
+    "asset_id": "HZN_A1_U03_LA_E01_AUD_01",
+    "track": "3.1",
+    "lesson": "3A",
+    "script": "ElevenCreative Studio/3A - Track 3.1.txt",
+    "filename": "Track 3.1.mp3",
+    "model": "eleven_v3",
+    "stability": 0.5,
+    "language": "en",
+    "output_format": "mp3_44100_128",
+    "generation_utc": "2026-10-09T01:55:57.326216+00:00",
+    "paragraph_voice_names": [
+      "Jessica",
+      "Jessica"
+    ],
+    "paragraph_voice_ids": [
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9"
+    ],
+    "request_id": "hSVo6MrpNSemMM978NAn",
+    "transcription_request_id": null,
+    "bytes": 309751,
+    "script_sha256": "0db2ecfe212a514d881591f264ed66fc48d3ac1b89fa8925785b50cc278752bc",
+    "transcript_checked": true,
+    "transcript_similarity": 1.0,
+    "answer_bearing_phrases_checked": true,
+    "audio_events_checked": true,
+    "throat_clearing_events_detected": false,
+    "forbidden_tag_preflight_passed": true,
+    "duration_seconds": 19.33
+  },
+  {
+    "asset_id": "HZN_A1_U03_LA_E02_AUD_01",
+    "track": "3.2",
+    "lesson": "3A",
+    "script": "ElevenCreative Studio/3A - Track 3.2.txt",
+    "filename": "Track 3.2.mp3",
+    "model": "eleven_v3",
+    "stability": 0.5,
+    "language": "en",
+    "output_format": "mp3_44100_128",
+    "generation_utc": "2026-10-09T01:55:56.633579+00:00",
+    "paragraph_voice_names": [
+      "Jessica",
+      "Jessica"
+    ],
+    "paragraph_voice_ids": [
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9"
+    ],
+    "request_id": "oHHIzhsf7kXFX8AA8a18",
+    "transcription_request_id": null,
+    "bytes": 447678,
+    "script_sha256": "f3fe77b82be0a08398c3c9c63ff7a769f027df8ac206651ec03c426e4ff985be",
+    "transcript_checked": true,
+    "transcript_similarity": 1.0,
+    "answer_bearing_phrases_checked": true,
+    "audio_events_checked": true,
+    "throat_clearing_events_detected": false,
+    "forbidden_tag_preflight_passed": true,
+    "duration_seconds": 27.95
+  },
+  {
+    "asset_id": "HZN_A1_U03_LA_E07_AUD_01",
+    "track": "3.3",
+    "lesson": "3A",
+    "script": "ElevenCreative Studio/3A - Track 3.3.txt",
+    "filename": "Track 3.3.mp3",
+    "model": "eleven_v3",
+    "stability": 0.5,
+    "language": "en",
+    "output_format": "mp3_44100_128",
+    "generation_utc": "2026-10-09T01:56:09.319288+00:00",
+    "paragraph_voice_names": [
+      "Jessica",
+      "Jessica",
+      "Adeline",
+      "Jessica",
+      "Jarnathan"
+    ],
+    "paragraph_voice_ids": [
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9",
+      "5l5f8iK3YPeGga21rQIX",
+      "cgSgspJ2msm6clMCkdW9",
+      "c6SfcYrb2t09NHXiT80T"
+    ],
+    "request_id": "lD4Ti2KelNZvUuxA2Vx0",
+    "transcription_request_id": null,
+    "bytes": 710156,
+    "script_sha256": "e636f1b5976962d1810ea1bf6d0df2ac1b3e81583eafc0240806318c85585495",
+    "transcript_checked": true,
+    "transcript_similarity": 1.0,
+    "answer_bearing_phrases_checked": true,
+    "audio_events_checked": true,
+    "throat_clearing_events_detected": false,
+    "forbidden_tag_preflight_passed": true,
+    "duration_seconds": 44.36
+  }
+]

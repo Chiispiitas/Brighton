@@ -1,0 +1,62 @@
+/* Lesson 3A follows the current A1 crimson navigation identity. Blue, gold
+   and genuine photography give the day-in-the-life feature its own character. */
+.l3a-page { --hz-unit:var(--hz-unit-1); --hz-unit-dark:#8f123f; --hz-unit-soft:#f8e6ee; font-size:9.5pt; }
+.l3a-page .hz-page-stack { gap:2.7mm; }
+.l3a-page .hz-lesson-header { padding-bottom:3.2mm; }
+.l3a-page .hz-exercises { gap:.2mm; }
+.l3a-page .hz-exercise { padding:1.6mm 0 2.15mm; }
+.l3a-page .hz-exercise__body { margin-top:1.5mm; }
+.l3a-routine-sheet { position:relative; margin:0 0 2mm; }
+.l3a-routine-sheet img { display:block; width:100%; height:auto; }
+.l3a-photo-letter { position:absolute; left:calc(var(--x) + 1mm); top:calc(var(--y) + 1mm); display:grid; place-items:center; width:4.8mm; height:4.8mm; background:#fff; color:var(--hz-unit-dark); font-size:8.5pt; font-weight:620; }
+.l3a-routine-bank { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1.5mm 2mm; padding:1.7mm 0; color:var(--hz-ink); font-size:8.5pt; font-weight:400; }
+.l3a-routine-bank > span { display:flex; align-items:baseline; gap:1mm; white-space:nowrap; }
+.l3a-routine-bank > span > b { color:var(--hz-unit-dark); }
+.l3a-letter-answer { display:inline-block; width:4mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); text-align:center; }
+.l3a-example { color:#74777d; font-family:"Segoe Print","Bradley Hand","Comic Sans MS",cursive; font-weight:400; font-style:normal; }
+.l3a-leo-feature { margin:0; background:#fff; border-bottom:.28mm solid var(--hz-line); }
+.l3a-feature-head { display:flex; justify-content:space-between; align-items:center; gap:4mm; background:var(--hz-feature-blue); color:#fff; padding:2.2mm 3mm; }
+.l3a-feature-head h2 { margin:0; font-size:21pt; font-weight:820; line-height:1.1; letter-spacing:-.025em; }
+.l3a-feature-head h2 em { color:var(--hz-feature-gold); font:italic 26pt/1 Georgia,serif; }
+.l3a-feature-head p { margin:1mm 0 0; font-size:8pt; letter-spacing:.08em; }
+.l3a-feature-time { display:flex; flex-direction:column; align-items:center; color:var(--hz-ink); background:var(--hz-feature-gold); padding:1mm 3mm; font-size:19pt; font-weight:720; line-height:1; }
+.l3a-feature-time > span { margin-top:1mm; font-size:8pt; font-weight:400; }
+.l3a-feature-layout { display:grid; grid-template-columns:50mm minmax(0,1fr); align-items:start; gap:4mm; padding:2.5mm 3mm 1.5mm; font-size:11.5pt; }
+.l3a-feature-layout figure { margin:0; }
+.l3a-feature-layout img { display:block; width:100%; height:52mm; object-fit:cover; object-position:center 15%; }
+.l3a-feature-copy { line-height:1.5; }
+.l3a-feature-copy p { margin:0 0 2mm; }
+.l3a-feature-copy p:last-child { margin-bottom:0; }
+.l3a-feature-sources { display:flex; flex-wrap:wrap; justify-content:space-between; gap:1mm 3mm; padding:0 3mm 1.8mm; color:var(--hz-feature-blue); font-size:7pt; line-height:1.35; }
+.l3a-feature-sources a { color:inherit; text-decoration:none; }
+.l3a-list { list-style:none; counter-reset:item; padding:0; margin:0; }
+.l3a-list > li { counter-increment:item; padding-left:4.5mm; position:relative; line-height:1.45; }
+.l3a-list > li::before { content:counter(item); position:absolute; top:0; left:0; color:var(--hz-unit-dark); font-weight:620; font-size:8.5pt; }
+.l3a-two-columns { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.8mm 7mm; }
+.l3a-gap { display:inline-block; min-width:18mm; height:4.5mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); vertical-align:baseline; }
+.l3a-notice { display:grid; gap:1.4mm; }
+.l3a-notice b { color:var(--hz-unit-dark); }
+.l3a-continuation-content { padding-top:7mm; }
+.l3a-page--2 .hz-exercises { padding-top:0 !important; }
+.l3a-page--2 .hz-focus-box { margin:1.2mm 0 .8mm; }
+.l3a-grammar p { margin:0 0 1mm; }
+.l3a-grammar p:last-child { margin-bottom:0; }
+.l3a-write { display:block; height:7mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
+.l3a-model { margin:0 0 2mm; font-size:9pt; line-height:1.4; }
+.l3a-model .l3a-example { margin-left:4mm; }
+.l3a-sentence-lines .l3a-write { height:7mm; }
+.l3a-listening-head { display:flex; flex-wrap:wrap; align-items:baseline; justify-content:space-between; gap:1.5mm 3mm; margin:0 0 2mm; }
+.l3a-listening-head h2 { margin:0; color:var(--hz-feature-teal); font-size:15pt; line-height:1.2; font-weight:820; letter-spacing:-.02em; }
+.l3a-listening-head h2 em { color:var(--hz-feature-orange); font:italic 16pt/1.2 Georgia,serif; }
+.l3a-listening-head > span { color:var(--hz-ink); font-size:8.5pt; }
+.l3a-time-table { width:100%; border-collapse:collapse; table-layout:fixed; font-size:9pt; }
+.l3a-time-table thead { background:var(--hz-feature-teal); color:#fff; }
+.l3a-time-table th { padding:1.2mm 1.5mm; font-weight:620; text-align:center; }
+.l3a-time-table tbody th { text-align:left; color:var(--hz-unit-dark); }
+.l3a-time-table td { height:8mm; background:#fff; text-align:center; border-bottom:.25mm solid var(--hz-line-strong); border-left:.25mm solid var(--hz-line); }
+.l3a-time-table tbody tr:last-child th { border-bottom:.25mm solid var(--hz-line-strong); }
+.l3a-personal-model { margin:0 0 1mm; }
+.l3a-free-writing { display:grid; gap:0; }
+.l3a-pair-model { margin-bottom:1mm; }
+.l3a-pair-model p { margin:0 0 .8mm; }
+.l3a-extra { margin-left:calc(var(--hz-exercise-marker-size) + 3mm); margin-top:.65mm; }
