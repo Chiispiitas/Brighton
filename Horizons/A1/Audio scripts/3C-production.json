@@ -1,0 +1,79 @@
+[
+  {
+    "lesson": "3C",
+    "track": "3.6",
+    "filename": "Track 3.6.mp3",
+    "script": "ElevenCreative Studio/3C - Track 3.6.txt",
+    "model": "eleven_v3",
+    "stability": 0.5,
+    "paragraph_voice_names": [
+      "Jessica",
+      "Jessica"
+    ],
+    "paragraph_voice_ids": [
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9"
+    ],
+    "generation_utc": "2026-10-12T11:22:39.577721+00:00",
+    "request_id": "Z154cd1F1P4sTi1zgROr",
+    "script_sha256": "e83e7c042c2e47078331242377386c24c613ef188f3a7ca8412e7541d8284269",
+    "bytes": 235355,
+    "duration_seconds": 14.68,
+    "transcript_checked": true,
+    "transcript_similarity": 1.0,
+    "answer_bearing_phrases_checked": true,
+    "audio_events_checked": true,
+    "throat_clearing_events_detected": false,
+    "forbidden_tag_preflight_passed": true,
+    "transcription_name_aliases": {
+      "Beet Cafe": "Beat Caf\u00e9"
+    },
+    "transcript_normalization": "Track label, punctuation, caf\u00e9 accent and documented Beat/Beet homophone only."
+  },
+  {
+    "lesson": "3C",
+    "track": "3.7",
+    "filename": "Track 3.7.mp3",
+    "script": "ElevenCreative Studio/3C - Track 3.7.txt",
+    "model": "eleven_v3",
+    "stability": 0.5,
+    "paragraph_voice_names": [
+      "Jessica",
+      "Adeline",
+      "Mark Casual",
+      "Adeline",
+      "Mark Casual",
+      "Adeline",
+      "Mark Casual",
+      "Adeline",
+      "Mark Casual"
+    ],
+    "paragraph_voice_ids": [
+      "cgSgspJ2msm6clMCkdW9",
+      "5l5f8iK3YPeGga21rQIX",
+      "1SM7GgM6IMuvQlz2BwM3",
+      "5l5f8iK3YPeGga21rQIX",
+      "1SM7GgM6IMuvQlz2BwM3",
+      "5l5f8iK3YPeGga21rQIX",
+      "1SM7GgM6IMuvQlz2BwM3",
+      "5l5f8iK3YPeGga21rQIX",
+      "1SM7GgM6IMuvQlz2BwM3"
+    ],
+    "generation_utc": "2026-10-12T11:27:42.001806+00:00",
+    "request_id": "6aLiJr5gx9hmucTB44gz",
+    "script_sha256": "8d023835ae871d51489ae48e4b8c0ca5740005e5be1a28126c439518156b72ca",
+    "bytes": 272553,
+    "duration_seconds": 17.01,
+    "transcript_checked": true,
+    "transcript_similarity": 1.0,
+    "answer_bearing_phrases_checked": true,
+    "audio_events_checked": true,
+    "throat_clearing_events_detected": false,
+    "forbidden_tag_preflight_passed": true,
+    "transcription_name_aliases": {
+      "Beet Cafe": "Beat Caf\u00e9",
+      "Lina": "Lena"
+    },
+    "transcript_normalization": "Track label, punctuation, numeric versus written ten, caf\u00e9 accent and documented Beat/Beet and Lena/Lina name transcriptions only."
+  }
+]
