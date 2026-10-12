@@ -41,7 +41,7 @@
 .l2d-dialogue { display: grid; grid-template-columns: 22mm minmax(0, 1fr); gap: 1.05mm 1.5mm; margin: 0 0 0 -5mm; padding: 3mm 2.5mm 3mm 9mm; border-top: .8mm solid var(--l2d-feature); border-bottom: 0; background: transparent; }
 .l2d-dialogue dt, .l2d-dialogue dd { margin: 0; }
 .l2d-dialogue dt { font-weight: 720; }
-.l2d-notice { gap: 1.5mm 5mm; }
+.l2d-notice { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5mm 5mm; }
 .l2d-notice p { margin: 0; }
 .l2d-focus { margin: 1.2mm 0 .8mm calc(var(--hz-exercise-marker-size) + 3mm); }
 .l2d-focus p { margin: 0 0 1mm; }

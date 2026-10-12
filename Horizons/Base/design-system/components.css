@@ -516,3 +516,7 @@
 .hz-bg-unit-soft { background: var(--hz-unit-soft); }
 .hz-center { text-align: center; }
 .hz-no-break { break-inside: avoid; page-break-inside: avoid; }
+
+/* Align navigation with exercise copy when it sits outside the exercise. */
+.hz-go-to--inset { margin-left: calc(var(--hz-exercise-marker-size) + 3mm); }
+.hz-reference-links { display: flex; flex-wrap: wrap; gap: 0 6mm; }

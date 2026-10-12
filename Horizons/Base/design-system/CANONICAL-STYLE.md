@@ -82,6 +82,10 @@ fill the review with the lesson photographs merely because they are available.
 
 Normal numbered exercises are separated by numbering, whitespace and composition, not decorative horizontal dividers. `Go to:` cross-references also sit in open whitespace.
 
+**Required back-of-book navigation:** Every newly taught vocabulary set and grammar point must have a nearby `.hz-go-to` reference after its introduction or focus box. Use `Go to: Vocabulary - Adjectives, page ---` or `Go to: Grammar - Question words, page ---`, replacing the topic with the matching destination. Use the same topic names throughout the book; retain `page ---` until the destination pagination is final. Do not invent page numbers or unsupported sections. Check all lesson objectives, opening pages and continuation pages before export; a NEW WORDS cue is not a substitute for navigation. Cumulative reviews do not need to repeat every reference for already taught material.
+
+A vocabulary label alone is not a teaching purpose. Do not add an empty or redundant ADJECTIVES focus box to repeat familiar example sentences: introduce the words in meaningful context, practise them, and provide the vocabulary reference. Keep a grammar focus box when it actually explains a new form or sentence pattern. References use the shared small arrow treatment on plain paper, aligned with the exercise copy, with proper clearance from surrounding content. Do not box them or shrink learner text/writing space to accommodate them.
+
 Do not invent response mechanics that the authorized task does not ask for. If an exercise is meant to contain only questions, show only the questions: no answer lines, boxes, check circles or other response affordances unless explicitly required by the source or task design.
 
 ## 4. Visual language

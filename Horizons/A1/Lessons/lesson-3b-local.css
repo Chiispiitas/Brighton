@@ -46,6 +46,8 @@
 .l3b-continuation-content { padding-top:7mm; }
 .l3b-page--2 .hz-exercises { padding-top:0 !important; }
 .l3b-page--2 .hz-focus-box { margin:1.2mm 0 1.6mm; }
+.l3b-page--2 .hz-go-to { margin-bottom:.2mm; }
+.l3b-page--2 .hz-exercises:last-child .hz-exercise:last-child { padding-bottom:0; }
 .l3b-grammar p { margin:0 0 .9mm; }
 .l3b-grammar p:last-child { margin-bottom:0; }
 .l3b-two-columns { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:2.3mm 6mm; }
