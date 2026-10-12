@@ -176,3 +176,17 @@ not a celebrity voice imitation or a fabricated first-person interview.
 Nina and Omar are original fictional characters. Keep these approved exam-pool
 voice IDs if they return. All three tracks use Eleven v3, Natural Stability
 (0.5). Generation and transcription checks are in `../3A-production.json`.
+
+## 3C - Track 3.6 - Adjectives
+- NARRATOR (Jessica, `cgSgspJ2msm6clMCkdW9`): 1, 2.
+
+## 3C - Track 3.7 - A place for Saturday
+- NARRATOR (Jessica, `cgSgspJ2msm6clMCkdW9`): 1.
+- MIA (Adeline, `5l5f8iK3YPeGga21rQIX`): 2, 4, 6, 8.
+- RAVI (Mark - Casual, Relaxed and Light, `1SM7GgM6IMuvQlz2BwM3`): 3, 5, 7, 9.
+
+Mia and Ravi are the 3C conversation roles. Lena is mentioned, with no speaking
+turn. These roles do not recast Nina or Omar from 3A. Keep the recorded voices
+if the 3C roles return. Jessica remains the announcer and all vocabulary models.
+Both tracks use Eleven v3, Natural Stability (0.5), with no forbidden clarity
+tag. Generation, transcription and answer checks: `../3C-production.json`.

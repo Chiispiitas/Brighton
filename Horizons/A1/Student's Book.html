@@ -6236,6 +6236,103 @@ body.hz-debug .hz-page::after {
 .l3b-inset { margin-left:calc(var(--hz-exercise-marker-size) + 3mm); margin-top:.8mm; }
 
 
+/* Horizons/A1/Lessons/lesson-3c-local.css */
+/* Maps reviews: asymmetric photo collection, a review feed, conversational
+   question discovery and a final review editor. Shared chrome stays canonical. */
+.l3c-page { --hz-unit:var(--hz-unit-1); --hz-unit-dark:#8f123f; --hz-unit-soft:#f8e6ee; font-size:9.5pt; }
+.l3c-page .hz-page-stack { gap:2.7mm; }
+.l3c-page .hz-lesson-header { padding-bottom:3.2mm; }
+.l3c-page .hz-exercises { gap:.2mm; }
+.l3c-page .hz-exercise { padding:1.6mm 0 2.15mm; }
+.l3c-page .hz-exercise__body { margin-top:1.5mm; }
+.l3c-review-masthead { display:flex; align-items:center; justify-content:space-between; gap:5mm; padding:2.5mm 3mm; background:#1767aa; color:#fff; }
+.l3c-review-masthead h2 { margin:0; font:700 23pt/1.1 Bahnschrift,"Arial Black",sans-serif; letter-spacing:-.025em; }
+.l3c-maps-brand { display:flex; align-items:center; gap:2mm; font-size:10pt; font-weight:650; }
+.l3c-maps-brand small { display:block; margin-top:1mm; font-size:8pt; font-weight:400; }
+.l3c-maps-brand svg { width:6mm; height:8mm; fill:#ffc42b; }
+.l3c-maps-brand circle { fill:#1767aa; }
+.l3c-reviews-layout { display:grid; grid-template-columns:73mm minmax(0,1fr); gap:5mm; padding-top:3mm; }
+.l3c-photo-gallery figure { position:relative; margin:0; }
+.l3c-photo-gallery img { display:block; width:100%; object-fit:cover; }
+.l3c-park-photo img { height:51mm; object-position:center 69%; }
+.l3c-cafe-photos { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:2mm; margin-top:2mm; }
+.l3c-cafe-photos img { height:27mm; }
+.l3c-cafe-photos figure:first-child img { object-position:65% center; }
+.l3c-cafe-photos figure:last-child img { object-position:50% center; }
+.l3c-cafe-photos figcaption { display:flex; justify-content:space-between; gap:1mm; padding:1mm 2mm; background:#ffc42b; color:#202124; font-size:8pt; }
+.l3c-photo-letter { position:absolute; left:1.5mm; top:1.5mm; background:#fff; color:var(--hz-unit-dark); padding:.8mm 1.4mm; font-weight:650; font-size:9pt; line-height:1; }
+.l3c-review { padding:0 0 2.3mm; margin-bottom:2.3mm; border-bottom:.25mm solid var(--hz-line); }
+.l3c-review:last-child { padding-bottom:0; margin-bottom:0; border-bottom:0; }
+.l3c-review header { display:flex; justify-content:space-between; align-items:baseline; gap:2mm; }
+.l3c-review h3 { margin:0; font-size:13pt; font-weight:750; line-height:1.2; color:#1767aa; }
+.l3c-review header > span { font-size:8pt; white-space:nowrap; }
+.l3c-photo-answer { display:inline-block; width:7mm; height:3mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
+.l3c-review-byline { display:flex; align-items:center; gap:2.5mm; margin:1.1mm 0; font-size:8.5pt; }
+.l3c-review-byline b { font-weight:650; }
+.l3c-stars { color:#a86500; font-size:9.5pt; letter-spacing:.045em; }
+.l3c-star-empty { color:#a86500; }
+.l3c-review p { margin:0; font-size:9.5pt; line-height:1.45; }
+.l3c-adjective-words { display:flex; justify-content:space-between; gap:3mm; font-weight:400; }
+.l3c-conversation { background:#f2f4f2; padding:2.5mm 3mm; border-left:.8mm solid #087a46; }
+.l3c-conversation-title { display:flex; align-items:center; gap:2mm; margin-bottom:2mm; }
+.l3c-conversation-title h2 { margin:0; font-size:13pt; line-height:1.15; font-weight:750; color:#087a46; }
+.l3c-pin-dot { width:2.5mm; height:2.5mm; border:1mm solid #087a46; border-radius:50%; }
+.l3c-conversation dl { display:grid; grid-template-columns:12mm minmax(0,1fr); gap:.8mm 3mm; margin:0; }
+.l3c-conversation-exchanges { display:grid; grid-template-columns:1fr 1fr; gap:6mm; }
+.l3c-conversation dt { font-weight:650; color:var(--hz-unit-dark); }
+.l3c-conversation dd { margin:0; }
+.l3c-conversation b { color:var(--hz-unit-dark); }
+.l3c-list { list-style:none; counter-reset:item; padding:0; margin:0; }
+.l3c-list > li { counter-increment:item; position:relative; padding-left:4.5mm; line-height:1.45; }
+.l3c-list > li::before { content:counter(item); position:absolute; left:0; top:0; color:var(--hz-unit-dark); font-size:8.5pt; font-weight:620; }
+.l3c-notice { display:grid; gap:1.5mm; }
+.l3c-notice li { display:grid; grid-template-columns:1fr 40mm; gap:5mm; }
+.l3c-continuation-content { padding-top:7mm; }
+.l3c-page--2 .hz-exercises { padding-top:0 !important; }
+.l3c-page--2 .hz-focus-box { margin:1.2mm 0 .8mm; }
+.l3c-grammar { display:grid; grid-template-columns:1fr 1fr; gap:6mm; }
+.l3c-grammar p { margin:0 0 1mm; }
+.l3c-grammar p:nth-child(3) { margin-top:2mm; }
+.l3c-grammar p:last-child { margin-bottom:0; }
+.l3c-gap { display:inline-block; width:27mm; height:4.2mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); vertical-align:baseline; }
+.l3c-gap--long { width:62mm; }
+.l3c-gap--place { width:42mm; }
+.l3c-question-pairs { display:grid; grid-template-columns:1fr 1fr; gap:2mm 6mm; margin-top:2mm; }
+.l3c-question-pairs li { display:grid; grid-template-columns:minmax(0,1fr) 28mm; gap:2mm; align-items:baseline; }
+.l3c-question-pairs .l3c-gap { width:20mm; }
+.l3c-order { display:grid; grid-template-columns:1fr 1fr; gap:2mm 6mm; }
+.l3c-order li { display:flex; flex-direction:column; }
+.l3c-write { display:block; height:7mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
+.l3c-adjective-focus p { margin:0; }
+.l3c-model { margin:0 0 2mm; }
+.l3c-model > b { color:var(--hz-unit-dark); font-size:8.5pt; font-weight:620; margin-right:3mm; }
+.l3c-example { margin-left:5mm; color:var(--hz-muted); font:9.5pt "Segoe Print","Bradley Hand","Comic Sans MS",cursive; }
+.l3c-adjective-practice { display:grid; gap:1.5mm; }
+.l3c-adjective-practice li { display:grid; grid-template-columns:64mm 1fr; gap:5mm; }
+.l3c-pair-model { display:flex; gap:5mm; margin:0 0 2mm; }
+.l3c-pair-model b { color:var(--hz-unit-dark); }
+.l3c-info-exchange { display:grid; grid-template-columns:1fr 1fr; gap:5mm; }
+.l3c-info-exchange section { min-width:0; }
+.l3c-info-exchange header { padding:1.2mm 2mm; background:#1767aa; color:#fff; font-size:9pt; }
+.l3c-info-exchange section:last-child header { background:#087a46; }
+.l3c-info-exchange header b { margin-right:2mm; }
+.l3c-info-exchange table { width:100%; border-collapse:collapse; table-layout:fixed; font-size:8.5pt; }
+.l3c-info-exchange th,.l3c-info-exchange td { padding:1.3mm 1mm; text-align:left; border-bottom:.25mm solid var(--hz-line); vertical-align:bottom; }
+.l3c-info-exchange th:first-child { width:26%; }
+.l3c-info-exchange thead th { font-weight:700; color:var(--hz-unit-dark); }
+.l3c-info-exchange tbody th { font-weight:400; }
+.l3c-info-exchange td { border-left:.25mm solid var(--hz-line); }
+.l3c-cell-write { background:#fff; }
+.l3c-review-editor { border:.25mm solid #a7c4d8; background:#fff; }
+.l3c-review-editor header { display:flex; align-items:center; justify-content:space-between; gap:4mm; background:#1767aa; color:#fff; padding:1.3mm 3mm; }
+.l3c-review-editor h2 { margin:0; font-size:14pt; font-weight:700; }
+.l3c-review-editor svg { width:5mm; height:5mm; fill:none; stroke:#fff; stroke-width:1.7; stroke-linecap:round; stroke-linejoin:round; }
+.l3c-review-editor > div { padding:1.6mm 3mm; }
+.l3c-review-editor p { margin:0 0 1.8mm; }
+.l3c-review-editor p:last-child { margin-bottom:0; }
+.l3c-inset { margin-left:calc(var(--hz-exercise-marker-size) + 3mm); margin-top:.8mm; }
+
+
 /* Student's Book unifier */
 
 html,
@@ -6327,6 +6424,7 @@ body {
   <link rel="stylesheet" href="./Lessons/review-1-2-local.css">
   <link rel="stylesheet" href="./Lessons/lesson-3a-local.css">
   <link rel="stylesheet" href="./Lessons/lesson-3b-local.css">
+  <link rel="stylesheet" href="./Lessons/lesson-3c-local.css">
 </head>
 <body class="hz-book">
   <main id="hz-book">
@@ -8580,6 +8678,113 @@ body {
       </div>
       <div class="hz-extra-practice l3b-inset"><span class="hz-extra-practice__label">EXTRA PRACTICE</span><span class="hz-extra-practice__prompt">Ask a person in your family three questions about their week. Write the answers.</span></div>
     </div></main><footer class="hz-page__footer"><span></span><span class="hz-page-number">26</span></footer>
+  </article>
+
+<!-- ===== 3C.html ===== -->
+<article class="hz-page hz-content hz-unit-3 l3c-page" data-page="27">
+    <main class="hz-page__content"><div class="hz-page-stack">
+      <header class="hz-lesson-header">
+        <div class="hz-lesson-tab" aria-label="Lesson 3C"><span class="hz-lesson-tab__label">Lesson</span><span class="hz-lesson-tab__id">3C</span></div>
+        <div class="hz-lesson-heading"><h1 class="hz-lesson-title">WHERE DO YOU GO?</h1><div class="hz-objectives"><span class="hz-objectives__item">Question words</span><span class="hz-objectives__item">Adjectives</span></div></div>
+      </header>
+      <div class="hz-exercises">
+        <section class="hz-exercise">
+          <div class="hz-exercise-number">1</div><div class="hz-exercise__content">
+            <p class="hz-exercise__instruction">Read the reviews. Match the places and photos A–C.</p>
+            <div class="hz-exercise__body l3c-reviews-feature">
+              <header class="l3c-review-masthead"><h2>Your weekend</h2><div class="l3c-maps-brand"><svg viewBox="0 0 24 30" aria-hidden="true"><path d="M12 1a10 10 0 0 0-10 10c0 7 10 18 10 18s10-11 10-18A10 10 0 0 0 12 1Z"/><circle cx="12" cy="11" r="3.5"/></svg><span>Google Maps<small>Practice reviews</small></span></div></header>
+              <div class="l3c-reviews-layout">
+                <div class="l3c-photo-gallery">
+                  <figure class="l3c-park-photo" data-image-slot="HZN_A1_U03_LC_E01_IMG_01"><img src="./Images/3C/Park-Emre-Gencer-17379814.jpg" alt="A: a green park with an empty bench and a path under trees."><span class="l3c-photo-letter">A</span></figure>
+                  <div class="l3c-cafe-photos">
+                    <figure data-image-slot="HZN_A1_U03_LC_E01_IMG_02"><img src="./Images/3C/Cafe-Raphael-Loquellano-10215906.jpg" alt="B: customers inside a café."><span class="l3c-photo-letter">B</span><figcaption>Coffee <b>$2</b></figcaption></figure>
+                    <figure data-image-slot="HZN_A1_U03_LC_E01_IMG_03"><img src="./Images/3C/Terrace-Moussa-Idrissi-34936253.jpg" alt="C: a café terrace with a city view."><span class="l3c-photo-letter">C</span><figcaption>Coffee <b>$8</b></figcaption></figure>
+                  </div>
+                </div>
+                <div class="l3c-review-feed">
+                  <article class="l3c-review"><header><h3>Palm Park</h3><span>Photo <span class="l3c-photo-answer"></span></span></header><div class="l3c-review-byline"><b>Iris</b><span class="l3c-stars" aria-label="five stars">★★★★★</span></div><p>Beautiful and quiet. I go here on Sunday with my sister. We go at nine.</p></article>
+                  <article class="l3c-review"><header><h3>Beat Café</h3><span>Photo <span class="l3c-photo-answer"></span></span></header><div class="l3c-review-byline"><b>Lena</b><span class="l3c-stars" aria-label="four stars">★★★★<span class="l3c-star-empty">☆</span></span></div><p>Busy and noisy! I go here on Friday with my brother. We go at seven. The coffee is cheap: $2.</p></article>
+                  <article class="l3c-review"><header><h3>Cloud Café</h3><span>Photo <span class="l3c-photo-answer"></span></span></header><div class="l3c-review-byline"><b>Ravi</b><span class="l3c-stars" aria-label="four stars">★★★★<span class="l3c-star-empty">☆</span></span></div><p>Beautiful, but expensive: coffee is $8. I go here on Saturday with my friend. We go at ten.</p></article>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+        <section class="hz-exercise">
+          <div class="hz-exercise-number">2</div><div class="hz-exercise__content">
+            <p class="hz-exercise__instruction"><span class="hz-audio-badge">♪ 3.6</span>Listen and repeat. Find these words in the reviews. <span class="hz-new-words">NEW WORDS</span></p>
+            <div class="hz-exercise__body l3c-adjective-words"><span>beautiful</span><span>quiet</span><span>busy</span><span>noisy</span><span>cheap</span><span>expensive</span></div>
+          </div>
+        </section>
+        <section class="hz-focus-box hz-no-break l3c-adjective-focus" aria-label="Adjectives">
+          <header class="hz-focus-box__header">ADJECTIVES</header><div class="hz-focus-box__body hz-content-grid hz-content-grid--2"><p>It's a <b>quiet</b> park.</p><p>The park is <b>quiet</b>.</p></div>
+        </section>
+        <section class="hz-exercise">
+          <div class="hz-exercise-number">3</div><div class="hz-exercise__content">
+            <p class="hz-exercise__instruction"><span class="hz-audio-badge">♪ 3.7</span>Read and listen. Where does Ravi go?</p>
+            <div class="hz-exercise__body l3c-conversation hz-dialogue-text">
+              <div class="l3c-conversation-title"><span class="l3c-pin-dot" aria-hidden="true"></span><h2>A place for Saturday</h2></div>
+              <div class="l3c-conversation-exchanges"><dl><dt>Mia</dt><dd><b>Where do</b> you <b>go</b> on Saturday?</dd><dt>Ravi</dt><dd>I go to Cloud Café.</dd><dt>Mia</dt><dd><b>Who do</b> you <b>go</b> with?</dd><dt>Ravi</dt><dd>With my friend.</dd></dl><dl><dt>Mia</dt><dd><b>What time do</b> you <b>go</b>?</dd><dt>Ravi</dt><dd>At ten.</dd><dt>Mia</dt><dd>And Lena? <b>When does</b> she <b>go</b> to Beat Café?</dd><dt>Ravi</dt><dd>On Friday.</dd></dl></div>
+            </div>
+          </div>
+        </section>
+        <section class="hz-exercise">
+          <div class="hz-exercise-number">4</div><div class="hz-exercise__content">
+            <p class="hz-exercise__instruction">Read the conversation again. Circle the correct words.</p>
+            <div class="hz-exercise__body"><ol class="l3c-list l3c-notice">
+              <li><div><em class="hz-answer-option">Where / When</em> do you go?</div><span>To Cloud Café.</span></li>
+              <li><div><em class="hz-answer-option">Who / What time</em> do you go with?</div><span>With my friend.</span></li>
+              <li><div><em class="hz-answer-option">Where / When</em> does Lena go?</div><span>On Friday.</span></li>
+              <li><div><em class="hz-answer-option">Who / What time</em> do you go?</div><span>At ten.</span></li>
+            </ol></div>
+          </div>
+        </section>
+      </div>
+    </div></main><footer class="hz-page__footer"><span></span><span class="hz-page-number">27</span></footer>
+  </article>
+  <article class="hz-page hz-content hz-unit-3 hz-continuation-page l3c-page l3c-page--2" data-page="28">
+    <main class="hz-page__content"><span class="hz-continuation" aria-label="Lesson 3C continued">3C</span><div class="hz-page-stack">
+      <div class="l3c-continuation-content">
+        <section class="hz-focus-box hz-no-break" aria-label="Grammar: question words">
+          <header class="hz-focus-box__header">GRAMMAR: QUESTION WORDS</header>
+          <div class="hz-focus-box__body l3c-grammar">
+            <div><p><b>Where do</b> you <b>go</b>?</p><p>To Cloud Café.</p><p><b>Who do</b> you <b>go</b> with?</p><p>With my friend.</p></div>
+            <div><p><b>When does</b> Lena <b>go</b>?</p><p>On Friday.</p><p><b>What time does</b> she <b>go</b>?</p><p>At seven.</p></div>
+          </div>
+        </section>
+        <div class="hz-exercises">
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">5</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Complete the questions with the words in the box.</p>
+              <div class="hz-exercise__body"><div class="hz-word-bank"><span class="hz-text-unit">where · when · who · what time</span></div><ol class="l3c-list l3c-question-pairs">
+                <li><div><span class="l3c-gap"></span> does Iris go?</div><span>To Palm Park.</span></li><li><div><span class="l3c-gap"></span> does she go?</div><span>On Sunday.</span></li><li><div><span class="l3c-gap"></span> do you go with?</div><span>With my brother.</span></li><li><div><span class="l3c-gap"></span> do you go?</div><span>At eight.</span></li>
+              </ol></div>
+            </div>
+          </section>
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">6</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Write the questions.</p><div class="hz-exercise__body"><ol class="l3c-list l3c-order">
+              <li><span>you / where / do / go / ?</span><span class="l3c-write"></span></li><li><span>does / Lena / when / go / ?</span><span class="l3c-write"></span></li><li><span>go / who / he / does / with / ?</span><span class="l3c-write"></span></li><li><span>do / go / what time / they / ?</span><span class="l3c-write"></span></li>
+            </ol></div></div>
+          </section>
+        </div>
+        <div class="hz-exercises">
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">7</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Write the sentences.</p><div class="hz-exercise__body"><p class="l3c-model"><b>0</b> The café is cheap. <span class="l3c-example">It's a cheap café.</span></p><ol class="l3c-list l3c-adjective-practice"><li><span>The park is beautiful.</span><span>It's <span class="l3c-gap l3c-gap--long"></span>.</span></li><li><span>The café is noisy.</span><span>It's <span class="l3c-gap l3c-gap--long"></span>.</span></li><li><span>The café is expensive.</span><span>It's <span class="l3c-gap l3c-gap--long"></span>.</span></li></ol></div></div>
+          </section>
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">8</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Work in pairs. Student A: look at A. Student B: look at B. Ask and write.</p>
+              <div class="hz-exercise__body"><div class="l3c-pair-model hz-dialogue-text"><span><b>A:</b> When does Alex go?</span><span><b>B:</b> On Sunday.</span></div><div class="l3c-info-exchange">
+                <section><header><b>A</b> Student A</header><table aria-label="Student A information"><thead><tr><th></th><th>Eva</th><th>Alex</th></tr></thead><tbody><tr><th>Where?</th><td>West Park</td><td class="l3c-cell-write"></td></tr><tr><th>When?</th><td>Saturday</td><td class="l3c-cell-write"></td></tr><tr><th>What time?</th><td>eleven</td><td class="l3c-cell-write"></td></tr><tr><th>Who with?</th><td>her family</td><td class="l3c-cell-write"></td></tr></tbody></table></section>
+                <section><header><b>B</b> Student B</header><table aria-label="Student B information"><thead><tr><th></th><th>Eva</th><th>Alex</th></tr></thead><tbody><tr><th>Where?</th><td class="l3c-cell-write"></td><td>Garden Café</td></tr><tr><th>When?</th><td class="l3c-cell-write"></td><td>Sunday</td></tr><tr><th>What time?</th><td class="l3c-cell-write"></td><td>twelve</td></tr><tr><th>Who with?</th><td class="l3c-cell-write"></td><td>his brother</td></tr></tbody></table></section>
+              </div></div>
+            </div>
+          </section>
+          <section class="hz-exercise">
+            <div class="hz-exercise-number">9</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Write your review.</p><div class="hz-exercise__body l3c-review-editor"><header><h2>Your review</h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m16 3 5 5-12 12-6 1 1-6Z M13 6l5 5"/></svg></header><div><p>I go to <span class="l3c-gap l3c-gap--place"></span> on <span class="l3c-gap"></span>.</p><p>I go with <span class="l3c-gap l3c-gap--place"></span>. It's <span class="l3c-gap l3c-gap--place"></span>.</p></div></div></div>
+          </section>
+        </div>
+      </div>
+      <aside class="hz-extra-practice l3c-inset"><span class="hz-extra-practice__label">EXTRA PRACTICE</span><div class="hz-extra-practice__prompt">Ask a person in your family: Where do you go on Saturday? Who do you go with? Write the answers.</div></aside>
+    </div></main><footer class="hz-page__footer"><span></span><span class="hz-page-number">28</span></footer>
   </article>
   </main>
 

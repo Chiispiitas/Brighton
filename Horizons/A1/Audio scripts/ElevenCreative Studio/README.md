@@ -65,6 +65,8 @@ Eleven v3
 - 2C - Track 2.6 - Rivera family reading
 - 3B - Track 3.4 - Days of the week
 - 3B - Track 3.5 - HORIZONS ON AIR: Three people. Three weeks.
+- 3C - Track 3.6 - Adjectives for places
+- 3C - Track 3.7 - A place for Saturday
 
 Full A1 recordings were regenerated on 2026-10-06 after the author banned
 the clarity tag. The earlier dialogue characters now use the approved exam
