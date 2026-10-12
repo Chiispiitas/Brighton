@@ -64,7 +64,6 @@
 .l3c-order { display:grid; grid-template-columns:1fr 1fr; gap:2mm 6mm; }
 .l3c-order li { display:flex; flex-direction:column; }
 .l3c-write { display:block; height:7mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
-.l3c-adjective-focus p { margin:0; }
 .l3c-model { margin:0 0 2mm; }
 .l3c-model > b { color:var(--hz-unit-dark); font-size:8.5pt; font-weight:620; margin-right:3mm; }
 .l3c-example { margin-left:5mm; color:var(--hz-muted); font:9.5pt "Segoe Print","Bradley Hand","Comic Sans MS",cursive; }

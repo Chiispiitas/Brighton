@@ -650,6 +650,10 @@
 .hz-center { text-align: center; }
 .hz-no-break { break-inside: avoid; page-break-inside: avoid; }
 
+/* Align navigation with exercise copy when it sits outside the exercise. */
+.hz-go-to--inset { margin-left: calc(var(--hz-exercise-marker-size) + 3mm); }
+.hz-reference-links { display: flex; flex-wrap: wrap; gap: 0 6mm; }
+
 
 /* Horizons — editorial HTML5/CSS A4 shell.
    One semantic .hz-page = one print page.
@@ -5873,7 +5877,7 @@ body.hz-debug .hz-page::after {
 .l2d-dialogue { display: grid; grid-template-columns: 22mm minmax(0, 1fr); gap: 1.05mm 1.5mm; margin: 0 0 0 -5mm; padding: 3mm 2.5mm 3mm 9mm; border-top: .8mm solid var(--l2d-feature); border-bottom: 0; background: transparent; }
 .l2d-dialogue dt, .l2d-dialogue dd { margin: 0; }
 .l2d-dialogue dt { font-weight: 720; }
-.l2d-notice { gap: 1.5mm 5mm; }
+.l2d-notice { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5mm 5mm; }
 .l2d-notice p { margin: 0; }
 .l2d-focus { margin: 1.2mm 0 .8mm calc(var(--hz-exercise-marker-size) + 3mm); }
 .l2d-focus p { margin: 0 0 1mm; }
@@ -6207,6 +6211,8 @@ body.hz-debug .hz-page::after {
 .l3b-continuation-content { padding-top:7mm; }
 .l3b-page--2 .hz-exercises { padding-top:0 !important; }
 .l3b-page--2 .hz-focus-box { margin:1.2mm 0 1.6mm; }
+.l3b-page--2 .hz-go-to { margin-bottom:.2mm; }
+.l3b-page--2 .hz-exercises:last-child .hz-exercise:last-child { padding-bottom:0; }
 .l3b-grammar p { margin:0 0 .9mm; }
 .l3b-grammar p:last-child { margin-bottom:0; }
 .l3b-two-columns { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:2.3mm 6mm; }
@@ -6303,7 +6309,6 @@ body.hz-debug .hz-page::after {
 .l3c-order { display:grid; grid-template-columns:1fr 1fr; gap:2mm 6mm; }
 .l3c-order li { display:flex; flex-direction:column; }
 .l3c-write { display:block; height:7mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
-.l3c-adjective-focus p { margin:0; }
 .l3c-model { margin:0 0 2mm; }
 .l3c-model > b { color:var(--hz-unit-dark); font-size:8.5pt; font-weight:620; margin-right:3mm; }
 .l3c-example { margin-left:5mm; color:var(--hz-muted); font:9.5pt "Segoe Print","Bradley Hand","Comic Sans MS",cursive; }
@@ -6506,6 +6511,7 @@ body {
               </div>
             </div>
           </section>
+          <div class="hz-go-to l1a-go-to">Go to: Vocabulary - Greetings, page ---</div>
 
           <aside class="l1a-grammar hz-focus-box">
             <h2 class="l1a-grammar__title hz-focus-box__header">GRAMMAR: VERB TO BE</h2>
@@ -6600,6 +6606,7 @@ body {
               </div>
             </div>
           </section>
+          <div class="hz-go-to l1a-go-to">Go to: Vocabulary - Personal information, page ---</div>
 
           <section class="hz-exercise">
             <div class="hz-exercise-number">6</div>
@@ -6615,6 +6622,7 @@ body {
               </div>
             </div>
           </section>
+          <div class="hz-go-to l1a-go-to">Go to: Vocabulary - Alphabet, page ---</div>
 
           <section class="hz-exercise">
             <div class="hz-exercise-number">7</div>
@@ -6648,6 +6656,7 @@ body {
               </div>
             </div>
           </section>
+          <div class="hz-go-to l1a-go-to">Go to: Vocabulary - Numbers, page ---</div>
 
           <section class="hz-exercise">
             <div class="hz-exercise-number">10</div>
@@ -6772,6 +6781,7 @@ body {
               </div>
             </div>
           </section>
+          <div class="hz-go-to l1b-go-to">Go to: Vocabulary - Occupations, page ---</div>
 
           <aside class="l1b-aan hz-focus-box">
             <h2 class="l1b-aan__title hz-focus-box__header">GRAMMAR: A / AN</h2>
@@ -6788,7 +6798,7 @@ body {
             </div>
           </div></aside>
 
-          <div class="l1b-go-to hz-go-to">Go to: Vocabulary - Occupations, page ---</div>
+          <div class="hz-go-to l1b-go-to">Go to: Grammar - A / an, page ---</div>
 
           <section class="hz-exercise">
             <div class="hz-exercise-number">2</div>
@@ -6857,6 +6867,7 @@ body {
               <div class="l1b-contractions__row"><span>You are a student.</span><span>You<strong>’re</strong> a student.</span></div>
             </div>
           </div></aside>
+          <div class="hz-go-to l1b-go-to">Go to: Grammar - Verb to be: contractions, page ---</div>
 
           <section class="hz-exercise">
             <div class="hz-exercise-number">4.1</div>
@@ -6898,6 +6909,7 @@ body {
               </div>
             </div>
           </section>
+          <div class="hz-go-to l1b-go-to">Go to: Vocabulary - Adjectives, page ---</div>
 
           <div class="l1b-subexercise">
             <div class="l1b-subexercise__number">4.2</div>
@@ -7229,6 +7241,7 @@ body {
               <div class="l1d-new-words"><span class="hz-new-words">NEW WORDS</span></div>
             </div>
           </section>
+          <div class="hz-go-to hz-go-to--inset">Go to: Vocabulary - Personal information, page ---</div>
 
           <section class="hz-exercise">
             <div class="hz-exercise-number">2</div>
@@ -7456,7 +7469,7 @@ body {
             </div>
           </section>
 
-          <div class="l2a-go-to hz-go-to">Vocabulary Practice · Personal items · page ---</div>
+          <div class="l2a-go-to hz-go-to">Go to: Vocabulary - Personal items, page ---</div>
 
           <section class="hz-exercise">
             <div class="hz-exercise-number">2</div>
@@ -7515,7 +7528,7 @@ body {
             </div>
           </section>
 
-          <div class="l2a-go-to hz-go-to">Grammar Practice · This / that / these / those · page ---</div>
+          <div class="l2a-go-to hz-go-to">Go to: Grammar - This / that / these / those, page ---</div>
         </div>
       </div>
     </main>
@@ -7665,7 +7678,7 @@ body {
             </div>
           </section>
 
-          <div class="l2b-go-to hz-go-to">Vocabulary Practice · Telling time · page ---</div>
+          <div class="l2b-go-to hz-go-to">Go to: Vocabulary - Telling time, page ---</div>
 
           <section class="hz-exercise l2b-onair-start">
             <div class="hz-exercise-number">2</div>
@@ -7844,7 +7857,7 @@ body {
             </div>
           </section>
 
-          <div class="l2b-go-to hz-go-to">Grammar Practice · A / an / the · page ---</div>
+          <div class="l2b-go-to hz-go-to">Go to: Grammar - A / an / the, page ---</div>
 
           <section class="hz-exercise">
             <div class="hz-exercise-number">5</div>
@@ -8015,7 +8028,7 @@ body {
             </div>
           </section>
 
-          <div class="l2c-go-to hz-go-to">Vocabulary Practice · Family members · page ---</div>
+          <div class="l2c-go-to hz-go-to">Go to: Vocabulary - Family members, page ---</div>
         </div>
       </div>
     </main>
@@ -8067,7 +8080,7 @@ body {
             </div>
           </section>
 
-          <div class="l2c-go-to hz-go-to">Grammar Practice · Possessive case · page ---</div>
+          <div class="l2c-go-to hz-go-to">Go to: Grammar - Possessive case, page ---</div>
 
           <section class="hz-exercise">
             <div class="hz-exercise-number">5</div>
@@ -8198,6 +8211,7 @@ body {
               </div>
             </div>
           </section>
+          <div class="hz-go-to l2d-inset">Go to: Vocabulary - Colors, page ---</div>
 
           <section class="hz-exercise">
             <div class="hz-exercise-number">2</div>
@@ -8244,6 +8258,7 @@ body {
               <div lang="es"><p><b>ESPAÑOL</b></p><p>un teléfono <strong>negro</strong></p><p>Mi teléfono es <strong>negro</strong>.</p></div>
             </div>
           </section>
+          <div class="hz-reference-links l2d-inset"><div class="hz-go-to">Go to: Grammar - Adjective position, page ---</div><div class="hz-go-to">Go to: Vocabulary - Adjectives, page ---</div></div>
 
           <section class="hz-exercise">
             <div class="hz-exercise-number">4</div>
@@ -8268,7 +8283,6 @@ body {
               </div>
             </div>
           </section>
-          <div class="hz-go-to l2d-inset">Vocabulary Practice · Colors and adjectives · page ---</div>
         </div>
       </div>
     </main>
@@ -8499,6 +8513,7 @@ body {
             </div>
           </div>
         </section>
+          <div class="hz-go-to hz-go-to--inset">Go to: Vocabulary - Daily routines, page ---</div>
         <section class="hz-exercise">
           <div class="hz-exercise-number">2</div><div class="hz-exercise__content">
             <p class="hz-exercise__instruction"><span class="hz-audio-badge">♪ 3.2</span>Read and listen.</p>
@@ -8550,6 +8565,7 @@ body {
             <div><p><strong>He / she / it</strong></p><p>He <b>gets up</b> at seven.</p><p>She <b>goes</b> to work.</p><p>He <b>has</b> breakfast.</p><p>She <b>watches</b> TV.</p></div>
           </div>
         </section>
+          <div class="hz-go-to hz-go-to--inset">Go to: Grammar - Present simple: affirmative, page ---</div>
         <div class="hz-exercises">
           <section class="hz-exercise">
             <div class="hz-exercise-number">5</div><div class="hz-exercise__content">
@@ -8612,6 +8628,7 @@ body {
             <div class="hz-exercise__body l3b-week" aria-label="Days of the week"><span><b>1</b>Monday</span><span><b>2</b>Tuesday</span><span><b>3</b>Wednesday</span><span><b>4</b>Thursday</span><span><b>5</b>Friday</span><span><b>6</b>Saturday</span><span><b>7</b>Sunday</span></div>
           </div>
         </section>
+          <div class="hz-go-to hz-go-to--inset">Go to: Vocabulary - Days of the week, page ---</div>
         <section class="hz-exercise">
           <div class="hz-exercise-number">2</div><div class="hz-exercise__content">
             <p class="hz-exercise__instruction"><span class="hz-audio-badge">♪ 3.5</span>Listen. The three weeks: <em class="hz-answer-option">the same / different</em>?</p>
@@ -8658,6 +8675,7 @@ body {
           <header class="hz-focus-box__header">GRAMMAR: PRESENT SIMPLE (− / ?)</header>
           <div class="hz-focus-box__body hz-content-grid hz-content-grid--3 l3b-grammar"><div><p><strong>I / you / we / they</strong></p><p>I <b>don't work</b> on Monday.</p><p><strong>He / she / it</strong></p><p>She <b>doesn't work</b> on Monday.</p></div><div><p><b>Do</b> you work on Saturday?</p><p><b>Does</b> he work on Saturday?</p></div><div><p>Yes, I <b>do</b>.<br>No, I <b>don't</b>.</p><p>Yes, he <b>does</b>.<br>No, he <b>doesn't</b>.</p></div></div>
         </section>
+          <div class="hz-go-to hz-go-to--inset">Go to: Grammar - Present simple: negatives and questions, page ---</div>
         <div class="hz-exercises">
           <section class="hz-exercise">
             <div class="hz-exercise-number">5</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Choose and circle.</p><div class="hz-exercise__body"><ol class="l3b-list l3b-two-columns"><li>I <em class="hz-answer-option">don't / doesn't</em> work on Sunday.</li><li><em class="hz-answer-option">Do / Does</em> she get up at six?</li><li>Ken doesn't <em class="hz-answer-option">go / goes</em> home at five.</li><li><em class="hz-answer-option">Do / Does</em> they work on Friday?</li><li>My father <em class="hz-answer-option">don't / doesn't</em> watch TV.</li><li>Does Maryam <em class="hz-answer-option">work / works</em> on Friday?</li></ol></div></div>
@@ -8716,9 +8734,7 @@ body {
             <div class="hz-exercise__body l3c-adjective-words"><span>beautiful</span><span>quiet</span><span>busy</span><span>noisy</span><span>cheap</span><span>expensive</span></div>
           </div>
         </section>
-        <section class="hz-focus-box hz-no-break l3c-adjective-focus" aria-label="Adjectives">
-          <header class="hz-focus-box__header">ADJECTIVES</header><div class="hz-focus-box__body hz-content-grid hz-content-grid--2"><p>It's a <b>quiet</b> park.</p><p>The park is <b>quiet</b>.</p></div>
-        </section>
+        <div class="hz-go-to hz-go-to--inset">Go to: Vocabulary - Adjectives, page ---</div>
         <section class="hz-exercise">
           <div class="hz-exercise-number">3</div><div class="hz-exercise__content">
             <p class="hz-exercise__instruction"><span class="hz-audio-badge">♪ 3.7</span>Read and listen. Where does Ravi go?</p>
@@ -8752,6 +8768,7 @@ body {
             <div><p><b>When does</b> Lena <b>go</b>?</p><p>On Friday.</p><p><b>What time does</b> she <b>go</b>?</p><p>At seven.</p></div>
           </div>
         </section>
+          <div class="hz-go-to hz-go-to--inset">Go to: Grammar - Question words, page ---</div>
         <div class="hz-exercises">
           <section class="hz-exercise">
             <div class="hz-exercise-number">5</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Complete the questions with the words in the box.</p>

@@ -13,6 +13,8 @@ Read these sources in order:
 3. `component-contracts.md` — reusable HTML/CSS semantics.
 4. `asset-policy.md` — image/audio sourcing and production.
 
+Before exporting any lesson, check every newly taught vocabulary set and grammar point has its nearby `Go to:` reference. The canonical style and component contract specify the exact wording and placement. Lesson 3C uses a vocabulary reference in place of the redundant ADJECTIVES focus box.
+
 Shared implementation is intentionally small:
 
 - `tokens.css` — colors, type, spacing and print legibility floors;
