@@ -724,7 +724,7 @@ window.BRIGHTON_PLACEMENT_MODULES = {
             "imageAlt": "A cat sitting inside a box."
           }
         ],
-        "audio": "audio/listening-prea1-01-eleven-v2.mp3"
+        "audio": "audio/listening-prea1-01-eleven-ame-v3.mp3"
       },
       {
         "id": "yl-listening-prea1-02",
@@ -749,7 +749,7 @@ window.BRIGHTON_PLACEMENT_MODULES = {
             "imageAlt": "A tree in rainy weather."
           }
         ],
-        "audio": "audio/listening-prea1-02-eleven-v2.mp3"
+        "audio": "audio/listening-prea1-02-eleven-ame-v3.mp3"
       },
       {
         "id": "yl-listening-prea1-03",
@@ -774,7 +774,7 @@ window.BRIGHTON_PLACEMENT_MODULES = {
             "imageAlt": "A cat sitting inside a box."
           }
         ],
-        "audio": "audio/listening-prea1-03-eleven-v2.mp3"
+        "audio": "audio/listening-prea1-03-eleven-ame-v3.mp3"
       }
     ],
     "level": "PRE-A1"
@@ -806,7 +806,7 @@ window.BRIGHTON_PLACEMENT_MODULES = {
             "imageAlt": "Two children at a classroom desk."
           }
         ],
-        "audio": "audio/listening-a1-01-eleven-v2.mp3"
+        "audio": "audio/listening-a1-01-eleven-ame-v3.mp3"
       },
       {
         "id": "yl-listening-a1-02",
@@ -831,7 +831,7 @@ window.BRIGHTON_PLACEMENT_MODULES = {
             "imageAlt": "A giraffe, an elephant and two monkeys at a zoo."
           }
         ],
-        "audio": "audio/listening-a1-02-eleven-v2.mp3"
+        "audio": "audio/listening-a1-02-eleven-ame-v3.mp3"
       },
       {
         "id": "yl-listening-a1-03",
@@ -856,7 +856,7 @@ window.BRIGHTON_PLACEMENT_MODULES = {
             "imageAlt": "A giraffe, an elephant and two monkeys at a zoo."
           }
         ],
-        "audio": "audio/listening-a1-03-eleven-v2.mp3"
+        "audio": "audio/listening-a1-03-eleven-ame-v3.mp3"
       }
     ],
     "level": "A1"
@@ -888,7 +888,7 @@ window.BRIGHTON_PLACEMENT_MODULES = {
             "imageAlt": "A cat sitting inside a box."
           }
         ],
-        "audio": "audio/listening-a2-01-eleven-v2.mp3"
+        "audio": "audio/listening-a2-01-eleven-ame-v3.mp3"
       },
       {
         "id": "yl-listening-a2-02",
@@ -913,7 +913,7 @@ window.BRIGHTON_PLACEMENT_MODULES = {
             "imageAlt": "Children having a picnic in a park."
           }
         ],
-        "audio": "audio/listening-a2-02-eleven-v2.mp3"
+        "audio": "audio/listening-a2-02-eleven-ame-v3.mp3"
       },
       {
         "id": "yl-listening-a2-03",
@@ -938,7 +938,7 @@ window.BRIGHTON_PLACEMENT_MODULES = {
             "imageAlt": "Two children at a classroom desk."
           }
         ],
-        "audio": "audio/listening-a2-03-eleven-v2.mp3"
+        "audio": "audio/listening-a2-03-eleven-ame-v3.mp3"
       }
     ],
     "level": "A2"
@@ -977,3 +977,4 @@ window.BRIGHTON_PLACEMENT_MODULES = {
     "maximumSeconds": 60
   }
 };
+

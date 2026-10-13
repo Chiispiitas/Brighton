@@ -28,10 +28,11 @@ The existing `BRIGHTON_PLACEMENT_GEMINI_API_KEY` secret is reused only in the Wi
 
 ## Assets and verification
 
-`assets/park.png` was generated with the built-in ImageGen tool. The exact prompt is in `assets/imagegen-prompt.txt`. The scene was checked visually for the three children, object colours, three apples and two ducks used by the questions. Nine revised listening scripts were generated through the ElevenLabs API using Alice (British educational voice), `eleven_multilingual_v2`, speed 0.85 and 128 kbps MP3. Scripts are in `audio/scripts.json`, and provider/model/voice/file hashes are recorded in `audio/elevenlabs-manifest.json`. Each listening question has three illustrated choices. All recordings were transcribed for QA and checked against the script.
+`assets/park.png` was generated with the built-in ImageGen tool. The exact prompt is in `assets/imagegen-prompt.txt`. The scene was checked visually for the three children, object colours, three apples and two ducks used by the questions. Nine revised listening scripts were generated through the ElevenLabs API using Matilda (American English educational voice), `eleven_multilingual_v2`, speed 0.85 and 128 kbps MP3. Scripts are in `audio/scripts.json`, and provider/model/voice/file hashes are recorded in `audio/elevenlabs-manifest.json`. Each listening question has three illustrated choices. All recordings were transcribed for QA and checked against the script.
 
 Verified private answer mappings, all routing boundaries, prompt parity, duration windows, original adult endpoint compatibility, live Pre-A1/A1/A2 routing, resume, version/session-ownership rejection, explicit speaking skip and live chunked audio grading with a synthetic QA recording. Live microphone capture still depends on the learner's device permission and browser audio support. QA records were removed after testing.
 
 ## Picture-based revision
 
 The checkbox and consent requirement were removed at the site owner’s request. New sessions do not record consent. The revised release includes six original ImageGen pictures (banana, birds, rainy weather, cat in a box, classroom and zoo), plus the original park scene. All 32 warm-up, language and reading questions use pictures; all nine listening questions use illustrated answer choices. Reading A2 combines a short story with the classroom picture. The original four-stage design and AI Speaking task are preserved. See `assets/imagegen-prompts-v2.json` for the exact generation prompts.
+
