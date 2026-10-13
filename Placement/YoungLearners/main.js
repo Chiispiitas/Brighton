@@ -1,7 +1,7 @@
 "use strict";
 
 (() => {
-  const PLACEMENT_VERSION = "2026-10-12.yle1";
+  const PLACEMENT_VERSION = "2026-10-12.yle2";
   const STORAGE_KEY = "brighton-young-placement-session-v1";
   const RESTART_NAME_KEY = "brighton-young-placement-restart-name";
   const RESTART_PHONE_KEY = "brighton-young-placement-restart-phone";
@@ -435,7 +435,6 @@
   async function startRemoteSession(name, phoneNumber, clientSessionId) {
     return apiPost("brightonYoungPlacementStart", {
       clientSessionId,
-      guardianConsent: true,
       studentName: name,
       phoneNumber,
       placementVersion: PLACEMENT_VERSION
@@ -795,7 +794,7 @@
         ${item.options.map((option, index) => `
           <button class="answer-choice" type="button" data-option-id="${escapeAttr(option.id)}" ${disabled ? "disabled" : ""}>
             <span class="choice-key">${index + 1}</span>
-            <span>${escapeHtml(option.text)}</span>
+            <span class="choice-content">${option.image ? `<img class="choice-picture" src="${escapeAttr(option.image)}" alt="${escapeAttr(option.imageAlt || option.text)}" />` : ""}<span>${escapeHtml(option.text)}</span></span>
           </button>
         `).join("")}
       </div>
@@ -820,8 +819,8 @@
         <div class="reading-layout">
           <article class="reading-passage">
             <span class="reading-label">${escapeHtml(data.title || "Text")}</span>
-            ${renderPicture(data)}
-            <p>${escapeHtml(data.passage || "")}</p>
+            ${renderPicture(item.image ? item : data)}
+            ${(item.passage ?? data.passage) ? `<p>${escapeHtml(item.passage ?? data.passage)}</p>` : ""}
           </article>
           <section class="reading-question">
             <h3 class="question-prompt reading-question-prompt">${escapeHtml(item.prompt)}</h3>
@@ -2567,16 +2566,12 @@
     const clientSessionId = makeClientSessionId();
 
     try {
-      if (!document.querySelector("#guardianConsent").checked) {
-        throw new Error("Please ask your parent, guardian or teacher to agree before starting.");
-      }
       const result = await startRemoteSession(name, phoneNumber, clientSessionId);
 
       session = {
         clientSessionId,
         sessionId: result.sessionId,
         placementVersion: result.placementVersion || PLACEMENT_VERSION,
-        guardianConsent: true,
       studentName: name,
         phoneNumber,
         phase: "calibration",

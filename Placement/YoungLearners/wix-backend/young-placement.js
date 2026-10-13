@@ -1,5 +1,5 @@
 // Brighton Adaptive Placement — business logic module
-// Contract: 2026-10-12.yle1
+// Contract: 2026-10-12.yle2
 // Wix file: Backend/placement.js
 //
 // Keep HTTP routing in Backend/http-functions.js.
@@ -28,8 +28,8 @@ const MAX_SPEAKING_CHUNKS = 80;
 const MAX_SPEAKING_CHUNK_BASE64_CHARS = 200000;
 const MAX_SPEAKING_AUDIO_BASE64_CHARS = 12000000;
 
-const PLACEMENT_VERSION = "2026-10-12.yle1";
-const ITEM_KEY_VERSION = "2026-10-12.yle1";
+const PLACEMENT_VERSION = "2026-10-12.yle2";
+const ITEM_KEY_VERSION = "2026-10-12.yle2";
 const PLACEMENT_INACTIVITY_MS = 60 * 60 * 1000;
 const E164_PHONE_REGEX = /^\+[1-9]\d{7,14}$/;
 
@@ -614,7 +614,6 @@ export async function startPlacement(request) {
     }
 
     const clientSessionId = String(payload.clientSessionId || "").trim();
-    if (payload.guardianConsent !== true) return jsonBadRequest("Adult consent is required.");
     const studentName = String(payload.studentName || "").trim().replace(/\s+/g, " ");
     const phoneNumber = normalizePlacementPhone(payload.phoneNumber);
 
@@ -661,8 +660,6 @@ export async function startPlacement(request) {
         clientSessionId,
         studentName,
         phoneNumber,
-        guardianConsent: true,
-        guardianConsentAt: now,
         placementVersion: PLACEMENT_VERSION,
         status: "active",
         phase: "calibration",

@@ -2,8 +2,9 @@
 .young-hero { display:block; width:100%; border-radius:20px; margin:22px 0; }
 .young-picture { display:block; width:100%; max-width:660px; max-height:320px; object-fit:contain; border-radius:20px; margin:0 auto 20px; }
 .reading-passage .young-picture { max-height:210px; }
-.guardian-consent { display:flex; align-items:flex-start; gap:10px; text-transform:none!important; letter-spacing:normal!important; margin:16px 0; font-size:11px!important; line-height:1.6; font-weight:500!important; }
-.player-card .guardian-consent input { width:18px; height:18px; flex:none; margin:3px 0 0; accent-color:var(--teal); }
 .certificate-scale { grid-template-columns:repeat(3,minmax(0,1fr)); }
 .speaking-recording .young-picture { max-height:230px; }
 @media(max-width:680px) { .young-picture { max-height:240px; } .young-hero { max-height:240px; object-fit:cover; } }
+.choice-content { display:flex; flex-direction:column; gap:10px; width:100%; align-items:center; text-align:center; }
+.choice-picture { display:block; width:100%; height:145px; object-fit:contain; border-radius:12px; }
+@media(max-width:680px) { .choice-picture { height:100px; } }
