@@ -36,3 +36,9 @@ Verified private answer mappings, all routing boundaries, prompt parity, duratio
 
 The checkbox and consent requirement were removed at the site owner’s request. New sessions do not record consent. The revised release includes six original ImageGen pictures (banana, birds, rainy weather, cat in a box, classroom and zoo), plus the original park scene. All 32 warm-up, language and reading questions use pictures; all nine listening questions use illustrated answer choices. Reading A2 combines a short story with the classroom picture. The original four-stage design and AI Speaking task are preserved. See `assets/imagegen-prompts-v2.json` for the exact generation prompts.
 
+
+### Variety revision (October 13, 2026)
+
+The question bank uses 24 distinct images in every administered attempt (including listening choices). Stage image sets are disjoint. Eighteen new original built-in ImageGen assets supply five language scenes, four reading contexts and nine listening choices. Each reading item has its own independent message or story. Listening now tests details, changed plans and distractor rejection rather than identifying unrelated scenes. All nine revised recordings use ElevenLabs Matilda, American English, multilingual v2 at 0.85 speed. Correct-option positions and the private answer-key contract are unchanged; routing and AI speaking remain compatible. Asset URLs and the question-bank cache token are versioned.
+
+Validation: exhaustive cross-product of all 81 language/reading/listening/speaking combinations, zero repeated pictures/prompts/passages per attempt, original answer mappings and routing checks, and all nine audio transcriptions matched scripts.

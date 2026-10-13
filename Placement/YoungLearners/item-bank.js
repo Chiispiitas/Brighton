@@ -6,7 +6,7 @@ window.BRIGHTON_PLACEMENT_MODULES = {
     "items": [
       {
         "id": "yl-calibration-01-01",
-        "prompt": "Look at the picture. Choose the correct sentence.",
+        "prompt": "What color is the fruit?",
         "options": [
           {
             "id": "yl-calibration-01-01-0",
@@ -26,7 +26,7 @@ window.BRIGHTON_PLACEMENT_MODULES = {
       },
       {
         "id": "yl-calibration-01-02",
-        "prompt": "Look at the picture. Choose the correct sentence.",
+        "prompt": "Which animals can you see?",
         "options": [
           {
             "id": "yl-calibration-01-02-0",
@@ -46,7 +46,7 @@ window.BRIGHTON_PLACEMENT_MODULES = {
       },
       {
         "id": "yl-calibration-01-03",
-        "prompt": "Look at the picture. Choose the correct sentence.",
+        "prompt": "Choose the sentence about the weather.",
         "options": [
           {
             "id": "yl-calibration-01-03-0",
@@ -66,7 +66,7 @@ window.BRIGHTON_PLACEMENT_MODULES = {
       },
       {
         "id": "yl-calibration-01-04",
-        "prompt": "Look at the zoo picture. Choose the correct sentence.",
+        "prompt": "Which animal is taller? Choose the correct sentence.",
         "options": [
           {
             "id": "yl-calibration-01-04-0",
@@ -112,103 +112,103 @@ window.BRIGHTON_PLACEMENT_MODULES = {
     "items": [
       {
         "id": "yl-lang-prea1-01",
-        "prompt": "What is this?",
+        "prompt": "What is the girl wearing around her neck?",
         "options": [
           {
             "id": "yl-lang-prea1-01-0",
-            "text": "An apple"
+            "text": "A hat"
           },
           {
             "id": "yl-lang-prea1-01-1",
-            "text": "An orange"
+            "text": "A sock"
           },
           {
             "id": "yl-lang-prea1-01-2",
-            "text": "A banana"
+            "text": "A scarf"
           }
         ],
-        "image": "assets/banana.webp",
-        "imageAlt": "A yellow banana."
+        "image": "assets/variety-clothes.webp",
+        "imageAlt": "Illustration for this question."
       },
       {
         "id": "yl-lang-prea1-02",
-        "prompt": "What animals are these?",
+        "prompt": "How many cups can you see?",
         "options": [
           {
             "id": "yl-lang-prea1-02-0",
-            "text": "Birds"
+            "text": "Two"
           },
           {
             "id": "yl-lang-prea1-02-1",
-            "text": "Cats"
+            "text": "One"
           },
           {
             "id": "yl-lang-prea1-02-2",
-            "text": "Dogs"
+            "text": "Three"
           }
         ],
-        "image": "assets/birds.webp",
-        "imageAlt": "Two small birds on a branch."
+        "image": "assets/variety-kitchen.webp",
+        "imageAlt": "Illustration for this question."
       },
       {
         "id": "yl-lang-prea1-03",
-        "prompt": "What is the weather like?",
+        "prompt": "Finish the sentence: The dog is ___ the chair.",
         "options": [
           {
             "id": "yl-lang-prea1-03-0",
-            "text": "Sunny"
+            "text": "on"
           },
           {
             "id": "yl-lang-prea1-03-1",
-            "text": "Rainy"
+            "text": "under"
           },
           {
             "id": "yl-lang-prea1-03-2",
-            "text": "Snowy"
+            "text": "in"
           }
         ],
-        "image": "assets/rainy.webp",
-        "imageAlt": "A tree in rainy weather."
+        "image": "assets/variety-dog-chair.webp",
+        "imageAlt": "Illustration for this question."
       },
       {
         "id": "yl-lang-prea1-04",
-        "prompt": "Where is the cat?",
+        "prompt": "Which word names the thing in the sky?",
         "options": [
           {
             "id": "yl-lang-prea1-04-0",
-            "text": "In the box"
+            "text": "Kite"
           },
           {
             "id": "yl-lang-prea1-04-1",
-            "text": "Under the box"
+            "text": "Boat"
           },
           {
             "id": "yl-lang-prea1-04-2",
-            "text": "Behind the box"
+            "text": "Train"
           }
         ],
-        "image": "assets/cat-box.webp",
-        "imageAlt": "A cat sitting inside a box."
+        "image": "assets/variety-kite.webp",
+        "imageAlt": "Illustration for this question."
       },
       {
         "id": "yl-lang-prea1-05",
-        "prompt": "Which animal has a long neck?",
+        "prompt": "Choose the words for the girl’s scooter.",
         "options": [
           {
             "id": "yl-lang-prea1-05-0",
-            "text": "The monkey"
+            "text": "A blue scooter"
           },
           {
             "id": "yl-lang-prea1-05-1",
-            "text": "The elephant"
+            "text": "A yellow scooter"
           },
           {
             "id": "yl-lang-prea1-05-2",
-            "text": "The giraffe"
+            "text": "A red scooter"
           }
         ],
-        "image": "assets/zoo.webp",
-        "imageAlt": "A giraffe, an elephant and two monkeys at a zoo."
+        "image": "assets/variety-scooters.webp",
+        "imageAlt": "Illustration for this question."
       }
     ],
     "level": "PRE-A1"
@@ -219,103 +219,103 @@ window.BRIGHTON_PLACEMENT_MODULES = {
     "items": [
       {
         "id": "yl-lang-a1-01",
-        "prompt": "Look at the picture. Choose the correct sentence.",
+        "prompt": "Finish the sentence: She ___ a purple coat.",
         "options": [
           {
             "id": "yl-lang-a1-01-0",
-            "text": "There is one bird."
+            "text": "are wearing"
           },
           {
             "id": "yl-lang-a1-01-1",
-            "text": "There are two birds."
+            "text": "is wearing"
           },
           {
             "id": "yl-lang-a1-01-2",
-            "text": "There are three birds."
+            "text": "wearing"
           }
         ],
-        "image": "assets/birds.webp",
-        "imageAlt": "Two small birds on a branch."
+        "image": "assets/variety-clothes.webp",
+        "imageAlt": "Illustration for this question."
       },
       {
         "id": "yl-lang-a1-02",
-        "prompt": "Look at the picture. Choose the correct sentence.",
+        "prompt": "Choose the sentence with the correct quantity.",
         "options": [
           {
             "id": "yl-lang-a1-02-0",
-            "text": "The cat is in the box."
+            "text": "There are three apples in the bowl."
           },
           {
             "id": "yl-lang-a1-02-1",
-            "text": "The cat is under the box."
+            "text": "There is three apples in the bowl."
           },
           {
             "id": "yl-lang-a1-02-2",
-            "text": "The cat is behind the box."
+            "text": "There are an apple in the bowl."
           }
         ],
-        "image": "assets/cat-box.webp",
-        "imageAlt": "A cat sitting inside a box."
+        "image": "assets/variety-kitchen.webp",
+        "imageAlt": "Illustration for this question."
       },
       {
         "id": "yl-lang-a1-03",
-        "prompt": "What is the girl doing?",
+        "prompt": "Where is the green cushion?",
         "options": [
           {
             "id": "yl-lang-a1-03-0",
-            "text": "She is sleeping."
+            "text": "Under the chair"
           },
           {
             "id": "yl-lang-a1-03-1",
-            "text": "She is eating."
+            "text": "Behind the dog"
           },
           {
             "id": "yl-lang-a1-03-2",
-            "text": "She is giving the boy a pencil."
+            "text": "On the chair"
           }
         ],
-        "image": "assets/classroom.webp",
-        "imageAlt": "Two children at a classroom desk."
+        "image": "assets/variety-dog-chair.webp",
+        "imageAlt": "Illustration for this question."
       },
       {
         "id": "yl-lang-a1-04",
-        "prompt": "What is the elephant doing?",
+        "prompt": "What is the boy doing?",
         "options": [
           {
             "id": "yl-lang-a1-04-0",
-            "text": "It is swimming."
+            "text": "He is catching a fish."
           },
           {
             "id": "yl-lang-a1-04-1",
-            "text": "It is eating leaves."
+            "text": "He is flying a kite."
           },
           {
             "id": "yl-lang-a1-04-2",
-            "text": "It is sleeping."
+            "text": "He is kicking a ball."
           }
         ],
-        "image": "assets/zoo.webp",
-        "imageAlt": "A giraffe, an elephant and two monkeys at a zoo."
+        "image": "assets/variety-kite.webp",
+        "imageAlt": "Illustration for this question."
       },
       {
         "id": "yl-lang-a1-05",
-        "prompt": "Look at the picture. Choose the correct sentence.",
+        "prompt": "Finish the sentence: The girl is riding, but the boy ___.",
         "options": [
           {
             "id": "yl-lang-a1-05-0",
-            "text": "The girl is riding a bicycle."
+            "text": "is standing"
           },
           {
             "id": "yl-lang-a1-05-1",
-            "text": "The boy is reading a book."
+            "text": "are standing"
           },
           {
             "id": "yl-lang-a1-05-2",
-            "text": "The dog is in the pond."
+            "text": "stand"
           }
         ],
-        "image": "assets/park.png",
-        "imageAlt": "Children having a picnic in a park."
+        "image": "assets/variety-scooters.webp",
+        "imageAlt": "Illustration for this question."
       }
     ],
     "level": "A1"
@@ -326,103 +326,103 @@ window.BRIGHTON_PLACEMENT_MODULES = {
     "items": [
       {
         "id": "yl-lang-a2-01",
-        "prompt": "Look at the zoo picture. Choose the correct sentence.",
+        "prompt": "Which sentence gives a sensible reason for wearing these clothes?",
         "options": [
           {
             "id": "yl-lang-a2-01-0",
-            "text": "The giraffe is shorter than the elephant."
+            "text": "She put on her coat because it was very hot."
           },
           {
             "id": "yl-lang-a2-01-1",
-            "text": "The giraffe is taller than the elephant."
+            "text": "She put on her coat because it was cold."
           },
           {
             "id": "yl-lang-a2-01-2",
-            "text": "The monkey is taller than the giraffe."
+            "text": "She put on her coat because she wanted to swim."
           }
         ],
-        "image": "assets/zoo.webp",
-        "imageAlt": "A giraffe, an elephant and two monkeys at a zoo."
+        "image": "assets/variety-clothes.webp",
+        "imageAlt": "Illustration for this question."
       },
       {
         "id": "yl-lang-a2-02",
-        "prompt": "Look at the classroom picture. What probably happened just before this?",
+        "prompt": "Complete the shopping note: We have bread, but we haven’t got ___ milk.",
         "options": [
           {
             "id": "yl-lang-a2-02-0",
-            "text": "The boy finished eating a banana."
+            "text": "many"
           },
           {
             "id": "yl-lang-a2-02-1",
-            "text": "The girl lost the blue pencil."
+            "text": "a"
           },
           {
             "id": "yl-lang-a2-02-2",
-            "text": "The boy’s red pencil broke."
+            "text": "any"
           }
         ],
-        "image": "assets/classroom.webp",
-        "imageAlt": "Two children at a classroom desk."
+        "image": "assets/variety-kitchen.webp",
+        "imageAlt": "Illustration for this question."
       },
       {
         "id": "yl-lang-a2-03",
-        "prompt": "Which sentence best describes the picture?",
+        "prompt": "The chair was empty when the dog arrived. Choose the correct past-tense sentence.",
         "options": [
           {
             "id": "yl-lang-a2-03-0",
-            "text": "The girl is helping the boy by lending him a pencil."
+            "text": "The dog lay down under the chair."
           },
           {
             "id": "yl-lang-a2-03-1",
-            "text": "The boy is lending a green bag to the girl."
+            "text": "The dog lying down under the chair."
           },
           {
             "id": "yl-lang-a2-03-2",
-            "text": "Both children are reading the same book."
+            "text": "The dog lie down under the chair."
           }
         ],
-        "image": "assets/classroom.webp",
-        "imageAlt": "Two children at a classroom desk."
+        "image": "assets/variety-dog-chair.webp",
+        "imageAlt": "Illustration for this question."
       },
       {
         "id": "yl-lang-a2-04",
-        "prompt": "Which sentence matches the picnic picture?",
+        "prompt": "Complete the sentence: The boy kept running ___ the kite rose into the air.",
         "options": [
           {
             "id": "yl-lang-a2-04-0",
-            "text": "Everyone is doing the same thing."
+            "text": "during"
           },
           {
             "id": "yl-lang-a2-04-1",
-            "text": "One child is reading while another is riding a bicycle."
+            "text": "until"
           },
           {
             "id": "yl-lang-a2-04-2",
-            "text": "All three children are sitting on the blanket."
+            "text": "because of"
           }
         ],
-        "image": "assets/park.png",
-        "imageAlt": "Children having a picnic in a park."
+        "image": "assets/variety-kite.webp",
+        "imageAlt": "Illustration for this question."
       },
       {
         "id": "yl-lang-a2-05",
-        "prompt": "Look at the rainy picture. Which plan makes the most sense?",
+        "prompt": "Choose the sentence that compares the children’s actions.",
         "options": [
           {
             "id": "yl-lang-a2-05-0",
-            "text": "Leave the umbrella at home."
+            "text": "Both children are standing beside their scooters."
           },
           {
             "id": "yl-lang-a2-05-1",
-            "text": "Go outside without a coat."
+            "text": "The boy is riding while the girl is standing still."
           },
           {
             "id": "yl-lang-a2-05-2",
-            "text": "Take an umbrella before going out."
+            "text": "The girl is moving while the boy is standing still."
           }
         ],
-        "image": "assets/rainy.webp",
-        "imageAlt": "A tree in rainy weather."
+        "image": "assets/variety-scooters.webp",
+        "imageAlt": "Illustration for this question."
       }
     ],
     "level": "A2"
@@ -433,89 +433,92 @@ window.BRIGHTON_PLACEMENT_MODULES = {
     "items": [
       {
         "id": "yl-reading-prea1-01",
-        "prompt": "Look and read. Which sentence is correct?",
+        "prompt": "Where is Sam?",
         "options": [
           {
             "id": "yl-reading-prea1-01-0",
-            "text": "This is a cat."
+            "text": "At the pool"
           },
           {
             "id": "yl-reading-prea1-01-1",
-            "text": "This is a banana."
+            "text": "At the library"
           },
           {
             "id": "yl-reading-prea1-01-2",
-            "text": "This is a tree."
+            "text": "At the zoo"
           }
         ],
-        "image": "assets/banana.webp",
-        "imageAlt": "A yellow banana."
+        "image": "assets/variety-library.webp",
+        "imageAlt": "Illustration for this question.",
+        "passage": "Sam likes books. He is at the library."
       },
       {
         "id": "yl-reading-prea1-02",
-        "prompt": "Look and read. Which sentence is correct?",
+        "prompt": "What does Mom want?",
         "options": [
           {
             "id": "yl-reading-prea1-02-0",
-            "text": "There is one bird."
+            "text": "A book"
           },
           {
             "id": "yl-reading-prea1-02-1",
-            "text": "There are four birds."
+            "text": "A toy"
           },
           {
             "id": "yl-reading-prea1-02-2",
-            "text": "There are two birds."
+            "text": "Bread"
           }
         ],
-        "image": "assets/birds.webp",
-        "imageAlt": "Two small birds on a branch."
+        "image": "assets/variety-bakery.webp",
+        "imageAlt": "Illustration for this question.",
+        "passage": "Please buy some bread for Mom."
       },
       {
         "id": "yl-reading-prea1-03",
-        "prompt": "Look and read. Which sentence is correct?",
+        "prompt": "Who is waiting with Dad?",
         "options": [
           {
             "id": "yl-reading-prea1-03-0",
-            "text": "The box is red."
+            "text": "Mia"
           },
           {
             "id": "yl-reading-prea1-03-1",
-            "text": "The cat is under the box."
+            "text": "The driver"
           },
           {
             "id": "yl-reading-prea1-03-2",
-            "text": "The cat is in the box."
+            "text": "Ben"
           }
         ],
-        "image": "assets/cat-box.webp",
-        "imageAlt": "A cat sitting inside a box."
+        "image": "assets/variety-bus-stop.webp",
+        "imageAlt": "Illustration for this question.",
+        "passage": "Ben and Dad are waiting for the bus."
       },
       {
         "id": "yl-reading-prea1-04",
-        "prompt": "Look and read. Which sentence is correct?",
+        "prompt": "What color is the hat?",
         "options": [
           {
             "id": "yl-reading-prea1-04-0",
-            "text": "It is a rainy day."
+            "text": "Yellow"
           },
           {
             "id": "yl-reading-prea1-04-1",
-            "text": "It is a snowy day."
+            "text": "Red"
           },
           {
             "id": "yl-reading-prea1-04-2",
-            "text": "It is a sunny day."
+            "text": "Blue"
           }
         ],
-        "image": "assets/rainy.webp",
-        "imageAlt": "A tree in rainy weather."
+        "image": "assets/variety-beach.webp",
+        "imageAlt": "Illustration for this question.",
+        "passage": "I have a yellow hat and a red bucket."
       }
     ],
     "level": "PRE-A1",
-    "title": "Look and read",
-    "passage": "",
-    "image": "assets/park.png"
+    "title": "Read the message",
+    "passage": ""
   },
   "reading-a1": {
     "phase": "reading",
@@ -523,89 +526,92 @@ window.BRIGHTON_PLACEMENT_MODULES = {
     "items": [
       {
         "id": "yl-reading-a1-01",
-        "prompt": "Which sentence matches the picture?",
+        "prompt": "What must you do with your voice here?",
         "options": [
           {
             "id": "yl-reading-a1-01-0",
-            "text": "The girl is giving the boy a pencil."
+            "text": "Speak quietly"
           },
           {
             "id": "yl-reading-a1-01-1",
-            "text": "The children are playing with a ball."
+            "text": "Sing loudly"
           },
           {
             "id": "yl-reading-a1-01-2",
-            "text": "The boy is riding a bicycle."
+            "text": "Shout to your friends"
           }
         ],
-        "image": "assets/classroom.webp",
-        "imageAlt": "Two children at a classroom desk."
+        "image": "assets/variety-library.webp",
+        "imageAlt": "Illustration for this question.",
+        "passage": "Library rule: Please talk quietly. Other people are reading."
       },
       {
         "id": "yl-reading-a1-02",
-        "prompt": "Which sentence matches the picture?",
+        "prompt": "When will Leo visit the bakery?",
         "options": [
           {
             "id": "yl-reading-a1-02-0",
-            "text": "The elephant is sleeping."
+            "text": "Before breakfast"
           },
           {
             "id": "yl-reading-a1-02-1",
-            "text": "The elephant is eating leaves."
+            "text": "After school"
           },
           {
             "id": "yl-reading-a1-02-2",
-            "text": "The elephant is swimming."
+            "text": "On Sunday"
           }
         ],
-        "image": "assets/zoo.webp",
-        "imageAlt": "A giraffe, an elephant and two monkeys at a zoo."
+        "image": "assets/variety-bakery.webp",
+        "imageAlt": "Illustration for this question.",
+        "passage": "Leo’s message: I’m at school now. I’ll buy bread when my lessons finish."
       },
       {
         "id": "yl-reading-a1-03",
-        "prompt": "Which sentence matches the picture?",
+        "prompt": "Which bus should Ava catch?",
         "options": [
           {
             "id": "yl-reading-a1-03-0",
-            "text": "The boy is riding the bicycle."
+            "text": "The bus to the beach"
           },
           {
             "id": "yl-reading-a1-03-1",
-            "text": "The dog is reading a book."
+            "text": "The bus to the airport"
           },
           {
             "id": "yl-reading-a1-03-2",
-            "text": "The girl in yellow is reading."
+            "text": "The bus to the museum"
           }
         ],
-        "image": "assets/park.png",
-        "imageAlt": "Children having a picnic in a park."
+        "image": "assets/variety-bus-stop.webp",
+        "imageAlt": "Illustration for this question.",
+        "passage": "Dad’s note: Ava, take the bus to the museum. I’ll meet you there."
       },
       {
         "id": "yl-reading-a1-04",
-        "prompt": "Which sentence matches the picture?",
+        "prompt": "What does Ella ask you to help carry?",
         "options": [
           {
             "id": "yl-reading-a1-04-0",
-            "text": "The birds are under the branch."
+            "text": "A heavy bag"
           },
           {
             "id": "yl-reading-a1-04-1",
-            "text": "The birds are sitting on the branch."
+            "text": "Her bucket"
           },
           {
             "id": "yl-reading-a1-04-2",
-            "text": "The birds are in the water."
+            "text": "A drink"
           }
         ],
-        "image": "assets/birds.webp",
-        "imageAlt": "Two small birds on a branch."
+        "image": "assets/variety-beach.webp",
+        "imageAlt": "Illustration for this question.",
+        "passage": "Ella’s message: I found my hat! Please help me carry my bucket back to the car."
       }
     ],
     "level": "A1",
-    "title": "Look and read",
-    "passage": "",
-    "image": "assets/park.png"
+    "title": "Read the message",
+    "passage": ""
   },
   "reading-a2": {
     "phase": "reading",
@@ -613,89 +619,92 @@ window.BRIGHTON_PLACEMENT_MODULES = {
     "items": [
       {
         "id": "yl-reading-a2-01",
-        "prompt": "Why did Ben need another pencil?",
+        "prompt": "Why did Finn choose a different book?",
         "options": [
           {
             "id": "yl-reading-a2-01-0",
-            "text": "His red pencil broke."
+            "text": "The book he wanted was unavailable."
           },
           {
             "id": "yl-reading-a2-01-1",
-            "text": "He lost his bag."
+            "text": "He had already read every book."
           },
           {
             "id": "yl-reading-a2-01-2",
-            "text": "He wanted to draw the zoo."
+            "text": "The library was closed."
           }
         ],
-        "image": "assets/classroom.webp",
-        "imageAlt": "Two children at a classroom desk."
+        "image": "assets/variety-library.webp",
+        "imageAlt": "Illustration for this question.",
+        "passage": "Finn wanted a book about space, but someone had borrowed it. The librarian suggested a book about oceans, so Finn took that one home."
       },
       {
         "id": "yl-reading-a2-02",
-        "prompt": "What did Mia do when she saw the problem?",
+        "prompt": "Why should Maya go earlier next time?",
         "options": [
           {
             "id": "yl-reading-a2-02-0",
-            "text": "She closed the book."
+            "text": "The bakery opens only at noon."
           },
           {
             "id": "yl-reading-a2-02-1",
-            "text": "She lent Ben a pencil."
+            "text": "The rolls may sell out."
           },
           {
             "id": "yl-reading-a2-02-2",
-            "text": "She left the classroom."
+            "text": "The baker cannot make rolls."
           }
         ],
-        "image": "assets/classroom.webp",
-        "imageAlt": "Two children at a classroom desk."
+        "image": "assets/variety-bakery.webp",
+        "imageAlt": "Illustration for this question.",
+        "passage": "Maya arrived at the bakery at noon. All the cheese rolls had been sold, so she bought bread instead. The baker said the rolls were usually gone by eleven."
       },
       {
         "id": "yl-reading-a2-03",
-        "prompt": "What did Ben do after the lesson?",
+        "prompt": "What caused the change in travel plans?",
         "options": [
           {
             "id": "yl-reading-a2-03-0",
-            "text": "He returned Mia’s pencil."
+            "text": "A canceled bus"
           },
           {
             "id": "yl-reading-a2-03-1",
-            "text": "He took Mia’s bag."
+            "text": "A forgotten ticket"
           },
           {
             "id": "yl-reading-a2-03-2",
-            "text": "He broke the blue pencil."
+            "text": "A closed museum"
           }
         ],
-        "image": "assets/classroom.webp",
-        "imageAlt": "Two children at a classroom desk."
+        "image": "assets/variety-bus-stop.webp",
+        "imageAlt": "Illustration for this question.",
+        "passage": "Our bus was canceled this morning. Instead of waiting for the next one, we walked to the station and took a train. We reached the museum on time."
       },
       {
         "id": "yl-reading-a2-04",
-        "prompt": "What will Ben do next time?",
+        "prompt": "What can you infer about the girl’s decision?",
         "options": [
           {
             "id": "yl-reading-a2-04-0",
-            "text": "Borrow Mia’s bag."
+            "text": "She wanted to leave the beach."
           },
           {
             "id": "yl-reading-a2-04-1",
-            "text": "Leave his pencils at home."
+            "text": "She planned to give her hat away."
           },
           {
             "id": "yl-reading-a2-04-2",
-            "text": "Bring a spare pencil."
+            "text": "She wanted to keep her hat safe."
           }
         ],
-        "image": "assets/classroom.webp",
-        "imageAlt": "Two children at a classroom desk."
+        "image": "assets/variety-beach.webp",
+        "imageAlt": "Illustration for this question.",
+        "passage": "A sudden gust lifted Nora’s hat. She caught it before it reached the water. When the wind grew stronger, she put the hat inside her bag and zipped it closed."
       }
     ],
     "level": "A2",
-    "title": "Helping a friend",
-    "passage": "Ben was doing his homework when his red pencil broke. Mia noticed the problem and lent him her blue pencil. Ben thanked her and finished his work. After the lesson, he returned the pencil. Next time, he will bring a spare pencil in his bag.",
-    "image": "assets/classroom.webp"
+    "title": "Read the message",
+    "passage": ""
   },
   "listening-prea1": {
     "phase": "listening",
@@ -703,78 +712,78 @@ window.BRIGHTON_PLACEMENT_MODULES = {
     "items": [
       {
         "id": "yl-listening-prea1-01",
-        "prompt": "Listen. Which picture matches what you hear?",
+        "prompt": "Which backpack belongs to the speaker?",
         "options": [
           {
             "id": "yl-listening-prea1-01-0",
             "text": "Picture A",
-            "image": "assets/birds.webp",
-            "imageAlt": "Two small birds on a branch."
+            "image": "assets/variety-bag-red.webp",
+            "imageAlt": "Listening choice illustration."
           },
           {
             "id": "yl-listening-prea1-01-1",
             "text": "Picture B",
-            "image": "assets/banana.webp",
-            "imageAlt": "A yellow banana."
+            "image": "assets/variety-bag-green.webp",
+            "imageAlt": "Listening choice illustration."
           },
           {
             "id": "yl-listening-prea1-01-2",
             "text": "Picture C",
-            "image": "assets/cat-box.webp",
-            "imageAlt": "A cat sitting inside a box."
+            "image": "assets/variety-bag-blue.webp",
+            "imageAlt": "Listening choice illustration."
           }
         ],
-        "audio": "audio/listening-prea1-01-eleven-ame-v3.mp3"
+        "audio": "audio/listening-prea1-01-variety-ame-v4.mp3"
       },
       {
         "id": "yl-listening-prea1-02",
-        "prompt": "Listen. Which picture matches what you hear?",
+        "prompt": "What does the girl play?",
         "options": [
           {
             "id": "yl-listening-prea1-02-0",
             "text": "Picture A",
-            "image": "assets/cat-box.webp",
-            "imageAlt": "A cat sitting inside a box."
+            "image": "assets/variety-music-drums.webp",
+            "imageAlt": "Listening choice illustration."
           },
           {
             "id": "yl-listening-prea1-02-1",
             "text": "Picture B",
-            "image": "assets/birds.webp",
-            "imageAlt": "Two small birds on a branch."
+            "image": "assets/variety-music-guitar.webp",
+            "imageAlt": "Listening choice illustration."
           },
           {
             "id": "yl-listening-prea1-02-2",
             "text": "Picture C",
-            "image": "assets/rainy.webp",
-            "imageAlt": "A tree in rainy weather."
+            "image": "assets/variety-music-piano.webp",
+            "imageAlt": "Listening choice illustration."
           }
         ],
-        "audio": "audio/listening-prea1-02-eleven-ame-v3.mp3"
+        "audio": "audio/listening-prea1-02-variety-ame-v4.mp3"
       },
       {
         "id": "yl-listening-prea1-03",
-        "prompt": "Listen. Which picture matches what you hear?",
+        "prompt": "What are the children doing?",
         "options": [
           {
             "id": "yl-listening-prea1-03-0",
             "text": "Picture A",
-            "image": "assets/banana.webp",
-            "imageAlt": "A yellow banana."
+            "image": "assets/variety-activity-cake.webp",
+            "imageAlt": "Listening choice illustration."
           },
           {
             "id": "yl-listening-prea1-03-1",
             "text": "Picture B",
-            "image": "assets/birds.webp",
-            "imageAlt": "Two small birds on a branch."
+            "image": "assets/variety-activity-garden.webp",
+            "imageAlt": "Listening choice illustration."
           },
           {
             "id": "yl-listening-prea1-03-2",
             "text": "Picture C",
-            "image": "assets/cat-box.webp",
-            "imageAlt": "A cat sitting inside a box."
+            "image": "assets/variety-activity-paint.webp",
+            "imageAlt": "Listening choice illustration."
           }
         ],
-        "audio": "audio/listening-prea1-03-eleven-ame-v3.mp3"
+        "audio": "audio/listening-prea1-03-variety-ame-v4.mp3"
       }
     ],
     "level": "PRE-A1"
@@ -785,78 +794,78 @@ window.BRIGHTON_PLACEMENT_MODULES = {
     "items": [
       {
         "id": "yl-listening-a1-01",
-        "prompt": "Listen. Which picture matches what you hear?",
+        "prompt": "Which backpack did Alex choose?",
         "options": [
           {
             "id": "yl-listening-a1-01-0",
             "text": "Picture A",
-            "image": "assets/park.png",
-            "imageAlt": "Children having a picnic in a park."
+            "image": "assets/variety-bag-red.webp",
+            "imageAlt": "Listening choice illustration."
           },
           {
             "id": "yl-listening-a1-01-1",
             "text": "Picture B",
-            "image": "assets/rainy.webp",
-            "imageAlt": "A tree in rainy weather."
+            "image": "assets/variety-bag-blue.webp",
+            "imageAlt": "Listening choice illustration."
           },
           {
             "id": "yl-listening-a1-01-2",
             "text": "Picture C",
-            "image": "assets/classroom.webp",
-            "imageAlt": "Two children at a classroom desk."
+            "image": "assets/variety-bag-green.webp",
+            "imageAlt": "Listening choice illustration."
           }
         ],
-        "audio": "audio/listening-a1-01-eleven-ame-v3.mp3"
+        "audio": "audio/listening-a1-01-variety-ame-v4.mp3"
       },
       {
         "id": "yl-listening-a1-02",
-        "prompt": "Listen. Which picture matches what you hear?",
+        "prompt": "Which instrument does the girl practice now?",
         "options": [
           {
             "id": "yl-listening-a1-02-0",
             "text": "Picture A",
-            "image": "assets/classroom.webp",
-            "imageAlt": "Two children at a classroom desk."
+            "image": "assets/variety-music-piano.webp",
+            "imageAlt": "Listening choice illustration."
           },
           {
             "id": "yl-listening-a1-02-1",
             "text": "Picture B",
-            "image": "assets/park.png",
-            "imageAlt": "Children having a picnic in a park."
+            "image": "assets/variety-music-drums.webp",
+            "imageAlt": "Listening choice illustration."
           },
           {
             "id": "yl-listening-a1-02-2",
             "text": "Picture C",
-            "image": "assets/zoo.webp",
-            "imageAlt": "A giraffe, an elephant and two monkeys at a zoo."
+            "image": "assets/variety-music-guitar.webp",
+            "imageAlt": "Listening choice illustration."
           }
         ],
-        "audio": "audio/listening-a1-02-eleven-ame-v3.mp3"
+        "audio": "audio/listening-a1-02-variety-ame-v4.mp3"
       },
       {
         "id": "yl-listening-a1-03",
-        "prompt": "Listen. Which picture matches what you hear?",
+        "prompt": "What are the children doing today?",
         "options": [
           {
             "id": "yl-listening-a1-03-0",
             "text": "Picture A",
-            "image": "assets/rainy.webp",
-            "imageAlt": "A tree in rainy weather."
+            "image": "assets/variety-activity-cake.webp",
+            "imageAlt": "Listening choice illustration."
           },
           {
             "id": "yl-listening-a1-03-1",
             "text": "Picture B",
-            "image": "assets/park.png",
-            "imageAlt": "Children having a picnic in a park."
+            "image": "assets/variety-activity-paint.webp",
+            "imageAlt": "Listening choice illustration."
           },
           {
             "id": "yl-listening-a1-03-2",
             "text": "Picture C",
-            "image": "assets/zoo.webp",
-            "imageAlt": "A giraffe, an elephant and two monkeys at a zoo."
+            "image": "assets/variety-activity-garden.webp",
+            "imageAlt": "Listening choice illustration."
           }
         ],
-        "audio": "audio/listening-a1-03-eleven-ame-v3.mp3"
+        "audio": "audio/listening-a1-03-variety-ame-v4.mp3"
       }
     ],
     "level": "A1"
@@ -867,78 +876,78 @@ window.BRIGHTON_PLACEMENT_MODULES = {
     "items": [
       {
         "id": "yl-listening-a2-01",
-        "prompt": "Listen. Which picture matches what you hear?",
+        "prompt": "Which backpack is ready to take to school?",
         "options": [
           {
             "id": "yl-listening-a2-01-0",
             "text": "Picture A",
-            "image": "assets/classroom.webp",
-            "imageAlt": "Two children at a classroom desk."
+            "image": "assets/variety-bag-red.webp",
+            "imageAlt": "Listening choice illustration."
           },
           {
             "id": "yl-listening-a2-01-1",
             "text": "Picture B",
-            "image": "assets/park.png",
-            "imageAlt": "Children having a picnic in a park."
+            "image": "assets/variety-bag-green.webp",
+            "imageAlt": "Listening choice illustration."
           },
           {
             "id": "yl-listening-a2-01-2",
             "text": "Picture C",
-            "image": "assets/cat-box.webp",
-            "imageAlt": "A cat sitting inside a box."
+            "image": "assets/variety-bag-blue.webp",
+            "imageAlt": "Listening choice illustration."
           }
         ],
-        "audio": "audio/listening-a2-01-eleven-ame-v3.mp3"
+        "audio": "audio/listening-a2-01-variety-ame-v4.mp3"
       },
       {
         "id": "yl-listening-a2-02",
-        "prompt": "Listen. Which picture matches what you hear?",
+        "prompt": "Which instrument will the girl play at the concert?",
         "options": [
           {
             "id": "yl-listening-a2-02-0",
             "text": "Picture A",
-            "image": "assets/zoo.webp",
-            "imageAlt": "A giraffe, an elephant and two monkeys at a zoo."
+            "image": "assets/variety-music-drums.webp",
+            "imageAlt": "Listening choice illustration."
           },
           {
             "id": "yl-listening-a2-02-1",
             "text": "Picture B",
-            "image": "assets/classroom.webp",
-            "imageAlt": "Two children at a classroom desk."
+            "image": "assets/variety-music-piano.webp",
+            "imageAlt": "Listening choice illustration."
           },
           {
             "id": "yl-listening-a2-02-2",
             "text": "Picture C",
-            "image": "assets/park.png",
-            "imageAlt": "Children having a picnic in a park."
+            "image": "assets/variety-music-guitar.webp",
+            "imageAlt": "Listening choice illustration."
           }
         ],
-        "audio": "audio/listening-a2-02-eleven-ame-v3.mp3"
+        "audio": "audio/listening-a2-02-variety-ame-v4.mp3"
       },
       {
         "id": "yl-listening-a2-03",
-        "prompt": "Listen. Which picture matches what you hear?",
+        "prompt": "What did the children decide to do?",
         "options": [
           {
             "id": "yl-listening-a2-03-0",
             "text": "Picture A",
-            "image": "assets/birds.webp",
-            "imageAlt": "Two small birds on a branch."
+            "image": "assets/variety-activity-garden.webp",
+            "imageAlt": "Listening choice illustration."
           },
           {
             "id": "yl-listening-a2-03-1",
             "text": "Picture B",
-            "image": "assets/zoo.webp",
-            "imageAlt": "A giraffe, an elephant and two monkeys at a zoo."
+            "image": "assets/variety-activity-paint.webp",
+            "imageAlt": "Listening choice illustration."
           },
           {
             "id": "yl-listening-a2-03-2",
             "text": "Picture C",
-            "image": "assets/classroom.webp",
-            "imageAlt": "Two children at a classroom desk."
+            "image": "assets/variety-activity-cake.webp",
+            "imageAlt": "Listening choice illustration."
           }
         ],
-        "audio": "audio/listening-a2-03-eleven-ame-v3.mp3"
+        "audio": "audio/listening-a2-03-variety-ame-v4.mp3"
       }
     ],
     "level": "A2"
@@ -977,4 +986,3 @@ window.BRIGHTON_PLACEMENT_MODULES = {
     "maximumSeconds": 60
   }
 };
-
