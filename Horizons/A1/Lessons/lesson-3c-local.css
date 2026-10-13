@@ -94,25 +94,29 @@
 
 /* Three destinations across the page, then three review columns. A richer
    photo-led Maps result sheet replaces the recurring left-photo/right-copy block. */
-.l3c-review-masthead { background:transparent; color:#175786; padding:1mm 0 2mm; border-bottom:.8mm solid #175786; }
-.l3c-review-masthead h2 { font:700 25pt/1.1 Georgia,serif; }
-.l3c-maps-brand circle { fill:#fff; }
-.l3c-reviews-layout { display:flex; flex-direction:column; gap:3mm; padding-top:3mm; }
-.l3c-photo-gallery { display:grid; grid-template-columns:1.5fr 2fr; gap:3mm; }
-.l3c-park-photo img { height:39mm; }
+.l3c-review-masthead { background:#175786; color:#fff; padding:2.5mm 3mm; border:0; }
+.l3c-review-masthead h2 { font:700 24pt/1.1 Bahnschrift,Arial,sans-serif; }
+.l3c-maps-brand circle { fill:#175786; }
+.l3c-reviews-layout { display:flex; flex-direction:column; gap:3mm; padding:3mm; background:#edf1f3; }
+.l3c-photo-gallery { display:grid; grid-template-columns:1fr 2fr; gap:3mm; }
+.l3c-park-photo img { height:34mm; }
 .l3c-cafe-photos { margin:0; gap:3mm; }
-.l3c-cafe-photos img { height:33.5mm; }
+.l3c-cafe-photos img { height:28.5mm; }
 .l3c-review-feed { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:4mm; }
-.l3c-review { margin:0; padding:0 0 0 2mm; border-bottom:0; border-left:.65mm solid #087a46; }
+.l3c-review { margin:0; padding:0 0 2mm; border:0; background:#fff; }
 .l3c-review:nth-child(2) { border-color:#bc5219; }
 .l3c-review:nth-child(3) { border-color:#175786; }
-.l3c-review:last-child { border-left:.65mm solid #175786; padding-left:2mm; }
-.l3c-review header { flex-wrap:wrap; gap:1mm; }
-.l3c-review h3 { color:#087a46; }
-.l3c-review:nth-child(2) h3 { color:#a34713; }
-.l3c-review:nth-child(3) h3 { color:#175786; }
-.l3c-review p { line-height:1.45; }
+.l3c-review:last-child { border:0; padding:0 0 2mm; }
+.l3c-review header { flex-wrap:wrap; gap:1mm; padding:1.5mm 2mm; background:#087a46; color:#fff; }
+.l3c-review:nth-child(2) header { background:#a34713; }
+.l3c-review:nth-child(3) header { background:#175786; }
+.l3c-review-byline { padding:0 2mm; }
+.l3c-photo-answer { border-bottom-color:#fff; }
+.l3c-review h3 { color:#fff; }
+.l3c-review:nth-child(2) h3 { color:#fff; }
+.l3c-review:nth-child(3) h3 { color:#fff; }
+.l3c-review p { line-height:1.45; padding:0 2mm; }
 .l3c-conversation { background:#eef4ef; border-left:0; border-top:.65mm solid #087a46; }
-.l3c-review-editor header { background:transparent; color:#175786; border-bottom:.65mm solid #175786; }
-.l3c-review-editor svg { stroke:#175786; }
-.l3c-review-editor { border:0; border-left:.65mm solid #175786; }
+.l3c-review-editor header { background:#175786; color:#fff; border:0; }
+.l3c-review-editor svg { stroke:#fff; }
+.l3c-review-editor { border:.25mm solid #a7c4d8; background:#fff; }

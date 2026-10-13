@@ -187,7 +187,7 @@ Image-generation prompts and temporary art-direction notes stay outside the repo
 
 ### Real-photo replacements and functional collages
 
-**Mixed sourcing remains required where useful (2026-10-13):** The author's preference for real photographs does not retire image generation. Use stock for suitable environmental scenes; use imagegen for specific action/interaction poses, coherent cast or object relationships, native-alpha cutouts, and tangible working-document renders when stock cannot supply the intended composition. Do not let the available stock crop dictate every layout. Generated assets must have a functional teaching or material role, retain versioned originals, and leave editable learner text live. Unit 3's lunch-planning cutout and clean white writing-sheet render demonstrate this alongside the existing real photographs.
+**Mixed sourcing remains required where useful (2026-10-13):** The author's preference for real photographs does not retire image generation. Use stock for suitable environmental scenes; use imagegen for specific action/interaction poses, coherent cast or object relationships, native-alpha cutouts, and tangible working-document renders when stock cannot supply the intended composition. Do not let the available stock crop dictate every layout. Generated assets must have a functional teaching or material role, retain versioned originals, and leave editable learner text live. Unit 3's lunch-planning cutout demonstrates this alongside the existing real photographs. Evaluate generated working-document renders at print size; retain an established clear writing box when an experimental paper treatment makes the page less coherent.
 
 The author prefers real, freely licensed photography for photographic lesson
 scenes and vocabulary pictures. The October 10, 2026 replacements are recorded
@@ -272,3 +272,4 @@ Examples:
 - `HZN_A1_U05_LD_E03_AUD_01.mp3`
 
 The activity ID should remain stable even if page numbers change.
+

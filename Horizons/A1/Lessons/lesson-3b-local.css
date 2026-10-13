@@ -43,7 +43,7 @@
 .l3b-list > li { counter-increment:item; position:relative; padding-left:4.5mm; line-height:1.45; }
 .l3b-list > li::before { content:counter(item); position:absolute; left:0; top:0; color:var(--hz-unit-dark); font-size:8.5pt; font-weight:620; }
 .l3b-notice { margin-top:3mm; display:grid; gap:1.5mm; }
-.l3b-continuation-content { padding-top:7mm; }
+.l3b-continuation-content { padding-top:5mm; }
 .l3b-page--2 .hz-exercises { padding-top:0 !important; }
 .l3b-page--2 .hz-focus-box { margin:1.2mm 0 1.6mm; }
 .l3b-page--2 .hz-go-to { margin-bottom:.2mm; }
@@ -82,16 +82,19 @@
 .l3b-air-head h2 span { display:block; }
 .l3b-show-brand { flex-shrink:0; white-space:nowrap; }
 .l3b-week-stories { grid-template-columns:1fr; gap:2.5mm; padding:3mm; }
-.l3b-week-story { display:grid; grid-template-columns:29mm minmax(0,1fr); background:#fff; }
-.l3b-week-story img { height:27mm; }
-.l3b-story-copy { display:grid; grid-template-columns:33mm minmax(0,1fr); }
-.l3b-story-copy header { display:flex; flex-direction:column; justify-content:center; padding:2mm; margin:0; }
-.l3b-story-copy h3 { font-size:16pt; }
-.l3b-story-copy header p { margin-top:1.5mm; line-height:1.35; }
-.l3b-story-copy blockquote { padding:2mm 3mm; align-self:center; }
-.l3b-story-copy blockquote p { margin-bottom:1.6mm; }
-.l3b-week-story--ken { grid-template-columns:minmax(0,1fr) 29mm; }
+.l3b-week-story { display:grid; grid-template-columns:36mm minmax(0,1fr); background:#fff; }
+.l3b-week-story img { height:29mm; }
+.l3b-story-copy { display:block; }
+.l3b-story-copy header { display:flex; align-items:baseline; justify-content:space-between; gap:3mm; padding:1.5mm 2mm; margin:0; }
+.l3b-story-copy h3 { font-size:15pt; margin:0; }
+.l3b-story-copy header p { margin:0; line-height:1.35; }
+.l3b-story-copy blockquote { display:grid; grid-template-columns:1fr 1fr; gap:4mm; padding:1.5mm 2mm; }
+.l3b-story-copy blockquote p { margin:0; }
+.l3b-week-story--ken { grid-template-columns:minmax(0,1fr) 36mm; }
 .l3b-week-story--ken figure { grid-column:2; grid-row:1; }
 .l3b-week-story--ken .l3b-story-copy { grid-column:1; grid-row:1; }
-.l3b-lunch-layout { grid-template-columns:minmax(0,1fr) 35mm 59mm; gap:4mm; }
-.l3b-lunch-people { display:block; width:100%; height:22mm; object-fit:contain; align-self:end; }
+.l3b-lunch-layout { position:relative; isolation:isolate; grid-template-columns:minmax(0,1fr) 35mm 59mm; gap:4mm; background:transparent; padding:0; margin-top:2.5mm!important; }
+.l3b-lunch-layout::before { content:""; position:absolute; z-index:-1; inset:-1mm -2mm; background:#f6f0e2; border-top:.6mm solid #d4a62c; }
+.l3b-page .hz-extra-practice { margin-top:.8mm; }
+.l3b-lunch-layout > .hz-dialogue-text { display:block; align-self:center; }
+.l3b-lunch-people { display:block; width:100%; height:18mm; object-fit:contain; align-self:end; }

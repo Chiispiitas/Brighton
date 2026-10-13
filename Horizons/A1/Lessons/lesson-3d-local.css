@@ -47,7 +47,7 @@
 .l3d-notice { display:grid; grid-template-columns:1fr 1fr; gap:2.2mm 6mm; line-height:1.4; }
 .l3d-frequency p { margin:0 0 .8mm; }
 .l3d-frequency p:last-child { margin-bottom:0; }
-.l3d-continuation-content { padding-top:15mm; }
+.l3d-continuation-content { padding-top:13mm; }
 .l3d-page--2 .hz-exercises { padding-top:0!important; }
 .l3d-morning { border-left:.8mm solid #c15a16; padding-left:3mm; }
 .l3d-morning h2 { margin:0 0 2mm; color:#ad4b12; font:700 17pt/1.1 Bahnschrift,Arial,sans-serif; }
@@ -83,24 +83,25 @@
 .l3d-share { margin:2mm 0 0; }
 .l3d-page .hz-extra-practice { margin-top:2mm; }
 
-/* Weekly journal: a handwritten post heading, a seven-day stamp and an
-   original white stationery render behind the real editable writing area. */
-.l3d-challenge { border-left:0; padding-left:0; }
+/* Weekly challenge: rich source panels, a seven-day stamp and a
+   clean white post box with a green heading and editable writing lines. */
+.l3d-challenge { border:0; background:#f4f1e7; padding:3mm; }
 .l3d-challenge-intro { grid-template-columns:minmax(0,1fr) 25mm; gap:5mm; }
 .l3d-post { grid-column:1; grid-row:1; }
-.l3d-seven { grid-column:2; grid-row:1; background:#fff; color:#08734c; border:.8mm solid #08734c; border-radius:3mm; }
-.l3d-seven > span { color:#b95013; font-size:48pt; }
+.l3d-seven { grid-column:2; grid-row:1; background:#b95013; color:#fff; border:0; border-radius:0; }
+.l3d-seven > span { color:#fff; font-size:44pt; }
 .l3d-seven b { font-size:11pt; }
-.l3d-post h2 { font:700 20pt/1.2 "Segoe Print","Bradley Hand",cursive; color:#08734c; }
-.l3d-week-record thead th { background:transparent; color:#b95013; border-bottom:.6mm solid #b95013; }
-.l3d-week-record { border-bottom:0; }
+.l3d-post h2 { font:700 22pt/1.2 Bahnschrift,Arial,sans-serif; color:#fff; }
+.l3d-post header { background:#08734c; color:#fff; padding:1.5mm 2mm; margin-bottom:2mm; }
+.l3d-week-record thead th { background:#b95013; color:#fff; border-bottom:0; }
+.l3d-week-record { border-bottom:0; background:#fff; }
 .l3d-week-record td { color:#08734c; }
 .l3d-week-record .l3d-day-yes { position:relative; color:#fff; isolation:isolate; }
 .l3d-week-record .l3d-day-yes::before { content:""; position:absolute; z-index:-1; left:50%; top:50%; transform:translate(-50%,-50%); width:4mm; height:4mm; border-radius:50%; background:#08734c; }
-.l3d-post-editor { position:relative; border:0; padding:0 4mm 1mm 10mm; isolation:isolate; }
-.l3d-post-editor::before { content:""; position:absolute; z-index:-1; inset:8mm -1mm -2mm -1mm; background:url('../Images/3D/MyWeek-writing-sheet-v1.png') center/100% 100% no-repeat; }
-.l3d-post-editor header { background:transparent; color:#08734c; margin:0; padding:.5mm 0; border-bottom:.6mm solid #08734c; }
-.l3d-post-editor h2 { font:700 16pt/1.2 "Segoe Print","Bradley Hand",cursive; }
-.l3d-name-gap { border-bottom-color:#08734c; }
-.l3d-post-editor .l3d-example { margin-top:1.5mm; margin-left:10mm; }
+.l3d-post-editor { position:relative; border:.25mm solid #b5cbbf; background:#fff; padding:0 3mm 1mm; }
+.l3d-post-editor::before { display:none; }
+.l3d-post-editor header { background:#08734c; color:#fff; margin:0 -3mm; padding:1.5mm 3mm; border:0; }
+.l3d-post-editor h2 { font:700 17pt/1.2 Bahnschrift,Arial,sans-serif; }
+.l3d-name-gap { border-bottom-color:#fff; }
+.l3d-post-editor .l3d-example { margin-top:2mm; margin-left:0; }
 .l3d-page--2 .hz-exercise:last-child { padding-bottom:1mm; }
