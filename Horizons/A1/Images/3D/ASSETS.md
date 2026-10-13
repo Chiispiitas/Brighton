@@ -12,3 +12,7 @@ Six independent action photographs support the routine-matching task. The social
 All six use the [Pexels License](https://www.pexels.com/license/), checked October 13, 2026. Original JPEGs are retained; only CSS display crops are used. D uses a 1.7× bottom-centered display crop to remove empty wall space while keeping the face, utensils and breakfast visible. No AI generation or retouching. See the manifest for dimensions and hashes. Inspect the actual print crops: walking step, open book, headphones, breakfast, sleeping face and glass at the mouth must remain readable. The week record supplies frequency evidence; the photos supply action meanings.
 
 The author's final correction requires a varied six-routine introduction with compact photographs, replacing the two-item draft and its rear-view walking photograph. Students choose any three of these routines for their personal writing plan.
+
+## Generated writing-sheet render
+
+`MyWeek-writing-sheet-v1.png` is an original built-in imagegen asset for the Unit 3 layout preview, with a native transparent exterior, white writing area, small green bookmark and orange paperclip. The heading, example, name field and four response lines remain live HTML; generated artwork contains no learner text. The clip, bookmark and binding stay clear of those lines and the model sentence. See `../Unit3-generated-assets.json` for dimensions, provenance and hash. The six action photographs above are unchanged.

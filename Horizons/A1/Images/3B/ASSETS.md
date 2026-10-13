@@ -1,6 +1,6 @@
 # 3B — real stock photography
 
-The revised lesson uses **three real photographs found through internet search**, downloaded from each source page's permitted free-download link. No image generation was used for this revision. The originals remain intact in this folder; only print-layout crops are applied through CSS. All photo backgrounds remain photographic.
+The lesson uses **three real photographs found through internet search**, downloaded from each source page's permitted free-download link. The originals remain intact in this folder; only print-layout crops are applied through CSS. All photo backgrounds remain photographic. The October 13 layout preview also adds `Lunch-conversation-cutout-v1.png`, generated with the built-in imagegen tool for a specific invitation/listening pose. Its fictional colleagues illustrate activity 9's generic A/B exchange; they do not replace or recast the recorded radio guests. The native-alpha exterior is preserved. Provenance and hash are in `../Unit3-generated-assets.json`.
 
 | Asset / activity | Local file | Photographer | Original source | Photographic evidence |
 | --- | --- | --- | --- | --- |

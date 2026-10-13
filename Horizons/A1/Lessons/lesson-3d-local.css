@@ -82,3 +82,25 @@
 .l3d-post-lines span { height:7mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
 .l3d-share { margin:2mm 0 0; }
 .l3d-page .hz-extra-practice { margin-top:2mm; }
+
+/* Weekly journal: a handwritten post heading, a seven-day stamp and an
+   original white stationery render behind the real editable writing area. */
+.l3d-challenge { border-left:0; padding-left:0; }
+.l3d-challenge-intro { grid-template-columns:minmax(0,1fr) 25mm; gap:5mm; }
+.l3d-post { grid-column:1; grid-row:1; }
+.l3d-seven { grid-column:2; grid-row:1; background:#fff; color:#08734c; border:.8mm solid #08734c; border-radius:3mm; }
+.l3d-seven > span { color:#b95013; font-size:48pt; }
+.l3d-seven b { font-size:11pt; }
+.l3d-post h2 { font:700 20pt/1.2 "Segoe Print","Bradley Hand",cursive; color:#08734c; }
+.l3d-week-record thead th { background:transparent; color:#b95013; border-bottom:.6mm solid #b95013; }
+.l3d-week-record { border-bottom:0; }
+.l3d-week-record td { color:#08734c; }
+.l3d-week-record .l3d-day-yes { position:relative; color:#fff; isolation:isolate; }
+.l3d-week-record .l3d-day-yes::before { content:""; position:absolute; z-index:-1; left:50%; top:50%; transform:translate(-50%,-50%); width:4mm; height:4mm; border-radius:50%; background:#08734c; }
+.l3d-post-editor { position:relative; border:0; padding:0 4mm 1mm 10mm; isolation:isolate; }
+.l3d-post-editor::before { content:""; position:absolute; z-index:-1; inset:8mm -1mm -2mm -1mm; background:url('../Images/3D/MyWeek-writing-sheet-v1.png') center/100% 100% no-repeat; }
+.l3d-post-editor header { background:transparent; color:#08734c; margin:0; padding:.5mm 0; border-bottom:.6mm solid #08734c; }
+.l3d-post-editor h2 { font:700 16pt/1.2 "Segoe Print","Bradley Hand",cursive; }
+.l3d-name-gap { border-bottom-color:#08734c; }
+.l3d-post-editor .l3d-example { margin-top:1.5mm; margin-left:10mm; }
+.l3d-page--2 .hz-exercise:last-child { padding-bottom:1mm; }

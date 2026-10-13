@@ -6161,6 +6161,28 @@ body.hz-debug .hz-page::after {
 .l3a-pair-model p { margin:0 0 .8mm; }
 .l3a-extra { margin-left:calc(var(--hz-exercise-marker-size) + 3mm); margin-top:.65mm; }
 
+/* Sports editorial: open headline, right-hand environmental portrait and
+   a navy/gold source feature rather than another colored masthead. */
+.l3a-leo-feature { display:grid; grid-template-columns:minmax(0,1fr) 46mm; gap:0 4mm; background:#fff; border-top:.8mm solid #163f5b; border-bottom:.25mm solid #c6d5dc; padding-top:2mm; }
+.l3a-feature-head { grid-column:1 / -1; background:transparent; color:#163f5b; padding:0 0 2mm; }
+.l3a-feature-head h2 { font:700 23pt/1.05 Bahnschrift,Arial,sans-serif; letter-spacing:-.025em; }
+.l3a-feature-head h2 em { font:700 32pt/1.05 Bahnschrift,Arial,sans-serif; font-style:normal; color:#163f5b; }
+.l3a-feature-head p { color:#163f5b; letter-spacing:.12em; }
+.l3a-feature-time { border-radius:50%; width:20mm; height:20mm; padding:0; justify-content:center; background:#ffce35; }
+.l3a-feature-time > span { font-size:7pt; }
+.l3a-feature-layout { display:contents; }
+.l3a-feature-layout figure { grid-column:2; grid-row:2; }
+.l3a-feature-layout img { height:51mm; object-position:center 15%; }
+.l3a-feature-copy { grid-column:1; grid-row:2; font-family:Georgia,serif; line-height:1.5; }
+.l3a-feature-sources { grid-column:1 / -1; padding:2mm 0 1.5mm; }
+.l3a-listening-head { border-bottom:.65mm solid var(--hz-feature-teal); padding-bottom:1.5mm; }
+.l3a-listening-head h2 { font:700 15pt/1.2 Bahnschrift,Arial,sans-serif; }
+.l3a-listening-head h2 em { font:700 15pt/1.2 Bahnschrift,Arial,sans-serif; font-style:normal; }
+.l3a-time-table thead { background:transparent; color:#163f5b; }
+.l3a-time-table thead th { border-bottom:.65mm solid #163f5b; }
+.l3a-time-table tbody th { background:#163f5b; color:#fff; }
+.l3a-time-table tbody tr:last-child th { background:#b95013; }
+
 
 /* Horizons/A1/Lessons/lesson-3b-local.css */
 /* Radio programme: upright display type, a broadcast banner and guest
@@ -6240,6 +6262,26 @@ body.hz-debug .hz-page::after {
 .l3b-lunch-note h2 em { font:inherit; }
 .l3b-lunch-note .l3b-gap { width:38mm; margin-left:2mm; }
 .l3b-inset { margin-left:calc(var(--hz-exercise-marker-size) + 3mm); margin-top:.8mm; }
+
+/* Radio guest roster: horizontal interviews with alternating scene positions.
+   Preserve the established Horizons on Air logo and crimson masthead. */
+.l3b-air-head h2 { display:flex; flex-direction:column; font-size:26pt; }
+.l3b-air-head h2 span { display:block; }
+.l3b-show-brand { flex-shrink:0; white-space:nowrap; }
+.l3b-week-stories { grid-template-columns:1fr; gap:2.5mm; padding:3mm; }
+.l3b-week-story { display:grid; grid-template-columns:29mm minmax(0,1fr); background:#fff; }
+.l3b-week-story img { height:27mm; }
+.l3b-story-copy { display:grid; grid-template-columns:33mm minmax(0,1fr); }
+.l3b-story-copy header { display:flex; flex-direction:column; justify-content:center; padding:2mm; margin:0; }
+.l3b-story-copy h3 { font-size:16pt; }
+.l3b-story-copy header p { margin-top:1.5mm; line-height:1.35; }
+.l3b-story-copy blockquote { padding:2mm 3mm; align-self:center; }
+.l3b-story-copy blockquote p { margin-bottom:1.6mm; }
+.l3b-week-story--ken { grid-template-columns:minmax(0,1fr) 29mm; }
+.l3b-week-story--ken figure { grid-column:2; grid-row:1; }
+.l3b-week-story--ken .l3b-story-copy { grid-column:1; grid-row:1; }
+.l3b-lunch-layout { grid-template-columns:minmax(0,1fr) 35mm 59mm; gap:4mm; }
+.l3b-lunch-people { display:block; width:100%; height:22mm; object-fit:contain; align-self:end; }
 
 
 /* Horizons/A1/Lessons/lesson-3c-local.css */
@@ -6337,6 +6379,31 @@ body.hz-debug .hz-page::after {
 .l3c-review-editor p:last-child { margin-bottom:0; }
 .l3c-inset { margin-left:calc(var(--hz-exercise-marker-size) + 3mm); margin-top:.8mm; }
 
+/* Three destinations across the page, then three review columns. A richer
+   photo-led Maps result sheet replaces the recurring left-photo/right-copy block. */
+.l3c-review-masthead { background:transparent; color:#175786; padding:1mm 0 2mm; border-bottom:.8mm solid #175786; }
+.l3c-review-masthead h2 { font:700 25pt/1.1 Georgia,serif; }
+.l3c-maps-brand circle { fill:#fff; }
+.l3c-reviews-layout { display:flex; flex-direction:column; gap:3mm; padding-top:3mm; }
+.l3c-photo-gallery { display:grid; grid-template-columns:1.5fr 2fr; gap:3mm; }
+.l3c-park-photo img { height:39mm; }
+.l3c-cafe-photos { margin:0; gap:3mm; }
+.l3c-cafe-photos img { height:33.5mm; }
+.l3c-review-feed { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:4mm; }
+.l3c-review { margin:0; padding:0 0 0 2mm; border-bottom:0; border-left:.65mm solid #087a46; }
+.l3c-review:nth-child(2) { border-color:#bc5219; }
+.l3c-review:nth-child(3) { border-color:#175786; }
+.l3c-review:last-child { border-left:.65mm solid #175786; padding-left:2mm; }
+.l3c-review header { flex-wrap:wrap; gap:1mm; }
+.l3c-review h3 { color:#087a46; }
+.l3c-review:nth-child(2) h3 { color:#a34713; }
+.l3c-review:nth-child(3) h3 { color:#175786; }
+.l3c-review p { line-height:1.45; }
+.l3c-conversation { background:#eef4ef; border-left:0; border-top:.65mm solid #087a46; }
+.l3c-review-editor header { background:transparent; color:#175786; border-bottom:.65mm solid #175786; }
+.l3c-review-editor svg { stroke:#175786; }
+.l3c-review-editor { border:0; border-left:.65mm solid #175786; }
+
 
 /* Horizons/A1/Lessons/lesson-3d-local.css */
 /* A seven-day social challenge: real action photographs, a week record and
@@ -6423,6 +6490,28 @@ body.hz-debug .hz-page::after {
 .l3d-post-lines span { height:7mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
 .l3d-share { margin:2mm 0 0; }
 .l3d-page .hz-extra-practice { margin-top:2mm; }
+
+/* Weekly journal: a handwritten post heading, a seven-day stamp and an
+   original white stationery render behind the real editable writing area. */
+.l3d-challenge { border-left:0; padding-left:0; }
+.l3d-challenge-intro { grid-template-columns:minmax(0,1fr) 25mm; gap:5mm; }
+.l3d-post { grid-column:1; grid-row:1; }
+.l3d-seven { grid-column:2; grid-row:1; background:#fff; color:#08734c; border:.8mm solid #08734c; border-radius:3mm; }
+.l3d-seven > span { color:#b95013; font-size:48pt; }
+.l3d-seven b { font-size:11pt; }
+.l3d-post h2 { font:700 20pt/1.2 "Segoe Print","Bradley Hand",cursive; color:#08734c; }
+.l3d-week-record thead th { background:transparent; color:#b95013; border-bottom:.6mm solid #b95013; }
+.l3d-week-record { border-bottom:0; }
+.l3d-week-record td { color:#08734c; }
+.l3d-week-record .l3d-day-yes { position:relative; color:#fff; isolation:isolate; }
+.l3d-week-record .l3d-day-yes::before { content:""; position:absolute; z-index:-1; left:50%; top:50%; transform:translate(-50%,-50%); width:4mm; height:4mm; border-radius:50%; background:#08734c; }
+.l3d-post-editor { position:relative; border:0; padding:0 4mm 1mm 10mm; isolation:isolate; }
+.l3d-post-editor::before { content:""; position:absolute; z-index:-1; inset:8mm -1mm -2mm -1mm; background:url("./Images/3D/MyWeek-writing-sheet-v1.png") center/100% 100% no-repeat; }
+.l3d-post-editor header { background:transparent; color:#08734c; margin:0; padding:.5mm 0; border-bottom:.6mm solid #08734c; }
+.l3d-post-editor h2 { font:700 16pt/1.2 "Segoe Print","Bradley Hand",cursive; }
+.l3d-name-gap { border-bottom-color:#08734c; }
+.l3d-post-editor .l3d-example { margin-top:1.5mm; margin-left:10mm; }
+.l3d-page--2 .hz-exercise:last-child { padding-bottom:1mm; }
 
 
 /* Student's Book unifier */
@@ -8778,7 +8867,7 @@ body {
             <div class="hz-exercise-number">8</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Work in pairs. Ask and write.</p><div class="hz-exercise__body"><div class="l3b-pair-model hz-dialogue-text"><p><b>A:</b> Do you work on Saturday?</p><p><b>B:</b> No, I don't.</p></div><table class="l3b-survey"><thead><tr><th>Do you ...?</th><th>You</th><th>Your classmate</th></tr></thead><tbody><tr><th>work on Saturday</th><td></td><td></td></tr><tr><th>go to school on Monday</th><td></td><td></td></tr><tr><th>get up at seven on Sunday</th><td></td><td></td></tr></tbody></table></div></div>
           </section>
           <section class="hz-exercise">
-            <div class="hz-exercise-number">9</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Work in pairs. Find a day for lunch. Ask and answer.</p><div class="hz-exercise__body l3b-lunch-layout"><div class="hz-dialogue-text"><p><b>A:</b> Do you work on Sunday?</p><p><b>B:</b> No, I don't.</p><p><b>A:</b> Do you have lunch at one?</p><p><b>B:</b> Yes, I do.</p></div><div class="l3b-lunch-note"><h2>Lunch <em>together</em></h2><p>Day <span class="l3b-gap"></span></p><p>Time <span class="l3b-gap"></span></p></div></div></div>
+            <div class="hz-exercise-number">9</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Work in pairs. Find a day for lunch. Ask and answer.</p><div class="hz-exercise__body l3b-lunch-layout"><div class="hz-dialogue-text"><p><b>A:</b> Do you work on Sunday?</p><p><b>B:</b> No, I don't.</p><p><b>A:</b> Do you have lunch at one?</p><p><b>B:</b> Yes, I do.</p></div><img class="l3b-lunch-people" src="./Images/3B/Lunch-conversation-cutout-v1.png" alt="Two fictional colleagues face each other while planning lunch."><div class="l3b-lunch-note"><h2>Lunch <em>together</em></h2><p>Day <span class="l3b-gap"></span></p><p>Time <span class="l3b-gap"></span></p></div></div></div>
           </section>
         </div>
       </div>
@@ -8907,9 +8996,9 @@ body {
           <div class="hz-exercise__body l3d-challenge">
             <div class="l3d-challenge-intro"><div class="l3d-seven"><span>7</span><b>DAYS</b></div><div class="l3d-post"><header><h2>#MyWeek</h2><span>Zoe · @zoe.walks</span></header><p>I <strong class="hz-text-unit">always</strong> drink water after breakfast. I <strong class="hz-text-unit">usually</strong> walk before dinner. I <strong class="hz-text-unit">sometimes</strong> watch TV after dinner. I <strong class="hz-text-unit">never</strong> go to bed at twelve.</p><p>I am <strong class="hz-text-unit">usually</strong> at home at six.</p></div></div>
             <table class="l3d-week-record" aria-label="Zoe's seven-day record"><caption>Zoe's week <span>✓ yes &nbsp; – no</span></caption><thead><tr><th></th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr></thead><tbody>
-              <tr><th>drink water</th><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td></tr>
-              <tr><th>walk</th><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>✓</td><td>–</td><td>✓</td></tr>
-              <tr><th>watch TV</th><td>–</td><td>✓</td><td>–</td><td>–</td><td>–</td><td>✓</td><td>–</td></tr>
+              <tr><th>drink water</th><td class="l3d-day-yes">✓</td><td class="l3d-day-yes">✓</td><td class="l3d-day-yes">✓</td><td class="l3d-day-yes">✓</td><td class="l3d-day-yes">✓</td><td class="l3d-day-yes">✓</td><td class="l3d-day-yes">✓</td></tr>
+              <tr><th>walk</th><td class="l3d-day-yes">✓</td><td class="l3d-day-yes">✓</td><td class="l3d-day-yes">✓</td><td class="l3d-day-yes">✓</td><td class="l3d-day-yes">✓</td><td>–</td><td class="l3d-day-yes">✓</td></tr>
+              <tr><th>watch TV</th><td>–</td><td class="l3d-day-yes">✓</td><td>–</td><td>–</td><td>–</td><td class="l3d-day-yes">✓</td><td>–</td></tr>
               <tr><th>go to bed at twelve</th><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td><td>–</td></tr>
             </tbody></table>
           </div>
