@@ -22,7 +22,7 @@ Installed in the Brighton Exams site `06a80236-67d7-4837-b4c8-2a62b29ee79b`:
 - `Backend/young-gemini-speaking.js`
 - The additive routes in `wix-backend/http-routes.js`, merged into the existing `Backend/http-functions.js`.
 
-Five isolated CMS collections are ADMIN-only: `BrightonYoungPlacementSessions`, `BrightonYoungPlacementResponses`, `BrightonYoungPlacementItems`, `BrightonYoungPlacementSpeaking`, and `BrightonYoungPlacementSpeakingChunks`. Forty-one answer keys for each release were seeded privately in Wix. Populated keys are deliberately absent from this public repository. Teachers can inspect completed results, transcripts and rubric evidence in these private Wix CMS collections; no public child-results listing endpoint is exposed.
+Five isolated CMS collections are ADMIN-only: `BrightonYoungPlacementSessions`, `BrightonYoungPlacementResponses`, `BrightonYoungPlacementItems`, `BrightonYoungPlacementSpeaking`, and `BrightonYoungPlacementSpeakingChunks`. Forty-one answer keys for each release were seeded privately in Wix. Populated keys are deliberately absent from this public repository. Teachers can inspect completed results, transcripts and rubric evidence in these private Wix CMS collections; the teacher dashboard endpoints require a private access key.
 
 The existing `BRIGHTON_PLACEMENT_GEMINI_API_KEY` secret is reused only in the Wix backend. Names and phone numbers are not included in Gemini requests. Inline audio is not persisted; larger recordings use temporary chunks that are removed after successful grading or skipping, or when an inactive attempt is purged. Active attempts expire after one hour without activity; completed results remain.
 
@@ -42,3 +42,11 @@ The checkbox and consent requirement were removed at the site owner’s request.
 The question bank uses 24 distinct images in every administered attempt (including listening choices). Stage image sets are disjoint. Eighteen new original built-in ImageGen assets supply five language scenes, four reading contexts and nine listening choices. Each reading item has its own independent message or story. Listening now tests details, changed plans and distractor rejection rather than identifying unrelated scenes. All nine revised recordings use ElevenLabs Matilda, American English, multilingual v2 at 0.85 speed. Correct-option positions and the private answer-key contract are unchanged; routing and AI speaking remain compatible. Asset URLs and the question-bank cache token are versioned.
 
 Validation: exhaustive cross-product of all 81 language/reading/listening/speaking combinations, zero repeated pictures/prompts/passages per attempt, original answer mappings and routing checks, and all nine audio transcriptions matched scripts.
+
+### Teacher results dashboard
+
+Open https://exams.bebrighton.net/Placement/YoungLearners/results. The page shares the general Placement results styling and includes name, level and status filters, attempt details, skill scores, adaptive route, AI speaking transcript and rubric evidence, and CSV export. General Results links to Young Learners Results.
+
+Both teacher endpoints are POST-only and verify BRIGHTON_YOUNG_RESULTS_ACCESS_KEY in Wix Secrets Manager before querying any records. The key is kept only in page memory and cleared by Lock results or refreshing. Responses use Cache-Control: no-store. No teacher key is committed to this repository. The five CMS collections remain ADMIN-only. To rotate access, update the secret in Wix and share its new value privately with authorized teachers.
+
+Validation: node Placement/YoungLearners/verify-results.mjs verifies unauthorized requests cannot query records, teacher filters, isolated endpoints, noncached responses and hidden initial dashboard.

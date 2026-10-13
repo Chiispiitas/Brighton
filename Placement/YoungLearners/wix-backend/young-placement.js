@@ -6,6 +6,8 @@
 // Uses the same shared Backend/core.js as Exams and Tests.
 
 import wixData from "wix-data";
+import wixSecretsBackend from "wix-secrets-backend";
+import { response } from "wix-http-functions";
 import {
   jsonOK,
   jsonBadRequest,
@@ -1305,9 +1307,6 @@ function dashboardModules(responses) {
 }
 
 async function placementRequestParams(request) {
-  const query = request?.query || {};
-  if (Object.keys(query).length) return query;
-
   try {
     return await readJsonBody(request);
   } catch {
@@ -1315,10 +1314,30 @@ async function placementRequestParams(request) {
   }
 }
 
+function teacherJson(status, body) {
+  return response({ status, headers: {
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "*",
+    "Cache-Control": "no-store",
+    "Pragma": "no-cache"
+  }, body: JSON.stringify(body) });
+}
+
+async function teacherAuthorized(params) {
+  const candidate = typeof params?.teacherKey === "string" ? params.teacherKey : "";
+  if (candidate.length < 16 || candidate.length > 128) return false;
+  const expected = String(await wixSecretsBackend.getSecret("BRIGHTON_YOUNG_RESULTS_ACCESS_KEY") || "");
+  if (expected.length < 16 || candidate.length !== expected.length) return false;
+  let mismatch = 0;
+  for (let i = 0; i < expected.length; i++) mismatch |= candidate.charCodeAt(i) ^ expected.charCodeAt(i);
+  return mismatch === 0;
+}
+
 export async function getPlacementResults(request) {
   try {
-    await purgeStalePlacementSessions();
     const query = await placementRequestParams(request);
+    if (!await teacherAuthorized(query)) return teacherJson(401, { success: false, error: "Enter a valid teacher access key." });
+    await purgeStalePlacementSessions();
     const studentFilter = String(query.student || "").trim().toLowerCase();
     const levelFilter = String(query.level || "").trim();
     const statusFilter = String(query.status || "").trim().toLowerCase();
@@ -1354,21 +1373,22 @@ export async function getPlacementResults(request) {
       return bTime - aTime;
     });
 
-    return jsonOK({
+    return teacherJson(200, {
       success: true,
       results,
       total: results.length
     });
   } catch (error) {
     console.error("getPlacementResults failed:", error);
-    return jsonServerError(error);
+    return teacherJson(500, { success: false, error: "Could not load Young Learners results. Please try again." });
   }
 }
 
 export async function getPlacementDashboardResult(request) {
   try {
-    await purgeStalePlacementSessions();
     const params = await placementRequestParams(request);
+    if (!await teacherAuthorized(params)) return teacherJson(401, { success: false, error: "Enter a valid teacher access key." });
+    await purgeStalePlacementSessions();
     const sessionId = String(params?.sessionId || "").trim();
 
     if (!sessionId) {
@@ -1433,7 +1453,7 @@ export async function getPlacementDashboardResult(request) {
       ? await buildResultSummary(session)
       : null;
 
-    return jsonOK({
+    return teacherJson(200, {
       success: true,
       session: dashboardSessionRow(session),
       result,
@@ -1444,6 +1464,6 @@ export async function getPlacementDashboardResult(request) {
     });
   } catch (error) {
     console.error("getPlacementDashboardResult failed:", error);
-    return jsonServerError(error);
+    return teacherJson(500, { success: false, error: "Could not load this Young Learners attempt. Please try again." });
   }
 }

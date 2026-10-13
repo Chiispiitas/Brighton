@@ -21,3 +21,7 @@ export function use_brightonYoungPlacementActivity() { return corsOptions("POST"
 export function post_brightonYoungPlacementActivity(request) { return young.touchPlacementActivity(request); }
 export function use_brightonYoungPlacementExpire() { return corsOptions("POST"); }
 export function post_brightonYoungPlacementExpire(request) { return young.expirePlacementSession(request); }
+export function use_brightonYoungPlacementResults() { return corsOptions("POST"); }
+export function post_brightonYoungPlacementResults(request) { return young.getPlacementResults(request); }
+export function use_brightonYoungPlacementDashboardResult() { return corsOptions("POST"); }
+export function post_brightonYoungPlacementDashboardResult(request) { return young.getPlacementDashboardResult(request); }
