@@ -22,40 +22,6 @@
   const toast = document.querySelector("#toast");
 
   let rows = [];
-  let teacherKey = "";
-  let requestGeneration = 0;
-  const accessCard = document.querySelector("#accessCard");
-  const accessForm = document.querySelector("#accessForm");
-  const accessKey = document.querySelector("#accessKey");
-  const accessStatus = document.querySelector("#accessStatus");
-  const unlockBtn = document.querySelector("#unlockBtn");
-  const dashboardContent = document.querySelector("#dashboardContent");
-  const lockBtn = document.querySelector("#lockBtn");
-  accessForm.addEventListener("submit", async event => {
-    event.preventDefault();
-    teacherKey = accessKey.value.trim();
-    unlockBtn.disabled = true;
-    accessStatus.textContent = "Opening results…";
-    await loadResults();
-    unlockBtn.disabled = false;
-  });
-  lockBtn.addEventListener("click", lockResults);
-  function lockResults() {
-    teacherKey = "";
-    requestGeneration++;
-    rows = [];
-    accessKey.value = "";
-    closeModal();
-    detailsContent.innerHTML = "";
-    resultsBody.innerHTML = "";
-    renderSummary();
-    dashboardContent.hidden = true;
-    lockBtn.hidden = true;
-    accessCard.hidden = false;
-    accessStatus.textContent = "Results locked.";
-    accessKey.focus();
-  }
-
   const PROMPTS = {
   "yl-sp-prea1-01": "Look at the park picture. Name some things you can see. What colours are they? Which thing do you like?",
   "yl-sp-a1-01": "Look at the park picture. What are the children doing? Tell us about the dog and the picnic. What do you like doing in a park?",
@@ -77,6 +43,8 @@
     if (event.key === "Escape" && !modal?.classList.contains("hidden")) closeModal();
   });
 
+  loadResults();
+
   async function readApiResponse(response) {
     const payload = await response.json().catch(() => ({}));
     if (!response.ok || !payload?.success) {
@@ -92,15 +60,13 @@
     const response = await fetch(`${apiBase}/${path}`, {
       method: "POST",
       headers: { "Content-Type": "text/plain;charset=UTF-8", "Accept": "application/json" },
-      body: JSON.stringify({ ...params, teacherKey }),
+      body: JSON.stringify(params),
       cache: "no-store"
     });
     return readApiResponse(response);
   }
 
   async function loadResults() {
-    if (!teacherKey) return;
-    const generation = requestGeneration;
     loadBtn.disabled = true;
     resultsStatus.textContent = "Loading placement results…";
     resultsBody.innerHTML = '<tr><td colspan="9">Loading…</td></tr>';
@@ -111,12 +77,6 @@
         level: levelSelect.value,
         status: statusSelect.value
       });
-      if (generation !== requestGeneration) return;
-      accessCard.hidden = true;
-      dashboardContent.hidden = false;
-      lockBtn.hidden = false;
-      accessKey.value = "";
-      accessStatus.textContent = "";
       rows = Array.isArray(payload.results) ? payload.results : [];
       renderRows();
       renderSummary();
@@ -124,9 +84,6 @@
         ? `${rows.length} placement attempt${rows.length === 1 ? "" : "s"} loaded.`
         : "No placement attempts matched these filters.";
     } catch (error) {
-      if (generation !== requestGeneration) return;
-      if (error.status === 401) lockResults();
-      accessStatus.textContent = error.message || "Could not open results.";
       rows = [];
       renderSummary();
       resultsBody.innerHTML = '<tr><td colspan="9">Could not load placement results.</td></tr>';
@@ -176,7 +133,6 @@
   }
 
   async function openDetails(sessionId) {
-    const generation = requestGeneration;
     modal.classList.remove("hidden");
     modal.setAttribute("aria-hidden", "false");
     detailsTitle.textContent = "Loading…";
@@ -184,7 +140,6 @@
 
     try {
       const payload = await apiGet("brightonYoungPlacementDashboardResult", { sessionId });
-      if (generation !== requestGeneration) return;
       renderDetails(payload);
     } catch (error) {
       console.error(error);

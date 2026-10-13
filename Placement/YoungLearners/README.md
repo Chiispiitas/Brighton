@@ -22,7 +22,7 @@ Installed in the Brighton Exams site `06a80236-67d7-4837-b4c8-2a62b29ee79b`:
 - `Backend/young-gemini-speaking.js`
 - The additive routes in `wix-backend/http-routes.js`, merged into the existing `Backend/http-functions.js`.
 
-Five isolated CMS collections are ADMIN-only: `BrightonYoungPlacementSessions`, `BrightonYoungPlacementResponses`, `BrightonYoungPlacementItems`, `BrightonYoungPlacementSpeaking`, and `BrightonYoungPlacementSpeakingChunks`. Forty-one answer keys for each release were seeded privately in Wix. Populated keys are deliberately absent from this public repository. Teachers can inspect completed results, transcripts and rubric evidence in these private Wix CMS collections; the teacher dashboard endpoints require a private access key.
+Five isolated CMS collections are ADMIN-only: `BrightonYoungPlacementSessions`, `BrightonYoungPlacementResponses`, `BrightonYoungPlacementItems`, `BrightonYoungPlacementSpeaking`, and `BrightonYoungPlacementSpeakingChunks`. Forty-one answer keys for each release were seeded privately in Wix. Populated keys are deliberately absent from this public repository. Teachers can inspect completed results, transcripts and rubric evidence in these private Wix CMS collections; the results dashboard is accessible without a teacher key.
 
 The existing `BRIGHTON_PLACEMENT_GEMINI_API_KEY` secret is reused only in the Wix backend. Names and phone numbers are not included in Gemini requests. Inline audio is not persisted; larger recordings use temporary chunks that are removed after successful grading or skipping, or when an inactive attempt is purged. Active attempts expire after one hour without activity; completed results remain.
 
@@ -47,6 +47,6 @@ Validation: exhaustive cross-product of all 81 language/reading/listening/speaki
 
 Open https://exams.bebrighton.net/Placement/YoungLearners/results. The page shares the general Placement results styling and includes name, level and status filters, attempt details, skill scores, adaptive route, AI speaking transcript and rubric evidence, and CSV export. General Results links to Young Learners Results.
 
-Both teacher endpoints are POST-only and verify BRIGHTON_YOUNG_RESULTS_ACCESS_KEY in Wix Secrets Manager before querying any records. The key is kept only in page memory and cleared by Lock results or refreshing. Responses use Cache-Control: no-store. No teacher key is committed to this repository. The five CMS collections remain ADMIN-only. To rotate access, update the secret in Wix and share its new value privately with authorized teachers.
+Both dashboard endpoints are POST-only and accessible without a teacher key, matching the general Placement results page. Anyone with the page URL can view names, phone numbers, scores, transcripts and assessment details. Responses use Cache-Control: no-store. The five CMS collections remain ADMIN-only; dashboard access is provided by the backend.
 
-Validation: node Placement/YoungLearners/verify-results.mjs verifies unauthorized requests cannot query records, teacher filters, isolated endpoints, noncached responses and hidden initial dashboard.
+Validation: node Placement/YoungLearners/verify-results.mjs verifies no-key list and details access, filters, isolated endpoints, noncached responses and immediate dashboard loading.

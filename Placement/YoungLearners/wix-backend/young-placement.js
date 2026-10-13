@@ -6,7 +6,6 @@
 // Uses the same shared Backend/core.js as Exams and Tests.
 
 import wixData from "wix-data";
-import wixSecretsBackend from "wix-secrets-backend";
 import { response } from "wix-http-functions";
 import {
   jsonOK,
@@ -1323,20 +1322,10 @@ function teacherJson(status, body) {
   }, body: JSON.stringify(body) });
 }
 
-async function teacherAuthorized(params) {
-  const candidate = typeof params?.teacherKey === "string" ? params.teacherKey : "";
-  if (candidate.length < 16 || candidate.length > 128) return false;
-  const expected = String(await wixSecretsBackend.getSecret("BRIGHTON_YOUNG_RESULTS_ACCESS_KEY") || "");
-  if (expected.length < 16 || candidate.length !== expected.length) return false;
-  let mismatch = 0;
-  for (let i = 0; i < expected.length; i++) mismatch |= candidate.charCodeAt(i) ^ expected.charCodeAt(i);
-  return mismatch === 0;
-}
 
 export async function getPlacementResults(request) {
   try {
     const query = await placementRequestParams(request);
-    if (!await teacherAuthorized(query)) return teacherJson(401, { success: false, error: "Enter a valid teacher access key." });
     await purgeStalePlacementSessions();
     const studentFilter = String(query.student || "").trim().toLowerCase();
     const levelFilter = String(query.level || "").trim();
@@ -1387,7 +1376,6 @@ export async function getPlacementResults(request) {
 export async function getPlacementDashboardResult(request) {
   try {
     const params = await placementRequestParams(request);
-    if (!await teacherAuthorized(params)) return teacherJson(401, { success: false, error: "Enter a valid teacher access key." });
     await purgeStalePlacementSessions();
     const sessionId = String(params?.sessionId || "").trim();
 

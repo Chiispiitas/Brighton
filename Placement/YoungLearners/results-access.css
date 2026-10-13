@@ -1,9 +1,4 @@
 [hidden] { display: none !important; }
-.teacher-access { max-width: 640px; margin: 0 auto; }
-.teacher-access-form { display: grid; gap: 12px; margin-top: 24px; }
-.teacher-access-form label { font-weight: 800; }
-.teacher-access-form input { width: 100%; border: 1px solid var(--line, #ddd); border-radius: 12px; padding: 14px; font: inherit; }
-.teacher-access-form button { justify-self: start; }
 #dashboardContent { display: grid; gap: 24px; }
 .header-actions { flex-wrap: wrap; }
 @media (max-width: 600px) { .portal-title-block h1 { font-size: 24px; } }
