@@ -1,0 +1,84 @@
+/* A seven-day social challenge: real action photographs, a week record and
+   a student's own post. Native Horizons navigation remains unchanged. */
+.l3d-page { --hz-unit:var(--hz-unit-1); --hz-unit-dark:#8f123f; --hz-unit-soft:#f8e6ee; font-size:9.5pt; }
+.l3d-page .hz-page-stack { gap:2.7mm; }
+.l3d-page .hz-lesson-header { padding-bottom:3.2mm; }
+.l3d-page .hz-exercises { gap:.2mm; }
+.l3d-page .hz-exercise { padding:1.6mm 0 2.15mm; }
+.l3d-page .hz-exercise__body { margin-top:1.5mm; }
+.l3d-inset { margin-left:calc(var(--hz-exercise-marker-size) + 3mm); }
+.l3d-action-layout { display:block; }
+.l3d-action-photos { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:3mm; }
+.l3d-action-photos figure { position:relative; margin:0; }
+.l3d-action-photos img { display:block; width:100%; height:36mm; object-fit:cover; }
+.l3d-action-photos figure:nth-child(1) img { object-position:48% center; }
+.l3d-action-photos figure:nth-child(2) img { object-position:center; }
+.l3d-action-photos figure:nth-child(3) img { object-position:45% center; }
+.l3d-action-photos figure:nth-child(4) img { object-position:center bottom; }
+.l3d-action-photos figure:nth-child(4) { overflow:hidden; }
+.l3d-action-photos figure:nth-child(4) img { transform:scale(1.7); transform-origin:center bottom; }
+.l3d-action-photos figure:nth-child(5) img { object-position:45% center; }
+.l3d-action-photos figure:nth-child(6) img { object-position:64% center; }
+.l3d-action-photos figcaption { position:absolute; top:1.5mm; left:1.5mm; padding:.4mm 1.3mm; background:#fff; color:var(--hz-unit-dark); font-weight:650; }
+.l3d-action-words { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:2mm 5mm; margin-top:2mm; }
+.l3d-action-words b { color:var(--hz-unit-dark); margin-right:2mm; }
+.l3d-letter-gap { display:inline-block; width:7mm; height:3.5mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); margin-left:2mm; }
+.l3d-challenge { border-left:.8mm solid #08734c; padding-left:3mm; }
+.l3d-challenge-intro { display:grid; grid-template-columns:27mm minmax(0,1fr); gap:4mm; }
+.l3d-seven { display:flex; flex-direction:column; align-items:center; justify-content:center; background:#08734c; color:#fff; }
+.l3d-seven > span { font:850 64pt/.95 Bahnschrift,"Arial Black",sans-serif; color:#ffce35; }
+.l3d-seven b { margin-top:1.5mm; font:700 13pt/1.1 Bahnschrift,Arial,sans-serif; letter-spacing:.07em; }
+.l3d-post header { display:flex; justify-content:space-between; align-items:baseline; gap:3mm; margin-bottom:2mm; }
+.l3d-post h2 { margin:0; font:750 22pt/1.1 Bahnschrift,"Arial Black",sans-serif; color:#08734c; }
+.l3d-post header > span { font-size:8.5pt; }
+.l3d-post p { margin:0 0 2mm; font-size:10pt; line-height:1.4; }
+.l3d-post p:last-child { margin-bottom:0; }
+.l3d-week-record { width:100%; border-collapse:collapse; table-layout:fixed; margin-top:3mm; font-size:8.5pt; }
+.l3d-week-record caption { text-align:left; color:#08734c; font-weight:700; padding-bottom:1.5mm; }
+.l3d-week-record caption span { float:right; color:var(--hz-ink); font-weight:400; }
+.l3d-week-record th:first-child { width:48mm; text-align:left; }
+.l3d-week-record th,.l3d-week-record td { padding:.9mm 1mm; border-bottom:.25mm solid var(--hz-line); }
+.l3d-week-record thead th { color:#fff; background:#08734c; font-weight:600; }
+.l3d-week-record tbody th { font-weight:400; }
+.l3d-week-record td { text-align:center; font-weight:650; color:#08734c; }
+.l3d-list { list-style:none; counter-reset:item; margin:0; padding:0; }
+.l3d-list > li { position:relative; counter-increment:item; padding-left:4.5mm; }
+.l3d-list > li::before { content:counter(item); position:absolute; top:0; left:0; color:var(--hz-unit-dark); font-size:8.5pt; font-weight:650; }
+.l3d-notice { display:grid; grid-template-columns:1fr 1fr; gap:2.2mm 6mm; line-height:1.4; }
+.l3d-frequency p { margin:0 0 .8mm; }
+.l3d-frequency p:last-child { margin-bottom:0; }
+.l3d-continuation-content { padding-top:15mm; }
+.l3d-page--2 .hz-exercises { padding-top:0!important; }
+.l3d-morning { border-left:.8mm solid #c15a16; padding-left:3mm; }
+.l3d-morning h2 { margin:0 0 2mm; color:#ad4b12; font:700 17pt/1.1 Bahnschrift,Arial,sans-serif; }
+.l3d-morning-events { display:flex; align-items:center; justify-content:space-between; gap:3mm; }
+.l3d-morning-events > div { display:flex; align-items:baseline; gap:2mm; }
+.l3d-morning-events b { font:700 15pt/1.1 Bahnschrift,Arial,sans-serif; color:#ad4b12; }
+.l3d-time-arrow { font-size:18pt; color:#ad4b12; }
+.l3d-sequence-notice { display:grid; gap:1.5mm; margin-top:3mm; }
+.l3d-page--2 .hz-focus-box { margin-top:1mm; margin-bottom:.8mm; }
+.l3d-connectors { display:grid; grid-template-columns:1fr 1fr; gap:1mm 4mm; }
+.l3d-connectors p { margin:0; }
+.l3d-order { display:grid; grid-template-columns:1fr 1fr; gap:2mm 6mm; }
+.l3d-order li { display:flex; flex-direction:column; gap:1mm; }
+.l3d-write { display:block; height:7mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
+.l3d-times { display:flex; justify-content:space-between; gap:4mm; margin-bottom:2mm; color:#ad4b12; font-size:9pt; }
+.l3d-sequence-practice { display:grid; grid-template-columns:1fr 1fr; gap:2mm 5mm; line-height:1.4; }
+.l3d-gap { display:inline-block; width:14mm; height:3.5mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
+.l3d-your-week { width:100%; border-collapse:collapse; font-size:9pt; }
+.l3d-your-week th,.l3d-your-week td { padding:1.7mm 1mm; text-align:left; border-bottom:.25mm solid var(--hz-line); }
+.l3d-your-week thead th { color:#08734c; border-bottom:.6mm solid #08734c; font-weight:700; }
+.l3d-your-week th:first-child { width:40mm; }
+.l3d-your-week th:last-child { width:30mm; }
+.l3d-your-week tbody th { font-weight:400; }
+.l3d-your-week td:last-child { border-left:.25mm solid var(--hz-line); }
+.l3d-post-editor { border-left:.8mm solid #08734c; padding-left:3mm; }
+.l3d-post-editor header { display:flex; justify-content:space-between; align-items:center; background:#08734c; color:#fff; margin-left:-3mm; padding:1.5mm 3mm; }
+.l3d-post-editor h2 { margin:0; font:700 17pt/1.1 Bahnschrift,Arial,sans-serif; }
+.l3d-post-editor header > span { font-size:9pt; }
+.l3d-name-gap { display:inline-block; width:33mm; border-bottom:.25mm solid #fff; height:4mm; vertical-align:bottom; margin-left:2mm; }
+.l3d-example { color:#74777d; margin:2mm 0 .5mm; font:400 9pt/1.3 "Segoe Print","Bradley Hand",cursive; }
+.l3d-post-lines { display:grid; gap:0; }
+.l3d-post-lines span { height:7mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
+.l3d-share { margin:2mm 0 0; }
+.l3d-page .hz-extra-practice { margin-top:2mm; }

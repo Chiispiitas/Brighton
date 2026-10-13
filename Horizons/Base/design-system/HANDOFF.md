@@ -228,6 +228,10 @@ use Jessica for announcements/vocabulary, Adeline/Mia and Mark Casual/Ravi.
 See the answer key and `3C-production.json`. Rollback checkpoint:
 `horizons-before-lesson-3c-2026-10-12`.
 
+## A1 Lesson 3D completed (2026-10-13)
+
+`3D.html` occupies printed pages 29–30, with the syllabus title My week in order. It leads from a compact six-photo routine task into Zoe's fictional #MyWeek challenge and a seven-day record. Frequency adverbs precede main verbs and follow be; before/after are discovered from a visible morning sequence and modeled with noun phrases and familiar finite clauses. Controlled practice leads to a personal weekly plan and a four-line post. Students choose three of the six routines for their personal plan. It includes NEW WORDS cues, all three relevant Go to references, and Extra Practice. Photography is real and licensed; the corrected walking photograph is front-facing and action-led. No social-media account or actual publication is required. Jessica announces both tracks (3.8/3.9); Juniper voices Zoe's post. Answer key, source manifest and production records are included. The previous 24 book pages remain intact. Rollback checkpoints: `horizons-before-lesson-3d-2026-10-12` and `main-before-horizons-3d-2026-10-12`.
+
 ## Remaining A1 readings recorded (2026-10-10)
 
 The previously unrecorded 1D hotel conversation is track 1.12, with Jessica announcing the track, Juniper as Lisa and Adeline as Emma. The 2C Rivera family reading is track 2.6, read by Jessica. Their scripts, completed MP3s and production records are in the A1 audio folders. The telephone number is spoken digit by digit and the email address uses "dot" and "at". All existing numbered listening tracks are now present; the Units 1 & 2 Review has no listening task requiring a recording. Production records retain the transcript normalization used for proper names. Neither script contains the forbidden clarity tag.

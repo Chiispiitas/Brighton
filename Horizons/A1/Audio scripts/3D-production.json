@@ -1,0 +1,70 @@
+[
+  {
+    "lesson": "3D",
+    "track": "3.8",
+    "filename": "Track 3.8.mp3",
+    "script": "ElevenCreative Studio/3D - Track 3.8.txt",
+    "model": "eleven_v3",
+    "stability": 0.5,
+    "paragraph_voice_names": [
+      "Jessica",
+      "Jessica",
+      "Jessica",
+      "Jessica",
+      "Jessica",
+      "Jessica",
+      "Jessica"
+    ],
+    "paragraph_voice_ids": [
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9"
+    ],
+    "generation_utc": "2026-10-13T10:42:51.885371+00:00",
+    "request_id": "0fdzRD8SbxK27OK1bJJr",
+    "script_sha256": "4257f566edf63a67fb07001badf23d3bfea138ddf661a0acac5401d60e77d276",
+    "bytes": 201918,
+    "duration_seconds": 12.59,
+    "transcript_checked": true,
+    "transcript_similarity": 1.0,
+    "answer_bearing_phrases_checked": true,
+    "audio_events_checked": true,
+    "throat_clearing_events_detected": false,
+    "forbidden_tag_preflight_passed": true,
+    "transcription_name_aliases": {},
+    "transcript_normalization": "Track label, punctuation and numeric versus written twelve/six only."
+  },
+  {
+    "lesson": "3D",
+    "track": "3.9",
+    "filename": "Track 3.9.mp3",
+    "script": "ElevenCreative Studio/3D - Track 3.9.txt",
+    "model": "eleven_v3",
+    "stability": 0.5,
+    "paragraph_voice_names": [
+      "Jessica",
+      "Juniper"
+    ],
+    "paragraph_voice_ids": [
+      "cgSgspJ2msm6clMCkdW9",
+      "aMSt68OGf4xUZAnLpTU8"
+    ],
+    "generation_utc": "2026-10-13T03:41:45.218679+00:00",
+    "request_id": "DPVQqW84iIVeJAPEnupu",
+    "script_sha256": "b9ca0389b7c037d593e7455bb2cc1a32e7794d9dd266e84a6a03b02acf1a8743",
+    "bytes": 207351,
+    "duration_seconds": 12.93,
+    "transcript_checked": true,
+    "transcript_similarity": 1.0,
+    "answer_bearing_phrases_checked": true,
+    "audio_events_checked": true,
+    "throat_clearing_events_detected": false,
+    "forbidden_tag_preflight_passed": true,
+    "transcription_name_aliases": {},
+    "transcript_normalization": "Track label, punctuation and numeric versus written twelve/six only."
+  }
+]

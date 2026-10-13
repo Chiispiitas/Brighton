@@ -190,3 +190,12 @@ turn. These roles do not recast Nina or Omar from 3A. Keep the recorded voices
 if the 3C roles return. Jessica remains the announcer and all vocabulary models.
 Both tracks use Eleven v3, Natural Stability (0.5), with no forbidden clarity
 tag. Generation, transcription and answer checks: `../3C-production.json`.
+
+## 3D - Track 3.8 - Daily routines
+- NARRATOR (Jessica, `cgSgspJ2msm6clMCkdW9`): 1–7.
+
+## 3D - Track 3.9 - #MyWeek
+- NARRATOR (Jessica, `cgSgspJ2msm6clMCkdW9`): 1.
+- ZOE (Juniper, `aMSt68OGf4xUZAnLpTU8`): 2.
+
+Zoe is the new fictional challenge author. Her first-person post is spoken by Juniper from the established voice pool; Jessica remains the announcer. Both tracks use Eleven v3, Natural Stability (0.5), without the forbidden clarity tag. Exact transcript and answer-bearing phrase checks are in `../3D-production.json`.
