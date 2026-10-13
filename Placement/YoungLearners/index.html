@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Young Learners Placement Test</title>
+  <meta name="description" content="Be Brighter, Be Brighton!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Young Learners Placement Test" />
+  <meta property="og:description" content="Be Brighter, Be Brighton!" />
+  <meta property="og:image" content="https://exams.bebrighton.net/Exams/assets/og-whatsapp.jpg?v=20260922b" />
+  <meta property="og:image:url" content="https://exams.bebrighton.net/Exams/assets/og-whatsapp.jpg?v=20260922b" />
+  <meta property="og:image:secure_url" content="https://exams.bebrighton.net/Exams/assets/og-whatsapp.jpg?v=20260922b" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Brighton English School" />
+  <meta property="og:url" content="https://exams.bebrighton.net/Placement/YoungLearners/" />
+  <meta property="og:site_name" content="Brighton English School" />
+  <link rel="canonical" href="https://exams.bebrighton.net/Placement/YoungLearners/" />
+  <link rel="image_src" href="https://exams.bebrighton.net/Exams/assets/og-whatsapp.jpg?v=20260922b" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Young Learners Placement Test" />
+  <meta name="twitter:description" content="Be Brighter, Be Brighton!" />
+  <meta name="twitter:image" content="https://exams.bebrighton.net/Exams/assets/og-whatsapp.jpg?v=20260922b" />
+  <link rel="icon" type="image/png" href="../../Exams/assets/favicon.png" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/intl-tel-input@29.5.1/dist/css/intlTelInput.css" />
+  <link rel="stylesheet" href="../styles.css?v=20260925-speaking-progress3" />
+  <link rel="stylesheet" href="young.css?v=20261012" />
+</head>
+<body>
+  <main class="placement-app">
+    <section id="startScreen" class="start-screen" aria-labelledby="placementTitle">
+      <div class="start-card">
+        <header class="brand-row">
+          <img src="../../Exams/assets/brighton-logo.png" alt="Brighton English School" />
+          <span class="time-chip">≈ 15 min</span>
+        </header>
+
+        <div class="start-grid">
+          <div class="hero-copy">
+            <p class="eyebrow">Brighton English School</p>
+            <h1 id="placementTitle">Placement Test</h1>
+            <p class="young-subtitle">Young Learners · Ages 6–12</p>
+            <img class="young-hero" src="assets/park.png" alt="Children enjoying a picnic in the park" />
+            <div class="route-preview" aria-label="Placement stages">
+              <div class="route-stage active"><span class="route-number">01</span><span>Language</span></div>
+              <div class="route-line" aria-hidden="true"></div>
+              <div class="route-stage"><span class="route-number">02</span><span>Reading</span></div>
+              <div class="route-line" aria-hidden="true"></div>
+              <div class="route-stage"><span class="route-number">03</span><span>Listening</span></div>
+              <div class="route-line" aria-hidden="true"></div>
+              <div class="route-stage"><span class="route-number">04</span><span>Speaking</span></div>
+            </div>
+          </div>
+
+          <form id="studentForm" class="player-card" novalidate>
+            <label for="studentName">Child’s first name</label>
+            <input id="studentName" name="studentName" type="text" autocomplete="name" maxlength="90" placeholder="Child’s first name" required />
+            <label for="phoneNumber">Parent / guardian phone</label>
+            <input id="phoneNumber" name="phoneNumber" type="tel" inputmode="tel" autocomplete="tel" placeholder="Parent / guardian phone" aria-describedby="formError" required />
+            <label class="guardian-consent"><input id="guardianConsent" type="checkbox" required /> <span>I am a parent, guardian or supervising teacher. I agree to the child’s voice being sent to Google Gemini for AI assessment. Brighton stores the transcript and scores; temporary audio is deleted after grading.</span></label>
+            <button id="startBtn" class="primary-btn" type="submit"><span>Start</span><span aria-hidden="true">→</span></button>
+            <p class="micro-copy">Use headphones. An adult can help you get ready. Try your best!</p>
+            <p id="formError" class="form-error" role="alert" aria-live="polite"></p>
+          </form>
+        </div>
+      </div>
+    </section>
+
+    <section id="transitionScreen" class="transition-screen hidden" aria-live="polite">
+      <img src="../../Exams/assets/brighton-logo.png" alt="" aria-hidden="true" />
+      <div id="transitionStage" class="transition-stage">01</div>
+      <p id="transitionLabel">Warm-up</p>
+      <div class="scan-line" aria-hidden="true"><span></span></div>
+    </section>
+
+    <section id="placementShell" class="placement-shell hidden">
+      <header class="shell-header">
+        <img src="../../Exams/assets/brighton-logo.png" alt="Brighton English School" />
+        <div class="shell-route" aria-label="Placement progress">
+          <span class="shell-node active">01</span><span class="shell-track"></span>
+          <span class="shell-node">02</span><span class="shell-track"></span>
+          <span class="shell-node">03</span><span class="shell-track"></span>
+          <span class="shell-node">04</span>
+        </div>
+        <div class="shell-actions">
+          <span id="candidateName" class="candidate-name"></span>
+          <button id="restartTestBtn" class="restart-test-btn" type="button">Restart test</button>
+        </div>
+      </header>
+
+      <main class="stage-main">
+        <section id="stageCard" class="stage-card">
+          <div id="stageIndex" class="stage-index">01</div>
+          <p id="stageEyebrow" class="eyebrow">Warm-up</p>
+          <h2 id="stageTitle">Grammar</h2>
+          <p id="stageNote" class="stage-note">5 quick questions.</p>
+
+          <div id="introScan" class="level-scan" aria-hidden="true">
+            <span>Pre-A1</span><span>A1</span><span>A2</span><i></i>
+          </div>
+
+          <div id="placementStageRoot" class="handoff-slot" aria-live="polite"></div>
+        </section>
+      </main>
+    </section>
+  </main>
+
+  <script src="../../Exams/config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/html2canvas@1.4.1/dist/html2canvas.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/intl-tel-input@29.5.1/dist/js/intlTelInputWithUtils.min.js"></script>
+  <script src="item-bank.js?v=20261012yle1"></script>
+  <script src="main.js?v=20261012yle1"></script>
+</body>
+</html>
