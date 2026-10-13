@@ -272,4 +272,3 @@ Examples:
 - `HZN_A1_U05_LD_E03_AUD_01.mp3`
 
 The activity ID should remain stable even if page numbers change.
-
