@@ -135,3 +135,10 @@ export function use_brightonYoungPlacementActivity() { return corsOptions("POST"
 export function post_brightonYoungPlacementActivity(request) { return young.touchPlacementActivity(request); }
 export function use_brightonYoungPlacementExpire() { return corsOptions("POST"); }
 export function post_brightonYoungPlacementExpire(request) { return young.expirePlacementSession(request); }
+
+// Suggested writing assessments share the existing class-scoped results access.
+import { getWritingAssessment, saveWritingAssessment } from "backend/writing.js";
+export function use_getWritingAssessment() { return corsOptions("POST"); }
+export function post_getWritingAssessment(request) { return getWritingAssessment(request); }
+export function use_saveWritingAssessment() { return corsOptions("POST"); }
+export function post_saveWritingAssessment(request) { return saveWritingAssessment(request); }

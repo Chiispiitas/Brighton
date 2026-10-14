@@ -1666,7 +1666,7 @@ function flattenAnswers(
 
 }
 
-function gradeSubmission(
+export function gradeSubmission(
   payload,
   answerKey
 ) {
@@ -2260,6 +2260,9 @@ function publicSubmissionFields(
 ) {
 
   return {
+    writingAiJson: item.writingAiJson,
+    writingTeacherJson: item.writingTeacherJson,
+    writingRevision: item.writingRevision,
 
     submissionId:
       item.submissionId,
