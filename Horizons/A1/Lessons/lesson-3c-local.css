@@ -20,7 +20,7 @@
 .l3c-cafe-photos img { height:27mm; }
 .l3c-cafe-photos figure:first-child img { object-position:65% center; }
 .l3c-cafe-photos figure:last-child img { object-position:50% center; }
-.l3c-cafe-photos figcaption { display:flex; justify-content:space-between; gap:1mm; padding:1mm 2mm; background:#ffc42b; color:#202124; font-size:8pt; }
+.l3c-cafe-photos figcaption, .l3c-park-photo figcaption { display:flex; justify-content:space-between; gap:1mm; padding:1mm 2mm; background:#ffc42b; color:#202124; font-size:8pt; }
 .l3c-photo-letter { position:absolute; left:1.5mm; top:1.5mm; background:#fff; color:var(--hz-unit-dark); padding:.8mm 1.4mm; font-weight:650; font-size:9pt; line-height:1; }
 .l3c-review { padding:0 0 2.3mm; margin-bottom:2.3mm; border-bottom:.25mm solid var(--hz-line); }
 .l3c-review:last-child { padding-bottom:0; margin-bottom:0; border-bottom:0; }
@@ -99,7 +99,7 @@
 .l3c-maps-brand circle { fill:#175786; }
 .l3c-reviews-layout { display:flex; flex-direction:column; gap:3mm; padding:3mm; background:#edf1f3; }
 .l3c-photo-gallery { display:grid; grid-template-columns:1fr 2fr; gap:3mm; }
-.l3c-park-photo img { height:34mm; }
+.l3c-park-photo img { height:28.5mm; }
 .l3c-cafe-photos { margin:0; gap:3mm; }
 .l3c-cafe-photos img { height:28.5mm; }
 .l3c-review-feed { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:4mm; }
