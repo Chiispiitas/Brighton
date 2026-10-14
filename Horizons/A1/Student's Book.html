@@ -6282,10 +6282,11 @@ body.hz-debug .hz-page::after {
 .l3b-grammar-pair { display:grid; grid-template-columns:1.3fr 1fr; gap:4mm; align-items:start; }
 .l3b-grammar-pair p { margin:0; }
 
-/* Retained conversation cutout supports the activity 8 survey model. */
-.l3b-survey-intro { display:grid; grid-template-columns:minmax(0,1fr) 45mm; gap:5mm; align-items:center; margin-bottom:2mm; }
-.l3b-survey-intro .l3b-pair-model { margin-bottom:0; }
-.l3b-survey-people { display:block; width:45mm; height:29mm; object-fit:contain; }
+/* Survey and conversation cutout form one composition, with larger characters. */
+.l3b-survey-layout { display:grid; grid-template-columns:minmax(0,1fr) 58mm; gap:4mm; align-items:end; margin-top:2mm; }
+.l3b-survey-layout .l3b-survey th:first-child { width:45%; }
+.l3b-survey-layout .l3b-survey th,.l3b-survey-layout .l3b-survey td { padding:2.5mm 1.5mm; }
+.l3b-survey-people { display:block; width:58mm; height:43mm; object-fit:contain; object-position:center bottom; }
 
 
 /* Horizons/A1/Lessons/lesson-3c-local.css */
@@ -8873,7 +8874,7 @@ body {
             <div class="hz-exercise-number">7</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Write negative sentences.</p><div class="hz-exercise__body"><p class="l3b-model">0 &nbsp; Lucía works on Monday. <span class="l3b-example">Lucía doesn't work on Monday.</span></p><ol class="l3b-list l3b-corrections"><li><span>Ken goes home at five.</span><span class="l3b-write"></span></li><li><span>Maryam works on Sunday.</span><span class="l3b-write"></span></li><li><span>Lucía works on Sunday.</span><span class="l3b-write"></span></li><li><span>Ken and Maryam work on Saturday.</span><span class="l3b-write"></span></li></ol></div></div>
           </section>
           <section class="hz-exercise">
-            <div class="hz-exercise-number">8</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Work in pairs. Ask and write.</p><div class="hz-exercise__body"><div class="l3b-survey-intro"><div class="l3b-pair-model hz-dialogue-text"><p><b>A:</b> Do you work on Saturday?</p><p><b>B:</b> No, I don't.</p></div><img class="l3b-survey-people" src="./Images/3B/Lunch-conversation-cutout-v1.png" alt="Two fictional colleagues talking about their week."></div><table class="l3b-survey"><thead><tr><th>Do you ...?</th><th>You</th><th>Your classmate</th></tr></thead><tbody><tr><th>work on Saturday</th><td></td><td></td></tr><tr><th>go to school on Monday</th><td></td><td></td></tr><tr><th>get up at seven on Sunday</th><td></td><td></td></tr></tbody></table></div></div>
+            <div class="hz-exercise-number">8</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Work in pairs. Ask and write.</p><div class="hz-exercise__body"><div class="l3b-pair-model hz-dialogue-text"><p><b>A:</b> Do you work on Saturday?</p><p><b>B:</b> No, I don't.</p></div><div class="l3b-survey-layout"><table class="l3b-survey"><thead><tr><th>Do you ...?</th><th>You</th><th>Your classmate</th></tr></thead><tbody><tr><th>work on Saturday</th><td></td><td></td></tr><tr><th>go to school on Monday</th><td></td><td></td></tr><tr><th>get up at seven on Sunday</th><td></td><td></td></tr></tbody></table><img class="l3b-survey-people" src="./Images/3B/Lunch-conversation-cutout-v1.png" alt="Two fictional colleagues talking about their week."></div></div></div>
           </section>
 </div>
       </div>

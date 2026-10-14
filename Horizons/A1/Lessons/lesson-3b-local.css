@@ -95,7 +95,8 @@
 .l3b-grammar-pair { display:grid; grid-template-columns:1.3fr 1fr; gap:4mm; align-items:start; }
 .l3b-grammar-pair p { margin:0; }
 
-/* Retained conversation cutout supports the activity 8 survey model. */
-.l3b-survey-intro { display:grid; grid-template-columns:minmax(0,1fr) 45mm; gap:5mm; align-items:center; margin-bottom:2mm; }
-.l3b-survey-intro .l3b-pair-model { margin-bottom:0; }
-.l3b-survey-people { display:block; width:45mm; height:29mm; object-fit:contain; }
+/* Survey and conversation cutout form one composition, with larger characters. */
+.l3b-survey-layout { display:grid; grid-template-columns:minmax(0,1fr) 58mm; gap:4mm; align-items:end; margin-top:2mm; }
+.l3b-survey-layout .l3b-survey th:first-child { width:45%; }
+.l3b-survey-layout .l3b-survey th,.l3b-survey-layout .l3b-survey td { padding:2.5mm 1.5mm; }
+.l3b-survey-people { display:block; width:58mm; height:43mm; object-fit:contain; object-position:center bottom; }
