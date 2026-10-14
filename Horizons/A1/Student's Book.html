@@ -6255,12 +6255,6 @@ body.hz-debug .hz-page::after {
 .l3b-survey th:first-child { width:50%; }
 .l3b-survey tbody th { font-weight:400; }
 .l3b-survey td { border-left:.25mm solid var(--hz-line); }
-.l3b-lunch-layout { display:grid; grid-template-columns:1fr 1fr; gap:7mm; align-items:start; }
-.l3b-lunch-layout p { margin:0 0 1mm; }
-.l3b-lunch-note { border:.25mm solid #d4a62c; padding:0 3mm .5mm; }
-.l3b-lunch-note h2 { margin:0 -3mm 1.5mm; padding:.7mm 3mm; font:700 15pt/1.2 Bahnschrift,"Arial Black",sans-serif; color:#173a45; background:#ffca49; }
-.l3b-lunch-note h2 em { font:inherit; }
-.l3b-lunch-note .l3b-gap { width:38mm; margin-left:2mm; }
 .l3b-inset { margin-left:calc(var(--hz-exercise-marker-size) + 3mm); margin-top:.8mm; }
 
 /* Radio guest roster: horizontal interviews with alternating scene positions.
@@ -6280,17 +6274,18 @@ body.hz-debug .hz-page::after {
 .l3b-week-story--ken { grid-template-columns:minmax(0,1fr) 36mm; }
 .l3b-week-story--ken figure { grid-column:2; grid-row:1; }
 .l3b-week-story--ken .l3b-story-copy { grid-column:1; grid-row:1; }
-.l3b-lunch-layout { position:relative; isolation:isolate; grid-template-columns:minmax(0,1fr) 35mm 59mm; gap:4mm; background:transparent; padding:0; margin-top:2.5mm!important; }
-.l3b-lunch-layout::before { content:""; position:absolute; z-index:-1; inset:-1mm -2mm; background:#f6f0e2; border-top:.6mm solid #d4a62c; }
 .l3b-page .hz-extra-practice { margin-top:.8mm; }
-.l3b-lunch-layout > .hz-dialogue-text { display:block; align-self:center; }
-.l3b-lunch-people { display:block; width:100%; height:18mm; object-fit:contain; align-self:end; }
 
 /* Each question stays with its own affirmative and negative short answers. */
 .l3b-grammar { grid-template-columns:1fr 1.95fr; }
 .l3b-grammar-pairs { display:grid; gap:1.5mm; align-content:start; }
 .l3b-grammar-pair { display:grid; grid-template-columns:1.3fr 1fr; gap:4mm; align-items:start; }
 .l3b-grammar-pair p { margin:0; }
+
+/* Retained conversation cutout supports the activity 8 survey model. */
+.l3b-survey-intro { display:grid; grid-template-columns:minmax(0,1fr) 45mm; gap:5mm; align-items:center; margin-bottom:2mm; }
+.l3b-survey-intro .l3b-pair-model { margin-bottom:0; }
+.l3b-survey-people { display:block; width:45mm; height:29mm; object-fit:contain; }
 
 
 /* Horizons/A1/Lessons/lesson-3c-local.css */
@@ -8878,12 +8873,9 @@ body {
             <div class="hz-exercise-number">7</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Write negative sentences.</p><div class="hz-exercise__body"><p class="l3b-model">0 &nbsp; Lucía works on Monday. <span class="l3b-example">Lucía doesn't work on Monday.</span></p><ol class="l3b-list l3b-corrections"><li><span>Ken goes home at five.</span><span class="l3b-write"></span></li><li><span>Maryam works on Sunday.</span><span class="l3b-write"></span></li><li><span>Lucía works on Sunday.</span><span class="l3b-write"></span></li><li><span>Ken and Maryam work on Saturday.</span><span class="l3b-write"></span></li></ol></div></div>
           </section>
           <section class="hz-exercise">
-            <div class="hz-exercise-number">8</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Work in pairs. Ask and write.</p><div class="hz-exercise__body"><div class="l3b-pair-model hz-dialogue-text"><p><b>A:</b> Do you work on Saturday?</p><p><b>B:</b> No, I don't.</p></div><table class="l3b-survey"><thead><tr><th>Do you ...?</th><th>You</th><th>Your classmate</th></tr></thead><tbody><tr><th>work on Saturday</th><td></td><td></td></tr><tr><th>go to school on Monday</th><td></td><td></td></tr><tr><th>get up at seven on Sunday</th><td></td><td></td></tr></tbody></table></div></div>
+            <div class="hz-exercise-number">8</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Work in pairs. Ask and write.</p><div class="hz-exercise__body"><div class="l3b-survey-intro"><div class="l3b-pair-model hz-dialogue-text"><p><b>A:</b> Do you work on Saturday?</p><p><b>B:</b> No, I don't.</p></div><img class="l3b-survey-people" src="./Images/3B/Lunch-conversation-cutout-v1.png" alt="Two fictional colleagues talking about their week."></div><table class="l3b-survey"><thead><tr><th>Do you ...?</th><th>You</th><th>Your classmate</th></tr></thead><tbody><tr><th>work on Saturday</th><td></td><td></td></tr><tr><th>go to school on Monday</th><td></td><td></td></tr><tr><th>get up at seven on Sunday</th><td></td><td></td></tr></tbody></table></div></div>
           </section>
-          <section class="hz-exercise">
-            <div class="hz-exercise-number">9</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Work in pairs. Find a day for lunch. Ask and answer.</p><div class="hz-exercise__body l3b-lunch-layout"><div class="hz-dialogue-text"><p><b>A:</b> Do you work on Sunday?</p><p><b>B:</b> No, I don't.</p><p><b>A:</b> Do you have lunch at one?</p><p><b>B:</b> Yes, I do.</p></div><img class="l3b-lunch-people" src="./Images/3B/Lunch-conversation-cutout-v1.png" alt="Two fictional colleagues face each other while planning lunch."><div class="l3b-lunch-note"><h2>Lunch <em>together</em></h2><p>Day <span class="l3b-gap"></span></p><p>Time <span class="l3b-gap"></span></p></div></div></div>
-          </section>
-        </div>
+</div>
       </div>
       <div class="hz-extra-practice l3b-inset"><span class="hz-extra-practice__label">EXTRA PRACTICE</span><span class="hz-extra-practice__prompt">Ask a person in your family three questions about their week. Write the answers.</span></div>
     </div></main><footer class="hz-page__footer"><span></span><span class="hz-page-number">26</span></footer>
