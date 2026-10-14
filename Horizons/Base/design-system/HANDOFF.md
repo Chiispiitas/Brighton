@@ -293,3 +293,11 @@ Across Horizons books:
 For A1 specifically, also enforce the cumulative early-A1 language rule in `GUIDED-DISCOVERY.md`.
 
 Before calling a spread complete, verify source fidelity, exercise order, level-appropriate language load, Guided Discovery evidence, readable type, content economy, functional artifacts, repeated-media crop/centering, natural content height, short-label wrapping, shared chrome, whitespace, content-led imagery and parity with surrounding lessons.
+
+## Unit 3 preview audit - 2026-10-13
+
+The eight 3A-3D pages (23-30) were visually inspected together and checked against all 35 activities, teacher keys and nine existing audio transcripts. The current preview retains purposeful source backgrounds and distinct sports/radio/review/week-record compositions. The 3B grammar pairs now keep each question beside its own short answers; 3D activity 6 explicitly identifies afternoon/evening. Ravi's source-script role and 3A's photo alt text/provenance were corrected without changing any recording.
+
+Checks passed for A4/page order, content fit, loaded images/backgrounds, exercise sequence, italic answer options, crimson grammar emphasis, continuation-tab clearance, six NEW WORDS badges, four Extra Practice footers and nine Go to references. All nine MP3s decode successfully and match the candidates whose stored transcripts were reviewed; their script-plus-voice request hashes match production metadata, Jessica announces each track, and the forbidden tag is absent. A new subjective listening review was not performed. The report is `../../A1/unit-3-audit.json`.
+
+The lesson-spread preview passes this audit. Final book pagination remains pending: the nine intentional `page ---` reference destinations must be populated when the back-of-book sections are built. This is not a release-ready whole-book sign-off. The preview remains on `codex/horizons-unit3-layout`, separate from main and reversible through its commit history.

@@ -98,3 +98,9 @@
 .l3b-page .hz-extra-practice { margin-top:.8mm; }
 .l3b-lunch-layout > .hz-dialogue-text { display:block; align-self:center; }
 .l3b-lunch-people { display:block; width:100%; height:18mm; object-fit:contain; align-self:end; }
+
+/* Each question stays with its own affirmative and negative short answers. */
+.l3b-grammar { grid-template-columns:1fr 1.95fr; }
+.l3b-grammar-pairs { display:grid; gap:1.5mm; align-content:start; }
+.l3b-grammar-pair { display:grid; grid-template-columns:1.3fr 1fr; gap:4mm; align-items:start; }
+.l3b-grammar-pair p { margin:0; }

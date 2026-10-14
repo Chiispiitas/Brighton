@@ -217,6 +217,8 @@ check exact spelling and physical print legibility. Decorative material belongs
 on the board, clip, emblem or margins, not inside response space. Preserve the
 teaching language, task mechanics, identities, object colors and quantities.
 
+Grammar question models must keep each question visibly aligned with its own short answers; adjacent columns must not make an I-answer appear to belong to a he-question. Audit the rendered pairings, not only the HTML text.
+
 Keep Horizons' warm paper, typography, exercise lane and shared chrome. Crimson
 anchors lesson navigation and language emphasis. Feature colors are free to
 follow the photographs, setting, mood and editorial idea: blue, teal, green,

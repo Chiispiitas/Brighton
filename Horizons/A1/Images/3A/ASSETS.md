@@ -3,13 +3,11 @@
 ## HZN_A1_U03_LA_E01_IMG_01
 
 - Activity: 3A, exercise 1.
-- File: `Daily-routines-contact-sheet-v1.png`.
-- Original generated photographic contact sheet: four columns, two rows, 2172 x 724 pixels.
-- Creator/method: built-in image generation, 2026-10-08 (local date).
+- Current file: `../Stock/Daily-routines-real-v1.jpg`, a collage of eight real stock photographs acquired October 10, 2026.
 - Meaning/order: A get up, B have breakfast, C go to work, D have lunch, E go home, F have dinner, G watch TV, H go to bed.
-- Eight distinct everyday adults/scenes; no celebrity impersonation and no depiction asserted to be Messi's private life.
-- Full composite is preserved; environmental backgrounds remain intact. Letters are live HTML task labels. No borders or backing cards around individual photos, and no embedded captions.
-- This original generated asset has no external stock-photo attribution requirement. Prompt and intermediate notes remain outside the repository in the task workspace, following the shared asset policy.
+- The photographs illustrate independent everyday scenes, not Messi's private life. Environmental backgrounds remain intact; A-H are live HTML labels.
+- Original photo files, individual creators, source/download links, licenses, file hashes and collage crops are recorded in `../Stock/stock-photo-manifest.json`. Usage records identify `3A.1`. These photographs use the Pexels License; attribution is optional, with provenance retained in the manifest.
+- The superseded generated `Daily-routines-contact-sheet-v1.png` is retained for reversibility and is not displayed in the current lesson.
 
 ## HZN_A1_U03_LA_E02_IMG_01
 
@@ -21,7 +19,7 @@
 - License: [Creative Commons Attribution 4.0 International](https://creativecommons.org/licenses/by/4.0/).
 - Attribution requirement: photographer credit, source/license links, indication of changes, no implied endorsement. Those credits and links appear in the printed feature and the lesson HTML.
 - Acquisition: 2026-10-08 (local date), original file downloaded from Wikimedia's verified upload link.
-- Changes: use the Commons crop; preserve the downloaded file without pixel editing. A 50 x 52 mm CSS display crop centers the face and torso at 15% vertical alignment. The field background remains visible. The credit explicitly says cropped.
+- Changes: use the Commons crop; preserve the downloaded file without pixel editing. The current preview uses a right-hand portrait display crop, preserving the face, shirt and field background; the exact dimensions and position are defined in `lesson-3a-local.css`. The field background remains visible. The credit explicitly says cropped.
 
 ## Audio assets
 

@@ -6286,6 +6286,12 @@ body.hz-debug .hz-page::after {
 .l3b-lunch-layout > .hz-dialogue-text { display:block; align-self:center; }
 .l3b-lunch-people { display:block; width:100%; height:18mm; object-fit:contain; align-self:end; }
 
+/* Each question stays with its own affirmative and negative short answers. */
+.l3b-grammar { grid-template-columns:1fr 1.95fr; }
+.l3b-grammar-pairs { display:grid; gap:1.5mm; align-content:start; }
+.l3b-grammar-pair { display:grid; grid-template-columns:1.3fr 1fr; gap:4mm; align-items:start; }
+.l3b-grammar-pair p { margin:0; }
+
 
 /* Horizons/A1/Lessons/lesson-3c-local.css */
 /* Maps reviews: asymmetric photo collection, a review feed, conversational
@@ -8687,7 +8693,7 @@ body {
             <p class="hz-exercise__instruction"><span class="hz-audio-badge">♪ 3.1</span>Listen and repeat. Look and match. <span class="hz-new-words">NEW WORDS</span></p>
             <div class="hz-exercise__body">
               <figure class="l3a-routine-sheet" data-image-slot="HZN_A1_U03_LA_E01_IMG_01">
-                <img src="./Images/Stock/Daily-routines-real-v1.jpg" alt="Eight everyday scenes. Top row: A a man gets up; B a woman has breakfast; C a woman goes to work; D a man has lunch. Bottom row: E a man goes home; F a woman has dinner; G a man watches TV; H a woman goes to bed.">
+                <img src="./Images/Stock/Daily-routines-real-v1.jpg" alt="Eight real everyday photographs. Top row: A a woman gets up; B two women have breakfast; C a person goes to work by subway; D a woman has lunch. Bottom row: E a woman goes home; F people have dinner; G a man watches TV; H a woman goes to bed.">
                 <span class="l3a-photo-letter" style="--x:0%;--y:0%">A</span><span class="l3a-photo-letter" style="--x:25%;--y:0%">B</span><span class="l3a-photo-letter" style="--x:50%;--y:0%">C</span><span class="l3a-photo-letter" style="--x:75%;--y:0%">D</span>
                 <span class="l3a-photo-letter" style="--x:0%;--y:50%">E</span><span class="l3a-photo-letter" style="--x:25%;--y:50%">F</span><span class="l3a-photo-letter" style="--x:50%;--y:50%">G</span><span class="l3a-photo-letter" style="--x:75%;--y:50%">H</span>
               </figure>
@@ -8858,7 +8864,7 @@ body {
       <div class="l3b-continuation-content">
         <section class="hz-focus-box hz-no-break" aria-label="Grammar: present simple negatives and questions">
           <header class="hz-focus-box__header">GRAMMAR: PRESENT SIMPLE (− / ?)</header>
-          <div class="hz-focus-box__body hz-content-grid hz-content-grid--3 l3b-grammar"><div><p><strong>I / you / we / they</strong></p><p>I <b>don't work</b> on Monday.</p><p><strong>He / she / it</strong></p><p>She <b>doesn't work</b> on Monday.</p></div><div><p><b>Do</b> you work on Saturday?</p><p><b>Does</b> he work on Saturday?</p></div><div><p>Yes, I <b>do</b>.<br>No, I <b>don't</b>.</p><p>Yes, he <b>does</b>.<br>No, he <b>doesn't</b>.</p></div></div>
+          <div class="hz-focus-box__body hz-content-grid l3b-grammar"><div><p><strong>I / you / we / they</strong></p><p>I <b>don't work</b> on Monday.</p><p><strong>He / she / it</strong></p><p>She <b>doesn't work</b> on Monday.</p></div><div class="l3b-grammar-pairs"><div class="l3b-grammar-pair"><p><b>Do</b> you work on Saturday?</p><p>Yes, I <b>do</b>.<br>No, I <b>don't</b>.</p></div><div class="l3b-grammar-pair"><p><b>Does</b> he work on Saturday?</p><p>Yes, he <b>does</b>.<br>No, he <b>doesn't</b>.</p></div></div></div>
         </section>
           <div class="hz-go-to hz-go-to--inset">Go to: Grammar - Present simple: negatives and questions, page ---</div>
         <div class="hz-exercises">
@@ -9031,7 +9037,7 @@ body {
         <section class="hz-exercise"><div class="hz-exercise-number">5</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Write the sentences.</p><div class="hz-exercise__body"><ol class="l3d-list l3d-order">
           <li><span>always / water / drink / I / .</span><span class="l3d-write"></span></li><li><span>walks / usually / My sister / .</span><span class="l3d-write"></span></li><li><span>at home / am / sometimes / I / .</span><span class="l3d-write"></span></li><li><span>never / at twelve / He / goes to bed / .</span><span class="l3d-write"></span></li>
         </ol></div></div></section>
-        <section class="hz-exercise"><div class="hz-exercise-number">6</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Look at the times. Complete with <i>before</i> or <i>after</i>.</p><div class="hz-exercise__body"><div class="l3d-times"><span>Ben: lunch <b>1:00</b> · go home <b>2:00</b></span><span>Maya: walk <b>6:00</b> · dinner <b>7:00</b></span></div><ol class="l3d-list l3d-sequence-practice"><li>Ben has lunch <span class="l3d-gap"></span> he goes home.</li><li>Ben goes home <span class="l3d-gap"></span> he has lunch.</li><li>Maya has dinner <span class="l3d-gap"></span> she walks.</li><li>Maya walks <span class="l3d-gap"></span> she has dinner.</li></ol></div></div></section>
+        <section class="hz-exercise"><div class="hz-exercise-number">6</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Look at the times. Complete with <i>before</i> or <i>after</i>.</p><div class="hz-exercise__body"><div class="l3d-times"><span>Ben: lunch <b>1:00</b> · go home <b>2:00</b> (afternoon)</span><span>Maya: walk <b>6:00</b> · dinner <b>7:00</b> (evening)</span></div><ol class="l3d-list l3d-sequence-practice"><li>Ben has lunch <span class="l3d-gap"></span> he goes home.</li><li>Ben goes home <span class="l3d-gap"></span> he has lunch.</li><li>Maya has dinner <span class="l3d-gap"></span> she walks.</li><li>Maya walks <span class="l3d-gap"></span> she has dinner.</li></ol></div></div></section>
         <section class="hz-exercise"><div class="hz-exercise-number">7</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Choose three routines from activity 1. Circle your days. Write an adverb.</p><div class="hz-exercise__body"><table class="l3d-your-week"><thead><tr><th>Routine</th><th>Mon · Tue · Wed · Thu · Fri · Sat · Sun</th><th>Adverb</th></tr></thead><tbody><tr><th></th><td>Mon · Tue · Wed · Thu · Fri · Sat · Sun</td><td></td></tr><tr><th></th><td>Mon · Tue · Wed · Thu · Fri · Sat · Sun</td><td></td></tr><tr><th></th><td>Mon · Tue · Wed · Thu · Fri · Sat · Sun</td><td></td></tr></tbody></table></div></div></section>
         <section class="hz-exercise"><div class="hz-exercise-number">8</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Write your #MyWeek post. Use your adverbs and <i>before</i> or <i>after</i>.</p><div class="hz-exercise__body"><div class="l3d-post-editor"><header><h2>#MyWeek</h2><span>Your name <span class="l3d-name-gap"></span></span></header><p class="l3d-example">I usually walk before dinner.</p><div class="l3d-post-lines" aria-label="Four lines for your post"><span></span><span></span><span></span><span></span></div></div><p class="l3d-share">Work in pairs. Read your posts. Your weeks: <em class="hz-answer-option">the same / different</em>?</p></div></div></section>
       </div>
