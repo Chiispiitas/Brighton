@@ -123,7 +123,7 @@
     "black_grammar_emphasis": 0,
     "continuation_marker_over_text": 0,
     "display_font_range_candidates": "six, visually cleared; no glyph collisions",
-    "unchanged_pages_pixel_identical": 18,
+    "unchanged_pages_pixel_identical": 24,
     "saved_pdf_reopened_and_verified": true,
     "continuation_tab_numerals_preserved": true,
     "pdf_export": "Browser optimizes print-media resolution without modifying source assets. Direct raw Unit 3 export, append to preceding 18 pages, no font/image rewrite or deduplication. Saved book matches standalone Unit 3 pages in text and pixels.",
@@ -180,5 +180,13 @@
     "print_crops_visually_checked": true,
     "natural_body_proportions": true
   },
-  "generated_assets_manifest": "Images/Unit3-generated-assets.json"
+  "generated_assets_manifest": "Images/Unit3-generated-assets.json",
+  "information_gap_and_open_writing": {
+    "author_correction_date": "2026-10-14",
+    "information_gap_requirement": "Answers must not be readable from preset A/B material on the same spread. Use private personal information or genuinely separated role material.",
+    "3C_activity_7": "Partner knows the chosen family member's place visits; the page contains only prompts and empty response cells. Personal or consistent fictional answers are accepted.",
+    "3C_activity_8": "Four open writing lines; no fixed sentence stems or fill-in gaps. Reading reviews supply optional language models.",
+    "3D_legend": "Removed \u2713 yes / \u2013 no legend; week-record entries unchanged.",
+    "saved_pdf_checked": true
+  }
 }

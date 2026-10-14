@@ -6373,18 +6373,6 @@ body.hz-debug .hz-page::after {
 .l3c-adjective-practice li { display:grid; grid-template-columns:64mm 1fr; gap:5mm; }
 .l3c-pair-model { display:flex; gap:5mm; margin:0 0 2mm; }
 .l3c-pair-model b { color:var(--hz-unit-dark); }
-.l3c-info-exchange { display:grid; grid-template-columns:1fr 1fr; gap:5mm; }
-.l3c-info-exchange section { min-width:0; }
-.l3c-info-exchange header { padding:1.2mm 2mm; background:#1767aa; color:#fff; font-size:9pt; }
-.l3c-info-exchange section:last-child header { background:#087a46; }
-.l3c-info-exchange header b { margin-right:2mm; }
-.l3c-info-exchange table { width:100%; border-collapse:collapse; table-layout:fixed; font-size:8.5pt; }
-.l3c-info-exchange th,.l3c-info-exchange td { padding:1.3mm 1mm; text-align:left; border-bottom:.25mm solid var(--hz-line); vertical-align:bottom; }
-.l3c-info-exchange th:first-child { width:26%; }
-.l3c-info-exchange thead th { font-weight:700; color:var(--hz-unit-dark); }
-.l3c-info-exchange tbody th { font-weight:400; }
-.l3c-info-exchange td { border-left:.25mm solid var(--hz-line); }
-.l3c-cell-write { background:#fff; }
 .l3c-review-editor { border:.25mm solid #a7c4d8; background:#fff; }
 .l3c-review-editor header { display:flex; align-items:center; justify-content:space-between; gap:4mm; background:#1767aa; color:#fff; padding:1.3mm 3mm; }
 .l3c-review-editor h2 { margin:0; font-size:14pt; font-weight:700; }
@@ -6425,8 +6413,18 @@ body.hz-debug .hz-page::after {
 
 /* A real café photograph accompanies the learner's own review. */
 .l3c-review-writing-layout { display:grid; grid-template-columns:minmax(0,1fr) 45mm; gap:4mm; align-items:stretch; }
-.l3c-review-writing-photo { display:block; width:45mm; height:40mm; object-fit:cover; object-position:48% 60%; }
-.l3c-review-writing-layout .l3c-review-editor > div { display:grid; gap:3mm; padding:3mm; }
+.l3c-review-writing-photo { display:block; width:45mm; height:44mm; object-fit:cover; object-position:48% 60%; }
+.l3c-review-writing-layout .l3c-review-open-lines { display:grid; gap:0; padding:1mm 3mm 3mm; }
+
+/* Personal information supplies a genuine gap; the review allows independent prose. */
+.l3c-person-survey { width:100%; border-collapse:collapse; table-layout:fixed; font-size:9pt; }
+.l3c-person-survey th,.l3c-person-survey td { text-align:left; padding:1.5mm 2mm; border-bottom:.25mm solid var(--hz-line); }
+.l3c-person-survey th:first-child { width:28%; }
+.l3c-person-survey thead th { color:#175786; font-weight:700; border-bottom:.6mm solid #175786; }
+.l3c-person-survey tbody th { font-weight:400; }
+.l3c-person-survey td { height:6mm; border-left:.25mm solid var(--hz-line); }
+.l3c-person-name { display:inline-block; width:45mm; height:4mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); margin-left:2mm; }
+.l3c-review-open-lines > span { display:block; height:7mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
 
 
 /* Horizons/A1/Lessons/lesson-3d-local.css */
@@ -8984,15 +8982,14 @@ body {
         <div class="hz-exercises">
 
           <section class="hz-exercise">
-            <div class="hz-exercise-number">7</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Work in pairs. Student A: look at A. Student B: look at B. Ask and write.</p>
-              <div class="hz-exercise__body"><div class="l3c-pair-model hz-dialogue-text"><span><b>A:</b> When does Alex go?</span><span><b>B:</b> On Sunday.</span></div><div class="l3c-info-exchange">
-                <section><header><b>A</b> Student A</header><table aria-label="Student A information"><thead><tr><th></th><th>Eva</th><th>Alex</th></tr></thead><tbody><tr><th>Where?</th><td>West Park</td><td class="l3c-cell-write"></td></tr><tr><th>When?</th><td>Saturday</td><td class="l3c-cell-write"></td></tr><tr><th>What time?</th><td>eleven</td><td class="l3c-cell-write"></td></tr><tr><th>Who with?</th><td>her family</td><td class="l3c-cell-write"></td></tr></tbody></table></section>
-                <section><header><b>B</b> Student B</header><table aria-label="Student B information"><thead><tr><th></th><th>Eva</th><th>Alex</th></tr></thead><tbody><tr><th>Where?</th><td class="l3c-cell-write"></td><td>Garden Café</td></tr><tr><th>When?</th><td class="l3c-cell-write"></td><td>Sunday</td></tr><tr><th>What time?</th><td class="l3c-cell-write"></td><td>twelve</td></tr><tr><th>Who with?</th><td class="l3c-cell-write"></td><td>his brother</td></tr></tbody></table></section>
-              </div></div>
+            <div class="hz-exercise-number">7</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Work in pairs. Ask about a person in your classmate's family. Write.</p>
+              <div class="hz-exercise__body"><div class="l3c-pair-model hz-dialogue-text"><span><b>A:</b> Where does your sister go?</span><span><b>B:</b> To the park.</span></div>
+                <table class="l3c-person-survey" aria-label="Write information about a person in your classmate's family"><thead><tr><th></th><th>Person <span class="l3c-person-name"></span></th></tr></thead><tbody><tr><th>Where?</th><td></td></tr><tr><th>When?</th><td></td></tr><tr><th>What time?</th><td></td></tr><tr><th>Who with?</th><td></td></tr></tbody></table>
+              </div>
             </div>
           </section>
           <section class="hz-exercise">
-            <div class="hz-exercise-number">8</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Write your review.</p><div class="hz-exercise__body l3c-review-writing-layout"><div class="l3c-review-editor"><header><h2>Your review</h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m16 3 5 5-12 12-6 1 1-6Z M13 6l5 5"/></svg></header><div><p>I go to <span class="l3c-gap l3c-gap--place"></span> on <span class="l3c-gap"></span>.</p><p>I go with <span class="l3c-gap l3c-gap--place"></span>. It's <span class="l3c-gap l3c-gap--place"></span>.</p></div></div><img class="l3c-review-writing-photo" src="./Images/3C/Review-Sueda-19535266.jpg" alt="A woman uses her phone at a café, illustrating a personal place review."></div></div>
+            <div class="hz-exercise-number">8</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Write your review.</p><div class="hz-exercise__body l3c-review-writing-layout"><div class="l3c-review-editor"><header><h2>Your review</h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m16 3 5 5-12 12-6 1 1-6Z M13 6l5 5"/></svg></header><div class="l3c-review-open-lines" aria-label="Four lines for your own review"><span></span><span></span><span></span><span></span></div></div><img class="l3c-review-writing-photo" src="./Images/3C/Review-Sueda-19535266.jpg" alt="A woman uses her phone at a café, illustrating a personal place review."></div></div>
           </section>
         </div>
       </div>
@@ -9014,7 +9011,7 @@ body {
           <p class="hz-exercise__instruction"><span class="hz-audio-badge">♪ 3.9</span>Read and listen. Look at Zoe's week. <span class="hz-new-words">NEW WORDS</span></p>
           <div class="hz-exercise__body l3d-challenge">
             <div class="l3d-challenge-intro"><div class="l3d-seven"><span>7</span><b>DAYS</b></div><div class="l3d-post"><header><h2>#MyWeek</h2><span>Zoe · @zoe.walks</span></header><p>I <strong class="hz-text-unit">always</strong> drink water after breakfast. I <strong class="hz-text-unit">usually</strong> walk before dinner. I <strong class="hz-text-unit">sometimes</strong> watch TV after dinner. I <strong class="hz-text-unit">never</strong> go to bed at twelve.</p><p>I am <strong class="hz-text-unit">usually</strong> at home at six.</p></div></div>
-            <table class="l3d-week-record" aria-label="Zoe's seven-day record"><caption>Zoe's week <span>✓ yes &nbsp; – no</span></caption><thead><tr><th></th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr></thead><tbody>
+            <table class="l3d-week-record" aria-label="Zoe's seven-day record"><caption>Zoe's week </caption><thead><tr><th></th><th>Mon</th><th>Tue</th><th>Wed</th><th>Thu</th><th>Fri</th><th>Sat</th><th>Sun</th></tr></thead><tbody>
               <tr><th>drink water</th><td class="l3d-day-yes">✓</td><td class="l3d-day-yes">✓</td><td class="l3d-day-yes">✓</td><td class="l3d-day-yes">✓</td><td class="l3d-day-yes">✓</td><td class="l3d-day-yes">✓</td><td class="l3d-day-yes">✓</td></tr>
               <tr><th>walk</th><td class="l3d-day-yes">✓</td><td class="l3d-day-yes">✓</td><td class="l3d-day-yes">✓</td><td class="l3d-day-yes">✓</td><td class="l3d-day-yes">✓</td><td>–</td><td class="l3d-day-yes">✓</td></tr>
               <tr><th>watch TV</th><td>–</td><td class="l3d-day-yes">✓</td><td>–</td><td>–</td><td>–</td><td class="l3d-day-yes">✓</td><td>–</td></tr>

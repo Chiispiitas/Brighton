@@ -86,6 +86,8 @@ Normal numbered exercises are separated by numbering, whitespace and composition
 
 A vocabulary label alone is not a teaching purpose. Do not add an empty or redundant ADJECTIVES focus box to repeat familiar example sentences: introduce the words in meaningful context, practise them, and provide the vocabulary reference. Keep a grammar focus box when it actually explains a new form or sentence pattern. References use the shared small arrow treatment on plain paper, aligned with the exercise copy, with proper clearance from surrounding content. Do not box them or shrink learner text/writing space to accommodate them.
 
+**Meaningful pair work and open writing (author correction, 2026-10-14):** An information gap must depend on information a partner actually holds and the learner cannot read on the same spread. Side-by-side A/B tables with all answers visible do not pass this audit; redesign the task around personal/private information or put separately supplied role material where learners cannot access both. Do not rely on a teacher-only instruction to hide visible answers. For freer writing, give open response space and accessible source models rather than automatic sentence-gap templates that constrain expression. Fixed stems belong in controlled practice, not every final writing outcome.
+
 Do not invent response mechanics that the authorized task does not ask for. If an exercise is meant to contain only questions, show only the questions: no answer lines, boxes, check circles or other response affordances unless explicitly required by the source or task design.
 
 ## 4. Visual language
