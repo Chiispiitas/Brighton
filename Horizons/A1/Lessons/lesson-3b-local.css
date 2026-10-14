@@ -96,7 +96,9 @@
 .l3b-grammar-pair p { margin:0; }
 
 /* Survey and conversation cutout form one composition, with larger characters. */
-.l3b-survey-layout { display:grid; grid-template-columns:minmax(0,1fr) 58mm; gap:4mm; align-items:end; margin-top:2mm; }
+.l3b-survey-layout { display:grid; grid-template-columns:minmax(0,1fr) 68mm; gap:4mm; align-items:center; margin-top:2mm; }
 .l3b-survey-layout .l3b-survey th:first-child { width:45%; }
 .l3b-survey-layout .l3b-survey th,.l3b-survey-layout .l3b-survey td { padding:2.5mm 1.5mm; }
-.l3b-survey-people { display:block; width:58mm; height:43mm; object-fit:contain; object-position:center bottom; }
+.l3b-survey-people { display:block; width:68mm; height:78mm; object-fit:cover; object-position:center top; }
+
+.l3b-survey-task .l3b-pair-model { flex-direction:column; gap:1.5mm; margin-bottom:4mm; }

@@ -16,3 +16,7 @@ The author's final correction requires a varied six-routine introduction with co
 ## Generated writing-sheet render
 
 `MyWeek-writing-sheet-v1.png` is an original built-in imagegen asset from the first Unit 3 layout preview, with native transparency and white writing space. It is retained for reversibility but is **not displayed in the refined preview**: the author rejected the overly stripped-back treatment, and the original functional white post box with a rich green header better fits this activity. All heading text, fields and four writing lines remain live HTML. See `../Unit3-generated-assets.json` for provenance and current-use status. The six action photographs above are unchanged.
+
+## Continuation-page morning scene - October 14, 2026
+
+Activity 4 adds `Zoe-morning-water-v1.png`, a built-in imagegen photograph of fictional Zoe drinking water with breakfast finished on the table. It supplies visible context for before/after; the printed timetable supplies exact times. The natural kitchen background remains intact. Exact prompt and hash are in `../Unit3-generated-assets.json`. The repetitive sentence-order activity 5 was removed; former activities 6-8 became 5-7. All six real action photographs and both recordings are unchanged.

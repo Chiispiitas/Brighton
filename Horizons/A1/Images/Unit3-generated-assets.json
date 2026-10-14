@@ -12,7 +12,7 @@
     "sha256": "1cd37fc8e2289d11653b8ec282287bb7aa1d1c9602731d9f1d1af029a93e220a",
     "purpose": "Specific conversation pose, fictional colleagues, native-alpha cutout supporting 3B activity 8 survey.",
     "edits": "Original pixels retained; CSS placement only.",
-    "used_in_current_preview": true
+    "used_in_current_preview": false
   },
   {
     "lesson": "3D",
@@ -28,5 +28,41 @@
     "purpose": "Physical white writing sheet, tiny corner details, editable HTML text and lines overlaid.",
     "edits": "Original pixels retained; CSS placement only.",
     "used_in_current_preview": false
+  },
+  {
+    "lesson": "3B",
+    "filename": "Conversation-standing-cutout-v2.png",
+    "mode": "edit",
+    "transparent_background": true,
+    "prompt": "Edit target: the supplied photographic cutout. Preserve these exact two fictional adult colleagues, their facial identity, friendly conversational gesture, hairstyles, blue shirt/jeans on woman and mustard overshirt, white shirt, dark trousers and small notebook on man. Extend the view naturally down to their knees so both figures appear taller in a portrait composition. The woman and man remain facing each other, looking at each other's face. Photorealistic natural anatomy, sober editorial photography, accurate hands. Two people only. Portrait aspect roughly 4:5 with both standing close together, entire heads and hands visible, bottom crop below knees. TRUE transparent background outside the people, crisp natural alpha edges. Remove all residual backdrop, colored aura, haze or glow from the reference. No shadow cloud, no ground, no room, no text. Do not stretch bodies or change faces.",
+    "source": "OpenAI imagegen, built-in tool",
+    "generated": "2026-10-14",
+    "dimensions": [
+      1122,
+      1402
+    ],
+    "alpha": true,
+    "sha256": "21f3a78bcc1d99d05e46ba4760006910e2b20c1c019cb89cdda38538a44dc6b9",
+    "used_in_current_preview": true,
+    "edits": "Original pixels retained; CSS placement/crop only.",
+    "saved_path": "C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/A1/Images/3B/Conversation-standing-cutout-v2.png"
+  },
+  {
+    "lesson": "3D",
+    "filename": "Zoe-morning-water-v1.png",
+    "mode": "generate",
+    "transparent_background": false,
+    "prompt": "Photorealistic candid adult lifestyle photograph for an original fictional coursebook morning sequence. Portrait 4:5 crop. One approachable adult woman with shoulder-length dark curly hair wearing a simple green long-sleeve top, seated at a bright modest kitchen breakfast table. She has just finished breakfast and is now drinking clear water from a transparent drinking glass; glass visibly at her mouth, one hand holding it naturally. An almost-empty breakfast plate with crumbs and a small piece of toast remains on the table, beside a small plain ceramic mug. Natural window light, lived-in calm kitchen background fully preserved, sober authentic photographic appearance, accurate hand and mouth/glass geometry. Face, glass and plate must all be clearly readable in a compact print photograph. No text, no logos, no clocks or numerals, no phone, no extra people, no illustration.",
+    "source": "OpenAI imagegen, built-in tool",
+    "generated": "2026-10-14",
+    "dimensions": [
+      1122,
+      1402
+    ],
+    "alpha": false,
+    "sha256": "8c4b79562b735b16dacaa816282c188a0246d45a3fa15d03f80ec9ad0211716b",
+    "used_in_current_preview": true,
+    "edits": "Original pixels retained; CSS placement/crop only.",
+    "saved_path": "C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/A1/Images/3D/Zoe-morning-water-v1.png"
   }
 ]

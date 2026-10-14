@@ -24,3 +24,7 @@
 ## Audio assets
 
 Tracks 3.1, 3.2 and 3.3 are saved in `../../Audios/`. Scripts, cast and exact voice IDs are in `../../Audio scripts/` and its ElevenCreative Studio voice map. Per-track IDs, provider/model/settings, timestamps, duration and transcript/event checks are in `../../Audio scripts/3A-production.json`.
+
+## Continuation-page listening portraits - October 14, 2026
+
+Activity 6 integrates two new real photographs in the Nina/Omar listening table: `Teacher-Tima-5427870.jpg` (Tima Miroshnichenko) and `Chef-Anthony-30350306.jpg` (Anthony Rahayel). These models illustrate fictional roles, not their own identities or actual schedules. Original pixels/backgrounds remain intact; CSS crops preserve their faces. Source/license URLs, hashes and dimensions are in this folder's `stock-photo-manifest.json`.

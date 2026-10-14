@@ -6183,6 +6183,14 @@ body.hz-debug .hz-page::after {
 .l3a-time-table tbody th { background:#163f5b; color:#fff; }
 .l3a-time-table tbody tr:last-child th { background:#b95013; }
 
+/* Listening guests provide photographic context on the continuation page. */
+.l3a-time-table .l3a-listening-person { position:relative; padding:0; overflow:hidden; }
+.l3a-listening-person img { display:block; width:100%; height:22mm; object-fit:cover; }
+.l3a-listening-person span { position:absolute; left:0; bottom:0; padding:.5mm 2mm; color:#fff; background:#163f5b; }
+.l3a-time-table tr:last-child .l3a-listening-person span { background:#b95013; }
+.l3a-time-table tr:first-child .l3a-listening-person img { object-position:65% 55%; transform:scale(1.5); transform-origin:65% 45%; }
+.l3a-time-table tr:last-child .l3a-listening-person img { object-position:center top; }
+
 
 /* Horizons/A1/Lessons/lesson-3b-local.css */
 /* Radio programme: upright display type, a broadcast banner and guest
@@ -6283,10 +6291,12 @@ body.hz-debug .hz-page::after {
 .l3b-grammar-pair p { margin:0; }
 
 /* Survey and conversation cutout form one composition, with larger characters. */
-.l3b-survey-layout { display:grid; grid-template-columns:minmax(0,1fr) 58mm; gap:4mm; align-items:end; margin-top:2mm; }
+.l3b-survey-layout { display:grid; grid-template-columns:minmax(0,1fr) 68mm; gap:4mm; align-items:center; margin-top:2mm; }
 .l3b-survey-layout .l3b-survey th:first-child { width:45%; }
 .l3b-survey-layout .l3b-survey th,.l3b-survey-layout .l3b-survey td { padding:2.5mm 1.5mm; }
-.l3b-survey-people { display:block; width:58mm; height:43mm; object-fit:contain; object-position:center bottom; }
+.l3b-survey-people { display:block; width:68mm; height:78mm; object-fit:cover; object-position:center top; }
+
+.l3b-survey-task .l3b-pair-model { flex-direction:column; gap:1.5mm; margin-bottom:4mm; }
 
 
 /* Horizons/A1/Lessons/lesson-3c-local.css */
@@ -6413,6 +6423,11 @@ body.hz-debug .hz-page::after {
 .l3c-review-editor svg { stroke:#fff; }
 .l3c-review-editor { border:.25mm solid #a7c4d8; background:#fff; }
 
+/* A real café photograph accompanies the learner's own review. */
+.l3c-review-writing-layout { display:grid; grid-template-columns:minmax(0,1fr) 45mm; gap:4mm; align-items:stretch; }
+.l3c-review-writing-photo { display:block; width:45mm; height:40mm; object-fit:cover; object-position:48% 60%; }
+.l3c-review-writing-layout .l3c-review-editor > div { display:grid; gap:3mm; padding:3mm; }
+
 
 /* Horizons/A1/Lessons/lesson-3d-local.css */
 /* A seven-day social challenge: real action photographs, a week record and
@@ -6522,6 +6537,12 @@ body.hz-debug .hz-page::after {
 .l3d-name-gap { border-bottom-color:#fff; }
 .l3d-post-editor .l3d-example { margin-top:2mm; margin-left:0; }
 .l3d-page--2 .hz-exercise:last-child { padding-bottom:1mm; }
+
+/* The morning sequence has a photograph with clear breakfast/water evidence. */
+.l3d-morning-layout { display:grid; grid-template-columns:43mm minmax(0,1fr); gap:5mm; align-items:center; }
+.l3d-morning-layout > img { display:block; width:43mm; height:46mm; object-fit:cover; object-position:center 60%; }
+.l3d-morning-events { flex-direction:column; align-items:flex-start; gap:.5mm; }
+.l3d-morning-events .l3d-time-arrow { font-size:12pt; margin-left:6mm; line-height:1; }
 
 
 /* Student's Book unifier */
@@ -8754,16 +8775,9 @@ body {
         </section>
           <div class="hz-go-to hz-go-to--inset">Go to: Grammar - Present simple: affirmative, page ---</div>
         <div class="hz-exercises">
+
           <section class="hz-exercise">
             <div class="hz-exercise-number">5</div><div class="hz-exercise__content">
-              <p class="hz-exercise__instruction">Choose and circle.</p>
-              <div class="hz-exercise__body"><ol class="l3a-list l3a-two-columns">
-                <li>I <em class="hz-answer-option">get / gets</em> up at six.</li><li>My father <em class="hz-answer-option">go / goes</em> to work.</li><li>Nina and Omar <em class="hz-answer-option">have / has</em> breakfast.</li><li>She <em class="hz-answer-option">watch / watches</em> TV.</li><li>You <em class="hz-answer-option">go / goes</em> home at five.</li><li>Leo <em class="hz-answer-option">have / has</em> lunch at one.</li>
-              </ol></div>
-            </div>
-          </section>
-          <section class="hz-exercise">
-            <div class="hz-exercise-number">6</div><div class="hz-exercise__content">
               <p class="hz-exercise__instruction">Write the sentences.</p>
               <div class="hz-exercise__body">
                 <p class="l3a-model">0 &nbsp; he / watch TV / at home <span class="l3a-example">He watches TV at home.</span></p>
@@ -8772,22 +8786,22 @@ body {
             </div>
           </section>
           <section class="hz-exercise">
-            <div class="hz-exercise-number">7</div><div class="hz-exercise__content">
+            <div class="hz-exercise-number">6</div><div class="hz-exercise__content">
               <p class="hz-exercise__instruction"><span class="hz-audio-badge">♪ 3.3</span>Listen. Complete with the times.</p>
               <div class="hz-exercise__body">
                 <header class="l3a-listening-head"><h2>Two people. <em>Two routines.</em></h2><span>Nina · a teacher &nbsp; / &nbsp; Omar · a chef</span></header>
-                <table class="l3a-time-table" aria-label="Listen for Nina and Omar's routine times"><colgroup><col style="width:17%"><col style="width:20.75%"><col style="width:20.75%"><col style="width:20.75%"><col style="width:20.75%"></colgroup><thead><tr><th></th><th>get up</th><th>go to work</th><th>go home</th><th>go to bed</th></tr></thead><tbody><tr><th>Nina</th><td class="l3a-example">6:30</td><td></td><td></td><td></td></tr><tr><th>Omar</th><td></td><td></td><td></td><td></td></tr></tbody></table>
+                <table class="l3a-time-table" aria-label="Listen for Nina and Omar's routine times"><colgroup><col style="width:25%"><col style="width:18.75%"><col style="width:18.75%"><col style="width:18.75%"><col style="width:18.75%"></colgroup><thead><tr><th></th><th>get up</th><th>go to work</th><th>go home</th><th>go to bed</th></tr></thead><tbody><tr><th class="l3a-listening-person"><img src="./Images/3A/Teacher-Tima-5427870.jpg" alt="A real teacher photograph illustrates the fictional listening guest Nina."><span>Nina</span></th><td class="l3a-example">6:30</td><td></td><td></td><td></td></tr><tr><th class="l3a-listening-person"><img src="./Images/3A/Chef-Anthony-30350306.jpg" alt="A real chef photograph illustrates the fictional listening guest Omar."><span>Omar</span></th><td></td><td></td><td></td><td></td></tr></tbody></table>
               </div>
             </div>
           </section>
           <section class="hz-exercise">
-            <div class="hz-exercise-number">8</div><div class="hz-exercise__content">
+            <div class="hz-exercise-number">7</div><div class="hz-exercise__content">
               <p class="hz-exercise__instruction">Write four sentences about your routine.</p>
               <div class="hz-exercise__body"><p class="l3a-personal-model l3a-example">I have breakfast at seven.</p><div class="l3a-free-writing"><span class="l3a-write"></span><span class="l3a-write"></span><span class="l3a-write"></span><span class="l3a-write"></span></div></div>
             </div>
           </section>
           <section class="hz-exercise">
-            <div class="hz-exercise-number">9</div><div class="hz-exercise__content">
+            <div class="hz-exercise-number">8</div><div class="hz-exercise__content">
               <p class="hz-exercise__instruction">Work in pairs. Read your sentences. Write two sentences about your classmate.</p>
               <div class="hz-exercise__body"><div class="l3a-pair-model hz-dialogue-text"><p><b>Nina:</b> I go to work at eight.</p><p><b>Omar:</b> Nina goes to work at eight.</p></div><div class="l3a-free-writing"><span class="l3a-write"></span><span class="l3a-write"></span></div></div>
             </div>
@@ -8871,10 +8885,10 @@ body {
             <div class="hz-exercise-number">6</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Complete with <em class="hz-answer-option">do, does, don't</em> or <em class="hz-answer-option">doesn't</em>.</p><div class="hz-exercise__body"><ol class="l3b-list l3b-complete-dialogues"><li><span><span class="l3b-gap"></span> you go to work on Saturday?</span><span>No, I <span class="l3b-gap"></span>.</span></li><li><span><span class="l3b-gap"></span> Lucía work on Monday?</span><span>No, she <span class="l3b-gap"></span>.</span></li><li><span><span class="l3b-gap"></span> Ken and Maryam work on Friday?</span><span>Yes, they <span class="l3b-gap"></span>.</span></li><li><span><span class="l3b-gap"></span> Maryam go home at twelve on Friday?</span><span>Yes, she <span class="l3b-gap"></span>.</span></li></ol></div></div>
           </section>
           <section class="hz-exercise">
-            <div class="hz-exercise-number">7</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Write negative sentences.</p><div class="hz-exercise__body"><p class="l3b-model">0 &nbsp; Lucía works on Monday. <span class="l3b-example">Lucía doesn't work on Monday.</span></p><ol class="l3b-list l3b-corrections"><li><span>Ken goes home at five.</span><span class="l3b-write"></span></li><li><span>Maryam works on Sunday.</span><span class="l3b-write"></span></li><li><span>Lucía works on Sunday.</span><span class="l3b-write"></span></li><li><span>Ken and Maryam work on Saturday.</span><span class="l3b-write"></span></li></ol></div></div>
+            <div class="hz-exercise-number">7</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Write negative sentences.</p><div class="hz-exercise__body"><p class="l3b-model">0 &nbsp; Lucía works on Monday. <span class="l3b-example">Lucía doesn't work on Monday.</span></p><ol class="l3b-list l3b-corrections"><li><span>Ken goes home at five.</span><span class="l3b-write"></span></li><li><span>Ken and Maryam work on Saturday.</span><span class="l3b-write"></span></li></ol></div></div>
           </section>
           <section class="hz-exercise">
-            <div class="hz-exercise-number">8</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Work in pairs. Ask and write.</p><div class="hz-exercise__body"><div class="l3b-pair-model hz-dialogue-text"><p><b>A:</b> Do you work on Saturday?</p><p><b>B:</b> No, I don't.</p></div><div class="l3b-survey-layout"><table class="l3b-survey"><thead><tr><th>Do you ...?</th><th>You</th><th>Your classmate</th></tr></thead><tbody><tr><th>work on Saturday</th><td></td><td></td></tr><tr><th>go to school on Monday</th><td></td><td></td></tr><tr><th>get up at seven on Sunday</th><td></td><td></td></tr></tbody></table><img class="l3b-survey-people" src="./Images/3B/Lunch-conversation-cutout-v1.png" alt="Two fictional colleagues talking about their week."></div></div></div>
+            <div class="hz-exercise-number">8</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Work in pairs. Ask and write.</p><div class="hz-exercise__body l3b-survey-layout"><div class="l3b-survey-task"><div class="l3b-pair-model hz-dialogue-text"><p><b>A:</b> Do you work on Saturday?</p><p><b>B:</b> No, I don't.</p></div><table class="l3b-survey"><thead><tr><th>Do you ...?</th><th>You</th><th>Your classmate</th></tr></thead><tbody><tr><th>work on Saturday</th><td></td><td></td></tr><tr><th>go to school on Monday</th><td></td><td></td></tr><tr><th>get up at seven on Sunday</th><td></td><td></td></tr></tbody></table></div><img class="l3b-survey-people" src="./Images/3B/Conversation-standing-cutout-v2.png" alt="Two fictional colleagues talking about their week."></div></div>
           </section>
 </div>
       </div>
@@ -8968,11 +8982,9 @@ body {
           </section>
         </div>
         <div class="hz-exercises">
+
           <section class="hz-exercise">
-            <div class="hz-exercise-number">7</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Write the sentences.</p><div class="hz-exercise__body"><p class="l3c-model"><b>0</b> The café is cheap. <span class="l3c-example">It's a cheap café.</span></p><ol class="l3c-list l3c-adjective-practice"><li><span>The park is beautiful.</span><span>It's <span class="l3c-gap l3c-gap--long"></span>.</span></li><li><span>The café is noisy.</span><span>It's <span class="l3c-gap l3c-gap--long"></span>.</span></li><li><span>The café is expensive.</span><span>It's <span class="l3c-gap l3c-gap--long"></span>.</span></li></ol></div></div>
-          </section>
-          <section class="hz-exercise">
-            <div class="hz-exercise-number">8</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Work in pairs. Student A: look at A. Student B: look at B. Ask and write.</p>
+            <div class="hz-exercise-number">7</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Work in pairs. Student A: look at A. Student B: look at B. Ask and write.</p>
               <div class="hz-exercise__body"><div class="l3c-pair-model hz-dialogue-text"><span><b>A:</b> When does Alex go?</span><span><b>B:</b> On Sunday.</span></div><div class="l3c-info-exchange">
                 <section><header><b>A</b> Student A</header><table aria-label="Student A information"><thead><tr><th></th><th>Eva</th><th>Alex</th></tr></thead><tbody><tr><th>Where?</th><td>West Park</td><td class="l3c-cell-write"></td></tr><tr><th>When?</th><td>Saturday</td><td class="l3c-cell-write"></td></tr><tr><th>What time?</th><td>eleven</td><td class="l3c-cell-write"></td></tr><tr><th>Who with?</th><td>her family</td><td class="l3c-cell-write"></td></tr></tbody></table></section>
                 <section><header><b>B</b> Student B</header><table aria-label="Student B information"><thead><tr><th></th><th>Eva</th><th>Alex</th></tr></thead><tbody><tr><th>Where?</th><td class="l3c-cell-write"></td><td>Garden Café</td></tr><tr><th>When?</th><td class="l3c-cell-write"></td><td>Sunday</td></tr><tr><th>What time?</th><td class="l3c-cell-write"></td><td>twelve</td></tr><tr><th>Who with?</th><td class="l3c-cell-write"></td><td>his brother</td></tr></tbody></table></section>
@@ -8980,7 +8992,7 @@ body {
             </div>
           </section>
           <section class="hz-exercise">
-            <div class="hz-exercise-number">9</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Write your review.</p><div class="hz-exercise__body l3c-review-editor"><header><h2>Your review</h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m16 3 5 5-12 12-6 1 1-6Z M13 6l5 5"/></svg></header><div><p>I go to <span class="l3c-gap l3c-gap--place"></span> on <span class="l3c-gap"></span>.</p><p>I go with <span class="l3c-gap l3c-gap--place"></span>. It's <span class="l3c-gap l3c-gap--place"></span>.</p></div></div></div>
+            <div class="hz-exercise-number">8</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Write your review.</p><div class="hz-exercise__body l3c-review-writing-layout"><div class="l3c-review-editor"><header><h2>Your review</h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m16 3 5 5-12 12-6 1 1-6Z M13 6l5 5"/></svg></header><div><p>I go to <span class="l3c-gap l3c-gap--place"></span> on <span class="l3c-gap"></span>.</p><p>I go with <span class="l3c-gap l3c-gap--place"></span>. It's <span class="l3c-gap l3c-gap--place"></span>.</p></div></div><img class="l3c-review-writing-photo" src="./Images/3C/Review-Sueda-19535266.jpg" alt="A woman uses her phone at a café, illustrating a personal place review."></div></div>
           </section>
         </div>
       </div>
@@ -9022,17 +9034,15 @@ body {
     <main class="hz-page__content"><span class="hz-continuation" aria-label="Lesson 3D continued">3D</span><div class="hz-page-stack"><div class="l3d-continuation-content">
       <div class="hz-exercises">
         <section class="hz-exercise"><div class="hz-exercise-number">4</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Look at Zoe's morning. Circle the correct words. <span class="hz-new-words">NEW WORDS</span></p><div class="hz-exercise__body">
-          <div class="l3d-morning"><h2>Zoe's morning</h2><div class="l3d-morning-events"><div><b>7:00</b><span>have breakfast</span></div><span class="l3d-time-arrow" aria-hidden="true">→</span><div><b>7:10</b><span>drink water</span></div><span class="l3d-time-arrow" aria-hidden="true">→</span><div><b>8:00</b><span>go to work</span></div></div></div>
+          <div class="l3d-morning-layout"><img src="./Images/3D/Zoe-morning-water-v1.png" alt="Fictional Zoe drinks water after breakfast at her kitchen table."><div class="l3d-morning"><h2>Zoe's morning</h2><div class="l3d-morning-events"><div><b>7:00</b><span>have breakfast</span></div><span class="l3d-time-arrow" aria-hidden="true">↓</span><div><b>7:10</b><span>drink water</span></div><span class="l3d-time-arrow" aria-hidden="true">↓</span><div><b>8:00</b><span>go to work</span></div></div></div></div>
           <ol class="l3d-list l3d-sequence-notice"><li>Zoe drinks water <em class="hz-answer-option">before / after</em> she has breakfast.</li><li>Zoe has breakfast <em class="hz-answer-option">before / after</em> she drinks water.</li></ol>
         </div></div></section>
         <section class="hz-focus-box hz-no-break l3d-inset" aria-label="Grammar: before and after"><header class="hz-focus-box__header">GRAMMAR: BEFORE / AFTER</header><div class="hz-focus-box__body l3d-connectors"><p>I walk <b>before dinner</b>.</p><p>I walk <b>before I have dinner</b>.</p><p>I drink water <b>after breakfast</b>.</p><p>I drink water <b>after I have breakfast</b>.</p></div></section>
         <div class="hz-go-to hz-go-to--inset">Go to: Grammar - Before / after, page ---</div>
-        <section class="hz-exercise"><div class="hz-exercise-number">5</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Write the sentences.</p><div class="hz-exercise__body"><ol class="l3d-list l3d-order">
-          <li><span>always / water / drink / I / .</span><span class="l3d-write"></span></li><li><span>walks / usually / My sister / .</span><span class="l3d-write"></span></li><li><span>at home / am / sometimes / I / .</span><span class="l3d-write"></span></li><li><span>never / at twelve / He / goes to bed / .</span><span class="l3d-write"></span></li>
-        </ol></div></div></section>
-        <section class="hz-exercise"><div class="hz-exercise-number">6</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Look at the times. Complete with <i>before</i> or <i>after</i>.</p><div class="hz-exercise__body"><div class="l3d-times"><span>Ben: lunch <b>1:00</b> · go home <b>2:00</b> (afternoon)</span><span>Maya: walk <b>6:00</b> · dinner <b>7:00</b> (evening)</span></div><ol class="l3d-list l3d-sequence-practice"><li>Ben has lunch <span class="l3d-gap"></span> he goes home.</li><li>Ben goes home <span class="l3d-gap"></span> he has lunch.</li><li>Maya has dinner <span class="l3d-gap"></span> she walks.</li><li>Maya walks <span class="l3d-gap"></span> she has dinner.</li></ol></div></div></section>
-        <section class="hz-exercise"><div class="hz-exercise-number">7</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Choose three routines from activity 1. Circle your days. Write an adverb.</p><div class="hz-exercise__body"><table class="l3d-your-week"><thead><tr><th>Routine</th><th>Mon · Tue · Wed · Thu · Fri · Sat · Sun</th><th>Adverb</th></tr></thead><tbody><tr><th></th><td>Mon · Tue · Wed · Thu · Fri · Sat · Sun</td><td></td></tr><tr><th></th><td>Mon · Tue · Wed · Thu · Fri · Sat · Sun</td><td></td></tr><tr><th></th><td>Mon · Tue · Wed · Thu · Fri · Sat · Sun</td><td></td></tr></tbody></table></div></div></section>
-        <section class="hz-exercise"><div class="hz-exercise-number">8</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Write your #MyWeek post. Use your adverbs and <i>before</i> or <i>after</i>.</p><div class="hz-exercise__body"><div class="l3d-post-editor"><header><h2>#MyWeek</h2><span>Your name <span class="l3d-name-gap"></span></span></header><p class="l3d-example">I usually walk before dinner.</p><div class="l3d-post-lines" aria-label="Four lines for your post"><span></span><span></span><span></span><span></span></div></div><p class="l3d-share">Work in pairs. Read your posts. Your weeks: <em class="hz-answer-option">the same / different</em>?</p></div></div></section>
+
+        <section class="hz-exercise"><div class="hz-exercise-number">5</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Look at the times. Complete with <i>before</i> or <i>after</i>.</p><div class="hz-exercise__body"><div class="l3d-times"><span>Ben: lunch <b>1:00</b> · go home <b>2:00</b> (afternoon)</span><span>Maya: walk <b>6:00</b> · dinner <b>7:00</b> (evening)</span></div><ol class="l3d-list l3d-sequence-practice"><li>Ben has lunch <span class="l3d-gap"></span> he goes home.</li><li>Ben goes home <span class="l3d-gap"></span> he has lunch.</li><li>Maya has dinner <span class="l3d-gap"></span> she walks.</li><li>Maya walks <span class="l3d-gap"></span> she has dinner.</li></ol></div></div></section>
+        <section class="hz-exercise"><div class="hz-exercise-number">6</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Choose three routines from activity 1. Circle your days. Write an adverb.</p><div class="hz-exercise__body"><table class="l3d-your-week"><thead><tr><th>Routine</th><th>Mon · Tue · Wed · Thu · Fri · Sat · Sun</th><th>Adverb</th></tr></thead><tbody><tr><th></th><td>Mon · Tue · Wed · Thu · Fri · Sat · Sun</td><td></td></tr><tr><th></th><td>Mon · Tue · Wed · Thu · Fri · Sat · Sun</td><td></td></tr><tr><th></th><td>Mon · Tue · Wed · Thu · Fri · Sat · Sun</td><td></td></tr></tbody></table></div></div></section>
+        <section class="hz-exercise"><div class="hz-exercise-number">7</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Write your #MyWeek post. Use your adverbs and <i>before</i> or <i>after</i>.</p><div class="hz-exercise__body"><div class="l3d-post-editor"><header><h2>#MyWeek</h2><span>Your name <span class="l3d-name-gap"></span></span></header><p class="l3d-example">I usually walk before dinner.</p><div class="l3d-post-lines" aria-label="Four lines for your post"><span></span><span></span><span></span><span></span></div></div><p class="l3d-share">Work in pairs. Read your posts. Your weeks: <em class="hz-answer-option">the same / different</em>?</p></div></div></section>
       </div>
       <div class="hz-extra-practice l3d-inset"><span class="hz-extra-practice__label">EXTRA PRACTICE</span><span class="hz-extra-practice__prompt">Write two sentences about a person in your family. Use usually and before or after.</span></div>
     </div></div></main><footer class="hz-page__footer"><span></span><span class="hz-page-number">30</span></footer>

@@ -120,3 +120,8 @@
 .l3c-review-editor header { background:#175786; color:#fff; border:0; }
 .l3c-review-editor svg { stroke:#fff; }
 .l3c-review-editor { border:.25mm solid #a7c4d8; background:#fff; }
+
+/* A real café photograph accompanies the learner's own review. */
+.l3c-review-writing-layout { display:grid; grid-template-columns:minmax(0,1fr) 45mm; gap:4mm; align-items:stretch; }
+.l3c-review-writing-photo { display:block; width:45mm; height:40mm; object-fit:cover; object-position:48% 60%; }
+.l3c-review-writing-layout .l3c-review-editor > div { display:grid; gap:3mm; padding:3mm; }

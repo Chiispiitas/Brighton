@@ -82,3 +82,11 @@
 .l3a-time-table thead th { border-bottom:.65mm solid #163f5b; }
 .l3a-time-table tbody th { background:#163f5b; color:#fff; }
 .l3a-time-table tbody tr:last-child th { background:#b95013; }
+
+/* Listening guests provide photographic context on the continuation page. */
+.l3a-time-table .l3a-listening-person { position:relative; padding:0; overflow:hidden; }
+.l3a-listening-person img { display:block; width:100%; height:22mm; object-fit:cover; }
+.l3a-listening-person span { position:absolute; left:0; bottom:0; padding:.5mm 2mm; color:#fff; background:#163f5b; }
+.l3a-time-table tr:last-child .l3a-listening-person span { background:#b95013; }
+.l3a-time-table tr:first-child .l3a-listening-person img { object-position:65% 55%; transform:scale(1.5); transform-origin:65% 45%; }
+.l3a-time-table tr:last-child .l3a-listening-person img { object-position:center top; }

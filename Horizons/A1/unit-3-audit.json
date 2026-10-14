@@ -1,8 +1,8 @@
 {
-  "audit_date": "2026-10-13",
+  "audit_date": "2026-10-14",
   "scope": "Lesson spreads 3A-3D, printed pages 23-30",
   "status": "passed for lesson-spread preview; final book pagination pending",
-  "activities": 34,
+  "activities": 31,
   "pages": 8,
   "audio_tracks": [
     {
@@ -99,7 +99,10 @@
     "Horizons\\A1\\Images\\Stock\\Pexels-6753368.jpg",
     "Horizons\\A1\\Images\\Stock\\Pexels-4333583.jpg",
     "Horizons\\A1\\Images\\Stock\\Pexels-4964751.jpg",
-    "Horizons\\A1\\Images\\Stock\\Daily-routines-real-v1.jpg"
+    "Horizons\\A1\\Images\\Stock\\Daily-routines-real-v1.jpg",
+    "Horizons/A1/Images/3A/Teacher-Tima-5427870.jpg",
+    "Horizons/A1/Images/3A/Chef-Anthony-30350306.jpg",
+    "Horizons/A1/Images/3C/Review-Sueda-19535266.jpg"
   ],
   "new_words_badges": 6,
   "extra_practice_footers": 4,
@@ -120,7 +123,11 @@
     "black_grammar_emphasis": 0,
     "continuation_marker_over_text": 0,
     "display_font_range_candidates": "six, visually cleared; no glyph collisions",
-    "unchanged_pages_pixel_identical": 24
+    "unchanged_pages_pixel_identical": 18,
+    "saved_pdf_reopened_and_verified": true,
+    "continuation_tab_numerals_preserved": true,
+    "pdf_export": "Browser optimizes print-media resolution without modifying source assets. Direct raw Unit 3 export, append to preceding 18 pages, no font/image rewrite or deduplication. Saved book matches standalone Unit 3 pages in text and pixels.",
+    "recordings_unchanged": true
   },
   "manual_checks": [
     "All eight final pages inspected",
@@ -130,7 +137,8 @@
     "NEW WORDS, Extra Practice, grammar and vocabulary references checked",
     "Purposeful backgrounds and distinct source compositions preserved",
     "Circle choices italic with capitals only where grammatical",
-    "Messi 2023 source context and normal UAE federal timetable rechecked"
+    "Messi 2023 source context and normal UAE federal timetable rechecked",
+    "Continuation-page imagery checked independently on all four lessons; new requirement stored in canonical style and handoff."
   ],
   "remaining_book_dependency": "Nine page --- destinations intentionally await back-of-book pagination; not a release-ready complete book",
   "verified_sources": [
@@ -143,5 +151,34 @@
       "url": "https://www.fahr.gov.ae/en/contact/"
     }
   ],
-  "author_revision_2026_10_14": "3B activity 9 removed. Activity 8 integrates a larger talking-people cutout beside its survey table, with the conversation model above. Text unchanged, no overflow, other 25 pages pixel-identical."
+  "author_revision_2026_10_14": "3A adds two listening-guest photos and removes old activity 5; 3B keeps activity 8, adds taller generated colleagues and trims two repetitive items in activity 7; 3C adds a caf\u00e9 photo to the review, removes old activity 7 and renumbers; 3D adds a generated breakfast/water scene, removes old activity 5 and renumbers. Keys and source notes match; all nine recordings remain unchanged.",
+  "continuation_page_imagery": {
+    "required": "Each lesson second page has one or two substantial task-related images; icons and tiny badges do not count. Repetitive activities may be removed to preserve print legibility and writing space.",
+    "author_preference_date": "2026-10-14",
+    "pages": [
+      {
+        "page": "24",
+        "count": 2,
+        "passed": true
+      },
+      {
+        "page": "26",
+        "count": 1,
+        "passed": true
+      },
+      {
+        "page": "28",
+        "count": 1,
+        "passed": true
+      },
+      {
+        "page": "30",
+        "count": 1,
+        "passed": true
+      }
+    ],
+    "print_crops_visually_checked": true,
+    "natural_body_proportions": true
+  },
+  "generated_assets_manifest": "Images/Unit3-generated-assets.json"
 }

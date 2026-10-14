@@ -105,3 +105,9 @@
 .l3d-name-gap { border-bottom-color:#fff; }
 .l3d-post-editor .l3d-example { margin-top:2mm; margin-left:0; }
 .l3d-page--2 .hz-exercise:last-child { padding-bottom:1mm; }
+
+/* The morning sequence has a photograph with clear breakfast/water evidence. */
+.l3d-morning-layout { display:grid; grid-template-columns:43mm minmax(0,1fr); gap:5mm; align-items:center; }
+.l3d-morning-layout > img { display:block; width:43mm; height:46mm; object-fit:cover; object-position:center 60%; }
+.l3d-morning-events { flex-direction:column; align-items:flex-start; gap:.5mm; }
+.l3d-morning-events .l3d-time-arrow { font-size:12pt; margin-left:6mm; line-height:1; }
