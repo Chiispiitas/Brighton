@@ -12,16 +12,16 @@
     <div class="director-fields">
       <label>Current contestant<select id="screen-current"></select></label>
       <label>Round / stage name<input id="screen-round" maxlength="60" value="Round 1"></label>
-      <label>Motion<select id="screen-motion"><option value="full">Full broadcast motion</option><option value="quiet">Quiet / reduced motion</option></select></label>
-      <label>Result<select id="screen-result"><option value="pending">Word reveal only</option><option value="correct">Correct</option><option value="incorrect">Thank you / incorrect</option></select></label>
+      <label>Motion<select id="screen-motion"><option value="full">Soft transitions</option><option value="quiet">Quiet / reduced motion</option></select></label>
+      <label>Result<select id="screen-result"><option value="pending">Word reveal only</option><option value="correct">Correct</option><option value="incorrect">Incorrect</option></select></label>
       <label>Board page<input type="number" id="screen-page" min="1" max="25" value="1"></label>
       <label class="check-label"><input type="checkbox" id="screen-auto" checked>Rotate board / finalists pages</label>
       <label class="wide check-label"><input type="checkbox" id="screen-reveal">Reveal the current word on the Result scene (explicit permission to show its spelling)</label>
       <label class="wide">Definition for the audience<textarea id="screen-definition" maxlength="500"></textarea></label>
       <label class="wide">Example sentence for the audience<textarea id="screen-example" maxlength="500"></textarea></label>
       <div class="wide director-actions"><button type="button" id="screen-load-word">Load current word information</button><span class="director-help" id="screen-word-status">Target words are masked before reaching the screen.</span></div>
-      <label class="wide">Break message<input id="screen-message" maxlength="220" value="We’ll be back shortly"></label>
-      <label class="wide">Closing message<input id="screen-closing" maxlength="220" value="Thank you for being part of the bee."></label>
+      <label class="wide">Break message (optional)<input id="screen-message" maxlength="220"></label>
+      <label class="wide">Closing message (optional)<input id="screen-closing" maxlength="220"></label>
     </div>
     <div class="director-timer"><label>Timer seconds<input type="number" id="screen-duration" min="1" max="3600" value="60"></label><label class="check-label"><input type="checkbox" id="screen-timer-visible" checked>Show timer</label><button type="button" id="screen-timer-start">Start / resume live timer</button><button type="button" id="screen-timer-pause">Pause live timer</button><button type="button" id="screen-timer-reset">Reset live timer</button><span class="director-help" id="live-timer">60s · paused</span></div>
     <p class="director-status" id="director-status" role="status" aria-live="polite"></p>
