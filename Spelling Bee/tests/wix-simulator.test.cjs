@@ -1,0 +1,34 @@
+const { test } = require('node:test');
+const assert = require('node:assert/strict');
+const simulator = require('./wix-simulator.cjs');
+test('actual Velo handlers preserve snapshots and count the reads inside saves', async () => {
+  const s = simulator();
+  const body = { sessionCode: '1234', actorId: 'test', state: { word: 'butterfly', wordToken: 'test:1', pointer: 3, marks: ['ok', 'err', 'ok'], judgementRevision: 7 } };
+  await s.request('spellingBeeSession', 'POST', '1234', body);
+  assert.equal(s.stats.reads, 1); assert.equal(s.stats.writes, 1);
+  const read = await s.request('spellingBeeSession', 'GET', '1234');
+  assert.equal(read.json.session.pointer, 3);
+  assert.equal(read.json.session.judgementRevision, 7);
+  const beforeJudge = { ...s.stats };
+  await s.request('spellingBeeJudge', 'POST', '1234', { ...body, state: { ...body.state, voteSeq: 1, letterMarks: ['correct'] } });
+  assert.equal(s.stats.reads - beforeJudge.reads, 2);
+  assert.equal(s.stats.writes - beforeJudge.writes, 1);
+  const beforeCommand = { ...s.stats };
+  const command = { ...body, state: { ...body.state, commandSeq: 1, commandType: 'visibility', value: 'reveal' } };
+  await s.request('spellingBeeCommand', 'POST', '1234', command);
+  assert.equal(s.stats.reads - beforeCommand.reads, 3);
+  assert.equal(s.stats.writes - beforeCommand.writes, 1);
+  const duplicate = await s.request('spellingBeeCommand', 'POST', '1234', command);
+  assert.equal(duplicate.json.duplicate, true);
+  assert.equal(s.stats.writes - beforeCommand.writes, 1);
+});
+test('CMS write quota rejects excess saves without erasing the accepted record', async () => {
+  const s = simulator({ writeLimit: 1 });
+  const body = { sessionCode: '1234', state: { word: 'first' } };
+  await s.request('spellingBeeSession', 'POST', '1234', body);
+  const rejected = await s.request('spellingBeeSession', 'POST', '1234', { ...body, state: { word: 'second' } });
+  assert.equal(rejected.status, 500); assert.match(rejected.json.error, /WDE0014/);
+  assert.equal(s.stats.writeLimits, 1);
+  const saved = await s.request('spellingBeeSession', 'GET', '1234');
+  assert.equal(saved.json.session.word, 'first');
+});

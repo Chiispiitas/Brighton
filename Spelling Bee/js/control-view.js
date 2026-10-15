@@ -43,12 +43,16 @@
   let commandSeq = 0;
   let busy = false;
   let pendingJudgeSnapshot = null, judgeWriteBusy = false, judgeWriteTimer = null;
+  let judgeNextWriteAt = 0, lastJudgeSavedAt = 0, adminNextWriteAt = 0, registeredJudgeSession = "";
+  let presenterChangedAt = Date.now(), lastLetterInputAt = 0;
+  let judgeWriteStartedAt = 0, adminWriteStartedAt = 0;
   let inputRevision = 0, adminRetryAt = 0, adminRetryDelay = 0, waitingForAck = 0;
   const inputTickets = new Map(), adminAcks = [];
   let judgeRows = [];
   const Feedback = window.BeeButtons;
   function inputStarted(button) {
     inputRevision += 1;
+    presenterChangedAt = Date.now(); lastLetterInputAt = Date.now();
     if (button) inputTickets.set(button, { revision: inputRevision, token: currentToken(), session: sessionCode });
     Feedback?.set(button, "saving", "Saving…");
   }
@@ -443,9 +447,14 @@
   }
 
   function parseJudgeStates(rows) {
+    if (!currentToken()) return [];
     return Cloud.roleStates(rows, "judge")
-      .filter(state => state.wordToken && state.wordToken === currentToken())
-      .filter(state => Cloud.isFresh(state, 45000));
+      .filter(state => state.wordToken && Cloud.isFresh(state, 75000))
+      .map(state => state.wordToken === currentToken() ? state : {
+        ...state, word: presenter?.word || "", wordToken: currentToken(),
+        letterMarks: createJudgeMarks(presenter?.word || ""),
+        pointer: firstMarkableIndex(presenter?.word || "", 0), verdict: "pending"
+      });
   }
 
   function renderJudgeAggregate(rows) {
@@ -454,7 +463,13 @@
     const chips = document.getElementById("judge-vote-list");
     if (!host || !chips) return;
 
-    const votes = parseJudgeStates(rows);
+    // Admin already has the authoritative local judgement. Keep its card
+    // without spending a second CMS write for every Admin letter update.
+    const otherRows = rows.filter(row => row.actorId !== normalizedJudgeActorId);
+    const localAdmin = { role: "judge", sessionCode, actorId: normalizedJudgeActorId, judgeName: "Admin",
+      wordToken: currentToken(), letterMarks: judgeMarks.slice(), pointer: judgePointer,
+      verdict: judgeVerdict, updatedAt: new Date().toISOString() };
+    const votes = parseJudgeStates([...otherRows, localAdmin]);
     const incorrect = votes.filter(vote => vote.verdict === "incorrect");
     const correct = votes.filter(vote => vote.verdict === "correct");
     const pending = votes.filter(vote => vote.verdict !== "correct" && vote.verdict !== "incorrect");
@@ -634,6 +649,7 @@
   }
 
   function publishJudgeState({ increment = false } = {}) {
+    if (role === "remote") { renderJudgeAggregate(judgeRows); return Promise.resolve(); }
     if (!canJudge || !sessionCode || !presenter?.wordToken || judgeWordToken !== presenter.wordToken) {
       return Promise.resolve();
     }
@@ -661,20 +677,34 @@
     };
 
     pendingJudgeSnapshot = { code: snapshotSessionCode, state: snapshot, revision: inputRevision };
-    if (!judgeWriteBusy && !judgeWriteTimer) judgeWriteTimer = window.setTimeout(flushJudgeSnapshot, 90);
+    if (!judgeWriteBusy && !judgeWriteTimer) judgeWriteTimer = window.setTimeout(flushJudgeSnapshot, Math.max(90, judgeNextWriteAt - Date.now()));
     return Promise.resolve();
   }
 
   async function flushJudgeSnapshot() {
     judgeWriteTimer = null;
     if (judgeWriteBusy || !pendingJudgeSnapshot) return;
+    if (Date.now() < judgeNextWriteAt) {
+      judgeWriteTimer = window.setTimeout(flushJudgeSnapshot, judgeNextWriteAt - Date.now());
+      return;
+    }
+    // While someone is typing, wait for a brief pause instead of saving just
+    // before the next letter arrives. Still send progress at least every 2.5s.
+    if (Date.now() - lastLetterInputAt < 220 && Date.now() - judgeWriteStartedAt < 2500) {
+      judgeWriteTimer = window.setTimeout(flushJudgeSnapshot, Math.min(220, 2500 - (Date.now() - judgeWriteStartedAt)));
+      return;
+    }
     const pending = pendingJudgeSnapshot;
     pendingJudgeSnapshot = null;
     if (pending.code !== sessionCode || pending.state.wordToken !== currentToken()) return;
     judgeWriteBusy = true;
+    judgeWriteStartedAt = Date.now();
+    judgeNextWriteAt = Date.now() + 1500;
     let delay = 120;
     try {
       await Cloud.writeState({ sessionCode: pending.code, role: "judge", actorId: judgeActorId, state: pending.state });
+      lastJudgeSavedAt = Date.now();
+      if (pending.code === sessionCode) registeredJudgeSession = pending.code;
       if (role === "judge" && pending.code === sessionCode) inputFinished(pending.revision, pending.state.wordToken, "saved", "Saved");
     } catch {
       if (pending.code === sessionCode && pending.state.wordToken === currentToken()) {
@@ -685,21 +715,28 @@
       setConnection("Judge sync retrying", "error");
     } finally {
       judgeWriteBusy = false;
-      if (pendingJudgeSnapshot) judgeWriteTimer = window.setTimeout(flushJudgeSnapshot, delay);
+      if (pendingJudgeSnapshot) judgeWriteTimer = window.setTimeout(flushJudgeSnapshot, Math.max(delay, judgeNextWriteAt - Date.now()));
     }
   }
 
   function receivePresenter(nextPresenter) {
     const tokenChanged = installPresenterSnapshot(nextPresenter);
+    if (tokenChanged) {
+      presenterChangedAt = Date.now(); judgeNextWriteAt = 0; judgeWriteStartedAt = 0;
+      adminNextWriteAt = 0; adminWriteStartedAt = 0; lastLetterInputAt = 0;
+      window.clearTimeout(judgeWriteTimer); judgeWriteTimer = null; pendingJudgeSnapshot = null;
+    }
     if (role === "remote") {
       const changed = tokenChanged ? Boolean(presenter.wordToken) : syncAdminJudgeFromPresenter();
       if (changed) publishJudgeState({ increment: true });
     } else if (tokenChanged || judgeWordToken !== currentToken()) {
       resetJudgeWord();
-      publishJudgeState({ increment: true });
+      // A fresh previous-word row still proves this judge is present. Admin
+      // displays it as pending for the new word until real input is saved.
+      if (registeredJudgeSession !== sessionCode) publishJudgeState({ increment: true });
     }
     renderPresenterState();
-    setConnection(Cloud.isFresh(presenter, 45000) ? "Presenter online" : "Presenter stale", Cloud.isFresh(presenter, 45000) ? "online" : "stale");
+    setConnection(Cloud.isFresh(presenter, 75000) ? "Presenter online" : "Presenter stale", Cloud.isFresh(presenter, 75000) ? "online" : "stale");
   }
 
   async function refreshPresenterOnly() {
@@ -727,6 +764,12 @@
     presenterSyncTimer = null;
   }
 
+  function presenterPollDelay() {
+    if (waitingForAck) return Cloud.pollDelay(250);
+    const idleDelay = Date.now() - presenterChangedAt > 10000 ? 2800 : 950;
+    return Cloud.pollDelay(Math.max(document.hidden ? 2200 : 950, idleDelay));
+  }
+
   function startPresenterSyncLoop() {
     stopPresenterSyncLoop();
     presenterSyncLoopActive = true;
@@ -738,7 +781,7 @@
       // One presenter reader per page. Command acknowledgements temporarily
       // get priority; background reads never overlap this request.
       if (presenterSyncLoopActive && sessionCode) {
-        presenterSyncTimer = window.setTimeout(tick, Cloud.pollDelay(waitingForAck ? 250 : (document.hidden ? 2200 : 950)));
+        presenterSyncTimer = window.setTimeout(tick, presenterPollDelay());
       }
     };
 
@@ -793,7 +836,8 @@
       unsubscribeCloud();
       sessionCode = code;
       unsubscribeCloud = Cloud.subscribe(code, receiveCloudChange);
-      pendingAdminWordState = null; pendingJudgeSnapshot = null;
+      pendingAdminWordState = null; pendingJudgeSnapshot = null; registeredJudgeSession = "";
+      lastJudgeSavedAt = 0; judgeNextWriteAt = 0;
       adminAcks.length = 0; inputTickets.clear(); adminRetryAt = 0; adminRetryDelay = 0;
       presenter = found;
 
@@ -816,8 +860,8 @@
       renderPresenterState();
       renderJudgeAggregate(rows);
       setConnection(
-        Cloud.isFresh(presenter, 45000) ? "Presenter online" : "Presenter stale",
-        Cloud.isFresh(presenter, 45000) ? "online" : "stale"
+        Cloud.isFresh(presenter, 75000) ? "Presenter online" : "Presenter stale",
+        Cloud.isFresh(presenter, 75000) ? "online" : "stale"
       );
 
       window.clearTimeout(pollTimer);
@@ -835,7 +879,9 @@
       if (canJudge) {
         await publishJudgeState({ increment: true });
         window.clearInterval(judgeHeartbeatTimer);
-        judgeHeartbeatTimer = window.setInterval(() => publishJudgeState(), 20000);
+        judgeHeartbeatTimer = window.setInterval(() => {
+          if (role === "judge" && Date.now() - lastJudgeSavedAt >= 25000) publishJudgeState();
+        }, 10000);
       }
     } catch (error) {
       setJoinStatus(error.message || "Session not found.", true);
@@ -889,8 +935,13 @@
       return adminWordStateWritePromise;
     }
 
-    if (Date.now() < adminRetryAt) {
-      adminWordStateFlushTimer = window.setTimeout(flushPendingAdminWordState, adminRetryAt - Date.now());
+    const adminReadyAt = Math.max(adminRetryAt, adminNextWriteAt);
+    if (Date.now() < adminReadyAt) {
+      adminWordStateFlushTimer = window.setTimeout(flushPendingAdminWordState, adminReadyAt - Date.now());
+      return adminWordStateWritePromise;
+    }
+    if (Date.now() - lastLetterInputAt < 220 && Date.now() - adminWriteStartedAt < 2500) {
+      adminWordStateFlushTimer = window.setTimeout(flushPendingAdminWordState, Math.min(220, 2500 - (Date.now() - adminWriteStartedAt)));
       return adminWordStateWritePromise;
     }
     const snapshot = pendingAdminWordState;
@@ -900,7 +951,7 @@
     // Never send an old word snapshot after Presenter has already moved on.
     if (!presenter?.wordToken || snapshot.wordToken !== presenter.wordToken) {
       if (pendingAdminWordState) {
-        adminWordStateFlushTimer = window.setTimeout(flushPendingAdminWordState, Math.max(100, adminRetryAt - Date.now()));
+        adminWordStateFlushTimer = window.setTimeout(flushPendingAdminWordState, Math.max(100, adminRetryAt - Date.now(), adminNextWriteAt - Date.now()));
       }
       return adminWordStateWritePromise;
     }
@@ -909,6 +960,8 @@
     const seq = commandSeq;
     const snapshotSessionCode = sessionCode;
     adminWordStateWriteBusy = true;
+    adminWriteStartedAt = Date.now();
+    adminNextWriteAt = Date.now() + 1500;
 
     adminWordStateWritePromise = Cloud.writeState({
       sessionCode: snapshotSessionCode,
@@ -950,7 +1003,7 @@
         // collapsed into pendingAdminWordState. Send that ONE latest snapshot
         // immediately rather than replaying intermediate states.
         if (pendingAdminWordState && !remoteControlCommandActive) {
-          adminWordStateFlushTimer = window.setTimeout(flushPendingAdminWordState, Math.max(100, adminRetryAt - Date.now()));
+          adminWordStateFlushTimer = window.setTimeout(flushPendingAdminWordState, Math.max(100, adminRetryAt - Date.now(), adminNextWriteAt - Date.now()));
         }
       });
 
@@ -958,16 +1011,23 @@
   }
 
   async function drainAdminWordState() {
-    // Used only before non-judgement commands where ordering matters.
-    const deadline = Date.now() + 12000;
-    while (adminWordStateWriteBusy || pendingAdminWordState) {
-      if (Date.now() > deadline) throw new Error("Judgement is still saving. Please wait before sending another command.");
-      if (!adminWordStateWriteBusy && pendingAdminWordState) {
-        flushPendingAdminWordState();
-      }
+    const deadline = Date.now() + 20000;
+    while (Date.now() < deadline) {
+      if (!adminWordStateWriteBusy && pendingAdminWordState) flushPendingAdminWordState();
       await adminWordStateWritePromise.catch(() => {});
-      if (pendingAdminWordState) await new Promise(resolve => window.setTimeout(resolve, 100));
+      if (!adminWordStateWriteBusy && !pendingAdminWordState) {
+        const last = adminAcks.filter(ack => ack.token === currentToken()).at(-1);
+        if (!last) return;
+        if (!await waitForPresenterCommandAck(last.seq, last.token)) {
+          throw new Error("Presenter has not applied the latest letters. The next command was not sent.");
+        }
+        // Letter taps may have arrived while waiting. Drain those as well before
+        // replacing the single CMS command row with a different operation.
+        if (!pendingAdminWordState && !adminWordStateWriteBusy) return;
+      }
+      await new Promise(resolve => window.setTimeout(resolve, 100));
     }
+    throw new Error("Judgement is still saving. Please wait before sending another command.");
   }
 
   function queueAdminWordState() {
@@ -977,7 +1037,7 @@
     pendingAdminWordState = adminWordStateSnapshot();
 
     if (!adminWordStateWriteBusy && !adminWordStateFlushTimer) {
-      adminWordStateFlushTimer = window.setTimeout(flushPendingAdminWordState, Math.max(100, adminRetryAt - Date.now()));
+      adminWordStateFlushTimer = window.setTimeout(flushPendingAdminWordState, Math.max(100, adminRetryAt - Date.now(), adminNextWriteAt - Date.now()));
     }
   }
 

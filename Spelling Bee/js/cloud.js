@@ -35,6 +35,7 @@
 
   const reads = new Map();
   let cooldownUntil = 0, failures = 0;
+  const quotaFailures = { read: 0, write: 0 };
   const pause = ms => new Promise(resolve => window.setTimeout(resolve, ms));
   // Share confirmed changes between windows on this device. Wix remains the
   // authority; nothing is broadcast until the server has accepted the write.
@@ -83,11 +84,15 @@
           if (response.status === 429 || /quota|rate.?limit|request.?limit|too many|WDE0014/i.test(error.message)) {
             const header = response.headers.get("Retry-After");
             const after = Number(header) * 1000 || Date.parse(header) - Date.now() || 0;
-            cooldownUntil = Date.now() + Math.max(after, Math.min(30000, 2000 * 2 ** Math.min(failures, 4)));
+            const bucket = read ? "read" : "write";
+            quotaFailures[bucket] += 1;
+            cooldownUntil = Math.max(cooldownUntil, Date.now() + Math.max(after, Math.min(30000, 2000 * 2 ** Math.min(quotaFailures[bucket] - 1, 4))));
           }
           throw error;
         }
         failures = 0;
+        // A successful read must not reset backoff for an exhausted write quota.
+        quotaFailures[read ? "read" : "write"] = 0;
         return data;
       } catch (error) {
         failures += 1;
