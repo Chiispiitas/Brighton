@@ -57,3 +57,16 @@ test('a successful HTTP response without the saved state cannot report success',
   await assert.rejects(f.cloud.writeState({ sessionCode: '1234', role: 'judge' }), /did not confirm/);
   assert.equal(f.sent.length, 0);
 });
+
+test('successful background reads cannot reset repeated write-quota backoff', async () => {
+  const f = fixture((url, options) => options.method === 'POST'
+    ? response({ success: false, error: 'WDE0014: Requests per minute quota exceeded.' }, 500)
+    : response({ session: null }));
+  await assert.rejects(f.cloud.writeState({ sessionCode: '1234', role: 'judge' }), /WDE0014/);
+  f.advance(2001); await f.cloud.fetchPresenter('1234');
+  await assert.rejects(f.cloud.writeState({ sessionCode: '1234', role: 'judge' }), /WDE0014/);
+  assert(f.cloud.pollDelay(450) >= 4000, 'second quota failure must back off longer despite successful reads');
+  f.advance(4001); await f.cloud.fetchPresenter('1234');
+  await assert.rejects(f.cloud.writeState({ sessionCode: '1234', role: 'judge' }), /WDE0014/);
+  assert(f.cloud.pollDelay(450) >= 8000);
+});

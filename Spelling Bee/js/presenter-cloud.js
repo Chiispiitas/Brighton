@@ -23,10 +23,17 @@
   let pendingPresenterSnapshot = null;
   let pendingPresenterFingerprint = "";
   let presenterWritePromise = Promise.resolve();
+  let lastPresenterSavedAt = 0;
+  let pendingPresenterUrgent = false, presenterNextWriteAt = 0, presenterWriteStartedAt = 0;
+  let lastLocalChangeAt = 0, lastQueuedWordToken = "";
   let presenterRetryAt = 0, presenterRetryDelay = 0, presenterRetryTimer = null;
-  let commandApplication = Promise.resolve();
+  let commandApplication = Promise.resolve(), applyingRemoteCommand = false;
   function enqueueCommand(command) {
-    commandApplication = commandApplication.catch(() => {}).then(() => applyRemoteCommand(command));
+    commandApplication = commandApplication.catch(() => {}).then(async () => {
+      applyingRemoteCommand = true;
+      try { await applyRemoteCommand(command); }
+      finally { applyingRemoteCommand = false; }
+    });
     return commandApplication;
   }
   function receiveCloudChange(change) {
@@ -146,12 +153,24 @@
       return presenterWritePromise;
     }
 
+    if (!pendingPresenterUrgent) {
+      const wait = Math.max(presenterNextWriteAt - Date.now(),
+        Date.now() - lastLocalChangeAt < 220 && Date.now() - presenterWriteStartedAt < 2500
+          ? Math.min(220, 2500 - (Date.now() - presenterWriteStartedAt)) : 0);
+      if (wait > 0) {
+        presenterRetryTimer = window.setTimeout(flushPresenterSnapshot, wait);
+        return presenterWritePromise;
+      }
+    }
     const snapshot = pendingPresenterSnapshot;
+    const snapshotUrgent = pendingPresenterUrgent;
     const snapshotFingerprint = pendingPresenterFingerprint;
     const snapshotSessionCode = sessionCode;
     pendingPresenterSnapshot = null;
     pendingPresenterFingerprint = "";
+    pendingPresenterUrgent = false;
     presenterWriteBusy = true;
+    presenterWriteStartedAt = Date.now(); presenterNextWriteAt = Date.now() + 1500;
 
     presenterWritePromise = Cloud.writeState({
       sessionCode: snapshotSessionCode,
@@ -161,6 +180,7 @@
     })
       .then(() => {
         presenterRetryAt = 0; presenterRetryDelay = 0;
+        lastPresenterSavedAt = Date.now();
         setStatus(`Session ${snapshotSessionCode} · synced`, "online");
       })
       .catch(error => {
@@ -169,6 +189,7 @@
           pendingPresenterSnapshot = snapshot;
           pendingPresenterFingerprint = snapshotFingerprint;
         }
+        if (snapshotUrgent && sessionCode === snapshotSessionCode) pendingPresenterUrgent = true;
         presenterRetryDelay = Math.min(30000, Math.max(Cloud.retryDelay(), presenterRetryDelay * 2));
         presenterRetryAt = Date.now() + presenterRetryDelay;
         setStatus(`Sync retrying: ${error.message}`, "error");
@@ -184,7 +205,7 @@
   }
 
   function publishPresenter(force = false) {
-    if (!sessionCode) return Promise.resolve();
+    if (!sessionCode || (applyingRemoteCommand && !force)) return Promise.resolve();
 
     const snapshot = presenterSnapshot();
     const nextFingerprint = fingerprint(snapshot);
@@ -195,6 +216,9 @@
     // Latest-state wins: local O/P/Backspace can happen much faster than a Wix
     // POST. Never build a queue of obsolete Presenter states.
     lastStateFingerprint = nextFingerprint;
+    if (!force) lastLocalChangeAt = Date.now();
+    pendingPresenterUrgent = pendingPresenterUrgent || force || snapshot.wordToken !== lastQueuedWordToken;
+    lastQueuedWordToken = snapshot.wordToken;
     pendingPresenterSnapshot = snapshot;
     pendingPresenterFingerprint = nextFingerprint;
 
@@ -424,6 +448,7 @@
     stopRemotePollLoop();
     pendingPresenterSnapshot = null;
     pendingPresenterFingerprint = "";
+    pendingPresenterUrgent = false; lastQueuedWordToken = "";
     localStorage.removeItem("brighton-spelling-presenter-session");
     updateViewLinks();
     setStatus("Cloud session disconnected.");
@@ -454,12 +479,14 @@
     controlsToggle.setAttribute("aria-label", controlsToggle.title);
   });
 
-  // Local O/P changes request an immediate publish so Admin mirrors Presenter
-  // without waiting for the periodic state scan.
+  // Queue local changes immediately; the writer combines rapid marks.
+  // New words and command acknowledgements bypass that batching delay.
   window.requestSpellingPresenterSync = () => publishPresenter(false);
 
   window.setInterval(() => publishPresenter(false), 100);
-  window.setInterval(() => publishPresenter(true), 20000);
+  window.setInterval(() => {
+    if (Date.now() - lastPresenterSavedAt >= 25000) publishPresenter(true);
+  }, 10000);
 
   updateViewLinks();
   const saved = Cloud.normalizeSessionCode(localStorage.getItem("brighton-spelling-presenter-session"));
