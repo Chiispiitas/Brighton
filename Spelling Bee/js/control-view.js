@@ -44,6 +44,7 @@
   let busy = false;
   let judgePublishChain = Promise.resolve();
   let commandPublishChain = Promise.resolve();
+  let remoteControlCommandActive = false;
   let pendingAdminWordState = null;
   let adminWordStateFlushTimer = null;
   let adminWordStateWriteBusy = false;
@@ -53,6 +54,7 @@
   let judgementSource = "presenter";
   let judgementUpdatedAt = 0;
   let wordInfoKey = "";
+  let renderedJudgeWordKey = "";
 
   let judgeWordToken = "";
   let judgeMarks = [];
@@ -307,6 +309,11 @@
 
   function renderJudgeWord() {
     if (!word) return;
+    // Presenter polls arrive frequently. Keep letter DOM and text sizing
+    // stable between actual edits, especially while a phone is being tapped.
+    const key = JSON.stringify([presenter?.wordToken, presenter?.word, judgePointer, judgeMarks]);
+    if (key === renderedJudgeWordKey) return;
+    renderedJudgeWordKey = key;
     const letters = Array.from(String(presenter?.word || ""));
     const frag = document.createDocumentFragment();
 
@@ -365,6 +372,7 @@
 
   function renderPresenterState() {
     if (!presenter) {
+      renderedJudgeWordKey = "";
       if (word) word.textContent = "—";
       if (wordMeta) wordMeta.textContent = "Waiting for presenter";
       return;
@@ -549,6 +557,15 @@
   function installPresenterSnapshot(nextPresenter, { render = false } = {}) {
     if (!nextPresenter) return false;
 
+    // Mobile network requests can finish out of order. Do not rewind to a
+    // stale Presenter word and erase the Admin's current letter progress.
+    // Both timestamps are assigned by the same Wix backend.
+    const previousUpdated = Date.parse(presenter?.updatedAt || "");
+    const incomingUpdated = Date.parse(nextPresenter.updatedAt || "");
+    if (Number.isFinite(previousUpdated) && Number.isFinite(incomingUpdated) && incomingUpdated < previousUpdated) {
+      return false;
+    }
+
     const previousToken = String(presenter?.wordToken || "");
     const previousSequence = Number(presenter?.wordSequence || 0);
     const previousWord = String(presenter?.word || "");
@@ -677,7 +694,7 @@
       // No fixed-interval dead time: as soon as one lightweight Presenter GET
       // finishes, start the next one almost immediately.
       if (presenterSyncLoopActive && sessionCode) {
-        presenterSyncTimer = window.setTimeout(tick, 12);
+        presenterSyncTimer = window.setTimeout(tick, document.hidden ? 600 : 90);
       }
     };
 
@@ -845,7 +862,7 @@
     window.clearTimeout(adminWordStateFlushTimer);
     adminWordStateFlushTimer = null;
 
-    if (role !== "remote" || !sessionCode) {
+    if (role !== "remote" || !sessionCode || remoteControlCommandActive) {
       return adminWordStateWritePromise;
     }
 
@@ -880,7 +897,14 @@
         commandSeq: seq
       }
     })
-      .then(() => {
+      .then(result => {
+        // Wix may return an already-stored newer command instead of saving this
+        // word state. Treat that as a rejected write and retry with its sequence.
+        const storedSeq = Number(result?.command?.commandSeq ?? seq);
+        if (storedSeq !== seq) {
+          commandSeq = Math.max(commandSeq, storedSeq);
+          throw new Error("Word state superseded");
+        }
         setConnection("Judgement synced", "online");
       })
       .catch(() => {
@@ -896,7 +920,7 @@
         // If several taps happened during the request, they have already
         // collapsed into pendingAdminWordState. Send that ONE latest snapshot
         // immediately rather than replaying intermediate states.
-        if (pendingAdminWordState) {
+        if (pendingAdminWordState && !remoteControlCommandActive) {
           adminWordStateFlushTimer = window.setTimeout(flushPendingAdminWordState, 0);
         }
       });
@@ -1033,34 +1057,45 @@
         // but rapid ✓/×/Backspace never wait on this slower control-command path.
         await drainAdminWordState();
 
-        commandSeq += 1;
-        const seq = commandSeq;
+        // Letter taps must not overwrite a command before Presenter reads it.
+        // Hold any new full-word snapshot until this command is acknowledged.
+        remoteControlCommandActive = true;
+        try {
+          commandSeq += 1;
+          const seq = commandSeq;
 
-        await Cloud.writeState({
-          sessionCode: snapshotSessionCode,
-          role: "remote",
-          actorId: "main",
-          state: {
-            startedAt: new Date().toISOString(),
-            ...snapshotPresenter,
-            commandSeq: seq,
-            commandType,
-            value
+          const saved = await Cloud.writeState({
+            sessionCode: snapshotSessionCode,
+            role: "remote",
+            actorId: "main",
+            state: {
+              startedAt: new Date().toISOString(),
+              ...snapshotPresenter,
+              commandSeq: seq,
+              commandType,
+              value
+            }
+          });
+
+          const savedSeq = Number(saved?.command?.commandSeq ?? seq);
+          if (savedSeq !== seq) {
+            commandSeq = Math.max(commandSeq, savedSeq);
+            throw new Error("Command superseded before delivery.");
           }
-        });
 
-        const acknowledged = await waitForPresenterCommandAck(
-          seq,
-          commandType === "difficulty" ? "" : snapshotPresenter.wordToken
-        );
+          const acknowledged = await waitForPresenterCommandAck(
+            seq,
+            commandType === "difficulty" ? "" : snapshotPresenter.wordToken
+          );
+          if (!acknowledged) throw new Error("Presenter did not acknowledge command.");
 
-        if (!acknowledged) {
-          throw new Error("Presenter did not acknowledge command.");
+          setConnection("Command sent", "online");
+          window.setTimeout(refreshPresenterOnly, 20);
+          return true;
+        } finally {
+          remoteControlCommandActive = false;
+          if (pendingAdminWordState && !adminWordStateWriteBusy) flushPendingAdminWordState();
         }
-
-        setConnection("Command sent", "online");
-        window.setTimeout(refreshPresenterOnly, 20);
-        return true;
       })
       .catch(error => {
         setConnection("Command failed", "error");
@@ -1125,44 +1160,17 @@
   joinButton?.addEventListener("click", joinSession);
 
   function bindVerdictButton(button) {
-    let suppressSyntheticClickUntil = 0;
-
-    const activate = () => {
+    // Use the native click generated by touch, pen, mouse or keyboard. The
+    // old pointerdown + preventDefault path could interfere with Android taps
+    // and could mark letters even when the user intended to scroll the page.
+    // Each completed tap counts once, with no artificial cooldown.
+    button.addEventListener("click", () => {
       if (button.disabled) return;
       if (button.dataset.action === "undo") {
         undoJudgeMark();
-        return;
+      } else {
+        submitJudgeMark(button.dataset.verdict === "incorrect" ? "incorrect" : "correct");
       }
-      submitJudgeMark(button.dataset.verdict === "incorrect" ? "incorrect" : "correct");
-    };
-
-    const activateTouchLike = event => {
-      if (event?.cancelable) event.preventDefault();
-      suppressSyntheticClickUntil = performance.now() + 650;
-      activate();
-    };
-
-    if (window.PointerEvent) {
-      // Fire as soon as the finger/stylus goes down. There is deliberately no
-      // inter-press cooldown, so fast spelling cadence is accepted.
-      button.addEventListener("pointerdown", event => {
-        if (event.pointerType === "touch" || event.pointerType === "pen") {
-          activateTouchLike(event);
-        }
-      });
-    } else {
-      // Older iOS/WebKit fallback when Pointer Events are unavailable.
-      button.addEventListener("touchstart", activateTouchLike, { passive: false });
-    }
-
-    // Mouse and keyboard activation still use click. A touch-generated click
-    // is ignored without blocking the next real touch press.
-    button.addEventListener("click", event => {
-      if (performance.now() < suppressSyntheticClickUntil) {
-        event.preventDefault();
-        return;
-      }
-      activate();
     });
   }
 
