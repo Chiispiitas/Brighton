@@ -12,6 +12,45 @@ were created on the CMS server site on 2026-10-15 and verified ACTIVE:
 
 All are non-unique indexes; no records or existing indexes were removed.
 
+## Admin and Study sources
+
+Admin can start or resume a session without Study open. It writes source
+snapshots directly through the existing `presenter` role; no additional CMS
+collection, field, or backend deployment is required. `presenterStateJson`
+contains `sourceRole` (`admin` or `study`), the Admin device's `sourceId`, and a
+monotonic `sourceRevision`. Admin saves retain the word token, history, category,
+difficulty, marks and feedback when resuming. Taking over explicitly moves the
+source to the current Admin device and preserves the session code.
+
+The former Presenter page is now Study. When connected to an Admin-owned
+session it follows that source, disables word-changing controls and performs no
+source writes. Disconnected Study remains local practice; existing Study-hosted
+sessions continue accepting Admin commands. Admin offers an explicit takeover
+for those sessions. Other Admin devices must take over before controlling an
+Admin-owned source; this is a single-operator workflow, not a multi-writer lock.
+
+Direct Admin input uses the same paced latest-snapshot writer as other sources,
+without a command/acknowledgement round trip. Saved feedback means the source
+snapshot was confirmed by Wix. Navigation, category and difficulty changes
+always hide the new word and reset its marks. Admin also masks the pending
+spelling and word occurrences in definitions/examples while hidden. Grade
+groups (`4TH-5TH`, `6TH-7TH`, `JUNIOR`, `SENIOR`) are the available categories.
+
+Admin reads its own source only every six seconds to detect ownership changes
+or repair a stale source snapshot; it does not continuously fetch its own
+edits. Study follows an Admin source through the normal reader and same-device
+channel. An older Study page can briefly overwrite a source while taking over;
+Admin repairs that snapshot and refreshed Study pages become followers.
+
+Run `node --test "Spelling Bee/tests/session-engine.test.cjs"` for selection and
+revision rules, and `node "Spelling Bee/tests/admin-source-browser.cjs"` for
+independent Admin, three judges, connected Study, category/difficulty hiding,
+quota retry, public result publishing, resume and legacy session takeover.
+The browser test uses isolated contexts and the actual Velo handlers against a
+simulated CMS; it never changes live contest records.
+
+## Shared synchronization
+
 Each control view has one presenter reader; only Admin reads the judge
 collection after joining. Active presenter reads run roughly every 950 ms and
 quiet views ease to 2.8 seconds after 10 seconds without a word/input change.
@@ -35,7 +74,7 @@ backoff can extend these intervals. New Presenter words and command
 acknowledgements bypass local batching. Replicated Admin updates do not trigger
 an extra Presenter save before the command acknowledgement.
 
-Admin waits for the latest letter snapshot to be applied by Presenter before
+For Study-hosted sessions, Admin waits for the latest letter snapshot to be applied by Study before
 replacing the single CMS command row with visibility, feedback, or navigation.
 Snapshot failures retain the latest input and retry with a delay. HTTP 429 and
 Wix WDE0014 errors pause background traffic and honor Retry-After. Read and
@@ -49,8 +88,8 @@ The audience window subscribes only to its separate public broadcast session.
 Other devices, or browsers without BroadcastChannel, use the HTTP readers.
 
 Button hold/release feedback does not perform an action until a native click.
-Judge success means Wix saved the snapshot. Admin command success additionally
-requires the Presenter acknowledgement; changing words cannot acknowledge an
+Judge success means Wix saved the snapshot. Legacy Admin command success additionally
+requires the Study acknowledgement; changing words cannot acknowledge an
 unrelated old-word action. Audience publishing has its own saved/error feedback.
 
 Validation: `node --test "Spelling Bee/tests/cloud.test.cjs"` and

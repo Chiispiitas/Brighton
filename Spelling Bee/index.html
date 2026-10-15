@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <meta content="width=device-width, initial-scale=1" name="viewport">
 
-    <title>Spelling Bee Display - By Mr. David</title>
+    <title>Spelling Bee Study View</title>
     <meta content="Speller Things 2025 - Mr. David" name="description">
 
   <!-- Favicon -->
@@ -28,13 +28,13 @@
 
     <button class="session-tray-toggle" id="session-tray-toggle" type="button" aria-label="Open cloud session" aria-expanded="false">›</button>
     <aside class="session-tray" id="session-tray" aria-label="Cloud session">
-        <h2>Cloud Session</h2>
-        <p>Enter a numerical code to connect Presenter, Judge and Admin views.</p>
+        <h2>Study View</h2>
+        <p>Practice locally, or enter an Admin session code to follow its words and progress.</p>
         <div class="session-code-row">
             <input id="session-code-input" inputmode="numeric" autocomplete="off" placeholder="Session code" aria-label="Numerical session code">
             <button id="session-connect" type="button">Connect</button>
         </div>
-        <p class="session-status" id="session-status">Local presenter mode.</p>
+        <p class="session-status" id="session-status">Local Study mode.</p>
         <div class="session-tray-links">
             <a id="judge-view-link" href="judge.html">Judge View</a>
             <a id="admin-view-link" href="admin.html">Admin View</a>
@@ -105,9 +105,9 @@
     </div>
 
     <!-- JavaScript -->
-    <script src="js/main.js?v=20260918-longword1"></script>
+    <script src="js/main.js?v=20261015-admin7"></script>
     <script src="js/cloud.js?v=20261015-stress6"></script>
-    <script src="js/presenter-cloud.js?v=20261015-stress6"></script>
+    <script src="js/presenter-cloud.js?v=20261015-admin7"></script>
     <script>
         // Keep feedback sounds independent from the pronunciation volume slider.
         // Correct and wrong-answer effects always play at 45% volume.

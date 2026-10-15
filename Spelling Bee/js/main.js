@@ -279,11 +279,14 @@ function finalizeWordForFeedback(kind) {
 }
 
 function toggleWordMode() {
+    if (window.spellingStudyFollowing) return;
     hiddenMode = !hiddenMode;
     renderWord();
 }
 
 function setCurrentWord(w) {
+    hiddenMode = true;
+    elSecretWord?.classList.remove('visible');
     current = w;
     wordSequence += 1;
     elSecretWord.textContent = w;
@@ -503,7 +506,10 @@ function drawRandom() {
     setCurrentWord(pool[idx]);
 }
 
+let poolLoadGeneration = 0;
 async function changeDifficulty(level) {
+    const generation = ++poolLoadGeneration;
+    hiddenMode = true; renderWord();
     currentDifficulty = level;
 
     const selectedPool = elPoolSelect ? elPoolSelect.value : currentLevel;
@@ -517,6 +523,7 @@ async function changeDifficulty(level) {
 
     try {
         const words = await loadWordlist();
+        if (generation !== poolLoadGeneration || window.spellingStudyFollowing) return;
         const used = usedWordsByPool.get(currentPoolKey()) || new Set();
         pool = words.filter(word => !used.has(word));
 
@@ -531,6 +538,7 @@ async function changeDifficulty(level) {
         btnNext.disabled = false;
         drawRandom();
     } catch (err) {
+        if (generation !== poolLoadGeneration || window.spellingStudyFollowing) return;
         console.error(err);
         current = null;
         elWord.textContent = `Could not load ${WORDLIST_PATH}`;
@@ -543,7 +551,8 @@ async function changeDifficulty(level) {
    Keyboard Bindings
 ============================================== */
 function onKey(e) {
-    if (['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName)) return;
+    if (window.spellingStudyFollowing && e.code !== 'Space') { if (['o', 'O', 'p', 'P', 'n', 'N', 'Backspace'].includes(e.key)) e.preventDefault(); return; }
+    if (['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName)) return;
 
     if (e.key === 'o' || e.key === 'O') {
         e.preventDefault();
@@ -633,6 +642,7 @@ if (document.fonts?.ready) {
 (async function init() {
     try {
         const words = await loadWordlist();
+        if (window.spellingStudyFollowing) return;
         currentLevel = elPoolSelect ? elPoolSelect.value : currentLevel;
         const used = usedWordsByPool.get(currentPoolKey()) || new Set();
         pool = words.filter(word => !used.has(word));

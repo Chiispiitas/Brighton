@@ -4,6 +4,7 @@
   const Cloud = window.SpellingCloud;
   if (!Cloud) return;
 
+  let source = null, lastSourceProbe = 0, lastConfirmedFeedback = "";
   const role = document.body.dataset.role === "remote" ? "remote" : "judge";
   const canJudge = role === "judge" || role === "remote";
   const joinGate = document.getElementById("join-gate");
@@ -332,7 +333,7 @@
     if (!word) return;
     // Presenter polls arrive frequently. Keep letter DOM and text sizing
     // stable between actual edits, especially while a phone is being tapped.
-    const key = JSON.stringify([presenter?.wordToken, presenter?.word, judgePointer, judgeMarks]);
+    const key = JSON.stringify([presenter?.wordToken, presenter?.word, judgePointer, judgeMarks, presenter?.hiddenMode]);
     if (key === renderedJudgeWordKey) return;
     renderedJudgeWordKey = key;
     const letters = Array.from(String(presenter?.word || ""));
@@ -345,10 +346,12 @@
       if (mark === "correct") span.classList.add("correct");
       if (mark === "incorrect") span.classList.add("incorrect");
       if (index === judgePointer) span.classList.add("active");
-      span.textContent = char;
+      span.textContent = role === "remote" && presenter?.hiddenMode !== false && mark === "pending" && /[A-Za-z]/.test(char) ? "•" : char;
       frag.appendChild(span);
     });
 
+    word.dataset.sequence = String(presenter?.wordSequence || 0);
+    word.dataset.mode = role === "remote" && presenter?.hiddenMode !== false ? "hidden" : "normal";
     word.replaceChildren(frag);
     scheduleWordFit();
   }
@@ -367,7 +370,7 @@
     const level = presenter.level || "4TH-5TH";
     const difficulty = presenter.difficulty || "easy";
     const currentWord = presenter.word || "";
-    const key = `${level}|${difficulty}|${currentWord.toLowerCase()}`;
+    const key = `${level}|${difficulty}|${currentWord.toLowerCase()}|${role === "remote" ? presenter.hiddenMode : "judge"}`;
 
     if (key === wordInfoKey) return;
     wordInfoKey = key;
@@ -381,8 +384,9 @@
       if (wordInfoKey !== key) return;
 
       ipaValue.textContent = info?.ipa || "—";
-      definitionValue.textContent = info?.definition || "No definition available.";
-      exampleValue.textContent = info?.example || "No example sentence available.";
+      const visibleInfo = value => role === "remote" && presenter.hiddenMode !== false && window.BeeScreen ? window.BeeScreen.maskWord(value, currentWord) : value;
+      definitionValue.textContent = visibleInfo(info?.definition || "No definition available.");
+      exampleValue.textContent = visibleInfo(info?.example || "No example sentence available.");
     } catch (error) {
       if (wordInfoKey !== key) return;
       ipaValue.textContent = "—";
@@ -395,7 +399,7 @@
     if (!presenter) {
       renderedJudgeWordKey = "";
       if (word) word.textContent = "—";
-      if (wordMeta) wordMeta.textContent = "Waiting for presenter";
+      if (wordMeta) wordMeta.textContent = "Waiting for a session";
       return;
     }
 
@@ -421,6 +425,15 @@
     if (difficultyPill) difficultyPill.textContent = String(presenter.difficulty || "easy").toUpperCase();
 
     if (role === "remote") {
+      const category = document.getElementById("admin-category");
+      if (category) category.value = presenter.level || "4TH-5TH";
+      const owns = Boolean(source?.active && source.code === sessionCode);
+      const status = document.getElementById("source-status");
+      if (status) status.textContent = owns ? `Admin is running session ${sessionCode}` : presenter.sourceRole === "admin" ? `Session ${sessionCode} is running in another Admin view` : `Connected to Study session ${sessionCode}`;
+      const takeover = document.getElementById("admin-take-source");
+      if (takeover) takeover.hidden = owns;
+      const studyLink = document.getElementById("admin-study-link");
+      if (studyLink) studyLink.href = `index.html?session=${encodeURIComponent(sessionCode)}`;
       const visibilityButton = document.getElementById("word-visibility-button");
       if (visibilityButton) {
         const hidden = presenter.hiddenMode !== false;
@@ -436,13 +449,19 @@
     if (canJudge) {
       const finished = judgePointer >= Array.from(String(presenter.word || "")).length;
       document.querySelectorAll(".verdict-button[data-verdict]").forEach(button => {
-        button.disabled = finished;
+        button.disabled = finished || (role === "remote" && presenter.sourceRole === "admin" && !source?.active);
       });
 
       const undoButton = document.getElementById("undo-letter-button");
-      if (undoButton) undoButton.disabled = !canUndoJudgeMark();
+      if (undoButton) undoButton.disabled = !canUndoJudgeMark() || (role === "remote" && presenter.sourceRole === "admin" && !source?.active);
     }
 
+    if (role === "remote") {
+      const locked = presenter.sourceRole === "admin" && !source?.active;
+      document.querySelectorAll("#new-word-button,#replay-audio-button,#word-visibility-button,#admin-category,[data-difficulty],#presenter-correct,#presenter-incorrect").forEach(control => {
+        if (locked || control.dataset.sourceLocked === "true") { control.disabled = locked; control.dataset.sourceLocked = String(locked); }
+      });
+    }
     renderWordInfo();
   }
 
@@ -513,7 +532,8 @@
         if (mark === "correct") classes.push("correct");
         if (mark === "incorrect") classes.push("incorrect");
         if (letterIndex === pointer && vote.verdict === "pending") classes.push("active");
-        return `<span class="${classes.join(" ")}">${escapeHtml(char)}</span>`;
+        const display = presenter?.hiddenMode !== false && mark === "pending" && /[A-Za-z]/.test(char) ? "•" : char;
+        return `<span class="${classes.join(" ")}">${escapeHtml(display)}</span>`;
       }).join("");
 
       return `
@@ -592,6 +612,8 @@
     // Mobile network requests can finish out of order. Do not rewind to a
     // stale Presenter word and erase the Admin's current letter progress.
     // Both timestamps are assigned by the same Wix backend.
+    if (presenter?.sourceRole === "admin" && nextPresenter.sourceRole === "admin" && presenter.sourceId === nextPresenter.sourceId &&
+        Number(nextPresenter.sourceRevision || 0) < Number(presenter.sourceRevision || 0)) return false;
     const previousUpdated = Date.parse(presenter?.updatedAt || "");
     const incomingUpdated = Date.parse(nextPresenter.updatedAt || "");
     if (Number.isFinite(previousUpdated) && Number.isFinite(incomingUpdated) && incomingUpdated < previousUpdated) {
@@ -627,6 +649,7 @@
     }
 
     if (role === "remote" && tokenChanged) {
+      poolModal?.classList.add("hidden");
       // A new word is a hard state boundary. Nothing queued for the previous
       // word is allowed to seed marks/pointer/verdict into the new word.
       pendingAdminWordState = null;
@@ -736,11 +759,12 @@
       if (registeredJudgeSession !== sessionCode) publishJudgeState({ increment: true });
     }
     renderPresenterState();
-    setConnection(Cloud.isFresh(presenter, 75000) ? "Presenter online" : "Presenter stale", Cloud.isFresh(presenter, 75000) ? "online" : "stale");
+    setConnection(Cloud.isFresh(presenter, 75000) ? (presenter.sourceRole === "admin" ? "Admin online" : "Study online") : "Session stale", Cloud.isFresh(presenter, 75000) ? "online" : "stale");
   }
 
   async function refreshPresenterOnly() {
     if (!sessionCode || presenterSyncBusy) return;
+    if (role === "remote" && source?.active && Date.now() - lastSourceProbe < 6000) return;
     presenterSyncBusy = true;
 
     try {
@@ -749,7 +773,15 @@
         ? await Cloud.fetchPresenter(sessionCode)
         : Cloud.presenterState(await Cloud.fetchRows(sessionCode));
       if (!nextPresenter || requestedCode !== sessionCode) return;
-
+      if (role === "remote" && source?.active) {
+        lastSourceProbe = Date.now();
+        if (nextPresenter.sourceRole !== "admin") { source.commit(true); return; }
+        if (!source.owns(nextPresenter)) { source.stop(); setConnection("Session moved to another Admin", "stale"); }
+        else {
+          if (Number(nextPresenter.sourceRevision || 0) < Number(source.savedRevision || 0) && !source.busy && !source.pending) source.commit(true);
+          return;
+        }
+      }
       receivePresenter(nextPresenter);
     } catch {
       setConnection("Presenter connection interrupted", "error");
@@ -800,7 +832,13 @@
 
   function receiveCloudChange(change) {
     if (change.sessionCode !== sessionCode) return;
-    if (change.role === "presenter" && change.state && !change.state.screenBroadcast) receivePresenter(change.state);
+    if (change.role === "presenter" && change.state && !change.state.screenBroadcast) {
+      if (source?.active && !source.owns(change.state)) {
+        if (change.state.sourceRole !== "admin") { source.commit(true); return; }
+        source.stop();
+      }
+      receivePresenter(change.state);
+    }
     if (change.role === "judge" && role === "remote" && change.state) {
       judgeRows = judgeRows.filter(row => row.actorId !== change.state.actorId);
       judgeRows.push(change.state);
@@ -830,8 +868,12 @@
     joinButton.disabled = true;
     try {
       const rows = await Cloud.fetchRows(code, { command: role === "remote" });
-      const found = Cloud.presenterState(rows);
-      if (!found) throw new Error("No presenter is using that code.");
+      let found = Cloud.presenterState(rows);
+      if (!found) throw new Error(role === "remote" ? "No session found. Use Start / resume from Admin to create it." : "No session is using that code.");
+      if (role === "remote" && source) {
+        if (source.active && source.code !== code) source.stop();
+        if (source.owns(found) && !source.active) found = await source.start(code, found);
+      }
 
       unsubscribeCloud();
       sessionCode = code;
@@ -840,6 +882,7 @@
       lastJudgeSavedAt = 0; judgeNextWriteAt = 0;
       adminAcks.length = 0; inputTickets.clear(); adminRetryAt = 0; adminRetryDelay = 0;
       presenter = found;
+      if (role === "remote") lastConfirmedFeedback = found.feedback?.id || "";
 
       if (role === "judge") {
         const mine = Cloud.roleStates(rows, "judge").find(state => state.actorId === normalizedJudgeActorId);
@@ -860,7 +903,7 @@
       renderPresenterState();
       renderJudgeAggregate(rows);
       setConnection(
-        Cloud.isFresh(presenter, 75000) ? "Presenter online" : "Presenter stale",
+        Cloud.isFresh(presenter, 75000) ? (presenter.sourceRole === "admin" ? "Admin online" : "Study online") : "Session stale",
         Cloud.isFresh(presenter, 75000) ? "online" : "stale"
       );
 
@@ -1032,6 +1075,12 @@
 
   function queueAdminWordState() {
     if (role !== "remote" || !sessionCode || !presenter?.wordToken) return;
+    if (source?.active) {
+      const complete = judgePointer >= Array.from(presenter.word || "").length;
+      if (complete && source.state.pointer < Array.from(presenter.word || "").length) playSourceResult(judgeVerdict === "incorrect" ? "incorrect" : "correct");
+      source.letters({ ...adminWordStateSnapshot().wordState, inputRevision });
+      return;
+    }
 
     // Always replace the unsent snapshot with the newest complete word state.
     pendingAdminWordState = adminWordStateSnapshot();
@@ -1042,6 +1091,7 @@
   }
 
   async function submitJudgeMark(mark, button) {
+    if (role === "remote" && presenter?.sourceRole === "admin" && !source?.active) return;
     if (!canJudge || !sessionCode || !presenter?.wordToken || judgeWordToken !== presenter.wordToken) return;
 
     const letters = Array.from(String(presenter.word || ""));
@@ -1069,6 +1119,7 @@
   }
 
   async function undoJudgeMark(button) {
+    if (role === "remote" && presenter?.sourceRole === "admin" && !source?.active) return;
     if (!canJudge || !sessionCode || !presenter?.wordToken || judgeWordToken !== presenter.wordToken) return;
 
     const previousIndex = previousReviewedIndex();
@@ -1109,6 +1160,11 @@
 
   function sendRemoteCommand(commandType, value = "", button) {
     if (role !== "remote" || !sessionCode || !presenter) return Promise.resolve(false);
+    if (source?.active) return runSourceAction(commandType, value, button);
+    if (presenter.sourceRole === "admin") {
+      Feedback?.set(button, "error", "Run this session from this Admin to change words.");
+      return Promise.resolve(false);
+    }
 
     if (button) { button.disabled = true; Feedback?.set(button, "saving", "Sending…"); }
     const snapshotSessionCode = sessionCode;
@@ -1155,7 +1211,7 @@
 
           const acknowledged = await waitForPresenterCommandAck(
             seq,
-            ["difficulty", "new-word"].includes(commandType) ? "" : snapshotPresenter.wordToken
+            ["difficulty", "category", "new-word"].includes(commandType) ? "" : snapshotPresenter.wordToken
           );
           if (!acknowledged) throw new Error("Presenter did not acknowledge command.");
 
@@ -1178,7 +1234,7 @@
 
     const operation = commandPublishChain;
     operation.then(ok => {
-      if (button) { button.disabled = false; Feedback?.set(button, ok ? "saved" : "error", ok ? "Applied on presenter" : "Not confirmed · check presenter before retrying"); }
+      if (button) { button.disabled = false; Feedback?.set(button, ok ? "saved" : "error", ok ? "Applied in Study" : "Not confirmed · check the session before retrying"); }
     });
     return operation;
   }
@@ -1215,6 +1271,67 @@
       '"': "&quot;"
     }[char]));
   }
+
+  function playSourceResult(verdict) {
+    const audio = document.getElementById(`admin-${verdict}-audio`);
+    if (audio) { audio.volume = .45; audio.currentTime = 0; audio.play().catch(() => {}); }
+    word?.animate?.([{ opacity: .5 }, { opacity: 1 }], { duration: 500 });
+  }
+  async function runSourceAction(type, value, button) {
+    if (button) { button.disabled = true; Feedback?.set(button, "saving", "Saving…"); }
+    try {
+      if (type === "play-audio") {
+        const audio = document.getElementById("admin-word-audio");
+        audio.src = `audio/${String(presenter.word).trim().toLowerCase().replace(/\s+/g, "-")}.mp3`;
+        audio.playbackRate = 1; audio.currentTime = 0; await audio.play();
+      } else {
+        if (type === "feedback") playSourceResult(value);
+        await source.run(type, value);
+      }
+      Feedback?.set(button, "saved", type === "play-audio" ? "Playing pronunciation" : "Saved · Admin session");
+      return true;
+    } catch (error) {
+      Feedback?.set(button, "error", error.message || "Not saved · retrying");
+      renderPresenterState(); return false;
+    } finally { if (button) button.disabled = false; }
+  }
+
+  if (role === "remote" && window.BeeAdminSource) {
+    source = new window.BeeAdminSource({
+      onState(state) { if (sessionCode === source.code) receivePresenter(state); },
+      onSaved(state) {
+        if (sessionCode !== source.code) return;
+        inputFinished(Number(state.lastAdminInputRevision || 0), state.wordToken, "saved", "Saved · Admin session");
+        if (state.feedback?.id && state.feedback.id !== lastConfirmedFeedback && state.feedback.wordToken === state.wordToken) {
+          lastConfirmedFeedback = state.feedback.id;
+          window.dispatchEvent(new CustomEvent("spelling-feedback-confirmed", { detail: { sessionCode, wordToken: state.wordToken, word: state.word, verdict: state.feedback.verdict } }));
+        }
+        setConnection("Admin session saved", "online");
+      },
+      onError() { inputFinished(inputRevision, currentToken(), "error", "Not saved · retrying"); setConnection("Admin sync retrying", "error"); }
+    });
+  }
+  window.getSpellingWordSnapshot = async code => {
+    if (source?.active && source.code === code) { await source.saved(source.state.sourceRevision); return window.BeeSession.copy(source.state); }
+    return Cloud.fetchPresenter(code);
+  };
+  async function startAdminSession() {
+    if (!source) return;
+    const start = document.getElementById("start-admin-session"), takeover = document.getElementById("admin-take-source");
+    const code = cleanCodeInput() || String(window.crypto.getRandomValues(new Uint32Array(1))[0] % 900000 + 100000);
+    codeInput.value = code; start.disabled = true; joinButton.disabled = true; if (takeover) takeover.disabled = true;
+    setJoinStatus("Starting Admin session…");
+    try {
+      const previous = await Cloud.fetchPresenter(code);
+      if (previous?.screenBroadcast) throw new Error("That code belongs to an audience screen. Choose a different code.");
+      await source.start(code, previous);
+      await joinSession();
+    } catch (error) { source.stop(); setJoinStatus(error.message, true); setConnection("Session not confirmed", "error"); }
+    finally { start.disabled = false; joinButton.disabled = false; if (takeover) takeover.disabled = false; }
+  }
+  document.getElementById("start-admin-session")?.addEventListener("click", startAdminSession);
+  document.getElementById("admin-take-source")?.addEventListener("click", startAdminSession);
+  document.getElementById("admin-category")?.addEventListener("change", event => sendRemoteCommand("category", event.currentTarget.value, event.currentTarget));
 
   if (judgeNameInput && judgeName) judgeNameInput.value = judgeName;
 
@@ -1256,7 +1373,7 @@
 
   window.addEventListener("keydown", event => {
     if (event.target.closest?.("#screen-director")) return;
-    if (!canJudge || ["INPUT", "TEXTAREA"].includes(document.activeElement?.tagName)) return;
+    if (!canJudge || ["INPUT", "TEXTAREA", "SELECT"].includes(document.activeElement?.tagName)) return;
     if (event.key === "o" || event.key === "O") {
       event.preventDefault();
       submitJudgeMark("correct");
