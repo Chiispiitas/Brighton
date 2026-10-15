@@ -32,8 +32,10 @@ Admin-owned source; this is a single-operator workflow, not a multi-writer lock.
 Direct Admin input uses the same paced latest-snapshot writer as other sources,
 without a command/acknowledgement round trip. Saved feedback means the source
 snapshot was confirmed by Wix. Navigation, category and difficulty changes
-always hide the new word and reset its marks. Admin also masks the pending
-spelling and word occurrences in definitions/examples while hidden. Grade
+always hide the new word in Study and reset its marks. Admin always shows the
+full spelling, judge cards and word information regardless of that setting;
+its visibility control is labeled Reveal/Hide in Study. Admin has no audio
+elements, pronunciation control or result sounds. Grade
 groups (`4TH-5TH`, `6TH-7TH`, `JUNIOR`, `SENIOR`) are the available categories.
 
 Admin reads its own source only every six seconds to detect ownership changes
