@@ -60,6 +60,7 @@ const server = http.createServer((req, res) => {
   assert.equal(await admin.locator('#roster-rows tr').count(), 17);
   await admin.locator('#lives-set-all').click();
   await admin.locator('#screen-show-lives').check();
+  await admin.locator('#screen-auto').uncheck(); // Inspect the first page independently of rotation timing.
   await admin.locator('#roster-rows .roster-lives').nth(0).fill('0');
   await admin.locator('#roster-rows .roster-lives').nth(0).dispatchEvent('change');
   await admin.locator('#roster-rows .roster-lives').nth(1).fill('1');

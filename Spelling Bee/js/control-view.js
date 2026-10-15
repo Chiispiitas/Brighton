@@ -32,7 +32,7 @@
     : Cloud.getDeviceId("brighton-spelling-admin-judge-device");
   const normalizedJudgeActorId = String(judgeActorId).toLowerCase().replace(/[^a-z0-9_-]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 48);
 
-  let sessionCode = "";
+  let sessionCode = "", unsubscribeCloud = () => {};
   let presenter = null;
   let pollTimer = null;
   let presenterSyncTimer = null;
@@ -42,7 +42,24 @@
   let voteSeq = 0;
   let commandSeq = 0;
   let busy = false;
-  let judgePublishChain = Promise.resolve();
+  let pendingJudgeSnapshot = null, judgeWriteBusy = false, judgeWriteTimer = null;
+  let inputRevision = 0, adminRetryAt = 0, adminRetryDelay = 0, waitingForAck = 0;
+  const inputTickets = new Map(), adminAcks = [];
+  let judgeRows = [];
+  const Feedback = window.BeeButtons;
+  function inputStarted(button) {
+    inputRevision += 1;
+    if (button) inputTickets.set(button, { revision: inputRevision, token: currentToken(), session: sessionCode });
+    Feedback?.set(button, "saving", "Saving…");
+  }
+  function inputFinished(revision, token, state, message) {
+    for (const [button, ticket] of inputTickets) {
+      if (ticket.session === sessionCode && ticket.token === token && ticket.revision <= revision) {
+        Feedback?.set(button, state, message, ticket.revision === inputRevision);
+        if (state === "saved") inputTickets.delete(button);
+      }
+    }
+  }
   let commandPublishChain = Promise.resolve();
   let remoteControlCommandActive = false;
   let pendingAdminWordState = null;
@@ -428,7 +445,7 @@
   function parseJudgeStates(rows) {
     return Cloud.roleStates(rows, "judge")
       .filter(state => state.wordToken && state.wordToken === currentToken())
-      .filter(state => Cloud.isFresh(state, 8000));
+      .filter(state => Cloud.isFresh(state, 45000));
   }
 
   function renderJudgeAggregate(rows) {
@@ -579,6 +596,20 @@
       previousWord !== nextWord;
 
     presenter = nextPresenter;
+    for (let i = adminAcks.length - 1; i >= 0; i--) {
+      const ack = adminAcks[i];
+      if (Number(nextPresenter.lastCommandSeq || 0) >= ack.seq) {
+        if (nextPresenter.wordToken === ack.token) inputFinished(ack.revision, ack.token, "saved", "Applied on presenter");
+        adminAcks.splice(i, 1);
+      }
+    }
+    if (tokenChanged) {
+      document.querySelectorAll(".verdict-button[data-sync]").forEach(button => Feedback?.set(button, "", "New word · ready", false));
+      Feedback?.set(null, "", "New word · ready");
+      for (const [button, ticket] of inputTickets) {
+        if (ticket.token !== nextToken) { Feedback?.set(button, "", "Word changed"); inputTickets.delete(button); }
+      }
+    }
 
     if (role === "remote" && tokenChanged) {
       // A new word is a hard state boundary. Nothing queued for the previous
@@ -609,8 +640,8 @@
 
     if (increment) voteSeq += 1;
 
-    // Capture exactly what the Judge saw when this write was queued. Sending
-    // through one chain prevents fast ✓/× presses from reaching Wix out of order.
+    // Replace unsent progress with one complete snapshot. One writer preserves
+    // order while rapid taps stay immediate locally.
     const snapshotSessionCode = sessionCode;
     const snapshot = {
       startedAt: judgeStartedAt || new Date().toISOString(),
@@ -629,19 +660,46 @@
       judgementUpdatedAt
     };
 
-    judgePublishChain = judgePublishChain
-      .catch(() => {})
-      .then(() => Cloud.writeState({
-        sessionCode: snapshotSessionCode,
-        role: "judge",
-        actorId: judgeActorId,
-        state: snapshot
-      }))
-      .catch(error => {
-        setConnection("Judge sync failed", "error");
-      });
+    pendingJudgeSnapshot = { code: snapshotSessionCode, state: snapshot, revision: inputRevision };
+    if (!judgeWriteBusy && !judgeWriteTimer) judgeWriteTimer = window.setTimeout(flushJudgeSnapshot, 90);
+    return Promise.resolve();
+  }
 
-    return judgePublishChain;
+  async function flushJudgeSnapshot() {
+    judgeWriteTimer = null;
+    if (judgeWriteBusy || !pendingJudgeSnapshot) return;
+    const pending = pendingJudgeSnapshot;
+    pendingJudgeSnapshot = null;
+    if (pending.code !== sessionCode || pending.state.wordToken !== currentToken()) return;
+    judgeWriteBusy = true;
+    let delay = 120;
+    try {
+      await Cloud.writeState({ sessionCode: pending.code, role: "judge", actorId: judgeActorId, state: pending.state });
+      if (role === "judge" && pending.code === sessionCode) inputFinished(pending.revision, pending.state.wordToken, "saved", "Saved");
+    } catch {
+      if (pending.code === sessionCode && pending.state.wordToken === currentToken()) {
+        if (!pendingJudgeSnapshot) pendingJudgeSnapshot = pending;
+        inputFinished(pending.revision, pending.state.wordToken, "error", "Not saved · retrying");
+      }
+      delay = Cloud.retryDelay();
+      setConnection("Judge sync retrying", "error");
+    } finally {
+      judgeWriteBusy = false;
+      if (pendingJudgeSnapshot) judgeWriteTimer = window.setTimeout(flushJudgeSnapshot, delay);
+    }
+  }
+
+  function receivePresenter(nextPresenter) {
+    const tokenChanged = installPresenterSnapshot(nextPresenter);
+    if (role === "remote") {
+      const changed = tokenChanged ? Boolean(presenter.wordToken) : syncAdminJudgeFromPresenter();
+      if (changed) publishJudgeState({ increment: true });
+    } else if (tokenChanged || judgeWordToken !== currentToken()) {
+      resetJudgeWord();
+      publishJudgeState({ increment: true });
+    }
+    renderPresenterState();
+    setConnection(Cloud.isFresh(presenter, 45000) ? "Presenter online" : "Presenter stale", Cloud.isFresh(presenter, 45000) ? "online" : "stale");
   }
 
   async function refreshPresenterOnly() {
@@ -649,30 +707,15 @@
     presenterSyncBusy = true;
 
     try {
+      const requestedCode = sessionCode;
       const nextPresenter = typeof Cloud.fetchPresenter === "function"
         ? await Cloud.fetchPresenter(sessionCode)
         : Cloud.presenterState(await Cloud.fetchRows(sessionCode));
-      if (!nextPresenter) return;
+      if (!nextPresenter || requestedCode !== sessionCode) return;
 
-      const tokenChanged = installPresenterSnapshot(nextPresenter);
-
-      if (role === "remote") {
-        const changed = tokenChanged
-          ? Boolean(presenter.wordToken)
-          : syncAdminJudgeFromPresenter();
-
-        renderPresenterState();
-        if (changed) publishJudgeState({ increment: true });
-      } else {
-        renderPresenterState();
-      }
-
-      setConnection(
-        Cloud.isFresh(presenter, 9000) ? "Presenter online" : "Presenter stale",
-        Cloud.isFresh(presenter, 9000) ? "online" : "stale"
-      );
+      receivePresenter(nextPresenter);
     } catch {
-      // Full refresh handles connection errors. Keep this fast path quiet.
+      setConnection("Presenter connection interrupted", "error");
     } finally {
       presenterSyncBusy = false;
     }
@@ -692,10 +735,10 @@
       if (!presenterSyncLoopActive || !sessionCode) return;
       await refreshPresenterOnly();
 
-      // No fixed-interval dead time: as soon as one lightweight Presenter GET
-      // finishes, start the next one almost immediately.
+      // One presenter reader per page. Command acknowledgements temporarily
+      // get priority; background reads never overlap this request.
       if (presenterSyncLoopActive && sessionCode) {
-        presenterSyncTimer = window.setTimeout(tick, document.hidden ? 600 : 90);
+        presenterSyncTimer = window.setTimeout(tick, Cloud.pollDelay(waitingForAck ? 250 : (document.hidden ? 2200 : 950)));
       }
     };
 
@@ -703,59 +746,23 @@
   }
 
   async function refresh() {
-    if (!sessionCode || busy) return;
+    if (role !== "remote" || !sessionCode || busy) return;
     busy = true;
-    let needsJudgeInit = false;
-
     try {
-      const rows = await Cloud.fetchRows(sessionCode);
-      const nextPresenter = Cloud.presenterState(rows);
-      if (!nextPresenter) {
-        setConnection("Presenter not found", "error");
-        return;
-      }
+      judgeRows = await Cloud.fetchJudges(sessionCode);
+      renderJudgeAggregate(judgeRows);
+    } catch { setConnection("Judge updates unavailable", "error"); }
+    finally { busy = false; }
+  }
 
-      const tokenChanged = installPresenterSnapshot(nextPresenter);
-
-      setConnection(
-        Cloud.isFresh(presenter, 9000) ? "Presenter online" : "Presenter stale",
-        Cloud.isFresh(presenter, 9000) ? "online" : "stale"
-      );
-
-      if (role === "judge") {
-        const mine = Cloud.roleStates(rows, "judge").find(state => state.actorId === normalizedJudgeActorId);
-
-        if (tokenChanged) {
-          resetJudgeWord();
-          needsJudgeInit = Boolean(presenter.wordToken);
-        } else if (mine) {
-          hydrateJudgeState(mine);
-        } else if (judgeWordToken !== currentToken()) {
-          resetJudgeWord();
-          needsJudgeInit = Boolean(presenter.wordToken);
-        }
-      } else if (role === "remote") {
-        if (tokenChanged) {
-          needsJudgeInit = Boolean(presenter.wordToken);
-        } else if (syncAdminJudgeFromPresenter()) {
-          needsJudgeInit = true;
-        }
-      }
-
-      if (role === "remote") {
-        const remote = Cloud.latestRoleState(rows, "remote");
-        commandSeq = Math.max(commandSeq, Number(remote?.commandSeq || 0));
-      }
-
-      renderPresenterState();
-      renderJudgeAggregate(rows);
-    } catch (error) {
-      setConnection("Cloud unavailable", "error");
-    } finally {
-      busy = false;
+  function receiveCloudChange(change) {
+    if (change.sessionCode !== sessionCode) return;
+    if (change.role === "presenter" && change.state && !change.state.screenBroadcast) receivePresenter(change.state);
+    if (change.role === "judge" && role === "remote" && change.state) {
+      judgeRows = judgeRows.filter(row => row.actorId !== change.state.actorId);
+      judgeRows.push(change.state);
+      renderJudgeAggregate(judgeRows);
     }
-
-    if (needsJudgeInit) publishJudgeState({ increment: true });
   }
 
   async function joinSession() {
@@ -779,11 +786,15 @@
     setJoinStatus("Checking session…");
     joinButton.disabled = true;
     try {
-      const rows = await Cloud.fetchRows(code);
+      const rows = await Cloud.fetchRows(code, { command: role === "remote" });
       const found = Cloud.presenterState(rows);
       if (!found) throw new Error("No presenter is using that code.");
 
+      unsubscribeCloud();
       sessionCode = code;
+      unsubscribeCloud = Cloud.subscribe(code, receiveCloudChange);
+      pendingAdminWordState = null; pendingJudgeSnapshot = null;
+      adminAcks.length = 0; inputTickets.clear(); adminRetryAt = 0; adminRetryDelay = 0;
       presenter = found;
 
       if (role === "judge") {
@@ -805,22 +816,26 @@
       renderPresenterState();
       renderJudgeAggregate(rows);
       setConnection(
-        Cloud.isFresh(presenter, 9000) ? "Presenter online" : "Presenter stale",
-        Cloud.isFresh(presenter, 9000) ? "online" : "stale"
+        Cloud.isFresh(presenter, 45000) ? "Presenter online" : "Presenter stale",
+        Cloud.isFresh(presenter, 45000) ? "online" : "stale"
       );
 
-      window.clearInterval(pollTimer);
+      window.clearTimeout(pollTimer);
       stopPresenterSyncLoop();
 
-      // Full refresh still handles judges/consensus. The Presenter state itself
-      // uses a continuous lightweight loop for much lower latency.
-      pollTimer = window.setInterval(refresh, 1100);
+      judgeRows = Cloud.roleStates(rows, "judge");
+      // Judges only need the presenter. Only Admin reads the judge collection.
+      const aggregateTick = async () => {
+        await refresh();
+        if (role === "remote") pollTimer = window.setTimeout(aggregateTick, Cloud.pollDelay(1800));
+      };
+      if (role === "remote") pollTimer = window.setTimeout(aggregateTick, 1800);
       startPresenterSyncLoop();
 
       if (canJudge) {
         await publishJudgeState({ increment: true });
         window.clearInterval(judgeHeartbeatTimer);
-        judgeHeartbeatTimer = window.setInterval(() => publishJudgeState(), 3000);
+        judgeHeartbeatTimer = window.setInterval(() => publishJudgeState(), 20000);
       }
     } catch (error) {
       setJoinStatus(error.message || "Session not found.", true);
@@ -835,7 +850,7 @@
     adminJudgePublishTimer = window.setTimeout(() => {
       adminJudgePublishTimer = null;
       publishJudgeState({ increment: true });
-    }, 40);
+    }, 900);
   }
 
   function adminWordStateSnapshot() {
@@ -847,6 +862,7 @@
       wordToken: presenter?.wordToken || "",
       wordSequence: Number(presenter?.wordSequence || 0),
       commandType: "word-state",
+      inputRevision,
       value: "",
       wordState: {
         pointer: judgePointer,
@@ -873,13 +889,18 @@
       return adminWordStateWritePromise;
     }
 
+    if (Date.now() < adminRetryAt) {
+      adminWordStateFlushTimer = window.setTimeout(flushPendingAdminWordState, adminRetryAt - Date.now());
+      return adminWordStateWritePromise;
+    }
     const snapshot = pendingAdminWordState;
+    const revision = snapshot.inputRevision;
     pendingAdminWordState = null;
 
     // Never send an old word snapshot after Presenter has already moved on.
     if (!presenter?.wordToken || snapshot.wordToken !== presenter.wordToken) {
       if (pendingAdminWordState) {
-        adminWordStateFlushTimer = window.setTimeout(flushPendingAdminWordState, 0);
+        adminWordStateFlushTimer = window.setTimeout(flushPendingAdminWordState, Math.max(100, adminRetryAt - Date.now()));
       }
       return adminWordStateWritePromise;
     }
@@ -906,13 +927,20 @@
           commandSeq = Math.max(commandSeq, storedSeq);
           throw new Error("Word state superseded");
         }
-        setConnection("Judgement synced", "online");
+        adminRetryAt = 0; adminRetryDelay = 0;
+        adminAcks.push({ seq, revision, token: snapshot.wordToken });
+        inputFinished(revision, snapshot.wordToken, "saving", "Saved · waiting for presenter");
+        if (Number(presenter?.lastCommandSeq || 0) >= seq) installPresenterSnapshot(presenter);
+        setConnection("Judgement saved", "online");
       })
       .catch(() => {
         // Retry only if there is not already a newer local state waiting.
         if (!pendingAdminWordState && presenter?.wordToken === snapshot.wordToken) {
           pendingAdminWordState = adminWordStateSnapshot();
         }
+        adminRetryDelay = Math.min(30000, Math.max(Cloud.retryDelay(), adminRetryDelay * 2));
+        adminRetryAt = Date.now() + adminRetryDelay;
+        inputFinished(revision, snapshot.wordToken, "error", "Not saved · retrying");
         setConnection("Sync retrying", "error");
       })
       .finally(() => {
@@ -922,7 +950,7 @@
         // collapsed into pendingAdminWordState. Send that ONE latest snapshot
         // immediately rather than replaying intermediate states.
         if (pendingAdminWordState && !remoteControlCommandActive) {
-          adminWordStateFlushTimer = window.setTimeout(flushPendingAdminWordState, 0);
+          adminWordStateFlushTimer = window.setTimeout(flushPendingAdminWordState, Math.max(100, adminRetryAt - Date.now()));
         }
       });
 
@@ -931,12 +959,14 @@
 
   async function drainAdminWordState() {
     // Used only before non-judgement commands where ordering matters.
+    const deadline = Date.now() + 12000;
     while (adminWordStateWriteBusy || pendingAdminWordState) {
+      if (Date.now() > deadline) throw new Error("Judgement is still saving. Please wait before sending another command.");
       if (!adminWordStateWriteBusy && pendingAdminWordState) {
         flushPendingAdminWordState();
       }
       await adminWordStateWritePromise.catch(() => {});
-      if (pendingAdminWordState) await Promise.resolve();
+      if (pendingAdminWordState) await new Promise(resolve => window.setTimeout(resolve, 100));
     }
   }
 
@@ -947,16 +977,17 @@
     pendingAdminWordState = adminWordStateSnapshot();
 
     if (!adminWordStateWriteBusy && !adminWordStateFlushTimer) {
-      adminWordStateFlushTimer = window.setTimeout(flushPendingAdminWordState, 0);
+      adminWordStateFlushTimer = window.setTimeout(flushPendingAdminWordState, Math.max(100, adminRetryAt - Date.now()));
     }
   }
 
-  async function submitJudgeMark(mark) {
+  async function submitJudgeMark(mark, button) {
     if (!canJudge || !sessionCode || !presenter?.wordToken || judgeWordToken !== presenter.wordToken) return;
 
     const letters = Array.from(String(presenter.word || ""));
     if (judgePointer >= letters.length) return;
 
+    inputStarted(button || document.querySelector(`[data-verdict="${mark}"]`));
     judgeMarks[judgePointer] = mark;
     if (mark === "incorrect") judgeVerdict = "incorrect";
 
@@ -977,12 +1008,13 @@
     await publishJudgeState({ increment: true });
   }
 
-  async function undoJudgeMark() {
+  async function undoJudgeMark(button) {
     if (!canJudge || !sessionCode || !presenter?.wordToken || judgeWordToken !== presenter.wordToken) return;
 
     const previousIndex = previousReviewedIndex();
     if (previousIndex < 0) return;
 
+    inputStarted(button || document.getElementById("undo-letter-button"));
     judgeMarks[previousIndex] = "pending";
     judgePointer = previousIndex;
     recomputeJudgeVerdict();
@@ -999,49 +1031,26 @@
     await publishJudgeState({ increment: true });
   }
 
-  async function waitForPresenterCommandAck(seq, targetWordToken, timeoutMs = 4000) {
+  async function waitForPresenterCommandAck(seq, targetWordToken, timeoutMs = 12000) {
     const deadline = Date.now() + timeoutMs;
-
-    while (Date.now() < deadline) {
-      await new Promise(resolve => window.setTimeout(resolve, 100));
-
-      try {
-        const latestPresenter = typeof Cloud.fetchPresenter === "function"
-          ? await Cloud.fetchPresenter(sessionCode)
-          : Cloud.presenterState(await Cloud.fetchRows(sessionCode));
-        if (!latestPresenter) continue;
-
-        const ack = Number(latestPresenter.lastCommandSeq || 0);
-        const tokenChanged = installPresenterSnapshot(latestPresenter, { render: true });
-
-        if (tokenChanged && role === "remote" && presenter?.wordToken) {
-          // Publish a clean Admin judge row for the new word immediately.
-          publishJudgeState({ increment: true });
-        }
-
-        if (ack >= seq) {
-          return true;
-        }
-
-        // A new word means a stale word-targeted command should not block the queue.
-        if (
-          targetWordToken &&
-          latestPresenter.wordToken &&
-          latestPresenter.wordToken !== targetWordToken
-        ) {
-          return true;
-        }
-      } catch (error) {
-        // Keep waiting until timeout; normal refresh will surface connectivity.
+    waitingForAck += 1;
+    try {
+      while (Date.now() < deadline) {
+        if (Number(presenter?.lastCommandSeq || 0) >= seq) return !targetWordToken || presenter.wordToken === targetWordToken;
+        // Reuse the normal reader, including its in-flight guard. Never start
+        // a second polling loop just to wait for a button acknowledgement.
+        await refreshPresenterOnly();
+        if (Number(presenter?.lastCommandSeq || 0) >= seq) return !targetWordToken || presenter.wordToken === targetWordToken;
+        await new Promise(resolve => window.setTimeout(resolve, Cloud.pollDelay(250)));
       }
-    }
-
-    return false;
+      return false;
+    } finally { waitingForAck -= 1; }
   }
 
-  function sendRemoteCommand(commandType, value = "") {
+  function sendRemoteCommand(commandType, value = "", button) {
     if (role !== "remote" || !sessionCode || !presenter) return Promise.resolve(false);
 
+    if (button) { button.disabled = true; Feedback?.set(button, "saving", "Sending…"); }
     const snapshotSessionCode = sessionCode;
     const snapshotPresenter = {
       level: presenter.level || "",
@@ -1086,7 +1095,7 @@
 
           const acknowledged = await waitForPresenterCommandAck(
             seq,
-            commandType === "difficulty" ? "" : snapshotPresenter.wordToken
+            ["difficulty", "new-word"].includes(commandType) ? "" : snapshotPresenter.wordToken
           );
           if (!acknowledged) throw new Error("Presenter did not acknowledge command.");
 
@@ -1107,7 +1116,11 @@
         return false;
       });
 
-    return commandPublishChain;
+    const operation = commandPublishChain;
+    operation.then(ok => {
+      if (button) { button.disabled = false; Feedback?.set(button, ok ? "saved" : "error", ok ? "Applied on presenter" : "Not confirmed · check presenter before retrying"); }
+    });
+    return operation;
   }
 
   async function openPools() {
@@ -1172,9 +1185,9 @@
     button.addEventListener("click", () => {
       if (button.disabled) return;
       if (button.dataset.action === "undo") {
-        undoJudgeMark();
+        undoJudgeMark(button);
       } else {
-        submitJudgeMark(button.dataset.verdict === "incorrect" ? "incorrect" : "correct");
+        submitJudgeMark(button.dataset.verdict === "incorrect" ? "incorrect" : "correct", button);
       }
     });
   }
@@ -1196,17 +1209,17 @@
     }
   });
 
-  document.getElementById("new-word-button")?.addEventListener("click", () => sendRemoteCommand("new-word"));
-  document.getElementById("replay-audio-button")?.addEventListener("click", () => sendRemoteCommand("play-audio"));
+  document.getElementById("new-word-button")?.addEventListener("click", event => sendRemoteCommand("new-word", "", event.currentTarget));
+  document.getElementById("replay-audio-button")?.addEventListener("click", event => sendRemoteCommand("play-audio", "", event.currentTarget));
   document.getElementById("word-visibility-button")?.addEventListener("click", event => {
     const value = event.currentTarget.dataset.nextVisibility || (presenter?.hiddenMode === false ? "hide" : "reveal");
-    sendRemoteCommand("visibility", value);
+    sendRemoteCommand("visibility", value, event.currentTarget);
   });
   document.querySelectorAll("[data-difficulty]").forEach(button => {
-    button.addEventListener("click", () => sendRemoteCommand("difficulty", button.dataset.difficulty));
+    button.addEventListener("click", () => sendRemoteCommand("difficulty", button.dataset.difficulty, button));
   });
-  document.getElementById("presenter-correct")?.addEventListener("click", () => sendRemoteCommand("feedback", "correct"));
-  document.getElementById("presenter-incorrect")?.addEventListener("click", () => sendRemoteCommand("feedback", "incorrect"));
+  document.getElementById("presenter-correct")?.addEventListener("click", event => sendRemoteCommand("feedback", "correct", event.currentTarget));
+  document.getElementById("presenter-incorrect")?.addEventListener("click", event => sendRemoteCommand("feedback", "incorrect", event.currentTarget));
 
   poolButton?.addEventListener("click", openPools);
   poolClose?.addEventListener("click", () => poolModal?.classList.add("hidden"));

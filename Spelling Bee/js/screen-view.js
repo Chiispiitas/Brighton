@@ -9,6 +9,7 @@
   const scene = document.getElementById("scene");
   const join = document.getElementById("screen-join");
   let state = Model.initial(), code = "", pageOffset = 0, lastCue = "", failures = 0;
+  let unsubscribeCloud = () => {};
   let pollGeneration = 0, displaySignature = "";
   let sweepAnimation = null, sweepSwapTimer = null;
   const escape = value => String(value ?? "").replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[char]));
@@ -146,6 +147,8 @@
     const requested = Cloud.normalizeSessionCode(value);
     if (!requested) return;
     const generation = ++pollGeneration;
+    unsubscribeCloud();
+    unsubscribeCloud = Cloud.subscribe(requested, receiveCloudChange);
     document.getElementById("join-error").textContent = "Connecting…";
     async function poll() {
       try {
@@ -162,9 +165,15 @@
         if (!code) { join.classList.remove("hidden"); document.getElementById("join-error").textContent = error.message; }
         else if (failures >= 3) document.getElementById("signal").classList.remove("hidden");
       }
-      if (generation === pollGeneration) setTimeout(poll, Math.min(800 * Math.max(1, failures), 5000));
+      if (generation === pollGeneration) setTimeout(poll, Cloud.pollDelay(Math.min(1100 * Math.max(1, failures), 8000)));
     }
     await poll();
+  }
+  function receiveCloudChange(change) {
+    if (!preview && !demo && change.sessionCode === code && change.role === "presenter" && change.state?.screenBroadcast && change.state.broadcast) {
+      apply(change.state.broadcast); failures = 0;
+      document.getElementById("signal").classList.add("hidden");
+    }
   }
   join.addEventListener("submit", event => { event.preventDefault(); connect(document.getElementById("screen-code").value); });
   window.addEventListener("message", event => {

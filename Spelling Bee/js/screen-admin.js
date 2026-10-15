@@ -135,10 +135,11 @@
     for (const id of ["screen-take", "screen-standby", "roster-save", "screen-timer-start", "screen-timer-pause", "screen-timer-reset"]) $(id).disabled = value || !ready;
     if (!value && pendingFeedback) setTimeout(flushFeedback, 0);
   }
-  async function publish(next, message, fromTake = false) {
+  async function publish(next, message, fromTake = false, button = null) {
     if (!ready || (busy && !fromTake)) return;
     const resultToken = sourceToken;
     setBusy(true); status("Sending to audience screen…");
+    window.BeeButtons?.set(button, "saving", "Publishing…", Boolean(button));
     try {
       const latest = await Cloud.fetchPresenter(broadcastCode);
       if (latest && !latest.screenBroadcast) throw new Error("This screen code is already in use by a presenter. No changes were saved.");
@@ -153,13 +154,18 @@
       if (fromTake || live.scene !== "result") liveResultToken = live.scene === "result" && live.revealWord === sourceWord && resultToken === sourceToken ? resultToken : "";
       $("director-live").textContent = `ON AIR · ${M.scenes.find(([key]) => key === live.scene)?.[1]}`;
       preview(); status(message);
-    } catch (error) { status(`Not published: ${error.message}`, true); }
+      window.BeeButtons?.set(button, "saved", "Published", Boolean(button));
+    } catch (error) {
+      status(`Not published: ${error.message}`, true);
+      window.BeeButtons?.set(button, "error", "Not published · try again", Boolean(button));
+    }
     finally { setBusy(false); }
   }
   async function take() {
     if (busy || !ready) return;
     setBusy(true);
     status("Preparing scene and checking the current word…");
+    window.BeeButtons?.set($("screen-take"), "saving", "Preparing scene…");
     try {
       const before = sourceToken;
       await refreshSource();
@@ -172,8 +178,8 @@
       const next = { ...draft, cueId: crypto.randomUUID(), timer: { ...live.timer, visible: draft.timer.visible, duration: draft.timer.duration } };
       if (["pending", "result"].includes(next.scene)) next.timer = { ...next.timer, remaining: M.remaining(live.timer), running: false };
       if (next.currentId !== live.currentId) next.timer = { ...next.timer, remaining: draft.timer.duration, running: false };
-      await publish(next, "Scene is live. Results and lives remain under your control.", true);
-    } catch (error) { status(error.message, true); }
+      await publish(next, "Scene is live. Results and lives remain under your control.", true, $("screen-take"));
+    } catch (error) { status(error.message, true); window.BeeButtons?.set($("screen-take"), "error", error.message); }
     finally { setBusy(false); }
   }
   async function initialize(code) {
@@ -209,9 +215,9 @@
   panel.querySelectorAll(".director-fields input,.director-fields select,.director-fields textarea,#screen-duration,#screen-timer-visible").forEach(input => input.addEventListener("input", preview));
   $("screen-current").addEventListener("change", () => { draft.result = "pending"; $("screen-result").value = "pending"; confirmedResult = null; preview(); });
   $("screen-take").addEventListener("click", take);
-  $("screen-standby").addEventListener("click", () => publish({ ...live, scene: "standby", revealWord: "", cueId: crypto.randomUUID(), timer: { ...live.timer, remaining: M.remaining(live.timer), running: false } }, "Standby is live."));
+  $("screen-standby").addEventListener("click", () => publish({ ...live, scene: "standby", revealWord: "", cueId: crypto.randomUUID(), timer: { ...live.timer, remaining: M.remaining(live.timer), running: false } }, "Standby is live.", false, $("screen-standby")));
   $("roster-add").addEventListener("click", () => { try { readFields(); const added = M.parseRoster($("roster-paste").value, draft.contestants); if (!added.length) throw new Error("Paste at least one contestant."); draft.contestants.push(...added); $("roster-paste").value = ""; renderRoster(); preview(); status(`Added ${added.length} contestants to preview. Publish the list when ready.`); } catch (error) { status(error.message, true); } });
-  $("roster-save").addEventListener("click", () => { readFields(); if (draft.contestants.some(row => !row.name)) return status("Every contestant needs a name.", true); const currentId = draft.contestants.some(row => row.id === live.currentId) ? live.currentId : ""; publish({ ...live, contestants: draft.contestants, showLives: draft.showLives, currentId, revealWord: currentId ? live.revealWord : "" }, "Contestant list published."); });
+  $("roster-save").addEventListener("click", () => { readFields(); if (draft.contestants.some(row => !row.name)) return status("Every contestant needs a name.", true); const currentId = draft.contestants.some(row => row.id === live.currentId) ? live.currentId : ""; publish({ ...live, contestants: draft.contestants, showLives: draft.showLives, currentId, revealWord: currentId ? live.revealWord : "" }, "Contestant list published.", false, $("roster-save")); });
   $("lives-set-all").addEventListener("click", () => {
     const value = $("lives-for-all").value;
     const amount = Number(value);
@@ -239,7 +245,7 @@
     readFields(); const left = M.remaining(live.timer);
     const seconds = action === "reset" || (action === "start" && left === 0) ? draft.timer.duration : left;
     const timer = { duration: draft.timer.duration, remaining: seconds, endsAt: action === "start" ? Date.now() + seconds * 1000 : 0, running: action === "start", visible: draft.timer.visible };
-    publish({ ...live, timer }, `Live timer ${action === "start" ? "running" : action === "pause" ? "paused" : "reset"}.`);
+    publish({ ...live, timer }, `Live timer ${action === "start" ? "running" : action === "pause" ? "paused" : "reset"}.`, false, $("screen-timer-" + action));
   });
   setInterval(() => { $("live-timer").textContent = `${M.remaining(live.timer)}s · ${live.timer.running && M.remaining(live.timer) ? "running" : "paused"}`; }, 250);
   window.addEventListener("spelling-session-joined", event => initialize(event.detail.sessionCode));

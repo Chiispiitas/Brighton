@@ -15,7 +15,7 @@
   const controls = document.querySelector(".controls");
   const controlsToggle = document.getElementById("controls-toggle");
 
-  let sessionCode = "";
+  let sessionCode = "", unsubscribeCloud = () => {};
   let sessionStartedAt = "";
   let lastStateFingerprint = "";
   let lastRemoteCommandSeq = 0;
@@ -23,6 +23,15 @@
   let pendingPresenterSnapshot = null;
   let pendingPresenterFingerprint = "";
   let presenterWritePromise = Promise.resolve();
+  let presenterRetryAt = 0, presenterRetryDelay = 0, presenterRetryTimer = null;
+  let commandApplication = Promise.resolve();
+  function enqueueCommand(command) {
+    commandApplication = commandApplication.catch(() => {}).then(() => applyRemoteCommand(command));
+    return commandApplication;
+  }
+  function receiveCloudChange(change) {
+    if (change.sessionCode === sessionCode && change.role === "remote" && change.state) enqueueCommand(change.state);
+  }
   let pollBusy = false;
   let remotePollTimer = null;
   let remotePollLoopActive = false;
@@ -127,6 +136,12 @@
   }
 
   function flushPresenterSnapshot() {
+    window.clearTimeout(presenterRetryTimer);
+    presenterRetryTimer = null;
+    if (Date.now() < presenterRetryAt) {
+      presenterRetryTimer = window.setTimeout(flushPresenterSnapshot, presenterRetryAt - Date.now());
+      return presenterWritePromise;
+    }
     if (!sessionCode || presenterWriteBusy || !pendingPresenterSnapshot) {
       return presenterWritePromise;
     }
@@ -145,6 +160,7 @@
       state: snapshot
     })
       .then(() => {
+        presenterRetryAt = 0; presenterRetryDelay = 0;
         setStatus(`Session ${snapshotSessionCode} · synced`, "online");
       })
       .catch(error => {
@@ -153,12 +169,14 @@
           pendingPresenterSnapshot = snapshot;
           pendingPresenterFingerprint = snapshotFingerprint;
         }
-        setStatus(`Sync problem: ${error.message}`, "error");
+        presenterRetryDelay = Math.min(30000, Math.max(Cloud.retryDelay(), presenterRetryDelay * 2));
+        presenterRetryAt = Date.now() + presenterRetryDelay;
+        setStatus(`Sync retrying: ${error.message}`, "error");
       })
       .finally(() => {
         presenterWriteBusy = false;
         if (pendingPresenterSnapshot) {
-          window.setTimeout(flushPresenterSnapshot, 0);
+          presenterRetryTimer = window.setTimeout(flushPresenterSnapshot, Math.max(80, presenterRetryAt - Date.now()));
         }
       });
 
@@ -333,7 +351,7 @@
       if (pollSessionCode !== sessionCode) return;
 
       if (remote && Number(remote.commandSeq || 0) > lastRemoteCommandSeq) {
-        await applyRemoteCommand(remote);
+        await enqueueCommand(remote);
       }
     } catch (error) {
       if (pollSessionCode === sessionCode) {
@@ -358,11 +376,10 @@
       if (!remotePollLoopActive || !sessionCode) return;
       await pollRemoteCommands();
 
-      // The next lightweight command GET starts almost as soon as the previous
-      // one finishes. This is faster than a fixed interval when network RTT is
-      // longer than the interval itself.
+      // Keep this command reader responsive without competing with writes.
+      // Confirmed same-device commands also arrive through the shared channel.
       if (remotePollLoopActive && sessionCode) {
-        remotePollTimer = window.setTimeout(tick, 12);
+        remotePollTimer = window.setTimeout(tick, Cloud.pollDelay(450));
       }
     };
 
@@ -377,7 +394,9 @@
       return;
     }
 
+    unsubscribeCloud();
     sessionCode = normalized;
+    unsubscribeCloud = Cloud.subscribe(normalized, receiveCloudChange);
     sessionStartedAt = new Date().toISOString();
     localStorage.setItem("brighton-spelling-presenter-session", normalized);
     if (codeInput) codeInput.value = normalized;
@@ -385,9 +404,8 @@
     setStatus(`Connecting session ${normalized}…`);
 
     try {
-      const rows = await Cloud.fetchRows(normalized);
-      const remoteStates = Cloud.roleStates(rows, "remote");
-      lastRemoteCommandSeq = remoteStates.reduce((max, row) => Math.max(max, Number(row.commandSeq || 0)), 0);
+      const remote = await Cloud.fetchCommand(normalized);
+      lastRemoteCommandSeq = Number(remote?.commandSeq || 0);
     } catch {
       lastRemoteCommandSeq = 0;
     }
@@ -398,6 +416,7 @@
   }
 
   function disconnect() {
+    unsubscribeCloud();
     sessionCode = "";
     sessionStartedAt = "";
     lastStateFingerprint = "";
@@ -440,7 +459,7 @@
   window.requestSpellingPresenterSync = () => publishPresenter(false);
 
   window.setInterval(() => publishPresenter(false), 100);
-  window.setInterval(() => publishPresenter(true), 2500);
+  window.setInterval(() => publishPresenter(true), 20000);
 
   updateViewLinks();
   const saved = Cloud.normalizeSessionCode(localStorage.getItem("brighton-spelling-presenter-session"));
