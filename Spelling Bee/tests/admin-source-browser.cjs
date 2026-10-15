@@ -56,7 +56,7 @@ const server = http.createServer((req, res) => {
     return page;
   }
   async function hiddenInStudy(admin, code) {
-    await until(async () => saved(code)?.hiddenMode === true && await admin.locator('#control-word').getAttribute('data-mode') === 'normal');
+    await until(async () => saved(code)?.hiddenMode === true && await admin.locator('#control-word').getAttribute('data-mode') === 'normal' && await admin.locator('#control-word').textContent() === saved(code).word);
     assert.equal(await admin.locator('#control-word').textContent(), saved(code).word, 'Admin always sees the full word even when Study is hidden');
   }
   try {
