@@ -51,12 +51,13 @@ const server = http.createServer((req, res) => {
       if (failAdmin && body?.state.sourceRole === 'admin') return route.fulfill({ status: 500, headers: { 'Retry-After': '2' }, json: { success: false, error: 'WDE0014: Requests per minute quota exceeded.' } });
       await route.fulfill(await sim.request(endpoint, req.method(), code, body));
     });
+    if (name.toLowerCase().includes('admin')) await context.addInitScript(() => { window.adminAudioPlays = 0; HTMLMediaElement.prototype.play = function () { window.adminAudioPlays += 1; return Promise.resolve(); }; });
     const page = await context.newPage(); page.on('pageerror', error => errors.push(name + ': ' + error.message));
     return page;
   }
-  async function hidden(admin, code) {
-    await until(async () => saved(code)?.hiddenMode === true && await admin.locator('#control-word').getAttribute('data-mode') === 'hidden');
-    assert(!/[A-Za-z]/.test(await admin.locator('#control-word').textContent()), 'new words must be masked in Admin');
+  async function hiddenInStudy(admin, code) {
+    await until(async () => saved(code)?.hiddenMode === true && await admin.locator('#control-word').getAttribute('data-mode') === 'normal');
+    assert.equal(await admin.locator('#control-word').textContent(), saved(code).word, 'Admin always sees the full word even when Study is hidden');
   }
   try {
     const admin = await page('admin');
@@ -64,7 +65,7 @@ const server = http.createServer((req, res) => {
     await admin.locator('#start-admin-session').click();
     await admin.locator('#source-status').filter({ hasText: 'Admin is running' }).waitFor();
     await admin.locator('#director-status').filter({ hasText: 'Screen connected' }).waitFor();
-    assert.equal(saved('8642').sourceRole, 'admin'); await hidden(admin, '8642');
+    assert.equal(saved('8642').sourceRole, 'admin'); await hiddenInStudy(admin, '8642');
     const judges = [];
     for (let i = 0; i < 3; i++) {
       const judge = await page('judge' + i); judges.push(judge);
@@ -76,14 +77,14 @@ const server = http.createServer((req, res) => {
     await admin.locator('#word-visibility-button').click(); await admin.locator('#word-visibility-button[data-sync=saved]').waitFor();
     assert.equal(await admin.locator('#control-word').textContent(), saved('8642').word);
     await admin.locator('#new-word-button').click(); await admin.locator('#new-word-button[data-sync=saved]').waitFor();
-    assert.notEqual(saved('8642').wordToken, firstToken); await hidden(admin, '8642');
+    assert.notEqual(saved('8642').wordToken, firstToken); await hiddenInStudy(admin, '8642');
     await admin.locator('#word-visibility-button').click(); await admin.locator('#word-visibility-button[data-sync=saved]').waitFor();
     await admin.locator('#admin-category').selectOption('SENIOR');
-    await until(() => saved('8642').level === 'SENIOR'); await hidden(admin, '8642');
+    await until(() => saved('8642').level === 'SENIOR'); await hiddenInStudy(admin, '8642');
     for (const difficulty of ['medium', 'hard', 'easy', 'hard']) {
       await admin.locator('#word-visibility-button').click(); await admin.locator('#word-visibility-button[data-sync=saved]').waitFor();
       await admin.locator(`[data-difficulty=${difficulty}]`).click(); await admin.locator(`[data-difficulty=${difficulty}][data-sync=saved]`).waitFor();
-      assert.equal(saved('8642').difficulty, difficulty); await hidden(admin, '8642');
+      assert.equal(saved('8642').difficulty, difficulty); await hiddenInStudy(admin, '8642');
       const words = fs.readFileSync(path.join(root, 'wordlists/SENIOR/' + difficulty + '.txt'), 'utf8').split(/\r?\n/).map(word => word.trim());
       assert(words.includes(saved('8642').word));
     }
@@ -96,7 +97,7 @@ const server = http.createServer((req, res) => {
     await admin.locator('#word-visibility-button').click(); await admin.locator('#word-visibility-button[data-sync=saved]').waitFor();
     await until(async () => await study.locator('#word').getAttribute('data-mode') === 'normal');
     assert.equal(await study.locator('#word').textContent(), saved('8642').word);
-    await admin.locator('#new-word-button').click(); await admin.locator('#new-word-button[data-sync=saved]').waitFor(); await hidden(admin, '8642');
+    await admin.locator('#new-word-button').click(); await admin.locator('#new-word-button[data-sync=saved]').waitFor(); await hiddenInStudy(admin, '8642');
     await until(async () => await study.locator('#word').getAttribute('data-mode') === 'hidden');
     assert(!/[A-Za-z]/.test(await study.locator('#word').textContent()));
     assert.notEqual(saved('8642').wordToken, beforeStudy);
@@ -120,13 +121,13 @@ const server = http.createServer((req, res) => {
     await admin.locator('#presenter-correct').click(); await admin.locator('#presenter-correct[data-sync=saved]').waitFor();
     await audience.locator('.scene-fit:not(.scene-outgoing) .result-label').filter({ hasText: /^Correct$/ }).waitFor();
     const completedWord = saved('8642').word;
-    await admin.locator('#new-word-button').click(); await admin.locator('#new-word-button[data-sync=saved]').waitFor(); await hidden(admin, '8642');
+    await admin.locator('#new-word-button').click(); await admin.locator('#new-word-button[data-sync=saved]').waitFor(); await hiddenInStudy(admin, '8642');
     assert(saved('8642').usedWords['SENIOR|hard'].includes(completedWord));
     const resumedToken = saved('8642').wordToken;
     await admin.reload(); await admin.locator('#join-session-button').click();
     await admin.locator('#source-status').filter({ hasText: 'Admin is running' }).waitFor();
     assert.equal(saved('8642').wordToken, resumedToken); assert(saved('8642').usedWords['SENIOR|hard'].includes(completedWord));
-    await hidden(admin, '8642');
+    await hiddenInStudy(admin, '8642');
     assert.equal(writes.filter(write => write.name === 'study').length, 0, 'Study never publishes over an Admin-owned session');
     if (screenshots) await admin.screenshot({ path: path.join(screenshots, 'independent-admin.png'), fullPage: false });
     // Older Study-created sessions remain connected; category changes hide too.
@@ -138,16 +139,20 @@ const server = http.createServer((req, res) => {
     await legacyAdmin.locator('#join-session-button').click(); await legacyAdmin.locator('#source-status').filter({ hasText: 'Connected to Study' }).waitFor();
     await legacyAdmin.locator('#word-visibility-button').click(); await until(() => saved('4680').hiddenMode === false);
     await legacyAdmin.locator('#admin-category').selectOption('6TH-7TH');
-    await until(() => saved('4680').level === '6TH-7TH' && saved('4680').hiddenMode === true); await hidden(legacyAdmin, '4680');
+    await until(() => saved('4680').level === '6TH-7TH' && saved('4680').hiddenMode === true); await hiddenInStudy(legacyAdmin, '4680');
     await legacyAdmin.locator('#admin-take-source').click();
     await legacyAdmin.locator('#source-status').filter({ hasText: 'Admin is running' }).waitFor();
     await legacyStudy.locator('#session-status').filter({ hasText: 'Following Admin' }).waitFor();
     const studyWrites = writes.filter(write => write.name === 'legacyStudy').length;
     await legacyAdmin.locator('#new-word-button').click(); await legacyAdmin.locator('#new-word-button[data-sync=saved]').waitFor();
-    await hidden(legacyAdmin, '4680'); await pause(2000);
+    await hiddenInStudy(legacyAdmin, '4680'); await pause(2000);
     assert.equal(writes.filter(write => write.name === 'legacyStudy').length, studyWrites);
     assert.equal(saved('4680').sourceRole, 'admin');
+    for (const adminPage of [admin, legacyAdmin]) {
+      assert.equal(await adminPage.locator('audio,#replay-audio-button').count(), 0);
+      assert.equal(await adminPage.evaluate(() => window.adminAudioPlays), 0, 'Admin never plays sounds');
+    }
     assert.deepEqual(errors, []);
-    console.log('Passed: independent Admin without Study; categories/difficulties always hidden; three judges; Study follows without writes; marks/undo; retry; result broadcast; reload/used pools; existing Study connection and takeover.');
+    console.log('Passed: independent Admin without Study; Admin always visible and silent; category/difficulty changes hidden in Study; three judges; Study follows without writes; marks/undo; retry; result broadcast; reload/used pools; existing Study connection and takeover.');
   } finally { await browser.close(); server.close(); }
 })().catch(error => { console.error(error); server.close(); process.exit(1); });

@@ -346,12 +346,12 @@
       if (mark === "correct") span.classList.add("correct");
       if (mark === "incorrect") span.classList.add("incorrect");
       if (index === judgePointer) span.classList.add("active");
-      span.textContent = role === "remote" && presenter?.hiddenMode !== false && mark === "pending" && /[A-Za-z]/.test(char) ? "•" : char;
+      span.textContent = char;
       frag.appendChild(span);
     });
 
     word.dataset.sequence = String(presenter?.wordSequence || 0);
-    word.dataset.mode = role === "remote" && presenter?.hiddenMode !== false ? "hidden" : "normal";
+    word.dataset.mode = "normal";
     word.replaceChildren(frag);
     scheduleWordFit();
   }
@@ -370,7 +370,7 @@
     const level = presenter.level || "4TH-5TH";
     const difficulty = presenter.difficulty || "easy";
     const currentWord = presenter.word || "";
-    const key = `${level}|${difficulty}|${currentWord.toLowerCase()}|${role === "remote" ? presenter.hiddenMode : "judge"}`;
+    const key = `${level}|${difficulty}|${currentWord.toLowerCase()}`;
 
     if (key === wordInfoKey) return;
     wordInfoKey = key;
@@ -384,9 +384,8 @@
       if (wordInfoKey !== key) return;
 
       ipaValue.textContent = info?.ipa || "—";
-      const visibleInfo = value => role === "remote" && presenter.hiddenMode !== false && window.BeeScreen ? window.BeeScreen.maskWord(value, currentWord) : value;
-      definitionValue.textContent = visibleInfo(info?.definition || "No definition available.");
-      exampleValue.textContent = visibleInfo(info?.example || "No example sentence available.");
+      definitionValue.textContent = info?.definition || "No definition available.";
+      exampleValue.textContent = info?.example || "No example sentence available.";
     } catch (error) {
       if (wordInfoKey !== key) return;
       ipaValue.textContent = "—";
@@ -437,7 +436,7 @@
       const visibilityButton = document.getElementById("word-visibility-button");
       if (visibilityButton) {
         const hidden = presenter.hiddenMode !== false;
-        visibilityButton.textContent = hidden ? "Reveal word" : "Hide word";
+        visibilityButton.textContent = hidden ? "Reveal in Study" : "Hide in Study";
         visibilityButton.dataset.nextVisibility = hidden ? "reveal" : "hide";
       }
     }
@@ -458,7 +457,7 @@
 
     if (role === "remote") {
       const locked = presenter.sourceRole === "admin" && !source?.active;
-      document.querySelectorAll("#new-word-button,#replay-audio-button,#word-visibility-button,#admin-category,[data-difficulty],#presenter-correct,#presenter-incorrect").forEach(control => {
+      document.querySelectorAll("#new-word-button,#word-visibility-button,#admin-category,[data-difficulty],#presenter-correct,#presenter-incorrect").forEach(control => {
         if (locked || control.dataset.sourceLocked === "true") { control.disabled = locked; control.dataset.sourceLocked = String(locked); }
       });
     }
@@ -532,8 +531,7 @@
         if (mark === "correct") classes.push("correct");
         if (mark === "incorrect") classes.push("incorrect");
         if (letterIndex === pointer && vote.verdict === "pending") classes.push("active");
-        const display = presenter?.hiddenMode !== false && mark === "pending" && /[A-Za-z]/.test(char) ? "•" : char;
-        return `<span class="${classes.join(" ")}">${escapeHtml(display)}</span>`;
+        return `<span class="${classes.join(" ")}">${escapeHtml(char)}</span>`;
       }).join("");
 
       return `
@@ -1077,7 +1075,7 @@
     if (role !== "remote" || !sessionCode || !presenter?.wordToken) return;
     if (source?.active) {
       const complete = judgePointer >= Array.from(presenter.word || "").length;
-      if (complete && source.state.pointer < Array.from(presenter.word || "").length) playSourceResult(judgeVerdict === "incorrect" ? "incorrect" : "correct");
+      if (complete && source.state.pointer < Array.from(presenter.word || "").length) animateSourceResult();
       source.letters({ ...adminWordStateSnapshot().wordState, inputRevision });
       return;
     }
@@ -1272,23 +1270,15 @@
     }[char]));
   }
 
-  function playSourceResult(verdict) {
-    const audio = document.getElementById(`admin-${verdict}-audio`);
-    if (audio) { audio.volume = .45; audio.currentTime = 0; audio.play().catch(() => {}); }
+  function animateSourceResult() {
     word?.animate?.([{ opacity: .5 }, { opacity: 1 }], { duration: 500 });
   }
   async function runSourceAction(type, value, button) {
     if (button) { button.disabled = true; Feedback?.set(button, "saving", "Saving…"); }
     try {
-      if (type === "play-audio") {
-        const audio = document.getElementById("admin-word-audio");
-        audio.src = `audio/${String(presenter.word).trim().toLowerCase().replace(/\s+/g, "-")}.mp3`;
-        audio.playbackRate = 1; audio.currentTime = 0; await audio.play();
-      } else {
-        if (type === "feedback") playSourceResult(value);
-        await source.run(type, value);
-      }
-      Feedback?.set(button, "saved", type === "play-audio" ? "Playing pronunciation" : "Saved · Admin session");
+      if (type === "feedback") animateSourceResult();
+      await source.run(type, value);
+      Feedback?.set(button, "saved", "Saved · Admin session");
       return true;
     } catch (error) {
       Feedback?.set(button, "error", error.message || "Not saved · retrying");
@@ -1387,7 +1377,6 @@
   });
 
   document.getElementById("new-word-button")?.addEventListener("click", event => sendRemoteCommand("new-word", "", event.currentTarget));
-  document.getElementById("replay-audio-button")?.addEventListener("click", event => sendRemoteCommand("play-audio", "", event.currentTarget));
   document.getElementById("word-visibility-button")?.addEventListener("click", event => {
     const value = event.currentTarget.dataset.nextVisibility || (presenter?.hiddenMode === false ? "hide" : "reveal");
     sendRemoteCommand("visibility", value, event.currentTarget);
