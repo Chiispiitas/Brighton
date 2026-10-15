@@ -18,7 +18,7 @@
   function initial() {
     return { version: 1, revision: 0, cueId: "", scene: "standby", motion: "full",
       round: "Round 1", message: "", closing: "",
-      contestants: [], currentId: "", boardPage: 0, autoBoard: true,
+      contestants: [], currentId: "", boardPage: 0, autoBoard: true, showLives: false,
       definition: "", example: "", result: "pending", revealWord: "",
       timer: { duration: 60, remaining: 60, endsAt: 0, running: false, visible: true } };
   }
@@ -28,7 +28,8 @@
       id: text(row.id || `speller-${index + 1}`, 80), name: text(row.name, 80),
       group: text(row.group, 40), number: text(row.number || index + 1, 8),
       status: ["active", "finalist", "eliminated"].includes(row.status) ? row.status : "active",
-      place: [1, 2, 3].includes(Number(row.place)) ? Number(row.place) : 0
+      place: [1, 2, 3].includes(Number(row.place)) ? Number(row.place) : 0,
+      lives: row.lives == null || row.lives === "" || !Number.isFinite(Number(row.lives)) ? null : Math.floor(clamp(row.lives, 0, 99))
     })).filter(row => row.name);
     return { ...base, version: 1,
       revision: clamp(input.revision, 0, Number.MAX_SAFE_INTEGER), cueId: text(input.cueId, 80),
@@ -36,7 +37,8 @@
       motion: input.motion === "quiet" ? "quiet" : "full", round: text(input.round, 60) || base.round,
       message: text(input.message, 220), closing: text(input.closing, 220),
       contestants, currentId: text(input.currentId, 80), boardPage: clamp(input.boardPage, 0, 24),
-      autoBoard: input.autoBoard !== false, definition: text(input.definition, 500), example: text(input.example, 500),
+      autoBoard: input.autoBoard !== false, showLives: input.showLives === true,
+      definition: text(input.definition, 500), example: text(input.example, 500),
       result: input.scene === "result" && ["correct", "incorrect"].includes(input.result) ? input.result : "pending",
       // A spelling can only enter an audience payload through an explicit result cue.
       revealWord: input.scene === "result" ? text(input.revealWord, 256) : "",
@@ -61,7 +63,7 @@
       const cells = line.split(/\t|\|/).map(cell => cell.trim());
       if (!cells[0]) throw new Error(`Line ${index + 1} needs a contestant name.`);
       return { id: `speller-${Date.now()}-${existing.length + index}`, name: text(cells[0], 80),
-        group: text(cells[1], 40), number: text(cells[2] || existing.length + index + 1, 8), status: "active", place: 0 };
+        group: text(cells[1], 40), number: text(cells[2] || existing.length + index + 1, 8), status: "active", place: 0, lives: null };
     });
   }
   async function broadcastCode(sessionCode) {

@@ -34,3 +34,14 @@ test('broadcast session keys are deterministic numeric keys independent of prese
   assert.match(first, /^98\d{18}$/); assert.equal(first, await M.broadcastCode('1234'));
   assert.notEqual(first, await M.broadcastCode('1235'));
 });
+test('remaining lives are optional and distinguish zero from missing values', () => {
+  const old = M.normalize({ contestants: [{ name: 'Legacy contestant' }] });
+  assert.equal(old.showLives, false); assert.equal(old.contestants[0].lives, null);
+  const state = M.normalize({ showLives: true, contestants: [
+    { name: 'Zero', lives: 0 }, { name: 'Blank', lives: '' },
+    { name: 'One', lives: 1 }, { name: 'Too large', lives: 1000 },
+    { name: 'Invalid', lives: 'unknown' }, { name: 'Fraction', lives: 2.8 }
+  ] });
+  assert.equal(state.showLives, true);
+  assert.deepEqual(state.contestants.map(row => row.lives), [0, null, 1, 99, null, 2]);
+});

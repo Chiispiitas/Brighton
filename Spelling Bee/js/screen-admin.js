@@ -16,6 +16,7 @@
       <label>Result<select id="screen-result"><option value="pending">Word reveal only</option><option value="correct">Correct</option><option value="incorrect">Incorrect</option></select></label>
       <label>Board page<input type="number" id="screen-page" min="1" max="25" value="1"></label>
       <label class="check-label"><input type="checkbox" id="screen-auto" checked>Rotate board / finalists pages</label>
+      <label class="wide check-label"><input type="checkbox" id="screen-show-lives">Show remaining lives on Now Spelling and the competition board</label>
       <label class="wide check-label"><input type="checkbox" id="screen-reveal">Reveal the current word on the Result scene (explicit permission to show its spelling)</label>
       <label class="wide">Definition for the audience<textarea id="screen-definition" maxlength="500"></textarea></label>
       <label class="wide">Example sentence for the audience<textarea id="screen-example" maxlength="500"></textarea></label>
@@ -23,9 +24,9 @@
       <label class="wide">Break message (optional)<input id="screen-message" maxlength="220"></label>
       <label class="wide">Closing message (optional)<input id="screen-closing" maxlength="220"></label>
     </div>
-    <div class="director-timer"><label>Timer seconds<input type="number" id="screen-duration" min="1" max="3600" value="60"></label><label class="check-label"><input type="checkbox" id="screen-timer-visible" checked>Show timer</label><button type="button" id="screen-timer-start">Start / resume live timer</button><button type="button" id="screen-timer-pause">Pause live timer</button><button type="button" id="screen-timer-reset">Reset live timer</button><span class="director-help" id="live-timer">60s · paused</span></div>
+    <div class="director-timer"><label>Break countdown seconds<input type="number" id="screen-duration" min="1" max="3600" value="60"></label><label class="check-label"><input type="checkbox" id="screen-timer-visible" checked>Show break countdown</label><button type="button" id="screen-timer-start">Start / resume countdown</button><button type="button" id="screen-timer-pause">Pause countdown</button><button type="button" id="screen-timer-reset">Reset countdown</button><span class="director-help" id="live-timer">60s · paused</span></div>
     <p class="director-status" id="director-status" role="status" aria-live="polite"></p>
-    <section class="director-roster"><h3>Contestants <span class="director-count" id="roster-count"></span></h3><p class="director-help">Paste one contestant per line: <strong>Name | Grade / class | Number</strong>. Tabs copied from a spreadsheet also work. Edit the list below; mark finalists and assign unique podium places here.</p><label>Contestant list<textarea id="roster-paste" placeholder="Isabella Martinez | Grade 5 | 1&#10;Santiago Lopez | Grade 6 | 2"></textarea></label><div class="director-actions"><button type="button" id="roster-add">Add pasted contestants</button><button type="button" id="roster-save">Publish contestant list</button></div><div class="roster-scroll"><table class="roster-table"><thead><tr><th>Number</th><th>Name</th><th>Grade / class</th><th>Status</th><th>Podium</th><th>Remove</th></tr></thead><tbody id="roster-rows"></tbody></table></div></section>
+    <section class="director-roster"><h3>Contestants <span class="director-count" id="roster-count"></span></h3><p class="director-help">Paste one contestant per line: <strong>Name | Grade / class | Number</strong>. Tabs copied from a spreadsheet also work. Numbers are identifiers and never appear on the competition board. Set lives per contestant below; leave blank to hide that contestant’s lives. Results never change lives automatically.</p><label>Contestant list<textarea id="roster-paste" placeholder="Isabella Martinez | Grade 5 | 1&#10;Santiago Lopez | Grade 6 | 2"></textarea></label><div class="director-actions"><button type="button" id="roster-add">Add pasted contestants</button><button type="button" id="roster-save">Publish contestant list</button><label>Lives for all<input type="number" id="lives-for-all" min="0" max="99" step="1" value="3"></label><button type="button" id="lives-set-all">Set lives for all in preview</button></div><div class="roster-scroll"><table class="roster-table"><thead><tr><th>Number</th><th>Name</th><th>Grade / class</th><th>Lives</th><th>Status</th><th>Podium</th><th>Remove</th></tr></thead><tbody id="roster-rows"></tbody></table></div></section>
     <p class="director-help">Screen code: <span id="broadcast-code" class="screen-code">—</span>. Use one show operator at a time. A stopped timer never declares a result. Judge votes never trigger an audience result.</p>`;
   document.querySelector(".control-shell").append(panel);
   const $ = id => document.getElementById(id);
@@ -39,7 +40,8 @@
     const roster = draft.contestants;
     draft = M.normalize({ ...draft, currentId: $("screen-current").value, round: $("screen-round").value,
       motion: $("screen-motion").value, result: $("screen-result").value, boardPage: Number($("screen-page").value) - 1,
-      autoBoard: $("screen-auto").checked, definition: M.maskWord($("screen-definition").value, sourceWord),
+      autoBoard: $("screen-auto").checked, showLives: $("screen-show-lives").checked,
+      definition: M.maskWord($("screen-definition").value, sourceWord),
       example: M.maskWord($("screen-example").value, sourceWord), message: $("screen-message").value,
       closing: $("screen-closing").value, revealWord: $("screen-reveal").checked ? sourceWord : "",
       timer: { ...draft.timer, duration: Number($("screen-duration").value), visible: $("screen-timer-visible").checked } });
@@ -60,6 +62,7 @@
       "screen-message": draft.message, "screen-closing": draft.closing, "screen-duration": draft.timer.duration };
     for (const [id, value] of Object.entries(fields)) $(id).value = value;
     $("screen-auto").checked = draft.autoBoard; $("screen-timer-visible").checked = draft.timer.visible;
+    $("screen-show-lives").checked = draft.showLives;
     $("screen-reveal").checked = false;
     renderRoster(); preview();
   }
@@ -71,16 +74,17 @@
     const tbody = $("roster-rows"); tbody.replaceChildren();
     for (const row of draft.contestants) {
       const tr = document.createElement("tr");
-      for (const key of ["number", "name", "group", "status", "place"]) {
+      for (const key of ["number", "name", "group", "lives", "status", "place"]) {
         const td = document.createElement("td");
         const input = document.createElement(["status", "place"].includes(key) ? "select" : "input");
         input.setAttribute("aria-label", `${key} for ${row.name}`);
         if (key === "status") [["active", "In contention"], ["finalist", "Finalist"], ["eliminated", "Completed"]].forEach(([value, label]) => input.add(new Option(label, value)));
         if (key === "place") [[0, "Unassigned"], [1, "1st"], [2, "2nd"], [3, "3rd"]].forEach(([value, label]) => input.add(new Option(label, value)));
-        input.value = row[key]; input.className = `roster-${key}`;
+        input.value = row[key] ?? ""; input.className = `roster-${key}`;
+        if (key === "lives") { input.type = "number"; input.min = "0"; input.max = "99"; input.step = "1"; input.placeholder = "Hidden"; }
         if (key === "name") input.maxLength = 80; if (key === "group") input.maxLength = 40; if (key === "number") input.maxLength = 8;
         input.addEventListener("change", () => {
-          row[key] = key === "place" ? Number(input.value) : input.value.trim();
+          row[key] = key === "lives" ? (input.value === "" ? null : Math.floor(Math.min(99, Math.max(0, Number(input.value))))) : key === "place" ? Number(input.value) : input.value.trim();
           if (key === "place" && row.place) for (const other of draft.contestants) if (other.id !== row.id && other.place === row.place) other.place = 0;
           renderRoster(); preview();
         });
@@ -144,7 +148,7 @@
       const next = { ...draft, cueId: crypto.randomUUID(), timer: { ...live.timer, visible: draft.timer.visible, duration: draft.timer.duration } };
       if (["pending", "result"].includes(next.scene)) next.timer = { ...next.timer, remaining: M.remaining(live.timer), running: false };
       if (next.currentId !== live.currentId) next.timer = { ...next.timer, remaining: draft.timer.duration, running: false };
-      await publish(next, "Scene is live. Timer and results remain under your control.", true);
+      await publish(next, "Scene is live. Results and lives remain under your control.", true);
     } catch (error) { status(error.message, true); }
     finally { setBusy(false); }
   }
@@ -182,7 +186,14 @@
   $("screen-take").addEventListener("click", take);
   $("screen-standby").addEventListener("click", () => publish({ ...live, scene: "standby", revealWord: "", cueId: crypto.randomUUID(), timer: { ...live.timer, remaining: M.remaining(live.timer), running: false } }, "Standby is live."));
   $("roster-add").addEventListener("click", () => { try { readFields(); const added = M.parseRoster($("roster-paste").value, draft.contestants); if (!added.length) throw new Error("Paste at least one contestant."); draft.contestants.push(...added); $("roster-paste").value = ""; renderRoster(); preview(); status(`Added ${added.length} contestants to preview. Publish the list when ready.`); } catch (error) { status(error.message, true); } });
-  $("roster-save").addEventListener("click", () => { readFields(); if (draft.contestants.some(row => !row.name)) return status("Every contestant needs a name.", true); const currentId = draft.contestants.some(row => row.id === live.currentId) ? live.currentId : ""; publish({ ...live, contestants: draft.contestants, currentId, revealWord: currentId ? live.revealWord : "" }, "Contestant list published."); });
+  $("roster-save").addEventListener("click", () => { readFields(); if (draft.contestants.some(row => !row.name)) return status("Every contestant needs a name.", true); const currentId = draft.contestants.some(row => row.id === live.currentId) ? live.currentId : ""; publish({ ...live, contestants: draft.contestants, showLives: draft.showLives, currentId, revealWord: currentId ? live.revealWord : "" }, "Contestant list published."); });
+  $("lives-set-all").addEventListener("click", () => {
+    const value = $("lives-for-all").value;
+    const amount = Number(value);
+    if (value === "" || !Number.isInteger(amount) || amount < 0 || amount > 99) return status("Enter a whole number of lives from 0 to 99.", true);
+    readFields(); draft.contestants.forEach(row => { row.lives = amount; });
+    renderRoster(); preview(); status("Lives updated in preview. Publish the contestant list when ready.");
+  });
   $("next-speller").addEventListener("click", () => { readFields(); const rows = draft.contestants.filter(row => row.status !== "eliminated"); const index = rows.findIndex(row => row.id === draft.currentId); if (index >= rows.length - 1) return status("No more contestants in the list."); draft.currentId = rows[index + 1]?.id || ""; draft.scene = "spelling"; draft.result = "pending"; fillFields(); status("Next contestant prepared. Review and take live."); });
   $("screen-load-word").addEventListener("click", async () => {
     try {

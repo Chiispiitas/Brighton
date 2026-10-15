@@ -10,14 +10,16 @@
   const join = document.getElementById("screen-join");
   let state = Model.initial(), code = "", pageOffset = 0, lastCue = "", failures = 0;
   let pollGeneration = 0, displaySignature = "";
+  let sweepAnimation = null, sweepSwapTimer = null;
   const escape = value => String(value ?? "").replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[char]));
   const tag = value => `<div class="eyebrow">${escape(value)}</div>`;
   const title = (value, extra = "") => `<h1 class="headline ${extra}">${escape(value)}</h1>`;
   const current = () => state.contestants.find(row => row.id === state.currentId);
   const nameClass = value => value.length > 55 ? "name-xlong" : value.length > 28 ? "name-long" : "";
   const lower = row => `<div class="lower-third"><span>#${escape(row?.number || "—")}</span><strong>${escape(row?.name || "Contestant to be announced")}</strong><span>${escape(row?.group || "")}</span></div>`;
+  const lives = row => state.showLives && row?.lives != null ? `<span class="remaining-lives"><span class="life-icon" aria-hidden="true">♡</span><span><strong>${row.lives}</strong> ${row.lives === 1 ? "life" : "lives"} remaining</span></span>` : "";
   function cards(rows) {
-    return rows.map((row, index) => `<div class="contestant-card ${row.status} ${row.id === state.currentId ? "current" : ""}" style="--i:${index}"><span class="number">${escape(row.number)}</span><div class="identity"><strong>${escape(row.name)}</strong><small>${escape(row.group)}</small></div><span class="status">${row.status === "eliminated" ? "Completed" : row.id === state.currentId ? "Now spelling" : row.status === "finalist" ? "Finalist" : "In contention"}</span></div>`).join("");
+    return rows.map(row => `<div class="contestant-card"><div class="identity"><strong>${escape(row.name)}</strong><small>${escape(row.group)}</small></div>${lives(row)}</div>`).join("");
   }
   function paged(rows, size) {
     const count = Math.max(1, Math.ceil(rows.length / size));
@@ -30,12 +32,12 @@
     if (state.scene === "standby") return `<div class="centered-layout">${title("Spelling Bee")}</div>`;
     if (state.scene === "board" || state.scene === "finalists") {
       const finalists = state.scene === "finalists";
-      const all = finalists ? state.contestants.filter(item => item.status === "finalist") : state.contestants;
+      const all = finalists ? state.contestants.filter(item => item.status === "finalist") : [...state.contestants].sort((a, b) => a.name.localeCompare(b.name, "en", { sensitivity: "base", numeric: true }));
       const page = paged(all, finalists ? 6 : 8);
-      return `<div class="board-heading">${title(finalists ? "Finalists" : "Competition board")}<span class="page-label">${page.label}</span></div>${all.length ? finalists ? `<div class="finalists-grid">${page.rows.map(item => `<article class="finalist-card"><span class="number">#${escape(item.number)}</span><strong class="${nameClass(item.name)}">${escape(item.name)}</strong><small>${escape(item.group)}</small></article>`).join("")}</div>` : `<div class="board-grid">${cards(page.rows)}</div>` : `<div class="empty-state">${finalists ? "Finalists pending" : "Contestants pending"}</div>`}`;
+      return `<div class="board-heading">${title(finalists ? "Finalists" : "Competition board")}${all.length > (finalists ? 6 : 8) ? `<span class="page-label">Page ${page.label.replace(" / ", " of ")}</span>` : ""}</div>${all.length ? finalists ? `<div class="finalists-grid">${page.rows.map(item => `<article class="finalist-card"><span class="number">#${escape(item.number)}</span><strong class="${nameClass(item.name)}">${escape(item.name)}</strong><small>${escape(item.group)}</small></article>`).join("")}</div>` : `<div class="board-grid">${cards(page.rows)}</div>` : `<div class="empty-state">${finalists ? "Finalists pending" : "Contestants pending"}</div>`}`;
     }
     if (state.scene === "round") return `<div class="centered-layout">${title(state.round, "round-number " + nameClass(state.round))}</div>`;
-    if (state.scene === "spelling") return `<div class="speller-layout"><div>${tag("Now spelling")}<span class="speller-number">#${escape(row?.number || "—")}</span>${title(row?.name || "Contestant pending", `speller-name ${nameClass(row?.name || "")}`)}<span class="group-pill">${escape(row?.group || "")}</span></div><div class="timer-box ${state.timer.visible ? "" : "off"}" id="timer-box"><strong id="timer-value">${Model.remaining(state.timer)}</strong><span>seconds</span></div></div>`;
+    if (state.scene === "spelling") return `<div class="speller-layout"><div>${tag("Now spelling")}<span class="speller-number">#${escape(row?.number || "—")}</span>${title(row?.name || "Contestant pending", `speller-name ${nameClass(row?.name || "")}`)}<span class="group-pill">${escape(row?.group || "")}</span>${lives(row)}</div></div>`;
     if (["definition", "example"].includes(state.scene)) {
       const value = state[state.scene] || "";
       return `${tag(state.scene === "definition" ? "Definition" : "Example")}<p class="quote ${value.length > 280 ? "xlong" : value.length > 150 ? "long" : ""}">${escape(value)}</p>${lower(row)}`;
@@ -102,21 +104,41 @@
     if (normalized.revision < state.revision && !preview && !demo) return;
     displaySignature = signature;
     const cue = normalized.cueId || normalized.scene;
-    const changed = cue !== lastCue;
+    const changed = cue !== lastCue || normalized.scene !== state.scene;
     const visual = value => { const { revision, timer, ...fields } = value; return JSON.stringify({ ...fields, timerVisible: timer.visible }); };
     const contentChanged = visual(normalized) !== visual(state);
     lastCue = cue; state = normalized;
     if (changed) pageOffset = 0;
-    if (contentChanged) draw({ animate: true });
+    if (contentChanged && (!canAnimate() || changed)) sweepToScene();
+    else if (contentChanged && !sweepSwapTimer) draw({ animate: true });
     else { stage.dataset.revision = String(state.revision); updateTimer(); }
+  }
+  function sweepToScene() {
+    const overlay = document.getElementById("logo-sweep");
+    if (!canAnimate()) {
+      clearTimeout(sweepSwapTimer); sweepSwapTimer = null;
+      sweepAnimation?.cancel(); sweepAnimation = null;
+      overlay.classList.remove("active"); draw(); return;
+    }
+    // While a sweep is entering, the pending swap always uses the latest cue.
+    // During its exit, a newer cue can blend underneath without restarting it.
+    if (sweepAnimation) { if (!sweepSwapTimer) draw({ animate: true }); return; }
+    overlay.classList.add("active");
+    const animation = overlay.firstElementChild.animate([
+      { transform: "translateX(-112%)", opacity: 0, filter: "blur(5px)", offset: 0, easing: "cubic-bezier(.65,0,.35,1)" },
+      { transform: "translateX(0)", opacity: 1, filter: "blur(0)", offset: .38 },
+      { transform: "translateX(0)", opacity: 1, filter: "blur(0)", offset: .55, easing: "cubic-bezier(.65,0,.35,1)" },
+      { transform: "translateX(112%)", opacity: 0, filter: "blur(5px)", offset: 1 }
+    ], { duration: 1400, easing: "linear", fill: "both" });
+    sweepAnimation = animation;
+    sweepSwapTimer = setTimeout(() => { sweepSwapTimer = null; draw({ animate: true }); }, 560);
+    animation.finished.then(() => {
+      if (sweepAnimation !== animation) return;
+      overlay.classList.remove("active"); sweepAnimation = null; animation.cancel();
+    }).catch(() => {});
   }
   function updateTimer() {
     const seconds = Model.remaining(state.timer);
-    const timer = document.getElementById("timer-value");
-    if (timer) timer.textContent = seconds;
-    const box = document.getElementById("timer-box");
-    box?.classList.toggle("low", seconds <= 10);
-    box?.classList.toggle("expired", seconds === 0);
     const breakTimer = document.getElementById("break-timer");
     if (breakTimer) breakTimer.textContent = `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, "0")}`;
   }
@@ -166,7 +188,8 @@
   if (preview) document.getElementById("fullscreen").remove();
   else if (demo) {
     const sample = Model.initial();
-    sample.contestants = ["Isabella Martinez", "Santiago Lopez", "Valentina Torres", "Mateo Andrade", "Sofia Castillo", "Daniel Perez"].map((name, index) => ({ id: String(index), name, number: String(index + 1), group: `Grade ${index % 3 + 5}`, status: "finalist", place: index < 3 ? index + 1 : 0 }));
+    sample.contestants = ["Isabella Martinez", "Santiago Lopez", "Valentina Torres", "Mateo Andrade", "Sofia Castillo", "Daniel Perez"].map((name, index) => ({ id: String(index), name, number: String(index + 1), group: `Grade ${index % 3 + 5}`, status: "finalist", place: index < 3 ? index + 1 : 0, lives: 3 }));
+    sample.showLives = true;
     sample.currentId = "0"; sample.definition = "The ability to face something difficult with confidence.";
     sample.example = "It takes _____ to stand on this stage."; sample.result = "correct";
     let index = 0;
