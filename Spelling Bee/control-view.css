@@ -546,3 +546,15 @@ button:disabled { opacity: .45; cursor: not-allowed; }
     font-size: .88rem;
   }
 }
+
+/* A physical press and a confirmed save are separate states. */
+button { position: relative; transition: transform 100ms ease, filter 100ms ease, box-shadow 160ms ease; }
+button.button-held { transform: translateY(2px) scale(.97); filter: brightness(1.2); box-shadow: inset 0 2px 9px #0005; }
+button[data-sync]::after { position: absolute; top: 5px; right: 7px; font: 700 12px/1 sans-serif; pointer-events: none; }
+button[data-sync="saving"]::after { content: "…"; color: #efce86; }
+button[data-sync="saved"]::after { content: "✓"; color: #b6e1c2; }
+button[data-sync="error"]::after { content: "!"; color: #ffb3a7; }
+.action-status { min-height: 1.4em; margin: .35rem 0 .7rem; color: #e1cca3; font: 500 .85rem/1.4 system-ui, sans-serif; }
+.action-status[data-state="saved"] { color: #b6e1c2; }
+.action-status[data-state="error"] { color: #ffb3a7; }
+@media (prefers-reduced-motion: reduce) { button { transition: none; } }
