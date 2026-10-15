@@ -2,3 +2,4 @@
 @media(max-width:850px){.screen-director{padding:16px;margin:16px}.director-top{grid-template-columns:1fr}.director-fields{grid-template-columns:1fr 1fr}.screen-director .wide{grid-column:span 2}}
 @media(max-width:500px){.director-fields{grid-template-columns:1fr}.screen-director .wide{grid-column:span 1}}
 .roster-table .roster-lives{width:90px}.director-actions label:has(#lives-for-all){max-width:110px}.director-roster .director-actions{align-items:end}.roster-table{min-width:900px}
+.roster-footer{margin-top:12px}
