@@ -150,7 +150,7 @@ const server = http.createServer((req, res) => {
 
     // True sliding one-minute CMS read/write quotas, using the actual Velo code.
     await word(presenter, 'abcdefghijklmnopqrstuvwx');
-    await until(async () => (await Promise.all([admin, ...judges].map(p => p.locator('#control-word').textContent()))).every(text => text === 'abcdefghijklmnopqrstuvwx'));
+    await until(async () => (await Promise.all([admin, ...judges].map(async p => p === admin ? (await p.locator('#control-word').getAttribute('data-sequence') === String(state()?.wordSequence) ? state()?.currentWord : '') : p.locator('#control-word').textContent()))).every(text => text === 'abcdefghijklmnopqrstuvwx'));
     await sleep(1500);
     sim.operations.length = 0; sim.enableLimits(true);
     const before = { ...sim.stats }, from = requests.length, started = Date.now();
@@ -175,7 +175,7 @@ const server = http.createServer((req, res) => {
         await sleep(16000);
         const next = round === 0 ? 'abcdefghijklmnopqrstuvwy' : 'abcdefghijklmnopqrstuvwz';
         await word(presenter, next);
-        const ready = await until(async () => (await Promise.all([admin, ...judges].map(p => p.locator('#control-word').textContent()))).every(text => text === next));
+        const ready = await until(async () => (await Promise.all([admin, ...judges].map(async p => p === admin ? (await p.locator('#control-word').getAttribute('data-sequence') === String(state()?.wordSequence) ? state()?.currentWord : '') : p.locator('#control-word').textContent()))).every(text => text === next));
         const pendingCards = await admin.locator('.admin-judge-card').filter({ hasText: /Stress Judge/ }).allTextContents();
         check('next round displays existing judges as pending, never old verdicts ' + round, ready && pendingCards.length === judgeCount && pendingCards.every(text => text.includes('0/24')));
         await Promise.all([admin, ...judges].map(p => p.evaluate(async () => {
@@ -195,7 +195,7 @@ const server = http.createServer((req, res) => {
     // Slow links, a reply lost after persistence, and a full outage must retain input.
     delayMs = 850;
     await word(presenter, 'butterfly');
-    await until(async () => (await Promise.all([admin, ...judges].map(p => p.locator('#control-word').textContent()))).every(text => text === 'butterfly'));
+    await until(async () => (await Promise.all([admin, ...judges].map(async p => p === admin ? (await p.locator('#control-word').getAttribute('data-sequence') === String(state()?.wordSequence) ? state()?.currentWord : '') : p.locator('#control-word').textContent()))).every(text => text === 'butterfly'));
     loseNextJudgeReply = true;
     await judges[0].locator('[data-verdict=incorrect]').click();
     await until(() => requests.some(r => r.status === 'reply-lost'));
@@ -222,10 +222,10 @@ const server = http.createServer((req, res) => {
     await word(presenter, 'dragon');
     const changed = await until(async () => (await Promise.all(judges.map(p => p.locator('#control-word').textContent()))).every(text => text === 'dragon'));
     check('new word clears old judgements on every judge', changed);
-    await admin.waitForFunction(() => document.getElementById('control-word').textContent === 'dragon');
+    await until(async () => await admin.locator('#control-word').getAttribute('data-sequence') === String(state()?.wordSequence));
     staleForAdmin = staleSession;
     const staleDelivered = await until(() => requests.some(record => record.stale), 10000);
-    check('late previous-word response cannot rewind Admin', staleDelivered && await admin.locator('#control-word').textContent() === 'dragon');
+    check('late previous-word response cannot rewind Admin', staleDelivered && await admin.locator('#control-word').getAttribute('data-sequence') === String(state()?.wordSequence));
     await presenterBurst(presenter);
     check('no browser errors', errors.length === 0, { errors });
     report.checks = checks; report.totalRequests = requests.length; report.cms = sim.stats;

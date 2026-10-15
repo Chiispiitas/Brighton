@@ -6,17 +6,18 @@
   <title>Spelling Bee Admin View</title>
   <link href="assets/favicon.png" rel="icon">
   <link href="style.css?v=20260918-longword1" rel="stylesheet">
-  <link href="control-view.css?v=20261015-sync5" rel="stylesheet">
+  <link href="control-view.css?v=20261015-admin7" rel="stylesheet">
   <link href="screen-admin.css?v=20261015-word4" rel="stylesheet">
 </head>
 <body class="control-view" data-role="remote">
   <section class="join-gate" id="join-gate">
     <div class="join-card">
       <h1>Admin View</h1>
-      <p>Enter the presenter’s numerical session code. Admin controls remain locked until that session is found.</p>
+      <p>Start a session here, or connect to an existing Admin or Study session. Share the same code with judges and Study view.</p>
       <div class="join-row">
         <input id="join-session-code" inputmode="numeric" autocomplete="off" aria-label="Session code" placeholder="Session code">
-        <button class="control-button" id="join-session-button" type="button">Join</button>
+        <button class="control-button" id="start-admin-session" type="button">Start / resume from Admin</button>
+        <button class="control-button" id="join-session-button" type="button">Connect</button>
       </div>
       <p class="join-status" id="join-status"></p>
     </div>
@@ -28,6 +29,7 @@
         <div class="control-brand"><img src="assets/hp-logo.png" alt="Harry Potter and the Order of the Letters"></div>
         <div class="control-header-actions">
           <span class="difficulty-pill" id="difficulty-pill">EASY</span>
+          <a class="control-button" id="admin-study-link" href="index.html" target="_blank" rel="noopener">Study view ↗</a>
           <span class="connection-pill" id="connection-pill">Connecting</span>
         </div>
       </header>
@@ -35,7 +37,9 @@
       <main class="control-grid">
         <section class="control-card word-card">
           <div class="control-word" id="control-word">—</div>
-          <p class="word-meta" id="word-meta">Waiting for presenter</p>
+          <p class="word-meta" id="word-meta">Waiting for a session</p>
+          <p class="source-status" id="source-status" role="status"></p>
+          <button class="control-button" id="admin-take-source" type="button" hidden>Run this session from Admin</button>
 
           <div class="verdict-row" aria-label="Admin judging controls">
             <button class="verdict-button correct" type="button" data-verdict="correct">✓ Letter correct</button>
@@ -50,6 +54,12 @@
             <button class="control-button" id="pool-launcher" type="button">Remaining words</button>
           </div>
 
+          <label class="category-control">Category
+            <select id="admin-category" aria-label="Category">
+              <option value="4TH-5TH">4TH–5TH</option><option value="6TH-7TH">6TH–7TH</option>
+              <option value="JUNIOR">JUNIOR</option><option value="SENIOR">SENIOR</option>
+            </select>
+          </label>
           <div class="difficulty-row" aria-label="Difficulty controls">
             <button class="control-button" type="button" data-difficulty="easy">Easy</button>
             <button class="control-button" type="button" data-difficulty="medium">Medium</button>
@@ -62,7 +72,7 @@
             <div class="judge-vote-list admin-judge-list" id="judge-vote-list"></div>
           </div>
 
-          <div class="remote-action-row" aria-label="Presenter feedback">
+          <div class="remote-action-row" aria-label="Word result">
             <button class="control-button incorrect" id="presenter-incorrect" type="button">Incorrect animation</button>
             <button class="control-button correct" id="presenter-correct" type="button">Correct animation</button>
           </div>
@@ -98,8 +108,13 @@
 
   <script src="js/cloud.js?v=20261015-stress6"></script>
   <script src="js/button-feedback.js?v=20261015-sync5"></script>
-  <script src="js/control-view.js?v=20261015-stress6"></script>
+  <script src="js/session-engine.js?v=20261015-admin7"></script>
+  <script src="js/admin-source.js?v=20261015-admin7"></script>
+  <script src="js/control-view.js?v=20261015-admin7"></script>
   <script src="js/screen-model.js?v=20261015-word4"></script>
-  <script src="js/screen-admin.js?v=20261015-sync5"></script>
+  <script src="js/screen-admin.js?v=20261015-admin7"></script>
+  <audio id="admin-word-audio" preload="none"></audio>
+  <audio id="admin-correct-audio" src="audio/correct-answer-hp.mp3" preload="none"></audio>
+  <audio id="admin-incorrect-audio" src="audio/wrong-answer.mp3" preload="none"></audio>
 </body>
 </html>

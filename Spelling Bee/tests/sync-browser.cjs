@@ -167,7 +167,7 @@ const server = http.createServer((req, res) => {
       const channel = new BroadcastChannel('bee-confirmed-v1:2468'); channel.postMessage(change); channel.close();
     }, savedCommand);
     await visibility.locator('xpath=self::*[@data-sync="saved"]').waitFor();
-    assert.equal(await admin.locator('#action-status').innerText(), 'Applied on presenter');
+    assert.equal(await admin.locator('#action-status').innerText(), 'Applied in Study');
     if (screenshots) {
       await admin.screenshot({ path: path.join(screenshots, 'admin-sync-feedback.png'), fullPage: false });
       await judge.screenshot({ path: path.join(screenshots, 'judge-sync-feedback.png'), fullPage: false });

@@ -558,3 +558,13 @@ button[data-sync="error"]::after { content: "!"; color: #ffb3a7; }
 .action-status[data-state="saved"] { color: #b6e1c2; }
 .action-status[data-state="error"] { color: #ffb3a7; }
 @media (prefers-reduced-motion: reduce) { button { transition: none; } }
+
+.source-status { color: #bdb49e; font: .78rem/1.4 system-ui, sans-serif; margin: .4rem 0; }
+.category-control { display: flex; justify-content: center; align-items: center; flex-wrap: wrap; gap: .6rem; margin: .9rem 0 .3rem; color: #cbbd9f; font-size: .85rem; }
+.category-control select { border: 1px solid var(--control-border); border-radius: .55rem; padding: .6rem .9rem; background: #25202c; color: #f5ead0; font: inherit; }
+body[data-role="remote"] .join-row { flex-wrap: wrap; }
+body[data-role="remote"] .join-row input { flex: 1 1 100%; }
+body[data-role="remote"] .join-row button { flex: 1 1 45%; white-space: normal; }
+.control-header-actions { flex-wrap: wrap; justify-content: flex-end; }
+#admin-study-link { padding: .5rem .7rem; font-size: .75rem; text-decoration: none; }
+@media (max-width: 600px) { .control-header { align-items: flex-start; } .control-header-actions { max-width: 56%; } .control-brand img { max-width: 30vw; } }

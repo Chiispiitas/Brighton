@@ -97,7 +97,7 @@
     }
   }
   async function acceptSource(found) {
-    if (!found || found.screenBroadcast) throw new Error("Presenter session is unavailable.");
+    if (!found || found.screenBroadcast) throw new Error("The word session is unavailable.");
     const key = JSON.stringify([found.wordToken, found.word, found.level, found.difficulty]);
     const changed = key !== wordInfoKey;
     if (changed) {
@@ -109,7 +109,7 @@
       draft.result = "pending"; $("screen-result").value = "pending";
       if (ready) preview();
     }
-    if (!sourceWord) { $("screen-word-status").textContent = "Waiting for a word from the presenter."; return found; }
+    if (!sourceWord) { $("screen-word-status").textContent = "Waiting for a word from Admin or Study."; return found; }
     if (!wordInfoPromise && Date.now() >= retryInfoAt) {
       const run = generation, word = sourceWord;
       $("screen-word-status").textContent = "Loading current word information automatically…";
@@ -129,7 +129,10 @@
     await wordInfoPromise;
     return found;
   }
-  async function refreshSource() { return acceptSource(await Cloud.fetchPresenter(sourceCode)); }
+  async function refreshSource() {
+    const found = await (window.getSpellingWordSnapshot ? window.getSpellingWordSnapshot(sourceCode) : Cloud.fetchPresenter(sourceCode));
+    return acceptSource(found);
+  }
   function setBusy(value) {
     busy = value;
     for (const id of ["screen-take", "screen-standby", "roster-save", "screen-timer-start", "screen-timer-pause", "screen-timer-reset"]) $(id).disabled = value || !ready;
@@ -142,7 +145,7 @@
     window.BeeButtons?.set(button, "saving", "Publishing…", Boolean(button));
     try {
       const latest = await Cloud.fetchPresenter(broadcastCode);
-      if (latest && !latest.screenBroadcast) throw new Error("This screen code is already in use by a presenter. No changes were saved.");
+      if (latest && !latest.screenBroadcast) throw new Error("This screen code is already in use by a word session. No changes were saved.");
       if (latest?.broadcast && Number(latest.broadcast.revision) !== live.revision) {
         live = M.normalize(latest.broadcast);
         throw new Error("Another operator changed the screen. The live cue was refreshed; review your preview and try again.");
@@ -169,10 +172,10 @@
     try {
       const before = sourceToken;
       await refreshSource();
-      if (before !== sourceToken && ["definition", "example", "result"].includes(draft.scene)) { preview(); throw new Error("The presenter changed words. Review the automatically loaded information and take the scene again."); }
+      if (before !== sourceToken && ["definition", "example", "result"].includes(draft.scene)) { preview(); throw new Error("The session changed words. Review the automatically loaded information and take the scene again."); }
       readFields();
       if (["spelling", "definition", "example", "pending"].includes(draft.scene) && !draft.currentId) throw new Error("Select the contestant first.");
-      if (draft.scene === "result" && !sourceWord) throw new Error("Call a word in the presenter before revealing it.");
+      if (draft.scene === "result" && !sourceWord) throw new Error("Call a word in Admin or Study before revealing it.");
       if (["definition", "example"].includes(draft.scene) && !draft[draft.scene]) throw new Error("No information is available yet. Enter the word information manually or wait for the automatic load.");
       if (draft.contestants.some(row => !row.name.trim())) throw new Error("Every contestant needs a name.");
       const next = { ...draft, cueId: crypto.randomUUID(), timer: { ...live.timer, visible: draft.timer.visible, duration: draft.timer.duration } };
@@ -204,7 +207,7 @@
       $("broadcast-code").textContent = broadcastCode;
       $("director-live").textContent = `ON AIR · ${M.scenes.find(([key]) => key === live.scene)?.[1]}`;
       fillFields(); setBusy(false); status("Screen connected. Open the audience screen on the stage display.");
-    } catch (error) { ready = false; setBusy(false); status(error.message + " Rejoin the presenter session to retry.", true); }
+    } catch (error) { ready = false; setBusy(false); status(error.message + " Reconnect to the word session to retry.", true); }
   }
   for (const [key, label] of M.scenes) {
     const button = document.createElement("button"); button.type = "button"; button.textContent = label; button.dataset.scene = key;
