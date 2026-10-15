@@ -148,17 +148,21 @@
     if (!requested) return;
     const generation = ++pollGeneration;
     unsubscribeCloud();
-    unsubscribeCloud = Cloud.subscribe(requested, receiveCloudChange);
     document.getElementById("join-error").textContent = "Connecting…";
+    // Enter the shared session code; only read its separate public broadcast.
+    // Keep previously issued reserved broadcast links working as well.
+    const storageCode = /^98\d{18}$/.test(requested) ? requested : await Model.broadcastCode(requested);
+    if (generation !== pollGeneration) return;
+    unsubscribeCloud = Cloud.subscribe(storageCode, receiveCloudChange);
     async function poll() {
       try {
-        const found = await Cloud.fetchPresenter(requested);
+        const found = await Cloud.fetchPresenter(storageCode);
         if (generation !== pollGeneration) return;
         if (!found?.screenBroadcast || !found.broadcast) throw new Error("Screen not found. Open Screen View from Admin View.");
-        code = requested;
+        code = storageCode;
         apply(found.broadcast); failures = 0;
         join.classList.add("hidden"); document.getElementById("signal").classList.add("hidden");
-        const url = new URL(location.href); url.searchParams.set("session", code); history.replaceState(null, "", url);
+        const url = new URL(location.href); url.searchParams.set("session", requested); history.replaceState(null, "", url);
       } catch (error) {
         if (generation !== pollGeneration) return;
         failures++;
