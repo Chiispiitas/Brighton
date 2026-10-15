@@ -27,7 +27,7 @@
     <div class="director-timer"><label>Break countdown seconds<input type="number" id="screen-duration" min="1" max="3600" value="60"></label><label class="check-label"><input type="checkbox" id="screen-timer-visible" checked>Show break countdown</label><button type="button" id="screen-timer-start">Start / resume countdown</button><button type="button" id="screen-timer-pause">Pause countdown</button><button type="button" id="screen-timer-reset">Reset countdown</button><span class="director-help" id="live-timer">60s · paused</span></div>
     <p class="director-status" id="director-status" role="status" aria-live="polite"></p>
     <section class="director-roster"><h3>Contestants <span class="director-count" id="roster-count"></span></h3><p class="director-help">Paste one contestant per line: <strong>Name | Grade / class | Number</strong>. Tabs copied from a spreadsheet also work. Numbers are identifiers and never appear on the competition board. Set lives per contestant below; leave blank to hide that contestant’s lives. Results never change lives automatically.</p><label>Contestant list<textarea id="roster-paste" placeholder="Isabella Martinez | Grade 5 | 1&#10;Santiago Lopez | Grade 6 | 2"></textarea></label><div class="director-actions"><button type="button" id="roster-add">Add pasted contestants</button><button type="button" id="roster-save">Publish contestant list</button><label>Lives for all<input type="number" id="lives-for-all" min="0" max="99" step="1" value="3"></label><button type="button" id="lives-set-all">Set lives for all in preview</button></div><div class="roster-scroll"><table class="roster-table"><thead><tr><th>Number</th><th>Name</th><th>Grade / class</th><th>Lives</th><th>Status</th><th>Podium</th><th>Remove</th></tr></thead><tbody id="roster-rows"></tbody></table></div><div class="director-actions roster-footer"><button type="button" id="roster-add-manual">Add contestant</button></div></section>
-    <p class="director-help">Screen code: <span id="broadcast-code" class="screen-code">—</span>. Use one show operator at a time. A stopped timer never declares a result. Judge votes never trigger an audience result.</p>`;
+    <p class="director-help">Session code: <span id="broadcast-code" class="screen-code">—</span>. Use one show operator at a time. A stopped timer never declares a result. Judge votes never trigger an audience result.</p>`;
   document.querySelector(".control-shell").append(panel);
   const $ = id => document.getElementById(id);
   let sourceCode = "", broadcastCode = "", live = M.initial(), draft = M.initial();
@@ -203,8 +203,8 @@
         const saved = await Cloud.writeState({ sessionCode: broadcastCode, role: "presenter", state: { screenBroadcast: true, broadcast: live } });
         if (!saved.session?.screenBroadcast) throw new Error("Wix did not acknowledge the screen session.");
       }
-      $("open-screen").href = `screen.html?session=${broadcastCode}`;
-      $("broadcast-code").textContent = broadcastCode;
+      $("open-screen").href = `screen.html?session=${sourceCode}`;
+      $("broadcast-code").textContent = sourceCode;
       $("director-live").textContent = `ON AIR · ${M.scenes.find(([key]) => key === live.scene)?.[1]}`;
       fillFields(); setBusy(false); status("Screen connected. Open the audience screen on the stage display.");
     } catch (error) { ready = false; setBusy(false); status(error.message + " Reconnect to the word session to retry.", true); }

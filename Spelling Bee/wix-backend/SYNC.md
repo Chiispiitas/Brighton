@@ -84,6 +84,11 @@ replayed automatically after an uncertain outcome.
 
 Confirmed saves are also sent through a BroadcastChannel scoped to the exact
 session. This lets windows on the same device react without waiting for a poll.
+The audience window accepts the same session code as Admin, Study and judges,
+and resolves it locally to the separate public broadcast storage key. Admin's
+screen link and code label both use the shared session code. The audience never
+reads the private word session. Previously issued reserved broadcast codes
+(`98` plus 18 digits) still open their public broadcasts directly.
 The audience window subscribes only to its separate public broadcast session.
 Other devices, or browsers without BroadcastChannel, use the HTTP readers.
 
