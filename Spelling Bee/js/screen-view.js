@@ -30,7 +30,7 @@
   const canAnimate = () => state.motion === "full" && !matchMedia("(prefers-reduced-motion: reduce)").matches;
   function content() {
     const row = current();
-    if (state.scene === "standby") return `<div class="centered-layout">${title("Spelling Bee")}</div>`;
+    if (state.scene === "standby") return `<div class="centered-layout standby-layout"><img class="standby-logo" src="assets/logo.png" alt="Lev Vigotsky school logo">${title("U.E.P Lev Vigotsky")}</div>`;
     if (state.scene === "board" || state.scene === "finalists") {
       const finalists = state.scene === "finalists";
       const all = finalists ? state.contestants.filter(item => item.status === "finalist") : [...state.contestants].sort((a, b) => a.name.localeCompare(b.name, "en", { sensitivity: "base", numeric: true }));
