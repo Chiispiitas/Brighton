@@ -33,7 +33,7 @@ const server = http.createServer((req, res) => {
       if (failWrites && body.state.screenBroadcast) return route.fulfill({ status: 500, json: { success: false, error: 'Simulated outage' } });
       const state = { ...body.state, updatedAt: new Date().toISOString() };
       if (url.pathname.endsWith('spellingBeeSession')) { sessions.set(body.sessionCode, state); writes.push(structuredClone(body)); data = { session: state }; }
-      else data = { judge: state, command: state };
+      else { if (url.pathname.endsWith('spellingBeeCommand')) presenter.lastCommandSeq = state.commandSeq; data = { judge: state, command: state }; }
     } else {
       const code = url.searchParams.get('sessionCode');
       if (url.pathname.endsWith('spellingBeeSession')) data = { session: sessions.get(code) || null };
@@ -52,6 +52,7 @@ const server = http.createServer((req, res) => {
   const audience = await context.newPage();
   audience.on('request', req => { if (req.url().includes('_functions')) audienceRequests.push(req.url()); });
   await audience.goto(base + '/screen.html?session=' + broadcastCode);
+  assert.equal(await audience.locator('.school-brand strong').innerText(), 'U.E.P LEV VIGOTSKY MANTA');
   await audience.locator('#broadcast[data-scene=standby]').waitFor();
   const roster = Array.from({ length: 17 }, (_, index) => `Contestant ${index + 1} | Grade ${index % 3 + 5} | ${index + 1}`).join('\n');
   await admin.locator('#roster-paste').fill(roster);
@@ -68,7 +69,7 @@ const server = http.createServer((req, res) => {
   await admin.locator('#roster-save').click();
   await admin.locator('#director-status').filter({ hasText: 'Contestant list published' }).waitFor();
   await admin.locator('#screen-current').selectOption({ index: 1 });
-  await admin.locator('#screen-load-word').click();
+  assert.equal(await admin.locator('#screen-load-word,#screen-reveal').count(), 0);
   await admin.locator('#screen-word-status').filter({ hasText: 'loaded' }).waitFor();
   assert.equal((await admin.locator('#screen-example').inputValue()).includes('bell'), false);
   for (const [key] of M.scenes) {
@@ -76,7 +77,6 @@ const server = http.createServer((req, res) => {
     // Draft selection must leave the on-air scene unchanged.
     const before = sessions.get(broadcastCode).broadcast.scene;
     assert.notEqual(sessions.get(broadcastCode).broadcast.cueId, 'unexpected');
-    if (key === 'result') { await admin.locator('#screen-result').selectOption('correct'); await admin.locator('#screen-reveal').check(); }
     await admin.locator('#screen-take').click();
     await admin.locator('#director-status').filter({ hasText: 'Scene is live' }).waitFor();
     await audience.locator(`#broadcast[data-scene="${key}"][data-revision="${sessions.get(broadcastCode).broadcast.revision}"]`).waitFor();
@@ -84,7 +84,15 @@ const server = http.createServer((req, res) => {
     await audience.waitForTimeout(150);
     assert.equal(sessions.get(broadcastCode).broadcast.scene, key);
     if (key !== 'result') assert.equal(JSON.stringify(sessions.get(broadcastCode)).includes('bell'), false);
-    if (key === 'result') assert.equal(await audience.locator('.reveal-word').innerText(), 'bell');
+    if (key === 'result') {
+      assert.equal(await audience.locator('#scene').innerText(), 'bell');
+      assert.equal(await audience.locator('.result-label,.lower-third').count(), 0);
+      await admin.locator('#presenter-correct').click();
+      await audience.locator('.scene-fit:not(.scene-outgoing) .result-label').filter({ hasText: /^Correct$/ }).waitFor();
+      assert.equal(await audience.locator('.scene-fit:not(.scene-outgoing) .reveal-word').innerText(), 'bell');
+      await admin.locator('#presenter-incorrect').click();
+      await audience.locator('.scene-fit:not(.scene-outgoing) .result-label').filter({ hasText: /^Incorrect$/ }).waitFor();
+    }
     if (key === 'board') {
       assert.equal(await audience.locator('.contestant-card').count(), 8);
       assert.equal(await audience.locator('.contestant-card .number,.contestant-card .status,.contestant-card.current,.contestant-card.eliminated').count(), 0);
@@ -104,11 +112,30 @@ const server = http.createServer((req, res) => {
     assert.deepEqual(overflows, [], `Overflow in ${key}`);
     console.log('Scene passed:', key, '(previous:', before + ')');
   }
-  // Word changes invalidate stale definitions/reveals at the moment of taking a cue.
-  await admin.locator('[data-scene=definition]').click();
+  // Word information follows presenter changes automatically without touching the live scene.
   presenter.word = 'bike'; presenter.wordToken = 'test:2:bike';
+  await admin.waitForFunction(() => document.getElementById('screen-definition').value.includes('bicycle'));
+  assert.equal(sessions.get(broadcastCode).broadcast.scene, 'closing');
+  assert.equal((await admin.locator('#screen-example').inputValue()).includes('bike'), false);
+  // A pending word reveal needs no contestant and ignores stale feedback.
+  await admin.locator('#screen-current').selectOption('');
+  await admin.locator('[data-scene=result]').click(); await admin.locator('#screen-take').click();
+  await admin.locator('#director-status').filter({ hasText: 'Scene is live' }).waitFor();
+  await audience.locator('#broadcast[data-scene=result]').waitFor();
+  await audience.locator('#logo-sweep').waitFor({ state: 'hidden' }); await audience.waitForTimeout(150);
+  assert.equal(await audience.locator('#scene').innerText(), 'bike');
+  const pendingRevision = sessions.get(broadcastCode).broadcast.revision;
+  await admin.evaluate(() => window.dispatchEvent(new CustomEvent('spelling-feedback-confirmed', { detail: { sessionCode: '1357', wordToken: 'test:1:bell', word: 'bell', verdict: 'incorrect' } })));
+  await admin.waitForTimeout(150);
+  assert.equal(sessions.get(broadcastCode).broadcast.revision, pendingRevision);
+  assert.equal(sessions.get(broadcastCode).broadcast.result, 'pending');
+  await admin.locator('#screen-current').selectOption({ index: 1 });
+  await admin.locator('[data-scene=definition]').click();
   await admin.locator('#screen-take').click();
-  await admin.locator('#director-status').filter({ hasText: 'presenter changed words' }).waitFor();
+  await admin.locator('#director-status').filter({ hasText: 'Scene is live' }).waitFor();
+  assert(sessions.get(broadcastCode).broadcast.definition.includes('bicycle'));
+  await admin.locator('[data-scene=closing]').click(); await admin.locator('#screen-take').click();
+  await admin.locator('#director-status').filter({ hasText: 'Scene is live' }).waitFor();
   assert.equal(sessions.get(broadcastCode).broadcast.scene, 'closing');
   // Failure is explicit and keeps the previous scene.
   failWrites = true;
@@ -186,5 +213,5 @@ const server = http.createServer((req, res) => {
   offline = false; await audience.locator('#signal').waitFor({ state: 'hidden' });
   assert.deepEqual(errors, []);
   await browser.close(); server.close();
-  console.log('Passed: all 12 scenes, privacy, pagination, admin drafts, contestant editing, result reveal, stale-word block, failed writes, timer, restore, and source-session isolation.');
+  console.log('Passed: all 12 scenes, privacy, automatic word info, word-only pending reveal, acknowledged feedback, stale feedback rejection, lives, failed writes, timer, restore, and source-session isolation.');
 })().catch(error => { console.error(error); server.close(); process.exit(1); });

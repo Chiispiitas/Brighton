@@ -44,8 +44,8 @@
     }
     if (state.scene === "pending") return `${title("Decision pending")}<div class="pending-dots" aria-hidden="true"><i></i><i></i><i></i></div>${lower(row)}`;
     if (state.scene === "result") {
-      const outcome = state.result === "correct" ? "Correct" : state.result === "incorrect" ? "Incorrect" : "Word reveal";
-      return `<div class="result-${state.result}">${title(outcome)}${state.revealWord ? `<div class="reveal-word ${state.revealWord.length > 60 ? "xlong" : state.revealWord.length > 28 ? "long" : ""}">${escape(state.revealWord)}</div>` : ""}${lower(row)}</div>`;
+      const outcome = state.result === "correct" ? "Correct" : state.result === "incorrect" ? "Incorrect" : "";
+      return `<div class="centered-layout result-${state.result}">${outcome ? `<div class="result-label">${escape(outcome)}</div>` : ""}<div class="reveal-word ${state.revealWord.length > 60 ? "xlong" : state.revealWord.length > 28 ? "long" : ""}">${escape(state.revealWord || "—")}</div></div>`;
     }
     if (state.scene === "break") {
       const message = state.message === "We’ll be back shortly" ? "" : state.message;
@@ -192,8 +192,13 @@
     sample.showLives = true;
     sample.currentId = "0"; sample.definition = "The ability to face something difficult with confidence.";
     sample.example = "It takes _____ to stand on this stage."; sample.result = "correct";
-    let index = 0;
-    const advance = () => { sample.scene = Model.scenes[index++ % Model.scenes.length][0]; sample.cueId = String(index); sample.revealWord = sample.scene === "result" ? "COURAGE" : ""; apply(sample); };
+    let index = 0, demoResultTimer;
+    const advance = () => {
+      clearTimeout(demoResultTimer);
+      sample.scene = Model.scenes[index++ % Model.scenes.length][0]; sample.cueId = String(index);
+      sample.revealWord = sample.scene === "result" ? "COURAGE" : ""; sample.result = "pending"; apply(sample);
+      if (sample.scene === "result") demoResultTimer = setTimeout(() => { sample.result = "correct"; apply(sample); }, 3000);
+    };
     advance(); setInterval(advance, 7000);
   } else if (params.get("session")) connect(params.get("session"));
   else join.classList.remove("hidden");
