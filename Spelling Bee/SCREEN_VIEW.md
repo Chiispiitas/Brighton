@@ -12,7 +12,9 @@ Open the normal presenter, connect a numerical session, and join that session in
 
 Scenes: standby, competition board, round introduction, now spelling, word definition, word example, decision pending, result / word reveal, break message, finalists, podium, closing.
 
-The competition board rotates eight contestants per page; finalists rotate six per page, every eight seconds. Turn off rotation and select a page for manual operation. **Quiet / reduced motion** removes animated transitions; the OS reduced-motion preference is also respected.
+The competition board rotates eight contestants per page; finalists rotate six per page, every eight seconds. Single-page boards remain still. Turn off rotation and select a page for manual operation. **Soft transitions** gently fade scene content with a small vertical movement, keeping the school header and background fixed. Timer updates do not replay scene entrances. **Quiet / reduced motion** removes animated transitions; the OS reduced-motion preference is also respected.
+
+The audience display follows the default view's ivory text, muted gold, Georgia type and subdued dark background. It uses factual scene labels and no slogans, wipes or confetti. Optional break and closing messages are blank by default; the former stock messages are also hidden for existing saved broadcasts.
 
 For rehearsal, open `screen.html?demo=1`. It cycles all twelve scenes with clearly labeled sample contestants and never connects to Wix. The admin iframe previews drafts without writing them to Wix.
 

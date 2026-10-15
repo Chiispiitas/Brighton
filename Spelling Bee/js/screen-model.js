@@ -17,7 +17,7 @@
   const clamp = (value, min, max) => Math.min(max, Math.max(min, Number(value) || 0));
   function initial() {
     return { version: 1, revision: 0, cueId: "", scene: "standby", motion: "full",
-      round: "Round 1", message: "We’ll be back shortly", closing: "Thank you for being part of the bee.",
+      round: "Round 1", message: "", closing: "",
       contestants: [], currentId: "", boardPage: 0, autoBoard: true,
       definition: "", example: "", result: "pending", revealWord: "",
       timer: { duration: 60, remaining: 60, endsAt: 0, running: false, visible: true } };
@@ -34,7 +34,7 @@
       revision: clamp(input.revision, 0, Number.MAX_SAFE_INTEGER), cueId: text(input.cueId, 80),
       scene: scenes.some(([key]) => key === input.scene) ? input.scene : "standby",
       motion: input.motion === "quiet" ? "quiet" : "full", round: text(input.round, 60) || base.round,
-      message: text(input.message, 220) || base.message, closing: text(input.closing, 220) || base.closing,
+      message: text(input.message, 220), closing: text(input.closing, 220),
       contestants, currentId: text(input.currentId, 80), boardPage: clamp(input.boardPage, 0, 24),
       autoBoard: input.autoBoard !== false, definition: text(input.definition, 500), example: text(input.example, 500),
       result: input.scene === "result" && ["correct", "incorrect"].includes(input.result) ? input.result : "pending",

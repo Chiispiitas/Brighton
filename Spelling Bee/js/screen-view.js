@@ -9,7 +9,7 @@
   const scene = document.getElementById("scene");
   const join = document.getElementById("screen-join");
   let state = Model.initial(), code = "", pageOffset = 0, lastCue = "", failures = 0;
-  let pollGeneration = 0, displaySignature = "", transitionTimer;
+  let pollGeneration = 0, displaySignature = "";
   const escape = value => String(value ?? "").replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[char]));
   const tag = value => `<div class="eyebrow">${escape(value)}</div>`;
   const title = (value, extra = "") => `<h1 class="headline ${extra}">${escape(value)}</h1>`;
@@ -24,47 +24,72 @@
     const page = (Math.floor(state.boardPage) + (state.autoBoard ? pageOffset : 0)) % count;
     return { rows: rows.slice(page * size, (page + 1) * size), label: `${page + 1} / ${count}` };
   }
-  function confetti() { return `<div class="confetti" aria-hidden="true">${Array.from({ length: 20 }, (_, index) => `<i style="--i:${index}"></i>`).join("")}</div>`; }
+  const canAnimate = () => state.motion === "full" && !matchMedia("(prefers-reduced-motion: reduce)").matches;
   function content() {
     const row = current();
-    if (state.scene === "standby") return `<div class="standby-layout"><div>${tag("WELCOME TO THE STAGE")}<h1 class="headline">THE POWER<br>OF <em>EVERY LETTER.</em></h1><p class="subline">Lev-Vigotsky Spelling Bee</p><div class="standby-rule">OUR SPELLERS. THEIR MOMENT.</div></div><img class="hero-crest" src="assets/logo.png" alt="School crest"></div>`;
+    if (state.scene === "standby") return `<div class="centered-layout">${title("Spelling Bee")}</div>`;
     if (state.scene === "board" || state.scene === "finalists") {
       const finalists = state.scene === "finalists";
       const all = finalists ? state.contestants.filter(item => item.status === "finalist") : state.contestants;
       const page = paged(all, finalists ? 6 : 8);
-      return `<div class="board-heading"><div>${tag(finalists ? "THE FINAL STRETCH" : "THE FIELD")}${title(finalists ? "Meet your finalists" : "Competition board")}</div><span class="page-label">${page.label}</span></div>${all.length ? finalists ? `<div class="finalists-grid">${page.rows.map(item => `<article class="finalist-card"><span class="number">#${escape(item.number)}</span><strong class="${nameClass(item.name)}">${escape(item.name)}</strong><small>${escape(item.group)}</small></article>`).join("")}</div>` : `<div class="board-grid">${cards(page.rows)}</div>` : `<div class="empty-state">${finalists ? "Finalists will be announced shortly." : "The contestants will be announced shortly."}</div>`}`;
+      return `<div class="board-heading">${title(finalists ? "Finalists" : "Competition board")}<span class="page-label">${page.label}</span></div>${all.length ? finalists ? `<div class="finalists-grid">${page.rows.map(item => `<article class="finalist-card"><span class="number">#${escape(item.number)}</span><strong class="${nameClass(item.name)}">${escape(item.name)}</strong><small>${escape(item.group)}</small></article>`).join("")}</div>` : `<div class="board-grid">${cards(page.rows)}</div>` : `<div class="empty-state">${finalists ? "Finalists pending" : "Contestants pending"}</div>`}`;
     }
-    if (state.scene === "round") return `${tag("A NEW CHAPTER BEGINS")}${title(state.round, "round-number " + nameClass(state.round))}<div class="round-line"></div><p class="subline">Take a breath. Take the stage. Make every letter count.</p>`;
-    if (state.scene === "spelling") return `<div class="speller-layout"><div>${tag("NOW SPELLING")}<span class="speller-number">SPELLER #${escape(row?.number || "—")}</span>${title(row?.name || "The stage is yours", `speller-name ${nameClass(row?.name || "")}`)}<span class="group-pill">${escape(row?.group || "Lev-Vigotsky Spelling Bee")}</span></div><div class="timer-box ${state.timer.visible ? "" : "off"}" id="timer-box"><strong id="timer-value">${Model.remaining(state.timer)}</strong><span>SECONDS</span></div></div>`;
+    if (state.scene === "round") return `<div class="centered-layout">${title(state.round, "round-number " + nameClass(state.round))}</div>`;
+    if (state.scene === "spelling") return `<div class="speller-layout"><div>${tag("Now spelling")}<span class="speller-number">#${escape(row?.number || "—")}</span>${title(row?.name || "Contestant pending", `speller-name ${nameClass(row?.name || "")}`)}<span class="group-pill">${escape(row?.group || "")}</span></div><div class="timer-box ${state.timer.visible ? "" : "off"}" id="timer-box"><strong id="timer-value">${Model.remaining(state.timer)}</strong><span>seconds</span></div></div>`;
     if (["definition", "example"].includes(state.scene)) {
-      const value = state[state.scene] || "Word information will appear shortly.";
-      return `${tag(state.scene === "definition" ? "WORD DEFINITION" : "IN A SENTENCE")}<p class="quote ${value.length > 280 ? "xlong" : value.length > 150 ? "long" : ""}">${escape(value)}</p>${lower(row)}`;
+      const value = state[state.scene] || "";
+      return `${tag(state.scene === "definition" ? "Definition" : "Example")}<p class="quote ${value.length > 280 ? "xlong" : value.length > 150 ? "long" : ""}">${escape(value)}</p>${lower(row)}`;
     }
-    if (state.scene === "pending") return `${tag("THE JUDGES ARE DELIBERATING")}${title("Every letter.<br>Every moment.".replace("<br>", " "))}<div class="pending-dots" aria-hidden="true"><i></i><i></i><i></i></div>${lower(row)}`;
+    if (state.scene === "pending") return `${title("Decision pending")}<div class="pending-dots" aria-hidden="true"><i></i><i></i><i></i></div>${lower(row)}`;
     if (state.scene === "result") {
-      const outcome = state.result === "correct" ? "Correct!" : state.result === "incorrect" ? "Well played." : "The word is…";
-      return `<div class="result-${state.result}">${tag(state.result === "incorrect" ? "THANK YOU FOR YOUR COURAGE" : state.result === "correct" ? "ANOTHER WORD. ANOTHER VICTORY." : "WORD REVEAL")}<div class="result-rule"></div>${title(outcome)}${state.revealWord ? `<div class="reveal-word ${state.revealWord.length > 60 ? "xlong" : state.revealWord.length > 28 ? "long" : ""}">${escape(state.revealWord)}</div>` : ""}${lower(row)}</div>${state.result === "correct" ? confetti() : ""}`;
+      const outcome = state.result === "correct" ? "Correct" : state.result === "incorrect" ? "Incorrect" : "Word reveal";
+      return `<div class="result-${state.result}">${title(outcome)}${state.revealWord ? `<div class="reveal-word ${state.revealWord.length > 60 ? "xlong" : state.revealWord.length > 28 ? "long" : ""}">${escape(state.revealWord)}</div>` : ""}${lower(row)}</div>`;
     }
-    if (state.scene === "break") return `${tag("INTERMISSION")}${title("A moment<br>to recharge.".replace("<br>", " "))}<p class="subline">${escape(state.message)}</p>${state.timer.visible ? `<div class="standby-rule">RETURNING IN <strong id="break-timer">${Model.remaining(state.timer)}s</strong></div>` : ""}`;
+    if (state.scene === "break") {
+      const message = state.message === "We’ll be back shortly" ? "" : state.message;
+      return `<div class="centered-layout">${title("Break")}${message ? `<p class="subline">${escape(message)}</p>` : ""}${state.timer.visible ? `<div class="break-countdown">Resumes in <strong id="break-timer">${Model.remaining(state.timer)}s</strong></div>` : ""}</div>`;
+    }
     if (state.scene === "podium") {
       const placed = place => state.contestants.find(item => item.place === place);
       const podiumCard = (place, cls) => { const item = placed(place); return `<article class="podium-card ${cls}"><div class="place">${place === 1 ? "1ST" : place === 2 ? "2ND" : "3RD"}</div><strong>${escape(item?.name || "To be announced")}</strong><small>${escape(item?.group || "")}</small></article>`; };
-      return `<div class="podium-title">${tag("EXCELLENCE, LETTER BY LETTER")}${title("Our champions")}</div><div class="podium">${podiumCard(2, "second")}${podiumCard(1, "first")}${podiumCard(3, "third")}</div>${placed(1) ? confetti() : ""}`;
+      return `<div class="podium-title">${title("Podium")}</div><div class="podium">${podiumCard(2, "second")}${podiumCard(1, "first")}${podiumCard(3, "third")}</div>`;
     }
-    return `<div class="closing-layout"><img src="assets/logo.png" alt="School crest">${tag("LEV-VIGOTSKY SPELLING BEE")}${title("Beyond the last letter.")}<p class="subline">${escape(state.closing)}</p></div>`;
+    const closing = state.closing === "Thank you for being part of the bee." ? "" : state.closing;
+    return `<div class="centered-layout">${title("Spelling Bee")}${closing ? `<p class="subline">${escape(closing)}</p>` : ""}</div>`;
   }
-  function draw() {
+  function draw({ animate = false } = {}) {
     stage.classList.toggle("quiet", state.motion === "quiet");
     stage.dataset.scene = state.scene;
     stage.dataset.revision = String(state.revision);
     document.getElementById("round-bug").textContent = state.round;
-    document.getElementById("footer-copy").textContent = demo ? "REHEARSAL · SAMPLE CONTESTANTS" : "KNOWLEDGE · COURAGE · EXCELLENCE";
-    scene.innerHTML = `<div class="scene-fit"><div class="scene-content">${content()}</div></div>`;
+    document.getElementById("footer-copy").textContent = demo ? "REHEARSAL · SAMPLE CONTESTANTS" : "";
+    scene.querySelectorAll(".scene-outgoing").forEach(layer => layer.remove());
+    const previous = scene.querySelector(".scene-fit");
+    const next = document.createElement("div");
+    next.className = "scene-fit";
+    next.innerHTML = `<div class="scene-content">${content()}</div>`;
+    if (previous && animate && canAnimate()) {
+      previous.classList.add("scene-outgoing");
+      previous.setAttribute("aria-hidden", "true");
+      previous.querySelectorAll("[id]").forEach(element => element.removeAttribute("id"));
+      const outgoing = previous.querySelector(".scene-content");
+      const computed = getComputedStyle(outgoing);
+      const start = { opacity: computed.opacity, transform: computed.transform, filter: computed.filter };
+      outgoing.getAnimations().forEach(animation => animation.cancel());
+      const fade = outgoing.animate([start, { opacity: 0, transform: "translateY(-4px)", filter: "blur(1px)" }], { duration: 300, easing: "ease-in-out", fill: "forwards" });
+      fade.finished.then(() => previous.remove()).catch(() => previous.remove());
+      scene.append(next);
+      const entrance = next.firstElementChild.animate([
+        { opacity: 0, transform: "translateY(8px)", filter: "blur(1.5px)" },
+        { opacity: 1, transform: "translateY(0)", filter: "blur(0)" }
+      ], { duration: 760, delay: 100, easing: "cubic-bezier(.22,1,.36,1)", fill: "both" });
+      entrance.finished.then(() => entrance.cancel()).catch(() => {});
+    } else scene.replaceChildren(next);
     fitScene();
     updateTimer();
   }
   function fitScene() {
-    const wrapper = scene.querySelector(".scene-fit");
+    const wrapper = scene.querySelector(".scene-fit:not(.scene-outgoing)");
     if (!wrapper) return;
     wrapper.style.transform = "";
     const scale = Math.min(1, scene.clientHeight / Math.max(1, wrapper.scrollHeight));
@@ -78,15 +103,12 @@
     displaySignature = signature;
     const cue = normalized.cueId || normalized.scene;
     const changed = cue !== lastCue;
+    const visual = value => { const { revision, timer, ...fields } = value; return JSON.stringify({ ...fields, timerVisible: timer.visible }); };
+    const contentChanged = visual(normalized) !== visual(state);
     lastCue = cue; state = normalized;
     if (changed) pageOffset = 0;
-    clearTimeout(transitionTimer);
-    const stinger = document.getElementById("transition");
-    stinger.classList.remove("play");
-    if (changed && state.motion === "full" && !matchMedia("(prefers-reduced-motion: reduce)").matches) {
-      void stinger.offsetWidth; stinger.classList.add("play");
-      transitionTimer = setTimeout(draw, 310);
-    } else draw();
+    if (contentChanged) draw({ animate: true });
+    else { stage.dataset.revision = String(state.revision); updateTimer(); }
   }
   function updateTimer() {
     const seconds = Model.remaining(state.timer);
@@ -135,7 +157,11 @@
   setInterval(updateTimer, 200);
   window.addEventListener("resize", fitScene);
   document.fonts?.ready.then(fitScene);
-  setInterval(() => { if (["board", "finalists"].includes(state.scene) && state.autoBoard) { pageOffset++; draw(); } }, 8000);
+  setInterval(() => {
+    const rows = state.scene === "finalists" ? state.contestants.filter(row => row.status === "finalist") : state.contestants;
+    const size = state.scene === "finalists" ? 6 : 8;
+    if (["board", "finalists"].includes(state.scene) && state.autoBoard && rows.length > size) { pageOffset++; draw({ animate: true }); }
+  }, 8000);
   draw();
   if (preview) document.getElementById("fullscreen").remove();
   else if (demo) {
