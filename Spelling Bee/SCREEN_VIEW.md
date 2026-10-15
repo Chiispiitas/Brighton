@@ -6,15 +6,16 @@ Open the normal presenter, connect a numerical session, and join that session in
 2. Click **Open audience screen** and move that window to the stage display. Press **F** or the fullscreen button. The screen has a 16:9 canvas and keeps safe margins for TV displays.
 3. Choose a contestant, round and scene. Review the embedded preview, then **Take scene live**. Preparing the next contestant only changes the preview.
 4. Load the current presenter's word information for definition and example scenes. The target word is masked. If the presenter changes words before a word cue is taken, that cue is blocked until reviewed.
-5. Set a result manually. The **Reveal the current word** checkbox permits spelling to be sent only on the result scene. Leaving that scene clears permission. Judge votes and timer expiry never publish a result.
-6. Start, pause or reset the live timer independently. Taking a decision or result scene pauses it; changing contestants resets it. The break scene can use the timer as a return countdown. Hide it when not needed.
-7. Mark contestants **Finalist** for the finalists scene and assign unique first, second and third places for the podium. Completed contestants remain visible on the competition board with a respectful completed status.
+5. Set a result manually. The **Reveal the current word** checkbox permits spelling to be sent only on the result scene. Leaving that scene clears permission. Judge votes and countdown expiry never publish a result.
+6. Now Spelling has no timer. Admin's countdown controls apply only to the Break scene. Start, pause, reset or hide that countdown as needed.
+7. To show lives, enable **Show remaining lives**, set the lives column for each contestant (or use **Set lives for all in preview**), and publish the contestant list. Blank hides the count for that contestant; zero displays **0 lives remaining**. Lives are off by default and are never changed automatically by judging, results or timers.
+8. Mark contestants **Finalist** for the finalists scene and assign unique first, second and third places for the podium. The competition board lists everyone alphabetically with equal styling, without contestant numbers, ranks, placement badges or status highlights. Optional lives are labeled explicitly and never used to sort the board.
 
 Scenes: standby, competition board, round introduction, now spelling, word definition, word example, decision pending, result / word reveal, break message, finalists, podium, closing.
 
-The competition board rotates eight contestants per page; finalists rotate six per page, every eight seconds. Single-page boards remain still. Turn off rotation and select a page for manual operation. **Soft transitions** gently fade scene content with a small vertical movement, keeping the school header and background fixed. Timer updates do not replay scene entrances. **Quiet / reduced motion** removes animated transitions; the OS reduced-motion preference is also respected.
+The competition board rotates eight contestants per page; finalists rotate six per page, every eight seconds. Single-page boards remain still. Turn off rotation and select a page for manual operation. Scene changes use a smooth 1.4-second school-logo sweep with feathered edges, a short central hold and a gentle content fade underneath. Board page changes use content fades. Countdown-only updates do not replay the sweep. **Quiet / reduced motion** removes animated transitions; the OS reduced-motion preference is also respected.
 
-The audience display follows the default view's ivory text, muted gold, Georgia type and subdued dark background. It uses factual scene labels and no slogans, wipes or confetti. Optional break and closing messages are blank by default; the former stock messages are also hidden for existing saved broadcasts.
+The audience display follows the default view's ivory text, muted gold, Georgia type and subdued dark background. It uses factual scene labels without slogans or confetti. Optional break and closing messages are blank by default; the former stock messages are also hidden for existing saved broadcasts.
 
 For rehearsal, open `screen.html?demo=1`. It cycles all twelve scenes with clearly labeled sample contestants and never connects to Wix. The admin iframe previews drafts without writing them to Wix.
 

@@ -57,6 +57,14 @@ const server = http.createServer((req, res) => {
   await admin.locator('#roster-paste').fill(roster);
   await admin.locator('#roster-add').click();
   assert.equal(await admin.locator('#roster-rows tr').count(), 17);
+  await admin.locator('#lives-set-all').click();
+  await admin.locator('#screen-show-lives').check();
+  await admin.locator('#roster-rows .roster-lives').nth(0).fill('0');
+  await admin.locator('#roster-rows .roster-lives').nth(0).dispatchEvent('change');
+  await admin.locator('#roster-rows .roster-lives').nth(1).fill('1');
+  await admin.locator('#roster-rows .roster-lives').nth(1).dispatchEvent('change');
+  await admin.locator('#roster-rows .roster-lives').nth(2).fill('');
+  await admin.locator('#roster-rows .roster-lives').nth(2).dispatchEvent('change');
   await admin.locator('#roster-save').click();
   await admin.locator('#director-status').filter({ hasText: 'Contestant list published' }).waitFor();
   await admin.locator('#screen-current').selectOption({ index: 1 });
@@ -72,11 +80,22 @@ const server = http.createServer((req, res) => {
     await admin.locator('#screen-take').click();
     await admin.locator('#director-status').filter({ hasText: 'Scene is live' }).waitFor();
     await audience.locator(`#broadcast[data-scene="${key}"][data-revision="${sessions.get(broadcastCode).broadcast.revision}"]`).waitFor();
-    await audience.waitForTimeout(900);
+    await audience.locator('#logo-sweep').waitFor({ state: 'hidden' });
+    await audience.waitForTimeout(150);
     assert.equal(sessions.get(broadcastCode).broadcast.scene, key);
     if (key !== 'result') assert.equal(JSON.stringify(sessions.get(broadcastCode)).includes('bell'), false);
     if (key === 'result') assert.equal(await audience.locator('.reveal-word').innerText(), 'bell');
-    if (key === 'board') assert.equal(await audience.locator('.contestant-card').count(), 8);
+    if (key === 'board') {
+      assert.equal(await audience.locator('.contestant-card').count(), 8);
+      assert.equal(await audience.locator('.contestant-card .number,.contestant-card .status,.contestant-card.current,.contestant-card.eliminated').count(), 0);
+      assert.equal(await audience.locator('.contestant-card .identity > strong').first().innerText(), 'Contestant 1');
+      assert.equal(await audience.locator('.contestant-card .remaining-lives').count(), 7);
+      assert((await audience.locator('.contestant-card .remaining-lives').first().innerText()).includes('0 lives remaining'));
+    }
+    if (key === 'spelling') {
+      assert.equal(await audience.locator('#timer-box,#timer-value').count(), 0);
+      assert((await audience.locator('.remaining-lives').innerText()).includes('0 lives remaining'));
+    }
     if (screenshots && ['standby', 'spelling', 'board', 'podium'].includes(key)) await audience.screenshot({ path: path.join(screenshots, `screen-${key}.png`) });
     const overflows = await audience.evaluate(() => {
       const bounds = document.querySelector('#broadcast').getBoundingClientRect();
@@ -108,7 +127,8 @@ const server = http.createServer((req, res) => {
   await admin.locator('#director-status').filter({ hasText: 'timer reset' }).waitFor();
   await admin.locator('#screen-timer-start').click();
   await admin.locator('#director-status').filter({ hasText: 'timer running' }).waitFor();
-  await audience.locator('#timer-value').filter({ hasText: /^0$/ }).waitFor();
+  await admin.locator('#live-timer').filter({ hasText: /^0s/ }).waitFor();
+  assert.equal(await audience.locator('#timer-box,#timer-value').count(), 0);
   assert.equal(sessions.get(broadcastCode).broadcast.scene, 'spelling');
   assert.equal(sessions.get(broadcastCode).broadcast.result, 'pending');
   await audience.reload(); await audience.locator('#broadcast[data-scene=spelling]').waitFor();
@@ -129,6 +149,10 @@ const server = http.createServer((req, res) => {
   await admin.reload(); await admin.locator('#join-session-button').click();
   await admin.locator('#director-status').filter({ hasText: 'Screen connected' }).waitFor();
   assert.equal(await admin.locator('#roster-rows tr').count(), 17);
+  assert.equal(await admin.locator('#roster-rows .roster-lives').nth(0).inputValue(), '0');
+  assert.equal(await admin.locator('#roster-rows .roster-lives').nth(1).inputValue(), '1');
+  assert.equal(await admin.locator('#roster-rows .roster-lives').nth(2).inputValue(), '');
+  assert(await admin.locator('#screen-show-lives').isChecked());
   await admin.waitForTimeout(1000);
   if (screenshots) await admin.locator('#screen-director').screenshot({ path: path.join(screenshots, 'screen-admin.png') });
   assert(audienceRequests.every(url => url.includes('spellingBeeSession') && url.includes(broadcastCode)));
