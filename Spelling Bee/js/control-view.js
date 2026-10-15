@@ -783,6 +783,7 @@
       }
 
       setAppVisible(true);
+      if (role === "remote") window.dispatchEvent(new CustomEvent("spelling-session-joined", { detail: { sessionCode } }));
       renderPresenterState();
       renderJudgeAggregate(rows);
       setConnection(
@@ -1168,6 +1169,7 @@
   document.querySelectorAll(".verdict-button").forEach(bindVerdictButton);
 
   window.addEventListener("keydown", event => {
+    if (event.target.closest?.("#screen-director")) return;
     if (!canJudge || ["INPUT", "TEXTAREA"].includes(document.activeElement?.tagName)) return;
     if (event.key === "o" || event.key === "O") {
       event.preventDefault();

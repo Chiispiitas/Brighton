@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Spelling Bee · Screen View</title>
+  <link rel="icon" href="assets/logo.png">
+  <link rel="stylesheet" href="screen.css?v=20261015">
+</head>
+<body>
+  <main class="broadcast" id="broadcast" aria-label="Spelling Bee audience display">
+    <div class="arena" aria-hidden="true"><i></i><i></i><i></i><i></i></div>
+    <header class="broadcast-header">
+      <div class="school-brand"><img src="assets/logo.png" alt="Lev-Vigotsky school logo"><span>UNIDAD EDUCATIVA PARTICULAR<br><strong>LEV-VIGOTSKY</strong></span></div>
+      <div class="event-bug"><span>SPELLING BEE</span><strong id="round-bug">THE STAGE IS YOURS</strong></div>
+    </header>
+    <section class="scene" id="scene" aria-live="polite"></section>
+    <footer class="broadcast-footer"><span class="footer-tag">EVERY LETTER COUNTS</span><span id="footer-copy">KNOWLEDGE · COURAGE · EXCELLENCE</span><span class="footer-mark">UEPLV</span></footer>
+    <div class="transition" id="transition" aria-hidden="true"><img src="assets/logo.png" alt=""></div>
+    <div class="signal hidden" id="signal" role="status">Reconnecting · last scene held</div>
+  </main>
+  <form class="screen-join hidden" id="screen-join">
+    <img src="assets/logo.png" alt="Lev-Vigotsky school logo">
+    <h1>Screen View</h1><p>Open this screen from Admin View, or enter its screen code.</p>
+    <label for="screen-code">Screen code</label><input id="screen-code" inputmode="numeric" autocomplete="off" required>
+    <button type="submit">Connect screen</button><p id="join-error" role="status"></p>
+    <a href="screen.html?demo=1">Preview all scenes</a>
+  </form>
+  <button class="fullscreen" id="fullscreen" type="button">⛶ Full screen · F</button>
+  <script src="js/cloud.js?v=20260918-authority2"></script>
+  <script src="js/screen-model.js?v=20261015"></script>
+  <script src="js/screen-view.js?v=20261015"></script>
+</body>
+</html>
