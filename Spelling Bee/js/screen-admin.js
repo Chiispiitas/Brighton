@@ -17,10 +17,10 @@
       <label>Board page<input type="number" id="screen-page" min="1" max="25" value="1"></label>
       <label class="check-label"><input type="checkbox" id="screen-auto" checked>Rotate board / finalists pages</label>
       <label class="wide check-label"><input type="checkbox" id="screen-show-lives">Show remaining lives on Now Spelling and the competition board</label>
-      <label class="wide check-label"><input type="checkbox" id="screen-reveal">Reveal the current word on the Result scene (explicit permission to show its spelling)</label>
+      <p class="wide director-help">Taking Result / word reveal live reveals the current word. Pending results show the word alone; confirmed feedback adds Correct or Incorrect.</p>
       <label class="wide">Definition for the audience<textarea id="screen-definition" maxlength="500"></textarea></label>
       <label class="wide">Example sentence for the audience<textarea id="screen-example" maxlength="500"></textarea></label>
-      <div class="wide director-actions"><button type="button" id="screen-load-word">Load current word information</button><span class="director-help" id="screen-word-status">Target words are masked before reaching the screen.</span></div>
+      <div class="wide director-help" id="screen-word-status" role="status">Current word information loads automatically. Target spellings stay masked in definitions and examples.</div>
       <label class="wide">Break message (optional)<input id="screen-message" maxlength="220"></label>
       <label class="wide">Closing message (optional)<input id="screen-closing" maxlength="220"></label>
     </div>
@@ -32,6 +32,7 @@
   const $ = id => document.getElementById(id);
   let sourceCode = "", broadcastCode = "", live = M.initial(), draft = M.initial();
   let busy = false, ready = false, sourceWord = "", sourceToken = "", generation = 0;
+  let wordInfoKey = "", wordInfoPromise = null, retryInfoAt = 0, confirmedResult = null, pendingFeedback = null, liveResultToken = "";
   const frame = $("screen-preview");
   function status(message, error = false) { $("director-status").textContent = message; $("director-status").classList.toggle("error", error); }
   const storageKey = () => `bee-screen-draft:${sourceCode}`;
@@ -43,7 +44,7 @@
       autoBoard: $("screen-auto").checked, showLives: $("screen-show-lives").checked,
       definition: M.maskWord($("screen-definition").value, sourceWord),
       example: M.maskWord($("screen-example").value, sourceWord), message: $("screen-message").value,
-      closing: $("screen-closing").value, revealWord: $("screen-reveal").checked ? sourceWord : "",
+      closing: $("screen-closing").value, revealWord: draft.scene === "result" ? sourceWord : "",
       timer: { ...draft.timer, duration: Number($("screen-duration").value), visible: $("screen-timer-visible").checked } });
     // Keep the editable row objects alive across preview updates. Publication
     // normalizes a separate snapshot, so table handlers always edit this draft.
@@ -63,7 +64,6 @@
     for (const [id, value] of Object.entries(fields)) $(id).value = value;
     $("screen-auto").checked = draft.autoBoard; $("screen-timer-visible").checked = draft.timer.visible;
     $("screen-show-lives").checked = draft.showLives;
-    $("screen-reveal").checked = false;
     renderRoster(); preview();
   }
   function renderRoster() {
@@ -92,30 +92,52 @@
       }
       const td = document.createElement("td"), remove = document.createElement("button");
       remove.type = "button"; remove.textContent = "×"; remove.setAttribute("aria-label", `Remove ${row.name}`);
-      remove.addEventListener("click", () => { draft.contestants = draft.contestants.filter(item => item.id !== row.id); if (draft.currentId === row.id) { draft.currentId = ""; $("screen-reveal").checked = false; } renderRoster(); preview(); });
+      remove.addEventListener("click", () => { draft.contestants = draft.contestants.filter(item => item.id !== row.id); if (draft.currentId === row.id) draft.currentId = ""; renderRoster(); preview(); });
       td.append(remove); tr.append(td); tbody.append(tr);
     }
   }
-  async function refreshSource() {
-    const found = await Cloud.fetchPresenter(sourceCode);
+  async function acceptSource(found) {
     if (!found || found.screenBroadcast) throw new Error("Presenter session is unavailable.");
-    if (sourceToken !== found.wordToken) {
+    const key = JSON.stringify([found.wordToken, found.word, found.level, found.difficulty]);
+    const changed = key !== wordInfoKey;
+    if (changed) {
+      wordInfoKey = key; wordInfoPromise = null; retryInfoAt = 0; confirmedResult = null; pendingFeedback = null; liveResultToken = "";
       sourceWord = String(found.word || ""); sourceToken = String(found.wordToken || "");
-      $("screen-reveal").checked = false;
-      // A new word invalidates draft information; it must be loaded or entered again.
+      // Clear stale information before starting the new word's asynchronous load.
       $("screen-definition").value = ""; $("screen-example").value = "";
       draft.definition = ""; draft.example = ""; draft.revealWord = "";
       draft.result = "pending"; $("screen-result").value = "pending";
-      $("screen-word-status").textContent = "New word detected. Load its information before taking a word scene live.";
+      if (ready) preview();
     }
+    if (!sourceWord) { $("screen-word-status").textContent = "Waiting for a word from the presenter."; return found; }
+    if (!wordInfoPromise && Date.now() >= retryInfoAt) {
+      const run = generation, word = sourceWord;
+      $("screen-word-status").textContent = "Loading current word information automatically…";
+      wordInfoPromise = Cloud.getWordInfo(found.level, found.difficulty, word).then(info => {
+        if (run !== generation || key !== wordInfoKey) return;
+        draft.definition = M.maskWord($("screen-definition").value || info?.definition || "", word);
+        draft.example = M.maskWord($("screen-example").value || info?.example || "", word);
+        $("screen-definition").value = draft.definition; $("screen-example").value = draft.example;
+        $("screen-word-status").textContent = info ? "Current word information loaded automatically. Target spelling is masked." : "No saved information for this word. Enter a definition or example manually.";
+        if (ready) preview();
+      }).catch(() => {
+        if (run !== generation || key !== wordInfoKey) return;
+        wordInfoPromise = null; retryInfoAt = Date.now() + 5000;
+        $("screen-word-status").textContent = "Word information unavailable. Retrying automatically; you can also enter it manually.";
+      });
+    }
+    await wordInfoPromise;
     return found;
   }
+  async function refreshSource() { return acceptSource(await Cloud.fetchPresenter(sourceCode)); }
   function setBusy(value) {
     busy = value;
     for (const id of ["screen-take", "screen-standby", "roster-save", "screen-timer-start", "screen-timer-pause", "screen-timer-reset"]) $(id).disabled = value || !ready;
+    if (!value && pendingFeedback) setTimeout(flushFeedback, 0);
   }
   async function publish(next, message, fromTake = false) {
     if (!ready || (busy && !fromTake)) return;
+    const resultToken = sourceToken;
     setBusy(true); status("Sending to audience screen…");
     try {
       const latest = await Cloud.fetchPresenter(broadcastCode);
@@ -128,6 +150,7 @@
       const saved = await Cloud.writeState({ sessionCode: broadcastCode, role: "presenter", state: { screenBroadcast: true, broadcast: outgoing } });
       if (!saved.session?.screenBroadcast) throw new Error("The backend did not acknowledge the broadcast.");
       live = M.normalize(saved.session.broadcast);
+      if (fromTake || live.scene !== "result") liveResultToken = live.scene === "result" && live.revealWord === sourceWord && resultToken === sourceToken ? resultToken : "";
       $("director-live").textContent = `ON AIR · ${M.scenes.find(([key]) => key === live.scene)?.[1]}`;
       preview(); status(message);
     } catch (error) { status(`Not published: ${error.message}`, true); }
@@ -140,10 +163,11 @@
     try {
       const before = sourceToken;
       await refreshSource();
-      if (before !== sourceToken && ["definition", "example", "result"].includes(draft.scene)) { preview(); throw new Error("The presenter changed words. Reload the word information and review the preview."); }
+      if (before !== sourceToken && ["definition", "example", "result"].includes(draft.scene)) { preview(); throw new Error("The presenter changed words. Review the automatically loaded information and take the scene again."); }
       readFields();
-      if (["spelling", "definition", "example", "pending", "result"].includes(draft.scene) && !draft.currentId) throw new Error("Select the contestant first.");
-      if (["definition", "example"].includes(draft.scene) && !draft[draft.scene]) throw new Error("Load or enter the word information first.");
+      if (["spelling", "definition", "example", "pending"].includes(draft.scene) && !draft.currentId) throw new Error("Select the contestant first.");
+      if (draft.scene === "result" && !sourceWord) throw new Error("Call a word in the presenter before revealing it.");
+      if (["definition", "example"].includes(draft.scene) && !draft[draft.scene]) throw new Error("No information is available yet. Enter the word information manually or wait for the automatic load.");
       if (draft.contestants.some(row => !row.name.trim())) throw new Error("Every contestant needs a name.");
       const next = { ...draft, cueId: crypto.randomUUID(), timer: { ...live.timer, visible: draft.timer.visible, duration: draft.timer.duration } };
       if (["pending", "result"].includes(next.scene)) next.timer = { ...next.timer, remaining: M.remaining(live.timer), running: false };
@@ -153,7 +177,8 @@
     finally { setBusy(false); }
   }
   async function initialize(code) {
-    const run = ++generation; sourceCode = code; ready = false; setBusy(false);
+    const run = ++generation; sourceCode = code; ready = false;
+    wordInfoKey = ""; wordInfoPromise = null; confirmedResult = null; pendingFeedback = null; liveResultToken = ""; setBusy(false);
     try {
       broadcastCode = await M.broadcastCode(sourceCode);
       const found = await Cloud.fetchPresenter(broadcastCode);
@@ -177,12 +202,12 @@
   }
   for (const [key, label] of M.scenes) {
     const button = document.createElement("button"); button.type = "button"; button.textContent = label; button.dataset.scene = key;
-    button.addEventListener("click", () => { draft.scene = key; if (key !== "result") { $("screen-reveal").checked = false; $("screen-result").value = "pending"; } preview(); });
+    button.addEventListener("click", () => { draft.scene = key; $("screen-result").value = key === "result" && confirmedResult?.wordToken === sourceToken ? confirmedResult.verdict : "pending"; preview(); });
     $("screen-scenes").append(button);
   }
   frame.addEventListener("load", preview);
   panel.querySelectorAll(".director-fields input,.director-fields select,.director-fields textarea,#screen-duration,#screen-timer-visible").forEach(input => input.addEventListener("input", preview));
-  $("screen-current").addEventListener("change", () => { $("screen-reveal").checked = false; draft.result = "pending"; $("screen-result").value = "pending"; preview(); });
+  $("screen-current").addEventListener("change", () => { draft.result = "pending"; $("screen-result").value = "pending"; confirmedResult = null; preview(); });
   $("screen-take").addEventListener("click", take);
   $("screen-standby").addEventListener("click", () => publish({ ...live, scene: "standby", revealWord: "", cueId: crypto.randomUUID(), timer: { ...live.timer, remaining: M.remaining(live.timer), running: false } }, "Standby is live."));
   $("roster-add").addEventListener("click", () => { try { readFields(); const added = M.parseRoster($("roster-paste").value, draft.contestants); if (!added.length) throw new Error("Paste at least one contestant."); draft.contestants.push(...added); $("roster-paste").value = ""; renderRoster(); preview(); status(`Added ${added.length} contestants to preview. Publish the list when ready.`); } catch (error) { status(error.message, true); } });
@@ -195,17 +220,20 @@
     renderRoster(); preview(); status("Lives updated in preview. Publish the contestant list when ready.");
   });
   $("next-speller").addEventListener("click", () => { readFields(); const rows = draft.contestants.filter(row => row.status !== "eliminated"); const index = rows.findIndex(row => row.id === draft.currentId); if (index >= rows.length - 1) return status("No more contestants in the list."); draft.currentId = rows[index + 1]?.id || ""; draft.scene = "spelling"; draft.result = "pending"; fillFields(); status("Next contestant prepared. Review and take live."); });
-  $("screen-load-word").addEventListener("click", async () => {
-    try {
-      const found = await refreshSource(); const token = sourceToken;
-      if (!sourceWord) throw new Error("Call a word in the presenter first.");
-      const info = await Cloud.getWordInfo(found.level, found.difficulty, sourceWord);
-      const latest = await Cloud.fetchPresenter(sourceCode);
-      if (latest?.wordToken !== token) { await refreshSource(); throw new Error("The word changed while loading. Try again."); }
-      if (!info) throw new Error("No information is available for this word. Enter a definition and example manually.");
-      $("screen-definition").value = M.maskWord(info.definition, sourceWord); $("screen-example").value = M.maskWord(info.example, sourceWord);
-      $("screen-word-status").textContent = "Current word information loaded. Target spelling is masked."; preview();
-    } catch (error) { status(error.message, true); }
+  window.addEventListener("spelling-presenter-updated", event => {
+    if (ready && event.detail.sessionCode === sourceCode) acceptSource(event.detail.presenter).catch(() => {});
+  });
+  function flushFeedback() {
+    if (busy || !ready || !pendingFeedback) return;
+    const feedback = pendingFeedback; pendingFeedback = null;
+    if (feedback.wordToken !== sourceToken || liveResultToken !== sourceToken || live.scene !== "result" || live.revealWord !== feedback.word) return;
+    publish({ ...live, result: feedback.verdict }, "Confirmed result is live.");
+  }
+  window.addEventListener("spelling-feedback-confirmed", event => {
+    const feedback = event.detail;
+    if (!ready || feedback.sessionCode !== sourceCode || feedback.wordToken !== sourceToken || feedback.word !== sourceWord || !["correct", "incorrect"].includes(feedback.verdict)) return;
+    confirmedResult = feedback; $("screen-result").value = feedback.verdict; preview();
+    pendingFeedback = feedback; flushFeedback();
   });
   for (const action of ["start", "pause", "reset"]) $("screen-timer-" + action).addEventListener("click", () => {
     readFields(); const left = M.remaining(live.timer);

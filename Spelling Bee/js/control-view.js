@@ -598,6 +598,7 @@
       if (render) renderPresenterState();
     }
 
+    if (role === "remote") window.dispatchEvent(new CustomEvent("spelling-presenter-updated", { detail: { sessionCode, presenter: nextPresenter } }));
     return tokenChanged;
   }
 
@@ -1088,6 +1089,10 @@
             commandType === "difficulty" ? "" : snapshotPresenter.wordToken
           );
           if (!acknowledged) throw new Error("Presenter did not acknowledge command.");
+
+          if (commandType === "feedback") window.dispatchEvent(new CustomEvent("spelling-feedback-confirmed", {
+            detail: { sessionCode: snapshotSessionCode, wordToken: snapshotPresenter.wordToken, word: snapshotPresenter.word, verdict: value }
+          }));
 
           setConnection("Command sent", "online");
           window.setTimeout(refreshPresenterOnly, 20);
