@@ -55,6 +55,14 @@ The backend response helpers include `Access-Control-Allow-Origin`, and each pub
 
 The frontend in `Spelling Bee/js/cloud.js` already targets these routes on `cms-server`.
 
+## Audience Screen View
+
+The stage display uses the same published session endpoint with an independent
+broadcast session record. Its `presenterStateJson` contains `screenBroadcast: true`
+and a `broadcast` object holding the roster and public scene. The existing backend
+already stores and returns these fields, so no additional collection, field,
+route, or Wix code publish is required. See [SCREEN_VIEW.md](SCREEN_VIEW.md).
+
 ## Important deployment step
 
 Production `/_functions/` routes use the site's **published backend code**. After changing `http-functions.js`, `core.js`, or `spelling-bee.js` in Wix, publish `cms-server` before testing the production URLs.
