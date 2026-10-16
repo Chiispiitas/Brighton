@@ -124,7 +124,8 @@ const server = http.createServer((req, res) => {
   }
   // Word information follows presenter changes automatically without touching the live scene.
   presenter.word = 'bike'; presenter.wordToken = 'test:2:bike';
-  await admin.waitForFunction(() => document.getElementById('screen-definition').value.includes('bicycle'));
+  const bikeDefinition = JSON.parse(fs.readFileSync(path.join(root, 'word-data/4TH-5TH/easy.json'), 'utf8')).bike.definition;
+  await admin.waitForFunction(expected => document.getElementById('screen-definition').value === expected, bikeDefinition);
   assert.equal(sessions.get(broadcastCode).broadcast.scene, 'closing');
   assert.equal((await admin.locator('#screen-example').inputValue()).includes('bike'), false);
   // A pending word reveal needs no contestant and ignores stale feedback.
@@ -143,7 +144,7 @@ const server = http.createServer((req, res) => {
   await admin.locator('[data-scene=definition]').click();
   await admin.locator('#screen-take').click();
   await admin.locator('#director-status').filter({ hasText: 'Scene is live' }).waitFor();
-  assert(sessions.get(broadcastCode).broadcast.definition.includes('bicycle'));
+  assert.equal(sessions.get(broadcastCode).broadcast.definition, bikeDefinition);
   await admin.locator('[data-scene=closing]').click(); await admin.locator('#screen-take').click();
   await admin.locator('#director-status').filter({ hasText: 'Scene is live' }).waitFor();
   assert.equal(sessions.get(broadcastCode).broadcast.scene, 'closing');
