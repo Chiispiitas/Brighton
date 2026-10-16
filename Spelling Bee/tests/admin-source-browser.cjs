@@ -115,11 +115,14 @@ const server = http.createServer((req, res) => {
     const audience = await page('audience');
     const screenCode = await admin.locator('#broadcast-code').innerText();
     await audience.goto(base + '/screen.html?session=' + screenCode);
-    await admin.locator('[data-scene=result]').click(); await admin.locator('#screen-take').click();
+    await admin.locator('[data-scene=result][data-result=pending]').click(); await admin.locator('#screen-take').click();
     await admin.locator('#director-status').filter({ hasText: 'Scene is live' }).waitFor();
     await audience.locator('#broadcast[data-scene=result]').waitFor();
     await admin.locator('#presenter-correct').click(); await admin.locator('#presenter-correct[data-sync=saved]').waitFor();
-    await audience.locator('.scene-fit:not(.scene-outgoing) .result-label').filter({ hasText: /^Correct$/ }).waitFor();
+    await audience.locator('.scene-fit:not(.scene-outgoing) .result-pending').waitFor();
+    await admin.locator('[data-scene=result][data-result=correct]').click(); await admin.locator('#screen-take').click();
+    await admin.locator('#director-status').filter({ hasText: 'Scene is live' }).waitFor();
+    await audience.locator('.scene-fit:not(.scene-outgoing) .result-correct').waitFor();
     const completedWord = saved('8642').word;
     await admin.locator('#new-word-button').click(); await admin.locator('#new-word-button[data-sync=saved]').waitFor(); await hiddenInStudy(admin, '8642');
     assert(saved('8642').usedWords['SENIOR|hard'].includes(completedWord));

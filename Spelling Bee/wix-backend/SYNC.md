@@ -92,6 +92,12 @@ screen link and code label both use the shared session code. The audience never
 reads the private word session. Previously issued reserved broadcast codes
 (`98` plus 18 digits) still open their public broadcasts directly.
 The audience window subscribes only to its separate public broadcast session.
+Word reveal has three manual scene choices: Correct, Neutral and Incorrect.
+They publish `result=correct`, `pending` and `incorrect` respectively through
+the existing broadcast contract. Choosing a variant changes only the preview;
+Take scene live publishes it. Judging feedback events never change the draft
+variant or publish a result. The audience uses a left-aligned Word heading,
+large spelling and contestant identity, with green, white or red spelling.
 Other devices, or browsers without BroadcastChannel, use the HTTP readers.
 
 Button hold/release feedback does not perform an action until a native click.
