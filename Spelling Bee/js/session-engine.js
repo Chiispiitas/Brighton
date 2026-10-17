@@ -38,6 +38,12 @@
       poolCount: available.length, judgementRevision: 0, judgementSource: "admin", judgementUpdatedAt: 0,
       feedback: null };
   }
+  function useWord(state, token) {
+    if (!state.word || !token || state.wordToken !== token) throw new Error("The session changed words. Take the scene again for the current word.");
+    const key = `${state.level}|${state.difficulty}`, used = state.usedWords?.[key] || [];
+    if (used.includes(state.word)) return state;
+    return { ...state, usedWords: { ...state.usedWords, [key]: [...used, state.word] }, poolCount: Math.max(0, Number(state.poolCount || 0) - 1) };
+  }
   function judgement(state, input) {
     if (Number(input.judgementRevision || 0) <= Number(state.judgementRevision || 0)) return state;
     if (!Array.isArray(input.letterMarks) || input.letterMarks.length !== Array.from(state.word).length) return state;
@@ -54,5 +60,5 @@
       judgementRevision: Number(state.judgementRevision || 0) + 1, judgementSource: "admin", judgementUpdatedAt: Date.now(),
       feedback: { id: `${Date.now()}:${state.wordToken}:${verdict}`, wordToken: state.wordToken, verdict } };
   }
-  return { categories, difficulties, copy, seed, choose, judgement, feedback };
+  return { categories, difficulties, copy, seed, choose, useWord, judgement, feedback };
 });

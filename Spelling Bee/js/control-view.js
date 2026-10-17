@@ -1313,6 +1313,14 @@
     if (source?.active && source.code === code) { await source.saved(source.state.sourceRevision); return window.BeeSession.copy(source.state); }
     return Cloud.fetchPresenter(code);
   };
+  window.markSpellingWordUsed = async (code, token) => {
+    if (sessionCode !== code || !token || presenter?.wordToken !== token) throw new Error("The word session changed. Review the current word and try again.");
+    const word = presenter.word, key = `${presenter.level}|${presenter.difficulty}`;
+    if (presenter.usedWords?.[key]?.includes(word)) return;
+    if (!await sendRemoteCommand("use-word", token)) throw new Error("Word pool save was not confirmed. Take the scene again to retry.");
+    const state = await window.getSpellingWordSnapshot(code);
+    if (!state?.usedWords?.[key]?.includes(word)) throw new Error("Word pool save was not confirmed. Refresh Study if it is hosting this session, then retry.");
+  };
   async function startAdminSession() {
     if (!source) return;
     const start = document.getElementById("start-admin-session"), takeover = document.getElementById("admin-take-source");
