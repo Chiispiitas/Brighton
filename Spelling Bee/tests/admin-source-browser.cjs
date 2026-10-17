@@ -126,6 +126,12 @@ const server = http.createServer((req, res) => {
     const completedWord = saved('8642').word;
     await admin.locator('#new-word-button').click(); await admin.locator('#new-word-button[data-sync=saved]').waitFor(); await hiddenInStudy(admin, '8642');
     assert(saved('8642').usedWords['SENIOR|hard'].includes(completedWord));
+    await admin.locator('#pool-launcher').click();
+    await admin.locator('#pool-used-words').waitFor();
+    assert((await admin.locator('#pool-used-words [data-pool-difficulty=hard] .pool-word-list').innerText()).includes(completedWord));
+    assert(!(await admin.locator('#pool-columns > [data-pool-difficulty=hard] .pool-word-list').innerText()).includes(completedWord));
+    await admin.locator('#pool-close').click();
+
     const resumedToken = saved('8642').wordToken;
     await admin.reload(); await admin.locator('#join-session-button').click();
     await admin.locator('#source-status').filter({ hasText: 'Admin is running' }).waitFor();

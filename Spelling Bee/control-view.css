@@ -334,6 +334,8 @@ button:disabled { opacity: .45; cursor: not-allowed; }
 }
 
 .pool-count { color: #8f8573; font-size: .7rem; margin-left: .25rem; }
+.pool-used-section { grid-column: 1 / -1; border-top: 1px solid var(--control-border); padding-top: 1rem; margin-top: .5rem; }
+.pool-used-section > h3 { margin: 0; color: #dbc99c; font: 700 1rem Georgia, serif; }
 
 .pool-word-list {
   columns: 2;

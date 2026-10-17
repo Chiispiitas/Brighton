@@ -54,7 +54,7 @@
     readFields();
     frame.contentWindow?.postMessage({ type: "bee-screen-preview", state: { ...draft, timer: { ...draft.timer, remaining: draft.timer.duration, running: false } } }, location.origin);
     $("preview-label").textContent = draft.scene === "result" ? `Word · ${{correct: "Correct", pending: "Neutral", incorrect: "Incorrect"}[draft.result]}` : M.scenes.find(([key]) => key === draft.scene)?.[1] || "Standby";
-    for (const button of $("screen-scenes").children) { button.classList.toggle("selected", button.dataset.scene === draft.scene && (!button.dataset.result || button.dataset.result === draft.result)); button.classList.toggle("on-air", button.dataset.scene === live.scene && (!button.dataset.result || button.dataset.result === live.result)); button.setAttribute("aria-pressed", String(button.classList.contains("selected"))); }
+    for (const button of $("screen-scenes").querySelectorAll("button[data-scene]")) { button.classList.toggle("selected", button.dataset.scene === draft.scene && (!button.dataset.result || button.dataset.result === draft.result)); button.classList.toggle("on-air", button.dataset.scene === live.scene && (!button.dataset.result || button.dataset.result === live.result)); button.setAttribute("aria-pressed", String(button.classList.contains("selected"))); }
   }
   function fillFields() {
     const fields = { "screen-round": draft.round, "screen-motion": draft.motion,
@@ -206,12 +206,20 @@
     } catch (error) { ready = false; setBusy(false); status(error.message + " Reconnect to the word session to retry.", true); }
   }
   for (const [key, label] of M.scenes) {
-    const variants = key === "result" ? [["correct", "Word · Correct"], ["pending", "Word · Neutral"], ["incorrect", "Word · Incorrect"]] : [["", label]];
+    let target = $("screen-scenes");
+    if (key === "result") {
+      const control = document.createElement("div"); control.className = "word-reveal-control";
+      control.setAttribute("role", "group"); control.setAttribute("aria-label", "Word reveal");
+      control.innerHTML = '<span class="word-reveal-label">Word</span><div class="word-reveal-segments"></div>';
+      target.append(control); target = control.lastElementChild;
+    }
+    const variants = key === "result" ? [["correct", "Correct"], ["pending", "Neutral"], ["incorrect", "Incorrect"]] : [["", label]];
     for (const [result, buttonLabel] of variants) {
       const button = document.createElement("button"); button.type = "button"; button.textContent = buttonLabel; button.dataset.scene = key;
       if (result) button.dataset.result = result;
+      if (result) button.setAttribute("aria-label", `Word · ${buttonLabel}`);
       button.addEventListener("click", () => { draft.scene = key; draft.result = result || "pending"; preview(); });
-      $("screen-scenes").append(button);
+      target.append(button);
     }
   }
   frame.addEventListener("load", preview);
@@ -239,7 +247,13 @@
     readFields(); draft.contestants.forEach(row => { row.lives = amount; });
     renderRoster(); preview(); status("Lives updated in preview. Publish the contestant list when ready.");
   });
-  $("next-speller").addEventListener("click", () => { readFields(); const rows = draft.contestants.filter(row => row.status !== "eliminated" && row.name.trim()); if (!rows.length) return status("No contestants available to prepare."); const index = rows.findIndex(row => row.id === draft.currentId); draft.currentId = rows[(index + 1) % rows.length].id; draft.scene = "spelling"; draft.result = "pending"; fillFields(); status("Next contestant prepared. Review and take live."); });
+  $("next-speller").addEventListener("click", () => {
+    readFields(); const next = M.nextContestant(draft);
+    if (!next) return status("No contestants available to prepare.");
+    draft.currentId = next.currentId; draft.round = next.round;
+    draft.scene = "spelling"; draft.result = "pending"; fillFields();
+    status(next.wrapped ? `${draft.round} prepared with the first contestant. Review and take live.` : "Next contestant prepared. Review and take live.");
+  });
   window.addEventListener("spelling-presenter-updated", event => {
     if (ready && event.detail.sessionCode === sourceCode) acceptSource(event.detail.presenter).catch(() => {});
   });
