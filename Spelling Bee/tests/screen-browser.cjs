@@ -67,6 +67,18 @@ const server = http.createServer((req, res) => {
   await admin.locator('#roster-paste').fill(roster);
   await admin.locator('#roster-add').click();
   assert.equal(await admin.locator('#roster-rows tr').count(), 17);
+  await admin.locator('#next-speller').click();
+  assert.equal(await admin.locator('#screen-current').evaluate(el => el.selectedIndex), 1);
+  assert.equal(await admin.locator('#screen-round').inputValue(), 'Round 1');
+  for (let i = 0; i < 17; i++) await admin.locator('#next-speller').click();
+  assert.equal(await admin.locator('#screen-current').evaluate(el => el.selectedIndex), 1);
+  assert.equal(await admin.locator('#screen-round').inputValue(), 'Round 2');
+  for (let i = 0; i < 17; i++) await admin.locator('#next-speller').click();
+  assert.equal(await admin.locator('#screen-round').inputValue(), 'Round 3');
+  assert.equal(sessions.get(broadcastCode).broadcast.round, 'Round 1', 'automatic rounds remain in preview until taken live');
+  await admin.locator('#screen-round').fill('Round 1'); await admin.locator('#screen-round').dispatchEvent('input');
+  assert.equal(await admin.locator('.word-reveal-segments [data-scene=result]').count(), 3);
+
   await admin.locator('#lives-set-all').click();
   await admin.locator('#screen-show-lives').check();
   await admin.locator('#screen-auto').uncheck(); // Inspect the first page independently of rotation timing.

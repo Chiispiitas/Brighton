@@ -1239,11 +1239,13 @@
 
   async function openPools() {
     if (!presenter) return;
+    const poolState = presenter;
     poolModal?.classList.remove("hidden");
     if (poolColumns) poolColumns.innerHTML = "<p class='placeholder'>Loading remaining words…</p>";
 
     try {
-      const pools = await Cloud.loadRemainingPools(presenter.level || "4TH-5TH", presenter.usedWords || {});
+      const level = poolState.level || "4TH-5TH";
+      const pools = await Cloud.loadRemainingPools(level, poolState.usedWords || {});
       if (!poolColumns) return;
       poolColumns.innerHTML = ["easy", "medium", "hard"].map(difficulty => {
         const words = pools[difficulty] || [];
@@ -1251,11 +1253,16 @@
           ? `<ol class="pool-word-list">${words.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ol>`
           : "<p class='placeholder'>No remaining words.</p>";
         return `
-          <section class="pool-column ${presenter.difficulty === difficulty ? "current" : ""}">
+          <section class="pool-column ${poolState.difficulty === difficulty ? "current" : ""}" data-pool-difficulty="${difficulty}">
             <h3>${difficulty} <span class="pool-count">${words.length} remaining</span></h3>
             ${list}
           </section>`;
       }).join("");
+      poolColumns.innerHTML += `<section class="pool-used-section" id="pool-used-words"><h3>Already used words · ${escapeHtml(level)}</h3><div class="pool-columns">${["easy", "medium", "hard"].map(difficulty => {
+        const values = poolState.usedWords?.[`${level}|${difficulty}`];
+        const used = [...new Set(Array.isArray(values) ? values : [])];
+        return `<section class="pool-column" data-pool-difficulty="${difficulty}"><h3>${difficulty} <span class="pool-count">${used.length} used</span></h3>${used.length ? `<ol class="pool-word-list">${used.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ol>` : '<p class="placeholder">No used words yet.</p>'}</section>`;
+      }).join("")}</div></section>`;
     } catch (error) {
       if (poolColumns) poolColumns.innerHTML = `<p class="placeholder">${escapeHtml(error.message)}</p>`;
     }

@@ -93,12 +93,22 @@ reads the private word session. Previously issued reserved broadcast codes
 (`98` plus 18 digits) still open their public broadcasts directly.
 The audience window subscribes only to its separate public broadcast session.
 Word reveal has three manual scene choices: Correct, Neutral and Incorrect.
+These are joined segments of one coloured control in Admin.
 They publish `result=correct`, `pending` and `incorrect` respectively through
 the existing broadcast contract. Choosing a variant changes only the preview;
 Take scene live publishes it. Judging feedback events never change the draft
 variant or publish a result. The audience uses a left-aligned Word heading,
 large spelling and contestant identity, with green, white or red spelling.
 Other devices, or browsers without BroadcastChannel, use the HTTP readers.
+
+Preparing the next contestant skips Completed entries and increments the first
+number in the round label when wrapping to the first eligible entry. With no
+current selection, the first preparation starts the existing round; a single
+eligible contestant completes a loop on each following preparation. Round
+changes remain in the draft until Take scene live. Custom labels without a
+number gain `2` on the first wrap. The remaining-words dialog lists saved used
+words below the available pools for the current category, grouped by
+difficulty, using the existing source snapshot without more CMS requests.
 
 Button hold/release feedback does not perform an action until a native click.
 Judge success means Wix saved the snapshot. Legacy Admin command success additionally

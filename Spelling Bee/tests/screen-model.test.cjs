@@ -45,3 +45,24 @@ test('remaining lives are optional and distinguish zero from missing values', ()
   assert.equal(state.showLives, true);
   assert.deepEqual(state.contestants.map(row => row.lives), [0, null, 1, 99, null, 2]);
 });
+
+test('contestant loops advance the round only when wrapping and skip completed rows', () => {
+  const state = { ...M.initial(), contestants: [
+    { id: 'a', name: 'A', status: 'active' }, { id: 'b', name: 'B', status: 'eliminated' },
+    { id: 'c', name: 'C', status: 'finalist' }
+  ] };
+  assert.deepEqual(M.nextContestant(state), { currentId: 'a', round: 'Round 1', wrapped: false });
+  state.currentId = 'a';
+  assert.deepEqual(M.nextContestant(state), { currentId: 'c', round: 'Round 1', wrapped: false });
+  state.currentId = 'c';
+  assert.deepEqual(M.nextContestant(state), { currentId: 'a', round: 'Round 2', wrapped: true });
+  state.currentId = 'b';
+  assert.equal(M.nextContestant(state).currentId, 'c');
+  state.currentId = 'c'; state.contestants[2].status = 'eliminated';
+  assert.equal(M.nextContestant(state).round, 'Round 2');
+  state.round = 'Ronda 9'; assert.equal(M.nextContestant(state).round, 'Ronda 10');
+  state.round = 'Final'; assert.equal(M.nextContestant(state).round, 'Final 2');
+  state.contestants = [state.contestants[0]]; state.currentId = 'a';
+  assert.deepEqual(M.nextContestant(state), { currentId: 'a', round: 'Final 2', wrapped: true });
+  state.contestants = []; assert.equal(M.nextContestant(state), null);
+});

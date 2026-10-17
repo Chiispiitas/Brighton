@@ -71,5 +71,16 @@
     const hex = Array.from(new Uint8Array(bytes)).map(byte => byte.toString(16).padStart(2, "0")).join("");
     return "98" + (BigInt("0x" + hex) % 1000000000000000000n).toString().padStart(18, "0");
   }
-  return { scenes, initial, normalize, remaining, maskWord, parseRoster, broadcastCode };
+  function nextContestant(state) {
+    const eligible = row => row.status !== "eliminated" && String(row.name || "").trim();
+    const first = state.contestants.find(eligible);
+    if (!first) return null;
+    const index = state.contestants.findIndex(row => row.id === state.currentId);
+    const next = state.contestants.slice(index + 1).find(eligible);
+    const wrapped = index >= 0 && !next;
+    let round = state.round || "Round 1";
+    if (wrapped) round = /\d+/.test(round) ? round.replace(/\d+/, number => String(Number(number) + 1)) : `${round} 2`;
+    return { currentId: (next || first).id, round, wrapped };
+  }
+  return { scenes, initial, normalize, remaining, maskWord, parseRoster, broadcastCode, nextContestant };
 });
