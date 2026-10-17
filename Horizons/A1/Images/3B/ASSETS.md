@@ -1,6 +1,6 @@
 # 3B — real stock photography
 
-The revised lesson uses **three real photographs found through internet search**, downloaded from each source page's permitted free-download link. No image generation was used for this revision. The originals remain intact in this folder; only print-layout crops are applied through CSS. All photo backgrounds remain photographic.
+The lesson uses **three real photographs found through internet search**, downloaded from each source page's permitted free-download link. The originals remain intact in this folder; only print-layout crops are applied through CSS. All photo backgrounds remain photographic. The October 14 continuation-page revision uses `Conversation-standing-cutout-v2.png`, generated with the built-in imagegen tool as a taller, transparent extension of the approved fictional colleagues. It illustrates activity 8's generic A/B survey exchange and does not replace or recast the recorded guests. Activity 9 has been removed. The earlier `Lunch-conversation-cutout-v1.png` is retained but unused. Exact prompt, provenance and hash are in `../Unit3-generated-assets.json`.
 
 | Asset / activity | Local file | Photographer | Original source | Photographic evidence |
 | --- | --- | --- | --- | --- |
@@ -19,3 +19,7 @@ The photos illustrate original fictional teaching roles. The captions identify *
 ## Reversibility
 
 The superseded generated contact sheet and original layout remain recoverable through Git tag `horizons-before-3b-editorial-revision-2026-10-10`. The current lesson does not reference that asset. The earlier full-book PDF is also backed up in the local revision workspace.
+
+## Taller survey cutout - October 14, 2026
+
+Activity 8 now uses `Conversation-standing-cutout-v2.png`, a built-in imagegen extension of the approved fictional colleagues. It has true native transparency and natural body proportions; its CSS display crop shows taller figures beside the model and survey. The earlier `Lunch-conversation-cutout-v1.png` is retained but unused. Exact prompt, hash and current-use status are in `../Unit3-generated-assets.json`.

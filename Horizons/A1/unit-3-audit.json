@@ -1,0 +1,192 @@
+{
+  "audit_date": "2026-10-14",
+  "scope": "Lesson spreads 3A-3D, printed pages 23-30",
+  "status": "passed for lesson-spread preview; final book pagination pending",
+  "activities": 31,
+  "pages": 8,
+  "audio_tracks": [
+    {
+      "track": "3.1",
+      "sha256": "65745bb062b99220842559b0a08d61eae6babddf5b59f319f9462272386daf01",
+      "script_voice_hash_verified": true,
+      "matches_transcribed_candidate": true,
+      "decoder_pass": true,
+      "announcer": "Jessica"
+    },
+    {
+      "track": "3.2",
+      "sha256": "aa2c90addbad92bc4f8e65e4f3effbfa3af28d6b467f85c26a035a8eaead8dc4",
+      "script_voice_hash_verified": true,
+      "matches_transcribed_candidate": true,
+      "decoder_pass": true,
+      "announcer": "Jessica"
+    },
+    {
+      "track": "3.3",
+      "sha256": "e157a3cecabc365af7bbf204cbf20b31ccfe0dbf35e8595181408a4f8e04c405",
+      "script_voice_hash_verified": true,
+      "matches_transcribed_candidate": true,
+      "decoder_pass": true,
+      "announcer": "Jessica"
+    },
+    {
+      "track": "3.4",
+      "sha256": "be18f2d503fdfe36605de9a47c5b99e0591ea14a368ed035712a2227fc831110",
+      "script_voice_hash_verified": true,
+      "matches_transcribed_candidate": true,
+      "decoder_pass": true,
+      "announcer": "Jessica"
+    },
+    {
+      "track": "3.5",
+      "sha256": "68b1a3cff6da5e4bf467fa4feab9ddb0007b17557d67c97e8dce9b534068110a",
+      "script_voice_hash_verified": true,
+      "matches_transcribed_candidate": true,
+      "decoder_pass": true,
+      "announcer": "Jessica"
+    },
+    {
+      "track": "3.6",
+      "sha256": "8331431810579209c7b32dbd1a3dcfaca47fedadcc26b120f92db56f4316e8d7",
+      "script_voice_hash_verified": true,
+      "matches_transcribed_candidate": true,
+      "decoder_pass": true,
+      "announcer": "Jessica"
+    },
+    {
+      "track": "3.7",
+      "sha256": "7f8a52326da71b1515bc68b9353a9cb2294eec730567951839bb82ce137317d8",
+      "script_voice_hash_verified": true,
+      "matches_transcribed_candidate": true,
+      "decoder_pass": true,
+      "announcer": "Jessica"
+    },
+    {
+      "track": "3.8",
+      "sha256": "e97de150837a8793f7ea451be7723f80ec8c18509fa24e1f1619f65a26903eb8",
+      "script_voice_hash_verified": true,
+      "matches_transcribed_candidate": true,
+      "decoder_pass": true,
+      "announcer": "Jessica"
+    },
+    {
+      "track": "3.9",
+      "sha256": "ee9b73b9df50b9be07fa5715b97bb4773fe7e96606a8a5867fa0d1f1ba4fd61e",
+      "script_voice_hash_verified": true,
+      "matches_transcribed_candidate": true,
+      "decoder_pass": true,
+      "announcer": "Jessica"
+    }
+  ],
+  "asset_hashes_verified": [
+    "Horizons\\A1\\Images\\3B\\Bookshop-cottonbro-4855559.jpg",
+    "Horizons\\A1\\Images\\3B\\Office-Felicity-Tai-7964239.jpg",
+    "Horizons\\A1\\Images\\3B\\Office-Cedric-Fauntleroy-8154237.jpg",
+    "Horizons\\A1\\Images\\3C\\Park-Emre-Gencer-17379814.jpg",
+    "Horizons\\A1\\Images\\3C\\Cafe-Raphael-Loquellano-10215906.jpg",
+    "Horizons\\A1\\Images\\3C\\Terrace-Moussa-Idrissi-34936253.jpg",
+    "Horizons\\A1\\Images\\3D\\Read-Cottonbro-9708522.jpg",
+    "Horizons\\A1\\Images\\3D\\Walk-Terence-B-19403561.jpg",
+    "Horizons\\A1\\Images\\3D\\Music-Cottonbro-6687758.jpg",
+    "Horizons\\A1\\Images\\3D\\Breakfast-Ivan-S-7671446.jpg",
+    "Horizons\\A1\\Images\\3D\\Sleep-Los-Muertos-Crew-8406467.jpg",
+    "Horizons\\A1\\Images\\3D\\Water-Ron-Lach-8487216.jpg",
+    "Horizons\\A1\\Images\\Stock\\Pexels-8547629.jpg",
+    "Horizons\\A1\\Images\\Stock\\Pexels-7155728.jpg",
+    "Horizons\\A1\\Images\\Stock\\Pexels-12788323.jpg",
+    "Horizons\\A1\\Images\\Stock\\Pexels-5638730.jpg",
+    "Horizons\\A1\\Images\\Stock\\Pexels-8416381.jpg",
+    "Horizons\\A1\\Images\\Stock\\Pexels-6753368.jpg",
+    "Horizons\\A1\\Images\\Stock\\Pexels-4333583.jpg",
+    "Horizons\\A1\\Images\\Stock\\Pexels-4964751.jpg",
+    "Horizons\\A1\\Images\\Stock\\Daily-routines-real-v1.jpg",
+    "Horizons/A1/Images/3A/Teacher-Tima-5427870.jpg",
+    "Horizons/A1/Images/3A/Chef-Anthony-30350306.jpg",
+    "Horizons/A1/Images/3C/Review-Sueda-19535266.jpg"
+  ],
+  "new_words_badges": 6,
+  "extra_practice_footers": 4,
+  "back_of_book_references": 9,
+  "grammar_boxes": 5,
+  "issues_corrected": [
+    "3B grammar question/short-answer grouping",
+    "3D activity 6 afternoon/evening context",
+    "3C script role Omar corrected to Ravi",
+    "3A photo alt text and asset provenance updated",
+    "3C Free admission provenance clarified"
+  ],
+  "render_checks": {
+    "overflow": 0,
+    "missing_images": 0,
+    "missing_backgrounds": 0,
+    "answer_option_style_failures": 0,
+    "black_grammar_emphasis": 0,
+    "continuation_marker_over_text": 0,
+    "display_font_range_candidates": "six, visually cleared; no glyph collisions",
+    "unchanged_pages_pixel_identical": 24,
+    "saved_pdf_reopened_and_verified": true,
+    "continuation_tab_numerals_preserved": true,
+    "pdf_export": "Browser optimizes print-media resolution without modifying source assets. Direct raw Unit 3 export, append to preceding 18 pages, no font/image rewrite or deduplication. Saved book matches standalone Unit 3 pages in text and pixels.",
+    "recordings_unchanged": true
+  },
+  "manual_checks": [
+    "All eight final pages inspected",
+    "Controlled answers checked against printed evidence and teacher keys",
+    "Nine existing transcripts reviewed; no new subjective listening session",
+    "A/C language, B listening-led, D writing outcome retained",
+    "NEW WORDS, Extra Practice, grammar and vocabulary references checked",
+    "Purposeful backgrounds and distinct source compositions preserved",
+    "Circle choices italic with capitals only where grammatical",
+    "Messi 2023 source context and normal UAE federal timetable rechecked",
+    "Continuation-page imagery checked independently on all four lessons; new requirement stored in canonical style and handoff."
+  ],
+  "remaining_book_dependency": "Nine page --- destinations intentionally await back-of-book pagination; not a release-ready complete book",
+  "verified_sources": [
+    {
+      "purpose": "2023 routine context",
+      "url": "https://tn.com.ar/deportes/futbol/2023/09/21/todas-las-respuestas-de-lionel-messi-en-la-entrevista-con-migue-granados/"
+    },
+    {
+      "purpose": "normal federal workweek",
+      "url": "https://www.fahr.gov.ae/en/contact/"
+    }
+  ],
+  "author_revision_2026_10_14": "3A adds two listening-guest photos and removes old activity 5; 3B keeps activity 8, adds taller generated colleagues and trims two repetitive items in activity 7; 3C adds a caf\u00e9 photo to the review, removes old activity 7 and renumbers; 3D adds a generated breakfast/water scene, removes old activity 5 and renumbers. Keys and source notes match; all nine recordings remain unchanged.",
+  "continuation_page_imagery": {
+    "required": "Each lesson second page has one or two substantial task-related images; icons and tiny badges do not count. Repetitive activities may be removed to preserve print legibility and writing space.",
+    "author_preference_date": "2026-10-14",
+    "pages": [
+      {
+        "page": "24",
+        "count": 2,
+        "passed": true
+      },
+      {
+        "page": "26",
+        "count": 1,
+        "passed": true
+      },
+      {
+        "page": "28",
+        "count": 1,
+        "passed": true
+      },
+      {
+        "page": "30",
+        "count": 1,
+        "passed": true
+      }
+    ],
+    "print_crops_visually_checked": true,
+    "natural_body_proportions": true
+  },
+  "generated_assets_manifest": "Images/Unit3-generated-assets.json",
+  "information_gap_and_open_writing": {
+    "author_correction_date": "2026-10-14",
+    "information_gap_requirement": "Answers must not be readable from preset A/B material on the same spread. Use private personal information or genuinely separated role material.",
+    "3C_activity_7": "Partner knows the chosen family member's place visits; the page contains only prompts and empty response cells. Personal or consistent fictional answers are accepted.",
+    "3C_activity_8": "Four open writing lines; no fixed sentence stems or fill-in gaps. Reading reviews supply optional language models.",
+    "3D_legend": "Removed \u2713 yes / \u2013 no legend; week-record entries unchanged.",
+    "saved_pdf_checked": true
+  }
+}

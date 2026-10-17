@@ -43,7 +43,7 @@
 .l3b-list > li { counter-increment:item; position:relative; padding-left:4.5mm; line-height:1.45; }
 .l3b-list > li::before { content:counter(item); position:absolute; left:0; top:0; color:var(--hz-unit-dark); font-size:8.5pt; font-weight:620; }
 .l3b-notice { margin-top:3mm; display:grid; gap:1.5mm; }
-.l3b-continuation-content { padding-top:7mm; }
+.l3b-continuation-content { padding-top:5mm; }
 .l3b-page--2 .hz-exercises { padding-top:0 !important; }
 .l3b-page--2 .hz-focus-box { margin:1.2mm 0 1.6mm; }
 .l3b-page--2 .hz-go-to { margin-bottom:.2mm; }
@@ -68,10 +68,37 @@
 .l3b-survey th:first-child { width:50%; }
 .l3b-survey tbody th { font-weight:400; }
 .l3b-survey td { border-left:.25mm solid var(--hz-line); }
-.l3b-lunch-layout { display:grid; grid-template-columns:1fr 1fr; gap:7mm; align-items:start; }
-.l3b-lunch-layout p { margin:0 0 1mm; }
-.l3b-lunch-note { border:.25mm solid #d4a62c; padding:0 3mm .5mm; }
-.l3b-lunch-note h2 { margin:0 -3mm 1.5mm; padding:.7mm 3mm; font:700 15pt/1.2 Bahnschrift,"Arial Black",sans-serif; color:#173a45; background:#ffca49; }
-.l3b-lunch-note h2 em { font:inherit; }
-.l3b-lunch-note .l3b-gap { width:38mm; margin-left:2mm; }
 .l3b-inset { margin-left:calc(var(--hz-exercise-marker-size) + 3mm); margin-top:.8mm; }
+
+/* Radio guest roster: horizontal interviews with alternating scene positions.
+   Preserve the established Horizons on Air logo and crimson masthead. */
+.l3b-air-head h2 { display:flex; flex-direction:column; font-size:26pt; }
+.l3b-air-head h2 span { display:block; }
+.l3b-show-brand { flex-shrink:0; white-space:nowrap; }
+.l3b-week-stories { grid-template-columns:1fr; gap:2.5mm; padding:3mm; }
+.l3b-week-story { display:grid; grid-template-columns:36mm minmax(0,1fr); background:#fff; }
+.l3b-week-story img { height:29mm; }
+.l3b-story-copy { display:block; }
+.l3b-story-copy header { display:flex; align-items:baseline; justify-content:space-between; gap:3mm; padding:1.5mm 2mm; margin:0; }
+.l3b-story-copy h3 { font-size:15pt; margin:0; }
+.l3b-story-copy header p { margin:0; line-height:1.35; }
+.l3b-story-copy blockquote { display:grid; grid-template-columns:1fr 1fr; gap:4mm; padding:1.5mm 2mm; }
+.l3b-story-copy blockquote p { margin:0; }
+.l3b-week-story--ken { grid-template-columns:minmax(0,1fr) 36mm; }
+.l3b-week-story--ken figure { grid-column:2; grid-row:1; }
+.l3b-week-story--ken .l3b-story-copy { grid-column:1; grid-row:1; }
+.l3b-page .hz-extra-practice { margin-top:.8mm; }
+
+/* Each question stays with its own affirmative and negative short answers. */
+.l3b-grammar { grid-template-columns:1fr 1.95fr; }
+.l3b-grammar-pairs { display:grid; gap:1.5mm; align-content:start; }
+.l3b-grammar-pair { display:grid; grid-template-columns:1.3fr 1fr; gap:4mm; align-items:start; }
+.l3b-grammar-pair p { margin:0; }
+
+/* Survey and conversation cutout form one composition, with larger characters. */
+.l3b-survey-layout { display:grid; grid-template-columns:minmax(0,1fr) 68mm; gap:4mm; align-items:center; margin-top:2mm; }
+.l3b-survey-layout .l3b-survey th:first-child { width:45%; }
+.l3b-survey-layout .l3b-survey th,.l3b-survey-layout .l3b-survey td { padding:2.5mm 1.5mm; }
+.l3b-survey-people { display:block; width:68mm; height:78mm; object-fit:cover; object-position:center top; }
+
+.l3b-survey-task .l3b-pair-model { flex-direction:column; gap:1.5mm; margin-bottom:4mm; }
