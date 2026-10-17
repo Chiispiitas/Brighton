@@ -479,7 +479,7 @@
 
     try {
       const existing = await Cloud.fetchPresenter(normalized);
-      if (existing?.screenBroadcast) throw new Error("That code belongs to an audience screen.");
+      if (existing?.screenBroadcast || existing?.screenCameraPreview) throw new Error("That code belongs to an audience screen.");
       if (existing?.sourceRole === "admin") { followAdmin(existing); connectingSession = false; startRemotePollLoop(); return; }
       const remote = await Cloud.fetchCommand(normalized);
       lastRemoteCommandSeq = Number(remote?.commandSeq || 0);

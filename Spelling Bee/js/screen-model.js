@@ -16,7 +16,7 @@
   const text = (value, max = 160) => String(value ?? "").trim().slice(0, max);
   const clamp = (value, min, max) => Math.min(max, Math.max(min, Number(value) || 0));
   function initial() {
-    return { version: 1, revision: 0, cueId: "", scene: "standby", motion: "full",
+    return { version: 1, revision: 0, cueId: "", scene: "standby", motion: "full", layout: "stage",
       round: "Round 1", message: "", closing: "",
       contestants: [], currentId: "", boardPage: 0, autoBoard: true, showLives: false,
       definition: "", example: "", result: "pending", revealWord: "",
@@ -34,7 +34,7 @@
     return { ...base, version: 1,
       revision: clamp(input.revision, 0, Number.MAX_SAFE_INTEGER), cueId: text(input.cueId, 80),
       scene: scenes.some(([key]) => key === input.scene) ? input.scene : "standby",
-      motion: input.motion === "quiet" ? "quiet" : "full", round: text(input.round, 60) || base.round,
+      motion: input.motion === "quiet" ? "quiet" : "full", layout: input.layout === "stream" ? "stream" : "stage", round: text(input.round, 60) || base.round,
       message: text(input.message, 220), closing: text(input.closing, 220),
       contestants, currentId: text(input.currentId, 80), boardPage: clamp(input.boardPage, 0, 24),
       autoBoard: input.autoBoard !== false, showLives: input.showLives === true,
@@ -71,6 +71,11 @@
     const hex = Array.from(new Uint8Array(bytes)).map(byte => byte.toString(16).padStart(2, "0")).join("");
     return "98" + (BigInt("0x" + hex) % 1000000000000000000n).toString().padStart(18, "0");
   }
+  async function cameraPreviewCode(broadcastSessionCode) {
+    const bytes = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(`bee-camera-preview-v1:${broadcastSessionCode}`));
+    const hex = Array.from(new Uint8Array(bytes)).map(byte => byte.toString(16).padStart(2, "0")).join("");
+    return "97" + (BigInt("0x" + hex) % 1000000000000000000n).toString().padStart(18, "0");
+  }
   function nextContestant(state) {
     const eligible = row => row.status !== "eliminated" && String(row.name || "").trim();
     const first = state.contestants.find(eligible);
@@ -82,5 +87,5 @@
     if (wrapped) round = /\d+/.test(round) ? round.replace(/\d+/, number => String(Number(number) + 1)) : `${round} 2`;
     return { currentId: (next || first).id, round, wrapped };
   }
-  return { scenes, initial, normalize, remaining, maskWord, parseRoster, broadcastCode, nextContestant };
+  return { scenes, initial, normalize, remaining, maskWord, parseRoster, broadcastCode, cameraPreviewCode, nextContestant };
 });

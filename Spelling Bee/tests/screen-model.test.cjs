@@ -34,6 +34,16 @@ test('broadcast session keys are deterministic numeric keys independent of prese
   assert.match(first, /^98\d{18}$/); assert.equal(first, await M.broadcastCode('1234'));
   assert.notEqual(first, await M.broadcastCode('1235'));
 });
+
+test('camera layout is explicit and snapshot storage cannot collide with source or broadcast', async () => {
+  assert.equal(M.normalize().layout, 'stage');
+  assert.equal(M.normalize({ layout: 'unknown' }).layout, 'stage');
+  assert.equal(M.normalize({ layout: 'stream' }).layout, 'stream');
+  const source = '5678', broadcast = await M.broadcastCode(source), camera = await M.cameraPreviewCode(broadcast);
+  assert.match(camera, /^97\d{18}$/); assert.notEqual(camera, source); assert.notEqual(camera, broadcast);
+  assert.equal(camera, await M.cameraPreviewCode(broadcast));
+  assert.equal('image' in M.normalize({ layout: 'stream', image: 'private camera picture' }), false);
+});
 test('remaining lives are optional and distinguish zero from missing values', () => {
   const old = M.normalize({ contestants: [{ name: 'Legacy contestant' }] });
   assert.equal(old.showLives, false); assert.equal(old.contestants[0].lives, null);
