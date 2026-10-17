@@ -18,7 +18,7 @@
       <label class="check-label"><input type="checkbox" id="screen-auto" checked>Rotate board / finalists pages</label>
       <label class="wide check-label"><input type="checkbox" id="screen-show-lives">Show remaining lives on Now Spelling and the competition board</label>
       <p class="wide director-help camera-help">For streaming, take Streaming overlay live, then open Screen View and choose Camera to start its webcam. Admin receives a small still about every 15 seconds; it does not play the live feed.</p>
-      <p class="wide director-help">Choose Word · Correct, Word · Neutral or Word · Incorrect, then take the scene live. Word colours are independent of judging animations.</p>
+      <p class="wide director-help">Choose Word · Correct, Word · Neutral or Word · Incorrect, then take the scene live. Word colours are independent of judging animations. Taking Word · Correct live marks the current word as used.</p>
       <label class="wide">Definition for the audience<textarea id="screen-definition" maxlength="500"></textarea></label>
       <label class="wide">Example sentence for the audience<textarea id="screen-example" maxlength="500"></textarea></label>
       <div class="wide director-help" id="screen-word-status" role="status">Current word information loads automatically. Target spellings stay masked in definitions and examples.</div>
@@ -140,10 +140,11 @@
     busy = value;
     for (const id of ["screen-take", "screen-standby", "roster-save", "screen-timer-start", "screen-timer-pause", "screen-timer-reset"]) $(id).disabled = value || !ready;
   }
-  async function publish(next, message, fromTake = false, button = null) {
+  async function publish(next, message, fromTake = false, button = null, afterPublish = null) {
     if (!ready || (busy && !fromTake)) return;
     setBusy(true); status("Sending to audience screen…");
     window.BeeButtons?.set(button, "saving", "Publishing…", Boolean(button));
+    let published = false;
     try {
       const latest = await Cloud.fetchPresenter(broadcastCode);
       if (latest && !latest.screenBroadcast) throw new Error("This screen code is already in use by a word session. No changes were saved.");
@@ -155,12 +156,15 @@
       const saved = await Cloud.writeState({ sessionCode: broadcastCode, role: "presenter", state: { screenBroadcast: true, broadcast: outgoing } });
       if (!saved.session?.screenBroadcast) throw new Error("The backend did not acknowledge the broadcast.");
       live = M.normalize(saved.session.broadcast);
+      published = true;
       $("director-live").textContent = `ON AIR · ${M.scenes.find(([key]) => key === live.scene)?.[1]}`;
-      preview(); status(message);
+      preview();
+      if (afterPublish) await afterPublish();
+      status(message);
       window.BeeButtons?.set(button, "saved", "Published", Boolean(button));
     } catch (error) {
-      status(`Not published: ${error.message}`, true);
-      window.BeeButtons?.set(button, "error", "Not published · try again", Boolean(button));
+      status(published ? `Scene is live, but the word pool update failed: ${error.message}` : `Not published: ${error.message}`, true);
+      window.BeeButtons?.set(button, "error", published ? "Pool not saved · retry" : "Not published · try again", Boolean(button));
     }
     finally { setBusy(false); }
   }
@@ -181,7 +185,9 @@
       const next = { ...draft, cueId: crypto.randomUUID(), timer: { ...live.timer, visible: draft.timer.visible, duration: draft.timer.duration } };
       if (["pending", "result"].includes(next.scene)) next.timer = { ...next.timer, remaining: M.remaining(live.timer), running: false };
       if (next.currentId !== live.currentId) next.timer = { ...next.timer, remaining: draft.timer.duration, running: false };
-      await publish(next, "Scene is live. Results and lives remain under your control.", true, $("screen-take"));
+      const usesWord = next.scene === "result" && next.result === "correct";
+      const code = sourceCode, token = sourceToken;
+      await publish(next, usesWord ? "Scene is live. Word marked as used and removed from the remaining pool." : "Scene is live. Results and lives remain under your control.", true, $("screen-take"), usesWord ? () => window.markSpellingWordUsed(code, token) : null);
     } catch (error) { status(error.message, true); window.BeeButtons?.set($("screen-take"), "error", error.message); }
     finally { setBusy(false); }
   }

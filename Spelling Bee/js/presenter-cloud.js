@@ -370,6 +370,9 @@
     } else if (type === "category" && Array.from(elPoolSelect?.options || []).some(option => option.value === command.value)) {
       hiddenMode = true; elPoolSelect.value = command.value;
       await changeDifficulty(currentDifficulty);
+    } else if (type === "use-word" && command.value === currentWordToken()) {
+      rememberUsedWord(current);
+      pool = pool.filter(word => word !== current);
     } else if (type === "word-state") {
       // Admin sends the latest complete word judgement. Intermediate taps can
       // be skipped safely because this snapshot contains every mark + pointer.

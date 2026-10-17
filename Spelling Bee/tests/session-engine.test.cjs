@@ -35,3 +35,13 @@ test('judgement snapshots preserve undo and ignore older revisions', () => {
   assert.deepEqual(undone.marks, ['ok', 'pending', 'pending', 'pending']);
   assert.equal(M.judgement(undone, { ...marked, letterMarks: ['correct', 'incorrect', 'pending', 'pending'] }), undone);
 });
+test('using a scene word removes it once without changing judging or revealing Study', () => {
+  const state = M.choose(M.seed(), ['bell', 'bike'], '4TH-5TH', 'easy', () => 0);
+  const used = M.useWord(state, state.wordToken);
+  assert.deepEqual(used.usedWords['4TH-5TH|easy'], ['bell']);
+  assert.equal(used.poolCount, state.poolCount - 1);
+  assert.deepEqual(used.marks, state.marks); assert.equal(used.hiddenMode, true); assert.equal(used.feedback, null);
+  assert.equal(M.useWord(used, used.wordToken), used);
+  assert.throws(() => M.useWord(state, 'old-token'), /changed words/);
+  assert.equal(M.choose(used, ['bell', 'bike']).word, 'bike');
+});
