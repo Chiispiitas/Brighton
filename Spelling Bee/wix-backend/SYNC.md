@@ -157,16 +157,16 @@ do not restart it. Stopping the camera, switching to stage mode, or leaving the
 page releases its tracks. Admin and its preview iframe never open a live feed.
 
 Screen View uploads a 320x180 JPEG at quality 0.35 on camera start, then at most
-once every 120 seconds. The latest still replaces a separate session record,
+once every 15 seconds. The latest still replaces a separate session record,
 derived from the broadcast key in the `97` plus 18 digits namespace, marked
 `screenCameraPreview`. It never shares the source-word or on-air scene row.
 No video or snapshot history is stored. The image limit is 60,000 data-URL
 characters. A stop sends a clear packet. Failed image uploads do not interrupt
 the live camera and retry no faster than every two minutes.
 
-Admin reads that row only in streaming mode, roughly every two minutes, and
+Admin reads that row only in streaming mode, roughly every 15 seconds, and
 receives confirmed same-browser saves through the existing shared channel.
-The preview shows the capture age and clears stills older than six minutes.
+The preview shows the capture age and clears stills older than 45 seconds.
 Images never enter the normalized public scene payload or draft localStorage.
 No new collection, schema, endpoint, or backend deployment is needed.
 

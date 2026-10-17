@@ -62,12 +62,12 @@ const server = http.createServer((req, res) => {
     const cameraCode=photos()[0].body.sessionCode, broadcastCode=await M.broadcastCode('5678');
     assert.notEqual(cameraCode,broadcastCode);assert.notEqual(cameraCode,'5678');
     assert.match(cameraCode,/^97\d{18}$/);assert(photos()[0].body.state.image.length<60000);
-    await admin.clock.fastForward(145000);await admin.frameLocator('#screen-preview').locator('#camera-still:not(.hidden)').waitFor();
+    await admin.clock.fastForward(18000);await admin.frameLocator('#screen-preview').locator('#camera-still:not(.hidden)').waitFor();
     const firstImage=await admin.frameLocator('#screen-preview').locator('#camera-still').getAttribute('src');
-    await screen.clock.fastForward(90000);await pause(200);assert.equal(photos().length,1,'no frequent screenshots');
-    await screen.clock.fastForward(31000);await until(()=>photos().length===2);
+    await screen.clock.fastForward(10000);await pause(200);assert.equal(photos().length,1,'no frequent screenshots');
+    await screen.clock.fastForward(6000);await until(()=>photos().length===2);
     assert.equal(await admin.frameLocator('#screen-preview').locator('#camera-still').getAttribute('src'),firstImage,'no live feed in Admin');
-    await admin.clock.fastForward(145000);await until(async()=>await admin.frameLocator('#screen-preview').locator('#camera-still').getAttribute('src')===photos()[1].body.state.image);
+    await admin.clock.fastForward(18000);await until(async()=>await admin.frameLocator('#screen-preview').locator('#camera-still').getAttribute('src')===photos()[1].body.state.image);
     await admin.locator('#screen-definition').fill('A very long clue that explains a meaning in simple words for people who are learning English. '.repeat(6).slice(0,500));
     await admin.locator('#screen-definition').dispatchEvent('input');
     await admin.locator('#screen-example').fill('The person will use _____ in a simple sentence about school and everyday life. '.repeat(7).slice(0,500));
@@ -87,13 +87,14 @@ const server = http.createServer((req, res) => {
     }
     const broadcast=[...sim.collections.get('SpellingBeeSessions').values()].find(row=>row.sessionCode===broadcastCode);assert(!broadcast.presenterStateJson.includes('data:image'));
     const privateSource=[...sim.collections.get('SpellingBeeSessions').values()].find(row=>row.sessionCode==='5678');assert.equal(JSON.parse(privateSource.presenterStateJson).word,'bell');
-    failCamera=true;const beforeFailure=photos().length;await screen.clock.fastForward(125000);await until(()=>photos().length>beforeFailure);
+    failCamera=true;const beforeFailure=photos().length;await screen.clock.fastForward(20000);await until(()=>photos().length>beforeFailure);
     assert.equal(await screen.locator('#broadcast.camera-active').count(),1,'preview upload failure does not interrupt live camera');
-    failCamera=false;await screen.clock.fastForward(145000);await until(()=>{const row=[...sim.collections.get('SpellingBeeSessions').values()].find(row=>row.sessionCode===cameraCode);return JSON.parse(row.presenterStateJson).capturedAt===photos().at(-1).body.state.capturedAt;});
+    const failedCount=photos().length;await screen.clock.fastForward(20000);await pause(100);assert.equal(photos().length,failedCount,'new captures respect upload-failure backoff');
+    failCamera=false;await screen.clock.fastForward(125000);await until(()=>{const row=[...sim.collections.get('SpellingBeeSessions').values()].find(row=>row.sessionCode===cameraCode);return JSON.parse(row.presenterStateJson).capturedAt===photos().at(-1).body.state.capturedAt;});
     await screen.locator('#camera-stop').evaluate(el=>el.click());await screen.locator('#camera-feed.hidden').waitFor({state:'attached'});assert.equal(await screen.evaluate(()=>window.testCameraStream.getTracks().every(track=>track.readyState==='ended')),true);
-    await admin.clock.fastForward(145000);await admin.frameLocator('#screen-preview').locator('#camera-still.hidden').waitFor({state:'attached'});
+    await admin.clock.fastForward(18000);await admin.frameLocator('#screen-preview').locator('#camera-still.hidden').waitFor({state:'attached'});
     await screen.evaluate(()=>{navigator.mediaDevices.getUserMedia=async()=>{const error=new Error('denied');error.name='NotAllowedError';throw error;};});await screen.locator('#camera-start').evaluate(el=>el.click());await screen.locator('#camera-status').filter({hasText:'permission was not granted'}).waitFor();
     await admin.locator('#screen-layout').selectOption('stage');await admin.locator('#screen-take').click();await admin.locator('#director-status').filter({hasText:'Scene is live'}).waitFor();await screen.locator('#broadcast[data-layout=stage]').waitFor();
-    assert.deepEqual(errors,[]);console.log('Passed: live fake webcam, all 12 overlay scenes, Admin still-only preview, two-minute snapshot pacing, cross-device Wix delivery, separate camera storage, no audio, camera stop/permission denial and stage-mode recovery.');
+    assert.deepEqual(errors,[]);console.log('Passed: live fake webcam, all 12 overlay scenes, Admin still-only preview, 15-second snapshot pacing, cross-device Wix delivery, separate camera storage, no audio, camera stop/permission denial and stage-mode recovery.');
   } finally {await browser.close();server.close();}
 })().catch(error=>{console.error(error);server.close();process.exit(1);});

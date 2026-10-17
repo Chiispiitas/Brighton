@@ -17,7 +17,7 @@
       <label>Board page<input type="number" id="screen-page" min="1" max="25" value="1"></label>
       <label class="check-label"><input type="checkbox" id="screen-auto" checked>Rotate board / finalists pages</label>
       <label class="wide check-label"><input type="checkbox" id="screen-show-lives">Show remaining lives on Now Spelling and the competition board</label>
-      <p class="wide director-help camera-help">For streaming, take Streaming overlay live, then open Screen View and choose Camera to start its webcam. Admin receives a small still about every two minutes; it does not play the live feed.</p>
+      <p class="wide director-help camera-help">For streaming, take Streaming overlay live, then open Screen View and choose Camera to start its webcam. Admin receives a small still about every 15 seconds; it does not play the live feed.</p>
       <p class="wide director-help">Choose Word · Correct, Word · Neutral or Word · Incorrect, then take the scene live. Word colours are independent of judging animations.</p>
       <label class="wide">Definition for the audience<textarea id="screen-definition" maxlength="500"></textarea></label>
       <label class="wide">Example sentence for the audience<textarea id="screen-example" maxlength="500"></textarea></label>

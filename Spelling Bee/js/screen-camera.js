@@ -1,7 +1,8 @@
 "use strict";
 (() => {
   const Cloud = window.SpellingCloud, Model = window.BeeScreen;
-  const INTERVAL = 120000;
+  const INTERVAL = 15000;
+  const RETRY_INTERVAL = 120000;
   const validImage = value => typeof value === "string" && value.length <= 60000 && /^data:image\/jpeg;base64,[A-Za-z0-9+/=]+$/.test(value);
   const validPacket = value => value?.screenCameraPreview === true && typeof value.active === "boolean" && Number.isFinite(Number(value.capturedAt)) && (!value.active || validImage(value.image));
   class Stage {
@@ -76,7 +77,7 @@
         await this.video.play();
         if (generation !== this.generation) return;
         this.video.classList.remove("hidden"); this.stage.classList.add("camera-active"); this.stopButton.disabled = false;
-        this.status.textContent = "Camera live. Admin receives one low-quality still about every two minutes. Camera audio is off.";
+        this.status.textContent = "Camera live. Admin receives one low-quality still about every 15 seconds. Camera audio is off.";
         stream.getVideoTracks().forEach(track => track.addEventListener("ended", () => this.stop("Camera disconnected. Choose a camera and start it again."), { once: true }));
         this.lastCaptureAt = 0; this.capture();
         this.captureTimer = window.setInterval(() => this.capture(), INTERVAL);
@@ -115,12 +116,15 @@
     async flush() {
       if (this.busy || !this.pending) return;
       window.clearTimeout(this.retryTimer);
+      if (Date.now() < (this.retryAt || 0)) {
+        this.retryTimer = window.setTimeout(() => this.flush(), this.retryAt - Date.now()); return;
+      }
       const next = this.pending; this.pending = null; this.busy = true;
-      try { await Cloud.writeState({ sessionCode: next.code, role: "presenter", state: next.packet }); }
-      catch { if (!this.pending) this.pending = next; this.failed = true; }
+      try { await Cloud.writeState({ sessionCode: next.code, role: "presenter", state: next.packet }); this.retryAt = 0; }
+      catch { if (!this.pending) this.pending = next; this.retryAt = Date.now() + Math.max(RETRY_INTERVAL, Cloud.retryDelay()); }
       finally {
         this.busy = false;
-        if (this.pending) { const delay = this.failed ? Math.max(INTERVAL, Cloud.retryDelay()) : 0; this.failed = false; this.retryTimer = window.setTimeout(() => this.flush(), delay); }
+        if (this.pending) this.retryTimer = window.setTimeout(() => this.flush(), Math.max(0, (this.retryAt || 0) - Date.now()));
       }
     }
   }
@@ -129,7 +133,7 @@
       this.frame = frame; this.note = note; this.code = ""; this.key = ""; this.mode = "stage"; this.unsubscribe = () => {};
       this.packet = null; this.run = 0;
       frame.addEventListener("load", () => this.draw());
-      window.setInterval(() => { this.caption(); }, 15000);
+      window.setInterval(() => { this.caption(); }, 5000);
     }
     async setSession(code) {
       if (this.code === code) return;
@@ -171,9 +175,9 @@
         this.expired = true; this.note.textContent = "Camera still expired · waiting for a new image."; return;
       }
       if (this.packet?.active) {
-        const minutes = Math.max(0, Math.floor((Date.now() - this.packet.capturedAt) / 60000));
-        this.note.textContent = `Camera still · ${minutes ? `${minutes} min ago` : "just captured"} · updates about every 2 minutes`;
-      } else this.note.textContent = "Camera preview waiting · start the camera in Screen View. Stills update about every 2 minutes.";
+        const seconds = Math.max(0, Math.floor((Date.now() - this.packet.capturedAt) / 1000));
+        this.note.textContent = `Camera still · ${seconds ? `${seconds} sec ago` : "just captured"} · updates about every 15 seconds`;
+      } else this.note.textContent = "Camera preview waiting · start the camera in Screen View. Stills update about every 15 seconds.";
     }
   }
   window.BeeCamera = { Stage, Preview, INTERVAL, validPacket };
