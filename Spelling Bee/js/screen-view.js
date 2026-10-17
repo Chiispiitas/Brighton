@@ -9,6 +9,7 @@
   const scene = document.getElementById("scene");
   const join = document.getElementById("screen-join");
   let state = Model.initial(), code = "", pageOffset = 0, lastCue = "", failures = 0;
+  const camera = new window.BeeCamera.Stage({ preview });
   let unsubscribeCloud = () => {};
   let pollGeneration = 0, displaySignature = "";
   let sweepAnimation = null, sweepSwapTimer = null;
@@ -41,9 +42,9 @@
     if (state.scene === "spelling") return `<div class="speller-layout"><div>${tag("Now spelling")}<span class="speller-number">#${escape(row?.number || "—")}</span>${title(row?.name || "Contestant pending", `speller-name ${nameClass(row?.name || "")}`)}<span class="group-pill">${escape(row?.group || "")}</span>${lives(row)}</div></div>`;
     if (["definition", "example"].includes(state.scene)) {
       const value = state[state.scene] || "";
-      return `${tag(state.scene === "definition" ? "Definition" : "Example")}<p class="quote ${value.length > 280 ? "xlong" : value.length > 150 ? "long" : ""}">${escape(value)}</p>${lower(row)}`;
+      return `<div class="clue-panel">${tag(state.scene === "definition" ? "Definition" : "Example")}<p class="quote ${value.length > 280 ? "xlong" : value.length > 150 ? "long" : ""}">${escape(value)}</p>${lower(row)}</div>`;
     }
-    if (state.scene === "pending") return `${title("Decision pending")}<div class="pending-dots" aria-hidden="true"><i></i><i></i><i></i></div>${lower(row)}`;
+    if (state.scene === "pending") return `<div class="pending-panel">${title("Decision pending")}<div class="pending-dots" aria-hidden="true"><i></i><i></i><i></i></div>${lower(row)}</div>`;
     if (state.scene === "result") {
       return `<div class="word-layout result-${state.result}">${tag("Word")}<div class="reveal-word ${state.revealWord.length > 60 ? "xlong" : state.revealWord.length > 28 ? "long" : ""}">${escape(state.revealWord || "—")}</div>${lower(row)}</div>`;
     }
@@ -61,6 +62,7 @@
   }
   function draw({ animate = false } = {}) {
     stage.classList.toggle("quiet", state.motion === "quiet");
+    stage.dataset.layout = state.layout; camera.setMode(state.layout);
     stage.dataset.scene = state.scene;
     stage.dataset.revision = String(state.revision);
     document.getElementById("round-bug").textContent = state.round;
@@ -108,6 +110,7 @@
     const visual = value => { const { revision, timer, ...fields } = value; return JSON.stringify({ ...fields, timerVisible: timer.visible }); };
     const contentChanged = visual(normalized) !== visual(state);
     lastCue = cue; state = normalized;
+    stage.dataset.layout = state.layout; camera.setMode(state.layout);
     if (changed) pageOffset = 0;
     if (contentChanged && (!canAnimate() || changed)) sweepToScene();
     else if (contentChanged && !sweepSwapTimer) draw({ animate: true });
@@ -158,7 +161,7 @@
         const found = await Cloud.fetchPresenter(storageCode);
         if (generation !== pollGeneration) return;
         if (!found?.screenBroadcast || !found.broadcast) throw new Error("Screen not found. Open Screen View from Admin View.");
-        code = storageCode;
+        code = storageCode; camera.setSession(code);
         apply(found.broadcast); failures = 0;
         join.classList.add("hidden"); document.getElementById("signal").classList.add("hidden");
         const url = new URL(location.href); url.searchParams.set("session", requested); history.replaceState(null, "", url);
@@ -199,7 +202,7 @@
   draw();
   if (preview) document.getElementById("fullscreen").remove();
   else if (demo) {
-    const sample = Model.initial();
+    const sample = Model.initial(); sample.layout = params.get("layout") === "stream" ? "stream" : "stage";
     sample.contestants = ["Isabella Martinez", "Santiago Lopez", "Valentina Torres", "Mateo Andrade", "Sofia Castillo", "Daniel Perez"].map((name, index) => ({ id: String(index), name, number: String(index + 1), group: `Grade ${index % 3 + 5}`, status: "finalist", place: index < 3 ? index + 1 : 0, lives: 3 }));
     sample.showLives = true;
     sample.currentId = "0"; sample.definition = "The ability to face something difficult with confidence.";

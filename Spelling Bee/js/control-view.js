@@ -867,6 +867,7 @@
     try {
       const rows = await Cloud.fetchRows(code, { command: role === "remote" });
       let found = Cloud.presenterState(rows);
+      if (found?.screenCameraPreview) throw new Error("Use the shared session code, not a camera-preview code.");
       if (!found) throw new Error(role === "remote" ? "No session found. Use Start / resume from Admin to create it." : "No session is using that code.");
       if (role === "remote" && source) {
         if (source.active && source.code !== code) source.stop();
@@ -1320,7 +1321,7 @@
     setJoinStatus("Starting Admin session…");
     try {
       const previous = await Cloud.fetchPresenter(code);
-      if (previous?.screenBroadcast) throw new Error("That code belongs to an audience screen. Choose a different code.");
+      if (previous?.screenBroadcast || previous?.screenCameraPreview) throw new Error("That code belongs to an audience screen. Choose a different code.");
       await source.start(code, previous);
       await joinSession();
     } catch (error) { source.stop(); setJoinStatus(error.message, true); setConnection("Session not confirmed", "error"); }
