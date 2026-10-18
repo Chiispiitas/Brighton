@@ -30,6 +30,7 @@
         <div class="control-header-actions">
           <span class="difficulty-pill" id="difficulty-pill">EASY</span>
           <a class="control-button" id="admin-study-link" href="index.html" target="_blank" rel="noopener">Study view ↗</a>
+          <button class="control-button" id="reset-admin-session" type="button" disabled>Reset session</button>
           <span class="connection-pill" id="connection-pill">Connecting</span>
         </div>
       </header>
@@ -39,6 +40,7 @@
           <div class="control-word" id="control-word">—</div>
           <p class="word-meta" id="word-meta">Waiting for a session</p>
           <p class="source-status" id="source-status" role="status"></p>
+          <p class="source-status" id="session-reset-status" role="status"></p>
           <button class="control-button" id="admin-take-source" type="button" hidden>Run this session from Admin</button>
 
           <div class="verdict-row" aria-label="Admin judging controls">
@@ -107,11 +109,11 @@
 
   <script src="js/cloud.js?v=20261015-stress6"></script>
   <script src="js/button-feedback.js?v=20261015-sync5"></script>
-  <script src="js/session-engine.js?v=20261017-used17"></script>
-  <script src="js/admin-source.js?v=20261017-used17"></script>
-  <script src="js/control-view.js?v=20261017-used17"></script>
+  <script src="js/session-engine.js?v=20261017-reset18"></script>
+  <script src="js/admin-source.js?v=20261017-reset18"></script>
+  <script src="js/control-view.js?v=20261017-reset18"></script>
   <script src="js/screen-model.js?v=20261017-preview16"></script>
   <script src="js/screen-camera.js?v=20261017-preview16"></script>
-  <script src="js/screen-admin.js?v=20261017-used17"></script>
+  <script src="js/screen-admin.js?v=20261017-reset18"></script>
 </body>
 </html>

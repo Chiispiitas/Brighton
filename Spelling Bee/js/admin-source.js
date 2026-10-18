@@ -83,7 +83,11 @@
       const operation = this.operations.catch(() => {}).then(async () => {
         if (generation !== this.generation) throw new Error("Session changed.");
         if (!this.active) throw new Error("The Admin source is not running.");
-        if (["new-word", "difficulty", "category"].includes(type)) {
+        if (type === "reset") {
+          const words = await Cloud.loadWordList(this.state.level, this.state.difficulty);
+          if (!this.active || generation !== this.generation) throw new Error("Session changed.");
+          this.state = M.reset(this.state, words);
+        } else if (["new-word", "difficulty", "category"].includes(type)) {
           this.state = { ...this.state, hiddenMode: true }; this.onState(M.copy(this.state));
           const level = type === "category" ? value : this.state.level;
           const difficulty = type === "difficulty" ? value : this.state.difficulty;

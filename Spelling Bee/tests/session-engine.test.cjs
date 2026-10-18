@@ -45,3 +45,14 @@ test('using a scene word removes it once without changing judging or revealing S
   assert.throws(() => M.useWord(state, 'old-token'), /changed words/);
   assert.equal(M.choose(used, ['bell', 'bike']).word, 'bike');
 });
+test('reset restores all pools and judging while preserving settings and advancing word identity', () => {
+  const state = { ...M.feedback(M.choose(M.seed({}, 'owner-1'), ['bell', 'bike']), 'correct'),
+    usedWords: { '4TH-5TH|easy': ['bell', 'bike'], 'SENIOR|hard': ['castle'] }, sourceRevision: 12, lastCommandSeq: 7 };
+  const before = JSON.stringify(state), reset = M.reset(state, ['bell', 'bike']);
+  assert.deepEqual(reset.usedWords, {}); assert.equal(reset.poolCount, 2);
+  assert.equal(reset.level, state.level); assert.equal(reset.difficulty, state.difficulty);
+  assert.equal(reset.sourceId, 'owner-1'); assert.equal(reset.sourceRevision, 12); assert.equal(reset.lastCommandSeq, 7);
+  assert.notEqual(reset.wordToken, state.wordToken); assert(reset.wordSequence > state.wordSequence);
+  assert(reset.marks.every(mark => mark === 'pending')); assert.equal(reset.pointer, 0);
+  assert.equal(reset.feedback, null); assert.equal(reset.hiddenMode, true); assert.equal(JSON.stringify(state), before);
+});
