@@ -42,7 +42,7 @@
   let judgeHeartbeatTimer = null;
   let voteSeq = 0;
   let commandSeq = 0;
-  let busy = false;
+  let busy = false, resetting = false;
   let pendingJudgeSnapshot = null, judgeWriteBusy = false, judgeWriteTimer = null;
   let judgeNextWriteAt = 0, lastJudgeSavedAt = 0, adminNextWriteAt = 0, registeredJudgeSession = "";
   let presenterChangedAt = Date.now(), lastLetterInputAt = 0;
@@ -427,6 +427,8 @@
       const category = document.getElementById("admin-category");
       if (category) category.value = presenter.level || "4TH-5TH";
       const owns = Boolean(source?.active && source.code === sessionCode);
+      const reset = document.getElementById("reset-admin-session");
+      if (reset) { reset.disabled = !owns || resetting; reset.title = owns ? "Reset used words, judging and show progress; keep the session code, roster and lives" : "Use Run this session from Admin before resetting"; }
       const status = document.getElementById("source-status");
       if (status) status.textContent = owns ? `Admin is running session ${sessionCode}` : presenter.sourceRole === "admin" ? `Session ${sessionCode} is running in another Admin view` : `Connected to Study session ${sessionCode}`;
       const takeover = document.getElementById("admin-take-source");
@@ -1337,6 +1339,23 @@
   }
   document.getElementById("start-admin-session")?.addEventListener("click", startAdminSession);
   document.getElementById("admin-take-source")?.addEventListener("click", startAdminSession);
+  document.getElementById("reset-admin-session")?.addEventListener("click", async event => {
+    if (resetting || !source?.active || source.code !== sessionCode) return;
+    if (!window.confirm(`Reset session ${sessionCode}?\n\nClear ALL used-word history and judging, and draw a fresh word. Return the audience screen to Standby, Round 1, and clear finalist/podium assignments.\n\nKeep the same session code, contestant list, remaining lives, category, difficulty and screen mode. This cannot be undone.`)) return;
+    const button = event.currentTarget, notice = document.getElementById("session-reset-status");
+    resetting = true; button.disabled = true; app.inert = true;
+    notice.textContent = "Resetting session…"; Feedback?.set(button, "saving", "Resetting…");
+    try {
+      await source.saved(source.state.sourceRevision);
+      await window.resetSpellingScreen();
+      await source.run("reset");
+      notice.textContent = "Session reset. All words are available again. Screen is on Standby, Round 1. Contestants and lives were kept.";
+      Feedback?.set(button, "saved", "Session reset");
+    } catch (error) {
+      notice.textContent = `Reset not completed: ${error.message} The screen may already be on Standby. Retry Reset session.`;
+      Feedback?.set(button, "error", "Reset not completed · retry");
+    } finally { resetting = false; app.inert = false; button.disabled = false; }
+  });
   document.getElementById("admin-category")?.addEventListener("change", event => sendRemoteCommand("category", event.currentTarget.value, event.currentTarget));
 
   if (judgeNameInput && judgeName) judgeNameInput.value = judgeName;
@@ -1378,6 +1397,7 @@
   document.querySelectorAll(".verdict-button").forEach(bindVerdictButton);
 
   window.addEventListener("keydown", event => {
+    if (resetting) return;
     if (event.target.closest?.("#screen-director")) return;
     if (!canJudge || ["INPUT", "TEXTAREA", "SELECT"].includes(document.activeElement?.tagName)) return;
     if (event.key === "o" || event.key === "O") {

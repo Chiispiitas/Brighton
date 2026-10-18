@@ -162,12 +162,24 @@
       if (afterPublish) await afterPublish();
       status(message);
       window.BeeButtons?.set(button, "saved", "Published", Boolean(button));
+      return true;
     } catch (error) {
       status(published ? `Scene is live, but the word pool update failed: ${error.message}` : `Not published: ${error.message}`, true);
       window.BeeButtons?.set(button, "error", published ? "Pool not saved · retry" : "Not published · try again", Boolean(button));
+      return false;
     }
     finally { setBusy(false); }
   }
+  window.resetSpellingScreen = async () => {
+    if (!ready || busy) throw new Error("Wait for the current screen action to finish, then retry.");
+    readFields();
+    const next = M.normalize({ ...draft, scene: "standby", round: "Round 1", currentId: "", boardPage: 0,
+      cueId: crypto.randomUUID(), result: "pending", revealWord: "", definition: "", example: "", message: "", closing: "",
+      contestants: draft.contestants.map(row => ({ ...row, status: "active", place: 0 })),
+      timer: { ...draft.timer, running: false, endsAt: 0, remaining: draft.timer.duration } });
+    if (!await publish(next, "Session screen reset to Standby, Round 1.")) throw new Error("The audience screen reset was not confirmed. No word history was cleared.");
+    draft = M.normalize(live); fillFields();
+  };
   async function take() {
     if (busy || !ready) return;
     setBusy(true);
