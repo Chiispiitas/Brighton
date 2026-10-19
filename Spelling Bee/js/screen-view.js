@@ -194,7 +194,7 @@
   document.addEventListener("pointermove", () => { document.body.classList.add("show-controls"); clearTimeout(controlTimer); controlTimer = setTimeout(() => document.body.classList.remove("show-controls"), 2200); });
   async function fullscreen() { try { if (document.fullscreenElement) await document.exitFullscreen(); else await document.documentElement.requestFullscreen(); } catch { /* Native browser fullscreen remains available. */ } }
   document.getElementById("fullscreen").addEventListener("click", fullscreen);
-  document.addEventListener("keydown", event => { if (event.key.toLowerCase() === "f" && !/INPUT|TEXTAREA/.test(event.target.tagName)) fullscreen(); });
+  document.addEventListener("keydown", event => { if (!event.repeat && !event.ctrlKey && !event.altKey && !event.metaKey && event.key.toLowerCase() === "f" && !event.target.closest?.("input,select,textarea,[contenteditable=true]")) fullscreen(); });
   setInterval(updateTimer, 200);
   window.addEventListener("resize", fitScene);
   document.fonts?.ready.then(fitScene);

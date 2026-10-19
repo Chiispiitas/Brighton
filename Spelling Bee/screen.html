@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Spelling Bee · Screen View</title>
   <link rel="icon" href="assets/logo.png">
-  <link rel="stylesheet" href="screen.css?v=20261017-preview16">
+  <link rel="stylesheet" href="screen.css?v=20261019-cameras20">
 </head>
 <body>
   <main class="broadcast" id="broadcast" aria-label="Spelling Bee audience display">
@@ -32,15 +32,16 @@
   <button class="fullscreen" id="fullscreen" type="button">⛶ Full screen · F</button>
   <button class="camera-toggle hidden" id="camera-toggle" type="button">Camera · C</button>
   <aside class="camera-setup hidden" id="camera-setup" aria-label="Camera setup">
-    <h2>Broadcast camera</h2>
-    <label>Camera<select id="camera-device"><option value="">Default camera</option></select></label>
-    <label class="camera-mirror-label"><input id="camera-mirror" type="checkbox">Mirror camera</label>
-    <p id="camera-status" role="status">Start the camera on this Screen View computer. Admin receives a low-quality still about every 15 seconds.</p>
-    <div><button id="camera-start" type="button">Start camera</button><button id="camera-stop" type="button" disabled>Stop camera</button><button id="camera-close" type="button">Hide controls</button></div>
+    <h2>Broadcast cameras</h2>
+    <div id="camera-slots"></div>
+    <button id="camera-add" type="button">Add camera</button>
+    <p>Choose different cameras, then start them together. All ready feeds stay on; switching fills the camera background immediately. Hotkeys work here or in Admin in the same browser. Keep this screen open.</p>
+    <p id="camera-status" role="status">Main: 1 · Secondary: 2. Camera audio is off. Admin stills update about every 15 seconds.</p>
+    <div class="camera-actions"><button id="camera-start" type="button">Start cameras</button><button id="camera-stop" type="button" disabled>Stop all cameras</button><button id="camera-close" type="button">Hide controls</button></div>
   </aside>
   <script src="js/cloud.js?v=20261015-stress6"></script>
   <script src="js/screen-model.js?v=20261017-preview16"></script>
-  <script src="js/screen-camera.js?v=20261018-dual19"></script>
-  <script src="js/screen-view.js?v=20261018-dual19"></script>
+  <script src="js/screen-camera.js?v=20261019-cameras20"></script>
+  <script src="js/screen-view.js?v=20261019-cameras20"></script>
 </body>
 </html>

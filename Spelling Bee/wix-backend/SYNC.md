@@ -189,3 +189,28 @@ cannot clear the camera output's preview record.
 The Preview layout selector controls Admin's preview and existing screen links
 without a view parameter. Explicit output links retain their layout across
 scene changes, preview-layout changes and reconnects. No backend change is needed.
+
+
+### Warm multi-camera switching
+
+The camera output supports up to six configured slots, initially Main and
+Secondary. Start cameras opens each selected device with a separate video-only
+getUserMedia request. Ready slots retain a live, playing video element; off-air
+feeds are transparent, not stopped. A cut synchronously changes opacity and
+the active source for still capture, without acquiring media or writing to Wix.
+All feeds fill the same camera background beneath the existing graphics.
+
+Device selections, mirrors and unique single-letter/digit hotkeys are stored
+locally; keys default to 1 and 2. C/F are reserved for camera setup/fullscreen
+and O/P for Admin judging. Matching hotkeys also cut from Admin on the same
+browser/profile through a session-scoped BroadcastChannel, without backend
+requests. Admin and the camera-free output never acquire media.
+
+An extra device failure preserves ready feeds, and a disconnected on-air camera
+falls back to another warm feed. Stop, mode change and page exit release all
+streams, including a pending startup that resolves late. A driver/USB/browser
+hardware error gets an operator message with a switcher / OBS Virtual Camera
+fallback. Simultaneous physical camera support must be verified on the actual
+computer; automated tests use independent canvas streams and Chromium's fake
+camera. Admin stills remain limited to one 320x180 JPEG every 15 seconds, even
+while cutting repeatedly, and identify which camera produced the image.
