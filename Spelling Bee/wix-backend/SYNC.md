@@ -196,8 +196,9 @@ scene changes, preview-layout changes and reconnects. No backend change is neede
 The camera output supports up to six configured slots, initially Main and
 Secondary. Start cameras opens each selected device with a separate video-only
 getUserMedia request. Ready slots retain a live, playing video element; off-air
-feeds are transparent, not stopped. A cut synchronously changes opacity and
-the active source for still capture, without acquiring media or writing to Wix.
+feeds are transparent, not stopped. A cut uses the school logo sweep and swaps the active source at its covered
+midpoint, without acquiring media or writing to Wix. Rapid requests coalesce
+to the latest camera, and Stop or disconnect cancels pending cuts.
 All feeds fill the same camera background beneath the existing graphics.
 
 Device selections, mirrors and unique single-letter/digit hotkeys are stored
@@ -214,3 +215,10 @@ fallback. Simultaneous physical camera support must be verified on the actual
 computer; automated tests use independent canvas streams and Chromium's fake
 camera. Admin stills remain limited to one 320x180 JPEG every 15 seconds, even
 while cutting repeatedly, and identify which camera produced the image.
+
+In streaming/camera layout, scene changes use soft content fades without the
+large logo sweep, including Admin's matching preview. The camera-free stage
+output retains its scene sweeps. Manual camera cuts alone use the large logo
+transition (560 ms covered swap, 1400 ms total); quiet/reduced-motion mode cuts
+immediately. Warm feeds stay running throughout, and scene updates cannot
+interrupt a pending camera cut. Startup and disconnect fallback do not sweep.

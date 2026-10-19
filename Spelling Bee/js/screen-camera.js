@@ -182,7 +182,51 @@
         : error.name === "NotReadableError" ? "This camera could not run alongside the others. Check its driver, USB connection, or use a video switcher / OBS Virtual Camera. Other ready feeds stay on."
         : error.message || "The camera could not start. Other ready feeds stay on.";
     }
+    setMotion(motion) {
+      this.motion = motion;
+      if (motion === "quiet" && this.cutAnimation) {
+        const index = this.pendingCut; this.cancelCut(); if (index != null) this.activate(index);
+      }
+    }
     take(index) {
+      const slot = this.slots[index]; if (!this.ready(slot) || this.mode !== "stream") return;
+      if (!this.stream || (!this.cutAnimation && index === this.active)) { this.activate(index); return; }
+      this.pendingCut = index;
+      if (this.motion === "quiet" || matchMedia("(prefers-reduced-motion: reduce)").matches) { this.cancelCut(); this.activate(index); return; }
+      if (!this.cutAnimation) this.sweepCut();
+    }
+    sweepCut() {
+      const overlay = document.getElementById("logo-sweep");
+      overlay.classList.add("active");
+      const animation = overlay.firstElementChild.animate([
+        { transform: "translateX(-112%)", opacity: 0, filter: "blur(5px)", offset: 0, easing: "cubic-bezier(.65,0,.35,1)" },
+        { transform: "translateX(0)", opacity: 1, filter: "blur(0)", offset: .38 },
+        { transform: "translateX(0)", opacity: 1, filter: "blur(0)", offset: .55, easing: "cubic-bezier(.65,0,.35,1)" },
+        { transform: "translateX(112%)", opacity: 0, filter: "blur(5px)", offset: 1 }
+      ], { duration: 1400, easing: "linear", fill: "both" });
+      this.cutAnimation = animation;
+      this.cutTimer = setTimeout(() => this.swapCut(), 560);
+      animation.finished.then(() => {
+        if (this.cutAnimation !== animation) return;
+        if (this.cutTimer != null) this.swapCut();
+        this.cutAnimation = null; overlay.classList.remove("active"); animation.cancel();
+        const next = this.pendingCut;
+        if (next != null && next !== this.active && this.ready(this.slots[next])) this.sweepCut();
+        else this.pendingCut = null;
+      }).catch(() => {});
+    }
+    swapCut() {
+      clearTimeout(this.cutTimer); this.cutTimer = null;
+      const index = this.pendingCut; this.pendingCut = null;
+      if (index != null) this.activate(index);
+    }
+    cancelCut() {
+      const hadCut = Boolean(this.cutAnimation || this.cutTimer);
+      clearTimeout(this.cutTimer); this.cutTimer = null; this.pendingCut = null;
+      this.cutAnimation?.cancel(); this.cutAnimation = null;
+      if (hadCut) document.getElementById("logo-sweep").classList.remove("active");
+    }
+    activate(index) {
       const slot = this.slots[index]; if (!this.ready(slot) || this.mode !== "stream") return;
       this.active = index; this.video = slot.video; this.stream = slot.stream; this.stage.dataset.camera = String(index + 1);
       this.stage.classList.add("camera-active"); this.renderSlots(); this.announce();
@@ -196,17 +240,19 @@
       }
     }
     release(slot) {
+      if (this.active === slot.index || this.pendingCut === slot.index) this.cancelCut();
       slot.stream?.getTracks().forEach(track => track.stop()); slot.stream = null; slot.video?.remove(); slot.video = null;
       if (this.active === slot.index) {
         this.active = -1; this.stream = null; this.video = null;
         const fallback = this.slots.find(other => this.ready(other));
-        if (fallback) this.take(fallback.index);
+        if (fallback) this.activate(fallback.index);
         else { this.stage.classList.remove("camera-active"); delete this.stage.dataset.camera; this.send({ screenCameraPreview: true, active: false, image: "", capturedAt: Date.now() }); }
       }
       this.renderSlots(); this.announce();
     }
     stop(message = "All cameras stopped.") {
       if (this.preview || this.disabled) return;
+      this.cancelCut();
       this.generation++; clearInterval(this.captureTimer); this.captureTimer = null;
       const hadStream = this.slots.some(slot => slot.stream);
       this.active = -1; this.stream = null; this.video = null;

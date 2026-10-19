@@ -41,6 +41,7 @@ const server = http.createServer((req, res) => {
     await route.fulfill(await sim.request(url.pathname.split('/').pop(), req.method(), body?.sessionCode || url.searchParams.get('sessionCode'), body));
   });
   await context.addInitScript(() => {
+    window.logoSweeps = 0; const animate = Element.prototype.animate; Element.prototype.animate = function (...args) { if (this.parentElement?.id === 'logo-sweep') window.logoSweeps++; return animate.apply(this, args); };
     window.cameraCalls = []; window.cameraStreams = []; window.blockedCamera = ''; window.cameraDelay = 60;
     const play = HTMLMediaElement.prototype.play;
     HTMLMediaElement.prototype.play = function () { if (window.stallCamera && this.srcObject?.getVideoTracks()[0]?.getSettings().deviceId === window.stallCamera) return new Promise(() => {}); return play.call(this); };
@@ -71,9 +72,22 @@ const server = http.createServer((req, res) => {
     assert.equal(await screen.locator('#broadcast').getAttribute('data-camera'), '1');
     const warmBefore = await screen.locator('#camera-feed-2').evaluate(video => video.currentTime); await pause(200);
     assert(await screen.locator('#camera-feed-2').evaluate(video => video.currentTime) > warmBefore, 'off-air camera continues producing frames');
-    await screen.evaluate(() => {
-      for (let i = 0; i < 40; i++) { document.dispatchEvent(new KeyboardEvent('keydown', { key: i % 2 ? '1' : '2', bubbles: true })); if (document.getElementById('broadcast').dataset.camera !== (i % 2 ? '1' : '2')) throw Error('Camera cut was not synchronous'); }
-    });
+    assert.equal(await screen.evaluate(() => window.logoSweeps), 0, 'camera startup and scene loading do not sweep');
+    await screen.clock.pauseAt(await screen.evaluate(() => Date.now() + 100));
+    await screen.evaluate(() => { for (let i = 0; i < 40; i++) document.dispatchEvent(new KeyboardEvent('keydown', {key:i % 2 ? '1' : '2',bubbles:true})); });
+    await screen.locator('#logo-sweep > div').evaluate(el => el.getAnimations()[0].pause());
+    assert.equal(await screen.evaluate(() => window.logoSweeps), 1, 'rapid requests coalesce into one sweep');
+    await screen.clock.fastForward(600); assert.equal(await screen.locator('#broadcast').getAttribute('data-camera'), '1', 'latest requested camera wins at cover');
+    await screen.clock.fastForward(900); await screen.locator('#logo-sweep > div').evaluate(el => el.getAnimations()[0].finish()); await screen.locator('#logo-sweep').waitFor({state:'hidden'});
+    await screen.keyboard.press('2'); await screen.locator('#logo-sweep.active').waitFor();
+    await screen.locator('#logo-sweep > div').evaluate(el => el.getAnimations()[0].pause());
+    await screen.clock.fastForward(500); assert.equal(await screen.locator('#broadcast').getAttribute('data-camera'), '1', 'previous feed remains visible until logo covers the frame');
+    await admin.locator('[data-scene=round]').click(); await admin.locator('#screen-take').click(); await admin.locator('#director-status').filter({hasText:'Scene is live'}).waitFor();
+    await screen.locator('#broadcast[data-scene=round]').waitFor(); assert.equal(await screen.evaluate(() => window.logoSweeps), 2, 'scene update during a camera cut does not start another sweep');
+    await screen.clock.fastForward(80); assert.equal(await screen.locator('#broadcast').getAttribute('data-camera'), '2', 'camera changes under the logo');
+    await screen.clock.fastForward(850); await screen.locator('#logo-sweep > div').evaluate(el => el.getAnimations()[0].finish()); await screen.locator('#logo-sweep').waitFor({state:'hidden'});
+    await screen.keyboard.press('1'); await screen.locator('#logo-sweep > div').evaluate(el => el.getAnimations()[0].pause()); await screen.clock.fastForward(600); await screen.clock.fastForward(900); await screen.locator('#logo-sweep > div').evaluate(el => el.getAnimations()[0].finish()); await screen.locator('#logo-sweep').waitFor({state:'hidden'});
+    await screen.clock.resume();
     assert.equal(await screen.evaluate(() => window.cameraCalls.length), 2, 'hotkey cuts never reopen either camera');
     assert.equal(await screen.evaluate(() => window.cameraStreams.every(stream => stream.getTracks().every(track => track.readyState === 'live'))), true);
     await screen.locator('#camera-toggle').evaluate(el => el.click());
@@ -87,6 +101,9 @@ const server = http.createServer((req, res) => {
     await admin.keyboard.press('4'); await until(async () => await screen.locator('#broadcast').getAttribute('data-camera') === '1');
     await admin.keyboard.press('5'); await until(async () => await screen.locator('#broadcast').getAttribute('data-camera') === '2');
     assert.equal(await admin.evaluate(() => window.cameraCalls.length), 0, 'Admin sends only camera-cut controls and never opens media');
+    await screen.locator('#logo-sweep').waitFor({state:'hidden'});
+    const beforeTick = writes.filter(body => body.state.screenCameraPreview && body.state.active).length;
+    await screen.clock.fastForward(15000); await until(() => writes.filter(body => body.state.screenCameraPreview && body.state.active).length > beforeTick);
     const beforePhotos = writes.filter(body => body.state.screenCameraPreview && body.state.active).length;
     await screen.keyboard.press('4'); await screen.keyboard.press('5'); assert.equal(writes.filter(body => body.state.screenCameraPreview && body.state.active).length, beforePhotos, 'cuts do not burst-upload preview stills');
     await screen.locator('#camera-toggle').evaluate(el => el.click()); await screen.locator('#camera-mirror-2').check(); assert(await screen.locator('#camera-feed-2').evaluate(video => video.classList.contains('mirrored')));
@@ -94,11 +111,19 @@ const server = http.createServer((req, res) => {
     await until(() => screen.evaluate(() => window.cameraStreams.length === 3 && document.querySelectorAll('.camera-take:not(:disabled)').length === 3));
     assert.equal(await screen.locator('#broadcast').getAttribute('data-camera'), '2', 'starting an extra camera does not change the on-air feed');
     assert.equal(await screen.evaluate(() => window.cameraCalls.length), 3); assert.equal(await screen.evaluate(() => window.cameraStreams.slice(0, 2).every(stream => stream.getTracks()[0].readyState === 'live')), true);
-    await screen.keyboard.press('3'); assert.equal(await screen.locator('#broadcast').getAttribute('data-camera'), '3');
-    await screen.keyboard.press('5'); assert.equal(await screen.locator('#broadcast').getAttribute('data-camera'), '2');
+    await screen.keyboard.press('3'); await until(async () => await screen.locator('#broadcast').getAttribute('data-camera') === '3'); await screen.locator('#logo-sweep').waitFor({state:'hidden'});
+    await screen.keyboard.press('5'); await until(async () => await screen.locator('#broadcast').getAttribute('data-camera') === '2'); await screen.locator('#logo-sweep').waitFor({state:'hidden'});
     assert.deepEqual(await screen.locator('.camera-feed').evaluateAll(videos => videos.filter(video => getComputedStyle(video).opacity === '1').map(video => video.id)), ['camera-feed-2'], 'selected camera alone fills the background');
     await screen.clock.fastForward(16000); await until(() => writes.filter(body => body.state.screenCameraPreview && body.state.active).at(-1)?.state.cameraName === 'Secondary camera');
     assert.equal(writes.filter(body => body.state.screenCameraPreview && body.state.active).at(-1).state.mirrored, true, 'Admin still comes from the selected camera with its own mirror setting');
+    await admin.locator('#screen-motion').selectOption('quiet'); await admin.locator('#screen-take').click(); await admin.locator('#director-status').filter({hasText:'Scene is live'}).waitFor(); await screen.locator('#broadcast.quiet').waitFor();
+    const quietSweeps = await screen.evaluate(() => window.logoSweeps);
+    await screen.keyboard.press('4'); assert.equal(await screen.locator('#broadcast').getAttribute('data-camera'), '1');
+    await screen.keyboard.press('5'); assert.equal(await screen.locator('#broadcast').getAttribute('data-camera'), '2');
+    assert.equal(await screen.evaluate(() => window.logoSweeps), quietSweeps, 'quiet mode switches immediately without a sweep');
+    await admin.locator('#screen-motion').selectOption('full'); await admin.locator('#screen-take').click(); await admin.locator('#director-status').filter({hasText:'Scene is live'}).waitFor(); await screen.locator('#broadcast:not(.quiet)').waitFor();
+    await screen.emulateMedia({reducedMotion:'reduce'}); await screen.keyboard.press('4'); assert.equal(await screen.locator('#broadcast').getAttribute('data-camera'), '1'); await screen.keyboard.press('5');
+    assert.equal(await screen.evaluate(() => window.logoSweeps), quietSweeps, 'system reduced motion also skips the sweep'); await screen.emulateMedia({reducedMotion:'no-preference'});
     await screen.locator('#camera-toggle').evaluate(el => el.click()); await screen.locator('#camera-device-2').selectOption('cam-a'); await screen.locator('#camera-start').click(); await screen.locator('#camera-status').filter({ hasText: 'already assigned' }).waitFor();
     assert.equal(await screen.evaluate(() => window.cameraCalls.length), 3, 'duplicate device does not create another capture');
     await screen.locator('#camera-device-2').selectOption('cam-b');
@@ -114,12 +139,14 @@ const server = http.createServer((req, res) => {
     await screen.evaluate(() => { const track = window.cameraStreams[1].getVideoTracks()[0]; track.stop(); track.dispatchEvent(new Event('ended')); });
     assert.equal(await screen.locator('#broadcast').getAttribute('data-camera'), '1', 'disconnect immediately cuts to another warm camera');
     await screen.evaluate(() => { window.blockedCamera = ''; window.stallCamera = ''; window.cameraDelay = 300; });
+    await screen.evaluate(() => document.dispatchEvent(new KeyboardEvent('keydown',{key:'3',bubbles:true}))); await screen.locator('#logo-sweep.active').waitFor();
     await screen.locator('#camera-start').click(); await pause(100); await screen.locator('#camera-stop').click(); await pause(700);
+    assert.equal(await screen.locator('#logo-sweep.active').count(),0,'Stop cancels the pending camera sweep');
     assert.equal(await screen.locator('.camera-feed').count(), 0); assert.equal(await screen.evaluate(() => window.cameraStreams.every(stream => stream.getTracks().every(track => track.readyState === 'ended'))), true, 'Stop cancels in-flight starts and releases active and warm streams');
     assert.equal(await screen.evaluate(() => window.cameraCalls.every(call => call.audio === false)), true);
     await screen.reload(); await screen.locator('#camera-device').waitFor(); assert.equal(await screen.locator('.camera-hotkey').nth(0).inputValue(), '4'); assert.equal(await screen.locator('.camera-hotkey').nth(1).inputValue(), '5');
     assert.equal(await screen.evaluate(() => window.cameraCalls.length), 0, 'reload restores settings without opening cameras');
     assert.deepEqual(errors, []);
-    console.log('Passed: simultaneous warm cameras, synchronous repeated cuts without new capture, configurable saved hotkeys, Admin hotkeys, mirrors, third camera, duplicate guards, failure/disconnect fallback, no still-upload bursts, pending-start cancellation and full cleanup.');
+    console.log('Passed: simultaneous warm cameras, logo-covered cuts without new capture, no camera-view scene sweeps, configurable saved hotkeys, Admin hotkeys, mirrors, third camera, duplicate guards, failure/disconnect fallback, no still-upload bursts, pending-start cancellation and full cleanup.');
   } finally { await browser.close(); server.close(); }
 })().catch(error => { console.error(error); server.close(); process.exit(1); });

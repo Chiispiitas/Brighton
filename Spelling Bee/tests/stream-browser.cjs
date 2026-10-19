@@ -38,6 +38,7 @@ const server = http.createServer((req, res) => {
   async function page(name) {
     const context = await browser.newContext({viewport:{width:1920,height:1080},permissions:['camera']});
     await context.addInitScript(() => {
+      window.logoSweeps=0;const animate=Element.prototype.animate;Element.prototype.animate=function(...args){if(this.parentElement?.id==='logo-sweep')window.logoSweeps++;return animate.apply(this,args);};
       window.cameraCalls=[];const original=navigator.mediaDevices.getUserMedia.bind(navigator.mediaDevices);
       navigator.mediaDevices.getUserMedia=async constraints=>{window.cameraCalls.push(constraints);const stream=await original(constraints);window.testCameraStream=stream;return stream;};
     });
@@ -94,6 +95,8 @@ const server = http.createServer((req, res) => {
       assert(overlays.x>=stage.x && overlays.x+overlays.width<=stage.x+stage.width+1);
       if(['spelling','definition','result','board'].includes(scene)&&screenshots){await screen.screenshot({path:path.join(screenshots,'stream-'+scene+'.png')});await admin.locator('#screen-director').screenshot({path:path.join(screenshots,'admin-stream-'+scene+'.png')});}
     }
+    assert.equal(await screen.evaluate(()=>window.logoSweeps),0,'camera-view scene changes never show the logo sweep');
+    assert(await stageScreen.evaluate(()=>window.logoSweeps)>1,'camera-free scene changes keep the logo sweep');
     const broadcast=[...sim.collections.get('SpellingBeeSessions').values()].find(row=>row.sessionCode===broadcastCode);assert(!broadcast.presenterStateJson.includes('data:image'));
     const privateSource=[...sim.collections.get('SpellingBeeSessions').values()].find(row=>row.sessionCode==='5678');assert.equal(JSON.parse(privateSource.presenterStateJson).word,'bell');
     await admin.locator('#screen-layout').selectOption('stage');await admin.locator('#screen-take').click();await admin.locator('#director-status').filter({hasText:'Scene is live'}).waitFor();
