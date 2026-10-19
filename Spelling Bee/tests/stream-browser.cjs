@@ -54,7 +54,9 @@ const server = http.createServer((req, res) => {
     for(let i=0;i<3;i++)await admin.locator('#roster-rows .roster-place').nth(i).selectOption(String(i+1));
     await admin.locator('#lives-set-all').click();await admin.locator('#screen-show-lives').check();
     await admin.locator('#screen-layout').selectOption('stream');await admin.locator('[data-scene=spelling]').click();await admin.locator('#screen-take').click();await admin.locator('#director-status').filter({hasText:'Scene is live'}).waitFor();
-    const screen=await page('screen');await screen.clock.install();await screen.goto(base+'/screen.html?session=5678');await screen.locator('#broadcast[data-layout=stream]').waitFor();await screen.locator('#camera-start').click();
+    assert.equal(await admin.locator('#open-screen').getAttribute('href'),'screen.html?session=5678&view=stage');
+    assert.equal(await admin.locator('#open-camera-screen').getAttribute('href'),'screen.html?session=5678&view=camera');
+    const screen=await page('screen');await screen.clock.install();await screen.goto(base+'/'+await admin.locator('#open-camera-screen').getAttribute('href'));await screen.locator('#broadcast[data-layout=stream]').waitFor();await screen.locator('#camera-start').click();
     await screen.locator('#broadcast.camera-active').waitFor();await until(()=>photos().length===1);
     assert.equal(await screen.evaluate(()=>window.cameraCalls[0].audio),false);
     assert.equal(await admin.evaluate(()=>window.cameraCalls.length),0);
@@ -68,6 +70,10 @@ const server = http.createServer((req, res) => {
     await screen.clock.fastForward(6000);await until(()=>photos().length===2);
     assert.equal(await admin.frameLocator('#screen-preview').locator('#camera-still').getAttribute('src'),firstImage,'no live feed in Admin');
     await admin.clock.fastForward(18000);await until(async()=>await admin.frameLocator('#screen-preview').locator('#camera-still').getAttribute('src')===photos()[1].body.state.image);
+    const stageScreen=await page('stageScreen');await stageScreen.goto(base+'/'+await admin.locator('#open-screen').getAttribute('href'));
+    await stageScreen.locator('#broadcast[data-layout=stage][data-scene=spelling]').waitFor();
+    assert.equal(await stageScreen.locator('video,#camera-still,#camera-toggle,#camera-setup').count(),0,'stage output has no camera elements or controls');
+    assert.equal(await stageScreen.evaluate(()=>window.cameraCalls.length),0);
     await admin.locator('#screen-definition').fill('A very long clue that explains a meaning in simple words for people who are learning English. '.repeat(6).slice(0,500));
     await admin.locator('#screen-definition').dispatchEvent('input');
     await admin.locator('#screen-example').fill('The person will use _____ in a simple sentence about school and everyday life. '.repeat(7).slice(0,500));
@@ -76,6 +82,9 @@ const server = http.createServer((req, res) => {
     for(const [scene]of M.scenes){
       await admin.locator(scene==='result'?'[data-scene=result][data-result=pending]':`[data-scene=${scene}]`).click();await admin.locator('#screen-take').click();await admin.locator('#director-status').filter({hasText:'Scene is live'}).waitFor();
       await screen.locator(`#broadcast[data-scene=${scene}]`).waitFor();await screen.locator('#logo-sweep').waitFor({state:'hidden'});
+      await stageScreen.locator(`#broadcast[data-layout=stage][data-scene=${scene}]`).waitFor();
+      assert.equal(await stageScreen.locator('#broadcast').getAttribute('data-revision'),await screen.locator('#broadcast').getAttribute('data-revision'),'both outputs follow the same revision');
+      assert.equal(await stageScreen.evaluate(()=>window.cameraCalls.length),0,'stage output never requests the webcam');
       const reveal=await screen.locator('#scene').innerText();if(scene!=='result')assert(!/\bbell\b/i.test(reveal));
       assert.equal(await screen.evaluate(()=>window.cameraCalls.length),1,'scene transitions do not restart the webcam');
       const outside=await screen.locator('#scene .headline,#scene .quote,#scene .contestant-card,#scene .podium-card').evaluateAll(els=>{const stage=document.getElementById('broadcast').getBoundingClientRect();return els.some(el=>{const b=el.getBoundingClientRect();return b.bottom>stage.bottom+1||b.right>stage.right+1||b.left<stage.left-1||b.top<stage.top-1;});});assert.equal(outside,false,'overlay content fits the broadcast frame: '+scene);
@@ -87,6 +96,12 @@ const server = http.createServer((req, res) => {
     }
     const broadcast=[...sim.collections.get('SpellingBeeSessions').values()].find(row=>row.sessionCode===broadcastCode);assert(!broadcast.presenterStateJson.includes('data:image'));
     const privateSource=[...sim.collections.get('SpellingBeeSessions').values()].find(row=>row.sessionCode==='5678');assert.equal(JSON.parse(privateSource.presenterStateJson).word,'bell');
+    await admin.locator('#screen-layout').selectOption('stage');await admin.locator('#screen-take').click();await admin.locator('#director-status').filter({hasText:'Scene is live'}).waitFor();
+    await stageScreen.locator('#broadcast[data-layout=stage]').waitFor();assert.equal(await screen.locator('#broadcast[data-layout=stream].camera-active').count(),1,'camera output keeps its feed when preview layout changes');
+    await stageScreen.reload();await stageScreen.locator('#broadcast[data-layout=stage]').waitFor();await stageScreen.close();
+    const cameraRow=[...sim.collections.get('SpellingBeeSessions').values()].find(row=>row.sessionCode===cameraCode);assert.equal(JSON.parse(cameraRow.presenterStateJson).active,true,'closing the camera-free output cannot clear camera preview stills');
+    const defaultScreen=await page('defaultScreen');await defaultScreen.goto(base+'/screen.html?session=5678');await defaultScreen.locator('#broadcast[data-layout=stage]').waitFor();await defaultScreen.close();
+    await admin.locator('#screen-layout').selectOption('stream');await admin.locator('#screen-take').click();await admin.locator('#director-status').filter({hasText:'Scene is live'}).waitFor();
     failCamera=true;const beforeFailure=photos().length;await screen.clock.fastForward(20000);await until(()=>photos().length>beforeFailure);
     assert.equal(await screen.locator('#broadcast.camera-active').count(),1,'preview upload failure does not interrupt live camera');
     const failedCount=photos().length;await screen.clock.fastForward(20000);await pause(100);assert.equal(photos().length,failedCount,'new captures respect upload-failure backoff');
@@ -94,7 +109,7 @@ const server = http.createServer((req, res) => {
     await screen.locator('#camera-stop').evaluate(el=>el.click());await screen.locator('#camera-feed.hidden').waitFor({state:'attached'});assert.equal(await screen.evaluate(()=>window.testCameraStream.getTracks().every(track=>track.readyState==='ended')),true);
     await admin.clock.fastForward(18000);await admin.frameLocator('#screen-preview').locator('#camera-still.hidden').waitFor({state:'attached'});
     await screen.evaluate(()=>{navigator.mediaDevices.getUserMedia=async()=>{const error=new Error('denied');error.name='NotAllowedError';throw error;};});await screen.locator('#camera-start').evaluate(el=>el.click());await screen.locator('#camera-status').filter({hasText:'permission was not granted'}).waitFor();
-    await admin.locator('#screen-layout').selectOption('stage');await admin.locator('#screen-take').click();await admin.locator('#director-status').filter({hasText:'Scene is live'}).waitFor();await screen.locator('#broadcast[data-layout=stage]').waitFor();
-    assert.deepEqual(errors,[]);console.log('Passed: live fake webcam, all 12 overlay scenes, Admin still-only preview, 15-second snapshot pacing, cross-device Wix delivery, separate camera storage, no audio, camera stop/permission denial and stage-mode recovery.');
+    await admin.locator('#screen-layout').selectOption('stage');await admin.locator('#screen-take').click();await admin.locator('#director-status').filter({hasText:'Scene is live'}).waitFor();await screen.locator('#broadcast[data-layout=stream]').waitFor();
+    assert.deepEqual(errors,[]);console.log('Passed: live fake webcam, all 12 overlay scenes, Admin still-only preview, 15-second snapshot pacing, cross-device Wix delivery, separate camera storage, no audio, camera stop/permission denial, synchronized camera and camera-free outputs, independent layouts and legacy links.');
   } finally {await browser.close();server.close();}
 })().catch(error=>{console.error(error);server.close();process.exit(1);});

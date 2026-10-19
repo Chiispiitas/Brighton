@@ -6,7 +6,8 @@
   const validImage = value => typeof value === "string" && value.length <= 60000 && /^data:image\/jpeg;base64,[A-Za-z0-9+/=]+$/.test(value);
   const validPacket = value => value?.screenCameraPreview === true && typeof value.active === "boolean" && Number.isFinite(Number(value.capturedAt)) && (!value.active || validImage(value.image));
   class Stage {
-    constructor({ preview = false } = {}) {
+    constructor({ preview = false, disabled = false } = {}) {
+      this.disabled = disabled;
       this.preview = preview; this.mode = "stage"; this.stream = null; this.code = ""; this.previewCode = "";
       this.generation = 0; this.pending = null; this.busy = false; this.lastCaptureAt = 0;
       this.stage = document.getElementById("broadcast"); this.video = document.getElementById("camera-feed");
@@ -14,6 +15,7 @@
       this.toggle = document.getElementById("camera-toggle"); this.status = document.getElementById("camera-status");
       this.device = document.getElementById("camera-device"); this.mirror = document.getElementById("camera-mirror");
       this.startButton = document.getElementById("camera-start"); this.stopButton = document.getElementById("camera-stop");
+      if (disabled) { this.panel.remove(); this.toggle.remove(); this.video.remove(); this.still.remove(); return; }
       if (preview) {
         this.panel.remove(); this.toggle.remove(); this.video.remove();
         window.addEventListener("message", event => {
@@ -37,6 +39,7 @@
       window.addEventListener("pagehide", () => this.stop());
     }
     async setSession(code) {
+      if (this.disabled) return;
       if (code === this.code) return;
       this.code = code; this.previewCode = "";
       const key = await Model.cameraPreviewCode(code);
@@ -45,6 +48,7 @@
       if (this.stream) { this.lastCaptureAt = 0; this.capture(); }
     }
     setMode(mode) {
+      if (this.disabled) return;
       if (mode === this.mode) return;
       this.mode = mode;
       if (this.preview) return;
@@ -91,7 +95,7 @@
       } finally { if (generation === this.generation || !this.stream) this.startButton.disabled = false; }
     }
     stop(message = "Camera stopped.") {
-      if (this.preview) return;
+      if (this.preview || this.disabled) return;
       this.generation++; window.clearInterval(this.captureTimer);
       const hadStream = Boolean(this.stream); const stream = this.stream; this.stream = null;
       stream?.getTracks().forEach(track => track.stop()); this.video.srcObject = null; this.video.classList.add("hidden");
