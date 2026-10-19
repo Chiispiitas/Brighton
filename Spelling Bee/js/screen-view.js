@@ -5,11 +5,14 @@
   const params = new URLSearchParams(location.search);
   const preview = params.has("preview");
   const demo = params.has("demo");
+  // Each output follows the shared show but keeps its own presentation layout.
+  const outputLayout = preview ? "" : ({ camera: "stream", stage: "stage" }[params.get("view")] || "");
   const stage = document.getElementById("broadcast");
   const scene = document.getElementById("scene");
   const join = document.getElementById("screen-join");
   let state = Model.initial(), code = "", pageOffset = 0, lastCue = "", failures = 0;
-  const camera = new window.BeeCamera.Stage({ preview });
+  const camera = new window.BeeCamera.Stage({ preview, disabled: outputLayout === "stage" });
+  if (outputLayout) { state.layout = outputLayout; document.title = `Spelling Bee · Screen ${outputLayout === "stream" ? "with" : "without"} camera`; }
   let unsubscribeCloud = () => {};
   let pollGeneration = 0, displaySignature = "";
   let sweepAnimation = null, sweepSwapTimer = null;
@@ -101,6 +104,7 @@
   }
   function apply(next) {
     const normalized = Model.normalize(next);
+    if (outputLayout) normalized.layout = outputLayout;
     const signature = JSON.stringify(normalized);
     if (signature === displaySignature) return;
     if (normalized.revision < state.revision && !preview && !demo) return;

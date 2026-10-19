@@ -48,7 +48,7 @@ const server = http.createServer((req, res) => {
   await admin.locator('#director-status').filter({ hasText: 'Screen connected' }).waitFor();
   const sessionCode = await admin.locator('#broadcast-code').innerText();
   assert.equal(sessionCode, '1357');
-  assert.equal(await admin.locator('#open-screen').getAttribute('href'), 'screen.html?session=1357');
+  assert.equal(await admin.locator('#open-screen').getAttribute('href'), 'screen.html?session=1357&view=stage');
   const broadcastCode = await M.broadcastCode(sessionCode);
   assert.equal(sessions.get('1357').word, 'bell');
   const audience = await context.newPage();

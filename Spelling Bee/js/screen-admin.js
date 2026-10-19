@@ -6,18 +6,18 @@
   panel.className = "screen-director"; panel.id = "screen-director";
   panel.setAttribute("aria-label", "Audience screen controls");
   panel.innerHTML = `
-    <header class="director-header"><div><h2>Screen View · Show control</h2><span class="director-live" id="director-live">Connecting screen…</span></div><div class="director-actions"><a class="director-button" id="open-screen" target="_blank" rel="noopener">Open audience screen ↗</a><button type="button" class="standby-button" id="screen-standby">Return to standby</button></div></header>
+    <header class="director-header"><div><h2>Screen View · Show control</h2><span class="director-live" id="director-live">Connecting screen…</span></div><div class="director-actions"><a class="director-button" id="open-screen" target="_blank" rel="noopener">Screen without camera ↗</a><a class="director-button" id="open-camera-screen" target="_blank" rel="noopener">Screen with camera ↗</a><button type="button" class="standby-button" id="screen-standby">Return to standby</button></div></header>
     <p class="director-help">Prepare a scene, check the preview, then take it live. Contestant and scene changes stay in preview until you publish them.</p>
     <div class="director-top"><div><div class="preview-label">PREVIEW · OFF AIR</div><iframe class="director-preview" id="screen-preview" src="screen.html?preview=1" title="Audience scene preview"></iframe><div class="director-preview-note"><span id="preview-label">Standby</span><span>School & English Area · 16:9</span></div><p class="camera-preview-note" id="preview-camera-note" hidden></p><div class="director-take-row"><button class="take-live" type="button" id="screen-take">Take scene live</button><button type="button" id="next-speller">Prepare next contestant</button></div></div><div><h3>Scenes</h3><div class="scene-buttons" id="screen-scenes"></div></div></div>
     <div class="director-fields">
       <label>Current contestant<select id="screen-current"></select></label>
       <label>Round / stage name<input id="screen-round" maxlength="60" value="Round 1"></label>
-      <label>Screen mode<select id="screen-layout"><option value="stage">Stage display</option><option value="stream">Streaming overlay · live camera</option></select></label>
+      <label>Preview layout<select id="screen-layout"><option value="stage">Stage display</option><option value="stream">Streaming overlay · live camera</option></select></label>
       <label>Motion<select id="screen-motion"><option value="full">Soft transitions</option><option value="quiet">Quiet / reduced motion</option></select></label>
       <label>Board page<input type="number" id="screen-page" min="1" max="25" value="1"></label>
       <label class="check-label"><input type="checkbox" id="screen-auto" checked>Rotate board / finalists pages</label>
       <label class="wide check-label"><input type="checkbox" id="screen-show-lives">Show remaining lives on Now Spelling and the competition board</label>
-      <p class="wide director-help camera-help">For streaming, take Streaming overlay live, then open Screen View and choose Camera to start its webcam. Admin receives a small still about every 15 seconds; it does not play the live feed.</p>
+      <p class="wide director-help camera-help">Open Screen with camera and choose Camera → Start camera for the live feed. Open Screen without camera for the stage display. Both follow the same live scene. Choose Streaming overlay above to preview camera stills in Admin, updated about every 15 seconds.</p>
       <p class="wide director-help">Choose Word · Correct, Word · Neutral or Word · Incorrect, then take the scene live. Word colours are independent of judging animations. Taking Word · Correct live marks the current word as used.</p>
       <label class="wide">Definition for the audience<textarea id="screen-definition" maxlength="500"></textarea></label>
       <label class="wide">Example sentence for the audience<textarea id="screen-example" maxlength="500"></textarea></label>
@@ -222,7 +222,8 @@
         const saved = await Cloud.writeState({ sessionCode: broadcastCode, role: "presenter", state: { screenBroadcast: true, broadcast: live } });
         if (!saved.session?.screenBroadcast) throw new Error("Wix did not acknowledge the screen session.");
       }
-      $("open-screen").href = `screen.html?session=${sourceCode}`;
+      $("open-screen").href = `screen.html?session=${sourceCode}&view=stage`;
+      $("open-camera-screen").href = `screen.html?session=${sourceCode}&view=camera`;
       $("broadcast-code").textContent = sourceCode;
       $("director-live").textContent = `ON AIR · ${M.scenes.find(([key]) => key === live.scene)?.[1]}`;
       fillFields(); setBusy(false); status("Screen connected. Open the audience screen on the stage display.");

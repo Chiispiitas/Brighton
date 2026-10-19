@@ -174,3 +174,18 @@ No new collection, schema, endpoint, or backend deployment is needed.
 with all Wix calls routed through the actual Velo handlers against a simulated
 CMS. It checks still-only preview, image cadence, all scenes, data isolation,
 camera stop, permission denial, upload-quota recovery and stage-mode recovery.
+
+
+### Simultaneous screen outputs
+
+Admin provides two links using the same session code and broadcast state:
+`screen.html?session=CODE&view=camera` keeps the streaming overlay with the
+operator-started webcam; `screen.html?session=CODE&view=stage` keeps the full
+stage layout without camera elements, permissions or preview uploads.
+Each output overrides only its local layout. Scene, word, contestant, lives,
+round and timer updates remain shared. Closing/reloading the stage output
+cannot clear the camera output's preview record.
+
+The Preview layout selector controls Admin's preview and existing screen links
+without a view parameter. Explicit output links retain their layout across
+scene changes, preview-layout changes and reconnects. No backend change is needed.
