@@ -72,6 +72,8 @@
     document.getElementById("footer-copy").textContent = demo ? "REHEARSAL · SAMPLE CONTESTANTS" : "";
     scene.querySelectorAll(".scene-outgoing").forEach(layer => layer.remove());
     const previous = scene.querySelector(".scene-fit");
+    // A revealed spelling must not linger over a later scene during its fade.
+    if (state.scene !== "result") previous?.querySelectorAll(".reveal-word").forEach(word => { word.textContent = ""; });
     const next = document.createElement("div");
     next.className = "scene-fit";
     next.innerHTML = `<div class="scene-content">${content()}</div>`;
