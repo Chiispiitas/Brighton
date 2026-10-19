@@ -65,7 +65,7 @@
   }
   function draw({ animate = false } = {}) {
     stage.classList.toggle("quiet", state.motion === "quiet");
-    stage.dataset.layout = state.layout; camera.setMode(state.layout);
+    stage.dataset.layout = state.layout; camera.setMotion(state.motion); camera.setMode(state.layout);
     stage.dataset.scene = state.scene;
     stage.dataset.revision = String(state.revision);
     document.getElementById("round-bug").textContent = state.round;
@@ -114,9 +114,19 @@
     const visual = value => { const { revision, timer, ...fields } = value; return JSON.stringify({ ...fields, timerVisible: timer.visible }); };
     const contentChanged = visual(normalized) !== visual(state);
     lastCue = cue; state = normalized;
-    stage.dataset.layout = state.layout; camera.setMode(state.layout);
+    stage.dataset.layout = state.layout; camera.setMotion(state.motion); camera.setMode(state.layout);
     if (changed) pageOffset = 0;
-    if (contentChanged && (!canAnimate() || changed)) sweepToScene();
+    if (state.layout === "stream") {
+      // The camera output reserves the logo sweep for camera cuts.
+      if (sweepAnimation || sweepSwapTimer) {
+        clearTimeout(sweepSwapTimer); sweepSwapTimer = null;
+        sweepAnimation?.cancel(); sweepAnimation = null;
+        document.getElementById("logo-sweep").classList.remove("active");
+      }
+      if (contentChanged) draw({ animate: true });
+      else { stage.dataset.revision = String(state.revision); updateTimer(); }
+    }
+    else if (contentChanged && (!canAnimate() || changed)) sweepToScene();
     else if (contentChanged && !sweepSwapTimer) draw({ animate: true });
     else { stage.dataset.revision = String(state.revision); updateTimer(); }
   }
