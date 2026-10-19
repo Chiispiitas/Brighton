@@ -116,6 +116,14 @@ const server = http.createServer((req, res) => {
     assert.deepEqual(await screen.locator('.camera-feed').evaluateAll(videos => videos.filter(video => getComputedStyle(video).opacity === '1').map(video => video.id)), ['camera-feed-2'], 'selected camera alone fills the background');
     await screen.clock.fastForward(16000); await until(() => writes.filter(body => body.state.screenCameraPreview && body.state.active).at(-1)?.state.cameraName === 'Secondary camera');
     assert.equal(writes.filter(body => body.state.screenCameraPreview && body.state.active).at(-1).state.mirrored, true, 'Admin still comes from the selected camera with its own mirror setting');
+    await admin.locator('[data-scene=result][data-result=pending]').click(); await admin.locator('#screen-take').click(); await admin.locator('#director-status').filter({hasText:'Scene is live'}).waitFor(); await screen.locator('#broadcast[data-scene=result]').waitFor();
+    await screen.evaluate(() => {
+      window.firstBreakText = null;
+      const observer = new MutationObserver(() => { if (document.getElementById('broadcast').dataset.scene === 'break') { window.firstBreakText = document.getElementById('scene').innerText; observer.disconnect(); } });
+      observer.observe(document.getElementById('scene'), {childList:true,subtree:true});
+    });
+    await admin.locator('[data-scene=break]').click(); await admin.locator('#screen-take').click(); await admin.locator('#director-status').filter({hasText:'Scene is live'}).waitFor(); await screen.locator('#broadcast[data-scene=break]').waitFor();
+    assert(!/\bbell\b/i.test(await screen.evaluate(() => window.firstBreakText)), 'revealed spelling clears at the first frame of the next scene');
     await admin.locator('#screen-motion').selectOption('quiet'); await admin.locator('#screen-take').click(); await admin.locator('#director-status').filter({hasText:'Scene is live'}).waitFor(); await screen.locator('#broadcast.quiet').waitFor();
     const quietSweeps = await screen.evaluate(() => window.logoSweeps);
     await screen.keyboard.press('4'); assert.equal(await screen.locator('#broadcast').getAttribute('data-camera'), '1');
