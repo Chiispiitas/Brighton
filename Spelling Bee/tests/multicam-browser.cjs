@@ -72,6 +72,16 @@ const server = http.createServer((req, res) => {
     assert.equal(await screen.locator('#broadcast').getAttribute('data-camera'), '1');
     const warmBefore = await screen.locator('#camera-feed-2').evaluate(video => video.currentTime); await pause(200);
     assert(await screen.locator('#camera-feed-2').evaluate(video => video.currentTime) > warmBefore, 'off-air camera continues producing frames');
+    const coveredEdges = async () => {
+      const png = await screen.locator('#broadcast').screenshot();
+      return screen.evaluate(async base64 => {
+        const image = new Image(); image.src = 'data:image/png;base64,' + base64; await image.decode();
+        const canvas = document.createElement('canvas'); canvas.width = image.width; canvas.height = image.height;
+        const ctx = canvas.getContext('2d'); ctx.drawImage(image, 0, 0);
+        const w = canvas.width, h = canvas.height;
+        return [[1,1],[w-2,1],[1,h-2],[w-2,h-2],[1,h/2],[w-2,h/2],[w/2,1],[w/2,h-2]].map(([x,y]) => Array.from(ctx.getImageData(x,y,1,1).data));
+      }, png.toString('base64'));
+    };
     assert.equal(await screen.evaluate(() => window.logoSweeps), 0, 'camera startup and scene loading do not sweep');
     await screen.clock.pauseAt(await screen.evaluate(() => Date.now() + 100));
     await screen.evaluate(() => { for (let i = 0; i < 40; i++) document.dispatchEvent(new KeyboardEvent('keydown', {key:i % 2 ? '1' : '2',bubbles:true})); });
@@ -80,11 +90,14 @@ const server = http.createServer((req, res) => {
     await screen.clock.fastForward(600); assert.equal(await screen.locator('#broadcast').getAttribute('data-camera'), '1', 'latest requested camera wins at cover');
     await screen.clock.fastForward(900); await screen.locator('#logo-sweep > div').evaluate(el => el.getAnimations()[0].finish()); await screen.locator('#logo-sweep').waitFor({state:'hidden'});
     await screen.keyboard.press('2'); await screen.locator('#logo-sweep.active').waitFor();
-    await screen.locator('#logo-sweep > div').evaluate(el => el.getAnimations()[0].pause());
+    await screen.locator('#logo-sweep > div').evaluate(el => { const animation = el.getAnimations()[0]; animation.pause(); animation.currentTime = 600; });
+    const edgesBeforeCut = await coveredEdges();
     await screen.clock.fastForward(500); assert.equal(await screen.locator('#broadcast').getAttribute('data-camera'), '1', 'previous feed remains visible until logo covers the frame');
     await admin.locator('[data-scene=round]').click(); await admin.locator('#screen-take').click(); await admin.locator('#director-status').filter({hasText:'Scene is live'}).waitFor();
     await screen.locator('#broadcast[data-scene=round]').waitFor(); assert.equal(await screen.evaluate(() => window.logoSweeps), 2, 'scene update during a camera cut does not start another sweep');
     await screen.clock.fastForward(80); assert.equal(await screen.locator('#broadcast').getAttribute('data-camera'), '2', 'camera changes under the logo');
+    assert.deepEqual(await coveredEdges(), edgesBeforeCut, 'every edge and corner stays opaque while the background camera changes');
+    if (screenshots) await screen.locator('#broadcast').screenshot({path:path.join(screenshots,'camera-sweep-cover.png')});
     await screen.clock.fastForward(850); await screen.locator('#logo-sweep > div').evaluate(el => el.getAnimations()[0].finish()); await screen.locator('#logo-sweep').waitFor({state:'hidden'});
     await screen.keyboard.press('1'); await screen.locator('#logo-sweep > div').evaluate(el => el.getAnimations()[0].pause()); await screen.clock.fastForward(600); await screen.clock.fastForward(900); await screen.locator('#logo-sweep > div').evaluate(el => el.getAnimations()[0].finish()); await screen.locator('#logo-sweep').waitFor({state:'hidden'});
     await screen.clock.resume();
@@ -114,7 +127,7 @@ const server = http.createServer((req, res) => {
     await screen.keyboard.press('3'); await until(async () => await screen.locator('#broadcast').getAttribute('data-camera') === '3'); await screen.locator('#logo-sweep').waitFor({state:'hidden'});
     await screen.keyboard.press('5'); await until(async () => await screen.locator('#broadcast').getAttribute('data-camera') === '2'); await screen.locator('#logo-sweep').waitFor({state:'hidden'});
     assert.deepEqual(await screen.locator('.camera-feed').evaluateAll(videos => videos.filter(video => getComputedStyle(video).opacity === '1').map(video => video.id)), ['camera-feed-2'], 'selected camera alone fills the background');
-    await screen.clock.fastForward(16000); await until(() => writes.filter(body => body.state.screenCameraPreview && body.state.active).at(-1)?.state.cameraName === 'Secondary camera');
+    await screen.clock.fastForward(16000); await until(() => { const state = writes.filter(body => body.state.screenCameraPreview && body.state.active).at(-1)?.state; return state?.cameraName === 'Secondary camera' && state.mirrored === true; });
     assert.equal(writes.filter(body => body.state.screenCameraPreview && body.state.active).at(-1).state.mirrored, true, 'Admin still comes from the selected camera with its own mirror setting');
     await admin.locator('[data-scene=result][data-result=pending]').click(); await admin.locator('#screen-take').click(); await admin.locator('#director-status').filter({hasText:'Scene is live'}).waitFor(); await screen.locator('#broadcast[data-scene=result]').waitFor();
     await screen.evaluate(() => {
