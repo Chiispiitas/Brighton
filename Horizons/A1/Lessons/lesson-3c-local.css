@@ -20,7 +20,7 @@
 .l3c-cafe-photos img { height:27mm; }
 .l3c-cafe-photos figure:first-child img { object-position:65% center; }
 .l3c-cafe-photos figure:last-child img { object-position:50% center; }
-.l3c-cafe-photos figcaption { display:flex; justify-content:space-between; gap:1mm; padding:1mm 2mm; background:#ffc42b; color:#202124; font-size:8pt; }
+.l3c-cafe-photos figcaption, .l3c-park-photo figcaption { display:flex; justify-content:space-between; gap:1mm; padding:1mm 2mm; background:#ffc42b; color:#202124; font-size:8pt; }
 .l3c-photo-letter { position:absolute; left:1.5mm; top:1.5mm; background:#fff; color:var(--hz-unit-dark); padding:.8mm 1.4mm; font-weight:650; font-size:9pt; line-height:1; }
 .l3c-review { padding:0 0 2.3mm; margin-bottom:2.3mm; border-bottom:.25mm solid var(--hz-line); }
 .l3c-review:last-child { padding-bottom:0; margin-bottom:0; border-bottom:0; }
@@ -71,18 +71,6 @@
 .l3c-adjective-practice li { display:grid; grid-template-columns:64mm 1fr; gap:5mm; }
 .l3c-pair-model { display:flex; gap:5mm; margin:0 0 2mm; }
 .l3c-pair-model b { color:var(--hz-unit-dark); }
-.l3c-info-exchange { display:grid; grid-template-columns:1fr 1fr; gap:5mm; }
-.l3c-info-exchange section { min-width:0; }
-.l3c-info-exchange header { padding:1.2mm 2mm; background:#1767aa; color:#fff; font-size:9pt; }
-.l3c-info-exchange section:last-child header { background:#087a46; }
-.l3c-info-exchange header b { margin-right:2mm; }
-.l3c-info-exchange table { width:100%; border-collapse:collapse; table-layout:fixed; font-size:8.5pt; }
-.l3c-info-exchange th,.l3c-info-exchange td { padding:1.3mm 1mm; text-align:left; border-bottom:.25mm solid var(--hz-line); vertical-align:bottom; }
-.l3c-info-exchange th:first-child { width:26%; }
-.l3c-info-exchange thead th { font-weight:700; color:var(--hz-unit-dark); }
-.l3c-info-exchange tbody th { font-weight:400; }
-.l3c-info-exchange td { border-left:.25mm solid var(--hz-line); }
-.l3c-cell-write { background:#fff; }
 .l3c-review-editor { border:.25mm solid #a7c4d8; background:#fff; }
 .l3c-review-editor header { display:flex; align-items:center; justify-content:space-between; gap:4mm; background:#1767aa; color:#fff; padding:1.3mm 3mm; }
 .l3c-review-editor h2 { margin:0; font-size:14pt; font-weight:700; }
@@ -91,3 +79,47 @@
 .l3c-review-editor p { margin:0 0 1.8mm; }
 .l3c-review-editor p:last-child { margin-bottom:0; }
 .l3c-inset { margin-left:calc(var(--hz-exercise-marker-size) + 3mm); margin-top:.8mm; }
+
+/* Three destinations across the page, then three review columns. A richer
+   photo-led Maps result sheet replaces the recurring left-photo/right-copy block. */
+.l3c-review-masthead { background:#175786; color:#fff; padding:2.5mm 3mm; border:0; }
+.l3c-review-masthead h2 { font:700 24pt/1.1 Bahnschrift,Arial,sans-serif; }
+.l3c-maps-brand circle { fill:#175786; }
+.l3c-reviews-layout { display:flex; flex-direction:column; gap:3mm; padding:3mm; background:#edf1f3; }
+.l3c-photo-gallery { display:grid; grid-template-columns:1fr 2fr; gap:3mm; }
+.l3c-park-photo img { height:28.5mm; }
+.l3c-cafe-photos { margin:0; gap:3mm; }
+.l3c-cafe-photos img { height:28.5mm; }
+.l3c-review-feed { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:4mm; }
+.l3c-review { margin:0; padding:0 0 2mm; border:0; background:#fff; }
+.l3c-review:nth-child(2) { border-color:#bc5219; }
+.l3c-review:nth-child(3) { border-color:#175786; }
+.l3c-review:last-child { border:0; padding:0 0 2mm; }
+.l3c-review header { flex-wrap:wrap; gap:1mm; padding:1.5mm 2mm; background:#087a46; color:#fff; }
+.l3c-review:nth-child(2) header { background:#a34713; }
+.l3c-review:nth-child(3) header { background:#175786; }
+.l3c-review-byline { padding:0 2mm; }
+.l3c-photo-answer { border-bottom-color:#fff; }
+.l3c-review h3 { color:#fff; }
+.l3c-review:nth-child(2) h3 { color:#fff; }
+.l3c-review:nth-child(3) h3 { color:#fff; }
+.l3c-review p { line-height:1.45; padding:0 2mm; }
+.l3c-conversation { background:#eef4ef; border-left:0; border-top:.65mm solid #087a46; }
+.l3c-review-editor header { background:#175786; color:#fff; border:0; }
+.l3c-review-editor svg { stroke:#fff; }
+.l3c-review-editor { border:.25mm solid #a7c4d8; background:#fff; }
+
+/* A real café photograph accompanies the learner's own review. */
+.l3c-review-writing-layout { display:grid; grid-template-columns:minmax(0,1fr) 45mm; gap:4mm; align-items:stretch; }
+.l3c-review-writing-photo { display:block; width:45mm; height:44mm; object-fit:cover; object-position:48% 60%; }
+.l3c-review-writing-layout .l3c-review-open-lines { display:grid; gap:0; padding:1mm 3mm 3mm; }
+
+/* Personal information supplies a genuine gap; the review allows independent prose. */
+.l3c-person-survey { width:100%; border-collapse:collapse; table-layout:fixed; font-size:9pt; }
+.l3c-person-survey th,.l3c-person-survey td { text-align:left; padding:1.5mm 2mm; border-bottom:.25mm solid var(--hz-line); }
+.l3c-person-survey th:first-child { width:28%; }
+.l3c-person-survey thead th { color:#175786; font-weight:700; border-bottom:.6mm solid #175786; }
+.l3c-person-survey tbody th { font-weight:400; }
+.l3c-person-survey td { height:6mm; border-left:.25mm solid var(--hz-line); }
+.l3c-person-name { display:inline-block; width:45mm; height:4mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); margin-left:2mm; }
+.l3c-review-open-lines > span { display:block; height:7mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }

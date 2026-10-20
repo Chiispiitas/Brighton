@@ -12,3 +12,11 @@ Six independent action photographs support the routine-matching task. The social
 All six use the [Pexels License](https://www.pexels.com/license/), checked October 13, 2026. Original JPEGs are retained; only CSS display crops are used. D uses a 1.7× bottom-centered display crop to remove empty wall space while keeping the face, utensils and breakfast visible. No AI generation or retouching. See the manifest for dimensions and hashes. Inspect the actual print crops: walking step, open book, headphones, breakfast, sleeping face and glass at the mouth must remain readable. The week record supplies frequency evidence; the photos supply action meanings.
 
 The author's final correction requires a varied six-routine introduction with compact photographs, replacing the two-item draft and its rear-view walking photograph. Students choose any three of these routines for their personal writing plan.
+
+## Generated writing-sheet render
+
+`MyWeek-writing-sheet-v1.png` is an original built-in imagegen asset from the first Unit 3 layout preview, with native transparency and white writing space. It is retained for reversibility but is **not displayed in the refined preview**: the author rejected the overly stripped-back treatment, and the original functional white post box with a rich green header better fits this activity. All heading text, fields and four writing lines remain live HTML. See `../Unit3-generated-assets.json` for provenance and current-use status. The six action photographs above are unchanged.
+
+## Continuation-page morning scene - October 14, 2026
+
+Activity 4 adds `Zoe-morning-water-v1.png`, a built-in imagegen photograph of fictional Zoe drinking water with breakfast finished on the table. It supplies visible context for before/after; the printed timetable supplies exact times. The natural kitchen background remains intact. Exact prompt and hash are in `../Unit3-generated-assets.json`. The repetitive sentence-order activity 5 was removed; former activities 6-8 became 5-7. All six real action photographs and both recordings are unchanged.
