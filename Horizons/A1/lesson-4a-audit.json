@@ -166,5 +166,10 @@
     "report": "grammar-pilot-4a-audit.json",
     "author_approval": "pending",
     "baseline_audit_retained": true
+  },
+  "current_readability_revision": {
+    "report": "concept-readability-audit.json",
+    "author_direction": "Corrected 4A concept-readability approach authorized across other lessons.",
+    "baseline_audit_retained": true
   }
 }

@@ -52,5 +52,10 @@
       "SegoeUI-Bold"
     ],
     "emphasis": "Existing bold crimson only on target fragments; no enlarged model font."
+  },
+  "current_readability_revision": {
+    "report": "concept-readability-audit.json",
+    "author_direction": "Corrected 4A concept-readability approach authorized across other lessons.",
+    "baseline_audit_retained": true
   }
 }

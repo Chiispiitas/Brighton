@@ -320,10 +320,20 @@ Real photographs retain their environments and original pixels; generated cutout
 
 The 28-page saved Student's Book was reopened and checked: the preceding 26 pages are text/pixel identical, the final two match the standalone lesson, and 4A continuation numerals remain present. Two `page ---` destinations await back-of-book pagination. Work is reversible on `codex/horizons-lesson-4a`, based on the Unit 3 preview; main is unchanged.
 
-## 4A grammar readability pilot - pending author review
+## 4A grammar readability pilot - direction adopted across explanations
 
 The author requested a concrete 4A pilot of the proposed book-wide concept-readability improvements. The pilot is isolated on `codex/horizons-4a-grammar-pilot`, based on `codex/horizons-lesson-4a` at `db334bb109c9f62e6c58db7491e9f8f5fc5d7193`. It does not adopt a new rule across other lessons. The shared opt-in `hz-grammar-compare` component retains the canonical grammar shell and uses the lesson body typography for live model phrases and short rules, with 11.5pt concept headings, meaningful count imagery and selective changed-form emphasis. Four native-alpha pictures show an apple, two apples, rice and milk; only `an` and the plural `s` stand out in the countable models. A small struck-out `a rice` supports the no-article rule. The scope remains general food/drink meanings, not serving/variety exceptions.
 
-All eight exercise texts, response-space dimensions, opening-page artwork and both recordings remain in place. Additional grammar word lists were removed to keep the central contrast legible. Whole-book rollout awaits author evaluation of the pilot. See `../../A1/grammar-pilot-4a-audit.json` for saved-PDF and scope verification.
+All eight exercise texts, response-space dimensions, opening-page artwork and both recordings remain in place. Additional grammar word lists were removed to keep the central contrast legible. The author subsequently requested this corrected approach across the other lessons; the rollout below supersedes the pilot-only scope. See `../../A1/grammar-pilot-4a-audit.json` for saved-PDF and scope verification.
 
 **Author font correction:** The 4A pilot model phrases (an apple, two apples, milk, rice) and rules inherit the standard lesson body font, size, weight and line height. The enlarged 14pt examples were rejected as typographically inconsistent. Keep the picture comparison and selective crimson emphasis.
+
+## A1 concept-readability rollout - 2026-10-19
+
+The author authorized the corrected 4A direction across the other lessons. Fourteen explanation panels in 1A, 1B, 1D, 2A-2D and 3A-3D now use clear internal comparisons with ordinary lesson typography and precise crimson emphasis. They include matched be/verb forms, full-to-contracted sentences, a spelling/sound table, visible capital initials, a near/far and singular/plural picture matrix, specific-reference and possessive-mark comparisons, English/Spanish adjective alignment, question/answer pairings, a qualitative frequency continuum and temporal event flows. The shared grammar shell is preserved. Focus boxes no longer flex-shrink around their bodies; their full canonical inner padding is verified.
+
+1C's reading/categorization, the paired-unit review, the alphabet/number displays and corrected 4A spread were audited and retained. All 102 numbered activity blocks, source evidence, recording scripts, MP3s and image source files retain their content. The teacher notes explain changed helper models without changing activity answers. All fifteen focus bodies inherit their lesson's body typography; no enlarged model font returns.
+
+The saved 28-page A4 book was reopened. All thirteen changed pages match their direct exports, and the other fifteen pages are pixel/text identical to the approved baseline. Final explanation crops and changed pages were visually checked, including all continuation numerals. No page overflow, missing media or new overlap candidates were introduced. Existing native-display-font line-box/hidden-node candidates match the baseline; this is not a new blanket book-release sign-off. Existing page --- references await back-of-book pagination.
+
+Current branch: `codex/horizons-concept-readability`, based on the corrected 4A pilot commit `e8d6ddd69f62caffab662a93a5a392ebc5bfb131`. See `../../A1/concept-readability-audit.json` and `../../A1/Answer keys/Concept-readability-notes.md`. Main and earlier preview outputs remain available for reversal.

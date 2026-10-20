@@ -873,3 +873,6 @@
 /* Retained real-photo crops in activity 4.1 only. */
 .l1b-page .l1b-profile:nth-child(2) .hz-photo-placeholder { background-position:center 30% !important; }
 .l1b-page .l1b-profile:nth-child(3) .hz-photo-placeholder { background-position:center 28% !important; }
+
+/* Shared pronunciation focus shell; only the outer placement is book-local. */
+.l1b-pronunciation-focus { margin:1.2mm 0 .8mm calc(var(--hz-exercise-marker-size) + 3mm); }

@@ -172,7 +172,7 @@ Inside `.hz-focus-box__body`, use ordinary learner text plus existing shared gri
 
 Bold (`<b>` or `<strong>`) inside the focus-box body inherits the shared unit-dark accent treatment. It must not render as plain black. For multiple-choice or circle-the-answer content, wrap the options in `<em class="hz-answer-option">` and use normal lowercase wording, retaining only grammatically necessary capitals. The shared class prevents options from inheriting a bold instruction weight. Descriptive gray scene/location captions are omitted from printed lesson imagery; alt text retains the image description.
 
-### Concept-comparison pilot (4A only, pending author review)
+### Picture-led concept comparison
 
 The opt-in `.hz-grammar-compare` body contains two `.hz-grammar-concept`
 sections, each with a `.hz-grammar-concept__title`, a `.hz-grammar-models`
@@ -191,8 +191,36 @@ different type treatment for model phrases. Concept headings use the shared
 11.5pt heading token. There are no internal cards or
 colored label strips. Image sourcing/crops remain lesson-local. A single small
 `.hz-grammar-repair` may pair a visibly struck-out error with its correct form;
-do not rely on color alone to identify the error. No existing focus boxes
-adopt this component automatically. Pilot scope is Lesson 4A only.
+do not rely on color alone to identify the error. The picture-led form is used
+in 4A; other concepts use the bodies below. No explanation adopts a layout
+automatically merely because it is a focus box.
+
+### Other concept bodies
+
+Use `.hz-concept-body` inside the standard shell. All explanatory text inherits
+ordinary lesson typography. `.hz-concept-grid` (optionally `--3`) groups related
+models; `.hz-concept-heading` is a short body-sized crimson heading. A
+`.hz-concept-table` explicitly aligns corresponding forms or questions/answers.
+Use real column headings and preserve each question beside its own answer.
+The `--compact` table modifier removes vertical cell padding for short
+word/sound pairs while retaining the normal body line height and font size.
+`.hz-concept-flow` places one form, a quiet arrow and its corresponding form in
+one row. `.hz-concept-stem` underlines a meaningful shared anchor, not whole
+sentences. Changed material uses semantic bold and the existing crimson.
+
+`.hz-concept-proximity` groups the existing 2A pictures by near/far and
+singular/plural; image/learner labels remain live and the images retain their
+contexts. `.hz-concept-scale` shows the qualitative frequency continuum without
+percentages, equal-probability claims or fixed day-count thresholds. Temporal
+flows must show the actual event order used in the model sentence. Do not
+introduce earlier-than-syllabus grammar through helper labels. Keep headings
+brief, readable and cognitively useful; do not add pills, internal card skins
+or colored label strips. All typography and shell safeguards from the
+corrected 4A pilot apply to these components.
+
+Focus boxes must not flex-shrink around their content. Check that the body
+still has the canonical bottom padding inside the shell; page-boundary checks
+alone do not catch clipping caused by an overflowing body in a shrunken box.
 
 ## 9. Functional labels
 

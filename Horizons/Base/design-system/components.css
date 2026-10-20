@@ -357,6 +357,7 @@
 /* ---------- Language focus ---------- */
 
 .hz-focus-box {
+  flex-shrink: 0;
   padding: 3.2mm 4mm 3.5mm;
   border-top: 1.1mm solid var(--hz-unit);
   border-bottom: var(--hz-border) solid var(--hz-line-strong);
@@ -427,6 +428,34 @@
   color: var(--hz-unit-dark);
   text-decoration-thickness: 1.2px;
 }
+
+/* Concept explanations: normal book typography, meaningful alignment and
+   selective emphasis. These opt-in bodies never alter the focus shell. */
+.hz-concept-body { font: inherit; }
+.hz-concept-body p { margin: 0 0 1mm; }
+.hz-concept-body p:last-child { margin-bottom: 0; }
+.hz-concept-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4mm; }
+.hz-concept-grid--3 { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.hz-concept-heading { color: var(--hz-unit-dark); font-weight: var(--hz-fw-bold); }
+.hz-concept-table { width: 100%; border-collapse: collapse; font: inherit; }
+.hz-concept-table th, .hz-concept-table td { padding: .7mm 2mm; text-align: left; vertical-align: top; font: inherit; }
+.hz-concept-table th { color: var(--hz-unit-dark); font-weight: var(--hz-fw-bold); }
+.hz-concept-table--compact th, .hz-concept-table--compact td { padding-block: 0; }
+.hz-concept-table th:first-child, .hz-concept-table td:first-child { padding-left: 0; }
+.hz-concept-table th:last-child, .hz-concept-table td:last-child { padding-right: 0; }
+.hz-concept-flow { display: grid; grid-template-columns: minmax(0, 1fr) auto minmax(0, 1fr); gap: 3mm; align-items: baseline; }
+.hz-concept-flow + .hz-concept-flow { margin-top: 1.2mm; }
+.hz-concept-arrow { color: var(--hz-unit-dark); }
+.hz-concept-stem { text-decoration: underline; text-underline-offset: .7mm; text-decoration-color: var(--hz-line-strong); }
+.hz-concept-note { margin-top: 1.5mm !important; }
+.hz-concept-picture { margin: 0; text-align: center; }
+.hz-concept-picture img { display: block; width: 100%; height: 24mm; object-fit: contain; margin-bottom: 1mm; }
+.hz-concept-picture figcaption { font: inherit; }
+.hz-concept-proximity { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 1mm 3mm; }
+.hz-concept-proximity > .hz-concept-heading { grid-column: span 2; }
+.hz-concept-scale { display: flex; justify-content: space-between; gap: 2mm; padding-bottom: 1.5mm; margin-bottom: 2mm; border-bottom: .3mm solid var(--hz-unit-dark); }
+.hz-concept-scale span { position: relative; }
+.hz-concept-scale span::after { content: ''; position: absolute; left: 50%; bottom: -2.1mm; width: .8mm; height: .8mm; border-radius: 50%; background: var(--hz-unit-dark); }
 
 .hz-go-to {
   display: block;
