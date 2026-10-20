@@ -408,14 +408,11 @@
 .hz-grammar-model__form {
   margin: 0;
   color: var(--hz-ink);
-  font-size: var(--hz-fs-lg);
-  font-weight: var(--hz-fw-regular);
-  line-height: 1.2;
+  font: inherit;
 }
 .hz-grammar-concept__rule {
   margin: 0 0 1.5mm;
-  font-size: var(--hz-fs-body);
-  line-height: 1.35;
+  font: inherit;
 }
 .hz-grammar-concept__example { margin: 0; line-height: 1.4; }
 .hz-grammar-repair {

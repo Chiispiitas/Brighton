@@ -6,7 +6,7 @@
   "branch": "codex/horizons-4a-grammar-pilot",
   "changes": [
     "Exact one/two-apple, milk and rice native-alpha cutouts",
-    "14pt model phrases; 11.5pt concept headings; 10pt short rules",
+    "Model phrases and rules inherit the standard lesson body typography; 11.5pt concept headings",
     "Selective crimson emphasis on an and plural s",
     "Explicit a/an and plural rules; one visibly struck-out error",
     "Canonical grammar shell and background retained"
@@ -20,7 +20,7 @@
     "preceding_pages_pixel_and_text_identical": 27,
     "standalone_book_pixel_and_text_parity": true,
     "regenerated_opening_page_pixel_identical": true,
-    "only_changed_learner_text_page": "32",
+    "learner_text_changed_by_font_correction": false,
     "all_eight_activities_verbatim": true,
     "exercise_sequence": "1-8",
     "response_space_dimensions_unchanged": true,
@@ -43,5 +43,14 @@
     "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\outputs\\Horizons-A1-Student-Book-through-4A-Grammar-Pilot.pdf",
     "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\outputs\\Horizons-A1-4A-Grammar-Pilot.png"
   ],
-  "remaining_book_dependency": "Back-of-book page --- destinations await pagination. Pilot is pending author evaluation."
+  "remaining_book_dependency": "Back-of-book page --- destinations await pagination. Pilot is pending author evaluation.",
+  "font_correction": {
+    "model_and_rule_size_pt": 9.5,
+    "matches_lesson_body_size": true,
+    "model_font_families": [
+      "SegoeUI",
+      "SegoeUI-Bold"
+    ],
+    "emphasis": "Existing bold crimson only on target fragments; no enlarged model font."
+  }
 }

@@ -183,8 +183,12 @@ for example `an` in `an apple`, or the final `s` in `two apples`. The image
 must establish the meaning or contrast, not merely decorate the explanation.
 
 This shared internal component preserves the canonical shell, header, padding
-and pink background. Model forms use the shared 14pt token; concept headings
-use 11.5pt; rule text uses the 10pt body token. There are no internal cards or
+and pink background. Model forms and rules inherit the lesson's ordinary body
+font family, size, weight and line height. The author rejected the enlarged
+14pt model phrases as inconsistent with Horizons typography. Clarify the
+concept through imagery, grouping and selective emphasis; do not introduce a
+different type treatment for model phrases. Concept headings use the shared
+11.5pt heading token. There are no internal cards or
 colored label strips. Image sourcing/crops remain lesson-local. A single small
 `.hz-grammar-repair` may pair a visibly struck-out error with its correct form;
 do not rely on color alone to identify the error. No existing focus boxes
