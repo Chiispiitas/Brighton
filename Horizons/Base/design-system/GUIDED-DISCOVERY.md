@@ -89,6 +89,22 @@ A discovery question does **not** automatically require an answer line, checkbox
 
 ## 5. Minimal sufficient scaffolding
 
+### Clarification after discovery
+
+The author's concept-readability correction requires visible clarification
+after the noticing task. Align examples that differ in the relevant form and
+highlight only the change. Pictures, spatial grouping, sentence flows and
+meaningful scales can explain a contrast without increasing the language load.
+Use the shared concept bodies and normal lesson typography. A list of examples
+with every word equally bold does not provide the same clarification.
+
+Grammar examples remain illustrative rather than claims about the listening
+characters' actual answers. Keep learner source texts and recordings aligned;
+changing a helper model must not change an exercise's evidence. A frequency
+scale is qualitative, and mass-food rules apply to the food/drink senses used
+in the lesson. Email examples are copied as given, not used to claim that email
+addresses categorically cannot contain capitals.
+
 Add support only when it makes the intended discovery or task possible.
 
 Remove support when it:

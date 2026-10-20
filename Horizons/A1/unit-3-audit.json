@@ -151,7 +151,7 @@
       "url": "https://www.fahr.gov.ae/en/contact/"
     }
   ],
-  "author_revision_2026_10_14": "3A adds two listening-guest photos and removes old activity 5; 3B keeps activity 8, adds taller generated colleagues and trims two repetitive items in activity 7; 3C adds a caf\u00e9 photo to the review, removes old activity 7 and renumbers; 3D adds a generated breakfast/water scene, removes old activity 5 and renumbers. Keys and source notes match; all nine recordings remain unchanged.",
+  "author_revision_2026_10_14": "3A adds two listening-guest photos and removes old activity 5; 3B keeps activity 8, adds taller generated colleagues and trims two repetitive items in activity 7; 3C adds a café photo to the review, removes old activity 7 and renumbers; 3D adds a generated breakfast/water scene, removes old activity 5 and renumbers. Keys and source notes match; all nine recordings remain unchanged.",
   "continuation_page_imagery": {
     "required": "Each lesson second page has one or two substantial task-related images; icons and tiny badges do not count. Repetitive activities may be removed to preserve print legibility and writing space.",
     "author_preference_date": "2026-10-14",
@@ -186,7 +186,12 @@
     "information_gap_requirement": "Answers must not be readable from preset A/B material on the same spread. Use private personal information or genuinely separated role material.",
     "3C_activity_7": "Partner knows the chosen family member's place visits; the page contains only prompts and empty response cells. Personal or consistent fictional answers are accepted.",
     "3C_activity_8": "Four open writing lines; no fixed sentence stems or fill-in gaps. Reading reviews supply optional language models.",
-    "3D_legend": "Removed \u2713 yes / \u2013 no legend; week-record entries unchanged.",
+    "3D_legend": "Removed ✓ yes / – no legend; week-record entries unchanged.",
     "saved_pdf_checked": true
+  },
+  "current_readability_revision": {
+    "report": "concept-readability-audit.json",
+    "author_direction": "Corrected 4A concept-readability approach authorized across other lessons.",
+    "baseline_audit_retained": true
   }
 }

@@ -92,6 +92,31 @@ Do not invent response mechanics that the authorized task does not ask for. If a
 
 ## 4. Visual language
 
+### Concept readability - author-approved direction
+
+Apply the corrected 4A pilot's principle across explanations: meaningful
+evidence, precise emphasis and ordinary Horizons typography. Model phrases,
+table cells, captions and short rules inherit their lesson's body font family,
+size and line height. Do not introduce enlarged/display-font model sentences
+or shrink explanatory text to fit. The author rejected the pilot's 14pt model
+labels as inconsistent; the correction is part of the standard.
+
+Choose the internal composition to suit the concept: aligned comparisons for
+changed forms, full-to-contracted sentence flows, a near/far and singular/plural
+matrix with existing pictures, question/answer pairings, a qualitative frequency
+scale or a temporal sequence. Keep the canonical focus-box shell and purposeful
+pink background. Do not turn every explanation into the same picture grid or
+add boxes where a vocabulary task already supplies the evidence.
+
+Highlight the exact article, ending, apostrophe, auxiliary, capital letter or
+question word being taught. Keep unchanged sentence material quiet and compare
+like examples. Underlining may connect corresponding nouns or locate a verb;
+it must carry meaning. Short labels and one clear model should make the
+distinction visible without a paragraph of unfamiliar instructional English.
+Keep all model text live and retain actual writing space, source contexts,
+recorded input, NEW WORDS and navigation. Inspect explanations at print size,
+including their internal clearance and the activities below them.
+
 ### Rich color, preserved identity
 
 The author's 2026-10-08 color correction rejects the gradual shift toward a
