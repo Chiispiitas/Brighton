@@ -515,6 +515,52 @@
 .hz-focus-box__body b,
 .hz-focus-box__body strong { color: var(--hz-unit-dark); }
 
+/* Opt-in concept comparison pilot. Keeps the canonical focus shell and
+   makes meaning, model forms and rules separate reading levels. */
+.hz-grammar-compare {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6mm;
+}
+.hz-grammar-concept { min-width: 0; }
+.hz-grammar-concept__title {
+  margin: 0 0 3mm;
+  color: var(--hz-unit-dark);
+  font-size: var(--hz-fs-md);
+  font-weight: var(--hz-fw-bold);
+  line-height: 1.2;
+}
+.hz-grammar-models {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3mm;
+  margin-bottom: 3mm;
+}
+.hz-grammar-model { margin: 0; text-align: center; min-width: 0; }
+.hz-grammar-model__visual { margin: 0 auto 1mm; }
+.hz-grammar-model__form {
+  margin: 0;
+  color: var(--hz-ink);
+  font: inherit;
+}
+.hz-grammar-concept__rule {
+  margin: 0 0 1.5mm;
+  font: inherit;
+}
+.hz-grammar-concept__example { margin: 0; line-height: 1.4; }
+.hz-grammar-repair {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2mm;
+  margin-left: 3mm;
+  font-size: var(--hz-fs-sm);
+  white-space: nowrap;
+}
+.hz-grammar-repair del {
+  color: var(--hz-unit-dark);
+  text-decoration-thickness: 1.2px;
+}
+
 .hz-go-to {
   display: block;
   width: max-content;
@@ -6585,8 +6631,6 @@ body.hz-debug .hz-page::after {
 .l4a-notice { display:grid; gap:1.5mm; }
 .l4a-continuation-content { padding-top:7mm; }
 .l4a-page--2 .hz-exercises { padding-top:0!important; }
-.l4a-grammar p { margin:0 0 1mm; }
-.l4a-grammar p:last-child { margin-bottom:0; }
 .l4a-page--2 .hz-go-to { margin-top:2mm; margin-bottom:1mm; }
 .l4a-sort-table { width:100%; table-layout:fixed; border-collapse:collapse; margin-top:2mm; }
 .l4a-sort-table th { text-align:left; padding:1mm 2mm; color:#116b60; font-weight:700; border-bottom:.65mm solid #116b60; }
@@ -6608,6 +6652,9 @@ body.hz-debug .hz-page::after {
 .l4a-pair-model b { color:var(--hz-unit-dark); }
 .l4a-inset { margin-left:calc(var(--hz-exercise-marker-size) + 3mm); }
 .l4a-page .hz-extra-practice { margin-top:2mm; }
+
+/* Exact one/two comparison and mass-food models, with original alpha intact. */
+.l4a-grammar-food { width:30mm; height:20mm; background-image:url("./Images/4A/Grammar-counts-v1.png"); background-size:200% 200%; background-position:var(--px) var(--py); background-repeat:no-repeat; }
 
 
 /* Student's Book unifier */
@@ -9135,7 +9182,26 @@ body {
 <section class="hz-exercise"><div class="hz-exercise-number">4</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Look at the text. Circle the correct words.</p><div class="hz-exercise__body"><ol class="l4a-list l4a-notice"><li>Sora eats <em class="hz-answer-option">an egg / a egg</em>.</li><li>Elif eats <em class="hz-answer-option">egg / eggs</em>.</li><li>Elif has <em class="hz-answer-option">a bread / bread</em>.</li></ol></div></div></section>
 </div></div></main><footer class="hz-page__footer"><span></span><span class="hz-page-number">31</span></footer></article>
 <article class="hz-page hz-content hz-unit-4 hz-continuation-page l4a-page l4a-page--2" data-page="32"><main class="hz-page__content"><span class="hz-continuation" aria-label="Lesson 4A continued">4A</span><div class="hz-page-stack"><div class="l4a-continuation-content">
-<section class="hz-focus-box hz-no-break" aria-label="Grammar: countable and uncountable nouns"><header class="hz-focus-box__header">GRAMMAR: COUNTABLE AND UNCOUNTABLE NOUNS</header><div class="hz-focus-box__body hz-content-grid hz-content-grid--2 l4a-grammar"><div><p><strong>Countable</strong></p><p>I eat <b>an egg</b>. I eat <b>two eggs</b>.</p><p><b>an apple</b> · <b>two apples</b></p><p><b>a banana</b> · <b>three bananas</b></p></div><div><p><strong>Uncountable</strong></p><p>I eat <b>rice</b>. I drink <b>milk</b>.</p><p><b>bread · cheese · fish</b></p><p><b>tea · coffee · juice</b></p></div></div></section>
+<section class="hz-focus-box hz-no-break" aria-label="Grammar: countable and uncountable nouns">
+<header class="hz-focus-box__header">GRAMMAR: COUNTABLE AND UNCOUNTABLE NOUNS</header>
+<div class="hz-focus-box__body hz-grammar-compare">
+<section class="hz-grammar-concept" aria-labelledby="l4a-countable-title">
+<h2 class="hz-grammar-concept__title" id="l4a-countable-title">Countable</h2>
+<div class="hz-grammar-models">
+<figure class="hz-grammar-model"><div class="hz-grammar-model__visual l4a-grammar-food" role="img" aria-label="One whole apple" style="--px:0%;--py:0%"></div><figcaption class="hz-grammar-model__form"><strong>an</strong> apple</figcaption></figure>
+<figure class="hz-grammar-model"><div class="hz-grammar-model__visual l4a-grammar-food" role="img" aria-label="Two separate whole apples" style="--px:100%;--py:0%"></div><figcaption class="hz-grammar-model__form">two apple<strong>s</strong></figcaption></figure>
+</div>
+<p class="hz-grammar-concept__rule">Use <strong>a</strong> or <strong>an</strong> with one.<br>Two or more: use the plural.</p>
+</section>
+<section class="hz-grammar-concept" aria-labelledby="l4a-uncountable-title">
+<h2 class="hz-grammar-concept__title" id="l4a-uncountable-title">Uncountable</h2>
+<div class="hz-grammar-models">
+<figure class="hz-grammar-model"><div class="hz-grammar-model__visual l4a-grammar-food" role="img" aria-label="Milk as a drink" style="--px:100%;--py:100%"></div><figcaption class="hz-grammar-model__form">milk</figcaption></figure>
+<figure class="hz-grammar-model"><div class="hz-grammar-model__visual l4a-grammar-food" role="img" aria-label="Rice as food" style="--px:0%;--py:100%"></div><figcaption class="hz-grammar-model__form">rice</figcaption></figure>
+</div>
+<p class="hz-grammar-concept__rule">No <strong>a</strong> or <strong>an</strong>.<span class="hz-grammar-repair" aria-label="Say rice, not a rice"><del>a rice</del><span aria-hidden="true">→</span><span>rice</span></span><br>No plural <strong>-s</strong>.</p>
+</section>
+</div></section>
 <div class="hz-go-to hz-go-to--inset">Go to: Grammar - Countable and uncountable nouns, page ---</div>
 <div class="hz-exercises">
 <section class="hz-exercise"><div class="hz-exercise-number">5</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Write the words in the table.</p><div class="hz-exercise__body"><div class="hz-word-bank"><span class="hz-text-unit">eggs · rice · cheese · apples · coffee · bananas · bread · tomatoes</span></div><table class="l4a-sort-table"><thead><tr><th>Countable</th><th>Uncountable</th></tr></thead><tbody><tr><td><span class="l4a-example">eggs</span><span class="l4a-table-write"></span><span class="l4a-table-write"></span><span class="l4a-table-write"></span></td><td><span class="l4a-example">rice</span><span class="l4a-table-write"></span><span class="l4a-table-write"></span><span class="l4a-table-write"></span></td></tr></tbody></table></div></div></section>

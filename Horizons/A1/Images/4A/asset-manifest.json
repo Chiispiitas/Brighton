@@ -82,6 +82,29 @@
       "sha256": "79006e799e199e212250cc3490d819aa4100fa15395fee956dd70171a9336743",
       "original_pixels_preserved": true,
       "display_changes": "CSS layout/crop only; source file unchanged."
+    },
+    {
+      "file": "Grammar-counts-v1.png",
+      "kind": "built-in imagegen",
+      "usage": "4A grammar readability pilot: one apple, two separate apples, rice, milk, in a 2x2 native-alpha sheet. Exact quantities and crop visually inspected.",
+      "acquired": "2026-10-19",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 1873623,
+      "sha256": "ac7d9e44e26f53033b551270d800a0455acc447e650efaeea035cd95800eff01",
+      "native_alpha": true,
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "transparent_fraction": 0.6314913431803385,
+      "original_pixels_preserved": true,
+      "display_changes": "CSS sprite display crops only; source pixels and native alpha unchanged.",
+      "original_generation_file": "exec-f5170b1a-3367-489b-8b80-ab5a91edf470.png",
+      "prompt_archive_outside_repository": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\lesson4a-grammar-pilot\\prompts.json"
     }
   ],
   "generation_mode": "built-in imagegen",

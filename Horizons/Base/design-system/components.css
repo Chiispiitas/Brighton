@@ -382,6 +382,52 @@
 .hz-focus-box__body b,
 .hz-focus-box__body strong { color: var(--hz-unit-dark); }
 
+/* Opt-in concept comparison pilot. Keeps the canonical focus shell and
+   makes meaning, model forms and rules separate reading levels. */
+.hz-grammar-compare {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 6mm;
+}
+.hz-grammar-concept { min-width: 0; }
+.hz-grammar-concept__title {
+  margin: 0 0 3mm;
+  color: var(--hz-unit-dark);
+  font-size: var(--hz-fs-md);
+  font-weight: var(--hz-fw-bold);
+  line-height: 1.2;
+}
+.hz-grammar-models {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 3mm;
+  margin-bottom: 3mm;
+}
+.hz-grammar-model { margin: 0; text-align: center; min-width: 0; }
+.hz-grammar-model__visual { margin: 0 auto 1mm; }
+.hz-grammar-model__form {
+  margin: 0;
+  color: var(--hz-ink);
+  font: inherit;
+}
+.hz-grammar-concept__rule {
+  margin: 0 0 1.5mm;
+  font: inherit;
+}
+.hz-grammar-concept__example { margin: 0; line-height: 1.4; }
+.hz-grammar-repair {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2mm;
+  margin-left: 3mm;
+  font-size: var(--hz-fs-sm);
+  white-space: nowrap;
+}
+.hz-grammar-repair del {
+  color: var(--hz-unit-dark);
+  text-decoration-thickness: 1.2px;
+}
+
 .hz-go-to {
   display: block;
   width: max-content;
