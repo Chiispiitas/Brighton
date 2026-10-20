@@ -1,0 +1,64 @@
+/* Food-led editorial composition; native Horizons chrome stays crimson. */
+.l4a-page { --hz-unit:var(--hz-unit-1); --hz-unit-dark:#8f123f; --hz-unit-soft:#f8e6ee; font-size:9.5pt; }
+.l4a-page .hz-page-stack { gap:2.7mm; }
+.l4a-page .hz-lesson-header { padding-bottom:3.2mm; }
+.l4a-page .hz-exercises { gap:.8mm; }
+.l4a-page .hz-exercise { padding:1.5mm 0 2mm; }
+.l4a-page .hz-exercise__body { margin-top:1.8mm; }
+.l4a-food-gallery { display:grid; grid-template-columns:repeat(6,minmax(0,1fr)); gap:1mm 1.5mm; }
+.l4a-food-gallery figure { margin:0; min-width:0; position:relative; }
+.l4a-cutout { width:100%; aspect-ratio:1.125; background-image:url('../Images/4A/Food-cutouts-v1.png'); background-size:400% 300%; background-position:var(--px) var(--py); background-repeat:no-repeat; clip-path:inset(0 0 4% 0); }
+.l4a-food-gallery figcaption { position:absolute; top:0; left:0; color:var(--hz-unit-dark); background:var(--hz-paper); padding:0 1mm; font-size:8.5pt; font-weight:650; }
+.l4a-food-words { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:1.5mm 3mm; margin-top:2mm; }
+.l4a-food-words > span { display:flex; align-items:baseline; gap:1.5mm; }
+.l4a-food-words b { color:var(--hz-unit-dark); font-size:8.5pt; font-weight:650; min-width:3mm; }
+.l4a-letter-answer { display:inline-block; width:6mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); height:3.5mm; }
+.l4a-example { color:#74777d; font:400 9pt/1.35 "Segoe Print","Bradley Hand",cursive; }
+.l4a-breakfast-feature { background:#f4f1e8; }
+.l4a-breakfast-feature > header { display:flex; justify-content:space-between; align-items:center; padding:2mm 3mm; color:#fff; background:#116b60; }
+.l4a-breakfast-feature > header p { margin:0 0 1mm; font-size:7.5pt; letter-spacing:.1em; color:#ffe06b; }
+.l4a-breakfast-feature h2 { margin:0; font:750 23pt/1.05 Bahnschrift,Arial,sans-serif; letter-spacing:-.02em; }
+.l4a-feature-word { text-align:right; font:700 10pt/1.1 Bahnschrift,Arial,sans-serif; }
+.l4a-feature-word b { color:#ffe06b; }
+.l4a-breakfast-layout { display:grid; grid-template-columns:1fr 1fr; gap:3mm; padding:3mm; }
+.l4a-breakfast-layout section { min-width:0; }
+.l4a-breakfast-layout img { display:block; width:100%; object-fit:cover; }
+.l4a-japan img { height:35mm; object-position:center 62%; }
+.l4a-turkiye img { height:31mm; object-position:center 65%; margin-top:2mm; }
+.l4a-breakfast-copy h3 { display:flex; align-items:baseline; justify-content:space-between; margin:1.5mm 0 1mm; color:#116b60; font-size:9pt; font-weight:600; }
+.l4a-breakfast-copy h3 span { font:750 15pt/1.1 Bahnschrift,Arial,sans-serif; }
+.l4a-turkiye h3 { color:#a34313; margin-top:0; }
+.l4a-breakfast-copy p { margin:0; font-size:10pt; line-height:1.4; }
+.l4a-breakfast-copy strong { color:#8f123f; font-weight:650; }
+.l4a-list { list-style:none; counter-reset:item; padding:0; margin:0; }
+.l4a-list li { counter-increment:item; position:relative; padding-left:4.5mm; line-height:1.45; }
+.l4a-list li::before { content:counter(item); position:absolute; top:0; left:0; color:var(--hz-unit-dark); font-size:8.5pt; font-weight:650; }
+.l4a-two-columns { display:grid; grid-template-columns:1fr 1fr; gap:2mm 6mm; }
+.l4a-gap { display:inline-block; width:20mm; height:3.8mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
+.l4a-gap--short { width:10mm; }
+.l4a-notice { display:grid; gap:1.5mm; }
+.l4a-continuation-content { padding-top:7mm; }
+.l4a-page--2 .hz-exercises { padding-top:0!important; }
+.l4a-grammar p { margin:0 0 1mm; }
+.l4a-grammar p:last-child { margin-bottom:0; }
+.l4a-page--2 .hz-go-to { margin-top:2mm; margin-bottom:1mm; }
+.l4a-sort-table { width:100%; table-layout:fixed; border-collapse:collapse; margin-top:2mm; }
+.l4a-sort-table th { text-align:left; padding:1mm 2mm; color:#116b60; font-weight:700; border-bottom:.65mm solid #116b60; }
+.l4a-sort-table td { padding:1.2mm 2mm; vertical-align:top; }
+.l4a-sort-table td+td { border-left:.25mm solid var(--hz-line); }
+.l4a-table-write { display:block; height:5.5mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
+.l4a-picnic-layout { display:grid; grid-template-columns:minmax(0,1fr) 67mm; gap:5mm; align-items:stretch; }
+.l4a-picnic-layout img { width:67mm; height:48mm; object-fit:cover; object-position:center; }
+.l4a-picnic-copy { border-top:.7mm solid #b95015; padding-top:2mm; }
+.l4a-picnic-copy h2 { margin:0 0 2mm; color:#a34313; font:700 18pt/1.15 Bahnschrift,Arial,sans-serif; }
+.l4a-picnic-copy .l4a-example { margin:0 0 1mm; }
+.l4a-open-lines { display:grid; }
+.l4a-open-lines > span { display:block; height:7mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
+.l4a-pair-model { display:grid; grid-template-columns:1fr 1fr; gap:1.3mm 5mm; margin:0 0 1mm; }
+.l4a-pair-model p { margin:0; }
+.l4a-pair-model p:nth-child(2) { grid-row:2; grid-column:1; }
+.l4a-pair-model p:nth-child(3) { grid-column:2; grid-row:1; }
+.l4a-pair-model p:nth-child(4) { grid-column:2; grid-row:2; }
+.l4a-pair-model b { color:var(--hz-unit-dark); }
+.l4a-inset { margin-left:calc(var(--hz-exercise-marker-size) + 3mm); }
+.l4a-page .hz-extra-practice { margin-top:2mm; }
