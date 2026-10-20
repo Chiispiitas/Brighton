@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-19",
+  "status": "pilot ready for author evaluation; no book-wide rollout",
+  "scope": "4A grammar box only, printed page 32",
+  "baseline_commit": "db334bb109c9f62e6c58db7491e9f8f5fc5d7193",
+  "branch": "codex/horizons-4a-grammar-pilot",
+  "changes": [
+    "Exact one/two-apple, milk and rice native-alpha cutouts",
+    "14pt model phrases; 11.5pt concept headings; 10pt short rules",
+    "Selective crimson emphasis on an and plural s",
+    "Explicit a/an and plural rules; one visibly struck-out error",
+    "Canonical grammar shell and background retained"
+  ],
+  "checks": {
+    "saved_pdf_reopened_and_rendered": true,
+    "a4": true,
+    "rounding_tolerance_pdf_points": 0.5,
+    "book_pages": 28,
+    "standalone_lesson_pages": 2,
+    "preceding_pages_pixel_and_text_identical": 27,
+    "standalone_book_pixel_and_text_parity": true,
+    "regenerated_opening_page_pixel_identical": true,
+    "only_changed_learner_text_page": "32",
+    "all_eight_activities_verbatim": true,
+    "exercise_sequence": "1-8",
+    "response_space_dimensions_unchanged": true,
+    "learner_body_type_not_reduced": true,
+    "overflow": 0,
+    "missing_media": 0,
+    "black_grammar_bold": 0,
+    "continuation_tab_over_text": 0,
+    "model_counts_visually_checked": true,
+    "native_alpha_and_source_pixels_preserved": true,
+    "NEW_WORDS_present": true,
+    "Extra_Practice_present": true,
+    "Vocabulary_and_Grammar_references_present": true,
+    "audio_byte_identical": true,
+    "script_and_production_text_identical": true,
+    "native_opening_tab_line_rectangle_candidate": "Unchanged Lesson/4A bounding boxes; saved-PDF glyphs separate and baseline opening page pixel identical."
+  },
+  "outputs": [
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\outputs\\Horizons-A1-Lesson-4A-Grammar-Pilot.pdf",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\outputs\\Horizons-A1-Student-Book-through-4A-Grammar-Pilot.pdf",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\outputs\\Horizons-A1-4A-Grammar-Pilot.png"
+  ],
+  "remaining_book_dependency": "Back-of-book page --- destinations await pagination. Pilot is pending author evaluation."
+}

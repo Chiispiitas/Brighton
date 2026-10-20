@@ -17,3 +17,7 @@ Exact prompts are retained at the task workspace `work/lesson4a/prompts.json`, o
 ## Cultural context and fiction
 
 The two first-person learner descriptions are original classroom fiction. Sora and Elif are not real interviewees or people identified from the photographs. Traditional meal context was checked against [JNTO's breakfast overview](https://faq.japan-travel.jnto.go.jp/en/japan-magazine/breakfast-options-to-fit-your-travel-plans/) and [GoTürkiye's Turkish breakfast overview](https://goturkiye.com/branding/press-releases/traditional-turkish-breakfast-the-golden-meal-of-the-day). The examples do not generalize to everyone in either country. No source wording or book artwork was copied.
+
+## Grammar readability pilot - 2026-10-19
+
+`Grammar-counts-v1.png` is a new built-in imagegen asset, with native alpha and a 2x2 layout: one whole apple, two separate whole apples, cooked rice in a bowl, milk in a glass. It is used only inside the opt-in 4A grammar comparison. The quantities are visible; the rice and milk labels refer to food/drink, not their containers. The original file and alpha are preserved, with CSS display crops only. The exact prompt is retained outside the repository at `work/lesson4a-grammar-pilot/prompts.json`; dimensions/hash are in the manifest. All model phrases, rules and the crossed-out error remain editable live text. Original activity 1 cutouts and all other lesson images are unchanged.

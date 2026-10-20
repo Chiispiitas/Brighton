@@ -172,6 +172,24 @@ Inside `.hz-focus-box__body`, use ordinary learner text plus existing shared gri
 
 Bold (`<b>` or `<strong>`) inside the focus-box body inherits the shared unit-dark accent treatment. It must not render as plain black. For multiple-choice or circle-the-answer content, wrap the options in `<em class="hz-answer-option">` and use normal lowercase wording, retaining only grammatically necessary capitals. The shared class prevents options from inheriting a bold instruction weight. Descriptive gray scene/location captions are omitted from printed lesson imagery; alt text retains the image description.
 
+### Concept-comparison pilot (4A only, pending author review)
+
+The opt-in `.hz-grammar-compare` body contains two `.hz-grammar-concept`
+sections, each with a `.hz-grammar-concept__title`, a `.hz-grammar-models`
+row of meaningful figures, a short `.hz-grammar-concept__rule` and an optional
+`.hz-grammar-concept__example`. Each `.hz-grammar-model` pairs its image with
+a live `.hz-grammar-model__form`. Put only the changed form in semantic bold:
+for example `an` in `an apple`, or the final `s` in `two apples`. The image
+must establish the meaning or contrast, not merely decorate the explanation.
+
+This shared internal component preserves the canonical shell, header, padding
+and pink background. Model forms use the shared 14pt token; concept headings
+use 11.5pt; rule text uses the 10pt body token. There are no internal cards or
+colored label strips. Image sourcing/crops remain lesson-local. A single small
+`.hz-grammar-repair` may pair a visibly struck-out error with its correct form;
+do not rely on color alone to identify the error. No existing focus boxes
+adopt this component automatically. Pilot scope is Lesson 4A only.
+
 ## 9. Functional labels
 
 ```html

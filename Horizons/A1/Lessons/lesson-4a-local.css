@@ -39,8 +39,6 @@
 .l4a-notice { display:grid; gap:1.5mm; }
 .l4a-continuation-content { padding-top:7mm; }
 .l4a-page--2 .hz-exercises { padding-top:0!important; }
-.l4a-grammar p { margin:0 0 1mm; }
-.l4a-grammar p:last-child { margin-bottom:0; }
 .l4a-page--2 .hz-go-to { margin-top:2mm; margin-bottom:1mm; }
 .l4a-sort-table { width:100%; table-layout:fixed; border-collapse:collapse; margin-top:2mm; }
 .l4a-sort-table th { text-align:left; padding:1mm 2mm; color:#116b60; font-weight:700; border-bottom:.65mm solid #116b60; }
@@ -62,3 +60,6 @@
 .l4a-pair-model b { color:var(--hz-unit-dark); }
 .l4a-inset { margin-left:calc(var(--hz-exercise-marker-size) + 3mm); }
 .l4a-page .hz-extra-practice { margin-top:2mm; }
+
+/* Exact one/two comparison and mass-food models, with original alpha intact. */
+.l4a-grammar-food { width:30mm; height:20mm; background-image:url('../Images/4A/Grammar-counts-v1.png'); background-size:200% 200%; background-position:var(--px) var(--py); background-repeat:no-repeat; }
