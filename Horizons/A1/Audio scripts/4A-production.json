@@ -1,0 +1,64 @@
+[
+  {
+    "lesson": "4A",
+    "track": "4.1",
+    "filename": "Track 4.1.mp3",
+    "script": "ElevenCreative Studio/4A - Track 4.1.txt",
+    "model": "eleven_v3",
+    "stability": 0.5,
+    "paragraph_voice_names": [
+      "Jessica",
+      "Jessica"
+    ],
+    "paragraph_voice_ids": [
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9"
+    ],
+    "generation_utc": "2026-10-20T00:33:37.119769+00:00",
+    "request_id": "9RuByjIqPxfUn3aa1o2Q",
+    "script_sha256": "3cd38ef1698c94ae3b0a7eb996837327ffb33952d169b1908556f0a95148c65a",
+    "bytes": 438900,
+    "duration_seconds": 27.4,
+    "transcript_checked": true,
+    "transcript_similarity": 1.0,
+    "answer_bearing_phrases_checked": true,
+    "audio_events_checked": true,
+    "throat_clearing_events_detected": false,
+    "forbidden_tag_preflight_passed": true,
+    "transcription_name_aliases": {},
+    "transcript_normalization": "Track label, punctuation and Turkey/Turkiye country-name transcription only.",
+    "sha256": "31223588a11c8aacc5d82dcfc3d1cd2be67cb268109e39a0ee117b7c0e566fa3"
+  },
+  {
+    "lesson": "4A",
+    "track": "4.2",
+    "filename": "Track 4.2.mp3",
+    "script": "ElevenCreative Studio/4A - Track 4.2.txt",
+    "model": "eleven_v3",
+    "stability": 0.5,
+    "paragraph_voice_names": [
+      "Jessica",
+      "MarkCasual",
+      "Adeline"
+    ],
+    "paragraph_voice_ids": [
+      "cgSgspJ2msm6clMCkdW9",
+      "1SM7GgM6IMuvQlz2BwM3",
+      "5l5f8iK3YPeGga21rQIX"
+    ],
+    "generation_utc": "2026-10-20T00:33:36.702885+00:00",
+    "request_id": "eFstYSTAKCRk4tKDMJE3",
+    "script_sha256": "4e139c2d85af9a87e8e3da038e92bf9ffee32f13ca04937829970bf11296dc5b",
+    "bytes": 265865,
+    "duration_seconds": 16.59,
+    "transcript_checked": true,
+    "transcript_similarity": 1.0,
+    "answer_bearing_phrases_checked": true,
+    "audio_events_checked": true,
+    "throat_clearing_events_detected": false,
+    "forbidden_tag_preflight_passed": true,
+    "transcription_name_aliases": {},
+    "transcript_normalization": "Track label, punctuation and Turkey/Turkiye country-name transcription only.",
+    "sha256": "37e1904f1f67a1b8d7bbbc6381d8311e00fb79d7f0a40f9996dae0467e9f298b"
+  }
+]

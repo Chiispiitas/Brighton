@@ -1,0 +1,94 @@
+{
+  "lesson": "4A",
+  "date": "2026-10-19",
+  "assets": [
+    {
+      "file": "Japanese-breakfast-Afifi-4110430.jpg",
+      "kind": "licensed photograph",
+      "creator": "Syed Muhammad Afifi",
+      "source": "https://www.pexels.com/photo/top-view-photo-of-meal-4110430/",
+      "download": "https://images.pexels.com/photos/4110430/pexels-photo-4110430.jpeg?cs=srgb&dl=pexels-syed-muhammad-afifi-2488634-4110430.jpg&fm=jpg",
+      "usage": "4A activity 2: Japanese-style breakfast illustration; photographed in Bandar Baru Bangi, Malaysia. Not the fictional speaker or a literal exact-portion record.",
+      "license": "Pexels License",
+      "license_url": "https://www.pexels.com/license/",
+      "acquired": "2026-10-19",
+      "dimensions": [
+        8000,
+        6000
+      ],
+      "mode": "RGB",
+      "bytes": 4650879,
+      "sha256": "14103e663762031b6cc2f9d733adc0b7c0e5f6df33a94564db9b92f306776ebc",
+      "original_pixels_preserved": true,
+      "display_changes": "CSS layout/crop only; source file unchanged."
+    },
+    {
+      "file": "Turkish-breakfast-Tahir-33672311.jpg",
+      "kind": "licensed photograph",
+      "creator": "Tahir Xəlfəquliyev",
+      "source": "https://www.pexels.com/photo/traditional-turkish-breakfast-spread-with-tea-33672311/",
+      "download": "https://images.pexels.com/photos/33672311/pexels-photo-33672311.jpeg?cs=srgb&dl=pexels-tahir-33672311.jpg&fm=jpg",
+      "usage": "4A activity 2: Turkish breakfast illustration; not a literal exact-portion record for Elif.",
+      "license": "Pexels License",
+      "license_url": "https://www.pexels.com/license/",
+      "acquired": "2026-10-19",
+      "dimensions": [
+        6000,
+        4000
+      ],
+      "mode": "RGB",
+      "bytes": 1725935,
+      "sha256": "31c23c2c46a26eeb2475f01d45f299b55c015b075896488361bfe5f156a2cc08",
+      "original_pixels_preserved": true,
+      "display_changes": "CSS layout/crop only; source file unchanged."
+    },
+    {
+      "file": "Food-cutouts-v1.png",
+      "kind": "built-in imagegen",
+      "usage": "4A activity 1: twelve borderless native-alpha photographic sprites, 4 columns x 3 rows; print gallery rearranges them in six columns.",
+      "prompt_key": "4a-foods",
+      "native_alpha": true,
+      "original_generation_file": "exec-81fcf9e1-9905-4314-b8b3-899abbe9b335.png",
+      "acquired": "2026-10-19",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "bytes": 2117817,
+      "sha256": "15962364c7ba5d6bab7d96aba8cc4cbda4f40d24a4d08144660c432d79a89235",
+      "original_pixels_preserved": true,
+      "display_changes": "CSS layout/crop only; source file unchanged.",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "transparent_fraction": 0.5452810923258463
+    },
+    {
+      "file": "Picnic-food-counts-v1.png",
+      "kind": "built-in imagegen",
+      "usage": "4A activity 7: exact-count picnic, one apple, two whole eggs, three bananas, bread, cheese, milk; photographic background retained.",
+      "prompt_key": "4a-picnic",
+      "native_alpha": false,
+      "original_generation_file": "exec-b82028ce-adfd-4257-bfef-8a44527bdaeb.png",
+      "acquired": "2026-10-19",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "mode": "RGB",
+      "bytes": 3031861,
+      "sha256": "79006e799e199e212250cc3490d819aa4100fa15395fee956dd70171a9336743",
+      "original_pixels_preserved": true,
+      "display_changes": "CSS layout/crop only; source file unchanged."
+    }
+  ],
+  "generation_mode": "built-in imagegen",
+  "prompt_archive_outside_repository": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\lesson4a\\prompts.json",
+  "cultural_context_sources": [
+    "https://faq.japan-travel.jnto.go.jp/en/japan-magazine/breakfast-options-to-fit-your-travel-plans/",
+    "https://goturkiye.com/branding/press-releases/traditional-turkish-breakfast-the-golden-meal-of-the-day"
+  ],
+  "source_text": "Original fictional learner descriptions; no source text copied."
+}

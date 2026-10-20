@@ -199,3 +199,13 @@ tag. Generation, transcription and answer checks: `../3C-production.json`.
 - ZOE (Juniper, `aMSt68OGf4xUZAnLpTU8`): 2.
 
 Zoe is the new fictional challenge author. Her first-person post is spoken by Juniper from the established voice pool; Jessica remains the announcer. Both tracks use Eleven v3, Natural Stability (0.5), without the forbidden clarity tag. Exact transcript and answer-bearing phrase checks are in `../3D-production.json`.
+
+## 4A - Track 4.1 - Food and drink
+- NARRATOR (Jessica, `cgSgspJ2msm6clMCkdW9`): 1, 2.
+
+## 4A - Track 4.2 - Good morning, world!
+- NARRATOR (Jessica, `cgSgspJ2msm6clMCkdW9`): 1.
+- SORA (Mark - Casual, Relaxed and Light, `1SM7GgM6IMuvQlz2BwM3`): 2.
+- ELIF (Adeline, `5l5f8iK3YPeGga21rQIX`): 3.
+
+Sora and Elif are new fictional examples, not interviews with the photographers or people in a photograph. Both roles use the approved exam voice pool; retain these IDs if they return. Jessica announces both tracks and models all vocabulary. Eleven v3 Natural Stability (0.5). No forbidden clarity tag. Production and transcript checks: `../4A-production.json`.
