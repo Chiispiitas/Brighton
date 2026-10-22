@@ -108,8 +108,10 @@
 
   function stateFromRow(row) {
     if (!row || typeof row !== "object") return null;
-    if (row.__spellingBee === 1 && row.role) return row;
-    if (row.role && row.sessionCode) return { __spellingBee: 1, ...row };
+    // Older CMS code indexes only three difficulties. The full session JSON
+    // keeps the selected pool intact, including Tiebreaker, across that boundary.
+    const difficulty = ["easy", "medium", "hard", "tiebreaker"].includes(row.poolDifficulty) ? row.poolDifficulty : row.difficulty;
+    if (row.role && (row.__spellingBee === 1 || row.sessionCode)) return { __spellingBee: 1, ...row, difficulty };
     return null;
   }
 
@@ -180,6 +182,7 @@
       __spellingBee: 1,
       version: 2,
       ...state,
+      ...(state.difficulty ? { poolDifficulty: state.difficulty } : {}),
       role,
       actorId: safeActor,
       sessionCode: code
@@ -201,6 +204,7 @@
       })
     });
     reads.clear();
+    if (result.session) result.session = stateFromRow(result.session);
     const stored = result.session || result.command || result.judge;
     if (!stored || stored.role !== role || normalizeSessionCode(stored.sessionCode) !== code) {
       throw new Error("The cloud did not confirm this save.");
@@ -218,7 +222,7 @@
 
   async function loadWordList(level, difficulty) {
     const safeLevel = String(level || "4TH-5TH").replace(/[^A-Za-z0-9+-]/g, "");
-    const safeDifficulty = ["easy", "medium", "hard"].includes(difficulty) ? difficulty : "easy";
+    const safeDifficulty = ["easy", "medium", "hard", "tiebreaker"].includes(difficulty) ? difficulty : "easy";
 
     const response = await fetch(
       `wordlists/${safeLevel}/${safeDifficulty}.txt`,
@@ -238,22 +242,22 @@
 
   async function loadRemainingPools(level, usedWords = {}) {
     const result = {};
-
-    await Promise.all(["easy", "medium", "hard"].map(async difficulty => {
+    const difficulties = ["JUNIOR", "SENIOR"].includes(level) ? ["easy", "medium", "hard", "tiebreaker"] : ["easy", "medium", "hard"];
+    await Promise.all(difficulties.map(async difficulty => {
       const all = await loadWordList(level, difficulty);
       const key = `${level}|${difficulty}`;
       const used = new Set(Array.isArray(usedWords[key]) ? usedWords[key] : []);
       result[difficulty] = all.filter(word => !used.has(word));
     }));
 
-    return result;
+    return Object.fromEntries(difficulties.map(difficulty => [difficulty, result[difficulty]]));
   }
 
   const wordDataCache = new Map();
 
   async function loadWordData(level, difficulty) {
     const safeLevel = String(level || "4TH-5TH").replace(/[^A-Za-z0-9+-]/g, "");
-    const safeDifficulty = ["easy", "medium", "hard"].includes(difficulty) ? difficulty : "easy";
+    const safeDifficulty = ["easy", "medium", "hard", "tiebreaker"].includes(difficulty) ? difficulty : "easy";
     const cacheKey = `${safeLevel}|${safeDifficulty}`;
 
     if (wordDataCache.has(cacheKey)) {

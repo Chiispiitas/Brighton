@@ -53,7 +53,7 @@ const server = http.createServer((req, res) => {
     await admin.locator('#roster-paste').fill(Array.from({length:10},(_,i)=>(i?'Alexandra María de los Ángeles Fernández Rodríguez Mendoza '+i:'Isabella Martinez')+' | Grade 6, English class | '+(i+1)).join('\n'));await admin.locator('#roster-add').click();await admin.locator('#screen-current').selectOption({index:1});
     for(let i=0;i<6;i++)await admin.locator('#roster-rows .roster-status').nth(i).selectOption('finalist');
     for(let i=0;i<3;i++)await admin.locator('#roster-rows .roster-place').nth(i).selectOption(String(i+1));
-    await admin.locator('#lives-set-all').click();await admin.locator('#screen-show-lives').check();
+    for (const input of await admin.locator('#roster-rows .roster-lives').all()) { await input.fill('3'); await input.dispatchEvent('change'); } await admin.locator('#screen-show-lives').check();
     await admin.locator('#screen-layout').selectOption('stream');await admin.locator('[data-scene=spelling]').click();await admin.locator('#screen-take').click();await admin.locator('#director-status').filter({hasText:'Scene is live'}).waitFor();
     assert.equal(await admin.locator('#open-screen').getAttribute('href'),'screen.html?session=5678&view=stage');
     assert.equal(await admin.locator('#open-camera-screen').getAttribute('href'),'screen.html?session=5678&view=camera');

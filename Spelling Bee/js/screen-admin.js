@@ -18,7 +18,7 @@
       <label class="check-label"><input type="checkbox" id="screen-auto" checked>Rotate board / finalists pages</label>
       <label class="wide check-label"><input type="checkbox" id="screen-show-lives">Show remaining lives on Now Spelling and the competition board</label>
       <p class="wide director-help camera-help">Open Screen with camera and choose Camera → Start camera for the live feed. Open Screen without camera for the stage display. Both follow the same live scene. Choose Streaming overlay above to preview camera stills in Admin, updated about every 15 seconds.</p>
-      <p class="wide director-help">Choose Word · Correct, Word · Neutral or Word · Incorrect, then take the scene live. Word colours are independent of judging animations. Taking Word · Correct live marks the current word as used.</p>
+      <p class="wide director-help">Take Word · Correct live to mark the word as used. Taking Neutral or Incorrect live removes one life from the selected contestant, once per word. Zero lives marks them Completed. Changing that result to Correct restores the deducted life. Preview and judging animations do not change lives.</p>
       <label class="wide">Definition for the audience<textarea id="screen-definition" maxlength="500"></textarea></label>
       <label class="wide">Example sentence for the audience<textarea id="screen-example" maxlength="500"></textarea></label>
       <div class="wide director-help" id="screen-word-status" role="status">Current word information loads automatically. Target spellings stay masked in definitions and examples.</div>
@@ -27,18 +27,57 @@
     </div>
     <div class="director-timer"><label>Break countdown seconds<input type="number" id="screen-duration" min="1" max="3600" value="60"></label><label class="check-label"><input type="checkbox" id="screen-timer-visible" checked>Show break countdown</label><button type="button" id="screen-timer-start">Start / resume countdown</button><button type="button" id="screen-timer-pause">Pause countdown</button><button type="button" id="screen-timer-reset">Reset countdown</button><span class="director-help" id="live-timer">60s · paused</span></div>
     <p class="director-status" id="director-status" role="status" aria-live="polite"></p>
-    <section class="director-roster"><h3>Contestants <span class="director-count" id="roster-count"></span></h3><p class="director-help">Paste one contestant per line: <strong>Name | Grade / class | Number</strong>. Tabs copied from a spreadsheet also work. Numbers are identifiers and never appear on the competition board. Set lives per contestant below; leave blank to hide that contestant’s lives. Results never change lives automatically.</p><label>Contestant list<textarea id="roster-paste" placeholder="Isabella Martinez | Grade 5 | 1&#10;Santiago Lopez | Grade 6 | 2"></textarea></label><div class="director-actions"><button type="button" id="roster-add">Add pasted contestants</button><button type="button" id="roster-save">Publish contestant list</button><label>Lives for all<input type="number" id="lives-for-all" min="0" max="99" step="1" value="3"></label><button type="button" id="lives-set-all">Set lives for all in preview</button></div><div class="roster-scroll"><table class="roster-table"><thead><tr><th>Number</th><th>Name</th><th>Grade / class</th><th>Lives</th><th>Status</th><th>Podium</th><th>Remove</th></tr></thead><tbody id="roster-rows"></tbody></table></div><div class="director-actions roster-footer"><button type="button" id="roster-add-manual">Add contestant</button></div></section>
+    <section class="director-roster"><h3>Contestants <span class="director-count" id="roster-count"></span></h3><p class="director-help">Paste one contestant per line: <strong>Name | Grade / class | Number</strong>. Tabs copied from a spreadsheet also work. Numbers are identifiers and never appear on the competition board. Set lives per contestant below; leave blank for untracked lives. Neutral and Incorrect live results subtract one tracked life.</p><label>Contestant list<textarea id="roster-paste" placeholder="Isabella Martinez | Grade 5 | 1&#10;Santiago Lopez | Grade 6 | 2"></textarea></label><div class="director-actions"><button type="button" id="roster-add">Add pasted contestants</button><button type="button" id="roster-save">Publish contestant list</button></div><div class="roster-history"><div class="director-actions"><button type="button" id="roster-undo" disabled>Undo · Ctrl+Z</button><button type="button" id="roster-redo" disabled>Redo · Ctrl+Y</button><button type="button" id="roster-export">Download history</button></div><p class="director-help" id="roster-history-status" role="status">Roster changes are saved locally immediately and backed up to Wix. Undo of an on-air change also restores it on Screen View.</p><details><summary>Recent roster changes</summary><ol id="roster-history-list"></ol></details></div><div class="roster-scroll"><table class="roster-table"><thead><tr><th>Number</th><th>Name</th><th>Grade / class</th><th>Lives</th><th>Status</th><th>Podium</th><th>Remove</th></tr></thead><tbody id="roster-rows"></tbody></table></div><div class="director-actions roster-footer"><button type="button" id="roster-add-manual">Add contestant</button></div></section>
     <p class="director-help">Session code: <span id="broadcast-code" class="screen-code">—</span>. Use one show operator at a time. A stopped timer never declares a result. Judge votes never trigger an audience result.</p>`;
   document.querySelector(".control-shell").append(panel);
   const $ = id => document.getElementById(id);
   let sourceCode = "", broadcastCode = "", live = M.initial(), draft = M.initial();
   let busy = false, ready = false, sourceWord = "", sourceToken = "", generation = 0;
   let wordInfoKey = "", wordInfoPromise = null, retryInfoAt = 0;
+  const H = window.BeeRosterHistory;
+  let history = null, historyCode = "", historyLabel = "Contestants / lives", backupTimer = null, backupBusy = false, backedUpAt = 0;
   const frame = $("screen-preview");
   const cameraPreview = new window.BeeCamera.Preview(frame, $("preview-camera-note"));
   function status(message, error = false) { $("director-status").textContent = message; $("director-status").classList.toggle("error", error); }
   const storageKey = () => `bee-screen-draft:${sourceCode}`;
   function storeDraft() { try { localStorage.setItem(storageKey(), JSON.stringify(draft)); } catch { /* Cloud remains authoritative for the on-air scene. */ } }
+  const historyKey = () => `bee-roster-history-v1:${sourceCode}`;
+  function historyControls() {
+    $("roster-undo").disabled = busy || !ready || !history?.canUndo;
+    $("roster-redo").disabled = busy || !ready || !history?.canRedo;
+    const list = $("roster-history-list"); list.replaceChildren();
+    history?.data.entries.slice(-12).reverse().forEach(entry => { const li = document.createElement("li"); li.textContent = `${new Date(entry.at).toLocaleTimeString()} · ${entry.label}`; list.append(li); });
+  }
+  function saveHistory() {
+    if (!history) return;
+    try { localStorage.setItem(historyKey(), JSON.stringify(history.data)); $("roster-history-status").textContent = backedUpAt >= history.data.savedAt ? "History saved on this browser and backed up to Wix." : "History saved on this browser · backing up to Wix…"; }
+    catch { $("roster-history-status").textContent = "Browser storage is full. Download history while the Wix backup is retried."; }
+    historyControls(); clearTimeout(backupTimer); backupTimer = setTimeout(backupHistory, 2500);
+  }
+  async function backupHistory() {
+    if (!history || !historyCode || backupBusy || backedUpAt >= history.data.savedAt) return;
+    backupBusy = true; const run = generation, data = JSON.parse(JSON.stringify(history.data)), code = historyCode;
+    try {
+      const saved = await Cloud.writeState({ sessionCode: code, role: "presenter", state: { screenRosterHistory: true, history: data } });
+      if (run !== generation) return;
+      if (!saved.session?.screenRosterHistory) throw new Error("History backup was not confirmed.");
+      backedUpAt = data.savedAt;
+      $("roster-history-status").textContent = backedUpAt === history.data.savedAt ? "History saved on this browser and backed up to Wix." : "New changes saved locally · backup pending…";
+    } catch { if (run === generation) $("roster-history-status").textContent = "History saved on this browser. Wix backup will retry automatically."; }
+    finally { backupBusy = false; if (history && backedUpAt < history.data.savedAt) { clearTimeout(backupTimer); backupTimer = setTimeout(backupHistory, Math.max(5000, Cloud.retryDelay())); } }
+  }
+  async function restoreRoster(forward) {
+    if (!ready || busy || !history) return;
+    // Commit a focused numeric/text field before moving through roster history.
+    if (document.activeElement?.matches?.(".roster-table input")) document.activeElement.blur();
+    const step = history.peek(forward); if (!step) return;
+    const message = `${forward ? "Redone" : "Undone"}: ${step.entry.label}`;
+    if (step.entry.published) {
+      const next = { ...live, ...step.state };
+      if (!await publish(next, message, false, $(forward ? "roster-redo" : "roster-undo"))) return;
+    }
+    history.commit(step); draft = { ...draft, ...step.state }; fillFields(); saveHistory(); status(message + (step.entry.published ? " · Screen View restored." : " · Preview restored."));
+  }
   function readFields() {
     const roster = draft.contestants;
     draft = M.normalize({ ...draft, currentId: $("screen-current").value, round: $("screen-round").value,
@@ -55,6 +94,8 @@
   }
   function preview() {
     readFields();
+    if (history?.record(draft, historyLabel)) saveHistory();
+    historyLabel = "Contestants / lives";
     cameraPreview.setMode(draft.layout);
     frame.contentWindow?.postMessage({ type: "bee-screen-preview", state: { ...draft, timer: { ...draft.timer, remaining: draft.timer.duration, running: false } } }, location.origin);
     $("preview-label").textContent = draft.scene === "result" ? `Word · ${{correct: "Correct", pending: "Neutral", incorrect: "Incorrect"}[draft.result]}` : M.scenes.find(([key]) => key === draft.scene)?.[1] || "Standby";
@@ -86,18 +127,24 @@
         input.value = row[key] ?? ""; input.className = `roster-${key}`;
         if (key === "lives") { input.type = "number"; input.min = "0"; input.max = "99"; input.step = "1"; input.placeholder = "Hidden"; }
         if (key === "name") input.maxLength = 80; if (key === "group") input.maxLength = 40; if (key === "number") input.maxLength = 8;
-        input.addEventListener("change", () => {
+        const edit = redraw => {
+          historyLabel = `${row.name || "Contestant"} · ${key}`;
           row[key] = key === "lives" ? (input.value === "" ? null : Math.floor(Math.min(99, Math.max(0, Number(input.value))))) : key === "place" ? Number(input.value) : input.value.trim();
+          if (key === "lives" && row.lives === 0) row.status = "eliminated";
           if (key === "place" && row.place) for (const other of draft.contestants) if (other.id !== row.id && other.place === row.place) other.place = 0;
-          renderRoster(); preview();
-        });
+          if (redraw) renderRoster();
+          preview();
+        };
+        input.addEventListener("input", () => edit(false));
+        input.addEventListener("change", () => edit(true));
         td.append(input); tr.append(td);
       }
       const td = document.createElement("td"), remove = document.createElement("button");
       remove.type = "button"; remove.textContent = "×"; remove.setAttribute("aria-label", `Remove ${row.name}`);
-      remove.addEventListener("click", () => { draft.contestants = draft.contestants.filter(item => item.id !== row.id); if (draft.currentId === row.id) draft.currentId = ""; renderRoster(); preview(); });
+      remove.addEventListener("click", () => { historyLabel = `Remove ${row.name || "contestant"}`; draft.contestants = draft.contestants.filter(item => item.id !== row.id); if (draft.currentId === row.id) draft.currentId = ""; renderRoster(); preview(); });
       td.append(remove); tr.append(td); tbody.append(tr);
     }
+    tbody.querySelectorAll("input,select,button").forEach(control => { control.disabled = busy || !ready; });
   }
   async function acceptSource(found) {
     if (!found || found.screenBroadcast) throw new Error("The word session is unavailable.");
@@ -139,6 +186,8 @@
   function setBusy(value) {
     busy = value;
     for (const id of ["screen-take", "screen-standby", "roster-save", "screen-timer-start", "screen-timer-pause", "screen-timer-reset"]) $(id).disabled = value || !ready;
+    panel.querySelectorAll(".roster-table input,.roster-table select,.roster-table button,#roster-add,#roster-add-manual,#screen-current,#next-speller").forEach(control => { control.disabled = value || !ready; });
+    historyControls();
   }
   async function publish(next, message, fromTake = false, button = null, afterPublish = null) {
     if (!ready || (busy && !fromTake)) return;
@@ -157,8 +206,10 @@
       if (!saved.session?.screenBroadcast) throw new Error("The backend did not acknowledge the broadcast.");
       live = M.normalize(saved.session.broadcast);
       published = true;
+      if (fromTake) { draft.contestants = JSON.parse(JSON.stringify(live.contestants)); draft.lifeDeductions = { ...live.lifeDeductions }; renderRoster(); }
       $("director-live").textContent = `ON AIR · ${M.scenes.find(([key]) => key === live.scene)?.[1]}`;
       preview();
+      if (history && H.equal(history.data.checkpoint.contestants, live.contestants) && H.equal(history.data.checkpoint.lifeDeductions, live.lifeDeductions) && history.markPublished()) saveHistory();
       if (afterPublish) await afterPublish();
       status(message);
       window.BeeButtons?.set(button, "saved", "Published", Boolean(button));
@@ -175,7 +226,7 @@
     readFields();
     const next = M.normalize({ ...draft, scene: "standby", round: "Round 1", currentId: "", boardPage: 0,
       cueId: crypto.randomUUID(), result: "pending", revealWord: "", definition: "", example: "", message: "", closing: "",
-      contestants: draft.contestants.map(row => ({ ...row, status: "active", place: 0 })),
+      contestants: draft.contestants.map(row => ({ ...row, status: "active", place: 0 })), lifeDeductions: {},
       timer: { ...draft.timer, running: false, endsAt: 0, remaining: draft.timer.duration } });
     if (!await publish(next, "Session screen reset to Standby, Round 1.")) throw new Error("The audience screen reset was not confirmed. No word history was cleared.");
     draft = M.normalize(live); fillFields();
@@ -194,17 +245,19 @@
       if (draft.scene === "result" && !sourceWord) throw new Error("Call a word in Admin or Study before revealing it.");
       if (["definition", "example"].includes(draft.scene) && !draft[draft.scene]) throw new Error("No information is available yet. Enter the word information manually or wait for the automatic load.");
       if (draft.contestants.some(row => !row.name.trim())) throw new Error("Every contestant needs a name.");
-      const next = { ...draft, cueId: crypto.randomUUID(), timer: { ...live.timer, visible: draft.timer.visible, duration: draft.timer.duration } };
+      let next = { ...draft, cueId: crypto.randomUUID(), timer: { ...live.timer, visible: draft.timer.visible, duration: draft.timer.duration } };
+      if (next.scene === "result") { next = M.resultLives(next, await M.resultKey(sourceToken, next.currentId)); historyLabel = `Word · ${next.result === "pending" ? "Neutral" : next.result} · lives`; }
       if (["pending", "result"].includes(next.scene)) next.timer = { ...next.timer, remaining: M.remaining(live.timer), running: false };
       if (next.currentId !== live.currentId) next.timer = { ...next.timer, remaining: draft.timer.duration, running: false };
       const usesWord = next.scene === "result" && next.result === "correct";
       const code = sourceCode, token = sourceToken;
-      await publish(next, usesWord ? "Scene is live. Word marked as used and removed from the remaining pool." : "Scene is live. Results and lives remain under your control.", true, $("screen-take"), usesWord ? () => window.markSpellingWordUsed(code, token) : null);
+      await publish(next, usesWord ? "Scene is live. Word marked as used and removed from the remaining pool." : next.scene === "result" ? "Scene is live. Contestant lives updated; repeating this word result will not deduct twice." : "Scene is live.", true, $("screen-take"), usesWord ? () => window.markSpellingWordUsed(code, token) : null);
     } catch (error) { status(error.message, true); window.BeeButtons?.set($("screen-take"), "error", error.message); }
     finally { setBusy(false); }
   }
   async function initialize(code) {
     const run = ++generation; sourceCode = code; ready = false;
+    history = null; historyCode = ""; clearTimeout(backupTimer); backedUpAt = 0;
     wordInfoKey = ""; wordInfoPromise = null; setBusy(false);
     try {
       broadcastCode = await M.broadcastCode(sourceCode);
@@ -215,6 +268,16 @@
       live = found?.broadcast ? M.normalize(found.broadcast) : M.initial();
       let cached; try { cached = JSON.parse(localStorage.getItem(storageKey()) || "null"); } catch { /* Ignore invalid drafts. */ }
       draft = M.normalize(cached || live);
+      historyCode = await M.rosterHistoryCode(sourceCode);
+      let localHistory, cloudHistory;
+      try { localHistory = JSON.parse(localStorage.getItem(historyKey()) || "null"); } catch { /* Start with the current roster when old data is invalid. */ }
+      try { cloudHistory = (await Cloud.fetchPresenter(historyCode))?.history; } catch { /* Local recovery must remain available when Wix is offline. */ }
+      if (run !== generation) return;
+      const savedHistory = [localHistory, cloudHistory].filter(value => value?.version === 1 && Array.isArray(value.entries) && value.checkpoint).sort((a, b) => b.savedAt - a.savedAt)[0];
+      history = new H.History(draft, savedHistory);
+      if (!savedHistory) history.touch();
+      if (savedHistory) draft = { ...draft, ...H.snapshot(savedHistory.checkpoint) };
+      backedUpAt = Number(cloudHistory?.savedAt || 0);
       await refreshSource();
       if (run !== generation) return;
       ready = true;
@@ -226,7 +289,7 @@
       $("open-camera-screen").href = `screen.html?session=${sourceCode}&view=camera`;
       $("broadcast-code").textContent = sourceCode;
       $("director-live").textContent = `ON AIR · ${M.scenes.find(([key]) => key === live.scene)?.[1]}`;
-      fillFields(); setBusy(false); status("Screen connected. Open the audience screen on the stage display.");
+      fillFields(); saveHistory(); setBusy(false); status("Screen connected. Open the audience screen on the stage display.");
     } catch (error) { ready = false; setBusy(false); status(error.message + " Reconnect to the word session to retry.", true); }
   }
   for (const [key, label] of M.scenes) {
@@ -264,13 +327,21 @@
     status("Enter the contestant’s name and details, then publish the list when ready.");
   });
   $("roster-save").addEventListener("click", () => { readFields(); if (draft.contestants.some(row => !row.name)) return status("Every contestant needs a name.", true); const currentId = draft.contestants.some(row => row.id === live.currentId) ? live.currentId : ""; publish({ ...live, contestants: draft.contestants, showLives: draft.showLives, currentId, revealWord: currentId ? live.revealWord : "" }, "Contestant list published.", false, $("roster-save")); });
-  $("lives-set-all").addEventListener("click", () => {
-    const value = $("lives-for-all").value;
-    const amount = Number(value);
-    if (value === "" || !Number.isInteger(amount) || amount < 0 || amount > 99) return status("Enter a whole number of lives from 0 to 99.", true);
-    readFields(); draft.contestants.forEach(row => { row.lives = amount; });
-    renderRoster(); preview(); status("Lives updated in preview. Publish the contestant list when ready.");
+  $("roster-undo").addEventListener("click", () => restoreRoster(false));
+  $("roster-redo").addEventListener("click", () => restoreRoster(true));
+  $("roster-export").addEventListener("click", () => {
+    if (!history) return;
+    const link = document.createElement("a"), url = URL.createObjectURL(new Blob([JSON.stringify(history.data, null, 2)], { type: "application/json" }));
+    link.href = url; link.download = `spelling-bee-${sourceCode}-roster-history.json`; link.click(); setTimeout(() => URL.revokeObjectURL(url), 1000);
   });
+  window.addEventListener("keydown", event => {
+    if ((!event.ctrlKey && !event.metaKey) || event.altKey || !["z", "y"].includes(event.key.toLowerCase())) return;
+    // Preserve native text undo outside the roster. Roster cells commit on blur.
+    if (event.target.closest?.("input,textarea,[contenteditable=true]") && !event.target.closest(".roster-table")) return;
+    if (!ready) return;
+    event.preventDefault(); event.stopImmediatePropagation();
+    if (!event.repeat) restoreRoster(event.key.toLowerCase() === "y" || event.shiftKey);
+  }, true);
   $("next-speller").addEventListener("click", () => {
     readFields(); const next = M.nextContestant(draft);
     if (!next) return status("No contestants available to prepare.");

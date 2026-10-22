@@ -71,6 +71,7 @@ const btnNextLetter = document.getElementById('next-letter');
 const btnEasy = document.getElementById('btn-easy');
 const btnMedium = document.getElementById('btn-medium');
 const btnHard = document.getElementById('btn-hard');
+const btnTiebreaker = document.getElementById('btn-tiebreaker');
 const elPoolSelect = document.getElementById('pool-select');
 const elVolumeSlider = document.getElementById('volume-slider');
 const elVolumeValue = document.getElementById('volume-value');
@@ -510,16 +511,18 @@ let poolLoadGeneration = 0;
 async function changeDifficulty(level) {
     const generation = ++poolLoadGeneration;
     hiddenMode = true; renderWord();
-    currentDifficulty = level;
-
     const selectedPool = elPoolSelect ? elPoolSelect.value : currentLevel;
+    if (level === 'tiebreaker' && !['JUNIOR', 'SENIOR'].includes(selectedPool)) level = 'easy';
+    currentDifficulty = level;
+    btnTiebreaker.hidden = !['JUNIOR', 'SENIOR'].includes(selectedPool);
     currentLevel = selectedPool;
     WORDLIST_PATH = `wordlists/${selectedPool}/${level}.txt`;
 
-    [btnEasy, btnMedium, btnHard].forEach(b => b.classList.remove('primary'));
+    [btnEasy, btnMedium, btnHard, btnTiebreaker].forEach(b => b.classList.remove('primary'));
     if (level === 'easy') btnEasy.classList.add('primary');
     if (level === 'medium') btnMedium.classList.add('primary');
     if (level === 'hard') btnHard.classList.add('primary');
+    if (level === 'tiebreaker') btnTiebreaker.classList.add('primary');
 
     try {
         const words = await loadWordlist();
@@ -608,6 +611,7 @@ window.addEventListener('keyup', hideSecretWord);
 btnEasy.addEventListener('click', () => changeDifficulty('easy'));
 btnMedium.addEventListener('click', () => changeDifficulty('medium'));
 btnHard.addEventListener('click', () => changeDifficulty('hard'));
+btnTiebreaker.addEventListener('click', () => changeDifficulty('tiebreaker'));
 elWord.addEventListener('click', toggleWordMode);
 elPoolSelect.addEventListener('change', () => { changeDifficulty(currentDifficulty); });
 

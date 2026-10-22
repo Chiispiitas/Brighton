@@ -79,7 +79,8 @@ const server = http.createServer((req, res) => {
   await admin.locator('#screen-round').fill('Round 1'); await admin.locator('#screen-round').dispatchEvent('input');
   assert.equal(await admin.locator('.word-reveal-segments [data-scene=result]').count(), 3);
 
-  await admin.locator('#lives-set-all').click();
+  assert.equal(await admin.locator('#lives-set-all,#lives-for-all').count(), 0);
+  for (let index = 0; index < 17; index++) { await admin.locator('#roster-rows .roster-lives').nth(index).fill('3'); await admin.locator('#roster-rows .roster-lives').nth(index).dispatchEvent('change'); }
   await admin.locator('#screen-show-lives').check();
   await admin.locator('#screen-auto').uncheck(); // Inspect the first page independently of rotation timing.
   await admin.locator('#roster-rows .roster-lives').nth(0).fill('0');
@@ -220,7 +221,8 @@ const server = http.createServer((req, res) => {
   if (screenshots) await admin.locator('#screen-director').screenshot({ path: path.join(screenshots, 'screen-admin.png') });
   assert(audienceRequests.every(url => url.includes('spellingBeeSession') && url.includes(broadcastCode)));
   assert.equal(sessions.get('1357').word, 'bike');
-  assert(writes.every(body => body.sessionCode === broadcastCode));
+  const historyCode = await M.rosterHistoryCode('1357');
+  assert(writes.every(body => body.sessionCode === broadcastCode || (body.sessionCode === historyCode && body.state.screenRosterHistory)));
   // Test safe-area fitting at supported maximum text lengths and different displays.
   const stress = await context.newPage();
   await stress.emulateMedia({ reducedMotion: 'reduce' });
