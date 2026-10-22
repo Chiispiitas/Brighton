@@ -16,6 +16,7 @@
   let unsubscribeCloud = () => {};
   let pollGeneration = 0, displaySignature = "";
   let sweepAnimation = null, sweepSwapTimer = null;
+  let standbyStartedAt = null;
   const escape = value => String(value ?? "").replace(/[&<>"']/g, char => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[char]));
   const tag = value => `<div class="eyebrow">${escape(value)}</div>`;
   const title = (value, extra = "") => `<h1 class="headline ${extra}">${escape(value)}</h1>`;
@@ -34,7 +35,11 @@
   const canAnimate = () => state.motion === "full" && !matchMedia("(prefers-reduced-motion: reduce)").matches;
   function content() {
     const row = current();
-    if (state.scene === "standby") return `<div class="centered-layout standby-layout"><img class="standby-logo" src="assets/logo.png" alt="Lev Vigotsky school logo">${title("U.E.P Lev Vigotsky")}</div>`;
+    if (state.scene === "standby") return `<div class="centered-layout standby-layout"><div class="standby-rotation">
+      <div class="standby-set standby-school" data-standby="school"><img class="standby-logo" src="assets/logo.png" alt="Lev Vigotsky school logo">${title("U.E.P Lev Vigotsky")}</div>
+      <div class="standby-set standby-partners" data-standby="partners"><img class="standby-partner-logo standby-brighton" src="assets/brighton-white.svg" alt="Brighton"><img class="standby-partner-logo standby-duche" src="assets/duche-white.png" alt="Duché"></div>
+      <div class="standby-set standby-publisher" data-standby="santillana"><img class="standby-santillana" src="assets/santillana-white.png" alt="Santillana"></div>
+    </div></div>`;
     if (state.scene === "board" || state.scene === "finalists") {
       const finalists = state.scene === "finalists";
       const all = finalists ? state.contestants.filter(item => item.status === "finalist") : [...state.contestants].sort((a, b) => a.name.localeCompare(b.name, "en", { sensitivity: "base", numeric: true }));
@@ -64,6 +69,9 @@
     return `<div class="centered-layout">${title("Spelling Bee")}${closing ? `<p class="subline">${escape(closing)}</p>` : ""}</div>`;
   }
   function draw({ animate = false } = {}) {
+    // Local rotation adds no polling or writes and survives ordinary scene updates.
+    if (state.scene !== "standby") standbyStartedAt = null;
+    else if (standbyStartedAt === null) standbyStartedAt = performance.now();
     stage.classList.toggle("quiet", state.motion === "quiet");
     stage.dataset.layout = state.layout; camera.setMotion(state.motion); camera.setMode(state.layout);
     stage.dataset.scene = state.scene;
@@ -113,6 +121,7 @@
     displaySignature = signature;
     const cue = normalized.cueId || normalized.scene;
     const changed = cue !== lastCue || normalized.scene !== state.scene;
+    if (changed && normalized.scene === "standby") standbyStartedAt = null;
     const visual = value => { const { revision, timer, ...fields } = value; return JSON.stringify({ ...fields, timerVisible: timer.visible }); };
     const contentChanged = visual(normalized) !== visual(state);
     lastCue = cue; state = normalized;
@@ -157,9 +166,21 @@
     }).catch(() => {});
   }
   function updateTimer() {
+    updateStandby();
     const seconds = Model.remaining(state.timer);
     const breakTimer = document.getElementById("break-timer");
     if (breakTimer) breakTimer.textContent = `${Math.floor(seconds / 60)}:${String(seconds % 60).padStart(2, "0")}`;
+  }
+  function updateStandby() {
+    if (state.scene !== "standby" || standbyStartedAt === null) return;
+    const elapsed = (performance.now() - standbyStartedAt) % 80000;
+    const phase = elapsed < 40000 ? "school" : elapsed < 60000 ? "partners" : "santillana";
+    scene.querySelectorAll(".scene-fit:not(.scene-outgoing) [data-standby]").forEach(group => {
+      const active = group.dataset.standby === phase;
+      if (group.classList.contains("is-current") === active && group.getAttribute("aria-hidden") === String(!active)) return;
+      group.classList.toggle("is-current", active);
+      group.setAttribute("aria-hidden", String(!active));
+    });
   }
   async function connect(value) {
     const requested = Cloud.normalizeSessionCode(value);
