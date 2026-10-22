@@ -445,6 +445,7 @@
 
     document.querySelectorAll("[data-difficulty]").forEach(button => {
       button.classList.toggle("selected", button.dataset.difficulty === presenter.difficulty);
+      if (button.dataset.difficulty === "tiebreaker") button.hidden = !["JUNIOR", "SENIOR"].includes(presenter.level);
     });
 
     if (canJudge) {
@@ -1250,7 +1251,8 @@
       const level = poolState.level || "4TH-5TH";
       const pools = await Cloud.loadRemainingPools(level, poolState.usedWords || {});
       if (!poolColumns) return;
-      poolColumns.innerHTML = ["easy", "medium", "hard"].map(difficulty => {
+      const difficulties = Object.keys(pools);
+      poolColumns.innerHTML = difficulties.map(difficulty => {
         const words = pools[difficulty] || [];
         const list = words.length
           ? `<ol class="pool-word-list">${words.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ol>`
@@ -1261,7 +1263,7 @@
             ${list}
           </section>`;
       }).join("");
-      poolColumns.innerHTML += `<section class="pool-used-section" id="pool-used-words"><h3>Already used words · ${escapeHtml(level)}</h3><div class="pool-columns">${["easy", "medium", "hard"].map(difficulty => {
+      poolColumns.innerHTML += `<section class="pool-used-section" id="pool-used-words"><h3>Already used words · ${escapeHtml(level)}</h3><div class="pool-columns">${difficulties.map(difficulty => {
         const values = poolState.usedWords?.[`${level}|${difficulty}`];
         const used = [...new Set(Array.isArray(values) ? values : [])];
         return `<section class="pool-column" data-pool-difficulty="${difficulty}"><h3>${difficulty} <span class="pool-count">${used.length} used</span></h3>${used.length ? `<ol class="pool-word-list">${used.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ol>` : '<p class="placeholder">No used words yet.</p>'}</section>`;

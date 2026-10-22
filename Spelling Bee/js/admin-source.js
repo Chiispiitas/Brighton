@@ -90,7 +90,8 @@
         } else if (["new-word", "difficulty", "category"].includes(type)) {
           this.state = { ...this.state, hiddenMode: true }; this.onState(M.copy(this.state));
           const level = type === "category" ? value : this.state.level;
-          const difficulty = type === "difficulty" ? value : this.state.difficulty;
+          let difficulty = type === "difficulty" ? value : this.state.difficulty;
+          if (difficulty === "tiebreaker" && !["JUNIOR", "SENIOR"].includes(level)) difficulty = "easy";
           try {
             const words = await Cloud.loadWordList(level, difficulty);
             if (!this.active || generation !== this.generation) throw new Error("Session changed.");

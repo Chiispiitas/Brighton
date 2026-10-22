@@ -18,7 +18,7 @@
   function initial() {
     return { version: 1, revision: 0, cueId: "", scene: "standby", motion: "full", layout: "stage",
       round: "Round 1", message: "", closing: "",
-      contestants: [], currentId: "", boardPage: 0, autoBoard: true, showLives: false,
+      contestants: [], currentId: "", boardPage: 0, autoBoard: true, showLives: false, lifeDeductions: {},
       definition: "", example: "", result: "pending", revealWord: "",
       timer: { duration: 60, remaining: 60, endsAt: 0, running: false, visible: true } };
   }
@@ -38,6 +38,7 @@
       message: text(input.message, 220), closing: text(input.closing, 220),
       contestants, currentId: text(input.currentId, 80), boardPage: clamp(input.boardPage, 0, 24),
       autoBoard: input.autoBoard !== false, showLives: input.showLives === true,
+      lifeDeductions: Object.fromEntries(Object.entries(input.lifeDeductions || {}).filter(([key, value]) => /^[a-f0-9]{64}$/.test(key) && value && typeof value === "object").map(([key, value]) => [key, { contestantId: text(value.contestantId, 80), completed: value.completed === true, previousStatus: value.previousStatus === "finalist" ? "finalist" : "active" }])),
       definition: text(input.definition, 500), example: text(input.example, 500),
       result: input.scene === "result" && ["correct", "incorrect"].includes(input.result) ? input.result : "pending",
       // A spelling can only enter an audience payload through an explicit result cue.
@@ -76,6 +77,30 @@
     const hex = Array.from(new Uint8Array(bytes)).map(byte => byte.toString(16).padStart(2, "0")).join("");
     return "97" + (BigInt("0x" + hex) % 1000000000000000000n).toString().padStart(18, "0");
   }
+  async function rosterHistoryCode(sessionCode) {
+    const bytes = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(`bee-roster-history-v1:${sessionCode}`));
+    const hex = Array.from(new Uint8Array(bytes)).map(byte => byte.toString(16).padStart(2, "0")).join("");
+    return "96" + (BigInt("0x" + hex) % 1000000000000000000n).toString().padStart(18, "0");
+  }
+  async function resultKey(token, contestantId) {
+    const bytes = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(`bee-life-result-v1:${token}:${contestantId}`));
+    return Array.from(new Uint8Array(bytes)).map(byte => byte.toString(16).padStart(2, "0")).join("");
+  }
+  function resultLives(state, key) {
+    const next = normalize(state), row = next.contestants.find(row => row.id === next.currentId);
+    if (next.scene !== "result" || !row || row.lives === null) return next;
+    const previous = next.lifeDeductions[key];
+    if (next.result !== "correct" && !previous && row.lives > 0) {
+      next.lifeDeductions[key] = { contestantId: row.id, completed: row.lives === 1, previousStatus: row.status === "finalist" ? "finalist" : "active" };
+      row.lives--; if (row.lives === 0) row.status = "eliminated";
+    } else if (next.result === "correct" && previous?.contestantId === row.id) {
+      row.lives = Math.min(99, row.lives + 1);
+      if (previous.completed && row.status === "eliminated") row.status = previous.previousStatus;
+      delete next.lifeDeductions[key];
+    }
+    if (row.lives === 0) row.status = "eliminated";
+    return next;
+  }
   function nextContestant(state) {
     const eligible = row => row.status !== "eliminated" && String(row.name || "").trim();
     const first = state.contestants.find(eligible);
@@ -87,5 +112,5 @@
     if (wrapped) round = /\d+/.test(round) ? round.replace(/\d+/, number => String(Number(number) + 1)) : `${round} 2`;
     return { currentId: (next || first).id, round, wrapped };
   }
-  return { scenes, initial, normalize, remaining, maskWord, parseRoster, broadcastCode, cameraPreviewCode, nextContestant };
+  return { scenes, initial, normalize, remaining, maskWord, parseRoster, broadcastCode, cameraPreviewCode, rosterHistoryCode, resultKey, resultLives, nextContestant };
 });

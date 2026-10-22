@@ -15,6 +15,13 @@ function fixture(handler) {
 }
 const response = (data, status = 200, retryAfter = null) => ({ ok: status < 400, status,
   headers: { get: () => retryAfter }, json: async () => data });
+test('Tiebreaker survives a legacy CMS difficulty index on reads, writes and confirmed messages', async () => {
+  const f = fixture((url, options) => response({ session: { role: 'presenter', sessionCode: '1234', difficulty: 'easy', poolDifficulty: 'tiebreaker', ...(options.method === 'POST' ? { word: JSON.parse(options.body).state.word } : {}) } }));
+  assert.equal((await f.cloud.fetchPresenter('1234')).difficulty, 'tiebreaker');
+  const saved = await f.cloud.writeState({ sessionCode: '1234', role: 'presenter', state: { difficulty: 'tiebreaker', word: 'absolute' } });
+  assert.equal(JSON.parse(f.calls[1][1].body).state.poolDifficulty, 'tiebreaker');
+  assert.equal(saved.session.difficulty, 'tiebreaker'); assert.equal(f.sent[0].state.difficulty, 'tiebreaker');
+});
 test('overlapping readers share a request; successful writes invalidate read cache', async () => {
   let finish;
   const f = fixture((url, options) => options.method === 'POST'

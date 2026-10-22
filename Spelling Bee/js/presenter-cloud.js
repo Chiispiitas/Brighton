@@ -41,7 +41,8 @@
     if (elPoolSelect) elPoolSelect.value = currentLevel;
     WORDLIST_PATH = `wordlists/${currentLevel}/${currentDifficulty}.txt`;
     usedWordsByPool.clear(); Object.entries(state.usedWords || {}).forEach(([key, words]) => usedWordsByPool.set(key, new Set(words)));
-    [btnEasy, btnMedium, btnHard].forEach((button, index) => button?.classList.toggle("primary", ["easy", "medium", "hard"][index] === currentDifficulty));
+    [btnEasy, btnMedium, btnHard, btnTiebreaker].forEach((button, index) => button?.classList.toggle("primary", ["easy", "medium", "hard", "tiebreaker"][index] === currentDifficulty));
+    btnTiebreaker.hidden = !["JUNIOR", "SENIOR"].includes(currentLevel);
     if (elSecretWord) { elSecretWord.textContent = current || ""; if (changedWord) elSecretWord.classList.remove("visible"); }
     if (changedWord && current && elAudio) elAudio.src = `${AUDIO_DIR}/${wordToAudioBasename(current)}${AUDIO_EXT}`;
     renderWord();
@@ -365,7 +366,7 @@
       // previous word was revealed for feedback.
       if (typeof hiddenMode !== "undefined") hiddenMode = true;
       nextWord();
-    } else if (type === "difficulty" && ["easy", "medium", "hard"].includes(command.value) && typeof changeDifficulty === "function") {
+    } else if (type === "difficulty" && ["easy", "medium", "hard", "tiebreaker"].includes(command.value) && typeof changeDifficulty === "function") {
       await changeDifficulty(command.value);
     } else if (type === "category" && Array.from(elPoolSelect?.options || []).some(option => option.value === command.value)) {
       hiddenMode = true; elPoolSelect.value = command.value;

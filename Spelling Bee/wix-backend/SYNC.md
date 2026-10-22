@@ -1,5 +1,49 @@
 # Spelling Bee synchronization
 
+## Roster recovery and Tiebreaker — 2026-10-22
+
+The bulk lives control has been removed. Admin records roster, lives, status,
+podium, current-participant and round changes as sparse reversible deltas. Undo
+and Redo work with buttons, Ctrl+Z, Ctrl+Y and Ctrl+Shift+Z. Native text undo
+outside the roster is preserved. A draft-only edit restores the preview; undo
+of a published edit also republishes the restored roster, committing the
+history cursor only after Wix acknowledges the change. Scene and word-pool
+history are separate; roster undo does not undo word selection or judging.
+
+Every edit saves immediately under `bee-roster-history-v1:SESSION` in browser
+storage. Recent history survives reload and includes redo. A separate,
+deterministic `96`-prefixed session mirrors it through the existing session API
+as `{ screenRosterHistory: true, history }`. Admin loads this backup once when
+joining; it is never polled by the audience or judges. Backup writes are
+debounced 2.5 seconds, with automatic retry and visible local/cloud save status.
+The journal retains up to 200 recent actions, bounded to about 240,000 JSON
+characters using sparse row changes. Download history exports the recoverable
+journal. Existing sessions start their history at this update; an older lost
+state cannot be reconstructed from a backup that did not exist.
+
+Taking a Word Neutral/Incorrect scene live removes one tracked life from the
+selected contestant. It is part of the same acknowledged broadcast write, so
+failed writes leave counts unchanged. Per-word-and-contestant SHA-256 keys in
+`broadcast.lifeDeductions` prevent repeated takes or Neutral/Incorrect colour
+changes from charging twice. A correction to Correct refunds the tracked
+deduction and restores an automatically completed participant. No private word
+tokens enter the public broadcast. Untracked (blank) lives remain untracked.
+Zero lives sets internal status `eliminated`, labelled Completed in Admin;
+Next contestant skips these rows. Roster undo also restores deduction keys.
+
+Junior Tiebreaker is an exact copy of Senior easy 2026 (127 words and the same
+word metadata). Senior Tiebreaker is the 69-word Senior easy list from commit
+`d21971c` dated 2025-10-17, plus simple supporting definitions/examples. Neither
+normal pool is replaced. The extra difficulty is available only for Junior and
+Senior; switching to a younger category falls back to Easy.
+
+No new Wix schema or backend deployment is required. Older CMS handlers index
+only easy/medium/hard and can return indexed `difficulty: easy` for Tiebreaker.
+The existing full `presenterStateJson` preserves the explicit `poolDifficulty`;
+the shared client restores that value consistently on reads, saves and
+confirmed device messages. Other difficulties also write their current value
+so a previous Tiebreaker marker can never force a later pool choice.
+
 The existing Velo HTTP functions and CMS contracts are unchanged. These indexes
 were created on the CMS server site on 2026-10-15 and verified ACTIVE:
 

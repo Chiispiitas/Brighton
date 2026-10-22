@@ -1,0 +1,33 @@
+const { test } = require('node:test');
+const assert = require('node:assert/strict');
+const { History } = require('../js/roster-history.js');
+const M = require('../js/screen-model.js');
+const row = (id, lives = 2) => ({ id, name: id, group: '', number: id, status: 'active', place: 0, lives });
+test('history reverses life edits, removal, ordering and round changes, and persists redo after reload', () => {
+  const initial = { ...M.initial(), contestants: [row('a'), row('b')] };
+  const h = new History(initial);
+  h.record({ ...initial, contestants: [row('a', 1), row('b')] }, 'life');
+  h.record({ ...initial, contestants: [row('b')], currentId: 'b', round: 'Round 2' }, 'remove');
+  h.markPublished();
+  const undo = h.peek(false); assert.equal(undo.entry.published, true); h.commit(undo);
+  assert.deepEqual(h.data.checkpoint.contestants.map(r => [r.id, r.lives]), [['a', 1], ['b', 2]]);
+  const restored = new History(initial, JSON.parse(JSON.stringify(h.data)));
+  restored.commit(restored.peek(true)); assert.deepEqual(restored.data.checkpoint.contestants.map(r => r.id), ['b']);
+  restored.commit(restored.peek(false)); restored.record({ ...initial, contestants: [row('a', 0), row('b')] }, 'new branch');
+  assert.equal(restored.canRedo, false);
+});
+test('neutral/incorrect deduct once per contestant and word; correct refunds and zero means Completed', async () => {
+  const key = await M.resultKey('private-word-token', 'a');
+  let state = { ...M.initial(), scene: 'result', result: 'incorrect', currentId: 'a', contestants: [row('a', 1)] };
+  const original = M.normalize(state), history = new History(original);
+  state = M.resultLives(state, key); history.record(state, 'Incorrect', true);
+  assert.equal(state.contestants[0].lives, 0); assert.equal(state.contestants[0].status, 'eliminated');
+  assert.equal(M.resultLives(state, key).contestants[0].lives, 0);
+  assert.equal(M.resultLives({ ...state, result: 'pending' }, key).contestants[0].lives, 0);
+  const corrected = M.resultLives({ ...state, result: 'correct' }, key);
+  assert.equal(corrected.contestants[0].lives, 1); assert.equal(corrected.contestants[0].status, 'active');
+  history.commit(history.peek(false)); assert.deepEqual(history.data.checkpoint.lifeDeductions, {});
+  history.commit(history.peek(true)); assert.deepEqual(history.data.checkpoint.lifeDeductions, state.lifeDeductions);
+  assert.equal(JSON.stringify(state.lifeDeductions).includes('private-word'), false);
+  assert.equal(M.resultLives({ ...state, contestants: [row('a', null)] }, key).contestants[0].lives, null);
+});
