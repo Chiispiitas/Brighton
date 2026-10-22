@@ -64,6 +64,13 @@ body { margin: 0; min-height: 100vh; display: grid; place-items: center; overflo
 .centered-layout .headline { font-size: 7.2cqw; }
 .standby-logo { display: block; width: 24cqw; height: 24cqw; object-fit: contain; margin: 0 auto 2cqw; }
 .standby-layout .headline { font-size: 4.8cqw; margin-bottom: 0; }
+.standby-rotation { display: grid; min-height: 34cqw; }
+.standby-set { grid-area: 1 / 1; display: flex; flex-direction: column; align-items: center; justify-content: center; opacity: 0; visibility: hidden; transition: opacity 900ms ease-in-out, visibility 0s linear 900ms; }
+.standby-set.is-current { opacity: 1; visibility: visible; transition-delay: 0s; }
+.standby-partners { flex-direction: row; gap: 7cqw; }
+.standby-partner-logo { width: 24cqw; height: 24cqw; object-fit: contain; }
+.standby-santillana { width: 54cqw; height: 22cqw; object-fit: contain; }
+.standby-duche,.standby-santillana { filter: brightness(0) invert(1); }
 .broadcast-footer { position: absolute; bottom: 3%; inset-inline: 6%; font-size: .7cqw; color: #b7aa9080; }
 .speller-layout { display: block; }
 .speller-number { color: var(--muted); font-size: 1.2cqw; display: inline-block; margin-bottom: 1.4cqw; font-variant-numeric: tabular-nums; }
@@ -180,7 +187,14 @@ body { margin: 0; min-height: 100vh; display: grid; place-items: center; overflo
 .broadcast[data-layout=stream] .centered-layout{text-align:left;max-width:48cqw}
 .broadcast[data-layout=stream] .centered-layout .headline{font-size:3.3cqw;margin-bottom:0}
 .broadcast[data-layout=stream] .centered-layout .subline{font-size:1.2cqw;margin:1cqw 0 0}
-.broadcast[data-layout=stream] .standby-layout{display:flex;align-items:center;gap:1.4cqw;max-width:55cqw}
+.broadcast[data-layout=stream] .standby-layout{max-width:55cqw;width:55cqw}
+.broadcast[data-layout=stream] .standby-rotation{min-height:8cqw}
+.broadcast[data-layout=stream] .standby-school{flex-direction:row;justify-content:flex-start;gap:1.4cqw}
+.broadcast[data-layout=stream] .standby-partners{justify-content:flex-start;gap:3cqw}
+.broadcast[data-layout=stream] .standby-partner-logo{width:13cqw;height:8cqw}
+.broadcast[data-layout=stream] .standby-duche{width:8cqw}
+.broadcast[data-layout=stream] .standby-publisher{align-items:flex-start}
+.broadcast[data-layout=stream] .standby-santillana{width:32cqw;height:8cqw}
 .broadcast[data-layout=stream] .standby-logo{width:6cqw;height:6cqw;margin:0;flex-shrink:0}
 .broadcast[data-layout=stream] .standby-layout .headline{font-size:2.5cqw}
 .broadcast[data-layout=stream] .break-countdown{margin-top:1cqw;font-size:1cqw}
