@@ -25,6 +25,7 @@ const expected = new Set(`indictment penchant paradigm epitome puerile synonymou
     await page.goto(base + '/challenge.html');
     assert.equal(await page.locator('#progress').innerText(), 'Word 1 of 58');
     assert(await page.locator('#pronunciation').evaluate(audio => audio.paused), 'initial playback needs the listener’s gesture');
+    assert(await page.locator('#reveal').isDisabled());
     await page.locator('#listen').click();
     await page.waitForFunction(() => !document.getElementById('pronunciation').paused);
     const seen = [];
@@ -36,6 +37,14 @@ const expected = new Set(`indictment penchant paradigm epitome puerile synonymou
       const text = (await page.locator('body').innerText()).toLowerCase();
       assert([...expected].every(word => !text.includes(word)), 'target spellings remain hidden');
       assert(!/\b(easy|medium|hard)\b/i.test(text), 'no difficulty classification');
+      if (index === 0) {
+        await page.locator('#reveal').waitFor({ state: 'visible' });
+        await page.waitForFunction(() => !document.getElementById('reveal').disabled);
+        await page.locator('#reveal').click(); assert.equal(await page.locator('#revealed-word').innerText(), word);
+        await page.locator('#reveal').click(); assert.equal(await page.locator('#revealed-word').textContent(), '');
+        await page.locator('#reveal').click(); // Next must clear a visible answer too.
+      }
+      if (index === 1) assert.equal(await page.locator('#revealed-word').textContent(), '', 'Next clears the previous spelling');
       if (index === 1) {
         await page.reload();
         assert.equal(await page.locator('#progress').innerText(), 'Word 2 of 58');
@@ -48,6 +57,7 @@ const expected = new Set(`indictment penchant paradigm epitome puerile synonymou
     await page.locator('#next').click();
     assert.equal(await page.locator('#heading').innerText(), 'Challenge complete');
     assert(await page.locator('#listen').isHidden());
+    assert(await page.locator('#reveal').isHidden()); assert.equal(await page.locator('#revealed-word').textContent(), '');
     await page.reload(); assert.equal(await page.locator('#next').innerText(), 'Start again');
     await page.locator('#next').click(); assert.equal(await page.locator('#progress').innerText(), 'Word 1 of 58');
     for (let i = 0; i < 3; i++) await page.locator('#next').click();
