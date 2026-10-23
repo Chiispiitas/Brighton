@@ -14,16 +14,17 @@ const server = http.createServer((req, res) => {
   await new Promise(resolve => server.listen(0, '127.0.0.1', resolve));
   const base = process.env.BEE_BASE_URL || `http://127.0.0.1:${server.address().port}`;
   const browser = await chromium.launch({ channel: 'msedge', headless: true });
-  const sim = require('./wix-simulator.cjs')(), errors = [], writes = [];
+  const sim = require('./wix-simulator.cjs')(), errors = [], writes = [], reads = [];
   let failBroadcast = false, failHistory = false;
   const saved = code => { const row = [...(sim.collections.get('SpellingBeeSessions')?.values() || [])].find(row => row.sessionCode === code); return row ? JSON.parse(row.presenterStateJson) : null; };
   const until = async predicate => { const end = Date.now() + 20000; while (Date.now() < end) { if (await predicate()) return; await new Promise(resolve => setTimeout(resolve, 80)); } throw new Error('Condition did not become true'); };
-  const create = async () => {
+  const create = async (name = 'view') => {
     const context = await browser.newContext({ viewport: { width: 1440, height: 1100 } });
     await context.route('https://fonts.googleapis.com/**', route => route.abort());
     await context.route('**/cms-server/_functions/**', async route => {
       const request = route.request(), url = new URL(request.url()), body = request.method() === 'POST' ? request.postDataJSON() : null;
       const code = body?.sessionCode || url.searchParams.get('sessionCode'); if (body) writes.push(body);
+      else reads.push({ name, code });
       if (failBroadcast && body?.state.screenBroadcast) return route.fulfill({ status: 500, json: { success: false, error: 'Simulated save failure' } });
       if (failHistory && body?.state.screenRosterHistory) return route.fulfill({ status: 500, json: { success: false, error: 'Simulated history backup failure' } });
       await route.fulfill(await sim.request(url.pathname.split('/').pop(), request.method(), code, body));
@@ -42,13 +43,20 @@ const server = http.createServer((req, res) => {
     await admin.locator('#roster-paste').fill('Alice | Grade 5 | 1\nBob | Grade 6 | 2'); await admin.locator('#roster-add').click();
     await editLife(0, '2'); await editLife(1, '2');
     await admin.locator('#screen-show-lives').check(); await publishRoster();
+    await admin.locator('#screen-current').selectOption(roster()[0].id); await admin.locator('[data-scene=spelling]').click(); await admin.locator('#screen-take').click();
+    await admin.locator('#director-status').filter({ hasText: 'Scene is live' }).waitFor();
+    const judge = await create('judge-lives'); await judge.goto(base + '/judge.html?session=7319'); await judge.locator('#judge-name').fill('Lives judge'); await judge.locator('#join-session-button').click();
+    await judge.locator('#judge-contestant-name').filter({ hasText: 'Alice' }).waitFor();
+    await judge.locator('#judge-contestant-lives').filter({ hasText: '2 lives remaining' }).waitFor();
     // Focused-field shortcut commits the edit and undoes the roster action.
     await admin.locator('.roster-lives').first().fill('1');
     await admin.keyboard.press('Control+z'); assert.equal(await admin.locator('.roster-lives').first().inputValue(), '2');
     assert.equal(roster()[0].lives, 2, 'draft undo does not change the on-air roster');
     await admin.keyboard.press('Control+y'); assert.equal(await admin.locator('.roster-lives').first().inputValue(), '1');
     await publishRoster(); assert.equal(roster()[0].lives, 1);
+    await judge.locator('#judge-contestant-lives').filter({ hasText: '1 life remaining' }).waitFor();
     await admin.locator('#roster-undo').click(); await until(() => roster()[0].lives === 2);
+    await judge.locator('#judge-contestant-lives').filter({ hasText: '2 lives remaining' }).waitFor();
     await admin.locator('#roster-redo').click(); await until(() => roster()[0].lives === 1);
     await editLife(0, '2'); await publishRoster();
     const alice = roster()[0].id; await admin.locator('#screen-current').selectOption(alice);
@@ -62,6 +70,13 @@ const server = http.createServer((req, res) => {
     await take('pending'); assert.equal(roster()[0].lives, 1);
     await admin.locator('#new-word-button').click(); await admin.locator('#new-word-button[data-sync=saved]').waitFor();
     await take('incorrect'); assert.equal(roster()[0].lives, 0); assert.equal(roster()[0].status, 'eliminated');
+    await judge.locator('#judge-contestant-lives').filter({ hasText: '0 lives remaining' }).waitFor();
+    if (process.env.SCREENSHOT_DIR) {
+      await judge.screenshot({ path: path.join(process.env.SCREENSHOT_DIR, 'judge-lives-desktop.png') });
+      await judge.setViewportSize({ width: 390, height: 844 });
+      await judge.screenshot({ path: path.join(process.env.SCREENSHOT_DIR, 'judge-lives-mobile.png') });
+      await judge.setViewportSize({ width: 1440, height: 1100 });
+    }
     await admin.locator('#roster-undo').click(); await until(() => roster()[0].lives === 1); assert.equal(roster()[0].status, 'active');
     await admin.locator('#roster-redo').click(); await until(() => roster()[0].lives === 0);
     await admin.locator('#next-speller').click(); assert.notEqual(await admin.locator('#screen-current').inputValue(), alice, 'Completed contestant is skipped');
@@ -100,6 +115,16 @@ const server = http.createServer((req, res) => {
     }
     await admin.locator('#admin-category').selectOption('4TH-5TH'); await until(() => saved('7319').level === '4TH-5TH');
     assert.equal(saved('7319').difficulty, 'easy'); assert(await admin.locator('[data-difficulty=tiebreaker]').isHidden());
+    await editLife(1, ''); await admin.locator('#screen-show-lives').uncheck(); await publishRoster();
+    await admin.locator('#screen-current').selectOption(roster()[1].id); await admin.locator('[data-scene=spelling]').click(); await admin.locator('#screen-take').click();
+    await admin.locator('#director-status').filter({ hasText: 'Scene is live' }).waitFor();
+    await judge.locator('#judge-contestant-name').filter({ hasText: 'Bob' }).waitFor();
+    await judge.locator('#judge-contestant-lives').filter({ hasText: 'Lives not set' }).waitFor();
+    await editLife(1, '1'); await publishRoster();
+    await judge.locator('#judge-contestant-lives').filter({ hasText: '1 life remaining' }).waitFor();
+    await admin.locator('#screen-current').selectOption(''); await admin.locator('[data-scene=standby]').click(); await admin.locator('#screen-take').click();
+    await admin.locator('#director-status').filter({ hasText: 'Scene is live' }).waitFor(); await judge.locator('#judge-contestant').waitFor({ state: 'hidden' });
+    assert(reads.filter(read => read.name === 'judge-lives').every(read => read.code === '7319'), 'judges never add broadcast, history or camera polling');
     assert(writes.filter(body => body.state.screenRosterHistory).length < 15, 'backups are coalesced, never sent on every display poll');
     assert.deepEqual(errors, []);
     console.log('Passed: removed bulk lives control, draft/live undo and redo, failure safety, persistent local and Wix recovery, duplicate-safe automatic lives, Completed status, participant restoration and both Tiebreaker pools.');

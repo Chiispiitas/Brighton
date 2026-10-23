@@ -1,5 +1,23 @@
 # Spelling Bee synchronization
 
+## Judge contestant lives — 2026-10-23
+
+Judge View displays the on-air contestant name and tracked remaining lives,
+including zero. Blank lives show "Lives not set"; no selected contestant hides
+the panel. This is independent of the audience's Show remaining lives option.
+Preparing a different contestant remains off air until publication.
+
+After a confirmed broadcast change, Admin mirrors only changed contestant
+information into the existing word-source snapshot as `currentContestant`.
+Judges receive it through their existing presenter reader and confirmed device
+channel, with no broadcast, history, camera or additional polling. Automatic
+deductions, manual published edits and roster Undo/Redo follow the same path.
+Source-owned sessions use the paced Admin writer; Study-owned sessions use an
+acknowledged `contestant` command with the full structured snapshot, avoiding
+the CMS command index's 64-character value limit. No schema or backend
+deployment is required. A failed mirror is retried with visible Admin feedback
+without rolling back an already published audience scene.
+
 ## Roster recovery and Tiebreaker — 2026-10-22
 
 The bulk lives control has been removed. Admin records roster, lives, status,

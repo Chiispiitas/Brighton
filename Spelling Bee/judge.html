@@ -6,7 +6,7 @@
   <title>Spelling Bee Judge View</title>
   <link href="assets/favicon.png" rel="icon">
   <link href="style.css?v=20260919-judgeundo-descenders1" rel="stylesheet">
-  <link href="control-view.css?v=20261015-admin7" rel="stylesheet">
+  <link href="control-view.css?v=20261023-judgelives27" rel="stylesheet">
 </head>
 <body class="control-view" data-role="judge">
   <section class="join-gate" id="join-gate">
@@ -36,6 +36,9 @@
 
       <main class="control-grid">
         <section class="control-card word-card">
+          <div class="judge-contestant" id="judge-contestant" aria-live="polite" hidden>
+            <strong id="judge-contestant-name"></strong><span id="judge-contestant-lives"></span>
+          </div>
           <div class="control-word" id="control-word">—</div>
           <p class="word-meta" id="word-meta">Waiting for presenter</p>
           <div class="verdict-row" aria-label="Judge current-letter decision">
@@ -76,8 +79,8 @@
     </div>
   </section>
 
-  <script src="js/cloud.js?v=20261022-history25"></script>
+  <script src="js/cloud.js?v=20261023-judgelives27"></script>
   <script src="js/button-feedback.js?v=20261015-sync5"></script>
-  <script src="js/control-view.js?v=20261022-history25"></script>
+  <script src="js/control-view.js?v=20261023-judgelives27"></script>
 </body>
 </html>

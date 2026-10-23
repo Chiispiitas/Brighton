@@ -17,7 +17,7 @@
 
   let sessionCode = "", unsubscribeCloud = () => {};
   let connectingSession = false;
-  let followingAdmin = false, followedState = null, lastSourceCheck = 0, lastFeedbackId = "";
+  let followingAdmin = false, followedState = null, lastSourceCheck = 0, lastFeedbackId = "", currentContestant = null;
   function setFollowing(value) {
     followingAdmin = value; window.spellingStudyFollowing = value;
     document.body.classList.toggle("study-following", value);
@@ -33,6 +33,7 @@
     window.clearTimeout(presenterRetryTimer); presenterRetryTimer = null;
     const changedWord = current !== state.word || Number(wordSequence) !== Number(state.wordSequence);
     followedState = state; sessionStartedAt = state.startedAt || sessionStartedAt;
+    currentContestant = Cloud.contestantInfo(state.currentContestant);
     current = state.word || null; currentLevel = state.level || "4TH-5TH"; currentDifficulty = state.difficulty || "easy";
     wordSequence = Number(state.wordSequence || 0); marks = Array.isArray(state.marks) ? state.marks.slice() : [];
     ptr = Number(state.pointer || 0); hiddenMode = state.hiddenMode !== false;
@@ -156,6 +157,7 @@
       hiddenMode: hidden,
       poolCount,
       usedWords: usedWordsSnapshot(),
+      currentContestant,
       lastCommandSeq: lastRemoteCommandSeq,
       judgementRevision: judgementMeta().revision,
       judgementSource: judgementMeta().source,
@@ -173,6 +175,7 @@
       snapshot.hiddenMode,
       snapshot.poolCount,
       snapshot.usedWords,
+      snapshot.currentContestant,
       snapshot.lastCommandSeq,
       snapshot.judgementRevision,
       snapshot.judgementSource,
@@ -355,7 +358,7 @@
     const targetToken = String(command.wordToken || "");
     const type = String(command.commandType || "");
 
-    if (!["difficulty", "category"].includes(type) && targetToken && targetToken !== currentWordToken()) {
+    if (!["difficulty", "category", "contestant"].includes(type) && targetToken && targetToken !== currentWordToken()) {
       lastRemoteCommandSeq = seq;
       await publishPresenter(true);
       return;
@@ -371,6 +374,10 @@
     } else if (type === "category" && Array.from(elPoolSelect?.options || []).some(option => option.value === command.value)) {
       hiddenMode = true; elPoolSelect.value = command.value;
       await changeDifficulty(currentDifficulty);
+    } else if (type === "contestant") {
+      // The indexed command value is limited to 64 characters; use the full
+      // structured command snapshot for contestant identities and lives.
+      currentContestant = Cloud.contestantInfo(command.currentContestant);
     } else if (type === "use-word" && command.value === currentWordToken()) {
       rememberUsedWord(current);
       pool = pool.filter(word => word !== current);
@@ -483,6 +490,7 @@
 
     try {
       const existing = await Cloud.fetchPresenter(normalized);
+      currentContestant = Cloud.contestantInfo(existing?.currentContestant);
       if (existing?.screenBroadcast || existing?.screenCameraPreview) throw new Error("That code belongs to an audience screen.");
       if (existing?.sourceRole === "admin") { followAdmin(existing); connectingSession = false; startRemotePollLoop(); return; }
       const remote = await Cloud.fetchCommand(normalized);

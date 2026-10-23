@@ -195,6 +195,10 @@ const server = http.createServer((req, res) => {
     await legacyAdmin.locator('#director-status').filter({hasText:'Word marked as used'}).waitFor();
     assert(saved('4680').usedWords['6TH-7TH|easy'].includes(legacyWord));
     assert.deepEqual(saved('4680').marks, legacyMarks); assert.equal(saved('4680').hiddenMode, true);
+    await legacyAdmin.locator('#roster-paste').fill('Legacy contestant | Grade 6 | 1'); await legacyAdmin.locator('#roster-add').click();
+    await legacyAdmin.locator('.roster-lives').first().fill('3'); await legacyAdmin.locator('.roster-lives').first().dispatchEvent('change');
+    await legacyAdmin.locator('#screen-current').selectOption({ index: 1 }); await legacyAdmin.locator('[data-scene=spelling]').click(); await legacyAdmin.locator('#screen-take').click();
+    await until(() => saved('4680').currentContestant?.name === 'Legacy contestant' && saved('4680').currentContestant.lives === 3);
     await legacyAdmin.locator('#admin-take-source').click();
     await legacyAdmin.locator('#source-status').filter({ hasText: 'Admin is running' }).waitFor();
     await legacyStudy.locator('#session-status').filter({ hasText: 'Following Admin' }).waitFor();

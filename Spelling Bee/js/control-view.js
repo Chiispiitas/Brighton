@@ -395,6 +395,13 @@
   }
 
   function renderPresenterState() {
+    const contestantPanel = document.getElementById("judge-contestant");
+    if (contestantPanel) {
+      const contestant = Cloud.contestantInfo(presenter?.currentContestant);
+      contestantPanel.hidden = !contestant;
+      const fields = { "judge-contestant-name": contestant?.name || "", "judge-contestant-lives": !contestant || contestant.lives === null ? "Lives not set" : `${contestant.lives} ${contestant.lives === 1 ? "life" : "lives"} remaining` };
+      for (const [id, text] of Object.entries(fields)) if (document.getElementById(id).textContent !== text) document.getElementById(id).textContent = text;
+    }
     if (!presenter) {
       renderedJudgeWordKey = "";
       if (word) word.textContent = "—";
@@ -1201,6 +1208,7 @@
               ...snapshotPresenter,
               commandSeq: seq,
               commandType,
+              ...(commandType === "contestant" ? { currentContestant: Cloud.contestantInfo(JSON.parse(value)) } : {}),
               value
             }
           });
@@ -1213,7 +1221,7 @@
 
           const acknowledged = await waitForPresenterCommandAck(
             seq,
-            ["difficulty", "category", "new-word"].includes(commandType) ? "" : snapshotPresenter.wordToken
+            ["difficulty", "category", "new-word", "contestant"].includes(commandType) ? "" : snapshotPresenter.wordToken
           );
           if (!acknowledged) throw new Error("Presenter did not acknowledge command.");
 
@@ -1316,6 +1324,15 @@
   window.getSpellingWordSnapshot = async code => {
     if (source?.active && source.code === code) { await source.saved(source.state.sourceRevision); return window.BeeSession.copy(source.state); }
     return Cloud.fetchPresenter(code);
+  };
+  window.syncSpellingContestant = async (code, value) => {
+    if (sessionCode !== code) throw new Error("Session changed.");
+    const contestant = Cloud.contestantInfo(value);
+    const current = await window.getSpellingWordSnapshot(code);
+    if (JSON.stringify(Cloud.contestantInfo(current?.currentContestant)) === JSON.stringify(contestant)) return;
+    if (!await sendRemoteCommand("contestant", JSON.stringify(contestant))) throw new Error("Judge lives could not sync. Run the source from this Admin or refresh Study.");
+    const saved = await window.getSpellingWordSnapshot(code);
+    if (JSON.stringify(Cloud.contestantInfo(saved?.currentContestant)) !== JSON.stringify(contestant)) throw new Error("Refresh Study to enable contestant lives for judges.");
   };
   window.markSpellingWordUsed = async (code, token) => {
     if (sessionCode !== code || !token || presenter?.wordToken !== token) throw new Error("The word session changed. Review the current word and try again.");
