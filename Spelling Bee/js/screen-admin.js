@@ -33,6 +33,25 @@
   let wordInfoKey = "", wordInfoPromise = null, retryInfoAt = 0;
   const H = window.BeeRosterHistory;
   let history = null, historyCode = "", historyLabel = "Contestants / lives", backupTimer = null, backupBusy = false, backedUpAt = 0;
+  let judgeSyncTimer = null, judgeSyncBusy = false, judgeSyncPending = false;
+  const judgeSyncNotice = document.createElement("p");
+  judgeSyncNotice.className = "director-status error"; judgeSyncNotice.hidden = true; judgeSyncNotice.setAttribute("role", "status");
+  panel.append(judgeSyncNotice);
+  function queueJudgeSync() { judgeSyncPending = true; clearTimeout(judgeSyncTimer); judgeSyncTimer = setTimeout(syncJudgeLives, 100); }
+  async function syncJudgeLives() {
+    if (!ready || judgeSyncBusy || !judgeSyncPending || !window.syncSpellingContestant) return;
+    judgeSyncBusy = true; judgeSyncPending = false;
+    const run = generation, code = sourceCode, contestant = Cloud.contestantInfo(live.contestants.find(row => row.id === live.currentId));
+    try {
+      await window.syncSpellingContestant(code, contestant);
+      if (run === generation) judgeSyncNotice.hidden = true;
+    } catch (error) {
+      if (run === generation) { judgeSyncPending = true; judgeSyncNotice.hidden = false; judgeSyncNotice.textContent = `${error.message} Retrying automatically.`; }
+    } finally {
+      judgeSyncBusy = false;
+      if (judgeSyncPending) { clearTimeout(judgeSyncTimer); judgeSyncTimer = setTimeout(syncJudgeLives, Math.max(2500, Cloud.retryDelay())); }
+    }
+  }
   const frame = $("screen-preview");
   const cameraPreview = new window.BeeCamera.Preview(frame, $("preview-camera-note"));
   function status(message, error = false) { $("director-status").textContent = message; $("director-status").classList.toggle("error", error); }
@@ -203,6 +222,7 @@
       if (!saved.session?.screenBroadcast) throw new Error("The backend did not acknowledge the broadcast.");
       live = M.normalize(saved.session.broadcast);
       published = true;
+      queueJudgeSync();
       if (fromTake) { draft.contestants = JSON.parse(JSON.stringify(live.contestants)); draft.lifeDeductions = { ...live.lifeDeductions }; renderRoster(); }
       $("director-live").textContent = `ON AIR · ${M.scenes.find(([key]) => key === live.scene)?.[1]}`;
       preview();
@@ -255,6 +275,7 @@
   async function initialize(code) {
     const run = ++generation; sourceCode = code; ready = false;
     history = null; historyCode = ""; clearTimeout(backupTimer); backedUpAt = 0;
+    clearTimeout(judgeSyncTimer); judgeSyncPending = false; judgeSyncNotice.hidden = true;
     wordInfoKey = ""; wordInfoPromise = null; setBusy(false);
     try {
       broadcastCode = await M.broadcastCode(sourceCode);
@@ -287,6 +308,7 @@
       $("broadcast-code").textContent = sourceCode;
       $("director-live").textContent = `ON AIR · ${M.scenes.find(([key]) => key === live.scene)?.[1]}`;
       fillFields(); saveHistory(); setBusy(false); status("Screen connected. Open the audience screen on the stage display.");
+      queueJudgeSync();
     } catch (error) { ready = false; setBusy(false); status(error.message + " Reconnect to the word session to retry.", true); }
   }
   for (const [key, label] of M.scenes) {

@@ -290,7 +290,14 @@
     return data[String(word || "").trim().toLowerCase()] || null;
   }
 
+  function contestantInfo(value) {
+    if (!value || typeof value !== "object" || !String(value.name || "").trim()) return null;
+    const lives = value.lives;
+    return { id: String(value.id || "").slice(0, 80), name: String(value.name).trim().slice(0, 80),
+      lives: lives == null || lives === "" || !Number.isFinite(Number(lives)) ? null : Math.max(0, Math.min(99, Math.floor(Number(lives)))) };
+  }
   window.SpellingCloud = {
+    contestantInfo,
     subscribe,
     retryDelay,
     pollDelay,
