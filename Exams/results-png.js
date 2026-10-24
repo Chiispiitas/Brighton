@@ -91,7 +91,7 @@
     const pages = [];
     let operations = [], y = 210;
     const finish = () => { pages.push({operations,height:Math.ceil(y+65)}); operations=[]; y=210; };
-    const reserve = height => {if(y+height>MAX_HEIGHT && operations.length) finish();};
+    const reserve = height => {if(y+height>MAX_HEIGHT-65 && operations.length) finish();};
     for (const block of blocks) {
       if (block.type !== "table") {
         const lines=wrap(measure,block.text,WIDTH-PADDING*2);
@@ -123,7 +123,7 @@
         for(let offset=0;offset<lineCount;offset+=150) {
           const lines=row.lines.map(lines=>lines.slice(offset,offset+150));
           const height=Math.max(...lines.map(lines=>lines.length))*LINE_HEIGHT+24;
-          if(y+height>MAX_HEIGHT){finish();addHeader();}
+          if(y+height>MAX_HEIGHT-65){finish();addHeader();}
           operations.push({...row,lines,height,y,alternate:index%2===1});y+=height;
         }
       });
