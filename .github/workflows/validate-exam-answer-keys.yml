@@ -51,6 +51,7 @@ jobs:
         run: |
           npm install --prefix /tmp/brighton-validation --no-save jsdom@30.1.2
           NODE_PATH=/tmp/brighton-validation/node_modules node Exams/validate-writing-ui.cjs
+          NODE_PATH=/tmp/brighton-validation/node_modules node Exams/validate-b2-listening-practice.cjs
       - name: Validate A1 Reading and Writing JavaScript syntax
         run: |
           node --check Exams/exams/a1-rw/main.js

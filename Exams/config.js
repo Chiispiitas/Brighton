@@ -49,6 +49,7 @@ window.BRIGHTON_SITE_CONFIG = {
   ],
 
   FALLBACK_EXAMS: [
+    {"examId":"brighton-b2-listening-practice-3","title":"B2 Listening Practice Test 3","level":"B2","skill":"Listening","description":"Four-part B2 First listening practice based on Cambridge First Practice Tests 1, Test 3.","isActive":true,"totalQuestions":30,"maxScore":30,"relativeUrl":"exams/b2-listening-practice-3/index.html"},
     { examId: "brighton-a1-listening-final", title: "A1 Listening Exam", level: "A1", skill: "Listening", description: "Movers-based Listening final exam.", isActive: true, totalQuestions: 25, maxScore: 25, relativeUrl: "exams/a1-listening/index.html" },
     { examId: "brighton-a1-rw-final", title: "Brighton A1 Reading and Writing Final Exam", level: "A1", skill: "Reading and Writing", description: "Movers-based Reading and Writing final exam.", isActive: true, totalQuestions: 35, maxScore: 39, relativeUrl: "exams/a1-rw/index.html" },
     { examId: "brighton-b2-rue-final", title: "B2 Reading and Use of English Final Exam", level: "B2", skill: "Reading and Use of English", description: "Seven-part B2 First-style Reading and Use of English final exam.", isActive: true, totalQuestions: 52, maxScore: 70, relativeUrl: "exams/b2-rue/index.html" },
