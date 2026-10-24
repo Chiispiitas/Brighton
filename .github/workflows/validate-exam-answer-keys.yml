@@ -49,10 +49,11 @@ jobs:
           node --experimental-vm-modules Exams/validate-writing-backend.mjs
       - name: Validate writing dashboard actions
         run: |
-          npm install --prefix /tmp/brighton-validation --no-save jsdom@30.1.2
+          npm install --prefix /tmp/brighton-validation --no-save jsdom@30.1.2 @napi-rs/canvas@1.0.13
           NODE_PATH=/tmp/brighton-validation/node_modules node Exams/validate-writing-ui.cjs
           NODE_PATH=/tmp/brighton-validation/node_modules node Exams/validate-b2-listening-practice.cjs
           NODE_PATH=/tmp/brighton-validation/node_modules node Exams/validate-listening-results.cjs
+          NODE_PATH=/tmp/brighton-validation/node_modules node Exams/validate-results-png.cjs
       - name: Validate A1 Reading and Writing JavaScript syntax
         run: |
           node --check Exams/exams/a1-rw/main.js
