@@ -291,7 +291,9 @@
   }
 
   function resolveCanonicalExam(row) {
-    const catalog = examCatalog.length ? examCatalog : (config.FALLBACK_EXAMS || []);
+    // The live catalog only includes active exams. Historical and in-progress
+    // results still need identities from the bundled catalog.
+    const catalog = [...examCatalog, ...(config.FALLBACK_EXAMS || [])];
     const payload = payloadFromRow(row);
     const candidateIds = [row.examId, payload.examId].map(baseAssessmentId).filter(Boolean);
 
@@ -299,6 +301,10 @@
       const exact = catalog.find(exam => baseAssessmentId(exam.examId) === id);
       if (exact) return exact;
     }
+
+    // An explicit identity must never be replaced by another exam merely
+    // because it has the same level, skill or question count.
+    if (candidateIds.some(id => /^brighton-/i.test(id))) return null;
 
     const titleCandidates = [row.examTitle, payload.examTitle].map(value => normalizeIdentityText(stripLegacyMarker(value))).filter(Boolean);
     for (const title of titleCandidates) {
