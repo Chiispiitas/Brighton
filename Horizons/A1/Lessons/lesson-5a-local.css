@@ -9,7 +9,7 @@
 .l5a-page .hz-go-to { margin-block:.7mm 1.2mm; }
 .l5a-wardrobe { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:1mm 3mm; }
 .l5a-wardrobe figure { margin:0; text-align:center; }
-.l5a-clothing { height:24mm; width:100%; background-image:url('../Images/5A/Clothes-and-accessories-v1.png'); background-size:500% 200%; background-position:var(--px) var(--py); background-repeat:no-repeat; }
+.l5a-clothing { height:24mm; width:24mm; margin-inline:auto; background-image:url('../Images/5A/Clothes-and-accessories-v1.png'); background-size:500% 200%; background-position:var(--px) var(--py); background-repeat:no-repeat; }
 .l5a-wardrobe figcaption { font-size:8pt; color:var(--hz-unit-dark); font-weight:700; margin-top:.6mm; }
 .l5a-wordlist { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:1.5mm 2mm; margin-top:2mm; }
 .l5a-wordlist > span { display:flex; gap:1mm; align-items:baseline; white-space:nowrap; }
