@@ -419,6 +419,27 @@ Do not solve density by shrinking important text. Resolve density in this order:
 
 Short semantic labels that must read as one lexical item may use `white-space: nowrap` or content-sized grid columns when there is sufficient room. Do not allow a short two-word nationality, name, unit label or similar item to split awkwardly when the surrounding layout can absorb the width instead.
 
+### Consistent functional sizes
+
+Shared teaching elements use the same physical font size in every lesson and in both the assembled book and standalone HTML. Use the role tokens in `tokens.css`, rather than local font sizes or an inherited page size:
+
+| Role | Print size |
+| --- | --- |
+| Grammar/skills explanations, model forms, internal concept headings | 9.5pt |
+| Ordinary exercise questions, answers, practice models and vocabulary labels | 9.5pt |
+| Main exercise instructions | 8.9pt |
+| Grammar/skills header strips | 8pt |
+| Words in a box | 9pt |
+| Extra Practice prompt | 8pt |
+| Go to references and NEW WORDS labels | 7pt |
+| Audio track labels | 6.5pt |
+
+Differentiate rule headings and target forms through weight, accent and alignment, not an extra font size. In particular, the phrases below a grammar picture, correction examples and table cells must match the rest of the explanation.
+
+Reading articles, profiles, dialogues embedded in a scene, simulated screens, document artwork and feature headlines can retain purposeful editorial typography. These are content-specific exceptions, not a reason to resize the surrounding instructions or questions. Do not put a task role on an entire feature just to style a question inside it.
+
+Apply `.hz-task-text` to ordinary task roots; its inline descendants and list counters follow the shared task size. Keep role labels and badges at their own shared sizes. When larger type needs room, adjust nonessential gaps or recompose the activity; never add a one-off smaller size to make it fit. Audit computed text sizes, content and box clearance across all pages, then inspect the exported PDF.
+
 ### Bold
 
 Bold in learner-facing language has pedagogical meaning. Emphasize the exact form, word or feature the learner should notice; do not scatter bold merely for visual energy. Structural headings and chrome may use heavy weights normally.

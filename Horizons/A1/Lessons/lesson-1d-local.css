@@ -806,3 +806,7 @@
 .l1d-business-name > span:first-child { color: var(--hz-feature-blue); }
 .l1d-business-name__line { border-bottom-color: var(--hz-feature-blue); }
 .l1d-role-box h3 { color: #00636b; }
+
+/* Shared task sizes: reclaim panel gaps instead of reducing learner type. */
+.l1d-page:not(.l1d-page--2) .hz-exercise { padding-bottom: 1mm; }
+.l1d-page:not(.l1d-page--2) .l1d-checkin-copy { padding-block: 3mm !important; }

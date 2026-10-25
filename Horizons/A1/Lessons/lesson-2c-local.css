@@ -516,3 +516,10 @@
 .l2c-photo-example { margin:2mm 0 0; }
 .l2c-photo-write { display:block; height:7mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
 .l2c-pair-models p { margin:0 0 1mm; }
+
+/* Keep the vocabulary reference inside the page at the shared question size. */
+.l2c-page:not(.l2c-page--2) .l2c-family-strip { margin-top: 2.5mm; }
+.l2c-page:not(.l2c-page--2) .l2c-family-strip figcaption { margin-top: 1.5mm; }
+.l2c-page:not(.l2c-page--2) .l2c-reading-feature__head { margin-bottom: 2.5mm; }
+
+.l2c-page:not(.l2c-page--2) .hz-exercise { padding-bottom: 1mm; }

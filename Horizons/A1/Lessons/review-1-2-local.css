@@ -105,3 +105,8 @@
 .rr-mission:nth-child(4n + 3) .rr-challenge-ball { background:var(--hz-feature-teal); }
 .rr-mission:nth-child(4n + 4) .rr-challenge-ball { background:var(--hz-feature-blue); }
 .rr-challenge-ball p { margin:0; font-size:8.5pt; font-weight:400; line-height:1.25; text-align:center; }
+
+/* Retain the reading feature and answer area at the shared task scale. */
+.rr-page:not(.rr-page--2) .hz-exercise { padding-bottom: 1mm; }
+.rr-page:not(.rr-page--2) .rr-exercises { gap: 0; }
+.rr-page:not(.rr-page--2) .rr-choices-list { row-gap: 1mm; }

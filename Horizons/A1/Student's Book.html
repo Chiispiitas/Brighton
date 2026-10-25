@@ -70,6 +70,15 @@
   --hz-fs-lesson-title: 31pt;
   --hz-fs-lesson-id: 13pt;
 
+  /* Functional type roles: stable across lessons; source features retain art direction. */
+  --hz-fs-task: 9.5pt;
+  --hz-fs-instruction: 8.9pt;
+  --hz-fs-focus: 9.5pt;
+  --hz-fs-focus-header: 8pt;
+  --hz-fs-word-bank: 9pt;
+  --hz-fs-practice: 8pt;
+  --hz-fs-vocab: 9.5pt;
+
   /* A1 print-legibility floors.
      These are guardrails, not targets to shrink toward. Student-facing text
      should normally be larger; these values define the smallest acceptable
@@ -728,6 +737,28 @@
 /* Align navigation with exercise copy when it sits outside the exercise. */
 .hz-go-to--inset { margin-left: calc(var(--hz-exercise-marker-size) + 3mm); }
 .hz-reference-links { display: flex; flex-wrap: wrap; gap: 0 6mm; }
+
+/* ---------- Stable functional type roles ----------
+   Local compositions may vary, but these sizes belong to the book system.
+   Explicit task roots exclude reading features, message screens and artifact lettering. */
+.hz-page.hz-content .hz-exercise__instruction { font-size: var(--hz-fs-instruction) !important; }
+.hz-exercise__instruction :where(b, strong, em, .hz-answer-option) { font-size: inherit !important; }
+.hz-page.hz-content .hz-task-text,
+.hz-page.hz-content [data-hz-text-role="task"] { font-size: var(--hz-fs-task) !important; }
+.hz-page.hz-content .hz-task-text :where(div, p, li, span, em, b, strong, label, td, th, dd, dt, figcaption) { font-size: inherit !important; }
+.hz-page.hz-content .hz-focus-box__body { font-size: var(--hz-fs-focus) !important; }
+.hz-page.hz-content .hz-focus-box__body :where(p, li, span, b, strong, em, del, figcaption, th, td, div, h2, h3, h4) { font-size: inherit !important; }
+.hz-page.hz-content .hz-focus-box__header { font-size: var(--hz-fs-focus-header) !important; }
+.hz-page.hz-content :is(.hz-word-bank, .rr-word-bank, .l1c-country-bank) { font-size: var(--hz-fs-word-bank) !important; }
+:is(.hz-word-bank, .rr-word-bank, .l1c-country-bank) :where(span, b, strong, em) { font-size: inherit !important; }
+.hz-page.hz-content .hz-extra-practice__prompt { font-size: var(--hz-fs-practice) !important; }
+.hz-page.hz-content :is(.l1a-greeting figcaption, .l1b-occupation figcaption, .l1a-number__word) { font-size: var(--hz-fs-vocab) !important; }
+.l1a-greeting figcaption strong { font-size: inherit !important; }
+/* Preserve semantic labels inside instructions/tasks, rather than scaling with prose. */
+.hz-page.hz-content .hz-new-words { font-size: 7pt !important; }
+.hz-page.hz-content :is(.hz-audio-badge, .l1a-track, .l1b-track, .l1c-track) { font-size: 6.5pt !important; }
+
+.hz-page.hz-content .hz-task-text li::before { font-size: inherit !important; }
 
 /* Viewer controls only. Existing badge styling and all print geometry stay native. */
 .hz-audio-toggle {
@@ -4204,6 +4235,10 @@ body.hz-debug .hz-page::after {
 .l1d-business-name__line { border-bottom-color: var(--hz-feature-blue); }
 .l1d-role-box h3 { color: #00636b; }
 
+/* Shared task sizes: reclaim panel gaps instead of reducing learner type. */
+.l1d-page:not(.l1d-page--2) .hz-exercise { padding-bottom: 1mm; }
+.l1d-page:not(.l1d-page--2) .l1d-checkin-copy { padding-block: 3mm !important; }
+
 
 /* Horizons/A1/Lessons/lesson-2a-local.css */
 /* Horizons A1 — Lesson 2A scoped styles.
@@ -5983,6 +6018,13 @@ body.hz-debug .hz-page::after {
 .l2c-photo-write { display:block; height:7mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
 .l2c-pair-models p { margin:0 0 1mm; }
 
+/* Keep the vocabulary reference inside the page at the shared question size. */
+.l2c-page:not(.l2c-page--2) .l2c-family-strip { margin-top: 2.5mm; }
+.l2c-page:not(.l2c-page--2) .l2c-family-strip figcaption { margin-top: 1.5mm; }
+.l2c-page:not(.l2c-page--2) .l2c-reading-feature__head { margin-bottom: 2.5mm; }
+
+.l2c-page:not(.l2c-page--2) .hz-exercise { padding-bottom: 1mm; }
+
 
 /* Horizons/A1/Lessons/lesson-2d-local.css */
 /* Horizons A1 — Lesson 2D. Color evidence, a Lost and Found encounter,
@@ -6257,6 +6299,11 @@ body.hz-debug .hz-page::after {
 .rr-mission:nth-child(4n + 3) .rr-challenge-ball { background:var(--hz-feature-teal); }
 .rr-mission:nth-child(4n + 4) .rr-challenge-ball { background:var(--hz-feature-blue); }
 .rr-challenge-ball p { margin:0; font-size:8.5pt; font-weight:400; line-height:1.25; text-align:center; }
+
+/* Retain the reading feature and answer area at the shared task scale. */
+.rr-page:not(.rr-page--2) .hz-exercise { padding-bottom: 1mm; }
+.rr-page:not(.rr-page--2) .rr-exercises { gap: 0; }
+.rr-page:not(.rr-page--2) .rr-choices-list { row-gap: 1mm; }
 
 
 /* Horizons/A1/Lessons/lesson-3a-local.css */
@@ -7453,11 +7500,11 @@ body {
             <div class="hz-exercise__content">
               <p class="hz-exercise__instruction">Complete the sentences with <span class="l1a-target">am, is, are</span>.</p>
               <div class="hz-exercise__body l1a-sentence-grid">
-                <div class="l1a-sentence"><b>1</b><span>Good evening. I <span class="hz-answer-line" style="min-width:11mm"></span> Tom.</span></div>
-                <div class="l1a-sentence"><b>4</b><span>Simon and Lisa <span class="hz-answer-line" style="min-width:11mm"></span> friends.</span></div>
-                <div class="l1a-sentence"><b>2</b><span>You <span class="hz-answer-line" style="min-width:11mm"></span> in Class 3.</span></div>
-                <div class="l1a-sentence"><b>5</b><span><span class="hz-answer-line" style="min-width:11mm"></span> you a teacher?</span></div>
-                <div class="l1a-sentence"><b>3</b><span>Mary <span class="hz-answer-line" style="min-width:11mm"></span> American.</span></div>
+                <div class="l1a-sentence hz-task-text"><b>1</b><span>Good evening. I <span class="hz-answer-line" style="min-width:11mm"></span> Tom.</span></div>
+                <div class="l1a-sentence hz-task-text"><b>4</b><span>Simon and Lisa <span class="hz-answer-line" style="min-width:11mm"></span> friends.</span></div>
+                <div class="l1a-sentence hz-task-text"><b>2</b><span>You <span class="hz-answer-line" style="min-width:11mm"></span> in Class 3.</span></div>
+                <div class="l1a-sentence hz-task-text"><b>5</b><span><span class="hz-answer-line" style="min-width:11mm"></span> you a teacher?</span></div>
+                <div class="l1a-sentence hz-task-text"><b>3</b><span>Mary <span class="hz-answer-line" style="min-width:11mm"></span> American.</span></div>
               </div>
             </div>
           </section>
@@ -7467,10 +7514,10 @@ body {
             <div class="hz-exercise__content">
               <p class="hz-exercise__instruction"><span class="l1a-track">♪ 1.2</span>Listen and repeat the contractions.</p>
               <div class="hz-exercise__body l1a-contractions">
-                <div class="l1a-contraction"><b>1</b> I <strong>am</strong> = I’m</div>
-                <div class="l1a-contraction"><b>2</b> You <strong>are</strong> = You’re</div>
-                <div class="l1a-contraction"><b>3</b> He <strong>is</strong> = He’s</div>
-                <div class="l1a-contraction"><b>4</b> She <strong>is</strong> = She’s</div>
+                <div class="l1a-contraction hz-task-text"><b>1</b> I <strong>am</strong> = I’m</div>
+                <div class="l1a-contraction hz-task-text"><b>2</b> You <strong>are</strong> = You’re</div>
+                <div class="l1a-contraction hz-task-text"><b>3</b> He <strong>is</strong> = He’s</div>
+                <div class="l1a-contraction hz-task-text"><b>4</b> She <strong>is</strong> = She’s</div>
               </div>
             </div>
           </section>
@@ -7538,7 +7585,7 @@ body {
             <div class="hz-exercise-number">7</div>
             <div class="hz-exercise__content">
               <p class="hz-exercise__instruction"><span class="l1a-track">♪ 1.5</span>Listen and choose the correct names.</p>
-              <div class="hz-exercise__body l1a-name-options">
+              <div class="hz-exercise__body l1a-name-options hz-task-text">
                 <div class="l1a-name-options__item"><span class="l1a-name-options__number">1</span><div class="l1a-name-options__choices"><span><i class="hz-choice-box"></i> <em class="hz-answer-option">Steven</em></span><span><i class="hz-choice-box"></i> <em class="hz-answer-option">Stephen</em></span></div></div>
                 <div class="l1a-name-options__item"><span class="l1a-name-options__number">2</span><div class="l1a-name-options__choices"><span><i class="hz-choice-box"></i> <em class="hz-answer-option">Allison</em></span><span><i class="hz-choice-box"></i> <em class="hz-answer-option">Alisson</em></span></div></div>
                 <div class="l1a-name-options__item"><span class="l1a-name-options__number">3</span><div class="l1a-name-options__choices"><span><i class="hz-choice-box"></i> <em class="hz-answer-option">Bryan</em></span><span><i class="hz-choice-box"></i> <em class="hz-answer-option">Brayan</em></span></div></div>
@@ -7576,25 +7623,25 @@ body {
                 <div class="l1a-profile">
                   <div class="l1a-profile__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Image placeholder</span></div></div>
                   <div class="l1a-profile__form">
-                    <div class="l1a-profile__row"><span>Name</span><span class="l1a-profile__blank"></span></div>
-                    <div class="l1a-profile__row"><span>Class</span><span class="l1a-profile__blank"></span></div>
-                    <div class="l1a-profile__row"><span>Phone</span><span class="l1a-profile__blank"></span></div>
+                    <div class="l1a-profile__row hz-task-text"><span>Name</span><span class="l1a-profile__blank"></span></div>
+                    <div class="l1a-profile__row hz-task-text"><span>Class</span><span class="l1a-profile__blank"></span></div>
+                    <div class="l1a-profile__row hz-task-text"><span>Phone</span><span class="l1a-profile__blank"></span></div>
                   </div>
                 </div>
                 <div class="l1a-profile">
                   <div class="l1a-profile__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Image placeholder</span></div></div>
                   <div class="l1a-profile__form">
-                    <div class="l1a-profile__row"><span>Name</span><span class="l1a-profile__blank"></span></div>
-                    <div class="l1a-profile__row"><span>Class</span><span class="l1a-profile__blank"></span></div>
-                    <div class="l1a-profile__row"><span>Phone</span><span class="l1a-profile__blank"></span></div>
+                    <div class="l1a-profile__row hz-task-text"><span>Name</span><span class="l1a-profile__blank"></span></div>
+                    <div class="l1a-profile__row hz-task-text"><span>Class</span><span class="l1a-profile__blank"></span></div>
+                    <div class="l1a-profile__row hz-task-text"><span>Phone</span><span class="l1a-profile__blank"></span></div>
                   </div>
                 </div>
                 <div class="l1a-profile">
                   <div class="l1a-profile__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Image placeholder</span></div></div>
                   <div class="l1a-profile__form">
-                    <div class="l1a-profile__row"><span>Name</span><span class="l1a-profile__blank"></span></div>
-                    <div class="l1a-profile__row"><span>Class</span><span class="l1a-profile__blank"></span></div>
-                    <div class="l1a-profile__row"><span>Phone</span><span class="l1a-profile__blank"></span></div>
+                    <div class="l1a-profile__row hz-task-text"><span>Name</span><span class="l1a-profile__blank"></span></div>
+                    <div class="l1a-profile__row hz-task-text"><span>Class</span><span class="l1a-profile__blank"></span></div>
+                    <div class="l1a-profile__row hz-task-text"><span>Phone</span><span class="l1a-profile__blank"></span></div>
                   </div>
                 </div>
               </div>
@@ -7814,18 +7861,18 @@ body {
               <div class="hz-exercise__body l1b-match-stage">
                 <div class="l1b-match-list">
                   <div class="l1b-match-col">
-                    <div class="l1b-match-item"><b>1</b><span>Allison</span></div>
-                    <div class="l1b-match-item"><b>2</b><span>Mike</span></div>
-                    <div class="l1b-match-item"><b>3</b><span>John</span></div>
-                    <div class="l1b-match-item"><b>4</b><span>Lisa</span></div>
-                    <div class="l1b-match-item"><b>5</b><span>Bryan</span></div>
+                    <div class="l1b-match-item hz-task-text"><b>1</b><span>Allison</span></div>
+                    <div class="l1b-match-item hz-task-text"><b>2</b><span>Mike</span></div>
+                    <div class="l1b-match-item hz-task-text"><b>3</b><span>John</span></div>
+                    <div class="l1b-match-item hz-task-text"><b>4</b><span>Lisa</span></div>
+                    <div class="l1b-match-item hz-task-text"><b>5</b><span>Bryan</span></div>
                   </div>
                   <div class="l1b-match-col">
-                    <div class="l1b-match-item"><b>a</b><span>office worker</span></div>
-                    <div class="l1b-match-item"><b>b</b><span>doctor</span></div>
-                    <div class="l1b-match-item"><b>c</b><span>waitress</span></div>
-                    <div class="l1b-match-item"><b>d</b><span>salesclerk</span></div>
-                    <div class="l1b-match-item"><b>e</b><span>farmer</span></div>
+                    <div class="l1b-match-item hz-task-text"><b>a</b><span>office worker</span></div>
+                    <div class="l1b-match-item hz-task-text"><b>b</b><span>doctor</span></div>
+                    <div class="l1b-match-item hz-task-text"><b>c</b><span>waitress</span></div>
+                    <div class="l1b-match-item hz-task-text"><b>d</b><span>salesclerk</span></div>
+                    <div class="l1b-match-item hz-task-text"><b>e</b><span>farmer</span></div>
                   </div>
                 </div>
                 <div class="l1b-workers-photo">
@@ -7882,27 +7929,27 @@ body {
                 <div class="l1c-celebrities">
                   <figure class="l1c-celebrity">
                     <div class="l1c-celebrity__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Lionel Messi · portrait crop</span></div></div>
-                    <figcaption class="l1c-celebrity__caption"><b>1</b><span>Lionel Messi</span></figcaption>
+                    <figcaption class="l1c-celebrity__caption hz-task-text"><b>1</b><span>Lionel Messi</span></figcaption>
                     <span class="l1c-celebrity__line"></span>
                   </figure>
                   <figure class="l1c-celebrity">
                     <div class="l1c-celebrity__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Taylor Swift · portrait crop</span></div></div>
-                    <figcaption class="l1c-celebrity__caption"><b>2</b><span>Taylor Swift</span></figcaption>
+                    <figcaption class="l1c-celebrity__caption hz-task-text"><b>2</b><span>Taylor Swift</span></figcaption>
                     <span class="l1c-celebrity__line"></span>
                   </figure>
                   <figure class="l1c-celebrity">
                     <div class="l1c-celebrity__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Keanu Reeves · portrait crop</span></div></div>
-                    <figcaption class="l1c-celebrity__caption"><b>3</b><span>Keanu Reeves</span></figcaption>
+                    <figcaption class="l1c-celebrity__caption hz-task-text"><b>3</b><span>Keanu Reeves</span></figcaption>
                     <span class="l1c-celebrity__line"></span>
                   </figure>
                   <figure class="l1c-celebrity">
                     <div class="l1c-celebrity__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Millie B. Brown · portrait crop</span></div></div>
-                    <figcaption class="l1c-celebrity__caption"><b>4</b><span>Millie B. Brown</span></figcaption>
+                    <figcaption class="l1c-celebrity__caption hz-task-text"><b>4</b><span>Millie B. Brown</span></figcaption>
                     <span class="l1c-celebrity__line"></span>
                   </figure>
                   <figure class="l1c-celebrity">
                     <div class="l1c-celebrity__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Lee Jung-jae · portrait crop</span></div></div>
-                    <figcaption class="l1c-celebrity__caption"><b>5</b><span>Lee Jung-jae</span></figcaption>
+                    <figcaption class="l1c-celebrity__caption hz-task-text"><b>5</b><span>Lee Jung-jae</span></figcaption>
                     <span class="l1c-celebrity__line"></span>
                   </figure>
                 </div>
@@ -7915,11 +7962,11 @@ body {
             <div class="hz-exercise__content">
               <p class="hz-exercise__instruction">Match the countries with the nationalities.</p>
               <div class="hz-exercise__body l1c-nationalities">
-                <div class="l1c-nationality"><b>1</b><span>Canadian</span><span class="l1c-nationality__line"></span></div>
-                <div class="l1c-nationality"><b>2</b><span>American</span><span class="l1c-nationality__line"></span></div>
-                <div class="l1c-nationality"><b>3</b><span>South Korean</span><span class="l1c-nationality__line"></span></div>
-                <div class="l1c-nationality"><b>4</b><span>Argentinian</span><span class="l1c-nationality__line"></span></div>
-                <div class="l1c-nationality"><b>5</b><span>British</span><span class="l1c-nationality__line"></span></div>
+                <div class="l1c-nationality hz-task-text"><b>1</b><span>Canadian</span><span class="l1c-nationality__line"></span></div>
+                <div class="l1c-nationality hz-task-text"><b>2</b><span>American</span><span class="l1c-nationality__line"></span></div>
+                <div class="l1c-nationality hz-task-text"><b>3</b><span>South Korean</span><span class="l1c-nationality__line"></span></div>
+                <div class="l1c-nationality hz-task-text"><b>4</b><span>Argentinian</span><span class="l1c-nationality__line"></span></div>
+                <div class="l1c-nationality hz-task-text"><b>5</b><span>British</span><span class="l1c-nationality__line"></span></div>
               </div>
             </div>
           </section>
@@ -7994,19 +8041,19 @@ body {
               <p class="hz-exercise__instruction">Complete with adjectives from Exercise 3.</p>
               <div class="hz-exercise__body l1c-adjective-field">
                 <div class="l1c-adjective-field__grid">
-                  <div class="l1c-word-map">
+                  <div class="l1c-word-map hz-task-text">
                     <h3>Weather</h3>
                     <div class="l1c-word-map__lines"><span class="l1c-word-map__line"></span><span class="l1c-word-map__line"></span></div>
                   </div>
-                  <div class="l1c-word-map">
+                  <div class="l1c-word-map hz-task-text">
                     <h3>Prices</h3>
                     <div class="l1c-word-map__lines"><span class="l1c-word-map__line"></span><span class="l1c-word-map__line"></span></div>
                   </div>
-                  <div class="l1c-word-map">
+                  <div class="l1c-word-map hz-task-text">
                     <h3>Cities and places</h3>
                     <div class="l1c-word-map__lines"><span class="l1c-word-map__line"></span><span class="l1c-word-map__line"></span><span class="l1c-word-map__line"></span></div>
                   </div>
-                  <div class="l1c-word-map">
+                  <div class="l1c-word-map hz-task-text">
                     <h3>People</h3>
                     <div class="l1c-word-map__lines"><span class="l1c-word-map__line"></span></div>
                   </div>
@@ -8020,12 +8067,12 @@ body {
             <div class="hz-exercise__content">
               <p class="hz-exercise__instruction">Complete with adjectives from Exercise 3.</p>
               <div class="hz-exercise__body l1c-sentences">
-                <div class="l1c-sentence"><b>1</b><span>Rio de Janeiro is a <span class="hz-answer-line" style="min-width:22mm"></span> city.</span></div>
-                <div class="l1c-sentence"><b>4</b><span>Hotels in Hong Kong are very <span class="hz-answer-line" style="min-width:22mm"></span>.</span></div>
-                <div class="l1c-sentence"><b>2</b><span>The people in Rio de Janeiro are very <span class="hz-answer-line" style="min-width:22mm"></span>.</span></div>
-                <div class="l1c-sentence"><b>5</b><span>Toronto has <span class="hz-answer-line" style="min-width:18mm"></span> and <span class="hz-answer-line" style="min-width:18mm"></span> buildings.</span></div>
-                <div class="l1c-sentence"><b>3</b><span>Some parks in Hong Kong are <span class="hz-answer-line" style="min-width:22mm"></span>.</span></div>
-                <div class="l1c-sentence"><b>6</b><span>Toronto is very <span class="hz-answer-line" style="min-width:22mm"></span>.</span></div>
+                <div class="l1c-sentence hz-task-text"><b>1</b><span>Rio de Janeiro is a <span class="hz-answer-line" style="min-width:22mm"></span> city.</span></div>
+                <div class="l1c-sentence hz-task-text"><b>4</b><span>Hotels in Hong Kong are very <span class="hz-answer-line" style="min-width:22mm"></span>.</span></div>
+                <div class="l1c-sentence hz-task-text"><b>2</b><span>The people in Rio de Janeiro are very <span class="hz-answer-line" style="min-width:22mm"></span>.</span></div>
+                <div class="l1c-sentence hz-task-text"><b>5</b><span>Toronto has <span class="hz-answer-line" style="min-width:18mm"></span> and <span class="hz-answer-line" style="min-width:18mm"></span> buildings.</span></div>
+                <div class="l1c-sentence hz-task-text"><b>3</b><span>Some parks in Hong Kong are <span class="hz-answer-line" style="min-width:22mm"></span>.</span></div>
+                <div class="l1c-sentence hz-task-text"><b>6</b><span>Toronto is very <span class="hz-answer-line" style="min-width:22mm"></span>.</span></div>
               </div>
             </div>
           </section>
@@ -8039,8 +8086,8 @@ body {
                   <div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Two students discussing city photos · wide portrait crop</span></div>
                 </div>
                 <div class="l1c-pair-copy">
-                  <div class="l1c-dialogue-line"><p><strong>A:</strong> What city?</p><p><strong>B:</strong> Rio de Janeiro.</p></div>
-                  <div class="l1c-dialogue-line"><p><strong>A:</strong> Is it big?</p><p><strong>B:</strong> Yes. It is big, hot and beautiful.</p></div>
+                  <div class="l1c-dialogue-line hz-task-text"><p><strong>A:</strong> What city?</p><p><strong>B:</strong> Rio de Janeiro.</p></div>
+                  <div class="l1c-dialogue-line hz-task-text"><p><strong>A:</strong> Is it big?</p><p><strong>B:</strong> Yes. It is big, hot and beautiful.</p></div>
                 </div>
               </div>
             </div>
@@ -8130,10 +8177,10 @@ body {
               <p class="hz-exercise__instruction">Look at the conversation again. Answer.</p>
               <div class="hz-exercise__body">
                 <div class="l1d-discovery">
-                  <div class="l1d-discovery__item"><b>1</b><div>What question is for the last name?<span class="l1d-discovery__choices">a What is your first name?    b What is your last name?</span></div></div>
-                  <div class="l1d-discovery__item"><b>3</b><div>Emma, Carter, Canada, Toronto: capital letter?<span class="l1d-discovery__choices">Yes    No</span></div></div>
-                  <div class="l1d-discovery__item"><b>2</b><div>What question is for the country?<span class="l1d-discovery__choices">a Where are you from?    b What is your city?</span></div></div>
-                  <div class="l1d-discovery__item"><b>4</b><div>emma.carter@email.com: capital letter?<span class="l1d-discovery__choices">Yes    No</span></div></div>
+                  <div class="l1d-discovery__item hz-task-text"><b>1</b><div>What question is for the last name?<span class="l1d-discovery__choices">a What is your first name?    b What is your last name?</span></div></div>
+                  <div class="l1d-discovery__item hz-task-text"><b>3</b><div>Emma, Carter, Canada, Toronto: capital letter?<span class="l1d-discovery__choices">Yes    No</span></div></div>
+                  <div class="l1d-discovery__item hz-task-text"><b>2</b><div>What question is for the country?<span class="l1d-discovery__choices">a Where are you from?    b What is your city?</span></div></div>
+                  <div class="l1d-discovery__item hz-task-text"><b>4</b><div>emma.carter@email.com: capital letter?<span class="l1d-discovery__choices">Yes    No</span></div></div>
                 </div>
                 <div class="l1d-pair-check">PAIRWORK · Work in pairs.</div>
               </div>
@@ -8147,12 +8194,12 @@ body {
             <div class="hz-exercise__content">
               <p class="hz-exercise__instruction">Write with capital letters.</p>
               <div class="hz-exercise__body l1d-practice-grid">
-                <div class="l1d-practice-item"><b>1</b><div><p>emma carter</p><span class="l1d-practice-line"></span></div></div>
-                <div class="l1d-practice-item"><b>4</b><div><p>my name is daniel.</p><span class="l1d-practice-line"></span></div></div>
-                <div class="l1d-practice-item"><b>2</b><div><p>manta, ecuador</p><span class="l1d-practice-line"></span></div></div>
-                <div class="l1d-practice-item"><b>5</b><div><p>i am from canada.</p><span class="l1d-practice-line"></span></div></div>
-                <div class="l1d-practice-item"><b>3</b><div><p>sofia lopez</p><span class="l1d-practice-line"></span></div></div>
-                <div class="l1d-practice-item"><b>6</b><div><p>i am in toronto.</p><span class="l1d-practice-line"></span></div></div>
+                <div class="l1d-practice-item hz-task-text"><b>1</b><div><p>emma carter</p><span class="l1d-practice-line"></span></div></div>
+                <div class="l1d-practice-item hz-task-text"><b>4</b><div><p>my name is daniel.</p><span class="l1d-practice-line"></span></div></div>
+                <div class="l1d-practice-item hz-task-text"><b>2</b><div><p>manta, ecuador</p><span class="l1d-practice-line"></span></div></div>
+                <div class="l1d-practice-item hz-task-text"><b>5</b><div><p>i am from canada.</p><span class="l1d-practice-line"></span></div></div>
+                <div class="l1d-practice-item hz-task-text"><b>3</b><div><p>sofia lopez</p><span class="l1d-practice-line"></span></div></div>
+                <div class="l1d-practice-item hz-task-text"><b>6</b><div><p>i am in toronto.</p><span class="l1d-practice-line"></span></div></div>
               </div>
             </div>
           </section>
@@ -8163,20 +8210,20 @@ body {
               <p class="hz-exercise__instruction">Match the questions with the words.</p>
               <div class="hz-exercise__body l1d-question-match">
                 <div class="l1d-question-col">
-                  <div class="l1d-question-match__item"><b>1</b><span>What is your first name?</span></div>
-                  <div class="l1d-question-match__item"><b>2</b><span>What is your last name?</span></div>
-                  <div class="l1d-question-match__item"><b>3</b><span>Where are you from?</span></div>
-                  <div class="l1d-question-match__item"><b>4</b><span>What is your city?</span></div>
-                  <div class="l1d-question-match__item"><b>5</b><span>What is your phone number?</span></div>
-                  <div class="l1d-question-match__item"><b>6</b><span>What is your email?</span></div>
+                  <div class="l1d-question-match__item hz-task-text"><b>1</b><span>What is your first name?</span></div>
+                  <div class="l1d-question-match__item hz-task-text"><b>2</b><span>What is your last name?</span></div>
+                  <div class="l1d-question-match__item hz-task-text"><b>3</b><span>Where are you from?</span></div>
+                  <div class="l1d-question-match__item hz-task-text"><b>4</b><span>What is your city?</span></div>
+                  <div class="l1d-question-match__item hz-task-text"><b>5</b><span>What is your phone number?</span></div>
+                  <div class="l1d-question-match__item hz-task-text"><b>6</b><span>What is your email?</span></div>
                 </div>
                 <div class="l1d-question-col">
-                  <div class="l1d-question-match__item"><b>a</b><span>phone number</span></div>
-                  <div class="l1d-question-match__item"><b>b</b><span>country</span></div>
-                  <div class="l1d-question-match__item"><b>c</b><span>email</span></div>
-                  <div class="l1d-question-match__item"><b>d</b><span>first name</span></div>
-                  <div class="l1d-question-match__item"><b>e</b><span>city</span></div>
-                  <div class="l1d-question-match__item"><b>f</b><span>last name</span></div>
+                  <div class="l1d-question-match__item hz-task-text"><b>a</b><span>phone number</span></div>
+                  <div class="l1d-question-match__item hz-task-text"><b>b</b><span>country</span></div>
+                  <div class="l1d-question-match__item hz-task-text"><b>c</b><span>email</span></div>
+                  <div class="l1d-question-match__item hz-task-text"><b>d</b><span>first name</span></div>
+                  <div class="l1d-question-match__item hz-task-text"><b>e</b><span>city</span></div>
+                  <div class="l1d-question-match__item hz-task-text"><b>f</b><span>last name</span></div>
                 </div>
               </div>
             </div>
@@ -8202,12 +8249,12 @@ body {
               <p class="hz-exercise__instruction">Choose one. Write the name.</p>
               <div class="hz-exercise__body l1d-business-stage">
                 <div class="l1d-business-options">
-                  <div class="l1d-business-option"><div class="l1d-business-option__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Gym reception · detail crop</span></div></div><strong>Gym</strong></div>
-                  <div class="l1d-business-option"><div class="l1d-business-option__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Hotel lobby · detail crop</span></div></div><strong>Hotel</strong></div>
-                  <div class="l1d-business-option"><div class="l1d-business-option__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Language school · detail crop</span></div></div><strong>English school</strong></div>
-                  <div class="l1d-business-option"><div class="l1d-business-option__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Club / service · detail crop</span></div></div><strong>Club / Your idea</strong></div>
+                  <div class="l1d-business-option hz-task-text"><div class="l1d-business-option__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Gym reception · detail crop</span></div></div><strong>Gym</strong></div>
+                  <div class="l1d-business-option hz-task-text"><div class="l1d-business-option__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Hotel lobby · detail crop</span></div></div><strong>Hotel</strong></div>
+                  <div class="l1d-business-option hz-task-text"><div class="l1d-business-option__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Language school · detail crop</span></div></div><strong>English school</strong></div>
+                  <div class="l1d-business-option hz-task-text"><div class="l1d-business-option__photo"><div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Club / service · detail crop</span></div></div><strong>Club / Your idea</strong></div>
                 </div>
-                <div class="l1d-business-name"><span>Name</span><span class="l1d-business-name__line"></span></div>
+                <div class="l1d-business-name hz-task-text"><span>Name</span><span class="l1d-business-name__line"></span></div>
               </div>
             </div>
           </section>
@@ -8216,7 +8263,7 @@ body {
             <div class="hz-exercise-number">6</div>
             <div class="hz-exercise__content">
               <p class="hz-exercise__instruction">What information? Choose five or six.</p>
-              <div class="hz-exercise__body l1d-info-select">
+              <div class="hz-exercise__body l1d-info-select hz-task-text">
                 <span><i class="hz-choice-box"></i> first name</span>
                 <span><i class="hz-choice-box"></i> last name</span>
                 <span><i class="hz-choice-box"></i> country</span>
@@ -8237,7 +8284,7 @@ body {
                     <div class="hz-photo-placeholder"><span class="hz-photo-placeholder__meta">Student-run reception desk · two classmates role-playing staff and customer · wide crop</span></div>
                   </div>
 
-                  <div class="l1d-role-box">
+                  <div class="l1d-role-box hz-task-text">
                     <h3>Student A · Receptionist</h3>
                     <p>Ask the questions. Write the information.</p>
                     <div class="l1d-role-questions">
@@ -8250,7 +8297,7 @@ body {
                     </div>
                   </div>
 
-                  <div class="l1d-role-box">
+                  <div class="l1d-role-box hz-task-text">
                     <h3>Student B</h3>
                     <p>Answer the questions. Spell your name.</p>
                   </div>
@@ -8268,9 +8315,9 @@ body {
             <div class="hz-exercise__content">
               <p class="hz-exercise__instruction">Look at the form.</p>
               <div class="hz-exercise__body l1d-peer-check">
-                <div class="l1d-peer-check__item"><span class="l1d-peer-check__box"></span><span>Information correct?</span></div>
-                <div class="l1d-peer-check__item"><span class="l1d-peer-check__box"></span><span>Capital letters?</span></div>
-                <div class="l1d-peer-check__item"><span class="l1d-peer-check__box"></span><span>Form complete?</span></div>
+                <div class="l1d-peer-check__item hz-task-text"><span class="l1d-peer-check__box"></span><span>Information correct?</span></div>
+                <div class="l1d-peer-check__item hz-task-text"><span class="l1d-peer-check__box"></span><span>Capital letters?</span></div>
+                <div class="l1d-peer-check__item hz-task-text"><span class="l1d-peer-check__box"></span><span>Form complete?</span></div>
               </div>
             </div>
           </section>
@@ -8328,14 +8375,14 @@ body {
                 <div class="l2a-word-bank">
                   <span class="hz-new-words">NEW WORDS</span>
                   <div class="l2a-word-list">
-                    <div class="l2a-word"><span class="l2a-match-line"></span><strong>phone</strong></div>
-                    <div class="l2a-word"><span class="l2a-match-line"></span><strong>keys</strong></div>
-                    <div class="l2a-word"><span class="l2a-match-line"></span><strong>wallet</strong></div>
-                    <div class="l2a-word"><span class="l2a-match-line"></span><strong>notebook</strong></div>
-                    <div class="l2a-word"><span class="l2a-match-line"></span><strong>pen</strong></div>
-                    <div class="l2a-word"><span class="l2a-match-line"></span><strong>headphones</strong></div>
-                    <div class="l2a-word"><span class="l2a-match-line"></span><strong>bottle</strong></div>
-                    <div class="l2a-word"><span class="l2a-match-line"></span><strong>umbrella</strong></div>
+                    <div class="l2a-word hz-task-text"><span class="l2a-match-line"></span><strong>phone</strong></div>
+                    <div class="l2a-word hz-task-text"><span class="l2a-match-line"></span><strong>keys</strong></div>
+                    <div class="l2a-word hz-task-text"><span class="l2a-match-line"></span><strong>wallet</strong></div>
+                    <div class="l2a-word hz-task-text"><span class="l2a-match-line"></span><strong>notebook</strong></div>
+                    <div class="l2a-word hz-task-text"><span class="l2a-match-line"></span><strong>pen</strong></div>
+                    <div class="l2a-word hz-task-text"><span class="l2a-match-line"></span><strong>headphones</strong></div>
+                    <div class="l2a-word hz-task-text"><span class="l2a-match-line"></span><strong>bottle</strong></div>
+                    <div class="l2a-word hz-task-text"><span class="l2a-match-line"></span><strong>umbrella</strong></div>
                   </div>
                 </div>
               </div>
@@ -8394,27 +8441,27 @@ body {
               <p class="hz-exercise__instruction">Choose this, that, these or those.</p>
               <div class="hz-exercise__body l2a-choice-grid">
                 <!-- CROP CONTROL: preserve the full person/object scene with object-fit: contain. -->
-                <div class="l2a-choice-item">
+                <div class="l2a-choice-item hz-task-text">
                   <div class="l2a-choice-photo l2a-photo-slot" data-image-slot="2A-E04-01"><img src="./Images/2A/Close wallet.png" alt="A wallet close to a person" style="object-fit: contain; object-position: center;"></div>
                   <p><b>1</b> <span class="l2a-answer"></span> is my wallet.</p>
                 </div>
-                <div class="l2a-choice-item">
+                <div class="l2a-choice-item hz-task-text">
                   <div class="l2a-choice-photo l2a-photo-slot" data-image-slot="2A-E04-02"><img src="./Images/2A/Far notebook.png" alt="A notebook far from a person" style="object-fit: contain; object-position: center;"></div>
                   <p><b>2</b> <span class="l2a-answer"></span> is my notebook.</p>
                 </div>
-                <div class="l2a-choice-item">
+                <div class="l2a-choice-item hz-task-text">
                   <div class="l2a-choice-photo l2a-photo-slot" data-image-slot="2A-E04-03"><img src="./Images/2A/Close keys.png" alt="Keys close to a person" style="object-fit: contain; object-position: center;"></div>
                   <p><b>3</b> <span class="l2a-answer"></span> are my keys.</p>
                 </div>
-                <div class="l2a-choice-item">
+                <div class="l2a-choice-item hz-task-text">
                   <div class="l2a-choice-photo l2a-photo-slot" data-image-slot="2A-E04-04"><img src="./Images/2A/Far headphones.png" alt="Headphones far from a person" style="object-fit: contain; object-position: center;"></div>
                   <p><b>4</b> <span class="l2a-answer"></span> are my headphones.</p>
                 </div>
-                <div class="l2a-choice-item">
+                <div class="l2a-choice-item hz-task-text">
                   <div class="l2a-choice-photo l2a-photo-slot" data-image-slot="2A-E04-05"><img src="./Images/2A/Close bottle.png" alt="A bottle close to a person" style="object-fit: contain; object-position: center;"></div>
                   <p><b>5</b> <span class="l2a-answer"></span> is my bottle.</p>
                 </div>
-                <div class="l2a-choice-item">
+                <div class="l2a-choice-item hz-task-text">
                   <div class="l2a-choice-photo l2a-photo-slot" data-image-slot="2A-E04-06"><img src="./Images/2A/Far pens.png" alt="Pens far from a person" style="object-fit: contain; object-position: center;"></div>
                   <p><b>6</b> <span class="l2a-answer"></span> are my pens.</p>
                 </div>
@@ -8427,17 +8474,17 @@ body {
             <div class="hz-exercise__content">
               <p class="hz-exercise__instruction"><span class="hz-audio-badge">♪ 2.2</span>Listen and choose.</p>
               <div class="hz-exercise__body l2a-listening-grid">
-                <div class="l2a-listening-item"><b>1</b><span>phone</span><span class="l2a-listening-options"><span><i class="hz-choice-box"></i> <em class="hz-answer-option">this</em></span><span><i class="hz-choice-box"></i> <em class="hz-answer-option">that</em></span></span></div>
-                <div class="l2a-listening-item"><b>2</b><span>keys</span><span class="l2a-listening-options"><span><i class="hz-choice-box"></i> <em class="hz-answer-option">these</em></span><span><i class="hz-choice-box"></i> <em class="hz-answer-option">those</em></span></span></div>
-                <div class="l2a-listening-item"><b>3</b><span>notebook</span><span class="l2a-listening-options"><span><i class="hz-choice-box"></i> <em class="hz-answer-option">this</em></span><span><i class="hz-choice-box"></i> <em class="hz-answer-option">that</em></span></span></div>
-                <div class="l2a-listening-item"><b>4</b><span>headphones</span><span class="l2a-listening-options"><span><i class="hz-choice-box"></i> <em class="hz-answer-option">these</em></span><span><i class="hz-choice-box"></i> <em class="hz-answer-option">those</em></span></span></div>
-                <div class="l2a-listening-item"><b>5</b><span>bottle</span><span class="l2a-listening-options"><span><i class="hz-choice-box"></i> <em class="hz-answer-option">this</em></span><span><i class="hz-choice-box"></i> <em class="hz-answer-option">that</em></span></span></div>
-                <div class="l2a-listening-item"><b>6</b><span>pens</span><span class="l2a-listening-options"><span><i class="hz-choice-box"></i> <em class="hz-answer-option">these</em></span><span><i class="hz-choice-box"></i> <em class="hz-answer-option">those</em></span></span></div>
+                <div class="l2a-listening-item hz-task-text"><b>1</b><span>phone</span><span class="l2a-listening-options"><span><i class="hz-choice-box"></i> <em class="hz-answer-option">this</em></span><span><i class="hz-choice-box"></i> <em class="hz-answer-option">that</em></span></span></div>
+                <div class="l2a-listening-item hz-task-text"><b>2</b><span>keys</span><span class="l2a-listening-options"><span><i class="hz-choice-box"></i> <em class="hz-answer-option">these</em></span><span><i class="hz-choice-box"></i> <em class="hz-answer-option">those</em></span></span></div>
+                <div class="l2a-listening-item hz-task-text"><b>3</b><span>notebook</span><span class="l2a-listening-options"><span><i class="hz-choice-box"></i> <em class="hz-answer-option">this</em></span><span><i class="hz-choice-box"></i> <em class="hz-answer-option">that</em></span></span></div>
+                <div class="l2a-listening-item hz-task-text"><b>4</b><span>headphones</span><span class="l2a-listening-options"><span><i class="hz-choice-box"></i> <em class="hz-answer-option">these</em></span><span><i class="hz-choice-box"></i> <em class="hz-answer-option">those</em></span></span></div>
+                <div class="l2a-listening-item hz-task-text"><b>5</b><span>bottle</span><span class="l2a-listening-options"><span><i class="hz-choice-box"></i> <em class="hz-answer-option">this</em></span><span><i class="hz-choice-box"></i> <em class="hz-answer-option">that</em></span></span></div>
+                <div class="l2a-listening-item hz-task-text"><b>6</b><span>pens</span><span class="l2a-listening-options"><span><i class="hz-choice-box"></i> <em class="hz-answer-option">these</em></span><span><i class="hz-choice-box"></i> <em class="hz-answer-option">those</em></span></span></div>
               </div>
             </div>
           </section>
 
-          <section class="hz-exercise"><div class="hz-exercise-number">5</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Work in pairs. Look at five real items. Look again: four! Ask and guess.</p><div class="hz-exercise__body"><div class="l2a-pair-stage"><div class="l2a-pair-copy"><h2 class="l2a-memory-title">What is it?</h2><div class="l2a-pair-example hz-dialogue-text"><p><strong>A:</strong> Is it a phone?</p><p><strong>B:</strong> No.</p><p><strong>A:</strong> Is it a pen?</p><p><strong>B:</strong> Yes! This is my pen.</p></div><div class="l2a-pair-example hz-dialogue-text"><p><strong>A:</strong> Are they keys?</p><p><strong>B:</strong> Yes! These are my keys.</p></div><p class="l2a-photo-prompt">Look at the photo. Find the items from activity 1.</p></div><div class="l2a-pair-photo l2a-photo-slot" data-image-slot="2A-E06-PAIR-SCENE"><img src="./Images/2A/Pairwork bag scene.png" alt="A café scene supplies personal-item prompts: a wallet, phone, keys, notebook, pen, headphones and bottle near the bag, with an umbrella and more keys/pens on the farther table."></div></div></div></div></section>
+          <section class="hz-exercise"><div class="hz-exercise-number">5</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Work in pairs. Look at five real items. Look again: four! Ask and guess.</p><div class="hz-exercise__body"><div class="l2a-pair-stage"><div class="l2a-pair-copy"><h2 class="l2a-memory-title">What is it?</h2><div class="l2a-pair-example hz-dialogue-text hz-task-text"><p><strong>A:</strong> Is it a phone?</p><p><strong>B:</strong> No.</p><p><strong>A:</strong> Is it a pen?</p><p><strong>B:</strong> Yes! This is my pen.</p></div><div class="l2a-pair-example hz-dialogue-text hz-task-text"><p><strong>A:</strong> Are they keys?</p><p><strong>B:</strong> Yes! These are my keys.</p></div><p class="l2a-photo-prompt hz-task-text">Look at the photo. Find the items from activity 1.</p></div><div class="l2a-pair-photo l2a-photo-slot" data-image-slot="2A-E06-PAIR-SCENE"><img src="./Images/2A/Pairwork bag scene.png" alt="A café scene supplies personal-item prompts: a wallet, phone, keys, notebook, pen, headphones and bottle near the bag, with an umbrella and more keys/pens on the farther table."></div></div></div></div></section>
         </div>
 
         <div class="l2a-extra hz-extra-practice">
@@ -8570,7 +8617,7 @@ body {
                       <img src="./Images/2B/2B-AIR-01-JULIA.png" alt="Julia speaks about transport in Manta">
                       <figcaption><strong>Julia</strong><span>Moovit</span></figcaption>
                     </figure>
-                    <div class="l2b-complete-lines">
+                    <div class="l2b-complete-lines hz-task-text">
                       <p><b>1</b> Time: <span class="l2b-long-answer"></span></p>
                       <p><b>2</b> Number: <span class="l2b-long-answer l2b-long-answer--short"></span></p>
                       <p><b>3</b> <span class="l2b-inline-choice"><span><i class="hz-choice-box"></i> <em class="hz-answer-option">bus</em></span><span><i class="hz-choice-box"></i> <em class="hz-answer-option">car</em></span></span></p>
@@ -8582,7 +8629,7 @@ body {
                       <img src="./Images/2B/2B-AIR-03-ANA.png" alt="Ana speaks about transport in Manta">
                       <figcaption><strong>Ana</strong><span>Moovit</span></figcaption>
                     </figure>
-                    <div class="l2b-complete-lines">
+                    <div class="l2b-complete-lines hz-task-text">
                       <p><b>1</b> Time: <span class="l2b-long-answer"></span></p>
                       <p><b>2</b> Number: <span class="l2b-long-answer l2b-long-answer--short"></span></p>
                       <p><b>3</b> <span class="l2b-inline-choice"><span><i class="hz-choice-box"></i> <em class="hz-answer-option">bus</em></span><span><i class="hz-choice-box"></i> <em class="hz-answer-option">car</em></span></span></p>
@@ -8653,7 +8700,7 @@ body {
                       <img src="./Images/2B/2B-AIR-04-DIEGO.png" alt="Diego speaks about transport in Manta">
                     <figcaption><strong>Diego</strong><span>inDrive</span></figcaption>
                   </figure>
-                  <div class="l2b-complete-lines">
+                  <div class="l2b-complete-lines hz-task-text">
                     <p><b>1</b> Time: <span class="l2b-long-answer"></span></p>
                     <p><b>2</b> Plate: <span class="l2b-long-answer l2b-long-answer--short"></span></p>
                     <p><b>3</b> Diego: <span class="l2b-inline-choice"><span><i class="hz-choice-box"></i> <em class="hz-answer-option">bus</em></span><span><i class="hz-choice-box"></i> <em class="hz-answer-option">car</em></span></span></p>
@@ -8671,7 +8718,7 @@ body {
             <div class="hz-exercise-number">5</div>
             <div class="hz-exercise__content">
               <p class="hz-exercise__instruction">Complete a, an or the.</p>
-              <div class="hz-exercise__body l2b-article-practice">
+              <div class="hz-exercise__body l2b-article-practice hz-task-text">
                 <div><b>1</b><span>Moovit is</span><span class="l2b-answer"></span><span>app.</span></div>
                 <div><b>2</b><span>It is</span><span class="l2b-answer"></span><span>bus app.</span></div>
                 <div><b>3</b><span></span><span class="l2b-answer"></span><span>bus is 15.</span></div>
@@ -8682,7 +8729,7 @@ body {
             </div>
           </section>
 
-          <section class="hz-exercise"><div class="hz-exercise-number">6</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Look at the app in activity 3. It is 6:40. What time is the next bus? What number?</p><div class="hz-exercise__body"><article class="l2b-next-bus"><header><h2>The next bus</h2><span>Time <b>6:40</b></span></header><div class="l2b-departure-result"><p>Time <span class="l2b-long-answer"></span></p><p>Bus number <span class="l2b-long-answer l2b-long-answer--short"></span></p></div></article><p class="l2b-decision-model hz-dialogue-text"><b>A:</b> What time is the next bus? <b>B:</b> It's ...</p></div></div></section>
+          <section class="hz-exercise"><div class="hz-exercise-number">6</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Look at the app in activity 3. It is 6:40. What time is the next bus? What number?</p><div class="hz-exercise__body"><article class="l2b-next-bus"><header><h2>The next bus</h2><span>Time <b>6:40</b></span></header><div class="l2b-departure-result hz-task-text"><p>Time <span class="l2b-long-answer"></span></p><p>Bus number <span class="l2b-long-answer l2b-long-answer--short"></span></p></div></article><p class="l2b-decision-model hz-dialogue-text hz-task-text"><b>A:</b> What time is the next bus? <b>B:</b> It's ...</p></div></div></section>
         </div>
 
         <div class="l2b-extra hz-extra-practice">
@@ -8808,10 +8855,10 @@ body {
             <div class="hz-exercise__content">
               <p class="hz-exercise__instruction">Read again. Choose.</p>
               <div class="hz-exercise__body hz-question-grid hz-question-grid--2 l2c-check-grid">
-                <div class="hz-question"><span class="hz-question__number">1</span><span>Diego and Elena work <em class="hz-answer-option">Monday to Saturday</em> / <em class="hz-answer-option">on Sunday</em>.</span></div>
-                <div class="hz-question"><span class="hz-question__number">2</span><span>Nico and Sofía are at the restaurant <em class="hz-answer-option">every day</em> / <em class="hz-answer-option">on Saturdays</em>.</span></div>
-                <div class="hz-question"><span class="hz-question__number">3</span><span>Nico is Sofía's <em class="hz-answer-option">brother</em> / <em class="hz-answer-option">father</em>.</span></div>
-                <div class="hz-question"><span class="hz-question__number">4</span><span>The keys are <em class="hz-answer-option">Diego's</em> / <em class="hz-answer-option">Elena's</em>.</span></div>
+                <div class="hz-question hz-task-text"><span class="hz-question__number">1</span><span>Diego and Elena work <em class="hz-answer-option">Monday to Saturday</em> / <em class="hz-answer-option">on Sunday</em>.</span></div>
+                <div class="hz-question hz-task-text"><span class="hz-question__number">2</span><span>Nico and Sofía are at the restaurant <em class="hz-answer-option">every day</em> / <em class="hz-answer-option">on Saturdays</em>.</span></div>
+                <div class="hz-question hz-task-text"><span class="hz-question__number">3</span><span>Nico is Sofía's <em class="hz-answer-option">brother</em> / <em class="hz-answer-option">father</em>.</span></div>
+                <div class="hz-question hz-task-text"><span class="hz-question__number">4</span><span>The keys are <em class="hz-answer-option">Diego's</em> / <em class="hz-answer-option">Elena's</em>.</span></div>
               </div>
             </div>
           </section>
@@ -8837,10 +8884,10 @@ body {
             <div class="hz-exercise__content">
               <p class="hz-exercise__instruction">Complete: father, mother, brother or sister.</p>
               <div class="hz-exercise__body hz-content-grid hz-content-grid--2 l2c-complete-grid">
-                <div class="l2c-complete-item"><b>1</b><span>Diego is Nico's <span class="hz-answer-line"></span>.</span></div>
-                <div class="l2c-complete-item"><b>2</b><span>Elena is Sofía's <span class="hz-answer-line"></span>.</span></div>
-                <div class="l2c-complete-item"><b>3</b><span>Nico is Sofía's <span class="hz-answer-line"></span>.</span></div>
-                <div class="l2c-complete-item"><b>4</b><span>Sofía is Nico's <span class="hz-answer-line"></span>.</span></div>
+                <div class="l2c-complete-item hz-task-text"><b>1</b><span>Diego is Nico's <span class="hz-answer-line"></span>.</span></div>
+                <div class="l2c-complete-item hz-task-text"><b>2</b><span>Elena is Sofía's <span class="hz-answer-line"></span>.</span></div>
+                <div class="l2c-complete-item hz-task-text"><b>3</b><span>Nico is Sofía's <span class="hz-answer-line"></span>.</span></div>
+                <div class="l2c-complete-item hz-task-text"><b>4</b><span>Sofía is Nico's <span class="hz-answer-line"></span>.</span></div>
               </div>
             </div>
           </section>
@@ -8854,19 +8901,19 @@ body {
             <div class="hz-exercise__content">
               <p class="hz-exercise__instruction">Complete. Add <strong>'s</strong> or <strong>'</strong>.</p>
               <div class="hz-exercise__body hz-content-grid hz-content-grid--2 l2c-complete-grid">
-                <div class="l2c-complete-item"><b>1</b><span>Diego<span class="l2c-insert-line"></span> wife is Elena.</span></div>
-                <div class="l2c-complete-item"><b>2</b><span>Carlos<span class="l2c-insert-line"></span> sister is Ana.</span></div>
-                <div class="l2c-complete-item"><b>3</b><span>The parents<span class="l2c-insert-line"></span> restaurant is busy.</span></div>
-                <div class="l2c-complete-item"><b>4</b><span>This is Sofía<span class="l2c-insert-line"></span> bottle.</span></div>
-                <div class="l2c-complete-item"><b>5</b><span>These are Lucas<span class="l2c-insert-line"></span> keys.</span></div>
-                <div class="l2c-complete-item"><b>6</b><span>The students<span class="l2c-insert-line"></span> notebooks are on the table.</span></div>
+                <div class="l2c-complete-item hz-task-text"><b>1</b><span>Diego<span class="l2c-insert-line"></span> wife is Elena.</span></div>
+                <div class="l2c-complete-item hz-task-text"><b>2</b><span>Carlos<span class="l2c-insert-line"></span> sister is Ana.</span></div>
+                <div class="l2c-complete-item hz-task-text"><b>3</b><span>The parents<span class="l2c-insert-line"></span> restaurant is busy.</span></div>
+                <div class="l2c-complete-item hz-task-text"><b>4</b><span>This is Sofía<span class="l2c-insert-line"></span> bottle.</span></div>
+                <div class="l2c-complete-item hz-task-text"><b>5</b><span>These are Lucas<span class="l2c-insert-line"></span> keys.</span></div>
+                <div class="l2c-complete-item hz-task-text"><b>6</b><span>The students<span class="l2c-insert-line"></span> notebooks are on the table.</span></div>
               </div>
             </div>
           </section>
 
-          <section class="hz-exercise l2c-items-exercise"><div class="hz-exercise-number">6</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Look at activity 2. Read and write the names and items.</p><div class="hz-exercise__body"><div class="l2c-family-clue-feature"><h2>Who is it?</h2><div class="l2c-family-clue-grid"><figure data-image-slot="HZN_A1_U02_LC_E06_IMG_01"><p class="l2c-family-clue">Elena's husband</p><img src="./Images/2C/object_cellphone_white_background_1x1---96e0df3b-9856-499d-aed6-f45479e140a0.png" alt="A phone"><figcaption><b>1</b><span>phone</span></figcaption><span class="l2c-clue-answer l2c-clue-example">Diego's phone</span></figure><figure data-image-slot="HZN_A1_U02_LC_E06_IMG_02"><p class="l2c-family-clue">Nico's mother</p><img src="./Images/2C/object_keys_white_background_1x1---371a739d-bc15-453f-b252-06bd997521db.png" alt="Keys"><figcaption><b>2</b><span>keys</span></figcaption><span class="l2c-clue-answer"></span></figure><figure data-image-slot="HZN_A1_U02_LC_E06_IMG_03"><p class="l2c-family-clue">Sofía's brother</p><img src="./Images/2C/object_notebook_white_background_1x1---538237db-0921-4409-ad5d-42c85bc41df7.png" alt="A notebook"><figcaption><b>3</b><span>notebook</span></figcaption><span class="l2c-clue-answer"></span></figure><figure data-image-slot="HZN_A1_U02_LC_E06_IMG_04"><p class="l2c-family-clue">Elena's daughter</p><img src="./Images/2C/object_bottle_white_background_1x1---99c75d3b-f8fc-47f7-892c-0784827f0f4c.png" alt="A bottle"><figcaption><b>4</b><span>bottle</span></figcaption><span class="l2c-clue-answer"></span></figure></div></div></div></div></section>
+          <section class="hz-exercise l2c-items-exercise"><div class="hz-exercise-number">6</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Look at activity 2. Read and write the names and items.</p><div class="hz-exercise__body"><div class="l2c-family-clue-feature"><h2>Who is it?</h2><div class="l2c-family-clue-grid"><figure data-image-slot="HZN_A1_U02_LC_E06_IMG_01"><p class="l2c-family-clue hz-task-text">Elena's husband</p><img src="./Images/2C/object_cellphone_white_background_1x1---96e0df3b-9856-499d-aed6-f45479e140a0.png" alt="A phone"><figcaption><b>1</b><span>phone</span></figcaption><span class="l2c-clue-answer l2c-clue-example hz-task-text">Diego's phone</span></figure><figure data-image-slot="HZN_A1_U02_LC_E06_IMG_02"><p class="l2c-family-clue hz-task-text">Nico's mother</p><img src="./Images/2C/object_keys_white_background_1x1---371a739d-bc15-453f-b252-06bd997521db.png" alt="Keys"><figcaption><b>2</b><span>keys</span></figcaption><span class="l2c-clue-answer hz-task-text"></span></figure><figure data-image-slot="HZN_A1_U02_LC_E06_IMG_03"><p class="l2c-family-clue hz-task-text">Sofía's brother</p><img src="./Images/2C/object_notebook_white_background_1x1---538237db-0921-4409-ad5d-42c85bc41df7.png" alt="A notebook"><figcaption><b>3</b><span>notebook</span></figcaption><span class="l2c-clue-answer hz-task-text"></span></figure><figure data-image-slot="HZN_A1_U02_LC_E06_IMG_04"><p class="l2c-family-clue hz-task-text">Elena's daughter</p><img src="./Images/2C/object_bottle_white_background_1x1---99c75d3b-f8fc-47f7-892c-0784827f0f4c.png" alt="A bottle"><figcaption><b>4</b><span>bottle</span></figcaption><span class="l2c-clue-answer hz-task-text"></span></figure></div></div></div></div></section>
 
-          <section class="hz-exercise l2c-pair-exercise"><div class="hz-exercise-number">7</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Use a family photo. Ask and answer. Write two sentences.</p><div class="hz-exercise__body"><div class="hz-content-grid hz-content-grid--2 l2c-pairwork"><figure class="l2c-pair-photo" data-image-slot="HZN_A1_U02_LC_E07_IMG_01"><img src="./Images/Stock/Pexels-7968330.jpg" alt="Two friends looking at a phone together illustrate sharing a family photo."></figure><div class="l2c-pair-models"><div class="hz-dialogue-text"><p><strong>A:</strong> Is Ana your mother?</p><p><strong>B:</strong> No. Ana is my sister.</p><p><strong>A:</strong> Is Carlos your father?</p><p><strong>B:</strong> Yes. Carlos is my father.</p></div><p class="l2c-photo-example">Ana is Daniel's sister.</p><span class="l2c-photo-write"></span><span class="l2c-photo-write"></span></div></div></div></div></section>
+          <section class="hz-exercise l2c-pair-exercise"><div class="hz-exercise-number">7</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Use a family photo. Ask and answer. Write two sentences.</p><div class="hz-exercise__body"><div class="hz-content-grid hz-content-grid--2 l2c-pairwork"><figure class="l2c-pair-photo" data-image-slot="HZN_A1_U02_LC_E07_IMG_01"><img src="./Images/Stock/Pexels-7968330.jpg" alt="Two friends looking at a phone together illustrate sharing a family photo."></figure><div class="l2c-pair-models hz-task-text"><div class="hz-dialogue-text"><p><strong>A:</strong> Is Ana your mother?</p><p><strong>B:</strong> No. Ana is my sister.</p><p><strong>A:</strong> Is Carlos your father?</p><p><strong>B:</strong> Yes. Carlos is my father.</p></div><p class="l2c-photo-example hz-task-text">Ana is Daniel's sister.</p><span class="l2c-photo-write"></span><span class="l2c-photo-write"></span></div></div></div></div></section>
         </div>
 
         <div class="l2c-extra hz-extra-practice">
@@ -8901,7 +8948,7 @@ body {
             <div class="hz-exercise-number">1</div>
             <div class="hz-exercise__content">
               <p class="hz-exercise__instruction"><span class="hz-audio-badge">♪ 2.4</span>Listen and repeat. <span class="hz-new-words">NEW WORDS</span></p>
-              <div class="hz-exercise__body l2d-colors hz-student-text" aria-label="Ten colors">
+              <div class="hz-exercise__body l2d-colors hz-student-text hz-task-text" aria-label="Ten colors">
                 <div><span class="l2d-swatch" aria-hidden="true"></span><strong>red</strong></div>
                 <div><span class="l2d-swatch" aria-hidden="true"></span><strong>blue</strong></div>
                 <div><span class="l2d-swatch" aria-hidden="true"></span><strong>green</strong></div>
@@ -8947,7 +8994,7 @@ body {
             <div class="hz-exercise-number">3</div>
             <div class="hz-exercise__content">
               <p class="hz-exercise__instruction">Read again. Answer.</p>
-              <div class="hz-exercise__body hz-content-grid hz-content-grid--2 l2d-notice hz-student-text">
+              <div class="hz-exercise__body hz-content-grid hz-content-grid--2 l2d-notice hz-student-text hz-task-text">
                 <p>1 <em>A white phone</em>:<br>item <em class="hz-answer-option">after / before</em> adjective?</p>
                 <p>2 <em>My phone is black</em>:<br>adjective <em class="hz-answer-option">after / before</em> <em>is</em>?</p>
                 <p>3 <em lang="es">Un teléfono negro</em>:<br>item <em class="hz-answer-option">after / before</em> adjective?</p>
@@ -8963,10 +9010,10 @@ body {
             <div class="hz-exercise__content">
               <p class="hz-exercise__instruction">Write the sentences.</p>
               <div class="hz-exercise__body hz-content-grid hz-content-grid--2 l2d-positions hz-student-text">
-                <div><p><b>1</b> phone / black / a / It's</p><span class="l2d-writing-line l2d-example">It's a black phone.</span></div>
-                <div><p><b>2</b> wallet / is / red / The</p><span class="l2d-writing-line"></span></div>
-                <div><p><b>3</b> bottle / green / a / It's</p><span class="l2d-writing-line"></span></div>
-                <div><p><b>4</b> headphones / black / are / My</p><span class="l2d-writing-line"></span></div>
+                <div><p><b>1</b> phone / black / a / It's</p><span class="l2d-writing-line l2d-example hz-task-text">It's a black phone.</span></div>
+                <div><p><b>2</b> wallet / is / red / The</p><span class="l2d-writing-line hz-task-text"></span></div>
+                <div><p><b>3</b> bottle / green / a / It's</p><span class="l2d-writing-line hz-task-text"></span></div>
+                <div><p><b>4</b> headphones / black / are / My</p><span class="l2d-writing-line hz-task-text"></span></div>
               </div>
             </div>
           </section>
@@ -8975,7 +9022,7 @@ body {
             <div class="hz-exercise-number">5</div>
             <div class="hz-exercise__content">
               <p class="hz-exercise__instruction">Work in pairs. Use real items. Ask and answer.</p>
-              <div class="hz-exercise__body hz-content-grid hz-content-grid--2 hz-dialogue-text l2d-mini-models">
+              <div class="hz-exercise__body hz-content-grid hz-content-grid--2 hz-dialogue-text l2d-mini-models hz-task-text">
                 <div><p><b>A:</b> What color is your phone?</p><p><b>B:</b> It's black.</p></div>
                 <div><p><b>A:</b> Is it big or small?</p><p><b>B:</b> It's small.</p></div>
               </div>
@@ -9013,7 +9060,7 @@ body {
             <div class="hz-exercise__content">
               <p class="hz-exercise__instruction">Work in pairs. Student A: choose an item. Student B: ask and write.</p>
               <div class="hz-exercise__body hz-content-grid hz-content-grid--2 l2d-transaction">
-                <div class="hz-dialogue-text l2d-task-model">
+                <div class="hz-dialogue-text l2d-task-model hz-task-text">
                   <p><b>A:</b> Hello. Is that my bottle?</p>
                   <p><b>B:</b> What color is your bottle?</p>
                   <p><b>A:</b> It's green.</p>
@@ -9031,7 +9078,7 @@ body {
             </div>
           </section>
 
-          <section class="hz-exercise"><div class="hz-exercise-number">8</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Use three real items. Ask three classmates. Write the names.</p><div class="hz-exercise__body"><div class="hz-dialogue-text l2d-mini-models"><p><b>A:</b> Is this your phone?</p><p><b>B:</b> No. That's Ana's phone. My phone is white.</p></div><div class="l2d-return-names"><span><b>1</b><i></i></span><span><b>2</b><i></i></span><span><b>3</b><i></i></span></div></div></div></section>
+          <section class="hz-exercise"><div class="hz-exercise-number">8</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Use three real items. Ask three classmates. Write the names.</p><div class="hz-exercise__body"><div class="hz-dialogue-text l2d-mini-models hz-task-text"><p><b>A:</b> Is this your phone?</p><p><b>B:</b> No. That's Ana's phone. My phone is white.</p></div><div class="l2d-return-names"><span><b>1</b><i></i></span><span><b>2</b><i></i></span><span><b>3</b><i></i></span></div></div></div></section>
         </div>
         <div class="hz-extra-practice l2d-inset">
           <span class="hz-extra-practice__label">EXTRA PRACTICE</span>
@@ -9056,7 +9103,7 @@ body {
             <div class="hz-exercise__content">
               <p class="hz-exercise__instruction"><span class="rr-skill-label">Grammar</span> Choose and circle.</p>
               <div class="hz-exercise__body">
-                <ol class="rr-list rr-choices-list rr-with-example">
+                <ol class="rr-list rr-choices-list rr-with-example hz-task-text">
                   <li>I <em class="hz-answer-option rr-circled">am</em> / <em class="hz-answer-option">is</em> / <em class="hz-answer-option">are</em> in Studio 8.</li>
                   <li>Luz and Ben <em class="hz-answer-option">am / is / are</em> in Studio 8.</li>
                   <li>Ari <em class="hz-answer-option">isn't / aren't / am not</em> a doctor.</li>
@@ -9074,8 +9121,8 @@ body {
             <div class="hz-exercise__content">
               <p class="hz-exercise__instruction">Write the sentences.</p>
               <div class="hz-exercise__body">
-                <p class="rr-sentence-model"><span class="rr-question-number">0</span> photos / new / are / the <span class="rr-example">The photos are new.</span></p>
-                <ol class="rr-list rr-sentences">
+                <p class="rr-sentence-model hz-task-text"><span class="rr-question-number">0</span> photos / new / are / the <span class="rr-example hz-task-text">The photos are new.</span></p>
+                <ol class="rr-list rr-sentences hz-task-text">
                   <li>is / Luz's / red / wallet<span class="rr-write"></span></li>
                   <li>exhibition / is / the / small<span class="rr-write"></span></li>
                   <li>are / those / pens / blue<span class="rr-write"></span></li>
@@ -9089,10 +9136,10 @@ body {
               <p class="hz-exercise__instruction"><span class="rr-skill-label">Vocabulary</span> Write the words in the table.</p>
               <div class="hz-exercise__body">
                 <div class="hz-word-bank rr-word-bank rr-word-bank--vocab"><span>doctor</span><span>the UK</span><span>black</span><span>notebook</span><span>student</span><span><s>Argentina</s></span><span>blue</span><span>wallet</span><span>teacher</span><span>South Korea</span><span>gray</span><span>headphones</span></div>
-                <table class="rr-vocab-table" aria-label="Sort the exhibition-label words into jobs, countries, items and colors">
+                <table class="rr-vocab-table hz-task-text" aria-label="Sort the exhibition-label words into jobs, countries, items and colors">
                   <colgroup><col style="width:22%"><col style="width:28%"><col style="width:28%"><col style="width:22%"></colgroup>
                   <thead><tr><th>Jobs</th><th>Countries</th><th>Items</th><th>Colors</th></tr></thead>
-                  <tbody><tr><td></td><td class="rr-example">Argentina</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody>
+                  <tbody><tr><td></td><td class="rr-example hz-task-text">Argentina</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody>
                 </table>
               </div>
             </div>
@@ -9105,13 +9152,13 @@ body {
   <header class="rr-project-head"><h3>The Color <em>Project</em></h3><div class="rr-exhibit-card"><span>PHOTO EXHIBITION</span><div><b>Studio 8</b><span>7:30</span></div></div></header>
   <div class="rr-word-bank rr-word-bank--reading"><s>doctor</s><span>red</span><span>the UK</span><span>brother</span><span>headphones</span><span>black</span><span>chef</span><span>Canada</span></div>
   <div class="rr-project-layout"><div class="rr-project-portraits"><img class="rr-project-photo" src="./Images/Stock/Color-project-real-v2.jpg" alt="Left: Luz, with a separate red wallet photograph below. Center: Ben with a blue bottle. Right: Ari with black headphones." data-image-slot="HZN_A1_U02_LR_E04_IMG_01"><div class="rr-cast-labels"><span>Luz</span><span>Ben</span><span>Ari</span></div></div><div class="rr-project-copy"><p>Good evening! This is Studio 8.</p>
-                    <p>Luz is a <span class="rr-gap rr-example">doctor</span>. Her wallet is <span class="rr-numbered-gap"><sup>1</sup><span class="rr-gap"></span></span>. She is from Argentina.</p>
+                    <p>Luz is a <span class="rr-gap rr-example hz-task-text">doctor</span>. Her wallet is <span class="rr-numbered-gap"><sup>1</sup><span class="rr-gap"></span></span>. She is from Argentina.</p>
                     <p>Ben is British. He is from <span class="rr-numbered-gap"><sup>2</sup><span class="rr-gap"></span></span>. He is a teacher. His bottle is blue.</p>
                     <p>Ari is Luz's <span class="rr-numbered-gap"><sup>3</sup><span class="rr-gap"></span></span>. He's a student. These are his <span class="rr-numbered-gap"><sup>4</sup><span class="rr-gap"></span></span>. They are <span class="rr-numbered-gap"><sup>5</sup><span class="rr-gap"></span></span>.</p><div class="rr-reading-check">
-                  <p class="rr-subtask"><span class="rr-question-number">6</span>Choose a title.</p>
-                  <div class="rr-title-options"><label><span class="rr-check"></span><em class="hz-answer-option">people and their things</em></label><label><span class="rr-check"></span><em class="hz-answer-option">a big city at night</em></label><label><span class="rr-check"></span><em class="hz-answer-option">a busy hospital</em></label></div>
-                  <p class="rr-subtask rr-subtask--second">Read again. Complete.</p>
-                  <ol class="rr-list rr-reading-answers" start="7">
+                  <p class="rr-subtask hz-task-text"><span class="rr-question-number">6</span>Choose a title.</p>
+                  <div class="rr-title-options hz-task-text"><label><span class="rr-check"></span><em class="hz-answer-option">people and their things</em></label><label><span class="rr-check"></span><em class="hz-answer-option">a big city at night</em></label><label><span class="rr-check"></span><em class="hz-answer-option">a busy hospital</em></label></div>
+                  <p class="rr-subtask rr-subtask--second hz-task-text">Read again. Complete.</p>
+                  <ol class="rr-list rr-reading-answers hz-task-text" start="7">
                     <li>Luz is Ari's <span class="rr-gap"></span>.</li>
                     <li>Exhibition time: <span class="rr-gap"></span>.</li>
                   </ol>
@@ -9133,7 +9180,7 @@ body {
                 <div class="rr-exhibition-dialogue">
                   <header><span>SAM &amp; JO<br><small>THE PHOTO EXHIBITION</small></span></header>
                   <p class="rr-conversation-model">Sam: Good evening!<br>Jo: Good evening.</p>
-                  <ol class="rr-list rr-dialogue-questions">
+                  <ol class="rr-list rr-dialogue-questions hz-task-text">
                     <li><p>Are Luz and Ben students?</p><div><span>a <em class="hz-answer-option">No, they aren't.</em></span><span>b <em class="hz-answer-option">Yes, they are.</em></span><span>c <em class="hz-answer-option">No, she isn't.</em></span></div></li>
                     <li><p>Is Luz's wallet blue?</p><div><span>a <em class="hz-answer-option">Yes, it is.</em></span><span>b <em class="hz-answer-option">No, it's red.</em></span><span>c <em class="hz-answer-option">No, he isn't.</em></span></div></li>
                     <li><p>Is Ari Luz's father?</p><div><span>a <em class="hz-answer-option">No, he's her brother.</em></span><span>b <em class="hz-answer-option">Yes, he is.</em></span><span>c <em class="hz-answer-option">No, I'm not.</em></span></div></li>
@@ -9151,14 +9198,14 @@ body {
                 <div class="rr-picture-layout"><figure class="rr-contact-sheet" data-image-slot="HZN_A1_U02_LR_E06_IMG_01">
                   <img src="./Images/Review/Studio-contact-sheet-v1.png" alt="Four studio photos. A: a woman holds a green bottle close in her hand. B: a man points to a gray wallet across the room. C: a woman holds two blue pens close in her hand. D: a man points to black headphones on a distant worktable.">
                   <span class="rr-photo-letter rr-photo-letter--a">A</span><span class="rr-photo-letter rr-photo-letter--b">B</span><span class="rr-photo-letter rr-photo-letter--c">C</span><span class="rr-photo-letter rr-photo-letter--d">D</span>
-                </figure><div class="rr-picture-responses"><div class="rr-studio-answers">
-                  <p><span class="rr-question-number">A</span><span><span class="rr-gap rr-example">This</span> is my bottle.</span></p>
+                </figure><div class="rr-picture-responses"><div class="rr-studio-answers hz-task-text">
+                  <p><span class="rr-question-number">A</span><span><span class="rr-gap rr-example hz-task-text">This</span> is my bottle.</span></p>
                   <p><span class="rr-question-number">B</span><span><span class="rr-gap"></span> is my wallet.</span></p>
                   <p><span class="rr-question-number">C</span><span><span class="rr-gap"></span> are my pens.</span></p>
                   <p><span class="rr-question-number">D</span><span><span class="rr-gap"></span> are my headphones.</span></p>
                 </div>
-                <p class="rr-subtask rr-picture-write-label">Write two sentences about the items.</p>
-                <p class="rr-picture-model">The bottle is green.</p>
+                <p class="rr-subtask rr-picture-write-label hz-task-text">Write two sentences about the items.</p>
+                <p class="rr-picture-model hz-task-text">The bottle is green.</p>
                 <div class="rr-free-writing"><span class="rr-write"></span><span class="rr-write"></span></div></div></div>
               </div>
             </div>
@@ -9166,14 +9213,14 @@ body {
   <div class="hz-exercise-number">7</div><div class="hz-exercise__content">
     <h2 class="rr-beyond-title">BEYOND HORIZONS</h2>
     <p class="hz-exercise__instruction">Work in pairs. Choose a challenge.</p>
-    <div class="hz-exercise__body"><div class="rr-challenge-grid"><div class="rr-mission"><h3>1A · Names</h3><div class="rr-challenge-ball"><p>Say your name.<br>Spell it.<br>Your classmate writes it.</p></div></div>
-<div class="rr-mission"><h3>1B · Jobs</h3><div class="rr-challenge-ball"><p>Look at activity 4.<br>What are Luz, Ben and Ari's jobs?</p></div></div>
-<div class="rr-mission"><h3>1C · Countries</h3><div class="rr-challenge-ball"><p>Choose two countries.<br>Say the nationalities.</p></div></div>
-<div class="rr-mission"><h3>1D · Personal information</h3><div class="rr-challenge-ball"><p>Ask your classmate three personal questions.</p></div></div>
-<div class="rr-mission"><h3>2A · Things</h3><div class="rr-challenge-ball"><p>Use three real items.<br><em class="hz-answer-option">this</em> or <em class="hz-answer-option">these</em>?<br>Describe.</p></div></div>
-<div class="rr-mission"><h3>2B · Time</h3><div class="rr-challenge-ball"><p>Choose three times.<br>Say them.<br>Your classmate writes them.</p></div></div>
-<div class="rr-mission"><h3>2C · Family photos</h3><div class="rr-challenge-ball"><p>Describe two people in a family photo.</p></div></div>
-<div class="rr-mission"><h3>2D · Colors</h3><div class="rr-challenge-ball"><p>Choose two items.<br>Describe their colors.</p></div></div></div></div>
+    <div class="hz-exercise__body"><div class="rr-challenge-grid"><div class="rr-mission"><h3>1A · Names</h3><div class="rr-challenge-ball hz-task-text"><p>Say your name.<br>Spell it.<br>Your classmate writes it.</p></div></div>
+<div class="rr-mission"><h3>1B · Jobs</h3><div class="rr-challenge-ball hz-task-text"><p>Look at activity 4.<br>What are Luz, Ben and Ari's jobs?</p></div></div>
+<div class="rr-mission"><h3>1C · Countries</h3><div class="rr-challenge-ball hz-task-text"><p>Choose two countries.<br>Say the nationalities.</p></div></div>
+<div class="rr-mission"><h3>1D · Personal information</h3><div class="rr-challenge-ball hz-task-text"><p>Ask your classmate three personal questions.</p></div></div>
+<div class="rr-mission"><h3>2A · Things</h3><div class="rr-challenge-ball hz-task-text"><p>Use three real items.<br><em class="hz-answer-option">this</em> or <em class="hz-answer-option">these</em>?<br>Describe.</p></div></div>
+<div class="rr-mission"><h3>2B · Time</h3><div class="rr-challenge-ball hz-task-text"><p>Choose three times.<br>Say them.<br>Your classmate writes them.</p></div></div>
+<div class="rr-mission"><h3>2C · Family photos</h3><div class="rr-challenge-ball hz-task-text"><p>Describe two people in a family photo.</p></div></div>
+<div class="rr-mission"><h3>2D · Colors</h3><div class="rr-challenge-ball hz-task-text"><p>Choose two items.<br>Describe their colors.</p></div></div></div></div>
   </div>
 </section></div>
     </main><footer class="hz-page__footer"><span class="hz-page-number">22</span></footer>
@@ -9196,7 +9243,7 @@ body {
                 <span class="l3a-photo-letter" style="--x:0%;--y:0%">A</span><span class="l3a-photo-letter" style="--x:25%;--y:0%">B</span><span class="l3a-photo-letter" style="--x:50%;--y:0%">C</span><span class="l3a-photo-letter" style="--x:75%;--y:0%">D</span>
                 <span class="l3a-photo-letter" style="--x:0%;--y:50%">E</span><span class="l3a-photo-letter" style="--x:25%;--y:50%">F</span><span class="l3a-photo-letter" style="--x:50%;--y:50%">G</span><span class="l3a-photo-letter" style="--x:75%;--y:50%">H</span>
               </figure>
-              <div class="l3a-routine-bank">
+              <div class="l3a-routine-bank hz-task-text">
                 <span><b>1</b><span class="l3a-letter-answer l3a-example">B</span><span>have breakfast</span></span><span><b>2</b><span class="l3a-letter-answer"></span><span>go to bed</span></span><span><b>3</b><span class="l3a-letter-answer"></span><span>go to work</span></span><span><b>4</b><span class="l3a-letter-answer"></span><span>get up</span></span>
                 <span><b>5</b><span class="l3a-letter-answer"></span><span>watch TV</span></span><span><b>6</b><span class="l3a-letter-answer"></span><span>have lunch</span></span><span><b>7</b><span class="l3a-letter-answer"></span><span>go home</span></span><span><b>8</b><span class="l3a-letter-answer"></span><span>have dinner</span></span>
               </div>
@@ -9224,11 +9271,11 @@ body {
             </div>
           </div>
         </section>
-        <section class="hz-exercise"><div class="hz-exercise-number">3</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Read again. Complete.</p><div class="hz-exercise__body"><ol class="l3a-list l3a-two-columns"><li>Leo gets up at <span class="l3a-gap"></span>.</li><li>Leo goes home at <span class="l3a-gap"></span>.</li><li>Leo has lunch with <span class="l3a-gap"></span>.</li><li>His children go to <span class="l3a-gap"></span>.</li></ol></div></div></section>
+        <section class="hz-exercise"><div class="hz-exercise-number">3</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Read again. Complete.</p><div class="hz-exercise__body"><ol class="l3a-list l3a-two-columns hz-task-text"><li>Leo gets up at <span class="l3a-gap"></span>.</li><li>Leo goes home at <span class="l3a-gap"></span>.</li><li>Leo has lunch with <span class="l3a-gap"></span>.</li><li>His children go to <span class="l3a-gap"></span>.</li></ol></div></div></section>
         <section class="hz-exercise">
           <div class="hz-exercise-number">4</div><div class="hz-exercise__content">
             <p class="hz-exercise__instruction">Look at the text. Choose and circle.</p>
-            <div class="hz-exercise__body"><ol class="l3a-list l3a-notice">
+            <div class="hz-exercise__body"><ol class="l3a-list l3a-notice hz-task-text">
               <li>The text is about <em class="hz-answer-option">a routine / one special day</em>.</li>
               <li>Choose the verb with <b>he</b>: <em class="hz-answer-option">get / gets</em>.</li>
               <li>Choose the verb with <b>they</b>: <em class="hz-answer-option">watch / watches</em>.</li>
@@ -9249,14 +9296,14 @@ body {
             <div class="hz-exercise-number">5</div><div class="hz-exercise__content">
               <p class="hz-exercise__instruction">Write the sentences.</p>
               <div class="hz-exercise__body">
-                <p class="l3a-model">0 &nbsp; he / watch TV / at home <span class="l3a-example">He watches TV at home.</span></p>
-                <ol class="l3a-list l3a-two-columns l3a-sentence-lines"><li>I / get up / at 6:30<span class="l3a-write"></span></li><li>Mia / go to work / at 8:00<span class="l3a-write"></span></li></ol>
+                <p class="l3a-model hz-task-text">0 &nbsp; he / watch TV / at home <span class="l3a-example">He watches TV at home.</span></p>
+                <ol class="l3a-list l3a-two-columns l3a-sentence-lines hz-task-text"><li>I / get up / at 6:30<span class="l3a-write"></span></li><li>Mia / go to work / at 8:00<span class="l3a-write"></span></li></ol>
               </div>
             </div>
           </section>
           <section class="hz-exercise"><div class="hz-exercise-number">6</div><div class="hz-exercise__content"><p class="hz-exercise__instruction"><span class="hz-audio-badge">♪ 3.3</span>Listen. Complete the times. And you: Nina or Omar?</p><div class="hz-exercise__body"><header class="l3a-listening-head"><h2>Two people. Two routines.</h2></header><div class="l3a-shift-pair"><article class="l3a-shift"><header><img src="./Images/3A/Teacher-Tima-5427870.jpg" alt="A real teacher photograph illustrates fictional Nina."><div><h3>Nina</h3><p>a teacher</p></div></header><dl><dt>get up</dt><dd class="l3a-example">6:30</dd><dt>go to work</dt><dd></dd><dt>go home</dt><dd></dd><dt>go to bed</dt><dd></dd></dl></article><article class="l3a-shift l3a-shift--late"><header><img src="./Images/3A/Chef-Anthony-30350306.jpg" alt="A real chef photograph illustrates fictional Omar."><div><h3>Omar</h3><p>a chef</p></div></header><dl><dt>get up</dt><dd></dd><dt>go to work</dt><dd></dd><dt>go home</dt><dd></dd><dt>go to bed</dt><dd></dd></dl></article></div></div></div></section>
-          <section class="hz-exercise"><div class="hz-exercise-number">7</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Write four sentences about your routine. No name!</p><div class="hz-exercise__body"><div class="l3a-mystery"><header><h2>Who is it?</h2><span>Your routine. No name.</span></header><p class="l3a-personal-model l3a-example">I have breakfast at seven.</p><div class="l3a-free-writing"><span class="l3a-write"></span><span class="l3a-write"></span><span class="l3a-write"></span><span class="l3a-write"></span></div></div></div></div></section>
-          <section class="hz-exercise"><div class="hz-exercise-number">8</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Work in groups. Read a text. Guess the person.</p><div class="hz-exercise__body"><div class="l3a-pair-model hz-dialogue-text"><p><b>A:</b> Is it Mateo?</p><p><b>B:</b> Yes, it is. He has breakfast at seven.</p></div><p class="l3a-report">Write two sentences about the person.</p><div class="l3a-free-writing"><span class="l3a-write"></span><span class="l3a-write"></span></div></div></div></section>
+          <section class="hz-exercise"><div class="hz-exercise-number">7</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Write four sentences about your routine. No name!</p><div class="hz-exercise__body"><div class="l3a-mystery"><header><h2>Who is it?</h2><span>Your routine. No name.</span></header><p class="l3a-personal-model l3a-example hz-task-text">I have breakfast at seven.</p><div class="l3a-free-writing"><span class="l3a-write"></span><span class="l3a-write"></span><span class="l3a-write"></span><span class="l3a-write"></span></div></div></div></div></section>
+          <section class="hz-exercise"><div class="hz-exercise-number">8</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Work in groups. Read a text. Guess the person.</p><div class="hz-exercise__body"><div class="l3a-pair-model hz-dialogue-text hz-task-text"><p><b>A:</b> Is it Mateo?</p><p><b>B:</b> Yes, it is. He has breakfast at seven.</p></div><p class="l3a-report hz-task-text">Write two sentences about the person.</p><div class="l3a-free-writing"><span class="l3a-write"></span><span class="l3a-write"></span></div></div></div></section>
         </div>
       </div>
       <div class="l3a-extra hz-extra-practice">
@@ -9277,7 +9324,7 @@ body {
         <section class="hz-exercise">
           <div class="hz-exercise-number">1</div><div class="hz-exercise__content">
             <p class="hz-exercise__instruction"><span class="hz-audio-badge">♪ 3.4</span>Listen and repeat. In your country: weekend? Circle the days. <span class="hz-new-words">NEW WORDS</span></p>
-            <div class="hz-exercise__body l3b-week" aria-label="Days of the week"><span><b>1</b>Monday</span><span><b>2</b>Tuesday</span><span><b>3</b>Wednesday</span><span><b>4</b>Thursday</span><span><b>5</b>Friday</span><span><b>6</b>Saturday</span><span><b>7</b>Sunday</span></div>
+            <div class="hz-exercise__body l3b-week hz-task-text" aria-label="Days of the week"><span><b>1</b>Monday</span><span><b>2</b>Tuesday</span><span><b>3</b>Wednesday</span><span><b>4</b>Thursday</span><span><b>5</b>Friday</span><span><b>6</b>Saturday</span><span><b>7</b>Sunday</span></div>
           </div>
         </section>
           <div class="hz-go-to hz-go-to--inset">Go to: Vocabulary - Days of the week, page ---</div>
@@ -9313,7 +9360,7 @@ body {
             <p class="hz-exercise__instruction">Read the examples. Then circle the correct words in 1–3.</p>
             <div class="hz-exercise__body">
               <div class="l3b-extracts hz-dialogue-text"><dl><dt>Lucy</dt><dd><strong class="hz-text-unit">Do</strong> you work on Monday?</dd><dt>Lucía</dt><dd>No, I <strong class="hz-text-unit">don't</strong>. I <strong class="hz-text-unit">don't work</strong> on Monday.</dd></dl><dl><dt>Lucy</dt><dd><strong class="hz-text-unit">Does</strong> Ken go home at five?</dd><dt>Lucía</dt><dd>No, he <strong class="hz-text-unit">doesn't</strong>. He <strong class="hz-text-unit">doesn't go</strong> home at five.</dd></dl></div>
-              <ol class="l3b-list l3b-notice"><li><em class="hz-answer-option">Do / Does</em> you work on Monday?</li><li>Ken <em class="hz-answer-option">don't / doesn't</em> work on Saturday.</li><li>He doesn't <em class="hz-answer-option">go / goes</em> home at five.</li></ol>
+              <ol class="l3b-list l3b-notice hz-task-text"><li><em class="hz-answer-option">Do / Does</em> you work on Monday?</li><li>Ken <em class="hz-answer-option">don't / doesn't</em> work on Saturday.</li><li>He doesn't <em class="hz-answer-option">go / goes</em> home at five.</li></ol>
             </div>
           </div>
         </section>
@@ -9327,11 +9374,11 @@ body {
           <div class="hz-go-to hz-go-to--inset">Go to: Grammar - Present simple: negatives and questions, page ---</div>
         <div class="hz-exercises">
           <section class="hz-exercise">
-            <div class="hz-exercise-number">5</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Choose and circle.</p><div class="hz-exercise__body"><ol class="l3b-list l3b-two-columns"><li>I <em class="hz-answer-option">don't / doesn't</em> work on Sunday.</li><li><em class="hz-answer-option">Do / Does</em> she get up at six?</li><li>Ken doesn't <em class="hz-answer-option">go / goes</em> home at five.</li><li><em class="hz-answer-option">Do / Does</em> they work on Friday?</li></ol></div></div>
+            <div class="hz-exercise-number">5</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Choose and circle.</p><div class="hz-exercise__body"><ol class="l3b-list l3b-two-columns hz-task-text"><li>I <em class="hz-answer-option">don't / doesn't</em> work on Sunday.</li><li><em class="hz-answer-option">Do / Does</em> she get up at six?</li><li>Ken doesn't <em class="hz-answer-option">go / goes</em> home at five.</li><li><em class="hz-answer-option">Do / Does</em> they work on Friday?</li></ol></div></div>
           </section>
-          <section class="hz-exercise"><div class="hz-exercise-number">6</div><div class="hz-exercise__content"><p class="hz-exercise__instruction"><span class="hz-audio-badge">♪ 3.5</span>Listen again. Who says it? Write the names.</p><div class="hz-exercise__body"><div class="l3b-listener-board"><header><h2>Who is on air?</h2><span>Lucía · Ken · Maryam</span></header><ol class="l3b-list l3b-voice-clues"><li><q>I go to work again at five.</q><span class="l3b-write"></span></li><li><q>I go home at seven.</q><span class="l3b-write"></span></li><li><q>We go home at twelve.</q><span class="l3b-write"></span></li></ol></div></div></div></section>
-          <section class="hz-exercise"><div class="hz-exercise-number">7</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Look at activity 3. Choose a day. Lucía, Ken and Maryam don't work.</p><div class="hz-exercise__body"><div class="l3b-episode-plan"><header><h2>One day. Three guests.</h2><span>HORIZONS ON AIR</span></header><p><em class="hz-answer-option">Monday / Saturday / Sunday</em></p><p class="l3b-plan-model">Does Lucía work on Monday? <span class="l3b-example">No, she doesn't.</span></p><p>Write about the guests.</p><span class="l3b-write"></span></div></div></div></section>
-          <section class="hz-exercise"><div class="hz-exercise-number">8</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Work in pairs. Ask. Choose a day for coffee.</p><div class="hz-exercise__body"><div class="l3b-survey-layout"><div class="l3b-survey-task"><div class="l3b-pair-model hz-dialogue-text"><p><b>A:</b> Do you work on Saturday?</p><p><b>B:</b> Yes, I do.</p><p><b>A:</b> Do you work on Sunday?</p><p><b>B:</b> No, I don't.</p><p><b>A:</b> Coffee on Sunday?</p><p><b>B:</b> Yes!</p></div><p class="l3b-meeting-result">Our day <span class="l3b-gap"></span></p><p class="l3b-meeting-result">Time <span class="l3b-gap"></span></p></div><img class="l3b-survey-people" src="./Images/3B/Conversation-standing-cutout-v2.png" alt="Two fictional colleagues talking and choosing a day to meet."></div></div></div></section>
+          <section class="hz-exercise"><div class="hz-exercise-number">6</div><div class="hz-exercise__content"><p class="hz-exercise__instruction"><span class="hz-audio-badge">♪ 3.5</span>Listen again. Who says it? Write the names.</p><div class="hz-exercise__body"><div class="l3b-listener-board"><header><h2>Who is on air?</h2><span>Lucía · Ken · Maryam</span></header><ol class="l3b-list l3b-voice-clues hz-task-text"><li><q>I go to work again at five.</q><span class="l3b-write"></span></li><li><q>I go home at seven.</q><span class="l3b-write"></span></li><li><q>We go home at twelve.</q><span class="l3b-write"></span></li></ol></div></div></div></section>
+          <section class="hz-exercise"><div class="hz-exercise-number">7</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Look at activity 3. Choose a day. Lucía, Ken and Maryam don't work.</p><div class="hz-exercise__body"><div class="l3b-episode-plan"><header><h2>One day. Three guests.</h2><span>HORIZONS ON AIR</span></header><p><em class="hz-answer-option">Monday / Saturday / Sunday</em></p><p class="l3b-plan-model hz-task-text">Does Lucía work on Monday? <span class="l3b-example">No, she doesn't.</span></p><p>Write about the guests.</p><span class="l3b-write"></span></div></div></div></section>
+          <section class="hz-exercise"><div class="hz-exercise-number">8</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Work in pairs. Ask. Choose a day for coffee.</p><div class="hz-exercise__body"><div class="l3b-survey-layout"><div class="l3b-survey-task"><div class="l3b-pair-model hz-dialogue-text hz-task-text"><p><b>A:</b> Do you work on Saturday?</p><p><b>B:</b> Yes, I do.</p><p><b>A:</b> Do you work on Sunday?</p><p><b>B:</b> No, I don't.</p><p><b>A:</b> Coffee on Sunday?</p><p><b>B:</b> Yes!</p></div><p class="l3b-meeting-result hz-task-text">Our day <span class="l3b-gap"></span></p><p class="l3b-meeting-result hz-task-text">Time <span class="l3b-gap"></span></p></div><img class="l3b-survey-people" src="./Images/3B/Conversation-standing-cutout-v2.png" alt="Two fictional colleagues talking and choosing a day to meet."></div></div></div></section>
 </div>
       </div>
       <div class="hz-extra-practice l3b-inset"><span class="hz-extra-practice__label">EXTRA PRACTICE</span><span class="hz-extra-practice__prompt">Ask a person in your family. Choose a day and time for dinner together.</span></div>
@@ -9371,7 +9418,7 @@ body {
         <section class="hz-exercise">
           <div class="hz-exercise-number">2</div><div class="hz-exercise__content">
             <p class="hz-exercise__instruction"><span class="hz-audio-badge">♪ 3.6</span>Listen and repeat. Find these words in the reviews. <span class="hz-new-words">NEW WORDS</span></p>
-            <div class="hz-exercise__body l3c-adjective-words"><span>beautiful</span><span>quiet</span><span>busy</span><span>noisy</span><span>cheap</span><span>expensive</span></div>
+            <div class="hz-exercise__body l3c-adjective-words hz-task-text"><span>beautiful</span><span>quiet</span><span>busy</span><span>noisy</span><span>cheap</span><span>expensive</span></div>
           </div>
         </section>
         <div class="hz-go-to hz-go-to--inset">Go to: Vocabulary - Adjectives, page ---</div>
@@ -9415,7 +9462,7 @@ body {
         </div>
         <div class="hz-exercises">
 
-          <section class="hz-exercise"><div class="hz-exercise-number">7</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Work in pairs. Ask. Choose a place for your classmate.</p><div class="hz-exercise__body"><div class="l3c-recommendation"><div class="l3c-pair-model hz-dialogue-text"><p><b>A:</b> Who do you go with?</p><p><b>B:</b> With my sister.</p><p><b>A:</b> Quiet or noisy?</p><p><b>B:</b> Quiet.</p></div><div class="l3c-preference-notes"><p>When? <span class="l3c-write"></span></p><p>Who with? <span class="l3c-write"></span></p><p>Quiet or noisy? <span class="l3c-write"></span></p><p>Cheap or expensive? <span class="l3c-write"></span></p></div><p class="l3c-for-you">For you: <span class="l3c-gap l3c-gap--long"></span></p></div></div></div></section>
+          <section class="hz-exercise"><div class="hz-exercise-number">7</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Work in pairs. Ask. Choose a place for your classmate.</p><div class="hz-exercise__body"><div class="l3c-recommendation"><div class="l3c-pair-model hz-dialogue-text hz-task-text"><p><b>A:</b> Who do you go with?</p><p><b>B:</b> With my sister.</p><p><b>A:</b> Quiet or noisy?</p><p><b>B:</b> Quiet.</p></div><div class="l3c-preference-notes hz-task-text"><p>When? <span class="l3c-write"></span></p><p>Who with? <span class="l3c-write"></span></p><p>Quiet or noisy? <span class="l3c-write"></span></p><p>Cheap or expensive? <span class="l3c-write"></span></p></div><p class="l3c-for-you hz-task-text">For you: <span class="l3c-gap l3c-gap--long"></span></p></div></div></div></section>
           <section class="hz-exercise">
             <div class="hz-exercise-number">8</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Write a review of a place in your city. Work in pairs. Choose a place to go.</p><div class="hz-exercise__body l3c-review-writing-layout"><div class="l3c-review-editor"><header><h2>Your review</h2><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m16 3 5 5-12 12-6 1 1-6Z M13 6l5 5"/></svg></header><div class="l3c-review-open-lines" aria-label="Four lines for your own review"><span></span><span></span><span></span><span></span></div></div><img class="l3c-review-writing-photo" src="./Images/3C/Review-Sueda-19535266.jpg" alt="A woman uses her phone at a café, illustrating a personal place review."></div></div>
           </section>
@@ -9432,7 +9479,7 @@ body {
       <div class="hz-exercises">
         <section class="hz-exercise"><div class="hz-exercise-number">1</div><div class="hz-exercise__content">
           <p class="hz-exercise__instruction"><span class="hz-audio-badge">♪ 3.8</span>Listen and repeat. Match the words and photos. <span class="hz-new-words">NEW WORDS</span></p>
-          <div class="hz-exercise__body l3d-action-layout"><div class="l3d-action-photos"><figure data-image-slot="HZN_A1_U03_LD_E01_IMG_01"><img src="./Images/3D/Read-Cottonbro-9708522.jpg" alt="A man reading an open book on a sofa."><figcaption>A</figcaption></figure><figure data-image-slot="HZN_A1_U03_LD_E01_IMG_02"><img src="./Images/3D/Walk-Terence-B-19403561.jpg" alt="A front view of a woman walking through a park in casual clothes."><figcaption>B</figcaption></figure><figure data-image-slot="HZN_A1_U03_LD_E01_IMG_03"><img src="./Images/3D/Music-Cottonbro-6687758.jpg" alt="An older woman listening to music with headphones."><figcaption>C</figcaption></figure><figure data-image-slot="HZN_A1_U03_LD_E01_IMG_04"><img src="./Images/3D/Breakfast-Ivan-S-7671446.jpg" alt="A man eating toast and fruit at a breakfast table."><figcaption>D</figcaption></figure><figure data-image-slot="HZN_A1_U03_LD_E01_IMG_05"><img src="./Images/3D/Sleep-Los-Muertos-Crew-8406467.jpg" alt="A woman asleep in bed."><figcaption>E</figcaption></figure><figure data-image-slot="HZN_A1_U03_LD_E01_IMG_06"><img src="./Images/3D/Water-Ron-Lach-8487216.jpg" alt="A woman drinking a glass of water at home."><figcaption>F</figcaption></figure></div><div class="l3d-action-words"><span><b>1</b> drink water <span class="l3d-letter-gap"></span></span><span><b>2</b> walk <span class="l3d-letter-gap"></span></span><span><b>3</b> read a book <span class="l3d-letter-gap"></span></span><span><b>4</b> listen to music <span class="l3d-letter-gap"></span></span><span><b>5</b> have breakfast <span class="l3d-letter-gap"></span></span><span><b>6</b> sleep <span class="l3d-letter-gap"></span></span></div></div>
+          <div class="hz-exercise__body l3d-action-layout"><div class="l3d-action-photos"><figure data-image-slot="HZN_A1_U03_LD_E01_IMG_01"><img src="./Images/3D/Read-Cottonbro-9708522.jpg" alt="A man reading an open book on a sofa."><figcaption>A</figcaption></figure><figure data-image-slot="HZN_A1_U03_LD_E01_IMG_02"><img src="./Images/3D/Walk-Terence-B-19403561.jpg" alt="A front view of a woman walking through a park in casual clothes."><figcaption>B</figcaption></figure><figure data-image-slot="HZN_A1_U03_LD_E01_IMG_03"><img src="./Images/3D/Music-Cottonbro-6687758.jpg" alt="An older woman listening to music with headphones."><figcaption>C</figcaption></figure><figure data-image-slot="HZN_A1_U03_LD_E01_IMG_04"><img src="./Images/3D/Breakfast-Ivan-S-7671446.jpg" alt="A man eating toast and fruit at a breakfast table."><figcaption>D</figcaption></figure><figure data-image-slot="HZN_A1_U03_LD_E01_IMG_05"><img src="./Images/3D/Sleep-Los-Muertos-Crew-8406467.jpg" alt="A woman asleep in bed."><figcaption>E</figcaption></figure><figure data-image-slot="HZN_A1_U03_LD_E01_IMG_06"><img src="./Images/3D/Water-Ron-Lach-8487216.jpg" alt="A woman drinking a glass of water at home."><figcaption>F</figcaption></figure></div><div class="l3d-action-words hz-task-text"><span><b>1</b> drink water <span class="l3d-letter-gap"></span></span><span><b>2</b> walk <span class="l3d-letter-gap"></span></span><span><b>3</b> read a book <span class="l3d-letter-gap"></span></span><span><b>4</b> listen to music <span class="l3d-letter-gap"></span></span><span><b>5</b> have breakfast <span class="l3d-letter-gap"></span></span><span><b>6</b> sleep <span class="l3d-letter-gap"></span></span></div></div>
         </div></section>
         <div class="hz-go-to hz-go-to--inset">Go to: Vocabulary - Daily routines, page ---</div>
         <section class="hz-exercise"><div class="hz-exercise-number">2</div><div class="hz-exercise__content">
@@ -9447,7 +9494,7 @@ body {
             </tbody></table>
           </div>
         </div></section>
-        <section class="hz-exercise"><div class="hz-exercise-number">3</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Read again. Circle the correct words.</p><div class="hz-exercise__body"><ol class="l3d-list l3d-notice">
+        <section class="hz-exercise"><div class="hz-exercise-number">3</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Read again. Circle the correct words.</p><div class="hz-exercise__body"><ol class="l3d-list l3d-notice hz-task-text">
           <li>Zoe drinks water on Sunday: <em class="hz-answer-option">yes / no</em>.</li><li>Zoe walks on Saturday: <em class="hz-answer-option">yes / no</em>.</li><li>“I always drink water”: <i>always</i> is <em class="hz-answer-option">before / after</em> <i>drink</i>.</li><li>“I am usually at home”: <i>usually</i> is <em class="hz-answer-option">before / after</em> <i>am</i>.</li>
         </ol></div></div></section>
         <section class="hz-focus-box hz-no-break l3d-inset" aria-label="Grammar: frequency adverbs"><header class="hz-focus-box__header">GRAMMAR: FREQUENCY ADVERBS</header><div class="hz-focus-box__body hz-concept-body"><div class="hz-concept-scale" aria-label="Frequency from always to never; no fixed percentage thresholds"><span>always</span><span>usually</span><span>sometimes</span><span>never</span></div><div class="hz-concept-grid"><div><p class="hz-concept-heading">Verbs</p><p>I <strong>always</strong> <span class="hz-concept-stem">drink</span> water.</p><p>We <strong>sometimes</strong> <span class="hz-concept-stem">watch</span> TV.</p></div><div><p class="hz-concept-heading">am / is / are</p><p>I <span class="hz-concept-stem">am</span> <strong>usually</strong> at home at six.</p><p>She <span class="hz-concept-stem">is</span> <strong>never</strong> at work on Sunday.</p></div></div></div></section>
@@ -9458,13 +9505,13 @@ body {
   <article class="hz-page hz-content hz-unit-3 hz-continuation-page l3d-page l3d-page--2" data-page="30">
     <main class="hz-page__content"><span class="hz-continuation" aria-label="Lesson 3D continued">3D</span><div class="hz-page-stack"><div class="l3d-continuation-content">
       <div class="hz-exercises">
-        <section class="hz-exercise"><div class="hz-exercise-number">4</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Look at Zoe’s morning. Write A–C. Then circle the correct words. <span class="hz-new-words">NEW WORDS</span></p><div class="hz-exercise__body"><figure class="l3d-photo-story"><img src="./Images/3D/Zoe-morning-sequence-v2.png" alt="Three moments in fictional Zoe's morning: A she leaves home with her work bag; B she eats breakfast; C she drinks water after finishing breakfast."><div class="l3d-story-letters"><span>A</span><span>B</span><span>C</span></div></figure><div class="l3d-sequence-strip"><span><b>7:00</b> have breakfast <i class="l3d-letter-gap"></i></span><span><b>7:10</b> drink water <i class="l3d-letter-gap"></i></span><span><b>8:00</b> go to work <i class="l3d-letter-gap"></i></span></div><ol class="l3d-list l3d-sequence-notice"><li>Zoe drinks water <em class="hz-answer-option">before / after</em> she has breakfast.</li><li>Zoe has breakfast <em class="hz-answer-option">before / after</em> she drinks water.</li></ol></div></div></section>
+        <section class="hz-exercise"><div class="hz-exercise-number">4</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Look at Zoe’s morning. Write A–C. Then circle the correct words. <span class="hz-new-words">NEW WORDS</span></p><div class="hz-exercise__body"><figure class="l3d-photo-story"><img src="./Images/3D/Zoe-morning-sequence-v2.png" alt="Three moments in fictional Zoe's morning: A she leaves home with her work bag; B she eats breakfast; C she drinks water after finishing breakfast."><div class="l3d-story-letters"><span>A</span><span>B</span><span>C</span></div></figure><div class="l3d-sequence-strip"><span><b>7:00</b> have breakfast <i class="l3d-letter-gap"></i></span><span><b>7:10</b> drink water <i class="l3d-letter-gap"></i></span><span><b>8:00</b> go to work <i class="l3d-letter-gap"></i></span></div><ol class="l3d-list l3d-sequence-notice hz-task-text"><li>Zoe drinks water <em class="hz-answer-option">before / after</em> she has breakfast.</li><li>Zoe has breakfast <em class="hz-answer-option">before / after</em> she drinks water.</li></ol></div></div></section>
         <section class="hz-focus-box hz-no-break l3d-inset" aria-label="Grammar: before and after"><header class="hz-focus-box__header">GRAMMAR: BEFORE / AFTER</header><div class="hz-focus-box__body hz-concept-body"><div class="hz-concept-grid"><div><div class="hz-concept-flow"><span>walk</span><span class="hz-concept-arrow" aria-hidden="true">→</span><span>dinner</span></div><p>I walk <strong>before</strong> dinner.</p><p>I walk <strong>before</strong> I have dinner.</p></div><div><div class="hz-concept-flow"><span>breakfast</span><span class="hz-concept-arrow" aria-hidden="true">→</span><span>drink water</span></div><p>I drink water <strong>after</strong> breakfast.</p><p>I drink water <strong>after</strong> I have breakfast.</p></div></div></div></section>
         <div class="hz-go-to hz-go-to--inset">Go to: Grammar - Before / after, page ---</div>
 
 
         <section class="hz-exercise"><div class="hz-exercise-number">5</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Your week: choose three routines. Circle your days. Write an adverb.</p><div class="hz-exercise__body"><table class="l3d-your-week"><thead><tr><th>Routine</th><th>Mon · Tue · Wed · Thu · Fri · Sat · Sun</th><th>Adverb</th></tr></thead><tbody><tr><th></th><td>Mon · Tue · Wed · Thu · Fri · Sat · Sun</td><td></td></tr><tr><th></th><td>Mon · Tue · Wed · Thu · Fri · Sat · Sun</td><td></td></tr><tr><th></th><td>Mon · Tue · Wed · Thu · Fri · Sat · Sun</td><td></td></tr></tbody></table></div></div></section>
-        <section class="hz-exercise"><div class="hz-exercise-number">6</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Write your #MyWeek post. Use your adverbs and <i>before</i> or <i>after</i>. Then choose one routine for your challenge.</p><div class="hz-exercise__body"><div class="l3d-post-editor"><header><h2>#MyWeek</h2><span>Your name <span class="l3d-name-gap"></span></span></header><p class="l3d-example">I usually walk before dinner.</p><div class="l3d-post-lines" aria-label="Four lines for your post"><span></span><span></span><span></span><span></span></div></div><div class="l3d-my-challenge"><b>My 7-day challenge</b><span class="l3d-write"></span></div><p class="l3d-share">Work in pairs. Read your posts. Your weeks: <em class="hz-answer-option">the same / different</em>?</p></div></div></section>
+        <section class="hz-exercise"><div class="hz-exercise-number">6</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Write your #MyWeek post. Use your adverbs and <i>before</i> or <i>after</i>. Then choose one routine for your challenge.</p><div class="hz-exercise__body"><div class="l3d-post-editor"><header><h2>#MyWeek</h2><span>Your name <span class="l3d-name-gap"></span></span></header><p class="l3d-example hz-task-text">I usually walk before dinner.</p><div class="l3d-post-lines" aria-label="Four lines for your post"><span></span><span></span><span></span><span></span></div></div><div class="l3d-my-challenge"><b>My 7-day challenge</b><span class="l3d-write"></span></div><p class="l3d-share hz-task-text">Work in pairs. Read your posts. Your weeks: <em class="hz-answer-option">the same / different</em>?</p></div></div></section>
       </div>
       <div class="hz-extra-practice l3d-inset"><span class="hz-extra-practice__label">EXTRA PRACTICE</span><span class="hz-extra-practice__prompt">After seven days, write your #MyWeek post again. Read both posts. The same or different?</span></div>
     </div></div></main><footer class="hz-page__footer"><span></span><span class="hz-page-number">30</span></footer>
@@ -9485,11 +9532,11 @@ body {
 <figure><div class="l4a-cutout" role="img" aria-label="eggs" style="--px:0.00000%;--py:100%"></div><figcaption>I</figcaption></figure>
 <figure><div class="l4a-cutout" role="img" aria-label="apples" style="--px:33.33333%;--py:100%"></div><figcaption>J</figcaption></figure>
 <figure><div class="l4a-cutout" role="img" aria-label="bananas" style="--px:66.66667%;--py:100%"></div><figcaption>K</figcaption></figure>
-<figure><div class="l4a-cutout" role="img" aria-label="tomatoes" style="--px:100.00000%;--py:100%"></div><figcaption>L</figcaption></figure></div><div class="l4a-food-words"><span><b>1</b><span class="l4a-letter-answer l4a-example">B</span>rice</span><span><b>2</b><span class="l4a-letter-answer"></span>milk</span><span><b>3</b><span class="l4a-letter-answer"></span>eggs</span><span><b>4</b><span class="l4a-letter-answer"></span>bread</span><span><b>5</b><span class="l4a-letter-answer"></span>fish</span><span><b>6</b><span class="l4a-letter-answer"></span>cheese</span><span><b>7</b><span class="l4a-letter-answer"></span>tea</span><span><b>8</b><span class="l4a-letter-answer"></span>tomatoes</span><span><b>9</b><span class="l4a-letter-answer"></span>coffee</span><span><b>10</b><span class="l4a-letter-answer"></span>bananas</span><span><b>11</b><span class="l4a-letter-answer"></span>juice</span><span><b>12</b><span class="l4a-letter-answer"></span>apples</span></div></div></div></section>
+<figure><div class="l4a-cutout" role="img" aria-label="tomatoes" style="--px:100.00000%;--py:100%"></div><figcaption>L</figcaption></figure></div><div class="l4a-food-words hz-task-text"><span><b>1</b><span class="l4a-letter-answer l4a-example hz-task-text">B</span>rice</span><span><b>2</b><span class="l4a-letter-answer"></span>milk</span><span><b>3</b><span class="l4a-letter-answer"></span>eggs</span><span><b>4</b><span class="l4a-letter-answer"></span>bread</span><span><b>5</b><span class="l4a-letter-answer"></span>fish</span><span><b>6</b><span class="l4a-letter-answer"></span>cheese</span><span><b>7</b><span class="l4a-letter-answer"></span>tea</span><span><b>8</b><span class="l4a-letter-answer"></span>tomatoes</span><span><b>9</b><span class="l4a-letter-answer"></span>coffee</span><span><b>10</b><span class="l4a-letter-answer"></span>bananas</span><span><b>11</b><span class="l4a-letter-answer"></span>juice</span><span><b>12</b><span class="l4a-letter-answer"></span>apples</span></div></div></div></section>
 <div class="hz-go-to hz-go-to--inset">Go to: Vocabulary - Food and drink, page ---</div>
 <section class="hz-exercise"><div class="hz-exercise-number">2</div><div class="hz-exercise__content"><p class="hz-exercise__instruction"><span class="hz-audio-badge">♪ 4.2</span>Guess: tea or coffee in both breakfasts? Read and listen.</p><div class="hz-exercise__body"><article class="l4a-breakfast-feature"><header><p>TRADITIONAL BREAKFASTS</p><h2>Good morning, world!</h2></header><div class="l4a-breakfast-layout"><section class="l4a-japan"><img src="./Images/4A/Japanese-breakfast-Afifi-4110430.jpg" alt="A real photograph of a Japanese-style breakfast set, including rice, fish and egg."><div class="l4a-breakfast-copy"><h3><span>Sora</span> Japan</h3><p>I have <strong>rice</strong> and <strong>fish</strong> for breakfast. I eat <strong>an egg</strong>, too. I drink <strong>tea</strong>.</p></div></section><section class="l4a-turkiye"><div class="l4a-breakfast-copy"><h3><span>Elif</span> Türkiye</h3><p>I have <strong>bread</strong> and <strong>cheese</strong> for breakfast. I eat <strong>eggs</strong> and <strong>tomatoes</strong>. I drink <strong>tea</strong>.</p></div><img src="./Images/4A/Turkish-breakfast-Tahir-33672311.jpg" alt="A real traditional Turkish breakfast spread with cheese, eggs, tomatoes and tea."></section></div></article></div></div></section>
-<section class="hz-exercise"><div class="hz-exercise-number">3</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Read again. Write the name or names.</p><div class="hz-exercise__body"><ol class="l4a-list l4a-two-columns"><li>Tea for breakfast. <span class="l4a-gap"></span></li><li>Rice and fish. <span class="l4a-gap"></span></li><li>Bread and cheese. <span class="l4a-gap"></span></li><li>Eggs and tomatoes. <span class="l4a-gap"></span></li></ol></div></div></section>
-<section class="hz-exercise"><div class="hz-exercise-number">4</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Look at the text. Circle the correct words.</p><div class="hz-exercise__body"><ol class="l4a-list l4a-notice"><li>Sora eats <em class="hz-answer-option">an egg / a egg</em>.</li><li>Elif eats <em class="hz-answer-option">egg / eggs</em>.</li><li>Elif has <em class="hz-answer-option">a bread / bread</em>.</li></ol></div></div></section>
+<section class="hz-exercise"><div class="hz-exercise-number">3</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Read again. Write the name or names.</p><div class="hz-exercise__body"><ol class="l4a-list l4a-two-columns hz-task-text"><li>Tea for breakfast. <span class="l4a-gap"></span></li><li>Rice and fish. <span class="l4a-gap"></span></li><li>Bread and cheese. <span class="l4a-gap"></span></li><li>Eggs and tomatoes. <span class="l4a-gap"></span></li></ol></div></div></section>
+<section class="hz-exercise"><div class="hz-exercise-number">4</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Look at the text. Circle the correct words.</p><div class="hz-exercise__body"><ol class="l4a-list l4a-notice hz-task-text"><li>Sora eats <em class="hz-answer-option">an egg / a egg</em>.</li><li>Elif eats <em class="hz-answer-option">egg / eggs</em>.</li><li>Elif has <em class="hz-answer-option">a bread / bread</em>.</li></ol></div></div></section>
 </div></div></main><footer class="hz-page__footer"><span></span><span class="hz-page-number">31</span></footer></article>
 <article class="hz-page hz-content hz-unit-4 hz-continuation-page l4a-page l4a-page--2" data-page="32"><main class="hz-page__content"><span class="hz-continuation" aria-label="Lesson 4A continued">4A</span><div class="hz-page-stack"><div class="l4a-continuation-content">
 <section class="hz-focus-box hz-no-break" aria-label="Grammar: countable and uncountable nouns">
@@ -9514,31 +9561,31 @@ body {
 </div></section>
 <div class="hz-go-to hz-go-to--inset">Go to: Grammar - Countable and uncountable nouns, page ---</div>
 <div class="hz-exercises">
-<section class="hz-exercise"><div class="hz-exercise-number">5</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Write the words in the table.</p><div class="hz-exercise__body"><div class="hz-word-bank"><span class="hz-text-unit">eggs · rice · cheese · apples · coffee · bananas · bread · tomatoes</span></div><table class="l4a-sort-table"><thead><tr><th>Countable</th><th>Uncountable</th></tr></thead><tbody><tr><td><span class="l4a-example">eggs</span><span class="l4a-table-write"></span><span class="l4a-table-write"></span><span class="l4a-table-write"></span></td><td><span class="l4a-example">rice</span><span class="l4a-table-write"></span><span class="l4a-table-write"></span><span class="l4a-table-write"></span></td></tr></tbody></table></div></div></section>
-<section class="hz-exercise"><div class="hz-exercise-number">6</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Write <i>a</i>, <i>an</i> or <i>–</i> (no article).</p><div class="hz-exercise__body"><ol class="l4a-list l4a-two-columns"><li>I eat <span class="l4a-gap l4a-gap--short"></span> apple.</li><li>She drinks <span class="l4a-gap l4a-gap--short"></span> milk.</li><li>We have <span class="l4a-gap l4a-gap--short"></span> bananas.</li><li>He eats <span class="l4a-gap l4a-gap--short"></span> banana.</li></ol></div></div></section>
-<section class="hz-exercise"><div class="hz-exercise-number">7</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Look and read. Find two incorrect sentences. Write them again.</p><div class="hz-exercise__body"><div class="l4a-picnic-check"><figure data-image-slot="HZN_A1_U04_LA_E07_IMG_01"><img src="./Images/4A/Picnic-food-counts-v1.png" alt="Exact picnic evidence: one apple, two whole eggs, three bananas, bread, cheese and a glass of milk."></figure><div><h2>Our picnic</h2><ol class="l4a-list l4a-picnic-claims"><li>We have two apples.</li><li>We have three eggs.</li><li>We have three bananas.</li><li>We have bread and cheese.</li></ol><div class="l4a-open-lines"><span></span><span></span></div></div></div></div></div></section>
-<section class="hz-exercise"><div class="hz-exercise-number">8</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Work in pairs. Ask about breakfast. Choose food and drink for two.</p><div class="hz-exercise__body"><div class="l4a-pair-model hz-dialogue-text"><p><b>A:</b> What do you eat for breakfast?</p><p><b>B:</b> I eat bread and cheese.</p><p><b>A:</b> What do you drink?</p><p><b>B:</b> I drink tea.</p></div><div class="l4a-breakfast-menu"><header><h2>Breakfast</h2></header><div><p>Food <span></span></p><p>Drink <span></span></p></div></div></div></div></section>
+<section class="hz-exercise"><div class="hz-exercise-number">5</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Write the words in the table.</p><div class="hz-exercise__body"><div class="hz-word-bank"><span class="hz-text-unit">eggs · rice · cheese · apples · coffee · bananas · bread · tomatoes</span></div><table class="l4a-sort-table"><thead><tr><th>Countable</th><th>Uncountable</th></tr></thead><tbody><tr><td><span class="l4a-example hz-task-text">eggs</span><span class="l4a-table-write"></span><span class="l4a-table-write"></span><span class="l4a-table-write"></span></td><td><span class="l4a-example hz-task-text">rice</span><span class="l4a-table-write"></span><span class="l4a-table-write"></span><span class="l4a-table-write"></span></td></tr></tbody></table></div></div></section>
+<section class="hz-exercise"><div class="hz-exercise-number">6</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Write <i>a</i>, <i>an</i> or <i>–</i> (no article).</p><div class="hz-exercise__body"><ol class="l4a-list l4a-two-columns hz-task-text"><li>I eat <span class="l4a-gap l4a-gap--short"></span> apple.</li><li>She drinks <span class="l4a-gap l4a-gap--short"></span> milk.</li><li>We have <span class="l4a-gap l4a-gap--short"></span> bananas.</li><li>He eats <span class="l4a-gap l4a-gap--short"></span> banana.</li></ol></div></div></section>
+<section class="hz-exercise"><div class="hz-exercise-number">7</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Look and read. Find two incorrect sentences. Write them again.</p><div class="hz-exercise__body"><div class="l4a-picnic-check"><figure data-image-slot="HZN_A1_U04_LA_E07_IMG_01"><img src="./Images/4A/Picnic-food-counts-v1.png" alt="Exact picnic evidence: one apple, two whole eggs, three bananas, bread, cheese and a glass of milk."></figure><div><h2>Our picnic</h2><ol class="l4a-list l4a-picnic-claims hz-task-text"><li>We have two apples.</li><li>We have three eggs.</li><li>We have three bananas.</li><li>We have bread and cheese.</li></ol><div class="l4a-open-lines"><span></span><span></span></div></div></div></div></div></section>
+<section class="hz-exercise"><div class="hz-exercise-number">8</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Work in pairs. Ask about breakfast. Choose food and drink for two.</p><div class="hz-exercise__body"><div class="l4a-pair-model hz-dialogue-text hz-task-text"><p><b>A:</b> What do you eat for breakfast?</p><p><b>B:</b> I eat bread and cheese.</p><p><b>A:</b> What do you drink?</p><p><b>B:</b> I drink tea.</p></div><div class="l4a-breakfast-menu"><header><h2>Breakfast</h2></header><div><p>Food <span></span></p><p>Drink <span></span></p></div></div></div></div></section>
 </div></div><aside class="hz-extra-practice l4a-inset"><span class="hz-extra-practice__label">EXTRA PRACTICE</span><span class="hz-extra-practice__prompt">Write a breakfast menu for your family.</span></aside></div></main><footer class="hz-page__footer"><span></span><span class="hz-page-number">32</span></footer></article>
 
 <!-- ===== 4B.html ===== -->
 <article class="hz-page hz-content hz-unit-4 l4b-page" data-page="33"><main class="hz-page__content"><div class="hz-page-stack">
 <header class="hz-lesson-header"><div class="hz-lesson-tab" aria-label="Lesson 4B"><span class="hz-lesson-tab__label">Lesson</span><span class="hz-lesson-tab__id">4B</span></div><div class="hz-lesson-heading"><h1 class="hz-lesson-title">TASTY OR NOT?</h1><div class="hz-objectives"><span class="hz-objectives__item">Reading: food opinions</span><span class="hz-objectives__item">Flavors</span><span class="hz-objectives__item">Like / don't like · Object pronouns</span></div></div></header>
 <div class="hz-exercises">
-<section class="hz-exercise"><div class="hz-exercise-number">1</div><div class="hz-exercise__content"><p class="hz-exercise__instruction"><span class="hz-audio-badge">♪ 4.3</span>Listen and repeat. Match the words and photos. <span class="hz-new-words">NEW WORDS</span></p><div class="hz-exercise__body"><div class="l4b-flavors"><figure><div class="l4b-flavor-photo" role="img" aria-label="Sweet strawberries" style="--px:0%;--py:0%"></div><figcaption>A</figcaption></figure><figure><div class="l4b-flavor-photo" role="img" aria-label="Spicy red chili peppers" style="--px:100%;--py:0%"></div><figcaption>B</figcaption></figure><figure><div class="l4b-flavor-photo" role="img" aria-label="Sour lemon" style="--px:0%;--py:100%"></div><figcaption>C</figcaption></figure><figure><div class="l4b-flavor-photo" role="img" aria-label="Salty potato chips" style="--px:100%;--py:100%"></div><figcaption>D</figcaption></figure></div><ol class="l4b-flavor-words l4b-list"><li>salty <span class="l4b-gap l4b-gap--letter"></span></li><li>sweet <span class="l4b-gap l4b-gap--letter"></span></li><li>sour <span class="l4b-gap l4b-gap--letter"></span></li><li>spicy <span class="l4b-gap l4b-gap--letter"></span></li></ol></div></div></section>
+<section class="hz-exercise"><div class="hz-exercise-number">1</div><div class="hz-exercise__content"><p class="hz-exercise__instruction"><span class="hz-audio-badge">♪ 4.3</span>Listen and repeat. Match the words and photos. <span class="hz-new-words">NEW WORDS</span></p><div class="hz-exercise__body"><div class="l4b-flavors"><figure><div class="l4b-flavor-photo" role="img" aria-label="Sweet strawberries" style="--px:0%;--py:0%"></div><figcaption>A</figcaption></figure><figure><div class="l4b-flavor-photo" role="img" aria-label="Spicy red chili peppers" style="--px:100%;--py:0%"></div><figcaption>B</figcaption></figure><figure><div class="l4b-flavor-photo" role="img" aria-label="Sour lemon" style="--px:0%;--py:100%"></div><figcaption>C</figcaption></figure><figure><div class="l4b-flavor-photo" role="img" aria-label="Salty potato chips" style="--px:100%;--py:100%"></div><figcaption>D</figcaption></figure></div><ol class="l4b-flavor-words l4b-list hz-task-text"><li>salty <span class="l4b-gap l4b-gap--letter"></span></li><li>sweet <span class="l4b-gap l4b-gap--letter"></span></li><li>sour <span class="l4b-gap l4b-gap--letter"></span></li><li>spicy <span class="l4b-gap l4b-gap--letter"></span></li></ol></div></div></section>
 <div class="hz-go-to hz-go-to--inset">Go to: Vocabulary - Flavors, page ---</div>
 <section class="hz-exercise"><div class="hz-exercise-number">2</div><div class="hz-exercise__content"><p class="hz-exercise__instruction"><span class="hz-audio-badge">♪ 4.4</span>Read and listen. Who likes all three foods?</p><div class="hz-exercise__body"><article class="l4b-taste-feature"><div class="l4b-taste-cover"><figure><img src="./Images/4B/Vegan-burger-Alesia-Kozik-6546034.jpg" alt="A real falafel burger with vegetables on a plate."></figure><header><p>THE TASTE TEST</p><h2>New food.<br>Real opinions.</h2><p class="l4b-feature-intro">Burgers with no meat? Ice cream with no milk?<br>Vegan food is on the menu.</p><div class="l4b-vegan-note"><b>Vegan food</b><p>Food from plants.<br>No meat, fish, milk or eggs.</p></div></header></div><div class="l4b-opinions"><section><h3>Nadia</h3><p>I don't eat meat. Max makes this burger. I like <strong>it</strong>! It's spicy. Eva makes the chips. I like <strong>them</strong>, too. They're salty. I don't like the ice cream. It's very sweet.</p></section><section><h3>Joel</h3><p>I eat meat, but Max's burger is good. I like <strong>it</strong>! I don't like the chips. They're very salty. Eva asks <strong>me</strong>, “Do you like the ice cream?” Yes! It's sweet.</p></section><section><h3>Rosa</h3><p>Max and Eva make our food. We like <strong>them</strong>! I help <strong>him</strong> on Saturdays, and my sister helps <strong>her</strong>. They give <strong>us</strong> lunch. I like the burger, the chips and the ice cream!</p></section></div></article></div></div></section>
-<section class="hz-exercise"><div class="hz-exercise-number">3</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Read again. Do they like the food? Write <i>yes</i> or <i>no</i>.</p><div class="hz-exercise__body"><table class="l4b-opinion-table"><thead><tr><th></th><th>The burger</th><th>The chips</th><th>The ice cream</th></tr></thead><tbody><tr><th>Nadia</th><td><span class="l4b-example">yes</span></td><td></td><td></td></tr><tr><th>Joel</th><td></td><td></td><td></td></tr><tr><th>Rosa</th><td></td><td></td><td></td></tr></tbody></table></div></div></section>
+<section class="hz-exercise"><div class="hz-exercise-number">3</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Read again. Do they like the food? Write <i>yes</i> or <i>no</i>.</p><div class="hz-exercise__body"><table class="l4b-opinion-table"><thead><tr><th></th><th>The burger</th><th>The chips</th><th>The ice cream</th></tr></thead><tbody><tr><th>Nadia</th><td><span class="l4b-example hz-task-text">yes</span></td><td></td><td></td></tr><tr><th>Joel</th><td></td><td></td><td></td></tr><tr><th>Rosa</th><td></td><td></td><td></td></tr></tbody></table></div></div></section>
 </div></div></main><footer class="hz-page__footer"><span></span><span class="hz-page-number">33</span></footer></article>
 <article class="hz-page hz-content hz-unit-4 hz-continuation-page l4b-page l4b-page--2" data-page="34"><main class="hz-page__content"><span class="hz-continuation" aria-label="Lesson 4B continued">4B</span><div class="hz-page-stack"><div class="hz-exercises">
-<section class="hz-exercise"><div class="hz-exercise-number">4</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Look at the bold words in the text. Circle the correct answer.</p><div class="hz-exercise__body"><ol class="l4b-list l4b-noticing"><li>Nadia: “I like <b>it</b>.” <em class="hz-answer-option">the burger / the chips</em></li><li>Nadia: “I like <b>them</b>, too.” <em class="hz-answer-option">the burger / the chips</em></li><li>Rosa: “I help <b>him</b>.” <em class="hz-answer-option">Max / Eva</em></li><li>Rosa: “My sister helps <b>her</b>.” <em class="hz-answer-option">Max / Eva</em></li></ol></div></div></section>
+<section class="hz-exercise"><div class="hz-exercise-number">4</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Look at the bold words in the text. Circle the correct answer.</p><div class="hz-exercise__body"><ol class="l4b-list l4b-noticing hz-task-text"><li>Nadia: “I like <b>it</b>.” <em class="hz-answer-option">the burger / the chips</em></li><li>Nadia: “I like <b>them</b>, too.” <em class="hz-answer-option">the burger / the chips</em></li><li>Rosa: “I help <b>him</b>.” <em class="hz-answer-option">Max / Eva</em></li><li>Rosa: “My sister helps <b>her</b>.” <em class="hz-answer-option">Max / Eva</em></li></ol></div></div></section>
 </div>
 <section class="hz-focus-box hz-no-break l4b-inset" aria-label="Grammar: object pronouns"><header class="hz-focus-box__header">GRAMMAR: OBJECT PRONOUNS</header><div class="hz-focus-box__body hz-concept-body"><p class="hz-concept-flow"><span>I like <span class="hz-concept-stem">the burger</span>.</span><span aria-hidden="true">→</span><span>I like <strong>it</strong>.</span></p><p class="hz-concept-flow"><span>I don't like <span class="hz-concept-stem">the chips</span>.</span><span aria-hidden="true">→</span><span>I don't like <strong>them</strong>.</span></p><div class="hz-concept-grid"><p>I → <strong>me</strong> · you → <strong>you</strong><br>he → <strong>him</strong> · she → <strong>her</strong></p><p>it → <strong>it</strong> · we → <strong>us</strong><br>they → <strong>them</strong></p></div><p class="hz-concept-note">After the verb: Max helps <strong>me</strong>. I help <strong>him</strong>. I help <strong>you</strong>.</p></div></section>
 <div class="hz-go-to hz-go-to--inset">Go to: Grammar - Object pronouns, page ---</div>
 <div class="hz-exercises l4b-lower-exercises">
 
 <section class="hz-exercise"><div class="hz-exercise-number">5</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Read activity 2. Choose food they both like.</p><div class="hz-exercise__body"><div class="l4b-shared-food"><header><h2>Lunch together</h2></header><div><article><h3>Nadia and Joel</h3><span></span></article><article><h3>Nadia and Rosa</h3><span></span></article><article><h3>Joel and Rosa</h3><span></span></article></div></div></div></div></section>
-<section class="hz-exercise"><div class="hz-exercise-number">6</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Look and guess. Do they both like the burger? Read and check.</p><div class="hz-exercise__body"><div class="l4b-counter"><figure class="l4b-reaction-photo" data-image-slot="HZN_A1_U04_LB_E06_IMG_01"><img src="./Images/4B/Same-food-different-opinions-v2.png" alt="Fictional Mila on the left enjoys a burger; Tom on the right looks unconvinced about the same kind of burger. Fries are on the counter."><figcaption><span>Mila</span><span>Tom</span></figcaption></figure><div class="l4b-counter-copy"><div class="l4b-reaction-dialogue hz-dialogue-text"><p><b>Mila:</b> I like the burger. It's spicy!</p><p><b>Tom:</b> I don't like <strong>it</strong>. I like the fries.</p><p><b>Mila:</b> I like <strong>them</strong>, too!</p></div></div></div></div></div></section>
-<section class="hz-exercise"><div class="hz-exercise-number">7</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Ask three classmates about three foods. Find one food they all like.</p><div class="hz-exercise__body"><div class="l4b-final-model hz-dialogue-text"><p><b>A:</b> Do you like chips?</p><p><b>B:</b> Yes, I do. I like them!</p></div><div class="l4b-class-choice"><p>Names <span></span></p><p>Food <span></span></p></div></div></div></section>
+<section class="hz-exercise"><div class="hz-exercise-number">6</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Look and guess. Do they both like the burger? Read and check.</p><div class="hz-exercise__body"><div class="l4b-counter"><figure class="l4b-reaction-photo" data-image-slot="HZN_A1_U04_LB_E06_IMG_01"><img src="./Images/4B/Same-food-different-opinions-v2.png" alt="Fictional Mila on the left enjoys a burger; Tom on the right looks unconvinced about the same kind of burger. Fries are on the counter."><figcaption><span>Mila</span><span>Tom</span></figcaption></figure><div class="l4b-counter-copy"><div class="l4b-reaction-dialogue hz-dialogue-text hz-task-text"><p><b>Mila:</b> I like the burger. It's spicy!</p><p><b>Tom:</b> I don't like <strong>it</strong>. I like the fries.</p><p><b>Mila:</b> I like <strong>them</strong>, too!</p></div></div></div></div></div></section>
+<section class="hz-exercise"><div class="hz-exercise-number">7</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Ask three classmates about three foods. Find one food they all like.</p><div class="hz-exercise__body"><div class="l4b-final-model hz-dialogue-text hz-task-text"><p><b>A:</b> Do you like chips?</p><p><b>B:</b> Yes, I do. I like them!</p></div><div class="l4b-class-choice hz-task-text"><p>Names <span></span></p><p>Food <span></span></p></div></div></div></section>
 </div><aside class="hz-extra-practice l4b-inset"><span class="hz-extra-practice__label">EXTRA PRACTICE</span><span class="hz-extra-practice__prompt">Find a vegan food on a menu. What is it? Is it sweet, salty, sour or spicy?</span></aside>
 </div></main><footer class="hz-page__footer"><span></span><span class="hz-page-number">34</span></footer></article>
 
@@ -9549,7 +9596,7 @@ body {
 <section class="hz-exercise"><div class="hz-exercise-number">1</div><div class="hz-exercise__content"><p class="hz-exercise__instruction"><span class="hz-audio-badge">♪ 4.5</span>Listen and repeat. Complete the recipe with the verbs. <span class="hz-new-words">NEW WORDS</span></p><div class="hz-exercise__body"><div class="hz-word-bank"><span class="hz-text-unit">mix · wash · add · cut</span></div><article class="l4c-recipe"><header><div><p>A SIMPLE RECIPE</p><h2>Tomato salad</h2></div><div class="l4c-for-two"><span>FOR</span><b>2</b><span>PEOPLE</span></div></header><div class="l4c-ingredients"><b>You need</b><span>2 tomatoes</span><span>2 spoons of cheese</span><span>1 spoon of oil</span></div><div class="l4c-steps"><figure><div class="l4c-step-photo" role="img" aria-label="Hands washing whole tomatoes under running tap water" style="--px:0%;--py:0%"></div><figcaption><b>A</b><p><span class="l4c-gap l4c-gap--verb"></span> the tomatoes.</p></figcaption></figure><figure><div class="l4c-step-photo" role="img" aria-label="Hands cutting a tomato on a board with a kitchen knife" style="--px:100%;--py:0%"></div><figcaption><b>B</b><p><span class="l4c-gap l4c-gap--verb"></span> the tomatoes.</p></figcaption></figure><figure><div class="l4c-step-photo" role="img" aria-label="Adding oil to tomatoes and cheese in a white bowl" style="--px:0%;--py:100%"></div><figcaption><b>C</b><p><span class="l4c-gap l4c-gap--verb"></span> the cheese and oil.</p></figcaption></figure><figure><div class="l4c-step-photo" role="img" aria-label="Mixing the tomato salad in a white bowl with a wooden spoon" style="--px:100%;--py:100%"></div><figcaption><b>D</b><p><span class="l4c-gap l4c-gap--verb"></span> the salad.</p></figcaption></figure></div></article></div></div></section>
 <div class="hz-go-to hz-go-to--inset">Go to: Vocabulary - Cooking verbs, page ---</div>
 <section class="hz-exercise"><div class="hz-exercise-number">2</div><div class="hz-exercise__content"><p class="hz-exercise__instruction"><span class="hz-audio-badge">♪ 4.6</span>Read and listen. Do they have enough cheese?</p><div class="hz-exercise__body"><div class="l4c-kitchen-talk hz-dialogue-text"><h2>Before you start</h2><div class="l4c-talk-columns"><section><h3>Tomatoes</h3><p><b>Luca:</b> Six tomatoes?</p><p><b>Elena:</b> That's <strong>too many tomatoes</strong>. We need two.</p></section><section><h3>Oil</h3><p><b>Luca:</b> Four spoons of oil?</p><p><b>Elena:</b> That's <strong>too much oil</strong>. We need one spoon.</p></section><section><h3>Cheese</h3><p><b>Luca:</b> Do we have <strong>enough cheese</strong>?</p><p><b>Elena:</b> Yes. Two spoons. That's <strong>enough cheese</strong> for two people.</p></section></div></div></div></div></section>
-<section class="hz-exercise"><div class="hz-exercise-number">3</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Look at the bold words. Circle the correct answers.</p><div class="hz-exercise__body"><ol class="l4c-list l4c-noticing"><li>Too many: <em class="hz-answer-option">tomatoes / oil</em>?</li><li>Too much: <em class="hz-answer-option">tomatoes / oil</em>?</li><li>Enough cheese: cheese for <em class="hz-answer-option">one person / two people</em>?</li></ol></div></div></section>
+<section class="hz-exercise"><div class="hz-exercise-number">3</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Look at the bold words. Circle the correct answers.</p><div class="hz-exercise__body"><ol class="l4c-list l4c-noticing hz-task-text"><li>Too many: <em class="hz-answer-option">tomatoes / oil</em>?</li><li>Too much: <em class="hz-answer-option">tomatoes / oil</em>?</li><li>Enough cheese: cheese for <em class="hz-answer-option">one person / two people</em>?</li></ol></div></div></section>
 <section class="hz-focus-box hz-no-break l4c-inset" aria-label="Grammar: too much, too many and enough"><header class="hz-focus-box__header">GRAMMAR: TOO MUCH / TOO MANY / ENOUGH</header><div class="hz-focus-box__body hz-concept-body"><table class="hz-concept-table"><thead><tr><th scope="col">Meaning</th><th scope="col">Countable plural</th><th scope="col">Uncountable</th></tr></thead><tbody><tr><td>More than we need</td><td><strong>too many</strong> tomatoes</td><td><strong>too much</strong> oil</td></tr><tr><td>We have what we need</td><td><strong>enough</strong> tomatoes</td><td><strong>enough</strong> oil</td></tr><tr><td>We need more</td><td><strong>not enough</strong> tomatoes</td><td><strong>not enough</strong> oil</td></tr></tbody></table><p class="hz-concept-note"><strong>Enough</strong> and <strong>not enough</strong> go before the noun.</p><p class="hz-concept-flow"><span><del>cheese enough</del><br><del>tomatoes not enough</del></span><span aria-hidden="true">→<br>→</span><span><strong>enough</strong> cheese<br><strong>not enough</strong> tomatoes</span></p></div></section>
 <div class="hz-go-to hz-go-to--inset">Go to: Grammar - Too much / too many / enough, page ---</div>
 </div></div></main><footer class="hz-page__footer"><span></span><span class="hz-page-number">35</span></footer></article>
@@ -9557,32 +9604,32 @@ body {
 
 
 <div class="hz-exercises">
-<section class="hz-exercise"><div class="hz-exercise-number">4</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Circle the correct words.</p><div class="hz-exercise__body"><ol class="l4c-list l4c-choice-grid"><li>That's too <em class="hz-answer-option">much / many</em> oil.</li><li>We have too <em class="hz-answer-option">much / many</em> eggs.</li><li>We have <em class="hz-answer-option">enough milk / milk enough</em>.</li><li>They have <em class="hz-answer-option">enough apples / apples enough</em>.</li></ol></div></div></section>
-<section class="hz-exercise"><div class="hz-exercise-number">5</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">The recipe needs two tomatoes. Luca adds all the tomatoes. Look and complete.</p><div class="hz-exercise__body"><div class="hz-word-bank"><span class="hz-text-unit">too many · enough · not enough</span></div><figure class="l4c-quantity-photo" data-image-slot="HZN_A1_U04_LC_E05_IMG_01"><img src="./Images/4C/Tomato-quantities-v2.png" alt="Three separate recipe options: A exactly one whole tomato, B exactly five whole tomatoes, C exactly two whole tomatoes."><div class="l4c-quantity-letters"><span>A</span><span>B</span><span>C</span></div></figure><div class="l4c-quantity-answers"><p><b>A</b> That's <span class="l4c-gap l4c-gap--phrase"></span><br>tomatoes.</p><p><b>B</b> That's <span class="l4c-gap l4c-gap--phrase"></span><br>tomatoes.</p><p><b>C</b> We have <span class="l4c-gap l4c-gap--phrase"></span><br>tomatoes.</p></div></div></div></section>
+<section class="hz-exercise"><div class="hz-exercise-number">4</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Circle the correct words.</p><div class="hz-exercise__body"><ol class="l4c-list l4c-choice-grid hz-task-text"><li>That's too <em class="hz-answer-option">much / many</em> oil.</li><li>We have too <em class="hz-answer-option">much / many</em> eggs.</li><li>We have <em class="hz-answer-option">enough milk / milk enough</em>.</li><li>They have <em class="hz-answer-option">enough apples / apples enough</em>.</li></ol></div></div></section>
+<section class="hz-exercise"><div class="hz-exercise-number">5</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">The recipe needs two tomatoes. Luca adds all the tomatoes. Look and complete.</p><div class="hz-exercise__body"><div class="hz-word-bank"><span class="hz-text-unit">too many · enough · not enough</span></div><figure class="l4c-quantity-photo" data-image-slot="HZN_A1_U04_LC_E05_IMG_01"><img src="./Images/4C/Tomato-quantities-v2.png" alt="Three separate recipe options: A exactly one whole tomato, B exactly five whole tomatoes, C exactly two whole tomatoes."><div class="l4c-quantity-letters"><span>A</span><span>B</span><span>C</span></div></figure><div class="l4c-quantity-answers hz-task-text"><p><b>A</b> That's <span class="l4c-gap l4c-gap--phrase"></span><br>tomatoes.</p><p><b>B</b> That's <span class="l4c-gap l4c-gap--phrase"></span><br>tomatoes.</p><p><b>C</b> We have <span class="l4c-gap l4c-gap--phrase"></span><br>tomatoes.</p></div></div></div></section>
 
-<section class="hz-exercise"><div class="hz-exercise-number">6</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Work in pairs. Plan a salad for two. What do you have at home?</p><div class="hz-exercise__body"><div class="l4c-pantry-plan"><img data-image-slot="HZN_A1_U04_LC_E06_IMG_02" class="l4c-cook" src="./Images/4C/Salad-planning-cook-v1.png" alt="An anonymous home cook holds a tomato salad and a wooden spoon; a visual prompt for planning a salad."><div><h2>Plan for two</h2><div class="l4c-pantry-model hz-dialogue-text"><p><b>A:</b> We need two tomatoes. Do you have enough?</p><p><b>B:</b> Yes. I have four tomatoes.</p><p><b>A:</b> What about cheese?</p><p><b>B:</b> I don't have enough cheese.</p></div><div class="l4c-open-lines"><span></span><span></span></div></div></div></div></div></section>
+<section class="hz-exercise"><div class="hz-exercise-number">6</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Work in pairs. Plan a salad for two. What do you have at home?</p><div class="hz-exercise__body"><div class="l4c-pantry-plan"><img data-image-slot="HZN_A1_U04_LC_E06_IMG_02" class="l4c-cook" src="./Images/4C/Salad-planning-cook-v1.png" alt="An anonymous home cook holds a tomato salad and a wooden spoon; a visual prompt for planning a salad."><div><h2>Plan for two</h2><div class="l4c-pantry-model hz-dialogue-text hz-task-text"><p><b>A:</b> We need two tomatoes. Do you have enough?</p><p><b>B:</b> Yes. I have four tomatoes.</p><p><b>A:</b> What about cheese?</p><p><b>B:</b> I don't have enough cheese.</p></div><div class="l4c-open-lines"><span></span><span></span></div></div></div></div></div></section>
 </div></div><aside class="hz-extra-practice l4c-inset"><span class="hz-extra-practice__label">EXTRA PRACTICE</span><span class="hz-extra-practice__prompt">Write a recipe for a dish you like.</span></aside></div></main><footer class="hz-page__footer"><span></span><span class="hz-page-number">36</span></footer></article>
 
 <!-- ===== 4D.html ===== -->
 <article class="hz-page hz-content hz-unit-4 l4d-page" data-page="37"><main class="hz-page__content"><div class="hz-page-stack">
 <header class="hz-lesson-header"><div class="hz-lesson-tab" aria-label="Lesson 4D"><span class="hz-lesson-tab__label">Lesson</span><span class="hz-lesson-tab__id">4D</span></div><div class="hz-lesson-heading"><h1 class="hz-lesson-title">FOOD FOR EVERYONE!</h1><div class="hz-objectives"><span class="hz-objectives__item">Writing a food-sharing post</span><span class="hz-objectives__item">Because / so</span><span class="hz-objectives__item">Punctuation</span></div></div></header>
 <div class="hz-exercises">
-<section class="hz-exercise"><div class="hz-exercise-number">1</div><div class="hz-exercise__content"><p class="hz-exercise__instruction"><span class="hz-audio-badge">♪ 4.7</span>Listen and repeat. Read the new words. <span class="hz-new-words">NEW WORDS</span></p><div class="hz-exercise__body l4d-words"><p><b>share food</b><br>Food for you and for me.</p><p><b>free</b><br>$0. No money.</p><p><b>waste food</b><br>Good food: we don't eat it or share it.</p></div></div></section>
+<section class="hz-exercise"><div class="hz-exercise-number">1</div><div class="hz-exercise__content"><p class="hz-exercise__instruction"><span class="hz-audio-badge">♪ 4.7</span>Listen and repeat. Read the new words. <span class="hz-new-words">NEW WORDS</span></p><div class="hz-exercise__body l4d-words hz-task-text"><p><b>share food</b><br>Food for you and for me.</p><p><b>free</b><br>$0. No money.</p><p><b>waste food</b><br>Good food: we don't eat it or share it.</p></div></div></section>
 <div class="hz-go-to hz-go-to--inset">Go to: Vocabulary - Sharing food, page ---</div>
 <section class="hz-exercise"><div class="hz-exercise-number">2</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Read the posts. Which post gives the food, place and time?<br><span class="hz-audio-badge">♪ 4.8</span>Listen to post B.</p><div class="hz-exercise__body">
 <article class="l4d-share-feature"><div class="l4d-source-layout"><div class="l4d-note-source"><figure data-image-slot="HZN_A1_U04_LD_E02_IMG_01"><img src="./Images/4D/Four-apples-v1.png" alt="Four red apples ready to share, beside a paper bag on a cafe table."></figure><section class="l4d-short-post"><h3><span>A</span> Nora</h3><p>Free food. Do you want it?</p></section></div><section class="l4d-phone"><header><h3><span>B</span> Nora</h3><span>FOOD TO SHARE</span></header><div class="l4d-phone-content"><div class="l4d-phone-offer"><span>FREE</span><b>$0</b></div><p class="l4d-model">Hi! I'm Nora. I have too many apples, <strong>so</strong> four apples are free. I share them <strong>because</strong> I don't need them. I'm at Park Café from four to five. Do you want them?</p></div><div class="l4d-phone-home" aria-hidden="true"></div></section></div><p class="l4d-real-connection">In real life: on Olio, people share free food with people near them.</p></article>
 </div></div></section>
-<section class="hz-exercise"><div class="hz-exercise-number">3</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Read post B again. Answer.</p><div class="hz-exercise__body"><ol class="l4d-list l4d-notice"><li>Why does Nora share her apples? <span class="l4d-answer"></span></li><li>Nora has too many apples. What is free? <span class="l4d-answer"></span></li></ol></div></div></section>
+<section class="hz-exercise"><div class="hz-exercise-number">3</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Read post B again. Answer.</p><div class="hz-exercise__body"><ol class="l4d-list l4d-notice hz-task-text"><li>Why does Nora share her apples? <span class="l4d-answer"></span></li><li>Nora has too many apples. What is free? <span class="l4d-answer"></span></li></ol></div></div></section>
 <section class="hz-focus-box hz-no-break l4d-inset" aria-label="Skills: because and so"><header class="hz-focus-box__header">SKILLS: BECAUSE / SO</header><div class="hz-focus-box__body hz-concept-body"><p class="hz-concept-heading">Because: Why?</p><p>I share them <strong>because</strong> I don't need them.</p><p class="hz-concept-heading hz-concept-note">So: result</p><p>I have too many apples<strong>, so</strong> four apples are free.</p><p class="hz-concept-note">Use a comma <strong>before so</strong>.</p></div></section>
 <div class="hz-go-to hz-go-to--inset">Go to: Grammar - Because / so and punctuation, page ---</div>
 </div></div></main><footer class="hz-page__footer"><span></span><span class="hz-page-number">37</span></footer></article>
 <article class="hz-page hz-content hz-unit-4 hz-continuation-page l4d-page l4d-page--2" data-page="38"><main class="hz-page__content"><span class="hz-continuation" aria-label="Lesson 4D continued">4D</span><div class="hz-page-stack"><div class="l4d-continuation-content">
 
 <div class="hz-exercises">
-<section class="hz-exercise"><div class="hz-exercise-number">4</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Write the message with capital letters, full stops and a question mark.</p><div class="hz-exercise__body"><section class="hz-focus-box hz-no-break" aria-label="Skills: punctuation"><header class="hz-focus-box__header">SKILLS: PUNCTUATION</header><div class="hz-focus-box__body hz-concept-body"><div class="hz-concept-grid"><div><p class="hz-concept-heading">Capital letters</p><p><strong>I</strong> have bread. I'm <strong>N</strong>ora.</p></div><div><p class="hz-concept-heading">Full stop / question mark</p><p>I have bread<strong>.</strong> Do you want it<strong>?</strong></p></div></div></div></section><p class="l4d-edit-text">hello i have too much bread do you want it</p><div class="l4d-open-lines"><span></span></div></div></div></section>
-<section class="hz-exercise"><div class="hz-exercise-number">5</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Circle the correct words. Add a comma before <i>so</i>.</p><div class="hz-exercise__body"><ol class="l4d-list l4d-connectors"><li>I share my bread <em class="hz-answer-option">because / so</em> I have too much.</li><li>I have too many bananas <em class="hz-answer-option">because / so</em> I share them.</li><li>I don't like milk <em class="hz-answer-option">because / so</em> I share it.</li></ol></div></div></section>
-<section class="hz-exercise"><div class="hz-exercise-number">6</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Choose food to share. Use the photo or your own idea. Write your post.</p><div class="hz-exercise__body"><div class="l4d-compose"><div class="l4d-write-intro"><figure data-image-slot="HZN_A1_U04_LD_E06_IMG_01"><img src="./Images/4D/Bread-to-share-v1.png" alt="Two adults in a cafe courtyard sharing a bag of bread."></figure><div class="l4d-plan"><p>What food? How much?<br>Why do you share it?<br>Where? What time?</p><p>Use <i>because</i> and <i>so</i>.</p></div></div><div class="l4d-post-paper"><header><span>FOOD TO SHARE</span><span>My post</span></header><div class="l4d-open-lines l4d-post-lines"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div></div></div></div></section>
-<section class="hz-exercise"><div class="hz-exercise-number">7</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Read your partner's post. Food, place and time: is everything clear?<br>Write a reply. Say what food you want. Ask one more question.</p><div class="hz-exercise__body"><p class="l4d-reply-model hz-dialogue-text">I want the bread. Do you have cheese, too?</p><div class="l4d-open-lines"><span></span></div></div></div></section>
+<section class="hz-exercise"><div class="hz-exercise-number">4</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Write the message with capital letters, full stops and a question mark.</p><div class="hz-exercise__body"><section class="hz-focus-box hz-no-break" aria-label="Skills: punctuation"><header class="hz-focus-box__header">SKILLS: PUNCTUATION</header><div class="hz-focus-box__body hz-concept-body"><div class="hz-concept-grid"><div><p class="hz-concept-heading">Capital letters</p><p><strong>I</strong> have bread. I'm <strong>N</strong>ora.</p></div><div><p class="hz-concept-heading">Full stop / question mark</p><p>I have bread<strong>.</strong> Do you want it<strong>?</strong></p></div></div></div></section><p class="l4d-edit-text hz-task-text">hello i have too much bread do you want it</p><div class="l4d-open-lines"><span></span></div></div></div></section>
+<section class="hz-exercise"><div class="hz-exercise-number">5</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Circle the correct words. Add a comma before <i>so</i>.</p><div class="hz-exercise__body"><ol class="l4d-list l4d-connectors hz-task-text"><li>I share my bread <em class="hz-answer-option">because / so</em> I have too much.</li><li>I have too many bananas <em class="hz-answer-option">because / so</em> I share them.</li><li>I don't like milk <em class="hz-answer-option">because / so</em> I share it.</li></ol></div></div></section>
+<section class="hz-exercise"><div class="hz-exercise-number">6</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Choose food to share. Use the photo or your own idea. Write your post.</p><div class="hz-exercise__body"><div class="l4d-compose"><div class="l4d-write-intro"><figure data-image-slot="HZN_A1_U04_LD_E06_IMG_01"><img src="./Images/4D/Bread-to-share-v1.png" alt="Two adults in a cafe courtyard sharing a bag of bread."></figure><div class="l4d-plan hz-task-text"><p>What food? How much?<br>Why do you share it?<br>Where? What time?</p><p>Use <i>because</i> and <i>so</i>.</p></div></div><div class="l4d-post-paper"><header><span>FOOD TO SHARE</span><span>My post</span></header><div class="l4d-open-lines l4d-post-lines"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div></div></div></div></div></section>
+<section class="hz-exercise"><div class="hz-exercise-number">7</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Read your partner's post. Food, place and time: is everything clear?<br>Write a reply. Say what food you want. Ask one more question.</p><div class="hz-exercise__body"><p class="l4d-reply-model hz-dialogue-text hz-task-text">I want the bread. Do you have cheese, too?</p><div class="l4d-open-lines"><span></span></div></div></div></section>
 </div></div><aside class="hz-extra-practice l4d-inset"><span class="hz-extra-practice__label">EXTRA PRACTICE</span><span class="hz-extra-practice__prompt">What food do you waste at home? Write one way to use it or share it.</span></aside></div></main><footer class="hz-page__footer"><span></span><span class="hz-page-number">38</span></footer></article>
   </main>
 

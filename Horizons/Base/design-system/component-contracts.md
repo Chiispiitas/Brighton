@@ -351,3 +351,9 @@ Default filenames are `Track <printed number>.mp3`. When two exercises share a p
 ```
 
 1B's vocabulary uses `Track 1.8.mp3`; activity 4.1 must use the distinct profiles recording above. Legacy 1.11 has no current badge. New lessons must retain the viewer hook and use the shared badge, without embedding full native audio controls in the print flow. Verify playback from an HTTP repository subpath and check print text/image geometry before refreshing the audit.
+
+## Functional typography
+
+`tokens.css` defines stable role sizes; the final functional rules in `components.css` intentionally override lesson-local sizes for shared teaching elements. `.hz-focus-box__body` and its model phrases, labels and table cells use `--hz-fs-focus` (9.5pt), while the header strip uses 8pt. `.hz-exercise__instruction` uses 8.9pt; `.hz-word-bank` uses 9pt and Extra Practice prompts use 8pt.
+
+Mark ordinary exercise language and vocabulary/response roots with `.hz-task-text` (9.5pt). Descendant prose, inline target forms and list counters inherit that size. Choose the smallest complete task root; do not apply it to a reading article, photo feature, simulated app, or document artwork. Structural labels, audio badges and NEW WORDS retain their own shared roles. A feature may vary its editorial lettering, but its surrounding questions still follow the contract. See the canonical typography table for the complete rules and exception boundaries.

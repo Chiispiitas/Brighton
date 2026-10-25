@@ -595,3 +595,25 @@
 /* Align navigation with exercise copy when it sits outside the exercise. */
 .hz-go-to--inset { margin-left: calc(var(--hz-exercise-marker-size) + 3mm); }
 .hz-reference-links { display: flex; flex-wrap: wrap; gap: 0 6mm; }
+
+/* ---------- Stable functional type roles ----------
+   Local compositions may vary, but these sizes belong to the book system.
+   Explicit task roots exclude reading features, message screens and artifact lettering. */
+.hz-page.hz-content .hz-exercise__instruction { font-size: var(--hz-fs-instruction) !important; }
+.hz-exercise__instruction :where(b, strong, em, .hz-answer-option) { font-size: inherit !important; }
+.hz-page.hz-content .hz-task-text,
+.hz-page.hz-content [data-hz-text-role="task"] { font-size: var(--hz-fs-task) !important; }
+.hz-page.hz-content .hz-task-text :where(div, p, li, span, em, b, strong, label, td, th, dd, dt, figcaption) { font-size: inherit !important; }
+.hz-page.hz-content .hz-focus-box__body { font-size: var(--hz-fs-focus) !important; }
+.hz-page.hz-content .hz-focus-box__body :where(p, li, span, b, strong, em, del, figcaption, th, td, div, h2, h3, h4) { font-size: inherit !important; }
+.hz-page.hz-content .hz-focus-box__header { font-size: var(--hz-fs-focus-header) !important; }
+.hz-page.hz-content :is(.hz-word-bank, .rr-word-bank, .l1c-country-bank) { font-size: var(--hz-fs-word-bank) !important; }
+:is(.hz-word-bank, .rr-word-bank, .l1c-country-bank) :where(span, b, strong, em) { font-size: inherit !important; }
+.hz-page.hz-content .hz-extra-practice__prompt { font-size: var(--hz-fs-practice) !important; }
+.hz-page.hz-content :is(.l1a-greeting figcaption, .l1b-occupation figcaption, .l1a-number__word) { font-size: var(--hz-fs-vocab) !important; }
+.l1a-greeting figcaption strong { font-size: inherit !important; }
+/* Preserve semantic labels inside instructions/tasks, rather than scaling with prose. */
+.hz-page.hz-content .hz-new-words { font-size: 7pt !important; }
+.hz-page.hz-content :is(.hz-audio-badge, .l1a-track, .l1b-track, .l1c-track) { font-size: 6.5pt !important; }
+
+.hz-page.hz-content .hz-task-text li::before { font-size: inherit !important; }
