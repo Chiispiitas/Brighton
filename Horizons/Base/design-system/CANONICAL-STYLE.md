@@ -36,21 +36,15 @@ The lesson letters have different pedagogical jobs and must not be forced into i
 
 ## 3. Exercise flow
 
-**All sibling numbered exercises remain in one vertical sequence and numerical order.**
+**Lessons keep sibling numbered exercises in one vertical sequence and numerical order. Review & Practice has the sole two-column exception below.**
 
 Columns/grids may appear **inside one exercise** for questions, options, vocabulary, readings, images, forms, tables, matching and similar internal content.
 
 ### Author-directed paired-unit reviews
 
-The author's 2026-10-08 identity correction supersedes the earlier paired-review
-layout exception. Reviews use the same Horizons page system as the approved
-lessons: near-white paper, the short crimson registration mark, the crimson
-unit tab, bold black sans-serif title, crimson header rule, native continuation
-tab, shared exercise numerals and a single vertical numbered exercise lane.
-Do not replace this chrome with tan page bands, foreign review badges, large
-multicolored subject headings or a full-height panel of colored challenge circles.
-Use columns inside individual exercises for choices, writing, photographs and
-pair-work prompts; keep the main exercise sequence vertical and numerical.
+**Author-approved exception, 25 October 2026: only Review & Practice may use two columns of sibling numbered activities.** Read down the left column, then down the right; keep exercise numbers consecutive in that reading order. Ordinary lessons retain a single vertical exercise lane. Two columns must improve hierarchy and usable spacing, with full-size learner type and response areas.
+
+Reviews keep Horizons' near-white paper, short crimson registration mark, crimson unit tab, bold black sans-serif title, crimson header rule, native continuation tab and shared exercise numerals. Do not replace the page identity with tan bands, foreign review badges or a full-page challenge background. A strong photo feature can anchor one column while open grammar/writing tasks occupy the other. Keep new local review rules scoped to `.rr-page`; the exception does not authorize columns in lessons.
 
 The final paired-review challenge section is titled **BEYOND HORIZONS**.
 The author's subsequent 2026-10-08 correction requests small colored circular
@@ -544,7 +538,7 @@ A spread is not production-ready if it is noticeably more crowded, smaller, misa
 Before approval verify:
 
 1. source fidelity or explicit authorization for changes;
-2. numbered exercise order and single vertical lane;
+2. numbered exercise order: one vertical lane in lessons; left column then right column in Review & Practice;
 3. pedagogy and level-appropriate language load against `GUIDED-DISCOVERY.md`;
 4. readable physical type;
 5. no redundant evidence, invented response mechanics or decoration;

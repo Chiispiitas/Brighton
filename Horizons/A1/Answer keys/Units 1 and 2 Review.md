@@ -1,7 +1,7 @@
 # Horizons A1 - Units 1 & 2 Review and Practice
 
 Student's Book pages 21-22. Master: `Lessons/2R.html`.
-Read down each page in exercise order. Columns are internal to individual tasks. Seven main activities.
+Review-only two-column layout: read down the left column, then down the right. Page 21 has activities 1–3 on the left and 4 on the right; page 22 has 5–6 on the left and 7 on the right. Seven main activities; all answers retained.
 
 ## 1. Grammar
 
@@ -17,7 +17,7 @@ Example 0: The photos are new.
 3 Those pens are blue. / Those are blue pens.
 4 This is a gray umbrella.
 
-Capitalize the first word, preserve the proper names and possessive apostrophes, and add final punctuation. Accept both word orders in item 3: each uses all supplied words and practises the two adjective positions taught in 2D. For item 2, also accept Is the exhibition small? with a question mark; the supplied words allow this valid question. Each response line has 6 mm of vertical writing space.
+Capitalize the first word, preserve the proper names and possessive apostrophes, and add final punctuation. Accept both word orders in item 3: each uses all supplied words and practises the two adjective positions taught in 2D. For item 2, also accept Is the exhibition small? with a question mark; the supplied words allow this valid question. Each sentence-reconstruction response line has 7 mm of vertical writing space.
 
 ## 3. Vocabulary table
 
@@ -90,4 +90,4 @@ All activities were reauthored for the 2026-10-07 author correction. The review 
 - Official format reference: https://www.cambridgeenglish.org/exams-and-tests/qualifications/young-learners/paper/movers/format/
 - Context: a community photography exhibition at Studio 8 connects portrait/object reading, visitor responses, studio picture practice and BEYOND HORIZONS challenges. Studio and exhibition are supported contextual labels; they do not establish an additional vocabulary syllabus.
 - New original generated assets: `Images/Review/Color-project-portraits-v1.png` and `Images/Review/Studio-contact-sheet-v1.png`. See `Images/Review/ASSETS.md` for IDs and provenance. Both preserve full photographic backgrounds; no new audio is required.
-- The canonical style guide records the identity correction and the final BEYOND HORIZONS treatment: shared Horizons chrome and one vertical exercise sequence, with columns inside individual tasks. All layout rules are scoped to `.rr-page`; lessons 1A-2D retain their approved layout, imagery, text and audio. Activities 1-6 and both original photographs are retained; challenge 1D now asks personal questions without a photo pass.
+- The canonical style guide records the identity correction and the final BEYOND HORIZONS treatment: shared Horizons chrome and the author-approved review-only two-column exception. The 25 October composition gives the reading a larger photo feature, open practice in the neighboring column and a compact eight-circle challenge sidebar. All layout rules are scoped to `.rr-page`; lessons 1A-2D retain their approved layout, imagery, text and audio. Activities 1-6 and both original photographs are retained; challenge 1D now asks personal questions without a photo pass.

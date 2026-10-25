@@ -1,6 +1,6 @@
 # Units 1 & 2 Review - original studio photographs
 
-Created 2026-10-07. Production tool: built-in image generation. These are original generated realistic raster images for the fictional Color Project at Studio 8. No stock photograph, Personal Best asset or previous Horizons lesson image is reused in this review.
+Historical generation record, created 2026-10-07. The active presentation is documented below. Production tool: built-in image generation. These are original generated realistic raster images for the fictional Color Project at Studio 8. No stock photograph, Personal Best asset or previous Horizons lesson image is reused in this review.
 
 | Asset ID | Activity | Local file | Semantic evidence |
 | --- | --- | --- | --- |
@@ -12,3 +12,7 @@ Both assets have 1536 x 1024 pixels and an opaque photographic background. Compl
 Fictional jobs, country/nationality information and family relationships are explicitly supplied by the original reading. Students never have to infer these facts from appearance. The pictured object colors and counts are task evidence and were visually checked before publication.
 
 Original tool files remain in the generated-images library; workspace copies are used for production. Full prompts and art-direction records are outside the repository in `outputs/Horizons-A1-Review-Image-Briefs.md` in the author's task workspace, following the asset-policy boundary.
+
+## Active review presentation, 25 October 2026
+
+Activity 4 retains the distinct licensed stock triptych `../Stock/Color-project-real-v2.jpg`, with the red wallet detail and full three-person composition. See the active source/license records in `../Stock/stock-photo-manifest.json` and `../Stock/ASSETS.md`; the generated portrait above remains a historical, reversible asset. Its larger right-column presentation and the live colored name labels were changed in this revision; no bitmap, identity, item color or count was edited. Activity 6 retains its complete generated studio contact sheet with near/far evidence. All four cases and the open sentence responses remain visible. No new image or audio was produced.

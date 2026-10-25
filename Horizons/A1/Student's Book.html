@@ -6192,118 +6192,110 @@ body.hz-debug .hz-page::after {
 
 
 /* Horizons/A1/Lessons/review-1-2-local.css */
-/* Horizons A1 review. Shared paper, navigation, type and exercise lane stay
-   canonical. Photography and the exhibition artifact carry the local character. */
-.rr-page { font-size:9pt; --rr-teal:var(--hz-feature-teal); }
+/* Horizons review-only composition. Read down the left column, then the right.
+   Shared page chrome and functional type roles remain native Horizons. */
+.rr-page { --hz-exercise-marker-size:6mm; --rr-teal:#007b83; --rr-blue:#1767aa; --rr-gold:#ffc42b; font-size:9.5pt; }
 .rr-page .hz-page__footer { justify-content:flex-end; }
-.rr-page .hz-page-stack { gap:2.7mm; }
-.rr-page .hz-lesson-header { padding-bottom:3.2mm; }
+.rr-page .hz-page-stack { gap:4mm; }
 .rr-review-header .hz-lesson-tab__id { font-size:16.5pt; letter-spacing:-.055em; }
-.rr-page .rr-exercises { gap:.2mm; }
-.rr-page--2 .rr-exercises { padding-top:20mm !important; }
-.rr-page .hz-exercise { padding:1.6mm 0 2.15mm; }
-.rr-page .hz-exercise__instruction { font-size:9pt; }
-.rr-page .hz-exercise__body { margin-top:1.5mm; }
-.rr-skill-label { display:inline-block; margin-right:3mm; color:var(--hz-unit-dark); font-size:8pt; font-weight:820; letter-spacing:.045em; text-transform:uppercase; }
+.rr-columns { display:grid; grid-template-columns:1fr 1fr; gap:9mm; align-items:start; }
+.rr-column { min-width:0; gap:4mm; }
+.rr-page .hz-exercise { column-gap:2mm; padding:0; }
+.rr-page .hz-exercise__body { margin-top:2mm; }
+.rr-skill-label { display:block; margin:0 0 .7mm; color:var(--hz-unit-dark); font-size:8pt; font-weight:820; letter-spacing:.045em; text-transform:uppercase; }
 .rr-page .rr-list { list-style:none; margin:0; padding:0; counter-reset:question; }
 .rr-page .rr-with-example { counter-reset:question -1; }
 .rr-list > li { counter-increment:question; position:relative; padding-left:4.5mm; }
-.rr-list > li::before { content:counter(question); position:absolute; left:0; top:.05mm; color:var(--hz-unit-dark); font-size:8pt; font-weight:620; }
-.rr-choices-list { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.5mm 8mm; }
-.rr-choices-list > li { font-size:9pt; line-height:1.5; }
-.rr-circled { border:.3mm solid var(--rr-teal); border-radius:50%; padding:.1mm 1mm; }
-.rr-write { display:block; height:6mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
-.rr-example { color:#7f8287; font-family:"Segoe Print","Bradley Hand","Comic Sans MS",cursive; font-size:8.4pt; font-style:normal; font-weight:400; }
-.rr-sentences { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:1.5mm 8mm; }
-.rr-sentences > li { font-size:8.75pt; line-height:1.35; }
-.rr-sentences .rr-write { height:6mm; }
-.rr-page .rr-sentence-model { margin:0 0 1.5mm; font-size:8.75pt; line-height:1.4; }
+.rr-list > li::before { content:counter(question); position:absolute; left:0; top:0; color:var(--hz-unit-dark); font-weight:620; }
+.rr-choices-list { display:grid; gap:2.4mm; }
+.rr-choices-list > li { line-height:1.45; }
+.rr-circled { border:.3mm solid var(--rr-teal); border-radius:50%; padding:0 .8mm; }
+.rr-gap { display:inline-block; min-width:14mm; height:4.4mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); vertical-align:baseline; }
+.rr-gap--short { min-width:7mm; }
+.rr-write { display:block; height:7mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
+.rr-example { color:#74777d; font-family:'Segoe Print','Bradley Hand',cursive; font-weight:400; }
+.rr-sentence-model { margin:0 0 3mm; line-height:1.6; }
+.rr-sentence-model .rr-example { display:block; margin-left:4.5mm; }
+.rr-question-number { color:var(--hz-unit-dark); font-weight:620; }
 .rr-sentence-model .rr-question-number { margin-right:2mm; }
-.rr-sentence-model .rr-example { margin-left:4mm; }
-.rr-word-bank { display:flex; flex-wrap:wrap; gap:1.2mm 3mm; padding:1.7mm 2.5mm; color:var(--hz-ink); font-size:8.5pt; line-height:1.4; }
-.rr-word-bank s { color:var(--hz-muted); }
-.rr-word-bank--vocab { color:var(--hz-unit-dark); font-weight:var(--hz-fw-bold); margin-bottom:1.5mm; }
-.rr-vocab-table { width:100%; border-collapse:collapse; table-layout:fixed; background:#fff; font-size:8.5pt; }
-.rr-vocab-table th { background:var(--rr-teal); color:#fff; height:6mm; font-weight:620; border-right:.25mm solid #dbeae7; }
-.rr-vocab-table th:nth-child(1) { background:var(--hz-unit); }
-.rr-vocab-table th:nth-child(2) { background:var(--hz-feature-orange); }
-.rr-vocab-table th:nth-child(3) { background:var(--hz-feature-green); }
-.rr-vocab-table th:nth-child(4) { background:var(--hz-feature-blue); }
-.rr-vocab-table td { height:7mm; padding:.5mm 2mm; border-right:.25mm solid #abc7c4; border-bottom:.23mm solid #dce8e5; vertical-align:middle; }
-.rr-vocab-table th:last-child,.rr-vocab-table td:last-child { border-right:0; }
-.rr-project { margin:0; border:.28mm solid var(--hz-line); border-top:.9mm solid var(--hz-unit); background:#fff; }
-.rr-project-head { display:flex; align-items:center; justify-content:space-between; gap:5mm; padding:2mm 3mm; background:var(--rr-teal); }
-.rr-project-head h3 { margin:0; color:#fff; font-size:21pt; font-weight:820; line-height:1.1; letter-spacing:-.035em; }
-.rr-project-head h3 em { font:italic 23pt/1.05 Georgia,serif; color:var(--hz-feature-gold); }
-.rr-project-layout { display:grid; grid-template-columns:64mm minmax(0,1fr); gap:4mm; padding:2mm 3mm 2.5mm; align-items:start; }
+.rr-sentences { display:grid; gap:2mm; }
+.rr-sentences > li { line-height:1.5; }
+/* A compact magazine feature is the first page's visual anchor. */
+.rr-project { margin:0; background:#fff; }
+.rr-project-head { padding:3mm 3mm 2.5mm; color:#fff; background:var(--rr-teal); position:relative; }
+.rr-project-head h3 { margin:0; font:820 22pt/1.02 var(--hz-font-sans); letter-spacing:-.035em; }
+.rr-project-head h3 em { display:block; color:var(--rr-gold); font:italic 26pt/1.06 Georgia,serif; letter-spacing:-.04em; }
+.rr-exhibit-card { position:absolute; top:3mm; right:3mm; width:23mm; padding:1.5mm 1.5mm; color:var(--hz-ink); background:var(--rr-gold); transform:rotate(3deg); }
+.rr-exhibit-card > span { display:block; font-size:6.5pt; font-weight:650; line-height:1.2; letter-spacing:.025em; }
+.rr-exhibit-card > div { display:flex; justify-content:space-between; align-items:end; gap:1mm; padding-top:1mm; }
+.rr-exhibit-card b { font-size:7pt; font-weight:620; }
+.rr-exhibit-card > div > span { font-size:12pt; font-weight:720; line-height:1; }
+.rr-project-layout { display:block; }
 .rr-project-photo { display:block; width:100%; height:auto; }
-.rr-cast-labels { display:grid; grid-template-columns:repeat(3,1fr); text-align:center; font-size:8.5pt; font-weight:620; color:var(--rr-teal); }
-.rr-cast-labels > span { padding:1mm 0 .3mm; }
-.rr-word-bank--reading { background:var(--hz-feature-gold); margin:0 3mm; }
-.rr-word-bank--reading s { color:var(--hz-ink-soft); }
-.rr-project-copy p { font-size:9pt; line-height:1.5; margin:0 0 1.5mm; }
+.rr-cast-labels { display:grid; grid-template-columns:repeat(3,1fr); text-align:center; font-size:8.5pt; font-weight:720; }
+.rr-cast-labels span { padding:1mm 0; color:#fff; background:#bf4e08; }
+.rr-cast-labels span:nth-child(2) { background:var(--rr-blue); }
+.rr-cast-labels span:nth-child(3) { background:#087a46; }
+.rr-word-bank { display:flex; flex-wrap:wrap; gap:.6mm 2.5mm; padding:1.5mm 2mm; margin-bottom:2mm; line-height:1.4; }
+.rr-word-bank s { color:var(--hz-muted); }
+.rr-word-bank--reading { margin:0 0 2mm; }
+.rr-project-copy { padding:2.5mm 2mm 0; border-inline:.25mm solid var(--hz-line); }
+.rr-project-copy p { font-size:9.5pt; line-height:1.4; margin:0 0 1.7mm; }
 .rr-project-copy p:last-child { margin-bottom:0; }
-.rr-gap { display:inline-block; min-width:15mm; height:4.8mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); vertical-align:baseline; }
-.rr-gap--short { min-width:9mm; }
 .rr-numbered-gap { white-space:nowrap; }
-.rr-numbered-gap sup { color:var(--hz-unit-dark); font-size:7pt; margin-right:.7mm; }
-.rr-exhibit-card { flex:0 0 38mm; padding:1mm 2mm; border-left:.65mm solid var(--hz-feature-gold); background:var(--hz-feature-gold); }
-.rr-exhibit-card > span { color:var(--hz-ink); font-size:7.5pt; letter-spacing:.04em; font-weight:620; }
-.rr-exhibit-card > div { display:flex; align-items:baseline; justify-content:space-between; gap:3mm; font-size:8.5pt; padding-top:.5mm; }
-.rr-exhibit-card b { font-weight:620; color:var(--hz-ink); }
-.rr-exhibit-card > div > span { color:var(--hz-unit-dark); font-size:15pt; font-weight:620; line-height:1; }
-.rr-reading-check { display:grid; grid-template-columns:1.15fr 1fr; gap:1mm 4mm; margin-top:2.5mm; }
-.rr-page .rr-subtask { font-size:8.5pt; line-height:1.4; margin:0 0 1mm; }
-.rr-question-number { color:var(--hz-unit-dark); font-size:8pt; font-weight:620; }
+.rr-numbered-gap sup { color:var(--hz-unit-dark); font-size:7pt; margin-right:.6mm; }
+.rr-reading-check { padding:2mm 2mm 2.5mm; border:.25mm solid var(--hz-line); border-top:0; }
+.rr-subtask { margin:0 0 1mm; line-height:1.4; }
 .rr-subtask .rr-question-number { margin-right:2mm; }
-.rr-title-options { grid-column:1; grid-row:2; display:flex; flex-direction:column; gap:1mm; }
-.rr-title-options label { display:flex; align-items:center; gap:2mm; font-size:8.5pt; }
-.rr-reading-check > .rr-subtask:first-child,
-.rr-title-options .hz-answer-option { color:var(--hz-feature-blue); }
-.rr-check { flex:0 0 auto; display:inline-block; width:2.8mm; height:2.8mm; border:.25mm solid var(--hz-unit); }
-.rr-reading-check .rr-check { border-color:var(--hz-feature-blue); }
-.rr-page .rr-subtask--second { grid-column:2; grid-row:1; margin:0; }
-.rr-page .rr-reading-answers { grid-column:2; grid-row:2; counter-reset:question 6; }
-.rr-reading-answers > li { font-size:8.75pt; margin-bottom:1.5mm; line-height:1.5; }
-.rr-reading-answers > li:last-child { margin-bottom:0; }
-.rr-exhibition-dialogue { padding:2.5mm 3mm; background:#fff; border:.28mm solid var(--hz-line); border-top:.9mm solid var(--hz-unit); }
-.rr-exhibition-dialogue > header { display:flex; align-items:center; gap:2mm; margin-bottom:2mm; }
-.rr-exhibition-dialogue > header > span { color:var(--rr-teal); font:620 9pt var(--hz-font-body); }
-.rr-exhibition-dialogue > header small { font:7.75pt var(--hz-font-body); letter-spacing:.04em; }
-.rr-conversation-model { margin:0 0 2.5mm; font-size:8.5pt; line-height:1.5; }
-.rr-dialogue-questions { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:2.5mm 7mm; }
-.rr-dialogue-questions p { font-size:9pt; margin:0 0 1mm; line-height:1.4; }
-.rr-dialogue-questions li > div { display:flex; flex-wrap:wrap; gap:1mm 3mm; font-size:8.5pt; line-height:1.45; }
+.rr-title-options { display:flex; flex-direction:column; gap:1mm; margin-bottom:2mm; }
+.rr-title-options label { display:flex; align-items:center; gap:2mm; }
+.rr-check { display:inline-block; flex:none; width:2.5mm; height:2.5mm; border:.25mm solid var(--hz-unit); }
+.rr-page .rr-reading-answers { counter-reset:question 6; display:grid; gap:1.5mm; }
+.rr-vocab-table { width:100%; table-layout:fixed; border-collapse:collapse; }
+.rr-vocab-table th { color:#fff; background:var(--rr-teal); padding:1.5mm .5mm; font-weight:620; }
+.rr-vocab-table th:nth-child(1) { background:var(--hz-unit); }
+.rr-vocab-table th:nth-child(2) { background:#bf4e08; }
+.rr-vocab-table th:nth-child(4) { background:var(--rr-blue); }
+.rr-vocab-table td { height:7mm; padding:.5mm 1mm; border-right:.25mm solid #d8d9dc; border-bottom:.25mm solid #d8d9dc; vertical-align:middle; }
+.rr-vocab-table td:first-child { border-left:.25mm solid #d8d9dc; }
+/* The continuation uses its own balance: dialogue and pictures, then challenges. */
+.rr-columns--continuation { padding-top:18mm; }
+.rr-page--2 .rr-column { gap:5mm; }
+.rr-exhibition-dialogue { padding:2.5mm; background:#eff5f6; border-top:.8mm solid var(--rr-teal); }
+.rr-exhibition-dialogue header { margin:0 0 1mm; color:var(--rr-teal); font-size:12pt; font-weight:720; }
+.rr-exhibition-dialogue header b { color:#8f123f; }
+.rr-conversation-model { font-size:9.5pt; margin:0 0 3mm; line-height:1.4; }
+.rr-dialogue-questions { display:grid; gap:2mm; }
+.rr-dialogue-questions p { margin:0 0 .7mm; line-height:1.4; }
+.rr-dialogue-questions li > div { display:flex; flex-wrap:wrap; gap:.6mm 2mm; line-height:1.35; }
 .rr-dialogue-questions li > div > span { white-space:nowrap; }
-.rr-picture-layout { display:grid; grid-template-columns:80mm minmax(0,1fr); gap:5mm; align-items:start; }
-.rr-contact-sheet { position:relative; margin:0; }
-.rr-contact-sheet > img { width:100%; height:auto; display:block; }
-.rr-photo-letter { position:absolute; display:grid; place-items:center; width:4.5mm; height:4.5mm; color:var(--hz-unit-dark); background:#fff; font-size:8pt; font-weight:620; }
-.rr-photo-letter--a { top:1mm; left:1mm; }
-.rr-photo-letter--b { top:1mm; left:calc(50% + 1mm); }
-.rr-photo-letter--c { top:calc(50% + 1mm); left:1mm; }
-.rr-photo-letter--d { top:calc(50% + 1mm); left:calc(50% + 1mm); }
-.rr-studio-answers { display:grid; gap:1.4mm; }
-.rr-studio-answers p { display:flex; gap:2mm; align-items:baseline; margin:0; font-size:9pt; line-height:1.45; }
-.rr-studio-answers .rr-example { height:auto; line-height:inherit; }
+.rr-picture-layout { display:block; }
+.rr-contact-sheet { position:relative; margin:0 0 2mm; }
+.rr-contact-sheet img { display:block; width:100%; height:auto; }
+.rr-photo-letter { position:absolute; display:grid; place-items:center; width:4mm; height:4mm; color:var(--hz-unit-dark); background:#fff; font-size:8pt; font-weight:620; }
+.rr-photo-letter--a { top:.8mm; left:.8mm; }
+.rr-photo-letter--b { top:.8mm; left:calc(50% + .8mm); }
+.rr-photo-letter--c { top:calc(50% + .8mm); left:.8mm; }
+.rr-photo-letter--d { top:calc(50% + .8mm); left:calc(50% + .8mm); }
+.rr-studio-answers { display:grid; gap:1.2mm; }
+.rr-studio-answers p { display:flex; gap:2mm; align-items:baseline; margin:0; line-height:1.4; }
 .rr-studio-answers p > span:last-child { flex:1; }
-.rr-studio-answers .rr-gap { min-width:13mm; }
-.rr-page .rr-picture-write-label { margin:2.5mm 0 1mm; }
-.rr-picture-model { margin:0 0 .5mm; font-size:8.4pt; color:#7f8287; font-family:"Segoe Print","Bradley Hand","Comic Sans MS",cursive; }
-.rr-free-writing .rr-write { height:7mm; }
-.rr-beyond-title { margin:0 0 1mm; color:var(--hz-unit-dark); font-size:12pt; font-weight:820; line-height:1.15; letter-spacing:.035em; }
-.rr-challenge-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:4mm 5mm; }
-.rr-mission h3 { color:var(--hz-unit-dark); font-size:8pt; font-weight:820; margin:0 0 1.5mm; line-height:1.3; text-align:center; white-space:nowrap; }
-.rr-challenge-ball { display:grid; place-items:center; width:32mm; height:32mm; padding:4mm; margin:0 auto; border-radius:50%; background:var(--hz-unit); color:#fff; }
-.rr-mission:nth-child(4n + 2) .rr-challenge-ball { background:var(--hz-feature-gold); color:var(--hz-ink); }
-.rr-mission:nth-child(4n + 3) .rr-challenge-ball { background:var(--hz-feature-teal); }
-.rr-mission:nth-child(4n + 4) .rr-challenge-ball { background:var(--hz-feature-blue); }
-.rr-challenge-ball p { margin:0; font-size:8.5pt; font-weight:400; line-height:1.25; text-align:center; }
-
-/* Retain the reading feature and answer area at the shared task scale. */
-.rr-page:not(.rr-page--2) .hz-exercise { padding-bottom: 1mm; }
-.rr-page:not(.rr-page--2) .rr-exercises { gap: 0; }
-.rr-page:not(.rr-page--2) .rr-choices-list { row-gap: 1mm; }
+.rr-studio-answers .rr-example { height:auto; }
+.rr-picture-write-label { margin:2.5mm 0 1mm; }
+.rr-picture-model { margin:0 0 .5mm; line-height:1.4; }
+.rr-beyond-title { color:var(--hz-unit-dark); margin:0 0 1.5mm; font-size:12pt; font-weight:820; line-height:1.15; letter-spacing:.015em; }
+.rr-challenge-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:5mm 3mm; margin-top:3mm; }
+.rr-mission { --rr-ball:var(--hz-unit); min-width:0; }
+.rr-mission h3 { font-size:8pt; font-weight:720; margin:0 0 1.5mm; line-height:1.25; text-align:center; }
+.rr-mission:nth-child(4n+2) { --rr-ball:#bf4e08; }
+.rr-mission:nth-child(4n+3) { --rr-ball:#007b83; }
+.rr-mission:nth-child(4n+4) { --rr-ball:#1767aa; }
+.rr-challenge-ball { display:grid; place-items:center; width:34mm; height:34mm; padding:3mm; margin:auto; border:1mm solid var(--rr-ball); border-radius:50%; color:var(--hz-ink); background:#fff; }
+.rr-mission:nth-child(4n+1) .rr-challenge-ball,
+.rr-mission:nth-child(4n+4) .rr-challenge-ball { background:var(--rr-ball); color:#fff; }
+.rr-mission:nth-child(2) .rr-challenge-ball { background:var(--rr-gold); border-color:var(--rr-gold); }
+.rr-mission h3 { color:var(--rr-ball); }
+.rr-challenge-ball p { margin:0; line-height:1.25; text-align:center; font-weight:400; }
 
 
 /* Horizons/A1/Lessons/lesson-3a-local.css */
@@ -9090,141 +9082,137 @@ body {
   </article>
 
 <!-- ===== 2R.html ===== -->
-<!-- Horizons review: sibling exercises follow one numbered vertical lane.
-       Columns are internal to individual exercises, as in the approved lessons. -->
-  <article class="hz-page hz-content hz-unit-1 rr-page" data-page="21">
-    <main class="hz-page__content"><div class="hz-page-stack">
-      <header class="hz-lesson-header rr-review-header">
-  <div class="hz-lesson-tab" aria-label="Units 1 and 2 Review"><span class="hz-lesson-tab__label">Units</span><span class="hz-lesson-tab__id">1&amp;2</span></div>
-  <div class="hz-lesson-heading"><h1 class="hz-lesson-title">REVIEW &amp; PRACTICE</h1></div>
+Review-only two-column composition. Read down the left column, then the right. 
+<article class="hz-page hz-content hz-unit-1 rr-page" data-page="21">
+<main class="hz-page__content"><div class="hz-page-stack">
+<header class="hz-lesson-header rr-review-header">
+<div aria-label="Units 1 and 2 Review" class="hz-lesson-tab"><span class="hz-lesson-tab__label">Units</span><span class="hz-lesson-tab__id">1&amp;2</span></div>
+<div class="hz-lesson-heading"><h1 class="hz-lesson-title">REVIEW &amp; PRACTICE</h1></div>
 </header>
-      <div class="hz-exercises rr-exercises"><section class="hz-exercise rr-grammar-exercise" data-review-skill="grammar selection">
-            <div class="hz-exercise-number">1</div>
-            <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction"><span class="rr-skill-label">Grammar</span> Choose and circle.</p>
-              <div class="hz-exercise__body">
-                <ol class="rr-list rr-choices-list rr-with-example hz-task-text">
-                  <li>I <em class="hz-answer-option rr-circled">am</em> / <em class="hz-answer-option">is</em> / <em class="hz-answer-option">are</em> in Studio 8.</li>
-                  <li>Luz and Ben <em class="hz-answer-option">am / is / are</em> in Studio 8.</li>
-                  <li>Ari <em class="hz-answer-option">isn't / aren't / am not</em> a doctor.</li>
-                  <li>“Are the photos new?”<br>“Yes, <em class="hz-answer-option">it is / they are / I am</em>.”</li>
-                  <li>Ari<span class="rr-gap rr-gap--short"></span> a student. <em class="hz-answer-option">'m / 's / 're</em></li>
-                  <li>It is <em class="hz-answer-option">a / an</em> exhibition.</li>
-                  <li>This is a studio. <em class="hz-answer-option">A / An / The</em> studio is small.</li>
-                  <li><em class="hz-answer-option">This / That / These</em> are Ben's photos.</li>
-                  <li>My parents are here. These are my <em class="hz-answer-option">parents / parent's / parents'</em> photos.</li>
-                </ol>
-              </div>
-            </div>
-          </section><section class="hz-exercise rr-sentence-exercise" data-review-skill="sentence reconstruction">
-            <div class="hz-exercise-number">2</div>
-            <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction">Write the sentences.</p>
-              <div class="hz-exercise__body">
-                <p class="rr-sentence-model hz-task-text"><span class="rr-question-number">0</span> photos / new / are / the <span class="rr-example hz-task-text">The photos are new.</span></p>
-                <ol class="rr-list rr-sentences hz-task-text">
-                  <li>is / Luz's / red / wallet<span class="rr-write"></span></li>
-                  <li>exhibition / is / the / small<span class="rr-write"></span></li>
-                  <li>are / those / pens / blue<span class="rr-write"></span></li>
-                  <li>a / this / umbrella / is / gray<span class="rr-write"></span></li>
-                </ol>
-              </div>
-            </div>
-          </section><section class="hz-exercise rr-vocab-exercise" data-review-skill="vocabulary classification">
-            <div class="hz-exercise-number">3</div>
-            <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction"><span class="rr-skill-label">Vocabulary</span> Write the words in the table.</p>
-              <div class="hz-exercise__body">
-                <div class="hz-word-bank rr-word-bank rr-word-bank--vocab"><span>doctor</span><span>the UK</span><span>black</span><span>notebook</span><span>student</span><span><s>Argentina</s></span><span>blue</span><span>wallet</span><span>teacher</span><span>South Korea</span><span>gray</span><span>headphones</span></div>
-                <table class="rr-vocab-table hz-task-text" aria-label="Sort the exhibition-label words into jobs, countries, items and colors">
-                  <colgroup><col style="width:22%"><col style="width:28%"><col style="width:28%"><col style="width:22%"></colgroup>
-                  <thead><tr><th>Jobs</th><th>Countries</th><th>Items</th><th>Colors</th></tr></thead>
-                  <tbody><tr><td></td><td class="rr-example hz-task-text">Argentina</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody>
-                </table>
-              </div>
-            </div>
-          </section><section class="hz-exercise rr-reading-exercise" data-review-skill="word-bank reading, gist and information retrieval">
-            <div class="hz-exercise-number">4</div>
-            <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction"><span class="rr-skill-label">Reading</span> Look and read. Complete with the words.</p>
-              <div class="hz-exercise__body">
-                <article class="rr-project">
-  <header class="rr-project-head"><h3>The Color <em>Project</em></h3><div class="rr-exhibit-card"><span>PHOTO EXHIBITION</span><div><b>Studio 8</b><span>7:30</span></div></div></header>
-  <div class="rr-word-bank rr-word-bank--reading"><s>doctor</s><span>red</span><span>the UK</span><span>brother</span><span>headphones</span><span>black</span><span>chef</span><span>Canada</span></div>
-  <div class="rr-project-layout"><div class="rr-project-portraits"><img class="rr-project-photo" src="./Images/Stock/Color-project-real-v2.jpg" alt="Left: Luz, with a separate red wallet photograph below. Center: Ben with a blue bottle. Right: Ari with black headphones." data-image-slot="HZN_A1_U02_LR_E04_IMG_01"><div class="rr-cast-labels"><span>Luz</span><span>Ben</span><span>Ari</span></div></div><div class="rr-project-copy"><p>Good evening! This is Studio 8.</p>
-                    <p>Luz is a <span class="rr-gap rr-example hz-task-text">doctor</span>. Her wallet is <span class="rr-numbered-gap"><sup>1</sup><span class="rr-gap"></span></span>. She is from Argentina.</p>
-                    <p>Ben is British. He is from <span class="rr-numbered-gap"><sup>2</sup><span class="rr-gap"></span></span>. He is a teacher. His bottle is blue.</p>
-                    <p>Ari is Luz's <span class="rr-numbered-gap"><sup>3</sup><span class="rr-gap"></span></span>. He's a student. These are his <span class="rr-numbered-gap"><sup>4</sup><span class="rr-gap"></span></span>. They are <span class="rr-numbered-gap"><sup>5</sup><span class="rr-gap"></span></span>.</p><div class="rr-reading-check">
-                  <p class="rr-subtask hz-task-text"><span class="rr-question-number">6</span>Choose a title.</p>
-                  <div class="rr-title-options hz-task-text"><label><span class="rr-check"></span><em class="hz-answer-option">people and their things</em></label><label><span class="rr-check"></span><em class="hz-answer-option">a big city at night</em></label><label><span class="rr-check"></span><em class="hz-answer-option">a busy hospital</em></label></div>
-                  <p class="rr-subtask rr-subtask--second hz-task-text">Read again. Complete.</p>
-                  <ol class="rr-list rr-reading-answers hz-task-text" start="7">
-                    <li>Luz is Ari's <span class="rr-gap"></span>.</li>
-                    <li>Exhibition time: <span class="rr-gap"></span>.</li>
-                  </ol>
-                </div></div></div>
+<div class="rr-columns"><div class="hz-exercises rr-exercises rr-column"><section class="hz-exercise rr-grammar-exercise" data-review-skill="grammar selection">
+<div class="hz-exercise-number">1</div>
+<div class="hz-exercise__content">
+<p class="hz-exercise__instruction"><span class="rr-skill-label">Grammar</span> Choose and circle.</p>
+<div class="hz-exercise__body">
+<ol class="rr-list rr-choices-list rr-with-example hz-task-text">
+<li>I <em class="hz-answer-option rr-circled">am</em> / <em class="hz-answer-option">is</em> / <em class="hz-answer-option">are</em> in Studio 8.</li>
+<li>Luz and Ben <em class="hz-answer-option">am / is / are</em> in Studio 8.</li>
+<li>Ari <em class="hz-answer-option">isn't / aren't / am not</em> a doctor.</li>
+<li>“Are the photos new?”<br/>“Yes, <em class="hz-answer-option">it is / they are / I am</em>.”</li>
+<li>Ari<span class="rr-gap rr-gap--short"></span> a student. <em class="hz-answer-option">'m / 's / 're</em></li>
+<li>It is <em class="hz-answer-option">a / an</em> exhibition.</li>
+<li>This is a studio. <em class="hz-answer-option">A / An / The</em> studio is small.</li>
+<li><em class="hz-answer-option">This / That / These</em> are Ben's photos.</li>
+<li>My parents are here. These are my <em class="hz-answer-option">parents / parent's / parents'</em> photos.</li>
+</ol>
+</div>
+</div>
+</section><section class="hz-exercise rr-sentence-exercise" data-review-skill="sentence reconstruction">
+<div class="hz-exercise-number">2</div>
+<div class="hz-exercise__content">
+<p class="hz-exercise__instruction">Write the sentences.</p>
+<div class="hz-exercise__body">
+<p class="rr-sentence-model hz-task-text"><span class="rr-question-number">0</span> photos / new / are / the <span class="rr-example hz-task-text">The photos are new.</span></p>
+<ol class="rr-list rr-sentences hz-task-text">
+<li>is / Luz's / red / wallet<span class="rr-write"></span></li>
+<li>exhibition / is / the / small<span class="rr-write"></span></li>
+<li>are / those / pens / blue<span class="rr-write"></span></li>
+<li>a / this / umbrella / is / gray<span class="rr-write"></span></li>
+</ol>
+</div>
+</div>
+</section><section class="hz-exercise rr-vocab-exercise" data-review-skill="vocabulary classification">
+<div class="hz-exercise-number">3</div>
+<div class="hz-exercise__content">
+<p class="hz-exercise__instruction"><span class="rr-skill-label">Vocabulary</span> Write the words in the table.</p>
+<div class="hz-exercise__body">
+<div class="hz-word-bank rr-word-bank rr-word-bank--vocab"><span>doctor</span><span>the UK</span><span>black</span><span>notebook</span><span>student</span><span><s>Argentina</s></span><span>blue</span><span>wallet</span><span>teacher</span><span>South Korea</span><span>gray</span><span>headphones</span></div>
+<table aria-label="Sort the exhibition-label words into jobs, countries, items and colors" class="rr-vocab-table hz-task-text">
+<colgroup><col style="width:22%"/><col style="width:28%"/><col style="width:28%"/><col style="width:22%"/></colgroup>
+<thead><tr><th>Jobs</th><th>Countries</th><th>Items</th><th>Colors</th></tr></thead>
+<tbody><tr><td></td><td class="rr-example hz-task-text">Argentina</td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr><tr><td></td><td></td><td></td><td></td></tr></tbody>
+</table>
+</div>
+</div>
+</section></div><div class="hz-exercises rr-exercises rr-column"><section class="hz-exercise rr-reading-exercise" data-review-skill="word-bank reading, gist and information retrieval">
+<div class="hz-exercise-number">4</div>
+<div class="hz-exercise__content">
+<p class="hz-exercise__instruction"><span class="rr-skill-label">Reading</span> Look and read. Complete with the words.</p>
+<div class="hz-exercise__body">
+<article class="rr-project rr-project--feature">
+<header class="rr-project-head"><h3>The Color <em>Project</em></h3><div class="rr-exhibit-card"><span>PHOTO EXHIBITION</span><div><b>Studio 8</b><span>7:30</span></div></div></header>
+<div class="rr-word-bank rr-word-bank--reading hz-word-bank"><s>doctor</s><span>red</span><span>the UK</span><span>brother</span><span>headphones</span><span>black</span><span>chef</span><span>Canada</span></div>
+<div class="rr-project-layout"><div class="rr-project-portraits"><img alt="Left: Luz, with a separate red wallet photograph below. Center: Ben with a blue bottle. Right: Ari with black headphones." class="rr-project-photo" data-image-slot="HZN_A1_U02_LR_E04_IMG_01" src="./Images/Stock/Color-project-real-v2.jpg"/><div class="rr-cast-labels"><span>Luz</span><span>Ben</span><span>Ari</span></div></div><div class="rr-project-copy"><p>Good evening! This is Studio 8.</p>
+<p>Luz is a <span class="rr-gap rr-example hz-task-text">doctor</span>. Her wallet is <span class="rr-numbered-gap"><sup>1</sup><span class="rr-gap"></span></span>. She is from Argentina.</p>
+<p>Ben is British. He is from <span class="rr-numbered-gap"><sup>2</sup><span class="rr-gap"></span></span>. He is a teacher. His bottle is blue.</p>
+<p>Ari is Luz's <span class="rr-numbered-gap"><sup>3</sup><span class="rr-gap"></span></span>. He's a student. These are his <span class="rr-numbered-gap"><sup>4</sup><span class="rr-gap"></span></span>. They are <span class="rr-numbered-gap"><sup>5</sup><span class="rr-gap"></span></span>.</p></div></div>
+<div class="rr-reading-check">
+<p class="rr-subtask hz-task-text"><span class="rr-question-number">6</span>Choose a title.</p>
+<div class="rr-title-options hz-task-text"><label><span class="rr-check"></span><em class="hz-answer-option">people and their things</em></label><label><span class="rr-check"></span><em class="hz-answer-option">a big city at night</em></label><label><span class="rr-check"></span><em class="hz-answer-option">a busy hospital</em></label></div>
+<p class="rr-subtask rr-subtask--second hz-task-text">Read again. Complete.</p>
+<ol class="rr-list rr-reading-answers hz-task-text" start="7">
+<li>Luz is Ari's <span class="rr-gap"></span>.</li>
+<li>Exhibition time: <span class="rr-gap"></span>.</li>
+</ol>
+</div></article>
+</div>
+</div>
+</section></div></div></div></main><footer class="hz-page__footer"><span class="hz-page-number">21</span></footer>
 </article>
+<article class="hz-page hz-content hz-unit-1 hz-continuation-page rr-page rr-page--2" data-page="22">
+<main class="hz-page__content"><span aria-label="Units 1 and 2 continued" class="hz-continuation">1&amp;2</span>
+<div class="rr-columns rr-columns--continuation"><div class="hz-exercises rr-exercises rr-column"><section class="hz-exercise rr-conversation-exercise" data-review-skill="dialogue response choices and cross-text information">
+<div class="hz-exercise-number">5</div>
+<div class="hz-exercise__content">
+<p class="hz-exercise__instruction"><span class="rr-skill-label">Conversation</span> Look at activity 4. Choose <em class="hz-answer-option">a, b</em> or <em class="hz-answer-option">c</em>.</p>
+<div class="hz-exercise__body">
+<div class="rr-exhibition-dialogue">
 
-              </div>
-            </div>
-          </section></div>
-    </div></main><footer class="hz-page__footer"><span class="hz-page-number">21</span></footer>
-  </article>
-  <article class="hz-page hz-content hz-unit-1 hz-continuation-page rr-page rr-page--2" data-page="22">
-    <main class="hz-page__content"><span class="hz-continuation" aria-label="Units 1 and 2 continued">1&amp;2</span>
-      <div class="hz-exercises rr-exercises"><section class="hz-exercise rr-conversation-exercise" data-review-skill="dialogue response choices and cross-text information">
-            <div class="hz-exercise-number">5</div>
-            <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction"><span class="rr-skill-label">Conversation</span> At the exhibition. Choose <em class="hz-answer-option">a, b</em> or <em class="hz-answer-option">c</em>.</p>
-              <div class="hz-exercise__body">
-                <div class="rr-exhibition-dialogue">
-                  <header><span>SAM &amp; JO<br><small>THE PHOTO EXHIBITION</small></span></header>
-                  <p class="rr-conversation-model">Sam: Good evening!<br>Jo: Good evening.</p>
-                  <ol class="rr-list rr-dialogue-questions hz-task-text">
-                    <li><p>Are Luz and Ben students?</p><div><span>a <em class="hz-answer-option">No, they aren't.</em></span><span>b <em class="hz-answer-option">Yes, they are.</em></span><span>c <em class="hz-answer-option">No, she isn't.</em></span></div></li>
-                    <li><p>Is Luz's wallet blue?</p><div><span>a <em class="hz-answer-option">Yes, it is.</em></span><span>b <em class="hz-answer-option">No, it's red.</em></span><span>c <em class="hz-answer-option">No, he isn't.</em></span></div></li>
-                    <li><p>Is Ari Luz's father?</p><div><span>a <em class="hz-answer-option">No, he's her brother.</em></span><span>b <em class="hz-answer-option">Yes, he is.</em></span><span>c <em class="hz-answer-option">No, I'm not.</em></span></div></li>
-                    <li><p>What are those?</p><div><span>a <em class="hz-answer-option">It's a blue bottle.</em></span><span>b <em class="hz-answer-option">They're Ari's headphones.</em></span><span>c <em class="hz-answer-option">She is a teacher.</em></span></div></li>
-                    <li><p>What time is the exhibition?</p><div><span>a <em class="hz-answer-option">Six twenty.</em></span><span>b <em class="hz-answer-option">Seven thirty.</em></span><span>c <em class="hz-answer-option">Eight fifty.</em></span></div></li>
-                  </ol>
-                </div>
-              </div>
-            </div>
-          </section><section class="hz-exercise rr-picture-exercise" data-review-skill="picture-based demonstratives and short sentence writing">
-            <div class="hz-exercise-number">6</div>
-            <div class="hz-exercise__content">
-              <p class="hz-exercise__instruction"><span class="rr-skill-label">Picture practice</span> Look. Complete: <em class="hz-answer-option">this, that, these, those</em>.</p>
-              <div class="hz-exercise__body">
-                <div class="rr-picture-layout"><figure class="rr-contact-sheet" data-image-slot="HZN_A1_U02_LR_E06_IMG_01">
-                  <img src="./Images/Review/Studio-contact-sheet-v1.png" alt="Four studio photos. A: a woman holds a green bottle close in her hand. B: a man points to a gray wallet across the room. C: a woman holds two blue pens close in her hand. D: a man points to black headphones on a distant worktable.">
-                  <span class="rr-photo-letter rr-photo-letter--a">A</span><span class="rr-photo-letter rr-photo-letter--b">B</span><span class="rr-photo-letter rr-photo-letter--c">C</span><span class="rr-photo-letter rr-photo-letter--d">D</span>
-                </figure><div class="rr-picture-responses"><div class="rr-studio-answers hz-task-text">
-                  <p><span class="rr-question-number">A</span><span><span class="rr-gap rr-example hz-task-text">This</span> is my bottle.</span></p>
-                  <p><span class="rr-question-number">B</span><span><span class="rr-gap"></span> is my wallet.</span></p>
-                  <p><span class="rr-question-number">C</span><span><span class="rr-gap"></span> are my pens.</span></p>
-                  <p><span class="rr-question-number">D</span><span><span class="rr-gap"></span> are my headphones.</span></p>
-                </div>
-                <p class="rr-subtask rr-picture-write-label hz-task-text">Write two sentences about the items.</p>
-                <p class="rr-picture-model hz-task-text">The bottle is green.</p>
-                <div class="rr-free-writing"><span class="rr-write"></span><span class="rr-write"></span></div></div></div>
-              </div>
-            </div>
-          </section><section class="hz-exercise rr-challenge-exercise" data-review-skill="personal retrieval, spoken interaction and information exchange">
-  <div class="hz-exercise-number">7</div><div class="hz-exercise__content">
-    <h2 class="rr-beyond-title">BEYOND HORIZONS</h2>
-    <p class="hz-exercise__instruction">Work in pairs. Choose a challenge.</p>
-    <div class="hz-exercise__body"><div class="rr-challenge-grid"><div class="rr-mission"><h3>1A · Names</h3><div class="rr-challenge-ball hz-task-text"><p>Say your name.<br>Spell it.<br>Your classmate writes it.</p></div></div>
-<div class="rr-mission"><h3>1B · Jobs</h3><div class="rr-challenge-ball hz-task-text"><p>Look at activity 4.<br>What are Luz, Ben and Ari's jobs?</p></div></div>
-<div class="rr-mission"><h3>1C · Countries</h3><div class="rr-challenge-ball hz-task-text"><p>Choose two countries.<br>Say the nationalities.</p></div></div>
+<p class="rr-conversation-model">Sam: Good evening!<br/>Jo: Good evening.</p>
+<ol class="rr-list rr-dialogue-questions hz-task-text">
+<li><p>Are Luz and Ben students?</p><div><span>a <em class="hz-answer-option">No, they aren't.</em></span><span>b <em class="hz-answer-option">Yes, they are.</em></span><span>c <em class="hz-answer-option">No, she isn't.</em></span></div></li>
+<li><p>Is Luz's wallet blue?</p><div><span>a <em class="hz-answer-option">Yes, it is.</em></span><span>b <em class="hz-answer-option">No, it's red.</em></span><span>c <em class="hz-answer-option">No, he isn't.</em></span></div></li>
+<li><p>Is Ari Luz's father?</p><div><span>a <em class="hz-answer-option">No, he's her brother.</em></span><span>b <em class="hz-answer-option">Yes, he is.</em></span><span>c <em class="hz-answer-option">No, I'm not.</em></span></div></li>
+<li><p>What are those?</p><div><span>a <em class="hz-answer-option">It's a blue bottle.</em></span><span>b <em class="hz-answer-option">They're Ari's headphones.</em></span><span>c <em class="hz-answer-option">She is a teacher.</em></span></div></li>
+<li><p>What time is the exhibition?</p><div><span>a <em class="hz-answer-option">Six twenty.</em></span><span>b <em class="hz-answer-option">Seven thirty.</em></span><span>c <em class="hz-answer-option">Eight fifty.</em></span></div></li>
+</ol>
+</div>
+</div>
+</div>
+</section><section class="hz-exercise rr-picture-exercise" data-review-skill="picture-based demonstratives and short sentence writing">
+<div class="hz-exercise-number">6</div>
+<div class="hz-exercise__content">
+<p class="hz-exercise__instruction"><span class="rr-skill-label">Picture practice</span> Look. Complete: <em class="hz-answer-option">this, that, these, those</em>.</p>
+<div class="hz-exercise__body">
+<div class="rr-picture-layout"><figure class="rr-contact-sheet" data-image-slot="HZN_A1_U02_LR_E06_IMG_01">
+<img alt="Four studio photos. A: a woman holds a green bottle close in her hand. B: a man points to a gray wallet across the room. C: a woman holds two blue pens close in her hand. D: a man points to black headphones on a distant worktable." src="./Images/Review/Studio-contact-sheet-v1.png"/>
+<span class="rr-photo-letter rr-photo-letter--a">A</span><span class="rr-photo-letter rr-photo-letter--b">B</span><span class="rr-photo-letter rr-photo-letter--c">C</span><span class="rr-photo-letter rr-photo-letter--d">D</span>
+</figure><div class="rr-picture-responses"><div class="rr-studio-answers hz-task-text">
+<p><span class="rr-question-number">A</span><span><span class="rr-gap rr-example hz-task-text">This</span> is my bottle.</span></p>
+<p><span class="rr-question-number">B</span><span><span class="rr-gap"></span> is my wallet.</span></p>
+<p><span class="rr-question-number">C</span><span><span class="rr-gap"></span> are my pens.</span></p>
+<p><span class="rr-question-number">D</span><span><span class="rr-gap"></span> are my headphones.</span></p>
+</div>
+<p class="rr-subtask rr-picture-write-label hz-task-text">Write two sentences about the items.</p>
+<p class="rr-picture-model hz-task-text">The bottle is green.</p>
+<div class="rr-free-writing"><span class="rr-write"></span><span class="rr-write"></span></div></div></div>
+</div>
+</div>
+</section></div><div class="hz-exercises rr-exercises rr-column"><section class="hz-exercise rr-challenge-exercise" data-review-skill="personal retrieval, spoken interaction and information exchange">
+<div class="hz-exercise-number">7</div><div class="hz-exercise__content">
+<h2 class="rr-beyond-title">BEYOND HORIZONS</h2>
+<p class="hz-exercise__instruction">Work in pairs. Choose a challenge.</p>
+<div class="hz-exercise__body"><div class="rr-challenge-grid"><div class="rr-mission"><h3>1A · Names</h3><div class="rr-challenge-ball hz-task-text"><p>Say your name.<br/>Spell it.<br/>Your classmate writes it.</p></div></div>
+<div class="rr-mission"><h3>1B · Jobs</h3><div class="rr-challenge-ball hz-task-text"><p>Look at activity 4.<br/>What are Luz, Ben and Ari's jobs?</p></div></div>
+<div class="rr-mission"><h3>1C · Countries</h3><div class="rr-challenge-ball hz-task-text"><p>Choose two countries.<br/>Say the nationalities.</p></div></div>
 <div class="rr-mission"><h3>1D · Personal information</h3><div class="rr-challenge-ball hz-task-text"><p>Ask your classmate three personal questions.</p></div></div>
-<div class="rr-mission"><h3>2A · Things</h3><div class="rr-challenge-ball hz-task-text"><p>Use three real items.<br><em class="hz-answer-option">this</em> or <em class="hz-answer-option">these</em>?<br>Describe.</p></div></div>
-<div class="rr-mission"><h3>2B · Time</h3><div class="rr-challenge-ball hz-task-text"><p>Choose three times.<br>Say them.<br>Your classmate writes them.</p></div></div>
+<div class="rr-mission"><h3>2A · Things</h3><div class="rr-challenge-ball hz-task-text"><p>Use three real items.<br/><em class="hz-answer-option">this</em> or <em class="hz-answer-option">these</em>?<br/>Describe.</p></div></div>
+<div class="rr-mission"><h3>2B · Time</h3><div class="rr-challenge-ball hz-task-text"><p>Choose three times.<br/>Say them.<br/>Your classmate writes them.</p></div></div>
 <div class="rr-mission"><h3>2C · Family photos</h3><div class="rr-challenge-ball hz-task-text"><p>Describe two people in a family photo.</p></div></div>
-<div class="rr-mission"><h3>2D · Colors</h3><div class="rr-challenge-ball hz-task-text"><p>Choose two items.<br>Describe their colors.</p></div></div></div></div>
-  </div>
-</section></div>
-    </main><footer class="hz-page__footer"><span class="hz-page-number">22</span></footer>
-  </article>
+<div class="rr-mission"><h3>2D · Colors</h3><div class="rr-challenge-ball hz-task-text"><p>Choose two items.<br/>Describe their colors.</p></div></div></div></div>
+</div>
+</section></div></div></main><footer class="hz-page__footer"><span class="hz-page-number">22</span></footer>
+</article>
 
 <!-- ===== 3A.html ===== -->
 <article class="hz-page hz-content hz-unit-3 l3a-page" data-page="23">

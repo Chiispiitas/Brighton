@@ -64,7 +64,7 @@ Titles/objectives come from the authorized syllabus/source for the book.
 </div>
 ```
 
-Sibling numbered exercises always remain in this one vertical lane. Do not place them in a page-level grid.
+In lessons, sibling numbered exercises remain in this one vertical lane. Only Review & Practice may use the author-approved two-column composition described below.
 
 Normal exercises and `Go to:` references do not receive decorative separator lines.
 
@@ -357,3 +357,7 @@ Default filenames are `Track <printed number>.mp3`. When two exercises share a p
 `tokens.css` defines stable role sizes; the final functional rules in `components.css` intentionally override lesson-local sizes for shared teaching elements. `.hz-focus-box__body` and its model phrases, labels and table cells use `--hz-fs-focus` (9.5pt), while the header strip uses 8pt. `.hz-exercise__instruction` uses 8.9pt; `.hz-word-bank` uses 9pt and Extra Practice prompts use 8pt.
 
 Mark ordinary exercise language and vocabulary/response roots with `.hz-task-text` (9.5pt). Descendant prose, inline target forms and list counters inherit that size. Choose the smallest complete task root; do not apply it to a reading article, photo feature, simulated app, or document artwork. Structural labels, audio badges and NEW WORDS retain their own shared roles. A feature may vary its editorial lettering, but its surrounding questions still follow the contract. See the canonical typography table for the complete rules and exception boundaries.
+
+## Review-only two-column exception
+
+The author's 25 October 2026 instruction allows sibling numbered exercises in two columns **only in Review & Practice**. Use `.rr-page .rr-columns` with two `.rr-column.hz-exercises` children; DOM and visual order must run down the left column, then the right. Keep native Horizons chrome, consecutive exercise numbers, shared functional sizes and full response areas. Ordinary lessons keep their one-column numbered flow. The scoped review stylesheet owns this exception; do not broaden shared exercise grids.
