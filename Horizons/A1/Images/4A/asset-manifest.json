@@ -20,7 +20,8 @@
       "bytes": 4650879,
       "sha256": "14103e663762031b6cc2f9d733adc0b7c0e5f6df33a94564db9b92f306776ebc",
       "original_pixels_preserved": true,
-      "display_changes": "CSS layout/crop only; source file unchanged."
+      "display_changes": "CSS layout/crop only; source file unchanged.",
+      "current_crop": "76 x 32mm, cover; original environmental background retained."
     },
     {
       "file": "Turkish-breakfast-Tahir-33672311.jpg",
@@ -40,7 +41,8 @@
       "bytes": 1725935,
       "sha256": "31c23c2c46a26eeb2475f01d45f299b55c015b075896488361bfe5f156a2cc08",
       "original_pixels_preserved": true,
-      "display_changes": "CSS layout/crop only; source file unchanged."
+      "display_changes": "CSS layout/crop only; source file unchanged.",
+      "current_crop": "76 x 32mm, cover; original environmental background retained."
     },
     {
       "file": "Food-cutouts-v1.png",
@@ -68,7 +70,7 @@
     {
       "file": "Picnic-food-counts-v1.png",
       "kind": "built-in imagegen",
-      "usage": "4A activity 7: exact-count picnic, one apple, two whole eggs, three bananas, bread, cheese, milk; photographic background retained.",
+      "usage": "4A activity 7: exact one apple, two eggs and three bananas contradict two printed claims; bread, cheese and milk retain context.",
       "prompt_key": "4a-picnic",
       "native_alpha": false,
       "original_generation_file": "exec-b82028ce-adfd-4257-bfef-8a44527bdaeb.png",
@@ -81,7 +83,8 @@
       "bytes": 3031861,
       "sha256": "79006e799e199e212250cc3490d819aa4100fa15395fee956dd70171a9336743",
       "original_pixels_preserved": true,
-      "display_changes": "CSS layout/crop only; source file unchanged."
+      "display_changes": "Full original photograph contained at 64 x 48mm without crop; all count evidence retained.",
+      "current_crop": "78mm wide, full original aspect ratio; no item cropped."
     },
     {
       "file": "Grammar-counts-v1.png",
@@ -113,5 +116,11 @@
     "https://faq.japan-travel.jnto.go.jp/en/japan-magazine/breakfast-options-to-fit-your-travel-plans/",
     "https://goturkiye.com/branding/press-releases/traditional-turkish-breakfast-the-golden-meal-of-the-day"
   ],
-  "source_text": "Original fictional learner descriptions; no source text copied."
+  "source_text": "Original fictional learner descriptions; no source text copied.",
+  "updated": "2026-10-24",
+  "presentation_revision": {
+    "name": "Unit 4 visual variety",
+    "summary": "Two alternating horizontal breakfast entries on a warm travel-journal surface, with 76 x 32mm full-background country photos. The picnic evidence is enlarged to 78mm wide; the claims use a small source label, and the breakfast response is an open menu line. No controlled answer, source paragraph or audio changed.",
+    "preservation": "All earlier asset binaries retained. CSS presentation only, except one new native-alpha cook cutout."
+  }
 }

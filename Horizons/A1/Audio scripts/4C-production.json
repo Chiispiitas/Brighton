@@ -1,0 +1,88 @@
+[
+  {
+    "lesson": "4C",
+    "track": "4.5",
+    "filename": "Track 4.5.mp3",
+    "script": "ElevenCreative Studio/4C - Track 4.5.txt",
+    "model": "eleven_v3",
+    "stability": 0.5,
+    "paragraph_voice_names": [
+      "Jessica",
+      "Jessica"
+    ],
+    "paragraph_voice_ids": [
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9"
+    ],
+    "generation_utc": "2026-10-24T15:43:25.527148+00:00",
+    "request_id": "UXF3z5hG6UCDsQ6yNtUp",
+    "script_sha256": "54011a70e29f39b4cb099488d3db1dea8951bed32942ede284b2dfbc1fdfdd30",
+    "bytes": 147164,
+    "duration_seconds": 9.17,
+    "transcript_checked": true,
+    "transcript_similarity": 1.0,
+    "answer_bearing_phrases_checked": true,
+    "audio_events_checked": true,
+    "throat_clearing_events_detected": false,
+    "forbidden_tag_preflight_passed": true,
+    "transcription_name_aliases": {
+      "Helena": "Elena",
+      "Luka": "Luca"
+    },
+    "transcript_normalization": "Track label, punctuation and Elena/Helena or Luca/Luka spelling only.",
+    "sha256": "1ca7e8bdb2373c88970c059c96336e69c04aa0d2bebd453c7d8af407fa3c176a",
+    "internal_audio_id": "HZN_A1_U04_LC_E01_AUD_01",
+    "unit": 4,
+    "activity": 1,
+    "audio_events_detected": false
+  },
+  {
+    "lesson": "4C",
+    "track": "4.6",
+    "filename": "Track 4.6.mp3",
+    "script": "ElevenCreative Studio/4C - Track 4.6.txt",
+    "model": "eleven_v3",
+    "stability": 0.5,
+    "paragraph_voice_names": [
+      "Jessica",
+      "Jessica",
+      "MarkCasual",
+      "Adeline",
+      "MarkCasual",
+      "Adeline",
+      "MarkCasual",
+      "Adeline"
+    ],
+    "paragraph_voice_ids": [
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9",
+      "1SM7GgM6IMuvQlz2BwM3",
+      "5l5f8iK3YPeGga21rQIX",
+      "1SM7GgM6IMuvQlz2BwM3",
+      "5l5f8iK3YPeGga21rQIX",
+      "1SM7GgM6IMuvQlz2BwM3",
+      "5l5f8iK3YPeGga21rQIX"
+    ],
+    "generation_utc": "2026-10-24T15:43:30.357325+00:00",
+    "request_id": "oEVNUU2tsJ2MomqvfiBp",
+    "script_sha256": "023875a2844f92b25a67b5418a2d51d23c4a106a1ffb01822141689b4e150739",
+    "bytes": 382475,
+    "duration_seconds": 23.88,
+    "transcript_checked": true,
+    "transcript_similarity": 1.0,
+    "answer_bearing_phrases_checked": true,
+    "audio_events_checked": true,
+    "throat_clearing_events_detected": false,
+    "forbidden_tag_preflight_passed": true,
+    "transcription_name_aliases": {
+      "Helena": "Elena",
+      "Luka": "Luca"
+    },
+    "transcript_normalization": "Track label, punctuation and Elena/Helena or Luca/Luka spelling only.",
+    "sha256": "90071df331251629b27db715a1da504c190073dbdc6e5e3a74f7e029490f0b10",
+    "internal_audio_id": "HZN_A1_U04_LC_E02_AUD_01",
+    "unit": 4,
+    "activity": 2,
+    "audio_events_detected": false
+  }
+]

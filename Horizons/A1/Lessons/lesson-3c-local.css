@@ -123,3 +123,24 @@
 .l3c-person-survey td { height:6mm; border-left:.25mm solid var(--hz-line); }
 .l3c-person-name { display:inline-block; width:45mm; height:4mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); margin-left:2mm; }
 .l3c-review-open-lines > span { display:block; height:7mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
+
+/* Review evidence becomes a recommendation, not another word-order drill. */
+.l3c-choice-feature { background:#fff; border:.25mm solid #b5c9d5; }
+.l3c-choice-feature > header { display:flex; align-items:baseline; justify-content:space-between; padding:1.5mm 3mm; background:#175786; color:#fff; }
+.l3c-choice-feature h2 { margin:0; font-size:16pt; line-height:1.2; }
+.l3c-choice-feature header > span { font-size:9pt; }
+.l3c-place-briefs { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:4mm; padding:3mm; }
+.l3c-place-briefs article { border-top:1mm solid #e4ac26; padding-top:1.8mm; }
+.l3c-place-briefs h3 { margin:0 0 1.5mm; font-size:13pt; color:#175786; }
+.l3c-place-briefs p { margin:0 0 1.5mm; min-height:9mm; }
+.l3c-recommendation { border-left:.7mm solid #087a46; padding-left:3mm; }
+.l3c-recommendation .l3c-pair-model { display:grid; grid-template-columns:1fr 1fr; gap:1mm 4mm; margin:0 0 2mm; }
+.l3c-pair-model p { margin:0; }
+.l3c-preference-notes { display:grid; grid-template-columns:1fr 1fr; gap:1.5mm 5mm; }
+.l3c-preference-notes p { margin:0; }
+.l3c-preference-notes .l3c-write { height:6mm; }
+.l3c-for-you { margin:2mm 0 0; color:#087a46; font-weight:650; }
+.l3c-review-writing-photo { width:45mm; height:49mm; }
+.l3c-review-writing-layout .l3c-review-open-lines { padding-top:3mm; }
+
+.l3c-place-briefs p { min-height:5mm; }

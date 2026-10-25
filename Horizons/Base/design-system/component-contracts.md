@@ -330,3 +330,24 @@ insets; do not remove them under the previous open-paper default.
 Feature palettes may vary independently from crimson navigation. A partial photo
 mat or an occasional full article background must serve a specific composition.
 Preserve open numbered exercise flow, reading legibility and writing space.
+
+
+## HTML-view audio playback
+
+The printed track badge stays the source of truth. `../viewer/audio-player.js` progressively adds one small play/pause button to each `.hz-audio-badge` (and legacy `l1*-track` badges). It creates a single audio element on first use, never autoplays or preloads recordings, synchronizes repeated references and permits keyboard activation. A failed file offers retry feedback. Buttons/status are hidden in print; do not add spacing/text nodes that change the printed badge.
+
+The shared A4 shell imports the viewer CSS. Add this deferred script to each standalone lesson head, using an audio base relative to that document:
+
+```html
+<script src="../../Base/viewer/audio-player.js" data-audio-base="../Audios/" defer></script>
+```
+
+The book builder installs one script reference with `data-audio-base="./Audios/"` in the assembled view. Resolve recordings through these relative paths, retaining the repository prefix on GitHub Pages; do not use a root-relative `/Audios/` URL or a Windows path.
+
+Default filenames are `Track <printed number>.mp3`. When two exercises share a printed number, specify the recording on the badge without changing its printed label:
+
+```html
+<span class="l1b-track" data-audio-file="Track 1.8 - Exercise 4.1.mp3">♪ 1.8</span>
+```
+
+1B's vocabulary uses `Track 1.8.mp3`; activity 4.1 must use the distinct profiles recording above. Legacy 1.11 has no current badge. New lessons must retain the viewer hook and use the shared badge, without embedding full native audio controls in the print flow. Verify playback from an HTTP repository subpath and check print text/image geometry before refreshing the audit.

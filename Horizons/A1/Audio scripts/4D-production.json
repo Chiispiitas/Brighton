@@ -1,0 +1,74 @@
+[
+  {
+    "lesson": "4D",
+    "track": "4.7",
+    "filename": "Track 4.7.mp3",
+    "script": "ElevenCreative Studio/4D - Track 4.7.txt",
+    "model": "eleven_v3",
+    "stability": 0.5,
+    "paragraph_voice_names": [
+      "Jessica",
+      "Jessica"
+    ],
+    "paragraph_voice_ids": [
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9"
+    ],
+    "generation_utc": "2026-10-24T21:09:03.705903+00:00",
+    "request_id": "AKUoVNTJ9ljG3Wtwt5RK",
+    "script_sha256": "2de2ef9a63862612ade2a87ac79051efb919bd149a6cfc5336513122c476d5e9",
+    "bytes": 91994,
+    "duration_seconds": 5.72,
+    "transcript_checked": true,
+    "transcript_similarity": 1.0,
+    "answer_bearing_phrases_checked": true,
+    "audio_events_checked": true,
+    "throat_clearing_events_detected": false,
+    "forbidden_tag_preflight_passed": true,
+    "transcription_name_aliases": {},
+    "transcript_normalization": "Track label, punctuation and accent marks only.",
+    "sha256": "316d0db72e9b99e283feeb4cc90da62dbd5b1619104d2b53de7715f61e5ab503",
+    "internal_audio_id": "HZN_A1_U04_LD_E01_AUD_01",
+    "unit": 4,
+    "activity": 1,
+    "subjective_listening_review": false,
+    "audio_events_detected": false
+  },
+  {
+    "lesson": "4D",
+    "track": "4.8",
+    "filename": "Track 4.8.mp3",
+    "script": "ElevenCreative Studio/4D - Track 4.8.txt",
+    "model": "eleven_v3",
+    "stability": 0.5,
+    "paragraph_voice_names": [
+      "Jessica",
+      "Jessica",
+      "Adeline"
+    ],
+    "paragraph_voice_ids": [
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9",
+      "5l5f8iK3YPeGga21rQIX"
+    ],
+    "generation_utc": "2026-10-24T21:10:10.106796+00:00",
+    "request_id": "HvuzawTDqO6bxhU0GZNX",
+    "script_sha256": "d793322464d6d24592945d06012f2db351525cbc51b0441f430681f299828b73",
+    "bytes": 306825,
+    "duration_seconds": 19.15,
+    "transcript_checked": true,
+    "transcript_similarity": 1.0,
+    "answer_bearing_phrases_checked": true,
+    "audio_events_checked": true,
+    "throat_clearing_events_detected": false,
+    "forbidden_tag_preflight_passed": true,
+    "transcription_name_aliases": {},
+    "transcript_normalization": "Track label, punctuation, accent marks and clock notation 4:00/four or 5:00/five only.",
+    "sha256": "81bfbcb29ca9fdf3e446607a30bf0d06306cb70b39f95371c6a938eba6276f34",
+    "internal_audio_id": "HZN_A1_U04_LD_E02_AUD_01",
+    "unit": 4,
+    "activity": 2,
+    "subjective_listening_review": false,
+    "audio_events_detected": false
+  }
+]

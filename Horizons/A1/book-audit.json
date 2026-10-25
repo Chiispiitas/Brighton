@@ -1,0 +1,1481 @@
+{
+  "schema_version": 1,
+  "updated": "2026-10-24",
+  "status": "preview verified; final book release pending",
+  "scope": "Existing A1 content through 4D, including Units 1 & 2 Review",
+  "readability_comparison_baseline": "e8d6ddd69f62caffab662a93a5a392ebc5bfb131",
+  "inventory": {
+    "lesson_masters": [
+      "1A",
+      "1B",
+      "1C",
+      "1D",
+      "2A",
+      "2B",
+      "2C",
+      "2D",
+      "2R",
+      "3A",
+      "3B",
+      "3C",
+      "3D",
+      "4A",
+      "4B",
+      "4C",
+      "4D"
+    ],
+    "pdf_pages": 34,
+    "printed_pages": [
+      5,
+      38
+    ],
+    "activity_blocks": 121,
+    "audio_files": 36,
+    "new_words_badges": 21,
+    "extra_practice_footers": 16,
+    "go_to_references": 38,
+    "page_placeholders": 38,
+    "focus_panels": 19
+  },
+  "checks": {
+    "refreshed_during_cleanup": {
+      "date": "2026-10-19",
+      "scope": "28-page book through 4A",
+      "checks": [
+        "28-page HTML: no text overflow or unloaded images/backgrounds",
+        "Saved PDF reopened: 28 A4 pages within 0.5pt tolerance",
+        "Every MP3 matches the prior verified hash",
+        "Source, shared rendering and saved-PDF fingerprints recorded"
+      ]
+    },
+    "retained_from_content_audit": {
+      "date": "2026-10-19",
+      "revised_explanation_panels": 14,
+      "revised_lessons": [
+        "1A",
+        "1B",
+        "1D",
+        "2A",
+        "2B",
+        "2C",
+        "2D",
+        "3A",
+        "3B",
+        "3C",
+        "3D"
+      ],
+      "changed_printed_pages_match_direct_export": [
+        5,
+        7,
+        8,
+        11,
+        13,
+        16,
+        18,
+        19,
+        24,
+        26,
+        28,
+        29,
+        30
+      ],
+      "unchanged_printed_pages_pixel_and_text_identical": [
+        6,
+        9,
+        10,
+        12,
+        14,
+        15,
+        17,
+        20,
+        21,
+        22,
+        23,
+        25,
+        27,
+        31,
+        32
+      ],
+      "source_activity_text_audio_and_image_files_preserved": true,
+      "focus_bodies_match_lesson_typography": true,
+      "focus_bodies_preserve_canonical_padding": true,
+      "new_overlap_candidates": 0,
+      "existing_candidate_limit": "Native display-font line boxes and hidden-node candidates match baseline; this is not an assertion of zero candidates.",
+      "visual_review": "All fourteen explanation crops and changed pages inspected; native lesson codes preserved. Final print compression rechecked on representative photo pages. Photo backgrounds and response spaces retained.",
+      "scope": "Concept-readability revision through 4A; comparison predates the new 4B pages."
+    },
+    "earlier_scoped_checks": [
+      {
+        "scope": "Unit 3",
+        "date": "2026-10-14",
+        "coverage": "Eight pages, 31 activities, keys, nine audio transcripts, substantial continuation-page imagery, information gaps and open writing"
+      },
+      {
+        "scope": "4A",
+        "date": "2026-10-19",
+        "coverage": "Two pages, eight activities, keys, exact picture counts, two transcript checks, corrected body-font grammar pilot"
+      }
+    ],
+    "audio_limit": "4B-4D recordings were decoded and independently transcribed with exact normalized script parity and no detected audio events. No separate subjective listening review. Earlier checks retain their original scope.",
+    "lesson_4b": {
+      "date": "2026-10-20",
+      "scope": "Printed pages 33-34; assembled preview through 4B",
+      "role": "Reading-led B lesson; flavors and object pronouns support understanding food opinions.",
+      "content": "Eight sequential activities; controlled key checked against the reading, visible matching anchors and script. Genuine personal preferences in final pair work.",
+      "layout": "All 30 HTML pages fit with loaded images/backgrounds; prior 28 pages have unchanged text. Two new saved PDF pages visually inspected at print scale.",
+      "focus": "Standard pink shell, ordinary 9.5pt lesson typography and selective crimson emphasis. Full sentence-to-pronoun arrows and all seven object forms.",
+      "continuation_imagery": "One substantial 82 x 55mm environmental photograph, full landscape contained, both people and foods visible.",
+      "cues": {
+        "new_words": 1,
+        "extra_practice": 1,
+        "go_to_references": 2
+      },
+      "automated_candidates": [
+        {
+          "page": "33",
+          "kind": "text-overlap",
+          "items": [
+            {
+              "first": "Lesson",
+              "second": "4B",
+              "width": 27.875,
+              "height": 3.5625
+            }
+          ]
+        }
+      ],
+      "candidate_resolution": "Native Lesson/4B display-font line rectangles intersect; actual saved-PDF glyphs are visually separate. No visible text collisions, black grammar emphasis, option-style failures or continuation-tab collisions.",
+      "pdf": {
+        "pdf_pages": 30,
+        "printed_pages": [
+          33,
+          34
+        ],
+        "unchanged_prior_pages_pixel_and_text_identical": 28,
+        "new_pages_match_direct_export_and_standalone": true,
+        "saved_pdfs_reopened": true,
+        "a4": true,
+        "continuation_code_preserved": true,
+        "book_sha256": "92837d814f8bf5ff20aa045c10652f0eac66a70e74a4a169731c7c8f6a189f3a",
+        "lesson_sha256": "b7843afc24c04ac75832ae3d36526480850392dc07b8f6848f2c2585a5ba0a3d"
+      },
+      "prior_sources": {
+        "files": 320,
+        "matches_before_snapshot": true,
+        "method": "Before adding voice-map/workflow entries, all pre-existing source/media/script/key/wordlist files were hashed against the previous snapshot, with the compiled book replaced by its saved baseline for comparison. Only the appended 4B entries subsequently change the two existing audio documents."
+      },
+      "audio": {
+        "tracks": [
+          "4.3",
+          "4.4"
+        ],
+        "durations_seconds": [
+          9.8,
+          65.96
+        ],
+        "model": "eleven_v3",
+        "stability": 0.5,
+        "narrator": "Jessica",
+        "transcript_similarity": [
+          1.0,
+          1.0
+        ],
+        "decode_pass": true,
+        "audio_events_detected": false,
+        "forbidden_tag_preflight": true,
+        "subjective_listening_review": false,
+        "records": "Audio scripts/4B-production.json"
+      },
+      "sources": "Answer keys/4B.md and Images/4B/asset-manifest.json; original fictional tasting opinions grounded in the real new-vegan-menu context.",
+      "presentation_superseded_by": "unit_4_visual_variety; retain original audio/source-production evidence."
+    },
+    "lesson_4c": {
+      "date": "2026-10-24",
+      "scope": "Printed pages 35-36; assembled preview through 4C",
+      "role": "Language-led C lesson: four cooking verbs, too much / too many, enough / not enough before nouns.",
+      "sequence": "Action photographs and beginner recipe -> contextual quantity conversation -> noticing -> grammar comparison -> form and contextual quantity practice -> two independent instructions -> private-information recipe planning.",
+      "controlled_key_checked": true,
+      "quantity_evidence": "Live ingredient targets determine the answers. Enough is sufficient, including a surplus; more at home does not imply too much in a dish.",
+      "layout": "All 32 HTML pages fit with images/backgrounds loaded; earlier 30 page texts unchanged. Both saved lesson pages visually inspected, including recipe captions and for-two badge, continuation code, writing lines, stock photo crop and footer.",
+      "focus": {
+        "body_font": "ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+        "body_size": "12.6667px",
+        "page_size": "12.6667px",
+        "padding_bottom": 13.2283,
+        "bottom_clearance": 14.21875,
+        "flex_shrink": "0"
+      },
+      "continuation_imagery": "One substantial 63 x 58mm real photograph of oil added to salad; bowl and oil stream retained. Photo inspires the learner recipe, not an exact depiction of the model quantities.",
+      "cues": {
+        "new_words": 1,
+        "extra_practice": 1,
+        "go_to_references": 2
+      },
+      "automated_candidates": [
+        {
+          "page": "35",
+          "kind": "text-overlap",
+          "items": [
+            {
+              "first": "Lesson",
+              "second": "4C",
+              "width": 27.875,
+              "height": 3.5625
+            }
+          ]
+        }
+      ],
+      "candidate_resolution": "Only native Lesson/4C display-font line rectangles intersect; saved-PDF glyphs are visually separate. No visible collisions, black grammar emphasis, option-style or continuation-tab failures.",
+      "pdf": {
+        "pdf_pages": 32,
+        "printed_pages": [
+          35,
+          36
+        ],
+        "unchanged_prior_pages_pixel_and_text_identical": 30,
+        "new_pages_match_direct_export_and_standalone": true,
+        "saved_pdfs_reopened": true,
+        "a4": true,
+        "continuation_code_preserved": true,
+        "book_sha256": "b659c8e8ecfdb3d2428d59afbb36a0c9fe5d10e798fadf0696dd2bdb2cfb0ef0",
+        "lesson_sha256": "9424ff0e70a26c9ccc5b21b6ef4eb0b5e886a7463b8c48f55388264d3d437a2e"
+      },
+      "prior_sources": {
+        "files": 333,
+        "unchanged_except_compiled_html_and_appended_voice_docs": true,
+        "original_voice_document_bytes_retained": true,
+        "old_audio_files_unchanged": 32
+      },
+      "audio": {
+        "tracks": [
+          "4.5",
+          "4.6"
+        ],
+        "durations_seconds": [
+          9.17,
+          23.88
+        ],
+        "model": "eleven_v3",
+        "stability": 0.5,
+        "narrator": "Jessica",
+        "transcript_similarity": [
+          1.0,
+          1.0
+        ],
+        "printed_turns_match_scripts": true,
+        "decode_pass": true,
+        "audio_events_detected": false,
+        "forbidden_tag_preflight": true,
+        "subjective_listening_review": false,
+        "zip_verified": true,
+        "records": "Audio scripts/4C-production.json"
+      },
+      "sources": "Answer keys/4C.md; Images/4C/asset-manifest.json. Original fictional guide/dialogue and generated action photos; licensed real stock photo for independent instructions.",
+      "grammar_tidy_revision": {
+        "date": "2026-10-24",
+        "composition": "Aligned meaning/forms table plus one word-order note and two crossed-out wrong-to-right examples: cheese enough -> enough cheese; tomatoes not enough -> not enough tomatoes. Body typography and canonical pink shell retained.",
+        "activities_and_recordings_unchanged": true,
+        "other_pdf_pages_pixel_and_text_identical": 31,
+        "saved_page_visually_reviewed": true,
+        "overflow": 0,
+        "new_overlap_candidates": 0,
+        "examples_saved_pdf_checked": true
+      },
+      "extra_practice_revision": {
+        "prompt": "Write a recipe for a dish you like.",
+        "outcome": "An original recipe with ingredients/quantities and preparation instructions, using activity 1 as a model.",
+        "saved_pdf_checked": true,
+        "other_pages_pixel_and_text_identical": 31
+      },
+      "presentation_superseded_by": "unit_4_visual_variety; retain original audio/source-production evidence."
+    },
+    "unit_3_creative_revision": {
+      "date": "2026-10-24",
+      "scope": "Eight revised pages, printed 23-30; assembled preview through 4C",
+      "activities": 30,
+      "learning_roles": {
+        "3A": "language: affirmative routines with retrieval and anonymous author reporting",
+        "3B": "listening: gist, detail, voice recognition and workday inference; supporting negative/question grammar",
+        "3C": "language: question words/adjectives applied to place recommendations",
+        "3D": "writing: frequency and sequencing into an independent post and seven-day follow-up"
+      },
+      "concepts": {
+        "3A": {
+          "hook": "Predict when Leo goes home; who wrote this routine?",
+          "visual_role": "Real source portrait, action photographs and enlarged listening guests",
+          "main_action": "Predict, retrieve, listen, guess an unknown author, report",
+          "outcome": "Anonymous personal text and two third-person sentences"
+        },
+        "3B": {
+          "hook": "Which speaker says it, and when can all three return to the programme?",
+          "visual_role": "Workplace scenes and substantial conversation cutout",
+          "main_action": "Recognise speaker, infer off day, agree a personal appointment",
+          "controlled_answers": {
+            "6": [
+              "Lucía",
+              "Ken",
+              "Maryam"
+            ],
+            "7": "Sunday"
+          },
+          "outcome": "Possible radio day, personal day/time for coffee"
+        },
+        "3C": {
+          "hook": "Which place fits each person?",
+          "visual_role": "Explicit price strips and reviews determine choices; scene photos establish settings",
+          "main_action": "Compare budget/preferences, ask a partner, recommend",
+          "controlled_answers": {
+            "6": [
+              "Beat Café",
+              "Palm Park",
+              "Cloud Café"
+            ]
+          },
+          "outcome": "Personal recommendation and original local review"
+        },
+        "3D": {
+          "hook": "Three photographic moments are out of order",
+          "visual_role": "Generated exact continuity of identity/props/actions, live timetable provides times/destination",
+          "main_action": "Sequence B-C-A, notice before/after, plan/write/revisit",
+          "controlled_answers": {
+            "4_letters": [
+              "B",
+              "C",
+              "A"
+            ],
+            "4_connectors": [
+              "after",
+              "before"
+            ]
+          },
+          "outcome": "Independent post, chosen routine challenge, second post after seven days"
+        }
+      },
+      "creativity_criteria": "CANONICAL-STYLE.md: Creative concept and task variety; twelve editorial questions applied across the unit without per-page gimmick quotas",
+      "intentional_limit": "Source topics, radio branding and recordings retained. Humour is optional, not newly forced into every lesson. No copied reference-book text/art.",
+      "keys_checked": true,
+      "early_a1_language": "Stable short instructions and models; no future/past or because required. max. supplies a transparent spending-limit label. Routine recall and unsigned text exchange use teacher demonstration rather than additional learner prose.",
+      "layout": {
+        "whole_book_pages": 32,
+        "overflow": 0,
+        "unloaded_media": 0,
+        "new_overlap_candidates": 0,
+        "existing_candidates": "Same six line-box intersections as baseline: native Lesson/code metrics, 7:00 caption and radio title. Reopened PDF glyphs visually separate.",
+        "five_focus_panels": [
+          {
+            "header": "GRAMMAR: PRESENT SIMPLE (+)",
+            "bodySize": "12.6667px",
+            "pageSize": "12.6667px",
+            "bottomClearance": 14.21875,
+            "paddingBottom": 13.2283
+          },
+          {
+            "header": "GRAMMAR: PRESENT SIMPLE (− / ?)",
+            "bodySize": "12.6667px",
+            "pageSize": "12.6667px",
+            "bottomClearance": 14.21875,
+            "paddingBottom": 13.2283
+          },
+          {
+            "header": "GRAMMAR: QUESTION WORDS",
+            "bodySize": "12.6667px",
+            "pageSize": "12.6667px",
+            "bottomClearance": 14.21875,
+            "paddingBottom": 13.2283
+          },
+          {
+            "header": "GRAMMAR: FREQUENCY ADVERBS",
+            "bodySize": "12.6667px",
+            "pageSize": "12.6667px",
+            "bottomClearance": 14.21875,
+            "paddingBottom": 13.2283
+          },
+          {
+            "header": "GRAMMAR: BEFORE / AFTER",
+            "bodySize": "12.6667px",
+            "pageSize": "12.6667px",
+            "bottomClearance": 14.21875,
+            "paddingBottom": 13.2283
+          }
+        ],
+        "continuation_image_counts": [
+          {
+            "page": "24",
+            "images": 2
+          },
+          {
+            "page": "26",
+            "images": 1
+          },
+          {
+            "page": "28",
+            "images": 1
+          },
+          {
+            "page": "30",
+            "images": 1
+          }
+        ],
+        "saved_pages_visually_reviewed": [
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ]
+      },
+      "pdf": {
+        "pages": 32,
+        "a4": true,
+        "unit_pages": 8,
+        "printed_unit_pages": [
+          23,
+          30
+        ],
+        "unchanged_pages_pixel_and_text_identical": 24,
+        "changed_pages_match_direct_export": 8,
+        "unit_and_four_lesson_exports_match_direct_export": true,
+        "continuation_codes_retained": true,
+        "outputs": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\outputs\\Horizons-A1-Unit-3.pdf",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\outputs\\Horizons-A1-Student-Book-through-4C.pdf"
+        ],
+        "sha256": {
+          "Horizons-A1-Unit-3.pdf": "02adffca246b8797b02b6a0d418723ca83a36c04a4405801845f261fe7fce0d5",
+          "Horizons-A1-Student-Book-through-4C.pdf": "6a149ae0fcb5fa5bc7bbdc127ca10dad0e593cff37ac1398cd805dbedc364d04",
+          "Horizons-A1-Lesson-3A.pdf": "a0f69188adb8ce5618ab7fba6810fcbfadfcf7c5bae878d9c99acd473bf720d9",
+          "Horizons-A1-Lesson-3B.pdf": "011b03f174590194ab0c54cc8c8512e7806fb3c9e7f9353ce185942ea811b4a1",
+          "Horizons-A1-Lesson-3C.pdf": "12b6069d86f469d3e8858b851218fb22301065b9c835e819eb97154de848d88f",
+          "Horizons-A1-Lesson-3D.pdf": "1cb121b481e8b8d93433ec574ecd506a7a20c377608ee5886c022d66bb715ef9"
+        }
+      },
+      "preservation": {
+        "existing_files_compared": 350,
+        "allowed_changed_paths": [
+          "Answer keys/3A.md",
+          "Answer keys/3B.md",
+          "Answer keys/3C.md",
+          "Answer keys/3D.md",
+          "BOOK-AUDIT.md",
+          "Images/3D/ASSETS.md",
+          "Images/Unit3-generated-assets.json",
+          "Lessons/3A.html",
+          "Lessons/3B.html",
+          "Lessons/3C.html",
+          "Lessons/3D.html",
+          "Lessons/lesson-3a-local.css",
+          "Lessons/lesson-3b-local.css",
+          "Lessons/lesson-3c-local.css",
+          "Lessons/lesson-3d-local.css",
+          "Student's Book.html",
+          "Student's Book.pdf"
+        ],
+        "all_34_recordings_unchanged": true,
+        "all_audio_scripts_and_production_records_unchanged": true,
+        "all_prior_image_files_unchanged": true,
+        "unrelated_lesson_sources_keys_and_wordlists_preserved": true,
+        "new_image": "Images/3D/Zoe-morning-sequence-v2.png"
+      },
+      "audio": {
+        "unit_tracks": 9,
+        "all_existing_mp3s_unchanged": 34,
+        "printed_recorded_input_unchanged": true,
+        "new_recordings": 0,
+        "new_subjective_listening_review": false
+      },
+      "reversibility": {
+        "exact_backup": "C:/Users/David/Documents/Codex/2026-10-05/hav/work/unit3-creative-20261024/before",
+        "guarded_restore": "C:/Users/David/Documents/Codex/2026-10-05/hav/work/unit3-creative-20261024/rollback.py",
+        "new_image_retained_originals": true
+      }
+    },
+    "units_2_4_creative_revision": {
+      "date": "2026-10-24",
+      "scope": {
+        "lessons": [
+          "2A",
+          "2B",
+          "2C",
+          "2D",
+          "4A",
+          "4B",
+          "4C"
+        ],
+        "printed_pages": [
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36
+        ],
+        "activities": 47,
+        "unit_2_activities": 26,
+        "existing_unit_4_activities": 21,
+        "unit_4d_included": false
+      },
+      "concepts": {
+        "2A": {
+          "hook": "Identify an unseen missing item",
+          "action": "Match, retrieve from a photograph, demonstrate a five-to-four real-object memory game",
+          "visual_evidence": "Preserved near/far illustrations; full environmental bag scene supplies the same eight item categories",
+          "outcome": "Identify and reveal the missing object using this/these; repeat with a real bag"
+        },
+        "2B": {
+          "hook": "The clock is 6:40; choose the next bus from the earlier app screen",
+          "action": "Predict, listen for guests, use a timetable to decide",
+          "visual_evidence": "Existing app departures, workplace/city imagery and a large continuation guest",
+          "answer": "7:30; bus 8",
+          "outcome": "A usable departure note; partner checks a selected time/number"
+        },
+        "2C": {
+          "hook": "Who is the owner described by a family relationship?",
+          "action": "Infer a named person from relationship clues; share private photo information",
+          "visual_evidence": "Rivera tree/text and item images; substantial real photo of people sharing a phone",
+          "answers": [
+            "Diego's phone",
+            "Elena's keys",
+            "Nico's notebook",
+            "Sofía's bottle"
+          ],
+          "outcome": "Name/possessive captions for a personal or fictional family photo"
+        },
+        "2D": {
+          "hook": "Match three different claims to the exact lost objects",
+          "action": "Read colour/size evidence, identify, confirm, record, return",
+          "visual_evidence": "Existing eight-object inventory and approved transparent clipboard with white writing space",
+          "answers": {
+            "Ana": 4,
+            "Luis": 6,
+            "Mia": 7
+          },
+          "outcome": "Correct claim record and three real-item owner names"
+        },
+        "4A": {
+          "hook": "Two picnic claims conflict with the picture",
+          "action": "Predict shared breakfast drink, check quantities, correct claims, plan",
+          "visual_evidence": "Full uncropped exact-count picnic: one apple, two eggs, three bananas",
+          "answers": {
+            "incorrect_claims": [
+              1,
+              2
+            ],
+            "corrections": [
+              "We have an apple.",
+              "We have two eggs."
+            ]
+          },
+          "outcome": "A shared breakfast menu and family menu extension"
+        },
+        "4B": {
+          "hook": "The same burger gets different reactions",
+          "action": "Read preferences, find shared food, predict reactions, confirm in text, poll classmates",
+          "visual_evidence": "New exact food/reaction scene plus unchanged real burger context; text confirms preferences",
+          "answers": {
+            "5": [
+              "burger",
+              "burger and/or chips",
+              "burger and/or ice cream"
+            ],
+            "6": "No; Mila likes the burger, Tom does not. Both like fries."
+          },
+          "outcome": "A food three classmates all like, or a valid no-consensus result"
+        },
+        "4C": {
+          "hook": "Choose amounts to add, distinct from ingredients merely available at home",
+          "action": "Inspect exact counts, judge recipe amounts, ask about a private household inventory",
+          "visual_evidence": "New original 1/5/2-tomato triptych and retained real salad photograph",
+          "answers": {
+            "5": [
+              "not enough",
+              "too many",
+              "enough"
+            ]
+          },
+          "outcome": "An agreed salad ingredient plan; retain the requested original recipe Extra Practice"
+        }
+      },
+      "roles": {
+        "2A": "language",
+        "2B": "listening with supporting vocabulary/grammar",
+        "2C": "language",
+        "2D": "speaking and claim record",
+        "4A": "language",
+        "4B": "reading with supporting vocabulary/grammar",
+        "4C": "language"
+      },
+      "keys_checked": true,
+      "creative_audit": "Twelve canonical checks applied across the units; varied interaction/outcomes, not a per-page gimmick quota. Removed repeated menu ending in 4B.",
+      "source_preservation": {
+        "existing_files_compared": 351,
+        "allowed_changed_paths": [
+          "Answer keys/2D.txt",
+          "Answer keys/4A.md",
+          "Answer keys/4B.md",
+          "Answer keys/4C.md",
+          "Images/4A/asset-manifest.json",
+          "Images/4B/asset-manifest.json",
+          "Images/4C/asset-manifest.json",
+          "Lessons/2A.html",
+          "Lessons/2B.html",
+          "Lessons/2C.html",
+          "Lessons/2D.html",
+          "Lessons/4A.html",
+          "Lessons/4B.html",
+          "Lessons/4C.html",
+          "Lessons/lesson-2a-local.css",
+          "Lessons/lesson-2b-local.css",
+          "Lessons/lesson-2c-local.css",
+          "Lessons/lesson-2d-local.css",
+          "Lessons/lesson-4a-local.css",
+          "Lessons/lesson-4b-local.css",
+          "Lessons/lesson-4c-local.css",
+          "Student's Book.html",
+          "Student's Book.pdf"
+        ],
+        "all_34_recordings_unchanged": true,
+        "all_scripts_and_audio_production_metadata_unchanged": true,
+        "all_previous_image_binaries_unchanged": true,
+        "all_other_lesson_masters_keys_and_wordlists_unchanged": true,
+        "recorded_source_blocks_matched": [
+          ".l2a-dialogue",
+          ".l2b-phone__screen",
+          ".l2b-interviews",
+          ".l2b-indrive-stage",
+          ".l2c-reading-copy",
+          ".l2c-family-strip",
+          ".l2d-dialogue",
+          ".l4a-breakfast-copy",
+          ".l4b-taste-feature",
+          ".l4c-kitchen-talk"
+        ],
+        "grammar_panels_unchanged": 17,
+        "approved_unit_3_source_and_saved_pages_preserved": true,
+        "new_images": [
+          "Images/4B/Same-food-different-opinions-v2.png",
+          "Images/4C/Tomato-quantities-v2.png"
+        ]
+      },
+      "layout": {
+        "whole_book_pages": 32,
+        "overflow": 0,
+        "unloaded_media": 0,
+        "new_overlap_candidates": 0,
+        "remaining_font_metric_candidates": 8,
+        "candidate_resolution": "Saved glyphs separate: native Lesson/code metrics and existing inDrive two-line title. The old 2B badge/tab collision is fixed; long 2C colour-prompt metric intersection removed.",
+        "focus": [
+          {
+            "header": "GRAMMAR: THIS / THAT / THESE / THOSE",
+            "bodySize": "13.3333px",
+            "pageSize": "13.3333px",
+            "bottomClearance": 14.21875,
+            "paddingBottom": 13.2283
+          },
+          {
+            "header": "GRAMMAR: A / AN / THE",
+            "bodySize": "13.3333px",
+            "pageSize": "13.3333px",
+            "bottomClearance": 14.21875,
+            "paddingBottom": 13.2283
+          },
+          {
+            "header": "GRAMMAR: POSSESSIVE FORMS",
+            "bodySize": "13.3333px",
+            "pageSize": "13.3333px",
+            "bottomClearance": 14.21875,
+            "paddingBottom": 13.2283
+          },
+          {
+            "header": "GRAMMAR: ADJECTIVE POSITION",
+            "bodySize": "13.3333px",
+            "pageSize": "13.3333px",
+            "bottomClearance": 14.21875,
+            "paddingBottom": 13.2283
+          },
+          {
+            "header": "GRAMMAR: COUNTABLE AND UNCOUNTABLE NOUNS",
+            "bodySize": "12.6667px",
+            "pageSize": "12.6667px",
+            "bottomClearance": 14.21875,
+            "paddingBottom": 13.2283
+          },
+          {
+            "header": "GRAMMAR: OBJECT PRONOUNS",
+            "bodySize": "12.6667px",
+            "pageSize": "12.6667px",
+            "bottomClearance": 14.21875,
+            "paddingBottom": 13.2283
+          },
+          {
+            "header": "GRAMMAR: TOO MUCH / TOO MANY / ENOUGH",
+            "bodySize": "12.6667px",
+            "pageSize": "12.6667px",
+            "bottomClearance": 14.21875,
+            "paddingBottom": 13.2283
+          }
+        ],
+        "scoped_new_words_badges": 8,
+        "scoped_extra_practice_footers": 7,
+        "scoped_go_to_references": 15,
+        "raw_continuation_image_counts": [
+          {
+            "page": "14",
+            "images": 7
+          },
+          {
+            "page": "16",
+            "images": 1
+          },
+          {
+            "page": "18",
+            "images": 5
+          },
+          {
+            "page": "20",
+            "images": 5
+          },
+          {
+            "page": "32",
+            "images": 1
+          },
+          {
+            "page": "34",
+            "images": 1
+          },
+          {
+            "page": "36",
+            "images": 2
+          }
+        ],
+        "substantial_imagery": "Every scoped continuation page has a larger context image or evidence family; tiny labels/badges not counted.",
+        "saved_pages_visually_reviewed": [
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36
+        ]
+      },
+      "standalone_source_geometry": [
+        {
+          "lesson": "2A",
+          "page": "13",
+          "maxTextGeometryDifferencePx": 0
+        },
+        {
+          "lesson": "2A",
+          "page": "14",
+          "maxTextGeometryDifferencePx": 0
+        },
+        {
+          "lesson": "2B",
+          "page": "15",
+          "maxTextGeometryDifferencePx": 0
+        },
+        {
+          "lesson": "2B",
+          "page": "16",
+          "maxTextGeometryDifferencePx": 0
+        },
+        {
+          "lesson": "2C",
+          "page": "17",
+          "maxTextGeometryDifferencePx": 0
+        },
+        {
+          "lesson": "2C",
+          "page": "18",
+          "maxTextGeometryDifferencePx": 0
+        },
+        {
+          "lesson": "2D",
+          "page": "19",
+          "maxTextGeometryDifferencePx": 0
+        },
+        {
+          "lesson": "2D",
+          "page": "20",
+          "maxTextGeometryDifferencePx": 0
+        },
+        {
+          "lesson": "4A",
+          "page": "31",
+          "maxTextGeometryDifferencePx": 0
+        },
+        {
+          "lesson": "4A",
+          "page": "32",
+          "maxTextGeometryDifferencePx": 0
+        },
+        {
+          "lesson": "4B",
+          "page": "33",
+          "maxTextGeometryDifferencePx": 0
+        },
+        {
+          "lesson": "4B",
+          "page": "34",
+          "maxTextGeometryDifferencePx": 0
+        },
+        {
+          "lesson": "4C",
+          "page": "35",
+          "maxTextGeometryDifferencePx": 0
+        },
+        {
+          "lesson": "4C",
+          "page": "36",
+          "maxTextGeometryDifferencePx": 0
+        }
+      ],
+      "pdf": {
+        "book_pages": 32,
+        "a4": true,
+        "revised_printed_pages": [
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36
+        ],
+        "unchanged_printed_pages": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          21,
+          22,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30
+        ],
+        "unchanged_pages_pixel_and_text_identical": 18,
+        "revised_pages_match_direct_export": 14,
+        "unit_pdf_pages": {
+          "2": 8,
+          "4_through_4C": 6
+        },
+        "seven_standalone_lessons_match_direct_export": true,
+        "continuation_codes_retained": true,
+        "outputs": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\outputs\\Horizons-A1-Unit-2.pdf",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\outputs\\Horizons-A1-Unit-4-through-4C.pdf",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\outputs\\Horizons-A1-Student-Book-through-4C.pdf"
+        ],
+        "sha256": {
+          "Horizons-A1-Unit-2.pdf": "40dac54d58f872e28c7c08670417064e7210a3265913d512d7baed7e1a619f39",
+          "Horizons-A1-Unit-4-through-4C.pdf": "92f8aa4251e5f72caf7d6f5299ab1aecba7ec4496514851b1c402434e157fa60",
+          "Horizons-A1-Student-Book-through-4C.pdf": "62ea5e2cf21f0dad2c2b98d513f73f3c62e79d1797ad8ef9b9e8979cb0219510",
+          "Horizons-A1-Lesson-2A.pdf": "b396dfd69443aebc9791c471b06872c2f00a12cae0ee12630096cccf9b3ecb05",
+          "Horizons-A1-Lesson-2B.pdf": "ad1c726697da1d06b30909a49deb9b41aa5354f9d3613087377d09f9e3c5e768",
+          "Horizons-A1-Lesson-2C.pdf": "805b818f91437dfb203e82cc89ad120b028ec0466a9eb7e8152bc82ff6421845",
+          "Horizons-A1-Lesson-2D.pdf": "0c59e39a0948d134fb361bf7037ce1c09bdeef664823858a7c525c8d459b3a6c",
+          "Horizons-A1-Lesson-4A.pdf": "eb245dc1ff00f20001013eb0181a492d239450aed4e4582db1350a1a98abe05c",
+          "Horizons-A1-Lesson-4B.pdf": "86fae66a65111bdd8e700bc5c4c924142613fca7dfd0852b0ae123797c518dbd",
+          "Horizons-A1-Lesson-4C.pdf": "6833e3db969b6cf7c4b61eacfbc84e67a4fbbfc9e7d8aeae86f5fbfe0adc666d"
+        }
+      },
+      "audio": {
+        "all_34_mp3s_unchanged": true,
+        "all_scripts_and_production_metadata_unchanged": true,
+        "primary_recorded_input_unchanged": true,
+        "new_recordings": 0,
+        "new_subjective_listening_review": false,
+        "new_4b_practice_dialogue": "Unrecorded reading task with no audio badge."
+      },
+      "new_asset_manifest": "Images/Units2-4-creative-assets.json",
+      "reversibility": {
+        "exact_backup": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\units2-4-creative-20261024\\before",
+        "output_backup": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\units2-4-creative-20261024\\before-outputs",
+        "guarded_restore": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\units2-4-creative-20261024\\rollback.py",
+        "preserves_approved_unit_3_state": true
+      },
+      "unit_4_presentation_superseded_by": "unit_4_visual_variety; Unit 2 remains unchanged."
+    },
+    "lesson_4d": {
+      "date": "2026-10-24",
+      "scope": "New printed pages 37-38; assembled preview through 4D",
+      "role": "Writing-led D lesson: food sharing, because/so and punctuation; independent useful post plus peer reply.",
+      "sequence": "Three contextual word chunks -> compare vague/useful versions of a post -> notice reason/result -> concise skills clarification -> punctuation correction -> connector practice -> independent post -> reader response and household transfer.",
+      "creative_concept": "A food-sharing message has a real reader: compare usability, write a useful offer, receive a reply. This differs from 4A menu planning, 4B opinions/poll and 4C recipe planning.",
+      "controlled_key_checked": true,
+      "controlled_answers": "B; explicit reason I do not need them; four apples; Hello. I have too much bread. Do you want it?; because / so / so with comma before the last two.",
+      "visual_evidence": "Four visible apples anchor Nora's offer. Large second-page bread handover provides a different optional food idea. Neither image is claimed to prove appointment time or real identity.",
+      "layout": "All 34 HTML pages fit; every image/background loads. Standalone and assembled text geometry match. Two saved new pages visually inspected full-size: code numerals, body typography, image crops, six open writing lines, source margins, Skills panels and footer.",
+      "focus": [
+        {
+          "body_font": "ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+          "body_size": "12.6667px",
+          "page_size": "12.6667px",
+          "padding_bottom": 13.2283,
+          "bottom_clearance": 14.21875,
+          "flex_shrink": "0"
+        },
+        {
+          "body_font": "ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, \"Segoe UI\", Arial, sans-serif",
+          "body_size": "12.6667px",
+          "page_size": "12.6667px",
+          "padding_bottom": 13.2283,
+          "bottom_clearance": 14.21875,
+          "flex_shrink": "0"
+        }
+      ],
+      "automated_candidates": [
+        {
+          "page": "37",
+          "kind": "text-overlap",
+          "items": [
+            {
+              "first": "Lesson",
+              "second": "4D",
+              "width": 27.875,
+              "height": 3.5625
+            },
+            {
+              "first": "Too much food?",
+              "second": "Share it.",
+              "width": 111.328125,
+              "height": 6.65625
+            }
+          ]
+        },
+        {
+          "page": "38",
+          "kind": "text-overlap",
+          "items": [
+            {
+              "first": "Your food.",
+              "second": "Your post.",
+              "width": 108.9375,
+              "height": 4.40625
+            }
+          ]
+        }
+      ],
+      "candidate_resolution": "Three font-line-box intersections: native Lesson/4D and the two multiline feature headings. Actual saved-PDF glyphs are visibly separated. No content collisions, black Skills emphasis, incorrect choice styles or text under the continuation tab.",
+      "continuation_imagery": "One substantial 81 x 48mm realistic generated bread-sharing photograph. Faces, food and handover remain readable; not counted as a tiny badge.",
+      "cues": {
+        "new_words": 1,
+        "extra_practice": 1,
+        "go_to_references": 2
+      },
+      "saved_pdf": {
+        "book_pages": 34,
+        "a4": true,
+        "unchanged_pages_pixel_and_text_identical": 32,
+        "new_pages_match_direct_export": 2,
+        "standalone_text_matches_assembled": true,
+        "unit_4_pdf_pages": 8,
+        "new_printed_pages": [
+          37,
+          38
+        ],
+        "continuation_code_retained": true,
+        "outputs": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\outputs\\Horizons-A1-Lesson-4D.pdf",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\outputs\\Horizons-A1-Unit-4.pdf",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\outputs\\Horizons-A1-Student-Book-through-4D.pdf"
+        ],
+        "sha256": {
+          "Horizons-A1-Lesson-4D.pdf": "de48f9f7c41110799f8e5d32abffee31101ce6e7c57a989063060205adfc25fe",
+          "Horizons-A1-Unit-4.pdf": "c62e8331991548db43655b8927f61daad23b744432d494c99d882aa38b66c015",
+          "Horizons-A1-Student-Book-through-4D.pdf": "39db49df78db14bca7be93f714e8cc4c6ccdc084d4fcb0df331fc74c85fe4eae"
+        }
+      },
+      "source_preservation": {
+        "prior_source_files": 357,
+        "unchanged_except": [
+          "Audio scripts/ElevenCreative Studio/README.md",
+          "Audio scripts/ElevenCreative Studio/VOICE MAP.md",
+          "BOOK-AUDIT.md",
+          "Student's Book.html",
+          "Student's Book.pdf",
+          "book-audit.json"
+        ],
+        "old_audio_files": 34,
+        "old_audio_unchanged": true,
+        "all_prior_images_and_lesson_masters_unchanged": true,
+        "voice_document_original_bytes_retained": true,
+        "audio_zip_verified": true,
+        "printed_model_matches_script": true
+      },
+      "audio": {
+        "tracks": [
+          "4.7",
+          "4.8"
+        ],
+        "durations_seconds": [
+          5.72,
+          19.15
+        ],
+        "narrator": "Jessica",
+        "Nora": "Adeline, same approved assignment as 2A",
+        "model": "eleven_v3",
+        "stability": 0.5,
+        "transcript_similarity": [
+          1.0,
+          1.0
+        ],
+        "decode_pass": true,
+        "audio_events_detected": false,
+        "forbidden_tag_preflight": true,
+        "printed_model_matches_script": true,
+        "zip_verified": true,
+        "subjective_listening_review": false,
+        "normalization": "Track label, punctuation, accent marks and clock notation 4:00/four or 5:00/five only. No lexical normalization.",
+        "rejected_candidate": "Original candidate with contracted wanna was rejected; revised simpler printed/script wording was freshly generated and passed. Rejected media are only in task scratch, not the book.",
+        "records": "Audio scripts/4D-production.json"
+      },
+      "sources": "Answer keys/4D.md; Wordlists/4D.md; Images/4D/asset-manifest.json and prompts.json. Original fictional posts. General Olio function verified against official primary sources on 24 October 2026.",
+      "reversibility": "Exact previous 32-page book, mutable documentation and source hashes in ../lesson4d; guarded rollback.py restores listed files only and refuses later changes. Prior source masters/media are unchanged.",
+      "presentation_superseded_by": "unit_4_visual_variety; retain original audio/source-production evidence."
+    },
+    "unit_4_visual_variety": {
+      "date": "2026-10-24",
+      "scope": "All eight Unit 4 pages, printed 31-38; complete book remains 34 pages.",
+      "author_request": "Reduce repeated visual composition, especially across Unit 4, while preserving Horizons identity.",
+      "editorial_approaches": {
+        "4A": "Two alternating breakfast travel-journal entries, retained full-background source photos and enlarged picnic evidence.",
+        "4B": "Photo-led yellow taste-test cover with three independent opinion columns, followed by a larger reaction image and speech bubbles.",
+        "4C": "Four-frame recipe strip with discovery and unchanged rule on page one; large exact-count plates and tall native-alpha cook on page two.",
+        "4D": "Yellow note / purple phone comparison, punctuation panel inside its task, and photograph/planning beside an eight-line composing surface."
+      },
+      "identity": "Native A4 chrome, crimson numbering/continuation tabs, normal body typography, word-bank colours, italic normal-weight choices and canonical focus shells preserved.",
+      "pedagogy": "All 28 Unit 4 activities retain their numbers and controlled answers. Twelve recorded source paragraphs, recipe caption meaning and all 19 book focus bodies are unchanged. A/C remain language, B reading/listening and D writing.",
+      "visual_review": "All eight pages reopened from the saved PDF and visually inspected at full-page resolution: tabs, lesson numerals, crop/evidence, body typography, source backgrounds, writing space, rules, reference cues and Extra Practice. Native alpha checked on white.",
+      "layout": "All 34 HTML pages fit; all images and CSS backgrounds load. All four standalone lessons match assembled text geometry. No continuation-tab/text collisions, black focus emphasis or incorrect choice styles.",
+      "focus": {
+        "32": [
+          {
+            "body_size": "12.6667px",
+            "page_size": "12.6667px",
+            "padding_bottom": 13.2283,
+            "bottom_clearance": 14.21875
+          }
+        ],
+        "34": [
+          {
+            "body_size": "12.6667px",
+            "page_size": "12.6667px",
+            "padding_bottom": 13.2283,
+            "bottom_clearance": 14.21875
+          }
+        ],
+        "35": [
+          {
+            "body_size": "12.6667px",
+            "page_size": "12.6667px",
+            "padding_bottom": 13.2283,
+            "bottom_clearance": 14.21875
+          }
+        ],
+        "37": [
+          {
+            "body_size": "12.6667px",
+            "page_size": "12.6667px",
+            "padding_bottom": 13.2283,
+            "bottom_clearance": 14.21875
+          }
+        ],
+        "38": [
+          {
+            "body_size": "12.6667px",
+            "page_size": "12.6667px",
+            "padding_bottom": 13.2283,
+            "bottom_clearance": 14.21875
+          }
+        ]
+      },
+      "automated_candidates": [
+        {
+          "page": "31",
+          "kind": "text-overlap",
+          "items": [
+            {
+              "first": "Lesson",
+              "second": "4A",
+              "width": 27.875,
+              "height": 3.5625
+            }
+          ]
+        },
+        {
+          "page": "33",
+          "kind": "text-overlap",
+          "items": [
+            {
+              "first": "Lesson",
+              "second": "4B",
+              "width": 27.875,
+              "height": 3.5625
+            }
+          ]
+        },
+        {
+          "page": "35",
+          "kind": "text-overlap",
+          "items": [
+            {
+              "first": "Lesson",
+              "second": "4C",
+              "width": 27.875,
+              "height": 3.5625
+            }
+          ]
+        },
+        {
+          "page": "37",
+          "kind": "text-overlap",
+          "items": [
+            {
+              "first": "Lesson",
+              "second": "4D",
+              "width": 27.875,
+              "height": 3.5625
+            }
+          ]
+        }
+      ],
+      "candidate_resolution": "Only four inherited Lesson/code font-line-box intersections. Saved-PDF glyphs are separate. Earlier new headline/name candidates were resolved by spacing changes.",
+      "continuation_imagery": {
+        "32": "78mm-wide full picnic photograph.",
+        "34": "95mm-wide full reaction scene.",
+        "36": "150 x 50mm exact tomato-count family plus 62 x 88mm contained cook cutout.",
+        "38": "77mm-wide full bread-sharing scene beside open writing."
+      },
+      "cues": {
+        "new_words": 4,
+        "extra_practice": 4,
+        "go_to_references": 8
+      },
+      "writing": "4D now has eight 8mm-spaced open lines in the post column; model approximately 36 words. No compulsory sentence gaps or exact word count.",
+      "saved_pdf": {
+        "book_pages": 34,
+        "a4": true,
+        "unit_4_pages": 8,
+        "revised_printed_pages": [
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38
+        ],
+        "earlier_pages_pixel_and_text_identical": 26,
+        "all_eight_revised_pages_match_direct_export": true,
+        "four_standalone_exports_match_direct_export": true,
+        "lesson_code_numerals_retained": true,
+        "outputs": [
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\outputs\\Horizons-A1-Unit-4.pdf",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\outputs\\Horizons-A1-Student-Book-through-4D.pdf",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\outputs\\Horizons-A1-Lesson-4A.pdf",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\outputs\\Horizons-A1-Lesson-4B.pdf",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\outputs\\Horizons-A1-Lesson-4C.pdf",
+          "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\outputs\\Horizons-A1-Lesson-4D.pdf"
+        ],
+        "sha256": {
+          "Horizons-A1-Unit-4.pdf": "c8a702c7839d521594ecdd394fa887187e8bda8b7732c1a220d52099688b1017",
+          "Horizons-A1-Student-Book-through-4D.pdf": "e041d425ff01b0d9bc7b576198865aba7294f1036ebc8ee46b96e2899f21fc1b",
+          "Horizons-A1-Lesson-4A.pdf": "3d41d820de87bd435043712071a1fe05740cd4f9ac40bbdd811085cc390c15e2",
+          "Horizons-A1-Lesson-4B.pdf": "4e1aac036ca3fe220be9a9638148d65e1a9112c4758223457a4d36c44232164a",
+          "Horizons-A1-Lesson-4C.pdf": "6b2851c0521d01afe47a37cd50b06cf68fc89b5f7675f94eca4c602c17386813",
+          "Horizons-A1-Lesson-4D.pdf": "c6d9c38c6ea3f106083cc8ba51aa4e1c4022a127f28fd7bee271fcc11ab196de"
+        }
+      },
+      "source_preservation": {
+        "old_source_files": 370,
+        "allowed_modified_paths": [
+          "Answer keys/4A.md",
+          "Answer keys/4B.md",
+          "Answer keys/4C.md",
+          "Answer keys/4D.md",
+          "BOOK-AUDIT.md",
+          "Images/4A/asset-manifest.json",
+          "Images/4B/asset-manifest.json",
+          "Images/4C/asset-manifest.json",
+          "Images/4D/asset-manifest.json",
+          "Lessons/4A.html",
+          "Lessons/4B.html",
+          "Lessons/4C.html",
+          "Lessons/4D.html",
+          "Lessons/lesson-4a-local.css",
+          "Lessons/lesson-4b-local.css",
+          "Lessons/lesson-4c-local.css",
+          "Lessons/lesson-4d-local.css",
+          "Student's Book.html",
+          "Student's Book.pdf",
+          "book-audit.json"
+        ],
+        "all_36_mp3s_unchanged": true,
+        "all_audio_scripts_and_production_metadata_unchanged": true,
+        "all_previous_image_binaries_unchanged": true,
+        "earlier_lesson_masters_unchanged": true,
+        "recorded_paragraphs_preserved": 12,
+        "all_19_focus_body_html_preserved": true,
+        "native_word_bank_styles_preserved": true
+      },
+      "audio": "All 36 MP3s, every script and production record retain their previous hashes. No new generation or subjective listening review was needed or claimed.",
+      "assets": "One new built-in realistic cook cutout with native alpha. All older images retained, including the replaced 4C stock photo. Full prompt/hash/source boundary in Images/4C/asset-manifest.json and Images/Unit4-visual-variety-assets.json.",
+      "guidance": "The canonical Unit-level visual variety section now requires neighboring-spread review, functional source diversity and continuity of book conventions. The four solutions are precedents, not new templates.",
+      "reversibility": "Exact before-source/output copies, source hashes, saved-PDF evidence and guarded rollback.py in ../unit4-variety-20261024 relative to the repo."
+    },
+    "html_audio_controls": {
+      "date": "2026-10-24",
+      "scope": "Full-book and 17 standalone HTML masters; all 39 printed track references.",
+      "implementation": "Shared deferred viewer script and CSS; relative audio base; on-demand single audio element. Existing badge text remains unchanged in print.",
+      "verification": {
+        "no_autoplay_or_audio_preload": true,
+        "badges": 39,
+        "distinct_files": 35,
+        "all_http_paths_resolve": true,
+        "play_pause_and_keyboard": true,
+        "special_1b_recording_correct": true,
+        "one_player_and_repeated_badges_synchronized": true,
+        "ended_resets_controls": true,
+        "screen_overflow": [],
+        "print_pages_identical_text_geometry_and_styles": 34,
+        "hidden_controls_pixel_identical_on_sample_pages": [
+          5,
+          37
+        ],
+        "standalone": [
+          {
+            "lesson": "1A.html",
+            "buttons": 7
+          },
+          {
+            "lesson": "1B.html",
+            "buttons": 3
+          },
+          {
+            "lesson": "1C.html",
+            "buttons": 1
+          },
+          {
+            "lesson": "1D.html",
+            "buttons": 1
+          },
+          {
+            "lesson": "2A.html",
+            "buttons": 2
+          },
+          {
+            "lesson": "2B.html",
+            "buttons": 3
+          },
+          {
+            "lesson": "2C.html",
+            "buttons": 1
+          },
+          {
+            "lesson": "2D.html",
+            "buttons": 2
+          },
+          {
+            "lesson": "2R.html",
+            "buttons": 0
+          },
+          {
+            "lesson": "3A.html",
+            "buttons": 3
+          },
+          {
+            "lesson": "3B.html",
+            "buttons": 4
+          },
+          {
+            "lesson": "3C.html",
+            "buttons": 2
+          },
+          {
+            "lesson": "3D.html",
+            "buttons": 2
+          },
+          {
+            "lesson": "4A.html",
+            "buttons": 2
+          },
+          {
+            "lesson": "4B.html",
+            "buttons": 2
+          },
+          {
+            "lesson": "4C.html",
+            "buttons": 2
+          },
+          {
+            "lesson": "4D.html",
+            "buttons": 2
+          }
+        ],
+        "local_file_playback": true,
+        "missing_file_error_and_retry": true
+      },
+      "print_geometry_tolerance_px": 0.02,
+      "print_pixel_note": "Per-tab Chromium photo resampling prevented a strict cross-tab screenshot comparison; all printed text/image/element geometry and styles match, and same-page hidden-versus-removed control samples match pixels. No claim of cross-tab 34-page pixel equality.",
+      "preservation": {
+        "all_36_mp3s_unchanged": true,
+        "all_images_scripts_keys_wordlists_unchanged": true,
+        "saved_pdf_bytes_unchanged": true,
+        "prior_print_layout_preserved": true,
+        "only_a1_changes": [
+          "BOOK-AUDIT.md",
+          "Lessons/1A.html",
+          "Lessons/1B.html",
+          "Lessons/1C.html",
+          "Lessons/1D.html",
+          "Lessons/2A.html",
+          "Lessons/2B.html",
+          "Lessons/2C.html",
+          "Lessons/2D.html",
+          "Lessons/2R.html",
+          "Lessons/3A.html",
+          "Lessons/3B.html",
+          "Lessons/3C.html",
+          "Lessons/3D.html",
+          "Lessons/4A.html",
+          "Lessons/4B.html",
+          "Lessons/4C.html",
+          "Lessons/4D.html",
+          "Student's Book.html",
+          "book-audit.json"
+        ]
+      },
+      "special_mapping": "1B activity 4.1 -> Track 1.8 - Exercise 4.1.mp3; vocabulary -> Track 1.8.mp3.",
+      "github_pages": "Relative URLs tested at a local /Brighton/ repository prefix. No live deployment or live-site claim.",
+      "reversibility": "Exact before-source copies and guarded rollback.py in ../html-audio-20261024 relative to the repository."
+    },
+    "publication_preflight": {
+      "date": "2026-10-24",
+      "scope": "Publish the verified book through 4D and audio controls; trailing empty CSS line removed, compiled HTML rebuilt with no semantic change.",
+      "source_checks": "49 audio scripts pass forbidden-tag validation; staged files scanned for private API keys and GitHub size limits.",
+      "runtime_evidence": "Retained html_audio_controls and unit_4_visual_variety checks; no visual/audio content change."
+    }
+  },
+  "pending": [
+    {
+      "id": "pagination",
+      "scope": "whole book",
+      "action": "Build/paginate back-of-book destinations and replace every page --- reference; recheck navigation."
+    },
+    {
+      "id": "continuation-imagery",
+      "scope": "Unit 1 and Review",
+      "action": "Explicitly audit Unit 1 and Review continuation-page imagery. Units 2-3 and existing 4A-4D have scoped evidence; do not automatically extend their pass. Count substantial CSS-background photographs and image families, not only img totals or tiny badges."
+    },
+    {
+      "id": "release-review",
+      "scope": "final assembled book",
+      "action": "After remaining content and pagination, rerun full source/key/audio/layout checks and inspect the reopened final PDF before release."
+    }
+  ],
+  "evidence": {
+    "teacher_notes": "Answer keys/Concept-readability-notes.md",
+    "audio_production": "Audio scripts/",
+    "image_provenance": "Images/",
+    "superseded_reports_commit": "2f404b547b7da07be81a0622a78591d3299c402a",
+    "superseded_reports": [
+      "unit-3-audit.json",
+      "lesson-4a-audit.json",
+      "grammar-pilot-4a-audit.json",
+      "concept-readability-audit.json"
+    ],
+    "history_rule": "These report names refer to the cited Git revision, not active files. Historical export counts and pilot-pending statuses do not describe the current book."
+  },
+  "snapshot": {
+    "book_sources": {
+      "paths": [
+        "Lessons",
+        "Images",
+        "Audios",
+        "Audio scripts",
+        "Answer keys",
+        "Wordlists",
+        "Syllabus.txt",
+        "Student's Book.html"
+      ],
+      "fingerprint": {
+        "files": 367,
+        "bytes": 417183870,
+        "sha256": "a178e9f2bebedf8fbdfa6ddecbf8e5b5e1e6624517e1ca75963659940f2de582"
+      }
+    },
+    "shared_rendering": {
+      "paths": [
+        "../Base"
+      ],
+      "exclude_markdown": true,
+      "fingerprint": {
+        "files": 11,
+        "bytes": 52449,
+        "sha256": "4697e7d98999aaa3cece78ebd9141929efc36dac02640af887b6d9d9b965d143"
+      }
+    },
+    "saved_pdf": {
+      "paths": [
+        "Student's Book.pdf"
+      ],
+      "fingerprint": {
+        "files": 1,
+        "bytes": 55696751,
+        "sha256": "a6ed657655f6f3d125e58c1fe6dc05254160c96da3d095e478ad729eb6dd299f"
+      }
+    },
+    "audit_criteria": {
+      "paths": [
+        "../Base/design-system/CANONICAL-STYLE.md",
+        "../Base/design-system/GUIDED-DISCOVERY.md",
+        "../Base/design-system/component-contracts.md",
+        "../Base/design-system/asset-policy.md"
+      ],
+      "fingerprint": {
+        "files": 4,
+        "bytes": 108679,
+        "sha256": "7f09bcae0b7f4e5720ce1bbee88a5a40c36aa38dc0967c4e57d7738ff5c0b9a9"
+      }
+    }
+  },
+  "content_baseline_commit": "2f404b547b7da07be81a0622a78591d3299c402a",
+  "current_revision": "Unit 4 visual-variety revision retained; print-neutral HTML audio controls added across the full book and standalone lessons. Local authoring; not published.",
+  "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending."
+}

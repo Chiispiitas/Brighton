@@ -1,0 +1,80 @@
+[
+  {
+    "lesson": "4B",
+    "track": "4.3",
+    "filename": "Track 4.3.mp3",
+    "script": "ElevenCreative Studio/4B - Track 4.3.txt",
+    "model": "eleven_v3",
+    "stability": 0.5,
+    "paragraph_voice_names": [
+      "Jessica",
+      "Jessica"
+    ],
+    "paragraph_voice_ids": [
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9"
+    ],
+    "generation_utc": "2026-10-20T23:03:41.591946+00:00",
+    "request_id": "uoCy3z6oZ6VMfHVujxPV",
+    "script_sha256": "8d3c623cafffa695b04d88d06ee873482af854f6eeba4f444de1813f20e95684",
+    "bytes": 157195,
+    "duration_seconds": 9.8,
+    "transcript_checked": true,
+    "transcript_similarity": 1.0,
+    "answer_bearing_phrases_checked": true,
+    "audio_events_checked": true,
+    "throat_clearing_events_detected": false,
+    "forbidden_tag_preflight_passed": true,
+    "transcription_name_aliases": {
+      "Ava": "Eva",
+      "Nadya": "Nadia"
+    },
+    "transcript_normalization": "Track label, punctuation and Eva/Ava or Nadia/Nadya spelling only.",
+    "sha256": "d6d3ed5b87ef55445556e1003f0ee6b6c9095d7f53748b6059f88550572618a2"
+  },
+  {
+    "lesson": "4B",
+    "track": "4.4",
+    "filename": "Track 4.4.mp3",
+    "script": "ElevenCreative Studio/4B - Track 4.4.txt",
+    "model": "eleven_v3",
+    "stability": 0.5,
+    "paragraph_voice_names": [
+      "Jessica",
+      "Jessica",
+      "Jessica",
+      "Amy",
+      "Jessica",
+      "Jarnathan",
+      "Jessica",
+      "Juniper"
+    ],
+    "paragraph_voice_ids": [
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9",
+      "OZxMHsGaBmV5pjMIDIn0",
+      "cgSgspJ2msm6clMCkdW9",
+      "c6SfcYrb2t09NHXiT80T",
+      "cgSgspJ2msm6clMCkdW9",
+      "aMSt68OGf4xUZAnLpTU8"
+    ],
+    "generation_utc": "2026-10-20T23:03:54.200812+00:00",
+    "request_id": "WnpulRb1XUihra9ydvvl",
+    "script_sha256": "e6110dce6a7b99fcbaee79957385430048e3cebf62fe848828e9077c5c593973",
+    "bytes": 1055807,
+    "duration_seconds": 65.96,
+    "transcript_checked": true,
+    "transcript_similarity": 1.0,
+    "answer_bearing_phrases_checked": true,
+    "audio_events_checked": true,
+    "throat_clearing_events_detected": false,
+    "forbidden_tag_preflight_passed": true,
+    "transcription_name_aliases": {
+      "Ava": "Eva",
+      "Nadya": "Nadia"
+    },
+    "transcript_normalization": "Track label, punctuation and Eva/Ava or Nadia/Nadya spelling only.",
+    "sha256": "1ae0191d33d7e11ad90bb8920db7dbf0177a2b70f47fe69bcbaab32168359b51"
+  }
+]

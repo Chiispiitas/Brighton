@@ -316,6 +316,27 @@ the body remains dark crimson. A layout overhaul preserves the authorized
 language, exercise sequence, options, examples, track references and response
 affordances unless the author separately requests a content change.
 
+## Creative concept and task variety
+
+Approved 24 October 2026 following the author's English File Beginner reference review. Borrow principles, not its artwork, exercises, branding or illustration style. Horizons keeps its own photographic identity, crimson navigation, ordinary learner typography, canonical grammar shells and purposeful source backgrounds.
+
+Apply these checks to the main feature and to the unit as a whole. They are editorial questions, not a quota of jokes, puzzles, illustrations or new templates per page. A quiet controlled exercise may remain quiet. Do not raise the cumulative language ceiling to make a task sound more sophisticated.
+
+1. **Curiosity:** identify the question, prediction, small problem or decision that makes the main feature worth exploring beyond its grammar answer.
+2. **Image evidence:** identify what learners must inspect in selected images: a clue, action, sequence, owner, quantity, price or contrast. Some photographs may establish atmosphere, but the unit must also use images as evidence. Deliberate picture/text contradictions are valid only when the task explicitly asks learners to find them and the key explains them.
+3. **Human interest:** consider a benign misunderstanding, competing preferences, recognisable inconvenience or surprising reaction. Humour is optional, adult and comprehensible; stereotypes and humiliation are not creative substitutes.
+4. **Visual continuity:** where a story requires connected frames, preserve identities, setting and props while changing meaningful actions or reactions. Use imagegen for exact controlled scenes; do not substitute repeated portraits for a developing story.
+5. **Vocabulary in use:** move selected sets beyond naming/matching into recall, visual search, categorisation, inference or a decision. Classroom demonstration may explain the routine without adding unfamiliar procedural prose to the learner page.
+6. **Specificity:** name the details that make an object, setting or person distinctive. Prefer credible lived-in details and answer-bearing differences over generic pristine props. Do not invent facts about real people or businesses.
+7. **Artifact character:** a poster, review, recipe, receipt or working document has its own recognizable graphic language and information purpose. Do not put every artifact into the same rounded card. Physical renderings may use imagegen; editable text remains live where accuracy and writing space matter.
+8. **Meaningful graphic details:** motifs, colour connections, stamps or title treatments must communicate something. Avoid automatic accent-font headings and decorative badges that resemble exercise numbers. Preserve canonical functional colours such as word banks and grammar emphasis.
+9. **Task variety:** compare the main learner actions across neighbouring lessons: predict, retrieve, sequence, recognise a voice, infer, recommend, choose or report. Different names and colours do not make the same repeated task distinctive.
+10. **Personalisation with payoff:** establish what the exchanged information changes: an agreed day, recommendation, discovered similarity, identified author or finished artifact. Keep private information genuinely private until exchanged; never print both halves of a supposed information gap together.
+11. **Transfer:** the final outcome and Extra Practice should produce or test something meaningful using taught language. Avoid another list of decontextualized sentences when a short review, feasible invitation, personal post or useful recipe would serve the target better. Never require actual social-media publication.
+12. **Memory test:** describe each lesson without its code, colour or box style. Record its hook, visual role, main learner action and outcome. If those descriptions are interchangeable across a unit, revise the concepts rather than only their decoration.
+
+Maintain task-relevant imagery on both pages and generous writing space. Remove repetitive practice before shrinking type, reducing character scale or stripping purposeful backgrounds. Stock photography remains the normal choice for suitable real scenes; generated raster material supplies specific poses, continuity, controlled evidence, cutouts and physical character when needed.
+
 ## 6. Photography, illustration and media
 
 Photography carries major visual weight. Prefer one strong image to several weak decorative images unless the task genuinely requires a family or sequence.
@@ -576,3 +597,16 @@ The exact ElevenLabs voice IDs and import paragraph assignments are maintained i
 Keep the same voice identity while adjusting delivery to the task: clear, natural beginner pacing for controlled listening; more expressive delivery for HORIZONS ON AIR. The A1 model and generation workflow are governed by [the audio workflow](../../A1/Audio%20scripts/ElevenCreative%20Studio/README.md) and [the asset policy](asset-policy.md).
 
 **Forbidden audio tag: `[clearly]`.** The author has observed that it produces a throat-clearing sound instead of clear delivery. Never include it in a production script or generation request. Do not substitute a throat-clearing tag. Achieve intelligibility with the approved voice, punctuation, sentence structure and suitable pacing. Check scripts for this banned tag before every generation; remove it and regenerate any affected recording rather than reusing that audio.
+
+
+## Unit-level visual variety - author correction, 24 October 2026
+
+Judge the whole unit beside its neighbouring units, not just isolated attractive pages. Before approval, view all spreads together. Different colours on the same repeated composition are not sufficient evidence of variety.
+
+- Give each lesson a content-specific visual idea: the relationship between photographs and text, reading column shape, sequence, functional document and response surface should serve that lesson's situation. Avoid repeatedly building a wide heading panel over a photo/text block and then a small photo beside a decorative heading on page two.
+- Vary image scale, placement and framing meaningfully across neighbouring lessons: full-background photographs, carefully selected cutouts, action strips, reading columns and live functional artifacts are complementary tools. Preserve purposeful source/dialogue backgrounds. Do not answer a repetition complaint by stripping them away or by adding a coloured box to every activity.
+- Repeated two-line slogans or decorative subheadings do not give lessons their own identity. Prefer recognizable source design and task evidence. A reading, recipe, message and learner post should have distinct graphic character because they do different jobs.
+- Keep Horizons navigation, page geometry, exercise numbering, body typography, neutral word banks, italic normal-weight choices and canonical concept shells consistent. Do not manufacture variety by changing these functional conventions. The grammar pilot's legibility and padding remain mandatory.
+- Compare second pages as well as openings. Keep at least one or two substantial task-related images on every continuation page. Preserve independent response space, large enough characters/actions and the guided-discovery order; remove redundant decoration or repetition before shrinking learner text.
+
+Current Unit 4 precedent: 4A uses alternating breakfast travel entries, 4B a photo-led taste-test cover and three opinion columns, 4C a four-frame recipe strip plus a tall cook at the planning task, and 4D a note/phone comparison with an open composing surface. These are examples to extend thoughtfully, not four new templates to repeat throughout later units. Current verification and source boundaries belong in the book audit and lesson manifests.

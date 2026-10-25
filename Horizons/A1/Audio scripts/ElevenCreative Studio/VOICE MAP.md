@@ -209,3 +209,36 @@ Zoe is the new fictional challenge author. Her first-person post is spoken by Ju
 - ELIF (Adeline, `5l5f8iK3YPeGga21rQIX`): 3.
 
 Sora and Elif are new fictional examples, not interviews with the photographers or people in a photograph. Both roles use the approved exam voice pool; retain these IDs if they return. Jessica announces both tracks and models all vocabulary. Eleven v3 Natural Stability (0.5). No forbidden clarity tag. Production and transcript checks: `../4A-production.json`.
+
+
+## 4B - Track 4.3 - Flavors
+- NARRATOR (Jessica, `cgSgspJ2msm6clMCkdW9`): 1, 2.
+
+## 4B - Track 4.4 - New food. Real opinions.
+- NARRATOR (Jessica, `cgSgspJ2msm6clMCkdW9`): 1, 2, 3, 5, 7.
+- NADIA (Amy, `OZxMHsGaBmV5pjMIDIn0`): 4.
+- JOEL (Jarnathan, `c6SfcYrb2t09NHXiT80T`): 6.
+- ROSA (Juniper, `aMSt68OGf4xUZAnLpTU8`): 8.
+
+New fictional tasting roles; Max and Eva do not speak. Jessica announces the track, title, context, definition and speaker names. Retain the assigned voice IDs if these roles return. Both tracks use Eleven v3, Natural Stability (0.5). No forbidden clarity tag. Production, transcript parity and audio-event checks: `../4B-production.json`.
+
+
+## 4C - Track 4.5 - Cooking verbs
+- NARRATOR (Jessica, `cgSgspJ2msm6clMCkdW9`): 1, 2.
+
+## 4C - Track 4.6 - Before you start
+- NARRATOR (Jessica, `cgSgspJ2msm6clMCkdW9`): 1, 2.
+- LUCA (Mark - Casual, Relaxed and Light, `1SM7GgM6IMuvQlz2BwM3`): 3, 5, 7.
+- ELENA (Adeline, `5l5f8iK3YPeGga21rQIX`): 4, 6, 8.
+
+New fictional kitchen roles, not recast 4A speakers or interviews with photographed cooks. Keep these exact IDs if the roles return. Jessica announces both tracks, models the four verbs and gives the short scene-setting line in 4.6. Eleven v3 Natural Stability (0.5). No forbidden clarity tag. Production and transcription checks: `../4C-production.json`.
+
+
+## 4D - Track 4.7 - Sharing food
+- NARRATOR (Jessica, `cgSgspJ2msm6clMCkdW9`): 1, 2.
+
+## 4D - Track 4.8 - Nora's food-sharing post
+- NARRATOR (Jessica, `cgSgspJ2msm6clMCkdW9`): 1, 2.
+- NORA (Adeline, `5l5f8iK3YPeGga21rQIX`): 3.
+
+Nora retains her existing 2A voice. The post, location and generated scene are fictional, not an Olio testimonial or interview. Jessica announces both tracks and models the three vocabulary chunks. Eleven v3 Natural Stability (0.5). No forbidden clarity tag. The initially rejected model recording is retained only in the task scratch folder, not the book or audio ZIP. Final decode, normalized transcript and audio-event checks: `../4D-production.json`; no subjective listening review is claimed.

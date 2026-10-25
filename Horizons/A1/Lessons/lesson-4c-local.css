@@ -1,0 +1,109 @@
+/* A practical recipe sheet and kitchen counter; native Horizons navigation. */
+.l4c-page { --hz-unit:var(--hz-unit-1); --hz-unit-dark:#8f123f; --hz-unit-soft:#f8e6ee; font-size:9.5pt; }
+.l4c-page .hz-page-stack { gap:2.7mm; }
+.l4c-page .hz-lesson-header { padding-bottom:3.1mm; }
+.l4c-page .hz-exercises { gap:1.1mm; }
+.l4c-page .hz-exercise { padding:1.7mm 0 2.5mm; }
+.l4c-page .hz-exercise__body { margin-top:2mm; }
+.l4c-page .hz-word-bank { margin-bottom:2.5mm; }
+.l4c-recipe { border:.3mm solid #d7d6cc; border-top:1.2mm solid #1767aa; background:#fff; box-shadow:1mm 1.3mm 0 #e9e6df; }
+.l4c-recipe > header { display:flex; justify-content:space-between; align-items:center; padding:3mm 4mm 2.5mm; }
+.l4c-recipe > header p { margin:0 0 1mm; color:#1767aa; font-weight:700; font-size:7.75pt; letter-spacing:.12em; }
+.l4c-recipe h2 { font:700 25pt/1.08 Georgia,serif; color:#174e74; letter-spacing:-.025em; margin:0; }
+.l4c-for-two { display:grid; place-items:center; align-content:center; width:19mm; height:19mm; border-radius:50%; background:#ffc42b; color:#202124; text-align:center; font-size:6.5pt; font-weight:650; line-height:1.05; gap:1.5mm; }
+.l4c-for-two b { font:800 18pt/1.2 var(--hz-font-sans); }
+.l4c-ingredients { display:flex; align-items:baseline; flex-wrap:wrap; gap:1mm 5mm; margin:0 4mm 3mm; padding-bottom:2mm; border-bottom:.25mm solid #b9cbd9; }
+.l4c-ingredients b { color:#174e74; }
+.l4c-ingredients span { white-space:nowrap; }
+.l4c-steps { display:grid; grid-template-columns:1fr 1fr; gap:4mm; padding:0 4mm 4mm; }
+.l4c-steps figure { display:grid; grid-template-columns:50mm minmax(0,1fr); align-items:center; gap:2mm; margin:0; }
+.l4c-step-photo { width:50mm; height:33.35mm; background-image:url('../Images/4C/Cooking-actions-v1.png'); background-size:200% 200%; background-position:var(--px) var(--py); background-repeat:no-repeat; }
+.l4c-steps figcaption > b { color:var(--hz-unit-dark); font-size:8.5pt; font-weight:700; }
+.l4c-steps figcaption p { margin:1mm 0 0; line-height:1.45; }
+.l4c-gap { display:inline-block; height:3.8mm; width:14mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); vertical-align:baseline; }
+.l4c-gap--verb { width:22mm; }
+.l4c-gap--phrase { width:27mm; }
+.l4c-kitchen-talk { padding:2mm 0 2.5mm; border-left:1mm solid #007b83; padding-left:3mm; }
+.l4c-kitchen-talk > h2 { margin:0 0 2.8mm; font:750 13pt/1.15 var(--hz-font-sans); color:#00666d; }
+.l4c-talk-columns { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:4mm; }
+.l4c-talk-columns h3 { margin:0 0 1.5mm; font:700 9.5pt/1.2 var(--hz-font-sans); color:#00666d; }
+.l4c-talk-columns p { margin:0 0 1.4mm; font:inherit; }
+.l4c-talk-columns b { color:var(--hz-unit-dark); }
+.l4c-talk-columns strong { color:var(--hz-unit-dark); font-weight:650; }
+.l4c-list { list-style:none; padding:0; margin:0; counter-reset:item; }
+.l4c-list li { counter-increment:item; padding-left:4.5mm; position:relative; line-height:1.45; }
+.l4c-list li::before { position:absolute; left:0; top:0; content:counter(item); color:var(--hz-unit-dark); font-weight:650; font-size:8.5pt; }
+.l4c-noticing { display:grid; gap:1.7mm; }
+.l4c-inset { margin-left:calc(var(--hz-exercise-marker-size) + 3mm); }
+.l4c-continuation-content { padding-top:8mm; }
+.l4c-page--2 .hz-exercises { padding-top:0!important; }
+.l4c-page--2 .hz-go-to { margin-top:2mm; margin-bottom:3mm; }
+.l4c-choice-grid { display:grid; grid-template-columns:1fr 1fr; gap:2.3mm 5mm; }
+.l4c-kitchen-check { display:grid; gap:2mm; margin-top:2mm; }
+.l4c-photo-task { display:grid; grid-template-columns:63mm minmax(0,1fr); gap:6mm; align-items:center; }
+.l4c-photo-task > img { display:block; width:63mm; height:58mm; object-fit:cover; object-position:center 53%; }
+.l4c-write-copy { padding:2mm 0; }
+.l4c-write-copy h2 { margin:0 0 4mm; font:700 23pt/1.12 Georgia,serif; color:#1767aa; letter-spacing:-.025em; }
+.l4c-write-copy p { margin:0 0 3mm; }
+.l4c-open-lines > span { display:block; height:8mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
+.l4c-pair-model { display:grid; grid-template-columns:1fr 1fr; gap:1mm 5mm; }
+.l4c-pair-model p:nth-child(2) { grid-column:1; grid-row:2; }
+.l4c-pair-model p:nth-child(3) { grid-column:2; grid-row:1; }
+.l4c-pair-model p:nth-child(4) { grid-column:2; grid-row:2; }
+.l4c-pair-model p { margin:0 0 1mm; }
+.l4c-pair-model b { color:var(--hz-unit-dark); }
+.l4c-plan-line { display:grid; grid-template-columns:auto 1fr; gap:3mm; margin-top:2mm; align-items:baseline; }
+.l4c-plan-line > span:last-child { height:6mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
+.l4c-page .hz-extra-practice { margin-top:2mm; }
+
+/* 24 October: creative task revision, preserving shared Horizons styles. */
+.l4c-quantity-photo { position:relative; margin:1mm auto 2mm; width:135mm; }
+.l4c-quantity-photo img { display:block; width:100%; height:auto; }
+.l4c-quantity-letters { position:absolute; top:1mm; left:0; right:0; display:grid; grid-template-columns:repeat(3,1fr); }
+.l4c-quantity-letters > span { justify-self:start; margin-left:1mm; padding:.4mm 1.2mm; background:#fff; color:var(--hz-unit-dark); font-weight:650; font-size:8.5pt; }
+.l4c-quantity-answers { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:4mm; }
+.l4c-quantity-answers p { margin:0; line-height:1.45; }
+.l4c-quantity-answers b { color:var(--hz-unit-dark); margin-right:2mm; font-size:8.5pt; }
+.l4c-quantity-answers .l4c-gap { width:26mm; }
+.l4c-pantry-plan { display:grid; grid-template-columns:45mm minmax(0,1fr); gap:5mm; align-items:start; }
+.l4c-pantry-plan > img { display:block; width:45mm; height:44mm; object-fit:cover; object-position:center 53%; }
+.l4c-pantry-plan h2 { margin:0 0 2mm; color:#1767aa; font:700 18pt/1.15 var(--hz-font-sans); }
+.l4c-pantry-model p { margin:0 0 1mm; line-height:1.35; }
+.l4c-pantry-model b { color:var(--hz-unit-dark); }
+.l4c-pantry-plan .l4c-open-lines > span { height:7mm; }
+
+/* Unit-level variety: practical recipe strip, then an open workbench with a tall cook. */
+.l4c-recipe { background:#fffaf0; border:.25mm solid #d8c9a9; border-top:0; box-shadow:1.1mm 1.1mm 0 #e1dbcd; }
+.l4c-recipe > header { padding:3mm 4mm 2mm; }
+.l4c-recipe > header p { color:#226d49; }
+.l4c-recipe h2 { color:#174c35; font-size:23pt; line-height:1.2; }
+.l4c-for-two { border-radius:0; width:17mm; height:17mm; color:#fff; background:#276a43; }
+.l4c-for-two b { font-size:16pt; }
+.l4c-ingredients { border-color:#c3c8ae; margin-bottom:2.5mm; }
+.l4c-ingredients b { color:#226d49; }
+.l4c-steps { grid-template-columns:repeat(4,minmax(0,1fr)); gap:3mm; padding:0 4mm 3mm; }
+.l4c-steps figure { display:block; }
+.l4c-step-photo { width:100%; height:auto; aspect-ratio:1.5; }
+.l4c-steps figcaption { padding-top:1mm; }
+.l4c-steps figcaption > b { display:inline-block; margin-right:1mm; }
+.l4c-steps figcaption p { display:inline; line-height:1.4; }
+.l4c-steps figcaption br { display:none; }
+.l4c-page .l4c-kitchen-talk { background:#eef2e6; padding:3mm; border-left:1mm solid #276a43; }
+.l4c-kitchen-talk > h2 { color:#226d49; font-size:11pt; margin-bottom:2mm; }
+.l4c-talk-columns h3 { color:#226d49; }
+.l4c-page--2 .l4c-continuation-content { padding-top:8mm; }
+.l4c-page--2 .hz-exercises { gap:3mm; }
+.l4c-quantity-photo { width:150mm; margin:2mm auto; }
+.l4c-quantity-answers { gap:5mm; }
+.l4c-pantry-plan { grid-template-columns:62mm minmax(0,1fr); gap:7mm; align-items:center; }
+.l4c-pantry-plan > .l4c-cook { width:62mm; height:88mm; object-fit:contain; }
+.l4c-pantry-plan h2 { color:#276a43; font-size:12pt; line-height:1.4; margin:0 0 3mm; }
+.l4c-pantry-model p { margin-bottom:2mm; }
+.l4c-pantry-plan .l4c-open-lines > span { height:9mm; }
+
+.l4c-for-two { height:15mm; width:15mm; gap:1mm; }
+.l4c-recipe > header { padding-top:2.5mm; }
+.l4c-steps .l4c-gap--verb { width:20mm; margin-right:1mm; }
+.l4c-noticing { grid-template-columns:1fr 1fr; gap:1.5mm 5mm; }
+.l4c-noticing > li:last-child { grid-column:1 / -1; }
+.l4c-page--2 .l4c-choice-grid { grid-template-columns:1fr; gap:2mm; }

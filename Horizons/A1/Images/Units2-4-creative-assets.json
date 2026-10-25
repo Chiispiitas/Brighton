@@ -1,0 +1,46 @@
+{
+  "date": "2026-10-24",
+  "scope": "Units 2 and existing 4A-4C creative revision",
+  "records": [
+    {
+      "asset_id": "HZN_A1_U04_LB_E06_IMG_01",
+      "activity": "6",
+      "file": "Same-food-different-opinions-v2.png",
+      "saved_path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Images\\4B\\Same-food-different-opinions-v2.png",
+      "kind": "generated",
+      "generator": "Built-in image_gen",
+      "production_mode": "built-in",
+      "acquired": "2026-10-24",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "sha256": "2c52147d1ff75e6bf02c090e5068cd8c43da4779ec90c4ed0eadfe14798cbf79",
+      "edits": "Original generated pixels retained; full image displayed without crop. All learner text/labels remain HTML.",
+      "transparent_background": false,
+      "purpose": "Predict and confirm contrasting opinions of the same food; unrecorded fictional practice dialogue.",
+      "prompt": "Photorealistic natural editorial photograph for an adult English coursebook. Landscape 3:2. Exactly two fictional adult friends, a Latina woman on the LEFT wearing a dark teal cotton blouse and a man on the RIGHT with short dark hair wearing a rust orange overshirt, at a small outdoor street-food counter in soft afternoon light. Both hold the SAME TYPE of small vegetarian bean burger in a bun with visible lettuce and red pepper relish. Left woman has just taken a bite, looks warmly delighted, a pleased smile, looking at her friend; right man has taken a bite, looks mildly unconvinced with a natural slight grimace and raised eyebrow, not distressed, not exaggerated, looking at his burger. A single small shared tray of golden fries is clearly visible on the counter between them. Exact pedagogical point: two people can have DIFFERENT opinions of the SAME food. The picture invites a prediction, printed dialogue supplies their actual opinions. Friendly everyday comic contrast without humiliation. Show faces, both burgers and fries large and clear, natural anatomy, believable hands, lived-in food stall environmental background intact. Waist-up medium shot. Rich realistic colors, sober photographic quality. No text, no labels, no brands, no watermarks, no extra foreground people, no fake transparent backdrop.",
+      "used_in_current_preview": true
+    },
+    {
+      "asset_id": "HZN_A1_U04_LC_E05_IMG_01",
+      "activity": "5",
+      "file": "Tomato-quantities-v2.png",
+      "saved_path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Images\\4C\\Tomato-quantities-v2.png",
+      "kind": "generated",
+      "generator": "Built-in image_gen",
+      "production_mode": "built-in",
+      "acquired": "2026-10-24",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "sha256": "872790f0531c0d0a60db9d90770dbb3df701d18070e7bd03f00962f9cb5918bf",
+      "edits": "Original generated pixels retained; full image displayed without crop. All learner text/labels remain HTML.",
+      "transparent_background": false,
+      "purpose": "Exact 1 / 5 / 2 tomatoes with identical plate scale for amounts added to a specified two-tomato recipe.",
+      "prompt": "Use case photorealistic-natural. Create one horizontal 3:1 landscape photographic triptych with EXACTLY THREE EQUAL panels divided by thin plain white vertical gutters, for precise beginner English counting/recipe practice. Same light oak kitchen preparation counter, same white round ceramic shallow plate, identical overhead camera and scale, soft natural light in each panel. The plates are clean empty apart from the whole raw red tomatoes specified. LEFT PANEL: exactly ONE whole red tomato in the center of one white plate. CENTER PANEL: exactly FIVE whole red tomatoes on one white plate, in a loose pentagon, separated with visible white space between every tomato, NO overlaps or stacks, all five fully visible. RIGHT PANEL: exactly TWO whole red tomatoes side by side on one white plate, separate with visible white space between them. All tomatoes are comparable medium size, naturally irregular, one or two have tiny green calyxes but no detached leaves or extra red props. EACH PANEL is a photograph of a plate as a separate preparation option for a recipe. Exact total across image is EIGHT tomatoes, distributed 1 / 5 / 2. Full plates within their panels, no cropping of plate edges, no perspective distortion. No bowls, no cut tomatoes, no other food, no hands, no utensils, no text, NO numbers or letters or badges. Environmental countertop background retained. Rich lifelike red, warm neutral oak, sharp clean ingredient identification, no illustration. Counts and equal legible scale are essential.",
+      "used_in_current_preview": true
+    }
+  ]
+}

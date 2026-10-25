@@ -286,6 +286,7 @@ ${viewerCss}
   <!-- Canonical lesson CSS is linked after the compiled snapshot so local CSS edits
        are reflected immediately when opening Student's Book.html during authoring. -->
   ${liveLessonStyles.join("\n  ")}
+  <script src="../Base/viewer/audio-player.js" data-audio-base="./Audios/" defer></script>
 </head>
 <body class="hz-book">
   <main id="hz-book">

@@ -351,3 +351,12 @@
 /* Crops for licensed real photography. */
 .l2a-dialogue-photo { height:49mm; min-height:49mm; }
 .l2a-dialogue-photo img { height:49mm; min-height:0; object-position:center 65%; }
+
+/* 24 October: creative task revision, preserving shared Horizons styles. */
+.l2a-memory-title { margin:0 0 1mm; font:700 18pt/1.15 var(--hz-font-sans); color:#006968; }
+.l2a-pair-copy { align-content:start; gap:2mm; }
+.l2a-pair-example { font-size:8.8pt; line-height:1.35; }
+.l2a-photo-prompt { margin:1mm 0 0; font-size:8.8pt; line-height:1.35; }
+
+.l2a-pair-photo { height:auto; aspect-ratio:3 / 2; align-self:start; clip-path:none; }
+.l2a-pair-photo img { min-height:0; height:100%; object-fit:contain; }

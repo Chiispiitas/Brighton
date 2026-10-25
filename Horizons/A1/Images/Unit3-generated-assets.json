@@ -61,8 +61,26 @@
     ],
     "alpha": false,
     "sha256": "8c4b79562b735b16dacaa816282c188a0246d45a3fa15d03f80ec9ad0211716b",
-    "used_in_current_preview": true,
+    "used_in_current_preview": false,
     "edits": "Original pixels retained; CSS placement/crop only.",
-    "saved_path": "C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/A1/Images/3D/Zoe-morning-water-v1.png"
+    "saved_path": "C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/A1/Images/3D/Zoe-morning-water-v1.png",
+    "replacement": "3D/Zoe-morning-sequence-v2.png; original retained for reversibility"
+  },
+  {
+    "lesson": "3D",
+    "filename": "Zoe-morning-sequence-v2.png",
+    "mode": "generate",
+    "source": "OpenAI imagegen, built-in tool",
+    "generated": "2026-10-24",
+    "dimensions": [
+      2172,
+      724
+    ],
+    "alpha": false,
+    "sha256": "750db0b01287dcc934309a09d93220e20d3395395b062b85bd87e54baa5938b7",
+    "used_in_current_preview": true,
+    "purpose": "Exact fictional woman, setting and changing actions for photo sequencing and before/after discovery. Live labels and timetable are HTML.",
+    "edits": "Original generated pixels retained; native landscape image displayed without crop.",
+    "prompt": "Use case: photorealistic-natural. Asset type: a horizontal three-frame photographic story for an adult beginner English coursebook, readable in print. Generate one wide image, 3:1 landscape, containing exactly THREE equal-width photographic panels separated only by narrow straight white vertical gutters. Each panel is the same fictional Latina woman aged 28 with dark shoulder-length wavy hair, mustard yellow cotton sweater, navy trousers, same realistic apartment in soft morning daylight. The order is intentionally scrambled for a sequencing exercise. LEFT PANEL: she is leaving her apartment for work, seen from front/three-quarter, her hand on open front door, a navy shoulder bag, a hall coat hook, natural friendly focused expression; no food here. CENTER PANEL: she is seated at her kitchen table EATING BREAKFAST, holding a spoon above a small bowl, toast and fruit and an orange ceramic mug on table. RIGHT PANEL: same woman still at same kitchen table now clearly DRINKING WATER from a transparent drinking glass raised to lips; small finished breakfast plate and empty bowl pushed to side. These are three successive moments with one consistent woman, wardrobe, kitchen details. Warm realistic lived-in detail, rich natural colors, photographic editorial quality, natural anatomy. Crop waist up or chest up in each frame so face and exact action are large and immediately legible. No words, no letters, no numbers, NO clocks, no diagrams, no overlays. Full photographic environmental backgrounds, no cutouts. No decorative frame, no collaged additional mini-photos, exactly one action in each of the three panels. This is original fictional imagery, not an existing celebrity.\n"
   }
 ]

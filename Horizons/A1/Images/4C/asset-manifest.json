@@ -1,0 +1,107 @@
+{
+  "lesson": "4C",
+  "date": "2026-10-24",
+  "assets": [
+    {
+      "asset_id": "HZN_A1_U04_LC_E01_IMG_01",
+      "activity": "1",
+      "file": "Cooking-actions-v1.png",
+      "kind": "generated",
+      "sha256": "655603396758bac81a38df443fc6353f9fa020fe36a78ffe60b97956e2103c9a",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "acquired": "2026-10-24",
+      "edits": "Original source pixels and background retained; CSS presentation only.",
+      "generator": "Built-in image_gen",
+      "production_mode": "built-in",
+      "purpose": "One coherent 2x2 photographic action sequence: wash, cut, add, mix.",
+      "human_subjects": "Synthetic anonymous adult hands and apron; no real cook identity or endorsement.",
+      "crop": "Four equal 2x2 source cells now presented left to right as approximately 38 x 25mm frames; full actions and kitchen backgrounds retained.",
+      "live_text": "Recipe title, for-two badge, ingredient quantities, letters and answer lines remain editable HTML.",
+      "prompt_location": "Task workspace outside repository: lesson4c/prompts.json."
+    },
+    {
+      "asset_id": "HZN_A1_U04_LC_E06_IMG_01",
+      "activity": "6",
+      "file": "Add-oil-Vinicius-Caricatte-17194482.jpg",
+      "kind": "photograph",
+      "sha256": "ff1bb73d139de5c7bac3d963f82849b6ff41e2166f78e0f6016c37ca06c9c5a7",
+      "dimensions": [
+        3205,
+        4807
+      ],
+      "acquired": "2026-10-24",
+      "edits": "Original source pixels and background retained; CSS presentation only.",
+      "creator": "Vinícius Caricatte",
+      "source_page": "https://www.pexels.com/photo/olive-oil-dropping-on-salad-17194482/",
+      "download_url": "https://images.pexels.com/photos/17194482/pexels-photo-17194482.jpeg",
+      "license": "Pexels License",
+      "license_url": "https://www.pexels.com/license/",
+      "license_checked": "2026-10-24",
+      "permission_summary": "Free publication use and modification; attribution optional. No implied endorsement, unaltered resale or stock redistribution.",
+      "attribution_required": false,
+      "source_camera": "Canon EOS RP",
+      "source_date_taken": "2023-06-01",
+      "fiction_boundary": "Real salad with green leaves, inspiring a private ingredient plan; not an exact record of the model recipe or measured quantities.",
+      "crop": "45 x 44mm, cover at 53% vertically; oil stream and bowl retained.",
+      "used_in_current_preview": false,
+      "status": "Retained historical stock asset, replaced in current activity 6 by Salad-planning-cook-v1.png."
+    },
+    {
+      "asset_id": "HZN_A1_U04_LC_E05_IMG_01",
+      "activity": "5",
+      "file": "Tomato-quantities-v2.png",
+      "saved_path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Images\\4C\\Tomato-quantities-v2.png",
+      "kind": "generated",
+      "generator": "Built-in image_gen",
+      "production_mode": "built-in",
+      "acquired": "2026-10-24",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "sha256": "872790f0531c0d0a60db9d90770dbb3df701d18070e7bd03f00962f9cb5918bf",
+      "edits": "Original generated pixels retained; full image displayed without crop. All learner text/labels remain HTML.",
+      "transparent_background": false,
+      "purpose": "Exact 1 / 5 / 2 tomatoes with identical plate scale for amounts added to a specified two-tomato recipe.",
+      "prompt": "Use case photorealistic-natural. Create one horizontal 3:1 landscape photographic triptych with EXACTLY THREE EQUAL panels divided by thin plain white vertical gutters, for precise beginner English counting/recipe practice. Same light oak kitchen preparation counter, same white round ceramic shallow plate, identical overhead camera and scale, soft natural light in each panel. The plates are clean empty apart from the whole raw red tomatoes specified. LEFT PANEL: exactly ONE whole red tomato in the center of one white plate. CENTER PANEL: exactly FIVE whole red tomatoes on one white plate, in a loose pentagon, separated with visible white space between every tomato, NO overlaps or stacks, all five fully visible. RIGHT PANEL: exactly TWO whole red tomatoes side by side on one white plate, separate with visible white space between them. All tomatoes are comparable medium size, naturally irregular, one or two have tiny green calyxes but no detached leaves or extra red props. EACH PANEL is a photograph of a plate as a separate preparation option for a recipe. Exact total across image is EIGHT tomatoes, distributed 1 / 5 / 2. Full plates within their panels, no cropping of plate edges, no perspective distortion. No bowls, no cut tomatoes, no other food, no hands, no utensils, no text, NO numbers or letters or badges. Environmental countertop background retained. Rich lifelike red, warm neutral oak, sharp clean ingredient identification, no illustration. Counts and equal legible scale are essential.",
+      "used_in_current_preview": true,
+      "current_crop": "150 x 50mm, full image, unchanged exact 1 / 5 / 2 counts."
+    },
+    {
+      "asset_id": "HZN_A1_U04_LC_E06_IMG_02",
+      "activity": "6",
+      "file": "Salad-planning-cook-v1.png",
+      "saved_path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Images\\4C\\Salad-planning-cook-v1.png",
+      "kind": "generated realistic photographic cutout",
+      "generator": "Built-in image_gen",
+      "production_mode": "built-in",
+      "acquired": "2026-10-24",
+      "sha256": "bf1a34e7dcd3eb9eea5b29ff579bfa9955e1dd038c70be5da9e5912f1b2b98f0",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "transparent_background": true,
+      "native_alpha_extrema": [
+        0,
+        254
+      ],
+      "alpha_verified": "RGBA contains transparent pixels; visually inspected against white. Native alpha and original pixels retained.",
+      "purpose": "Tall human visual anchor for private ingredient planning; poses with a bowl and mixing spoon, looking toward the learner dialogue.",
+      "human_subjects": "Anonymous synthetic adult home cook; no assigned identity, real interview or endorsement.",
+      "crop": "Contained within 62 x 88mm; full generated head, arms, hands, bowl, spoon and mid-thigh boundary retained.",
+      "prompt": "Create a realistic photographic cutout for an adult beginner English textbook recipe-planning task. One friendly young adult male home cook, with short dark curly hair and a simple olive green apron over a white casual T-shirt, shown from head to mid thigh, upright but relaxed three-quarter pose. He holds a medium white ceramic bowl of chopped tomato salad with small white cheese pieces in his left hand at chest height, tilted slightly toward viewer so the food is visible. His right hand holds one wooden mixing spoon above the bowl, with a natural bent elbow, as if inviting someone to plan a salad. Both hands anatomically correct and completely visible; arms not crossed; bowl, spoon and fingers fully in frame. Gentle interested expression, eyes looking toward the viewer's right where an exercise will be placed. Candid professional editorial food photography, natural skin texture, soft natural directional lighting, bright clear food colours. Isolated full figure with transparent background, native alpha. No backdrop, no square panel, no furniture, no text, no border, no logos, no floor shadow. Not a cartoon, not a celebrity. Keep clothing opaque. Clear silhouette suitable for a tall textbook inset.",
+      "used_in_current_preview": true,
+      "edits": "None to the source pixels. Browser-only downsampling for PDF export retains alpha."
+    }
+  ],
+  "updated": "2026-10-24",
+  "presentation_revision": {
+    "name": "Unit 4 visual variety",
+    "summary": "The recipe has four chronological photographic frames in one strip, with all kitchens and teaching actions retained. Guided noticing and the unchanged quantity rule now finish page 35; four form choices start page 36 clear of the continuation tab. A new anonymous cook cutout replaces the stock salad photograph beside independent planning. The cutout is inspiration, not evidence for model quantities or the identity of Luca/Elena. The exact 1 / 5 / 2 tomato evidence and requested recipe Extra Practice remain unchanged.",
+    "preservation": "All earlier asset binaries retained. CSS presentation only, except one new native-alpha cook cutout."
+  }
+}

@@ -20,3 +20,7 @@ The author's final correction requires a varied six-routine introduction with co
 ## Continuation-page morning scene - October 14, 2026
 
 Activity 4 adds `Zoe-morning-water-v1.png`, a built-in imagegen photograph of fictional Zoe drinking water with breakfast finished on the table. It supplies visible context for before/after; the printed timetable supplies exact times. The natural kitchen background remains intact. Exact prompt and hash are in `../Unit3-generated-assets.json`. The repetitive sentence-order activity 5 was removed; former activities 6-8 became 5-7. All six real action photographs and both recordings are unchanged.
+
+## Three-frame morning sequence — 24 October 2026
+
+`Zoe-morning-sequence-v2.png` replaces the single water photograph in the current activity 4. Built-in imagegen supplies three precise moments with one fictional woman, wardrobe and apartment: A leaving home, B eating breakfast, C drinking water after breakfast. Students order B-C-A using the action evidence and live timetable. The timetable supplies exact times and the work destination, which cannot be inferred from a door alone. All labels, questions, times and answer spaces stay live. No clock or assessed text is baked into the image. The natural background is retained. The complete prompt, original dimensions and SHA-256 are in `../Unit3-generated-assets.json`; the old single scene and all stock files remain available for reversal.

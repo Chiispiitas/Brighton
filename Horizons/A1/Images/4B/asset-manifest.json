@@ -1,0 +1,105 @@
+{
+  "lesson": "4B",
+  "date": "2026-10-20",
+  "assets": [
+    {
+      "asset_id": "HZN_A1_U04_LB_E01_IMG_01",
+      "activity": "1",
+      "file": "Flavor-cutouts-v1.png",
+      "kind": "generated",
+      "sha256": "38487a5b112e20b1ace7a0dcd6393fc5ef936ff8898ea847b203610554630d57",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "acquired": "2026-10-20",
+      "edits": "Original pixels retained; CSS presentation only.",
+      "generator": "Built-in image_gen",
+      "production_mode": "built-in",
+      "human_subjects": "Synthetic; no real interviewee or endorsement implied.",
+      "purpose": "Native-alpha exact food cutouts for flavor matching.",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "crop": "Four equal 2x2 source cells displayed as isolated CSS sprites.",
+      "prompt_location": "Task workspace outside the repository, lesson4b/prompts.json."
+    },
+    {
+      "asset_id": "HZN_A1_U04_LB_E02_IMG_01",
+      "activity": "2",
+      "file": "Vegan-burger-Alesia-Kozik-6546034.jpg",
+      "kind": "photograph",
+      "sha256": "0ae38d7b74c9258abb7f1a10d76db7c782f7b3c990829faf7b79ac8ac8f50595",
+      "dimensions": [
+        4000,
+        6000
+      ],
+      "acquired": "2026-10-20",
+      "edits": "Original pixels retained; CSS presentation only.",
+      "creator": "Alesia Kozik",
+      "source_page": "https://www.pexels.com/photo/vegan-falafel-burger-on-plate-6546034/",
+      "download_url": "https://images.pexels.com/photos/6546034/pexels-photo-6546034.jpeg",
+      "license": "Pexels License",
+      "license_url": "https://www.pexels.com/license/",
+      "license_checked": "2026-10-20",
+      "permission_summary": "Free publication use and modification; attribution optional. Do not imply endorsement, resell unaltered copies or redistribute as stock.",
+      "attribution_required": false,
+      "source_camera": "Sony ILCE-7M3",
+      "source_date_taken": "2020-12-21",
+      "source_location": "Berlin, Germany",
+      "fiction_boundary": "Context illustration only; not Max/Eva food documentation and not proof of a particular ingredient or flavor.",
+      "crop": "68 x 67mm, cover, centered; original background retained."
+    },
+    {
+      "asset_id": "HZN_A1_U04_LB_E07_IMG_01",
+      "activity": "7",
+      "file": "Friends-food-counter-v1.png",
+      "kind": "generated",
+      "sha256": "6dbe59fdf201ada4902c9c0ea70b4d3c8e837dc36497a0855b53e1f591a35a1f",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "acquired": "2026-10-20",
+      "edits": "Original pixels retained; CSS presentation only.",
+      "generator": "Built-in image_gen",
+      "production_mode": "built-in",
+      "human_subjects": "Synthetic; no real interviewee or endorsement implied.",
+      "purpose": "Specific two-person food-counter interaction with a burger, fries and sorbet; retains environmental background.",
+      "alpha_extrema": null,
+      "crop": "Full landscape composition contained at 82 x 55mm; faces and food remain visible.",
+      "prompt_location": "Task workspace outside the repository, lesson4b/prompts.json.",
+      "used_in_current_preview": false,
+      "replacement": "Same-food-different-opinions-v2.png",
+      "retired_from_preview": "2026-10-24; original retained for reversibility"
+    },
+    {
+      "asset_id": "HZN_A1_U04_LB_E06_IMG_01",
+      "activity": "6",
+      "file": "Same-food-different-opinions-v2.png",
+      "saved_path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Images\\4B\\Same-food-different-opinions-v2.png",
+      "kind": "generated",
+      "generator": "Built-in image_gen",
+      "production_mode": "built-in",
+      "acquired": "2026-10-24",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "sha256": "2c52147d1ff75e6bf02c090e5068cd8c43da4779ec90c4ed0eadfe14798cbf79",
+      "edits": "Original generated pixels retained; full image displayed without crop. All learner text/labels remain HTML.",
+      "transparent_background": false,
+      "purpose": "Predict and confirm contrasting opinions of the same food; unrecorded fictional practice dialogue.",
+      "prompt": "Photorealistic natural editorial photograph for an adult English coursebook. Landscape 3:2. Exactly two fictional adult friends, a Latina woman on the LEFT wearing a dark teal cotton blouse and a man on the RIGHT with short dark hair wearing a rust orange overshirt, at a small outdoor street-food counter in soft afternoon light. Both hold the SAME TYPE of small vegetarian bean burger in a bun with visible lettuce and red pepper relish. Left woman has just taken a bite, looks warmly delighted, a pleased smile, looking at her friend; right man has taken a bite, looks mildly unconvinced with a natural slight grimace and raised eyebrow, not distressed, not exaggerated, looking at his burger. A single small shared tray of golden fries is clearly visible on the counter between them. Exact pedagogical point: two people can have DIFFERENT opinions of the SAME food. The picture invites a prediction, printed dialogue supplies their actual opinions. Friendly everyday comic contrast without humiliation. Show faces, both burgers and fries large and clear, natural anatomy, believable hands, lived-in food stall environmental background intact. Waist-up medium shot. Rich realistic colors, sober photographic quality. No text, no labels, no brands, no watermarks, no extra foreground people, no fake transparent backdrop.",
+      "used_in_current_preview": true,
+      "current_crop": "95mm wide, full source aspect ratio, faces, expressions and food visible."
+    }
+  ],
+  "updated": "2026-10-24",
+  "presentation_revision": {
+    "name": "Unit 4 visual variety",
+    "summary": "The reading source has a large burger photograph and yellow cover beside the introduction, followed by three separate opinion columns. Nadia, Joel and Rosa retain their exact words and target emphasis. The reaction photograph is 95mm wide; the dialogue is presented as alternating speech bubbles, without the repetitive decorative heading. The shared-food task uses open response lines.",
+    "preservation": "All earlier asset binaries retained. CSS presentation only, except one new native-alpha cook cutout."
+  }
+}

@@ -102,3 +102,26 @@
 .l3b-survey-people { display:block; width:68mm; height:78mm; object-fit:cover; object-position:center top; }
 
 .l3b-survey-task .l3b-pair-model { flex-direction:column; gap:1.5mm; margin-bottom:4mm; }
+
+/* The listening continues into voice recognition and episode scheduling. */
+.l3b-listener-board { background:#edf3f4; padding:0 3mm 2mm; border-bottom:.6mm solid #173a45; }
+.l3b-listener-board header { display:flex; align-items:baseline; justify-content:space-between; gap:3mm; margin:0 -3mm 2mm; padding:1.5mm 3mm; background:#173a45; color:#fff; }
+.l3b-listener-board h2 { margin:0; font-size:14pt; line-height:1.2; }
+.l3b-listener-board header > span { font-size:8.5pt; }
+.l3b-voice-clues { display:grid; gap:1mm; }
+.l3b-voice-clues li { display:grid; grid-template-columns:minmax(0,1fr) 43mm; gap:4mm; align-items:center; }
+.l3b-voice-clues li::before { top:2mm; }
+.l3b-voice-clues q { quotes:none; }
+.l3b-episode-plan { background:#fff; border:.25mm solid #b7cbd1; padding:0 3mm 2mm; }
+.l3b-episode-plan header { display:flex; align-items:center; justify-content:space-between; gap:3mm; margin:0 -3mm 2mm; padding:1.5mm 3mm; background:#e4ac26; color:#202124; }
+.l3b-episode-plan h2 { margin:0; font-size:15pt; line-height:1.2; }
+.l3b-episode-plan header > span { font-size:7.5pt; letter-spacing:.04em; font-weight:700; }
+.l3b-episode-plan p { margin:0 0 1.5mm; }
+.l3b-plan-model .l3b-example { margin-left:3mm; }
+.l3b-survey-layout { grid-template-columns:minmax(0,1fr) 65mm; align-items:center; gap:6mm; }
+.l3b-survey-people { width:65mm; height:78mm; object-fit:contain; }
+.l3b-survey-task .l3b-pair-model { gap:1.2mm; margin-bottom:3mm; }
+.l3b-meeting-result { margin:2mm 0 0; color:var(--hz-unit-dark); }
+.l3b-meeting-result .l3b-gap { width:35mm; margin-left:3mm; }
+
+.l3b-survey-people { height:72mm; }

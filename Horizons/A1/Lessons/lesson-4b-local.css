@@ -1,0 +1,127 @@
+/* A food-magazine taste test; the Horizons page system remains native. */
+.l4b-page { --hz-unit:var(--hz-unit-1); --hz-unit-dark:#8f123f; --hz-unit-soft:#f8e6ee; font-size:9.5pt; }
+.l4b-page .hz-page-stack { gap:2.5mm; }
+.l4b-page .hz-lesson-header { padding-bottom:3mm; }
+.l4b-page .hz-exercises { gap:1mm; }
+.l4b-page .hz-exercise { padding:1.7mm 0 2.3mm; }
+.l4b-page .hz-exercise__body { margin-top:2mm; }
+.l4b-flavors { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:4mm; }
+.l4b-flavors figure { margin:0; position:relative; }
+.l4b-flavor-photo { height:28mm; background-image:url('../Images/4B/Flavor-cutouts-v1.png'); background-size:200% 200%; background-position:var(--px) var(--py); background-repeat:no-repeat; }
+.l4b-flavors figcaption { position:absolute; top:0; left:0; font-size:8.5pt; font-weight:650; color:var(--hz-unit-dark); }
+.l4b-list { list-style:none; padding:0; margin:0; counter-reset:item; }
+.l4b-list li { position:relative; padding-left:4.5mm; counter-increment:item; line-height:1.45; }
+.l4b-list li::before { position:absolute; left:0; top:0; content:counter(item); color:var(--hz-unit-dark); font-size:8.5pt; font-weight:650; }
+.l4b-flavor-words { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:4mm; margin-top:1.5mm; }
+.l4b-gap { display:inline-block; width:11mm; height:3.6mm; vertical-align:baseline; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
+.l4b-gap--letter { width:6mm; }
+.l4b-gap--name { width:32mm; }
+.l4b-taste-feature { background:#f3f0e7; }
+.l4b-taste-feature > header { padding:3mm 4mm; background:#ffc42b; color:var(--hz-ink); }
+.l4b-taste-feature > header > p:first-child { margin:0 0 1.5mm; font-size:7.75pt; font-weight:700; letter-spacing:.12em; }
+.l4b-taste-feature h2 { margin:0 0 2mm; font:800 23pt/1.08 var(--hz-font-sans); letter-spacing:-.035em; }
+.l4b-feature-intro { margin:0; font:inherit; }
+.l4b-feature-main { display:grid; grid-template-columns:51mm minmax(0,1fr); gap:4mm; padding:4mm; }
+.l4b-photo-column > img { display:block; width:51mm; height:72mm; object-fit:cover; object-position:center; }
+.l4b-vegan-note { padding:2.5mm 0 0; }
+.l4b-vegan-note b { color:#087a46; font-weight:700; }
+.l4b-vegan-note p { margin:1mm 0 0; }
+.l4b-opinions { display:grid; align-content:start; gap:3mm; }
+.l4b-opinions h3 { margin:0 0 1mm; font:750 11pt/1.1 var(--hz-font-sans); color:#087a46; }
+.l4b-opinions section:nth-child(2) h3 { color:#1767aa; }
+.l4b-opinions section:nth-child(3) h3 { color:#a83d0a; }
+.l4b-opinions p { margin:0; line-height:1.42; }
+.l4b-opinions strong { color:#8f123f; font-weight:650; }
+.l4b-opinion-table { width:100%; border-collapse:collapse; table-layout:fixed; }
+.l4b-opinion-table th { text-align:left; font-weight:650; }
+.l4b-opinion-table thead th { padding:1.3mm 2mm; background:#1767aa; color:#fff; }
+.l4b-opinion-table th:first-child { width:23mm; }
+.l4b-opinion-table tbody th { color:var(--hz-unit-dark); padding:1.5mm 2mm; }
+.l4b-opinion-table td { border-bottom:.2mm solid var(--hz-line-strong); padding:1.5mm 2mm; }
+.l4b-opinion-table td+td { border-left:.2mm solid var(--hz-line); }
+.l4b-example { color:#74777d; font:400 9pt/1.3 "Segoe Print","Bradley Hand",cursive; }
+.l4b-page--2 .hz-exercises { padding-top:0!important; }
+.l4b-page--2 .hz-page-stack > .hz-exercises:first-child { padding-top:8mm!important; }
+.l4b-noticing { display:grid; grid-template-columns:1fr; gap:1.2mm; }
+.l4b-noticing b { color:var(--hz-unit-dark); }
+.l4b-noticing em { margin-left:3mm; }
+.l4b-inset { margin-left:calc(var(--hz-exercise-marker-size) + 3mm); }
+.l4b-pronoun-practice { display:grid; grid-template-columns:1fr 1fr; gap:1.8mm 4mm; margin-top:2mm; }
+.l4b-detail { display:grid; grid-template-columns:1fr; gap:1.6mm; }
+.l4b-counter { display:grid; grid-template-columns:82mm minmax(0,1fr); gap:4mm; align-items:stretch; }
+.l4b-counter > img { display:block; width:82mm; height:55mm; object-fit:contain; object-position:center; }
+.l4b-counter-copy { padding-top:1mm; }
+.l4b-counter-copy h2 { margin:0 0 2mm; color:#a83d0a; font:750 18pt/1.1 var(--hz-font-sans); letter-spacing:-.02em; }
+.l4b-match-questions { display:grid; gap:1.5mm; }
+.l4b-match-answers { margin-top:3mm; }
+.l4b-match-answers p { margin:0 0 1.5mm; padding-left:4.5mm; position:relative; }
+.l4b-match-answers b { position:absolute; left:0; color:var(--hz-unit-dark); font-size:8.5pt; font-weight:650; }
+.l4b-pair-model { display:grid; grid-template-columns:1fr 1fr; gap:1mm 5mm; }
+.l4b-pair-model p { margin:0; }
+.l4b-pair-model p:nth-child(2) { grid-column:1; grid-row:2; }
+.l4b-pair-model p:nth-child(3) { grid-column:2; grid-row:1; }
+.l4b-pair-model p:nth-child(4) { grid-column:2; grid-row:2; }
+.l4b-pair-model b { color:var(--hz-unit-dark); }
+.l4b-page .hz-extra-practice { margin-top:1mm; }
+
+/* 24 October: creative task revision, preserving shared Horizons styles. */
+.l4b-shared-food { border:.25mm solid #c9c9b9; background:#fff; }
+.l4b-shared-food header { background:#e4ad26; padding:1.4mm 3mm; }
+.l4b-shared-food h2 { margin:0; color:#202124; font:700 15pt/1.2 var(--hz-font-sans); }
+.l4b-shared-food > div { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:4mm; padding:2mm 3mm; }
+.l4b-shared-food h3 { margin:0 0 1mm; font-size:9.5pt; line-height:1.25; color:#175786; }
+.l4b-shared-food article > span { display:block; height:7mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
+.l4b-reaction-photo { margin:0; }
+.l4b-reaction-photo > img { display:block; width:82mm; height:auto; }
+.l4b-reaction-photo figcaption { display:grid; grid-template-columns:1fr 1fr; color:#fff; background:#17535d; font-weight:650; font-size:9pt; }
+.l4b-reaction-photo figcaption > span { padding:1mm 2mm; }
+.l4b-reaction-photo figcaption > span:last-child { background:#a44a20; }
+.l4b-counter-copy h2 { font-size:16pt; }
+.l4b-reaction-dialogue p { margin:0 0 1.5mm; }
+.l4b-reaction-dialogue b,.l4b-reaction-dialogue strong { color:var(--hz-unit-dark); }
+.l4b-reaction-question { margin:1.5mm 0 0; font-size:9pt; }
+.l4b-answer-write { display:block; height:6mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
+.l4b-shared-menu { display:flex; gap:3mm; align-items:baseline; margin:2mm 0 0; color:#087547; font-weight:650; }
+.l4b-shared-menu > span { flex:1; height:6mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
+
+.l4b-counter-copy h2 { line-height:1.3; }
+.l4b-final-model { display:grid; grid-template-columns:1fr 1fr; gap:5mm; }
+.l4b-final-model p { margin:0; }
+.l4b-final-model b { color:var(--hz-unit-dark); }
+
+.l4b-counter { grid-template-columns:87mm minmax(0,1fr); }
+.l4b-reaction-photo > img { width:87mm; }
+
+.l4b-class-choice { display:grid; gap:1mm; margin-top:2mm; }
+.l4b-class-choice p { display:flex; gap:3mm; align-items:baseline; margin:0; color:#087547; font-weight:650; }
+.l4b-class-choice span { flex:1; height:6mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
+
+/* Unit-level variety: photo-led cover and three independent reader voices. */
+.l4b-taste-feature { background:#f4f0e6; padding:0 0 4mm; }
+.l4b-taste-cover { display:grid; grid-template-columns:68mm minmax(0,1fr); background:#ffcc29; }
+.l4b-taste-cover figure { margin:0; }
+.l4b-taste-cover img { display:block; width:68mm; height:67mm; object-fit:cover; object-position:center; }
+.l4b-taste-cover header { padding:4mm; align-self:center; }
+.l4b-taste-cover header > p:first-child { font-size:7.75pt; font-weight:750; letter-spacing:.12em; margin:0 0 2mm; }
+.l4b-taste-feature h2 { font:800 23pt/1.22 var(--hz-font-sans); margin:0 0 3mm; letter-spacing:-.035em; }
+.l4b-taste-cover .l4b-feature-intro { margin:0; line-height:1.4; }
+.l4b-vegan-note { margin-top:3mm; padding:2mm 0 0; border-top:.3mm solid #a67d11; }
+.l4b-vegan-note p { line-height:1.35; }
+.l4b-opinions { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:4mm; padding:4mm 4mm 0; }
+.l4b-opinions section { border-top:1.4mm solid #087a46; padding-top:2mm; }
+.l4b-opinions section:nth-child(2) { border-color:#1767aa; }
+.l4b-opinions section:nth-child(3) { border-color:#a83d0a; }
+.l4b-opinions h3 { font:750 12pt/1.35 var(--hz-font-sans); margin:0 0 2mm; }
+.l4b-opinions p { font-size:9.5pt; line-height:1.45; }
+.l4b-shared-food { border:0; background:none; }
+.l4b-shared-food header { background:none; padding:0 0 1.5mm; }
+.l4b-shared-food h2 { color:#087a46; font:700 11pt/1.4 var(--hz-font-sans); }
+.l4b-shared-food > div { padding:0; }
+.l4b-counter { grid-template-columns:95mm minmax(0,1fr); gap:4mm; align-items:center; }
+.l4b-reaction-photo > img { width:95mm; height:auto; }
+.l4b-counter-copy { padding:0; }
+.l4b-reaction-dialogue { display:grid; gap:2mm; }
+.l4b-counter-copy .l4b-reaction-dialogue p { background:#fff4ce; padding:2mm 2.5mm; margin:0; border-radius:0 3mm 3mm 3mm; line-height:1.4; }
+.l4b-counter-copy .l4b-reaction-dialogue p:nth-child(2) { background:#e9f0f3; border-radius:3mm 0 3mm 3mm; }
+
+.l4b-taste-feature h2 { line-height:1.35; }

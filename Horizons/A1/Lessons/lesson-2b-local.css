@@ -876,3 +876,15 @@
 /* Selected author-approved editorial details, 2026-10-07. */
 .l2b-show-waveform { display: block; flex: none; width: 17mm; height: 5.5mm; color: var(--hz-unit); fill: none; stroke: currentColor; stroke-width: 2.1; stroke-linecap: round; }
 .l2b-onair-start .l2b-show-waveform { order: -1; width: 23mm; height: 7mm; margin-left: 3mm; color: #fff; }
+
+/* 24 October: creative task revision, preserving shared Horizons styles. */
+.l2b-next-bus { border:.25mm solid #b8c7ce; background:#fff; }
+.l2b-next-bus > header { display:flex; justify-content:space-between; align-items:center; gap:4mm; background:#174a62; color:#fff; padding:2mm 3mm; }
+.l2b-next-bus h2 { margin:0; font:700 18pt/1.15 var(--hz-font-sans); }
+.l2b-next-bus header > span { font-size:8pt; letter-spacing:.05em; }
+.l2b-next-bus header b { margin-left:2mm; font:700 14pt/1.15 var(--hz-font-sans); color:#ffd04b; }
+.l2b-departure-result { display:grid; grid-template-columns:1fr 1fr; gap:5mm; padding:3mm; font-size:9pt; }
+.l2b-departure-result p { margin:0; }
+.l2b-next-choices { display:grid; grid-template-columns:repeat(3,1fr); gap:3mm; padding:2mm 3mm; background:#fff4cf; font-size:8.8pt; }
+.l2b-decision-model { margin:3mm 0 0; font-size:8.8pt; }
+.l2b-decision-model b { color:var(--hz-unit-dark); }

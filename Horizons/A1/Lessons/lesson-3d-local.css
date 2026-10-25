@@ -111,3 +111,21 @@
 .l3d-morning-layout > img { display:block; width:43mm; height:46mm; object-fit:cover; object-position:center 60%; }
 .l3d-morning-events { flex-direction:column; align-items:flex-start; gap:.5mm; }
 .l3d-morning-events .l3d-time-arrow { font-size:12pt; margin-left:6mm; line-height:1; }
+
+/* Three exact moments make before/after visible; the writing has a real follow-up. */
+.l3d-continuation-content { padding-top:7mm; }
+.l3d-photo-story { position:relative; margin:0; }
+.l3d-photo-story > img { display:block; width:100%; height:auto; }
+.l3d-story-letters { position:absolute; inset:1.5mm 0 auto; display:grid; grid-template-columns:repeat(3,1fr); }
+.l3d-story-letters > span { justify-self:start; margin-left:1.5mm; padding:.5mm 1.5mm; background:#fff; color:var(--hz-unit-dark); font-weight:650; }
+.l3d-sequence-strip { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:3mm; margin-top:2mm; padding:1.5mm 2mm; background:#fff; border-bottom:.65mm solid #b95013; }
+.l3d-sequence-strip > span { display:flex; flex-wrap:wrap; align-items:baseline; gap:1mm 2mm; }
+.l3d-sequence-strip b { color:#9b4312; font-size:9.5pt; }
+.l3d-sequence-strip .l3d-letter-gap { margin-left:0; }
+.l3d-sequence-notice { margin-top:2mm; grid-template-columns:1fr 1fr; gap:5mm; }
+.l3d-your-week th,.l3d-your-week td { padding:1.2mm 1mm; }
+.l3d-my-challenge { display:grid; grid-template-columns:40mm 1fr; gap:3mm; align-items:center; margin:2mm 0 0; padding:1mm 2mm; background:#fff4ce; color:#774000; }
+.l3d-my-challenge b { font-size:9pt; font-weight:650; }
+.l3d-post-editor { padding-bottom:2mm; }
+
+.l3d-continuation-content { padding-top:20mm; }

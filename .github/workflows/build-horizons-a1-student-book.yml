@@ -9,6 +9,7 @@ on:
       - "Horizons/A1/Audio scripts/**"
       - "Horizons/Base/design-system/**"
       - "Horizons/Base/shell/**"
+      - "Horizons/Base/viewer/**"
       - "Horizons/Base/build/build-students-book.mjs"
       - "Horizons/Base/build/build-students-book-pdf.mjs"
       - "Horizons/Base/build/validate-audio-scripts.mjs"

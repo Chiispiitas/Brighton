@@ -63,3 +63,52 @@
 
 /* Exact one/two comparison and mass-food models, with original alpha intact. */
 .l4a-grammar-food { width:30mm; height:20mm; background-image:url('../Images/4A/Grammar-counts-v1.png'); background-size:200% 200%; background-position:var(--px) var(--py); background-repeat:no-repeat; }
+
+/* 24 October: creative task revision, preserving shared Horizons styles. */
+.l4a-picnic-check { display:grid; grid-template-columns:64mm minmax(0,1fr); gap:5mm; align-items:start; }
+.l4a-picnic-check figure { margin:0; }
+.l4a-picnic-check img { display:block; width:64mm; height:64mm; object-fit:cover; }
+.l4a-picnic-check h2 { margin:0 0 2.5mm; font:700 18pt/1.15 var(--hz-font-sans); color:#a34b13; }
+.l4a-picnic-claims { display:grid; gap:1.5mm; }
+.l4a-picnic-check .l4a-open-lines { margin-top:2mm; }
+.l4a-breakfast-menu { margin-top:2.5mm; background:#fff; border:.25mm solid #abc8c1; }
+.l4a-breakfast-menu header { display:flex; justify-content:space-between; align-items:center; padding:1.5mm 3mm; background:#116b60; color:#fff; }
+.l4a-breakfast-menu h2 { margin:0; font:700 14pt/1.2 var(--hz-font-sans); }
+.l4a-breakfast-menu header > span { font-size:8pt; letter-spacing:.06em; }
+.l4a-breakfast-menu > div { display:grid; grid-template-columns:1.5fr 1fr; gap:5mm; padding:2mm 3mm; }
+.l4a-breakfast-menu p { margin:0; display:flex; gap:2mm; align-items:baseline; }
+.l4a-breakfast-menu p > span { flex:1; height:6mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
+
+.l4a-picnic-check img { height:auto; object-fit:contain; }
+
+.l4a-breakfast-menu { display:grid; grid-template-columns:36mm minmax(0,1fr); }
+.l4a-breakfast-menu header { display:block; }
+.l4a-breakfast-menu > div { align-items:center; }
+
+/* Unit-level variety: a travel-journal feature with two crossing photo/text entries. */
+.l4a-breakfast-feature { background:#f5f0e6; padding:3mm 4mm 4mm; border-left:1.2mm solid #12675e; }
+.l4a-breakfast-feature > header { display:block; padding:0 0 3mm; background:none; color:#12675e; }
+.l4a-breakfast-feature > header p { color:#834318; margin:0 0 1mm; }
+.l4a-breakfast-feature h2 { font:750 21pt/1.2 var(--hz-font-sans); letter-spacing:-.025em; }
+.l4a-breakfast-layout { display:grid; grid-template-columns:1fr; gap:3mm; padding:0; }
+.l4a-breakfast-layout section { display:grid; grid-template-columns:76mm minmax(0,1fr); gap:5mm; align-items:center; }
+.l4a-breakfast-layout .l4a-turkiye { grid-template-columns:minmax(0,1fr) 76mm; }
+.l4a-breakfast-layout img { width:76mm; height:32mm; margin:0; object-fit:cover; }
+.l4a-breakfast-copy h3 { display:block; margin:0 0 2mm; font:600 9pt/1.3 var(--hz-font-sans); }
+.l4a-breakfast-copy h3 span { display:block; font:750 14pt/1.25 var(--hz-font-sans); }
+.l4a-breakfast-copy p { font-size:9.5pt; line-height:1.45; }
+.l4a-picnic-check { grid-template-columns:91mm minmax(0,1fr); gap:5mm; align-items:center; }
+.l4a-picnic-check img { width:91mm; height:auto; }
+.l4a-picnic-check > div { border-left:.9mm solid #c66a21; padding-left:3mm; }
+.l4a-picnic-check h2 { font:700 10pt/1.4 var(--hz-font-sans); margin-bottom:2mm; }
+.l4a-picnic-claims { gap:1.4mm; }
+.l4a-picnic-check .l4a-open-lines > span { height:6mm; }
+.l4a-breakfast-menu { border:0; border-top:.6mm solid #12675e; background:none; grid-template-columns:30mm minmax(0,1fr); }
+.l4a-breakfast-menu header { color:#12675e; background:none; padding:2mm 0; }
+.l4a-breakfast-menu h2 { font-size:11pt; }
+.l4a-breakfast-menu > div { padding:1mm 0; }
+
+.l4a-picnic-check { grid-template-columns:78mm minmax(0,1fr); }
+.l4a-picnic-check img { width:78mm; }
+
+.l4a-breakfast-copy h3 span { margin-bottom:1mm; }

@@ -501,3 +501,18 @@
 .l2c-restaurant-wordmark > span:last-child { color: #fff; }
 .l2c-reading-feature__head .l2c-restaurant-identity h2,
 .l2c-reading-feature__head .l2c-restaurant-identity h2 span { color: #fff !important; }
+
+/* 24 October: creative task revision, preserving shared Horizons styles. */
+.l2c-family-clue-feature { background:#fff; border:.25mm solid #c3d0c4; }
+.l2c-family-clue-feature > h2 { margin:0; padding:1.5mm 3mm; background:#087547; color:#fff; font:700 16pt/1.2 var(--hz-font-sans); }
+.l2c-family-clue-grid { display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:3mm; padding:2mm 3mm 3mm; }
+.l2c-family-clue-grid figure { margin:0; }
+.l2c-family-clue { margin:0 0 1mm; min-height:8mm; font-size:8.8pt; line-height:1.3; color:#075c39; }
+.l2c-family-clue-grid img { width:100%; height:24mm; display:block; object-fit:contain; }
+.l2c-family-clue-grid figcaption { display:flex; gap:2mm; font-size:8.5pt; margin:1mm 0; }
+.l2c-family-clue-grid figcaption b { color:var(--hz-unit-dark); font-weight:650; }
+.l2c-clue-answer { display:block; height:7mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); font-size:8.8pt; }
+.l2c-clue-example,.l2c-photo-example { color:#74777d; font:400 8.8pt/1.35 "Segoe Print","Bradley Hand",cursive; }
+.l2c-photo-example { margin:2mm 0 0; }
+.l2c-photo-write { display:block; height:7mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
+.l2c-pair-models p { margin:0 0 1mm; }

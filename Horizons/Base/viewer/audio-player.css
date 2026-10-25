@@ -1,0 +1,36 @@
+/* Viewer controls only. Existing badge styling and all print geometry stay native. */
+.hz-audio-toggle {
+  position: relative;
+  display: inline-flex;
+  flex: 0 0 auto;
+  align-items: center;
+  justify-content: center;
+  width: 14px;
+  height: 14px;
+  margin: -2px -1px -2px 4px;
+  padding: 0;
+  border: 1px solid currentColor;
+  border-radius: 50%;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  line-height: 1;
+  vertical-align: middle;
+  cursor: pointer;
+}
+.hz-audio-toggle::after { content: ""; position: absolute; inset: -4px; }
+.hz-audio-toggle svg { display: block; width: 10px; height: 10px; fill: currentColor; }
+.hz-audio-toggle:hover { background: rgb(255 255 255 / 20%); }
+.hz-audio-toggle:focus-visible { outline: 2px solid #ffd84b; outline-offset: 3px; }
+.hz-audio-status {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+@media print {
+  .hz-audio-toggle,
+  .hz-audio-status { display: none !important; }
+}

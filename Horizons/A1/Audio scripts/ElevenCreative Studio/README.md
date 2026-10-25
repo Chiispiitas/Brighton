@@ -150,3 +150,20 @@ Lesson 2B — Track 2.3 is intentionally preserved as-is in this v3 migration.
 MASTER SCRIPTS
 
 The lesson-level `.txt` files one folder up remain the human-readable source. This folder contains import-ready speech-only versions.
+
+
+Lesson 4B - 2026-10-20
+- Track 4.3: Flavors; Jessica models all four words.
+- Track 4.4: New food. Real opinions.; Jessica announces, Amy/Nadia, Jarnathan/Joel and Juniper/Rosa read the fictional opinions.
+Both tracks use Eleven v3 Natural Stability (0.5). Exact voice assignments are in VOICE MAP.md; generation/transcript evidence is in ../4B-production.json.
+
+
+Lesson 4C - 2026-10-24
+- Track 4.5: Cooking verbs; Jessica models mix, wash, add, cut.
+- Track 4.6: Before you start; Jessica announces/contextualizes, Mark - Casual voices Luca and Adeline voices Elena.
+Both tracks use Eleven v3 Natural Stability (0.5). Exact paragraph/voice assignments are in VOICE MAP.md; generation/transcript records are in ../4C-production.json.
+
+
+## Lesson 4D - Food for everyone!
+
+Two Studio-ready imports: **4D - Track 4.7.txt** (sharing-food vocabulary; Jessica) and **4D - Track 4.8.txt** (Nora's model post; Jessica narration, Adeline/Nora). Match the numbered paragraph assignments in VOICE MAP.md. Use the existing approved pool and eleven_v3 Natural Stability (0.5). No clarity tag. MP3s are in `../../Audios/`; production checks are in `../4D-production.json`. The two-post comparison reads A silently and records B only. The source note, punctuation practice and final peer reply are not additional recordings. Retain existing Nora voice continuity. Final recordings decode, match normalized transcripts and show no detected audio events; this does not claim subjective listening approval.
