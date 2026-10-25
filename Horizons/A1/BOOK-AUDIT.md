@@ -1,6 +1,6 @@
 # Horizons A1 — Book audit
 
-Updated 25 October 2026. **Preview verified through 4D; final book release pending.**
+Updated 25 October 2026. **Preview verified through Units 3 & 4 Review; final book release pending.**
 
 This is the current audit entry point. [book-audit.json](book-audit.json) holds scoped evidence and historical checks; [CANONICAL-STYLE.md](../Base/design-system/CANONICAL-STYLE.md) governs design. A current snapshot is not final release approval.
 
@@ -8,10 +8,10 @@ This is the current audit entry point. [book-audit.json](book-audit.json) holds 
 
 | Item | Current state |
 | --- | --- |
-| Content | 1A–3D, Units 1 & 2 Review, 4A–4D: 17 masters |
-| Saved book | 34 A4 pages; printed pages 5–38 |
-| Activity blocks | 121; existing subexercise numbering retained |
-| Audio | 36 MP3 files; 34 previous recordings preserved, two new 4D tracks verified |
+| Content | 1A–4D plus Units 1 & 2 and 3 & 4 Reviews: 18 masters |
+| Saved book | 36 A4 pages; printed pages 5–40 |
+| Activity blocks | 128; existing subexercise numbering retained |
+| Audio | 36 MP3 files; the new cumulative review has no listening task or new track |
 | Navigation cues | 21 NEW WORDS badges, 16 Extra Practice footers, 38 Go to references |
 | Concept explanations | 14 revised panels across 11 lessons; 19 total focus panels including retained 4A and new 4B–4D |
 | Unresolved destinations | 38 `page ---` references; intentional until back-of-book pagination |
@@ -19,6 +19,8 @@ This is the current audit entry point. [book-audit.json](book-audit.json) holds 
 Counts are inventory, not proof that every cue is correctly placed. Review placement beside the newly introduced content.
 
 ## Verified evidence and its limits
+
+- **Units 3 & 4 Review, 25 October:** new `4R.html` supplies printed pages 39–40, using the approved review-only two-column composition. Seven original activities cover present-simple affirmative/negative/questions, days, frequency, question words, sequence, food/countability, object pronouns, quantities and reason/result punctuation. A fictional outdoor-cinema event provides a fresh context. Two licensed full-background cinema photos are paired with one built-in imagegen counting composition (2 apples, 6 bananas, 4 eggs; native alpha retained); a live-text milk inventory covers too much. Category cues make the vocabulary criterion explicit, and the four-phrase quantity bank is used completely without teaching enough as exact equality. Six reading statements have direct evidence and a balanced 3 yes / 3 no key. Eight open 7mm writing lines and eight BEYOND HORIZONS circles support independent output and personal information exchange. Shared functional fonts, neutral word bank, A4 headers and crimson markers are retained. All 34 preceding page HTML fragments and all previous masters/CSS are unchanged. Assembled and standalone review geometry, image loading/aspect ratios, circle-text fit, exercise order and page clearance pass; minimum column-bottom clearance is 47.2px. Key, cumulative wordlist, assets/credits and handoff are current. New listening is not claimed or required. Reopened saved PDF has 36 A4 pages; all 34 preceding pages match the baseline in extracted text and 72dpi rendered pixels. Both new pages were visually inspected using Poppler. The live canonical HTML contains both review pages, all three loaded images, eight challenges and eight writing lines; existing 39 audio controls remain. The live canonical PDF matches the saved PDF byte for byte (SHA-256 `2782b6df254473c2b9ed24763252a76379cafcde77576020f75a13ee1cbe7e3d`). Source commit `c440da9` and PDF build `53b9246` are published; a prior revision plus before-copies and a file journal allow rollback. Before-copies, validation and private production evidence are in `work/review3-4-20261025`.
 
 - **Units 1 & 2 Review composition, 25 October:** the author permits two columns only in Review & Practice. The review now reads 1–3 down the left column, then the larger Color Project feature as 4 on the right; page 22 reads 5–6 on the left and BEYOND HORIZONS as 7 on the right. Native Horizons page chrome and shared type sizes remain. The reading has a full-background stock triptych with live name strips; the studio contact sheet retains all near/far, item and color evidence. Eight compact challenge circles mix rich fills with quieter outlined circles. Both word banks use the normal neutral shared treatment. All seven activities, answer options, controlled answers, gaps and open writing-line counts remain; writing lines are 7mm high. Activity 5 now explicitly refers to activity 4, and a redundant location caption was removed. The two pages fit in assembled and standalone HTML, including the full vocabulary table, picture evidence and response surfaces. Minimum column-bottom clearance is 37.7px. The other 32 page HTML fragments are unchanged; all media, recordings and source lesson files are unchanged. Visual references were Personal Best A1 PDF pages 22–23 and English File Beginner PDF pages 16–17; only principles of hierarchy, image emphasis and review pacing were borrowed. The live HTML viewer passes the column/order checks, with all 39 audio controls retained. GitHub’s successful rebuilt PDF has 34 A4 pages; the two review pages were inspected through Poppler, and the other 32 pages are pixel- and text-identical to the previous saved book. Review text matches only the intended caption/instruction edits. Exact before-copies and validation are in `work/review-redesign-20261025`.
 

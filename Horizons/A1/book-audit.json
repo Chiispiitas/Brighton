@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-24",
+  "updated": "2026-10-25",
   "status": "preview verified; final book release pending",
-  "scope": "Existing A1 content through 4D, including Units 1 & 2 Review",
+  "scope": "A1 through 4D and Units 3 & 4 Review, including Units 1 & 2 Review",
   "readability_comparison_baseline": "e8d6ddd69f62caffab662a93a5a392ebc5bfb131",
   "inventory": {
     "lesson_masters": [
@@ -22,14 +22,15 @@
       "4A",
       "4B",
       "4C",
-      "4D"
+      "4D",
+      "4R"
     ],
-    "pdf_pages": 34,
+    "pdf_pages": 36,
     "printed_pages": [
       5,
-      38
+      40
     ],
-    "activity_blocks": 121,
+    "activity_blocks": 128,
     "audio_files": 36,
     "new_words_badges": 21,
     "extra_practice_footers": 16,
@@ -1577,6 +1578,100 @@
       "implementation_commit": "02cc8f500e73edf7520195a15e927fbc0049838b",
       "pdf_build_commit": "ce5a4f0",
       "reversibility": "Exact before-copies, hashes and guarded restore in work/review-redesign-20261025; previous accepted book is Git revision 8eff8a8."
+    },
+    "review_3_4_20261025": {
+      "date": "2026-10-25",
+      "status": "Assembled/standalone HTML, saved PDF and canonical live deployment verified",
+      "pages": [
+        39,
+        40
+      ],
+      "masters": 1,
+      "activities": 7,
+      "coverage": [
+        "3A present simple affirmative/routines",
+        "3B days, negative/questions",
+        "3C question words/adjectives",
+        "3D frequency, before/after",
+        "4A food/countability",
+        "4B flavors/object pronouns",
+        "4C too much/many, enough/not enough",
+        "4D because/so, punctuation"
+      ],
+      "fresh_context": "Original fictional outdoor cinema; Ruby/Alex and all program details are fiction",
+      "task_evidence": {
+        "category_labels": "Explicit odd-word criteria",
+        "count_photo": [
+          2,
+          6,
+          4
+        ],
+        "food_requirement": [
+          4,
+          4,
+          4
+        ],
+        "milk": "Need 1 bottle; have 3",
+        "quantity_instruction": "Use all four bank phrases; enough is sufficient, not exact equality",
+        "reading_answers": [
+          "no",
+          "yes",
+          "no",
+          "yes",
+          "yes",
+          "no"
+        ],
+        "question_matching": [
+          "c",
+          "d",
+          "a",
+          "b"
+        ],
+        "open_writing_lines": 8,
+        "open_writing_line_mm": 7,
+        "challenge_circles": 8
+      },
+      "typography": "Shared task 9.5pt / instruction 8.9pt / word bank 9pt; all existing focus panels unchanged",
+      "source_preservation": {
+        "prior_page_html_fragments": 34,
+        "previous_masters_css_byte_unchanged": true,
+        "previous_media_audio_unchanged": true
+      },
+      "media": {
+        "licensed_stock_photos": 2,
+        "creator": "Son Tung Tran / Pexels",
+        "built_in_imagegen_assets": 1,
+        "native_alpha": [
+          0,
+          255
+        ],
+        "manifest": "Images/4R/asset-manifest.json",
+        "fictional_identity_boundary": "No pictured viewer is identified as Ruby/Alex; photos do not establish the invented program"
+      },
+      "new_audio_required": false,
+      "standalone_matches_assembled": true,
+      "overflow": [],
+      "minimum_column_clearance_px": 47.171875,
+      "evidence_directory": "work/review3-4-20261025",
+      "saved_pdf": {
+        "pages": 36,
+        "all_a4": true,
+        "prior_pages_text_identical": 34,
+        "prior_pages_72dpi_pixels_identical": 34,
+        "new_pages_poppler_visually_inspected": true,
+        "sha256": "2782b6df254473c2b9ed24763252a76379cafcde77576020f75a13ee1cbe7e3d",
+        "source_commit": "c440da9",
+        "pdf_build_commit": "53b9246"
+      },
+      "live": {
+        "canonical_html_verified": true,
+        "review_pages": 2,
+        "all_three_images_loaded": true,
+        "challenge_circles": 8,
+        "writing_lines": 8,
+        "audio_controls_preserved": 39,
+        "canonical_pdf_byte_identical": true
+      }
     }
   },
   "pending": [
@@ -1622,9 +1717,9 @@
         "Student's Book.html"
       ],
       "fingerprint": {
-        "files": 367,
-        "bytes": 417188531,
-        "sha256": "78d64a60223f57d5ea7da68654b8901749c896b77c5da55043b4ec95cb897072"
+        "files": 376,
+        "bytes": 429610617,
+        "sha256": "e43e3837494c8997f97b88f1834d8afeb8accd0512339bc5ee03090d871b6ee9"
       }
     },
     "shared_rendering": {
@@ -1644,8 +1739,8 @@
       ],
       "fingerprint": {
         "files": 1,
-        "bytes": 6763865,
-        "sha256": "ea6f8a2471699d537f49a9fe783959a8076d0b887ffd51ecbe4a5dddcfb5e286"
+        "bytes": 6959573,
+        "sha256": "65298081a47d6ffe425da3ea2e7eba63f6c79fb47b788f88bffe1f74073ff8e1"
       }
     },
     "audit_criteria": {
@@ -1663,6 +1758,6 @@
     }
   },
   "content_baseline_commit": "2f404b547b7da07be81a0622a78591d3299c402a",
-  "current_revision": "Units 1 & 2 Review redesigned and live with the author-approved review-only two-column composition. Reopened 34-page A4 PDF verified; all other 32 saved pages pixel/text identical; ordinary lessons and shared functional typography retained.",
-  "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope."
+  "current_revision": "New two-page Units 3 & 4 Review, 4R, with original cinema context, cumulative activities and mixed stock/exact-count generated imagery. HTML, saved PDF and live publication verified; preceding 34 PDF pages unchanged in text and pixels.",
+  "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence."
 }
