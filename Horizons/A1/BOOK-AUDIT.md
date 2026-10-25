@@ -1,6 +1,6 @@
 # Horizons A1 — Book audit
 
-Updated 25 October 2026. **Preview verified through Units 3 & 4 Review; final book release pending.**
+Updated 25 October 2026. **Preview verified through 5A; final book release pending.**
 
 This is the current audit entry point. [book-audit.json](book-audit.json) holds scoped evidence and historical checks; [CANONICAL-STYLE.md](../Base/design-system/CANONICAL-STYLE.md) governs design. A current snapshot is not final release approval.
 
@@ -8,17 +8,19 @@ This is the current audit entry point. [book-audit.json](book-audit.json) holds 
 
 | Item | Current state |
 | --- | --- |
-| Content | 1A–4D plus Units 1 & 2 and 3 & 4 Reviews: 18 masters |
-| Saved book | 36 A4 pages; printed pages 5–40 |
-| Activity blocks | 128; existing subexercise numbering retained |
-| Audio | 36 MP3 files; the new cumulative review has no listening task or new track |
-| Navigation cues | 21 NEW WORDS badges, 16 Extra Practice footers, 38 Go to references |
-| Concept explanations | 14 revised panels across 11 lessons; 19 total focus panels including retained 4A and new 4B–4D |
-| Unresolved destinations | 38 `page ---` references; intentional until back-of-book pagination |
+| Content | 1A–5A plus Units 1 & 2 and 3 & 4 Reviews: 19 masters |
+| Saved book | 38 A4 pages; printed pages 5–42 |
+| Activity blocks | 134; existing subexercise numbering retained |
+| Audio | 39 MP3 files; new 5A tracks 5.1–5.3 decoded/transcribed |
+| Navigation cues | 22 NEW WORDS badges, 17 Extra Practice footers, 40 Go to references |
+| Concept explanations | 14 revised panels across 11 lessons; 20 total focus panels including retained 4A and new 4B–5A |
+| Unresolved destinations | 40 `page ---` references; intentional until back-of-book pagination |
 
 Counts are inventory, not proof that every cue is correctly placed. Review placement beside the newly introduced content.
 
 ## Verified evidence and its limits
+
+- **Lesson 5A, 25 October:** printed pages 41–42 introduce ten clothing/accessory words and present continuous for actions now. Six activities progress from a native-alpha product family to an original fictional shop conversation, explicit noticing, aligned affirmative/negative/question models, contextual full-phrase practice, picture identification and a genuinely private photo-description/drawing exchange. The partner draws in a notebook; Extra Practice produces original photo descriptions. A compact historical price panel adapts only Heritage Auctions' reported Lombardi sweater prices/dates/ownership, without past-tense narrative or fabricated real quotations. All three generated assets serve exact product/outfit/action evidence; both scene backgrounds are retained and the continuation image is 146 × 73mm. Functional sizes and crimson grammar emphasis match the canonical roles; NEW WORDS and both navigation references are present. All six activities fit; standalone/assembled geometry matches, no text overflows and minimum activity-bottom clearance is 54.7px. Jessica narrates 5.1–5.3, with Nia/Adeline and Eli/Jarnathan in the fictional dialogue. All tracks decode and exactly match normalized transcripts, with no detected audio events; play/pause works locally. No subjective listening review is claimed. All 36 previous HTML page fragments and prior masters/CSS/images/MP3s are unchanged; Studio documents preserve their original bytes before appended notes. Key, wordlist, assets/prompts and voice map are current. The final published PDF export `5ee56e3` has 38 A4 pages; all 36 preceding pages are text- and 72dpi pixel-identical to the baseline. Both saved new pages were visually inspected through Poppler; their text matches the standalone export, the title is the shared 31pt size and grammar text is 9.49pt after PDF rounding. The live viewer has both new pages, all images, 42 audio controls and working play/pause for 5.1–5.3. The canonical live PDF matches the saved file byte for byte (SHA-256 `301b1da367d4b5354673066add4d333ccea025f05a6095e5b05f4f60fefca412`). After an overlapping export conflict, retry compression stalled and was cancelled. The published fallback copies the preserved 36 baseline PDF pages and two verified Windows-native lesson pages without font/image rewriting or resource deduplication; all 38 pages match their verified sources. Source is `c439f71`. Baseline copies and verification are in `work/lesson5a` outside the repo.
 
 - **Units 3 & 4 Review, 25 October:** new `4R.html` supplies printed pages 39–40, using the approved review-only two-column composition. Seven original activities cover present-simple affirmative/negative/questions, days, frequency, question words, sequence, food/countability, object pronouns, quantities and reason/result punctuation. A fictional outdoor-cinema event provides a fresh context. Two licensed full-background cinema photos are paired with one built-in imagegen counting composition (2 apples, 6 bananas, 4 eggs; native alpha retained); a live-text milk inventory covers too much. Category cues make the vocabulary criterion explicit, and the four-phrase quantity bank is used completely without teaching enough as exact equality. Six reading statements have direct evidence and a balanced 3 yes / 3 no key. Eight open 7mm writing lines and eight BEYOND HORIZONS circles support independent output and personal information exchange. Shared functional fonts, neutral word bank, A4 headers and crimson markers are retained. All 34 preceding page HTML fragments and all previous masters/CSS are unchanged. Assembled and standalone review geometry, image loading/aspect ratios, circle-text fit, exercise order and page clearance pass; minimum column-bottom clearance is 47.2px. Key, cumulative wordlist, assets/credits and handoff are current. New listening is not claimed or required. Reopened saved PDF has 36 A4 pages; all 34 preceding pages match the baseline in extracted text and 72dpi rendered pixels. Both new pages were visually inspected using Poppler. The live canonical HTML contains both review pages, all three loaded images, eight challenges and eight writing lines; existing 39 audio controls remain. The live canonical PDF matches the saved PDF byte for byte (SHA-256 `2782b6df254473c2b9ed24763252a76379cafcde77576020f75a13ee1cbe7e3d`). Source commit `c440da9` and PDF build `53b9246` are published; a prior revision plus before-copies and a file journal allow rollback. Before-copies, validation and private production evidence are in `work/review3-4-20261025`.
 

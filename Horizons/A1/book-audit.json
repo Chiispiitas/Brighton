@@ -2,7 +2,7 @@
   "schema_version": 1,
   "updated": "2026-10-25",
   "status": "preview verified; final book release pending",
-  "scope": "A1 through 4D and Units 3 & 4 Review, including Units 1 & 2 Review",
+  "scope": "A1 through 5A, including Units 1 & 2 and 3 & 4 Reviews",
   "readability_comparison_baseline": "e8d6ddd69f62caffab662a93a5a392ebc5bfb131",
   "inventory": {
     "lesson_masters": [
@@ -23,20 +23,22 @@
       "4B",
       "4C",
       "4D",
-      "4R"
+      "4R",
+      "5A"
     ],
-    "pdf_pages": 36,
+    "pdf_pages": 38,
     "printed_pages": [
       5,
-      40
+      42
     ],
-    "activity_blocks": 128,
-    "audio_files": 36,
-    "new_words_badges": 21,
-    "extra_practice_footers": 16,
-    "go_to_references": 38,
-    "page_placeholders": 38,
-    "focus_panels": 19
+    "activity_blocks": 134,
+    "audio_files": 39,
+    "new_words_badges": 22,
+    "extra_practice_footers": 17,
+    "go_to_references": 40,
+    "page_placeholders": 40,
+    "focus_panels": 20,
+    "html_pages": 38
   },
   "checks": {
     "refreshed_during_cleanup": {
@@ -1672,6 +1674,202 @@
         "audio_controls_preserved": 39,
         "canonical_pdf_byte_identical": true
       }
+    },
+    "lesson_5a_20261025": {
+      "date": "2026-10-25",
+      "role": "A - language",
+      "status": "Source, standalone/assembled HTML, saved PDF and canonical live viewer/audio verified",
+      "printed_pages": [
+        41,
+        42
+      ],
+      "activities": 6,
+      "objectives": [
+        "Clothes and accessories",
+        "Present continuous for actions now"
+      ],
+      "editorial_concept": "Clothing catalog; fictional thrift-shop readers and a compact sourced real price surprise; full-background park action evidence; private-photo description/drawing",
+      "learning_cycle": "Picture vocabulary -> meaningful dialogue -> noticing meaning/question order/-ing -> ordinary-size rule -> contextual positive/negative/question forms -> listening identification -> private communicative use -> original photo writing",
+      "key": {
+        "vocabulary": [
+          "D",
+          "F",
+          "G",
+          "A",
+          "H",
+          "E",
+          "B",
+          "J",
+          "C",
+          "I"
+        ],
+        "dialogue_answer": "No - Eli is just looking",
+        "noticing": [
+          "now",
+          "before",
+          "-ing"
+        ],
+        "forms": [
+          "is reading",
+          "aren't wearing / are not wearing",
+          "is drinking",
+          "Is / talking"
+        ],
+        "listening": [
+          3,
+          2,
+          1
+        ],
+        "final": "Private photograph, partner notebook drawing and comparison; no shared visible answers"
+      },
+      "navigation": {
+        "new_words": 1,
+        "go_to": 2,
+        "extra_practice": 1,
+        "pending_page_destinations": "---"
+      },
+      "media": {
+        "new_built_in_generated_assets": 3,
+        "native_transparent_wardrobe": true,
+        "full_scene_backgrounds": 2,
+        "second_page_substantial_task_image_mm": [
+          146,
+          73
+        ],
+        "manifest": "Images/5A/asset-manifest.json",
+        "source_boundary": "Heritage Auctions supports historical reported prices/dates/ownership; no copied image/text, reenactment or historical-buyer dialogue",
+        "wardrobe_native_aspect_ratio_preserved": true
+      },
+      "grammar_typography": {
+        "body_pt": 9.5,
+        "instruction_pt": 8.9,
+        "bold_color": "#8f123f",
+        "known_regular_ing_forms_only": true,
+        "lesson_title_pt": 31
+      },
+      "audio": {
+        "new_tracks": [
+          "5.1",
+          "5.2",
+          "5.3"
+        ],
+        "duration_seconds": [
+          24.45,
+          27.32,
+          32.99
+        ],
+        "narrator": "Jessica",
+        "dialogue_roles": {
+          "Nia": "Adeline",
+          "Eli": "Jarnathan"
+        },
+        "model": "eleven_v3",
+        "stability": 0.5,
+        "decode_pass": true,
+        "exact_normalized_transcript_matches": 3,
+        "no_throat_events_detected": true,
+        "forbidden_tag_preflight": true,
+        "subjective_listening_review": false,
+        "controls_play_pause_pass": true,
+        "zip_verified": true,
+        "records": "Audio scripts/5A-production.json",
+        "rejected_candidate": "Initial intro had an uncertain Nia/Mia transcription; rejected before integration. Fresh shorter intro passed without name alias normalization."
+      },
+      "local_fit": {
+        "overflow": [],
+        "all_images_loaded": true,
+        "standalone_matches_assembled": true,
+        "minimum_exercise_bottom_clearance_px": 54.65625,
+        "continuation_code_and_grammar_visually_inspected": true
+      },
+      "preservation": {
+        "prior_compiled_page_fragments_identical": 36,
+        "prior_masters_css_image_audio_bytes_unchanged": true,
+        "prior_Studio_docs_bytes_preserved_with_append": true
+      },
+      "evidence_directory": "work/lesson5a",
+      "source_commit": "c439f71",
+      "saved_pdf": {
+        "pages": 38,
+        "A4_all_pages": true,
+        "prior_text_pages_identical": 36,
+        "prior_72dpi_pixel_pages_identical": 36,
+        "new_pages_text_match_direct": true,
+        "new_grammar_body_pdf_font_pt": [
+          9.49
+        ],
+        "lesson_title_pdf_pt": [
+          30.997501373291016
+        ],
+        "continuation_code_present": true,
+        "sha256": "301b1da367d4b5354673066add4d333ccea025f05a6095e5b05f4f60fefca412",
+        "source_commit": "c439f71",
+        "pdf_build_commit": "5ee56e3",
+        "method": "Preserved baseline 36 pages plus two verified Windows-native lesson pages via PDF object copying; no font/image rewriting or resource deduplication.",
+        "all_38_pages_pixel_match_verified_sources": true
+      },
+      "live": {
+        "pages": 38,
+        "activities": 134,
+        "audioControls": 42,
+        "newPages": [
+          "41",
+          "42"
+        ],
+        "images": [
+          true,
+          true
+        ],
+        "lessonTitlePt": 31,
+        "wardrobeRatio": 1,
+        "newTracksPlayPause": true,
+        "canonical_pdf_verification": {
+          "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.pdf",
+          "bytes": 17403199,
+          "sha256": "301b1da367d4b5354673066add4d333ccea025f05a6095e5b05f4f60fefca412",
+          "canonical_pdf_byte_identical": true,
+          "canonical_html_source_identical_after_line_end_normalization": true
+        },
+        "media_files": [
+          {
+            "path": "Images/5A/Clothes-and-accessories-v1.png",
+            "status": 200,
+            "bytes": 1512650,
+            "sha256_match": true
+          },
+          {
+            "path": "Images/5A/Nia-and-Eli-thrift-shop-v1.png",
+            "status": 200,
+            "bytes": 2554604,
+            "sha256_match": true
+          },
+          {
+            "path": "Images/5A/Three-outfits-in-the-park-v1.png",
+            "status": 200,
+            "bytes": 3145438,
+            "sha256_match": true
+          },
+          {
+            "path": "Audios/Track 5.1.mp3",
+            "status": 200,
+            "bytes": 391670,
+            "sha256_match": true
+          },
+          {
+            "path": "Audios/Track 5.2.mp3",
+            "status": 200,
+            "bytes": 437646,
+            "sha256_match": true
+          },
+          {
+            "path": "Audios/Track 5.3.mp3",
+            "status": 200,
+            "bytes": 528343,
+            "sha256_match": true
+          }
+        ]
+      },
+      "publication_recovery": "An overlapping export caused a binary rebase conflict; retry compression stalled and was cancelled. Published the verified 17.4MB local fallback: preserved baseline 36 PDF pages plus two Windows-native lesson pages, without font/image rewriting. All 38 rendered pages match their verified source pages."
     }
   },
   "pending": [
@@ -1717,9 +1915,9 @@
         "Student's Book.html"
       ],
       "fingerprint": {
-        "files": 376,
-        "bytes": 429610617,
-        "sha256": "e43e3837494c8997f97b88f1834d8afeb8accd0512339bc5ee03090d871b6ee9"
+        "files": 392,
+        "bytes": 438235838,
+        "sha256": "102340b6c22143cf35f961f62c7a8fb8fb9c158afc3014fad0148601b6fef595"
       }
     },
     "shared_rendering": {
@@ -1739,8 +1937,8 @@
       ],
       "fingerprint": {
         "files": 1,
-        "bytes": 6959573,
-        "sha256": "65298081a47d6ffe425da3ea2e7eba63f6c79fb47b788f88bffe1f74073ff8e1"
+        "bytes": 17403199,
+        "sha256": "ee37b6490cab6bf358c4ceac9a4d1981770dcc068db350487e564695261f4b48"
       }
     },
     "audit_criteria": {
@@ -1758,6 +1956,6 @@
     }
   },
   "content_baseline_commit": "2f404b547b7da07be81a0622a78591d3299c402a",
-  "current_revision": "New two-page Units 3 & 4 Review, 4R, with original cinema context, cumulative activities and mixed stock/exact-count generated imagery. HTML, saved PDF and live publication verified; preceding 34 PDF pages unchanged in text and pixels.",
-  "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence."
+  "current_revision": "Lesson 5A, What are you wearing?, complete on printed pages 41-42: sources, standalone/assembled HTML, saved 38-page PDF and live viewer/audio verified. All previous 36 PDF pages are text- and pixel-identical to the baseline.",
+  "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence."
 }
