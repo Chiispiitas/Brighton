@@ -1,0 +1,48 @@
+/* Reuses the approved paired-review composition; all new feature rules are scoped. */
+.r34-page { --r34-night:#16364d; --r34-gold:#ffc42b; }
+.r34-page .rr-column { gap:4mm; }
+.r34-grammar { display:grid; gap:2.2mm; line-height:1.45; }
+.r34-odd { display:grid; gap:2mm; line-height:1.4; }
+.r34-food-plan { margin:0 0 2mm; padding:2mm 2mm 1mm; border-top:.8mm solid #bf4e08; background:#fff7e5; }
+.r34-food-plan header { display:flex; align-items:baseline; justify-content:space-between; gap:1mm; }
+.r34-food-plan h2 { margin:0; font-size:13pt; font-weight:720; color:#91400c; line-height:1.15; }
+.r34-food-plan header > span { font-size:7pt; }
+.r34-food-need { margin:2mm 0 0; text-align:center; line-height:1.4; }
+.r34-counts { margin:2mm 0 0; }
+.r34-counts img { display:block; width:100%; height:auto; }
+.r34-counts figcaption { display:grid; grid-template-columns:repeat(3,1fr); text-align:center; font-size:8pt; font-weight:650; color:var(--hz-unit-dark); margin-top:.5mm; }
+.r34-quantity-answers { display:grid; gap:1.2mm; }
+.r34-quantity-answers p { display:flex; align-items:baseline; gap:1.5mm; margin:0; line-height:1.5; white-space:nowrap; }
+.r34-quantity-answers b { color:var(--hz-unit-dark); }
+.r34-quantity-answers .rr-gap { flex:1; }
+.r34-cinema { border-bottom:.5mm solid var(--r34-night); }
+.r34-cinema-poster { position:relative; padding-top:0; color:#fff; background:var(--r34-night); }
+.r34-cinema-poster h2 { margin:0; padding:3mm 3mm 2mm; font:820 25pt/1 var(--hz-font-sans); letter-spacing:-.035em; }
+.r34-cinema-poster h2 span { font-size:16pt; font-weight:520; letter-spacing:0; }
+.r34-free { position:absolute; top:4mm; right:3mm; background:var(--r34-gold); color:var(--hz-ink); padding:1.2mm 1.8mm; font-size:8pt; font-weight:820; transform:rotate(4deg); }
+.r34-cinema-poster > img { display:block; width:100%; height:auto; }
+.r34-program { display:flex; justify-content:space-between; align-items:baseline; gap:2mm; padding:1.8mm 3mm; background:var(--r34-gold); color:var(--hz-ink); font-size:9.5pt; }
+.r34-program > span b { font-size:14pt; }
+.r34-messages { padding:3mm 2.5mm 2mm; background:#f0f5f8; }
+.r34-messages section + section { margin-top:3mm; }
+.r34-messages h3 { margin:0 0 1mm; font-size:10pt; font-weight:720; color:#1767aa; }
+.r34-messages p { margin:0; font-size:9.5pt; line-height:1.4; }
+.r34-page .r34-reading-check { display:grid; gap:2mm; margin-top:3mm; line-height:1.4; }
+.r34-short-answer { display:inline-block; min-width:10mm; height:3.7mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); vertical-align:baseline; }
+.r34-match { display:grid; gap:3mm; line-height:1.4; }
+.r34-letter-answer { display:inline-block; width:5mm; height:4mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
+.r34-replies { display:grid; grid-template-columns:1fr 1fr; gap:2mm 4mm; margin-top:3mm; padding:2mm 2.5mm; border-left:.8mm solid #1767aa; background:#eff5f6; }
+.r34-replies p { margin:0; line-height:1.4; }
+.r34-replies b { color:var(--hz-unit-dark); margin-right:1.5mm; }
+.r34-your-cinema { margin:0 0 3mm; position:relative; }
+.r34-your-cinema img { display:block; width:100%; height:auto; }
+.r34-your-cinema figcaption { position:absolute; left:0; bottom:0; right:0; padding:2mm 3mm; color:#fff; background:#16364de8; font-size:12pt; font-weight:720; }
+.r34-message-sheet { border-left:.65mm solid var(--hz-unit); padding-left:2.5mm; }
+.r34-message-sheet header { font-size:9.5pt; color:var(--hz-unit-dark); font-weight:650; margin-bottom:1mm; }
+.r34-message-lines span { display:block; height:7mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
+.r34-page--2 .rr-challenge-grid { row-gap:5mm; }
+
+.r34-odd b { color:var(--hz-unit-dark); }
+.r34-reading-check > li { display:grid; grid-template-columns:minmax(0,1fr) 10mm; column-gap:2mm; align-items:end; }
+
+.r34-milk-note { margin:1.5mm 0 .5mm; line-height:1.4; }

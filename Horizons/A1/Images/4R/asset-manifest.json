@@ -1,0 +1,68 @@
+{
+  "review": "Units 3 & 4",
+  "pages": [
+    39,
+    40
+  ],
+  "assets": [
+    {
+      "asset_id": "HZN_A1_U04_LR_E04_IMG_01",
+      "file": "Outdoor-cinema-Son-Tung-Tran-6521574.jpg",
+      "kind": "licensed stock photography",
+      "creator": "Son Tung Tran",
+      "source_url": "https://www.pexels.com/photo/people-sitting-on-green-grass-field-in-an-outdoor-cinema-6521574/",
+      "download_url": "https://images.pexels.com/photos/6521574/pexels-photo-6521574.jpeg",
+      "license": "Pexels License",
+      "license_url": "https://www.pexels.com/license/",
+      "license_checked": "2026-10-25",
+      "dimensions": [
+        5089,
+        3393
+      ],
+      "sha256": "4645c01f094d266e11e459c912b817156910c4e9d20f39ecc996e381abdb1336",
+      "role": "Main fictional outdoor-cinema poster; full photographic environment",
+      "edits": "None. Original downloaded bytes retained; natural aspect ratio in HTML.",
+      "fictional_boundary": "Illustrative setting only. Identifiable people are not Ruby or Alex; no endorsement, invented interview, actual Saturday schedule, admission price or location is attributed to the photographer or venue."
+    },
+    {
+      "asset_id": "HZN_A1_U04_LR_E06_IMG_01",
+      "file": "Outdoor-cinema-Son-Tung-Tran-6521575.jpg",
+      "kind": "licensed stock photography",
+      "creator": "Son Tung Tran",
+      "source_url": "https://www.pexels.com/photo/people-sitting-on-chairs-in-an-outdoor-cinema-6521575/",
+      "download_url": "https://images.pexels.com/photos/6521575/pexels-photo-6521575.jpeg",
+      "license": "Pexels License",
+      "license_url": "https://www.pexels.com/license/",
+      "license_checked": "2026-10-25",
+      "dimensions": [
+        5472,
+        3648
+      ],
+      "sha256": "3e7dbef134a7fd070d107ddc286166c3be39e2ac41ddddf4ea006991cc6cf385",
+      "role": "A second view of the same real cinema setting, prompting an independent message",
+      "edits": "None. Original downloaded bytes retained; natural aspect ratio in HTML.",
+      "fictional_boundary": "Illustrative setting only. Identifiable people are not Ruby or Alex; no endorsement, invented interview, actual Saturday schedule, admission price or location is attributed to the photographer or venue."
+    },
+    {
+      "asset_id": "HZN_A1_U04_LR_E03_IMG_01",
+      "file": "Food-for-four-v1.png",
+      "kind": "generated realistic product photograph",
+      "generator": "Built-in image_gen",
+      "date": "2026-10-25",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "f183ffffdc9a2870d6e072524b66c4742e1c4d8fa855a2f1ab8c1c59fa9918c3",
+      "evidence": "A two red apples; B six individually separated bananas in 2 x 3; C four white eggs in 2 x 2. Visually counted on the actual asset and at print size.",
+      "role": "Exact quantity evidence for a four-of-each requirement; a separate live-text milk inventory supplies the uncountable case.",
+      "edits": "None; native generated alpha preserved. No code background removal, recoloring or synthetic stock retouching.",
+      "prompt_record": "Author workspace outputs/Horizons-A1-Units-3-4-Image-Briefs.md"
+    }
+  ]
+}
