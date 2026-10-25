@@ -7353,6 +7353,82 @@ body.hz-debug .hz-page::after {
 .r34-milk-note { margin:1.5mm 0 .5mm; line-height:1.4; }
 
 
+/* Horizons/A1/Lessons/lesson-5a-local.css */
+/* Clothing catalog, a real-price surprise, then a park photo challenge. Single exercise lane. */
+.l5a-page { --hz-unit:var(--hz-unit-1); --hz-unit-dark:#8f123f; --hz-unit-soft:#f8e6ee; font-size:9.5pt; }
+.l5a-page .hz-page-stack { gap:2mm; }
+.l5a-page .hz-lesson-title { font-size:28pt; letter-spacing:-.035em; }
+.l5a-page .hz-lesson-header { padding-bottom:3mm; }
+.l5a-page .hz-exercises { gap:1mm; }
+.l5a-page .hz-exercise { padding:1.5mm 0 2mm; }
+.l5a-page .hz-exercise__body { margin-top:2mm; }
+.l5a-page .hz-go-to { margin-block:.7mm 1.2mm; }
+.l5a-wardrobe { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:1mm 3mm; }
+.l5a-wardrobe figure { margin:0; text-align:center; }
+.l5a-clothing { height:24mm; width:100%; background-image:url("./Images/5A/Clothes-and-accessories-v1.png"); background-size:500% 200%; background-position:var(--px) var(--py); background-repeat:no-repeat; }
+.l5a-wardrobe figcaption { font-size:8pt; color:var(--hz-unit-dark); font-weight:700; margin-top:.6mm; }
+.l5a-wordlist { display:grid; grid-template-columns:repeat(5,minmax(0,1fr)); gap:1.5mm 2mm; margin-top:2mm; }
+.l5a-wordlist > span { display:flex; gap:1mm; align-items:baseline; white-space:nowrap; }
+.l5a-wordlist b { color:var(--hz-unit-dark); font-size:8pt; font-weight:650; }
+.l5a-letter { min-width:5mm; border-bottom:.25mm solid #a8abb0; color:#007b83; text-align:center; }
+.l5a-shop-feature { border-bottom:.3mm solid #00666d; background:#eef5f3; }
+.l5a-shop-feature > header { display:flex; align-items:baseline; justify-content:space-between; gap:2mm; background:#00666d; padding:2.4mm 3mm; color:white; }
+.l5a-shop-feature h2 { margin:0; font:750 20pt/1.1 var(--hz-font-sans); letter-spacing:-.035em; }
+.l5a-shop-feature > header p { margin:0; font-size:8pt; }
+.l5a-shop-layout { display:grid; grid-template-columns:68mm minmax(0,1fr); gap:3mm; padding:3mm; align-items:start; }
+.l5a-shop-layout figure { margin:0; }
+.l5a-shop-layout img { width:100%; height:auto; display:block; }
+.l5a-shop-layout figcaption { display:flex; justify-content:space-around; background:#00666d; color:white; padding:.8mm; font-size:8pt; font-weight:650; }
+.l5a-dialogue p { display:grid; grid-template-columns:7mm 1fr; gap:1mm; margin:0 0 1.2mm; line-height:1.35; }
+.l5a-dialogue p:last-child { margin-bottom:0; }
+.l5a-dialogue b { color:#00666d; font-weight:700; }
+.l5a-true-story { display:grid; grid-template-columns:1fr 29mm 36mm; align-items:center; gap:3mm; padding:2.2mm 3mm; background:#ffc42b; }
+.l5a-true-story h3 { margin:0 0 .5mm; font:750 11pt/1.2 var(--hz-font-sans); }
+.l5a-true-story p { margin:0; font-size:8.5pt; }
+.l5a-price { border-left:.3mm solid #9b7919; padding-left:3mm; }
+.l5a-price span { display:block; font-size:7pt; }
+.l5a-price b { font-size:19pt; font-weight:800; line-height:1.15; }
+.l5a-price--auction b { font-size:17pt; }
+.l5a-source { display:flex; justify-content:space-between; padding:1.4mm 3mm; margin:0; font-size:7pt; color:#202124; }
+.l5a-source a { color:#00666d; text-underline-offset:.4mm; }
+.l5a-list { list-style:none; padding:0; margin:0; counter-reset:item; }
+.l5a-list li { counter-increment:item; padding-left:5mm; position:relative; margin-bottom:1.4mm; line-height:1.4; }
+.l5a-list li:last-child { margin-bottom:0; }
+.l5a-list li::before { position:absolute; left:0; content:counter(item); color:var(--hz-unit-dark); font-weight:650; font-size:8.5pt; }
+.l5a-continuation-content { padding-top:15mm; }
+.l5a-page--2 .hz-focus-box { margin-left:13mm; }
+.l5a-grammar > p { margin-bottom:2mm; }
+.l5a-forms { border-top:.25mm solid #dfb5c5; border-bottom:.25mm solid #dfb5c5; margin:2mm 0; }
+.l5a-forms th,.l5a-forms td { padding-block:1mm; }
+.l5a-question-models { display:grid; grid-template-columns:1.1fr 1fr 1fr; gap:3mm; margin:2.5mm 0; }
+.l5a-question-models > p { margin:0; }
+.l5a-now-contrast { border-top:.25mm solid #dfb5c5; padding-top:2mm; margin-top:2mm!important; margin-bottom:0!important; }
+.l5a-now-contrast > span { margin-left:5mm; }
+.l5a-form-practice { display:grid; grid-template-columns:1fr 1fr; gap:1.5mm 5mm; }
+.l5a-gap { display:inline-block; width:14mm; height:3.6mm; border-bottom:.25mm solid #a8abb0; }
+.l5a-park { position:relative; margin:0 auto 2mm; max-width:146mm; }
+.l5a-park img { display:block; width:100%; height:auto; }
+.l5a-park figcaption { position:absolute; inset:auto 0 2mm; display:grid; grid-template-columns:repeat(3,1fr); text-align:center; }
+.l5a-park figcaption span { display:grid; place-items:center; width:6mm; height:6mm; background:#00666d; color:white; font-weight:700; font-size:9.5pt; border-radius:50%; margin:auto; }
+.l5a-listen-answers { display:flex; gap:13mm; }
+.l5a-listen-answers span { display:flex; align-items:baseline; gap:2mm; }
+.l5a-listen-answers b { color:var(--hz-unit-dark); font-size:8.5pt; }
+.l5a-listen-answers i { width:12mm; border-bottom:.25mm solid #a8abb0; }
+.l5a-final-model p { margin:0 0 .5mm; }
+.l5a-final-model b { color:#00666d; }
+.l5a-inset { margin-left:13mm; }
+.l5a-page--2 .hz-extra-practice { margin-top:auto; }
+
+.l5a-photo-example { margin:1mm 0 2mm; }
+.l5a-model-answer { color:#007b83; display:inline-block; min-width:27mm; text-align:center; border-bottom:.25mm solid #a8abb0; }
+
+.l5a-page--2 .hz-exercise:last-child .hz-exercise__body { display:block; }
+
+.l5a-gap--verb { width:29mm; }
+.l5a-gap--aux { width:9mm; }
+.l5a-page--2 .l5a-form-practice li { margin-bottom:0; }
+
+
 /* Student's Book unifier */
 
 html,
@@ -7451,6 +7527,7 @@ body {
   <link rel="stylesheet" href="./Lessons/lesson-4c-local.css">
   <link rel="stylesheet" href="./Lessons/lesson-4d-local.css">
   <link rel="stylesheet" href="./Lessons/review-3-4-local.css">
+  <link rel="stylesheet" href="./Lessons/lesson-5a-local.css">
   <script src="../Base/viewer/audio-player.js" data-audio-base="./Audios/" defer></script>
 </head>
 <body class="hz-book">
@@ -9720,6 +9797,29 @@ body {
 <div class="rr-mission"><h3>4D · Messages</h3><div class="rr-challenge-ball hz-task-text"><p>Write a message. Use because and so. Check your punctuation.</p></div></div>
 </div></div></div></section>
 </div></div></main><footer class="hz-page__footer"><span class="hz-page-number">40</span></footer></article>
+
+<!-- ===== 5A.html ===== -->
+<article class="hz-page hz-content hz-unit-5 l5a-page" data-page="41"><main class="hz-page__content"><div class="hz-page-stack">
+<header class="hz-lesson-header"><div aria-label="Lesson 5A" class="hz-lesson-tab"><span class="hz-lesson-tab__label">Lesson</span><span class="hz-lesson-tab__id">5A</span></div><div class="hz-lesson-heading"><h1 class="hz-lesson-title">WHAT ARE YOU WEARING?</h1><div class="hz-objectives"><span class="hz-objectives__item">Clothes and accessories</span><span class="hz-objectives__item">Present continuous</span></div></div></header>
+<div class="hz-exercises">
+<section class="hz-exercise"><div class="hz-exercise-number">1</div><div class="hz-exercise__content"><p class="hz-exercise__instruction"><span class="hz-audio-badge">♪ 5.1</span>Listen and repeat. Match the words and pictures. <span class="hz-new-words">NEW WORDS</span></p><div class="hz-exercise__body"><div class="l5a-wardrobe"><figure><div aria-label="T-shirt" class="l5a-clothing" role="img" style="--px:0%;--py:0%"></div><figcaption>A</figcaption></figure><figure><div aria-label="shirt" class="l5a-clothing" role="img" style="--px:25%;--py:0%"></div><figcaption>B</figcaption></figure><figure><div aria-label="sweater" class="l5a-clothing" role="img" style="--px:50%;--py:0%"></div><figcaption>C</figcaption></figure><figure><div aria-label="jacket" class="l5a-clothing" role="img" style="--px:75%;--py:0%"></div><figcaption>D</figcaption></figure><figure><div aria-label="jeans" class="l5a-clothing" role="img" style="--px:100%;--py:0%"></div><figcaption>E</figcaption></figure><figure><div aria-label="dress" class="l5a-clothing" role="img" style="--px:0%;--py:100%"></div><figcaption>F</figcaption></figure><figure><div aria-label="shoes" class="l5a-clothing" role="img" style="--px:25%;--py:100%"></div><figcaption>G</figcaption></figure><figure><div aria-label="hat" class="l5a-clothing" role="img" style="--px:50%;--py:100%"></div><figcaption>H</figcaption></figure><figure><div aria-label="scarf" class="l5a-clothing" role="img" style="--px:75%;--py:100%"></div><figcaption>I</figcaption></figure><figure><div aria-label="bag" class="l5a-clothing" role="img" style="--px:100%;--py:100%"></div><figcaption>J</figcaption></figure></div><div class="l5a-wordlist hz-task-text"><span><b>1</b> jacket <span class="l5a-letter">D</span></span><span><b>2</b> dress <span class="l5a-letter"></span></span><span><b>3</b> shoes <span class="l5a-letter"></span></span><span><b>4</b> T-shirt <span class="l5a-letter"></span></span><span><b>5</b> hat <span class="l5a-letter"></span></span><span><b>6</b> jeans <span class="l5a-letter"></span></span><span><b>7</b> shirt <span class="l5a-letter"></span></span><span><b>8</b> bag <span class="l5a-letter"></span></span><span><b>9</b> sweater <span class="l5a-letter"></span></span><span><b>10</b> scarf <span class="l5a-letter"></span></span></div></div></div></section>
+<div class="hz-go-to hz-go-to--inset">Go to: Vocabulary - Clothes and accessories, page ---</div>
+<section class="hz-exercise"><div class="hz-exercise-number">2</div><div class="hz-exercise__content"><p class="hz-exercise__instruction"><span class="hz-audio-badge">♪ 5.2</span>Look, read and listen. Is Eli buying the jacket?</p><div class="hz-exercise__body"><article class="l5a-shop-feature"><header><h2>A lucky find</h2><p>At the thrift shop.</p></header><div class="l5a-shop-layout"><figure><img alt="Nia, on the left, wears a green dress and yellow hat and reads a leaflet. Eli wears a blue jacket over a white T-shirt and touches its lapel." src="./Images/5A/Nia-and-Eli-thrift-shop-v1.png"/><figcaption><span>Nia</span><span>Eli</span></figcaption></figure><div class="l5a-dialogue hz-dialogue-text hz-task-text"><p><b>Nia</b><span>What are you wearing, Eli?</span></p><p><b>Eli</b><span>I’m wearing a blue jacket and jeans. I usually wear black!</span></p><p><b>Nia</b><span>Are you buying the jacket?</span></p><p><b>Eli</b><span>No, I’m not. I’m just looking. What are you doing?</span></p><p><b>Nia</b><span>I’m reading about this sweater. Look at the prices!</span></p><p><b>Eli</b><span>Wow! Is it a famous person’s sweater?</span></p><p><b>Nia</b><span>Yes. It’s Vince Lombardi’s.</span></p></div></div><aside class="l5a-true-story"><div><h3>One sweater. Two prices.</h3><p>Vince Lombardi’s sweater</p></div><div class="l5a-price l5a-price--shop"><span>Goodwill · 2014</span><b>58¢</b></div><div class="l5a-price l5a-price--auction"><span>Auction · 2015</span><b>$43,020</b></div></aside><p class="l5a-source"><a href="https://sports.ha.com/heritage-auctions-press-releases-and-news/lombardi-s-west-point-sweater-brings-thrift-shop-owners-43-020-at-auction.s?releaseId=2701">True story: Heritage Auctions, 2015.</a> <span>thrift shop: second-hand clothes</span></p></article></div></div></section>
+<section class="hz-exercise"><div class="hz-exercise-number">3</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Look at the conversation. Circle the correct words.</p><div class="hz-exercise__body"><ol class="l5a-list hz-task-text"><li><i>I’m wearing</i>: <em class="hz-answer-option">now / every day</em>?</li><li>In <i>Are you buying?</i>, <i>are</i> <em class="hz-answer-option">before / after</em> <i>you</i>?</li><li><i>Wear → wearing</i>: add <em class="hz-answer-option">-s / -ing</em>.</li></ol></div></div></section>
+</div></div></main><footer class="hz-page__footer"><span></span><span class="hz-page-number">41</span></footer></article>
+<article class="hz-page hz-content hz-unit-5 hz-continuation-page l5a-page l5a-page--2" data-page="42"><main class="hz-page__content"><span aria-label="Lesson 5A continued" class="hz-continuation">5A</span><div class="hz-page-stack"><div class="l5a-continuation-content">
+<section aria-label="Grammar: present continuous" class="hz-focus-box hz-no-break"><header class="hz-focus-box__header">GRAMMAR: PRESENT CONTINUOUS</header><div class="hz-focus-box__body hz-concept-body l5a-grammar">
+<p>For actions <strong>now</strong>: use <strong>am</strong>, <strong>is</strong> or <strong>are</strong> and a verb ending in <strong>-ing</strong>.</p>
+<table class="hz-concept-table l5a-forms"><thead><tr><th></th><th>Affirmative</th><th>Negative</th></tr></thead><tbody><tr><th>I</th><td>I<strong>’m</strong> wear<strong>ing</strong> a hat.</td><td>I<strong>’m not</strong> wear<strong>ing</strong> a hat.</td></tr><tr><th>he / she / it</th><td>She<strong>’s</strong> read<strong>ing</strong>.</td><td>She <strong>isn’t</strong> read<strong>ing</strong>.</td></tr><tr><th>you / we / they</th><td>They<strong>’re</strong> talk<strong>ing</strong>.</td><td>They <strong>aren’t</strong> talk<strong>ing</strong>.</td></tr></tbody></table>
+<div class="l5a-question-models"><p><strong>Are</strong> you wearing a hat?<br/>Yes, I <strong>am</strong>. / No, I<strong>’m not</strong>.</p><p><strong>Is</strong> he reading?<br/>Yes, he <strong>is</strong>. / No, he <strong>isn’t</strong>.</p><p>What <strong>are</strong> they doing?<br/>They<strong>’re</strong> talking.</p></div>
+<p class="l5a-now-contrast">I usually wear black. <span>Now, I<strong>’m wearing</strong> blue.</span></p>
+</div></section>
+<div class="hz-go-to hz-go-to--inset">Go to: Grammar - Present continuous, page ---</div>
+<div class="hz-exercises">
+<section class="hz-exercise"><div class="hz-exercise-number">4</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Look. Complete the sentences.</p><div class="hz-exercise__body"><figure class="l5a-park"><img alt="Three people: 1 wears a red sweater and reads; 2 wears a yellow hat and drinks; 3 wears a green dress and talks on the phone." src="./Images/5A/Three-outfits-in-the-park-v1.png"/><figcaption><span>1</span><span>2</span><span>3</span></figcaption></figure><p class="l5a-photo-example hz-task-text">0 I <span class="l5a-model-answer">am looking</span> at the photo. (look)</p><ol class="l5a-list l5a-form-practice hz-task-text"><li>Person 1 <span class="l5a-gap l5a-gap--verb"></span>. (read)</li><li>People 1 and 3 <span class="l5a-gap l5a-gap--verb"></span> hats. (wear)</li><li>Person 2 <span class="l5a-gap l5a-gap--verb"></span>. (drink)</li><li><span class="l5a-gap l5a-gap--aux"></span> person 3 <span class="l5a-gap"></span> on the phone? (talk)</li></ol></div></div></section>
+<section class="hz-exercise"><div class="hz-exercise-number">5</div><div class="hz-exercise__content"><p class="hz-exercise__instruction"><span class="hz-audio-badge">♪ 5.3</span>Listen. Which person in activity 4? Write 1, 2 or 3.</p><div class="hz-exercise__body l5a-listen-answers hz-task-text"><span><b>A</b><i></i></span><span><b>B</b><i></i></span><span><b>C</b><i></i></span></div></div></section>
+<section class="hz-exercise"><div class="hz-exercise-number">6</div><div class="hz-exercise__content"><p class="hz-exercise__instruction">Work in pairs. Choose a person in a photo. Do not show your partner.<br/>Describe the clothes. Your partner draws in a notebook. Compare.</p><div class="hz-exercise__body"><div class="l5a-final-model hz-dialogue-text hz-task-text"><p><b>A:</b> She’s wearing a green dress and a yellow hat.</p><p><b>B:</b> Is she wearing a scarf?</p><p><b>A:</b> No, she isn’t.</p></div></div></div></section>
+</div></div><aside class="hz-extra-practice l5a-inset"><span class="hz-extra-practice__label">EXTRA PRACTICE</span><span class="hz-extra-practice__prompt">Choose a family photo. Write about two people’s clothes and actions.</span></aside></div></main><footer class="hz-page__footer"><span></span><span class="hz-page-number">42</span></footer></article>
   </main>
 
   <a class="hz-pdf-button"

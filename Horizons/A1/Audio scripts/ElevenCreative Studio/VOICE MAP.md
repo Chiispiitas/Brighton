@@ -242,3 +242,11 @@ New fictional kitchen roles, not recast 4A speakers or interviews with photograp
 - NORA (Adeline, `5l5f8iK3YPeGga21rQIX`): 3.
 
 Nora retains her existing 2A voice. The post, location and generated scene are fictional, not an Olio testimonial or interview. Jessica announces both tracks and models the three vocabulary chunks. Eleven v3 Natural Stability (0.5). No forbidden clarity tag. The initially rejected model recording is retained only in the task scratch folder, not the book or audio ZIP. Final decode, normalized transcript and audio-event checks: `../4D-production.json`; no subjective listening review is claimed.
+
+
+## 5A - Clothes and actions now
+- Track 5.1: NARRATOR Jessica (`cgSgspJ2msm6clMCkdW9`), paragraphs 1–2.
+- Track 5.2: NARRATOR Jessica, paragraphs 1–2; NIA Adeline (`5l5f8iK3YPeGga21rQIX`), 3/5/7/9; ELI Jarnathan (`c6SfcYrb2t09NHXiT80T`), 4/6/8.
+- Track 5.3: NARRATOR Jessica, paragraphs 1–4.
+
+Nia and Eli are new fictional shop visitors reading a real historical price story; they are not the historical buyers. Retain these exact role IDs on a return. Jessica announces every track and narrates all vocabulary/descriptions. All three tracks use Eleven v3 / Natural stability 0.5 and no forbidden clarity tag. Final decode, exact normalized transcript and audio-event evidence: `../5A-production.json`; no subjective listening review is claimed.

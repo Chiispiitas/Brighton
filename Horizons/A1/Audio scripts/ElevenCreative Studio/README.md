@@ -167,3 +167,10 @@ Both tracks use Eleven v3 Natural Stability (0.5). Exact paragraph/voice assignm
 ## Lesson 4D - Food for everyone!
 
 Two Studio-ready imports: **4D - Track 4.7.txt** (sharing-food vocabulary; Jessica) and **4D - Track 4.8.txt** (Nora's model post; Jessica narration, Adeline/Nora). Match the numbered paragraph assignments in VOICE MAP.md. Use the existing approved pool and eleven_v3 Natural Stability (0.5). No clarity tag. MP3s are in `../../Audios/`; production checks are in `../4D-production.json`. The two-post comparison reads A silently and records B only. The source note, punctuation practice and final peer reply are not additional recordings. Retain existing Nora voice continuity. Final recordings decode, match normalized transcripts and show no detected audio events; this does not claim subjective listening approval.
+
+
+LESSON 5A — CLOTHES AND ACTIONS NOW
+- 5A — Track 5.1: ten vocabulary models, Jessica.
+- 5A — Track 5.2: fictional thrift-shop conversation; Jessica intro, Nia/Adeline and Eli/Jarnathan.
+- 5A — Track 5.3: three picture descriptions, Jessica; A/B/C identify persons 3/2/1.
+All three use Eleven v3, Natural stability 0.5. Import scripts and voice-map paragraph assignments match. The factual price sidebar is not narrated or presented as the fictional visitors' purchase. Final media are decoded and independently transcribed; no forbidden tag or detected throat event; subjective listening review remains unclaimed.

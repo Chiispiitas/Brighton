@@ -1,0 +1,70 @@
+{
+  "lesson": "5A",
+  "assets": [
+    {
+      "file": "Clothes-and-accessories-v1.png",
+      "type": "generated photorealistic raster",
+      "production_mode": "built-in image_gen",
+      "date": "2026-10-25",
+      "sha256": "bb91477da7b478ffb116e500b22b6a0f63cfea1bbf7b8c0fdc019bc5921d22e0",
+      "dimensions": [
+        1983,
+        793
+      ],
+      "mode": "RGBA",
+      "native_alpha_extrema": [
+        0,
+        255
+      ],
+      "prompt": "Photorealistic editorial clothing product cutouts for an adult beginner English book. ONE very wide landscape transparent PNG sprite sheet, aspect ratio 5:2, with EXACTLY TEN isolated clothing products arranged in a strict invisible equal-cell grid FIVE columns by TWO rows. Each item wholly inside its equal cell with generous transparent margins, no objects crossing cells. TOP ROW from left: A plain white short-sleeved T-shirt; B a pale blue long-sleeved button-front shirt; C a red knitted crew-neck sweater; D a blue denim jacket; E a pair of dark blue jeans. BOTTOM ROW from left: F a green knee-length sleeveless dress; G a pair of clean white low-top shoes; H a mustard-yellow brimmed hat; I an orange scarf folded loosely; J a small brown shoulder bag with clearly visible strap. Photograph all ten from the front, natural fabric texture and tasteful soft studio lighting; complete silhouettes, each same meaningful scale relative to cell, not real-world relative sizing. Exact inventory and exact positions critical because learners match letters to these products. No people, no mannequins, no hangers, no borders, no tiles, no shelves, no words or numbers, no brand marks. Actual alpha transparency throughout background and between items, not checkerboard or white baked background.",
+      "purpose": "Ten exact isolated products in a 5 x 2 invisible grid, native alpha, letters and matching spaces live; CSS background-position crops only.",
+      "pixel_edits": "None; native generated file bytes retained. Browser/CSS presentation only.",
+      "identity_boundary": "Synthetic original people/products. No real interview, historical garment reproduction, brand endorsement or stock-license claim.",
+      "asset_id": "HZN_A1_U05_LA_E01_IMG_01"
+    },
+    {
+      "file": "Nia-and-Eli-thrift-shop-v1.png",
+      "type": "generated photorealistic raster",
+      "production_mode": "built-in image_gen",
+      "date": "2026-10-25",
+      "sha256": "1bf1a670a40314ef094ce8121d4afe845dfd0521435c10fb7df58f2aa3522fce",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "mode": "RGB",
+      "native_alpha_extrema": null,
+      "prompt": "Create one realistic editorial photograph for an adult A1 English coursebook, landscape 4:3 composition. A bright welcoming independent second-hand clothing shop with full real background: orderly clothes racks, warm wood, daylight, rich but restrained natural colors. Exactly two original fictional adults around age 25, shown from head to knees or lower so clothing readable. LEFT: an East Asian woman Nia, short dark bob hair, wearing a plain green knee-length dress and a mustard yellow brimmed hat, carrying a small brown shoulder bag. She holds and reads an unfolded cream paper leaflet at chest height, with no readable lettering, looking down at its page. RIGHT: a Black man Eli with short curly hair, wearing a clearly blue denim jacket over a white T-shirt and dark jeans. He looks down at the blue jacket he is currently wearing, one hand touching its lapel, naturally talking to Nia. Nobody holds another jacket. Both relaxed, expressive, natural anatomy and everyday adult proportions, attractive professional textbook photography without fashion-ad gloss. Keep the main characters large and legible, uncluttered background supporting second-hand shop. No labels, text, logos, caption, frame or page design. This scene is fictional, not a depiction of Vince Lombardi or the real thrift-shop find.",
+      "purpose": "Original fictional adults: Nia reads a leaflet in a green dress and yellow hat; Eli wears a blue jacket. Original aspect ratio and full source background retained.",
+      "pixel_edits": "None; native generated file bytes retained. Browser/CSS presentation only.",
+      "identity_boundary": "Synthetic original people/products. No real interview, historical garment reproduction, brand endorsement or stock-license claim.",
+      "asset_id": "HZN_A1_U05_LA_E02_IMG_01"
+    },
+    {
+      "file": "Three-outfits-in-the-park-v1.png",
+      "type": "generated photorealistic raster",
+      "production_mode": "built-in image_gen",
+      "date": "2026-10-25",
+      "sha256": "70396216066e8ad7b359c54172e0335f3e121af6eaa50518049bbc9f7c6b5b45",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "mode": "RGB",
+      "native_alpha_extrema": null,
+      "prompt": "Create one high quality realistic textbook editorial photo, landscape ratio about 2:1, full natural background of a sunny town park with a bench and soft leafy depth. Exactly THREE clearly separated original fictional adults, full body, large enough to inspect their outfits, comfortable everyday proportions. LEFT: woman with curly dark hair, standing and reading an open book; wearing a RED knitted sweater, dark BLUE jeans and WHITE shoes, no hat, no bag. MIDDLE: man with straight dark hair sitting on the bench, drinking from a plain white cup; wearing a WHITE short-sleeved T-shirt, black jeans, white shoes and a YELLOW brimmed hat, no jacket. RIGHT: woman with long brown hair standing and talking on a mobile phone; wearing a GREEN sleeveless knee-length dress, white shoes and carrying a BROWN shoulder bag, no hat. Strict distinction: left reads, middle drinks, right talks on phone. No additional people or clothing props. Clear readable gestures, faces, hands, no hand deformities, natural relaxed human moment, cheerful saturated colors and full photographic scene. Leave small natural gaps separating each person; do not collage. No words, letters, numbers, signs, logos or graphic design. Exact outfits and actions are educational evidence.",
+      "purpose": "Three anonymous adults supply specific independent clothing/action evidence for forms and listening. Full uncropped original aspect ratio; image 146mm wide, about 73mm high. Live person-number markers avoid faces, hands and clothing evidence.",
+      "pixel_edits": "None; native generated file bytes retained. Browser/CSS presentation only.",
+      "identity_boundary": "Synthetic original people/products. No real interview, historical garment reproduction, brand endorsement or stock-license claim.",
+      "asset_id": "HZN_A1_U05_LA_E04_IMG_01"
+    }
+  ],
+  "primary_story_source": {
+    "url": "https://sports.ha.com/heritage-auctions-press-releases-and-news/lombardi-s-west-point-sweater-brings-thrift-shop-owners-43-020-at-auction.s?releaseId=2701",
+    "checked": "2026-10-25",
+    "publication_date": "2015-02-24",
+    "event": "2015-02-21 auction",
+    "supported_facts": "Reported 58-cent Goodwill find in previous summer (2014), Vince Lombardi ownership, $43,020 sale. Lead states 58 cents; later text reports 58-cents-per-pound store pricing.",
+    "fiction_boundary": "Nia/Eli are fictional readers, not historical finders. Red vocabulary sweater and generated scenes do not depict historical garment/events. No source prose, images or brand artwork copied."
+  }
+}
