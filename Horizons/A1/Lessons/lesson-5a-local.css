@@ -1,7 +1,6 @@
 /* Clothing catalog, a real-price surprise, then a park photo challenge. Single exercise lane. */
 .l5a-page { --hz-unit:var(--hz-unit-1); --hz-unit-dark:#8f123f; --hz-unit-soft:#f8e6ee; font-size:9.5pt; }
 .l5a-page .hz-page-stack { gap:2mm; }
-.l5a-page .hz-lesson-title { font-size:28pt; letter-spacing:-.035em; }
 .l5a-page .hz-lesson-header { padding-bottom:3mm; }
 .l5a-page .hz-exercises { gap:1mm; }
 .l5a-page .hz-exercise { padding:1.5mm 0 2mm; }
