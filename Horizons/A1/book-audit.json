@@ -1449,6 +1449,134 @@
         "buttons": 39
       },
       "rollback": "Exact before-copies and guarded restore in work/type-consistency-20261024."
+    },
+    "review_composition_20261025": {
+      "date": "2026-10-25",
+      "status": "Verified: assembled and standalone HTML, live viewer, reopened GitHub-built PDF",
+      "scope": "Only Review & Practice, pages 21–22; native lesson flow unchanged",
+      "references": [
+        "Personal Best A1 PDF pages 22–23",
+        "English File Beginner PDF pages 16–17"
+      ],
+      "composition": {
+        "21": {
+          "left": [
+            1,
+            2,
+            3
+          ],
+          "right": [
+            4
+          ]
+        },
+        "22": {
+          "left": [
+            5,
+            6
+          ],
+          "right": [
+            7
+          ]
+        }
+      },
+      "retained": {
+        "activities": 7,
+        "all_answer_choices": true,
+        "all_gap_and_open_response_counts": true,
+        "challenge_circles": 8,
+        "all_media_audio": true,
+        "other_page_html_fragments": 32
+      },
+      "functional_type": "Unchanged role sizes: tasks 9.5pt, instructions 8.9pt, banks 9pt; two banks share neutral color treatment",
+      "writing_lines_mm": 7,
+      "minimum_column_clearance_px": 37.71875,
+      "standalone_matches_assembled": true,
+      "evidence_directory": "work/review-redesign-20261025",
+      "content_changes": [
+        "Activity 5 explicitly refers to activity 4",
+        "Redundant exhibition location caption removed"
+      ],
+      "artwork": "Existing stock triptych and generated full-background studio contact sheet retained; no image generation required",
+      "supersedes": "Earlier Review layout evidence and the old single-column restriction for reviews only.",
+      "live": {
+        "pages": 34,
+        "review": [
+          {
+            "page": "21",
+            "columns": [
+              [
+                "1",
+                "2",
+                "3"
+              ],
+              [
+                "4"
+              ]
+            ],
+            "grid": "326.922px 326.938px"
+          },
+          {
+            "page": "22",
+            "columns": [
+              [
+                "5",
+                "6"
+              ],
+              [
+                "7"
+              ]
+            ],
+            "grid": "326.922px 326.938px"
+          }
+        ],
+        "otherReviewGrids": 0,
+        "balls": 8,
+        "audioButtons": 39
+      },
+      "saved_pdf": {
+        "pages": 34,
+        "A4": true,
+        "other_32_pages_pixel_and_text_identical": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          10,
+          11,
+          12,
+          13,
+          14,
+          15,
+          16,
+          17,
+          18,
+          19,
+          20,
+          23,
+          24,
+          25,
+          26,
+          27,
+          28,
+          29,
+          30,
+          31,
+          32,
+          33,
+          34,
+          35,
+          36,
+          37,
+          38
+        ],
+        "review_text_matches_intended_source_changes": true,
+        "all_seven_activity_answers_preserved": true,
+        "pdf_bytes": 6763865
+      },
+      "implementation_commit": "02cc8f500e73edf7520195a15e927fbc0049838b",
+      "pdf_build_commit": "ce5a4f0",
+      "reversibility": "Exact before-copies, hashes and guarded restore in work/review-redesign-20261025; previous accepted book is Git revision 8eff8a8."
     }
   },
   "pending": [
@@ -1495,8 +1623,8 @@
       ],
       "fingerprint": {
         "files": 367,
-        "bytes": 417193560,
-        "sha256": "d31d66f2729cd1689c9d4ad7247dc1b239e8cd4faf938bce957854803b4cba1f"
+        "bytes": 417188531,
+        "sha256": "78d64a60223f57d5ea7da68654b8901749c896b77c5da55043b4ec95cb897072"
       }
     },
     "shared_rendering": {
@@ -1516,8 +1644,8 @@
       ],
       "fingerprint": {
         "files": 1,
-        "bytes": 6750696,
-        "sha256": "b40e38796ea246fc9bfc7d73288f7dfdfa62cf7d814fa2409ba523d0f7f7b076"
+        "bytes": 6763865,
+        "sha256": "ea6f8a2471699d537f49a9fe783959a8076d0b887ffd51ecbe4a5dddcfb5e286"
       }
     },
     "audit_criteria": {
@@ -1529,12 +1657,12 @@
       ],
       "fingerprint": {
         "files": 4,
-        "bytes": 111340,
-        "sha256": "6a84dadb417fa80c9c738d4a43b5c196fd89b53531c00288430ec4a74cb2b556"
+        "bytes": 112251,
+        "sha256": "29da7a3504a43e3965d0458c7bb5bca2d218bc2798dba754646f38fd2d24b050"
       }
     }
   },
   "content_baseline_commit": "2f404b547b7da07be81a0622a78591d3299c402a",
-  "current_revision": "Book-wide functional typography normalized and verified in the live HTML viewer, all 17 masters and the rebuilt 34-page A4 PDF; integrated-content typography and all lesson content/media preserved.",
-  "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content."
+  "current_revision": "Units 1 & 2 Review redesigned and live with the author-approved review-only two-column composition. Reopened 34-page A4 PDF verified; all other 32 saved pages pixel/text identical; ordinary lessons and shared functional typography retained.",
+  "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope."
 }
