@@ -41,6 +41,18 @@ function canonicalExamId(value) {
 
 // Snapshot of the live published getExams response captured while this package was built.
 const FALLBACK_EXAMS = [
+{
+  "examId": "brighton-b2-listening-practice-3",
+  "title": "B2 Listening Practice Test 3",
+  "level": "B2",
+  "skill": "Listening",
+  "description": "Four-part B2 First listening practice based on Cambridge First Practice Tests 1, Test 3.",
+  "shareUrl": "https://exams.bebrighton.net/Exams/exams/b2-listening-practice-3/",
+  "iframeUrl": "https://exams.bebrighton.net/Exams/exams/b2-listening-practice-3/",
+  "isActive": true,
+  "totalQuestions": 30,
+  "maxScore": 30
+},
   {
     "examId": "brighton-a2-listening-final",
     "title": "A2 Listening Exam",
@@ -1666,7 +1678,7 @@ function flattenAnswers(
 
 }
 
-function gradeSubmission(
+export function gradeSubmission(
   payload,
   answerKey
 ) {
@@ -2260,6 +2272,9 @@ function publicSubmissionFields(
 ) {
 
   return {
+    writingAiJson: item.writingAiJson,
+    writingTeacherJson: item.writingTeacherJson,
+    writingRevision: item.writingRevision,
 
     submissionId:
       item.submissionId,

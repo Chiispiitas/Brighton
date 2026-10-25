@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Young Learners Placement Results</title>
+  <meta name="description" content="Be Brighter, Be Brighton!" />
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Young Learners Placement Results" />
+  <meta property="og:description" content="Be Brighter, Be Brighton!" />
+  <meta property="og:image" content="https://exams.bebrighton.net/Exams/assets/og-whatsapp.jpg?v=20260922b" />
+  <meta property="og:image:url" content="https://exams.bebrighton.net/Exams/assets/og-whatsapp.jpg?v=20260922b" />
+  <meta property="og:image:secure_url" content="https://exams.bebrighton.net/Exams/assets/og-whatsapp.jpg?v=20260922b" />
+  <meta property="og:image:type" content="image/jpeg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Brighton English School" />
+  <meta property="og:url" content="https://exams.bebrighton.net/Placement/YoungLearners/results" />
+  <meta property="og:site_name" content="Brighton English School" />
+  <link rel="canonical" href="https://exams.bebrighton.net/Placement/YoungLearners/results" />
+  <link rel="image_src" href="https://exams.bebrighton.net/Exams/assets/og-whatsapp.jpg?v=20260922b" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Young Learners Placement Results" />
+  <meta name="twitter:description" content="Be Brighter, Be Brighton!" />
+  <meta name="twitter:image" content="https://exams.bebrighton.net/Exams/assets/og-whatsapp.jpg?v=20260922b" />
+  <link rel="icon" type="image/png" href="../../Exams/assets/favicon.png" />
+  <link rel="stylesheet" href="../../Exams/portal.css?v=20260920-results-gradient1" />
+  <link rel="stylesheet" href="../results.css?v=20260921-phone2" />
+  <link rel="stylesheet" href="results-access.css?v=20261013results2" />
+  <meta name="robots" content="noindex, nofollow" />
+</head>
+<body>
+  <header class="portal-header">
+    <a class="portal-brand" href="index.html" aria-label="Brighton Placement Test">
+      <img src="../../Exams/assets/brighton-logo.png" alt="Brighton English School" />
+    </a>
+    <div class="portal-title-block">
+      <p class="eyebrow">Teacher area</p>
+      <h1>Young Learners Results</h1>
+    </div>
+    <nav class="header-actions">
+      <a class="secondary-btn" href="index.html">Young Learners Test</a>
+      <a class="secondary-btn" href="../results">General Results</a>
+    </nav>
+  </header>
+
+  <main class="portal-main placement-results-main">
+    <div id="dashboardContent">
+    <section class="filter-card">
+      <label>
+        <span>Student</span>
+        <input id="studentInput" type="text" placeholder="Optional: student name" />
+      </label>
+      <label>
+        <span>Level</span>
+        <select id="levelSelect">
+          <option value="">All levels</option>
+          <option value="PRE-A1">Pre-A1 · Starters</option><option value="A1">A1 · Movers</option><option value="A2">A2 · Flyers</option>
+        </select>
+      </label>
+      <label>
+        <span>Status</span>
+        <select id="statusSelect">
+          <option value="">All attempts</option>
+          <option value="completed">Completed</option>
+          <option value="active">In progress</option>
+        </select>
+      </label>
+      <button id="loadBtn" class="primary-btn" type="button">Load results</button>
+      <button id="clearBtn" class="secondary-btn" type="button">Clear</button>
+      <button id="exportBtn" class="secondary-btn" type="button">Export CSV</button>
+    </section>
+
+    <section class="summary-grid">
+      <article class="summary-card"><span>Total attempts</span><strong id="summaryTotal">0</strong></article>
+      <article class="summary-card"><span>Completed</span><strong id="summaryCompleted">0</strong></article>
+      <article class="summary-card"><span>Most common level</span><strong id="summaryLevel">—</strong></article>
+    </section>
+
+    <section class="results-card">
+      <div class="section-head">
+        <div>
+          <h2>Placement attempts</h2>
+          <p id="resultsStatus" class="muted">Loading placement results…</p>
+        </div>
+      </div>
+      <div class="table-wrap">
+        <table class="results-table placement-results-table">
+          <thead>
+            <tr>
+              <th>Student</th>
+              <th>Phone</th>
+              <th>Status</th>
+              <th>Overall</th>
+              <th>Started</th>
+              <th>Completed</th>
+              <th>Time</th>
+              <th>Speaking evidence</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="resultsBody">
+            <tr><td colspan="9">Loading…</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+    </div>
+  </main>
+
+  <div id="detailsModal" class="modal hidden" aria-hidden="true">
+    <div class="modal-card placement-modal-card">
+      <div class="modal-head">
+        <div>
+          <p class="eyebrow">Placement attempt</p>
+          <h2 id="detailsTitle">Student result</h2>
+        </div>
+        <button id="closeModalBtn" class="icon-btn" type="button" aria-label="Close">×</button>
+      </div>
+      <div id="detailsContent" class="details-content"></div>
+    </div>
+  </div>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="../../Exams/config.js"></script>
+  <script src="results.js?v=20261013results2"></script>
+</body>
+</html>

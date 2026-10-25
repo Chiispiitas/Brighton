@@ -1,0 +1,43 @@
+{
+  "examId": "brighton-a2-listening-final",
+  "title": "Brighton A2 Listening Final Exam",
+  "maxScore": 25,
+  "parts": {
+    "1": { "label": "Part 1", "maxScore": 5, "questions": [1, 2, 3, 4, 5] },
+    "2": { "label": "Part 2", "maxScore": 5, "questions": [6, 7, 8, 9, 10] },
+    "3": { "label": "Part 3", "maxScore": 5, "questions": [11, 12, 13, 14, 15] },
+    "4": { "label": "Part 4", "maxScore": 5, "questions": [16, 17, 18, 19, 20] },
+    "5": { "label": "Part 5", "maxScore": 5, "questions": [21, 22, 23, 24, 25] }
+  },
+  "answers": {
+    "1": { "part": 1, "points": 1, "mode": "exact", "answers": ["A"] },
+    "2": { "part": 1, "points": 1, "mode": "exact", "answers": ["C"] },
+    "3": { "part": 1, "points": 1, "mode": "exact", "answers": ["C"] },
+    "4": { "part": 1, "points": 1, "mode": "exact", "answers": ["A"] },
+    "5": { "part": 1, "points": 1, "mode": "exact", "answers": ["A"] },
+
+    "6": { "part": 2, "points": 1, "mode": "exact", "answers": ["August"] },
+    "7": { "part": 2, "points": 1, "mode": "exact", "answers": ["19", "nineteen"] },
+    "8": { "part": 2, "points": 1, "mode": "exact", "answers": ["drive"] },
+    "9": { "part": 2, "points": 1, "mode": "exact", "answers": ["65", "£65", "65 pounds", "sixty five", "sixty-five"] },
+    "10": { "part": 2, "points": 1, "mode": "exact", "answers": ["photograph", "photo", "a photograph", "a photo"] },
+
+    "11": { "part": 3, "points": 1, "mode": "exact", "answers": ["B"] },
+    "12": { "part": 3, "points": 1, "mode": "exact", "answers": ["A"] },
+    "13": { "part": 3, "points": 1, "mode": "exact", "answers": ["C"] },
+    "14": { "part": 3, "points": 1, "mode": "exact", "answers": ["B"] },
+    "15": { "part": 3, "points": 1, "mode": "exact", "answers": ["B"] },
+
+    "16": { "part": 4, "points": 1, "mode": "exact", "answers": ["A"] },
+    "17": { "part": 4, "points": 1, "mode": "exact", "answers": ["B"] },
+    "18": { "part": 4, "points": 1, "mode": "exact", "answers": ["C"] },
+    "19": { "part": 4, "points": 1, "mode": "exact", "answers": ["B"] },
+    "20": { "part": 4, "points": 1, "mode": "exact", "answers": ["A"] },
+
+    "21": { "part": 5, "points": 1, "mode": "exact", "answers": ["F"] },
+    "22": { "part": 5, "points": 1, "mode": "exact", "answers": ["C"] },
+    "23": { "part": 5, "points": 1, "mode": "exact", "answers": ["A"] },
+    "24": { "part": 5, "points": 1, "mode": "exact", "answers": ["D"] },
+    "25": { "part": 5, "points": 1, "mode": "exact", "answers": ["H"] }
+  }
+}

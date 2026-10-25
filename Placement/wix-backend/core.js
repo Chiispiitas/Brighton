@@ -13,7 +13,7 @@ export const CORS_HEADERS = {
 export const DATA_OPTIONS = { suppressAuth: true };
 
 // Must match Exams/answer-keys/version.json in the Brighton repository.
-export const ANSWER_KEY_VERSION = "2026-09-18.1";
+export const ANSWER_KEY_VERSION = "2026-10-24.1";
 
 const COLLECTION_ALIASES = {
   exams: "Exams",

@@ -29,7 +29,7 @@ function read(filePath) {
 }
 
 function loadExamParts() {
-  const sandbox = { window: {}, console };
+  const sandbox = { window: { location: { pathname: "/Exams/results.html" } }, console };
   vm.createContext(sandbox);
   vm.runInContext(read(DATA_PATH), sandbox, { filename: DATA_PATH });
   return sandbox.window.examParts;
@@ -39,7 +39,7 @@ function loadFallbackExam() {
   const source = read(CONFIG_PATH);
   const marker = "/* ----------------------------------------------\n   Student test safety";
   const prefix = source.includes(marker) ? source.slice(0, source.indexOf(marker)) : source;
-  const sandbox = { window: {}, console };
+  const sandbox = { window: { location: { pathname: "/Exams/results.html" } }, console };
   vm.createContext(sandbox);
   vm.runInContext(prefix, sandbox, { filename: CONFIG_PATH });
   return (sandbox.window.BRIGHTON_SITE_CONFIG?.FALLBACK_EXAMS || []).find(

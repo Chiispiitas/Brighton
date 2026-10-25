@@ -6,6 +6,10 @@
 
 (() => {
   const App = window.BrightonApp || {};
+  const Writing = window.BrightonWriting;
+  let activeWritingRow = null;
+  let writingBusy = false;
+  let writingViewToken = 0;
   const config = window.BRIGHTON_SITE_CONFIG || {};
   const apiBase = String(config.API_BASE_URL || "").replace(/\/$/, "");
   const PUBLIC_EXAMS_ORIGIN = "https://exams.bebrighton.net";
@@ -77,7 +81,7 @@
       levelLabel: "B2",
       title: "Short B2 Writing rubric",
       actionTitle: "B2 Writing marking",
-      actionText: "Score each writing sample from 0–5 in the four Cambridge-style subscales. Totals are calculated here only and are not stored.",
+      actionText: "Score each writing sample from 0–5 in the four Cambridge-style subscales. AI suggestions contribute to the total. Adjust the bands and save your review, or restore the original AI scores.",
       buttonText: "Open B2 writing rubric",
       choiceBased: true,
       defaultSubscales: ["Content", "Communicative Achievement", "Organisation", "Language"],
@@ -229,6 +233,7 @@
       if (!res.ok || data.success === false) throw new Error(data.error || `HTTP ${res.status}`);
       const normalizedItems = (data.items || []).map(normalizeSubmissionIdentity);
       rows = await applyLocalGrading(normalizedItems);
+      await loadWritingSuggestions();
       await loadProgress();
       startProgressTimer();
       const visibleRows = getFilteredRows();
@@ -286,7 +291,9 @@
   }
 
   function resolveCanonicalExam(row) {
-    const catalog = examCatalog.length ? examCatalog : (config.FALLBACK_EXAMS || []);
+    // The live catalog only includes active exams. Historical and in-progress
+    // results still need identities from the bundled catalog.
+    const catalog = [...examCatalog, ...(config.FALLBACK_EXAMS || [])];
     const payload = payloadFromRow(row);
     const candidateIds = [row.examId, payload.examId].map(baseAssessmentId).filter(Boolean);
 
@@ -294,6 +301,10 @@
       const exact = catalog.find(exam => baseAssessmentId(exam.examId) === id);
       if (exact) return exact;
     }
+
+    // An explicit identity must never be replaced by another exam merely
+    // because it has the same level, skill or question count.
+    if (candidateIds.some(id => /^brighton-/i.test(id))) return null;
 
     const titleCandidates = [row.examTitle, payload.examTitle].map(value => normalizeIdentityText(stripLegacyMarker(value))).filter(Boolean);
     for (const title of titleCandidates) {
@@ -388,6 +399,10 @@
     const updated = [];
     for (const row of items) {
       const copy = { ...row };
+      if (copy.writingAiJson) {
+        updated.push(Writing.apply(copy));
+        continue;
+      }
       if (isWritingSubmission(copy)) {
         updated.push(copy);
         continue;
@@ -578,10 +593,10 @@
       const partScores = safeJson(row.partScoresJson, row.partScores || {});
       const writing = isWritingSubmission(row);
       const mixed = isMixedReadingWritingSubmission(row);
-      const scoreCell = writing
-        ? `<span class="score-pill manual-score-pill">Manual review</span>`
-        : `<span class="score-pill">${row.score ?? "—"}/${row.maxScore ?? "—"}</span>`;
-      const percentCell = writing ? "—" : (typeof row.percentage === "number" ? `${row.percentage}%` : "—");
+      const scoreCell = Writing?.profileFor(row) && !row.writingAiJson
+        ? `<span class="score-pill manual-score-pill">Assessment pending</span>`
+        : `<span class="score-pill">${row.score ?? "—"}/${row.maxScore ?? "—"}</span>${row.writingAiJson ? `<br><span class="muted tiny-text">${row.writingTeacherJson ? "Teacher saved" : "Suggested AI"}</span>` : ""}`;
+      const percentCell = Writing?.profileFor(row) && !row.writingAiJson ? "—" : (typeof row.percentage === "number" ? `${row.percentage}%` : "—");
       const partsCell = writing ? formatWritingMini(row) : mixed ? formatMixedMini(row, partScores) : formatParts(partScores);
       return `
         <tr class="${isHighlightedRow(row) ? "url-row-highlight" : ""}">
@@ -602,21 +617,19 @@
     });
   }
 
-  function updateSummary(serverSummary) {
+  function updateSummary() {
     const visibleRows = getFilteredRows();
-    const useServerSummary = !getStudentFilter() && !getSelectedExamId() && serverSummary;
-    const total = useServerSummary ? serverSummary.total : visibleRows.length;
-    const percentages = visibleRows.map(r => Number(r.percentage)).filter(Number.isFinite);
-    const average = useServerSummary ? serverSummary.average : (percentages.length ? Math.round(percentages.reduce((a, b) => a + b, 0) / percentages.length) : null);
-    const highest = useServerSummary ? serverSummary.highest : (percentages.length ? Math.max(...percentages) : null);
-    const lowest = useServerSummary ? serverSummary.lowest : (percentages.length ? Math.min(...percentages) : null);
-    setText("#summaryTotal", total ?? 0);
-    setText("#summaryAverage", average === null || average === undefined ? "—" : `${average}%`);
-    setText("#summaryHighest", highest === null || highest === undefined ? "—" : `${highest}%`);
-    setText("#summaryLowest", lowest === null || lowest === undefined ? "—" : `${lowest}%`);
+    const percentages = visibleRows.filter(row => typeof row.percentage === "number").map(row => row.percentage);
+    const average = percentages.length ? Math.round(percentages.reduce((a,b)=>a+b,0)/percentages.length) : null;
+    setText("#summaryTotal", visibleRows.length);
+    setText("#summaryAverage", average === null ? "—" : average + "%");
+    setText("#summaryHighest", percentages.length ? Math.max(...percentages) + "%" : "—");
+    setText("#summaryLowest", percentages.length ? Math.min(...percentages) + "%" : "—");
   }
 
   async function openProgressDetails(row, options = {}) {
+    activeWritingRow = null;
+    writingViewToken++;
     if (!row) return;
     if (!options.refreshing && !options.fromQuery) syncUrlFromControls({ replace: false, view: "live", open: "progress", row });
     activeProgressPreviewId = row.progressId || progressKey(row);
@@ -685,7 +698,13 @@
   async function openDetails(row, options = {}) {
     if (!row) return;
     if (!options.fromQuery) syncUrlFromControls({ replace: false, view: "submissions", open: "details", row });
+    activeWritingRow = null;
+    writingViewToken++;
     openModal("Submission details", "Loading submission details...");
+    if (Writing?.profileFor(row)) {
+      await openScoredWritingDetails(row);
+      return;
+    }
 
     if (isMixedReadingWritingSubmission(row)) {
       await openMixedReadingWritingDetails(row);
@@ -744,6 +763,149 @@
       + renderMixedWritingReviewSection(samples, rubricProfile);
 
     bindWritingScoringControls();
+  }
+
+  async function writingRequest(route, row, extra = {}) {
+    const attempts = route === "getWritingAssessment" ? 4 : 1;
+    for (let attempt = 0; attempt < attempts; attempt++) {
+    const response = await fetch(`${apiBase}/${route}`, {
+      method: "POST", headers: { "Content-Type": "text/plain" },
+      body: JSON.stringify({ classId: row.classId, submissionId: row.submissionId, ...extra })
+    });
+    const data = await response.json().catch(() => ({}));
+    if ([408, 502, 503, 504].includes(response.status) && attempt + 1 < attempts) {
+      // Wix can time out the response while the assessment completes and is cached.
+      await new Promise(resolve => setTimeout(resolve, 2000));
+      continue;
+    }
+    if (!response.ok || data.success === false || !data.assessment?.writingAiJson) throw new Error(data.error || "Could not load the writing assessment.");
+    return data.assessment;
+    }
+  }
+
+  async function loadWritingSuggestions() {
+    const candidates = getFilteredRows().filter(row => Writing?.profileFor(row) && !row.writingAiJson);
+    let cursor = 0;
+    async function worker() {
+      while (cursor < candidates.length) {
+        const row = candidates[cursor++];
+        try { Object.assign(row, await writingRequest("getWritingAssessment", row)); }
+        catch (error) {
+          row._writingError = error.message;
+          // Keep the objective score, but do not report a provisional combined percentage.
+          row.percentage = null;
+        }
+      }
+    }
+    if (status && candidates.length) status.textContent = `Loading AI writing suggestions for ${candidates.length} submission(s)...`;
+    await Promise.all([worker(), worker()]);
+  }
+
+  async function openScoredWritingDetails(row) {
+    const token = writingViewToken;
+    if (!row.writingAiJson) {
+      try { Object.assign(row, await writingRequest("getWritingAssessment", row)); row._writingError = ""; renderRows(); updateSummary(); }
+      catch (error) { row._writingError = error.message; }
+    }
+    if (token !== writingViewToken || modal.classList.contains("hidden")) return;
+    activeWritingRow = row;
+    const ai = Writing.parse(row.writingAiJson, null);
+    const profile = getWritingRubricProfile(row, payloadFromRow(row));
+    const tasks = Writing.tasksFor(row);
+    const scores = Writing.effectiveScores(row);
+    const review = ["a1rw", "a2rw"].includes(Writing.profileFor(row).id) ? await buildAnswerReview(row) : null;
+    if (token !== writingViewToken || modal.classList.contains("hidden")) return;
+    const objectiveRows = (review?.rows || []).filter(item => !tasks.some(t => t.question === Number(item.question)));
+    detailsContent.innerHTML = submissionHeader(row, payloadFromRow(row), review)
+      + (review ? renderReadingReviewSection("Objective answers", objectiveRows, review.error) : "")
+      + renderWritingReviewActions(profile)
+      + `<section class="detail-section">
+          <p data-writing-status role="status" aria-live="polite">${escapeHtml(row._writingError || (row.writingTeacherJson ? "Teacher scores saved. These scores contribute to the total." : ai ? "Suggested AI scores — already included in the total. Review and save, or adjust the bands first." : "AI assessment pending."))}</p>
+          <button class="primary-btn" data-save-writing type="button" ${ai ? "" : "disabled"}>Save writing scores</button>
+          <button class="secondary-btn" data-revert-writing type="button" ${ai ? "" : "disabled"}>Revert to original AI scoring</button>
+          ${ai ? "" : '<button class="secondary-btn" data-retry-writing type="button">Retry AI assessment</button>'}
+        </section>
+        <section class="writing-total-panel">
+          <article class="writing-total-card"><span>Writing marks</span><strong data-writing-marks>—</strong></article>
+          <article class="writing-total-card"><span>Total exam score</span><strong data-exam-total>—</strong></article>
+          <article class="writing-total-card"><span>Percentage</span><strong data-exam-percent>—</strong></article>
+        </section>`
+      + tasks.map((task, index) => {
+        const current = scores?.find(s => Number(s.question) === task.question);
+        const original = ai?.scores.find(s => Number(s.question) === task.question);
+        return `<article class="writing-sample-card">
+          <h4>${escapeHtml(task.label)} · Question ${task.question} · ${escapeHtml(task.taskType)}</h4>
+          <details class="writing-prompt-details"><summary>View task prompt</summary><p>${escapeHtml(task.prompt).replace(/\n/g, "<br>")}</p>${(task.images || []).map(url => `<img src="${escapeAttr(url)}" alt="Writing task picture" style="max-width:100%;max-height:300px" />`).join("")}</details>
+          <div class="writing-answer-box">${escapeHtml(task.answer || "No answer submitted.").replace(/\n/g, "<br>")}</div>
+          <div class="subscale-grid">${task.subscales.map(name => `<label><span>${escapeHtml(name)}</span><input data-review-band data-question="${task.question}" data-subscale="${escapeAttr(name)}" aria-label="Question ${task.question} ${escapeAttr(name)}" type="number" min="0" max="5" step="1" value="${current?.bands[name] ?? ""}" ${!ai || !task.answer.trim() ? "disabled" : ""} /></label>`).join("")}</div>
+          <p>Task marks: <strong data-task-marks="${task.question}">—/${task.points}</strong>. ${escapeHtml(original ? `Original AI bands: ${task.subscales.map(name => `${name} ${original.bands[name]}/5`).join(" · ")}` : "Assessment pending")}</p>
+          <p class="muted">${escapeHtml(original?.feedback || "")}</p>
+        </article>`;
+      }).join("");
+    detailsContent.querySelector("[data-toggle-rubric]")?.addEventListener("click", () => detailsContent.querySelector("[data-writing-rubric]").classList.toggle("hidden"));
+    detailsContent.querySelectorAll("[data-review-band]").forEach(input => input.addEventListener("input", () => updateReviewedTotals(true)));
+    detailsContent.querySelector("[data-save-writing]")?.addEventListener("click", () => persistWriting("save"));
+    detailsContent.querySelector("[data-revert-writing]")?.addEventListener("click", () => persistWriting("revert"));
+    detailsContent.querySelector("[data-retry-writing]")?.addEventListener("click", () => openScoredWritingDetails(row));
+    updateReviewedTotals();
+  }
+
+  function reviewedScores() {
+    return Writing.tasksFor(activeWritingRow).map(task => ({question:task.question,bands:Object.fromEntries(task.subscales.map(name => {
+      const input = Array.from(detailsContent.querySelectorAll("[data-review-band]")).find(el => Number(el.dataset.question) === task.question && el.dataset.subscale === name);
+      return [name, input?.value === "" ? null : Number(input?.value)];
+    }))}));
+  }
+
+  function updateReviewedTotals(edited = false) {
+    if (!activeWritingRow?.writingAiJson) return;
+    try {
+      const scores = reviewedScores();
+      const ai = Writing.parse(activeWritingRow.writingAiJson);
+      const grade = Writing.combine(activeWritingRow, ai.objective, scores);
+      for (const task of Writing.tasksFor(activeWritingRow)) {
+        const score = scores.find(s => s.question === task.question);
+        detailsContent.querySelector(`[data-task-marks="${task.question}"]`).textContent = `${Writing.taskScore(task, score)}/${task.points}`;
+      }
+      detailsContent.querySelector("[data-writing-marks]").textContent = `${grade.writingScore}/${Writing.tasksFor(activeWritingRow).reduce((sum,t)=>sum+t.points,0)}`;
+      detailsContent.querySelector("[data-exam-total]").textContent = `${grade.score}/${grade.maxScore}`;
+      detailsContent.querySelector("[data-exam-percent]").textContent = `${grade.percentage}%`;
+      detailsContent.querySelector("[data-save-writing]").disabled = writingBusy;
+      if (edited) detailsContent.querySelector("[data-writing-status]").textContent = "Unsaved changes — the total above previews your review. Save to update the dashboard and export.";
+    } catch (error) {
+      detailsContent.querySelector("[data-save-writing]").disabled = true;
+      detailsContent.querySelector("[data-writing-status]").textContent = error.message;
+      detailsContent.querySelector("[data-exam-total]").textContent = "Invalid scores";
+      detailsContent.querySelector("[data-exam-percent]").textContent = "—";
+    }
+  }
+
+  async function persistWriting(action) {
+    if (writingBusy || !activeWritingRow) return;
+    const row = activeWritingRow;
+    writingBusy = true;
+    detailsContent.querySelectorAll("[data-save-writing], [data-revert-writing], [data-review-band]").forEach(el => el.disabled = true);
+    const message = detailsContent.querySelector("[data-writing-status]");
+    message.textContent = action === "save" ? "Saving writing scores..." : "Restoring original AI scores...";
+    try {
+      const scores = action === "save" ? reviewedScores() : undefined;
+      const assessment = await writingRequest("saveWritingAssessment", row, {action, scores, expectedRevision:Number(row.writingRevision)||0});
+      Object.assign(row, assessment);
+      renderRows(); updateSummary();
+      if (activeWritingRow === row && !modal.classList.contains("hidden")) await openScoredWritingDetails(row);
+      showToast(action === "save" ? "Writing scores saved" : "Original AI scoring restored");
+    } catch (error) {
+      if (activeWritingRow === row) message.textContent = `Could not ${action === "save" ? "save" : "revert"}: ${error.message}. Your edits remain here; reload results to check the stored scores.`;
+    } finally {
+      writingBusy = false;
+      if (activeWritingRow?.writingAiJson) {
+        detailsContent.querySelectorAll("[data-save-writing], [data-revert-writing], [data-review-band]").forEach(el => {
+          const task = Writing.tasksFor(activeWritingRow).find(t=>t.question===Number(el.dataset.question));
+          el.disabled = task ? !task.answer.trim() : false;
+        });
+        updateReviewedTotals();
+      }
+    }
   }
 
   function openWritingDetails(row) {
@@ -1320,8 +1482,8 @@
   function exportCsv() {
     const visibleRows = getFilteredRows();
     if (!visibleRows.length) return showToast("No rows to export");
-    const headers = ["studentName", "classId", "examTitle", "submittedAt", "score", "maxScore", "percentage", "partScoresJson"];
-    const csv = [headers.join(",")].concat(visibleRows.map(row => headers.map(h => csvCell(row[h])).join(","))).join("\n");
+    const headers = ["studentName", "classId", "examTitle", "submittedAt", "score", "maxScore", "percentage", "partScoresJson", "writingStatus", "writingAiJson", "writingTeacherJson"];
+    const csv = [headers.join(",")].concat(visibleRows.map(row => headers.map(h => csvCell(h === "writingStatus" ? (row.writingTeacherJson ? "Teacher saved" : row.writingAiJson ? "AI suggested" : Writing?.profileFor(row) ? "Assessment pending" : "") : row[h])).join(","))).join("\n");
     const blob = new Blob([csv], { type: "text/csv;charset=utf-8" });
     const url = URL.createObjectURL(blob);
     const a = document.createElement("a");
@@ -1421,6 +1583,8 @@
   }
 
   function closeModal() {
+    activeWritingRow = null;
+    writingViewToken++;
     hideModalWithoutUrl();
     syncUrlFromControls({ replace: true, clearOpen: true, keepOpen: false });
   }

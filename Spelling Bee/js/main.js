@@ -71,6 +71,7 @@ const btnNextLetter = document.getElementById('next-letter');
 const btnEasy = document.getElementById('btn-easy');
 const btnMedium = document.getElementById('btn-medium');
 const btnHard = document.getElementById('btn-hard');
+const btnTiebreaker = document.getElementById('btn-tiebreaker');
 const elPoolSelect = document.getElementById('pool-select');
 const elVolumeSlider = document.getElementById('volume-slider');
 const elVolumeValue = document.getElementById('volume-value');
@@ -279,11 +280,14 @@ function finalizeWordForFeedback(kind) {
 }
 
 function toggleWordMode() {
+    if (window.spellingStudyFollowing) return;
     hiddenMode = !hiddenMode;
     renderWord();
 }
 
 function setCurrentWord(w) {
+    hiddenMode = true;
+    elSecretWord?.classList.remove('visible');
     current = w;
     wordSequence += 1;
     elSecretWord.textContent = w;
@@ -503,20 +507,26 @@ function drawRandom() {
     setCurrentWord(pool[idx]);
 }
 
+let poolLoadGeneration = 0;
 async function changeDifficulty(level) {
-    currentDifficulty = level;
-
+    const generation = ++poolLoadGeneration;
+    hiddenMode = true; renderWord();
     const selectedPool = elPoolSelect ? elPoolSelect.value : currentLevel;
+    if (level === 'tiebreaker' && !['JUNIOR', 'SENIOR'].includes(selectedPool)) level = 'easy';
+    currentDifficulty = level;
+    btnTiebreaker.hidden = !['JUNIOR', 'SENIOR'].includes(selectedPool);
     currentLevel = selectedPool;
     WORDLIST_PATH = `wordlists/${selectedPool}/${level}.txt`;
 
-    [btnEasy, btnMedium, btnHard].forEach(b => b.classList.remove('primary'));
+    [btnEasy, btnMedium, btnHard, btnTiebreaker].forEach(b => b.classList.remove('primary'));
     if (level === 'easy') btnEasy.classList.add('primary');
     if (level === 'medium') btnMedium.classList.add('primary');
     if (level === 'hard') btnHard.classList.add('primary');
+    if (level === 'tiebreaker') btnTiebreaker.classList.add('primary');
 
     try {
         const words = await loadWordlist();
+        if (generation !== poolLoadGeneration || window.spellingStudyFollowing) return;
         const used = usedWordsByPool.get(currentPoolKey()) || new Set();
         pool = words.filter(word => !used.has(word));
 
@@ -531,6 +541,7 @@ async function changeDifficulty(level) {
         btnNext.disabled = false;
         drawRandom();
     } catch (err) {
+        if (generation !== poolLoadGeneration || window.spellingStudyFollowing) return;
         console.error(err);
         current = null;
         elWord.textContent = `Could not load ${WORDLIST_PATH}`;
@@ -543,7 +554,8 @@ async function changeDifficulty(level) {
    Keyboard Bindings
 ============================================== */
 function onKey(e) {
-    if (['INPUT', 'TEXTAREA'].includes(document.activeElement?.tagName)) return;
+    if (window.spellingStudyFollowing && e.code !== 'Space') { if (['o', 'O', 'p', 'P', 'n', 'N', 'Backspace'].includes(e.key)) e.preventDefault(); return; }
+    if (['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement?.tagName)) return;
 
     if (e.key === 'o' || e.key === 'O') {
         e.preventDefault();
@@ -599,6 +611,7 @@ window.addEventListener('keyup', hideSecretWord);
 btnEasy.addEventListener('click', () => changeDifficulty('easy'));
 btnMedium.addEventListener('click', () => changeDifficulty('medium'));
 btnHard.addEventListener('click', () => changeDifficulty('hard'));
+btnTiebreaker.addEventListener('click', () => changeDifficulty('tiebreaker'));
 elWord.addEventListener('click', toggleWordMode);
 elPoolSelect.addEventListener('change', () => { changeDifficulty(currentDifficulty); });
 
@@ -633,6 +646,7 @@ if (document.fonts?.ready) {
 (async function init() {
     try {
         const words = await loadWordlist();
+        if (window.spellingStudyFollowing) return;
         currentLevel = elPoolSelect ? elPoolSelect.value : currentLevel;
         const used = usedWordsByPool.get(currentPoolKey()) || new Set();
         pool = words.filter(word => !used.has(word));

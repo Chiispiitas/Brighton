@@ -7,7 +7,7 @@
 (() => {
   const exam = window.listeningExam;
   const examParts = exam.parts || [];
-  const STORAGE_KEY = "brighton-b2-listening-exam-state-v1";
+  const STORAGE_KEY = exam.storageKey || "brighton-b2-listening-exam-state-v1";
   const App = window.BrightonApp || {};
   const $ = App.$ || ((selector, root = document) => root.querySelector(selector));
   const $$ = App.$$ || ((selector, root = document) => Array.from(root.querySelectorAll(selector)));
@@ -169,7 +169,7 @@
       dom.audioGate.setAttribute("aria-hidden", "true");
       updateAudioBadge("Audio is playing");
     } catch (error) {
-      dom.audioGateError.textContent = "The audio could not start. Check that exams/b2-listening/audio.mp3 exists, then try again.";
+      dom.audioGateError.textContent = "The audio could not start. Check your connection, then try again.";
       dom.audioGateError.classList.remove("hidden");
       updateAudioBadge("Audio error");
       console.error(error);
@@ -992,8 +992,8 @@
     if (!window.BrightonLiveProgress || state.submitted) return;
     if (liveProgress && typeof liveProgress.stop === "function") liveProgress.stop();
     liveProgress = window.BrightonLiveProgress.create({
-      examId: "brighton-b2-listening-final",
-      examTitle: "Brighton B2 Listening Final Exam",
+      examId: exam.examId,
+      examTitle: exam.title,
       skill: "Listening",
       level: "B2",
       getProgress: buildLiveProgressSnapshot

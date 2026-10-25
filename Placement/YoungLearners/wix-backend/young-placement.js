@@ -6,6 +6,7 @@
 // Uses the same shared Backend/core.js as Exams and Tests.
 
 import wixData from "wix-data";
+import { response } from "wix-http-functions";
 import {
   jsonOK,
   jsonBadRequest,
@@ -1305,9 +1306,6 @@ function dashboardModules(responses) {
 }
 
 async function placementRequestParams(request) {
-  const query = request?.query || {};
-  if (Object.keys(query).length) return query;
-
   try {
     return await readJsonBody(request);
   } catch {
@@ -1315,10 +1313,20 @@ async function placementRequestParams(request) {
   }
 }
 
+function teacherJson(status, body) {
+  return response({ status, headers: {
+    "Content-Type": "application/json",
+    "Access-Control-Allow-Origin": "*",
+    "Cache-Control": "no-store",
+    "Pragma": "no-cache"
+  }, body: JSON.stringify(body) });
+}
+
+
 export async function getPlacementResults(request) {
   try {
-    await purgeStalePlacementSessions();
     const query = await placementRequestParams(request);
+    await purgeStalePlacementSessions();
     const studentFilter = String(query.student || "").trim().toLowerCase();
     const levelFilter = String(query.level || "").trim();
     const statusFilter = String(query.status || "").trim().toLowerCase();
@@ -1354,21 +1362,21 @@ export async function getPlacementResults(request) {
       return bTime - aTime;
     });
 
-    return jsonOK({
+    return teacherJson(200, {
       success: true,
       results,
       total: results.length
     });
   } catch (error) {
     console.error("getPlacementResults failed:", error);
-    return jsonServerError(error);
+    return teacherJson(500, { success: false, error: "Could not load Young Learners results. Please try again." });
   }
 }
 
 export async function getPlacementDashboardResult(request) {
   try {
-    await purgeStalePlacementSessions();
     const params = await placementRequestParams(request);
+    await purgeStalePlacementSessions();
     const sessionId = String(params?.sessionId || "").trim();
 
     if (!sessionId) {
@@ -1433,7 +1441,7 @@ export async function getPlacementDashboardResult(request) {
       ? await buildResultSummary(session)
       : null;
 
-    return jsonOK({
+    return teacherJson(200, {
       success: true,
       session: dashboardSessionRow(session),
       result,
@@ -1444,6 +1452,6 @@ export async function getPlacementDashboardResult(request) {
     });
   } catch (error) {
     console.error("getPlacementDashboardResult failed:", error);
-    return jsonServerError(error);
+    return teacherJson(500, { success: false, error: "Could not load this Young Learners attempt. Please try again." });
   }
 }

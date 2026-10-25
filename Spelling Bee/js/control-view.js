@@ -4,6 +4,7 @@
   const Cloud = window.SpellingCloud;
   if (!Cloud) return;
 
+  let source = null, lastSourceProbe = 0, lastConfirmedFeedback = "";
   const role = document.body.dataset.role === "remote" ? "remote" : "judge";
   const canJudge = role === "judge" || role === "remote";
   const joinGate = document.getElementById("join-gate");
@@ -32,7 +33,7 @@
     : Cloud.getDeviceId("brighton-spelling-admin-judge-device");
   const normalizedJudgeActorId = String(judgeActorId).toLowerCase().replace(/[^a-z0-9_-]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 48);
 
-  let sessionCode = "";
+  let sessionCode = "", unsubscribeCloud = () => {};
   let presenter = null;
   let pollTimer = null;
   let presenterSyncTimer = null;
@@ -41,9 +42,31 @@
   let judgeHeartbeatTimer = null;
   let voteSeq = 0;
   let commandSeq = 0;
-  let busy = false;
-  let judgePublishChain = Promise.resolve();
+  let busy = false, resetting = false;
+  let pendingJudgeSnapshot = null, judgeWriteBusy = false, judgeWriteTimer = null;
+  let judgeNextWriteAt = 0, lastJudgeSavedAt = 0, adminNextWriteAt = 0, registeredJudgeSession = "";
+  let presenterChangedAt = Date.now(), lastLetterInputAt = 0;
+  let judgeWriteStartedAt = 0, adminWriteStartedAt = 0;
+  let inputRevision = 0, adminRetryAt = 0, adminRetryDelay = 0, waitingForAck = 0;
+  const inputTickets = new Map(), adminAcks = [];
+  let judgeRows = [];
+  const Feedback = window.BeeButtons;
+  function inputStarted(button) {
+    inputRevision += 1;
+    presenterChangedAt = Date.now(); lastLetterInputAt = Date.now();
+    if (button) inputTickets.set(button, { revision: inputRevision, token: currentToken(), session: sessionCode });
+    Feedback?.set(button, "saving", "Saving…");
+  }
+  function inputFinished(revision, token, state, message) {
+    for (const [button, ticket] of inputTickets) {
+      if (ticket.session === sessionCode && ticket.token === token && ticket.revision <= revision) {
+        Feedback?.set(button, state, message, ticket.revision === inputRevision);
+        if (state === "saved") inputTickets.delete(button);
+      }
+    }
+  }
   let commandPublishChain = Promise.resolve();
+  let remoteControlCommandActive = false;
   let pendingAdminWordState = null;
   let adminWordStateFlushTimer = null;
   let adminWordStateWriteBusy = false;
@@ -53,6 +76,7 @@
   let judgementSource = "presenter";
   let judgementUpdatedAt = 0;
   let wordInfoKey = "";
+  let renderedJudgeWordKey = "";
 
   let judgeWordToken = "";
   let judgeMarks = [];
@@ -307,6 +331,11 @@
 
   function renderJudgeWord() {
     if (!word) return;
+    // Presenter polls arrive frequently. Keep letter DOM and text sizing
+    // stable between actual edits, especially while a phone is being tapped.
+    const key = JSON.stringify([presenter?.wordToken, presenter?.word, judgePointer, judgeMarks, presenter?.hiddenMode]);
+    if (key === renderedJudgeWordKey) return;
+    renderedJudgeWordKey = key;
     const letters = Array.from(String(presenter?.word || ""));
     const frag = document.createDocumentFragment();
 
@@ -321,6 +350,8 @@
       frag.appendChild(span);
     });
 
+    word.dataset.sequence = String(presenter?.wordSequence || 0);
+    word.dataset.mode = "normal";
     word.replaceChildren(frag);
     scheduleWordFit();
   }
@@ -364,9 +395,17 @@
   }
 
   function renderPresenterState() {
+    const contestantPanel = document.getElementById("judge-contestant");
+    if (contestantPanel) {
+      const contestant = Cloud.contestantInfo(presenter?.currentContestant);
+      contestantPanel.hidden = !contestant;
+      const fields = { "judge-contestant-name": contestant?.name || "", "judge-contestant-lives": !contestant || contestant.lives === null ? "Lives not set" : `${contestant.lives} ${contestant.lives === 1 ? "life" : "lives"} remaining` };
+      for (const [id, text] of Object.entries(fields)) if (document.getElementById(id).textContent !== text) document.getElementById(id).textContent = text;
+    }
     if (!presenter) {
+      renderedJudgeWordKey = "";
       if (word) word.textContent = "—";
-      if (wordMeta) wordMeta.textContent = "Waiting for presenter";
+      if (wordMeta) wordMeta.textContent = "Waiting for a session";
       return;
     }
 
@@ -392,35 +431,58 @@
     if (difficultyPill) difficultyPill.textContent = String(presenter.difficulty || "easy").toUpperCase();
 
     if (role === "remote") {
+      const category = document.getElementById("admin-category");
+      if (category) category.value = presenter.level || "4TH-5TH";
+      const owns = Boolean(source?.active && source.code === sessionCode);
+      const reset = document.getElementById("reset-admin-session");
+      if (reset) { reset.disabled = !owns || resetting; reset.title = owns ? "Reset used words, judging and show progress; keep the session code, roster and lives" : "Use Run this session from Admin before resetting"; }
+      const status = document.getElementById("source-status");
+      if (status) status.textContent = owns ? `Admin is running session ${sessionCode}` : presenter.sourceRole === "admin" ? `Session ${sessionCode} is running in another Admin view` : `Connected to Study session ${sessionCode}`;
+      const takeover = document.getElementById("admin-take-source");
+      if (takeover) takeover.hidden = owns;
+      const studyLink = document.getElementById("admin-study-link");
+      if (studyLink) studyLink.href = `index.html?session=${encodeURIComponent(sessionCode)}`;
       const visibilityButton = document.getElementById("word-visibility-button");
       if (visibilityButton) {
         const hidden = presenter.hiddenMode !== false;
-        visibilityButton.textContent = hidden ? "Reveal word" : "Hide word";
+        visibilityButton.textContent = hidden ? "Reveal in Study" : "Hide in Study";
         visibilityButton.dataset.nextVisibility = hidden ? "reveal" : "hide";
       }
     }
 
     document.querySelectorAll("[data-difficulty]").forEach(button => {
       button.classList.toggle("selected", button.dataset.difficulty === presenter.difficulty);
+      if (button.dataset.difficulty === "tiebreaker") button.hidden = !["JUNIOR", "SENIOR"].includes(presenter.level);
     });
 
     if (canJudge) {
       const finished = judgePointer >= Array.from(String(presenter.word || "")).length;
       document.querySelectorAll(".verdict-button[data-verdict]").forEach(button => {
-        button.disabled = finished;
+        button.disabled = finished || (role === "remote" && presenter.sourceRole === "admin" && !source?.active);
       });
 
       const undoButton = document.getElementById("undo-letter-button");
-      if (undoButton) undoButton.disabled = !canUndoJudgeMark();
+      if (undoButton) undoButton.disabled = !canUndoJudgeMark() || (role === "remote" && presenter.sourceRole === "admin" && !source?.active);
     }
 
+    if (role === "remote") {
+      const locked = presenter.sourceRole === "admin" && !source?.active;
+      document.querySelectorAll("#new-word-button,#word-visibility-button,#admin-category,[data-difficulty],#presenter-correct,#presenter-incorrect").forEach(control => {
+        if (locked || control.dataset.sourceLocked === "true") { control.disabled = locked; control.dataset.sourceLocked = String(locked); }
+      });
+    }
     renderWordInfo();
   }
 
   function parseJudgeStates(rows) {
+    if (!currentToken()) return [];
     return Cloud.roleStates(rows, "judge")
-      .filter(state => state.wordToken && state.wordToken === currentToken())
-      .filter(state => Cloud.isFresh(state, 8000));
+      .filter(state => state.wordToken && Cloud.isFresh(state, 75000))
+      .map(state => state.wordToken === currentToken() ? state : {
+        ...state, word: presenter?.word || "", wordToken: currentToken(),
+        letterMarks: createJudgeMarks(presenter?.word || ""),
+        pointer: firstMarkableIndex(presenter?.word || "", 0), verdict: "pending"
+      });
   }
 
   function renderJudgeAggregate(rows) {
@@ -429,7 +491,13 @@
     const chips = document.getElementById("judge-vote-list");
     if (!host || !chips) return;
 
-    const votes = parseJudgeStates(rows);
+    // Admin already has the authoritative local judgement. Keep its card
+    // without spending a second CMS write for every Admin letter update.
+    const otherRows = rows.filter(row => row.actorId !== normalizedJudgeActorId);
+    const localAdmin = { role: "judge", sessionCode, actorId: normalizedJudgeActorId, judgeName: "Admin",
+      wordToken: currentToken(), letterMarks: judgeMarks.slice(), pointer: judgePointer,
+      verdict: judgeVerdict, updatedAt: new Date().toISOString() };
+    const votes = parseJudgeStates([...otherRows, localAdmin]);
     const incorrect = votes.filter(vote => vote.verdict === "incorrect");
     const correct = votes.filter(vote => vote.verdict === "correct");
     const pending = votes.filter(vote => vote.verdict !== "correct" && vote.verdict !== "incorrect");
@@ -549,6 +617,17 @@
   function installPresenterSnapshot(nextPresenter, { render = false } = {}) {
     if (!nextPresenter) return false;
 
+    // Mobile network requests can finish out of order. Do not rewind to a
+    // stale Presenter word and erase the Admin's current letter progress.
+    // Both timestamps are assigned by the same Wix backend.
+    if (presenter?.sourceRole === "admin" && nextPresenter.sourceRole === "admin" && presenter.sourceId === nextPresenter.sourceId &&
+        Number(nextPresenter.sourceRevision || 0) < Number(presenter.sourceRevision || 0)) return false;
+    const previousUpdated = Date.parse(presenter?.updatedAt || "");
+    const incomingUpdated = Date.parse(nextPresenter.updatedAt || "");
+    if (Number.isFinite(previousUpdated) && Number.isFinite(incomingUpdated) && incomingUpdated < previousUpdated) {
+      return false;
+    }
+
     const previousToken = String(presenter?.wordToken || "");
     const previousSequence = Number(presenter?.wordSequence || 0);
     const previousWord = String(presenter?.word || "");
@@ -562,8 +641,23 @@
       previousWord !== nextWord;
 
     presenter = nextPresenter;
+    for (let i = adminAcks.length - 1; i >= 0; i--) {
+      const ack = adminAcks[i];
+      if (Number(nextPresenter.lastCommandSeq || 0) >= ack.seq) {
+        if (nextPresenter.wordToken === ack.token) inputFinished(ack.revision, ack.token, "saved", "Applied on presenter");
+        adminAcks.splice(i, 1);
+      }
+    }
+    if (tokenChanged) {
+      document.querySelectorAll(".verdict-button[data-sync]").forEach(button => Feedback?.set(button, "", "New word · ready", false));
+      Feedback?.set(null, "", "New word · ready");
+      for (const [button, ticket] of inputTickets) {
+        if (ticket.token !== nextToken) { Feedback?.set(button, "", "Word changed"); inputTickets.delete(button); }
+      }
+    }
 
     if (role === "remote" && tokenChanged) {
+      poolModal?.classList.add("hidden");
       // A new word is a hard state boundary. Nothing queued for the previous
       // word is allowed to seed marks/pointer/verdict into the new word.
       pendingAdminWordState = null;
@@ -581,18 +675,20 @@
       if (render) renderPresenterState();
     }
 
+    if (role === "remote") window.dispatchEvent(new CustomEvent("spelling-presenter-updated", { detail: { sessionCode, presenter: nextPresenter } }));
     return tokenChanged;
   }
 
   function publishJudgeState({ increment = false } = {}) {
+    if (role === "remote") { renderJudgeAggregate(judgeRows); return Promise.resolve(); }
     if (!canJudge || !sessionCode || !presenter?.wordToken || judgeWordToken !== presenter.wordToken) {
       return Promise.resolve();
     }
 
     if (increment) voteSeq += 1;
 
-    // Capture exactly what the Judge saw when this write was queued. Sending
-    // through one chain prevents fast ✓/× presses from reaching Wix out of order.
+    // Replace unsent progress with one complete snapshot. One writer preserves
+    // order while rapid taps stay immediate locally.
     const snapshotSessionCode = sessionCode;
     const snapshot = {
       startedAt: judgeStartedAt || new Date().toISOString(),
@@ -611,50 +707,92 @@
       judgementUpdatedAt
     };
 
-    judgePublishChain = judgePublishChain
-      .catch(() => {})
-      .then(() => Cloud.writeState({
-        sessionCode: snapshotSessionCode,
-        role: "judge",
-        actorId: judgeActorId,
-        state: snapshot
-      }))
-      .catch(error => {
-        setConnection("Judge sync failed", "error");
-      });
+    pendingJudgeSnapshot = { code: snapshotSessionCode, state: snapshot, revision: inputRevision };
+    if (!judgeWriteBusy && !judgeWriteTimer) judgeWriteTimer = window.setTimeout(flushJudgeSnapshot, Math.max(90, judgeNextWriteAt - Date.now()));
+    return Promise.resolve();
+  }
 
-    return judgePublishChain;
+  async function flushJudgeSnapshot() {
+    judgeWriteTimer = null;
+    if (judgeWriteBusy || !pendingJudgeSnapshot) return;
+    if (Date.now() < judgeNextWriteAt) {
+      judgeWriteTimer = window.setTimeout(flushJudgeSnapshot, judgeNextWriteAt - Date.now());
+      return;
+    }
+    // While someone is typing, wait for a brief pause instead of saving just
+    // before the next letter arrives. Still send progress at least every 2.5s.
+    if (Date.now() - lastLetterInputAt < 220 && Date.now() - judgeWriteStartedAt < 2500) {
+      judgeWriteTimer = window.setTimeout(flushJudgeSnapshot, Math.min(220, 2500 - (Date.now() - judgeWriteStartedAt)));
+      return;
+    }
+    const pending = pendingJudgeSnapshot;
+    pendingJudgeSnapshot = null;
+    if (pending.code !== sessionCode || pending.state.wordToken !== currentToken()) return;
+    judgeWriteBusy = true;
+    judgeWriteStartedAt = Date.now();
+    judgeNextWriteAt = Date.now() + 1500;
+    let delay = 120;
+    try {
+      await Cloud.writeState({ sessionCode: pending.code, role: "judge", actorId: judgeActorId, state: pending.state });
+      lastJudgeSavedAt = Date.now();
+      if (pending.code === sessionCode) registeredJudgeSession = pending.code;
+      if (role === "judge" && pending.code === sessionCode) inputFinished(pending.revision, pending.state.wordToken, "saved", "Saved");
+    } catch {
+      if (pending.code === sessionCode && pending.state.wordToken === currentToken()) {
+        if (!pendingJudgeSnapshot) pendingJudgeSnapshot = pending;
+        inputFinished(pending.revision, pending.state.wordToken, "error", "Not saved · retrying");
+      }
+      delay = Cloud.retryDelay();
+      setConnection("Judge sync retrying", "error");
+    } finally {
+      judgeWriteBusy = false;
+      if (pendingJudgeSnapshot) judgeWriteTimer = window.setTimeout(flushJudgeSnapshot, Math.max(delay, judgeNextWriteAt - Date.now()));
+    }
+  }
+
+  function receivePresenter(nextPresenter) {
+    const tokenChanged = installPresenterSnapshot(nextPresenter);
+    if (tokenChanged) {
+      presenterChangedAt = Date.now(); judgeNextWriteAt = 0; judgeWriteStartedAt = 0;
+      adminNextWriteAt = 0; adminWriteStartedAt = 0; lastLetterInputAt = 0;
+      window.clearTimeout(judgeWriteTimer); judgeWriteTimer = null; pendingJudgeSnapshot = null;
+    }
+    if (role === "remote") {
+      const changed = tokenChanged ? Boolean(presenter.wordToken) : syncAdminJudgeFromPresenter();
+      if (changed) publishJudgeState({ increment: true });
+    } else if (tokenChanged || judgeWordToken !== currentToken()) {
+      resetJudgeWord();
+      // A fresh previous-word row still proves this judge is present. Admin
+      // displays it as pending for the new word until real input is saved.
+      if (registeredJudgeSession !== sessionCode) publishJudgeState({ increment: true });
+    }
+    renderPresenterState();
+    setConnection(Cloud.isFresh(presenter, 75000) ? (presenter.sourceRole === "admin" ? "Admin online" : "Study online") : "Session stale", Cloud.isFresh(presenter, 75000) ? "online" : "stale");
   }
 
   async function refreshPresenterOnly() {
     if (!sessionCode || presenterSyncBusy) return;
+    if (role === "remote" && source?.active && Date.now() - lastSourceProbe < 6000) return;
     presenterSyncBusy = true;
 
     try {
+      const requestedCode = sessionCode;
       const nextPresenter = typeof Cloud.fetchPresenter === "function"
         ? await Cloud.fetchPresenter(sessionCode)
         : Cloud.presenterState(await Cloud.fetchRows(sessionCode));
-      if (!nextPresenter) return;
-
-      const tokenChanged = installPresenterSnapshot(nextPresenter);
-
-      if (role === "remote") {
-        const changed = tokenChanged
-          ? Boolean(presenter.wordToken)
-          : syncAdminJudgeFromPresenter();
-
-        renderPresenterState();
-        if (changed) publishJudgeState({ increment: true });
-      } else {
-        renderPresenterState();
+      if (!nextPresenter || requestedCode !== sessionCode) return;
+      if (role === "remote" && source?.active) {
+        lastSourceProbe = Date.now();
+        if (nextPresenter.sourceRole !== "admin") { source.commit(true); return; }
+        if (!source.owns(nextPresenter)) { source.stop(); setConnection("Session moved to another Admin", "stale"); }
+        else {
+          if (Number(nextPresenter.sourceRevision || 0) < Number(source.savedRevision || 0) && !source.busy && !source.pending) source.commit(true);
+          return;
+        }
       }
-
-      setConnection(
-        Cloud.isFresh(presenter, 9000) ? "Presenter online" : "Presenter stale",
-        Cloud.isFresh(presenter, 9000) ? "online" : "stale"
-      );
+      receivePresenter(nextPresenter);
     } catch {
-      // Full refresh handles connection errors. Keep this fast path quiet.
+      setConnection("Presenter connection interrupted", "error");
     } finally {
       presenterSyncBusy = false;
     }
@@ -666,6 +804,12 @@
     presenterSyncTimer = null;
   }
 
+  function presenterPollDelay() {
+    if (waitingForAck) return Cloud.pollDelay(250);
+    const idleDelay = Date.now() - presenterChangedAt > 10000 ? 2800 : 950;
+    return Cloud.pollDelay(Math.max(document.hidden ? 2200 : 950, idleDelay));
+  }
+
   function startPresenterSyncLoop() {
     stopPresenterSyncLoop();
     presenterSyncLoopActive = true;
@@ -674,10 +818,10 @@
       if (!presenterSyncLoopActive || !sessionCode) return;
       await refreshPresenterOnly();
 
-      // No fixed-interval dead time: as soon as one lightweight Presenter GET
-      // finishes, start the next one almost immediately.
+      // One presenter reader per page. Command acknowledgements temporarily
+      // get priority; background reads never overlap this request.
       if (presenterSyncLoopActive && sessionCode) {
-        presenterSyncTimer = window.setTimeout(tick, 12);
+        presenterSyncTimer = window.setTimeout(tick, presenterPollDelay());
       }
     };
 
@@ -685,59 +829,29 @@
   }
 
   async function refresh() {
-    if (!sessionCode || busy) return;
+    if (role !== "remote" || !sessionCode || busy) return;
     busy = true;
-    let needsJudgeInit = false;
-
     try {
-      const rows = await Cloud.fetchRows(sessionCode);
-      const nextPresenter = Cloud.presenterState(rows);
-      if (!nextPresenter) {
-        setConnection("Presenter not found", "error");
-        return;
+      judgeRows = await Cloud.fetchJudges(sessionCode);
+      renderJudgeAggregate(judgeRows);
+    } catch { setConnection("Judge updates unavailable", "error"); }
+    finally { busy = false; }
+  }
+
+  function receiveCloudChange(change) {
+    if (change.sessionCode !== sessionCode) return;
+    if (change.role === "presenter" && change.state && !change.state.screenBroadcast) {
+      if (source?.active && !source.owns(change.state)) {
+        if (change.state.sourceRole !== "admin") { source.commit(true); return; }
+        source.stop();
       }
-
-      const tokenChanged = installPresenterSnapshot(nextPresenter);
-
-      setConnection(
-        Cloud.isFresh(presenter, 9000) ? "Presenter online" : "Presenter stale",
-        Cloud.isFresh(presenter, 9000) ? "online" : "stale"
-      );
-
-      if (role === "judge") {
-        const mine = Cloud.roleStates(rows, "judge").find(state => state.actorId === normalizedJudgeActorId);
-
-        if (tokenChanged) {
-          resetJudgeWord();
-          needsJudgeInit = Boolean(presenter.wordToken);
-        } else if (mine) {
-          hydrateJudgeState(mine);
-        } else if (judgeWordToken !== currentToken()) {
-          resetJudgeWord();
-          needsJudgeInit = Boolean(presenter.wordToken);
-        }
-      } else if (role === "remote") {
-        if (tokenChanged) {
-          needsJudgeInit = Boolean(presenter.wordToken);
-        } else if (syncAdminJudgeFromPresenter()) {
-          needsJudgeInit = true;
-        }
-      }
-
-      if (role === "remote") {
-        const remote = Cloud.latestRoleState(rows, "remote");
-        commandSeq = Math.max(commandSeq, Number(remote?.commandSeq || 0));
-      }
-
-      renderPresenterState();
-      renderJudgeAggregate(rows);
-    } catch (error) {
-      setConnection("Cloud unavailable", "error");
-    } finally {
-      busy = false;
+      receivePresenter(change.state);
     }
-
-    if (needsJudgeInit) publishJudgeState({ increment: true });
+    if (change.role === "judge" && role === "remote" && change.state) {
+      judgeRows = judgeRows.filter(row => row.actorId !== change.state.actorId);
+      judgeRows.push(change.state);
+      renderJudgeAggregate(judgeRows);
+    }
   }
 
   async function joinSession() {
@@ -761,12 +875,23 @@
     setJoinStatus("Checking session…");
     joinButton.disabled = true;
     try {
-      const rows = await Cloud.fetchRows(code);
-      const found = Cloud.presenterState(rows);
-      if (!found) throw new Error("No presenter is using that code.");
+      const rows = await Cloud.fetchRows(code, { command: role === "remote" });
+      let found = Cloud.presenterState(rows);
+      if (found?.screenCameraPreview) throw new Error("Use the shared session code, not a camera-preview code.");
+      if (!found) throw new Error(role === "remote" ? "No session found. Use Start / resume from Admin to create it." : "No session is using that code.");
+      if (role === "remote" && source) {
+        if (source.active && source.code !== code) source.stop();
+        if (source.owns(found) && !source.active) found = await source.start(code, found);
+      }
 
+      unsubscribeCloud();
       sessionCode = code;
+      unsubscribeCloud = Cloud.subscribe(code, receiveCloudChange);
+      pendingAdminWordState = null; pendingJudgeSnapshot = null; registeredJudgeSession = "";
+      lastJudgeSavedAt = 0; judgeNextWriteAt = 0;
+      adminAcks.length = 0; inputTickets.clear(); adminRetryAt = 0; adminRetryDelay = 0;
       presenter = found;
+      if (role === "remote") lastConfirmedFeedback = found.feedback?.id || "";
 
       if (role === "judge") {
         const mine = Cloud.roleStates(rows, "judge").find(state => state.actorId === normalizedJudgeActorId);
@@ -783,25 +908,32 @@
       }
 
       setAppVisible(true);
+      if (role === "remote") window.dispatchEvent(new CustomEvent("spelling-session-joined", { detail: { sessionCode } }));
       renderPresenterState();
       renderJudgeAggregate(rows);
       setConnection(
-        Cloud.isFresh(presenter, 9000) ? "Presenter online" : "Presenter stale",
-        Cloud.isFresh(presenter, 9000) ? "online" : "stale"
+        Cloud.isFresh(presenter, 75000) ? (presenter.sourceRole === "admin" ? "Admin online" : "Study online") : "Session stale",
+        Cloud.isFresh(presenter, 75000) ? "online" : "stale"
       );
 
-      window.clearInterval(pollTimer);
+      window.clearTimeout(pollTimer);
       stopPresenterSyncLoop();
 
-      // Full refresh still handles judges/consensus. The Presenter state itself
-      // uses a continuous lightweight loop for much lower latency.
-      pollTimer = window.setInterval(refresh, 1100);
+      judgeRows = Cloud.roleStates(rows, "judge");
+      // Judges only need the presenter. Only Admin reads the judge collection.
+      const aggregateTick = async () => {
+        await refresh();
+        if (role === "remote") pollTimer = window.setTimeout(aggregateTick, Cloud.pollDelay(1800));
+      };
+      if (role === "remote") pollTimer = window.setTimeout(aggregateTick, 1800);
       startPresenterSyncLoop();
 
       if (canJudge) {
         await publishJudgeState({ increment: true });
         window.clearInterval(judgeHeartbeatTimer);
-        judgeHeartbeatTimer = window.setInterval(() => publishJudgeState(), 3000);
+        judgeHeartbeatTimer = window.setInterval(() => {
+          if (role === "judge" && Date.now() - lastJudgeSavedAt >= 25000) publishJudgeState();
+        }, 10000);
       }
     } catch (error) {
       setJoinStatus(error.message || "Session not found.", true);
@@ -816,7 +948,7 @@
     adminJudgePublishTimer = window.setTimeout(() => {
       adminJudgePublishTimer = null;
       publishJudgeState({ increment: true });
-    }, 40);
+    }, 900);
   }
 
   function adminWordStateSnapshot() {
@@ -828,6 +960,7 @@
       wordToken: presenter?.wordToken || "",
       wordSequence: Number(presenter?.wordSequence || 0),
       commandType: "word-state",
+      inputRevision,
       value: "",
       wordState: {
         pointer: judgePointer,
@@ -844,7 +977,7 @@
     window.clearTimeout(adminWordStateFlushTimer);
     adminWordStateFlushTimer = null;
 
-    if (role !== "remote" || !sessionCode) {
+    if (role !== "remote" || !sessionCode || remoteControlCommandActive) {
       return adminWordStateWritePromise;
     }
 
@@ -854,13 +987,23 @@
       return adminWordStateWritePromise;
     }
 
+    const adminReadyAt = Math.max(adminRetryAt, adminNextWriteAt);
+    if (Date.now() < adminReadyAt) {
+      adminWordStateFlushTimer = window.setTimeout(flushPendingAdminWordState, adminReadyAt - Date.now());
+      return adminWordStateWritePromise;
+    }
+    if (Date.now() - lastLetterInputAt < 220 && Date.now() - adminWriteStartedAt < 2500) {
+      adminWordStateFlushTimer = window.setTimeout(flushPendingAdminWordState, Math.min(220, 2500 - (Date.now() - adminWriteStartedAt)));
+      return adminWordStateWritePromise;
+    }
     const snapshot = pendingAdminWordState;
+    const revision = snapshot.inputRevision;
     pendingAdminWordState = null;
 
     // Never send an old word snapshot after Presenter has already moved on.
     if (!presenter?.wordToken || snapshot.wordToken !== presenter.wordToken) {
       if (pendingAdminWordState) {
-        adminWordStateFlushTimer = window.setTimeout(flushPendingAdminWordState, 0);
+        adminWordStateFlushTimer = window.setTimeout(flushPendingAdminWordState, Math.max(100, adminRetryAt - Date.now(), adminNextWriteAt - Date.now()));
       }
       return adminWordStateWritePromise;
     }
@@ -869,6 +1012,8 @@
     const seq = commandSeq;
     const snapshotSessionCode = sessionCode;
     adminWordStateWriteBusy = true;
+    adminWriteStartedAt = Date.now();
+    adminNextWriteAt = Date.now() + 1500;
 
     adminWordStateWritePromise = Cloud.writeState({
       sessionCode: snapshotSessionCode,
@@ -879,14 +1024,28 @@
         commandSeq: seq
       }
     })
-      .then(() => {
-        setConnection("Judgement synced", "online");
+      .then(result => {
+        // Wix may return an already-stored newer command instead of saving this
+        // word state. Treat that as a rejected write and retry with its sequence.
+        const storedSeq = Number(result?.command?.commandSeq ?? seq);
+        if (storedSeq !== seq) {
+          commandSeq = Math.max(commandSeq, storedSeq);
+          throw new Error("Word state superseded");
+        }
+        adminRetryAt = 0; adminRetryDelay = 0;
+        adminAcks.push({ seq, revision, token: snapshot.wordToken });
+        inputFinished(revision, snapshot.wordToken, "saving", "Saved · waiting for presenter");
+        if (Number(presenter?.lastCommandSeq || 0) >= seq) installPresenterSnapshot(presenter);
+        setConnection("Judgement saved", "online");
       })
       .catch(() => {
         // Retry only if there is not already a newer local state waiting.
         if (!pendingAdminWordState && presenter?.wordToken === snapshot.wordToken) {
           pendingAdminWordState = adminWordStateSnapshot();
         }
+        adminRetryDelay = Math.min(30000, Math.max(Cloud.retryDelay(), adminRetryDelay * 2));
+        adminRetryAt = Date.now() + adminRetryDelay;
+        inputFinished(revision, snapshot.wordToken, "error", "Not saved · retrying");
         setConnection("Sync retrying", "error");
       })
       .finally(() => {
@@ -895,8 +1054,8 @@
         // If several taps happened during the request, they have already
         // collapsed into pendingAdminWordState. Send that ONE latest snapshot
         // immediately rather than replaying intermediate states.
-        if (pendingAdminWordState) {
-          adminWordStateFlushTimer = window.setTimeout(flushPendingAdminWordState, 0);
+        if (pendingAdminWordState && !remoteControlCommandActive) {
+          adminWordStateFlushTimer = window.setTimeout(flushPendingAdminWordState, Math.max(100, adminRetryAt - Date.now(), adminNextWriteAt - Date.now()));
         }
       });
 
@@ -904,33 +1063,50 @@
   }
 
   async function drainAdminWordState() {
-    // Used only before non-judgement commands where ordering matters.
-    while (adminWordStateWriteBusy || pendingAdminWordState) {
-      if (!adminWordStateWriteBusy && pendingAdminWordState) {
-        flushPendingAdminWordState();
-      }
+    const deadline = Date.now() + 20000;
+    while (Date.now() < deadline) {
+      if (!adminWordStateWriteBusy && pendingAdminWordState) flushPendingAdminWordState();
       await adminWordStateWritePromise.catch(() => {});
-      if (pendingAdminWordState) await Promise.resolve();
+      if (!adminWordStateWriteBusy && !pendingAdminWordState) {
+        const last = adminAcks.filter(ack => ack.token === currentToken()).at(-1);
+        if (!last) return;
+        if (!await waitForPresenterCommandAck(last.seq, last.token)) {
+          throw new Error("Presenter has not applied the latest letters. The next command was not sent.");
+        }
+        // Letter taps may have arrived while waiting. Drain those as well before
+        // replacing the single CMS command row with a different operation.
+        if (!pendingAdminWordState && !adminWordStateWriteBusy) return;
+      }
+      await new Promise(resolve => window.setTimeout(resolve, 100));
     }
+    throw new Error("Judgement is still saving. Please wait before sending another command.");
   }
 
   function queueAdminWordState() {
     if (role !== "remote" || !sessionCode || !presenter?.wordToken) return;
+    if (source?.active) {
+      const complete = judgePointer >= Array.from(presenter.word || "").length;
+      if (complete && source.state.pointer < Array.from(presenter.word || "").length) animateSourceResult();
+      source.letters({ ...adminWordStateSnapshot().wordState, inputRevision });
+      return;
+    }
 
     // Always replace the unsent snapshot with the newest complete word state.
     pendingAdminWordState = adminWordStateSnapshot();
 
     if (!adminWordStateWriteBusy && !adminWordStateFlushTimer) {
-      adminWordStateFlushTimer = window.setTimeout(flushPendingAdminWordState, 0);
+      adminWordStateFlushTimer = window.setTimeout(flushPendingAdminWordState, Math.max(100, adminRetryAt - Date.now(), adminNextWriteAt - Date.now()));
     }
   }
 
-  async function submitJudgeMark(mark) {
+  async function submitJudgeMark(mark, button) {
+    if (role === "remote" && presenter?.sourceRole === "admin" && !source?.active) return;
     if (!canJudge || !sessionCode || !presenter?.wordToken || judgeWordToken !== presenter.wordToken) return;
 
     const letters = Array.from(String(presenter.word || ""));
     if (judgePointer >= letters.length) return;
 
+    inputStarted(button || document.querySelector(`[data-verdict="${mark}"]`));
     judgeMarks[judgePointer] = mark;
     if (mark === "incorrect") judgeVerdict = "incorrect";
 
@@ -951,12 +1127,14 @@
     await publishJudgeState({ increment: true });
   }
 
-  async function undoJudgeMark() {
+  async function undoJudgeMark(button) {
+    if (role === "remote" && presenter?.sourceRole === "admin" && !source?.active) return;
     if (!canJudge || !sessionCode || !presenter?.wordToken || judgeWordToken !== presenter.wordToken) return;
 
     const previousIndex = previousReviewedIndex();
     if (previousIndex < 0) return;
 
+    inputStarted(button || document.getElementById("undo-letter-button"));
     judgeMarks[previousIndex] = "pending";
     judgePointer = previousIndex;
     recomputeJudgeVerdict();
@@ -973,49 +1151,31 @@
     await publishJudgeState({ increment: true });
   }
 
-  async function waitForPresenterCommandAck(seq, targetWordToken, timeoutMs = 4000) {
+  async function waitForPresenterCommandAck(seq, targetWordToken, timeoutMs = 12000) {
     const deadline = Date.now() + timeoutMs;
-
-    while (Date.now() < deadline) {
-      await new Promise(resolve => window.setTimeout(resolve, 100));
-
-      try {
-        const latestPresenter = typeof Cloud.fetchPresenter === "function"
-          ? await Cloud.fetchPresenter(sessionCode)
-          : Cloud.presenterState(await Cloud.fetchRows(sessionCode));
-        if (!latestPresenter) continue;
-
-        const ack = Number(latestPresenter.lastCommandSeq || 0);
-        const tokenChanged = installPresenterSnapshot(latestPresenter, { render: true });
-
-        if (tokenChanged && role === "remote" && presenter?.wordToken) {
-          // Publish a clean Admin judge row for the new word immediately.
-          publishJudgeState({ increment: true });
-        }
-
-        if (ack >= seq) {
-          return true;
-        }
-
-        // A new word means a stale word-targeted command should not block the queue.
-        if (
-          targetWordToken &&
-          latestPresenter.wordToken &&
-          latestPresenter.wordToken !== targetWordToken
-        ) {
-          return true;
-        }
-      } catch (error) {
-        // Keep waiting until timeout; normal refresh will surface connectivity.
+    waitingForAck += 1;
+    try {
+      while (Date.now() < deadline) {
+        if (Number(presenter?.lastCommandSeq || 0) >= seq) return !targetWordToken || presenter.wordToken === targetWordToken;
+        // Reuse the normal reader, including its in-flight guard. Never start
+        // a second polling loop just to wait for a button acknowledgement.
+        await refreshPresenterOnly();
+        if (Number(presenter?.lastCommandSeq || 0) >= seq) return !targetWordToken || presenter.wordToken === targetWordToken;
+        await new Promise(resolve => window.setTimeout(resolve, Cloud.pollDelay(250)));
       }
-    }
-
-    return false;
+      return false;
+    } finally { waitingForAck -= 1; }
   }
 
-  function sendRemoteCommand(commandType, value = "") {
+  function sendRemoteCommand(commandType, value = "", button) {
     if (role !== "remote" || !sessionCode || !presenter) return Promise.resolve(false);
+    if (source?.active) return runSourceAction(commandType, value, button);
+    if (presenter.sourceRole === "admin") {
+      Feedback?.set(button, "error", "Run this session from this Admin to change words.");
+      return Promise.resolve(false);
+    }
 
+    if (button) { button.disabled = true; Feedback?.set(button, "saving", "Sending…"); }
     const snapshotSessionCode = sessionCode;
     const snapshotPresenter = {
       level: presenter.level || "",
@@ -1032,62 +1192,90 @@
         // but rapid ✓/×/Backspace never wait on this slower control-command path.
         await drainAdminWordState();
 
-        commandSeq += 1;
-        const seq = commandSeq;
+        // Letter taps must not overwrite a command before Presenter reads it.
+        // Hold any new full-word snapshot until this command is acknowledged.
+        remoteControlCommandActive = true;
+        try {
+          commandSeq += 1;
+          const seq = commandSeq;
 
-        await Cloud.writeState({
-          sessionCode: snapshotSessionCode,
-          role: "remote",
-          actorId: "main",
-          state: {
-            startedAt: new Date().toISOString(),
-            ...snapshotPresenter,
-            commandSeq: seq,
-            commandType,
-            value
+          const saved = await Cloud.writeState({
+            sessionCode: snapshotSessionCode,
+            role: "remote",
+            actorId: "main",
+            state: {
+              startedAt: new Date().toISOString(),
+              ...snapshotPresenter,
+              commandSeq: seq,
+              commandType,
+              ...(commandType === "contestant" ? { currentContestant: Cloud.contestantInfo(JSON.parse(value)) } : {}),
+              value
+            }
+          });
+
+          const savedSeq = Number(saved?.command?.commandSeq ?? seq);
+          if (savedSeq !== seq) {
+            commandSeq = Math.max(commandSeq, savedSeq);
+            throw new Error("Command superseded before delivery.");
           }
-        });
 
-        const acknowledged = await waitForPresenterCommandAck(
-          seq,
-          commandType === "difficulty" ? "" : snapshotPresenter.wordToken
-        );
+          const acknowledged = await waitForPresenterCommandAck(
+            seq,
+            ["difficulty", "category", "new-word", "contestant"].includes(commandType) ? "" : snapshotPresenter.wordToken
+          );
+          if (!acknowledged) throw new Error("Presenter did not acknowledge command.");
 
-        if (!acknowledged) {
-          throw new Error("Presenter did not acknowledge command.");
+          if (commandType === "feedback") window.dispatchEvent(new CustomEvent("spelling-feedback-confirmed", {
+            detail: { sessionCode: snapshotSessionCode, wordToken: snapshotPresenter.wordToken, word: snapshotPresenter.word, verdict: value }
+          }));
+
+          setConnection("Command sent", "online");
+          window.setTimeout(refreshPresenterOnly, 20);
+          return true;
+        } finally {
+          remoteControlCommandActive = false;
+          if (pendingAdminWordState && !adminWordStateWriteBusy) flushPendingAdminWordState();
         }
-
-        setConnection("Command sent", "online");
-        window.setTimeout(refreshPresenterOnly, 20);
-        return true;
       })
       .catch(error => {
         setConnection("Command failed", "error");
         return false;
       });
 
-    return commandPublishChain;
+    const operation = commandPublishChain;
+    operation.then(ok => {
+      if (button) { button.disabled = false; Feedback?.set(button, ok ? "saved" : "error", ok ? "Applied in Study" : "Not confirmed · check the session before retrying"); }
+    });
+    return operation;
   }
 
   async function openPools() {
     if (!presenter) return;
+    const poolState = presenter;
     poolModal?.classList.remove("hidden");
     if (poolColumns) poolColumns.innerHTML = "<p class='placeholder'>Loading remaining words…</p>";
 
     try {
-      const pools = await Cloud.loadRemainingPools(presenter.level || "4TH-5TH", presenter.usedWords || {});
+      const level = poolState.level || "4TH-5TH";
+      const pools = await Cloud.loadRemainingPools(level, poolState.usedWords || {});
       if (!poolColumns) return;
-      poolColumns.innerHTML = ["easy", "medium", "hard"].map(difficulty => {
+      const difficulties = Object.keys(pools);
+      poolColumns.innerHTML = difficulties.map(difficulty => {
         const words = pools[difficulty] || [];
         const list = words.length
           ? `<ol class="pool-word-list">${words.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ol>`
           : "<p class='placeholder'>No remaining words.</p>";
         return `
-          <section class="pool-column ${presenter.difficulty === difficulty ? "current" : ""}">
+          <section class="pool-column ${poolState.difficulty === difficulty ? "current" : ""}" data-pool-difficulty="${difficulty}">
             <h3>${difficulty} <span class="pool-count">${words.length} remaining</span></h3>
             ${list}
           </section>`;
       }).join("");
+      poolColumns.innerHTML += `<section class="pool-used-section" id="pool-used-words"><h3>Already used words · ${escapeHtml(level)}</h3><div class="pool-columns">${difficulties.map(difficulty => {
+        const values = poolState.usedWords?.[`${level}|${difficulty}`];
+        const used = [...new Set(Array.isArray(values) ? values : [])];
+        return `<section class="pool-column" data-pool-difficulty="${difficulty}"><h3>${difficulty} <span class="pool-count">${used.length} used</span></h3>${used.length ? `<ol class="pool-word-list">${used.map(item => `<li>${escapeHtml(item)}</li>`).join("")}</ol>` : '<p class="placeholder">No used words yet.</p>'}</section>`;
+      }).join("")}</div></section>`;
     } catch (error) {
       if (poolColumns) poolColumns.innerHTML = `<p class="placeholder">${escapeHtml(error.message)}</p>`;
     }
@@ -1101,6 +1289,93 @@
       '"': "&quot;"
     }[char]));
   }
+
+  function animateSourceResult() {
+    word?.animate?.([{ opacity: .5 }, { opacity: 1 }], { duration: 500 });
+  }
+  async function runSourceAction(type, value, button) {
+    if (button) { button.disabled = true; Feedback?.set(button, "saving", "Saving…"); }
+    try {
+      if (type === "feedback") animateSourceResult();
+      await source.run(type, value);
+      Feedback?.set(button, "saved", "Saved · Admin session");
+      return true;
+    } catch (error) {
+      Feedback?.set(button, "error", error.message || "Not saved · retrying");
+      renderPresenterState(); return false;
+    } finally { if (button) button.disabled = false; }
+  }
+
+  if (role === "remote" && window.BeeAdminSource) {
+    source = new window.BeeAdminSource({
+      onState(state) { if (sessionCode === source.code) receivePresenter(state); },
+      onSaved(state) {
+        if (sessionCode !== source.code) return;
+        inputFinished(Number(state.lastAdminInputRevision || 0), state.wordToken, "saved", "Saved · Admin session");
+        if (state.feedback?.id && state.feedback.id !== lastConfirmedFeedback && state.feedback.wordToken === state.wordToken) {
+          lastConfirmedFeedback = state.feedback.id;
+          window.dispatchEvent(new CustomEvent("spelling-feedback-confirmed", { detail: { sessionCode, wordToken: state.wordToken, word: state.word, verdict: state.feedback.verdict } }));
+        }
+        setConnection("Admin session saved", "online");
+      },
+      onError() { inputFinished(inputRevision, currentToken(), "error", "Not saved · retrying"); setConnection("Admin sync retrying", "error"); }
+    });
+  }
+  window.getSpellingWordSnapshot = async code => {
+    if (source?.active && source.code === code) { await source.saved(source.state.sourceRevision); return window.BeeSession.copy(source.state); }
+    return Cloud.fetchPresenter(code);
+  };
+  window.syncSpellingContestant = async (code, value) => {
+    if (sessionCode !== code) throw new Error("Session changed.");
+    const contestant = Cloud.contestantInfo(value);
+    const current = await window.getSpellingWordSnapshot(code);
+    if (JSON.stringify(Cloud.contestantInfo(current?.currentContestant)) === JSON.stringify(contestant)) return;
+    if (!await sendRemoteCommand("contestant", JSON.stringify(contestant))) throw new Error("Judge lives could not sync. Run the source from this Admin or refresh Study.");
+    const saved = await window.getSpellingWordSnapshot(code);
+    if (JSON.stringify(Cloud.contestantInfo(saved?.currentContestant)) !== JSON.stringify(contestant)) throw new Error("Refresh Study to enable contestant lives for judges.");
+  };
+  window.markSpellingWordUsed = async (code, token) => {
+    if (sessionCode !== code || !token || presenter?.wordToken !== token) throw new Error("The word session changed. Review the current word and try again.");
+    const word = presenter.word, key = `${presenter.level}|${presenter.difficulty}`;
+    if (presenter.usedWords?.[key]?.includes(word)) return;
+    if (!await sendRemoteCommand("use-word", token)) throw new Error("Word pool save was not confirmed. Take the scene again to retry.");
+    const state = await window.getSpellingWordSnapshot(code);
+    if (!state?.usedWords?.[key]?.includes(word)) throw new Error("Word pool save was not confirmed. Refresh Study if it is hosting this session, then retry.");
+  };
+  async function startAdminSession() {
+    if (!source) return;
+    const start = document.getElementById("start-admin-session"), takeover = document.getElementById("admin-take-source");
+    const code = cleanCodeInput() || String(window.crypto.getRandomValues(new Uint32Array(1))[0] % 900000 + 100000);
+    codeInput.value = code; start.disabled = true; joinButton.disabled = true; if (takeover) takeover.disabled = true;
+    setJoinStatus("Starting Admin session…");
+    try {
+      const previous = await Cloud.fetchPresenter(code);
+      if (previous?.screenBroadcast || previous?.screenCameraPreview) throw new Error("That code belongs to an audience screen. Choose a different code.");
+      await source.start(code, previous);
+      await joinSession();
+    } catch (error) { source.stop(); setJoinStatus(error.message, true); setConnection("Session not confirmed", "error"); }
+    finally { start.disabled = false; joinButton.disabled = false; if (takeover) takeover.disabled = false; }
+  }
+  document.getElementById("start-admin-session")?.addEventListener("click", startAdminSession);
+  document.getElementById("admin-take-source")?.addEventListener("click", startAdminSession);
+  document.getElementById("reset-admin-session")?.addEventListener("click", async event => {
+    if (resetting || !source?.active || source.code !== sessionCode) return;
+    if (!window.confirm(`Reset session ${sessionCode}?\n\nClear ALL used-word history and judging, and draw a fresh word. Return the audience screen to Standby, Round 1, and clear finalist/podium assignments.\n\nKeep the same session code, contestant list, remaining lives, category, difficulty and screen mode. This cannot be undone.`)) return;
+    const button = event.currentTarget, notice = document.getElementById("session-reset-status");
+    resetting = true; button.disabled = true; app.inert = true;
+    notice.textContent = "Resetting session…"; Feedback?.set(button, "saving", "Resetting…");
+    try {
+      await source.saved(source.state.sourceRevision);
+      await window.resetSpellingScreen();
+      await source.run("reset");
+      notice.textContent = "Session reset. All words are available again. Screen is on Standby, Round 1. Contestants and lives were kept.";
+      Feedback?.set(button, "saved", "Session reset");
+    } catch (error) {
+      notice.textContent = `Reset not completed: ${error.message} The screen may already be on Standby. Retry Reset session.`;
+      Feedback?.set(button, "error", "Reset not completed · retry");
+    } finally { resetting = false; app.inert = false; button.disabled = false; }
+  });
+  document.getElementById("admin-category")?.addEventListener("change", event => sendRemoteCommand("category", event.currentTarget.value, event.currentTarget));
 
   if (judgeNameInput && judgeName) judgeNameInput.value = judgeName;
 
@@ -1124,51 +1399,26 @@
   joinButton?.addEventListener("click", joinSession);
 
   function bindVerdictButton(button) {
-    let suppressSyntheticClickUntil = 0;
-
-    const activate = () => {
+    // Use the native click generated by touch, pen, mouse or keyboard. The
+    // old pointerdown + preventDefault path could interfere with Android taps
+    // and could mark letters even when the user intended to scroll the page.
+    // Each completed tap counts once, with no artificial cooldown.
+    button.addEventListener("click", () => {
       if (button.disabled) return;
       if (button.dataset.action === "undo") {
-        undoJudgeMark();
-        return;
+        undoJudgeMark(button);
+      } else {
+        submitJudgeMark(button.dataset.verdict === "incorrect" ? "incorrect" : "correct", button);
       }
-      submitJudgeMark(button.dataset.verdict === "incorrect" ? "incorrect" : "correct");
-    };
-
-    const activateTouchLike = event => {
-      if (event?.cancelable) event.preventDefault();
-      suppressSyntheticClickUntil = performance.now() + 650;
-      activate();
-    };
-
-    if (window.PointerEvent) {
-      // Fire as soon as the finger/stylus goes down. There is deliberately no
-      // inter-press cooldown, so fast spelling cadence is accepted.
-      button.addEventListener("pointerdown", event => {
-        if (event.pointerType === "touch" || event.pointerType === "pen") {
-          activateTouchLike(event);
-        }
-      });
-    } else {
-      // Older iOS/WebKit fallback when Pointer Events are unavailable.
-      button.addEventListener("touchstart", activateTouchLike, { passive: false });
-    }
-
-    // Mouse and keyboard activation still use click. A touch-generated click
-    // is ignored without blocking the next real touch press.
-    button.addEventListener("click", event => {
-      if (performance.now() < suppressSyntheticClickUntil) {
-        event.preventDefault();
-        return;
-      }
-      activate();
     });
   }
 
   document.querySelectorAll(".verdict-button").forEach(bindVerdictButton);
 
   window.addEventListener("keydown", event => {
-    if (!canJudge || ["INPUT", "TEXTAREA"].includes(document.activeElement?.tagName)) return;
+    if (resetting) return;
+    if (event.target.closest?.("#screen-director")) return;
+    if (!canJudge || ["INPUT", "TEXTAREA", "SELECT"].includes(document.activeElement?.tagName)) return;
     if (event.key === "o" || event.key === "O") {
       event.preventDefault();
       submitJudgeMark("correct");
@@ -1181,17 +1431,16 @@
     }
   });
 
-  document.getElementById("new-word-button")?.addEventListener("click", () => sendRemoteCommand("new-word"));
-  document.getElementById("replay-audio-button")?.addEventListener("click", () => sendRemoteCommand("play-audio"));
+  document.getElementById("new-word-button")?.addEventListener("click", event => sendRemoteCommand("new-word", "", event.currentTarget));
   document.getElementById("word-visibility-button")?.addEventListener("click", event => {
     const value = event.currentTarget.dataset.nextVisibility || (presenter?.hiddenMode === false ? "hide" : "reveal");
-    sendRemoteCommand("visibility", value);
+    sendRemoteCommand("visibility", value, event.currentTarget);
   });
   document.querySelectorAll("[data-difficulty]").forEach(button => {
-    button.addEventListener("click", () => sendRemoteCommand("difficulty", button.dataset.difficulty));
+    button.addEventListener("click", () => sendRemoteCommand("difficulty", button.dataset.difficulty, button));
   });
-  document.getElementById("presenter-correct")?.addEventListener("click", () => sendRemoteCommand("feedback", "correct"));
-  document.getElementById("presenter-incorrect")?.addEventListener("click", () => sendRemoteCommand("feedback", "incorrect"));
+  document.getElementById("presenter-correct")?.addEventListener("click", event => sendRemoteCommand("feedback", "correct", event.currentTarget));
+  document.getElementById("presenter-incorrect")?.addEventListener("click", event => sendRemoteCommand("feedback", "incorrect", event.currentTarget));
 
   poolButton?.addEventListener("click", openPools);
   poolClose?.addEventListener("click", () => poolModal?.classList.add("hidden"));

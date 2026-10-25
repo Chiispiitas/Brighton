@@ -1,0 +1,4 @@
+[hidden] { display: none !important; }
+#dashboardContent { display: grid; gap: 24px; }
+.header-actions { flex-wrap: wrap; }
+@media (max-width: 600px) { .portal-title-block h1 { font-size: 24px; } }
