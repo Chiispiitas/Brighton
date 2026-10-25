@@ -1390,6 +1390,65 @@
       "scope": "Publish the verified book through 4D and audio controls; trailing empty CSS line removed, compiled HTML rebuilt with no semantic change.",
       "source_checks": "49 audio scripts pass forbidden-tag validation; staged files scanned for private API keys and GitHub size limits.",
       "runtime_evidence": "Retained html_audio_controls and unit_4_visual_variety checks; no visual/audio content change."
+    },
+    "functional_typography": {
+      "date": "2026-10-25",
+      "status": "Verified: assembled/standalone HTML, live viewer and reopened GitHub-built PDF",
+      "pages": 34,
+      "masters": 17,
+      "focus_panels": 19,
+      "focus_text_nodes": 362,
+      "focus_pt": 9.5,
+      "instruction_pt": 8.9,
+      "task_pt": 9.5,
+      "word_bank_pt": 9,
+      "extra_practice_pt": 8,
+      "changed_functional_text_nodes": 787,
+      "unchanged_text_nodes": 1603,
+      "lesson_markup_changes": "Only task-role class annotations; all content retained",
+      "standalone_computed_sizes_match": true,
+      "page_overflow": [],
+      "clipped_task_text": [],
+      "layout_accommodations": [
+        "1D nonessential panel gaps",
+        "2C feature/exercise gaps",
+        "Review exercise gaps"
+      ],
+      "media_and_audio_changes": false,
+      "evidence_directory": "work/type-consistency-20261024",
+      "supersedes": "Earlier font-size and geometry checks where shared functional type changed; content and recording checks retain their scope.",
+      "live_viewer": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html",
+      "implementation_commit": "938e0ed301ffeef12c333349500205d74df83f58",
+      "pdf_build_commit": "2aeb9b9",
+      "saved_pdf": {
+        "pages": 34,
+        "A4": true,
+        "all_page_text_preserved": true,
+        "all_19_focus_panels_size_pt": 9.49,
+        "browser_rounding_tolerance_pt": 0.1,
+        "visual_review": "All 34 rendered pages and close-up 4C via Poppler; lesson-code digits retained."
+      },
+      "live_checks": {
+        "pages": 34,
+        "focusPanels": 19,
+        "focusSizes": [
+          9.5
+        ],
+        "instructionSizes": [
+          8.9
+        ],
+        "taskSizes": [
+          9.5
+        ],
+        "bankSizes": [
+          9
+        ],
+        "practiceSizes": [
+          8
+        ],
+        "buttons": 39
+      },
+      "rollback": "Exact before-copies and guarded restore in work/type-consistency-20261024."
     }
   },
   "pending": [
@@ -1436,8 +1495,8 @@
       ],
       "fingerprint": {
         "files": 367,
-        "bytes": 417183870,
-        "sha256": "a178e9f2bebedf8fbdfa6ddecbf8e5b5e1e6624517e1ca75963659940f2de582"
+        "bytes": 417193560,
+        "sha256": "d31d66f2729cd1689c9d4ad7247dc1b239e8cd4faf938bce957854803b4cba1f"
       }
     },
     "shared_rendering": {
@@ -1447,8 +1506,8 @@
       "exclude_markdown": true,
       "fingerprint": {
         "files": 11,
-        "bytes": 52449,
-        "sha256": "4697e7d98999aaa3cece78ebd9141929efc36dac02640af887b6d9d9b965d143"
+        "bytes": 54779,
+        "sha256": "1fde6eb0f73fa780d98581e77a65185d2286679e6d2b4a613d14c782d53e742d"
       }
     },
     "saved_pdf": {
@@ -1457,8 +1516,8 @@
       ],
       "fingerprint": {
         "files": 1,
-        "bytes": 55696751,
-        "sha256": "a6ed657655f6f3d125e58c1fe6dc05254160c96da3d095e478ad729eb6dd299f"
+        "bytes": 6750696,
+        "sha256": "b40e38796ea246fc9bfc7d73288f7dfdfa62cf7d814fa2409ba523d0f7f7b076"
       }
     },
     "audit_criteria": {
@@ -1470,12 +1529,12 @@
       ],
       "fingerprint": {
         "files": 4,
-        "bytes": 108679,
-        "sha256": "7f09bcae0b7f4e5720ce1bbee88a5a40c36aa38dc0967c4e57d7738ff5c0b9a9"
+        "bytes": 111340,
+        "sha256": "6a84dadb417fa80c9c738d4a43b5c196fd89b53531c00288430ec4a74cb2b556"
       }
     }
   },
   "content_baseline_commit": "2f404b547b7da07be81a0622a78591d3299c402a",
-  "current_revision": "Unit 4 visual-variety revision retained; print-neutral HTML audio controls added across the full book and standalone lessons. Local authoring; not published.",
-  "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending."
+  "current_revision": "Book-wide functional typography normalized and verified in the live HTML viewer, all 17 masters and the rebuilt 34-page A4 PDF; integrated-content typography and all lesson content/media preserved.",
+  "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content."
 }
