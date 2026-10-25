@@ -146,6 +146,8 @@ try {
   }
 
   await page.pdf({
+    // The illustrated full book can take longer than Puppeteer's 30-second default.
+    timeout: 180000,
     path: pdfPath,
     width: "210mm",
     height: "297mm",
