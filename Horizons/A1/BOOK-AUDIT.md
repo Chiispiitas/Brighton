@@ -26,7 +26,7 @@ The full-width panoramic room, all learner wording, four reading-response writin
 
 **Checked:** all six image meanings, loaded images/backgrounds, caption/instruction type, dark-crimson emphasis, text fit, standalone/assembled geometry equality and three audio controls. The reopened 48-page A4 PDF preserves the first **47** pages' text and decoded drawing streams exactly; only page 52 is replaced, matching the native export pixels. The first 47 assembled page fragments, previous media and all learner wording are unchanged. Page and grammar-detail renders were inspected. This scoped check supersedes original 6B grammar-presentation/spacing evidence only; source, learning and audio evidence retains its scope.
 
-Publication verification pending.
+Live lesson and assembled HTML/PDF hashes match; the published browser reproduces checked geometry, loads the six picture models and plays all three tracks.
 
 ## 6B production, 26 October
 

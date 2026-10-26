@@ -2928,7 +2928,7 @@
     },
     "lesson_6b_picture_grammar_20261026": {
       "scope": "6B page 52 grammar presentation and continuation spacing only",
-      "status": "local HTML/PDF/media verified; publication pending",
+      "status": "local and live HTML/PDF/media verified",
       "pattern": "4A picture-plus-live-caption clarification in the canonical pink grammar shell. Six proportionate transparent photographic object pairings, three by two internal model grid; numbered exercise lane stays single column.",
       "concepts": [
         "in",
@@ -3143,7 +3143,29 @@
       "visual_review": "Page 52 and grammar detail inspected in browser and reopened Poppler-rendered PDF; all six relationships clear, no stray adjacent sprite edges, no crowding or text overflow.",
       "preservation": "First 47 PDF pages and assembled page fragments unchanged; previous images, all recordings, keys and wordlists unchanged.",
       "evidence_directory": "work/6b-picture-grammar-20261026 outside repository",
-      "reversibility": "Baseline 9a4e793; before copies, all-file hashes and guarded rollback journal."
+      "reversibility": "Baseline 9a4e793; before copies, all-file hashes and guarded rollback journal.",
+      "publication": {
+        "canonical": {
+          "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html",
+          "canonical_html_matches": true,
+          "canonical_pdf_matches_sha256": "6d2104ddce569f3da75fc4388cfd4f67c373c357286e9a47234aecd5c843745b",
+          "pdf_bytes": 30833563,
+          "published_track_hashes": {
+            "6.4": "83acf6a1fee0dbfbaa44c0b41d1292d61694250abf98ba4ab21a00b9c042476c",
+            "6.5": "af0e9ad8f34ff7c52f35a40f2c34411e8d8fe2a97193d2eb6815560452ad8a0f",
+            "6.6": "c85e43bbd558366d7c3973ec388e35972e9d00f83c391fbb8f73c27622559080"
+          },
+          "published_grammar_asset_sha256": "7c2723559424c64cb6041c3ccb2fadbd8bb3a819dfe036a0e4b5cc7a38d58aae"
+        },
+        "browser": {
+          "url": "https://exams.bebrighton.net/Horizons/A1/Lessons/6B.html",
+          "both_page_geometries_match_local": true,
+          "all_images_and_css_backgrounds_loaded": true,
+          "backgrounds": 2,
+          "all_three_new_tracks_play_pause": true,
+          "print_audio_controls_hidden": true
+        }
+      }
     }
   },
   "pending": [
@@ -3235,7 +3257,7 @@
     }
   },
   "content_baseline_commit": "2f404b547b7da07be81a0622a78591d3299c402a",
-  "current_revision": "6B picture-first prepositions pilot based on 4A: six transparent photographic relationships paired with unchanged 9.5pt model sentences; canonical pink shell and full-size room picture retained. Local checks complete; publication pending. Book remains a technical preview through 6B; final release and unproduced lessons/backmatter remain pending.",
+  "current_revision": "6B picture-first prepositions pilot based on 4A: six transparent photographic relationships paired with unchanged 9.5pt model sentences; canonical pink shell and full-size room picture retained. Local and live HTML/PDF/media verified. Book remains a technical preview through 6B; final release and unproduced lessons/backmatter remain pending.",
   "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope. units_3_4_reviews_visual_variety_20261025 supersedes earlier composition, color and geometry evidence for printed pages 21-40, including review_composition_20261025, review_3_4_20261025, unit_3_creative_revision and unit_4_visual_variety; earlier learning and audio evidence keeps its original scope. lesson_5b_on_air_20261026 supersedes prior 5B reading/source/presentation and 5.5/5.6 records only. The 26 October every-unit show mandate is superseded by planned B-skill balance and no two-unit show gap. lesson_5b_activity5_variety_20261026 supersedes only the earlier 5B Activity 5 image/choices/key and continuation-image evidence; no show/audio or other lesson evidence changes. lesson_6b_picture_grammar_20261026 supersedes only the original 6B page-52 grammar presentation, continuation spacing and associated geometry evidence; all learning, source and audio evidence retains its scope.",
   "receptive_skill_plan": {
     "policy": "B lessons provide a planned mix of reading-led and listening-led units; Horizons on Air is not required in every unit. Avoid two consecutive units without the show. Do not impose rigid alternation; 2B and 3B are both listening-led. Declare primary skill and source genre before authoring.",
