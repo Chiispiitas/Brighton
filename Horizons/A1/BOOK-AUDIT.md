@@ -20,6 +20,29 @@ Counts are inventory, not proof that every cue is correctly placed. Review place
 
 ## Verified evidence and its limits
 
+## Units 3–4 and both reviews: visual-variety correction, 25 October
+
+Scoped to printed pages **21–40**, following the approved 5A redesign. Ten spreads were compared together and with the complete book contact sheet. The recurring dark-blue/green heading plus yellow label was removed where it was merely decorative. This is not a new palette template: strong food-counter red, jersey pink, gallery white, radio crimson, kitchen green and cinema plum serve different source formats.
+
+| Spread | Current visual decision |
+| --- | --- |
+| 2R | Exhibition catalogue; removes teal/gold masthead and floating yellow tag. |
+| 3A | A supported sports profile, contrasting shifts and an anonymous journal surface. |
+| 3B | Radio guest roster and episode running order; brand consistency is intentional. |
+| 3C | A map-review interface with clear matching evidence and an independent review editor. |
+| 3D | Keep the seven-day tracker rather than redesigning a feature that already has a distinct purpose; distinguish source from learner writing. |
+| 4A | Travel journal with two country entries; replaces green heading/left accent bar. |
+| 4B | Food taste-test cover plus a shared-order receipt; three distinct answer lines sit clear of the slip edge. |
+| 4C | Practical recipe card and open planning workbench; light refinement rather than another poster. |
+| 4D | Color identifies two communication media; original note/phone comparison and writing space remain. |
+| 4R | Outdoor film programme, deliberately different from the exhibition catalogue in 2R; shared challenge circles remain consistent. |
+
+**Preserved:** all 19 standalone HTML masters, all answer keys, every original image binary, 39 MP3s and all audio scripts/production records. The lesson tasks, discovery examples, canonical grammar shells, functional font sizes, references, NEW WORDS, Extra Practice and challenge circles retain their content. Regular lessons keep one numbered lane; two page-level activity columns remain exclusive to reviews. Every target continuation has substantial task-related imagery. Generic backgrounds were not stripped away.
+
+**Verified locally:** all 20 target pages fit without text overflow; minimum final-activity bottom clearance is 20.5px. Standalone/assembled geometry matches; ordinary task/concept type is 9.5pt, instructions 8.9pt and concept emphasis crimson. Audio buttons play/pause on representative unchanged tracks. The 38-page A4 PDF was reopened, its 20 changed pages rendered with Poppler, and its lesson codes, images, response lines and spacing visually inspected. All 18 unaffected pages, including approved 5A, are text/pixel identical. Target pages match native Windows browser exports; all learner word tokens remain (normalizing an old spaced DAYS stamp extraction). Export-only 240dpi media preparation retains original image files and alpha; no saved-PDF font rewriting or resource deduplication was used. Live verification follows publication.
+
+**Reversible:** exact before copies, file hashes, comparison images, decision register and guarded restore helper are in `work/units3-4-reviews-variety-20261025` outside the repository. Prior composition/color/geometry records for pages 21–40 are historical where superseded; their learning/source/audio evidence retains its original scope. Unit 1/2 lessons and final whole-book release do not inherit this scoped pass.
+
 - **5A visual redesign, 25 October:** the former full-width teal heading and yellow price stripe are replaced by a clothing-editorial source on warm paper. The larger 82mm shop photo carries functional name labels; a compact black-ink two-price comparison sits below it, while a two-scale charcoal sans-serif headline and hanging-name conversation occupy the right. Photo/text proportions, headline position and price grouping change together. Page 42's full-background park scene grows from 146 × 73mm to 164 × 82mm, with dark neutral person markers. The figure/action evidence is more legible while keeping normal learner fonts and sufficient response space. All six activities, learner wording, controlled answers, photo evidence, grammar-box HTML, recorded-dialogue HTML, 39 MP3s, scripts, original image binaries and Extra Practice are retained. NEW WORDS, both references, the canonical pink rule and the one numbered exercise lane remain. Standalone/assembled HTML geometry matches, all tracks play/pause and no text overflows; minimum activity-bottom clearance is 31.9px. The saved 38-page A4 PDF was inspected through Poppler; its preceding 36 pages are text/pixel identical, and both new pages match their direct export. All original 5A PDF word tokens are preserved. A three-spread comparison (4C, 4D, Units 3 & 4 Review) and whole-book contact sheet show the new warm/charcoal feature alongside the earlier recipe, note/phone and cinema treatments. This resolves the scoped 5A presentation flag; other repeated treatments remain pending. Live canonical HTML matches the compiled source; computed photo sizes, warm/charcoal feature colors and all three audio play/pause controls pass. The published PDF matches the saved file byte for byte (SHA-256 `40f34b3428676b75c9bc6cd8d0ae9095a9ccf9c216f73a6adba939196f153462`). Source/PDF publication commit: `5685cc7`. Exact before copies and verification: `work/5a-redesign-20261025`.
 
 - **Author correction — visual fatigue, 25 October:** repeated blue/green/teal text or feature surfaces paired with yellow/gold accents have become overused. This is now a book-wide editorial acceptance issue, separate from the retained technical checks below. 5A's former teal/yellow *A lucky find* feature was the concrete flagged example and has now received the scoped redesign below; its earlier technical checks did not approve that treatment as a template. The canonical guide now requires a neighboring-spread comparison and a whole-unit/whole-book repetition check. The scoped 5A correction is now checked; the remaining book-wide reassessment is still pending.
@@ -48,7 +71,7 @@ Older 4B/4C/4D presentation checks and the prior Units 2/4 revision are historic
 
 ## Remaining work
 
-- [ ] Reassess recurring palettes and graphic treatments across the book, beyond the scoped 5A correction, especially the recurring blue/green/teal + yellow/gold pattern. Review whole-unit/contact-sheet rhythm and neighboring spreads; record specific redesign decisions before accepting creative variety.
+- [ ] Reassess remaining Unit 1/2 lesson treatments, then repeat the final whole-book visual-fatigue comparison. Units 3–4, both paired reviews and 5A have scoped evidence; they do not approve untouched lessons automatically.
 - [ ] Build and paginate the back-of-book material, replace all `page ---` destinations, and verify each link/reference.
 - [ ] Explicitly audit Unit 1 continuation-page imagery against the newer preference. Review, Units 2–3 and 4A–4D have scoped evidence; Unit 1 must not inherit that pass automatically. Count substantial CSS-background photos as imagery; tiny badges do not count.
 - [ ] Run a final whole-book source/key/audio/layout review after content and pagination are complete, then inspect the reopened final PDF before release.

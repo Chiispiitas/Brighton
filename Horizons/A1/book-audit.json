@@ -1921,7 +1921,8 @@
         "neighboring_spread_comparison": true,
         "whole_book_contact_sheet_inspected_for_context": true,
         "new_global_visual_pass_claimed": false
-      }
+      },
+      "units_3_4_and_reviews": "Scoped correction verified locally for printed pages 21-40; see units_3_4_reviews_visual_variety_20261025. Unit 1 and Unit 2 lessons remain outside this new visual-fatigue pass."
     },
     "lesson_5a_visual_redesign_20261025": {
       "date": "2026-10-25",
@@ -2010,13 +2011,143 @@
         "pdf_sha256": "40f34b3428676b75c9bc6cd8d0ae9095a9ccf9c216f73a6adba939196f153462",
         "canonical_html_source_identical": true
       }
+    },
+    "units_3_4_reviews_visual_variety_20261025": {
+      "scope": [
+        "2R",
+        "3A",
+        "3B",
+        "3C",
+        "3D",
+        "4A",
+        "4B",
+        "4C",
+        "4D",
+        "4R"
+      ],
+      "printed_pages": [
+        21,
+        40
+      ],
+      "status": "local source and saved-PDF checks passed; live publication pending",
+      "decisions": {
+        "2R": {
+          "color": "Gallery white, crimson and restrained cast labels; existing multicolor retrieval circles retained.",
+          "text": "Two-scale sans/serif exhibition title; admission details separated beneath.",
+          "image": "Full original three-person collage and continuation contact sheet retained.",
+          "idea": "Exhibition catalogue; removes teal/gold masthead and floating yellow tag."
+        },
+        "3A": {
+          "color": "Jersey pink with charcoal; plum and burnt orange distinguish the two listening guests.",
+          "text": "Sports-profile title and circular clock sit beside, rather than above, the portrait.",
+          "image": "70mm portrait spans the title and reading copy; continuation guests remain large.",
+          "idea": "A supported sports profile, contrasting shifts and an anonymous journal surface."
+        },
+        "3B": {
+          "color": "Established crimson Horizons on Air masthead retained; guest strips use neutral studio paper.",
+          "text": "Named guest headers and red running-order cues replace dark teal/yellow subheaders.",
+          "image": "Alternating workplace scenes and the tall conversation cutout retained.",
+          "idea": "Radio guest roster and episode running order; brand consistency is intentional."
+        },
+        "3C": {
+          "color": "White search header, charcoal price strips, restrained green reviews and warm dialogue surface.",
+          "text": "Light search/review surface rather than a blue feature masthead; recommendation briefs use vertical dividers.",
+          "image": "Photos stay separate from matching reviews; all three keep equally treated prices, including Palm Park.",
+          "idea": "A map-review interface with clear matching evidence and an independent review editor."
+        },
+        "3D": {
+          "color": "Purposeful green/orange tracker retained; learner journal uses white paper and a green outline.",
+          "text": "Source post stays bold sans; learner journal uses a serif title.",
+          "image": "Six routine photos and the substantial three-moment continuation scene retained.",
+          "idea": "Keep the seven-day tracker rather than redesigning a feature that already has a distinct purpose; distinguish source from learner writing."
+        },
+        "4A": {
+          "color": "Sunrise rust and warm journal paper, with restrained brown country entries.",
+          "text": "Serif travel-journal heading; country names remain ordinary learner typography.",
+          "image": "Crossing full-background breakfast photographs are 76 x 30mm; 78mm picnic evidence retained.",
+          "idea": "Travel journal with two country entries; replaces green heading/left accent bar."
+        },
+        "4B": {
+          "color": "Strong food-counter red and white cover; open opinions below and neutral order slip.",
+          "text": "Large white sans headline, underlined reviewer names, serif order-slip title.",
+          "image": "Burger cover is 76 x 72mm; large reaction scene and supported speech bubbles retained.",
+          "idea": "Food taste-test cover plus a shared-order receipt; three distinct answer lines sit clear of the slip edge."
+        },
+        "4C": {
+          "color": "Green kitchen card retained beside the adjacent red taste-test spread.",
+          "text": "Serif recipe title and outlined circular serving count; no decorative shadow.",
+          "image": "Four exact actions, three quantity plates and native-alpha cook retained.",
+          "idea": "Practical recipe card and open planning workbench; light refinement rather than another poster."
+        },
+        "4D": {
+          "color": "Peach physical note versus violet phone; lavender free-price field instead of yellow/lime accents.",
+          "text": "Phone and message labels stay functional; learner composing surface has a quieter header divider.",
+          "image": "Full food-sharing environments retained on both pages.",
+          "idea": "Color identifies two communication media; original note/phone comparison and writing space remain."
+        },
+        "4R": {
+          "color": "Plum film programme, white admission circle and perforated pale-violet schedule strip.",
+          "text": "Photo precedes the cinema title; named messages have vertical cues, not blue headers.",
+          "image": "Full cinema environments retained on both pages, with natural photographic proportions.",
+          "idea": "Outdoor film programme, deliberately different from the exhibition catalogue in 2R; shared challenge circles remain consistent."
+        }
+      },
+      "preservation": {
+        "all_19_lesson_html_masters_unchanged": true,
+        "all_answer_keys_unchanged": true,
+        "all_original_image_binaries_unchanged": true,
+        "all_39_mp3s_scripts_and_production_records_unchanged": true,
+        "unaffected_pdf_pages_text_and_pixels_identical": 18,
+        "activities": 134,
+        "audio_controls": 42,
+        "new_words": 22,
+        "extra_practice": 17,
+        "go_to": 40
+      },
+      "verification": {
+        "standalone_and_assembled_geometry_equal": true,
+        "all_20_pages_no_text_overflow": true,
+        "minimum_activity_bottom_clearance_px": 20.5,
+        "functional_fonts_and_crimson_concept_emphasis_checked": true,
+        "sample_audio_controls_play_pause": true,
+        "all_target_continuations_have_substantial_images": true,
+        "review_only_page_level_exercise_columns": true,
+        "inspection": [
+          "20 Poppler-rendered saved-PDF pages",
+          "20 individual browser pages",
+          "Ten spreads side by side",
+          "Whole-book contact sheet including approved 5A"
+        ],
+        "pdf_word_tokens": "All original learner word tokens retained; old PDF spaced D A Y S stamp normalized to DAYS for comparison."
+      },
+      "saved_pdf": {
+        "pages": 38,
+        "all_a4": true,
+        "unchanged_pages": 18,
+        "unchanged_pages_text_and_pixels_identical": true,
+        "changed_pages_match_direct_export": 20,
+        "changed_page_numbers": [
+          21,
+          40
+        ],
+        "pdf_sha256": "277fb12325df703b3901cd59045cff3ed3a062f7a35cd463e84e0ffdf17aba28",
+        "pdf_bytes": 23817002,
+        "media_export_dpi": 240,
+        "original_asset_bytes_preserved": true,
+        "unchanged_lesson_html_masters": 19,
+        "unchanged_mp3s": 39,
+        "minimum_activity_bottom_clearance_px": 20.5,
+        "method": "Native Windows browser pages with export-only image downsampling, then copied PDF page objects. No saved-PDF font/image rewriting or resource deduplication."
+      },
+      "evidence_directory": "work/units3-4-reviews-variety-20261025",
+      "reversibility": "Exact before copies and SHA-256 guards outside repository; restore helper checks every affected current file before restoring. Source changes are limited to ten local style sheets, compiled viewer, PDF and audit/metadata."
     }
   },
   "pending": [
     {
       "id": "visual-fatigue",
-      "scope": "Whole book beyond the scoped 5A correction",
-      "action": "Continue comparing neighboring spreads, complete units and the whole-book contact sheet; record repeated color/feature treatments and specific redesign decisions. The scoped 5A redesign is checked; remaining book-wide reassessment is pending."
+      "scope": "Unit 1 and Unit 2 lessons; final whole-book reassessment",
+      "action": "Units 3-4, both paired reviews and 5A now have scoped visual-fatigue evidence. Reassess the remaining Unit 1/2 lessons and repeat final whole-book comparison when book content is complete."
     },
     {
       "id": "pagination",
@@ -2025,8 +2156,8 @@
     },
     {
       "id": "continuation-imagery",
-      "scope": "Unit 1 and Review",
-      "action": "Explicitly audit Unit 1 and Review continuation-page imagery. Units 2-3 and existing 4A-4D have scoped evidence; do not automatically extend their pass. Count substantial CSS-background photographs and image families, not only img totals or tiny badges."
+      "scope": "Unit 1",
+      "action": "Explicitly audit Unit 1 continuation imagery. Both reviews and Units 2-4 have scoped evidence; do not automatically extend their pass to Unit 1."
     },
     {
       "id": "release-review",
@@ -2061,8 +2192,8 @@
       ],
       "fingerprint": {
         "files": 392,
-        "bytes": 438239148,
-        "sha256": "a40eb412f62f47978b2aa0db6eac096abe5380f5ff640c861d4423bfc59881cb"
+        "bytes": 438262353,
+        "sha256": "868b4792ef5898ee1946bb39663bfc271ce5d110ffaa64748b86c178111859c8"
       }
     },
     "shared_rendering": {
@@ -2082,8 +2213,8 @@
       ],
       "fingerprint": {
         "files": 1,
-        "bytes": 17403303,
-        "sha256": "685082728772319ffa304527da53d77b624ea1f31a4c65f24e517476bbc1398c"
+        "bytes": 23817002,
+        "sha256": "09e6fbac60ab1a890b27bf8b95fe218052b2cf1ae75ee257e467afcc2e80c518"
       }
     },
     "audit_criteria": {
@@ -2101,6 +2232,6 @@
     }
   },
   "content_baseline_commit": "2f404b547b7da07be81a0622a78591d3299c402a",
-  "current_revision": "5A visual redesign published and verified: warm-paper clothing editorial, larger photographic evidence and compact black-ink price comparison. Six activities, wording, grammar and recordings preserved; previous 36 saved PDF pages unchanged. Remaining book-wide visual-fatigue reassessment stays pending.",
-  "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope."
+  "current_revision": "Units 3-4 and both reviews now have distinct content-led feature treatments. All learner content, original media and approved 5A retained. Twenty saved-PDF pages visually checked; live publication pending. Whole-book release and remaining visual-fatigue reassessment still pending.",
+  "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope. units_3_4_reviews_visual_variety_20261025 supersedes earlier composition, color and geometry evidence for printed pages 21-40, including review_composition_20261025, review_3_4_20261025, unit_3_creative_revision and unit_4_visual_variety; earlier learning and audio evidence keeps its original scope."
 }

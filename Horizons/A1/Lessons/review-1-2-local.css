@@ -102,3 +102,18 @@
 .rr-mission:nth-child(2) .rr-challenge-ball { background:var(--rr-gold); border-color:var(--rr-gold); }
 .rr-mission h3 { color:var(--rr-ball); }
 .rr-challenge-ball p { margin:0; line-height:1.25; text-align:center; font-weight:400; }
+
+/* Exhibition catalogue, scoped to this review only: typography and admission
+   details on gallery white, with a crimson edge rather than teal/gold branding. */
+.rr-page:not(.r34-page) .rr-project-head { background:#fff; color:#2a262b; padding:3mm 0; border-top:1.6mm solid #b51d54; }
+.rr-page:not(.r34-page) .rr-project-head h3 { font:750 24pt/1.03 var(--hz-font-sans); letter-spacing:-.04em; }
+.rr-page:not(.r34-page) .rr-project-head h3 em { color:#b51d54; font:400 29pt/1.02 Georgia,serif; letter-spacing:-.04em; }
+.rr-page:not(.r34-page) .rr-exhibit-card { position:static; width:auto; margin-top:3mm; background:#f1e8ed; transform:none; padding:2mm 2.5mm; display:flex; align-items:center; justify-content:space-between; gap:2mm; }
+.rr-page:not(.r34-page) .rr-exhibit-card > span { max-width:25mm; }
+.rr-page:not(.r34-page) .rr-exhibit-card > div { padding:0; gap:3mm; }
+.rr-page:not(.r34-page) .rr-project-copy { background:#fff; border:0; border-left:.45mm solid #bc7594; padding-left:2.5mm; }
+.rr-page:not(.r34-page) .rr-reading-check { border:0; border-left:.45mm solid #bc7594; padding-left:2.5mm; }
+.rr-page:not(.r34-page) .rr-cast-labels span { background:#8d274e; }
+.rr-page:not(.r34-page) .rr-cast-labels span:nth-child(2) { background:#65506b; }
+.rr-page:not(.r34-page) .rr-cast-labels span:nth-child(3) { background:#3b6959; }
+.rr-page:not(.r34-page) .rr-exhibition-dialogue { background:#f7f1f3; border-top:0; border-left:.7mm solid #b51d54; }

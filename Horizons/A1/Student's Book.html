@@ -6297,6 +6297,21 @@ body.hz-debug .hz-page::after {
 .rr-mission h3 { color:var(--rr-ball); }
 .rr-challenge-ball p { margin:0; line-height:1.25; text-align:center; font-weight:400; }
 
+/* Exhibition catalogue, scoped to this review only: typography and admission
+   details on gallery white, with a crimson edge rather than teal/gold branding. */
+.rr-page:not(.r34-page) .rr-project-head { background:#fff; color:#2a262b; padding:3mm 0; border-top:1.6mm solid #b51d54; }
+.rr-page:not(.r34-page) .rr-project-head h3 { font:750 24pt/1.03 var(--hz-font-sans); letter-spacing:-.04em; }
+.rr-page:not(.r34-page) .rr-project-head h3 em { color:#b51d54; font:400 29pt/1.02 Georgia,serif; letter-spacing:-.04em; }
+.rr-page:not(.r34-page) .rr-exhibit-card { position:static; width:auto; margin-top:3mm; background:#f1e8ed; transform:none; padding:2mm 2.5mm; display:flex; align-items:center; justify-content:space-between; gap:2mm; }
+.rr-page:not(.r34-page) .rr-exhibit-card > span { max-width:25mm; }
+.rr-page:not(.r34-page) .rr-exhibit-card > div { padding:0; gap:3mm; }
+.rr-page:not(.r34-page) .rr-project-copy { background:#fff; border:0; border-left:.45mm solid #bc7594; padding-left:2.5mm; }
+.rr-page:not(.r34-page) .rr-reading-check { border:0; border-left:.45mm solid #bc7594; padding-left:2.5mm; }
+.rr-page:not(.r34-page) .rr-cast-labels span { background:#8d274e; }
+.rr-page:not(.r34-page) .rr-cast-labels span:nth-child(2) { background:#65506b; }
+.rr-page:not(.r34-page) .rr-cast-labels span:nth-child(3) { background:#3b6959; }
+.rr-page:not(.r34-page) .rr-exhibition-dialogue { background:#f7f1f3; border-top:0; border-left:.7mm solid #b51d54; }
+
 
 /* Horizons/A1/Lessons/lesson-3a-local.css */
 /* Lesson 3A follows the current A1 crimson navigation identity. Blue, gold
@@ -6436,6 +6451,30 @@ body.hz-debug .hz-page::after {
 .l3a-shift header { overflow:hidden; }
 .l3a-shift:not(.l3a-shift--late) header img { transform:scale(2.8); transform-origin:60% 45%; }
 
+/* 25 October: Miami sports profile. Jersey pink, portrait and a clock replace
+   the generic navy masthead/gold tag; the source remains a supported article. */
+.l3a-leo-feature { grid-template-columns:minmax(0,1fr) 54mm; gap:0 4mm; padding:3mm; background:#f6edf0; border-top:1mm solid #ad3158; }
+.l3a-feature-head { grid-column:1; grid-row:1; padding:0 0 2mm; background:none; color:#252329; align-items:start; }
+.l3a-feature-head h2 { font:750 19pt/1.1 var(--hz-font-sans); letter-spacing:-.035em; }
+.l3a-feature-head h2 em { display:inline; font:800 27pt/1.03 var(--hz-font-sans); color:#ad3158; }
+.l3a-feature-head p { color:#6a3547; margin-top:1.5mm; }
+.l3a-feature-time { width:17mm; height:17mm; flex-shrink:0; border:.4mm solid #ad3158; border-radius:50%; background:#fff; color:#772940; font-size:16pt; }
+.l3a-feature-time > span { font-size:6.5pt; }
+.l3a-feature-layout figure { grid-column:2; grid-row:1 / 3; padding:0; align-self:stretch; }
+.l3a-feature-layout img { height:70mm; min-height:0; max-height:none; object-position:center 22%; }
+.l3a-feature-copy { grid-column:1; grid-row:2; padding:0; }
+.l3a-feature-copy p { margin-bottom:2mm; }
+.l3a-feature-sources { padding:2mm 0 0; color:#69424c; }
+.l3a-listening-head h2,.l3a-listening-head h2 em { color:#333036; }
+.l3a-shift { background:#f3f0eb; border-color:#a6a09a; }
+.l3a-shift header > div { background:#563b64; }
+.l3a-shift--late { background:#f7eee8; border-color:#b77553; }
+.l3a-shift--late header > div { background:#924922; }
+.l3a-mystery { background:#fffdf8; border-color:#c8c0b3; }
+.l3a-mystery header { background:none; color:#473f35; border-bottom:.3mm dashed #a69c8b; }
+.l3a-mystery h2 { font-family:Georgia,serif; font-style:italic; font-weight:400; font-size:19pt; }
+
+
 
 /* Horizons/A1/Lessons/lesson-3b-local.css */
 /* Radio programme: upright display type, a broadcast banner and guest
@@ -6565,6 +6604,20 @@ body.hz-debug .hz-page::after {
 .l3b-meeting-result .l3b-gap { width:35mm; margin-left:3mm; }
 
 .l3b-survey-people { height:72mm; }
+
+/* Radio identity stays crimson. Guest strips and a running order use studio
+   paper and red cues, rather than another dark teal magazine feature. */
+.l3b-week-stories { background:#f2eeeb; padding:3mm; gap:2.5mm; border-left:.7mm solid #ad1c4c; }
+.l3b-week-story { border-bottom:.25mm solid #d6ceca; }
+.l3b-story-copy header,.l3b-week-story--ken header,.l3b-week-story--maryam header { background:#fff; color:#3b3037; padding-bottom:1mm; }
+.l3b-story-copy h3 { color:#8f123f; }
+.l3b-story-copy header p { color:#5b5055; }
+.l3b-extracts dl { border-color:#ba6b88; }
+.l3b-listener-board { background:#f7f1f4; border-bottom:0; border-left:.7mm solid #ad1c4c; }
+.l3b-listener-board header { background:none; color:#8f123f; border-bottom:.25mm solid #d6b6c3; }
+.l3b-episode-plan { border:0; border-left:.7mm solid #8f123f; background:#faf7f5; }
+.l3b-episode-plan header { background:none; color:#8f123f; border-bottom:.3mm dashed #c3a7b3; }
+.l3b-episode-plan h2 { font-size:15pt; }
 
 
 /* Horizons/A1/Lessons/lesson-3c-local.css */
@@ -6715,6 +6768,29 @@ body.hz-debug .hz-page::after {
 
 .l3c-place-briefs p { min-height:5mm; }
 
+/* A light search/review surface: destination photos and prices do the work.
+   Keep photos separate from reviews so matching remains a real task. */
+.l3c-reviews-feature { border:.3mm solid #c8c8c3; border-radius:3mm; overflow:hidden; background:#fff; }
+.l3c-review-masthead { background:#fff; color:#292b28; padding:3mm; border-bottom:.25mm solid #d7d8d3; }
+.l3c-review-masthead h2 { font:650 22pt/1.15 var(--hz-font-sans); }
+.l3c-maps-brand svg { fill:#aa3150; }
+.l3c-maps-brand circle { fill:#fff; }
+.l3c-reviews-layout { background:#f4f5f1; }
+.l3c-photo-gallery figcaption { background:#343a35; color:#fff; }
+.l3c-review header,.l3c-review:nth-child(2) header,.l3c-review:nth-child(3) header { background:none; color:#333d34; border-bottom:.35mm solid #91a48e; }
+.l3c-review h3,.l3c-review:nth-child(2) h3,.l3c-review:nth-child(3) h3 { color:#304f3d; }
+.l3c-photo-answer { border-color:#67766a; }
+.l3c-review-byline { margin-top:2mm; }
+.l3c-conversation { background:#f1eee7; border-color:#8d7a57; }
+.l3c-conversation-title h2 { color:#6c542d; }
+.l3c-choice-feature { border:0; background:#f4f5f1; }
+.l3c-choice-feature > header { color:#304f3d; background:none; padding:2.5mm 3mm 0; }
+.l3c-place-briefs article { border-top:0; border-left:.6mm solid #91a48e; padding:0 0 0 2.5mm; }
+.l3c-place-briefs h3 { color:#304f3d; }
+.l3c-review-editor { border-color:#bac7b8; }
+.l3c-review-editor header { background:#e8eee5; color:#304f3d; }
+.l3c-review-editor svg { stroke:#304f3d; }
+
 
 /* Horizons/A1/Lessons/lesson-3d-local.css */
 /* A seven-day social challenge: real action photographs, a week record and
@@ -6849,6 +6925,14 @@ body.hz-debug .hz-page::after {
 
 .l3d-continuation-content { padding-top:20mm; }
 
+/* Retain the purposeful seven-day tracker. Distinguish the learner's journal
+   from Zoe's green source masthead without removing its writing surface. */
+.l3d-post-editor { border:.3mm solid #b6c3b3; background:#fffefa; }
+.l3d-post-editor header { background:#fffefa; color:#246343; border-bottom:.35mm solid #94af97; }
+.l3d-name-gap { border-color:#729078; }
+.l3d-post-editor h2 { font:700 19pt/1.2 Georgia,serif; }
+.l3d-my-challenge { background:#e9f0e4; color:#285638; border-left:.7mm solid #4b8053; }
+
 
 /* Horizons/A1/Lessons/lesson-4a-local.css */
 /* Food-led editorial composition; native Horizons chrome stays crimson. */
@@ -6965,6 +7049,23 @@ body.hz-debug .hz-page::after {
 .l4a-picnic-check img { width:78mm; }
 
 .l4a-breakfast-copy h3 span { margin-bottom:1mm; }
+
+/* Breakfast travel journal: crossing photographs and two country entries,
+   with a sunrise heading instead of the familiar green/gold combination. */
+.l4a-breakfast-feature { background:#f6f2ed; border-left:0; border-top:.5mm solid #cdbba7; padding:3mm 4mm 4mm; }
+.l4a-breakfast-feature > header { display:flex; flex-direction:column; align-items:flex-start; padding:0 0 2mm; color:#aa431e; }
+.l4a-breakfast-feature > header p { color:#655144; letter-spacing:.14em; }
+.l4a-breakfast-feature h2 { font:400 23pt/1.1 Georgia,serif; letter-spacing:-.04em; }
+.l4a-breakfast-copy h3 { color:#6f4935; }
+.l4a-breakfast-copy h3 span { color:#aa431e; }
+.l4a-breakfast-layout section { padding-bottom:0; border-bottom:.25mm solid #d4c6b7; }
+.l4a-breakfast-layout section:last-child { padding-bottom:0; border-bottom:0; }
+.l4a-breakfast-menu { border-top:0; border-bottom:.35mm solid #bda58c; background:#f6f2ed; padding:1mm 3mm; }
+.l4a-breakfast-menu header { color:#8f4527; }
+.l4a-sort-table th { color:#6d4931; border-color:#b49479; }
+
+.l4a-breakfast-layout { gap:2.5mm; }
+.l4a-breakfast-layout img { height:30mm; }
 
 
 /* Horizons/A1/Lessons/lesson-4b-local.css */
@@ -7096,6 +7197,30 @@ body.hz-debug .hz-page::after {
 
 .l4b-taste-feature h2 { line-height:1.35; }
 
+/* Taste-test cover: red food counter, oversized white headline, open opinion
+   columns and a receipt-like shared-order slip on the continuation. */
+.l4b-taste-feature { background:#fff; border-bottom:.35mm solid #d2b7ad; }
+.l4b-taste-cover { background:#a63225; color:#fff; grid-template-columns:76mm minmax(0,1fr); }
+.l4b-taste-cover img { width:76mm; height:72mm; object-position:center; }
+.l4b-taste-feature h2 { font:800 27pt/1.08 var(--hz-font-sans); color:#fff; letter-spacing:-.04em; }
+.l4b-vegan-note { border-color:#e0a096; }
+.l4b-vegan-note b { color:#fff; }
+.l4b-opinions { padding:3mm 0 0; gap:5mm; }
+.l4b-opinions section,.l4b-opinions section:nth-child(2),.l4b-opinions section:nth-child(3) { border-top:0; padding-top:0; }
+.l4b-opinions h3,.l4b-opinions section:nth-child(2) h3,.l4b-opinions section:nth-child(3) h3 { color:#a63225; border-bottom:.5mm solid #a63225; padding-bottom:1mm; }
+.l4b-opinion-table thead th { background:#59423b; }
+.l4b-shared-food { border:0; border-block:.35mm dashed #b6a499; background:#faf7f1; }
+.l4b-shared-food header { background:none; color:#8e3a25; padding:1.5mm 3mm; }
+.l4b-shared-food h2 { color:#8e3a25; font:italic 17pt/1.2 Georgia,serif; }
+.l4b-shared-food h3 { color:#59423b; }
+.l4b-reaction-photo figcaption { background:#a63225; }
+.l4b-reaction-photo figcaption > span:last-child { background:#59423b; }
+.l4b-counter-copy .l4b-reaction-dialogue p { background:#f7eee7; border-left:.6mm solid #b45d3e; }
+.l4b-counter-copy .l4b-reaction-dialogue p:nth-child(2) { background:#f0eeeb; border-color:#78685e; }
+
+
+.l4b-shared-food > div { padding:0 3mm 2mm; }
+
 
 /* Horizons/A1/Lessons/lesson-4c-local.css */
 /* A practical recipe sheet and kitchen counter; native Horizons navigation. */
@@ -7208,6 +7333,13 @@ body.hz-debug .hz-page::after {
 .l4c-noticing > li:last-child { grid-column:1 / -1; }
 .l4c-page--2 .l4c-choice-grid { grid-template-columns:1fr; gap:2mm; }
 
+/* Keep the green kitchen recipe distinct from the adjacent red taste test.
+   A practical ingredient card needs no badge-shaped serving stamp or shadow. */
+.l4c-recipe { box-shadow:none; border:.3mm solid #c8ceba; background:#fafbf4; }
+.l4c-for-two { border-radius:50%; width:17mm; height:17mm; background:none; border:.4mm solid #58804a; color:#315b32; }
+.l4c-recipe h2 { font:700 24pt/1.15 Georgia,serif; }
+.l4c-page .l4c-kitchen-talk { border-left:0; border-top:.5mm solid #779269; }
+
 
 /* Horizons/A1/Lessons/lesson-4d-local.css */
 /* Food-sharing posts: content-specific blue/gold feature; native Horizons controls. */
@@ -7301,6 +7433,14 @@ body.hz-debug .hz-page::after {
 .l4d-compose .l4d-post-lines > span { height:8mm; }
 .l4d-page--2 .l4d-edit-text { margin-top:3mm; border-color:#543780; }
 
+/* Physical peach note versus violet phone; color now identifies the two
+   communication media, instead of supplying another yellow accent label. */
+.l4d-short-post { background:#f4c4b1; box-shadow:none; border-bottom:.4mm solid #ba7358; }
+.l4d-phone-offer { background:#e9e1f1; color:#493574; border-bottom:.3mm solid #b5a4c8; }
+.l4d-share-feature > .l4d-real-connection { color:#624b78; border-color:#a58bb9; }
+.l4d-compose .l4d-post-paper { border-top:.3mm solid #c6bbd2; border-radius:3mm; background:#faf8fc; }
+.l4d-post-paper > header { padding-bottom:2mm; border-bottom:.3mm solid #c6bbd2; }
+
 
 /* Horizons/A1/Lessons/review-3-4-local.css */
 /* Reuses the approved paired-review composition; all new feature rules are scoped. */
@@ -7351,6 +7491,25 @@ body.hz-debug .hz-page::after {
 .r34-reading-check > li { display:grid; grid-template-columns:minmax(0,1fr) 10mm; column-gap:2mm; align-items:end; }
 
 .r34-milk-note { margin:1.5mm 0 .5mm; line-height:1.4; }
+
+/* Outdoor film programme: plum photography, a perforated admission strip and
+   two named messages. Deliberately different from the exhibition catalogue. */
+.r34-page { --r34-night:#4c315d; --r34-gold:#eadcf0; }
+.r34-cinema { border-bottom:.5mm solid #7a568a; }
+.r34-cinema-poster { display:flex; flex-direction:column; background:#4c315d; }
+.r34-cinema-poster > img { order:-1; }
+.r34-cinema-poster h2 { font:800 26pt/1.05 var(--hz-font-sans); padding:3mm; }
+.r34-cinema-poster h2 span { display:block; font:italic 18pt/1.15 Georgia,serif; margin-top:1mm; }
+.r34-free { top:3mm; right:3mm; background:#fff; color:#4c315d; transform:none; border-radius:50%; width:12mm; height:12mm; display:grid; place-items:center; padding:0; border:.4mm solid #9474a1; }
+.r34-program { background:#eadcf0; color:#4c315d; border-block:.3mm dashed #9673a7; }
+.r34-messages { background:#faf6fb; padding:3mm; }
+.r34-messages section { border-left:.5mm solid #bb9ac7; padding-left:2mm; }
+.r34-messages h3 { color:#75448a; }
+.r34-food-plan { border-top:0; border-left:.8mm solid #ba562e; background:#faf1e9; }
+.r34-replies { background:#f5f0f7; border-color:#9673a7; }
+.r34-your-cinema figcaption { background:#4c315de8; }
+.r34-message-sheet { border:0; background:#faf6fb; padding:2mm 3mm; border-top:.3mm dashed #9673a7; }
+.r34-message-sheet header { color:#75448a; }
 
 
 /* Horizons/A1/Lessons/lesson-5a-local.css */

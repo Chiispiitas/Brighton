@@ -107,3 +107,10 @@
 .l4c-noticing { grid-template-columns:1fr 1fr; gap:1.5mm 5mm; }
 .l4c-noticing > li:last-child { grid-column:1 / -1; }
 .l4c-page--2 .l4c-choice-grid { grid-template-columns:1fr; gap:2mm; }
+
+/* Keep the green kitchen recipe distinct from the adjacent red taste test.
+   A practical ingredient card needs no badge-shaped serving stamp or shadow. */
+.l4c-recipe { box-shadow:none; border:.3mm solid #c8ceba; background:#fafbf4; }
+.l4c-for-two { border-radius:50%; width:17mm; height:17mm; background:none; border:.4mm solid #58804a; color:#315b32; }
+.l4c-recipe h2 { font:700 24pt/1.15 Georgia,serif; }
+.l4c-page .l4c-kitchen-talk { border-left:0; border-top:.5mm solid #779269; }

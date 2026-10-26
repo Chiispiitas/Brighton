@@ -144,3 +144,26 @@
 .l3c-review-writing-layout .l3c-review-open-lines { padding-top:3mm; }
 
 .l3c-place-briefs p { min-height:5mm; }
+
+/* A light search/review surface: destination photos and prices do the work.
+   Keep photos separate from reviews so matching remains a real task. */
+.l3c-reviews-feature { border:.3mm solid #c8c8c3; border-radius:3mm; overflow:hidden; background:#fff; }
+.l3c-review-masthead { background:#fff; color:#292b28; padding:3mm; border-bottom:.25mm solid #d7d8d3; }
+.l3c-review-masthead h2 { font:650 22pt/1.15 var(--hz-font-sans); }
+.l3c-maps-brand svg { fill:#aa3150; }
+.l3c-maps-brand circle { fill:#fff; }
+.l3c-reviews-layout { background:#f4f5f1; }
+.l3c-photo-gallery figcaption { background:#343a35; color:#fff; }
+.l3c-review header,.l3c-review:nth-child(2) header,.l3c-review:nth-child(3) header { background:none; color:#333d34; border-bottom:.35mm solid #91a48e; }
+.l3c-review h3,.l3c-review:nth-child(2) h3,.l3c-review:nth-child(3) h3 { color:#304f3d; }
+.l3c-photo-answer { border-color:#67766a; }
+.l3c-review-byline { margin-top:2mm; }
+.l3c-conversation { background:#f1eee7; border-color:#8d7a57; }
+.l3c-conversation-title h2 { color:#6c542d; }
+.l3c-choice-feature { border:0; background:#f4f5f1; }
+.l3c-choice-feature > header { color:#304f3d; background:none; padding:2.5mm 3mm 0; }
+.l3c-place-briefs article { border-top:0; border-left:.6mm solid #91a48e; padding:0 0 0 2.5mm; }
+.l3c-place-briefs h3 { color:#304f3d; }
+.l3c-review-editor { border-color:#bac7b8; }
+.l3c-review-editor header { background:#e8eee5; color:#304f3d; }
+.l3c-review-editor svg { stroke:#304f3d; }

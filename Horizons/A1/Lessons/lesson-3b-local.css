@@ -125,3 +125,17 @@
 .l3b-meeting-result .l3b-gap { width:35mm; margin-left:3mm; }
 
 .l3b-survey-people { height:72mm; }
+
+/* Radio identity stays crimson. Guest strips and a running order use studio
+   paper and red cues, rather than another dark teal magazine feature. */
+.l3b-week-stories { background:#f2eeeb; padding:3mm; gap:2.5mm; border-left:.7mm solid #ad1c4c; }
+.l3b-week-story { border-bottom:.25mm solid #d6ceca; }
+.l3b-story-copy header,.l3b-week-story--ken header,.l3b-week-story--maryam header { background:#fff; color:#3b3037; padding-bottom:1mm; }
+.l3b-story-copy h3 { color:#8f123f; }
+.l3b-story-copy header p { color:#5b5055; }
+.l3b-extracts dl { border-color:#ba6b88; }
+.l3b-listener-board { background:#f7f1f4; border-bottom:0; border-left:.7mm solid #ad1c4c; }
+.l3b-listener-board header { background:none; color:#8f123f; border-bottom:.25mm solid #d6b6c3; }
+.l3b-episode-plan { border:0; border-left:.7mm solid #8f123f; background:#faf7f5; }
+.l3b-episode-plan header { background:none; color:#8f123f; border-bottom:.3mm dashed #c3a7b3; }
+.l3b-episode-plan h2 { font-size:15pt; }

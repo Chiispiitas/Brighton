@@ -88,3 +88,11 @@
 .l4d-post-paper > header span:last-child { display:block; margin-top:1.5mm; }
 .l4d-compose .l4d-post-lines > span { height:8mm; }
 .l4d-page--2 .l4d-edit-text { margin-top:3mm; border-color:#543780; }
+
+/* Physical peach note versus violet phone; color now identifies the two
+   communication media, instead of supplying another yellow accent label. */
+.l4d-short-post { background:#f4c4b1; box-shadow:none; border-bottom:.4mm solid #ba7358; }
+.l4d-phone-offer { background:#e9e1f1; color:#493574; border-bottom:.3mm solid #b5a4c8; }
+.l4d-share-feature > .l4d-real-connection { color:#624b78; border-color:#a58bb9; }
+.l4d-compose .l4d-post-paper { border-top:.3mm solid #c6bbd2; border-radius:3mm; background:#faf8fc; }
+.l4d-post-paper > header { padding-bottom:2mm; border-bottom:.3mm solid #c6bbd2; }

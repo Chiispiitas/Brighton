@@ -129,3 +129,11 @@
 .l3d-post-editor { padding-bottom:2mm; }
 
 .l3d-continuation-content { padding-top:20mm; }
+
+/* Retain the purposeful seven-day tracker. Distinguish the learner's journal
+   from Zoe's green source masthead without removing its writing surface. */
+.l3d-post-editor { border:.3mm solid #b6c3b3; background:#fffefa; }
+.l3d-post-editor header { background:#fffefa; color:#246343; border-bottom:.35mm solid #94af97; }
+.l3d-name-gap { border-color:#729078; }
+.l3d-post-editor h2 { font:700 19pt/1.2 Georgia,serif; }
+.l3d-my-challenge { background:#e9f0e4; color:#285638; border-left:.7mm solid #4b8053; }

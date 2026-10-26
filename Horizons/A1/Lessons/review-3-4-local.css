@@ -46,3 +46,22 @@
 .r34-reading-check > li { display:grid; grid-template-columns:minmax(0,1fr) 10mm; column-gap:2mm; align-items:end; }
 
 .r34-milk-note { margin:1.5mm 0 .5mm; line-height:1.4; }
+
+/* Outdoor film programme: plum photography, a perforated admission strip and
+   two named messages. Deliberately different from the exhibition catalogue. */
+.r34-page { --r34-night:#4c315d; --r34-gold:#eadcf0; }
+.r34-cinema { border-bottom:.5mm solid #7a568a; }
+.r34-cinema-poster { display:flex; flex-direction:column; background:#4c315d; }
+.r34-cinema-poster > img { order:-1; }
+.r34-cinema-poster h2 { font:800 26pt/1.05 var(--hz-font-sans); padding:3mm; }
+.r34-cinema-poster h2 span { display:block; font:italic 18pt/1.15 Georgia,serif; margin-top:1mm; }
+.r34-free { top:3mm; right:3mm; background:#fff; color:#4c315d; transform:none; border-radius:50%; width:12mm; height:12mm; display:grid; place-items:center; padding:0; border:.4mm solid #9474a1; }
+.r34-program { background:#eadcf0; color:#4c315d; border-block:.3mm dashed #9673a7; }
+.r34-messages { background:#faf6fb; padding:3mm; }
+.r34-messages section { border-left:.5mm solid #bb9ac7; padding-left:2mm; }
+.r34-messages h3 { color:#75448a; }
+.r34-food-plan { border-top:0; border-left:.8mm solid #ba562e; background:#faf1e9; }
+.r34-replies { background:#f5f0f7; border-color:#9673a7; }
+.r34-your-cinema figcaption { background:#4c315de8; }
+.r34-message-sheet { border:0; background:#faf6fb; padding:2mm 3mm; border-top:.3mm dashed #9673a7; }
+.r34-message-sheet header { color:#75448a; }

@@ -112,3 +112,20 @@
 .l4a-picnic-check img { width:78mm; }
 
 .l4a-breakfast-copy h3 span { margin-bottom:1mm; }
+
+/* Breakfast travel journal: crossing photographs and two country entries,
+   with a sunrise heading instead of the familiar green/gold combination. */
+.l4a-breakfast-feature { background:#f6f2ed; border-left:0; border-top:.5mm solid #cdbba7; padding:3mm 4mm 4mm; }
+.l4a-breakfast-feature > header { display:flex; flex-direction:column; align-items:flex-start; padding:0 0 2mm; color:#aa431e; }
+.l4a-breakfast-feature > header p { color:#655144; letter-spacing:.14em; }
+.l4a-breakfast-feature h2 { font:400 23pt/1.1 Georgia,serif; letter-spacing:-.04em; }
+.l4a-breakfast-copy h3 { color:#6f4935; }
+.l4a-breakfast-copy h3 span { color:#aa431e; }
+.l4a-breakfast-layout section { padding-bottom:0; border-bottom:.25mm solid #d4c6b7; }
+.l4a-breakfast-layout section:last-child { padding-bottom:0; border-bottom:0; }
+.l4a-breakfast-menu { border-top:0; border-bottom:.35mm solid #bda58c; background:#f6f2ed; padding:1mm 3mm; }
+.l4a-breakfast-menu header { color:#8f4527; }
+.l4a-sort-table th { color:#6d4931; border-color:#b49479; }
+
+.l4a-breakfast-layout { gap:2.5mm; }
+.l4a-breakfast-layout img { height:30mm; }
