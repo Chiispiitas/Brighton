@@ -312,3 +312,15 @@ Jessica narrates all track labels, vocabulary and factual source text. The three
 - Track 6.6: Jessica (`cgSgspJ2msm6clMCkdW9`), paragraphs 1-7.
 
 Jessica supplies all narration; 6.5 is a third-person factual reading, not an imitation of Hanne. Eleven v3 / Natural stability 0.5. Proper-name ASR spelling Hannah/Hanne is normalized explicitly for 6.5, with 27 and 2023 numeral equivalents. No answer wording substitution. Source text is fixed to the dated 2023 interview and matches the learner article. All final tracks decode and match normalized scripts, with no detected audio events; production records: `../6B-production.json`. No forbidden clarity tag/SSML or subjective listening review claim.
+
+
+## 6C and 6D - Moving around
+
+- 6C / Track 6.7: 1: Jessica, 2: Jessica.
+- 6C / Track 6.8: 1: Jessica, 2: Adeline, 3: MarkNatural, 4: Adeline, 5: MarkNatural, 6: Adeline.
+- 6C / Track 6.9: 1: Jessica, 2: Jessica, 3: Jessica, 4: Jessica.
+- 6D / Track 6.10: 1: Jessica, 2: Jessica, 3: Jessica.
+- 6D / Track 6.11: 1: Jessica, 2: Adeline, 3: MarkNatural, 4: Adeline, 5: MarkNatural, 6: Adeline, 7: MarkNatural, 8: Adeline.
+- 6D / Track 6.12: 1: Jessica, 2: Amy, 3: MarkCasual, 4: Amy, 5: MarkCasual, 6: Amy, 7: MarkCasual, 8: Amy.
+
+Paragraphs include the Jessica track label. 6.8 has unnamed A/Adeline and B/Mark Natural. 6.11: Eva/Adeline, Dan/Mark Natural; Grace has no spoken paragraph. These are new fictional people, not the earlier Tom cast. 6.12: visitor/Amy, helper/Mark Casual. Jessica supplies all narration and every word/model in 6.7/6.9/6.10. Eleven v3, Natural stability 0.5. All six final masters decode and match normalized independent transcripts; no detected audio events, forbidden clarity tag or SSML. Initial 6.11 proper-name mismatch was rejected and regenerated with Grace, not normalized away. Exact IDs/settings/hashes and permanent IDs: ../6C-production.json and ../6D-production.json. Subjective listening review is not claimed.

@@ -1,0 +1,113 @@
+[
+  {
+    "lesson": "6C",
+    "track": "6.7",
+    "filename": "Track 6.7.mp3",
+    "script": "ElevenCreative Studio/6C - Track 6.7.txt",
+    "model": "eleven_v3",
+    "stability": 0.5,
+    "paragraph_voice_names": [
+      "Jessica",
+      "Jessica"
+    ],
+    "paragraph_voice_ids": [
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9"
+    ],
+    "generation_utc": "2026-10-26T21:51:27.590106+00:00",
+    "request_id": "tDNiPFC8wylbSgmcPO5C",
+    "script_sha256": "3ac0a2891dcc0a0d362a09cf7751db9ab8a24f1a8c60fdaa1dd9f46ca65f571e",
+    "bytes": 183945,
+    "duration_seconds": 11.47,
+    "transcript_checked": true,
+    "transcript_similarity": 1.0,
+    "answer_bearing_phrases_checked": true,
+    "audio_events_checked": true,
+    "throat_clearing_events_detected": false,
+    "forbidden_tag_preflight_passed": true,
+    "transcription_name_aliases": {},
+    "transcript_normalization": "Track label (including a transcribed pause comma), punctuation, case, numerals, hyphens, apostrophes and accent marks; OK/okay spelling equivalence. Hanne/Hannah proper-name transcription spelling is normalized explicitly for 6.5; no answer-bearing content substitutions.",
+    "activity": 2,
+    "internal_audio_id": "HZN_A1_U06_LC_E02_AUD_01",
+    "subjective_listening_review": false,
+    "sha256": "3a3c270d06c378767192b854ef98db5967d040e530aebf14f6f292a65740a97d"
+  },
+  {
+    "lesson": "6C",
+    "track": "6.8",
+    "filename": "Track 6.8.mp3",
+    "script": "ElevenCreative Studio/6C - Track 6.8.txt",
+    "model": "eleven_v3",
+    "stability": 0.5,
+    "paragraph_voice_names": [
+      "Jessica",
+      "Adeline",
+      "MarkNatural",
+      "Adeline",
+      "MarkNatural",
+      "Adeline"
+    ],
+    "paragraph_voice_ids": [
+      "cgSgspJ2msm6clMCkdW9",
+      "5l5f8iK3YPeGga21rQIX",
+      "UgBBYS2sOqTuMpoF3BR0",
+      "5l5f8iK3YPeGga21rQIX",
+      "UgBBYS2sOqTuMpoF3BR0",
+      "5l5f8iK3YPeGga21rQIX"
+    ],
+    "generation_utc": "2026-10-26T21:51:29.165038+00:00",
+    "request_id": "7sPAA3bbD816Ur8SrOcB",
+    "script_sha256": "fb6d8f8575eb9f66d2400f835d65281190abfc70823b759b5248840d700a8466",
+    "bytes": 231592,
+    "duration_seconds": 14.45,
+    "transcript_checked": true,
+    "transcript_similarity": 1.0,
+    "answer_bearing_phrases_checked": true,
+    "audio_events_checked": true,
+    "throat_clearing_events_detected": false,
+    "forbidden_tag_preflight_passed": true,
+    "transcription_name_aliases": {},
+    "transcript_normalization": "Track label (including a transcribed pause comma), punctuation, case, numerals, hyphens, apostrophes and accent marks; OK/okay spelling equivalence. Hanne/Hannah proper-name transcription spelling is normalized explicitly for 6.5; no answer-bearing content substitutions.",
+    "activity": 3,
+    "internal_audio_id": "HZN_A1_U06_LC_E03_AUD_01",
+    "subjective_listening_review": false,
+    "sha256": "d2cbdbdb062187cacfac715d7ddbf3270555099484604c22f5ec2b97af75addd"
+  },
+  {
+    "lesson": "6C",
+    "track": "6.9",
+    "filename": "Track 6.9.mp3",
+    "script": "ElevenCreative Studio/6C - Track 6.9.txt",
+    "model": "eleven_v3",
+    "stability": 0.5,
+    "paragraph_voice_names": [
+      "Jessica",
+      "Jessica",
+      "Jessica",
+      "Jessica"
+    ],
+    "paragraph_voice_ids": [
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9"
+    ],
+    "generation_utc": "2026-10-26T21:51:35.685842+00:00",
+    "request_id": "s9UeFuMT0QW9fqhcppOe",
+    "script_sha256": "a61b4462820ecec6ef3773b3c2da6aa7429a6207a226e3eca27b125850f56597",
+    "bytes": 361995,
+    "duration_seconds": 22.6,
+    "transcript_checked": true,
+    "transcript_similarity": 1.0,
+    "answer_bearing_phrases_checked": true,
+    "audio_events_checked": true,
+    "throat_clearing_events_detected": false,
+    "forbidden_tag_preflight_passed": true,
+    "transcription_name_aliases": {},
+    "transcript_normalization": "Track label (including a transcribed pause comma), punctuation, case, numerals, hyphens, apostrophes and accent marks; OK/okay spelling equivalence. Hanne/Hannah proper-name transcription spelling is normalized explicitly for 6.5; no answer-bearing content substitutions.",
+    "activity": 5,
+    "internal_audio_id": "HZN_A1_U06_LC_E05_AUD_01",
+    "subjective_listening_review": false,
+    "sha256": "086c151c7cefe26e83450f21eddf92e5dc39604285309dcee41017bbf5326f9a"
+  }
+]

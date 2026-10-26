@@ -1,0 +1,51 @@
+
+.l6c-page,.l6d-page { --hz-unit:var(--hz-unit-1); --hz-unit-dark:#8f123f; --hz-unit-soft:#f8e6ee; font-size:9.5pt; }
+.l6c-page .hz-page-stack,.l6d-page .hz-page-stack { gap:2mm; }
+.l6c-page .hz-lesson-header,.l6d-page .hz-lesson-header { padding-bottom:3mm; }
+.l6c-page .hz-exercises,.l6d-page .hz-exercises { gap:.2mm; }
+.l6c-page .hz-exercise,.l6d-page .hz-exercise { padding:1.6mm 0 2.15mm; }
+.l6c-page .hz-exercise__body,.l6d-page .hz-exercise__body { margin-top:1.5mm; }
+.l6c-page .hz-go-to,.l6d-page .hz-go-to { margin-block:1mm; }
+.l6c-page .hz-focus-box,.l6d-page .hz-focus-box { margin:1.2mm 0 .8mm 12mm; }
+.l6-list { margin:0; padding:0; list-style:none; counter-reset:item; }
+.l6-list li { position:relative; padding-left:5mm; counter-increment:item; line-height:1.4; }
+.l6-list li::before { content:counter(item); position:absolute; left:0; color:#8f123f; font-weight:650; }
+.l6-gap { display:inline-block; width:27mm; height:4.5mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
+.l6-two { display:grid; grid-template-columns:1fr 1fr; gap:2.5mm 5mm; }
+.l6-inset { margin-left:12mm; margin-top:5mm; }
+.l6-lines span { display:block; height:6mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
+
+.l6c-walk { display:grid; grid-template-columns:78mm 1fr; gap:5mm; align-items:center; }
+.l6c-walk figure { margin:0; }.l6c-walk img { display:block; width:78mm; height:46mm; object-fit:cover; object-position:35% 55%; }
+.l6c-walk h2 { margin:0; color:#b13a24; font:850 23pt/.98 var(--hz-font-sans); letter-spacing:-.045em; }
+.l6c-deck { font-size:13pt; font-weight:650; margin:1.5mm 0 2mm!important; }
+.l6c-walk p { margin:0 0 1.5mm; line-height:1.35; }.l6c-walk p b { color:#b13a24; }
+.l6c-walk a { color:#b13a24; font-size:7pt; }
+.l6c-movement { display:grid; grid-template-columns:repeat(4,1fr); gap:3mm; margin-bottom:2mm; }
+.l6c-movement figure { margin:0; }.l6c-move-picture { width:100%; height:39mm; background:url('../Images/6C/Movement-four-v1.png') var(--x) center/400% auto no-repeat; }
+.l6c-movement figcaption { margin-top:.6mm; text-align:center; font-size:9.5pt; color:#8f123f; font-weight:650; }
+.l6c-route-note { background:#f2eee5; border-left:1mm solid #b13a24; }
+.l6c-route-note header { display:flex; align-items:baseline; justify-content:space-between; padding:2mm 3mm 0; }
+.l6c-route-note h2 { margin:0; color:#873026; font:700 14pt/1.1 var(--hz-font-sans); }
+.l6c-route-note header span { font-size:7pt; font-weight:650; letter-spacing:.07em; }
+.l6c-route-note > div { padding:2mm 3mm 2mm; }
+.l6c-route-note p { margin:0 0 .7mm; line-height:1.35; }.l6c-route-note p:last-child { margin:0; }.l6c-route-note b { color:#873026; }
+.l6c-notice { margin:0; }
+.l6c-turn-models { display:grid; grid-template-columns:repeat(3,1fr); gap:4mm; }
+.l6c-turn-models p { display:flex; align-items:center; gap:1mm; margin:0; }.l6c-turn-models span { font-family:'Segoe UI Symbol',sans-serif; font-size:18pt; line-height:1; color:#8f123f; margin-right:1mm; }
+.l6c-movement-models { display:grid; grid-template-columns:1fr 1fr; gap:1mm 5mm; margin-top:2mm; }.l6c-movement-models p { margin:0; }
+.l6c-form { margin:2mm 0 0; }.l6c-form s { color:#8f123f; }
+.l6c-continuation { padding-top:18mm; }
+.l6c-map-sheet { border:.35mm solid #c8c1b5; background:#f5f2eb; }
+.l6c-map-sheet header { display:flex; align-items:baseline; justify-content:space-between; padding:2.5mm 3mm; color:#fff; background:#9a3428; }
+.l6c-map-sheet h2 { margin:0; font:700 14pt/1.1 var(--hz-font-sans); }.l6c-map-sheet header span { font-size:7pt; letter-spacing:.05em; }
+.l6c-map { position:relative; margin:0; }.l6c-map img { display:block; width:100%; height:auto; }
+.l6c-map-label { position:absolute; transform:translate(-50%,-50%); padding:.6mm 1.4mm; font-size:9.5pt; line-height:1.2; color:#202020; background:#fff; box-shadow:0 .3mm 1mm #0003; white-space:nowrap; }
+.l6c-start { position:absolute; left:42.2%; top:81%; transform:translateX(-50%); text-align:center; color:#8f123f; }.l6c-start b { display:block; font:850 20pt/.9 'Segoe UI Symbol',sans-serif; }.l6c-start > span { display:block; font:700 7pt/1.4 var(--hz-font-sans); background:#fff; padding:.4mm 1.3mm; }
+.l6c-page .l6c-listen-answers { display:grid; grid-template-columns:repeat(3,1fr); gap:5mm; margin-top:3mm; }.l6c-listen-answers .l6-gap { width:36mm; }
+.l6c-controlled { display:grid; gap:2mm; }
+.l6c-local { display:grid; grid-template-columns:1.2fr 1fr; gap:6mm; align-items:end; }
+.l6c-local h2 { font-size:12pt; color:#b13a24; margin:0 0 2mm; }.l6c-local p { margin:0 0 1.5mm; }.l6c-local b { color:#8f123f; }.l6c-rating { margin:2.5mm 0 0; }
+
+.l6c-turn-models svg { width:7mm; height:7mm; flex:none; color:#8f123f; margin-right:1mm; }
+.l6c-turn-models .l6c-arrow-caption { font:inherit; color:inherit; margin:0; line-height:inherit; }

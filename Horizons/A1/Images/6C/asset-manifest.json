@@ -1,0 +1,75 @@
+{
+  "lesson": "6C",
+  "assets": [
+    {
+      "asset_id": "HZN_A1_U06_LC_IMG_01",
+      "activity": "6C.1",
+      "type": "licensed_real_photograph",
+      "creator": "Gabriel Tovar",
+      "source_page": "https://www.pexels.com/photo/young-adults-walking-on-urban-street-34898421/",
+      "download_url": "https://images.pexels.com/photos/34898421/pexels-photo-34898421.jpeg?auto=compress&cs=tinysrgb&w=1600",
+      "license": "Pexels",
+      "terms_url": "https://www.pexels.com/license/",
+      "attribution_required": false,
+      "original_dimensions": [
+        6048,
+        4024
+      ],
+      "source_taken": "2025-11-23",
+      "camera": "NIKON Z 6_2",
+      "edits_crops": "Pexels proportional 1600px rendition; CSS crop retains pedestrians and street.",
+      "boundary": "Generic photographed street; not assigned a Walk Score or a fictional speaker identity.",
+      "local_file": "Street-Gabriel-Tovar-34898421-v1.jpg",
+      "dimensions": [
+        1600,
+        1065
+      ],
+      "sha256": "9e099f9de04630066e8bcd63e838aed97d96c4866fb770864f50db00af9015ec",
+      "acquisition_date": "2026-10-26"
+    },
+    {
+      "asset_id": "HZN_A1_U06_LC_IMG_02",
+      "activity": "6C.2",
+      "type": "built_in_imagegen",
+      "generation_prompt_record": "work/lessons6cd-20261026/image-generation.json outside repository",
+      "transparent_background": false,
+      "edits_crops": "No raster editing; proportionate CSS display/crops only.",
+      "purpose": "Exact movement evidence; selective ELT drawing reduces direction ambiguity.",
+      "boundary": "Fictional teaching scene, no actual property/person claim.",
+      "local_file": "Movement-four-v1.png",
+      "dimensions": [
+        2135,
+        736
+      ],
+      "sha256": "c6458cc5b37f36e466b1d4445a101c3153b8513a3b7a237dd1b9509663fa55e3",
+      "acquisition_date": "2026-10-26"
+    },
+    {
+      "asset_id": "HZN_A1_U06_LC_IMG_03",
+      "activity": "6C.5",
+      "type": "built_in_imagegen",
+      "generation_prompt_record": "work/lessons6cd-20261026/image-generation.json outside repository",
+      "transparent_background": false,
+      "edits_crops": "No raster editing; proportionate CSS display/crops only.",
+      "purpose": "Top-down photographic model with live labels. Fictional practice geography, not real navigation or an official Walk Score.",
+      "boundary": "Fictional teaching scene, no actual property/person claim.",
+      "local_file": "Neighborhood-model-v1.png",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "sha256": "c9223a895d9f81d47fc22f89d70c5fe51f0c537df3adeb40e35bb2f808e126c9",
+      "acquisition_date": "2026-10-26"
+    }
+  ],
+  "source_checked": "2026-10-26",
+  "content_sources": [
+    {
+      "url": "https://www.walkscore.com/methodology.shtml",
+      "checked": "2026-10-26",
+      "used": "Original brief 0-100/address/nearby-amenities paraphrase. No actual numeric score assigned.",
+      "not_used": "No proprietary logo/widget/map, address score or safety promise."
+    }
+  ],
+  "image_progression": "Opening street photograph and selective movement illustrations lead to a new substantial photographic model map on continuation."
+}

@@ -2,7 +2,7 @@
   "schema_version": 1,
   "updated": "2026-10-26",
   "status": "technical preview verified; visual-fatigue reassessment and final book release pending",
-  "scope": "A1 through 6B, including Units 1 & 2 and 3 & 4 Reviews; Unit 6 is partial",
+  "scope": "A1 through complete Unit 6, including Units 1 & 2 and 3 & 4 Reviews; later units/backmatter unproduced",
   "readability_comparison_baseline": "e8d6ddd69f62caffab662a93a5a392ebc5bfb131",
   "inventory": {
     "lesson_masters": [
@@ -29,22 +29,24 @@
       "5C",
       "5D",
       "6A",
-      "6B"
+      "6B",
+      "6C",
+      "6D"
     ],
-    "pdf_pages": 48,
+    "pdf_pages": 52,
     "printed_pages": [
       5,
-      52
+      56
     ],
-    "activity_blocks": 167,
-    "audio_files": 54,
-    "new_words_badges": 28,
-    "extra_practice_footers": 22,
-    "go_to_references": 49,
-    "page_placeholders": 49,
-    "focus_panels": 25,
-    "html_pages": 48,
-    "html_audio_controls": 58,
+    "activity_blocks": 181,
+    "audio_files": 60,
+    "new_words_badges": 32,
+    "extra_practice_footers": 24,
+    "go_to_references": 54,
+    "page_placeholders": 54,
+    "focus_panels": 27,
+    "html_pages": 52,
+    "html_audio_controls": 64,
     "production_audio_files": 1
   },
   "checks": {
@@ -2805,7 +2807,8 @@
           "all_three_new_tracks_play_pause": true,
           "print_audio_controls_hidden": true
         }
-      }
+      },
+      "subsequent_scope": "6C and 6D are now produced; see lessons_6c_6d_20261026. Prior unproduced-syllabus statements describe that earlier pass."
     },
     "lesson_6b_20261026": {
       "scope": "6B, printed pages 51-52",
@@ -2924,7 +2927,8 @@
           "all_three_new_tracks_play_pause": true,
           "print_audio_controls_hidden": true
         }
-      }
+      },
+      "subsequent_scope": "6C and 6D are now produced; see lessons_6c_6d_20261026. Prior unproduced-syllabus statements describe that earlier pass."
     },
     "lesson_6b_picture_grammar_20261026": {
       "scope": "6B page 52 grammar presentation and continuation spacing only",
@@ -3166,6 +3170,574 @@
           "print_audio_controls_hidden": true
         }
       }
+    },
+    "lessons_6c_6d_20261026": {
+      "scope": "6C/6D, printed pages 53-56, completing Unit 6",
+      "status": "local HTML/PDF/media verified; publication pending",
+      "lesson_roles": {
+        "6C": "Language: movement prepositions and giving directions, with noticing before clarification.",
+        "6D": "Speaking: help a visitor agree two city destinations and describe activities/routes, using can/can’t."
+      },
+      "sequence": {
+        "6C": "Real street/brief Walk Score context; selective movement illustration/matching; fictional directions conversation; guided noticing; base-verb/right-left/movement clarification; new photographic map route listening; map choices; genuine local route guessing and subjective walk rating.",
+        "6D": "Two authentic unusual shopping centers/photo vocabulary; fictional friends arranging a visit; can/can’t noticing; aligned positive/negative/question/short-answer clarification and wrong/right examples; controlled form choices; visitor-help listening with new full-background photo; private preferences/local knowledge; a spoken two-stop city plan."
+      },
+      "answers": {
+        "6C.2": [
+          "B",
+          "A",
+          "D",
+          "C"
+        ],
+        "6C.3": "No; five minutes on foot",
+        "6C.5": [
+          "library",
+          "supermarket",
+          "café"
+        ],
+        "6C.6": [
+          "left",
+          "past",
+          "right",
+          "across"
+        ],
+        "6D.1": [
+          "A",
+          "A",
+          "B",
+          "both"
+        ],
+        "6D.2": "Sunday",
+        "6D.3": [
+          "can’t",
+          "you can walk"
+        ],
+        "6D.4": [
+          "see",
+          "come",
+          "can’t",
+          "can"
+        ],
+        "6D.5": [
+          "No; closed on Mondays",
+          "park",
+          "library"
+        ]
+      },
+      "source_fidelity": {
+        "6C": "Verified Walk Score methodology; short original 0-100/address/nearby-amenities paraphrase, not a fake numeric rating for a photographed street. Generated map and five-minute model are fictional. Final 1-5 walk rating is personal, not an official Walk Score.",
+        "6D": "Verified official Jewel Rain Vortex/Forest Valley/shopping facts and Mall of America indoor roller-coaster activity. No price/hour/free-access assertion; historical real photos labeled in provenance. Fictional friends/visitor dialogue is not attributed to real people/venues.",
+        "checked": "2026-10-26",
+        "records": [
+          "Images/6C/asset-manifest.json",
+          "Images/6D/asset-manifest.json",
+          "Images/6D/ASSETS.md"
+        ]
+      },
+      "language_ceiling": "Existing present simple/continuous and place/time/questions; target movement/commands, then can/can’t base verb/question/short answer. Explicit on-foot, mall/shopping-center and closed/not-open glosses. Photo-supported waterfall/garden/roller coaster. No past/future tense, existential rule, legal prohibition or directions jargon. Source/context terminology stays minimal.",
+      "creative_acceptance": {
+        "6C": "On-foot field-note spread: real street, selective direction artwork and a large top-down photographic neighborhood model with accurate live labels. Burnt red/orange functional walking identity, open ordinary tasks, familiar pink clarification; no cool-title/yellow-accent recipe.",
+        "6D": "Two surprising indoor worlds in authentic venue photographs, plum/rust destination strips, a pale purposeful visit-planning dialogue, then a substantial human visitor-counter scene and a white two-stop plan. Speaking payoff differs from 5D’s buying groceries.",
+        "unit6_comparison": "Reviewed all eight saved Unit 6 pages together and against the preceding 5C/5D spreads. 6A contrasts real city/country lifestyles and creates a town center; 6B weighs small-home living and models spatial positions; 6C follows/writes walking routes; 6D negotiates a useful visitor day. Image hierarchy, source form and learner output differ. Shared identity remains.",
+        "continuation_imagery": "6C: new full-width photographic model map; 6D: new 91x61mm visitor interaction with prominent people/hands. Neither is another crop of opening images. Existing 6A/6B continuation photos retain their preceding checks.",
+        "identity": "Black 31pt lesson titles, crimson chrome, one numbered exercise lane, 9.5pt tasks/concepts, 8.9pt instructions, italic normal-weight circle options, dark-crimson grammar bold, neutral/crimson 9pt word bank, meaningful Extra Practice. No new generic wrapper on ordinary tasks."
+      },
+      "geometry": {
+        "standaloneMatchesAssembled": true,
+        "pages": 52,
+        "activities": 181,
+        "audioControls": 64,
+        "all_six_tracks_play_pause": true,
+        "print_controls_hidden": true,
+        "all_images_and_backgrounds_loaded": true,
+        "changedPages": [
+          {
+            "page": "53",
+            "outside": [],
+            "focusOutside": [],
+            "markerCollision": false,
+            "lastClearance": 13.140625,
+            "exercises": [
+              "1",
+              "2",
+              "3",
+              "4"
+            ],
+            "instructions": [
+              8.9,
+              8.9,
+              8.9,
+              8.9
+            ],
+            "tasks": [
+              9.5
+            ],
+            "concept": [
+              9.5,
+              9.5,
+              9.5,
+              9.5,
+              9.5,
+              9.5,
+              9.5,
+              9.5
+            ],
+            "boldColors": [
+              "rgb(143, 18, 63)",
+              "rgb(143, 18, 63)",
+              "rgb(143, 18, 63)",
+              "rgb(143, 18, 63)",
+              "rgb(143, 18, 63)",
+              "rgb(143, 18, 63)",
+              "rgb(143, 18, 63)",
+              "rgb(143, 18, 63)"
+            ],
+            "options": [],
+            "wordBank": [],
+            "loadedImages": true,
+            "geometry": [
+              {
+                "cls": "hz-exercise",
+                "box": [
+                  52.91,
+                  135.25,
+                  687.88,
+                  209.67
+                ]
+              },
+              {
+                "cls": "",
+                "box": [
+                  98.25,
+                  162.95,
+                  294.8,
+                  173.84
+                ]
+              },
+              {
+                "cls": "hz-exercise",
+                "box": [
+                  52.91,
+                  345.67,
+                  687.88,
+                  262.92
+                ]
+              },
+              {
+                "cls": "hz-exercise",
+                "box": [
+                  52.91,
+                  630.86,
+                  687.88,
+                  176.03
+                ]
+              },
+              {
+                "cls": "hz-exercise",
+                "box": [
+                  52.91,
+                  807.64,
+                  687.88,
+                  35.83
+                ]
+              },
+              {
+                "cls": "hz-focus-box hz-no-break",
+                "box": [
+                  98.25,
+                  855.55,
+                  642.53,
+                  139.34
+                ]
+              }
+            ]
+          },
+          {
+            "page": "54",
+            "outside": [],
+            "focusOutside": [],
+            "markerCollision": false,
+            "lastClearance": 160.09375,
+            "exercises": [
+              "5",
+              "6",
+              "7"
+            ],
+            "instructions": [
+              8.9,
+              8.9,
+              8.9
+            ],
+            "tasks": [
+              9.5,
+              9.5,
+              9.5,
+              9.5
+            ],
+            "concept": [],
+            "boldColors": [],
+            "options": [
+              {
+                "italic": "italic",
+                "weight": "400",
+                "transform": "none"
+              },
+              {
+                "italic": "italic",
+                "weight": "400",
+                "transform": "none"
+              },
+              {
+                "italic": "italic",
+                "weight": "400",
+                "transform": "none"
+              },
+              {
+                "italic": "italic",
+                "weight": "400",
+                "transform": "none"
+              }
+            ],
+            "wordBank": [],
+            "loadedImages": true,
+            "geometry": [
+              {
+                "cls": "hz-exercise",
+                "box": [
+                  52.91,
+                  139.83,
+                  687.88,
+                  430.56
+                ]
+              },
+              {
+                "cls": "",
+                "box": [
+                  99.25,
+                  208.94,
+                  640.53,
+                  320.27
+                ]
+              },
+              {
+                "cls": "hz-exercise",
+                "box": [
+                  52.91,
+                  571.14,
+                  687.88,
+                  129.41
+                ]
+              },
+              {
+                "cls": "hz-exercise",
+                "box": [
+                  52.91,
+                  701.3,
+                  687.88,
+                  131.36
+                ]
+              },
+              {
+                "cls": "hz-extra-practice l6-inset",
+                "box": [
+                  98.25,
+                  851.55,
+                  642.53,
+                  23.95
+                ]
+              }
+            ]
+          },
+          {
+            "page": "55",
+            "outside": [],
+            "focusOutside": [],
+            "markerCollision": false,
+            "lastClearance": 21.140625,
+            "exercises": [
+              "1",
+              "2",
+              "3"
+            ],
+            "instructions": [
+              8.9,
+              8.9,
+              8.9
+            ],
+            "tasks": [
+              9.5,
+              9.5,
+              9.5
+            ],
+            "concept": [
+              9.5,
+              9.5,
+              9.5,
+              9.5,
+              9.5,
+              9.5
+            ],
+            "boldColors": [
+              "rgb(143, 18, 63)",
+              "rgb(143, 18, 63)",
+              "rgb(143, 18, 63)",
+              "rgb(143, 18, 63)",
+              "rgb(143, 18, 63)",
+              "rgb(143, 18, 63)",
+              "rgb(143, 18, 63)",
+              "rgb(143, 18, 63)",
+              "rgb(143, 18, 63)",
+              "rgb(143, 18, 63)"
+            ],
+            "options": [
+              {
+                "italic": "italic",
+                "weight": "400",
+                "transform": "none"
+              },
+              {
+                "italic": "italic",
+                "weight": "400",
+                "transform": "none"
+              },
+              {
+                "italic": "italic",
+                "weight": "400",
+                "transform": "none"
+              }
+            ],
+            "wordBank": [],
+            "loadedImages": true,
+            "geometry": [
+              {
+                "cls": "hz-exercise",
+                "box": [
+                  52.91,
+                  135.25,
+                  687.88,
+                  366.84
+                ]
+              },
+              {
+                "cls": "",
+                "box": [
+                  98.25,
+                  163.95,
+                  335.59,
+                  162.52
+                ]
+              },
+              {
+                "cls": "",
+                "box": [
+                  448.95,
+                  163.95,
+                  291.83,
+                  162.52
+                ]
+              },
+              {
+                "cls": "hz-exercise",
+                "box": [
+                  52.91,
+                  524.36,
+                  687.88,
+                  267.16
+                ]
+              },
+              {
+                "cls": "hz-exercise",
+                "box": [
+                  52.91,
+                  792.27,
+                  687.88,
+                  53.56
+                ]
+              },
+              {
+                "cls": "hz-focus-box hz-no-break",
+                "box": [
+                  98.25,
+                  857.91,
+                  642.53,
+                  128.98
+                ]
+              }
+            ]
+          },
+          {
+            "page": "56",
+            "outside": [],
+            "focusOutside": [],
+            "markerCollision": false,
+            "lastClearance": 35.796875,
+            "exercises": [
+              "4",
+              "5",
+              "6",
+              "7"
+            ],
+            "instructions": [
+              8.9,
+              8.9,
+              8.9,
+              8.9
+            ],
+            "tasks": [
+              9.5,
+              9.5,
+              9.5,
+              9.5,
+              9.5,
+              9.5
+            ],
+            "concept": [],
+            "boldColors": [],
+            "options": [
+              {
+                "italic": "italic",
+                "weight": "400",
+                "transform": "none"
+              },
+              {
+                "italic": "italic",
+                "weight": "400",
+                "transform": "none"
+              },
+              {
+                "italic": "italic",
+                "weight": "400",
+                "transform": "none"
+              },
+              {
+                "italic": "italic",
+                "weight": "400",
+                "transform": "none"
+              }
+            ],
+            "wordBank": [
+              {
+                "pt": 9,
+                "color": "rgb(143, 18, 63)",
+                "background": "rgb(243, 242, 238)",
+                "border": "rgb(194, 24, 91)"
+              }
+            ],
+            "loadedImages": true,
+            "geometry": [
+              {
+                "cls": "hz-exercise",
+                "box": [
+                  52.91,
+                  139.83,
+                  687.88,
+                  80.73
+                ]
+              },
+              {
+                "cls": "hz-exercise",
+                "box": [
+                  52.91,
+                  221.31,
+                  687.88,
+                  267.38
+                ]
+              },
+              {
+                "cls": "",
+                "box": [
+                  98.25,
+                  250.02,
+                  343.92,
+                  230.55
+                ]
+              },
+              {
+                "cls": "hz-exercise",
+                "box": [
+                  52.91,
+                  510.95,
+                  687.88,
+                  209.69
+                ]
+              },
+              {
+                "cls": "hz-exercise",
+                "box": [
+                  52.91,
+                  721.39,
+                  687.88,
+                  235.56
+                ]
+              },
+              {
+                "cls": "hz-extra-practice l6-inset",
+                "box": [
+                  98.25,
+                  975.84,
+                  642.53,
+                  23.95
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "writing": {
+        "6C": "Two 6mm open planning lines; personal route/guessing and 1-5 walk rating.",
+        "6D": "Two 6mm private-interest lines, three 6mm private place lines, two 12mm open plan-table rows. Real unknown choices; not a visible A/B answer grid."
+      },
+      "navigation": {
+        "new_words": 4,
+        "extra_practice": 2,
+        "go_to_references": 5,
+        "destinations": "Intentional page --- placeholders until backmatter pagination."
+      },
+      "audio": {
+        "tracks": [
+          "6.7",
+          "6.8",
+          "6.9",
+          "6.10",
+          "6.11",
+          "6.12"
+        ],
+        "model": "eleven_v3",
+        "stability": 0.5,
+        "narrator": "Jessica for all labels/narration; approved exam-pool voices for dialogue.",
+        "all_final_masters_decoded": true,
+        "all_normalized_transcript_parity": true,
+        "detected_audio_events": [],
+        "proper_name_aliases": false,
+        "rejected_take": "Initial 6.11 Nina/Mina transcription mismatch archived; regenerated with Grace, exact final parity. Dan replaces draft Tom to avoid changing an established voice identity.",
+        "forbidden_tag_preflight": true,
+        "subjective_listening_review": false,
+        "browser_six_tracks_play_pause": true,
+        "duration_seconds": 109.28,
+        "records": [
+          "Audio scripts/6C-production.json",
+          "Audio scripts/6D-production.json"
+        ]
+      },
+      "saved_pdf": {
+        "pages": 52,
+        "printed_pages": [
+          5,
+          56
+        ],
+        "all_a4": true,
+        "all_original_48_pages_text_and_decoded_drawing_streams_identical": true,
+        "all_original_48_compiled_page_fragments_identical": true,
+        "new_four_pages_match_native_export_pixels": true,
+        "all_new_learner_word_tokens_present": true,
+        "all_original_masters_images_keys_wordlists_and_55_mp3s_preserved": true,
+        "pdf_sha256": "0e1bd939c14110baa20a4ca6309bc073ff5b57e33e6224c21067e86d2b6deed8",
+        "pdf_bytes": 32685106,
+        "method": "Copy original 48 PDF pages as unchanged objects, append two native two-page exports; alpha-preserving export-only 240dpi media. No saved-PDF font/image rewriting or aggressive resource deduplication."
+      },
+      "preservation": "Previous 48 saved-PDF pages/assembled page fragments, 24 masters, all prior image/audio binaries, keys and wordlists preserved. Shared rendering/design system unchanged.",
+      "evidence_directory": "work/lessons6cd-20261026 outside repository",
+      "reversibility": "Exact before copies, complete A1 before-hash ledger, baseline commit c95133d and guarded rollback journal."
     }
   },
   "pending": [
@@ -3216,9 +3788,9 @@
         "Student's Book.html"
       ],
       "fingerprint": {
-        "files": 474,
-        "bytes": 476283745,
-        "sha256": "81d8af585040848276342a131bbc31052102c5252792c4313ade1e7090f439a0"
+        "files": 505,
+        "bytes": 488304221,
+        "sha256": "10438fbaf3c62eb702fe38487b78e191a1f00706ea485758bb177596eb135744"
       }
     },
     "shared_rendering": {
@@ -3238,8 +3810,8 @@
       ],
       "fingerprint": {
         "files": 1,
-        "bytes": 30833563,
-        "sha256": "f1ac3db56b9545bfc8cf410b4676b2e6e4be8142860c50f0f44c4bf90a82f202"
+        "bytes": 32685106,
+        "sha256": "635ef96c3bdb3bf1f640e710e466394c97da2b0da7a7a8aae714326c707d2434"
       }
     },
     "audit_criteria": {
@@ -3257,8 +3829,8 @@
     }
   },
   "content_baseline_commit": "2f404b547b7da07be81a0622a78591d3299c402a",
-  "current_revision": "6B picture-first prepositions pilot based on 4A: six transparent photographic relationships paired with unchanged 9.5pt model sentences; canonical pink shell and full-size room picture retained. Local and live HTML/PDF/media verified. Book remains a technical preview through 6B; final release and unproduced lessons/backmatter remain pending.",
-  "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope. units_3_4_reviews_visual_variety_20261025 supersedes earlier composition, color and geometry evidence for printed pages 21-40, including review_composition_20261025, review_3_4_20261025, unit_3_creative_revision and unit_4_visual_variety; earlier learning and audio evidence keeps its original scope. lesson_5b_on_air_20261026 supersedes prior 5B reading/source/presentation and 5.5/5.6 records only. The 26 October every-unit show mandate is superseded by planned B-skill balance and no two-unit show gap. lesson_5b_activity5_variety_20261026 supersedes only the earlier 5B Activity 5 image/choices/key and continuation-image evidence; no show/audio or other lesson evidence changes. lesson_6b_picture_grammar_20261026 supersedes only the original 6B page-52 grammar presentation, continuation spacing and associated geometry evidence; all learning, source and audio evidence retains its scope.",
+  "current_revision": "Unit 6 complete through 6D: movement/directions in a walkable-neighborhood challenge and can/can’t through helping a visitor plan two city stops. Four new A4 pages, 14 activities, six Jessica-narrated/approved-pool tracks, new real/generated media, keys and wordlists. Local checks complete; publication verification pending. Previous 48 pages preserved. Technical preview only; later units/backmatter and final whole-book release remain pending. Unit 7B must return to Horizons on Air.",
+  "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope. units_3_4_reviews_visual_variety_20261025 supersedes earlier composition, color and geometry evidence for printed pages 21-40, including review_composition_20261025, review_3_4_20261025, unit_3_creative_revision and unit_4_visual_variety; earlier learning and audio evidence keeps its original scope. lesson_5b_on_air_20261026 supersedes prior 5B reading/source/presentation and 5.5/5.6 records only. The 26 October every-unit show mandate is superseded by planned B-skill balance and no two-unit show gap. lesson_5b_activity5_variety_20261026 supersedes only the earlier 5B Activity 5 image/choices/key and continuation-image evidence; no show/audio or other lesson evidence changes. lesson_6b_picture_grammar_20261026 supersedes only the original 6B page-52 grammar presentation, continuation spacing and associated geometry evidence; all learning, source and audio evidence retains its scope. lessons_6c_6d_20261026 adds printed pages 53-56 and completes Unit 6 without superseding prior source/audio/page evidence. Prior 6C/6D-unproduced statements are historical; current coverage is through 6D.",
   "receptive_skill_plan": {
     "policy": "B lessons provide a planned mix of reading-led and listening-led units; Horizons on Air is not required in every unit. Avoid two consecutive units without the show. Do not impose rigid alternation; 2B and 3B are both listening-led. Declare primary skill and source genre before authoring.",
     "units": [

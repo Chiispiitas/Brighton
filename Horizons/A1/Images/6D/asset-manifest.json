@@ -1,0 +1,98 @@
+{
+  "lesson": "6D",
+  "assets": [
+    {
+      "asset_id": "HZN_A1_U06_LD_IMG_01",
+      "activity": "6D.1",
+      "type": "licensed_real_photograph",
+      "creator": "Mike Peel (www.mikepeel.net)",
+      "source_page": "https://commons.wikimedia.org/wiki/File:At_Jewel_Changi,_Singapore_2023_01.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/0/0e/At_Jewel_Changi%2C_Singapore_2023_01.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+      "license": "CC BY-SA 4.0",
+      "terms_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+      "attribution_required": true,
+      "original_dimensions": [
+        6960,
+        4640
+      ],
+      "source_taken": "2023-08-11",
+      "camera": "Canon EOS 90D",
+      "edits_crops": "Proportional resize to max 2000px; CSS crop in lesson. Jewel photo rendition remains CC BY-SA 4.0; attribution and license visible in lesson and ASSETS.md.",
+      "boundary": "Real venue photo; no statement about current prices, timetables, admission or availability of every attraction.",
+      "local_file": "Jewel-Mike-Peel-2023-v1.jpg",
+      "dimensions": [
+        2000,
+        1333
+      ],
+      "sha256": "4f39a915178d6fc3170e8f1dfd9a881efddf11bfc0f9cbf52a21a554e8406391",
+      "acquisition_date": "2026-10-26"
+    },
+    {
+      "asset_id": "HZN_A1_U06_LD_IMG_02",
+      "activity": "6D.1",
+      "type": "licensed_real_photograph",
+      "creator": "Yinan Chen",
+      "source_page": "https://commons.wikimedia.org/wiki/File:Gfp-minnesota-minneapolis-mall-of-america-rollercoaster.jpg",
+      "download_url": "https://upload.wikimedia.org/wikipedia/commons/6/6c/Gfp-minnesota-minneapolis-mall-of-america-rollercoaster.jpg?utm_source=commons.wikimedia.org&utm_campaign=index&utm_content=original",
+      "license": "Public domain dedication",
+      "terms_url": "https://commons.wikimedia.org/wiki/File:Gfp-minnesota-minneapolis-mall-of-america-rollercoaster.jpg",
+      "attribution_required": false,
+      "original_dimensions": [
+        3456,
+        2304
+      ],
+      "source_taken": "2013-07-06",
+      "camera": "Canon EOS REBEL T2i",
+      "edits_crops": "Proportional resize to max 2000px; CSS crop in lesson. Jewel photo rendition remains CC BY-SA 4.0; attribution and license visible in lesson and ASSETS.md.",
+      "boundary": "Real venue photo; no statement about current prices, timetables, admission or availability of every attraction.",
+      "local_file": "Mall-of-America-Yinan-Chen-2013-v1.jpg",
+      "dimensions": [
+        2000,
+        1333
+      ],
+      "sha256": "7cbdc5f0a0365fce0ba9675562c1fe1b06a8a2580a55a60b6fd46cb911252de6",
+      "acquisition_date": "2026-10-26"
+    },
+    {
+      "asset_id": "HZN_A1_U06_LD_IMG_03",
+      "activity": "6D.5",
+      "type": "built_in_imagegen",
+      "generation_prompt_record": "work/lessons6cd-20261026/image-generation.json outside repository",
+      "transparent_background": false,
+      "edits_crops": "No raster editing; proportionate CSS display/crops only.",
+      "purpose": "Prominent speaking interaction with exact pointing pose. Generic fictional visitor and helper, not real interviewees or venue representatives.",
+      "boundary": "Fictional teaching scene, no actual property/person claim.",
+      "local_file": "Visitor-directions-v1.png",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "sha256": "701bccc8bddbf388b7fe4043ebdb6ae1ee40656f1722c7c420d86ad885f932af",
+      "acquisition_date": "2026-10-26"
+    }
+  ],
+  "source_checked": "2026-10-26",
+  "content_sources": [
+    {
+      "url": "https://www.jewelchangiairport.com/en.html",
+      "checked": "2026-10-26",
+      "used": "Venue location/shopping/indoor garden-waterfall or indoor roller-coaster facts; no current price/hour advice."
+    },
+    {
+      "url": "https://www.jewelchangiairport.com/en/attractions/rain-vortex.html",
+      "checked": "2026-10-26",
+      "used": "Venue location/shopping/indoor garden-waterfall or indoor roller-coaster facts; no current price/hour advice."
+    },
+    {
+      "url": "https://www.jewelchangiairport.com/en/attractions/forest-valley.html",
+      "checked": "2026-10-26",
+      "used": "Venue location/shopping/indoor garden-waterfall or indoor roller-coaster facts; no current price/hour advice."
+    },
+    {
+      "url": "https://www.mallofamerica.com/directory/nickelodeon-universe",
+      "checked": "2026-10-26",
+      "used": "Venue location/shopping/indoor garden-waterfall or indoor roller-coaster facts; no current price/hour advice."
+    }
+  ],
+  "image_progression": "Opening real venue photographs lead to a new full-background visitor interaction on continuation, with large faces/pointing hand rather than another attraction crop."
+}

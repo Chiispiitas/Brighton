@@ -1,6 +1,6 @@
 # Horizons A1 — Book audit
 
-Updated 26 October 2026. **Technical preview verified through 6B; visual-fatigue reassessment and final book release pending.**
+Updated 26 October 2026. **Technical preview verified through 6D; visual-fatigue reassessment and final book release pending.**
 
 This is the current audit entry point. [book-audit.json](book-audit.json) holds scoped evidence and historical checks; [CANONICAL-STYLE.md](../Base/design-system/CANONICAL-STYLE.md) governs design. A current snapshot is not final release approval.
 
@@ -8,15 +8,37 @@ This is the current audit entry point. [book-audit.json](book-audit.json) holds 
 
 | Item | Current state |
 | --- | --- |
-| Content | 1A–6B plus Units 1 & 2 and 3 & 4 Reviews: 24 masters; Unit 6 partial |
-| Saved book | 48 A4 pages; printed pages 5–52 |
-| Activity blocks | 167; existing subexercise numbering retained |
-| Audio | 54 lesson MP3s + 1 production ident; new 6B tracks 6.4–6.6 decoded/transcribed |
-| Navigation cues | 28 NEW WORDS badges, 22 Extra Practice footers, 49 Go to references |
-| Concept explanations | 14 revised panels across 11 lessons; 25 total focus panels including retained 4A and new 4B–6B |
-| Unresolved destinations | 49 `page ---` references; intentional until back-of-book pagination |
+| Content | 1A–6D plus Units 1 & 2 and 3 & 4 Reviews: 26 masters; Unit 6 complete |
+| Saved book | 52 A4 pages; printed pages 5–56 |
+| Activity blocks | 181; existing subexercise numbering retained |
+| Audio | 60 lesson MP3s + 1 production ident; new 6C/6D tracks 6.7–6.12 decoded/transcribed |
+| Navigation cues | 32 NEW WORDS badges, 24 Extra Practice footers, 54 Go to references |
+| Concept explanations | 14 revised panels across 11 lessons; 27 total focus panels including retained 4A and new 4B–6D |
+| Unresolved destinations | 54 `page ---` references; intentional until back-of-book pagination |
 
 Counts are inventory, not proof that every cue is correctly placed. Review placement beside the newly introduced content.
+
+## 6C and 6D production, 26 October
+
+**Unit 6 is now complete**, printed pages **49–56**. New **6C — My neighborhood** (53–54) teaches movement prepositions and giving directions; **6D — Where’s the mall?** (55–56) develops speaking through helping a visitor choose two city stops. Each new lesson has seven activities. A/C remain language, B reading/listening and D productive skills. These minor audio tracks do not replace a B show: 6B remains reading-led and **7B must return to Horizons on Air**.
+
+**6C’s idea:** an on-foot field note leads from a real street photo and a brief, sourced [Walk Score explanation](https://www.walkscore.com/methodology.shtml) into four purposeful movement pictures, a directions conversation and noticing before clarification. Functional arrows make left/right visible. A new substantial **top-down photographic neighborhood model** on the continuation supports three independently restarted routes and controlled choices; map labels remain live. The answers are **library / supermarket / café**, checked against travel-relative left/right and the actual buildings. A personal local route remains unknown until guessed, then receives the learner’s own 1–5 walk rating. No official score is fabricated for either photo or practice map. Extra Practice writes a known route and has someone check it.
+
+**6D’s idea:** real Jewel and Mall of America photographs reveal a garden/waterfall and indoor roller-coaster tracks. [Jewel’s official attraction information](https://www.jewelchangiairport.com/en/attractions/rain-vortex.html) and [Mall of America’s official park description](https://www.mallofamerica.com/directory/nickelodeon-universe) support the captions; no current hours, ticket price or free-access claim is made. Three fictional friends find a common Sunday; **can/can’t** clarifies possible activities and availability, with aligned statements, question/short answers and wrong/right examples. A new **91 × 61mm visitor interaction** on the continuation supplies a distinct human setting. Partners bring genuinely private interests/local knowledge to a speaking exchange and agree a useful two-stop plan. Two 12mm white writing rows support their independent choices. Extra Practice is a short private welcome recording.
+
+**Art direction and variety:** 6C uses a burnt-red walking-map identity, a real street, selectively simplified movement art and a photographic model. 6D uses plum/rust destination bands, a purposeful pale dialogue surface, authentic venue photography and a large pointing/map interaction. Compared all eight Unit 6 pages together and with preceding 5C/5D: 6A contrasts lifestyles/designs a town center; 6B weighs tiny-home choices/models locations; 6C navigates; 6D helps a visitor. No cool-blue/green title plus yellow accent recipe. Shared black **31pt** titles, crimson navigation, single numbered lane, pink concept shells and purposeful backgrounds remain. Internal question/role grids do not create page-level sibling exercise columns.
+
+**Readability and learner mechanics:** standard **9.5pt** tasks/concepts, **8.9pt** instructions, dark-crimson grammar bold and normal italic choices. The 9pt word bank retains neutral wash, crimson rule and dark-crimson words. Three NEW WORDS cues in 6C cover on-foot/movement/direction inputs; one in 6D covers attractions. Five nearby navigation references and two meaningful Extra Practice footers are present. Five 6C route/notes lines and five private 6D preparation lines are usable; there are two generous plan rows. No fake hidden A/B answers, constrained final gap-writing or gray scene-location captions.
+
+**Media:** three real photos, two generated 6C assets and one generated 6D photo. The movement illustration has a specific pedagogical purpose and does not displace realism. The model map and visitor scene are fictional. Real photo source/license/date/camera/dimensions/hashes are in `Images/6C/asset-manifest.json` and `Images/6D/asset-manifest.json`. Jewel attribution and CC BY-SA 4.0 license/resize-crop notice are visible in the learner page; `Images/6D/ASSETS.md` retains source and image-license boundaries. The independent lesson text does not inherit a claim of venue endorsement. Exact built-in generation prompts remain outside the repo in `work/lessons6cd-20261026/image-generation.json`.
+
+**Six recordings checked:** **6.7–6.12**, Jessica narration and the approved exam-pool voices. Every final master decodes and exactly matches a normalized independent transcript, with no detected audio event or forbidden clarity tag. One initial 6.11 name mismatch was rejected, not hidden behind a name alias; the final Grace take matches. Voice maps, speech-only imports, permanent IDs/settings/hashes, answer keys and cumulative wordlists are current. Subjective listening review is not claimed. There is no untaught future/past narration.
+
+**Print/browser checks:** four standalone pages match the assembled geometry; no text overflow, missing media or continuation-marker collision. Minimum final-content clearance **13.1px** inside the content area, plus the normal footer separation. Six audio controls play/pause and hide in print. The reopened **52-page A4 PDF** preserves all earlier **48** pages’ text and decoded drawing streams exactly, with identical earlier compiled page fragments and all existing masters/media/keys. Each of the four new saved pages matches its native-export pixels and retains every learner word token; all four were inspected through Poppler, with a Unit 6 sheet and neighbor comparison. Export-only 240dpi media; no saved-PDF font/image rewriting or aggressive deduplication.
+
+Local verification complete; publication verification pending.
+
+**Scope:** this completes Unit 6’s lesson production, not the final book release. Later units, backmatter pagination and whole-book visual-fatigue/release checks remain pending. Exact baseline **c95133d**, before files, all-file hashes, transcripts/render evidence and guarded rollback journal: `work/lessons6cd-20261026` outside the repo. The guard refuses to overwrite later edits.
 
 ## 6B picture grammar pilot, 26 October
 
@@ -44,7 +66,7 @@ The reopened saved PDF and both new pages were inspected through Poppler, beside
 
 Published canonical HTML/PDF and all three new MP3 hashes match the checked files. The live 6B browser matches both page geometries, loads all room/photo assets and plays all three tracks.
 
-**Cadence recorded:** 6B is reading after listening-led 5B. **7B must return to Horizons on Air** to avoid a two-unit gap; plan its episode and tasks before drafting. Unit 6C/D are still unproduced; movement/directions and ability-can remain for those lessons. Four-spread Unit 6 visual variety, backmatter and final book release remain pending. Exact before files, all-file hashes and guarded rollback journal: `work/lesson6b` outside repo.
+**Cadence recorded:** 6B is reading after listening-led 5B. **7B must return to Horizons on Air** to avoid a two-unit gap; plan its episode and tasks before drafting. At this earlier scoped pass, Unit 6C/D were unproduced; the current production check above supersedes that status. Four-spread Unit 6 visual variety, backmatter and final book release remain pending. Exact before files, all-file hashes and guarded rollback journal: `work/lesson6b` outside repo.
 
 ## 6A production, 26 October
 
