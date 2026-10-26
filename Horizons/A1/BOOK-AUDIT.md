@@ -32,7 +32,7 @@ The continuation has a new **166mm-wide photographic room model**, not another c
 
 The reopened saved PDF and both new pages were inspected through Poppler, beside the preceding three spreads and on a whole-book sheet. Every earlier **46-page** text/decoded drawing stream and compiled page fragment is preserved. New saved pages match native-export pixels and retain every learner word token; all 23 preceding masters/keys/images and 51 lesson recordings plus ident remain. Export-only 240dpi media; no saved-PDF font/image rewriting or aggressive resource deduplication.
 
-Local checks complete; publication verification pending.
+Published canonical HTML/PDF and all three new MP3 hashes match the checked files. The live 6B browser matches both page geometries, loads all room/photo assets and plays all three tracks.
 
 **Cadence recorded:** 6B is reading after listening-led 5B. **7B must return to Horizons on Air** to avoid a two-unit gap; plan its episode and tasks before drafting. Unit 6C/D are still unproduced; movement/directions and ability-can remain for those lessons. Four-spread Unit 6 visual variety, backmatter and final book release remain pending. Exact before files, all-file hashes and guarded rollback journal: `work/lesson6b` outside repo.
 
