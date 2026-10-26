@@ -303,3 +303,12 @@ Jessica retains all labels, vocabulary and narration. Juniper is the unnamed cus
   - Juniper (`aMSt68OGf4xUZAnLpTU8`), paragraphs 7.
 
 Jessica narrates all track labels, vocabulary and factual source text. The three unnamed fictional travelers in 6.3 use Adeline, Mark Natural and Juniper; no recorded identity is attributed to a stock model. Eleven v3 / Natural stability 0.5. Final 6.3 third utterance uses This letter is for my sister to avoid a reduced wanna in the rejected first take. All final tracks decode and match normalized scripts, with no detected audio events. Production records: `../6A-production.json`. No forbidden clarity tag or SSML; no subjective listening review claimed.
+
+
+## 6B - My dream home
+
+- Track 6.4: Jessica (`cgSgspJ2msm6clMCkdW9`), paragraphs 1-2.
+- Track 6.5: Jessica (`cgSgspJ2msm6clMCkdW9`), paragraphs 1-4.
+- Track 6.6: Jessica (`cgSgspJ2msm6clMCkdW9`), paragraphs 1-7.
+
+Jessica supplies all narration; 6.5 is a third-person factual reading, not an imitation of Hanne. Eleven v3 / Natural stability 0.5. Proper-name ASR spelling Hannah/Hanne is normalized explicitly for 6.5, with 27 and 2023 numeral equivalents. No answer wording substitution. Source text is fixed to the dated 2023 interview and matches the learner article. All final tracks decode and match normalized scripts, with no detected audio events; production records: `../6B-production.json`. No forbidden clarity tag/SSML or subjective listening review claim.

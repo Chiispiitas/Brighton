@@ -183,3 +183,6 @@ All three use Eleven v3, Natural stability 0.5. Import scripts and voice-map par
 
 
 6A: Track 6.1 places in town 2; 6.2 factual New York/Stowe source (both Jessica); 6.3 three fictional travelers infer a place from a need (Jessica labels; Adeline / Mark Natural / Juniper). Exact paragraphs: VOICE MAP.md. Final three-track decode/transcript/event records: ../6A-production.json. Eleven v3 / stability 0.5; no forbidden clarity tag or SSML. This vocabulary A lesson is not a show episode.
+
+
+6B: Track 6.4 rooms and furniture; 6.5 third-person Hanne interview adaptation, read silently first; 6.6 six spatial models. All paragraphs use Jessica. Speech-only imports, exact VOICE MAP assignments and ../6B-production.json retain permanent IDs, settings, decode/transcript/event checks and the explicit Hanne/Hannah ASR spelling normalization. Eleven v3 / stability 0.5; no forbidden clarity tag or SSML. Reading-led 6B is not a show episode.

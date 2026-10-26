@@ -1,0 +1,78 @@
+{
+  "lesson": "6B",
+  "assets": [
+    {
+      "asset_id": "HZN_A1_U06_LB_IMG_01",
+      "activity": "6B.1",
+      "local_file": "Tiny-home-Andrea-Davis-10750999-v1.jpg",
+      "dimensions": [
+        1600,
+        2400
+      ],
+      "sha256": "83bb916921830718f33ba437afc2ed5ebc65c7a17d3a44a0b71d5d9a4c7182c4",
+      "acquisition_date": "2026-10-26",
+      "type": "licensed_real_photograph",
+      "creator": "Andrea Davis",
+      "source_page": "https://www.pexels.com/photo/minimal-interior-home-design-10750999/",
+      "download_url": "https://images.pexels.com/photos/10750999/pexels-photo-10750999.jpeg?auto=compress&cs=tinysrgb&w=2400",
+      "license": "Pexels",
+      "terms_url": "https://www.pexels.com/license/",
+      "attribution_required": false,
+      "original_dimensions": [
+        4375,
+        6562
+      ],
+      "source_published": "2022-01-04",
+      "source_taken": "2018-01-19",
+      "camera": "Canon EOS R",
+      "edits_crops": "Proportional local resize to 1600x2400; rendered 56x84mm at natural aspect ratio without extracting or inventing furnishings. Live A-E labels identify two functional areas and three furniture objects.",
+      "boundary": "Real introductory US tiny home; not Hanne’s Belgian house or an endorsement."
+    },
+    {
+      "asset_id": "HZN_A1_U06_LB_IMG_02",
+      "activity": "6B.1",
+      "local_file": "Bedroom-and-bathroom-v1.png",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "sha256": "24c436eb5ab3aca33e8e7e2fa41572e36b9a059175d5368db9c8269cebbcf924",
+      "acquisition_date": "2026-10-26",
+      "type": "built_in_imagegen",
+      "generation_prompt_record": "work/lesson6b/image-generation.json outside repository",
+      "transparent_background": false,
+      "edits_crops": "No raster edits; native square halves for bedroom/bathroom, or full panoramic room without crop or distortion.",
+      "purpose": "Exact legible bedroom/bathroom examples and bed identity.",
+      "boundary": "Generic fictional teaching environments; no actual Hanne property claim."
+    },
+    {
+      "asset_id": "HZN_A1_U06_LB_IMG_03",
+      "activity": "6B.5",
+      "local_file": "Living-room-positions-v1.png",
+      "dimensions": [
+        1902,
+        827
+      ],
+      "sha256": "5957f3efc819cbc298d28ea3096dffbfd5528fa4de2463934b432b830dd48d79",
+      "acquisition_date": "2026-10-26",
+      "type": "built_in_imagegen",
+      "generation_prompt_record": "work/lesson6b/image-generation.json outside repository",
+      "transparent_background": false,
+      "edits_crops": "No raster edits; native square halves for bedroom/bathroom, or full panoramic room without crop or distortion.",
+      "purpose": "Six exact spatial relationships including a bag inside an open box, phone on table, shoes under it, chair beside it, art above sofa and table in front of sofa.",
+      "boundary": "Generic fictional teaching environments; no actual Hanne property claim."
+    }
+  ],
+  "reading_source": {
+    "url": "https://tinyhousetalk.com/van-life-couples-tiny-house/",
+    "title": "Van Life Couple’s Tiny Home in Belgium",
+    "date": "2023-12-08",
+    "adaptation_words": 108,
+    "verbatim_quotes": 0,
+    "checked": "2026-10-26",
+    "claims": "27 square meters, kitchen/bathroom/open-plan living area, bed above storage, writing work, priorities about time/nature/travel and indoor group-size difficulty; dated source description, not 2026 residence.",
+    "not_used": "No proprietary source photos, real-person voice imitation or invented furniture placements."
+  },
+  "image_progression": "The continuation has a new room, not a duplicate/crop of the introductory home. Its single scene is intentionally reused by nearby models and controlled sentences without reprinting it. Both pages have substantial task-bearing imagery.",
+  "sourcing_decision": "Public search supplied the authentic tiny-home interior. Imagegen supplies exact room examples and the spatial composition that generic stock cannot reliably guarantee."
+}

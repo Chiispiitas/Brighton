@@ -1,0 +1,117 @@
+[
+  {
+    "lesson": "6B",
+    "track": "6.4",
+    "filename": "Track 6.4.mp3",
+    "script": "ElevenCreative Studio/6B - Track 6.4.txt",
+    "model": "eleven_v3",
+    "stability": 0.5,
+    "paragraph_voice_names": [
+      "Jessica",
+      "Jessica"
+    ],
+    "paragraph_voice_ids": [
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9"
+    ],
+    "generation_utc": "2026-10-26T21:07:18.237458+00:00",
+    "request_id": "rE7LLZAruqTEuYQYlExn",
+    "script_sha256": "5dcf089e49fdef2409763b62fb7675342daac86788e0b9eb46158830c127a3e4",
+    "bytes": 149672,
+    "duration_seconds": 9.33,
+    "transcript_checked": true,
+    "transcript_similarity": 1.0,
+    "answer_bearing_phrases_checked": true,
+    "audio_events_checked": true,
+    "throat_clearing_events_detected": false,
+    "forbidden_tag_preflight_passed": true,
+    "transcription_name_aliases": {},
+    "transcript_normalization": "Track label (including a transcribed pause comma), punctuation, case, numerals, hyphens, apostrophes and accent marks; OK/okay spelling equivalence. No answer or content substitutions.",
+    "subjective_listening_review": false,
+    "sha256": "83acf6a1fee0dbfbaa44c0b41d1292d61694250abf98ba4ab21a00b9c042476c",
+    "activity": 1,
+    "internal_audio_id": "HZN_A1_U06_LB_E01_AUD_01"
+  },
+  {
+    "lesson": "6B",
+    "track": "6.5",
+    "filename": "Track 6.5.mp3",
+    "script": "ElevenCreative Studio/6B - Track 6.5.txt",
+    "model": "eleven_v3",
+    "stability": 0.5,
+    "paragraph_voice_names": [
+      "Jessica",
+      "Jessica",
+      "Jessica",
+      "Jessica"
+    ],
+    "paragraph_voice_ids": [
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9"
+    ],
+    "generation_utc": "2026-10-26T21:10:09.641822+00:00",
+    "request_id": "7iV5urpSiJNlNWTft8bp",
+    "script_sha256": "f5f671cd7c9b3ba7fae41692311b44f8ac2757fabdd221016d930a802d37dfb8",
+    "bytes": 885698,
+    "duration_seconds": 55.33,
+    "transcript_checked": true,
+    "transcript_similarity": 1.0,
+    "answer_bearing_phrases_checked": true,
+    "audio_events_checked": true,
+    "throat_clearing_events_detected": false,
+    "forbidden_tag_preflight_passed": true,
+    "transcription_name_aliases": {
+      "Hannah": "Hanne"
+    },
+    "transcript_normalization": "Track label (including a transcribed pause comma), punctuation, case, numerals, hyphens, apostrophes and accent marks; OK/okay spelling equivalence. Hanne/Hannah proper-name transcription spelling is normalized explicitly for 6.5; no answer-bearing content substitutions.",
+    "subjective_listening_review": false,
+    "sha256": "af0e9ad8f34ff7c52f35a40f2c34411e8d8fe2a97193d2eb6815560452ad8a0f",
+    "activity": 2,
+    "internal_audio_id": "HZN_A1_U06_LB_E02_AUD_01"
+  },
+  {
+    "lesson": "6B",
+    "track": "6.6",
+    "filename": "Track 6.6.mp3",
+    "script": "ElevenCreative Studio/6B - Track 6.6.txt",
+    "model": "eleven_v3",
+    "stability": 0.5,
+    "paragraph_voice_names": [
+      "Jessica",
+      "Jessica",
+      "Jessica",
+      "Jessica",
+      "Jessica",
+      "Jessica",
+      "Jessica"
+    ],
+    "paragraph_voice_ids": [
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9"
+    ],
+    "generation_utc": "2026-10-26T21:07:26.269762+00:00",
+    "request_id": "d6CtlSJ5u8ipx6AAnggy",
+    "script_sha256": "c1352e483deba12fe664b5a86ea18e8ea99f0ff308fcc80ba70a6211fe83e55f",
+    "bytes": 336500,
+    "duration_seconds": 21.0,
+    "transcript_checked": true,
+    "transcript_similarity": 1.0,
+    "answer_bearing_phrases_checked": true,
+    "audio_events_checked": true,
+    "throat_clearing_events_detected": false,
+    "forbidden_tag_preflight_passed": true,
+    "transcription_name_aliases": {},
+    "transcript_normalization": "Track label (including a transcribed pause comma), punctuation, case, numerals, hyphens, apostrophes and accent marks; OK/okay spelling equivalence. No answer or content substitutions.",
+    "subjective_listening_review": false,
+    "sha256": "c85e43bbd558366d7c3973ec388e35972e9d00f83c391fbb8f73c27622559080",
+    "activity": 5,
+    "internal_audio_id": "HZN_A1_U06_LB_E05_AUD_01"
+  }
+]

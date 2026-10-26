@@ -1,0 +1,64 @@
+/* 6B: an interior-photo dictionary and a compact architecture feature.
+   Reading-led, with a separate full-size spatial model on the continuation. */
+.l6b-page { --hz-unit:var(--hz-unit-1); --hz-unit-dark:#8f123f; --hz-unit-soft:#f8e6ee; font-size:9.5pt; }
+.l6b-page .hz-page-stack { gap:2mm; }
+.l6b-page .hz-lesson-header { padding-bottom:3mm; }
+.l6b-page .hz-exercises { gap:1mm; }
+.l6b-page .hz-exercise { padding:1.5mm 0 2mm; }
+.l6b-page .hz-exercise__body { margin-top:2mm; }
+.l6b-page .hz-go-to { margin-block:.5mm 1mm; }
+.l6b-house-dictionary { display:grid; grid-template-columns:56mm 41mm minmax(0,1fr); gap:4mm; align-items:center; }
+.l6b-real-home { position:relative; margin:0; }
+.l6b-real-home img { display:block; width:56mm; height:84mm; object-fit:cover; }
+.l6b-tag,.l6b-other-rooms figcaption span { position:absolute; font-size:8.5pt; font-weight:650; color:#8f123f; background:#fff; padding:.4mm 1.2mm; }
+.l6b-tag--a { left:24%; top:47%; }.l6b-tag--b { left:75%; top:70%; }.l6b-tag--c { left:20%; top:56%; }.l6b-tag--d { left:12%; top:75%; }.l6b-tag--e { left:78%; top:89%; }
+.l6b-other-rooms { display:flex; flex-direction:column; gap:2mm; }
+.l6b-other-rooms figure { position:relative; margin:0; }
+.l6b-room-photo { width:41mm; height:41mm; background-image:url('../Images/6B/Bedroom-and-bathroom-v1.png'); background-size:200% 100%; background-repeat:no-repeat; }
+.l6b-room-photo--bed { background-position:0% 0%; }.l6b-room-photo--bath { background-position:100% 0%; }
+.l6b-other-rooms figcaption span { left:1mm; top:1mm; }
+.l6b-other-rooms figcaption .l6b-bed-tag { left:60%; top:66%; }
+.l6b-wordlist { display:flex; flex-direction:column; gap:2.2mm; padding-left:1mm; }
+.l6b-wordlist h3 { margin:1mm 0 .5mm; font-size:9.5pt; color:#8f123f; }
+.l6b-wordlist > span { white-space:nowrap; }
+.l6b-wordlist b { color:#8f123f; margin-right:1mm; }
+.l6b-letter { display:inline-block; width:6mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
+.l6b-gap { display:inline-block; width:29mm; height:4mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
+.l6b-home-feature { background:#f2f1ed; border-bottom:.3mm solid #b9b6b0; }
+.l6b-home-feature > header { display:grid; grid-template-columns:1fr 33mm; gap:4mm; align-items:center; padding:3mm 4mm; background:#244ca1; color:#fff; }
+.l6b-home-feature header p { margin:0 0 1mm; font-size:7pt; font-weight:650; letter-spacing:.06em; }
+.l6b-home-feature h2 { margin:0; font:700 24pt/1.08 Georgia,serif; letter-spacing:-.025em; }
+.l6b-area { text-align:center; padding-left:3mm; border-left:.3mm solid #ffffff80; }
+.l6b-area b { display:block; font:750 27pt/1 var(--hz-font-sans); }
+.l6b-area span { font-size:8pt; }
+.l6b-feature-body { padding:3mm 4mm 1.5mm; font-size:9.5pt; line-height:1.37; }
+.l6b-feature-body p { margin:0 0 2mm; }.l6b-feature-body p:last-child { margin:0; }
+.l6b-home-feature footer { padding:0 4mm 2.5mm; }
+.l6b-home-feature footer p { margin:0 0 1.5mm; font-size:9.5pt; }
+.l6b-home-feature footer b { color:#244ca1; }
+.l6b-home-feature footer a { font-size:7pt; color:#244ca1; text-underline-offset:.3mm; }
+.l6b-gist { margin:0 0 2mm; }.l6b-gist .hz-audio-badge { margin-left:4mm; }
+.l6b-list { list-style:none; counter-reset:item; margin:0; padding:0; }
+.l6b-list li { counter-increment:item; position:relative; padding-left:5mm; line-height:1.4; }
+.l6b-list li::before { content:counter(item); position:absolute; left:0; color:#8f123f; font-weight:650; }
+.l6b-read-answers { display:grid; grid-template-columns:1fr 1fr; gap:2mm 5mm; }
+.l6b-read-answers .l6b-gap { display:block; width:100%; height:5.5mm; }
+.l6b-continuation-content { padding-top:11mm; }
+.l6b-reading-response { display:grid; grid-template-columns:1fr 1fr; gap:7mm; }
+.l6b-reading-response h3 { margin:0; font-size:9.5pt; color:#244ca1; }
+.l6b-reading-response span { display:block; height:6mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
+.l6b-reader-choice { margin:2mm 0 0; color:#244ca1; }
+.l6b-page--2 .hz-exercises { padding-top:5mm!important; }
+.l6b-location-scene { margin:0; }
+.l6b-location-scene img { display:block; width:100%; height:auto; }
+.l6b-notice { margin:2mm 0 0; }
+.l6b-page--2 .hz-focus-box { margin:2mm 0 1mm 12mm; }
+.l6b-location-models { display:grid; grid-template-columns:1fr 1fr; gap:2.3mm 5mm; }
+.l6b-location-models p { margin:0; line-height:1.4; }
+.l6b-page--2 .l6b-later-exercises { padding-top:1mm!important; }
+.l6b-practice { display:grid; grid-template-columns:1fr 1fr; gap:2.5mm 5mm; }
+.l6b-practice .l6b-gap { width:24mm; }
+.l6b-home-exchange { display:grid; grid-template-columns:1fr 1fr 1.3fr; gap:4mm; }
+.l6b-home-exchange p { margin:0; line-height:1.4; }
+.l6b-home-exchange b { color:#8f123f; }
+.l6b-inset { margin-left:12mm; margin-top:5mm; }

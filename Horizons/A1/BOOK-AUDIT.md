@@ -1,6 +1,6 @@
 # Horizons A1 — Book audit
 
-Updated 26 October 2026. **Technical preview verified through 6A; visual-fatigue reassessment and final book release pending.**
+Updated 26 October 2026. **Technical preview verified through 6B; visual-fatigue reassessment and final book release pending.**
 
 This is the current audit entry point. [book-audit.json](book-audit.json) holds scoped evidence and historical checks; [CANONICAL-STYLE.md](../Base/design-system/CANONICAL-STYLE.md) governs design. A current snapshot is not final release approval.
 
@@ -8,15 +8,33 @@ This is the current audit entry point. [book-audit.json](book-audit.json) holds 
 
 | Item | Current state |
 | --- | --- |
-| Content | 1A–6A plus Units 1 & 2 and 3 & 4 Reviews: 23 masters; Unit 6 partial |
-| Saved book | 46 A4 pages; printed pages 5–50 |
-| Activity blocks | 160; existing subexercise numbering retained |
-| Audio | 51 lesson MP3s + 1 production ident; new 6A tracks 6.1–6.3 decoded/transcribed |
-| Navigation cues | 26 NEW WORDS badges, 21 Extra Practice footers, 47 Go to references |
-| Concept explanations | 14 revised panels across 11 lessons; 24 total focus panels including retained 4A and new 4B–6A |
-| Unresolved destinations | 47 `page ---` references; intentional until back-of-book pagination |
+| Content | 1A–6B plus Units 1 & 2 and 3 & 4 Reviews: 24 masters; Unit 6 partial |
+| Saved book | 48 A4 pages; printed pages 5–52 |
+| Activity blocks | 167; existing subexercise numbering retained |
+| Audio | 54 lesson MP3s + 1 production ident; new 6B tracks 6.4–6.6 decoded/transcribed |
+| Navigation cues | 28 NEW WORDS badges, 22 Extra Practice footers, 49 Go to references |
+| Concept explanations | 14 revised panels across 11 lessons; 25 total focus panels including retained 4A and new 4B–6B |
+| Unresolved destinations | 49 `page ---` references; intentional until back-of-book pagination |
 
 Counts are inventory, not proof that every cue is correctly placed. Review placement beside the newly introduced content.
+
+## 6B production, 26 October
+
+**My dream home**, printed pages **51–52**, is **reading-led**. A new **108-word** third-person adaptation of [Hanne’s tiny-home interview](https://tinyhousetalk.com/van-life-couples-tiny-house/) (8 December 2023) provides silent gist, four detail questions, a second-page benefits/tradeoff response and a personal choice. The meaningful constraint is indoor space for groups of friends; the benefit is time for life. The feature explicitly dates the source, rather than claiming her 2026 residence or retelling completed events in false present. No invented quotation, real-person voice imitation, proprietary source photograph, financial detail or seasonal vocabulary syllabus is added. All claims/answers are recorded in `Answer keys/6B.md` and cumulative support in `Wordlists/6B.md`.
+
+The introductory dictionary teaches **four rooms and four furniture words** through a real Andrea Davis tiny-home interior and two independent generated room examples. Room vs object labels are separated visibly. The large image is a US stock home, not Hanne’s Belgian property; the unknown loft is not labeled as a visible bed. An upright **Georgia architecture headline**, cobalt masthead, meaningful **27 square meters** detail and continuous source body distinguish this from 6A’s paired city summaries, 5D’s receipts and 5C’s habit notes. Near-neutral source backing and photographic environments remain purposeful; no blue/green + yellow/gold accent recipe is used. Shared 31pt black title, crimson chrome, single exercise lane and canonical pink grammar shell remain.
+
+The continuation has a new **166mm-wide photographic room model**, not another crop of the opening photo. All six spatial relations are directly visible: bag **in** box, phone **on** table, shoes **under** table, chair **next to** table, picture **above** sofa, table **in front of** sofa. Noticing precedes a six-model clarification with selective crimson prepositions and ordinary **9.5pt** concept/task typography; instructions remain **8.9pt**. The same nearby picture supports controlled consolidation without being reprinted. Partners then exchange unknown home positions and find one difference, rather than repeating 6A’s drawing. Extra Practice writes four true location sentences from a private photo. There are two NEW WORDS cues, two nearby Vocabulary/Grammar references and four **6mm** response lines for the reader’s good/difficult notes. No hidden A/B answers or required photo upload.
+
+**Media:** one licensed Pexels photo plus two built-in generated assets, with no raster alterations. The stock image keeps its native **56 × 84mm** proportion; the room halves remain **41mm squares** and the full panoramic practice scene is uncropped. Source/license/camera/date/dimensions/hashes: `Images/6B/asset-manifest.json`. Exact prompts and production evidence: `work/lesson6b/image-generation.json` outside the repo. No generated scene is presented as an actual person’s home.
+
+**Verified locally:** seven activities, 48 assembled A4 pages, standalone/compiled geometry matches, no text overflow, all images/backgrounds load, proper italic choices and dark-crimson concept emphasis. Minimum activity-bottom clearance **66.4px**. All **three new tracks 6.4–6.6** play/pause and controls hide in print. Jessica narrates every paragraph; Eleven v3 / stability 0.5. Final masters decode and exactly match normalized transcripts, with no detected audio event; the Hanne/Hannah ASR name spelling and number/date equivalents are explicit. No forbidden clarity tag, SSML or subjective listening-review claim. The 6.5 read-aloud is used after the initial silent reading; it is not a show episode.
+
+The reopened saved PDF and both new pages were inspected through Poppler, beside the preceding three spreads and on a whole-book sheet. Every earlier **46-page** text/decoded drawing stream and compiled page fragment is preserved. New saved pages match native-export pixels and retain every learner word token; all 23 preceding masters/keys/images and 51 lesson recordings plus ident remain. Export-only 240dpi media; no saved-PDF font/image rewriting or aggressive resource deduplication.
+
+Local checks complete; publication verification pending.
+
+**Cadence recorded:** 6B is reading after listening-led 5B. **7B must return to Horizons on Air** to avoid a two-unit gap; plan its episode and tasks before drafting. Unit 6C/D are still unproduced; movement/directions and ability-can remain for those lessons. Four-spread Unit 6 visual variety, backmatter and final book release remain pending. Exact before files, all-file hashes and guarded rollback journal: `work/lesson6b` outside repo.
 
 ## 6A production, 26 October
 
@@ -34,7 +52,7 @@ The reopened saved book contains **46 A4 pages**. Both new pages were inspected 
 
 Published canonical HTML/PDF and all three new MP3 hashes match checked files. The live 6A browser matches both page geometries, loads the photographs and six-cell family and plays all three tracks.
 
-Scoped technical preview only. **6B–6D are not produced**; decide B's primary skill/source genre before drafting and retain the planned mix/no two-unit show gap after listening-led 5B. The 6A read-aloud is not a Horizons on Air episode. Four-spread Unit 6 variety, unresolved backmatter and final book release remain pending. Exact before files, hashes, saved renders and guarded restore: `work/lesson6a` outside the repo.
+This scoped 6A pass did not include 6B–6D; **6B now has a separate check above**. Decide B's primary skill/source genre before drafting and retain the planned mix/no two-unit show gap after listening-led 5B. The 6A read-aloud is not a Horizons on Air episode. Four-spread Unit 6 variety, unresolved backmatter and final book release remain pending. Exact before files, hashes, saved renders and guarded restore: `work/lesson6a` outside the repo.
 
 ## 5D production, 26 October
 
