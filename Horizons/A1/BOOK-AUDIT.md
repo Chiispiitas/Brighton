@@ -26,7 +26,7 @@ Photo metadata stays at the end: three image-credit pages, printed 57-59, coveri
 
 Checked all 55 HTML pages: no automatic vocabulary wrappers or pairing attributes, 32 badges, 181 activities, 64 audio controls, loaded images and no text overflow. All learner wording/media are preserved. The PDF restores 50 lesson pages from the original pre-emphasis book exactly, uses two checked native pages for photo-credit removal, and preserves the existing three credit pages. Original selective emphasis is restored. Exact before files: `work/plain-vocabulary-20261026`, baseline `1ddb4cb`.
 
-Local checks passed; publication verification pending.
+Published HTML/PDF, all lesson sources and shared styles match; the live browser reproduces checked geometry and confirms zero automatic vocabulary wrappers.
 
 ## 6C and 6D production, 26 October
 
