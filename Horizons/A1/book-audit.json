@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated": "2026-10-26",
-  "status": "technical preview verified; visual-fatigue reassessment and final book release pending",
+  "status": "technical preview verified; Horizons on Air coverage, visual-fatigue reassessment and final book release pending",
   "scope": "A1 through 5C, including Units 1 & 2 and 3 & 4 Reviews",
   "readability_comparison_baseline": "e8d6ddd69f62caffab662a93a5a392ebc5bfb131",
   "inventory": {
@@ -2400,9 +2400,52 @@
           "print_audio_controls_hidden": true
         }
       }
+    },
+    "horizons_on_air_coverage_20261026": {
+      "requirement": "At least one substantial episode in every unit, regardless of whether B is reading-led; preserve A/C language, B receptive and D productive roles.",
+      "status": "incomplete; missing Units 1, 4 and 5",
+      "source_inventory": [
+        {
+          "unit": 1,
+          "status": "missing",
+          "action": "Retrofit a substantial episode; existing ordinary listening is not coverage."
+        },
+        {
+          "unit": 2,
+          "status": "present",
+          "lesson": "2B",
+          "episode": "Bus or car?",
+          "track": "2.3"
+        },
+        {
+          "unit": 3,
+          "status": "present",
+          "lesson": "3B",
+          "episode": "Three people. Three weeks.",
+          "track": "3.5"
+        },
+        {
+          "unit": 4,
+          "status": "missing",
+          "action": "Retrofit a substantial episode; current food opinions have no show identity/format."
+        },
+        {
+          "unit": 5,
+          "status": "missing through 5C",
+          "action": "Required before Unit 5 completion; existing shopping recordings do not count as episodes."
+        }
+      ],
+      "qualification": "Actual show audio, meaningful gist/detail listening tasks, title and approved 2B identity; not just a logo or audio badge. Jessica retained as narrator/established host voice, approved cast, varied episode formats.",
+      "evidence": "Current Lessons/*.html checked; all branded occurrences are in 2B/3B and point to existing MP3 files. No learner pages or recordings changed in this policy correction.",
+      "completion_gate": "A unit cannot be deemed complete while its episode is missing. Technical preview and audio totals do not satisfy coverage."
     }
   },
   "pending": [
+    {
+      "id": "horizons-on-air-coverage",
+      "scope": "Units 1 and 4; Unit 5 before completion; all future units",
+      "action": "Produce substantive episodes for missing units and verify show format, title, track, gist/detail tasks, audio and 2B identity; do not satisfy coverage by relabeling drills/read-alouds."
+    },
     {
       "id": "visual-fatigue",
       "scope": "Unit 1 and Unit 2 lessons; final whole-book reassessment",
@@ -2461,9 +2504,9 @@
       ],
       "exclude_markdown": true,
       "fingerprint": {
-        "files": 11,
-        "bytes": 54779,
-        "sha256": "1fde6eb0f73fa780d98581e77a65185d2286679e6d2b4a613d14c782d53e742d"
+        "files": 12,
+        "bytes": 56673,
+        "sha256": "6a20ae8b03192ac7389753b340a462f2461129acbdded31635ecdc886df7c01c"
       }
     },
     "saved_pdf": {
@@ -2485,12 +2528,12 @@
       ],
       "fingerprint": {
         "files": 4,
-        "bytes": 115627,
-        "sha256": "7e91808d0373fffccff0a6b427c42796e05d96406e2d7f138389d775a846d0a9"
+        "bytes": 117642,
+        "sha256": "6aeb9772837e25be94f918f82d31d238ef1468cf809e050899ca749f810459b3"
       }
     }
   },
   "content_baseline_commit": "2f404b547b7da07be81a0622a78591d3299c402a",
-  "current_revision": "New 5C language spread, seven activities, five licensed stock photographs and three checked Eleven v3 tracks. Printed pages 45-46 fit; original 40 pages preserved. Local and live source/PDF/media verified. Final whole-book release and unresolved backmatter remain pending.",
+  "current_revision": "New 5C language spread, seven activities, five licensed stock photographs and three checked Eleven v3 tracks. Printed pages 45-46 fit; original 40 pages preserved. Local and live source/PDF/media verified. Final whole-book release and unresolved backmatter remain pending. Author clarified mandatory Horizons on Air in every unit: current coverage is 2B/3B only; Units 1, 4 and 5 are explicitly incomplete against this requirement.",
   "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope. units_3_4_reviews_visual_variety_20261025 supersedes earlier composition, color and geometry evidence for printed pages 21-40, including review_composition_20261025, review_3_4_20261025, unit_3_creative_revision and unit_4_visual_variety; earlier learning and audio evidence keeps its original scope."
 }

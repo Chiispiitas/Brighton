@@ -1,6 +1,6 @@
 # Horizons A1 — Book audit
 
-Updated 26 October 2026. **Technical preview verified through 5C; visual-fatigue reassessment and final book release pending.**
+Updated 26 October 2026. **Technical preview verified through 5C; Horizons on Air coverage, visual-fatigue reassessment and final book release pending.**
 
 This is the current audit entry point. [book-audit.json](book-audit.json) holds scoped evidence and historical checks; [CANONICAL-STYLE.md](../Base/design-system/CANONICAL-STYLE.md) governs design. A current snapshot is not final release approval.
 
@@ -17,6 +17,22 @@ This is the current audit entry point. [book-audit.json](book-audit.json) holds 
 | Unresolved destinations | 44 `page ---` references; intentional until back-of-book pagination |
 
 Counts are inventory, not proof that every cue is correctly placed. Review placement beside the newly introduced content.
+
+## Mandatory Horizons on Air coverage
+
+Author requirement, 26 October: **at least one substantial Horizons on Air episode in every unit**. This gate applies even when B is reading-led. A/C remain language, B reading/listening, D writing/speaking; an episode can sit where its actual learning purpose fits. Jessica remains the narrator/established host voice and 2B remains the visual identity reference. Formats, supporting layouts and guests should vary.
+
+| Unit | Current source evidence | Coverage |
+| --- | --- | --- |
+| 1 | No branded episode | **Missing: retrofit required** |
+| 2 | 2B, *Bus or car?*, Track 2.3 | Present |
+| 3 | 3B, *Three people. Three weeks.*, Track 3.5 | Present |
+| 4 | No branded episode; 4B food opinions are not currently a show | **Missing: retrofit required** |
+| 5 | No branded episode through 5C; shopping audio is not currently a show | **Missing: required before unit completion** |
+
+This inventory checks current lesson sources, not a claim that the missing episodes have been produced. Units 1 and 4 need substantive retrofits, and Unit 5 must acquire an episode before completion. Do not tick this gate by relabeling a short listening, vocabulary track or source read-aloud. A qualifying episode needs a title, recognizable show feature, actual host/guest audio and meaningful gist/detail listening work. Recheck source, recording, script, tasks/key, approved visual identity and spacing after changes. Previous technical/layout passes do not imply that these units meet the new coverage requirement.
+
+Run `python Horizons/Base/build/check-on-air-coverage.py`. A missing episode returns a nonzero result; a structural pass still needs editorial/audio verification.
 
 ## Verified evidence and its limits
 
@@ -99,6 +115,7 @@ Older 4B/4C/4D presentation checks and the prior Units 2/4 revision are historic
 
 ## Remaining work
 
+- [ ] Produce proper Horizons on Air episodes for Units 1 and 4; include one in Unit 5 before completion. Update the unit/lesson/title/track register and verify actual show audio, listening tasks and approved identity.
 - [ ] Reassess remaining Unit 1/2 lesson treatments, then repeat the final whole-book visual-fatigue comparison. Units 3–4, both paired reviews and 5A have scoped evidence; they do not approve untouched lessons automatically.
 - [ ] Build and paginate the back-of-book material, replace all `page ---` destinations, and verify each link/reference.
 - [ ] Explicitly audit Unit 1 continuation-page imagery against the newer preference. Review, Units 2–3 and 4A–4D have scoped evidence; Unit 1 must not inherit that pass automatically. Count substantial CSS-background photos as imagery; tiny badges do not count.
@@ -113,6 +130,7 @@ Use these for every new or changed spread; they are a checklist, not additional 
 - **Visual fatigue:** compare the proposed spread with the preceding three and the whole unit; record its color relationship, feature-text treatment, image hierarchy and content-specific idea. Repeated blue/green/teal + yellow/gold needs explicit scrutiny. Follow the editorial acceptance gate below.
 - **Readability:** verify the canonical font-size role table across the assembled and standalone pages; integrated source features may retain purposeful typography. Use 9.5pt model phrases/rules, selective crimson target emphasis and the canonical pink grammar shell. Keep inner padding, response space, readable labels and continuation-tab clearance. Circle choices use normal-weight lowercase italics except required grammatical capitals. No redundant gray location captions.
 - **Navigation:** NEW WORDS at new vocabulary input, nearby Vocabulary/Grammar references for newly introduced sets/points, and the expected Extra Practice footer. Confirm actual placement, not just totals.
+- **Recurring feature / unit completion:** every unit needs a substantial Horizons on Air episode. Record lesson, title and track; verify actual show audio, useful listening tasks and the 2B identity. Ordinary audio or a pasted badge does not count. Reading-led B is not an exemption.
 - **Media:** preserve answer-bearing details and correct crops; verify source/license metadata, native transparency and clean writing space. Narration uses Jessica and the approved voice pool. Never use the `[clearly]` tag. Check scripts, track references, decoding, transcripts and recording hashes when affected.
 - **Print:** check HTML fit and loaded media, then reopen the saved A4 PDF. Inspect full pages and close crops, including lesson-code numerals. Compare unchanged pages and changed-page direct exports. Do not use saved-PDF image/font rewriting or aggressive resource deduplication: this previously removed continuation-tab digits. Optimize print media before browser export while retaining original assets.
 

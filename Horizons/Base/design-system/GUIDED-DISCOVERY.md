@@ -166,7 +166,7 @@ The receptive text/audio carries the lesson. Vocabulary supports comprehension a
 
 #### HORIZONS ON AIR — recurring listening-show identity
 
-`HORIZONS ON AIR` is the official recurring show identity for substantial listening-led Horizons lessons. Use the same show name across the book so learners recognize the feature immediately, while each episode receives its own short title.
+`HORIZONS ON AIR` is the official recurring show identity for substantial listening-led Horizons lessons. **Every unit must include at least one substantial episode.** Reading-led B lessons do not exempt their unit; place the episode in a suitable lesson without changing the A/C language, B reading/listening, D writing/speaking division. This is a unit-level requirement, not a requirement for every lesson. Record actual coverage and missing units in BOOK-AUDIT.md; a unit cannot be marked complete without an episode. Use the same show name across the book so learners recognize the feature immediately, while each episode receives its own short title.
 
 The **identity repeats; the format does not have to**. An episode may use street interviews, a studio conversation, a host with guests, short field segments, phone calls, vox-pop answers or another believable audio-show format. Do not force the same host, cast, setting or interaction pattern across lessons.
 
@@ -180,7 +180,7 @@ For early A1, HORIZONS ON AIR may use natural **A1–A2 conversational English**
 
 Do not write HORIZONS ON AIR as a chain of bare textbook prompts and one-line answers. Natural greetings, reactions, reasons, small talk, clarification, paraphrase and one or two plausible distractors are welcome when they make the interaction believable without obscuring the task.
 
-The visible feature should use the official `HORIZONS ON AIR` name plus the episode title, not a generic genre label. Minor pronunciation tracks or tiny one-off audio drills do not need the full show identity; it is for listening features that carry meaningful lesson content.
+The visible feature should use the official `HORIZONS ON AIR` name plus the episode title, not a generic genre label. Minor pronunciation tracks or tiny one-off audio drills do not need the full show identity and do not count toward unit coverage; it is for listening features that carry meaningful lesson content. A logo or heading added to a routine read-aloud does not make it an episode. Check the actual recording, host/guest interaction, listening purpose and gist/detail tasks as well as the visible branding. Run `python Horizons/Base/build/check-on-air-coverage.py` when auditing unit completeness; its structural result does not replace that editorial/audio review.
 
 ### Lesson C — Grammar and/or Vocabulary
 
