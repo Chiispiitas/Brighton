@@ -3173,7 +3173,7 @@
     },
     "lessons_6c_6d_20261026": {
       "scope": "6C/6D, printed pages 53-56, completing Unit 6",
-      "status": "local HTML/PDF/media verified; publication pending",
+      "status": "local and published HTML/PDF/media verified",
       "lesson_roles": {
         "6C": "Language: movement prepositions and giving directions, with noticing before clarification.",
         "6D": "Speaking: help a visitor agree two city destinations and describe activities/routes, using can/can’t."
@@ -3737,7 +3737,55 @@
       },
       "preservation": "Previous 48 saved-PDF pages/assembled page fragments, 24 masters, all prior image/audio binaries, keys and wordlists preserved. Shared rendering/design system unchanged.",
       "evidence_directory": "work/lessons6cd-20261026 outside repository",
-      "reversibility": "Exact before copies, complete A1 before-hash ledger, baseline commit c95133d and guarded rollback journal."
+      "reversibility": "Exact before copies, complete A1 before-hash ledger, baseline commit c95133d and guarded rollback journal.",
+      "publication": {
+        "canonical": {
+          "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html",
+          "canonical_html_matches": true,
+          "canonical_pdf_matches_sha256": "0e1bd939c14110baa20a4ca6309bc073ff5b57e33e6224c21067e86d2b6deed8",
+          "pdf_bytes": 32685106,
+          "lessons": {
+            "6C": "matches source",
+            "6D": "matches source"
+          },
+          "published_track_hashes": {
+            "6.7": "3a3c270d06c378767192b854ef98db5967d040e530aebf14f6f292a65740a97d",
+            "6.8": "d2cbdbdb062187cacfac715d7ddbf3270555099484604c22f5ec2b97af75addd",
+            "6.9": "086c151c7cefe26e83450f21eddf92e5dc39604285309dcee41017bbf5326f9a",
+            "6.10": "8a910d12d8f5dedd750f48a4701e4b82e303bb27fe50e8d118285903271c8e90",
+            "6.11": "a2a67433d3ea40c7f694f206a0605f011a8501193c184936ecb4b771777cc374",
+            "6.12": "99c0be28aaddedb78c42fc1c8244d830465e5670d199043926004207b4ad386d"
+          },
+          "published_image_hashes": {
+            "Images/6C/Street-Gabriel-Tovar-34898421-v1.jpg": "9e099f9de04630066e8bcd63e838aed97d96c4866fb770864f50db00af9015ec",
+            "Images/6C/Movement-four-v1.png": "c6458cc5b37f36e466b1d4445a101c3153b8513a3b7a237dd1b9509663fa55e3",
+            "Images/6C/Neighborhood-model-v1.png": "c9223a895d9f81d47fc22f89d70c5fe51f0c537df3adeb40e35bb2f808e126c9",
+            "Images/6D/Jewel-Mike-Peel-2023-v1.jpg": "4f39a915178d6fc3170e8f1dfd9a881efddf11bfc0f9cbf52a21a554e8406391",
+            "Images/6D/Mall-of-America-Yinan-Chen-2013-v1.jpg": "7cbdc5f0a0365fce0ba9675562c1fe1b06a8a2580a55a60b6fd46cb911252de6",
+            "Images/6D/Visitor-directions-v1.png": "701bccc8bddbf388b7fe4043ebdb6ae1ee40656f1722c7c420d86ad885f932af"
+          }
+        },
+        "browser": [
+          {
+            "lesson": "6C",
+            "url": "https://exams.bebrighton.net/Horizons/A1/Lessons/6C.html",
+            "both_page_geometries_match_local": true,
+            "all_images_and_css_backgrounds_loaded": true,
+            "backgrounds": 1,
+            "three_tracks_play_pause": true,
+            "print_audio_controls_hidden": true
+          },
+          {
+            "lesson": "6D",
+            "url": "https://exams.bebrighton.net/Horizons/A1/Lessons/6D.html",
+            "both_page_geometries_match_local": true,
+            "all_images_and_css_backgrounds_loaded": true,
+            "backgrounds": 0,
+            "three_tracks_play_pause": true,
+            "print_audio_controls_hidden": true
+          }
+        ]
+      }
     }
   },
   "pending": [
@@ -3829,7 +3877,7 @@
     }
   },
   "content_baseline_commit": "2f404b547b7da07be81a0622a78591d3299c402a",
-  "current_revision": "Unit 6 complete through 6D: movement/directions in a walkable-neighborhood challenge and can/can’t through helping a visitor plan two city stops. Four new A4 pages, 14 activities, six Jessica-narrated/approved-pool tracks, new real/generated media, keys and wordlists. Local checks complete; publication verification pending. Previous 48 pages preserved. Technical preview only; later units/backmatter and final whole-book release remain pending. Unit 7B must return to Horizons on Air.",
+  "current_revision": "Unit 6 complete through 6D: movement/directions in a walkable-neighborhood challenge and can/can’t through helping a visitor plan two city stops. Four new A4 pages, 14 activities, six Jessica-narrated/approved-pool tracks, new real/generated media, keys and wordlists. Local and live HTML/PDF/media verified. Previous 48 pages preserved. Technical preview only; later units/backmatter and final whole-book release remain pending. Unit 7B must return to Horizons on Air.",
   "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope. units_3_4_reviews_visual_variety_20261025 supersedes earlier composition, color and geometry evidence for printed pages 21-40, including review_composition_20261025, review_3_4_20261025, unit_3_creative_revision and unit_4_visual_variety; earlier learning and audio evidence keeps its original scope. lesson_5b_on_air_20261026 supersedes prior 5B reading/source/presentation and 5.5/5.6 records only. The 26 October every-unit show mandate is superseded by planned B-skill balance and no two-unit show gap. lesson_5b_activity5_variety_20261026 supersedes only the earlier 5B Activity 5 image/choices/key and continuation-image evidence; no show/audio or other lesson evidence changes. lesson_6b_picture_grammar_20261026 supersedes only the original 6B page-52 grammar presentation, continuation spacing and associated geometry evidence; all learning, source and audio evidence retains its scope. lessons_6c_6d_20261026 adds printed pages 53-56 and completes Unit 6 without superseding prior source/audio/page evidence. Prior 6C/6D-unproduced statements are historical; current coverage is through 6D.",
   "receptive_skill_plan": {
     "policy": "B lessons provide a planned mix of reading-led and listening-led units; Horizons on Air is not required in every unit. Avoid two consecutive units without the show. Do not impose rigid alternation; 2B and 3B are both listening-led. Declare primary skill and source genre before authoring.",

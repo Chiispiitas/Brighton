@@ -36,7 +36,7 @@ Counts are inventory, not proof that every cue is correctly placed. Review place
 
 **Print/browser checks:** four standalone pages match the assembled geometry; no text overflow, missing media or continuation-marker collision. Minimum final-content clearance **13.1px** inside the content area, plus the normal footer separation. Six audio controls play/pause and hide in print. The reopened **52-page A4 PDF** preserves all earlier **48** pages’ text and decoded drawing streams exactly, with identical earlier compiled page fragments and all existing masters/media/keys. Each of the four new saved pages matches its native-export pixels and retains every learner word token; all four were inspected through Poppler, with a Unit 6 sheet and neighbor comparison. Export-only 240dpi media; no saved-PDF font/image rewriting or aggressive deduplication.
 
-Local verification complete; publication verification pending.
+Canonical published HTML/PDF and all six MP3/generated-asset hashes match. Both live lesson pages reproduce checked geometry, load their photographs/backgrounds and play all six tracks.
 
 **Scope:** this completes Unit 6’s lesson production, not the final book release. Later units, backmatter pagination and whole-book visual-fatigue/release checks remain pending. Exact baseline **c95133d**, before files, all-file hashes, transcripts/render evidence and guarded rollback journal: `work/lessons6cd-20261026` outside the repo. The guard refuses to overwrite later edits.
 
