@@ -18,6 +18,16 @@ This is the current audit entry point. [book-audit.json](book-audit.json) holds 
 
 Counts are inventory, not proof that every cue is correctly placed. Review placement beside the newly introduced content.
 
+## 6B picture grammar pilot, 26 October
+
+The **prepositions of place** clarification on printed page **52** now follows 4A's picture-plus-live-caption approach: six transparent photographic object pairings directly above the existing model sentences. Only **in, on, under, next to, above** and **in front of** receive bold dark-crimson emphasis. Captions remain normal **9.5pt**; instructions remain **8.9pt**. The canonical pink grammar shell remains, with no extra picture cards or borders. This three-by-two internal concept grid does not change the single numbered exercise lane.
+
+The full-width panoramic room, all learner wording, four reading-response writing lines, activities, keys and recordings remain. Slight continuation-spacing adjustments make room for the models while preserving generous separation and the Extra Practice footer. Native generated alpha and proportionate CSS crops avoid white rectangles, stretching and neighboring sprite edges. Asset provenance: `Images/6B/asset-manifest.json`; exact built-in imagegen prompt and before copies: `work/6b-picture-grammar-20261026` outside the repo.
+
+**Checked:** all six image meanings, loaded images/backgrounds, caption/instruction type, dark-crimson emphasis, text fit, standalone/assembled geometry equality and three audio controls. The reopened 48-page A4 PDF preserves the first **47** pages' text and decoded drawing streams exactly; only page 52 is replaced, matching the native export pixels. The first 47 assembled page fragments, previous media and all learner wording are unchanged. Page and grammar-detail renders were inspected. This scoped check supersedes original 6B grammar-presentation/spacing evidence only; source, learning and audio evidence retains its scope.
+
+Publication verification pending.
+
 ## 6B production, 26 October
 
 **My dream home**, printed pages **51–52**, is **reading-led**. A new **108-word** third-person adaptation of [Hanne’s tiny-home interview](https://tinyhousetalk.com/van-life-couples-tiny-house/) (8 December 2023) provides silent gist, four detail questions, a second-page benefits/tradeoff response and a personal choice. The meaningful constraint is indoor space for groups of friends; the benefit is time for life. The feature explicitly dates the source, rather than claiming her 2026 residence or retelling completed events in false present. No invented quotation, real-person voice imitation, proprietary source photograph, financial detail or seasonal vocabulary syllabus is added. All claims/answers are recorded in `Answer keys/6B.md` and cumulative support in `Wordlists/6B.md`.

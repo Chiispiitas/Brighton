@@ -43,22 +43,25 @@
 .l6b-list li::before { content:counter(item); position:absolute; left:0; color:#8f123f; font-weight:650; }
 .l6b-read-answers { display:grid; grid-template-columns:1fr 1fr; gap:2mm 5mm; }
 .l6b-read-answers .l6b-gap { display:block; width:100%; height:5.5mm; }
-.l6b-continuation-content { padding-top:11mm; }
+.l6b-continuation-content { padding-top:8mm; }
 .l6b-reading-response { display:grid; grid-template-columns:1fr 1fr; gap:7mm; }
 .l6b-reading-response h3 { margin:0; font-size:9.5pt; color:#244ca1; }
 .l6b-reading-response span { display:block; height:6mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
 .l6b-reader-choice { margin:2mm 0 0; color:#244ca1; }
-.l6b-page--2 .hz-exercises { padding-top:5mm!important; }
+.l6b-page--2 .hz-exercises { padding-top:3mm!important; }
 .l6b-location-scene { margin:0; }
 .l6b-location-scene img { display:block; width:100%; height:auto; }
 .l6b-notice { margin:2mm 0 0; }
 .l6b-page--2 .hz-focus-box { margin:2mm 0 1mm 12mm; }
-.l6b-location-models { display:grid; grid-template-columns:1fr 1fr; gap:2.3mm 5mm; }
-.l6b-location-models p { margin:0; line-height:1.4; }
+/* Picture-first clarification: proportionate sprite crops, ordinary 9.5pt models. */
+.l6b-location-models { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:3mm 4mm; }
+.l6b-preposition-picture { width:40mm; height:18mm; background-image:url('../Images/6B/Preposition-picture-models-v1.png'); background-size:120mm 40mm; background-position:var(--px) var(--py); background-repeat:no-repeat; }
+.l6b-location-models .hz-grammar-model:nth-child(n+4) .l6b-preposition-picture { height:22mm; }
+.l6b-location-models .hz-grammar-model__form { font-size:9.5pt; line-height:1.3; }
 .l6b-page--2 .l6b-later-exercises { padding-top:1mm!important; }
 .l6b-practice { display:grid; grid-template-columns:1fr 1fr; gap:2.5mm 5mm; }
 .l6b-practice .l6b-gap { width:24mm; }
 .l6b-home-exchange { display:grid; grid-template-columns:1fr 1fr 1.3fr; gap:4mm; }
 .l6b-home-exchange p { margin:0; line-height:1.4; }
 .l6b-home-exchange b { color:#8f123f; }
-.l6b-inset { margin-left:12mm; margin-top:5mm; }
+.l6b-inset { margin-left:12mm; margin-top:3mm; }

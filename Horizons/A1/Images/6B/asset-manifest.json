@@ -61,6 +61,23 @@
       "edits_crops": "No raster edits; native square halves for bedroom/bathroom, or full panoramic room without crop or distortion.",
       "purpose": "Six exact spatial relationships including a bag inside an open box, phone on table, shoes under it, chair beside it, art above sofa and table in front of sofa.",
       "boundary": "Generic fictional teaching environments; no actual Hanne property claim."
+    },
+    {
+      "asset_id": "HZN_A1_U06_LB_IMG_04",
+      "activity": "6B.5 grammar clarification",
+      "local_file": "Preposition-picture-models-v1.png",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "sha256": "7c2723559424c64cb6041c3ccb2fadbd8bb3a819dfe036a0e4b5cc7a38d58aae",
+      "acquisition_date": "2026-10-26",
+      "type": "built_in_imagegen",
+      "transparent_background": true,
+      "generation_prompt_record": "work/6b-picture-grammar-20261026/image-generation.json outside repository",
+      "edits_crops": "No raster editing. Proportionate CSS sprite crops at 40mm wide; upper row 18mm high, lower row 22mm high, at native 3:1 sheet ratio. Unequal row crops prevent a frame edge from crossing cells; generated alpha preserved.",
+      "purpose": "Six isolated spatial models paired with the existing live model sentences. In vs on vs under vs next to vs above vs in front of.",
+      "boundary": "Generic teaching objects; no real property claim. Same model meanings and audio as before."
     }
   ],
   "reading_source": {

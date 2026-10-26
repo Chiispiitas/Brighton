@@ -2925,6 +2925,225 @@
           "print_audio_controls_hidden": true
         }
       }
+    },
+    "lesson_6b_picture_grammar_20261026": {
+      "scope": "6B page 52 grammar presentation and continuation spacing only",
+      "status": "local HTML/PDF/media verified; publication pending",
+      "pattern": "4A picture-plus-live-caption clarification in the canonical pink grammar shell. Six proportionate transparent photographic object pairings, three by two internal model grid; numbered exercise lane stays single column.",
+      "concepts": [
+        "in",
+        "on",
+        "under",
+        "next to",
+        "above",
+        "in front of"
+      ],
+      "model_sentences_unchanged": true,
+      "audio_content_unchanged": true,
+      "typography": {
+        "model_captions_pt": 9.5,
+        "instructions_pt": 8.9,
+        "only_target_preposition_bold_dark_crimson": true
+      },
+      "image": "Images/6B/Preposition-picture-models-v1.png",
+      "image_mode": "built-in imagegen; native alpha; no raster edits; proportionate CSS crops isolate six compositions",
+      "spacing": "Existing panoramic room remains full width and uncropped. Continuation top spacing reduced by 3mm, exercise-group top padding by 2mm and Extra Practice top gap by 2mm. Existing four writing lines, all exercises and all learner wording preserved.",
+      "geometry": {
+        "standaloneMatchesAssembled": true,
+        "pages": 48,
+        "activities": 167,
+        "audioControls": 58,
+        "sampleTracksPlayPause": true,
+        "changedPages": [
+          {
+            "page": "51",
+            "outside": [],
+            "clearance": 66.40625,
+            "exercises": [
+              "1",
+              "2",
+              "3"
+            ],
+            "instructions": [
+              8.9,
+              8.9,
+              8.9
+            ],
+            "tasks": [
+              9.5,
+              9.5,
+              9.5
+            ],
+            "concept": [],
+            "boldColors": [],
+            "loadedImages": true,
+            "geometry": [
+              {
+                "cls": "hz-exercise",
+                "box": [
+                  52.91,
+                  135.25,
+                  687.88,
+                  355.22
+                ]
+              },
+              {
+                "cls": "",
+                "box": [
+                  98.25,
+                  165.45,
+                  211.64,
+                  317.47
+                ]
+              },
+              {
+                "cls": "hz-exercise",
+                "box": [
+                  52.91,
+                  516.88,
+                  687.88,
+                  327.22
+                ]
+              },
+              {
+                "cls": "hz-exercise",
+                "box": [
+                  52.91,
+                  847.86,
+                  687.88,
+                  121.33
+                ]
+              }
+            ]
+          },
+          {
+            "page": "52",
+            "outside": [],
+            "clearance": 66.953125,
+            "exercises": [
+              "4",
+              "5",
+              "6",
+              "7"
+            ],
+            "instructions": [
+              8.9,
+              8.9,
+              8.9,
+              8.9
+            ],
+            "tasks": [
+              9.5,
+              9.5,
+              9.5,
+              9.5,
+              9.5
+            ],
+            "concept": [
+              9.5,
+              9.5,
+              9.5,
+              9.5,
+              9.5,
+              9.5
+            ],
+            "boldColors": [
+              "rgb(143, 18, 63)",
+              "rgb(143, 18, 63)",
+              "rgb(143, 18, 63)",
+              "rgb(143, 18, 63)",
+              "rgb(143, 18, 63)",
+              "rgb(143, 18, 63)"
+            ],
+            "loadedImages": true,
+            "geometry": [
+              {
+                "cls": "hz-exercise",
+                "box": [
+                  52.91,
+                  86.91,
+                  687.88,
+                  118.06
+                ]
+              },
+              {
+                "cls": "hz-exercise",
+                "box": [
+                  52.91,
+                  208.73,
+                  687.88,
+                  335.11
+                ]
+              },
+              {
+                "cls": "",
+                "box": [
+                  98.25,
+                  238.94,
+                  642.53,
+                  279.38
+                ]
+              },
+              {
+                "cls": "hz-focus-box hz-no-break",
+                "box": [
+                  98.25,
+                  551.39,
+                  642.53,
+                  250.59
+                ]
+              },
+              {
+                "cls": "hz-exercise",
+                "box": [
+                  52.91,
+                  826.52,
+                  687.88,
+                  83.88
+                ]
+              },
+              {
+                "cls": "hz-exercise",
+                "box": [
+                  52.91,
+                  914.16,
+                  687.88,
+                  54.48
+                ]
+              },
+              {
+                "cls": "hz-extra-practice l6b-inset",
+                "box": [
+                  98.25,
+                  979.97,
+                  642.53,
+                  23.95
+                ]
+              }
+            ]
+          }
+        ]
+      },
+      "saved_pdf": {
+        "pdf_pages": 48,
+        "printed_pages": [
+          5,
+          52
+        ],
+        "first_47_page_text_and_decoded_drawing_streams_identical": true,
+        "page_52_pixels_match_native_export": true,
+        "first_47_assembled_page_fragments_identical": true,
+        "all_learner_wording_preserved": true,
+        "all_six_model_sentences_identical": true,
+        "all_previous_image_and_audio_binaries_unchanged": true,
+        "all_a4": true,
+        "pdf_sha256": "6d2104ddce569f3da75fc4388cfd4f67c373c357286e9a47234aecd5c843745b",
+        "method": "Copy first 47 pages without rewriting their streams; replace only page 52 with native Edge export. Export-only alpha-preserving 240dpi media; no PDF font rewriting or aggressive deduplication."
+      },
+      "visual_review": "Page 52 and grammar detail inspected in browser and reopened Poppler-rendered PDF; all six relationships clear, no stray adjacent sprite edges, no crowding or text overflow.",
+      "preservation": "First 47 PDF pages and assembled page fragments unchanged; previous images, all recordings, keys and wordlists unchanged.",
+      "evidence_directory": "work/6b-picture-grammar-20261026 outside repository",
+      "reversibility": "Baseline 9a4e793; before copies, all-file hashes and guarded rollback journal."
     }
   },
   "pending": [
@@ -2975,9 +3194,9 @@
         "Student's Book.html"
       ],
       "fingerprint": {
-        "files": 473,
-        "bytes": 475267964,
-        "sha256": "c9c9b8f14f91117f2b88033cd47911c35d80143b0c950d51acc3f4b583ed815c"
+        "files": 474,
+        "bytes": 476283745,
+        "sha256": "81d8af585040848276342a131bbc31052102c5252792c4313ade1e7090f439a0"
       }
     },
     "shared_rendering": {
@@ -2997,8 +3216,8 @@
       ],
       "fingerprint": {
         "files": 1,
-        "bytes": 30382045,
-        "sha256": "634d1b762d91bf7fad0ecfbaf23ffff0d7d6a0b228f11981b92a2a81b5d57187"
+        "bytes": 30833563,
+        "sha256": "f1ac3db56b9545bfc8cf410b4676b2e6e4be8142860c50f0f44c4bf90a82f202"
       }
     },
     "audit_criteria": {
@@ -3016,8 +3235,8 @@
     }
   },
   "content_baseline_commit": "2f404b547b7da07be81a0622a78591d3299c402a",
-  "current_revision": "New reading-led 6B: seven activities, a dated real tiny-home adaptation, photographic rooms/furniture, new spatial evidence, three Jessica tracks and a personal home comparison. 48 A4 pages through printed page 52; previous 46 pages/media preserved. Local and live source/PDF/audio verified. Unit 6C/D, backmatter and final whole-book release remain pending.",
-  "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope. units_3_4_reviews_visual_variety_20261025 supersedes earlier composition, color and geometry evidence for printed pages 21-40, including review_composition_20261025, review_3_4_20261025, unit_3_creative_revision and unit_4_visual_variety; earlier learning and audio evidence keeps its original scope. lesson_5b_on_air_20261026 supersedes prior 5B reading/source/presentation and 5.5/5.6 records only. The 26 October every-unit show mandate is superseded by planned B-skill balance and no two-unit show gap. lesson_5b_activity5_variety_20261026 supersedes only the earlier 5B Activity 5 image/choices/key and continuation-image evidence; no show/audio or other lesson evidence changes.",
+  "current_revision": "6B picture-first prepositions pilot based on 4A: six transparent photographic relationships paired with unchanged 9.5pt model sentences; canonical pink shell and full-size room picture retained. Local checks complete; publication pending. Book remains a technical preview through 6B; final release and unproduced lessons/backmatter remain pending.",
+  "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope. units_3_4_reviews_visual_variety_20261025 supersedes earlier composition, color and geometry evidence for printed pages 21-40, including review_composition_20261025, review_3_4_20261025, unit_3_creative_revision and unit_4_visual_variety; earlier learning and audio evidence keeps its original scope. lesson_5b_on_air_20261026 supersedes prior 5B reading/source/presentation and 5.5/5.6 records only. The 26 October every-unit show mandate is superseded by planned B-skill balance and no two-unit show gap. lesson_5b_activity5_variety_20261026 supersedes only the earlier 5B Activity 5 image/choices/key and continuation-image evidence; no show/audio or other lesson evidence changes. lesson_6b_picture_grammar_20261026 supersedes only the original 6B page-52 grammar presentation, continuation spacing and associated geometry evidence; all learning, source and audio evidence retains its scope.",
   "receptive_skill_plan": {
     "policy": "B lessons provide a planned mix of reading-led and listening-led units; Horizons on Air is not required in every unit. Avoid two consecutive units without the show. Do not impose rigid alternation; 2B and 3B are both listening-led. Declare primary skill and source genre before authoring.",
     "units": [
