@@ -1,6 +1,6 @@
 # Horizons A1 — Book audit
 
-Updated 25 October 2026. **Preview verified through 5A; final book release pending.**
+Updated 25 October 2026. **Technical preview verified through 5A; visual-fatigue reassessment and final book release pending.**
 
 This is the current audit entry point. [book-audit.json](book-audit.json) holds scoped evidence and historical checks; [CANONICAL-STYLE.md](../Base/design-system/CANONICAL-STYLE.md) governs design. A current snapshot is not final release approval.
 
@@ -19,6 +19,8 @@ This is the current audit entry point. [book-audit.json](book-audit.json) holds 
 Counts are inventory, not proof that every cue is correctly placed. Review placement beside the newly introduced content.
 
 ## Verified evidence and its limits
+
+- **Author correction — visual fatigue, 25 October:** repeated blue/green/teal text or feature surfaces paired with yellow/gold accents have become overused. This is now a book-wide editorial acceptance issue, separate from the retained technical checks below. 5A's teal/yellow *A lucky find* feature is flagged as a concrete example requiring reassessment; its source, audio and PDF checks do not approve that treatment as a new template. The canonical guide now requires a neighboring-spread comparison and a whole-unit/whole-book repetition check. Recording these criteria does not claim that the existing book has already been redesigned or passed them.
 
 - **Lesson 5A, 25 October:** printed pages 41–42 introduce ten clothing/accessory words and present continuous for actions now. Six activities progress from a native-alpha product family to an original fictional shop conversation, explicit noticing, aligned affirmative/negative/question models, contextual full-phrase practice, picture identification and a genuinely private photo-description/drawing exchange. The partner draws in a notebook; Extra Practice produces original photo descriptions. A compact historical price panel adapts only Heritage Auctions' reported Lombardi sweater prices/dates/ownership, without past-tense narrative or fabricated real quotations. All three generated assets serve exact product/outfit/action evidence; both scene backgrounds are retained and the continuation image is 146 × 73mm. Functional sizes and crimson grammar emphasis match the canonical roles; NEW WORDS and both navigation references are present. All six activities fit; standalone/assembled geometry matches, no text overflows and minimum activity-bottom clearance is 54.7px. Jessica narrates 5.1–5.3, with Nia/Adeline and Eli/Jarnathan in the fictional dialogue. All tracks decode and exactly match normalized transcripts, with no detected audio events; play/pause works locally. No subjective listening review is claimed. All 36 previous HTML page fragments and prior masters/CSS/images/MP3s are unchanged; Studio documents preserve their original bytes before appended notes. Key, wordlist, assets/prompts and voice map are current. The final published PDF export `5ee56e3` has 38 A4 pages; all 36 preceding pages are text- and 72dpi pixel-identical to the baseline. Both saved new pages were visually inspected through Poppler; their text matches the standalone export, the title is the shared 31pt size and grammar text is 9.49pt after PDF rounding. The live viewer has both new pages, all images, 42 audio controls and working play/pause for 5.1–5.3. The canonical live PDF matches the saved file byte for byte (SHA-256 `301b1da367d4b5354673066add4d333ccea025f05a6095e5b05f4f60fefca412`). After an overlapping export conflict, retry compression stalled and was cancelled. The published fallback copies the preserved 36 baseline PDF pages and two verified Windows-native lesson pages without font/image rewriting or resource deduplication; all 38 pages match their verified sources. Source is `c439f71`. Baseline copies and verification are in `work/lesson5a` outside the repo.
 
@@ -44,6 +46,7 @@ Older 4B/4C/4D presentation checks and the prior Units 2/4 revision are historic
 
 ## Remaining work
 
+- [ ] Reassess recurring palettes and graphic treatments across the book, starting with the blue/green/teal + yellow/gold pattern and 5A’s flagged feature. Review whole-unit/contact-sheet rhythm and neighboring spreads; record specific redesign decisions before accepting creative variety.
 - [ ] Build and paginate the back-of-book material, replace all `page ---` destinations, and verify each link/reference.
 - [ ] Explicitly audit Unit 1 continuation-page imagery against the newer preference. Review, Units 2–3 and 4A–4D have scoped evidence; Unit 1 must not inherit that pass automatically. Count substantial CSS-background photos as imagery; tiny badges do not count.
 - [ ] Run a final whole-book source/key/audio/layout review after content and pagination are complete, then inspect the reopened final PDF before release.
@@ -54,6 +57,7 @@ Use these for every new or changed spread; they are a checklist, not additional 
 
 - **Learning:** follow the syllabus and cumulative A1 load; A/C teach language, B develops reading/listening, D writing/speaking. Discovery evidence must precede the rule. Controlled answers must be supported by the page and agree with the key. Pair work needs unknown information; final writing needs room for independent expression.
 - **Composition:** keep Horizons identity while varying editorial structure with content. Review & Practice alone may use two page-level exercise columns, read left column then right; lessons retain a single numbered lane. Use 1A spacing as the reference. Preserve purposeful source backgrounds. Give each lesson's second page one or two substantial task-related images; remove repetition when space is needed. Use stock photos for suitable real scenes and image generation for exact poses, counts, renders or cutouts.
+- **Visual fatigue:** compare the proposed spread with the preceding three and the whole unit; record its color relationship, feature-text treatment, image hierarchy and content-specific idea. Repeated blue/green/teal + yellow/gold needs explicit scrutiny. Follow the editorial acceptance gate below.
 - **Readability:** verify the canonical font-size role table across the assembled and standalone pages; integrated source features may retain purposeful typography. Use 9.5pt model phrases/rules, selective crimson target emphasis and the canonical pink grammar shell. Keep inner padding, response space, readable labels and continuation-tab clearance. Circle choices use normal-weight lowercase italics except required grammatical capitals. No redundant gray location captions.
 - **Navigation:** NEW WORDS at new vocabulary input, nearby Vocabulary/Grammar references for newly introduced sets/points, and the expected Extra Practice footer. Confirm actual placement, not just totals.
 - **Media:** preserve answer-bearing details and correct crops; verify source/license metadata, native transparency and clean writing space. Narration uses Jessica and the approved voice pool. Never use the `[clearly]` tag. Check scripts, track references, decoding, transcripts and recording hashes when affected.
@@ -75,6 +79,14 @@ Apply the [canonical creativity checks](../Base/design-system/CANONICAL-STYLE.md
 - [ ] **Personal payoff:** What is decided, discovered or created through the exchange? Is unknown information genuinely unavailable beforehand?
 - [ ] **Transfer:** Does the final task or Extra Practice create/test something useful with taught language?
 - [ ] **Memory test:** Can the lesson be described by its idea rather than its colour or box style?
+
+### Visual-fatigue acceptance gate
+
+- [ ] **Palette repetition:** Are cool-colored text/panels and yellow/gold accents becoming the same visual recipe again? Record the content-based reason for any recurrence and the decision to retain or redesign it.
+- [ ] **Distinct feature idea:** Can the spread be described by its visual idea and learner experience, beyond a topic name or color pair? Context-specific text/image treatments must contribute to that idea.
+- [ ] **Unit rhythm:** Compare color intensity, open paper, image emphasis, feature lettering and meaningful surfaces across neighboring spreads and the complete unit. Check the whole-book contact sheet for repeated motifs.
+- [ ] **Identity and legibility:** Preserve the shared functional type sizes, crimson navigation, neutral word banks, grammar shells, spacing and purposeful backgrounds while developing the feature.
+- [ ] **Evidence:** Record the actual neighboring comparison and remaining flags. A technical pass or a color swap alone is not creative approval. No whole-book reassessment against these new criteria is claimed yet.
 
 ### Current Unit 4 editorial record — visual-variety revision
 
