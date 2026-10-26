@@ -2,7 +2,7 @@
   "schema_version": 1,
   "updated": "2026-10-26",
   "status": "technical preview verified; visual-fatigue reassessment and final book release pending",
-  "scope": "A1 through 5C, including Units 1 & 2 and 3 & 4 Reviews",
+  "scope": "A1 through 5D, including Units 1 & 2 and 3 & 4 Reviews",
   "readability_comparison_baseline": "e8d6ddd69f62caffab662a93a5a392ebc5bfb131",
   "inventory": {
     "lesson_masters": [
@@ -26,22 +26,23 @@
       "4R",
       "5A",
       "5B",
-      "5C"
+      "5C",
+      "5D"
     ],
-    "pdf_pages": 42,
+    "pdf_pages": 44,
     "printed_pages": [
       5,
-      46
+      48
     ],
-    "activity_blocks": 148,
-    "audio_files": 45,
-    "new_words_badges": 24,
-    "extra_practice_footers": 19,
-    "go_to_references": 44,
-    "page_placeholders": 44,
-    "focus_panels": 22,
-    "html_pages": 42,
-    "html_audio_controls": 49,
+    "activity_blocks": 154,
+    "audio_files": 48,
+    "new_words_badges": 25,
+    "extra_practice_footers": 20,
+    "go_to_references": 46,
+    "page_placeholders": 46,
+    "focus_panels": 23,
+    "html_pages": 44,
+    "html_audio_controls": 52,
     "production_audio_files": 1
   },
   "checks": {
@@ -2595,6 +2596,89 @@
           "print_audio_controls_hidden": true
         }
       }
+    },
+    "lesson_5d_20261026": {
+      "scope": "5D, printed pages 47-48",
+      "status": "local HTML/PDF/audio verified; publication pending",
+      "syllabus": "D speaking: grocery shopping, cashier-free versus conventional stores. Unit 5 remains A language, B listening/Horizons on Air, C language, D speaking.",
+      "learning_sequence": "Six context-supported store words; model exchange with a functional receipt; matching and polite-word noticing; aligned SKILLS clarification; different entry-gate help scene with a short real-world comparison; private role preparation; spoken purchase with an actual record and role switch.",
+      "productive_outcome": "Obtain three available foods, their prices and payment information from a partner, then record the purchase. Private lists, stock/prices and accepted payment are written on separate paper, so visible role instructions do not disclose answers.",
+      "language_ceiling": "Explicit new store vocabulary and shopping chunks; any/some and Can I...? are functional frames, not a new quantifier rule or the Unit 6 ability-can lesson. Source/model use genuine present description/current interaction, no completed-purchase narrative forced into present simple. Incidental technology/automatically/leave/online receipt are visually supported and unassessed.",
+      "new_words": [
+        "cashier",
+        "customer",
+        "checkout",
+        "cash",
+        "card",
+        "receipt"
+      ],
+      "factual_check": {
+        "date": "2026-10-26",
+        "sources": [
+          "https://www.justwalkout.com/how-it-works",
+          "https://www.justwalkout.com/faq"
+        ],
+        "claims": "Entry and exit payment flows exist; technology charges automatically; online receipts; employees remain to help. Generated scene/help dialogue illustrate one entry-card setup, not a universal procedure or actual location. No staff-free/free-food claim."
+      },
+      "creative_acceptance": {
+        "color": "Grocery counter source with slim green rail, charcoal title and white receipt; separate charcoal entry-gate panel. No teal/blue plus yellow/gold recipe.",
+        "text": "Upright spoken-question heading, dialogue/receipt alignment and integrated 9pt monospace receipt. Ordinary tasks/concepts 9.5pt, instructions 8.9pt, canonical skills shell and crimson target emphasis.",
+        "images": "One new licensed real checkout photograph plus native-alpha cash/card/receipt objects on page 47; a distinct substantial generated entry-gate help scene on page 48. No source photo recycled as later practice.",
+        "neighbor_comparison": "Actual saved PDF compared with 5A clothing editorial, 5B broadcast/box contrast, 5C warm shopping notes and the whole book. Different opening image arrangement, functional receipt and real purchase outcome.",
+        "preserved_conventions": "One numbered lane, black 31pt lesson title, crimson markers/navigation, normal-weight italic choices, NEW WORDS, two nearby practice references, meaningful Extra Practice."
+      },
+      "geometry": {
+        "no_text_overflow": true,
+        "standalone_matches_compiled": true,
+        "minimum_activity_bottom_clearance_px": 52.90625,
+        "loaded_images": true,
+        "native_alpha_verified": true,
+        "continuation_photo_mm": [
+          135,
+          54
+        ],
+        "normal_task_concept_pt": 9.5,
+        "instruction_pt": 8.9
+      },
+      "audio": {
+        "tracks": [
+          "5.10",
+          "5.11",
+          "5.12"
+        ],
+        "narrator": "Jessica",
+        "roles": "Customer/Juniper; cashier/helper/Mark Natural. Unnamed model roles, not stock-person identities.",
+        "model": "eleven_v3",
+        "stability": 0.5,
+        "all_decoded": true,
+        "normalized_transcript_parity": true,
+        "normalization": "Spoken track-label punctuation/pause comma, ordinary punctuation/case/numerals and OK/okay spelling; no answer content substitutions.",
+        "audio_events": [],
+        "forbidden_tag_preflight": true,
+        "browser_play_pause": true,
+        "subjective_listening_review": false,
+        "duration_seconds": 68.45
+      },
+      "saved_pdf": {
+        "pages": 44,
+        "all_a4": true,
+        "printed_pages": [
+          5,
+          48
+        ],
+        "original_42_pages_text_and_decoded_drawing_streams_identical": true,
+        "new_pages_match_direct_export_pixels": true,
+        "all_new_learner_word_tokens_present": true,
+        "original_42_compiled_html_pages_identical": true,
+        "all_original_21_masters_keys_and_image_binaries_preserved": true,
+        "all_original_45_lesson_mp3s_and_production_ident_preserved": true,
+        "pdf_sha256": "8a40d15ea6565918fd2874bf520ef35b90b2ddda51032ab8110bc124a2a07abf",
+        "pdf_bytes": 27144882,
+        "method": "Original 42 pages copied as PDF objects; native Windows 5D export appended. Export-only 240dpi media; no font/image rewriting or aggressive resource deduplication."
+      },
+      "preservation": "All 42 previous saved pages and compiled page fragments, 21 previous masters/keys/image binaries and 45 previous lesson MP3s plus ident are preserved.",
+      "evidence_directory": "work/lesson5d",
+      "reversibility": "Exact before files, all-file hashes and guarded rollback journal outside repo."
     }
   },
   "pending": [
@@ -2645,9 +2729,9 @@
         "Student's Book.html"
       ],
       "fingerprint": {
-        "files": 427,
-        "bytes": 455149790,
-        "sha256": "2ecd853084aca892f77e2ace8849dff9a4bedd27bef5749606202d09aebc2e4c"
+        "files": 442,
+        "bytes": 460359905,
+        "sha256": "fce417283a7c70196dca1266c0b67781842ef38c41834314addc7a6f1dda5360"
       }
     },
     "shared_rendering": {
@@ -2667,8 +2751,8 @@
       ],
       "fingerprint": {
         "files": 1,
-        "bytes": 26299854,
-        "sha256": "a88bf4468cd569a192c88cb1ca5012f1f32dfe3dbd723748c3a3cf5038050735"
+        "bytes": 27144882,
+        "sha256": "2fa3988167d859940a8a5fda6dbce95c2f001efe2f4757a071748e996fd92445"
       }
     },
     "audit_criteria": {
@@ -2686,7 +2770,7 @@
     }
   },
   "content_baseline_commit": "2f404b547b7da07be81a0622a78591d3299c402a",
-  "current_revision": "5B Activity 5 now uses independent generated parcel-box capacity evidence instead of repeating Tess’s jacket scene. Key/wordlist and visual-reuse guard updated; Activity 2 and every audio file preserved. Published source/PDF and live page verified. Final whole-book release and backmatter remain pending.",
+  "current_revision": "New 5D speaking spread: six activities, three new image assets (one licensed stock/two generated), three checked tracks and a private-information grocery transaction. 44 A4 pages through printed page 48; all previous 42 pages/media preserved. Local checks complete; publication verification pending. Backmatter and final whole-book release remain pending.",
   "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope. units_3_4_reviews_visual_variety_20261025 supersedes earlier composition, color and geometry evidence for printed pages 21-40, including review_composition_20261025, review_3_4_20261025, unit_3_creative_revision and unit_4_visual_variety; earlier learning and audio evidence keeps its original scope. lesson_5b_on_air_20261026 supersedes prior 5B reading/source/presentation and 5.5/5.6 records only. The 26 October every-unit show mandate is superseded by planned B-skill balance and no two-unit show gap. lesson_5b_activity5_variety_20261026 supersedes only the earlier 5B Activity 5 image/choices/key and continuation-image evidence; no show/audio or other lesson evidence changes.",
   "receptive_skill_plan": {
     "policy": "B lessons provide a planned mix of reading-led and listening-led units; Horizons on Air is not required in every unit. Avoid two consecutive units without the show. Do not impose rigid alternation; 2B and 3B are both listening-led. Declare primary skill and source genre before authoring.",

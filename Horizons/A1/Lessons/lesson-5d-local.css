@@ -1,0 +1,52 @@
+/* 5D: grocery counter, functional receipt and a different entry-gate scene.
+   Crimson is the series navigation; a receipt-led counter source and charcoal gate feature differ from 5B/5C. */
+.l5d-page { --hz-unit:var(--hz-unit-1); --hz-unit-dark:#8f123f; --hz-unit-soft:#f8e6ee; font-size:9.5pt; }
+.l5d-page .hz-page-stack { gap:2mm; }
+.l5d-page .hz-lesson-header { padding-bottom:3mm; }
+.l5d-page .hz-exercises { gap:1mm; }
+.l5d-page .hz-exercise { padding:1.5mm 0 2mm; }
+.l5d-page .hz-exercise__body { margin-top:2mm; }
+.l5d-page .hz-go-to { margin-block:.5mm 1mm; }
+.l5d-vocab-scene { display:grid; grid-template-columns:108mm minmax(0,1fr); gap:5mm; align-items:center; }
+.l5d-checkout,.l5d-payment { margin:0; position:relative; }
+.l5d-checkout > img { display:block; width:108mm; height:auto; }
+.l5d-payment > img { display:block; height:72mm; width:100%; object-fit:contain; }
+.l5d-tag,.l5d-payment figcaption span { position:absolute; color:var(--hz-unit-dark); background:#fff; padding:.4mm 1.2mm; font-size:8.5pt; font-weight:650; }
+.l5d-tag--a { left:12%; top:36%; }.l5d-tag--b { left:74%; top:23%; }.l5d-tag--c { left:35%; top:86%; }
+.l5d-payment figcaption span { left:0; }.l5d-payment figcaption span:nth-child(1) { top:12%; }.l5d-payment figcaption span:nth-child(2) { top:46%; }.l5d-payment figcaption span:nth-child(3) { top:80%; }
+.l5d-vocab-words { display:grid; grid-template-columns:repeat(3,1fr); gap:1.4mm 5mm; margin-top:2mm; }
+.l5d-vocab-words b { color:var(--hz-unit-dark); margin-right:1.5mm; }
+.l5d-letter { display:inline-block; width:7mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
+.l5d-gap { display:inline-block; width:18mm; height:4mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); vertical-align:baseline; }
+.l5d-counter-talk { border-block:.3mm solid #bca7a0; background:#f7f3ef; }
+.l5d-counter-talk > header { background:transparent; color:#292724; padding:2mm 3mm; border-left:1.5mm solid #237148; }
+.l5d-counter-talk h2 { margin:0; font:700 20pt/1.1 var(--hz-font-sans); }
+.l5d-talk-layout { display:grid; grid-template-columns:minmax(0,1fr) 43mm; gap:5mm; padding:3mm; }
+.l5d-dialogue { display:grid; grid-template-columns:17mm minmax(0,1fr); gap:1mm 2mm; margin:0; line-height:1.35; }
+.l5d-dialogue dt { color:#8f123f; font-weight:650; }.l5d-dialogue dd { margin:0; }
+.l5d-dialogue strong { color:#8f123f; font-weight:650; }
+.l5d-receipt { align-self:start; background:#fff; border-top:.5mm solid #34302d; border-bottom:.5mm dotted #958a83; padding:3mm 2.5mm; color:#252322; }
+.l5d-receipt h3 { margin:0 0 3mm; font:700 9pt/1.2 'Courier New',monospace; letter-spacing:.07em; }
+.l5d-receipt table { width:100%; border-collapse:collapse; font:9pt/1.4 'Courier New',monospace; }
+.l5d-receipt th { font-weight:400; text-align:left; padding-bottom:2mm; }.l5d-receipt td { text-align:right; }
+.l5d-receipt tfoot { border-top:.3mm dashed #8e827b; }.l5d-receipt tfoot th,.l5d-receipt tfoot td { padding-top:2mm; font-weight:700; }
+.l5d-receipt .l5d-gap { width:8mm; }.l5d-receipt p { font-size:9pt; margin:3mm 0 0; }
+.l5d-receipt .l5d-thanks { border-top:.3mm dashed #b2a79f; padding-top:2mm; text-align:center; font:9pt/1.3 'Courier New',monospace; }
+.l5d-match { display:grid; grid-template-columns:1.3fr 1fr; gap:5mm; }.l5d-match ol { margin:0; padding-left:5mm; }.l5d-match li+li { margin-top:1.5mm; }
+.l5d-match li::marker { color:var(--hz-unit-dark); font-weight:650; }
+.l5d-continuation-content { padding-top:7mm; }.l5d-page--2 .hz-exercises { padding-top:0!important; }
+.l5d-tech { border-bottom:.4mm solid #b4aaa3; }
+.l5d-tech header { display:flex; justify-content:space-between; gap:4mm; align-items:baseline; color:#fff; background:#34302d; padding:2mm 3mm; }
+.l5d-tech h2 { margin:0; font:650 18pt/1.15 var(--hz-font-sans); }.l5d-tech header span { font-size:8pt; }
+.l5d-tech figure { margin:0; background:#fff; }.l5d-tech img { display:block; width:135mm; height:auto; margin:0 auto; }
+.l5d-tech-copy { padding:2mm 3mm; background:#fff; }.l5d-tech-copy p { margin:0; line-height:1.4; }.l5d-tech-prompt { margin-top:2mm!important; color:var(--hz-unit-dark); }
+.l5d-page .hz-word-bank { display:flex; flex-wrap:wrap; gap:1mm 5mm; color:var(--hz-unit-dark); }
+.l5d-prepare { display:grid; grid-template-columns:1fr 1fr; gap:5mm; margin-top:2mm; }.l5d-prepare h3 { font:650 9.5pt/1.35 var(--hz-font-sans); color:var(--hz-unit-dark); margin:0 0 1mm; }.l5d-prepare p { margin:0; }
+.l5d-sale table { width:100%; border-collapse:collapse; }.l5d-sale th { text-align:left; color:var(--hz-unit-dark); font-weight:650; border-bottom:.4mm solid #c599aa; padding:0 1mm 1mm; }.l5d-sale td { height:6mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); padding:0 1mm; }.l5d-sale th:last-child { width:26%; }.l5d-sale p { margin:2mm 0 0; }
+.l5d-inset { margin-left:calc(var(--hz-exercise-marker-size) + 3mm); }.l5d-page .hz-extra-practice { margin-top:3mm; }
+
+.l5d-compare { margin:2mm 0 0; color:var(--hz-unit-dark); font-style:italic; }
+.l5d-match ol { list-style:none; padding:0; counter-reset:match; }
+.l5d-match li { position:relative; padding-left:4.5mm; counter-increment:match; }
+.l5d-match li::before { content:counter(match); position:absolute; left:0; color:var(--hz-unit-dark); font-weight:650; }
+.l5d-match .l5d-letter-list li::before { content:counter(match,lower-alpha); }

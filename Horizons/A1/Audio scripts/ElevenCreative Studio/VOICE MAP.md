@@ -273,3 +273,18 @@ Jessica retains Lucy, the established host. Mina/Amy and Tess/Adeline retain the
 - Track 5.9: Jessica, paragraphs 1/2/4/6/8; NOAH Mark Casual (`1SM7GgM6IMuvQlz2BwM3`), 3/5/7/9.
 
 Mara and Noah are new fictional roles; retain these exact IDs if they return. Stock models do not represent either character. All track labels and vocabulary use Jessica. Eleven v3 / Natural stability 0.5. No forbidden clarity tag or SSML. All three final recordings decode, match normalized scripts exactly and have no detected audio events. Records: `../5C-production.json`; no subjective listening review is claimed.
+
+## 5D - At the store
+
+- Track 5.10:
+  - Jessica (`cgSgspJ2msm6clMCkdW9`), paragraphs 1, 2.
+- Track 5.11:
+  - Jessica (`cgSgspJ2msm6clMCkdW9`), paragraphs 1, 2.
+  - MarkNatural (`UgBBYS2sOqTuMpoF3BR0`), paragraphs 3, 5, 7, 9, 11, 13.
+  - Juniper (`aMSt68OGf4xUZAnLpTU8`), paragraphs 4, 6, 8, 10, 12.
+- Track 5.12:
+  - Jessica (`cgSgspJ2msm6clMCkdW9`), paragraphs 1, 2.
+  - Juniper (`aMSt68OGf4xUZAnLpTU8`), paragraphs 3, 5, 7, 9.
+  - MarkNatural (`UgBBYS2sOqTuMpoF3BR0`), paragraphs 4, 6, 8.
+
+Jessica retains all labels, vocabulary and narration. Juniper is the unnamed customer; Mark Natural is the cashier/helper. These are functional model roles, not identities attributed to stock models. Eleven v3 / Natural stability 0.5. No forbidden clarity tag or SSML. Track-label pause punctuation and OK/okay spelling are normalized explicitly; no answer-bearing content is changed. Decode, exact normalized transcript and audio-event checks: `../5D-production.json`; no subjective listening review claimed.

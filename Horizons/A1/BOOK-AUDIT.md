@@ -1,6 +1,6 @@
 # Horizons A1 — Book audit
 
-Updated 26 October 2026. **Technical preview verified through 5C; visual-fatigue reassessment and final book release pending.**
+Updated 26 October 2026. **Technical preview verified through 5D; visual-fatigue reassessment and final book release pending.**
 
 This is the current audit entry point. [book-audit.json](book-audit.json) holds scoped evidence and historical checks; [CANONICAL-STYLE.md](../Base/design-system/CANONICAL-STYLE.md) governs design. A current snapshot is not final release approval.
 
@@ -8,15 +8,31 @@ This is the current audit entry point. [book-audit.json](book-audit.json) holds 
 
 | Item | Current state |
 | --- | --- |
-| Content | 1A–5C plus Units 1 & 2 and 3 & 4 Reviews: 21 masters |
-| Saved book | 42 A4 pages; printed pages 5–46 |
-| Activity blocks | 148; existing subexercise numbering retained |
-| Audio | 45 lesson MP3s + 1 production ident; replacement 5B masters decoded/transcribed |
-| Navigation cues | 24 NEW WORDS badges, 19 Extra Practice footers, 44 Go to references |
-| Concept explanations | 14 revised panels across 11 lessons; 22 total focus panels including retained 4A and new 4B–5C |
-| Unresolved destinations | 44 `page ---` references; intentional until back-of-book pagination |
+| Content | 1A–5D plus Units 1 & 2 and 3 & 4 Reviews: 22 masters |
+| Saved book | 44 A4 pages; printed pages 5–48 |
+| Activity blocks | 154; existing subexercise numbering retained |
+| Audio | 48 lesson MP3s + 1 production ident; new 5D tracks 5.10–5.12 decoded/transcribed |
+| Navigation cues | 25 NEW WORDS badges, 20 Extra Practice footers, 46 Go to references |
+| Concept explanations | 14 revised panels across 11 lessons; 23 total focus panels including retained 4A and new 4B–5D |
+| Unresolved destinations | 46 `page ---` references; intentional until back-of-book pagination |
 
 Counts are inventory, not proof that every cue is correctly placed. Review placement beside the newly introduced content.
+
+## 5D production, 26 October
+
+**At the store**, printed pages **47–48**, retains the D speaking role. Six pictured store words and a short checkout model prepare learners to obtain groceries through availability, price and payment questions. The receipt has a real task: complete the spoken total and identify the payment method. Matching and polite-word noticing precede the aligned SKILLS clarification. A short, supported cashier-free comparison and different help dialogue give a second real situation without turning D into another receptive-skills lesson.
+
+The outcome has **unknown information**: A privately chooses a shopping list; B privately chooses stock, prices and accepted payment. The printed role instructions reveal neither person's actual decisions. Students buy three available foods, record their purchase and change roles. Whole-dollar prices support the transaction rather than an abstract arithmetic exercise. Keys and cumulative language boundaries: `Answer keys/5D.md`, `Wordlists/5D.md`. Any/some and Can I...? are explicit functional frames here; they do not introduce a new quantifier-rule box or replace the later ability-can syllabus.
+
+The opening combines a new **licensed Kampus Production checkout photograph** with **native-alpha generated payment objects**. A receipt-led dialogue uses a charcoal heading, a slim grocery-green rail and deliberate 9pt monospace artifact typography; ordinary tasks/concepts remain 9.5pt and instructions 8.9pt. A separate **135 × 54mm generated entry-gate help scene** anchors the continuation. Both people and environments are meaningful to the task; the earlier checkout scene is not repeated. No automatic cool masthead/yellow accent, repeated guest layout or unnecessary background card is used. The source/license, original prompts, alpha/dimensions and hashes are in `Images/5D/asset-manifest.json`.
+
+Primary sources checked 26 October: [Just Walk Out: how it works](https://www.justwalkout.com/how-it-works) and [FAQ](https://www.justwalkout.com/faq). They support entry/exit payment configurations, automatic charging, online receipts and employees still helping. The generated photograph and help model illustrate a **generic fictional entry-card setup**, not an actual Amazon location or a universal store procedure. No claim that cashier-free means staff-free or free food is made.
+
+**Verified locally:** six activities in one numbered lane, NEW WORDS, two nearby references, meaningful Extra Practice, no text overflow, normal functional fonts and crimson concept emphasis. Minimum activity-bottom clearance: **52.9px**. Standalone/compiled geometry matches; all source images load. Three audio buttons play/pause and remain hidden in print. Tracks **5.10–5.12** use Jessica narration, Juniper/customer and Mark Natural/cashier/helper, Eleven v3 / stability 0.5. All decode and match normalized transcripts; only track-label pause punctuation and OK/okay spelling need explicit normalization. No forbidden clarity tag, SSML or detected audio event; no subjective listening review claimed. Final saved-PDF pages were inspected with Poppler, beside 5A–5C and on the whole-book contact sheet. The 44-page A4 book retains every previous 42 page's text/drawing streams and compiled page fragment; new pages match native-export pixels and retain all learner word tokens. Previous 21 masters/keys/images and all 45 lesson recordings plus ident are preserved.
+
+Local checks complete; publication verification pending.
+
+Before files, hashes, original stock download, generated prompts, production checks, saved-page renders and guarded rollback journal: `work/lesson5d` outside the repository. This is a scoped new-lesson pass; final book release and unresolved backmatter remain pending.
 
 ## 5B Activity 5: fresh visual evidence, 26 October
 
