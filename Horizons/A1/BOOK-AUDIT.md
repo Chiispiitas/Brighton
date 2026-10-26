@@ -46,7 +46,7 @@ The approved 2B show identity is restored in full: crimson banner, white upright
 
 Saved-PDF pages were inspected with Poppler, beside 4R/5A/5C and in the complete book contact sheet. Only 43–44 change; all other 40 saved pages retain text/drawing streams, and changed pages match native-export pixels with every learner word token. Other 20 masters/keys, all image binaries and 43 other lesson MP3s, including 5C, are preserved. The book remains 42 A4 pages, printed 5–46. Earlier 5B reading-layout/audio evidence is historical where superseded; the unchanged vocabulary recording and image provenance retain their evidence.
 
-Local checks complete; publication verification pending.
+Published canonical HTML/PDF and all three 5B MP3 hashes match local files. The live browser matches both page geometries, loads source photos/backgrounds and plays all three track numbers.
 
 Exact before sources, hashes, original replaced MP3s, prior outputs, production stems, comparison renders and guarded rollback journal are in `work/5b-on-air`. This is a scoped 5B pass, not final whole-book release approval.
 
