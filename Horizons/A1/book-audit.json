@@ -2248,7 +2248,7 @@
     },
     "lesson_5b_tense_correction_20261026": {
       "scope": "5B activity 2, activity 3 item 4 and tracks 5.5/5.6",
-      "status": "local text/audio/PDF verified; live publication pending",
+      "status": "verified locally and on the canonical live site",
       "problem": "Completed purchase events were incorrectly forced into present simple to avoid untaught past tense.",
       "correction": "Natural current product descriptions/opinions and genuine everyday clothing/use habits. Activity 3 retrieves the revised habit. Track 5.6 uses explicit Keep or return? questions and Keep/Return decision fragments rather than pseudo-narrative I keep/I return.",
       "pedagogy_rule": "GUIDED-DISCOVERY.md now requires source genre and tense to agree; do not distort past narratives to meet a language ceiling.",
@@ -2281,7 +2281,20 @@
         "bytes": 24660933
       },
       "visually_inspected": "Final Poppler pages 43-44",
-      "reversibility": "Exact before copies/hashes, former recordings and rollback journal: work/5b-tense-fix"
+      "reversibility": "Exact before copies/hashes, former recordings and rollback journal: work/5b-tense-fix",
+      "publication": {
+        "url": "https://exams.bebrighton.net/Horizons/A1/Lessons/5B.html",
+        "canonical_html_matches": true,
+        "canonical_pdf_matches_sha256": "16bcfc86e1b13efbbb961991dc30499881e9b499e4da3a165045138aee1f49b3",
+        "pdf_bytes": 24660933,
+        "replacement_audio_hashes_match": true,
+        "both_page_geometries_match_local": true,
+        "all_images_and_css_backgrounds_loaded": true,
+        "backgrounds": 2,
+        "all_three_new_tracks_play_pause": true,
+        "print_audio_controls_hidden": true,
+        "source_commit": "09f39eb"
+      }
     }
   },
   "pending": [
@@ -2333,8 +2346,8 @@
       ],
       "fingerprint": {
         "files": 406,
-        "bytes": 443973254,
-        "sha256": "14e23682d7f68d91679172de460a1cd2da1ee1d36ba48cb1d857d6d8c9529609"
+        "bytes": 443973340,
+        "sha256": "764e47ab1cfce8bcd02101c29813eb277038239f56a3f242bd42f712ae2c1fd7"
       }
     },
     "shared_rendering": {
@@ -2373,6 +2386,6 @@
     }
   },
   "content_baseline_commit": "2f404b547b7da07be81a0622a78591d3299c402a",
-  "current_revision": "5B tense/genre correction: descriptive current reviews replace unnatural present-simple completed purchases; tracks 5.5 and 5.6 regenerated and checked. Local source, audio and saved PDF verified; live publication pending. All other page content and recordings retained.",
+  "current_revision": "5B tense/genre correction: descriptive current reviews replace unnatural present-simple completed purchases; tracks 5.5 and 5.6 regenerated and checked. Local source, audio and saved PDF verified; canonical live HTML/PDF/replacement audio hashes match and browser playback passes. All other page content and recordings retained.",
   "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope. units_3_4_reviews_visual_variety_20261025 supersedes earlier composition, color and geometry evidence for printed pages 21-40, including review_composition_20261025, review_3_4_20261025, unit_3_creative_revision and unit_4_visual_variety; earlier learning and audio evidence keeps its original scope."
 }
