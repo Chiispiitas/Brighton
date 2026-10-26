@@ -1,0 +1,11 @@
+/* End-of-book attribution, deliberately outside the lesson exercise flow. */
+.hz-credits-page { font-size:9.5pt; line-height:1.42; }
+.hz-credits-heading { border-bottom:1.1mm solid #c2185b; padding:0 0 4mm; margin-bottom:5mm; }
+.hz-credits-heading h1 { font:820 26pt/1.05 var(--hz-font-sans); letter-spacing:-.025em; margin:0 0 2mm; color:#202124; }
+.hz-credits-heading > p { margin:0; font-size:11.5pt; font-weight:650; color:#8f123f; }
+.hz-credits-intro { margin-bottom:5mm; }.hz-credits-intro p { margin:0 0 2mm; }
+.hz-credit-entry { margin:0 0 3.2mm; break-inside:avoid; }
+.hz-credit-entry h2,.hz-credit-note h2 { font:650 9.5pt/1.4 var(--hz-font-sans); color:#8f123f; margin:0 0 .6mm; }
+.hz-credit-entry p,.hz-credit-note p { margin:0; }
+.hz-credits-page a { color:#8f123f; text-decoration:underline; text-underline-offset:.3mm; }
+.hz-credit-license { color:#414449; }.hz-credit-note { margin-top:5mm; padding-top:3mm; border-top:.25mm solid #d8d9dc; }

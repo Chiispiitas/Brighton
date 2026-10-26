@@ -361,3 +361,7 @@ Mark ordinary exercise language and vocabulary/response roots with `.hz-task-tex
 ## Review-only two-column exception
 
 The author's 25 October 2026 instruction allows sibling numbered exercises in two columns **only in Review & Practice**. Use `.rr-page .rr-columns` with two `.rr-column.hz-exercises` children; DOM and visual order must run down the left column, then the right. Keep native Horizons chrome, consecutive exercise numbers, shared functional sizes and full response areas. Ordinary lessons keep their one-column numbered flow. The scoped review stylesheet owns this exception; do not broaden shared exercise grids.
+
+## NEW WORDS and visible targets
+
+Each `.hz-new-words` has a stable `data-vocab-set` shared with at least one meaningful `.hz-vocab` inline `<mark>`. The marks identify every target term or chunk in that introduction, preserve inherited typography, and never reveal an answer by marking only the correct option. The badge is a cue, not the entire vocabulary treatment. No title-sized marking or blanket full-sentence highlighting. Audit all pairs in standalone and assembled output.

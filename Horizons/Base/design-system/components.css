@@ -296,6 +296,20 @@
 
 .hz-new-words__icon { display: none !important; }
 
+/* A NEW WORDS cue identifies visibly marked teaching input. Inline marking
+   preserves the existing font, weight, line breaks and answer-option italics. */
+.hz-vocab {
+  font: inherit;
+  color: inherit;
+  background: #f5c7dc;
+  border: 0;
+  padding: 0;
+  border-radius: 0;
+  box-shadow: none;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+}
+
 .hz-tag,
 .hz-skill-tag {
   display: inline-block;

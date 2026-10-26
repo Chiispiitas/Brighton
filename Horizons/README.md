@@ -100,3 +100,7 @@ Each level/book owns its own production resources. For A1:
 Do not reintroduce client-side PDF generation into the local Student's Book. The browser's job is only to display the compiled HTML and download the validated sibling PDF.
 
 Do not create `production/`, `staging/` or hidden override directories. Shared behavior belongs in `Base/`; book-specific behavior stays inside the book folder.
+
+### Image credits backmatter
+
+`A1/Backmatter/` owns the learner-facing image credits (HTML, CSS and provenance register). The book compiler appends its HTML files after all lesson masters and repaginates their page attributes/footers from the final lesson page. Update photograph lesson-page references when page locations change. Photo credits belong here, not beneath lesson images.

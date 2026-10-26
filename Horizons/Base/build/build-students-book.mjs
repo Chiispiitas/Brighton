@@ -4,6 +4,7 @@ import path from "node:path";
 const repoRoot = process.cwd();
 const a1Dir = path.join(repoRoot, "Horizons", "A1");
 const lessonsDir = path.join(a1Dir, "Lessons");
+const backmatterDir = path.join(a1Dir, "Backmatter");
 const outputPath = path.join(a1Dir, "Student's Book.html");
 
 const lessonPattern = /^\d+[A-Z]\.html$/i;
@@ -192,6 +193,29 @@ for (const filename of lessons) {
   liveLessonStyles.push(...collectLiveLessonStyles(head, lessonPath));
   const body = rewriteBodyAssetUrls(extractBody(html, filename), lessonPath);
   compiledBodies.push(`<!-- ===== ${filename} ===== -->\n${body}`);
+}
+
+// Book-owned backmatter always follows the lesson masters. Repaginate it from
+// the actual final lesson page so future lessons cannot collide with credits.
+const backmatter = fs.existsSync(backmatterDir)
+  ? fs.readdirSync(backmatterDir).filter((name) => /\.html$/i.test(name)).sort((a, b) => collator.compare(a, b))
+  : [];
+let nextPrintedPage = Math.max(...compiledBodies.flatMap((body) =>
+  [...body.matchAll(/\bdata-page=["'](\d+)["']/g)].map((match) => Number(match[1]))
+)) + 1;
+for (const filename of backmatter) {
+  const sourcePath = path.join(backmatterDir, filename);
+  const html = readText(sourcePath);
+  compiledStyles.push(...collectHeadStyles(extractHead(html), sourcePath, filename));
+  const body = rewriteBodyAssetUrls(extractBody(html, filename), sourcePath).replace(
+    /<article\b[\s\S]*?<\/article>/gi,
+    (article) => {
+      const page = nextPrintedPage++;
+      return article.replace(/\bdata-page=["'][^"']*["']/, `data-page="${page}"`)
+        .replace(/(<span class="hz-page-number">)[\s\S]*?(<\/span>)/, (_, open, close) => open + page + close);
+    }
+  );
+  compiledBodies.push(`<!-- ===== Backmatter/${filename} ===== -->\n${body}`);
 }
 
 const viewerCss = `

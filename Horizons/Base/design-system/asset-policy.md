@@ -272,3 +272,7 @@ Examples:
 - `HZN_A1_U05_LD_E03_AUD_01.mp3`
 
 The activity ID should remain stable even if page numbers change.
+
+## End-of-book photo credits
+
+Keep learner pages free of photographer/license/cropping metadata. Retain teaching captions and adapted-reading citations. Record active photograph attribution in `A1/Backmatter/image-credits.html` and the adjacent JSON register: creator, original source, license/link and modification notice where required. Preserve share-alike boundaries for altered photographs. The compiler appends credits after all lesson masters and numbers them from the actual last lesson page. Update active-photo coverage and lesson-page references whenever imagery changes; unused/reverted stock stays in production records, not the learner credit list.

@@ -2,7 +2,7 @@
   "schema_version": 1,
   "updated": "2026-10-26",
   "status": "technical preview verified; visual-fatigue reassessment and final book release pending",
-  "scope": "A1 through complete Unit 6, including Units 1 & 2 and 3 & 4 Reviews; later units/backmatter unproduced",
+  "scope": "A1 through Unit 6 and both paired reviews; three end-of-book image-credit pages. Later units and other backmatter unproduced.",
   "readability_comparison_baseline": "e8d6ddd69f62caffab662a93a5a392ebc5bfb131",
   "inventory": {
     "lesson_masters": [
@@ -33,10 +33,10 @@
       "6C",
       "6D"
     ],
-    "pdf_pages": 52,
+    "pdf_pages": 55,
     "printed_pages": [
       5,
-      56
+      59
     ],
     "activity_blocks": 181,
     "audio_files": 60,
@@ -45,9 +45,14 @@
     "go_to_references": 54,
     "page_placeholders": 54,
     "focus_panels": 27,
-    "html_pages": 52,
+    "html_pages": 55,
     "html_audio_controls": 64,
-    "production_audio_files": 1
+    "production_audio_files": 1,
+    "lesson_pages": 52,
+    "image_credit_pages": 3,
+    "vocabulary_highlights": 199,
+    "paired_new_words_sets": 32,
+    "active_photo_credit_records": 65
   },
   "checks": {
     "refreshed_during_cleanup": {
@@ -3786,6 +3791,453 @@
           }
         ]
       }
+    },
+    "vocabulary_and_credits_20261026": {
+      "scope": "All 24 A-D lesson masters, 32 NEW WORDS sets; active photography across 52 lesson/review pages; three new end credits.",
+      "status": "local HTML/PDF verified; publication pending",
+      "vocabulary": {
+        "badge_sets": 32,
+        "inline_highlights": 199,
+        "typography": "Pink inline mark; font family, size and weight inherited exactly. Existing italic options retained; no answer-only highlighting.",
+        "coverage": "Every badge has a matching data-vocab-set and visibly marked teaching input. Selective target words/chunks; no whole-sentence/title/instruction marking.",
+        "checked": {
+          "pages": 55,
+          "lessonPages": 52,
+          "backmatterPages": 3,
+          "pairs": [
+            {
+              "set": "1A.1",
+              "words": [
+                "Hello",
+                "Nice to meet you",
+                "student",
+                "teacher",
+                "See you later",
+                "Good morning",
+                "Good afternoon",
+                "Good evening",
+                "See you later"
+              ]
+            },
+            {
+              "set": "1A.5",
+              "words": [
+                "name",
+                "name",
+                "spell",
+                "phone number"
+              ]
+            },
+            {
+              "set": "1B.1",
+              "words": [
+                "teacher",
+                "student",
+                "chef",
+                "doctor",
+                "office worker",
+                "receptionist",
+                "salesclerk",
+                "taxi driver",
+                "waiter",
+                "waitress",
+                "farmer"
+              ]
+            },
+            {
+              "set": "1B.4.1",
+              "words": [
+                "smart",
+                "busy",
+                "fun"
+              ]
+            },
+            {
+              "set": "1C.1",
+              "words": [
+                "Argentina",
+                "the US",
+                "the UK",
+                "Canada",
+                "South Korea"
+              ]
+            },
+            {
+              "set": "1D.1",
+              "words": [
+                "first name",
+                "last name",
+                "city",
+                "phone number",
+                "email",
+                "email"
+              ]
+            },
+            {
+              "set": "2A.1",
+              "words": [
+                "phone",
+                "keys",
+                "wallet",
+                "notebook",
+                "pen",
+                "headphones",
+                "bottle",
+                "umbrella"
+              ]
+            },
+            {
+              "set": "2B.1",
+              "words": [
+                "twenty",
+                "forty",
+                "thirty",
+                "fifty"
+              ]
+            },
+            {
+              "set": "2B.2",
+              "words": [
+                "same",
+                "different"
+              ]
+            },
+            {
+              "set": "2C.2",
+              "words": [
+                "family",
+                "husband",
+                "wife",
+                "children",
+                "son",
+                "daughter",
+                "brother",
+                "sister",
+                "family",
+                "father",
+                "mother",
+                "son",
+                "daughter"
+              ]
+            },
+            {
+              "set": "2D.1",
+              "words": [
+                "red",
+                "blue",
+                "green",
+                "yellow",
+                "black",
+                "white",
+                "brown",
+                "orange",
+                "gray",
+                "pink"
+              ]
+            },
+            {
+              "set": "3A.1",
+              "words": [
+                "have breakfast",
+                "go to bed",
+                "go to work",
+                "get up",
+                "watch TV",
+                "have lunch",
+                "go home",
+                "have dinner"
+              ]
+            },
+            {
+              "set": "3B.1",
+              "words": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday",
+                "Sunday"
+              ]
+            },
+            {
+              "set": "3C.2",
+              "words": [
+                "Beautiful",
+                "quiet",
+                "Busy",
+                "noisy",
+                "cheap",
+                "Beautiful",
+                "expensive",
+                "beautiful",
+                "quiet",
+                "busy",
+                "noisy",
+                "cheap",
+                "expensive"
+              ]
+            },
+            {
+              "set": "3D.1",
+              "words": [
+                "drink water",
+                "walk",
+                "read a book",
+                "listen to music",
+                "have breakfast",
+                "sleep"
+              ]
+            },
+            {
+              "set": "3D.2",
+              "words": [
+                "always",
+                "usually",
+                "sometimes",
+                "never",
+                "usually"
+              ]
+            },
+            {
+              "set": "3D.4",
+              "words": [
+                "before",
+                "after",
+                "before",
+                "after"
+              ]
+            },
+            {
+              "set": "4A.1",
+              "words": [
+                "rice",
+                "milk",
+                "eggs",
+                "bread",
+                "fish",
+                "cheese",
+                "tea",
+                "tomatoes",
+                "coffee",
+                "bananas",
+                "juice",
+                "apples"
+              ]
+            },
+            {
+              "set": "4B.1",
+              "words": [
+                "salty",
+                "sweet",
+                "sour",
+                "spicy"
+              ]
+            },
+            {
+              "set": "4C.1",
+              "words": [
+                "mix",
+                "wash",
+                "add",
+                "cut"
+              ]
+            },
+            {
+              "set": "4D.1",
+              "words": [
+                "share food",
+                "free",
+                "waste food"
+              ]
+            },
+            {
+              "set": "5A.1",
+              "words": [
+                "jacket",
+                "dress",
+                "shoes",
+                "T-shirt",
+                "hat",
+                "jeans",
+                "shirt",
+                "bag",
+                "sweater",
+                "scarf"
+              ]
+            },
+            {
+              "set": "5B.1",
+              "words": [
+                "return",
+                "pay",
+                "try on",
+                "keep"
+              ]
+            },
+            {
+              "set": "5C.1",
+              "words": [
+                "supermarket",
+                "library",
+                "market",
+                "clothes store"
+              ]
+            },
+            {
+              "set": "5D.1",
+              "words": [
+                "receipt",
+                "cashier",
+                "card",
+                "customer",
+                "cash",
+                "checkout"
+              ]
+            },
+            {
+              "set": "6A.2",
+              "words": [
+                "museum",
+                "hospital",
+                "bank",
+                "train station",
+                "post office",
+                "pharmacy"
+              ]
+            },
+            {
+              "set": "6B.1",
+              "words": [
+                "kitchen",
+                "living room",
+                "bedroom",
+                "bathroom",
+                "bed",
+                "sofa",
+                "table",
+                "chair"
+              ]
+            },
+            {
+              "set": "6B.5",
+              "words": [
+                "on",
+                "under",
+                "in",
+                "on",
+                "under",
+                "next to",
+                "above",
+                "in front of"
+              ]
+            },
+            {
+              "set": "6C.1",
+              "words": [
+                "on foot"
+              ]
+            },
+            {
+              "set": "6C.2",
+              "words": [
+                "across",
+                "along",
+                "past",
+                "through"
+              ]
+            },
+            {
+              "set": "6C.3",
+              "words": [
+                "straight",
+                "right",
+                "left"
+              ]
+            },
+            {
+              "set": "6D.1",
+              "words": [
+                "waterfall",
+                "garden",
+                "roller coaster",
+                "mall"
+              ]
+            }
+          ],
+          "highlightCount": 199,
+          "typographyInherited": true,
+          "onlyCreditRemovalChangesGeometry": [
+            "55"
+          ],
+          "noOverflow": true,
+          "imagesLoaded": true,
+          "activities": 181,
+          "audioControls": 64,
+          "creditsRemovedFromLessons": true
+        }
+      },
+      "credits": {
+        "source": "Backmatter/image-credits.html and image-credits.json",
+        "external_photo_component_records": 65,
+        "pages": [
+          57,
+          58,
+          59
+        ],
+        "scope": "Actual rendered stock photography only; retired/unused stock excluded. Generated images explained separately.",
+        "removed_from_lessons": [
+          "3A Messi photograph metadata",
+          "6D Jewel/Mall photograph metadata"
+        ],
+        "preserved": "Creator/source/license links and required copyright, crop and share-alike notices; teaching captions and adapted reading citations stay in lessons.",
+        "future_pagination": "Compiler appends credits after all lesson masters and numbers from final lesson page. Update lesson-page references when source pagination changes."
+      },
+      "preservation": "Unwrapping marks, removing paired badge attributes and deleting only the two prior credit nodes gives exactly the prior parsed lesson source. Every image/audio byte hash unchanged; all 181 activities and 64 audio controls retained.",
+      "pdf": {
+        "pages": 55,
+        "printed_pages": [
+          5,
+          59
+        ],
+        "changed_lesson_pages": [
+          5,
+          6,
+          7,
+          8,
+          9,
+          11,
+          13,
+          15,
+          17,
+          19,
+          23,
+          25,
+          27,
+          29,
+          30,
+          31,
+          33,
+          35,
+          37,
+          41,
+          43,
+          45,
+          47,
+          49,
+          51,
+          52,
+          53,
+          55
+        ],
+        "unchanged_24_pages_text_and_drawing_streams_identical": true,
+        "changed_and_credits_pixels_match_native": true,
+        "all_a4": true,
+        "pdf_bytes": 29315737,
+        "pdf_sha256": "8e03478887e570f227fc90dfd49acb07aace45808909a54383d4c0617621103c"
+      },
+      "visual_inspection": "Representative vocabulary/photo/choice/grammar pages and all three credit pages viewed at print layout; no overflow. Saved PDF samples rendered independently.",
+      "reversible": "Baseline a8b1fb7; exact before files, hashes and guarded rollback journal in work/vocabulary-credits-20261026 outside repo."
     }
   },
   "pending": [
@@ -3833,12 +4285,13 @@
         "Answer keys",
         "Wordlists",
         "Syllabus.txt",
-        "Student's Book.html"
+        "Student's Book.html",
+        "Backmatter"
       ],
       "fingerprint": {
-        "files": 505,
-        "bytes": 488304221,
-        "sha256": "10438fbaf3c62eb702fe38487b78e191a1f00706ea485758bb177596eb135744"
+        "files": 508,
+        "bytes": 488333548,
+        "sha256": "eb0d31a702d319b985f38a69b472df3945fa8d2f184d33de17ee9735e7ff2c0b"
       }
     },
     "shared_rendering": {
@@ -3848,8 +4301,8 @@
       "exclude_markdown": true,
       "fingerprint": {
         "files": 12,
-        "bytes": 57736,
-        "sha256": "95ffc6a2755296066fe54e1da3c53734f6006a2b577f9e56d6a30d43911863ad"
+        "bytes": 59368,
+        "sha256": "52a9ef45e6e63cf8521ae524962055a9f1938efd80b94b849f724ce222dd1d87"
       }
     },
     "saved_pdf": {
@@ -3858,8 +4311,8 @@
       ],
       "fingerprint": {
         "files": 1,
-        "bytes": 32685106,
-        "sha256": "635ef96c3bdb3bf1f640e710e466394c97da2b0da7a7a8aae714326c707d2434"
+        "bytes": 29315737,
+        "sha256": "113d2dc96fc581a1ccfa6a77d6ea328948f3c790fed47c17778704f9d3a2ea08"
       }
     },
     "audit_criteria": {
@@ -3871,14 +4324,14 @@
       ],
       "fingerprint": {
         "files": 4,
-        "bytes": 118505,
-        "sha256": "805e004bf8cfe90fd903b96638e0780329cb4391bac96502afd034bc00c4abd7"
+        "bytes": 120679,
+        "sha256": "3c7423a31a51a1a1631af7d8f38aac6f9e76d108515e569473f8a2a30e4b7a8c"
       }
     }
   },
   "content_baseline_commit": "2f404b547b7da07be81a0622a78591d3299c402a",
-  "current_revision": "Unit 6 complete through 6D: movement/directions in a walkable-neighborhood challenge and can/can’t through helping a visitor plan two city stops. Four new A4 pages, 14 activities, six Jessica-narrated/approved-pool tracks, new real/generated media, keys and wordlists. Local and live HTML/PDF/media verified. Previous 48 pages preserved. Technical preview only; later units/backmatter and final whole-book release remain pending. Unit 7B must return to Horizons on Air.",
-  "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope. units_3_4_reviews_visual_variety_20261025 supersedes earlier composition, color and geometry evidence for printed pages 21-40, including review_composition_20261025, review_3_4_20261025, unit_3_creative_revision and unit_4_visual_variety; earlier learning and audio evidence keeps its original scope. lesson_5b_on_air_20261026 supersedes prior 5B reading/source/presentation and 5.5/5.6 records only. The 26 October every-unit show mandate is superseded by planned B-skill balance and no two-unit show gap. lesson_5b_activity5_variety_20261026 supersedes only the earlier 5B Activity 5 image/choices/key and continuation-image evidence; no show/audio or other lesson evidence changes. lesson_6b_picture_grammar_20261026 supersedes only the original 6B page-52 grammar presentation, continuation spacing and associated geometry evidence; all learning, source and audio evidence retains its scope. lessons_6c_6d_20261026 adds printed pages 53-56 and completes Unit 6 without superseding prior source/audio/page evidence. Prior 6C/6D-unproduced statements are historical; current coverage is through 6D.",
+  "current_revision": "Book-wide NEW WORDS fix: 199 inline vocabulary highlights paired with all 32 badges, preserving typography/content/media. Inline photo metadata moved into three end-of-book credits pages (printed 57-59) covering 65 active photograph/source components. 55 A4 pages total; 52 lesson/review pages unchanged in content. Local HTML/PDF verified; publication pending. Unit 6 complete; Unit 7B must return to Horizons on Air. Later units, other backmatter and final release remain pending.",
+  "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope. units_3_4_reviews_visual_variety_20261025 supersedes earlier composition, color and geometry evidence for printed pages 21-40, including review_composition_20261025, review_3_4_20261025, unit_3_creative_revision and unit_4_visual_variety; earlier learning and audio evidence keeps its original scope. lesson_5b_on_air_20261026 supersedes prior 5B reading/source/presentation and 5.5/5.6 records only. The 26 October every-unit show mandate is superseded by planned B-skill balance and no two-unit show gap. lesson_5b_activity5_variety_20261026 supersedes only the earlier 5B Activity 5 image/choices/key and continuation-image evidence; no show/audio or other lesson evidence changes. lesson_6b_picture_grammar_20261026 supersedes only the original 6B page-52 grammar presentation, continuation spacing and associated geometry evidence; all learning, source and audio evidence retains its scope. lessons_6c_6d_20261026 adds printed pages 53-56 and completes Unit 6 without superseding prior source/audio/page evidence. Prior 6C/6D-unproduced statements are historical; current coverage is through 6D. vocabulary_and_credits_20261026 supersedes prior plain NEW WORDS vocabulary presentation and in-lesson image-credit placement. Existing learning, audio, image bytes and unrelated geometry evidence retains its scope. Three appended credits pages are provisional end matter after the current final lesson.",
   "receptive_skill_plan": {
     "policy": "B lessons provide a planned mix of reading-led and listening-led units; Horizons on Air is not required in every unit. Avoid two consecutive units without the show. Do not impose rigid alternation; 2B and 3B are both listening-led. Declare primary skill and source genre before authoring.",
     "units": [

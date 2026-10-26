@@ -510,7 +510,7 @@ The following are reusable series-wide components and should remain visually sta
 
 Include the shared `hz-new-words` cue at the first printed introduction of each new vocabulary set, beside the relevant exercise instruction or within its established feature heading. Audit every new lesson and continuation page before publication: identify the vocabulary being introduced, then verify that its first learner-facing context carries the cue. A continuation page needs a cue if it introduces another set; repeated practice and cumulative reviews do not need duplicate cues for already taught words. Never omit the cue simply because a page has a new layout or generated artwork.
 
-Keep the familiar small sparkle and text treatment. The cue does not require a colored box or bold vocabulary choices. In 3A activity 1, the matching phrases remain regular-weight body ink on plain paper; retain this author-directed treatment. Grammar highlights remain a separate convention.
+Keep the familiar small sparkle and text treatment. Every NEW WORDS cue must identify visibly highlighted teaching input: wrap its target words or chunks in `<mark class="hz-vocab" data-vocab-set="LESSON.ACTIVITY">` and give the badge the same `data-vocab-set`. Use the shared pink inline highlighter, inheriting the existing font, size, weight and ink. A badge alone is insufficient. Mark the new vocabulary in the first meaningful teaching context, not whole sentences, names, instructions or every later occurrence. Preserve normal italic choices and never highlight just the correct answer. Grammar emphasis remains separate. The 3A matching phrases stay regular weight on plain paper, now with inline word highlighting; do not restore a surrounding word-bank box or bold them.
 
 Continuation pages use the shared marker and a default safe top offset. A lesson may increase its content offset when the first composition would collide with the marker; move the local content, not the shared marker.
 
@@ -645,3 +645,7 @@ Before approving a new or revised spread, compare it with the preceding three sp
 - Keep Horizons' crimson navigation, black lesson titles, ordinary teaching typography, neutral word banks, canonical grammar shells and exercise reading order. Creativity must work within these recognizable conventions.
 
 **Editorial acceptance gate:** describe what gives the proposed spread its own visual identity and how the neighboring comparison demonstrates variety. Flag recurring cool-color/yellow treatments for redesign when they repeat the same graphic idea. Do not mark creative variety complete on the strength of technical fit, changed hex values or a new topic. Historical examples in this guide document earlier compositions; they are not templates or standing approval to repeat their palettes.
+
+### Image credit placement
+
+Photographer names, licenses, crop notices and source links belong in A1/Backmatter/image-credits.html, compiled after all lesson masters. Keep lesson learning captions and labels, but remove photographic/legal metadata from the exercise flow. Check every active stock photograph against the backmatter register before publication; preserve required creator, source, license links and alteration notices. When adding lessons, update credit page references and inspect the repaginated backmatter.

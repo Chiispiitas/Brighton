@@ -28,3 +28,6 @@ Tracks 3.1, 3.2 and 3.3 are saved in `../../Audios/`. Scripts, cast and exact vo
 ## Continuation-page listening portraits - October 14, 2026
 
 Activity 6 integrates two new real photographs in the Nina/Omar listening table: `Teacher-Tima-5427870.jpg` (Tima Miroshnichenko) and `Chef-Anthony-30350306.jpg` (Anthony Rahayel). These models illustrate fictional roles, not their own identities or actual schedules. Original pixels/backgrounds remain intact; CSS crops preserve their faces. Source/license URLs, hashes and dimensions are in this folder's `stock-photo-manifest.json`.
+
+
+Attribution placement update, 26 October 2026: learner-facing photograph credits, including source/license and crop notices, now appear in the end-of-book `Backmatter/image-credits.html`, not in the lesson activity. Earlier in-page placement descriptions are superseded. Original asset bytes and licenses are unchanged.
