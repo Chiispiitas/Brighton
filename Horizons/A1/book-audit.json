@@ -3794,7 +3794,7 @@
     },
     "vocabulary_and_credits_20261026": {
       "scope": "All 24 A-D lesson masters, 32 NEW WORDS sets; active photography across 52 lesson/review pages; three new end credits.",
-      "status": "local HTML/PDF verified; publication pending",
+      "status": "local and live HTML/PDF verified",
       "vocabulary": {
         "badge_sets": 32,
         "inline_highlights": 199,
@@ -4238,7 +4238,52 @@
         "pdf_sha256": "81c6264984ce535d3032a570752b8e6c1ef468d372d1393c2086330af535373d"
       },
       "visual_inspection": "Representative vocabulary/photo/choice/grammar pages and all three credit pages viewed at print layout; no overflow. Saved PDF samples rendered independently.",
-      "reversible": "Baseline a8b1fb7; exact before files, hashes and guarded rollback journal in work/vocabulary-credits-20261026 outside repo."
+      "reversible": "Baseline a8b1fb7; exact before files, hashes and guarded rollback journal in work/vocabulary-credits-20261026 outside repo.",
+      "publication": {
+        "hashes": {
+          "canonical_html_matches": true,
+          "canonical_pdf_sha256": "81c6264984ce535d3032a570752b8e6c1ef468d372d1393c2086330af535373d",
+          "lesson_sources_match": [
+            "Lessons/1A.html",
+            "Lessons/1B.html",
+            "Lessons/1C.html",
+            "Lessons/1D.html",
+            "Lessons/2A.html",
+            "Lessons/2B.html",
+            "Lessons/2C.html",
+            "Lessons/2D.html",
+            "Lessons/2R.html",
+            "Lessons/3A.html",
+            "Lessons/3B.html",
+            "Lessons/3C.html",
+            "Lessons/3D.html",
+            "Lessons/4A.html",
+            "Lessons/4B.html",
+            "Lessons/4C.html",
+            "Lessons/4D.html",
+            "Lessons/4R.html",
+            "Lessons/5A.html",
+            "Lessons/5B.html",
+            "Lessons/5C.html",
+            "Lessons/5D.html",
+            "Lessons/6A.html",
+            "Lessons/6B.html",
+            "Lessons/6C.html",
+            "Lessons/6D.html"
+          ],
+          "shared_styles_match": true
+        },
+        "browser": {
+          "pages": 55,
+          "matched_badges": 32,
+          "vocabulary_marks": 199,
+          "credits_at_end": 3,
+          "geometry_matches_local": true,
+          "images_loaded": true,
+          "sample_audio_play_pause": true,
+          "controls_hidden_in_print": true
+        }
+      }
     }
   },
   "pending": [
@@ -4331,7 +4376,7 @@
     }
   },
   "content_baseline_commit": "2f404b547b7da07be81a0622a78591d3299c402a",
-  "current_revision": "Book-wide NEW WORDS fix: 199 bold crimson vocabulary terms paired with all 32 badges, preserving font family, point size, content and media. Inline photo metadata moved into three end-of-book credits pages (printed 57-59) covering 65 active photograph/source components. 55 A4 pages total; 52 lesson/review pages unchanged in content. Local HTML/PDF verified; publication pending. Unit 6 complete; Unit 7B must return to Horizons on Air. Later units, other backmatter and final release remain pending.",
+  "current_revision": "Book-wide NEW WORDS fix: 199 bold crimson vocabulary terms paired with all 32 badges, preserving font family, point size, content and media. Inline photo metadata moved into three end-of-book credits pages (printed 57-59) covering 65 active photograph/source components. 55 A4 pages total; 52 lesson/review pages unchanged in content. Local and published viewer/PDF verified. Unit 6 complete; Unit 7B must return to Horizons on Air. Later units, other backmatter and final release remain pending.",
   "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope. units_3_4_reviews_visual_variety_20261025 supersedes earlier composition, color and geometry evidence for printed pages 21-40, including review_composition_20261025, review_3_4_20261025, unit_3_creative_revision and unit_4_visual_variety; earlier learning and audio evidence keeps its original scope. lesson_5b_on_air_20261026 supersedes prior 5B reading/source/presentation and 5.5/5.6 records only. The 26 October every-unit show mandate is superseded by planned B-skill balance and no two-unit show gap. lesson_5b_activity5_variety_20261026 supersedes only the earlier 5B Activity 5 image/choices/key and continuation-image evidence; no show/audio or other lesson evidence changes. lesson_6b_picture_grammar_20261026 supersedes only the original 6B page-52 grammar presentation, continuation spacing and associated geometry evidence; all learning, source and audio evidence retains its scope. lessons_6c_6d_20261026 adds printed pages 53-56 and completes Unit 6 without superseding prior source/audio/page evidence. Prior 6C/6D-unproduced statements are historical; current coverage is through 6D. vocabulary_and_credits_20261026 supersedes prior plain NEW WORDS vocabulary presentation and in-lesson image-credit placement. Existing learning, audio, image bytes and unrelated geometry evidence retains its scope. Three appended credits pages are provisional end matter after the current final lesson.",
   "receptive_skill_plan": {
     "policy": "B lessons provide a planned mix of reading-led and listening-led units; Horizons on Air is not required in every unit. Avoid two consecutive units without the show. Do not impose rigid alternation; 2B and 3B are both listening-led. Declare primary skill and source genre before authoring.",
