@@ -30,7 +30,7 @@ Primary sources checked 26 October: [Just Walk Out: how it works](https://www.ju
 
 **Verified locally:** six activities in one numbered lane, NEW WORDS, two nearby references, meaningful Extra Practice, no text overflow, normal functional fonts and crimson concept emphasis. Minimum activity-bottom clearance: **52.9px**. Standalone/compiled geometry matches; all source images load. Three audio buttons play/pause and remain hidden in print. Tracks **5.10–5.12** use Jessica narration, Juniper/customer and Mark Natural/cashier/helper, Eleven v3 / stability 0.5. All decode and match normalized transcripts; only track-label pause punctuation and OK/okay spelling need explicit normalization. No forbidden clarity tag, SSML or detected audio event; no subjective listening review claimed. Final saved-PDF pages were inspected with Poppler, beside 5A–5C and on the whole-book contact sheet. The 44-page A4 book retains every previous 42 page's text/drawing streams and compiled page fragment; new pages match native-export pixels and retain all learner word tokens. Previous 21 masters/keys/images and all 45 lesson recordings plus ident are preserved.
 
-Local checks complete; publication verification pending.
+Published canonical HTML/PDF and all three new MP3 hashes match the checked files. The live 5D browser matches both page geometries, loads all images and plays all three tracks.
 
 Before files, hashes, original stock download, generated prompts, production checks, saved-page renders and guarded rollback journal: `work/lesson5d` outside the repository. This is a scoped new-lesson pass; final book release and unresolved backmatter remain pending.
 

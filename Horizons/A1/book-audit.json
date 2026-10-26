@@ -2599,7 +2599,7 @@
     },
     "lesson_5d_20261026": {
       "scope": "5D, printed pages 47-48",
-      "status": "local HTML/PDF/audio verified; publication pending",
+      "status": "local and published HTML/PDF/audio verified",
       "syllabus": "D speaking: grocery shopping, cashier-free versus conventional stores. Unit 5 remains A language, B listening/Horizons on Air, C language, D speaking.",
       "learning_sequence": "Six context-supported store words; model exchange with a functional receipt; matching and polite-word noticing; aligned SKILLS clarification; different entry-gate help scene with a short real-world comparison; private role preparation; spoken purchase with an actual record and role switch.",
       "productive_outcome": "Obtain three available foods, their prices and payment information from a partner, then record the purchase. Private lists, stock/prices and accepted payment are written on separate paper, so visible role instructions do not disclose answers.",
@@ -2678,7 +2678,28 @@
       },
       "preservation": "All 42 previous saved pages and compiled page fragments, 21 previous masters/keys/image binaries and 45 previous lesson MP3s plus ident are preserved.",
       "evidence_directory": "work/lesson5d",
-      "reversibility": "Exact before files, all-file hashes and guarded rollback journal outside repo."
+      "reversibility": "Exact before files, all-file hashes and guarded rollback journal outside repo.",
+      "publication": {
+        "canonical": {
+          "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html",
+          "canonical_html_matches": true,
+          "canonical_pdf_matches_sha256": "f38571ed3468e0823f72c512aac2fa8a678ddc08545d121b2bf17446d307615e",
+          "pdf_bytes": 27144878,
+          "published_track_hashes": {
+            "5.10": "b9e321f488e849fe684094988fd5a3db68d9d1c86ce79978aa0dbe61227096ed",
+            "5.11": "75fc2eb6cb65efed91eb8b2ed75307ab33f3556fdbb3103f1509d5fe5cf01705",
+            "5.12": "53c1812cfa4f55260a73657cab0f679da0a49d77e2404608f757b19ae2ebddc8"
+          }
+        },
+        "browser": {
+          "url": "https://exams.bebrighton.net/Horizons/A1/Lessons/5D.html",
+          "both_page_geometries_match_local": true,
+          "all_images_and_css_backgrounds_loaded": true,
+          "backgrounds": 0,
+          "all_three_new_tracks_play_pause": true,
+          "print_audio_controls_hidden": true
+        }
+      }
     }
   },
   "pending": [
@@ -2770,7 +2791,7 @@
     }
   },
   "content_baseline_commit": "2f404b547b7da07be81a0622a78591d3299c402a",
-  "current_revision": "New 5D speaking spread: six activities, three new image assets (one licensed stock/two generated), three checked tracks and a private-information grocery transaction. 44 A4 pages through printed page 48; all previous 42 pages/media preserved. Local checks complete; publication verification pending. Backmatter and final whole-book release remain pending.",
+  "current_revision": "New 5D speaking spread: six activities, three new image assets (one licensed stock/two generated), three checked tracks and a private-information grocery transaction. 44 A4 pages through printed page 48; all previous 42 pages/media preserved. Local and live source/PDF/audio verified. Backmatter and final whole-book release remain pending.",
   "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope. units_3_4_reviews_visual_variety_20261025 supersedes earlier composition, color and geometry evidence for printed pages 21-40, including review_composition_20261025, review_3_4_20261025, unit_3_creative_revision and unit_4_visual_variety; earlier learning and audio evidence keeps its original scope. lesson_5b_on_air_20261026 supersedes prior 5B reading/source/presentation and 5.5/5.6 records only. The 26 October every-unit show mandate is superseded by planned B-skill balance and no two-unit show gap. lesson_5b_activity5_variety_20261026 supersedes only the earlier 5B Activity 5 image/choices/key and continuation-image evidence; no show/audio or other lesson evidence changes.",
   "receptive_skill_plan": {
     "policy": "B lessons provide a planned mix of reading-led and listening-led units; Horizons on Air is not required in every unit. Avoid two consecutive units without the show. Do not impose rigid alternation; 2B and 3B are both listening-led. Declare primary skill and source genre before authoring.",
