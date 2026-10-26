@@ -28,7 +28,7 @@ The opening uses a four-photo town mosaic, with larger crops preserving people�
 
 **Verified:** seven activities in one numbered lane, NEW WORDS, two nearby references, meaningful Extra Practice, no text overflow, canonical functional fonts and crimson grammar emphasis. Minimum activity-bottom clearance: **50.7px**. Standalone and compiled page geometry match. Three browser audio controls play/pause; print hides their buttons. Tracks **5.7–5.9** use Jessica narration and the approved cast; all decode, match normalized scripts exactly and have no detected audio events. No forbidden clarity tag or SSML; no subjective listening review claimed. Final saved-PDF pages were inspected with Poppler, alongside preceding three spreads and the whole-book contact sheet. The 42-page A4 book retains all original 40 pages’ text/drawing streams and compiled page fragments. New pages match native-export pixels and retain every learner word token. All previous masters, keys, photographs and 42 MP3s are preserved.
 
-Local checks complete; live publication verification pending.
+Live canonical HTML/PDF match the checked files. All three published MP3 hashes match local media; the live 5C browser matches both page geometries, loads all five photographs and plays all three tracks.
 
 Before copies, hashes, original stock downloads, scripts, visual comparisons, production checks and guarded rollback journal: `work/lesson5c` outside the repository. This is a scoped lesson check; unresolved backmatter and final whole-book release remain pending.
 
