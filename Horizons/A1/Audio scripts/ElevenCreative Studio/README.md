@@ -180,3 +180,6 @@ All three use Eleven v3, Natural stability 0.5. Import scripts and voice-map par
 5C: Track 5.7 places in town (Jessica); 5.8 Mara's regular shopping habits (Jessica intro, Jarnathan interviewer, Juniper/Mara); 5.9 Noah's independent habits (Jessica questions, Mark Casual/Noah). Three speech-only Studio imports. Exact paragraph assignments: VOICE MAP.md. Checked Eleven v3 / stability 0.5 generation records: ../5C-production.json. No forbidden clarity tag or SSML; no subjective listening review claimed.
 
 5D: Track 5.10 six store words (Jessica); 5.11 grocery checkout model; 5.12 asking for help in one cashier-free entry-card setup. The two conversations use Juniper/customer and Mark Natural/cashier or helper, with Jessica labels/narration. Eleven v3 / stability 0.5; speech-only imports, approved IDs and paragraph roles in VOICE MAP.md. Checked records: ../5D-production.json. No forbidden clarity tag or SSML; no subjective listening review claimed.
+
+
+6A: Track 6.1 places in town 2; 6.2 factual New York/Stowe source (both Jessica); 6.3 three fictional travelers infer a place from a need (Jessica labels; Adeline / Mark Natural / Juniper). Exact paragraphs: VOICE MAP.md. Final three-track decode/transcript/event records: ../6A-production.json. Eleven v3 / stability 0.5; no forbidden clarity tag or SSML. This vocabulary A lesson is not a show episode.

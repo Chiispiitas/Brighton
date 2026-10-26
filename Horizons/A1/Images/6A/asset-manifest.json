@@ -1,0 +1,91 @@
+{
+  "lesson": "6A",
+  "assets": [
+    {
+      "asset_id": "HZN_A1_U06_LA_IMG_01",
+      "activity": "6A.1",
+      "local_file": "NYC-Kushal-Shah-12706317-v1.jpg",
+      "type": "licensed_real_photograph",
+      "creator": "Kushal Shah",
+      "source_page": "https://www.pexels.com/photo/busy-street-between-skyscrapers-in-a-modern-downtown-12706317/",
+      "download_url": "https://images.pexels.com/photos/12706317/pexels-photo-12706317.jpeg?auto=compress&cs=tinysrgb&w=2000",
+      "license": "Pexels",
+      "terms_url": "https://www.pexels.com/license/",
+      "attribution_required": false,
+      "acquisition_date": "2026-10-26",
+      "edits_crops": "Portrait resized proportionally; CSS cover at center 100 percent preserves road, taxis, people and buildings.",
+      "dimensions": [
+        1382,
+        2000
+      ],
+      "sha256": "4abafd01ec49b059d2a7eb8a6852c680f6209f072d084b7b816f3450638cbf76",
+      "endorsement": false
+    },
+    {
+      "asset_id": "HZN_A1_U06_LA_IMG_02",
+      "activity": "6A.1",
+      "local_file": "Stowe-Jeffrey-Clayton-v1.jpg",
+      "type": "licensed_real_photograph",
+      "creator": "Jeffrey Clayton",
+      "source_page": "https://unsplash.com/photos/an-aerial-view-of-a-small-town-surrounded-by-mountains-oY-il7J1vio",
+      "download_url": "https://images.unsplash.com/photo-1647553731030-0d1e95af58d9?auto=format&fit=max&w=2400&q=95",
+      "license": "Unsplash",
+      "terms_url": "https://unsplash.com/license",
+      "attribution_required": false,
+      "acquisition_date": "2026-10-26",
+      "edits_crops": "Proportional local copy; landscape CSS cover keeps the settlement, hills and trees. Source location Stowe, published March 17 2022.",
+      "dimensions": [
+        2400,
+        1599
+      ],
+      "sha256": "b3bf0da56cbb802d07648aa909e9953581e72a10d24f03b33c14a83c9f305061",
+      "endorsement": false
+    },
+    {
+      "asset_id": "HZN_A1_U06_LA_IMG_03",
+      "activity": "6A.5",
+      "local_file": "Grand-Central-Trev-Adams-27585752-v1.jpg",
+      "type": "licensed_real_photograph",
+      "creator": "Trev W. Adams",
+      "source_page": "https://www.pexels.com/photo/grand-central-station-in-nyc-27585752/",
+      "download_url": "https://images.pexels.com/photos/27585752/pexels-photo-27585752.jpeg",
+      "license": "Pexels",
+      "terms_url": "https://www.pexels.com/license/",
+      "attribution_required": false,
+      "acquisition_date": "2026-10-26",
+      "edits_crops": "Proportional local resize; landscape CSS cover at center 56 percent keeps the concourse, travelers and clock. Published August 5 2024. No actual individual is assigned a voice.",
+      "dimensions": [
+        1920,
+        2400
+      ],
+      "sha256": "54784e71936c627f6f460e4aa1671c934ee060c73e38e46d5f1497615346c147",
+      "endorsement": false
+    },
+    {
+      "asset_id": "HZN_A1_U06_LA_E02_IMG_01",
+      "activity": "6A.2",
+      "local_file": "Town-places-six-v1.png",
+      "type": "built_in_imagegen",
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "sha256": "dcdb41f9446a1b78f9a9da70f51346cf491979d63668377471e473d7500d8257",
+      "purpose": "One controlled six-place photographic family: immediate service recognition, readable exact English signs and the envelope/medicine/train/art evidence required to teach the six nouns and functions. Public photographic search supplied the real city/town and continuation environments; generic stock could not guarantee this unified evidence and exact readable signs.",
+      "fictional": "All six scenes generic, no specific New York/Stowe establishment claim.",
+      "generation_prompt_record": "work/lesson6a/image-generation.json outside the repository",
+      "edits_crops": "No raster edits. Six equal square source cells selected using 300% by 200% CSS backgrounds at 35mm square, preserving natural proportions and complete cell content; A-F remain live text.",
+      "transparent_background": false
+    }
+  ],
+  "factual_sources": [
+    "https://grandcentralterminal.com/visit/",
+    "https://www.nytransitmuseum.org/know-before-you-visit/",
+    "https://www.centralparknyc.org/visit",
+    "https://gostowe.com/listing/stowe-recreation-path",
+    "https://www.stowefreelibrary.org/",
+    "https://www.vtssm.org/visit"
+  ],
+  "verified_date": "2026-10-26",
+  "boundary": "These places have real verified features; learner texts are original simplified descriptions, not quotations or invented interviews. First and continuation photographs are distinct; the later station scene is not a reused crop of the vocabulary train. No image recoloring/generative retouching of stock."
+}

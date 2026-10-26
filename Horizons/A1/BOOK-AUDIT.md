@@ -1,6 +1,6 @@
 # Horizons A1 — Book audit
 
-Updated 26 October 2026. **Technical preview verified through 5D; visual-fatigue reassessment and final book release pending.**
+Updated 26 October 2026. **Technical preview verified through 6A; visual-fatigue reassessment and final book release pending.**
 
 This is the current audit entry point. [book-audit.json](book-audit.json) holds scoped evidence and historical checks; [CANONICAL-STYLE.md](../Base/design-system/CANONICAL-STYLE.md) governs design. A current snapshot is not final release approval.
 
@@ -8,15 +8,33 @@ This is the current audit entry point. [book-audit.json](book-audit.json) holds 
 
 | Item | Current state |
 | --- | --- |
-| Content | 1A–5D plus Units 1 & 2 and 3 & 4 Reviews: 22 masters |
-| Saved book | 44 A4 pages; printed pages 5–48 |
-| Activity blocks | 154; existing subexercise numbering retained |
-| Audio | 48 lesson MP3s + 1 production ident; new 5D tracks 5.10–5.12 decoded/transcribed |
-| Navigation cues | 25 NEW WORDS badges, 20 Extra Practice footers, 46 Go to references |
-| Concept explanations | 14 revised panels across 11 lessons; 23 total focus panels including retained 4A and new 4B–5D |
-| Unresolved destinations | 46 `page ---` references; intentional until back-of-book pagination |
+| Content | 1A–6A plus Units 1 & 2 and 3 & 4 Reviews: 23 masters; Unit 6 partial |
+| Saved book | 46 A4 pages; printed pages 5–50 |
+| Activity blocks | 160; existing subexercise numbering retained |
+| Audio | 51 lesson MP3s + 1 production ident; new 6A tracks 6.1–6.3 decoded/transcribed |
+| Navigation cues | 26 NEW WORDS badges, 21 Extra Practice footers, 47 Go to references |
+| Concept explanations | 14 revised panels across 11 lessons; 24 total focus panels including retained 4A and new 4B–6A |
+| Unresolved destinations | 47 `page ---` references; intentional until back-of-book pagination |
 
 Counts are inventory, not proof that every cue is correctly placed. Review placement beside the newly introduced content.
+
+## 6A production, 26 October
+
+**City life or country life?**, printed pages **49–50**, is a vocabulary-led A lesson. The six-place set (bank, pharmacy, post office, hospital, train station, museum) extends 5C's shopping places without pre-teaching 6B's house/location, 6C's movement/directions or 6D's ability-can focus. Real New York and Stowe establish the contrast; the small surprise is that a city has green space and a small town has cultural services. Current factual summaries do not invent resident interviews or narrate completed events in present simple.
+
+Six photographic place scenes carry the exact sign/action evidence. The **VOCABULARY: PLACES AND ACTIONS** clarification explicitly teaches useful chunks, including buy medicine and send a letter, before contextual inference. Three fictional travelers then describe a need without naming the place. Learners finish by negotiating **three places for a new town center**, drawing/labeling them and explaining their choices to another pair. There is a shared decision and genuinely unknown preferences, without pretending visible A/B answers are private. Extra Practice identifies real local places and functions. See `Answer keys/6A.md` and `Wordlists/6A.md` for complete answers and cumulative support-language boundaries.
+
+**Art direction:** aubergine factual feature, burnt-orange place/design bands and a cream station listening surface. Compare with 5B's show/guests, 5C's personal shopping notes and 5D's receipt/checkout; this spread has a different subject, text shape and response artifact. It retains black 31pt title, crimson chrome, single numbered lane and canonical pink vocabulary shell. Ordinary tasks/concepts are **9.5pt**, instructions **8.9pt**, source bodies 9.5pt. NEW WORDS, one nearby Vocabulary reference and meaningful Extra Practice are present. Real source/stock metadata: `Images/6A/asset-manifest.json`; exact built-in generation prompt: `work/lesson6a/image-generation.json` outside the repo.
+
+Three licensed real photographs show the New York street, Stowe and a separate **106 × 57mm Grand Central concourse** on the continuation. A single built-in generated contact sheet supplies six controlled generic places, rendered as **35mm square cells** without raster distortion. No fake claim that these six places are actual photographed establishments in either city. The later train setting is new evidence, not a crop of the vocabulary picture. Sources checked 26 October: [Grand Central](https://grandcentralterminal.com/visit/), [New York Transit Museum](https://www.nytransitmuseum.org/know-before-you-visit/), [Central Park](https://www.centralparknyc.org/visit), [Stowe Recreation Path](https://gostowe.com/listing/stowe-recreation-path), [Stowe Library](https://www.stowefreelibrary.org/) and [Vermont Ski and Snowboard Museum](https://www.vtssm.org/visit). No actual person's quotation, seasonal-availability, absent-service, timetable or price claim is added.
+
+**Verified:** six activities fit and standalone/compiled geometry matches, every image/background loads, minimum activity-bottom clearance **17.2px**, visible 28mm drawing surface, no text overflow and correct print-hidden audio controls. Tracks **6.1–6.3** retain Jessica narration; the three unnamed travelers use Adeline, Mark Natural and Juniper. Eleven v3 / stability 0.5; every final track decodes and exactly matches normalized script. An initial reduced wanna in 6.3 was rejected, the third utterance rewritten and the recording regenerated. No detected audio event, forbidden clarity tag or SSML; subjective listening review remains unclaimed. Keys, Studio imports, voice map and permanent production IDs are current.
+
+The reopened saved book contains **46 A4 pages**. Both new pages were inspected through Poppler at print scale and beside the previous three spreads and whole-book sheet. Every prior 44 page's text/decoded drawing streams and compiled page fragment is preserved. New pages match native-export pixels and retain every learner word token; previous 22 masters/keys/images, 48 lesson MP3s and the ident remain unchanged. Export-only 240dpi media, with no saved-PDF font/image rewriting or resource deduplication. A missing print-stylesheet relation in the draft was caught by the exact two-page PDF check and corrected before saving the final book.
+
+Local checks complete; publication verification pending.
+
+Scoped technical preview only. **6B–6D are not produced**; decide B's primary skill/source genre before drafting and retain the planned mix/no two-unit show gap after listening-led 5B. The 6A read-aloud is not a Horizons on Air episode. Four-spread Unit 6 variety, unresolved backmatter and final book release remain pending. Exact before files, hashes, saved renders and guarded restore: `work/lesson6a` outside the repo.
 
 ## 5D production, 26 October
 

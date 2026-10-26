@@ -2,7 +2,7 @@
   "schema_version": 1,
   "updated": "2026-10-26",
   "status": "technical preview verified; visual-fatigue reassessment and final book release pending",
-  "scope": "A1 through 5D, including Units 1 & 2 and 3 & 4 Reviews",
+  "scope": "A1 through 6A, including Units 1 & 2 and 3 & 4 Reviews; Unit 6 is partial",
   "readability_comparison_baseline": "e8d6ddd69f62caffab662a93a5a392ebc5bfb131",
   "inventory": {
     "lesson_masters": [
@@ -27,22 +27,23 @@
       "5A",
       "5B",
       "5C",
-      "5D"
+      "5D",
+      "6A"
     ],
-    "pdf_pages": 44,
+    "pdf_pages": 46,
     "printed_pages": [
       5,
-      48
+      50
     ],
-    "activity_blocks": 154,
-    "audio_files": 48,
-    "new_words_badges": 25,
-    "extra_practice_footers": 20,
-    "go_to_references": 46,
-    "page_placeholders": 46,
-    "focus_panels": 23,
-    "html_pages": 44,
-    "html_audio_controls": 52,
+    "activity_blocks": 160,
+    "audio_files": 51,
+    "new_words_badges": 26,
+    "extra_practice_footers": 21,
+    "go_to_references": 47,
+    "page_placeholders": 47,
+    "focus_panels": 24,
+    "html_pages": 46,
+    "html_audio_controls": 55,
     "production_audio_files": 1
   },
   "checks": {
@@ -2700,6 +2701,89 @@
           "print_audio_controls_hidden": true
         }
       }
+    },
+    "lesson_6a_20261026": {
+      "scope": "6A, printed pages 49-50",
+      "status": "local HTML/PDF/audio verified; publication pending",
+      "syllabus": "A vocabulary/language: City life or country life? Places in town 2. Real big-city/small-town settings, not a new preposition, directions, existential or ability-can syllabus. Unit 6B-D unproduced; no whole-unit completion claimed.",
+      "learning_sequence": "Real city/town photo choice; six pictured place words with vocabulary audio; current factual place descriptions; explicit place/action clarification; contextual need-to-place inference; three new voice messages requiring lexical inference; a negotiated three-place town-center design with reasons.",
+      "productive_outcome": "Two learners choose and draw/label three places for a new town center, then explain choices to another pair. Preferences are unknown until discussed; no printed A/B answer grid. Extra Practice identifies three real local places and their functions.",
+      "language_ceiling": "New bank/pharmacy/post office/hospital/train station/museum and explicit functional chunks get cash/buy medicine/send a letter/take a train/look at art and history. Medicine/art/history cognates; envelope/medicine/trains/art supported by pictures. Country in the countryside sense, city/small town/town center are supported labels. Winter sports and named locations are receptive context, not spelling targets. Existing be/have, present simple, need/want, because and suggestion chunks carry use. No completed-event narrative forced into present.",
+      "factual_check": {
+        "date": "2026-10-26",
+        "sources": [
+          "https://grandcentralterminal.com/visit/",
+          "https://www.nytransitmuseum.org/know-before-you-visit/",
+          "https://www.centralparknyc.org/visit",
+          "https://gostowe.com/listing/stowe-recreation-path",
+          "https://www.stowefreelibrary.org/",
+          "https://www.vtssm.org/visit"
+        ],
+        "claims": "Grand Central train station; Brooklyn Transit Museum in decommissioned subway station, historic trains; Central Park walking/running; Stowe path walking/biking in ordinary nonwinter conditions, library and ski/snowboard museum. No absent-service, universal resident behavior, population, price or opening-hour claim. Original factual summaries, not invented interviews."
+      },
+      "creative_acceptance": {
+        "color": "Aubergine city/source and burnt-orange small-town/working-plan bands with cream station panel; no teal/blue plus yellow/gold editorial recipe. Crimson chrome and pink focus remain.",
+        "text": "Split-weight upright headline with paired factual source measures; square photographic place evidence; a separate landscape concourse/listening composition and open design artifact. No accent-font repetition. Ordinary tasks/concepts 9.5pt, instructions 8.9pt; integrated source also 9.5pt.",
+        "images": "Three distinct licensed real photos (New York street, Stowe settlement/hills, Grand Central concourse), plus one exact six-scene generated family. Source cells rendered square at 35mm without stretching. Later station scene is a new environment/image rather than source-image recycling. Concourse remains substantial 106x57mm.",
+        "neighbor_comparison": "Saved spread compared with preceding 5B broadcast guests/box comparison, 5C shopping habits/notes and 5D checkout/receipt/entry gate, plus the whole-book sheet. Hook: a big city has green space and a small town has cultural services; payoff: choose a town-center mix together. Unit 6 four-spread variety remains a future check.",
+        "preserved_conventions": "One vertical numbered exercise lane; internal reading/question columns only. Black 31pt title, crimson tabs/numerals/navigation, canonical pink vocabulary shell, NEW WORDS, nearby vocabulary reference, meaningful Extra Practice, ordinary open controlled practice."
+      },
+      "geometry": {
+        "no_text_overflow": true,
+        "standalone_matches_compiled": true,
+        "minimum_activity_bottom_clearance_px": 17.171875,
+        "loaded_images_and_backgrounds": true,
+        "continuation_photo_mm": [
+          106,
+          57
+        ],
+        "six_place_cell_mm": [
+          35,
+          35
+        ],
+        "drawing_height_mm": 28,
+        "normal_task_concept_pt": 9.5,
+        "instruction_pt": 8.9
+      },
+      "audio": {
+        "tracks": [
+          "6.1",
+          "6.2",
+          "6.3"
+        ],
+        "narrator": "Jessica",
+        "voices": "6.1/6.2 Jessica; 6.3 labels Jessica and unnamed fictional travelers Adeline, Mark Natural, Juniper. No stock-person identities.",
+        "model": "eleven_v3",
+        "stability": 0.5,
+        "all_decoded": true,
+        "normalized_transcript_parity": true,
+        "normalization": "Track label, ordinary case/punctuation/numerals/hyphens/apostrophes. No wanna normalization: the rejected first 6.3 take was rewritten/regenerated and final exact transcript parity verified.",
+        "audio_events": [],
+        "forbidden_tag_preflight": true,
+        "browser_play_pause": true,
+        "subjective_listening_review": false,
+        "duration_seconds": 78.13
+      },
+      "saved_pdf": {
+        "pages": 46,
+        "all_a4": true,
+        "printed_pages": [
+          5,
+          50
+        ],
+        "original_44_pages_text_and_decoded_drawing_streams_identical": true,
+        "new_pages_match_direct_export_pixels": true,
+        "all_new_learner_word_tokens_present": true,
+        "original_44_compiled_html_pages_identical": true,
+        "all_original_22_masters_keys_and_image_binaries_preserved": true,
+        "all_original_48_lesson_mp3s_and_production_ident_preserved": true,
+        "pdf_sha256": "4e9945883bca5ae16ae226a3cf65715981398d4718478cf696bf659bc967b245",
+        "pdf_bytes": 29711310,
+        "method": "Original 44 pages copied as PDF objects; native Windows 6A export appended. Export-only 240dpi media; no font/image rewriting or aggressive resource deduplication."
+      },
+      "preservation": "All 44 previous saved pages and compiled page fragments, 22 previous masters/keys/image binaries and 48 previous lesson MP3s plus ident preserved. Shared CSS/rendering untouched.",
+      "evidence_directory": "work/lesson6a",
+      "reversibility": "Exact before files, all-file hashes and guarded rollback journal outside repo."
     }
   },
   "pending": [
@@ -2750,9 +2834,9 @@
         "Student's Book.html"
       ],
       "fingerprint": {
-        "files": 442,
-        "bytes": 460359916,
-        "sha256": "79d382c07d53d6ac66c4fe5dbd4cb90ccedeb5f55fc6430c3f1b06611a455ac5"
+        "files": 458,
+        "bytes": 467989957,
+        "sha256": "38e55aa365290a26b8080b734f25bcdedb72e1740ade866bf1953d4043b811bc"
       }
     },
     "shared_rendering": {
@@ -2772,8 +2856,8 @@
       ],
       "fingerprint": {
         "files": 1,
-        "bytes": 27144878,
-        "sha256": "f71e2d0706ca714dafac909e7e4e8cc73139f484b7bebf12f8dfea87a0621813"
+        "bytes": 29711310,
+        "sha256": "390b2d2a5f681b7eaf35a2396ae4894b78f73ba424f547cbd73cf99c0a5b3e19"
       }
     },
     "audit_criteria": {
@@ -2791,7 +2875,7 @@
     }
   },
   "content_baseline_commit": "2f404b547b7da07be81a0622a78591d3299c402a",
-  "current_revision": "New 5D speaking spread: six activities, three new image assets (one licensed stock/two generated), three checked tracks and a private-information grocery transaction. 44 A4 pages through printed page 48; all previous 42 pages/media preserved. Local and live source/PDF/audio verified. Backmatter and final whole-book release remain pending.",
+  "current_revision": "New 6A vocabulary spread: six activities, six pictured places, three distinct licensed real environments plus generated place evidence, three checked tracks and a shared town-center design. 46 A4 pages through printed page 50; previous 44 pages/media preserved. Local checks complete; publication verification pending. Unit 6B-D, backmatter and final whole-book release remain pending.",
   "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope. units_3_4_reviews_visual_variety_20261025 supersedes earlier composition, color and geometry evidence for printed pages 21-40, including review_composition_20261025, review_3_4_20261025, unit_3_creative_revision and unit_4_visual_variety; earlier learning and audio evidence keeps its original scope. lesson_5b_on_air_20261026 supersedes prior 5B reading/source/presentation and 5.5/5.6 records only. The 26 October every-unit show mandate is superseded by planned B-skill balance and no two-unit show gap. lesson_5b_activity5_variety_20261026 supersedes only the earlier 5B Activity 5 image/choices/key and continuation-image evidence; no show/audio or other lesson evidence changes.",
   "receptive_skill_plan": {
     "policy": "B lessons provide a planned mix of reading-led and listening-led units; Horizons on Air is not required in every unit. Avoid two consecutive units without the show. Do not impose rigid alternation; 2B and 3B are both listening-led. Declare primary skill and source genre before authoring.",

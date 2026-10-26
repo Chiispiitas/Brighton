@@ -288,3 +288,18 @@ Mara and Noah are new fictional roles; retain these exact IDs if they return. St
   - MarkNatural (`UgBBYS2sOqTuMpoF3BR0`), paragraphs 4, 6, 8.
 
 Jessica retains all labels, vocabulary and narration. Juniper is the unnamed customer; Mark Natural is the cashier/helper. These are functional model roles, not identities attributed to stock models. Eleven v3 / Natural stability 0.5. No forbidden clarity tag or SSML. Track-label pause punctuation and OK/okay spelling are normalized explicitly; no answer-bearing content is changed. Decode, exact normalized transcript and audio-event checks: `../5D-production.json`; no subjective listening review claimed.
+
+
+## 6A - City life or country life?
+
+- Track 6.1:
+  - Jessica (`cgSgspJ2msm6clMCkdW9`), paragraphs 1, 2.
+- Track 6.2:
+  - Jessica (`cgSgspJ2msm6clMCkdW9`), paragraphs 1, 2, 3, 4.
+- Track 6.3:
+  - Jessica (`cgSgspJ2msm6clMCkdW9`), paragraphs 1, 2, 4, 6.
+  - Adeline (`5l5f8iK3YPeGga21rQIX`), paragraphs 3.
+  - MarkNatural (`UgBBYS2sOqTuMpoF3BR0`), paragraphs 5.
+  - Juniper (`aMSt68OGf4xUZAnLpTU8`), paragraphs 7.
+
+Jessica narrates all track labels, vocabulary and factual source text. The three unnamed fictional travelers in 6.3 use Adeline, Mark Natural and Juniper; no recorded identity is attributed to a stock model. Eleven v3 / Natural stability 0.5. Final 6.3 third utterance uses This letter is for my sister to avoid a reduced wanna in the rejected first take. All final tracks decode and match normalized scripts, with no detected audio events. Production records: `../6A-production.json`. No forbidden clarity tag or SSML; no subjective listening review claimed.
