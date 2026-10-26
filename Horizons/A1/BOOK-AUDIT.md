@@ -32,7 +32,7 @@ Three licensed real photographs show the New York street, Stowe and a separate *
 
 The reopened saved book contains **46 A4 pages**. Both new pages were inspected through Poppler at print scale and beside the previous three spreads and whole-book sheet. Every prior 44 page's text/decoded drawing streams and compiled page fragment is preserved. New pages match native-export pixels and retain every learner word token; previous 22 masters/keys/images, 48 lesson MP3s and the ident remain unchanged. Export-only 240dpi media, with no saved-PDF font/image rewriting or resource deduplication. A missing print-stylesheet relation in the draft was caught by the exact two-page PDF check and corrected before saving the final book.
 
-Local checks complete; publication verification pending.
+Published canonical HTML/PDF and all three new MP3 hashes match checked files. The live 6A browser matches both page geometries, loads the photographs and six-cell family and plays all three tracks.
 
 Scoped technical preview only. **6B–6D are not produced**; decide B's primary skill/source genre before drafting and retain the planned mix/no two-unit show gap after listening-led 5B. The 6A read-aloud is not a Horizons on Air episode. Four-spread Unit 6 variety, unresolved backmatter and final book release remain pending. Exact before files, hashes, saved renders and guarded restore: `work/lesson6a` outside the repo.
 
