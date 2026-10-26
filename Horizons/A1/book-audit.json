@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated": "2026-10-26",
-  "status": "technical preview verified; Horizons on Air coverage, visual-fatigue reassessment and final book release pending",
+  "status": "technical preview verified; visual-fatigue reassessment and final book release pending",
   "scope": "A1 through 5C, including Units 1 & 2 and 3 & 4 Reviews",
   "readability_comparison_baseline": "e8d6ddd69f62caffab662a93a5a392ebc5bfb131",
   "inventory": {
@@ -40,7 +40,9 @@
     "go_to_references": 44,
     "page_placeholders": 44,
     "focus_panels": 22,
-    "html_pages": 42
+    "html_pages": 42,
+    "html_audio_controls": 49,
+    "production_audio_files": 1
   },
   "checks": {
     "refreshed_during_cleanup": {
@@ -2246,7 +2248,9 @@
         "print_audio_controls_hidden": true,
         "source_commit": "17bb337"
       },
-      "source_and_audio_evidence_superseded_by": "lesson_5b_tense_correction_20261026; retained image/typography evidence keeps its scope."
+      "source_and_audio_evidence_superseded_by": "lesson_5b_tense_correction_20261026; retained image/typography evidence keeps its scope.",
+      "superseded_by": "lesson_5b_on_air_20261026",
+      "superseded_scope": "5B receptive role, source/tasks, layout and Tracks 5.5/5.6. Track 5.4 and original image binaries retain their evidence."
     },
     "lesson_5b_tense_correction_20261026": {
       "scope": "5B activity 2, activity 3 item 4 and tracks 5.5/5.6",
@@ -2296,7 +2300,9 @@
         "all_three_new_tracks_play_pause": true,
         "print_audio_controls_hidden": true,
         "source_commit": "09f39eb"
-      }
+      },
+      "superseded_by": "lesson_5b_on_air_20261026",
+      "superseded_scope": "5B receptive role, source/tasks, layout and Tracks 5.5/5.6. Track 5.4 and original image binaries retain their evidence."
     },
     "lesson_5c_20261026": {
       "scope": "5C, printed pages 45-46",
@@ -2402,50 +2408,110 @@
       }
     },
     "horizons_on_air_coverage_20261026": {
-      "requirement": "At least one substantial episode in every unit, regardless of whether B is reading-led; preserve A/C language, B receptive and D productive roles.",
-      "status": "incomplete; missing Units 1, 4 and 5",
-      "source_inventory": [
-        {
-          "unit": 1,
-          "status": "missing",
-          "action": "Retrofit a substantial episode; existing ordinary listening is not coverage."
-        },
+      "status": "corrected and met through Unit 5B",
+      "superseded_policy": "The earlier every-unit mandate and missing-unit retrofit list were too broad and are superseded by the author’s reading/listening clarification. Units 1 and 4 are valid reading-led choices.",
+      "episodes": [
         {
           "unit": 2,
-          "status": "present",
           "lesson": "2B",
-          "episode": "Bus or car?",
-          "track": "2.3"
+          "title": "Bus or car?",
+          "tracks": [
+            "2.3"
+          ]
         },
         {
           "unit": 3,
-          "status": "present",
           "lesson": "3B",
-          "episode": "Three people. Three weeks.",
-          "track": "3.5"
-        },
-        {
-          "unit": 4,
-          "status": "missing",
-          "action": "Retrofit a substantial episode; current food opinions have no show identity/format."
+          "title": "Three people. Three weeks.",
+          "tracks": [
+            "3.5"
+          ]
         },
         {
           "unit": 5,
-          "status": "missing through 5C",
-          "action": "Required before Unit 5 completion; existing shopping recordings do not count as episodes."
+          "lesson": "5B",
+          "title": "Keep or return?",
+          "tracks": [
+            "5.5",
+            "5.6"
+          ]
         }
       ],
-      "qualification": "Actual show audio, meaningful gist/detail listening tasks, title and approved 2B identity; not just a logo or audio badge. Jessica retained as narrator/established host voice, approved cast, varied episode formats.",
-      "evidence": "Current Lessons/*.html checked; all branded occurrences are in 2B/3B and point to existing MP3 files. No learner pages or recordings changed in this policy correction.",
-      "completion_gate": "A unit cannot be deemed complete while its episode is missing. Technical preview and audio totals do not satisfy coverage."
+      "cadence": "Reading / listening / listening / reading / listening; no two-unit gap.",
+      "requirement": "Plan a mix of primary receptive skills; listening-led B must have an actual show episode and gist/detail tasks. Logo-only relabeling or ordinary drills do not count. Preserve A/C language and D writing/speaking."
+    },
+    "lesson_5b_on_air_20261026": {
+      "status": "local HTML/PDF/audio verified; publication pending",
+      "scope": "5B printed pages 43-44; two programme segments replace the former read-aloud and mini-listening",
+      "primary_skill": "listening",
+      "episode": "HORIZONS ON AIR - Keep or return?",
+      "genre": "Original fictional current-product reviews in a Lucy-hosted discussion, then three listener calls. No completed purchases forced into present simple.",
+      "sequence": "Shopping vocabulary model; gist listening; detailed second listen; short exact source quotes and discovery; clarification; full-background fit comparison; new listener decisions and reasons; independent message for the show.",
+      "episode_format": "Lucy with Mina and Tess, natural greeting/reactions, a plausible beach-bag distractor, current keep/return decisions, listener handover, three callers, closing. Full transcript only in teacher/audio sources.",
+      "show_identity": "Approved 2B crimson banner, upright white title, black HORIZONS/white ON AIR badge and rounded white waveform. Familiar identity, new shopping/call-in format.",
+      "voices": "Lucy/Jessica, Mina/Amy and Tess/Adeline retain their identities. Ben/Mark Casual, Sofia/Juniper, Omar/Jarnathan use approved pool. Jessica retains every label and narration.",
+      "audio": {
+        "tracks": [
+          "5.5",
+          "5.6"
+        ],
+        "durations_seconds": [
+          127.0,
+          74.04
+        ],
+        "model": "eleven_v3",
+        "stability": 0.5,
+        "final_master_speech_parity": true,
+        "transcription_alias": "Sofia/Sophia homophone spelling in 5.6 only",
+        "events": "Expected short chimes; no detected throat-clearing/cough.",
+        "separate_original_ident": true,
+        "no_music_under_answer_information": true,
+        "forbidden_tag_preflight": true,
+        "all_decoded": true,
+        "subjective_listening_review": false,
+        "track_5_4_unchanged": true,
+        "browser_audio_controls": 4,
+        "browser_play_pause_passed": true
+      },
+      "design": {
+        "single_numbered_lane": true,
+        "ordinary_type_pt": 9.5,
+        "instructions_pt": 8.9,
+        "canonical_pink_grammar_and_crimson_emphasis": true,
+        "normal_weight_italic_choices": true,
+        "minimum_activity_bottom_clearance_px": 58.390625,
+        "standalone_matches_compiled": true,
+        "continuation_image": "Original 144 x 72mm full-background two-jacket fit comparison",
+        "source_feature": "Larger guest photographs and item labels, not a printed customer-review transcript",
+        "comparison": "Actual saved PDF inspected beside 4R, 5A and 5C and on whole-book contact sheet."
+      },
+      "saved_pdf": {
+        "pages": 42,
+        "all_a4": true,
+        "printed_pages": [
+          5,
+          46
+        ],
+        "changed_printed_pages": [
+          43,
+          44
+        ],
+        "other_40_pages_text_and_decoded_drawing_streams_identical": true,
+        "changed_pages_match_direct_export_pixels": true,
+        "all_new_learner_word_tokens_present": true,
+        "other_40_compiled_html_pages_identical": true,
+        "all_other_20_masters_and_keys_preserved": true,
+        "all_image_binaries_preserved": true,
+        "other_43_mp3s_including_5c_preserved": true,
+        "pdf_sha256": "5bd39e86d9e9c50374b32a32ccadbbe1fd6bb7167f4063803ee924503d977dae",
+        "pdf_bytes": 26180350,
+        "method": "Untouched 40 PDF pages copied as objects; only native Windows 5B export replaces printed 43-44. Export-only 240dpi media, no saved-PDF font/image rewriting or aggressive resource deduplication."
+      },
+      "preservation": "All other 40 PDF pages and compiled fragments, 20 other masters/keys, all image binaries and 43 other lesson MP3s (including 5C and 5.4) retain prior bytes/streams.",
+      "reversibility": "Exact before copies, all-file hashes, original replaced audio, before outputs and guarded rollback journal in work/5b-on-air."
     }
   },
   "pending": [
-    {
-      "id": "horizons-on-air-coverage",
-      "scope": "Units 1 and 4; Unit 5 before completion; all future units",
-      "action": "Produce substantive episodes for missing units and verify show format, title, track, gist/detail tasks, audio and 2B identity; do not satisfy coverage by relabeling drills/read-alouds."
-    },
     {
       "id": "visual-fatigue",
       "scope": "Unit 1 and Unit 2 lessons; final whole-book reassessment",
@@ -2493,9 +2559,9 @@
         "Student's Book.html"
       ],
       "fingerprint": {
-        "files": 423,
-        "bytes": 450092168,
-        "sha256": "a36b64879272fb2911381cce53e9212486d5f905144bd6ee1a6ae902f14bcadb"
+        "files": 426,
+        "bytes": 452435193,
+        "sha256": "e24a4e8f617f783dd0ce84ce6abd39426840c57acd5da45f34a2a7535cdc4e5e"
       }
     },
     "shared_rendering": {
@@ -2505,8 +2571,8 @@
       "exclude_markdown": true,
       "fingerprint": {
         "files": 12,
-        "bytes": 56673,
-        "sha256": "6a20ae8b03192ac7389753b340a462f2461129acbdded31635ecdc886df7c01c"
+        "bytes": 57736,
+        "sha256": "95ffc6a2755296066fe54e1da3c53734f6006a2b577f9e56d6a30d43911863ad"
       }
     },
     "saved_pdf": {
@@ -2515,8 +2581,8 @@
       ],
       "fingerprint": {
         "files": 1,
-        "bytes": 26067658,
-        "sha256": "873670b10ffbbcf6a204bce1d79b3b8801f1ac220dd36890131f5fbbbe638a03"
+        "bytes": 26180350,
+        "sha256": "64165f2130242ceeeafc3ef5d33264beea648451886b72b998c9ad6893ab0e0e"
       }
     },
     "audit_criteria": {
@@ -2528,12 +2594,63 @@
       ],
       "fingerprint": {
         "files": 4,
-        "bytes": 117642,
-        "sha256": "6aeb9772837e25be94f918f82d31d238ef1468cf809e050899ca749f810459b3"
+        "bytes": 117867,
+        "sha256": "0a0e5a03fe79b2c693311edd6799d7aae24ff57e4278ed4e79e1ca7a09c23b60"
       }
     }
   },
   "content_baseline_commit": "2f404b547b7da07be81a0622a78591d3299c402a",
-  "current_revision": "New 5C language spread, seven activities, five licensed stock photographs and three checked Eleven v3 tracks. Printed pages 45-46 fit; original 40 pages preserved. Local and live source/PDF/media verified. Final whole-book release and unresolved backmatter remain pending. Author clarified mandatory Horizons on Air in every unit: current coverage is 2B/3B only; Units 1, 4 and 5 are explicitly incomplete against this requirement.",
-  "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope. units_3_4_reviews_visual_variety_20261025 supersedes earlier composition, color and geometry evidence for printed pages 21-40, including review_composition_20261025, review_3_4_20261025, unit_3_creative_revision and unit_4_visual_variety; earlier learning and audio evidence keeps its original scope."
+  "current_revision": "5B rebuilt as Horizons on Air - Keep or return?, a listening-led episode plus listener calls. Two newly produced masters include Lucy/Jessica, retained guest voices and a separate original ident. Reading/listening mix corrected to R/L/L/R/L through Unit 5; blanket every-unit requirement superseded. Local checks complete; publication pending. Final whole-book release and backmatter remain pending.",
+  "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope. units_3_4_reviews_visual_variety_20261025 supersedes earlier composition, color and geometry evidence for printed pages 21-40, including review_composition_20261025, review_3_4_20261025, unit_3_creative_revision and unit_4_visual_variety; earlier learning and audio evidence keeps its original scope. lesson_5b_on_air_20261026 supersedes prior 5B reading/source/presentation and 5.5/5.6 records only. The 26 October every-unit show mandate is superseded by planned B-skill balance and no two-unit show gap.",
+  "receptive_skill_plan": {
+    "policy": "B lessons provide a planned mix of reading-led and listening-led units; Horizons on Air is not required in every unit. Avoid two consecutive units without the show. Do not impose rigid alternation; 2B and 3B are both listening-led. Declare primary skill and source genre before authoring.",
+    "units": [
+      {
+        "unit": 1,
+        "lesson": "1B",
+        "primary_skill": "reading",
+        "genre": "Occupation profiles and model conversations, with supporting audio",
+        "episode": null
+      },
+      {
+        "unit": 2,
+        "lesson": "2B",
+        "primary_skill": "listening",
+        "genre": "Horizons on Air street interviews",
+        "episode": "Bus or car?",
+        "tracks": [
+          "2.3"
+        ]
+      },
+      {
+        "unit": 3,
+        "lesson": "3B",
+        "primary_skill": "listening",
+        "genre": "Horizons on Air guest interviews",
+        "episode": "Three people. Three weeks.",
+        "tracks": [
+          "3.5"
+        ]
+      },
+      {
+        "unit": 4,
+        "lesson": "4B",
+        "primary_skill": "reading",
+        "genre": "Food opinions and comparison",
+        "episode": null
+      },
+      {
+        "unit": 5,
+        "lesson": "5B",
+        "primary_skill": "listening",
+        "genre": "Horizons on Air shopping reviews and listener calls",
+        "episode": "Keep or return?",
+        "tracks": [
+          "5.5",
+          "5.6"
+        ]
+      }
+    ],
+    "next_unit_rule": "Choose the next B skill and source genre before drafting; check the preceding units and show cadence. A read-aloud is not evidence of a listening-led lesson."
+  }
 }

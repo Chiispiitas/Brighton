@@ -1,0 +1,20 @@
+{
+  "provider": "ElevenLabs sound effects",
+  "request_id": null,
+  "request": {
+    "text": "An original short warm radio programme ident: three bright clean marimba-like notes, a soft rounded bass pulse and a gentle airy transition, confident friendly adult educational podcast. A compact complete sonic logo with a clean ending. Instrumental only, absolutely no speech, singing, words or crowd sounds. No imitation of any existing broadcast brand.",
+    "duration_seconds": 2.5,
+    "prompt_influence": 0.5,
+    "model_id": "eleven_text_to_sound_v2",
+    "loop": false
+  },
+  "sha256": "973cf4a23b0b2387cc1548189791bdcf45c59ecd3ccc21281f2e8eed66d2b789",
+  "original": true,
+  "separate_from_speech": true,
+  "speech_words_detected": 0,
+  "mix_lufs": -24,
+  "role": "Original short radio ident in 5B intros/outros; separate from speech, no music under answer information.",
+  "published_stem": "Production/Horizons-on-air-ident-v1.mp3",
+  "published_stem_sha256": "a577b82950bf8969553bca62f8e357a4ecfb762d2948deb20f1b78ca8a02b1b8",
+  "api_reference": "https://elevenlabs.io/docs/api-reference/text-to-sound-effects/convert"
+}

@@ -1,5 +1,4 @@
-/* 5B: two shopping reviews, not another magazine cover. Saturated indigo
-   is confined to review-site identity; ordinary exercises stay on open paper. */
+/* 5B: Horizons on Air. Familiar show identity, guest evidence, listening first. */
 .l5b-page { --hz-unit:var(--hz-unit-1); --hz-unit-dark:#8f123f; --hz-unit-soft:#f8e6ee; font-size:9.5pt; }
 .l5b-page .hz-page-stack { gap:2mm; }
 .l5b-page .hz-lesson-header { padding-bottom:3mm; }
@@ -15,22 +14,6 @@
 .l5b-action-words > span { display:flex; align-items:baseline; gap:1.5mm; }
 .l5b-action-words b { color:var(--hz-unit-dark); font-weight:650; font-size:8.5pt; }
 .l5b-letter { display:inline-block; width:6mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
-.l5b-reviews { border:.3mm solid #cbc6dd; background:#fff; }
-.l5b-review-title { display:flex; justify-content:space-between; gap:5mm; align-items:center; background:#4f3f80; color:#fff; padding:2.5mm 3mm; }
-.l5b-review-title p { margin:0 0 1mm; font-size:7pt; font-weight:650; letter-spacing:.12em; }
-.l5b-review-title h2 { margin:0; font:650 21pt/1.12 var(--hz-font-sans); letter-spacing:-.03em; }
-.l5b-review-count { border-left:.3mm solid #b8afd0; padding-left:3mm; font-size:8pt; }
-.l5b-review { display:grid; grid-template-columns:23mm minmax(0,1fr); gap:4mm; padding:3mm; }
-.l5b-review + .l5b-review { border-top:.3mm solid #e0dce8; background:#f7f6fa; }
-.l5b-customer-photo { height:30mm; width:23mm; background-repeat:no-repeat; }
-.l5b-review--mina .l5b-customer-photo { background-image:url('../Images/5B/Shopping-actions-v1.png'); background-size:400% auto; background-position:66.66667% 0; }
-.l5b-review--tess .l5b-customer-photo { background-image:url('../Images/5B/Two-jacket-fits-v1.png'); background-size:auto 100%; background-position:0 0; }
-.l5b-review-copy header { display:flex; align-items:baseline; justify-content:space-between; gap:3mm; margin-bottom:2mm; }
-.l5b-review-copy h3 { margin:0; font-size:12pt; color:#4f3f80; font-weight:700; }
-.l5b-stars { color:#77452e; font-size:11pt; letter-spacing:.05em; }
-.l5b-stars > span { color:#8a828c; }
-.l5b-review-copy p { margin:0; font-size:11.5pt; line-height:1.45; }
-.l5b-review-copy strong { color:var(--hz-unit-dark); font-weight:650; }
 .l5b-list { list-style:none; padding:0; margin:0; counter-reset:item; }
 .l5b-list li { position:relative; padding-left:4.5mm; counter-increment:item; line-height:1.45; }
 .l5b-list li::before { content:counter(item); position:absolute; left:0; top:0; color:var(--hz-unit-dark); font-weight:650; font-size:8.5pt; }
@@ -52,17 +35,40 @@
 .l5b-fit-choices li+li { margin-top:0; }
 .l5b-listening { width:100%; table-layout:fixed; border-collapse:collapse; margin-top:2mm; }
 .l5b-listening th { font-weight:650; text-align:left; }
-.l5b-listening thead th { color:#4f3f80; border-bottom:.5mm solid #8974b4; padding:1mm 2mm; }
+.l5b-listening thead th { color:#8f123f; border-bottom:.5mm solid #c398aa; padding:1mm 2mm; }
 .l5b-listening tbody th,.l5b-listening td { height:7mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); padding:1mm 2mm; }
 .l5b-listening th:first-child { width:25%; }
 .l5b-listening th:nth-child(2) { width:30%; }
 .l5b-listening td { border-left:.25mm solid var(--hz-line); }
-.l5b-your-review { border:.25mm solid #c8c3d3; background:#fff; padding:0 3mm 2mm; }
-.l5b-your-review header { display:flex; align-items:baseline; justify-content:space-between; gap:3mm; padding:1.5mm 0; border-bottom:.25mm solid #d9d3e1; }
-.l5b-your-review h2 { margin:0; font:650 12pt/1.25 var(--hz-font-sans); color:#4f3f80; }
-.l5b-your-review header > span { font-size:9.5pt; }
 .l5b-open-lines > span { display:block; height:7mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
 .l5b-inset { margin-left:calc(var(--hz-exercise-marker-size) + 3mm); }
 .l5b-page .hz-extra-practice { margin-top:2mm; }
 
 .l5b-page .hz-word-bank { display:flex; flex-wrap:wrap; gap:1mm 5mm; color:var(--hz-unit-dark); }
+
+.l5b-show { border-bottom:.4mm solid #b3a69e; background:#f4efeb; }
+.l5b-air-head { display:flex; align-items:center; gap:3mm; padding:3mm; color:#fff; background:var(--hz-unit); }
+.l5b-air-head h2 { flex:1; margin:0; font:700 26pt/1.1 var(--hz-font-sans); letter-spacing:-.025em; white-space:nowrap; }
+.l5b-show-waveform { display:block; flex:none; width:23mm; height:7mm; fill:none; stroke:#fff; stroke-width:2.1; stroke-linecap:round; }
+.l5b-show-brand { display:inline-flex; align-items:stretch; flex-shrink:0; line-height:1; white-space:nowrap; font-style:normal; }
+.l5b-show-brand b { padding:.9mm 1.4mm .8mm; background:#202020; color:#fff; font-size:7.5pt; font-weight:var(--hz-fw-black); letter-spacing:.07em; }
+.l5b-show-brand em { padding:.9mm 1.35mm .8mm; background:#fff; color:var(--hz-unit-dark); font-size:7.5pt; font-weight:var(--hz-fw-black); font-style:normal; letter-spacing:.07em; }
+.l5b-onair-intro { padding:2mm 3mm; }
+.l5b-guests { display:grid; grid-template-columns:1fr 1fr; gap:3mm; padding:0 3mm 3mm; }
+.l5b-guest { display:grid; grid-template-columns:39mm minmax(0,1fr); gap:3mm; background:#fff; align-items:center; }
+.l5b-guest--tess { background:#413932; color:#fff; }
+.l5b-guest-photo { height:52mm; width:39mm; background-repeat:no-repeat; }
+.l5b-guest--mina .l5b-guest-photo { background-image:url('../Images/5B/Shopping-actions-v1.png'); background-size:400% auto; background-position:66.66667% 0; }
+.l5b-guest--tess .l5b-guest-photo { background-image:url('../Images/5B/Two-jacket-fits-v1.png'); background-size:auto 100%; background-position:0 0; }
+.l5b-guest-label { font-size:7pt; letter-spacing:.08em; font-weight:650; }
+.l5b-guest h3 { margin:1mm 0 2mm; font:700 18pt/1.1 var(--hz-font-sans); }
+.l5b-guest p { margin:0; font-size:9.5pt; }
+.l5b-gist { margin:2mm 0 0; }
+.l5b-extracts { display:grid; grid-template-columns:1fr 1fr; gap:5mm; border-left:.6mm solid var(--hz-unit); padding-left:2mm; margin-bottom:2mm; }
+.l5b-extracts p { margin:0; }
+.l5b-extracts b,.l5b-extracts strong { color:var(--hz-unit-dark); font-weight:650; }
+.l5b-calls-head { display:flex; align-items:center; justify-content:space-between; gap:3mm; border-bottom:.5mm solid #8f123f; padding-bottom:1.5mm; margin-bottom:2mm; }
+.l5b-calls-head h2 { margin:0; font:650 14pt/1.15 var(--hz-font-sans); color:var(--hz-unit-dark); }
+.l5b-your-message { border-top:.3mm solid #caa5b3; padding-top:2mm; }
+.l5b-your-message h2 { margin:0 0 1mm; font:650 12pt/1.2 var(--hz-font-sans); color:var(--hz-unit-dark); }
+.l5b-your-message p { margin:0 0 1mm; }

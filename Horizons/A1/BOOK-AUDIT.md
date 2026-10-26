@@ -1,6 +1,6 @@
 # Horizons A1 — Book audit
 
-Updated 26 October 2026. **Technical preview verified through 5C; Horizons on Air coverage, visual-fatigue reassessment and final book release pending.**
+Updated 26 October 2026. **Technical preview verified through 5C; visual-fatigue reassessment and final book release pending.**
 
 This is the current audit entry point. [book-audit.json](book-audit.json) holds scoped evidence and historical checks; [CANONICAL-STYLE.md](../Base/design-system/CANONICAL-STYLE.md) governs design. A current snapshot is not final release approval.
 
@@ -11,30 +11,44 @@ This is the current audit entry point. [book-audit.json](book-audit.json) holds 
 | Content | 1A–5C plus Units 1 & 2 and 3 & 4 Reviews: 21 masters |
 | Saved book | 42 A4 pages; printed pages 5–46 |
 | Activity blocks | 148; existing subexercise numbering retained |
-| Audio | 45 MP3 files; new 5C tracks 5.7–5.9 decoded/transcribed |
+| Audio | 45 lesson MP3s + 1 production ident; replacement 5B masters decoded/transcribed |
 | Navigation cues | 24 NEW WORDS badges, 19 Extra Practice footers, 44 Go to references |
 | Concept explanations | 14 revised panels across 11 lessons; 22 total focus panels including retained 4A and new 4B–5C |
 | Unresolved destinations | 44 `page ---` references; intentional until back-of-book pagination |
 
 Counts are inventory, not proof that every cue is correctly placed. Review placement beside the newly introduced content.
 
-## Mandatory Horizons on Air coverage
+## B-skill balance and Horizons on Air cadence
 
-Author requirement, 26 October: **at least one substantial Horizons on Air episode in every unit**. This gate applies even when B is reading-led. A/C remain language, B reading/listening, D writing/speaking; an episode can sit where its actual learning purpose fits. Jessica remains the narrator/established host voice and 2B remains the visual identity reference. Formats, supporting layouts and guests should vary.
+**Author clarification, 26 October:** some B lessons are reading-led and some are listening-led. Horizons on Air is not compulsory in every unit. The earlier blanket every-unit rule and retrofit demands for Units 1/4 were too broad and are superseded. Plan the primary skill and source genre before authoring; avoid two consecutive units without the show. This does not impose rigid alternation: 2B and 3B are both listening-led. Preserve A/C language and D writing/speaking.
 
-| Unit | Current source evidence | Coverage |
+| Unit | Primary B skill | Current source / episode |
 | --- | --- | --- |
-| 1 | No branded episode | **Missing: retrofit required** |
-| 2 | 2B, *Bus or car?*, Track 2.3 | Present |
-| 3 | 3B, *Three people. Three weeks.*, Track 3.5 | Present |
-| 4 | No branded episode; 4B food opinions are not currently a show | **Missing: retrofit required** |
-| 5 | No branded episode through 5C; shopping audio is not currently a show | **Missing: required before unit completion** |
+| 1 | Reading | Occupation profiles with supporting audio; no episode required |
+| 2 | Listening | 2B, *Bus or car?*, Track 2.3 |
+| 3 | Listening | 3B, *Three people. Three weeks.*, Track 3.5 |
+| 4 | Reading | 4B, food opinions; no episode required |
+| 5 | Listening | 5B, *Keep or return?*, Tracks 5.5–5.6 |
 
-This inventory checks current lesson sources, not a claim that the missing episodes have been produced. Units 1 and 4 need substantive retrofits, and Unit 5 must acquire an episode before completion. Do not tick this gate by relabeling a short listening, vocabulary track or source read-aloud. A qualifying episode needs a title, recognizable show feature, actual host/guest audio and meaningful gist/detail listening work. Recheck source, recording, script, tasks/key, approved visual identity and spacing after changes. Previous technical/layout passes do not imply that these units meet the new coverage requirement.
+Before declaring a B lesson complete, verify its actual receptive spine. Reading-led means useful reading work on an appropriate source; recording a text does not make it listening-led. Listening-led means a substantial actual show, its approved identity/title, retained Jessica/Lucy continuity and meaningful gist/detail listening tasks. Adding a logo to short drills or a read-aloud does not qualify. Check the preceding units and record the next B skill before drafting so Horizons on Air cannot disappear through successive reading choices. The old gap is resolved by rebuilding 5B; source and full audio were changed, not merely their label.
 
-Run `python Horizons/Base/build/check-on-air-coverage.py`. A missing episode returns a nonzero result; a structural pass still needs editorial/audio verification.
+Run `python Horizons/Base/build/check-on-air-coverage.py`. It checks the declared skill mix, linked show evidence and two-unit gaps, then requires separate editorial/audio judgement.
 
 ## Verified evidence and its limits
+
+## 5B Horizons on Air rebuild, 26 October
+
+**Keep or return?** rebuilds printed pages **43–44** as a listening-led B lesson while retaining the online-shopping syllabus, pay / try on / keep / return and adjective too/enough. Lucy hosts Mina and Tess in a natural discussion of present product qualities and current decisions. A beach-bag suggestion is a supported distractor, not Mina's purpose. Three new listener calls provide independent keep/return decisions and reasons. Gist and detail tasks now depend on listening; only two brief exact quotes are printed for discovery. The complete teacher transcript is in `Audio scripts/5B.txt`. The final task is an independent message for the show; Extra Practice asks useful questions about an online item.
+
+The approved 2B show identity is restored in full: crimson banner, white upright episode title, black HORIZONS/white ON AIR badge and white rounded waveform. Larger guest photo cards replace the indigo review website. The continuation retains the substantial full-background two-jacket comparison, adds branded listener notes and offers open message space. Seven numbered activities stay in one lane; canonical task/concept fonts, grammar shell, crimson emphasis, NEW WORDS, two references and meaningful Extra Practice remain. Original image binaries and 5.4 vocabulary audio are unchanged.
+
+**Verified locally:** both pages fit without text overflow, with **58.4px** minimum activity-bottom clearance; functional tasks/concepts are 9.5pt and instructions 8.9pt. Standalone/compiled geometry matches, source/background photos load and all four HTML audio buttons are available (5.5 repeats for detail listening). Tracks **5.5 (127.0s)** and **5.6 (74.04s)** are new Eleven v3 programme masters, retaining Lucy/Jessica, Mina/Amy, Tess/Adeline and the approved listener pool. An original separately generated ident follows each spoken track label and closes each segment, at a quieter level and never over answer-bearing speech. Speech-only imports contain no production instructions or forbidden clarity tag. Both dry voices and final masters decode and match normalized speech; Sofia/Sophia is an explicit homophone transcription alias. Expected chime events are tagged; no throat-clearing event is detected. No subjective listening review is claimed.
+
+Saved-PDF pages were inspected with Poppler, beside 4R/5A/5C and in the complete book contact sheet. Only 43–44 change; all other 40 saved pages retain text/drawing streams, and changed pages match native-export pixels with every learner word token. Other 20 masters/keys, all image binaries and 43 other lesson MP3s, including 5C, are preserved. The book remains 42 A4 pages, printed 5–46. Earlier 5B reading-layout/audio evidence is historical where superseded; the unchanged vocabulary recording and image provenance retain their evidence.
+
+Local checks complete; publication verification pending.
+
+Exact before sources, hashes, original replaced MP3s, prior outputs, production stems, comparison renders and guarded rollback journal are in `work/5b-on-air`. This is a scoped 5B pass, not final whole-book release approval.
 
 ## 5C production, 26 October
 
@@ -115,7 +129,6 @@ Older 4B/4C/4D presentation checks and the prior Units 2/4 revision are historic
 
 ## Remaining work
 
-- [ ] Produce proper Horizons on Air episodes for Units 1 and 4; include one in Unit 5 before completion. Update the unit/lesson/title/track register and verify actual show audio, listening tasks and approved identity.
 - [ ] Reassess remaining Unit 1/2 lesson treatments, then repeat the final whole-book visual-fatigue comparison. Units 3–4, both paired reviews and 5A have scoped evidence; they do not approve untouched lessons automatically.
 - [ ] Build and paginate the back-of-book material, replace all `page ---` destinations, and verify each link/reference.
 - [ ] Explicitly audit Unit 1 continuation-page imagery against the newer preference. Review, Units 2–3 and 4A–4D have scoped evidence; Unit 1 must not inherit that pass automatically. Count substantial CSS-background photos as imagery; tiny badges do not count.
@@ -130,7 +143,7 @@ Use these for every new or changed spread; they are a checklist, not additional 
 - **Visual fatigue:** compare the proposed spread with the preceding three and the whole unit; record its color relationship, feature-text treatment, image hierarchy and content-specific idea. Repeated blue/green/teal + yellow/gold needs explicit scrutiny. Follow the editorial acceptance gate below.
 - **Readability:** verify the canonical font-size role table across the assembled and standalone pages; integrated source features may retain purposeful typography. Use 9.5pt model phrases/rules, selective crimson target emphasis and the canonical pink grammar shell. Keep inner padding, response space, readable labels and continuation-tab clearance. Circle choices use normal-weight lowercase italics except required grammatical capitals. No redundant gray location captions.
 - **Navigation:** NEW WORDS at new vocabulary input, nearby Vocabulary/Grammar references for newly introduced sets/points, and the expected Extra Practice footer. Confirm actual placement, not just totals.
-- **Recurring feature / unit completion:** every unit needs a substantial Horizons on Air episode. Record lesson, title and track; verify actual show audio, useful listening tasks and the 2B identity. Ordinary audio or a pasted badge does not count. Reading-led B is not an exemption.
+- **B-skill balance / show cadence:** declare reading or listening and the source genre before authoring. Keep a planned mix and no two-unit gap without Horizons on Air. Listening-led B needs an actual show with gist/detail tasks and approved identity; reading-led B needs useful reading work. Read-alouds and pasted logos do not count as show episodes. Check the current unit schedule, not audio totals.
 - **Media:** preserve answer-bearing details and correct crops; verify source/license metadata, native transparency and clean writing space. Narration uses Jessica and the approved voice pool. Never use the `[clearly]` tag. Check scripts, track references, decoding, transcripts and recording hashes when affected.
 - **Print:** check HTML fit and loaded media, then reopen the saved A4 PDF. Inspect full pages and close crops, including lesson-code numerals. Compare unchanged pages and changed-page direct exports. Do not use saved-PDF image/font rewriting or aggressive resource deduplication: this previously removed continuation-tab digits. Optimize print media before browser export while retaining original assets.
 

@@ -251,13 +251,20 @@ Nora retains her existing 2A voice. The post, location and generated scene are f
 
 Nia and Eli are new fictional shop visitors reading a real historical price story; they are not the historical buyers. Retain these exact role IDs on a return. Jessica announces every track and narrates all vocabulary/descriptions. All three tracks use Eleven v3 / Natural stability 0.5 and no forbidden clarity tag. Final decode, exact normalized transcript and audio-event evidence: `../5A-production.json`; no subjective listening review is claimed.
 
-## 5B - Online shopping reviews
+## 5B - Horizons on Air: Keep or return?
 
-- Track 5.4: Jessica (`cgSgspJ2msm6clMCkdW9`), paragraphs 1-2.
-- Track 5.5: Jessica paragraphs 1, 2 and 4; Mina uses Amy (`OZxMHsGaBmV5pjMIDIn0`) in paragraph 3; Tess uses Adeline (`5l5f8iK3YPeGga21rQIX`) in paragraph 5.
-- Track 5.6: Jessica paragraphs 1, 2, 4 and 6. Independent shopper 1 uses Mark Casual (`1SM7GgM6IMuvQlz2BwM3`), paragraph 3; shopper 2 uses Juniper (`aMSt68OGf4xUZAnLpTU8`), paragraph 5; shopper 3 uses Amy (`OZxMHsGaBmV5pjMIDIn0`), paragraph 7. These are independent listening roles, not Mina or Tess.
+- Track 5.4: Jessica, paragraphs 1-2, unchanged vocabulary recording.
+- Track 5.5:
+  - Jessica (`cgSgspJ2msm6clMCkdW9`), paragraphs 1, 2, 5, 7, 11, 13, 15, 17, 20, 22, 25.
+  - Amy (`OZxMHsGaBmV5pjMIDIn0`), paragraphs 3, 6, 8, 10, 12, 19, 23.
+  - Adeline (`5l5f8iK3YPeGga21rQIX`), paragraphs 4, 9, 14, 16, 18, 21, 24.
+- Track 5.6:
+  - Jessica (`cgSgspJ2msm6clMCkdW9`), paragraphs 1, 2, 4, 6, 8, 10, 12, 14.
+  - MarkCasual (`1SM7GgM6IMuvQlz2BwM3`), paragraphs 3, 5.
+  - Juniper (`aMSt68OGf4xUZAnLpTU8`), paragraphs 7, 9.
+  - Jarnathan (`c6SfcYrb2t09NHXiT80T`), paragraphs 11, 13.
 
-All track labels and number cues use Jessica. Mina and Tess are new fictional roles; retain these IDs if they return. Every track uses Eleven v3 / stability 0.5, no forbidden clarity tag and no SSML. Decode, exact normalized transcript and audio-event evidence: `../5B-production.json`. No subjective listening review is claimed.
+Jessica retains Lucy, the established host. Mina/Amy and Tess/Adeline retain their identities. New listener roles: Ben/Mark Casual, Sofia/Juniper, Omar/Jarnathan. All labels/narration use Jessica. Eleven v3 / Natural stability 0.5. Original ident is a separate non-speech stem; it is not a speaker tag or music under assessed speech. Final master parity, chime events, source hashes and explicit Sofia/Sophia transcription alias: `../5B-production.json`; ident provenance: `../5B-ident-production.json`. No forbidden clarity tag or SSML; no subjective listening review claimed.
 
 ## 5C - Shopping habits and places in town
 

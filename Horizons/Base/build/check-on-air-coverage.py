@@ -1,5 +1,6 @@
-"""Find unit-level show coverage; this structural gate is not an audio review."""
+"""Check planned B skills and show cadence; structural evidence is not an audio review."""
 from pathlib import Path
+import json
 import re
 import sys
 from bs4 import BeautifulSoup
@@ -33,14 +34,28 @@ def main():
     if not units:
         print("No lesson masters found; coverage cannot be verified.")
         return 1
-    for unit, episodes in sorted(units.items()):
+    audit = json.loads((book / "book-audit.json").read_text(encoding="utf-8"))
+    plans = {p["unit"]: p for p in audit.get("receptive_skill_plan", {}).get("units", [])}
+    problems = []
+    active = {u: e for u, e in units.items() if (book / "Lessons" / f"{u}B.html").exists()}
+    for unit, episodes in sorted(active.items()):
         detail = ", ".join(f"{lesson}, Track {track}" for lesson, track in sorted(episodes))
-        print(f"Unit {unit}: {detail or 'MISSING Horizons on Air episode'}")
-    missing = sorted(unit for unit, episodes in units.items() if not episodes)
+        plan = plans.get(unit, {})
+        skill = plan.get("primary_skill", "UNPLANNED")
+        print(f"Unit {unit}: {skill}; {detail or 'no episode (valid for a reading-led unit)'}")
+        if skill not in ["reading", "listening"]:
+            problems.append(f"Unit {unit}: declare B's primary skill before completion")
+        if skill == "listening" and not any(lesson == f"{unit}B" for lesson, _ in episodes):
+            problems.append(f"Unit {unit}: listening-led B has no linked show feature")
+        if unit + 1 in active and not episodes and not active[unit + 1]:
+            problems.append(f"Units {unit}-{unit + 1}: two-unit gap without Horizons on Air")
+    if len(active) >= 3 and len({plans.get(u, {}).get("primary_skill") for u in active}) < 2:
+        problems.append("B programme lacks a planned reading/listening mix")
     print("Structural coverage only: verify episode title, actual show audio and purposeful listening tasks separately.")
-    if missing:
-        print("Unit-completion gate unmet: " + ", ".join(map(str, missing)))
+    if problems:
+        print("Receptive-skill gate unmet: " + "; ".join(problems))
         return 1
+    print("Planned reading/listening mix and Horizons on Air cadence verified.")
     return 0
 
 
