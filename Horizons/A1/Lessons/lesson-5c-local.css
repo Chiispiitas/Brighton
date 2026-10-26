@@ -1,0 +1,63 @@
+/* 5C: an open town-photo mosaic, warm paper shopping notes and a library listening scene.
+   Single numbered lane; internal arrangements serve one exercise at a time. */
+.l5c-page { --hz-unit:var(--hz-unit-1); --hz-unit-dark:#8f123f; --hz-unit-soft:#f8e6ee; font-size:9.5pt; }
+.l5c-page .hz-page-stack { gap:2mm; }
+.l5c-page .hz-lesson-header { padding-bottom:3mm; }
+.l5c-page .hz-exercises { gap:1mm; }
+.l5c-page .hz-exercise { padding:1.5mm 0 2mm; }
+.l5c-page .hz-exercise__body { margin-top:2mm; }
+.l5c-page .hz-go-to { margin-block:.5mm 1mm; }
+.l5c-places { display:grid; grid-template-columns:1fr 1fr; gap:2mm; }
+.l5c-places figure { margin:0; position:relative; }
+.l5c-places img { display:block; width:100%; height:44mm; object-fit:cover; }
+.l5c-places figure:nth-child(2) img { object-position:50% 65%; }
+.l5c-places figure:nth-child(3) img { object-position:50% 0%; }
+.l5c-places figcaption { position:absolute; top:1.2mm; left:1.2mm; background:#fff; color:var(--hz-unit-dark); padding:.2mm 1.2mm; font-weight:650; font-size:8.5pt; }
+.l5c-place-words { display:grid; grid-template-columns:1fr 1fr; gap:1.4mm 5mm; margin-top:2mm; }
+.l5c-place-words b { color:var(--hz-unit-dark); margin-right:1.5mm; }
+.l5c-letter { display:inline-block; width:7mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
+.l5c-notes { margin:0; background:#fff9ef; border-block:.3mm solid #d4bdab; padding:3mm 5mm 3mm 8mm; position:relative; }
+.l5c-notes::before { content:''; position:absolute; inset:0 auto 0 5mm; border-left:.3mm solid #cc8b72; }
+.l5c-notes header { display:flex; flex-direction:row-reverse; justify-content:space-between; align-items:center; gap:5mm; border-bottom:.5mm solid #b64a30; padding-bottom:2mm; margin-bottom:2mm; }
+.l5c-notes header > span { color:#8c3624; font-size:7pt; letter-spacing:.075em; font-weight:650; max-width:43mm; }
+.l5c-notes h2 { margin:0; color:#9e3925; font:700 22pt/1.1 Georgia,serif; }
+.l5c-notes dl { margin:0; font-size:10pt; line-height:1.35; }
+.l5c-notes dl > div+div { margin-top:2mm; }
+.l5c-notes dt { font-weight:650; }
+.l5c-notes dd { margin:.7mm 0 0; }
+.l5c-notes strong { color:#8f123f; font-weight:650; }
+.l5c-list { list-style:none; padding:0; margin:0; counter-reset:item; }
+.l5c-list li { position:relative; padding-left:4.5mm; counter-increment:item; line-height:1.45; }
+.l5c-list li::before { content:counter(item); position:absolute; left:0; top:0; color:var(--hz-unit-dark); font-weight:650; }
+.l5c-list li+li { margin-top:1.5mm; }
+.l5c-gap { display:inline-block; width:27mm; height:4mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); vertical-align:baseline; }
+.l5c-subhead { margin:0 0 1.5mm; color:#8f123f; font-weight:650; }
+.l5c-discovery { display:grid; grid-template-columns:1fr 1fr; gap:5mm; }
+.l5c-continuation-content { padding-top:7mm; }
+.l5c-page--2 .hz-exercises { padding-top:0!important; }
+.l5c-question-model { padding-bottom:2mm; border-bottom:.3mm solid #d8aabd; margin-bottom:2mm; }
+.l5c-frequency { margin-bottom:2mm; table-layout:fixed; }
+.l5c-every { padding-top:2mm; border-top:.3mm solid #d8aabd; }
+.l5c-practice { display:grid; grid-template-columns:1fr 1fr; gap:1.7mm 4mm; }
+.l5c-practice li+li { margin-top:0; }
+.l5c-listening { display:grid; grid-template-columns:66mm minmax(0,1fr); gap:5mm; align-items:stretch; }
+.l5c-listening figure { position:relative; margin:0; }
+.l5c-listening img { display:block; width:66mm; height:64mm; object-fit:cover; object-position:50% 37%; }
+.l5c-listening figcaption { position:absolute; bottom:0; left:0; right:0; background:#443a32; padding:1.5mm 2mm; color:#fff; font-size:8pt; }
+.l5c-listening-notes { border-top:.8mm solid #bc4e31; padding-top:2mm; }
+.l5c-listening h2 { margin:0 0 2mm; font:650 16pt/1.15 var(--hz-font-sans); color:#9e3925; }
+.l5c-listening p { margin:0 0 2mm; }
+.l5c-listening-table { width:100%; border-collapse:collapse; }
+.l5c-listening-table th { text-align:left; font-weight:400; width:48%; padding:2mm 2mm 2mm 0; }
+.l5c-listening-table td { width:52%; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
+.l5c-interview p { margin:0 0 2mm; }
+.l5c-interview table { width:100%; border-collapse:collapse; }
+.l5c-interview th { text-align:left; font-weight:400; width:38%; }
+.l5c-interview thead th { color:#8f123f; font-weight:650; padding-bottom:1mm; border-bottom:.4mm solid #c99aab; }
+.l5c-interview tbody th,.l5c-interview td { height:6mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
+.l5c-interview .l5c-never { margin:2mm 0 0; }
+.l5c-model { color:var(--hz-unit-dark); font-style:italic; }
+.l5c-report p { margin:0 0 1mm; }
+.l5c-report > span { display:block; height:7mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
+.l5c-inset { margin-left:calc(var(--hz-exercise-marker-size) + 3mm); }
+.l5c-page .hz-extra-practice { margin-top:3mm; }

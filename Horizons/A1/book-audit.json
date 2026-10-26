@@ -2,7 +2,7 @@
   "schema_version": 1,
   "updated": "2026-10-26",
   "status": "technical preview verified; visual-fatigue reassessment and final book release pending",
-  "scope": "A1 through 5B, including Units 1 & 2 and 3 & 4 Reviews",
+  "scope": "A1 through 5C, including Units 1 & 2 and 3 & 4 Reviews",
   "readability_comparison_baseline": "e8d6ddd69f62caffab662a93a5a392ebc5bfb131",
   "inventory": {
     "lesson_masters": [
@@ -25,21 +25,22 @@
       "4D",
       "4R",
       "5A",
-      "5B"
+      "5B",
+      "5C"
     ],
-    "pdf_pages": 40,
+    "pdf_pages": 42,
     "printed_pages": [
       5,
-      44
+      46
     ],
-    "activity_blocks": 141,
-    "audio_files": 42,
-    "new_words_badges": 23,
-    "extra_practice_footers": 18,
-    "go_to_references": 42,
-    "page_placeholders": 42,
-    "focus_panels": 21,
-    "html_pages": 40
+    "activity_blocks": 148,
+    "audio_files": 45,
+    "new_words_badges": 24,
+    "extra_practice_footers": 19,
+    "go_to_references": 44,
+    "page_placeholders": 44,
+    "focus_panels": 22,
+    "html_pages": 42
   },
   "checks": {
     "refreshed_during_cleanup": {
@@ -1924,7 +1925,8 @@
         "new_global_visual_pass_claimed": false
       },
       "units_3_4_and_reviews": "Scoped correction verified locally for printed pages 21-40; see units_3_4_reviews_visual_variety_20261025. Unit 1 and Unit 2 lessons remain outside this new visual-fatigue pass.",
-      "lesson_5b": "Scoped new 5B composition checked beside preceding three spreads and whole-book contact sheet; no approval automatically extends to Unit 1/2."
+      "lesson_5b": "Scoped new 5B composition checked beside preceding three spreads and whole-book contact sheet; no approval automatically extends to Unit 1/2.",
+      "lesson_5c": "Scoped new 5C composition checked beside preceding three spreads and whole-book contact sheet; no approval automatically extends to pending Unit 1/2 reassessment."
     },
     "lesson_5a_visual_redesign_20261025": {
       "date": "2026-10-25",
@@ -2295,6 +2297,88 @@
         "print_audio_controls_hidden": true,
         "source_commit": "09f39eb"
       }
+    },
+    "lesson_5c_20261026": {
+      "scope": "5C, printed pages 45-46",
+      "status": "local HTML, audio and saved PDF verified; live publication pending",
+      "syllabus": "C language: How often do you shop? Frequency expressions, places in town, minimalist living and spending habits.",
+      "learning_sequence": "Photo matching and vocabulary model; gist source reading/listening; retrieval and meaning discovery; aligned clarification; controlled form choices; independent listening; personal interview and third-person report.",
+      "new_words": [
+        "supermarket",
+        "market",
+        "clothes store",
+        "library"
+      ],
+      "grammar": [
+        "How often do you / does she",
+        "once / twice / three times + a + period",
+        "every + singular noun, no a"
+      ],
+      "language_ceiling": "Genuinely regular habits and preferences in present simple, no completed shopping narrative. Four town places only; broader town/mall set remains for Unit 6. Minimalism is expressed with Do I need them? and library use; no hidden borrowing or financial terminology.",
+      "creative_acceptance": {
+        "color": "Warm paper/rust/charcoal source frame, crimson functional system and canonical pink grammar shell; no automatic cool masthead plus yellow accent.",
+        "text": "Shopping-notes Q/A with a source-specific rust serif heading and integrated 10pt text; normal tasks/concepts 9.5pt, instructions 8.9pt.",
+        "images": "Four large town photos in an internal mosaic, with intact heads and meaningful backgrounds. Different substantial library scene on continuation beside listening notes; no distortion or irrelevant decorative cutout.",
+        "neighbors": "Actual saved-PDF contact sheets compared with 4R cinema programme, 5A warm clothing editorial and 5B indigo review site, plus whole-book rhythm. Notes and mosaic differ from preceding action strip, review entries, phone and slogan formats.",
+        "preserved_conventions": "One numbered lane, black lesson title, crimson navigation/numerals, normal-weight italic options, NEW WORDS, two Go to refs, meaningful Extra Practice. Internal question groups and photo/listening arrangement belong to single exercises, not sibling page columns."
+      },
+      "geometry": {
+        "no_text_overflow": true,
+        "minimum_activity_bottom_clearance_px": 50.671875,
+        "standalone_matches_assembled": true,
+        "loaded_images": true,
+        "ordinary_tasks_and_concepts_pt": 9.5,
+        "instructions_pt": 8.9,
+        "integrated_source_pt": 10,
+        "source_serif_heading_pt": 22,
+        "continuation_photo_mm": [
+          66,
+          64
+        ]
+      },
+      "audio": {
+        "tracks": [
+          "5.7",
+          "5.8",
+          "5.9"
+        ],
+        "narrator": "Jessica",
+        "model": "eleven_v3",
+        "approved_roles": "Mara/Juniper; interviewer/Jarnathan; Noah/Mark Casual; all labels, vocabulary and Noah questions/Jessica.",
+        "all_decoded": true,
+        "exact_normalized_transcripts": true,
+        "audio_events_checked": true,
+        "detected_events": [],
+        "subjective_listening_review": false,
+        "forbidden_tag_preflight": true,
+        "browser_buttons_play_pause": true,
+        "total_seconds": 69.07
+      },
+      "saved_pdf": {
+        "pages": 42,
+        "all_a4": true,
+        "printed_pages": [
+          5,
+          46
+        ],
+        "original_40_pages_text_and_decoded_drawing_streams_identical": true,
+        "new_pages_match_direct_export_pixels": true,
+        "all_new_learner_word_tokens_present": true,
+        "original_40_compiled_html_pages_identical": true,
+        "all_original_20_masters_keys_and_image_binaries_preserved": true,
+        "all_original_42_mp3s_preserved": true,
+        "pdf_sha256": "3e3e0549cfb6f64d0b095cd179339da8b54104619140cd4d7d5f8ebf58261b3c",
+        "pdf_bytes": 26067658,
+        "method": "Original 40 pages copied as PDF objects; native Windows 5C export appended. Export-only 240dpi media; no font/image rewriting or aggressive resource deduplication."
+      },
+      "evidence_directory": "work/lesson5c",
+      "visual_inspection": [
+        "Final Poppler pages 45 and 46",
+        "Preceding three-spread comparison",
+        "Whole-book contact sheet"
+      ],
+      "preservation": "All previous 40 PDF pages retain text and decoded drawing streams; compiled page fragments are identical. Original 20 masters, keys, image files and 42 MP3s retain bytes.",
+      "reversibility": "Exact before copies, all-file hash ledger and guarded rollback journal outside repo."
     }
   },
   "pending": [
@@ -2345,9 +2429,9 @@
         "Student's Book.html"
       ],
       "fingerprint": {
-        "files": 406,
-        "bytes": 443973340,
-        "sha256": "764e47ab1cfce8bcd02101c29813eb277038239f56a3f242bd42f712ae2c1fd7"
+        "files": 423,
+        "bytes": 450092168,
+        "sha256": "a36b64879272fb2911381cce53e9212486d5f905144bd6ee1a6ae902f14bcadb"
       }
     },
     "shared_rendering": {
@@ -2367,8 +2451,8 @@
       ],
       "fingerprint": {
         "files": 1,
-        "bytes": 24660933,
-        "sha256": "bedafef476f4c07a656542f1659b324b80c640956dc06d02fd95895aae524d1c"
+        "bytes": 26067658,
+        "sha256": "873670b10ffbbcf6a204bce1d79b3b8801f1ac220dd36890131f5fbbbe638a03"
       }
     },
     "audit_criteria": {
@@ -2386,6 +2470,6 @@
     }
   },
   "content_baseline_commit": "2f404b547b7da07be81a0622a78591d3299c402a",
-  "current_revision": "5B tense/genre correction: descriptive current reviews replace unnatural present-simple completed purchases; tracks 5.5 and 5.6 regenerated and checked. Local source, audio and saved PDF verified; canonical live HTML/PDF/replacement audio hashes match and browser playback passes. All other page content and recordings retained.",
+  "current_revision": "New 5C language spread, seven activities, five licensed stock photographs and three checked Eleven v3 tracks. Printed pages 45-46 fit; original 40 pages preserved. Local verification complete; publication pending. Final whole-book release and unresolved backmatter remain pending.",
   "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope. units_3_4_reviews_visual_variety_20261025 supersedes earlier composition, color and geometry evidence for printed pages 21-40, including review_composition_20261025, review_3_4_20261025, unit_3_creative_revision and unit_4_visual_variety; earlier learning and audio evidence keeps its original scope."
 }

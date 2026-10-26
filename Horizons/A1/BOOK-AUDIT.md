@@ -1,6 +1,6 @@
 # Horizons A1 — Book audit
 
-Updated 26 October 2026. **Technical preview verified through 5B; visual-fatigue reassessment and final book release pending.**
+Updated 26 October 2026. **Technical preview verified through 5C; visual-fatigue reassessment and final book release pending.**
 
 This is the current audit entry point. [book-audit.json](book-audit.json) holds scoped evidence and historical checks; [CANONICAL-STYLE.md](../Base/design-system/CANONICAL-STYLE.md) governs design. A current snapshot is not final release approval.
 
@@ -8,25 +8,37 @@ This is the current audit entry point. [book-audit.json](book-audit.json) holds 
 
 | Item | Current state |
 | --- | --- |
-| Content | 1A–5B plus Units 1 & 2 and 3 & 4 Reviews: 20 masters |
-| Saved book | 40 A4 pages; printed pages 5–44 |
-| Activity blocks | 141; existing subexercise numbering retained |
-| Audio | 42 MP3 files; new 5B tracks 5.4–5.6 decoded/transcribed |
-| Navigation cues | 23 NEW WORDS badges, 18 Extra Practice footers, 42 Go to references |
-| Concept explanations | 14 revised panels across 11 lessons; 21 total focus panels including retained 4A and new 4B–5B |
-| Unresolved destinations | 42 `page ---` references; intentional until back-of-book pagination |
+| Content | 1A–5C plus Units 1 & 2 and 3 & 4 Reviews: 21 masters |
+| Saved book | 42 A4 pages; printed pages 5–46 |
+| Activity blocks | 148; existing subexercise numbering retained |
+| Audio | 45 MP3 files; new 5C tracks 5.7–5.9 decoded/transcribed |
+| Navigation cues | 24 NEW WORDS badges, 19 Extra Practice footers, 44 Go to references |
+| Concept explanations | 14 revised panels across 11 lessons; 22 total focus panels including retained 4A and new 4B–5C |
+| Unresolved destinations | 44 `page ---` references; intentional until back-of-book pagination |
 
 Counts are inventory, not proof that every cue is correctly placed. Review placement beside the newly introduced content.
 
 ## Verified evidence and its limits
 
+## 5C production, 26 October
+
+**How often do you shop?**, printed pages **45–46**, retains the C language role: **How often…?**, **once / twice / three times**, **every**, and supermarket / market / clothes store / library. An original interview about genuinely regular shopping habits supplies evidence before discovery and clarification. The source does not force completed purchases into present simple. Minimalist choices appear naturally as “Do I need them?” and using the library instead of buying books. A new listening speaker, personal partner interview and independent report move beyond copying source answers. Key and language ceiling: `Answer keys/5C.md`, `Wordlists/5C.md`.
+
+The opening uses a four-photo town mosaic, with larger crops preserving people’s heads. A warm paper shopping-notes feature has a rust serif source heading rather than another cool masthead, yellow accent, phone or magazine slogan. Its source text is 10pt; all functional task/concept type is 9.5pt and instructions 8.9pt. The continuation has a different substantial 66 × 64mm public-library photograph alongside listening notes. Backgrounds remain meaningful, ordinary practice has open paper and response space, and the familiar pink/crimson grammar shell remains consistent. All five real photographs have source/creator/license/hash records in `Images/5C/asset-manifest.json`; pictured people do not portray the fictional speakers.
+
+**Verified:** seven activities in one numbered lane, NEW WORDS, two nearby references, meaningful Extra Practice, no text overflow, canonical functional fonts and crimson grammar emphasis. Minimum activity-bottom clearance: **50.7px**. Standalone and compiled page geometry match. Three browser audio controls play/pause; print hides their buttons. Tracks **5.7–5.9** use Jessica narration and the approved cast; all decode, match normalized scripts exactly and have no detected audio events. No forbidden clarity tag or SSML; no subjective listening review claimed. Final saved-PDF pages were inspected with Poppler, alongside preceding three spreads and the whole-book contact sheet. The 42-page A4 book retains all original 40 pages’ text/drawing streams and compiled page fragments. New pages match native-export pixels and retain every learner word token. All previous masters, keys, photographs and 42 MP3s are preserved.
+
+Local checks complete; live publication verification pending.
+
+Before copies, hashes, original stock downloads, scripts, visual comparisons, production checks and guarded rollback journal: `work/lesson5c` outside the repository. This is a scoped lesson check; unresolved backmatter and final whole-book release remain pending.
+
 ## 5B tense and source-genre correction, 26 October
-+
-+The original activity 2 wrongly forced completed purchase events into present simple. It now contains natural product descriptions, current opinions and genuinely habitual use: Mina’s bag is suitable for work and Tess’s jacket is too big. Activity 3 item 4 now retrieves Tess’s clothing preference; the answer sequence is unchanged. The source no longer pretends to narrate a completed transaction. The methodology now explicitly requires tense and genre to agree: use appropriate past forms for completed narratives, or choose a natural source genre within the taught language ceiling.
-+
-+Tracks **5.5 and 5.6** were regenerated with the same approved voices and Jessica narration. In 5.6, shoppers answer “Keep or return?” with direct decisions. Both new files decode, match their normalized scripts exactly and have no detected throat-clearing event; no subjective listening pass is claimed. All other tracks, images and controlled answers remain unchanged. Both pages fit and match the assembled source; functional type remains unchanged. Final Poppler pages 43–44 were inspected. Only printed page 43 changes visually: all other 39 PDF pages retain matching text and drawing streams, and both 5B pages match direct browser-export pixels. Published source commit `09f39eb`: canonical HTML and PDF match the checked files; replacement tracks 5.5/5.6 match local SHA-256, and the live browser matches both page geometries and plays all three 5B tracks. This check supersedes the earlier 5B source-language/audio assessment; image and typography evidence retains its scope. Exact before copies and recordings: `work/5b-tense-fix`.
-+
-+## 5B production, 26 October
+
+The original activity 2 wrongly forced completed purchase events into present simple. It now contains natural product descriptions, current opinions and genuinely habitual use: Mina’s bag is suitable for work and Tess’s jacket is too big. Activity 3 item 4 now retrieves Tess’s clothing preference; the answer sequence is unchanged. The source no longer pretends to narrate a completed transaction. The methodology now explicitly requires tense and genre to agree: use appropriate past forms for completed narratives, or choose a natural source genre within the taught language ceiling.
+
+Tracks **5.5 and 5.6** were regenerated with the same approved voices and Jessica narration. In 5.6, shoppers answer “Keep or return?” with direct decisions. Both new files decode, match their normalized scripts exactly and have no detected throat-clearing event; no subjective listening pass is claimed. All other tracks, images and controlled answers remain unchanged. Both pages fit and match the assembled source; functional type remains unchanged. Final Poppler pages 43–44 were inspected. Only printed page 43 changes visually: all other 39 PDF pages retain matching text and drawing streams, and both 5B pages match direct browser-export pixels. Published source commit `09f39eb`: canonical HTML and PDF match the checked files; replacement tracks 5.5/5.6 match local SHA-256, and the live browser matches both page geometries and plays all three 5B tracks. This check supersedes the earlier 5B source-language/audio assessment; image and typography evidence retains its scope. Exact before copies and recordings: `work/5b-tense-fix`.
+
+## 5B production, 26 October
 
 **That’s my favorite!**, printed pages **43–44**, keeps the B-lesson reading/listening role. Original fictional online shopping reviews introduce pay / try on / keep / return and provide the evidence for **too + adjective** and **adjective + enough**. A gist question precedes retrieval, discovery, clarification, picture practice and three new listening decisions. An independent short review closes the lesson. The key and cumulative language note are in `Answer keys/5B.md` and `Wordlists/5B.md`.
 

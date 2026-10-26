@@ -258,3 +258,11 @@ Nia and Eli are new fictional shop visitors reading a real historical price stor
 - Track 5.6: Jessica paragraphs 1, 2, 4 and 6. Independent shopper 1 uses Mark Casual (`1SM7GgM6IMuvQlz2BwM3`), paragraph 3; shopper 2 uses Juniper (`aMSt68OGf4xUZAnLpTU8`), paragraph 5; shopper 3 uses Amy (`OZxMHsGaBmV5pjMIDIn0`), paragraph 7. These are independent listening roles, not Mina or Tess.
 
 All track labels and number cues use Jessica. Mina and Tess are new fictional roles; retain these IDs if they return. Every track uses Eleven v3 / stability 0.5, no forbidden clarity tag and no SSML. Decode, exact normalized transcript and audio-event evidence: `../5B-production.json`. No subjective listening review is claimed.
+
+## 5C - Shopping habits and places in town
+
+- Track 5.7: Jessica (`cgSgspJ2msm6clMCkdW9`), paragraphs 1-2.
+- Track 5.8: Jessica, paragraphs 1-2; INTERVIEWER Jarnathan (`c6SfcYrb2t09NHXiT80T`), 3/5/7/9; MARA Juniper (`aMSt68OGf4xUZAnLpTU8`), 4/6/8/10.
+- Track 5.9: Jessica, paragraphs 1/2/4/6/8; NOAH Mark Casual (`1SM7GgM6IMuvQlz2BwM3`), 3/5/7/9.
+
+Mara and Noah are new fictional roles; retain these exact IDs if they return. Stock models do not represent either character. All track labels and vocabulary use Jessica. Eleven v3 / Natural stability 0.5. No forbidden clarity tag or SSML. All three final recordings decode, match normalized scripts exactly and have no detected audio events. Records: `../5C-production.json`; no subjective listening review is claimed.

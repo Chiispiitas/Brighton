@@ -176,3 +176,5 @@ LESSON 5A — CLOTHES AND ACTIONS NOW
 All three use Eleven v3, Natural stability 0.5. Import scripts and voice-map paragraph assignments match. The factual price sidebar is not narrated or presented as the fictional visitors' purchase. Final media are decoded and independently transcribed; no forbidden tag or detected throat event; subjective listening review remains unclaimed.
 
 5B: Track 5.4 shopping verbs; 5.5 customer reviews; 5.6 keep/return listening. Exact paragraph assignments: VOICE MAP.md. Checked records: ../5B-production.json.
+
+5C: Track 5.7 places in town (Jessica); 5.8 Mara's regular shopping habits (Jessica intro, Jarnathan interviewer, Juniper/Mara); 5.9 Noah's independent habits (Jessica questions, Mark Casual/Noah). Three speech-only Studio imports. Exact paragraph assignments: VOICE MAP.md. Checked Eleven v3 / stability 0.5 generation records: ../5C-production.json. No forbidden clarity tag or SSML; no subjective listening review claimed.
