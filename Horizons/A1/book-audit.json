@@ -3798,7 +3798,7 @@
       "vocabulary": {
         "badge_sets": 32,
         "inline_highlights": 199,
-        "typography": "Pink inline mark; font family, size and weight inherited exactly. Existing italic options retained; no answer-only highlighting.",
+        "typography": "Bold dark-crimson (#8f123f), 700 weight, transparent background; inherited font family and point size. Existing italic teaching options retained; no answer-only emphasis.",
         "coverage": "Every badge has a matching data-vocab-set and visibly marked teaching input. Selective target words/chunks; no whole-sentence/title/instruction marking.",
         "checked": {
           "pages": 55,
@@ -4166,8 +4166,9 @@
             }
           ],
           "highlightCount": 199,
-          "typographyInherited": true,
-          "onlyCreditRemovalChangesGeometry": [
+          "fontFamilyAndSizeInherited": true,
+          "boldCrimsonPlainBackground": true,
+          "changedGeometry": [
             "55"
           ],
           "noOverflow": true,
@@ -4233,8 +4234,8 @@
         "unchanged_24_pages_text_and_drawing_streams_identical": true,
         "changed_and_credits_pixels_match_native": true,
         "all_a4": true,
-        "pdf_bytes": 29315737,
-        "pdf_sha256": "8e03478887e570f227fc90dfd49acb07aace45808909a54383d4c0617621103c"
+        "pdf_bytes": 29319828,
+        "pdf_sha256": "81c6264984ce535d3032a570752b8e6c1ef468d372d1393c2086330af535373d"
       },
       "visual_inspection": "Representative vocabulary/photo/choice/grammar pages and all three credit pages viewed at print layout; no overflow. Saved PDF samples rendered independently.",
       "reversible": "Baseline a8b1fb7; exact before files, hashes and guarded rollback journal in work/vocabulary-credits-20261026 outside repo."
@@ -4290,8 +4291,8 @@
       ],
       "fingerprint": {
         "files": 508,
-        "bytes": 488333548,
-        "sha256": "eb0d31a702d319b985f38a69b472df3945fa8d2f184d33de17ee9735e7ff2c0b"
+        "bytes": 488335096,
+        "sha256": "a417eefb51f84e7c4febfdbc052217147a94c014f456302f52a952ab1a75eac8"
       }
     },
     "shared_rendering": {
@@ -4301,8 +4302,8 @@
       "exclude_markdown": true,
       "fingerprint": {
         "files": 12,
-        "bytes": 59368,
-        "sha256": "52a9ef45e6e63cf8521ae524962055a9f1938efd80b94b849f724ce222dd1d87"
+        "bytes": 59324,
+        "sha256": "441fbf40530cd10ce9545da2686dfb491c05231f5f7973a1d96e98b786531ffa"
       }
     },
     "saved_pdf": {
@@ -4311,8 +4312,8 @@
       ],
       "fingerprint": {
         "files": 1,
-        "bytes": 29315737,
-        "sha256": "113d2dc96fc581a1ccfa6a77d6ea328948f3c790fed47c17778704f9d3a2ea08"
+        "bytes": 29319828,
+        "sha256": "d82da72b23faf1308273dce32dbe8c3fc36c9e36cfb8596e853d22db03dd675f"
       }
     },
     "audit_criteria": {
@@ -4324,13 +4325,13 @@
       ],
       "fingerprint": {
         "files": 4,
-        "bytes": 120679,
-        "sha256": "3c7423a31a51a1a1631af7d8f38aac6f9e76d108515e569473f8a2a30e4b7a8c"
+        "bytes": 120983,
+        "sha256": "e98f42710e381c7164df2ee1610568b7d5b6ea41a5c85b22367268617befda03"
       }
     }
   },
   "content_baseline_commit": "2f404b547b7da07be81a0622a78591d3299c402a",
-  "current_revision": "Book-wide NEW WORDS fix: 199 inline vocabulary highlights paired with all 32 badges, preserving typography/content/media. Inline photo metadata moved into three end-of-book credits pages (printed 57-59) covering 65 active photograph/source components. 55 A4 pages total; 52 lesson/review pages unchanged in content. Local HTML/PDF verified; publication pending. Unit 6 complete; Unit 7B must return to Horizons on Air. Later units, other backmatter and final release remain pending.",
+  "current_revision": "Book-wide NEW WORDS fix: 199 bold crimson vocabulary terms paired with all 32 badges, preserving font family, point size, content and media. Inline photo metadata moved into three end-of-book credits pages (printed 57-59) covering 65 active photograph/source components. 55 A4 pages total; 52 lesson/review pages unchanged in content. Local HTML/PDF verified; publication pending. Unit 6 complete; Unit 7B must return to Horizons on Air. Later units, other backmatter and final release remain pending.",
   "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope. units_3_4_reviews_visual_variety_20261025 supersedes earlier composition, color and geometry evidence for printed pages 21-40, including review_composition_20261025, review_3_4_20261025, unit_3_creative_revision and unit_4_visual_variety; earlier learning and audio evidence keeps its original scope. lesson_5b_on_air_20261026 supersedes prior 5B reading/source/presentation and 5.5/5.6 records only. The 26 October every-unit show mandate is superseded by planned B-skill balance and no two-unit show gap. lesson_5b_activity5_variety_20261026 supersedes only the earlier 5B Activity 5 image/choices/key and continuation-image evidence; no show/audio or other lesson evidence changes. lesson_6b_picture_grammar_20261026 supersedes only the original 6B page-52 grammar presentation, continuation spacing and associated geometry evidence; all learning, source and audio evidence retains its scope. lessons_6c_6d_20261026 adds printed pages 53-56 and completes Unit 6 without superseding prior source/audio/page evidence. Prior 6C/6D-unproduced statements are historical; current coverage is through 6D. vocabulary_and_credits_20261026 supersedes prior plain NEW WORDS vocabulary presentation and in-lesson image-credit placement. Existing learning, audio, image bytes and unrelated geometry evidence retains its scope. Three appended credits pages are provisional end matter after the current final lesson.",
   "receptive_skill_plan": {
     "policy": "B lessons provide a planned mix of reading-led and listening-led units; Horizons on Air is not required in every unit. Avoid two consecutive units without the show. Do not impose rigid alternation; 2B and 3B are both listening-led. Declare primary skill and source genre before authoring.",

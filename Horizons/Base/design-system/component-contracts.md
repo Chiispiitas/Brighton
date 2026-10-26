@@ -364,4 +364,4 @@ The author's 25 October 2026 instruction allows sibling numbered exercises in tw
 
 ## NEW WORDS and visible targets
 
-Each `.hz-new-words` has a stable `data-vocab-set` shared with at least one meaningful `.hz-vocab` inline `<mark>`. The marks identify every target term or chunk in that introduction, preserve inherited typography, and never reveal an answer by marking only the correct option. The badge is a cue, not the entire vocabulary treatment. No title-sized marking or blanket full-sentence highlighting. Audit all pairs in standalone and assembled output.
+Each `.hz-new-words` has a stable `data-vocab-set` shared with at least one meaningful `.hz-vocab` inline `<strong>`. The marks identify every target term or chunk in that introduction, use bold dark-crimson ink on a transparent background, preserving inherited font family and size, and never reveal an answer by marking only the correct option. The badge is a cue, not the entire vocabulary treatment. No title-sized marking or blanket full-sentence highlighting. Audit all pairs in standalone and assembled output.
