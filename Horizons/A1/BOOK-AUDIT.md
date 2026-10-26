@@ -18,6 +18,16 @@ This is the current audit entry point. [book-audit.json](book-audit.json) holds 
 
 Counts are inventory, not proof that every cue is correctly placed. Review placement beside the newly introduced content.
 
+## 5B Activity 5: fresh visual evidence, 26 October
+
+The author rejected Activity 5's repetition of Tess's Activity 2 jacket scene. Activity 5 now uses a **new generated parcel-packing comparison**: the same shoes overhang a small box in A, but both lie completely inside a larger box in B. Learners judge the **box** as **too small** or **big enough for the shoes**. This transfers the grammar to a fresh situation rather than revisiting the guest picture. The instruction, choices, answer key and cumulative language note are aligned. Box/shoes are familiar words; no new audio or grammar is introduced. The original PNG and exact built-in imagegen prompt/hash are recorded in `Images/5B/asset-manifest.json`.
+
+**Verified:** both 5B pages fit, standalone and compiled geometry match, normal functional typography is retained, and the final saved page was inspected through Poppler alongside Activity 2. Minimum activity-bottom clearance remains 58.4px. Only printed page **44** changes; the other **41** PDF pages retain text/drawing streams and compiled page fragments. Activity 2's page also matches the native-export pixels. All 45 lesson recordings, the production ident, previous image binaries and other lessons are preserved. Existing broadcast source/voice/production checks remain valid. Earlier Activity 5 jacket-comparison descriptions are historical and superseded by this correction.
+
+Local checks complete; publication verification pending.
+
+The reusable audit and canonical style guide now require **exercise-by-exercise visual progression**. Do not use the source/guest photograph, a new crop or a near-identical scene as a later practice task's main image. A controlled comparison can hold its own objects constant when needed to teach the contrast; that is different from recycling an earlier activity. Before sources/outputs, file hashes and guarded rollback journal: `work/5b-activity5-boxes` outside the repository.
+
 ## B-skill balance and Horizons on Air cadence
 
 **Author clarification, 26 October:** some B lessons are reading-led and some are listening-led. Horizons on Air is not compulsory in every unit. The earlier blanket every-unit rule and retrofit demands for Units 1/4 were too broad and are superseded. Plan the primary skill and source genre before authoring; avoid two consecutive units without the show. This does not impose rigid alternation: 2B and 3B are both listening-led. Preserve A/C language and D writing/speaking.
@@ -140,6 +150,7 @@ Use these for every new or changed spread; they are a checklist, not additional 
 
 - **Learning:** follow the syllabus and cumulative A1 load; A/C teach language, B develops reading/listening, D writing/speaking. Discovery evidence must precede the rule. Controlled answers must be supported by the page and agree with the key. Pair work needs unknown information; final writing needs room for independent expression.
 - **Composition:** keep Horizons identity while varying editorial structure with content. Review & Practice alone may use two page-level exercise columns, read left column then right; lessons retain a single numbered lane. Use 1A spacing as the reference. Preserve purposeful source backgrounds. Give each lesson's second page one or two substantial task-related images; remove repetition when space is needed. Use stock photos for suitable real scenes and image generation for exact poses, counts, renders or cutouts.
+- **Image progression:** compare source/guest visuals with later picture tasks. Later practice needs new context or visual evidence; a repeated photo, crop or near-identical scene is not sufficient. Check this separately from the overall spread layout.
 - **Visual fatigue:** compare the proposed spread with the preceding three and the whole unit; record its color relationship, feature-text treatment, image hierarchy and content-specific idea. Repeated blue/green/teal + yellow/gold needs explicit scrutiny. Follow the editorial acceptance gate below.
 - **Readability:** verify the canonical font-size role table across the assembled and standalone pages; integrated source features may retain purposeful typography. Use 9.5pt model phrases/rules, selective crimson target emphasis and the canonical pink grammar shell. Keep inner padding, response space, readable labels and continuation-tab clearance. Circle choices use normal-weight lowercase italics except required grammatical capitals. No redundant gray location captions.
 - **Navigation:** NEW WORDS at new vocabulary input, nearby Vocabulary/Grammar references for newly introduced sets/points, and the expected Extra Practice footer. Confirm actual placement, not just totals.

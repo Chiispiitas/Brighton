@@ -26,12 +26,27 @@
       ],
       "native_alpha": false,
       "sha256": "3a5dfeea7c509bb70ade4a483d50320afec60d75832ae8ca9a0316151f19379f",
-      "role": "Exact too-large/correct-fit comparison; orange panel also portrays Tess as an on-air guest.",
+      "role": "Tess guest photograph in Activity 2, using the orange-jacket panel. Retained original file; no longer used in Activity 5.",
       "presentation": "Original asset bytes retained. Full scenes use natural proportions; review thumbnails use deliberate crops without distortion. No text baked into images.",
       "fictional_boundary": "Generated fictional models and purchases; no real retailer or endorsement."
+    },
+    {
+      "file": "Boxes-for-shoes-v1.png",
+      "generator": "Built-in image_gen",
+      "prompt": "Generate a brand-new photorealistic educational image, not an edit. One wide 2:1 photographic diptych, two equal square photographs side by side with a narrow straight white gutter. Adult A1 English coursebook, shopping and parcel packing. NO PEOPLE, NO CLOTHES BEING WORN, NO JACKETS, NO HANDBAGS. Both photographs show the SAME PAIR of adult low-top sage-green sneakers with white soles, two shoes total in each panel, on a light natural wood packing desk with simple neutral home-office background. View from a high three-quarter overhead angle so the complete rectangular open cardboard box, all rims and shoe lengths are unmistakable, no perspective tricks. LEFT photograph: one plain open cardboard shipping box is obviously MUCH TOO SMALL for this adult pair: its interior length is about half a shoe length. The two matching adult sneakers rest across the little box's rim and visibly extend a long way beyond it, making clear they cannot be packed inside it. Show the complete small box below them, not obscured, with one sneaker tilted slightly above its edge if needed; the second shoe beside it. RIGHT photograph: a genuinely larger open cardboard shipping box is BIG ENOUGH: the exact same two adult sage-green sneakers lie fully flat, side by side, completely INSIDE this box below the upper rim, with a modest clear margin around all ends. Same actual shoe size in both panels and consistent camera scale, matching desk surface and lighting. Large visible difference between box capacities, not between shoe sizes. No extra footwear, no little shoes, no box lids, no packaging foam, no text, no printed graphics, no labels, no letters, no numerals, no arrows, no symbols, no logos, no watermarks, no infographic styling. Retain natural complete photographic environments and believable object construction, clean rich natural colors and clear material textures. These are useful full-background photographs with obvious too-small versus big-enough visual evidence, not white-background cutouts.",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "native_alpha": false,
+      "sha256": "a47301f53c239c60507b7f035eb4f3dd97f61e93fb8e7ba7c17b53fb44b31528",
+      "role": "New Activity 5 visual transfer: too-small versus big-enough packing boxes for the same shoes; independent of the episode guest images.",
+      "presentation": "Original generated PNG retained with full photographic backgrounds and native proportions. A/B letters and all learner text are live HTML.",
+      "fictional_boundary": "Generated unbranded shoes and desk; no real retailer or product endorsement.",
+      "visual_review": "Two shoes in each panel, clear overhang at A and both shoes inside B, no labels or duplicate jacket scene."
     }
   ],
-  "editorial_identity": "Horizons on Air — Keep or return? Approved 2B crimson masthead, white upright title, black HORIZONS/white ON AIR badge and rounded white waveform; two guest photo cards, a full-background fit comparison and listener-call notes. No old review-site interface.",
+  "editorial_identity": "Horizons on Air — Keep or return? Approved 2B crimson masthead, white upright title, black HORIZONS/white ON AIR badge and rounded white waveform; two guest photo cards, a new full-background parcel-box capacity comparison and listener-call notes. No old review-site interface.",
   "source_text": "Original fictional on-air discussion of current online purchases and decisions; no completed purchase events forced into present simple.",
   "stock_vs_generated_decision": "Specific shopping actions and exact clothing fit required controlled evidence; built-in imagegen chosen rather than ambiguous stock photographs."
 }

@@ -2529,7 +2529,51 @@
           "all_three_new_tracks_play_pause": true,
           "print_audio_controls_hidden": true
         }
-      }
+      },
+      "later_visual_correction": "lesson_5b_activity5_variety_20261026 supersedes Activity 5 picture/choices/key and prior continuation-image description only. Show identity, source and audio are unchanged."
+    },
+    "lesson_5b_activity5_variety_20261026": {
+      "scope": "5B Activity 5, printed page 44",
+      "status": "local HTML/PDF verified; publication pending",
+      "author_correction": "Activity 5 repeated the jacket scene used for Tess in Activity 2. Replace it with genuinely different visual evidence.",
+      "replacement": "Built-in imagegen: the same pair of shoes overhanging a too-small packing box, then fully inside a big-enough box. New parcel-packing context, not another person trying on a jacket.",
+      "asset": "Images/5B/Boxes-for-shoes-v1.png",
+      "answers": [
+        "too small",
+        "big enough"
+      ],
+      "meaning": "Box capacity for the shoes, not shoe fit on feet. A new independent transfer task; neither Tess nor the callers are pictured.",
+      "visual_review": "Two shoes in each panel; complete small box and overhang in A; both shoes below the rim in B. Natural full backgrounds, no baked labels or text. Original PNG retained; prompt/hash in the asset manifest.",
+      "geometry": {
+        "no_overflow": true,
+        "standalone_matches_compiled": true,
+        "minimum_activity_bottom_clearance_px": 58.390625,
+        "functional_typography_unchanged": true
+      },
+      "saved_pdf": {
+        "pages": 42,
+        "all_a4": true,
+        "printed_pages": [
+          5,
+          46
+        ],
+        "changed_printed_pages": [
+          44
+        ],
+        "other_41_pages_text_and_decoded_drawing_streams_identical": true,
+        "changed_pages_match_direct_export_pixels": true,
+        "all_new_learner_word_tokens_present": true,
+        "other_41_compiled_html_pages_identical": true,
+        "all_other_20_masters_and_keys_preserved": true,
+        "all_previous_image_binaries_preserved": true,
+        "all_45_lesson_mp3s_and_production_ident_preserved": true,
+        "pdf_sha256": "d5d2dc9cbef5691e312441720e0325c260a172653465afc0f7876c854d46b288",
+        "pdf_bytes": 26299854,
+        "method": "Untouched 41 PDF pages copied as objects; only native Windows export replaces printed page 44. Activity 2 and all audio retained. Export-only 240dpi media, no saved-PDF font/image rewriting or aggressive resource deduplication."
+      },
+      "preserved": "Activity 2, all other 41 PDF pages/compiled page fragments, 20 other lesson masters/keys, all prior image binaries, all 45 lesson MP3s and production ident.",
+      "prevention": "New canonical and audit rule: check visual progression exercise by exercise. Do not recycle a source/guest picture, crop or near-identical scene as later practice; fresh context/evidence is required. Controlled contrast within one comparison can hold objects constant.",
+      "reversibility": "Before files, hashes and guarded rollback journal in work/5b-activity5-boxes."
     }
   },
   "pending": [
@@ -2580,9 +2624,9 @@
         "Student's Book.html"
       ],
       "fingerprint": {
-        "files": 426,
-        "bytes": 452435193,
-        "sha256": "e24a4e8f617f783dd0ce84ce6abd39426840c57acd5da45f34a2a7535cdc4e5e"
+        "files": 427,
+        "bytes": 455149790,
+        "sha256": "2ecd853084aca892f77e2ace8849dff9a4bedd27bef5749606202d09aebc2e4c"
       }
     },
     "shared_rendering": {
@@ -2602,8 +2646,8 @@
       ],
       "fingerprint": {
         "files": 1,
-        "bytes": 26180350,
-        "sha256": "64165f2130242ceeeafc3ef5d33264beea648451886b72b998c9ad6893ab0e0e"
+        "bytes": 26299854,
+        "sha256": "a88bf4468cd569a192c88cb1ca5012f1f32dfe3dbd723748c3a3cf5038050735"
       }
     },
     "audit_criteria": {
@@ -2615,14 +2659,14 @@
       ],
       "fingerprint": {
         "files": 4,
-        "bytes": 117867,
-        "sha256": "0a0e5a03fe79b2c693311edd6799d7aae24ff57e4278ed4e79e1ca7a09c23b60"
+        "bytes": 118505,
+        "sha256": "805e004bf8cfe90fd903b96638e0780329cb4391bac96502afd034bc00c4abd7"
       }
     }
   },
   "content_baseline_commit": "2f404b547b7da07be81a0622a78591d3299c402a",
-  "current_revision": "5B rebuilt as Horizons on Air - Keep or return?, a listening-led episode plus listener calls. Two newly produced masters include Lucy/Jessica, retained guest voices and a separate original ident. Reading/listening mix corrected to R/L/L/R/L through Unit 5; blanket every-unit requirement superseded. Canonical live HTML/PDF and media verified. Final whole-book release and backmatter remain pending.",
-  "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope. units_3_4_reviews_visual_variety_20261025 supersedes earlier composition, color and geometry evidence for printed pages 21-40, including review_composition_20261025, review_3_4_20261025, unit_3_creative_revision and unit_4_visual_variety; earlier learning and audio evidence keeps its original scope. lesson_5b_on_air_20261026 supersedes prior 5B reading/source/presentation and 5.5/5.6 records only. The 26 October every-unit show mandate is superseded by planned B-skill balance and no two-unit show gap.",
+  "current_revision": "5B Activity 5 now uses independent generated parcel-box capacity evidence instead of repeating Tess’s jacket scene. Key/wordlist and visual-reuse guard updated; Activity 2 and every audio file preserved. Local checks complete; publication verification pending. Final whole-book release and backmatter remain pending.",
+  "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope. units_3_4_reviews_visual_variety_20261025 supersedes earlier composition, color and geometry evidence for printed pages 21-40, including review_composition_20261025, review_3_4_20261025, unit_3_creative_revision and unit_4_visual_variety; earlier learning and audio evidence keeps its original scope. lesson_5b_on_air_20261026 supersedes prior 5B reading/source/presentation and 5.5/5.6 records only. The 26 October every-unit show mandate is superseded by planned B-skill balance and no two-unit show gap. lesson_5b_activity5_variety_20261026 supersedes only the earlier 5B Activity 5 image/choices/key and continuation-image evidence; no show/audio or other lesson evidence changes.",
   "receptive_skill_plan": {
     "policy": "B lessons provide a planned mix of reading-led and listening-led units; Horizons on Air is not required in every unit. Avoid two consecutive units without the show. Do not impose rigid alternation; 2B and 3B are both listening-led. Declare primary skill and source genre before authoring.",
     "units": [
