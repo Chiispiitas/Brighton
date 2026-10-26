@@ -296,17 +296,7 @@
 
 .hz-new-words__icon { display: none !important; }
 
-/* New vocabulary uses the established bold crimson ink, on plain paper. */
-.hz-book .hz-page .hz-page__content strong.hz-vocab {
-  font: inherit !important;
-  font-weight: 700 !important;
-  color: #8f123f !important;
-  background: transparent !important;
-  border: 0;
-  padding: 0;
-  border-radius: 0;
-  box-shadow: none;
-}
+
 
 .hz-tag,
 .hz-skill-tag {

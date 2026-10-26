@@ -362,6 +362,6 @@ Mark ordinary exercise language and vocabulary/response roots with `.hz-task-tex
 
 The author's 25 October 2026 instruction allows sibling numbered exercises in two columns **only in Review & Practice**. Use `.rr-page .rr-columns` with two `.rr-column.hz-exercises` children; DOM and visual order must run down the left column, then the right. Keep native Horizons chrome, consecutive exercise numbers, shared functional sizes and full response areas. Ordinary lessons keep their one-column numbered flow. The scoped review stylesheet owns this exception; do not broaden shared exercise grids.
 
-## NEW WORDS and visible targets
+## NEW WORDS and restrained emphasis
 
-Each `.hz-new-words` has a stable `data-vocab-set` shared with at least one meaningful `.hz-vocab` inline `<strong>`. The marks identify every target term or chunk in that introduction, use bold dark-crimson ink on a transparent background, preserving inherited font family and size, and never reveal an answer by marking only the correct option. The badge is a cue, not the entire vocabulary treatment. No title-sized marking or blanket full-sentence highlighting. Audit all pairs in standalone and assembled output.
+The `.hz-new-words` cue introduces a new vocabulary set. It must not trigger blanket bolding, recoloring or background highlighting of the set. Keep each input in its established typography; preserve ordinary italic choices and existing meaningful selective emphasis. Do not add automatic `.hz-vocab` wrappers or require paired badge/word IDs. The author explicitly withdrew the blanket vocabulary-emphasis treatment.

@@ -12,27 +12,21 @@ This is the current audit entry point. [book-audit.json](book-audit.json) holds 
 | Saved book | 55 A4 pages; printed pages 5–59 (52 lesson/review pages + 3 image-credit pages) |
 | Activity blocks | 181; existing subexercise numbering retained |
 | Audio | 60 lesson MP3s + 1 production ident; new 6C/6D tracks 6.7–6.12 decoded/transcribed |
-| Navigation cues | 32 NEW WORDS badges paired with 199 highlights; 24 Extra Practice footers; 54 Go to references |
+| Navigation cues | 32 NEW WORDS badges; no automatic vocabulary bolding; 24 Extra Practice footers; 54 Go to references |
 | Concept explanations | 14 revised panels across 11 lessons; 27 total focus panels including retained 4A and new 4B–6D |
 | Unresolved destinations | 54 `page ---` references; intentional until back-of-book pagination |
 
 Counts are inventory, not proof that every cue is correctly placed. Review placement beside the newly introduced content.
 
-## Vocabulary highlighting and end credits, 26 October
+## Vocabulary restraint and end credits, 26 October
 
-**Every one of the 32 NEW WORDS cues now identifies vocabulary in bold crimson ink**, with **199 selectively emphasized vocabulary terms** across the 24 A–D lessons. The shared treatment uses 700-weight dark-crimson text on a transparent background, preserving inherited font family and point size. The 3A routine list keeps its plain page background, with no surrounding word-bank box. Italic choices stay italic; both alternatives are treated equally when the pair is the teaching input. Do not highlight instructions, whole sentences, feature headings, or just a correct answer.
+The author withdrew blanket NEW WORDS emphasis: **if every word is bold, do not bold the whole set**. Removed all 199 automatic vocabulary wrappers and pairing IDs across 24 A-D masters. All 32 NEW WORDS badges remain, with the original selective emphasis and separate grammar conventions intact. Keep vocabulary inputs in their established typography; do not automatically recolor/bold whole lists, all choices or every newly introduced term. No highlighter backgrounds. This supersedes the earlier paired-target/highlight requirements, including the initial background-highlight draft and subsequent blanket bold-crimson treatment.
 
-The author explicitly clarified that highlighting means **bold colored text, never a shaded highlighter background**. This instruction supersedes the initial background-highlight draft.
+Photo metadata stays at the end: three image-credit pages, printed 57-59, covering 65 active photograph/source components. Preserve creator/source/license links and required crop/share-alike notices. Update active-photo coverage and lesson-page references when imagery changes; the compiler always appends and repaginates credits after the current final lesson.
 
-**Future vocabulary gate:** identify each genuinely new set; pair the badge and target marks using the same `data-vocab-set`; confirm every target is visibly marked in meaningful first teaching input. A bare badge fails. Check standalone and compiled output, normal-size readability, no answer giveaway and no font-family, size or layout drift. Grammar bold remains separate.
+Checked all 55 HTML pages: no automatic vocabulary wrappers or pairing attributes, 32 badges, 181 activities, 64 audio controls, loaded images and no text overflow. All learner wording/media are preserved. The PDF restores 50 lesson pages from the original pre-emphasis book exactly, uses two checked native pages for photo-credit removal, and preserves the existing three credit pages. Original selective emphasis is restored. Exact before files: `work/plain-vocabulary-20261026`, baseline `1ddb4cb`.
 
-**Photo metadata belongs at the end.** Removed the Messi credit line in 3A and Jewel/Mall credit line in 6D. Backmatter now contains three single-column image-credit pages, printed **57–59**, covering **65 active photograph/source components** by their lesson page. Photographer/source hyperlinks, license terms and required alteration/share-alike notices are retained. Unused/reverted stock is omitted. Learning captions, venue labels and adapted-reading citations stay. New/changed photos must update both the human-readable credits and JSON register; verify active-photo coverage and lesson-page references. The compiler appends backmatter after the current final lesson and repaginates its own page numbers.
-
-**Verified:** 55 A4 HTML/PDF pages; all 32 badge/target pairs; 199 terms retain inherited font family/point size and consistently use 700-weight dark-crimson ink with transparent backgrounds; no text overflow; all original images load. All 181 activities, 64 audio controls and every image/audio byte remain. Removing mark wrappers/badge attributes and only the two former photo-credit nodes reproduces the exact prior parsed learner source. Of the original 52 HTML pages, only 55 changes exercise geometry, because its credit line is gone. The other 51 retain the original measured exercise/image geometry. The saved PDF keeps the 24 visually unaffected pages' original text/drawing streams; the 28 updated lesson pages and three credits match native-export pixels. Representative lesson and all credit pages were visually inspected. PDF image preparation is export-only, alpha-preserving; source images are untouched. All font text remains native/selectable.
-
-Published assembled HTML/PDF, all 24 lesson HTML files and shared vocabulary styling match the checked sources. Live browser confirms all 32 matched sets, bold crimson words without background shading, end-credit placement and 55-page geometry.
-
-**Reversible:** baseline `a8b1fb7`, exact before copies, file hashes and guarded rollback in `work/vocabulary-credits-20261026` outside the repo. The guard refuses subsequent edits. These changes supersede earlier plain-vocabulary and in-lesson attribution descriptions; previous learning/audio evidence keeps its scope. This is a preview through Unit 6 with image-credit backmatter; later units, other backmatter and final-release checks remain pending.
+Local checks passed; publication verification pending.
 
 ## 6C and 6D production, 26 October
 
