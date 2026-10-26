@@ -20,6 +20,8 @@ Learner-facing English must match what the learner has actually met in that book
 
 Before approving newly authored material, audit support language against preceding pages. Instructions, discovery prompts and role descriptions must not become a hidden vocabulary syllabus.
 
+**Tense and genre:** Do not put completed purchase events or other past narratives into the present simple merely to avoid untaught past forms. Choose an appropriate source genre within the language ceiling: current descriptions/opinions, genuinely habitual actions or supported ongoing events. A completed-event narrative needs the appropriate past forms; if those are not yet taught, redesign the text rather than distorting its time reference.
+
 ### Early-A1 rule — current A1 book
 
 For the first units of A1, learner-facing English is deliberately much simpler than natural adult English.
