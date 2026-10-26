@@ -53,7 +53,7 @@
       "mode": "RGB",
       "native_alpha_extrema": null,
       "prompt": "Create one high quality realistic textbook editorial photo, landscape ratio about 2:1, full natural background of a sunny town park with a bench and soft leafy depth. Exactly THREE clearly separated original fictional adults, full body, large enough to inspect their outfits, comfortable everyday proportions. LEFT: woman with curly dark hair, standing and reading an open book; wearing a RED knitted sweater, dark BLUE jeans and WHITE shoes, no hat, no bag. MIDDLE: man with straight dark hair sitting on the bench, drinking from a plain white cup; wearing a WHITE short-sleeved T-shirt, black jeans, white shoes and a YELLOW brimmed hat, no jacket. RIGHT: woman with long brown hair standing and talking on a mobile phone; wearing a GREEN sleeveless knee-length dress, white shoes and carrying a BROWN shoulder bag, no hat. Strict distinction: left reads, middle drinks, right talks on phone. No additional people or clothing props. Clear readable gestures, faces, hands, no hand deformities, natural relaxed human moment, cheerful saturated colors and full photographic scene. Leave small natural gaps separating each person; do not collage. No words, letters, numbers, signs, logos or graphic design. Exact outfits and actions are educational evidence.",
-      "purpose": "Three anonymous adults supply specific independent clothing/action evidence for forms and listening. Full uncropped original aspect ratio; image 146mm wide, about 73mm high. Live person-number markers avoid faces, hands and clothing evidence.",
+      "purpose": "Three anonymous adults supply specific independent clothing/action evidence for forms and listening. Full uncropped original aspect ratio; image 164mm wide, 82mm high. Live person-number markers avoid faces, hands and clothing evidence.",
       "pixel_edits": "None; native generated file bytes retained. Browser/CSS presentation only.",
       "identity_boundary": "Synthetic original people/products. No real interview, historical garment reproduction, brand endorsement or stock-license claim.",
       "asset_id": "HZN_A1_U05_LA_E04_IMG_01"
@@ -66,5 +66,17 @@
     "event": "2015-02-21 auction",
     "supported_facts": "Reported 58-cent Goodwill find in previous summer (2014), Vince Lombardi ownership, $43,020 sale. Lead states 58 cents; later text reports 58-cents-per-pound store pricing.",
     "fiction_boundary": "Nia/Eli are fictional readers, not historical finders. Red vocabulary sweater and generated scenes do not depict historical garment/events. No source prose, images or brand artwork copied."
+  },
+  "presentation_revision": {
+    "date": "2026-10-25",
+    "scope": "5A editorial redesign; image pixels unchanged",
+    "shop_photo_width_mm": 82,
+    "park_photo_mm": [
+      164,
+      82
+    ],
+    "wardrobe_native_cell_proportions_preserved": true,
+    "treatment": "Charcoal text and warm paper; larger photograph and compact black-ink price comparison beside headline/conversation. Functional photo labels remain live.",
+    "image_edits": "None; all three original generated binaries, full scene backgrounds and aspect ratios retained."
   }
 }

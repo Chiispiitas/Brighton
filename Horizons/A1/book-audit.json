@@ -1869,11 +1869,12 @@
           }
         ]
       },
-      "publication_recovery": "An overlapping export caused a binary rebase conflict; retry compression stalled and was cancelled. Published the verified 17.4MB local fallback: preserved baseline 36 PDF pages plus two Windows-native lesson pages, without font/image rewriting. All 38 rendered pages match their verified source pages."
+      "publication_recovery": "An overlapping export caused a binary rebase conflict; retry compression stalled and was cancelled. Published the verified 17.4MB local fallback: preserved baseline 36 PDF pages plus two Windows-native lesson pages, without font/image rewriting. All 38 rendered pages match their verified source pages.",
+      "presentation_superseded_by": "lesson_5a_visual_redesign_20261025; retain original learning/source/audio-production evidence"
     },
     "visual_fatigue_20261025": {
       "date": "2026-10-25",
-      "status": "Author preference and acceptance criteria recorded; book-wide editorial reassessment pending",
+      "status": "Criteria active; scoped 5A correction implemented and visually checked; remaining book-wide reassessment pending",
       "scope": "Whole A1 book, all new/revised spreads and future lessons",
       "author_observation": "Repeated bluish/green/teal text or panels with yellow/gold accents are becoming fatiguing for students.",
       "flagged_pattern": "Cool-colored feature text/surface plus yellow/gold strip, tag or highlight used as a habitual design recipe",
@@ -1881,7 +1882,7 @@
         "lesson": "5A",
         "feature": "A lucky find",
         "treatment": "Teal feature header and yellow price strip",
-        "decision": "Reassess its repeated graphic treatment; existing technical/source/audio evidence remains valid, creative variety under the new gate is pending"
+        "decision": "Original teal/yellow feature replaced by the scoped 5A visual redesign; visually checked in its three-spread neighborhood and whole-book contact sheet. Other book-wide treatments remain pending."
       },
       "comparison_required": [
         "Proposed spread beside the preceding three spreads",
@@ -1913,13 +1914,76 @@
         "criteria_fingerprint_updated_only_for_documented_guidance_change": true,
         "new_visual_pass_claimed": false
       }
+    },
+    "lesson_5a_visual_redesign_20261025": {
+      "date": "2026-10-25",
+      "status": "Local standalone/assembled HTML and saved PDF verified; live publication pending",
+      "scope": "5A printed pages 41-42 only",
+      "editorial_idea": "Clothing editorial: larger shop photograph and a compact two-price comparison beside a charcoal headline and hanging-name conversation on warm paper",
+      "difference_from_flagged_treatment": "Removed the full-width teal header and yellow price stripe; feature hierarchy, photo/text proportions, headline position and price grouping all change, rather than only changing hues.",
+      "neighboring_comparison": {
+        "preceding_spreads": [
+          "4C - green recipe/action strip and cook cutout",
+          "4D - note/phone composition with violet/yellow source surfaces",
+          "Units 3 & 4 Review - navy/gold cinema poster and review columns"
+        ],
+        "method": "Viewed all eight neighboring/new pages together, then inspected a 38-page whole-book contact sheet.",
+        "decision": "5A introduces a quieter warm/charcoal photographic editorial, with factual price typography below a larger photo and headline/conversation beside it. It keeps Horizons crimson navigation and shared concept styling.",
+        "global_limit": "Other repeated blue/green/yellow treatments remain flagged for book-wide reassessment; no whole-book redesign or new global creative approval is claimed."
+      },
+      "continuation_photo_mm": [
+        164,
+        82
+      ],
+      "shop_photo_width_mm": 82,
+      "content_preservation": {
+        "all_six_activity_word_tokens_and_instructions": true,
+        "grammar_and_recorded_dialogue_html_identical": true,
+        "all_answers_response_spaces_and_extra_practice_retained": true,
+        "image_audio_scripts_and_binaries_unchanged": true,
+        "previous_36_compiled_page_fragments_identical": true
+      },
+      "local_verification": {
+        "pages": 38,
+        "activities": 134,
+        "audio_controls": 42,
+        "standalone_matches_assembled": true,
+        "all_three_tracks_play_pause": true,
+        "no_text_overflow": true,
+        "minimum_activity_bottom_clearance_px": 31.921875,
+        "lesson_title_pt": 31,
+        "ordinary_task_and_concept_pt": 9.5,
+        "instructions_pt": 8.9,
+        "choice_italics_normal_weight": true,
+        "image_native_proportions_preserved": true
+      },
+      "saved_pdf": {
+        "pages": 38,
+        "all_a4": true,
+        "prior_36_pages_text_and_72dpi_pixels_identical": true,
+        "new_pages_text_and_pixels_match_direct": true,
+        "all_original_5a_pdf_word_tokens_preserved": true,
+        "new_page_numbers": [
+          41,
+          42
+        ],
+        "pdf_sha256": "40f34b3428676b75c9bc6cd8d0ae9095a9ccf9c216f73a6adba939196f153462",
+        "method": "Preserved baseline PDF objects for first 36 pages, then appended two verified Windows-native lesson pages; no font/image rewriting or resource deduplication."
+      },
+      "visually_inspected": [
+        "Poppler-rendered printed pages 41 and 42",
+        "Preceding three spreads beside redesigned 5A",
+        "Whole-book contact sheet"
+      ],
+      "evidence_directory": "work/5a-redesign-20261025",
+      "reversibility": "Exact before copies and hashes saved outside the repository; prior presentation retained in Git history."
     }
   },
   "pending": [
     {
       "id": "visual-fatigue",
-      "scope": "Whole book, starting with repeated cool-color/yellow treatments and flagged 5A feature",
-      "action": "Compare neighboring spreads, complete units and whole-book contact sheet; record palette/feature repetitions and specific redesign decisions. Apply the new editorial acceptance gate to every new or revised spread. Existing book-wide reassessment is pending."
+      "scope": "Whole book beyond the scoped 5A correction",
+      "action": "Continue comparing neighboring spreads, complete units and the whole-book contact sheet; record repeated color/feature treatments and specific redesign decisions. The scoped 5A redesign is checked; remaining book-wide reassessment is pending."
     },
     {
       "id": "pagination",
@@ -1964,8 +2028,8 @@
       ],
       "fingerprint": {
         "files": 392,
-        "bytes": 438235838,
-        "sha256": "102340b6c22143cf35f961f62c7a8fb8fb9c158afc3014fad0148601b6fef595"
+        "bytes": 438239148,
+        "sha256": "a40eb412f62f47978b2aa0db6eac096abe5380f5ff640c861d4423bfc59881cb"
       }
     },
     "shared_rendering": {
@@ -1985,8 +2049,8 @@
       ],
       "fingerprint": {
         "files": 1,
-        "bytes": 17403199,
-        "sha256": "ee37b6490cab6bf358c4ceac9a4d1981770dcc068db350487e564695261f4b48"
+        "bytes": 17403303,
+        "sha256": "685082728772319ffa304527da53d77b624ea1f31a4c65f24e517476bbc1398c"
       }
     },
     "audit_criteria": {
@@ -2004,6 +2068,6 @@
     }
   },
   "content_baseline_commit": "2f404b547b7da07be81a0622a78591d3299c402a",
-  "current_revision": "Lesson 5A, What are you wearing?, complete on printed pages 41-42: sources, standalone/assembled HTML, saved 38-page PDF and live viewer/audio verified. All previous 36 PDF pages are text- and pixel-identical to the baseline. Author correction on 25 October adds a visual-fatigue acceptance gate; book-wide editorial reassessment is pending and prior technical/media evidence retains its scope.",
-  "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference."
+  "current_revision": "5A visual redesign replaces the teal/yellow feature with a warm-paper clothing editorial, larger photographic evidence and compact black-ink price comparison. Six activities, wording, grammar and recordings are preserved. Local HTML/PDF checks pass; live publication verification pending. Remaining book-wide visual-fatigue reassessment stays pending.",
+  "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope."
 }
