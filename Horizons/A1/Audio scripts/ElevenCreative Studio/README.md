@@ -174,3 +174,5 @@ LESSON 5A — CLOTHES AND ACTIONS NOW
 - 5A — Track 5.2: fictional thrift-shop conversation; Jessica intro, Nia/Adeline and Eli/Jarnathan.
 - 5A — Track 5.3: three picture descriptions, Jessica; A/B/C identify persons 3/2/1.
 All three use Eleven v3, Natural stability 0.5. Import scripts and voice-map paragraph assignments match. The factual price sidebar is not narrated or presented as the fictional visitors' purchase. Final media are decoded and independently transcribed; no forbidden tag or detected throat event; subjective listening review remains unclaimed.
+
+5B: Track 5.4 shopping verbs; 5.5 customer reviews; 5.6 keep/return listening. Exact paragraph assignments: VOICE MAP.md. Checked records: ../5B-production.json.

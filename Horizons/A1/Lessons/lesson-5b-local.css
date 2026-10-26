@@ -1,0 +1,68 @@
+/* 5B: two shopping reviews, not another magazine cover. Saturated indigo
+   is confined to review-site identity; ordinary exercises stay on open paper. */
+.l5b-page { --hz-unit:var(--hz-unit-1); --hz-unit-dark:#8f123f; --hz-unit-soft:#f8e6ee; font-size:9.5pt; }
+.l5b-page .hz-page-stack { gap:2mm; }
+.l5b-page .hz-lesson-header { padding-bottom:3mm; }
+.l5b-page .hz-exercises { gap:.5mm; }
+.l5b-page .hz-exercise { padding:1.5mm 0 2mm; }
+.l5b-page .hz-exercise__body { margin-top:1.7mm; }
+.l5b-page .hz-go-to { margin-block:.5mm 1mm; }
+.l5b-actions { width:144mm; margin:0 auto; position:relative; }
+.l5b-actions > img { display:block; width:100%; height:auto; }
+.l5b-actions figcaption { position:absolute; inset:1mm 0 auto; display:grid; grid-template-columns:repeat(4,1fr); }
+.l5b-actions figcaption > span { margin-left:1mm; justify-self:start; background:#fff; color:var(--hz-unit-dark); font-size:8pt; font-weight:650; padding:.4mm 1.2mm; }
+.l5b-action-words { display:grid; grid-template-columns:repeat(4,1fr); gap:3mm; margin-top:2mm; }
+.l5b-action-words > span { display:flex; align-items:baseline; gap:1.5mm; }
+.l5b-action-words b { color:var(--hz-unit-dark); font-weight:650; font-size:8.5pt; }
+.l5b-letter { display:inline-block; width:6mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
+.l5b-reviews { border:.3mm solid #cbc6dd; background:#fff; }
+.l5b-review-title { display:flex; justify-content:space-between; gap:5mm; align-items:center; background:#4f3f80; color:#fff; padding:2.5mm 3mm; }
+.l5b-review-title p { margin:0 0 1mm; font-size:7pt; font-weight:650; letter-spacing:.12em; }
+.l5b-review-title h2 { margin:0; font:650 21pt/1.12 var(--hz-font-sans); letter-spacing:-.03em; }
+.l5b-review-count { border-left:.3mm solid #b8afd0; padding-left:3mm; font-size:8pt; }
+.l5b-review { display:grid; grid-template-columns:23mm minmax(0,1fr); gap:4mm; padding:3mm; }
+.l5b-review + .l5b-review { border-top:.3mm solid #e0dce8; background:#f7f6fa; }
+.l5b-customer-photo { height:30mm; width:23mm; background-repeat:no-repeat; }
+.l5b-review--mina .l5b-customer-photo { background-image:url('../Images/5B/Shopping-actions-v1.png'); background-size:400% auto; background-position:66.66667% 0; }
+.l5b-review--tess .l5b-customer-photo { background-image:url('../Images/5B/Two-jacket-fits-v1.png'); background-size:auto 100%; background-position:0 0; }
+.l5b-review-copy header { display:flex; align-items:baseline; justify-content:space-between; gap:3mm; margin-bottom:2mm; }
+.l5b-review-copy h3 { margin:0; font-size:12pt; color:#4f3f80; font-weight:700; }
+.l5b-stars { color:#77452e; font-size:11pt; letter-spacing:.05em; }
+.l5b-stars > span { color:#8a828c; }
+.l5b-review-copy p { margin:0; font-size:11.5pt; line-height:1.45; }
+.l5b-review-copy strong { color:var(--hz-unit-dark); font-weight:650; }
+.l5b-list { list-style:none; padding:0; margin:0; counter-reset:item; }
+.l5b-list li { position:relative; padding-left:4.5mm; counter-increment:item; line-height:1.45; }
+.l5b-list li::before { content:counter(item); position:absolute; left:0; top:0; color:var(--hz-unit-dark); font-weight:650; font-size:8.5pt; }
+.l5b-list li+li { margin-top:1.3mm; }
+.l5b-details { display:grid; grid-template-columns:1fr 1fr; gap:1.5mm 5mm; }
+.l5b-details li+li { margin-top:0; }
+.l5b-gap { display:inline-block; width:19mm; height:4mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); vertical-align:baseline; }
+.l5b-continuation-content { padding-top:7mm; }
+.l5b-page--2 .hz-exercises { padding-top:0!important; }
+.l5b-grammar th { width:50%; }
+.l5b-correct { display:grid; grid-template-columns:1fr 1fr; gap:5mm; margin-top:2mm; }
+.l5b-correct p { margin:0; }
+.l5b-correct p > span { display:block; margin-top:1mm; }
+.l5b-fits { position:relative; width:144mm; margin:0 auto 2mm; }
+.l5b-fits > img { display:block; width:100%; height:auto; }
+.l5b-fits figcaption { position:absolute; inset:1.5mm 0 auto; display:grid; grid-template-columns:1fr 1fr; }
+.l5b-fits figcaption > span { justify-self:start; margin-left:1.5mm; background:#fff; color:var(--hz-unit-dark); padding:.5mm 1.5mm; font-weight:650; font-size:8.5pt; }
+.l5b-fit-choices { display:grid; grid-template-columns:1fr 1fr; gap:5mm; }
+.l5b-fit-choices li+li { margin-top:0; }
+.l5b-listening { width:100%; table-layout:fixed; border-collapse:collapse; margin-top:2mm; }
+.l5b-listening th { font-weight:650; text-align:left; }
+.l5b-listening thead th { color:#4f3f80; border-bottom:.5mm solid #8974b4; padding:1mm 2mm; }
+.l5b-listening tbody th,.l5b-listening td { height:7mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); padding:1mm 2mm; }
+.l5b-listening th:first-child { width:25%; }
+.l5b-listening th:nth-child(2) { width:30%; }
+.l5b-listening td { border-left:.25mm solid var(--hz-line); }
+.l5b-your-review { border:.25mm solid #c8c3d3; background:#fff; padding:0 3mm 2mm; }
+.l5b-your-review header { display:flex; align-items:baseline; justify-content:space-between; gap:3mm; padding:1.5mm 0; border-bottom:.25mm solid #d9d3e1; }
+.l5b-your-review h2 { margin:0; font:650 12pt/1.25 var(--hz-font-sans); color:#4f3f80; }
+.l5b-your-review header > span { font-size:9.5pt; }
+.l5b-open-lines > span { display:block; height:7mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
+.l5b-inset { margin-left:calc(var(--hz-exercise-marker-size) + 3mm); }
+.l5b-page .hz-extra-practice { margin-top:2mm; }
+
+.l5b-page .hz-word-bank { display:flex; flex-wrap:wrap; gap:1mm 5mm; color:var(--hz-unit-dark); }

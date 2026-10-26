@@ -1,6 +1,6 @@
 # Horizons A1 — Book audit
 
-Updated 25 October 2026. **Technical preview verified through 5A; visual-fatigue reassessment and final book release pending.**
+Updated 26 October 2026. **Technical preview verified through 5B; visual-fatigue reassessment and final book release pending.**
 
 This is the current audit entry point. [book-audit.json](book-audit.json) holds scoped evidence and historical checks; [CANONICAL-STYLE.md](../Base/design-system/CANONICAL-STYLE.md) governs design. A current snapshot is not final release approval.
 
@@ -8,17 +8,27 @@ This is the current audit entry point. [book-audit.json](book-audit.json) holds 
 
 | Item | Current state |
 | --- | --- |
-| Content | 1A–5A plus Units 1 & 2 and 3 & 4 Reviews: 19 masters |
-| Saved book | 38 A4 pages; printed pages 5–42 |
-| Activity blocks | 134; existing subexercise numbering retained |
-| Audio | 39 MP3 files; new 5A tracks 5.1–5.3 decoded/transcribed |
-| Navigation cues | 22 NEW WORDS badges, 17 Extra Practice footers, 40 Go to references |
-| Concept explanations | 14 revised panels across 11 lessons; 20 total focus panels including retained 4A and new 4B–5A |
-| Unresolved destinations | 40 `page ---` references; intentional until back-of-book pagination |
+| Content | 1A–5B plus Units 1 & 2 and 3 & 4 Reviews: 20 masters |
+| Saved book | 40 A4 pages; printed pages 5–44 |
+| Activity blocks | 141; existing subexercise numbering retained |
+| Audio | 42 MP3 files; new 5B tracks 5.4–5.6 decoded/transcribed |
+| Navigation cues | 23 NEW WORDS badges, 18 Extra Practice footers, 42 Go to references |
+| Concept explanations | 14 revised panels across 11 lessons; 21 total focus panels including retained 4A and new 4B–5B |
+| Unresolved destinations | 42 `page ---` references; intentional until back-of-book pagination |
 
 Counts are inventory, not proof that every cue is correctly placed. Review placement beside the newly introduced content.
 
 ## Verified evidence and its limits
+
+## 5B production, 26 October
+
+**That’s my favorite!**, printed pages **43–44**, keeps the B-lesson reading/listening role. Original fictional online shopping reviews introduce pay / try on / keep / return and provide the evidence for **too + adjective** and **adjective + enough**. A gist question precedes retrieval, discovery, clarification, picture practice and three new listening decisions. An independent short review closes the lesson. The key and cumulative language note are in `Answer keys/5B.md` and `Wordlists/5B.md`.
+
+The feature is a recognizable customer-review surface with two photo/text entries and contextual ratings, not a copy of 5A’s warm editorial or another profile trio. Its integrated reading text is 11.5pt; ordinary task/concept text remains 9.5pt and instructions 8.9pt. Indigo is confined to the source identity and small task headers, without a yellow/gold accent. Both original generated photographic assets retain full environments. The continuation’s 144 × 72mm comparison makes oversized versus correctly fitting clothing visible, with natural proportions, no text baked into the pictures and open writing space below. Source/asset provenance, the built-in imagegen prompts and fictional boundaries are in `Images/5B/asset-manifest.json`.
+
+**Verified locally:** seven activities in one numbered lane, NEW WORDS, two references, Extra Practice, no text overflow, consistent functional fonts and crimson grammar emphasis. Minimum activity-bottom clearance is 75.7px. All three audio controls play/pause. Tracks 5.4–5.6 use Jessica narration, the approved cast and Eleven v3; each decodes, matches its normalized transcript and has no detected throat-clearing event. No subjective listening review is claimed. No forbidden clarity tag or SSML is used. The saved 40-page A4 book and two-page lesson PDF were reopened and checked through Poppler; all original 38 pages and compiled page fragments are unchanged. The two new pages match their browser export and retain all learner word tokens. The preceding three spreads and whole-book contact sheet were compared. This is a scoped 5B pass, not final whole-book release approval. Live publication follows verification.
+
+Before copies, hashes, scripts, comparison images, audio checks and rollback guards are in `work/lesson5b` outside the repository.
 
 ## Units 3–4 and both reviews: visual-variety correction, 25 October
 

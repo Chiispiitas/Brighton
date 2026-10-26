@@ -1,0 +1,37 @@
+{
+  "lesson": "5B",
+  "date": "2026-10-26",
+  "assets": [
+    {
+      "file": "Shopping-actions-v1.png",
+      "generator": "Built-in image_gen",
+      "prompt": "Create one wide photographic contact sheet for an adult A1 English coursebook, four equal-width rectangular photographs arranged in ONE horizontal row, narrow clean white gutters, 4:1 overall aspect ratio. All four photos use natural professional lifestyle photography, full real environmental backgrounds, normal human anatomy. No text, letters, numbers, logos, watermark or graphic labels anywhere. Panel 1: close view of an adult woman at a home desk holding a bank card in one hand beside an open laptop, paying for an online purchase; hands, card, laptop all clear, no legible screen text. Panel 2: a different adult man trying on a plain dark red jacket in front of a full-length shop mirror; adjusting the lapels, jacket naturally fitted. Panel 3: a smiling young adult woman at home taking possession of a new roomy blue fabric tote, holding the bag next to a clearly empty delivery box on the table; pleased with her purchase, keeping the bag. Panel 4: an adult man at a parcel-service counter passing a closed plain brown parcel to a clerk across the counter; return transaction, both people's hands complete and visible. Crop to medium shots so the action is clear at textbook size. Warm realistic colors, no stylized graphics. The photos must be visually distinct to match pay / try on / keep / return; maintain equal panel widths and straight gutters.",
+      "dimensions": [
+        2172,
+        724
+      ],
+      "native_alpha": false,
+      "sha256": "f72f14eace23a3c65237edc1593cf48a6acca443f9737e0e3f18c8a3487209af",
+      "role": "Four new shopping-action photos; Mina review reuses its keep scene.",
+      "presentation": "Original asset bytes retained. Full scenes use natural proportions; review thumbnails use deliberate crops without distortion. No text baked into images.",
+      "fictional_boundary": "Generated fictional models and purchases; no real retailer or endorsement."
+    },
+    {
+      "file": "Two-jacket-fits-v1.png",
+      "generator": "Built-in image_gen",
+      "prompt": "Create ONE wide realistic photographic diptych for an adult English textbook about online clothes shopping: two equal vertical photos in one horizontal image, simple narrow white gutter in the exact centre, 2:1 overall aspect ratio. Same friendly young adult woman with medium brown skin and dark curly shoulder-length hair in BOTH photographs, in the same bright home bedroom with a standing full-length mirror, light wall, houseplant and open cardboard clothes-delivery box. LEFT photo: she tries on a mustard-orange jacket that is obviously MUCH TOO BIG: shoulders fall below her own shoulders, sleeves hang over and cover her hands, broad loose body hangs well below her hips. She looks thoughtfully at the too-large sleeves, natural slight concern, no comic exaggeration. RIGHT photo: the same woman trying on a plain rich purple jacket that FITS CORRECTLY: normal shoulder seam, cuffs at wrists with hands visible, flattering comfortable normal fit, normal jacket length; she looks pleased. In both show head through mid-thigh or knees, upright natural pose, jackets fully in frame, fingers anatomically correct where visible. Equal figure sizes, accurate consistent identity, professional candid lifestyle photography with full environmental backgrounds, no cutout, no isolated white backdrop. No text, labels, prices, numbers, logos, watermarks or graphic overlays.",
+      "dimensions": [
+        1774,
+        887
+      ],
+      "native_alpha": false,
+      "sha256": "3a5dfeea7c509bb70ade4a483d50320afec60d75832ae8ca9a0316151f19379f",
+      "role": "Exact too-large/correct-fit comparison on the continuation; Tess review uses the orange-jacket panel.",
+      "presentation": "Original asset bytes retained. Full scenes use natural proportions; review thumbnails use deliberate crops without distortion. No text baked into images.",
+      "fictional_boundary": "Generated fictional models and purchases; no real retailer or endorsement."
+    }
+  ],
+  "editorial_identity": "Original fictional customer-review site; indigo/white interface identity, two horizontal photo/review entries, contextual stars. Contrasts with 5A warm editorial and 4R cinema programme. No gold accent label.",
+  "source_text": "Original fictional A1 reviews; not scraped or copied from a retailer.",
+  "stock_vs_generated_decision": "Specific shopping actions and exact clothing fit required controlled evidence; built-in imagegen chosen rather than ambiguous stock photographs."
+}

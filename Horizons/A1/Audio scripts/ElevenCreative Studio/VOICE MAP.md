@@ -250,3 +250,11 @@ Nora retains her existing 2A voice. The post, location and generated scene are f
 - Track 5.3: NARRATOR Jessica, paragraphs 1–4.
 
 Nia and Eli are new fictional shop visitors reading a real historical price story; they are not the historical buyers. Retain these exact role IDs on a return. Jessica announces every track and narrates all vocabulary/descriptions. All three tracks use Eleven v3 / Natural stability 0.5 and no forbidden clarity tag. Final decode, exact normalized transcript and audio-event evidence: `../5A-production.json`; no subjective listening review is claimed.
+
+## 5B - Online shopping reviews
+
+- Track 5.4: Jessica (`cgSgspJ2msm6clMCkdW9`), paragraphs 1-2.
+- Track 5.5: Jessica paragraphs 1, 2 and 4; Mina uses Amy (`OZxMHsGaBmV5pjMIDIn0`) in paragraph 3; Tess uses Adeline (`5l5f8iK3YPeGga21rQIX`) in paragraph 5.
+- Track 5.6: Jessica paragraphs 1, 2, 4 and 6. Independent shopper 1 uses Mark Casual (`1SM7GgM6IMuvQlz2BwM3`), paragraph 3; shopper 2 uses Juniper (`aMSt68OGf4xUZAnLpTU8`), paragraph 5; shopper 3 uses Amy (`OZxMHsGaBmV5pjMIDIn0`), paragraph 7. These are independent listening roles, not Mina or Tess.
+
+All track labels and number cues use Jessica. Mina and Tess are new fictional roles; retain these IDs if they return. Every track uses Eleven v3 / stability 0.5, no forbidden clarity tag and no SSML. Decode, exact normalized transcript and audio-event evidence: `../5B-production.json`. No subjective listening review is claimed.

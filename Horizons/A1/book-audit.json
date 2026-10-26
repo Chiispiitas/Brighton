@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-25",
+  "updated": "2026-10-26",
   "status": "technical preview verified; visual-fatigue reassessment and final book release pending",
-  "scope": "A1 through 5A, including Units 1 & 2 and 3 & 4 Reviews",
+  "scope": "A1 through 5B, including Units 1 & 2 and 3 & 4 Reviews",
   "readability_comparison_baseline": "e8d6ddd69f62caffab662a93a5a392ebc5bfb131",
   "inventory": {
     "lesson_masters": [
@@ -24,21 +24,22 @@
       "4C",
       "4D",
       "4R",
-      "5A"
+      "5A",
+      "5B"
     ],
-    "pdf_pages": 38,
+    "pdf_pages": 40,
     "printed_pages": [
       5,
-      42
+      44
     ],
-    "activity_blocks": 134,
-    "audio_files": 39,
-    "new_words_badges": 22,
-    "extra_practice_footers": 17,
-    "go_to_references": 40,
-    "page_placeholders": 40,
-    "focus_panels": 20,
-    "html_pages": 38
+    "activity_blocks": 141,
+    "audio_files": 42,
+    "new_words_badges": 23,
+    "extra_practice_footers": 18,
+    "go_to_references": 42,
+    "page_placeholders": 42,
+    "focus_panels": 21,
+    "html_pages": 40
   },
   "checks": {
     "refreshed_during_cleanup": {
@@ -1922,7 +1923,8 @@
         "whole_book_contact_sheet_inspected_for_context": true,
         "new_global_visual_pass_claimed": false
       },
-      "units_3_4_and_reviews": "Scoped correction verified locally for printed pages 21-40; see units_3_4_reviews_visual_variety_20261025. Unit 1 and Unit 2 lessons remain outside this new visual-fatigue pass."
+      "units_3_4_and_reviews": "Scoped correction verified locally for printed pages 21-40; see units_3_4_reviews_visual_variety_20261025. Unit 1 and Unit 2 lessons remain outside this new visual-fatigue pass.",
+      "lesson_5b": "Scoped new 5B composition checked beside preceding three spreads and whole-book contact sheet; no approval automatically extends to Unit 1/2."
     },
     "lesson_5a_visual_redesign_20261025": {
       "date": "2026-10-25",
@@ -2156,13 +2158,87 @@
         "unique_backgrounds": 48,
         "published_source_commit": "12f45cb"
       }
+    },
+    "lesson_5b_20261026": {
+      "scope": "5B, printed pages 43-44",
+      "status": "local HTML, audio and saved PDF verified; live publication pending",
+      "syllabus": "B reading/listening: online shopping reviews; shopping verbs and adjective patterns with too/enough.",
+      "learning_sequence": "Four pictured shopping actions; gist reading/listening; detailed retrieval; two evidence-led discovery questions; compact clarification; exact-size photo choices; new controlled listening; independent short review.",
+      "new_words": [
+        "pay",
+        "try on",
+        "keep",
+        "return"
+      ],
+      "grammar": "too + adjective; adjective + enough; negative not + adjective + enough. The 4C enough-before-noun pattern is retained.",
+      "language_ceiling": "Uses earlier clothes, colors, prices and adjectives; present-simple purchase accounts and recycled 5A present continuous avoid unsupported past narration. Reading, characters and prices are fictional and are not attributed to a retailer.",
+      "creative_acceptance": {
+        "color": "Indigo/white customer-review surface, neutral stars, no yellow accent recipe; ordinary practice on paper.",
+        "text": "Two horizontal customer entries with 11.5pt integrated source text; functional task/concept type stays 9.5pt and instructions 8.9pt.",
+        "images": "New action strip, two review thumbnails and a substantial 144 x 72mm full-background try-on comparison on the continuation. Specific poses/fits use built-in imagegen; original PNG bytes and prompts retained.",
+        "neighbors": "Compared with 4D phone/note, 4R film programme and 5A warm clothing editorial. A review-site reading surface, not another magazine-cover slogan, profile trio or phone.",
+        "preserved_conventions": "Single numbered lane; familiar crimson navigation/markers, pink concept shell with crimson emphasis, neutral word bank, italic normal-weight choices, NEW WORDS, both Go to refs and Extra Practice."
+      },
+      "geometry": {
+        "no_text_overflow": true,
+        "minimum_activity_bottom_clearance_px": 75.65625,
+        "standalone_matches_assembled": true,
+        "loaded_images": true,
+        "ordinary_tasks_and_concepts_pt": 9.5,
+        "instructions_pt": 8.9,
+        "integrated_review_text_pt": 11.5,
+        "image_native_proportions": "Full photos retain native proportions; review thumbnails are deliberate nondistorting crops."
+      },
+      "audio": {
+        "tracks": [
+          "5.4",
+          "5.5",
+          "5.6"
+        ],
+        "narrator": "Jessica",
+        "model": "eleven_v3",
+        "approved_pool_roles": "Mina/Amy; Tess/Adeline; independent listeners Mark Casual, Juniper and Amy.",
+        "all_decoded": true,
+        "exact_normalized_transcripts": true,
+        "audio_events_checked": true,
+        "throat_clearing_events_detected": false,
+        "subjective_listening_review": false,
+        "forbidden_tag_preflight": true,
+        "browser_buttons_play_pause": true,
+        "total_seconds": 61.15
+      },
+      "saved_pdf": {
+        "pages": 40,
+        "all_a4": true,
+        "printed_pages": [
+          5,
+          44
+        ],
+        "original_38_pages_text_and_pixels_identical": true,
+        "new_pages_match_direct_export": true,
+        "all_new_learner_word_tokens_present": true,
+        "original_38_compiled_html_pages_identical": true,
+        "all_original_19_masters_keys_and_image_binaries_preserved": true,
+        "all_original_39_mp3s_preserved": true,
+        "pdf_sha256": "e90e03bd67ee0bdc93a312ab119e4e09e184c09961231ece150a7e4965a4029a",
+        "pdf_bytes": 24568080,
+        "method": "Original 38 pages copied as PDF objects; native Windows 5B export appended. Export-only 240dpi media; no font/image rewriting or aggressive resource deduplication."
+      },
+      "evidence_directory": "work/lesson5b",
+      "visual_inspection": [
+        "Final Poppler pages 43 and 44",
+        "Preceding three-spread comparison",
+        "Whole-book contact sheet"
+      ],
+      "preservation": "All previous 38 PDF pages and compiled page fragments are text/pixel identical; all 19 original masters, keys, image files and 39 MP3s retain bytes.",
+      "reversibility": "Exact before copies for modified files, all-file hash ledger and guarded rollback journal outside repo."
     }
   },
   "pending": [
     {
       "id": "visual-fatigue",
       "scope": "Unit 1 and Unit 2 lessons; final whole-book reassessment",
-      "action": "Units 3-4, both paired reviews and 5A now have scoped visual-fatigue evidence. Reassess the remaining Unit 1/2 lessons and repeat final whole-book comparison when book content is complete."
+      "action": "Units 3-4, both paired reviews and 5A-5B now have scoped visual-fatigue evidence. Reassess the remaining Unit 1/2 lessons and repeat final whole-book comparison when book content is complete."
     },
     {
       "id": "pagination",
@@ -2206,9 +2282,9 @@
         "Student's Book.html"
       ],
       "fingerprint": {
-        "files": 392,
-        "bytes": 438262349,
-        "sha256": "61feae263f714bcb18ee31549cba5829ba53c60ff2b5dbc83b21daa3f4755f8b"
+        "files": 406,
+        "bytes": 443865400,
+        "sha256": "a82560f83227905e1a0dc28f099405149afe20e9a357b371463b4a250e017661"
       }
     },
     "shared_rendering": {
@@ -2228,8 +2304,8 @@
       ],
       "fingerprint": {
         "files": 1,
-        "bytes": 23817002,
-        "sha256": "09e6fbac60ab1a890b27bf8b95fe218052b2cf1ae75ee257e467afcc2e80c518"
+        "bytes": 24568080,
+        "sha256": "a6a55c20196fd449c86806aea8d3d00d99a81724c4fe434852e2354f5a22a0ec"
       }
     },
     "audit_criteria": {
@@ -2247,6 +2323,6 @@
     }
   },
   "content_baseline_commit": "2f404b547b7da07be81a0622a78591d3299c402a",
-  "current_revision": "Units 3-4 and both reviews now have distinct content-led feature treatments. All learner content, original media and approved 5A retained. Twenty saved-PDF pages visually checked; canonical live HTML/PDF and browser geometry/audio verified. Whole-book release and remaining visual-fatigue reassessment still pending.",
+  "current_revision": "New 5B reading/listening spread, seven activities, two generated photo assets and three checked Eleven v3 tracks. Pages 43-44 fit with original 38 pages preserved. Local PDF/source/media verified; live publication pending. Final whole-book release and unresolved backmatter remain pending.",
   "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope. units_3_4_reviews_visual_variety_20261025 supersedes earlier composition, color and geometry evidence for printed pages 21-40, including review_composition_20261025, review_3_4_20261025, unit_3_creative_revision and unit_4_visual_variety; earlier learning and audio evidence keeps its original scope."
 }
