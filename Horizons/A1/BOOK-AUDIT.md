@@ -24,7 +24,7 @@ The author rejected Activity 5's repetition of Tess's Activity 2 jacket scene. A
 
 **Verified:** both 5B pages fit, standalone and compiled geometry match, normal functional typography is retained, and the final saved page was inspected through Poppler alongside Activity 2. Minimum activity-bottom clearance remains 58.4px. Only printed page **44** changes; the other **41** PDF pages retain text/drawing streams and compiled page fragments. Activity 2's page also matches the native-export pixels. All 45 lesson recordings, the production ident, previous image binaries and other lessons are preserved. Existing broadcast source/voice/production checks remain valid. Earlier Activity 5 jacket-comparison descriptions are historical and superseded by this correction.
 
-Local checks complete; publication verification pending.
+Published canonical HTML/PDF match the verified files; the live 5B browser loads the new comparison and matches both page geometries. Existing audio still plays.
 
 The reusable audit and canonical style guide now require **exercise-by-exercise visual progression**. Do not use the source/guest photograph, a new crop or a near-identical scene as a later practice task's main image. A controlled comparison can hold its own objects constant when needed to teach the contrast; that is different from recycling an earlier activity. Before sources/outputs, file hashes and guarded rollback journal: `work/5b-activity5-boxes` outside the repository.
 

@@ -2534,7 +2534,7 @@
     },
     "lesson_5b_activity5_variety_20261026": {
       "scope": "5B Activity 5, printed page 44",
-      "status": "local HTML/PDF verified; publication pending",
+      "status": "local and published HTML/PDF verified",
       "author_correction": "Activity 5 repeated the jacket scene used for Tess in Activity 2. Replace it with genuinely different visual evidence.",
       "replacement": "Built-in imagegen: the same pair of shoes overhanging a too-small packing box, then fully inside a big-enough box. New parcel-packing context, not another person trying on a jacket.",
       "asset": "Images/5B/Boxes-for-shoes-v1.png",
@@ -2573,7 +2573,28 @@
       },
       "preserved": "Activity 2, all other 41 PDF pages/compiled page fragments, 20 other lesson masters/keys, all prior image binaries, all 45 lesson MP3s and production ident.",
       "prevention": "New canonical and audit rule: check visual progression exercise by exercise. Do not recycle a source/guest picture, crop or near-identical scene as later practice; fresh context/evidence is required. Controlled contrast within one comparison can hold objects constant.",
-      "reversibility": "Before files, hashes and guarded rollback journal in work/5b-activity5-boxes."
+      "reversibility": "Before files, hashes and guarded rollback journal in work/5b-activity5-boxes.",
+      "publication": {
+        "canonical": {
+          "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html",
+          "canonical_html_matches": true,
+          "canonical_pdf_matches_sha256": "d5d2dc9cbef5691e312441720e0325c260a172653465afc0f7876c854d46b288",
+          "pdf_bytes": 26299854,
+          "published_track_hashes": {
+            "5.4": "4b5c0a6749cf34a9dd2aad58953ebb9609ba4c73dc0ee6705b58212215590c7b",
+            "5.5": "8daf21abe2b4ab46869112556f0631df3138527325a4f5c879260b9caf236290",
+            "5.6": "68808f463a6eff2de443b044a20878dab93463d55ad2c56b6cd79d9c944550d0"
+          }
+        },
+        "browser": {
+          "url": "https://exams.bebrighton.net/Horizons/A1/Lessons/5B.html",
+          "both_page_geometries_match_local": true,
+          "all_images_and_css_backgrounds_loaded": true,
+          "backgrounds": 2,
+          "all_three_new_tracks_play_pause": true,
+          "print_audio_controls_hidden": true
+        }
+      }
     }
   },
   "pending": [
@@ -2665,7 +2686,7 @@
     }
   },
   "content_baseline_commit": "2f404b547b7da07be81a0622a78591d3299c402a",
-  "current_revision": "5B Activity 5 now uses independent generated parcel-box capacity evidence instead of repeating Tess’s jacket scene. Key/wordlist and visual-reuse guard updated; Activity 2 and every audio file preserved. Local checks complete; publication verification pending. Final whole-book release and backmatter remain pending.",
+  "current_revision": "5B Activity 5 now uses independent generated parcel-box capacity evidence instead of repeating Tess’s jacket scene. Key/wordlist and visual-reuse guard updated; Activity 2 and every audio file preserved. Published source/PDF and live page verified. Final whole-book release and backmatter remain pending.",
   "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope. units_3_4_reviews_visual_variety_20261025 supersedes earlier composition, color and geometry evidence for printed pages 21-40, including review_composition_20261025, review_3_4_20261025, unit_3_creative_revision and unit_4_visual_variety; earlier learning and audio evidence keeps its original scope. lesson_5b_on_air_20261026 supersedes prior 5B reading/source/presentation and 5.5/5.6 records only. The 26 October every-unit show mandate is superseded by planned B-skill balance and no two-unit show gap. lesson_5b_activity5_variety_20261026 supersedes only the earlier 5B Activity 5 image/choices/key and continuation-image evidence; no show/audio or other lesson evidence changes.",
   "receptive_skill_plan": {
     "policy": "B lessons provide a planned mix of reading-led and listening-led units; Horizons on Air is not required in every unit. Avoid two consecutive units without the show. Do not impose rigid alternation; 2B and 3B are both listening-led. Declare primary skill and source genre before authoring.",
