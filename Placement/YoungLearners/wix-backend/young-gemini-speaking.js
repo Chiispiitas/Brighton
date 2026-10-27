@@ -501,9 +501,8 @@ async function callInteractions(apiKey, model, candidateContext, audioBase64, au
     };
   }
 
-  if (!providerAssessmentIsComplete(outputText)) return {ok: false, transport: "interactions", model, includeSchema, error: {status: 502, code: "INCOMPLETE_ASSESSMENT", message: "The examiner returned incomplete rubric evidence."}};
   return {
-    ok: true,
+    ok: providerAssessmentIsComplete(outputText),
     transport: "interactions",
     model,
     includeSchema,
@@ -583,9 +582,8 @@ async function callGenerateContent(apiKey, model, candidateContext, audioBase64,
     };
   }
 
-  if (!providerAssessmentIsComplete(outputText)) return {ok: false, transport: "generateContent", model, includeSchema, error: {status: 502, code: "INCOMPLETE_ASSESSMENT", message: "The examiner returned incomplete rubric evidence."}};
   return {
-    ok: true,
+    ok: providerAssessmentIsComplete(outputText),
     transport: "generateContent",
     model,
     includeSchema,
