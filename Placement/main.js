@@ -53,6 +53,7 @@
   let locked = false;
   let activeAudio = null;
 
+  let speakingFlowEpoch = 0;
   let speakingStream = null;
   let speakingRecorder = null;
   let speakingChunks = [];
@@ -248,6 +249,21 @@
     }
   }
 
+  function withDeadline(promise, milliseconds, code, onLateValue) {
+    let expired = false;
+    let timer;
+    return Promise.race([
+      Promise.resolve(promise).then(value => {
+        if (expired) { onLateValue?.(value); throw Object.assign(new Error("Operation timed out."), {code}); }
+        return value;
+      }),
+      new Promise((resolve, reject) => { timer = window.setTimeout(() => {
+        expired = true;
+        reject(Object.assign(new Error("The operation took too long. Please try again."), {code}));
+      }, milliseconds); })
+    ]).finally(() => window.clearTimeout(timer));
+  }
+
   async function apiPost(path, body) {
     if (!apiBase) throw new Error("Placement service is unavailable.");
 
@@ -262,13 +278,21 @@
       throw error;
     }
 
-    const response = await fetch(`${apiBase}/${path}`, {
-      method: "POST",
-      headers: { "Content-Type": "text/plain;charset=UTF-8" },
-      body: serializedBody
-    });
-
-    const responseText = await response.text();
+    const controller = new AbortController();
+    const timeoutMs = /SubmitSpeaking$/.test(path) ? 75000 : /Resume$/.test(path) ? 6000 : 20000;
+    const timeout = window.setTimeout(() => controller.abort(), timeoutMs);
+    let response, responseText;
+    try {
+      response = await withDeadline(fetch(`${apiBase}/${path}`, {
+        method: "POST",
+        headers: { "Content-Type": "text/plain;charset=UTF-8" },
+        body: serializedBody,
+        signal: controller.signal
+      }).then(async result => ({response: result, text: await result.text()})), timeoutMs, "REQUEST_TIMEOUT").then(result => {
+        responseText = result.text;
+        return result.response;
+      });
+    } finally { window.clearTimeout(timeout); }
     let payload = {};
     try { payload = responseText ? JSON.parse(responseText) : {}; } catch {}
 
@@ -457,8 +481,9 @@
     });
   }
 
-  async function recoverCompletedPlacementResult({ attempts = 60, delayMs = 1000 } = {}) {
-    for (let attempt = 0; attempt < attempts; attempt += 1) {
+  async function recoverCompletedPlacementResult({ attempts = 12, delayMs = 1000 } = {}) {
+    const deadline = Date.now() + 25000;
+    for (let attempt = 0; attempt < attempts && Date.now() < deadline; attempt += 1) {
       if (attempt > 0) {
         await new Promise((resolve) => window.setTimeout(resolve, delayMs));
       }
@@ -1335,7 +1360,12 @@
 
     for (let index = 0; index < attempts.length; index += 1) {
       try {
-        const stream = await requestSpeakingMicrophone(attempts[index]);
+        const epoch = speakingFlowEpoch;
+        const stream = await withDeadline(requestSpeakingMicrophone(attempts[index]), 20000, "MIC_PERMISSION_TIMEOUT", late => late?.getTracks?.().forEach(track => track.stop()));
+        if (epoch !== speakingFlowEpoch) {
+          stream?.getTracks?.().forEach(track => track.stop());
+          throw Object.assign(new Error("Microphone check cancelled."), {code: "MIC_CANCELLED"});
+        }
         const audioTracks = stream?.getAudioTracks?.() || [];
 
         if (audioTracks.length && hasLiveAudioTrack(stream)) {
@@ -1360,7 +1390,7 @@
 
         // Permission/security failures need user action; retrying in code can
         // make Android suppress the prompt entirely.
-        if (["NotAllowedError", "SecurityError"].includes(name)) {
+        if (["NotAllowedError", "SecurityError"].includes(name) || ["MIC_PERMISSION_TIMEOUT", "MIC_CANCELLED"].includes(error?.code)) {
           break;
         }
 
@@ -1400,7 +1430,7 @@
 
       if (speakingAudioContext.state === "suspended") {
         try {
-          await speakingAudioContext.resume();
+          await withDeadline(speakingAudioContext.resume(), 2000, "AUDIO_METER_TIMEOUT");
         } catch (error) {
           console.warn("Speaking meter could not resume; recording can continue.", error);
           return null;
@@ -1413,7 +1443,7 @@
       speakingAnalyser = null;
 
       if (speakingAudioContext) {
-        try { await speakingAudioContext.close(); } catch {}
+        try { speakingAudioContext.close()?.catch?.(() => {}); } catch {}
         speakingAudioContext = null;
       }
 
@@ -1440,8 +1470,10 @@
     const status = els.stageRoot.querySelector("#micCheckStatus");
     const meter = els.stageRoot.querySelector("#micCheckMeter");
 
+    if (button?.disabled) return;
+    const epoch = ++speakingFlowEpoch;
     if (button) button.disabled = true;
-    if (status) status.textContent = "Checking";
+    if (status) status.textContent = "Allow microphone access in your browser. Checking…";
 
     try {
       const analyser = await setupSpeakingAnalyser();
@@ -1471,8 +1503,9 @@
       }
 
       if (status) status.textContent = "Microphone ready";
-      window.setTimeout(renderSpeakingPrompt, 450);
+      window.setTimeout(() => { if (epoch === speakingFlowEpoch) renderSpeakingPrompt(); }, 450);
     } catch (error) {
+      if (epoch !== speakingFlowEpoch) return;
       console.error("Microphone check failed:", error);
 
       const name = String(error?.name || "");
@@ -1508,10 +1541,13 @@
           <span>Check microphone</span><span aria-hidden="true">→</span>
         </button>
         <p id="micCheckStatus" class="speaking-status" aria-live="polite"></p>
+        <button id="skipSpeakingBtn" class="secondary-action" type="button">Finish without Speaking</button>
+        <p class="speaking-status">If you cannot record now, your other answers will be kept and Speaking will remain unscored.</p>
       </div>
     `;
 
     els.stageRoot.querySelector("#micCheckBtn")?.addEventListener("click", runMicCheck);
+    els.stageRoot.querySelector("#skipSpeakingBtn")?.addEventListener("click", skipSpeakingAfterError);
   }
 
   function renderSpeakingPrompt() {
@@ -1701,6 +1737,10 @@
   }
 
   async function startSpeakingRecording() {
+    const button = els.stageRoot.querySelector("#startSpeakingBtn");
+    if (button?.disabled || speakingRecordingActive) return;
+    if (button) button.disabled = true;
+    const epoch = speakingFlowEpoch;
     const data = speakingModule();
 
     try {
@@ -1722,6 +1762,9 @@
       speakingCaptureMode = "media-recorder";
 
       const stream = await ensureSpeakingMic();
+      stream.getAudioTracks?.().forEach(track => track.addEventListener?.("ended", () => {
+        if (speakingRecordingActive) renderSpeakingTechnicalError("The microphone disconnected. Please reconnect it and try again.");
+      }, { once: true }));
 
       // Metering is best-effort; it must not block recording on Android.
       try {
@@ -1730,7 +1773,9 @@
         console.warn("Speaking meter setup failed; continuing without it.", error);
       }
 
+      if (epoch !== speakingFlowEpoch) return;
       speakingRecorder = createSpeakingMediaRecorder(stream);
+      speakingRecorder.addEventListener("error", () => renderSpeakingTechnicalError("The recording was interrupted. Please try again."), { once: true });
 
       speakingRecorder.addEventListener("dataavailable", (event) => {
         if (event.data?.size) speakingChunks.push(event.data);
@@ -1738,9 +1783,11 @@
 
       speakingRecorder.addEventListener("stop", finishSpeakingRecording, { once: true });
       startSpeakingMediaRecorder(speakingRecorder);
+      speakingStartedAt = performance.now();
       startSpeakingMeter();
       renderSpeakingRecording(data);
     } catch (error) {
+      if (epoch !== speakingFlowEpoch) return;
       speakingRecordingActive = false;
       console.error("Speaking recording start failed:", error);
 
@@ -1859,10 +1906,16 @@
       return;
     }
 
-    speakingRecorder.stop();
+    const recorder = speakingRecorder;
+    const stopTimeout = window.setTimeout(() => {
+      if (speakingRecorder === recorder) renderSpeakingTechnicalError("The browser could not finish the recording. Please try again.");
+    }, 8000);
+    recorder.addEventListener("stop", () => window.clearTimeout(stopTimeout), { once: true });
+    try { recorder.stop(); } catch { window.clearTimeout(stopTimeout); renderSpeakingTechnicalError("The recording could not finish. Please try again."); }
   }
 
   async function finishSpeakingRecording() {
+    if (!speakingRecorder) return;
     const data = speakingModule();
     const durationSeconds = Math.max(0, (performance.now() - speakingStartedAt) / 1000);
     const speechRatio = speakingTotalFrames
@@ -1873,6 +1926,7 @@
     const recorderMimeType = String(speakingRecorder?.mimeType || speakingChunks[0]?.type || "audio/webm");
     const audioBlob = new Blob(speakingChunks, { type: recorderMimeType });
     const recordedBytes = audioBlob.size;
+    releaseSpeakingCaptureStream();
 
     if (durationSeconds < 5 || recordedBytes < 1200) {
       renderSpeakingTechnicalError("We couldn't detect enough audio. Try again.");
@@ -1901,7 +1955,9 @@
     startSpeakingAnalysisProgress();
 
     try {
-      const audioBase64 = await blobToBase64(audioBlob);
+      const audioBase64 = await withDeadline(blobToBase64(audioBlob), 15000, "AUDIO_ENCODING_TIMEOUT");
+      // Keep the recording available when a chunk upload fails.
+      lastSpeakingAttemptMetrics = {audioBase64, audioMimeType: recorderMimeType, durationSeconds, speechSeconds, speechRatio, recordedBytes, maximumSeconds: Number(data.maximumSeconds) || null, autoStoppedByTimeLimit: speakingAutoStoppedByTimeLimit};
       const audioTransport = await prepareSpeakingAudioTransport(audioBase64, recorderMimeType);
 
       const speakingMetrics = {
@@ -1969,6 +2025,7 @@
         return;
       }
 
+      if (!result.result?.finalLevel && !result.finalLevel) throw new Error("The server has not confirmed a completed assessment.");
       await completeSpeakingAnalysisProgress();
 
       session.phase = "result";
@@ -2009,8 +2066,10 @@
   }
 
 
-  function renderSpeakingTechnicalError(message) {
+  function renderSpeakingTechnicalError(message, technicalCode = "") {
     cleanupSpeakingMedia();
+    if (technicalCode === "MIC_PERMISSION_TIMEOUT") message = "The browser is still waiting for microphone permission. Allow access, then try again.";
+    if (/blocked|unavailable/i.test(message)) message += " Check microphone permissions and close other apps using the microphone. On a phone, open this page in Chrome or Safari instead of an in-app browser.";
 
     els.stageRoot.innerHTML = `
       <div class="speaking-retry">
@@ -2027,6 +2086,7 @@
   }
 
   async function skipSpeakingAfterError() {
+    cleanupSpeakingMedia();
     const button = els.stageRoot.querySelector("#skipSpeakingBtn");
     if (button) button.disabled = true;
 
@@ -2066,18 +2126,25 @@
       renderPlacementResult(result.result || { finalLevel: session.finalLevel });
     } catch (error) {
       console.error(error);
+      const recovered = await recoverCompletedPlacementResult({attempts: 2, delayMs: 500});
+      if (recovered) return acceptRecoveredPlacementResult(recovered);
       if (button) button.disabled = false;
+      const status = els.stageRoot.querySelector(".speaking-status");
+      if (status) status.textContent = "Could not save the result yet. Check your connection and try again. Your answers are kept.";
     }
   }
 
   function renderSpeakingSubmitRetry(metrics) {
     els.stageRoot.innerHTML = `
       <div class="retry-card">
-        <strong>Connection lost.</strong>
+        <strong>Your recording is ready, but the connection was interrupted.</strong>
+        <p class="speaking-status">Retry to send the same recording. Your previous answers are saved.</p>
+        <button id="skipSpeakingBtn" class="secondary-action" type="button">Finish without Speaking</button>
         <button id="retrySpeakingSubmitBtn" class="secondary-action" type="button">Retry</button>
       </div>
     `;
 
+    els.stageRoot.querySelector("#skipSpeakingBtn")?.addEventListener("click", skipSpeakingAfterError);
     els.stageRoot.querySelector("#retrySpeakingSubmitBtn")?.addEventListener("click", async () => {
       const button = els.stageRoot.querySelector("#retrySpeakingSubmitBtn");
       const data = speakingModule();
@@ -2099,6 +2166,10 @@
       if (button) button.textContent = "Retrying…";
 
       try {
+        if (metrics.audioBase64?.length > SPEAKING_INLINE_BASE64_CHARS) {
+          metrics = {...metrics, ...await prepareSpeakingAudioTransport(metrics.audioBase64, metrics.audioMimeType)};
+          lastSpeakingAttemptMetrics = metrics;
+        }
         const result = await apiPost("brightonPlacementSubmitSpeaking", {
           sessionId: session.sessionId,
           clientSessionId: session.clientSessionId,
@@ -2155,7 +2226,10 @@
   }
 
   function cleanupSpeakingMedia() {
+    speakingFlowEpoch += 1;
+    const recorder = speakingRecorder;
     cleanupSpeakingRecorderOnly();
+    if (recorder?.state === "recording") { try { recorder.stop(); } catch {} }
 
     if (speakingStream) {
       speakingStream.getTracks().forEach((track) => track.stop());

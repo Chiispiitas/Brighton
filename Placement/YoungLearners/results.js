@@ -223,6 +223,10 @@
   }
 
   function renderSpeakingSample(speaking, session) {
+    if (speaking?.assessment && ["fluency", "grammar", "vocabulary", "pronunciation", "communication"].some(key => !speaking.assessment[key]?.evidence?.length)) {
+      return `<div class="empty-speaking"><strong>Speaking assessment requires review.</strong><p>The examiner returned an incomplete rubric. The displayed numeric grade is invalid and must not be used for placement.</p><p>A new recording or a teacher assessment is required.</p><blockquote class="speaking-transcript">${escapeHtml(speaking.transcript || "")}</blockquote></div>`;
+    }
+
     if (!speaking) {
       return '<div class="empty-speaking">No speaking sample was saved for this attempt.</div>';
     }

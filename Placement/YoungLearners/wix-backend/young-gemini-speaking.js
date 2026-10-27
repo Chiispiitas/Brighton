@@ -397,6 +397,22 @@ function makeGenerateContentBody(candidateContext, audioBase64, audioMimeType, i
   };
 }
 
+async function speakingProviderFetch(url, options) {
+  let timer;
+  const failure = (code, message) => ({ok: false, status: 504, text: async () => JSON.stringify({error: {status: code, message}})});
+  try {
+    return await Promise.race([
+      fetch(url, options).then(async response => {
+        const body = await response.text();
+        return {ok: response.ok, status: response.status, text: async () => body};
+      }),
+      new Promise(resolve => { timer = setTimeout(() => resolve(failure("PROVIDER_TIMEOUT", "The speaking examiner did not respond in time.")), 25000); })
+    ]);
+  } catch {
+    return failure("PROVIDER_CONNECTION", "Could not reach the speaking examiner.");
+  } finally { clearTimeout(timer); }
+}
+
 async function callInteractions(apiKey, model, candidateContext, audioBase64, audioMimeType, includeSchema) {
   const responseFormatItem = {
     type: "text",
@@ -407,7 +423,7 @@ async function callInteractions(apiKey, model, candidateContext, audioBase64, au
     responseFormatItem.schema = RESPONSE_SCHEMA;
   }
 
-  const response = await fetch(
+  const response = await speakingProviderFetch(
     "https://generativelanguage.googleapis.com/v1beta/interactions",
     {
       method: "post",
@@ -485,6 +501,7 @@ async function callInteractions(apiKey, model, candidateContext, audioBase64, au
     };
   }
 
+  if (!providerAssessmentIsComplete(outputText)) return {ok: false, transport: "interactions", model, includeSchema, error: {status: 502, code: "INCOMPLETE_ASSESSMENT", message: "The examiner returned incomplete rubric evidence."}};
   return {
     ok: true,
     transport: "interactions",
@@ -496,7 +513,7 @@ async function callInteractions(apiKey, model, candidateContext, audioBase64, au
 }
 
 async function callGenerateContent(apiKey, model, candidateContext, audioBase64, audioMimeType, includeSchema) {
-  const response = await fetch(
+  const response = await speakingProviderFetch(
     GEMINI_GENERATE_BASE + "/" + encodeURIComponent(model) + ":generateContent",
     {
       method: "post",
@@ -566,6 +583,7 @@ async function callGenerateContent(apiKey, model, candidateContext, audioBase64,
     };
   }
 
+  if (!providerAssessmentIsComplete(outputText)) return {ok: false, transport: "generateContent", model, includeSchema, error: {status: 502, code: "INCOMPLETE_ASSESSMENT", message: "The examiner returned incomplete rubric evidence."}};
   return {
     ok: true,
     transport: "generateContent",
@@ -655,7 +673,23 @@ async function requestSpeakingAssessment(apiKey, candidateContext, audioBase64, 
   };
 }
 
+function isCompleteSpeakingAssessment(raw) {
+  if (!raw || typeof raw !== "object" || Array.isArray(raw)) return false;
+  if (!["sufficient", "borderline", "insufficient"].includes(raw.evidenceQuality) || typeof raw.transcript !== "string" || typeof raw.promptRepeat !== "boolean") return false;
+  // Unusable audio and prompt repetition are retry decisions, never grades.
+  if (raw.evidenceQuality === "insufficient" || raw.promptRepeat) return true;
+  return ["fluency", "grammar", "vocabulary", "pronunciation", "communication"].every(key => {
+    const dimension = raw[key];
+    return dimension && ASSESSMENT_BANDS.includes(dimension.band) && BAND_POSITIONS.includes(dimension.position) && Array.isArray(dimension.evidence) && dimension.evidence.some(value => typeof value === "string" && value.trim());
+  }) && ["taskAchievement", "coherence", "development"].every(key => typeof raw.communication[key] === "number" && Number.isFinite(raw.communication[key]) && raw.communication[key] >= 0 && raw.communication[key] <= 10);
+}
+
+function providerAssessmentIsComplete(outputText) {
+  try { return isCompleteSpeakingAssessment(JSON.parse(outputText)); } catch { return false; }
+}
+
 function sanitizeAssessment(raw) {
+  if (!isCompleteSpeakingAssessment(raw)) throw new Error("Incomplete speaking assessment.");
   const grammarErrors = Array.isArray(raw?.grammar?.errors)
     ? raw.grammar.errors.slice(0, 6).map((error) => ({
         heard: String(error?.heard || "").trim().slice(0, 240),

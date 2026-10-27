@@ -4,14 +4,14 @@ on:
   pull_request:
     paths:
       - "Exams/**"
-      - "Placement/wix-backend/**"
+      - "Placement/**"
       - ".github/workflows/validate-exam-answer-keys.yml"
   push:
     branches:
       - main
     paths:
       - "Exams/**"
-      - "Placement/wix-backend/**"
+      - "Placement/**"
       - ".github/workflows/validate-exam-answer-keys.yml"
 
 permissions:
@@ -54,6 +54,7 @@ jobs:
           NODE_PATH=/tmp/brighton-validation/node_modules node Exams/validate-b2-listening-practice.cjs
           NODE_PATH=/tmp/brighton-validation/node_modules node Exams/validate-listening-results.cjs
           NODE_PATH=/tmp/brighton-validation/node_modules node Exams/validate-results-png.cjs
+          NODE_PATH=/tmp/brighton-validation/node_modules node Placement/validate-speaking.cjs
       - name: Validate A1 Reading and Writing JavaScript syntax
         run: |
           node --check Exams/exams/a1-rw/main.js
