@@ -2,7 +2,7 @@
   "schema_version": 1,
   "updated": "2026-10-26",
   "status": "technical preview verified; visual-fatigue reassessment and final book release pending",
-  "scope": "A1 through Unit 6 and both paired reviews; three end-of-book image-credit pages. Later units and other backmatter unproduced.",
+  "scope": "A1 through Unit 6, including all three paired reviews (1 & 2, 3 & 4, 5 & 6), with three end-credit pages. Later units and other backmatter unproduced.",
   "readability_comparison_baseline": "e8d6ddd69f62caffab662a93a5a392ebc5bfb131",
   "inventory": {
     "lesson_masters": [
@@ -31,24 +31,25 @@
       "6A",
       "6B",
       "6C",
-      "6D"
+      "6D",
+      "6R"
     ],
-    "pdf_pages": 55,
+    "pdf_pages": 57,
     "printed_pages": [
       5,
-      59
+      61
     ],
-    "activity_blocks": 181,
+    "activity_blocks": 188,
     "audio_files": 60,
     "new_words_badges": 32,
     "extra_practice_footers": 24,
     "go_to_references": 54,
     "page_placeholders": 54,
     "focus_panels": 27,
-    "html_pages": 55,
+    "html_pages": 57,
     "html_audio_controls": 64,
     "production_audio_files": 1,
-    "lesson_pages": 52,
+    "lesson_pages": 54,
     "image_credit_pages": 3,
     "vocabulary_highlights": 0,
     "paired_new_words_sets": 0,
@@ -4353,6 +4354,211 @@
           "controls_hidden_in_print": true
         }
       }
+    },
+    "review_5_6_20261026": {
+      "scope": "Original Units 5 & 6 Review, printed pages 57-58. Image credits move to 59-61.",
+      "status": "local viewer/PDF verified; publication pending",
+      "learning": "Nine grammar choices plus worked example; six vocabulary associations plus example; four sign-grounded shopping matches; six photo/message judgments; four unambiguous route gaps; eight open writing lines and eight lesson-specific retrieval/transfer challenges. No new assessed set or audio dependency.",
+      "fresh_theme": "Friends prepare a surprise dinner for Eva. Ada/Max/Sam supply new visual clothes/action/position evidence, Sam writes to Lee, and a new painted town guide supports a different library route. No repeated thrift/online-show, minimalist profile, hotel/reception, small-city comparison, tiny-home source, gallery or outdoor-cinema story.",
+      "design": "Native Horizons chrome and permitted review-only two-column reading order. Warm rust photo-and-message feature, open practice, a task-bearing shopping sign, controlled painted map and eight small saturated/outlined circles. Purposeful backgrounds preserved; no blanket cards or blue/green-plus-yellow title recipe.",
+      "reference_inspection": "Personal Best A1 PDF 22-23 and English File Beginner PDF 16-17 inspected; borrow review balance/anchor/task variety, no copied text, art or branding.",
+      "media": "Two built-in image_gen assets: realistic full-background people scene and pedagogical raster map. Native image bytes, live accurate labels/start arrow; prompts and manifest in Images/6R. Fictional practice scene/geography; no real person/venue/official-route claim.",
+      "learner_mechanics": "9.5pt task text; 8.9pt instructions; 9pt neutral word banks; normal italic choices; actual 7mm open writing lines. Existing original selective emphasis retained, no automatic NEW WORDS wrappers. Cumulative reviews do not require duplicate NEW WORDS/navigation cues. No Speaking label or photo-pass form.",
+      "answer_checks": "Keys verify green T-shirts unavailable (explicit ONLY sign), price $12, card accepted; shirt/sweater and bag-under-table evidence; Eva at six/twice a week; north-facing station start -> left/west -> past bank -> library on right/north opposite park. New map and Sam market/station note agree.",
+      "html": {
+        "pages": 57,
+        "lessonReviewPages": 54,
+        "creditsPages": 3,
+        "activities": 188,
+        "reviewActivities": 7,
+        "challengeCircles": 8,
+        "writingLines": 8,
+        "all_images_loaded": true,
+        "noOverflow": true,
+        "standalone_matches_assembled": true,
+        "typography": {
+          "tasks": [
+            9.5,
+            9.5,
+            9.5,
+            9.5,
+            9.5,
+            9.5,
+            9.5,
+            9.5,
+            9.5,
+            9.5,
+            9.5,
+            9.5,
+            9.5,
+            9.5,
+            9.5,
+            9.5,
+            9.5,
+            9.5,
+            9.5
+          ],
+          "instructions": [
+            8.9,
+            8.9,
+            8.9,
+            8.9,
+            8.9,
+            8.9,
+            8.9
+          ],
+          "banks": [
+            9,
+            9
+          ],
+          "bankColors": [
+            {
+              "color": "rgb(143, 18, 63)",
+              "background": "rgb(243, 242, 238)",
+              "weight": "400"
+            },
+            {
+              "color": "rgb(143, 18, 63)",
+              "background": "rgb(243, 242, 238)",
+              "weight": "400"
+            }
+          ],
+          "options": [
+            {
+              "style": "italic",
+              "weight": "400"
+            },
+            {
+              "style": "italic",
+              "weight": "400"
+            },
+            {
+              "style": "italic",
+              "weight": "400"
+            },
+            {
+              "style": "italic",
+              "weight": "400"
+            },
+            {
+              "style": "italic",
+              "weight": "400"
+            },
+            {
+              "style": "italic",
+              "weight": "400"
+            },
+            {
+              "style": "italic",
+              "weight": "400"
+            },
+            {
+              "style": "italic",
+              "weight": "400"
+            },
+            {
+              "style": "italic",
+              "weight": "400"
+            },
+            {
+              "style": "italic",
+              "weight": "400"
+            },
+            {
+              "style": "italic",
+              "weight": "400"
+            },
+            {
+              "style": "italic",
+              "weight": "400"
+            },
+            {
+              "style": "italic",
+              "weight": "400"
+            }
+          ],
+          "writingLines": [
+            26.453125,
+            26.453125,
+            26.453125,
+            26.453125,
+            26.453125,
+            26.453125,
+            26.453125,
+            26.453125
+          ],
+          "circles": [
+            {
+              "width": 128.5,
+              "height": 128.5,
+              "overflow": false
+            },
+            {
+              "width": 128.5,
+              "height": 128.5,
+              "overflow": false
+            },
+            {
+              "width": 128.5,
+              "height": 128.5,
+              "overflow": false
+            },
+            {
+              "width": 128.5,
+              "height": 128.5,
+              "overflow": false
+            },
+            {
+              "width": 128.5,
+              "height": 128.5,
+              "overflow": false
+            },
+            {
+              "width": 128.5,
+              "height": 128.5,
+              "overflow": false
+            },
+            {
+              "width": 128.5,
+              "height": 128.5,
+              "overflow": false
+            },
+            {
+              "width": 128.5,
+              "height": 128.5,
+              "overflow": false
+            }
+          ]
+        },
+        "all_52_earlier_html_page_geometries_preserved": true
+      },
+      "pdf": {
+        "pdf_pages": 57,
+        "printed_pages": [
+          5,
+          61
+        ],
+        "review_printed_pages": [
+          57,
+          58
+        ],
+        "credits_printed_pages": [
+          59,
+          60,
+          61
+        ],
+        "all_52_existing_lesson_pages_text_and_drawing_streams_identical": true,
+        "all_52_existing_compiled_page_fragments_identical": true,
+        "all_earlier_masters_media_keys_and_shared_sources_preserved": true,
+        "new_five_pages_match_native_export_pixels": true,
+        "all_new_review_learner_tokens_present": true,
+        "all_a4": true,
+        "pdf_bytes": 33125540,
+        "pdf_sha256": "a58f139bd4ef3af5dfc865885e3223937cfd21057ea9452ec6d440135fd6f105",
+        "method": "Preserved original first 52 lesson/review pages; appended two native review pages and three repaginated native credits. Export-only alpha-preserving 240dpi media, no saved-PDF image/font rewriting."
+      },
+      "preservation": "All previous 52 lesson/review pages and every existing master/media/key/shared-source hash retained; only assembled book, audit and credits pagination change. All 60 lesson MP3s plus ident and 64 existing controls remain.",
+      "reversible": "Exact before files/hash ledger and guarded rollback in work/review56-20261026, baseline a1cce55. No pre-existing bytecode cleanup."
     }
   },
   "pending": [
@@ -4404,9 +4610,9 @@
         "Backmatter"
       ],
       "fingerprint": {
-        "files": 508,
-        "bytes": 488311067,
-        "sha256": "f10a2efe05ff0c3797e4acc34abb36f412d194d8ebf0eb99a40fe09c90520908"
+        "files": 517,
+        "bytes": 493059041,
+        "sha256": "145f5841bb09ab3c881dae46964a8c47fc41242f0a88997fe5085b55675d2323"
       }
     },
     "shared_rendering": {
@@ -4426,8 +4632,8 @@
       ],
       "fingerprint": {
         "files": 1,
-        "bytes": 32765394,
-        "sha256": "656b93bf10acef9969672b98af8f5075cff5fbe4951fe83945a823ca069d171f"
+        "bytes": 33125540,
+        "sha256": "4643eef8082db6c848a66edde55c53378ae0018308dea575b368985aadc199f2"
       }
     },
     "audit_criteria": {
@@ -4445,8 +4651,8 @@
     }
   },
   "content_baseline_commit": "2f404b547b7da07be81a0622a78591d3299c402a",
-  "current_revision": "Blanket NEW WORDS vocabulary bolding withdrawn: all 199 automatic wrappers removed, original selective emphasis retained. All 32 NEW WORDS badges remain. Photo metadata stays in the three end-credit pages. 55 A4 pages through Unit 6; later units and final release pending. Local and live viewer/PDF verified.",
-  "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope. units_3_4_reviews_visual_variety_20261025 supersedes earlier composition, color and geometry evidence for printed pages 21-40, including review_composition_20261025, review_3_4_20261025, unit_3_creative_revision and unit_4_visual_variety; earlier learning and audio evidence keeps its original scope. lesson_5b_on_air_20261026 supersedes prior 5B reading/source/presentation and 5.5/5.6 records only. The 26 October every-unit show mandate is superseded by planned B-skill balance and no two-unit show gap. lesson_5b_activity5_variety_20261026 supersedes only the earlier 5B Activity 5 image/choices/key and continuation-image evidence; no show/audio or other lesson evidence changes. lesson_6b_picture_grammar_20261026 supersedes only the original 6B page-52 grammar presentation, continuation spacing and associated geometry evidence; all learning, source and audio evidence retains its scope. lessons_6c_6d_20261026 adds printed pages 53-56 and completes Unit 6 without superseding prior source/audio/page evidence. Prior 6C/6D-unproduced statements are historical; current coverage is through 6D. vocabulary_and_credits_20261026 supersedes prior plain NEW WORDS vocabulary presentation and in-lesson image-credit placement. Existing learning, audio, image bytes and unrelated geometry evidence retains its scope. Three appended credits pages are provisional end matter after the current final lesson. plain_vocabulary_20261026 supersedes every earlier requirement for automatic or paired NEW WORDS word emphasis; the author withdrew blanket bolding. End-of-book credits remain unchanged.",
+  "current_revision": "Added original Units 5 & 6 Review on printed pages 57-58: seven activities, new surprise-dinner photo/message, painted route map, open writing and eight BEYOND HORIZONS circles. Credits now 59-61; 57 A4 pages total. Local HTML/PDF/media verified; publication pending. All preceding 52 lesson/review pages preserved; later units/other backmatter/final release remain pending. Unit 7B must return to Horizons on Air.",
+  "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope. units_3_4_reviews_visual_variety_20261025 supersedes earlier composition, color and geometry evidence for printed pages 21-40, including review_composition_20261025, review_3_4_20261025, unit_3_creative_revision and unit_4_visual_variety; earlier learning and audio evidence keeps its original scope. lesson_5b_on_air_20261026 supersedes prior 5B reading/source/presentation and 5.5/5.6 records only. The 26 October every-unit show mandate is superseded by planned B-skill balance and no two-unit show gap. lesson_5b_activity5_variety_20261026 supersedes only the earlier 5B Activity 5 image/choices/key and continuation-image evidence; no show/audio or other lesson evidence changes. lesson_6b_picture_grammar_20261026 supersedes only the original 6B page-52 grammar presentation, continuation spacing and associated geometry evidence; all learning, source and audio evidence retains its scope. lessons_6c_6d_20261026 adds printed pages 53-56 and completes Unit 6 without superseding prior source/audio/page evidence. Prior 6C/6D-unproduced statements are historical; current coverage is through 6D. vocabulary_and_credits_20261026 supersedes prior plain NEW WORDS vocabulary presentation and in-lesson image-credit placement. Existing learning, audio, image bytes and unrelated geometry evidence retains its scope. Three appended credits pages are provisional end matter after the current final lesson. plain_vocabulary_20261026 supersedes every earlier requirement for automatic or paired NEW WORDS word emphasis; the author withdrew blanket bolding. End-of-book credits remain unchanged. review_5_6_20261026 adds printed pages 57-58 and repaginates existing end credits to 59-61. Earlier 55-page counts describe the prior version; no previous lesson/source/audio evidence is superseded.",
   "receptive_skill_plan": {
     "policy": "B lessons provide a planned mix of reading-led and listening-led units; Horizons on Air is not required in every unit. Avoid two consecutive units without the show. Do not impose rigid alternation; 2B and 3B are both listening-led. Declare primary skill and source genre before authoring.",
     "units": [

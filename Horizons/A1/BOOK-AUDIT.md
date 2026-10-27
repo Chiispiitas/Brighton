@@ -1,6 +1,6 @@
 # Horizons A1 — Book audit
 
-Updated 26 October 2026. **Technical preview verified through 6D; visual-fatigue reassessment and final book release pending.**
+Updated 26 October 2026. **Technical preview verified through Unit 6 and its paired review; visual-fatigue reassessment and final book release pending.**
 
 This is the current audit entry point. [book-audit.json](book-audit.json) holds scoped evidence and historical checks; [CANONICAL-STYLE.md](../Base/design-system/CANONICAL-STYLE.md) governs design. A current snapshot is not final release approval.
 
@@ -8,9 +8,9 @@ This is the current audit entry point. [book-audit.json](book-audit.json) holds 
 
 | Item | Current state |
 | --- | --- |
-| Content | 1A–6D plus Units 1 & 2 and 3 & 4 Reviews: 26 masters; Unit 6 complete |
-| Saved book | 55 A4 pages; printed pages 5–59 (52 lesson/review pages + 3 image-credit pages) |
-| Activity blocks | 181; existing subexercise numbering retained |
+| Content | 1A–6D plus all three paired reviews (1 & 2, 3 & 4, 5 & 6): 27 masters; Unit 6 complete |
+| Saved book | 57 A4 pages; printed pages 5–61 (54 lesson/review pages + 3 image-credit pages) |
+| Activity blocks | 188; existing subexercise numbering retained |
 | Audio | 60 lesson MP3s + 1 production ident; new 6C/6D tracks 6.7–6.12 decoded/transcribed |
 | Navigation cues | 32 NEW WORDS badges; no automatic vocabulary bolding; 24 Extra Practice footers; 54 Go to references |
 | Concept explanations | 14 revised panels across 11 lessons; 27 total focus panels including retained 4A and new 4B–6D |
@@ -18,11 +18,29 @@ This is the current audit entry point. [book-audit.json](book-audit.json) holds 
 
 Counts are inventory, not proof that every cue is correctly placed. Review placement beside the newly introduced content.
 
+## Units 5 & 6 Review, 26 October
+
+**New printed pages 57-58**, before the three end-credit pages now numbered **59-61**. Seven original activities retrieve the taught present continuous, too/enough with adjectives, frequency, town/room vocabulary, prepositions/directions, can and shopping functions. The review introduces no new assessed set or audio dependency. Keys and cumulative coverage: `Answer keys/Units 5 and 6 Review.md` and `Wordlists/6R.md`.
+
+**Fresh world:** friends prepare **The big surprise** for Eva. A new realistic full-background room scene supplies clothes/actions/positions, while Sam's original message adds availability and frequency. A second original painted town guide supports an independently oriented library route. The context is different from the preceding thrift-shop/show, shopping-habits interview, city/tiny-home article, gallery and cinema reviews. Personal Best A1 review PDF pages 22-23 and English File Beginner PDF pages 16-17 were inspected for balance and visual anchoring; no source text/art/branding is reused.
+
+**Composition:** native Horizons crimson unit tab/black header/continuation marker; review-only two columns read down left, then right. Open grammar, vocabulary associations and a functional shop sign balance the warm rust photo/message feature. The continuation pairs the substantial map and eight open writing lines with eight compact **BEYOND HORIZONS** challenge circles, one per 5A-6D. Saturated fills and outlined circles remain familiar; no Speaking category, photo pass, blanket activity cards or cool title/yellow-accent recipe. The new sources retain purposeful backgrounds. All ordinary task text is 9.5pt, instructions 8.9pt, word banks 9pt in their established neutral/crimson treatment, and choices normal italics. No automatic vocabulary emphasis or duplicate NEW WORDS badge is added.
+
+**Answers and affordances:** the shop sign explicitly establishes blue stock only, $12 and card payment. The room photograph clearly separates shirt/sweater and the bag under the table. Message facts are six o'clock and twice a week. Starting north from the station, the learner turns left/west, passes the bank and finds the library on the right/north across from the park. The market is next to the station, consistent with Sam's note. Open writing allows independent details rather than a final gap template; all eight lines are 7mm high. Challenge partners use actual private habits/local knowledge or their own choices. No outside purchase, public post or personal-address disclosure is required.
+
+**Media:** two built-in image_gen assets, with unmodified raster bytes, local manifest/hashes and full prompts in `Images/6R/`. The main scene remains photographic; the map is a deliberately controlled pedagogical raster exception. All names/place labels and the start arrow remain live HTML. This is fictional practice imagery, not an official map or real event. Existing end-of-book generated-media provenance covers these assets; all 65 active external-photo credit records remain.
+
+**Verified:** two standalone pages match the assembled book; no text overflow, missing images or clipped circles, correct role sizes and normal italic options. Reopened 57-page A4 PDF retains every earlier **52** lesson/review page's text and decoded drawing streams exactly and identical earlier compiled page fragments. Two new review pages and three repaginated credit pages match native-export pixels; every new learner word token is present. Native/selectable text and export-only alpha-preserving 240dpi media; no saved-PDF image/font rewriting. Standalone two-page review and full book were rendered/inspected at print size. All previous masters/media/keys/shared sources, 60 MP3s plus ident and 64 audio controls remain.
+
+Local checks complete; published HTML/PDF/media verification pending.
+
+**Reversible:** exact before files, ledger and guarded rollback in `work/review56-20261026` outside repo; baseline `a1cce55`. This completes the paired review, not later units or final whole-book release. Unit 7B remains due for Horizons on Air.
+
 ## Vocabulary restraint and end credits, 26 October
 
 The author withdrew blanket NEW WORDS emphasis: **if every word is bold, do not bold the whole set**. Removed all 199 automatic vocabulary wrappers and pairing IDs across 24 A-D masters. All 32 NEW WORDS badges remain, with the original selective emphasis and separate grammar conventions intact. Keep vocabulary inputs in their established typography; do not automatically recolor/bold whole lists, all choices or every newly introduced term. No highlighter backgrounds. This supersedes the earlier paired-target/highlight requirements, including the initial background-highlight draft and subsequent blanket bold-crimson treatment.
 
-Photo metadata stays at the end: three image-credit pages, printed 57-59, covering 65 active photograph/source components. Preserve creator/source/license links and required crop/share-alike notices. Update active-photo coverage and lesson-page references when imagery changes; the compiler always appends and repaginates credits after the current final lesson.
+Photo metadata stays at the end: three image-credit pages, currently printed 59-61, covering 65 active photograph/source components. Preserve creator/source/license links and required crop/share-alike notices. Update active-photo coverage and lesson-page references when imagery changes; the compiler always appends and repaginates credits after the current final lesson.
 
 Checked all 55 HTML pages: no automatic vocabulary wrappers or pairing attributes, 32 badges, 181 activities, 64 audio controls, loaded images and no text overflow. All learner wording/media are preserved. The PDF restores 50 lesson pages from the original pre-emphasis book exactly, uses two checked native pages for photo-credit removal, and preserves the existing three credit pages. Original selective emphasis is restored. Exact before files: `work/plain-vocabulary-20261026`, baseline `1ddb4cb`.
 
