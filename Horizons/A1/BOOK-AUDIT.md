@@ -32,7 +32,7 @@ Counts are inventory, not proof that every cue is correctly placed. Review place
 
 **Verified:** two standalone pages match the assembled book; no text overflow, missing images or clipped circles, correct role sizes and normal italic options. Reopened 57-page A4 PDF retains every earlier **52** lesson/review page's text and decoded drawing streams exactly and identical earlier compiled page fragments. Two new review pages and three repaginated credit pages match native-export pixels; every new learner word token is present. Native/selectable text and export-only alpha-preserving 240dpi media; no saved-PDF image/font rewriting. Standalone two-page review and full book were rendered/inspected at print size. All previous masters/media/keys/shared sources, 60 MP3s plus ident and 64 audio controls remain.
 
-Local checks complete; published HTML/PDF/media verification pending.
+Published review/assembled HTML, shared review styles, image hashes and saved book PDF match checked files. The live browser reproduces review geometry and full-size type, loads both images and confirms all eight circles.
 
 **Reversible:** exact before files, ledger and guarded rollback in `work/review56-20261026` outside repo; baseline `a1cce55`. This completes the paired review, not later units or final whole-book release. Unit 7B remains due for Horizons on Air.
 

@@ -4357,7 +4357,7 @@
     },
     "review_5_6_20261026": {
       "scope": "Original Units 5 & 6 Review, printed pages 57-58. Image credits move to 59-61.",
-      "status": "local viewer/PDF verified; publication pending",
+      "status": "local and live viewer/PDF verified",
       "learning": "Nine grammar choices plus worked example; six vocabulary associations plus example; four sign-grounded shopping matches; six photo/message judgments; four unambiguous route gaps; eight open writing lines and eight lesson-specific retrieval/transfer challenges. No new assessed set or audio dependency.",
       "fresh_theme": "Friends prepare a surprise dinner for Eva. Ada/Max/Sam supply new visual clothes/action/position evidence, Sam writes to Lee, and a new painted town guide supports a different library route. No repeated thrift/online-show, minimalist profile, hotel/reception, small-city comparison, tiny-home source, gallery or outdoor-cinema story.",
       "design": "Native Horizons chrome and permitted review-only two-column reading order. Warm rust photo-and-message feature, open practice, a task-bearing shopping sign, controlled painted map and eight small saturated/outlined circles. Purposeful backgrounds preserved; no blanket cards or blue/green-plus-yellow title recipe.",
@@ -4558,7 +4558,33 @@
         "method": "Preserved original first 52 lesson/review pages; appended two native review pages and three repaginated native credits. Export-only alpha-preserving 240dpi media, no saved-PDF image/font rewriting."
       },
       "preservation": "All previous 52 lesson/review pages and every existing master/media/key/shared-source hash retained; only assembled book, audit and credits pagination change. All 60 lesson MP3s plus ident and 64 existing controls remain.",
-      "reversible": "Exact before files/hash ledger and guarded rollback in work/review56-20261026, baseline a1cce55. No pre-existing bytecode cleanup."
+      "reversible": "Exact before files/hash ledger and guarded rollback in work/review56-20261026, baseline a1cce55. No pre-existing bytecode cleanup.",
+      "publication": {
+        "files": {
+          "canonical_html_matches": true,
+          "canonical_pdf_sha256": "a58f139bd4ef3af5dfc865885e3223937cfd21057ea9452ec6d440135fd6f105",
+          "new_sources_match": [
+            "Lessons/6R.html",
+            "Lessons/review-5-6-local.css",
+            "Backmatter/image-credits.html"
+          ],
+          "new_image_hashes": {
+            "Images/6R/Surprise-room-v1.png": "066d139b4e60f5ca43644dda99648479ffc6f013eda80be793d7ebe02d9a245c",
+            "Images/6R/Town-guide-v1.png": "7c392492a27ab29163ad7709673bc2214e6be72aaba3e44041b0bf20e7ec54c9"
+          }
+        },
+        "browser": {
+          "pages": 57,
+          "retained_book_new_words_badges": 32,
+          "automatic_vocabulary_wrappers": 0,
+          "credits_at_end": 3,
+          "geometry_matches_local": true,
+          "images_loaded": true,
+          "review_geometry_matches_assembled": true,
+          "eight_challenge_circles": true,
+          "controls_hidden_in_print": true
+        }
+      }
     }
   },
   "pending": [
@@ -4651,7 +4677,7 @@
     }
   },
   "content_baseline_commit": "2f404b547b7da07be81a0622a78591d3299c402a",
-  "current_revision": "Added original Units 5 & 6 Review on printed pages 57-58: seven activities, new surprise-dinner photo/message, painted route map, open writing and eight BEYOND HORIZONS circles. Credits now 59-61; 57 A4 pages total. Local HTML/PDF/media verified; publication pending. All preceding 52 lesson/review pages preserved; later units/other backmatter/final release remain pending. Unit 7B must return to Horizons on Air.",
+  "current_revision": "Added original Units 5 & 6 Review on printed pages 57-58: seven activities, new surprise-dinner photo/message, painted route map, open writing and eight BEYOND HORIZONS circles. Credits now 59-61; 57 A4 pages total. Local and live HTML/PDF/media verified. All preceding 52 lesson/review pages preserved; later units/other backmatter/final release remain pending. Unit 7B must return to Horizons on Air.",
   "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope. units_3_4_reviews_visual_variety_20261025 supersedes earlier composition, color and geometry evidence for printed pages 21-40, including review_composition_20261025, review_3_4_20261025, unit_3_creative_revision and unit_4_visual_variety; earlier learning and audio evidence keeps its original scope. lesson_5b_on_air_20261026 supersedes prior 5B reading/source/presentation and 5.5/5.6 records only. The 26 October every-unit show mandate is superseded by planned B-skill balance and no two-unit show gap. lesson_5b_activity5_variety_20261026 supersedes only the earlier 5B Activity 5 image/choices/key and continuation-image evidence; no show/audio or other lesson evidence changes. lesson_6b_picture_grammar_20261026 supersedes only the original 6B page-52 grammar presentation, continuation spacing and associated geometry evidence; all learning, source and audio evidence retains its scope. lessons_6c_6d_20261026 adds printed pages 53-56 and completes Unit 6 without superseding prior source/audio/page evidence. Prior 6C/6D-unproduced statements are historical; current coverage is through 6D. vocabulary_and_credits_20261026 supersedes prior plain NEW WORDS vocabulary presentation and in-lesson image-credit placement. Existing learning, audio, image bytes and unrelated geometry evidence retains its scope. Three appended credits pages are provisional end matter after the current final lesson. plain_vocabulary_20261026 supersedes every earlier requirement for automatic or paired NEW WORDS word emphasis; the author withdrew blanket bolding. End-of-book credits remain unchanged. review_5_6_20261026 adds printed pages 57-58 and repaginates existing end credits to 59-61. Earlier 55-page counts describe the prior version; no previous lesson/source/audio evidence is superseded.",
   "receptive_skill_plan": {
     "policy": "B lessons provide a planned mix of reading-led and listening-led units; Horizons on Air is not required in every unit. Avoid two consecutive units without the show. Do not impose rigid alternation; 2B and 3B are both listening-led. Declare primary skill and source genre before authoring.",
