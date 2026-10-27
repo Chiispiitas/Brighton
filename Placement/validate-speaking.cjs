@@ -48,7 +48,9 @@ async function frontend(prefix) {
   w.fetch = async(url,options)=> {
     calls.push({url,body:JSON.parse(options.body)});
     if (mode==='hang') return new Promise(()=>{});
+    if (mode==='body-hang') return {ok:true,text:()=>new Promise(()=>{})};
     if (url.endsWith('Resume')) return response({success:true,status:'active',phase:'speaking',moduleId:'speaking-a2'});
+    if (mode==='incomplete') return response({success:true});
     return response({success:true,finalLevel:'A2',result:{finalLevel:'A2',skills:{speaking:{score:43,displayScore:'4.3/10',level:'A2'}}}});
   };
   w.eval(read(prefix+'item-bank.js'));
@@ -82,6 +84,7 @@ async function frontend(prefix) {
   track.dispatchEvent(new w.Event('ended'));
   assert.ok(w.document.querySelector('#retrySpeakingBtn')); assert.equal(w.qa.getState().recorder,null);
   mode='hang'; await assert.rejects(w.qa.apiPost('brightonPlacementActivity',{}), error=>error.code==='REQUEST_TIMEOUT');
+  mode='body-hang'; await assert.rejects(w.qa.apiPost('brightonPlacementActivity',{}), error=>error.code==='REQUEST_TIMEOUT');
   mode='success'; w.qa.renderSpeakingSubmitRetry({audioBase64:'A'.repeat(2000),audioMimeType:'audio/webm',durationSeconds:40});
   assert.ok(w.document.querySelector('#skipSpeakingBtn'));
   w.document.querySelector('#retrySpeakingSubmitBtn').click(); await pause(100);
@@ -94,6 +97,21 @@ async function frontend(prefix) {
   await w.qa.stopSpeakingRecording(); await pause(100);
   assert.equal(w.qa.getState().session.status,'completed');
   assert.ok(calls.some(call=>call.url.endsWith('SubmitSpeaking') && call.body.durationSeconds===44 && call.body.recordedBytes===2000));
+  // An HTTP success without an assessment must not produce a certificate.
+  w.qa.setup(); mode='incomplete';
+  w.qa.renderSpeakingSubmitRetry({audioBase64:'A'.repeat(2000),audioMimeType:'audio/webm',durationSeconds:40});
+  w.document.querySelector('#retrySpeakingSubmitBtn').click(); await pause(600);
+  assert.equal(w.qa.getState().session.status,'active');
+  assert.equal(w.document.querySelector('#retrySpeakingSubmitBtn').disabled,false);
+  mode='success';
+  // Some mobile recorders never emit stop: the watchdog must restore controls.
+  w.qa.renderSpeakingHandoff(); await w.qa.runMicCheck(); await pause(15);
+  const normalStop = w.MediaRecorder.prototype.stop;
+  w.MediaRecorder.prototype.stop = function(){this.state='inactive'};
+  await w.qa.startSpeakingRecording(); await w.qa.stopSpeakingRecording(); await pause(40);
+  assert.ok(w.document.querySelector('#retrySpeakingBtn'));
+  assert.equal(w.qa.getState().recorder,null);
+  w.MediaRecorder.prototype.stop = normalStop;
   w.qa.renderPlacementResult({finalLevel:'A2',skills:{speaking:{level:'Pending review',displayScore:'—',score:null}}});
   assert.ok(w.document.querySelector('#retryOnlySpeakingBtn'));
   w.document.querySelector('#retryOnlySpeakingBtn').click(); await pause(10);
@@ -101,7 +119,7 @@ async function frontend(prefix) {
   assert.ok(w.document.querySelector('#micCheckBtn'));
   assert.ok(calls.some(call=>call.body.retrySpeaking===true));
   dom.window.close();
-  console.log(prefix+': permission timeout/denial, late cleanup, suspended meter, double tap, mic disconnection, request timeout and retained recording retry passed.');
+  console.log(prefix+': permission timeout/denial, late cleanup, suspended meter, double tap, mic disconnection, request/body timeout, missing stop event, incomplete completion and retained recording retry passed.');
 }
 async function reopen(file) {
   const source=read(file).replace(/^import[\s\S]*?;\s*$/gm,'').replace(/export /g,'');
