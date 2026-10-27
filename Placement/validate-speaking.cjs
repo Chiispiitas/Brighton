@@ -40,7 +40,7 @@ async function frontend(prefix) {
   const w = dom.window;
   w.console = {...console,error(){},warn(){}};
   const originalTimeout = w.setTimeout.bind(w);
-  w.setTimeout = (fn,ms,...args)=>originalTimeout(fn,ms>=2000?20:Math.min(ms,5),...args);
+  w.setTimeout = (fn,ms,...args)=>originalTimeout(fn,ms>1000000?ms:ms>=2000?20:Math.min(ms,5),...args);
   w.scrollTo = ()=>{}; w.HTMLElement.prototype.scrollIntoView = ()=>{};
   w.BRIGHTON_SITE_CONFIG = {API_BASE_URL:'https://example.test/api'};
   let mode = 'success'; const calls = [];
@@ -48,12 +48,12 @@ async function frontend(prefix) {
   w.fetch = async(url,options)=> {
     calls.push({url,body:JSON.parse(options.body)});
     if (mode==='hang') return new Promise(()=>{});
-    if (url.endsWith('Resume')) return response({success:true,status:'active',phase:'speaking'});
+    if (url.endsWith('Resume')) return response({success:true,status:'active',phase:'speaking',moduleId:'speaking-a2'});
     return response({success:true,finalLevel:'A2',result:{finalLevel:'A2',skills:{speaking:{score:43,displayScore:'4.3/10',level:'A2'}}}});
   };
   w.eval(read(prefix+'item-bank.js'));
   let source = read(prefix+'main.js'); const end = source.lastIndexOf('})();');
-  source = source.slice(0,end) + `window.qa={runMicCheck,renderSpeakingHandoff,startSpeakingRecording,stopSpeakingRecording,cleanupSpeakingMedia,apiPost,renderSpeakingSubmitRetry,setup(){session={sessionId:'qa',clientSessionId:'qa-client',moduleId:'speaking-a2',phase:'speaking',studentName:'QA',status:'active'};currentModuleId='speaking-a2';},getState(){return {session,recorder:speakingRecorder};}};` + source.slice(end);
+  source = source.slice(0,end) + `window.qa={runMicCheck,renderSpeakingHandoff,startSpeakingRecording,stopSpeakingRecording,renderPlacementResult,cleanupSpeakingMedia,apiPost,renderSpeakingSubmitRetry,setup(){session={sessionId:'qa',clientSessionId:'qa-client',moduleId:'speaking-a2',phase:'speaking',studentName:'QA',status:'active'};currentModuleId='speaking-a2';},getState(){return {session,recorder:speakingRecorder};}};` + source.slice(end);
   w.eval(source); w.qa.setup();
   let released = 0; const track = new w.EventTarget(); track.readyState = 'live'; track.stop = ()=>{released++};
   const stream = {getAudioTracks:()=>[track],getTracks:()=>[track]};
@@ -94,7 +94,26 @@ async function frontend(prefix) {
   await w.qa.stopSpeakingRecording(); await pause(100);
   assert.equal(w.qa.getState().session.status,'completed');
   assert.ok(calls.some(call=>call.url.endsWith('SubmitSpeaking') && call.body.durationSeconds===44 && call.body.recordedBytes===2000));
+  w.qa.renderPlacementResult({finalLevel:'A2',skills:{speaking:{level:'Pending review',displayScore:'—',score:null}}});
+  assert.ok(w.document.querySelector('#retryOnlySpeakingBtn'));
+  w.document.querySelector('#retryOnlySpeakingBtn').click(); await pause(10);
+  assert.equal(w.qa.getState().session.phase,'speaking');
+  assert.ok(w.document.querySelector('#micCheckBtn'));
+  assert.ok(calls.some(call=>call.body.retrySpeaking===true));
   dom.window.close();
   console.log(prefix+': permission timeout/denial, late cleanup, suspended meter, double tap, mic disconnection, request timeout and retained recording retry passed.');
 }
-(async()=>{await backend('wix-backend/gemini-speaking.js');await backend('YoungLearners/wix-backend/young-gemini-speaking.js');await frontend('');await frontend('YoungLearners/');})().catch(error=>{console.error(error);process.exitCode=1;});
+async function reopen(file) {
+  const source=read(file).replace(/^import[\s\S]*?;\s*$/gm,'').replace(/export /g,'');
+  let required=true, writes=0;
+  const session={_id:'qa',clientSessionId:'owner',status:'completed',phase:'result',provisionalLevel:'A2',finalLevel:'A1',placementVersion:file.includes('YoungLearners')?'2026-10-12.yle2':'2026-09-20.1'};
+  const context=vm.createContext({console,Date,Buffer,setTimeout,clearTimeout,readJsonBody:async r=>r.payload,jsonOK:x=>x,jsonBadRequest:error=>({error}),jsonServerError:error=>{throw error},wixData:{get:async()=>structuredClone(session),update:async(c,row)=>{writes++;return row},query:()=>({eq(){return this},limit(){return this},find:async()=>({items:[{metricsJson:JSON.stringify({reviewRequired:required})}]})})}});
+  vm.runInContext(source,context);
+  context.buildResultSummary=async()=>({finalLevel:'A2'});
+  let result=await context.resumePlacement({payload:{sessionId:'qa',clientSessionId:'owner',retrySpeaking:true}});
+  assert.equal(result.status,'active');assert.equal(result.phase,'speaking');assert.equal(result.moduleId,'speaking-a2');assert.equal(writes,1);
+  required=false;writes=0;result=await context.resumePlacement({payload:{sessionId:'qa',clientSessionId:'owner',retrySpeaking:true}});assert.ok(result.error);assert.equal(writes,0);
+  required=true;result=await context.resumePlacement({payload:{sessionId:'qa',clientSessionId:'wrong',retrySpeaking:true}});assert.ok(result.error);assert.equal(writes,0);
+  console.log(file+': only invalid owned attempts reopen Speaking; objective responses remain unchanged.');
+}
+(async()=>{await backend('wix-backend/gemini-speaking.js');await backend('YoungLearners/wix-backend/young-gemini-speaking.js');await frontend('');await frontend('YoungLearners/');await reopen('wix-backend/placement.js');await reopen('YoungLearners/wix-backend/young-placement.js');})().catch(error=>{console.error(error);process.exitCode=1;});

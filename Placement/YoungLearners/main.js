@@ -2197,6 +2197,8 @@
           return;
         }
 
+        if (!result.result?.finalLevel && !result.finalLevel) throw new Error("The server has not confirmed a completed assessment.");
+
         session.phase = "result";
         session.finalLevel = result.finalLevel;
         session.status = "completed";
@@ -2531,6 +2533,7 @@
           </footer>
         </article>
 
+        ${skills.speaking?.level === "Pending review" ? `<p class="speaking-status">Speaking could not be assessed reliably. This result uses your other skills. You can retry Speaking without repeating the rest of the test.</p><button id="retryOnlySpeakingBtn" class="primary-btn" type="button">Retry Speaking only</button>` : ""}
         <div class="result-actions" data-html2canvas-ignore="true">
           <button id="saveResultBtn" class="result-action primary-result-action" type="button">
             <span>Save image</span><span aria-hidden="true">↓</span>
@@ -2545,6 +2548,25 @@
       </div>
     `;
 
+    document.querySelector("#retryOnlySpeakingBtn")?.addEventListener("click", async event => {
+      const button = event.currentTarget;
+      button.disabled = true;
+      try {
+        const remote = await apiPost("brightonYoungPlacementResume", {sessionId: session.sessionId, clientSessionId: session.clientSessionId, placementVersion: PLACEMENT_VERSION, retrySpeaking: true});
+        if (remote.phase !== "speaking" || remote.status !== "active") throw new Error("Speaking could not be reopened.");
+        Object.assign(session, {phase: remote.phase, status: remote.status, moduleId: remote.moduleId, finalLevel: "", completedAt: "", resultSummary: null});
+        currentModuleId = remote.moduleId;
+        lastActivityAt = Date.now();
+        saveLocalSession();
+        els.placementShell.classList.remove("result-shell");
+        els.stageCard.classList.remove("result-mode");
+        renderSpeakingHandoff();
+        scheduleInactivityExpiry();
+      } catch (error) {
+        button.disabled = false;
+        button.textContent = "Could not reopen Speaking. Try again.";
+      }
+    });
     document.querySelector("#saveResultBtn")?.addEventListener("click", () => saveResultImage(session.resultSummary));
     document.querySelector("#shareResultBtn")?.addEventListener("click", () => shareResultImage(session.resultSummary));
     document.querySelector("#restartResultBtn")?.addEventListener("click", restartPlacementTest);

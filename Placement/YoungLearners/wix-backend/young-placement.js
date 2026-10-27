@@ -716,6 +716,16 @@ export async function resumePlacement(request) {
       return jsonBadRequest("Placement session not found.");
     }
 
+    // Re-open only a confirmed technical failure, at the candidate's request.
+    // Keep all objective responses and the original speaking evidence.
+    if (payload.retrySpeaking === true && session.status === "completed") {
+      const previous = await wixData.query(PLACEMENT_SPEAKING).eq("sessionId", session._id).limit(1).find({suppressAuth: true});
+      const metrics = safeJson(previous.items[0]?.metricsJson, {});
+      if (metrics.reviewRequired !== true) return jsonBadRequest("This attempt does not require a speaking retry.");
+      Object.assign(session, {status: "active", phase: "speaking", moduleId: speakingModuleFor(session.provisionalLevel), finalLevel: "", completedAt: null, updatedAt: new Date()});
+      await wixData.update(PLACEMENT_SESSIONS, session, {suppressAuth: true});
+    }
+
     const result = session.status === "completed"
       ? await buildResultSummary(session)
       : null;
