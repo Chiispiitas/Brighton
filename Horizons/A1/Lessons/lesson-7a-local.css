@@ -1,16 +1,33 @@
-/* 7A: a photographic memory spread with paired original interviews. */
+/* 7A only: childhood memory feature and a full-figure partner conversation. */
 .l7a-diptych img { width:100%; height:auto; }
 .l7a-diptych figcaption { display:grid; grid-template-columns:1fr 1fr; color:#694431; padding:1.3mm 0 0; }
 .l7a-diptych figcaption span { padding-left:2mm; }.l7a-diptych figcaption b { margin-right:2mm; }
 .l7a-time-notes { display:grid; grid-template-columns:1fr 1fr; gap:1mm 5mm; }
 .l7a-time-notes p { margin:0; line-height:1.4; }
-.l7a-interviews { display:grid; grid-template-columns:1fr 1fr; gap:6mm; }
-.l7a-interviews section { padding:2.5mm 3mm; background:#f5f0e9; border-left:.65mm solid #936a4f; }
-.l7a-interviews header { display:flex; justify-content:space-between; gap:2mm; font-size:11pt; font-weight:650; color:#734d38; margin-bottom:2mm; }
-.l7a-interviews header span { font-size:9.5pt; font-weight:400; }
-.l7a-interviews p { font-size:9.5pt; line-height:1.4; margin:0; }
-.l7a-interviews p.l7a-question { color:#734d38; margin-bottom:1.5mm; }
-.l7a-memory-pair { display:grid; grid-template-columns:68mm 1fr; gap:6mm; align-items:center; }
-.l7a-memory-pair img { width:68mm; height:auto; }
-.l7a-memory-pair p { margin:0 0 1mm; line-height:1.4; }
-.l7a-page--2 .u7-lines { margin-top:1mm; }
+/* One editorial source surface, not a pair of interchangeable cards. */
+.l7a-memory-feature { position:relative; isolation:isolate; display:grid; grid-template-columns:minmax(0,1fr) 54mm; column-gap:4mm; align-items:end; padding:0 2.5mm 2.5mm 3mm; }
+.l7a-memory-feature::before { content:""; position:absolute; z-index:-1; inset:8mm 0 0; background:#f6e8dc; border-bottom:.6mm solid #b4492e; }
+.l7a-interview-copy { padding-top:11mm; padding-bottom:2mm; }
+.l7a-memory-row { display:grid; grid-template-columns:18mm minmax(0,1fr); gap:3mm; }
+.l7a-memory-row + .l7a-memory-row { margin-top:5mm; padding-top:4mm; border-top:.25mm solid #d4b4a3; }
+.l7a-memory-year { color:#a43724; font:750 18pt/1 var(--hz-font-sans); letter-spacing:-.045em; padding-top:.5mm; }
+.l7a-memory-row header { color:#6a3026; font:700 11pt/1.2 var(--hz-font-sans); margin-bottom:1.5mm; }
+.l7a-memory-row p { font-size:9.5pt; line-height:1.4; margin:0; }
+.l7a-memory-row p.l7a-question { color:#6a3026; margin-bottom:1.5mm; }
+.l7a-helen { height:86mm; display:flex; align-items:end; justify-content:center; }
+.l7a-helen img { height:86mm; width:auto; max-width:none; transform:translateX(-5mm); }
+/* The photograph supplies paper-memory context; the figures carry the task. */
+.l7a-memory-workshop { display:grid; grid-template-columns:minmax(0,1fr) 70mm; gap:5mm; align-items:end; }
+.l7a-recall { padding-bottom:2mm; }
+.l7a-recall-top { display:flex; flex-direction:column; gap:3mm; }
+.l7a-recall-top > img { width:43mm; height:auto; }
+.l7a-recall-top p { margin:0 0 1.1mm; font-size:9.5pt; line-height:1.4; }
+.l7a-recall-top p.u7-model { margin-top:2mm; }
+.l7a-recall .u7-lines { margin-top:2mm; }
+.l7a-partners { position:relative; display:flex; justify-content:center; align-items:end; height:98mm; }
+.l7a-partners img { height:80mm; width:auto; max-width:none; }
+.l7a-speech { position:absolute; top:0; left:0; right:0; display:grid; grid-template-columns:1.5fr 1fr; gap:3mm; align-items:start; }
+.l7a-speech p { position:relative; margin:0; padding:1.8mm 2mm; border:.3mm solid #b75b43; border-radius:2mm; background:#fff; font-size:9.5pt; line-height:1.35; }
+.l7a-speech p::after { content:""; position:absolute; bottom:-2mm; left:50%; width:3mm; height:3mm; background:#fff; border-right:.3mm solid #b75b43; border-bottom:.3mm solid #b75b43; transform:rotate(45deg); }
+.l7a-speech b { color:var(--hz-unit-dark); font-weight:700; }
+.l7a-page--2 .hz-extra-practice { margin-top:2mm; }

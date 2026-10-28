@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated": "2026-10-28",
-  "status": "technical preview verified; visual-fatigue reassessment and final book release pending",
+  "status": "technical preview verified; 7A visually refined after author correction; 7B–7D visual revision and whole-book fatigue/release review pending",
   "scope": "A1 through Unit 7 (7A–7D), including paired reviews 1 & 2, 3 & 4, 5 & 6, with four end-credit pages. Unit 8, review 7 & 8 and other backmatter unproduced.",
   "readability_comparison_baseline": "e8d6ddd69f62caffab662a93a5a392ebc5bfb131",
   "inventory": {
@@ -4743,6 +4743,57 @@
           "controls_hidden_in_print_and_print_geometry_preserved": true
         }
       }
+    },
+    "lesson7a_visual_refinement_20261028": {
+      "scope": "7A only, printed pages 59–60. All seven tasks, learner words, source questions, answers, focus content, voices and audio bytes preserved.",
+      "status": "local HTML/PDF verified; publication pending",
+      "author_correction": "Original Unit 7 looked bland and lost the earlier personality; lacked transparent cutouts. Author explicitly requests lesson-by-lesson refinement starting with 7A. 7B birthday portrait crops are a known unresolved issue; 7B–7D are not changed or creatively approved in this pass.",
+      "composition": "Replaced separate interchangeable beige interview cards with one photographic memory feature: large integrated 1985/2005 year anchors, stacked interviews, warm paper surface and an adult Helen holding a rotary telephone, isolated on true alpha. Partner workshop retains the real album image and adds tall full seated figures with the existing A/B model in live speech balloons; four 7mm lines preserve open writing.",
+      "reference_comparison": "Viewed current 4C continuation and 3B conversation treatment beside both 7A pages; restore cutout scale and a text/figure relationship that serves the task. Preserve full-background childhood scenes, source surface, canonical chrome, 9.5pt tasks/concepts, 8.9pt instructions, neutral/crimson bank, dark-crimson grammar bold and normal italic choices. No blanket activity cards or cool title/yellow-accent recipe.",
+      "media": "Two new built-in image_gen native RGBA assets; both alpha extrema 0–255, original bytes retained, no raster retouch/background removal by code. Adult Helen is fictional, remembering childhood; partner models do not reveal actual private answers or impersonate voice performers. The two pre-existing images, all existing credits and all three MP3s remain. Full prompts, hashes and representation boundaries in Images/7A manifest.",
+      "html": {
+        "pages": 66,
+        "lessonReviewPages": 62,
+        "creditsPages": 4,
+        "activities": 217,
+        "newWords": 39,
+        "automaticVocabularyWrappers": 0,
+        "audioControls": 78,
+        "extraPractice": 28,
+        "goTo": 65,
+        "focusPanels": 31,
+        "noOverflow": true,
+        "unit7NoMarkerCollisions": true,
+        "all_images_and_backgrounds_loaded": true,
+        "standalone_matches_assembled": true,
+        "all_64_other_html_page_geometries_preserved_within_subpixel_tolerance": true,
+        "max_prior_geometry_delta_px": 0.01,
+        "typography_roles_checked": true,
+        "images_on_both_sides_each_lesson": true
+      },
+      "pdf": {
+        "pdf_pages": 66,
+        "printed_pages": [
+          5,
+          70
+        ],
+        "refined_pages": [
+          59,
+          60
+        ],
+        "all_64_other_pdf_pages_text_and_drawing_streams_identical": true,
+        "all_64_other_compiled_page_fragments_identical": true,
+        "all_other_masters_shared_styles_media_and_audio_bytes_preserved": true,
+        "two_new_pages_match_native_export_pixels": true,
+        "all_7a_learner_word_tokens_present": true,
+        "all_a4": true,
+        "pdf_bytes": 35813326,
+        "pdf_sha256": "0ad4227ac7aa950dcb96a3d045d9de27081534714174400461a0606b25826a18",
+        "method": "Replaced only printed pages 59–60 with native 7A export. Preserved every other original page and all source image/alpha bytes. Export-only 240dpi media; no saved-PDF font/image rewriting."
+      },
+      "pedagogical_preservation": "Token multisets match for each of seven exercises; grammar panel markup identical. Model text is relocated into speech balloons, not rewritten. Two sentences remain the final output; four narrower 7mm lines replace two full-width lines. No new assessed vocabulary or audio generation.",
+      "visual_inspection": "Both final pages independently rendered through Poppler and inspected at print size; clear image/ink separation, complete silhouettes, readable faces and no opaque backgrounds, clipping, overflow or continuation-marker collision.",
+      "reversible": "Baseline ec846ee; exact before files, hash ledger, prompts, rendered evidence and guarded rollback in work/refine7a-20261028 outside repository. Only 7A sources/asset records/key, compiled book and audit change."
     }
   },
   "pending": [
@@ -4794,9 +4845,9 @@
         "Backmatter"
       ],
       "fingerprint": {
-        "files": 585,
-        "bytes": 521336549,
-        "sha256": "899aee3b4c0bfbd605eae589d9ac2d4e56eb50ce6c9722d4ad7c659946409741"
+        "files": 587,
+        "bytes": 524368944,
+        "sha256": "fa6ea5fb1dd10d78d9eefb6fbc4c892a21394c7c3601e7c5e981f2d042a0e668"
       }
     },
     "shared_rendering": {
@@ -4816,8 +4867,8 @@
       ],
       "fingerprint": {
         "files": 1,
-        "bytes": 34620021,
-        "sha256": "71a9ba6f01e66136a1f7c6059a87e7742698a3cdc898b4a28557894765826df9"
+        "bytes": 35813326,
+        "sha256": "2a2438d7c8aa647d9392165fe97d15acdeff4c97e2072fcd2ac4c527bc44d918"
       }
     },
     "audit_criteria": {
@@ -4835,8 +4886,8 @@
     }
   },
   "content_baseline_commit": "2f404b547b7da07be81a0622a78591d3299c402a",
-  "current_revision": "Created complete Unit 7: 7A–7D on printed pages 59–66, 29 activities, 11 fresh images and 12 checked audio tracks. 7B returns to Horizons on Air with Birthday detective. Four credits pages now 67–70; book 66 A4 pages. Local and live HTML/PDF/media/playback verified. Existing 54 lesson/review pages preserved. Unit 8, paired review 7 & 8, other backmatter and final release remain pending.",
-  "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope. units_3_4_reviews_visual_variety_20261025 supersedes earlier composition, color and geometry evidence for printed pages 21-40, including review_composition_20261025, review_3_4_20261025, unit_3_creative_revision and unit_4_visual_variety; earlier learning and audio evidence keeps its original scope. lesson_5b_on_air_20261026 supersedes prior 5B reading/source/presentation and 5.5/5.6 records only. The 26 October every-unit show mandate is superseded by planned B-skill balance and no two-unit show gap. lesson_5b_activity5_variety_20261026 supersedes only the earlier 5B Activity 5 image/choices/key and continuation-image evidence; no show/audio or other lesson evidence changes. lesson_6b_picture_grammar_20261026 supersedes only the original 6B page-52 grammar presentation, continuation spacing and associated geometry evidence; all learning, source and audio evidence retains its scope. lessons_6c_6d_20261026 adds printed pages 53-56 and completes Unit 6 without superseding prior source/audio/page evidence. Prior 6C/6D-unproduced statements are historical; current coverage is through 6D. vocabulary_and_credits_20261026 supersedes prior plain NEW WORDS vocabulary presentation and in-lesson image-credit placement. Existing learning, audio, image bytes and unrelated geometry evidence retains its scope. Three appended credits pages are provisional end matter after the current final lesson. plain_vocabulary_20261026 supersedes every earlier requirement for automatic or paired NEW WORDS word emphasis; the author withdrew blanket bolding. End-of-book credits remain unchanged. review_5_6_20261026 adds printed pages 57-58 and repaginates existing end credits to 59-61. Earlier 55-page counts describe the prior version; no previous lesson/source/audio evidence is superseded. unit7_20261028 adds printed pages 59–66 and twelve recordings; retains the prior 54 lesson/review pages and repaginates/appends credits to 67–70. Earlier 57-page counts and Unit 7 unproduced/show-due statements are historical; prior learning and audio evidence retains its scope.",
+  "current_revision": "Refined 7A only after author rejected Unit 7 visual first pass. New transparent Helen/telephone portrait, larger year anchors and an integrated partner workshop with full-figure cutouts/live speech balloons. Learner words, all seven tasks, three recordings and other 64 book pages preserved. Local HTML/PDF verified; live publication pending. 7B–7D await separate visual revision; known 7B portrait crops remain unchanged. Unit 8 and final release remain pending.",
+  "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope. units_3_4_reviews_visual_variety_20261025 supersedes earlier composition, color and geometry evidence for printed pages 21-40, including review_composition_20261025, review_3_4_20261025, unit_3_creative_revision and unit_4_visual_variety; earlier learning and audio evidence keeps its original scope. lesson_5b_on_air_20261026 supersedes prior 5B reading/source/presentation and 5.5/5.6 records only. The 26 October every-unit show mandate is superseded by planned B-skill balance and no two-unit show gap. lesson_5b_activity5_variety_20261026 supersedes only the earlier 5B Activity 5 image/choices/key and continuation-image evidence; no show/audio or other lesson evidence changes. lesson_6b_picture_grammar_20261026 supersedes only the original 6B page-52 grammar presentation, continuation spacing and associated geometry evidence; all learning, source and audio evidence retains its scope. lessons_6c_6d_20261026 adds printed pages 53-56 and completes Unit 6 without superseding prior source/audio/page evidence. Prior 6C/6D-unproduced statements are historical; current coverage is through 6D. vocabulary_and_credits_20261026 supersedes prior plain NEW WORDS vocabulary presentation and in-lesson image-credit placement. Existing learning, audio, image bytes and unrelated geometry evidence retains its scope. Three appended credits pages are provisional end matter after the current final lesson. plain_vocabulary_20261026 supersedes every earlier requirement for automatic or paired NEW WORDS word emphasis; the author withdrew blanket bolding. End-of-book credits remain unchanged. review_5_6_20261026 adds printed pages 57-58 and repaginates existing end credits to 59-61. Earlier 55-page counts describe the prior version; no previous lesson/source/audio evidence is superseded. unit7_20261028 adds printed pages 59–66 and twelve recordings; retains the prior 54 lesson/review pages and repaginates/appends credits to 67–70. Earlier 57-page counts and Unit 7 unproduced/show-due statements are historical; prior learning and audio evidence retains its scope. lesson7a_visual_refinement_20261028 supersedes original 7A presentation/geometry and its creative approval only. Original Unit 7 visual claims are not author approval: 7B–7D remain pending separate review, including poor 7B portrait crops. No other lesson content, source, media or audio evidence is superseded.",
   "receptive_skill_plan": {
     "policy": "B lessons provide a planned mix of reading-led and listening-led units; Horizons on Air is not required in every unit. Avoid two consecutive units without the show. Do not impose rigid alternation; 2B and 3B are both listening-led. Declare primary skill and source genre before authoring.",
     "units": [

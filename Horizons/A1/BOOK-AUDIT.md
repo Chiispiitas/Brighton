@@ -1,6 +1,6 @@
 # Horizons A1 — Book audit
 
-Updated 28 October 2026. **Technical preview verified through Unit 7; visual-fatigue reassessment and final book release pending.**
+Updated 28 October 2026. **Technical preview verified through Unit 7; 7A visually refined after author correction. 7B–7D visual revision, whole-book fatigue reassessment and final release remain pending.**
 
 This is the current audit entry point. [book-audit.json](book-audit.json) holds scoped evidence and historical checks; [CANONICAL-STYLE.md](../Base/design-system/CANONICAL-STYLE.md) governs design. A current snapshot is not final release approval.
 
@@ -17,6 +17,20 @@ This is the current audit entry point. [book-audit.json](book-audit.json) holds 
 | Unresolved destinations | 65 `page ---` references; intentional until back-of-book pagination |
 
 Counts are inventory, not proof that every cue is correctly placed. Review placement beside the newly introduced content.
+
+## 7A visual refinement, 28 October
+
+**Scope: 7A only, printed pages 59–60.** The author rejected the first Unit 7 visual treatment as bland and too similar, specifically noting the absence of transparent cutouts. Refine this unit **one lesson at a time**; do not rework 7B–7D in the same pass. The birthday detective portrait crops in 7B remain a known issue for that lesson's turn. Earlier Unit 7 creative claims are production notes, not author acceptance.
+
+The two interviews now form one recognizable **childhood-memory feature**, with large 1985/2005 anchors, stacked voices on warm paper and an original adult-Helen cutout holding a rotary telephone. Her silhouette breaks the paper edge while the full-background room photographs remain. On page two, tall seated partners talk about a paper snapshot; the existing A/B model becomes live speech balloons above their heads. The retained real album photograph supplies context, questions remain open and four 7mm lines support the same two independent sentences.
+
+Compared with the earlier 4C cook and 3B conversation figure treatment: restore purposeful cutout scale and figure/text interaction, not just another photo or recolor. Both new images use built-in image_gen and native **RGBA alpha**, preserved unchanged; no opaque rectangles, clipped feet, stretched figures or raster removal by code. Helen and the partner models are fictional, not real interviewees or voice performers. Asset hashes, complete prompts and boundaries are in `Images/7A/asset-manifest.json`. Existing stock/generated image bytes and end credits remain.
+
+**Checked:** all seven exercises retain exactly the same learner-word multisets; the grammar panel is identical. Jessica and all three MP3s remain unchanged. Standard functional sizes, regular italic choices, neutral/crimson word bank, dark-crimson grammar bold, NEW WORDS, both Go-to references and Extra Practice remain. Both standalone pages match the assembled view, with loaded imagery, no overflow or continuation collision; independently rendered saved-PDF pages were inspected at print size. Every other **64** HTML page fragment, PDF text and decoded drawing stream is preserved, including 7B–7D and all credits. Full book remains **66 A4 pages**.
+
+Local verification complete; live HTML/PDF/media/playback confirmation pending.
+
+**Reversible:** baseline **ec846ee**; before copies, hashes, exact prompts, proof renders and a guard against overwriting later edits in `work/refine7a-20261028` outside the repository. This completes the 7A refinement for author review, not creative approval of the remaining unit.
 
 ## Unit 7, 28 October
 
