@@ -39,7 +39,7 @@ Counts are inventory, not proof that every cue is correctly placed. Review place
 
 **Verification:** all eight standalone pages match the assembled book, with correct role sizes, image/background loading, no overflow or marker-text collision. Earlier 54 HTML fragments and saved-PDF text/drawing streams are identical; browser geometry differs by at most **0.01px** from subpixel rounding. Existing masters/media/keys/shared styles and all old audio bytes remain. The new eight lesson/four credit pages match native-export pixels and retain every learner word token. The reopened full book is **66 A4 pages**, with an independent eight-page Unit 7 PDF. All eight new pages were rendered through Poppler and reviewed together at print size, including the previously crowded 7B continuation. Export-only alpha-preserving 240dpi media; no saved-PDF image/font rewriting.
 
-Local checks complete; published HTML/PDF/media and live playback verification pending.
+Published canonical HTML/PDF, all four lesson/style sources, eleven asset hashes and twelve MP3 hashes match. Live standalone/assembled geometry and media load agree with checked pages; every new audio control plays/pauses and hides in print.
 
 **Reversible:** before files and all-source hash ledger, baseline **a8a5bbf**, exact generation/transcript/render evidence and a guard against overwriting subsequent edits in `work/unit7-20261028` outside the repository. New styles are local/scoped. This is a complete Unit 7 technical preview, not final whole-book visual-fatigue/release approval. B-skill plan now records 7B listening; 8B may remain reading-led while retaining the no-two-unit-show-gap rule.
 
