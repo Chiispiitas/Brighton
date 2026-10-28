@@ -28,7 +28,7 @@ Compared with the earlier 4C cook and 3B conversation figure treatment: restore 
 
 **Checked:** all seven exercises retain exactly the same learner-word multisets; the grammar panel is identical. Jessica and all three MP3s remain unchanged. Standard functional sizes, regular italic choices, neutral/crimson word bank, dark-crimson grammar bold, NEW WORDS, both Go-to references and Extra Practice remain. Both standalone pages match the assembled view, with loaded imagery, no overflow or continuation collision; independently rendered saved-PDF pages were inspected at print size. Every other **64** HTML page fragment, PDF text and decoded drawing stream is preserved, including 7B–7D and all credits. Full book remains **66 A4 pages**.
 
-Local verification complete; live HTML/PDF/media/playback confirmation pending.
+Live 7A/assembled HTML, local stylesheet, two new cutout hashes and saved-PDF hash match checked files. Three audio buttons play/pause and disappear in print; revised and assembled geometry agree.
 
 **Reversible:** baseline **ec846ee**; before copies, hashes, exact prompts, proof renders and a guard against overwriting later edits in `work/refine7a-20261028` outside the repository. This completes the 7A refinement for author review, not creative approval of the remaining unit.
 
