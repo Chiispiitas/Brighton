@@ -189,3 +189,7 @@ All three use Eleven v3, Natural stability 0.5. Import scripts and voice-map par
 
 
 6C: 6.7 movement phrases, 6.8 directions conversation, 6.9 three routes. 6D: 6.10 attractions/chunks, 6.11 a visit arranged for Sunday, 6.12 visitor help in a generic practice city. All labels/narration use Jessica; per-paragraph dialogue casting is in VOICE MAP.md. These .txt imports contain speech only. Final decode/transcript/event evidence and permanent IDs are retained in ../6C-production.json and ../6D-production.json. No forbidden clarity tag or subjective listening-review claim.
+
+UNIT 7 — BACK IN THE DAY (28 October 2026)
+
+Tracks 7.1-7.12 use Eleven v3 / stability 0.5, with Jessica for every label and narration. 7.6 is a genuine host/co-host birthday quiz and listener voicemail, with the existing separate musical ident outside answer-bearing speech. The programme is a dated fictional episode (12 July 2026); celebrity birth facts are real and sourced in the key. No famous voice is imitated. Exact paragraph roles are locked in VOICE MAP.md; source scripts remain speech-only. Production/decode/transcript records belong to 7A-7D-production.json.

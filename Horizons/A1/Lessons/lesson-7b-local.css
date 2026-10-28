@@ -1,0 +1,36 @@
+/* 7B: familiar Horizons on Air identity, new birthday-quiz/calendar format. */
+.l7b-months { display:grid; grid-template-columns:repeat(4,1fr); gap:1.4mm 4mm; }
+.l7b-months > span { display:flex; gap:2mm; align-items:baseline; }
+.l7b-months small { font-size:7pt; color:var(--hz-unit-dark); min-width:3.5mm; }
+.l7b-ordinals { display:grid; grid-template-columns:repeat(6,1fr); gap:1.3mm 2mm; }
+.l7b-ordinals > div { border-bottom:.2mm solid #d8d9dc; padding-bottom:1mm; }
+.l7b-ordinals span { display:block; line-height:1.3; white-space:nowrap; }
+.l7b-show { border-bottom:.45mm solid #a6a7ab; background:#faf7f8; }
+.l7b-show > header { display:flex; align-items:center; gap:3mm; background:var(--hz-unit); color:#fff; padding:2.5mm 3mm; }
+.l7b-show h2 { flex:1; margin:0; font:700 23pt/1.05 var(--hz-font-sans); letter-spacing:-.025em; }
+.l7b-wave { width:22mm; height:7mm; flex:none; fill:none; stroke:#fff; stroke-width:2; stroke-linecap:round; }
+.l7b-show-brand { display:inline-flex; flex:none; white-space:nowrap; line-height:1; }
+.l7b-show-brand b { padding:1mm 1.2mm; background:#202020; color:#fff; font-size:7.5pt; font-weight:800; letter-spacing:.06em; }
+.l7b-show-brand em { padding:1mm 1.2mm; background:#fff; color:var(--hz-unit-dark); font-size:7.5pt; font-weight:800; font-style:normal; letter-spacing:.06em; }
+.l7b-episode-day { margin:0; padding:2mm 3mm; }
+.l7b-portraits { display:grid; grid-template-columns:repeat(3,1fr); gap:3mm; padding:0 3mm; }
+.l7b-portraits img { width:100%; height:36mm; object-fit:cover; object-position:50% 20%; }
+.l7b-portraits figcaption { padding:1mm 0; text-align:center; line-height:1.3; }
+.l7b-gist { margin:0; padding:1.5mm 3mm 2mm; }
+.l7b-ago-note { margin:1.5mm 0 0; }
+.l7b-date-table th:nth-child(1) { width:30%; }.l7b-date-table th:nth-child(2) { width:35%; }
+.l7b-voicemail { display:grid; grid-template-columns:40mm 1fr; gap:5mm; padding:3mm; background:#f7f2f5; border-left:.7mm solid var(--hz-unit); align-items:center; }
+.l7b-voicemail figure img { width:40mm; height:43mm; object-fit:cover; object-position:center 58%; }
+.l7b-voicemail header { display:flex; align-items:baseline; gap:3mm; margin-bottom:2mm; }
+.l7b-voicemail h2 { margin:0; color:#8f123f; font-size:13pt; font-weight:650; }
+.l7b-voicemail header > span { font-size:7pt; font-weight:650; }
+.l7b-day-card { display:flex; gap:3mm; align-items:baseline; margin-bottom:3mm; }
+.l7b-day-card span { font-size:9.5pt; }.l7b-day-card b { font-size:14pt; font-weight:720; color:#8f123f; }
+.l7b-source-lines { border-left:.6mm solid #ad7e92; padding:1mm 0 1mm 3mm; margin-bottom:2mm; }
+.l7b-source-lines p { margin:0 0 1mm; }.l7b-source-lines b { font-weight:400; }
+.l7b-date-models { display:grid; grid-template-columns:1fr 1fr; gap:1mm 5mm; }
+.l7b-date-models p:last-child { grid-column:1/-1; }
+.l7b-time-line { display:grid; grid-template-columns:repeat(3,1fr); gap:3mm; margin:2mm 0; border-block:.25mm solid #dcbecb; padding:2mm 0; }
+.l7b-time-line > div { text-align:center; }.l7b-time-line p { margin:1mm 0 0!important; }
+.l7b-time-line span { color:#8f123f; }
+.u7-say-dates { margin:2mm 0 0; line-height:1.5; }

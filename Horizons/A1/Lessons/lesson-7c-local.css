@@ -1,0 +1,15 @@
+/* 7C: record-store evidence and an original forum memory, not a profile template. */
+.l7c-vocab { display:grid; grid-template-columns:110mm 1fr; gap:6mm; align-items:center; }
+.l7c-vocab figure { position:relative; }.l7c-vocab img { width:110mm; height:auto; }
+.l7c-letter { position:absolute; display:grid; place-items:center; width:4mm; height:4mm; background:#fff; color:var(--hz-unit-dark); font-size:9.5pt; font-weight:650; }
+.l7c-letter--a { left:13%; top:90%; }.l7c-letter--b { left:48%; top:89%; }.l7c-letter--c { left:85%; top:85%; }
+.l7c-vocab .u7-list li { margin-bottom:4mm; }
+.l7c-post { background:#f7f5f8; border-left:1mm solid #67438e; }
+.l7c-post header { display:flex; justify-content:space-between; align-items:baseline; gap:3mm; padding:2mm 3mm; color:#3b3042; border-bottom:.35mm solid #c4afce; }
+.l7c-post header h2 { margin:0; font:720 17pt/1.05 var(--hz-font-sans); letter-spacing:-.02em; }
+.l7c-post header span { font-size:9.5pt; }
+.l7c-post-copy { padding:2.5mm 3mm 2mm; }.l7c-post p { margin:0; font-size:9.5pt; line-height:1.4; }
+.l7c-reader { margin:0 3mm; padding:2mm 0; border-top:.25mm solid #c4afce; }
+.l7c-reader p + p { margin-top:1.3mm; }.l7c-reader b { color:#67438e; font-weight:650; }
+.l7c-sounds { display:grid; grid-template-columns:1fr 75mm; gap:5mm; align-items:center; }
+.l7c-sounds img { width:75mm; height:auto; }.l7c-sounds .u7-table th,.l7c-sounds .u7-table td { text-align:center; padding-inline:.7mm; }

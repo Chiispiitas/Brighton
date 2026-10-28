@@ -1,0 +1,10 @@
+# 7A artwork and provenance
+
+All file hashes, source links, licenses, changes and page uses are in asset-manifest.json. Real photo/painting credits appear only in the end-of-book image credits. Source models illustrate context; no invented history, event, voice or endorsement is attributed to them.
+
+- [Photo-album-Pavel-Danilyuk-v1.jpg](Photo-album-Pavel-Danilyuk-v1.jpg) - licensed stock photograph.
+- [Childhood-1985-2005-v1.png](Childhood-1985-2005-v1.png) - generated realistic photographic scene.
+
+## Built-in image_gen production prompt
+
+Create one wide 8:3 photorealistic textbook contact sheet containing EXACTLY TWO equal-width rectangular photographs side by side with a thin neutral gap, no border and NO writing or lettering. Each photograph has a complete environmental background. LEFT photograph is a fictional ordinary family living room in 1985: two parents sitting naturally on a brown sofa, two girls aged nine and twelve in modest everyday blue/red clothes nearby, large enough to see, an old box CRT television on a wooden TV cabinet, an unmistakable black rotary telephone on a small table in this living room, a few physical paper snapshots on that table. Plausible 1985 plain furnishings and family clothes, no computers, smartphones or flat-screen TVs. Warm candid analog family snapshot, no fake scratches. RIGHT photograph is a fictional child's bedroom in 2005: two boys about eight and nine years old, cousins, near a desk with a beige desktop computer and bulky monitor clearly IN THIS BEDROOM; a simple bed, colorful ordinary books and a CD player. No parents in the right scene, no smartphone or tablet. Both scenes benign and natural, realistic normal anatomy. The left is a living room and the right is visibly a bedroom. Nothing drawn, no illustration, no text, year labels, names, logos, watermarks, letters or photo caption. These are newly reconstructed fictional childhood scenes for comparison, not real archival identities. Make photographs clear and balanced; the family, TV/telephone and bedroom computer are the useful evidence. Very wide landscape composition suitable for a 166mm by 60mm textbook strip.

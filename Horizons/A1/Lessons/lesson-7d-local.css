@@ -1,0 +1,21 @@
+/* 7D: a historical diary hook, a visual mishap, and a genuinely open writing workshop. */
+.l7d-history { display:grid; grid-template-columns:32mm 1fr; gap:5mm; border-bottom:.3mm solid #cdb5bd; padding-bottom:2.5mm; align-items:center; }
+.l7d-history img { width:32mm; height:auto; }
+.l7d-year { display:block; font-size:9.5pt; color:#722b3f; margin-bottom:1mm; }
+.l7d-history h2 { margin:0 0 2mm; color:#722b3f; font:700 17pt/1.1 var(--hz-font-sans); }
+.l7d-history p { margin:0 0 1.5mm; font-size:9.5pt; line-height:1.4; }
+.l7d-history a { color:#8f123f; font-size:7pt; }
+.l7d-verbs { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5mm 3mm; }
+.l7d-verbs span { border-bottom:.2mm solid #d8d9dc; padding-bottom:1mm; white-space:nowrap; }
+.l7d-diary { border-left:.7mm solid #722b3f; background:#fbf6f2; padding:3mm; }
+.l7d-diary header { margin-bottom:2mm; }.l7d-diary header > span { font-size:8pt; color:#722b3f; font-weight:650; }
+.l7d-diary h2 { margin:1mm 0; font:700 16pt/1.1 var(--hz-font-sans); color:#442d35; }
+.l7d-diary header p { font-size:9.5pt; margin:0; }
+.l7d-diary-body { display:grid; grid-template-columns:1fr 63mm; gap:4mm; align-items:center; }
+.l7d-diary-body p { font-size:9.5pt; line-height:1.4; margin:0 0 1.6mm; }.l7d-diary-body p:last-child { margin-bottom:0; }
+.l7d-diary-body img { width:63mm; height:auto; }
+.l7d-entry-plan p { display:grid; grid-template-columns:24mm 1fr; column-gap:3mm; }
+.l7d-events { display:grid; grid-template-columns:1fr 1fr; gap:2mm 5mm; }.l7d-events p { margin:0; line-height:1.4; }
+.l7d-your-day { display:grid; grid-template-columns:66mm 1fr; gap:5mm; align-items:center; }
+.l7d-your-day img { width:66mm; height:auto; }.l7d-your-day p { margin:1mm 0 0; }
+.l7d-your-day .u7-lines > span { height:6mm; }

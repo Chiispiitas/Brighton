@@ -324,3 +324,56 @@ Jessica supplies all narration; 6.5 is a third-person factual reading, not an im
 - 6D / Track 6.12: 1: Jessica, 2: Amy, 3: MarkCasual, 4: Amy, 5: MarkCasual, 6: Amy, 7: MarkCasual, 8: Amy.
 
 Paragraphs include the Jessica track label. 6.8 has unnamed A/Adeline and B/Mark Natural. 6.11: Eva/Adeline, Dan/Mark Natural; Grace has no spoken paragraph. These are new fictional people, not the earlier Tom cast. 6.12: visitor/Amy, helper/Mark Casual. Jessica supplies all narration and every word/model in 6.7/6.9/6.10. Eleven v3, Natural stability 0.5. All six final masters decode and match normalized independent transcripts; no detected audio events, forbidden clarity tag or SSML. Initial 6.11 proper-name mismatch was rejected and regenerated with Grace, not normalized away. Exact IDs/settings/hashes and permanent IDs: ../6C-production.json and ../6D-production.json. Subjective listening review is not claimed.
+
+## Unit 7 - Back in the Day (28 October 2026)
+
+Jessica retains all labels, vocabulary, models and Lucy hosting. Helen uses Arabella; Owen uses Mark Casual. Unnamed 7A question/answer roles use Adeline and Mark Natural. Jay is Jarnathan; Maya is Amy. Rob uses Mark Natural; the reader question uses Juniper. Tessa’s diary uses Amy. Celebrity facts are read by the fictional hosts; there is no celebrity voice imitation.
+
+### 7A - Track 7.1
+
+1: Jessica; 2: Jessica.
+
+### 7A - Track 7.2
+
+1: Jessica; 2: Jessica; 3: Arabella; 4: Jessica; 5: MarkCasual.
+
+### 7A - Track 7.3
+
+1: Jessica; 2: Jessica; 3: Adeline; 4: MarkNatural; 5: Jessica; 6: MarkNatural; 7: Adeline; 8: Jessica; 9: Adeline; 10: MarkNatural.
+
+### 7B - Track 7.4
+
+1: Jessica; 2: Jessica.
+
+### 7B - Track 7.5
+
+1: Jessica; 2: Jessica; 3: Jessica.
+
+### 7B - Track 7.6
+
+1: Jessica; 2: Jessica; 3: Jarnathan; 4: Jessica; 5: Jarnathan; 6: Jessica; 7: Jarnathan; 8: Jessica; 9: Jarnathan; 10: Jessica; 11: Jarnathan; 12: Jessica; 13: Jarnathan; 14: Amy; 15: Jessica; 16: Jarnathan; 17: Jessica.
+
+### 7C - Track 7.7
+
+1: Jessica; 2: Jessica.
+
+### 7C - Track 7.8
+
+1: Jessica; 2: MarkNatural; 3: Juniper; 4: MarkNatural.
+
+### 7C - Track 7.9
+
+1: Jessica; 2: Jessica; 3: Jessica.
+
+### 7D - Track 7.10
+
+1: Jessica; 2: Jessica.
+
+### 7D - Track 7.11
+
+1: Jessica; 2: Amy.
+
+### 7D - Track 7.12
+
+1: Jessica; 2: Jessica.
+

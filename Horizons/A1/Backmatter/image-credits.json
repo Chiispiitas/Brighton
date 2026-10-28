@@ -1,5 +1,5 @@
 {
-  "scope": "Actual rendered external photographs through Unit 6; unused/reverted stock omitted.",
+  "scope": "Actual rendered external photographs and historical portrait through Unit 7; unused/reverted stock omitted.",
   "entries": [
     {
       "file": "Teacher-Tima-5427870.jpg",
@@ -731,6 +731,102 @@
       ],
       "changes": "Commons crop and page display crop; original field background retained.",
       "manifest": "Images/3A/ASSETS.md"
+    },
+    {
+      "file": "Photo-album-Pavel-Danilyuk-v1.jpg",
+      "creator": "Pavel Danilyuk",
+      "source": "https://www.pexels.com/photo/a-person-holding-a-black-photo-album-8057039/",
+      "license": "Pexels License",
+      "license_url": "https://www.pexels.com/license/",
+      "pages": [
+        60
+      ],
+      "changes": "Provider 1800px rendition, natural proportion and proportionate CSS display/crop. No local raster editing.",
+      "manifest": "Images/7A/asset-manifest.json"
+    },
+    {
+      "file": "Birthday-cake-v1.jpg",
+      "creator": "sevvalerol",
+      "source": "https://www.pexels.com/photo/candles-on-birthday-cake-18912578/",
+      "license": "Pexels License",
+      "license_url": "https://www.pexels.com/license/",
+      "pages": [
+        62
+      ],
+      "changes": "Provider 1800px rendition, natural proportion and proportionate CSS display/crop. No local raster editing.",
+      "manifest": "Images/7B/asset-manifest.json"
+    },
+    {
+      "file": "Turntable-Sena-Yildirim-v1.jpg",
+      "creator": "Sena Yıldırım",
+      "source": "https://www.pexels.com/photo/close-up-photo-of-vinyl-record-player-9586608/",
+      "license": "Pexels License",
+      "license_url": "https://www.pexels.com/license/",
+      "pages": [
+        64
+      ],
+      "changes": "Provider 1800px rendition, natural proportion and proportionate CSS display/crop. No local raster editing.",
+      "manifest": "Images/7C/asset-manifest.json"
+    },
+    {
+      "file": "Journal-George-Milton-v1.jpg",
+      "creator": "George Milton",
+      "source": "https://www.pexels.com/photo/attentive-woman-writing-in-diary-at-home-7014321/",
+      "license": "Pexels License",
+      "license_url": "https://www.pexels.com/license/",
+      "pages": [
+        66
+      ],
+      "changes": "Provider 1800px rendition, natural proportion and proportionate CSS display/crop. No local raster editing.",
+      "manifest": "Images/7D/asset-manifest.json"
+    },
+    {
+      "file": "Daniel-Gage-Skidmore-v1.jpg",
+      "creator": "Gage Skidmore from Peoria, AZ, United States of America",
+      "source": "https://commons.wikimedia.org/wiki/File:Daniel_Radcliffe_in_July_2015.jpg",
+      "license": "CC BY-SA 2.0",
+      "license_url": "https://creativecommons.org/licenses/by-sa/2.0",
+      "pages": [
+        61
+      ],
+      "changes": "Original acquired bytes retained; proportionate CSS display/crop only.",
+      "manifest": "Images/7B/asset-manifest.json"
+    },
+    {
+      "file": "Frida-Guillermo-Kahlo-v1.jpg",
+      "creator": "Guillermo Kahlo",
+      "source": "https://commons.wikimedia.org/wiki/File:Frida_Kahlo,_by_Guillermo_Kahlo.jpg",
+      "license": "Public domain",
+      "license_url": "",
+      "pages": [
+        61
+      ],
+      "changes": "Original acquired bytes retained; proportionate CSS display/crop only.",
+      "manifest": "Images/7B/asset-manifest.json"
+    },
+    {
+      "file": "Malala-Simon-Davis-v1.jpg",
+      "creator": "Simon Davis/DFID",
+      "source": "https://commons.wikimedia.org/wiki/File:Malala_Yousafzai_2015.jpg",
+      "license": "CC BY 2.0",
+      "license_url": "https://creativecommons.org/licenses/by/2.0",
+      "pages": [
+        61
+      ],
+      "changes": "Original acquired bytes retained; proportionate CSS display/crop only.",
+      "manifest": "Images/7B/asset-manifest.json"
+    },
+    {
+      "file": "Pepys-John-Hayls-v1.jpg",
+      "creator": "John Hayls",
+      "source": "https://commons.wikimedia.org/wiki/File:Samuel_Pepys.jpg",
+      "license": "Public domain",
+      "license_url": "",
+      "pages": [
+        65
+      ],
+      "changes": "Original acquired bytes retained; proportionate CSS display/crop only.",
+      "manifest": "Images/7D/asset-manifest.json"
     }
   ],
   "generated_images": "Other commissioned/generated images retain local provenance in Images manifests.",

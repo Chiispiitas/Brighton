@@ -1,0 +1,113 @@
+[
+  {
+    "lesson": "7D",
+    "track": "7.10",
+    "filename": "Track 7.10.mp3",
+    "script": "ElevenCreative Studio/7D - Track 7.10.txt",
+    "model": "eleven_v3",
+    "stability": 0.5,
+    "paragraph_voice_names": [
+      "Jessica",
+      "Jessica"
+    ],
+    "paragraph_voice_ids": [
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9"
+    ],
+    "generation_utc": "2026-10-28T13:47:43.412115+00:00",
+    "request_id": "e5c3JolHplh2NcUyRHfA",
+    "script_sha256": "d2637b184204e5dfc4dba376f122ff8e333bb8ff9df89518bf488c3070e9bbe9",
+    "bytes": 396686,
+    "duration_seconds": 24.76,
+    "transcript_checked": true,
+    "transcript_similarity": 1.0,
+    "answer_bearing_phrases_checked": true,
+    "audio_events_checked": true,
+    "throat_clearing_events_detected": false,
+    "forbidden_tag_preflight_passed": true,
+    "transcription_name_aliases": {},
+    "transcript_normalization": "Track label, punctuation/case, exact numerical/ordinal/year spellings, contractions and TV/OK spellings. Numerical values, dates and negatives are preserved; no answer-bearing substitutions.",
+    "activity": 2,
+    "internal_audio_id": "HZN_A1_U07_LD_E02_AUD_01",
+    "subjective_listening_review": false,
+    "sha256": "0edef3bab8ff37850c45af68081dffc2ca3425ec9210772aa0f8c3cb79e88c74"
+  },
+  {
+    "lesson": "7D",
+    "track": "7.11",
+    "filename": "Track 7.11.mp3",
+    "script": "ElevenCreative Studio/7D - Track 7.11.txt",
+    "model": "eleven_v3",
+    "stability": 0.5,
+    "paragraph_voice_names": [
+      "Jessica",
+      "Amy"
+    ],
+    "paragraph_voice_ids": [
+      "cgSgspJ2msm6clMCkdW9",
+      "OZxMHsGaBmV5pjMIDIn0"
+    ],
+    "generation_utc": "2026-10-28T13:47:44.826975+00:00",
+    "request_id": "Gx1GFoziONd64aTeZNMV",
+    "script_sha256": "30cdf3422a6cf591b603c072c3909eaa4b2e19a379b916b873daeba251eb83fe",
+    "bytes": 400940,
+    "duration_seconds": 25.057,
+    "transcript_checked": true,
+    "transcript_similarity": 1.0,
+    "answer_bearing_phrases_checked": true,
+    "audio_events_checked": true,
+    "throat_clearing_events_detected": false,
+    "forbidden_tag_preflight_passed": true,
+    "transcription_name_aliases": {},
+    "transcript_normalization": "Track label, punctuation/case, exact numerical/ordinal/year spellings, contractions and TV/OK spellings. Numerical values, dates and negatives are preserved; no answer-bearing substitutions.",
+    "activity": 3,
+    "internal_audio_id": "HZN_A1_U07_LD_E03_AUD_01",
+    "subjective_listening_review": false,
+    "sha256": "6b084a20af7ff863a4ab5dc5339288f3c47b9416f12217c1f703cfdc65656ab6",
+    "dry_speech_sha256": "7ef62b31bd38233123e7e7f18fa06354bb904ae32add754abfdaacbbc21e1f74",
+    "master_transcript_checked": true,
+    "master_transcript_similarity": 1.0,
+    "master_audio_events": [],
+    "pitch_preserving_pace_factor": 0.88,
+    "speech_loudness_target_lufs": -16
+  },
+  {
+    "lesson": "7D",
+    "track": "7.12",
+    "filename": "Track 7.12.mp3",
+    "script": "ElevenCreative Studio/7D - Track 7.12.txt",
+    "model": "eleven_v3",
+    "stability": 0.5,
+    "paragraph_voice_names": [
+      "Jessica",
+      "Jessica"
+    ],
+    "paragraph_voice_ids": [
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9"
+    ],
+    "generation_utc": "2026-10-28T13:47:49.728839+00:00",
+    "request_id": "mJKFacGWXGsQF2T8awfV",
+    "script_sha256": "142077099c94f69c8f2b7251fbcc50030da68fa9dcda11993ddbdb51ed2463ac",
+    "bytes": 246956,
+    "duration_seconds": 15.411,
+    "transcript_checked": true,
+    "transcript_similarity": 1.0,
+    "answer_bearing_phrases_checked": true,
+    "audio_events_checked": true,
+    "throat_clearing_events_detected": false,
+    "forbidden_tag_preflight_passed": true,
+    "transcription_name_aliases": {},
+    "transcript_normalization": "Track label, punctuation/case, exact numerical/ordinal/year spellings, contractions and TV/OK spellings. Numerical values, dates and negatives are preserved; no answer-bearing substitutions.",
+    "activity": 5,
+    "internal_audio_id": "HZN_A1_U07_LD_E05_AUD_01",
+    "subjective_listening_review": false,
+    "sha256": "7c9627f4810bd07e9a4d79268de106156ec873dbb80c52ffb09e4390e7ea9bfe",
+    "dry_speech_sha256": "5e7fd49a6e2e06ddaa2c2bcb7d68dbb756a8d3ad9b62319d9d2b794fd0c59cba",
+    "master_transcript_checked": true,
+    "master_transcript_similarity": 1.0,
+    "master_audio_events": [],
+    "pitch_preserving_pace_factor": 0.9,
+    "speech_loudness_target_lufs": -16
+  }
+]

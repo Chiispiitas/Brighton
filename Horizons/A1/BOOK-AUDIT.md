@@ -1,6 +1,6 @@
 # Horizons A1 — Book audit
 
-Updated 26 October 2026. **Technical preview verified through Unit 6 and its paired review; visual-fatigue reassessment and final book release pending.**
+Updated 28 October 2026. **Technical preview verified through Unit 7; visual-fatigue reassessment and final book release pending.**
 
 This is the current audit entry point. [book-audit.json](book-audit.json) holds scoped evidence and historical checks; [CANONICAL-STYLE.md](../Base/design-system/CANONICAL-STYLE.md) governs design. A current snapshot is not final release approval.
 
@@ -8,15 +8,40 @@ This is the current audit entry point. [book-audit.json](book-audit.json) holds 
 
 | Item | Current state |
 | --- | --- |
-| Content | 1A–6D plus all three paired reviews (1 & 2, 3 & 4, 5 & 6): 27 masters; Unit 6 complete |
-| Saved book | 57 A4 pages; printed pages 5–61 (54 lesson/review pages + 3 image-credit pages) |
-| Activity blocks | 188; existing subexercise numbering retained |
-| Audio | 60 lesson MP3s + 1 production ident; new 6C/6D tracks 6.7–6.12 decoded/transcribed |
-| Navigation cues | 32 NEW WORDS badges; no automatic vocabulary bolding; 24 Extra Practice footers; 54 Go to references |
-| Concept explanations | 14 revised panels across 11 lessons; 27 total focus panels including retained 4A and new 4B–6D |
-| Unresolved destinations | 54 `page ---` references; intentional until back-of-book pagination |
+| Content | 1A–7D plus three paired reviews (1 & 2, 3 & 4, 5 & 6): 31 masters; Unit 7 complete |
+| Saved book | 66 A4 pages; printed pages 5–70 (62 lesson/review pages + 4 image-credit pages) |
+| Activity blocks | 217; existing subexercise numbering retained |
+| Audio | 72 lesson MP3s + 1 production ident; all twelve new Unit 7 tracks decoded/transcribed |
+| Navigation cues | 39 NEW WORDS badges; no automatic vocabulary bolding; 28 Extra Practice footers; 65 Go to references |
+| Concept explanations | 14 revised panels across 11 lessons; 31 total focus panels including retained 4A and new 4B–7D |
+| Unresolved destinations | 65 `page ---` references; intentional until back-of-book pagination |
 
 Counts are inventory, not proof that every cue is correctly placed. Review placement beside the newly introduced content.
+
+## Unit 7, 28 October
+
+**Back in the day**, printed **59–66**: four distinct lessons, **29 activities**, **11 fresh assets** and **12 audio tracks (7.1–7.12)**. A/C retain language roles; B is substantive listening; D culminates in an independent diary entry. Unit 8 and the 7 & 8 review remain unproduced. The original 54 lesson/review pages are preserved; four image-credit pages now follow on 67–70.
+
+| Lesson | Distinct visual/source idea | Learner outcome |
+| --- | --- | --- |
+| 7A | Full-background 1985/2005 childhood diptych, warm paired interviews, real photo album | Notice was/were and interview a partner about private childhood information |
+| 7B | **Horizons on Air: Birthday detective**, real celebrity portraits, listener voicemail and anchored calendar | Identify the shared birthday, recover exact dates, interpret ago, dictate privately chosen dates |
+| 7C | Large music-object evidence scene, original violet memory wall, real turntable sound lab | Use regular past forms and auxiliary contrasts, sort -ed sounds, test a partner's private weekend claims |
+| 7D | Pepys's cheese story and real historic portrait, full-background mismatched shoes, open diary workshop | Sequence an original small event using modeled irregular verbs; write freely and ask a peer question |
+
+**Identity/readability:** established black 31pt titles, crimson navigation, canonical pink focus shells and meaningful source backgrounds. No cool-blue/green + yellow accent recipe, repeated profile source, stripped dialogue backgrounds or blanket activity boxes. One numbered activity lane in every lesson; content grids are internal. Both pages of every lesson have substantial imagery. Ordinary tasks/concepts remain **9.5pt**, instructions **8.9pt**, word bank **9pt** with the familiar neutral wash/crimson rule/dark-crimson regular words, Extra Practice prompts the canonical **8pt**. Choices are normal italics, grammar bold is dark crimson, and aligned full models include clear wrong/right pairs. Seven new NEW WORDS badges sit at explicit inputs with appropriate navigation; no automatic vocabulary wrappers or whole-set bolding. Eleven new Go-to references retain `page ---` until the referenced backmatter exists. Open diary lines are 7mm, planning lines 6mm.
+
+**Source/answer discipline:** birthday facts were checked against Museo Frida Kahlo, Malala Fund/Nobel biography and Los Angeles Times; the radio episode is explicitly **Sunday July 12, 2026**, making July 11 one day ago and July 10 two days ago. No current-age calculation or celebrity voice imitation. The hosts/listener and childhood/forum/diary sources are original fiction. Pepys's cheese-in-the-garden account is an original simplified historical paraphrase with a linked museum reading source; the John Hayls portrait is not misdescribed as a diary image. The childhood auxiliary instruction disambiguates positive forms versus explicit No answers. Private partner information, unrestricted weekend statements and eight full diary lines preserve expression. Keys/wordlists explain controlled answers, open criteria, language support and image/audio evidence.
+
+**Media:** eight external photographs/portrait and three built-in imagegen scenes. Use real public-figure photos; generated historical rooms, music objects and mismatched shoes supply controlled evidence that stock cannot reliably match. Native source bytes and full photographic backgrounds retained. Exact prompts, sources, licenses, changes, page uses and hashes: `Images/7A–7D/ASSETS.md` and asset manifests. Required **Simon Davis/DFID** credit and **Gage Skidmore CC BY-SA 2.0** rendition boundary remain in end credits. No photo metadata is inserted into learner exercises.
+
+**Audio:** twelve Eleven v3 clips, stability 0.5, **Jessica** all narration/labels with approved exam-pool actors. Lucy/Jessica, Jay/Jarnathan and Maya/Amy perform an actual birthday quiz and voicemail; supporting reading audio is not counted as a show. The existing original ident is reused unchanged as source, separated from answer-bearing speech after the spoken label and after the last word. The final 113-second episode matches the strict transcript; only two chime events detected. All twelve clips decode and match independent normalized transcripts, preserving dates/years/negatives. Four faster takes have gentle pitch-preserving pace adjustment and final-master transcript checks. Preflight passes all 86 scripts; no forbidden clarity tag or throat-clearing substitute, no detected cough/throat event. Subjective listening review is not claimed. Scripts, voice map, settings/hashes, per-lesson production records and unit audio ZIP are current.
+
+**Verification:** all eight standalone pages match the assembled book, with correct role sizes, image/background loading, no overflow or marker-text collision. Earlier 54 HTML fragments and saved-PDF text/drawing streams are identical; browser geometry differs by at most **0.01px** from subpixel rounding. Existing masters/media/keys/shared styles and all old audio bytes remain. The new eight lesson/four credit pages match native-export pixels and retain every learner word token. The reopened full book is **66 A4 pages**, with an independent eight-page Unit 7 PDF. All eight new pages were rendered through Poppler and reviewed together at print size, including the previously crowded 7B continuation. Export-only alpha-preserving 240dpi media; no saved-PDF image/font rewriting.
+
+Local checks complete; published HTML/PDF/media and live playback verification pending.
+
+**Reversible:** before files and all-source hash ledger, baseline **a8a5bbf**, exact generation/transcript/render evidence and a guard against overwriting subsequent edits in `work/unit7-20261028` outside the repository. New styles are local/scoped. This is a complete Unit 7 technical preview, not final whole-book visual-fatigue/release approval. B-skill plan now records 7B listening; 8B may remain reading-led while retaining the no-two-unit-show-gap rule.
 
 ## Units 5 & 6 Review, 26 October
 
@@ -34,13 +59,13 @@ Counts are inventory, not proof that every cue is correctly placed. Review place
 
 Published review/assembled HTML, shared review styles, image hashes and saved book PDF match checked files. The live browser reproduces review geometry and full-size type, loads both images and confirms all eight circles.
 
-**Reversible:** exact before files, ledger and guarded rollback in `work/review56-20261026` outside repo; baseline `a1cce55`. This completes the paired review, not later units or final whole-book release. Unit 7B remains due for Horizons on Air.
+**Reversible:** exact before files, ledger and guarded rollback in `work/review56-20261026` outside repo; baseline `a1cce55`. This completes the paired review, not later units or final whole-book release. Unit 7B was due for Horizons on Air; the 28 October Unit 7 record below fulfils this requirement.
 
 ## Vocabulary restraint and end credits, 26 October
 
 The author withdrew blanket NEW WORDS emphasis: **if every word is bold, do not bold the whole set**. Removed all 199 automatic vocabulary wrappers and pairing IDs across 24 A-D masters. All 32 NEW WORDS badges remain, with the original selective emphasis and separate grammar conventions intact. Keep vocabulary inputs in their established typography; do not automatically recolor/bold whole lists, all choices or every newly introduced term. No highlighter backgrounds. This supersedes the earlier paired-target/highlight requirements, including the initial background-highlight draft and subsequent blanket bold-crimson treatment.
 
-Photo metadata stays at the end: three image-credit pages, currently printed 59-61, covering 65 active photograph/source components. Preserve creator/source/license links and required crop/share-alike notices. Update active-photo coverage and lesson-page references when imagery changes; the compiler always appends and repaginates credits after the current final lesson.
+Photo metadata stays at the end: four image-credit pages, currently printed 67–70, covering 73 active external photograph/portrait-source components. Preserve creator/source/license links and required crop/share-alike notices. Update active-photo coverage and lesson-page references when imagery changes; the compiler always appends and repaginates credits after the current final lesson.
 
 Checked all 55 HTML pages: no automatic vocabulary wrappers or pairing attributes, 32 badges, 181 activities, 64 audio controls, loaded images and no text overflow. All learner wording/media are preserved. The PDF restores 50 lesson pages from the original pre-emphasis book exactly, uses two checked native pages for photo-credit removal, and preserves the existing three credit pages. Original selective emphasis is restored. Exact before files: `work/plain-vocabulary-20261026`, baseline `1ddb4cb`.
 

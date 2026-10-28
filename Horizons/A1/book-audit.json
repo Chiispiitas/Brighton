@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
-  "updated": "2026-10-26",
+  "updated": "2026-10-28",
   "status": "technical preview verified; visual-fatigue reassessment and final book release pending",
-  "scope": "A1 through Unit 6, including all three paired reviews (1 & 2, 3 & 4, 5 & 6), with three end-credit pages. Later units and other backmatter unproduced.",
+  "scope": "A1 through Unit 7 (7A–7D), including paired reviews 1 & 2, 3 & 4, 5 & 6, with four end-credit pages. Unit 8, review 7 & 8 and other backmatter unproduced.",
   "readability_comparison_baseline": "e8d6ddd69f62caffab662a93a5a392ebc5bfb131",
   "inventory": {
     "lesson_masters": [
@@ -32,28 +32,32 @@
       "6B",
       "6C",
       "6D",
-      "6R"
+      "6R",
+      "7A",
+      "7B",
+      "7C",
+      "7D"
     ],
-    "pdf_pages": 57,
+    "pdf_pages": 66,
     "printed_pages": [
       5,
-      61
+      70
     ],
-    "activity_blocks": 188,
-    "audio_files": 60,
-    "new_words_badges": 32,
-    "extra_practice_footers": 24,
-    "go_to_references": 54,
-    "page_placeholders": 54,
-    "focus_panels": 27,
-    "html_pages": 57,
-    "html_audio_controls": 64,
+    "activity_blocks": 217,
+    "audio_files": 72,
+    "new_words_badges": 39,
+    "extra_practice_footers": 28,
+    "go_to_references": 65,
+    "page_placeholders": 65,
+    "focus_panels": 31,
+    "html_pages": 66,
+    "html_audio_controls": 78,
     "production_audio_files": 1,
-    "lesson_pages": 54,
-    "image_credit_pages": 3,
+    "lesson_pages": 62,
+    "image_credit_pages": 4,
     "vocabulary_highlights": 0,
     "paired_new_words_sets": 0,
-    "active_photo_credit_records": 65
+    "active_photo_credit_records": 73
   },
   "checks": {
     "refreshed_during_cleanup": {
@@ -4585,6 +4589,102 @@
           "controls_hidden_in_print": true
         }
       }
+    },
+    "unit7_20261028": {
+      "date": "2026-10-28",
+      "scope": "New Unit 7, eight printed pages 59–66, four masters and 29 activities. Credits repaginate to 67–70.",
+      "status": "local viewer/PDF/audio verified; publication pending",
+      "syllabus_roles": {
+        "7A": "Language: past be, childhood and past-time expressions",
+        "7B": "Listening: authentic-format Horizons on Air birthday detective quiz, dates/ordinals/ago",
+        "7C": "Language: regular past positive/negative/question, spelling and pronunciation",
+        "7D": "Writing: open diary entry, seven modeled irregular past verbs and sequencers"
+      },
+      "editorial_variety": "7A photographic 1985/2005 childhood diptych plus warm paired interviews; 7B established crimson radio identity, real birthday portraits and listener calendar; 7C foreground music-object evidence and a violet retrospective memory wall; 7D archival cheese-in-diary hook, a visual shoe mishap and open diary workshop. No repeated personal-profile/day-in-life source or cool title/yellow-accent formula. Meaningful text/photo backgrounds retained.",
+      "media": "Eleven fresh assets: eight licensed/public-domain external photographs/portrait and three built-in image_gen photographic scenes. Images on both sides of each lesson; labels and learner text remain live. Exact prompts, hashes, license/source and representation boundaries in Images/7A–7D. No stock/generated source bytes modified. All external credits at book end.",
+      "fact_and_answer_review": "Real birth dates verified independently; episode explicitly July 12, 2026 and relative dates July 11/10; no current-age calculation. Pepys cheese account is a short original historical paraphrase with linked reading source; portrait is not misidentified as holding a diary. 7A/7C/7D sources are original fiction. No celebrity speech imitation. Keys identify every controlled answer, recording evidence and open-response criterion. 7A auxiliary task is unambiguous; private partner choices and eight final diary writing lines preserve expression.",
+      "typography": "9.5pt ordinary tasks/concepts, 8.9pt instructions, 9pt neutral/dark-crimson regular word bank, 8pt canonical Extra Practice prompt. Normal italic choices. Dark-crimson grammar bold, wrong/right examples, aligned models. Seven NEW WORDS badges with nearby input and eleven new Go-to references; no blanket vocabulary highlighting/bolding or scene-location captions. One vertical numbered exercise lane; internal content grids only.",
+      "audio": {
+        "tracks": [
+          "7.1",
+          "7.2",
+          "7.3",
+          "7.4",
+          "7.5",
+          "7.6",
+          "7.7",
+          "7.8",
+          "7.9",
+          "7.10",
+          "7.11",
+          "7.12"
+        ],
+        "model": "eleven_v3",
+        "stability": 0.5,
+        "narrator": "Jessica",
+        "cast": "Approved exam voice pool; Lucy Jessica, Jay Jarnathan, Maya/Tessa Amy, Helen Arabella, Owen Mark Casual, Rob Mark Natural, reader Juniper, practice roles Adeline/Mark Natural.",
+        "all_twelve_decode_and_strict_transcript_match": true,
+        "answer_dates_years_and_negatives_preserved": true,
+        "final_pacing_master_checks": [
+          "7.2",
+          "7.8",
+          "7.11",
+          "7.12"
+        ],
+        "episode_final_master_checked": "7.6, 113.24 seconds; pre-existing ident after spoken label and final word, no music under answers; only two chime events",
+        "forbidden_tag_preflight": "86 scripts passed; no [clearly] or throat-clearing substitute",
+        "detected_throat_or_cough_events": false,
+        "subjective_listening_review": false
+      },
+      "html": {
+        "pages": 66,
+        "lessonReviewPages": 62,
+        "creditsPages": 4,
+        "activities": 217,
+        "newWords": 39,
+        "automaticVocabularyWrappers": 0,
+        "audioControls": 78,
+        "extraPractice": 28,
+        "goTo": 65,
+        "focusPanels": 31,
+        "noOverflow": true,
+        "unit7NoMarkerCollisions": true,
+        "all_images_and_backgrounds_loaded": true,
+        "standalone_matches_assembled": true,
+        "all_54_earlier_html_page_geometries_preserved_within_subpixel_tolerance": true,
+        "max_prior_geometry_delta_px": 0.01,
+        "typography_roles_checked": true,
+        "images_on_both_sides_each_lesson": true
+      },
+      "pdf": {
+        "pdf_pages": 66,
+        "printed_pages": [
+          5,
+          70
+        ],
+        "unit7_printed_pages": [
+          59,
+          66
+        ],
+        "credits_printed_pages": [
+          67,
+          68,
+          69,
+          70
+        ],
+        "all_54_existing_lesson_pages_text_and_drawing_streams_identical": true,
+        "all_54_existing_compiled_page_fragments_identical": true,
+        "all_earlier_masters_media_keys_and_shared_sources_preserved": true,
+        "new_twelve_pages_match_native_export_pixels": true,
+        "all_new_learner_word_tokens_present": true,
+        "all_a4": true,
+        "pdf_bytes": 34620021,
+        "pdf_sha256": "e6fe9e069385aa302aad5210e916cb46e837e52d827089ee551a88ee1226dc74",
+        "method": "Preserved original first 54 lesson/review pages; appended eight native Unit 7 pages and four repaginated native credits. Export-only alpha-preserving 240dpi media, no saved-PDF image/font rewriting."
+      },
+      "visual_review": "All eight final standalone/assembled pages viewed at print size; all eight saved PDF pages independently rendered through Poppler and inspected with a whole-unit contact sheet; fourth credits page checked. Compare distinct genres/compositions and established preceding book chrome. Technical preview, not final whole-book fatigue/release approval.",
+      "preservation": "All previous 54 lesson/review HTML fragments, PDF text and decoded drawing streams identical. HTML geometry unchanged within 0.01px subpixel rounding. Existing 60 MP3s/ident, masters, keys, imagery and shared rendering hashes preserved. Four end-credit pages retain old 65 records and append eight Unit 7 records.",
+      "reversible": "Exact baseline a8a5bbf; before files/hash ledger and guarded rollback in work/unit7-20261028 outside repository. New local styles are scoped; no existing lesson redesign or bytecode cleanup."
     }
   },
   "pending": [
@@ -4636,9 +4736,9 @@
         "Backmatter"
       ],
       "fingerprint": {
-        "files": 517,
-        "bytes": 493059041,
-        "sha256": "145f5841bb09ab3c881dae46964a8c47fc41242f0a88997fe5085b55675d2323"
+        "files": 585,
+        "bytes": 521346587,
+        "sha256": "404b3e3b573b57eeb0475ae5cc43e88fee7aeae9b33896c0c4959995cb5105a4"
       }
     },
     "shared_rendering": {
@@ -4658,8 +4758,8 @@
       ],
       "fingerprint": {
         "files": 1,
-        "bytes": 33125540,
-        "sha256": "4643eef8082db6c848a66edde55c53378ae0018308dea575b368985aadc199f2"
+        "bytes": 34620021,
+        "sha256": "71a9ba6f01e66136a1f7c6059a87e7742698a3cdc898b4a28557894765826df9"
       }
     },
     "audit_criteria": {
@@ -4677,8 +4777,8 @@
     }
   },
   "content_baseline_commit": "2f404b547b7da07be81a0622a78591d3299c402a",
-  "current_revision": "Added original Units 5 & 6 Review on printed pages 57-58: seven activities, new surprise-dinner photo/message, painted route map, open writing and eight BEYOND HORIZONS circles. Credits now 59-61; 57 A4 pages total. Local and live HTML/PDF/media verified. All preceding 52 lesson/review pages preserved; later units/other backmatter/final release remain pending. Unit 7B must return to Horizons on Air.",
-  "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope. units_3_4_reviews_visual_variety_20261025 supersedes earlier composition, color and geometry evidence for printed pages 21-40, including review_composition_20261025, review_3_4_20261025, unit_3_creative_revision and unit_4_visual_variety; earlier learning and audio evidence keeps its original scope. lesson_5b_on_air_20261026 supersedes prior 5B reading/source/presentation and 5.5/5.6 records only. The 26 October every-unit show mandate is superseded by planned B-skill balance and no two-unit show gap. lesson_5b_activity5_variety_20261026 supersedes only the earlier 5B Activity 5 image/choices/key and continuation-image evidence; no show/audio or other lesson evidence changes. lesson_6b_picture_grammar_20261026 supersedes only the original 6B page-52 grammar presentation, continuation spacing and associated geometry evidence; all learning, source and audio evidence retains its scope. lessons_6c_6d_20261026 adds printed pages 53-56 and completes Unit 6 without superseding prior source/audio/page evidence. Prior 6C/6D-unproduced statements are historical; current coverage is through 6D. vocabulary_and_credits_20261026 supersedes prior plain NEW WORDS vocabulary presentation and in-lesson image-credit placement. Existing learning, audio, image bytes and unrelated geometry evidence retains its scope. Three appended credits pages are provisional end matter after the current final lesson. plain_vocabulary_20261026 supersedes every earlier requirement for automatic or paired NEW WORDS word emphasis; the author withdrew blanket bolding. End-of-book credits remain unchanged. review_5_6_20261026 adds printed pages 57-58 and repaginates existing end credits to 59-61. Earlier 55-page counts describe the prior version; no previous lesson/source/audio evidence is superseded.",
+  "current_revision": "Created complete Unit 7: 7A–7D on printed pages 59–66, 29 activities, 11 fresh images and 12 checked audio tracks. 7B returns to Horizons on Air with Birthday detective. Four credits pages now 67–70; book 66 A4 pages. Local HTML/PDF/media verified; publication pending. Existing 54 lesson/review pages preserved. Unit 8, paired review 7 & 8, other backmatter and final release remain pending.",
+  "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope. units_3_4_reviews_visual_variety_20261025 supersedes earlier composition, color and geometry evidence for printed pages 21-40, including review_composition_20261025, review_3_4_20261025, unit_3_creative_revision and unit_4_visual_variety; earlier learning and audio evidence keeps its original scope. lesson_5b_on_air_20261026 supersedes prior 5B reading/source/presentation and 5.5/5.6 records only. The 26 October every-unit show mandate is superseded by planned B-skill balance and no two-unit show gap. lesson_5b_activity5_variety_20261026 supersedes only the earlier 5B Activity 5 image/choices/key and continuation-image evidence; no show/audio or other lesson evidence changes. lesson_6b_picture_grammar_20261026 supersedes only the original 6B page-52 grammar presentation, continuation spacing and associated geometry evidence; all learning, source and audio evidence retains its scope. lessons_6c_6d_20261026 adds printed pages 53-56 and completes Unit 6 without superseding prior source/audio/page evidence. Prior 6C/6D-unproduced statements are historical; current coverage is through 6D. vocabulary_and_credits_20261026 supersedes prior plain NEW WORDS vocabulary presentation and in-lesson image-credit placement. Existing learning, audio, image bytes and unrelated geometry evidence retains its scope. Three appended credits pages are provisional end matter after the current final lesson. plain_vocabulary_20261026 supersedes every earlier requirement for automatic or paired NEW WORDS word emphasis; the author withdrew blanket bolding. End-of-book credits remain unchanged. review_5_6_20261026 adds printed pages 57-58 and repaginates existing end credits to 59-61. Earlier 55-page counts describe the prior version; no previous lesson/source/audio evidence is superseded. unit7_20261028 adds printed pages 59–66 and twelve recordings; retains the prior 54 lesson/review pages and repaginates/appends credits to 67–70. Earlier 57-page counts and Unit 7 unproduced/show-due statements are historical; prior learning and audio evidence retains its scope.",
   "receptive_skill_plan": {
     "policy": "B lessons provide a planned mix of reading-led and listening-led units; Horizons on Air is not required in every unit. Avoid two consecutive units without the show. Do not impose rigid alternation; 2B and 3B are both listening-led. Declare primary skill and source genre before authoring.",
     "units": [
@@ -4733,8 +4833,18 @@
         "primary_skill": "reading",
         "genre": "Dated real tiny-home interview adaptation: silent gist/detail/evaluation; supporting audio",
         "episode": null
+      },
+      {
+        "unit": 7,
+        "lesson": "7B",
+        "primary_skill": "listening",
+        "genre": "Horizons on Air birthday quiz with two hosts and listener voicemail; dated show with gist, exact-date and relative-time listening",
+        "episode": "Birthday detective",
+        "tracks": [
+          "7.6"
+        ]
       }
     ],
-    "next_unit_rule": "Unit 7B must return to a genuine Horizons on Air episode after reading-led 6B, preventing a two-unit show gap. Declare source/skill before drafting. Support read-alouds do not count as episodes; 6C/D retain their syllabus roles."
+    "next_unit_rule": "7B returns to genuine Horizons on Air after reading-led 6B. Unit 8B may be reading-led as planned, retaining no two-unit gap and declaring primary skill/source genre before drafting. Supporting read-alouds do not count as episodes."
   }
 }

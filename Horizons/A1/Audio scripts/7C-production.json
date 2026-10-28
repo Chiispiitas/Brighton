@@ -1,0 +1,113 @@
+[
+  {
+    "lesson": "7C",
+    "track": "7.7",
+    "filename": "Track 7.7.mp3",
+    "script": "ElevenCreative Studio/7C - Track 7.7.txt",
+    "model": "eleven_v3",
+    "stability": 0.5,
+    "paragraph_voice_names": [
+      "Jessica",
+      "Jessica"
+    ],
+    "paragraph_voice_ids": [
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9"
+    ],
+    "generation_utc": "2026-10-28T13:47:19.652529+00:00",
+    "request_id": "g1NYuwL3874NGyrgAvgD",
+    "script_sha256": "002d0ae631d293c3cdd19e1ab5258639dd492ee2c821cb2019b2df5bde8f1c50",
+    "bytes": 172660,
+    "duration_seconds": 10.76,
+    "transcript_checked": true,
+    "transcript_similarity": 1.0,
+    "answer_bearing_phrases_checked": true,
+    "audio_events_checked": true,
+    "throat_clearing_events_detected": false,
+    "forbidden_tag_preflight_passed": true,
+    "transcription_name_aliases": {},
+    "transcript_normalization": "Track label, punctuation/case, exact numerical/ordinal/year spellings, contractions and TV/OK spellings. Numerical values, dates and negatives are preserved; no answer-bearing substitutions.",
+    "activity": 1,
+    "internal_audio_id": "HZN_A1_U07_LC_E01_AUD_01",
+    "subjective_listening_review": false,
+    "sha256": "b2719720ed559f1441dd605a1ef130c86589b8db0563104c0940f0a1ea25b16a"
+  },
+  {
+    "lesson": "7C",
+    "track": "7.8",
+    "filename": "Track 7.8.mp3",
+    "script": "ElevenCreative Studio/7C - Track 7.8.txt",
+    "model": "eleven_v3",
+    "stability": 0.5,
+    "paragraph_voice_names": [
+      "Jessica",
+      "MarkNatural",
+      "Juniper",
+      "MarkNatural"
+    ],
+    "paragraph_voice_ids": [
+      "cgSgspJ2msm6clMCkdW9",
+      "UgBBYS2sOqTuMpoF3BR0",
+      "aMSt68OGf4xUZAnLpTU8",
+      "UgBBYS2sOqTuMpoF3BR0"
+    ],
+    "generation_utc": "2026-10-28T13:47:29.297110+00:00",
+    "request_id": "nM3PbzVfZz7Sb9MpSyap",
+    "script_sha256": "f500127c23179e2c436c53ae948dd0d9acde4602e98cb3112748772027c5fbac",
+    "bytes": 422828,
+    "duration_seconds": 26.42,
+    "transcript_checked": true,
+    "transcript_similarity": 1.0,
+    "answer_bearing_phrases_checked": true,
+    "audio_events_checked": true,
+    "throat_clearing_events_detected": false,
+    "forbidden_tag_preflight_passed": true,
+    "transcription_name_aliases": {},
+    "transcript_normalization": "Track label, punctuation/case, exact numerical/ordinal/year spellings, contractions and TV/OK spellings. Numerical values, dates and negatives are preserved; no answer-bearing substitutions.",
+    "activity": 2,
+    "internal_audio_id": "HZN_A1_U07_LC_E02_AUD_01",
+    "subjective_listening_review": false,
+    "sha256": "d82e79fefba3b97343db9b8847fb59675fe779f862abb22baad550f2b3d86bcb",
+    "dry_speech_sha256": "a60ef201a77f6f8e4087d68a4d187997e3de7b678d2a60748a6d5b4d92f391d6",
+    "master_transcript_checked": true,
+    "master_transcript_similarity": 1.0,
+    "master_audio_events": [],
+    "pitch_preserving_pace_factor": 0.88,
+    "speech_loudness_target_lufs": -16
+  },
+  {
+    "lesson": "7C",
+    "track": "7.9",
+    "filename": "Track 7.9.mp3",
+    "script": "ElevenCreative Studio/7C - Track 7.9.txt",
+    "model": "eleven_v3",
+    "stability": 0.5,
+    "paragraph_voice_names": [
+      "Jessica",
+      "Jessica",
+      "Jessica"
+    ],
+    "paragraph_voice_ids": [
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9"
+    ],
+    "generation_utc": "2026-10-28T13:47:36.079158+00:00",
+    "request_id": "ZRMSPCZ09YOJq8oMd7iQ",
+    "script_sha256": "5faa81777ff6b885ff33e5515f2d013f8f026f867648e202dfc305e1619431c5",
+    "bytes": 289270,
+    "duration_seconds": 18.05,
+    "transcript_checked": true,
+    "transcript_similarity": 1.0,
+    "answer_bearing_phrases_checked": true,
+    "audio_events_checked": true,
+    "throat_clearing_events_detected": false,
+    "forbidden_tag_preflight_passed": true,
+    "transcription_name_aliases": {},
+    "transcript_normalization": "Track label, punctuation/case, exact numerical/ordinal/year spellings, contractions and TV/OK spellings. Numerical values, dates and negatives are preserved; no answer-bearing substitutions.",
+    "activity": 6,
+    "internal_audio_id": "HZN_A1_U07_LC_E06_AUD_01",
+    "subjective_listening_review": false,
+    "sha256": "233d2c95a398841b80b524d8cc0d9fe4ca9cc96afefb3e075801db400a9f6700"
+  }
+]

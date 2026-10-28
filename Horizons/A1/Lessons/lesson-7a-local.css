@@ -1,0 +1,16 @@
+/* 7A: a photographic memory spread with paired original interviews. */
+.l7a-diptych img { width:100%; height:auto; }
+.l7a-diptych figcaption { display:grid; grid-template-columns:1fr 1fr; color:#694431; padding:1.3mm 0 0; }
+.l7a-diptych figcaption span { padding-left:2mm; }.l7a-diptych figcaption b { margin-right:2mm; }
+.l7a-time-notes { display:grid; grid-template-columns:1fr 1fr; gap:1mm 5mm; }
+.l7a-time-notes p { margin:0; line-height:1.4; }
+.l7a-interviews { display:grid; grid-template-columns:1fr 1fr; gap:6mm; }
+.l7a-interviews section { padding:2.5mm 3mm; background:#f5f0e9; border-left:.65mm solid #936a4f; }
+.l7a-interviews header { display:flex; justify-content:space-between; gap:2mm; font-size:11pt; font-weight:650; color:#734d38; margin-bottom:2mm; }
+.l7a-interviews header span { font-size:9.5pt; font-weight:400; }
+.l7a-interviews p { font-size:9.5pt; line-height:1.4; margin:0; }
+.l7a-interviews p.l7a-question { color:#734d38; margin-bottom:1.5mm; }
+.l7a-memory-pair { display:grid; grid-template-columns:68mm 1fr; gap:6mm; align-items:center; }
+.l7a-memory-pair img { width:68mm; height:auto; }
+.l7a-memory-pair p { margin:0 0 1mm; line-height:1.4; }
+.l7a-page--2 .u7-lines { margin-top:1mm; }
