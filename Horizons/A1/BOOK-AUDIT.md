@@ -30,7 +30,7 @@ Counts are inventory, not proof that every cue is correctly placed. Review place
 
 **Checked:** both standalone pages match the assembled view; full portraits and complete cake decode, functional sizes/choices are consistent, no overflow or continuation collision. Reopened **66-page A4 PDF** replaces 7B's two pages and only the necessary final credit page. Every other **63** page fragment, PDF text and decoded drawing stream is identical. Both final lesson pages were independently rendered through Poppler and inspected at print size; all three replaced pages match native-export pixels and retain every learner word token. Export-only 240dpi media; no saved-PDF font/image rewriting.
 
-Local verification complete; live HTML/PDF/media/playback confirmation pending.
+Published 7B/assembled HTML, local stylesheet, all four original-photo hashes and saved-PDF hash match checked files. Five controls play/pause all three retained tracks and hide in print; live geometry agrees with local pages.
 
 **Reversible:** baseline **2ec3f65**, before files/hash ledger, complete local/live evidence and guarded rollback in `work/refine7b-20261030` outside the repository. This is the 7B revision for author review; 7C/7D still await separate refinement.
 
