@@ -1,6 +1,6 @@
 # Horizons A1 — Book audit
 
-Updated 28 October 2026. **Technical preview verified through Unit 7; 7A visually refined after author correction. 7B–7D visual revision, whole-book fatigue reassessment and final release remain pending.**
+Updated 30 October 2026. **Technical preview verified through Unit 7. 7A accepted; 7B visually refined for review. 7C–7D visual revision, whole-book fatigue reassessment and final release remain pending.**
 
 This is the current audit entry point. [book-audit.json](book-audit.json) holds scoped evidence and historical checks; [CANONICAL-STYLE.md](../Base/design-system/CANONICAL-STYLE.md) governs design. A current snapshot is not final release approval.
 
@@ -18,9 +18,25 @@ This is the current audit entry point. [book-audit.json](book-audit.json) holds 
 
 Counts are inventory, not proof that every cue is correctly placed. Review placement beside the newly introduced content.
 
+## 7B visual refinement, 30 October
+
+**Scope: 7B only, printed pages 61–62**, with four display notices on credit page 70 corrected for the uncropped images. The author accepted 7A and explicitly said **do not overuse that treatment**. Keep cutouts selective; do not turn each lesson into another character-cutout feature. Continue Unit 7 one lesson at a time. 7A and 7C–7D are unchanged in this pass.
+
+**Distinct idea: a calendar-and-radio birthday quiz.** The established crimson **Horizons on Air** masthead now carries a live broadcast-calendar date. Six-month rows and inline ordinal/date pairs leave room for three much taller portrait areas. All three authentic photographs display their **entire original source**, with full hair/head/chin and background/context: no tight crop, raster retouch, generated likeness or forced stretch. The listener message keeps the real cake in natural proportion and uses a waveform/recording treatment; the **ago** clarification gains a continuous backward timeline. Two blank calendar slips are a functional response surface for privately dictated dates, not repeated character art or a generic box around each task.
+
+**Continuity and readability:** compared 2B/5B's show branding and the adjacent approved 7A. Shared black 31pt title, crimson navigation, pink focus shell and single activity lane remain. Ordinary input/tasks/concepts stay 9.5pt, instructions 8.9pt, grammar bold dark crimson and choices normal italics. The large 21pt date is an integrated calendar graphic, not a change to model-sentence sizes. Each date-slip line has 7mm writing clearance; month/day numeric-ordinal notation is modeled by April 2nd. No cool-title/yellow-accent recipe, new cutouts or blanket vocabulary emphasis.
+
+**Preservation:** exact learner-word multisets for all **eight** exercises and identical focus-panel markup; all facts and the **Sunday July 12, 2026** episode anchor remain. No new assessed words or rewritten answers. Tracks **7.4–7.6**, Jessica, the other voices and ident retain their original bytes; five controls still target those three tracks. Three NEW WORDS cues, four nearby references and Extra Practice remain. All original photo bytes and legal/source links are retained; only the four display notices now correctly say the entire source image is shown.
+
+**Checked:** both standalone pages match the assembled view; full portraits and complete cake decode, functional sizes/choices are consistent, no overflow or continuation collision. Reopened **66-page A4 PDF** replaces 7B's two pages and only the necessary final credit page. Every other **63** page fragment, PDF text and decoded drawing stream is identical. Both final lesson pages were independently rendered through Poppler and inspected at print size; all three replaced pages match native-export pixels and retain every learner word token. Export-only 240dpi media; no saved-PDF font/image rewriting.
+
+Local verification complete; live HTML/PDF/media/playback confirmation pending.
+
+**Reversible:** baseline **2ec3f65**, before files/hash ledger, complete local/live evidence and guarded rollback in `work/refine7b-20261030` outside the repository. This is the 7B revision for author review; 7C/7D still await separate refinement.
+
 ## 7A visual refinement, 28 October
 
-**Scope: 7A only, printed pages 59–60.** The author rejected the first Unit 7 visual treatment as bland and too similar, specifically noting the absence of transparent cutouts. Refine this unit **one lesson at a time**; do not rework 7B–7D in the same pass. The birthday detective portrait crops in 7B remain a known issue for that lesson's turn. Earlier Unit 7 creative claims are production notes, not author acceptance.
+**Scope: 7A only, printed pages 59–60.** The author rejected the first Unit 7 visual treatment as bland and too similar, specifically noting the absence of transparent cutouts. Refine this unit **one lesson at a time**; do not rework 7B–7D in the same pass. The birthday detective portrait crops in 7B were pending at that time; the 30 October 7B record above corrects them. Earlier Unit 7 creative claims are production notes, not author acceptance.
 
 The two interviews now form one recognizable **childhood-memory feature**, with large 1985/2005 anchors, stacked voices on warm paper and an original adult-Helen cutout holding a rotary telephone. Her silhouette breaks the paper edge while the full-background room photographs remain. On page two, tall seated partners talk about a paper snapshot; the existing A/B model becomes live speech balloons above their heads. The retained real album photograph supplies context, questions remain open and four 7mm lines support the same two independent sentences.
 
