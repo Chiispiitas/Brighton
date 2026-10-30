@@ -4922,7 +4922,7 @@
     },
     "on_air_identity_consistency_20261030": {
       "scope": "All four Horizons on Air episodes: protected 2B reference, 3B, 5B, 7B and all declared secondary activities. Six pages updated: 25–26, 43–44, 61–62.",
-      "status": "local HTML/identity/PDF verified; live publication pending",
+      "status": "local/live HTML, identity profiles, PDF and playback verified",
       "author_correction": "Later episodes and their secondary tasks drifted from actual rendered 2B. Match both main and compact follow-up identity, rather than approximate only the logo.",
       "contract": "Main: uppercase white 27pt title, crimson banner, orange underline, identical white 23mm waveform, black/white HORIZONS ON AIR badge. Secondary: open paper, black/crimson badge, uppercase black 10pt episode title and identical crimson 17mm waveform above instruction. White-on-black speaker/source captions with orange rules.",
       "implementation": "Shared Lessons/horizons-on-air.css and common main/secondary structures; exact episode/task coverage in on_air_identity. Existing 2B HTML/CSS and its rendered pages unchanged. Added Base/build/check-on-air-style.py and explicit canonical style rule for all future main/secondary activities.",
@@ -4987,7 +4987,59 @@
         "method": "Six native episode pages replace only 3B/5B/7B; all other PDF pages preserved, including 2B reference. Export-only 240dpi media, no saved-PDF font/image rewriting."
       },
       "visual_review": "Viewed both 2B reference pages and all six revised pages. Independently rendered final six PDF pages through Poppler and compared with 2B: complete images, readable black/orange labels, intact writing lines/footers, no text clipping.",
-      "reversible": "Exact before files, hashes, native/page renders, identity profiles and guarded rollback in work/onair-consistency-20261030; baseline ee3c02ede4f90b19ca9562e9ed636d405848dfb0."
+      "reversible": "Exact before files, hashes, native/page renders, identity profiles and guarded rollback in work/onair-consistency-20261030; baseline ee3c02ede4f90b19ca9562e9ed636d405848dfb0.",
+      "publication": {
+        "files": {
+          "canonical_html_matches": true,
+          "canonical_pdf_sha256": "d36e520ac4c06c86baa883047a5621b351b874f5ac2d0f01a607abc16c78e824",
+          "sources_match": [
+            "Lessons/2B.html",
+            "Lessons/3B.html",
+            "Lessons/5B.html",
+            "Lessons/7B.html",
+            "Lessons/horizons-on-air.css"
+          ],
+          "active_photo_hash_count": 15,
+          "retained_audio_hash_count": 9,
+          "retained_asset_hashes": {
+            "Audios/Track 2.3.mp3": "29e464fb0c528c930cefd6bfb92fca3af03048d1666ea8076ce3f86237e3fb47",
+            "Audios/Track 3.4.mp3": "be18f2d503fdfe36605de9a47c5b99e0591ea14a368ed035712a2227fc831110",
+            "Audios/Track 3.5.mp3": "68b1a3cff6da5e4bf467fa4feab9ddb0007b17557d67c97e8dce9b534068110a",
+            "Audios/Track 5.4.mp3": "4b5c0a6749cf34a9dd2aad58953ebb9609ba4c73dc0ee6705b58212215590c7b",
+            "Audios/Track 5.5.mp3": "8daf21abe2b4ab46869112556f0631df3138527325a4f5c879260b9caf236290",
+            "Audios/Track 5.6.mp3": "68808f463a6eff2de443b044a20878dab93463d55ad2c56b6cd79d9c944550d0",
+            "Audios/Track 7.4.mp3": "90918609a4b1d6414c6c3651a7d97fd01cd551e2edcad1360804dd59b8f7c093",
+            "Audios/Track 7.5.mp3": "44eb1980be3c40cdd378b319353130790cd5667c7586770e1f6fd46adae1f065",
+            "Audios/Track 7.6.mp3": "24b37962857562ff844851294c3ccf4060e2706179616457d5e6a27c5d080c38",
+            "Images/2B/2B-AIR-01-JULIA.png": "31b5b996b351d89970a6dd6731dcf4b96860d565202a12a07a58a2050c66d343",
+            "Images/2B/2B-AIR-03-ANA.png": "d5993aa1c3a5ba4921e479c4496d7bc246852d6cd64b6b7f6b00c06f03367bed",
+            "Images/2B/2B-AIR-04-DIEGO.png": "395634dda8eb0dad9e1bb007f7fb40596e76827adb63d73cb3308302c48f7529",
+            "Images/2B/2B-CITY-WIDE.png": "43f39c2188b28e9911271addb0eb073221558bef3fd37866788a34e9c1fc80a6",
+            "Images/3B/Bookshop-cottonbro-4855559.jpg": "af7d5669cd4bbc67299358d3a5d554ef7e711794071860b42ce636419a8c4d9b",
+            "Images/3B/Conversation-standing-cutout-v2.png": "21f3a78bcc1d99d05e46ba4760006910e2b20c1c019cb89cdda38538a44dc6b9",
+            "Images/3B/Office-Cedric-Fauntleroy-8154237.jpg": "c1efa61e819adce20e828d25d0dee90a5993ab54b568dbcff2c589aae1385538",
+            "Images/3B/Office-Felicity-Tai-7964239.jpg": "f35860dad265ffa03cd102f01e98fb56d46b789d0b7899fd4a185def1a130f82",
+            "Images/5B/Boxes-for-shoes-v1.png": "a47301f53c239c60507b7f035eb4f3dd97f61e93fb8e7ba7c17b53fb44b31528",
+            "Images/5B/Shopping-actions-v1.png": "f72f14eace23a3c65237edc1593cf48a6acca443f9737e0e3f18c8a3487209af",
+            "Images/5B/Two-jacket-fits-v1.png": "3a5dfeea7c509bb70ade4a483d50320afec60d75832ae8ca9a0316151f19379f",
+            "Images/7B/Birthday-cake-v1.jpg": "97e643c672415f20495c25c604af869ddfe4026dc6fc37be96125c0cd29f25fa",
+            "Images/7B/Daniel-Gage-Skidmore-v1.jpg": "445498e4353eca26ebb5a5bb5abb8a60753a357d4d0d5a25e900f72ec08b4c69",
+            "Images/7B/Frida-Guillermo-Kahlo-v1.jpg": "5e867b395b4871caa8e6b0371f5cddd17364598e83595d6b5967741ad9252d8a",
+            "Images/7B/Malala-Simon-Davis-v1.jpg": "58e3fd1e08dbc075f9848766e6e43f764fd1b9f8c26c45a4348d7558be2cdf12"
+          }
+        },
+        "browser": {
+          "episodes": 4,
+          "main_headers": 4,
+          "secondary_headers": 13,
+          "all_identity_profiles_match_2b": true,
+          "live_geometry_matches_local_and_assembled": true,
+          "all_media_loaded": true,
+          "controls_play_and_pause": 16,
+          "unique_tracks_played": 9,
+          "print_controls_hidden_and_geometry_preserved": true
+        }
+      }
     }
   },
   "pending": [
@@ -5080,7 +5132,7 @@
     }
   },
   "content_baseline_commit": "2f404b547b7da07be81a0622a78591d3299c402a",
-  "current_revision": "Aligned all four Horizons on Air programmes and thirteen follow-up headers to protected 2B, using a shared stylesheet and structural validator. Main and secondary computed identity profiles exactly match 2B. Six 3B/5B/7B pages updated; 60 others, all media/audio and teaching content retained. Local HTML/PDF verified; publication pending. Ordinary preparation/grammar retain their own style. 7C/7D visual refinement and final release remain pending.",
+  "current_revision": "Aligned all four Horizons on Air programmes and thirteen follow-up headers to protected 2B, using a shared stylesheet and structural validator. Main and secondary computed identity profiles exactly match 2B. Six 3B/5B/7B pages updated; 60 others, all media/audio and teaching content retained. Live HTML/PDF/media/playback confirmed. Ordinary preparation/grammar retain their own style. 7C/7D visual refinement and final release remain pending.",
   "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope. units_3_4_reviews_visual_variety_20261025 supersedes earlier composition, color and geometry evidence for printed pages 21-40, including review_composition_20261025, review_3_4_20261025, unit_3_creative_revision and unit_4_visual_variety; earlier learning and audio evidence keeps its original scope. lesson_5b_on_air_20261026 supersedes prior 5B reading/source/presentation and 5.5/5.6 records only. The 26 October every-unit show mandate is superseded by planned B-skill balance and no two-unit show gap. lesson_5b_activity5_variety_20261026 supersedes only the earlier 5B Activity 5 image/choices/key and continuation-image evidence; no show/audio or other lesson evidence changes. lesson_6b_picture_grammar_20261026 supersedes only the original 6B page-52 grammar presentation, continuation spacing and associated geometry evidence; all learning, source and audio evidence retains its scope. lessons_6c_6d_20261026 adds printed pages 53-56 and completes Unit 6 without superseding prior source/audio/page evidence. Prior 6C/6D-unproduced statements are historical; current coverage is through 6D. vocabulary_and_credits_20261026 supersedes prior plain NEW WORDS vocabulary presentation and in-lesson image-credit placement. Existing learning, audio, image bytes and unrelated geometry evidence retains its scope. Three appended credits pages are provisional end matter after the current final lesson. plain_vocabulary_20261026 supersedes every earlier requirement for automatic or paired NEW WORDS word emphasis; the author withdrew blanket bolding. End-of-book credits remain unchanged. review_5_6_20261026 adds printed pages 57-58 and repaginates existing end credits to 59-61. Earlier 55-page counts describe the prior version; no previous lesson/source/audio evidence is superseded. unit7_20261028 adds printed pages 59–66 and twelve recordings; retains the prior 54 lesson/review pages and repaginates/appends credits to 67–70. Earlier 57-page counts and Unit 7 unproduced/show-due statements are historical; prior learning and audio evidence retains its scope. lesson7a_visual_refinement_20261028 supersedes original 7A presentation/geometry and its creative approval only. Original Unit 7 visual claims are not author approval: 7B–7D remain pending separate review, including poor 7B portrait crops. No other lesson content, source, media or audio evidence is superseded. lesson7b_visual_refinement_20261030 supersedes original 7B presentation/geometry and the pending portrait-crop issue, including earlier statements that 7B remains untouched. All learning/factual/audio evidence retains its scope. Only 7B and its page-70 display-credit wording change; 7C/7D remain pending. on_air_identity_consistency_20261030 supersedes earlier visual claims of 2B consistency for 3B/5B/7B, including the 7B calendar inside the masthead and independent listener header. The episode date remains below the canonical banner. Main/secondary structure and black/orange caption rules now follow 2B exactly; source content/media/audio evidence remains valid. 2B is unchanged.",
   "receptive_skill_plan": {
     "policy": "B lessons provide a planned mix of reading-led and listening-led units; Horizons on Air is not required in every unit. Avoid two consecutive units without the show. Do not impose rigid alternation; 2B and 3B are both listening-led. Declare primary skill and source genre before authoring.",

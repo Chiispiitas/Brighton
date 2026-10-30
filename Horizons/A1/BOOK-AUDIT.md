@@ -39,7 +39,7 @@ Use **`Lessons/horizons-on-air.css`** and the shared header structures for futur
 
 **Learning/media preservation:** all instructions, core learner-word multisets, questions, facts, answers and grammar panel markup remain. Only recurring display metadata is added and two redundant internal decorative subtitles are replaced by the correct episode header. No activity or assessment item is removed. All existing image files, **72 lesson MP3s + ident**, 78 controls, 39 NEW WORDS badges, 65 references and 28 Extra Practice footers are retained. No new images or voices were generated. Source layouts still differ; only the recurring show identity is standardized.
 
-Local checks complete; live HTML/PDF/media/playback verification pending.
+Published canonical HTML/PDF, three lesson masters/shared stylesheet and all retained media hashes match. Live standalone/assembled identity and geometry match checked pages; all affected audio buttons play/pause and hide in print.
 
 **Reversible:** before files/hash ledger, identity profiles, proof renders and guarded rollback in `work/onair-consistency-20261030`; baseline ee3c02e. This completes the show-identity correction, not 7C/7D's separate visual refinement or final whole-book release.
 
