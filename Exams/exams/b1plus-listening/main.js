@@ -46,6 +46,7 @@
   let state = loadState() || createDefaultState();
   let saveTimer = null;
   let liveProgress = null;
+  App.registerLocalState?.(STORAGE_KEY, () => state);
 
   boot();
 
@@ -156,9 +157,11 @@
    PLAY AUDIO AND ENTER
   ---------------------------------------------- */
   async function playAudioAndEnter() {
+    if (dom.playAudioBtn.disabled) return;
+    dom.playAudioBtn.disabled = true;
     dom.audioGateError.classList.add("hidden");
     try {
-      await dom.examAudio.play();
+      await (App.playExamAudio ? App.playExamAudio(dom.examAudio) : dom.examAudio.play());
       state.audio.started = true;
       state.audio.startedThisSession = true;
       state.audio.startedAt = state.audio.startedAt || new Date().toISOString();
@@ -171,6 +174,8 @@
       dom.audioGateError.classList.remove("hidden");
       updateAudioBadge("Audio error");
       console.error(error);
+    } finally {
+      dom.playAudioBtn.disabled = false;
     }
   }
 
@@ -242,7 +247,8 @@
    SAVE STATE NOW
   ---------------------------------------------- */
   function saveStateNow() {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    if (App.saveLocalState) App.saveLocalState(STORAGE_KEY, state);
+    else { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch {} }
   }
 
   /* ----------------------------------------------
@@ -736,8 +742,10 @@
   function resetTest() {
     const confirmed = window.confirm("Reset this listening test? This will clear all answers, flags and notes saved on this device.");
     if (!confirmed) return;
-    localStorage.removeItem(STORAGE_KEY);
+    if (App.clearLocalState) App.clearLocalState(STORAGE_KEY);
+    else localStorage.removeItem(STORAGE_KEY);
     state = createDefaultState();
+    dom.studentForm.reset();
     window.location.reload();
   }
 
@@ -754,8 +762,8 @@
         <div class="finish-card finish-confirmation-card">
           <p class="eyebrow">Exam finished</p>
           <h2>Submitting your answers</h2>
-          <p id="submitStatusText" class="start-copy" style="margin-left:auto;margin-right:auto;">Please wait while the platform records your exam in Wix.</p>
-          <div class="submission-status-line"><strong id="submitStatusBadge">Saving</strong><span>Wix CMS</span></div>
+          <p id="submitStatusText" class="start-copy" style="margin-left:auto;margin-right:auto;">Please wait while the platform records your exam in Brighton Database.</p>
+          <div class="submission-status-line"><strong id="submitStatusBadge">Saving</strong><span>Brighton Database</span></div>
           <div id="submissionResult" class="submission-result"></div>
         </div>
       </section>
@@ -855,7 +863,7 @@
     const apiBase = (config.API_BASE_URL || "").replace(/\/$/, "");
     if (!apiBase || apiBase.includes("YOUR-WIX")) {
       statusBadge.textContent = "Local";
-      statusText.textContent = "The exam is complete. Configure API_BASE_URL in config.js to save directly to Wix CMS.";
+      statusText.textContent = "The exam is complete. Configure API_BASE_URL in config.js to save directly to Brighton Database.";
       resultBox.innerHTML = `<p class="muted-text">No Wix endpoint is configured yet. Tell your teacher before closing this page.</p>`;
       return;
     }
@@ -878,11 +886,12 @@
           <p class="muted-text">Submission ID: ${escapeHtml(data.submissionId || "")}</p>
         </div>
       `;
-      localStorage.removeItem(STORAGE_KEY);
+      if (App.clearLocalState) App.clearLocalState(STORAGE_KEY);
+      else localStorage.removeItem(STORAGE_KEY);
     } catch (error) {
       console.error("Submission failed", error);
       statusBadge.textContent = "Not saved";
-      statusText.textContent = "The exam is complete, but it could not be saved to Wix. Tell your teacher before closing this page.";
+      statusText.textContent = "The exam is complete, but it could not be saved to Brighton Database. Tell your teacher before closing this page.";
       resultBox.innerHTML = `
         <p class="submit-error">Save error: ${escapeHtml(error.message || String(error))}</p>
         <button class="primary-btn" type="button" data-retry-submission style="margin-top:16px;">Retry submission</button>

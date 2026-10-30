@@ -47,6 +47,7 @@
   let state = loadState() || createDefaultState();
   let saveTimer = null;
   let liveProgress = null;
+  App.registerLocalState?.(STORAGE_KEY, () => state);
 
 
   /* ----------------------------------------------
@@ -202,7 +203,8 @@
   function saveState() {
     clearTimeout(saveTimer);
     saveTimer = setTimeout(() => {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      if (App.saveLocalState) App.saveLocalState(STORAGE_KEY, state);
+      else { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch {} }
     }, 30);
   }
 
@@ -678,9 +680,11 @@
     const panelRect = popover.getBoundingClientRect();
     const footerTop = dom.bottomNav?.getBoundingClientRect().top || window.innerHeight;
     const viewportBottom = Math.min(window.innerHeight - 12, footerTop - 12);
-    const top = rect.bottom + 10;
+    const viewportTop = dom.mainContent.getBoundingClientRect().top + 8;
+    const desiredHeight = Math.min(panelRect.height, viewportBottom - viewportTop);
+    const top = Math.max(viewportTop, Math.min(rect.bottom + 10, viewportBottom - desiredHeight));
     const left = Math.min(window.innerWidth - panelRect.width - 12, Math.max(12, rect.left));
-    const availableHeight = Math.max(110, viewportBottom - top);
+    const availableHeight = Math.max(40, viewportBottom - top);
 
     popover.style.top = `${top}px`;
     popover.style.left = `${left}px`;
@@ -724,7 +728,7 @@
       : emptyLabel
         ? `<span class="gap-answer">${escape(emptyLabel)}</span>`
         : ""}`;
-    $(".choice-popover .option-btn").forEach(btn => btn.classList.toggle("selected", btn.dataset.popoverChoice === value));
+    $$(".choice-popover .option-btn").forEach(btn => btn.classList.toggle("selected", btn.dataset.popoverChoice === value));
   }
 
   /* ----------------------------------------------
@@ -1098,8 +1102,10 @@
   function resetTest() {
     const confirmed = window.confirm("Reset this test? This will clear all answers, flags and notes saved on this device.");
     if (!confirmed) return;
-    localStorage.removeItem(STORAGE_KEY);
+    if (App.clearLocalState) App.clearLocalState(STORAGE_KEY);
+    else localStorage.removeItem(STORAGE_KEY);
     state = createDefaultState();
+    dom.studentForm.reset();
     window.location.reload();
   }
 
@@ -1117,8 +1123,8 @@
         <div class="finish-card finish-confirmation-card">
           <p class="eyebrow">Exam finished</p>
           <h2>Submitting your answers</h2>
-          <p id="submitStatusText" class="start-copy" style="margin-left:auto;margin-right:auto;">Please wait while the platform records your exam in Wix.</p>
-          <div class="submission-status-line"><strong id="submitStatusBadge">Saving</strong><span>Wix CMS</span></div>
+          <p id="submitStatusText" class="start-copy" style="margin-left:auto;margin-right:auto;">Please wait while the platform records your exam in Brighton Database.</p>
+          <div class="submission-status-line"><strong id="submitStatusBadge">Saving</strong><span>Brighton Database</span></div>
           <div id="submissionResult" class="submission-result"></div>
         </div>
       </section>
@@ -1260,7 +1266,7 @@
 
     if (!apiBase || apiBase.includes("YOUR-WIX")) {
       statusBadge.textContent = "Local";
-      statusText.textContent = "The exam is complete. Configure API_BASE_URL in config.js to save directly to Wix CMS.";
+      statusText.textContent = "The exam is complete. Configure API_BASE_URL in config.js to save directly to Brighton Database.";
       resultBox.innerHTML = `<p class="muted-text">No Wix endpoint is configured yet. Tell your teacher before closing this page.</p>`;
       return;
     }
@@ -1288,11 +1294,12 @@
           <p class="muted-text">Submission ID: ${escape(data.submissionId || "")}</p>
         </div>
       `;
-      localStorage.removeItem(STORAGE_KEY);
+      if (App.clearLocalState) App.clearLocalState(STORAGE_KEY);
+      else localStorage.removeItem(STORAGE_KEY);
     } catch (error) {
       console.error("Submission failed", error);
       statusBadge.textContent = "Not saved";
-      statusText.textContent = "The exam is complete, but it could not be saved to Wix. Tell your teacher before closing this page.";
+      statusText.textContent = "The exam is complete, but it could not be saved to Brighton Database. Tell your teacher before closing this page.";
       resultBox.innerHTML = `
         <p class="submit-error">Save error: ${escape(error.message || String(error))}</p>
         <button class="primary-btn" type="button" data-retry-submission style="margin-top:16px;">Retry submission</button>

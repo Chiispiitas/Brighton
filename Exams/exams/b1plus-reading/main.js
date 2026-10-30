@@ -42,6 +42,7 @@
   let state = loadState() || createDefaultState();
   let saveTimer = null;
   let liveProgress = null;
+  App.registerLocalState?.(STORAGE_KEY, () => state);
 
   const helpers = {
     escape,
@@ -214,7 +215,8 @@
   function saveState() {
     clearTimeout(saveTimer);
     saveTimer = setTimeout(() => {
-      localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+      if (App.saveLocalState) App.saveLocalState(STORAGE_KEY, state);
+      else { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch {} }
     }, 30);
   }
 
@@ -1168,8 +1170,10 @@
   function resetTest() {
     const confirmed = window.confirm("Reset this test? This will clear all answers, flags and notes saved on this device.");
     if (!confirmed) return;
-    localStorage.removeItem(STORAGE_KEY);
+    if (App.clearLocalState) App.clearLocalState(STORAGE_KEY);
+    else localStorage.removeItem(STORAGE_KEY);
     state = createDefaultState();
+    dom.studentForm.reset();
     window.location.reload();
   }
 
@@ -1349,7 +1353,8 @@
           <p class="muted-text">Submission ID: ${escape(data.submissionId || "")}</p>
         </div>
       `;
-      localStorage.removeItem(STORAGE_KEY);
+      if (App.clearLocalState) App.clearLocalState(STORAGE_KEY);
+      else localStorage.removeItem(STORAGE_KEY);
     } catch (error) {
       console.error("Submission failed", error);
       statusBadge.textContent = "Not saved";
