@@ -10,6 +10,7 @@ All formal exams and practice variants share the same presentation and shell beh
 - Register local state with `App.registerLocalState(STORAGE_KEY, () => state)`. Use `App.saveLocalState` and `App.clearLocalState` for writes and cleanup. This flushes pending changes when the page is hidden, warns when device storage is unavailable and prevents cleared attempts from being restored by a late timer.
 - Use `App.playExamAudio(audio)` inside the listening gate's click handler. This preserves the user gesture and bounds startup time. Release the Play button in `finally` so it remains retryable.
 - Do not autofocus writing fields on initial render. Open part navigation at its instructions; individual question navigation can still scroll to the relevant question.
+- Automatic renderer scrolling and delayed focus must respect `App.isOpeningPart()`. Explicit field focus or question navigation releases the introduction so normal editing remains available.
 - Keep questions, answer keys, grading and submission payloads in their existing modules. Shared shell code must not change them.
 - Keep fonts local in `assets/fonts/`; their SIL Open Font License is included.
 

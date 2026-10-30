@@ -116,15 +116,44 @@
     }
   }).observe(document.body, {childList:true});
   window.addEventListener('resize', () => document.querySelectorAll('.choice-popover').forEach(fitPopover));
-  // A part button opens its instructions. Individual question bubbles retain
-  // each player's existing behaviour of scrolling to the selected question.
-  document.addEventListener('click', event => {
-    if (!event.target.closest?.('.part-nav-title')) return;
+  // Opening a part means reading its instructions, not focusing an answer.
+  // Legacy renderers also schedule focus/scroll after rendering, and image
+  // decoding can adjust scroll anchoring. Keep the introduction stable until
+  // the candidate deliberately scrolls, types or selects a question.
+  const content = document.getElementById('mainContent');
+  let introEpoch = 0;
+  let introPending = false;
+  App.isOpeningPart = () => introPending;
+  const releaseIntro = () => {
+    introEpoch += 1;
+    introPending = false;
+    content.classList.remove('part-intro-open');
+  };
+  const showPartIntro = () => {
+    const epoch = ++introEpoch;
+    introPending = true;
+    content.classList.add('part-intro-open');
+    const reset = () => {if (introEpoch === epoch) {content.scrollTop = 0; content.scrollLeft = 0;}};
     requestAnimationFrame(() => {
-      const content = document.getElementById('mainContent');
-      content?.scrollTo({top: 0, behavior: 'instant'});
+      reset();
+      Promise.allSettled([...content.querySelectorAll('img')].map(image => image.decode())).then(reset);
     });
-  });
+    setTimeout(reset, 80);
+  };
+  const isPartNavigation = target => target.closest?.('.part-nav-card') && !target.closest?.('.q-pill');
+  document.addEventListener('pointerdown', event => {if (!isPartNavigation(event.target)) releaseIntro();}, true);
+  document.addEventListener('wheel', releaseIntro, {capture:true, passive:true});
+  document.addEventListener('keydown', releaseIntro, true);
+  document.addEventListener('focusin', event => {
+    if (introPending && content.contains(event.target) && event.target.matches('input, textarea, select')) {
+      releaseIntro();
+    }
+  }, true);
+  document.getElementById('studentForm').addEventListener('submit', showPartIntro);
+  document.addEventListener('click', event => {
+    if (isPartNavigation(event.target)) showPartIntro();
+    else releaseIntro();
+  }, true);
   const focusable = root => [...root.querySelectorAll('button, input, select, textarea, a[href], [tabindex]:not([tabindex="-1"])')]
     .filter(el => !el.disabled && el.getClientRects().length && !el.closest('[inert]'));
   let active = null;

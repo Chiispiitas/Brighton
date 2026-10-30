@@ -40,9 +40,9 @@ window.PartRenderers.part2 = {
       input.addEventListener("input", () => helpers.setAnswer(part.id, Number(input.dataset.q), input.value.trim(), { render: false }));
     });
     const active = document.querySelector(`.inline-input[data-q="${helpers.getCurrentQuestionNumber()}"]`);
-    if (active) {
+    if (active && !window.BrightonApp?.isOpeningPart?.()) {
       active.scrollIntoView({ behavior: "smooth", block: "center" });
-      setTimeout(() => active.focus({ preventScroll: true }), 40);
+      setTimeout(() => { if (!window.BrightonApp?.isOpeningPart?.()) active.focus({ preventScroll: true }); }, 40);
     }
   }
 };

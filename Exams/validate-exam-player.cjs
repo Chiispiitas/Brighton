@@ -23,6 +23,11 @@ const server = http.createServer((req, res) => {
 });
 const sizes = [{width:1440,height:900}, {width:768,height:1024}, {width:390,height:844}, {width:320,height:568}, {width:844,height:390}].filter(size=>!process.env.EXAM_QA_WIDTHS || process.env.EXAM_QA_WIDTHS.split(',').includes(String(size.width)));
 const reports = [];
+async function enterAudio(page) {
+  if(!await page.locator('#playAudioBtn').isVisible()) return;
+  try {await page.locator('#playAudioBtn').click();}
+  catch(error) {if(await page.locator('#audioGate').isVisible()) throw error;}
+}
 async function picture(page, label) {if (output) await page.screenshot({path:path.join(output, label + '.png')});}
 async function geometry(page, label) {
   await page.locator('#mainContent img').evaluateAll(async images => {
@@ -88,7 +93,7 @@ async function run(browser, engine, size, exam, base) {
     await page.locator('#studentName').fill('Alexandra Brighton Compatibility');
     await page.locator('#classId').fill('QA-UI-LONG-CLASS');
     await page.locator('#studentForm button[type=submit]').click();
-    if(await page.locator('#playAudioBtn').isVisible()) await page.locator('#playAudioBtn').click();
+    await enterAudio(page);
     await page.locator('#examShell').waitFor({state:'visible'});
     const parts=await page.locator('.part-nav-title').evaluateAll(els=>els.map(el=>el.dataset.partId));
     const metrics=[];
@@ -99,6 +104,11 @@ async function run(browser, engine, size, exam, base) {
       assert.ok(measured.scrollTop<2,label+': part instructions not visible');
       assert.ok(measured.titleY>=measured.header.bottom,label+': heading behind header');
       if(size.width===390 || size.width===1440) await picture(page,label+'-part'+(i+1));
+      const editor=page.locator('#mainContent textarea.writing-textarea, #mainContent input.inline-input:not([readonly])').first();
+      if(await editor.isVisible()) {
+        await editor.fill('QA');
+        assert.equal(await editor.inputValue(),'QA',label+': answer editor cannot accept typing');
+      }
       const gaps=page.locator('#mainContent button[data-choice-gap], #mainContent button.cloze-gap[data-gap]');
       if(await gaps.count()) {
         await gaps.first().click();
@@ -138,7 +148,7 @@ async function run(browser, engine, size, exam, base) {
     await page.locator('#modalRoot').waitFor({state:'hidden'});
     await page.reload();
     if(await page.locator('#startScreen').isVisible()) await page.locator('#continueSavedBtn').click();
-    if(await page.locator('#playAudioBtn').isVisible()) await page.locator('#playAudioBtn').click();
+    await enterAudio(page);
     await page.locator('#notesBtn').click();
     assert.equal(await page.locator('#modalRoot .notes-area').inputValue(),'UI regression: private note',label+': local save lost');
     await page.keyboard.press('Escape');
@@ -173,7 +183,7 @@ async function storageCompatibility(browser, engine, exam, base) {
   await page.goto(base+exam+'/index.html');
   await page.locator('#studentName').fill('Storage Compatibility');await page.locator('#classId').fill('QA');
   await page.locator('#studentForm button[type=submit]').click();
-  if(await page.locator('#playAudioBtn').isVisible())await page.locator('#playAudioBtn').click();
+  await enterAudio(page);
   await page.locator('#localSaveWarning').waitFor({state:'visible'});
   await page.locator('#nextBtn').click();
   await page.locator('#notesBtn').click();await page.locator('#modalRoot .notes-area').fill('Still usable without device storage');
@@ -188,14 +198,14 @@ async function storageCompatibility(browser, engine, exam, base) {
 async function audioCompatibility(browser, engine, exam, base) {
  const context=await browser.newContext({viewport:{width:390,height:844}});
  await context.route('**/*',route=>['GET','HEAD'].includes(route.request().method())?route.continue():route.fulfill({status:200,contentType:'application/json',body:'{"success":true}'}));
- const page=await context.newPage();page.setDefaultTimeout(10000);
+ const page=await context.newPage();page.setDefaultTimeout(10000);page.setDefaultNavigationTimeout(30000);
  try {
   await page.goto(base+exam+'/index.html');
   await page.locator('#studentName').fill('Audio Compatibility');await page.locator('#classId').fill('QA');
   await page.locator('#studentForm button[type=submit]').click();
   assert.equal(await page.locator('#examAudio').evaluate(el=>el.paused),true);
   await page.locator('#examAudio').evaluate(el=>{el.muted=true;});
-  await page.locator('#playAudioBtn').click();
+  await enterAudio(page);
   await page.waitForFunction(()=>document.getElementById('examAudio').currentTime>0.1);
   assert.equal(await page.locator('#audioGate').isVisible(),false);
   await page.locator('.part-nav-title').last().click();

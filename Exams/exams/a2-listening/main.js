@@ -928,6 +928,7 @@
    UTILITIES
   ---------------------------------------------- */
   function scrollActiveCardIntoView() {
+    if (App.isOpeningPart?.()) return;
     const active = dom.mainContent.querySelector(".question-card.active, .listening-gap-line.active, .matching-row.active");
     if (!active) return;
     active.scrollIntoView({ behavior: "smooth", block: "center" });

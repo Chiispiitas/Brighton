@@ -58,9 +58,9 @@ window.PartRenderers.part3 = {
       button.addEventListener("click", () => helpers.goToQuestion(Number(button.dataset.keywordQ)));
     });
     const active = document.querySelector(`.inline-input[data-q="${helpers.getCurrentQuestionNumber()}"]`);
-    if (active) {
+    if (active && !window.BrightonApp?.isOpeningPart?.()) {
       active.scrollIntoView({ behavior: "smooth", block: "center" });
-      setTimeout(() => active.focus({ preventScroll: true }), 40);
+      setTimeout(() => { if (!window.BrightonApp?.isOpeningPart?.()) active.focus({ preventScroll: true }); }, 40);
     }
   }
 };

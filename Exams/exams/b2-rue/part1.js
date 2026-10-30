@@ -43,7 +43,7 @@ window.PartRenderers.part1 = {
     });
 
     const active = document.querySelector(`.cloze-gap[data-gap="${helpers.getCurrentQuestionNumber()}"]`);
-    if (active) active.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
+    if (active && !window.BrightonApp?.isOpeningPart?.()) active.scrollIntoView({ behavior: "smooth", block: "center", inline: "center" });
 
     /* ---------------------------------------------- 
     OPEN PANEL 
