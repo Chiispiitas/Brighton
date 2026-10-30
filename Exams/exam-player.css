@@ -1,0 +1,202 @@
+/* Shared Brighton exam player. Question-specific layouts remain in each exam.
+   Scoped priority is intentional: older players contain !important overrides.
+   This file owns the shared shell, including while old CSS is browser-cached. */
+html.brighton-exam-player {
+  --header-h: 64px !important;
+  --footer-h: calc(100px + env(safe-area-inset-bottom, 0px)) !important;
+  --yellow: #f8a832 !important;
+  --yellow-dark: #b96700 !important;
+  --yellow-soft: #fff4df !important;
+  --cream: #fff9ef !important;
+  --ink: #202631 !important;
+  --muted: #667085 !important;
+  --teal: #007f7c !important;
+  --teal-soft: #def9f7 !important;
+  --line: #f3dcb8 !important;
+  --radius: 20px !important;
+  --shadow: 0 18px 45px rgb(32 38 49 / 12%) !important;
+  font-family: Poppins, "Segoe UI", system-ui, sans-serif !important;
+  scroll-padding-top: var(--header-h) !important;
+}
+.brighton-exam-player body { margin: 0 !important; height: 100% !important; overflow: hidden !important; font: 14px/1.5 Poppins, "Segoe UI", system-ui, sans-serif !important; color: var(--ink) !important; }
+.brighton-exam-player *, .brighton-exam-player *::before, .brighton-exam-player *::after { box-sizing: border-box !important; }
+.brighton-exam-player button, .brighton-exam-player input, .brighton-exam-player select, .brighton-exam-player textarea { font-family: inherit !important; }
+.brighton-exam-player button { touch-action: manipulation !important; }
+.brighton-exam-player :focus-visible { outline: 3px solid var(--teal) !important; outline-offset: 3px !important; }
+.brighton-exam-player .hidden.hidden, .brighton-exam-player [hidden] { display: none !important; }
+.brighton-exam-player .start-screen {
+  position: fixed !important; inset: 0 !important; z-index: 1 !important; min-height: 0 !important; height: 100% !important; height: 100dvh !important;
+  display: grid !important; align-items: safe center !important; justify-items: center !important; overflow: auto !important;
+  padding: 28px max(20px, env(safe-area-inset-right)) 28px max(20px, env(safe-area-inset-left)) !important;
+  background: radial-gradient(circle at 12% 16%, #f8a83229, transparent 25%), radial-gradient(circle at 85% 82%, #00a9a51a, transparent 24%), #fff !important;
+}
+.brighton-exam-player .start-card { width: min(1120px, 100%) !important; min-width: 0 !important; border: 2px solid var(--yellow) !important; border-radius: 28px !important; background: #fff !important; box-shadow: var(--shadow) !important; overflow: hidden !important; }
+.brighton-exam-player .start-logo-row { display: flex !important; justify-content: center !important; padding: 20px 24px 16px !important; }
+.brighton-exam-player .start-logo-row img { display: block !important; width: 170px !important; max-width: 100% !important; height: 42px !important; object-fit: contain !important; }
+.brighton-exam-player .brand-strip { display: flex !important; align-items: center !important; justify-content: space-around !important; height: 48px !important; background: var(--yellow) !important; color: #fff !important; font-size: 28px !important; font-weight: 800 !important; letter-spacing: 0 !important; }
+.brighton-exam-player .start-grid { display: grid !important; grid-template-columns: minmax(0, 1.1fr) minmax(0, .9fr) !important; align-items: center !important; padding: 44px !important; gap: 40px !important; }
+.brighton-exam-player .eyebrow { margin: 0 0 12px !important; color: var(--yellow-dark) !important; font-size: 12px !important; font-weight: 800 !important; letter-spacing: .08em !important; text-transform: uppercase !important; }
+.brighton-exam-player .start-card h1 { margin: 0 0 12px !important; font-size: clamp(32px, 4vw, 56px) !important; font-weight: 800 !important; line-height: 1.1 !important; letter-spacing: -.04em !important; overflow-wrap: break-word !important; }
+.brighton-exam-player .start-card h2 { margin: 0 0 20px !important; font-size: clamp(22px, 2.4vw, 32px) !important; line-height: 1.25 !important; font-weight: 700 !important; letter-spacing: -.03em !important; }
+.brighton-exam-player .start-copy { margin: 0 !important; font-size: 15px !important; line-height: 1.65 !important; color: var(--muted) !important; }
+.brighton-exam-player .exam-meta { display: flex !important; flex-wrap: wrap !important; gap: 8px !important; margin-top: 24px !important; }
+.brighton-exam-player .exam-meta span { padding: 8px 12px !important; border: 1px solid var(--line) !important; border-radius: 16px !important; font-size: 12px !important; font-weight: 600 !important; background: var(--yellow-soft) !important; }
+.brighton-exam-player .student-form { display: grid !important; min-width: 0 !important; gap: 12px !important; padding: 28px !important; border: 1px solid var(--line) !important; border-radius: 20px !important; background: var(--cream) !important; }
+.brighton-exam-player .student-form label { font-size: 12px !important; font-weight: 700 !important; letter-spacing: .04em !important; text-transform: uppercase !important; }
+.brighton-exam-player .student-form input { width: 100% !important; min-width: 0 !important; min-height: 48px !important; padding: 12px 14px !important; font-size: 16px !important; border: 1px solid #c7cdd4 !important; border-radius: 12px !important; color: var(--ink) !important; background: #fff !important; }
+.brighton-exam-player .primary-btn, .brighton-exam-player .secondary-btn, .brighton-exam-player .menu-option, .brighton-exam-player .copy-btn {
+  min-height: 44px !important; padding: 12px 18px !important; border-radius: 12px !important; font-size: 13px !important; font-weight: 700 !important; line-height: 1.5 !important; letter-spacing: .02em !important; text-transform: uppercase !important; white-space: normal !important;
+}
+.brighton-exam-player .primary-btn { border: 0 !important; color: var(--ink) !important; background: var(--yellow) !important; box-shadow: 0 4px 0 var(--yellow-dark) !important; margin-top: 8px !important; }
+.brighton-exam-player .primary-btn:active { transform: translateY(2px) !important; box-shadow: 0 2px 0 var(--yellow-dark) !important; }
+.brighton-exam-player .secondary-btn { border: 1px solid var(--line) !important; color: var(--ink) !important; background: #fff !important; }
+.brighton-exam-player .exam-shell { display: block !important; height: 100% !important; height: 100dvh !important; min-height: 0 !important; padding: 0 !important; }
+.brighton-exam-player .top-header {
+  position: fixed !important; inset: 0 0 auto !important; height: var(--header-h) !important; z-index: 30 !important;
+  display: flex !important; align-items: center !important; justify-content: space-between !important; gap: 16px !important;
+  padding: 8px max(16px, env(safe-area-inset-right)) 8px max(16px, env(safe-area-inset-left)) !important;
+  border-bottom: 1px solid #d8dce1 !important; background: #fff !important; box-shadow: none !important;
+}
+.brighton-exam-player .top-header::after { display: none !important; }
+.brighton-exam-player .header-left, .brighton-exam-player .header-right { display: flex !important; align-items: center !important; min-width: 0 !important; gap: 12px !important; }
+.brighton-exam-player .header-left { flex: 1 !important; }
+.brighton-exam-player .header-right { flex: 0 0 auto !important; }
+.brighton-exam-player .exam-header-brand { display: flex !important; align-items: center !important; justify-content: center !important; flex: 0 0 140px !important; width: 140px !important; min-width: 140px !important; height: 44px !important; }
+.brighton-exam-player .exam-header-brand img { display: block !important; width: 140px !important; height: 36px !important; max-width: 140px !important; max-height: 36px !important; object-fit: contain !important; }
+.brighton-exam-player .student-chip { display: block !important; border-left: 1px solid var(--line) !important; padding-left: 12px !important; min-width: 0 !important; max-width: 300px !important; }
+.brighton-exam-player .student-chip strong, .brighton-exam-player .student-chip span { display: block !important; overflow: hidden !important; text-overflow: ellipsis !important; white-space: nowrap !important; }
+.brighton-exam-player .student-chip strong { font-size: 11px !important; font-weight: 700 !important; }
+.brighton-exam-player .student-chip span { font-size: 10px !important; font-weight: 600 !important; color: var(--muted) !important; }
+.brighton-exam-player .icon-btn, .brighton-exam-player .flag-btn {
+  display: inline-grid !important; place-items: center !important; flex: 0 0 44px !important; width: 44px !important; min-width: 44px !important; height: 44px !important; padding: 0 !important;
+  border: 1px solid var(--line) !important; border-radius: 12px !important; background: #fff !important; color: var(--ink) !important; font-size: 22px !important; line-height: 1 !important; box-shadow: none !important;
+}
+.brighton-exam-player .icon-btn svg { width: 22px !important; height: 22px !important; fill: none !important; stroke: currentColor !important; stroke-width: 1.8 !important; stroke-linecap: round !important; stroke-linejoin: round !important; }
+.brighton-exam-player .icon-btn:hover, .brighton-exam-player .flag-btn:hover { transform: none !important; border-color: var(--yellow) !important; background: var(--yellow-soft) !important; }
+.brighton-exam-player .flag-btn.flagged { background: var(--yellow) !important; color: var(--ink) !important; border-color: var(--yellow-dark) !important; }
+.brighton-exam-player .audio-badge { display: inline-flex !important; align-items: center !important; min-height: 30px !important; padding: 5px 10px !important; border: 1px solid var(--teal) !important; border-radius: 16px !important; color: var(--teal) !important; background: var(--teal-soft) !important; font-size: 11px !important; font-weight: 600 !important; white-space: nowrap !important; }
+.brighton-exam-player .connection-status { max-width: 230px !important; overflow: hidden !important; text-overflow: ellipsis !important; font-size: 10px !important; font-weight: 600 !important; }
+.brighton-exam-player .main-content {
+  position: fixed !important; inset: calc(var(--header-h) + var(--storage-warning-h, 0px)) 0 var(--footer-h) !important; min-height: 0 !important; height: auto !important; margin: 0 !important;
+  overflow: auto !important; overscroll-behavior: contain !important; -webkit-overflow-scrolling: touch !important; scroll-padding: 16px !important; scrollbar-gutter: stable both-edges; scrollbar-width: thin;
+  padding: 20px max(20px, env(safe-area-inset-right)) 28px max(20px, env(safe-area-inset-left)) !important;
+  background: linear-gradient(90deg, #f8a8320f 0 1px, transparent 1px) 0 0 / 42px 42px, #fff !important;
+}
+.brighton-exam-player .exam-panel { width: 100% !important; max-width: 1180px !important; margin: 0 auto !important; min-width: 0 !important; }
+.brighton-exam-player .part-title-row { display: flex !important; align-items: flex-end !important; justify-content: space-between !important; gap: 16px !important; margin-bottom: 14px !important; }
+.brighton-exam-player .part-title-row h2 { margin: 0 !important; font-size: clamp(22px, 2.1vw, 30px) !important; font-weight: 700 !important; line-height: 1.25 !important; letter-spacing: -.035em !important; }
+.brighton-exam-player .part-kicker { margin: 0 0 6px !important; font-size: 12px !important; font-weight: 700 !important; color: var(--yellow-dark) !important; letter-spacing: .06em !important; text-transform: uppercase !important; }
+.brighton-exam-player .question-range { display: inline-flex !important; align-items: center !important; flex: 0 0 auto !important; padding: 8px 12px !important; border-radius: 20px !important; background: var(--ink) !important; color: #fff !important; font-size: 12px !important; font-weight: 600 !important; line-height: 1.5 !important; white-space: nowrap !important; }
+.brighton-exam-player .instruction-card { margin: 0 0 16px !important; padding: 12px 14px !important; border: 1px solid var(--line) !important; border-radius: 16px !important; background: var(--yellow-soft) !important; box-shadow: none !important; font-size: 14px !important; line-height: 1.6 !important; }
+.brighton-exam-player :is(.article-card, .white-card, .question-card, .prompt-card, .editor-card, .visual-card, .visual-question-card, .person-text, .choice-card) { border-width: 1px !important; border-radius: 20px !important; box-shadow: none !important; }
+.brighton-exam-player .choice-button { min-height: 44px !important; padding: 12px 14px !important; border-width: 1px !important; border-radius: 12px !important; line-height: 1.5 !important; }
+.brighton-exam-player :is(.split-grid, .split-column) { min-width: 0 !important; }
+.brighton-exam-player .split-grid { height: auto !important; min-height: 0 !important; max-height: none !important; border-radius: 20px !important; }
+.brighton-exam-player .split-column { max-height: none !important; overflow: visible !important; padding: 18px !important; }
+.brighton-exam-player .split-divider { background: var(--line); }
+.brighton-exam-player .choice-popover { width: min(360px, calc(100vw - 24px)); padding: 12px; border: 1px solid var(--teal); border-radius: 16px; background: #fff; box-shadow: var(--shadow); }
+.brighton-exam-player .choice-popover::before { display: none; }
+.brighton-exam-player .choice-popover .option-btn { min-height: 44px; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; font-size: 14px; line-height: 1.5; }
+.brighton-exam-player .writing-textarea { width: 100% !important; min-height: 340px !important; max-width: 100% !important; font-size: 16px !important; line-height: 1.65 !important; resize: vertical !important; }
+.brighton-exam-player .bottom-nav {
+  position: fixed !important; inset: auto 116px 0 0 !important; width: auto !important; z-index: 30 !important;
+  display: flex !important; align-items: stretch !important; height: var(--footer-h) !important; min-height: 0 !important; max-height: none !important;
+  gap: 8px !important; padding: 8px 12px calc(8px + env(safe-area-inset-bottom, 0px)) !important;
+  border-top: 1px solid #d8dce1 !important; background: #fff !important; box-shadow: none !important;
+  overflow-x: auto !important; overflow-y: hidden !important; scroll-padding-inline: 12px !important; overscroll-behavior-x: contain !important; scrollbar-width: thin !important;
+}
+.brighton-exam-player .part-nav-card {
+  display: grid !important; align-content: start !important; flex: 0 0 76px !important; width: auto !important; min-width: 76px !important; max-width: 76px !important;
+  gap: 4px !important; padding: 6px !important; border: 1px solid var(--line) !important; border-radius: 12px !important; background: var(--cream) !important; overflow: hidden !important; transition: background .15s, border-color .15s !important;
+}
+.brighton-exam-player .part-nav-card.active { flex: 0 0 auto !important; min-width: min(220px, 100%) !important; max-width: min(460px, 100%) !important; background: var(--teal-soft) !important; border-color: var(--teal) !important; transform: none !important; }
+.brighton-exam-player .part-nav-top { display: flex !important; align-items: center !important; justify-content: center !important; gap: 6px !important; }
+.brighton-exam-player .part-nav-card.active .part-nav-top { justify-content: space-between !important; }
+.brighton-exam-player .part-nav-title { display: block !important; min-height: 24px !important; padding: 0 2px !important; border: 0 !important; background: transparent !important; color: var(--ink) !important; font-size: 11px !important; font-weight: 700 !important; white-space: nowrap !important; }
+.brighton-exam-player .part-nav-progress { display: none !important; font-size: 10px !important; font-weight: 600 !important; color: var(--muted) !important; white-space: nowrap !important; }
+.brighton-exam-player .part-nav-card.active .part-nav-progress { display: inline !important; }
+.brighton-exam-player .part-nav-card:not(.active) .part-nav-progress { display: none !important; }
+.brighton-exam-player .question-bubbles { display: flex !important; flex-wrap: nowrap !important; max-width: 100% !important; gap: 4px !important; padding: 2px !important; overflow-x: auto !important; overflow-y: hidden !important; scrollbar-width: thin !important; }
+.brighton-exam-player .part-nav-card:not(.active) .question-bubbles { display: none !important; }
+.brighton-exam-player .q-pill { flex: 0 0 32px !important; width: 32px !important; min-width: 32px !important; height: 32px !important; border: 1px solid var(--line) !important; border-radius: 9px !important; font-size: 12px !important; font-weight: 600 !important; line-height: 1 !important; }
+.brighton-exam-player .q-pill.active { background: var(--teal) !important; border-color: var(--teal) !important; color: #fff !important; }
+.brighton-exam-player .step-controls {
+  position: fixed !important; inset: auto 0 0 auto !important; z-index: 31 !important; width: 116px !important; height: var(--footer-h) !important;
+  display: flex !important; align-items: center !important; justify-content: center !important; gap: 8px !important;
+  padding: 8px 8px calc(8px + env(safe-area-inset-bottom, 0px)) !important; border-top: 1px solid #d8dce1 !important; background: #fff !important;
+}
+.brighton-exam-player .step-controls .round-nav { display: inline-grid !important; place-items: center !important; flex: 0 0 44px !important; width: 44px !important; min-width: 44px !important; height: 44px !important; padding: 0 !important; border: 0 !important; border-radius: 12px !important; background: var(--yellow) !important; color: var(--ink) !important; font-size: 22px !important; line-height: 1 !important; box-shadow: 0 3px 0 var(--yellow-dark) !important; }
+.brighton-exam-player .step-controls .round-nav:disabled { opacity: .4 !important; }
+.brighton-exam-player .step-controls .round-nav:hover:not(:disabled) { filter: brightness(.97) !important; transform: none !important; }
+.brighton-exam-player .step-controls .round-nav:active:not(:disabled) { transform: translateY(2px) !important; box-shadow: 0 1px 0 var(--yellow-dark) !important; }
+.brighton-exam-player .step-controls .round-nav.finish { background: var(--teal) !important; color: #fff !important; box-shadow: 0 3px 0 #005b59 !important; }
+.brighton-exam-player .side-menu { z-index: 80 !important; }
+.brighton-exam-player .side-menu-card { width: min(360px, calc(100vw - 24px)) !important; height: 100% !important; padding: 20px !important; overflow-y: auto !important; background: #fff !important; border-right: 2px solid var(--yellow) !important; }
+.brighton-exam-player .side-menu-head h3, .brighton-exam-player .modal-head h3 { margin: 0 !important; font-size: 22px !important; font-weight: 700 !important; letter-spacing: -.03em !important; }
+.brighton-exam-player .menu-option { width: 100% !important; margin: 0 0 12px !important; border: 1px solid var(--line) !important; background: var(--yellow-soft) !important; color: var(--ink) !important; text-align: left !important; }
+.brighton-exam-player .modal-root, .brighton-exam-player .audio-gate { z-index: 100 !important; padding: 16px !important; overflow-y: auto !important; overscroll-behavior: contain !important; }
+.brighton-exam-player .modal-card, .brighton-exam-player .audio-gate-card { width: min(720px, 100%) !important; max-height: calc(100vh - 32px) !important; max-height: calc(100dvh - 32px) !important; overflow-y: auto !important; padding: 24px !important; border-radius: 20px !important; border: 1px solid var(--line) !important; background: #fff !important; box-shadow: var(--shadow) !important; }
+.brighton-exam-player .modal-head { display: flex !important; justify-content: space-between !important; align-items: center !important; gap: 12px !important; margin-bottom: 16px !important; }
+.brighton-exam-player .modal-head :is(h2, h3) { margin: 0; font-size: 22px; font-weight: 700; line-height: 1.3; letter-spacing: -.03em; }
+.brighton-exam-player .local-save-warning { position: fixed; inset: var(--header-h) 0 auto; z-index: 40; padding: 8px 12px; background: #fff1f0; color: #8a2420; border-bottom: 1px solid #df9690; font-size: 12px; line-height: 1.5; }
+.brighton-exam-player .modal-card .notes-area { width: 100% !important; min-height: 180px !important; padding: 12px !important; border: 1px solid #c7cdd4 !important; border-radius: 12px !important; font-size: 16px !important; line-height: 1.6 !important; resize: vertical !important; }
+.brighton-exam-player .overview-grid { display: grid !important; gap: 20px !important; }
+.brighton-exam-player .overview-part h4 { margin: 0 0 10px !important; font-size: 16px !important; }
+.brighton-exam-player .overview-items { display: flex !important; flex-wrap: wrap !important; gap: 8px !important; }
+.brighton-exam-player .overview-item { min-height: 44px !important; min-width: 44px !important; padding: 10px !important; border: 1px solid var(--line) !important; border-radius: 12px !important; background: var(--cream) !important; color: var(--ink) !important; font-size: 13px !important; }
+.brighton-exam-player .overview-item.current { border-color: var(--teal) !important; outline: 2px solid var(--teal) !important; }
+.brighton-exam-player .overview-item.answered { background: var(--teal-soft) !important; }
+.brighton-exam-player .finish-screen { min-height: 100% !important; display: grid !important; align-items: safe center !important; justify-items: center !important; }
+.brighton-exam-player .finish-card { width: min(760px, 100%) !important; min-width: 0 !important; padding: clamp(24px, 4vw, 40px) !important; border: 1px solid var(--line) !important; border-radius: 20px !important; background: #fff !important; box-shadow: none !important; text-align: center !important; }
+.brighton-exam-player .finish-card h2 { margin: 0 0 16px !important; font-size: clamp(26px, 3vw, 38px) !important; line-height: 1.2 !important; font-weight: 700 !important; letter-spacing: -.03em !important; }
+.brighton-exam-player .submission-status-line { display: inline-flex !important; flex-wrap: wrap !important; align-items: center !important; justify-content: center !important; gap: 10px !important; max-width: 100% !important; margin: 20px 0 !important; padding: 10px 14px !important; border-radius: 16px !important; background: var(--yellow-soft) !important; font-size: 13px !important; font-weight: 600 !important; }
+.brighton-exam-player .submission-status-line strong { padding: 6px 10px !important; border-radius: 10px !important; background: var(--yellow) !important; color: var(--ink) !important; }
+.brighton-exam-player .end-submit-card { margin-top: 24px !important; padding: 20px !important; border: 1px solid var(--line) !important; border-radius: 20px !important; background: var(--yellow-soft) !important; }
+.brighton-exam-player .q-badge { display: inline-grid !important; place-items: center !important; flex: 0 0 32px !important; width: 32px !important; min-width: 32px !important; height: 32px !important; padding: 0 !important; border-radius: 10px !important; background: var(--yellow) !important; color: var(--ink) !important; font-size: 15px !important; line-height: 1 !important; font-weight: 700 !important; }
+.brighton-exam-player .toast { max-width: calc(100vw - 32px) !important; bottom: calc(var(--footer-h) + 12px) !important; border-radius: 12px !important; font-size: 13px !important; }
+@media (max-width: 1000px) {
+  .brighton-exam-player .connection-status { width: 18px !important; min-width: 18px !important; height: 18px !important; min-height: 18px !important; padding: 0 !important; font-size: 0 !important; overflow: hidden !important; justify-content: center !important; }
+}
+@media (max-width: 900px) {
+  .brighton-exam-player .start-grid { grid-template-columns: minmax(0, 1fr) !important; padding: 28px !important; gap: 28px !important; }
+  .brighton-exam-player .split-grid { display: block !important; overflow: visible !important; }
+  .brighton-exam-player .split-divider { display: none !important; }
+  .brighton-exam-player .split-column { overflow: visible !important; }
+}
+@media (max-width: 600px) {
+  html.brighton-exam-player { --header-h: calc(96px + env(safe-area-inset-top, 0px)) !important; }
+  .brighton-exam-player .start-screen { padding: 12px !important; align-items: start !important; }
+  .brighton-exam-player .start-card { border-radius: 20px !important; }
+  .brighton-exam-player .start-grid { padding: 22px !important; gap: 24px !important; }
+  .brighton-exam-player .brand-strip { height: 40px !important; font-size: 24px !important; }
+  .brighton-exam-player .student-form { padding: 20px !important; }
+  .brighton-exam-player .top-header { align-items: flex-start !important; padding: calc(6px + env(safe-area-inset-top, 0px)) 8px 6px !important; gap: 8px !important; }
+  .brighton-exam-player .header-left, .brighton-exam-player .header-right { gap: 6px !important; }
+  .brighton-exam-player .exam-header-brand { flex-basis: 108px !important; width: 108px !important; min-width: 108px !important; }
+  .brighton-exam-player .exam-header-brand img { width: 108px !important; max-width: 108px !important; height: 44px !important; max-height: 44px !important; }
+  .brighton-exam-player .student-chip { position: absolute !important; left: 12px !important; bottom: 7px !important; width: calc(100% - 156px) !important; max-width: none !important; padding: 0 !important; border: 0 !important; }
+  .brighton-exam-player .audio-badge { position: absolute !important; right: 12px !important; bottom: 10px !important; max-width: 136px !important; min-height: 24px !important; padding: 3px 8px !important; font-size: 10px !important; overflow: hidden !important; text-overflow: ellipsis !important; }
+  .brighton-exam-player .connection-status { align-self: center !important; }
+  .brighton-exam-player .main-content { padding: 16px 12px 24px !important; }
+  .brighton-exam-player .main-content { scrollbar-gutter: auto; }
+  .brighton-exam-player .part-title-row { display: flex !important; flex-wrap: wrap !important; align-items: flex-start !important; gap: 10px !important; }
+  .brighton-exam-player .part-title-row h2 { font-size: 22px !important; }
+  .brighton-exam-player .question-range { margin: 0 !important; padding: 6px 10px !important; }
+  .brighton-exam-player .instruction-card { padding: 12px !important; }
+  .brighton-exam-player .split-column { padding: 14px !important; }
+  .brighton-exam-player :is(input:not([type=radio]):not([type=checkbox]), select, textarea) { font-size: 16px !important; }
+  .brighton-exam-player .inline-input, .brighton-exam-player .listening-input { min-height: 44px !important; }
+  .brighton-exam-player .writing-textarea { min-height: 300px !important; }
+  .brighton-exam-player .modal-card, .brighton-exam-player .audio-gate-card { padding: 18px !important; }
+  .brighton-exam-player .part1-name-menu { left: 50% !important; width: min(220px, 100%) !important; }
+  .brighton-exam-player .part1-name-option { min-height: 44px; }
+  .brighton-exam-player .part1-interactive-stage.menu-open { margin-bottom: 360px; }
+  .brighton-exam-player .canvas-color-palette { left: 50% !important; width: min(330px, 100%) !important; max-width: 100%; }
+  .brighton-exam-player .part5-interactive-stage.palette-open { margin-bottom: 160px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .brighton-exam-player *, .brighton-exam-player *::before, .brighton-exam-player *::after { scroll-behavior: auto !important; transition-duration: 0s !important; animation-duration: 0s !important; }
+}
+@media (forced-colors: active) {
+  .brighton-exam-player .q-pill.active, .brighton-exam-player .part-nav-card.active, .brighton-exam-player .choice-button.selected { outline: 2px solid Highlight !important; outline-offset: -2px !important; }
+}

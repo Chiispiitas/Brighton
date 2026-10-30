@@ -18,6 +18,34 @@ permissions:
   contents: read
 
 jobs:
+  validate-exam-player:
+    runs-on: ubuntu-latest
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        browser: [chromium, firefox, webkit]
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "24"
+      - name: Install browser test runtime
+        run: |
+          npm install --prefix /tmp/brighton-player --no-save playwright@1.62.1
+          node /tmp/brighton-player/node_modules/playwright/cli.js install --with-deps ${{ matrix.browser }}
+      - name: Verify every exam player
+        env:
+          NODE_PATH: /tmp/brighton-player/node_modules
+          EXAM_BROWSERS: ${{ matrix.browser }}
+          EXAM_QA_OUTPUT: ${{ runner.temp }}/exam-player-screenshots
+        run: node Exams/validate-exam-player.cjs
+      - uses: actions/upload-artifact@v4
+        if: always()
+        with:
+          name: exam-player-${{ matrix.browser }}
+          path: ${{ runner.temp }}/exam-player-screenshots
+          retention-days: 7
   validate-answer-keys:
     runs-on: ubuntu-latest
     steps:

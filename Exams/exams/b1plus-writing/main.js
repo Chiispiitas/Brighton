@@ -43,6 +43,7 @@
   let state = createDefaultState();
   let saveTimer = null;
   let liveProgress = null;
+  App.registerLocalState?.(STORAGE_KEY, () => state);
 
   boot();
 
@@ -172,7 +173,8 @@
   SAVE STATE NOW 
   ---------------------------------------------- */
   function saveStateNow() {
-    localStorage.setItem(STORAGE_KEY, JSON.stringify(state));
+    if (App.saveLocalState) App.saveLocalState(STORAGE_KEY, state);
+    else { try { localStorage.setItem(STORAGE_KEY, JSON.stringify(state)); } catch {} }
   }
 
   /* ---------------------------------------------- 
@@ -396,7 +398,7 @@
       }
       renderBottomNav();
     });
-    setTimeout(() => textarea.focus(), 40);
+    // Keep the task instructions in view; focus the editor when the student taps it.
   }
 
   /* ---------------------------------------------- 
@@ -703,26 +705,27 @@
   OPEN NOTES 
   ---------------------------------------------- */
   function openNotes() {
+    closeMenu();
     dom.modalRoot.classList.remove("hidden");
     dom.modalRoot.setAttribute("aria-hidden", "false");
     dom.modalRoot.innerHTML = `
-      <div class="modal-card">
+      <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="notesTitle">
         <div class="modal-head">
-          <h2>Notes</h2>
-          <button class="icon-btn" data-close-modal aria-label="Close">×</button>
+          <h3 id="notesTitle">Private notes</h3>
+          <button class="icon-btn" data-close-modal aria-label="Close notes">×</button>
         </div>
-        <p class="muted-text">These notes are submitted to the teacher with your writing.</p>
-        <textarea class="notes-area" placeholder="Write optional notes here...">${escapeHtml(state.notes || "")}</textarea>
-        <button class="primary-btn" data-save-notes>Save notes</button>
+        <p class="muted-text">Notes are saved locally on this device and are included with your submission.</p>
+        <textarea id="notesArea" class="notes-area" placeholder="Type your private notes here..."></textarea>
       </div>
     `;
     $("[data-close-modal]", dom.modalRoot).addEventListener("click", closeModal);
-    $("[data-save-notes]", dom.modalRoot).addEventListener("click", () => {
-      state.notes = $(".notes-area", dom.modalRoot).value;
+    const area = $("#notesArea", dom.modalRoot);
+    area.value = state.notes || "";
+    area.addEventListener("input", () => {
+      state.notes = area.value;
       saveStateNow();
-      closeModal();
-      showToast("Notes saved");
     });
+    setTimeout(() => area.focus(), 50);
   }
 
   /* ---------------------------------------------- 
@@ -827,7 +830,9 @@
   function resetTest() {
     const confirmed = window.confirm("Reset this writing test? This will clear all answers, flags and notes saved on this device.");
     if (!confirmed) return;
-    localStorage.removeItem(STORAGE_KEY);
+    if (App.clearLocalState) App.clearLocalState(STORAGE_KEY);
+    else localStorage.removeItem(STORAGE_KEY);
+    dom.studentForm.reset();
     location.reload();
   }
 
@@ -1044,7 +1049,8 @@
           <p class="muted-text">Submission ID: ${escapeHtml(data.submissionId || "")}</p>
         </div>
       `;
-      localStorage.removeItem(STORAGE_KEY);
+      if (App.clearLocalState) App.clearLocalState(STORAGE_KEY);
+      else localStorage.removeItem(STORAGE_KEY);
     } catch (error) {
       console.error("Submission failed", error);
       statusBadge.textContent = "Not saved";
