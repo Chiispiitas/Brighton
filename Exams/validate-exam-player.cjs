@@ -106,8 +106,11 @@ async function run(browser, engine, size, exam, base) {
       if(size.width===390 || size.width===1440) await picture(page,label+'-part'+(i+1));
       const editor=page.locator('#mainContent textarea.writing-textarea, #mainContent input.inline-input:not([readonly])').first();
       if(await editor.isVisible()) {
-        await editor.fill('QA');
-        assert.equal(await editor.inputValue(),'QA',label+': answer editor cannot accept typing');
+        const initial=await editor.inputValue();
+        await editor.focus();
+        await editor.press('ControlOrMeta+End');
+        await editor.pressSequentially('QA');
+        assert.equal(await editor.inputValue(),initial+'QA',label+': answer editor cannot accept typing');
       }
       const gaps=page.locator('#mainContent button[data-choice-gap], #mainContent button.cloze-gap[data-gap]');
       if(await gaps.count()) {
