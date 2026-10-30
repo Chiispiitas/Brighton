@@ -25,6 +25,18 @@ const sizes = [{width:1440,height:900}, {width:768,height:1024}, {width:390,heig
 const reports = [];
 async function picture(page, label) {if (output) await page.screenshot({path:path.join(output, label + '.png')});}
 async function geometry(page, label) {
+  await page.locator('#mainContent img').evaluateAll(async images => {
+    await Promise.all(images.map(async image => {
+      if (image.complete && image.naturalWidth) return;
+      let timer;
+      try {
+        await Promise.race([
+          image.decode(),
+          new Promise((resolve, reject) => {timer=setTimeout(()=>reject(new Error('Image failed to load: '+image.src)),30000);})
+        ]);
+      } finally {clearTimeout(timer);}
+    }));
+  });
   const result = await page.evaluate(() => {
     const rect = selector => {const r = document.querySelector(selector).getBoundingClientRect(); return {x:r.x,y:r.y,w:r.width,h:r.height,right:r.right,bottom:r.bottom};};
     const shown = element => element.getClientRects().length && getComputedStyle(element).visibility !== 'hidden';
@@ -63,7 +75,7 @@ async function run(browser, engine, size, exam, base) {
     await route.fulfill({status:200,contentType:'application/json',body:JSON.stringify({success:!isSubmit || submitted>1,submissionId:'UI-QA',error:'UI QA: production writes disabled'})});
   });
   await context.addInitScript(() => {HTMLMediaElement.prototype.play=function(){this.dispatchEvent(new Event('playing')); return Promise.resolve();};});
-  const page=await context.newPage(); page.setDefaultTimeout(6000);
+  const page=await context.newPage(); page.setDefaultTimeout(6000); page.setDefaultNavigationTimeout(30000);
   const label=engine+'-'+exam+'-'+size.width;
   const errors=[]; page.on('pageerror',error=>errors.push(error.message));
   page.on('dialog',dialog=>dialog.accept());

@@ -25,6 +25,8 @@ The default engine is Chromium (Microsoft Edge on Windows). `EXAM_BROWSERS=chrom
 
 The suite covers all exam folders at 1440×900, 768×1024, 390×844, 320×568 and 844×390. It visits every numbered question, checks panel and control geometry, selects popup answers, exercises notes/flags/dialog keyboard behaviour, resumes local state, verifies failed submission followed by retry and checks reset. Separate scenarios exercise blocked storage, offline editing and real listening-audio decoding/startup.
 
+Question images must finish decoding before geometry checks or screenshots. Navigation has a separate 30-second budget so the same suite can also run against the public site using `EXAM_BASE=https://exams.bebrighton.net/Exams/exams/`.
+
 **Every non-GET request is intercepted in the main suite.** No production student records or grades are created. Audio is muted during real playback verification. Screenshots and browser emulation complement, but do not replace, testing on physical phones or assistive technology.
 
 GitHub Actions runs the suite independently for Chromium, Firefox and WebKit and retains screenshots for seven days.
