@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated": "2026-10-30",
-  "status": "technical preview verified; 7A accepted and 7B visually refined; 7C–7D visual revision and whole-book fatigue/release review pending",
+  "status": "technical preview verified; all Horizons on Air identities matched to 2B; 7C–7D visual revision and whole-book release review pending",
   "scope": "A1 through Unit 7 (7A–7D), including paired reviews 1 & 2, 3 & 4, 5 & 6, with four end-credit pages. Unit 8, review 7 & 8 and other backmatter unproduced.",
   "readability_comparison_baseline": "e8d6ddd69f62caffab662a93a5a392ebc5bfb131",
   "inventory": {
@@ -4919,6 +4919,75 @@
           "controls_hidden_in_print_and_print_geometry_preserved": true
         }
       }
+    },
+    "on_air_identity_consistency_20261030": {
+      "scope": "All four Horizons on Air episodes: protected 2B reference, 3B, 5B, 7B and all declared secondary activities. Six pages updated: 25–26, 43–44, 61–62.",
+      "status": "local HTML/identity/PDF verified; live publication pending",
+      "author_correction": "Later episodes and their secondary tasks drifted from actual rendered 2B. Match both main and compact follow-up identity, rather than approximate only the logo.",
+      "contract": "Main: uppercase white 27pt title, crimson banner, orange underline, identical white 23mm waveform, black/white HORIZONS ON AIR badge. Secondary: open paper, black/crimson badge, uppercase black 10pt episode title and identical crimson 17mm waveform above instruction. White-on-black speaker/source captions with orange rules.",
+      "implementation": "Shared Lessons/horizons-on-air.css and common main/secondary structures; exact episode/task coverage in on_air_identity. Existing 2B HTML/CSS and its rendered pages unchanged. Added Base/build/check-on-air-style.py and explicit canonical style rule for all future main/secondary activities.",
+      "content": "All exercise instructions, core learner-word multisets, questions, source facts/answers and grammar-panel markup retained. Only repeated episode metadata is added and two redundant decorative subtitles are replaced: One day. Three guests. (3B7), Listeners on the line (5B6). No exercise, answer, image or recording is removed.",
+      "scope_boundary": "Vocabulary preparation, ordinary grammar and unrelated personal transfer keep their own book style; authentic Moovit/inDrive interfaces keep their colors. Episode transcripts, callers, recognition, planning and show-message tasks receive recurring identity. Distinct source layouts survive within the stable show frame.",
+      "media_and_audio": "All 233 existing image/media asset bytes and all 72 lesson MP3s plus ident unchanged. 7B full portrait contain areas remain 56mm; no crops, generated likenesses or new cutouts. The cake is proportionately 30mm wide to accommodate the common follow-up header.",
+      "html": {
+        "pages": 66,
+        "changedLessonPages": [
+          25,
+          26,
+          43,
+          44,
+          61,
+          62
+        ],
+        "episodes": 4,
+        "mainHeaders": 4,
+        "secondaryHeaders": 13,
+        "all_later_main_and_secondary_computed_identity_profiles_match_2b": true,
+        "all_60_other_pages_preserved": true,
+        "maximum_other_geometry_delta_px": 0,
+        "all_images_and_backgrounds_loaded": true,
+        "no_overflow": true,
+        "standalone_matches_assembled": true,
+        "functional_typography_checked": true,
+        "activities": 217,
+        "audioControls": 78,
+        "newWords": 39,
+        "extraPractice": 28,
+        "references": 65,
+        "automaticVocabularyWrappers": 0
+      },
+      "pdf": {
+        "pdf_pages": 66,
+        "changed_printed_pages": [
+          25,
+          26,
+          43,
+          44,
+          61,
+          62
+        ],
+        "style_review_pages": [
+          15,
+          16,
+          25,
+          26,
+          43,
+          44,
+          61,
+          62
+        ],
+        "all_60_other_pdf_pages_text_and_drawing_streams_identical": true,
+        "reference_2b_pdf_pages_identical": true,
+        "all_60_other_compiled_page_fragments_identical": true,
+        "all_replaced_pages_match_native_export_pixels": true,
+        "all_revised_page_word_tokens_present": true,
+        "all_a4": true,
+        "pdf_bytes": 37045991,
+        "pdf_sha256": "d36e520ac4c06c86baa883047a5621b351b874f5ac2d0f01a607abc16c78e824",
+        "method": "Six native episode pages replace only 3B/5B/7B; all other PDF pages preserved, including 2B reference. Export-only 240dpi media, no saved-PDF font/image rewriting."
+      },
+      "visual_review": "Viewed both 2B reference pages and all six revised pages. Independently rendered final six PDF pages through Poppler and compared with 2B: complete images, readable black/orange labels, intact writing lines/footers, no text clipping.",
+      "reversible": "Exact before files, hashes, native/page renders, identity profiles and guarded rollback in work/onair-consistency-20261030; baseline ee3c02ede4f90b19ca9562e9ed636d405848dfb0."
     }
   },
   "pending": [
@@ -4970,9 +5039,9 @@
         "Backmatter"
       ],
       "fingerprint": {
-        "files": 587,
-        "bytes": 524376285,
-        "sha256": "d32169f4f8fd4df3fa3b134d522d248532250f81890cfc86cc59f232d4c3812e"
+        "files": 588,
+        "bytes": 524397765,
+        "sha256": "44b3820903f7c8dbc899dbf3ed63b8faec3802d1fea8d5809e877d2c2fcb23b9"
       }
     },
     "shared_rendering": {
@@ -4981,9 +5050,9 @@
       ],
       "exclude_markdown": true,
       "fingerprint": {
-        "files": 12,
-        "bytes": 58990,
-        "sha256": "9d61bc6420c90621e8ce3234827a04751835f5fc5d9dac288834ae2cfe257ac9"
+        "files": 13,
+        "bytes": 61496,
+        "sha256": "a98df41671f6092a6cde1712d0720657f12ce9188cfcf008f3be23780497154b"
       }
     },
     "saved_pdf": {
@@ -4992,8 +5061,8 @@
       ],
       "fingerprint": {
         "files": 1,
-        "bytes": 35950445,
-        "sha256": "b82fd064dc749569d5584029e16b5ca3b247a680587a29469ad1956969d8a022"
+        "bytes": 37045991,
+        "sha256": "1d260a0c236bd80c23e3af89876c673b0a8aede9dddfe8250ca45027e4994c91"
       }
     },
     "audit_criteria": {
@@ -5005,14 +5074,14 @@
       ],
       "fingerprint": {
         "files": 4,
-        "bytes": 120619,
-        "sha256": "29b9df854a3664f28d19d022422cbfd3f646cd81f4222c21cbe4023be4cdb6c4"
+        "bytes": 122000,
+        "sha256": "03b423cfba7a5d0212e92484a98bfcef93ec3327b7c9fb586d9c85bb01ea800f"
       }
     }
   },
   "content_baseline_commit": "2f404b547b7da07be81a0622a78591d3299c402a",
-  "current_revision": "Refined 7B only: complete larger portraits, calendar-and-radio quiz masthead, clearer ordinal pairings, listener waveform and natural-proportion cake, backward ago timeline and private date slips. All learner wording, eight tasks, three recordings and other lessons preserved. Four end-credit display notices now describe uncropped source images. Local/live HTML/PDF/media/audio controls verified. 7A was accepted by the author; cutouts are to remain selective. 7C/7D, Unit 8 and final release remain pending.",
-  "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope. units_3_4_reviews_visual_variety_20261025 supersedes earlier composition, color and geometry evidence for printed pages 21-40, including review_composition_20261025, review_3_4_20261025, unit_3_creative_revision and unit_4_visual_variety; earlier learning and audio evidence keeps its original scope. lesson_5b_on_air_20261026 supersedes prior 5B reading/source/presentation and 5.5/5.6 records only. The 26 October every-unit show mandate is superseded by planned B-skill balance and no two-unit show gap. lesson_5b_activity5_variety_20261026 supersedes only the earlier 5B Activity 5 image/choices/key and continuation-image evidence; no show/audio or other lesson evidence changes. lesson_6b_picture_grammar_20261026 supersedes only the original 6B page-52 grammar presentation, continuation spacing and associated geometry evidence; all learning, source and audio evidence retains its scope. lessons_6c_6d_20261026 adds printed pages 53-56 and completes Unit 6 without superseding prior source/audio/page evidence. Prior 6C/6D-unproduced statements are historical; current coverage is through 6D. vocabulary_and_credits_20261026 supersedes prior plain NEW WORDS vocabulary presentation and in-lesson image-credit placement. Existing learning, audio, image bytes and unrelated geometry evidence retains its scope. Three appended credits pages are provisional end matter after the current final lesson. plain_vocabulary_20261026 supersedes every earlier requirement for automatic or paired NEW WORDS word emphasis; the author withdrew blanket bolding. End-of-book credits remain unchanged. review_5_6_20261026 adds printed pages 57-58 and repaginates existing end credits to 59-61. Earlier 55-page counts describe the prior version; no previous lesson/source/audio evidence is superseded. unit7_20261028 adds printed pages 59–66 and twelve recordings; retains the prior 54 lesson/review pages and repaginates/appends credits to 67–70. Earlier 57-page counts and Unit 7 unproduced/show-due statements are historical; prior learning and audio evidence retains its scope. lesson7a_visual_refinement_20261028 supersedes original 7A presentation/geometry and its creative approval only. Original Unit 7 visual claims are not author approval: 7B–7D remain pending separate review, including poor 7B portrait crops. No other lesson content, source, media or audio evidence is superseded. lesson7b_visual_refinement_20261030 supersedes original 7B presentation/geometry and the pending portrait-crop issue, including earlier statements that 7B remains untouched. All learning/factual/audio evidence retains its scope. Only 7B and its page-70 display-credit wording change; 7C/7D remain pending.",
+  "current_revision": "Aligned all four Horizons on Air programmes and thirteen follow-up headers to protected 2B, using a shared stylesheet and structural validator. Main and secondary computed identity profiles exactly match 2B. Six 3B/5B/7B pages updated; 60 others, all media/audio and teaching content retained. Local HTML/PDF verified; publication pending. Ordinary preparation/grammar retain their own style. 7C/7D visual refinement and final release remain pending.",
+  "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope. units_3_4_reviews_visual_variety_20261025 supersedes earlier composition, color and geometry evidence for printed pages 21-40, including review_composition_20261025, review_3_4_20261025, unit_3_creative_revision and unit_4_visual_variety; earlier learning and audio evidence keeps its original scope. lesson_5b_on_air_20261026 supersedes prior 5B reading/source/presentation and 5.5/5.6 records only. The 26 October every-unit show mandate is superseded by planned B-skill balance and no two-unit show gap. lesson_5b_activity5_variety_20261026 supersedes only the earlier 5B Activity 5 image/choices/key and continuation-image evidence; no show/audio or other lesson evidence changes. lesson_6b_picture_grammar_20261026 supersedes only the original 6B page-52 grammar presentation, continuation spacing and associated geometry evidence; all learning, source and audio evidence retains its scope. lessons_6c_6d_20261026 adds printed pages 53-56 and completes Unit 6 without superseding prior source/audio/page evidence. Prior 6C/6D-unproduced statements are historical; current coverage is through 6D. vocabulary_and_credits_20261026 supersedes prior plain NEW WORDS vocabulary presentation and in-lesson image-credit placement. Existing learning, audio, image bytes and unrelated geometry evidence retains its scope. Three appended credits pages are provisional end matter after the current final lesson. plain_vocabulary_20261026 supersedes every earlier requirement for automatic or paired NEW WORDS word emphasis; the author withdrew blanket bolding. End-of-book credits remain unchanged. review_5_6_20261026 adds printed pages 57-58 and repaginates existing end credits to 59-61. Earlier 55-page counts describe the prior version; no previous lesson/source/audio evidence is superseded. unit7_20261028 adds printed pages 59–66 and twelve recordings; retains the prior 54 lesson/review pages and repaginates/appends credits to 67–70. Earlier 57-page counts and Unit 7 unproduced/show-due statements are historical; prior learning and audio evidence retains its scope. lesson7a_visual_refinement_20261028 supersedes original 7A presentation/geometry and its creative approval only. Original Unit 7 visual claims are not author approval: 7B–7D remain pending separate review, including poor 7B portrait crops. No other lesson content, source, media or audio evidence is superseded. lesson7b_visual_refinement_20261030 supersedes original 7B presentation/geometry and the pending portrait-crop issue, including earlier statements that 7B remains untouched. All learning/factual/audio evidence retains its scope. Only 7B and its page-70 display-credit wording change; 7C/7D remain pending. on_air_identity_consistency_20261030 supersedes earlier visual claims of 2B consistency for 3B/5B/7B, including the 7B calendar inside the masthead and independent listener header. The episode date remains below the canonical banner. Main/secondary structure and black/orange caption rules now follow 2B exactly; source content/media/audio evidence remains valid. 2B is unchanged.",
   "receptive_skill_plan": {
     "policy": "B lessons provide a planned mix of reading-led and listening-led units; Horizons on Air is not required in every unit. Avoid two consecutive units without the show. Do not impose rigid alternation; 2B and 3B are both listening-led. Declare primary skill and source genre before authoring.",
     "units": [
@@ -5085,5 +5154,53 @@
     "7A": "Author said Perfect to the 7A refinement.",
     "restraint": "Do not overuse the successful cutout treatment. Cutouts are an occasional purposeful device, not a new template or requirement for every lesson.",
     "scope": "Continue one lesson at a time; this pass refines 7B only. 7C/7D await their own turns."
+  },
+  "on_air_identity": {
+    "reference": "2B, activities 2 (main), 3 and 4 (secondary); source unchanged",
+    "stylesheet": "Lessons/horizons-on-air.css",
+    "policy": "Share main masthead, compact secondary header, waveform, logo and black/orange source captions. Preserve factual/app imagery and learning content; do not label ordinary preparation/grammar/personal transfer as broadcast.",
+    "episodes": [
+      {
+        "lesson": "2B",
+        "title": "Bus or car?",
+        "main": 2,
+        "secondary": [
+          3,
+          4
+        ]
+      },
+      {
+        "lesson": "3B",
+        "title": "Three people. Three weeks.",
+        "main": 2,
+        "secondary": [
+          3,
+          4,
+          6,
+          7
+        ]
+      },
+      {
+        "lesson": "5B",
+        "title": "Keep or return?",
+        "main": 2,
+        "secondary": [
+          3,
+          4,
+          6,
+          7
+        ]
+      },
+      {
+        "lesson": "7B",
+        "title": "Birthday detective",
+        "main": 3,
+        "secondary": [
+          4,
+          5,
+          6
+        ]
+      }
+    ]
   }
 }

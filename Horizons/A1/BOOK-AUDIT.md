@@ -1,6 +1,6 @@
 # Horizons A1 — Book audit
 
-Updated 30 October 2026. **Technical preview verified through Unit 7. 7A accepted; 7B visually refined for review. 7C–7D visual revision, whole-book fatigue reassessment and final release remain pending.**
+Updated 30 October 2026. **Technical preview verified through Unit 7; all Horizons on Air identities now matched to 2B. 7C–7D visual revision, whole-book fatigue reassessment and final release remain pending.**
 
 This is the current audit entry point. [book-audit.json](book-audit.json) holds scoped evidence and historical checks; [CANONICAL-STYLE.md](../Base/design-system/CANONICAL-STYLE.md) governs design. A current snapshot is not final release approval.
 
@@ -17,6 +17,31 @@ This is the current audit entry point. [book-audit.json](book-audit.json) holds 
 | Unresolved destinations | 65 `page ---` references; intentional until back-of-book pagination |
 
 Counts are inventory, not proof that every cue is correctly placed. Review placement beside the newly introduced content.
+
+## Horizons on Air consistency, 30 October
+
+The author's correction applies to **all episodes and secondary activities**. The actual rendered **2B** is the reference; it is preserved unchanged. Earlier claims that later episodes already matched it were incomplete. Four main banners and **thirteen** compact secondary headers now follow the same system:
+
+- **Main:** uppercase white 27pt upright title, crimson banner, orange underline, the exact white 23mm waveform and black/white show badge. Titles may wrap naturally.
+- **Secondary:** black/crimson badge, uppercase black 10pt episode title and the same crimson 17mm waveform on open paper, before the instruction. A main-banner white ON AIR block must not be copied into a compact secondary badge.
+- **Source/speaker labels:** white text on black, with a thin orange bottom rule. Independent teal/yellow programme panels and improvised waveform/logo variants are replaced. Ordinary grammar, preparation and unrelated personal transfer are not falsely branded as show segments; authentic app colors remain.
+
+| Episode | Main activity | Secondary activities |
+| --- | --- | --- |
+| 2B Bus or car? | 2 | 3, 4 |
+| 3B Three people. Three weeks. | 2 | 3, 4, 6, 7 |
+| 5B Keep or return? | 2 | 3, 4, 6, 7 |
+| 7B Birthday detective | 3 | 4, 5, 6 |
+
+Use **`Lessons/horizons-on-air.css`** and the shared header structures for future episodes and their follow-ups. The canonical guide specifies the contract; `on_air_identity` in the JSON audit declares coverage. Run **`python Horizons/Base/build/check-on-air-style.py Horizons/A1`** as well as the existing coverage/freshness checks. A pasted logo alone does not satisfy the rule. The 7B calendar date remains as a 9.5pt dateline below the common banner, and its complete portraits/ago timeline/date slips remain. 7A's accepted cutouts are unchanged and remain selective.
+
+**Verified:** main and secondary computed type, logo colors/padding, waveform dimensions/path/stroke and banner rules match 2B exactly in the three later episodes. All eight standalone reference/episode pages match the assembled book; no overflow or missing media, 9.5pt tasks/concepts and 8.9pt instructions, normal italic options, full writing lines and Extra Practice. The full PDF remains **66 A4 pages**: only **25–26, 43–44, 61–62** change. Every other **60** HTML fragment, PDF text and decoded drawing stream is preserved, including 2B, 7A, 7C/7D and all credits. New saved pages match native-export pixels and retain every page word token. Both reference pages and all six independently rendered revised PDF pages were inspected at print size. An eight-page show-style review includes 2B plus the three revised episodes.
+
+**Learning/media preservation:** all instructions, core learner-word multisets, questions, facts, answers and grammar panel markup remain. Only recurring display metadata is added and two redundant internal decorative subtitles are replaced by the correct episode header. No activity or assessment item is removed. All existing image files, **72 lesson MP3s + ident**, 78 controls, 39 NEW WORDS badges, 65 references and 28 Extra Practice footers are retained. No new images or voices were generated. Source layouts still differ; only the recurring show identity is standardized.
+
+Local checks complete; live HTML/PDF/media/playback verification pending.
+
+**Reversible:** before files/hash ledger, identity profiles, proof renders and guarded rollback in `work/onair-consistency-20261030`; baseline ee3c02e. This completes the show-identity correction, not 7C/7D's separate visual refinement or final whole-book release.
 
 ## 7B visual refinement, 30 October
 
