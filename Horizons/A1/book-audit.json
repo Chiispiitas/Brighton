@@ -4877,8 +4877,8 @@
         "three_replaced_pages_match_native_export_pixels": true,
         "all_new_learner_word_tokens_present": true,
         "all_a4": true,
-        "pdf_bytes": 35952788,
-        "pdf_sha256": "7e181653771fd2a8672d94d65053163cd80588ac2eb0e0b9827d0fb4885e779b",
+        "pdf_bytes": 35950445,
+        "pdf_sha256": "25ec5fac7a976fcfcdaf9de7cb83ba07b0daef3609175f377aa38c594dfef67b",
         "method": "Replaced only printed lesson pages 61–62 and the updated page-70 display-credit wording with native export. Every other original page is preserved. No image regeneration/raster retouch, no saved-PDF font/image rewriting. Export-only 240dpi media."
       },
       "visual_inspection": "Both final pages independently rendered with Poppler and inspected at print size: complete portraits, uncut faces, clean calendar/rule typography, backward time direction, useful writing space and no overflow/marker collisions.",
@@ -4936,8 +4936,8 @@
       ],
       "fingerprint": {
         "files": 587,
-        "bytes": 524376297,
-        "sha256": "e1e3c7934cabe733425e9961636e968ffd071bb3242005fa691245bd7ae06979"
+        "bytes": 524376285,
+        "sha256": "d32169f4f8fd4df3fa3b134d522d248532250f81890cfc86cc59f232d4c3812e"
       }
     },
     "shared_rendering": {
@@ -4957,8 +4957,8 @@
       ],
       "fingerprint": {
         "files": 1,
-        "bytes": 35952788,
-        "sha256": "43286ff406dae1ba01a62765ba627ac31265c4a7d2f2c8e3602245999a583b90"
+        "bytes": 35950445,
+        "sha256": "b82fd064dc749569d5584029e16b5ca3b247a680587a29469ad1956969d8a022"
       }
     },
     "audit_criteria": {
