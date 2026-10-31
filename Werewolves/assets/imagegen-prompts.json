@@ -51,6 +51,10 @@
     {
       "id": "card-back",
       "prompt": "Create a square playing-card BACK derived from the curved black werewolf shapes in the supplied red werewolf emblem. This is the common hidden side for EVERY role, so its first impression must be a decorative card reverse, not a werewolf role. Rework those long curving claw/limb silhouettes into a balanced fourfold rotational ornamental knot around a large cream-and-gold eight-petal rosette/compass. NO wolf face, NO eyes, NO snout, NO teeth, NO single animal as focal point. The werewolf influence appears only in the abstract hooked curves interwoven in the border. Deep midnight BLUE background, restrained golden yellow and cream ornament, thick BLACK rounded square outer border matching the supplied square role card. Bold flat symbolic screen-print/linocut style, subtle worn ink grain, angular simple shapes. Strict fourfold symmetry so no top or bottom is obvious; clearly a reusable face-down card. Full-bleed artwork, all four border edges visible, tiny transparent outer corners only. Square1:1. No words, letters, role title, numbers, parchment margins, collage, mockup or other cards."
+    },
+    {
+      "id": "social-share-v1",
+      "prompt": "Transform the supplied Werewolves game screenshot into ONE clean website link-sharing banner. Image1 is the village/game artwork reference, Image2 is the exact red-and-black wolf emblem to reuse as a logo. Output landscape about1.9:1 (1200×630 composition; keep all essential content well inside edges). Match the existing flat inked, crooked medieval folk board-game style and muted parchment/olive village colors. Layout: left third aged pale parchment with a large crisp square red-and-black wolf emblem near the top, then clear large dark brown old serif text on two lines reading exactly: \"WEREWOLVES\" and \"BRIGHTON\"; a small line below reads exactly \"4–12 players\". Right two-thirds show the illustrated round stone village square and twelve little timber cottages around radiating paths, with trees and blue sky. Keep the recognizable houses and inked scenery from the screenshot, no new visual style. Remove all website forms, buttons, input boxes, menu, role labels, player names, room codes, status labels and footer. This must look like a polished simple game cover/banner, not a screenshot of an app, not a device mockup, not a collage of cards. No slogan, no other text, no logos besides the supplied wolf symbol, no realistic3D or cinematic effects. Full-bleed rectangular opaque image, no external margin."
     }
   ],
   "outputs": [
@@ -70,7 +74,10 @@
     "witch-card.webp",
     "witch-icon.webp",
     "hunter-card.webp",
-    "hunter-icon.webp"
+    "hunter-icon.webp",
+    "werewolves-share-v1.jpg",
+    "favicon-32.png",
+    "apple-touch-icon.png"
   ],
   "cardReference": "Owner-provided 3×3 symbolic card reference; role order 2,3,4,5,6,9",
   "logo": "The werewolf role icon is also the header logo and favicon.",
