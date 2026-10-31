@@ -1,5 +1,8 @@
 export const ROLES = ['villager', 'werewolf', 'fortune', 'girl', 'witch', 'hunter'];
 export const NIGHT = ['fortune', 'werewolf', 'girl', 'witch'];
+export const MIN_PLAYERS = 4;
+export const MAX_PLAYERS = 12;
+const SPECIAL_PRIORITY = ['fortune', 'witch', 'girl', 'hunter'];
 export class GameError extends Error { constructor(message, status = 400) { super(message); this.status = status; } }
 const need = (ok, message, status) => { if (!ok) throw new GameError(message, status); };
 const alive = s => s.players.filter(p => p.alive);
@@ -23,7 +26,7 @@ function checkWin(s) {
   const living = alive(s), wolves = living.filter(p => p.role === 'werewolf').length;
   if (!wolves || wolves >= living.length - wolves) {
     s.winner = !wolves ? 'village' : 'werewolves'; setPhase(s, 'finished');
-    event(s, !wolves ? 'The village is safe. Every werewolf has been found.' : 'The werewolves have taken the village.'); return true;
+    event(s, !wolves ? 'Villagers win.' : 'Werewolves win.'); return true;
   }
   return false;
 }
@@ -46,7 +49,7 @@ function nextNight(s, after) {
     if (alive(s).some(p => p.role === NIGHT[i])) { setPhase(s, NIGHT[i]); return; }
   }
   const deaths = [s.night.heal ? null : s.night.victim, s.night.poison].filter(Boolean);
-  event(s, `Dawn breaks on day ${s.day}.`);
+  event(s, `Day ${s.day} begins.`);
   if (!deaths.length) event(s, 'Everyone survived the night.');
   eliminate(s, deaths, 'night', 'day');
 }
@@ -98,7 +101,7 @@ export function command(inputState, hash, cmd, random = Math.random) {
   if (cmd.type === 'join') {
     need(s.phase === 'lobby', 'This game has already started.');
     if (!actor) {
-      need(s.players.length < 40, 'This village is full (40 players).');
+      need(s.players.length < MAX_PLAYERS, `This village is full (${MAX_PLAYERS} players).`);
       const name = cleanName(cmd.name);
       need(!s.players.some(p => p.name.toLowerCase() === name.toLowerCase()), 'That name is taken. Add an initial or a nickname.');
       s.players.push({ id: `p${s.version + 1}`, key: hash, name, alive: true, role: null });
@@ -116,19 +119,24 @@ export function command(inputState, hash, cmd, random = Math.random) {
     s.players = s.players.filter(p => p.id !== cmd.target);
   } else if (cmd.type === 'start') {
     need(host && s.phase === 'lobby', 'Only the host can start a waiting room.', 403);
-    need(s.players.length >= 6, 'At least 6 players must join.');
+    need(s.players.length >= MIN_PLAYERS, `At least ${MIN_PLAYERS} players must join.`);
+    need(s.players.length <= MAX_PLAYERS, `A game can have no more than ${MAX_PLAYERS} players.`);
     const wolves = s.settings.wolves || Math.max(1, Math.floor(s.players.length / 4));
+    need(Number.isInteger(wolves) && wolves >= 1 && wolves < s.players.length / 2, 'Reduce the werewolves for this group.');
     const deck = Array(wolves).fill('werewolf');
-    for (const role of ['fortune', 'girl', 'witch', 'hunter']) if (s.settings[role]) deck.push(role);
-    need(wolves < s.players.length / 2 && deck.length <= s.players.length, 'Reduce the werewolves or special roles for this group.');
+    // Reserve an ordinary villager, then include enabled special roles as space allows.
+    let specialSlots = s.players.length - wolves - 1;
+    for (const role of SPECIAL_PRIORITY) if (s.settings[role] && specialSlots > 0) {
+      deck.push(role); specialSlots--;
+    }
     while (deck.length < s.players.length) deck.push('villager');
     for (let i = deck.length - 1; i > 0; i--) { const j = Math.floor(random() * (i + 1)); [deck[i], deck[j]] = [deck[j], deck[i]]; }
     s.players.forEach((p, i) => { p.role = deck[i]; });
-    setPhase(s, 'reveal'); event(s, 'The prophecy has come true. Werewolves walk among us.');
+    setPhase(s, 'reveal'); event(s, 'Game started.');
   } else if (cmd.type === 'advance') {
     const activeWolf = s.phase === 'werewolf' && actor?.alive && actor.role === 'werewolf';
     need(host || activeWolf, 'Only the host or an active werewolf can move this phase forward.', 403);
-    need(cmd.phaseId === s.phaseId, 'The story has already moved on.');
+    need(cmd.phaseId === s.phaseId, 'This phase has already ended.');
     if (s.phase === 'day') { if (s.day === 1) startNight(s); else { s.votes = {}; setPhase(s, 'vote'); } }
     else if (s.phase === 'dusk') startNight(s);
     else {
@@ -144,7 +152,7 @@ export function command(inputState, hash, cmd, random = Math.random) {
     setPhase(s, 'lobby');
   } else {
     need(actor, 'Join this room before taking an action.', 403);
-    need(cmd.phaseId === s.phaseId, 'The story has moved on. Your action was not used.');
+    need(cmd.phaseId === s.phaseId, 'This phase has ended. Your action was not used.');
     if (cmd.type === 'ready') {
       need(s.phase === 'reveal', 'Cards have already been dealt.'); s.actions[actor.id] = { ready: true };
     } else if (cmd.type === 'vote') {

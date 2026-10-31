@@ -1,5 +1,76 @@
 {
   "tool": "Built-in ImageGen",
-  "village": "Use case: stylized-concept. Asset type: high quality wide background illustration for a classroom multiplayer medieval Werewolves web game. Primary request: a beautiful atmospheric medieval village at blue hour with storybook painterly detail, cozy amber windows, slate and thatch rooftops, a distant bell tower and mountain forest, a large luminous moon and wisps of mist. Composition: panoramic 3:2 landscape, houses clustered along the far left and right edges and distant upper half, an open grassy and cobblestone clearing across the lower center reserved for overlaying interactive cottage sprites. Cinematic layered depth, deep navy and desaturated teal palette, warm golden lights. Mysterious and inviting, suitable for students, no gore, no frightening close-up monsters, no people, no lettering or words, no logos, no interface. This is environment artwork, not a UI screenshot.",
-  "houses": "Use case: stylized-concept. Asset type: transparent game cottage spritesheet. Primary request: four separate small medieval timber-framed cottage sprites arranged in a clean 2 by 2 grid with generous transparent gaps. True transparent background. Upper left: cozy amber-lit cottage slate roof, alive occupied home. Upper right: EXACT SAME cottage shape and angle but windows dark, door boarded, quiet abandoned home for an eliminated player, no destruction or gore. Lower left: alternative cozy thatched cottage warm windows alive. Lower right: matching thatched cottage windows dark boarded abandoned. Three-quarter isometric view from slightly above, entire house and tiny stone doorstep visible, each anchored to its own small patch of ground. Painted storybook game artwork, intricate textures, warm gold lights and deep navy shadows, consistent scale for all four cottages. All elements fully isolated, no connecting scenery, no text, no frames, no logo. Intended to crop into four individual sprites with alpha transparency."
+  "reference": "User-provided illustrated Werewolves board, twelve house spaces",
+  "prompts": [
+    {
+      "name": "board-day",
+      "prompt": "Generate a new game board background, using the supplied image ONLY as the visual style and camera reference. Match its old illustrated web board game look closely: hand-drawn dark brown ink outlines, flat muted grass greens, ochre and tan stone, crooked folk-art geometry, very limited cel shading, worn printed-paper grain, slightly rough imperfect lines. NOT photorealistic, NOT 3D, NOT cinematic, NOT glowing modern fantasy. Landscape 3:2 overhead three-quarter view of a small medieval village square with a round stone well/meeting circle in the center and EXACTLY TWELVE narrow cobblestone paths radiating out to twelve empty clearings around an oval perimeter. The clearings must stay EMPTY because separate house sprites will be placed on them by the game. Outer edge has a few illustrated pine trees, bushes, mushrooms, stones and wooden fences, like the reference. Calm daytime pale blue sky strip at top, flat olive grass below. Center open enough to place a small paper phase marker. No houses anywhere, no characters, no writing, no labels, no user interface, no logos. Full bleed aged board illustration. Keep the space clear around all twelve house positions.",
+      "transparent": false
+    },
+    {
+      "name": "houses-alive",
+      "prompt": "Create a production sprite atlas of TWELVE SEPARATE medieval cottage sprites for the illustrated Werewolves game in the reference. STRICTLY match the reference's old flat inked board-game drawing: crooked timber frames, irregular stone foundation, bold dark-brown hand-drawn outlines, muted olive/tan/ochre/red/teal roofs, flat gouache fills, minimal cel shading and old printed-paper grain. Not realistic, not rendered 3D, no shiny lighting, no glow. Layout EXACTLY FOUR COLUMNS by THREE ROWS, twelve equal-sized cells, each cell containing ONE entire house centered with at least 12% transparent padding on ALL sides. Background TRUE TRANSPARENT. Every house has a different roof shape and little doorway; consistent overhead three-quarter camera angle and scale, no people. Occupied/alive daytime houses with normal open doors or small warm windows, a few hanging tools/woodpiles allowed, no signs with writing. Each isolated house includes a tiny flat ground shadow only; no connecting paths or shared terrain. No text, no labels, no borders, no grid lines. Canvas landscape 4:3 sprite sheet.",
+      "transparent": true
+    },
+    {
+      "name": "card-back",
+      "prompt": "Generate a portrait 2:3 playing card BACK for this medieval Werewolves classroom game, closely matching the supplied reference's aged hand-inked European folk board-game style. Flat restrained ochre, faded olive green, brick red and dark brown ink, irregular engraved border, worn parchment with fibers and small foxing marks. Central simple circular emblem of a wolf silhouette and crescent moon in a woodcut style with bold outlines and crosshatching, surrounded by a modest hand-drawn vine border. Symmetrical functional card back, clear shape at small size. No words, no letters, no slogans. No glossy 3D, no photographic texture scene, no cinematic lighting, no gradients. Full card including rounded worn corners visible on transparent outer background.",
+      "transparent": true
+    },
+    {
+      "id": "villager",
+      "prompt": "Create ONE portrait 2:3 Werewolves ROLE CARD in exactly the old illustrated board-game style of the supplied reference. Thick dark-brown pen outlines, flat muted gouache colors, slight woodcut crosshatching, irregular whimsical medieval shapes, aged parchment with small foxing marks. No 3D render, no realism, no glossy surfaces, no cinematic lighting, no modern gradients. Subject: a medieval farmer in a plain tunic holding a wooden rake, thoughtful face, a straw hat. Center the illustration in a large simple ink-framed square taking the middle 65% of the card. The rest is cream parchment with a narrow imperfect brown ornamental frame and worn corners. At the top, set ONLY this exact role name in clearly readable old serif letters: \"Villager\". Do not include any additional words, instructions, slogans, or labels. Bottom narrow strip blank parchment. Keep palette faded brick red, olive green, ochre, slate blue, cream. The character must match the reference's flat hand-drawn game illustration. Entire single card visible; no external scene or props outside its border. True transparent outside rounded card edges."
+    },
+    {
+      "id": "werewolf",
+      "prompt": "Create ONE portrait 2:3 Werewolves ROLE CARD in exactly the old illustrated board-game style of the supplied reference. Thick dark-brown pen outlines, flat muted gouache colors, slight woodcut crosshatching, irregular whimsical medieval shapes, aged parchment with small foxing marks. No 3D render, no realism, no glossy surfaces, no cinematic lighting, no modern gradients. Subject: a lean grey werewolf with angular ears and a ragged brown waistcoat, full head and shoulders, expressive suspicious eyes, no blood. Center the illustration in a large simple ink-framed square taking the middle 65% of the card. The rest is cream parchment with a narrow imperfect brown ornamental frame and worn corners. At the top, set ONLY this exact role name in clearly readable old serif letters: \"Werewolf\". Do not include any additional words, instructions, slogans, or labels. Bottom narrow strip blank parchment. Keep palette faded brick red, olive green, ochre, slate blue, cream. The character must match the reference's flat hand-drawn game illustration. Entire single card visible; no external scene or props outside its border. True transparent outside rounded card edges."
+    },
+    {
+      "id": "fortune",
+      "prompt": "Create ONE portrait 2:3 Werewolves ROLE CARD in exactly the old illustrated board-game style of the supplied reference. Thick dark-brown pen outlines, flat muted gouache colors, slight woodcut crosshatching, irregular whimsical medieval shapes, aged parchment with small foxing marks. No 3D render, no realism, no glossy surfaces, no cinematic lighting, no modern gradients. Subject: an older fortune teller wearing a faded violet headscarf, holding a small crystal ball over a wooden table, simple eye symbol. Center the illustration in a large simple ink-framed square taking the middle 65% of the card. The rest is cream parchment with a narrow imperfect brown ornamental frame and worn corners. At the top, set ONLY this exact role name in clearly readable old serif letters: \"Fortune Teller\". Do not include any additional words, instructions, slogans, or labels. Bottom narrow strip blank parchment. Keep palette faded brick red, olive green, ochre, slate blue, cream. The character must match the reference's flat hand-drawn game illustration. Entire single card visible; no external scene or props outside its border. True transparent outside rounded card edges."
+    },
+    {
+      "id": "girl",
+      "prompt": "Create ONE portrait 2:3 Werewolves ROLE CARD in exactly the old illustrated board-game style of the supplied reference. Thick dark-brown pen outlines, flat muted gouache colors, slight woodcut crosshatching, irregular whimsical medieval shapes, aged parchment with small foxing marks. No 3D render, no realism, no glossy surfaces, no cinematic lighting, no modern gradients. Subject: a fully clothed young village girl in a simple blue dress with a red shawl, cautiously looking from behind a wooden window shutter, innocent storybook illustration. Center the illustration in a large simple ink-framed square taking the middle 65% of the card. The rest is cream parchment with a narrow imperfect brown ornamental frame and worn corners. At the top, set ONLY this exact role name in clearly readable old serif letters: \"Little Girl\". Do not include any additional words, instructions, slogans, or labels. Bottom narrow strip blank parchment. Keep palette faded brick red, olive green, ochre, slate blue, cream. The character must match the reference's flat hand-drawn game illustration. Entire single card visible; no external scene or props outside its border. True transparent outside rounded card edges."
+    },
+    {
+      "id": "witch",
+      "prompt": "Create ONE portrait 2:3 Werewolves ROLE CARD in exactly the old illustrated board-game style of the supplied reference. Thick dark-brown pen outlines, flat muted gouache colors, slight woodcut crosshatching, irregular whimsical medieval shapes, aged parchment with small foxing marks. No 3D render, no realism, no glossy surfaces, no cinematic lighting, no modern gradients. Subject: an old village witch in a dark green dress and patched pointed hat, holding one green healing bottle and one red poison bottle, sturdy modest clothing. Center the illustration in a large simple ink-framed square taking the middle 65% of the card. The rest is cream parchment with a narrow imperfect brown ornamental frame and worn corners. At the top, set ONLY this exact role name in clearly readable old serif letters: \"Witch\". Do not include any additional words, instructions, slogans, or labels. Bottom narrow strip blank parchment. Keep palette faded brick red, olive green, ochre, slate blue, cream. The character must match the reference's flat hand-drawn game illustration. Entire single card visible; no external scene or props outside its border. True transparent outside rounded card edges."
+    },
+    {
+      "id": "hunter",
+      "prompt": "Create ONE portrait 2:3 Werewolves ROLE CARD in exactly the old illustrated board-game style of the supplied reference. Thick dark-brown pen outlines, flat muted gouache colors, slight woodcut crosshatching, irregular whimsical medieval shapes, aged parchment with small foxing marks. No 3D render, no realism, no glossy surfaces, no cinematic lighting, no modern gradients. Subject: a medieval hunter in a worn ochre tunic with a green hood and a simple wooden crossbow slung over one shoulder. Center the illustration in a large simple ink-framed square taking the middle 65% of the card. The rest is cream parchment with a narrow imperfect brown ornamental frame and worn corners. At the top, set ONLY this exact role name in clearly readable old serif letters: \"Hunter\". Do not include any additional words, instructions, slogans, or labels. Bottom narrow strip blank parchment. Keep palette faded brick red, olive green, ochre, slate blue, cream. The character must match the reference's flat hand-drawn game illustration. Entire single card visible; no external scene or props outside its border. True transparent outside rounded card edges."
+    },
+    {
+      "name": "board-night",
+      "prompt": "Edit ONLY the time of day of this exact illustrated village board to night. Preserve every stone, path, clearing, tree, well, camera framing, line and coordinate EXACTLY. Same old flat hand-inked board-game artwork, not realism, not 3D, no modern visual effects. Deep muted blue-violet night sky and desaturated olive grass, soft simple moonlight like painted gouache. All twelve empty house clearings must remain in exactly the same places. No new buildings, no people, no text. Make it dark enough to read as night but clear and playable.",
+      "transparent": false,
+      "reference": "Generated daytime board"
+    },
+    {
+      "name": "houses-dead",
+      "prompt": "Edit this exact TWELVE-HOUSE sprite atlas to its eliminated/unoccupied state. Preserve the FOUR COLUMN by THREE ROW grid, every house footprint, scale, position, roof silhouette, angle and transparent margins EXACTLY. Change ONLY doors and windows: close the shutters, board some doors with rough brown planks, extinguish the windows, remove fresh flowers. Keep the same flat hand-inked old European board-game style, bold dark-brown lines, restrained earthy palette, no realism and no 3D. No ruins, no fire, no gore, no skulls. All twelve houses must stay whole and recognizably paired with the original twelve. TRUE transparent background. No words or labels.",
+      "transparent": true,
+      "reference": "Generated occupied-house atlas"
+    }
+  ],
+  "outputs": [
+    "village-day.webp",
+    "village-night.webp",
+    "houses-alive.webp",
+    "houses-dead.webp",
+    "card-back.webp",
+    "villager-card.webp",
+    "villager-icon.webp",
+    "werewolf-card.webp",
+    "werewolf-icon.webp",
+    "fortune-card.webp",
+    "fortune-icon.webp",
+    "girl-card.webp",
+    "girl-icon.webp",
+    "witch-card.webp",
+    "witch-icon.webp",
+    "hunter-card.webp",
+    "hunter-icon.webp"
+  ]
 }

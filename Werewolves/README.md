@@ -7,8 +7,8 @@ The frontend lives in `Chiispiitas/Brighton`, beside the exams. The game uses a 
 ## Classroom use
 
 1. The teacher chooses **Host a game**, enters a name and shares the six-digit code or invitation link.
-2. Each player joins on their own device. Six to forty players are supported. The host is a narrator by default and can choose **I'm playing too** in the lobby.
-3. The host chooses the werewolf count (Auto: floor(players / 4), minimum one), enables the desired special roles, and deals the cards.
+2. Each player joins on their own device. Four to twelve players are supported. The host is a narrator by default and can choose **I'm playing too** in the lobby.
+3. The host chooses the werewolf count (Auto: floor(players / 4), minimum one), enables the desired special roles, and deals the cards. Every deck reserves at least one ordinary villager. Enabled special roles are included as room allows, in this order: Fortune Teller, Witch, Little Girl, Hunter. With the default settings, four players get one wolf, Fortune Teller, Witch and one villager; five players add the Little Girl; six players include all four special roles.
 4. Every player opens their private card and acknowledges it. The host puts the village to sleep.
 5. The host reads each phase aloud and advances after the required actions are received. An explicit confirmation allows missing actions to be treated as passes, except for the werewolves: every living wolf must agree on the same victim. Neither the host nor a wolf can override this. Once the pack agrees, the host or a living wolf can continue. The hunter must choose or pass personally.
 6. During daylight, discuss in the classroom. Day one has no elimination vote. From day two the host opens the vote, living players vote privately, and the host counts it.
@@ -18,6 +18,7 @@ The frontend lives in `Chiispiitas/Brighton`, beside the exams. The game uses a 
 
 ## Rules implemented
 
+- A room supports 4–12 players. A thirteenth player cannot join, and an older oversized lobby cannot start. Wolf counts that would begin at parity are rejected.
 - Night order: Fortune Teller → Werewolves → Little Girl → Witch → Dawn. Absent or eliminated roles are skipped.
 - Villager: no night action.
 - Werewolves: every living wolf must highlight the same living non-wolf. House selections are shared only with the living pack and can be revised until the phase ends. Missing selections, split choices and a majority without unanimity all block continuation with “Impossible to continue because the decision has not been made.” The host cannot force a pass. After agreement, the host or a living wolf may continue. No more than one werewolf victim per night.
@@ -59,4 +60,4 @@ The backend's reproducible source is in `wix-backend/`. Build with the pinned lo
 
 ## Artwork
 
-Original role cards and icons were extracted from the owner's supplied `Page 1.png`, `Page 2.png` and `Covers.png` in Downloads/Werewolves. `assets/village.webp` and the four house sprites were generated with built-in ImageGen. Prompts are preserved in `assets/imagegen-prompts.json`. Fonts use Cormorant Garamond and Manrope with local system fallbacks. All essential UI text is real, accessible HTML.
+All visible bitmap artwork was regenerated with built-in ImageGen from the owner's illustrated village reference: daytime and nighttime boards, twelve occupied cottages and their twelve matching closed states, six role cards, six icon crops and the card back. The houses use transparent 4×3 sprite atlases positioned around twelve paths. The UI uses parchment colours, dark ink borders, Alegreya and IM Fell English fonts, with factual labels instead of slogans. Prompts and output filenames are preserved in `assets/imagegen-prompts.json`. The earlier artwork has been removed from the published asset set.
