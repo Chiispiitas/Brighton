@@ -245,7 +245,7 @@
     renderer.afterRender?.(part, state, helpers);
     bindEndSubmitCard();
     if (options.restoreScroll) {
-      requestAnimationFrame(() => { dom.mainContent.scrollTop = state.scroll[part.id] || 0; });
+      requestAnimationFrame(() => { if (!App.isOpeningPart?.()) dom.mainContent.scrollTop = state.scroll[part.id] || 0; });
     }
   }
 

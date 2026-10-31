@@ -101,7 +101,8 @@ async function run(browser, engine, size, exam, base) {
       await page.locator('.part-nav-title').nth(i).click();
       await page.waitForTimeout(60);
       const measured=await geometry(page,label+' part '+(i+1)); metrics.push(measured);
-      assert.ok(measured.scrollTop<2,label+': part instructions not visible');
+      if (measured.scrollTop >= 2) await picture(page,label+'-part'+(i+1)+'-failed-intro');
+      assert.ok(measured.scrollTop<2,label+': part '+(i+1)+' instructions not visible; scrollTop='+measured.scrollTop);
       assert.ok(measured.titleY>=measured.header.bottom,label+': heading behind header');
       if(size.width===390 || size.width===1440) await picture(page,label+'-part'+(i+1));
       const editor=page.locator('#mainContent textarea.writing-textarea, #mainContent input.inline-input:not([readonly])').first();

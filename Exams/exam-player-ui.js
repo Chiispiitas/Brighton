@@ -124,6 +124,15 @@
   let introEpoch = 0;
   let introPending = false;
   App.isOpeningPart = () => introPending;
+  const resetIntroScroll = () => {
+    if (!introPending) return;
+    // Explicitly stop an earlier question's smooth scroll. In WebKit a zero
+    // scrollTop assignment can leave that animation running into the new part.
+    content.scrollTo({top:0, left:0, behavior:'instant'});
+  };
+  // Reset after a renderer replaces the question DOM, before the next paint.
+  // requestAnimationFrame alone can be deferred on a busy browser frame.
+  new MutationObserver(resetIntroScroll).observe(content, {childList:true});
   const releaseIntro = () => {
     introEpoch += 1;
     introPending = false;
@@ -133,7 +142,8 @@
     const epoch = ++introEpoch;
     introPending = true;
     content.classList.add('part-intro-open');
-    const reset = () => {if (introEpoch === epoch) {content.scrollTop = 0; content.scrollLeft = 0;}};
+    const reset = () => {if (introEpoch === epoch) resetIntroScroll();};
+    reset();
     requestAnimationFrame(() => {
       reset();
       Promise.allSettled([...content.querySelectorAll('img')].map(image => image.decode())).then(reset);
