@@ -125,7 +125,7 @@ function previewHouses() {
 }
 function mapHtml() {
   const [title,copy]=phases[state.phase]||phases.lobby;
-  const day=['lobby','reveal','day','vote','dusk','finished'].includes(state.phase);
+  const day=['lobby','reveal','hunter','day','vote','dusk','finished'].includes(state.phase);
   // Older rooms may finish without hiding players; new joins and starts are limited to twelve.
   const legacy=state.players.length>12, rows=Math.ceil(state.players.length/4);
   const spots=legacy?state.players.map((p,i)=>[15+23*(i%4),10+80*Math.floor(i/4)/(rows-1)]):HOUSE_SPOTS;
