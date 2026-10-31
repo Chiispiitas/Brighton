@@ -177,7 +177,22 @@ function rosterPanel() {
 function witchPanel() {
   const me=state.me, name=me.victim?playerName(me.victim):null;
   const canHeal=!!me.potions.heal&&!!me.victim;
-  return `<h3>Potions</h3>${name?`<section class="witch-victim-card" aria-label="Tonight’s revival target"><span class="victim-label">Attacked by the werewolves tonight</span>${houseArt(Math.max(0,Math.floor(state.players.findIndex(p=>p.id===me.victim)*12/Math.max(1,state.players.length))),true)}<h3>${escape(name)}</h3><p>This villager is dying. ${canHeal?'Your healing potion can revive them before dawn.':'Your healing potion has already been used; you cannot revive them.'}</p></section>`:'<div class="witch-safe"><b>No victim tonight</b><p>Nobody was attacked by the werewolves. There is nobody to revive.</p></div>'}<div class="witch-choice"><label class="heal-choice"><input type="checkbox" id="heal" ${canHeal?'':'disabled'}><span>${canHeal?`Revive <strong>${escape(name)}</strong> with my healing potion`:!me.potions.heal?'Healing potion already used':'Healing potion kept — no victim'}</span></label><p class="witch-help">Only tonight’s werewolf victim can be revived. Players eliminated on earlier days remain dead.</p><label for="poison">${me.potions.poison?'Poison a player (optional)':'Poison potion used'}</label><select id="poison" ${!me.potions.poison?'disabled':''}><option value="">Keep the poison potion</option>${state.players.filter(p=>p.alive).map(p=>`<option value="${p.id}">${escape(p.name)} · ${p.id===me.victim?'attacked tonight':'alive'}</option>`).join('')}</select></div><p id="witch-outcome" class="witch-outcome" aria-live="polite">${canHeal?`Healing potion kept. ${escape(name)} will not be revived.`:'Choose whether to use your poison potion, or keep it.'}</p><button class="primary wide" id="cast">Confirm potion choice →</button>`;
+  return `<h3>Potions</h3>${name?`<section class="witch-victim-card" aria-label="Tonight’s revival target"><span class="victim-label">Attacked by the werewolves tonight</span>${houseArt(Math.max(0,Math.floor(state.players.findIndex(p=>p.id===me.victim)*12/Math.max(1,state.players.length))),true)}<h3>${escape(name)}</h3><p>This villager is dying. ${canHeal?'Your healing potion can revive them before dawn.':'Your healing potion has already been used; you cannot revive them.'}</p></section>`:'<div class="witch-safe"><b>No victim tonight</b><p>Nobody was attacked by the werewolves. There is nobody to revive.</p></div>'}<div class="witch-choice"><label class="heal-choice"><input type="checkbox" id="heal" ${canHeal?'':'disabled'}><span>${canHeal?`Revive <strong>${escape(name)}</strong> with my healing potion`:!me.potions.heal?'Healing potion already used':'Healing potion kept — no victim'}</span></label><p class="witch-help">Only tonight’s werewolf victim can be revived. Players eliminated on earlier days remain dead.</p><label class="heal-choice poison-choice"><input type="checkbox" id="use-poison" aria-controls="poison-target" ${me.potions.poison?'':'disabled'}><span>${me.potions.poison?'Use poison potion':'Poison potion already used'}</span></label><div id="poison-target" class="poison-target hidden"><label for="poison">Player to poison</label><select id="poison" disabled><option value="" disabled selected>Choose a player</option>${state.players.filter(p=>p.alive).map(p=>`<option value="${p.id}">${escape(p.name)} · ${p.id===me.victim?'attacked tonight':'alive'}</option>`).join('')}</select></div></div><p id="witch-outcome" class="witch-outcome" aria-live="polite"></p><button class="primary wide" id="cast">Confirm potion choice →</button>`;
+}
+function updateWitchChoices() {
+  const heal=$('#heal'), usePoison=$('#use-poison'), poison=$('#poison');
+  if(!heal||!usePoison||!poison)return;
+  const poisoning=usePoison.checked&&!usePoison.disabled, healing=heal.checked&&!heal.disabled;
+  $('#poison-target').classList.toggle('hidden',!poisoning);
+  poison.disabled=!poisoning;poison.required=poisoning;
+  const name=playerName(state.me.victim), messages=[];
+  if(state.me.victim&&state.me.potions.heal)messages.push(healing?`You will revive ${name} when you confirm.`:`Healing potion kept. ${name} will not be revived.`);
+  if(poisoning)messages.push(poison.value?`You will poison ${playerName(poison.value)} when you confirm.`:'Choose a player to poison.');
+  else messages.push(state.me.potions.poison?'Poison potion kept.':'Poison potion already used.');
+  if(healing&&poisoning&&poison.value===state.me.victim)messages.push('A player who is both healed and poisoned will still die.');
+  $('#witch-outcome').textContent=messages.join(' ');
+  $('#cast').textContent=healing?`Revive ${name} · confirm →`:'Confirm potion choice →';
+  $('#cast').disabled=poisoning&&!poison.value;
 }
 function packPanel() {
   return `<h3>Pack selection</h3><p class="action-prompt">Tap a living villager’s house to share your highlight with the pack. You can change your choice until the night continues.</p><ul class="pack-choices">${(state.packChoices||[]).map(c=>`<li><b>${escape(playerName(c.wolfId))}${c.wolfId===state.me.id?' · you':''}</b><span>${c.target?escape(playerName(c.target)):'Choosing…'}</span></li>`).join('')}</ul><p class="status-line">${state.packDecision?.agreed?'All living wolves selected the same player. You or the host can continue.':'Every living werewolf must highlight the same person.'}</p><button class="primary wide" id="pack-continue" ${state.packDecision?.agreed?'':'disabled'}>${state.packDecision?.agreed?'Continue the night →':PACK_WAIT}</button>`;
@@ -193,6 +208,7 @@ function showEliminatedCards(players) {
 function renderRoom() {
   if(!state)return;
   const phaseChanged=lastPhase!==state.phaseId;
+  const witchDraft=!phaseChanged&&state.phase==='witch'&&$('#use-poison')?{heal:$('#heal').checked,usePoison:$('#use-poison').checked,poison:$('#poison').value}:null;
   if(revealedRoom!==state.code||state.phase==='lobby'){revealedRoom=state.code;revealedDeaths=new Set();}
   const newlyRevealed=state.players.filter(p=>!p.alive&&p.role&&!revealedDeaths.has(p.id));
   newlyRevealed.forEach(p=>revealedDeaths.add(p.id));
@@ -201,6 +217,12 @@ function renderRoom() {
   root.className=projector?'projector':state.phase==='witch'&&state.me?.role==='witch'?'witch-turn':'';
   root.innerHTML=`<div class="room-head"><div><div class="eyebrow">${state.phase==='lobby'?'Lobby':state.phase==='finished'?'Game over':`${NIGHT_PHASES.includes(state.phase)?'Night':'Day'} ${state.day||1}`}</div><h1>${state.phase==='lobby'?'Lobby':state.phase==='finished'?(state.winner==='village'?'Villagers win.':'Werewolves win.'):'Werewolves'}</h1></div><div class="room-tools"><button class="room-code" data-copy title="Copy invitation link">${state.code}</button><span class="live-dot">${projector?'Shared screen':state.host?'Host connected':'Connected'}</span><button class="quiet" id="home">Leave this view</button></div></div>${state.phase==='finished'?`<div class="success-banner"><h2>${state.winner==='village'?'Villagers win.':'Werewolves win.'}</h2><p>All roles are revealed below. ${state.host&&!projector?'You can start another game.':''}</p></div>`:''}<div class="room-layout">${mapHtml()}<aside class="sidebar">${mePanel()}${hostPanel()}${rosterPanel()}</aside></div>${revealedCards()}`;
   wireRoom();
+  if(witchDraft&&$('#use-poison')){
+    $('#heal').checked=witchDraft.heal&&!$('#heal').disabled;
+    $('#use-poison').checked=witchDraft.usePoison&&!$('#use-poison').disabled;
+    $('#poison').value=witchDraft.poison;
+    updateWitchChoices();
+  }
   if(phaseChanged)window.scrollTo({top:0,behavior:'smooth'});
   if(newlyRevealed.length)showEliminatedCards(newlyRevealed);
 }
@@ -216,12 +238,15 @@ function wireRoom() {
   $('#spy')?.addEventListener('click',async()=>{if(await act({spy:true})){const n=state.me.notes.at(-1);if(n)showModal(`<div class="eyebrow">Spy result</div><h2 style="margin-top:18px">${n.text.startsWith('Heads')?'Heads. Hidden.':'Tails. Discovered.'}</h2><p class="guide-intro">${escape(n.text)}</p><p>Only you can see this result.</p>`);}});
   $('#pass')?.addEventListener('click',()=>state.phase==='vote'?send({type:'vote',phaseId:state.phaseId,target:null}):act({}));
   $('#confirm-target')?.addEventListener('click',async()=>{if(!selected)return;const phase=state.phase;if(await send({type:phase==='vote'?'vote':'action',phaseId:state.phaseId,target:selected})){if(phase==='fortune'){const n=state.me.notes.at(-1);if(n)showModal(`<div class="eyebrow">Role result</div><h2 style="margin-top:18px">Role result</h2><p class="guide-intro">${escape(n.text.replace(/\b(fortune|girl|witch|hunter|werewolf|villager)\b/g,m=>roleNames[m]))}</p>`);}else toast('Choice recorded.');}});
-  $('#heal')?.addEventListener('change',()=>{
-    const healing=$('#heal').checked, name=playerName(state.me.victim);
-    $('#witch-outcome').textContent=healing?`You will revive ${name} when you confirm. If they are also poisoned, they will still die.`:`Healing potion kept. ${name} will not be revived.`;
-    $('#cast').textContent=healing?`Revive ${name} · confirm →`:'Confirm potion choice →';
+  $('#heal')?.addEventListener('change',updateWitchChoices);
+  $('#use-poison')?.addEventListener('change',updateWitchChoices);
+  $('#poison')?.addEventListener('change',updateWitchChoices);
+  updateWitchChoices();
+  $('#cast')?.addEventListener('click',()=>{
+    const poisoning=$('#use-poison').checked&&!$('#use-poison').disabled;
+    if(poisoning&&!$('#poison').value){$('#poison').reportValidity();return;}
+    act({heal:$('#heal').checked,poison:poisoning?$('#poison').value:null});
   });
-  $('#cast')?.addEventListener('click',()=>act({heal:$('#heal').checked,poison:$('#poison').value||null}));
   $('#start')?.addEventListener('click',()=>send({type:'start'}));
   $('#pack-continue')?.addEventListener('click',()=>send({type:'advance',phaseId:state.phaseId}));
   root.querySelectorAll('[data-revealed]').forEach(b=>b.onclick=()=>showEliminatedCards([state.players.find(p=>p.id===b.dataset.revealed)]));
