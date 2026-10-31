@@ -6,3 +6,5 @@
 
 @media(max-width:760px){.panel:has(#confirm-target) .action-buttons{position:fixed;bottom:12px;left:5%;right:5%;z-index:10;background:#10232af5;border:1px solid #d6bc8466;border-radius:6px;padding:10px;box-shadow:0 5px 30px #0009;margin:0}.room-layout:has(#confirm-target){padding-bottom:100px}}
 @media(max-width:480px){.hero h1{font-size:62px;letter-spacing:-2px}.hero-meta{gap:13px}.hero-meta span{gap:5px}.room-head h1{font-size:29px}.room-code{font-size:16px}}
+
+.card-back{width:100%}
