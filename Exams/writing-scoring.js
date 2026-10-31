@@ -1,6 +1,83 @@
 // Generated from backend/writing-rubric.js; keep the scoring contracts identical.
 (function() {
 const PROFILES = {
+  "b1": {
+  "examId": "brighton-b1-writing-final",
+  "level": "B1",
+  "id": "b1",
+  "tasks": [
+    {
+      "part": 1,
+      "partId": "part1",
+      "question": 1,
+      "label": "Part 1",
+      "taskType": "Picture description",
+      "title": "Picture description 1",
+      "targetReader": "Exam reader",
+      "prompt": "Look at the picture and describe what you can see.\n\nWrite more than two sentences. Include as many details as you can.",
+      "points": 5,
+      "subscales": [
+        "Content",
+        "Organization"
+      ],
+      "images": [
+        "https://exams.bebrighton.net/Exams/exams/b1-writing/assets/picture-1.webp"
+      ]
+    },
+    {
+      "part": 1,
+      "partId": "part1",
+      "question": 2,
+      "label": "Part 1",
+      "taskType": "Picture description",
+      "title": "Picture description 2",
+      "targetReader": "Exam reader",
+      "prompt": "Look at the picture and describe what you can see.\n\nWrite more than two sentences. Include as many details as you can.",
+      "points": 5,
+      "subscales": [
+        "Content",
+        "Organization"
+      ],
+      "images": [
+        "https://exams.bebrighton.net/Exams/exams/b1-writing/assets/picture-2.webp"
+      ]
+    },
+    {
+      "part": 2,
+      "partId": "part2",
+      "question": 3,
+      "label": "Part 2",
+      "taskType": "Email",
+      "title": "Email: a day in your town",
+      "targetReader": "An English-speaking friend",
+      "prompt": "Read this email from your English-speaking friend Alex.\n\nHi,\n\nI am coming to your town next Saturday and would love to spend the day with you.\n\nWhat time and where should we meet?\n\nI would like to try something new. What activity could we do together, and why do you think I would enjoy it?\n\nIs there a good place to have lunch? I do not eat meat.\n\nSee you soon!\nAlex\n\nWrite your email replying to Alex. Answer all the questions.",
+      "points": 10,
+      "subscales": [
+        "Content",
+        "Communicative Achievement",
+        "Organization",
+        "Language"
+      ]
+    },
+    {
+      "part": 3,
+      "partId": "part3",
+      "question": 4,
+      "label": "Part 3",
+      "taskType": "Story",
+      "title": "Story: the sound beside the river",
+      "targetReader": "Your English teacher",
+      "prompt": "Your English teacher has asked you to write a story.\n\nYour story must begin with this sentence:\n\nWe were walking beside the river when we heard someone call for help.\n\nWrite your story.",
+      "points": 10,
+      "subscales": [
+        "Content",
+        "Communicative Achievement",
+        "Organization",
+        "Language"
+      ]
+    }
+  ]
+},
   "a1rw": {
     "examId": "brighton-a1-rw-final",
     "level": "A1",

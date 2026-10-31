@@ -9,7 +9,7 @@ const root = path.resolve(__dirname, '..');
 const exams = fs.readdirSync(path.join(__dirname, 'exams')).filter(name => fs.existsSync(path.join(__dirname, 'exams', name, 'index.html')) && (!process.env.EXAM_QA_EXAMS || process.env.EXAM_QA_EXAMS.split(',').includes(name)));
 const output = process.env.EXAM_QA_OUTPUT;
 if (output) fs.mkdirSync(output, {recursive:true});
-const types = {'.html':'text/html', '.css':'text/css', '.js':'text/javascript', '.png':'image/png', '.jpg':'image/jpeg', '.jpeg':'image/jpeg', '.svg':'image/svg+xml', '.mp3':'audio/mpeg', '.woff2':'font/woff2'};
+const types = {'.html':'text/html', '.css':'text/css', '.js':'text/javascript', '.webp':'image/webp', '.png':'image/png', '.jpg':'image/jpeg', '.jpeg':'image/jpeg', '.svg':'image/svg+xml', '.mp3':'audio/mpeg', '.woff2':'font/woff2'};
 const server = http.createServer((req, res) => {
   const file = path.resolve(root, '.' + decodeURIComponent(new URL(req.url, 'http://localhost').pathname));
   if (!file.startsWith(root + path.sep)) return res.writeHead(403).end();

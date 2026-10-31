@@ -23,7 +23,7 @@ for(const p of Object.values(W.PROFILES)) {
  const selections=p.choice?[2,3,4]:[2];
  for(const selection of selections) {
   const row=fixture(p,selection);const tasks=W.tasksFor(row);
-  const expected={a1rw:39,a2rw:60,b1plus:30,b2:40}[p.id];
+  const expected={a1rw:39,a2rw:60,b1:30,b1plus:30,b2:40}[p.id];
   const ai={scores:scores(row),objective:objective(row)};row.writingAiJson=JSON.stringify(ai);
   assert.equal(W.apply(row).score,expected);assert.equal(W.apply(row).maxScore,expected);assert.equal(W.apply(row).percentage,100);
   row.writingTeacherJson=JSON.stringify({scores:scores(row,0)});
@@ -46,4 +46,4 @@ for(const p of Object.values(W.PROFILES)) {
 assert.equal(W.profileFor({examId:'brighton-b2-listening-final'}),null);
 assert.equal(W.profileFor({examId:'brighton-a2-reading-and-writing-final'}).id,'a2rw');
 assert.equal(W.profileFor({examId:'brighton-a1-rw-final@@2026-09-18.1'}).id,'a1rw');
-console.log(`Writing scoring: ${checks+3} assertions passed across A1, A2, B1+ and all B2 task choices.`);
+console.log(`Writing scoring: ${checks+3} assertions passed across A1, A2, B1, B1+ and all B2 task choices.`);

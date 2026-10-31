@@ -53,6 +53,78 @@
   });
 
   const WRITING_TASK_META_BY_EXAM = {
+    b1: {
+  "1": {
+    "part": 1,
+    "partId": "part1",
+    "question": 1,
+    "label": "Part 1",
+    "taskType": "Picture description",
+    "title": "Picture description 1",
+    "targetReader": "Exam reader",
+    "prompt": "Look at the picture and describe what you can see.\n\nWrite more than two sentences. Include as many details as you can.",
+    "points": 5,
+    "subscales": [
+      "Content",
+      "Organization"
+    ],
+    "images": [
+      "https://exams.bebrighton.net/Exams/exams/b1-writing/assets/picture-1.webp"
+    ]
+  },
+  "2": {
+    "part": 1,
+    "partId": "part1",
+    "question": 2,
+    "label": "Part 1",
+    "taskType": "Picture description",
+    "title": "Picture description 2",
+    "targetReader": "Exam reader",
+    "prompt": "Look at the picture and describe what you can see.\n\nWrite more than two sentences. Include as many details as you can.",
+    "points": 5,
+    "subscales": [
+      "Content",
+      "Organization"
+    ],
+    "images": [
+      "https://exams.bebrighton.net/Exams/exams/b1-writing/assets/picture-2.webp"
+    ]
+  },
+  "3": {
+    "part": 2,
+    "partId": "part2",
+    "question": 3,
+    "label": "Part 2",
+    "taskType": "Email",
+    "title": "Email: a day in your town",
+    "targetReader": "An English-speaking friend",
+    "prompt": "Read this email from your English-speaking friend Alex.\n\nHi,\n\nI am coming to your town next Saturday and would love to spend the day with you.\n\nWhat time and where should we meet?\n\nI would like to try something new. What activity could we do together, and why do you think I would enjoy it?\n\nIs there a good place to have lunch? I do not eat meat.\n\nSee you soon!\nAlex\n\nWrite your email replying to Alex. Answer all the questions.",
+    "points": 10,
+    "subscales": [
+      "Content",
+      "Communicative Achievement",
+      "Organization",
+      "Language"
+    ]
+  },
+  "4": {
+    "part": 3,
+    "partId": "part3",
+    "question": 4,
+    "label": "Part 3",
+    "taskType": "Story",
+    "title": "Story: the sound beside the river",
+    "targetReader": "Your English teacher",
+    "prompt": "Your English teacher has asked you to write a story.\n\nYour story must begin with this sentence:\n\nWe were walking beside the river when we heard someone call for help.\n\nWrite your story.",
+    "points": 10,
+    "subscales": [
+      "Content",
+      "Communicative Achievement",
+      "Organization",
+      "Language"
+    ]
+  }
+},
     b2: {
       1: { part: 1, partId: "part1", question: 1, label: "Part 1", taskType: "Essay", title: "Essay: environment and everyday action", targetReader: "Your English teacher", prompt: "In your English class you have been talking about the environment.\n\nSome people say that schools and companies should do much more to reduce waste and pollution. Do you agree?\n\nNotes: transport; daily habits; your own idea\n\nWrite an essay using all the notes and giving reasons for your point of view." },
       2: { part: 2, partId: "part2", question: 2, label: "Part 2", taskType: "Article", title: "Article: design that improves everyday life", targetReader: "Readers of a college English-language magazine", prompt: "You see this announcement in your college English-language magazine.\n\nArticles wanted: Better design, better lives\n\nWrite an article about a product, building or public place that you think is well designed. Explain what makes the design useful and say how it could be improved even more.\n\nThe best articles will be published in next month’s magazine.\n\nWrite your article." },
@@ -76,6 +148,27 @@
   };
 
   const WRITING_RUBRIC_PROFILES = {
+    b1: {
+      id: "b1",
+      levelLabel: "B1",
+      title: "Short B1 Writing rubric",
+      actionTitle: "B1 Writing marking",
+      actionText: "Score each writing sample from 0–5 in its required subscales. Picture descriptions use only Content and Organization. Email and story tasks use the four Cambridge-style writing subscales.",
+      buttonText: "Open B1 writing rubric",
+      choiceBased: false,
+      defaultSubscales: ["Content", "Communicative Achievement", "Organization", "Language"],
+      pictureSubscales: ["Content", "Organization"],
+      cards: [
+        ["Picture description · Content", "The answer describes the picture clearly, includes relevant people, places, actions and objects, and gives more than two meaningful sentences."],
+        ["Picture description · Organization", "The description is easy to follow, with clear sentence order, logical details and simple linking where useful."],
+        ["Email/Story · Content", "The answer completes the task, answers the required points, and gives enough relevant detail for a B1 reader."],
+        ["Email/Story · Communicative Achievement", "The writing uses a suitable format and tone: friendly and informal for the email, and clear narrative style for the story."],
+        ["Email/Story · Organization", "Ideas are connected clearly with paragraphs, sequencing and linking words such as because, so, then, after that, however or finally."],
+        ["Email/Story · Language", "The writing uses appropriate B1 vocabulary and a range of simple and some complex grammar. Errors may appear but meaning should remain clear."]
+      ],
+      note: "Picture descriptions: Content + Organization only. Email and story: Content + Communicative Achievement + Organization + Language.",
+      bandGuide: "5 = strong B1 performance with clear, developed ideas; 3 = generally successful but with some omissions or limited range; 1 = minimally successful; 0 = not attempted, not relevant or impossible to understand."
+    },
     b2: {
       id: "b2",
       levelLabel: "B2",
@@ -1109,6 +1202,7 @@
     if (raw.includes("a1rw") || raw.includes("a1-rw") || raw.includes("a1 rw")) return WRITING_RUBRIC_PROFILES.a1rw;
     if (raw.includes("a2rw") || raw.includes("a2-rw") || raw.includes("a2 rw") || raw.includes("reading-writing") || raw.includes("reading and writing")) return WRITING_RUBRIC_PROFILES.a2rw;
     if (raw.includes("b1plus") || raw.includes("b1+")) return WRITING_RUBRIC_PROFILES.b1plus;
+    if (/\bb1(?:-|\s|$)/.test(raw)) return WRITING_RUBRIC_PROFILES.b1;
     return WRITING_RUBRIC_PROFILES.b2;
   }
 
@@ -1117,7 +1211,7 @@
   }
 
   function getWritingSubscales(sample, rubricProfile = WRITING_RUBRIC_PROFILES.b2) {
-    if (rubricProfile.id === "b1plus" && String(sample?.taskType || "").toLowerCase().includes("picture")) return rubricProfile.pictureSubscales || ["Content", "Organization"];
+    if (["b1", "b1plus"].includes(rubricProfile.id) && String(sample?.taskType || "").toLowerCase().includes("picture")) return rubricProfile.pictureSubscales || ["Content", "Organization"];
     return rubricProfile.defaultSubscales || WRITING_RUBRIC_PROFILES.b2.defaultSubscales;
   }
 
