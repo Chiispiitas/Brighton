@@ -32,4 +32,4 @@ for(const profile of Object.values(W.PROFILES)){
  const reload=await backend.namespace.getWritingAssessment(request(payload));assert.equal(reload.body.assessment.writingRevision,2);assert.ok(reload.body.assessment.writingTeacherJson);
  const revert=await backend.namespace.saveWritingAssessment(request({...payload,action:'revert',expectedRevision:2}));assert.equal(revert.status,200);assert.equal(revert.body.assessment.score,assessment.score);assert.equal(revert.body.assessment.writingTeacherJson,'');assert.equal(revert.body.assessment.writingAiJson,original);
 }
-assert.equal(providerCalls,4,'Concurrent requests and reloads reuse the original assessment');console.log('Backend persistence: all four exams passed generation, duplicate requests, save, invalid input, stale review, wrong class, storage failure, reload and revert.');
+assert.equal(providerCalls,Object.keys(W.PROFILES).length,'Concurrent requests and reloads reuse the original assessment');console.log('Backend persistence: all supported exams passed generation, duplicate requests, save, invalid input, stale review, wrong class, storage failure, reload and revert.');

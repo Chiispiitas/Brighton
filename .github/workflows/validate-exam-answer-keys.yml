@@ -69,6 +69,8 @@ jobs:
           fi
       - name: Validate assessment dashboard JavaScript syntax
         run: node --check Exams/results.js
+      - name: Validate original B1 finals and answer mappings
+        run: node Exams/validate-b1-finals.cjs
       - name: Validate writing grading and persistence
         run: |
           node --check Placement/wix-backend/writing-ai.js

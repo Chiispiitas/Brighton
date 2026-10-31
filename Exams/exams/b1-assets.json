@@ -1,0 +1,153 @@
+{
+  "generator": "Built-in ImageGen",
+  "delivery": "WebP encoding at original dimensions; original PNGs retained",
+  "assets": [
+    {
+      "id": "listening-1",
+      "target": "b1-listening/assets/picture-1.webp",
+      "prompt": "Textbook illustration triptych in equal thirds: woman baking cupcakes; woman playing chess with a friend; woman swimming in a pool. No labels or answer hints.",
+      "sha256": "f3caf899090306b8e999dc9d7cc77f4318880f92363dd4bfa7b6b85f788a7b40",
+      "bytes": 271944
+    },
+    {
+      "id": "listening-2",
+      "target": "b1-listening/assets/picture-2.webp",
+      "prompt": "Textbook illustration triptych in equal thirds: city bus at bus shelter; man riding a bicycle in bike lane; yellow taxi. No labels or answer hints.",
+      "sha256": "26b8ab6fdb243a448111e626d3ea28f380e14616d1bb60a980d874078d14a481",
+      "bytes": 331964
+    },
+    {
+      "id": "listening-3",
+      "target": "b1-listening/assets/picture-3.webp",
+      "prompt": "Use case: illustration-story. Asset type: one three-panel picture-choice strip for a B1 English listening exam. Create a very wide horizontal triptych, 3:1 aspect ratio, three EXACTLY equal square panels edge-to-edge in one row, with boundaries precisely at one third and two thirds of image width. Each panel contains one distinct self-contained scene, with no scene crossing a panel boundary. Left panel: a large closed blue suitcase standing alone beside a hotel bed. Centre panel: a red jacket hanging by itself on a wooden chair in a hotel room. Right panel: a black compact camera by itself on a hotel bedside table. Clear friendly realistic textbook illustration, crisp outlines, soft natural colour, readable main objects, uncluttered background, consistent drawing style across all three panels. No text, letters, numbers, captions, border or watermark. Do not indicate a correct answer. All three panels equally detailed. Exact equal thirds essential.",
+      "sha256": "965d7eae67f5a478d0b3ef2d4202c3e0981fff9248a106db6d3b6b992c4605c6",
+      "bytes": 200776
+    },
+    {
+      "id": "listening-4",
+      "target": "b1-listening/assets/picture-4.webp",
+      "prompt": "Use case: illustration-story. Asset type: one three-panel picture-choice strip for a B1 English listening exam. Create a very wide horizontal triptych, 3:1 aspect ratio, three EXACTLY equal square panels edge-to-edge in one row, with boundaries precisely at one third and two thirds of image width. Each panel contains one distinct self-contained scene, with no scene crossing a panel boundary. Left panel: a stone fountain with water flowing into its round basin in a pleasant town square. Centre panel: a small old stone bridge crossing a stream in a park. Right panel: a bronze statue of a standing person on a stone base in a pleasant town square. Clear friendly realistic textbook illustration, crisp outlines, soft natural colour, readable main objects, uncluttered background, consistent drawing style across all three panels. No text, letters, numbers, captions, border or watermark. Do not indicate a correct answer. All three panels equally detailed. Exact equal thirds essential.",
+      "sha256": "4735d6cffe65e930afc803d5f49c0239d22e602e490821975d8d4bc12aa97dde",
+      "bytes": 521790
+    },
+    {
+      "id": "listening-5",
+      "target": "b1-listening/assets/picture-5.webp",
+      "prompt": "Use case: illustration-story. Asset type: one three-panel picture-choice strip for a B1 English listening exam. Create a very wide horizontal triptych, 3:1 aspect ratio, three EXACTLY equal square panels edge-to-edge in one row, with boundaries precisely at one third and two thirds of image width. Each panel contains one distinct self-contained scene, with no scene crossing a panel boundary. Left panel: a simple tuna sandwich cut into two triangles on a plate, visible pale tuna filling with a little lettuce. Centre panel: a bowl of vegetable soup with visible carrot and potato pieces. Right panel: a slice of apple pie with visible apple filling on a small plate. Clear friendly realistic textbook illustration, crisp outlines, soft natural colour, readable main objects, uncluttered background, consistent drawing style across all three panels. No text, letters, numbers, captions, border or watermark. Do not indicate a correct answer. All three panels equally detailed. Exact equal thirds essential.",
+      "sha256": "a2994a08323fbc671c2540eb9eaf657e91ebc744c0c943834591ea7309204682",
+      "bytes": 229348
+    },
+    {
+      "id": "listening-6",
+      "target": "b1-listening/assets/picture-6.webp",
+      "prompt": "Use case: illustration-story. Asset type: one three-panel picture-choice strip for a B1 English listening exam. Create a very wide horizontal triptych, 3:1 aspect ratio, three EXACTLY equal square panels edge-to-edge in one row, with boundaries precisely at one third and two thirds of image width. Each panel contains one distinct self-contained scene, with no scene crossing a panel boundary. Left panel: a journalist holding a microphone and interviewing a person outdoors. Centre panel: a hairdresser cutting a seated customer's hair with scissors in an ordinary salon, with mirror and salon chair. Right panel: a tour guide holding a folded map and pointing out an old town building to two visitors. Clear friendly realistic textbook illustration, crisp outlines, soft natural colour, readable main objects, uncluttered background, consistent drawing style across all three panels. No text, letters, numbers, captions, border or watermark. Do not indicate a correct answer. All three panels equally detailed. Exact equal thirds essential.",
+      "sha256": "741fc0bc01d137870759926d9d7a4bfa1e66a0a2557b762bba2d7d9002aaae4d",
+      "bytes": 307666
+    },
+    {
+      "id": "listening-7",
+      "target": "b1-listening/assets/picture-7.webp",
+      "prompt": "Use case: illustration-story. Asset type: one three-panel picture-choice strip for a B1 English listening exam. A very wide horizontal triptych, exact 3:1 aspect ratio, three EXACTLY equal square panels edge-to-edge in one row, boundaries at precisely one third and two thirds of width. Left panel: a waterfall falling over rocks into a pool in a green valley, with a clear rocky bank in front. Centre panel: the dark round opening of a cave in a rocky hillside, seen from outside. Right panel: a broad calm lake surrounded by green hills, with a path along the shore. Clear friendly realistic textbook illustration, crisp outlines, natural colour, uncluttered, each scene self-contained. No text, captions, logo, numbers, labels, watermark or indication of the right answer.",
+      "sha256": "b45cb3032ff4f0f40f205eeb307f4765c6bd4c583dfd21d679ce68f8d507e21a",
+      "bytes": 485392
+    },
+    {
+      "id": "writing-kitchen",
+      "target": "b1-writing/assets/picture-1.webp",
+      "prompt": "Photorealistic B1 picture description: four young adult friends preparing lunch in a home kitchen; cucumber, tomato sauce, peppers, lettuce, bread and fruit juice; landscape, no text.",
+      "sha256": "6118643211f40fc92d9c4e9ceaeeca3a45cb082a517d4ced6d65bd74f4234ec6",
+      "bytes": 194020
+    },
+    {
+      "id": "writing-lake",
+      "target": "b1-writing/assets/picture-2.webp",
+      "prompt": "Photorealistic B1 picture description: three young adults collecting bottles and cans beside a mountain lake, with a family and bench in the background; landscape, no text.",
+      "sha256": "d4d587fadd09b09bc254bc1759bf71046cf624aabb570fedb5eda5aa439e7c46",
+      "bytes": 389142
+    },
+    {
+      "id": "reading-tour",
+      "target": "b1-reading/assets/first-tour.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: original B1 English reading exam illustration. Create one landscape 3:2 photograph: A friendly young Latina tour guide with a folded map pointing out an old railway station to a small mixed-age group of visitors in an attractive town. Some visitors have light rain jackets. The group is listening, a museum entrance in the background. Natural daytime light, candid educational travel photography, realistic anatomy and expressions, clear actions. No text, logo, caption or watermark.",
+      "sha256": "62a7c4776fbc81557139622ac4f95d7d570dad5ab41f916088189e164ca3e39d",
+      "bytes": 212992
+    },
+    {
+      "id": "reading-cycle",
+      "target": "b1-reading/assets/bike-to-school.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: original B1 English reading exam supporting image, landscape 3:2. One landscape candid photograph of two teenage classmates, a girl in a blue rain jacket and a boy in a yellow rain jacket, riding ordinary bicycles safely along a dedicated bike lane beside a river, approaching a small stone bridge. Both wear helmets. A quiet town is visible behind them. Overcast morning, realistic hands and wheels, clear action, positive everyday school travel. No text, letters, numbers, logos, captions or watermark. A coherent photograph with natural proportions.",
+      "sha256": "1015e0942e4d8539b96d9f568005515f959f980cd4937a5735d5837518963408",
+      "bytes": 289686
+    },
+    {
+      "id": "notice-1",
+      "target": "b1-reading/assets/notice-1.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: original B1 English reading exam supporting image, landscape 3:2. One landscape editorial photograph of several freshly baked cupcakes on a tray on a clean kitchen worktop. A plain cardboard food box is open beside the tray. Warm natural daylight, realistic simple food photography, no people needed. No text, letters, numbers, logos, captions or watermark. A coherent photograph with natural proportions.",
+      "sha256": "c01f7b87b23ef62493af29cff9599422c3943244c413696cef4c4d3904694b37",
+      "bytes": 124992
+    },
+    {
+      "id": "notice-2",
+      "target": "b1-reading/assets/notice-2.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: original B1 English reading exam supporting image, landscape 3:2. One landscape editorial photograph of a modern city bus stopped beside a public library building in an ordinary town, one passenger waiting at a bus shelter. The library has a simple book symbol above its entrance. Bright natural daylight, clear recognisable bus and building. No written signs. No text, letters, numbers, logos, captions or watermark. A coherent photograph with natural proportions.",
+      "sha256": "606d3954a3d164954887332a022f581688b1add62a47cc21386214ec535ecc81",
+      "bytes": 316266
+    },
+    {
+      "id": "notice-3",
+      "target": "b1-reading/assets/notice-3.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: original B1 English reading supporting photograph, landscape 3:2. A simple kitchen table with a jug and glass of orange fruit juice, fresh carrots and peppers in a bowl, and a full loaf of bread already on the table. A bright ordinary home kitchen in the background. Natural light, realistic details, coherent single photo. No text, numbers, labels, logos or watermark.",
+      "sha256": "bf26f25d4e1c7ffb8b92775ad6b0a382465a1c6346d21f2de5ac8060ae792b3f",
+      "bytes": 232836
+    },
+    {
+      "id": "notice-4",
+      "target": "b1-reading/assets/notice-4.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: original B1 English reading supporting photograph, landscape 3:2. A friendly young receptionist standing behind a modest hotel reception desk, ready to welcome a guest. A laptop and a small desk bell are visible, with keys on the wall behind. Daytime, professional but ordinary hotel. Natural light, realistic details, coherent single photo. No text, numbers, labels, logos or watermark.",
+      "sha256": "b956a1c7da1f7415cfb23c5e9ec5f2a794de2a8099c65c7bdb9808d04163b2c4",
+      "bytes": 117940
+    },
+    {
+      "id": "notice-5",
+      "target": "b1-reading/assets/notice-5.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: original B1 English reading supporting photograph, landscape 3:2. A peaceful lakeside walking path beside green hills, with a clean wooden bench and a person carrying a small closed bag of empty bottles away along the path. The image should suggest taking care of nature, natural daylight. Natural light, realistic details, coherent single photo. No text, numbers, labels, logos or watermark.",
+      "sha256": "48270e70906fc1cb9cb99aa583654fae8c55fccaf9a8fca1ccba76aa5b7902b5",
+      "bytes": 349154
+    },
+    {
+      "id": "person-1",
+      "target": "b1-reading/assets/person-1.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: small person portrait for an English reading matching exercise. A natural square head-and-shoulders portrait of a young Latino man with short dark hair, wearing a simple blue shirt. Friendly relaxed expression, looking at camera, plain softly blurred light grey studio background, soft daylight, realistic skin texture. Only one person, no props, no writing, no logo, no watermark.",
+      "sha256": "720cfd83e8ef8698683d4c799b66f88d5627b9e60f8e1ac16e1e343dff164c60",
+      "bytes": 87210
+    },
+    {
+      "id": "person-2",
+      "target": "b1-reading/assets/person-2.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: small person portrait for an English reading matching exercise. A natural square head-and-shoulders portrait of a young woman with brown skin and curly black hair, wearing a green cardigan. Friendly relaxed expression, looking at camera, plain softly blurred light grey studio background, soft daylight, realistic skin texture. Only one person, no props, no writing, no logo, no watermark.",
+      "sha256": "d8da11a6a3ad1dd8b2c07850319c3b9183af22a82002669feaa92ed9bf43cb14",
+      "bytes": 173010
+    },
+    {
+      "id": "person-3",
+      "target": "b1-reading/assets/person-3.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: small person portrait for an English reading matching exercise. A natural square head-and-shoulders portrait of a young man with light skin, straight brown hair and glasses, wearing a burgundy shirt. Friendly relaxed expression, looking at camera, plain softly blurred light grey studio background, soft daylight, realistic skin texture. Only one person, no props, no writing, no logo, no watermark.",
+      "sha256": "5998842af2839f2ee01242c18d88a0a517801a2626b9a9050e6ec4e65fe1afd8",
+      "bytes": 92018
+    },
+    {
+      "id": "person-4",
+      "target": "b1-reading/assets/person-4.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: small person portrait for an English reading matching exercise. A natural square head-and-shoulders portrait of a young woman with light skin and shoulder-length auburn hair, wearing a mustard yellow sweater. Friendly relaxed expression, looking at camera, plain softly blurred light grey studio background, soft daylight, realistic skin texture. Only one person, no props, no writing, no logo, no watermark.",
+      "sha256": "350e3c8857ca732af8861950a10935314a73684bac314746c93fb9e7def0175b",
+      "bytes": 159444
+    },
+    {
+      "id": "person-5",
+      "target": "b1-reading/assets/person-5.webp",
+      "prompt": "Use case: photorealistic-natural. Asset type: small person portrait for an English reading matching exercise. A natural square head-and-shoulders portrait of a young man with brown skin and short curly dark hair, wearing a light green shirt. Friendly relaxed expression, looking at camera, plain softly blurred light grey studio background, soft daylight, realistic skin texture. Only one person, no props, no writing, no logo, no watermark.",
+      "sha256": "6c84b24a7d1fc5ba00496a75e79cdec736b409684c66a5d0fabcd6f880c02091",
+      "bytes": 80136
+    }
+  ]
+}

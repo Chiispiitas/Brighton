@@ -2,7 +2,7 @@ const fs=require('fs');const assert=require('assert/strict');const {JSDOM}=requi
 const root=require('path').resolve(__dirname,'..')+'/';
 const pause=()=>new Promise(r=>setTimeout(r,30));
 (async()=>{
-for(const id of ['a1rw','a2rw','b1plus','b2']){
+for(const id of ['a1rw','a2rw','b1','b1plus','b2']){
  const dom=new JSDOM(fs.readFileSync(root+'Exams/results.html','utf8'),{url:'http://localhost/Exams/results.html?classId=QA&load=1',runScripts:'outside-only'});
  const w=dom.window;w.scrollTo=()=>{};w.HTMLElement.prototype.scrollIntoView=()=>{};w.eval(fs.readFileSync(root+'Exams/writing-scoring.js','utf8'));
  const W=w.BrightonWriting;const p=W.PROFILES[id];const answers={};p.tasks.forEach(t=>(answers[t.partId]||={})[t.question]='A clear writing response.');
