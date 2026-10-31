@@ -4,6 +4,7 @@ Site: `b23cf550-cf21-4b59-b909-da9a7ec8658b`
 Public OAuth app ID: `bfa90d5e-3cf7-4c0d-a5c9-7646d41130d1`
 Live origin: https://headless-cdpoaidonzo-chiispiitas-140b.wix-site-host.com
 Source revision at initial release: `21eb58562cdacaba900ff08fd092dc1ce6eb0bc0`
+Source revision after unanimous pack choices and public elimination reveals: `59fecea4becd284222e2ff7e090d1841f320ddec`.
 
 This is a **server build**, not a static website upload. Build using `npm ci --ignore-scripts` then `npx astro build`, with the ignored `.env.local` created by the Wix headless setup flow. Wix injects runtime identity at release. No private API keys belong in these files or the frontend.
 
