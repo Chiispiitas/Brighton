@@ -75,6 +75,7 @@ jobs:
         run: |
           node --check Placement/wix-backend/writing-ai.js
           node --check Placement/wix-backend/writing.js
+          node --experimental-vm-modules Exams/validate-writing-images.mjs
           node Exams/validate-writing-scoring.mjs
           node --experimental-vm-modules Exams/validate-writing-backend.mjs
       - name: Validate writing dashboard actions
