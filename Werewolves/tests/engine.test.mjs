@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { createRoom, command, view, progress, packDecision } from '../server/engine.mjs';
+import { createRoom, command, view, progress, packDecision, MIN_PLAYERS, MAX_PLAYERS } from '../server/engine.mjs';
 let sequence = 0;
 const doIt = (s, key, data, rng = () => .2) => command(s, key, { requestId: `request-${++sequence}`, phaseId: s.phaseId, ...data }, rng);
 function lobby(n = 8) {
@@ -34,13 +34,47 @@ test('only werewolves see their pack; finished game reveals all roles',()=>{
 test('joining is capped, case-insensitive names are unique, unsafe names rejected',()=>{
   const s=lobby(); assert.throws(()=>doIt(s,'other',{type:'join',name:'PLAYER 0'}),/taken/);
   assert.throws(()=>doIt(s,'other',{type:'join',name:'<script>'}),/angle/);
-  assert.throws(()=>doIt(lobby(40),'other',{type:'join',name:'Extra'}),/full/);
+  assert.throws(()=>doIt(lobby(12),'other',{type:'join',name:'Extra'}),/full \(12 players\)/);
 });
 test('only host starts or advances; a valid deck fills every player slot',()=>{
   assert.throws(()=>doIt(lobby(),'key-1',{type:'start'}),/host/);
-  assert.throws(()=>doIt(lobby(5),'host-key',{type:'start'}),/6 players/);
+  assert.throws(()=>doIt(lobby(3),'host-key',{type:'start'}),/4 players/);
   const s=started(); assert.equal(s.players.filter(p=>p.role==='werewolf').length,2);
   for(const role of ['fortune','girl','witch','hunter'])assert.equal(s.players.filter(p=>p.role===role).length,1);
+});
+
+test('four to twelve players start with a valid automatic deck and an ordinary villager',()=>{
+  assert.equal(MIN_PLAYERS,4);assert.equal(MAX_PLAYERS,12);
+  const expectedSpecials={4:['fortune','witch'],5:['fortune','witch','girl'],6:['fortune','witch','girl','hunter'],12:['fortune','witch','girl','hunter']};
+  for(const n of [4,5,6,12]){
+    const s=doIt(lobby(n),'host-key',{type:'start'}),wolves=s.players.filter(p=>p.role==='werewolf').length;
+    assert.equal(s.phase,'reveal');assert.equal(s.players.length,n);
+    assert.equal(wolves,Math.max(1,Math.floor(n/4)));
+    assert.ok(s.players.some(p=>p.role==='villager'));
+    assert.ok(wolves<n-wolves,'The pack must not begin at parity.');
+    assert.deepEqual(s.players.map(p=>p.role).filter(r=>!['villager','werewolf'].includes(r)).sort(),expectedSpecials[n].slice().sort());
+    assert.ok(s.players.every(p=>p.alive));assert.equal(s.winner,null);
+  }
+});
+
+test('disabled special roles free room for the next enabled role in a small game',()=>{
+  let s=lobby(4);s=doIt(s,'host-key',{type:'settings',settings:{wolves:0,fortune:false}});
+  s=doIt(s,'host-key',{type:'start'});
+  assert.deepEqual(s.players.map(p=>p.role).sort(),['werewolf','witch','girl','villager'].sort());
+});
+
+test('the thirteenth player is rejected and an oversized legacy lobby cannot start',()=>{
+  const full=lobby(12);
+  assert.throws(()=>doIt(full,'extra-key',{type:'join',name:'Thirteenth'}),/full \(12 players\)/);
+  const legacy=structuredClone(full);legacy.players.push({id:'legacy-extra',key:'extra-key',name:'Thirteenth',alive:true,role:null});
+  assert.throws(()=>doIt(legacy,'host-key',{type:'start'}),/no more than 12 players/);
+});
+
+test('custom wolf counts that would begin at parity are rejected',()=>{
+  for(const [n,wolves] of [[4,2],[5,3],[6,3],[12,6]]){
+    let s=lobby(n);s=doIt(s,'host-key',{type:'settings',settings:{wolves}});
+    assert.throws(()=>doIt(s,'host-key',{type:'start'}),/Reduce the werewolves/);
+  }
 });
 test('ready acknowledgements required unless host explicitly passes missing actions',()=>{
   const s=started(); assert.throws(()=>doIt(s,'host-key',{type:'advance'}),/not acted/);
@@ -72,7 +106,7 @@ test('fortune teller learns exact role privately; replay is idempotent',()=>{
 });
 test('wrong-role actions and stale phase actions are rejected',()=>{
   const s=asPhase('fortune');assert.throws(()=>doIt(s,s.players[0].key,{type:'action',target:s.players[1].id}),/not your turn/);
-  assert.throws(()=>doIt(s,s.players[2].key,{type:'action',phaseId:-1}),/moved on/);
+  assert.throws(()=>doIt(s,s.players[2].key,{type:'action',phaseId:-1}),/phase has ended/);
   assert.throws(()=>doIt(s,'intruder',{type:'advance'}),/host/);
 });
 test('wolves cannot kill packmates and one victim is selected across a pack',()=>{
