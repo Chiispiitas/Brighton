@@ -1,0 +1,18 @@
+name: Werewolves game rules
+on:
+  pull_request:
+    paths: ['Werewolves/**', '.github/workflows/werewolves.yml']
+  push:
+    branches: [main]
+    paths: ['Werewolves/**', '.github/workflows/werewolves.yml']
+jobs:
+  game:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+      - run: node --check Werewolves/app.js
+      - run: node --test Werewolves/tests/engine.test.mjs
+      - run: cmp Werewolves/server/engine.mjs Werewolves/wix-backend/src/game/engine.mjs
