@@ -60,6 +60,13 @@ function eligible(s) {
 export function progress(s) {
   const required = eligible(s); return { done: required.filter(p => s.phase === 'vote' ? Object.hasOwn(s.votes, p.id) : !!s.actions[p.id]).length, total: required.length };
 }
+export function packDecision(s) {
+  const wolves = alive(s).filter(p => p.role === 'werewolf');
+  const targets = wolves.map(p => s.actions[p.id]?.target || null);
+  const target = targets[0], victim = byId(s, target);
+  const agreed = wolves.length > 0 && !!victim?.alive && victim.role !== 'werewolf' && targets.every(id => id === target);
+  return { agreed, target: agreed ? target : null };
+}
 function choose(s, id, actor, excludeWolf = false) {
   const p = byId(s, id);
   need(p?.alive && p.id !== actor.id && (!excludeWolf || p.role !== 'werewolf'), 'Choose another living player.'); return p;
@@ -68,12 +75,9 @@ function note(s, id, text) { (s.notes[id] ||= []).push({ day: s.day, text }); s.
 function finishStep(s, random) {
   const phase = s.phase;
   if (phase === 'werewolf') {
-    const counts = {};
-    for (const a of Object.values(s.actions)) if (a.target) counts[a.target] = (counts[a.target] || 0) + 1;
-    const max = Math.max(0, ...Object.values(counts));
-    const ties = Object.keys(counts).filter(id => counts[id] === max);
-    // The pack must agree; a tie is deliberately no kill, never an extra random victim.
-    s.night.victim = ties.length === 1 ? ties[0] : null;
+    const decision = packDecision(s);
+    need(decision.agreed, 'Impossible to continue because the decision has not been made.');
+    s.night.victim = decision.target;
   }
   if (phase === 'reveal') { startNight(s); return; }
   if (NIGHT.includes(phase)) { nextNight(s, NIGHT.indexOf(phase)); return; }
@@ -122,12 +126,14 @@ export function command(inputState, hash, cmd, random = Math.random) {
     s.players.forEach((p, i) => { p.role = deck[i]; });
     setPhase(s, 'reveal'); event(s, 'The prophecy has come true. Werewolves walk among us.');
   } else if (cmd.type === 'advance') {
-    need(host, 'Only the host can move the story forward.', 403);
+    const activeWolf = s.phase === 'werewolf' && actor?.alive && actor.role === 'werewolf';
+    need(host || activeWolf, 'Only the host or an active werewolf can move this phase forward.', 403);
     need(cmd.phaseId === s.phaseId, 'The story has already moved on.');
     if (s.phase === 'day') { if (s.day === 1) startNight(s); else { s.votes = {}; setPhase(s, 'vote'); } }
     else if (s.phase === 'dusk') startNight(s);
     else {
       need(['reveal', ...NIGHT, 'vote'].includes(s.phase), 'Finish the current action first.');
+      if (s.phase === 'werewolf') need(packDecision(s).agreed, 'Impossible to continue because the decision has not been made.');
       const p = progress(s); need(p.done === p.total || cmd.force === true, 'Some players have not acted yet.');
       finishStep(s, random);
     }
@@ -147,7 +153,7 @@ export function command(inputState, hash, cmd, random = Math.random) {
       s.votes[actor.id] = cmd.target || null;
     } else if (cmd.type === 'action') {
       need(eligible(s).some(p => p.id === actor.id), 'It is not your turn.', 403);
-      need(!s.actions[actor.id], 'Your action is already locked in.');
+      need(s.phase === 'werewolf' || !s.actions[actor.id], 'Your action is already locked in.');
       if (s.phase === 'fortune') {
         if (cmd.target) { const target = choose(s, cmd.target, actor); note(s, actor.id, `${target.name} is ${target.role}.`); }
       } else if (s.phase === 'werewolf') {
@@ -180,8 +186,10 @@ export function view(s, hash) {
   const pack = me?.role === 'werewolf' ? s.players.filter(p => p.role === 'werewolf').map(p => p.id) : [];
   return { code: s.code, version: s.version, phase: s.phase, phaseId: s.phaseId, day: s.day,
     host, hostName: s.hostName, settings: s.settings, winner: s.winner, expiresAt: s.expiresAt,
-    players: s.players.map(p => ({ id: p.id, name: p.name, alive: p.alive, ...(s.phase === 'finished' ? { role: p.role } : {}), ...(pack.includes(p.id) ? { pack: true } : {}) })),
-    me: me ? { id: me.id, role: me.role, alive: me.alive, acted: s.phase === 'vote' ? Object.hasOwn(s.votes, me.id) : !!s.actions[me.id], vote: s.votes[me.id] || null, notes: s.notes[me.id] || [], canAct: eligible(s).some(p => p.id === me.id), ...(me.role === 'witch' ? { potions: s.potions, victim: s.phase === 'witch' ? s.night?.victim : null } : {}) } : null,
+    players: s.players.map(p => ({ id: p.id, name: p.name, alive: p.alive, ...(s.phase === 'finished' || !p.alive ? { role: p.role } : {}), ...(pack.includes(p.id) ? { pack: true } : {}) })),
+    me: me ? { id: me.id, role: me.role, alive: me.alive, acted: s.phase === 'vote' ? Object.hasOwn(s.votes, me.id) : !!s.actions[me.id], target: s.phase === 'werewolf' && me.role === 'werewolf' ? s.actions[me.id]?.target || null : null, vote: s.votes[me.id] || null, notes: s.notes[me.id] || [], canAct: eligible(s).some(p => p.id === me.id), ...(me.role === 'witch' ? { potions: s.potions, victim: s.phase === 'witch' ? s.night?.victim : null } : {}) } : null,
+    ...(s.phase === 'werewolf' && (host || me?.alive && me.role === 'werewolf') ? { packDecision: { agreed: packDecision(s).agreed } } : {}),
+    ...(s.phase === 'werewolf' && me?.alive && me.role === 'werewolf' ? { packChoices: alive(s).filter(p => p.role === 'werewolf').map(p => ({ wolfId: p.id, target: s.actions[p.id]?.target || null })) } : {}),
     progress: host || s.phase === 'vote' || s.phase === 'reveal' ? progress(s) : null,
     voteCounts: ['dusk', 'finished'].includes(s.phase) ? Object.values(s.votes).reduce((out, id) => { if (id) out[id] = (out[id] || 0) + 1; return out; }, {}) : null,
     log: s.log, pendingHunter: s.phase === 'hunter' ? s.pendingHunter : null };

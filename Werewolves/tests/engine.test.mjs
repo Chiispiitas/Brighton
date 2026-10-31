@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { createRoom, command, view, progress } from '../server/engine.mjs';
+import { createRoom, command, view, progress, packDecision } from '../server/engine.mjs';
 let sequence = 0;
 const doIt = (s, key, data, rng = () => .2) => command(s, key, { requestId: `request-${++sequence}`, phaseId: s.phaseId, ...data }, rng);
 function lobby(n = 8) {
@@ -49,13 +49,18 @@ test('ready acknowledgements required unless host explicitly passes missing acti
 });
 test('night order and first-day no-vote rule',()=>{
   let s=night(); const order=[];
-  while(s.phase!=='day') { order.push(s.phase); s=doIt(s,'host-key',{type:'advance',force:true}); }
+  while(s.phase!=='day') {
+    order.push(s.phase);
+    if(s.phase==='werewolf')for(const p of s.players.filter(p=>p.role==='werewolf'))s=doIt(s,p.key,{type:'action',target:s.players.find(p=>p.role==='villager').id});
+    s=doIt(s,'host-key',{type:'advance',force:true});
+  }
   assert.deepEqual(order,['fortune','werewolf','girl','witch']);assert.equal(s.day,1);
   s=doIt(s,'host-key',{type:'advance'});assert.equal(s.phase,'fortune');assert.equal(s.day,2);
 });
 test('missing roles are skipped without blocking the host',()=>{
   let s=lobby();s=doIt(s,'host-key',{type:'settings',settings:{wolves:1,fortune:false,girl:false,witch:false,hunter:false}});
   s=doIt(s,'host-key',{type:'start'});s=doIt(s,'host-key',{type:'advance',force:true});assert.equal(s.phase,'werewolf');
+  s=doIt(s,s.players.find(p=>p.role==='werewolf').key,{type:'action',target:s.players.find(p=>p.role==='villager').id});
   s=doIt(s,'host-key',{type:'advance',force:true});assert.equal(s.phase,'day');
 });
 test('fortune teller learns exact role privately; replay is idempotent',()=>{
@@ -76,9 +81,59 @@ test('wolves cannot kill packmates and one victim is selected across a pack',()=
   for(const p of s.players.filter(p=>p.role==='werewolf'))s=doIt(s,p.key,{type:'action',target});
   s=doIt(s,'host-key',{type:'advance'});assert.equal(s.night.victim,target);assert.equal(s.phase,'girl');
 });
-test('tied pack choices cause no kill',()=>{
+test('disagreement blocks the host and both wolves, even with a force override',()=>{
   let s=asPhase('werewolf');s=doIt(s,s.players[0].key,{type:'action',target:s.players[6].id});s=doIt(s,s.players[1].key,{type:'action',target:s.players[7].id});
-  s=doIt(s,'host-key',{type:'advance'});assert.equal(s.night.victim,null);
+  assert.equal(progress(s).done,2);assert.equal(packDecision(s).agreed,false);
+  for(const key of ['host-key',s.players[0].key,s.players[1].key])for(const force of [false,true])assert.throws(()=>doIt(s,key,{type:'advance',force}),/Impossible to continue because the decision has not been made/);
+  assert.equal(s.phase,'werewolf');assert.equal(s.night.victim,null);
+});
+test('every living wolf must choose: a missing choice and a two-to-one majority are insufficient',()=>{
+  let s=asPhase('werewolf',['werewolf','werewolf','werewolf','girl','witch','hunter','villager','villager']);
+  for(const p of s.players.slice(0,2))s=doIt(s,p.key,{type:'action',target:s.players[6].id});
+  assert.throws(()=>doIt(s,'host-key',{type:'advance',force:true}),/Impossible/);
+  s=doIt(s,s.players[2].key,{type:'action',target:s.players[7].id});
+  assert.throws(()=>doIt(s,s.players[0].key,{type:'advance'}),/Impossible/);
+  s=doIt(s,s.players[2].key,{type:'action',target:s.players[6].id});
+  assert.equal(packDecision(s).agreed,true);
+  s=doIt(s,s.players[0].key,{type:'advance'});assert.equal(s.phase,'girl');assert.equal(s.night.victim,s.players[6].id);
+});
+test('shared highlights are visible only to living wolves, and can be revised before advancing',()=>{
+  let s=asPhase('werewolf');s=doIt(s,s.players[0].key,{type:'action',target:s.players[6].id});
+  const other=view(s,s.players[1].key);
+  assert.equal(other.packChoices.find(c=>c.wolfId===s.players[0].id).target,s.players[6].id);
+  for(const key of ['unknown',s.host,s.players[6].key])assert.equal(view(s,key).packChoices,undefined);
+  assert.equal(view(s,s.host).packDecision.agreed,false);
+  s=doIt(s,s.players[0].key,{type:'action',target:s.players[7].id});
+  assert.equal(view(s,s.players[0].key).me.target,s.players[7].id);
+  assert.equal(view(s,s.players[1].key).packChoices[0].target,s.players[7].id);
+  s.players[1].alive=false;assert.equal(view(s,s.players[1].key).packChoices,undefined);
+  assert.equal(packDecision(s).agreed,true);
+  assert.throws(()=>doIt(s,s.players[1].key,{type:'advance'}),/host/);
+});
+test('agreement is checked again when continuing, so a changed highlight revokes it',()=>{
+  let s=asPhase('werewolf');for(const p of s.players.slice(0,2))s=doIt(s,p.key,{type:'action',target:s.players[6].id});
+  assert.equal(packDecision(s).agreed,true);
+  s=doIt(s,s.players[0].key,{type:'action',target:s.players[7].id});
+  assert.throws(()=>doIt(s,'host-key',{type:'advance'}),/Impossible/);
+  assert.throws(()=>doIt(s,s.players[6].key,{type:'advance'}),/host/);
+});
+test('all viewers see killed and voted-out roles immediately, while living roles remain private',()=>{
+  let s=asPhase('witch');s.night.victim=s.players[6].id;
+  s=doIt(s,s.players[4].key,{type:'action',poison:s.players[0].id});
+  s=doIt(s,'host-key',{type:'advance'});
+  for(const key of ['unknown',s.host,s.players[7].key]){
+    const v=view(s,key);assert.equal(v.players[6].role,'villager');assert.equal(v.players[0].role,'werewolf');
+    assert.ok(v.players.filter(p=>p.alive).every(p=>!p.role));
+  }
+  s=asPhase('vote');s=doIt(s,s.players[6].key,{type:'vote',target:s.players[0].id});
+  s=doIt(s,'host-key',{type:'advance',force:true});assert.equal(view(s,'unknown').players[0].role,'werewolf');
+});
+test('hunter role is public before the final shot, and the final-shot victim is also revealed',()=>{
+  let s=asPhase('witch');s.night.victim=s.players[5].id;
+  s=doIt(s,'host-key',{type:'advance',force:true});assert.equal(s.phase,'hunter');
+  assert.equal(view(s,'unknown').players[5].role,'hunter');
+  s=doIt(s,s.players[5].key,{type:'action',target:s.players[0].id});
+  assert.equal(view(s,'unknown').players[0].role,'werewolf');
 });
 test('coin heads reveals one wolf to girl only; tails notifies exactly that wolf',()=>{
   for(const tails of [false,true]){

@@ -19,6 +19,17 @@ s=await request(host,{type:'advance',phaseId:s.phaseId});const order=[];
 let originalVictim=null;
 while(['fortune','werewolf','girl','witch'].includes(s.phase)){
   order.push(s.phase);
+  if(s.phase==='werewolf'){
+    const wolves=players.filter(p=>p.role==='werewolf'),villagers=players.filter(p=>p.role!=='werewolf');
+    await request(wolves[0].token,{type:'action',phaseId:s.phaseId,target:villagers[0].id});
+    await request(wolves[1].token,{type:'action',phaseId:s.phaseId,target:villagers[1].id});
+    const packView=await request(wolves[0].token,{type:'state'});
+    assert.equal(packView.packDecision.agreed,false);assert.equal(packView.packChoices.find(c=>c.wolfId===wolves[1].id).target,villagers[1].id);
+    const privateView=await request(villagers[0].token,{type:'state'});assert.equal(privateView.packChoices,undefined);
+    for(const key of [host,wolves[0].token]){
+      await assert.rejects(()=>request(key,{type:'advance',phaseId:s.phaseId,force:true}),/Impossible to continue because the decision has not been made/);
+    }
+  }
   for(const p of players.filter(x=>x.role===s.phase)){
     const me=await request(p.token,{type:'state'});
     let args={};
@@ -29,15 +40,25 @@ while(['fortune','werewolf','girl','witch'].includes(s.phase)){
     const id=randomUUID();const acted=await request(p.token,{type:'action',phaseId:s.phaseId,requestId:id,...args});
     const replay=await request(p.token,{type:'action',phaseId:s.phaseId,requestId:id,...args});assert.equal(acted.version,replay.version);
   }
-  s=await request(host,{type:'advance',phaseId:s.phaseId});
+  const key=s.phase==='werewolf'?players.find(p=>p.role==='werewolf').token:host;
+  s=await request(key,{type:'advance',phaseId:s.phaseId});
 }
 assert.deepEqual(order,['fortune','werewolf','girl','witch']);assert.equal(s.phase,'day');assert.ok(s.players.every(p=>p.alive));
 s=await request(host,{type:'advance',phaseId:s.phaseId});assert.equal(s.day,2);assert.equal(s.phase,'fortune');
-while(['fortune','werewolf','girl','witch'].includes(s.phase))s=await request(host,{type:'advance',phaseId:s.phaseId,force:true});
+let killed=null;
+while(['fortune','werewolf','girl','witch'].includes(s.phase)){
+  if(s.phase==='werewolf'){
+    killed=players.find(p=>p.role==='villager');
+    for(const p of players.filter(p=>p.role==='werewolf'))await request(p.token,{type:'action',phaseId:s.phaseId,target:killed.id});
+  }
+  s=await request(host,{type:'advance',phaseId:s.phaseId,force:true});
+}
+assert.equal(s.players.find(p=>p.id===killed.id).role,'villager');
 assert.equal(s.phase,'day');s=await request(host,{type:'advance',phaseId:s.phaseId});assert.equal(s.phase,'vote');
 const wolf=players.find(p=>p.role==='werewolf');
-for(const p of players)await request(p.token,{type:'vote',phaseId:s.phaseId,target:p.id===wolf.id?null:wolf.id});
+for(const p of players.filter(p=>p.id!==killed.id))await request(p.token,{type:'vote',phaseId:s.phaseId,target:p.id===wolf.id?null:wolf.id});
 s=await request(host,{type:'advance',phaseId:s.phaseId});assert.equal(s.phase,'dusk');assert.equal(s.players.find(p=>p.id===wolf.id).alive,false);
-const spectator=await request(randomBytes(32).toString('hex'),{type:'state'});assert.equal(spectator.me,null);assert.equal(spectator.host,false);assert.ok(spectator.players.every(p=>!p.role&&!p.pack));
-assert.ok(!JSON.stringify(spectator).includes('notes'));console.log('Live private roles, replay safety, full night order, coin, witch save, day-one no vote, day-two voting and spectator privacy passed');
+const spectator=await request(randomBytes(32).toString('hex'),{type:'state'});assert.equal(spectator.me,null);assert.equal(spectator.host,false);assert.ok(spectator.players.filter(p=>p.alive).every(p=>!p.role&&!p.pack));
+assert.equal(spectator.players.find(p=>p.id===wolf.id).role,'werewolf');assert.equal(spectator.players.find(p=>p.id===killed.id).role,'villager');assert.equal(spectator.packChoices,undefined);
+assert.ok(!JSON.stringify(spectator).includes('notes'));console.log('Live pack highlights, mandatory consensus, revised choices, wolf continuation, killed/voted-out role reveals, replay safety and privacy passed');
 console.log('LIVE_QA_OK',JSON.stringify({code,version:s.version,phase:s.phase}));
