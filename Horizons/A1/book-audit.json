@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "updated": "2026-11-01",
-  "status": "Substantial visual-world revision and saved-PDF proof complete; publication verification pending",
+  "status": "Substantial visual-world revision complete; saved-PDF and live verification complete",
   "authority": "Author delegates editorial authority; his own B2 book sets emotional direction. Preserve colourful learning objects and warm adult playfulness alongside coherent functional roles.",
   "scope": "Units1–8,32lessons and fourpairedreviews.72corepages plus4endcreditpages; front/index/practicebanks/workbook/optionalannexes excluded.",
   "baseline": {
@@ -167,10 +167,10 @@
       "subjective_listening_review": false
     },
     "live_viewer": {
-      "completed": false,
-      "all90controls_play_pause": false,
-      "print_ui_hidden": false,
-      "verified_file_count": null
+      "completed": true,
+      "all90controls_play_pause": true,
+      "print_ui_hidden": true,
+      "verified_file_count": 177
     },
     "evidence_directory": "Sources/Visual-worlds-20261101",
     "prior_expressive_evidence": "Sources/Expressive-spirit-20261031",
@@ -322,9 +322,9 @@
         "Sources"
       ],
       "fingerprint": {
-        "files": 841,
-        "bytes": 645495882,
-        "sha256": "2ca8a1204e31a4ccead8d608be7eec0777e525489d2eaf3f1ec38210691419be"
+        "files": 844,
+        "bytes": 645552662,
+        "sha256": "8ade1c879b9b8ea76e1c673524e2d0d4809e7eadc968c0f74366db1baef3e116"
       }
     },
     "shared_rendering": {
@@ -365,8 +365,8 @@
       ],
       "fingerprint": {
         "files": 12,
-        "bytes": 121880,
-        "sha256": "5734ef41c2568e1919a6d7e0d5ae22dccdd3effbb890cf72f37fd1a82577f9e8"
+        "bytes": 121868,
+        "sha256": "fd32fb6c2d466f5a9f60907ba4a7cb9cd340b2869e70394af67e836b99070816"
       }
     }
   },
@@ -376,7 +376,7 @@
     "priority": "Substantial content-specific imagegen settings and concept objects, saturated local colour, warm adult playfulness, protected expressive learning graphics and varied compositions; clear live text and response space govern the integration.",
     "regression_baseline": "8069492116058e45846c79601c66ebd8a3207abb",
     "protected_register": "Sources/Visual-personality.json",
-    "verification": "Complete local/native PDF proof; live pending",
+    "verification": "Complete including published viewer",
     "functional_tool_counts": {
       "grammar": 25,
       "pronunciation": 1,

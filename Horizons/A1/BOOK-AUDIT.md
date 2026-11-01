@@ -1,6 +1,6 @@
 # Horizons A1 — current book audit
 
-Updated 1 November 2026. **Substantial visual-world revision and saved-PDF proof complete; publication verification pending.** Author acceptance is not claimed.
+Updated 1 November 2026. **Substantial visual-world revision complete; saved-PDF and live verification complete.** Author acceptance is not claimed.
 
 ## Authority, spirit and scope
 
@@ -37,8 +37,8 @@ The book retains all eleven filled 10mm number circles with white 15pt numerals 
 - [x] Actual empty response fields are clear and usable. Safe live text insets, picture evidence and physical-object integration inspected.
 - [x] Native 76-page A4 PDF reopened: every learner word token, footer and page size retained. All 36 selected new visual settings and 12 retained generated surfaces are active.
 - [x] Visual-spirit/registered-asset checks, protected numeral/alphabet checks, canonical show checks and 98 audio-script preflights pass. All 85 MP3 files decode; no recording/script changes.
-- [ ] Published files match the checked local edition; all 90 audio controls play/pause, navigation works and screen-only controls hide for print without moving content.
-- [ ] Final evidence and current fingerprints saved after publication verification.
+- [x] Published files match the checked local edition; all 90 audio controls play/pause, navigation works and screen-only controls hide for print without moving content.
+- [x] Final evidence and current fingerprints saved after publication verification.
 
 Current evidence: Sources/Visual-worlds-20261101. Earlier evidence in Sources/Expressive-spirit-20261031 and Sources/Editorial-overhaul-20261031 is historical.
 
