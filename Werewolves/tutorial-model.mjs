@@ -5,38 +5,38 @@ const YOU='demo-you', HOST='demo-host';
 const step=(title,text,scene,focus,play=[])=>({title,text,scene,focus,play});
 const pick=(id,delay=900)=>[delay,`[data-player="${id}"]`];
 const click=(selector,delay=1900)=>[delay,selector];
-const card=step('Check your card privately','Open the card, read your role, then press Ready. Everyone does this before the first night.','card','#reveal',[click('#reveal',900),click('#ready',5500)]);
-const vote=step('Vote from day two','Choose a house and confirm your vote, or Abstain. A unique highest vote eliminates that player; a tie eliminates nobody.','vote','[data-player="p1"]',[pick('p1'),click('#confirm-target')]);
+const card=step('Check your card','Open your card, then press Ready. Keep your role private.','card','#reveal',[click('#reveal',900),click('#ready',5500)]);
+const vote=step('Vote from day two','Choose a player and confirm, or Abstain. Whoever gets the most votes is eliminated; ties eliminate nobody.','vote','[data-player="p1"]',[pick('p1'),click('#confirm-target')]);
 export const LESSONS={
   villager:[card,
-    step('Sleep through the night','The villager has no night action. Close your eyes and wait while the host calls the other roles.','sleep','.sleep'),
-    step('Discuss on the first day','Listen to the other players and discuss who could be a werewolf. There is no elimination vote on day one.','day','.phase-banner'),vote,
-    step('Read the revealed card','This example shows Rowan voted out as a werewolf. Every eliminated player reveals their card and stops acting or voting. The village wins when no wolves remain.','eliminated','[data-player="p1"]')],
+    step('Sleep at night','You have no night action. Close your eyes until morning.','sleep','.sleep'),
+    step('Discuss on day one','Discuss who might be a werewolf. Nobody is voted out on the first day.','day','.phase-banner'),vote,
+    step('Read the revealed card','Eliminated players reveal their cards and cannot act or vote. The village wins when no werewolves remain.','eliminated','[data-player="p1"]')],
   werewolf:[card,
-    step('Find your pack','Rowan is the other werewolf. His highlight is on Ivy. You can see the pack and their choices; the other players cannot. Select Ivy to agree.','pack','.pack-choices',[pick('p2')]),
-    step('A split decision blocks the night','Your highlight is on Finn, but Rowan chose Ivy. Even a majority is not enough: every living wolf must choose the same person. Change your choice to Ivy.','split','#pack-continue',[pick('p2')]),
-    step('Continue after agreement','Both wolves chose Ivy. The button is now available. Either a living wolf or the host can continue the night.','agreed','#pack-continue',[click('#pack-continue',1000)]),
-    step('Keep your role hidden during the day','This example shows Ivy eliminated at dawn. Discuss and vote with everyone else. Wolves win when they equal or outnumber the other living players, after any hunter shot.','dawn','.map-legend'),
-    step('Vote with everyone else','From day two, the host opens a vote after discussion. Your pack is still marked only for you. Try selecting Finn and confirming your vote. You can also Abstain.','wolf-vote','[data-player="p3"]',[pick('p3'),click('#confirm-target')])],
+    step('Agree with your pack','Rowan, your packmate, chose Ivy. Choose Ivy too; pack choices stay private.','pack','.pack-choices',[pick('p2')]),
+    step('Match the choices','You chose Finn; Rowan chose Ivy. Change your choice to Ivy—every living wolf must agree.','split','#pack-continue',[pick('p2')]),
+    step('Continue the night','Both wolves chose Ivy. You or the host can now press Continue the night.','agreed','#pack-continue',[click('#pack-continue',1000)]),
+    step('Keep your role secret','Keep your role secret during the day. Wolves win when they equal or outnumber everyone else alive, after any hunter shot.','dawn','.map-legend'),
+    step('Join the daytime vote','From day two, select Finn and confirm when the host opens voting. Your pack stays visible only to you.','wolf-vote','[data-player="p3"]',[pick('p3'),click('#confirm-target')])],
   fortune:[card,
-    step('Check one living player','Select Rowan’s house, then Confirm choice. You learn the exact role of one living player each night. You can also pass.','fortune','[data-player="p1"]',[pick('p1'),click('#confirm-target')]),
-    step('Your result stays private','Rowan is a werewolf. The result is also kept in Your notes. Other players still see Rowan’s house without his role. Keep quiet until morning.','notes','.notes',[click('.notes summary',1100)]),vote,
-    step('Help the village find the wolves','Use what you learned during discussion. A role check does not eliminate anyone; the village must still vote. Eliminated players reveal their cards.','eliminated','[data-player="p1"]')],
+    step('Check one living player','Each night, you may check one living player. Select Rowan and confirm to see his role.','fortune','[data-player="p1"]',[pick('p1'),click('#confirm-target')]),
+    step('Keep the result private','Your notes keep Rowan’s role. Only you see the result; keep quiet until morning.','notes','.notes',[click('.notes summary',1100)]),vote,
+    step('Use your information','A role check does not eliminate anyone. Discuss what you learned, then help the village vote.','eliminated','[data-player="p1"]')],
   girl:[card,
-    step('Spying: the heads example','Press Flip the coin. Spying identifies one living werewolf. In this demonstration the coin lands heads, so the wolf does not discover you.','heads','#spy',[click('#spy',1200)]),
-    step('Spying: the tails example','Try the other outcome. You still identify Rowan, but that werewolf also learns that you are the Little Girl. Real games choose the coin result randomly.','tails','#spy',[click('#spy',1200)]),
-    step('You can stay asleep','You do not have to risk being discovered. Stay asleep records a pass and reveals nobody to you that night.','girl','#pass',[click('#pass',1200)]),vote],
+    step('Heads: stay hidden','Press Flip the coin to try the heads example. You identify Rowan without being discovered.','heads','#spy',[click('#spy',1200)]),
+    step('Tails: you are seen','Press Flip the coin to try tails. You identify Rowan, but he learns you are the Little Girl.','tails','#spy',[click('#spy',1200)]),
+    step('Or stay asleep','Press Stay asleep to pass without spying. You learn no role that night.','girl','#pass',[click('#pass',1200)]),vote],
   witch:[card,
-    step('Identify tonight’s victim','Ivy was attacked tonight and can be revived. Oscar was eliminated earlier and stays dead. The named revival panel and house labels show the difference.','victim','.witch-victim-card'),
-    step('Use your healing potion','Check Revive Ivy and confirm. The potion saves tonight’s werewolf victim at dawn. You have only one healing potion for the whole game.','heal','#heal',[click('#heal',1000),click('#cast',2500)]),
-    step('Use poison only if you choose','Check Use poison potion. The player list appears; choose Rowan, then confirm. You have one poison potion for the whole game. Leaving the box unchecked keeps it.','poison','#use-poison',[click('#use-poison',900),[1800,'#poison','p1'],click('#cast',3000)]),
-    step('Each potion can be used once','Both potions have already been used in this example, so their controls are unavailable. You may use both in one night, including on yourself. A player who is both healed and poisoned still dies.','spent','.witch-choice'),
-    step('The results appear at dawn','This example shows Ivy saved, Rowan poisoned and Oscar still eliminated. Only eliminated roles become public. Keep everyone else’s role private.','witch-dawn','.map-legend')],
+    step('Find who can be saved','Ivy was attacked tonight and can be revived. Oscar died earlier and cannot be revived.','victim','.witch-victim-card'),
+    step('Save Ivy','Check Revive Ivy, then confirm. Your healing potion can be used once per game.','heal','#heal',[click('#heal',1000),click('#cast',2500)]),
+    step('Choose whether to poison','Check Use poison potion, choose Rowan, then confirm. Leave it unchecked to keep the potion.','poison','#use-poison',[click('#use-poison',900),[1800,'#poison','p1'],click('#cast',3000)]),
+    step('Potions are single-use','Each potion works once per game. You may use both together, but poison still kills a healed player.','spent','.witch-choice'),
+    step('See the morning result','Ivy was saved, Rowan was poisoned, and Oscar stays dead. Only eliminated players reveal their roles.','witch-dawn','.map-legend')],
   hunter:[card,
-    step('Your final action happens after elimination','Your Hunter card is public because you were eliminated. You still get one final choice before the game checks who won. Select Rowan and confirm, or Pass.','hunter','[data-player="p1"]',[pick('p1'),click('#confirm-target')]),
-    step('The chosen player is eliminated too','This example shows Rowan taken by the hunter. Both cards are public. After this final action you watch quietly and cannot vote.','hunter-result','[data-player="p1"]'),
-    step('Passing is allowed','You can choose not to take anyone with you. Press Pass to finish the hunter’s action without another elimination.','hunter','#pass',[click('#pass',1200)]),
-    step('A final shot can decide the winner','Here Rowan is the last surviving wolf. Select his house and confirm: your final shot removes the last wolf, so the village wins.','last-wolf','[data-player="p1"]',[pick('p1'),click('#confirm-target')])]
+    step('After elimination','Select Rowan and confirm, or Pass. The game checks for a winner after your final action.','hunter','[data-player="p1"]',[pick('p1'),click('#confirm-target')]),
+    step('Your target leaves too','Rowan is eliminated and both cards are public. You now watch without acting or voting.','hunter-result','[data-player="p1"]'),
+    step('You may pass','Press Pass to take nobody with you.','hunter','#pass',[click('#pass',1200)]),
+    step('Decide the result','Rowan is the last living werewolf. Select him and confirm to win for the village.','last-wolf','[data-player="p1"]',[pick('p1'),click('#confirm-target')])]
 };
 
 // A new frame must reset the shared UI, including a previously revealed card.
@@ -89,14 +89,14 @@ export class TutorialGame{
     const sequence=[0,this.step.scene==='tails'?.8:.2];
     this.raw=command(this.raw,YOU,{...body,phaseId:this.raw.phaseId,requestId:`tutorial-${++this.serial}`},()=>sequence.shift()??.2);
     this.completed=body.type==='advance'||body.type==='ready'||body.type==='vote'||body.type==='action'&&(this.raw.phase!=='werewolf'||this.snapshot().packDecision?.agreed);
-    if(this.raw.phase==='finished')this.feedback='The last werewolf is gone. Villagers win after the hunter’s final shot.';
-    else if(body.type==='ready')this.feedback='Ready. In a real game, the host puts the village to sleep after the cards are checked.';
-    else if(body.type==='vote')this.feedback=body.target?'Vote recorded. The host counts everyone’s votes.':'You abstained. This records no vote against a player.';
-    else if(body.type==='advance')this.feedback='The pack agreed and the night continued. The other night roles act before dawn.';
-    else if(this.raw.phase==='werewolf')this.feedback=this.snapshot().packDecision.agreed?'Both highlights match. The night can continue.':'Your highlights differ. The continue button stays blocked.';
-    else if(body.heal||body.poison)this.feedback='Potion choice recorded. Used potions are spent for the rest of the game.';
-    else if(this.role==='hunter')this.feedback=body.target?'Your final target is eliminated and their card is revealed.':'You passed. No additional player was eliminated.';
-    else this.feedback=body.target||body.spy?'Result recorded privately.':'You passed this night action.';
+    if(this.raw.phase==='finished')this.feedback='The last wolf is gone. Villagers win.';
+    else if(body.type==='ready')this.feedback='Card checked. You’re ready.';
+    else if(body.type==='vote')this.feedback=body.target?'Your vote is saved.':'You abstained.';
+    else if(body.type==='advance')this.feedback='The pack agreed. The night continues.';
+    else if(this.raw.phase==='werewolf')this.feedback=this.snapshot().packDecision.agreed?'Your choices match.':'Your choices differ. Choose Ivy to match Rowan.';
+    else if(body.heal||body.poison)this.feedback='Your potion choice is saved.';
+    else if(this.role==='hunter')this.feedback=body.target?'Your target is eliminated too.':'No extra player was eliminated.';
+    else this.feedback=body.target||body.spy?'Your result is private.':'You passed.';
     return this.snapshot();
   }
 }

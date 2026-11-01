@@ -18,9 +18,9 @@ The frontend lives in `Chiispiitas/Brighton`, beside the exams. The game uses a 
 
 ## Learn to play
 
-Open **Learn to play** in the header, or select a role in the landing page's **Role tutorials** row. Each of the six roles has its own animated slide sequence, real clickable game controls, Back/Next navigation, slide replay and optional **Watch demo** playback. Direct links use `?tutorial=witch` (or `villager`, `werewolf`, `girl`, `fortune`, `hunter`).
+Open **Learn to play** in the header, or select a role in the landing page's **Role tutorials** row. Each of the six roles has short, self-paced steps with one instruction beside the relevant practice controls. **Show me** demonstrates only the current example and never advances automatically. **Next step**, **Previous**, **Reset example** and a desktop lesson outline let the learner control the pace. Direct links use `?tutorial=witch` (or `villager`, `werewolf`, `girl`, `fortune`, `hunter`).
 
-The tutorials render the same village, cards and action panels as a game. Fictional practice states run through the shared engine locally; they make no room-service requests and never save a demo over the player's room session. Motion follows the device's reduced-motion preference. Each slide can be reset independently, and players can exit to the landing page to return to their saved village.
+Tutorials use a calm, high-contrast layout and readable type. Each step hides unrelated game panels; phone-sized screens use large player cards for selection rather than tiny houses. Fictional examples run through the shared engine locally, without room-service requests or changes to the saved room. Motion follows the device's reduced-motion preference. Every example can be reset independently.
 
 ## Rules implemented
 

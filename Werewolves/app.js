@@ -277,7 +277,7 @@ $('#sound').onclick=async()=>{
   }catch{toast('Sound is unavailable in this browser.');}
 };
 if(tutorialMode){
-  const {createTutorial}=await import('./tutorial.mjs');
+  const {createTutorial}=await import('./tutorial.mjs?v=readability-2');
   tutorial=createTutorial({root,role:params.get('tutorial'),present:demo=>{state=demo;renderRoom();},notify:toast,closeModal:()=>{if(modal.open)modal.close();}});
   tutorial.start();
 }else if(projector&&/^\d{6}$/.test(params.get('room')||'')){

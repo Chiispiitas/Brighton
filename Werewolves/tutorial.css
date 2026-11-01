@@ -1,9 +1,224 @@
+/* Tutorial presentation is deliberately calmer than the game itself. */
 .topbar{flex-wrap:wrap}
-.tutorial-intro{display:flex;align-items:flex-start;justify-content:space-between;gap:28px;background:var(--paper);border:3px double #6e5638;padding:25px;margin-bottom:24px;box-shadow:4px 5px 0 #342e2455}.tutorial-intro>div{max-width:760px}.tutorial-intro p{margin-top:14px}.tutorial-intro>a{white-space:nowrap;text-decoration:none}.tutorial-safe{font-size:15px;color:var(--muted)}
-.tutorial-roles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.tutorial-role{display:flex;align-items:center;gap:18px;text-align:left;border:3px double #6e5638;background:var(--paper);padding:17px;box-shadow:3px 4px 0 #342e2455;transition:background .2s,transform .2s}.tutorial-role:hover{background:var(--paper-light);transform:translateY(-3px)}.tutorial-role img{width:38%;max-width:140px;aspect-ratio:1;object-fit:contain;box-shadow:2px 3px 0 #342e2455}.tutorial-role b{font:26px var(--serif);display:block;line-height:1.1}.tutorial-role small{display:block;font-size:16px;line-height:1.3;margin:8px 0;color:var(--muted)}.tutorial-role em{font-size:15px;font-style:normal;text-decoration:underline;text-underline-offset:3px}.tutorial-basics{background:var(--paper);border:2px solid #6e5638;padding:23px;margin-top:25px}.tutorial-basics p{margin-top:12px;max-width:1000px}
-.lesson-chrome{position:sticky;top:0;z-index:22;background:var(--paper-light);border:3px double #6e5638;box-shadow:3px 5px 0 #342e2455;margin-bottom:22px;padding:14px 20px 0}.lesson-role{display:flex;align-items:center;gap:12px}.lesson-role img{width:43px;height:43px;object-fit:contain}.lesson-role>div{flex:1}.lesson-role span{font-size:13px;color:var(--muted)}.lesson-role h2{font-size:27px;line-height:1.12}.lesson-copy{font-size:17px;line-height:1.35;margin:10px 0 6px;max-width:1100px}.lesson-feedback{font-size:14px;color:#6a583c;min-height:22px}.lesson-success{color:#37542c;font-weight:700}.lesson-success:before{content:'✓ ';}.lesson-controls{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin:10px 0 12px}.lesson-controls>.quiet{margin-left:8px}.lesson-controls .primary,.lesson-controls .secondary{min-height:36px;padding:7px 13px;font-size:15px}.lesson-dots{display:flex;gap:5px;margin-left:auto}.lesson-dots button{border:1px solid #92754d;background:#e1d0a6;width:27px;height:27px;padding:0;font-size:13px;border-radius:50%}.lesson-dots [aria-current]{background:#657344;color:#fff5d6;border-color:#39482d}.lesson-timer{height:3px;background:#c4b18b;margin:0 -20px}.lesson-timer i{display:block;height:100%;background:#8e3b2d;width:0}.demo-playing .lesson-timer i{animation:demo-time 9.5s linear forwards;animation-delay:var(--elapsed,0ms)}.demo-badge{padding:5px 12px;background:#d7d7ae;border:1px solid #697546;font-size:14px}.tutorial-mode .room-head{margin-bottom:14px}.tutorial-mode .room-head .eyebrow:after{content:' · Demo';color:#8e3b2d}.tutorial-focus{outline:3px solid #a44830!important;outline-offset:4px;animation:demo-ring 2s ease-in-out infinite;scroll-margin-top:250px}.house.tutorial-focus{outline:none!important}.house.tutorial-focus .nameplate{outline:3px solid #a44830;outline-offset:3px;animation:demo-ring 2s ease-in-out infinite}.demo-cursor-target{position:relative}.demo-cursor-target:after{content:'';position:absolute;pointer-events:none;width:24px;height:24px;border:3px solid #a44830;background:#f5de9a55;border-radius:50%;right:10%;top:30%;z-index:10;animation:demo-tap 1s ease-out 2}.tutorial-mode .house.demo-cursor-target:after{top:55%;right:35%}.lesson-enter{animation:demo-slide .55s ease-out}.tutorial-mode .role-card{animation:demo-card .55s ease-out}.tutorial-complete{display:flex;align-items:center;gap:35px;max-width:900px;margin:60px auto;padding:32px;background:var(--paper);border:3px double #6e5638;box-shadow:4px 5px 0 #342e2455}.tutorial-complete>img{width:30%;max-width:220px;aspect-ratio:1;object-fit:contain}.tutorial-complete p{margin:17px 0}.tutorial-complete a{text-decoration:none}.tutorial-complete .lesson-controls{margin-top:22px}
-@keyframes demo-slide{from{opacity:.2;transform:translateY(16px)}to{opacity:1;transform:translateY(0)}}@keyframes demo-card{from{opacity:0;transform:perspective(800px) rotateY(-65deg)}to{opacity:1;transform:perspective(800px) rotateY(0)}}@keyframes demo-ring{0%,100%{outline-color:#a44830}50%{outline-color:#d1a450}}@keyframes demo-tap{from{transform:scale(.7);opacity:1}to{transform:scale(1.8);opacity:0}}@keyframes demo-time{to{width:100%}}
-@media(max-width:1100px){.tutorial-roles{grid-template-columns:repeat(2,minmax(0,1fr))}.tutorial-role img{max-width:115px}.lesson-dots{margin-left:0}.lesson-copy{font-size:16px}}
-@media(max-width:780px){.lesson-chrome{padding:10px 12px 0;margin-bottom:16px}.lesson-role{gap:9px}.lesson-role img{width:34px;height:34px}.lesson-role h2{font-size:23px}.lesson-role span{font-size:11px}.lesson-role .quiet{font-size:12px}.lesson-copy{font-size:15px;margin:9px 0 5px}.lesson-feedback{font-size:12px;line-height:1.2}.lesson-controls{gap:7px;margin:9px 0}.lesson-controls>.quiet{font-size:12px;margin-left:3px}.lesson-controls .primary,.lesson-controls .secondary{font-size:13px;min-height:32px;padding:6px 10px}.lesson-dots{margin-left:auto}.lesson-dots button{width:21px;height:21px;font-size:11px}.lesson-timer{margin:0 -12px}.tutorial-intro{padding:18px;gap:15px}.tutorial-intro h1{font-size:34px}.tutorial-intro p{font-size:16px}.tutorial-intro>a{font-size:13px;padding:7px 9px;min-height:32px}.tutorial-role{padding:13px;gap:12px}.tutorial-role b{font-size:23px}.tutorial-role small{font-size:14px}.tutorial-roles{gap:15px}.tutorial-mode .room-head h1{font-size:24px}.tutorial-mode .room-tools{max-width:none}.tutorial-mode .room-head .eyebrow{font-size:12px}.tutorial-focus{scroll-margin-top:280px}.tutorial-complete{margin:20px auto;padding:22px;gap:20px}.tutorial-complete .lesson-controls{align-items:stretch;flex-direction:column}.tutorial-mode .room-layout:has(#confirm-target),.tutorial-mode .room-layout:has(#pack-continue){padding-bottom:95px}}
-@media(max-width:500px){.tutorial-roles{grid-template-columns:1fr}.tutorial-role img{width:29%;max-width:95px}.tutorial-intro{flex-direction:column}.lesson-dots{width:100%;justify-content:center}.lesson-role h2{font-size:21px}.lesson-copy{font-size:14px}.lesson-role img{display:none}.tutorial-complete{flex-direction:column;text-align:center}.tutorial-complete>img{width:45%}.topbar nav{margin-left:auto;gap:16px}.tutorial-mode .room-head{padding:8px 10px}.tutorial-mode .room-head h1{font-size:21px}.demo-badge{font-size:11px;padding:4px 7px}.tutorial-mode .room-tools .quiet{font-size:11px}}
-@media(prefers-reduced-motion:reduce){.tutorial-mode *,.tutorial-mode *:before,.tutorial-mode *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}.demo-playing .lesson-timer i{width:100%}}
+body.tutorial-page{background:#f4f5f0;color:#22332a;font-family:'Segoe UI',system-ui,sans-serif}
+.tutorial-page .scene,.tutorial-page .grain{display:none}
+.tutorial-page .topbar{background:#fffef9;border:0;border-bottom:1px solid #d9dfd5;box-shadow:none}
+.tutorial-page .topbar .quiet{font-family:'Segoe UI',system-ui,sans-serif;font-size:14px;color:#45564a}
+.tutorial-page main{max-width:1320px;padding:30px 36px}
+.tutorial-page footer{color:#647266;font-family:inherit;font-size:13px}
+.tutorial-mode h1,.tutorial-mode h2,.tutorial-mode h3{font-family:inherit;font-weight:650;line-height:1.25;letter-spacing:-.02em}
+.tutorial-kicker{display:block;font-size:12px;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:#617364;margin-bottom:12px}
+.tutorial-exit{border:0;background:none;color:#526356;font:inherit;font-size:14px;padding:9px 0;text-decoration:underline;text-underline-offset:4px;cursor:pointer}
+.tutorial-intro{display:flex;align-items:start;justify-content:space-between;gap:24px;margin:8px 0 30px}
+.tutorial-intro h1{font-size:36px;margin-bottom:12px}
+.tutorial-intro p{color:#59685c;font-size:18px;line-height:1.6}
+.tutorial-roles{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px}
+.tutorial-role{display:flex;align-items:center;gap:18px;text-align:left;background:#fffef9;border:1px solid #d7dfd2;border-radius:12px;padding:22px;min-height:152px;color:#24372a;transition:box-shadow .18s,border-color .18s}
+.tutorial-role:hover{border-color:#6b8465;box-shadow:0 4px 16px #253a2810}
+.tutorial-role img{width:88px;height:88px;object-fit:contain;border-radius:5px}
+.tutorial-role b{display:block;font-size:21px;font-weight:650;line-height:1.3}
+.tutorial-role small{display:block;font-size:15px;line-height:1.55;color:#687366;margin-top:7px}
+.role-arrow{margin-left:auto;font-size:24px;color:#698060}
+.tutorial-safe{font-size:13px;line-height:1.6;color:#6a786d;margin-top:24px}
+.tutorial-basics{margin-top:28px;border-top:1px solid #d5ded1;padding-top:19px;color:#526356;font-size:16px;line-height:1.75}
+.tutorial-basics summary{cursor:pointer;font-weight:600;color:#354f3b;width:fit-content}
+.tutorial-basics ol{padding-left:23px;max-width:850px;margin:16px 0}
+.tutorial-basics li{padding:5px 0}
+.lesson-header{display:flex;align-items:center;gap:22px;min-height:44px;margin-bottom:26px;font-size:15px}
+.lesson-role-name{display:flex;gap:9px;align-items:center;padding-left:22px;border-left:1px solid #d3dcd0;font-weight:600}
+.lesson-role-name img{width:30px;height:30px;object-fit:contain;border-radius:4px}
+.lesson-counter{margin-left:auto;color:#6a786b;font-size:14px}
+.lesson-shell{display:grid;grid-template-columns:270px minmax(0,1fr);gap:38px;align-items:start}
+.lesson-coach{position:sticky;top:28px;padding:12px 0}
+.lesson-coach h1{font-size:31px;line-height:1.25;margin-bottom:18px;max-width:15ch}
+.lesson-copy{font-size:20px;line-height:1.65;color:#435747;margin:0 0 26px;max-width:28ch}
+.tutorial-show{background:#fffef9;border:1px solid #a5b59f;border-radius:8px;padding:11px 18px;min-height:45px;font:inherit;font-size:16px;font-weight:600;color:#355a3c;box-shadow:none}
+.tutorial-show:hover{background:#eaf0e6}
+.lesson-outline{margin-top:28px;color:#6a786b;font-size:13px;line-height:1.6}
+.lesson-outline summary{cursor:pointer;width:fit-content;padding:7px 0}
+.lesson-outline ol{padding-left:19px;margin:9px 0}
+.lesson-outline button{font:inherit;font-size:14px;border:0;background:none;text-align:left;color:#637161;padding:7px 3px;line-height:1.4}
+.lesson-outline [aria-current]{color:#2d4d33;font-weight:700}
+.lesson-stage{min-width:0;background:#fffef9;border:1px solid #d9e0d4;border-radius:14px;overflow:hidden;box-shadow:0 4px 18px #273c2a06}
+.practice-header{display:flex;align-items:center;gap:15px;padding:15px 22px;border-bottom:1px solid #e3e8de;color:#5a6c5d;min-height:58px;font-size:14px;font-weight:600}
+.practice-header #demo-replay{font-size:12px;margin-left:auto;font-weight:400;white-space:nowrap}
+.practice-pack-status{font-size:12px;color:#8a5b36;font-weight:600;padding:4px 8px;border-radius:5px;background:#fcf0df}
+.practice-pack-status.is-agreed{color:#3c6940;background:#e8f2e3}
+.lesson-example{padding:22px}
+.tutorial-page .room-layout{display:flex;flex-direction:column;gap:0;margin:0}
+.tutorial-page .map-panel{width:min(100%,640px);min-width:0;margin:0 auto;background:none;border:0;box-shadow:none}
+.tutorial-page .phase-banner{display:none}
+.tutorial-page .village-map{aspect-ratio:1.5;border-radius:7px;overflow:hidden}
+.tutorial-page .house{width:17%;margin-left:-8.5%;margin-top:-8.5%}
+.tutorial-page .house .nameplate{font-family:'Segoe UI',system-ui,sans-serif;font-size:13px;line-height:1.2;background:#fffdf3;color:#253527;border:1px solid #9a9e80;padding:3px 5px;box-shadow:0 1px 2px #23331826;min-width:43px}
+.tutorial-page .nameplate b{font-weight:600;max-height:34px}
+.tutorial-page .house small{font-size:10px;line-height:1.25;color:#68725d;margin-top:2px}
+.tutorial-page .house.self .nameplate{background:#f0f5e9;border-color:#6d8860}
+.tutorial-page .house.selected .nameplate{background:#fff0b8;border:2px solid #a3792d}
+.tutorial-page .house.dead .nameplate{background:#ebe8df}
+.tutorial-page .map-legend{background:none;border:0;padding:9px 0;color:#7a8474;font:12px/1.4 'Segoe UI',system-ui,sans-serif}
+.tutorial-page .square-marker{font-family:inherit;font-size:20px;min-width:44px;background:#fdf8e8;border:1px solid #9e9f84;border-radius:5px;padding:5px 8px;box-shadow:none}
+.tutorial-page .square-marker small{font:11px 'Segoe UI',system-ui,sans-serif}
+.tutorial-page .sidebar{display:block;width:100%;min-width:0}
+.tutorial-page .history,.tutorial-page .private-tag,.tutorial-page .host-tools,.tutorial-page .action-prompt,.tutorial-page .status-line{display:none}
+.tutorial-page .panel{border:0;background:none;box-shadow:none;padding:0;color:#25372b}
+.tutorial-page .panel p{color:#526451;line-height:1.65;font-size:17px}
+.tutorial-page .panel>h3{font-size:22px;margin-bottom:14px}
+.lesson-board .sidebar>.panel{display:flex;align-items:center;flex-wrap:wrap;gap:15px;border-top:1px solid #e5eadf;margin-top:8px;padding:18px 0 0}
+.lesson-board .panel>h3,.lesson-board .notes,.lesson-board .sidebar .private-card{display:none}
+.lesson-board .target-label{margin:0;padding:0;font-size:16px!important;font-weight:600;flex:1;min-width:130px}
+.tutorial-page .action-buttons{display:flex;gap:10px;margin:0;flex-wrap:wrap}
+.lesson-board .action-buttons{margin-left:auto}
+.tutorial-page .action-buttons:has(#confirm-target),.tutorial-page #pack-continue{position:static;bottom:auto;left:auto;width:auto;z-index:auto;border:0;padding:0;box-shadow:none;background:none;margin:0}
+.tutorial-page .room-layout:has(#confirm-target),.tutorial-page .room-layout:has(#pack-continue){padding-bottom:0}
+.tutorial-page .primary,.tutorial-page .secondary,.tutorial-page .danger{font-family:inherit;border:1px solid #ccd7c6;border-radius:7px;box-shadow:none;min-height:43px;font-size:16px;padding:10px 16px;line-height:1.35}
+.tutorial-page .primary,.tutorial-page .action-buttons:has(#confirm-target) .primary,.tutorial-page #pack-continue{background:#4e6e45;border-color:#4e6e45;color:white;padding:10px 16px;font-weight:600}
+.tutorial-page .secondary{background:#f6f7f2;color:#53654f}
+.tutorial-page button:disabled{opacity:.48}
+.tutorial-page .pack-choices{display:flex;gap:24px;flex:1;flex-wrap:wrap;list-style:none;margin:0;padding:0}
+.tutorial-page .pack-choices li{display:flex;align-items:center;gap:10px;border:0;padding:0;font-size:14px;line-height:1.4}
+.tutorial-page .pack-choices span{font-size:16px;font-weight:600;color:#425e3e}
+.tutorial-page .pack-choices span:before{content:'→';font-weight:400;color:#889582;margin-right:9px}
+.lesson-board .sleep{padding:0;text-align:left}
+.lesson-board .sleep .moon,.lesson-board .sleep p{display:none}
+.lesson-board .sleep h3{font-size:18px;color:#4e6e45;margin:0}
+.lesson-observe .sidebar{display:none}
+.lesson-card .lesson-example{min-height:380px;display:flex;align-items:center;justify-content:center;padding:30px}
+.lesson-card .room-layout{width:100%}
+.lesson-card .map-panel,.lesson-panel .map-panel{display:none}
+.lesson-card .sidebar>.panel{max-width:340px;margin:0 auto;text-align:center}
+.lesson-card .private-card>h3,.lesson-card .private-card>p{display:none}
+.tutorial-page .card-back{width:190px;max-width:190px;border:0;box-shadow:none;border-radius:7px;margin:5px auto 25px;background-size:contain}
+.tutorial-page .role-card{width:210px;max-width:100%;box-shadow:none;border-radius:6px;margin:5px auto 18px;animation:lesson-reveal .28s ease-out}
+.tutorial-page .role-title{font-family:inherit;font-size:24px;font-weight:650;color:#2b432e;margin:14px 0}
+.tutorial-page .reveal-tools{margin-top:15px}
+.tutorial-page .reveal-tools .quiet{font-family:inherit;font-size:14px;color:#6a7864}
+.lesson-panel .lesson-example{padding:30px;min-height:350px}
+.lesson-panel .sidebar>.panel{max-width:480px;margin:0 auto}
+.lesson-panel .sleep{padding:40px 10px;text-align:center}
+.lesson-panel .sleep h3{font-size:26px;margin:12px 0}
+.lesson-panel .sleep p{font-size:18px}
+.lesson-panel .sleep .moon{font-size:38px;color:#8b987e}
+.tutorial-page .witch-victim-card{display:grid;grid-template-columns:58px 1fr;gap:2px 14px;align-items:center;text-align:left;padding:16px;border:1px solid #e5cdb3;border-radius:9px;background:#fdf3e5;margin:0 0 22px}
+.tutorial-page .witch-victim-card .house-art{grid-row:1 / span 2;grid-column:1;height:58px;width:58px;margin:0}
+.tutorial-page .witch-victim-card .victim-label{grid-column:2;font-size:13px;color:#8c6d4e}
+.tutorial-page .witch-victim-card h3{grid-column:2;font-size:25px;margin:0}
+.tutorial-page .witch-victim-card p,.tutorial-page .witch-help{display:none}
+.tutorial-page .witch-choice{border:0;padding:0;margin:0}
+.tutorial-page .heal-choice{background:#f2f6ed;border:1px solid #c8d7bf;border-radius:8px;padding:14px;gap:12px;font-size:17px;line-height:1.45;margin:0 0 14px}
+.tutorial-page .heal-choice input{width:21px;height:21px;min-height:21px;box-shadow:none;accent-color:#4e6e45}
+.tutorial-page .poison-choice{background:#fcf3e8;border-color:#e8d3b8;margin-top:0}
+.tutorial-page .poison-choice input{accent-color:#8f663c}
+.tutorial-page .poison-target{margin:18px 0}
+.tutorial-page .poison-target label{font-size:15px;margin:0 0 8px;color:#5d6b58}
+.tutorial-page select{font-family:inherit;font-size:17px;min-height:46px;background:white;border:1px solid #b6c4af;border-radius:6px;box-shadow:none}
+.tutorial-page .witch-outcome{font-size:15px!important;line-height:1.6;background:none;border:0;padding:0;margin:18px 0;color:#65725e}
+.tutorial-page #cast{margin-top:14px}
+.lesson-panel .panel>h3:has(+.witch-victim-card){display:none}
+.lesson-panel[data-scene='victim'] .witch-choice,.lesson-panel[data-scene='victim'] .witch-outcome,.lesson-panel[data-scene='victim'] #cast{display:none}
+.lesson-panel[data-scene='heal'] .poison-choice,.lesson-panel[data-scene='heal'] #poison-target{display:none!important}
+.lesson-panel[data-scene='poison'] .witch-victim-card,.lesson-panel[data-scene='poison'] .witch-choice>.heal-choice:not(.poison-choice){display:none}
+.lesson-panel[data-scene='spent'] .witch-victim-card,.lesson-panel[data-scene='spent'] .witch-outcome,.lesson-panel[data-scene='spent'] #cast{display:none}
+.tutorial-page .notes{font-size:16px}
+.lesson-panel[data-scene='notes'] .sleep,.lesson-panel[data-scene='notes'] .notes summary{display:none}
+.tutorial-page .note{background:#f0f5eb;border:1px solid #cfddc5;border-radius:8px;margin:0;padding:20px;font-size:22px;line-height:1.6;color:#314b35}
+.tutorial-page .note small{font-family:inherit;font-size:12px;color:#7c8c72;margin-bottom:10px}
+.tutorial-page .revealed-roles{background:none;border:0;border-top:1px solid #e3e8dd;padding:20px 0 0;margin:22px 0 0}
+.tutorial-page .revealed-roles h3{font-size:18px}
+.tutorial-page .revealed-roles>p{display:none}
+.tutorial-page .revealed-card-grid{gap:18px;margin-top:16px}
+.tutorial-page .revealed-card img{width:85px;height:85px;margin:0 0 9px;border-radius:5px}
+.tutorial-page .revealed-card b{font-size:15px;color:#394f3a}
+.tutorial-page .revealed-card span{font-size:13px;color:#7a8673;margin-top:3px}
+.lesson-card .revealed-roles,.lesson-board:not(.lesson-observe) .revealed-roles,.lesson-panel:not([data-scene='victim']) .revealed-roles{display:none}
+.tutorial-page .success-banner{border:0;border-bottom:1px solid #d9e7d0;border-radius:0;background:#edf5e6;padding:18px;margin:-22px -22px 20px}
+.tutorial-page .success-banner h2{font-size:25px;color:#3b643c}
+.tutorial-page .success-banner p{font-size:15px;margin-top:8px}
+.lesson-result{display:none}
+.lesson-result.has-result{display:flex;align-items:baseline;gap:10px;background:#eff5e9;border-top:1px solid #d9e7cf;padding:15px 22px;color:#3b5f35;font-size:16px;line-height:1.6}
+.lesson-result>span{font-weight:700}
+.lesson-navigation{display:flex;align-items:center;gap:22px;margin:24px 0 0;padding-left:308px}
+.tutorial-back,.tutorial-next{border-radius:8px;min-height:46px;padding:11px 19px;font-family:inherit;font-size:16px;font-weight:600;line-height:1.4}
+.tutorial-back{background:transparent;border:1px solid #b9c6b3;color:#52624c}
+.tutorial-next{background:#304c35;color:white;border:1px solid #304c35;margin-left:auto}
+.tutorial-next:hover{background:#213d27}
+.lesson-progress{display:flex;gap:5px;margin:auto;max-width:140px;flex:1}
+.lesson-progress i{height:4px;background:#d8e1d2;flex:1;border-radius:4px}
+.lesson-progress i.is-done{background:#7b9870}
+.tutorial-page .tutorial-focus{outline:3px solid #789260!important;outline-offset:5px;animation:none;scroll-margin-top:30px}
+.tutorial-page .house.tutorial-focus{outline:none!important}
+.tutorial-page .house.tutorial-focus .nameplate{outline:3px solid #789260;outline-offset:3px}
+.tutorial-page .demo-cursor-target{box-shadow:0 0 0 5px #b4ce9b70!important}
+.tutorial-page .house.demo-cursor-target{box-shadow:none!important}
+.tutorial-page .house.demo-cursor-target .nameplate{box-shadow:0 0 0 5px #b4ce9b70}
+.lesson-enter{animation:lesson-enter .22s ease-out}
+@keyframes lesson-enter{from{opacity:.45;transform:translateY(5px)}to{opacity:1;transform:translateY(0)}}
+@keyframes lesson-reveal{from{opacity:.4;transform:scale(.96)}to{opacity:1;transform:scale(1)}}
+.tutorial-complete{max-width:620px;margin:36px auto;text-align:center;background:#fffef9;border:1px solid #d9e0d4;border-radius:14px;padding:38px}
+.tutorial-complete>img{width:108px;height:108px;border-radius:7px;margin-bottom:24px}
+.tutorial-complete h1{font-size:34px;margin-bottom:14px}
+.tutorial-complete p{font-size:18px;color:#65735e;line-height:1.65;margin-bottom:28px}
+.tutorial-complete>div{display:flex;gap:12px;flex-wrap:wrap;justify-content:center;margin-bottom:20px}
+.tutorial-complete .tutorial-next{margin-left:0}
+.tutorial-page dialog{font-family:'Segoe UI',system-ui,sans-serif;background:#fffef9;border:1px solid #cad5c3;border-radius:14px;max-width:570px;padding:30px;box-shadow:0 16px 80px #13271540;color:#25372b}
+.tutorial-page dialog::backdrop{background:#14241999}
+.tutorial-page dialog h2,.tutorial-page dialog h3{font-family:inherit;font-weight:650;line-height:1.35;font-size:26px}
+.tutorial-page dialog .eyebrow,.tutorial-page dialog .private-tag{font-family:inherit;font-size:13px;color:#718069;display:block}
+.tutorial-page dialog p,.tutorial-page dialog .guide-intro{font-family:inherit;font-size:19px;line-height:1.7;color:#3a503d;margin:16px 0}
+.tutorial-page dialog .close{width:44px;height:44px;font-size:27px}
+@media(max-width:1100px){
+ .tutorial-page main{padding:24px}.lesson-shell{grid-template-columns:235px minmax(0,1fr);gap:25px}.lesson-navigation{padding-left:260px}.lesson-coach h1{font-size:28px}.lesson-copy{font-size:18px}.tutorial-roles{grid-template-columns:repeat(2,minmax(0,1fr))}.tutorial-role{min-height:135px}.tutorial-role img{width:76px;height:76px}.tutorial-page .house .nameplate{font-size:12px}.tutorial-page .house small{font-size:10px}.practice-header{padding:14px 18px}.lesson-example{padding:18px}
+}
+@media(max-width:780px){
+ .tutorial-page main{padding:20px 18px}.lesson-shell{display:block}.lesson-coach{position:static;padding:4px 0 24px}.lesson-coach h1{font-size:29px;max-width:none;margin-bottom:12px}.lesson-copy{font-size:19px;line-height:1.6;max-width:42ch;margin-bottom:18px}.lesson-header{margin-bottom:18px;gap:14px}.lesson-role-name{padding-left:14px;font-size:14px}.lesson-role-name img{width:25px;height:25px}.lesson-counter{font-size:12px}.tutorial-kicker{margin-bottom:9px}.lesson-outline{margin-top:14px}.lesson-outline[open]{margin-bottom:15px}.lesson-stage{border-radius:11px}.lesson-panel .lesson-example{padding:24px;min-height:280px}.lesson-card .lesson-example{min-height:320px;padding:24px}.lesson-navigation{padding-left:0;margin-top:20px;gap:12px}.tutorial-page .room-layout{display:flex}.tutorial-page .sidebar{order:initial}.tutorial-page .map-panel{order:initial;width:100%}.tutorial-page .village-map{aspect-ratio:1.5}.tutorial-page .room-layout:has(#confirm-target),.tutorial-page .room-layout:has(#pack-continue){padding-bottom:0}.tutorial-page .pack-choices{gap:15px}.tutorial-page .pack-choices li{font-size:13px}.tutorial-page .pack-choices span{font-size:15px}.tutorial-page .primary,.tutorial-page .secondary{font-size:16px}.tutorial-page .house .nameplate{font-size:12px;padding:2px 3px;min-width:36px}.tutorial-page .house small{font-size:9px}.lesson-board .sidebar>.panel{gap:12px;padding-top:15px}.tutorial-page .action-buttons{width:100%}.tutorial-page #pack-continue{width:100%}.tutorial-page .action-buttons button{flex:1}.lesson-board .target-label{width:100%;font-size:16px!important}.tutorial-page .map-legend{font-size:11px}.practice-header{font-size:13px;gap:9px}.practice-pack-status{font-size:11px}.lesson-result.has-result{font-size:16px;padding:14px 18px}.tutorial-intro{margin:4px 0 23px;gap:15px}.tutorial-intro h1{font-size:31px}.tutorial-intro p{font-size:17px}.tutorial-safe{font-size:12px}.tutorial-page .card-back{width:170px;max-width:170px}.tutorial-page .role-card{width:190px}.tutorial-page .topbar nav{gap:16px;margin-left:auto}.tutorial-page .topbar .quiet{font-size:13px}
+}
+@media(max-width:500px){
+ .tutorial-roles{grid-template-columns:1fr;gap:12px}.tutorial-role{padding:17px;min-height:112px}.tutorial-role img{width:67px;height:67px}.tutorial-role b{font-size:20px}.tutorial-role small{font-size:15px}.tutorial-intro{flex-direction:column;gap:10px}.tutorial-intro .tutorial-exit{font-size:13px}.lesson-role-name{gap:6px}.lesson-counter{margin-left:auto;white-space:nowrap}.lesson-role-name img{display:none}.lesson-copy{font-size:18px}.lesson-coach h1{font-size:27px}.lesson-header .tutorial-exit{font-size:13px}.lesson-progress{display:none}.tutorial-back,.tutorial-next{font-size:15px;min-height:46px;padding:11px 16px}.lesson-example{padding:12px}.lesson-panel .lesson-example{padding:20px}.practice-header{padding:12px;flex-wrap:wrap}.practice-header #demo-replay{font-size:11px}.practice-pack-status{padding:3px 5px;font-size:10px}.tutorial-page .house .nameplate{font-size:11px;max-width:115%;min-width:36px}.tutorial-page .house small{font-size:9px}.tutorial-page .house{width:19%;margin-left:-9.5%;margin-top:-9.5%}.tutorial-page .village-map{aspect-ratio:1.16}.tutorial-page .square-marker{font-size:17px;padding:4px 7px;min-width:38px}.tutorial-page .square-marker small{font-size:10px}.tutorial-page .heal-choice{padding:13px;font-size:16px}.tutorial-page .witch-victim-card{grid-template-columns:48px 1fr;gap:2px 11px;padding:13px}.tutorial-page .witch-victim-card .house-art{width:48px;height:48px}.tutorial-page .witch-victim-card .victim-label{font-size:11px}.tutorial-page .witch-victim-card h3{font-size:23px}.tutorial-page .revealed-card img{width:75px;height:75px}.tutorial-complete{padding:27px 22px;margin:15px auto}.tutorial-complete>div{flex-direction:column}.tutorial-page dialog{padding:25px}.tutorial-page dialog h2{font-size:24px}.tutorial-page dialog p,.tutorial-page dialog .guide-intro{font-size:18px}
+}
+@media(prefers-reduced-motion:reduce){.tutorial-page *,.tutorial-page *:before,.tutorial-page *:after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+.tutorial-page .topbar nav,.tutorial-page .house.vacant{display:none}
+
+.tutorial-page #lesson-title:focus{outline:none}
+.tutorial-page .sidebar>.history{display:none!important}
+.tutorial-page .square-marker{display:none}
+.tutorial-page .house:not(.dead):not(.witch-victim) .nameplate>small:first-of-type{display:none}
+.tutorial-page .house.tutorial-packmate .nameplate>small:first-of-type{display:block;color:#4c7146;font-weight:600}
+.lesson-card .lesson-example{min-height:320px}
+@media(min-width:1101px){.tutorial-page .house .nameplate{font-size:14px}}
+
+.tutorial-page .card-back{position:relative}
+.tutorial-page .card-back:after{content:'Reveal card';position:absolute;left:0;right:0;bottom:-29px;font:16px/1.3 'Segoe UI',system-ui,sans-serif;color:#496344}
+@media(max-width:780px){.lesson-outline{display:none}}
+
+.tutorial-page .tutorial-ready{display:inline-block;font-size:16px;font-weight:650;color:#456a3c;background:#edf5e6;border-radius:6px;padding:6px 13px;margin-top:2px}
+.lesson-panel:not([data-scene='notes']) .notes{display:none}
+
+@media(max-width:650px){.tutorial-roles{grid-template-columns:1fr}}
+/* Large player cards keep the practice targets legible on narrow screens. */
+@media(max-width:500px){
+ .tutorial-page .lesson-board .village-map{background:none!important;aspect-ratio:auto;border-radius:0;overflow:visible}
+ .tutorial-page .lesson-board .houses{position:static;inset:auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+ .tutorial-page .lesson-board .house{position:static;left:auto;top:auto;transform:none;margin:0;width:100%;display:flex;align-items:center;gap:9px;min-height:85px;background:#f7f8f2;border:1px solid #d6dfce;border-radius:8px;padding:11px 9px;text-align:left}
+ .tutorial-page .lesson-board .house.vacant{display:none}
+ .tutorial-page .lesson-board .house .house-art{width:35px;height:35px;flex:0 0 35px;filter:none}
+ .tutorial-page .lesson-board .house .nameplate{position:static;left:auto;bottom:auto;transform:none;margin:0;padding:0;width:auto;max-width:100%;min-width:0;border:0;border-radius:0;background:none;box-shadow:none;text-align:left;font-size:15px;line-height:1.35;overflow-wrap:normal}
+ .tutorial-page .lesson-board .nameplate b{max-height:none;font-weight:650}
+ .tutorial-page .lesson-board .house small{font-size:11px;line-height:1.4}
+ .tutorial-page .lesson-board .house .pack-marker{font-size:11px;color:#6b783f}
+ .tutorial-page .lesson-board .house.selected{background:#fff3cd;border-color:#bb9b4e}
+ .tutorial-page .lesson-board .house.selected .nameplate,.tutorial-page .lesson-board .house.self .nameplate{border:0;background:none}
+ .tutorial-page .lesson-board .house.dead{background:#efeee8}
+ .tutorial-page .lesson-board .house.dead .nameplate{background:none;border:0}
+ .tutorial-page .lesson-board .house.tutorial-focus{outline:3px solid #8ea679!important;outline-offset:1px}
+ .tutorial-page .lesson-board .house.tutorial-focus .nameplate{outline:none}
+ .tutorial-page .lesson-board .house.demo-cursor-target{box-shadow:0 0 0 4px #b4ce9b70!important}
+ .tutorial-page .lesson-board .house.demo-cursor-target .nameplate{box-shadow:none}
+}
+
+.lesson-panel .revealed-roles{max-width:480px;margin:24px auto 0}
+
+.tutorial-page .house.tutorial-packmate .nameplate>small:first-of-type{display:block!important}
+
+.tutorial-page #notice{display:none}
+.lesson-result.is-error{color:#8a4e2f;background:#fff1e4;border-top-color:#e7cdb3}
