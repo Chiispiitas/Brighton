@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "updated": "2026-11-01",
-  "status": "Local grammar-clarity checks complete; live publication pending",
+  "status": "Grammar practice visual clarity complete; saved-PDF and live-viewer verification passed",
   "authority": "Author delegates editorial authority; his own B2 book sets emotional direction. Preserve colourful learning objects and warm adult playfulness alongside coherent functional roles.",
   "scope": "Units1–8:32lessons,4pairedreviews,72corepages;38new practice pages and4end-creditpages.114physicalpages, printed5–118. Front matter,index,workbook andoptionalannexes remainfuturework.",
   "baseline": {
@@ -224,8 +224,26 @@
       "html_controls": 90
     },
     "live_viewer": {
-      "completed": false,
-      "status": "pending publication; previous release evidence archived"
+      "completed": true,
+      "content_commit": "2c75e7eea6cd374a9370613eaed54e198eee95ab",
+      "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=grammarclarity-2c75e7eea6cd",
+      "book_pages": 114,
+      "navigation_options": 57,
+      "forward_links_checked": 75,
+      "return_links_checked": 80,
+      "blank_blooket_slots": 16,
+      "fresh_practice_images_decoded": 6,
+      "sample_recordings_play_progress_pause": [
+        "1.1",
+        "8.7"
+      ],
+      "audio_controls_preserved": 90,
+      "print_controls_hidden": true,
+      "topic_headings_clear_fixed_navigation": true,
+      "changed_files_match": 35,
+      "file_report": "Sources/Grammar-clarity-20261101/published-file-verification.json",
+      "viewer_report": "Sources/Grammar-clarity-20261101/live-viewer-verification.json",
+      "failures": []
     },
     "evidence_directory": "Sources/Grammar-clarity-20261101",
     "prior_editorial_evidence": [
@@ -380,9 +398,9 @@
         "Practice"
       ],
       "fingerprint": {
-        "files": 851,
-        "bytes": 591170395,
-        "sha256": "7a7b4a3817f15c7dd29bcdc333dd68b67d4f2ed2e870be5d15cf00f00264a118"
+        "files": 853,
+        "bytes": 591238648,
+        "sha256": "9679a712f5e3d3290a31aab1acb3b816f97e5ca0b3b4f354f9d5f77df943c6b3"
       },
       "normalize_text_line_endings": true
     },
@@ -429,8 +447,8 @@
       ],
       "fingerprint": {
         "files": 15,
-        "bytes": 120163,
-        "sha256": "67180afa8d442892d801a7ee570632580aa06cfc9c60f49fbb16f327190ea404"
+        "bytes": 120873,
+        "sha256": "ea7303f2da06a9f3bc8476f209e9e7891f29cfaa51449b5ed563a2387786cd42"
       },
       "normalize_text_line_endings": true
     }
@@ -441,7 +459,7 @@
     "priority": "Warm adult playfulness, saturated local colour, tactile concept metaphors and protected letter/number graphics; functional consistency does not mean visual uniformity.",
     "regression_baseline": "8069492116058e45846c79601c66ebd8a3207abb",
     "protected_register": "Sources/Visual-personality.json",
-    "verification": "Core/vocabulary retained; all grammar source and saved-PDF checks complete; publication pending",
+    "verification": "Core and vocabulary preserved; all grammar source, saved-PDF and published-viewer checks complete",
     "functional_tool_counts": {
       "grammar": 25,
       "pronunciation": 1,

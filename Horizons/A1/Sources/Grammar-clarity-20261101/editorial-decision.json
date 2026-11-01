@@ -1,5 +1,5 @@
 {
-  "status": "Local grammar-clarity checks complete; live publication pending",
+  "status": "Grammar practice visual clarity complete; saved-PDF and live-viewer verification passed",
   "baseline_commit": "e2b520bc82b3467f083eff0983cf088b8fd13436",
   "safety_branch": "safety/horizons-before-grammar-clarity-20261101",
   "latest_author_direction": "Grammar reference areas use concise charts, arrows, short labels and worked models. Remove explanatory rule sentences and procedural paragraphs. Task instructions, model sentences and contextual givens remain. Avoid over-expansion; retain the approved vocabulary practice direction.",
@@ -17,7 +17,14 @@
   "vocabulary_feedback_scope": "Author endorsed the current vocabulary-practice approach.",
   "author_approval_of_new_grammar_claimed": false,
   "live_publication": {
-    "completed": false
+    "completed": true,
+    "content_commit": "2c75e7eea6cd374a9370613eaed54e198eee95ab",
+    "deployment": "https://github.com/Chiispiitas/Brighton/actions/runs/41363643498",
+    "viewer_report": "live-viewer-verification.json",
+    "file_report": "published-file-verification.json",
+    "changed_files_match": 35,
+    "failures": [],
+    "revised_grammar_screenshots_independently_viewed": true
   },
   "evidence": "Independent saved-PDF reviews, actual response-space/QR/standalone parity, strict PDF validation and source-preservation report in this directory."
 }
