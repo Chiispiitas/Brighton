@@ -1,13 +1,7 @@
-# 8A artwork — original uses restored
+# 8A artwork — current uses
 
-Explicit user preference,31October2026: preserve the baseline artwork. Current layout, legibility and task improvements remain. All newly acquired/generated experiment files remain inactive/versioned; no files were deleted.
+Activity 5 updated at the author’s request, 1 November 2026: five whole-animal photographic cutouts with native transparent backgrounds. Raccoon, duck, squirrel, beaver and goose use individual assets. No frames, environmental backgrounds or baked-in text. All matching letters, animal names and writing gaps remain editable.
 
-- [Toronto-ferry-Susanne-Mueller.jpg](Toronto-ferry-Susanne-Mueller.jpg): active on page(s)67; baselinefd497fd artwork.
-- [Raccoon-David-Selbert.jpg](Raccoon-David-Selbert.jpg): active on page(s)68; baselinefd497fd artwork.
-- [Duck-NGSOFT-IT.jpg](Duck-NGSOFT-IT.jpg): active on page(s)68; baselinefd497fd artwork.
-- [Squirrel-Andrew-Patrick.jpg](Squirrel-Andrew-Patrick.jpg): active on page(s)68; baselinefd497fd artwork.
-- [Map-traveler-cutout.png](Map-traveler-cutout.png): active on page(s)68; baselinefd497fd artwork.
+The original Toronto skyline/ferry photograph and transparent map traveler remain active. Previous raccoon, duck and squirrel photographs are retained unchanged, inactive, for reversibility. The prior map-photo experiment remains inactive.
 
-Inactive experiment files: Map-Tima-Miroshnichenko-v3.jpg.
-
-Credits/provenance remain in asset-manifest.json; source credits belong at book end.
+The built-in image-generation tool created the new animal assets. Exact prompts, native dimensions, alpha evidence, hashes and active/retired uses are in [asset-manifest.json](asset-manifest.json). External source credits belong at book end.

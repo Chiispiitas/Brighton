@@ -27,75 +27,6 @@
     },
     {
       "lesson": "8A",
-      "file": "Raccoon-David-Selbert.jpg",
-      "creator": "David Selbert",
-      "source": "https://www.pexels.com/photo/raccoon-standing-on-ground-in-nature-6468055/",
-      "download": "https://images.pexels.com/photos/6468055/pexels-photo-6468055.jpeg?auto=compress&cs=tinysrgb&w=1800",
-      "license": "Pexels License",
-      "license_url": "https://www.pexels.com/license/",
-      "kind": "licensed stock photograph",
-      "dimensions": [
-        1800,
-        2250
-      ],
-      "sha256": "d5db5582297deb705403dc7b46cf225c72bec1a7a4c48bce11ed5e5cb61a81ad",
-      "changes": "Provider rendition at 1800px; native downloaded bytes unchanged, proportionate CSS display. CSS crop only where a complete teaching subject remains legible; source byte hashes unchanged.",
-      "representation": "Illustrative photograph; fictional speakers/stories are not facts about models. Weather images illustrate conditions, not named 2021 events; animal images illustrate vocabulary, not documented Toronto sightings.",
-      "checked": "2026-10-31",
-      "pages": [
-        68
-      ],
-      "active": true,
-      "restoration_note": "Exact baseline fd497fd artwork use restored at explicit user request; edition layout and teaching improvements retained."
-    },
-    {
-      "lesson": "8A",
-      "file": "Duck-NGSOFT-IT.jpg",
-      "creator": "NGSOFT IT",
-      "source": "https://www.pexels.com/photo/close-up-photo-of-a-duck-13696069/",
-      "download": "https://images.pexels.com/photos/13696069/pexels-photo-13696069.jpeg?auto=compress&cs=tinysrgb&w=1800",
-      "license": "Pexels License",
-      "license_url": "https://www.pexels.com/license/",
-      "kind": "licensed stock photograph",
-      "dimensions": [
-        1800,
-        2400
-      ],
-      "sha256": "cecc3b290f9ae34305844e21ca0e6c131327ff2cc46940996da1ecc1f24e7068",
-      "changes": "Provider rendition at 1800px; native downloaded bytes unchanged, proportionate CSS display. CSS crop only where a complete teaching subject remains legible; source byte hashes unchanged.",
-      "representation": "Illustrative photograph; fictional speakers/stories are not facts about models. Weather images illustrate conditions, not named 2021 events; animal images illustrate vocabulary, not documented Toronto sightings.",
-      "checked": "2026-10-31",
-      "pages": [
-        68
-      ],
-      "active": true,
-      "restoration_note": "Exact baseline fd497fd artwork use restored at explicit user request; edition layout and teaching improvements retained."
-    },
-    {
-      "lesson": "8A",
-      "file": "Squirrel-Andrew-Patrick.jpg",
-      "creator": "Andrew Patrick Photo",
-      "source": "https://www.pexels.com/photo/close-up-photo-of-a-squirrel-12285011/",
-      "download": "https://images.pexels.com/photos/12285011/pexels-photo-12285011.jpeg?auto=compress&cs=tinysrgb&w=1800",
-      "license": "Pexels License",
-      "license_url": "https://www.pexels.com/license/",
-      "kind": "licensed stock photograph",
-      "dimensions": [
-        1800,
-        1440
-      ],
-      "sha256": "aaf1ccbb772f896fa3347caa39fa05f20418c0caef0f11a9acc0316bf89bb992",
-      "changes": "Provider rendition at 1800px; native downloaded bytes unchanged, proportionate CSS display. CSS crop only where a complete teaching subject remains legible; source byte hashes unchanged.",
-      "representation": "Illustrative photograph; fictional speakers/stories are not facts about models. Weather images illustrate conditions, not named 2021 events; animal images illustrate vocabulary, not documented Toronto sightings.",
-      "checked": "2026-10-31",
-      "pages": [
-        68
-      ],
-      "active": true,
-      "restoration_note": "Exact baseline fd497fd artwork use restored at explicit user request; edition layout and teaching improvements retained."
-    },
-    {
-      "lesson": "8A",
       "file": "Map-traveler-cutout.png",
       "kind": "generated photographic teaching asset",
       "generator": "built-in image_gen",
@@ -115,6 +46,171 @@
         68
       ],
       "restoration_note": "Exact baseline fd497fd artwork use restored at explicit user request; edition layout and teaching improvements retained."
+    },
+    {
+      "lesson": "8A",
+      "file": "Raccoon-cutout-v1.png",
+      "kind": "generated photographic animal teaching cutout",
+      "generator": "built-in image_gen",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "native_alpha": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "opaque_bounds": [
+        60,
+        159,
+        1233,
+        1181
+      ],
+      "sha256": "1211402ff9e8590c911d52effbf5041dc08ec9675466707204e3085e9b3f7cd5",
+      "changes": "Original generated PNG bytes retained; proportionate CSS contain display, no raster post-processing.",
+      "prompt": "Background-extraction for an adult English coursebook. The attached image is the edit target showing five animals. Return ONLY the raccoon from that image as one separate clean photographic cutout. Remove every other animal completely. Preserve this animal's natural fur or feathers, realistic appearance, full body, exact distinctive features, all feet and its ENTIRE tail or beak. Center this single animal and let it occupy about 85% of a square canvas with safe transparent margins. Completely TRANSPARENT background with genuine alpha. No floor, no shadow, no outline, no frame, no ground, no extra elements, no letters, no text. Clean natural edges with no colored halo. Exactly ONE animal.",
+      "source_generation_prompt": "Use case: scientific-educational. Asset type: five photographic animal cutouts for an adult English coursebook vocabulary matching task, printed as a single horizontal row on white paper. Generate a VERY WIDE PANORAMIC transparent PNG, about 5:1 aspect ratio. Exactly FIVE separate, naturally realistic full-body animals in one evenly spaced horizontal row, no overlap, in this exact left-to-right order: 1 a North American raccoon standing on all four paws in three-quarter view, striped tail fully visible; 2 a male mallard duck standing in profile, green head and both orange feet visible; 3 an eastern gray squirrel sitting upright in three-quarter view, entire large bushy tail visible; 4 a Canadian beaver sitting in three-quarter view, unmistakable wide flat paddle tail fully visible alongside its body; 5 a Canada goose standing in profile, long black neck and white cheek patch, both feet visible. Each animal occupies its own equal-width fifth of the canvas, comfortably centered with clear transparent gaps between animals. The animals should have approximately similar visible heights for identification, not true relative scale. Consistent soft natural daylight, authentic fur and feather detail, accurate anatomy, natural eyes and proportions. Completely isolated transparent background, clean natural alpha edges. No environment, no grass, no water, no ground or podium, no rectangles, no paper, no stickers, no outline, no text, no labels or letters, no shadows outside animal silhouettes. Preserve whole ears, beaks, tails and feet. Adult editorial photographic cutouts, not illustration, not cartoons, no stylization.",
+      "fictional_boundary": "Illustrative specimen for vocabulary identification, not a documentary Toronto sighting.",
+      "checked": "2026-11-01",
+      "pages": [
+        68
+      ],
+      "activity": 5,
+      "active": true
+    },
+    {
+      "lesson": "8A",
+      "file": "Duck-cutout-v1.png",
+      "kind": "generated photographic animal teaching cutout",
+      "generator": "built-in image_gen",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "native_alpha": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "opaque_bounds": [
+        35,
+        85,
+        1242,
+        1237
+      ],
+      "sha256": "1028ccdff431afe170ecd621320a072b9de1c678679a795f62da18870b358345",
+      "changes": "Original generated PNG bytes retained; proportionate CSS contain display, no raster post-processing.",
+      "prompt": "Background-extraction for an adult English coursebook. The attached image is the edit target showing five animals. Return ONLY the mallard duck from that image as one separate clean photographic cutout. Remove every other animal completely. Preserve this animal's natural fur or feathers, realistic appearance, full body, exact distinctive features, all feet and its ENTIRE tail or beak. Center this single animal and let it occupy about 85% of a square canvas with safe transparent margins. Completely TRANSPARENT background with genuine alpha. No floor, no shadow, no outline, no frame, no ground, no extra elements, no letters, no text. Clean natural edges with no colored halo. Exactly ONE animal.",
+      "source_generation_prompt": "Use case: scientific-educational. Asset type: five photographic animal cutouts for an adult English coursebook vocabulary matching task, printed as a single horizontal row on white paper. Generate a VERY WIDE PANORAMIC transparent PNG, about 5:1 aspect ratio. Exactly FIVE separate, naturally realistic full-body animals in one evenly spaced horizontal row, no overlap, in this exact left-to-right order: 1 a North American raccoon standing on all four paws in three-quarter view, striped tail fully visible; 2 a male mallard duck standing in profile, green head and both orange feet visible; 3 an eastern gray squirrel sitting upright in three-quarter view, entire large bushy tail visible; 4 a Canadian beaver sitting in three-quarter view, unmistakable wide flat paddle tail fully visible alongside its body; 5 a Canada goose standing in profile, long black neck and white cheek patch, both feet visible. Each animal occupies its own equal-width fifth of the canvas, comfortably centered with clear transparent gaps between animals. The animals should have approximately similar visible heights for identification, not true relative scale. Consistent soft natural daylight, authentic fur and feather detail, accurate anatomy, natural eyes and proportions. Completely isolated transparent background, clean natural alpha edges. No environment, no grass, no water, no ground or podium, no rectangles, no paper, no stickers, no outline, no text, no labels or letters, no shadows outside animal silhouettes. Preserve whole ears, beaks, tails and feet. Adult editorial photographic cutouts, not illustration, not cartoons, no stylization.",
+      "fictional_boundary": "Illustrative specimen for vocabulary identification, not a documentary Toronto sighting.",
+      "checked": "2026-11-01",
+      "pages": [
+        68
+      ],
+      "activity": 5,
+      "active": true
+    },
+    {
+      "lesson": "8A",
+      "file": "Squirrel-cutout-v1.png",
+      "kind": "generated photographic animal teaching cutout",
+      "generator": "built-in image_gen",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "native_alpha": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "opaque_bounds": [
+        80,
+        71,
+        1185,
+        1243
+      ],
+      "sha256": "0c5e6aad1d72f05eebe2495ce7ab33bcaf2ecdfb4cc2036d3274cc90ddc8c851",
+      "changes": "Original generated PNG bytes retained; proportionate CSS contain display, no raster post-processing.",
+      "prompt": "Background-extraction for an adult English coursebook. The attached image is the edit target showing five animals. Return ONLY the gray squirrel from that image as one separate clean photographic cutout. Remove every other animal completely. Preserve this animal's natural fur or feathers, realistic appearance, full body, exact distinctive features, all feet and its ENTIRE tail or beak. Center this single animal and let it occupy about 85% of a square canvas with safe transparent margins. Completely TRANSPARENT background with genuine alpha. No floor, no shadow, no outline, no frame, no ground, no extra elements, no letters, no text. Clean natural edges with no colored halo. Exactly ONE animal.",
+      "source_generation_prompt": "Use case: scientific-educational. Asset type: five photographic animal cutouts for an adult English coursebook vocabulary matching task, printed as a single horizontal row on white paper. Generate a VERY WIDE PANORAMIC transparent PNG, about 5:1 aspect ratio. Exactly FIVE separate, naturally realistic full-body animals in one evenly spaced horizontal row, no overlap, in this exact left-to-right order: 1 a North American raccoon standing on all four paws in three-quarter view, striped tail fully visible; 2 a male mallard duck standing in profile, green head and both orange feet visible; 3 an eastern gray squirrel sitting upright in three-quarter view, entire large bushy tail visible; 4 a Canadian beaver sitting in three-quarter view, unmistakable wide flat paddle tail fully visible alongside its body; 5 a Canada goose standing in profile, long black neck and white cheek patch, both feet visible. Each animal occupies its own equal-width fifth of the canvas, comfortably centered with clear transparent gaps between animals. The animals should have approximately similar visible heights for identification, not true relative scale. Consistent soft natural daylight, authentic fur and feather detail, accurate anatomy, natural eyes and proportions. Completely isolated transparent background, clean natural alpha edges. No environment, no grass, no water, no ground or podium, no rectangles, no paper, no stickers, no outline, no text, no labels or letters, no shadows outside animal silhouettes. Preserve whole ears, beaks, tails and feet. Adult editorial photographic cutouts, not illustration, not cartoons, no stylization.",
+      "fictional_boundary": "Illustrative specimen for vocabulary identification, not a documentary Toronto sighting.",
+      "checked": "2026-11-01",
+      "pages": [
+        68
+      ],
+      "activity": 5,
+      "active": true
+    },
+    {
+      "lesson": "8A",
+      "file": "Beaver-cutout-v1.png",
+      "kind": "generated photographic animal teaching cutout",
+      "generator": "built-in image_gen",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "native_alpha": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "opaque_bounds": [
+        53,
+        135,
+        1184,
+        1202
+      ],
+      "sha256": "3c6e4ac23edd0d12008fe2f5d11dc991782e2c10c499b572aa001355fca33eca",
+      "changes": "Original generated PNG bytes retained; proportionate CSS contain display, no raster post-processing.",
+      "prompt": "Background-extraction for an adult English coursebook. The attached image is the edit target showing five animals. Return ONLY the beaver from that image as one separate clean photographic cutout. Remove every other animal completely. Preserve this animal's natural fur or feathers, realistic appearance, full body, exact distinctive features, all feet and its ENTIRE tail or beak. Center this single animal and let it occupy about 85% of a square canvas with safe transparent margins. Completely TRANSPARENT background with genuine alpha. No floor, no shadow, no outline, no frame, no ground, no extra elements, no letters, no text. Clean natural edges with no colored halo. Exactly ONE animal.",
+      "source_generation_prompt": "Use case: scientific-educational. Asset type: five photographic animal cutouts for an adult English coursebook vocabulary matching task, printed as a single horizontal row on white paper. Generate a VERY WIDE PANORAMIC transparent PNG, about 5:1 aspect ratio. Exactly FIVE separate, naturally realistic full-body animals in one evenly spaced horizontal row, no overlap, in this exact left-to-right order: 1 a North American raccoon standing on all four paws in three-quarter view, striped tail fully visible; 2 a male mallard duck standing in profile, green head and both orange feet visible; 3 an eastern gray squirrel sitting upright in three-quarter view, entire large bushy tail visible; 4 a Canadian beaver sitting in three-quarter view, unmistakable wide flat paddle tail fully visible alongside its body; 5 a Canada goose standing in profile, long black neck and white cheek patch, both feet visible. Each animal occupies its own equal-width fifth of the canvas, comfortably centered with clear transparent gaps between animals. The animals should have approximately similar visible heights for identification, not true relative scale. Consistent soft natural daylight, authentic fur and feather detail, accurate anatomy, natural eyes and proportions. Completely isolated transparent background, clean natural alpha edges. No environment, no grass, no water, no ground or podium, no rectangles, no paper, no stickers, no outline, no text, no labels or letters, no shadows outside animal silhouettes. Preserve whole ears, beaks, tails and feet. Adult editorial photographic cutouts, not illustration, not cartoons, no stylization.",
+      "fictional_boundary": "Illustrative specimen for vocabulary identification, not a documentary Toronto sighting.",
+      "checked": "2026-11-01",
+      "pages": [
+        68
+      ],
+      "activity": 5,
+      "active": true
+    },
+    {
+      "lesson": "8A",
+      "file": "Goose-cutout-v1.png",
+      "kind": "generated photographic animal teaching cutout",
+      "generator": "built-in image_gen",
+      "dimensions": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "native_alpha": true,
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "opaque_bounds": [
+        101,
+        53,
+        1142,
+        1232
+      ],
+      "sha256": "117a8139a11afe1f43370e613fcda44a53bb145b6599a61c1761757cf5afeaa2",
+      "changes": "Original generated PNG bytes retained; proportionate CSS contain display, no raster post-processing.",
+      "prompt": "Background-extraction for an adult English coursebook. The attached image is the edit target showing five animals. Return ONLY the Canada goose from that image as one separate clean photographic cutout. Remove every other animal completely. Preserve this animal's natural fur or feathers, realistic appearance, full body, exact distinctive features, all feet and its ENTIRE tail or beak. Center this single animal and let it occupy about 85% of a square canvas with safe transparent margins. Completely TRANSPARENT background with genuine alpha. No floor, no shadow, no outline, no frame, no ground, no extra elements, no letters, no text. Clean natural edges with no colored halo. Exactly ONE animal.",
+      "source_generation_prompt": "Use case: scientific-educational. Asset type: five photographic animal cutouts for an adult English coursebook vocabulary matching task, printed as a single horizontal row on white paper. Generate a VERY WIDE PANORAMIC transparent PNG, about 5:1 aspect ratio. Exactly FIVE separate, naturally realistic full-body animals in one evenly spaced horizontal row, no overlap, in this exact left-to-right order: 1 a North American raccoon standing on all four paws in three-quarter view, striped tail fully visible; 2 a male mallard duck standing in profile, green head and both orange feet visible; 3 an eastern gray squirrel sitting upright in three-quarter view, entire large bushy tail visible; 4 a Canadian beaver sitting in three-quarter view, unmistakable wide flat paddle tail fully visible alongside its body; 5 a Canada goose standing in profile, long black neck and white cheek patch, both feet visible. Each animal occupies its own equal-width fifth of the canvas, comfortably centered with clear transparent gaps between animals. The animals should have approximately similar visible heights for identification, not true relative scale. Consistent soft natural daylight, authentic fur and feather detail, accurate anatomy, natural eyes and proportions. Completely isolated transparent background, clean natural alpha edges. No environment, no grass, no water, no ground or podium, no rectangles, no paper, no stickers, no outline, no text, no labels or letters, no shadows outside animal silhouettes. Preserve whole ears, beaks, tails and feet. Adult editorial photographic cutouts, not illustration, not cartoons, no stylization.",
+      "fictional_boundary": "Illustrative specimen for vocabulary identification, not a documentary Toronto sighting.",
+      "checked": "2026-11-01",
+      "pages": [
+        68
+      ],
+      "activity": 5,
+      "active": true
     }
   ],
   "retired_assets": [
@@ -140,8 +236,101 @@
         68
       ],
       "retired_reason": "Inactive version retained for reversibility. User explicitly rejected the new artwork experiment and requested original artwork; no further acquisition or generation authorized for this overhaul."
+    },
+    {
+      "lesson": "8A",
+      "file": "Raccoon-David-Selbert.jpg",
+      "creator": "David Selbert",
+      "source": "https://www.pexels.com/photo/raccoon-standing-on-ground-in-nature-6468055/",
+      "download": "https://images.pexels.com/photos/6468055/pexels-photo-6468055.jpeg?auto=compress&cs=tinysrgb&w=1800",
+      "license": "Pexels License",
+      "license_url": "https://www.pexels.com/license/",
+      "kind": "licensed stock photograph",
+      "dimensions": [
+        1800,
+        2250
+      ],
+      "sha256": "d5db5582297deb705403dc7b46cf225c72bec1a7a4c48bce11ed5e5cb61a81ad",
+      "changes": "Provider rendition at 1800px; native downloaded bytes unchanged, proportionate CSS display. CSS crop only where a complete teaching subject remains legible; source byte hashes unchanged.",
+      "representation": "Illustrative photograph; fictional speakers/stories are not facts about models. Weather images illustrate conditions, not named 2021 events; animal images illustrate vocabulary, not documented Toronto sightings.",
+      "checked": "2026-10-31",
+      "active": false,
+      "restoration_note": "Exact baseline fd497fd artwork use restored at explicit user request; edition layout and teaching improvements retained.",
+      "former_pages": [
+        68
+      ],
+      "retired_reason": "Author requested five transparent animal cutouts on 1 November 2026. Original stock photograph retained unchanged for reversibility."
+    },
+    {
+      "lesson": "8A",
+      "file": "Duck-NGSOFT-IT.jpg",
+      "creator": "NGSOFT IT",
+      "source": "https://www.pexels.com/photo/close-up-photo-of-a-duck-13696069/",
+      "download": "https://images.pexels.com/photos/13696069/pexels-photo-13696069.jpeg?auto=compress&cs=tinysrgb&w=1800",
+      "license": "Pexels License",
+      "license_url": "https://www.pexels.com/license/",
+      "kind": "licensed stock photograph",
+      "dimensions": [
+        1800,
+        2400
+      ],
+      "sha256": "cecc3b290f9ae34305844e21ca0e6c131327ff2cc46940996da1ecc1f24e7068",
+      "changes": "Provider rendition at 1800px; native downloaded bytes unchanged, proportionate CSS display. CSS crop only where a complete teaching subject remains legible; source byte hashes unchanged.",
+      "representation": "Illustrative photograph; fictional speakers/stories are not facts about models. Weather images illustrate conditions, not named 2021 events; animal images illustrate vocabulary, not documented Toronto sightings.",
+      "checked": "2026-10-31",
+      "active": false,
+      "restoration_note": "Exact baseline fd497fd artwork use restored at explicit user request; edition layout and teaching improvements retained.",
+      "former_pages": [
+        68
+      ],
+      "retired_reason": "Author requested five transparent animal cutouts on 1 November 2026. Original stock photograph retained unchanged for reversibility."
+    },
+    {
+      "lesson": "8A",
+      "file": "Squirrel-Andrew-Patrick.jpg",
+      "creator": "Andrew Patrick Photo",
+      "source": "https://www.pexels.com/photo/close-up-photo-of-a-squirrel-12285011/",
+      "download": "https://images.pexels.com/photos/12285011/pexels-photo-12285011.jpeg?auto=compress&cs=tinysrgb&w=1800",
+      "license": "Pexels License",
+      "license_url": "https://www.pexels.com/license/",
+      "kind": "licensed stock photograph",
+      "dimensions": [
+        1800,
+        1440
+      ],
+      "sha256": "aaf1ccbb772f896fa3347caa39fa05f20418c0caef0f11a9acc0316bf89bb992",
+      "changes": "Provider rendition at 1800px; native downloaded bytes unchanged, proportionate CSS display. CSS crop only where a complete teaching subject remains legible; source byte hashes unchanged.",
+      "representation": "Illustrative photograph; fictional speakers/stories are not facts about models. Weather images illustrate conditions, not named 2021 events; animal images illustrate vocabulary, not documented Toronto sightings.",
+      "checked": "2026-10-31",
+      "active": false,
+      "restoration_note": "Exact baseline fd497fd artwork use restored at explicit user request; edition layout and teaching improvements retained.",
+      "former_pages": [
+        68
+      ],
+      "retired_reason": "Author requested five transparent animal cutouts on 1 November 2026. Original stock photograph retained unchanged for reversibility."
     }
   ],
-  "edition": "2026-10-31 original artwork restored after user rejection of image experiment",
-  "artwork_policy": "Retain fd497fd active image uses; improve layout/design/teaching only. New experiment files remain inactive."
+  "edition": "2026-11-01: five animal cutouts authorized for Activity 5",
+  "artwork_policy": "Retain original skyline and map traveler; replace only Activity 5 animal photographs with five whole-animal transparent cutouts at the author’s request.",
+  "verification": {
+    "checked": "2026-11-01",
+    "active_animal_cutouts": 5,
+    "native_transparent_pngs": 5,
+    "match_key": [
+      "B",
+      "C",
+      "A",
+      "E",
+      "D"
+    ],
+    "print_only_extra_words": [
+      "goose",
+      "beaver"
+    ],
+    "recordings_unchanged": true,
+    "compiled_book_pages": 76,
+    "whole_book_text_boundary_faults": 0,
+    "saved_pdf_subjects_and_spacing": "Viewed the independently rendered saved PDF; all five whole animals, live labels, writing space and footer fit.",
+    "previous_design_audit_retained": true
+  }
 }
