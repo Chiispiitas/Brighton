@@ -28,9 +28,10 @@ let mode='join', state=null, selected=null, reveal=false, busy=false, timer=null
 let session=null, pendingRequest=null;
 let revealedRoom=null, revealedDeaths=new Set();
 const PACK_WAIT='Impossible to continue because the decision has not been made.';
-const params = new URLSearchParams(location.search), projector=params.has('screen');
+const params = new URLSearchParams(location.search), tutorialMode=params.has('tutorial'), projector=!tutorialMode&&params.has('screen');
+let tutorial=null;
 const saved = () => { try { return JSON.parse(localStorage.getItem('brighton-werewolves-session')); } catch { return null; } };
-function saveSession() { try { localStorage.setItem('brighton-werewolves-session',JSON.stringify(session)); } catch { toast('Keep this tab open. This browser cannot save your game session.'); } }
+function saveSession() { if(tutorialMode)return; try { localStorage.setItem('brighton-werewolves-session',JSON.stringify(session)); } catch { toast('Keep this tab open. This browser cannot save your game session.'); } }
 const token = () => [...crypto.getRandomValues(new Uint8Array(32))].map(n=>n.toString(16).padStart(2,'0')).join('');
 function toast(message) { $('#notice').textContent=message; $('#notice').classList.add('show'); clearTimeout(toast.id); toast.id=setTimeout(()=>$('#notice').classList.remove('show'),5500); }
 function showModal(html) { $('#modal-content').innerHTML=html; if(!modal.open)modal.showModal(); }
@@ -41,9 +42,8 @@ function rules() {
 $('#guide').onclick=rules;
 function landing() {
   root.className='entry-page';
-  root.innerHTML=`<div class="landing"><section class="entry"><h1>Werewolves</h1><div class="tabset"><button class="tab ${mode==='join'?'active':''}" data-mode="join">Join game</button><button class="tab ${mode==='host'?'active':''}" data-mode="host">Host game</button></div><p class="entry-instructions">${mode==='join'?'Enter your name and the room code.':'Create a room and share its code with the players.'}</p><form id="entry-form"><div class="field"><label for="name">${mode==='join'?'Your name':'Host name'}</label><input id="name" name="name" placeholder="Name" maxlength="24" autocomplete="nickname" required></div>${mode==='join'?`<div class="field"><label for="code">Room code</label><input id="code" class="code" name="code" placeholder="000000" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" value="${escape(params.get('room')?.replace(/\D/g,'').slice(0,6)||'')}" required autocomplete="off"></div>`:''}<div id="entry-error" class="hidden error-box" role="alert"></div><button class="primary wide" type="submit">${mode==='join'?'Join':'Create room'}</button></form>${saved()?'<button id="restore" class="secondary wide restore">Return to your previous village</button>':''}<p class="player-range">4–12 players · one device per player</p></section><section class="board-preview" aria-label="Village board"><div class="preview-title">The village</div>${previewHouses()}<span class="square-marker">4–12<br><small>players</small></span></section></div><section class="roles-preview"><h2>Roles</h2><div class="mini-roles">${Object.keys(roleNames).map(r=>`<a href="#rules" class="mini-role" data-rules><img src="assets/${r}-icon.webp" alt="">${roleNames[r]}</a>`).join('')}</div></section>`;
+  root.innerHTML=`<div class="landing"><section class="entry"><h1>Werewolves</h1><div class="tabset"><button class="tab ${mode==='join'?'active':''}" data-mode="join">Join game</button><button class="tab ${mode==='host'?'active':''}" data-mode="host">Host game</button></div><p class="entry-instructions">${mode==='join'?'Enter your name and the room code.':'Create a room and share its code with the players.'}</p><form id="entry-form"><div class="field"><label for="name">${mode==='join'?'Your name':'Host name'}</label><input id="name" name="name" placeholder="Name" maxlength="24" autocomplete="nickname" required></div>${mode==='join'?`<div class="field"><label for="code">Room code</label><input id="code" class="code" name="code" placeholder="000000" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" value="${escape(params.get('room')?.replace(/\D/g,'').slice(0,6)||'')}" required autocomplete="off"></div>`:''}<div id="entry-error" class="hidden error-box" role="alert"></div><button class="primary wide" type="submit">${mode==='join'?'Join':'Create room'}</button></form>${saved()?'<button id="restore" class="secondary wide restore">Return to your previous village</button>':''}<p class="player-range">4–12 players · one device per player</p></section><section class="board-preview" aria-label="Village board"><div class="preview-title">The village</div>${previewHouses()}<span class="square-marker">4–12<br><small>players</small></span></section></div><section class="roles-preview"><h2>Role tutorials</h2><div class="mini-roles">${Object.keys(roleNames).map(r=>`<a href="?tutorial=${r}" class="mini-role" aria-label="Learn to play: ${roleNames[r]}"><img src="assets/${r}-icon.webp" alt="">${roleNames[r]}</a>`).join('')}</div></section>`;
   root.querySelectorAll('[data-mode]').forEach(b=>b.onclick=()=>{mode=b.dataset.mode;landing();});
-  root.querySelectorAll('[data-rules]').forEach(b=>b.onclick=e=>{e.preventDefault();rules();});
   $('#restore')?.addEventListener('click',()=>{session=saved();reveal=false;refresh(true);});
   $('#entry-form').onsubmit=async e=>{
     e.preventDefault(); if(busy)return;
@@ -57,6 +57,7 @@ function landing() {
   };
 }
 async function api(body) {
+  if(tutorialMode)throw new Error('Practice games do not connect to a room.');
   if(!API_URL)throw new Error('The game service is unavailable. Please retry later.');
   const controller=new AbortController(), timeout=setTimeout(()=>controller.abort(),20000);
   try {
@@ -66,6 +67,7 @@ async function api(body) {
   finally { clearTimeout(timeout); }
 }
 async function send(body, inRoom=true) {
+  if(tutorialMode)return tutorial?.command(body)||false;
   if(busy)return false;busy=true;
   const locked=[...root.querySelectorAll('button,input,select')].filter(b=>!b.disabled);
   locked.forEach(b=>b.disabled=true);
@@ -83,6 +85,7 @@ async function send(body, inRoom=true) {
   } finally {busy=false;locked.forEach(b=>{if(b.isConnected)b.disabled=false;});}
 }
 async function refresh(initial=false) {
+  if(tutorialMode)return;
   if(busy)return;
   try {
     const data=await api({type:'state'});errors=0;
@@ -96,10 +99,12 @@ async function refresh(initial=false) {
   }
 }
 function startPolling() {
+  if(tutorialMode)return;
   clearTimeout(timer);
   timer=setTimeout(async()=>{if(!document.hidden)await refresh();startPolling();},errors?Math.min(25000,6000*errors):(state?.phase==='werewolf'&&state.me?.alive&&state.me?.role==='werewolf'?1800:state?.host?3500:6000));
 }
 document.addEventListener('visibilitychange',()=>{
+  if(tutorialMode)return;
   reveal=false;
   if(modal.open)modal.close();
   if(state){if(document.hidden)renderRoom();else refresh(true);}
@@ -224,7 +229,8 @@ function renderRoom() {
     updateWitchChoices();
   }
   if(phaseChanged)window.scrollTo({top:0,behavior:'smooth'});
-  if(newlyRevealed.length)showEliminatedCards(newlyRevealed);
+  if(newlyRevealed.length&&!tutorialMode)showEliminatedCards(newlyRevealed);
+  tutorial?.decorate();
 }
 const act = extra => send({type:'action',phaseId:state.phaseId,...extra});
 function wireRoom() {
@@ -270,6 +276,10 @@ $('#sound').onclick=async()=>{
     $('#sound').textContent='Sound on';$('#sound').setAttribute('aria-pressed','true');
   }catch{toast('Sound is unavailable in this browser.');}
 };
-if(projector&&/^\d{6}$/.test(params.get('room')||'')){
+if(tutorialMode){
+  const {createTutorial}=await import('./tutorial.mjs');
+  tutorial=createTutorial({root,role:params.get('tutorial'),present:demo=>{state=demo;renderRoom();},notify:toast,closeModal:()=>{if(modal.open)modal.close();}});
+  tutorial.start();
+}else if(projector&&/^\d{6}$/.test(params.get('room')||'')){
   session={code:params.get('room'),token:token()};refresh(true);
 }else landing();
