@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "updated": "2026-11-01",
-  "status": "Local source, content, visual and saved-PDF verification complete; publication pending",
+  "status": "Practice banks complete; independent content, saved-PDF and published-viewer checks passed",
   "authority": "Author delegates editorial authority; his own B2 book sets emotional direction. Preserve colourful learning objects and warm adult playfulness alongside coherent functional roles.",
   "scope": "Units1–8:32lessons,4pairedreviews,72corepages;38new practice pages and4end-creditpages.114physicalpages, printed5–118. Front matter,index,workbook andoptionalannexes remainfuturework.",
   "baseline": {
@@ -228,8 +228,27 @@
       "html_controls": 90
     },
     "live_viewer": {
-      "completed": false,
-      "status": "pending publication"
+      "completed": true,
+      "content_commit": "df18b38d2d3abc1ae494acdfd436dcc561607ec0",
+      "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=practicegames-df18b38d2d3a",
+      "book_pages": 114,
+      "navigation_options": 57,
+      "forward_links_checked": 75,
+      "return_links_checked": 80,
+      "blank_blooket_slots": 16,
+      "fresh_practice_images_decoded": 6,
+      "sample_recordings_play_progress_pause": [
+        "1.1",
+        "8.7"
+      ],
+      "audio_controls_preserved": 90,
+      "all90_subjectively_listened_this_pass": false,
+      "print_controls_hidden": true,
+      "topic_headings_clear_fixed_navigation": true,
+      "failures": [],
+      "changed_horizons_files_match": 118,
+      "file_report": "Sources/Practice-banks-20261101/published-file-verification.json",
+      "viewer_report": "Sources/Practice-banks-20261101/live-viewer-verification.json"
     },
     "evidence_directory": "Sources/Practice-banks-20261101",
     "prior_editorial_evidence": [
@@ -384,9 +403,9 @@
         "Practice"
       ],
       "fingerprint": {
-        "files": 835,
-        "bytes": 590989446,
-        "sha256": "625fc83da9e1ba67d10cb9a100976aa6870635c4a2f07f4ac5e62447e8b24626"
+        "files": 837,
+        "bytes": 591075472,
+        "sha256": "a27bc0aa62491693bbe3ef45234106698d48177ce82f7240dd786cac95852161"
       },
       "normalize_text_line_endings": true
     },
@@ -433,8 +452,8 @@
       ],
       "fingerprint": {
         "files": 15,
-        "bytes": 119838,
-        "sha256": "68d638be016b368b14f448c7c92c08fe83c1d1fb4ed8e01d51bc593eb1c2393e"
+        "bytes": 120680,
+        "sha256": "30595e3b67ac0443a378565e5c4cffa5667ccc3e54c6d545c44f253934c92325"
       },
       "normalize_text_line_endings": true
     }
@@ -445,7 +464,7 @@
     "priority": "Warm adult playfulness, saturated local colour, tactile concept metaphors and protected letter/number graphics; functional consistency does not mean visual uniformity.",
     "regression_baseline": "8069492116058e45846c79601c66ebd8a3207abb",
     "protected_register": "Sources/Visual-personality.json",
-    "verification": "Protected core objects and all practice pages locally verified; current publication pending",
+    "verification": "Protected core objects, every practice page, saved PDF and published viewer verified",
     "functional_tool_counts": {
       "grammar": 25,
       "pronunciation": 1,

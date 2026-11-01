@@ -1,0 +1,2299 @@
+{
+  "created_at": "2026-11-01T19:22:37.404Z",
+  "mode": "INDEPENDENT LIVE QA",
+  "published_commit": "df18b38d2d3abc1ae494acdfd436dcc561607ec0",
+  "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=practicegames-df18b38d2d3a",
+  "hash_method": "UTF-8 text with CRLF normalized to LF; verified first attempt live raw hash exactly matches committed Git blob",
+  "expected_source_sha256": "0f7d3c8183d61f0a88f3ae9337ed96b94a3bd3f35dc90f926b68f04c909730c0",
+  "working_file_raw_sha256": "5654700ebc32cca0b0a1e3b98c40edd3e0aa7e66d38e47933860072e9092517d",
+  "checks": [
+    {
+      "name": "viewer HTTP 200",
+      "pass": true,
+      "detail": 200
+    },
+    {
+      "name": "live compiled HTML matches current local source after Git line-ending normalization",
+      "pass": true,
+      "detail": {
+        "live_normalized_sha256": "0f7d3c8183d61f0a88f3ae9337ed96b94a3bd3f35dc90f926b68f04c909730c0",
+        "expected_normalized_sha256": "0f7d3c8183d61f0a88f3ae9337ed96b94a3bd3f35dc90f926b68f04c909730c0",
+        "live_raw_sha256": "0f7d3c8183d61f0a88f3ae9337ed96b94a3bd3f35dc90f926b68f04c909730c0"
+      }
+    },
+    {
+      "name": "114 unique book pages",
+      "pass": true,
+      "detail": {
+        "pages": 114,
+        "unique": 114
+      }
+    },
+    {
+      "name": "57 navigation destinations",
+      "pass": true,
+      "detail": 57
+    },
+    {
+      "name": "75 core forward links resolve to exact topics and printed pages",
+      "pass": true,
+      "detail": {
+        "count": 75,
+        "failed": []
+      }
+    },
+    {
+      "name": "all80 bank return links resolve to the named lesson",
+      "pass": true,
+      "detail": {
+        "count": 80,
+        "failed": []
+      }
+    },
+    {
+      "name": "16 blank future QR slots, one per unit per bank",
+      "pass": true,
+      "detail": [
+        {
+          "bank": "grammar",
+          "unit": "1",
+          "page": "77",
+          "blank": true,
+          "text": "Blooket\nGrammar · Unit 1\nQR space reserved\nSelf-study · class play"
+        },
+        {
+          "bank": "grammar",
+          "unit": "2",
+          "page": "79",
+          "blank": true,
+          "text": "Blooket\nGrammar · Unit 2\nQR space reserved\nSelf-study · class play"
+        },
+        {
+          "bank": "grammar",
+          "unit": "3",
+          "page": "81",
+          "blank": true,
+          "text": "Blooket\nGrammar · Unit 3\nQR space reserved\nSelf-study · class play"
+        },
+        {
+          "bank": "grammar",
+          "unit": "4",
+          "page": "83",
+          "blank": true,
+          "text": "Blooket\nGrammar · Unit 4\nQR space reserved\nSelf-study · class play"
+        },
+        {
+          "bank": "grammar",
+          "unit": "5",
+          "page": "85",
+          "blank": true,
+          "text": "Blooket\nGrammar · Unit 5\nQR space reserved\nSelf-study · class play"
+        },
+        {
+          "bank": "grammar",
+          "unit": "6",
+          "page": "87",
+          "blank": true,
+          "text": "Blooket\nGrammar · Unit 6\nQR space reserved\nSelf-study · class play"
+        },
+        {
+          "bank": "grammar",
+          "unit": "7",
+          "page": "89",
+          "blank": true,
+          "text": "Blooket\nGrammar · Unit 7\nQR space reserved\nSelf-study · class play"
+        },
+        {
+          "bank": "grammar",
+          "unit": "8",
+          "page": "91",
+          "blank": true,
+          "text": "Blooket\nGrammar · Unit 8\nQR space reserved\nSelf-study · class play"
+        },
+        {
+          "bank": "vocabulary",
+          "unit": "1",
+          "page": "93",
+          "blank": true,
+          "text": "Blooket\nVocabulary · Unit 1\nQR space reserved\nSelf-study · class play"
+        },
+        {
+          "bank": "vocabulary",
+          "unit": "2",
+          "page": "96",
+          "blank": true,
+          "text": "Blooket\nVocabulary · Unit 2\nQR space reserved\nSelf-study · class play"
+        },
+        {
+          "bank": "vocabulary",
+          "unit": "3",
+          "page": "98",
+          "blank": true,
+          "text": "Blooket\nVocabulary · Unit 3\nQR space reserved\nSelf-study · class play"
+        },
+        {
+          "bank": "vocabulary",
+          "unit": "4",
+          "page": "100",
+          "blank": true,
+          "text": "Blooket\nVocabulary · Unit 4\nQR space reserved\nSelf-study · class play"
+        },
+        {
+          "bank": "vocabulary",
+          "unit": "5",
+          "page": "102",
+          "blank": true,
+          "text": "Blooket\nVocabulary · Unit 5\nQR space reserved\nSelf-study · class play"
+        },
+        {
+          "bank": "vocabulary",
+          "unit": "6",
+          "page": "104",
+          "blank": true,
+          "text": "Blooket\nVocabulary · Unit 6\nQR space reserved\nSelf-study · class play"
+        },
+        {
+          "bank": "vocabulary",
+          "unit": "7",
+          "page": "106",
+          "blank": true,
+          "text": "Blooket\nVocabulary · Unit 7\nQR space reserved\nSelf-study · class play"
+        },
+        {
+          "bank": "vocabulary",
+          "unit": "8",
+          "page": "108",
+          "blank": true,
+          "text": "Blooket\nVocabulary · Unit 8\nQR space reserved\nSelf-study · class play"
+        }
+      ]
+    },
+    {
+      "name": "six fresh practice images decode",
+      "pass": true,
+      "detail": [
+        {
+          "src": "./Practice/Images/U2-personal-items-v1.png",
+          "decoded": true,
+          "w": 1774,
+          "h": 887
+        },
+        {
+          "src": "./Practice/Images/U3-routines-v1.png",
+          "decoded": true,
+          "w": 1536,
+          "h": 1024
+        },
+        {
+          "src": "./Practice/Images/U4-picnic-boxes-v1.png",
+          "decoded": true,
+          "w": 1536,
+          "h": 1024
+        },
+        {
+          "src": "./Practice/Images/U5-clothes-v1.png",
+          "decoded": true,
+          "w": 1536,
+          "h": 1024
+        },
+        {
+          "src": "./Practice/Images/U6-apartment-v1.png",
+          "decoded": true,
+          "w": 1374,
+          "h": 1145
+        },
+        {
+          "src": "./Practice/Images/U8-travelers-v1.png",
+          "decoded": true,
+          "w": 1536,
+          "h": 1024
+        }
+      ]
+    },
+    {
+      "name": "QR metadata has no invented game links or assets",
+      "pass": true,
+      "detail": {
+        "http": 200,
+        "slot_count": 16,
+        "all_null": true
+      }
+    },
+    {
+      "name": "navigation jump to Grammar practice · Unit 1",
+      "pass": true,
+      "detail": {
+        "actual": "Grammar practice · Unit 1",
+        "printed": "77"
+      }
+    },
+    {
+      "name": "navigation jump to Vocabulary practice · Unit 1",
+      "pass": true,
+      "detail": {
+        "actual": "Vocabulary practice · Unit 1",
+        "printed": "93"
+      }
+    },
+    {
+      "name": "forward jump grammar-verb-to-be",
+      "pass": true,
+      "detail": {
+        "hash": "#grammar-verb-to-be",
+        "output": "p. 77",
+        "target_page": "77",
+        "target_top": 66.328125,
+        "heading_top": 66.328125,
+        "heading_bottom": 87.109375,
+        "nav_bottom": 59,
+        "selected_label": "Grammar practice · Unit 1"
+      }
+    },
+    {
+      "name": "forward topic grammar-verb-to-be heading clears reader navigation",
+      "pass": true,
+      "detail": {
+        "hash": "#grammar-verb-to-be",
+        "output": "p. 77",
+        "target_page": "77",
+        "target_top": 66.328125,
+        "heading_top": 66.328125,
+        "heading_bottom": 87.109375,
+        "nav_bottom": 59,
+        "selected_label": "Grammar practice · Unit 1"
+      }
+    },
+    {
+      "name": "return from grammar-verb-to-be to Lesson1A",
+      "pass": true,
+      "detail": {
+        "hash": "#page-5",
+        "output": "p. 5"
+      }
+    },
+    {
+      "name": "forward jump vocabulary-greetings",
+      "pass": true,
+      "detail": {
+        "hash": "#vocabulary-greetings",
+        "output": "p. 93",
+        "target_page": "93",
+        "target_top": 65.53125,
+        "heading_top": 65.53125,
+        "heading_bottom": 86.3125,
+        "nav_bottom": 59,
+        "selected_label": "Vocabulary practice · Unit 1"
+      }
+    },
+    {
+      "name": "forward topic vocabulary-greetings heading clears reader navigation",
+      "pass": true,
+      "detail": {
+        "hash": "#vocabulary-greetings",
+        "output": "p. 93",
+        "target_page": "93",
+        "target_top": 65.53125,
+        "heading_top": 65.53125,
+        "heading_bottom": 86.3125,
+        "nav_bottom": 59,
+        "selected_label": "Vocabulary practice · Unit 1"
+      }
+    },
+    {
+      "name": "return from vocabulary-greetings to Lesson1A",
+      "pass": true,
+      "detail": {
+        "hash": "#page-5",
+        "output": "p. 5"
+      }
+    },
+    {
+      "name": "initial direct-topic hash routes to V8p110",
+      "pass": true,
+      "detail": {
+        "hash": "#vocabulary-body-parts",
+        "output": "p. 110",
+        "target_page": "110",
+        "target_top": 65.859375,
+        "heading_top": 65.859375,
+        "heading_bottom": 86.640625,
+        "nav_bottom": 59,
+        "selected_label": "Vocabulary practice · Unit 8"
+      }
+    },
+    {
+      "name": "initial direct-topic heading clears reader navigation",
+      "pass": true,
+      "detail": {
+        "hash": "#vocabulary-body-parts",
+        "output": "p. 110",
+        "target_page": "110",
+        "target_top": 65.859375,
+        "heading_top": 65.859375,
+        "heading_bottom": 86.640625,
+        "nav_bottom": 59,
+        "selected_label": "Vocabulary practice · Unit 8"
+      }
+    },
+    {
+      "name": "direct topic return to Lesson8C",
+      "pass": true,
+      "detail": {
+        "hash": "#page-71"
+      }
+    },
+    {
+      "name": "real audio 1.1 progresses and pauses",
+      "pass": true,
+      "detail": {
+        "track": "1.1",
+        "url": "https://exams.bebrighton.net/Horizons/A1/Audios/Track%201.1.mp3",
+        "before": {
+          "time": 0.166762,
+          "paused": false,
+          "ready": 4,
+          "error": null
+        },
+        "after": {
+          "time": 1.084907,
+          "paused": false,
+          "ready": 4,
+          "error": null
+        },
+        "played": true,
+        "paused": true,
+        "button_state": "paused"
+      }
+    },
+    {
+      "name": "real audio 8.7 progresses and pauses",
+      "pass": true,
+      "detail": {
+        "track": "8.7",
+        "url": "https://exams.bebrighton.net/Horizons/A1/Audios/Track%208.7.mp3",
+        "before": {
+          "time": 0.160897,
+          "paused": false,
+          "ready": 4,
+          "error": null
+        },
+        "after": {
+          "time": 1.081411,
+          "paused": false,
+          "ready": 4,
+          "error": null
+        },
+        "played": true,
+        "paused": true,
+        "button_state": "paused"
+      }
+    },
+    {
+      "name": "print hides reader and audio controls",
+      "pass": true,
+      "detail": {
+        "nav": "none",
+        "audio_buttons": 90,
+        "all_buttons_hidden": true,
+        "all_statuses_hidden": true
+      }
+    }
+  ],
+  "failures": [],
+  "screenshots": [
+    {
+      "printed_page": "77",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\practice-banks-20261101\\live-practice-proof-df18b38d2d3a\\live-G1.png"
+    },
+    {
+      "printed_page": "93",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\practice-banks-20261101\\live-practice-proof-df18b38d2d3a\\live-V1.png"
+    },
+    {
+      "printed_page": "110",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\practice-banks-20261101\\live-practice-proof-df18b38d2d3a\\live-direct-body-topic.png"
+    }
+  ],
+  "network_failures": [],
+  "console_errors": [],
+  "stage": "complete",
+  "inventory": {
+    "pages": 114,
+    "page_numbers": [
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12",
+      "13",
+      "14",
+      "15",
+      "16",
+      "17",
+      "18",
+      "19",
+      "20",
+      "21",
+      "22",
+      "23",
+      "24",
+      "25",
+      "26",
+      "27",
+      "28",
+      "29",
+      "30",
+      "31",
+      "32",
+      "33",
+      "34",
+      "35",
+      "36",
+      "37",
+      "38",
+      "39",
+      "40",
+      "41",
+      "42",
+      "43",
+      "44",
+      "45",
+      "46",
+      "47",
+      "48",
+      "49",
+      "50",
+      "51",
+      "52",
+      "53",
+      "54",
+      "55",
+      "56",
+      "57",
+      "58",
+      "59",
+      "60",
+      "61",
+      "62",
+      "63",
+      "64",
+      "65",
+      "66",
+      "67",
+      "68",
+      "69",
+      "70",
+      "71",
+      "72",
+      "73",
+      "74",
+      "75",
+      "76",
+      "77",
+      "78",
+      "79",
+      "80",
+      "81",
+      "82",
+      "83",
+      "84",
+      "85",
+      "86",
+      "87",
+      "88",
+      "89",
+      "90",
+      "91",
+      "92",
+      "93",
+      "94",
+      "95",
+      "96",
+      "97",
+      "98",
+      "99",
+      "100",
+      "101",
+      "102",
+      "103",
+      "104",
+      "105",
+      "106",
+      "107",
+      "108",
+      "109",
+      "110",
+      "111",
+      "112",
+      "113",
+      "114",
+      "115",
+      "116",
+      "117",
+      "118"
+    ],
+    "unique_pages": 114,
+    "nav": [
+      {
+        "value": "0",
+        "label": "1A · New friends"
+      },
+      {
+        "value": "2",
+        "label": "1B · What's your job?"
+      },
+      {
+        "value": "4",
+        "label": "1C · Where are you from?"
+      },
+      {
+        "value": "6",
+        "label": "1D · Let's fill in a form"
+      },
+      {
+        "value": "8",
+        "label": "2A · Look inside my bag!"
+      },
+      {
+        "value": "10",
+        "label": "2B · What time is the next bus?"
+      },
+      {
+        "value": "12",
+        "label": "2C · Meet my family!"
+      },
+      {
+        "value": "14",
+        "label": "2D · Is that my phone?"
+      },
+      {
+        "value": "16",
+        "label": "1&2 · Review & practice"
+      },
+      {
+        "value": "18",
+        "label": "3A · What's your routine?"
+      },
+      {
+        "value": "20",
+        "label": "3B · Weekdays or weekends?"
+      },
+      {
+        "value": "22",
+        "label": "3C · Where do you go?"
+      },
+      {
+        "value": "24",
+        "label": "3D · My week in order"
+      },
+      {
+        "value": "26",
+        "label": "4A · What do you eat?"
+      },
+      {
+        "value": "28",
+        "label": "4B · Tasty or not?"
+      },
+      {
+        "value": "30",
+        "label": "4C · Cooking time!"
+      },
+      {
+        "value": "32",
+        "label": "4D · Food for everyone!"
+      },
+      {
+        "value": "34",
+        "label": "3&4 · Review & practice"
+      },
+      {
+        "value": "36",
+        "label": "5A · What are you wearing?"
+      },
+      {
+        "value": "38",
+        "label": "5B · That’s my favorite!"
+      },
+      {
+        "value": "40",
+        "label": "5C · How often do you shop?"
+      },
+      {
+        "value": "42",
+        "label": "5D · At the store"
+      },
+      {
+        "value": "44",
+        "label": "6A · City life or country life?"
+      },
+      {
+        "value": "46",
+        "label": "6B · My dream home"
+      },
+      {
+        "value": "48",
+        "label": "6C · My neighborhood"
+      },
+      {
+        "value": "50",
+        "label": "6D · Where’s the mall?"
+      },
+      {
+        "value": "52",
+        "label": "5&6 · Review & practice"
+      },
+      {
+        "value": "54",
+        "label": "7A · When I was little…"
+      },
+      {
+        "value": "56",
+        "label": "7B · I was born in July!"
+      },
+      {
+        "value": "58",
+        "label": "7C · Life in the 80s"
+      },
+      {
+        "value": "60",
+        "label": "7D · Dear diary"
+      },
+      {
+        "value": "62",
+        "label": "8A · Let’s go to Toronto!"
+      },
+      {
+        "value": "64",
+        "label": "8B · It’s so cold!"
+      },
+      {
+        "value": "66",
+        "label": "8C · Can you go tomorrow?"
+      },
+      {
+        "value": "68",
+        "label": "8D · Tickets, please!"
+      },
+      {
+        "value": "70",
+        "label": "7&8 · Review & practice"
+      },
+      {
+        "value": "72",
+        "label": "Grammar practice · Unit 1"
+      },
+      {
+        "value": "74",
+        "label": "Grammar practice · Unit 2"
+      },
+      {
+        "value": "76",
+        "label": "Grammar practice · Unit 3"
+      },
+      {
+        "value": "78",
+        "label": "Grammar practice · Unit 4"
+      },
+      {
+        "value": "80",
+        "label": "Grammar practice · Unit 5"
+      },
+      {
+        "value": "82",
+        "label": "Grammar practice · Unit 6"
+      },
+      {
+        "value": "84",
+        "label": "Grammar practice · Unit 7"
+      },
+      {
+        "value": "86",
+        "label": "Grammar practice · Unit 8"
+      },
+      {
+        "value": "88",
+        "label": "Vocabulary practice · Unit 1"
+      },
+      {
+        "value": "91",
+        "label": "Vocabulary practice · Unit 2"
+      },
+      {
+        "value": "93",
+        "label": "Vocabulary practice · Unit 3"
+      },
+      {
+        "value": "95",
+        "label": "Vocabulary practice · Unit 4"
+      },
+      {
+        "value": "97",
+        "label": "Vocabulary practice · Unit 5"
+      },
+      {
+        "value": "99",
+        "label": "Vocabulary practice · Unit 6"
+      },
+      {
+        "value": "101",
+        "label": "Vocabulary practice · Unit 7"
+      },
+      {
+        "value": "103",
+        "label": "Vocabulary practice · Unit 8"
+      },
+      {
+        "value": "106",
+        "label": "Practical language · Unit 5"
+      },
+      {
+        "value": "107",
+        "label": "Practical language · Unit 6"
+      },
+      {
+        "value": "108",
+        "label": "Practical language · Unit 7"
+      },
+      {
+        "value": "109",
+        "label": "Practical language · Unit 8"
+      },
+      {
+        "value": "110",
+        "label": "Image credits"
+      }
+    ],
+    "forward_count": 75,
+    "forwards": [
+      {
+        "source_page": "5",
+        "topic": "vocabulary-greetings",
+        "href": "#vocabulary-greetings",
+        "target_page": "93",
+        "target_heading": "Choose your reply1A",
+        "labeled_page": "93",
+        "pass": true
+      },
+      {
+        "source_page": "5",
+        "topic": "grammar-verb-to-be",
+        "href": "#grammar-verb-to-be",
+        "target_page": "77",
+        "target_heading": "Am, is and are1A",
+        "labeled_page": "77",
+        "pass": true
+      },
+      {
+        "source_page": "6",
+        "topic": "vocabulary-personal-information",
+        "href": "#vocabulary-personal-information",
+        "target_page": "94",
+        "target_heading": "The club card mix-up1A · 1D",
+        "labeled_page": "94",
+        "pass": true
+      },
+      {
+        "source_page": "6",
+        "topic": "vocabulary-alphabet",
+        "href": "#vocabulary-alphabet",
+        "target_page": "93",
+        "target_heading": "The password is a name1A",
+        "labeled_page": "93",
+        "pass": true
+      },
+      {
+        "source_page": "6",
+        "topic": "vocabulary-numbers",
+        "href": "#vocabulary-numbers",
+        "target_page": "93",
+        "target_heading": "Open the right locker1A",
+        "labeled_page": "93",
+        "pass": true
+      },
+      {
+        "source_page": "7",
+        "topic": "vocabulary-occupations",
+        "href": "#vocabulary-occupations",
+        "target_page": "94",
+        "target_heading": "Repair the duty board1B",
+        "labeled_page": "94",
+        "pass": true
+      },
+      {
+        "source_page": "7",
+        "topic": "grammar-a-an",
+        "href": "#grammar-a-an",
+        "target_page": "78",
+        "target_heading": "A job: a or an?1B",
+        "labeled_page": "78",
+        "pass": true
+      },
+      {
+        "source_page": "8",
+        "topic": "grammar-verb-to-be-contractions",
+        "href": "#grammar-verb-to-be-contractions",
+        "target_page": "78",
+        "target_heading": "Two words, one short form1B",
+        "labeled_page": "78",
+        "pass": true
+      },
+      {
+        "source_page": "8",
+        "topic": "vocabulary-adjectives",
+        "href": "#vocabulary-adjectives",
+        "target_page": "95",
+        "target_heading": "A new message for a new room1B · 1C · 2D · 3C",
+        "labeled_page": "95",
+        "pass": true
+      },
+      {
+        "source_page": "9",
+        "topic": "vocabulary-countries",
+        "href": "#vocabulary-countries",
+        "target_page": "95",
+        "target_heading": "Five postcards need a country1C",
+        "labeled_page": "95",
+        "pass": true
+      },
+      {
+        "source_page": "9",
+        "topic": "vocabulary-adjectives",
+        "href": "#vocabulary-adjectives",
+        "target_page": "95",
+        "target_heading": "A new message for a new room1B · 1C · 2D · 3C",
+        "labeled_page": "95",
+        "pass": true
+      },
+      {
+        "source_page": "11",
+        "topic": "vocabulary-personal-information",
+        "href": "#vocabulary-personal-information",
+        "target_page": "94",
+        "target_heading": "The club card mix-up1A · 1D",
+        "labeled_page": "94",
+        "pass": true
+      },
+      {
+        "source_page": "13",
+        "topic": "vocabulary-personal-items",
+        "href": "#vocabulary-personal-items",
+        "target_page": "96",
+        "target_heading": "Whose things are on the table?2A",
+        "labeled_page": "96",
+        "pass": true
+      },
+      {
+        "source_page": "13",
+        "topic": "grammar-this-that-these-those",
+        "href": "#grammar-this-that-these-those",
+        "target_page": "79",
+        "target_heading": "Point to it2A",
+        "labeled_page": "79",
+        "pass": true
+      },
+      {
+        "source_page": "15",
+        "topic": "vocabulary-telling-time",
+        "href": "#vocabulary-telling-time",
+        "target_page": "96",
+        "target_heading": "Find the two time mistakes2B",
+        "labeled_page": "96",
+        "pass": true
+      },
+      {
+        "source_page": "16",
+        "topic": "grammar-a-an-the",
+        "href": "#grammar-a-an-the",
+        "target_page": "79",
+        "target_heading": "One item, then the same item2B",
+        "labeled_page": "79",
+        "pass": true
+      },
+      {
+        "source_page": "17",
+        "topic": "vocabulary-family-members",
+        "href": "#vocabulary-family-members",
+        "target_page": "97",
+        "target_heading": "Six replies in the family chat2C",
+        "labeled_page": "97",
+        "pass": true
+      },
+      {
+        "source_page": "18",
+        "topic": "grammar-possessive-case",
+        "href": "#grammar-possessive-case",
+        "target_page": "80",
+        "target_heading": "Who does it belong to?2C",
+        "labeled_page": "80",
+        "pass": true
+      },
+      {
+        "source_page": "19",
+        "topic": "vocabulary-colors",
+        "href": "#vocabulary-colors",
+        "target_page": "97",
+        "target_heading": "The color trail2D",
+        "labeled_page": "97",
+        "pass": true
+      },
+      {
+        "source_page": "19",
+        "topic": "grammar-adjective-position",
+        "href": "#grammar-adjective-position",
+        "target_page": "80",
+        "target_heading": "Where does the adjective go?2D",
+        "labeled_page": "80",
+        "pass": true
+      },
+      {
+        "source_page": "19",
+        "topic": "vocabulary-adjectives",
+        "href": "#vocabulary-adjectives",
+        "target_page": "95",
+        "target_heading": "A new message for a new room1B · 1C · 2D · 3C",
+        "labeled_page": "95",
+        "pass": true
+      },
+      {
+        "source_page": "23",
+        "topic": "vocabulary-daily-routines",
+        "href": "#vocabulary-daily-routines",
+        "target_page": "98",
+        "target_heading": "The photo editor’s day3A · 3D",
+        "labeled_page": "98",
+        "pass": true
+      },
+      {
+        "source_page": "24",
+        "topic": "grammar-present-simple-affirmative",
+        "href": "#grammar-present-simple-affirmative",
+        "target_page": "81",
+        "target_heading": "A normal day3A",
+        "labeled_page": "81",
+        "pass": true
+      },
+      {
+        "source_page": "25",
+        "topic": "vocabulary-days-of-the-week",
+        "href": "#vocabulary-days-of-the-week",
+        "target_page": "99",
+        "target_heading": "The meeting puzzle3B",
+        "labeled_page": "99",
+        "pass": true
+      },
+      {
+        "source_page": "26",
+        "topic": "grammar-present-simple-negatives-and-questions",
+        "href": "#grammar-present-simple-negatives-and-questions",
+        "target_page": "81",
+        "target_heading": "Do you? Does she?3B",
+        "labeled_page": "81",
+        "pass": true
+      },
+      {
+        "source_page": "27",
+        "topic": "vocabulary-place-adjectives-recall",
+        "href": "#vocabulary-place-adjectives-recall",
+        "target_page": "99",
+        "target_heading": "A room for the group3C",
+        "labeled_page": "99",
+        "pass": true
+      },
+      {
+        "source_page": "28",
+        "topic": "grammar-question-words",
+        "href": "#grammar-question-words",
+        "target_page": "82",
+        "target_heading": "Ask for the missing detail3C",
+        "labeled_page": "82",
+        "pass": true
+      },
+      {
+        "source_page": "29",
+        "topic": "vocabulary-daily-routines",
+        "href": "#vocabulary-daily-routines",
+        "target_page": "98",
+        "target_heading": "The photo editor’s day3A · 3D",
+        "labeled_page": "98",
+        "pass": true
+      },
+      {
+        "source_page": "29",
+        "topic": "grammar-frequency-adverbs",
+        "href": "#grammar-frequency-adverbs",
+        "target_page": "82",
+        "target_heading": "How often? Where in the sentence?3D",
+        "labeled_page": "82",
+        "pass": true
+      },
+      {
+        "source_page": "30",
+        "topic": "grammar-before-after",
+        "href": "#grammar-before-after",
+        "target_page": "82",
+        "target_heading": "Put the day in order3D",
+        "labeled_page": "82",
+        "pass": true
+      },
+      {
+        "source_page": "31",
+        "topic": "vocabulary-food-and-drink",
+        "href": "#vocabulary-food-and-drink",
+        "target_page": "100",
+        "target_heading": "Choose the picnic boxes4A",
+        "labeled_page": "100",
+        "pass": true
+      },
+      {
+        "source_page": "32",
+        "topic": "grammar-countable-and-uncountable-nouns",
+        "href": "#grammar-countable-and-uncountable-nouns",
+        "target_page": "83",
+        "target_heading": "Can you count it?4A",
+        "labeled_page": "83",
+        "pass": true
+      },
+      {
+        "source_page": "33",
+        "topic": "vocabulary-flavors",
+        "href": "#vocabulary-flavors",
+        "target_page": "100",
+        "target_heading": "The flavor guessing round4B",
+        "labeled_page": "100",
+        "pass": true
+      },
+      {
+        "source_page": "34",
+        "topic": "grammar-object-pronouns",
+        "href": "#grammar-object-pronouns",
+        "target_page": "83",
+        "target_heading": "Say it once; refer to it again4B",
+        "labeled_page": "83",
+        "pass": true
+      },
+      {
+        "source_page": "35",
+        "topic": "vocabulary-cooking-verbs",
+        "href": "#vocabulary-cooking-verbs",
+        "target_page": "101",
+        "target_heading": "The cook’s cards went wrong4C",
+        "labeled_page": "101",
+        "pass": true
+      },
+      {
+        "source_page": "35",
+        "topic": "grammar-too-much-too-many-enough",
+        "href": "#grammar-too-much-too-many-enough",
+        "target_page": "84",
+        "target_heading": "More, enough or less than we need4C",
+        "labeled_page": "84",
+        "pass": true
+      },
+      {
+        "source_page": "37",
+        "topic": "vocabulary-sharing-food",
+        "href": "#vocabulary-sharing-food",
+        "target_page": "101",
+        "target_heading": "Rescue the picnic food4D",
+        "labeled_page": "101",
+        "pass": true
+      },
+      {
+        "source_page": "37",
+        "topic": "grammar-because-so-and-punctuation",
+        "href": "#grammar-because-so-and-punctuation",
+        "target_page": "84",
+        "target_heading": "Give a reason; show a result4D",
+        "labeled_page": "84",
+        "pass": true
+      },
+      {
+        "source_page": "41",
+        "topic": "vocabulary-clothes-and-accessories",
+        "href": "#vocabulary-clothes-and-accessories",
+        "target_page": "102",
+        "target_heading": "Pack, remember, guess5A",
+        "labeled_page": "102",
+        "pass": true
+      },
+      {
+        "source_page": "42",
+        "topic": "grammar-present-continuous",
+        "href": "#grammar-present-continuous",
+        "target_page": "85",
+        "target_heading": "5A Actions happening now",
+        "labeled_page": "85",
+        "pass": true
+      },
+      {
+        "source_page": "43",
+        "topic": "vocabulary-shopping-verbs",
+        "href": "#vocabulary-shopping-verbs",
+        "target_page": "102",
+        "target_heading": "Which way at the checkout?5B",
+        "labeled_page": "102",
+        "pass": true
+      },
+      {
+        "source_page": "44",
+        "topic": "grammar-too-and-enough-with-adjectives",
+        "href": "#grammar-too-and-enough-with-adjectives",
+        "target_page": "86",
+        "target_heading": "5B Too big? Big enough?",
+        "labeled_page": "86",
+        "pass": true
+      },
+      {
+        "source_page": "45",
+        "topic": "vocabulary-places-in-town",
+        "href": "#vocabulary-places-in-town",
+        "target_page": "103",
+        "target_heading": "Two stops, not four5C",
+        "labeled_page": "103",
+        "pass": true
+      },
+      {
+        "source_page": "45",
+        "topic": "grammar-frequency-expressions",
+        "href": "#grammar-frequency-expressions",
+        "target_page": "86",
+        "target_heading": "5C How often?",
+        "labeled_page": "86",
+        "pass": true
+      },
+      {
+        "source_page": "47",
+        "topic": "vocabulary-at-the-store",
+        "href": "#vocabulary-at-the-store",
+        "target_page": "103",
+        "target_heading": "The counter crew5D",
+        "labeled_page": "103",
+        "pass": true
+      },
+      {
+        "source_page": "48",
+        "topic": "communication-grocery-shopping",
+        "href": "#communication-grocery-shopping",
+        "target_page": "111",
+        "target_heading": "A useful shopping conversation 5D",
+        "labeled_page": "111",
+        "pass": true
+      },
+      {
+        "source_page": "49",
+        "topic": "vocabulary-places-in-town-2",
+        "href": "#vocabulary-places-in-town-2",
+        "target_page": "104",
+        "target_heading": "Six stops, three short routes6A",
+        "labeled_page": "104",
+        "pass": true
+      },
+      {
+        "source_page": "51",
+        "topic": "vocabulary-rooms-and-furniture",
+        "href": "#vocabulary-rooms-and-furniture",
+        "target_page": "105",
+        "target_heading": "A new home, a sharp memory6B",
+        "labeled_page": "105",
+        "pass": true
+      },
+      {
+        "source_page": "52",
+        "topic": "grammar-prepositions-of-place",
+        "href": "#grammar-prepositions-of-place",
+        "target_page": "87",
+        "target_heading": "6B Where is it?",
+        "labeled_page": "87",
+        "pass": true
+      },
+      {
+        "source_page": "53",
+        "topic": "vocabulary-movement-and-directions",
+        "href": "#vocabulary-movement-and-directions",
+        "target_page": "105",
+        "target_heading": "Follow the delivery6C",
+        "labeled_page": "105",
+        "pass": true
+      },
+      {
+        "source_page": "53",
+        "topic": "grammar-giving-directions",
+        "href": "#grammar-giving-directions",
+        "target_page": "88",
+        "target_heading": "6C A route that works",
+        "labeled_page": "88",
+        "pass": true
+      },
+      {
+        "source_page": "55",
+        "topic": "vocabulary-shopping-centers-and-attractions",
+        "href": "#vocabulary-shopping-centers-and-attractions",
+        "target_page": "104",
+        "target_heading": "A quiet day or a fast ride?6D",
+        "labeled_page": "104",
+        "pass": true
+      },
+      {
+        "source_page": "55",
+        "topic": "grammar-can-and-cant",
+        "href": "#grammar-can-and-cant",
+        "target_page": "88",
+        "target_heading": "6D What is possible?",
+        "labeled_page": "88",
+        "pass": true
+      },
+      {
+        "source_page": "56",
+        "topic": "communication-helping-a-visitor",
+        "href": "#communication-helping-a-visitor",
+        "target_page": "112",
+        "target_heading": "Make a visitor’s plan work 6D",
+        "labeled_page": "112",
+        "pass": true
+      },
+      {
+        "source_page": "59",
+        "topic": "vocabulary-past-time-expressions",
+        "href": "#vocabulary-past-time-expressions",
+        "target_page": "106",
+        "target_heading": "A different “today”7A · 7B",
+        "labeled_page": "106",
+        "pass": true
+      },
+      {
+        "source_page": "60",
+        "topic": "grammar-past-of-be",
+        "href": "#grammar-past-of-be",
+        "target_page": "89",
+        "target_heading": "7A Yesterday was different",
+        "labeled_page": "89",
+        "pass": true
+      },
+      {
+        "source_page": "61",
+        "topic": "vocabulary-months",
+        "href": "#vocabulary-months",
+        "target_page": "106",
+        "target_heading": "The year relay7B",
+        "labeled_page": "106",
+        "pass": true
+      },
+      {
+        "source_page": "61",
+        "topic": "vocabulary-dates-and-ordinal-numbers",
+        "href": "#vocabulary-dates-and-ordinal-numbers",
+        "target_page": "106",
+        "target_heading": "Birthday detective7B",
+        "labeled_page": "106",
+        "pass": true
+      },
+      {
+        "source_page": "61",
+        "topic": "vocabulary-past-time-expressions",
+        "href": "#vocabulary-past-time-expressions",
+        "target_page": "106",
+        "target_heading": "A different “today”7A · 7B",
+        "labeled_page": "106",
+        "pass": true
+      },
+      {
+        "source_page": "62",
+        "topic": "grammar-dates-and-ago",
+        "href": "#grammar-dates-and-ago",
+        "target_page": "89",
+        "target_heading": "7B Dates and ago",
+        "labeled_page": "89",
+        "pass": true
+      },
+      {
+        "source_page": "63",
+        "topic": "vocabulary-music",
+        "href": "#vocabulary-music",
+        "target_page": "107",
+        "target_heading": "The museum’s mixed-up labels7C",
+        "labeled_page": "107",
+        "pass": true
+      },
+      {
+        "source_page": "64",
+        "topic": "grammar-past-simple-regular-verbs",
+        "href": "#grammar-past-simple-regular-verbs",
+        "target_page": "90",
+        "target_heading": "7C Past statements, negatives and questions",
+        "labeled_page": "90",
+        "pass": true
+      },
+      {
+        "source_page": "65",
+        "topic": "vocabulary-irregular-past-verbs",
+        "href": "#vocabulary-irregular-past-verbs",
+        "target_page": "107",
+        "target_heading": "Rescue yesterday’s story7D",
+        "labeled_page": "107",
+        "pass": true
+      },
+      {
+        "source_page": "65",
+        "topic": "vocabulary-sequencing-words",
+        "href": "#vocabulary-sequencing-words",
+        "target_page": "107",
+        "target_heading": "Another day, four cards7D",
+        "labeled_page": "107",
+        "pass": true
+      },
+      {
+        "source_page": "66",
+        "topic": "communication-diary-writing",
+        "href": "#communication-diary-writing",
+        "target_page": "113",
+        "target_heading": "Turn a small event into a readable story 7D",
+        "labeled_page": "113",
+        "pass": true
+      },
+      {
+        "source_page": "67",
+        "topic": "vocabulary-travel-verbs",
+        "href": "#vocabulary-travel-verbs",
+        "target_page": "108",
+        "target_heading": "The verbs took the wrong train8A",
+        "labeled_page": "108",
+        "pass": true
+      },
+      {
+        "source_page": "68",
+        "topic": "grammar-past-simple-travel-verbs",
+        "href": "#grammar-past-simple-travel-verbs",
+        "target_page": "91",
+        "target_heading": "8A A day away",
+        "labeled_page": "91",
+        "pass": true
+      },
+      {
+        "source_page": "68",
+        "topic": "vocabulary-animals",
+        "href": "#vocabulary-animals",
+        "target_page": "108",
+        "target_heading": "The animal code8A",
+        "labeled_page": "108",
+        "pass": true
+      },
+      {
+        "source_page": "69",
+        "topic": "vocabulary-weather-and-seasons",
+        "href": "#vocabulary-weather-and-seasons",
+        "target_page": "109",
+        "target_heading": "Forecast fact-check8B",
+        "labeled_page": "109",
+        "pass": true
+      },
+      {
+        "source_page": "70",
+        "topic": "grammar-should-advice",
+        "href": "#grammar-should-advice",
+        "target_page": "92",
+        "target_heading": "8B Give useful advice",
+        "labeled_page": "92",
+        "pass": true
+      },
+      {
+        "source_page": "71",
+        "topic": "vocabulary-body-parts",
+        "href": "#vocabulary-body-parts",
+        "target_page": "110",
+        "target_heading": "Move, notice, name8C",
+        "labeled_page": "110",
+        "pass": true
+      },
+      {
+        "source_page": "71",
+        "topic": "vocabulary-health-complaints",
+        "href": "#vocabulary-health-complaints",
+        "target_page": "110",
+        "target_heading": "The messages are mixed up8C",
+        "labeled_page": "110",
+        "pass": true
+      },
+      {
+        "source_page": "72",
+        "topic": "grammar-talking-about-health",
+        "href": "#grammar-talking-about-health",
+        "target_page": "92",
+        "target_heading": "8C Say what’s wrong",
+        "labeled_page": "92",
+        "pass": true
+      },
+      {
+        "source_page": "73",
+        "topic": "vocabulary-phone-and-ticket-language",
+        "href": "#vocabulary-phone-and-ticket-language",
+        "target_page": "110",
+        "target_heading": "The hidden booking8D",
+        "labeled_page": "110",
+        "pass": true
+      },
+      {
+        "source_page": "74",
+        "topic": "communication-buying-a-ticket-by-phone",
+        "href": "#communication-buying-a-ticket-by-phone",
+        "target_page": "114",
+        "target_heading": "Ask, choose and confirm 8D",
+        "labeled_page": "114",
+        "pass": true
+      }
+    ],
+    "return_count": 80,
+    "returns": [
+      {
+        "source_page": "77",
+        "href": "#page-5",
+        "target_page": "5",
+        "target_code": "1A",
+        "text": "1A",
+        "pass": true
+      },
+      {
+        "source_page": "78",
+        "href": "#page-7",
+        "target_page": "7",
+        "target_code": "1B",
+        "text": "1B",
+        "pass": true
+      },
+      {
+        "source_page": "78",
+        "href": "#page-7",
+        "target_page": "7",
+        "target_code": "1B",
+        "text": "1B",
+        "pass": true
+      },
+      {
+        "source_page": "78",
+        "href": "#page-11",
+        "target_page": "11",
+        "target_code": "1D",
+        "text": "1D",
+        "pass": true
+      },
+      {
+        "source_page": "79",
+        "href": "#page-13",
+        "target_page": "13",
+        "target_code": "2A",
+        "text": "2A",
+        "pass": true
+      },
+      {
+        "source_page": "79",
+        "href": "#page-15",
+        "target_page": "15",
+        "target_code": "2B",
+        "text": "2B",
+        "pass": true
+      },
+      {
+        "source_page": "80",
+        "href": "#page-17",
+        "target_page": "17",
+        "target_code": "2C",
+        "text": "2C",
+        "pass": true
+      },
+      {
+        "source_page": "80",
+        "href": "#page-19",
+        "target_page": "19",
+        "target_code": "2D",
+        "text": "2D",
+        "pass": true
+      },
+      {
+        "source_page": "81",
+        "href": "#page-23",
+        "target_page": "23",
+        "target_code": "3A",
+        "text": "3A",
+        "pass": true
+      },
+      {
+        "source_page": "81",
+        "href": "#page-25",
+        "target_page": "25",
+        "target_code": "3B",
+        "text": "3B",
+        "pass": true
+      },
+      {
+        "source_page": "82",
+        "href": "#page-27",
+        "target_page": "27",
+        "target_code": "3C",
+        "text": "3C",
+        "pass": true
+      },
+      {
+        "source_page": "82",
+        "href": "#page-29",
+        "target_page": "29",
+        "target_code": "3D",
+        "text": "3D",
+        "pass": true
+      },
+      {
+        "source_page": "82",
+        "href": "#page-29",
+        "target_page": "29",
+        "target_code": "3D",
+        "text": "3D",
+        "pass": true
+      },
+      {
+        "source_page": "83",
+        "href": "#page-31",
+        "target_page": "31",
+        "target_code": "4A",
+        "text": "4A",
+        "pass": true
+      },
+      {
+        "source_page": "83",
+        "href": "#page-33",
+        "target_page": "33",
+        "target_code": "4B",
+        "text": "4B",
+        "pass": true
+      },
+      {
+        "source_page": "84",
+        "href": "#page-35",
+        "target_page": "35",
+        "target_code": "4C",
+        "text": "4C",
+        "pass": true
+      },
+      {
+        "source_page": "84",
+        "href": "#page-37",
+        "target_page": "37",
+        "target_code": "4D",
+        "text": "4D",
+        "pass": true
+      },
+      {
+        "source_page": "85",
+        "href": "#page-41",
+        "target_page": "41",
+        "target_code": "5A",
+        "text": "5A",
+        "pass": true
+      },
+      {
+        "source_page": "86",
+        "href": "#page-43",
+        "target_page": "43",
+        "target_code": "5B",
+        "text": "5B",
+        "pass": true
+      },
+      {
+        "source_page": "86",
+        "href": "#page-45",
+        "target_page": "45",
+        "target_code": "5C",
+        "text": "5C",
+        "pass": true
+      },
+      {
+        "source_page": "87",
+        "href": "#page-51",
+        "target_page": "51",
+        "target_code": "6B",
+        "text": "6B",
+        "pass": true
+      },
+      {
+        "source_page": "88",
+        "href": "#page-53",
+        "target_page": "53",
+        "target_code": "6C",
+        "text": "6C",
+        "pass": true
+      },
+      {
+        "source_page": "88",
+        "href": "#page-55",
+        "target_page": "55",
+        "target_code": "6D",
+        "text": "6D",
+        "pass": true
+      },
+      {
+        "source_page": "89",
+        "href": "#page-59",
+        "target_page": "59",
+        "target_code": "7A",
+        "text": "7A",
+        "pass": true
+      },
+      {
+        "source_page": "89",
+        "href": "#page-61",
+        "target_page": "61",
+        "target_code": "7B",
+        "text": "7B",
+        "pass": true
+      },
+      {
+        "source_page": "90",
+        "href": "#page-63",
+        "target_page": "63",
+        "target_code": "7C",
+        "text": "7C",
+        "pass": true
+      },
+      {
+        "source_page": "91",
+        "href": "#page-67",
+        "target_page": "67",
+        "target_code": "8A",
+        "text": "8A",
+        "pass": true
+      },
+      {
+        "source_page": "92",
+        "href": "#page-69",
+        "target_page": "69",
+        "target_code": "8B",
+        "text": "8B",
+        "pass": true
+      },
+      {
+        "source_page": "92",
+        "href": "#page-71",
+        "target_page": "71",
+        "target_code": "8C",
+        "text": "8C",
+        "pass": true
+      },
+      {
+        "source_page": "93",
+        "href": "#page-5",
+        "target_page": "5",
+        "target_code": "1A",
+        "text": "1A",
+        "pass": true
+      },
+      {
+        "source_page": "93",
+        "href": "#page-5",
+        "target_page": "5",
+        "target_code": "1A",
+        "text": "1A",
+        "pass": true
+      },
+      {
+        "source_page": "93",
+        "href": "#page-5",
+        "target_page": "5",
+        "target_code": "1A",
+        "text": "1A",
+        "pass": true
+      },
+      {
+        "source_page": "94",
+        "href": "#page-5",
+        "target_page": "5",
+        "target_code": "1A",
+        "text": "1A",
+        "pass": true
+      },
+      {
+        "source_page": "94",
+        "href": "#page-11",
+        "target_page": "11",
+        "target_code": "1D",
+        "text": "1D",
+        "pass": true
+      },
+      {
+        "source_page": "94",
+        "href": "#page-7",
+        "target_page": "7",
+        "target_code": "1B",
+        "text": "1B",
+        "pass": true
+      },
+      {
+        "source_page": "95",
+        "href": "#page-9",
+        "target_page": "9",
+        "target_code": "1C",
+        "text": "1C",
+        "pass": true
+      },
+      {
+        "source_page": "95",
+        "href": "#page-7",
+        "target_page": "7",
+        "target_code": "1B",
+        "text": "1B",
+        "pass": true
+      },
+      {
+        "source_page": "95",
+        "href": "#page-9",
+        "target_page": "9",
+        "target_code": "1C",
+        "text": "1C",
+        "pass": true
+      },
+      {
+        "source_page": "95",
+        "href": "#page-19",
+        "target_page": "19",
+        "target_code": "2D",
+        "text": "2D",
+        "pass": true
+      },
+      {
+        "source_page": "95",
+        "href": "#page-27",
+        "target_page": "27",
+        "target_code": "3C",
+        "text": "3C",
+        "pass": true
+      },
+      {
+        "source_page": "96",
+        "href": "#page-13",
+        "target_page": "13",
+        "target_code": "2A",
+        "text": "2A",
+        "pass": true
+      },
+      {
+        "source_page": "96",
+        "href": "#page-15",
+        "target_page": "15",
+        "target_code": "2B",
+        "text": "2B",
+        "pass": true
+      },
+      {
+        "source_page": "97",
+        "href": "#page-17",
+        "target_page": "17",
+        "target_code": "2C",
+        "text": "2C",
+        "pass": true
+      },
+      {
+        "source_page": "97",
+        "href": "#page-19",
+        "target_page": "19",
+        "target_code": "2D",
+        "text": "2D",
+        "pass": true
+      },
+      {
+        "source_page": "98",
+        "href": "#page-23",
+        "target_page": "23",
+        "target_code": "3A",
+        "text": "3A",
+        "pass": true
+      },
+      {
+        "source_page": "98",
+        "href": "#page-29",
+        "target_page": "29",
+        "target_code": "3D",
+        "text": "3D",
+        "pass": true
+      },
+      {
+        "source_page": "99",
+        "href": "#page-25",
+        "target_page": "25",
+        "target_code": "3B",
+        "text": "3B",
+        "pass": true
+      },
+      {
+        "source_page": "99",
+        "href": "#page-27",
+        "target_page": "27",
+        "target_code": "3C",
+        "text": "3C",
+        "pass": true
+      },
+      {
+        "source_page": "100",
+        "href": "#page-31",
+        "target_page": "31",
+        "target_code": "4A",
+        "text": "4A",
+        "pass": true
+      },
+      {
+        "source_page": "100",
+        "href": "#page-33",
+        "target_page": "33",
+        "target_code": "4B",
+        "text": "4B",
+        "pass": true
+      },
+      {
+        "source_page": "101",
+        "href": "#page-35",
+        "target_page": "35",
+        "target_code": "4C",
+        "text": "4C",
+        "pass": true
+      },
+      {
+        "source_page": "101",
+        "href": "#page-37",
+        "target_page": "37",
+        "target_code": "4D",
+        "text": "4D",
+        "pass": true
+      },
+      {
+        "source_page": "102",
+        "href": "#page-41",
+        "target_page": "41",
+        "target_code": "5A",
+        "text": "5A",
+        "pass": true
+      },
+      {
+        "source_page": "102",
+        "href": "#page-43",
+        "target_page": "43",
+        "target_code": "5B",
+        "text": "5B",
+        "pass": true
+      },
+      {
+        "source_page": "103",
+        "href": "#page-45",
+        "target_page": "45",
+        "target_code": "5C",
+        "text": "5C",
+        "pass": true
+      },
+      {
+        "source_page": "103",
+        "href": "#page-47",
+        "target_page": "47",
+        "target_code": "5D",
+        "text": "5D",
+        "pass": true
+      },
+      {
+        "source_page": "104",
+        "href": "#page-49",
+        "target_page": "49",
+        "target_code": "6A",
+        "text": "6A",
+        "pass": true
+      },
+      {
+        "source_page": "104",
+        "href": "#page-55",
+        "target_page": "55",
+        "target_code": "6D",
+        "text": "6D",
+        "pass": true
+      },
+      {
+        "source_page": "105",
+        "href": "#page-51",
+        "target_page": "51",
+        "target_code": "6B",
+        "text": "6B",
+        "pass": true
+      },
+      {
+        "source_page": "105",
+        "href": "#page-53",
+        "target_page": "53",
+        "target_code": "6C",
+        "text": "6C",
+        "pass": true
+      },
+      {
+        "source_page": "106",
+        "href": "#page-61",
+        "target_page": "61",
+        "target_code": "7B",
+        "text": "7B",
+        "pass": true
+      },
+      {
+        "source_page": "106",
+        "href": "#page-61",
+        "target_page": "61",
+        "target_code": "7B",
+        "text": "7B",
+        "pass": true
+      },
+      {
+        "source_page": "106",
+        "href": "#page-59",
+        "target_page": "59",
+        "target_code": "7A",
+        "text": "7A",
+        "pass": true
+      },
+      {
+        "source_page": "106",
+        "href": "#page-61",
+        "target_page": "61",
+        "target_code": "7B",
+        "text": "7B",
+        "pass": true
+      },
+      {
+        "source_page": "107",
+        "href": "#page-63",
+        "target_page": "63",
+        "target_code": "7C",
+        "text": "7C",
+        "pass": true
+      },
+      {
+        "source_page": "107",
+        "href": "#page-65",
+        "target_page": "65",
+        "target_code": "7D",
+        "text": "7D",
+        "pass": true
+      },
+      {
+        "source_page": "107",
+        "href": "#page-65",
+        "target_page": "65",
+        "target_code": "7D",
+        "text": "7D",
+        "pass": true
+      },
+      {
+        "source_page": "108",
+        "href": "#page-67",
+        "target_page": "67",
+        "target_code": "8A",
+        "text": "8A",
+        "pass": true
+      },
+      {
+        "source_page": "108",
+        "href": "#page-67",
+        "target_page": "67",
+        "target_code": "8A",
+        "text": "8A",
+        "pass": true
+      },
+      {
+        "source_page": "109",
+        "href": "#page-69",
+        "target_page": "69",
+        "target_code": "8B",
+        "text": "8B",
+        "pass": true
+      },
+      {
+        "source_page": "110",
+        "href": "#page-71",
+        "target_page": "71",
+        "target_code": "8C",
+        "text": "8C",
+        "pass": true
+      },
+      {
+        "source_page": "110",
+        "href": "#page-71",
+        "target_page": "71",
+        "target_code": "8C",
+        "text": "8C",
+        "pass": true
+      },
+      {
+        "source_page": "110",
+        "href": "#page-73",
+        "target_page": "73",
+        "target_code": "8D",
+        "text": "8D",
+        "pass": true
+      },
+      {
+        "source_page": "111",
+        "href": "#page-47",
+        "target_page": "47",
+        "target_code": "5D",
+        "text": "5D",
+        "pass": true
+      },
+      {
+        "source_page": "111",
+        "href": "#page-47",
+        "target_page": "47",
+        "target_code": "5D",
+        "text": "Lesson 5D",
+        "pass": true
+      },
+      {
+        "source_page": "112",
+        "href": "#page-55",
+        "target_page": "55",
+        "target_code": "6D",
+        "text": "6D",
+        "pass": true
+      },
+      {
+        "source_page": "112",
+        "href": "#page-55",
+        "target_page": "55",
+        "target_code": "6D",
+        "text": "Lesson 6D",
+        "pass": true
+      },
+      {
+        "source_page": "113",
+        "href": "#page-65",
+        "target_page": "65",
+        "target_code": "7D",
+        "text": "7D",
+        "pass": true
+      },
+      {
+        "source_page": "113",
+        "href": "#page-65",
+        "target_page": "65",
+        "target_code": "7D",
+        "text": "Lesson 7D",
+        "pass": true
+      },
+      {
+        "source_page": "114",
+        "href": "#page-73",
+        "target_page": "73",
+        "target_code": "8D",
+        "text": "8D",
+        "pass": true
+      }
+    ],
+    "slots": [
+      {
+        "bank": "grammar",
+        "unit": "1",
+        "page": "77",
+        "blank": true,
+        "text": "Blooket\nGrammar · Unit 1\nQR space reserved\nSelf-study · class play"
+      },
+      {
+        "bank": "grammar",
+        "unit": "2",
+        "page": "79",
+        "blank": true,
+        "text": "Blooket\nGrammar · Unit 2\nQR space reserved\nSelf-study · class play"
+      },
+      {
+        "bank": "grammar",
+        "unit": "3",
+        "page": "81",
+        "blank": true,
+        "text": "Blooket\nGrammar · Unit 3\nQR space reserved\nSelf-study · class play"
+      },
+      {
+        "bank": "grammar",
+        "unit": "4",
+        "page": "83",
+        "blank": true,
+        "text": "Blooket\nGrammar · Unit 4\nQR space reserved\nSelf-study · class play"
+      },
+      {
+        "bank": "grammar",
+        "unit": "5",
+        "page": "85",
+        "blank": true,
+        "text": "Blooket\nGrammar · Unit 5\nQR space reserved\nSelf-study · class play"
+      },
+      {
+        "bank": "grammar",
+        "unit": "6",
+        "page": "87",
+        "blank": true,
+        "text": "Blooket\nGrammar · Unit 6\nQR space reserved\nSelf-study · class play"
+      },
+      {
+        "bank": "grammar",
+        "unit": "7",
+        "page": "89",
+        "blank": true,
+        "text": "Blooket\nGrammar · Unit 7\nQR space reserved\nSelf-study · class play"
+      },
+      {
+        "bank": "grammar",
+        "unit": "8",
+        "page": "91",
+        "blank": true,
+        "text": "Blooket\nGrammar · Unit 8\nQR space reserved\nSelf-study · class play"
+      },
+      {
+        "bank": "vocabulary",
+        "unit": "1",
+        "page": "93",
+        "blank": true,
+        "text": "Blooket\nVocabulary · Unit 1\nQR space reserved\nSelf-study · class play"
+      },
+      {
+        "bank": "vocabulary",
+        "unit": "2",
+        "page": "96",
+        "blank": true,
+        "text": "Blooket\nVocabulary · Unit 2\nQR space reserved\nSelf-study · class play"
+      },
+      {
+        "bank": "vocabulary",
+        "unit": "3",
+        "page": "98",
+        "blank": true,
+        "text": "Blooket\nVocabulary · Unit 3\nQR space reserved\nSelf-study · class play"
+      },
+      {
+        "bank": "vocabulary",
+        "unit": "4",
+        "page": "100",
+        "blank": true,
+        "text": "Blooket\nVocabulary · Unit 4\nQR space reserved\nSelf-study · class play"
+      },
+      {
+        "bank": "vocabulary",
+        "unit": "5",
+        "page": "102",
+        "blank": true,
+        "text": "Blooket\nVocabulary · Unit 5\nQR space reserved\nSelf-study · class play"
+      },
+      {
+        "bank": "vocabulary",
+        "unit": "6",
+        "page": "104",
+        "blank": true,
+        "text": "Blooket\nVocabulary · Unit 6\nQR space reserved\nSelf-study · class play"
+      },
+      {
+        "bank": "vocabulary",
+        "unit": "7",
+        "page": "106",
+        "blank": true,
+        "text": "Blooket\nVocabulary · Unit 7\nQR space reserved\nSelf-study · class play"
+      },
+      {
+        "bank": "vocabulary",
+        "unit": "8",
+        "page": "108",
+        "blank": true,
+        "text": "Blooket\nVocabulary · Unit 8\nQR space reserved\nSelf-study · class play"
+      }
+    ],
+    "practice_images": [
+      {
+        "src": "./Practice/Images/U2-personal-items-v1.png",
+        "naturalWidth": 1774,
+        "naturalHeight": 887,
+        "complete": true
+      },
+      {
+        "src": "./Practice/Images/U3-routines-v1.png",
+        "naturalWidth": 1536,
+        "naturalHeight": 1024,
+        "complete": true
+      },
+      {
+        "src": "./Practice/Images/U4-picnic-boxes-v1.png",
+        "naturalWidth": 1536,
+        "naturalHeight": 1024,
+        "complete": true
+      },
+      {
+        "src": "./Practice/Images/U5-clothes-v1.png",
+        "naturalWidth": 1536,
+        "naturalHeight": 1024,
+        "complete": true
+      },
+      {
+        "src": "./Practice/Images/U6-apartment-v1.png",
+        "naturalWidth": 1374,
+        "naturalHeight": 1145,
+        "complete": true
+      },
+      {
+        "src": "./Practice/Images/U8-travelers-v1.png",
+        "naturalWidth": 1536,
+        "naturalHeight": 1024,
+        "complete": true
+      }
+    ]
+  },
+  "audio": [
+    {
+      "track": "1.1",
+      "url": "https://exams.bebrighton.net/Horizons/A1/Audios/Track%201.1.mp3",
+      "before": {
+        "time": 0.166762,
+        "paused": false,
+        "ready": 4,
+        "error": null
+      },
+      "after": {
+        "time": 1.084907,
+        "paused": false,
+        "ready": 4,
+        "error": null
+      },
+      "played": true,
+      "paused": true,
+      "button_state": "paused"
+    },
+    {
+      "track": "8.7",
+      "url": "https://exams.bebrighton.net/Horizons/A1/Audios/Track%208.7.mp3",
+      "before": {
+        "time": 0.160897,
+        "paused": false,
+        "ready": 4,
+        "error": null
+      },
+      "after": {
+        "time": 1.081411,
+        "paused": false,
+        "ready": 4,
+        "error": null
+      },
+      "played": true,
+      "paused": true,
+      "button_state": "paused"
+    }
+  ],
+  "finished_at": "2026-11-01T19:24:01.472Z",
+  "passed": true,
+  "independent_screenshot_review": {
+    "reviewed_at": "2026-11-01T14:24:27.930875",
+    "actual_files_viewed": [
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\practice-banks-20261101\\live-practice-proof-df18b38d2d3a\\live-G1.png",
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\practice-banks-20261101\\live-practice-proof-df18b38d2d3a\\live-V1.png",
+      "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\practice-banks-20261101\\live-practice-proof-df18b38d2d3a\\live-direct-body-topic.png"
+    ],
+    "observations": [
+      "G1p77: reference cards, controlled tasks and writing lines legible; futureQR blank; no clipping.",
+      "V1p93: different reply/password/locker resources readable, four codecard responses fit; QR blank and footerintact.",
+      "V8p110 directhash: targetheading visible below fixednav (geometry asserted); native targetoutline confirms selectedtopic; three fresh complete cutoutsubjects onwhitepaper, texts/forms/footersfit."
+    ],
+    "blockers": []
+  }
+}

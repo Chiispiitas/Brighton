@@ -1,6 +1,6 @@
 {
   "edition": "2026-11-01",
-  "status": "Local source, content, visual and saved-PDF verification complete; publication pending",
+  "status": "Practice banks complete; independent content, saved-PDF and published-viewer checks passed",
   "current_pdf_sha256": "389c53a44bb290856d394fc1c6c4880ed16804ef72d4e1bfa0d5ca097d310c6f",
   "root_visual_review": {
     "all_added_bank_and_end_credit_pages": 42,
@@ -38,5 +38,17 @@
     ],
     "active_games_or_qr_codes_created": 0,
     "registry": "../../Practice/Blooket-links.json"
+  },
+  "publication": {
+    "content_commit": "df18b38d2d3abc1ae494acdfd436dcc561607ec0",
+    "pages_deployment": "https://github.com/Chiispiitas/Brighton/actions/runs/41340677721",
+    "live_viewer_report": "live-viewer-verification.json",
+    "published_file_report": "published-file-verification.json",
+    "changed_horizons_files_matching": 118,
+    "file_failures": [],
+    "viewer_failures": [],
+    "screenshots_independently_viewed": true,
+    "reserved_blooket_slots_still_blank": true,
+    "author_acceptance_claimed": false
   }
 }
