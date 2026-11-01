@@ -14,5 +14,7 @@ jobs:
         with:
           node-version: 24
       - run: node --check Werewolves/app.js
-      - run: node --test Werewolves/tests/engine.test.mjs
+      - run: node --check Werewolves/tutorial.mjs
+      - run: node --check Werewolves/tutorial-model.mjs
+      - run: node --test Werewolves/tests/*.test.mjs
       - run: cmp Werewolves/server/engine.mjs Werewolves/wix-backend/src/game/engine.mjs

@@ -16,6 +16,12 @@ The frontend lives in `Chiispiitas/Brighton`, beside the exams. The game uses a 
 
 **Open village screen** launches a public projector view. It never uses the host's room key and receives no living players' secret roles, discoveries or private actions. Eliminated players' cards are public and visible there. Players' own browser keys restore access after a reload using **Return to your previous village**. Keys are device-local; clearing browser storage loses access to that identity. Join codes and invite links do not include keys. Rooms expire after 24 hours.
 
+## Learn to play
+
+Open **Learn to play** in the header, or select a role in the landing page's **Role tutorials** row. Each of the six roles has its own animated slide sequence, real clickable game controls, Back/Next navigation, slide replay and optional **Watch demo** playback. Direct links use `?tutorial=witch` (or `villager`, `werewolf`, `girl`, `fortune`, `hunter`).
+
+The tutorials render the same village, cards and action panels as a game. Fictional practice states run through the shared engine locally; they make no room-service requests and never save a demo over the player's room session. Motion follows the device's reduced-motion preference. Each slide can be reset independently, and players can exit to the landing page to return to their saved village.
+
 ## Rules implemented
 
 - A room supports 4–12 players. A thirteenth player cannot join, and an older oversized lobby cannot start. Wolf counts that would begin at parity are rejected.
@@ -50,7 +56,7 @@ The witch interpretation, tie behavior, auto balance, and parity victory are imp
 The deterministic game engine lives in `server/engine.mjs`; the Wix copy must match it. Frontend code is buildless HTML/CSS/JavaScript.
 
 ```sh
-node --test Werewolves/tests/engine.test.mjs
+node --test Werewolves/tests/*.test.mjs
 node --check Werewolves/app.js
 ```
 

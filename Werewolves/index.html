@@ -36,6 +36,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="tutorial.css">
   <script type="application/ld+json">
     {
       "@context": "https://schema.org",
@@ -52,11 +53,11 @@
       "creator": { "@type": "Organization", "name": "Brighton" }
     }
   </script>
-  <script type="module" src="app.js"></script>
+  <script type="module" src="app.js?v=role-tutorials-1"></script>
 </head>
 <body>
   <div class="scene" aria-hidden="true"></div><div class="grain" aria-hidden="true"></div>
-  <header class="topbar"><a class="brand" href="./"><img class="brandmark" src="assets/werewolf-icon.webp" alt=""><span>BRIGHTON <b>WEREWOLVES</b></span></a><nav><button id="sound" class="quiet" aria-pressed="false" title="Toggle ambient sound">Sound off</button><button id="guide" class="quiet">Rules</button></nav></header>
+  <header class="topbar"><a class="brand" href="./"><img class="brandmark" src="assets/werewolf-icon.webp" alt=""><span>BRIGHTON <b>WEREWOLVES</b></span></a><nav><a class="quiet" href="?tutorial">Learn to play</a><button id="sound" class="quiet" aria-pressed="false" title="Toggle ambient sound">Sound off</button><button id="guide" class="quiet">Rules</button></nav></header>
   <main id="app" tabindex="-1"></main>
   <div id="notice" class="notice" role="status" aria-live="polite"></div>
   <dialog id="modal"><button class="close" aria-label="Close dialog">×</button><div id="modal-content"></div></dialog>
