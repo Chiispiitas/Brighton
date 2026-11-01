@@ -1,0 +1,11 @@
+{
+  "implementation_commit": "2dcc57d4c5c6ec3ba6d5f9ba0614cf5275b3db2b",
+  "branch": "main",
+  "pages_run_id": 41273939738,
+  "pages_run_url": "https://github.com/Chiispiitas/Brighton/actions/runs/41273939738",
+  "conclusion": "success",
+  "site": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html#page-6",
+  "public_files_verified": 174,
+  "matches": "Canonical HTML/PDF, lesson masters and styles, existing generated objects/photos and all retained lesson recordings match the checked local edition. Text normalises line endings only.",
+  "build_checks": "Visual-spirit coverage and protected-object guards added to the standard workflow; verified locally, including the known-flattening negative test. Native checked PDF published directly."
+}

@@ -1,6 +1,6 @@
 # Horizons A1 — current book audit
 
-Updated 31 October 2026. **Expressive-identity correction and independent saved-PDF proof complete; live verification pending.** This revision preserves the completed editorial work and corrects its excessive visual restraint.
+Updated 31 October 2026. **Expressive-identity correction, independent saved-PDF proof and live verification complete.** This revision preserves the completed editorial work and corrects its excessive visual restraint.
 
 ## Authority, spirit and scope
 
@@ -31,7 +31,7 @@ Thirty-five concept/communication tools now declare their functional colour role
 
 ## Protection across future books
 
-[The visual register](Sources/Visual-personality.json) records all 36 spread identities and 72 protected selectors. New books must create their own equivalent register and consult the shared visual-spirit standard before authoring. Horizons/AGENTS.md applies these requirements to every level.
+[The visual register](Sources/Visual-personality.json) records all 36 spread identities and 72 protected selectors. New books must create their own equivalent register and consult the shared visual-spirit standard before authoring. [Repository authoring instructions](../AGENTS.md) apply these requirements to every level.
 
 The build checks declared coverage and configurable expressive objects. A1's guard verifies the eleven filled round numbers, three-colour rhythm, numeral contrast, correct number/letter sequences and prominent display lettering. A scratch-only recreation of the known flattening is rejected. These checks protect affordances; personal inspection still judges warmth, variety, adult suitability and craft.
 
@@ -45,13 +45,13 @@ The compiler preserves the expressive feature layers consistently in standalone 
 - [x] Empty response fields are not clipped; ordinary handwriting rows retain their usable heights.
 - [x] Native A4 PDF reopened: 76 pages, all learner word tokens and page numbers retained. The small destination/country spacing correction was re-rendered; the other 75 page images stayed identical.
 - [x] Visual-spirit coverage, protected-object contrast/shape/type checks and the negative regression check pass. Show coverage/style and all 98 audio-script preflights pass.
-- [ ] Current published HTML, PDF, styles and retained media match; all 90 audio controls play/pause and screen controls hide in print without moving content.
-- [ ] Final current evidence and fingerprints saved after live verification.
+- [x] All 174 checked published files match the local edition. Live 1A has eleven coloured bubbles, three fill colours and twenty-six 15.5pt letter pairs; all four functional colour families render. All 90 audio controls play/pause and screen controls hide in print without moving content.
+- [x] Final current evidence and fingerprints saved after live verification. Main contains implementation commit `2dcc57d` and the following evidence update.
 
 Detailed current evidence belongs in Sources/Expressive-spirit-20261031. The previous editorial proof remains historical in Sources/Editorial-overhaul-20261031 and the audit archives.
 
 ## Reversibility and upkeep
 
-The pre-correction version is commit8069492 on safety/horizons-before-expressive-spirit-20261031. Its exact source copies and PDF are retained locally in the expressive-spirit-20261031 work folder. The earlier pre-overhaul fd497fd baseline also remains available. No source artwork or recordings were replaced in this correction.
+The pre-correction version is commit `8069492` on `safety/horizons-before-expressive-spirit-20261031`. Its exact source copies and PDF are retained locally in the expressive-spirit-20261031 work folder. The earlier pre-overhaul `fd497fd` baseline also remains available. No source artwork or recordings were replaced in this correction.
 
 Update this concise audit after actual source, saved-PDF and published checks. book-audit.json records current evidence and fingerprints; freshness alone is not a visual verdict. Author acceptance is not claimed.

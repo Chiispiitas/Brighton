@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "updated": "2026-10-31",
-  "status": "Expressive identity correction and saved-PDF proof complete; live verification pending",
+  "status": "Expressive identity correction complete; saved-PDF and live verification complete",
   "authority": "Author delegates editorial authority; his own B2 book sets emotional direction. Preserve colourful learning objects and warm adult playfulness alongside coherent functional roles.",
   "scope": "Units1–8,32lessons and fourpairedreviews.72corepages plus4endcreditpages; front/index/practicebanks/workbook/optionalannexes excluded.",
   "baseline": {
@@ -190,9 +190,9 @@
       "subjective_listening_review": false
     },
     "live_viewer": {
-      "completed": false,
-      "all90controls_play_pause": false,
-      "print_ui_hidden": false
+      "completed": true,
+      "all90controls_play_pause": true,
+      "print_ui_hidden": true
     },
     "evidence_directory": "Sources/Expressive-spirit-20261031",
     "prior_editorial_evidence": "Sources/Editorial-overhaul-20261031"
@@ -343,9 +343,9 @@
         "Sources"
       ],
       "fingerprint": {
-        "files": 765,
-        "bytes": 566625251,
-        "sha256": "e6950b9a006160723aa43238cf51f31ce74157ec26d5994b3ff98f07d87012da"
+        "files": 768,
+        "bytes": 566680580,
+        "sha256": "756717b1e232c5fee9b2002e05948a710507674d30197307d8c731baafab3756"
       }
     },
     "shared_rendering": {
@@ -396,7 +396,7 @@
     "priority": "Warm adult playfulness, saturated local colour, tactile concept metaphors and protected letter/number graphics; functional consistency does not mean visual uniformity.",
     "regression_baseline": "8069492116058e45846c79601c66ebd8a3207abb",
     "protected_register": "Sources/Visual-personality.json",
-    "verification": "Complete native-PDF/local checks; live pending",
+    "verification": "Complete including published viewer",
     "functional_tool_counts": {
       "grammar": 25,
       "pronunciation": 1,
