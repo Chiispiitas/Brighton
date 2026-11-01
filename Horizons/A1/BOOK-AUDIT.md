@@ -1,6 +1,6 @@
 # Horizons A1 — Book audit
 
-Updated 31 October 2026. **Unit 8A–8D is authored and technically verified; editorial self-review is recorded. Publication verification is pending. Author acceptance, the paired 7 & 8 review, remaining backmatter and final whole-book release remain pending.**
+Updated 31 October 2026. **Unit 8A–8D is authored and technically verified; editorial self-review is recorded. Live HTML/PDF/media/playback are verified. Author acceptance, the paired 7 & 8 review, remaining backmatter and final whole-book release remain pending.**
 
 This is the current audit entry point. [book-audit.json](book-audit.json) holds scoped evidence and historical checks; [CANONICAL-STYLE.md](../Base/design-system/CANONICAL-STYLE.md) governs design. A current snapshot is not final release approval.
 
@@ -58,7 +58,7 @@ Source of scope: `Syllabus.txt`, **Unit 8: Travel Adventures**. The brief below 
 
 ### Completion record required for the four-lesson run
 
-Local technical and editorial self-review are complete. Publication has not yet passed its separate live check. Author acceptance remains pending.
+Local technical and editorial self-review are complete. Publication has passed its separate live check. Author acceptance remains pending.
 
 - [x] **Syllabus and tasks:** 8A/8C language roles, useful reading in 8B, communicative outcome in 8D; cumulative language, supported discovery/answers, keys, wordlists and private information checked lesson by lesson.
 - [x] **Unit art direction:** compare four distinct source/interaction ideas across all eight pages and with the preceding three spreads; record image hierarchy, source lettering, color relationships, backgrounds, image progression and continuation imagery. Actual sources/facts/licenses verified when acquired; Personal Best/English File inform principles without copied content/art.
@@ -66,7 +66,7 @@ Local technical and editorial self-review are complete. Publication has not yet 
 - [x] **Audio:** scripts/imports/casting/track references/keys agree, all required recordings generated and decoded; target words, timing, pronunciation, labels and speaker assignments checked. Track counts and additional print-only words declared accurately.
 - [x] **Series continuity:** vocabulary cues/references/Extra Practice and functional type verified; primary B skill recorded and show cadence/header checks pass for the assembled book.
 - [x] **Assembly and preservation:** all media load, lesson/assembled geometry agrees, no clipping/overlap; native saved-PDF pages inspected independently; existing lessons and review content preserved, necessary credit repagination explained, actual inventory counted.
-- [ ] **Publication:** HTML, styles, active media and PDF match checked files on the live viewer; all new audio buttons play/pause and disappear for print.
+- [x] **Publication:** HTML, styles, active media and PDF match checked files on the live viewer; all new audio buttons play/pause and disappear for print.
 - [x] **Honest handoff:** evidence recorded separately for all four lessons and the complete unit; unresolved items remain explicit. Mark prepared, authored, technically verified, editorially reviewed and author accepted according to evidence.
 
 ### Actual four-spread result
@@ -88,7 +88,7 @@ Local technical and editorial self-review are complete. Publication has not yet 
 
 **Audio:** Jessica labels/narration plus exact approved voice-pool IDs, Eleven v3 stability 0.5. All twelve final files decode and match independent normalized transcripts; six contextual clips have pitch-preserving 0.88 pacing and separate final-master transcript checks. Exact time/currency equivalences and Lia/Leah homophone spelling are documented; answer values and negatives are unchanged. All 98 import scripts pass forbidden-tag preflight; no detected throat/cough events. No subjective listening review claimed. Full-unit and per-lesson audio ZIPs match final masters.
 
-**Publication:** local files are verified; published-file and live playback checks remain pending.
+**Published:** checked canonical HTML/PDF, all four standalone lessons, five scoped styles, all twelve asset hashes and twelve MP3 hashes match. All twelve new controls play/pause and hide in print; live standalone/assembled geometry agrees with the checked pages.
 
 **Reversible:** baseline **3692e00**, exact originals/hash ledger, prompts, native-alpha provenance, transcription/render evidence and guarded rollback in `work/unit8-20261031` outside the repository. New styles are scoped to Unit 8. The 7 & 8 review, unresolved backmatter `page ---` references, remaining whole-book reassessment and final release are separate pending work.
 

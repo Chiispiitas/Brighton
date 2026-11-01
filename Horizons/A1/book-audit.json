@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated": "2026-10-31",
-  "status": "Unit 8 authored and technically verified; publication verification pending; editorial self-review complete, author acceptance and final whole-book release pending",
+  "status": "Unit 8 authored and technically verified; live HTML/PDF/audio verified; editorial self-review complete, author acceptance and final whole-book release pending",
   "scope": "A1 through Unit 8 (8A–8D), including paired reviews 1 & 2, 3 & 4, 5 & 6, with five end-credit pages. Review 7 & 8 and remaining backmatter unproduced.",
   "readability_comparison_baseline": "e8d6ddd69f62caffab662a93a5a392ebc5bfb131",
   "inventory": {
@@ -5178,7 +5178,7 @@
     "unit8_20261031": {
       "date": "2026-10-31",
       "scope": "New 8A–8D, eight printed pages 67–74, 29 activities; old 62 lesson/review pages preserved. Five end-credit pages now printed 75–79.",
-      "status": "Unit 8 authored and technically verified; publication verification pending; editorial self-review complete, author acceptance and final whole-book release pending",
+      "status": "Unit 8 authored and technically verified; live HTML/PDF/audio verified; editorial self-review complete, author acceptance and final whole-book release pending",
       "author_request": "Create Unit 8 with lessons 8A–8D. Ensure quality according to audit.",
       "lesson_evidence": {
         "8A": {
@@ -5381,6 +5381,65 @@
         "editorial_self_review": true,
         "author_accepted": false,
         "final_book_release": false
+      },
+      "publication": {
+        "files": {
+          "canonical_html_matches": true,
+          "canonical_pdf_sha256": "2408c999b4f081d1afcc4b5a226efa6b5d3f70e999e3a11f1d8cdc3966419fbb",
+          "new_sources_match": [
+            "Lessons/8A.html",
+            "Lessons/8B.html",
+            "Lessons/8C.html",
+            "Lessons/8D.html",
+            "Lessons/lesson-8a-local.css",
+            "Lessons/lesson-8b-local.css",
+            "Lessons/lesson-8c-local.css",
+            "Lessons/lesson-8d-local.css",
+            "Lessons/unit-8-local.css",
+            "Backmatter/image-credits.html"
+          ],
+          "new_image_hashes": {
+            "Images/8A/Raccoon-David-Selbert.jpg": "d5db5582297deb705403dc7b46cf225c72bec1a7a4c48bce11ed5e5cb61a81ad",
+            "Images/8A/Squirrel-Andrew-Patrick.jpg": "aaf1ccbb772f896fa3347caa39fa05f20418c0caef0f11a9acc0316bf89bb992",
+            "Images/8A/Duck-NGSOFT-IT.jpg": "cecc3b290f9ae34305844e21ca0e6c131327ff2cc46940996da1ecc1f24e7068",
+            "Images/8B/Sun-Tugba.jpg": "6794fab9b786fd284f55def8d0b1f731a5a275ff40781f8ce00a29b96430373a",
+            "Images/8B/Snow-Jean-Marc-Pampuch.jpg": "0e98fa0352ea0ebe9f77c7e4d7191bcc62e8c89565af5adefa9e87d2aaad49ed",
+            "Images/8B/Rain-Michael-Obstoj.jpg": "2d56424a31b95610cc0327ba58d669ad9d3b157b584abd9c1b0420cc64d287f0",
+            "Images/8D/Phone-Gustavo-Fring.jpg": "766f98d22cf1a8108a8760c2f29c79ac010d3f272ffa3f71c7c9fbd8373b6bf2",
+            "Images/8D/Airport-Zenith.jpg": "6847702afd13b0592338d0a9baedb22720712ac4c0c96a0c65ed0cf63e649369",
+            "Images/8A/Toronto-ferry-Susanne-Mueller.jpg": "313d77a257657552438ea860edfd867af8847ca5d1d0281403df53fa0111041a",
+            "Images/8A/Map-traveler-cutout.png": "98d293af5d5ab40fd70fe715ed5975c81b7283f863a1f0564609794e8f9344cb",
+            "Images/8C/Body-parts-cutout.png": "9131005415ed742479734661c95055e56def06624b71b112f9a96746cf1d4daa",
+            "Images/8C/Four-health-poses.png": "5c596746469495696bb50ef525890c8aab93a2f1ad27a2aa4343f622811e7af2"
+          },
+          "new_audio_hashes": {
+            "Audios/Track 8.1.mp3": "07e7b017db402172e7ea9b6afeffd2704ee1f6e6625ed5cdb89e139ec657e339",
+            "Audios/Track 8.2.mp3": "484fc3ac30dc56e75dd63ea4f823c3845a5e4eaff519948edd795f6a588965de",
+            "Audios/Track 8.3.mp3": "47d6c620863d1c8f15547ba564979c24f5666c30fbedae700c6486568c5a7b10",
+            "Audios/Track 8.4.mp3": "649068d66127a8ecdb1aeaaedfda2fc64a91d2e7220efdd2029bef1be746fc32",
+            "Audios/Track 8.5.mp3": "78301778f47d78eb7dcfd45f4bbf85a2112ad9bf6025e6f94fdab137eacde398",
+            "Audios/Track 8.6.mp3": "39e025a9180337a000a03c9f40a427dd1d0d4dde67608f2e16c0a5320c3701d7",
+            "Audios/Track 8.7.mp3": "93eeb1c0b20485735a04818d8f5b5f1662b5fe0aa9014fd6172919c15649785f",
+            "Audios/Track 8.8.mp3": "17804c4ab5548157d31a3e43ca26a6326246c0f955fa0f52220d2c6313eafede",
+            "Audios/Track 8.9.mp3": "4b793af794fe910fdd19236b68a853afc2b465ab60e5733b52cb7378e7d01e8d",
+            "Audios/Track 8.10.mp3": "4e32b2efed0975a743a69e31d1b4e66f09edeb259b2404d2974cb5aee38fa5b1",
+            "Audios/Track 8.11.mp3": "78f735e8b187bfcef35f7964a9af4272800416c8ab3ea78a530cfae67e8a7750",
+            "Audios/Track 8.12.mp3": "15bb1293a5e13d948e032e4e561e1a34705eacc61ed607bb087170ac3bdd879b"
+          }
+        },
+        "browser": {
+          "pages": 75,
+          "unit8Pages": 8,
+          "retainedBookNewWordsBadges": 46,
+          "automaticVocabularyWrappers": 0,
+          "creditsAtEnd": 5,
+          "geometry_matches_local": true,
+          "all_images_and_backgrounds_loaded": true,
+          "all_four_lessons_match_assembled_geometry": true,
+          "all_twelve_new_controls_play_and_pause": true,
+          "all_twelve_new_tracks_play": true,
+          "controls_hidden_in_print_and_print_geometry_preserved": true
+        }
       }
     }
   },
@@ -5485,7 +5544,7 @@
     }
   },
   "content_baseline_commit": "2f404b547b7da07be81a0622a78591d3299c402a",
-  "current_revision": "Created Unit 8A–8D, printed 67–74: 29 activities, twelve checked recordings, twelve active images including two native-alpha cutouts. Full book 75 A4 pages, credits 75–79. Earlier 62 lesson/review pages preserved. Local verification complete; live checks pending. Author acceptance, review 7 & 8, backmatter and final release remain pending.",
+  "current_revision": "Created Unit 8A–8D, printed 67–74: 29 activities, twelve checked recordings, twelve active images including two native-alpha cutouts. Full book 75 A4 pages, credits 75–79. Earlier 62 lesson/review pages preserved. Published HTML/PDF/media/playback verified. Author acceptance, review 7 & 8, backmatter and final release remain pending.",
   "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope. units_3_4_reviews_visual_variety_20261025 supersedes earlier composition, color and geometry evidence for printed pages 21-40, including review_composition_20261025, review_3_4_20261025, unit_3_creative_revision and unit_4_visual_variety; earlier learning and audio evidence keeps its original scope. lesson_5b_on_air_20261026 supersedes prior 5B reading/source/presentation and 5.5/5.6 records only. The 26 October every-unit show mandate is superseded by planned B-skill balance and no two-unit show gap. lesson_5b_activity5_variety_20261026 supersedes only the earlier 5B Activity 5 image/choices/key and continuation-image evidence; no show/audio or other lesson evidence changes. lesson_6b_picture_grammar_20261026 supersedes only the original 6B page-52 grammar presentation, continuation spacing and associated geometry evidence; all learning, source and audio evidence retains its scope. lessons_6c_6d_20261026 adds printed pages 53-56 and completes Unit 6 without superseding prior source/audio/page evidence. Prior 6C/6D-unproduced statements are historical; current coverage is through 6D. vocabulary_and_credits_20261026 supersedes prior plain NEW WORDS vocabulary presentation and in-lesson image-credit placement. Existing learning, audio, image bytes and unrelated geometry evidence retains its scope. Three appended credits pages are provisional end matter after the current final lesson. plain_vocabulary_20261026 supersedes every earlier requirement for automatic or paired NEW WORDS word emphasis; the author withdrew blanket bolding. End-of-book credits remain unchanged. review_5_6_20261026 adds printed pages 57-58 and repaginates existing end credits to 59-61. Earlier 55-page counts describe the prior version; no previous lesson/source/audio evidence is superseded. unit7_20261028 adds printed pages 59–66 and twelve recordings; retains the prior 54 lesson/review pages and repaginates/appends credits to 67–70. Earlier 57-page counts and Unit 7 unproduced/show-due statements are historical; prior learning and audio evidence retains its scope. lesson7a_visual_refinement_20261028 supersedes original 7A presentation/geometry and its creative approval only. Original Unit 7 visual claims are not author approval: 7B–7D remain pending separate review, including poor 7B portrait crops. No other lesson content, source, media or audio evidence is superseded. lesson7b_visual_refinement_20261030 supersedes original 7B presentation/geometry and the pending portrait-crop issue, including earlier statements that 7B remains untouched. All learning/factual/audio evidence retains its scope. Only 7B and its page-70 display-credit wording change; 7C/7D remain pending. on_air_identity_consistency_20261030 supersedes earlier visual claims of 2B consistency for 3B/5B/7B, including the 7B calendar inside the masthead and independent listener header. The episode date remains below the canonical banner. Main/secondary structure and black/orange caption rules now follow 2B exactly; source content/media/audio evidence remains valid. 2B is unchanged. lesson7c_visual_refinement_20261031 supersedes original 7C visual geometry and its three-word pronunciation task. Activity 6 now has nine sorting words; recorded scripts and bytes are unchanged. 7D and final release remain pending. lesson7d_visual_refinement_20261031 supersedes original 7D visual geometry and the active full-background shoe close-up only; that file remains archived in place. Seven activities, learning/recording text and audio bytes are preserved. Unit 7 refinements are for author review; final release remains pending. lesson7d_author_correction_20261031 supersedes the tall Tessa and small diary composition in lesson7d_visual_refinement_20261031: the author rejected the excess blank area. Compact original Activity 3/photo restored and Activity 7 diary enlarged. All learning/audio evidence retained. audit_unit8_preparation_20261031 consolidates current Unit 7 corrections and authorizes the planned coordinated Unit 8 authoring workflow. Earlier Unit 7 one-at-a-time refinement notes are historical scope, not a Unit 8 blocker. Planned 8B is explicitly unproduced; no future lesson or creative acceptance is claimed. unit8_20261031 fulfils the earlier Unit 8 planned/unproduced statements. Current content is through 8D; old counts and preparation-only records retain historical scope. The original 62 lesson/review pages are preserved; image credits repaginate to 75–79. Technical and editorial self-review do not imply author creative acceptance.",
   "receptive_skill_plan": {
     "policy": "B lessons provide a planned mix of reading-led and listening-led units; Horizons on Air is not required in every unit. Avoid two consecutive units without the show. Do not impose rigid alternation; 2B and 3B are both listening-led. Declare primary skill and source genre before authoring.",
@@ -5811,7 +5870,7 @@
         "required": "Standalone/compiled parity, all images load, no clipping/overlap, independent saved-PDF render, unchanged existing content and explained credit repagination."
       },
       "publication": {
-        "status": "pending live verification",
+        "status": "verified",
         "required": "Live HTML/styles/media/PDF match checked files; all new audio controls play/pause and hide in print."
       },
       "handoff": {
