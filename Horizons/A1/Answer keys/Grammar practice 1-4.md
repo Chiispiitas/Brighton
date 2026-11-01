@@ -4,13 +4,11 @@ These keys refer to each unit’s two pages and the lettered tasks printed there
 
 ## Unit 1 — People and classes (first page)
 
-**A:** 1 am; 2 are; 3 is; 4 are.
+**A:** 1 is; 2 is; 3 are.
 
-**B:** 1 is; 2 is; 3 are.
+**B:** 1 Is Nina a teacher? No, she is not. / No, she isn’t. 2 Are Ben and Mia in Class 2? Yes, they are. Do not infer additional personal details beyond the cards. Positive short answers keep the full verb: Yes, they are (not Yes, they’re).
 
-**C:** 1 Is Nina a teacher? No, she is not. / No, she isn’t. 2 Are Ben and Mia in Class 2? Yes, they are. Do not infer additional personal details beyond the cards.
-
-**D:** Two complete sentences with a matching subject and am/is/are. One must be true and the other false according to the writer; the partner identifies the false sentence. Real or invented details are acceptable if the writer can explain the intended answer.
+**C:** Two complete sentences with a matching subject and am/is/are. One must be true and the other false according to the writer; the partner identifies the false sentence. Real or invented details are acceptable if the writer can explain the intended answer.
 
 ## Unit 1 — Words that work together (second page)
 

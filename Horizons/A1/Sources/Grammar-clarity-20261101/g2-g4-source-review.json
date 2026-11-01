@@ -1,0 +1,112 @@
+{
+  "reviewer": "grammar_1_4 agent",
+  "status": "Latest user steering implemented; source and standalone print review complete; assembled saved-PDF review remains root scope.",
+  "author_steering": "Explanatory grammar uses arrows, charts, diagrams and short labels. Remove prose rules; keep task instructions and full sentence models. Simplify the previous present-simple expansion.",
+  "scope": [
+    "G2.html",
+    "G3.html",
+    "G4.html",
+    "grammar-1-4.css appended selectors gated to pages79\u201384"
+  ],
+  "superseded": "Earlier procedural prose draft is superseded and absent from current explanatory areas.",
+  "changes": {
+    "G2": [
+      "One/many demonstrative agreement map",
+      "One-owner/two-owner labels on possessive links",
+      "One/two adjective examples with unchanged adjective"
+    ],
+    "G3": [
+      "Compact he/she/it ending transformations",
+      "One positive/negative/yes-no question/short-answer chart",
+      "Full\u2192contracted negative mapping",
+      "do/does/don\u2019t/doesn\u2019t\u2192base work visual contrast",
+      "be-versus-do sentence model arrows without prose",
+      "Action-verb/be frequency-position model labels"
+    ],
+    "G4": [
+      "Countability evidence and rice wrong/right mappings",
+      "Subject\u2192object maps plus name\u2192pronoun substitution models",
+      "Enough-before-noun right/wrong arrows",
+      "Need:two tomatoes visual quantity evidence",
+      "Reason/result models and clause-order labels"
+    ]
+  },
+  "source_checks": {
+    "G2": {
+      "tasks": 9,
+      "tasks_unchanged": true,
+      "explanatory_practice_note_paragraphs": 0,
+      "pages": [
+        79,
+        80
+      ],
+      "topic_ids": [
+        "grammar-this-that-these-those",
+        "grammar-a-an-the",
+        "grammar-possessive-case",
+        "grammar-adjective-position"
+      ],
+      "qr_slots": 1,
+      "sha256": "4df0ce0e456eeb1fb3786aca3fbc0b4b391db19546b4ef16ab584c9ba26da67b"
+    },
+    "G3": {
+      "tasks": 10,
+      "tasks_unchanged": true,
+      "explanatory_practice_note_paragraphs": 0,
+      "pages": [
+        81,
+        82
+      ],
+      "topic_ids": [
+        "grammar-present-simple-affirmative",
+        "grammar-present-simple-negatives-and-questions",
+        "grammar-question-words",
+        "grammar-frequency-adverbs",
+        "grammar-before-after"
+      ],
+      "qr_slots": 1,
+      "sha256": "f3f1dc691b11b949dc751425c4cd19cdb0045e10267f012e2f08fcaf3cbfb08d"
+    },
+    "G4": {
+      "tasks": 9,
+      "tasks_unchanged": true,
+      "explanatory_practice_note_paragraphs": 0,
+      "pages": [
+        83,
+        84
+      ],
+      "topic_ids": [
+        "grammar-countable-and-uncountable-nouns",
+        "grammar-object-pronouns",
+        "grammar-too-much-too-many-enough",
+        "grammar-because-so-and-punctuation"
+      ],
+      "qr_slots": 1,
+      "sha256": "28e3229532a81f071577e8be555bf23115ef24bb0e61078e28ab78c45cf41895"
+    }
+  },
+  "keys_changed": false,
+  "body_and_models_pt": 10,
+  "ordinary_open_writing_rows_mm": 7,
+  "geometry_report": "g2-4-layout-response-qr.json",
+  "rendered_pages_reviewed": [
+    79,
+    80,
+    81,
+    82,
+    83,
+    84
+  ],
+  "contact_sheets": [
+    "g2-4-diagram-final-contact-1.png",
+    "g2-4-diagram-final-contact-2.png"
+  ],
+  "no_text_empty_field_or_qr_collisions": true,
+  "no_shrinking_to_fit": true,
+  "notes": [
+    "All 28 tasks across these three unit masters remain hash-identical.",
+    "Existing concept imagery, topic IDs, exact lesson-return anchors and QR slots preserved.",
+    "Task instructions and sentence models intentionally remain verbal; explanatory rule paragraphs are removed.",
+    "No vocabulary, core, common CSS or consolidated key edits."
+  ]
+}

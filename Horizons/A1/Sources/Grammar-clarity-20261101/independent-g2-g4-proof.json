@@ -1,0 +1,101 @@
+{
+  "reviewer": "grammar_5_8; independent of G2-G4 authoring",
+  "scope": "Saved PDF physical75-80 / printed79-84, actual Poppler renders, read-only",
+  "pdf": {
+    "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Student's Book.pdf",
+    "sha256": "752a6f94779b42354f9fe3f6b1c6d7034bb439131991fc7eb7b8a095af2b0772",
+    "expected_sha256_match": true,
+    "page_count": 114
+  },
+  "pages": [
+    {
+      "physical_page": 75,
+      "printed_page": 79,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\grammar-clarity-20261101\\pdf-proof\\page-075.png",
+      "sha256": "ef42f68fb5d7fc453dd7bfe1771d4a7f0ddecbcc485de8568122c43977a1bc87",
+      "pixel_size": [
+        992,
+        1404
+      ],
+      "full_page_visually_inspected": true,
+      "result": "PASS",
+      "observation": "Near/far panels and one/plural forms are explicit. First mention to known-item arrow gives full article models. Writing rules and Unit2 QR visible with clear separation."
+    },
+    {
+      "physical_page": 76,
+      "printed_page": 80,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\grammar-clarity-20261101\\pdf-proof\\page-076.png",
+      "sha256": "89a81c66d84cff1c36b173464d09a8242e7cd844c1ae6e4d14351dea4d7f034a",
+      "pixel_size": [
+        992,
+        1404
+      ],
+      "full_page_visually_inspected": true,
+      "result": "PASS",
+      "observation": "Single-owner and plural-owner apostrophes legible, including Carlos’s. Adjective-before-item and after-be models align; singular/plural examples preserve invariant adjective form. All response rules visible."
+    },
+    {
+      "physical_page": 77,
+      "printed_page": 81,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\grammar-clarity-20261101\\pdf-proof\\page-077.png",
+      "sha256": "d995d9bef02d5e5d34e1456553be460f163c2f5ee3800933a8edafbf6006038d",
+      "pixel_size": [
+        992,
+        1404
+      ],
+      "full_page_visually_inspected": true,
+      "result": "PASS",
+      "observation": "Present-simple chart clearly separates positive, negative, yes/no question and short answer for pronoun groups. do/does + base form and be/action question contrast are legible. Final short-answer fields remain clear of Unit3 QR."
+    },
+    {
+      "physical_page": 78,
+      "printed_page": 82,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\grammar-clarity-20261101\\pdf-proof\\page-078.png",
+      "sha256": "119eee265bacb80607aaf3511c0672d400e9c7a47552eea67c779339cb966ca8",
+      "pixel_size": [
+        992,
+        1404
+      ],
+      "full_page_visually_inspected": true,
+      "result": "PASS",
+      "observation": "Wh meaning/model pairs align. Frequency dots communicate relative frequency; before/after time diagram agrees with both models. All open response lines visible above footer."
+    },
+    {
+      "physical_page": 79,
+      "printed_page": 83,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\grammar-clarity-20261101\\pdf-proof\\page-079.png",
+      "sha256": "0ab6e326213614413fc4ceedd636191832fe6f891a8edb52eb74a90b416c792d",
+      "pixel_size": [
+        992,
+        1404
+      ],
+      "full_page_visually_inspected": true,
+      "result": "PASS",
+      "observation": "One-to-two apple diagram and uncountable rice contrast are clear; crossed incorrect a rice/rices remain legible. Subject-to-object pairs align with complete models. Response rules and Unit4 QR fully visible."
+    },
+    {
+      "physical_page": 80,
+      "printed_page": 84,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\grammar-clarity-20261101\\pdf-proof\\page-080.png",
+      "sha256": "789754e6cd7f5908dcda5afe3ea12d808c047df49159a462c5af095ce827eeff",
+      "pixel_size": [
+        992,
+        1404
+      ],
+      "full_page_visually_inspected": true,
+      "result": "PASS",
+      "observation": "Need-two tomato diagrams show excess/enough/shortage accurately. Enough placement repair arrows are clear. Because and so arrows preserve causal direction with full examples. Two final message lines visible; no footer clipping."
+    }
+  ],
+  "overall_result": "PASS",
+  "blockers": [],
+  "criteria": {
+    "form_models_and_diagrams": "PASS",
+    "no_verbal_rule_paragraphs": "PASS",
+    "labels_and_diagram_legibility": "PASS",
+    "writing_fields_visible": "PASS",
+    "qr_clearance": "PASS",
+    "latest_concise_visual_only_guidance": "PASS"
+  },
+  "qualification": "Full grammatical models, factual source contexts and task instructions correctly retained. No source edits or publication performed."
+}

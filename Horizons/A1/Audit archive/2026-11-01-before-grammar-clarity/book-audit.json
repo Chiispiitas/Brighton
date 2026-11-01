@@ -1,0 +1,505 @@
+{
+  "schema_version": 3,
+  "updated": "2026-11-01",
+  "status": "Practice banks complete; independent content, saved-PDF and published-viewer checks passed",
+  "authority": "Author delegates editorial authority; his own B2 book sets emotional direction. Preserve colourful learning objects and warm adult playfulness alongside coherent functional roles.",
+  "scope": "Units1–8:32lessons,4pairedreviews,72corepages;38new practice pages and4end-creditpages.114physicalpages, printed5–118. Front matter,index,workbook andoptionalannexes remainfuturework.",
+  "baseline": {
+    "commit": "fd497fd",
+    "safety_branch": "safety/horizons-before-editorial-overhaul-20261031",
+    "local_before_copy": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\editorial-overhaul-20261031\\before",
+    "old_pdf_sha256": "968558391f585e85fdb52a29e8840c733e54374f59585a0b5daba108393ee301",
+    "expressive_correction": {
+      "commit": "8069492116058e45846c79601c66ebd8a3207abb",
+      "safety_branch": "safety/horizons-before-expressive-spirit-20261031",
+      "sources": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\expressive-spirit-20261031\\before",
+      "pdf": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\expressive-spirit-20261031\\before-book.pdf"
+    },
+    "practice_banks": {
+      "commit": "90161278603403da17ed4857701984e552c1204c",
+      "safety_branch": "safety/horizons-before-practice-banks-20261101",
+      "previous_audit": "Audit archive/2026-11-01-before-practice/book-audit.json"
+    }
+  },
+  "inventory": {
+    "lesson_masters": [
+      "1A",
+      "1B",
+      "1C",
+      "1D",
+      "2A",
+      "2B",
+      "2C",
+      "2D",
+      "2R",
+      "3A",
+      "3B",
+      "3C",
+      "3D",
+      "4A",
+      "4B",
+      "4C",
+      "4D",
+      "4R",
+      "5A",
+      "5B",
+      "5C",
+      "5D",
+      "6A",
+      "6B",
+      "6C",
+      "6D",
+      "6R",
+      "7A",
+      "7B",
+      "7C",
+      "7D",
+      "8A",
+      "8B",
+      "8C",
+      "8D",
+      "8R"
+    ],
+    "core_spreads": 36,
+    "core_pages": 72,
+    "html_pages": 114,
+    "pdf_pages": 114,
+    "printed_pages": [
+      5,
+      118
+    ],
+    "credits_pages": 4,
+    "lesson_audio_files": 84,
+    "production_audio_files": 1,
+    "html_audio_controls": 90,
+    "new_words_badges": 46,
+    "extra_practice_footers": 32,
+    "go_to_references": 75,
+    "page_placeholders": 0,
+    "external_photo_credit_records": 81,
+    "practice_masters": 20,
+    "grammar_practice_pages": 16,
+    "vocabulary_practice_pages": 18,
+    "practical_language_pages": 4,
+    "practice_pages": 38,
+    "core_activity_blocks": 253,
+    "practice_activity_blocks": 148,
+    "grammar_practice_activities": 68,
+    "vocabulary_practice_activities": 68,
+    "practical_language_activities": 12,
+    "practice_topics": 71,
+    "distinct_referenced_topics": 70,
+    "blooket_reserved_slots": 16,
+    "practice_specific_generated_assets": 6,
+    "prior_editorial_generated_object_assets": 12,
+    "core_focus_panels": 35,
+    "total_activity_blocks": 401
+  },
+  "standards": {
+    "canonical_style": "../Base/design-system/CANONICAL-STYLE.md",
+    "learning": "../Base/design-system/GUIDED-DISCOVERY.md",
+    "media": "../Base/design-system/asset-policy.md",
+    "components": "../Base/design-system/component-contracts.md",
+    "reference_study": "EDITORIAL-REFERENCE-STUDY.json",
+    "change_register": "Sources/Editorial-overhaul-20261031/change-register.json",
+    "visual_spirit": "../Base/design-system/VISUAL-SPIRIT.md",
+    "author_reference": "../Base/design-system/AUTHOR-REFERENCE-STUDY.json",
+    "protected_visual_register": "Sources/Visual-personality.json",
+    "authoring_instructions": "../AGENTS.md",
+    "practice_banks": "../Base/design-system/PRACTICE-BANKS.md",
+    "practice_reference_study": "Sources/Practice-reference-study.json",
+    "practice_visual_register": "Sources/Practice-personality.json",
+    "practice_teacher_key": "Practice/Answer key.md",
+    "future_blooket_slots": "Practice/Blooket-links.json"
+  },
+  "editorial_judgment": {
+    "basis": "Maintain the approved Horizons identity while adding concept-specific grammar explanations and original vocabulary revision games. The first catalogue/reused-picture vocabulary draft was discarded following the author clarification.",
+    "vocabulary_rule": "Use taught words in fresh evidence, clues, decisions, games and learner products; do not reuse the lesson picture dictionary, body model or source pictures. Grammar may briefly repeat a taught model.",
+    "root_review": {
+      "all_added_bank_and_end_credit_pages": 42,
+      "saved_final_png_contact_sequences_viewed": 7,
+      "independent_page_coverage": "All38 practice pages and4credit pages; selected difficult assets and writing fields also checked full size.",
+      "content_and_keys": "Independent checks of every vocabulary bank and controlled keys; clocks, lunchboxes, routes, labels and crossword independently reconciled.",
+      "recipe_key_followup": "Accept C,D,A,B and reasonable A,C,D,B or C,A,D,B: wash before cutting; mix everything last. All current keys updated.",
+      "author_acceptance_claimed": false
+    },
+    "independent_saved_pdf_reviews": [
+      "Sources/Practice-banks-20261101/saved-pdf-review-g14-v58.json",
+      "Sources/Practice-banks-20261101/saved-pdf-review-g58-v14.json",
+      "Sources/Practice-banks-20261101/saved-pdf-review-practical-credits.json"
+    ],
+    "current_decision": "Sources/Practice-banks-20261101/editorial-decision.json",
+    "author_acceptance_claimed": false
+  },
+  "verification": {
+    "layout": {
+      "pages": 114,
+      "text_faults": [],
+      "response_fields": 368,
+      "clipped_fields": [],
+      "short_open_lines": [],
+      "qr_slots": 16,
+      "qr_collisions": []
+    },
+    "standalone_assembled_parity": {
+      "standalone_masters": 56,
+      "pages": 110,
+      "failures": []
+    },
+    "pdf": {
+      "sha256": "389c53a44bb290856d394fc1c6c4880ed16804ef72d4e1bfa0d5ca097d310c6f",
+      "bytes": 37338892,
+      "physical_pages": 114,
+      "printed_pages": [
+        5,
+        118
+      ],
+      "paper_pt": [
+        594.96,
+        841.92
+      ],
+      "a4_with_browser_rounding": true,
+      "all_footer_labels_match": true,
+      "fitz_warnings": [],
+      "pypdf_strict_read": true,
+      "lesson_practice_pdf_links_verified": 75,
+      "internal_named_links": 155,
+      "qr_reserved_labels": 16,
+      "saved_proof_images_unchanged_after_structural_fix": true
+    },
+    "preservation": {
+      "baseline": "90161278603403da17ed4857701984e552c1204c",
+      "core_pages": 72,
+      "core_words_unchanged_outside_go_to_practice_references": true,
+      "core_layout_geometry_differences": [],
+      "existing_core_images_recordings_and_scripts_changed": false,
+      "new_vocabulary_core_raster_reuses": 0
+    },
+    "protected_object_regression": {
+      "current_design_passes": true,
+      "recreated_known_number_flattening_rejected": true,
+      "negative_test_mutation": "Scratch-only copy removes bubble fill and roundness; production files untouched.",
+      "positive_checks": [
+        {
+          "lesson": "1A",
+          "view": "standalone",
+          "selector": ".ed13-numbers b",
+          "count": 11,
+          "min_font_pt": 15,
+          "fill_colours": 3,
+          "passed": true
+        },
+        {
+          "lesson": "1A",
+          "view": "assembled",
+          "selector": ".ed13-numbers b",
+          "count": 11,
+          "min_font_pt": 15,
+          "fill_colours": 3,
+          "passed": true
+        },
+        {
+          "lesson": "1A",
+          "view": "standalone",
+          "selector": ".l1a-alphabet > span",
+          "count": 26,
+          "min_font_pt": 15.500024999999999,
+          "fill_colours": 1,
+          "passed": true
+        },
+        {
+          "lesson": "1A",
+          "view": "assembled",
+          "selector": ".l1a-alphabet > span",
+          "count": 26,
+          "min_font_pt": 15.500024999999999,
+          "fill_colours": 1,
+          "passed": true
+        }
+      ],
+      "scope": "Protected affordances only; manual emotional/editorial review remains required."
+    },
+    "audio": {
+      "existing_core_recordings_and_scripts_unchanged": true,
+      "preflight_scripts": 98,
+      "forbidden_tag_issues": [],
+      "new_audio_generated": false,
+      "subjective_listening_review": false,
+      "html_controls": 90
+    },
+    "live_viewer": {
+      "completed": true,
+      "content_commit": "df18b38d2d3abc1ae494acdfd436dcc561607ec0",
+      "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=practicegames-df18b38d2d3a",
+      "book_pages": 114,
+      "navigation_options": 57,
+      "forward_links_checked": 75,
+      "return_links_checked": 80,
+      "blank_blooket_slots": 16,
+      "fresh_practice_images_decoded": 6,
+      "sample_recordings_play_progress_pause": [
+        "1.1",
+        "8.7"
+      ],
+      "audio_controls_preserved": 90,
+      "all90_subjectively_listened_this_pass": false,
+      "print_controls_hidden": true,
+      "topic_headings_clear_fixed_navigation": true,
+      "failures": [],
+      "changed_horizons_files_match": 118,
+      "file_report": "Sources/Practice-banks-20261101/published-file-verification.json",
+      "viewer_report": "Sources/Practice-banks-20261101/live-viewer-verification.json"
+    },
+    "evidence_directory": "Sources/Practice-banks-20261101",
+    "prior_editorial_evidence": [
+      "Sources/Editorial-overhaul-20261031",
+      "Sources/Expressive-spirit-20261031"
+    ]
+  },
+  "new_objects": "Images/Editorial-objects/manifest.json",
+  "resource_registry": "Sources/Lesson-resources.json",
+  "practice_destinations": "Sources/Practice-destinations.json",
+  "receptive_skill_plan": {
+    "policy": "B lessons provide a planned mix of reading-led and listening-led units; Horizons on Air is not required in every unit. Avoid two consecutive units without the show. Do not impose rigid alternation; 2B and 3B are both listening-led. Declare primary skill and source genre before authoring.",
+    "units": [
+      {
+        "unit": 1,
+        "lesson": "1B",
+        "primary_skill": "reading",
+        "genre": "Occupation profiles and model conversations, with supporting audio",
+        "episode": null
+      },
+      {
+        "unit": 2,
+        "lesson": "2B",
+        "primary_skill": "listening",
+        "genre": "Horizons on Air street interviews",
+        "episode": "Bus or car?",
+        "tracks": [
+          "2.3"
+        ]
+      },
+      {
+        "unit": 3,
+        "lesson": "3B",
+        "primary_skill": "listening",
+        "genre": "Horizons on Air guest interviews",
+        "episode": "Three people. Three weeks.",
+        "tracks": [
+          "3.5"
+        ]
+      },
+      {
+        "unit": 4,
+        "lesson": "4B",
+        "primary_skill": "reading",
+        "genre": "Food opinions and comparison",
+        "episode": null
+      },
+      {
+        "unit": 5,
+        "lesson": "5B",
+        "primary_skill": "listening",
+        "genre": "Horizons on Air shopping reviews and listener calls",
+        "episode": "Keep or return?",
+        "tracks": [
+          "5.5",
+          "5.6"
+        ]
+      },
+      {
+        "unit": 6,
+        "lesson": "6B",
+        "primary_skill": "reading",
+        "genre": "Dated real tiny-home interview adaptation: silent gist/detail/evaluation; supporting audio",
+        "episode": null
+      },
+      {
+        "unit": 7,
+        "lesson": "7B",
+        "primary_skill": "listening",
+        "genre": "Horizons on Air birthday quiz with two hosts and listener voicemail; dated show with gist, exact-date and relative-time listening",
+        "episode": "Birthday detective",
+        "tracks": [
+          "7.6"
+        ]
+      },
+      {
+        "unit": 8,
+        "lesson": "8B",
+        "primary_skill": "reading",
+        "genre": "Dated original simplified Lytton/Texas 2021 weather news reports; silent gist/detail reading followed by advice and independent weather listening",
+        "episode": null,
+        "supporting_tracks": [
+          "8.5",
+          "8.6"
+        ],
+        "status": "produced; technically verified"
+      }
+    ],
+    "next_unit_rule": "8B is reading-led after genuine listening-led 7B. Supporting weather vocabulary/advice audio is not a show. Current eight-unit programme satisfies the no-two-unit-show-gap rule. If the programme is extended, the next unit must restore a genuine show to avoid consecutive show-free units."
+  },
+  "on_air_identity": {
+    "reference": "2B, activities 2 (main), 3 and 4 (secondary); source unchanged",
+    "stylesheet": "Lessons/horizons-on-air.css",
+    "policy": "Share main masthead, compact secondary header, waveform, logo and black/orange source captions. Preserve factual/app imagery and learning content; do not label ordinary preparation/grammar/personal transfer as broadcast.",
+    "episodes": [
+      {
+        "lesson": "2B",
+        "title": "Bus or car?",
+        "main": 2,
+        "secondary": [
+          3,
+          4
+        ]
+      },
+      {
+        "lesson": "3B",
+        "title": "Three people. Three weeks.",
+        "main": 2,
+        "secondary": [
+          3,
+          4,
+          6,
+          7
+        ]
+      },
+      {
+        "lesson": "5B",
+        "title": "Keep or return?",
+        "main": 2,
+        "secondary": [
+          3,
+          4,
+          6,
+          7
+        ]
+      },
+      {
+        "lesson": "7B",
+        "title": "Birthday detective",
+        "main": 3,
+        "secondary": [
+          4,
+          5,
+          6
+        ]
+      }
+    ]
+  },
+  "snapshot": {
+    "book_sources": {
+      "paths": [
+        "Lessons",
+        "Images",
+        "Audios",
+        "Audio scripts",
+        "Answer keys",
+        "Wordlists",
+        "Syllabus.txt",
+        "Student's Book.html",
+        "Backmatter",
+        "Sources",
+        "Practice"
+      ],
+      "fingerprint": {
+        "files": 837,
+        "bytes": 591075472,
+        "sha256": "a27bc0aa62491693bbe3ef45234106698d48177ce82f7240dd786cac95852161"
+      },
+      "normalize_text_line_endings": true
+    },
+    "shared_rendering": {
+      "paths": [
+        "../Base"
+      ],
+      "exclude_markdown": true,
+      "fingerprint": {
+        "files": 21,
+        "bytes": 86355,
+        "sha256": "4f3816521fba017d5bad6bfbde3beb55bf7c69d92136f41d6a4312e4585f751d"
+      },
+      "normalize_text_line_endings": true
+    },
+    "saved_pdf": {
+      "paths": [
+        "Student's Book.pdf"
+      ],
+      "fingerprint": {
+        "files": 1,
+        "bytes": 37338892,
+        "sha256": "60234a488eb2313922150e45bc8cdcb444341dbdc28d53384c9b62090368636b"
+      },
+      "normalize_text_line_endings": true
+    },
+    "audit_criteria": {
+      "paths": [
+        "../Base/design-system/CANONICAL-STYLE.md",
+        "../Base/design-system/GUIDED-DISCOVERY.md",
+        "../Base/design-system/component-contracts.md",
+        "../Base/design-system/asset-policy.md",
+        "../Base/design-system/VISUAL-SPIRIT.md",
+        "../Base/design-system/AUTHOR-REFERENCE-STUDY.json",
+        "../AGENTS.md",
+        "Sources/Visual-personality.json",
+        "EDITORIAL-DIRECTION.md",
+        "EDITORIAL-REFERENCE-STUDY.json",
+        "../../.github/workflows/build-horizons-a1-student-book.yml",
+        "../Base/design-system/PRACTICE-BANKS.md",
+        "BOOK-AUDIT.md",
+        "Sources/Practice-personality.json",
+        "Sources/Practice-reference-study.json"
+      ],
+      "fingerprint": {
+        "files": 15,
+        "bytes": 120680,
+        "sha256": "30595e3b67ac0443a378565e5c4cffa5667ccc3e54c6d545c44f253934c92325"
+      },
+      "normalize_text_line_endings": true
+    }
+  },
+  "visual_spirit": {
+    "policy": "../Base/design-system/VISUAL-SPIRIT.md",
+    "primary_emotional_reference": "../Base/design-system/AUTHOR-REFERENCE-STUDY.json",
+    "priority": "Warm adult playfulness, saturated local colour, tactile concept metaphors and protected letter/number graphics; functional consistency does not mean visual uniformity.",
+    "regression_baseline": "8069492116058e45846c79601c66ebd8a3207abb",
+    "protected_register": "Sources/Visual-personality.json",
+    "verification": "Protected core objects, every practice page, saved PDF and published viewer verified",
+    "functional_tool_counts": {
+      "grammar": 25,
+      "pronunciation": 1,
+      "skills": 4,
+      "vocabulary": 1,
+      "communication": 3,
+      "writing": 1
+    },
+    "registered_spreads": 36,
+    "protected_selectors": 73,
+    "protected_objects": {
+      "number_bubbles": 11,
+      "number_circle_mm": 10,
+      "numeral_pt": 15,
+      "colour_families": 3,
+      "alphabet_pairs": 26,
+      "alphabet_pt": 15.5
+    },
+    "evidence": "Sources/Expressive-spirit-20261031"
+  },
+  "practice": {
+    "manifest": "Practice/manifest.json",
+    "teacher_key": "Practice/Answer key.md",
+    "fresh_assets": "Practice/Images/manifest.json",
+    "qr_registry": "Practice/Blooket-links.json",
+    "counts": {
+      "grammar_pages": 16,
+      "vocabulary_pages": 18,
+      "communication_pages": 4,
+      "total_practice_pages": 38,
+      "forward_references": 75,
+      "distinct_referenced_destinations": 70,
+      "total_authored_destinations": 71
+    },
+    "unique_vocabulary_resources": true,
+    "games_created_in_blooket": false
+  }
+}

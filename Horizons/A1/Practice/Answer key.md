@@ -10,13 +10,11 @@ These keys refer to each unit’s two pages and the lettered tasks printed there
 
 ## Unit 1 — People and classes (first page)
 
-**A:** 1 am; 2 are; 3 is; 4 are.
+**A:** 1 is; 2 is; 3 are.
 
-**B:** 1 is; 2 is; 3 are.
+**B:** 1 Is Nina a teacher? No, she is not. / No, she isn’t. 2 Are Ben and Mia in Class 2? Yes, they are. Do not infer additional personal details beyond the cards. Positive short answers keep the full verb: Yes, they are (not Yes, they’re).
 
-**C:** 1 Is Nina a teacher? No, she is not. / No, she isn’t. 2 Are Ben and Mia in Class 2? Yes, they are. Do not infer additional personal details beyond the cards.
-
-**D:** Two complete sentences with a matching subject and am/is/are. One must be true and the other false according to the writer; the partner identifies the false sentence. Real or invented details are acceptable if the writer can explain the intended answer.
+**C:** Two complete sentences with a matching subject and am/is/are. One must be true and the other false according to the writer; the partner identifies the false sentence. Real or invented details are acceptable if the writer can explain the intended answer.
 
 ## Unit 1 — Words that work together (second page)
 
@@ -102,7 +100,6 @@ These keys refer to each unit’s two pages and the lettered tasks printed there
 
 The practice follows the current Unit 1–4 learner sources. It does not introduce adjective-order rules, an artificial visible information gap or a new listening task. All tasks are print-and-discussion practice and need no unrecorded audio. Diagrams explain the actual concept; no diagram color reveals an uncompleted controlled answer. The extra capitalization heading is linked to the existing 1D writing convention even though the old source had no grammar-bank reference for it.
 
-
 ---
 
 # Horizons A1 — Grammar practice Units 5–8
@@ -167,7 +164,6 @@ Original supplementary practice. The numbered tasks restart on each page. Record
 ## Teaching scope and visual checks
 
 Twelve exact grammar destinations are present: present continuous; too/enough with adjectives; frequency expressions; prepositions of place; giving directions; can/can’t; past of be; dates/ago; regular past; travel past; should/advice; talking about health. All forms come from the actual current 5A–8D lessons. Native diagrams show now/usual, bag capacity, number/time frequency, object relations, an oriented route, availability, then/now, dates on an explicitly anchored calendar, did/base-verb branching and an ordered travel record. C5–C8 hold the separate practical-language destinations.
-
 
 ---
 
@@ -265,7 +261,6 @@ Current revision, 1 November 2026. These keys supersede the earlier V1–V4 pict
 
 The nine pages use retrieval, editing, private choices, routing, source-based selection, memory and practical message checks. They do not repeat the main-book alphabet/number panels, body picture, job portraits, food/clothes catalogs or action photographs. Three fresh picture resources support distinct games: seven table objects (V2), a four-panel plan (V3), and four lunchboxes (V4). All other clue cards, lockers, clocks, color trails, calendars, recipe tools and notices are original editable native resources. Role/source cards are not decorative boxes around ordinary drills. First pages 93, 96, 98 and 100 reserve at least 32mm at the bottom of the content area for the future Blooket QR slot; the parent integration process owns that placeholder and any future link.
 
-
 ---
 
 # Vocabulary practice — Units 5–8
@@ -321,7 +316,6 @@ User-steered original revision games. These pages use new practice-only clothing
 ## Audit evidence for this scoped revision
 
 Nine pages, twenty exact vocabulary destinations retained; three new practice-only raster assets; no core-raster references. New games/resources include a secret two-item suitcase, decision trail, two-stop mission, counter-crew clues, unnecessary-stop puzzle, private errand goals, room-memory race, changed-room drawing, integrated delivery map, year relay, birthday deduction, anchored diary notes, mixed museum labels, seven-verb story repair, event-card shuffle, misplaced travel tickets, native five-word crossword, invented forecasts, secret packing, timed word sprint, acted-message sorting and hidden booking. Shared source pictures provide evidence; any private game choice is explicitly withheld until communication.
-
 
 ---
 

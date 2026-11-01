@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "updated": "2026-11-01",
-  "status": "Practice banks complete; independent content, saved-PDF and published-viewer checks passed",
+  "status": "Local grammar-clarity checks complete; live publication pending",
   "authority": "Author delegates editorial authority; his own B2 book sets emotional direction. Preserve colourful learning objects and warm adult playfulness alongside coherent functional roles.",
   "scope": "Units1–8:32lessons,4pairedreviews,72corepages;38new practice pages and4end-creditpages.114physicalpages, printed5–118. Front matter,index,workbook andoptionalannexes remainfuturework.",
   "baseline": {
@@ -19,6 +19,11 @@
       "commit": "90161278603403da17ed4857701984e552c1204c",
       "safety_branch": "safety/horizons-before-practice-banks-20261101",
       "previous_audit": "Audit archive/2026-11-01-before-practice/book-audit.json"
+    },
+    "grammar_clarity": {
+      "commit": "e2b520bc82b3467f083eff0983cf088b8fd13436",
+      "safety_branch": "safety/horizons-before-grammar-clarity-20261101",
+      "previous_audit": "Audit archive/2026-11-01-before-grammar-clarity/book-audit.json"
     }
   },
   "inventory": {
@@ -83,8 +88,8 @@
     "practical_language_pages": 4,
     "practice_pages": 38,
     "core_activity_blocks": 253,
-    "practice_activity_blocks": 148,
-    "grammar_practice_activities": 68,
+    "practice_activity_blocks": 147,
+    "grammar_practice_activities": 67,
     "vocabulary_practice_activities": 68,
     "practical_language_activities": 12,
     "practice_topics": 71,
@@ -93,7 +98,7 @@
     "practice_specific_generated_assets": 6,
     "prior_editorial_generated_object_assets": 12,
     "core_focus_panels": 35,
-    "total_activity_blocks": 401
+    "total_activity_blocks": 400
   },
   "standards": {
     "canonical_style": "../Base/design-system/CANONICAL-STYLE.md",
@@ -113,23 +118,16 @@
     "future_blooket_slots": "Practice/Blooket-links.json"
   },
   "editorial_judgment": {
-    "basis": "Maintain the approved Horizons identity while adding concept-specific grammar explanations and original vocabulary revision games. The first catalogue/reused-picture vocabulary draft was discarded following the author clarification.",
-    "vocabulary_rule": "Use taught words in fresh evidence, clues, decisions, games and learner products; do not reuse the lesson picture dictionary, body model or source pictures. Grammar may briefly repeat a taught model.",
-    "root_review": {
-      "all_added_bank_and_end_credit_pages": 42,
-      "saved_final_png_contact_sequences_viewed": 7,
-      "independent_page_coverage": "All38 practice pages and4credit pages; selected difficult assets and writing fields also checked full size.",
-      "content_and_keys": "Independent checks of every vocabulary bank and controlled keys; clocks, lunchboxes, routes, labels and crossword independently reconciled.",
-      "recipe_key_followup": "Accept C,D,A,B and reasonable A,C,D,B or C,A,D,B: wash before cutting; mix everything last. All current keys updated.",
-      "author_acceptance_claimed": false
-    },
+    "basis": "Grammar reference areas use concise charts, arrows, short labels and worked models. Remove explanatory rule sentences and procedural paragraphs. Task instructions, model sentences and contextual givens remain. Avoid over-expansion; retain the approved vocabulary practice direction.",
+    "current_decision": "Sources/Grammar-clarity-20261101/editorial-decision.json",
     "independent_saved_pdf_reviews": [
-      "Sources/Practice-banks-20261101/saved-pdf-review-g14-v58.json",
-      "Sources/Practice-banks-20261101/saved-pdf-review-g58-v14.json",
-      "Sources/Practice-banks-20261101/saved-pdf-review-practical-credits.json"
+      "Sources/Grammar-clarity-20261101/independent-g1-g5-g8-proof.json",
+      "Sources/Grammar-clarity-20261101/independent-g2-g4-proof.json"
     ],
-    "current_decision": "Sources/Practice-banks-20261101/editorial-decision.json",
-    "author_acceptance_claimed": false
+    "independent_pedagogical_review": "Sources/Grammar-clarity-20261101/independent-final-visual-grammar-review.json",
+    "root_review": "All16saved-PDF grammar pages viewed in contact sequences;G1and critical present/past diagrams also inspected full size. Existing vocabulary/core preserved.",
+    "author_acceptance_claimed": false,
+    "vocabulary_approach_endorsed": true
   },
   "verification": {
     "layout": {
@@ -137,9 +135,7 @@
       "text_faults": [],
       "response_fields": 368,
       "clipped_fields": [],
-      "short_open_lines": [],
-      "qr_slots": 16,
-      "qr_collisions": []
+      "short_open_lines": []
     },
     "standalone_assembled_parity": {
       "standalone_masters": 56,
@@ -147,33 +143,33 @@
       "failures": []
     },
     "pdf": {
-      "sha256": "389c53a44bb290856d394fc1c6c4880ed16804ef72d4e1bfa0d5ca097d310c6f",
-      "bytes": 37338892,
+      "sha256": "752a6f94779b42354f9fe3f6b1c6d7034bb439131991fc7eb7b8a095af2b0772",
+      "bytes": 37339903,
       "physical_pages": 114,
       "printed_pages": [
         5,
         118
       ],
       "paper_pt": [
-        594.96,
-        841.92
+        594.9599609375,
+        841.9199829101562
       ],
-      "a4_with_browser_rounding": true,
-      "all_footer_labels_match": true,
-      "fitz_warnings": [],
-      "pypdf_strict_read": true,
-      "lesson_practice_pdf_links_verified": 75,
-      "internal_named_links": 155,
-      "qr_reserved_labels": 16,
-      "saved_proof_images_unchanged_after_structural_fix": true
+      "size_failures": [],
+      "footer_failures": [],
+      "mupdf_warnings": "",
+      "strict_pypdf_read": true,
+      "lesson_practice_links_verified": 75,
+      "destination_failures": [],
+      "non_grammar_pages_text_unchanged": 98,
+      "non_grammar_text_failures": []
     },
     "preservation": {
-      "baseline": "90161278603403da17ed4857701984e552c1204c",
-      "core_pages": 72,
-      "core_words_unchanged_outside_go_to_practice_references": true,
-      "core_layout_geometry_differences": [],
-      "existing_core_images_recordings_and_scripts_changed": false,
-      "new_vocabulary_core_raster_reuses": 0
+      "baseline": "e2b520bc82b3467f083eff0983cf088b8fd13436",
+      "protected_files": 668,
+      "changed_files": [],
+      "non_grammar_pdf_text_pages": 98,
+      "new_raster_images": 0,
+      "new_audio": false
     },
     "protected_object_regression": {
       "current_design_passes": true,
@@ -228,29 +224,10 @@
       "html_controls": 90
     },
     "live_viewer": {
-      "completed": true,
-      "content_commit": "df18b38d2d3abc1ae494acdfd436dcc561607ec0",
-      "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=practicegames-df18b38d2d3a",
-      "book_pages": 114,
-      "navigation_options": 57,
-      "forward_links_checked": 75,
-      "return_links_checked": 80,
-      "blank_blooket_slots": 16,
-      "fresh_practice_images_decoded": 6,
-      "sample_recordings_play_progress_pause": [
-        "1.1",
-        "8.7"
-      ],
-      "audio_controls_preserved": 90,
-      "all90_subjectively_listened_this_pass": false,
-      "print_controls_hidden": true,
-      "topic_headings_clear_fixed_navigation": true,
-      "failures": [],
-      "changed_horizons_files_match": 118,
-      "file_report": "Sources/Practice-banks-20261101/published-file-verification.json",
-      "viewer_report": "Sources/Practice-banks-20261101/live-viewer-verification.json"
+      "completed": false,
+      "status": "pending publication; previous release evidence archived"
     },
-    "evidence_directory": "Sources/Practice-banks-20261101",
+    "evidence_directory": "Sources/Grammar-clarity-20261101",
     "prior_editorial_evidence": [
       "Sources/Editorial-overhaul-20261031",
       "Sources/Expressive-spirit-20261031"
@@ -403,9 +380,9 @@
         "Practice"
       ],
       "fingerprint": {
-        "files": 837,
-        "bytes": 591075472,
-        "sha256": "a27bc0aa62491693bbe3ef45234106698d48177ce82f7240dd786cac95852161"
+        "files": 851,
+        "bytes": 591170395,
+        "sha256": "7a7b4a3817f15c7dd29bcdc333dd68b67d4f2ed2e870be5d15cf00f00264a118"
       },
       "normalize_text_line_endings": true
     },
@@ -427,8 +404,8 @@
       ],
       "fingerprint": {
         "files": 1,
-        "bytes": 37338892,
-        "sha256": "60234a488eb2313922150e45bc8cdcb444341dbdc28d53384c9b62090368636b"
+        "bytes": 37339903,
+        "sha256": "4532401e239bbd87eb715a81f839d91f71e9a1fc059afbbb282b517315b83ae6"
       },
       "normalize_text_line_endings": true
     },
@@ -452,8 +429,8 @@
       ],
       "fingerprint": {
         "files": 15,
-        "bytes": 120680,
-        "sha256": "30595e3b67ac0443a378565e5c4cffa5667ccc3e54c6d545c44f253934c92325"
+        "bytes": 120163,
+        "sha256": "67180afa8d442892d801a7ee570632580aa06cfc9c60f49fbb16f327190ea404"
       },
       "normalize_text_line_endings": true
     }
@@ -464,7 +441,7 @@
     "priority": "Warm adult playfulness, saturated local colour, tactile concept metaphors and protected letter/number graphics; functional consistency does not mean visual uniformity.",
     "regression_baseline": "8069492116058e45846c79601c66ebd8a3207abb",
     "protected_register": "Sources/Visual-personality.json",
-    "verification": "Protected core objects, every practice page, saved PDF and published viewer verified",
+    "verification": "Core/vocabulary retained; all grammar source and saved-PDF checks complete; publication pending",
     "functional_tool_counts": {
       "grammar": 25,
       "pronunciation": 1,
@@ -501,5 +478,10 @@
     },
     "unique_vocabulary_resources": true,
     "games_created_in_blooket": false
+  },
+  "author_feedback": {
+    "date": "2026-11-01",
+    "vocabulary_practice_approach": "endorsed; retain current fresh games/resources",
+    "grammar_practice": "Remove inline explanatory prose; use compact charts, arrows, diagrams, short labels and complete models. Do not overdo present simple or spread excess detail to other pages."
   }
 }

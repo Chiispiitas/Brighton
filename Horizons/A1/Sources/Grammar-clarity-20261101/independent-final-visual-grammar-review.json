@@ -1,0 +1,192 @@
+{
+  "reviewed_at": "2026-11-01T18:42:14.050027",
+  "scope": "Read-only final semantic clarity and latest no-explanatory-prose compliance review of ALL16 grammar reference areas.",
+  "pdf_path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Student's Book.pdf",
+  "pdf_sha256": "752a6f94779b42354f9fe3f6b1c6d7034bb439131991fc7eb7b8a095af2b0772",
+  "expected_pdf_sha256": "752a6f94779b42354f9fe3f6b1c6d7034bb439131991fc7eb7b8a095af2b0772",
+  "method": [
+    "Read all reference-area live source text, including chart cells, diagram labels, full sentence models and transformation examples.",
+    "Opened four contacts containing actual final saved-PDF Poppler pages073–088 (printed77–92). Other agents own independent full-size page/field proof.",
+    "Distinguished task instructions, source givens and grammar models from verbal rule exposition; did not delete or flag legitimate sentence examples as prose."
+  ],
+  "actual_contacts_viewed": [
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\grammar-clarity-20261101\\pdf-proof\\grammar-contact-073-076.png",
+      "sha256": "14983c8081a5b415162643217e2a193985a70bf65e36dcbe194b316dcb824052"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\grammar-clarity-20261101\\pdf-proof\\grammar-contact-077-080.png",
+      "sha256": "f31d7bf055cf3edf5f0d58c5f37e406fcacd8ccf428aec97f47a25cc04642e5f"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\grammar-clarity-20261101\\pdf-proof\\grammar-contact-081-084.png",
+      "sha256": "fbb17875d2469ba76be2a701f62a797d3457fa5b53c5b2a66766ee7c1fdc862a"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\grammar-clarity-20261101\\pdf-proof\\grammar-contact-085-088.png",
+      "sha256": "c7a450fed3e8bfadd71b4d63d117da824efaf7128171cb1cdb315600c69dfc1d"
+    }
+  ],
+  "actual_pngs_in_contacts": [
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\grammar-clarity-20261101\\pdf-proof\\page-073.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\grammar-clarity-20261101\\pdf-proof\\page-074.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\grammar-clarity-20261101\\pdf-proof\\page-075.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\grammar-clarity-20261101\\pdf-proof\\page-076.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\grammar-clarity-20261101\\pdf-proof\\page-077.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\grammar-clarity-20261101\\pdf-proof\\page-078.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\grammar-clarity-20261101\\pdf-proof\\page-079.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\grammar-clarity-20261101\\pdf-proof\\page-080.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\grammar-clarity-20261101\\pdf-proof\\page-081.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\grammar-clarity-20261101\\pdf-proof\\page-082.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\grammar-clarity-20261101\\pdf-proof\\page-083.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\grammar-clarity-20261101\\pdf-proof\\page-084.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\grammar-clarity-20261101\\pdf-proof\\page-085.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\grammar-clarity-20261101\\pdf-proof\\page-086.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\grammar-clarity-20261101\\pdf-proof\\page-087.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\grammar-clarity-20261101\\pdf-proof\\page-088.png"
+  ],
+  "units": [
+    {
+      "unit": 1,
+      "source_sha256": "1c34b4e0104e2e4f79fafc1cac1ebd8bd9e8715fb0adc32bae36ca8a6507300f",
+      "printed_pages": [
+        "77",
+        "78"
+      ],
+      "reference_topics": [
+        "grammar-verb-to-be",
+        "grammar-a-an",
+        "grammar-verb-to-be-contractions",
+        "grammar-capital-letters"
+      ],
+      "semantic_compliance": "Full seven-person form chart; +not and swap arrows; short answers. All contractions and capital-letter meaning retained as labeled models.",
+      "blockers": []
+    },
+    {
+      "unit": 2,
+      "source_sha256": "4df0ce0e456eeb1fb3786aca3fbc0b4b391db19546b4ef16ab584c9ba26da67b",
+      "printed_pages": [
+        "79",
+        "80"
+      ],
+      "reference_topics": [
+        "grammar-this-that-these-those",
+        "grammar-a-an-the",
+        "grammar-possessive-case",
+        "grammar-adjective-position"
+      ],
+      "semantic_compliance": "Near/far and number diagrams, first-item/same-item models, owner labels and adjective contrasts. We know which one is a compact four-word heading for the worked article contrast, not a rule paragraph.",
+      "blockers": []
+    },
+    {
+      "unit": 3,
+      "source_sha256": "f3f1dc691b11b949dc751425c4cd19cdb0045e10267f012e2f08fcaf3cbfb08d",
+      "printed_pages": [
+        "81",
+        "82"
+      ],
+      "reference_topics": [
+        "grammar-present-simple-affirmative",
+        "grammar-present-simple-negatives-and-questions",
+        "grammar-question-words",
+        "grammar-frequency-adverbs",
+        "grammar-before-after"
+      ],
+      "semantic_compliance": "One concise ending strip, one positive/negative/question/short-answer table, base-form right/wrong strip and be/action comparison. Frequency and before/after meanings remain visually explicit; no long verbal procedure.",
+      "blockers": []
+    },
+    {
+      "unit": 4,
+      "source_sha256": "28e3229532a81f071577e8be555bf23115ef24bb0e61078e28ab78c45cf41895",
+      "printed_pages": [
+        "83",
+        "84"
+      ],
+      "reference_topics": [
+        "grammar-countable-and-uncountable-nouns",
+        "grammar-object-pronouns",
+        "grammar-too-much-too-many-enough",
+        "grammar-because-so-and-punctuation"
+      ],
+      "semantic_compliance": "Countable pictures and crossed-out wrong forms; subject/object name replacement; Need:two condition preserved for quantity dots; because/so direction and sentence models retained.",
+      "blockers": []
+    },
+    {
+      "unit": 5,
+      "source_sha256": "c0fbc0da47ba058009c21812fbf4d738159199747e1a757f13aa7792f7368efd",
+      "printed_pages": [
+        "85",
+        "86"
+      ],
+      "reference_topics": [
+        "grammar-present-continuous",
+        "grammar-too-and-enough-with-adjectives",
+        "grammar-frequency-expressions"
+      ],
+      "semantic_compliance": "NOW and be+-ing pattern/chart, not/swap arrows, usual/now model; size capacity diagrams; frequency numerals and once/twice/every-week models remain.",
+      "blockers": []
+    },
+    {
+      "unit": 6,
+      "source_sha256": "286a8abf9c2594732ea5221730f9b302f47498d1fd40603afdddba70bd4b501b",
+      "printed_pages": [
+        "87",
+        "88"
+      ],
+      "reference_topics": [
+        "grammar-prepositions-of-place",
+        "grammar-giving-directions",
+        "grammar-can-and-cant"
+      ],
+      "semantic_compliance": "Spatial reference objects and labels clear; route direction models remain; source opening facts support can/cannot chart and all-person base-form strip.",
+      "blockers": []
+    },
+    {
+      "unit": 7,
+      "source_sha256": "a15dc0f9ca769f96adfc97be35c5a9c5d0ee0a13b81fba804fe4856437543032",
+      "printed_pages": [
+        "89",
+        "90"
+      ],
+      "reference_topics": [
+        "grammar-past-of-be",
+        "grammar-dates-and-ago",
+        "grammar-past-simple-regular-verbs"
+      ],
+      "semantic_compliance": "Yesterday/Today facts, was/were groups, contraction and question arrows; fictional date anchor retained. Did/didn’t base-form and visibly crossed wrong be question preserve structural distinction.",
+      "blockers": []
+    },
+    {
+      "unit": 8,
+      "source_sha256": "7bd4a3c7af853177dbcb2a9c55061dcf8337e64e5fb95bf4c6898d5f80153ff5",
+      "printed_pages": [
+        "91",
+        "92"
+      ],
+      "reference_topics": [
+        "grammar-past-simple-travel-verbs",
+        "grammar-should-advice",
+        "grammar-talking-about-health"
+      ],
+      "semantic_compliance": "Travel route and irregular base→past models, did transformations; should advice heading/chart and base-form wrong/right strip; have/has and single/plural body-part models. Task-context messages preserved.",
+      "blockers": []
+    }
+  ],
+  "explanatory_rule_paragraphs_found": 0,
+  "important_retained_meaning": [
+    "Positive/negative/yes-no forms and be versus do-support.",
+    "Time/routine and NOW context; subject/person groups; singular/plural contrasts.",
+    "Near/far positions and owner meaning; quantity needed; reason/result clause order.",
+    "Fictional opening information, Yesterday/Today facts and calendar reference.",
+    "Wrong forms visibly crossed or marked as wrong, never offered as correct alternatives."
+  ],
+  "task_structure_note": "G1 now3 tasks on77 plus5 on78 =8; root owns updatedkeys and global147taskcount integration.",
+  "vocabulary_scope": "No vocabulary/core source or asset edits by reviewer.",
+  "blockers": [],
+  "source_edits": false,
+  "limitations": [
+    "This is semantic/no-prose compliance review; full-size empty-field and geometry checks are independently handled.",
+    "Live publication QA remains pending a confirmed forthcoming commit."
+  ],
+  "result": "No semantic or no-prose release blocker found; meaning is preserved with concise visual explanation."
+}

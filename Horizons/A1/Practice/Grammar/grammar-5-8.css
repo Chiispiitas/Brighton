@@ -67,3 +67,21 @@
 /* Keep the complete final 7mm response row inside the directions page. */
 .gp58-page--directions .practice-diagram {margin-bottom:2.5mm;}
 .gp58-page--directions .practice-task {margin-top:2.4mm;}
+/* Compact full models and word-level changes; no rule paragraphs. */
+.gp58-page .gp58-explicit {padding:1.7mm 3mm;}
+.gp58-form-chart {width:100%;border-collapse:collapse;table-layout:fixed;margin:1mm 0 1.2mm;font:400 10pt/1.35 var(--hz-font-sans);}
+.gp58-form-chart th {text-align:left;padding:.5mm 1.6mm;color:#204f86;background:#e5edf9;border-bottom:.35mm solid #8ca7c8;font-size:10pt;font-weight:700;}
+.gp58-form-chart td {vertical-align:top;padding:.5mm 1.6mm;border-bottom:.2mm solid #c7d4e4;font-size:10pt;}
+.gp58-form-chart th+th,.gp58-form-chart td+td {border-left:.2mm solid #c7d4e4;}
+.gp58-page .gp58-explicit > p {font-size:10pt;line-height:1.35;margin:.7mm 0;}
+.gp58-page .gp58-explicit .gp58-form-caption {margin:0 0 1.5mm;}
+.gp58-word-changes {display:grid;grid-template-columns:1fr 1fr;gap:5mm;margin:1mm 0;}
+.gp58-page .gp58-word-changes p {font-size:10pt;line-height:1.35;margin:0;}
+.gp58-word-changes b {color:#204f86;margin-right:1.5mm;}
+.gp58-availability-inline,.gp58-then-now-inline {display:grid;grid-template-columns:1fr 1fr;gap:5mm;margin:0 0 1.5mm;}
+.gp58-page .gp58-availability-inline p,.gp58-page .gp58-then-now-inline p {font-size:10pt;line-height:1.35;margin:0;}
+.gp58-page .gp58-date-tight {padding:2mm 3mm;}
+.gp58-page .gp58-date-tight .gp58-calendar {margin:1mm 0;}
+.gp58-page .gp58-health-rule {font-size:10pt;line-height:1.35;margin:.7mm 0;}
+
+.gp58-page .gp58-date-tight .practice-note {margin:.5mm 0;}
