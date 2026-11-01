@@ -1,6 +1,6 @@
 # Horizons A1 — Book audit
 
-Updated 31 October 2026. **Technical preview verified through Unit 7; 7C now visually refined for author review. 7D visual refinement, whole-book fatigue reassessment and final release remain pending. Horizons on Air identities retain the corrected 2B style.**
+Updated 31 October 2026. **Technical preview verified through Unit 7; lessons 7A–7D have now received individual visual refinements for author review. Whole-book fatigue reassessment and final release remain pending. Horizons on Air identities retain the corrected 2B style.**
 
 This is the current audit entry point. [book-audit.json](book-audit.json) holds scoped evidence and historical checks; [CANONICAL-STYLE.md](../Base/design-system/CANONICAL-STYLE.md) governs design. A current snapshot is not final release approval.
 
@@ -17,6 +17,16 @@ This is the current audit entry point. [book-audit.json](book-audit.json) holds 
 | Unresolved destinations | 65 `page ---` references; intentional until back-of-book pagination |
 
 Counts are inventory, not proof that every cue is correctly placed. Review placement beside the newly introduced content.
+
+## 7D visual refinement, 31 October
+
+**Scope: 7D only, printed pages 65–66.** Two selective built-in image_gen cutouts: full-length fictional Tessa visibly wearing one black lace-up and one brown loafer; and a small blank red cloth diary/pen beside the independent-writing heading. Both are native RGBA with genuine transparency, copied without raster edits. Tessa's complete face/body and both feet remain inside the display viewport; only empty canvas margins are trimmed. The old shoe close-up is retained on disk, retired from display to avoid duplicating the clue. This is a lesson-specific use, not permission to replace every background with cutouts.
+
+The historical portrait keeps a purposeful source background. Tessa stands on open paper next to a warm diary sheet, with black/brown title contrast tied to the story. Page 66 keeps the real journaling photograph, planning prompts and a quieter writing area. All **seven activities**, exact instructions, historical and diary prose/date, controlled answers and focus markup remain. All four recordings/scripts and old image bytes are retained. There are still **three 6mm note lines and eight full 7mm writing lines**. NEW WORDS, navigation and Extra Practice survive.
+
+**Verified:** 66 A4 pages; standalone/compiled parity, all images decode, no text overflow, shared functional typography and normal italic options. Saved PDF reopened, both changed pages independently rendered and inspected through Poppler. All **64 other pages** retain compiled geometry and PDF text/drawing streams, including 7A–7C and credits. Native-export pixels and all page word tokens match. Asset manifests, production prompts and key notes updated; all external credits remain at book end. Publication: pending live verification.
+
+**Reversible:** exact before sources/PDF, baseline commit and scoped verification in `work/refine7d-20261031`; old images retained. Individual Unit 7 refinements are ready for author review. This does not approve whole-book fatigue or final release.
 
 ## 7C visual refinement, 31 October
 
