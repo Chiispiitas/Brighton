@@ -1,0 +1,44 @@
+{
+  "current_design_passes": true,
+  "recreated_known_number_flattening_rejected": true,
+  "negative_test_mutation": "Scratch-only copy removes bubble fill and roundness; production files untouched.",
+  "positive_checks": [
+    {
+      "lesson": "1A",
+      "view": "standalone",
+      "selector": ".ed13-numbers b",
+      "count": 11,
+      "min_font_pt": 15,
+      "fill_colours": 3,
+      "passed": true
+    },
+    {
+      "lesson": "1A",
+      "view": "assembled",
+      "selector": ".ed13-numbers b",
+      "count": 11,
+      "min_font_pt": 15,
+      "fill_colours": 3,
+      "passed": true
+    },
+    {
+      "lesson": "1A",
+      "view": "standalone",
+      "selector": ".l1a-alphabet > span",
+      "count": 26,
+      "min_font_pt": 15.500024999999999,
+      "fill_colours": 1,
+      "passed": true
+    },
+    {
+      "lesson": "1A",
+      "view": "assembled",
+      "selector": ".l1a-alphabet > span",
+      "count": 26,
+      "min_font_pt": 15.500024999999999,
+      "fill_colours": 1,
+      "passed": true
+    }
+  ],
+  "scope": "Protected affordances only; manual emotional/editorial review remains required."
+}

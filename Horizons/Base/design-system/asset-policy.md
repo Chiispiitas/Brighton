@@ -1,6 +1,6 @@
 # Horizons — image and audio policy
 
-Current edition, 31 October 2026. The author subsequently rejected this revision's drawn-image substitutions and explicitly requested the previous artwork. For this current revision, restore the active artwork used at baseline fd497fd in all existing lessons/reviews. Improve its layout, crop, scale and integration; do not repeat the rejected drawn-portrait substitutions. The author subsequently reaffirmed authority to create useful new images, documents and sections as part of the full overhaul. Task-serving additional visuals are allowed, while the preferred existing people/artwork remain the base. New assets acquired/generated during the rejected experiment remain inactive and reversible. The newly added7&8Review may use its own original licensed photographs because it has no prior image set. This correction takes precedence over the general future-selection principles below.
+Current A1 edition, 31 October 2026. The author subsequently rejected this revision's drawn-image substitutions and explicitly requested the previous artwork. For this current revision, restore the active artwork used at baseline fd497fd in all existing lessons/reviews. Improve its layout, crop, scale and integration; do not repeat the rejected drawn-portrait substitutions. The author subsequently reaffirmed authority to create useful new images, documents and sections as part of the full overhaul. Task-serving additional visuals are allowed, while the preferred existing people/artwork remain the base. New assets acquired/generated during the rejected experiment remain inactive and reversible. The newly added 7 & 8 Review may use its own original licensed photographs because it has no prior image set. This correction takes precedence over the general future-selection principles below.
 
 ## General medium principles for future authorized image work
 
@@ -14,6 +14,8 @@ The author explicitly requests generous use of imagegen for redesigned sections,
 - Do not remove high-quality existing cutouts solely because they were generated. Keep them when their teaching role, anatomy, style and integration are strong. Replace weak ones with a better medium rather than trying to conceal their origin.
 
 ## Inspection and provenance
+
+Visual spirit is governed by VISUAL-SPIRIT.md. Preserve the author's approved expressive objects, local colour relationships and purposeful cutouts during media cleanup. The personal B2 reference supplies emotional and conceptual principles; its mascot and third-party photographs are not automatically new Horizons assets. New physical metaphors should be original and useful to the current learning task.
 
 View every final asset and its actual crop at print size. Preserve whole faces and answer-bearing hands/actions/counts/objects. Judge the opaque subject rather than the canvas dimensions; keep alpha edges clean. Repeated picture tasks need fresh visual evidence, not a slightly different crop of the source photo. A picture should not disclose a private task answer.
 

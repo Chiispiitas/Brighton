@@ -1,58 +1,57 @@
-# Horizons A1 — current editorial audit
+# Horizons A1 — current book audit
 
-Updated 31 October 2026. **Full core-book editorial revision, independent saved-PDF proof and live publication verification complete.** This audit replaces the former accumulated correction log. The checked edition is published on main; native PDF, peer-review and live evidence are saved in Sources/Editorial-overhaul-20261031.
+Updated 31 October 2026. **Expressive-identity correction and independent saved-PDF proof complete; live verification pending.** This revision preserves the completed editorial work and corrects its excessive visual restraint.
 
-## Authority and scope
+## Authority, spirit and scope
 
-The author delegates authority to redesign the whole core book and supersede earlier cosmetic commands when that improves quality. This is a substantive editorial overhaul, not a typography-only correction. The later rejection of drawn portrait substitutions also governs: the preferred previous artwork is restored; useful new documents, sections and task-specific visuals remain authorized. The current standards are [Canonical style](../Base/design-system/CANONICAL-STYLE.md), [Learning and tasks](../Base/design-system/GUIDED-DISCOVERY.md), [Media policy](../Base/design-system/asset-policy.md) and [Components](../Base/design-system/component-contracts.md).
+The author delegates editorial authority and makes his own coursebook the primary emotional reference. [Visual spirit](../Base/design-system/VISUAL-SPIRIT.md) and the [author-reference study](../Base/design-system/AUTHOR-REFERENCE-STUDY.json) govern this book and future Horizons levels. English File, Personal Best and Evolve support editorial craft. The desired character is warm, colourful, imaginative adult teaching, with clear reading and writing space.
 
-Scope: Units 1–8, 32 lessons and four paired reviews. The previously missing 7 & 8 Review is completed as part of the core’s review cycle. Front/index pages, grammar practice, vocabulary practice, workbook and optional annexes are outside this commission. Their absence does not prevent an editorial decision on the completed core. Topic destinations remain registered without invented page numbers.
+Professional quality does not require neutralising colourful learning objects. Preserve approved bubbles, letter pairs, source identities, diagrams, meaningful cutouts and tactile documents. Keep functional navigation/type coherent while local features retain their own visual worlds. Do not impose a dog mascot, juvenile ornament, a rainbow quota or a repeated blue/green-plus-yellow treatment.
 
-Previous instructions, dated evidence and rejected designs are retained in [the pre-revision archive](<Audit archive/2026-10-31-before-editorial/BOOK-AUDIT.md>) and Git baseline `fd497fd`. Historical approval, a one-lesson repair restriction or an old pixel-preservation rule is not an active veto on the authorized overhaul. Existing learning facts, recorded input, voices and rights information remain evidence that must be respected.
+Scope remains 32 lessons and four paired reviews: 72 core pages plus four end-credit pages, printed 5–80. Beginning/index pages, grammar/vocabulary practice banks, workbook and optional annexes remain outside this commission. Topic references retain real destination names without invented page numbers.
 
-## What good now means
+## Current design and teaching standard
 
-- **A clear learner purpose.** Each spread develops something the learner can actually do. Context supplies evidence; noticing/clarification/practice lead to a useful personal decision, product or exchange. A/C normally develop language, B meaningful reading/listening and D speaking/writing.
-- **Individual art direction.** Source genre, photograph/text relationship, response mechanism and color hierarchy should make each spread recognizable. A recolor or a smaller headline alone does not pass. Keep strong current features; redesign weak ones without imposing another universal template.
-- **Readable language.** Ordinary learner tasks/concepts 10pt, instructions 9.2pt, word banks 9.5pt and Extra Practice 8.5pt. Integrated source lettering may vary with purpose. Models retain the normal body family; precise crimson emphasis shows the changing language. Headings, examples and writing areas need adequate space.
-- **Purposeful visual surfaces.** Keep useful dialogue/photo backgrounds. A panel must explain a concept, represent a document or support a comparison. Do not frame everything or strip every background. Use clear reading order, including suitable columns where they genuinely help. Handwriting rows are normally 7mm, short factual fields 6mm.
-- **Meaningful participation.** Private information must really be unknown. Choices may legitimately differ; do not force a shared favorite or a successful purchase. Open writing permits expression. A listener/reader checks an actual detail, replies, follows the route or verifies the record. Reviews include choice, partner feedback and a useful retry.
-- **Convincing imagery.** The author’s preferred baseline artwork remains the base. It must be sized and cropped to keep faces, hands, actions, quantities and other teaching evidence clear. The rejected drawn replacements are inactive. New task-serving documents/diagrams can improve the design without repeating that experiment.
-- **Reliable input.** Existing recordings retain their words, voice identities and exact answer facts. Jessica remains narrator. No forbidden clarity tag or throat-clearing substitute. Every control maps to the actual file, including the separate 1B profile take whose historical filename includes 4.1. Track numbers do not equal exercise numbers.
-- **Coherent recurring identity.** Horizons on Air main and secondary material follows the recognizable show frame. Reading-led B units need not become fake episodes. The eight-unit programme keeps a purposeful reading/listening mix and no two consecutive show-free units.
-- **Honest evidence.** A geometry pass is necessary but is not an editorial verdict. Review full spreads, neighboring lessons and the whole-book rhythm; inspect an independently rendered saved PDF and the actual live viewer. Do not claim author acceptance or subjective listening tests that did not happen.
+- **Warm, memorable visual teaching.** Record an explicit visual idea and protected elements for every spread. Compare neighbouring spreads for fatigue. Use shape, colour, imagery and material metaphors to make concepts visible.
+- **Readable ordinary copy and intentional display.** Tasks and concept models 10pt, instructions 9.2pt, word banks 9.5pt, Extra Practice 8.5pt. Alphabet letters, numerals, dates and diagrams may use deliberate larger display type. Keep models in the normal body family.
+- **Functional colour families.** Grammar/form tools use cobalt; vocabulary green; communication/writing skills plum; pronunciation warm orange. Declare data-hz-tool. Local examples and source features may use appropriate independent colour relationships. Use words/shape alongside colour and avoid giving controlled answers through styling.
+- **Useful learning and genuine choice.** Retain cumulative A1 language, meaningful receptive input, genuine information gaps, usable learner products and purposeful checks. A/C develop language, B substantial reading/listening and D speaking/writing. Current wording, tasks, keys and recordings are unchanged by this visual correction.
+- **Inviting surfaces and usable space.** Keep situation-bearing backgrounds, approved people pictures, purposeful cutouts and the twelve generated document objects. Preserve full faces, actions and exact answer evidence. Writing rows normally 7mm; short factual fields normally 6mm. Recompose before shrinking type or response space.
+- **Coherent recurring features.** Preserve the main/secondary Horizons on Air identity, established voices, Jessica narration and planned receptive-skill mix. Keep NEW WORDS attached to actual input, ordinary italic answer choices and familiar word banks. Credits belong at the end.
 
-## Current substantive direction
+Current shared standards: [Canonical style](../Base/design-system/CANONICAL-STYLE.md), [Learning and tasks](../Base/design-system/GUIDED-DISCOVERY.md), [Components](../Base/design-system/component-contracts.md) and [Media policy](../Base/design-system/asset-policy.md).
 
-| Area | Editorial work |
-| --- | --- |
-| Shared identity | Compact sentence-case navigation, clearer outcomes, larger ordinary learner text, lighter concept frames and a consistent standalone/full-book cascade |
-| Language lessons | Individually integrated source features and learner artifacts: contact, postcard, packing note, listings, menu, stock record, town plan, route, time diagram, sleeve notes and itinerary |
-| Skill lessons | Source photographs tied to their own words, genuine listening organizers and usable outputs: return tag, routine tracker, community notice, message pad, receipt, visitor guide, journal, weather brief and ticket/stub |
-| Bespoke generated design | Twelve native-alpha imagegen objects under live text: postcard, stock sheet, sleeve notes, itinerary, return tag, notice, studio pad, admission stub, briefing folder, receipt, journal and booking ticket; preferred people pictures remain |
-| Reviews | Exhibition, film programme, surprise briefing/route and community arts report/booking; source-led opening pages, application bands, three purposeful transfer choices and feedback/retry |
-| Teaching corrections | Consecutive activity numbering, readable source dialogue, feasible information gaps/choices, proper handwriting space, accurate current keys and complete language-resource mapping |
-| Reader | Screen-only lesson/page navigation and working audio controls; neither enters the printed book |
+## What this correction applied
 
-The supplied English File, Evolve and Personal Best books inform principles; no reference text, art or branding is copied. [Editorial direction](EDITORIAL-DIRECTION.md) and [reference study](EDITORIAL-REFERENCE-STUDY.json) record the evidence and superseded rules.
+1A restores all eleven 10mm filled crimson/blue/teal number circles with white 15pt numerals and all twenty-six prominent 15.5pt paired-case letters. Colour and scale are protected teaching affordances. Ordinary task type and the new classmate record remain intact.
 
-## Release evidence
+Selected local devices regain character across the core: work-profile motifs, destination/category identities, reception roles, a next-bus strip, speaker records, a seven-day calendar/tracker, food/serving labels, notebook indices, town/map/attraction markers, month/date slips, hot/cold and forecast cues, body callouts and compact review challenge bubbles. The existing twelve tactile imagegen surfaces remain active. These are visual enrichments; no new learning sequence is claimed for recoloured labels.
 
-- [x] All 36 masters and 72 core pages visually reviewed after the final feature pass.
-- [x] Original artwork verified against the rendered baseline: all 247 old image files and 230 visible uses preserved; rejected experiment inactive. Twelve new generated document objects supplement them.
-- [x] Current controlled keys, private choices, writing space, recorded-source facts and actual track mappings checked. Hidden-item guessing and the 7B teacher date examples corrected in final proof.
-- [x] Standalone/compiled geometry and type agree; text and empty writing fields are not clipped; images/backgrounds/pseudo-surface assets decode.
-- [x] Full native A4 PDF reopened: 76 pages, all learner words/page numbers retained. All 76 saved pages independently rendered through Poppler and inspected; three editors checked the corresponding task keys.
-- [x] 84 external-photo/source credits at the end, with actual page uses, required attribution/license and crop/change notices. Empty public-domain links removed.
-- [x] 171 published files match the checked local edition, including HTML/styles/new media/PDF and 84 lesson audio files. All 90 visible audio controls play/pause (83 distinct active recording URLs); reader and audio UI hide in print with identical page geometry.
-- [x] Final inventory, fingerprints, editorial decision and reversible change record saved after the checks. Implementation commit `0e5aca0`; safety baseline `fd497fd` and original PDF retained.
+Thirty-five concept/communication tools now declare their functional colour role. Source photographs, controlled answer evidence and actual writing areas remain clear. Review portrait labels avoid encoding colour words that students must retrieve.
 
-Final inventory: 32 lessons + 4 paired reviews, 72 core pages + 4 end-credit pages, 253 activity blocks, 46 NEW WORDS badges, 32 Extra Practice footers and 75 topic references. The printed range is 5–80; beginning pages remain outside scope. No author acceptance is claimed: this is the delegated editorial decision after the documented review.
+## Protection across future books
 
-## Deliberately excluded work
+[The visual register](Sources/Visual-personality.json) records all 36 spread identities and 72 protected selectors. New books must create their own equivalent register and consult the shared visual-spirit standard before authoring. Horizons/AGENTS.md applies these requirements to every level.
 
-Vocabulary/grammar practice banks, workbook, optional annexes, index and beginning pages remain for separate authoring. The topic registry records their intended destinations. Do not publish placeholder page numbers or quietly claim those sections exist.
+The build checks declared coverage and configurable expressive objects. A1's guard verifies the eleven filled round numbers, three-colour rhythm, numeral contrast, correct number/letter sequences and prominent display lettering. A scratch-only recreation of the known flattening is rejected. These checks protect affordances; personal inspection still judges warmth, variety, adult suitability and craft.
 
-## Maintaining this audit
+The compiler preserves the expressive feature layers consistently in standalone lessons and the assembled book. The shared edition stylesheet has a content-based version so published viewers receive the current treatment.
 
-`book-audit.json` contains the machine-readable current inventory, per-spread decisions and scoped evidence. Run the freshness checker after—not instead of—content/visual/live verification. Keep this current audit concise; detailed source/voice/media records belong in their manifests, and superseded evidence belongs in the archive. A later correction must state what changed and recheck the affected saved/published pages.
+## Current release evidence
+
+- [x] All 76 saved pages independently rendered through Poppler and personally inspected across three reviewers. Root checked the whole-book rhythm and selected full-size features.
+- [x] All learner words, image-source sequences, existing SVG markup and track labels retained. All 562 existing image/audio/script/key/wordlist files remain byte-identical. Three small editable weather glyphs are additional.
+- [x] All 36 masters pass page/marker checks; ordinary font roles agree. All 72 core pages match the assembled geometry and the computed appearance of 8,650 visible elements, including pseudo styles.
+- [x] Empty response fields are not clipped; ordinary handwriting rows retain their usable heights.
+- [x] Native A4 PDF reopened: 76 pages, all learner word tokens and page numbers retained. The small destination/country spacing correction was re-rendered; the other 75 page images stayed identical.
+- [x] Visual-spirit coverage, protected-object contrast/shape/type checks and the negative regression check pass. Show coverage/style and all 98 audio-script preflights pass.
+- [ ] Current published HTML, PDF, styles and retained media match; all 90 audio controls play/pause and screen controls hide in print without moving content.
+- [ ] Final current evidence and fingerprints saved after live verification.
+
+Detailed current evidence belongs in Sources/Expressive-spirit-20261031. The previous editorial proof remains historical in Sources/Editorial-overhaul-20261031 and the audit archives.
+
+## Reversibility and upkeep
+
+The pre-correction version is commit8069492 on safety/horizons-before-expressive-spirit-20261031. Its exact source copies and PDF are retained locally in the expressive-spirit-20261031 work folder. The earlier pre-overhaul fd497fd baseline also remains available. No source artwork or recordings were replaced in this correction.
+
+Update this concise audit after actual source, saved-PDF and published checks. book-audit.json records current evidence and fingerprints; freshness alone is not a visual verdict. Author acceptance is not claimed.

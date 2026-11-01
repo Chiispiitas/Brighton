@@ -1,0 +1,728 @@
+{
+  "version": 1,
+  "updated": "2026-10-31",
+  "policy": "../../Base/design-system/VISUAL-SPIRIT.md",
+  "primary_reference": "../../Base/design-system/AUTHOR-REFERENCE-STUDY.json",
+  "purpose": "Protect adult warmth and expressive learning objects during current and future book authoring. These are deliberate visual ideas, not a quota of decorations.",
+  "spreads": [
+    {
+      "lesson": "1A",
+      "printed_pages": [
+        5,
+        6
+      ],
+      "visual_idea": "Paired-case alphabet and rich number bubbles beside useful first-day conversations.",
+      "protected_elements": [
+        "Paired-case alphabet and rich number bubbles beside useful first-day conversations.",
+        "Clear source evidence and current learner writing space",
+        "Recognizable recurring identity and approved original imagery"
+      ],
+      "selectors": [
+        ".l1a-alphabet",
+        ".ed13-numbers"
+      ],
+      "learning_outcome": "The recorded fictional profiles lead to the printed Your classmate record. Ask a new classmate, record name/class, ask for spelling and read it back. The first dialogue is situated Before class; no assumption about Tom’s class is added."
+    },
+    {
+      "lesson": "1B",
+      "printed_pages": [
+        7,
+        8
+      ],
+      "visual_idea": "Photographic job gallery, useful object clues and three distinct work-profile voices.",
+      "protected_elements": [
+        "Photographic job gallery, useful object clues and three distinct work-profile voices.",
+        "Clear source evidence and current learner writing space",
+        "Recognizable recurring identity and approved original imagery"
+      ],
+      "selectors": [
+        ".l1b-occupation-grid",
+        ".l1b-profiles"
+      ],
+      "learning_outcome": "Work-profile source is an equal three-voice editorial feature. All source wording, names, portraits, occupations and audio answers remain. No decoration indicates the two-job answer in advance."
+    },
+    {
+      "lesson": "1C",
+      "printed_pages": [
+        9,
+        10
+      ],
+      "visual_idea": "Three destination identities, visible city/quality categories and a tactile airmail postcard.",
+      "protected_elements": [
+        "Three destination identities, visible city/quality categories and a tactile airmail postcard.",
+        "Clear source evidence and current learner writing space",
+        "Recognizable recurring identity and approved original imagery"
+      ],
+      "selectors": [
+        ".l1c-city-grid",
+        ".lf1c-postcard"
+      ],
+      "learning_outcome": "The three destination names now head their actual photographs, with the small original city-signature vectors retained. All four adjective category headers use the same10pt role and real DOM text (Weather / Prices / Cities and places / People); legacy pseudo-headings are removed. Activity8 is an independent three-sentence postcard on three7mm lines. The genre is a learner artifact; no real mailing/address is required."
+    },
+    {
+      "lesson": "1D",
+      "printed_pages": [
+        11,
+        12
+      ],
+      "visual_idea": "Hotel reception identity, situated interaction and an inviting complete write-on clipboard.",
+      "protected_elements": [
+        "Hotel reception identity, situated interaction and an inviting complete write-on clipboard.",
+        "Clear source evidence and current learner writing space",
+        "Recognizable recurring identity and approved original imagery"
+      ],
+      "selectors": [
+        ".l1d-checkin-copy",
+        ".l1d-reception-form"
+      ],
+      "learning_outcome": "Venue photographs now establish a recognizable reception desk. The original full white form remains the learner artifact, followed by accurate read-back. Extra Practice creates a registration form for the learner’s own club; choose useful information rather than mechanically repeat a model."
+    },
+    {
+      "lesson": "2A",
+      "printed_pages": [
+        13,
+        14
+      ],
+      "visual_idea": "Large personal-item cutout, clear near/far scenes and a genuine missing-item reveal.",
+      "protected_elements": [
+        "Large personal-item cutout, clear near/far scenes and a genuine missing-item reveal.",
+        "Clear source evidence and current learner writing space",
+        "Recognizable recurring identity and approved original imagery"
+      ],
+      "selectors": [
+        ".l2a-bag-photo",
+        ".hz-concept-proximity"
+      ],
+      "learning_outcome": "My three items gives the learner’s initial bag choice three writable fields. This is separate from the eight matching answers and becomes a recall cue for real-item practice. Keep the exact cutout, all object-letter anchors, original dialogue and near/far illustrations."
+    },
+    {
+      "lesson": "2B",
+      "printed_pages": [
+        15,
+        16
+      ],
+      "visual_idea": "Consistent radio show with actual transport evidence and a writable next-bus departure record.",
+      "protected_elements": [
+        "Consistent radio show with actual transport evidence and a writable next-bus departure record.",
+        "Clear source evidence and current learner writing space",
+        "Recognizable recurring identity and approved original imagery"
+      ],
+      "selectors": [
+        ".l2b-phone",
+        ".l2b-next-bus"
+      ],
+      "learning_outcome": "The original city image and five questions form one field report in numerical order. Julia/Ana photographs retain full captions. Blank time/number fields remain blank; no new diagram supplies listening answers. The route decision and private timetable exchange remain."
+    },
+    {
+      "lesson": "2C",
+      "printed_pages": [
+        17,
+        18
+      ],
+      "visual_idea": "Family feature joins each person to their own name/relationship; independent captions remain personal.",
+      "protected_elements": [
+        "Family feature joins each person to their own name/relationship; independent captions remain personal.",
+        "Clear source evidence and current learner writing space",
+        "Recognizable recurring identity and approved original imagery"
+      ],
+      "selectors": [
+        ".l2c-family-strip",
+        ".l2c-reading-feature__main"
+      ],
+      "learning_outcome": "The original family feature remains a strong relational source and is deliberately retained. A My partner name field separates the independent captions from the printed fictional model. Read the two new sentences back to the partner to verify names/relationships."
+    },
+    {
+      "lesson": "2D",
+      "printed_pages": [
+        19,
+        20
+      ],
+      "visual_idea": "Colour splashes, physical inventory objects and a tactile owner/return tag.",
+      "protected_elements": [
+        "Colour splashes, physical inventory objects and a tactile owner/return tag.",
+        "Clear source evidence and current learner writing space",
+        "Recognizable recurring identity and approved original imagery"
+      ],
+      "selectors": [
+        ".l2d-office-record",
+        ".sf-return-tag"
+      ],
+      "learning_outcome": "Activity8 now completes the original inventory claim: read name/color/size back, identify the picture, record item number and owner on the return tag, then mark details checked only after agreement. This replaces the separate three-real-items ownership interview. Activity7 private number choice remains; no possessive pronouns or past loss story added."
+    },
+    {
+      "lesson": "2R",
+      "printed_pages": [
+        21,
+        22
+      ],
+      "visual_idea": "Exhibition catalogue, contact-sheet evidence and compact coloured transfer choices.",
+      "protected_elements": [
+        "Exhibition catalogue, contact-sheet evidence and compact coloured transfer choices.",
+        "Clear source evidence and current learner writing space",
+        "Recognizable recurring identity and approved original imagery"
+      ],
+      "selectors": [
+        ".rr-project",
+        ".rr-picture-layout"
+      ],
+      "learning_outcome": "Exhibition catalogue and visitor rehearsal, followed by three authentic private-choice tasks."
+    },
+    {
+      "lesson": "3A",
+      "printed_pages": [
+        23,
+        24
+      ],
+      "visual_idea": "Routine picture indices and distinct speaker records support an actual mystery routine.",
+      "protected_elements": [
+        "Routine picture indices and distinct speaker records support an actual mystery routine.",
+        "Clear source evidence and current learner writing space",
+        "Recognizable recurring identity and approved original imagery"
+      ],
+      "selectors": [
+        ".l3a-routine-sheet",
+        ".l3a-shift-pair"
+      ],
+      "learning_outcome": "The Messi portrait and the exact recorded article share a compact top edge; the fixed legacy time-badge height no longer inflates the first source row. The larger authentic portrait remains. Anonymous routine writing now ends with two orally reported facts about the identified writer, without introducing do/does questions early."
+    },
+    {
+      "lesson": "3B",
+      "printed_pages": [
+        25,
+        26
+      ],
+      "visual_idea": "Radio guest dossiers and a useful paired-day plan with people at a readable scale.",
+      "protected_elements": [
+        "Radio guest dossiers and a useful paired-day plan with people at a readable scale.",
+        "Clear source evidence and current learner writing space",
+        "Recognizable recurring identity and approved original imagery"
+      ],
+      "selectors": [
+        ".l3b-week-story",
+        ".l3b-survey-layout"
+      ],
+      "learning_outcome": "The three original guest photographs now sit above their own recorded incomplete words in equal dossiers. Day/time gaps and all source sentences remain. The final partner plan includes an oral confirmation, with private personal availability genuinely unknown."
+    },
+    {
+      "lesson": "3C",
+      "printed_pages": [
+        27,
+        28
+      ],
+      "visual_idea": "Complete place listings join photographs, prices and opinions; a new personal recommendation.",
+      "protected_elements": [
+        "Complete place listings join photographs, prices and opinions; a new personal recommendation.",
+        "Clear source evidence and current learner writing space",
+        "Recognizable recurring identity and approved original imagery"
+      ],
+      "selectors": [
+        ".l3c-review",
+        ".lf3c-place-photo"
+      ],
+      "learning_outcome": "Each real photograph, visible price and original fictional review is one complete listing. Activity1 now checks companion meaning: family=Iris/Lena, friend=Ravi. Activity6 adds an oral evidence-based reason for each recommendation. Accept taught short reasons such as It’s cheap or Coffee is two dollars; do not require new why/because grammar."
+    },
+    {
+      "lesson": "3D",
+      "printed_pages": [
+        29,
+        30
+      ],
+      "visual_idea": "A genuine week record and a lively seven-day tracker make routine visible.",
+      "protected_elements": [
+        "A genuine week record and a lively seven-day tracker make routine visible.",
+        "Clear source evidence and current learner writing space",
+        "Recognizable recurring identity and approved original imagery"
+      ],
+      "selectors": [
+        ".l3d-week-record",
+        ".l3d-my-challenge"
+      ],
+      "learning_outcome": "The open #MyWeek post now includes a seven-day tracker for the student’s chosen routine. Tick after actually trying the routine; blank circles are not grammar answers. After seven days, compare both posts as the Extra Practice asks. Four original post-writing lines remain."
+    },
+    {
+      "lesson": "4A",
+      "printed_pages": [
+        31,
+        32
+      ],
+      "visual_idea": "Food quantities stay visible; two personally different breakfast choices become a menu.",
+      "protected_elements": [
+        "Food quantities stay visible; two personally different breakfast choices become a menu.",
+        "Clear source evidence and current learner writing space",
+        "Recognizable recurring identity and approved original imagery"
+      ],
+      "selectors": [
+        ".l4a-breakfast-feature",
+        ".lf4a-menu"
+      ],
+      "learning_outcome": "Breakfast for two has a name/food/drink row for each person, with7mm writing height. Partners can choose different breakfasts; sharing the task does not require identical tastes. The picnic retains the whole exact-count picture, now compact enough to preserve two7mm correction lines and both menu rows."
+    },
+    {
+      "lesson": "4B",
+      "printed_pages": [
+        33,
+        34
+      ],
+      "visual_idea": "Expressive taste cues and three independent food opinions with real people.",
+      "protected_elements": [
+        "Expressive taste cues and three independent food opinions with real people.",
+        "Clear source evidence and current learner writing space",
+        "Recognizable recurring identity and approved original imagery"
+      ],
+      "selectors": [
+        ".l4b-flavors",
+        ".sf-three-opinions"
+      ],
+      "learning_outcome": "Three separate name/food records accommodate different classmates’ actual preferences. Accept either a shared favorite or different choices; do not invent unanimous agreement. The meaningful outcome is a reported lunch choice using it/them. Recorded opinions remain exact."
+    },
+    {
+      "lesson": "4C",
+      "printed_pages": [
+        35,
+        36
+      ],
+      "visual_idea": "Photographic recipe steps, exact tomato evidence and a tactile stock/buy record.",
+      "protected_elements": [
+        "Photographic recipe steps, exact tomato evidence and a tactile stock/buy record.",
+        "Clear source evidence and current learner writing space",
+        "Recognizable recurring identity and approved original imagery"
+      ],
+      "selectors": [
+        ".l4c-recipe",
+        ".lf4c-stock"
+      ],
+      "learning_outcome": "The final task produces a qualitative stock check and buy list: We need2tomatoes/cheese/oil; circle enough or not enough; write what to buy (or a dash). The existing recipe and recorded two-spoons-cheese/one-spoon-oil facts are unchanged, but those measures are not repeated as a new arithmetic table. Students privately choose stock first, discuss available ingredients and make one list. The table records their combined decision, not a fixed teacher answer. Preserve the exact2-tomato requirement."
+    },
+    {
+      "lesson": "4D",
+      "printed_pages": [
+        37,
+        38
+      ],
+      "visual_idea": "Food-sharing source and a full-sized material notice sheet with room for an original post.",
+      "protected_elements": [
+        "Food-sharing source and a full-sized material notice sheet with room for an original post.",
+        "Clear source evidence and current learner writing space",
+        "Recognizable recurring identity and approved original imagery"
+      ],
+      "selectors": [
+        ".l4d-share-feature",
+        ".sf-community-notice"
+      ],
+      "learning_outcome": "The final output is a broad community food-sharing notice with eight full8mm lines and a separate picture/planning margin. FREE belongs to this sharing context. Peer reply names a wanted food, collection time and any necessary clarification; the existing cause/result models remain."
+    },
+    {
+      "lesson": "4R",
+      "printed_pages": [
+        39,
+        40
+      ],
+      "visual_idea": "Outdoor cinema programme, shaped admission stub and an original invitation.",
+      "protected_elements": [
+        "Outdoor cinema programme, shaped admission stub and an original invitation.",
+        "Clear source evidence and current learner writing space",
+        "Recognizable recurring identity and approved original imagery"
+      ],
+      "selectors": [
+        ".r34-cinema",
+        ".r34-message-sheet"
+      ],
+      "learning_outcome": "Outdoor film programme; match-and-view rehearsal, full-width invitation and food/routine/place transfer."
+    },
+    {
+      "lesson": "5A",
+      "printed_pages": [
+        41,
+        42
+      ],
+      "visual_idea": "Thrift-store story and price evidence contrast with the active park scene and drawing exchange.",
+      "protected_elements": [
+        "Thrift-store story and price evidence contrast with the active park scene and drawing exchange.",
+        "Clear source evidence and current learner writing space",
+        "Recognizable recurring identity and approved original imagery"
+      ],
+      "selectors": [
+        ".l5a-shop-feature",
+        ".l5a-park"
+      ],
+      "learning_outcome": "The strong thrift-shop feature and authentic price story remain. The final hidden-drawing game explicitly uses separate paper, three taught clothing items and at least one clarification question. Round2 reverses roles. Artistic skill is not assessed; compare clothes/colors and correct a mismatch."
+    },
+    {
+      "lesson": "5B",
+      "printed_pages": [
+        43,
+        44
+      ],
+      "visual_idea": "Radio guests and fresh size evidence lead to a physical studio message pad.",
+      "protected_elements": [
+        "Radio guests and fresh size evidence lead to a physical studio message pad.",
+        "Clear source evidence and current learner writing space",
+        "Recognizable recurring identity and approved original imagery"
+      ],
+      "selectors": [
+        ".l5b-show",
+        ".sf-studio-message"
+      ],
+      "learning_outcome": "The learner plans a message for Lucy on a station message pad. The partner takes the host role, asks Why?, then repeats the caller’s item/decision/reason to check understanding. Any coherent real/invented item is accepted. Caller-listening table, all words and audio remain unchanged."
+    },
+    {
+      "lesson": "5C",
+      "printed_pages": [
+        45,
+        46
+      ],
+      "visual_idea": "Indexed shopping notes, a library source and an independent habit record.",
+      "protected_elements": [
+        "Indexed shopping notes, a library source and an independent habit record.",
+        "Clear source evidence and current learner writing space",
+        "Recognizable recurring identity and approved original imagery"
+      ],
+      "selectors": [
+        ".l5c-notes",
+        ".l5c-report"
+      ],
+      "learning_outcome": "The exact four recorded Q/A entries become numbered notebook entries. The partner report keeps two independent sentence lines and adds A habit for me: choose one habit to keep or try. A brief choice/frequency phrase is enough; do not demand a future-tense promise or increased consumption."
+    },
+    {
+      "lesson": "5D",
+      "printed_pages": [
+        47,
+        48
+      ],
+      "visual_idea": "Real checkout interaction, payment objects and a usable receipt checked against private stock.",
+      "protected_elements": [
+        "Real checkout interaction, payment objects and a usable receipt checked against private stock.",
+        "Clear source evidence and current learner writing space",
+        "Recognizable recurring identity and approved original imagery"
+      ],
+      "selectors": [
+        ".l5d-vocab-scene",
+        ".sf-grocery-receipt"
+      ],
+      "learning_outcome": "The shop exchange produces a receipt with three7mm food/price rows, payment and total. Buyer shows receipt to the shopkeeper; check food, prices, total and payment against seller’s private notes. Private inventory/prices and legitimate substitutions remain. The original cashier-free store source image and recorded words are unchanged."
+    },
+    {
+      "lesson": "6A",
+      "printed_pages": [
+        49,
+        50
+      ],
+      "visual_idea": "Contrasting real places, readable town photographs and a labelled town plan for an audience.",
+      "protected_elements": [
+        "Contrasting real places, readable town photographs and a labelled town plan for an audience.",
+        "Clear source evidence and current learner writing space",
+        "Recognizable recurring identity and approved original imagery"
+      ],
+      "selectors": [
+        ".l6a-two-worlds",
+        ".l6a-town-plan"
+      ],
+      "learning_outcome": "The two real opener photographs and factual source share A/B place indices. The recorded heading Two places. More than shops. remains exact. Three functional clues are shortened without changing answers (trainstation/postoffice/bank). The town design now has an audience (our class/our family), a name and35mm dotted drawing space for three labelled places. Explain a suitable choice, then another pair selects a town they would visit. Coordinated with6B so the next lesson uses a different listener outcome."
+    },
+    {
+      "lesson": "6B",
+      "printed_pages": [
+        51,
+        52
+      ],
+      "visual_idea": "Tiny-home source, real spatial evidence and picture-based preposition objects.",
+      "protected_elements": [
+        "Tiny-home source, real spatial evidence and picture-based preposition objects.",
+        "Clear source evidence and current learner writing space",
+        "Recognizable recurring identity and approved original imagery"
+      ],
+      "selectors": [
+        ".l6b-house-dictionary",
+        ".l6b-location-models"
+      ],
+      "learning_outcome": "Activity7 is now a private item choice from the activity5room. The speaker says where it is; the listener asks/guesses, then points to the object after confirmation. Clues must match the picture. This is not a second drawing task after6A and does not force rooms to differ. Reading-response notes retain one full7mm line for each concise good/difficult fact."
+    },
+    {
+      "lesson": "6C",
+      "printed_pages": [
+        53,
+        54
+      ],
+      "visual_idea": "Movement pictures and a clear route map lead to a genuine listener guess.",
+      "protected_elements": [
+        "Movement pictures and a clear route map lead to a genuine listener guess.",
+        "Clear source evidence and current learner writing space",
+        "Recognizable recurring identity and approved original imagery"
+      ],
+      "selectors": [
+        ".l6c-map-sheet",
+        ".l6c-local"
+      ],
+      "learning_outcome": "The personal route starts at school, so the listener has a shared origin. Two full-width7mm lines hold directions, followed by My partner’s guess. The listener repeats/checks the route before confirmation. An imagined but mutually understandable local setting is acceptable; no outdoor walk or location disclosure is necessary."
+    },
+    {
+      "lesson": "6D",
+      "printed_pages": [
+        55,
+        56
+      ],
+      "visual_idea": "Distinct attraction photographs and a two-stop visitor guide with real agreement.",
+      "protected_elements": [
+        "Distinct attraction photographs and a two-stop visitor guide with real agreement.",
+        "Clear source evidence and current learner writing space",
+        "Recognizable recurring identity and approved original imagery"
+      ],
+      "selectors": [
+        ".l6d-destinations",
+        ".sf-visitor-guide"
+      ],
+      "learning_outcome": "The visitor receives two stop cards, each with a place, activity and two7mm direction lines. Private visitor wishes and local suggestions remain unknown until exchanged. Read the final guide back and check that it meets the visitor’s wishes; routes must lead to the chosen places. If an activity is unavailable, negotiate a different activity before the final read-back."
+    },
+    {
+      "lesson": "6R",
+      "printed_pages": [
+        57,
+        58
+      ],
+      "visual_idea": "Secret briefing folder, private surprise details and an illustrated route.",
+      "protected_elements": [
+        "Secret briefing folder, private surprise details and an illustrated route.",
+        "Clear source evidence and current learner writing space",
+        "Recognizable recurring identity and approved original imagery"
+      ],
+      "selectors": [
+        ".r56-surprise",
+        ".r56-map"
+      ],
+      "learning_outcome": "Surprise briefing; route rehearsal with image beside directions, full-width message and three checked exchanges."
+    },
+    {
+      "lesson": "7A",
+      "printed_pages": [
+        59,
+        60
+      ],
+      "visual_idea": "Then/now photographs, an explicit time anchor and a memory exchange with full people cutouts.",
+      "protected_elements": [
+        "Then/now photographs, an explicit time anchor and a memory exchange with full people cutouts.",
+        "Clear source evidence and current learner writing space",
+        "Recognizable recurring identity and approved original imagery"
+      ],
+      "selectors": [
+        ".l7a-diptych",
+        ".l7a-memory-workshop"
+      ],
+      "learning_outcome": "The time expressions are anchored in the explicit classroom example Monday,2026: yesterday=Sunday; lastnight=Sundaynight; lastweekend=Saturday/Sunday; lastyear=2025. These are example anchors, not a live claim about today’s date. All original room/cutout artwork, recorded childhood accounts and controlled answers remain."
+    },
+    {
+      "lesson": "7B",
+      "printed_pages": [
+        61,
+        62
+      ],
+      "visual_idea": "Memorable month/ordinal labels, exact show dates and writable calendar slips.",
+      "protected_elements": [
+        "Memorable month/ordinal labels, exact show dates and writable calendar slips.",
+        "Clear source evidence and current learner writing space",
+        "Recognizable recurring identity and approved original imagery"
+      ],
+      "selectors": [
+        ".l7b-months",
+        ".l7b-ordinals"
+      ],
+      "learning_outcome": "Blank birthday/year files are aligned with the portrait sequence. Values remain blank until listening; all episode dates, source facts and recorded questions remain exact. The final private two-date calendar and read-back remain."
+    },
+    {
+      "lesson": "7C",
+      "printed_pages": [
+        63,
+        64
+      ],
+      "visual_idea": "A record-store source becomes sleeve notes, with a visible vinyl rim and purposeful sound practice.",
+      "protected_elements": [
+        "A record-store source becomes sleeve notes, with a visible vinyl rim and purposeful sound practice.",
+        "Clear source evidence and current learner writing space",
+        "Recognizable recurring identity and approved original imagery"
+      ],
+      "selectors": [
+        ".l7c-post",
+        ".l7c-sounds"
+      ],
+      "learning_outcome": "The memory source is a record-sleeve liner-note feature: SIDEA is the remembered Friday, SIDEB the reader’s follow-up. The exact recorded narrative/reply remains. Three independent7mm lines support the final two-truths/one-false exchange, with a numbered guess to confirm after a genuine follow-up question."
+    },
+    {
+      "lesson": "7D",
+      "printed_pages": [
+        65,
+        66
+      ],
+      "visual_idea": "Historical curiosity, mismatched-shoe diary and a generous red-spine journal page.",
+      "protected_elements": [
+        "Historical curiosity, mismatched-shoe diary and a generous red-spine journal page.",
+        "Clear source evidence and current learner writing space",
+        "Recognizable recurring identity and approved original imagery"
+      ],
+      "selectors": [
+        ".l7d-diary",
+        ".sf-journal-page"
+      ],
+      "learning_outcome": "The learner writes on a proper journal surface with dedicated date/title fields and all eight7mm body lines. The original diary/pen prop remains. Peer proposes an alternative title and asks a question; no prescribed personal event is required."
+    },
+    {
+      "lesson": "8A",
+      "printed_pages": [
+        67,
+        68
+      ],
+      "visual_idea": "City travel source, distinct animals and a folded two-stop itinerary beside the traveller cutout.",
+      "protected_elements": [
+        "City travel source, distinct animals and a folded two-stop itinerary beside the traveller cutout.",
+        "Clear source evidence and current learner writing space",
+        "Recognizable recurring identity and approved original imagery"
+      ],
+      "selectors": [
+        ".l8a-vlog",
+        ".l8a-plan"
+      ],
+      "learning_outcome": "The final product is an itinerary for a named partner: two numbered stops, each with7mm writing space, plus two7mm lines explaining the choices. The model is one example; learners can choose independently. The whole traveler cutout remains. Planning uses familiar Let’s and because, not a compulsory new future construction."
+    },
+    {
+      "lesson": "8B",
+      "printed_pages": [
+        69,
+        70
+      ],
+      "visual_idea": "Contrasting hot/cold reports and a legible three-day forecast with individual advice.",
+      "protected_elements": [
+        "Contrasting hot/cold reports and a legible three-day forecast with individual advice.",
+        "Clear source evidence and current learner writing space",
+        "Recognizable recurring identity and approved original imagery"
+      ],
+      "selectors": [
+        ".l8b-news",
+        ".l8b-forecast"
+      ],
+      "learning_outcome": "The weather brief records the chosen day and activity before three open advice lines. There is no printed Friday answer to copy. Accept coherent weather-aware suggestions for the partner’s actual preference; the historical reports and recording inputs remain exact."
+    },
+    {
+      "lesson": "8C",
+      "printed_pages": [
+        71,
+        72
+      ],
+      "visual_idea": "Clear body callouts, health evidence and a genuinely private scheduling decision.",
+      "protected_elements": [
+        "Clear body callouts, health evidence and a genuinely private scheduling decision.",
+        "Clear source evidence and current learner writing space",
+        "Recognizable recurring identity and approved original imagery"
+      ],
+      "selectors": [
+        ".l8c-body",
+        ".l8c-reschedule"
+      ],
+      "learning_outcome": "Separate Keep secret preparation from the shared Our new plan outcome. Learners privately invent a complaint and mark two busy days, ask about availability, agree a feasible day/time and read it back. The stock health/body reference and exact live leader anchors remain unchanged. No medical disclosure or diagnostic inference is required."
+    },
+    {
+      "lesson": "8D",
+      "printed_pages": [
+        73,
+        74
+      ],
+      "visual_idea": "Telephone repair model and a usable ticket with a separate perforated price/type stub.",
+      "protected_elements": [
+        "Telephone repair model and a usable ticket with a separate perforated price/type stub.",
+        "Clear source evidence and current learner writing space",
+        "Recognizable recurring identity and approved original imagery"
+      ],
+      "selectors": [
+        ".l8d-ticket",
+        ".sf-ticket-decision"
+      ],
+      "learning_outcome": "The original dialogue visually joins the request to repeat with its repeated detail; no source words changed. The final ticket decision separates passenger/destination/day/time from price/type on a perforated stub and retains the no-ticket reason. Unknown budget and alternative/decline logic remain valid."
+    },
+    {
+      "lesson": "8R",
+      "printed_pages": [
+        75,
+        76
+      ],
+      "visual_idea": "Community art-show report, weather/date evidence and a new class booking.",
+      "protected_elements": [
+        "Community art-show report, weather/date evidence and a new class booking.",
+        "Clear source evidence and current learner writing space",
+        "Recognizable recurring identity and approved original imagery"
+      ],
+      "selectors": [
+        ".r78-feature",
+        ".r78-forecast"
+      ],
+      "learning_outcome": "Arts report with calendar/forecast evidence; booking-call strip, contextual health advice and past-event writing."
+    }
+  ],
+  "explicit_regressions_to_prevent": {
+    "1A": [
+      "All 26 paired-case letters remain prominent and readable",
+      "All 11 numbers 0–10 retain filled round bubbles and the rich crimson/blue/teal rhythm",
+      "Ordinary task typography remains consistent"
+    ],
+    "all_levels": [
+      "Do not treat every square/quiet/monochrome treatment as more professional",
+      "Retain saturated accent and meaningful shape variety without answer-colour leakage",
+      "Keep current purposeful photos, cutouts and generated document objects at useful scale"
+    ]
+  },
+  "new_book_requirement": "Create an equivalent per-spread record and run check-visual-spirit.py, followed by personal inspection of saved spreads and neighbours. Functional type/colour conventions support local art direction.",
+  "display_checks": [
+    {
+      "lesson": "1A",
+      "selector": ".ed13-numbers b",
+      "count": 11,
+      "min_font_pt": 14,
+      "filled_round": true,
+      "min_fill_colors": 3,
+      "contrast": 4.5,
+      "text_sequence": [
+        "0",
+        "1",
+        "2",
+        "3",
+        "4",
+        "5",
+        "6",
+        "7",
+        "8",
+        "9",
+        "10"
+      ]
+    },
+    {
+      "lesson": "1A",
+      "selector": ".l1a-alphabet > span",
+      "count": 26,
+      "min_font_pt": 14,
+      "text_sequence": [
+        "Aa",
+        "Bb",
+        "Cc",
+        "Dd",
+        "Ee",
+        "Ff",
+        "Gg",
+        "Hh",
+        "Ii",
+        "Jj",
+        "Kk",
+        "Ll",
+        "Mm",
+        "Nn",
+        "Oo",
+        "Pp",
+        "Qq",
+        "Rr",
+        "Ss",
+        "Tt",
+        "Uu",
+        "Vv",
+        "Ww",
+        "Xx",
+        "Yy",
+        "Zz"
+      ]
+    }
+  ]
+}

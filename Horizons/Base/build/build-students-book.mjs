@@ -1,5 +1,6 @@
 import fs from "node:fs";
 import path from "node:path";
+import { createHash } from "node:crypto";
 
 const repoRoot = process.cwd();
 const a1Dir = path.join(repoRoot, "Horizons", "A1");
@@ -134,7 +135,7 @@ function collectHeadStyles(headHtml, lessonPath, filename) {
     const labeledCss = `/* ${path.relative(repoRoot, stylesheetPath).replaceAll(path.sep, "/")} */\n${css}`;
     // Cross-lesson edition layers must follow all older individual lesson rules,
     // matching the order used in each standalone master.
-    if (path.dirname(stylesheetPath) === lessonsDir && path.basename(stylesheetPath).startsWith("editorial-")) {
+    if (path.dirname(stylesheetPath) === lessonsDir && /^(?:editorial|expressive)-/.test(path.basename(stylesheetPath))) {
       deferredEditorialStyles.push({ name: path.basename(stylesheetPath), css: labeledCss });
     } else output.push(labeledCss);
   }
@@ -301,6 +302,7 @@ body {
 }
 `;
 
+const editionVersion = createHash("sha256").update(readText(path.join(repoRoot, "Horizons", "Base", "design-system", "editorial-edition.css"))).digest("hex").slice(0, 12);
 const output = `<!doctype html>
 <html lang="en-US">
 <head>
@@ -318,8 +320,8 @@ ${viewerCss}
   </style>
   <!-- Canonical lesson CSS is linked after the compiled snapshot so local CSS edits
        are reflected immediately when opening Student's Book.html during authoring. -->
-  ${liveLessonStyles.sort((a,b) => (Number(a.includes("/editorial-")) * 2 + Number(a.includes("-features"))) - (Number(b.includes("/editorial-")) * 2 + Number(b.includes("-features")))).join("\n  ")}
-  <link rel="stylesheet" href="../Base/design-system/editorial-edition.css">
+  ${liveLessonStyles.sort((a,b) => (Number(/\/(?:editorial|expressive)-/.test(a)) * 2 + Number(a.includes("-features"))) - (Number(/\/(?:editorial|expressive)-/.test(b)) * 2 + Number(b.includes("-features")))).join("\n  ")}
+  <link rel="stylesheet" href="../Base/design-system/editorial-edition.css?v=${editionVersion}">
   <link rel="stylesheet" href="../Base/viewer/book-navigation.css">
   <script src="../Base/viewer/audio-player.js" data-audio-base="./Audios/" defer></script>
   <script src="../Base/viewer/book-navigation.js" defer></script>

@@ -1,0 +1,108 @@
+/* Unit 1: the author's expressive spirit, with adult reading typography.
+   Display letters and counting objects are deliberate exceptions to task type.
+   This layer does not change shared navigation, concept panels or source art. */
+
+/* 1A: letters are pairs to see and say; numbers are bright, graspable objects. */
+.hz-page.l1a-page.ed13-page .l1a-alphabet {
+  grid-template-columns:repeat(13,minmax(0,1fr));
+  gap:1.8mm .5mm;
+  padding:1.5mm 0;
+}
+.hz-page.l1a-page.ed13-page .l1a-alphabet > span {
+  font:820 15.5pt/1.15 var(--hz-font-sans) !important;
+  letter-spacing:-.035em;
+  color:#292c31;
+}
+.hz-page.l1a-page.ed13-page .l1a-alphabet > span::first-letter {
+  color:#007b83;
+}
+.hz-page.l1a-page.ed13-page .ed13-numbers {
+  gap:1mm;
+  padding-top:1mm;
+}
+.hz-page.l1a-page.ed13-page .ed13-numbers > div {
+  display:grid;
+  justify-items:center;
+  align-content:start;
+  gap:1.2mm;
+  min-width:0;
+}
+.hz-page.l1a-page.ed13-page .ed13-numbers > div > b {
+  display:grid;
+  place-items:center;
+  width:10mm;
+  height:10mm;
+  border:0;
+  border-radius:50%;
+  background:#c2185b;
+  color:#fff !important;
+  font:820 15pt/1 var(--hz-font-sans) !important;
+  letter-spacing:-.035em;
+}
+.hz-page.l1a-page.ed13-page .ed13-numbers > div:nth-child(3n+2) > b {
+  background:#1767aa;
+}
+.hz-page.l1a-page.ed13-page .ed13-numbers > div:nth-child(3n) > b {
+  background:#007b83;
+}
+.hz-page.l1a-page.ed13-page .ed13-numbers > div > span {
+  color:#292c31;
+  font:500 9.5pt/1.15 var(--hz-font-sans) !important;
+}
+
+/* 1B: each real voice has its own small identity cue, not a colored paragraph. */
+.hz-page.l1b-page.sf-page .sf-work-profile {--u1-profile-accent:#1767aa;}
+.hz-page.l1b-page.sf-page .sf-work-profile:nth-child(2) {--u1-profile-accent:#006e70;}
+.hz-page.l1b-page.sf-page .sf-work-profile:nth-child(3) {--u1-profile-accent:#9c491f;}
+.hz-page.l1b-page.sf-page .sf-work-profile,
+.hz-page.l1b-page.sf-page .l1b-profile__identity {
+  border-bottom-color:var(--u1-profile-accent);
+}
+.hz-page.l1b-page.sf-page .l1b-profile__identity {
+  justify-content:space-between;
+}
+.hz-page.l1b-page.sf-page .l1b-profile__name,
+.hz-page.l1b-page.sf-page .l1b-profile__copy > p:first-child {
+  color:var(--u1-profile-accent);
+}
+.hz-page.l1b-page.sf-page .l1b-profile__motif {
+  display:block;
+  width:7mm;
+  height:5.5mm;
+  color:var(--u1-profile-accent);
+}
+.hz-page.l1b-page.sf-page .l1b-profile__motif--medical {width:5.5mm;}
+
+/* 1C: destination accents belong to the place headings and their skyline marks.
+   The adjective map retains equal type/response space for all four categories. */
+.hz-page.l1c-page.lf-1c .l1c-city {--u1-place-accent:#00737a;}
+.hz-page.l1c-page.lf-1c .l1c-city:nth-child(2) {--u1-place-accent:#9c491f;}
+.hz-page.l1c-page.lf-1c .l1c-city:nth-child(3) {--u1-place-accent:#5b4690;}
+.hz-page.l1c-page.lf-1c .l1c-city__heading h3 {color:var(--u1-place-accent) !important;}
+.hz-page.l1c-page.lf-1c .l1c-city__signature {stroke:var(--u1-place-accent) !important;}
+.hz-page.l1c-page.lf-1c .l1c-city__copy {border-top-color:var(--u1-place-accent) !important;}
+.hz-page.l1c-page.lf-1c .l1c-word-map {--u1-category-accent:#1767aa;}
+.hz-page.l1c-page.lf-1c .l1c-word-map:nth-child(2) {--u1-category-accent:#9c491f;}
+.hz-page.l1c-page.lf-1c .l1c-word-map:nth-child(3) {--u1-category-accent:#66438b;}
+.hz-page.l1c-page.lf-1c .l1c-word-map:nth-child(4) {--u1-category-accent:#236b46;}
+.hz-page.l1c-page.lf-1c.l1c-page--2 .l1c-word-map h3 {
+  color:var(--u1-category-accent) !important;
+  border-bottom-color:var(--u1-category-accent);
+}
+
+/* 1D: the hotel and receptionist share a teal cue; the guest has a separate
+   plum cue. Preserve the warm source photograph, venue colors and clipboard. */
+.hz-page.l1d-page.sf-page .l1d-checkin-copy {
+  border-top-color:#00737a !important;
+}
+.hz-page.l1d-page.sf-page .l1d-role-box {
+  padding:2.5mm 1.5mm !important;
+  border-left-color:#00737a !important;
+  background:#eaf4f2 !important;
+}
+.hz-page.l1d-page.sf-page .l1d-role-box h3 {color:#00636b;}
+.hz-page.l1d-page.sf-page .l1d-role-box + .l1d-role-box {
+  border-left-color:#78458f !important;
+  background:#f2eaf6 !important;
+}
+.hz-page.l1d-page.sf-page .l1d-role-box + .l1d-role-box h3 {color:#68367f;}

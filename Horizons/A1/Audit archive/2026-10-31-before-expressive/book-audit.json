@@ -1,0 +1,328 @@
+{
+  "schema_version": 2,
+  "updated": "2026-10-31",
+  "status": "Core editorial revision complete; independent saved-PDF and live verification complete",
+  "authority": "Author delegates broad editorial/design authority, including replacement of previous cosmetic commands. Preserve preferred original people/art; use imagegen generously for purposeful new surfaces.",
+  "scope": "Units1–8,32lessons and fourpairedreviews.72corepages plus4endcreditpages; front/index/practicebanks/workbook/optionalannexes excluded.",
+  "baseline": {
+    "commit": "fd497fd",
+    "safety_branch": "safety/horizons-before-editorial-overhaul-20261031",
+    "local_before_copy": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\editorial-overhaul-20261031\\before",
+    "old_pdf_sha256": "968558391f585e85fdb52a29e8840c733e54374f59585a0b5daba108393ee301"
+  },
+  "inventory": {
+    "lesson_masters": [
+      "1A",
+      "1B",
+      "1C",
+      "1D",
+      "2A",
+      "2B",
+      "2C",
+      "2D",
+      "2R",
+      "3A",
+      "3B",
+      "3C",
+      "3D",
+      "4A",
+      "4B",
+      "4C",
+      "4D",
+      "4R",
+      "5A",
+      "5B",
+      "5C",
+      "5D",
+      "6A",
+      "6B",
+      "6C",
+      "6D",
+      "6R",
+      "7A",
+      "7B",
+      "7C",
+      "7D",
+      "8A",
+      "8B",
+      "8C",
+      "8D",
+      "8R"
+    ],
+    "core_spreads": 36,
+    "core_pages": 72,
+    "html_pages": 76,
+    "pdf_pages": 76,
+    "printed_pages": [
+      5,
+      80
+    ],
+    "credits_pages": 4,
+    "activity_blocks": 253,
+    "lesson_audio_files": 84,
+    "production_audio_files": 1,
+    "html_audio_controls": 90,
+    "new_words_badges": 46,
+    "extra_practice_footers": 32,
+    "go_to_references": 75,
+    "page_placeholders": 0,
+    "focus_panels": 35,
+    "new_generated_object_assets": 12,
+    "external_photo_credit_records": 84
+  },
+  "standards": {
+    "canonical_style": "../Base/design-system/CANONICAL-STYLE.md",
+    "learning": "../Base/design-system/GUIDED-DISCOVERY.md",
+    "media": "../Base/design-system/asset-policy.md",
+    "components": "../Base/design-system/component-contracts.md",
+    "reference_study": "EDITORIAL-REFERENCE-STUDY.json",
+    "change_register": "Sources/Editorial-overhaul-20261031/change-register.json"
+  },
+  "editorial_judgment": {
+    "basis": "Personally inspected reference coursebooks; authored individual source genres/artifacts; reviewed neighboring spreads; every saved page independently inspected. Technical checks alone are not a design verdict.",
+    "author_acceptance_claimed": false,
+    "independent_saved_pdf_reviews": [
+      "final-pdf-independent-1-3.json",
+      "final-pdf-independent-4-5.json",
+      "final-pdf-independent-6-8.json"
+    ],
+    "root_review": "All76savedpages seen in contact sequence; object-bearing pages inspected at full size; task/response/crop issues corrected before release."
+  },
+  "verification": {
+    "layout": {
+      "outside_or_marker_faults": 0,
+      "type_failures": 0,
+      "standalone_compiled_parity_failures": 0
+    },
+    "response_space": {
+      "clipped": [],
+      "smallRows": []
+    },
+    "pdf": {
+      "pages": 76,
+      "core_pages": 72,
+      "printed_pages": [
+        5,
+        80
+      ],
+      "all_a4": true,
+      "every_learner_word_token_preserved_from_print_DOM": true,
+      "all_footer_numbers_present": true,
+      "pdf_bytes": 37334781,
+      "sha256": "32b8092c5a6e9f66503e180e7b142ed3a5e7ef458fcb42123a79213187d61c0f",
+      "method": "Full native Windows/Edge A4 export of the current compiled HTML with export-only alpha-preserving240dpi media; no post-save image/font rewriting. Reopened with PyMuPDF; all page text/footers/size checked; independently rendered through Poppler for visual proof."
+    },
+    "artwork": {
+      "baseline_unique_active_assets": 177,
+      "all_baseline_image_files_byte_preserved": 247,
+      "all_baseline_visible_uses_retained": 230,
+      "new_generated_object_uses": 12,
+      "new_review_external_photos": 2,
+      "missing_baseline_uses": [],
+      "active_new_objects": 12,
+      "rejected_people_experiment": "Inactive and archived outside publication."
+    },
+    "audio": {
+      "issues": [],
+      "all_preexisting_audio_and_script_files_unchanged": 223,
+      "all_mp3_files_decode": 85,
+      "lesson_mp3s": 84,
+      "new_audio_generated": false,
+      "subjective_listening_review": false
+    },
+    "live_viewer": {
+      "completed": true,
+      "all90controls_play_pause": true,
+      "print_ui_hidden": true
+    },
+    "evidence_directory": "Sources/Editorial-overhaul-20261031"
+  },
+  "new_objects": "Images/Editorial-objects/manifest.json",
+  "resource_registry": "Sources/Lesson-resources.json",
+  "practice_destinations": "Sources/Practice-destinations.json",
+  "receptive_skill_plan": {
+    "policy": "B lessons provide a planned mix of reading-led and listening-led units; Horizons on Air is not required in every unit. Avoid two consecutive units without the show. Do not impose rigid alternation; 2B and 3B are both listening-led. Declare primary skill and source genre before authoring.",
+    "units": [
+      {
+        "unit": 1,
+        "lesson": "1B",
+        "primary_skill": "reading",
+        "genre": "Occupation profiles and model conversations, with supporting audio",
+        "episode": null
+      },
+      {
+        "unit": 2,
+        "lesson": "2B",
+        "primary_skill": "listening",
+        "genre": "Horizons on Air street interviews",
+        "episode": "Bus or car?",
+        "tracks": [
+          "2.3"
+        ]
+      },
+      {
+        "unit": 3,
+        "lesson": "3B",
+        "primary_skill": "listening",
+        "genre": "Horizons on Air guest interviews",
+        "episode": "Three people. Three weeks.",
+        "tracks": [
+          "3.5"
+        ]
+      },
+      {
+        "unit": 4,
+        "lesson": "4B",
+        "primary_skill": "reading",
+        "genre": "Food opinions and comparison",
+        "episode": null
+      },
+      {
+        "unit": 5,
+        "lesson": "5B",
+        "primary_skill": "listening",
+        "genre": "Horizons on Air shopping reviews and listener calls",
+        "episode": "Keep or return?",
+        "tracks": [
+          "5.5",
+          "5.6"
+        ]
+      },
+      {
+        "unit": 6,
+        "lesson": "6B",
+        "primary_skill": "reading",
+        "genre": "Dated real tiny-home interview adaptation: silent gist/detail/evaluation; supporting audio",
+        "episode": null
+      },
+      {
+        "unit": 7,
+        "lesson": "7B",
+        "primary_skill": "listening",
+        "genre": "Horizons on Air birthday quiz with two hosts and listener voicemail; dated show with gist, exact-date and relative-time listening",
+        "episode": "Birthday detective",
+        "tracks": [
+          "7.6"
+        ]
+      },
+      {
+        "unit": 8,
+        "lesson": "8B",
+        "primary_skill": "reading",
+        "genre": "Dated original simplified Lytton/Texas 2021 weather news reports; silent gist/detail reading followed by advice and independent weather listening",
+        "episode": null,
+        "supporting_tracks": [
+          "8.5",
+          "8.6"
+        ],
+        "status": "produced; technically verified"
+      }
+    ],
+    "next_unit_rule": "8B is reading-led after genuine listening-led 7B. Supporting weather vocabulary/advice audio is not a show. Current eight-unit programme satisfies the no-two-unit-show-gap rule. If the programme is extended, the next unit must restore a genuine show to avoid consecutive show-free units."
+  },
+  "on_air_identity": {
+    "reference": "2B, activities 2 (main), 3 and 4 (secondary); source unchanged",
+    "stylesheet": "Lessons/horizons-on-air.css",
+    "policy": "Share main masthead, compact secondary header, waveform, logo and black/orange source captions. Preserve factual/app imagery and learning content; do not label ordinary preparation/grammar/personal transfer as broadcast.",
+    "episodes": [
+      {
+        "lesson": "2B",
+        "title": "Bus or car?",
+        "main": 2,
+        "secondary": [
+          3,
+          4
+        ]
+      },
+      {
+        "lesson": "3B",
+        "title": "Three people. Three weeks.",
+        "main": 2,
+        "secondary": [
+          3,
+          4,
+          6,
+          7
+        ]
+      },
+      {
+        "lesson": "5B",
+        "title": "Keep or return?",
+        "main": 2,
+        "secondary": [
+          3,
+          4,
+          6,
+          7
+        ]
+      },
+      {
+        "lesson": "7B",
+        "title": "Birthday detective",
+        "main": 3,
+        "secondary": [
+          4,
+          5,
+          6
+        ]
+      }
+    ]
+  },
+  "snapshot": {
+    "book_sources": {
+      "paths": [
+        "Lessons",
+        "Images",
+        "Audios",
+        "Audio scripts",
+        "Answer keys",
+        "Wordlists",
+        "Syllabus.txt",
+        "Student's Book.html",
+        "Backmatter",
+        "Sources"
+      ],
+      "fingerprint": {
+        "files": 744,
+        "bytes": 566468520,
+        "sha256": "e9f83e71ba798d98a2eea833e271b636fe50e28a70091419e4865cbe2d766c47"
+      }
+    },
+    "shared_rendering": {
+      "paths": [
+        "../Base"
+      ],
+      "exclude_markdown": true,
+      "fingerprint": {
+        "files": 16,
+        "bytes": 70121,
+        "sha256": "9996fa400501a9000023a7afe7e656d721df1453274a0d1d7967fccbb794e9a9"
+      }
+    },
+    "saved_pdf": {
+      "paths": [
+        "Student's Book.pdf"
+      ],
+      "fingerprint": {
+        "files": 1,
+        "bytes": 37334781,
+        "sha256": "f34e6a1969390768449558b4a52dc9dd0fd6c286ca58cae9e5107cd1ec81c276"
+      }
+    },
+    "audit_criteria": {
+      "paths": [
+        "../Base/design-system/CANONICAL-STYLE.md",
+        "../Base/design-system/GUIDED-DISCOVERY.md",
+        "../Base/design-system/component-contracts.md",
+        "../Base/design-system/asset-policy.md",
+        "EDITORIAL-DIRECTION.md",
+        "EDITORIAL-REFERENCE-STUDY.json"
+      ],
+      "fingerprint": {
+        "files": 6,
+        "bytes": 35183,
+        "sha256": "dbb015d9f89b4fe8484c7ad90cdd119594960cea2d65bb25fea4eada1e16aab2"
+      }
+    }
+  }
+}

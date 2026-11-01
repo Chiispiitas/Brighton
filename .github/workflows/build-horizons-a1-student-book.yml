@@ -13,6 +13,9 @@ on:
       - "Horizons/Base/build/build-students-book.mjs"
       - "Horizons/Base/build/build-students-book-pdf.mjs"
       - "Horizons/Base/build/validate-audio-scripts.mjs"
+      - "Horizons/Base/build/check-visual-spirit.py"
+      - "Horizons/Base/build/check-visual-objects.mjs"
+      - "Horizons/A1/Sources/Visual-personality.json"
       - ".github/workflows/build-horizons-a1-student-book.yml"
   workflow_dispatch:
 
@@ -39,11 +42,24 @@ jobs:
       - name: Check audio scripts for forbidden tags
         run: node Horizons/Base/build/validate-audio-scripts.mjs
 
+      - name: Set up visual identity checks
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Check visual identity coverage
+        run: |
+          python -m pip install beautifulsoup4
+          python Horizons/Base/build/check-visual-spirit.py Horizons/A1
+
       - name: Compile Student's Book HTML
         run: node Horizons/Base/build/build-students-book.mjs
 
       - name: Install PDF renderer
         run: npm install --no-save --no-package-lock puppeteer-core@24
+
+      - name: Check protected expressive learning objects
+        run: node Horizons/Base/build/check-visual-objects.mjs Horizons/A1
 
       - name: Render PDF with Windows native fonts
         run: node Horizons/Base/build/build-students-book-pdf.mjs

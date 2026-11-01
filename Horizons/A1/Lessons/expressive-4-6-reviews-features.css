@@ -1,0 +1,83 @@
+/* A little human energy, tied to the feature's job. This layer leaves shared
+   grammar/skill panels, task typography, word banks and On Air frames alone. */
+
+/* 4A: a warm breakfast story and a serving label on the learner's menu. */
+.ed46.l4a-page .l4a-breakfast-feature h2 {color:#a64024;}
+.lf-4a .lf4a-menu h2 {display:flex;align-items:center;gap:3mm;color:#225b44;}
+.lf-4a .lf4a-menu header {margin:1mm 0;}
+.lf-4a .lf4a-menu h2 .es-menu-serving {display:inline-block;border:.35mm solid #237052;border-radius:8mm;padding:.7mm 2.3mm;color:#fff;background:#237052;font:650 10pt/1.1 var(--hz-font-sans);white-space:nowrap;}
+
+/* 4B: two human voices get their speech surfaces back. Target pronouns retain
+   the shared language emphasis; these accents identify the interlocutors. */
+.ed46.l4b-page .l4b-counter-copy .l4b-reaction-dialogue p {border:0;border-radius:2.3mm;padding:1.5mm 2mm;background:#fff0e6;box-shadow:inset .6mm 0 0 #b24b2b;}
+.ed46.l4b-page .l4b-counter-copy .l4b-reaction-dialogue p:nth-child(even) {background:#f1ecf7;box-shadow:inset .6mm 0 0 #72438d;}
+.ed46.l4b-page .l4b-reaction-dialogue p >b:first-child {color:#a64024;}
+.ed46.l4b-page .l4b-reaction-dialogue p:nth-child(even)>b:first-child {color:#72438d;}
+
+/* 4C/4D: serving count and community identity, with the existing native paper
+   objects and their entire white writing centers preserved. */
+.ed46.l4c-page .l4c-for-two {background:#237052;color:#fff;border-color:#237052;}
+.ed46.l4c-page .l4c-for-two b,.ed46.l4c-page .l4c-for-two span {color:#fff;}
+.sf-page.l4d-page .sf-community-notice>header>span:first-child {color:#5a3585;font-weight:750;}
+
+/* 5A: the two genuine prices are the surprise. Give the contrast a voice
+   without changing the facts, hiding the people or styling an answer. */
+.ed46.l5a-page .l5a-price--shop b {color:#176b60;}
+.ed46.l5a-page .l5a-price--auction b {color:#a32d54;}
+.ed46.l5a-page .l5a-price span {color:#615149;}
+
+/* 5C: a personal shopping notebook, rather than four anonymous ruled rows. */
+.ed46.l5c-page .l5c-notes {border-left-color:#b54d2b;}
+.ed46.l5c-page .l5c-notes h2 {color:#a64024;}
+.lf-5c .l5c-notes dl>div::before {display:grid;place-items:center;top:1.6mm;left:0;width:5.3mm;height:5.3mm;border-radius:50%;font:700 10pt/1 var(--hz-font-sans);color:#fff;background:#b54d2b;}
+
+/* 6A: retain the new A/B reading relationship but let each place have its own
+   visible identity. Source labels are local; exercise numbers stay crimson. */
+.ed46.l6a-page .l6a-two-worlds figcaption {padding:1.4mm 2mm;background:#493448;color:#fff;border:0;}
+.ed46.l6a-page .l6a-two-worlds figure:last-child figcaption {background:#aa412d;color:#fff;}
+.lf-6a .l6a-two-worlds .lf6a-index {display:inline-grid;place-items:center;width:4.5mm;height:4.5mm;border:.25mm solid #ffffffb8;border-radius:50%;padding:0;color:#fff;line-height:1;}
+.lf-6a .l6a-life-copy>section h3::before {display:inline-grid;place-items:center;width:5mm;height:5mm;border-radius:50%;background:#493448;color:#fff;font:700 9.5pt/1 var(--hz-font-sans);}
+.lf-6a .l6a-life-copy>section:last-child h3::before {background:#aa412d;}
+.ed46.l6a-page .l6a-town-plan>header h2 {color:#fff;background:#aa412d;padding:.8mm 2.5mm;border-radius:0 3mm 3mm 0;}
+.ed46.l6a-page .l6a-town-plan>header {padding-block:.5mm;}
+
+/* 6B: the little home gets a deliberately square area tile, not another
+   full-width colored banner. The 27-square-meter fact stays the same. */
+.ed46.l6b-page .l6b-area {padding:1.2mm 2.5mm;border:0;background:#2857a0;color:#fff;clip-path:polygon(0 0,86% 0,100% 19%,100% 100%,0 100%);}
+.ed46.l6b-page .l6b-area b,.ed46.l6b-page .l6b-area span {color:#fff;}
+
+/* 6C: a walking-map title and the matching picture indices share one clay
+   accent. The map topology, white location labels and routes are untouched. */
+.ed46.l6c-page .l6c-map-sheet>header {background:#9a3428;color:#fff;border:0;}
+.ed46.l6c-page .l6c-map-sheet>header h2,.ed46.l6c-page .l6c-map-sheet>header span {color:#fff;}
+.ed46.l6c-page .l6c-movement figcaption {display:table;width:4.8mm;height:4.8mm;margin:1mm auto 0;border-radius:50%;background:#a6402e;color:#fff;font:700 9pt/4.8mm var(--hz-font-sans);text-align:center;}
+
+/* 6D: lively destination tags, with country/activity copy on open white. */
+.ed46.l6d-page .l6d-destinations figcaption>b {display:inline-block;padding:.7mm 2mm;border-radius:0 2.5mm 2.5mm 0;color:#fff;background:#642d85;}
+.ed46.l6d-page .l6d-moa figcaption>b {background:#a5441e;}
+.ed46.l6d-page .l6d-destinations figcaption>span {margin-left:2mm;}
+
+/* The four reviews keep their three useful choices. Small colored number
+   bubbles recover the inviting rhythm without putting paragraphs in balls. */
+.rvf-2r {--es-one:#ad2854;--es-two:#225fa7;--es-three:#a45420;}
+.rvf-4r {--es-one:#65397e;--es-two:#ab4728;--es-three:#266452;}
+.rvf-6r {--es-one:#ae3c25;--es-two:#71459e;--es-three:#186552;}
+.rvf-8r {--es-one:#a13762;--es-two:#28694c;--es-three:#935711;}
+.rvf .rvf-mission:nth-child(1) {--es-choice:var(--es-one);}
+.rvf .rvf-mission:nth-child(2) {--es-choice:var(--es-two);}
+.rvf .rvf-mission:nth-child(3) {--es-choice:var(--es-three);}
+.rvf .rvf-mission h3 {align-items:center;gap:2mm;color:var(--es-choice);min-height:7mm;}
+.rvf .rvf-mission h3>span {display:inline-grid;place-items:center;flex:0 0 7mm;width:7mm;height:7mm;border:.4mm solid var(--es-choice);border-radius:50%;color:#fff;background:var(--es-choice);font:750 12pt/1 var(--hz-font-sans);}
+.rvf .rvf-mission:nth-child(2) h3>span {color:var(--es-choice);background:#fff;}
+.rvf .rvf-listener b {color:var(--es-choice);}
+
+/* Exhibition names have their own identity; the strips do not encode the
+   color words students must retrieve from the source photograph. */
+.rvf-2r.rr-page .rr-cast-labels>span:nth-child(n) {background:#644d6c;}
+.rvf-4r .r34-food-plan>header>span {display:inline-flex;align-items:center;gap:1mm;}
+.rvf-4r .r34-food-plan>header>span>b {display:inline-grid;place-items:center;width:6mm;height:6mm;border-radius:50%;background:#a5441e;color:#fff;font:750 12pt/1 var(--hz-font-sans);}
+.rvf-6r .r56-shop-sign {border-color:#225fa7;}
+.rvf-6r .r56-shop-sign>span {color:#225fa7;}
+.rvf-8r .r78-forecast p:nth-child(1) strong {color:#285c86;}
+.rvf-8r .r78-forecast p:nth-child(2) strong {color:#aa4c19;}
+.rvf-8r .r78-forecast p:nth-child(3) strong {color:#685088;}

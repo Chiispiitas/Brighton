@@ -37,10 +37,10 @@
 .hz-page.hz-content .hz-exercise__instruction {line-height:1.38;font-weight:650;}
 .hz-page.hz-content .hz-focus-box {
   border-top:.45mm solid var(--hz-unit) !important;
-  border-left:.65mm solid #d49ab0 !important;
+  border-left:.65mm solid var(--hz-tool-rule,#d49ab0) !important;
   border-bottom:.2mm solid #d6d4d1 !important;
   border-right:0 !important;
-  background:#fffcfd !important;
+  background:var(--hz-tool-wash,#fffcfd) !important;
   padding:3mm 3.5mm !important;
 }
 .hz-page.hz-content .hz-focus-box__header {
@@ -63,3 +63,12 @@
 /* A quiet chapter cue gives the unit opening a clear place in the book. */
 .hz-page.hz-content .hz-unit-running-title {position:absolute;top:5.9mm;left:42mm;right:14mm;font-size:8.2pt;line-height:1.15;color:#4e4c4a;letter-spacing:.025em;z-index:20;}
 .hz-unit-running-title > span {font-weight:700;color:var(--hz-unit-dark);}
+
+/* Functional colour is a familiar series cue. Local sources keep independent
+   palettes and learning objects may use expressive display lettering/shapes. */
+.hz-focus-box[data-hz-tool="grammar"] {--hz-unit:#245b9a;--hz-unit-dark:#204f86;--hz-unit-soft:#e7f0fc;--hz-tool-rule:#7da4d4;--hz-tool-wash:#f5f8fe;}
+.hz-focus-box[data-hz-tool="vocabulary"] {--hz-unit:#247348;--hz-unit-dark:#1a5e38;--hz-unit-soft:#e8f5ec;--hz-tool-rule:#82b793;--hz-tool-wash:#f5fbf6;}
+.hz-focus-box[data-hz-tool="communication"],
+.hz-focus-box[data-hz-tool="writing"],
+.hz-focus-box[data-hz-tool="skills"] {--hz-unit:#78458f;--hz-unit-dark:#68367f;--hz-unit-soft:#f2e7f8;--hz-tool-rule:#b494c5;--hz-tool-wash:#fcf8fe;}
+.hz-focus-box[data-hz-tool="pronunciation"] {--hz-unit:#b24e18;--hz-unit-dark:#944014;--hz-unit-soft:#fff0e2;--hz-tool-rule:#d6a071;--hz-tool-wash:#fff9f3;}

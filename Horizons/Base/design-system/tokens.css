@@ -1,5 +1,5 @@
 /* Horizons A1 — editorial HTML/CSS design tokens
-   Print-first, restrained and deliberately non-dashboard-like.
+   Print-first, expressive and welcoming; adult readability protects the craft.
    Crimson anchors navigation; feature palettes follow their own visual worlds. */
 
 :root {
@@ -103,7 +103,8 @@
   --hz-space-10: 10mm;
   --hz-space-12: 12mm;
 
-  /* Geometry: mostly square; noticeable rounding is reserved for real UI. */
+  /* Geometry: choose shapes for meaning and character. Rounded learning
+     objects, bubbles and tabs are part of the book, beyond screen UI. */
   --hz-radius-xs: .7mm;
   --hz-radius-sm: 1.2mm;
   --hz-radius-md: 2mm;

@@ -1,0 +1,73 @@
+{
+  "date": "2026-10-31",
+  "baseline": "8069492; root backup/branch and marker created before authorized edits",
+  "status": "frozen; all six affected full spreads visually approved with root shared focus colors active",
+  "scope": [
+    "2B",
+    "3A",
+    "3D",
+    "7B",
+    "8B",
+    "8C"
+  ],
+  "stylesheet": "Horizons/A1/Lessons/expressive-2-3-7-8-features.css",
+  "source_changes": "Only scoped stylesheet links and nonverbal/semantic wrappers added to the six masters. No words/tasks/answers/photos/recordings changed. Original native-alpha objects retained.",
+  "devices": [
+    {
+      "lesson": "2B",
+      "change": "Blue departure strip, compact known-time capsule, orange transport marker; next-bus answers remain blank."
+    },
+    {
+      "lesson": "3A",
+      "change": "Teal Nina/rust Omar listening ID files, white note fields; purple question-disc anonymous routine card with four unchanged open lines."
+    },
+    {
+      "lesson": "3D",
+      "change": "Coral seven-day calendar counter, saturated day tabs and readable check discs; matching day colors carry to the learner tracker. No false adverb percentages added."
+    },
+    {
+      "lesson": "7B",
+      "change": "Four mature calendar ink families for12month index bubbles, clear raised ordinal suffixes and two writable bound calendar slips. No season/hemisphere assumption. All changes outside focus box and show frame."
+    },
+    {
+      "lesson": "8B",
+      "change": "Hot/cold source ink contrast, exact49.6C emphasis, clear rain/wind/sun line glyphs beside unchanged three-day forecast."
+    },
+    {
+      "lesson": "8C",
+      "change": "Full-color adult anatomical callout bubbles/leader lines, grouped by body region. Numbered answer list remains neutral, so no color-matching answer shortcut."
+    }
+  ],
+  "preservation": "local-device-input-preservation.json verifies exact source text with whitespace normalized, original image src sequence and audio track markers for every target master. Generated paper surfaces, guest photos and OnAir branding rules unchanged.",
+  "visual_qa": {
+    "affected_pages_personally_viewed": [
+      15,
+      16,
+      23,
+      24,
+      29,
+      30,
+      61,
+      62,
+      69,
+      70,
+      71,
+      72
+    ],
+    "shared_focus_colors": "Final inspection after root confirmation, using grammar cobalt / communication plum etc; this stylesheet overrides no focus panel or global role.",
+    "whole_units_rhythm_personally_viewed": [
+      "unit-2-expressive-rhythm.png",
+      "unit-3-expressive-rhythm.png",
+      "unit-7-expressive-rhythm.png",
+      "unit-8-expressive-rhythm.png"
+    ],
+    "rhythm_decision": "PASS: varied source-specific devices alternate with quieter photos/records/diary/ticket. No blanket rainbow exercise numbers, pastel full-page washes, new mascot or repeated decoration on every task.",
+    "whole_unit_text_bounds_passed": true,
+    "whole_unit_marker_collisions_absent": true,
+    "pages_checked_count": 32,
+    "layout_evidence": "local-unit-rhythm-layout.json",
+    "final_images": "rhythm-page-N.png (all32pages) and local-page-N.png initial twelve target proofs; final3Dday-color alignment appears in rhythm-page-30.png."
+  },
+  "no_new_assets_or_provenance_needed": true,
+  "remaining_work": "Root compilation, final PDF/live output parity and audit publication."
+}

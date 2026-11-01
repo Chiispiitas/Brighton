@@ -1,0 +1,230 @@
+{
+  "status": "PASS - Unit 1 scoped sources frozen after final shared tool colors",
+  "date": "2026-10-31",
+  "pre_edit_snapshot": "8069492 (root backed up source and PDF; safety branch retained)",
+  "scope": [
+    "1A",
+    "1B",
+    "1C",
+    "1D"
+  ],
+  "new_stylesheet": "Horizons/A1/Lessons/expressive-unit-1-features.css",
+  "implementation": "Four HTML stylesheet links and scoped CSS only. No task/source rewrite, new imagery, shared concept override, audio or key edit.",
+  "author_reference": {
+    "path": "C:/Users/David/Documents/Work/How to Talk to your Dog about Cambridge B2 First/How to Talk to your Dog about Cambridge B2 (2nd Edition).pdf",
+    "contact_sheets_personally_seen": [
+      1,
+      2,
+      3,
+      4
+    ],
+    "full_size_pages_personally_seen": [
+      11,
+      20,
+      22,
+      24
+    ],
+    "findings": [
+      {
+        "pdf_page": 11,
+        "printed_page": 7,
+        "feature": "Colored relative-pronoun cards clipped to a line: words behave like tangible learning objects."
+      },
+      {
+        "pdf_page": 20,
+        "printed_page": 16,
+        "feature": "IN/AT/ON inside separate luggage cases: memorable physical metaphor and distinct groups."
+      },
+      {
+        "pdf_page": 22,
+        "printed_page": 18,
+        "feature": "Colored vocabulary tape and star badges: bounded chromatic playfulness and prominent display words."
+      },
+      {
+        "pdf_page": 24,
+        "printed_page": 20,
+        "feature": "Speaking mind-map inside a travel briefcase: the source/output has a material world."
+      }
+    ],
+    "transfer": "Restore expressive learning objects, clear pair/group relationships and memorable bounded details while retaining adult reading type and white response areas. Do not import the mascot, repeated grass footer, B2 complexity or unsupported percentage/CEFR claims."
+  },
+  "historical_1A_comparison": {
+    "commit": "fd497fd",
+    "actual_historical_html_css_rendered": true,
+    "proof": "agent1a-study/fd497fd-1A-1.png",
+    "lost_details": "The intermediate overhaul replaced 11 filled 10mm crimson/blue/teal circles with small crimson numerals. The alphabet still had teal capitals, but had dropped from 15.5pt display lettering to a quieter 12pt grid. It was not completely recolored to black.",
+    "restored": "All 11 round filled counting objects, original three rich colors, white 15pt digits, legible 9.5pt names. Alphabet now 15.5pt and weight820, with teal uppercase and dark lowercase in two aligned rows of 13 actual letter pairs.",
+    "baseline_alphabet_pt": 15.500024999999999,
+    "baseline_number_colors": [
+      "rgb(0, 123, 131)",
+      "rgb(194, 24, 91)",
+      "rgb(23, 103, 170)"
+    ]
+  },
+  "decisions": [
+    {
+      "lesson": "1A",
+      "feature": "Protected paired-case alphabet and filled number bubbles; labels and all listening answers remain exact. The new classmate-contact output is preserved."
+    },
+    {
+      "lesson": "1B",
+      "feature": "Existing identity badge, medical cross and utensils are visible again beside Tom/Sarah/Marco. Each profile uses one restrained saturated accent on its name, greeting and rules; reading paragraphs remain dark."
+    },
+    {
+      "lesson": "1C",
+      "feature": "Rio, Toronto and Hong Kong regain coordinated teal/copper/plum headings, skyline signatures and source rules. Weather/Prices/Cities and places/People use equal10pt category titles with distinct blue/copper/plum/green accents. The original city photos, faint world context and native postcard stay active."
+    },
+    {
+      "lesson": "1D",
+      "feature": "Hotel source rule and receptionist role now share teal; guest role is plum, with modest inner padding. Retained colorful venue choices, original photographs and large generated clipboard. Response form dimensions are unchanged by this layer."
+    }
+  ],
+  "preservation_checks": [
+    {
+      "lesson": "1A",
+      "visible_words_unchanged": true,
+      "image_svg_markup_unchanged": true,
+      "ordinary_task_roots_pt": 10,
+      "pages": [
+        "5",
+        "6"
+      ]
+    },
+    {
+      "lesson": "1B",
+      "visible_words_unchanged": true,
+      "image_svg_markup_unchanged": true,
+      "ordinary_task_roots_pt": 10,
+      "pages": [
+        "7",
+        "8"
+      ]
+    },
+    {
+      "lesson": "1C",
+      "visible_words_unchanged": true,
+      "image_svg_markup_unchanged": true,
+      "ordinary_task_roots_pt": 10,
+      "pages": [
+        "9",
+        "10"
+      ]
+    },
+    {
+      "lesson": "1D",
+      "visible_words_unchanged": true,
+      "image_svg_markup_unchanged": true,
+      "ordinary_task_roots_pt": 10,
+      "pages": [
+        "11",
+        "12"
+      ]
+    }
+  ],
+  "display_metrics": {
+    "number_count": 11,
+    "number_diameter_mm": [
+      10
+    ],
+    "number_font_pt": [
+      15
+    ],
+    "letter_pair_count": 26,
+    "alphabet_font_pt": [
+      15.5
+    ],
+    "number_white_text_contrast": {
+      "#c2185b": 5.87,
+      "#1767aa": 5.9,
+      "#007b83": 5.05
+    },
+    "classmate_fields_mm": [
+      {
+        "text": "",
+        "font_pt": 10,
+        "w_mm": 98.35,
+        "h_mm": 7,
+        "color": "rgb(32, 33, 36)",
+        "background": "rgba(0, 0, 0, 0)",
+        "borderRadius": "0px",
+        "display": "block"
+      },
+      {
+        "text": "",
+        "font_pt": 10,
+        "w_mm": 44.51,
+        "h_mm": 7,
+        "color": "rgb(32, 33, 36)",
+        "background": "rgba(0, 0, 0, 0)",
+        "borderRadius": "0px",
+        "display": "block"
+      }
+    ],
+    "postcard_fields_mm": [
+      {
+        "text": "",
+        "font_pt": 10,
+        "w_mm": 158.01,
+        "h_mm": 7,
+        "color": "rgb(32, 33, 36)",
+        "background": "rgba(0, 0, 0, 0)",
+        "borderRadius": "0px",
+        "display": "block"
+      },
+      {
+        "text": "",
+        "font_pt": 10,
+        "w_mm": 158.01,
+        "h_mm": 7,
+        "color": "rgb(32, 33, 36)",
+        "background": "rgba(0, 0, 0, 0)",
+        "borderRadius": "0px",
+        "display": "block"
+      },
+      {
+        "text": "",
+        "font_pt": 10,
+        "w_mm": 158.01,
+        "h_mm": 7,
+        "color": "rgb(32, 33, 36)",
+        "background": "rgba(0, 0, 0, 0)",
+        "borderRadius": "0px",
+        "display": "block"
+      }
+    ],
+    "form_image_current": [
+      {
+        "text": "",
+        "font_pt": 10,
+        "w_mm": 101.88,
+        "h_mm": 112.01,
+        "color": "rgb(32, 33, 36)",
+        "background": "rgba(0, 0, 0, 0)",
+        "borderRadius": "0px",
+        "display": "block"
+      }
+    ],
+    "form_image_without_new_styles": {
+      "w_mm": 101.87698567856904,
+      "h_mm": 112.00970052246682
+    }
+  },
+  "visual_review": {
+    "actual_print_media_rendered": true,
+    "pages_personally_seen": [
+      "5",
+      "6",
+      "7",
+      "8",
+      "9",
+      "10",
+      "11",
+      "12"
+    ],
+    "last_render": "After root activated final blue grammar, orange pronunciation and plum skills roles.",
+    "zero_text_boundary_faults": true,
+    "zero_locator_collisions": true,
+    "verdict": "All eight pages have readable full alphabets/numerals, retained source evidence, clear ordinary task typography and adequate response space. The expressive accents are local and bounded; approved source backgrounds and all imagery remain."
+  },
+  "remaining_work": "Root compilation, native PDF export and final saved-PDF verification/publication. No remaining Unit1 master edits needed."
+}

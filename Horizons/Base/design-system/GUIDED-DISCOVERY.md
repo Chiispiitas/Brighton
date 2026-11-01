@@ -3,7 +3,7 @@
 Current editorial standard, 31 October 2026. Supersedes conflicting historical task prescriptions; see CANONICAL-STYLE.md for delegated scope and the archive.
 
 1. State what the learner can actually do after the lesson. A topic list alone is not an outcome.
-2. Respect the cumulative A1 syllabus. Recycle known language; explain necessary new words in context; avoid unexplained future/conditional/advanced narrative structures in early units.
+2. Respect the current level's cumulative syllabus. Recycle known language and explain necessary new words in context. In A1, avoid unexplained future/conditional/advanced narrative structures in early units; higher-level books follow their own declared progression.
 3. Establish a comprehensible situation. Photos, voices, short texts, objects or documents must supply real evidence for the next question.
 4. Use a useful first read/listen: identify the situation, person, choice or main point. Then direct attention to a small set of relevant details. Do not make a learner read a wall of questions before understanding the source.
 5. Noticing should expose a clear contrast. Ask a simple question the source can answer; do not turn grammar into an unexplained mathematical formula. A direct explanation is appropriate where a guessing task adds no learning.

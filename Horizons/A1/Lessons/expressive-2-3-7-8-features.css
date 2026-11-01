@@ -1,0 +1,88 @@
+/* Horizons, expressive detail pass, 31 October 2026.
+   Six local learning devices. No series chrome, concept panel or show override. */
+
+/* 2B: a departure strip, with one known clock time and unknown next departure. */
+.l2b-page.ed13-page .l2b-next-bus{position:relative;border:0;border-left:1.2mm solid #e65a20;}
+.l2b-page.ed13-page .l2b-next-bus>header{background:#fff;color:#12568c;border-bottom:.6mm solid #12568c;padding:2mm 3mm;}
+.l2b-page.ed13-page .l2b-next-bus h2{color:#12568c;}
+.l2b-page.ed13-page .l2b-next-bus header>span{color:#333;font-size:9pt;letter-spacing:0;}
+.l2b-page.ed13-page .l2b-next-bus header b{display:inline-block;background:#12568c;color:#fff;border-radius:5mm;padding:1mm 2.5mm;margin-left:2mm;font-size:14pt;}
+.l2b-page.ed13-page .l2b-departure-result{position:relative;padding-left:6mm;}
+.l2b-page.ed13-page .l2b-departure-result::before{content:"";position:absolute;left:2.6mm;top:4.3mm;bottom:4mm;border-left:.5mm solid #e65a20;}
+.l2b-page.ed13-page .l2b-departure-result p{position:relative;}
+.l2b-page.ed13-page .l2b-departure-result p::before{content:"";position:absolute;left:-4.4mm;top:1.1mm;width:2.2mm;height:2.2mm;background:#fff;border:.55mm solid #e65a20;border-radius:50%;}
+.l2b-page.ed13-page .l2b-departure-result p:nth-child(2)::before{display:none;}
+.l2b-page.ed13-page .l2b-long-answer{border-color:#3a6f94;}
+
+/* 3A: two recognizable listening files, then an anonymous identity card. */
+.l3a-page.ed13-page .l3a-shift{border-bottom-color:#087d88;background:#fff;}
+.l3a-page.ed13-page .l3a-shift header>div{background:#087d88;}
+.l3a-page.ed13-page .l3a-shift--late{border-bottom-color:#c24a25;background:#fff;}
+.l3a-page.ed13-page .l3a-shift--late header>div{background:#c24a25;}
+.l3a-page.ed13-page .l3a-shift dl{border-top:.6mm solid #087d88;}
+.l3a-page.ed13-page .l3a-shift--late dl{border-top-color:#c24a25;}
+.l3a-page.ed13-page .l3a-mystery{border-top:0;}
+.l3a-page.ed13-page .l3a-mystery header{position:relative;padding-left:10mm;min-height:8mm;align-items:center;}
+.l3a-page.ed13-page .l3a-mystery header::before{content:"?";position:absolute;left:0;top:0;display:grid;place-items:center;width:7.5mm;height:7.5mm;background:#734bb3;color:#fff;border-radius:50%;font:750 19pt/1 var(--hz-font-sans);}
+.l3a-page.ed13-page .l3a-mystery h2{color:#5e3599;}
+.l3a-page.ed13-page .l3a-mystery .l3a-free-writing{border-left:.5mm solid #9c79c8;padding-left:3mm;}
+
+/* 3D: an actual seven-day calendar. The text and checks define recurrence. */
+.l3d-page.ed13-page .l3d-seven{background:#d33e30;border-radius:1.5mm 1.5mm 5mm 1.5mm;position:relative;border-top:2mm solid #9f232c;}
+.l3d-page.ed13-page .l3d-seven::before,.l3d-page.ed13-page .l3d-seven::after{content:"";position:absolute;top:-3mm;width:1.2mm;height:4mm;border-radius:1mm;background:#303a49;}
+.l3d-page.ed13-page .l3d-seven::before{left:5mm;}.l3d-page.ed13-page .l3d-seven::after{right:5mm;}
+.l3d-page.ed13-page .l3d-post h2{color:#007f68;}
+.l3d-page.ed13-page .l3d-week-record thead th{background:#fff;color:#fff;border:0;padding:.7mm;}
+.l3d-page.ed13-page .l3d-week-record thead th:first-child{background:#fff;}
+.l3d-page.ed13-page .l3d-week-record thead th>span{display:block;border-radius:1.5mm 1.5mm 0 0;background:#126692;padding:.8mm .4mm;border-top:.5mm solid #094964;}
+.l3d-page.ed13-page .l3d-week-record thead th:nth-child(2n)>span{background:#087e78;border-top-color:#045e59;}
+.l3d-page.ed13-page .l3d-week-record thead th:last-child>span{background:#c7452f;border-top-color:#9d3229;}
+.l3d-page.ed13-page .l3d-week-record .l3d-day-yes{color:#fff;}
+.l3d-page.ed13-page .l3d-week-record .l3d-day-yes::before{display:block;background:#087d68;width:3.8mm;height:3.8mm;}
+.l3d-page.ed13-page .sf-seven-days>label{padding-bottom:1mm;border-bottom:.5mm solid #126692;color:#164765;}
+.l3d-page.ed13-page .sf-seven-days>label:nth-of-type(2n+1){border-bottom-color:#087e78;}
+.l3d-page.ed13-page .sf-seven-days>label:last-child{border-bottom-color:#c7452f;}
+.l3d-page.ed13-page .sf-seven-days i{border-color:#087d68;background:#fff;}
+
+/* 7B: a twelve-tab calendar, original numbers and month names in order.
+   Four ink families are visual quarters, not a hemisphere/season claim. */
+.l7b-page .l7b-months{gap:1.5mm 2mm;}
+.l7b-page .l7b-months>span{--month-ink:#c0402b;align-items:center;gap:1.2mm;min-height:5.2mm;border-bottom:.45mm solid var(--month-ink);padding-bottom:.7mm;color:#26272b;}
+.l7b-page .l7b-months>span:nth-child(n+4){--month-ink:#007b88;}
+.l7b-page .l7b-months>span:nth-child(n+7){--month-ink:#7550b2;}
+.l7b-page .l7b-months>span:nth-child(n+10){--month-ink:#327f42;}
+.l7b-page .l7b-months small{display:grid;place-items:center;flex:0 0 4.2mm;min-width:0;width:4.2mm;height:4.2mm;border-radius:50%;background:var(--month-ink);color:#fff;font:700 8pt/1 var(--hz-font-sans);}
+.l7b-page .l7b-ordinals>div{border-bottom-color:#9bc6cc;}
+.l7b-page .l7b-ordinals>div>span:first-child{color:#125b78;min-width:8mm;}
+.l7b-page .l7b-ordinals b{font-weight:650;}
+.l7b-page .l7b-ordinals sup{color:#c0402b;font-size:7.5pt;line-height:0;vertical-align:super;font-weight:700;margin-left:.15mm;}
+.l7b-page .l7b-date-slip{border:.25mm solid #9ebbc2;border-top:1.2mm solid #087d88;border-radius:1mm 1mm 2.5mm 1mm;}
+.l7b-page .l7b-date-slip:nth-child(2){border-top-color:#7550b2;}
+.l7b-page .l7b-date-slip::before,.l7b-page .l7b-date-slip::after{background:#3c4652;}
+
+/* 8B: hot/cold archive evidence, then a genuinely usable forecast strip. */
+.l8b-page .l8b-news>header h2 .esp-cold-ink{color:#126ba1;}
+.l8b-page .l8b-news>header h2 .esp-hot-ink{color:#ce4425;}
+.l8b-page .l8b-report-heading{padding-bottom:1mm;border-bottom:.7mm solid #e46025;}
+.l8b-page .l8b-report-heading>b{background:#ce4425;border-radius:50%;}
+.l8b-page .l8b-reports section:nth-child(2) .l8b-report-heading{border-bottom-color:#1681b7;}
+.l8b-page .l8b-reports section:nth-child(2) .l8b-report-heading>b{background:#126ba1;}
+.l8b-page .esp-temperature{white-space:nowrap;font-weight:700;color:#b1371e;border-bottom:.55mm solid #e46025;}
+.l8b-page .l8b-days{border:0;padding:0;}
+.l8b-page .l8b-days>p{display:grid;grid-template-columns:5.5mm 25mm 1fr;gap:2mm;align-items:center;min-height:7mm;border-bottom:.25mm solid #b8cbd4;margin:0;padding:.7mm 0;}
+.l8b-page .l8b-days>p>b{color:#175c7b;}
+.l8b-page .l8b-days>p:last-child>b{color:#a74b14;}
+.l8b-page .esp-weather-icon{display:block;width:5.5mm;height:5.5mm;color:#147cb0;}
+.l8b-page .esp-weather-icon svg{width:100%;height:100%;fill:none;stroke:currentColor;stroke-width:1.8;stroke-linecap:round;stroke-linejoin:round;}
+.l8b-page .l8b-days>p:last-child .esp-weather-icon{color:#dd7516;}
+
+/* 8C: clear adult callouts, with a neutral answer list (no matching by color). */
+.l8c-page .l8c-letter{background:#146caa;border:0;color:#fff;box-shadow:0 0 0 .55mm #fff;width:5.5mm;height:5.5mm;font-weight:700;}
+.l8c-page .l8c-letter--A{background:#ce4033;}
+.l8c-page .l8c-letter--D{background:#a66b12;}
+.l8c-page .l8c-letter--E,.l8c-page .l8c-letter--F{background:#26824e;}
+.l8c-page .l8c-leaders{stroke-width:.6;}
+.l8c-page .l8c-leaders path:nth-child(1){stroke:#ce4033;}
+.l8c-page .l8c-leaders path:nth-child(2),.l8c-page .l8c-leaders path:nth-child(3){stroke:#146caa;}
+.l8c-page .l8c-leaders path:nth-child(4){stroke:#a66b12;}
+.l8c-page .l8c-leaders path:nth-child(5),.l8c-page .l8c-leaders path:nth-child(6){stroke:#26824e;}
