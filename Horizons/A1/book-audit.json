@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "updated": "2026-10-31",
-  "status": "technical preview verified; 7D corrected after author feedback; Unit 7 visual refinements await author review; whole-book release pending",
+  "status": "verified content through Unit 7; recent corrections consolidated and Unit 8 coordinated-production brief recorded; Unit 8 unproduced; whole-book review and release pending",
   "scope": "A1 through Unit 7 (7A–7D), including paired reviews 1 & 2, 3 & 4, 5 & 6, with four end-credit pages. Unit 8, review 7 & 8 and other backmatter unproduced.",
   "readability_comparison_baseline": "e8d6ddd69f62caffab662a93a5a392ebc5bfb131",
   "inventory": {
@@ -5157,9 +5157,32 @@
         "functional_typography_verified": true,
         "all_images_loaded": true
       }
+    },
+    "audit_unit8_preparation_20261031": {
+      "scope": "Audit preparation only",
+      "status": "recorded and checked; production checks remain pending",
+      "summary": "Consolidates current author decisions, labels rejected/historical composition evidence, records coordinated Unit 8 scope and syllabus roles, reading-led 8B, eight pending acceptance groups, and media/audio/publication requirements.",
+      "preservation": "Inventory and evidence snapshot retained exactly; all lesson/image/audio/shared-rendering/compiled HTML/PDF files unchanged. No Unit 8 masters or production assets created.",
+      "source_evidence": [
+        "Syllabus.txt, UNIT 8",
+        "recent Unit 7 author corrections and checked current 7C/7D masters",
+        "CANONICAL-STYLE.md",
+        "Audio scripts/ElevenCreative Studio/README.md",
+        "on_air_identity and current check scripts"
+      ]
     }
   },
   "pending": [
+    {
+      "id": "unit8-production",
+      "scope": "8A–8D",
+      "action": "Author and verify four coordinated lessons using unit8_production_brief; all content/media/audio and acceptance evidence remain pending."
+    },
+    {
+      "id": "review78-production",
+      "scope": "paired Units 7 & 8 Review",
+      "action": "Produce when commissioned, with fresh cumulative tasks and separate review identity/acceptance checks."
+    },
     {
       "id": "visual-fatigue",
       "scope": "Unit 1 and Unit 2 lessons; final whole-book reassessment",
@@ -5249,8 +5272,8 @@
     }
   },
   "content_baseline_commit": "2f404b547b7da07be81a0622a78591d3299c402a",
-  "current_revision": "7D correction: original compact Activity 3 diary and full-background shoe photograph restored, removing the rejected tall Tessa composition and its forced empty area. Activity 7 diary/pen display enlarged from 20×24mm to 36×44mm, with instructions reserving a side lane; eight full-width 7mm lines retained. All learner text, tasks, focus and recordings unchanged; other 64 pages preserved. Live source/PDF/images and three audio controls verified.",
-  "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope. units_3_4_reviews_visual_variety_20261025 supersedes earlier composition, color and geometry evidence for printed pages 21-40, including review_composition_20261025, review_3_4_20261025, unit_3_creative_revision and unit_4_visual_variety; earlier learning and audio evidence keeps its original scope. lesson_5b_on_air_20261026 supersedes prior 5B reading/source/presentation and 5.5/5.6 records only. The 26 October every-unit show mandate is superseded by planned B-skill balance and no two-unit show gap. lesson_5b_activity5_variety_20261026 supersedes only the earlier 5B Activity 5 image/choices/key and continuation-image evidence; no show/audio or other lesson evidence changes. lesson_6b_picture_grammar_20261026 supersedes only the original 6B page-52 grammar presentation, continuation spacing and associated geometry evidence; all learning, source and audio evidence retains its scope. lessons_6c_6d_20261026 adds printed pages 53-56 and completes Unit 6 without superseding prior source/audio/page evidence. Prior 6C/6D-unproduced statements are historical; current coverage is through 6D. vocabulary_and_credits_20261026 supersedes prior plain NEW WORDS vocabulary presentation and in-lesson image-credit placement. Existing learning, audio, image bytes and unrelated geometry evidence retains its scope. Three appended credits pages are provisional end matter after the current final lesson. plain_vocabulary_20261026 supersedes every earlier requirement for automatic or paired NEW WORDS word emphasis; the author withdrew blanket bolding. End-of-book credits remain unchanged. review_5_6_20261026 adds printed pages 57-58 and repaginates existing end credits to 59-61. Earlier 55-page counts describe the prior version; no previous lesson/source/audio evidence is superseded. unit7_20261028 adds printed pages 59–66 and twelve recordings; retains the prior 54 lesson/review pages and repaginates/appends credits to 67–70. Earlier 57-page counts and Unit 7 unproduced/show-due statements are historical; prior learning and audio evidence retains its scope. lesson7a_visual_refinement_20261028 supersedes original 7A presentation/geometry and its creative approval only. Original Unit 7 visual claims are not author approval: 7B–7D remain pending separate review, including poor 7B portrait crops. No other lesson content, source, media or audio evidence is superseded. lesson7b_visual_refinement_20261030 supersedes original 7B presentation/geometry and the pending portrait-crop issue, including earlier statements that 7B remains untouched. All learning/factual/audio evidence retains its scope. Only 7B and its page-70 display-credit wording change; 7C/7D remain pending. on_air_identity_consistency_20261030 supersedes earlier visual claims of 2B consistency for 3B/5B/7B, including the 7B calendar inside the masthead and independent listener header. The episode date remains below the canonical banner. Main/secondary structure and black/orange caption rules now follow 2B exactly; source content/media/audio evidence remains valid. 2B is unchanged. lesson7c_visual_refinement_20261031 supersedes original 7C visual geometry and its three-word pronunciation task. Activity 6 now has nine sorting words; recorded scripts and bytes are unchanged. 7D and final release remain pending. lesson7d_visual_refinement_20261031 supersedes original 7D visual geometry and the active full-background shoe close-up only; that file remains archived in place. Seven activities, learning/recording text and audio bytes are preserved. Unit 7 refinements are for author review; final release remains pending. lesson7d_author_correction_20261031 supersedes the tall Tessa and small diary composition in lesson7d_visual_refinement_20261031: the author rejected the excess blank area. Compact original Activity 3/photo restored and Activity 7 diary enlarged. All learning/audio evidence retained.",
+  "current_revision": "Audit-only preparation for authoring Unit 8A–8D together. Consolidates selective cutouts, intrinsic-height/print-scale lessons from rejected 7D composition, larger props, substantial pronunciation practice and exact print/audio coverage, protected 2B main/secondary show identity, media preservation, functional type and whole-unit variety. Records syllabus-based lesson roles, reading-led 8B and explicit pending acceptance evidence. No teaching, image, audio, compiled HTML or PDF changed.",
+  "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope. units_3_4_reviews_visual_variety_20261025 supersedes earlier composition, color and geometry evidence for printed pages 21-40, including review_composition_20261025, review_3_4_20261025, unit_3_creative_revision and unit_4_visual_variety; earlier learning and audio evidence keeps its original scope. lesson_5b_on_air_20261026 supersedes prior 5B reading/source/presentation and 5.5/5.6 records only. The 26 October every-unit show mandate is superseded by planned B-skill balance and no two-unit show gap. lesson_5b_activity5_variety_20261026 supersedes only the earlier 5B Activity 5 image/choices/key and continuation-image evidence; no show/audio or other lesson evidence changes. lesson_6b_picture_grammar_20261026 supersedes only the original 6B page-52 grammar presentation, continuation spacing and associated geometry evidence; all learning, source and audio evidence retains its scope. lessons_6c_6d_20261026 adds printed pages 53-56 and completes Unit 6 without superseding prior source/audio/page evidence. Prior 6C/6D-unproduced statements are historical; current coverage is through 6D. vocabulary_and_credits_20261026 supersedes prior plain NEW WORDS vocabulary presentation and in-lesson image-credit placement. Existing learning, audio, image bytes and unrelated geometry evidence retains its scope. Three appended credits pages are provisional end matter after the current final lesson. plain_vocabulary_20261026 supersedes every earlier requirement for automatic or paired NEW WORDS word emphasis; the author withdrew blanket bolding. End-of-book credits remain unchanged. review_5_6_20261026 adds printed pages 57-58 and repaginates existing end credits to 59-61. Earlier 55-page counts describe the prior version; no previous lesson/source/audio evidence is superseded. unit7_20261028 adds printed pages 59–66 and twelve recordings; retains the prior 54 lesson/review pages and repaginates/appends credits to 67–70. Earlier 57-page counts and Unit 7 unproduced/show-due statements are historical; prior learning and audio evidence retains its scope. lesson7a_visual_refinement_20261028 supersedes original 7A presentation/geometry and its creative approval only. Original Unit 7 visual claims are not author approval: 7B–7D remain pending separate review, including poor 7B portrait crops. No other lesson content, source, media or audio evidence is superseded. lesson7b_visual_refinement_20261030 supersedes original 7B presentation/geometry and the pending portrait-crop issue, including earlier statements that 7B remains untouched. All learning/factual/audio evidence retains its scope. Only 7B and its page-70 display-credit wording change; 7C/7D remain pending. on_air_identity_consistency_20261030 supersedes earlier visual claims of 2B consistency for 3B/5B/7B, including the 7B calendar inside the masthead and independent listener header. The episode date remains below the canonical banner. Main/secondary structure and black/orange caption rules now follow 2B exactly; source content/media/audio evidence remains valid. 2B is unchanged. lesson7c_visual_refinement_20261031 supersedes original 7C visual geometry and its three-word pronunciation task. Activity 6 now has nine sorting words; recorded scripts and bytes are unchanged. 7D and final release remain pending. lesson7d_visual_refinement_20261031 supersedes original 7D visual geometry and the active full-background shoe close-up only; that file remains archived in place. Seven activities, learning/recording text and audio bytes are preserved. Unit 7 refinements are for author review; final release remains pending. lesson7d_author_correction_20261031 supersedes the tall Tessa and small diary composition in lesson7d_visual_refinement_20261031: the author rejected the excess blank area. Compact original Activity 3/photo restored and Activity 7 diary enlarged. All learning/audio evidence retained. audit_unit8_preparation_20261031 consolidates current Unit 7 corrections and authorizes the planned coordinated Unit 8 authoring workflow. Earlier Unit 7 one-at-a-time refinement notes are historical scope, not a Unit 8 blocker. Planned 8B is explicitly unproduced; no future lesson or creative acceptance is claimed.",
   "receptive_skill_plan": {
     "policy": "B lessons provide a planned mix of reading-led and listening-led units; Horizons on Air is not required in every unit. Avoid two consecutive units without the show. Do not impose rigid alternation; 2B and 3B are both listening-led. Declare primary skill and source genre before authoring.",
     "units": [
@@ -5315,14 +5338,22 @@
         "tracks": [
           "7.6"
         ]
+      },
+      {
+        "unit": 8,
+        "lesson": "8B",
+        "primary_skill": "reading",
+        "genre": "Planned: dated extreme-weather news adaptation with weather/seasons and should/should not; useful gist/detail reading",
+        "episode": null,
+        "status": "planned, unproduced"
       }
     ],
-    "next_unit_rule": "7B returns to genuine Horizons on Air after reading-led 6B. Unit 8B may be reading-led as planned, retaining no two-unit gap and declaring primary skill/source genre before drafting. Supporting read-alouds do not count as episodes."
+    "next_unit_rule": "8B is planned reading-led weather news after listening-led 7B, following the Unit 8 syllabus. Supporting audio does not count as an episode. Recheck the no-two-unit-show-gap rule whenever the B programme changes; add completed evidence only after production."
   },
   "author_visual_preferences_20261030": {
     "7A": "Author said Perfect to the 7A refinement.",
     "restraint": "Do not overuse the successful cutout treatment. Cutouts are an occasional purposeful device, not a new template or requirement for every lesson.",
-    "scope": "One lesson at a time. 7A accepted; 7B show identity aligned to 2B; 7C and 7D visually refined for author review. No automatic creative approval or final release claim."
+    "scope": "Unit 7 was refined one lesson at a time. Author now requests preparation for producing all four Unit 8 lessons in one coordinated run. Individual spread checks and whole-unit comparison remain required; 7A acceptance and later corrections retain their exact scope."
   },
   "on_air_identity": {
     "reference": "2B, activities 2 (main), 3 and 4 (secondary); source unchanged",
@@ -5371,5 +5402,139 @@
         ]
       }
     ]
+  },
+  "recent_editorial_decisions_20261031": {
+    "7A": {
+      "status": "author accepted; do not overuse",
+      "carry_forward": "Purposeful generated cutouts can add personality without becoming a repeated template."
+    },
+    "7B": {
+      "status": "corrected and technically verified",
+      "carry_forward": "Actual 2B is the recurring main and secondary show reference; preserve complete portraits and useful image scale."
+    },
+    "7C": {
+      "status": "refined and technically verified; no explicit author acceptance claimed",
+      "carry_forward": "Distinct record-store archive plus practical sound workshop. Twelve example forms: three table models and nine sorting words; six total forms recorded, six new print-only forms. All rows and keys aligned."
+    },
+    "7D": {
+      "status": "first tall-cutout layout rejected; compact original restored and technically verified",
+      "current_activity_3": "Original compact diary and full-background shoe photo active; Tessa cutout retained unused.",
+      "current_activity_7": "Diary/pen 36×44mm, previously 20×24mm; all eight full-width 7mm writing lines and three 6mm note lines retained.",
+      "carry_forward": "Do not let intrinsic cutout height force empty source space. Judge actual visible subject/prop at print scale; useful backgrounds can improve the composition. Three tracks 7.10–7.12."
+    }
+  },
+  "unit8_production_brief": {
+    "recorded": "2026-10-31",
+    "status": "preparation recorded; no Unit 8 lesson content/media/audio produced or approved",
+    "author_scope": "Prepare a coordinated run of 8A–8D. Unit 7 one-at-a-time repair restriction does not apply to this run. Review 7 & 8 remains separate pending work.",
+    "syllabus_source": "Syllabus.txt, UNIT 8: Travel Adventures",
+    "lessons": [
+      {
+        "lesson": "8A",
+        "title": "Let's go to Toronto!",
+        "role": "language",
+        "syllabus": [
+          "travel verbs",
+          "animals"
+        ],
+        "source_genre": "real city-experience travel vlog, sourced/adapted",
+        "visual_direction": "navigable journey/visual sequence with task-bearing travel and animal evidence",
+        "outcome": "personal travel choice using target vocabulary",
+        "status": "planned, unproduced"
+      },
+      {
+        "lesson": "8B",
+        "title": "It's so cold!",
+        "role": "reading",
+        "syllabus": [
+          "weather and seasons",
+          "should/shouldn't"
+        ],
+        "source_genre": "dated verified extreme-weather news adaptation",
+        "visual_direction": "news feature with readable factual weather evidence and supported advice",
+        "outcome": "gist/detail reading and evidence-linked advice",
+        "status": "planned, unproduced"
+      },
+      {
+        "lesson": "8C",
+        "title": "Can you go tomorrow?",
+        "role": "language",
+        "syllabus": [
+          "health complaints",
+          "body parts"
+        ],
+        "source_genre": "health-related trip postponement situation",
+        "visual_direction": "specific readable poses and body-part evidence; selective generated material when needed",
+        "outcome": "express a problem and arrange an alternative through a meaningful exchange",
+        "status": "planned, unproduced"
+      },
+      {
+        "lesson": "8D",
+        "title": "Tickets, please!",
+        "role": "speaking/writing",
+        "syllabus": [
+          "phone language",
+          "buying a ticket"
+        ],
+        "source_genre": "last-minute booking call and functional travel artifact",
+        "visual_direction": "booking/ticket task with genuinely private traveler constraints",
+        "outcome": "complete a booking with a confirmed choice/record",
+        "status": "planned, unproduced"
+      }
+    ],
+    "art_direction_contract": {
+      "distinct_ideas": "Record source genre, learner action, visual anchor, image/text relationship and outcome per spread; compare all eight pages and 7B–7D. Changes of hue/title alone do not establish variety.",
+      "mixed_media": "Stock for suitable real scenes; generation for controlled poses/counts/renders/cutouts. Selective native alpha, complete answer-bearing details and useful source backgrounds.",
+      "continuations": "At least one or two substantial task-related images per second page; tiny decorative props/badges do not satisfy this requirement.",
+      "cutout_height": "Reject a tall cutout that forces unnecessary source-panel blank space; restore or recompose against the actual preceding design.",
+      "print_scale": "Judge visible opaque subject/prop size and text clearance at actual page size. 7D diary 36×44mm is a scoped correction, not a universal size recipe.",
+      "writing_space": "Keep established teaching type and required response space. Resize/recompose imagery or remove redundant practice to resolve crowding; preserve open expression and useful source backgrounds.",
+      "mechanical_identity": "Canonical black titles/crimson navigation/pink focus shells; 9.5pt tasks/models/concepts, 8.9pt instructions, 9pt word banks, normal italic options. One numbered exercise lane; paired reviews alone allow sibling columns."
+    },
+    "learning_audio_contract": {
+      "sequence": "Source evidence before noticing, rule, controlled practice and meaningful use; A/C language, B receptive skill, D speaking/writing.",
+      "practice": "Enough varied examples and answer slots to support the contrast; avoid token tasks and mechanical copying of 7C quantities.",
+      "alignment": "Page, key, wordlist, script, Studio import and real audio match. Declare additional printed practice separately from recorded models; count actual files/tracks.",
+      "voices": "Jessica for narration/labels, approved exact-ID dialogue pool and returning-cast continuity; existing Eleven v3 workflow.",
+      "banned_audio": "Never [clearly] or a throat-clearing substitute.",
+      "show_identity": "Actual 2B and Lessons/horizons-on-air.css for all genuine main/secondary show tasks; update on_air_identity coverage as needed.",
+      "cadence": "8B planned reading-led after listening-led 7B; supporting audio is not an episode. Preserve mixed B skills and no two-unit show gap."
+    },
+    "evidence_required": {
+      "syllabus_tasks": {
+        "status": "pending",
+        "required": "Cumulative language, discovery evidence, supported answers/keys, private information and meaningful outcome per lesson."
+      },
+      "unit_variety": {
+        "status": "pending",
+        "required": "Four source/interaction ideas across eight pages, preceding-three-spread comparison, meaningful imagery on both pages."
+      },
+      "print_scale": {
+        "status": "pending",
+        "required": "Inspect complete saved pages and details for faces, props, source gaps/crowding, fonts, answer evidence and response space."
+      },
+      "audio": {
+        "status": "pending",
+        "required": "Required recordings produced/decoded, transcripts and casting checked, track mappings/counts and print-only additions accurate."
+      },
+      "series_continuity": {
+        "status": "pending",
+        "required": "Cues, references, Extra Practice, font roles, skill cadence and shared show identity checked."
+      },
+      "assembly": {
+        "status": "pending",
+        "required": "Standalone/compiled parity, all images load, no clipping/overlap, independent saved-PDF render, unchanged existing content and explained credit repagination."
+      },
+      "publication": {
+        "status": "pending",
+        "required": "Live HTML/styles/media/PDF match checked files; all new audio controls play/pause and hide in print."
+      },
+      "handoff": {
+        "status": "pending",
+        "required": "Separate authored/technical/editorial/author-acceptance statuses; unresolved issues explicit."
+      }
+    },
+    "preservation": "Use saved baseline/Git history, active/retired media manifests and end credits; protect existing 1A–7D/reviews. Recompute actual inventory and snapshot only after implementation checks.",
+    "source_boundary": "Verify vlog/news/case facts, dates, source rights and artwork licenses when acquired. Write original level-appropriate adaptations, distinguish fictional teaching scenes from sourced claims, and keep provenance/end credits."
   }
 }
