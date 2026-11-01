@@ -1,6 +1,6 @@
 # Horizons A1 — Book audit
 
-Updated 30 October 2026. **Technical preview verified through Unit 7; all Horizons on Air identities now matched to 2B. 7C–7D visual revision, whole-book fatigue reassessment and final release remain pending.**
+Updated 31 October 2026. **Technical preview verified through Unit 7; 7C now visually refined for author review. 7D visual refinement, whole-book fatigue reassessment and final release remain pending. Horizons on Air identities retain the corrected 2B style.**
 
 This is the current audit entry point. [book-audit.json](book-audit.json) holds scoped evidence and historical checks; [CANONICAL-STYLE.md](../Base/design-system/CANONICAL-STYLE.md) governs design. A current snapshot is not final release approval.
 
@@ -17,6 +17,16 @@ This is the current audit entry point. [book-audit.json](book-audit.json) holds 
 | Unresolved destinations | 65 `page ---` references; intentional until back-of-book pagination |
 
 Counts are inventory, not proof that every cue is correctly placed. Review placement beside the newly introduced content.
+
+## 7C visual refinement, 31 October
+
+**Scope: 7C only, printed pages 63–64.** The record-store context now has a plum-and-cream archive feature: a clear 1986 dateline, full photographic evidence and a visually attached reader reply. The complete opening scene is slightly larger; no face or labelled object is cropped. The continuation integrates the existing turntable photograph with a larger sound-sorting task. This composition differs from 7A's character cutouts and 7B's fixed broadcast identity. Cutouts remain selective.
+
+**Activity 6:** three table models plus **nine** words to sort, replacing the three-word task. /t/: watched, worked, talked; /d/: lived, listened, used; /ɪd/: wanted, started, needed. There are three full writing rows, and a short note demonstrates the extra syllable in wanted. Track 7.9 already records six forms; the six added print-practice words are not presented as newly recorded. Instructions separate listening/repetition from saying and sorting. Answer key and wordlist match.
+
+**Verified locally:** 66 A4 pages; no text overflow or missing images, standalone/compiled parity, preserved functional type, full weekend writing lines, grammar focus, NEW WORDS, references and Extra Practice. Saved PDF reopened and independently rendered via Poppler; both pages inspected. All seven activities survive; unchanged exercise wording outside Activity 6, source/reply paragraphs and grammar markup are checked exactly. All original media/audio bytes remain. The other **64** compiled pages retain their geometry and their PDF text/drawing streams. Publication: pending live verification.
+
+**Reversible:** source and before-PDF copies, baseline commit and scoped verification in `work/refine7c-20261031`. This is a proposed visual refinement for author review; it does not approve 7D or final whole-book release.
 
 ## Horizons on Air consistency, 30 October
 
