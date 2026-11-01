@@ -39,13 +39,15 @@ export const LESSONS={
     step('A final shot can decide the winner','Here Rowan is the last surviving wolf. Select his house and confirm: your final shot removes the last wolf, so the village wins.','last-wolf','[data-player="p1"]',[pick('p1'),click('#confirm-target')])]
 };
 
-function fixture(role,scene,serial){
+// A new frame must reset the shared UI, including a previously revealed card.
+let frameId=0;
+function fixture(role,scene){
   const s=createRoom('DEMO',HOST,'Narrator');
   const remaining=['werewolf','werewolf','fortune','girl','witch','hunter','villager','villager'];
   const take=r=>{remaining.splice(remaining.indexOf(r),1);return r;};
   const roles=[take(role),take('werewolf'),take('villager'),...remaining];
   s.players=['Alex','Rowan','Ivy','Finn','Hazel','Jasper','Willow','Oscar'].map((name,i)=>({id:`p${i}`,key:i?`demo-${i}`:YOU,name,role:roles[i],alive:true}));
-  s.phaseId=serial*100; s.day=1; s.phase='day'; s.night={victim:null,poison:null,heal:false};
+  s.phaseId=++frameId*100; s.day=1; s.phase='day'; s.night={victim:null,poison:null,heal:false};
   const phase=p=>s.phase=p;
   if(scene==='card')phase('reveal');
   if(scene==='sleep')phase('werewolf');
@@ -80,7 +82,7 @@ export class TutorialGame{
   select(role){if(!TUTORIAL_ROLES.includes(role))throw Error('Choose a tutorial role.');this.role=role;this.index=0;this.load(0);}
   get steps(){return LESSONS[this.role];}
   get step(){return this.steps[this.index];}
-  load(index){if(index<0||index>=this.steps.length)throw Error('Unknown tutorial slide.');this.index=index;this.raw=fixture(this.role,this.step.scene,++this.serial);this.completed=false;this.feedback='';return this.snapshot();}
+  load(index){if(index<0||index>=this.steps.length)throw Error('Unknown tutorial slide.');this.index=index;this.serial++;this.raw=fixture(this.role,this.step.scene);this.completed=false;this.feedback='';return this.snapshot();}
   snapshot(){return view(this.raw,YOU);}
   act(body){
     if(!['ready','action','vote','advance'].includes(body.type))throw Error('This control is not part of the practice game.');

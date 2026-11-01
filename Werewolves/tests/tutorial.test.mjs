@@ -3,6 +3,11 @@ import assert from 'node:assert/strict';
 import { TutorialGame, TUTORIAL_ROLES } from '../tutorial-model.mjs';
 
 function scene(role,name){const game=new TutorialGame(role);game.load(game.steps.findIndex(s=>s.scene===name));return game;}
+test('new lessons and replayed frames have distinct IDs so private-card visibility resets',()=>{
+  const first=new TutorialGame('witch'),second=new TutorialGame('hunter'),restarted=new TutorialGame('witch');
+  const ids=[first.snapshot().phaseId,second.snapshot().phaseId,restarted.snapshot().phaseId,first.load(0).phaseId];
+  assert.equal(new Set(ids).size,ids.length);
+});
 test('each role has a playable secret-card opening and valid slide fixtures',()=>{
   assert.equal(TUTORIAL_ROLES.length,6);
   for(const role of TUTORIAL_ROLES){
