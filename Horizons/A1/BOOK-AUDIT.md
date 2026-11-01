@@ -24,7 +24,7 @@ Counts are inventory, not proof that every cue is correctly placed. Review place
 
 Activity 7's existing native-alpha diary/pen is enlarged from **20 × 24mm to 36 × 44mm**. The instruction reserves space beside it, and the writing heading sits below. All **eight full-width 7mm writing lines** and three 6mm planning lines remain. All learner wording, seven activities, focus markup and recordings are unchanged; no new artwork is generated. Asset/key notes now identify the active original shoe photo.
 
-**Verified:** 66 A4 pages, no text overflow, both corrected pages inspected in independently rendered PDF, standalone/compiled parity; other **64** page geometries and saved PDF text/drawing streams unchanged. Publication: pending live verification. Before copies and checks: `work/correct7d-20261031`.
+**Verified:** 66 A4 pages, no text overflow, both corrected pages inspected in independently rendered PDF, standalone/compiled parity; other **64** page geometries and saved PDF text/drawing streams unchanged. Publication: live HTML/PDF/image bytes, all three audio play/pause controls and print hiding verified. Before copies and checks: `work/correct7d-20261031`.
 
 **Audit lesson:** cutout height must not impose unnecessary blank source space. Compare against the actual preceding design; retain its compact composition when the new treatment is worse. Check small props at real print size, not only enlarged source pixels.
 
