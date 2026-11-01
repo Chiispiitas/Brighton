@@ -18,6 +18,16 @@ This is the current audit entry point. [book-audit.json](book-audit.json) holds 
 
 Counts are inventory, not proof that every cue is correctly placed. Review placement beside the newly introduced content.
 
+## 7D author correction, 31 October
+
+**Current version supersedes the first 7D composition below.** The author rejected Activity 3's forced empty area: the full-length cutout set a height that the diary copy could not fill. Restore the **exact original compact diary feature and full-background shoe photograph**. Tessa remains an unused reversible asset. Do not label the rejected composition approved merely because it fit the page.
+
+Activity 7's existing native-alpha diary/pen is enlarged from **20 × 24mm to 36 × 44mm**. The instruction reserves space beside it, and the writing heading sits below. All **eight full-width 7mm writing lines** and three 6mm planning lines remain. All learner wording, seven activities, focus markup and recordings are unchanged; no new artwork is generated. Asset/key notes now identify the active original shoe photo.
+
+**Verified:** 66 A4 pages, no text overflow, both corrected pages inspected in independently rendered PDF, standalone/compiled parity; other **64** page geometries and saved PDF text/drawing streams unchanged. Publication: pending live verification. Before copies and checks: `work/correct7d-20261031`.
+
+**Audit lesson:** cutout height must not impose unnecessary blank source space. Compare against the actual preceding design; retain its compact composition when the new treatment is worse. Check small props at real print size, not only enlarged source pixels.
+
 ## 7D visual refinement, 31 October
 
 **Scope: 7D only, printed pages 65–66.** Two selective built-in image_gen cutouts: full-length fictional Tessa visibly wearing one black lace-up and one brown loafer; and a small blank red cloth diary/pen beside the independent-writing heading. Both are native RGBA with genuine transparency, copied without raster edits. Tessa's complete face/body and both feet remain inside the display viewport; only empty canvas margins are trimmed. The old shoe close-up is retained on disk, retired from display to avoid duplicating the clue. This is a lesson-specific use, not permission to replace every background with cutouts.

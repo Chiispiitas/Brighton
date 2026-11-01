@@ -1,5 +1,7 @@
 # 7D artwork and provenance
 
+**Current display, author correction 31 October 2026:** Activity 3 restores the original full-background shoe photo and compact diary layout. Tessa is retained as an unused reversible asset. Activity 7 retains the diary/pen cutout, enlarged to a 36 × 44mm display canvas. Historical generation notes below describe the superseded first refinement.
+
 All file hashes, source links, licenses, changes and page uses are in asset-manifest.json. Real photo/painting credits appear only in the end-of-book image credits. Source models illustrate context; no invented history, event, voice or endorsement is attributed to them.
 
 - [Journal-George-Milton-v1.jpg](Journal-George-Milton-v1.jpg) - licensed stock photograph.
