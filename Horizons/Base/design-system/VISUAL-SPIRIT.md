@@ -18,6 +18,10 @@ The personal reference makes concepts memorable through physical metaphors, chro
 
 ## How to apply it
 
+The author's further direction of 1 November 2026 rejects a pass that stops at colour accents and small ornaments. Reading features and concept explanations should have substantial original visual settings and memorable physical forms where they strengthen the lesson. Use imagegen actively for those designed stages: material environments, integrated props, bold surfaces and concept objects with a noticeable presence on the spread. A narrow paper rim or tiny corner object alone does not fulfil this brief. Keep ordinary reading copy live, legible and genuinely supported by the visual concept.
+
+Vary the integration as well as the object. Speech pods can hold parallel examples; an interview console can carry portraits with longer source columns below; a diary can hold a continuous narrative; an exhibition or cinema structure can stage a title and photograph while the reading stays on open paper. Avoid giving every lesson the same tall frame, photo-and-paragraph stack or empty mock document. A substantial visual idea is not permission to crowd every activity or add a new decorative character.
+
 Give each new spread an explicit visual idea tied to the content. Record which expressive elements should survive future revisions. A calendar can show dates through stamps and a timeline; a number can live in a generous coloured bubble; an exchange can connect two distinct voices; a travel record can behave like a real document. Use the device that helps this lesson, not the device most recently used.
 
 Choose local colour intentionally. There is no mandatory blue/green background plus yellow mark, no requirement to recolour every object to crimson and no rainbow quota. Avoid a sequence of nearly identical muted features. Review adjacent spreads together for visual fatigue and contrasting memorable details.

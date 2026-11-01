@@ -1,0 +1,156 @@
+/* Twelve source-specific physical worlds. All words, photographs, arrows,
+   answer evidence and writing rules remain live/original. */
+
+/* 4A: contrasting open lunchboxes make the two noun types tangible. */
+.vw46 .vw4a-count {--vw-concept-padding:0;}
+.vw46 .vw4a-count>.hz-focus-box__header {padding:0 0 2mm;}
+.vw46 .vw4a-count .hz-grammar-compare {background:transparent url('../Images/Visual-worlds/4A-lunch-trays-v1.png') center/100% 100% no-repeat;padding:9mm 5mm 15mm;min-height:64mm;gap:12mm;}
+.vw46 .vw4a-count .hz-grammar-concept {padding:0 4mm;}
+.vw46 .vw4a-count .hz-grammar-concept__title {margin:0 0 1mm;font-size:11pt;}
+.vw46 .vw4a-count .l4a-grammar-food {height:17mm;width:25.5mm;}
+.vw46 .vw4a-count .hz-grammar-models {gap:2mm;margin-bottom:1mm;}
+.vw46 .vw4a-count .hz-grammar-concept__rule {margin:0;line-height:1.3;}
+.vw46.lf-4a .l4a-picnic-check {grid-template-columns:53mm minmax(0,1fr);}
+.vw46.lf-4a .l4a-picnic-check img {width:53mm;height:39.75mm;}
+.vw46.lf-4a .l4a-picnic-check ol {display:grid;grid-template-columns:1fr 1fr;gap:1mm 3mm;}
+.hz-page.vw46.l4a-page--2 .hz-extra-practice {margin-top:1mm;padding-top:1.5mm;}
+
+/* 4B: the burger and three opinions share a real tasting-table placemat. */
+.vw46 .l4b-taste-feature {background:transparent url('../Images/Visual-worlds/4B-tasting-table-v1.png') center/100% 100% no-repeat;border:0;padding:12mm 27mm 17mm 31mm;}
+.vw46 .l4b-taste-cover {grid-template-columns:45mm minmax(0,1fr);gap:3mm;background:transparent;color:#2d2826;}
+.vw46 .l4b-taste-cover img {width:45mm;height:51mm;object-fit:cover;}
+.vw46 .l4b-taste-cover header {padding:0;}
+.vw46 .l4b-taste-cover header>p:first-child,.vw46 .l4b-vegan-note b {color:#7c2825;}
+.vw46 .l4b-taste-cover header>p:first-child {display:table;background:#fff;padding:.5mm 1mm;margin-bottom:1mm;}
+.vw46 .l4b-taste-feature h2 {font-size:20pt;color:#7c2825;line-height:1.1;}
+.vw46 .l4b-taste-cover .l4b-feature-intro,.vw46 .l4b-vegan-note p {font-size:10pt;line-height:1.35;}
+.vw46 .l4b-vegan-note {border-top:.25mm solid #b5998f;padding-top:1.5mm;margin-top:2mm;}
+.vw46 .l4b-opinions {padding:3mm 0 0;gap:3mm;}
+.vw46 .l4b-opinions p {font-size:10pt;line-height:1.3;}
+
+/* 4C: all four original action photos sit on the kitchen flipbook. */
+.vw46 .l4c-recipe {background:transparent url('../Images/Visual-worlds/4C-kitchen-flipbook-v1.png') center/100% 100% no-repeat;border:0;box-shadow:none;padding:12mm 38mm 15mm 24mm;}
+.vw46 .l4c-recipe>header {padding:0 0 2mm;}
+.vw46 .l4c-recipe>header>div:first-child {padding-left:16mm;}
+.vw46 .l4c-recipe h2 {font-size:21pt;}
+.vw46 .l4c-ingredients {padding:0 0 2mm;gap:2mm;}
+.vw46 .l4c-steps {padding:0;gap:2mm;}
+.vw46 .l4c-step-photo {height:20mm;}
+.vw46 .l4c-steps figcaption {font-size:10pt;}
+.vw46 .l4c-steps figcaption p {line-height:1.35;}
+.vw46 .l4c-gap--verb {width:14mm;}
+.vw46.l4c-page:not(.l4c-page--2) .hz-exercise {padding-bottom:1.5mm;}
+.vw46 .l4c-kitchen-talk>h2 {margin-bottom:1.8mm;}
+.vw46 .l4c-for-two {width:13mm;height:13mm;gap:.5mm;}
+.vw46 .l4c-for-two span {font:700 5pt/1 var(--hz-font-sans);}
+.vw46 .l4c-for-two b {font:750 15pt/1 var(--hz-font-sans);}
+.vw46 .l4c-ingredients {margin-bottom:1mm;}
+.vw46.l4c-page:not(.l4c-page--2) .hz-word-bank {margin-bottom:1.5mm;}
+
+/* 4D: the food photograph and original phone live on a community fridge. */
+.vw46 .l4d-source-layout {background:transparent url('../Images/Visual-worlds/4D-community-fridge-v1.png') center/100% 100% no-repeat;padding:6mm 12mm 10mm 31mm;grid-template-columns:53mm minmax(0,1fr);gap:4mm;}
+.vw46 .l4d-note-source>figure img {width:53mm;height:auto;}
+.vw46 .l4d-short-post {margin:2mm 0 0;padding:2mm;}
+.vw46 .l4d-phone>header {padding:2.5mm 3mm;}
+.vw46 .l4d-phone-content {padding:2.5mm 3mm;}
+.vw46 .l4d-phone .l4d-model {font-size:10pt;line-height:1.4;}
+.vw46 .l4d-phone-offer {margin-bottom:2mm;}
+.vw46 .l4d-phone-home {margin-bottom:2mm;}
+
+/* 5A: clothing texture and a real auction-catalogue composition. */
+.vw46 .l5a-shop-feature {background:transparent url('../Images/Visual-worlds/5A-thrift-auction-stage-v1.png') center/100% 100% no-repeat;border:0;padding:11mm 17mm 7mm 24mm;}
+.vw46 .l5a-shop-layout {padding:0;grid-template-columns:59mm minmax(0,1fr);gap:4mm;}
+.vw46 .l5a-shop-copy>header {margin-bottom:2mm;padding-bottom:1.5mm;}
+.vw46 .l5a-shop-copy {background:#fff;padding:0 0 0 1mm;}
+.vw46 .l5a-clothing {width:23.5mm;height:23.5mm;}
+.vw46 .l5a-shop-copy h2 {font-size:17pt;}
+.vw46 .l5a-shop-copy h2 span {font-size:29pt;}
+.vw46 .l5a-dialogue {font-size:10pt;line-height:1.4;}
+.vw46 .l5a-shop-feature>footer {margin:2mm 0 0;padding:0;background:#fff;}
+.vw46 .l5a-true-story {padding:2mm;background:#fff;}
+.vw46 .l5a-source {margin-top:1mm;padding:1mm 2mm;background:#fff;}
+
+/* 5B: unpack the two guests. Programme mastheads/captions stay canonical. */
+.vw46 .l5b-show {background:transparent;border:0;}
+.vw46 .l5b-guests {background:transparent url('../Images/Visual-worlds/5B-parcel-studio-stage-v2.png') center/100% 100% no-repeat;padding:8mm 19mm 10mm;gap:23mm;}
+.vw46 .l5b-guest {grid-template-columns:34mm minmax(0,1fr);gap:0;}
+.vw46 .l5b-guest-photo {width:34mm;height:45.33mm;}
+.vw46 .l5b-guest>.hz-onair-caption {padding:2mm;}
+.vw46 .l5b-guest h3 {font-size:12pt;}
+.vw46 .l5b-guest>.hz-onair-caption p {font-size:10pt;}
+
+/* 5C: forms on the left, three physical counter leaves on the right. */
+.vw46 .vw5c-frequency {--vw-concept-padding:2mm 0;}
+.vw46 .vw5c-frequency>.hz-focus-box__header {padding:0 0 2mm;}
+.vw46 .vw5c-frequency>.hz-focus-box__body {display:grid;grid-template-columns:72mm minmax(0,1fr);gap:2mm 4mm;}
+.vw46 .vw5c-frequency .l5c-question-model {grid-column:1;grid-row:1;margin:0;padding:0 0 1mm;border:0;}
+.vw46 .vw5c-frequency .l5c-every {grid-column:1;grid-row:2;padding:0;border:0;}
+.vw46 .vw5c-frequency .l5c-frequency {grid-column:2;grid-row:1 / span 2;display:grid;grid-template-columns:repeat(3,minmax(0,1fr));grid-template-rows:1fr 1fr;gap:1mm;margin:0;min-height:38mm;background:transparent url('../Images/Visual-worlds/5C-frequency-counter-v1.png') center/100% 100% no-repeat;padding:8mm 3mm 9mm;}
+.vw46 .vw5c-frequency .l5c-frequency thead,.vw46 .vw5c-frequency .l5c-frequency tbody,.vw46 .vw5c-frequency .l5c-frequency tr {display:contents;}
+.vw46 .vw5c-frequency .l5c-frequency th {grid-row:1;align-self:end;padding:0 1mm;font-size:10pt;text-align:center;border:0;}
+.vw46 .vw5c-frequency .l5c-frequency td {grid-row:2;align-self:start;padding:1mm 1mm 0;font-size:10pt;text-align:center;border:0;}
+.vw46 .vw5c-frequency .l5c-frequency th,.vw46 .vw5c-frequency .l5c-frequency td {white-space:normal;padding-inline:2.5mm;text-wrap:balance;}
+.vw46 .vw5c-frequency .l5c-frequency th:nth-child(1),.vw46 .vw5c-frequency .l5c-frequency td:nth-child(1) {grid-column:1;}
+.vw46 .vw5c-frequency .l5c-frequency th:nth-child(2),.vw46 .vw5c-frequency .l5c-frequency td:nth-child(2) {grid-column:2;}
+.vw46 .vw5c-frequency .l5c-frequency th:nth-child(3),.vw46 .vw5c-frequency .l5c-frequency td:nth-child(3) {grid-column:3;}
+
+/* 5D: a model at a checkout, with its original receipt and long live exchange. */
+.vw46 .l5d-counter-talk {background:transparent url('../Images/Visual-worlds/5D-checkout-model-stage-v2.png') center/100% 100% no-repeat;border:0;padding:6mm 30mm 18mm 13mm;}
+.vw46 .l5d-counter-talk>header {padding:0 0 2mm;border:0;color:#215b45;}
+.vw46 .l5d-talk-layout {padding:0;grid-template-columns:minmax(0,1fr) 36mm;gap:4mm;}
+.vw46 .l5d-dialogue {font-size:10pt;line-height:1.3;row-gap:.5mm;}
+.vw46 .l5d-receipt {padding:2mm;}
+
+/* 6A: two real places on the facing pages of a proper travel guide. */
+.vw46.lf-6a .l6a-life-feature {background:transparent url('../Images/Visual-worlds/6A-travel-guide-stage-v1.png') center/100% 100% no-repeat!important;border:0!important;padding:7mm 20mm 10mm 15mm;}
+.vw46 .l6a-two-worlds img {height:32mm;object-position:center 65%;}
+.vw46 .l6a-place-photo {width:31mm;height:31mm;}
+.vw46.l6a-page:not(.l6a-page--2) .hz-exercises {gap:3mm;}
+.vw46.lf-6a .l6a-life-feature>header {padding:0 0 2mm!important;}
+.vw46 .l6a-life-copy {padding:0;gap:8mm;font-size:10pt;line-height:1.4;}
+.vw46 .l6a-life-copy section:last-child {padding-left:0;border:0;}
+.vw46 .l6a-source {padding:2mm 0 0;}
+
+/* 6B: the existing room evidence leads into an architectural reading folio. */
+.vw46 .l6b-home-feature {background:transparent url('../Images/Visual-worlds/6B-tiny-home-folio-v2.png') center/100% 100% no-repeat;border:0;padding:22mm 5mm 13mm 65mm;margin-top:-4mm;}
+.vw46 .l6b-house-dictionary {grid-template-columns:38mm 28mm minmax(0,1fr);}
+.vw46 .l6b-real-home img {width:38mm;height:57mm;}
+.vw46 .l6b-room-photo {width:28mm;height:27.5mm;}
+.vw46 .l6b-wordlist {display:grid;grid-template-columns:1fr 1fr;grid-template-rows:auto repeat(4,auto);gap:3mm 4mm;}
+.vw46 .l6b-wordlist>h3:first-child {grid-column:1;grid-row:1;}
+.vw46 .l6b-wordlist>h3:nth-of-type(2) {grid-column:2;grid-row:1;}
+.vw46 .l6b-wordlist>span:nth-of-type(1) {grid-column:1;grid-row:2;}
+.vw46 .l6b-wordlist>span:nth-of-type(2) {grid-column:1;grid-row:3;}
+.vw46 .l6b-wordlist>span:nth-of-type(3) {grid-column:1;grid-row:4;}
+.vw46 .l6b-wordlist>span:nth-of-type(4) {grid-column:1;grid-row:5;}
+.vw46 .l6b-wordlist>span:nth-of-type(5) {grid-column:2;grid-row:2;}
+.vw46 .l6b-wordlist>span:nth-of-type(6) {grid-column:2;grid-row:3;}
+.vw46 .l6b-wordlist>span:nth-of-type(7) {grid-column:2;grid-row:4;}
+.vw46 .l6b-wordlist>span:nth-of-type(8) {grid-column:2;grid-row:5;}
+.vw46 .l6b-home-feature>header {padding:0 0 2mm;border:0;background:transparent;grid-template-columns:1fr 25mm;gap:2mm;}
+.vw46 .l6b-home-feature h2 {font-size:21pt;}
+.vw46 .l6b-area {padding:1mm 2mm;}
+.vw46 .l6b-area b {font-size:23pt;}
+.vw46 .l6b-feature-body {padding:0;font-size:10pt;line-height:1.4;}
+.vw46 .l6b-home-feature footer {padding:2mm 0 0;}
+
+/* 6C: live SVG arrows and live models inhabit three real signboards. */
+.vw46 .vw6c-directions {--vw-concept-padding:0;}
+.vw46 .vw6c-directions>.hz-focus-box__header {padding:0 0 2mm;}
+.hz-page.vw46 .vw6c-directions>.hz-focus-box__header {margin-bottom:.5mm!important;}
+.vw46 .vw6c-directions>.hz-focus-box__body {display:grid;grid-template-columns:100mm minmax(0,1fr);gap:1mm 5mm;align-items:center;}
+.vw46 .vw6c-directions .l6c-turn-models {background:transparent url('../Images/Visual-worlds/6C-road-signboards-v1.png') center/100% 100% no-repeat;min-height:31mm;gap:2mm;padding:4.5mm 2mm 8.67mm;}
+.vw46 .vw6c-directions .l6c-turn-models p {flex-direction:column;justify-content:center;gap:1mm;text-align:center;}
+.vw46 .vw6c-directions .l6c-turn-models svg {width:7mm;height:7mm;margin:0;}
+.vw46 .vw6c-directions .l6c-arrow-caption {font-size:10pt;}
+.vw46 .vw6c-directions .l6c-movement-models {display:block;margin:0;}
+.vw46 .vw6c-directions .l6c-movement-models p {margin:0 0 2mm;}
+.vw46 .vw6c-directions .l6c-form {grid-column:1 / -1;margin:0;}
+
+/* 6D: the visitor conversation is the white panel of a real folded city pass. */
+.vw46 .l6d-weekend {background:transparent url('../Images/Visual-worlds/6D-visitor-foldout-v1.png') center/100% 100% no-repeat;border:0;padding:7mm 17mm 5mm 63mm;}
+.vw46 .l6d-destinations img {height:41mm;}
+.vw46 .l6d-weekend h2 {font-size:17pt;line-height:1.15;}
+.vw46 .l6d-weekend p {font-size:10pt;line-height:1.4;}
+.vw46 .l6d-weekend>footer {position:relative;transform:translateY(-2mm);}
+.vw46.l6d-page:not(.l6d-page--2) .hz-exercise {padding-bottom:1.65mm;}

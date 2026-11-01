@@ -72,3 +72,13 @@
 .hz-focus-box[data-hz-tool="writing"],
 .hz-focus-box[data-hz-tool="skills"] {--hz-unit:#78458f;--hz-unit-dark:#68367f;--hz-unit-soft:#f2e7f8;--hz-tool-rule:#b494c5;--hz-tool-wash:#fcf8fe;}
 .hz-focus-box[data-hz-tool="pronunciation"] {--hz-unit:#b24e18;--hz-unit-dark:#944014;--hz-unit-soft:#fff0e2;--hz-tool-rule:#d6a071;--hz-tool-wash:#fff9f3;}
+
+/* Object-based concept stages keep familiar labels and live examples while
+   their generated material world replaces the ordinary flat panel shell. */
+.hz-page.hz-content .hz-focus-box.vw-concept {
+  position:relative;isolation:isolate;border:0 !important;
+  background:transparent !important;
+  padding:var(--vw-concept-padding,3mm 3.5mm) !important;
+}
+.hz-page.hz-content .vw-concept .hz-focus-box__header,
+.hz-page.hz-content .vw-concept .hz-focus-box__body {position:relative;z-index:1;}

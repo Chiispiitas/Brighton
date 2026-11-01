@@ -135,7 +135,7 @@ function collectHeadStyles(headHtml, lessonPath, filename) {
     const labeledCss = `/* ${path.relative(repoRoot, stylesheetPath).replaceAll(path.sep, "/")} */\n${css}`;
     // Cross-lesson edition layers must follow all older individual lesson rules,
     // matching the order used in each standalone master.
-    if (path.dirname(stylesheetPath) === lessonsDir && /^(?:editorial|expressive)-/.test(path.basename(stylesheetPath))) {
+    if (path.dirname(stylesheetPath) === lessonsDir && /^(?:editorial|expressive|visual-worlds)-/.test(path.basename(stylesheetPath))) {
       deferredEditorialStyles.push({ name: path.basename(stylesheetPath), css: labeledCss });
     } else output.push(labeledCss);
   }
@@ -320,7 +320,7 @@ ${viewerCss}
   </style>
   <!-- Canonical lesson CSS is linked after the compiled snapshot so local CSS edits
        are reflected immediately when opening Student's Book.html during authoring. -->
-  ${liveLessonStyles.sort((a,b) => (Number(/\/(?:editorial|expressive)-/.test(a)) * 2 + Number(a.includes("-features"))) - (Number(/\/(?:editorial|expressive)-/.test(b)) * 2 + Number(b.includes("-features")))).join("\n  ")}
+  ${liveLessonStyles.sort((a,b) => (Number(/\/(?:editorial|expressive|visual-worlds)-/.test(a)) * 2 + Number(a.includes("-features"))) - (Number(/\/(?:editorial|expressive|visual-worlds)-/.test(b)) * 2 + Number(b.includes("-features")))).join("\n  ")}
   <link rel="stylesheet" href="../Base/design-system/editorial-edition.css?v=${editionVersion}">
   <link rel="stylesheet" href="../Base/viewer/book-navigation.css">
   <script src="../Base/viewer/audio-player.js" data-audio-base="./Audios/" defer></script>

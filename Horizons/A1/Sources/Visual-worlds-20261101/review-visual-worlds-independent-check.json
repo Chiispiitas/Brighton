@@ -1,0 +1,38 @@
+{
+  "mode": "read-only independent review of root review imagegen integration",
+  "screenshots_personally_viewed": [
+    "review-page-21.png",
+    "review-page-39.png",
+    "review-page-57.png",
+    "review-page-75.png"
+  ],
+  "general_judgment": "Four different substantial material worlds work: exhibitionstand, outdoorcinema, giftbox and easel. Original people/photos remain clear and word areas remain ordinary editable type. No childish mascot or identical blanket frame.",
+  "positive_findings": {
+    "21": "Exhibition title, header, three original portraits/items and same-plum name captions are legible. Physical lamps/coloured stand have adult editorial personality.",
+    "39": "The cinema canopy/grass/director chair create a memorable event world. Existing ticket and original photo are clear. Ruby/Alex text has comfortable margins and no picture overlap.",
+    "57": "Giftbox/ribbon preserves the secret-surprise theme; all original faces/clothes and under-table bag remain visible. No glyph or ribbon covers copy.",
+    "75": "Easel/canvas source is substantial and original scene remains unobscured. Title/kicker have safe left margins after root fix."
+  },
+  "actionable_findings": [
+    {
+      "page": 21,
+      "type": "clipped writing row",
+      "evidence": "Readonly DOM check: content bottom1035.59375px; last rr-vocab-table tbody row bottom1043.203125px.2.01mm of its lower region extends beyond clipping region.",
+      "recommendation": "Recover≥3mm above table without shrinking7mm rows.",
+      "root_notified": true
+    },
+    {
+      "page": 57,
+      "type": "reading safe margin",
+      "evidence": "Screenshot message/sender text sits approximately0.5mm inside folder’s left edge. It is inside but visually too close.",
+      "recommendation": "Give message/sender about2mm actual inset within folder, retaining10pt type and checking wrapping.",
+      "root_notified": true
+    }
+  ],
+  "edits_made": [],
+  "status": "All four review image worlds approved after root fixes; pages21 and57 re-viewed in full.",
+  "closure": {
+    "21": "Three table rows fully visible; last bottom1031.078125px within1035.59375px content boundary. Original7mm row heights retained.",
+    "57": "Actual2mm reading inset both sides is visibly comfortable. Text wraps cleanly and original source evidence stays clear."
+  }
+}

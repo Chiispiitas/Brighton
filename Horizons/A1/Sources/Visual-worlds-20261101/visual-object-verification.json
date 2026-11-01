@@ -1,0 +1,41 @@
+{
+  "protected_object_checks": [
+    {
+      "lesson": "1A",
+      "view": "standalone",
+      "selector": ".ed13-numbers b",
+      "count": 11,
+      "min_font_pt": 15,
+      "fill_colours": 3,
+      "passed": true
+    },
+    {
+      "lesson": "1A",
+      "view": "assembled",
+      "selector": ".ed13-numbers b",
+      "count": 11,
+      "min_font_pt": 15,
+      "fill_colours": 3,
+      "passed": true
+    },
+    {
+      "lesson": "1A",
+      "view": "standalone",
+      "selector": ".l1a-alphabet > span",
+      "count": 26,
+      "min_font_pt": 15.500024999999999,
+      "fill_colours": 1,
+      "passed": true
+    },
+    {
+      "lesson": "1A",
+      "view": "assembled",
+      "selector": ".l1a-alphabet > span",
+      "count": 26,
+      "min_font_pt": 15.500024999999999,
+      "fill_colours": 1,
+      "passed": true
+    }
+  ],
+  "editorial_review": "Saved-PDF warmth, variety and suitability still require personal inspection."
+}

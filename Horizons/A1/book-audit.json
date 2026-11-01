@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
-  "updated": "2026-10-31",
-  "status": "Expressive identity correction complete; saved-PDF and live verification complete",
+  "updated": "2026-11-01",
+  "status": "Substantial visual-world revision and saved-PDF proof complete; publication verification pending",
   "authority": "Author delegates editorial authority; his own B2 book sets emotional direction. Preserve colourful learning objects and warm adult playfulness alongside coherent functional roles.",
   "scope": "Units1–8,32lessons and fourpairedreviews.72corepages plus4endcreditpages; front/index/practicebanks/workbook/optionalannexes excluded.",
   "baseline": {
@@ -14,6 +14,13 @@
       "safety_branch": "safety/horizons-before-expressive-spirit-20261031",
       "sources": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\expressive-spirit-20261031\\before",
       "pdf": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\expressive-spirit-20261031\\before-book.pdf"
+    },
+    "visual_worlds": {
+      "commit": "4fd17914c3796e988065f1c23ae3497a40b04020",
+      "safety_branch": "safety/horizons-before-visual-worlds-20261101",
+      "sources": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\visual-worlds-20261101\\before",
+      "pdf": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\visual-worlds-20261101\\before-book.pdf",
+      "pdf_sha256": "9f30675098315e55a26d246171cbba5a9fc3aff46b961d3b99757cee86a9aef9"
     }
   },
   "inventory": {
@@ -73,8 +80,10 @@
     "go_to_references": 75,
     "page_placeholders": 0,
     "focus_panels": 35,
-    "new_generated_object_assets": 12,
-    "external_photo_credit_records": 84
+    "external_photo_credit_records": 84,
+    "new_selected_visual_world_assets": 36,
+    "retained_generated_document_assets": 12,
+    "active_generated_design_assets": 48
   },
   "standards": {
     "canonical_style": "../Base/design-system/CANONICAL-STYLE.md",
@@ -86,18 +95,19 @@
     "visual_spirit": "../Base/design-system/VISUAL-SPIRIT.md",
     "author_reference": "../Base/design-system/AUTHOR-REFERENCE-STUDY.json",
     "protected_visual_register": "Sources/Visual-personality.json",
-    "authoring_instructions": "../AGENTS.md"
+    "authoring_instructions": "../AGENTS.md",
+    "visual_world_manifest": "Sources/Visual-worlds-20261101/asset-coverage-verification.json"
   },
   "editorial_judgment": {
-    "basis": "Warm adult playfulness is restored through large paired-case lettering, saturated round counting objects and bounded content-specific visual devices. Functional colour cues remain coherent. Tactile documents, usable learner products and clear writing/reading space from the prior overhaul are retained. No universal rainbow, copied mascot or new learning-sequence claim for colour changes.",
+    "basis": "Thirty-six bespoke material settings visibly reshape readings, dialogue settings and selected concept explanations. Integration varies: speech pods, woven passes, studio monitors, travel guides, kitchen/retail scenes, archive drawers, weather instruments, a journal and review stages. Large saturated objects carry subject meaning while original photos, live copy and response space stay legible. No portrait substitution, new mascot or decorative universal card is imposed.",
     "independent_saved_pdf_reviews": [
-      "Sources/Expressive-spirit-20261031/expressive-pdf-proof-1-3.json",
-      "Sources/Expressive-spirit-20261031/expressive-pdf-proof-4-6.json",
-      "Sources/Expressive-spirit-20261031/expressive-pdf-proof-7-8.json"
+      "Sources/Visual-worlds-20261101/pdf-proof-units1-3.json",
+      "Sources/Visual-worlds-20261101/pdf-proof-units4-6.json",
+      "Sources/Visual-worlds-20261101/pdf-proof-units7-8.json"
     ],
-    "root_review": "All76savedpages viewed in tencontactsequences; fullsize1A alphabet/numerals and selectedsource/responsefeatures examined. Three editors independently inspected all76savedpages.",
+    "root_review": "Root viewed all76savedpages in contact sequences and selected full-size sources/concept panels; three editors independently inspected every saved page in cross-unit allocations.",
     "author_acceptance_claimed": false,
-    "current_decision": "Sources/Expressive-spirit-20261031/editorial-decision.json"
+    "current_decision": "Sources/Visual-worlds-20261101/editorial-decision.json"
   },
   "verification": {
     "layout": {
@@ -107,13 +117,15 @@
     },
     "computed_appearance": {
       "pages": 72,
-      "visible_elements": 8650,
+      "visible_elements": 8647,
       "computed_colors_type_borders_and_pseudo_styles_match": true,
       "failures": []
     },
     "response_space": {
+      "checkedFields": 642,
       "clipped": [],
-      "smallRows": []
+      "smallRows": [],
+      "outsideContent": []
     },
     "pdf": {
       "pages": 76,
@@ -125,61 +137,26 @@
       "all_a4": true,
       "every_learner_word_token_preserved_from_print_DOM": true,
       "all_footer_numbers_present": true,
-      "pdf_bytes": 37398505,
-      "sha256": "9f30675098315e55a26d246171cbba5a9fc3aff46b961d3b99757cee86a9aef9",
+      "pdf_bytes": 95310702,
+      "sha256": "c2fa93747674aebb40e4101028b46b9a7f7dc57c9d714484552c87c67074f0d9",
       "method": "Full native Windows/Edge A4 export of the current compiled HTML with export-only alpha-preserving240dpi media; no post-save image/font rewriting. Reopened with PyMuPDF; all page text/footers/size checked; independently rendered through Poppler for visual proof."
     },
     "preservation": {
       "issues": [],
       "unchanged_media_audio_scripts_keys_wordlists": 562,
       "all_retained_generated_surfaces_unchanged": true,
-      "new_raster_or_external_media": false,
-      "new_native_weather_glyphs": 3,
-      "ordinal_normalisation": "Inline span boundaries in7Bdisplay1/st as one printed ordinal; values unchanged."
+      "new_raster_or_external_media": true,
+      "new_native_weather_glyphs": 0,
+      "new_selected_imagegen_visual_worlds": 36,
+      "ordinal_normalisation": "Inline span boundaries in7Bdisplay1/st as one printed ordinal; values unchanged.",
+      "page_break_normalisation": "2D activity5 moves intact from page19 to page20. Learner words compare without footer/continuation labels; those labels are checked separately in unchanged sequence. Exact sequence diff confirmed only19/2D moved around the unchanged activity."
     },
-    "protected_object_regression": {
-      "current_design_passes": true,
-      "recreated_known_number_flattening_rejected": true,
-      "negative_test_mutation": "Scratch-only copy removes bubble fill and roundness; production files untouched.",
-      "positive_checks": [
-        {
-          "lesson": "1A",
-          "view": "standalone",
-          "selector": ".ed13-numbers b",
-          "count": 11,
-          "min_font_pt": 15,
-          "fill_colours": 3,
-          "passed": true
-        },
-        {
-          "lesson": "1A",
-          "view": "assembled",
-          "selector": ".ed13-numbers b",
-          "count": 11,
-          "min_font_pt": 15,
-          "fill_colours": 3,
-          "passed": true
-        },
-        {
-          "lesson": "1A",
-          "view": "standalone",
-          "selector": ".l1a-alphabet > span",
-          "count": 26,
-          "min_font_pt": 15.500024999999999,
-          "fill_colours": 1,
-          "passed": true
-        },
-        {
-          "lesson": "1A",
-          "view": "assembled",
-          "selector": ".l1a-alphabet > span",
-          "count": 26,
-          "min_font_pt": 15.500024999999999,
-          "fill_colours": 1,
-          "passed": true
-        }
-      ],
-      "scope": "Protected affordances only; manual emotional/editorial review remains required."
+    "active_artwork": {
+      "selected_new_visual_worlds": 36,
+      "all_36_spreads_have_one_active_bespoke_visual_world": true,
+      "old_generated_surfaces_still_active": 12,
+      "issues": [],
+      "visual_judgment": "Manual saved-page review is still required; coverage alone does not prove expressiveness."
     },
     "audio": {
       "issues": [],
@@ -190,11 +167,13 @@
       "subjective_listening_review": false
     },
     "live_viewer": {
-      "completed": true,
-      "all90controls_play_pause": true,
-      "print_ui_hidden": true
+      "completed": false,
+      "all90controls_play_pause": false,
+      "print_ui_hidden": false,
+      "verified_file_count": null
     },
-    "evidence_directory": "Sources/Expressive-spirit-20261031",
+    "evidence_directory": "Sources/Visual-worlds-20261101",
+    "prior_expressive_evidence": "Sources/Expressive-spirit-20261031",
     "prior_editorial_evidence": "Sources/Editorial-overhaul-20261031"
   },
   "new_objects": "Images/Editorial-objects/manifest.json",
@@ -343,9 +322,9 @@
         "Sources"
       ],
       "fingerprint": {
-        "files": 768,
-        "bytes": 566680580,
-        "sha256": "756717b1e232c5fee9b2002e05948a710507674d30197307d8c731baafab3756"
+        "files": 841,
+        "bytes": 645495882,
+        "sha256": "2ca8a1204e31a4ccead8d608be7eec0777e525489d2eaf3f1ec38210691419be"
       }
     },
     "shared_rendering": {
@@ -355,8 +334,8 @@
       "exclude_markdown": true,
       "fingerprint": {
         "files": 19,
-        "bytes": 78587,
-        "sha256": "f7949bab882cb7fd14e9cce69c18dabebe6c08d69e3b6644d232b2fc560dd6cd"
+        "bytes": 80146,
+        "sha256": "dc008f3560dd1c5d8cab45b1863827143fcd540a6dc9ebb30fe3027089ce6d9b"
       }
     },
     "saved_pdf": {
@@ -365,8 +344,8 @@
       ],
       "fingerprint": {
         "files": 1,
-        "bytes": 37398505,
-        "sha256": "3a03bfa4a97b1f160fd6758ad39c4e887bdc94a8863f2344b3a41b440c1381e8"
+        "bytes": 95310702,
+        "sha256": "c9568ea21e139a807dc46c8517f16ee66acceb9387754e6d0a23c4f369ec6ed4"
       }
     },
     "audit_criteria": {
@@ -381,22 +360,23 @@
         "Sources/Visual-personality.json",
         "EDITORIAL-DIRECTION.md",
         "EDITORIAL-REFERENCE-STUDY.json",
-        "../../.github/workflows/build-horizons-a1-student-book.yml"
+        "../../.github/workflows/build-horizons-a1-student-book.yml",
+        "BOOK-AUDIT.md"
       ],
       "fingerprint": {
-        "files": 11,
-        "bytes": 87709,
-        "sha256": "06e6a60b888f3056f9e75dadba800ce9c297c9b290da1e7bbc6f4e22904e32d8"
+        "files": 12,
+        "bytes": 121880,
+        "sha256": "5734ef41c2568e1919a6d7e0d5ae22dccdd3effbb890cf72f37fd1a82577f9e8"
       }
     }
   },
   "visual_spirit": {
     "policy": "../Base/design-system/VISUAL-SPIRIT.md",
     "primary_emotional_reference": "../Base/design-system/AUTHOR-REFERENCE-STUDY.json",
-    "priority": "Warm adult playfulness, saturated local colour, tactile concept metaphors and protected letter/number graphics; functional consistency does not mean visual uniformity.",
+    "priority": "Substantial content-specific imagegen settings and concept objects, saturated local colour, warm adult playfulness, protected expressive learning graphics and varied compositions; clear live text and response space govern the integration.",
     "regression_baseline": "8069492116058e45846c79601c66ebd8a3207abb",
     "protected_register": "Sources/Visual-personality.json",
-    "verification": "Complete including published viewer",
+    "verification": "Complete local/native PDF proof; live pending",
     "functional_tool_counts": {
       "grammar": 25,
       "pronunciation": 1,
@@ -406,7 +386,7 @@
       "writing": 1
     },
     "registered_spreads": 36,
-    "protected_selectors": 72,
+    "protected_selectors": 99,
     "protected_objects": {
       "number_bubbles": 11,
       "number_circle_mm": 10,
@@ -415,6 +395,7 @@
       "alphabet_pairs": 26,
       "alphabet_pt": 15.5
     },
-    "evidence": "Sources/Expressive-spirit-20261031"
+    "evidence": "Sources/Visual-worlds-20261101",
+    "selected_visual_worlds": 36
   }
 }
