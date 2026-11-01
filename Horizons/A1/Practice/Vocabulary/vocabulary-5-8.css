@@ -1,0 +1,97 @@
+/* V5–V8: original revision resources, memory choices and usable game outcomes. */
+.vp58-page {font-family:var(--hz-font-sans);font-size:10pt;line-height:1.38;}
+.vp58-page p {font-size:10pt;line-height:1.38;margin:1.3mm 0 2mm;}
+.vp58-page figure {margin:0;}
+.vp58-page figcaption {font-size:8.5pt;line-height:1.3;color:#4f5b57;margin-top:1mm;}
+.vp58-page .practice-topic {margin-bottom:4mm;}
+.vp58-page .practice-task {margin-top:2.8mm;}
+.vp58-page .practice-task h3 {font-size:9.2pt;line-height:1.38;margin-bottom:1.7mm;}
+.vp58-page .practice-items {font-size:10pt;line-height:1.4;}
+.vp58-page .practice-items li {margin-bottom:1.8mm;}
+.vp58-page .practice-gap {min-width:17mm;height:5.5mm;max-width:100%;}
+.vp58-page .practice-note {font-size:9pt;line-height:1.38;margin:1.4mm 0;}
+.vp58-page strong,.vp58-page .practice-task h3 b {color:#216541;}
+.vp58-page .hz-word-bank {font-size:9.5pt;line-height:1.4;margin:1.5mm 0 2mm;padding:2mm 3mm;word-spacing:1.8mm;}
+.vp58-line {display:block;height:7mm;border-bottom:.22mm solid #91999b;}
+.vp58-lines {margin:1.7mm 0 2.3mm;}
+.vp58-cols2 {display:grid;grid-template-columns:1fr 1fr;gap:1mm 8mm;}
+.vp58-page .vp58-game-title {font:700 10pt/1.3 var(--hz-font-sans);margin:0 0 2mm;color:#216541;}
+.vp58-wardrobe {display:grid;grid-template-columns:90mm 1fr;gap:6mm;align-items:start;}
+.vp58-wardrobe img {display:block;width:90mm;height:60mm;object-fit:contain;}
+.vp58-decision {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:3mm;}
+.vp58-decision section {border-top:.7mm solid #b56a3e;padding-top:1.5mm;}
+.vp58-decision section > b {font-size:9pt;color:#7d492e;}
+.vp58-decision section p {min-height:14mm;font-size:10pt;}
+.vp58-svg {display:block;width:100%;height:auto;margin:1mm 0 2mm;}
+.vp58-svg text {font:13.333px var(--hz-font-sans);fill:#283d33;}
+.vp58-receipt-case {display:grid;grid-template-columns:1fr 49mm;gap:6mm;align-items:start;margin:2mm 0;}
+.vp58-receipt-case h3 {font:700 10pt/1.3 var(--hz-font-sans);margin:0 0 1.5mm;color:#216541;}
+.vp58-receipt-case aside {padding:3mm 3.5mm;border-top:.8mm solid #638b72;border-bottom:.3mm dashed #638b72;background:#f4f7ef;font-size:10pt;}
+.vp58-receipt-case aside > b {font-size:9pt;}
+.vp58-route-cases {display:grid;grid-template-columns:1fr;gap:1.5mm;}
+.vp58-route-cases section {border-left:.6mm solid #a5bdac;padding-left:3mm;}
+.vp58-route-cases b {font-size:10pt;font-weight:600;}
+.vp58-route-cases p {margin:1mm 0;font-size:10pt;}
+.vp58-attractions {display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin:1.5mm 0;}
+.vp58-attractions span {padding:2mm 1mm;border-bottom:.45mm solid #8fae97;text-align:center;font-size:10pt;}
+.vp58-case-note {padding:2mm 3mm;background:#f7f1e8;border-left:.6mm solid #b87843;}
+.vp58-apartment {display:grid;grid-template-columns:96mm 1fr;gap:5mm;align-items:start;}
+.vp58-apartment img {display:block;width:96mm;height:80mm;object-fit:contain;}
+.vp58-label-repairs {display:grid;grid-template-columns:1fr 1fr;gap:2mm 7mm;font-size:10pt;line-height:1.45;}
+.vp58-route-words {display:grid;grid-template-columns:1fr 1fr;gap:1.5mm 7mm;font-size:10pt;}
+.vp58-month-board {display:grid;grid-template-columns:repeat(4,1fr);gap:1.5mm 4mm;margin:2mm 0;}
+.vp58-month-board > span {display:flex;align-items:baseline;gap:2mm;}
+.vp58-month-board > span > b {width:5mm;color:#216541;font-size:11pt;}
+.vp58-month-board .practice-gap {flex:1;min-width:0;}
+.vp58-date-cases {display:grid;grid-template-columns:repeat(3,1fr);gap:5mm;}
+.vp58-date-cases section {border-top:1mm solid #b1564b;padding-top:1.5mm;}
+.vp58-date-cases b {font-size:11pt;color:#783932;}
+.vp58-date-cases p {min-height:13mm;}
+.vp58-date-cases .practice-gap {width:100%;}
+.vp58-time-case {border-left:.7mm solid #8a9fba;background:#f3f6fb;padding:2mm 3mm;}
+.vp58-time-case > b {font-size:9pt;color:#3e597d;}
+.vp58-time-case > div {font-size:10pt;}
+.vp58-music-labels {display:grid;grid-template-columns:repeat(3,1fr);gap:5mm;}
+.vp58-edit-story {padding:2mm 3mm;background:#f8f1e8;border-left:.6mm solid #a56d39;}
+.vp58-edit-story > b {font-size:9pt;color:#794c2b;}
+.vp58-edit-story p {margin-bottom:.5mm;}
+.vp58-story-cards {display:grid;grid-template-columns:1fr 1fr;gap:2mm 6mm;}
+.vp58-story-cards span {padding:1.3mm 0;border-bottom:.25mm solid #c6d0c8;font-size:10pt;}
+.vp58-story-cards b {color:#216541;margin-right:1.5mm;}
+.vp58-story-order {display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin-top:2mm;font-size:10pt;}
+.vp58-trip-tickets {display:grid;grid-template-columns:repeat(3,1fr);gap:3mm 5mm;}
+.vp58-trip-tickets section {border-top:.8mm solid #9b5672;border-bottom:.25mm dashed #bd9eac;padding:1.5mm 2mm;}
+.vp58-trip-tickets b {font-size:10pt;color:#82405a;}
+.vp58-trip-tickets p {margin:1mm 0;}
+.vp58-crossword-pair {display:grid;grid-template-columns:76mm 1fr;gap:5mm;align-items:start;}
+.vp58-crossword {display:grid;grid-template-columns:repeat(14,5mm);grid-template-rows:repeat(9,5mm);}
+.vp58-crossword > span {position:relative;display:block;width:5mm;height:5mm;box-sizing:border-box;}
+.vp58-cross-cell {border:.22mm solid #638471;background:#fff;}
+.vp58-cross-blank {background:transparent;}
+.vp58-cross-cell > b {position:absolute;left:.25mm;top:-.15mm;font-size:7.5pt;line-height:1;color:#255d40;}
+.vp58-cross-clues {font-size:10pt;line-height:1.35;}
+.vp58-cross-clues > b {color:#216541;font-size:10pt;}
+.vp58-cross-clues p {margin:1mm 0 1.8mm;font-size:10pt;}
+.vp58-forecasts {display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;margin:1mm 0 3mm;}
+.vp58-forecasts section {padding:2mm 1.5mm;border-top:.8mm solid #769bb1;border-bottom:.3mm solid #a9bdc8;text-align:center;}
+.vp58-forecasts b {font-size:10pt;font-weight:650;}
+.vp58-forecasts svg {display:block;width:100%;height:26mm;margin:1mm auto;}
+.vp58-forecasts section > span {font-size:16pt;font-weight:600;color:#385e77;}
+.vp58-travelers {width:82.5mm;margin:2mm auto!important;}
+.vp58-travelers img {display:block;width:82.5mm;height:55mm;object-fit:contain;}
+.vp58-travelers figcaption {display:grid;grid-template-columns:repeat(3,1fr);text-align:center;font-size:10pt;color:#216541;}
+.vp58-ticket-choice {display:grid;grid-template-columns:1fr 1fr;gap:5mm;}
+.vp58-ticket-choice section {padding:2mm 3mm;border-top:.8mm solid #4a769a;border-bottom:.3mm dashed #92a7bb;background:#f3f7fb;}
+.vp58-ticket-choice b {font-size:10pt;color:#245477;}
+.vp58-booking-fields {display:grid;grid-template-columns:1fr 1fr;gap:1mm 6mm;font-size:10pt;}
+.vp58-booking-fields span {display:flex;align-items:baseline;gap:2mm;}
+.vp58-booking-fields .practice-gap {flex:1;}
+.vp58-page .hz-page__footer {font-size:7.5pt;}
+
+.vp58-page--messages .practice-topic {margin-bottom:3mm;}
+.vp58-page--messages .practice-task {margin-top:2.4mm;}
+
+.vp58-page--shopping .practice-topic {margin-bottom:3mm;}
+.vp58-page--shopping .practice-task {margin-top:2.2mm;}
+
+.vp58-page .vp58-inline-game {margin-top:0;}

@@ -6,6 +6,9 @@ on:
       - main
     paths:
       - "Horizons/A1/Lessons/**"
+      - "Horizons/A1/Practice/**"
+      - "Horizons/A1/Backmatter/**"
+      - "Horizons/Base/build/check-practice-banks.py"
       - "Horizons/A1/Audio scripts/**"
       - "Horizons/Base/design-system/**"
       - "Horizons/Base/shell/**"
@@ -54,6 +57,9 @@ jobs:
 
       - name: Compile Student's Book HTML
         run: node Horizons/Base/build/build-students-book.mjs
+
+      - name: Check authored practice links and source coverage
+        run: python Horizons/Base/build/check-practice-banks.py Horizons/A1
 
       - name: Install PDF renderer
         run: npm install --no-save --no-package-lock puppeteer-core@24

@@ -1,0 +1,162 @@
+{
+  "reviewed_at": "2026-11-01T13:38:47.342205",
+  "scope": "Read-only independent source/key and standalone browser review of NEW frozen V1–V4; final saved PDF handled separately",
+  "sources": {
+    "V1.html": "ba3df6e3c117e72dedf665c4891ea796e739ac6d87ab23f1dd455179b72bac3a",
+    "V2.html": "d014ad44c876862970f817880a4fbba9edcdfb3769f7d89a38323cda7a8684d4",
+    "V3.html": "589665fa5a669efab2ef1fcaf816385112b94bfec14318b8db3725c788559c26",
+    "V4.html": "fdcd8932ab9a6036670fe983037f6b368029cf0695552a168ae51b554e613504"
+  },
+  "key_sha256": "7de781333b327f3fe5efa2a6fb91afeac6bc73db442927574b06fe2e0a584719",
+  "page_counts": {
+    "1": 3,
+    "2": 2,
+    "3": 2,
+    "4": 2
+  },
+  "numbered_tasks": {
+    "1": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10
+    ],
+    "2": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "3": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ],
+    "4": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8
+    ]
+  },
+  "task_count": 34,
+  "image_sources": {
+    "1": [],
+    "2": [
+      "../Images/U2-personal-items-v1.png"
+    ],
+    "3": [
+      "../Images/U3-routines-v1.png"
+    ],
+    "4": [
+      "../Images/U4-picnic-boxes-v1.png"
+    ]
+  },
+  "core_image_reuse": false,
+  "clock_independent_geometry": [
+    {
+      "label": "A",
+      "hour": 7,
+      "minute": 20,
+      "hour_angle": 220.0,
+      "minute_angle": 120.0
+    },
+    {
+      "label": "B",
+      "hour": 8,
+      "minute": 40,
+      "hour_angle": 260.0,
+      "minute_angle": 240.0
+    },
+    {
+      "label": "C",
+      "hour": 6,
+      "minute": 10,
+      "hour_angle": 185.0,
+      "minute_angle": 60.0
+    },
+    {
+      "label": "D",
+      "hour": 9,
+      "minute": 50,
+      "hour_angle": 295.01,
+      "minute_angle": 300.0
+    }
+  ],
+  "color_routes": [
+    {
+      "letters": "A→B→C→D",
+      "colors": [
+        "red",
+        "blue",
+        "yellow",
+        "green"
+      ],
+      "side_adjacent": true
+    },
+    {
+      "letters": "I→J→F→G→H",
+      "colors": [
+        "pink",
+        "gray",
+        "black",
+        "white",
+        "brown"
+      ],
+      "side_adjacent": true
+    },
+    {
+      "letters": "A→E→I→J",
+      "colors": [
+        "red",
+        "orange",
+        "pink",
+        "gray"
+      ],
+      "side_adjacent": true
+    }
+  ],
+  "checks": {
+    "V1": "Greetings A morning B afternoon C evening D goodbye; names Kim/Luz/Sam/Ida; lockers408,2-10-6,915,734; Camila labels first/last/country/city; jobs chef,receptionist,doctor,farmer,taxi driver,teacher; badge missing e,o,e,e; countries4,2,3,1,5; roomB small/new/calm/cold; clues smart,fun,friendly,famous. Original private choices and covered source retrieval usable. All assessed adjectives already in 1B/1C/2D, not dependent on3C quiet/noisy.",
+    "V2": "Owner notebook+pen,umbrella,wallet; other keys/phone/bottle; missingheadphones. Family source explicit mother/father/son/daughter permits sister,brother,son,daughter,mother,father. Native clockhands independently computed. All3 route paths match source and side-sharing rule.",
+    "V3": "Photo orderA,C,B,D validated against asset + visible timedplan. Reminders lunch/home/dinner/bed. Meeting Friday unique, Tue/Sat spellingrepairs. 3privatelybusydays each guarantee commonfree day. Room matchesA,B,C; quiet/cheap/expensive corrections source-supported. Shared-placegame nameprivate, confirmation handles nonuniqueadjectives.",
+    "V4": "Lunchboxes KimB,AriC,BenD,LeeA match independently inspected resource. FoodsetsA ricefish tomatoes/Bbreadcheeseapple/C riceeggsapple/D breadcheesebanana. Drinks milk,tea,coffee,juice. Flavorprivatechoice/sweet,salty,sour,spicyquestions genuinecluing. VerbrepairAdd/Mix/Wash/Cut, orderC,D,A,B consistent. Rescue waste/share/free and freshnotice require food/place/time, readerchecks actualmessage."
+  },
+  "visual_review": {
+    "standalone_pages": 9,
+    "browser_text_boundary_faults": 0,
+    "images_reviewed": "V1-V4-contact.png viewed all9; native U2/U3/U4 asset review previously completed against manifest; no final PDF pass claimed",
+    "evidence": "layout-1-4.json"
+  },
+  "nonblocking_polish": [
+    {
+      "source": "V2 task1 Ida clue",
+      "finding": "I write with them for pen and notebook sounds less natural than I use them to write.",
+      "reported_to": [
+        "root",
+        "grammar_1_4"
+      ]
+    }
+  ],
+  "release_blockers": [],
+  "result": "No remaining source/key/gameplay release blocker found in this reviewed scope; parent owns saved-PDF and QR geometry acceptance."
+}

@@ -1,5 +1,5 @@
 {
-  "scope": "Active external photographs and source records; 8A’s three animal photographs retired on 1 November 2026 and retained in the lesson manifest.",
+  "scope": "Active external core photographs, with original new practice artwork recorded separately. No core photographs are recycled in vocabulary practice.",
   "entries": [
     {
       "file": "Pexels-7972645.jpg",
@@ -924,5 +924,55 @@
     "Jewel-Mike-Peel-2023-v1.jpg": "image-credits.html / Units 5 & 6"
   },
   "placement": "End of the core book. No photo-credit strips in learner tasks.",
-  "editorial_art_correction": "Trial drawn-image and other media substitutions rejected; candidate files are inactive. Existing artwork is retained, with layout/type/task improvements."
+  "editorial_art_correction": "Trial drawn-image and other media substitutions rejected; candidate files are inactive. Existing artwork is retained, with layout/type/task improvements.",
+  "generated_practice_artwork": [
+    {
+      "file": "U2-personal-items-v1.png",
+      "pages": [
+        96
+      ],
+      "generator": "built-in image_gen",
+      "manifest": "Practice/Images/manifest.json"
+    },
+    {
+      "file": "U3-routines-v1.png",
+      "pages": [
+        98
+      ],
+      "generator": "built-in image_gen",
+      "manifest": "Practice/Images/manifest.json"
+    },
+    {
+      "file": "U4-picnic-boxes-v1.png",
+      "pages": [
+        100
+      ],
+      "generator": "built-in image_gen",
+      "manifest": "Practice/Images/manifest.json"
+    },
+    {
+      "file": "U5-clothes-v1.png",
+      "pages": [
+        102
+      ],
+      "generator": "built-in image_gen",
+      "manifest": "Practice/Images/manifest.json"
+    },
+    {
+      "file": "U6-apartment-v1.png",
+      "pages": [
+        105
+      ],
+      "generator": "built-in image_gen",
+      "manifest": "Practice/Images/manifest.json"
+    },
+    {
+      "file": "U8-travelers-v1.png",
+      "pages": [
+        110
+      ],
+      "generator": "built-in image_gen",
+      "manifest": "Practice/Images/manifest.json"
+    }
+  ]
 }

@@ -1,0 +1,167 @@
+{
+  "reviewer": "grammar_1_4",
+  "revision": "Final NEW revision games plus Blooket QR placeholders; supersedes the earlier vocabulary-catalog proof for this review scope.",
+  "review_kind": "Independent read-only inspection of refreshed Poppler output from the saved PDF",
+  "pdf": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Student's Book.pdf",
+  "pdf_sha256": "389c53a44bb290856d394fc1c6c4880ed16804ef72d4e1bfa0d5ca097d310c6f",
+  "physical_pdf_pages": 114,
+  "inspected_physical_pages": [
+    73,
+    74,
+    75,
+    76,
+    77,
+    78,
+    79,
+    80,
+    98,
+    99,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106
+  ],
+  "inspected_printed_pages": [
+    77,
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110
+  ],
+  "full_size_physical_pages": [
+    78,
+    79,
+    98,
+    100,
+    101,
+    102,
+    103,
+    104,
+    105,
+    106
+  ],
+  "contact_sheets": [
+    "gp14-newgame-final-contact-1.png",
+    "gp14-newgame-final-contact-2.png",
+    "gp14-newgame-final-contact-3.png",
+    "gp14-newgame-final-contact-4.png",
+    "gp14-newgame-final-contact-5.png"
+  ],
+  "inspected_pngs": [
+    {
+      "file": "pdf-proof/page-073.png",
+      "sha256": "090e6d39397f1fdf4f20a594bc630ae16218afd90a5c15cb3ff632599b1d05c8"
+    },
+    {
+      "file": "pdf-proof/page-074.png",
+      "sha256": "8c2309517129915cfcf939cde5d6a823db3d25a884d06a11b36d2e897a3c68a2"
+    },
+    {
+      "file": "pdf-proof/page-075.png",
+      "sha256": "4b272c9d25fd6778357e9b5de62ac03bedb723362079253b04c4b1786111cd9f"
+    },
+    {
+      "file": "pdf-proof/page-076.png",
+      "sha256": "a87babd61d5dbeb7cc6e5c43c9f6ac06db71e9bd08f9b21bcee0cba831a1605d"
+    },
+    {
+      "file": "pdf-proof/page-077.png",
+      "sha256": "cab83967d92ed3b98e76a3caef7096f2af30cd35ce8c98a430a87bbea299c15c"
+    },
+    {
+      "file": "pdf-proof/page-078.png",
+      "sha256": "52ad539fa4ad1ea23a3aaa543ff5fc69d17cc9084fc0ed901143a47ed481a00f"
+    },
+    {
+      "file": "pdf-proof/page-079.png",
+      "sha256": "caaf88d8329cb99d540dc23fb50f8bf0c96f475f46a06a66eae2e1a585d470d2"
+    },
+    {
+      "file": "pdf-proof/page-080.png",
+      "sha256": "80870dc7f66af7b72f533902c50e4f1e3a9eae77643815e673c9dc962b9a813f"
+    },
+    {
+      "file": "pdf-proof/page-098.png",
+      "sha256": "b2ab013a0e889edb8a10146e95bd1299aaade4591d77184a9465b0e26cdaa2a9"
+    },
+    {
+      "file": "pdf-proof/page-099.png",
+      "sha256": "849a983be155aefa0b54027f94dc4dc3ae115b3a230da40d8b8236165c32f037"
+    },
+    {
+      "file": "pdf-proof/page-100.png",
+      "sha256": "05bcdb167ca4143dfc3cb451404ac57dbb4c4714290981477bba50a6b2eed7b8"
+    },
+    {
+      "file": "pdf-proof/page-101.png",
+      "sha256": "140b31facd391bd0dafe2df5ebc390f33ae3fd985c5f8da7105dd69eec956bcf"
+    },
+    {
+      "file": "pdf-proof/page-102.png",
+      "sha256": "be51dbd67e448271c662ae553a52e010f7ae240310e17b119d846368b21b5088"
+    },
+    {
+      "file": "pdf-proof/page-103.png",
+      "sha256": "8c869cc726c88f64216fa0143090839db46186bc9e5dac21c017494273d45c79"
+    },
+    {
+      "file": "pdf-proof/page-104.png",
+      "sha256": "ced04190c6d3827b57434f07602fdc220c343d990689666d6a35c33412f20cd6"
+    },
+    {
+      "file": "pdf-proof/page-105.png",
+      "sha256": "b415fe9c957fb0a33cdd425a0d5e8854826fcd405a20b1b40961fa3083a15251"
+    },
+    {
+      "file": "pdf-proof/page-106.png",
+      "sha256": "aafb00f266d1a42bdd61309847c2565bf81e846c51d57dc850cc6cb12efe36ed"
+    }
+  ],
+  "checks": {
+    "all_17_refreshed_pages_viewed": true,
+    "eight_first_page_QR_blanks_visible_and_separate": true,
+    "no_QR_overlap_with_instruction_or_writing_rule_observed": true,
+    "no_cropped_or_missing_answer_bearing_photos_observed": true,
+    "ordinary_text_roles_coherent_and_readable": true,
+    "writing_rules_visible_inside_printed_page": true,
+    "grammar_concept_diagrams_preserved": true,
+    "G3_dense_continuation_final_response_rule_clear": true,
+    "G4_countability_SVG_shapes_and_colours_render": true,
+    "V5_six_clothes_fit_and_memory_rules_clear": true,
+    "V6_dollhouse_whole_and_four_route_chunks_readable": true,
+    "V7_month_relay_and_story_repair_have_explicit_evidence": true,
+    "V8_crossword_anagram_clues_and_complete_grid_visible": true,
+    "V8_forecast_icons_meaningful_and_not_missing": true,
+    "V8_new_body_message_figures_whole_and_large_enough": true
+  },
+  "visual_game_notes": [
+    "V5 clothes support private pair-memory rather than a repeated picture-label catalog; the shopping map constrains item/place choices.",
+    "V6 memory drawing and delivery relay establish a covered source and separate-paper comparison; road, park, bank and red route render completely.",
+    "V7 uses unfilled month retrieval, new birthday clues, repaired museum labels and seven wrong past verbs; cues do not give corrected answers.",
+    "V8 uses word-repair tickets, crossed anagrams, forecast fact-checking and fresh seated symptom figures; all important labels and poses are legible.",
+    "The body-message figures support stomach/foot/head messages; the cold message intentionally has no figure, so X is a real fourth option.",
+    "QR areas are honestly labeled reserved spaces, not pretend working codes."
+  ],
+  "blocking_issues": [],
+  "result": "CLEAR for the assigned inspected subset. No release-blocking visual/gameplay problem observed.",
+  "limitations": [
+    "This is a 17-page saved-PDF subset proof, not a claim that this reviewer inspected all 114 pages.",
+    "Controlled answer-key correctness was independently checked in the source review workflow; this proof primarily validates final visual evidence, game clarity, response space and QR placement.",
+    "No user approval or publication verification is claimed."
+  ]
+}

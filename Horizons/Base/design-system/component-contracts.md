@@ -12,7 +12,7 @@ Current edition, 31 October 2026. Design is governed by VISUAL-SPIRIT.md, CANONI
 - Visual letters, numbers, dates and diagram objects may use larger display type, rich colours, circles and meaningful tabs. Distinguish this role from ordinary 10pt task prose. Preserve legible case pairs and whole numerals; colour alone must not encode a required answer.
 - `.hz-word-bank` holds actual response choices/input; 9.5pt regular text. `.hz-answer-option` is an ordinary italic selectable choice; do not encode correct choices in color or weight.
 - `.hz-new-words` labels explicit fresh input. Do not inject automatic vocabulary wrappers or blanket bolding.
-- `.hz-go-to` names a stable future practice destination topic without fake pagination or visible development placeholders. Use `data-reference-topic` when helpful. Destinations excluded from the current core-book scope remain registered in the audit.
+- `.hz-go-to` names a stable future practice destination topic without fake pagination or visible development placeholders. Use `data-reference-topic` when helpful. A1 practice destinations now use real pages and working topic anchors. Future unresolved destinations remain registered honestly in the audit.
 - `.hz-extra-practice` is one useful extension connected to the lesson outcome. Use 8.5pt prompt, with sufficient separation and no redundant location/footer labels.
 - `.hz-audio-badge` contains an existing track label. The viewer creates an accessible play/pause button. Controls work on published static pages and disappear in print without changing page geometry.
 - Recurring show markup and `horizons-on-air.css` preserve the recognizable main/secondary identity. Coverage is declared in book-audit.json and checked against actual linked recordings.
@@ -21,3 +21,5 @@ Current edition, 31 October 2026. Design is governed by VISUAL-SPIRIT.md, CANONI
 - End credits follow all lesson/review masters and are repaginated from the actual last page. The compiler and PDF export use identical current source styles.
 
 Acceptance requires source/key/audio alignment, actual font roles, decoded imagery/backgrounds, ordered exercises/pages, no clipped copy or image evidence, independent saved-PDF inspection and live media verification. It also requires a comparison with the protected expressive-element register: functional consistency must not flatten warm, colourful, memorable design. Preserve a versioned baseline; audits are evidence records, not automatic permission to declare quality.
+
+Practice-bank components and acceptance are defined in PRACTICE-BANKS.md. Practice masters are ordered by Practice/manifest.json; their pages precede end credits, and their topic/return links work in both HTML views.

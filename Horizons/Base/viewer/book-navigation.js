@@ -15,11 +15,12 @@
   pages.forEach((page, i) => {
     page.id ||= `page-${page.dataset.page}`;
     const header = page.querySelector('.hz-lesson-header');
-    if (header || (page.classList.contains('hz-credits-page') && !starts.some(x => x.credits))) {
+    const practice = page.dataset.practiceStart === 'true';
+    if (header || practice || (page.classList.contains('hz-credits-page') && !starts.some(x => x.credits))) {
       const code = header?.querySelector('.hz-lesson-tab__id')?.textContent.trim();
-      const title = header?.querySelector('.hz-lesson-title')?.textContent.trim() || 'Image credits';
+      const title = header?.querySelector('.hz-lesson-title')?.textContent.trim() || (practice ? page.dataset.practiceTitle : 'Image credits');
       const option = new Option(code ? `${code} · ${title}` : title, String(i));
-      select.add(option);starts.push({i, credits:!header});
+      select.add(option);starts.push({i, credits:!header && !practice});
     }
   });
   function sync(i) {
@@ -38,6 +39,8 @@
   document.body.append(nav);
   let queued = false;
   addEventListener('scroll',() => {if(queued)return;queued=true;requestAnimationFrame(() => {queued=false;let chosen=0;for(let i=0;i<pages.length;i++){if(pages[i].getBoundingClientRect().top < innerHeight*.45)chosen=i;else break;}sync(chosen);});},{passive:true});
-  const target=pages.findIndex(x=>`#${x.id}`===location.hash);
-  sync(target>=0?target:0);if(target>=0)requestAnimationFrame(()=>pages[target].scrollIntoView({block:'start'}));
+  const hashId = (() => {try{return decodeURIComponent(location.hash.slice(1));}catch{return '';}})();
+  const anchored = hashId ? document.getElementById(hashId) : null;
+  const target=pages.findIndex(x=>x===anchored || x.contains(anchored));
+  sync(target>=0?target:0);if(target>=0)requestAnimationFrame(()=>(anchored || pages[target]).scrollIntoView({block:'start'}));
 })();

@@ -1,0 +1,66 @@
+{
+  "reviewer": "vocabulary_banks",
+  "mode": "Read-only independent source, key, fresh-asset and standalone-render review. Final saved-PDF and live publication are root checks.",
+  "files": [
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Practice\\Vocabulary\\V5.html",
+      "sha256": "07df3cc0dd0128e8225472523b513b7bc2be0f1e558eb0f2db0a5f0ab12d80b5"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Practice\\Vocabulary\\V6.html",
+      "sha256": "76789302378eb675d5448b94e7c2d732167d4ef1c64cb3dbf5bd933a131e04a7"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Practice\\Vocabulary\\V7.html",
+      "sha256": "1ecf58436cde82f99f3ed15adb608832bd2b154ae0b4f3d40e883718f75ed631"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Practice\\Vocabulary\\V8.html",
+      "sha256": "9ffad577863466567e4b42ab75e07c0275550a57cc9c82b74e82a46775495cb5"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Answer keys\\Vocabulary practice 5-8.md",
+      "sha256": "89e5bcbab85256d226b365e76ac9da2990392a6547334c00bfc744ec7618f85c"
+    }
+  ],
+  "pages": 9,
+  "units": [
+    5,
+    6,
+    7,
+    8
+  ],
+  "numbered_tasks": 34,
+  "controlled_task_groups_checked": 20,
+  "open_game_or_transfer_groups_checked": 14,
+  "checks": {
+    "all_controlled_answers_supported": true,
+    "all_seven_irregular_pairs_retrieved_in_context": true,
+    "photo_only_complaint_diagnosis_not_required": true,
+    "body_game_does_not_reuse_core_model": true,
+    "new_picture_resource_and_game_purpose_distinct_from_core_input": true,
+    "crossword_grid_and_all_crossings_valid": true,
+    "anagram_clues_use_known_target_spellings": true,
+    "own_book_closed_in_route_listening": true,
+    "secret_suitcase_pair_exposed_before_covering": true,
+    "shop_stock_restriction_visible": true,
+    "temporal_event_cards_determine_key": true,
+    "open_forecast_choices_allow_legitimate_alternatives": true,
+    "self_study_options_given_where_useful": true,
+    "standalone_pages_have_no_text_boundary_faults": true
+  },
+  "fixed_issues_verified": [
+    "V5 chosen pair is explicitly shown for ten seconds before being covered; solitary picture recall has its own twenty-second timing.",
+    "V5 two-stop mission explicitly uses only shown items.",
+    "V6 listener closes their own book for route relay.",
+    "V7 cards include after-getting-up, after-breakfast and after-market constraints, so c/b/d/a is supported.",
+    "V8 crossword uses anagrams instead of requiring untaught tail/mask/neck/bushy language."
+  ],
+  "remaining_release_blockers": [],
+  "non_blocking_notes": [
+    "V6 vowel-repair instruction could optionally show(a,e,i,o,u) for independent beginners; this is instruction support, not a new assessed word set.",
+    "Fresh assets are native source evidence for the authored games, not evidence of documentary people, rooms or real ticket fares.",
+    "Root must inspect actual final page crops, QR reservations and empty fields after assembly/export."
+  ],
+  "author_acceptance_claimed": false
+}

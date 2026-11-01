@@ -1,455 +1,766 @@
 {
-  "status": "Destination topics retained; the author explicitly excludes vocabulary/grammar practice banks from this core revision. Add real pagination/links only when those sections exist.",
+  "status": "All existing lesson references have authored practice destinations, real pagination and working links.",
   "references": [
     {
       "lesson": "1A",
       "topic": "Vocabulary - Greetings",
       "destination_id": "vocabulary-greetings",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V1.html",
+      "page": 93,
+      "anchor": "vocabulary-greetings",
+      "href": "../Practice/Vocabulary/V1.html#vocabulary-greetings",
+      "status": "implemented"
     },
     {
       "lesson": "1A",
       "topic": "Grammar - Verb to be",
       "destination_id": "grammar-verb-to-be",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Grammar/G1.html",
+      "page": 77,
+      "anchor": "grammar-verb-to-be",
+      "href": "../Practice/Grammar/G1.html#grammar-verb-to-be",
+      "status": "implemented"
     },
     {
       "lesson": "1A",
       "topic": "Vocabulary - Personal information",
       "destination_id": "vocabulary-personal-information",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V1.html",
+      "page": 94,
+      "anchor": "vocabulary-personal-information",
+      "href": "../Practice/Vocabulary/V1.html#vocabulary-personal-information",
+      "status": "implemented"
     },
     {
       "lesson": "1A",
       "topic": "Vocabulary - Alphabet",
       "destination_id": "vocabulary-alphabet",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V1.html",
+      "page": 93,
+      "anchor": "vocabulary-alphabet",
+      "href": "../Practice/Vocabulary/V1.html#vocabulary-alphabet",
+      "status": "implemented"
     },
     {
       "lesson": "1A",
       "topic": "Vocabulary - Numbers",
       "destination_id": "vocabulary-numbers",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V1.html",
+      "page": 93,
+      "anchor": "vocabulary-numbers",
+      "href": "../Practice/Vocabulary/V1.html#vocabulary-numbers",
+      "status": "implemented"
     },
     {
       "lesson": "1B",
       "topic": "Vocabulary - Occupations",
       "destination_id": "vocabulary-occupations",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V1.html",
+      "page": 94,
+      "anchor": "vocabulary-occupations",
+      "href": "../Practice/Vocabulary/V1.html#vocabulary-occupations",
+      "status": "implemented"
     },
     {
       "lesson": "1B",
       "topic": "Grammar - A / an",
       "destination_id": "grammar-a-an",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Grammar/G1.html",
+      "page": 78,
+      "anchor": "grammar-a-an",
+      "href": "../Practice/Grammar/G1.html#grammar-a-an",
+      "status": "implemented"
     },
     {
       "lesson": "1B",
       "topic": "Grammar - Verb to be: contractions",
       "destination_id": "grammar-verb-to-be-contractions",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Grammar/G1.html",
+      "page": 78,
+      "anchor": "grammar-verb-to-be-contractions",
+      "href": "../Practice/Grammar/G1.html#grammar-verb-to-be-contractions",
+      "status": "implemented"
     },
     {
       "lesson": "1B",
       "topic": "Vocabulary - Adjectives",
       "destination_id": "vocabulary-adjectives",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V1.html",
+      "page": 95,
+      "anchor": "vocabulary-adjectives",
+      "href": "../Practice/Vocabulary/V1.html#vocabulary-adjectives",
+      "status": "implemented"
     },
     {
       "lesson": "1C",
       "topic": "Vocabulary - Countries",
       "destination_id": "vocabulary-countries",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V1.html",
+      "page": 95,
+      "anchor": "vocabulary-countries",
+      "href": "../Practice/Vocabulary/V1.html#vocabulary-countries",
+      "status": "implemented"
     },
     {
       "lesson": "1C",
       "topic": "Vocabulary - Adjectives",
       "destination_id": "vocabulary-adjectives",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V1.html",
+      "page": 95,
+      "anchor": "vocabulary-adjectives",
+      "href": "../Practice/Vocabulary/V1.html#vocabulary-adjectives",
+      "status": "implemented"
     },
     {
       "lesson": "1D",
       "topic": "Vocabulary - Personal information",
       "destination_id": "vocabulary-personal-information",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V1.html",
+      "page": 94,
+      "anchor": "vocabulary-personal-information",
+      "href": "../Practice/Vocabulary/V1.html#vocabulary-personal-information",
+      "status": "implemented"
     },
     {
       "lesson": "2A",
       "topic": "Vocabulary - Personal items",
       "destination_id": "vocabulary-personal-items",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V2.html",
+      "page": 96,
+      "anchor": "vocabulary-personal-items",
+      "href": "../Practice/Vocabulary/V2.html#vocabulary-personal-items",
+      "status": "implemented"
     },
     {
       "lesson": "2A",
       "topic": "Grammar - This / that / these / those",
       "destination_id": "grammar-this-that-these-those",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Grammar/G2.html",
+      "page": 79,
+      "anchor": "grammar-this-that-these-those",
+      "href": "../Practice/Grammar/G2.html#grammar-this-that-these-those",
+      "status": "implemented"
     },
     {
       "lesson": "2B",
       "topic": "Vocabulary - Telling time",
       "destination_id": "vocabulary-telling-time",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V2.html",
+      "page": 96,
+      "anchor": "vocabulary-telling-time",
+      "href": "../Practice/Vocabulary/V2.html#vocabulary-telling-time",
+      "status": "implemented"
     },
     {
       "lesson": "2B",
       "topic": "Grammar - A / an / the",
       "destination_id": "grammar-a-an-the",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Grammar/G2.html",
+      "page": 79,
+      "anchor": "grammar-a-an-the",
+      "href": "../Practice/Grammar/G2.html#grammar-a-an-the",
+      "status": "implemented"
     },
     {
       "lesson": "2C",
       "topic": "Vocabulary - Family members",
       "destination_id": "vocabulary-family-members",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V2.html",
+      "page": 97,
+      "anchor": "vocabulary-family-members",
+      "href": "../Practice/Vocabulary/V2.html#vocabulary-family-members",
+      "status": "implemented"
     },
     {
       "lesson": "2C",
       "topic": "Grammar - Possessive case",
       "destination_id": "grammar-possessive-case",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Grammar/G2.html",
+      "page": 80,
+      "anchor": "grammar-possessive-case",
+      "href": "../Practice/Grammar/G2.html#grammar-possessive-case",
+      "status": "implemented"
     },
     {
       "lesson": "2D",
       "topic": "Vocabulary - Colors",
       "destination_id": "vocabulary-colors",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V2.html",
+      "page": 97,
+      "anchor": "vocabulary-colors",
+      "href": "../Practice/Vocabulary/V2.html#vocabulary-colors",
+      "status": "implemented"
     },
     {
       "lesson": "2D",
       "topic": "Grammar - Adjective position",
       "destination_id": "grammar-adjective-position",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Grammar/G2.html",
+      "page": 80,
+      "anchor": "grammar-adjective-position",
+      "href": "../Practice/Grammar/G2.html#grammar-adjective-position",
+      "status": "implemented"
     },
     {
       "lesson": "2D",
       "topic": "Vocabulary - Adjectives",
       "destination_id": "vocabulary-adjectives",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V1.html",
+      "page": 95,
+      "anchor": "vocabulary-adjectives",
+      "href": "../Practice/Vocabulary/V1.html#vocabulary-adjectives",
+      "status": "implemented"
     },
     {
       "lesson": "3A",
       "topic": "Vocabulary - Daily routines",
       "destination_id": "vocabulary-daily-routines",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V3.html",
+      "page": 98,
+      "anchor": "vocabulary-daily-routines",
+      "href": "../Practice/Vocabulary/V3.html#vocabulary-daily-routines",
+      "status": "implemented"
     },
     {
       "lesson": "3A",
       "topic": "Grammar - Present simple: affirmative",
       "destination_id": "grammar-present-simple-affirmative",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Grammar/G3.html",
+      "page": 81,
+      "anchor": "grammar-present-simple-affirmative",
+      "href": "../Practice/Grammar/G3.html#grammar-present-simple-affirmative",
+      "status": "implemented"
     },
     {
       "lesson": "3B",
       "topic": "Vocabulary - Days of the week",
       "destination_id": "vocabulary-days-of-the-week",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V3.html",
+      "page": 99,
+      "anchor": "vocabulary-days-of-the-week",
+      "href": "../Practice/Vocabulary/V3.html#vocabulary-days-of-the-week",
+      "status": "implemented"
     },
     {
       "lesson": "3B",
       "topic": "Grammar - Present simple: negatives and questions",
       "destination_id": "grammar-present-simple-negatives-and-questions",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Grammar/G3.html",
+      "page": 81,
+      "anchor": "grammar-present-simple-negatives-and-questions",
+      "href": "../Practice/Grammar/G3.html#grammar-present-simple-negatives-and-questions",
+      "status": "implemented"
     },
     {
       "lesson": "3C",
       "topic": "Vocabulary - Adjectives",
-      "destination_id": "vocabulary-adjectives",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "destination_id": "vocabulary-place-adjectives-recall",
+      "file": "Practice/Vocabulary/V3.html",
+      "page": 99,
+      "anchor": "vocabulary-place-adjectives-recall",
+      "href": "../Practice/Vocabulary/V3.html#vocabulary-place-adjectives-recall",
+      "status": "implemented"
     },
     {
       "lesson": "3C",
       "topic": "Grammar - Question words",
       "destination_id": "grammar-question-words",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Grammar/G3.html",
+      "page": 82,
+      "anchor": "grammar-question-words",
+      "href": "../Practice/Grammar/G3.html#grammar-question-words",
+      "status": "implemented"
     },
     {
       "lesson": "3D",
       "topic": "Vocabulary - Daily routines",
       "destination_id": "vocabulary-daily-routines",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V3.html",
+      "page": 98,
+      "anchor": "vocabulary-daily-routines",
+      "href": "../Practice/Vocabulary/V3.html#vocabulary-daily-routines",
+      "status": "implemented"
     },
     {
       "lesson": "3D",
       "topic": "Grammar - Frequency adverbs",
       "destination_id": "grammar-frequency-adverbs",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Grammar/G3.html",
+      "page": 82,
+      "anchor": "grammar-frequency-adverbs",
+      "href": "../Practice/Grammar/G3.html#grammar-frequency-adverbs",
+      "status": "implemented"
     },
     {
       "lesson": "3D",
       "topic": "Grammar - Before / after",
       "destination_id": "grammar-before-after",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Grammar/G3.html",
+      "page": 82,
+      "anchor": "grammar-before-after",
+      "href": "../Practice/Grammar/G3.html#grammar-before-after",
+      "status": "implemented"
     },
     {
       "lesson": "4A",
       "topic": "Vocabulary - Food and drink",
       "destination_id": "vocabulary-food-and-drink",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V4.html",
+      "page": 100,
+      "anchor": "vocabulary-food-and-drink",
+      "href": "../Practice/Vocabulary/V4.html#vocabulary-food-and-drink",
+      "status": "implemented"
     },
     {
       "lesson": "4A",
       "topic": "Grammar - Countable and uncountable nouns",
       "destination_id": "grammar-countable-and-uncountable-nouns",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Grammar/G4.html",
+      "page": 83,
+      "anchor": "grammar-countable-and-uncountable-nouns",
+      "href": "../Practice/Grammar/G4.html#grammar-countable-and-uncountable-nouns",
+      "status": "implemented"
     },
     {
       "lesson": "4B",
       "topic": "Vocabulary - Flavors",
       "destination_id": "vocabulary-flavors",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V4.html",
+      "page": 100,
+      "anchor": "vocabulary-flavors",
+      "href": "../Practice/Vocabulary/V4.html#vocabulary-flavors",
+      "status": "implemented"
     },
     {
       "lesson": "4B",
       "topic": "Grammar - Object pronouns",
       "destination_id": "grammar-object-pronouns",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Grammar/G4.html",
+      "page": 83,
+      "anchor": "grammar-object-pronouns",
+      "href": "../Practice/Grammar/G4.html#grammar-object-pronouns",
+      "status": "implemented"
     },
     {
       "lesson": "4C",
       "topic": "Vocabulary - Cooking verbs",
       "destination_id": "vocabulary-cooking-verbs",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V4.html",
+      "page": 101,
+      "anchor": "vocabulary-cooking-verbs",
+      "href": "../Practice/Vocabulary/V4.html#vocabulary-cooking-verbs",
+      "status": "implemented"
     },
     {
       "lesson": "4C",
       "topic": "Grammar - Too much / too many / enough",
       "destination_id": "grammar-too-much-too-many-enough",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Grammar/G4.html",
+      "page": 84,
+      "anchor": "grammar-too-much-too-many-enough",
+      "href": "../Practice/Grammar/G4.html#grammar-too-much-too-many-enough",
+      "status": "implemented"
     },
     {
       "lesson": "4D",
       "topic": "Vocabulary - Sharing food",
       "destination_id": "vocabulary-sharing-food",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V4.html",
+      "page": 101,
+      "anchor": "vocabulary-sharing-food",
+      "href": "../Practice/Vocabulary/V4.html#vocabulary-sharing-food",
+      "status": "implemented"
     },
     {
       "lesson": "4D",
       "topic": "Grammar - Because / so and punctuation",
       "destination_id": "grammar-because-so-and-punctuation",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Grammar/G4.html",
+      "page": 84,
+      "anchor": "grammar-because-so-and-punctuation",
+      "href": "../Practice/Grammar/G4.html#grammar-because-so-and-punctuation",
+      "status": "implemented"
     },
     {
       "lesson": "5A",
       "topic": "Vocabulary - Clothes and accessories",
       "destination_id": "vocabulary-clothes-and-accessories",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V5.html",
+      "page": 102,
+      "anchor": "vocabulary-clothes-and-accessories",
+      "href": "../Practice/Vocabulary/V5.html#vocabulary-clothes-and-accessories",
+      "status": "implemented"
     },
     {
       "lesson": "5A",
       "topic": "Grammar - Present continuous",
       "destination_id": "grammar-present-continuous",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Grammar/G5.html",
+      "page": 85,
+      "anchor": "grammar-present-continuous",
+      "href": "../Practice/Grammar/G5.html#grammar-present-continuous",
+      "status": "implemented"
     },
     {
       "lesson": "5B",
       "topic": "Vocabulary - Shopping verbs",
       "destination_id": "vocabulary-shopping-verbs",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V5.html",
+      "page": 102,
+      "anchor": "vocabulary-shopping-verbs",
+      "href": "../Practice/Vocabulary/V5.html#vocabulary-shopping-verbs",
+      "status": "implemented"
     },
     {
       "lesson": "5B",
       "topic": "Grammar - Too and enough with adjectives",
       "destination_id": "grammar-too-and-enough-with-adjectives",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Grammar/G5.html",
+      "page": 86,
+      "anchor": "grammar-too-and-enough-with-adjectives",
+      "href": "../Practice/Grammar/G5.html#grammar-too-and-enough-with-adjectives",
+      "status": "implemented"
     },
     {
       "lesson": "5C",
       "topic": "Vocabulary - Places in town",
       "destination_id": "vocabulary-places-in-town",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V5.html",
+      "page": 103,
+      "anchor": "vocabulary-places-in-town",
+      "href": "../Practice/Vocabulary/V5.html#vocabulary-places-in-town",
+      "status": "implemented"
     },
     {
       "lesson": "5C",
       "topic": "Grammar - Frequency expressions",
       "destination_id": "grammar-frequency-expressions",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Grammar/G5.html",
+      "page": 86,
+      "anchor": "grammar-frequency-expressions",
+      "href": "../Practice/Grammar/G5.html#grammar-frequency-expressions",
+      "status": "implemented"
     },
     {
       "lesson": "5D",
       "topic": "Vocabulary - At the store",
       "destination_id": "vocabulary-at-the-store",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V5.html",
+      "page": 103,
+      "anchor": "vocabulary-at-the-store",
+      "href": "../Practice/Vocabulary/V5.html#vocabulary-at-the-store",
+      "status": "implemented"
     },
     {
       "lesson": "5D",
       "topic": "Communication - Grocery shopping",
       "destination_id": "communication-grocery-shopping",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Communication/C5.html",
+      "page": 111,
+      "anchor": "communication-grocery-shopping",
+      "href": "../Practice/Communication/C5.html#communication-grocery-shopping",
+      "status": "implemented"
     },
     {
       "lesson": "6A",
       "topic": "Vocabulary - Places in town 2",
       "destination_id": "vocabulary-places-in-town-2",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V6.html",
+      "page": 104,
+      "anchor": "vocabulary-places-in-town-2",
+      "href": "../Practice/Vocabulary/V6.html#vocabulary-places-in-town-2",
+      "status": "implemented"
     },
     {
       "lesson": "6B",
       "topic": "Vocabulary - Rooms and furniture",
       "destination_id": "vocabulary-rooms-and-furniture",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V6.html",
+      "page": 105,
+      "anchor": "vocabulary-rooms-and-furniture",
+      "href": "../Practice/Vocabulary/V6.html#vocabulary-rooms-and-furniture",
+      "status": "implemented"
     },
     {
       "lesson": "6B",
       "topic": "Grammar - Prepositions of place",
       "destination_id": "grammar-prepositions-of-place",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Grammar/G6.html",
+      "page": 87,
+      "anchor": "grammar-prepositions-of-place",
+      "href": "../Practice/Grammar/G6.html#grammar-prepositions-of-place",
+      "status": "implemented"
     },
     {
       "lesson": "6C",
       "topic": "Vocabulary - Movement and directions",
       "destination_id": "vocabulary-movement-and-directions",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V6.html",
+      "page": 105,
+      "anchor": "vocabulary-movement-and-directions",
+      "href": "../Practice/Vocabulary/V6.html#vocabulary-movement-and-directions",
+      "status": "implemented"
     },
     {
       "lesson": "6C",
       "topic": "Grammar - Giving directions",
       "destination_id": "grammar-giving-directions",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Grammar/G6.html",
+      "page": 88,
+      "anchor": "grammar-giving-directions",
+      "href": "../Practice/Grammar/G6.html#grammar-giving-directions",
+      "status": "implemented"
     },
     {
       "lesson": "6D",
       "topic": "Vocabulary - Shopping centers and attractions",
       "destination_id": "vocabulary-shopping-centers-and-attractions",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V6.html",
+      "page": 104,
+      "anchor": "vocabulary-shopping-centers-and-attractions",
+      "href": "../Practice/Vocabulary/V6.html#vocabulary-shopping-centers-and-attractions",
+      "status": "implemented"
     },
     {
       "lesson": "6D",
       "topic": "Grammar - Can and can’t",
       "destination_id": "grammar-can-and-cant",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Grammar/G6.html",
+      "page": 88,
+      "anchor": "grammar-can-and-cant",
+      "href": "../Practice/Grammar/G6.html#grammar-can-and-cant",
+      "status": "implemented"
     },
     {
       "lesson": "6D",
       "topic": "Communication - Helping a visitor",
       "destination_id": "communication-helping-a-visitor",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Communication/C6.html",
+      "page": 112,
+      "anchor": "communication-helping-a-visitor",
+      "href": "../Practice/Communication/C6.html#communication-helping-a-visitor",
+      "status": "implemented"
     },
     {
       "lesson": "7A",
       "topic": "Vocabulary - Past time expressions",
       "destination_id": "vocabulary-past-time-expressions",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V7.html",
+      "page": 106,
+      "anchor": "vocabulary-past-time-expressions",
+      "href": "../Practice/Vocabulary/V7.html#vocabulary-past-time-expressions",
+      "status": "implemented"
     },
     {
       "lesson": "7A",
       "topic": "Grammar - Past of be",
       "destination_id": "grammar-past-of-be",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Grammar/G7.html",
+      "page": 89,
+      "anchor": "grammar-past-of-be",
+      "href": "../Practice/Grammar/G7.html#grammar-past-of-be",
+      "status": "implemented"
     },
     {
       "lesson": "7B",
       "topic": "Vocabulary - Months",
       "destination_id": "vocabulary-months",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V7.html",
+      "page": 106,
+      "anchor": "vocabulary-months",
+      "href": "../Practice/Vocabulary/V7.html#vocabulary-months",
+      "status": "implemented"
     },
     {
       "lesson": "7B",
       "topic": "Vocabulary - Dates and ordinal numbers",
       "destination_id": "vocabulary-dates-and-ordinal-numbers",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V7.html",
+      "page": 106,
+      "anchor": "vocabulary-dates-and-ordinal-numbers",
+      "href": "../Practice/Vocabulary/V7.html#vocabulary-dates-and-ordinal-numbers",
+      "status": "implemented"
     },
     {
       "lesson": "7B",
       "topic": "Vocabulary - Past time expressions",
       "destination_id": "vocabulary-past-time-expressions",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V7.html",
+      "page": 106,
+      "anchor": "vocabulary-past-time-expressions",
+      "href": "../Practice/Vocabulary/V7.html#vocabulary-past-time-expressions",
+      "status": "implemented"
     },
     {
       "lesson": "7B",
       "topic": "Grammar - Dates and ago",
       "destination_id": "grammar-dates-and-ago",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Grammar/G7.html",
+      "page": 89,
+      "anchor": "grammar-dates-and-ago",
+      "href": "../Practice/Grammar/G7.html#grammar-dates-and-ago",
+      "status": "implemented"
     },
     {
       "lesson": "7C",
       "topic": "Vocabulary - Music",
       "destination_id": "vocabulary-music",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V7.html",
+      "page": 107,
+      "anchor": "vocabulary-music",
+      "href": "../Practice/Vocabulary/V7.html#vocabulary-music",
+      "status": "implemented"
     },
     {
       "lesson": "7C",
       "topic": "Grammar - Past simple - Regular verbs",
       "destination_id": "grammar-past-simple-regular-verbs",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Grammar/G7.html",
+      "page": 90,
+      "anchor": "grammar-past-simple-regular-verbs",
+      "href": "../Practice/Grammar/G7.html#grammar-past-simple-regular-verbs",
+      "status": "implemented"
     },
     {
       "lesson": "7D",
       "topic": "Vocabulary - Irregular past verbs",
       "destination_id": "vocabulary-irregular-past-verbs",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V7.html",
+      "page": 107,
+      "anchor": "vocabulary-irregular-past-verbs",
+      "href": "../Practice/Vocabulary/V7.html#vocabulary-irregular-past-verbs",
+      "status": "implemented"
     },
     {
       "lesson": "7D",
       "topic": "Vocabulary - Sequencing words",
       "destination_id": "vocabulary-sequencing-words",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V7.html",
+      "page": 107,
+      "anchor": "vocabulary-sequencing-words",
+      "href": "../Practice/Vocabulary/V7.html#vocabulary-sequencing-words",
+      "status": "implemented"
     },
     {
       "lesson": "7D",
       "topic": "Communication - Diary writing",
       "destination_id": "communication-diary-writing",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Communication/C7.html",
+      "page": 113,
+      "anchor": "communication-diary-writing",
+      "href": "../Practice/Communication/C7.html#communication-diary-writing",
+      "status": "implemented"
     },
     {
       "lesson": "8A",
       "topic": "Vocabulary - Travel verbs",
       "destination_id": "vocabulary-travel-verbs",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V8.html",
+      "page": 108,
+      "anchor": "vocabulary-travel-verbs",
+      "href": "../Practice/Vocabulary/V8.html#vocabulary-travel-verbs",
+      "status": "implemented"
     },
     {
       "lesson": "8A",
       "topic": "Grammar - Past simple - Travel verbs",
       "destination_id": "grammar-past-simple-travel-verbs",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Grammar/G8.html",
+      "page": 91,
+      "anchor": "grammar-past-simple-travel-verbs",
+      "href": "../Practice/Grammar/G8.html#grammar-past-simple-travel-verbs",
+      "status": "implemented"
     },
     {
       "lesson": "8A",
       "topic": "Vocabulary - Animals",
       "destination_id": "vocabulary-animals",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V8.html",
+      "page": 108,
+      "anchor": "vocabulary-animals",
+      "href": "../Practice/Vocabulary/V8.html#vocabulary-animals",
+      "status": "implemented"
     },
     {
       "lesson": "8B",
       "topic": "Vocabulary - Weather and seasons",
       "destination_id": "vocabulary-weather-and-seasons",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V8.html",
+      "page": 109,
+      "anchor": "vocabulary-weather-and-seasons",
+      "href": "../Practice/Vocabulary/V8.html#vocabulary-weather-and-seasons",
+      "status": "implemented"
     },
     {
       "lesson": "8B",
       "topic": "Grammar - Should - Advice",
       "destination_id": "grammar-should-advice",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Grammar/G8.html",
+      "page": 92,
+      "anchor": "grammar-should-advice",
+      "href": "../Practice/Grammar/G8.html#grammar-should-advice",
+      "status": "implemented"
     },
     {
       "lesson": "8C",
       "topic": "Vocabulary - Body parts",
       "destination_id": "vocabulary-body-parts",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V8.html",
+      "page": 110,
+      "anchor": "vocabulary-body-parts",
+      "href": "../Practice/Vocabulary/V8.html#vocabulary-body-parts",
+      "status": "implemented"
     },
     {
       "lesson": "8C",
       "topic": "Vocabulary - Health complaints",
       "destination_id": "vocabulary-health-complaints",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V8.html",
+      "page": 110,
+      "anchor": "vocabulary-health-complaints",
+      "href": "../Practice/Vocabulary/V8.html#vocabulary-health-complaints",
+      "status": "implemented"
     },
     {
       "lesson": "8C",
       "topic": "Grammar - Talking about health",
       "destination_id": "grammar-talking-about-health",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Grammar/G8.html",
+      "page": 92,
+      "anchor": "grammar-talking-about-health",
+      "href": "../Practice/Grammar/G8.html#grammar-talking-about-health",
+      "status": "implemented"
     },
     {
       "lesson": "8D",
       "topic": "Vocabulary - Phone and ticket language",
       "destination_id": "vocabulary-phone-and-ticket-language",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Vocabulary/V8.html",
+      "page": 110,
+      "anchor": "vocabulary-phone-and-ticket-language",
+      "href": "../Practice/Vocabulary/V8.html#vocabulary-phone-and-ticket-language",
+      "status": "implemented"
     },
     {
       "lesson": "8D",
       "topic": "Communication - Buying a ticket by phone",
       "destination_id": "communication-buying-a-ticket-by-phone",
-      "scope": "Practice bank excluded from current core revision; no invented page number."
+      "file": "Practice/Communication/C8.html",
+      "page": 114,
+      "anchor": "communication-buying-a-ticket-by-phone",
+      "href": "../Practice/Communication/C8.html#communication-buying-a-ticket-by-phone",
+      "status": "implemented"
+    }
+  ],
+  "additional_topics": [
+    {
+      "destination_id": "grammar-capital-letters",
+      "file": "Practice/Grammar/G1.html",
+      "page": 78,
+      "anchor": "grammar-capital-letters",
+      "bank": "grammar",
+      "unit": 1,
+      "title": "Names on a form 1D"
     }
   ]
 }

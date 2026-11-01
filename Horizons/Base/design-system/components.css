@@ -619,3 +619,6 @@
 .hz-page.hz-content :is(.hz-audio-badge, .l1a-track, .l1b-track, .l1c-track) { font-size: 6.5pt !important; }
 
 .hz-page.hz-content .hz-task-text li::before { font-size: inherit !important; }
+
+/* Real practice destinations inherit the established reference appearance. */
+.hz-go-to > a {color:inherit;text-decoration:none;}

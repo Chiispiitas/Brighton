@@ -1,57 +1,42 @@
 # Horizons A1 — current book audit
 
-Updated 31 October 2026. **Expressive-identity correction, independent saved-PDF proof and live verification complete.** This revision preserves the completed editorial work and corrects its excessive visual restraint.
+Updated 1 November 2026. The grammar, vocabulary and practical-language banks pass local source, content, layout and saved-PDF checks under the author’s latest clarification. Publication verification is pending. The pre-practice edition is preserved at commit `90161278603403da17ed4857701984e552c1204c` and branch `safety/horizons-before-practice-banks-20261101`.
 
-## Authority, spirit and scope
+## Scope and editorial intent
 
-The author delegates editorial authority and makes his own coursebook the primary emotional reference. [Visual spirit](../Base/design-system/VISUAL-SPIRIT.md) and the [author-reference study](../Base/design-system/AUTHOR-REFERENCE-STUDY.json) govern this book and future Horizons levels. English File, Personal Best and Evolve support editorial craft. The desired character is warm, colourful, imaginative adult teaching, with clear reading and writing space.
+The completed Units 1–8 core remains 32 lessons and four paired reviews, printed pages 5–76. This commission adds the full practice banks and real destinations for all 75 existing lesson references. Front matter, index, workbook and optional annexes remain separate future work.
 
-Professional quality does not require neutralising colourful learning objects. Preserve approved bubbles, letter pairs, source identities, diagrams, meaningful cutouts and tactile documents. Keep functional navigation/type coherent while local features retain their own visual worlds. Do not impose a dog mascot, juvenile ornament, a rainbow quota or a repeated blue/green-plus-yellow treatment.
+A practice bank consolidates learning. **Grammar may briefly repeat a taught explanation or model. Vocabulary must use fresh practice resources and distinct activities or games, rather than re-present the lesson’s picture dictionary, body model or photo sheets.** A crop or recolouring of a lesson picture does not make it a new practice resource. This explicit author clarification supersedes the first vocabulary draft, which was retained outside the repository as a superseded study.
 
-Scope remains 32 lessons and four paired reviews: 72 core pages plus four end-credit pages, printed 5–80. Beginning/index pages, grammar/vocabulary practice banks, workbook and optional annexes remain outside this commission. Topic references retain real destination names without invented page numbers.
+The prior Horizons visual spirit remains: warm adult playfulness, coherent crimson navigation, readable ordinary type, purposeful visual teaching, generous response space and varied local content. The rejected excessive imagegen feature pass remains reverted. New images in this commission supply specific evidence for revision games, rather than decorative frames or a compulsory visual stage on every page.
 
-## Current design and teaching standard
+## Current practice standard
 
-- **Warm, memorable visual teaching.** Record an explicit visual idea and protected elements for every spread. Compare neighbouring spreads for fatigue. Use shape, colour, imagery and material metaphors to make concepts visible.
-- **Readable ordinary copy and intentional display.** Tasks and concept models 10pt, instructions 9.2pt, word banks 9.5pt, Extra Practice 8.5pt. Alphabet letters, numerals, dates and diagrams may use deliberate larger display type. Keep models in the normal body family.
-- **Functional colour families.** Grammar/form tools use cobalt; vocabulary green; communication/writing skills plum; pronunciation warm orange. Declare data-hz-tool. Local examples and source features may use appropriate independent colour relationships. Use words/shape alongside colour and avoid giving controlled answers through styling.
-- **Useful learning and genuine choice.** Retain cumulative A1 language, meaningful receptive input, genuine information gaps, usable learner products and purposeful checks. A/C develop language, B substantial reading/listening and D speaking/writing. Current wording, tasks, keys and recordings are unchanged by this visual correction.
-- **Inviting surfaces and usable space.** Keep situation-bearing backgrounds, approved people pictures, purposeful cutouts and the twelve generated document objects. Preserve full faces, actions and exact answer evidence. Writing rows normally 7mm; short factual fields normally 6mm. Recompose before shrinking type or response space.
-- **Coherent recurring features.** Preserve the main/secondary Horizons on Air identity, established voices, Jessica narration and planned receptive-skill mix. Keep NEW WORDS attached to actual input, ordinary italic answer choices and familiar word banks. Credits belong at the end.
+- Grammar uses visible meaning, concise form contrasts, focused controlled work and useful independent use. Counted objects, timelines, spatial relationships, referent arrows and question/form contrasts must explain the actual concept.
+- Vocabulary uses the introduced words in original clue sets, decisions, puzzles, memory challenges, role goals and learner-created examples. New practice-specific images and native game materials supply the evidence. All games must be playable from the provided information, with honest checks and accepted alternatives.
+- Functional practice titles are 23pt, topic headings 13pt, ordinary task/concept text 10pt and instructions 9.2pt. Intentional diagram labels and navigation retain their appropriate smaller roles. Open writing rows remain at least 7mm; all empty fields must fit, not only the visible text.
+- Each grammar and vocabulary unit reserves a blank 24mm QR square within a 55×28mm Blooket area. The sixteen slots are intended for future independent revision or class play. No game URL, scannable code or active scan instruction is invented. [The slot registry](Practice/Blooket-links.json) holds null links until actual games are provided.
+- Every practice reference has an actual page, substantive topic anchor and working HTML destination. Compact lesson locators return to the source. Later place-adjective revision has its own destination so early learners are not sent into later input.
+- Controlled keys, reasonable alternatives and open-task checks are documented separately. Existing recordings retain their actual words and voices; unrecorded bank content has no listening badge. New practice vocabulary requires a visible scaffold and wordlist note.
 
-Current shared standards: [Canonical style](../Base/design-system/CANONICAL-STYLE.md), [Learning and tasks](../Base/design-system/GUIDED-DISCOVERY.md), [Components](../Base/design-system/component-contracts.md) and [Media policy](../Base/design-system/asset-policy.md).
+See [Practice-bank standard](../Base/design-system/PRACTICE-BANKS.md), [the reference study](Sources/Practice-reference-study.json), [practice destinations](Sources/Practice-destinations.json), [visual register](Sources/Practice-personality.json) and [teacher key](Practice/Answer%20key.md). The other shared design, learning and media standards remain in force.
 
-## What this correction applied
+## Integration and evidence
 
-1A restores all eleven 10mm filled crimson/blue/teal number circles with white 15pt numerals and all twenty-six prominent 15.5pt paired-case letters. Colour and scale are protected teaching affordances. Ordinary task type and the new classmate record remain intact.
+The compiler orders grammar, vocabulary and practical language after the core and before end credits. Its manifest controls page order and topic destinations. Standalone lesson links and assembled-book links must both work. The viewer’s navigation includes each unit bank; screen controls remain absent in print.
 
-Selected local devices regain character across the core: work-profile motifs, destination/category identities, reception roles, a next-bus strip, speaker records, a seven-day calendar/tracker, food/serving labels, notebook indices, town/map/attraction markers, month/date slips, hot/cold and forecast cues, body callouts and compact review challenge bubbles. The existing twelve tactile imagegen surfaces remain active. These are visual enrichments; no new learning sequence is claimed for recoloured labels.
+The technical gate checks topic coverage, real pages, source files, unique targets, linked images, teacher keys, fresh vocabulary resources and sixteen reserved QR spaces. It does not certify teaching or artistic quality. The final audit additionally requires independent content review, every empty response-field check, standalone/assembled parity, the reopened saved PDF and published-file/viewer verification.
 
-Thirty-five concept/communication tools now declare their functional colour role. Source photographs, controlled answer evidence and actual writing areas remain clear. Review portrait labels avoid encoding colour words that students must retrieve.
+During draft proof, reviewers found and corrected clipped grammar writing rows, ambiguous activity references, a copying-only sequence prompt and a missing visual scaffold for opposite. The first vocabulary draft was subsequently superseded by the author’s clarification. Only the final corrected resource set and proof can establish release completion.
 
-## Protection across future books
+The book now has **114 physical pages**, printed **5–118**:72corepages,38practicepages and4creditpages. The banks contain16grammarpages,18vocabularypages and4practical-languagepages, with148activities. All75existing references resolve to70substantive referenced topics;71topics are authored overall. Six original practice-specific image resources support the new games, with no reused lesson rasters in vocabulary.
 
-[The visual register](Sources/Visual-personality.json) records all 36 spread identities and 72 protected selectors. New books must create their own equivalent register and consult the shared visual-spirit standard before authoring. [Repository authoring instructions](../AGENTS.md) apply these requirements to every level.
+Local verification found no clipped text, markers or empty response fields across114pages and368response fields. All16blank24mm QR squares fit without collisions. Standalone/assembled parity passes for56masters and110core/practicepages. The saved PDF was reopened and checked for114pages, footer numbers and75lesson-to-practice destinations. Its SHA-256 is `389c53a44bb290856d394fc1c6c4880ed16804ef72d4e1bfa0d5ca097d310c6f`.
 
-The build checks declared coverage and configurable expressive objects. A1's guard verifies the eleven filled round numbers, three-colour rhythm, numeral contrast, correct number/letter sequences and prominent display lettering. A scratch-only recreation of the known flattening is rejected. These checks protect affordances; personal inspection still judges warmth, variety, adult suitability and craft.
+All42added practice/credit proof pages were viewed; three independent reviews cover them, with full-size checks of critical pictures, crossword and writing spaces. A PDF resource-repair warning in an intermediate file was corrected. All42proof PNGs remain byte-identical after that structural repair; the final PDF has no MuPDF warnings and passes strict pypdf and Poppler checks. The recipe key accepts reasonable alternative sequences.
 
-The compiler preserves the expressive feature layers consistently in standalone lessons and the assembled book. The shared edition stylesheet has a content-based version so published viewers receive the current treatment.
-
-## Current release evidence
-
-- [x] All 76 saved pages independently rendered through Poppler and personally inspected across three reviewers. Root checked the whole-book rhythm and selected full-size features.
-- [x] All learner words, image-source sequences, existing SVG markup and track labels retained. All 562 existing image/audio/script/key/wordlist files remain byte-identical. Three small editable weather glyphs are additional.
-- [x] All 36 masters pass page/marker checks; ordinary font roles agree. All 72 core pages match the assembled geometry and the computed appearance of 8,650 visible elements, including pseudo styles.
-- [x] Empty response fields are not clipped; ordinary handwriting rows retain their usable heights.
-- [x] Native A4 PDF reopened: 76 pages, all learner word tokens and page numbers retained. The small destination/country spacing correction was re-rendered; the other 75 page images stayed identical.
-- [x] Visual-spirit coverage, protected-object contrast/shape/type checks and the negative regression check pass. Show coverage/style and all 98 audio-script preflights pass.
-- [x] All 174 checked published files match the local edition. Live 1A has eleven coloured bubbles, three fill colours and twenty-six 15.5pt letter pairs; all four functional colour families render. All 90 audio controls play/pause and screen controls hide in print without moving content.
-- [x] Final current evidence and fingerprints saved after live verification. Main contains implementation commit `2dcc57d` and the following evidence update.
-
-Detailed current evidence belongs in Sources/Expressive-spirit-20261031. The previous editorial proof remains historical in Sources/Editorial-overhaul-20261031 and the audit archives.
+[Current release evidence](Sources/Practice-banks-20261101/editorial-decision.json) records the local checks and corrected-proof comparison. Live publication is pending and author acceptance is not claimed.
 
 ## Reversibility and upkeep
 
-The pre-correction version is commit `8069492` on `safety/horizons-before-expressive-spirit-20261031`. Its exact source copies and PDF are retained locally in the expressive-spirit-20261031 work folder. The earlier pre-overhaul `fd497fd` baseline also remains available. No source artwork or recordings were replaced in this correction.
-
-Update this concise audit after actual source, saved-PDF and published checks. book-audit.json records current evidence and fingerprints; freshness alone is not a visual verdict. Author acceptance is not claimed.
+[The previous audit](Audit%20archive/2026-11-01-before-practice/BOOK-AUDIT.md) and machine evidence are archived. Original core pictures, recordings and source words remain; the only intended learner-copy changes in the core are real practice destinations and page numbers. Update evidence fingerprints only after checking the affected source and saved PDF. Text fingerprints normalize Git’s CRLF/LF differences; media hashes remain byte-exact.

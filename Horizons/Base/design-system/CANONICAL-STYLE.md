@@ -54,7 +54,7 @@ Audio must agree with the actual printed input and teacher scripts. Jessica rema
 
 Horizons on Air is a genuine recurring programme. Keep the recognizable main/secondary show identity, voices and episode logic; do not brand ordinary grammar or unrelated speaking as broadcast material. Keep a useful B-skill mix and avoid two consecutive units without an episode. The exact recurring frame should support, not flatten, each episode's distinctive evidence.
 
-NEW WORDS must sit at an explicit new input. Related practice references should name a stable destination topic. Do not print `page ---`, fake page numbers, internal file IDs or development notes. Until the excluded practice banks exist, use a topic reference without invented pagination; register the unresolved destination in the audit. Source/image attribution belongs in end credits. A short factual reading source can remain near the text when useful; do not insert photo-licensing strips into tasks.
+NEW WORDS must sit at an explicit new input. Related practice references should name a stable destination topic. Do not print `page ---`, fake page numbers, internal file IDs or development notes. A1’s grammar, vocabulary and practical-language banks now exist. Use their real topic anchors, printed pages and working links; see PRACTICE-BANKS.md. For future levels without authored banks, register unresolved destinations without invented pagination. Source/image attribution belongs in end credits. A short factual reading source can remain near the text when useful; do not insert photo-licensing strips into tasks.
 
 ## Substantive editorial revision
 

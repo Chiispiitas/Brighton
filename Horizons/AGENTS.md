@@ -9,3 +9,5 @@ Consult the book's `Sources/Visual-personality.json` before modifying a spread. 
 Run the shared visual-spirit coverage and configured object checks, relevant layout/source checks and an independent saved-PDF inspection. Inspect neighbouring spreads for visual fatigue and verify the published viewer when publishing is in scope. A passing counter or geometry check is not an artistic judgment. Record actual evidence and keep a reversible baseline.
 
 The author has delegated editorial authority. These instructions do not add a new approval step for routine, reversible work within the authorized task.
+
+When authoring or revising practice banks, also read `Base/design-system/PRACTICE-BANKS.md`. Inspect all empty response fields in the saved PDF; visible-text overflow checks alone cannot prove that writing lines fit.

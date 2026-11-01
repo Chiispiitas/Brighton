@@ -1,0 +1,253 @@
+{
+  "reviewer": "vocabulary_banks",
+  "scope": "Independent read-only review of six newly generated practice assets against their saved prompts and the current PRACTICE-BANKS standard.",
+  "assets": [
+    {
+      "file": "U2-personal-items-v1.png",
+      "visible_evidence": {
+        "top_row": [
+          "keys on a ring",
+          "closed blue notebook",
+          "black phone",
+          "closed red umbrella"
+        ],
+        "bottom_row": [
+          "brown wallet",
+          "clear bottle with blue lid",
+          "blue pen"
+        ]
+      },
+      "prompt_match": "Seven requested objects, exact colors, no overlap or clipped object edges.",
+      "labels": "Top-row centers approximately14%,38%,62%,87% of width. Bottom-row centers24%,50%,78%. Use separate four/three row label positions rather than one uniform grid.",
+      "key_scaffolds": [
+        "Treat keys as one set; do not require an exact count of individual overlapping keys.",
+        "Several blue objects exist, so one color clue may permit several answers. Add function/item evidence when a unique answer is required."
+      ],
+      "native_checks": {
+        "file": "U2-personal-items-v1.png",
+        "dimensions": [
+          1774,
+          887
+        ],
+        "mode": "RGBA",
+        "hash_matches_manifest": true,
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "transparent_fraction": 0.7163779965911214,
+        "near_opaque_fraction": 0.26655918064895795,
+        "opaque_bounds_at_128": [
+          96,
+          11,
+          1746,
+          868
+        ],
+        "corners_alpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "white_paper_render": "Viewed on white in browser; transparent backgrounds display cleanly without visible colored rectangular residue. Whole subjects retained."
+    },
+    {
+      "file": "U3-routines-v1.png",
+      "visible_evidence": {
+        "A": "Adult pushing up from bed with feet on the floor.",
+        "B": "Adult at a glass office doorway; direction of movement is ambiguous.",
+        "C": "Adult eating cereal/toast with a cup in daylight.",
+        "D": "Two adults facing a visible television."
+      },
+      "prompt_match": "Four intended activities and exact two-by-two composition; B is not unequivocally entering the office.",
+      "labels": "Standard2×2 positions A top-left, B top-right, C bottom-left, D bottom-right. Preserve faces and the TV.",
+      "key_scaffolds": [
+        "Anchor B with a visible work-start timetable or fictional message; do not infer going to work rather than leaving from the pose alone.",
+        "Anchor getting up and breakfast with the supplied day-plan/times rather than treating food/daylight as infallible evidence."
+      ],
+      "native_checks": {
+        "file": "U3-routines-v1.png",
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "hash_matches_manifest": true
+      },
+      "white_paper_render": "Viewed native image; no clipping of task-bearing content. RGB background is intentional."
+    },
+    {
+      "file": "U4-picnic-boxes-v1.png",
+      "visible_evidence": {
+        "A": [
+          "rice",
+          "fish",
+          "tomatoes"
+        ],
+        "B": [
+          "bread",
+          "cheese",
+          "apple"
+        ],
+        "C": [
+          "rice",
+          "eggs",
+          "apple"
+        ],
+        "D": [
+          "bread",
+          "cheese",
+          "banana"
+        ]
+      },
+      "prompt_match": "Exactly three visible food types per box, matching all four requested combinations. All boxes and contents are complete.",
+      "labels": "Standard2×2 positions. Keep labels in gutters or on container rims, not over distinguishing food.",
+      "key_scaffolds": [
+        "C contains one whole egg and two halves: do not count these as three eggs.",
+        "Tomato wedges and overlapping cheese slices do not establish exact whole-item counts.",
+        "B and D both have bread and cheese. A unique profile needs apple/banana or another discriminating condition.",
+        "Fish is identifiable in the taught limited set, but a menu text can remove ambiguity with other pale cooked meat."
+      ],
+      "native_checks": {
+        "file": "U4-picnic-boxes-v1.png",
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "hash_matches_manifest": true
+      },
+      "white_paper_render": "Viewed native image; no clipping of task-bearing content. RGB background is intentional."
+    },
+    {
+      "file": "U5-clothes-v1.png",
+      "visible_evidence": {
+        "top_row": [
+          "red zippered jacket",
+          "blue collared shirt",
+          "yellow T-shirt"
+        ],
+        "bottom_row": [
+          "black jeans",
+          "pair of white sneakers",
+          "pink scarf"
+        ]
+      },
+      "prompt_match": "Six requested objects and colors, whole garment edges and both shoes intact. Shirt and jacket are distinguished by buttons/collar versus zipper.",
+      "labels": "Standard3×2 positions. Do not let letter tags cover the narrow top collars or bottom jeans hems.",
+      "key_scaffolds": [
+        "A pair of shoes is one vocabulary item in the code game, not one shoe.",
+        "Any code or price evidence must be live text and independently checked; avoid another naming-only introduction."
+      ],
+      "native_checks": {
+        "file": "U5-clothes-v1.png",
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "mode": "RGBA",
+        "hash_matches_manifest": true,
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "transparent_fraction": 0.4725577036539714,
+        "near_opaque_fraction": 0.4954535166422526,
+        "opaque_bounds_at_128": [
+          47,
+          6,
+          1512,
+          1003
+        ],
+        "corners_alpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "white_paper_render": "Viewed on white in browser; transparent backgrounds display cleanly without visible colored rectangular residue. Whole subjects retained."
+    },
+    {
+      "file": "U6-apartment-v1.png",
+      "visible_evidence": {
+        "top_left": "Bedroom with one bed, bedside table and lamp.",
+        "top_right": "Bathroom with bathtub, toilet and sink.",
+        "bottom_left": "Kitchen/dining area with refrigerator, stove, sink, dining table and two blue chairs.",
+        "bottom_right": "Living area with sofa, armchair, coffee table, floor lamp and window unit."
+      },
+      "prompt_match": "Four clear room zones and requested furniture. No visible door openings; this does not support a room-to-room walking-route puzzle.",
+      "labels": "Room centers approximately(28%,24%),(69%,22%),(25%,70%),(73%,68%). Put labels outside the objects or use short leaders.",
+      "key_scaffolds": [
+        "There are three tables if bedside/dining/coffee tables all count; do not key a generic table count as two.",
+        "Two lamps are visible. The double-panel window may be described as one unit or two windows; avoid testing its exact count.",
+        "Refrigerator/stove/armchair are pictured but exceed the original6B assessed set. Provide a visible model before requiring these names.",
+        "Use clear room/furnishing decisions or memory rather than unsupported physical directions through absent doors."
+      ],
+      "native_checks": {
+        "file": "U6-apartment-v1.png",
+        "dimensions": [
+          1374,
+          1145
+        ],
+        "mode": "RGB",
+        "hash_matches_manifest": true
+      },
+      "white_paper_render": "Viewed native image; no clipping of task-bearing content. RGB background is intentional."
+    },
+    {
+      "file": "U8-travelers-v1.png",
+      "visible_evidence": {
+        "A": "Man seated with hand on forehead.",
+        "B": "Woman seated with hand on stomach.",
+        "C": "Man seated holding ankle/boot with a leg across his knee."
+      },
+      "prompt_match": "Three complete seated adults, heads/hands/feet and supporting seats inside the canvas. C supports a foot-area complaint with text, but is not an unambiguous bare-foot body-label reference.",
+      "labels": "Three separate figures left-to-right; add A–C outside the bitmap to avoid covering faces or feet.",
+      "key_scaffolds": [
+        "Use first-person messages to specify headache, stomachache or a sore foot. The pose alone is not a medical diagnosis.",
+        "Foot versus leg is ambiguous from C alone; do not require ankle as newly memorized vocabulary.",
+        "Use the message/plan decision to consolidate language rather than a second body-picture naming lesson."
+      ],
+      "native_checks": {
+        "file": "U8-travelers-v1.png",
+        "dimensions": [
+          1536,
+          1024
+        ],
+        "mode": "RGBA",
+        "hash_matches_manifest": true,
+        "alpha_extrema": [
+          0,
+          254
+        ],
+        "transparent_fraction": 0.5184656778971354,
+        "near_opaque_fraction": 0.4579607645670573,
+        "opaque_bounds_at_128": [
+          66,
+          22,
+          1490,
+          969
+        ],
+        "corners_alpha": [
+          0,
+          0,
+          0,
+          0
+        ]
+      },
+      "white_paper_render": "Viewed on white in browser; transparent backgrounds display cleanly without visible colored rectangular residue. Whole subjects retained."
+    }
+  ],
+  "all_six_hashes_match_manifest": true,
+  "all_requested_alpha_assets_have_genuine_transparency": true,
+  "new_asset_freshness": "All six are distinct new practice images and visually differ from the earlier core resources. Exact fresh artwork is necessary but not sufficient: the activity must be new consolidation, clue solving, memory, planning or decision work rather than another input-labeling presentation.",
+  "release_cautions": [
+    "U3 office-entry direction needs text/timetable support.",
+    "U8 foot/leg needs a first-person message.",
+    "Check unique food-profile solutions and apartment counts against visible evidence."
+  ],
+  "source_files_edited": false,
+  "author_acceptance_claimed": false
+}

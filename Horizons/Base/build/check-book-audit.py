@@ -10,7 +10,7 @@ from pathlib import Path
 import sys
 
 
-def fingerprint(root, paths, exclude_markdown=False):
+def fingerprint(root, paths, exclude_markdown=False, normalize_text_line_endings=False):
     files = set()
     for relative in paths:
         target = root / relative
@@ -23,6 +23,8 @@ def fingerprint(root, paths, exclude_markdown=False):
     total = 0
     for file in sorted(files, key=lambda p: p.relative_to(root).as_posix()):
         data = file.read_bytes()
+        if normalize_text_line_endings and file.suffix.lower() in {".html", ".css", ".js", ".mjs", ".json", ".md", ".txt", ".csv", ".py", ".svg", ".yml", ".yaml"}:
+            data = data.replace(b"\r\n", b"\n")
         total += len(data)
         record = [file.relative_to(root).as_posix(), hashlib.sha256(data).hexdigest()]
         digest.update((json.dumps(record, ensure_ascii=True) + "\n").encode("utf-8"))
@@ -35,7 +37,7 @@ def main():
     stale = []
     for name, group in audit["snapshot"].items():
         try:
-            actual = fingerprint(book, group["paths"], group.get("exclude_markdown", False))
+            actual = fingerprint(book, group["paths"], group.get("exclude_markdown", False), group.get("normalize_text_line_endings", False))
             if actual != group["fingerprint"]:
                 stale.append(name)
         except FileNotFoundError:

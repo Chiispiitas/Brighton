@@ -1,0 +1,69 @@
+/* G5–G8: concept-specific visual explanations on generous open paper. */
+.gp58-page {--hz-unit:#b4144d;--hz-unit-dark:#8d123d;--gp-blue:#245b9a;--gp-blue-light:#edf3fb;}
+.gp58-page .practice-header {display:flex;align-items:center;gap:4mm;padding-bottom:3mm;margin-bottom:5mm;border-bottom:.4mm solid #b4144d;}
+.gp58-page .practice-header p {margin:0 0 1.4mm;font-size:8pt;font-weight:650;color:#245b9a;letter-spacing:.025em;}
+.gp58-page .practice-header h1 {margin:0;font:750 21pt/1.12 var(--hz-font-sans);color:#202326;letter-spacing:-.025em;}
+.gp58-badge {display:grid;place-items:center;width:15mm;height:15mm;flex:0 0 15mm;background:#245b9a;color:#fff;font:750 15pt/1 var(--hz-font-sans);}
+.gp58-page .practice-topic {margin:0 0 5mm;}
+.gp58-page .practice-topic > h2 {display:flex;align-items:baseline;gap:3mm;margin:0 0 3mm;font:720 14pt/1.2 var(--hz-font-sans);color:#204f86;}
+.gp58-page .practice-topic > h2 > span {font:750 9pt/1 var(--hz-font-sans);color:#8d123d;}
+.gp58-page .practice-diagram {padding:2.8mm 3.3mm;margin:0 0 3.3mm;background:#f4f7fc;border-left:.6mm solid #779bc7;}
+.gp58-page .practice-diagram p {margin:1mm 0;}
+.gp58-page .practice-model,.gp58-page .practice-note {font-size:10pt;line-height:1.4;margin:2mm 0;}
+.gp58-page b,.gp58-page strong {color:#204f86;}
+.gp58-page .practice-task {margin:3mm 0 0;}
+.gp58-page .practice-task > h3 {margin:0 0 1.6mm;font-size:9.2pt;line-height:1.4;font-weight:650;color:#242b31;}
+.gp58-page .practice-task > h3 > b {display:inline-block;min-width:4mm;color:#8d123d;font-size:10pt;}
+.gp58-page .practice-items {margin:0;padding-left:5mm;line-height:1.43;font-size:10pt;}
+.gp58-page .practice-items li {padding-left:.6mm;margin:0 0 1.7mm;break-inside:avoid;}
+.gp58-page .practice-items li::marker {color:#8d123d;}
+.gp58-page .practice-items em {font-style:italic;font-weight:400;}
+.gp58-page .practice-items u {text-decoration-color:#8c969d;text-underline-offset:2px;}
+.gp58-gap {display:inline-block;vertical-align:baseline;min-width:16mm;height:5.2mm;border-bottom:.23mm solid #8b969e;}
+.gp58-line {display:block;height:7mm;border-bottom:.23mm solid #92999d;}
+.gp58-page .practice-lines {margin-top:1mm;}
+.gp58-page .gp58-cols-2 {display:grid;grid-template-columns:1fr 1fr;gap:1mm 7mm;}
+.gp58-page .gp58-cols-3 {display:grid;grid-template-columns:repeat(3,1fr);gap:1mm 6mm;}
+.gp58-form-row {display:flex;justify-content:space-between;gap:4mm;margin:2mm 0;font-size:10pt;line-height:1.4;}
+.gp58-svg {display:block;width:100%;height:auto;overflow:visible;}
+.gp58-svg text {font:13.33px var(--hz-font-sans);fill:#26323a;}
+.gp58-counts {display:grid;grid-template-columns:repeat(3,1fr);gap:5mm;}
+.gp58-counts > div {display:flex;align-items:center;gap:3mm;}
+.gp58-counts b {display:grid;place-items:center;border:1px solid #86a5cb;border-radius:50%;width:9mm;height:9mm;font-size:15pt;}
+.gp58-counts span {font-size:10pt;}
+.gp58-week {display:flex;justify-content:space-around;gap:4mm;padding:2.2mm 3mm;margin:1.5mm 0;background:#f5eee7;font-size:10pt;}
+.gp58-repair {display:flex;flex-wrap:wrap;gap:1mm 7mm;}
+.gp58-repair p {margin:0;font-size:10pt;line-height:1.5;}
+.gp58-room-facts {padding:2mm 3mm;border-left:.6mm solid #a7b39b;background:#f4f7ee;}
+.gp58-room-facts p {margin:1mm 0;font-size:10pt;line-height:1.4;}
+.gp58-draw-write {display:grid;grid-template-columns:40mm 1fr;gap:5mm;align-items:start;}
+.gp58-draw {height:23mm;border:.25mm dashed #82909c;color:#5c6873;padding:2mm;font-size:9pt;}
+.gp58-availability {display:grid;grid-template-columns:1fr 1fr;gap:5mm;}
+.gp58-page h4 {margin:0 0 1mm;font-size:10pt;color:#204f86;}
+.gp58-availability p {font-size:10pt;}
+.gp58-then-now {display:grid;grid-template-columns:1fr 1fr;gap:7mm;}
+.gp58-then-now section:first-child {border-right:.5mm solid #9cb3ca;}
+.gp58-page .gp58-then-now h3,.gp58-page .gp58-verb-branch h3,.gp58-page .gp58-health-forms h3,.gp58-page .gp58-weather-advice h3 {margin:0 0 1.5mm;font-size:11pt;color:#204f86;}
+.gp58-calendar {display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;margin:2mm 0 3mm;}
+.gp58-calendar section {border-top:1.4mm solid #245b9a;padding:2mm 3mm;background:#fff;}
+.gp58-calendar b,.gp58-calendar span {display:block;font-size:10pt;line-height:1.5;}
+.gp58-calendar section:last-child {border-top-color:#a95427;}
+.gp58-verb-branch {display:grid;grid-template-columns:1fr 14mm 1.1fr;align-items:center;gap:4mm;}
+.gp58-branch-arrow {font-size:28pt;color:#64839d;}
+.gp58-spelling {display:flex;justify-content:space-between;gap:3mm;margin-bottom:3mm;font-size:10pt;}
+.gp58-source-note {padding:2.5mm 3mm;margin:0 0 2mm;border-left:.6mm solid #a35f31;background:#f8f2e9;font-size:10pt;line-height:1.45;}
+.gp58-weather-advice {display:grid;grid-template-columns:1.2fr 1fr;gap:5mm;}
+.gp58-weather-advice > section:first-child {display:flex;gap:4mm;align-items:center;}
+.gp58-weather-symbol {border:2px solid #4c76a4;border-radius:50%;width:17mm;height:17mm;display:grid;place-items:center;font-size:21pt;font-weight:700;color:#245b9a;}
+.gp58-advice-match {display:grid;grid-template-columns:1fr 1.1fr;gap:7mm;font-size:10pt;line-height:1.45;}
+.gp58-advice-match ol {margin:0;padding-left:5mm;}
+.gp58-advice-match li {margin-bottom:2mm;}
+.gp58-advice-match p {margin:1mm 0 2mm;}
+.gp58-health-forms {display:grid;grid-template-columns:1fr 1fr;gap:5mm;}
+.gp58-message {border-left:.6mm solid #a080b3;padding-left:3mm;margin-top:2mm;font-size:10pt;}
+.gp58-message p {margin:1.5mm 0;}
+.gp58-page .practice-go-back {font-size:8pt;color:#626a70;}
+
+/* Keep the complete final 7mm response row inside the directions page. */
+.gp58-page--directions .practice-diagram {margin-bottom:2.5mm;}
+.gp58-page--directions .practice-task {margin-top:2.4mm;}

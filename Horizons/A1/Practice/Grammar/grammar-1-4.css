@@ -1,0 +1,117 @@
+/* Grammar 1–4: explanation diagrams stay distinct; ordinary practice stays on open paper. */
+.gp14-page {--gp14-blue:#245b9a;--gp14-dark:#204f86;--gp14-soft:#f0f5fc;font-family:var(--hz-font-sans);font-size:10pt;line-height:1.35;}
+.gp14-page .practice-header {margin:0 0 5mm;padding:0 0 3mm;border-bottom:.5mm solid var(--hz-unit);}
+.gp14-page .practice-header > p {margin:0 0 1.5mm;color:var(--gp14-dark);font-size:8.5pt;font-weight:700;letter-spacing:.03em;}
+.gp14-page .practice-header h1 {margin:0;font:760 23pt/1.1 var(--hz-font-sans);letter-spacing:-.025em;color:#22252a;}
+.gp14-page .gp14-flow {display:flex;flex-direction:column;gap:5mm;}
+.gp14-page .practice-topic {margin:0;min-width:0;}
+.gp14-page .practice-topic > h2 {display:flex;align-items:baseline;justify-content:space-between;gap:3mm;margin:0 0 2.5mm;font:720 13pt/1.2 var(--hz-font-sans);color:var(--gp14-dark);}
+.gp14-page .practice-topic > h2 > span {font:650 8.5pt/1.2 var(--hz-font-sans);color:#8f123f;white-space:nowrap;}
+.gp14-page p {margin:0 0 1.5mm;font-size:10pt;}
+.gp14-page strong {color:var(--gp14-dark);font-weight:750;}
+.gp14-page em {font-style:italic;font-weight:400;}
+.gp14-page .practice-note {margin:2mm 0 2.5mm;line-height:1.35;font-size:10pt;}
+.gp14-page .practice-model {margin:1mm 0;}
+.gp14-page .gp14-task {margin-top:2.7mm;}
+.gp14-page .practice-instruction {margin:0 0 1.6mm;font-size:9.2pt;line-height:1.35;font-weight:650;}
+.gp14-page .practice-instruction > b {display:inline-block;margin-right:1.3mm;color:var(--hz-unit-dark);font:750 11pt/1 var(--hz-font-sans);}
+.gp14-page .practice-items {margin:0;padding-left:5mm;line-height:1.4;}
+.gp14-page .practice-items li {padding-left:.7mm;margin:0 0 1.3mm;font-size:10pt;}
+.gp14-page .practice-items li::marker {color:var(--hz-unit-dark);font-size:9pt;}
+.gp14-page .gp14-grid2 {display:grid;grid-template-columns:1fr 1fr;column-gap:9mm;row-gap:.6mm;}
+.gp14-page .gp14-gap {display:inline-block;border-bottom:.2mm solid #8c959e;height:5.5mm;vertical-align:baseline;max-width:100%;}
+.gp14-page .gp14-lines {display:grid;margin-top:.7mm;}
+.gp14-page .gp14-lines > span {display:block;height:7mm;border-bottom:.2mm solid #9b9fa4;}
+.gp14-page .gp14-answer {display:block;margin-top:1mm;}
+.gp14-page .gp14-pair {display:grid;grid-template-columns:1fr 1fr;gap:5mm;margin:1.5mm 0;}
+.gp14-page .gp14-pair > p {margin:0;}
+.gp14-page .practice-diagram {font-size:10pt;}
+.gp14-page .practice-diagram h3 {margin:0 0 1.5mm;font:700 10pt/1.2 var(--hz-font-sans);color:#303b46;}
+.gp14-page .gp14-be-map {display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;margin:0 0 2mm;}
+.gp14-page .gp14-be-map > div {display:flex;align-items:center;justify-content:space-between;gap:3mm;border-bottom:.65mm solid #8baad0;padding:2mm 3mm;background:#f1f5fb;}
+.gp14-page .gp14-be-map span {font-size:10pt;}
+.gp14-page .gp14-be-map b {color:var(--gp14-dark);font-size:19pt;}
+.gp14-page .gp14-question-switch {display:grid;grid-template-columns:1fr 9mm 1fr;align-items:center;padding:2mm 0;border-bottom:.2mm solid #c7d5e7;}
+.gp14-page .gp14-question-switch p {margin:0;}
+.gp14-page .gp14-question-switch > span {color:var(--gp14-blue);font-size:21pt;text-align:center;}
+.gp14-page .gp14-id-cards {display:grid;grid-template-columns:repeat(3,1fr);gap:3mm;margin:1.5mm 0 2mm;}
+.gp14-page .gp14-id-cards > div {border-top:1.3mm solid #c65a2b;padding:2mm 3mm;background:#fcf5ee;}
+.gp14-page .gp14-id-cards b {display:block;color:#7b3520;font-size:12pt;}
+.gp14-page .gp14-id-cards span {display:block;font-size:10pt;}
+.gp14-page .gp14-articles {display:grid;grid-template-columns:1fr 1fr;gap:6mm;}
+.gp14-page .gp14-articles > div {display:grid;grid-template-columns:14mm 1fr;column-gap:2mm;padding:2mm 0;border-bottom:.4mm solid #a2b8d4;}
+.gp14-page .gp14-articles b {grid-row:1/3;display:grid;place-items:center;align-self:center;width:13mm;height:13mm;border-radius:50%;background:var(--gp14-blue);color:white;font-size:23pt;font-weight:650;}
+.gp14-page .gp14-articles p {margin:0;}
+.gp14-page .gp14-articles span {font-size:8.5pt;color:#4a535e;}
+.gp14-page .gp14-folds {display:flex;gap:8mm;justify-content:space-between;padding:1.8mm 3mm;background:#f1f5fb;}
+.gp14-page .gp14-folds p {margin:0;}
+.gp14-page .gp14-capitals {border-left:1mm solid #c47435;padding:1.5mm 3mm;}
+.gp14-page .gp14-capitals p {margin:0 0 .7mm;}
+.gp14-page .gp14-capitals .gp14-mail {color:#555b64;}
+.gp14-page .gp14-distance {display:grid;grid-template-columns:1fr 1fr;gap:10mm;position:relative;padding:1mm 0;}
+.gp14-page .gp14-distance > div {padding:2.5mm;border-bottom:.6mm solid #91afd1;}
+.gp14-page .gp14-near {background:#eef5ff;}
+.gp14-page .gp14-far {border-left:.3mm dashed #7c8793;}
+.gp14-page .gp14-zone {display:block;margin-bottom:2mm;color:#445261;font-size:8.5pt;}
+.gp14-page .gp14-distance p {display:flex;align-items:center;gap:1.7mm;min-height:9mm;margin:0 0 1mm;}
+.gp14-page .gp14-phone {display:inline-block;width:4.8mm;height:8mm;border:.45mm solid #34465c;border-radius:.9mm;margin-right:1mm;background:linear-gradient(#c8e1f6 0 80%,#34465c 80%);}
+.gp14-page .gp14-tokens {color:#ad4e25;font-size:16pt;white-space:nowrap;}
+.gp14-page .gp14-reference {display:grid;grid-template-columns:1fr 10mm 1fr;align-items:center;gap:3mm;}
+.gp14-page .gp14-reference > div {padding:2mm 3mm;border-top:.5mm solid #668dbd;background:#f4f7fc;}
+.gp14-page .gp14-reference b {color:#405067;font-size:9pt;}
+.gp14-page .gp14-reference p {margin:1mm 0 0;}
+.gp14-page .gp14-reference > span {font-size:23pt;color:var(--gp14-blue);text-align:center;}
+.gp14-page .gp14-ownership {display:flex;justify-content:space-between;gap:4mm;padding:2mm 0;}
+.gp14-page .gp14-ownership p {display:flex;align-items:center;gap:2mm;margin:0;}
+.gp14-page .gp14-owner {display:inline-block;padding:1.7mm 2mm;background:#eaf1fb;border-radius:1.6mm;}
+.gp14-page .gp14-link {color:#ad4e25;font-size:23pt;line-height:1;}
+.gp14-page .gp14-adjective {display:grid;grid-template-columns:1fr 1fr;gap:6mm;padding:2mm 3mm;background:#f4f7fc;}
+.gp14-page .gp14-adjective p {margin:0 0 1mm;}
+.gp14-page .gp14-adjective .gp14-language {font-size:9pt;color:#5a626b;}
+.gp14-page .gp14-shift {display:grid;grid-template-columns:1fr 1fr;gap:5mm;padding-bottom:1mm;border-bottom:.5mm solid #85a7ce;}
+.gp14-page .gp14-shift > div {padding:2mm 3mm;background:#f4f7fc;}
+.gp14-page .gp14-shift span {display:block;margin-bottom:2mm;font-size:9pt;color:#47566b;}
+.gp14-page .gp14-shift p {margin:0 0 1mm;}
+.gp14-page .gp14-helper {display:grid;grid-template-columns:1fr 1fr;gap:7mm;padding:2mm 0;border-top:.3mm solid #c3d2e4;}
+.gp14-page .gp14-helper p {margin:0 0 1.2mm;}
+.gp14-page .gp14-question-path {display:grid;grid-template-columns:1fr;gap:1.2mm;padding:2mm 3mm;background:#f5f7fa;border-left:.8mm solid #668dbd;}
+.gp14-page .gp14-question-path p {display:block;margin:0;}
+.gp14-page .gp14-question-path strong {display:inline;}
+.gp14-page .gp14-question-path p > span {float:right;}
+.gp14-page .gp14-frequency {display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;padding:1.5mm 0;}
+.gp14-page .gp14-frequency > div {display:flex;flex-direction:column;gap:1mm;}
+.gp14-page .gp14-frequency b {color:#337fa4;font-size:12pt;letter-spacing:.4mm;}
+.gp14-page .gp14-position {display:flex;justify-content:space-between;gap:4mm;padding:2mm 3mm;background:#f0f5fc;}
+.gp14-page .gp14-position p {margin:0;}
+.gp14-page .gp14-sequence {display:grid;grid-template-columns:31mm 10mm 38mm 1fr;align-items:center;gap:3mm;padding:2mm 0;}
+.gp14-page .gp14-sequence > span {text-align:center;}
+.gp14-page .gp14-sequence > span:not([aria-hidden]) {border-top:.75mm solid #ca7033;padding-top:1.8mm;}
+.gp14-page .gp14-sequence > span[aria-hidden] {font-size:23pt;color:#a75327;}
+.gp14-page .gp14-sequence p {margin:0 0 1.2mm;}
+.gp14-page .gp14-food-types {display:grid;grid-template-columns:1fr 1fr;gap:8mm;padding:2mm 3mm;background:#f7f6ef;}
+.gp14-page .gp14-food-art {display:flex;gap:2mm;align-items:center;min-height:16mm;}
+.gp14-page .gp14-food-art svg {height:14mm;width:auto;max-width:28mm;}
+.gp14-page .gp14-food-art > span {font-size:18pt;color:#8a693f;}
+.gp14-page .gp14-food-types p {margin:1mm 0 0;}
+.gp14-page .gp14-sort {display:grid;grid-template-columns:1fr 1fr;gap:6mm;}
+.gp14-page .gp14-sort b {font-size:9pt;color:#43556b;}
+.gp14-page .gp14-bank {word-spacing:1.8mm;padding-bottom:1mm;color:#333b43;}
+.gp14-page .gp14-pronouns {display:grid;grid-template-columns:25mm 25mm 1fr;gap:5mm;padding:2mm 3mm;border-top:.5mm solid #779cca;background:#f3f7fd;}
+.gp14-page .gp14-pronouns p {margin:0 0 .7mm;}
+.gp14-page .gp14-quantity {display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;padding:1mm 0;}
+.gp14-page .gp14-quantity > div {padding-bottom:1.8mm;border-bottom:.4mm solid #839dbc;}
+.gp14-page .gp14-quantity span {font-size:9pt;color:#525b64;}
+.gp14-page .gp14-quantity b {font-size:10pt;color:var(--gp14-dark);}
+.gp14-page .gp14-quantity .gp14-tomatoes {font-size:17pt;line-height:1.2;color:#c53243;white-space:nowrap;letter-spacing:.3mm;margin:1.5mm 0;}
+.gp14-page .gp14-cause {display:grid;grid-template-columns:1fr 10mm 1fr;gap:3mm;align-items:center;padding:1.5mm 0;}
+.gp14-page .gp14-cause > div {padding:2mm 3mm;background:#f7f0e8;border-bottom:.7mm solid #b56a36;}
+.gp14-page .gp14-cause b {font-size:9pt;color:#74492f;}
+.gp14-page .gp14-cause p {margin:1mm 0 0;}
+.gp14-page .gp14-cause > span {text-align:center;color:#a15b2e;font-size:23pt;}
+
+
+/* The three concept groups on the details page keep a full 7mm final response line. */
+.gp14-page--details .practice-diagram {margin-top:1mm;margin-bottom:2mm;}
+
+.gp14-page--details .gp14-flow {gap:3.5mm;}
+.gp14-page--details .gp14-task {margin-top:2.4mm;}

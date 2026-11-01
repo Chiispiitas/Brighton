@@ -6,6 +6,9 @@ const repoRoot = process.cwd();
 const a1Dir = path.join(repoRoot, "Horizons", "A1");
 const lessonsDir = path.join(a1Dir, "Lessons");
 const backmatterDir = path.join(a1Dir, "Backmatter");
+const practiceDir = path.join(a1Dir, "Practice");
+const practiceManifestPath = path.join(practiceDir, "manifest.json");
+const practiceManifest = fs.existsSync(practiceManifestPath) ? JSON.parse(fs.readFileSync(practiceManifestPath, "utf8")) : { masters: [] };
 const outputPath = path.join(a1Dir, "Student's Book.html");
 
 const lessonPattern = /^\d+[A-Z]\.html$/i;
@@ -75,6 +78,23 @@ function rewriteBodyAssetUrls(bodyHtml, lessonPath) {
     return `srcset=${quote}${rebasedSet}${quote}`;
   });
 
+  // Practice links stay inside the assembled book; standalone masters keep
+  // working relative links. External source/credit links are never rewritten.
+  output = output.replace(/\bhref\s*=\s*(["'])(.*?)\1/gi, (match, quote, value) => {
+    if (/^(?:https?:|mailto:|tel:|#|data:)/i.test(value)) return match;
+    const [localPath, fragment] = value.split("#");
+    const absolute = path.resolve(path.dirname(lessonPath), decodeURIComponent(localPath));
+    if (absolute.startsWith(path.resolve(practiceDir) + path.sep) && /\.html$/i.test(absolute)) {
+      const entry = practiceManifest.masters.find(x => path.resolve(a1Dir, x.file) === absolute);
+      if (!entry) throw new Error(`Practice link has no master: ${value}`);
+      return `href=${quote}#${fragment || "page-" + entry.pages[0]}${quote}`;
+    }
+    if (absolute.startsWith(path.resolve(lessonsDir) + path.sep) && /\.html$/i.test(absolute)) {
+      const first = readText(absolute).match(/data-page=["'](\d+)["']/)?.[1];
+      if (first) return `href=${quote}#page-${first}${quote}`;
+    }
+    return match;
+  });
   return output;
 }
 
@@ -202,7 +222,18 @@ for (const filename of lessons) {
   compiledBodies.push(`<!-- ===== ${filename} ===== -->\n${body}`);
 }
 
-// Book-owned backmatter always follows the lesson masters. Repaginate it from
+// Ordered book-owned practice banks follow the completed core. Their
+// source pages and topic anchors are validated by check-practice-banks.py.
+for (const master of practiceManifest.masters) {
+  const sourcePath = path.resolve(a1Dir, master.file);
+  if (!fs.existsSync(sourcePath)) throw new Error(`Missing practice master: ${master.file}`);
+  const html = readText(sourcePath);
+  const head = extractHead(html);
+  compiledStyles.push(...collectHeadStyles(head, sourcePath, master.file));
+  compiledBodies.push(`<!-- ===== ${master.file} ===== -->\n${rewriteBodyAssetUrls(extractBody(html, master.file), sourcePath)}`);
+}
+
+// Book-owned backmatter always follows the lesson and practice masters. Repaginate it from
 // the actual final lesson page so future lessons cannot collide with credits.
 const backmatter = fs.existsSync(backmatterDir)
   ? fs.readdirSync(backmatterDir).filter((name) => /\.html$/i.test(name)).sort((a, b) => collator.compare(a, b))

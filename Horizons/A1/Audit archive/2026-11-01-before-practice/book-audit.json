@@ -1,0 +1,420 @@
+{
+  "schema_version": 2,
+  "updated": "2026-10-31",
+  "status": "Expressive identity correction complete; saved-PDF and live verification complete",
+  "authority": "Author delegates editorial authority; his own B2 book sets emotional direction. Preserve colourful learning objects and warm adult playfulness alongside coherent functional roles.",
+  "scope": "Units1–8,32lessons and fourpairedreviews.72corepages plus4endcreditpages; front/index/practicebanks/workbook/optionalannexes excluded.",
+  "baseline": {
+    "commit": "fd497fd",
+    "safety_branch": "safety/horizons-before-editorial-overhaul-20261031",
+    "local_before_copy": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\editorial-overhaul-20261031\\before",
+    "old_pdf_sha256": "968558391f585e85fdb52a29e8840c733e54374f59585a0b5daba108393ee301",
+    "expressive_correction": {
+      "commit": "8069492116058e45846c79601c66ebd8a3207abb",
+      "safety_branch": "safety/horizons-before-expressive-spirit-20261031",
+      "sources": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\expressive-spirit-20261031\\before",
+      "pdf": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\expressive-spirit-20261031\\before-book.pdf"
+    }
+  },
+  "inventory": {
+    "lesson_masters": [
+      "1A",
+      "1B",
+      "1C",
+      "1D",
+      "2A",
+      "2B",
+      "2C",
+      "2D",
+      "2R",
+      "3A",
+      "3B",
+      "3C",
+      "3D",
+      "4A",
+      "4B",
+      "4C",
+      "4D",
+      "4R",
+      "5A",
+      "5B",
+      "5C",
+      "5D",
+      "6A",
+      "6B",
+      "6C",
+      "6D",
+      "6R",
+      "7A",
+      "7B",
+      "7C",
+      "7D",
+      "8A",
+      "8B",
+      "8C",
+      "8D",
+      "8R"
+    ],
+    "core_spreads": 36,
+    "core_pages": 72,
+    "html_pages": 76,
+    "pdf_pages": 76,
+    "printed_pages": [
+      5,
+      80
+    ],
+    "credits_pages": 4,
+    "activity_blocks": 253,
+    "lesson_audio_files": 84,
+    "production_audio_files": 1,
+    "html_audio_controls": 90,
+    "new_words_badges": 46,
+    "extra_practice_footers": 32,
+    "go_to_references": 75,
+    "page_placeholders": 0,
+    "focus_panels": 35,
+    "new_generated_object_assets": 12,
+    "external_photo_credit_records": 84
+  },
+  "standards": {
+    "canonical_style": "../Base/design-system/CANONICAL-STYLE.md",
+    "learning": "../Base/design-system/GUIDED-DISCOVERY.md",
+    "media": "../Base/design-system/asset-policy.md",
+    "components": "../Base/design-system/component-contracts.md",
+    "reference_study": "EDITORIAL-REFERENCE-STUDY.json",
+    "change_register": "Sources/Editorial-overhaul-20261031/change-register.json",
+    "visual_spirit": "../Base/design-system/VISUAL-SPIRIT.md",
+    "author_reference": "../Base/design-system/AUTHOR-REFERENCE-STUDY.json",
+    "protected_visual_register": "Sources/Visual-personality.json",
+    "authoring_instructions": "../AGENTS.md"
+  },
+  "editorial_judgment": {
+    "basis": "Warm adult playfulness is restored through large paired-case lettering, saturated round counting objects and bounded content-specific visual devices. Functional colour cues remain coherent. Tactile documents, usable learner products and clear writing/reading space from the prior overhaul are retained. No universal rainbow, copied mascot or new learning-sequence claim for colour changes.",
+    "independent_saved_pdf_reviews": [
+      "Sources/Expressive-spirit-20261031/expressive-pdf-proof-1-3.json",
+      "Sources/Expressive-spirit-20261031/expressive-pdf-proof-4-6.json",
+      "Sources/Expressive-spirit-20261031/expressive-pdf-proof-7-8.json"
+    ],
+    "root_review": "All76savedpages viewed in tencontactsequences; fullsize1A alphabet/numerals and selectedsource/responsefeatures examined. Three editors independently inspected all76savedpages.",
+    "author_acceptance_claimed": false,
+    "current_decision": "Sources/Expressive-spirit-20261031/editorial-decision.json"
+  },
+  "verification": {
+    "layout": {
+      "outside_or_marker_faults": 0,
+      "type_failures": 0,
+      "standalone_compiled_parity_failures": 0
+    },
+    "computed_appearance": {
+      "pages": 72,
+      "visible_elements": 8650,
+      "computed_colors_type_borders_and_pseudo_styles_match": true,
+      "failures": []
+    },
+    "response_space": {
+      "clipped": [],
+      "smallRows": []
+    },
+    "pdf": {
+      "pages": 76,
+      "core_pages": 72,
+      "printed_pages": [
+        5,
+        80
+      ],
+      "all_a4": true,
+      "every_learner_word_token_preserved_from_print_DOM": true,
+      "all_footer_numbers_present": true,
+      "pdf_bytes": 37398505,
+      "sha256": "9f30675098315e55a26d246171cbba5a9fc3aff46b961d3b99757cee86a9aef9",
+      "method": "Full native Windows/Edge A4 export of the current compiled HTML with export-only alpha-preserving240dpi media; no post-save image/font rewriting. Reopened with PyMuPDF; all page text/footers/size checked; independently rendered through Poppler for visual proof."
+    },
+    "preservation": {
+      "issues": [],
+      "unchanged_media_audio_scripts_keys_wordlists": 562,
+      "all_retained_generated_surfaces_unchanged": true,
+      "new_raster_or_external_media": false,
+      "new_native_weather_glyphs": 3,
+      "ordinal_normalisation": "Inline span boundaries in7Bdisplay1/st as one printed ordinal; values unchanged."
+    },
+    "protected_object_regression": {
+      "current_design_passes": true,
+      "recreated_known_number_flattening_rejected": true,
+      "negative_test_mutation": "Scratch-only copy removes bubble fill and roundness; production files untouched.",
+      "positive_checks": [
+        {
+          "lesson": "1A",
+          "view": "standalone",
+          "selector": ".ed13-numbers b",
+          "count": 11,
+          "min_font_pt": 15,
+          "fill_colours": 3,
+          "passed": true
+        },
+        {
+          "lesson": "1A",
+          "view": "assembled",
+          "selector": ".ed13-numbers b",
+          "count": 11,
+          "min_font_pt": 15,
+          "fill_colours": 3,
+          "passed": true
+        },
+        {
+          "lesson": "1A",
+          "view": "standalone",
+          "selector": ".l1a-alphabet > span",
+          "count": 26,
+          "min_font_pt": 15.500024999999999,
+          "fill_colours": 1,
+          "passed": true
+        },
+        {
+          "lesson": "1A",
+          "view": "assembled",
+          "selector": ".l1a-alphabet > span",
+          "count": 26,
+          "min_font_pt": 15.500024999999999,
+          "fill_colours": 1,
+          "passed": true
+        }
+      ],
+      "scope": "Protected affordances only; manual emotional/editorial review remains required."
+    },
+    "audio": {
+      "issues": [],
+      "all_preexisting_audio_and_script_files_unchanged": 223,
+      "all_mp3_files_decode": 85,
+      "lesson_mp3s": 84,
+      "new_audio_generated": false,
+      "subjective_listening_review": false
+    },
+    "live_viewer": {
+      "completed": true,
+      "all90controls_play_pause": true,
+      "print_ui_hidden": true
+    },
+    "evidence_directory": "Sources/Expressive-spirit-20261031",
+    "prior_editorial_evidence": "Sources/Editorial-overhaul-20261031"
+  },
+  "new_objects": "Images/Editorial-objects/manifest.json",
+  "resource_registry": "Sources/Lesson-resources.json",
+  "practice_destinations": "Sources/Practice-destinations.json",
+  "receptive_skill_plan": {
+    "policy": "B lessons provide a planned mix of reading-led and listening-led units; Horizons on Air is not required in every unit. Avoid two consecutive units without the show. Do not impose rigid alternation; 2B and 3B are both listening-led. Declare primary skill and source genre before authoring.",
+    "units": [
+      {
+        "unit": 1,
+        "lesson": "1B",
+        "primary_skill": "reading",
+        "genre": "Occupation profiles and model conversations, with supporting audio",
+        "episode": null
+      },
+      {
+        "unit": 2,
+        "lesson": "2B",
+        "primary_skill": "listening",
+        "genre": "Horizons on Air street interviews",
+        "episode": "Bus or car?",
+        "tracks": [
+          "2.3"
+        ]
+      },
+      {
+        "unit": 3,
+        "lesson": "3B",
+        "primary_skill": "listening",
+        "genre": "Horizons on Air guest interviews",
+        "episode": "Three people. Three weeks.",
+        "tracks": [
+          "3.5"
+        ]
+      },
+      {
+        "unit": 4,
+        "lesson": "4B",
+        "primary_skill": "reading",
+        "genre": "Food opinions and comparison",
+        "episode": null
+      },
+      {
+        "unit": 5,
+        "lesson": "5B",
+        "primary_skill": "listening",
+        "genre": "Horizons on Air shopping reviews and listener calls",
+        "episode": "Keep or return?",
+        "tracks": [
+          "5.5",
+          "5.6"
+        ]
+      },
+      {
+        "unit": 6,
+        "lesson": "6B",
+        "primary_skill": "reading",
+        "genre": "Dated real tiny-home interview adaptation: silent gist/detail/evaluation; supporting audio",
+        "episode": null
+      },
+      {
+        "unit": 7,
+        "lesson": "7B",
+        "primary_skill": "listening",
+        "genre": "Horizons on Air birthday quiz with two hosts and listener voicemail; dated show with gist, exact-date and relative-time listening",
+        "episode": "Birthday detective",
+        "tracks": [
+          "7.6"
+        ]
+      },
+      {
+        "unit": 8,
+        "lesson": "8B",
+        "primary_skill": "reading",
+        "genre": "Dated original simplified Lytton/Texas 2021 weather news reports; silent gist/detail reading followed by advice and independent weather listening",
+        "episode": null,
+        "supporting_tracks": [
+          "8.5",
+          "8.6"
+        ],
+        "status": "produced; technically verified"
+      }
+    ],
+    "next_unit_rule": "8B is reading-led after genuine listening-led 7B. Supporting weather vocabulary/advice audio is not a show. Current eight-unit programme satisfies the no-two-unit-show-gap rule. If the programme is extended, the next unit must restore a genuine show to avoid consecutive show-free units."
+  },
+  "on_air_identity": {
+    "reference": "2B, activities 2 (main), 3 and 4 (secondary); source unchanged",
+    "stylesheet": "Lessons/horizons-on-air.css",
+    "policy": "Share main masthead, compact secondary header, waveform, logo and black/orange source captions. Preserve factual/app imagery and learning content; do not label ordinary preparation/grammar/personal transfer as broadcast.",
+    "episodes": [
+      {
+        "lesson": "2B",
+        "title": "Bus or car?",
+        "main": 2,
+        "secondary": [
+          3,
+          4
+        ]
+      },
+      {
+        "lesson": "3B",
+        "title": "Three people. Three weeks.",
+        "main": 2,
+        "secondary": [
+          3,
+          4,
+          6,
+          7
+        ]
+      },
+      {
+        "lesson": "5B",
+        "title": "Keep or return?",
+        "main": 2,
+        "secondary": [
+          3,
+          4,
+          6,
+          7
+        ]
+      },
+      {
+        "lesson": "7B",
+        "title": "Birthday detective",
+        "main": 3,
+        "secondary": [
+          4,
+          5,
+          6
+        ]
+      }
+    ]
+  },
+  "snapshot": {
+    "book_sources": {
+      "paths": [
+        "Lessons",
+        "Images",
+        "Audios",
+        "Audio scripts",
+        "Answer keys",
+        "Wordlists",
+        "Syllabus.txt",
+        "Student's Book.html",
+        "Backmatter",
+        "Sources"
+      ],
+      "fingerprint": {
+        "files": 768,
+        "bytes": 566680580,
+        "sha256": "756717b1e232c5fee9b2002e05948a710507674d30197307d8c731baafab3756"
+      }
+    },
+    "shared_rendering": {
+      "paths": [
+        "../Base"
+      ],
+      "exclude_markdown": true,
+      "fingerprint": {
+        "files": 19,
+        "bytes": 78587,
+        "sha256": "f7949bab882cb7fd14e9cce69c18dabebe6c08d69e3b6644d232b2fc560dd6cd"
+      }
+    },
+    "saved_pdf": {
+      "paths": [
+        "Student's Book.pdf"
+      ],
+      "fingerprint": {
+        "files": 1,
+        "bytes": 37398505,
+        "sha256": "3a03bfa4a97b1f160fd6758ad39c4e887bdc94a8863f2344b3a41b440c1381e8"
+      }
+    },
+    "audit_criteria": {
+      "paths": [
+        "../Base/design-system/CANONICAL-STYLE.md",
+        "../Base/design-system/GUIDED-DISCOVERY.md",
+        "../Base/design-system/component-contracts.md",
+        "../Base/design-system/asset-policy.md",
+        "../Base/design-system/VISUAL-SPIRIT.md",
+        "../Base/design-system/AUTHOR-REFERENCE-STUDY.json",
+        "../AGENTS.md",
+        "Sources/Visual-personality.json",
+        "EDITORIAL-DIRECTION.md",
+        "EDITORIAL-REFERENCE-STUDY.json",
+        "../../.github/workflows/build-horizons-a1-student-book.yml"
+      ],
+      "fingerprint": {
+        "files": 11,
+        "bytes": 87709,
+        "sha256": "06e6a60b888f3056f9e75dadba800ce9c297c9b290da1e7bbc6f4e22904e32d8"
+      }
+    }
+  },
+  "visual_spirit": {
+    "policy": "../Base/design-system/VISUAL-SPIRIT.md",
+    "primary_emotional_reference": "../Base/design-system/AUTHOR-REFERENCE-STUDY.json",
+    "priority": "Warm adult playfulness, saturated local colour, tactile concept metaphors and protected letter/number graphics; functional consistency does not mean visual uniformity.",
+    "regression_baseline": "8069492116058e45846c79601c66ebd8a3207abb",
+    "protected_register": "Sources/Visual-personality.json",
+    "verification": "Complete including published viewer",
+    "functional_tool_counts": {
+      "grammar": 25,
+      "pronunciation": 1,
+      "skills": 4,
+      "vocabulary": 1,
+      "communication": 3,
+      "writing": 1
+    },
+    "registered_spreads": 36,
+    "protected_selectors": 72,
+    "protected_objects": {
+      "number_bubbles": 11,
+      "number_circle_mm": 10,
+      "numeral_pt": 15,
+      "colour_families": 3,
+      "alphabet_pairs": 26,
+      "alphabet_pt": 15.5
+    },
+    "evidence": "Sources/Expressive-spirit-20261031"
+  }
+}

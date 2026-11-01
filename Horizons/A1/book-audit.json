@@ -1,9 +1,9 @@
 {
-  "schema_version": 2,
-  "updated": "2026-10-31",
-  "status": "Expressive identity correction complete; saved-PDF and live verification complete",
+  "schema_version": 3,
+  "updated": "2026-11-01",
+  "status": "Local source, content, visual and saved-PDF verification complete; publication pending",
   "authority": "Author delegates editorial authority; his own B2 book sets emotional direction. Preserve colourful learning objects and warm adult playfulness alongside coherent functional roles.",
-  "scope": "Units1–8,32lessons and fourpairedreviews.72corepages plus4endcreditpages; front/index/practicebanks/workbook/optionalannexes excluded.",
+  "scope": "Units1–8:32lessons,4pairedreviews,72corepages;38new practice pages and4end-creditpages.114physicalpages, printed5–118. Front matter,index,workbook andoptionalannexes remainfuturework.",
   "baseline": {
     "commit": "fd497fd",
     "safety_branch": "safety/horizons-before-editorial-overhaul-20261031",
@@ -14,6 +14,11 @@
       "safety_branch": "safety/horizons-before-expressive-spirit-20261031",
       "sources": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\expressive-spirit-20261031\\before",
       "pdf": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\expressive-spirit-20261031\\before-book.pdf"
+    },
+    "practice_banks": {
+      "commit": "90161278603403da17ed4857701984e552c1204c",
+      "safety_branch": "safety/horizons-before-practice-banks-20261101",
+      "previous_audit": "Audit archive/2026-11-01-before-practice/book-audit.json"
     }
   },
   "inventory": {
@@ -57,14 +62,13 @@
     ],
     "core_spreads": 36,
     "core_pages": 72,
-    "html_pages": 76,
-    "pdf_pages": 76,
+    "html_pages": 114,
+    "pdf_pages": 114,
     "printed_pages": [
       5,
-      80
+      118
     ],
     "credits_pages": 4,
-    "activity_blocks": 253,
     "lesson_audio_files": 84,
     "production_audio_files": 1,
     "html_audio_controls": 90,
@@ -72,9 +76,24 @@
     "extra_practice_footers": 32,
     "go_to_references": 75,
     "page_placeholders": 0,
-    "focus_panels": 35,
-    "new_generated_object_assets": 12,
-    "external_photo_credit_records": 84
+    "external_photo_credit_records": 81,
+    "practice_masters": 20,
+    "grammar_practice_pages": 16,
+    "vocabulary_practice_pages": 18,
+    "practical_language_pages": 4,
+    "practice_pages": 38,
+    "core_activity_blocks": 253,
+    "practice_activity_blocks": 148,
+    "grammar_practice_activities": 68,
+    "vocabulary_practice_activities": 68,
+    "practical_language_activities": 12,
+    "practice_topics": 71,
+    "distinct_referenced_topics": 70,
+    "blooket_reserved_slots": 16,
+    "practice_specific_generated_assets": 6,
+    "prior_editorial_generated_object_assets": 12,
+    "core_focus_panels": 35,
+    "total_activity_blocks": 401
   },
   "standards": {
     "canonical_style": "../Base/design-system/CANONICAL-STYLE.md",
@@ -86,56 +105,75 @@
     "visual_spirit": "../Base/design-system/VISUAL-SPIRIT.md",
     "author_reference": "../Base/design-system/AUTHOR-REFERENCE-STUDY.json",
     "protected_visual_register": "Sources/Visual-personality.json",
-    "authoring_instructions": "../AGENTS.md"
+    "authoring_instructions": "../AGENTS.md",
+    "practice_banks": "../Base/design-system/PRACTICE-BANKS.md",
+    "practice_reference_study": "Sources/Practice-reference-study.json",
+    "practice_visual_register": "Sources/Practice-personality.json",
+    "practice_teacher_key": "Practice/Answer key.md",
+    "future_blooket_slots": "Practice/Blooket-links.json"
   },
   "editorial_judgment": {
-    "basis": "Warm adult playfulness is restored through large paired-case lettering, saturated round counting objects and bounded content-specific visual devices. Functional colour cues remain coherent. Tactile documents, usable learner products and clear writing/reading space from the prior overhaul are retained. No universal rainbow, copied mascot or new learning-sequence claim for colour changes.",
+    "basis": "Maintain the approved Horizons identity while adding concept-specific grammar explanations and original vocabulary revision games. The first catalogue/reused-picture vocabulary draft was discarded following the author clarification.",
+    "vocabulary_rule": "Use taught words in fresh evidence, clues, decisions, games and learner products; do not reuse the lesson picture dictionary, body model or source pictures. Grammar may briefly repeat a taught model.",
+    "root_review": {
+      "all_added_bank_and_end_credit_pages": 42,
+      "saved_final_png_contact_sequences_viewed": 7,
+      "independent_page_coverage": "All38 practice pages and4credit pages; selected difficult assets and writing fields also checked full size.",
+      "content_and_keys": "Independent checks of every vocabulary bank and controlled keys; clocks, lunchboxes, routes, labels and crossword independently reconciled.",
+      "recipe_key_followup": "Accept C,D,A,B and reasonable A,C,D,B or C,A,D,B: wash before cutting; mix everything last. All current keys updated.",
+      "author_acceptance_claimed": false
+    },
     "independent_saved_pdf_reviews": [
-      "Sources/Expressive-spirit-20261031/expressive-pdf-proof-1-3.json",
-      "Sources/Expressive-spirit-20261031/expressive-pdf-proof-4-6.json",
-      "Sources/Expressive-spirit-20261031/expressive-pdf-proof-7-8.json"
+      "Sources/Practice-banks-20261101/saved-pdf-review-g14-v58.json",
+      "Sources/Practice-banks-20261101/saved-pdf-review-g58-v14.json",
+      "Sources/Practice-banks-20261101/saved-pdf-review-practical-credits.json"
     ],
-    "root_review": "All76savedpages viewed in tencontactsequences; fullsize1A alphabet/numerals and selectedsource/responsefeatures examined. Three editors independently inspected all76savedpages.",
-    "author_acceptance_claimed": false,
-    "current_decision": "Sources/Expressive-spirit-20261031/editorial-decision.json"
+    "current_decision": "Sources/Practice-banks-20261101/editorial-decision.json",
+    "author_acceptance_claimed": false
   },
   "verification": {
     "layout": {
-      "outside_or_marker_faults": 0,
-      "type_failures": 0,
-      "standalone_compiled_parity_failures": 0
+      "pages": 114,
+      "text_faults": [],
+      "response_fields": 368,
+      "clipped_fields": [],
+      "short_open_lines": [],
+      "qr_slots": 16,
+      "qr_collisions": []
     },
-    "computed_appearance": {
-      "pages": 72,
-      "visible_elements": 8650,
-      "computed_colors_type_borders_and_pseudo_styles_match": true,
+    "standalone_assembled_parity": {
+      "standalone_masters": 56,
+      "pages": 110,
       "failures": []
     },
-    "response_space": {
-      "clipped": [],
-      "smallRows": []
-    },
     "pdf": {
-      "pages": 76,
-      "core_pages": 72,
+      "sha256": "389c53a44bb290856d394fc1c6c4880ed16804ef72d4e1bfa0d5ca097d310c6f",
+      "bytes": 37338892,
+      "physical_pages": 114,
       "printed_pages": [
         5,
-        80
+        118
       ],
-      "all_a4": true,
-      "every_learner_word_token_preserved_from_print_DOM": true,
-      "all_footer_numbers_present": true,
-      "pdf_bytes": 37398505,
-      "sha256": "9f30675098315e55a26d246171cbba5a9fc3aff46b961d3b99757cee86a9aef9",
-      "method": "Full native Windows/Edge A4 export of the current compiled HTML with export-only alpha-preserving240dpi media; no post-save image/font rewriting. Reopened with PyMuPDF; all page text/footers/size checked; independently rendered through Poppler for visual proof."
+      "paper_pt": [
+        594.96,
+        841.92
+      ],
+      "a4_with_browser_rounding": true,
+      "all_footer_labels_match": true,
+      "fitz_warnings": [],
+      "pypdf_strict_read": true,
+      "lesson_practice_pdf_links_verified": 75,
+      "internal_named_links": 155,
+      "qr_reserved_labels": 16,
+      "saved_proof_images_unchanged_after_structural_fix": true
     },
     "preservation": {
-      "issues": [],
-      "unchanged_media_audio_scripts_keys_wordlists": 562,
-      "all_retained_generated_surfaces_unchanged": true,
-      "new_raster_or_external_media": false,
-      "new_native_weather_glyphs": 3,
-      "ordinal_normalisation": "Inline span boundaries in7Bdisplay1/st as one printed ordinal; values unchanged."
+      "baseline": "90161278603403da17ed4857701984e552c1204c",
+      "core_pages": 72,
+      "core_words_unchanged_outside_go_to_practice_references": true,
+      "core_layout_geometry_differences": [],
+      "existing_core_images_recordings_and_scripts_changed": false,
+      "new_vocabulary_core_raster_reuses": 0
     },
     "protected_object_regression": {
       "current_design_passes": true,
@@ -182,20 +220,22 @@
       "scope": "Protected affordances only; manual emotional/editorial review remains required."
     },
     "audio": {
-      "issues": [],
-      "all_preexisting_audio_and_script_files_unchanged": 223,
-      "all_mp3_files_decode": 85,
-      "lesson_mp3s": 84,
+      "existing_core_recordings_and_scripts_unchanged": true,
+      "preflight_scripts": 98,
+      "forbidden_tag_issues": [],
       "new_audio_generated": false,
-      "subjective_listening_review": false
+      "subjective_listening_review": false,
+      "html_controls": 90
     },
     "live_viewer": {
-      "completed": true,
-      "all90controls_play_pause": true,
-      "print_ui_hidden": true
+      "completed": false,
+      "status": "pending publication"
     },
-    "evidence_directory": "Sources/Expressive-spirit-20261031",
-    "prior_editorial_evidence": "Sources/Editorial-overhaul-20261031"
+    "evidence_directory": "Sources/Practice-banks-20261101",
+    "prior_editorial_evidence": [
+      "Sources/Editorial-overhaul-20261031",
+      "Sources/Expressive-spirit-20261031"
+    ]
   },
   "new_objects": "Images/Editorial-objects/manifest.json",
   "resource_registry": "Sources/Lesson-resources.json",
@@ -340,13 +380,15 @@
         "Syllabus.txt",
         "Student's Book.html",
         "Backmatter",
-        "Sources"
+        "Sources",
+        "Practice"
       ],
       "fingerprint": {
-        "files": 768,
-        "bytes": 566680580,
-        "sha256": "756717b1e232c5fee9b2002e05948a710507674d30197307d8c731baafab3756"
-      }
+        "files": 835,
+        "bytes": 590989446,
+        "sha256": "625fc83da9e1ba67d10cb9a100976aa6870635c4a2f07f4ac5e62447e8b24626"
+      },
+      "normalize_text_line_endings": true
     },
     "shared_rendering": {
       "paths": [
@@ -354,10 +396,11 @@
       ],
       "exclude_markdown": true,
       "fingerprint": {
-        "files": 19,
-        "bytes": 78587,
-        "sha256": "f7949bab882cb7fd14e9cce69c18dabebe6c08d69e3b6644d232b2fc560dd6cd"
-      }
+        "files": 21,
+        "bytes": 86355,
+        "sha256": "4f3816521fba017d5bad6bfbde3beb55bf7c69d92136f41d6a4312e4585f751d"
+      },
+      "normalize_text_line_endings": true
     },
     "saved_pdf": {
       "paths": [
@@ -365,9 +408,10 @@
       ],
       "fingerprint": {
         "files": 1,
-        "bytes": 37398505,
-        "sha256": "3a03bfa4a97b1f160fd6758ad39c4e887bdc94a8863f2344b3a41b440c1381e8"
-      }
+        "bytes": 37338892,
+        "sha256": "60234a488eb2313922150e45bc8cdcb444341dbdc28d53384c9b62090368636b"
+      },
+      "normalize_text_line_endings": true
     },
     "audit_criteria": {
       "paths": [
@@ -381,13 +425,18 @@
         "Sources/Visual-personality.json",
         "EDITORIAL-DIRECTION.md",
         "EDITORIAL-REFERENCE-STUDY.json",
-        "../../.github/workflows/build-horizons-a1-student-book.yml"
+        "../../.github/workflows/build-horizons-a1-student-book.yml",
+        "../Base/design-system/PRACTICE-BANKS.md",
+        "BOOK-AUDIT.md",
+        "Sources/Practice-personality.json",
+        "Sources/Practice-reference-study.json"
       ],
       "fingerprint": {
-        "files": 11,
-        "bytes": 87709,
-        "sha256": "06e6a60b888f3056f9e75dadba800ce9c297c9b290da1e7bbc6f4e22904e32d8"
-      }
+        "files": 15,
+        "bytes": 119838,
+        "sha256": "68d638be016b368b14f448c7c92c08fe83c1d1fb4ed8e01d51bc593eb1c2393e"
+      },
+      "normalize_text_line_endings": true
     }
   },
   "visual_spirit": {
@@ -396,7 +445,7 @@
     "priority": "Warm adult playfulness, saturated local colour, tactile concept metaphors and protected letter/number graphics; functional consistency does not mean visual uniformity.",
     "regression_baseline": "8069492116058e45846c79601c66ebd8a3207abb",
     "protected_register": "Sources/Visual-personality.json",
-    "verification": "Complete including published viewer",
+    "verification": "Protected core objects and all practice pages locally verified; current publication pending",
     "functional_tool_counts": {
       "grammar": 25,
       "pronunciation": 1,
@@ -406,7 +455,7 @@
       "writing": 1
     },
     "registered_spreads": 36,
-    "protected_selectors": 72,
+    "protected_selectors": 73,
     "protected_objects": {
       "number_bubbles": 11,
       "number_circle_mm": 10,
@@ -416,5 +465,22 @@
       "alphabet_pt": 15.5
     },
     "evidence": "Sources/Expressive-spirit-20261031"
+  },
+  "practice": {
+    "manifest": "Practice/manifest.json",
+    "teacher_key": "Practice/Answer key.md",
+    "fresh_assets": "Practice/Images/manifest.json",
+    "qr_registry": "Practice/Blooket-links.json",
+    "counts": {
+      "grammar_pages": 16,
+      "vocabulary_pages": 18,
+      "communication_pages": 4,
+      "total_practice_pages": 38,
+      "forward_references": 75,
+      "distinct_referenced_destinations": 70,
+      "total_authored_destinations": 71
+    },
+    "unique_vocabulary_resources": true,
+    "games_created_in_blooket": false
   }
 }

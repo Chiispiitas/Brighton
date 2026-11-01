@@ -1,0 +1,181 @@
+{
+  "pdf_path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Student's Book.pdf",
+  "pdf_sha256": "87eced40d37f873410e0ef26c5477e01db6bbaf34484fe284fe21ce8b3afefad",
+  "pages": [
+    {
+      "physical": 81,
+      "printed": 85,
+      "file": "pdf-proof/page-081.png",
+      "sha256": "40c8f775bcf5aafbeada100122e060832614a8551a14c9fae3d7e2d148f1f399"
+    },
+    {
+      "physical": 82,
+      "printed": 86,
+      "file": "pdf-proof/page-082.png",
+      "sha256": "4aab17f834941f83bc62f954170916894d86377ed9771b1f2c808803b0eed462"
+    },
+    {
+      "physical": 83,
+      "printed": 87,
+      "file": "pdf-proof/page-083.png",
+      "sha256": "6db653401f5fb6fefb0cc1d2ac97c467a39d02e778d380897f2c103d12c11584"
+    },
+    {
+      "physical": 84,
+      "printed": 88,
+      "file": "pdf-proof/page-084.png",
+      "sha256": "6afec49c248594dd349a0e3f7360e268879e3ee1f0d4d58a93dc07b2c282d040"
+    },
+    {
+      "physical": 85,
+      "printed": 89,
+      "file": "pdf-proof/page-085.png",
+      "sha256": "cd6e12dc4555c96c0406ea3de29c257f12d0d631712c8a75eb7ef115d5254b76"
+    },
+    {
+      "physical": 86,
+      "printed": 90,
+      "file": "pdf-proof/page-086.png",
+      "sha256": "2ba8a60111682642f255197259f5b7134a1fe0783f3cc660a5e39151d2f5131e"
+    },
+    {
+      "physical": 87,
+      "printed": 91,
+      "file": "pdf-proof/page-087.png",
+      "sha256": "3f28bde50f3605df3a92157b73d105a79d7a23188541cd04fd0a1d1703805d7a"
+    },
+    {
+      "physical": 88,
+      "printed": 92,
+      "file": "pdf-proof/page-088.png",
+      "sha256": "3e3e3b11f83e9bfdf355e35633b2aa35472f01f4dbf6651cba683fa83ae08b67"
+    },
+    {
+      "physical": 89,
+      "printed": 93,
+      "file": "pdf-proof/page-089.png",
+      "sha256": "c47256dc6b1d4bd6d8ffa010f200094d8f5cd4feb7a326813fd19431fc49ef36"
+    },
+    {
+      "physical": 90,
+      "printed": 94,
+      "file": "pdf-proof/page-090.png",
+      "sha256": "0436831258d945b4bffa82054b87f8bd31639d457554b5cc3a9d062927e2fb5d"
+    },
+    {
+      "physical": 91,
+      "printed": 95,
+      "file": "pdf-proof/page-091.png",
+      "sha256": "e08ae409e85142bb3f5b0d27241f074141e888d578ee7c0c4159e76d1b7f79b0"
+    },
+    {
+      "physical": 92,
+      "printed": 96,
+      "file": "pdf-proof/page-092.png",
+      "sha256": "939ae0ce2492be3300c430662d64e1977fcf4b560a80fe753f2661245cb332f4"
+    },
+    {
+      "physical": 93,
+      "printed": 97,
+      "file": "pdf-proof/page-093.png",
+      "sha256": "537625c80c1698dfd1878f921a73579d202fecead476497422e7581a8ec58bb4"
+    },
+    {
+      "physical": 94,
+      "printed": 98,
+      "file": "pdf-proof/page-094.png",
+      "sha256": "22e667cc4a0e2386ef5214dc4021440b3e2e0f0f5732415acc95c6bc8aeb26f9"
+    },
+    {
+      "physical": 95,
+      "printed": 99,
+      "file": "pdf-proof/page-095.png",
+      "sha256": "7c8397d0e0681cfdf4fe9bbf53a81896a1978637efe346480f686f7f51f42a3f"
+    },
+    {
+      "physical": 96,
+      "printed": 100,
+      "file": "pdf-proof/page-096.png",
+      "sha256": "9e59f3e2b430ab3328adee995c98636696381eddbd0160e6ec99298e2255f2ec"
+    },
+    {
+      "physical": 97,
+      "printed": 101,
+      "file": "pdf-proof/page-097.png",
+      "sha256": "ab7931b825f5150146bdf45517ef70414b34a4532ded8a3ddfb667a0872ac8e0"
+    }
+  ],
+  "reviewer": "independent grammar-5-8 agent",
+  "review_basis": "Current new-game/QR saved PDF, all17 assigned Poppler page images inspected both in two contacts and individually at full size; source/key cross-checks for vocabulary clock/color/recipe resources. Prior draft proof is superseded for this scope.",
+  "status": "PASS: no visual release blocker in assigned17pages",
+  "full_size_pages": [
+    81,
+    82,
+    83,
+    84,
+    85,
+    86,
+    87,
+    88,
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97
+  ],
+  "checks": {
+    "G6_printed88_final_7mm_response_rule": "fully visible; no clipping",
+    "G8_printed92_final_message_7mm_rules": "both fully visible; no clipping",
+    "G8_printed91_open_response": "three120mm rules are clear and stop before the QR placeholder",
+    "assigned_qr_placeholders": {
+      "grammar_printed": [
+        85,
+        87,
+        89,
+        91
+      ],
+      "vocabulary_printed": [
+        93,
+        96,
+        98,
+        100
+      ],
+      "count": 8,
+      "judgment": "All8 clear learner copy and response areas; each is plainly a reserved space, not a working QR code."
+    },
+    "grammar_diagrams": "Readable ordinary type and selective cobalt target emphasis; bags, object relations, oriented map, explicit date anchor and verb contrasts preserve accurate visual meaning.",
+    "vocabulary_new_picture_evidence": "Seven objects, four daily-routine panels and four distinct lunchboxes show the task-relevant items/actions with no clipping; current source data controls named ownership/routine interpretation.",
+    "clock_values": {
+      "A": "7:20",
+      "B": "8:40",
+      "C": "6:10",
+      "D": "9:50",
+      "incorrect_printed_captions": [
+        "C",
+        "D"
+      ],
+      "judgment": "Actual rendered hour/minute hands agree with corrected keys, including proportional hour advance."
+    },
+    "color_paths": {
+      "1": "A→B→C→D",
+      "2": "I→J→F→G→H",
+      "3": "A→E→I→J",
+      "judgment": "Colors and side-sharing geometry agree; white remains outlined."
+    },
+    "recipe_symbols": "Oil, spoon, water and knife cues agree with Add/Mix/Wash/Cut repairs.",
+    "games_and_outcomes": "Private club choice, name/code recall, timed source memory, private schedule change, true unknown availability, food selection and partner message checks all have meaningful actions."
+  },
+  "nonblocking_key_note": {
+    "printed_page": 101,
+    "task": 6,
+    "finding": "Model recipe order C,D,A,B is logical, but the oil-to-empty-bowl step can also happen before or between washing and cutting.",
+    "recommendation": "Accept A,C,D,B and C,A,D,B if wash precedes cut and mixing is last; do not force an unsupported unique oil-add time.",
+    "root_notified": true
+  },
+  "unresolved_visual_blockers": [],
+  "author_acceptance_claimed": false
+}

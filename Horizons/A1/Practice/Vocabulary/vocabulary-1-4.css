@@ -1,0 +1,124 @@
+/* V1–V4: original practice games, fresh evidence, no core picture catalogs. */
+.vp14-page {--vp14-green:#246b4b;--vp14-dark:#1b573c;font-size:10pt;line-height:1.38;}
+.vp14-page .practice-header h1 {font-size:23pt;}
+.vp14-page .vp14-body {display:flex;flex-direction:column;gap:4mm;}
+.vp14-page .practice-topic {margin:0;}
+.vp14-page .practice-topic > h2 {font-size:12.5pt;margin:0 0 2mm;line-height:1.2;}
+.vp14-page .practice-topic > h2 small {font-size:8.5pt;white-space:nowrap;}
+.vp14-page .practice-topic > h2 small a {color:inherit;text-decoration:none;}
+.vp14-page .practice-task {margin-top:2.4mm;}
+.vp14-page .practice-task h3 {font-size:9.2pt;line-height:1.35;margin:0 0 1.8mm;}
+.vp14-page p {margin:0 0 1.5mm;font-size:10pt;}
+.vp14-page .vp14-play {margin-top:1.5mm;font-size:10pt;line-height:1.35;color:#49554e;}
+.vp14-page .vp14-list {margin:0;padding-left:5mm;line-height:1.4;}
+.vp14-page .vp14-list > li {margin:0 0 1.4mm;padding-left:.4mm;font-size:10pt;}
+.vp14-page .vp14-cols2 {display:grid;grid-template-columns:1fr 1fr;gap:.7mm 7mm;}
+.vp14-page .practice-gap {height:5.5mm;max-width:100%;}
+.vp14-page .practice-lines > span {height:7mm;}
+.vp14-page .vp14-role-grid {display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;}
+.vp14-page .vp14-role-grid > div {padding:2mm 2.5mm;border-top:.6mm solid #b4512b;background:#fcf3ec;}
+.vp14-page .vp14-role-grid b {display:block;font-size:9pt;color:#7c3c23;margin-bottom:1mm;}
+.vp14-page .vp14-role-grid p {margin:0;}
+.vp14-page .vp14-four-fields {display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;margin-top:1mm;}
+.vp14-page .vp14-four-fields p {margin:0;white-space:nowrap;}
+.vp14-page .vp14-passwords {display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;margin-bottom:2mm;}
+.vp14-page .vp14-passwords > div {display:flex;gap:2mm;align-items:center;border-bottom:.5mm solid #597ca8;padding:1.8mm 0;}
+.vp14-page .vp14-passwords b {display:grid;place-items:center;width:6mm;height:6mm;border-radius:50%;background:#245b9a;color:white;font-size:10pt;}
+.vp14-page .vp14-passwords span {font-size:14pt;color:#28537c;letter-spacing:.1mm;white-space:nowrap;}
+.vp14-page .vp14-lockers {display:grid;grid-template-columns:1fr 1fr;gap:2mm 5mm;}
+.vp14-page .vp14-lockers > div {position:relative;padding:1.6mm 2.5mm 1.6mm 9mm;border:.25mm solid #b4c5bf;border-radius:1mm;}
+.vp14-page .vp14-lockers b {position:absolute;left:2.5mm;top:2mm;color:#8f123f;}
+.vp14-page .vp14-lockers p {margin:0;}
+.vp14-page .vp14-lockers span {display:block;color:#969e9b;font-size:20pt;line-height:1.1;letter-spacing:2mm;}
+.vp14-page .vp14-member-notes {display:grid;grid-template-columns:1fr 1fr;gap:5mm;margin-bottom:1.5mm;}
+.vp14-page .vp14-member-notes > section {border-left:1mm solid #47896b;padding:2mm 3mm;background:#f1f6f0;}
+.vp14-page .vp14-member-notes h3 {font:700 13pt/1.2 var(--hz-font-sans);color:#22533c;margin:0 0 1mm;}
+.vp14-page .vp14-member-notes p {margin:0 0 1mm;}
+.vp14-page .vp14-mixed-card {display:grid;grid-template-columns:repeat(4,1fr);gap:4mm;padding:2mm 3mm;border:.3mm dashed #8e9a94;margin-bottom:1.5mm;}
+.vp14-page .vp14-mixed-card p {margin:0;font-size:9pt;}
+.vp14-page .vp14-mixed-card b {display:block;margin-top:1mm;font-size:10pt;}
+.vp14-page .vp14-duty-board {display:grid;grid-template-columns:repeat(3,1fr);gap:3mm;}
+.vp14-page .vp14-duty-board > div {padding:2mm 2.5mm;background:#fcf6ed;border-top:.6mm solid #ba7136;}
+.vp14-page .vp14-duty-board b {display:block;font-size:10pt;font-weight:600;margin-bottom:1.5mm;}
+.vp14-page .vp14-duty-board s {font-size:10pt;color:#675f55;}
+.vp14-page .vp14-six-fields {display:grid;grid-template-columns:repeat(3,1fr);gap:.5mm 3mm;margin:1mm 0;}
+.vp14-page .vp14-six-fields p {margin:0;}
+.vp14-page .vp14-badges {display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;margin-bottom:2mm;}
+.vp14-page .vp14-badges > div {padding:2mm 0;border-bottom:.4mm solid #6b8f7a;text-align:center;font-size:10pt;white-space:nowrap;}
+.vp14-page .vp14-badges span {font-size:16pt;color:#929d96;vertical-align:baseline;}
+.vp14-page .vp14-postcards {display:grid;grid-template-columns:repeat(5,1fr);gap:3mm;}
+.vp14-page .vp14-postcards > div {border:.25mm solid #a4b3a9;padding:2mm;line-height:1.35;min-height:19mm;background:linear-gradient(135deg,#fcf8ed 90%,#e0d5ba 90%);}
+.vp14-page .vp14-postcards b {display:block;color:#8f123f;margin-bottom:1mm;font-size:12pt;}
+.vp14-page .vp14-mailbags {display:grid;grid-template-columns:repeat(5,1fr);gap:3mm;margin:2mm 0;}
+.vp14-page .vp14-mailbags > div {padding:2mm 1mm;border-radius:3mm 3mm 1mm 1mm;background:#eef4ed;text-align:center;}
+.vp14-page .vp14-mailbags span:first-child {display:block;margin-bottom:1mm;font-size:10pt;}
+.vp14-page .vp14-room-cards {display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-bottom:2mm;}
+.vp14-page .vp14-room-cards > section {border-left:1mm solid #477b91;padding:2mm 3mm;background:#f0f5f7;}
+.vp14-page .vp14-room-cards section+section {border-color:#a44d43;background:#fbf3ef;}
+.vp14-page .vp14-room-cards b {font-size:12pt;color:#2a4e60;}
+.vp14-page .vp14-room-cards p {margin:1mm 0 0;}
+.vp14-page .vp14-items-scene {margin:0;}
+.vp14-page .vp14-items-scene img {display:block;width:100%;height:57mm;object-fit:contain;}
+.vp14-page .vp14-owner-notes {display:flex;justify-content:space-between;gap:4mm;border-top:.3mm solid #a1b6a7;padding-top:2mm;margin-top:1mm;}
+.vp14-page .vp14-owner-notes p {flex:1;margin:0;}
+.vp14-page .vp14-owner-notes b {color:#225b42;}
+.vp14-page .vp14-three-fields {display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:3mm;margin-top:1mm;}
+.vp14-page .vp14-three-fields p {margin:0;}
+.vp14-page .vp14-clocks {display:grid;grid-template-columns:repeat(4,1fr);gap:5mm;}
+.vp14-page .vp14-clocks figure {margin:0;text-align:center;}
+.vp14-page .vp14-clocks svg {height:26mm;width:26mm;display:block;margin:auto;}
+.vp14-page .vp14-clocks svg text {font:12px Arial,sans-serif;}
+.vp14-page .vp14-clocks figcaption {margin-top:1mm;font-size:10pt;white-space:nowrap;}
+.vp14-page .vp14-clocks b {color:#8f123f;margin-right:1mm;}
+.vp14-page .vp14-family-chat {display:flex;align-items:center;gap:3mm;padding:3mm;background:#f0f5f0;border-radius:0 4mm 4mm 4mm;margin-bottom:2mm;}
+.vp14-page .vp14-family-chat p {margin:0;}
+.vp14-page .vp14-avatar {display:grid;place-items:center;flex:none;width:11mm;height:11mm;border-radius:50%;background:#2e7452;color:white;font-size:20pt;}
+.vp14-page .vp14-color-board {display:grid;grid-template-columns:repeat(4,1fr);gap:0;border:.3mm solid #a4b0aa;margin-bottom:2mm;}
+.vp14-page .vp14-color-board > div {display:flex;align-items:center;justify-content:center;gap:4mm;min-height:17mm;border:.2mm solid #b9c2bc;}
+.vp14-page .vp14-color-board b {font-size:9pt;color:#415348;}
+.vp14-page .vp14-color-board span {display:block;width:15mm;height:11mm;border:.2mm solid #747778;border-radius:44% 56% 39% 61%/63% 42% 58% 37%;}
+.vp14-page .vp14-photo-plan {display:grid;grid-template-columns:104mm 1fr;align-items:center;gap:5mm;margin-bottom:1.5mm;}
+.vp14-page .vp14-photo-four,.vp14-page .vp14-picnic-four {position:relative;margin:0;}
+.vp14-page .vp14-photo-four img,.vp14-page .vp14-picnic-four img {display:block;width:100%;height:auto;object-fit:contain;}
+.vp14-page .vp14-photo-four figcaption,.vp14-page .vp14-picnic-four figcaption {position:absolute;inset:0;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;pointer-events:none;}
+.vp14-page .vp14-photo-four figcaption span,.vp14-page .vp14-picnic-four figcaption span {align-self:end;justify-self:start;background:#fffefa;border-radius:50%;width:5mm;height:5mm;display:grid;place-items:center;color:#9a1748;font-size:10pt;margin:1.5mm;}
+.vp14-page .vp14-plan-strip {border-left:.7mm solid #b26837;padding-left:3mm;}
+.vp14-page .vp14-plan-strip p {margin:0 0 3mm;}
+.vp14-page .vp14-plan-strip b {display:block;color:#8a4925;}
+.vp14-page .vp14-calendar {border-collapse:collapse;width:100%;font-size:10pt;margin-bottom:2mm;}
+.vp14-page .vp14-calendar th,.vp14-page .vp14-calendar td {border-bottom:.25mm solid #b7c4ba;padding:2mm .5mm;text-align:center;font-size:10pt;}
+.vp14-page .vp14-calendar thead th {font-size:9pt;color:#205d3f;border-top:.7mm solid #50876a;}
+.vp14-page .vp14-calendar tbody th {color:#8f123f;text-align:left;}
+.vp14-page .vp14-venues {display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;margin-bottom:2mm;}
+.vp14-page .vp14-venues > section {border-top:1mm solid #9e4832;padding:2mm 3mm;background:#f8f3ed;}
+.vp14-page .vp14-venues b {display:block;font-size:11pt;color:#7b3d29;margin-bottom:1.5mm;}
+.vp14-page .vp14-venues p {margin:0;}
+.vp14-page .vp14-lunch-choice {display:grid;grid-template-columns:94mm 1fr;gap:5mm;align-items:center;margin-bottom:1.5mm;}
+.vp14-page .vp14-lunch-choice > div > p {padding:1.5mm 0;border-bottom:.25mm solid #c6d1c7;margin:0;}
+.vp14-page .vp14-lunch-choice > div > p:last-child {border:0;}
+.vp14-page .vp14-taste-tickets {display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;margin:1mm 0 2mm;}
+.vp14-page .vp14-taste-tickets span {padding:1.5mm 2mm;border:.3mm dashed #a58257;background:#fcf7ed;text-align:center;}
+.vp14-page .vp14-recipe-cards {display:grid;grid-template-columns:1fr 1fr;gap:4mm;margin-bottom:2mm;}
+.vp14-page .vp14-recipe-cards > div {display:grid;grid-template-columns:14mm 1fr;gap:3mm;align-items:center;padding:3mm;background:#f4f5ed;border-top:.7mm solid #8a9a5b;}
+.vp14-page .vp14-recipe-cards svg {display:block;width:12mm;height:19mm;}
+.vp14-page .vp14-recipe-cards section > b {color:#8f123f;font-size:12pt;}
+.vp14-page .vp14-recipe-cards p {margin:1mm 0 0;}
+.vp14-page .vp14-rescue {display:grid;grid-template-columns:repeat(3,1fr);gap:4mm;margin-bottom:2mm;}
+.vp14-page .vp14-rescue > div {display:flex;flex-direction:column;align-items:center;text-align:center;padding:2.5mm 1mm;border-bottom:.5mm solid #b4683e;}
+.vp14-page .vp14-rescue > div > span:nth-child(2) {font-size:18pt;color:#a3502b;line-height:1.15;}
+.vp14-page .vp14-rescue .vp14-bread {padding:2mm 3mm;color:#75461f;background:#f2d8b0;border-radius:45% 45% 3mm 3mm;}
+.vp14-page .vp14-rescue b {font-size:10pt;margin:1.5mm 0;color:#493e36;}
+.vp14-page .vp14-rescue p {margin:0;}
+.vp14-page .vp14-share-note {padding:1mm 4mm 2mm;border-left:.35mm solid #d19d76;border-top:.6mm solid #b36836;margin-top:2mm;}
+
+.vp14-page .vp14-duty-board > div {position:relative;padding-left:7mm;}
+.vp14-page .vp14-duty-number {position:absolute;left:2mm;top:2mm;color:#8f123f;font-size:9pt;font-weight:700;}
+
+.vp14-page .vp14-role-grid > div {min-height:24mm;}
+.vp14-page .vp14-passwords span {font-size:18pt;}
+.vp14-page .vp14-lockers .vp14-code {display:flex;gap:2mm;margin-top:1.5mm;letter-spacing:0;}
+.vp14-page .vp14-code i {display:block;width:10mm;height:8mm;background:white;border:.25mm solid #899b90;border-radius:.7mm;}
+.vp14-page .vp14-photo-plan {display:block;}
+.vp14-page .vp14-photo-four {width:140mm;max-width:100%;margin:auto;}
+.vp14-page .vp14-plan-strip {display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;border-left:0;border-top:.6mm solid #b26837;margin-top:2mm;padding:2mm 0 0;}
+.vp14-page .vp14-plan-strip p {margin:0;}

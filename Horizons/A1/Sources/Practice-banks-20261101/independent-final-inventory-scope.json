@@ -1,0 +1,323 @@
+{
+  "reviewer": "independent grammar_1_4 agent",
+  "scope": "Final audit, inventory, keys, vocabulary freshness and staged scope; read-only source review",
+  "pdf_sha256": "389c53a44bb290856d394fc1c6c4880ed16804ef72d4e1bfa0d5ca097d310c6f",
+  "counts": {
+    "grammar_masters": 8,
+    "grammar_pages": 16,
+    "grammar_activities": 68,
+    "vocabulary_masters": 8,
+    "vocabulary_pages": 18,
+    "vocabulary_activities": 68,
+    "communication_masters": 4,
+    "communication_pages": 4,
+    "communication_activities": 12,
+    "assembled_pages": 114,
+    "total_activities": 401,
+    "core_activities": 253,
+    "blooket_slots": 16,
+    "topics": 71,
+    "fresh_assets": 6,
+    "evidence_reports": 15,
+    "practice_activities": 148
+  },
+  "verified_audit_inventory": {
+    "grammar_practice_pages": 16,
+    "vocabulary_practice_pages": 18,
+    "practical_language_pages": 4,
+    "grammar_practice_activities": 68,
+    "vocabulary_practice_activities": 68,
+    "practical_language_activities": 12,
+    "practice_activity_blocks": 148,
+    "total_activity_blocks": 401,
+    "core_activity_blocks": 253,
+    "blooket_reserved_slots": 16,
+    "practice_specific_generated_assets": 6,
+    "practice_topics": 71,
+    "html_pages": 114,
+    "external_photo_credit_records": 81
+  },
+  "master_activity_counts": {
+    "G1": 9,
+    "G2": 9,
+    "G3": 10,
+    "G4": 9,
+    "G5": 8,
+    "G6": 7,
+    "G7": 8,
+    "G8": 8,
+    "V1": 10,
+    "V2": 8,
+    "V3": 8,
+    "V4": 8,
+    "V5": 7,
+    "V6": 8,
+    "V7": 7,
+    "V8": 12,
+    "C5": 3,
+    "C6": 3,
+    "C7": 3,
+    "C8": 3
+  },
+  "native_game_resource_counts": {
+    "cards": 11,
+    "game": 17,
+    "map": 4,
+    "calendar": 3,
+    "receipt": 1,
+    "ticket": 2,
+    "forecast": 1,
+    "message": 1
+  },
+  "blank_blooket_pairs": [
+    [
+      "grammar",
+      1
+    ],
+    [
+      "grammar",
+      2
+    ],
+    [
+      "grammar",
+      3
+    ],
+    [
+      "grammar",
+      4
+    ],
+    [
+      "grammar",
+      5
+    ],
+    [
+      "grammar",
+      6
+    ],
+    [
+      "grammar",
+      7
+    ],
+    [
+      "grammar",
+      8
+    ],
+    [
+      "vocabulary",
+      1
+    ],
+    [
+      "vocabulary",
+      2
+    ],
+    [
+      "vocabulary",
+      3
+    ],
+    [
+      "vocabulary",
+      4
+    ],
+    [
+      "vocabulary",
+      5
+    ],
+    [
+      "vocabulary",
+      6
+    ],
+    [
+      "vocabulary",
+      7
+    ],
+    [
+      "vocabulary",
+      8
+    ]
+  ],
+  "fresh_asset_hashes_and_uses": [
+    {
+      "file": "U2-personal-items-v1.png",
+      "hash_matches": true,
+      "pages": [
+        96
+      ]
+    },
+    {
+      "file": "U3-routines-v1.png",
+      "hash_matches": true,
+      "pages": [
+        98
+      ]
+    },
+    {
+      "file": "U4-picnic-boxes-v1.png",
+      "hash_matches": true,
+      "pages": [
+        100
+      ]
+    },
+    {
+      "file": "U5-clothes-v1.png",
+      "hash_matches": true,
+      "pages": [
+        102
+      ]
+    },
+    {
+      "file": "U6-apartment-v1.png",
+      "hash_matches": true,
+      "pages": [
+        105
+      ]
+    },
+    {
+      "file": "U8-travelers-v1.png",
+      "hash_matches": true,
+      "pages": [
+        110
+      ]
+    }
+  ],
+  "core_masters_unchanged_except_practice_links_and_page_targets": 36,
+  "all_75_forward_destinations": {
+    "practice_pages": 38,
+    "masters": 20,
+    "authored_topics": 71,
+    "resolved_lesson_links": 75,
+    "raster_uses": 6,
+    "structural_checks": "passed"
+  },
+  "staged_files": 117,
+  "cache_staged": false,
+  "unstaged_changes": "Horizons/A1/Practice/Answer key.md\u0000Horizons/A1/Practice/practice-bank.css\u0000Horizons/A1/Student's Book.html",
+  "untracked_paths": [
+    "Horizons/Base/build/__pycache__/check-book-audit.cpython-312.pyc"
+  ],
+  "publication_pending": true,
+  "author_acceptance_claimed": false,
+  "source_files_changed_by_this_review": false,
+  "errors": [],
+  "notes": [
+    "No content, key, inventory, asset, QR or core-preservation blocker found.",
+    "Final publication and author acceptance are not claimed.",
+    "Read-only source verification; only this scratch JSON written.",
+    "36 staged core lesson/review changes exactly reduce to .hz-go-to destination markup and .hz-page IDs; existing learning text/imagery is preserved.",
+    "117 staged files contain authorized practices, keys, fresh resources, audit/evidence, compiler/viewer/build integration and core-link updates; pre-existing __pycache__ remains unstaged."
+  ],
+  "result": "verified; expected root fingerprint refresh and re-stage pending",
+  "current_audit_count_comparison": {
+    "grammar_practice_pages": {
+      "documented": 16,
+      "observed": 16,
+      "matches": true
+    },
+    "vocabulary_practice_pages": {
+      "documented": 18,
+      "observed": 18,
+      "matches": true
+    },
+    "practical_language_pages": {
+      "documented": 4,
+      "observed": 4,
+      "matches": true
+    },
+    "grammar_practice_activities": {
+      "documented": 68,
+      "observed": 68,
+      "matches": true
+    },
+    "vocabulary_practice_activities": {
+      "documented": 68,
+      "observed": 68,
+      "matches": true
+    },
+    "practical_language_activities": {
+      "documented": 12,
+      "observed": 12,
+      "matches": true
+    },
+    "practice_activity_blocks": {
+      "documented": 148,
+      "observed": 148,
+      "matches": true
+    },
+    "total_activity_blocks": {
+      "documented": 401,
+      "observed": 401,
+      "matches": true
+    },
+    "core_activity_blocks": {
+      "documented": 253,
+      "observed": 253,
+      "matches": true
+    },
+    "blooket_reserved_slots": {
+      "documented": 16,
+      "observed": 16,
+      "matches": true
+    },
+    "practice_specific_generated_assets": {
+      "documented": 6,
+      "observed": 6,
+      "matches": true
+    },
+    "practice_topics": {
+      "documented": 71,
+      "observed": 71,
+      "matches": true
+    },
+    "html_pages": {
+      "documented": 114,
+      "observed": 114,
+      "matches": true
+    },
+    "external_photo_credit_records": {
+      "documented": 81,
+      "observed": 81,
+      "matches": true
+    }
+  },
+  "key_alignment": {
+    "all_20_masters_have_controlled_and_open_game_checks": true,
+    "split_and_consolidated_vocabulary_recipe_keys_synchronized": true,
+    "accepted_recipe_orders": [
+      "C,D,A,B",
+      "A,C,D,B",
+      "C,A,D,B"
+    ],
+    "prior_independent_content_reviews": "All current vocabulary masters reviewed independently; current proof covered grammar G1-G4 and vocabulary V5-V8 in this agent final saved-PDF review."
+  },
+  "unique_vocabulary_revision_resources": {
+    "all_8_unit_personality_records_describe_original_revision_games": true,
+    "native_resources": {
+      "cards": 11,
+      "game": 17,
+      "map": 4,
+      "calendar": 3,
+      "receipt": 1,
+      "ticket": 2,
+      "forecast": 1,
+      "message": 1
+    },
+    "vocabulary_core_raster_reuses": 0,
+    "fresh_generated_rasters": 6,
+    "all_asset_hashes_match_registry": true,
+    "all_asset_printed_uses_match_registry": true,
+    "no_old_body_model_reuse": true
+  },
+  "audit_claims": {
+    "local_complete_live_pending_matches_current_release_state": true,
+    "author_acceptance_claimed": false,
+    "evidence_reports": 15,
+    "grammar_short_model_repetition_permitted": true,
+    "vocabulary_second_presentation_prohibited": true
+  },
+  "finalization_pending": {
+    "book_sources_fingerprint_refresh": true,
+    "reason": "Root is copying final review evidence and screen-anchor delta; latest source/key/CSS changes follow staged snapshot. Expected finalization, not a content blocker.",
+    "final_restage_required_for_latest_key_css_and_compiled_html": true,
+    "root_notified": true,
+    "freshness_check_observed": "STALE audit evidence: book_sources"
+  }
+}

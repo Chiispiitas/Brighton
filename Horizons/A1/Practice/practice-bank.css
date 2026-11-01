@@ -1,0 +1,48 @@
+/* Horizons practice banks: shared reading and writing roles. Unit diagrams stay local. */
+.hz-practice-page {--hz-unit:#245b9a;--hz-unit-dark:#204f86;--practice-accent:#245b9a;font-size:10pt;line-height:1.4;}
+.hz-practice-page[data-practice-bank="vocabulary"] {--hz-unit:#247348;--hz-unit-dark:#1a5e38;--practice-accent:#247348;}
+.hz-practice-page[data-practice-bank="communication"] {--hz-unit:#78458f;--hz-unit-dark:#68367f;--practice-accent:#78458f;}
+.hz-practice-page .practice-header {border-bottom:.4mm solid var(--practice-accent);padding-bottom:3mm;margin-bottom:5mm;}
+.hz-practice-page .practice-header p {margin:0 0 1.5mm;font-size:8.5pt;font-weight:700;letter-spacing:.035em;color:var(--hz-unit-dark);}
+.hz-practice-page .practice-header h1 {margin:0;font:750 23pt/1.12 var(--hz-font-sans);color:#232629;letter-spacing:-.025em;}
+.hz-practice-page .practice-header .practice-subtitle {font-size:9pt;letter-spacing:0;font-weight:400;color:#4b4f53;margin:1.7mm 0 0;}
+.hz-practice-page .practice-topic {margin:0 0 5mm;break-inside:avoid;}
+.hz-practice-page .practice-topic h2 {font:700 13pt/1.2 var(--hz-font-sans);color:var(--practice-accent);margin:0 0 2.5mm;}
+.hz-practice-page .practice-topic h2 small {font-size:8.5pt;font-weight:500;color:#56585a;margin-left:2mm;}
+.hz-practice-page .practice-task {margin:3mm 0 0;break-inside:avoid;}
+.hz-practice-page .practice-task h3,.hz-practice-page .practice-instruction {font:650 9.2pt/1.4 var(--hz-font-sans);margin:0 0 2mm;color:#252729;}
+.hz-practice-page .practice-task h3 b {color:var(--practice-accent);margin-right:1.7mm;font-size:11pt;}
+.hz-practice-page .practice-model {font-size:10pt;margin:2mm 0;color:#374044;}
+.hz-practice-page .practice-note {font-size:9pt;line-height:1.4;color:#444e55;margin:2mm 0;}
+.hz-practice-page .practice-items {margin:0;padding-left:5mm;}
+.hz-practice-page .practice-items li {padding-left:.7mm;margin-bottom:2.2mm;line-height:1.4;}
+.hz-practice-page .practice-items li::marker {color:var(--practice-accent);font-weight:600;}
+.hz-practice-page .practice-gap {display:inline-block;min-width:17mm;height:5.5mm;border-bottom:.22mm solid #91979b;vertical-align:baseline;}
+.hz-practice-page .practice-lines > span {display:block;height:7mm;border-bottom:.22mm solid #91979b;}
+.hz-practice-page .practice-go-back {font-size:8pt;line-height:1.4;margin:3mm 0 0;color:var(--hz-unit-dark);}
+.hz-practice-page .practice-go-back a {color:inherit;text-decoration:none;border-bottom:.2mm solid #bcc8cd;}
+.hz-practice-page .practice-diagram {margin:2mm 0 3mm;}
+.hz-practice-page .practice-diagram svg {max-width:100%;height:auto;display:block;}
+.hz-practice-page img {max-width:100%;}
+.hz-practice-page em {font-style:italic;}
+.hz-practice-page strong {color:var(--practice-accent);}
+.hz-practice-page .practice-topic:target {outline:1mm solid #d3a84f;outline-offset:2mm;}
+@media print {.hz-practice-page .practice-topic:target{outline:0;}}
+.hz-practice-page .practice-topic h2 a {color:inherit;text-decoration:none;}
+/* Shared functional roles stay consistent across independently composed banks. */
+.hz-practice-page .practice-header h1 {font-size:23pt !important;}
+.hz-practice-page .practice-header p {font-size:8.5pt !important;}
+.hz-practice-page .practice-topic > h2 {font-size:13pt !important;}
+.hz-practice-page .practice-topic > h2 > :is(span,small) {font-size:8.5pt !important;}
+/* Future Blooket access: an honestly reserved blank QR area, never a fake active code. */
+.hz-practice-page .blooket-slot {position:absolute;right:0;bottom:0;width:55mm;height:28mm;box-sizing:border-box;display:grid;grid-template-columns:24mm minmax(0,1fr);gap:2.5mm;align-items:center;background:var(--hz-paper,#fffefa);}
+.hz-practice-page .blooket-slot__qr {width:24mm;height:24mm;box-sizing:border-box;border:.3mm dashed #8f9699;background:#fffefa;}
+.hz-practice-page .blooket-slot__copy {display:flex;flex-direction:column;gap:.7mm;font:400 8pt/1.3 var(--hz-font-sans);color:#40494d;}
+.hz-practice-page .blooket-slot__copy strong {font-size:10pt;line-height:1.2;font-weight:700;color:var(--practice-accent,#245b9a);}
+.hz-practice-page .blooket-slot__copy span {display:block;font-size:8pt;}
+.hz-practice-page .blooket-slot__copy .blooket-slot__reserved {font-size:7.5pt;color:#636b6d;}
+/* G8's three short travel statements retain full7mm handwriting height beside the future QR area. */
+.hz-practice-page .blooket-writing-reserve {max-width:120mm;}
+.hz-practice-page .practice-note {font-size:10pt !important;}
+/* Topic links clear the fixed reader toolbar without changing the printed page. */
+@media screen {.hz-practice-page .practice-topic[id] {scroll-margin-top:66px;}}

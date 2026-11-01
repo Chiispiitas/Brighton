@@ -1,0 +1,116 @@
+{
+  "rows": 9,
+  "columns": 14,
+  "all126_grid_slots_present": true,
+  "occupied_cells": 26,
+  "all_and_only_answer_cells_open": true,
+  "crossing_letter_mismatches": [],
+  "placements": [
+    {
+      "word": "BEAVER",
+      "row": 1,
+      "column": 2,
+      "direction": "down",
+      "clue": "1"
+    },
+    {
+      "word": "DUCK",
+      "row": 4,
+      "column": 4,
+      "direction": "down",
+      "clue": "2"
+    },
+    {
+      "word": "GOOSE",
+      "row": 5,
+      "column": 7,
+      "direction": "down",
+      "clue": "3"
+    },
+    {
+      "word": "RACCOON",
+      "row": 6,
+      "column": 2,
+      "direction": "across",
+      "clue": "4"
+    },
+    {
+      "word": "SQUIRREL",
+      "row": 8,
+      "column": 7,
+      "direction": "across",
+      "clue": "5"
+    }
+  ],
+  "crossings": [
+    {
+      "row": 6,
+      "column": 2,
+      "letter": "R",
+      "words": [
+        "BEAVER",
+        "RACCOON"
+      ]
+    },
+    {
+      "row": 6,
+      "column": 4,
+      "letter": "C",
+      "words": [
+        "DUCK",
+        "RACCOON"
+      ]
+    },
+    {
+      "row": 6,
+      "column": 7,
+      "letter": "O",
+      "words": [
+        "GOOSE",
+        "RACCOON"
+      ]
+    },
+    {
+      "row": 8,
+      "column": 7,
+      "letter": "S",
+      "words": [
+        "GOOSE",
+        "SQUIRREL"
+      ]
+    }
+  ],
+  "clue_revision": "Known animal-word anagrams replace unsupported natural-history vocabulary.",
+  "anagrams": [
+    {
+      "clue": "4",
+      "letters": "ROCAONC",
+      "answer": "RACCOON",
+      "exact_letter_multiset": true
+    },
+    {
+      "clue": "5",
+      "letters": "QUISRREL",
+      "answer": "SQUIRREL",
+      "exact_letter_multiset": true
+    },
+    {
+      "clue": "1",
+      "letters": "VEBAER",
+      "answer": "BEAVER",
+      "exact_letter_multiset": true
+    },
+    {
+      "clue": "2",
+      "letters": "DKUC",
+      "answer": "DUCK",
+      "exact_letter_multiset": true
+    },
+    {
+      "clue": "3",
+      "letters": "EOGSO",
+      "answer": "GOOSE",
+      "exact_letter_multiset": true
+    }
+  ]
+}

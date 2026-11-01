@@ -1,0 +1,42 @@
+{
+  "edition": "2026-11-01",
+  "status": "Local source, content, visual and saved-PDF verification complete; publication pending",
+  "current_pdf_sha256": "389c53a44bb290856d394fc1c6c4880ed16804ef72d4e1bfa0d5ca097d310c6f",
+  "root_visual_review": {
+    "all_added_bank_and_end_credit_pages": 42,
+    "saved_final_png_contact_sequences_viewed": 7,
+    "independent_page_coverage": "All38 practice pages and4credit pages; selected difficult assets and writing fields also checked full size.",
+    "content_and_keys": "Independent checks of every vocabulary bank and controlled keys; clocks, lunchboxes, routes, labels and crossword independently reconciled.",
+    "recipe_key_followup": "Accept C,D,A,B and reasonable A,C,D,B or C,A,D,B: wash before cutting; mix everything last. All current keys updated.",
+    "author_acceptance_claimed": false
+  },
+  "proof_correction": {
+    "intermediate_pdf_sha256": "87eced40d37f873410e0ef26c5477e01db6bbaf34484fe284fe21ce8b3afefad",
+    "final_pdf_sha256": "389c53a44bb290856d394fc1c6c4880ed16804ef72d4e1bfa0d5ca097d310c6f",
+    "resolved": "A PDF optimization resource-repair issue emitted intermediate MuPDF warnings. The final optimizer clones raw indirect Pattern references; final strict pypdf, MuPDF and Poppler checks are clear.",
+    "all42_saved_proof_pngs_byte_identical_after_structural_repair": true,
+    "comparison": "proof-image-comparison.json",
+    "older_bytehash_reports_remain_applicable_to_identical_rendered_pages": [
+      "saved-pdf-review-g58-v14.json",
+      "saved-pdf-review-practical-credits.json"
+    ]
+  },
+  "preservation": {
+    "baseline": "90161278603403da17ed4857701984e552c1204c",
+    "core_pages": 72,
+    "core_words_unchanged_outside_go_to_practice_references": true,
+    "core_layout_geometry_differences": [],
+    "existing_core_images_recordings_and_scripts_changed": false,
+    "new_vocabulary_core_raster_reuses": 0
+  },
+  "future_blooket": {
+    "reserved_slots": 16,
+    "square_mm": 24,
+    "area_mm": [
+      55,
+      28
+    ],
+    "active_games_or_qr_codes_created": 0,
+    "registry": "../../Practice/Blooket-links.json"
+  }
+}

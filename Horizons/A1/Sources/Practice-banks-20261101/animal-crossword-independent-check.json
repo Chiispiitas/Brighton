@@ -1,0 +1,33 @@
+{
+  "grid": [
+    9,
+    14
+  ],
+  "words": [
+    "BEAVER",
+    "DUCK",
+    "GOOSE",
+    "RACCOON",
+    "SQUIRREL"
+  ],
+  "active_cells": 26,
+  "crossings": [
+    [
+      6,
+      2
+    ],
+    [
+      6,
+      4
+    ],
+    [
+      6,
+      7
+    ],
+    [
+      8,
+      7
+    ]
+  ],
+  "all_intersection_letters_and_numbered_starts_match": true
+}
