@@ -1,0 +1,20 @@
+/* 8A: photographed waterfront, timed vlog sequence, animal observation and map-led planning. */
+.l8a-waterfront img { width:120mm; height:90mm; object-fit:contain; margin-inline:auto; }
+.l8a-vlog { display:grid; grid-template-columns:45mm 1fr; gap:5mm; padding:3mm; background:#f5f1ed; }
+.l8a-vlog header { padding-right:3mm; border-right:.6mm solid #a43d31; }
+.l8a-vlog header span { font-size:8pt; line-height:1.35; display:block; color:#6d302b; }
+.l8a-vlog h2 { margin:2.5mm 0 0; font:760 22pt/1.02 var(--hz-font-sans); letter-spacing:-.035em; color:#262426; }
+.l8a-stops { display:grid; gap:2mm; }
+.l8a-stop { display:grid; grid-template-columns:21mm 1fr; gap:3mm; }
+.l8a-stop > b { color:#94372f; font-size:9.5pt; font-weight:650; }
+.l8a-stop p { margin:0; font-size:9.5pt; line-height:1.4; }
+.l8a-animals { display:grid; grid-template-columns:repeat(3,1fr); gap:4mm; margin-bottom:2mm; }
+.l8a-animals img { width:100%; height:34mm; object-fit:cover; }
+.l8a-animals figure:nth-child(1) img { object-fit:contain; object-position:center; }
+.l8a-animals figure:nth-child(2) img { object-position:center 64%; }
+.l8a-animals figure:nth-child(3) img { object-fit:contain; object-position:center; }
+.l8a-animals figcaption { font-size:9.5pt; color:var(--hz-unit-dark); padding-top:.8mm; }
+.l8a-plan { display:grid; grid-template-columns:1fr 46mm; gap:5mm; align-items:center; }
+.l8a-plan h2 { margin:0 0 2mm; font:720 17pt/1.1 var(--hz-font-sans); color:#94372f; }
+.l8a-plan p { margin:0 0 1mm; }
+.l8a-plan img { width:43mm; height:64mm; object-fit:contain; }

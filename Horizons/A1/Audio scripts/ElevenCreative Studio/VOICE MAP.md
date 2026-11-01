@@ -377,3 +377,20 @@ Jessica retains all labels, vocabulary, models and Lucy hosting. Helen uses Arab
 
 1: Jessica; 2: Jessica.
 
+
+## Unit 8 production, 31 October 2026
+
+All twelve spoken labels use Jessica. The audio plans and paragraph maps below include paragraph 1. Keep returning speakers on these exact voice IDs. Weather/animal/health photos are not portraits of the fictional voices.
+
+- **8A, Track 8.1**: 1: Jessica; 2: Jessica.
+- **8A, Track 8.2**: 1: Jessica; 2: Jarnathan.
+- **8A, Track 8.3**: 1: Jessica; 2: Jessica.
+- **8A, Track 8.4**: 1: Jessica; 2: Jessica; 3: Amy; 4: Jessica; 5: MarkCasual; 6: Jessica; 7: Juniper.
+- **8B, Track 8.5**: 1: Jessica; 2: Jessica.
+- **8B, Track 8.6**: 1: Jessica; 2: Jessica; 3: Adeline; 4: Jessica; 5: MarkCasual; 6: Jessica; 7: Amy.
+- **8C, Track 8.7**: 1: Jessica; 2: Jessica.
+- **8C, Track 8.8**: 1: Jessica; 2: MarkNatural; 3: Amy; 4: MarkNatural; 5: Amy; 6: MarkNatural; 7: Amy.
+- **8C, Track 8.9**: 1: Jessica; 2: Jessica.
+- **8D, Track 8.10**: 1: Jessica; 2: Jessica.
+- **8D, Track 8.11**: 1: Jessica; 2: MarkNatural; 3: Adeline; 4: MarkNatural; 5: Adeline; 6: MarkNatural; 7: Adeline; 8: MarkNatural; 9: Adeline; 10: MarkNatural; 11: Adeline; 12: MarkNatural; 13: Adeline; 14: MarkNatural.
+- **8D, Track 8.12**: 1: Jessica; 2: Juniper; 3: MarkCasual; 4: Juniper; 5: MarkCasual; 6: Juniper; 7: MarkCasual; 8: Juniper; 9: MarkCasual; 10: Juniper.

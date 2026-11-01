@@ -1,0 +1,119 @@
+[
+  {
+    "lesson": "8C",
+    "track": "8.7",
+    "filename": "Track 8.7.mp3",
+    "script": "ElevenCreative Studio/8C - Track 8.7.txt",
+    "model": "eleven_v3",
+    "stability": 0.5,
+    "paragraph_voice_names": [
+      "Jessica",
+      "Jessica"
+    ],
+    "paragraph_voice_ids": [
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9"
+    ],
+    "generation_utc": "2026-11-01T01:10:58.499514+00:00",
+    "request_id": "rHQBrkycASNmXbZP8o48",
+    "script_sha256": "7d31168b53fdff639db5e6d6bdc8815d8a5151a6b51fa573251487c06ecd371f",
+    "bytes": 253326,
+    "duration_seconds": 15.8,
+    "transcript_checked": true,
+    "transcript_similarity": 1.0,
+    "answer_bearing_phrases_checked": true,
+    "audio_events_checked": true,
+    "throat_clearing_events_detected": false,
+    "forbidden_tag_preflight_passed": true,
+    "transcription_name_aliases": {},
+    "transcript_normalization": "Track label, punctuation/case, exact number spellings, equivalent whole-hour H:00 and dollar-symbol amounts, contractions, and Lia/Leah homophone spelling only. Values and negatives preserved; no answer-bearing substitution.",
+    "activity": 1,
+    "internal_audio_id": "HZN_A1_U08_LC_E01_AUD_01",
+    "subjective_listening_review": false,
+    "sha256": "93eeb1c0b20485735a04818d8f5b5f1662b5fe0aa9014fd6172919c15649785f"
+  },
+  {
+    "lesson": "8C",
+    "track": "8.8",
+    "filename": "Track 8.8.mp3",
+    "script": "ElevenCreative Studio/8C - Track 8.8.txt",
+    "model": "eleven_v3",
+    "stability": 0.5,
+    "paragraph_voice_names": [
+      "Jessica",
+      "MarkNatural",
+      "Amy",
+      "MarkNatural",
+      "Amy",
+      "MarkNatural",
+      "Amy"
+    ],
+    "paragraph_voice_ids": [
+      "cgSgspJ2msm6clMCkdW9",
+      "UgBBYS2sOqTuMpoF3BR0",
+      "OZxMHsGaBmV5pjMIDIn0",
+      "UgBBYS2sOqTuMpoF3BR0",
+      "OZxMHsGaBmV5pjMIDIn0",
+      "UgBBYS2sOqTuMpoF3BR0",
+      "OZxMHsGaBmV5pjMIDIn0"
+    ],
+    "generation_utc": "2026-11-01T01:14:22.649975+00:00",
+    "request_id": "hOXTdyYtNHWNXk7YWBj6",
+    "script_sha256": "1e9210a91b407196332526b2a245b00a9256c9b4adba1ddc67c5a1c150bb7eca",
+    "bytes": 392108,
+    "duration_seconds": 24.489,
+    "transcript_checked": true,
+    "transcript_similarity": 1.0,
+    "answer_bearing_phrases_checked": true,
+    "audio_events_checked": true,
+    "throat_clearing_events_detected": false,
+    "forbidden_tag_preflight_passed": true,
+    "transcription_name_aliases": {
+      "Leah": "Lia"
+    },
+    "transcript_normalization": "Track label, punctuation/case, exact number spellings, equivalent whole-hour H:00 and dollar-symbol amounts, contractions, and Lia/Leah homophone spelling only. Values and negatives preserved; no answer-bearing substitution.",
+    "activity": 3,
+    "internal_audio_id": "HZN_A1_U08_LC_E03_AUD_01",
+    "subjective_listening_review": false,
+    "sha256": "17804c4ab5548157d31a3e43ca26a6326246c0f955fa0f52220d2c6313eafede",
+    "dry_speech_sha256": "4154ea7f28ca396d047d92f9bb4ac2854bb5636322f9bd65d1d7edba6fbee4e8",
+    "master_transcript_checked": true,
+    "master_transcript_similarity": 1.0,
+    "master_audio_events": [],
+    "pitch_preserving_pace_factor": 0.88,
+    "speech_loudness_target_lufs": -16
+  },
+  {
+    "lesson": "8C",
+    "track": "8.9",
+    "filename": "Track 8.9.mp3",
+    "script": "ElevenCreative Studio/8C - Track 8.9.txt",
+    "model": "eleven_v3",
+    "stability": 0.5,
+    "paragraph_voice_names": [
+      "Jessica",
+      "Jessica"
+    ],
+    "paragraph_voice_ids": [
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9"
+    ],
+    "generation_utc": "2026-11-01T01:11:03.221026+00:00",
+    "request_id": "qxZASSCiqLc1u4jINvR3",
+    "script_sha256": "3505d6001560819387d41a1cc2c9dae652e27e6d589546ae8d02a8aa501ab3e0",
+    "bytes": 173914,
+    "duration_seconds": 10.84,
+    "transcript_checked": true,
+    "transcript_similarity": 1.0,
+    "answer_bearing_phrases_checked": true,
+    "audio_events_checked": true,
+    "throat_clearing_events_detected": false,
+    "forbidden_tag_preflight_passed": true,
+    "transcription_name_aliases": {},
+    "transcript_normalization": "Track label, punctuation/case, exact number spellings, equivalent whole-hour H:00 and dollar-symbol amounts, contractions, and Lia/Leah homophone spelling only. Values and negatives preserved; no answer-bearing substitution.",
+    "activity": 5,
+    "internal_audio_id": "HZN_A1_U08_LC_E05_AUD_01",
+    "subjective_listening_review": false,
+    "sha256": "4b793af794fe910fdd19236b68a853afc2b465ab60e5733b52cb7378e7d01e8d"
+  }
+]

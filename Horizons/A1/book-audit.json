@@ -1,8 +1,8 @@
 {
   "schema_version": 1,
   "updated": "2026-10-31",
-  "status": "verified content through Unit 7; recent corrections consolidated and Unit 8 coordinated-production brief recorded; Unit 8 unproduced; whole-book review and release pending",
-  "scope": "A1 through Unit 7 (7A–7D), including paired reviews 1 & 2, 3 & 4, 5 & 6, with four end-credit pages. Unit 8, review 7 & 8 and other backmatter unproduced.",
+  "status": "Unit 8 authored and technically verified; publication verification pending; editorial self-review complete, author acceptance and final whole-book release pending",
+  "scope": "A1 through Unit 8 (8A–8D), including paired reviews 1 & 2, 3 & 4, 5 & 6, with five end-credit pages. Review 7 & 8 and remaining backmatter unproduced.",
   "readability_comparison_baseline": "e8d6ddd69f62caffab662a93a5a392ebc5bfb131",
   "inventory": {
     "lesson_masters": [
@@ -36,28 +36,32 @@
       "7A",
       "7B",
       "7C",
-      "7D"
+      "7D",
+      "8A",
+      "8B",
+      "8C",
+      "8D"
     ],
-    "pdf_pages": 66,
+    "pdf_pages": 75,
     "printed_pages": [
       5,
-      70
+      79
     ],
-    "activity_blocks": 217,
-    "audio_files": 72,
-    "new_words_badges": 39,
-    "extra_practice_footers": 28,
-    "go_to_references": 65,
-    "page_placeholders": 65,
-    "focus_panels": 31,
-    "html_pages": 66,
-    "html_audio_controls": 78,
+    "activity_blocks": 246,
+    "audio_files": 84,
+    "new_words_badges": 46,
+    "extra_practice_footers": 32,
+    "go_to_references": 75,
+    "page_placeholders": 75,
+    "focus_panels": 35,
+    "html_pages": 75,
+    "html_audio_controls": 90,
     "production_audio_files": 1,
-    "lesson_pages": 62,
-    "image_credit_pages": 4,
+    "lesson_pages": 70,
+    "image_credit_pages": 5,
     "vocabulary_highlights": 0,
     "paired_new_words_sets": 0,
-    "active_photo_credit_records": 73
+    "active_photo_credit_records": 82
   },
   "checks": {
     "refreshed_during_cleanup": {
@@ -5170,13 +5174,221 @@
         "Audio scripts/ElevenCreative Studio/README.md",
         "on_air_identity and current check scripts"
       ]
+    },
+    "unit8_20261031": {
+      "date": "2026-10-31",
+      "scope": "New 8A–8D, eight printed pages 67–74, 29 activities; old 62 lesson/review pages preserved. Five end-credit pages now printed 75–79.",
+      "status": "Unit 8 authored and technically verified; publication verification pending; editorial self-review complete, author acceptance and final whole-book release pending",
+      "author_request": "Create Unit 8 with lessons 8A–8D. Ensure quality according to audit.",
+      "lesson_evidence": {
+        "8A": {
+          "pages": [
+            67,
+            68
+          ],
+          "activities": 8,
+          "source": "Original fictional retrospective Sam vlog inspired by a verified real Toronto travel guide; real city/ferry/wildlife grounding, no copied narrator or scenes",
+          "visual": "Whole Toronto skyline/ferry photograph and time-indexed travel log; fresh animal evidence plus modest map-reader alpha cutout beside four open 7mm lines",
+          "outcome": "Choose two places for a partner from unknown preferences; make a short original travel vlog",
+          "tracks": [
+            "8.1",
+            "8.2",
+            "8.3",
+            "8.4"
+          ],
+          "new_words": 2,
+          "references": 3
+        },
+        "8B": {
+          "pages": [
+            69,
+            70
+          ],
+          "activities": 7,
+          "source": "Original simplified adaptations of real dated ECCC Lytton heat/NOAA Texas freeze reports, with separate general travel-advice note",
+          "visual": "Black/white news headline and two article reports inside one exercise; new rainy-street photograph beside a functional practice forecast and three open 7mm advice lines",
+          "outcome": "Read for gist/detail, distinguish weather evidence, advise a visitor with a reason",
+          "tracks": [
+            "8.5",
+            "8.6"
+          ],
+          "new_words": 1,
+          "references": 2
+        },
+        "8C": {
+          "pages": [
+            71,
+            72
+          ],
+          "activities": 7,
+          "source": "Short original BBC-sourced Raducanu tournament-withdrawal hook plus fictional Lia/Dan trip-rescheduling messages; no unverified private flight claim",
+          "visual": "Large full-body native-alpha reference with live A–F leaders, alternating message bubbles, then a separate full-face four-pose photographic contact sheet",
+          "outcome": "Use health/body phrases, privately choose availability, agree and record another day/time",
+          "tracks": [
+            "8.7",
+            "8.8",
+            "8.9"
+          ],
+          "new_words": 3,
+          "references": 3
+        },
+        "8D": {
+          "pages": [
+            73,
+            74
+          ],
+          "activities": 7,
+          "source": "Fictional same-day family visit and last-minute telephone booking, an independent listening booking, then private traveler/agent choices",
+          "visual": "Full-background phone/traveler opener, purple call transcript, functional booking record and substantial complete airport traveler picture",
+          "outcome": "Agree destination/day/time/price/ticket type through a private call and verify a written confirmation",
+          "tracks": [
+            "8.10",
+            "8.11",
+            "8.12"
+          ],
+          "new_words": 1,
+          "references": 2
+        }
+      },
+      "learning_review": "A/C language, B substantive reading, D speaking/writing. Context precedes discovery, clarification, controlled practice and open use. All controlled keys reviewed against visible sources, body/gesture labels and exact recorded evidence. Past narration remains past after Unit 7. Distinct listening visitors/bookings avoid giving a visible transcript answer; independent partner preferences/availability/booking notes remain private. Ticket agents prepare morning and afternoon options so either traveler preference is feasible. Full confirmation includes ticket type. Open response lines preserved.",
+      "editorial_self_review": "Eight native saved PDF pages inspected individually at print scale and as four complete spreads, compared with actual preceding 7B–7D. Four source/interaction genres rather than hue-swapped profiles: a time-indexed vlog, a weather archive, bodily evidence/messages, and a phone booking. Existing strong black/crimson identity and pink concepts retained; no cool title/yellow-accent recipe. Purposeful source backgrounds retained. Selective alpha only in 8A/8C; 8B/8D retain full background photos. Every continuation has substantial fresh task imagery. This is self-review, not author creative acceptance.",
+      "corrections_during_QA": [
+        "Restored full skyline/ferry image after crop cut answer/context detail",
+        "Replaced distant animal candidates and contained face/tail photos at useful scale",
+        "Recomposed two crowded continuation pages without reducing ordinary teaching type or full response lines",
+        "Corrected live arm leader to touch arm and made contact-sheet instruction match side answer slots",
+        "Kept unknown toothache out of the pre-introduction focus example",
+        "Separated 8C messages from the 8D transcript composition",
+        "Shuffled animal matching order rather than automatic ABC",
+        "Enlarged final airport photograph to 44mm and added ticket-type confirmation with 6mm handwriting gaps"
+      ],
+      "typography": "Computed 9.5pt tasks/concepts, 8.9pt instructions, 9pt regular dark-crimson neutral word banks, normal italic choices and 9.5pt crimson grammar bold verified. Integrated source headings intentionally differ. One vertical numbered activity lane; source/internal grids only. Seven NEW WORDS badges, ten nearby references, four meaningful Extra Practice tasks. No blanket vocabulary wrappers.",
+      "source_provenance": "Sources/Unit-8-sources.json: checked city/ferry/wildlife and dated ECCC/NOAA/BBC facts. Fictional vlogs/models/calls explicitly distinguished from source facts and illustrative stock. Weather photos do not document the named 2021 events. Expedia guide is genre inspiration, no copied text/frames/audio. No current zoo itinerary, prices or live flight times asserted. Original short adaptations and original fiction; no new individualized medical advice.",
+      "media": {
+        "new_tracks": [
+          "8.1",
+          "8.2",
+          "8.3",
+          "8.4",
+          "8.5",
+          "8.6",
+          "8.7",
+          "8.8",
+          "8.9",
+          "8.10",
+          "8.11",
+          "8.12"
+        ],
+        "all_twelve_final_audio_hashes_decodes_and_normalized_transcripts_verified": true,
+        "Jessica_all_labels": true,
+        "native_alpha_cutouts": 2,
+        "active_assets": 12,
+        "external_images": 9,
+        "generated_images": 3,
+        "all_active_asset_hashes_dimensions_and_manifests_match": true,
+        "new_activity_blocks": 29,
+        "every_page_has_substantial_teaching_imagery": true,
+        "all_four_continuations_have_focus_and_extra_practice": true,
+        "audio_zip_matches_final_masters": true,
+        "subjective_listening_review": false
+      },
+      "audio": {
+        "tracks": [
+          "8.1",
+          "8.2",
+          "8.3",
+          "8.4",
+          "8.5",
+          "8.6",
+          "8.7",
+          "8.8",
+          "8.9",
+          "8.10",
+          "8.11",
+          "8.12"
+        ],
+        "model": "eleven_v3",
+        "stability": 0.5,
+        "narrator": "Jessica",
+        "cast": "Approved exact-ID Jessica/Jarnathan/Amy/Mark Casual/Mark Natural/Juniper/Adeline pool; per-paragraph mappings in production records.",
+        "all_final_decodes_hashes_and_strict_transcripts_match": true,
+        "paced_final_masters": [
+          "8.2",
+          "8.4",
+          "8.6",
+          "8.8",
+          "8.11",
+          "8.12"
+        ],
+        "pace_factor": 0.88,
+        "normalization": "Track labels, punctuation/case, contractions, exact number/time/currency equivalences; only Lia/Leah homophone name alias. All answer values/negatives preserved.",
+        "forbidden_tag_preflight_scripts": 98,
+        "detected_throat_or_cough_events": false,
+        "subjective_listening_review": false
+      },
+      "html": {
+        "pages": 75,
+        "lessonReviewPages": 70,
+        "creditsPages": 5,
+        "activities": 246,
+        "newWords": 46,
+        "automaticVocabularyWrappers": 0,
+        "audioControls": 90,
+        "extraPractice": 32,
+        "goTo": 75,
+        "focusPanels": 35,
+        "noOverflow": true,
+        "unit8NoMarkerCollisions": true,
+        "all_images_and_backgrounds_loaded": true,
+        "standalone_matches_assembled": true,
+        "all_62_earlier_html_page_geometries_preserved_within_subpixel_tolerance": true,
+        "max_prior_geometry_delta_px": 0.01,
+        "typography_roles_checked": true,
+        "images_on_both_sides_each_lesson": true
+      },
+      "pdf": {
+        "pdf_pages": 75,
+        "printed_pages": [
+          5,
+          79
+        ],
+        "unit8_printed_pages": [
+          67,
+          74
+        ],
+        "credits_printed_pages": [
+          75,
+          76,
+          77,
+          78,
+          79
+        ],
+        "all_62_existing_lesson_pages_text_and_drawing_streams_identical": true,
+        "all_62_existing_compiled_page_fragments_identical": true,
+        "all_earlier_masters_media_keys_and_shared_sources_preserved": true,
+        "new_thirteen_pages_match_native_export_pixels": true,
+        "all_new_learner_word_tokens_present": true,
+        "all_a4": true,
+        "pdf_bytes": 39113313,
+        "pdf_sha256": "2408c999b4f081d1afcc4b5a226efa6b5d3f70e999e3a11f1d8cdc3966419fbb",
+        "method": "Preserved original first 62 lesson/review pages; appended eight native Unit 8 pages and five repaginated native credits. Export-only alpha-preserving 240dpi media, no saved-PDF image/font rewriting."
+      },
+      "preservation": "All 62 earlier page fragments, saved-PDF text/drawing streams and existing lesson/master/media/key/shared-source hashes unchanged; geometry max delta 0.01px. Existing four credit pages repaginated and fifth appended with nine new external records. Existing 73 records retained, total 82.",
+      "reversibility": "Baseline 3692e00; exact original files, complete SHA256 ledger, generation/transcript/proof records and guarded rollback in work/unit8-20261031 outside repository. Local unit styles only. Incoming main changes confined to Werewolves and preserved.",
+      "acceptance": {
+        "authored": true,
+        "technical_verified": true,
+        "editorial_self_review": true,
+        "author_accepted": false,
+        "final_book_release": false
+      }
     }
   },
   "pending": [
     {
-      "id": "unit8-production",
+      "id": "unit8-author-review",
       "scope": "8A–8D",
-      "action": "Author and verify four coordinated lessons using unit8_production_brief; all content/media/audio and acceptance evidence remain pending."
+      "action": "Author review of the created and technically checked eight pages; no creative acceptance or final release approval inferred."
     },
     {
       "id": "review78-production",
@@ -5228,12 +5440,13 @@
         "Wordlists",
         "Syllabus.txt",
         "Student's Book.html",
-        "Backmatter"
+        "Backmatter",
+        "Sources"
       ],
       "fingerprint": {
-        "files": 590,
-        "bytes": 528466427,
-        "sha256": "f486d0d3ce8481ce48b33a37a20a0f27685c744f2a5bdd676acb4618410652e9"
+        "files": 661,
+        "bytes": 543530243,
+        "sha256": "3a353639049c3d7ed9ab29b96757e66c291680288786e35be41950db9a365e8e"
       }
     },
     "shared_rendering": {
@@ -5253,8 +5466,8 @@
       ],
       "fingerprint": {
         "files": 1,
-        "bytes": 37176534,
-        "sha256": "b9d7c5160932a4e05859d012697b7e9c995fbbef6c9c5e5974929eef3b868323"
+        "bytes": 39113313,
+        "sha256": "968558391f585e85fdb52a29e8840c733e54374f59585a0b5daba108393ee301"
       }
     },
     "audit_criteria": {
@@ -5272,8 +5485,8 @@
     }
   },
   "content_baseline_commit": "2f404b547b7da07be81a0622a78591d3299c402a",
-  "current_revision": "Audit-only preparation for authoring Unit 8A–8D together. Consolidates selective cutouts, intrinsic-height/print-scale lessons from rejected 7D composition, larger props, substantial pronunciation practice and exact print/audio coverage, protected 2B main/secondary show identity, media preservation, functional type and whole-unit variety. Records syllabus-based lesson roles, reading-led 8B and explicit pending acceptance evidence. No teaching, image, audio, compiled HTML or PDF changed.",
-  "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope. units_3_4_reviews_visual_variety_20261025 supersedes earlier composition, color and geometry evidence for printed pages 21-40, including review_composition_20261025, review_3_4_20261025, unit_3_creative_revision and unit_4_visual_variety; earlier learning and audio evidence keeps its original scope. lesson_5b_on_air_20261026 supersedes prior 5B reading/source/presentation and 5.5/5.6 records only. The 26 October every-unit show mandate is superseded by planned B-skill balance and no two-unit show gap. lesson_5b_activity5_variety_20261026 supersedes only the earlier 5B Activity 5 image/choices/key and continuation-image evidence; no show/audio or other lesson evidence changes. lesson_6b_picture_grammar_20261026 supersedes only the original 6B page-52 grammar presentation, continuation spacing and associated geometry evidence; all learning, source and audio evidence retains its scope. lessons_6c_6d_20261026 adds printed pages 53-56 and completes Unit 6 without superseding prior source/audio/page evidence. Prior 6C/6D-unproduced statements are historical; current coverage is through 6D. vocabulary_and_credits_20261026 supersedes prior plain NEW WORDS vocabulary presentation and in-lesson image-credit placement. Existing learning, audio, image bytes and unrelated geometry evidence retains its scope. Three appended credits pages are provisional end matter after the current final lesson. plain_vocabulary_20261026 supersedes every earlier requirement for automatic or paired NEW WORDS word emphasis; the author withdrew blanket bolding. End-of-book credits remain unchanged. review_5_6_20261026 adds printed pages 57-58 and repaginates existing end credits to 59-61. Earlier 55-page counts describe the prior version; no previous lesson/source/audio evidence is superseded. unit7_20261028 adds printed pages 59–66 and twelve recordings; retains the prior 54 lesson/review pages and repaginates/appends credits to 67–70. Earlier 57-page counts and Unit 7 unproduced/show-due statements are historical; prior learning and audio evidence retains its scope. lesson7a_visual_refinement_20261028 supersedes original 7A presentation/geometry and its creative approval only. Original Unit 7 visual claims are not author approval: 7B–7D remain pending separate review, including poor 7B portrait crops. No other lesson content, source, media or audio evidence is superseded. lesson7b_visual_refinement_20261030 supersedes original 7B presentation/geometry and the pending portrait-crop issue, including earlier statements that 7B remains untouched. All learning/factual/audio evidence retains its scope. Only 7B and its page-70 display-credit wording change; 7C/7D remain pending. on_air_identity_consistency_20261030 supersedes earlier visual claims of 2B consistency for 3B/5B/7B, including the 7B calendar inside the masthead and independent listener header. The episode date remains below the canonical banner. Main/secondary structure and black/orange caption rules now follow 2B exactly; source content/media/audio evidence remains valid. 2B is unchanged. lesson7c_visual_refinement_20261031 supersedes original 7C visual geometry and its three-word pronunciation task. Activity 6 now has nine sorting words; recorded scripts and bytes are unchanged. 7D and final release remain pending. lesson7d_visual_refinement_20261031 supersedes original 7D visual geometry and the active full-background shoe close-up only; that file remains archived in place. Seven activities, learning/recording text and audio bytes are preserved. Unit 7 refinements are for author review; final release remains pending. lesson7d_author_correction_20261031 supersedes the tall Tessa and small diary composition in lesson7d_visual_refinement_20261031: the author rejected the excess blank area. Compact original Activity 3/photo restored and Activity 7 diary enlarged. All learning/audio evidence retained. audit_unit8_preparation_20261031 consolidates current Unit 7 corrections and authorizes the planned coordinated Unit 8 authoring workflow. Earlier Unit 7 one-at-a-time refinement notes are historical scope, not a Unit 8 blocker. Planned 8B is explicitly unproduced; no future lesson or creative acceptance is claimed.",
+  "current_revision": "Created Unit 8A–8D, printed 67–74: 29 activities, twelve checked recordings, twelve active images including two native-alpha cutouts. Full book 75 A4 pages, credits 75–79. Earlier 62 lesson/review pages preserved. Local verification complete; live checks pending. Author acceptance, review 7 & 8, backmatter and final release remain pending.",
+  "historical_evidence_rule": "Dated prior checks describe their original versions. unit_4_visual_variety supersedes earlier 4A-4D layout/image-presentation evidence; retained audio/source-production evidence and unchanged Unit 2/3 checks remain scoped as recorded. Final release work remains pending. functional_typography supersedes earlier functional size/layout evidence where sizes changed, while preserving integrated-feature typography and original learning content. review_composition_20261025 supersedes earlier Review layout evidence and the single-column restriction for reviews only; source tasks/answers and other lessons retain their previous scope. review_3_4_20261025 adds printed pages 39-40; it does not supersede unchanged earlier page evidence. lesson_5a_20261025 adds printed pages 41-42 and three recordings; it does not supersede unchanged prior page/audio evidence. visual_fatigue_20261025 adds new editorial criteria; previous technical or creative checks do not automatically approve the book against this new preference. lesson_5a_visual_redesign_20261025 supersedes original 5A presentation/geometry evidence only; learning/source/audio evidence retains its scope. units_3_4_reviews_visual_variety_20261025 supersedes earlier composition, color and geometry evidence for printed pages 21-40, including review_composition_20261025, review_3_4_20261025, unit_3_creative_revision and unit_4_visual_variety; earlier learning and audio evidence keeps its original scope. lesson_5b_on_air_20261026 supersedes prior 5B reading/source/presentation and 5.5/5.6 records only. The 26 October every-unit show mandate is superseded by planned B-skill balance and no two-unit show gap. lesson_5b_activity5_variety_20261026 supersedes only the earlier 5B Activity 5 image/choices/key and continuation-image evidence; no show/audio or other lesson evidence changes. lesson_6b_picture_grammar_20261026 supersedes only the original 6B page-52 grammar presentation, continuation spacing and associated geometry evidence; all learning, source and audio evidence retains its scope. lessons_6c_6d_20261026 adds printed pages 53-56 and completes Unit 6 without superseding prior source/audio/page evidence. Prior 6C/6D-unproduced statements are historical; current coverage is through 6D. vocabulary_and_credits_20261026 supersedes prior plain NEW WORDS vocabulary presentation and in-lesson image-credit placement. Existing learning, audio, image bytes and unrelated geometry evidence retains its scope. Three appended credits pages are provisional end matter after the current final lesson. plain_vocabulary_20261026 supersedes every earlier requirement for automatic or paired NEW WORDS word emphasis; the author withdrew blanket bolding. End-of-book credits remain unchanged. review_5_6_20261026 adds printed pages 57-58 and repaginates existing end credits to 59-61. Earlier 55-page counts describe the prior version; no previous lesson/source/audio evidence is superseded. unit7_20261028 adds printed pages 59–66 and twelve recordings; retains the prior 54 lesson/review pages and repaginates/appends credits to 67–70. Earlier 57-page counts and Unit 7 unproduced/show-due statements are historical; prior learning and audio evidence retains its scope. lesson7a_visual_refinement_20261028 supersedes original 7A presentation/geometry and its creative approval only. Original Unit 7 visual claims are not author approval: 7B–7D remain pending separate review, including poor 7B portrait crops. No other lesson content, source, media or audio evidence is superseded. lesson7b_visual_refinement_20261030 supersedes original 7B presentation/geometry and the pending portrait-crop issue, including earlier statements that 7B remains untouched. All learning/factual/audio evidence retains its scope. Only 7B and its page-70 display-credit wording change; 7C/7D remain pending. on_air_identity_consistency_20261030 supersedes earlier visual claims of 2B consistency for 3B/5B/7B, including the 7B calendar inside the masthead and independent listener header. The episode date remains below the canonical banner. Main/secondary structure and black/orange caption rules now follow 2B exactly; source content/media/audio evidence remains valid. 2B is unchanged. lesson7c_visual_refinement_20261031 supersedes original 7C visual geometry and its three-word pronunciation task. Activity 6 now has nine sorting words; recorded scripts and bytes are unchanged. 7D and final release remain pending. lesson7d_visual_refinement_20261031 supersedes original 7D visual geometry and the active full-background shoe close-up only; that file remains archived in place. Seven activities, learning/recording text and audio bytes are preserved. Unit 7 refinements are for author review; final release remains pending. lesson7d_author_correction_20261031 supersedes the tall Tessa and small diary composition in lesson7d_visual_refinement_20261031: the author rejected the excess blank area. Compact original Activity 3/photo restored and Activity 7 diary enlarged. All learning/audio evidence retained. audit_unit8_preparation_20261031 consolidates current Unit 7 corrections and authorizes the planned coordinated Unit 8 authoring workflow. Earlier Unit 7 one-at-a-time refinement notes are historical scope, not a Unit 8 blocker. Planned 8B is explicitly unproduced; no future lesson or creative acceptance is claimed. unit8_20261031 fulfils the earlier Unit 8 planned/unproduced statements. Current content is through 8D; old counts and preparation-only records retain historical scope. The original 62 lesson/review pages are preserved; image credits repaginate to 75–79. Technical and editorial self-review do not imply author creative acceptance.",
   "receptive_skill_plan": {
     "policy": "B lessons provide a planned mix of reading-led and listening-led units; Horizons on Air is not required in every unit. Avoid two consecutive units without the show. Do not impose rigid alternation; 2B and 3B are both listening-led. Declare primary skill and source genre before authoring.",
     "units": [
@@ -5343,12 +5556,16 @@
         "unit": 8,
         "lesson": "8B",
         "primary_skill": "reading",
-        "genre": "Planned: dated extreme-weather news adaptation with weather/seasons and should/should not; useful gist/detail reading",
+        "genre": "Dated original simplified Lytton/Texas 2021 weather news reports; silent gist/detail reading followed by advice and independent weather listening",
         "episode": null,
-        "status": "planned, unproduced"
+        "supporting_tracks": [
+          "8.5",
+          "8.6"
+        ],
+        "status": "produced; technically verified"
       }
     ],
-    "next_unit_rule": "8B is planned reading-led weather news after listening-led 7B, following the Unit 8 syllabus. Supporting audio does not count as an episode. Recheck the no-two-unit-show-gap rule whenever the B programme changes; add completed evidence only after production."
+    "next_unit_rule": "8B is reading-led after genuine listening-led 7B. Supporting weather vocabulary/advice audio is not a show. Current eight-unit programme satisfies the no-two-unit-show-gap rule. If the programme is extended, the next unit must restore a genuine show to avoid consecutive show-free units."
   },
   "author_visual_preferences_20261030": {
     "7A": "Author said Perfect to the 7A refinement.",
@@ -5425,8 +5642,8 @@
   },
   "unit8_production_brief": {
     "recorded": "2026-10-31",
-    "status": "preparation recorded; no Unit 8 lesson content/media/audio produced or approved",
-    "author_scope": "Prepare a coordinated run of 8A–8D. Unit 7 one-at-a-time repair restriction does not apply to this run. Review 7 & 8 remains separate pending work.",
+    "status": "authored and technically verified; editorial self-review complete; author acceptance pending",
+    "author_scope": "Create all 8A–8D in one coordinated run, as explicitly requested. Review 7 & 8 remains separate pending work.",
     "syllabus_source": "Syllabus.txt, UNIT 8: Travel Adventures",
     "lessons": [
       {
@@ -5437,10 +5654,28 @@
           "travel verbs",
           "animals"
         ],
-        "source_genre": "real city-experience travel vlog, sourced/adapted",
+        "source_genre": "Original fictional retrospective Sam vlog inspired by a verified real Toronto travel guide; real city/ferry/wildlife grounding, no copied narrator or scenes",
         "visual_direction": "navigable journey/visual sequence with task-bearing travel and animal evidence",
         "outcome": "personal travel choice using target vocabulary",
-        "status": "planned, unproduced"
+        "status": "authored; technically verified; author acceptance pending",
+        "actual": {
+          "pages": [
+            67,
+            68
+          ],
+          "activities": 8,
+          "source": "Original fictional retrospective Sam vlog inspired by a verified real Toronto travel guide; real city/ferry/wildlife grounding, no copied narrator or scenes",
+          "visual": "Whole Toronto skyline/ferry photograph and time-indexed travel log; fresh animal evidence plus modest map-reader alpha cutout beside four open 7mm lines",
+          "outcome": "Choose two places for a partner from unknown preferences; make a short original travel vlog",
+          "tracks": [
+            "8.1",
+            "8.2",
+            "8.3",
+            "8.4"
+          ],
+          "new_words": 2,
+          "references": 3
+        }
       },
       {
         "lesson": "8B",
@@ -5450,10 +5685,26 @@
           "weather and seasons",
           "should/shouldn't"
         ],
-        "source_genre": "dated verified extreme-weather news adaptation",
+        "source_genre": "Original simplified adaptations of real dated ECCC Lytton heat/NOAA Texas freeze reports, with separate general travel-advice note",
         "visual_direction": "news feature with readable factual weather evidence and supported advice",
         "outcome": "gist/detail reading and evidence-linked advice",
-        "status": "planned, unproduced"
+        "status": "authored; technically verified; author acceptance pending",
+        "actual": {
+          "pages": [
+            69,
+            70
+          ],
+          "activities": 7,
+          "source": "Original simplified adaptations of real dated ECCC Lytton heat/NOAA Texas freeze reports, with separate general travel-advice note",
+          "visual": "Black/white news headline and two article reports inside one exercise; new rainy-street photograph beside a functional practice forecast and three open 7mm advice lines",
+          "outcome": "Read for gist/detail, distinguish weather evidence, advise a visitor with a reason",
+          "tracks": [
+            "8.5",
+            "8.6"
+          ],
+          "new_words": 1,
+          "references": 2
+        }
       },
       {
         "lesson": "8C",
@@ -5463,10 +5714,27 @@
           "health complaints",
           "body parts"
         ],
-        "source_genre": "health-related trip postponement situation",
+        "source_genre": "Short original BBC-sourced Raducanu tournament-withdrawal hook plus fictional Lia/Dan trip-rescheduling messages; no unverified private flight claim",
         "visual_direction": "specific readable poses and body-part evidence; selective generated material when needed",
         "outcome": "express a problem and arrange an alternative through a meaningful exchange",
-        "status": "planned, unproduced"
+        "status": "authored; technically verified; author acceptance pending",
+        "actual": {
+          "pages": [
+            71,
+            72
+          ],
+          "activities": 7,
+          "source": "Short original BBC-sourced Raducanu tournament-withdrawal hook plus fictional Lia/Dan trip-rescheduling messages; no unverified private flight claim",
+          "visual": "Large full-body native-alpha reference with live A–F leaders, alternating message bubbles, then a separate full-face four-pose photographic contact sheet",
+          "outcome": "Use health/body phrases, privately choose availability, agree and record another day/time",
+          "tracks": [
+            "8.7",
+            "8.8",
+            "8.9"
+          ],
+          "new_words": 3,
+          "references": 3
+        }
       },
       {
         "lesson": "8D",
@@ -5476,10 +5744,27 @@
           "phone language",
           "buying a ticket"
         ],
-        "source_genre": "last-minute booking call and functional travel artifact",
+        "source_genre": "Fictional same-day family visit and last-minute telephone booking, an independent listening booking, then private traveler/agent choices",
         "visual_direction": "booking/ticket task with genuinely private traveler constraints",
         "outcome": "complete a booking with a confirmed choice/record",
-        "status": "planned, unproduced"
+        "status": "authored; technically verified; author acceptance pending",
+        "actual": {
+          "pages": [
+            73,
+            74
+          ],
+          "activities": 7,
+          "source": "Fictional same-day family visit and last-minute telephone booking, an independent listening booking, then private traveler/agent choices",
+          "visual": "Full-background phone/traveler opener, purple call transcript, functional booking record and substantial complete airport traveler picture",
+          "outcome": "Agree destination/day/time/price/ticket type through a private call and verify a written confirmation",
+          "tracks": [
+            "8.10",
+            "8.11",
+            "8.12"
+          ],
+          "new_words": 1,
+          "references": 2
+        }
       }
     ],
     "art_direction_contract": {
@@ -5498,39 +5783,39 @@
       "voices": "Jessica for narration/labels, approved exact-ID dialogue pool and returning-cast continuity; existing Eleven v3 workflow.",
       "banned_audio": "Never [clearly] or a throat-clearing substitute.",
       "show_identity": "Actual 2B and Lessons/horizons-on-air.css for all genuine main/secondary show tasks; update on_air_identity coverage as needed.",
-      "cadence": "8B planned reading-led after listening-led 7B; supporting audio is not an episode. Preserve mixed B skills and no two-unit show gap."
+      "cadence": "8B produced as reading-led after listening-led 7B. No show branding on support recordings; current coverage gate passes."
     },
     "evidence_required": {
       "syllabus_tasks": {
-        "status": "pending",
+        "status": "verified",
         "required": "Cumulative language, discovery evidence, supported answers/keys, private information and meaningful outcome per lesson."
       },
       "unit_variety": {
-        "status": "pending",
+        "status": "verified",
         "required": "Four source/interaction ideas across eight pages, preceding-three-spread comparison, meaningful imagery on both pages."
       },
       "print_scale": {
-        "status": "pending",
+        "status": "verified",
         "required": "Inspect complete saved pages and details for faces, props, source gaps/crowding, fonts, answer evidence and response space."
       },
       "audio": {
-        "status": "pending",
+        "status": "verified",
         "required": "Required recordings produced/decoded, transcripts and casting checked, track mappings/counts and print-only additions accurate."
       },
       "series_continuity": {
-        "status": "pending",
+        "status": "verified",
         "required": "Cues, references, Extra Practice, font roles, skill cadence and shared show identity checked."
       },
       "assembly": {
-        "status": "pending",
+        "status": "verified",
         "required": "Standalone/compiled parity, all images load, no clipping/overlap, independent saved-PDF render, unchanged existing content and explained credit repagination."
       },
       "publication": {
-        "status": "pending",
+        "status": "pending live verification",
         "required": "Live HTML/styles/media/PDF match checked files; all new audio controls play/pause and hide in print."
       },
       "handoff": {
-        "status": "pending",
+        "status": "technical/editorial statuses recorded; author acceptance pending",
         "required": "Separate authored/technical/editorial/author-acceptance statuses; unresolved issues explicit."
       }
     },

@@ -1,6 +1,6 @@
 # Horizons A1 — Book audit
 
-Updated 31 October 2026. **Verified content remains through Unit 7. Recent author corrections are consolidated below; Unit 8 has a coordinated four-lesson production brief, with no Unit 8 content produced or approved yet. Whole-book fatigue reassessment and final release remain pending.**
+Updated 31 October 2026. **Unit 8A–8D is authored and technically verified; editorial self-review is recorded. Publication verification is pending. Author acceptance, the paired 7 & 8 review, remaining backmatter and final whole-book release remain pending.**
 
 This is the current audit entry point. [book-audit.json](book-audit.json) holds scoped evidence and historical checks; [CANONICAL-STYLE.md](../Base/design-system/CANONICAL-STYLE.md) governs design. A current snapshot is not final release approval.
 
@@ -8,13 +8,13 @@ This is the current audit entry point. [book-audit.json](book-audit.json) holds 
 
 | Item | Current state |
 | --- | --- |
-| Content | 1A–7D plus three paired reviews (1 & 2, 3 & 4, 5 & 6): 31 masters; Unit 7 complete |
-| Saved book | 66 A4 pages; printed pages 5–70 (62 lesson/review pages + 4 image-credit pages) |
-| Activity blocks | 217; existing subexercise numbering retained |
-| Audio | 72 lesson MP3s + 1 production ident; all twelve new Unit 7 tracks decoded/transcribed |
-| Navigation cues | 39 NEW WORDS badges; no automatic vocabulary bolding; 28 Extra Practice footers; 65 Go to references |
-| Concept explanations | 14 revised panels across 11 lessons; 31 total focus panels including retained 4A and new 4B–7D |
-| Unresolved destinations | 65 `page ---` references; intentional until back-of-book pagination |
+| Content | 1A–8D plus three paired reviews (1 & 2, 3 & 4, 5 & 6): 35 masters |
+| Saved book | 75 A4 pages; printed pages 5–79 (70 lesson/review pages + 5 image-credit pages) |
+| Activity blocks | 246; existing subexercise numbering retained |
+| Audio | 84 lesson MP3s + 1 production ident; all twelve new Unit 8 tracks decoded/transcribed |
+| Navigation cues | 46 NEW WORDS badges; no automatic vocabulary bolding; 32 Extra Practice footers; 75 Go to references |
+| Concept explanations | 14 revised panels across 11 lessons; 35 total focus panels including retained 4A and new 4B–8D |
+| Unresolved destinations | 75 `page ---` references; intentional until back-of-book pagination |
 
 Counts are inventory, not proof that every cue is correctly placed. Review placement beside the newly introduced content.
 
@@ -34,7 +34,7 @@ The 7C sorting bank adds six unrecorded practice words to the existing six recor
 
 ## Rules for producing Unit 8 together
 
-**Author direction, 31 October:** prepare to author **8A–8D as a coordinated unit**, retaining individual spread checks and a whole-unit comparison. The earlier one-lesson-at-a-time restriction concerned the repair of Unit 7; it does not require separate user approval between the four Unit 8 lessons. This update prepares the work; it does not start drafting or approve unseen lessons. The paired Units 7 & 8 review remains a separate pending deliverable.
+**Author direction, 31 October:** prepare to author **8A–8D as a coordinated unit**, retaining individual spread checks and a whole-unit comparison. The earlier one-lesson-at-a-time restriction concerned the repair of Unit 7; it does not require separate user approval between the four Unit 8 lessons. The subsequent explicit request commissioned these four lessons; the production record below documents that run without assuming author acceptance. The paired Units 7 & 8 review remains a separate pending deliverable.
 
 - **Four distinct ideas:** record each lesson's source genre, main learner action, visual anchor, image/text relationship, continuation-page imagery and personal outcome. Compare all eight pages together and against 7B–7D. Different colors or headlines on the same composition do not pass. Avoid repeating the cool-color/yellow-accent formula or replacing it with four identical warm-paper features.
 - **Cutouts with a job:** mix suitable stock photography with generated poses, renders, specific evidence and true-alpha cutouts. Use cutouts selectively, preserve useful full backgrounds, and keep people/props large enough to inspect. Judge the visible subject rather than the transparent canvas dimensions. A small notebook is a prop, not the substantial continuation-page image.
@@ -45,9 +45,9 @@ The 7C sorting bank adds six unrecorded practice words to the existing six recor
 - **Audio/text alignment:** assign every exercise to its real track, label recorded versus additional printed practice, and synchronize page, key, wordlist, teacher script and Studio import. Derive counts from the actual files. Retain Jessica for all narration/labels and the approved exact-ID cast for dialogue; keep returning roles stable. Use the existing Eleven v3 workflow. Never use `[clearly]` or a throat-clearing workaround. Generate and check all required new recordings; play/pause controls must work live and hide in print.
 - **Evidence and reversibility:** record sources, licenses, prompts, native alpha, hashes and active/retired media; external-image credits stay at book end. Start from a saved baseline, preserve existing 1A–7D/review content, and inspect any necessary credit repagination. Work in lesson HTML/CSS, compile the book, inspect standalone and assembled views and independently render the saved PDF. Verify published source/media/PDF and audio playback before claiming the viewer is updated. Refresh audit snapshots only after checks, and keep technical, editorial and author-acceptance statuses separate.
 
-## Unit 8 production brief — planned, not produced
+## Unit 8 production record — 31 October
 
-Source of scope: `Syllabus.txt`, **Unit 8: Travel Adventures**. The visual directions below are starting concepts, not four fixed templates or preapproved layouts. The language ceiling must come from the syllabus and preceding lessons; travel/tomorrow themes do not authorize unrelated grammar additions.
+Source of scope: `Syllabus.txt`, **Unit 8: Travel Adventures**. The brief below is retained alongside the actual production evidence; these are not preapproved layouts. The language ceiling must come from the syllabus and preceding lessons; travel/tomorrow themes do not authorize unrelated grammar additions.
 
 | Lesson | Syllabus and role | Source/visual direction to develop | Required learner payoff |
 | --- | --- | --- | --- |
@@ -58,20 +58,43 @@ Source of scope: `Syllabus.txt`, **Unit 8: Travel Adventures**. The visual direc
 
 ### Completion record required for the four-lesson run
 
-All items below remain **pending** until Unit 8 exists and has been checked.
+Local technical and editorial self-review are complete. Publication has not yet passed its separate live check. Author acceptance remains pending.
 
-- [ ] **Syllabus and tasks:** 8A/8C language roles, useful reading in 8B, communicative outcome in 8D; cumulative language, supported discovery/answers, keys, wordlists and private information checked lesson by lesson.
-- [ ] **Unit art direction:** compare four distinct source/interaction ideas across all eight pages and with the preceding three spreads; record image hierarchy, source lettering, color relationships, backgrounds, image progression and continuation imagery. Actual sources/facts/licenses verified when acquired; Personal Best/English File inform principles without copied content/art.
-- [ ] **Print-scale composition:** inspect the complete spreads and details at real page size for faces, labels, props, answer evidence, forced gaps, crowding, word banks, grammar examples, footers, note lines and open writing space. No tall-cutout or tiny-prop regression.
-- [ ] **Audio:** scripts/imports/casting/track references/keys agree, all required recordings generated and decoded; target words, timing, pronunciation, labels and speaker assignments checked. Track counts and additional print-only words declared accurately.
-- [ ] **Series continuity:** vocabulary cues/references/Extra Practice and functional type verified; primary B skill recorded and show cadence/header checks pass for the assembled book.
-- [ ] **Assembly and preservation:** all media load, lesson/assembled geometry agrees, no clipping/overlap; native saved-PDF pages inspected independently; existing lessons and review content preserved, necessary credit repagination explained, actual inventory counted.
+- [x] **Syllabus and tasks:** 8A/8C language roles, useful reading in 8B, communicative outcome in 8D; cumulative language, supported discovery/answers, keys, wordlists and private information checked lesson by lesson.
+- [x] **Unit art direction:** compare four distinct source/interaction ideas across all eight pages and with the preceding three spreads; record image hierarchy, source lettering, color relationships, backgrounds, image progression and continuation imagery. Actual sources/facts/licenses verified when acquired; Personal Best/English File inform principles without copied content/art.
+- [x] **Print-scale composition:** inspect the complete spreads and details at real page size for faces, labels, props, answer evidence, forced gaps, crowding, word banks, grammar examples, footers, note lines and open writing space. No tall-cutout or tiny-prop regression.
+- [x] **Audio:** scripts/imports/casting/track references/keys agree, all required recordings generated and decoded; target words, timing, pronunciation, labels and speaker assignments checked. Track counts and additional print-only words declared accurately.
+- [x] **Series continuity:** vocabulary cues/references/Extra Practice and functional type verified; primary B skill recorded and show cadence/header checks pass for the assembled book.
+- [x] **Assembly and preservation:** all media load, lesson/assembled geometry agrees, no clipping/overlap; native saved-PDF pages inspected independently; existing lessons and review content preserved, necessary credit repagination explained, actual inventory counted.
 - [ ] **Publication:** HTML, styles, active media and PDF match checked files on the live viewer; all new audio buttons play/pause and disappear for print.
-- [ ] **Honest handoff:** evidence recorded separately for all four lessons and the complete unit; unresolved items remain explicit. Mark prepared, authored, technically verified, editorially reviewed and author accepted according to evidence.
+- [x] **Honest handoff:** evidence recorded separately for all four lessons and the complete unit; unresolved items remain explicit. Mark prepared, authored, technically verified, editorially reviewed and author accepted according to evidence.
+
+### Actual four-spread result
+
+| Lesson | Source and image relationship | Personal outcome |
+| --- | --- | --- |
+| 8A, 67–68 | Complete Toronto ferry/skyline photo; time-indexed retrospective vlog; three fresh animal photographs; map-reader alpha cutout beside open planning | Choose two places for a partner; make an original travel vlog |
+| 8B, 69–70 | Dated Lytton/Texas weather news archive with two reports inside one task; separate advice note; rainy-street scene and practice forecast | Read for gist/detail; give three useful suggestions |
+| 8C, 71–72 | Large full-body cutout with live leaders; real tournament-withdrawal hook; fictional rescheduling messages; distinct acted health-phrase sheet | Explain a problem and agree another day/time from private availability |
+| 8D, 73–74 | Full-background phone/traveler scene; purple call transcript; independent booking record; larger airport photo with private roles | Negotiate a ticket and verify a completed confirmation |
+
+**29 activities, 12 tracks (8.1–8.12), 12 active images: nine licensed stock photographs and three generated teaching assets, including two native-alpha cutouts.** Both pages of each lesson contain substantial task-related imagery. A/C remain language lessons; B is substantive reading after 7B's listening episode; D culminates in speaking and a written record. All existing show identities remain unchanged and the no-two-unit-show-gap check passes. Supporting vocabulary/weather clips are not branded as a show.
+
+**Learning and sources:** controlled answers, body/pose leaders and numbers match keys/wordlists/recordings. Past narration follows Unit 7; discovery precedes explanation. Later listening uses independent visitors and a different booking, rather than reproducing visible source answers. Traveler/agent choices and health availability stay private; morning/afternoon agent options make negotiation feasible. Four open 7mm travel-plan lines, three advice lines, two agreement lines and practical ticket fields preserve expression. Source facts and license boundaries are in `Sources/Unit-8-sources.json` and asset manifests; weather photos are illustrative, not asserted 2021-event images. Sam, Lia/Dan and the callers are fiction; the real athlete hook does not invent private flight details. All photo metadata stays in end credits.
+
+**Composition checks and corrections:** inspected all eight saved pages individually and as four spreads against actual preceding 7B–7D. Preserved full skyline/ferry context, replaced distant animal candidates, corrected the arm leader and health-answer instruction, separated message bubbles from the call transcript, enlarged the airport subject and resolved two crowded continuations by recomposing images rather than reducing teaching type or writing lines. Canonical black titles/crimson mechanics/pink concepts, normal italic choices and neutral/crimson word banks remain. Four different feature genres, no repeating cool-title/yellow-accent formula or stripped source backgrounds. This is editorial self-review, not author creative approval.
+
+**Verification:** all eight standalone pages match the compiled 75-page book; no text overflow or continuation-marker collision, missing images/backgrounds or functional type-size failures. Seven NEW WORDS cues, ten nearby references and four Extra Practice tasks added. Existing **62** lesson/review page fragments, PDF text and decoded drawing streams are unchanged; browser geometry differs by at most **0.01px**. Existing masters/media/audio/keys/shared styles retain their hashes. New eight lesson and five credit pages match native-export pixels and retain every learner word token. All eight lesson pages and the new credits page were independently rendered through Poppler and inspected; the preceding three spreads were compared. Export-only alpha-preserving 240dpi media; no saved-PDF font/image rewriting. End credits repaginate to **75–79**, retaining 73 records and adding nine (82 total).
+
+**Audio:** Jessica labels/narration plus exact approved voice-pool IDs, Eleven v3 stability 0.5. All twelve final files decode and match independent normalized transcripts; six contextual clips have pitch-preserving 0.88 pacing and separate final-master transcript checks. Exact time/currency equivalences and Lia/Leah homophone spelling are documented; answer values and negatives are unchanged. All 98 import scripts pass forbidden-tag preflight; no detected throat/cough events. No subjective listening review claimed. Full-unit and per-lesson audio ZIPs match final masters.
+
+**Publication:** local files are verified; published-file and live playback checks remain pending.
+
+**Reversible:** baseline **3692e00**, exact originals/hash ledger, prompts, native-alpha provenance, transcription/render evidence and guarded rollback in `work/unit8-20261031` outside the repository. New styles are scoped to Unit 8. The 7 & 8 review, unresolved backmatter `page ---` references, remaining whole-book reassessment and final release are separate pending work.
 
 ## Dated evidence retained below
 
-Dated records describe their original scope. Current decisions and the Unit 8 brief above govern new production; later corrections in the JSON supersede earlier presentation claims. Unit 7's individual-pass restrictions and once-pending 7C/7D statements below are historical.
+Dated records describe their original scope. Current decisions and the Unit 8 production record above govern current scope; later corrections in the JSON supersede earlier presentation claims. Unit 7's individual-pass restrictions and once-pending 7C/7D statements below are historical.
 
 ## Horizons on Air consistency, 30 October
 
@@ -389,7 +412,7 @@ Older 4B/4C/4D presentation checks and the prior Units 2/4 revision are historic
 
 ## Remaining work
 
-- [ ] Author and verify Unit 8A–8D using the coordinated-unit brief above. Preparation is recorded; content/media/recordings remain unproduced.
+- [ ] Author review of the completed Unit 8A–8D; technical verification and editorial self-review do not imply creative acceptance.
 - [ ] Produce the paired Units 7 & 8 Review when commissioned, preserving its separate review identity and acceptance checks.
 - [ ] Reassess remaining Unit 1/2 lesson treatments, then repeat the final whole-book visual-fatigue comparison. Units 3–4, both paired reviews and 5A have scoped evidence; they do not approve untouched lessons automatically.
 - [ ] Build and paginate the back-of-book material, replace all `page ---` destinations, and verify each link/reference.
