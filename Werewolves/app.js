@@ -1,4 +1,5 @@
 import { API_URL } from './config.js';
+import { spyPresentation, privateNoteText } from './player-copy.mjs?v=spying-3';
 const $ = s => document.querySelector(s);
 const root = $('#app'), modal = $('#modal');
 const escape = s => String(s ?? '').replace(/[&<>"']/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
@@ -7,7 +8,7 @@ const roleCopy = {
   villager:'No night action. Discuss with the other players and vote during the day.',
   werewolf:'Each night, choose one living villager with your pack. Every living werewolf must highlight the same victim before the night can continue. You can see your pack’s choices and change your own. Hide your identity during the day.',
   fortune:'Check one living player’s role each night. Only you see the result.',
-  girl:'Choose whether to spy each night. You discover one living werewolf. Heads: you stay hidden. Tails: that werewolf also discovers who you are.',
+  girl:'Spy to identify one living werewolf. You may stay unseen, or that werewolf may discover who you are.',
   witch:'Two potions for the whole game: save tonight’s werewolf victim once, and poison a living player once. You may use both in the same night, including on yourself.',
   hunter:'When eliminated, choose one living player to eliminate with you, or pass. This happens before victory is decided.'
 };
@@ -165,10 +166,10 @@ function mePanel() {
   if(!me.alive&&state.phase!=='hunter')body='<div class="sleep"><span class="moon">◇</span><h3>Eliminated</h3><p>You can watch, but cannot act or vote.</p></div>';
   else if(!yourTurn)body=`<div class="sleep"><span class="moon">${NIGHT_PHASES.includes(state.phase)?'☾':'☀'}</span><h3>${me.acted?'Choice recorded.':NIGHT_PHASES.includes(state.phase)?'Close your eyes.':state.phase==='hunter'?'Hunter’s turn':'Discussion'}</h3><p>${me.acted?'Wait for the next phase.':NIGHT_PHASES.includes(state.phase)?'Wait until the host calls your role.':state.phase==='hunter'?'The hunter is choosing a final target.':'Discuss with the other players.'}</p></div>`;
   else if(state.phase==='werewolf')body=packPanel();
-  else if(state.phase==='girl')body='<h3>Spy or pass</h3><p class="action-prompt">Spying always reveals one werewolf to you. Flip heads to stay hidden; tails means that werewolf sees you too.</p><div class="action-buttons"><button class="primary" id="spy">Flip the coin ◈</button><button class="secondary" id="pass">Stay asleep</button></div>';
+  else if(state.phase==='girl')body='<h3>Spy or stay asleep</h3><p class="action-prompt">Spying reveals one werewolf. You may stay unseen, or be discovered by that werewolf.</p><div class="action-buttons"><button class="primary" id="spy">Spy</button><button class="secondary" id="pass">Stay asleep</button></div>';
   else if(state.phase==='witch')body=witchPanel();
   else body=`<h3>${state.phase==='fortune'?'Check a role':state.phase==='werewolf'?'Choose a player':state.phase==='hunter'?'Hunter’s choice':'Cast your vote'}</h3><p class="action-prompt">${state.phase==='fortune'?'Choose another living player’s house to learn their role privately.':state.phase==='werewolf'?'Choose a living player’s house. Your pack is marked. Only one victim can be attacked tonight.':state.phase==='hunter'?'Choose a living player’s house to take them with you, or pass.':'Choose a living player’s house to vote for them. You may also abstain.'}</p><p class="target-label" id="target-name">${selected?escape(playerName(selected)):'Choose a house in the village'}</p><div class="action-buttons"><button class="primary" id="confirm-target" ${selected?'':'disabled'}>${state.phase==='vote'?'Cast my vote':'Confirm choice'}</button>${state.phase!=='werewolf'?`<button class="secondary" id="pass">${state.phase==='vote'?'Abstain':'Pass'}</button>`:''}</div>`;
-  return `<section class="panel"><div class="private-tag">Private</div>${body}<div class="host-tools"><button class="quiet" id="peek-role">View my role</button></div>${me.notes?.length?`<details class="notes"><summary class="quiet">Your notes (${me.notes.length})</summary>${me.notes.slice().reverse().map(n=>`<div class="note"><small>NIGHT ${n.day}</small>${escape(n.text.replace(/\b(fortune|girl|witch|hunter|werewolf|villager)\b/g,m=>roleNames[m]))}</div>`).join('')}</details>`:''}</section>`;
+  return `<section class="panel"><div class="private-tag">Private</div>${body}<div class="host-tools"><button class="quiet" id="peek-role">View my role</button></div>${me.notes?.length?`<details class="notes"><summary class="quiet">Your notes (${me.notes.length})</summary>${me.notes.slice().reverse().map(n=>`<div class="note"><small>NIGHT ${n.day}</small>${escape(privateNoteText(n.text).replace(/\b(fortune|girl|witch|hunter|werewolf|villager)\b/g,m=>roleNames[m]))}</div>`).join('')}</details>`:''}</section>`;
 }
 function logText(text) {
   return text.replace('The prophecy has come true. Werewolves walk among us.','Game started.')
@@ -241,9 +242,9 @@ function wireRoom() {
   $('#hide')?.addEventListener('click',()=>{reveal=false;renderRoom();});
   $('#ready')?.addEventListener('click',()=>{reveal=false;send({type:'ready',phaseId:state.phaseId});});
   $('#peek-role')?.addEventListener('click',()=>showModal(`<div class="private-tag">Private</div><h2>${roleNames[state.me.role]}</h2><img class="role-card" src="assets/${state.me.role}-card.webp" alt="Your role card"><p class="guide-intro">${roleCopy[state.me.role]}</p>`));
-  $('#spy')?.addEventListener('click',async()=>{if(await act({spy:true})){const n=state.me.notes.at(-1);if(n)showModal(`<div class="eyebrow">Spy result</div><h2 style="margin-top:18px">${n.text.startsWith('Heads')?'Heads. Hidden.':'Tails. Discovered.'}</h2><p class="guide-intro">${escape(n.text)}</p><p>Only you can see this result.</p>`);}});
+  $('#spy')?.addEventListener('click',async()=>{if(await act({spy:true})){const n=state.me.notes.at(-1);if(n){const result=spyPresentation(n.text);showModal(`<div class="eyebrow">Spying result</div><h2 style="margin-top:18px">${result.title}</h2><p class="guide-intro">${escape(result.text)}</p><p>Only you can see this result.</p>`);}}});
   $('#pass')?.addEventListener('click',()=>state.phase==='vote'?send({type:'vote',phaseId:state.phaseId,target:null}):act({}));
-  $('#confirm-target')?.addEventListener('click',async()=>{if(!selected)return;const phase=state.phase;if(await send({type:phase==='vote'?'vote':'action',phaseId:state.phaseId,target:selected})){if(phase==='fortune'){const n=state.me.notes.at(-1);if(n)showModal(`<div class="eyebrow">Role result</div><h2 style="margin-top:18px">Role result</h2><p class="guide-intro">${escape(n.text.replace(/\b(fortune|girl|witch|hunter|werewolf|villager)\b/g,m=>roleNames[m]))}</p>`);}else toast('Choice recorded.');}});
+  $('#confirm-target')?.addEventListener('click',async()=>{if(!selected)return;const phase=state.phase;if(await send({type:phase==='vote'?'vote':'action',phaseId:state.phaseId,target:selected})){if(phase==='fortune'){const n=state.me.notes.at(-1);if(n)showModal(`<div class="eyebrow">Role result</div><h2 style="margin-top:18px">Role result</h2><p class="guide-intro">${escape(privateNoteText(n.text).replace(/\b(fortune|girl|witch|hunter|werewolf|villager)\b/g,m=>roleNames[m]))}</p>`);}else toast('Choice recorded.');}});
   $('#heal')?.addEventListener('change',updateWitchChoices);
   $('#use-poison')?.addEventListener('change',updateWitchChoices);
   $('#poison')?.addEventListener('change',updateWitchChoices);
@@ -277,7 +278,7 @@ $('#sound').onclick=async()=>{
   }catch{toast('Sound is unavailable in this browser.');}
 };
 if(tutorialMode){
-  const {createTutorial}=await import('./tutorial.mjs?v=readability-2');
+  const {createTutorial}=await import('./tutorial.mjs?v=spying-3');
   tutorial=createTutorial({root,role:params.get('tutorial'),present:demo=>{state=demo;renderRoom();},notify:toast,closeModal:()=>{if(modal.open)modal.close();}});
   tutorial.start();
 }else if(projector&&/^\d{6}$/.test(params.get('room')||'')){

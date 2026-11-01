@@ -1,4 +1,4 @@
-import { TutorialGame, TUTORIAL_ROLES } from './tutorial-model.mjs?v=readability-2';
+import { TutorialGame, TUTORIAL_ROLES } from './tutorial-model.mjs?v=spying-3';
 
 const names={villager:'Villager',werewolf:'Werewolf',girl:'Little Girl',fortune:'Fortune Teller',witch:'Witch',hunter:'Hunter'};
 const summaries={villager:'Discuss and vote.',werewolf:'Agree on a victim with your pack.',girl:'Spy or stay asleep.',fortune:'Check one player’s role.',witch:'Heal or poison a player.',hunter:'Make a final choice after elimination.'};
