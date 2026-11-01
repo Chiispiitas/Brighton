@@ -16,7 +16,8 @@ export const LESSONS={
     step('Find your pack','Rowan is the other werewolf. His highlight is on Ivy. You can see the pack and their choices; the other players cannot. Select Ivy to agree.','pack','.pack-choices',[pick('p2')]),
     step('A split decision blocks the night','Your highlight is on Finn, but Rowan chose Ivy. Even a majority is not enough: every living wolf must choose the same person. Change your choice to Ivy.','split','#pack-continue',[pick('p2')]),
     step('Continue after agreement','Both wolves chose Ivy. The button is now available. Either a living wolf or the host can continue the night.','agreed','#pack-continue',[click('#pack-continue',1000)]),
-    step('Keep your role hidden during the day','This example shows Ivy eliminated at dawn. Discuss and vote with everyone else. Wolves win when they equal or outnumber the other living players, after any hunter shot.','dawn','.map-legend'),vote],
+    step('Keep your role hidden during the day','This example shows Ivy eliminated at dawn. Discuss and vote with everyone else. Wolves win when they equal or outnumber the other living players, after any hunter shot.','dawn','.map-legend'),
+    step('Vote with everyone else','On day two, vote during the discussion phase. Your pack is still marked only for you. Try selecting Finn and confirming your vote. You can also Abstain.','wolf-vote','[data-player="p3"]',[pick('p3'),click('#confirm-target')])],
   fortune:[card,
     step('Check one living player','Select Rowan’s house, then Confirm choice. You learn the exact role of one living player each night. You can also pass.','fortune','[data-player="p1"]',[pick('p1'),click('#confirm-target')]),
     step('Your result stays private','Rowan is a werewolf. The result is also kept in Your notes. Other players still see Rowan’s house without his role. Keep quiet until morning.','notes','.notes',[click('.notes summary',1100)]),vote,
@@ -49,6 +50,7 @@ function fixture(role,scene,serial){
   if(scene==='card')phase('reveal');
   if(scene==='sleep')phase('werewolf');
   if(scene==='vote'){phase('vote');s.day=2;}
+  if(scene==='wolf-vote'){phase('vote');s.day=2;s.players[2].alive=false;}
   if(['pack','split','agreed'].includes(scene)){
     phase('werewolf');s.actions.p1={target:'p2'};
     if(scene!=='pack')s.actions.p0={target:scene==='split'?'p3':'p2'};
