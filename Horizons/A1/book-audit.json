@@ -1,7 +1,7 @@
 {
   "schema_version": 2,
   "updated": "2026-10-31",
-  "status": "Core editorial revision and independent saved-PDF proof complete; live publication verification pending",
+  "status": "Core editorial revision complete; independent saved-PDF and live verification complete",
   "authority": "Author delegates broad editorial/design authority, including replacement of previous cosmetic commands. Preserve preferred original people/art; use imagegen generously for purposeful new surfaces.",
   "scope": "Units1–8,32lessons and fourpairedreviews.72corepages plus4endcreditpages; front/index/practicebanks/workbook/optionalannexes excluded.",
   "baseline": {
@@ -131,9 +131,9 @@
       "subjective_listening_review": false
     },
     "live_viewer": {
-      "completed": false,
-      "all90controls_play_pause": false,
-      "print_ui_hidden": false
+      "completed": true,
+      "all90controls_play_pause": true,
+      "print_ui_hidden": true
     },
     "evidence_directory": "Sources/Editorial-overhaul-20261031"
   },
@@ -283,9 +283,9 @@
         "Sources"
       ],
       "fingerprint": {
-        "files": 741,
-        "bytes": 566414323,
-        "sha256": "fa5cb17e4b9867625a3965a6d90697a58fdde8d9b38d169b6c1febf710149154"
+        "files": 744,
+        "bytes": 566468520,
+        "sha256": "e9f83e71ba798d98a2eea833e271b636fe50e28a70091419e4865cbe2d766c47"
       }
     },
     "shared_rendering": {

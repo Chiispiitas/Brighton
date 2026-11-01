@@ -1,6 +1,6 @@
 # Horizons A1 — current editorial audit
 
-Updated 31 October 2026. **Full core-book editorial revision and independent saved-PDF proof complete; live publication verification pending.** This audit replaces the former accumulated correction log. Native PDF evidence is saved; publication evidence is added only after checking the actual online viewer.
+Updated 31 October 2026. **Full core-book editorial revision, independent saved-PDF proof and live publication verification complete.** This audit replaces the former accumulated correction log. The checked edition is published on main; native PDF, peer-review and live evidence are saved in Sources/Editorial-overhaul-20261031.
 
 ## Authority and scope
 
@@ -39,13 +39,15 @@ The supplied English File, Evolve and Personal Best books inform principles; no 
 ## Release evidence
 
 - [x] All 36 masters and 72 core pages visually reviewed after the final feature pass.
-- [x] Original artwork verified against the rendered baseline: all247oldimagefiles/230visibleuses preserved; rejected experiment inactive. Twelve new generated document objects supplement them.
-- [x] Current controlled keys, private choices, writing space, recorded-source facts and actual track mappings checked. Hidden-item guessing and7Bteacherdateexamples corrected in final proof.
+- [x] Original artwork verified against the rendered baseline: all 247 old image files and 230 visible uses preserved; rejected experiment inactive. Twelve new generated document objects supplement them.
+- [x] Current controlled keys, private choices, writing space, recorded-source facts and actual track mappings checked. Hidden-item guessing and the 7B teacher date examples corrected in final proof.
 - [x] Standalone/compiled geometry and type agree; text and empty writing fields are not clipped; images/backgrounds/pseudo-surface assets decode.
-- [x] Full native A4 PDF reopened:76pages, all learner words/page numbers retained. All76savedpages independently rendered through Poppler and inspected; three editors checked the corresponding task keys.
-- [x]84external-photo/source credits at the end, with actual page uses, required attribution/license and crop/change notices. Empty public-domain links removed.
-- [ ] Published HTML/styles/media/PDF match; all audio controls play/pause; reader and audio UI hide in print without moving content.
-- [ ] Final inventory, fingerprints, editorial decision and reversible change record saved after the checks.
+- [x] Full native A4 PDF reopened: 76 pages, all learner words/page numbers retained. All 76 saved pages independently rendered through Poppler and inspected; three editors checked the corresponding task keys.
+- [x] 84 external-photo/source credits at the end, with actual page uses, required attribution/license and crop/change notices. Empty public-domain links removed.
+- [x] 171 published files match the checked local edition, including HTML/styles/new media/PDF and 84 lesson audio files. All 90 visible audio controls play/pause (83 distinct active recording URLs); reader and audio UI hide in print with identical page geometry.
+- [x] Final inventory, fingerprints, editorial decision and reversible change record saved after the checks. Implementation commit `0e5aca0`; safety baseline `fd497fd` and original PDF retained.
+
+Final inventory: 32 lessons + 4 paired reviews, 72 core pages + 4 end-credit pages, 253 activity blocks, 46 NEW WORDS badges, 32 Extra Practice footers and 75 topic references. The printed range is 5–80; beginning pages remain outside scope. No author acceptance is claimed: this is the delegated editorial decision after the documented review.
 
 ## Deliberately excluded work
 
