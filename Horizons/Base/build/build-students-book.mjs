@@ -12,6 +12,7 @@ const collator = new Intl.Collator("en", { numeric: true, sensitivity: "base" })
 const cssCache = new Map();
 const installedStylesheets = new Set();
 const installedLiveLessonStylesheets = new Set();
+const deferredEditorialStyles = [];
 
 function readText(filePath) {
   return fs.readFileSync(filePath, "utf8");
@@ -130,7 +131,12 @@ function collectHeadStyles(headHtml, lessonPath, filename) {
 
     let css = loadCss(stylesheetPath);
     if (media) css = `@media ${media} {\n${css}\n}`;
-    output.push(`/* ${path.relative(repoRoot, stylesheetPath).replaceAll(path.sep, "/")} */\n${css}`);
+    const labeledCss = `/* ${path.relative(repoRoot, stylesheetPath).replaceAll(path.sep, "/")} */\n${css}`;
+    // Cross-lesson edition layers must follow all older individual lesson rules,
+    // matching the order used in each standalone master.
+    if (path.dirname(stylesheetPath) === lessonsDir && path.basename(stylesheetPath).startsWith("editorial-")) {
+      deferredEditorialStyles.push({ name: path.basename(stylesheetPath), css: labeledCss });
+    } else output.push(labeledCss);
   }
 
   let inlineIndex = 0;
@@ -303,14 +309,20 @@ const output = `<!doctype html>
   <title>Horizons A1 — Student's Book</title>
   <style>
 ${compiledStyles.join("\n\n")}
+${deferredEditorialStyles.sort((a,b) => Number(a.name.includes("-features")) - Number(b.name.includes("-features"))).map(x => x.css).join("\n\n")}
+/* Edition contract follows all local compositions. */
+${loadCss(path.join(repoRoot, "Horizons", "Base", "design-system", "editorial-edition.css"))}
 
 /* Student's Book unifier */
 ${viewerCss}
   </style>
   <!-- Canonical lesson CSS is linked after the compiled snapshot so local CSS edits
        are reflected immediately when opening Student's Book.html during authoring. -->
-  ${liveLessonStyles.join("\n  ")}
+  ${liveLessonStyles.sort((a,b) => (Number(a.includes("/editorial-")) * 2 + Number(a.includes("-features"))) - (Number(b.includes("/editorial-")) * 2 + Number(b.includes("-features")))).join("\n  ")}
+  <link rel="stylesheet" href="../Base/design-system/editorial-edition.css">
+  <link rel="stylesheet" href="../Base/viewer/book-navigation.css">
   <script src="../Base/viewer/audio-player.js" data-audio-base="./Audios/" defer></script>
+  <script src="../Base/viewer/book-navigation.js" defer></script>
 </head>
 <body class="hz-book">
   <main id="hz-book">

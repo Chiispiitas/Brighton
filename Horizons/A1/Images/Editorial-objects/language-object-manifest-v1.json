@@ -1,0 +1,110 @@
+[
+  {
+    "file": "1C-postcard-surface-v1.png",
+    "dimensions": [
+      2172,
+      724
+    ],
+    "mode": "RGBA",
+    "alpha_min_max": [
+      0,
+      255
+    ],
+    "zero_alpha_pixels": 127149,
+    "nonopaque_pixels": 1572398,
+    "alpha_bbox": [
+      17,
+      0,
+      2158,
+      710
+    ],
+    "center_mean_RGBA": [
+      252.43344291036598,
+      252.35179517407633,
+      252.28293847816394,
+      253.00819182782047
+    ],
+    "sha256": "ce2fe8302d3a8839eacba11b3fe018b97f156347d8a3f1cc0539381437269ca8"
+  },
+  {
+    "file": "4C-stock-sheet-surface-v1.png",
+    "dimensions": [
+      2123,
+      741
+    ],
+    "mode": "RGBA",
+    "alpha_min_max": [
+      0,
+      255
+    ],
+    "zero_alpha_pixels": 101604,
+    "nonopaque_pixels": 1572448,
+    "alpha_bbox": [
+      0,
+      0,
+      2123,
+      741
+    ],
+    "center_mean_RGBA": [
+      249.14556279024652,
+      249.3668291440835,
+      249.8421741054648,
+      252.82803311386758
+    ],
+    "sha256": "b57258893f6ab0aeddd632484ddb1e1237b212998605b57f4f2aeb29d684caaf"
+  },
+  {
+    "file": "7C-record-liner-surface-v1.png",
+    "dimensions": [
+      2058,
+      764
+    ],
+    "mode": "RGBA",
+    "alpha_min_max": [
+      0,
+      255
+    ],
+    "zero_alpha_pixels": 253174,
+    "nonopaque_pixels": 1570585,
+    "alpha_bbox": [
+      41,
+      0,
+      2032,
+      764
+    ],
+    "center_mean_RGBA": [
+      253.11563623058908,
+      253.02434765254702,
+      253.03762667839902,
+      253.90772263875093
+    ],
+    "sha256": "683291b4f02ee4468fd03398bbb33aacf1587d693de41c76dc0a3faefaf8c3bb"
+  },
+  {
+    "file": "8A-itinerary-surface-v1.png",
+    "dimensions": [
+      2119,
+      742
+    ],
+    "mode": "RGBA",
+    "alpha_min_max": [
+      0,
+      255
+    ],
+    "zero_alpha_pixels": 141303,
+    "nonopaque_pixels": 1571670,
+    "alpha_bbox": [
+      0,
+      0,
+      2116,
+      742
+    ],
+    "center_mean_RGBA": [
+      246.3503043702111,
+      246.5528347315182,
+      248.32218722553682,
+      253.03189527241892
+    ],
+    "sha256": "bf23f194ee0c0bc3f82983ada40f62b9208c9236297dd49e806725be07727b46"
+  }
+]

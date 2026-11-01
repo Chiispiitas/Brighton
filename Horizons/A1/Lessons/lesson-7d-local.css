@@ -2,18 +2,18 @@
    Cutouts are purposeful and local. Full source backgrounds and writing lines survive. */
 .l7d-history { display:grid; grid-template-columns:32mm 1fr; gap:5mm; padding:2.5mm 3mm; background:#f1eeea; align-items:center; }
 .l7d-history > img { width:32mm; height:auto; }
-.l7d-year { display:block; font-size:9.5pt; color:#9a3b24; margin-bottom:1mm; font-weight:650; }
+.l7d-year { display:block; font-size:10pt; color:#9a3b24; margin-bottom:1mm; font-weight:650; }
 .l7d-history h2 { margin:0 0 1.5mm; color:#282526; font:720 18pt/1.1 var(--hz-font-sans); }
-.l7d-history p { margin:0 0 1.5mm; font-size:9.5pt; line-height:1.4; }
+.l7d-history p { margin:0 0 1.5mm; font-size:10pt; line-height:1.4; }
 .l7d-history a { color:#8f123f; font-size:7pt; }
 .l7d-verbs { display:grid; grid-template-columns:repeat(4,1fr); gap:1.5mm 3mm; }
 .l7d-verbs span { border-bottom:.2mm solid #d8d9dc; padding-bottom:1mm; white-space:nowrap; }
 .l7d-diary { border-left:.7mm solid #722b3f; background:#fbf6f2; padding:3mm; }
 .l7d-diary header { margin-bottom:2mm; }.l7d-diary header > span { font-size:8pt; color:#722b3f; font-weight:650; }
 .l7d-diary h2 { margin:1mm 0; font:700 16pt/1.1 var(--hz-font-sans); color:#442d35; }
-.l7d-diary header p { font-size:9.5pt; margin:0; }
+.l7d-diary header p { font-size:10pt; margin:0; }
 .l7d-diary-body { display:grid; grid-template-columns:1fr 63mm; gap:4mm; align-items:center; }
-.l7d-diary-body p { font-size:9.5pt; line-height:1.4; margin:0 0 1.6mm; }.l7d-diary-body p:last-child { margin-bottom:0; }
+.l7d-diary-body p { font-size:10pt; line-height:1.4; margin:0 0 1.6mm; }.l7d-diary-body p:last-child { margin-bottom:0; }
 .l7d-diary-body img { width:63mm; height:auto; }
 .l7d-entry-plan p { display:grid; grid-template-columns:24mm 1fr; column-gap:3mm; }
 .l7d-events { display:grid; grid-template-columns:1fr 1fr; gap:2mm 5mm; }
@@ -26,3 +26,11 @@
 .l7d-writing-head { position:relative; display:flex; align-items:center; min-height:28mm; padding-right:42mm; }
 .l7d-writing-head h2 { margin:0; font:720 17pt/1.1 var(--hz-font-sans); color:#282526; letter-spacing:-.02em; }
 .l7d-writing-head img { position:absolute; right:0; bottom:0; width:36mm; height:44mm; object-fit:contain; }
+
+.l7d-writing-exercise .hz-exercise__instruction{max-width:none}.l7d-writing-head{min-height:0;padding:0 0 2mm}.l7d-writing-head h2{font-size:17pt}.l7d-page--2 .hz-edition-check{margin-top:1.5mm}
+
+/* Original diary cutout restored; reserve its space without reducing the eight7mm lines. */
+.l7d-writing-head{min-height:15mm;padding:0 38mm 2mm 0}.l7d-writing-head img{width:30mm;height:35mm;bottom:0}
+
+/* Contain the restored prop within its own header, clear of task instructions. */
+.l7d-writing-head{display:grid;grid-template-columns:1fr 32mm;gap:3mm;min-height:32mm;padding:0 0 2mm}.l7d-writing-head img{position:static;width:30mm;height:32mm;object-fit:contain}

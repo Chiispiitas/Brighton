@@ -137,3 +137,23 @@
 .l3d-name-gap { border-color:#729078; }
 .l3d-post-editor h2 { font:700 19pt/1.2 Georgia,serif; }
 .l3d-my-challenge { background:#e9f0e4; color:#285638; border-left:.7mm solid #4b8053; }
+
+
+/* Editorial edition: authored composition and usable teaching surfaces. */
+
+.l3d-page.ed13-page .l3d-continuation-content {padding-top:0;}
+.l3d-page--2.ed13-page .hz-exercise {padding:1mm 0;}
+.l3d-page.ed13-page .l3d-challenge {background:#f4f1eb;padding:3mm;border:0;}
+.l3d-page.ed13-page .l3d-post header {background:none;color:#292e31;padding:0;margin-bottom:2mm;border-bottom:.35mm solid #aaa;}
+.l3d-page.ed13-page .l3d-post h2 {color:#292e31;font:650 21pt/1.1 var(--hz-font-sans);}
+.l3d-page.ed13-page .l3d-seven {background:#6b4d48;}
+.l3d-page.ed13-page .l3d-week-record thead th {background:#6b4d48;}
+.l3d-page.ed13-page .l3d-week-record .l3d-day-yes::before {display:none;}
+.l3d-page.ed13-page .l3d-week-record .l3d-day-yes {color:#354c42;}
+.l3d-page.ed13-page .l3d-photo-story img {height:auto;width:100%;}
+.l3d-page.ed13-page .l3d-sequence-strip {border-color:#9b7354;}
+.l3d-page.ed13-page .l3d-your-week {font-size:9.5pt;}
+.l3d-page.ed13-page .l3d-post-editor {border:0;border-top:.5mm solid #597263;background:none;padding:0;}
+.l3d-page.ed13-page .l3d-post-editor header {padding:1.5mm 0;margin:0;background:none;color:#3e5548;border:0;}
+.l3d-page.ed13-page .l3d-post-editor h2 {font:650 18pt/1.2 var(--hz-font-sans);}
+.l3d-page.ed13-page .l3d-my-challenge {background:none;padding:1mm 0;border:0;}

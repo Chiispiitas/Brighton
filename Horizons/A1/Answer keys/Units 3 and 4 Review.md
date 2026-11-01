@@ -1,7 +1,7 @@
 # Horizons A1 — Units 3 & 4 Review and Practice
 
 Student's Book printed pages 39–40. Master: `Lessons/4R.html`.
-Read down the left column, then down the right. Page 39: activities 1–3 left, 4 right. Page 40: 5–6 left, 7 right. Seven main activities. This is cumulative practice; no new grammar or vocabulary set is introduced.
+Page 39 reads down the left column (1–3), then the cinema programme (4). Page 40 moves from a question/answer/photo band (5) to a full-width original invitation (6), then three checked transfer choices (7). Seven main activities. This is cumulative practice; no new grammar or vocabulary set is introduced.
 
 ## 1. Grammar
 
@@ -54,29 +54,33 @@ Possible model:
 
 Hi! I don't work on Friday, so I go to the park at six. The film is at seven. I have apples and sandwiches. I don't have meat because I don't eat it. Do you want a sandwich?
 
-Accept other sensible plans and food choices. Check present-simple forms, pronoun reference, countable/uncountable food language and vocabulary only where the learner uses them. Punctuation: capital I, names/days and sentence starts; full stops/question marks; a comma before so between these complete clauses. Preserve apostrophes in I'm and don't. Eight 7mm open lines support independent expression. Do not make this another food-sharing-app post or a fill-in-the-gaps writing task.
+Accept other sensible plans and food choices. Check present-simple forms, pronoun reference, countable/uncountable food language and vocabulary only where the learner uses them. Punctuation: capital I, names/days and sentence starts; full stops/question marks; a comma before so between these complete clauses. Preserve apostrophes in I'm and don't. Eight 7 mm open lines support independent expression. Do not make this another food-sharing-app post or a fill-in-the-gaps writing task.
 
 ## 7. BEYOND HORIZONS
 
-Answers vary. Eight circles identify the eight source lessons, not extra exercise numbers.
+Choose one, change roles and verify the product. Learners use their own or fictional information, not a facing visible answer table.
 
-| Lesson | Evidence to check |
+| Choice | Evidence to check |
 | --- | --- |
-| 3A | Three comprehensible morning routines in present-simple sentences. |
-| 3B | Two real Do you...? questions about a chosen day and the partner's own answers. |
-| 3C | Full Where/When/Who ... with? questions about a place the partner goes; meaningful personal answers. |
-| 3D | Two routine sentences using usually and before or after in sensible positions. |
-| 4A | Two appropriate singular countable food phrases with a/an; two taught uncountable food words without an article. For example, an apple, an egg, rice, milk. |
-| 4B | A food name and flavor, with correctly referring it or them. Accept a preference sentence too; for example, I don't like lemons. They're sour. |
-| 4C | A sentence with too many + plural countable noun and one with not enough + a countable plural or uncountable noun. |
-| 4D | A short original message using meaningful because and so clauses, with appropriate punctuation. |
+| A day in order | Three comprehensible present-simple routines, usually and one sensible before/after relationship. Partner asks a question and identifies which event is first. |
+| Food for friends | A stated food requirement and private available amounts for four people. Enough/not enough match those amounts; partner checks and suggests a practical purchase/change. No actual food purchase or eating is required. |
+| A place we like | A place, when the speaker goes, who accompanies them and a reason for liking it. Partner asks about a detail and reports one new fact. Accept fictional places/details. |
 
-Pair questions rely on the partner's personal information, not a visible A/B answer table. Other responses can be written in a notebook; a learner may use fictional personal details. The source lesson codes clarify coverage. There is no Speaking category or photo-pass task.
+Use the notes space for the chosen task. At the end, improve one answer or adapt a useful example using the relevant source lesson. This retry creates observable language evidence, not a decorative self-rating.
 
 ## Language and design boundaries
 
 - All new controlled grammar is cumulative through 4D. Film/cinema and sandwiches are minimal, context-supported cinema-event language and transparent/near-transparent Spanish cognates; they are not a new vocabulary set or assessed recall target.
 - The fictional cinema event provides a fresh review context; it does not repeat the earlier famous-person routine, radio guests, Maps reviews, social habit challenge, breakfast profiles, vegan taste test, recipe lesson or food-sharing-app story.
-- The approved review-only two-column structure is reused. The new night-blue/gold cinema poster, exact-count inventory and independent message area have their own visual roles; neutral word banks and shared learner font sizes remain.
+- The first page balances open retrieval against a source-specific cinema programme. Its dark admission heading, large time and two voices on warm paper differ from the1&2 gallery catalogue. Page 40 uses horizontal rehearsal, full-width writing and a three-choice transfer band. Neutral shared word banks remain.
 - Two licensed Son Tung Tran/Pexels photographs support the setting. The exact-count native-alpha image was made with built-in imagegen. Source, license, hash and generation evidence are in `Images/4R/asset-manifest.json` and `ASSETS.md`.
 - This review is reading/visual/writing/personal retrieval practice. No listening activity or track is printed, so no new audio recording is required. Existing recordings remain unchanged.
+
+
+## Final review edition — 31 October 2026
+
+All controlled answers/source facts and all previous active images remain unchanged. The second outdoor-cinema photo now supports activity5 rehearsal before the independent invitation, rather than shrinking writing space inside activity6. Eight full-width7 mm writing lines support the message; a real reply, one detail question and revision remain. Three manageable final choices supersede the old eight-circle/eight-menu rule. New scoped styles: editorial-review-features.css.
+
+## Tactile source-object addendum — 31 October 2026
+
+The live cinema admission strip now sits on a bespoke blank native-alpha imagegen ticket. Saturday, Film 7:30 and FREE remain live text; every source fact and answer is unchanged. The first ticket variant is archived unused; the brighter white variant2 is active. Exact prompts and generation provenance: Images/Editorial-objects/review-object-prompts.json and review-object-provenance.json.

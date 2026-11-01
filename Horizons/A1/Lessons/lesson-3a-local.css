@@ -157,3 +157,19 @@
 .l3a-mystery { background:#fffdf8; border-color:#c8c0b3; }
 .l3a-mystery header { background:none; color:#473f35; border-bottom:.3mm dashed #a69c8b; }
 .l3a-mystery h2 { font-family:Georgia,serif; font-style:italic; font-weight:400; font-size:19pt; }
+
+
+/* Editorial edition: authored composition and usable teaching surfaces. */
+
+.l3a-page.ed13-page .l3a-continuation-content {padding-top:0;}
+.l3a-page.ed13-page .l3a-leo-feature {background:#f4f1ed;border-top:.5mm solid #ad3158;padding:3mm;}
+.l3a-page.ed13-page .l3a-feature-head h2 {font:650 21pt/1.12 var(--hz-font-sans);color:#28252a;}
+.l3a-page.ed13-page .l3a-feature-time {border:0;border-radius:0;background:none;font-size:18pt;}
+.l3a-page.ed13-page .l3a-feature-copy {font-size:10pt!important;line-height:1.4;}
+.l3a-page.ed13-page .l3a-shift header img {height:43mm;transform:none;object-fit:cover;object-position:center 30%;}
+.l3a-page.ed13-page .l3a-shift:not(.l3a-shift--late) header img {transform:scale(2);transform-origin:60% 40%;}
+.l3a-page.ed13-page .l3a-shift header > div {background:#3b424c;}
+.l3a-page.ed13-page .l3a-shift--late header > div {background:#855237;}
+.l3a-page.ed13-page .l3a-mystery {border:0;border-top:.4mm solid #96928a;background:none;padding:2mm 0 0;}
+.l3a-page.ed13-page .l3a-mystery header {border:0;margin:0 0 1mm;padding:0;background:none;}
+.l3a-page.ed13-page .l3a-mystery h2 {font:650 18pt/1.1 var(--hz-font-sans);}

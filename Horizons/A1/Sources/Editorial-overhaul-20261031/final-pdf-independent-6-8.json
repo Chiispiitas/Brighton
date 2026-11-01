@@ -1,0 +1,392 @@
+{
+  "status": "PASS; frozen",
+  "reviewer": "revise_units_4_6",
+  "date": "2026-10-31",
+  "method": "Personally inspected every assigned Poppler-rendered native-PDF page, not prior HTML screenshots. Reopened final PDF, verified A4/76pages/hash, crosschecked relevant keys and actual recorded-source text imports. No subjective audio listening claim.",
+  "pdf_path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\outputs\\Horizons-A1-Student-Book.pdf",
+  "pdf_sha256": "32b8092c5a6e9f66503e180e7b142ed3a5e7ef458fcb42123a79213187d61c0f",
+  "physical_pages": [
+    49,
+    76
+  ],
+  "printed_pages": [
+    53,
+    80
+  ],
+  "assigned_pages_seen": 28,
+  "page_results": [
+    {
+      "physical_page": 49,
+      "printed_page": 53,
+      "image": "print-49.png",
+      "sha256": "1c9bec7d45036f4932ea0268c3f170c2757fb9efcf3a6b144138b121e983376d",
+      "personally_visually_inspected": true,
+      "decision": "PASS"
+    },
+    {
+      "physical_page": 50,
+      "printed_page": 54,
+      "image": "print-50.png",
+      "sha256": "bb42e19475ec239c83797caadf3032ed1cda00741a1a027565bddfe9db7d602b",
+      "personally_visually_inspected": true,
+      "decision": "PASS"
+    },
+    {
+      "physical_page": 51,
+      "printed_page": 55,
+      "image": "print-51.png",
+      "sha256": "9b8eaf9ce975cc85432b8ac9e8061f21c526311d6a0b332bee0dbecba84dc86e",
+      "personally_visually_inspected": true,
+      "decision": "PASS"
+    },
+    {
+      "physical_page": 52,
+      "printed_page": 56,
+      "image": "print-52.png",
+      "sha256": "21baffd01bdaa6c95648d721eb975978fb72ca8df40c4a94a02799a62e0e2d83",
+      "personally_visually_inspected": true,
+      "decision": "PASS"
+    },
+    {
+      "physical_page": 53,
+      "printed_page": 57,
+      "image": "print-53.png",
+      "sha256": "7ad17865e3b8218641f5b5ef2e1b1465496857705bfc03e7a1990a8c99f96af8",
+      "personally_visually_inspected": true,
+      "decision": "PASS"
+    },
+    {
+      "physical_page": 54,
+      "printed_page": 58,
+      "image": "print-54.png",
+      "sha256": "6fd682849b2fc2744a59c1d965f34da73bbeda5267ec3ace036165a0e0d39daf",
+      "personally_visually_inspected": true,
+      "decision": "PASS"
+    },
+    {
+      "physical_page": 55,
+      "printed_page": 59,
+      "image": "print-55.png",
+      "sha256": "a94adda804294be9bd64337b71e25c4efde45f1205ee2ab4bd558b704f3d7987",
+      "personally_visually_inspected": true,
+      "decision": "PASS"
+    },
+    {
+      "physical_page": 56,
+      "printed_page": 60,
+      "image": "print-56.png",
+      "sha256": "7bc53f479dd2b081a3d758b751b0a3988b9b8030b4385855d8d04f54317fb88f",
+      "personally_visually_inspected": true,
+      "decision": "PASS"
+    },
+    {
+      "physical_page": 57,
+      "printed_page": 61,
+      "image": "print-57.png",
+      "sha256": "9f0bdc4776dc3fa5b0bcf98f4ffacb0fc21f966e629e7ad55148abc63d5c7e7a",
+      "personally_visually_inspected": true,
+      "decision": "PASS"
+    },
+    {
+      "physical_page": 58,
+      "printed_page": 62,
+      "image": "print-58.png",
+      "sha256": "552f900353f760675d45b617c07660319289b33accffe8b122029e1ef714ca26",
+      "personally_visually_inspected": true,
+      "decision": "PASS"
+    },
+    {
+      "physical_page": 59,
+      "printed_page": 63,
+      "image": "print-59.png",
+      "sha256": "b1b7f78d29426fd238d1bdabd706eea7c61d6dfa680932474606c33170d4cecd",
+      "personally_visually_inspected": true,
+      "decision": "PASS"
+    },
+    {
+      "physical_page": 60,
+      "printed_page": 64,
+      "image": "print-60.png",
+      "sha256": "0dbd35c3138ffd2a8de133351ee048ee4c43021abba708a90adce5d1fa7b6034",
+      "personally_visually_inspected": true,
+      "decision": "PASS"
+    },
+    {
+      "physical_page": 61,
+      "printed_page": 65,
+      "image": "print-61.png",
+      "sha256": "4e67fdb4e102ddce06c1826a3ff57aef3a4aae212de8c7c2040b482b4bf980d2",
+      "personally_visually_inspected": true,
+      "decision": "PASS"
+    },
+    {
+      "physical_page": 62,
+      "printed_page": 66,
+      "image": "print-62.png",
+      "sha256": "130f372c96805f6ca384dcad2fe734924316c42de9dec6a461d0c4d05a21cd76",
+      "personally_visually_inspected": true,
+      "decision": "PASS"
+    },
+    {
+      "physical_page": 63,
+      "printed_page": 67,
+      "image": "print-63.png",
+      "sha256": "a7db26d5a02c7835642c01f629ea2f91fb24aef9ab078b85a6d4f3855cb8505e",
+      "personally_visually_inspected": true,
+      "decision": "PASS"
+    },
+    {
+      "physical_page": 64,
+      "printed_page": 68,
+      "image": "print-64.png",
+      "sha256": "d672ffd6fc719b2d2647564a8eb15a29913a628e55425cc4f7212d2899e1b7a2",
+      "personally_visually_inspected": true,
+      "decision": "PASS"
+    },
+    {
+      "physical_page": 65,
+      "printed_page": 69,
+      "image": "print-65.png",
+      "sha256": "9771eb0d059b7e8568dc383a13bd6a0e1edec35321c4bb17cfcbf40dccf671e7",
+      "personally_visually_inspected": true,
+      "decision": "PASS"
+    },
+    {
+      "physical_page": 66,
+      "printed_page": 70,
+      "image": "print-66.png",
+      "sha256": "825067ba46835735d450bf7ea6dff5cdbd73b9505d3683d3a901365600ea54b1",
+      "personally_visually_inspected": true,
+      "decision": "PASS"
+    },
+    {
+      "physical_page": 67,
+      "printed_page": 71,
+      "image": "print-67.png",
+      "sha256": "bc1db8fa660430e4a263c47423cfc102326d3babf7d9c630ee69b4d770225b5c",
+      "personally_visually_inspected": true,
+      "decision": "PASS"
+    },
+    {
+      "physical_page": 68,
+      "printed_page": 72,
+      "image": "print-68.png",
+      "sha256": "7817daf56f85988c318a44eba78ee16b1139da80222b96f51fbba3e99ea958a8",
+      "personally_visually_inspected": true,
+      "decision": "PASS"
+    },
+    {
+      "physical_page": 69,
+      "printed_page": 73,
+      "image": "print-69.png",
+      "sha256": "e3a2972434d87b8b5c6f34aeb3e5bcd390397ca30fe89fdb44dc76c3f22e2fac",
+      "personally_visually_inspected": true,
+      "decision": "PASS"
+    },
+    {
+      "physical_page": 70,
+      "printed_page": 74,
+      "image": "print-70.png",
+      "sha256": "5cd13b40a392b18d4facbb533d6a8656a174407a01f950a948cacb0f79d8bda0",
+      "personally_visually_inspected": true,
+      "decision": "PASS"
+    },
+    {
+      "physical_page": 71,
+      "printed_page": 75,
+      "image": "print-71.png",
+      "sha256": "021385adf385ec9f516747006532b03bdcdbbb16d0170e355c8f3c65d11725b3",
+      "personally_visually_inspected": true,
+      "decision": "PASS"
+    },
+    {
+      "physical_page": 72,
+      "printed_page": 76,
+      "image": "print-72.png",
+      "sha256": "49f68d16038d2f76e42b7d31b7fc82c67c98bedf2ee6596df2ad0a0b3c4133bf",
+      "personally_visually_inspected": true,
+      "decision": "PASS"
+    },
+    {
+      "physical_page": 73,
+      "printed_page": 77,
+      "image": "print-73.png",
+      "sha256": "4a68ed3b6649e743f107c0113f481ddcb92ccbce782b881fa382cc2dceb0e128",
+      "personally_visually_inspected": true,
+      "decision": "PASS"
+    },
+    {
+      "physical_page": 74,
+      "printed_page": 78,
+      "image": "print-74.png",
+      "sha256": "0491daa1544c0498243a23827a2bdd03cf6eca7178244d80519dc9e8411ca918",
+      "personally_visually_inspected": true,
+      "decision": "PASS"
+    },
+    {
+      "physical_page": 75,
+      "printed_page": 79,
+      "image": "print-75.png",
+      "sha256": "bb35f308272c6b14fad734b3090d56b0351f13339183a13a7ddbb1a64e78aa03",
+      "personally_visually_inspected": true,
+      "decision": "PASS"
+    },
+    {
+      "physical_page": 76,
+      "printed_page": 80,
+      "image": "print-76.png",
+      "sha256": "000591a428741673741d0efa9b30e4e0cd37ab8f413e8818ef3665b63f0b1c38",
+      "personally_visually_inspected": true,
+      "decision": "PASS"
+    }
+  ],
+  "groups": [
+    {
+      "printed_pages": [
+        53,
+        54
+      ],
+      "lesson": "6C",
+      "checks": "Movement illustrations/labels and all six map destinations are readable. Library/supermarket/caf\u00e9 routes agree with actual6.9 import and upward start orientation.Activity6 left/past/right/across choices have visible map evidence. Shared-school origin gives private route exchange a feasible listener job; writing and guess spaces clear."
+    },
+    {
+      "printed_pages": [
+        55,
+        56
+      ],
+      "lesson": "6D",
+      "checks": "Actual Jewel waterfall/garden and Mall of America roller-coaster photos support the labels. Sunday and can/cannot source forms clear;6.12 import explicitly supplies closed museum/park/library. Visitor exchange now permits an alternative unavailable activity before agreeing two stops; each stop has usable direction rows."
+    },
+    {
+      "printed_pages": [
+        57,
+        58
+      ],
+      "lesson": "6R",
+      "checks": "Original Ada/Max/Sam scene preserves three complete faces/actions, green sweater and bag under table; source message gives six and twice a week. yes/no/yes/no/no/yes claims supported. Native folder blank center and edges do not cover source. Route straight/left/past/across follows actual map. Message and three choice tasks preserve genuine private decisions/check/retry."
+    },
+    {
+      "printed_pages": [
+        59,
+        60
+      ],
+      "lesson": "7A",
+      "checks": "Original1985/2005 room evidence and full cutouts retained. Helen9/Owen8 and library/woman/park agree with scripts. Explicit Monday2026 anchors time expressions. Correct was/were/negative forms; personal interview accepts a similarity or difference rather than forcing consensus."
+    },
+    {
+      "printed_pages": [
+        61,
+        62
+      ],
+      "lesson": "7B",
+      "checks": "All three public-figure faces complete; birthdays/year files clear. Episode is explicitly July12,2026; Frida6/1907, Malala12/1997, Daniel23/1989 and Maya11/restaurant agree with actual7.6 script. Canonical show branding/follow-ups consistent. in/on/ago and calendar read-back have evidence. Teacher note now correctly distinguishes recorded July6/12/23 examples from later unrecorded practice."
+    },
+    {
+      "printed_pages": [
+        63,
+        64
+      ],
+      "lesson": "7C",
+      "checks": "A record/B cassette/C radio evidence intact. Actual7.8 narrative source gives yes/no/yes and Saturday study; sleeve background leaves live copy clear of the disc. Nine pronunciation words sort correctly into three3-row columns. Three private weekend statements and follow-up-before-guess provide a real outcome."
+    },
+    {
+      "printed_pages": [
+        65,
+        66
+      ],
+      "lesson": "7D",
+      "checks": "Pepys portrait/historical hook and both complete mismatched shoes readable. Tessa diary and separate7.12 chronology consistent with keys4/1/3/2. Native journal keeps date/title and eight full writing lines. Root shortened the lowest line9mm; it now clears the bottom-right curl. Peer title/question task remains meaningful and feasible."
+    },
+    {
+      "printed_pages": [
+        67,
+        68
+      ],
+      "lesson": "8A",
+      "checks": "Whole Toronto tower/ferry photograph and all animal faces/identifying details visible. Past vlog details and visitor3nights/bus/ducks agree with actual8.2/8.4 scripts; animal match B/C/A clear. Travel concept is readable. Itinerary paper fields avoid folds/turn and full original traveler cutout is retained; choices follow partner preferences."
+    },
+    {
+      "printed_pages": [
+        69,
+        70
+      ],
+      "lesson": "8B",
+      "checks": "Two dated news reports have independent visible evidence for B/A/B/A. Advice note is distinct from past reporting. Should/should not and8.6 rainy/snowy/hot input agree with keys/scripts. Practice forecast supports multiple coherent days; chosen activity/day and three advice rows give a purposeful output. Weather photographs illustrate conditions, not asserted event records."
+    },
+    {
+      "printed_pages": [
+        71,
+        72
+      ],
+      "lesson": "8C",
+      "checks": "All six live body leaders point to intended parts; full original clothed reference and four acted complaint faces/hands remain visible. Foot hook, Sunday/ten messages and have/has/hurt/hurts forms supported. Private tomorrow problem plus two busy days leaves possible shared availability; separate private note and agreed day/time avoid fake information exchange."
+    },
+    {
+      "printed_pages": [
+        73,
+        74
+      ],
+      "lesson": "8D",
+      "checks": "Nora source shows one-way Toronto3:15/$120 with distinct4:20 arrival; Ben task input actual8.12 gives Ottawa/10:30/$90, independent of visible source. Budget/two offers may produce a valid no-ticket decision. Native ticket fields now stop before perforation, including bottom reason row; ample handwriting space and two different real traveler photographs remain."
+    },
+    {
+      "printed_pages": [
+        75,
+        76
+      ],
+      "lesson": "8R",
+      "checks": "Fresh River Street art-show/article and art-class booking theme, not cinema. Original authentic art photos retained. Calendar June14,2026 correctly yields13th/12th; forecast supports Tuesday or explained alternative. Six past gaps and $5 ticket have source evidence; class call gives10:30/$8/Reed with last-name spelling. Contextual advice, independent message and three checked private-choice tasks are feasible."
+    },
+    {
+      "printed_pages": [
+        77,
+        78,
+        79,
+        80
+      ],
+      "lesson": "Image credits",
+      "checks": "All four pages readable without clipping. Active source creators/page numbers crosschecked against observed photos, especially GabrielTovar53, MikePeel/YinanChen55, album60, three portraits61, cake62, turntable64, Pepys65, writing66, Toronto67, animals68, weather69/70, travel73/74 and newart75/76. Jewel resize/crop and rendition CC BY-SA4.0 note restored. Frida/Pepys public-domain text is no longer an empty hyperlink. Retired illustration/photo substitutions are not credited as active uses."
+    }
+  ],
+  "resolved_findings": [
+    {
+      "finding": "Printed74 bottom reason writing rule crossed native ticket perforation.",
+      "resolution": "Root confined reason row to wide left body with12mm right reserve and narrowed main fields5mm; reproof physical70 shows all rules safely clear.",
+      "status": "CLOSED"
+    },
+    {
+      "finding": "Jewel source credit omitted its recorded resize/CSS-crop detail.",
+      "resolution": "Explicit resize/crop and CC BY-SA4.0 rendition note visible on printed79; reproof physical75 clear.",
+      "status": "CLOSED"
+    },
+    {
+      "finding": "Frida and Pepys Public domain credits contained empty hrefs.",
+      "resolution": "Converted to plain text while retaining valid source links; reproof physical76 clear.",
+      "status": "CLOSED"
+    },
+    {
+      "finding": "7B teacher note attributed later unrecorded date practice to Track7.5.",
+      "resolution": "Recorded July6/12/23 examples now distinguished from later practice; key read back against both script and Studio import. PDF input remained correct.",
+      "status": "CLOSED"
+    },
+    {
+      "finding": "Prior7D bottom journal line entered the curled corner.",
+      "resolution": "Root shortened final line9mm before this PDF; native physical62 confirms clear safe space.",
+      "status": "CLOSED"
+    }
+  ],
+  "remaining_blockers": [],
+  "reproof_physical_pages": [
+    70,
+    75,
+    76
+  ],
+  "reproof_basis": "Root rerendered all76 final pages and confirmed other73 renders unchanged after final three-page corrections. Each changed assigned page personally re-viewed.",
+  "additional_out_of_scope_check": {
+    "printed_page": 39,
+    "physical_page": 35,
+    "reason": "Native check of this agents generated admission object.",
+    "result": "Ticket live Saturday/7:30/FREE clear of notches/perforation; paper/source/count artwork and reading remain legible."
+  },
+  "scope_limitations": "Core Student Book only. No claim to have created pending grammar/vocabulary practice annexes, workbook, index/frontmatter. Root owns whole-book delivery/deployment."
+}

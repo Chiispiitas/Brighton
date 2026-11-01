@@ -1,9 +1,10 @@
 @import url("../design-system/components.css");
+@import url("../design-system/editorial-edition.css");
 @import url("../viewer/audio-player.css");
 
 /* Horizons — editorial HTML5/CSS A4 shell.
    One semantic .hz-page = one print page.
-   Sibling numbered exercises always stay in one vertical lane.
+   Numbered exercises follow an explicit reading route; see the current editorial standard.
    Book-specific lesson CSS is linked by each lesson file, not imported here. */
 
 :root {
@@ -103,7 +104,7 @@ body.hz-book {
 .hz-fill { flex: 1 1 auto; min-height: 0; }
 
 /* Grids may be used for unnumbered editorial matter and inside exercises.
-   Never place sibling numbered exercises in these grids. */
+   Use sibling exercise columns only with an explicit, unambiguous reading route. */
 .hz-inset-grid {
   display: grid;
   gap: 4mm;

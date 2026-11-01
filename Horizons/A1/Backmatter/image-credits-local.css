@@ -1,0 +1,13 @@
+/* Active end credits; compact paired columns remain readable at print size. */
+.hz-credits-page .hz-page-stack {gap:3mm;}
+.hz-credits-title {font-size:25pt;line-height:1.08;letter-spacing:-.025em;margin:0;}
+.hz-credits-kicker {font-size:9pt;color:#8f123f;margin:0 0 2mm;}
+.hz-credits-intro {font-size:8.5pt;line-height:1.4;margin:0;max-width:175mm;}
+.hz-credits-rule {height:.4mm;background:#b7154c;flex-shrink:0;margin-bottom:1mm;}
+.hz-credits-grid {display:grid;grid-template-columns:1fr 1fr;gap:0 7mm;align-items:start;}
+.hz-credits-column {display:flex;flex-direction:column;gap:3mm;min-width:0;}
+.hz-credit {break-inside:avoid;border-top:.2mm solid #d6d2cc;padding-top:1.4mm;}
+.hz-credit p {margin:0;font-size:8.5pt;line-height:1.4;overflow-wrap:anywhere;}
+.hz-credit .hz-credit-pages {font-size:8pt;font-weight:750;color:#8f123f;margin-bottom:.7mm;}
+.hz-credit a {color:#343b40;text-decoration:underline;text-decoration-thickness:.2mm;text-underline-offset:.5mm;}
+.hz-credit .hz-credit-change {font-size:7.5pt;color:#51545a;margin-top:.7mm;line-height:1.35;}

@@ -1,0 +1,34 @@
+{
+  "date": "2026-10-31",
+  "generator": "built-in image_gen",
+  "transparent_background": true,
+  "original_people_artwork": "Unchanged",
+  "assets": [
+    {
+      "id": "2D-return-tag",
+      "prompt": "Use case: product-mockup. Asset: blank return tag for a polished adult English coursebook. Generate ONE photorealistic paper object, front-on orthographic, an extremely wide horizontal luggage/property return tag, approximately 5:1 width to height. Crisp thick bright-white uncoated card, subtle tactile cut paper edges, gently clipped two left corners and one small round reinforced hole at the middle of the left edge. Tiny restrained copper-brown reinforcement ring at the hole; a hairline crimson edge detail only at the far right. The entire vast central writing surface is pure flat white RGB255255255, absolutely clean, occupying at least90% of the object, no grain, tint or shadows in the writing area. Genuine native transparent background around the complete tag and through its hole. Tight framing with only very thin transparent margin. Perfectly horizontal and flat, no perspective, no rotation or curl. Realistic professional stationery photography, tiny soft edge-only contact shadow. NO TEXT, letters, words, numbers, logos, stamps, labels, lines, ruled rows, illustrations, people, hands, string, beige or vintage aging. This is a blank compositing surface below live HTML writing. Render as a wide panoramic image.",
+      "active_file": "2D-return-tag-v1.png"
+    },
+    {
+      "id": "4D-community-notice",
+      "prompt": "Use case: product-mockup. Asset: blank community notice paper for a modern adult English coursebook. ONE photorealistic flat bright-white rectangular sheet of substantial paper, width:height approximately4:3, seen perfectly straight-on orthographic with no perspective or rotation. Complete object tightly framed on genuine native alpha transparency. Subtle real paper edge and a tiny folded lower-right corner, showing white reverse. Two tiny brushed steel staples close to the upper corners hold the top edge; only a tiny deep-plum tab peeks from the upper-left outer edge and a very short crimson edge mark at lower left. Clean sober contemporary stationery, not cute. Vast central writing area occupying at least90% is absolutely smooth purewhite RGB255255255 with no grain, shading, texture or tint. Very soft slim shadow only outside edges. NO TEXT, letters, numbers, logos, handwriting, stamps, printed lines or ruled rows, people, hands, doodles, colored wash, yellow accent stripe, beige, old paper, board or wall. This surface will sit behind live learner text and eight writing lines. Preserve full clean edges and native transparency.",
+      "active_file": "4D-community-notice-v2.png"
+    },
+    {
+      "id": "5B-studio-message-pad",
+      "prompt": "Use case: product-mockup. Asset: blank radio-studio telephone message pad for a professional adult English coursebook. ONE extremely wide horizontal blank paper pad, approximately4:1 width to height, photographed front-on orthographic with no perspective, no rotation. Bright purewhite thick smooth paper, small credible layered page edges visible only along bottom and right. A narrow black cloth binding along the LEFT short edge, with two tiny brushed-metal binding staples at top and bottom of that left edge. Tiny restrained burnt-orange edge strip at the bottom-right corner, no other decoration. Huge uninterrupted purewhite RGB255255255 flat central writing space at least90% of the total, no shadows/texture/grain in that space. Native genuine transparent background tightly around complete object, only a very thin clear margin and subtle tiny exterior shadow. Modern tactile realistic product photography, carefully crafted sober editorial stationery. NO TEXT, letters, words, digits, logos, icons, stamps, drawn soundwaves, preprinted lines, ruled rows, people, hands, cartoon doodles, beige or antique paper. Designed to support live HTML labels and learner notes without any generated lettering.",
+      "active_file": "5B-studio-message-pad-v1.png"
+    },
+    {
+      "id": "8D-ticket-stub",
+      "prompt": "Use case: product-mockup. Asset: blank travel ticket and detachable stub beneath live HTML text for an adult English book. ONE photorealistic modern wide landscape white card ticket, width:height approximately4:1, flat front-on orthographic, perfectly level no perspective. Full crisp die-cut outline, gently rounded outside corners. A neat vertical microperforation at77% of width creates a right-hand stub, with tiny semicircular notches at the top and bottom exactly at that perforation. Extremely restrained deep-plum edge treatment only along the topmost1% and a tiny plum corner detail at far right; all main and stub writing surfaces absolutely pure white RGB255255255, no shading, tint, paper grain or decoration inside. Vast blank central space. Very subtle tactile cardstock edges and tiny soft exterior shadow, native transparent background around the entire silhouette and in notches. Tight crop with only thin transparent margin. Elegant realistic contemporary printed stationery, not a stylized illustration. NO text, letters, numbers, barcodes, QR codes, logos, stamps, icons, ruled lines, form rows, people, hands, beige, aging or yellow accent. The blank surface must remain usable under live text and handwritten fields.",
+      "active_file": "8D-ticket-stub-v1.png"
+    }
+  ],
+  "targeted_edit": {
+    "file": "4D-community-notice-v2.png",
+    "reference": "4D-community-notice-v1.png",
+    "prompt": "Precise product-surface correction of the referenced blank community notice paper. Keep the exact object shape, native transparent exterior, two tiny steel staples, plum tab, red edge tab and white folded corner. Change ONLY the large interior paper surface: remove ALL gray gradient, all lighting patches, shading, vignette, grain and texture from the entire central rectangle. It must be absolutely flat solid PURE WHITE RGB(255,255,255), like a blank digital white sheet, because live black text and handwritten answers will sit on it. Tactile detail and shadows may exist ONLY within the outermost 2% edge rim and outside the silhouette. Perfect front view, no added content. No words, numbers, marks, rules, icons, people or new objects. Preserve genuine native alpha transparency outside the complete paper. Do not fill transparent exterior with white.",
+    "reason": "First output had gray center shading; edit removes it."
+  }
+}

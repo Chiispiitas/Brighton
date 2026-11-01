@@ -1,0 +1,92 @@
+{
+  "status": "complete; integrated and frozen for root assembly",
+  "request": "Two bespoke non-person raster review surfaces via built-in imagegen, original people/photos/audio retained.",
+  "generation": "Built-in imagegen, native transparent PNG. No CLI/API runner or code-drawn replacement. One targeted ticket edit brightened the paper; initial variant archived unused.",
+  "skill": "C:/Users/David/.codex/skills/.system/imagegen/SKILL.md",
+  "exact_prompts": "Horizons/A1/Images/Editorial-objects/review-object-prompts.json",
+  "provenance": "Horizons/A1/Images/Editorial-objects/review-object-provenance.json",
+  "active_assets": [
+    "Horizons/A1/Images/Editorial-objects/4R-cinema-admission-stub-v2.png",
+    "Horizons/A1/Images/Editorial-objects/6R-confidential-briefing-folder-v1.png"
+  ],
+  "inactive_preserved": [
+    "Horizons/A1/Images/Editorial-objects/4R-cinema-admission-stub-v1.png"
+  ],
+  "integration": [
+    {
+      "lesson": "4R",
+      "page": 39,
+      "object": "Cinema admission stub",
+      "where": "r34-program.rvf-admission-stub background beneath live Saturday / Film7:30 / FREE.",
+      "findings": "Native die-cut notches, right perforation and subtle plum/crimson edge; labels stay inside blank white face. Left margin increased to7mm so Saturday clears the inward notch. No generated text or lines. Adds about7.5mm to the source feature, within page space."
+    },
+    {
+      "lesson": "6R",
+      "page": 57,
+      "object": "Confidential briefing folder/document",
+      "where": "rvf-briefing-surface background beneath original complete Ada/Max/Sam photo, live name ribbon and unchanged Sam\u2192Lee message.",
+      "findings": "Native charcoal-blue tab/edge visible; original photo is scaled proportionally with all faces, actions and the under-table bag visible. Message sits on actual white live background with2.5mm inner horizontal padding. No generated portraits/labels/rows. No loss of continuation writing space."
+    }
+  ],
+  "quality": {
+    "assets_personally_inspected": true,
+    "native_RGBA_and_transparent_corners_verified": true,
+    "source_pixel_edits": false,
+    "no_generated_words_numbers_or_prelined_rows": true,
+    "live_text_center_background": "#FFFFFF",
+    "full_spreads_personally_viewed": [
+      39,
+      40,
+      57,
+      58
+    ],
+    "fresh_all_review_page_geometry": "8PASS /0outside text /0continuation-marker collisions",
+    "body_copy_pt": 10,
+    "ruled_handwriting_rows_mm": 7,
+    "images_fonts_and_background_assets_loaded": true,
+    "facts_and_media_checks": [
+      {
+        "lesson": "4R",
+        "existing_img_inventory_identical": true,
+        "live_source_wording_identical": true,
+        "all_controlled_answers_unchanged": true,
+        "master_sha256": "b3163380ecb4023cd375e39e860a2e3e6e54b7707e6808ddc55215e68949c28f"
+      },
+      {
+        "lesson": "6R",
+        "existing_img_inventory_identical": true,
+        "live_source_wording_identical": true,
+        "all_controlled_answers_unchanged": true,
+        "master_sha256": "7ec7a4b6fc57c138f8a68084ff8c2b9e9f4053cfb46d12d577019424fb522383"
+      }
+    ],
+    "independent_review": {
+      "reviewer": "revise_units_7_8",
+      "result": "PASS",
+      "findings": "Ticket live labels/time clear native notches/perforation; folder preserves all faces, named bodies and under-table bag; message white/readable with safe lower edge. No actionable defect."
+    },
+    "native_pdf_proof": {
+      "result": "PASS",
+      "printed_pages": [
+        39,
+        57,
+        58
+      ],
+      "sha256": "32b8092c5a6e9f66503e180e7b142ed3a5e7ef458fcb42123a79213187d61c0f",
+      "report": "final-pdf-independent-6-8.json"
+    }
+  },
+  "render_evidence": [
+    "review-objects-final-39.png",
+    "review-objects-final-40.png",
+    "review-objects-final-57.png",
+    "review-objects-final-58.png"
+  ],
+  "geometry": "reviews-objects-final-layout.json",
+  "modified_sources": [
+    "Horizons/A1/Lessons/4R.html",
+    "Horizons/A1/Lessons/6R.html",
+    "Horizons/A1/Lessons/editorial-review-features.css"
+  ],
+  "reversibility": "No original image/audio files deleted or overwritten. Immediately preceding masters saved in review-before-imagegen-objects. Native generated files copied byte-for-byte from Codex generated_images; exact paths recorded in prompts/provenance."
+}

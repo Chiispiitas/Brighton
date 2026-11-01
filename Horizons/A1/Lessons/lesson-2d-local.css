@@ -160,3 +160,15 @@
 .l2d-return-names > span { display:flex; gap:3mm; }
 .l2d-return-names b { color:var(--hz-unit-dark); font-size:8.5pt; font-weight:650; }
 .l2d-return-names i { flex:1; height:5mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
+
+
+/* Editorial edition: authored composition and usable teaching surfaces. */
+
+.l2d-page:not(.l2d-page--2).ed13-page .hz-exercise {padding:.8mm 0;}
+.l2d-page.ed13-page .l2d-dialogue {font-size:10pt!important;line-height:1.4;}
+.ed13-noticing {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:5mm;margin:0;padding-left:4.5mm;line-height:1.4;}
+.ed13-noticing > li {padding-left:1mm;}
+.ed13-noticing b {font-weight:650;color:#3d3936;}
+.l2d-page.ed13-page .l2d-claim-card {border:0;border-top:.4mm solid #ab7662;background:#f7f3ed;}
+.l2d-page.ed13-page .l2d-roleplay-copy {background:none;}
+.l2d-page.ed13-page .l2d-items-grid {gap:3mm;}

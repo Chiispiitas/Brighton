@@ -117,3 +117,18 @@
 .rr-page:not(.r34-page) .rr-cast-labels span:nth-child(2) { background:#65506b; }
 .rr-page:not(.r34-page) .rr-cast-labels span:nth-child(3) { background:#3b6959; }
 .rr-page:not(.r34-page) .rr-exhibition-dialogue { background:#f7f1f3; border-top:0; border-left:.7mm solid #b51d54; }
+
+
+/* Editorial edition: authored composition and usable teaching surfaces. */
+
+.rr-page.ed13-page .rr-columns {gap:7mm;}
+.rr-page.ed13-page .rr-review-header {margin-bottom:2mm;}
+.rr-page.ed13-page .rr-reading-feature {background:#f5f1ec;border:0;border-top:.6mm solid #443943;box-shadow:none;}
+.rr-page.ed13-page .rr-reading-title,.rr-page.ed13-page .rr-feature-title {font:650 21pt/1.05 Georgia,serif;color:#3a3038;}
+.rr-page.ed13-page .rr-reading-feature h2 {color:#3a3038;}
+.rr-page.ed13-page .rr-gallery-time {color:#8f123f;background:#fff;}
+.rr-page.ed13-page .rr-skill-label {font-size:8pt;letter-spacing:.04em;color:#51545a;}
+.rr-page.ed13-page .rr-choices-list li {margin-bottom:0;}
+.rr-page.ed13-page .rr-photo-exhibition {border-radius:0;clip-path:none;}
+.rr-page.ed13-page .rr-beyond {background:none;border:0;border-top:.5mm solid #8f123f;}
+.rr-page.ed13-page .rr-beyond h2 {font-size:17pt;color:#24282c;}

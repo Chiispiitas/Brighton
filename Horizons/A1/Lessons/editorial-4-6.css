@@ -1,0 +1,117 @@
+/* Units 4–6 editorial edition: task-specific compositions, not alternate book chrome. */
+.ed46 .hz-task-text { font-size:10pt; }
+.ed46 .hz-exercise__instruction { font-size:9.2pt; }
+.ed46 .hz-word-bank { font-size:9.5pt; }
+.ed46 [class*="continuation-content"],.ed46 .l6c-continuation,.ed46 .l6d-continuation { padding-top:0!important; }
+.ed46.rr-page .rr-columns--continuation { padding-top:12mm; }
+.ed46 .hz-edition-check { margin-top:2mm; font:400 8.5pt/1.35 var(--hz-font-sans); color:#48534d; }
+.ed46 .hz-edition-check b { color:#226650; font-weight:700; margin-right:1mm; }
+.ed46 .l4a-breakfast-feature { border-left:0; border-top:.5mm solid #365c52; background:#f8f4e9; padding:3mm; }
+.ed46 .l4a-breakfast-feature > header { display:flex; align-items:baseline; justify-content:space-between; padding-bottom:2.5mm; gap:4mm; }
+.ed46 .l4a-breakfast-feature h2 { color:#233e36; font:700 20pt/1.15 Georgia,serif; }
+.ed46 .l4a-breakfast-copy p { font-size:10pt; line-height:1.4; }
+.ed46 .l4a-breakfast-menu { border:0; border-block:.3mm solid #58766c; background:#fff; }
+.ed46 .l4a-breakfast-menu header { background:#fff; color:#315c4f; padding-left:0; }
+.ed46 .l4a-breakfast-menu h2 { font:700 15pt/1.2 Georgia,serif; }
+.ed46 .l4b-taste-cover { grid-template-columns:62mm 1fr; background:#91332b; }
+.ed46 .l4b-taste-cover img { width:62mm; height:56mm; }
+.ed46 .l4b-taste-feature h2 { font:800 23pt/1.12 var(--hz-font-sans); }
+.ed46 .l4b-opinions { gap:5mm; padding-top:3mm; }
+.ed46 .l4b-opinions p { font-size:10pt; line-height:1.4; }
+.ed46 .l4b-opinions h3 { border-bottom:.3mm solid #b58980; font-size:11pt; }
+.ed46 .l4b-counter { grid-template-columns:55mm 1fr; gap:6mm; }
+.ed46 .l4b-reaction-photo > img { width:55mm; height:57mm; object-fit:cover; object-position:50% 42%; }
+.ed46 .l4b-reaction-dialogue { gap:2.5mm; }
+.ed46 .l4b-counter-copy .l4b-reaction-dialogue p { background:#fff; border:0; border-bottom:.25mm solid #d7c6c0; border-radius:0; padding:1.5mm 0; }
+.ed46 .l4c-recipe { background:#fff; border:.3mm solid #9aa78d; }
+.ed46 .l4c-recipe h2 { font-size:22pt; }
+.ed46 .l4c-kitchen-talk { background:#f5f7ed; border:0; }
+.ed46 .l4c-pantry-plan { grid-template-columns:52mm 1fr; gap:6mm; }
+.ed46 .l4c-pantry-plan > .l4c-cook { width:52mm; height:70mm; object-fit:contain; }
+.ed46 .l4c-pantry-plan h2 { color:#284f37; font:700 17pt/1.2 Georgia,serif; }
+.ed46 .l4c-pantry-plan .l4c-open-lines > span { height:7mm; }
+.ed46 .l4c-quantity-photo { width:145mm; }
+.ed46 .l4d-post-card { box-shadow:none; }
+.ed46 .l5a-shop-feature { background:#faf5eb; border:.25mm solid #d9cbbd; border-top:.7mm solid #392c25; }
+.ed46 .l5a-shop-layout { grid-template-columns:82mm 1fr; gap:5mm; }
+.ed46 .l5a-shop-visual figcaption { bottom:1mm; }
+.ed46 .l5a-park { max-width:148mm; }
+.ed46 .l5a-park figcaption { bottom:1mm; }
+.ed46 .l5b-guest { grid-template-columns:39mm 1fr; }
+.ed46 .l5b-guest-photo { width:39mm;height:52mm; }
+
+
+.ed46 .l5b-your-message h2 { font-size:16pt; }
+.ed46 .l5c-places { grid-template-columns:repeat(4,minmax(0,1fr)); gap:2mm; }
+.ed46 .l5c-places img { height:37mm; }
+.ed46 .l5c-place-words { grid-template-columns:1fr 1fr; }
+.ed46 .l5c-notes { background:#faf8f1; border:0; border-left:.3mm solid #bb7963; padding-left:5mm; }
+.ed46 .l5c-notes::before { display:none; }
+.ed46 .l5c-notes header { border-bottom:.3mm solid #bb7963; }
+.ed46 .l5c-notes h2 { font-size:22pt; color:#543c32; }
+.ed46 .l5c-report > span { height:7mm; }
+.ed46 .l5d-receipt { box-shadow:none; }
+.ed46 .l6a-two-worlds img { height:39mm; }
+.ed46 .l6a-two-worlds figcaption { background:#fff; color:#493448; padding-left:0; border-bottom:.4mm solid #8e7388; }
+.ed46 .l6a-two-worlds figure:last-child figcaption { background:#fff; color:#7a3f30; }
+.ed46 .l6a-place-feature > header { border:0; }
+.ed46 .l6a-town-plan { border:0; border-top:.4mm solid #aa412d; }
+.ed46 .l6a-town-plan > header { background:#fff; color:#8d3529; padding-inline:0; }
+.ed46 .l6a-draw { height:29mm; border:.25mm solid #b9b7b2; margin-top:2mm; }
+.ed46 .l6b-house-dictionary { grid-template-columns:48mm 35mm 1fr; gap:4mm; }
+.ed46 .l6b-real-home img { width:48mm;height:72mm; }
+.ed46 .l6b-room-photo { width:35mm;height:35mm; }
+.ed46 .l6b-home-feature { background:#faf9f3; border-bottom:.3mm solid #8d9aab; }
+.ed46 .l6b-home-feature > header { background:#fff; color:#26384b; padding-bottom:2mm; border-bottom:.5mm solid #3c5b79; }
+.ed46 .l6b-home-feature h2 { font:700 22pt/1.1 Georgia,serif; }
+.ed46 .l6b-area { border-left:.3mm solid #b5bfca; color:#325777; }
+.ed46 .l6b-area b { font-size:25pt; }
+.ed46 .l6b-feature-body { font-size:10pt;line-height:1.4; }
+.ed46 .l6c-map-sheet { border:.25mm solid #c9c6bd; background:#fff; }
+.ed46 .l6c-map-sheet header { background:#fff;color:#633a30;border-bottom:.4mm solid #a45b46; }
+.ed46 .ed46-walking-map { display:block;width:100%;height:auto; }
+.ed46 .l6-lines span { height:7mm; }
+.ed46 .l6d-destinations figcaption { background:#fff;color:#573369;border-bottom:.5mm solid #755084;padding:2mm 0; }
+.ed46 .l6d-moa figcaption { background:#fff;color:#814823;border-color:#a06535; }
+.ed46 .l6d-weekend { background:#f8f5f9;border-left:.6mm solid #846291; }
+.ed46 .l6d-visitor img { width:91mm;height:auto;object-fit:contain; }
+.ed46 .l6d-day-plan th { background:#fff;color:#573369;border-bottom:.5mm solid #755084; }
+.ed46.rr-page .rr-challenge-ball { width:auto;min-height:0;height:auto;aspect-ratio:auto;border-radius:0;background:#fff!important;color:#202020!important;border:0;border-left:.65mm solid var(--rr-ball);padding:1mm 0 1mm 2mm; }
+.ed46.rr-page .rr-challenge-ball p { padding:0; }
+.ed46.rr-page .rr-mission h3 { font-size:8.5pt;line-height:1.3;margin-bottom:1.5mm; }
+.ed46.rr-page .rr-challenge-grid { gap:5mm 4mm; }
+.ed46 .r34-cinema-poster h2 { font-size:22pt; }
+.ed46 .r34-messages { background:#f8f6f9; }
+.ed46 .r34-message-sheet { background:#fff;border-top:.4mm solid #8c6e99;padding-inline:0; }
+.ed46 .r56-surprise > header { background:#fff;color:#8c3628;border-top:.7mm solid #a7452e;padding-left:0; }
+.ed46 .r56-surprise h2 { font-size:22pt;line-height:1.05; }
+.ed46 .r56-note { background:#fbf5e9;border-left:.5mm solid #cda45e; }
+.ed46 .r56-note p { font-size:10pt; }
+/* Editorial fit: remove redundancy and recompose artwork before sacrificing type or response space. */
+.ed46 .l4b-reaction-photo > img { height:49mm; }
+.ed46 .l5a-park { max-width:138mm; }
+.ed46 .l5b-fits { width:124mm; }
+.ed46 .l5b-correct { display:block; }
+.ed46 .l5b-correct p > span { display:inline; margin-left:2mm; }
+.ed46 .l5b-your-message h2 { font-size:14pt; }
+.ed46 .l5c-places img { height:35mm; }
+.ed46 .l5d-tech img { width:112mm; }
+.ed46 .l6b-location-scene img { width:150mm; margin-inline:auto; }
+.ed46 .l5a-park { width:138mm!important;max-width:138mm!important; }
+.ed46 .l5d-tech { display:grid;grid-template-columns:70mm minmax(0,1fr);gap:0 4mm;align-items:start; }
+.ed46 .l5d-tech > header { grid-column:1/-1; }
+.ed46 .l5d-tech img { width:70mm;height:auto; }
+.ed46 .l5d-tech figcaption { font:400 7.5pt/1.3 var(--hz-font-sans);padding-top:1mm;color:#514a44; }
+.ed46 .l5d-tech-copy { padding:2mm 0; }
+.ed46 .l4c-recipe > header { padding-top:2mm; }
+.ed46 .l4c-ingredients { margin-bottom:2mm; }
+.ed46 .l4c-steps { padding-bottom:2.5mm; }
+.ed46 .l4c-kitchen-talk { padding:2.5mm; }
+
+/* User correction: previous artwork restored; keep editorial improvements. */
+.ed46 .l5a-shop-layout { grid-template-columns:78mm minmax(0,1fr); }
+.ed46 .l4b-counter { grid-template-columns:78mm minmax(0,1fr); }
+.ed46 .l4b-reaction-photo > img { width:78mm;height:auto;object-fit:contain; }
+.ed46 .l5d-tech { display:block; }
+.ed46 .l5d-tech img { width:104mm;height:auto;margin-inline:auto; }
+.ed46 .l5d-tech-copy { padding:2mm 3mm; }

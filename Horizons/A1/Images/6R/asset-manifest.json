@@ -33,5 +33,36 @@
       "sha256": "7c392492a27ab29163ad7709673bc2214e6be72aaba3e44041b0bf20e7ec54c9",
       "fictional_boundary": "Fictional practice scene/geography. No real venue, official route, endorsement or factual person is represented."
     }
-  ]
+  ],
+  "editorial_edition": {
+    "date": "2026-10-31",
+    "status": "Image experiment rejected by author; fd497fd artwork restored active. Layout/type/task revisions remain.",
+    "active_new_assets": [],
+    "active_original_artwork": true,
+    "rejected_candidates_retained": [
+      {
+        "lesson": "6R",
+        "file": "Gift-team-Pavel-Danilyuk-7674986-edition.jpg",
+        "creator": "Pavel Danilyuk",
+        "source": "https://www.pexels.com/photo/smiling-women-working-with-gifts-boxes-on-table-7674986/",
+        "download": "https://images.pexels.com/photos/7674986/pexels-photo-7674986.jpeg?auto=compress&cs=tinysrgb&w=1800",
+        "license": "Pexels License",
+        "license_url": "https://www.pexels.com/license/",
+        "kind": "licensed stock photograph",
+        "dimensions": [
+          1800,
+          1202
+        ],
+        "sha256": "be05ed4dd92583554461322e80378cc3aa1946f026e9b423b223910ab9f46d46",
+        "changes": "Provider 1800px rendition preserved unchanged. Proportionate CSS presentation.",
+        "representation": "Illustrative real gift-preparation scene, not a claimed portrait of Sam/Lee/Eva or a quotation from models.",
+        "checked": "2026-10-31",
+        "pages": [
+          57
+        ]
+      }
+    ],
+    "retired_from_current_lesson": [],
+    "retention": "All original binaries unchanged. New candidates retained versioned but inactive. Current HTML/CSS use baseline art."
+  }
 }

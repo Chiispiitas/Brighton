@@ -360,3 +360,24 @@
 
 .l2a-pair-photo { height:auto; aspect-ratio:3 / 2; align-self:start; clip-path:none; }
 .l2a-pair-photo img { min-height:0; height:100%; object-fit:contain; }
+
+
+/* Editorial edition: authored composition and usable teaching surfaces. */
+
+.l2a-page.ed13-page .hz-exercise {padding:1mm 0;}
+.l2a-page.ed13-page .l2a-dialogue {font-size:10pt!important;line-height:1.4;}
+.l2a-page.ed13-page .l2a-bag-stage {background:none;border:0;}
+.l2a-page.ed13-page .l2a-picture-item {border:0;background:none;border-bottom:.25mm solid #c5c0b9;padding:1mm 0 2mm;}
+.l2a-page.ed13-page .l2a-practice-photo {border:0;border-radius:0;}
+.ed13-memory-game {display:grid;grid-template-columns:minmax(0,1fr) 67mm;gap:6mm;align-items:start;border-top:.5mm solid #437763;padding-top:3mm;}
+.ed13-memory-steps p {margin:0 0 2mm;font-size:10pt;line-height:1.4;}
+.ed13-memory-steps b {display:block;color:#3e6652;font-weight:650;}
+.ed13-memory-model {background:#f4f1eb;padding:3mm;line-height:1.4;}
+.ed13-memory-model p {margin:0 0 1mm;}
+
+
+/* Author: restore approved baseline artwork, 2026-10-31. */
+
+.l2a-page.ed13-page .ed13-memory-game {grid-template-columns:minmax(0,1fr) 80mm;gap:5mm;}
+.l2a-page.ed13-page .ed13-memory-game .l2a-pair-photo {width:80mm;height:auto;align-self:center;}
+.l2a-page.ed13-page .ed13-memory-game .l2a-pair-photo img {display:block;width:100%;height:auto;max-height:64mm;object-fit:contain;}

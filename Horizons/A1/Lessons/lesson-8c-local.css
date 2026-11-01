@@ -3,24 +3,24 @@
 .l8c-body > figure { position:relative; width:83mm; height:84mm; }
 .l8c-body > figure > img { position:absolute; width:56mm; height:84mm; left:13.5mm; object-fit:contain; }
 .l8c-leaders { position:absolute; inset:0; width:100%; height:100%; fill:none; stroke:#9d374a; stroke-width:.38; }
-.l8c-letter { position:absolute; display:grid; place-items:center; width:5mm; height:5mm; background:#fff; border:.25mm solid #9d374a; border-radius:50%; font:650 9.5pt/1 var(--hz-font-sans); color:#8f123f; }
+.l8c-letter { position:absolute; display:grid; place-items:center; width:5mm; height:5mm; background:#fff; border:.25mm solid #9d374a; border-radius:50%; font:650 10pt/1 var(--hz-font-sans); color:#8f123f; }
 .l8c-letter--A { left:3%; top:8%; }.l8c-letter--B { right:2%; top:28%; }.l8c-letter--C { right:2%; top:50%; }.l8c-letter--D { left:3%; top:38%; }.l8c-letter--E { left:3%; top:69%; }.l8c-letter--F { right:2%; top:91%; }
 .u8-page .l8c-body .u8-list > li { margin-bottom:3mm; }
 .l8c-real-case { display:grid; grid-template-columns:32mm 1fr; gap:1mm 4mm; border-top:.55mm solid #9d374a; padding-top:2mm; }
 .l8c-real-case > span { grid-row:1 / 4; font-size:8pt; line-height:1.4; color:#9d374a; }
 .l8c-real-case h2 { margin:0; font:720 16pt/1.1 var(--hz-font-sans); color:#252327; }
-.l8c-real-case p { margin:0; font-size:9.5pt; line-height:1.4; }
+.l8c-real-case p { margin:0; font-size:10pt; line-height:1.4; }
 .l8c-real-case a { font-size:7pt; color:#8f123f; }
 .l8c-call { background:#edf3ef; padding:2.5mm 3mm; }
 .l8c-call header { display:flex; justify-content:space-between; align-items:baseline; gap:3mm; border-bottom:.3mm solid #8ea99b; padding-bottom:1.5mm; margin-bottom:2mm; }
 .l8c-call header span { font-size:8pt; color:#355e4d; }
 .l8c-call h2 { margin:0; font:720 17pt/1.1 var(--hz-font-sans); color:#254f3c; }
-.l8c-call > p { display:grid; grid-template-columns:12mm 1fr; gap:2mm; margin:0 0 1.2mm; font-size:9.5pt; line-height:1.4; }
+.l8c-call > p { display:grid; grid-template-columns:12mm 1fr; gap:2mm; margin:0 0 1.2mm; font-size:10pt; line-height:1.4; }
 .l8c-call > p:last-child { margin-bottom:0; }.l8c-call > p > b { color:#355e4d; font-weight:650; }
 .l8c-poses img { width:100%; height:auto; }
-.l8c-poses figcaption { display:grid; grid-template-columns:repeat(4,1fr); margin-top:1mm; margin-bottom:2mm; color:#8f123f; font-size:9.5pt; }
+.l8c-poses figcaption { display:grid; grid-template-columns:repeat(4,1fr); margin-top:1mm; margin-bottom:2mm; color:#8f123f; font-size:10pt; }
 .l8c-reschedule h2 { margin:0 0 1.5mm; font:720 16pt/1.1 var(--hz-font-sans); color:#254f3c; }
-.l8c-reschedule p { margin:0 0 1.5mm; font-size:9.5pt; line-height:1.4; }
+.l8c-reschedule p { margin:0 0 1.5mm; font-size:10pt; line-height:1.4; }
 
 /* Independent message exchange, rather than a second ticket-call transcript. */
 .l8c-call { padding:0; background:transparent; }
@@ -31,3 +31,6 @@
 .l8c-sound-board { display:grid; grid-template-columns:minmax(0,1fr) 42mm; gap:5mm; align-items:center; }
 .l8c-sound-answers .hz-word-bank { display:grid; gap:1mm; }
 .l8c-sound-answers p { margin:1.2mm 0; }
+
+/* Original photographic-style health artwork restored by user preference. */
+.l8c-body>figure>img{left:13.5mm;width:56mm;height:84mm}.l8c-poses img{width:100%;height:auto}.l8c-call>p{border-radius:1.5mm;border:0}.l8c-reschedule .hz-task-text p{line-height:1.4}

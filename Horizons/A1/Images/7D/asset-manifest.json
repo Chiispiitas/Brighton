@@ -4,27 +4,6 @@
   "assets": [
     {
       "lesson": "7D",
-      "file": "Journal-George-Milton-v1.jpg",
-      "creator": "George Milton",
-      "source": "https://www.pexels.com/photo/attentive-woman-writing-in-diary-at-home-7014321/",
-      "download": "https://images.pexels.com/photos/7014321/pexels-photo-7014321.jpeg?auto=compress&cs=tinysrgb&w=1800",
-      "kind": "licensed stock photograph",
-      "license": "Pexels License",
-      "license_url": "https://www.pexels.com/license/",
-      "dimensions": [
-        1800,
-        1200
-      ],
-      "sha256": "3b9893f97a8f85e44f1e2846c753eee48fa06da9290e5f8c0f89d3f892c8523c",
-      "changes": "Provider 1800px rendition, natural proportion and proportionate CSS display/crop. No local raster editing.",
-      "representation": "Illustrative photo only; fictional memories, messages and diarists are not facts about the photographed person.",
-      "checked": "2026-10-28",
-      "pages": [
-        66
-      ]
-    },
-    {
-      "lesson": "7D",
       "file": "Pepys-John-Hayls-v1.jpg",
       "creator": "John Hayls",
       "source": "https://commons.wikimedia.org/wiki/File:Samuel_Pepys.jpg",
@@ -42,7 +21,9 @@
       "checked": "2026-10-28",
       "pages": [
         65
-      ]
+      ],
+      "active": true,
+      "restoration_note": "Exact baseline fd497fd artwork use restored at explicit user request; edition layout and teaching improvements retained."
     },
     {
       "lesson": "7D",
@@ -59,23 +40,32 @@
       "pages": [
         65
       ],
-      "status": "Active: original full-background shoe photograph restored by author correction on 31 October 2026."
+      "status": "Active: original full-background shoe photograph restored by author correction on 31 October 2026.",
+      "active": true,
+      "restoration_note": "Exact baseline fd497fd artwork use restored at explicit user request; edition layout and teaching improvements retained."
     },
     {
       "lesson": "7D",
-      "file": "Tessa-mismatched-shoes-cutout-v2.png",
-      "kind": "generated photorealistic transparent cutout",
-      "generator": "built-in image_gen",
+      "file": "Journal-George-Milton-v1.jpg",
+      "creator": "George Milton",
+      "source": "https://www.pexels.com/photo/attentive-woman-writing-in-diary-at-home-7014321/",
+      "download": "https://images.pexels.com/photos/7014321/pexels-photo-7014321.jpeg?auto=compress&cs=tinysrgb&w=1800",
+      "kind": "licensed stock photograph",
+      "license": "Pexels License",
+      "license_url": "https://www.pexels.com/license/",
       "dimensions": [
-        1024,
-        1536
+        1800,
+        1200
       ],
-      "sha256": "de279e22bfab643e3a87733438a44fa44d7d986f550642d79a466f90f7f17109",
-      "changes": "Native generated RGBA bytes copied unchanged; proportionate HTML/CSS display only.",
-      "fictional_boundary": "Full-length fictional adult, one black lace-up and one brown loafer; task evidence. Native transparent alpha; CSS clips only empty canvas margins, opaque body and both feet remain complete.",
-      "checked": "2026-10-31",
-      "pages": [],
-      "status": "Retained reversible rejected layout asset. Author prefers previous compact Activity 3 with original shoe photograph; not displayed."
+      "sha256": "3b9893f97a8f85e44f1e2846c753eee48fa06da9290e5f8c0f89d3f892c8523c",
+      "changes": "Provider 1800px rendition, natural proportion and proportionate CSS display/crop. No local raster editing.",
+      "representation": "Illustrative photo only; fictional memories, messages and diarists are not facts about the photographed person.",
+      "checked": "2026-10-28",
+      "pages": [
+        66
+      ],
+      "active": true,
+      "restoration_note": "Exact baseline fd497fd artwork use restored at explicit user request; edition layout and teaching improvements retained."
     },
     {
       "lesson": "7D",
@@ -90,10 +80,36 @@
       "changes": "Native generated RGBA bytes copied unchanged; proportionate HTML/CSS display only.",
       "fictional_boundary": "Blank red cloth diary and black pen introduce live-text independent writing area. Native transparent alpha; no generated handwriting.",
       "checked": "2026-10-31",
+      "display": "Author correction: enlarged from a 20×24mm canvas to 36×44mm beside live-text writing heading/instructions, preserving all eight full-width 7mm lines.",
+      "active": true,
+      "was_active_before_edition": true,
       "pages": [
         66
       ],
-      "display": "Author correction: enlarged from a 20×24mm canvas to 36×44mm beside live-text writing heading/instructions, preserving all eight full-width 7mm lines."
+      "restoration_note": "Exact baseline fd497fd artwork use restored at explicit user request; edition layout and teaching improvements retained."
     }
-  ]
+  ],
+  "retired_assets": [
+    {
+      "lesson": "7D",
+      "file": "Tessa-mismatched-shoes-cutout-v2.png",
+      "kind": "generated photorealistic transparent cutout",
+      "generator": "built-in image_gen",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "sha256": "de279e22bfab643e3a87733438a44fa44d7d986f550642d79a466f90f7f17109",
+      "changes": "Native generated RGBA bytes copied unchanged; proportionate HTML/CSS display only.",
+      "fictional_boundary": "Full-length fictional adult, one black lace-up and one brown loafer; task evidence. Native transparent alpha; CSS clips only empty canvas margins, opaque body and both feet remain complete.",
+      "checked": "2026-10-31",
+      "status": "Retained reversible rejected layout asset. Author prefers previous compact Activity 3 with original shoe photograph; not displayed.",
+      "active": false,
+      "former_pages": [],
+      "retired_reason": "Inactive version retained for reversibility. User explicitly rejected the new artwork experiment and requested original artwork; no further acquisition or generation authorized for this overhaul.",
+      "was_active_before_edition": false
+    }
+  ],
+  "edition": "2026-10-31 original artwork restored after user rejection of image experiment",
+  "artwork_policy": "Retain fd497fd active image uses; improve layout/design/teaching only. New experiment files remain inactive."
 }

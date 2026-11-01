@@ -1,0 +1,282 @@
+{
+  "date": "2026-10-31",
+  "generation_mode": "built-in imagegen",
+  "author_direction": "Generous task-serving generated sections, boxes and decorative objects; preserve preferred people pictures.",
+  "active_assets": 12,
+  "raw_assets_including_iteration_candidates": 15,
+  "exact_prompt_sets": [
+    "language-object-prompts-v1.json",
+    "skills-paper-prompts-v1.json",
+    "review-object-prompts.json",
+    "root-prompts.json",
+    "receipt-v2-prompt.json"
+  ],
+  "assets": [
+    {
+      "file": "1C-postcard-surface-v1.png",
+      "active": true,
+      "printed_pages": [
+        10
+      ],
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "ce2fe8302d3a8839eacba11b3fe018b97f156347d8a3f1cc0539381437269ca8",
+      "byte_edits": "None; native generation output retained. HTML/CSS integration only."
+    },
+    {
+      "file": "2D-return-tag-v1.png",
+      "active": true,
+      "printed_pages": [
+        20
+      ],
+      "dimensions": [
+        2135,
+        736
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "ff806910023c15771172747e6ea40c25a9793086ff542c1b42d4974eb328761b",
+      "byte_edits": "None; native generation output retained. HTML/CSS integration only."
+    },
+    {
+      "file": "4C-stock-sheet-surface-v1.png",
+      "active": true,
+      "printed_pages": [
+        36
+      ],
+      "dimensions": [
+        2123,
+        741
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "b57258893f6ab0aeddd632484ddb1e1237b212998605b57f4f2aeb29d684caaf",
+      "byte_edits": "None; native generation output retained. HTML/CSS integration only."
+    },
+    {
+      "file": "4D-community-notice-v1.png",
+      "active": false,
+      "printed_pages": [],
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "c4a16b8089ae27f99b8b79425b1a79ad974b70cdb8ef78c6ea1c95a38dd3098d",
+      "byte_edits": "None; native generation output retained. HTML/CSS integration only."
+    },
+    {
+      "file": "4D-community-notice-v2.png",
+      "active": true,
+      "printed_pages": [
+        38
+      ],
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "0767d07e517a4375d402bb597e22422d869ff7eb8d75c452cafe8e19c8a8debc",
+      "byte_edits": "None; native generation output retained. HTML/CSS integration only."
+    },
+    {
+      "file": "4R-cinema-admission-stub-v1.png",
+      "active": false,
+      "printed_pages": [],
+      "dimensions": [
+        2048,
+        768
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "sha256": "e3c8caaffa85c7cdc76df9e1f637ae3ce59a3719a65100ed9bc6b793bba94065",
+      "byte_edits": "None; native generation output retained. HTML/CSS integration only."
+    },
+    {
+      "file": "4R-cinema-admission-stub-v2.png",
+      "active": true,
+      "printed_pages": [
+        39
+      ],
+      "dimensions": [
+        2048,
+        768
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "sha256": "228e96f537235d1e1d18081ebbf587f34f089bbbfa1ca3fecd108e0ab61a275f",
+      "byte_edits": "None; native generation output retained. HTML/CSS integration only."
+    },
+    {
+      "file": "5B-studio-message-pad-v1.png",
+      "active": true,
+      "printed_pages": [
+        44
+      ],
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "4a2bc0a029855d638593289dde403c83330890058dd99be8a17eab21dcfcf6ca",
+      "byte_edits": "None; native generation output retained. HTML/CSS integration only."
+    },
+    {
+      "file": "5D-receipt-paper-v1.png",
+      "active": false,
+      "printed_pages": [],
+      "dimensions": [
+        1122,
+        1402
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "375c50363e36ad1eed6b43d0f05354a528d6160acbc826d12b2f4f4900926637",
+      "byte_edits": "None; native generation output retained. HTML/CSS integration only."
+    },
+    {
+      "file": "5D-receipt-paper-v2.png",
+      "active": true,
+      "printed_pages": [
+        48
+      ],
+      "dimensions": [
+        1774,
+        887
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "eb4dc836b40b6a890181870a74ad748a025801bcdaaa77719d40aff5e1cf4913",
+      "byte_edits": "None; native generation output retained. HTML/CSS integration only."
+    },
+    {
+      "file": "6R-confidential-briefing-folder-v1.png",
+      "active": true,
+      "printed_pages": [
+        57
+      ],
+      "dimensions": [
+        936,
+        1681
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "c085617bd48a2dfb138d2db16eac36f21e19d8f7dd5f159c50962daec2a29a64",
+      "byte_edits": "None; native generation output retained. HTML/CSS integration only."
+    },
+    {
+      "file": "7C-record-liner-surface-v1.png",
+      "active": true,
+      "printed_pages": [
+        63
+      ],
+      "dimensions": [
+        2058,
+        764
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "683291b4f02ee4468fd03398bbb33aacf1587d693de41c76dc0a3faefaf8c3bb",
+      "byte_edits": "None; native generation output retained. HTML/CSS integration only."
+    },
+    {
+      "file": "7D-journal-page-v1.png",
+      "active": true,
+      "printed_pages": [
+        66
+      ],
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "sha256": "c50121dd7d141b2e1f4987a8e8be7c350a586965dc7038f8c5dc386f3584d688",
+      "byte_edits": "None; native generation output retained. HTML/CSS integration only."
+    },
+    {
+      "file": "8A-itinerary-surface-v1.png",
+      "active": true,
+      "printed_pages": [
+        68
+      ],
+      "dimensions": [
+        2119,
+        742
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "bf23f194ee0c0bc3f82983ada40f62b9208c9236297dd49e806725be07727b46",
+      "byte_edits": "None; native generation output retained. HTML/CSS integration only."
+    },
+    {
+      "file": "8D-ticket-stub-v1.png",
+      "active": true,
+      "printed_pages": [
+        74
+      ],
+      "dimensions": [
+        2172,
+        724
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "8b8c2ddd2acc0cee8513956900ba909b0d453d3222324cdca2977f47787a6ce8",
+      "byte_edits": "None; native generation output retained. HTML/CSS integration only."
+    }
+  ],
+  "teaching_copy": "All words, labels, tables and writing lines remain live HTML. No generated learner text or answers.",
+  "final_inspection": "Each selected asset inspected in its actual printed composition; native alpha retained; safe inner margins preserve words and handwriting.7D last writing rule stops9mm short of the folded corner."
+}

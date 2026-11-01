@@ -1,17 +1,12 @@
-# 7A artwork and provenance
+# 7A artwork — original uses restored
 
-All file hashes, source links, licenses, changes and page uses are in asset-manifest.json. Real photo/painting credits appear only in the end-of-book image credits. Source models illustrate context; no invented history, event, voice or endorsement is attributed to them.
+Explicit user preference,31October2026: preserve the baseline artwork. Current layout, legibility and task improvements remain. All newly acquired/generated experiment files remain inactive/versioned; no files were deleted.
 
-- [Photo-album-Pavel-Danilyuk-v1.jpg](Photo-album-Pavel-Danilyuk-v1.jpg) - licensed stock photograph.
-- [Childhood-1985-2005-v1.png](Childhood-1985-2005-v1.png) - generated realistic photographic scene.
+- [Childhood-1985-2005-v1.png](Childhood-1985-2005-v1.png): active on page(s)59; baselinefd497fd artwork.
+- [Helen-memory-cutout-v2.png](Helen-memory-cutout-v2.png): active on page(s)59; baselinefd497fd artwork.
+- [Photo-album-Pavel-Danilyuk-v1.jpg](Photo-album-Pavel-Danilyuk-v1.jpg): active on page(s)60; baselinefd497fd artwork.
+- [Memory-partners-cutout-v2.png](Memory-partners-cutout-v2.png): active on page(s)60; baselinefd497fd artwork.
 
-## Built-in image_gen production prompt
+Inactive experiment files: Rotary-phone-Chepte-Cormani-v3.jpg, Computer-Pixabay-v3.jpg.
 
-Create one wide 8:3 photorealistic textbook contact sheet containing EXACTLY TWO equal-width rectangular photographs side by side with a thin neutral gap, no border and NO writing or lettering. Each photograph has a complete environmental background. LEFT photograph is a fictional ordinary family living room in 1985: two parents sitting naturally on a brown sofa, two girls aged nine and twelve in modest everyday blue/red clothes nearby, large enough to see, an old box CRT television on a wooden TV cabinet, an unmistakable black rotary telephone on a small table in this living room, a few physical paper snapshots on that table. Plausible 1985 plain furnishings and family clothes, no computers, smartphones or flat-screen TVs. Warm candid analog family snapshot, no fake scratches. RIGHT photograph is a fictional child's bedroom in 2005: two boys about eight and nine years old, cousins, near a desk with a beige desktop computer and bulky monitor clearly IN THIS BEDROOM; a simple bed, colorful ordinary books and a CD player. No parents in the right scene, no smartphone or tablet. Both scenes benign and natural, realistic normal anatomy. The left is a living room and the right is visibly a bedroom. Nothing drawn, no illustration, no text, year labels, names, logos, watermarks, letters or photo caption. These are newly reconstructed fictional childhood scenes for comparison, not real archival identities. Make photographs clear and balanced; the family, TV/telephone and bedroom computer are the useful evidence. Very wide landscape composition suitable for a 166mm by 60mm textbook strip.
-
-## 7A refinement: transparent photographic cutouts
-
-Two native RGBA images from built-in image_gen, unchanged source pixels and alpha; full prompts in asset-manifest.json and the external refinement record. The earlier full-background childhood diptych and licensed album photo remain, with existing credits unchanged. Helen is a fictional adult recalling her childhood, not an archived 1985 image; partner models are unnamed and do not portray the actual audio performers.
-
-- [Helen-memory-cutout-v2.png](Helen-memory-cutout-v2.png) - printed page 59.
-- [Memory-partners-cutout-v2.png](Memory-partners-cutout-v2.png) - printed page 60.
+Credits/provenance remain in asset-manifest.json; source credits belong at book end.

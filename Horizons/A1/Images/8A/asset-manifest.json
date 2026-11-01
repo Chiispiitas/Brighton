@@ -4,6 +4,29 @@
   "assets": [
     {
       "lesson": "8A",
+      "file": "Toronto-ferry-Susanne-Mueller.jpg",
+      "creator": "Susanne Mueller",
+      "source": "https://unsplash.com/photos/toronto-skyline-with-cn-tower-and-ferries-on-water-EvOlbQAp12Q",
+      "download": "https://images.unsplash.com/photo-1770119893405-c70d1acb6fc6?auto=format&fit=max&fm=jpg&q=85&w=2000",
+      "license": "Unsplash License",
+      "license_url": "https://unsplash.com/license",
+      "kind": "licensed stock photograph",
+      "dimensions": [
+        2000,
+        1500
+      ],
+      "sha256": "313d77a257657552438ea860edfd867af8847ca5d1d0281403df53fa0111041a",
+      "changes": "Provider rendition; original downloaded bytes retained; proportionate CSS display. CSS crop only where a complete teaching subject remains legible; source byte hashes unchanged.",
+      "representation": "Actual Toronto skyline/ferry photograph; no claim of exact fictional vlog date.",
+      "checked": "2026-10-31",
+      "pages": [
+        67
+      ],
+      "active": true,
+      "restoration_note": "Exact baseline fd497fd artwork use restored at explicit user request; edition layout and teaching improvements retained."
+    },
+    {
+      "lesson": "8A",
       "file": "Raccoon-David-Selbert.jpg",
       "creator": "David Selbert",
       "source": "https://www.pexels.com/photo/raccoon-standing-on-ground-in-nature-6468055/",
@@ -21,28 +44,9 @@
       "checked": "2026-10-31",
       "pages": [
         68
-      ]
-    },
-    {
-      "lesson": "8A",
-      "file": "Squirrel-Andrew-Patrick.jpg",
-      "creator": "Andrew Patrick Photo",
-      "source": "https://www.pexels.com/photo/close-up-photo-of-a-squirrel-12285011/",
-      "download": "https://images.pexels.com/photos/12285011/pexels-photo-12285011.jpeg?auto=compress&cs=tinysrgb&w=1800",
-      "license": "Pexels License",
-      "license_url": "https://www.pexels.com/license/",
-      "kind": "licensed stock photograph",
-      "dimensions": [
-        1800,
-        1440
       ],
-      "sha256": "aaf1ccbb772f896fa3347caa39fa05f20418c0caef0f11a9acc0316bf89bb992",
-      "changes": "Provider rendition at 1800px; native downloaded bytes unchanged, proportionate CSS display. CSS crop only where a complete teaching subject remains legible; source byte hashes unchanged.",
-      "representation": "Illustrative photograph; fictional speakers/stories are not facts about models. Weather images illustrate conditions, not named 2021 events; animal images illustrate vocabulary, not documented Toronto sightings.",
-      "checked": "2026-10-31",
-      "pages": [
-        68
-      ]
+      "active": true,
+      "restoration_note": "Exact baseline fd497fd artwork use restored at explicit user request; edition layout and teaching improvements retained."
     },
     {
       "lesson": "8A",
@@ -63,28 +67,32 @@
       "checked": "2026-10-31",
       "pages": [
         68
-      ]
+      ],
+      "active": true,
+      "restoration_note": "Exact baseline fd497fd artwork use restored at explicit user request; edition layout and teaching improvements retained."
     },
     {
       "lesson": "8A",
-      "file": "Toronto-ferry-Susanne-Mueller.jpg",
-      "creator": "Susanne Mueller",
-      "source": "https://unsplash.com/photos/toronto-skyline-with-cn-tower-and-ferries-on-water-EvOlbQAp12Q",
-      "download": "https://images.unsplash.com/photo-1770119893405-c70d1acb6fc6?auto=format&fit=max&fm=jpg&q=85&w=2000",
-      "license": "Unsplash License",
-      "license_url": "https://unsplash.com/license",
+      "file": "Squirrel-Andrew-Patrick.jpg",
+      "creator": "Andrew Patrick Photo",
+      "source": "https://www.pexels.com/photo/close-up-photo-of-a-squirrel-12285011/",
+      "download": "https://images.pexels.com/photos/12285011/pexels-photo-12285011.jpeg?auto=compress&cs=tinysrgb&w=1800",
+      "license": "Pexels License",
+      "license_url": "https://www.pexels.com/license/",
       "kind": "licensed stock photograph",
       "dimensions": [
-        2000,
-        1500
+        1800,
+        1440
       ],
-      "sha256": "313d77a257657552438ea860edfd867af8847ca5d1d0281403df53fa0111041a",
-      "changes": "Provider rendition; original downloaded bytes retained; proportionate CSS display. CSS crop only where a complete teaching subject remains legible; source byte hashes unchanged.",
-      "representation": "Actual Toronto skyline/ferry photograph; no claim of exact fictional vlog date.",
+      "sha256": "aaf1ccbb772f896fa3347caa39fa05f20418c0caef0f11a9acc0316bf89bb992",
+      "changes": "Provider rendition at 1800px; native downloaded bytes unchanged, proportionate CSS display. CSS crop only where a complete teaching subject remains legible; source byte hashes unchanged.",
+      "representation": "Illustrative photograph; fictional speakers/stories are not facts about models. Weather images illustrate conditions, not named 2021 events; animal images illustrate vocabulary, not documented Toronto sightings.",
       "checked": "2026-10-31",
       "pages": [
-        67
-      ]
+        68
+      ],
+      "active": true,
+      "restoration_note": "Exact baseline fd497fd artwork use restored at explicit user request; edition layout and teaching improvements retained."
     },
     {
       "lesson": "8A",
@@ -101,9 +109,39 @@
       "changes": "Native generated bytes unchanged; no raster background removal.",
       "fictional_boundary": "Fictional teaching models, acted poses; not real patients or diagnostic photographs.",
       "checked": "2026-10-31",
+      "active": true,
+      "was_active_before_edition": true,
       "pages": [
         68
-      ]
+      ],
+      "restoration_note": "Exact baseline fd497fd artwork use restored at explicit user request; edition layout and teaching improvements retained."
     }
-  ]
+  ],
+  "retired_assets": [
+    {
+      "lesson": "8A",
+      "file": "Map-Tima-Miroshnichenko-v3.jpg",
+      "creator": "Tima Miroshnichenko",
+      "source": "https://www.pexels.com/photo/a-person-holding-a-map-7009860/",
+      "download": "https://images.pexels.com/photos/7009860/pexels-photo-7009860.jpeg?auto=compress&cs=tinysrgb&w=1800",
+      "license": "Pexels License",
+      "license_url": "https://www.pexels.com/license/",
+      "kind": "licensed stock photograph",
+      "dimensions": [
+        1800,
+        1200
+      ],
+      "sha256": "397489b3cd2083cee913215af4336694fae2839681956489225975e596b09ca5",
+      "changes": "Downloaded provider rendition unchanged; proportionate CSS display only.",
+      "representation": "Illustrative object/travel photograph, not a dated archival scene or photograph of a fictional speaker.",
+      "checked": "2026-10-31",
+      "active": false,
+      "former_pages": [
+        68
+      ],
+      "retired_reason": "Inactive version retained for reversibility. User explicitly rejected the new artwork experiment and requested original artwork; no further acquisition or generation authorized for this overhaul."
+    }
+  ],
+  "edition": "2026-10-31 original artwork restored after user rejection of image experiment",
+  "artwork_policy": "Retain fd497fd active image uses; improve layout/design/teaching only. New experiment files remain inactive."
 }

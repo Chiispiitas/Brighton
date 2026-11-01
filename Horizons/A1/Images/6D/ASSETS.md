@@ -6,3 +6,8 @@
 
 
 Attribution placement update, 26 October 2026: learner-facing photograph credits, including source/license and crop notices, now appear in the end-of-book `Backmatter/image-credits.html`, not in the lesson activity. Earlier in-page placement descriptions are superseded. Original asset bytes and licenses are unchanged.
+
+
+## Editorial edition, 31 October 2026
+
+The author rejected the image experiment. Original fd497fd artwork is active again; new illustrations/stock candidates are unused and versioned. Layout, type and task improvements remain. See asset-manifest.json for rejection/restoration evidence.

@@ -5,3 +5,8 @@ Three built-in image_gen assets, 25 October 2026. No stock photographs or source
 The clothing sheet is a dictionary-like 5 x 2 photographic family; the park scene was generated for exact linked outfits/actions that support the learner tasks. Names, letter labels, price story, questions, answer spaces and all teaching text are live HTML. The red sweater does not represent Vince Lombardi's real black/gold garment.
 
 Historical source: [Heritage Auctions, 24 February 2015](https://sports.ha.com/heritage-auctions-press-releases-and-news/lombardi-s-west-point-sweater-brings-thrift-shop-owners-43-020-at-auction.s?releaseId=2701). Only the reported acquisition/sale prices, dates and ownership are adapted into an original compact fact panel. The fictional shop conversation does not impersonate the real finders.
+
+
+## Editorial edition, 31 October 2026
+
+The author rejected the image experiment. Original fd497fd artwork is active again; new illustrations/stock candidates are unused and versioned. Layout, type and task improvements remain. See asset-manifest.json for rejection/restoration evidence.

@@ -57,5 +57,35 @@
     "name": "Unit 4 visual variety",
     "summary": "The source compares a short yellow note with a purple food-sharing phone. The shared apples photograph supplies context; only B supplies food, place and time in its text. The punctuation Skills panel is now inside activity 4. Independent composition places the full-background bread-sharing photograph and planning questions beside an eight-line open post, without a repeated decorative slogan. All model wording and both recordings are unchanged.",
     "preservation": "All earlier asset binaries retained. CSS presentation only, except one new native-alpha cook cutout."
+  },
+  "editorial_edition": {
+    "date": "2026-10-31",
+    "status": "Image experiment rejected by author; fd497fd artwork restored active. Layout/type/task revisions remain.",
+    "active_new_assets": [],
+    "active_original_artwork": true,
+    "rejected_candidates_retained": [
+      {
+        "lesson": "4D",
+        "file": "Picnic-sharing-Dziana-6401669-edition.jpg",
+        "creator": "Dziana Hasanbekava",
+        "source": "https://www.pexels.com/photo/couple-having-healthy-picnic-together-in-summer-6401669/",
+        "license": "Pexels License",
+        "license_url": "https://www.pexels.com/license/",
+        "kind": "licensed stock photograph",
+        "dimensions": [
+          1800,
+          1202
+        ],
+        "sha256": "f2d656d8e795929b1b1d2c76a3f22e09a66f3d1bb6dea146c6ef0b5296aecb59",
+        "changes": "Original acquired bytes unchanged; proportionate full-image CSS display. Export-only downsampled renditions remain under the stated source license.",
+        "representation": "Real shared-food photograph; not a claim about models or Olio.",
+        "checked": "2026-10-31",
+        "pages": [
+          38
+        ]
+      }
+    ],
+    "retired_from_current_lesson": [],
+    "retention": "All original binaries unchanged. New candidates retained versioned but inactive. Current HTML/CSS use baseline art."
   }
 }

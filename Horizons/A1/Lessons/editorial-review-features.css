@@ -1,0 +1,144 @@
+/* Final review art direction: source-led first page, purposeful bands on the
+   continuation. Scope is deliberately limited to the four paired reviews. */
+.rvf { --rvf-ink:#302c30; --rvf-red:#b5194f; --rvf-rule:#c8c2c2; }
+.rvf .hz-objectives { max-width:none; }
+.rvf .rr-columns { gap:7.5mm; }
+.rvf .rr-column { gap:4mm; }
+.rvf .rr-skill-label,.rvf .r78-skill { color:#61515b; font-size:8pt; letter-spacing:.045em; text-transform:uppercase; margin-bottom:1mm; }
+.rvf .hz-exercise__body { margin-top:2mm; }
+.rvf .hz-task-text,.rvf .rr-project-copy p,.rvf .r34-messages p,.rvf .r56-note p { font-size:10pt; }
+.rvf .rr-word-bank { gap:1mm 2.5mm; padding:2mm; line-height:1.4; }
+.rvf .rr-list { line-height:1.45; }
+.rvf .rr-gap,.rvf .r78-gap { border-color:#a7a0a2; }
+.rvf .rr-write,.rvf .r34-message-lines span,.rvf .r78-lines span { height:7mm; }
+.rvf-spread-flow { padding-top:12mm; display:flex; flex-direction:column; gap:5mm; }
+.rvf-spread-flow .hz-exercise { min-width:0; }
+.rvf-spread-flow .hz-edition-check { font-size:9pt; line-height:1.4; margin-top:2mm; }
+.rvf-rehearsal { display:grid; grid-template-columns:1fr 1fr; gap:8mm; align-items:start; }
+.rvf-beyond { padding-top:3mm!important; border-top:.6mm solid var(--rvf-red); }
+.rvf-beyond-head { display:flex; align-items:baseline; gap:6mm; margin-bottom:3mm; }
+.rvf-beyond-head h2 { font:800 16pt/1.05 var(--hz-font-sans); letter-spacing:-.025em; color:var(--rvf-ink); margin:0; white-space:nowrap; }
+.rvf-beyond-head > p { margin:0; font-size:9.2pt; line-height:1.35; }
+.rvf-missions { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:5mm; }
+.rvf-mission { min-width:0; border:0; padding:0; }
+.rvf-mission + .rvf-mission { border-left:.25mm solid var(--rvf-rule); padding-left:4mm; }
+.rvf-mission h3 { display:flex; align-items:baseline; gap:2mm; margin:0 0 1.5mm; color:var(--rvf-red); font-size:11pt; line-height:1.15; }
+.rvf-mission h3 > span { color:#ae9ba4; font:400 24pt/1 Georgia,serif; }
+.rvf-mission p { font-size:10pt; line-height:1.4; margin:0; }
+.rvf-mission .rvf-listener { margin-top:2mm; }
+.rvf-listener b { color:var(--rvf-red); font-weight:650; }
+.rvf-notes { margin-top:3mm; }
+.rvf-notes > p { margin:0; font-size:8.5pt; color:#63575d; }
+.rvf-notes > span,.rvf-retry-line { display:block; height:7mm; border-bottom:.25mm solid #aaa2a5; }
+.rvf-retry { font-size:9pt; line-height:1.4; margin:2.5mm 0 0; }
+.rvf-retry b { color:var(--rvf-red); }
+.rvf-source-kind { margin:1mm 0 2mm; color:#6d4658; font-size:7.5pt; font-weight:650; letter-spacing:.07em; }
+/* 1&2: gallery guide. Quiet white, precise labels and a typographic catalogue
+   masthead let the original three people and their objects carry the color. */
+.rvf-2r .rr-project-head { padding:3mm 0 2mm!important; border-top:1.2mm solid #b5194f!important; }
+.rvf-2r .rr-project-head h3 { font:750 23pt/1 var(--hz-font-sans)!important; letter-spacing:-.045em!important; }
+.rvf-2r .rr-project-head h3 em { font:400 27pt/1 Georgia,serif!important; margin-top:1mm; color:#b5194f!important; }
+.rvf-2r .rr-exhibit-card { margin:0!important; padding:2mm 0!important; background:white!important; border-block:.3mm solid #3d3438; }
+.rvf-2r .rr-exhibit-card >span { font-size:7pt; }
+.rvf-2r .rr-exhibit-card b { font-size:10pt; }
+.rvf-2r .rr-exhibit-card >div >span { font-size:15pt; }
+.rvf-2r .rr-project-copy,.rvf-2r .rr-reading-check { border:0!important; padding:2mm 1mm 0!important; }
+.rvf-2r .rr-cast-labels { font-size:9pt; }
+.rvf-2r .rr-vocab-table th { padding:2mm .5mm; font-size:9pt; }
+.rvf-2r .rr-vocab-table td { height:7mm; }
+.rvf-2r .rr-exhibition-dialogue { background:#f8f3f4!important; border:0!important; padding:3mm!important; }
+.rvf-2r .rr-dialogue-questions { gap:2.5mm; }
+.rvf-2r .rr-dialogue-questions li >div { display:block; }
+.rvf-2r .rr-dialogue-questions li >div >span { display:block; white-space:normal; margin-top:.5mm; }
+.rvf-2r .rr-contact-sheet { margin-bottom:3mm; }
+.rvf-2r .rr-photo-letter { font-size:9pt; width:5mm; height:5mm; }
+.rvf-2r .rr-studio-answers { gap:2mm; }
+.rvf-2r .rr-picture-write-label { margin-top:3mm; }
+/* 3&4: an outdoor-film programme. Photography first, a compact dark admission
+   strip, then two voices on warm paper. The planning inventory reads as a list. */
+.rvf-4r .r34-cinema-poster { display:grid; grid-template-columns:1fr auto; background:#332935; }
+.rvf-4r .r34-cinema-poster >img { order:0; grid-column:1/-1; }
+.rvf-4r .r34-cinema-poster h2 { grid-column:1/-1; padding:3mm; font:800 25pt/1 var(--hz-font-sans); }
+.rvf-4r .r34-cinema-poster h2 span { display:inline; font:400 15pt/1.1 Georgia,serif; }
+.rvf-4r .r34-free { top:3mm; right:3mm; background:#fff; color:#332935; border:0; width:12mm; height:12mm; }
+.rvf-4r .r34-program { grid-column:1/-1; background:#fff; color:#332935; border-block:.3mm solid #332935; padding:2mm 0; }
+.rvf-4r .r34-program >b { letter-spacing:.08em; font-size:8.5pt; }
+.rvf-4r .r34-program >span b { font-size:20pt; }
+.rvf-4r .r34-messages { background:#f7f1eb; padding:3mm; }
+.rvf-4r .r34-messages section { border:0; padding:0; }
+.rvf-4r .r34-messages h3 { color:#854321; }
+.rvf-4r .r34-food-plan { border:0; background:#fff; padding:2mm 0 0; border-top:.5mm solid #bc5b31; }
+.rvf-4r .r34-food-plan header>span { font-size:9pt; }
+.rvf-4r .r34-food-plan h2 { font-size:16pt; }
+.rvf-4r .r34-counts img { width:100%; }
+.rvf-4r .r34-food-need { font-size:10pt; }
+.rvf-4r .rvf-film-rehearsal .hz-exercise__body { display:grid; grid-template-columns:1.3fr .7fr 1.3fr; gap:5mm; align-items:start; }
+.rvf-4r .r34-match { gap:2mm; }
+.rvf-4r .r34-replies { display:flex; flex-direction:column; margin:0; padding:2mm 0 0 3mm; background:#fff; border-left:.4mm solid #9a808d; }
+.rvf-4r .r34-your-cinema { margin:0; }
+.rvf-4r .r34-your-cinema img { width:100%; }
+.rvf-4r .r34-your-cinema figcaption { position:static; color:#332935; background:white; padding:1mm 0 0; font-size:10pt; }
+.rvf-4r .r34-message-sheet { border:0; border-top:.3mm solid #bdb0b8; background:#fff; padding:1mm 0 0; }
+.rvf-4r .r34-message-sheet header { font-size:9.5pt; color:#6d4658; }
+/* 5&6: a confidential briefing and a route that can actually be followed. */
+.rvf-6r .r56-surprise >header { background:#fff; color:#a93524; padding:0 0 3mm; border-top:1.1mm solid #a93524; }
+.rvf-6r .r56-surprise >header >span { display:inline-block; margin:2mm 0; font-size:8pt; letter-spacing:.04em; }
+.rvf-6r .r56-surprise >header .rvf-secret { float:right; border:.3mm solid #a93524; padding:.6mm 1mm; font-weight:750; transform:rotate(-4deg); }
+.rvf-6r .r56-surprise h2 { font:750 27pt/1 var(--hz-font-sans); }
+.rvf-6r .r56-surprise h2 br { display:none; }
+.rvf-6r .r56-note { background:#f7f1e9; padding:3mm; }
+.rvf-6r .r56-surprise figcaption { padding:1.3mm 0; }
+.rvf-6r .r56-shop-sign { background:#f9f8f5; padding:2mm; }
+.rvf-6r .rvf-route-rehearsal .hz-exercise__body { display:grid; grid-template-columns:1.15fr 1fr; gap:6mm; }
+.rvf-6r .r56-map { margin:0; }
+.rvf-6r .r56-route p { margin-bottom:3mm; }
+.rvf-6r .r56-write-sheet { padding:1.5mm 0 0; border:0; border-top:.4mm solid #b6a196; }
+/* 7&8: a community arts report, calendar and forecast, then the authentic class
+   photograph beside a booking exchange. Different source shapes, one hierarchy. */
+.rvf-8r .r78-columns { grid-template-columns:1fr 1.08fr; gap:7mm; }
+.rvf-8r .r78-feature { background:#f8f4ed; }
+.rvf-8r .r78-feature header { padding:3mm 0; color:#59243f; background:#fff; border-top:1mm solid #b43b62; }
+.rvf-8r .r78-feature header span { font-size:7.5pt; }
+.rvf-8r .r78-feature h2 { font:700 26pt/1.05 Georgia,serif; letter-spacing:-.04em; margin-top:2mm; }
+.rvf-8r .r78-cinema { height:71mm; }
+.rvf-8r .r78-feature-copy { padding:3mm; }
+.rvf-8r .r78-feature-copy p { line-height:1.55; }
+.rvf-8r .r78-date { display:flex; align-items:center; gap:3mm; background:#fff; border:0; border-top:.4mm solid #7d5f43; padding:3mm 0; }
+.rvf-calendar-day { font:400 39pt/.95 Georgia,serif; color:#7d5f43; }
+.rvf .r78-date .rvf-calendar-day {font-size:39pt!important;line-height:.95!important;}
+.rvf-numbered-gap {white-space:nowrap;}
+.rvf-8r .r78-date b { font-size:12pt; }
+.rvf-8r .r78-date div { font-size:9.5pt; line-height:1.4; }
+.rvf-8r .r78-date div>span { color:#7d5f43; }
+.rvf-8r .r78-forecast p { padding:2mm 1mm; }
+.rvf-8r .r78-forecast b { font-size:9pt; }
+.rvf-8r .r78-forecast strong { display:block; font:400 23pt/1.2 var(--hz-font-sans); margin:1mm 0; color:#4f4c4a; }
+.rvf-8r .r78-forecast span { font-size:9pt; }
+.rvf-8r .rvf-call-rehearsal .hz-exercise__body { display:grid; grid-template-columns:1fr 1.2fr; gap:6mm; }
+.rvf-8r .rvf-call-context img { width:100%; margin:0 0 2mm; }
+.rvf-8r .rvf-call-context .hz-word-bank { margin:0; }
+.rvf-8r .r78-call { border-left:.5mm solid #8d536b; padding-left:3mm; }
+.rvf-8r .r78-call p { margin-bottom:1.5mm; line-height:1.35; }
+.rvf-8r .rvf-weekend-row { display:grid; grid-template-columns:.7fr 1.3fr; gap:7mm; align-items:start; }
+.rvf-8r .r78-choose { margin-bottom:2mm; }
+.rvf-8r .r78-check { font-size:9pt; color:#685453; }
+.rvf-8r .rvf-advice-lines { margin-top:2mm; }
+@media screen { .rvf-mission:hover { background:#faf7f8; } }
+
+/* Bespoke generated physical objects: the paper is raster; every label, source
+   paragraph and original photo remains a normal live element. */
+.rvf-4r .r34-program.rvf-admission-stub {
+  display:grid;grid-template-columns:1fr 1.05fr .5fr;gap:1mm;
+  align-items:center;min-height:22mm;padding:4.5mm 5mm 4.5mm 7mm;
+  border:0;background:transparent url('../Images/Editorial-objects/4R-cinema-admission-stub-v2.png') center/100% 100% no-repeat;
+}
+.rvf-4r .rvf-admission-stub >b {font-size:8.5pt;letter-spacing:0;background:#fff;}
+.rvf-4r .rvf-admission-stub >span:not(.rvf-ticket-free) {font-size:8pt;text-align:center;line-height:1.15;background:#fff;}
+.rvf-4r .rvf-admission-stub >span:not(.rvf-ticket-free) >b {display:block;font-size:20pt;line-height:1.05;}
+.rvf-4r .rvf-admission-stub .r34-free.rvf-ticket-free {position:static;width:auto;height:auto;display:block;border:0;border-radius:0;padding:0;background:#fff;color:#332935;font-size:8pt;text-align:center;}
+.rvf-6r .rvf-briefing-surface {
+  padding:9mm 3mm 4mm;
+  background:transparent url('../Images/Editorial-objects/6R-confidential-briefing-folder-v1.png') center/100% 100% no-repeat;
+}
+.rvf-6r .rvf-briefing-surface .r56-note {padding:3mm 2.5mm 2mm;background:#fff;border:0;}
+.rvf-6r .rvf-briefing-surface figcaption {background:#a93524;}

@@ -1,5 +1,5 @@
 /* Unit 8 book-local helpers. No changes to shared Horizons chrome. */
-.u8-page { font-size:9.5pt; }
+.u8-page { font-size:10pt; }
 .u8-page .hz-page-stack { gap:2.5mm; }
 .u8-page .hz-exercises { gap:3.2mm; }
 .u8-page .hz-exercise { padding-top:0; padding-bottom:0; }
@@ -9,7 +9,7 @@
 .u8-page .u8-cont-stack > .hz-exercises:first-child { padding-top:7mm !important; }
 .u8-page img { display:block; max-width:100%; }
 .u8-page figure { margin:0; }
-.u8-page .hz-word-bank { display:flex; flex-wrap:wrap; gap:1mm 5mm; padding:1.5mm 2.5mm; margin-bottom:2mm; color:var(--hz-unit-dark); font-size:9pt; font-weight:400; }
+.u8-page .hz-word-bank { display:flex; flex-wrap:wrap; gap:1mm 5mm; padding:1.5mm 2.5mm; margin-bottom:2mm; color:var(--hz-unit-dark); font-size:9.5pt; font-weight:400; }
 .u8-page .u8-list { margin:0; padding-left:4.7mm; line-height:1.4; }
 .u8-page .u8-list > li { padding-left:.5mm; margin:0 0 1.7mm; }
 .u8-page .u8-list > li:last-child { margin-bottom:0; }
@@ -22,7 +22,7 @@
 .u8-page .u8-table { border-collapse:collapse; table-layout:fixed; width:100%; }
 .u8-page .u8-table th { color:var(--hz-unit-dark); background:#f3f2ee; text-align:left; font-weight:650; padding:1.5mm 2mm; }
 .u8-page .u8-table td { padding:1.3mm 2mm; vertical-align:middle; border-bottom:.25mm solid #d4d5d9; }
-.u8-page .hz-focus-box h3 { margin:0 0 1.3mm; color:var(--hz-unit-dark); font-size:9.5pt; line-height:1.35; font-weight:650; }
+.u8-page .hz-focus-box h3 { margin:0 0 1.3mm; color:var(--hz-unit-dark); font-size:10pt; line-height:1.35; font-weight:650; }
 .u8-page .hz-focus-box p { margin:0 0 1.1mm; line-height:1.4; }
 .u8-page .hz-focus-box p:last-child { margin-bottom:0; }
 .u8-page .u8-focus-last { margin-top:2mm; padding-top:1.5mm; border-top:.2mm solid #dcbecb; }

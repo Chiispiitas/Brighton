@@ -12,7 +12,7 @@
 .l7a-memory-row + .l7a-memory-row { margin-top:5mm; padding-top:4mm; border-top:.25mm solid #d4b4a3; }
 .l7a-memory-year { color:#a43724; font:750 18pt/1 var(--hz-font-sans); letter-spacing:-.045em; padding-top:.5mm; }
 .l7a-memory-row header { color:#6a3026; font:700 11pt/1.2 var(--hz-font-sans); margin-bottom:1.5mm; }
-.l7a-memory-row p { font-size:9.5pt; line-height:1.4; margin:0; }
+.l7a-memory-row p { font-size:10pt; line-height:1.4; margin:0; }
 .l7a-memory-row p.l7a-question { color:#6a3026; margin-bottom:1.5mm; }
 .l7a-helen { height:86mm; display:flex; align-items:end; justify-content:center; }
 .l7a-helen img { height:86mm; width:auto; max-width:none; transform:translateX(-5mm); }
@@ -21,13 +21,16 @@
 .l7a-recall { padding-bottom:2mm; }
 .l7a-recall-top { display:flex; flex-direction:column; gap:3mm; }
 .l7a-recall-top > img { width:43mm; height:auto; }
-.l7a-recall-top p { margin:0 0 1.1mm; font-size:9.5pt; line-height:1.4; }
+.l7a-recall-top p { margin:0 0 1.1mm; font-size:10pt; line-height:1.4; }
 .l7a-recall-top p.u7-model { margin-top:2mm; }
 .l7a-recall .u7-lines { margin-top:2mm; }
 .l7a-partners { position:relative; display:flex; justify-content:center; align-items:end; height:98mm; }
 .l7a-partners img { height:80mm; width:auto; max-width:none; }
 .l7a-speech { position:absolute; top:0; left:0; right:0; display:grid; grid-template-columns:1.5fr 1fr; gap:3mm; align-items:start; }
-.l7a-speech p { position:relative; margin:0; padding:1.8mm 2mm; border:.3mm solid #b75b43; border-radius:2mm; background:#fff; font-size:9.5pt; line-height:1.35; }
+.l7a-speech p { position:relative; margin:0; padding:1.8mm 2mm; border:.3mm solid #b75b43; border-radius:2mm; background:#fff; font-size:10pt; line-height:1.35; }
 .l7a-speech p::after { content:""; position:absolute; bottom:-2mm; left:50%; width:3mm; height:3mm; background:#fff; border-right:.3mm solid #b75b43; border-bottom:.3mm solid #b75b43; transform:rotate(45deg); }
 .l7a-speech b { color:var(--hz-unit-dark); font-weight:700; }
 .l7a-page--2 .hz-extra-practice { margin-top:2mm; }
+
+/* User-directed original-art restoration; edition typography and feasible outcomes retained. */
+.l7a-memory-feature{padding-top:2mm;background:#f5f0e7;grid-template-columns:minmax(0,1fr) 45mm;align-items:center}.l7a-memory-feature::before{display:none}.l7a-oral-history{grid-column:1/-1;display:flex;justify-content:space-between;align-items:baseline;gap:3mm;margin-bottom:2mm}.l7a-oral-history span{font-size:8pt;color:#725045;text-transform:uppercase;letter-spacing:.06em}.l7a-oral-history h2{font:740 18pt/1.1 var(--hz-font-sans);margin:0;color:#302b28}.l7a-interview-copy{padding:0 0 1mm}.l7a-memory-row{grid-template-columns:15mm 1fr;gap:2.5mm}.l7a-memory-row+.l7a-memory-row{margin-top:3mm;padding-top:2mm}.l7a-memory-row header{margin-bottom:1mm}.l7a-helen{height:77mm}.l7a-helen img{height:77mm;transform:none}.l7a-memory-workshop{grid-template-columns:minmax(0,1fr) 70mm;align-items:end}.l7a-recall h2{font:720 16pt/1.15 var(--hz-font-sans);margin:0 0 2mm;color:#68442f}.l7a-recall-top{display:grid;grid-template-columns:37mm 1fr;gap:3mm;align-items:start}.l7a-recall-top>img{width:37mm}.l7a-partners{height:94mm}.l7a-partners img{height:76mm}.l7a-recall .u7-lines>span{height:7mm}

@@ -167,3 +167,24 @@
 .l3c-review-editor { border-color:#bac7b8; }
 .l3c-review-editor header { background:#e8eee5; color:#304f3d; }
 .l3c-review-editor svg { stroke:#304f3d; }
+
+
+/* Editorial edition: authored composition and usable teaching surfaces. */
+
+.l3c-page.ed13-page .l3c-continuation-content {padding-top:0;}
+.l3c-page--2.ed13-page .hz-exercise {padding:1mm 0;}
+.l3c-page.ed13-page .l3c-review-masthead {background:#eee9e2;color:#292b2e;border:0;border-top:.5mm solid #66554a;padding:2mm 3mm;}
+.l3c-page.ed13-page .l3c-review-masthead h2 {font:650 21pt/1.1 Georgia,serif;color:#292b2e;}
+.l3c-page.ed13-page .l3c-maps-brand svg {display:none;}
+.l3c-page.ed13-page .l3c-maps-brand {font-size:9pt;}
+.l3c-page.ed13-page .l3c-review {background:#fff;border:0;border-bottom:.25mm solid #c8c0b8;padding:2mm 0;}
+.l3c-page.ed13-page .l3c-review h3 {font:650 13pt/1.2 var(--hz-font-sans);color:#3b3731;}
+.l3c-page.ed13-page .l3c-review p {font-size:10pt!important;line-height:1.4;}
+.l3c-page.ed13-page .l3c-review-byline {color:#66554a;}
+.l3c-page.ed13-page .l3c-photo-gallery figcaption {background:#f0ebe3;color:#39342c;border-bottom:.4mm solid #ac7955;}
+.l3c-page.ed13-page .l3c-choice-feature {background:none;border:0;border-top:.4mm solid #ba9a7e;padding:2mm 0 0;}
+.l3c-page.ed13-page .l3c-recommendation {background:none;border:0;padding:0;}
+.l3c-page.ed13-page .l3c-preference-notes p {margin:0 0 1.3mm;}
+.l3c-page.ed13-page .l3c-review-editor {background:#fff;border:0;border-top:.5mm solid #6a4056;}
+.l3c-page.ed13-page .l3c-review-editor header {background:none;color:#5e3f51;padding:1.5mm 0;}
+.l3c-page.ed13-page .l3c-review-editor h2 {font:650 17pt/1.2 var(--hz-font-sans);}

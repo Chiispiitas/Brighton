@@ -1,27 +1,29 @@
 /* 8D: a traveler, a phone-script lane and functional booking records. */
 .l8d-last-minute { display:grid; grid-template-columns:70mm 1fr; gap:5mm; align-items:center; }
 .l8d-last-minute img { width:70mm; height:auto; }
-.l8d-last-minute span { color:#85538f; font-size:9.5pt; font-weight:650; }
+.l8d-last-minute span { color:#85538f; font-size:10pt; font-weight:650; }
 .l8d-last-minute h2 { margin:1mm 0 2mm; font:760 24pt/1.05 var(--hz-font-sans); letter-spacing:-.03em; }
-.l8d-last-minute p { font-size:9.5pt; line-height:1.4; margin:0; }
+.l8d-last-minute p { font-size:10pt; line-height:1.4; margin:0; }
 .l8d-call { border:.25mm solid #c5b0cf; }
 .l8d-call header { background:#503459; color:white; padding:2mm 3mm; display:flex; justify-content:space-between; align-items:center; gap:3mm; }
 .l8d-call header span { font-size:8pt; max-width:35mm; }
 .l8d-call h2 { font:720 18pt/1.1 var(--hz-font-sans); margin:0; }
 .l8d-call > div { padding:2mm 3mm; }
-.l8d-call p { display:grid; grid-template-columns:13mm 1fr; gap:2mm; font-size:9.5pt; line-height:1.35; margin:0 0 .9mm; }
+.l8d-call p { display:grid; grid-template-columns:13mm 1fr; gap:2mm; font-size:10pt; line-height:1.35; margin:0 0 .9mm; }
 .l8d-call p:last-child { margin-bottom:0; }.l8d-call p > b { color:#694173; font-weight:650; }
 .l8d-ticket { border:.3mm solid #9c9c9c; border-left:2mm solid #503459; }
 .l8d-ticket header { padding:1.6mm 3mm; color:#fff; background:#333; display:flex; justify-content:space-between; align-items:center; }
-.l8d-ticket header span { font-size:9.5pt; letter-spacing:.08em; font-weight:650; }.l8d-ticket header b { font-size:8pt; font-weight:400; }
+.l8d-ticket header span { font-size:10pt; letter-spacing:.08em; font-weight:650; }.l8d-ticket header b { font-size:8pt; font-weight:400; }
 .l8d-ticket-fields { display:grid; grid-template-columns:1fr 1fr; gap:1.5mm 4mm; padding:2mm 3mm; }
 .l8d-ticket-fields p { margin:0; line-height:1.4; }.l8d-ticket-fields b { font-weight:650; color:#503459; margin-right:2mm; }
 .l8d-private-prep { display:grid; grid-template-columns:44mm 1fr; gap:5mm; align-items:center; }
 .l8d-private-prep img { width:44mm; height:auto; }
 .l8d-private-prep h2 { font:720 18pt/1.1 var(--hz-font-sans); margin:0 0 2mm; }
-.l8d-private-prep p { margin:0 0 2mm; font-size:9.5pt; line-height:1.4; }
+.l8d-private-prep p { margin:0 0 2mm; font-size:10pt; line-height:1.4; }
 .l8d-confirmation { border-top:.6mm solid #503459; padding-top:2mm; }
 .l8d-confirmation h2 { font:720 16pt/1.1 var(--hz-font-sans); margin:0 0 2mm; color:#503459; }
-.l8d-confirmation p { margin:0 0 1.5mm; font-size:9.5pt; line-height:1.4; }
+.l8d-confirmation p { margin:0 0 1.5mm; font-size:10pt; line-height:1.4; }
 
 .l8d-confirmation .u8-gap { height:6mm; }
+
+.l8d-no-ticket{margin-top:1mm!important}.l8d-private-prep{grid-template-columns:42mm 1fr;gap:5mm}.l8d-private-prep img{width:42mm}.l8d-confirmation h2{font-size:16pt}

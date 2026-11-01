@@ -1,0 +1,206 @@
+/* Individually authored language features. No shared chrome/concept overrides.
+   All people and source photographs remain the author's approved artwork. */
+.lf-lines > span {display:block;height:7mm;border-bottom:.25mm solid #aaa;}
+.lf-inline-write {display:inline-block;min-width:36mm;height:6mm;border-bottom:.25mm solid #999;}
+
+/* 1A: a first-day conversation and a useful contact record. */
+.lf-1a .lf1a-setting {margin:0 0 2mm;font-size:8pt;letter-spacing:.04em;color:#6a5149;}
+.lf-1a .lf1a-contact {margin-top:4mm;padding:3mm 0 0;border-top:.4mm solid #4c5e61;}
+.lf-1a .lf1a-contact header {display:flex;align-items:baseline;justify-content:space-between;gap:4mm;margin-bottom:2mm;}
+.lf-1a .lf1a-contact h2 {margin:0;font:650 16pt/1.15 var(--hz-font-sans);color:#303b3f;}
+.lf-1a .lf1a-contact header p {margin:0;font-size:9pt;}
+.lf-1a .lf1a-contact-fields {display:grid;grid-template-columns:2fr 1fr;gap:6mm;}
+.lf-1a .lf1a-contact-fields p {display:flex;gap:3mm;align-items:end;margin:0;}
+.lf-1a .lf1a-contact-fields span {height:7mm;flex:1;border-bottom:.25mm solid #8d9698;}
+
+/* 1C: destination titles belong to their photographs; the output is a postcard. */
+.lf-1c .l1c-world-masthead {background:transparent!important;border:0!important;border-bottom:.45mm solid #6f6870!important;padding:0 0 2mm!important;margin-bottom:3mm!important;}
+.lf-1c .l1c-world-masthead h2 {display:block!important;color:#28292b!important;font:650 22pt/1.1 Georgia,serif!important;}
+.lf-1c .l1c-world-masthead .l1c-world-masthead__cities,.lf-1c .l1c-world-masthead .l1c-world-masthead__rest {display:inline!important;color:inherit!important;font:inherit!important;letter-spacing:-.025em!important;white-space:normal!important;}
+.lf-1c .l1c-city {min-width:0;}
+.lf-1c .l1c-city > .l1c-city__heading {display:flex!important;justify-content:space-between;align-items:center;gap:2mm;height:auto!important;min-height:0!important;margin:0 0 2mm;padding:0;}
+.lf-1c .l1c-city__heading h3 {font:650 13pt/1.15 var(--hz-font-sans)!important;margin:0!important;min-height:0!important;display:block!important;color:#312b30!important;}
+.lf-1c .l1c-city__signature {display:block!important;order:2;flex:none;width:14mm!important;height:4.5mm!important;min-height:0!important;stroke:#8c6f67!important;fill:none!important;stroke-width:1.8;}
+.lf-1c .l1c-city__copy {padding:2mm 0 0!important;min-height:0!important;}
+.lf-1c .lf1c-postcard {position:relative;padding:3mm 4mm 4mm;border:.3mm solid #c0b6a9;background:#fffefa;box-shadow:1mm 1mm 0 #eee8df;}
+.lf-1c .lf1c-postcard-label {display:block;font-size:7pt;letter-spacing:.13em;color:#8e6647;margin-bottom:1mm;}
+.lf-1c .lf1c-postcard h2 {font:650 17pt/1.15 Georgia,serif;color:#6b4c58;margin:0 0 2mm;}
+.lf-1c .lf1c-postcard .ed13-lines span {height:7mm;}
+.hz-page.lf-1c.l1c-page--2 .l1c-word-map h3 {font:650 10pt/1.2 var(--hz-font-sans)!important;text-transform:none!important;letter-spacing:0!important;color:#42383d!important;}
+.hz-page.lf-1c.l1c-page--2 .l1c-word-map h3::after {content:none!important;display:none!important;}
+
+/* 2A: a small packing note, separate from the matching answers. */
+.lf-2a .lf2a-bag-choice {display:grid;grid-template-columns:1fr 1fr;column-gap:4mm;margin-top:2mm;padding-top:1mm;border-top:.3mm solid #9a9286;}
+.lf-2a .lf2a-bag-choice h2 {font:650 11pt/1.2 var(--hz-font-sans);margin:0 0 .5mm;color:#4c544a;}
+.lf-2a .lf2a-bag-choice h2,.lf-2a .lf2a-bag-choice > span:last-child {grid-column:1 / -1;}
+.lf-2a .lf2a-bag-choice > span {display:block;height:6mm;border-bottom:.25mm solid #a7a497;}
+.lf-2a .l2a-bag-photo {align-self:start;}
+
+/* 2C: clear authorship for independent family captions. */
+.lf-2c .lf2c-owner {display:flex;gap:2mm;margin:2mm 0!important;}
+.lf-2c .lf2c-owner span {height:5mm;flex:1;border-bottom:.25mm solid #aaa;}
+.lf-2c .lf2c-check {margin:2mm 0 0!important;font-size:9pt;color:#48594e;}
+
+/* 3A: portrait and article share a clean top edge, no inflated grid row. */
+.lf-3a .l3a-leo-feature {grid-template-rows:min-content 1fr min-content;align-items:start;}
+.lf-3a .l3a-feature-head {align-self:start;}
+.lf-3a .l3a-feature-time {min-height:0!important;height:auto!important;width:auto!important;padding:0!important;}
+.lf-3a .l3a-feature-copy {align-self:start;}
+.lf-3a .l3a-leo-feature {grid-template-columns:minmax(0,1fr) 43mm;}
+.lf-3a .l3a-feature-layout img {height:58mm!important;width:43mm;object-fit:contain;}
+.lf-3a .l3a-feature-head h2 {font-size:21pt;}
+.lf-3a .l3a-feature-time {font-size:16pt;}
+.lf-3a .lf3a-facts {padding-top:1mm;}
+
+/* 3C: three complete listings, not a gallery detached from its reviews. */
+.lf-3c .l3c-review-feed {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4mm;align-items:start;}
+.lf-3c .l3c-review {display:flex;flex-direction:column;min-width:0;padding:0 0 2mm!important;border:0!important;border-bottom:.35mm solid #b2a591!important;background:#fffefa!important;}
+.lf-3c .lf3c-place-photo {position:relative;display:block;margin:0 0 2mm;}
+.lf-3c .lf3c-place-photo img {display:block;width:100%;height:31mm;object-fit:cover;}
+.lf-3c .lf3c-place-photo figcaption {display:flex;justify-content:space-between;padding:1mm 1.5mm;background:#eee7dc;color:#423b31;font-size:9pt;border-bottom:.4mm solid #ab7952;}
+.lf-3c .l3c-review header {display:block;min-height:0;padding:0!important;margin:0 0 1.5mm!important;background:none!important;}
+.lf-3c .l3c-review header h3 {font:650 12pt/1.2 var(--hz-font-sans);margin:0;}
+.lf-3c .l3c-review p {padding:0!important;margin:2mm 0 0!important;}
+.lf-3c .l3c-review-byline {padding:0!important;}
+.lf-3c .lf3c-reading-choice {display:grid;grid-template-columns:1fr 1fr;gap:5mm;margin-top:3mm;}
+.lf-3c .lf3c-reading-choice p {display:flex;gap:2mm;margin:0;align-items:end;}
+.lf-3c .lf3c-reading-choice span {flex:1;min-width:10mm;height:7mm;border-bottom:.25mm solid #aaa;}
+.lf-3c .l3c-review-masthead {margin-bottom:3mm;}
+
+/* 4A: two people can choose two breakfasts, including different food. */
+.lf-4a .lf4a-menu {margin-top:3mm;border-top:.5mm solid #536a55;}
+.lf-4a .lf4a-menu header {display:flex;justify-content:space-between;gap:4mm;align-items:baseline;margin:2mm 0;}
+.lf-4a .lf4a-menu h2 {font:650 16pt/1.15 Georgia,serif;color:#37533e;margin:0;}
+.lf-4a .lf4a-menu header span {font-size:9pt;}
+.lf-4a .lf4a-menu table {width:100%;border-collapse:collapse;table-layout:fixed;}
+.lf-4a .lf4a-menu th {font-weight:650;text-align:left;font-size:9pt;padding:0 2mm 1mm 0;color:#536a55;}
+.lf-4a .lf4a-menu th:first-child {width:22%;}
+.lf-4a .lf4a-menu td {height:7mm;border-bottom:.25mm solid #aab1a5;border-right:3mm solid #fffefa;}
+.lf-4a .l4a-picnic-check {grid-template-columns:60mm minmax(0,1fr);}
+.lf-4a .l4a-picnic-check img {width:60mm;height:45mm;object-fit:contain;}
+.lf-4a .l4a-picnic-check .l4a-open-lines > span {height:7mm;}
+
+/* 4C: the kitchen task produces a stock record and a real shopping list. */
+.lf-4c .l4c-pantry-plan {align-items:start;}
+.lf-4c .lf4c-stock {margin-top:3mm;}
+.lf-4c .lf4c-stock table {width:100%;border-collapse:collapse;table-layout:fixed;}
+.lf-4c .lf4c-stock thead th {font-size:9pt;text-align:left;color:#37563d;border-bottom:.4mm solid #83957f;padding:1.5mm 2mm;}
+.lf-4c .lf4c-stock thead th:first-child {width:27%;}
+.lf-4c .lf4c-stock thead th:nth-child(2) {width:44%;}
+.lf-4c .lf4c-stock tbody th {font-weight:400;text-align:left;}
+.lf-4c .lf4c-stock td,.lf-4c .lf4c-stock tbody th {height:7mm;padding:0 2mm;border-bottom:.25mm solid #bbc0b5;}
+.lf-4c .lf4c-stock td:last-child {border-left:.2mm solid #e0e0d8;}
+.lf-4c .lf4c-stock > p {margin:1.5mm 0 0;font-size:9pt;}
+.lf-4c .l4c-pantry-plan > .l4c-cook {height:52mm!important;}
+.lf-4c.l4c-page--2 .hz-exercises {gap:2mm;}
+
+/* 5A: clarify the roles without replacing the strong clothing/shop feature. */
+.lf-5a .lf5a-rounds {margin:2mm 0 0;display:block;line-height:1.4;}
+.lf-5a .lf5a-rounds b {color:#744728;font-size:9pt;margin-right:1mm;}
+.lf-5a .lf5a-rounds b:last-child {margin-left:4mm;}
+
+/* 5C: four notebook entries, then an optional habit the learner actually wants. */
+.lf-5c .l5c-notes dl {display:block;margin:0;}
+.lf-5c .l5c-notes dl > div {position:relative;padding:1mm 0 1mm 8mm;border-bottom:.2mm solid #ddd2c4;}
+.lf-5c .l5c-notes dl > div+div {margin-top:0;}
+.lf-5c .l5c-notes dl > div:last-child {border-bottom:0;}
+.lf-5c .l5c-notes dl > div::before {content:attr(data-note-number);position:absolute;top:2mm;left:0;font:650 15pt/1 var(--hz-font-sans);color:#af8263;}
+.lf-5c .l5c-notes dt {font-size:10pt;line-height:1.35;}
+.lf-5c .l5c-notes dd {font-size:10pt;line-height:1.4;margin-top:1mm;}
+.lf-5c .lf5c-habit {display:flex;gap:3mm;margin:3mm 0 0!important;align-items:end;}
+.lf-5c .lf5c-habit span {flex:1;height:7mm;border-bottom:.25mm solid #aaa;}
+
+/* 6A: a field-guide comparison and a plan for a particular audience. */
+.lf-6a .l6a-life-feature {background:#f5f1e8!important;border:0!important;border-top:.45mm solid #65554d!important;}
+.lf-6a .l6a-life-feature header {display:flex;justify-content:space-between;align-items:baseline;gap:4mm;background:transparent!important;color:#332f2c!important;padding:2.5mm 3mm!important;}
+.lf-6a .l6a-life-feature header h2 {font:650 18pt/1.1 Georgia,serif!important;color:#332f2c!important;}
+.lf-6a .l6a-life-feature header p {color:#6e5d50!important;font-size:9pt;}
+.lf-6a .l6a-life-copy > section {position:relative;padding-top:1mm;}
+.lf-6a .l6a-life-copy > section h3 {display:flex;gap:2mm;align-items:center;margin:0 0 2mm;font-size:11pt;}
+.lf-6a .l6a-life-copy > section h3::before {content:attr(data-place-index);}
+.lf-6a .l6a-life-copy > section::before {content:attr(data-place-index);position:absolute;left:-1mm;top:0;display:none;}
+.lf-6a .lf6a-index {display:inline-block;color:#8f123f;padding-right:2mm;}
+.lf-6a .lf6a-plan-owner {display:flex;justify-content:space-between;gap:5mm;margin:2mm 0;}
+.lf-6a .lf6a-plan-owner p {margin:0;}
+.lf-6a .lf6a-plan-owner span {display:inline-block;width:43mm;height:6mm;border-bottom:.25mm solid #aaa;}
+.lf-6a .l6a-draw {background-image:radial-gradient(#d8d4cc .22mm,transparent .24mm);background-size:5mm 5mm;min-height:35mm!important;}
+
+/* 6C: a long open route-writing surface replaces short unexplained side lines. */
+.lf-6c .l6c-local {display:block;}
+.lf-6c .lf6c-route-note {margin-top:3mm;padding-top:2mm;border-top:.3mm solid #9f8f7d;}
+.lf-6c .lf6c-route-note header {display:flex;justify-content:space-between;align-items:baseline;font-size:9pt;}
+.lf-6c .lf6c-route-note header span {color:#8a7561;}
+.lf-6c .lf6c-route-note > p {margin:2mm 0 0;}
+
+/* 7A: a time diagram anchored to an explicit classroom example. */
+.lf-7a .lf7a-time {border-top:.25mm solid #af9c8c;padding-top:1.5mm;}
+.lf-7a .lf7a-now {margin:0 0 2mm;font-size:9pt;}
+.lf-7a .lf7a-time > div {display:grid;grid-template-columns:1fr 1fr 1.35fr 1fr;gap:4mm;}
+.lf-7a .lf7a-time section {border-top:1mm solid #bf9c83;padding-top:1.5mm;}
+.lf-7a .lf7a-time h3 {font:650 10pt/1.2 var(--hz-font-sans);color:#794b38;margin:0 0 1mm;}
+.lf-7a .lf7a-time section p {margin:0;font-size:10pt;line-height:1.3;}
+.lf-7a:not(.l7a-page--2) .hz-exercises {gap:2mm;}
+.lf-7a .l7a-diptych img {height:58mm;object-fit:contain;}
+
+/* 7C: record-sleeve liner notes, not a generic news/podcast panel. */
+.lf-7c .lf7c-liner {background:#f6f1e5!important;border:.3mm solid #c5b79c!important;box-shadow:1mm 1mm 0 #e6dece;}
+.lf-7c .lf7c-liner > header {background:#302b32!important;border:0!important;padding:3mm 4mm!important;align-items:start;}
+.lf-7c .lf7c-liner header h2 {font:650 20pt/1.1 var(--hz-font-sans)!important;color:#fffefa!important;}
+.lf-7c .lf7c-liner .l7c-kicker {font-size:7.5pt;color:#d5c8b9!important;letter-spacing:.1em;}
+.lf-7c .lf7c-liner .l7c-year {border-left:.3mm solid #8d7b79;padding-left:4mm;}
+.lf-7c .lf7c-liner .l7c-year b {font-size:25pt;color:#efe7d8;}
+.lf-7c .lf7c-liner .l7c-post-copy {display:grid;grid-template-columns:13mm 1fr;gap:3mm;padding:3mm 4mm!important;}
+.lf-7c .lf7c-liner .l7c-post-copy p,.lf-7c .lf7c-liner .l7c-reader p {font-size:10pt!important;line-height:1.4!important;}
+.lf-7c .lf7c-liner .l7c-side-label {position:static;font-size:8pt;font-weight:650;letter-spacing:.04em;color:#7b4b44;padding-top:.5mm;}
+.lf-7c .lf7c-liner .l7c-reader {position:relative;margin:0 4mm 3mm!important;padding:2.5mm 0 0 16mm!important;border-top:.35mm solid #c3b598;background:none!important;}
+.lf-7c .lf7c-side {position:absolute;left:0;top:2.7mm;font-size:8pt;font-weight:650;letter-spacing:.04em;color:#7b4b44;}
+.lf-7c .lf7c-result {margin:2mm 0 0!important;font-size:9.5pt;}
+
+/* 8A: a small itinerary with enough room for real, independent choices. */
+.lf-8a .lf8a-itinerary {display:grid;grid-template-columns:1fr 1fr;gap:1mm 4mm;margin-top:2mm;}
+.lf-8a .lf8a-itinerary > p:first-child {grid-column:1 / -1;margin:0 0 1mm;}
+.lf-8a .lf8a-itinerary > div:not(.lf-lines) {display:grid;grid-template-columns:7mm 1fr;gap:2mm;align-items:start;margin-bottom:1mm;}
+.lf-8a .lf8a-itinerary > div > b {font:650 18pt/1 var(--hz-font-sans);color:#975339;padding-top:1mm;}
+.lf-8a .lf8a-itinerary h3 {font:650 9pt/1.2 var(--hz-font-sans);color:#5c5049;margin:0;}
+.lf-8a .lf8a-itinerary section > span {display:block;height:7mm;border-bottom:.25mm solid #aaa;}
+.lf-8a .lf8a-reason {grid-column:1 / -1;margin:1mm 0 0;font-size:9pt;color:#5c5049;}
+.lf-8a .lf8a-itinerary > .lf-lines {grid-column:1 / -1;}
+.lf-8a.l8a-page--2 .hz-exercises {gap:2.5mm;}
+
+/* 8C: secret preparation and an agreed result have different social purposes. */
+.lf-8c .lf8c-planning {display:grid;grid-template-columns:1.25fr 1fr;gap:6mm;margin-top:3mm;}
+.lf-8c .lf8c-planning h3 {font:650 12pt/1.2 var(--hz-font-sans);margin:0 0 2mm;}
+.lf-8c .lf8c-private {border-left:.6mm solid #a98876;padding-left:3mm;}
+.lf-8c .lf8c-private h3 {color:#805b48;}
+.lf-8c .lf8c-agreed {border-top:.6mm solid #5c7b6d;padding-top:2mm;}
+.lf-8c .lf8c-agreed h3 {color:#3f6655;}
+.lf-8c .lf8c-planning p {display:flex;gap:2mm;align-items:end;margin:0 0 1mm!important;}
+.lf-8c .lf8c-planning p span {display:block;height:7mm;flex:1;min-width:10mm;border-bottom:.25mm solid #aaa;}
+.lf-8c .lf8c-planning .lf8c-confirm {display:block;margin-top:3mm!important;font-size:9pt;line-height:1.35;color:#3f6655;}
+.lf-8c.l8c-page--2 .hz-exercises {gap:2mm;}
+.lf-8c .l8c-sound-board {grid-template-columns:104mm minmax(0,1fr);}
+
+/* Bespoke raster object surfaces, explicitly requested 31 October 2026.
+   Native alpha/original bytes preserved. All words and writing rules stay live. */
+.lf-1c .lf1c-postcard {
+  border:0;box-shadow:none;padding-left:7mm;padding-right:7mm;padding-bottom:6mm;
+  background:transparent url('../Images/Editorial-objects/1C-postcard-surface-v1.png') center / 100% 100% no-repeat;
+}
+.lf-4c .lf4c-stock {position:relative;isolation:isolate;}
+.lf-4c .lf4c-stock::before {
+  content:"";position:absolute;inset:-1.5mm 0 -2.5mm -2.5mm;z-index:-1;pointer-events:none;
+  background:url('../Images/Editorial-objects/4C-stock-sheet-surface-v1.png') center / 100% 100% no-repeat;
+}
+.lf-4c .lf4c-stock table {width:calc(100% - 3.5mm);}
+.lf-7c .lf7c-liner {
+  border:0!important;box-shadow:none;padding-bottom:8mm;
+  background:transparent url('../Images/Editorial-objects/7C-record-liner-surface-v1.png') center / 100% 100% no-repeat!important;
+}
+.lf-7c .lf7c-liner > header {margin:3mm 12mm 0!important;}
+.lf-7c .lf7c-liner .l7c-post-copy {padding:3mm 12mm!important;}
+.lf-7c .lf7c-liner .l7c-reader {margin:0 12mm 3mm!important;}
+.lf-8a .lf8a-itinerary {position:relative;isolation:isolate;padding-left:7mm;padding-right:12mm;}
+.lf-8a .lf8a-itinerary::before {
+  content:"";position:absolute;inset:-2mm -4mm -6mm -4mm;z-index:-1;pointer-events:none;
+  background:url('../Images/Editorial-objects/8A-itinerary-surface-v1.png') center / 100% 100% no-repeat;
+}

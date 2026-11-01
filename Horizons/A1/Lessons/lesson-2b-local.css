@@ -888,3 +888,20 @@
 .l2b-next-choices { display:grid; grid-template-columns:repeat(3,1fr); gap:3mm; padding:2mm 3mm; background:#fff4cf; font-size:8.8pt; }
 .l2b-decision-model { margin:3mm 0 0; font-size:8.8pt; }
 .l2b-decision-model b { color:var(--hz-unit-dark); }
+
+
+/* Editorial edition: authored composition and usable teaching surfaces. */
+
+.l2b-page.ed13-page .l2b-city-photo img {height:43mm;object-fit:contain;object-position:center;}
+.l2b-page.ed13-page .l2b-interview-photo {border-radius:0;clip-path:none;overflow:hidden;}
+.l2b-page.ed13-page .l2b-interview-photo img {object-fit:cover;object-position:center 25%;}
+.l2b-page.ed13-page .l2b-interviews .l2b-interview-photo img {height:42mm;}
+.l2b-page.ed13-page .l2b-indrive-stage {grid-template-columns:60mm minmax(0,1fr);gap:6mm;}
+.l2b-page.ed13-page .l2b-indrive-stage .l2b-interview-photo img {height:58mm;object-fit:cover;object-position:center 35%;}
+.l2b-page.ed13-page .l2b-phone {border-radius:3mm;box-shadow:none;}
+.l2b-page.ed13-page .l2b-complete-lines {font-size:10pt!important;}
+.l2b-page.ed13-page .l2b-next-bus {border:0;border-top:.4mm solid #73889b;}
+.l2b-page.ed13-page .l2b-next-bus header {background:#f3f0eb;color:#252a2e;border:0;}
+.l2b-page.ed13-page .l2b-next-bus h2 {font:650 17pt/1.2 var(--hz-font-sans);}
+.l2b-page.ed13-page .l2b-next-bus header b {color:#8f123f;}
+.ed13-bus-transfer {margin:3mm 0 0;line-height:1.4;}

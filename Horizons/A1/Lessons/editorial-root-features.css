@@ -1,0 +1,8 @@
+/* Generated tactile paper; all teaching copy and writing rules remain live. */
+.sf-page.l5d-page .sf-grocery-receipt{border:0;background:transparent url('../Images/Editorial-objects/5D-receipt-paper-v2.png') center/100% 100% no-repeat;padding:6mm 5mm 6mm;}
+.sf-page.l7d-page .sf-journal-page{border:0;background:transparent url('../Images/Editorial-objects/7D-journal-page-v1.png') center/100% 100% no-repeat;padding:3mm 6mm 6mm 12mm;}
+.sf-page.l7d-page .l7d-writing-head{min-height:22mm;}
+.sf-page.l7d-page .l7d-writing-head img{height:22mm;}
+.sf-page.l7d-page--2 .hz-exercises{gap:2.8mm;}
+.sf-page.l7d-page .sf-journal-page .u7-lines>span{border-color:#b8b8b8;}
+.sf-page.l7d-page .sf-journal-page .u7-lines>span:last-child{width:calc(100% - 9mm);}

@@ -1,0 +1,13 @@
+/* Screen-only navigation for the long-form Student's Book. */
+@media screen {
+  #hz-book {padding-top:15mm;}
+  .hz-reader-nav {position:fixed;z-index:9998;top:10px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:8px;width:min(620px,calc(100vw - 24px));padding:7px 10px;background:#fffefa;border:1px solid #d8d4cf;border-radius:9px;box-shadow:0 2px 12px #20212416;color:#202124;font:14px/1.25 system-ui,sans-serif;}
+  .hz-reader-nav label {font-weight:650;white-space:nowrap;}
+  .hz-reader-nav select {min-width:0;flex:1;max-width:100%;border:1px solid #d5d0ca;background:#fff;color:#202124;border-radius:4px;padding:5px;font:inherit;}
+  .hz-reader-nav button {display:grid;place-items:center;width:28px;height:28px;flex-shrink:0;border:0;background:#f1ede7;color:#85113c;border-radius:4px;font:20px/1 system-ui;cursor:pointer;}
+  .hz-reader-nav button:disabled {opacity:.35;cursor:default;}
+  .hz-reader-nav output {font-size:12px;min-width:42px;text-align:center;white-space:nowrap;}
+  .hz-reader-nav :focus-visible {outline:2px solid #b7154c;outline-offset:2px;}
+  .hz-page {scroll-margin-top:66px;}
+}
+@media print {.hz-reader-nav {display:none !important;}}

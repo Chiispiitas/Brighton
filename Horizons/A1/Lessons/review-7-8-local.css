@@ -1,0 +1,45 @@
+/* Final paired review: open practice and a street-festival source. */
+.r78-page .hz-page-stack {gap:4mm;}
+.r78-columns {display:grid;grid-template-columns:1fr 1.08fr;gap:6mm;align-items:start;}
+.r78-column {display:flex;flex-direction:column;gap:4mm;min-width:0;}
+.r78-page .hz-exercise {padding:0;}
+.r78-page .hz-exercise__body {margin-top:2mm;}
+.r78-list {margin:0;padding-left:4.5mm;line-height:1.45;}
+.r78-list li {padding-left:.5mm;margin-bottom:2mm;}
+.r78-list li:last-child {margin-bottom:0;}
+.r78-list li::marker {color:var(--hz-unit-dark);}
+.r78-gap {display:inline-block;min-width:23mm;height:6mm;border-bottom:.25mm solid #9d9d9d;vertical-align:baseline;}
+.r78-skill {display:block;font-size:8pt;font-weight:750;color:#79511e;margin-bottom:1mm;letter-spacing:.02em;}
+.r78-date {padding:2mm 0;border-top:.6mm solid #de9f35;border-bottom:.25mm solid #c6bda9;margin-bottom:2mm;}
+.r78-date b {display:block;font-size:15pt;line-height:1.1;margin-bottom:1mm;color:#3e4444;}
+.r78-feature {background:#f3eee4;}
+.r78-feature header {padding:2.5mm 3mm;background:#263c4a;color:white;}
+.r78-feature header span {font-size:7.5pt;letter-spacing:.04em;}
+.r78-feature h2 {font-size:20pt;line-height:1.05;margin:1mm 0 0;letter-spacing:-.02em;}
+.r78-cinema {display:block;width:100%;height:65mm;object-fit:cover;object-position:center;}
+.r78-feature-copy {padding:2.5mm 3mm;}
+.r78-feature-copy p {font-size:10pt;line-height:1.55;margin:0 0 2mm;}
+.r78-feature-copy p:last-child {margin-bottom:0;}
+.r78-feature .r78-gap {min-width:20mm;height:5mm;}
+.r78-question {margin:2mm 0 0;font-size:10pt;line-height:1.4;}
+.r78-question span {min-width:25mm;}
+.r78-forecast {display:grid;grid-template-columns:repeat(3,1fr);border-block:.25mm solid #c9c5b9;margin-bottom:2mm;}
+.r78-forecast p {margin:0;padding:2mm 1mm;font-size:9.5pt;line-height:1.45;}
+.r78-forecast b {display:block;color:#79511e;}
+.r78-forecast p+p {border-left:.25mm solid #c9c5b9;}
+.r78-lines span {display:block;height:7mm;border-bottom:.25mm solid #a9aaad;}
+.r78-photo {display:block;width:100%;height:auto;margin-bottom:2mm;}
+.r78-page--2 .r78-columns {padding-top:12mm;}
+.r78-call {border-left:.6mm solid #34665c;padding-left:2.5mm;}
+.r78-call p {font-size:10pt;line-height:1.45;margin:0 0 2mm;}
+.r78-call b {color:#34665c;}
+.r78-call .r78-gap {min-width:39mm;}
+.r78-page .hz-word-bank {font-size:9.5pt;line-height:1.4;padding:2mm;margin-bottom:2mm;}
+.r78-choose {margin:0;font-size:10pt;line-height:1.45;}
+.r78-missions {display:grid;grid-template-columns:1fr 1fr;gap:3mm;}
+.r78-mission {border-top:.7mm solid var(--mission);padding-top:1.7mm;}
+.r78-mission h3 {display:flex;gap:1.5mm;align-items:center;margin:0 0 1mm;font-size:9pt;line-height:1.3;color:var(--mission);}
+.r78-mission h3 span {display:inline-grid;place-items:center;width:5mm;height:5mm;border-radius:50%;background:var(--mission);color:white;font-size:8pt;flex-shrink:0;}
+.r78-mission p {font-size:9.5pt;line-height:1.4;margin:0;}
+.r78-beyond {margin:0 0 2mm;font-size:16pt;line-height:1.1;letter-spacing:-.025em;}
+.r78-check {margin:2mm 0 0;font-size:8.5pt;line-height:1.4;color:#385347;}

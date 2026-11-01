@@ -1,0 +1,86 @@
+{
+  "generation_mode": "built-in imagegen",
+  "skill": "C:/Users/David/.codex/skills/.system/imagegen/SKILL.md",
+  "prompt_file": "review-object-prompts.json",
+  "policy": "Generated blank non-person physical stationery only; original photos, source facts and recordings retained. Native RGBA bytes copied unchanged. No generated writing or answer rows; live HTML remains selectable/readable.",
+  "assets": [
+    {
+      "filename": "4R-cinema-admission-stub-v1.png",
+      "active": false,
+      "use": "Initial blank-ticket generation; targeted brighter white-center edit supersedes it.",
+      "source": "OpenAI built-in imagegen",
+      "license_status": "AI-generated project artwork; no external stock attribution",
+      "sha256": "e3c8caaffa85c7cdc76df9e1f637ae3ce59a3719a65100ed9bc6b793bba94065",
+      "size": [
+        2048,
+        768
+      ],
+      "mode": "RGBA",
+      "native_alpha_extrema": [
+        0,
+        254
+      ],
+      "transparent_fraction": 0.29210154215494794,
+      "center_rgba": [
+        243,
+        244,
+        245,
+        253
+      ],
+      "native_alpha_preserved": true,
+      "pixel_edits": false
+    },
+    {
+      "filename": "4R-cinema-admission-stub-v2.png",
+      "active": true,
+      "use": "Cinema programme admission stub, live Saturday/Film7:30/FREE labels on top.",
+      "source": "OpenAI built-in imagegen",
+      "license_status": "AI-generated project artwork; no external stock attribution",
+      "sha256": "228e96f537235d1e1d18081ebbf587f34f089bbbfa1ca3fecd108e0ab61a275f",
+      "size": [
+        2048,
+        768
+      ],
+      "mode": "RGBA",
+      "native_alpha_extrema": [
+        0,
+        254
+      ],
+      "transparent_fraction": 0.2950236002604167,
+      "center_rgba": [
+        254,
+        254,
+        254,
+        254
+      ],
+      "native_alpha_preserved": true,
+      "pixel_edits": false
+    },
+    {
+      "filename": "6R-confidential-briefing-folder-v1.png",
+      "active": true,
+      "use": "Folder/document beneath original Ada/Max/Sam image and live Sam\u2192Lee message.",
+      "source": "OpenAI built-in imagegen",
+      "license_status": "AI-generated project artwork; no external stock attribution",
+      "sha256": "c085617bd48a2dfb138d2db16eac36f21e19d8f7dd5f159c50962daec2a29a64",
+      "size": [
+        936,
+        1681
+      ],
+      "mode": "RGBA",
+      "native_alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_fraction": 0.09375015888995664,
+      "center_rgba": [
+        253,
+        253,
+        253,
+        254
+      ],
+      "native_alpha_preserved": true,
+      "pixel_edits": false
+    }
+  ]
+}

@@ -1,0 +1,184 @@
+/* Final skills art direction. Only B/D pages opt in through sf-page.
+   Original portraits/art and recorded input remain unchanged. Each surface
+   belongs to a specific source genre or useful learner product. */
+.sf-page .sf-write-line{display:block;height:7mm;border-bottom:.25mm solid #a9aaa7;}
+.sf-page .sf-work-heading{font:650 17pt/1.15 Georgia,serif;color:#38302d;margin:0;}
+.sf-page.l1b-page .l1b-profile-head{display:flex;justify-content:space-between;align-items:baseline;gap:4mm;margin-bottom:2mm;}
+.sf-page.l1b-page .sf-work-profile{border-bottom:.4mm solid #b8a490;padding-bottom:2mm!important;}
+.sf-page.l1b-page .l1b-profile__photo{border:0!important;box-shadow:none!important;}
+.sf-page.l1b-page .l1b-profile__identity{border-bottom:.25mm solid #b8a490;padding-bottom:1mm;margin-bottom:2mm!important;}
+.sf-page.l1b-page .l1b-profile__name{font:700 15pt/1.1 var(--hz-font-sans)!important;text-transform:none;letter-spacing:-.02em;}
+.sf-page.l1b-page .l1b-profile__copy>p:first-child{color:#75452c;}
+
+/* The student opens a desk for a venue, then verifies a completed record. */
+.sf-page.l1d-page .sf-venue-options{gap:4mm;}
+.sf-page.l1d-page .sf-venue-options .l1d-business-option__photo{width:100%!important;height:24mm!important;min-height:24mm!important;border-radius:0!important;}
+.sf-page.l1d-page .sf-venue-options .hz-photo-placeholder{border-radius:0!important;}
+.sf-page.l1d-page .sf-venue-options strong{display:block;padding-top:1.5mm;font-size:10pt!important;text-align:left;}
+.sf-page.l1d-page .sf-registration-check{border-top:.4mm solid #247074;border-bottom:.25mm solid #b9ceca;padding:2mm 3mm;background:#f3f7f4;}
+.sf-page.l1d-page .sf-registration-check p:first-child b{color:#216468;}
+
+/* City field report: photograph and questions are one intentional composition. */
+.sf-page.l2b-page .sf-city-report{display:grid;grid-template-columns:84mm minmax(0,1fr);gap:5mm;align-items:center;margin-top:2mm;}
+.sf-page.l2b-page .sf-city-report .l2b-city-photo{margin:0;border-radius:0;min-width:0;}
+.sf-page.l2b-page .sf-city-report .l2b-city-photo img{width:84mm;height:54mm;object-fit:contain;}
+.sf-page.l2b-page .sf-city-questions{display:flex;flex-direction:column;gap:2mm!important;margin:0!important;padding:2mm 0 2mm 3mm;border-left:.6mm solid #b5164c;}
+.sf-page.l2b-page .sf-city-questions>div{display:grid;grid-template-columns:4mm 1fr;gap:2mm;align-items:baseline;}
+.sf-page.l2b-page .l2b-moovit-stage .l2b-interview-photo{height:46mm;}
+.sf-page.l2b-page .l2b-moovit-stage .l2b-interview-photo img{height:39mm;}
+
+/* A claim becomes a checked return tag. It does not repeat another interview. */
+.sf-page .sf-return-tag{position:relative;display:grid;grid-template-columns:27mm 1fr 1.3fr;gap:2mm 5mm;padding:3mm 5mm 3mm 8mm;border:.35mm solid #aa7957;background:#fffdf6;}
+.sf-page .sf-return-tag::before{content:"";position:absolute;left:2.5mm;top:5mm;width:2.2mm;height:2.2mm;border:.35mm solid #b4947b;border-radius:50%;}
+.sf-page .sf-return-tag h2{font:650 16pt/1.1 Georgia,serif;margin:0;color:#69432f;}
+.sf-page .sf-return-tag label{display:flex;gap:2mm;align-items:baseline;}
+.sf-page .sf-tag-line{flex:1;display:block;min-width:12mm;height:7mm;border-bottom:.25mm solid #aaa;}
+.sf-page .sf-tag-check{grid-column:2/-1;display:flex;align-items:center;gap:3mm;}
+.sf-page .sf-tag-check i{width:3mm;height:3mm;border:.25mm solid #9b806a;display:inline-block;}
+
+/* Three equally weighted guest files, source images above their own words. */
+.sf-page.l3b-page .sf-guest-files{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4mm;padding:0;border:0;background:none;align-items:start;}
+.sf-page.l3b-page .sf-guest-files .l3b-week-story{display:flex;flex-direction:column;border:0;background:#f6f2ee;min-width:0;}
+.sf-page.l3b-page .sf-guest-files figure{width:100%;margin:0;}
+.sf-page.l3b-page .sf-guest-files img{width:100%;height:34mm;object-fit:cover;object-position:center 30%;}
+.sf-page.l3b-page .sf-guest-files .l3b-story-copy{width:100%;}
+.sf-page.l3b-page .sf-guest-files .l3b-story-copy header{display:block;margin:0;padding:2mm 2.5mm;background:#242424!important;color:#fff!important;border-bottom:.45mm solid #f17822;}
+.sf-page.l3b-page .sf-guest-files h3{font:700 13pt/1.15 var(--hz-font-sans);color:#fff!important;}
+.sf-page.l3b-page .sf-guest-files header p{font-size:8pt;color:#fff!important;margin-top:.7mm;}
+.sf-page.l3b-page .sf-guest-files blockquote{display:block;margin:0;padding:2.5mm;}
+.sf-page.l3b-page .sf-guest-files blockquote p{font-size:10pt;line-height:1.4;}
+.sf-page.l3b-page .sf-guest-files blockquote p+p{margin-top:2mm;}
+.sf-page.l3b-page .sf-guest-files .l3b-gap{max-width:100%;}
+
+/* A seven-day experiment students can actually revisit. */
+.sf-page.l3d-page .sf-habit-challenge{grid-template-columns:40mm 1fr;gap:1.2mm 4mm;border-top:.3mm solid #60866d;padding-top:1.5mm;}
+.sf-page .sf-seven-days{grid-column:1/-1;display:grid;grid-template-columns:1.7fr repeat(7,1fr);gap:2mm;align-items:center;}
+.sf-page .sf-seven-days>span{font-size:8.5pt;color:#3f5a47;}
+.sf-page .sf-seven-days label{display:flex;align-items:center;gap:1mm;font-size:8.5pt;white-space:nowrap;}
+.sf-page .sf-seven-days i{display:block;width:2.5mm;height:2.5mm;border:.25mm solid #72917a;border-radius:50%;}
+
+/* Three opinions can agree or differ; the record accommodates both outcomes. */
+.sf-page .sf-three-opinions{display:grid;grid-template-columns:repeat(3,1fr);gap:5mm;margin-top:2mm;}
+.sf-page .sf-three-opinions article{border-left:.5mm solid #b16c4e;padding-left:2.5mm;}
+.sf-page .sf-three-opinions label{display:flex;align-items:baseline;gap:2mm;margin-bottom:1mm;}
+.sf-page .sf-three-opinions label span{display:block;flex:1;height:7mm;border-bottom:.25mm solid #aaa;}
+
+/* A useful community notice, not a generic long text box. */
+.sf-page.l4d-page .sf-sharing-workshop{grid-template-columns:58mm minmax(0,1fr);gap:6mm;}
+.sf-page.l4d-page .sf-sharing-workshop .l4d-write-intro img{width:58mm;height:auto;}
+.sf-page.l4d-page .sf-community-notice{position:relative;padding:4mm;border:.35mm solid #b3a28b;border-radius:0;background:#fffef9;box-shadow:1mm 1mm 0 #e6dfd2;}
+.sf-page.l4d-page .sf-community-notice>header{position:relative;color:#3e3a34;padding-bottom:2.5mm;border-bottom:.5mm solid #98453e;}
+.sf-page.l4d-page .sf-community-notice>header span:first-child{font-size:10pt;letter-spacing:.04em;}
+.sf-page .sf-free-mark{position:absolute;right:0;top:0;border:.35mm solid #a3313e;color:#a3313e;padding:1mm 2mm;font-size:9pt;letter-spacing:.04em;}
+.sf-page.l4d-page .sf-community-notice .l4d-post-lines>span{height:8mm;}
+
+/* A station message pad connects planning to a host's response. */
+.sf-page.l5b-page .sf-studio-message{position:relative;padding:3mm 4mm 3mm 8mm;border:.25mm solid #c9c1bb;border-left:2mm solid #262626;background:#fffdf7;}
+.sf-page.l5b-page .sf-studio-message h2{color:#262626;font:700 17pt/1.15 var(--hz-font-sans);margin-bottom:1.5mm;}
+.sf-page.l5b-page .sf-studio-message p{margin:0 0 1mm;}
+.sf-page.l5b-page .sf-studio-message .l5b-open-lines>span{height:7mm;}
+
+/* A receipt and a reader's check: the shop exchange creates a usable document. */
+.sf-page .sf-checkout-stage{display:grid;grid-template-columns:103mm 1fr;gap:7mm;align-items:start;}
+.sf-page.l5d-page .sf-grocery-receipt{padding:3mm 4mm;border-top:1mm double #3b3935;border-bottom:.4mm dashed #8a8580;background:#fcfaf4;}
+.sf-page .sf-grocery-receipt h2{font:700 14pt/1.2 var(--hz-font-sans);margin:0 0 2mm;color:#3b3935;}
+.sf-page .sf-grocery-receipt table{table-layout:fixed;width:100%;}
+.sf-page .sf-grocery-receipt th:last-child{width:22mm;}
+.sf-page .sf-grocery-receipt tbody td{height:7mm;}
+.sf-page .sf-grocery-receipt>p{font-size:10pt;line-height:1.4;margin:2mm 0 0;}
+.sf-page .sf-checkout-check{padding-top:3mm;}
+.sf-page .sf-checkout-check h3{font:650 13pt/1.15 Georgia,serif;margin:0 0 2mm;color:#4d443a;}
+.sf-page .sf-checkout-check p{margin:0 0 2mm;}
+.sf-page .sf-checkout-check ul{list-style:none;padding:0;margin:0;display:grid;gap:2mm;}
+.sf-page .sf-checkout-check li{padding-left:5mm;position:relative;}
+.sf-page .sf-checkout-check li::before{content:"";position:absolute;left:0;top:1.2mm;width:2.5mm;height:2.5mm;border:.25mm solid #777;}
+
+/* Two foldable stops for a visitor, replacing a repeated spreadsheet format. */
+.sf-page .sf-visitor-guide{display:grid;grid-template-columns:1fr 1fr;gap:6mm;margin-top:2mm;}
+.sf-page .sf-visitor-guide article{border-top:.7mm solid #593a77;border-bottom:.25mm solid #c7bdce;padding:2mm 3mm;background:#fcf9fe;}
+.sf-page .sf-visitor-guide header{display:flex;align-items:center;gap:3mm;margin-bottom:1.5mm;}
+.sf-page .sf-visitor-guide header b{display:grid;place-items:center;width:6mm;height:6mm;background:#593a77;color:#fff;border-radius:50%;font-size:11pt;}
+.sf-page .sf-visitor-guide header i{display:block;flex:1;height:7mm;border-bottom:.25mm solid #aaa;}
+.sf-page .sf-visitor-guide label{display:block;margin-top:1mm;}
+
+/* Guest listening files line up with the portrait sequence without filling data. */
+.sf-page .sf-birthday-files{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4mm;}
+.sf-page .sf-birthday-files article{padding:2mm 3mm;border-top:.65mm solid #b9154a;background:#faf5f3;}
+.sf-page .sf-birthday-files h3{font:700 12pt/1.15 var(--hz-font-sans);margin:0 0 2mm;color:#3f3038;}
+.sf-page .sf-birthday-files label{display:block;margin-top:1mm;}
+
+/* A journal has a date and a title before the eight-line body begins. */
+.sf-page.l7d-page .sf-journal-page{padding:3mm 4mm 2mm 7mm;background:#fffdf7;border-left:.45mm solid #ba6d76;border-bottom:.25mm solid #d7cbb8;}
+.sf-page.l7d-page .l7d-writing-head{grid-template-columns:1fr 29mm;min-height:25mm;padding:0 0 2mm;align-items:center;}
+.sf-page.l7d-page .l7d-writing-head img{width:27mm;height:29mm;}
+.sf-page .sf-journal-title h2{font-size:16pt;margin-bottom:2mm;}
+.sf-page .sf-diary-fields{display:grid;grid-template-columns:35mm 1fr;gap:5mm;}
+.sf-page .sf-diary-fields label{display:block;}
+.sf-page .sf-diary-fields label span{display:block;height:7mm;border-bottom:.25mm solid #aaa;}
+.sf-page.l7d-page .sf-journal-page .u7-lines>span{height:7mm;}
+
+/* Advice ends in a personal day/activity brief rather than copying Friday. */
+.sf-page .sf-day-decision{display:grid;grid-template-columns:1fr 1.5fr;gap:5mm;margin-top:2mm;}
+.sf-page .sf-day-decision label{display:flex;align-items:baseline;gap:2mm;color:#74422b;}
+.sf-page .sf-day-decision span{display:block;flex:1;height:7mm;border-bottom:.25mm solid #aaa;}
+.sf-page.l8b-page .sf-weather-brief .u8-lines{margin-top:2mm;}
+
+/* A communication repair stays inside its source; no answers are extracted. */
+.sf-page.l8d-page .l8d-call .sf-ask-again{background:#f5eee1;border-left:.65mm solid #a56534;padding-left:2mm;margin-left:-2.65mm;}
+.sf-page.l8d-page .l8d-call .sf-repeat-detail{border-left:.65mm solid #a56534;padding-left:2mm;margin-left:-2.65mm;}
+.sf-page.l8d-page .sf-ticket-decision{border:0;padding:0;}
+.sf-page.l8d-page .sf-ticket-decision h2{font:700 15pt/1.15 var(--hz-font-sans);background:#503459;color:#fff;padding:2mm 3mm;margin:0;}
+.sf-page .sf-ticket-record{display:grid;grid-template-columns:1fr 38mm;background:#fffef7;border:.25mm solid #b8aebc;border-top:0;}
+.sf-page .sf-ticket-main{padding:2mm 4mm;}
+.sf-page .sf-ticket-main>label{display:flex;gap:3mm;align-items:baseline;}
+.sf-page .sf-ticket-main>div{display:grid;grid-template-columns:1fr 1fr;gap:5mm;}
+.sf-page .sf-ticket-main>div label{display:flex;align-items:baseline;gap:2mm;}
+.sf-page .sf-ticket-record label span{display:block;flex:1;height:7mm;border-bottom:.25mm solid #aaa;}
+.sf-page .sf-ticket-stub{padding:2mm 4mm;border-left:.4mm dashed #b4a1ba;}
+.sf-page .sf-ticket-stub label{display:block;margin-bottom:1mm;}
+.sf-page .sf-no-ticket{grid-column:1/-1;display:flex;align-items:baseline;gap:3mm;border-top:.25mm solid #ddd5cf;padding:1mm 4mm 2mm;}
+
+/* Final compositional fit: preserve type and handwriting, use the source art
+   at a useful proportion and keep captions/instructions fully separated. */
+.sf-page.l1b-page .hz-extra-practice{margin-top:3mm!important;}
+.sf-page.l2b-page .l2b-moovit-stage .l2b-interview-photo{grid-template-rows:42mm 7mm;height:49mm;}
+.sf-page.l2b-page .l2b-moovit-stage .l2b-interview-photo img{height:42mm;}
+.sf-page.l3b-page .sf-guest-files .l3b-week-story--ken img{object-position:65% 58%;}
+.sf-page.l5b-page .l5b-fits{width:112mm;}
+.sf-page.l5b-page .sf-studio-message{padding-top:2mm;padding-bottom:2mm;}
+.sf-page.l5d-page .l5d-tech{display:grid;grid-template-columns:70mm minmax(0,1fr);gap:0 4mm;align-items:start;}
+.sf-page.l5d-page .l5d-tech>header{grid-column:1/-1;}
+.sf-page.l5d-page .l5d-tech img{width:70mm;height:auto;margin:0;}
+.sf-page.l5d-page .l5d-tech-copy{padding:2mm 0;}
+.sf-page.l6b-page .l6b-reading-response span{height:7mm;}
+.sf-page.l7d-page .sf-journal-page{padding-top:2mm;padding-bottom:1mm;}
+.sf-page.l7d-page .l7d-writing-head{min-height:25mm;}
+.sf-page.l7d-page .l7d-writing-head img{height:25mm;}
+.sf-page.l2b-page .sf-city-questions{font-size:10pt!important;line-height:1.4;}
+.sf-page.l2d-page .sf-return-tag{grid-template-columns:35mm 1fr 1.3fr;}
+.sf-page.l2d-page .sf-return-tag h2{font-size:15pt;white-space:nowrap;}
+.sf-page.l2d-page .hz-extra-practice{margin-top:2.5mm!important;}
+.sf-page .sf-birthday-files article{padding-top:1.5mm;padding-bottom:1.5mm;}
+
+/* Bespoke built-in-imagegen stationery,31October2026. Raster surfaces sit
+   below live type/fields; they add no fixed height and never replace people. */
+.sf-page.l2d-page .sf-return-tag{isolation:isolate;background:none;border:0;padding-left:13mm;}
+.sf-page.l2d-page .sf-return-tag::before{content:"";position:absolute;inset:0;display:block;width:auto;height:auto;border-radius:0;border:1px solid transparent;z-index:-2;pointer-events:none;border-image-source:url('../Images/Editorial-objects/2D-return-tag-v1.png');border-image-slice:170 115 160 250 fill;border-image-width:4mm 4mm 4mm 16mm;border-image-outset:1mm;border-image-repeat:stretch;}
+.sf-page.l2d-page .sf-return-tag::after{content:"";position:absolute;inset:3mm 3mm 3mm 13mm;background:#fff;z-index:-1;pointer-events:none;}
+.sf-page.l4d-page .sf-community-notice{isolation:isolate;background:none;border:0;box-shadow:none;padding-top:7mm;padding-right:9mm;padding-bottom:6mm;}
+.sf-page.l4d-page .sf-community-notice::before{content:"";position:absolute;inset:-2mm;z-index:-2;pointer-events:none;background:url('../Images/Editorial-objects/4D-community-notice-v2.png') center/100% 100% no-repeat;}
+.sf-page.l4d-page .sf-community-notice::after{content:"";position:absolute;inset:8mm 5mm 7mm 5mm;background:#fff;z-index:-1;pointer-events:none;}
+.sf-page.l5b-page .sf-studio-message{isolation:isolate;background:none;border:0;padding-left:12mm;padding-bottom:5mm;}
+.sf-page.l5b-page .sf-studio-message::before{content:"";position:absolute;inset:-2mm;z-index:-2;pointer-events:none;background:url('../Images/Editorial-objects/5B-studio-message-pad-v1.png') center/100% 100% no-repeat;}
+.sf-page.l5b-page .sf-studio-message::after{content:"";position:absolute;inset:3mm 4mm 3mm 12mm;background:#fff;z-index:-1;pointer-events:none;}
+.sf-page.l8d-page .sf-ticket-decision{position:relative;isolation:isolate;background:none;}
+.sf-page.l8d-page .sf-ticket-decision::before{content:"";position:absolute;inset:-1mm;z-index:-2;pointer-events:none;background:url('../Images/Editorial-objects/8D-ticket-stub-v1.png') center/100% 120% no-repeat;}
+.sf-page.l8d-page .sf-ticket-decision h2{background:none;color:#503459;padding:3.5mm 5mm 2mm;}
+.sf-page.l8d-page .sf-ticket-record{border:0;background:none;margin:0 4mm;grid-template-columns:1fr 34mm;}
+.sf-page.l8d-page .sf-ticket-main{padding:2mm 6mm 2mm 1mm;background:#fff;margin-right:2mm;}
+.sf-page.l8d-page .sf-ticket-stub{border-left:0;background:#fff;margin-left:2mm;padding:2mm;}
+.sf-page.l8d-page .sf-no-ticket{grid-column:1;border-top:0;padding-left:1mm;padding-right:12mm;padding-bottom:4mm;}
+
+/* Ordinary lettered noticing parts; audio filenames remain stable. */
+.sf-page .sf-subpart-marker {display:inline-block;color:var(--hz-unit-dark);font-weight:700;margin-right:2mm;font-size:9.2pt;}
+.sf-page .l1b-subexercise__number {font-size:11pt;line-height:1.2;}

@@ -1,0 +1,75 @@
+[
+  {
+    "filename": "7D-journal-page-v1.png",
+    "lesson": "7D",
+    "selector": ".sf-journal-page",
+    "source": "C:\\Users\\David\\.codex\\generated_images\\01a10ee1-5c4c-7e80-817b-36b2c2dafd47\\exec-860c1443-8c2a-4047-8cbe-5a46262a12a2.png",
+    "prompt": "Use case: product-mockup. Create a bespoke print-ready raster stationery surface for an adult English coursebook writing activity: one open-flat single journal page, viewed exactly straight down, landscape 3:2 aspect ratio, no perspective tilt. The whole page occupies almost all canvas with only tiny transparent margin. Pure white unruled writing area covering central 88 percent, absolutely no lines, no words, no letters, no numbers, no handwriting. At extreme left only a narrow tactile crimson cloth binding edge and tiny muted plum stitched detail; extreme lower right a small realistic folded paper corner. Very subtle authentic paper edge, clean contemporary materials, almost no drop shadow. All central space uniform pure white so actual editable text and writing lines can be placed there. No notebook cover, no pen, no people, no photos, no beige ageing, no doodles, no objects floating over writing area. Transparent background outside the page with native alpha. Sober, beautifully crafted editorial prop, not a UI card.",
+    "tool": "built-in image_gen",
+    "active": true,
+    "dimensions": [
+      1536,
+      1024
+    ],
+    "mode": "RGBA",
+    "alpha_extrema": [
+      0,
+      254
+    ],
+    "sha256": "c50121dd7d141b2e1f4987a8e8be7c350a586965dc7038f8c5dc386f3584d688",
+    "changes": "None; native output bytes/alpha preserved; CSS display only.",
+    "source_role": "Generated non-person document surface; all words and answer rules are live HTML.",
+    "pages": [
+      66
+    ]
+  },
+  {
+    "filename": "5D-receipt-paper-v1.png",
+    "lesson": "5D",
+    "selector": ".sf-grocery-receipt",
+    "source": "C:\\Users\\David\\.codex\\generated_images\\01a10ee1-5c4c-7e80-817b-36b2c2dafd47\\exec-734f7b56-2cf3-40f6-89d5-ed2a72d71389.png",
+    "prompt": "Use case: product-mockup. A single blank grocery till receipt to be a coursebook write-on prop. Front-facing orthographic top-down, portrait about 4:5 proportions. Realistic crisp bright WHITE thermal paper, tiny serrated top and bottom edges, very slight natural curl only at bottom corner, almost flat. A minuscule warm gray security stripe and two small crimson register marks at very top extreme edge only; rest entirely pure white. Tightly framed with a very narrow transparent margin. Native transparent background outside the paper. No text, no letters, no numbers, no barcodes, no symbols, no printed rules, no pencil or other objects. The entire middle 90 percent needs to be pure white for live HTML table headings and learner handwriting. Sophisticated clean editorial photography, extremely restrained paper texture, no perspective distortion, no aged beige, no big shadow, no cartoon.",
+    "tool": "built-in image_gen",
+    "active": false,
+    "rejection": "Portrait canvas did not match the wide live receipt; replaced by v2.",
+    "dimensions": [
+      1122,
+      1402
+    ],
+    "mode": "RGBA",
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "sha256": "375c50363e36ad1eed6b43d0f05354a528d6160acbc826d12b2f4f4900926637",
+    "changes": "None; native output bytes/alpha preserved; CSS display only.",
+    "source_role": "Generated non-person document surface; all words and answer rules are live HTML.",
+    "pages": [
+      48
+    ]
+  },
+  {
+    "filename": "5D-receipt-paper-v2.png",
+    "lesson": "5D",
+    "selector": ".sf-grocery-receipt",
+    "source": "C:\\Users\\David\\.codex\\generated_images\\01a10ee1-5c4c-7e80-817b-36b2c2dafd47\\exec-7dff7327-8ec2-43fa-b99c-4508f78db05c.png",
+    "prompt": "Use case: product-mockup. Make one single blank wide grocery receipt / sales slip for a modern adult English coursebook writing activity. Exactly flat orthographic view from directly above. WIDE LANDSCAPE paper with width twice its height, 2:1 aspect ratio; object fills almost entire canvas, narrow transparent outside margin. Crisp bright white thermal paper with tiny serrated top and bottom edges and an almost invisible curl at lower right corner. One minuscule pale gray security stripe and two tiny crimson register marks at extreme TOP edge only. All central 90 percent completely WHITE with absolutely NO lines, text, letters, numbers, barcodes, icons or objects; editable HTML purchase table and writing will be overlaid. Fine authentic paper edges, subtle paper grain, almost no shadow. Native transparent background surrounding the object. No perspective tilt, no beige ageing, no decorative doodles, no people, no logo. Professional restrained editorial prop.",
+    "tool": "built-in image_gen",
+    "active": true,
+    "dimensions": [
+      1774,
+      887
+    ],
+    "mode": "RGBA",
+    "alpha_extrema": [
+      0,
+      255
+    ],
+    "sha256": "eb4dc836b40b6a890181870a74ad748a025801bcdaaa77719d40aff5e1cf4913",
+    "changes": "None; native output bytes/alpha preserved; CSS display only.",
+    "source_role": "Generated non-person document surface; all words and answer rules are live HTML.",
+    "pages": [
+      48
+    ]
+  }
+]

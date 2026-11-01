@@ -59,17 +59,17 @@
   --hz-fs-lg: 14pt;
   --hz-fs-xl: 19pt;
   --hz-fs-2xl: 28pt;
-  --hz-fs-lesson-title: 31pt;
+  --hz-fs-lesson-title: 25pt;
   --hz-fs-lesson-id: 13pt;
 
   /* Functional type roles: stable across lessons; source features retain art direction. */
-  --hz-fs-task: 9.5pt;
-  --hz-fs-instruction: 8.9pt;
-  --hz-fs-focus: 9.5pt;
-  --hz-fs-focus-header: 8pt;
-  --hz-fs-word-bank: 9pt;
-  --hz-fs-practice: 8pt;
-  --hz-fs-vocab: 9.5pt;
+  --hz-fs-task: 10pt;
+  --hz-fs-instruction: 9.2pt;
+  --hz-fs-focus: 10pt;
+  --hz-fs-focus-header: 8.5pt;
+  --hz-fs-word-bank: 9.5pt;
+  --hz-fs-practice: 8.5pt;
+  --hz-fs-vocab: 10pt;
 
   /* A1 print-legibility floors.
      These are guardrails, not targets to shrink toward. Student-facing text

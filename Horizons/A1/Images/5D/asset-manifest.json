@@ -73,5 +73,35 @@
       "checked": "2026-10-26",
       "supports": "Employees remain to help customers; no equation of cashier-free with staff-free."
     }
-  ]
+  ],
+  "editorial_edition": {
+    "date": "2026-10-31",
+    "status": "Image experiment rejected by author; fd497fd artwork restored active. Layout/type/task revisions remain.",
+    "active_new_assets": [],
+    "active_original_artwork": true,
+    "rejected_candidates_retained": [
+      {
+        "lesson": "5D",
+        "file": "Amazon-Go-Sikander-Iqbal-2018-edition.jpg",
+        "creator": "Sikander Iqbal",
+        "source": "https://commons.wikimedia.org/wiki/File:Amazon_Go_-_Seattle_(20180804111347).jpg",
+        "license": "CC BY-SA 4.0",
+        "license_url": "https://creativecommons.org/licenses/by-sa/4.0/",
+        "kind": "licensed documentary photograph",
+        "dimensions": [
+          4032,
+          3024
+        ],
+        "sha256": "2aab4c2659e35d1f2c2b4374efbba695fb3cf0735b98db662f4534e6abe1a39d",
+        "changes": "Original acquired bytes unchanged; proportionate full-image CSS display. Export-only downsampled renditions remain under the stated source license.",
+        "representation": "Actual Amazon Go Seattle entrance photographed 4 August 2018; dated historical example, not current store layout or a claim all entry systems work identically. No endorsement.",
+        "checked": "2026-10-31",
+        "pages": [
+          48
+        ]
+      }
+    ],
+    "retired_from_current_lesson": [],
+    "retention": "All original binaries unchanged. New candidates retained versioned but inactive. Current HTML/CSS use baseline art."
+  }
 }

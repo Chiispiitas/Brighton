@@ -1,0 +1,11 @@
+{
+  "date": "2026-10-31",
+  "saved_pdf": "native-book.pdf",
+  "method": "Saved native PDF independently rendered with Poppler, all76pages viewed in10contact sheets; object-bearing pages and key sources also inspected full size. Three peer editors independently inspect all76savedpages and task keys.",
+  "root_full_size_pages": [10, 38, 63, 66, 68, 74],
+  "earlier_full_page_checks": [20, 39, 44, 48, 57],
+  "design_decision": "The unit sequence has a coherent crimson/black identity, varied editorial sources and purposeful reusable document artifacts. Photographs and generated cutouts remain visible on continuation pages. New raster paper edges are restrained and locally matched to the task; source lettering and learner writing retain live, legible type. No further global template or recoloring pass is warranted.",
+  "specific_fixes": ["Return-tag words clear hole", "Postcard rules clear airmail edge", "Notice last line clears fold", "Studio pad last line stays inside sheet", "Record reply stays on white liner", "Receipt payment/total remain within paper", "Journal final rule ends9mm before fold", "Itinerary reason lines clear lower paper edge", "Ticket inner plates stay within object"],
+  "author_acceptance_claimed": false,
+  "technical_quality_is_not_editorial_acceptance": true
+}

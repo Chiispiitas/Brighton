@@ -523,3 +523,36 @@
 .l2c-page:not(.l2c-page--2) .l2c-reading-feature__head { margin-bottom: 2.5mm; }
 
 .l2c-page:not(.l2c-page--2) .hz-exercise { padding-bottom: 1mm; }
+
+
+/* Editorial edition: authored composition and usable teaching surfaces. */
+
+.l2c-page.ed13-page .l2c-lead-photos {grid-template-columns:1fr 1fr;gap:5mm;}
+.l2c-page.ed13-page .l2c-lead-photos img {height:27mm;object-fit:cover;object-position:center 35%;border-radius:0;}
+.l2c-page.ed13-page .l2c-reading-feature__head {background:none!important;border:0!important;border-bottom:.4mm solid #8e4c36!important;padding:0 0 2mm;margin-bottom:3mm;}
+.l2c-page.ed13-page .l2c-restaurant-wordmark {display:none;}
+.l2c-page.ed13-page .l2c-reading-feature__head h2 {font:650 23pt/1.08 Georgia,serif!important;color:#39312b!important;}
+.l2c-page.ed13-page .l2c-reading-feature__head h2 em {font:inherit!important;color:inherit!important;}
+.l2c-page.ed13-page .l2c-reading-feature__head h2 span {font:inherit!important;color:inherit!important;}
+.l2c-page.ed13-page .l2c-reading-feature__main {grid-template-columns:68mm minmax(0,1fr);gap:5mm;}
+.l2c-page.ed13-page .l2c-family-photo img {height:auto;object-fit:contain;}
+.l2c-page.ed13-page .l2c-reading-copy {font:400 10pt/1.35 var(--hz-font-sans);}
+.l2c-page.ed13-page .l2c-reading-copy p {margin:0 0 1.5mm;}
+.ed13-family-tree {display:grid;grid-template-columns:1fr 1fr;gap:6mm;margin-top:3mm;}
+.ed13-family-row {display:grid;grid-template-columns:1fr 1fr;gap:4mm;border-top:.4mm solid #9b7863;padding-top:2mm;}
+.ed13-family-row > div {min-width:0;}
+.ed13-family-row b,.ed13-family-row span {display:block;}
+.ed13-family-row b {font-size:11pt;color:#6d4036;}
+.ed13-family-row span {font-size:9.5pt;line-height:1.3;}
+.ed13-family-row p {display:flex;gap:2mm;align-items:end;margin:1mm 0 0;font-size:9.5pt;}
+.ed13-family-row i {height:5mm;min-width:16mm;flex:1;border-bottom:.25mm solid #aaa;}
+.l2c-page.ed13-page .l2c-pair-model {font-size:10pt!important;}
+
+
+/* Author: restore approved baseline artwork, 2026-10-31. */
+
+.l2c-page.ed13-page .l2c-lead-photos {grid-template-columns:repeat(3,1fr);}
+.l2c-page.ed13-page .l2c-family-photo img {height:70mm;object-fit:cover;}
+.l2c-page.ed13-page .l2c-family-strip {margin-top:2mm;}
+.l2c-page.ed13-page .l2c-reading-feature__head {position:relative;padding-right:20mm;}
+.l2c-page.ed13-page .l2c-restaurant-detail {display:block;width:18mm;height:18mm;object-fit:contain;}

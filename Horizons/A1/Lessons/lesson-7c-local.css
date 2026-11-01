@@ -3,7 +3,7 @@
 .l7c-vocab { display:grid; grid-template-columns:116mm 1fr; gap:5mm; align-items:center; }
 .l7c-vocab figure { position:relative; }
 .l7c-vocab img { width:116mm; height:auto; }
-.l7c-letter { position:absolute; display:grid; place-items:center; width:5mm; height:5mm; background:#fff; color:var(--hz-unit-dark); border-radius:50%; font-size:9.5pt; font-weight:650; }
+.l7c-letter { position:absolute; display:grid; place-items:center; width:5mm; height:5mm; background:#fff; color:var(--hz-unit-dark); border-radius:50%; font-size:10pt; font-weight:650; }
 .l7c-letter--a { left:13%; top:89%; }.l7c-letter--b { left:48%; top:88%; }.l7c-letter--c { left:85%; top:84%; }
 .l7c-vocab .u7-list li { margin-bottom:4mm; }
 .l7c-post { background:#f8f3e9; border: .25mm solid #dfd5c3; }
@@ -11,10 +11,10 @@
 .l7c-kicker { display:block; font-size:8pt; font-weight:650; text-transform:uppercase; letter-spacing:.11em; margin-bottom:1.5mm; }
 .l7c-post header h2 { margin:0; font:720 19pt/1.06 var(--hz-font-sans); letter-spacing:-.025em; }
 .l7c-year { text-align:right; border-left:.3mm solid #aa8fb7; padding-left:5mm; }
-.l7c-year span { display:block; font-size:9.5pt; }
+.l7c-year span { display:block; font-size:10pt; }
 .l7c-year b { display:block; font:720 32pt/1.1 var(--hz-font-sans); letter-spacing:-.04em; }
 .l7c-post-copy { display:grid; grid-template-columns:13mm 1fr; gap:3mm; padding:3mm 4mm; }
-.l7c-post p { margin:0; font-size:9.5pt; line-height:1.4; }
+.l7c-post p { margin:0; font-size:10pt; line-height:1.4; }
 .l7c-side-label { display:block; font-size:8pt; font-weight:650; color:#67438e; letter-spacing:.05em; padding-top:.6mm; }
 .l7c-reader { margin:0; padding:2.5mm 4mm 3mm 20mm; border-top:.25mm solid #d6c9b4; background:#fffaf3; }
 .l7c-reply-label { display:block; font-size:8pt; font-weight:650; color:#67438e; margin-bottom:1.3mm; }
@@ -30,3 +30,7 @@
 .l7c-page .l7c-syllable-note { margin:2mm 0 0; line-height:1.35; }
 .l7c-syllable-note strong { color:var(--hz-unit-dark); }
 
+
+
+/* Original store artwork restored by explicit user preference. */
+.l7c-vocab{grid-template-columns:116mm 1fr;gap:5mm}.l7c-vocab>ol{display:block}.l7c-vocab .u7-list li{margin-bottom:4mm}

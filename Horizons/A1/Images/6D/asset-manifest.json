@@ -94,5 +94,36 @@
       "used": "Venue location/shopping/indoor garden-waterfall or indoor roller-coaster facts; no current price/hour advice."
     }
   ],
-  "image_progression": "Opening real venue photographs lead to a new full-background visitor interaction on continuation, with large faces/pointing hand rather than another attraction crop."
+  "image_progression": "Opening real venue photographs lead to a new full-background visitor interaction on continuation, with large faces/pointing hand rather than another attraction crop.",
+  "editorial_edition": {
+    "date": "2026-10-31",
+    "status": "Image experiment rejected by author; fd497fd artwork restored active. Layout/type/task revisions remain.",
+    "active_new_assets": [],
+    "active_original_artwork": true,
+    "rejected_candidates_retained": [
+      {
+        "lesson": "6D",
+        "file": "Map-readers-Kampus-6181105-edition.jpg",
+        "creator": "Kampus Production",
+        "source": "https://www.pexels.com/photo/a-couple-looking-at-the-map-6181105/",
+        "download": "https://images.pexels.com/photos/6181105/pexels-photo-6181105.jpeg?auto=compress&cs=tinysrgb&w=1800",
+        "license": "Pexels License",
+        "license_url": "https://www.pexels.com/license/",
+        "kind": "licensed stock photograph",
+        "dimensions": [
+          1800,
+          1200
+        ],
+        "sha256": "157d1e8d72b9f13699a0458ea880b02ef5eae92ef5caa9df1d22d1b456e02bb3",
+        "changes": "Provider 1800px rendition preserved unchanged. Proportionate CSS presentation.",
+        "representation": "Illustrative scene; fictional learner dialogue does not quote or identify the pictured people. No endorsement asserted.",
+        "checked": "2026-10-31",
+        "pages": [
+          56
+        ]
+      }
+    ],
+    "retired_from_current_lesson": [],
+    "retention": "All original binaries unchanged. New candidates retained versioned but inactive. Current HTML/CSS use baseline art."
+  }
 }

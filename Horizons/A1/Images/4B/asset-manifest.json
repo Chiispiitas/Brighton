@@ -101,5 +101,36 @@
     "name": "Unit 4 visual variety",
     "summary": "The reading source has a large burger photograph and yellow cover beside the introduction, followed by three separate opinion columns. Nadia, Joel and Rosa retain their exact words and target emphasis. The reaction photograph is 95mm wide; the dialogue is presented as alternating speech bubbles, without the repetitive decorative heading. The shared-food task uses open response lines.",
     "preservation": "All earlier asset binaries retained. CSS presentation only, except one new native-alpha cook cutout."
+  },
+  "editorial_edition": {
+    "date": "2026-10-31",
+    "status": "Image experiment rejected by author; fd497fd artwork restored active. Layout/type/task revisions remain.",
+    "active_new_assets": [],
+    "active_original_artwork": true,
+    "rejected_candidates_retained": [
+      {
+        "lesson": "4B",
+        "file": "Lunch-table-Enesfilm-8272958-edition.jpg",
+        "creator": "ENESFİLM",
+        "source": "https://www.pexels.com/photo/close-up-of-people-eating-burgers-in-a-restaurant-8272958/",
+        "download": "https://images.pexels.com/photos/8272958/pexels-photo-8272958.jpeg?auto=compress&cs=tinysrgb&w=1800",
+        "license": "Pexels License",
+        "license_url": "https://www.pexels.com/license/",
+        "kind": "licensed stock photograph",
+        "dimensions": [
+          1800,
+          2400
+        ],
+        "sha256": "2395a0235b7536f0e4bd1de35471b14292cba6dd30342cb95d67ac93f73d865f",
+        "changes": "Provider 1800px rendition preserved unchanged. Proportionate CSS presentation.",
+        "representation": "Illustrative scene; fictional learner dialogue does not quote or identify the pictured people. No endorsement asserted.",
+        "checked": "2026-10-31",
+        "pages": [
+          34
+        ]
+      }
+    ],
+    "retired_from_current_lesson": [],
+    "retention": "All original binaries unchanged. New candidates retained versioned but inactive. Current HTML/CSS use baseline art."
   }
 }

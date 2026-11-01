@@ -1,26 +1,12 @@
-# 7D artwork and provenance
+# 7D artwork — original uses restored
 
-**Current display, author correction 31 October 2026:** Activity 3 restores the original full-background shoe photo and compact diary layout. Tessa is retained as an unused reversible asset. Activity 7 retains the diary/pen cutout, enlarged to a 36 × 44mm display canvas. Historical generation notes below describe the superseded first refinement.
+Explicit user preference,31October2026: preserve the baseline artwork. Current layout, legibility and task improvements remain. All newly acquired/generated experiment files remain inactive/versioned; no files were deleted.
 
-All file hashes, source links, licenses, changes and page uses are in asset-manifest.json. Real photo/painting credits appear only in the end-of-book image credits. Source models illustrate context; no invented history, event, voice or endorsement is attributed to them.
+- [Pepys-John-Hayls-v1.jpg](Pepys-John-Hayls-v1.jpg): active on page(s)65; baselinefd497fd artwork.
+- [Mismatched-shoes-v1.png](Mismatched-shoes-v1.png): active on page(s)65; baselinefd497fd artwork.
+- [Journal-George-Milton-v1.jpg](Journal-George-Milton-v1.jpg): active on page(s)66; baselinefd497fd artwork.
+- [Diary-and-pen-cutout-v1.png](Diary-and-pen-cutout-v1.png): active on page(s)66; baselinefd497fd artwork.
 
-- [Journal-George-Milton-v1.jpg](Journal-George-Milton-v1.jpg) - licensed stock photograph.
-- [Pepys-John-Hayls-v1.jpg](Pepys-John-Hayls-v1.jpg) - public-domain artwork.
-- [Mismatched-shoes-v1.png](Mismatched-shoes-v1.png) - generated realistic photographic scene.
+Inactive experiment files: Tessa-mismatched-shoes-cutout-v2.png.
 
-## Built-in image_gen production prompt
-
-Create a realistic editorial photograph for an adult English coursebook, landscape 4:3. A light natural close-up from just below the knees to the floor of a fictional adult person standing naturally indoors on a light wood floor. Straight comfortable BLUE JEANS, ordinary modest clothing and normal human proportions. Exactly two visible feet, deliberately wearing MISMATCHED everyday shoes: the person's LEFT foot wears a clearly BLACK plain lace-up shoe, the RIGHT foot wears a clearly warm BROWN plain leather loafer. Both whole shoes visible without cropping. They must be obviously black versus brown, and different styles, while both are normal everyday shoes in good condition. Feet planted next to each other naturally, no extra limbs, no fetishistic framing, no glamour, no suggestive pose. A small unbranded canvas bag and a doorway very softly in the background can establish an ordinary morning, but shoes are the sole focus. Soft daylight, neutral backdrop, faithful natural colors. This image is a benign visual clue for a humorous diary entry: someone accidentally went out wearing one black and one brown shoe. No words, signs, names, numbers, logos or watermark. Not transparent; preserve the believable full background.
-
-## 31 October 2026 — selective cutouts
-
-- [Tessa-mismatched-shoes-cutout-v2.png](Tessa-mismatched-shoes-cutout-v2.png): page 65, fictional full-length diarist. Native RGBA, transparent background; black lace-up and brown loafer are visible task evidence. The old full-background shoe detail is retained on disk as a reversible prior asset, no longer displayed. No real person's likeness or story is inferred.
-- [Diary-and-pen-cutout-v1.png](Diary-and-pen-cutout-v1.png): page 66, blank cloth diary/pen beside the live-text writing heading. No generated text or writing lines; all eight learner lines remain HTML.
-
-Both generated using built-in image_gen with transparent_background=true. Native file bytes are retained. No code-based background removal or raster editing. Image generation prompts:
-
-### Tessa
-Create one photorealistic editorial character cutout on a genuinely TRANSPARENT background for an adult A1 English coursebook. Full-length fictional woman Tessa, around 28, ordinary approachable person, short wavy dark-brown bob, relaxed cream cotton shirt tucked into straight blue jeans, natural modest clothing, whole body and BOTH WHOLE FEET visible with generous transparent padding. She has just noticed she accidentally left home wearing two DIFFERENT SHOES: one unmistakably BLACK plain leather lace-up Oxford, the other a warm BROWN plain leather loafer. Two feet only, normal anatomy; both shoes clearly visible at equal scale, planted slightly apart, black versus brown instantly obvious. She bends her head and shoulders very slightly to look at her shoes with a small amused surprised smile, one hand loosely pointing down, other hand relaxed; face still visible in three-quarter view. Subtle natural movement, adult proportions, no exaggerated glamour, no cartoon gestures. Near-frontal camera at natural height, soft neutral studio daylight with convincing photographic texture. Isolated silhouette with real alpha, no room, no floor, no vignette, no shadow rectangle, no border, no sticker outline, no text, no logos, no watermark. Portrait composition roughly 2:3. Exact shoe styles/colors are the task evidence, preserve those. This is a new fictional teaching character, not a real person.
-
-### Diary and pen
-One isolated photorealistic stationery still-life cutout on a genuinely transparent alpha background for an adult coursebook diary-writing workshop. A small closed pocket diary with rich vermilion-red woven cloth cover, visible cream page edges and narrow dark red ribbon bookmark, with one ordinary black pen resting diagonally across the cover. Three-quarter view seen slightly from above, elegant natural product photograph, soft diffuse daylight, crisp tactile material detail. The notebook is upright in portrait orientation, slightly rotated clockwise about 12 degrees; cover absolutely blank, no printed title, no text, no dates, no numbers, no logos, no badges. Entire diary and entire pen fully visible, generous transparent padding all around. Only these two objects, no hand, no desk, no floor, no scenery, no frame, no backdrop, no vignette or rectangular shadow. Actual transparent alpha is essential. It will sit at about 28mm tall beside a live-text 'Your diary' label, so make the silhouette clear and uncomplicated. No graphic illustration, no sticker outline, no watercolor.
+Credits/provenance remain in asset-manifest.json; source credits belong at book end.

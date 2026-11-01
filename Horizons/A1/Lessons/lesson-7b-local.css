@@ -17,7 +17,7 @@
 .l7b-broadcast-calendar { position:relative; display:flex; flex-direction:column; align-items:center; background:#fff; color:#202020; padding:1.5mm 1mm; border-radius:1mm; line-height:1.25; }
 .l7b-broadcast-calendar small { color:var(--hz-unit-dark); font-size:7pt; font-weight:600; }
 .l7b-broadcast-calendar > span { font-size:7pt; }
-.l7b-broadcast-calendar .l7b-calendar-month { margin-top:1mm; font-size:9.5pt; text-transform:uppercase; }
+.l7b-broadcast-calendar .l7b-calendar-month { margin-top:1mm; font-size:10pt; text-transform:uppercase; }
 .l7b-broadcast-calendar b { color:var(--hz-unit-dark); font-size:21pt; font-weight:750; line-height:1; margin:.6mm 0; }
 .l7b-portraits { display:grid; grid-template-columns:repeat(3,1fr); gap:4mm; padding:3mm 3mm 0; }
 .l7b-portraits img { width:100%; height:56mm; object-fit:contain; object-position:center bottom; }
@@ -32,7 +32,7 @@
 .l7b-voicemail header > .l7b-show-brand { padding:0; background:none; }
 .l7b-message-wave { display:block; width:100%; height:4mm; fill:none; stroke:#9b452e; stroke-width:1.3; margin-bottom:2mm; }
 .l7b-day-card { display:flex; gap:3mm; align-items:baseline; margin-bottom:2mm; }
-.l7b-day-card span { font-size:7pt; }.l7b-day-card b { font-size:9.5pt; font-weight:650; color:#8f123f; }
+.l7b-day-card span { font-size:7pt; }.l7b-day-card b { font-size:10pt; font-weight:650; color:#8f123f; }
 .l7b-source-lines { border-left:.6mm solid #ad7e92; padding:1mm 0 1mm 3mm; margin-bottom:2mm; }
 .l7b-source-lines p { margin:0 0 1mm; }.l7b-source-lines b { font-weight:400; }
 .l7b-date-models { display:grid; grid-template-columns:1fr 1fr; gap:1mm 5mm; }
@@ -52,3 +52,6 @@
 .l7b-date-slip::before,.l7b-date-slip::after { content:""; position:absolute; top:-2mm; width:.8mm; height:2.5mm; background:#8f123f; border-radius:.4mm; }
 .l7b-date-slip::before { left:5mm; }.l7b-date-slip::after { right:5mm; }
 .l7b-date-slip > span { display:block; height:7mm; border-bottom:var(--hz-answer-line) solid var(--hz-line-strong); }
+
+/* Compact the cake evidence without reducing readable task text or answer space. */
+.l7b-voicemail{grid-template-columns:30mm minmax(0,1fr);gap:4mm}.l7b-voicemail figure img{width:30mm}.l7b-date-dictation{padding-top:0}

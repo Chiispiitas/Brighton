@@ -1,7 +1,7 @@
 # Horizons A1 - Units 1 & 2 Review and Practice
 
 Student's Book pages 21-22. Master: `Lessons/2R.html`.
-Review-only two-column layout: read down the left column, then down the right. Page 21 has activities 1–3 on the left and 4 on the right; page 22 has 5–6 on the left and 7 on the right. Seven main activities; all answers retained.
+Page 21 reads down the left column (activities1–3), then the right exhibition feature (4). Page 22 places visitor responses (5) beside the picture task (6), then a full-width Beyond Horizons choice/work area (7). Seven main activities. All controlled answers and active artwork are retained.
 
 ## 1. Grammar
 
@@ -64,30 +64,20 @@ Check the demonstrative against the pictured speaker's distance and the object's
 
 ## 7. BEYOND HORIZONS
 
-Answers vary. Every mission uses taught language and has a distinct product:
+Choose one of three tasks, change roles and verify the result. Notes are preparation, not a gap-fill answer template. Real or fictional names/details are acceptable; no personal photo, phone, purchase or off-site visit is required.
 
-| Lesson | Product / evidence |
+| Choice | Evidence to check |
 | --- | --- |
-| 1A | Say and spell your name; your classmate writes it. Accept a fictional name. |
-| 1B | Refer to activity 4: Luz is a doctor. Ben is a teacher. Ari is a student. |
-| 1C | Give two accurate country/nationality pairs. |
-| 1D | Ask a real classmate three personal-information questions using the forms from 1D. |
-| 2A | Use this/these accurately to describe three real items. |
-| 2B | Say three clock times; the partner writes them in numerals on separate paper. For example, seven thirty becomes 7:30. |
-| 2C | Describe two people in a family photo with accurate relationships and taught language. |
-| 2D | Describe two items' colors using an adjective before a noun or after be. |
+| New guest | Three personal-information answers: invented name, country and job. Partner writes them and reads them back; speaker confirms or repairs. Name spelling must match the private choice. Accept taught questions such as What's your name? Where are you from? Are you a student? |
+| Look over there | Three actual classroom items identified through an accurate singular/plural demonstrative and color. Partner points and checks. Distance is from the speaker, not the printed page. |
+| Opening time | Two privately written times accurately recovered in numerals from speech. One time becomes a new exhibition opening time. Partner may ask for repetition; compare to the speaker's note. |
 
-Students choose a challenge and practise several; this is not a timed test. Eight small circles hold the challenges. There is no Speaking label or photo-pass form. For the 1D challenge, accept any three taught questions about first name, last name, country, city, phone number or email; learners can use fictional details. Teachers may supply a fictional or pictured family instead of requiring a personal photograph. Any real classroom objects can be used; learners do not have to own a phone or other particular possession.
-
-For 1A and 2B, partners compare the written response with the speaker's intended name or times, then change roles. For 1B, use the written facts in activity 4 and ask for complete sentences with a/an; do not guess jobs from appearances. Lesson codes above the circles identify the language being reviewed, not extra exercise numbers.
+Then each learner improves a controlled answer or adapts a useful example, referring back to the relevant lesson. Assess the improvement/new example, not a generic confidence score. Functional learner copy is10 pt; writing rows are7 mm.
 
 ## Design and pedagogy provenance
 
-All activities were reauthored for the 2026-10-07 author correction. The review reuses the language objectives, not the stories, settings, characters or pictures from the preceding lessons.
+The Studio 8 fictional photography exhibition supplies a fresh cumulative context. The catalogue-style source, authentic people/object composite and full-background demonstrative photographs retain the established media. The source text establishes jobs, countries and family relationships; appearances are not evidence for these facts.
 
-- Personal Best A1 PDF pages 22-23, A2 pages 20-21 and B2 pages 20-21 informed the creative photographic reading, word-bank/table surfaces and personal-retrieval task. The 2026-10-08 author correction restores Horizons' own shared page design and single exercise lane. No text, photographs, logos or brand name from those references are embedded in Horizons.
-- Cambridge A1 Movers Reading and Writing Parts 2-4 and 6, and Speaking Part 4, informed dialogue response selection, word-bank/gist reading, grammar recognition, picture sentence completion and personal interaction. This is original cumulative review material, not an official Cambridge paper or full Movers mock exam.
-- Official format reference: https://www.cambridgeenglish.org/exams-and-tests/qualifications/young-learners/paper/movers/format/
-- Context: a community photography exhibition at Studio 8 connects portrait/object reading, visitor responses, studio picture practice and BEYOND HORIZONS challenges. Studio and exhibition are supported contextual labels; they do not establish an additional vocabulary syllabus.
-- New original generated assets: `Images/Review/Color-project-portraits-v1.png` and `Images/Review/Studio-contact-sheet-v1.png`. See `Images/Review/ASSETS.md` for IDs and provenance. Both preserve full photographic backgrounds; no new audio is required.
-- The canonical style guide records the identity correction and the final BEYOND HORIZONS treatment: shared Horizons chrome and the author-approved review-only two-column exception. The 25 October composition gives the reading a larger photo feature, open practice in the neighboring column and a compact eight-circle challenge sidebar. All layout rules are scoped to `.rr-page`; lessons 1A-2D retain their approved layout, imagery, text and audio. Activities 1-6 and both original photographs are retained; challenge 1D now asks personal questions without a photo pass.
+Personal Best A1 physical/printed22–23 was visually inspected for strong source/photo anchoring and cumulative practice; the new continuation uses purposeful horizontal rehearsal and transfer bands instead of reproducing its many-circle challenge page. English File Beginner physical19/printed17 and Evolve3 physical29/printed13 informed short task verbs and a listener/reader job. No reference-book text, artwork, branding or layouts are copied.
+
+The original Cambridge A1 Movers-inspired mix of dialogue response choices, picture evidence, sentence reconstruction and word-bank reading remains original cumulative practice, not an official Cambridge paper or a full mock exam. Existing media provenance remains in Images/Review/ and the end credits. No new image/audio was generated or acquired for this review pass.

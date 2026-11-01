@@ -21,7 +21,9 @@
       "checked": "2026-10-31",
       "pages": [
         69
-      ]
+      ],
+      "active": true,
+      "restoration_note": "Exact baseline fd497fd artwork use restored at explicit user request; edition layout and teaching improvements retained."
     },
     {
       "lesson": "8B",
@@ -42,7 +44,9 @@
       "checked": "2026-10-31",
       "pages": [
         69
-      ]
+      ],
+      "active": true,
+      "restoration_note": "Exact baseline fd497fd artwork use restored at explicit user request; edition layout and teaching improvements retained."
     },
     {
       "lesson": "8B",
@@ -63,7 +67,12 @@
       "checked": "2026-10-31",
       "pages": [
         70
-      ]
+      ],
+      "active": true,
+      "restoration_note": "Exact baseline fd497fd artwork use restored at explicit user request; edition layout and teaching improvements retained."
     }
-  ]
+  ],
+  "retired_assets": [],
+  "edition": "2026-10-31 original artwork restored after user rejection of image experiment",
+  "artwork_policy": "Retain fd497fd active image uses; improve layout/design/teaching only. New experiment files remain inactive."
 }

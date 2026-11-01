@@ -139,3 +139,23 @@
 .l3b-episode-plan { border:0; border-left:.7mm solid #8f123f; background:#faf7f5; }
 .l3b-episode-plan header { background:none; color:#8f123f; border-bottom:.3mm dashed #c3a7b3; }
 .l3b-episode-plan h2 { font-size:15pt; }
+
+
+/* Editorial edition: authored composition and usable teaching surfaces. */
+
+.l3b-page.ed13-page .l3b-continuation-content {padding-top:0;}
+.l3b-page.ed13-page .ed13-lines > span {display:block;height:7mm;border-bottom:.25mm solid #aaa;}
+.l3b-page.ed13-page .l3b-survey-layout {display:grid;grid-template-columns:minmax(0,1fr) 83mm;gap:5mm;align-items:center;}
+.l3b-page.ed13-page .l3b-survey-people {display:block;width:83mm;height:auto!important;max-height:none;object-fit:contain;}
+.l3b-page.ed13-page .l3b-pair-stage {display:grid;grid-template-columns:minmax(0,1fr) 83mm;gap:5mm;align-items:center;min-height:0;}
+.l3b-page.ed13-page .l3b-pair-stage img {width:83mm;height:auto;max-height:57mm;object-fit:contain;object-position:center;}
+.l3b-page.ed13-page .l3b-pair-copy {font-size:10pt!important;line-height:1.4;}
+.ed13-common-day p {margin:0 0 1mm;}
+.l3b-page.ed13-page .l3b-inference {background:none;border:0;}
+.l3b-page.ed13-page .l3b-speaker-table {border-top:.25mm solid #b7b3ad;border-bottom:.25mm solid #b7b3ad;}
+.l3b-page.ed13-page .l3b-guest-copy {font-size:10pt!important;}
+
+
+/* Author: restore approved baseline artwork, 2026-10-31. */
+
+.l3b-page.ed13-page .l3b-survey-people {width:83mm;height:57mm!important;object-fit:contain;object-position:bottom;}

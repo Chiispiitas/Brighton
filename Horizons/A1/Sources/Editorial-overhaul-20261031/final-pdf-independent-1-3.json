@@ -1,0 +1,484 @@
+{
+  "date": "2026-10-31",
+  "reviewer": "Independent final-PDF review by Units1–3 editor; sources held frozen.",
+  "decision": "PASS for physical1–24 / printed5–28 after the confirmed2A wording repair. No remaining concrete defect in this range.",
+  "saved_pdf": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\outputs\\Horizons-A1-Student-Book.pdf",
+  "pdf_pages": 76,
+  "native_page_points": [
+    594.9599609375,
+    841.9199829101562
+  ],
+  "initial_proof_pdf_sha256": "a639ceb37a464d8726b822b6e7d28185404fdf795594fae8ea061d070e206e4c",
+  "final_pdf_sha256": "32b8092c5a6e9f66503e180e7b142ed3a5e7ef458fcb42123a79213187d61c0f",
+  "hash_note": "Final saved PDF independently hashed. All23other reviewed page texts are identical to the personally inspected initial proofs; correctedphysical10 is personally re-proved and its finalPDF wording verified. Root pixel comparison also confirmed reviewed scope identical after unrelated8D/credit correction.",
+  "scope": {
+    "physical": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "printed": [
+      5,
+      6,
+      7,
+      8,
+      9,
+      10,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24,
+      25,
+      26,
+      27,
+      28
+    ],
+    "masters": [
+      "1A",
+      "1B",
+      "1C",
+      "1D",
+      "2A",
+      "2B",
+      "2C",
+      "2D",
+      "2R",
+      "3A",
+      "3B",
+      "3C"
+    ],
+    "outside_scope": "Physical25–76, laterunits/backmatter and subjective playback quality are not claimed by this report."
+  },
+  "proof_method": "Reviewed all24 actual Poppler proofs in six contact sheets; additionally inspected physical4,6,8,10,16,18,22,24 at full size. The proof images are from the native saved PDF, not HTML screenshots.",
+  "pages": [
+    {
+      "physical": 1,
+      "printed": 5,
+      "lesson": "1A",
+      "personally_seen": true,
+      "method": "Poppler proof contact plus full-size where needed",
+      "proof_file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\editorial-overhaul-20261031\\print-01.png",
+      "proof_sha256": "903ea90b5e35792abc89b268ab0b38c4940e9c1c7cab5db180211f9c1a753f5b",
+      "finding": "Meeting photograph/dialogue, all four greeting portraits, concept examples and answer gaps are legible and separated.",
+      "decision": "pass"
+    },
+    {
+      "physical": 2,
+      "printed": 6,
+      "lesson": "1A",
+      "personally_seen": true,
+      "method": "Poppler proof contact plus full-size where needed",
+      "proof_file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\editorial-overhaul-20261031\\print-02.png",
+      "proof_sha256": "68ec528781b3570c3c58ca9f4da6007f57635db4afac6319dbbeb34ae3110ec6",
+      "finding": "All alphabet/number entries and name options visible. Three listening records and the new classmate record have usable fields.",
+      "decision": "pass"
+    },
+    {
+      "physical": 3,
+      "printed": 7,
+      "lesson": "1B",
+      "personally_seen": true,
+      "method": "Poppler proof contact plus full-size where needed",
+      "proof_file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\editorial-overhaul-20261031\\print-03.png",
+      "proof_sha256": "1229e5b51e045ac230723a5b615f957b6091414f85a59d216d28f3bbbaf7df3c",
+      "finding": "All ten occupations and five borderless mime clues remain visible. Both article errors in the chat task are identifiable.",
+      "decision": "pass"
+    },
+    {
+      "physical": 4,
+      "printed": 8,
+      "lesson": "1B",
+      "personally_seen": true,
+      "method": "Poppler proof contact plus full-size where needed",
+      "proof_file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\editorial-overhaul-20261031\\print-04.png",
+      "proof_sha256": "6588e5e279f25290f7fb2a45df8c37d00dd12207a981ea9581516d2aede94142",
+      "finding": "Three work profiles keep complete facial/equipment cues. Source and contraction rows are readable; match list and footer copy do not collide.",
+      "decision": "pass"
+    },
+    {
+      "physical": 5,
+      "printed": 9,
+      "lesson": "1C",
+      "personally_seen": true,
+      "method": "Poppler proof contact plus full-size where needed",
+      "proof_file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\editorial-overhaul-20261031\\print-05.png",
+      "proof_sha256": "f411c5ff644b39706e7ae24a4e0ba7fb135da47d00ca06fa616fff1ca3baa8d9",
+      "finding": "All five celebrity faces/names visible. Destination names, pictures and posts form clear groups; no source/photo mismatch.",
+      "decision": "pass"
+    },
+    {
+      "physical": 6,
+      "printed": 10,
+      "lesson": "1C",
+      "personally_seen": true,
+      "method": "Poppler proof contact plus full-size where needed",
+      "proof_file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\editorial-overhaul-20261031\\print-06.png",
+      "proof_sha256": "3103ca32182d5300e58b3c01e3617883d2c7a4f2e868469dc3c3aa1678e0b295",
+      "finding": "Four category headings share the same readable role. Personal model and postcard retain three full writing lines; copy clears airmail rim/stamp.",
+      "decision": "pass"
+    },
+    {
+      "physical": 7,
+      "printed": 11,
+      "lesson": "1D",
+      "personally_seen": true,
+      "method": "Poppler proof contact plus full-size where needed",
+      "proof_file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\editorial-overhaul-20261031\\print-07.png",
+      "proof_sha256": "cddee9dfe0e5d84ca66b32f39f2e4d0666378bca93fe3551b8fd989953ce7c07",
+      "finding": "Recorded hotel dialogue remains readable at its integrated source size; capital-letter examples and three matching questions are complete.",
+      "decision": "pass"
+    },
+    {
+      "physical": 8,
+      "printed": 12,
+      "lesson": "1D",
+      "personally_seen": true,
+      "method": "Poppler proof contact plus full-size where needed",
+      "proof_file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\editorial-overhaul-20261031\\print-08.png",
+      "proof_sha256": "57cc02e6f0749ae2b6f4ca8980963f552ea27c22f516e8696f67e8f6e7c3e675",
+      "finding": "Venue choice and selected fields lead to an accurate registration form. White form spaces and read-back model remain clear of the clip/frame.",
+      "decision": "pass"
+    },
+    {
+      "physical": 9,
+      "printed": 13,
+      "lesson": "2A",
+      "personally_seen": true,
+      "method": "Poppler proof contact plus full-size where needed",
+      "proof_file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\editorial-overhaul-20261031\\print-09.png",
+      "proof_sha256": "dbc89af6c2d248b052e8a41eed458fa08fe38025e7c90d7caafeabe579c3ee29",
+      "finding": "Bag labels A–H are correctly anchored and three personal-choice fields visible. Original demonstrative source/near-far evidence retained.",
+      "decision": "pass"
+    },
+    {
+      "physical": 10,
+      "printed": 14,
+      "lesson": "2A",
+      "personally_seen": true,
+      "method": "Poppler proof contact plus full-size where needed",
+      "proof_file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\editorial-overhaul-20261031\\print-10.png",
+      "proof_sha256": "4620bd9f1f091154ae266d4088d92bdba8b5a486ea23878c1a805ac7729b7b02",
+      "finding": "All six near/far panels and listening options clear. Revised Step3 guesses the missing item; Step4 shows it before demonstratives. Procedure now agrees with key.",
+      "decision": "pass"
+    },
+    {
+      "physical": 11,
+      "printed": 15,
+      "lesson": "2B",
+      "personally_seen": true,
+      "method": "Poppler proof contact plus full-size where needed",
+      "proof_file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\editorial-overhaul-20261031\\print-11.png",
+      "proof_sha256": "552d5ccd3f331d2fbb932228d3cfc9c397e5790f07692fba005b76a06e9334fe",
+      "finding": "Time choices, programme identity, guest faces and app timetable all legible. Route numbers/times are visible for later deduction.",
+      "decision": "pass"
+    },
+    {
+      "physical": 12,
+      "printed": 16,
+      "lesson": "2B",
+      "personally_seen": true,
+      "method": "Poppler proof contact plus full-size where needed",
+      "proof_file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\editorial-overhaul-20261031\\print-12.png",
+      "proof_sha256": "6ae3492b192a887ab851363b38958d74b9bda81e063358ea1fa2105fba1278c2",
+      "finding": "Plate/time and car/bus evidence clear. Article choices and next-bus fields have correct reference information; private transfer is genuinely unknown.",
+      "decision": "pass"
+    },
+    {
+      "physical": 13,
+      "printed": 17,
+      "lesson": "2C",
+      "personally_seen": true,
+      "method": "Poppler proof contact plus full-size where needed",
+      "proof_file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\editorial-overhaul-20261031\\print-13.png",
+      "proof_sha256": "a6007bf9c0a4f00cf9dab7bcdce386843c7a4c26a898248556c8080fa3e4aaca",
+      "finding": "Family source and four portrait/occupation fields complete. Relations and owners are determined by the text rather than appearance.",
+      "decision": "pass"
+    },
+    {
+      "physical": 14,
+      "printed": 18,
+      "lesson": "2C",
+      "personally_seen": true,
+      "method": "Poppler proof contact plus full-size where needed",
+      "proof_file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\editorial-overhaul-20261031\\print-14.png",
+      "proof_sha256": "b32b3336782a1937d296ddf0f0401ebb17365cbd7f3d186e49e6b5ca8fc17db7",
+      "finding": "Possessive examples, relation-based owner clues and two independent family captions fit. Names can be shown while relationships remain private.",
+      "decision": "pass"
+    },
+    {
+      "physical": 15,
+      "printed": 19,
+      "lesson": "2D",
+      "personally_seen": true,
+      "method": "Poppler proof contact plus full-size where needed",
+      "proof_file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\editorial-overhaul-20261031\\print-15.png",
+      "proof_sha256": "e5dfcc8691ec5549b20f9cab49c1b50cdb0fa2f00d099ee84648a5bc5b620b4d",
+      "finding": "Ten colour daubs/labels visible. Phone source and English/Spanish adjective-position noticing retain the correct noun/be relationships.",
+      "decision": "pass"
+    },
+    {
+      "physical": 16,
+      "printed": 20,
+      "lesson": "2D",
+      "personally_seen": true,
+      "method": "Poppler proof contact plus full-size where needed",
+      "proof_file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\editorial-overhaul-20261031\\print-16.png",
+      "proof_sha256": "583b0e8e59ef52d54e39d84397a4ee3721d317d114f38cf20f7a05c217d0e5fa",
+      "finding": "All eight item numbers and relative colour/size cues visible. Claim form and checked return tag have safe white fields and no image-edge interference.",
+      "decision": "pass"
+    },
+    {
+      "physical": 17,
+      "printed": 21,
+      "lesson": "2R",
+      "personally_seen": true,
+      "method": "Poppler proof contact plus full-size where needed",
+      "proof_file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\editorial-overhaul-20261031\\print-17.png",
+      "proof_sha256": "910ec3e154932ef1fe04432d9e46e0e09545de055228a7f755341dc2083d0ba0",
+      "finding": "Review grammar/reconstruction and all three vocabulary-table rows visible. Exhibition source/word bank and answer evidence are coherent.",
+      "decision": "pass"
+    },
+    {
+      "physical": 18,
+      "printed": 22,
+      "lesson": "2R",
+      "personally_seen": true,
+      "method": "Poppler proof contact plus full-size where needed",
+      "proof_file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\editorial-overhaul-20261031\\print-18.png",
+      "proof_sha256": "0f731fe184f097d55d6b4f9cfbc03f620261c0f387a59afe5666267cd47277ff",
+      "finding": "Visitor response options and four complete demonstrative contexts visible. Beyond Horizons choices have real partner outcomes and usable note space.",
+      "decision": "pass"
+    },
+    {
+      "physical": 19,
+      "printed": 23,
+      "lesson": "3A",
+      "personally_seen": true,
+      "method": "Poppler proof contact plus full-size where needed",
+      "proof_file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\editorial-overhaul-20261031\\print-19.png",
+      "proof_sha256": "fdd2a3596bb90970d3752b091dc7db5d5beb415d3bc87b038786409628679d1f",
+      "finding": "Routine-photo contexts and Messi source complete. Historical2023 framing avoids a current-schedule claim; exact source facts support all four reading answers.",
+      "decision": "pass"
+    },
+    {
+      "physical": 20,
+      "printed": 24,
+      "lesson": "3A",
+      "personally_seen": true,
+      "method": "Poppler proof contact plus full-size where needed",
+      "proof_file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\editorial-overhaul-20261031\\print-20.png",
+      "proof_sha256": "b9bf4c6d58edf6eacb80d2ecb7db738914f3b7671a38304c793e0d835358da98",
+      "finding": "Affirmative form examples, both listening schedules and four anonymous-writing lines complete. Group identification/reporting has a feasible teacher-supported procedure.",
+      "decision": "pass"
+    },
+    {
+      "physical": 21,
+      "printed": 25,
+      "lesson": "3B",
+      "personally_seen": true,
+      "method": "Poppler proof contact plus full-size where needed",
+      "proof_file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\editorial-overhaul-20261031\\print-21.png",
+      "proof_sha256": "ea6d8932530f5bfae48cb9ddb536afbd62c4b27a72af216ce9ff969e46057b48",
+      "finding": "Weekday grid and all three speaker records clear. Weekend choice is contextual; the episode supplies distinct workweek/time information.",
+      "decision": "pass"
+    },
+    {
+      "physical": 22,
+      "printed": 26,
+      "lesson": "3B",
+      "personally_seen": true,
+      "method": "Poppler proof contact plus full-size where needed",
+      "proof_file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\editorial-overhaul-20261031\\print-22.png",
+      "proof_sha256": "6a13acf264eda269148ef8875455c122d93f1339fe3a65cfdce59b1bfacc1063",
+      "finding": "Negative/question concepts and all controlled items readable. Three common-day sentence lines and personal meeting decision fit; standing cutout keeps full figures.",
+      "decision": "pass"
+    },
+    {
+      "physical": 23,
+      "printed": 27,
+      "lesson": "3C",
+      "personally_seen": true,
+      "method": "Poppler proof contact plus full-size where needed",
+      "proof_file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\editorial-overhaul-20261031\\print-23.png",
+      "proof_sha256": "97ba9f1aea9cb61cb93f6c69579f4030d7390fc543b72f5741469e8d03374b1c",
+      "finding": "Integrated place pictures/prices/reviews are clear. Family/friend companions and place descriptors provide explicit reading evidence.",
+      "decision": "pass"
+    },
+    {
+      "physical": 24,
+      "printed": 28,
+      "lesson": "3C",
+      "personally_seen": true,
+      "method": "Poppler proof contact plus full-size where needed",
+      "proof_file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\editorial-overhaul-20261031\\print-24.png",
+      "proof_sha256": "c0b055398caea6fb85d11c691233bb9a088a33c0e0194b158ffd324c27e8b07b",
+      "finding": "Question/answer alignment, three recommendation constraints and personal recommendation fields are supported. Four review lines remain clear beside the contextual photograph.",
+      "decision": "pass"
+    }
+  ],
+  "key_crosschecks": [
+    {
+      "lesson": "1A",
+      "key_file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Answer Keys\\1A.md",
+      "key_sha256": "174aac9b9af5866ceb6f5753b880f3e6b60ae4e4925b1ff2d032cac96cf7e404",
+      "result": "pass",
+      "evidence": "MaryClass4; am/are/is/are/Are; Stephen/Allison/Bryan/Lindsay spellings; three recorded names/classes/phones agree with key. Personal record/read-back feasible."
+    },
+    {
+      "lesson": "1B",
+      "key_file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Answer Keys\\1B.md",
+      "key_sha256": "35584e85eb0402818308a82e41d89a4824f3991d621f3ef1ffbed8ea68edf249",
+      "result": "pass",
+      "evidence": "an office worker/a teacher repairs; Tom has two jobs; I’m/They’re full forms; job match b/e/a/c/d. Current key uses4a/4b and documents distinct recordings sharing1.8."
+    },
+    {
+      "lesson": "1C",
+      "key_file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Answer Keys\\1C.md",
+      "key_sha256": "630e4d3c1f90387ec732910e455c1b96e413999fb21345705ed892049e2fcaa1",
+      "result": "pass",
+      "evidence": "Five country associations and nationality pairs match. Adjective answers supported by posts; big/beautiful alternative accepted for Rio. Secret-city and independent postcard allow truthful/personal responses."
+    },
+    {
+      "lesson": "1D",
+      "key_file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Answer Keys\\1D.md",
+      "key_sha256": "904e328571a4810832ee711de62c7de2b16443b7ac688ec12777e5dc75856be5",
+      "result": "pass",
+      "evidence": "EmmaCarter/Canada/Toronto/4165550182/email agree with recorded source. Capitals and c/a/b matching key correct. Real/invented private details and read-back produce a checkable form."
+    },
+    {
+      "lesson": "2A",
+      "key_file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Answer Keys\\2A.md",
+      "key_sha256": "786b270917e819025efe8513dad18c17fc009524a07eeab685e161c9693cf1ba",
+      "result": "pass",
+      "evidence": "Object letters and This/That/These/Those/This/Those image answers correct. Track2.2 this/those/that/these/this/those verified against script. Step3/4 mismatch found, repaired by root and re-proved."
+    },
+    {
+      "lesson": "2B",
+      "key_file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Answer Keys\\2B.md",
+      "key_sha256": "8c3681c1439d05444554e79e75f0358dbb63a116076dbab0ea81996a5796d656",
+      "result": "pass",
+      "evidence": "Julia6:20/bus15; Ana7:30/bus8; Diego6:40/MAB-3997/car. Article sequence an/a/The/an/a/The correct. At6:40, next listed bus is7:30/bus8. Transfer explicitly uses new private times."
+    },
+    {
+      "lesson": "2C",
+      "key_file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Answer Keys\\2C.md",
+      "key_sha256": "15413bdf459a4e36ded10b67439c6a3f97a35b095d1d45becf54ffb4e0886ce1",
+      "result": "pass",
+      "evidence": "Diego chef/Elena receptionist/Nico andSofía students. Relations father/mother/brother/sister and apostrophes/owner clues correct. Partner names visible, relationships private; two captions checked."
+    },
+    {
+      "lesson": "2D",
+      "key_file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Answer Keys\\2D.txt",
+      "key_sha256": "52342de0b0d8ff9c487801a707a1e64e77371e767408c2b355bb5622f3bdb3a0",
+      "result": "pass",
+      "evidence": "Adjective positions before/after/after correct for actual printed subjects. Sentence forms and numbered claims4/6/7 match visible evidence. Return tag now matches current key/activity8."
+    },
+    {
+      "lesson": "2R",
+      "key_file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Answer Keys\\Units 1 and 2 Review.md",
+      "key_sha256": "0fd7268b8a73fad567773eced795841fa30f353bfcba0293e65c614258ee07ec",
+      "result": "pass",
+      "evidence": "Grammar/reconstruction alternatives, twelve-word classification, red/theUK/brother/headphones/black reading gaps, sister/time7:30 and response choices a/b/a/b/b all supported. Demonstratives This/That/These/Those retain speaker-distance evidence. Three final tasks are feasible."
+    },
+    {
+      "lesson": "3A",
+      "key_file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Answer Keys\\3A.md",
+      "key_sha256": "7a3e9848a7fc28878de7d38260b48237eac7f5c6ede5e5df435cc68a457d82ad",
+      "result": "pass",
+      "evidence": "Eight routine matches,7:00/1:00/Antonela/school and affirmative-form answers supported. Nina6:30/8/6/10 andOmar10/2/11/12:30 agree with script. Anonymous writing is supported by the key’s unsigned-slip procedure; no compulsory identification certainty."
+    },
+    {
+      "lesson": "3B",
+      "key_file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Answer Keys\\3B.md",
+      "key_sha256": "eaf5254b55d0a1e3ba9f0a29afdc07dfd7cbc7133ac1430a61d89d0df5180b5d",
+      "result": "pass",
+      "evidence": "Printed/source workdays and times match key. Do/does, negative/base-form answers correct. Speaker clues Lucía/Ken/Maryam match script. Sunday is the only offered common non-work day; three negative sentences and honest personal availability accepted."
+    },
+    {
+      "lesson": "3C",
+      "key_file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Answer Keys\\3C.md",
+      "key_sha256": "66a90ded7b293216b557ddfaaac32e2511d0b3d34e2d7c5241aa1417378c6159",
+      "result": "pass",
+      "evidence": "Family=Iris/Lena; friend=Ravi. Where/Who/When/What time answers align with actual evidence. EvaBeatCafé/BenPalmPark/SolCloudCafé uniquely meet written constraints. Personal recommendation/review permits justified alternatives and independent expression."
+    }
+  ],
+  "findings": [
+    {
+      "id": "2A-memory-deictic-order",
+      "printed_page": 14,
+      "activity": 5,
+      "severity": "minor pedagogical wording mismatch",
+      "initial": "Step3 required demonstratives while the referent was absent; teacher key correctly guessed with is/are and used demonstratives at the reveal.",
+      "repair": "Root moved demonstratives to Step4 Show it; Step3 now only asks learners to guess the missing item.",
+      "recheck": "Personally inspected updatedprint-10.png; procedure/key now align, all content/photo/footer remain clear.",
+      "status": "resolved"
+    }
+  ],
+  "visual_decision": {
+    "source_hierarchy_and_variety": "Pass: conversation/photo, private contact, chat corrections, country/city feature, postcard, registration form, radio/app/time task, family source, claim/return tag, exhibition review, sport routine, workweek interview and place recommendations have distinct teaching jobs.",
+    "image_evidence": "Pass: no cropped answer-bearing gesture/object/number/face needed for a task. Contextual environmental crops do not require identity inference.",
+    "white_fields_and_edges": "Pass: postcard rim/stamp, registration clipboard, return-tag hole and all reviewed writing rows avoid live text/fields. Review empty rows and continuation writing lines are fully visible.",
+    "feasibility": "Pass after2A repair; personal or fictional choices, private details and read-back checks produce real learner outcomes.",
+    "source_edits_by_reviewer": "None. Only reported the defect; root applied/re-exported the approved correction."
+  },
+  "final_pdf_text_comparison": {
+    "unchanged_physical_pages": [
+      1,
+      2,
+      3,
+      4,
+      5,
+      6,
+      7,
+      8,
+      9,
+      11,
+      12,
+      13,
+      14,
+      15,
+      16,
+      17,
+      18,
+      19,
+      20,
+      21,
+      22,
+      23,
+      24
+    ],
+    "corrected_physical10": "Expected Step3guess and Step4show/demonstratives wording present in finalPDF.",
+    "pages": 76
+  }
+}

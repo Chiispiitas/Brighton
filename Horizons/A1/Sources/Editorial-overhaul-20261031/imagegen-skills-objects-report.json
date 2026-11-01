@@ -1,0 +1,203 @@
+{
+  "date": "2026-10-31",
+  "status": "frozen, visually inspected and print fit passed",
+  "scope": [
+    "2D return tag",
+    "4D community notice",
+    "5B studio message pad",
+    "8D ticket/stub"
+  ],
+  "implementation": "Four bespoke built-in imagegen non-person paper surfaces placed below live HTML labels, prompts and writing rows. Original people, primary art, recorded words and track references retained. No fixed-height blank panels or type shrinking introduced.",
+  "active_assets": [
+    {
+      "file": "2D-return-tag-v1.png",
+      "active": true,
+      "generated_source": "C:\\Users\\David\\.codex\\generated_images\\01a194cb-df85-7391-8947-399161eecd31\\exec-bf76ef75-cb62-4129-9989-f5a2a75b3e81.png",
+      "generator": "built-in image_gen",
+      "kind": "Generated non-person photographic stationery surface",
+      "native_rgba": "RGBA",
+      "native_alpha_extrema": [
+        0,
+        255
+      ],
+      "dimensions": [
+        2135,
+        736
+      ],
+      "alpha_bbox": [
+        0,
+        71,
+        2123,
+        644
+      ],
+      "center_rgb_extrema": [
+        [
+          252,
+          255
+        ],
+        [
+          252,
+          255
+        ],
+        [
+          252,
+          255
+        ]
+      ],
+      "sha256": "ff806910023c15771172747e6ea40c25a9793086ff542c1b42d4974eb328761b",
+      "prompt_record": "skills-paper-prompts-v1.json",
+      "bytes": "Exact original tool output; copied without raster editing.",
+      "text": "No generated words, digits or ruled rows. Live HTML supplies all labels and writing lines.",
+      "repo_path": "Horizons/A1/Images/Editorial-objects/2D-return-tag-v1.png"
+    },
+    {
+      "file": "4D-community-notice-v2.png",
+      "active": true,
+      "generated_source": "C:\\Users\\David\\.codex\\generated_images\\01a194cb-df85-7391-8947-399161eecd31\\exec-6ad26674-bf8c-458f-bfd1-8d44d711ab34.png",
+      "generator": "built-in image_gen",
+      "kind": "Generated non-person photographic stationery surface",
+      "native_rgba": "RGBA",
+      "native_alpha_extrema": [
+        0,
+        255
+      ],
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "alpha_bbox": [
+        0,
+        0,
+        1447,
+        1086
+      ],
+      "center_rgb_extrema": [
+        [
+          251,
+          255
+        ],
+        [
+          251,
+          255
+        ],
+        [
+          251,
+          255
+        ]
+      ],
+      "sha256": "0767d07e517a4375d402bb597e22422d869ff7eb8d75c452cafe8e19c8a8debc",
+      "prompt_record": "skills-paper-prompts-v1.json",
+      "bytes": "Exact original tool output; copied without raster editing.",
+      "text": "No generated words, digits or ruled rows. Live HTML supplies all labels and writing lines.",
+      "repo_path": "Horizons/A1/Images/Editorial-objects/4D-community-notice-v2.png"
+    },
+    {
+      "file": "5B-studio-message-pad-v1.png",
+      "active": true,
+      "generated_source": "C:\\Users\\David\\.codex\\generated_images\\01a194cb-df85-7391-8947-399161eecd31\\exec-3d722eb8-a8a6-42ef-82df-ee0f6463332e.png",
+      "generator": "built-in image_gen",
+      "kind": "Generated non-person photographic stationery surface",
+      "native_rgba": "RGBA",
+      "native_alpha_extrema": [
+        0,
+        255
+      ],
+      "dimensions": [
+        2172,
+        724
+      ],
+      "alpha_bbox": [
+        45,
+        33,
+        2127,
+        702
+      ],
+      "center_rgb_extrema": [
+        [
+          250,
+          255
+        ],
+        [
+          250,
+          255
+        ],
+        [
+          250,
+          255
+        ]
+      ],
+      "sha256": "4a2bc0a029855d638593289dde403c83330890058dd99be8a17eab21dcfcf6ca",
+      "prompt_record": "skills-paper-prompts-v1.json",
+      "bytes": "Exact original tool output; copied without raster editing.",
+      "text": "No generated words, digits or ruled rows. Live HTML supplies all labels and writing lines.",
+      "repo_path": "Horizons/A1/Images/Editorial-objects/5B-studio-message-pad-v1.png"
+    },
+    {
+      "file": "8D-ticket-stub-v1.png",
+      "active": true,
+      "generated_source": "C:\\Users\\David\\.codex\\generated_images\\01a194cb-df85-7391-8947-399161eecd31\\exec-a44ab0e0-0b34-4644-9937-add605a8f9e4.png",
+      "generator": "built-in image_gen",
+      "kind": "Generated non-person photographic stationery surface",
+      "native_rgba": "RGBA",
+      "native_alpha_extrema": [
+        0,
+        255
+      ],
+      "dimensions": [
+        2172,
+        724
+      ],
+      "alpha_bbox": [
+        41,
+        27,
+        2131,
+        652
+      ],
+      "center_rgb_extrema": [
+        [
+          252,
+          255
+        ],
+        [
+          251,
+          255
+        ],
+        [
+          251,
+          255
+        ]
+      ],
+      "sha256": "8b8c2ddd2acc0cee8513956900ba909b0d453d3222324cdca2977f47787a6ce8",
+      "prompt_record": "skills-paper-prompts-v1.json",
+      "bytes": "Exact original tool output; copied without raster editing.",
+      "text": "No generated words, digits or ruled rows. Live HTML supplies all labels and writing lines.",
+      "repo_path": "Horizons/A1/Images/Editorial-objects/8D-ticket-stub-v1.png"
+    }
+  ],
+  "inactive_asset": "4D-community-notice-v1.png retained versioned; replaced by built-in image edit v2 because the first center was too gray.",
+  "prompt_file": "Horizons/A1/Images/Editorial-objects/skills-paper-prompts-v1.json",
+  "manifest_file": "Horizons/A1/Images/Editorial-objects/skills-paper-asset-manifest-v1.json",
+  "source_changes": [
+    "Horizons/A1/Lessons/editorial-skills-features.css, scoped object rules at end; existing HTML source components retained"
+  ],
+  "checks": {
+    "native_transparency": "All four RGBA, native alpha 0-255, exact original generated bytes copied without pixel editing.",
+    "pure_white_live_writing_areas": "CSS white legibility plates protect live text and handwriting areas while showing authentic edges and bindings.",
+    "visual_pages": [
+      19,
+      20,
+      37,
+      38,
+      43,
+      44,
+      73,
+      74
+    ],
+    "all_text_within_page": true,
+    "no_marker_collisions": true,
+    "writing_room": "2D field lines retained;4D eight 8mm post lines retained;5B two 7mm note rows retained;8D 7mm booking rows retained.",
+    "safe_margin_fixes": "5B increased bottom paper padding to keep the last note rule inside the pad.8D writing plates and rule ends inset inside ticket edges; perforation gutter remains visible.4D right/bottom insets keep last row clear of folded corner.",
+    "original_inputs": "This object task only appended scoped CSS; no people, source wording, audio or track IDs were replaced.",
+    "evidence": "agent78/objects-page-19,20,37,38,43,44,73,74.png;agent78/skills-objects-layout.json"
+  }
+}
