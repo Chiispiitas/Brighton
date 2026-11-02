@@ -1,0 +1,456 @@
+{
+  "baseline": "2bff8ee2a4f9eda2e73927a4a58697d099cb35f4",
+  "old_to_new_pages": {
+    "5": 5,
+    "6": 6,
+    "7": 7,
+    "8": 8,
+    "9": 9,
+    "10": 10,
+    "11": 11,
+    "12": 12,
+    "13": 13,
+    "14": 14,
+    "15": 15,
+    "16": 16,
+    "17": 17,
+    "18": 18,
+    "19": 19,
+    "20": 20,
+    "21": 21,
+    "22": 22,
+    "23": 23,
+    "24": 24,
+    "25": 25,
+    "26": 26,
+    "27": 27,
+    "28": 28,
+    "29": 29,
+    "30": 30,
+    "31": 31,
+    "32": 32,
+    "33": 33,
+    "34": 34,
+    "35": 35,
+    "36": 36,
+    "37": 37,
+    "38": 38,
+    "39": 39,
+    "40": 40,
+    "41": 41,
+    "42": 42,
+    "43": 43,
+    "44": 44,
+    "45": 45,
+    "46": 46,
+    "47": 47,
+    "48": 48,
+    "49": 49,
+    "50": 50,
+    "51": 51,
+    "52": 52,
+    "53": 53,
+    "54": 54,
+    "55": 55,
+    "56": 56,
+    "57": 57,
+    "58": 58,
+    "59": 59,
+    "60": 60,
+    "61": 61,
+    "62": 62,
+    "63": 63,
+    "64": 64,
+    "65": 65,
+    "66": 66,
+    "67": 67,
+    "68": 68,
+    "69": 69,
+    "70": 70,
+    "71": 71,
+    "72": 72,
+    "73": 73,
+    "74": 74,
+    "75": 75,
+    "76": 76,
+    "77": 77,
+    "78": 78,
+    "79": 79,
+    "80": 80,
+    "81": 81,
+    "82": 82,
+    "83": 83,
+    "84": 84,
+    "85": 85,
+    "86": 86,
+    "87": 87,
+    "88": 88,
+    "89": 89,
+    "90": 90,
+    "91": 91,
+    "92": 92,
+    "93": 93,
+    "94": 95,
+    "95": 94,
+    "96": 96,
+    "97": 97,
+    "98": 98,
+    "99": 99,
+    "100": 100,
+    "101": 101,
+    "102": 102,
+    "103": 103,
+    "104": 104,
+    "105": 105,
+    "106": 106,
+    "107": 107,
+    "108": 108,
+    "109": 109,
+    "110": 110,
+    "111": 112,
+    "112": 111,
+    "113": 113,
+    "114": 114,
+    "115": 116,
+    "116": 115,
+    "117": 117,
+    "118": 118,
+    "119": 120,
+    "120": 122,
+    "121": 119,
+    "122": 121,
+    "123": 123,
+    "124": 124,
+    "125": 125,
+    "126": 126,
+    "127": 127,
+    "128": 128,
+    "129": 129,
+    "130": 130,
+    "131": 131
+  },
+  "pairs": [
+    {
+      "topic": "vocabulary-greetings",
+      "study_page": 93,
+      "activity_page": 94,
+      "activity_id": "activity-vocabulary-greetings"
+    },
+    {
+      "topic": "vocabulary-numbers",
+      "study_page": 93,
+      "activity_page": 94,
+      "activity_id": "activity-vocabulary-numbers"
+    },
+    {
+      "topic": "vocabulary-alphabet",
+      "study_page": 93,
+      "activity_page": 94,
+      "activity_id": "activity-vocabulary-alphabet"
+    },
+    {
+      "topic": "vocabulary-occupations",
+      "study_page": 95,
+      "activity_page": 96,
+      "activity_id": "activity-vocabulary-occupations"
+    },
+    {
+      "topic": "vocabulary-personal-information",
+      "study_page": 95,
+      "activity_page": 96,
+      "activity_id": "activity-vocabulary-personal-information"
+    },
+    {
+      "topic": "vocabulary-countries",
+      "study_page": 95,
+      "activity_page": 97,
+      "activity_id": "activity-vocabulary-countries"
+    },
+    {
+      "topic": "vocabulary-adjectives",
+      "study_page": 95,
+      "activity_page": 97,
+      "activity_id": "activity-vocabulary-adjectives"
+    },
+    {
+      "topic": "vocabulary-personal-items",
+      "study_page": 98,
+      "activity_page": 99,
+      "activity_id": "activity-vocabulary-personal-items"
+    },
+    {
+      "topic": "vocabulary-telling-time",
+      "study_page": 98,
+      "activity_page": 99,
+      "activity_id": "activity-vocabulary-telling-time"
+    },
+    {
+      "topic": "vocabulary-family-members",
+      "study_page": 98,
+      "activity_page": 100,
+      "activity_id": "activity-vocabulary-family-members"
+    },
+    {
+      "topic": "vocabulary-colors",
+      "study_page": 98,
+      "activity_page": 100,
+      "activity_id": "activity-vocabulary-colors"
+    },
+    {
+      "topic": "vocabulary-daily-routines",
+      "study_page": 101,
+      "activity_page": 102,
+      "activity_id": "activity-vocabulary-daily-routines"
+    },
+    {
+      "topic": "vocabulary-days-of-the-week",
+      "study_page": 101,
+      "activity_page": 103,
+      "activity_id": "activity-vocabulary-days-of-the-week"
+    },
+    {
+      "topic": "vocabulary-place-adjectives-recall",
+      "study_page": 101,
+      "activity_page": 103,
+      "activity_id": "activity-vocabulary-place-adjectives-recall"
+    },
+    {
+      "topic": "vocabulary-food-and-drink",
+      "study_page": 104,
+      "activity_page": 105,
+      "activity_id": "activity-vocabulary-food-and-drink"
+    },
+    {
+      "topic": "vocabulary-flavors",
+      "study_page": 104,
+      "activity_page": 105,
+      "activity_id": "activity-vocabulary-flavors"
+    },
+    {
+      "topic": "vocabulary-cooking-verbs",
+      "study_page": 104,
+      "activity_page": 106,
+      "activity_id": "activity-vocabulary-cooking-verbs"
+    },
+    {
+      "topic": "vocabulary-sharing-food",
+      "study_page": 104,
+      "activity_page": 106,
+      "activity_id": "activity-vocabulary-sharing-food"
+    },
+    {
+      "topic": "vocabulary-clothes-and-accessories",
+      "study_page": 107,
+      "activity_page": 108,
+      "activity_id": "activity-vocabulary-clothes-and-accessories"
+    },
+    {
+      "topic": "vocabulary-shopping-verbs",
+      "study_page": 107,
+      "activity_page": 108,
+      "activity_id": "activity-vocabulary-shopping-verbs"
+    },
+    {
+      "topic": "vocabulary-places-in-town",
+      "study_page": 107,
+      "activity_page": 109,
+      "activity_id": "activity-vocabulary-places-in-town"
+    },
+    {
+      "topic": "vocabulary-at-the-store",
+      "study_page": 107,
+      "activity_page": 109,
+      "activity_id": "activity-vocabulary-at-the-store"
+    },
+    {
+      "topic": "vocabulary-places-in-town-2",
+      "study_page": 110,
+      "activity_page": 111,
+      "activity_id": "activity-vocabulary-places-in-town-2"
+    },
+    {
+      "topic": "vocabulary-shopping-centers-and-attractions",
+      "study_page": 110,
+      "activity_page": 111,
+      "activity_id": "activity-vocabulary-shopping-centers-and-attractions"
+    },
+    {
+      "topic": "vocabulary-movement-and-directions",
+      "study_page": 112,
+      "activity_page": 113,
+      "activity_id": "activity-vocabulary-movement-and-directions"
+    },
+    {
+      "topic": "vocabulary-rooms-and-furniture",
+      "study_page": 112,
+      "activity_page": 113,
+      "activity_id": "activity-vocabulary-rooms-and-furniture"
+    },
+    {
+      "topic": "vocabulary-months",
+      "study_page": 114,
+      "activity_page": 115,
+      "activity_id": "activity-vocabulary-months"
+    },
+    {
+      "topic": "vocabulary-dates-and-ordinal-numbers",
+      "study_page": 114,
+      "activity_page": 115,
+      "activity_id": "activity-vocabulary-dates-and-ordinal-numbers"
+    },
+    {
+      "topic": "vocabulary-past-time-expressions",
+      "study_page": 114,
+      "activity_page": 115,
+      "activity_id": "activity-vocabulary-past-time-expressions"
+    },
+    {
+      "topic": "vocabulary-music",
+      "study_page": 116,
+      "activity_page": 117,
+      "activity_id": "activity-vocabulary-music"
+    },
+    {
+      "topic": "vocabulary-irregular-past-verbs",
+      "study_page": 116,
+      "activity_page": 117,
+      "activity_id": "activity-vocabulary-irregular-past-verbs"
+    },
+    {
+      "topic": "vocabulary-sequencing-words",
+      "study_page": 116,
+      "activity_page": 117,
+      "activity_id": "activity-vocabulary-sequencing-words"
+    },
+    {
+      "topic": "vocabulary-travel-verbs",
+      "study_page": 118,
+      "activity_page": 119,
+      "activity_id": "activity-vocabulary-travel-verbs"
+    },
+    {
+      "topic": "vocabulary-animals",
+      "study_page": 118,
+      "activity_page": 119,
+      "activity_id": "activity-vocabulary-animals"
+    },
+    {
+      "topic": "vocabulary-weather-and-seasons",
+      "study_page": 120,
+      "activity_page": 121,
+      "activity_id": "activity-vocabulary-weather-and-seasons"
+    },
+    {
+      "topic": "vocabulary-body-parts",
+      "study_page": 122,
+      "activity_page": 123,
+      "activity_id": "activity-vocabulary-body-parts"
+    },
+    {
+      "topic": "vocabulary-health-complaints",
+      "study_page": 122,
+      "activity_page": 123,
+      "activity_id": "activity-vocabulary-health-complaints"
+    },
+    {
+      "topic": "vocabulary-phone-and-ticket-language",
+      "study_page": 122,
+      "activity_page": 123,
+      "activity_id": "activity-vocabulary-phone-and-ticket-language"
+    }
+  ],
+  "groups": [
+    {
+      "activity_page": 94,
+      "study_page": 93,
+      "unit": 1
+    },
+    {
+      "activity_page": 96,
+      "study_page": 95,
+      "unit": 1
+    },
+    {
+      "activity_page": 97,
+      "study_page": 95,
+      "unit": 1
+    },
+    {
+      "activity_page": 99,
+      "study_page": 98,
+      "unit": 2
+    },
+    {
+      "activity_page": 100,
+      "study_page": 98,
+      "unit": 2
+    },
+    {
+      "activity_page": 102,
+      "study_page": 101,
+      "unit": 3
+    },
+    {
+      "activity_page": 103,
+      "study_page": 101,
+      "unit": 3
+    },
+    {
+      "activity_page": 105,
+      "study_page": 104,
+      "unit": 4
+    },
+    {
+      "activity_page": 106,
+      "study_page": 104,
+      "unit": 4
+    },
+    {
+      "activity_page": 108,
+      "study_page": 107,
+      "unit": 5
+    },
+    {
+      "activity_page": 109,
+      "study_page": 107,
+      "unit": 5
+    },
+    {
+      "activity_page": 111,
+      "study_page": 110,
+      "unit": 6
+    },
+    {
+      "activity_page": 113,
+      "study_page": 112,
+      "unit": 6
+    },
+    {
+      "activity_page": 115,
+      "study_page": 114,
+      "unit": 7
+    },
+    {
+      "activity_page": 117,
+      "study_page": 116,
+      "unit": 7
+    },
+    {
+      "activity_page": 119,
+      "study_page": 118,
+      "unit": 8
+    },
+    {
+      "activity_page": 121,
+      "study_page": 120,
+      "unit": 8
+    },
+    {
+      "activity_page": 123,
+      "study_page": 122,
+      "unit": 8
+    }
+  ],
+  "physical_pages": 127,
+  "activities_unchanged": true
+}

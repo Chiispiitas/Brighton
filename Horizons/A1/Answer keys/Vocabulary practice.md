@@ -7,7 +7,7 @@ Current original revision games; supersedes the first picture-catalog draft.
 
 Current revision, 1 November 2026. These keys supersede the earlier V1–V4 picture-catalog practice draft. The numbered tasks continue across each unit’s pages. Controlled answers, game conditions and open alternatives are distinguished below. All profiles, club notes, room offers and schedules are original classroom fiction. No new recording is claimed.
 
-## Unit 1 — Messages, names and codes (page 95)
+## Unit 1 — Messages, names and codes (page 94)
 
 **1 — Reply cards:** A Good morning. B Good afternoon. C Good evening. D Goodbye. / See you later. The instruction explicitly asks for morning, afternoon or evening in A–C, so Hello alone does not complete that controlled requirement. In the partner round, the speaker chooses a card privately; the listener identifies it from the spoken response. Change roles. No recording or teacher-only hidden resource is required.
 

@@ -2,7 +2,7 @@
   "version": 2,
   "edition": "2026-11-01",
   "status": "authored; study-first vocabulary references and approved activities",
-  "organization": "Grammar by unit; vocabulary word bank then activities within each unit; practical language; credits last",
+  "organization": "Grammar by unit; vocabulary topic word bank immediately followed by its matching one- or two-page practice group; practical language; credits last",
   "masters": [
     {
       "code": "G1",
@@ -152,10 +152,10 @@
       ],
       "study_pages": [
         93,
-        94
+        95
       ],
       "activity_pages": [
-        95,
+        94,
         96,
         97
       ]
@@ -274,10 +274,10 @@
       ],
       "study_pages": [
         110,
-        111
+        112
       ],
       "activity_pages": [
-        112,
+        111,
         113
       ]
     },
@@ -302,10 +302,10 @@
       ],
       "study_pages": [
         114,
-        115
+        116
       ],
       "activity_pages": [
-        116,
+        115,
         117
       ]
     },
@@ -332,12 +332,12 @@
       ],
       "study_pages": [
         118,
-        119,
-        120
+        120,
+        122
       ],
       "activity_pages": [
+        119,
         121,
-        122,
         123
       ]
     },
@@ -664,7 +664,7 @@
     "vocabulary-personal-information": {
       "destination_id": "vocabulary-personal-information",
       "file": "Practice/Vocabulary/V1.html",
-      "page": 93,
+      "page": 95,
       "anchor": "vocabulary-personal-information",
       "bank": "vocabulary",
       "unit": 1,
@@ -691,7 +691,7 @@
     "vocabulary-occupations": {
       "destination_id": "vocabulary-occupations",
       "file": "Practice/Vocabulary/V1.html",
-      "page": 94,
+      "page": 95,
       "anchor": "vocabulary-occupations",
       "bank": "vocabulary",
       "unit": 1,
@@ -700,7 +700,7 @@
     "vocabulary-countries": {
       "destination_id": "vocabulary-countries",
       "file": "Practice/Vocabulary/V1.html",
-      "page": 94,
+      "page": 95,
       "anchor": "vocabulary-countries",
       "bank": "vocabulary",
       "unit": 1,
@@ -709,7 +709,7 @@
     "vocabulary-adjectives": {
       "destination_id": "vocabulary-adjectives",
       "file": "Practice/Vocabulary/V1.html",
-      "page": 94,
+      "page": 95,
       "anchor": "vocabulary-adjectives",
       "bank": "vocabulary",
       "unit": 1,
@@ -862,7 +862,7 @@
     "vocabulary-rooms-and-furniture": {
       "destination_id": "vocabulary-rooms-and-furniture",
       "file": "Practice/Vocabulary/V6.html",
-      "page": 110,
+      "page": 112,
       "anchor": "vocabulary-rooms-and-furniture",
       "bank": "vocabulary",
       "unit": 6,
@@ -871,7 +871,7 @@
     "vocabulary-movement-and-directions": {
       "destination_id": "vocabulary-movement-and-directions",
       "file": "Practice/Vocabulary/V6.html",
-      "page": 111,
+      "page": 112,
       "anchor": "vocabulary-movement-and-directions",
       "bank": "vocabulary",
       "unit": 6,
@@ -880,7 +880,7 @@
     "vocabulary-shopping-centers-and-attractions": {
       "destination_id": "vocabulary-shopping-centers-and-attractions",
       "file": "Practice/Vocabulary/V6.html",
-      "page": 111,
+      "page": 110,
       "anchor": "vocabulary-shopping-centers-and-attractions",
       "bank": "vocabulary",
       "unit": 6,
@@ -916,7 +916,7 @@
     "vocabulary-music": {
       "destination_id": "vocabulary-music",
       "file": "Practice/Vocabulary/V7.html",
-      "page": 115,
+      "page": 116,
       "anchor": "vocabulary-music",
       "bank": "vocabulary",
       "unit": 7,
@@ -925,7 +925,7 @@
     "vocabulary-irregular-past-verbs": {
       "destination_id": "vocabulary-irregular-past-verbs",
       "file": "Practice/Vocabulary/V7.html",
-      "page": 115,
+      "page": 116,
       "anchor": "vocabulary-irregular-past-verbs",
       "bank": "vocabulary",
       "unit": 7,
@@ -934,7 +934,7 @@
     "vocabulary-sequencing-words": {
       "destination_id": "vocabulary-sequencing-words",
       "file": "Practice/Vocabulary/V7.html",
-      "page": 115,
+      "page": 116,
       "anchor": "vocabulary-sequencing-words",
       "bank": "vocabulary",
       "unit": 7,
@@ -961,7 +961,7 @@
     "vocabulary-weather-and-seasons": {
       "destination_id": "vocabulary-weather-and-seasons",
       "file": "Practice/Vocabulary/V8.html",
-      "page": 119,
+      "page": 120,
       "anchor": "vocabulary-weather-and-seasons",
       "bank": "vocabulary",
       "unit": 8,
@@ -970,7 +970,7 @@
     "vocabulary-phone-and-ticket-language": {
       "destination_id": "vocabulary-phone-and-ticket-language",
       "file": "Practice/Vocabulary/V8.html",
-      "page": 119,
+      "page": 122,
       "anchor": "vocabulary-phone-and-ticket-language",
       "bank": "vocabulary",
       "unit": 8,
@@ -979,7 +979,7 @@
     "vocabulary-body-parts": {
       "destination_id": "vocabulary-body-parts",
       "file": "Practice/Vocabulary/V8.html",
-      "page": 120,
+      "page": 122,
       "anchor": "vocabulary-body-parts",
       "bank": "vocabulary",
       "unit": 8,
@@ -988,7 +988,7 @@
     "vocabulary-health-complaints": {
       "destination_id": "vocabulary-health-complaints",
       "file": "Practice/Vocabulary/V8.html",
-      "page": 120,
+      "page": 122,
       "anchor": "vocabulary-health-complaints",
       "bank": "vocabulary",
       "unit": 8,
@@ -1043,5 +1043,102 @@
     "total_authored_destinations": 71
   },
   "first_printed_page": 77,
-  "last_printed_page": 127
+  "last_printed_page": 127,
+  "vocabulary_adjacency": {
+    "maximum_pages_after_reference": 2,
+    "unrelated_reference_pages_between": false,
+    "activity_page_uses_one_reference_page": true,
+    "groups": [
+      {
+        "activity_page": 94,
+        "study_page": 93,
+        "unit": 1
+      },
+      {
+        "activity_page": 96,
+        "study_page": 95,
+        "unit": 1
+      },
+      {
+        "activity_page": 97,
+        "study_page": 95,
+        "unit": 1
+      },
+      {
+        "activity_page": 99,
+        "study_page": 98,
+        "unit": 2
+      },
+      {
+        "activity_page": 100,
+        "study_page": 98,
+        "unit": 2
+      },
+      {
+        "activity_page": 102,
+        "study_page": 101,
+        "unit": 3
+      },
+      {
+        "activity_page": 103,
+        "study_page": 101,
+        "unit": 3
+      },
+      {
+        "activity_page": 105,
+        "study_page": 104,
+        "unit": 4
+      },
+      {
+        "activity_page": 106,
+        "study_page": 104,
+        "unit": 4
+      },
+      {
+        "activity_page": 108,
+        "study_page": 107,
+        "unit": 5
+      },
+      {
+        "activity_page": 109,
+        "study_page": 107,
+        "unit": 5
+      },
+      {
+        "activity_page": 111,
+        "study_page": 110,
+        "unit": 6
+      },
+      {
+        "activity_page": 113,
+        "study_page": 112,
+        "unit": 6
+      },
+      {
+        "activity_page": 115,
+        "study_page": 114,
+        "unit": 7
+      },
+      {
+        "activity_page": 117,
+        "study_page": 116,
+        "unit": 7
+      },
+      {
+        "activity_page": 119,
+        "study_page": 118,
+        "unit": 8
+      },
+      {
+        "activity_page": 121,
+        "study_page": 120,
+        "unit": 8
+      },
+      {
+        "activity_page": 123,
+        "study_page": 122,
+        "unit": 8
+      }
+    ]
+  }
 }

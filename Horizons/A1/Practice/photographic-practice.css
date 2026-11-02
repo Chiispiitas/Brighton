@@ -103,3 +103,18 @@
 .hz-practice-page.ig-practice .ig-ticket-directions span {display:block;font-size:10pt;color:#226b46;}
 .hz-practice-page.ig-practice .ig-animal-game {width:150mm;max-width:100%;margin:1mm auto 2mm;}
 .hz-practice-page.ig-practice .ig-forecast-photo {width:100%;margin:1mm 0;}
+
+/* Topic word banks sit directly before their own practice group. */
+.hz-practice-page.ig-practice.adj-study-greetings .vs-numbers {grid-template-columns:repeat(2,minmax(0,1fr));}
+.hz-practice-page.ig-practice.adj-study-people .vs-pairs td {padding:.45mm 2mm .45mm 0;}
+.hz-practice-page.ig-practice.adj-study-people .ig-jobs-cue img {height:25mm;}
+.hz-practice-page.ig-practice.adj-study-people .vs-topic h3 {margin:1.2mm 0 .5mm;}
+.hz-practice-page.ig-practice.adj-study-people .vs-grid {row-gap:3.5mm;}
+.hz-practice-page.ig-practice.adj-study-people p {margin-bottom:.8mm;}
+.hz-practice-page.ig-practice .adj-room-reference {display:flow-root;}
+.hz-practice-page.ig-practice .adj-room-layout {display:grid;grid-template-columns:minmax(0,1fr) 75mm;gap:5mm;align-items:start;}
+.hz-practice-page.ig-practice .adj-room-reference .ig-furniture-wide {width:75mm;margin:1mm 0 2mm;}
+.hz-practice-page.ig-practice .adj-room-reference .vs-groups {gap:3mm;}
+.hz-practice-page.ig-practice.adj-study-body .vs-body-reference {width:100% !important;}
+.hz-practice-page.ig-practice.adj-study-body .vs-body-labels text {font-size:64px;}
+.hz-practice-page.ig-practice.adj-study-body #vocabulary-health-complaints .vs-groups {grid-template-columns:1fr;}

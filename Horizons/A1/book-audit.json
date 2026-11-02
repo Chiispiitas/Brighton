@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "updated": "2026-11-01",
-  "status": "Imagegen practice artwork complete; source, saved-PDF and published-viewer verification passed",
+  "status": "Vocabulary references and matching practice groups are adjacent; local source, layout and saved-PDF checks passed; publication pending",
   "authority": "Author delegates editorial authority; his own B2 book sets emotional direction. Preserve colourful learning objects and warm adult playfulness alongside coherent functional roles.",
   "scope": "Units1–8:32lessons,4pairedreviews,72corepages;51practicepages and4end-creditpages.127physicalpages, printed5–131. Front matter,index,workbook andoptionalannexes remainfuturework.",
   "baseline": {
@@ -34,6 +34,11 @@
       "commit": "94f6b86283347d855b5c8dd94c9b550607105f70",
       "safety_branch": "safety/horizons-before-practice-imagegen-20261101",
       "previous_audit": "Audit archive/2026-11-01-before-practice-imagegen/book-audit.json"
+    },
+    "practice_adjacency": {
+      "commit": "2bff8ee2a4f9eda2e73927a4a58697d099cb35f4",
+      "safety_branch": "safety/horizons-before-practice-adjacency-20261101",
+      "previous_audit": "Audit archive/2026-11-01-before-practice-adjacency/book-audit.json"
     }
   },
   "inventory": {
@@ -114,7 +119,7 @@
     "vocabulary_study_topics": 38,
     "vocabulary_marked_lexical_entry_occurrences": 415,
     "vocabulary_required_within_topic_items": 404,
-    "new_active_practice_assets_this_pass": 33,
+    "new_active_practice_assets_this_pass": 0,
     "practice_raster_occurrences": 84,
     "vocabulary_pages_with_pictures": 31
   },
@@ -137,14 +142,11 @@
     "study_vocabulary_inventory": "Practice/Vocabulary/study-vocabulary.json"
   },
   "editorial_judgment": {
-    "basis": "Replace vector-like pictorial practice graphics with built-in imagegen artwork and picture every vocabulary page.",
-    "current_decision": "Sources/Practice-imagegen-20261101/editorial-decision.json",
-    "saved_pdf_review": "Sources/Practice-imagegen-20261101/manual-saved-PDF-review.json",
+    "basis": "Keep vocabulary word banks next to their matching practice pages",
+    "current_decision": "Sources/Practice-adjacency-20261101/editorial-decision.json",
+    "saved_pdf_review": "Sources/Practice-adjacency-20261101/saved-PDF-review.json",
     "independent_second_editor": false,
-    "root_review": "All 39 affected pages inspected at readable size in 20 page contacts; final page88 re-inspected after restoring original route-model phrases. Pixel comparison transfers all other reviewed pages to the final PDF.",
-    "author_acceptance_claimed": false,
-    "vocabulary_approach_endorsed": true,
-    "prior_reviews": "Historical edition reviews retained in the archived audit; not claimed as new artwork approval."
+    "author_acceptance_claimed": false
   },
   "verification": {
     "layout": {
@@ -160,8 +162,8 @@
       "failures": []
     },
     "pdf": {
-      "sha256": "9da7e5b1bc4e7cb5366971d4e3249f70d14bc4bab4ea9afba2f4358eb6322def",
-      "bytes": 47836414,
+      "sha256": "0d6913c63c5f920b66faa970f722d59abead027d912e967bf0bbe0583ea71d1c",
+      "bytes": 47705055,
       "physical_pages": 127,
       "printed_pages": [
         5,
@@ -176,148 +178,217 @@
       "study_to_activity_links": 38,
       "activity_to_study_links": 38,
       "destination_failures": [],
-      "protected_pdf_pages": 88,
-      "protected_scope": "72core,9unchanged grammar,4practical-language,3first credit pages",
+      "protected_pdf_pages": 24,
+      "protected_scope": "16grammar,4practical-language,4credit pages",
       "protected_text_differences": [],
       "protected_render_pixel_differences": []
     },
     "preservation": {
-      "baseline_commit": "94f6b86283347d855b5c8dd94c9b550607105f70",
-      "report": "Sources/Practice-imagegen-20261101/source-preservation-and-art-coverage.json",
-      "grammar_vocabulary_activities": 135,
-      "all_keys_unchanged": true,
-      "core_sources_recordings_media_unchanged": true
-    },
-    "evidence_directory": "Sources/Practice-imagegen-20261101",
-    "protected_object_regression": {
-      "current_design_passes": true,
-      "recreated_known_number_flattening_rejected": true,
-      "negative_test_mutation": "Scratch-only copy removes bubble fill and roundness; production files untouched.",
-      "positive_checks": [
-        {
-          "lesson": "1A",
-          "view": "standalone",
-          "selector": ".ed13-numbers b",
-          "count": 11,
-          "min_font_pt": 15,
-          "fill_colours": 3,
-          "passed": true
-        },
-        {
-          "lesson": "1A",
-          "view": "assembled",
-          "selector": ".ed13-numbers b",
-          "count": 11,
-          "min_font_pt": 15,
-          "fill_colours": 3,
-          "passed": true
-        },
-        {
-          "lesson": "1A",
-          "view": "standalone",
-          "selector": ".l1a-alphabet > span",
-          "count": 26,
-          "min_font_pt": 15.500024999999999,
-          "fill_colours": 1,
-          "passed": true
-        },
-        {
-          "lesson": "1A",
-          "view": "assembled",
-          "selector": ".l1a-alphabet > span",
-          "count": 26,
-          "min_font_pt": 15.500024999999999,
-          "fill_colours": 1,
-          "passed": true
-        }
-      ],
-      "scope": "Protected affordances only; manual emotional/editorial review remains required.",
-      "evidence_scope": "Historical expressive-spirit regression; relevant core design preserved by source comparison in this pass."
-    },
-    "audio": {
-      "existing_core_recordings_and_scripts_unchanged": true,
-      "new_audio_generated": false,
-      "html_controls": 90,
-      "live_playback": "Unchanged samples1.1and8.7 played with real time progression and paused on the current published edition."
+      "baseline": "2bff8ee2a4f9eda2e73927a4a58697d099cb35f4",
+      "all_bank_activities_preserved": 147,
+      "vocabulary_entry_occurrences_preserved": 415,
+      "all_38_reference_topics_keep_their_model_words": true,
+      "core_changes_only_go_to_page_numbers": true,
+      "raster_and_audio_bytes_unchanged": true,
+      "failures": []
     },
     "study_words": {
-      "topics": 38,
       "required_within_topic_items": 404,
       "marked_entry_occurrences": 415,
       "ordinary_reference_pt": 10,
-      "body_diagram_label_pt": 10.039,
-      "topic_coverage_complete": true,
-      "source_map": "Sources/Vocabulary-study-banks-20261101/independent-lexical-source-map.json",
-      "layout_and_links": "Sources/Practice-imagegen-20261101/study-page-checks.json",
-      "source_map_scope": "Historical lexical source map retained; all required entries rechecked this pass."
+      "body_label_pt": 10.275,
+      "report": "Sources/Practice-adjacency-20261101/study-page-checks.json"
     },
-    "qr": {
-      "blank_slots": 16,
-      "square_mm": 24,
-      "collisions": [],
-      "report": "Sources/Practice-imagegen-20261101/final-qr-bounds.json"
-    },
+    "qr": [
+      {
+        "page": "77",
+        "bank": "grammar",
+        "unit": "1",
+        "collisions": [],
+        "inside": true,
+        "square_mm": [
+          23.998535156599978,
+          23.998535156599978
+        ]
+      },
+      {
+        "page": "79",
+        "bank": "grammar",
+        "unit": "2",
+        "collisions": [],
+        "inside": true,
+        "square_mm": [
+          23.998535156599978,
+          23.998535156599978
+        ]
+      },
+      {
+        "page": "81",
+        "bank": "grammar",
+        "unit": "3",
+        "collisions": [],
+        "inside": true,
+        "square_mm": [
+          23.998535156599978,
+          23.998535156599978
+        ]
+      },
+      {
+        "page": "83",
+        "bank": "grammar",
+        "unit": "4",
+        "collisions": [],
+        "inside": true,
+        "square_mm": [
+          23.998535156599978,
+          23.998535156599978
+        ]
+      },
+      {
+        "page": "85",
+        "bank": "grammar",
+        "unit": "5",
+        "collisions": [],
+        "inside": true,
+        "square_mm": [
+          23.998535156599978,
+          23.998535156599978
+        ]
+      },
+      {
+        "page": "87",
+        "bank": "grammar",
+        "unit": "6",
+        "collisions": [],
+        "inside": true,
+        "square_mm": [
+          23.998535156599978,
+          23.998535156599978
+        ]
+      },
+      {
+        "page": "89",
+        "bank": "grammar",
+        "unit": "7",
+        "collisions": [],
+        "inside": true,
+        "square_mm": [
+          23.998535156599978,
+          23.998535156599978
+        ]
+      },
+      {
+        "page": "91",
+        "bank": "grammar",
+        "unit": "8",
+        "collisions": [],
+        "inside": true,
+        "square_mm": [
+          23.998535156599978,
+          23.998535156599978
+        ]
+      },
+      {
+        "page": "93",
+        "bank": "vocabulary",
+        "unit": "1",
+        "collisions": [],
+        "inside": true,
+        "square_mm": [
+          23.998535156599978,
+          23.998535156599978
+        ]
+      },
+      {
+        "page": "98",
+        "bank": "vocabulary",
+        "unit": "2",
+        "collisions": [],
+        "inside": true,
+        "square_mm": [
+          23.998535156599978,
+          23.998535156599978
+        ]
+      },
+      {
+        "page": "101",
+        "bank": "vocabulary",
+        "unit": "3",
+        "collisions": [],
+        "inside": true,
+        "square_mm": [
+          23.998535156599978,
+          23.998535156599978
+        ]
+      },
+      {
+        "page": "104",
+        "bank": "vocabulary",
+        "unit": "4",
+        "collisions": [],
+        "inside": true,
+        "square_mm": [
+          23.998535156599978,
+          23.998535156599978
+        ]
+      },
+      {
+        "page": "107",
+        "bank": "vocabulary",
+        "unit": "5",
+        "collisions": [],
+        "inside": true,
+        "square_mm": [
+          23.998535156599978,
+          23.998535156599978
+        ]
+      },
+      {
+        "page": "110",
+        "bank": "vocabulary",
+        "unit": "6",
+        "collisions": [],
+        "inside": true,
+        "square_mm": [
+          23.998535156599978,
+          23.998535156599978
+        ]
+      },
+      {
+        "page": "114",
+        "bank": "vocabulary",
+        "unit": "7",
+        "collisions": [],
+        "inside": true,
+        "square_mm": [
+          23.998535156599978,
+          23.998535156599978
+        ]
+      },
+      {
+        "page": "118",
+        "bank": "vocabulary",
+        "unit": "8",
+        "collisions": [],
+        "inside": true,
+        "square_mm": [
+          23.998535156599978,
+          23.998535156599978
+        ]
+      }
+    ],
+    "evidence_directory": "Sources/Practice-adjacency-20261101",
     "current_visual_identity_checks": {
       "coverage_spreads": 36,
       "functional_tools": 35,
       "protected_selectors": 73,
       "standalone_and_assembled_number_and_alphabet_checks_passed": true
     },
-    "historical_live_viewer": {
-      "completed": true,
-      "content_commit": "caeedc16a559063eb0c7e93a5afa5dd847e5b1c3",
-      "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=wordbankstudy-caeedc16a559",
-      "book_pages": 127,
-      "navigation_options": 57,
-      "forward_links_checked": 75,
-      "return_links_checked": 124,
-      "study_activity_pairs": 38,
-      "activity_header_links": 18,
-      "blank_blooket_slots": 16,
-      "active_practice_reference_images_decoded": 8,
-      "sample_recordings_play_progress_pause": [
-        "1.1",
-        "8.7"
-      ],
-      "audio_controls_preserved": 90,
-      "print_controls_hidden": true,
-      "topic_headings_clear_fixed_navigation": true,
-      "changed_files_match": 84,
-      "file_report": "Sources/Vocabulary-study-banks-20261101/published-file-verification.json",
-      "viewer_report": "Sources/Vocabulary-study-banks-20261101/live-viewer-verification.json",
-      "visual_report": "Sources/Vocabulary-study-banks-20261101/independent-live-visual-review.json",
-      "failures": [],
-      "evidence_scope": "Historical prior edition only; not current publication proof."
-    },
     "live_viewer": {
-      "completed": true,
-      "content_commit": "f28d8ea860eb89796eb7a56ff86838e66f5437f7",
-      "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=practicephotos-f28d8ea860eb",
-      "book_pages": 127,
-      "navigation_options": 57,
-      "forward_links_checked": 75,
-      "return_links_checked": 124,
-      "study_activity_pairs": 38,
-      "activity_header_links": 18,
-      "blank_blooket_slots": 16,
-      "image_occurrences_decoded": 84,
-      "active_unique_practice_images": 41,
-      "vocabulary_pages_with_pictures": 31,
-      "pictorial_svg_in_grammar_vocabulary": 0,
-      "sample_recordings_play_progress_pause": [
-        "1.1",
-        "8.7"
-      ],
-      "audio_controls_preserved": 90,
-      "print_controls_hidden": true,
-      "topic_headings_clear_fixed_navigation": true,
-      "changed_files_match": 77,
-      "file_report": "Sources/Practice-imagegen-20261101/published-file-verification.json",
-      "viewer_report": "Sources/Practice-imagegen-20261101/live-viewer-verification.json",
-      "visual_report": "Sources/Practice-imagegen-20261101/live-visual-review.json",
-      "failures": []
+      "completed": false,
+      "status": "Pending deployment and readback."
     },
-    "repeated_image_quality": "Sources/Practice-imagegen-20261101/repeated-image-quality.json"
+    "prior_release_evidence": "Sources/Practice-imagegen-20261101; historical edition only."
   },
   "new_objects": "Images/Editorial-objects/manifest.json",
   "resource_registry": "Sources/Lesson-resources.json",
@@ -466,9 +537,9 @@
         "Practice"
       ],
       "fingerprint": {
-        "files": 924,
-        "bytes": 677495509,
-        "sha256": "cc41dd05f163269a442070b201b78a920652f28fbcd8e45fa7cce79b976f375f"
+        "files": 933,
+        "bytes": 677532564,
+        "sha256": "a3171bce5c9a9d5bf00acf66973ea8486206f11a0fc85b38a38776c04177e24b"
       },
       "normalize_text_line_endings": true
     },
@@ -479,8 +550,8 @@
       "exclude_markdown": true,
       "fingerprint": {
         "files": 21,
-        "bytes": 91143,
-        "sha256": "956185022918bf089eae11bec7f88cb41950f784304f75a1923a7a984b07367c"
+        "bytes": 91943,
+        "sha256": "1e80bd13b3130cd014de23ed639c0efc2b9a9c6c57c02b2812f9e3f824ce15bc"
       },
       "normalize_text_line_endings": true
     },
@@ -490,8 +561,8 @@
       ],
       "fingerprint": {
         "files": 1,
-        "bytes": 47836414,
-        "sha256": "844d3f04808af29b40f8ae0b50b84c85ef1fc9771a148a2bd1cca0f838dd0a07"
+        "bytes": 47705055,
+        "sha256": "b6db9c83babda9eed450b3c5892d268b490ed46e3ad681254ed8c831bcb2e8a0"
       },
       "normalize_text_line_endings": true
     },
@@ -515,8 +586,8 @@
       ],
       "fingerprint": {
         "files": 15,
-        "bytes": 141207,
-        "sha256": "1e83e935a78f72d090583b1f33da913027901f5e7b8015f31edf8125354fe91d"
+        "bytes": 142406,
+        "sha256": "4843d11f31c5343b07a1e43c502c55c4a4a949106273d3326ac6e2da0179366e"
       },
       "normalize_text_line_endings": true
     }
@@ -527,7 +598,7 @@
     "priority": "Warm adult playfulness, saturated local colour, tactile concept metaphors and protected letter/number graphics; functional consistency does not mean visual uniformity.",
     "regression_baseline": "8069492116058e45846c79601c66ebd8a3207abb",
     "protected_register": "Sources/Visual-personality.json",
-    "verification": "All72 core PDF pages pixel- and text-identical; nine unchanged grammar pages and four practical-language pages also preserved. Seven grammar pages deliberately receive imagegen pictorial examples.",
+    "verification": "Core unchanged apart from actual Go-to page references; all16 grammar,4 practical-language and4 credit PDF pages pixel/text-identical to baseline.",
     "functional_tool_counts": {
       "grammar": 25,
       "pronunciation": 1,
@@ -577,12 +648,110 @@
       "assets": "Practice/Images/manifest.json",
       "policy": "../Base/design-system/PRACTICE-BANKS.md",
       "current_evidence": "Sources/Practice-imagegen-20261101"
+    },
+    "adjacency": {
+      "policy": "Word bank immediately followed by its matching one- or two-page practice group",
+      "groups": [
+        {
+          "activity_page": 94,
+          "study_page": 93,
+          "unit": 1
+        },
+        {
+          "activity_page": 96,
+          "study_page": 95,
+          "unit": 1
+        },
+        {
+          "activity_page": 97,
+          "study_page": 95,
+          "unit": 1
+        },
+        {
+          "activity_page": 99,
+          "study_page": 98,
+          "unit": 2
+        },
+        {
+          "activity_page": 100,
+          "study_page": 98,
+          "unit": 2
+        },
+        {
+          "activity_page": 102,
+          "study_page": 101,
+          "unit": 3
+        },
+        {
+          "activity_page": 103,
+          "study_page": 101,
+          "unit": 3
+        },
+        {
+          "activity_page": 105,
+          "study_page": 104,
+          "unit": 4
+        },
+        {
+          "activity_page": 106,
+          "study_page": 104,
+          "unit": 4
+        },
+        {
+          "activity_page": 108,
+          "study_page": 107,
+          "unit": 5
+        },
+        {
+          "activity_page": 109,
+          "study_page": 107,
+          "unit": 5
+        },
+        {
+          "activity_page": 111,
+          "study_page": 110,
+          "unit": 6
+        },
+        {
+          "activity_page": 113,
+          "study_page": 112,
+          "unit": 6
+        },
+        {
+          "activity_page": 115,
+          "study_page": 114,
+          "unit": 7
+        },
+        {
+          "activity_page": 117,
+          "study_page": 116,
+          "unit": 7
+        },
+        {
+          "activity_page": 119,
+          "study_page": 118,
+          "unit": 8
+        },
+        {
+          "activity_page": 121,
+          "study_page": 120,
+          "unit": 8
+        },
+        {
+          "activity_page": 123,
+          "study_page": 122,
+          "unit": 8
+        }
+      ],
+      "maximum_pages_after_reference": 2,
+      "unrelated_references_intervene": false
     }
   },
   "author_feedback": {
     "date": "2026-11-01",
     "vocabulary_practice_approach": "Fresh activities endorsed; add complete study word banks before the approved activities, including all necessary topic vocabulary for test revision.",
     "grammar_practice": "Remove inline explanatory prose; use compact charts, arrows, diagrams, short labels and complete models. Do not overdo present simple or spread excess detail to other pages.",
-    "practice_artwork": "Replace all vector-like pictorial graphics with imagegen-quality images. Every vocabulary study and activity page must use useful pictures or cutouts."
+    "practice_artwork": "Replace all vector-like pictorial graphics with imagegen-quality images. Every vocabulary study and activity page must use useful pictures or cutouts.",
+    "vocabulary_adjacency": "Keep word-bank and matching practice pages next to each other, interleaving topic groups within each unit."
   }
 }

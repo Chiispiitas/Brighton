@@ -22,7 +22,8 @@ def main():
    assert study and activity,f'{file}: vocabulary needs study references before activities'
    assert [int(x['data-page']) for x in study]==master['study_pages'],f'{file}: study pagination differs'
    assert [int(x['data-page']) for x in activity]==master['activity_pages'],f'{file}: activity pagination differs'
-   assert max(master['study_pages'])<min(master['activity_pages']),f'{file}: study words must come first'
+   # Each topic reference immediately leads into its own practice group.
+   # Units may interleave several word-bank/practice groups.
    assert not doc.select('.vs-study-page .practice-task'),f'{file}: reference pages cannot contain only games'
    study_pages+=len(study)
    for section in doc.select('.vs-study-page .practice-topic[id]'):
@@ -33,9 +34,17 @@ def main():
     assert not missing,f'{name}: missing study vocabulary {sorted(missing)}'
     target=doc.find(id='activity-'+name);assert target and not target.find_parent(class_='vs-study-page'),f'{name}: activity missing'
     link=section.select_one('.vs-practice-link');n=int(target.find_parent('article')['data-page'])
+    reference=int(section.find_parent('article')['data-page'])
+    assert 1<=n-reference<=2,f'{name}: keep word bank and practice next to each other'
+    assert not any(reference<int(p['data-page'])<n for p in study),f'{name}: unrelated word bank separates reference and practice'
     assert link and link.get('href')=='#activity-'+name and re.search(r'\bpage\s+'+str(n)+r'\b',link.get_text()),f'{name}: activity link/page wrong'
     back=target.select_one('h2 a.vs-wordbank-return');assert back and back.get('href')=='#'+name,f'{name}: word-bank return missing'
     study_topics.add(name)
+   for page in activity:
+    refs={int(doc.find(id=a['href'][1:]).find_parent('article')['data-page']) for a in page.select('.vs-wordbank-return')}
+    assert len(refs)==1,f'{file}: each activity page must use one neighbouring word bank'
+    n=refs.pop();header=page.select_one('.vs-wordbank-page-link')
+    assert header and header.get('href')==f'#page-{n}' and header.get_text(strip=True)==f'Word bank · page {n}',f'{file}: activity header must identify its exact neighbouring word bank'
   actual=[]
   for page in doc.select('.hz-page'):
    n=int(page['data-page']);actual.append(n);pages.append(n)

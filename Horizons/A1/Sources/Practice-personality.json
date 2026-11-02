@@ -334,10 +334,10 @@
       },
       "study_pages": [
         93,
-        94
+        95
       ],
       "activity_pages": [
-        95,
+        94,
         96,
         97
       ],
@@ -599,10 +599,10 @@
       },
       "study_pages": [
         110,
-        111
+        112
       ],
       "activity_pages": [
-        112,
+        111,
         113
       ],
       "imagegen_art": {
@@ -658,10 +658,10 @@
       },
       "study_pages": [
         114,
-        115
+        116
       ],
       "activity_pages": [
-        116,
+        115,
         117
       ],
       "imagegen_art": {
@@ -717,12 +717,12 @@
       },
       "study_pages": [
         118,
-        119,
-        120
+        120,
+        122
       ],
       "activity_pages": [
+        119,
         121,
-        122,
         123
       ],
       "imagegen_art": {
@@ -840,5 +840,102 @@
     "vocabulary": "Existing fresh-game vocabulary activities approved; the author requests complete word banks for study before the activities. Preserve the approved games and their resources while adding grouped words, useful chunks, meaningful cues and reciprocal page links.",
     "grammar": "Visual explanations preferred. Remove inline explanatory rule prose; keep short labels, models, charts and arrows; avoid over-expansion.",
     "practice_art": "Reject vector-like teaching pictures in grammar/vocabulary banks; use imagegen quality for those illustrations. Every vocabulary study and activity page needs a meaningful picture."
+  },
+  "vocabulary_adjacency": {
+    "maximum_pages_after_reference": 2,
+    "unrelated_reference_pages_between": false,
+    "activity_page_uses_one_reference_page": true,
+    "groups": [
+      {
+        "activity_page": 94,
+        "study_page": 93,
+        "unit": 1
+      },
+      {
+        "activity_page": 96,
+        "study_page": 95,
+        "unit": 1
+      },
+      {
+        "activity_page": 97,
+        "study_page": 95,
+        "unit": 1
+      },
+      {
+        "activity_page": 99,
+        "study_page": 98,
+        "unit": 2
+      },
+      {
+        "activity_page": 100,
+        "study_page": 98,
+        "unit": 2
+      },
+      {
+        "activity_page": 102,
+        "study_page": 101,
+        "unit": 3
+      },
+      {
+        "activity_page": 103,
+        "study_page": 101,
+        "unit": 3
+      },
+      {
+        "activity_page": 105,
+        "study_page": 104,
+        "unit": 4
+      },
+      {
+        "activity_page": 106,
+        "study_page": 104,
+        "unit": 4
+      },
+      {
+        "activity_page": 108,
+        "study_page": 107,
+        "unit": 5
+      },
+      {
+        "activity_page": 109,
+        "study_page": 107,
+        "unit": 5
+      },
+      {
+        "activity_page": 111,
+        "study_page": 110,
+        "unit": 6
+      },
+      {
+        "activity_page": 113,
+        "study_page": 112,
+        "unit": 6
+      },
+      {
+        "activity_page": 115,
+        "study_page": 114,
+        "unit": 7
+      },
+      {
+        "activity_page": 117,
+        "study_page": 116,
+        "unit": 7
+      },
+      {
+        "activity_page": 119,
+        "study_page": 118,
+        "unit": 8
+      },
+      {
+        "activity_page": 121,
+        "study_page": 120,
+        "unit": 8
+      },
+      {
+        "activity_page": 123,
+        "study_page": 122,
+        "unit": 8
+      }
+    ]
   }
 }
