@@ -1,6 +1,6 @@
 # Horizons A1 — current book audit
 
-Updated 1 November 2026. Practice artwork now follows the author’s imagegen requirement. Source, layout, content and saved-PDF checks pass. Publication and live readback are pending.
+Updated 1 November 2026. Practice artwork now follows the author’s imagegen requirement. Source, layout, content, saved-PDF and published-viewer checks pass.
 
 ## Author feedback and current standard
 
@@ -28,7 +28,7 @@ The saved PDF has 127 A4 pages, correct footers and all 293 internal destination
 
 The PDF optimizer previously resampled shared pictures repeatedly when CSS viewports reused one image, producing a blurred PDF despite a sharp HTML view. Repeated image streams and alpha masks are now isolated before compression. The quantity sheet retains 543 × 181 pixels instead of collapsing to 34 × 12; visual review confirms clear picture detail. Protected-page pixel equality also passes after this fix.
 
-Current evidence: [editorial decision](Sources/Practice-imagegen-20261101/editorial-decision.json), [saved-PDF validation](Sources/Practice-imagegen-20261101/pdf-validation.json), [manual proof](Sources/Practice-imagegen-20261101/manual-saved-PDF-review.json), [content and artwork coverage](Sources/Practice-imagegen-20261101/source-preservation-and-art-coverage.json), and [picture-resolution check](Sources/Practice-imagegen-20261101/repeated-image-quality.json). Prior edition reports are historical evidence only. Current publication and live verification remain pending.
+Current evidence: [editorial decision](Sources/Practice-imagegen-20261101/editorial-decision.json), [saved-PDF validation](Sources/Practice-imagegen-20261101/pdf-validation.json), [manual proof](Sources/Practice-imagegen-20261101/manual-saved-PDF-review.json), [content and artwork coverage](Sources/Practice-imagegen-20261101/source-preservation-and-art-coverage.json), and [picture-resolution check](Sources/Practice-imagegen-20261101/repeated-image-quality.json). Prior edition reports are historical evidence only. The [published viewer](https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=practicephotos-f28d8ea860eb) is verified at content commit `f28d8ea860eb89796eb7a56ff86838e66f5437f7`: 127 pages, 57 navigation entries, all 75 lesson references, 124 return links, 38 reciprocal word-bank/activity pairs and 18 header routes resolve. All 84 image occurrences decode across 41 unique practice assets. All 31 vocabulary pages contain pictures and no pictorial SVG remains in grammar/vocabulary. The 16 QR areas are blank. Samples 1.1 and 8.7 play, advance and pause; 90 audio controls remain and screen controls hide in print. All 77 changed Horizons files match the deployed site, normalizing text line endings and comparing binary media exactly. The root editor inspected all 11 captured live pages. See [live checks](Sources/Practice-imagegen-20261101/live-viewer-verification.json), [visual review](Sources/Practice-imagegen-20261101/live-visual-review.json) and [published-file verification](Sources/Practice-imagegen-20261101/published-file-verification.json).
 
 ## Reversibility and future work
 

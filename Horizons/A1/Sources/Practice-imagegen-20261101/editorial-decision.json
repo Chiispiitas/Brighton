@@ -67,6 +67,12 @@
   "future_enforcement": "PRACTICE-BANKS.md, component-contracts.md, asset-policy.md, check-practice-banks.py and protected practice register updated.",
   "native_generation_mode": "built-in image_gen; native output bytes and alpha preserved; no API/CLI fallback",
   "prompts_and_file_hashes": "../../Practice/Images/manifest.json",
-  "live_publication": "Pending content publication and live readback.",
+  "live_publication": {
+    "content_commit": "f28d8ea860eb89796eb7a56ff86838e66f5437f7",
+    "viewer_report": "live-viewer-verification.json",
+    "file_report": "published-file-verification.json",
+    "visual_report": "live-visual-review.json",
+    "passed": true
+  },
   "limitations": "No second independent editor was available for this pass. Root performed a separate saved-PDF inspection; no author acceptance is claimed."
 }

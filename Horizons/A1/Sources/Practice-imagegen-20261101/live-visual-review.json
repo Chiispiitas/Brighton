@@ -1,0 +1,85 @@
+{
+  "reviewer": "Root editor",
+  "mode": "Manual inspection of screenshots captured from deployed viewer after successful Pages deployment",
+  "content_commit": "f28d8ea860eb89796eb7a56ff86838e66f5437f7",
+  "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=practicephotos-f28d8ea860eb",
+  "pages_inspected": [
+    93,
+    120,
+    123,
+    87,
+    99,
+    106,
+    109,
+    111,
+    119,
+    121,
+    122
+  ],
+  "screenshots": [
+    {
+      "page": "93",
+      "file": "live-wordbank-V1.png",
+      "sha256": "fec94ea76e3f53cea64c1577637966bee1129f8e95fb940bfd06a86a2483ff07"
+    },
+    {
+      "page": "120",
+      "file": "live-wordbank-V8-body.png",
+      "sha256": "1fdec7e41e557ff8a010686b2df712897bf81d705a8ced4b5f52f3660d8c8bd0"
+    },
+    {
+      "page": "123",
+      "file": "live-V8-body-activity.png",
+      "sha256": "2e1b0bc847b6dd561e95a024550e4a16da313c192bbfb518be6ba9157aed2934"
+    },
+    {
+      "page": "87",
+      "file": "live-practice-87.png",
+      "sha256": "57a751340144d258c03b11ae3cf97a6a3d8995c1c24ed72416d8704494783336"
+    },
+    {
+      "page": "99",
+      "file": "live-practice-99.png",
+      "sha256": "4478f6846bf1a6d0d98618a4b23a10d02104824abac39656c8e14d5d7afd5c31"
+    },
+    {
+      "page": "106",
+      "file": "live-practice-106.png",
+      "sha256": "de070c0d51659e98c137373e9c2f74b27beb8291876cbdd19b878d5a0014f8e5"
+    },
+    {
+      "page": "109",
+      "file": "live-practice-109.png",
+      "sha256": "50527ad3f85ed9f21ea6ad5f6029f85edb260e51fb3b17ce74f07ddbace2bb0a"
+    },
+    {
+      "page": "111",
+      "file": "live-practice-111.png",
+      "sha256": "292fa77e4000ade0e242defae0692a888e74526bcd0ad689a4da8b2976c59843"
+    },
+    {
+      "page": "119",
+      "file": "live-practice-119.png",
+      "sha256": "469d7a93fd0961bdde0ff951d2aa2d33d7c6393c1ab1e9355dfb5e7557e61710"
+    },
+    {
+      "page": "121",
+      "file": "live-practice-121.png",
+      "sha256": "984769acfb5f659ea182d31b044aeeafc4065c3f2b7ae7969dc24fb5c589f0b2"
+    },
+    {
+      "page": "122",
+      "file": "live-practice-122.png",
+      "sha256": "27be62154d9312923f6834ccdb7dd9731059b7ef803ba448ea2a39bc43a62d6e"
+    }
+  ],
+  "observations": [
+    "Generated art displays cleanly in screen viewer, including transparent edges and complete subjects",
+    "G6 positions, physical clocks, cooking-action photos, V5 task lanes, furniture and weather pictures are legible",
+    "Vocabulary study and activity labels align with their pictures; writing and QR space remain clear",
+    "Whole-body cutout with native labels remains readable; final practice page retains the approved acted cutouts"
+  ],
+  "failures": [],
+  "independent_second_editor": false,
+  "author_acceptance_claimed": false
+}

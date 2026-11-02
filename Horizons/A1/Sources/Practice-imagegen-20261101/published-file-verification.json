@@ -1,0 +1,549 @@
+{
+  "commit": "f28d8ea860eb89796eb7a56ff86838e66f5437f7",
+  "base": "https://exams.bebrighton.net/",
+  "files": 77,
+  "line_endings_normalized_for_text": true,
+  "media_byte_exact": true,
+  "failures": [],
+  "results": [
+    {
+      "file": "Horizons/A1/Audit archive/2026-11-01-before-practice-imagegen/BOOK-AUDIT.md",
+      "status": 200,
+      "match": true,
+      "bytes": 6578,
+      "sha256": "f1891885628102ff785bc34d2e8be80fd6dc01c8df43c9d6b7fc44eb20b81117"
+    },
+    {
+      "file": "Horizons/A1/Audit archive/2026-11-01-before-practice-imagegen/book-audit.json",
+      "status": 200,
+      "match": true,
+      "bytes": 41028,
+      "sha256": "8aa793e3e6bb827cf452b74a849dc8feecc312ef97db7878f15e9ad935e5afc6"
+    },
+    {
+      "file": "Horizons/A1/BOOK-AUDIT.md",
+      "status": 200,
+      "match": true,
+      "bytes": 6374,
+      "sha256": "d4681a581059f0687f938032f4e9b5eb7cc1a54e4d0ac2e00c1e10f59d0d0178"
+    },
+    {
+      "file": "Horizons/A1/Backmatter/image-credits.html",
+      "status": 200,
+      "match": true,
+      "bytes": 24969,
+      "sha256": "5e5e2e9882a4502cbbb70b81cb22d0c48db38a969c2af56a07a4f3f296d845ec"
+    },
+    {
+      "file": "Horizons/A1/Backmatter/image-credits.json",
+      "status": 200,
+      "match": true,
+      "bytes": 41146,
+      "sha256": "52ceef68d0cd59ae3af3a60ee3092ee735f8043d166408074c03153f9088effe"
+    },
+    {
+      "file": "Horizons/A1/Practice/Grammar/G1.html",
+      "status": 200,
+      "match": true,
+      "bytes": 9120,
+      "sha256": "41f95cd8e712304c37726793cbf9f0a3249484a021401f03d4395a023bb06bce"
+    },
+    {
+      "file": "Horizons/A1/Practice/Grammar/G2.html",
+      "status": 200,
+      "match": true,
+      "bytes": 7919,
+      "sha256": "dded50d6578295f4aea11003c7d4ee78ebc4b2e4b9a6d748d2b6e137798aeb6a"
+    },
+    {
+      "file": "Horizons/A1/Practice/Grammar/G3.html",
+      "status": 200,
+      "match": true,
+      "bytes": 9322,
+      "sha256": "48b6548bfc7d311406e826c1a38d069d2780e65c55996367bc43adcb67dff475"
+    },
+    {
+      "file": "Horizons/A1/Practice/Grammar/G4.html",
+      "status": 200,
+      "match": true,
+      "bytes": 9603,
+      "sha256": "53fa41b76fc00f425f9e533d4628d6745e388f4e13b955543b1c42a24a7c4737"
+    },
+    {
+      "file": "Horizons/A1/Practice/Grammar/G5.html",
+      "status": 200,
+      "match": true,
+      "bytes": 7528,
+      "sha256": "7758555d0b7bb35b20748d608e26839cd9e9bf09205403876acaaf7e9ae9711c"
+    },
+    {
+      "file": "Horizons/A1/Practice/Grammar/G6.html",
+      "status": 200,
+      "match": true,
+      "bytes": 8829,
+      "sha256": "03c192d1d10aac428d8fe60319a3c5995b77b375cc9f458bc51a61cc4b8b3d36"
+    },
+    {
+      "file": "Horizons/A1/Practice/Grammar/G7.html",
+      "status": 200,
+      "match": true,
+      "bytes": 8624,
+      "sha256": "035d6bb9c8a78090d426384c5cf8d2ce0ab14c188b40883d738f62fb3acd257e"
+    },
+    {
+      "file": "Horizons/A1/Practice/Grammar/G8.html",
+      "status": 200,
+      "match": true,
+      "bytes": 8207,
+      "sha256": "7733728d6d077fd5753280bf33ae8320f4bccdb442cd478238865a9ab9804bfd"
+    },
+    {
+      "file": "Horizons/A1/Practice/Images/Photo-practice/G2-personal-items-v1.png",
+      "status": 200,
+      "match": true,
+      "bytes": 2027388,
+      "sha256": "f2524cca1c9bf71bdd5b969964fa2d1bdaabe23522f82d59848c0666c6a00f1b"
+    },
+    {
+      "file": "Horizons/A1/Practice/Images/Photo-practice/G4-countability-v1.png",
+      "status": 200,
+      "match": true,
+      "bytes": 1300066,
+      "sha256": "13289f0c114c110e05a65ca0c44c593eae45c77308e0ec659b6181985865fab4"
+    },
+    {
+      "file": "Horizons/A1/Practice/Images/Photo-practice/G4-tomato-quantities-v1.png",
+      "status": 200,
+      "match": true,
+      "bytes": 848786,
+      "sha256": "f72f98e89f1fbc272559921409f0494cbe451dd144a85999074d045d7cc917aa"
+    },
+    {
+      "file": "Horizons/A1/Practice/Images/Photo-practice/G5-bag-size-v1.png",
+      "status": 200,
+      "match": true,
+      "bytes": 2516345,
+      "sha256": "c49b90d28a6dd8f8b2490b4e3fc8d33f283052ad02c05dd0b81367e50896ebe8"
+    },
+    {
+      "file": "Horizons/A1/Practice/Images/Photo-practice/G6-crossroads-v1.png",
+      "status": 200,
+      "match": true,
+      "bytes": 3212083,
+      "sha256": "bd33af56c99a13cc50f1fe8c56cf2c75efba049bc206f9d26b61e00738db05ef"
+    },
+    {
+      "file": "Horizons/A1/Practice/Images/Photo-practice/G6-prepositions-v1.png",
+      "status": 200,
+      "match": true,
+      "bytes": 1998501,
+      "sha256": "55bee49b6501a60c513d9415ca03707b67996149a030a49a437de4e1b3305fd6"
+    },
+    {
+      "file": "Horizons/A1/Practice/Images/Photo-practice/G6-prepositions-v2.png",
+      "status": 200,
+      "match": true,
+      "bytes": 1729141,
+      "sha256": "d1532d2b225da671862f3be1468e2b00a46d7eb9bbda1c1d80dc7660bc2d0117"
+    },
+    {
+      "file": "Horizons/A1/Practice/Images/Photo-practice/G8-trip-record-v1.png",
+      "status": 200,
+      "match": true,
+      "bytes": 2630243,
+      "sha256": "f4c765377dded5ae8f047ead8334013100dd400f36712d63382eda8aed5e134a"
+    },
+    {
+      "file": "Horizons/A1/Practice/Images/Photo-practice/V1-club-members-v1.png",
+      "status": 200,
+      "match": true,
+      "bytes": 2360277,
+      "sha256": "172103035fe269541038f31166e3e1c5148f18fe2849308e853e6ea9b04a4022"
+    },
+    {
+      "file": "Horizons/A1/Practice/Images/Photo-practice/V1-locker-codes-v1.png",
+      "status": 200,
+      "match": true,
+      "bytes": 2093426,
+      "sha256": "3409c6f48c08e98478b5524edb003360b7419fc0f3cefdb85b7a5cec412617a5"
+    },
+    {
+      "file": "Horizons/A1/Practice/Images/Photo-practice/V1-postcards-v1.png",
+      "status": 200,
+      "match": true,
+      "bytes": 2553348,
+      "sha256": "a23d6b726e148caa843faeddc3741dc9e79ecfe4882c159e2ca43dfb1a1f8dd5"
+    },
+    {
+      "file": "Horizons/A1/Practice/Images/Photo-practice/V1-study-greetings-v1.png",
+      "status": 200,
+      "match": true,
+      "bytes": 2316886,
+      "sha256": "235e1da245e5fc0b599c0bf63cf1a82f85f17f087de5f90ba98715c46ea7ae67"
+    },
+    {
+      "file": "Horizons/A1/Practice/Images/Photo-practice/V1-study-jobs-v1.png",
+      "status": 200,
+      "match": true,
+      "bytes": 1865635,
+      "sha256": "e973ad1a5feb47c483629c7dc1374d81e02d7ac884990c8c16148dfa9349fc4f"
+    },
+    {
+      "file": "Horizons/A1/Practice/Images/Photo-practice/V2-clock-check-v1.png",
+      "status": 200,
+      "match": true,
+      "bytes": 937603,
+      "sha256": "bc99118eea65395b62c15bee8a7a7bdd51dca74146bc3bf8e364a97fbf4d015f"
+    },
+    {
+      "file": "Horizons/A1/Practice/Images/Photo-practice/V2-color-trail-v1.png",
+      "status": 200,
+      "match": true,
+      "bytes": 2589979,
+      "sha256": "0d493306805f0c5440a6b0a3d483b7a3702c3ae214e05eb3e42b51a5a153a466"
+    },
+    {
+      "file": "Horizons/A1/Practice/Images/Photo-practice/V2-study-colors-v1.png",
+      "status": 200,
+      "match": true,
+      "bytes": 1791737,
+      "sha256": "0975e0edc9da242893855bfac031fcecfa09fc50e817ce3bf3655e9fe097879c"
+    },
+    {
+      "file": "Horizons/A1/Practice/Images/Photo-practice/V3-room-choices-v1.png",
+      "status": 200,
+      "match": true,
+      "bytes": 2537290,
+      "sha256": "95031f6073ab26f9e81e9194b26b550c683a607f5b30efa929f651006290fa49"
+    },
+    {
+      "file": "Horizons/A1/Practice/Images/Photo-practice/V3-study-routines-v1.png",
+      "status": 200,
+      "match": true,
+      "bytes": 2420242,
+      "sha256": "0675633172e7d470ab796a4b2ea49f1fa337eec2af1b5eeb1914e704c840c60a"
+    },
+    {
+      "file": "Horizons/A1/Practice/Images/Photo-practice/V4-recipe-actions-v1.png",
+      "status": 200,
+      "match": true,
+      "bytes": 2408413,
+      "sha256": "97ae2c9596a9aa05fcd710a8f1adce229bcca15f40fd1cfefe5de6a395c1f1db"
+    },
+    {
+      "file": "Horizons/A1/Practice/Images/Photo-practice/V4-study-food-v1.png",
+      "status": 200,
+      "match": true,
+      "bytes": 1439204,
+      "sha256": "98ff7d67f2e286960f8d15b9c8e51e38f653652687f143bac7e55a081998c773"
+    },
+    {
+      "file": "Horizons/A1/Practice/Images/Photo-practice/V5-shopping-places-v1.png",
+      "status": 200,
+      "match": true,
+      "bytes": 2964140,
+      "sha256": "416dddee11b0a2e8c02294f19cdacb0ae55cf08507baa644f41459e43d6cfd02"
+    },
+    {
+      "file": "Horizons/A1/Practice/Images/Photo-practice/V5-study-clothes-v1.png",
+      "status": 200,
+      "match": true,
+      "bytes": 2905187,
+      "sha256": "37b944b16d9224ff279ba12e9361b42688880650f8a447d70714072039e7da1b"
+    },
+    {
+      "file": "Horizons/A1/Practice/Images/Photo-practice/V6-delivery-route-v1.png",
+      "status": 200,
+      "match": true,
+      "bytes": 3295357,
+      "sha256": "99f6fe1bda3c9ce2b0c977dbd0b61e659bc13dcdfbe53bee10b55c33ffd68ab2"
+    },
+    {
+      "file": "Horizons/A1/Practice/Images/Photo-practice/V6-errand-town-v1.png",
+      "status": 200,
+      "match": true,
+      "bytes": 3538222,
+      "sha256": "0ef96cc3e25dbd36915865afdce1aa1412dc6173daded43280faf6dd2a281a3c"
+    },
+    {
+      "file": "Horizons/A1/Practice/Images/Photo-practice/V6-movement-scenes-v1.png",
+      "status": 200,
+      "match": true,
+      "bytes": 3362845,
+      "sha256": "f5e1dc63112e1e7a8f39e4fad003e8a3ecd1325b3c3e34321650d1f59c35319d"
+    },
+    {
+      "file": "Horizons/A1/Practice/Images/Photo-practice/V6-study-attractions-v1.png",
+      "status": 200,
+      "match": true,
+      "bytes": 3758033,
+      "sha256": "5666b803f9ca8811ef9cd89111ff9287cae9d9259fc2275ea51be491fe514b73"
+    },
+    {
+      "file": "Horizons/A1/Practice/Images/Photo-practice/V6-study-furniture-v1.png",
+      "status": 200,
+      "match": true,
+      "bytes": 781810,
+      "sha256": "3a8f3153c0af2720b344675348ff116bbb828e1bf5d4b4112d455a1fde513649"
+    },
+    {
+      "file": "Horizons/A1/Practice/Images/Photo-practice/V7-birthday-game-v1.png",
+      "status": 200,
+      "match": true,
+      "bytes": 2280557,
+      "sha256": "d4d1d26358846bb3ebaec754dca768fd17f69c249245b444e88a2d87f4e6603b"
+    },
+    {
+      "file": "Horizons/A1/Practice/Images/Photo-practice/V7-museum-objects-v1.png",
+      "status": 200,
+      "match": true,
+      "bytes": 2120933,
+      "sha256": "fe101147064925c4c4ec0e4b00bb13da3336e387dc31bb3c2d8f6fb0ed113c30"
+    },
+    {
+      "file": "Horizons/A1/Practice/Images/Photo-practice/V7-study-calendar-v1.png",
+      "status": 200,
+      "match": true,
+      "bytes": 1900674,
+      "sha256": "495211b9ca2874dc8cc50df746096a1053a99262b070b4da0fd4c187ceaa1a81"
+    },
+    {
+      "file": "Horizons/A1/Practice/Images/Photo-practice/V7-study-music-v1.png",
+      "status": 200,
+      "match": true,
+      "bytes": 2197519,
+      "sha256": "077a4cb5c56868d8569eeb391fcf80a0f69a6cfeb715789eb64c7911085326b2"
+    },
+    {
+      "file": "Horizons/A1/Practice/Images/Photo-practice/V8-animal-code-v1.png",
+      "status": 200,
+      "match": true,
+      "bytes": 1832683,
+      "sha256": "22ba719140b8fe0881e2c2493e3bec9a22a9c6a22c386fe6ef104f6550a53031"
+    },
+    {
+      "file": "Horizons/A1/Practice/Images/Photo-practice/V8-animal-code-v2.png",
+      "status": 200,
+      "match": true,
+      "bytes": 1298389,
+      "sha256": "652765a29d216c53c3fbe3b2183735ca023723943431bb850c11ea0128c0a6e1"
+    },
+    {
+      "file": "Horizons/A1/Practice/Images/Photo-practice/V8-forecast-scenes-v1.png",
+      "status": 200,
+      "match": true,
+      "bytes": 3683198,
+      "sha256": "c086867a719c2b9f64be00562dd1154d69f85a1b643522e2f4a7a1d3a89c541b"
+    },
+    {
+      "file": "Horizons/A1/Practice/Images/Photo-practice/V8-study-weather-v1.png",
+      "status": 200,
+      "match": true,
+      "bytes": 2556965,
+      "sha256": "746601f6ce1b58a2bc508ce677ca2355afdf405c879a2c45d70937e340047122"
+    },
+    {
+      "file": "Horizons/A1/Practice/Images/manifest.json",
+      "status": 200,
+      "match": true,
+      "bytes": 72839,
+      "sha256": "9163d17d901e6e84304913dc5cf7637e6ed3bc5f7df55ce213a27d1fbf58be21"
+    },
+    {
+      "file": "Horizons/A1/Practice/Vocabulary/V1.html",
+      "status": 200,
+      "match": true,
+      "bytes": 23806,
+      "sha256": "43408e2fc46079252ca7224816be50f95edaef51348d7c9d4510f3f42bc44000"
+    },
+    {
+      "file": "Horizons/A1/Practice/Vocabulary/V2.html",
+      "status": 200,
+      "match": true,
+      "bytes": 16617,
+      "sha256": "2237f9b42de28eab7173946cee5959a259a5da833f394bdb9bb6a2f9882aed9b"
+    },
+    {
+      "file": "Horizons/A1/Practice/Vocabulary/V3.html",
+      "status": 200,
+      "match": true,
+      "bytes": 12495,
+      "sha256": "af9e4799f110dfd31c90ead6fb12227c7d1463593d5961de287f37c016826ff6"
+    },
+    {
+      "file": "Horizons/A1/Practice/Vocabulary/V4.html",
+      "status": 200,
+      "match": true,
+      "bytes": 15280,
+      "sha256": "aeb1838161c95093e0f24ae5c0bc368e4a77825adf39390b88f60532193d3746"
+    },
+    {
+      "file": "Horizons/A1/Practice/Vocabulary/V5.html",
+      "status": 200,
+      "match": true,
+      "bytes": 14452,
+      "sha256": "3166932d3a5f62f192f09d6f591a597b778b49008cf113ad28786e518a1c6fe1"
+    },
+    {
+      "file": "Horizons/A1/Practice/Vocabulary/V6.html",
+      "status": 200,
+      "match": true,
+      "bytes": 16728,
+      "sha256": "0c020264112095c048c4f93589efa047162771b0c1e29d7335daa7242472cfc0"
+    },
+    {
+      "file": "Horizons/A1/Practice/Vocabulary/V7.html",
+      "status": 200,
+      "match": true,
+      "bytes": 19739,
+      "sha256": "c5963aa933ed448933c695fe8a23c73db6311fac214a947dd4d738317fcb252c"
+    },
+    {
+      "file": "Horizons/A1/Practice/Vocabulary/V8.html",
+      "status": 200,
+      "match": true,
+      "bytes": 30017,
+      "sha256": "104ad31ba9e1c189d16a20b173889eb3ca75275eeb62ee59693186b08499e90e"
+    },
+    {
+      "file": "Horizons/A1/Practice/photographic-practice.css",
+      "status": 200,
+      "match": true,
+      "bytes": 10051,
+      "sha256": "1107f5a96e01792a77ec536868e8a87142da8d7d021fe0618822ff2781559ef0"
+    },
+    {
+      "file": "Horizons/A1/Sources/Practice-imagegen-20261101/editorial-decision.json",
+      "status": 200,
+      "match": true,
+      "bytes": 2132,
+      "sha256": "ec6c8d7e672440f01addbf677fd540f9997b197bff1eada11f9baaf5dc7bcf3e"
+    },
+    {
+      "file": "Horizons/A1/Sources/Practice-imagegen-20261101/final-qr-bounds.json",
+      "status": 200,
+      "match": true,
+      "bytes": 2992,
+      "sha256": "a9e10f7f14b91112543d780ca7b3e425276e43f0eb7c9f7791a121357cbc8621"
+    },
+    {
+      "file": "Horizons/A1/Sources/Practice-imagegen-20261101/final-response-layout.json",
+      "status": 200,
+      "match": true,
+      "bytes": 115,
+      "sha256": "6979307c183546cb7f83a9bd7e9a9ea6450857ebe8ae98113243997444436caf"
+    },
+    {
+      "file": "Horizons/A1/Sources/Practice-imagegen-20261101/manual-saved-PDF-review.json",
+      "status": 200,
+      "match": true,
+      "bytes": 9538,
+      "sha256": "7cfb3d46dda2f98e0ad45b2b140e0149f03bcb82a43cdb482d3f4f9a9ff85ec3"
+    },
+    {
+      "file": "Horizons/A1/Sources/Practice-imagegen-20261101/pdf-validation.json",
+      "status": 200,
+      "match": true,
+      "bytes": 638,
+      "sha256": "1db20ffeb6d3e7fc5b6587b129a92a69703b799cb4cf2df69081bee226c85f62"
+    },
+    {
+      "file": "Horizons/A1/Sources/Practice-imagegen-20261101/repeated-image-quality.json",
+      "status": 200,
+      "match": true,
+      "bytes": 2343,
+      "sha256": "0c160b6ae528d435257c089d19cdafd535afb50bf9e0b39c6f53b7c0144fab78"
+    },
+    {
+      "file": "Horizons/A1/Sources/Practice-imagegen-20261101/source-preservation-and-art-coverage.json",
+      "status": 200,
+      "match": true,
+      "bytes": 7065,
+      "sha256": "033ff023a4b63c832c9b14d145a3e5964c74ee4048644562c74c29802bc44064"
+    },
+    {
+      "file": "Horizons/A1/Sources/Practice-imagegen-20261101/standalone-assembled-parity.json",
+      "status": 200,
+      "match": true,
+      "bytes": 64,
+      "sha256": "d2c13839e496a9345d67c1f419d1ebefb2d9d459224b3261cf08a7cbcbfa8d1f"
+    },
+    {
+      "file": "Horizons/A1/Sources/Practice-imagegen-20261101/study-page-checks.json",
+      "status": 200,
+      "match": true,
+      "bytes": 12005,
+      "sha256": "340c302e2bc92cc3731e829475fbc5d85d0cfc7e6b01037f64c69b08d17b89a8"
+    },
+    {
+      "file": "Horizons/A1/Sources/Practice-personality.json",
+      "status": 200,
+      "match": true,
+      "bytes": 35683,
+      "sha256": "3437b89197ff317b6ac01890c56ebc0208dbf9d2b48709a7f3c3f795df05c158"
+    },
+    {
+      "file": "Horizons/A1/Student's Book.html",
+      "status": 200,
+      "match": true,
+      "bytes": 1146892,
+      "sha256": "de23a5c6099c84c7e13decd531627f292d568f371468eb68067c35e45987b1dc"
+    },
+    {
+      "file": "Horizons/A1/Student's Book.pdf",
+      "status": 200,
+      "match": true,
+      "bytes": 47836414,
+      "sha256": "9da7e5b1bc4e7cb5366971d4e3249f70d14bc4bab4ea9afba2f4358eb6322def"
+    },
+    {
+      "file": "Horizons/A1/Wordlists/Practice banks.md",
+      "status": 200,
+      "match": true,
+      "bytes": 2638,
+      "sha256": "def3c9784a9682fa53b86b9a6d3a0b51c9d8f3929ef5cfbb9516bebdf676930b"
+    },
+    {
+      "file": "Horizons/A1/book-audit.json",
+      "status": 200,
+      "match": true,
+      "bytes": 20673,
+      "sha256": "321df638b7cda1535b9583299b7f8a0ae856f4b46171b6df56c16cdd55aea96d"
+    },
+    {
+      "file": "Horizons/Base/build/check-practice-banks.py",
+      "status": 200,
+      "match": true,
+      "bytes": 7393,
+      "sha256": "efd783549cf6b9f21413c541346fed608973a24bc9cda5e8fd385bab6a64b389"
+    },
+    {
+      "file": "Horizons/Base/build/optimize-students-book.py",
+      "status": 200,
+      "match": true,
+      "bytes": 4186,
+      "sha256": "e9e35a6678a2561e9ac8459d850eded3fe69dcdacf0784cf93f7aa1bc9f25b52"
+    },
+    {
+      "file": "Horizons/Base/design-system/PRACTICE-BANKS.md",
+      "status": 200,
+      "match": true,
+      "bytes": 7708,
+      "sha256": "bd124363b6fa3af3ae11923dc939767a4af2b1a21c77ef65ffb22e185f36a663"
+    },
+    {
+      "file": "Horizons/Base/design-system/asset-policy.md",
+      "status": 200,
+      "match": true,
+      "bytes": 6155,
+      "sha256": "1841674e3494b5cdc8b6a13efd705d0888e66316bad161f659662901e02f1396"
+    },
+    {
+      "file": "Horizons/Base/design-system/component-contracts.md",
+      "status": 200,
+      "match": true,
+      "bytes": 4781,
+      "sha256": "81577377dc87f30e3b741e0446b20ac516f20069f232281839dd9c66401f33d2"
+    }
+  ]
+}

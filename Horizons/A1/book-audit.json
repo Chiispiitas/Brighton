@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "updated": "2026-11-01",
-  "status": "Imagegen practice artwork complete; source, layout and saved-PDF verification passed; live publication pending",
+  "status": "Imagegen practice artwork complete; source, saved-PDF and published-viewer verification passed",
   "authority": "Author delegates editorial authority; his own B2 book sets emotional direction. Preserve colourful learning objects and warm adult playfulness alongside coherent functional roles.",
   "scope": "Units1–8:32lessons,4pairedreviews,72corepages;51practicepages and4end-creditpages.127physicalpages, printed5–131. Front matter,index,workbook andoptionalannexes remainfuturework.",
   "baseline": {
@@ -238,7 +238,7 @@
       "existing_core_recordings_and_scripts_unchanged": true,
       "new_audio_generated": false,
       "html_controls": 90,
-      "live_playback": "Pending current publication."
+      "live_playback": "Unchanged samples1.1and8.7 played with real time progression and paused on the current published edition."
     },
     "study_words": {
       "topics": 38,
@@ -290,8 +290,32 @@
       "evidence_scope": "Historical prior edition only; not current publication proof."
     },
     "live_viewer": {
-      "completed": false,
-      "status": "Pending publication and live readback."
+      "completed": true,
+      "content_commit": "f28d8ea860eb89796eb7a56ff86838e66f5437f7",
+      "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=practicephotos-f28d8ea860eb",
+      "book_pages": 127,
+      "navigation_options": 57,
+      "forward_links_checked": 75,
+      "return_links_checked": 124,
+      "study_activity_pairs": 38,
+      "activity_header_links": 18,
+      "blank_blooket_slots": 16,
+      "image_occurrences_decoded": 84,
+      "active_unique_practice_images": 41,
+      "vocabulary_pages_with_pictures": 31,
+      "pictorial_svg_in_grammar_vocabulary": 0,
+      "sample_recordings_play_progress_pause": [
+        "1.1",
+        "8.7"
+      ],
+      "audio_controls_preserved": 90,
+      "print_controls_hidden": true,
+      "topic_headings_clear_fixed_navigation": true,
+      "changed_files_match": 77,
+      "file_report": "Sources/Practice-imagegen-20261101/published-file-verification.json",
+      "viewer_report": "Sources/Practice-imagegen-20261101/live-viewer-verification.json",
+      "visual_report": "Sources/Practice-imagegen-20261101/live-visual-review.json",
+      "failures": []
     },
     "repeated_image_quality": "Sources/Practice-imagegen-20261101/repeated-image-quality.json"
   },
@@ -442,9 +466,9 @@
         "Practice"
       ],
       "fingerprint": {
-        "files": 921,
-        "bytes": 677327722,
-        "sha256": "01ccb636d95aaa1a6da615823375df730b0524712bc6918d348a8896004008db"
+        "files": 924,
+        "bytes": 677495509,
+        "sha256": "cc41dd05f163269a442070b201b78a920652f28fbcd8e45fa7cce79b976f375f"
       },
       "normalize_text_line_endings": true
     },
@@ -491,8 +515,8 @@
       ],
       "fingerprint": {
         "files": 15,
-        "bytes": 140213,
-        "sha256": "518e8af1447dea24ae0b2d433de4f301df1a8b2f44f8175b1aa76b4414e6d56e"
+        "bytes": 141207,
+        "sha256": "1e83e935a78f72d090583b1f33da913027901f5e7b8015f31edf8125354fe91d"
       },
       "normalize_text_line_endings": true
     }
