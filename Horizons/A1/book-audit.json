@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "updated": "2026-11-01",
-  "status": "Vocabulary references and matching practice groups are adjacent; local source, layout and saved-PDF checks passed; publication pending",
+  "status": "Vocabulary word banks and matching practice groups are adjacent; source, saved-PDF and published-viewer verification passed",
   "authority": "Author delegates editorial authority; his own B2 book sets emotional direction. Preserve colourful learning objects and warm adult playfulness alongside coherent functional roles.",
   "scope": "Units1–8:32lessons,4pairedreviews,72corepages;51practicepages and4end-creditpages.127physicalpages, printed5–131. Front matter,index,workbook andoptionalannexes remainfuturework.",
   "baseline": {
@@ -385,8 +385,26 @@
       "standalone_and_assembled_number_and_alphabet_checks_passed": true
     },
     "live_viewer": {
-      "completed": false,
-      "status": "Pending deployment and readback."
+      "completed": true,
+      "content_commit": "b325a76e32cddc0c9a8b2bddff557bf0b16766a5",
+      "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=adjacent-b325a76e32cd",
+      "pages": 127,
+      "navigation_options": 57,
+      "topic_pairs": 38,
+      "exact_neighbour_header_links": 18,
+      "lesson_references": 75,
+      "images_decoded": 84,
+      "pictured_vocabulary_pages": 31,
+      "bank_activities": 147,
+      "blank_qr_spaces": 16,
+      "preserved_audio_controls": 90,
+      "print_controls_hidden": true,
+      "source_hash_matches": true,
+      "changed_files_match": 46,
+      "viewer_report": "Sources/Practice-adjacency-20261101/live-viewer-verification.json",
+      "file_report": "Sources/Practice-adjacency-20261101/live-file-verification.json",
+      "visual_report": "Sources/Practice-adjacency-20261101/live-visual-review.json",
+      "failures": []
     },
     "prior_release_evidence": "Sources/Practice-imagegen-20261101; historical edition only."
   },
@@ -537,9 +555,9 @@
         "Practice"
       ],
       "fingerprint": {
-        "files": 933,
-        "bytes": 677532564,
-        "sha256": "a3171bce5c9a9d5bf00acf66973ea8486206f11a0fc85b38a38776c04177e24b"
+        "files": 936,
+        "bytes": 677562583,
+        "sha256": "a2b46b0c256f5bb976fdc162b54357b3b0d7099b20039c42b70f8982d71b200f"
       },
       "normalize_text_line_endings": true
     },
@@ -586,8 +604,8 @@
       ],
       "fingerprint": {
         "files": 15,
-        "bytes": 142406,
-        "sha256": "4843d11f31c5343b07a1e43c502c55c4a4a949106273d3326ac6e2da0179366e"
+        "bytes": 143466,
+        "sha256": "5a9415332d4f8abaaec94b0e2030435c6058c13d945164895b07cc768f20e6c7"
       },
       "normalize_text_line_endings": true
     }

@@ -19,6 +19,12 @@
   "new_images_created": 0,
   "raster_and_audio_unchanged": true,
   "pdf_sha256": "0d6913c63c5f920b66faa970f722d59abead027d912e967bf0bbe0583ea71d1c",
-  "publication": "Pending content commit and live verification.",
+  "publication": {
+    "content_commit": "b325a76e32cddc0c9a8b2bddff557bf0b16766a5",
+    "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=adjacent-b325a76e32cd",
+    "viewer_checks_passed": true,
+    "published_files_match": 46,
+    "live_visual_review": "live-visual-review.json"
+  },
   "safety_branch": "safety/horizons-before-practice-adjacency-20261101"
 }

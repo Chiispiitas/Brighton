@@ -1,0 +1,775 @@
+{
+  "content_commit": "b325a76e32cddc0c9a8b2bddff557bf0b16766a5",
+  "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=adjacent-b325a76e32cd",
+  "checks": [
+    {
+      "name": "Deployed HTML matches saved source",
+      "pass": true,
+      "detail": 200
+    },
+    {
+      "name": "127 pages and57 navigation entries",
+      "pass": true,
+      "detail": {
+        "pages": 127,
+        "nav": 57,
+        "pairs": [
+          {
+            "topic": "vocabulary-greetings",
+            "study": "93",
+            "activity": "94",
+            "pass": true
+          },
+          {
+            "topic": "vocabulary-numbers",
+            "study": "93",
+            "activity": "94",
+            "pass": true
+          },
+          {
+            "topic": "vocabulary-alphabet",
+            "study": "93",
+            "activity": "94",
+            "pass": true
+          },
+          {
+            "topic": "vocabulary-occupations",
+            "study": "95",
+            "activity": "96",
+            "pass": true
+          },
+          {
+            "topic": "vocabulary-personal-information",
+            "study": "95",
+            "activity": "96",
+            "pass": true
+          },
+          {
+            "topic": "vocabulary-countries",
+            "study": "95",
+            "activity": "97",
+            "pass": true
+          },
+          {
+            "topic": "vocabulary-adjectives",
+            "study": "95",
+            "activity": "97",
+            "pass": true
+          },
+          {
+            "topic": "vocabulary-personal-items",
+            "study": "98",
+            "activity": "99",
+            "pass": true
+          },
+          {
+            "topic": "vocabulary-telling-time",
+            "study": "98",
+            "activity": "99",
+            "pass": true
+          },
+          {
+            "topic": "vocabulary-family-members",
+            "study": "98",
+            "activity": "100",
+            "pass": true
+          },
+          {
+            "topic": "vocabulary-colors",
+            "study": "98",
+            "activity": "100",
+            "pass": true
+          },
+          {
+            "topic": "vocabulary-daily-routines",
+            "study": "101",
+            "activity": "102",
+            "pass": true
+          },
+          {
+            "topic": "vocabulary-days-of-the-week",
+            "study": "101",
+            "activity": "103",
+            "pass": true
+          },
+          {
+            "topic": "vocabulary-place-adjectives-recall",
+            "study": "101",
+            "activity": "103",
+            "pass": true
+          },
+          {
+            "topic": "vocabulary-food-and-drink",
+            "study": "104",
+            "activity": "105",
+            "pass": true
+          },
+          {
+            "topic": "vocabulary-flavors",
+            "study": "104",
+            "activity": "105",
+            "pass": true
+          },
+          {
+            "topic": "vocabulary-cooking-verbs",
+            "study": "104",
+            "activity": "106",
+            "pass": true
+          },
+          {
+            "topic": "vocabulary-sharing-food",
+            "study": "104",
+            "activity": "106",
+            "pass": true
+          },
+          {
+            "topic": "vocabulary-clothes-and-accessories",
+            "study": "107",
+            "activity": "108",
+            "pass": true
+          },
+          {
+            "topic": "vocabulary-shopping-verbs",
+            "study": "107",
+            "activity": "108",
+            "pass": true
+          },
+          {
+            "topic": "vocabulary-places-in-town",
+            "study": "107",
+            "activity": "109",
+            "pass": true
+          },
+          {
+            "topic": "vocabulary-at-the-store",
+            "study": "107",
+            "activity": "109",
+            "pass": true
+          },
+          {
+            "topic": "vocabulary-places-in-town-2",
+            "study": "110",
+            "activity": "111",
+            "pass": true
+          },
+          {
+            "topic": "vocabulary-shopping-centers-and-attractions",
+            "study": "110",
+            "activity": "111",
+            "pass": true
+          },
+          {
+            "topic": "vocabulary-movement-and-directions",
+            "study": "112",
+            "activity": "113",
+            "pass": true
+          },
+          {
+            "topic": "vocabulary-rooms-and-furniture",
+            "study": "112",
+            "activity": "113",
+            "pass": true
+          },
+          {
+            "topic": "vocabulary-months",
+            "study": "114",
+            "activity": "115",
+            "pass": true
+          },
+          {
+            "topic": "vocabulary-dates-and-ordinal-numbers",
+            "study": "114",
+            "activity": "115",
+            "pass": true
+          },
+          {
+            "topic": "vocabulary-past-time-expressions",
+            "study": "114",
+            "activity": "115",
+            "pass": true
+          },
+          {
+            "topic": "vocabulary-music",
+            "study": "116",
+            "activity": "117",
+            "pass": true
+          },
+          {
+            "topic": "vocabulary-irregular-past-verbs",
+            "study": "116",
+            "activity": "117",
+            "pass": true
+          },
+          {
+            "topic": "vocabulary-sequencing-words",
+            "study": "116",
+            "activity": "117",
+            "pass": true
+          },
+          {
+            "topic": "vocabulary-travel-verbs",
+            "study": "118",
+            "activity": "119",
+            "pass": true
+          },
+          {
+            "topic": "vocabulary-animals",
+            "study": "118",
+            "activity": "119",
+            "pass": true
+          },
+          {
+            "topic": "vocabulary-weather-and-seasons",
+            "study": "120",
+            "activity": "121",
+            "pass": true
+          },
+          {
+            "topic": "vocabulary-body-parts",
+            "study": "122",
+            "activity": "123",
+            "pass": true
+          },
+          {
+            "topic": "vocabulary-health-complaints",
+            "study": "122",
+            "activity": "123",
+            "pass": true
+          },
+          {
+            "topic": "vocabulary-phone-and-ticket-language",
+            "study": "122",
+            "activity": "123",
+            "pass": true
+          }
+        ],
+        "headers": [
+          {
+            "practice": "94",
+            "bank": "93",
+            "pass": true
+          },
+          {
+            "practice": "96",
+            "bank": "95",
+            "pass": true
+          },
+          {
+            "practice": "97",
+            "bank": "95",
+            "pass": true
+          },
+          {
+            "practice": "99",
+            "bank": "98",
+            "pass": true
+          },
+          {
+            "practice": "100",
+            "bank": "98",
+            "pass": true
+          },
+          {
+            "practice": "102",
+            "bank": "101",
+            "pass": true
+          },
+          {
+            "practice": "103",
+            "bank": "101",
+            "pass": true
+          },
+          {
+            "practice": "105",
+            "bank": "104",
+            "pass": true
+          },
+          {
+            "practice": "106",
+            "bank": "104",
+            "pass": true
+          },
+          {
+            "practice": "108",
+            "bank": "107",
+            "pass": true
+          },
+          {
+            "practice": "109",
+            "bank": "107",
+            "pass": true
+          },
+          {
+            "practice": "111",
+            "bank": "110",
+            "pass": true
+          },
+          {
+            "practice": "113",
+            "bank": "112",
+            "pass": true
+          },
+          {
+            "practice": "115",
+            "bank": "114",
+            "pass": true
+          },
+          {
+            "practice": "117",
+            "bank": "116",
+            "pass": true
+          },
+          {
+            "practice": "119",
+            "bank": "118",
+            "pass": true
+          },
+          {
+            "practice": "121",
+            "bank": "120",
+            "pass": true
+          },
+          {
+            "practice": "123",
+            "bank": "122",
+            "pass": true
+          }
+        ],
+        "images": 84,
+        "images_decode": true,
+        "pictured_vocabulary_pages": 31,
+        "reference_count": 75,
+        "references_valid": true,
+        "activities": 147,
+        "qr": 16,
+        "audio": 90
+      }
+    },
+    {
+      "name": "38 references immediately lead into matching practice groups",
+      "pass": true,
+      "detail": [
+        {
+          "topic": "vocabulary-greetings",
+          "study": "93",
+          "activity": "94",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-numbers",
+          "study": "93",
+          "activity": "94",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-alphabet",
+          "study": "93",
+          "activity": "94",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-occupations",
+          "study": "95",
+          "activity": "96",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-personal-information",
+          "study": "95",
+          "activity": "96",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-countries",
+          "study": "95",
+          "activity": "97",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-adjectives",
+          "study": "95",
+          "activity": "97",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-personal-items",
+          "study": "98",
+          "activity": "99",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-telling-time",
+          "study": "98",
+          "activity": "99",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-family-members",
+          "study": "98",
+          "activity": "100",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-colors",
+          "study": "98",
+          "activity": "100",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-daily-routines",
+          "study": "101",
+          "activity": "102",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-days-of-the-week",
+          "study": "101",
+          "activity": "103",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-place-adjectives-recall",
+          "study": "101",
+          "activity": "103",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-food-and-drink",
+          "study": "104",
+          "activity": "105",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-flavors",
+          "study": "104",
+          "activity": "105",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-cooking-verbs",
+          "study": "104",
+          "activity": "106",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-sharing-food",
+          "study": "104",
+          "activity": "106",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-clothes-and-accessories",
+          "study": "107",
+          "activity": "108",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-shopping-verbs",
+          "study": "107",
+          "activity": "108",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-places-in-town",
+          "study": "107",
+          "activity": "109",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-at-the-store",
+          "study": "107",
+          "activity": "109",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-places-in-town-2",
+          "study": "110",
+          "activity": "111",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-shopping-centers-and-attractions",
+          "study": "110",
+          "activity": "111",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-movement-and-directions",
+          "study": "112",
+          "activity": "113",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-rooms-and-furniture",
+          "study": "112",
+          "activity": "113",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-months",
+          "study": "114",
+          "activity": "115",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-dates-and-ordinal-numbers",
+          "study": "114",
+          "activity": "115",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-past-time-expressions",
+          "study": "114",
+          "activity": "115",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-music",
+          "study": "116",
+          "activity": "117",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-irregular-past-verbs",
+          "study": "116",
+          "activity": "117",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-sequencing-words",
+          "study": "116",
+          "activity": "117",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-travel-verbs",
+          "study": "118",
+          "activity": "119",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-animals",
+          "study": "118",
+          "activity": "119",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-weather-and-seasons",
+          "study": "120",
+          "activity": "121",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-body-parts",
+          "study": "122",
+          "activity": "123",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-health-complaints",
+          "study": "122",
+          "activity": "123",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-phone-and-ticket-language",
+          "study": "122",
+          "activity": "123",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "name": "18 activity headers return to their exact adjacent bank",
+      "pass": true,
+      "detail": [
+        {
+          "practice": "94",
+          "bank": "93",
+          "pass": true
+        },
+        {
+          "practice": "96",
+          "bank": "95",
+          "pass": true
+        },
+        {
+          "practice": "97",
+          "bank": "95",
+          "pass": true
+        },
+        {
+          "practice": "99",
+          "bank": "98",
+          "pass": true
+        },
+        {
+          "practice": "100",
+          "bank": "98",
+          "pass": true
+        },
+        {
+          "practice": "102",
+          "bank": "101",
+          "pass": true
+        },
+        {
+          "practice": "103",
+          "bank": "101",
+          "pass": true
+        },
+        {
+          "practice": "105",
+          "bank": "104",
+          "pass": true
+        },
+        {
+          "practice": "106",
+          "bank": "104",
+          "pass": true
+        },
+        {
+          "practice": "108",
+          "bank": "107",
+          "pass": true
+        },
+        {
+          "practice": "109",
+          "bank": "107",
+          "pass": true
+        },
+        {
+          "practice": "111",
+          "bank": "110",
+          "pass": true
+        },
+        {
+          "practice": "113",
+          "bank": "112",
+          "pass": true
+        },
+        {
+          "practice": "115",
+          "bank": "114",
+          "pass": true
+        },
+        {
+          "practice": "117",
+          "bank": "116",
+          "pass": true
+        },
+        {
+          "practice": "119",
+          "bank": "118",
+          "pass": true
+        },
+        {
+          "practice": "121",
+          "bank": "120",
+          "pass": true
+        },
+        {
+          "practice": "123",
+          "bank": "122",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "name": "84 image uses decode and all31 vocabulary pages pictured",
+      "pass": true,
+      "detail": {
+        "images": 84,
+        "pictured_pages": 31
+      }
+    },
+    {
+      "name": "75 lesson reference page numbers resolve",
+      "pass": true,
+      "detail": 75
+    },
+    {
+      "name": "147 activities,16 QR spaces and90 audio controls preserved",
+      "pass": true,
+      "detail": {
+        "activities": 147,
+        "qr": 16,
+        "audio": 90
+      }
+    },
+    {
+      "name": "Word bank93 opens practice94",
+      "pass": true,
+      "detail": "#activity-vocabulary-greetings"
+    },
+    {
+      "name": "Standalone V8 bank122 opens practice123",
+      "pass": true,
+      "detail": "https://exams.bebrighton.net/Horizons/A1/Practice/Vocabulary/V8.html#activity-vocabulary-body-parts"
+    },
+    {
+      "name": "Audio and reader controls hidden for print",
+      "pass": true
+    }
+  ],
+  "screenshots": [
+    {
+      "page": 93,
+      "file": "page-93.png"
+    },
+    {
+      "page": 94,
+      "file": "page-94.png"
+    },
+    {
+      "page": 95,
+      "file": "page-95.png"
+    },
+    {
+      "page": 96,
+      "file": "page-96.png"
+    },
+    {
+      "page": 110,
+      "file": "page-110.png"
+    },
+    {
+      "page": 111,
+      "file": "page-111.png"
+    },
+    {
+      "page": 112,
+      "file": "page-112.png"
+    },
+    {
+      "page": 113,
+      "file": "page-113.png"
+    },
+    {
+      "page": 118,
+      "file": "page-118.png"
+    },
+    {
+      "page": 119,
+      "file": "page-119.png"
+    },
+    {
+      "page": 120,
+      "file": "page-120.png"
+    },
+    {
+      "page": 121,
+      "file": "page-121.png"
+    },
+    {
+      "page": 122,
+      "file": "page-122.png"
+    },
+    {
+      "page": 123,
+      "file": "page-123.png"
+    }
+  ],
+  "failures": [],
+  "passed": true
+}
