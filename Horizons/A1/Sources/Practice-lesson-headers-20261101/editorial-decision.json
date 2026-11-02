@@ -1,0 +1,16 @@
+{
+  "request": "Same header and lesson number as main lesson, with a different color; split pages covering multiple lessons.",
+  "implementation": "Every grammar/vocabulary page contains one actual main lesson code, title and objectives, with matching header geometry and typography. Grammar blue #245b9a; vocabulary green #247348.",
+  "lesson_groups": {
+    "grammar": 27,
+    "vocabulary": 32
+  },
+  "header_pages": 76,
+  "word_banks": "All43 lesson-specific references stay on the same page as, or immediately before, their matching tasks.38 canonical topics retain404 required within-topic items; shared topics recur intentionally.",
+  "preservation": "135 original grammar/vocabulary tasks and corresponding keys preserved and renumbered by lesson;12 practical tasks unchanged. Core only receives corrected Go-to links.",
+  "artwork": "10 new built-in imagegen teaching cues; native bytes and transparency retained. No generated replacement typography.",
+  "reversibility": {
+    "baseline": "ad73e4b64900537e69ad9c09baae21b3a982b184",
+    "safety_branch": "safety/horizons-before-practice-lesson-headers-20261101"
+  }
+}

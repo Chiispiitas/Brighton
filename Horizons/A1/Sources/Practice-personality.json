@@ -7,7 +7,8 @@
       "file": "Practice/Grammar/G1.html",
       "printed_pages": [
         77,
-        78
+        78,
+        79
       ],
       "visual_idea": "Complete positive/negative/yes-no be chart; not insertion and word-order swap arrows; short answers; sound circles, contraction arrows and capital-use labels.",
       "protected_elements": [
@@ -17,7 +18,11 @@
         "Exact topic anchors and lesson-return links",
         "Blank future Blooket QR area clear of text, images and response fields",
         "Concise charts, arrows, short labels and complete sentence models; no inline explanatory rule prose",
-        "No pictorial SVG/CSS substitutes; imagegen objects/scenes must preserve exact task evidence, whole subjects and useful scale"
+        "No pictorial SVG/CSS substitutes; imagegen objects/scenes must preserve exact task evidence, whole subjects and useful scale",
+        "Correct main-lesson number and exact header typography",
+        "No mixed-lesson practice page",
+        "Original activities and controlled answers, renumbered within their own lesson",
+        "Reference and practice on the same or immediately adjacent lesson-specific page"
       ],
       "topic_anchors": [
         "grammar-verb-to-be",
@@ -35,14 +40,57 @@
       "imagegen_art": {
         "policy": "All pictorial teaching assets use built-in imagegen; native words/charts/arrows/callouts/response grids remain live.",
         "active_files": []
-      }
+      },
+      "lessons": [
+        {
+          "code": "1A",
+          "pages": [
+            77
+          ]
+        },
+        {
+          "code": "1B",
+          "pages": [
+            78
+          ]
+        },
+        {
+          "code": "1D",
+          "pages": [
+            79
+          ]
+        }
+      ],
+      "header": "Actual main-lesson header, exact title, objective and code; grammar blue or vocabulary green; one source lesson per page.",
+      "lesson_pages": [
+        {
+          "lesson": "1A",
+          "page": 77,
+          "role": "activity",
+          "pictures": 0
+        },
+        {
+          "lesson": "1B",
+          "page": 78,
+          "role": "activity",
+          "pictures": 0
+        },
+        {
+          "lesson": "1D",
+          "page": 79,
+          "role": "activity",
+          "pictures": 0
+        }
+      ]
     },
     {
       "code": "G2",
       "file": "Practice/Grammar/G2.html",
       "printed_pages": [
-        79,
-        80
+        80,
+        81,
+        82,
+        83
       ],
       "visual_idea": "Imagegen photographs, textured objects or purposeful cutouts support the topic; Near/far and one/many visual zones; first-mention to known-item arrow; ownership chains; English/Spanish adjective-position mappings.",
       "protected_elements": [
@@ -52,7 +100,11 @@
         "Exact topic anchors and lesson-return links",
         "Blank future Blooket QR area clear of text, images and response fields",
         "Concise charts, arrows, short labels and complete sentence models; no inline explanatory rule prose",
-        "No pictorial SVG/CSS substitutes; imagegen objects/scenes must preserve exact task evidence, whole subjects and useful scale"
+        "No pictorial SVG/CSS substitutes; imagegen objects/scenes must preserve exact task evidence, whole subjects and useful scale",
+        "Correct main-lesson number and exact header typography",
+        "No mixed-lesson practice page",
+        "Original activities and controlled answers, renumbered within their own lesson",
+        "Reference and practice on the same or immediately adjacent lesson-specific page"
       ],
       "topic_anchors": [
         "grammar-this-that-these-those",
@@ -72,14 +124,69 @@
         "active_files": [
           "Photo-practice/G2-personal-items-v1.png"
         ]
-      }
+      },
+      "lessons": [
+        {
+          "code": "2A",
+          "pages": [
+            80
+          ]
+        },
+        {
+          "code": "2B",
+          "pages": [
+            81
+          ]
+        },
+        {
+          "code": "2C",
+          "pages": [
+            82
+          ]
+        },
+        {
+          "code": "2D",
+          "pages": [
+            83
+          ]
+        }
+      ],
+      "header": "Actual main-lesson header, exact title, objective and code; grammar blue or vocabulary green; one source lesson per page.",
+      "lesson_pages": [
+        {
+          "lesson": "2A",
+          "page": 80,
+          "role": "activity",
+          "pictures": 1
+        },
+        {
+          "lesson": "2B",
+          "page": 81,
+          "role": "activity",
+          "pictures": 0
+        },
+        {
+          "lesson": "2C",
+          "page": 82,
+          "role": "activity",
+          "pictures": 0
+        },
+        {
+          "lesson": "2D",
+          "page": 83,
+          "role": "activity",
+          "pictures": 0
+        }
+      ]
     },
     {
       "code": "G3",
       "file": "Practice/Grammar/G3.html",
       "printed_pages": [
-        81,
-        82
+        84,
+        85,
+        86,
+        87
       ],
       "visual_idea": "Compact third-person ending strip; one parallel form/short-answer chart; base-verb arrow; question-word, frequency-dot and time-order diagrams.",
       "protected_elements": [
@@ -89,7 +196,11 @@
         "Exact topic anchors and lesson-return links",
         "Blank future Blooket QR area clear of text, images and response fields",
         "Concise charts, arrows, short labels and complete sentence models; no inline explanatory rule prose",
-        "No pictorial SVG/CSS substitutes; imagegen objects/scenes must preserve exact task evidence, whole subjects and useful scale"
+        "No pictorial SVG/CSS substitutes; imagegen objects/scenes must preserve exact task evidence, whole subjects and useful scale",
+        "Correct main-lesson number and exact header typography",
+        "No mixed-lesson practice page",
+        "Original activities and controlled answers, renumbered within their own lesson",
+        "Reference and practice on the same or immediately adjacent lesson-specific page"
       ],
       "topic_anchors": [
         "grammar-present-simple-affirmative",
@@ -108,14 +219,69 @@
       "imagegen_art": {
         "policy": "All pictorial teaching assets use built-in imagegen; native words/charts/arrows/callouts/response grids remain live.",
         "active_files": []
-      }
+      },
+      "lessons": [
+        {
+          "code": "3A",
+          "pages": [
+            84
+          ]
+        },
+        {
+          "code": "3B",
+          "pages": [
+            85
+          ]
+        },
+        {
+          "code": "3C",
+          "pages": [
+            86
+          ]
+        },
+        {
+          "code": "3D",
+          "pages": [
+            87
+          ]
+        }
+      ],
+      "header": "Actual main-lesson header, exact title, objective and code; grammar blue or vocabulary green; one source lesson per page.",
+      "lesson_pages": [
+        {
+          "lesson": "3A",
+          "page": 84,
+          "role": "activity",
+          "pictures": 0
+        },
+        {
+          "lesson": "3B",
+          "page": 85,
+          "role": "activity",
+          "pictures": 0
+        },
+        {
+          "lesson": "3C",
+          "page": 86,
+          "role": "activity",
+          "pictures": 0
+        },
+        {
+          "lesson": "3D",
+          "page": 87,
+          "role": "activity",
+          "pictures": 0
+        }
+      ]
     },
     {
       "code": "G4",
       "file": "Practice/Grammar/G4.html",
       "printed_pages": [
-        83,
-        84
+        88,
+        89,
+        90,
+        91
       ],
       "visual_idea": "Imagegen photographs, textured objects or purposeful cutouts support the topic; Countability pictures; subject-to-object replacement arrows; quantity dots and enough placement; reason-to-result models.",
       "protected_elements": [
@@ -125,7 +291,11 @@
         "Exact topic anchors and lesson-return links",
         "Blank future Blooket QR area clear of text, images and response fields",
         "Concise charts, arrows, short labels and complete sentence models; no inline explanatory rule prose",
-        "No pictorial SVG/CSS substitutes; imagegen objects/scenes must preserve exact task evidence, whole subjects and useful scale"
+        "No pictorial SVG/CSS substitutes; imagegen objects/scenes must preserve exact task evidence, whole subjects and useful scale",
+        "Correct main-lesson number and exact header typography",
+        "No mixed-lesson practice page",
+        "Original activities and controlled answers, renumbered within their own lesson",
+        "Reference and practice on the same or immediately adjacent lesson-specific page"
       ],
       "topic_anchors": [
         "grammar-countable-and-uncountable-nouns",
@@ -146,14 +316,68 @@
           "Photo-practice/G4-countability-v1.png",
           "Photo-practice/G4-tomato-quantities-v1.png"
         ]
-      }
+      },
+      "lessons": [
+        {
+          "code": "4A",
+          "pages": [
+            88
+          ]
+        },
+        {
+          "code": "4B",
+          "pages": [
+            89
+          ]
+        },
+        {
+          "code": "4C",
+          "pages": [
+            90
+          ]
+        },
+        {
+          "code": "4D",
+          "pages": [
+            91
+          ]
+        }
+      ],
+      "header": "Actual main-lesson header, exact title, objective and code; grammar blue or vocabulary green; one source lesson per page.",
+      "lesson_pages": [
+        {
+          "lesson": "4A",
+          "page": 88,
+          "role": "activity",
+          "pictures": 3
+        },
+        {
+          "lesson": "4B",
+          "page": 89,
+          "role": "activity",
+          "pictures": 0
+        },
+        {
+          "lesson": "4C",
+          "page": 90,
+          "role": "activity",
+          "pictures": 3
+        },
+        {
+          "lesson": "4D",
+          "page": 91,
+          "role": "activity",
+          "pictures": 0
+        }
+      ]
     },
     {
       "code": "G5",
       "file": "Practice/Grammar/G5.html",
       "printed_pages": [
-        85,
-        86
+        92,
+        93,
+        94
       ],
       "visual_idea": "Imagegen photographs, textured objects or purposeful cutouts support the topic; One present-continuous form chart with word-change arrows; usual/now models; bag scale and frequency counts.",
       "protected_elements": [
@@ -163,7 +387,11 @@
         "Exact topic anchors and lesson-return links",
         "Blank future Blooket QR area clear of text, images and response fields",
         "Concise charts, arrows, short labels and complete sentence models; no inline explanatory rule prose",
-        "No pictorial SVG/CSS substitutes; imagegen objects/scenes must preserve exact task evidence, whole subjects and useful scale"
+        "No pictorial SVG/CSS substitutes; imagegen objects/scenes must preserve exact task evidence, whole subjects and useful scale",
+        "Correct main-lesson number and exact header typography",
+        "No mixed-lesson practice page",
+        "Original activities and controlled answers, renumbered within their own lesson",
+        "Reference and practice on the same or immediately adjacent lesson-specific page"
       ],
       "topic_anchors": [
         "grammar-present-continuous",
@@ -182,14 +410,56 @@
         "active_files": [
           "Photo-practice/G5-bag-size-v1.png"
         ]
-      }
+      },
+      "lessons": [
+        {
+          "code": "5A",
+          "pages": [
+            92
+          ]
+        },
+        {
+          "code": "5B",
+          "pages": [
+            93
+          ]
+        },
+        {
+          "code": "5C",
+          "pages": [
+            94
+          ]
+        }
+      ],
+      "header": "Actual main-lesson header, exact title, objective and code; grammar blue or vocabulary green; one source lesson per page.",
+      "lesson_pages": [
+        {
+          "lesson": "5A",
+          "page": 92,
+          "role": "activity",
+          "pictures": 0
+        },
+        {
+          "lesson": "5B",
+          "page": 93,
+          "role": "activity",
+          "pictures": 1
+        },
+        {
+          "lesson": "5C",
+          "page": 94,
+          "role": "activity",
+          "pictures": 0
+        }
+      ]
     },
     {
       "code": "G6",
       "file": "Practice/Grammar/G6.html",
       "printed_pages": [
-        87,
-        88
+        95,
+        96,
+        97
       ],
       "visual_idea": "Imagegen photographs, textured objects or purposeful cutouts support the topic; Spatial box diagrams and route arrows; one compact can form chart with base-verb contrasts.",
       "protected_elements": [
@@ -199,7 +469,11 @@
         "Exact topic anchors and lesson-return links",
         "Blank future Blooket QR area clear of text, images and response fields",
         "Concise charts, arrows, short labels and complete sentence models; no inline explanatory rule prose",
-        "No pictorial SVG/CSS substitutes; imagegen objects/scenes must preserve exact task evidence, whole subjects and useful scale"
+        "No pictorial SVG/CSS substitutes; imagegen objects/scenes must preserve exact task evidence, whole subjects and useful scale",
+        "Correct main-lesson number and exact header typography",
+        "No mixed-lesson practice page",
+        "Original activities and controlled answers, renumbered within their own lesson",
+        "Reference and practice on the same or immediately adjacent lesson-specific page"
       ],
       "topic_anchors": [
         "grammar-prepositions-of-place",
@@ -219,14 +493,56 @@
           "Photo-practice/G6-crossroads-v1.png",
           "Photo-practice/G6-prepositions-v2.png"
         ]
-      }
+      },
+      "lessons": [
+        {
+          "code": "6B",
+          "pages": [
+            95
+          ]
+        },
+        {
+          "code": "6C",
+          "pages": [
+            96
+          ]
+        },
+        {
+          "code": "6D",
+          "pages": [
+            97
+          ]
+        }
+      ],
+      "header": "Actual main-lesson header, exact title, objective and code; grammar blue or vocabulary green; one source lesson per page.",
+      "lesson_pages": [
+        {
+          "lesson": "6B",
+          "page": 95,
+          "role": "activity",
+          "pictures": 6
+        },
+        {
+          "lesson": "6C",
+          "page": 96,
+          "role": "activity",
+          "pictures": 1
+        },
+        {
+          "lesson": "6D",
+          "page": 97,
+          "role": "activity",
+          "pictures": 0
+        }
+      ]
     },
     {
       "code": "G7",
       "file": "Practice/Grammar/G7.html",
       "printed_pages": [
-        89,
-        90
+        98,
+        99,
+        100
       ],
       "visual_idea": "Yesterday/today givens; was/were form chart; date calendar; one past-simple chart with did/base-verb and spelling arrows.",
       "protected_elements": [
@@ -236,7 +552,11 @@
         "Exact topic anchors and lesson-return links",
         "Blank future Blooket QR area clear of text, images and response fields",
         "Concise charts, arrows, short labels and complete sentence models; no inline explanatory rule prose",
-        "No pictorial SVG/CSS substitutes; imagegen objects/scenes must preserve exact task evidence, whole subjects and useful scale"
+        "No pictorial SVG/CSS substitutes; imagegen objects/scenes must preserve exact task evidence, whole subjects and useful scale",
+        "Correct main-lesson number and exact header typography",
+        "No mixed-lesson practice page",
+        "Original activities and controlled answers, renumbered within their own lesson",
+        "Reference and practice on the same or immediately adjacent lesson-specific page"
       ],
       "topic_anchors": [
         "grammar-past-of-be",
@@ -253,14 +573,56 @@
       "imagegen_art": {
         "policy": "All pictorial teaching assets use built-in imagegen; native words/charts/arrows/callouts/response grids remain live.",
         "active_files": []
-      }
+      },
+      "lessons": [
+        {
+          "code": "7A",
+          "pages": [
+            98
+          ]
+        },
+        {
+          "code": "7B",
+          "pages": [
+            99
+          ]
+        },
+        {
+          "code": "7C",
+          "pages": [
+            100
+          ]
+        }
+      ],
+      "header": "Actual main-lesson header, exact title, objective and code; grammar blue or vocabulary green; one source lesson per page.",
+      "lesson_pages": [
+        {
+          "lesson": "7A",
+          "page": 98,
+          "role": "activity",
+          "pictures": 0
+        },
+        {
+          "lesson": "7B",
+          "page": 99,
+          "role": "activity",
+          "pictures": 0
+        },
+        {
+          "lesson": "7C",
+          "page": 100,
+          "role": "activity",
+          "pictures": 0
+        }
+      ]
     },
     {
       "code": "G8",
       "file": "Practice/Grammar/G8.html",
       "printed_pages": [
-        91,
-        92
+        101,
+        102,
+        103
       ],
       "visual_idea": "Imagegen photographs, textured objects or purposeful cutouts support the topic; Travel route and irregular-past form chart; should form chart; subject/health and one/many body-part mappings.",
       "protected_elements": [
@@ -270,7 +632,11 @@
         "Exact topic anchors and lesson-return links",
         "Blank future Blooket QR area clear of text, images and response fields",
         "Concise charts, arrows, short labels and complete sentence models; no inline explanatory rule prose",
-        "No pictorial SVG/CSS substitutes; imagegen objects/scenes must preserve exact task evidence, whole subjects and useful scale"
+        "No pictorial SVG/CSS substitutes; imagegen objects/scenes must preserve exact task evidence, whole subjects and useful scale",
+        "Correct main-lesson number and exact header typography",
+        "No mixed-lesson practice page",
+        "Original activities and controlled answers, renumbered within their own lesson",
+        "Reference and practice on the same or immediately adjacent lesson-specific page"
       ],
       "topic_anchors": [
         "grammar-past-simple-travel-verbs",
@@ -289,17 +655,60 @@
         "active_files": [
           "Photo-practice/G8-trip-record-v1.png"
         ]
-      }
+      },
+      "lessons": [
+        {
+          "code": "8A",
+          "pages": [
+            101
+          ]
+        },
+        {
+          "code": "8B",
+          "pages": [
+            102
+          ]
+        },
+        {
+          "code": "8C",
+          "pages": [
+            103
+          ]
+        }
+      ],
+      "header": "Actual main-lesson header, exact title, objective and code; grammar blue or vocabulary green; one source lesson per page.",
+      "lesson_pages": [
+        {
+          "lesson": "8A",
+          "page": 101,
+          "role": "activity",
+          "pictures": 1
+        },
+        {
+          "lesson": "8B",
+          "page": 102,
+          "role": "activity",
+          "pictures": 0
+        },
+        {
+          "lesson": "8C",
+          "page": 103,
+          "role": "activity",
+          "pictures": 0
+        }
+      ]
     },
     {
       "code": "V1",
       "file": "Practice/Vocabulary/V1.html",
       "printed_pages": [
-        93,
-        94,
-        95,
-        96,
-        97
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110
       ],
       "visual_idea": "Imagegen photographs, textured objects or purposeful cutouts support the topic; Study-first greeting/time pairs, a fictional personal-information form, the complete alphabet and numbers, jobs, nationality pairs and adjective contrasts. Original greeting role cards, locker/name codes, mixed-up club card, duty-board repair, country mail routing and adjective room-message challenges.",
       "protected_elements": [
@@ -314,7 +723,11 @@
         "Cover the word bank as well as the task resource during memory games",
         "Unit vocabulary Blooket reservation on the first study page",
         "No pictorial SVG/CSS substitutes; imagegen objects/scenes must preserve exact task evidence, whole subjects and useful scale",
-        "Every study and activity page contains useful topic-specific imagegen imagery; tables/grids alone do not count"
+        "Every study and activity page contains useful topic-specific imagegen imagery; tables/grids alone do not count",
+        "Correct main-lesson number and exact header typography",
+        "No mixed-lesson practice page",
+        "Original activities and controlled answers, renumbered within their own lesson",
+        "Reference and practice on the same or immediately adjacent lesson-specific page"
       ],
       "topic_anchors": [
         "vocabulary-greetings",
@@ -333,13 +746,17 @@
         "locator_pt": 8.5
       },
       "study_pages": [
-        93,
-        95
+        104,
+        106,
+        108,
+        110
       ],
       "activity_pages": [
-        94,
-        96,
-        97
+        105,
+        107,
+        108,
+        109,
+        110
       ],
       "imagegen_art": {
         "policy": "All pictorial teaching assets use built-in imagegen; native words/charts/arrows/callouts/response grids remain live.",
@@ -350,15 +767,94 @@
           "Photo-practice/V1-study-greetings-v1.png",
           "Photo-practice/V1-study-jobs-v1.png"
         ]
-      }
+      },
+      "lessons": [
+        {
+          "code": "1A",
+          "pages": [
+            104,
+            105
+          ]
+        },
+        {
+          "code": "1B",
+          "pages": [
+            106,
+            107
+          ]
+        },
+        {
+          "code": "1C",
+          "pages": [
+            108,
+            109
+          ]
+        },
+        {
+          "code": "1D",
+          "pages": [
+            110
+          ]
+        }
+      ],
+      "header": "Actual main-lesson header, exact title, objective and code; grammar blue or vocabulary green; one source lesson per page.",
+      "lesson_pages": [
+        {
+          "lesson": "1A",
+          "page": 104,
+          "role": "study",
+          "pictures": 1
+        },
+        {
+          "lesson": "1A",
+          "page": 105,
+          "role": "activity",
+          "pictures": 1
+        },
+        {
+          "lesson": "1B",
+          "page": 106,
+          "role": "study",
+          "pictures": 1
+        },
+        {
+          "lesson": "1B",
+          "page": 107,
+          "role": "activity",
+          "pictures": 1
+        },
+        {
+          "lesson": "1C",
+          "page": 108,
+          "role": "combined",
+          "pictures": 1
+        },
+        {
+          "lesson": "1C",
+          "page": 109,
+          "role": "activity",
+          "pictures": 1
+        },
+        {
+          "lesson": "1D",
+          "page": 110,
+          "role": "combined",
+          "pictures": 1
+        }
+      ],
+      "combined_pages": [
+        108,
+        110
+      ]
     },
     {
       "code": "V2",
       "file": "Practice/Vocabulary/V2.html",
       "printed_pages": [
-        98,
-        99,
-        100
+        111,
+        112,
+        113,
+        114
       ],
       "visual_idea": "Imagegen photographs, textured objects or purposeful cutouts support the topic; Study-first personal-item chunks, digital time/hour examples, family relationship mappings and labeled color splashes. Fresh seven-object owner/memory puzzle, a timetable/clock decision, private family chat and an adjacency color trail.",
       "protected_elements": [
@@ -373,7 +869,11 @@
         "Cover the word bank as well as the task resource during memory games",
         "Unit vocabulary Blooket reservation on the first study page",
         "No pictorial SVG/CSS substitutes; imagegen objects/scenes must preserve exact task evidence, whole subjects and useful scale",
-        "Every study and activity page contains useful topic-specific imagegen imagery; tables/grids alone do not count"
+        "Every study and activity page contains useful topic-specific imagegen imagery; tables/grids alone do not count",
+        "Correct main-lesson number and exact header typography",
+        "No mixed-lesson practice page",
+        "Original activities and controlled answers, renumbered within their own lesson",
+        "Reference and practice on the same or immediately adjacent lesson-specific page"
       ],
       "topic_anchors": [
         "vocabulary-personal-items",
@@ -389,11 +889,16 @@
         "locator_pt": 8.5
       },
       "study_pages": [
-        98
+        111,
+        112,
+        113,
+        114
       ],
       "activity_pages": [
-        99,
-        100
+        111,
+        112,
+        113,
+        114
       ],
       "imagegen_art": {
         "policy": "All pictorial teaching assets use built-in imagegen; native words/charts/arrows/callouts/response grids remain live.",
@@ -403,15 +908,77 @@
           "Photo-practice/V2-color-trail-v1.png",
           "Photo-practice/V2-study-colors-v1.png"
         ]
-      }
+      },
+      "lessons": [
+        {
+          "code": "2A",
+          "pages": [
+            111
+          ]
+        },
+        {
+          "code": "2B",
+          "pages": [
+            112
+          ]
+        },
+        {
+          "code": "2C",
+          "pages": [
+            113
+          ]
+        },
+        {
+          "code": "2D",
+          "pages": [
+            114
+          ]
+        }
+      ],
+      "header": "Actual main-lesson header, exact title, objective and code; grammar blue or vocabulary green; one source lesson per page.",
+      "lesson_pages": [
+        {
+          "lesson": "2A",
+          "page": 111,
+          "role": "combined",
+          "pictures": 1
+        },
+        {
+          "lesson": "2B",
+          "page": 112,
+          "role": "combined",
+          "pictures": 4
+        },
+        {
+          "lesson": "2C",
+          "page": 113,
+          "role": "combined",
+          "pictures": 1
+        },
+        {
+          "lesson": "2D",
+          "page": 114,
+          "role": "combined",
+          "pictures": 11
+        }
+      ],
+      "combined_pages": [
+        111,
+        112,
+        113,
+        114
+      ]
     },
     {
       "code": "V3",
       "file": "Practice/Vocabulary/V3.html",
       "printed_pages": [
-        101,
-        102,
-        103
+        115,
+        116,
+        117,
+        118,
+        119,
+        120
       ],
       "visual_idea": "Imagegen photographs, textured objects or purposeful cutouts support the topic; Study-first routine chunk groups, weekday/weekend examples and place-adjective contrasts. Fresh four-action photo-plan mystery with timetable evidence, secret time changes, weekly-plan spelling/deduction and a budget/preference room decision.",
       "protected_elements": [
@@ -426,7 +993,11 @@
         "Cover the word bank as well as the task resource during memory games",
         "Unit vocabulary Blooket reservation on the first study page",
         "No pictorial SVG/CSS substitutes; imagegen objects/scenes must preserve exact task evidence, whole subjects and useful scale",
-        "Every study and activity page contains useful topic-specific imagegen imagery; tables/grids alone do not count"
+        "Every study and activity page contains useful topic-specific imagegen imagery; tables/grids alone do not count",
+        "Correct main-lesson number and exact header typography",
+        "No mixed-lesson practice page",
+        "Original activities and controlled answers, renumbered within their own lesson",
+        "Reference and practice on the same or immediately adjacent lesson-specific page"
       ],
       "topic_anchors": [
         "vocabulary-daily-routines",
@@ -441,11 +1012,16 @@
         "locator_pt": 8.5
       },
       "study_pages": [
-        101
+        115,
+        117,
+        118,
+        120
       ],
       "activity_pages": [
-        102,
-        103
+        116,
+        117,
+        119,
+        120
       ],
       "imagegen_art": {
         "policy": "All pictorial teaching assets use built-in imagegen; native words/charts/arrows/callouts/response grids remain live.",
@@ -454,15 +1030,88 @@
           "Photo-practice/V3-room-choices-v1.png",
           "Photo-practice/V3-study-routines-v1.png"
         ]
-      }
+      },
+      "lessons": [
+        {
+          "code": "3A",
+          "pages": [
+            115,
+            116
+          ]
+        },
+        {
+          "code": "3B",
+          "pages": [
+            117
+          ]
+        },
+        {
+          "code": "3C",
+          "pages": [
+            118,
+            119
+          ]
+        },
+        {
+          "code": "3D",
+          "pages": [
+            120
+          ]
+        }
+      ],
+      "header": "Actual main-lesson header, exact title, objective and code; grammar blue or vocabulary green; one source lesson per page.",
+      "lesson_pages": [
+        {
+          "lesson": "3A",
+          "page": 115,
+          "role": "study",
+          "pictures": 1
+        },
+        {
+          "lesson": "3A",
+          "page": 116,
+          "role": "activity",
+          "pictures": 1
+        },
+        {
+          "lesson": "3B",
+          "page": 117,
+          "role": "combined",
+          "pictures": 1
+        },
+        {
+          "lesson": "3C",
+          "page": 118,
+          "role": "study",
+          "pictures": 1
+        },
+        {
+          "lesson": "3C",
+          "page": 119,
+          "role": "activity",
+          "pictures": 3
+        },
+        {
+          "lesson": "3D",
+          "page": 120,
+          "role": "combined",
+          "pictures": 1
+        }
+      ],
+      "combined_pages": [
+        117,
+        120
+      ]
     },
     {
       "code": "V4",
       "file": "Practice/Vocabulary/V4.html",
       "printed_pages": [
-        104,
-        105,
-        106
+        121,
+        122,
+        123,
+        124,
+        125
       ],
       "visual_idea": "Imagegen photographs, textured objects or purposeful cutouts support the topic; Study-first food/drink and flavor groups, recipe-action chunks, sharing meanings and native cues for modest practice words. Fresh four-lunchbox preference game, flavor/product clues, original recipe/tool repair and a food-rescue notice/message exchange.",
       "protected_elements": [
@@ -477,7 +1126,11 @@
         "Cover the word bank as well as the task resource during memory games",
         "Unit vocabulary Blooket reservation on the first study page",
         "No pictorial SVG/CSS substitutes; imagegen objects/scenes must preserve exact task evidence, whole subjects and useful scale",
-        "Every study and activity page contains useful topic-specific imagegen imagery; tables/grids alone do not count"
+        "Every study and activity page contains useful topic-specific imagegen imagery; tables/grids alone do not count",
+        "Correct main-lesson number and exact header typography",
+        "No mixed-lesson practice page",
+        "Original activities and controlled answers, renumbered within their own lesson",
+        "Reference and practice on the same or immediately adjacent lesson-specific page"
       ],
       "topic_anchors": [
         "vocabulary-food-and-drink",
@@ -493,11 +1146,16 @@
         "locator_pt": 8.5
       },
       "study_pages": [
-        104
+        121,
+        123,
+        124,
+        125
       ],
       "activity_pages": [
-        105,
-        106
+        122,
+        123,
+        124,
+        125
       ],
       "imagegen_art": {
         "policy": "All pictorial teaching assets use built-in imagegen; native words/charts/arrows/callouts/response grids remain live.",
@@ -506,15 +1164,84 @@
           "Photo-practice/V4-recipe-actions-v1.png",
           "Photo-practice/V4-study-food-v1.png"
         ]
-      }
+      },
+      "lessons": [
+        {
+          "code": "4A",
+          "pages": [
+            121,
+            122
+          ]
+        },
+        {
+          "code": "4B",
+          "pages": [
+            123
+          ]
+        },
+        {
+          "code": "4C",
+          "pages": [
+            124
+          ]
+        },
+        {
+          "code": "4D",
+          "pages": [
+            125
+          ]
+        }
+      ],
+      "header": "Actual main-lesson header, exact title, objective and code; grammar blue or vocabulary green; one source lesson per page.",
+      "lesson_pages": [
+        {
+          "lesson": "4A",
+          "page": 121,
+          "role": "study",
+          "pictures": 2
+        },
+        {
+          "lesson": "4A",
+          "page": 122,
+          "role": "activity",
+          "pictures": 1
+        },
+        {
+          "lesson": "4B",
+          "page": 123,
+          "role": "combined",
+          "pictures": 1
+        },
+        {
+          "lesson": "4C",
+          "page": 124,
+          "role": "combined",
+          "pictures": 5
+        },
+        {
+          "lesson": "4D",
+          "page": 125,
+          "role": "combined",
+          "pictures": 1
+        }
+      ],
+      "combined_pages": [
+        123,
+        124,
+        125
+      ]
     },
     {
       "code": "V5",
       "file": "Practice/Vocabulary/V5.html",
       "printed_pages": [
-        107,
-        108,
-        109
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132
       ],
       "visual_idea": "Imagegen photographs, textured objects or purposeful cutouts support the topic; Study-first wardrobe groups, shopping-action chunks, place/purpose pairs and checkout language. Fresh wardrobe mission, show-cover-recall pair game, closed-stock shopping routes and receipt decisions.",
       "protected_elements": [
@@ -529,7 +1256,11 @@
         "Cover the word bank as well as the task resource during memory games",
         "Unit vocabulary Blooket reservation on the first study page",
         "No pictorial SVG/CSS substitutes; imagegen objects/scenes must preserve exact task evidence, whole subjects and useful scale",
-        "Every study and activity page contains useful topic-specific imagegen imagery; tables/grids alone do not count"
+        "Every study and activity page contains useful topic-specific imagegen imagery; tables/grids alone do not count",
+        "Correct main-lesson number and exact header typography",
+        "No mixed-lesson practice page",
+        "Original activities and controlled answers, renumbered within their own lesson",
+        "Reference and practice on the same or immediately adjacent lesson-specific page"
       ],
       "topic_anchors": [
         "vocabulary-clothes-and-accessories",
@@ -545,11 +1276,16 @@
         "locator_pt": 8.5
       },
       "study_pages": [
-        107
+        126,
+        128,
+        129,
+        131
       ],
       "activity_pages": [
-        108,
-        109
+        127,
+        128,
+        130,
+        132
       ],
       "imagegen_art": {
         "policy": "All pictorial teaching assets use built-in imagegen; native words/charts/arrows/callouts/response grids remain live.",
@@ -558,16 +1294,95 @@
           "Photo-practice/V5-shopping-places-v1.png",
           "Photo-practice/V5-study-clothes-v1.png"
         ]
-      }
+      },
+      "lessons": [
+        {
+          "code": "5A",
+          "pages": [
+            126,
+            127
+          ]
+        },
+        {
+          "code": "5B",
+          "pages": [
+            128
+          ]
+        },
+        {
+          "code": "5C",
+          "pages": [
+            129,
+            130
+          ]
+        },
+        {
+          "code": "5D",
+          "pages": [
+            131,
+            132
+          ]
+        }
+      ],
+      "header": "Actual main-lesson header, exact title, objective and code; grammar blue or vocabulary green; one source lesson per page.",
+      "lesson_pages": [
+        {
+          "lesson": "5A",
+          "page": 126,
+          "role": "study",
+          "pictures": 1
+        },
+        {
+          "lesson": "5A",
+          "page": 127,
+          "role": "activity",
+          "pictures": 1
+        },
+        {
+          "lesson": "5B",
+          "page": 128,
+          "role": "combined",
+          "pictures": 1
+        },
+        {
+          "lesson": "5C",
+          "page": 129,
+          "role": "study",
+          "pictures": 1
+        },
+        {
+          "lesson": "5C",
+          "page": 130,
+          "role": "activity",
+          "pictures": 4
+        },
+        {
+          "lesson": "5D",
+          "page": 131,
+          "role": "study",
+          "pictures": 1
+        },
+        {
+          "lesson": "5D",
+          "page": 132,
+          "role": "activity",
+          "pictures": 1
+        }
+      ],
+      "combined_pages": [
+        128
+      ]
     },
     {
       "code": "V6",
       "file": "Practice/Vocabulary/V6.html",
       "printed_pages": [
-        110,
-        111,
-        112,
-        113
+        133,
+        134,
+        135,
+        136,
+        137,
+        138
       ],
       "visual_idea": "Imagegen photographs, textured objects or purposeful cutouts support the topic; Study-first town service pairs, room/furniture cues, direction sketches and attraction chunks. Original service/errand map, fresh apartment memory/change game and a hidden delivery route.",
       "protected_elements": [
@@ -582,7 +1397,11 @@
         "Cover the word bank as well as the task resource during memory games",
         "Unit vocabulary Blooket reservation on the first study page",
         "No pictorial SVG/CSS substitutes; imagegen objects/scenes must preserve exact task evidence, whole subjects and useful scale",
-        "Every study and activity page contains useful topic-specific imagegen imagery; tables/grids alone do not count"
+        "Every study and activity page contains useful topic-specific imagegen imagery; tables/grids alone do not count",
+        "Correct main-lesson number and exact header typography",
+        "No mixed-lesson practice page",
+        "Original activities and controlled answers, renumbered within their own lesson",
+        "Reference and practice on the same or immediately adjacent lesson-specific page"
       ],
       "topic_anchors": [
         "vocabulary-places-in-town-2",
@@ -598,12 +1417,16 @@
         "locator_pt": 8.5
       },
       "study_pages": [
-        110,
-        112
+        133,
+        135,
+        137,
+        138
       ],
       "activity_pages": [
-        111,
-        113
+        134,
+        136,
+        137,
+        138
       ],
       "imagegen_art": {
         "policy": "All pictorial teaching assets use built-in imagegen; native words/charts/arrows/callouts/response grids remain live.",
@@ -615,16 +1438,89 @@
           "Photo-practice/V6-study-attractions-v1.png",
           "Photo-practice/V6-study-furniture-v1.png"
         ]
-      }
+      },
+      "lessons": [
+        {
+          "code": "6A",
+          "pages": [
+            133,
+            134
+          ]
+        },
+        {
+          "code": "6B",
+          "pages": [
+            135,
+            136
+          ]
+        },
+        {
+          "code": "6C",
+          "pages": [
+            137
+          ]
+        },
+        {
+          "code": "6D",
+          "pages": [
+            138
+          ]
+        }
+      ],
+      "header": "Actual main-lesson header, exact title, objective and code; grammar blue or vocabulary green; one source lesson per page.",
+      "lesson_pages": [
+        {
+          "lesson": "6A",
+          "page": 133,
+          "role": "study",
+          "pictures": 1
+        },
+        {
+          "lesson": "6A",
+          "page": 134,
+          "role": "activity",
+          "pictures": 1
+        },
+        {
+          "lesson": "6B",
+          "page": 135,
+          "role": "study",
+          "pictures": 1
+        },
+        {
+          "lesson": "6B",
+          "page": 136,
+          "role": "activity",
+          "pictures": 1
+        },
+        {
+          "lesson": "6C",
+          "page": 137,
+          "role": "combined",
+          "pictures": 5
+        },
+        {
+          "lesson": "6D",
+          "page": 138,
+          "role": "combined",
+          "pictures": 1
+        }
+      ],
+      "combined_pages": [
+        137,
+        138
+      ]
     },
     {
       "code": "V7",
       "file": "Practice/Vocabulary/V7.html",
       "printed_pages": [
-        114,
-        115,
-        116,
-        117
+        139,
+        140,
+        141,
+        142,
+        143,
+        144
       ],
       "visual_idea": "Imagegen photographs, textured objects or purposeful cutouts support the topic; Study-first complete months and 1–31 ordinal forms, past-time anchors, music objects and verb/chunk references. Original calendar relay/date deduction, music-label mystery, seven-verb story repair and an explicitly constrained event order.",
       "protected_elements": [
@@ -639,7 +1535,11 @@
         "Cover the word bank as well as the task resource during memory games",
         "Unit vocabulary Blooket reservation on the first study page",
         "No pictorial SVG/CSS substitutes; imagegen objects/scenes must preserve exact task evidence, whole subjects and useful scale",
-        "Every study and activity page contains useful topic-specific imagegen imagery; tables/grids alone do not count"
+        "Every study and activity page contains useful topic-specific imagegen imagery; tables/grids alone do not count",
+        "Correct main-lesson number and exact header typography",
+        "No mixed-lesson practice page",
+        "Original activities and controlled answers, renumbered within their own lesson",
+        "Reference and practice on the same or immediately adjacent lesson-specific page"
       ],
       "topic_anchors": [
         "vocabulary-months",
@@ -657,12 +1557,16 @@
         "locator_pt": 8.5
       },
       "study_pages": [
-        114,
-        116
+        139,
+        140,
+        142,
+        143
       ],
       "activity_pages": [
-        115,
-        117
+        139,
+        141,
+        142,
+        144
       ],
       "imagegen_art": {
         "policy": "All pictorial teaching assets use built-in imagegen; native words/charts/arrows/callouts/response grids remain live.",
@@ -672,18 +1576,91 @@
           "Photo-practice/V7-study-calendar-v1.png",
           "Photo-practice/V7-study-music-v1.png"
         ]
-      }
+      },
+      "lessons": [
+        {
+          "code": "7A",
+          "pages": [
+            139
+          ]
+        },
+        {
+          "code": "7B",
+          "pages": [
+            140,
+            141
+          ]
+        },
+        {
+          "code": "7C",
+          "pages": [
+            142
+          ]
+        },
+        {
+          "code": "7D",
+          "pages": [
+            143,
+            144
+          ]
+        }
+      ],
+      "header": "Actual main-lesson header, exact title, objective and code; grammar blue or vocabulary green; one source lesson per page.",
+      "lesson_pages": [
+        {
+          "lesson": "7A",
+          "page": 139,
+          "role": "combined",
+          "pictures": 1
+        },
+        {
+          "lesson": "7B",
+          "page": 140,
+          "role": "study",
+          "pictures": 1
+        },
+        {
+          "lesson": "7B",
+          "page": 141,
+          "role": "activity",
+          "pictures": 1
+        },
+        {
+          "lesson": "7C",
+          "page": 142,
+          "role": "combined",
+          "pictures": 2
+        },
+        {
+          "lesson": "7D",
+          "page": 143,
+          "role": "study",
+          "pictures": 1
+        },
+        {
+          "lesson": "7D",
+          "page": 144,
+          "role": "activity",
+          "pictures": 1
+        }
+      ],
+      "combined_pages": [
+        139,
+        142
+      ]
     },
     {
       "code": "V8",
       "file": "Practice/Vocabulary/V8.html",
       "printed_pages": [
-        118,
-        119,
-        120,
-        121,
-        122,
-        123
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152
       ],
       "visual_idea": "Imagegen photographs, textured objects or purposeful cutouts support the topic; Study-first travel chunks/past pairs, fresh five-animal specimens, weather/seasons and one-way/return diagrams, plus six body-part pointers and health models. Misplaced travel tickets, original animal-spelling crossword, forecast/packing choices, fresh acted-message/body game and hidden ticket bookings.",
       "protected_elements": [
@@ -698,7 +1675,11 @@
         "Cover the word bank as well as the task resource during memory games",
         "Unit vocabulary Blooket reservation on the first study page",
         "No pictorial SVG/CSS substitutes; imagegen objects/scenes must preserve exact task evidence, whole subjects and useful scale",
-        "Every study and activity page contains useful topic-specific imagegen imagery; tables/grids alone do not count"
+        "Every study and activity page contains useful topic-specific imagegen imagery; tables/grids alone do not count",
+        "Correct main-lesson number and exact header typography",
+        "No mixed-lesson practice page",
+        "Original activities and controlled answers, renumbered within their own lesson",
+        "Reference and practice on the same or immediately adjacent lesson-specific page"
       ],
       "topic_anchors": [
         "vocabulary-travel-verbs",
@@ -716,14 +1697,18 @@
         "locator_pt": 8.5
       },
       "study_pages": [
-        118,
-        120,
-        122
+        145,
+        147,
+        149,
+        151
       ],
       "activity_pages": [
-        119,
-        121,
-        123
+        145,
+        146,
+        148,
+        149,
+        150,
+        152
       ],
       "imagegen_art": {
         "policy": "All pictorial teaching assets use built-in imagegen; native words/charts/arrows/callouts/response grids remain live.",
@@ -735,13 +1720,98 @@
           "Photo-practice/V8-forecast-scenes-v1.png",
           "Photo-practice/V8-study-weather-v1.png"
         ]
-      }
+      },
+      "lessons": [
+        {
+          "code": "8A",
+          "pages": [
+            145,
+            146
+          ]
+        },
+        {
+          "code": "8B",
+          "pages": [
+            147,
+            148
+          ]
+        },
+        {
+          "code": "8C",
+          "pages": [
+            149,
+            150
+          ]
+        },
+        {
+          "code": "8D",
+          "pages": [
+            151,
+            152
+          ]
+        }
+      ],
+      "header": "Actual main-lesson header, exact title, objective and code; grammar blue or vocabulary green; one source lesson per page.",
+      "lesson_pages": [
+        {
+          "lesson": "8A",
+          "page": 145,
+          "role": "combined",
+          "pictures": 2
+        },
+        {
+          "lesson": "8A",
+          "page": 146,
+          "role": "activity",
+          "pictures": 1
+        },
+        {
+          "lesson": "8B",
+          "page": 147,
+          "role": "study",
+          "pictures": 7
+        },
+        {
+          "lesson": "8B",
+          "page": 148,
+          "role": "activity",
+          "pictures": 4
+        },
+        {
+          "lesson": "8C",
+          "page": 149,
+          "role": "combined",
+          "pictures": 2
+        },
+        {
+          "lesson": "8C",
+          "page": 150,
+          "role": "activity",
+          "pictures": 1
+        },
+        {
+          "lesson": "8D",
+          "page": 151,
+          "role": "study",
+          "pictures": 1
+        },
+        {
+          "lesson": "8D",
+          "page": 152,
+          "role": "activity",
+          "pictures": 1
+        }
+      ],
+      "combined_pages": [
+        145,
+        149
+      ]
     },
     {
       "code": "C5",
       "file": "Practice/Communication/C5.html",
       "printed_pages": [
-        124
+        153
       ],
       "visual_idea": "Receipt diagnosis and private store choices with a usable purchase check.",
       "protected_elements": [
@@ -759,13 +1829,14 @@
         "instruction_pt": 9.2,
         "body_pt": 10,
         "locator_pt": 8.5
-      }
+      },
+      "lessons": []
     },
     {
       "code": "C6",
       "file": "Practice/Communication/C6.html",
       "printed_pages": [
-        125
+        154
       ],
       "visual_idea": "Original east-facing town map, visible opposite model and visitor goal/route exchange.",
       "protected_elements": [
@@ -783,13 +1854,14 @@
         "instruction_pt": 9.2,
         "body_pt": 10,
         "locator_pt": 8.5
-      }
+      },
+      "lessons": []
     },
     {
       "code": "C7",
       "file": "Practice/Communication/C7.html",
       "printed_pages": [
-        126
+        155
       ],
       "visual_idea": "Readable diary model and an independent dated entry with reader feedback.",
       "protected_elements": [
@@ -807,13 +1879,14 @@
         "instruction_pt": 9.2,
         "body_pt": 10,
         "locator_pt": 8.5
-      }
+      },
+      "lessons": []
     },
     {
       "code": "C8",
       "file": "Practice/Communication/C8.html",
       "printed_pages": [
-        127
+        156
       ],
       "visual_idea": "Phone purpose matching, confirmation repair and a checked booking decision.",
       "protected_elements": [
@@ -831,7 +1904,8 @@
         "instruction_pt": 9.2,
         "body_pt": 10,
         "locator_pt": 8.5
-      }
+      },
+      "lessons": []
     }
   ],
   "author_correction": "Vocabulary consolidates taught language through complete study word banks followed by the approved fresh games/resources; brief grammar repetition remains appropriate. Sixteen real blank QR reservations are required for future Blooket games.",
@@ -841,101 +1915,11 @@
     "grammar": "Visual explanations preferred. Remove inline explanatory rule prose; keep short labels, models, charts and arrows; avoid over-expansion.",
     "practice_art": "Reject vector-like teaching pictures in grammar/vocabulary banks; use imagegen quality for those illustrations. Every vocabulary study and activity page needs a meaningful picture."
   },
-  "vocabulary_adjacency": {
-    "maximum_pages_after_reference": 2,
-    "unrelated_reference_pages_between": false,
-    "activity_page_uses_one_reference_page": true,
-    "groups": [
-      {
-        "activity_page": 94,
-        "study_page": 93,
-        "unit": 1
-      },
-      {
-        "activity_page": 96,
-        "study_page": 95,
-        "unit": 1
-      },
-      {
-        "activity_page": 97,
-        "study_page": 95,
-        "unit": 1
-      },
-      {
-        "activity_page": 99,
-        "study_page": 98,
-        "unit": 2
-      },
-      {
-        "activity_page": 100,
-        "study_page": 98,
-        "unit": 2
-      },
-      {
-        "activity_page": 102,
-        "study_page": 101,
-        "unit": 3
-      },
-      {
-        "activity_page": 103,
-        "study_page": 101,
-        "unit": 3
-      },
-      {
-        "activity_page": 105,
-        "study_page": 104,
-        "unit": 4
-      },
-      {
-        "activity_page": 106,
-        "study_page": 104,
-        "unit": 4
-      },
-      {
-        "activity_page": 108,
-        "study_page": 107,
-        "unit": 5
-      },
-      {
-        "activity_page": 109,
-        "study_page": 107,
-        "unit": 5
-      },
-      {
-        "activity_page": 111,
-        "study_page": 110,
-        "unit": 6
-      },
-      {
-        "activity_page": 113,
-        "study_page": 112,
-        "unit": 6
-      },
-      {
-        "activity_page": 115,
-        "study_page": 114,
-        "unit": 7
-      },
-      {
-        "activity_page": 117,
-        "study_page": 116,
-        "unit": 7
-      },
-      {
-        "activity_page": 119,
-        "study_page": 118,
-        "unit": 8
-      },
-      {
-        "activity_page": 121,
-        "study_page": 120,
-        "unit": 8
-      },
-      {
-        "activity_page": 123,
-        "study_page": 122,
-        "unit": 8
-      }
-    ]
-  }
+  "lesson_header_policy": {
+    "source": "Actual main lesson header, title, objective and lesson code",
+    "grammar_color": "#245b9a",
+    "vocabulary_color": "#247348",
+    "mixed_lesson_pages": false
+  },
+  "scope": "27 grammar and32 vocabulary lesson groups; 27 grammar pages and49 vocabulary pages. Unit collection files are storage only."
 }

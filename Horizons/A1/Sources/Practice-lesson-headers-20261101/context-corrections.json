@@ -1,0 +1,29 @@
+{
+  "reason": "Reference and activity now share one7A page; use the same explicitly fictional Thursday/year2030 anchor. The original calendar example is still retained in the7B shared reference.",
+  "changes": [
+    {
+      "before": "Example \u00b7 Today: Monday, July 13th, 2026",
+      "after": "Example \u00b7 Today: Thursday, 2030"
+    },
+    {
+      "before": "yesterday \u2192 Sunday, July 12th",
+      "after": "yesterday \u2192 Wednesday"
+    },
+    {
+      "before": "last night \u2192 Sunday night",
+      "after": "last night \u2192 Wednesday night"
+    },
+    {
+      "before": "last year \u2192 2025",
+      "after": "last year \u2192 2029"
+    },
+    {
+      "before": "one day ago \u2192 July 12th",
+      "after": "one day ago \u2192 Wednesday"
+    },
+    {
+      "before": "two days ago \u2192 July 11th",
+      "after": "two days ago \u2192 Tuesday"
+    }
+  ]
+}

@@ -4,6 +4,7 @@ Current edition, 31 October 2026. Design is governed by VISUAL-SPIRIT.md, CANONI
 
 - One `.hz-page` is one A4 page with a unique consecutive `data-page`; footer agrees. Keep learner material inside the printable content region.
 - `.hz-lesson-header` contains a compact `.hz-lesson-tab`, sentence-case title and a concise useful outcome in `.hz-objectives`. Keep local source headings separate.
+- Grammar/vocabulary practice reuses the actual main lesson header and code, one lesson per page. Preserve its title, objective,15mm tab,16pt lesson number and25pt title; change the header accent to grammar blue or vocabulary green. Shared header classes must not cause practice pages to be listed as core lessons in reader navigation. Continued practice pages stay within their own lesson group.
 - `.hz-continuation` is the small continued-lesson locator; the first content group reserves 12mm. Avoid giant empty top areas and overlapping copy.
 - `.hz-exercise` has a real sequential visible number, instruction and body. Subparts may use letters; avoid decimal numbering such as 4.1 as a whole exercise. Numeric audio labels identify tracks, not exercise numbers.
 - Reading order must be apparent in DOM and print. Single lanes, purposeful internal grids or clear two-column sections are permitted. If using columns, read down the left then right or explicitly group source/response; no interleaved numbering.

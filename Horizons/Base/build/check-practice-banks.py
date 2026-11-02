@@ -9,9 +9,67 @@ from urllib.parse import unquote
 import json,re,sys
 from bs4 import BeautifulSoup
 
+def lesson_banks(book,manifest):
+ required={t['topic']:t for t in json.loads((book/'Practice/Vocabulary/study-vocabulary.json').read_text(encoding='utf-8'))['topics']}
+ topics={};numbers=[];slots=[];lessons=set();refs=0;studies=0;images=0;tasks=0
+ for master in manifest['masters']:
+  file=book/master['file'];doc=BeautifulSoup(file.read_text(encoding='utf-8'),'html.parser');actual=[]
+  for page in doc.select('article.hz-page'):
+   n=int(page['data-page']);actual.append(n);numbers.append(n);assert page['id']==f'page-{n}' and page.select_one('.hz-page-number').get_text(strip=True)==str(n)
+   kind=master['kind'];code=page.get('data-practice-lesson');tasks+=len(page.select('.practice-task,.cp-task'))
+   if kind in ['grammar','vocabulary']:
+    assert re.fullmatch(r'[1-8][A-D]',code or''),f'{file}: practice page needs one actual lesson code'
+    source=BeautifulSoup((book/f'Lessons/{code}.html').read_text(encoding='utf-8'),'html.parser')
+    assert page.select_one('.hz-lesson-tab__id').get_text(strip=True)==code,f'{file}: lesson badge mismatch'
+    assert page.select_one('.hz-lesson-title').get_text(' ',strip=True)==source.select_one('.hz-lesson-title').get_text(' ',strip=True),f'{file}: main title mismatch'
+    assert page.select_one('.hz-objectives').get_text(' ',strip=True)==source.select_one('.hz-objectives').get_text(' ',strip=True),f'{file}: main outcome mismatch'
+    lessons.add((kind,code))
+    for a in page.select('.practice-topic >h2 small a'):assert a.get_text(strip=True)==code,f'{file}: mixed lesson topic labels'
+    assert all(svg.get('data-editorial-labels')=='true'for svg in page.select('svg')),f'{file}: pictorial SVG is not allowed'
+    assert not page.select('.gp14-phone,.gp14-tokens,.gp14-tomatoes,.gp58-weather-symbol'),f'{file}: pictorial CSS substitute'
+   if kind=='vocabulary':
+    assert page.select('img[src]'),f'{file}: vocabulary page has no picture'
+    for section in page.select('.vs-topic[id]'):
+     key=section['id'];assert key in required,key;studies+=1
+     items={x['data-vocab-item']for x in section.select('[data-vocab-item]')};assert not set(required[key]['required_items'])-items,f'{key}: incomplete word bank'
+     a=section.select_one('.vs-practice-link');target=doc.find(id=a['href'][1:]);assert target,key
+     ap=target.find_parent('article');delta=int(ap['data-page'])-n;assert 0<=delta<=1 and ap.get('data-practice-lesson')==code,f'{key}: practice separated from its own lesson'
+     assert a.get('data-target-page')==ap['data-page']and('below'in a.get_text().lower()if delta==0 else ap['data-page']in a.get_text()),f'{key}: practice page label mismatch'
+   for img in page.select('img[src]'):
+    p=(file.parent/unquote(img['src'])).resolve();assert p.is_file()and img.get('alt','').strip(),f'{file}: image missing or undescribed'
+    if kind=='vocabulary':assert p.is_relative_to((book/'Practice/Images').resolve()),f'{file}: reused core picture'
+    images+=1
+   for t in page.select('[id]'):
+    key=t['id']
+    if re.match(r'^(grammar|vocabulary|communication)-',key):assert key not in topics,key;topics[key]=(master['file'],n,code)
+   for slot in page.select('.blooket-slot'):
+    assert slot.select_one('.blooket-slot__qr')and not slot.select('img,a[href]');slots.append((slot['data-blooket-bank'],int(slot['data-blooket-unit'])))
+  assert actual==master['pages'],file
+ assert numbers==list(range(manifest['first_printed_page'],manifest['last_printed_page']+1))
+ assert sorted(slots)==sorted((k,u)for k in ['grammar','vocabulary']for u in range(1,9))
+ assert studies==len(required)==43
+ assert sum(k=='grammar'for k,c in lessons)==27 and sum(k=='vocabulary'for k,c in lessons)==32
+ for file in (book/'Lessons').glob('*.html'):
+  doc=BeautifulSoup(file.read_text(encoding='utf-8'),'html.parser')
+  for ref in doc.select('.hz-go-to'):
+   key=ref['data-reference-topic'];assert key in topics;target,n,code=topics[key];a=ref.select_one('a');p,fragment=a['href'].split('#',1)
+   assert (file.parent/unquote(p)).resolve()==(book/target).resolve()and fragment==key
+   assert re.search(r'\bpage\s+'+str(n)+r'\b',ref.get_text()),file
+   assert key.startswith('communication-')or code==file.stem,f'{file}: practice goes to another lesson'
+   refs+=1
+ assert refs==75 and tasks==147
+ assert set(topics)==set(manifest['destinations'])
+ for key,r in manifest['destinations'].items():assert topics[key][:2]==(r['file'],r['page'])
+ compiled=BeautifulSoup((book/"Student's Book.html").read_text(encoding='utf-8'),'html.parser');ids=[n['id']for n in compiled.select('[id]')];assert len(ids)==len(set(ids))
+ nums=[int(n['data-page'])for n in compiled.select('.hz-page')];assert nums==list(range(5,nums[-1]+1))
+ for a in compiled.select('a[href^="#"]'):assert unquote(a['href'][1:])in ids,a['href']
+ print(json.dumps({'practice_pages':len(numbers),'lesson_specific_grammar':27,'lesson_specific_vocabulary':32,'reference_topics':studies,'lesson_references':refs,'activities':tasks,'raster_uses':images,'structural_checks':'passed'}))
+ return 0
+
 def main():
  book=Path(sys.argv[1] if len(sys.argv)>1 else 'Horizons/A1').resolve()
  manifest=json.loads((book/'Practice/manifest.json').read_text(encoding='utf-8-sig'))
+ if manifest.get('version',1)>=3:return lesson_banks(book,manifest)
  pages=[];topics={};images=0;study_topics=set();study_pages=0
  lexicon=json.loads((book/'Practice/Vocabulary/study-vocabulary.json').read_text(encoding='utf-8'))
  required={t['topic']:t for t in lexicon['topics']}

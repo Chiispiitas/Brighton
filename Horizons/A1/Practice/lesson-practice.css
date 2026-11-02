@@ -1,0 +1,32 @@
+/* Practice uses the actual lesson header; only its functional colour changes. */
+.hz-page.hz-content.hz-practice-page.lp-lesson {--hz-unit:#245b9a;--hz-unit-dark:#204f86;--practice-accent:#245b9a;}
+.hz-page.hz-content.hz-practice-page.lp-vocabulary {--hz-unit:#247348;--hz-unit-dark:#1a5e38;--practice-accent:#247348;}
+.hz-page.hz-content.hz-practice-page.lp-lesson .lp-header {display:grid;grid-template-columns:15mm minmax(0,1fr);gap:4mm;align-items:center;padding-bottom:3mm;margin:0 0 4mm;border-bottom:.4mm solid var(--practice-accent);}
+.hz-page.hz-content.hz-practice-page.lp-lesson .lp-header .hz-lesson-tab {display:grid;align-content:center;justify-items:center;width:15mm;height:15mm;padding:1mm;background:var(--practice-accent);color:#fff;text-decoration:none;}
+.hz-page.hz-content.hz-practice-page.lp-lesson .lp-header .hz-lesson-tab__label {font-size:5pt;letter-spacing:.06em;}
+.hz-page.hz-content.hz-practice-page.lp-lesson .lp-header .hz-lesson-tab__id {font-size:16pt;margin-top:.8mm;line-height:1;}
+.hz-page.hz-content.hz-practice-page.lp-lesson .lp-header .hz-lesson-title {font:760 25pt/1.08 var(--hz-font-sans) !important;letter-spacing:-.025em;color:var(--hz-ink,#232629);margin:0;}
+.hz-page.hz-content.hz-practice-page.lp-lesson .lp-header .hz-objectives {font:400 8.5pt/1.35 var(--hz-font-sans);color:#4b4f53;margin-top:1.6mm;gap:.5mm 3mm;}
+.hz-page.hz-content.hz-practice-page.lp-lesson .lp-flow {display:flow-root;}
+.hz-page.hz-content.hz-practice-page.lp-lesson .lp-reference {display:flow-root;margin:0 0 5mm;padding-bottom:3mm;border-bottom:.3mm solid #a1bca9;}
+.hz-page.hz-content.hz-practice-page.lp-lesson .lp-reference-label {font:700 8pt/1.3 var(--hz-font-sans);letter-spacing:.04em;color:var(--practice-accent);margin:0 0 3mm;}
+.hz-page.hz-content.hz-practice-page.lp-lesson .lp-reference-label .lp-study-reminder {font-weight:400;font-size:8.5pt;letter-spacing:0;color:#4b4f53;}
+.hz-page.hz-content.hz-practice-page.lp-lesson .lp-study-nav {font:500 8.5pt/1.3 var(--hz-font-sans);color:var(--practice-accent);margin:0 0 3mm;}
+.hz-page.hz-content.hz-practice-page.lp-lesson .lp-study-nav a {font:inherit;color:inherit;text-decoration:none;}
+.hz-page.hz-content.hz-practice-page.lp-lesson .lp-cue {display:block;max-width:100%;margin:1mm auto 3mm;text-align:center;}
+.hz-page.hz-content.hz-practice-page.lp-lesson .lp-cue img {display:block;width:90mm;max-width:100%;height:36mm;object-fit:contain;margin:auto;}
+.hz-page.hz-content.hz-practice-page.lp-lesson .lp-room-reference .ig-furniture-wide {width:125mm;max-width:100%;}
+.hz-page.hz-content.hz-practice-page.lp-lesson .lp-body-reference .vs-body-reference {width:100% !important;max-width:100%;}
+.hz-page.hz-content.hz-practice-page.lp-lesson .lp-body-reference .vs-body-labels text {font-size:64px;}
+.hz-page.hz-content.hz-practice-page.lp-lesson .lp-day-plan {display:grid;grid-template-columns:repeat(4,1fr);gap:3mm;margin:2mm 0 4mm;padding:3mm;background:#f7f4ec;}
+.hz-page.hz-content.hz-practice-page.lp-lesson .lp-day-plan p {font:400 10pt/1.35 var(--hz-font-sans);margin:0;}
+.hz-page.hz-content.hz-practice-page.lp-lesson .lp-related-anchor {display:block;height:0;scroll-margin-top:66px;}
+.hz-page.hz-content.hz-practice-page.lp-lesson .lp-reference .vs-topic:only-child {grid-column:1/-1;}
+.hz-page.hz-content.hz-practice-page.lp-lesson .blooket-slot ~ .lp-flow {padding-bottom:30mm;}
+.hz-page.hz-content.hz-practice-page.lp-grammar[data-practice-lesson="8A"] .ig-travel-record {width:90mm;}
+.hz-page.hz-content.hz-practice-page.lp-vocabulary[data-practice-lesson="8B"] .practice-task {margin-top:2mm;}
+.hz-page.hz-content.hz-practice-page.lp-vocabulary[data-practice-lesson="2C"] .lp-cue img {height:48mm;}
+.hz-page.hz-content.hz-practice-page.lp-vocabulary[data-practice-lesson="3B"] .lp-cue img {height:44mm;}
+.hz-page.hz-content.hz-practice-page.lp-vocabulary[data-practice-lesson="4D"] .lp-cue img {height:42mm;}
+.hz-page.hz-content.hz-practice-page.lp-vocabulary[data-practice-lesson="5B"] .lp-cue img {height:65mm;}
+.hz-page.hz-content.hz-practice-page.lp-vocabulary[data-practice-lesson="8D"] .lp-cue img {height:50mm;}

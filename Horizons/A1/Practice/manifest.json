@@ -1,8 +1,8 @@
 {
-  "version": 2,
+  "version": 3,
   "edition": "2026-11-01",
-  "status": "authored; study-first vocabulary references and approved activities",
-  "organization": "Grammar by unit; vocabulary topic word bank immediately followed by its matching one- or two-page practice group; practical language; credits last",
+  "status": "Lesson-specific grammar and vocabulary practice; main-lesson headers and lesson numbers retained",
+  "organization": "Grammar by main lesson; vocabulary by main lesson with integrated word bank or adjacent reference/practice pages; practical language; credits last",
   "masters": [
     {
       "code": "G1",
@@ -11,13 +11,34 @@
       "file": "Practice/Grammar/G1.html",
       "pages": [
         77,
-        78
+        78,
+        79
       ],
       "topics": [
         "grammar-verb-to-be",
         "grammar-a-an",
         "grammar-verb-to-be-contractions",
         "grammar-capital-letters"
+      ],
+      "lessons": [
+        {
+          "code": "1A",
+          "pages": [
+            77
+          ]
+        },
+        {
+          "code": "1B",
+          "pages": [
+            78
+          ]
+        },
+        {
+          "code": "1D",
+          "pages": [
+            79
+          ]
+        }
       ]
     },
     {
@@ -26,14 +47,42 @@
       "kind": "grammar",
       "file": "Practice/Grammar/G2.html",
       "pages": [
-        79,
-        80
+        80,
+        81,
+        82,
+        83
       ],
       "topics": [
         "grammar-this-that-these-those",
         "grammar-a-an-the",
         "grammar-possessive-case",
         "grammar-adjective-position"
+      ],
+      "lessons": [
+        {
+          "code": "2A",
+          "pages": [
+            80
+          ]
+        },
+        {
+          "code": "2B",
+          "pages": [
+            81
+          ]
+        },
+        {
+          "code": "2C",
+          "pages": [
+            82
+          ]
+        },
+        {
+          "code": "2D",
+          "pages": [
+            83
+          ]
+        }
       ]
     },
     {
@@ -42,8 +91,10 @@
       "kind": "grammar",
       "file": "Practice/Grammar/G3.html",
       "pages": [
-        81,
-        82
+        84,
+        85,
+        86,
+        87
       ],
       "topics": [
         "grammar-present-simple-affirmative",
@@ -51,6 +102,32 @@
         "grammar-question-words",
         "grammar-frequency-adverbs",
         "grammar-before-after"
+      ],
+      "lessons": [
+        {
+          "code": "3A",
+          "pages": [
+            84
+          ]
+        },
+        {
+          "code": "3B",
+          "pages": [
+            85
+          ]
+        },
+        {
+          "code": "3C",
+          "pages": [
+            86
+          ]
+        },
+        {
+          "code": "3D",
+          "pages": [
+            87
+          ]
+        }
       ]
     },
     {
@@ -59,14 +136,42 @@
       "kind": "grammar",
       "file": "Practice/Grammar/G4.html",
       "pages": [
-        83,
-        84
+        88,
+        89,
+        90,
+        91
       ],
       "topics": [
         "grammar-countable-and-uncountable-nouns",
         "grammar-object-pronouns",
         "grammar-too-much-too-many-enough",
         "grammar-because-so-and-punctuation"
+      ],
+      "lessons": [
+        {
+          "code": "4A",
+          "pages": [
+            88
+          ]
+        },
+        {
+          "code": "4B",
+          "pages": [
+            89
+          ]
+        },
+        {
+          "code": "4C",
+          "pages": [
+            90
+          ]
+        },
+        {
+          "code": "4D",
+          "pages": [
+            91
+          ]
+        }
       ]
     },
     {
@@ -75,13 +180,34 @@
       "kind": "grammar",
       "file": "Practice/Grammar/G5.html",
       "pages": [
-        85,
-        86
+        92,
+        93,
+        94
       ],
       "topics": [
         "grammar-present-continuous",
         "grammar-too-and-enough-with-adjectives",
         "grammar-frequency-expressions"
+      ],
+      "lessons": [
+        {
+          "code": "5A",
+          "pages": [
+            92
+          ]
+        },
+        {
+          "code": "5B",
+          "pages": [
+            93
+          ]
+        },
+        {
+          "code": "5C",
+          "pages": [
+            94
+          ]
+        }
       ]
     },
     {
@@ -90,13 +216,34 @@
       "kind": "grammar",
       "file": "Practice/Grammar/G6.html",
       "pages": [
-        87,
-        88
+        95,
+        96,
+        97
       ],
       "topics": [
         "grammar-prepositions-of-place",
         "grammar-giving-directions",
         "grammar-can-and-cant"
+      ],
+      "lessons": [
+        {
+          "code": "6B",
+          "pages": [
+            95
+          ]
+        },
+        {
+          "code": "6C",
+          "pages": [
+            96
+          ]
+        },
+        {
+          "code": "6D",
+          "pages": [
+            97
+          ]
+        }
       ]
     },
     {
@@ -105,13 +252,34 @@
       "kind": "grammar",
       "file": "Practice/Grammar/G7.html",
       "pages": [
-        89,
-        90
+        98,
+        99,
+        100
       ],
       "topics": [
         "grammar-past-of-be",
         "grammar-dates-and-ago",
         "grammar-past-simple-regular-verbs"
+      ],
+      "lessons": [
+        {
+          "code": "7A",
+          "pages": [
+            98
+          ]
+        },
+        {
+          "code": "7B",
+          "pages": [
+            99
+          ]
+        },
+        {
+          "code": "7C",
+          "pages": [
+            100
+          ]
+        }
       ]
     },
     {
@@ -120,13 +288,34 @@
       "kind": "grammar",
       "file": "Practice/Grammar/G8.html",
       "pages": [
-        91,
-        92
+        101,
+        102,
+        103
       ],
       "topics": [
         "grammar-past-simple-travel-verbs",
         "grammar-should-advice",
         "grammar-talking-about-health"
+      ],
+      "lessons": [
+        {
+          "code": "8A",
+          "pages": [
+            101
+          ]
+        },
+        {
+          "code": "8B",
+          "pages": [
+            102
+          ]
+        },
+        {
+          "code": "8C",
+          "pages": [
+            103
+          ]
+        }
       ]
     },
     {
@@ -135,11 +324,13 @@
       "kind": "vocabulary",
       "file": "Practice/Vocabulary/V1.html",
       "pages": [
-        93,
-        94,
-        95,
-        96,
-        97
+        104,
+        105,
+        106,
+        107,
+        108,
+        109,
+        110
       ],
       "topics": [
         "vocabulary-greetings",
@@ -147,17 +338,56 @@
         "vocabulary-alphabet",
         "vocabulary-numbers",
         "vocabulary-occupations",
+        "vocabulary-adjectives",
         "vocabulary-countries",
-        "vocabulary-adjectives"
+        "vocabulary-adjectives-1c",
+        "vocabulary-personal-information-1d"
       ],
       "study_pages": [
-        93,
-        95
+        104,
+        106,
+        108,
+        110
       ],
       "activity_pages": [
-        94,
-        96,
-        97
+        105,
+        107,
+        108,
+        109,
+        110
+      ],
+      "combined_pages": [
+        108,
+        110
+      ],
+      "lessons": [
+        {
+          "code": "1A",
+          "pages": [
+            104,
+            105
+          ]
+        },
+        {
+          "code": "1B",
+          "pages": [
+            106,
+            107
+          ]
+        },
+        {
+          "code": "1C",
+          "pages": [
+            108,
+            109
+          ]
+        },
+        {
+          "code": "1D",
+          "pages": [
+            110
+          ]
+        }
       ]
     },
     {
@@ -166,22 +396,61 @@
       "kind": "vocabulary",
       "file": "Practice/Vocabulary/V2.html",
       "pages": [
-        98,
-        99,
-        100
+        111,
+        112,
+        113,
+        114
       ],
       "topics": [
         "vocabulary-personal-items",
         "vocabulary-telling-time",
         "vocabulary-family-members",
+        "vocabulary-adjectives-2d",
         "vocabulary-colors"
       ],
       "study_pages": [
-        98
+        111,
+        112,
+        113,
+        114
       ],
       "activity_pages": [
-        99,
-        100
+        111,
+        112,
+        113,
+        114
+      ],
+      "combined_pages": [
+        111,
+        112,
+        113,
+        114
+      ],
+      "lessons": [
+        {
+          "code": "2A",
+          "pages": [
+            111
+          ]
+        },
+        {
+          "code": "2B",
+          "pages": [
+            112
+          ]
+        },
+        {
+          "code": "2C",
+          "pages": [
+            113
+          ]
+        },
+        {
+          "code": "2D",
+          "pages": [
+            114
+          ]
+        }
       ]
     },
     {
@@ -190,21 +459,62 @@
       "kind": "vocabulary",
       "file": "Practice/Vocabulary/V3.html",
       "pages": [
-        101,
-        102,
-        103
+        115,
+        116,
+        117,
+        118,
+        119,
+        120
       ],
       "topics": [
         "vocabulary-daily-routines",
         "vocabulary-days-of-the-week",
-        "vocabulary-place-adjectives-recall"
+        "vocabulary-place-adjectives-recall",
+        "vocabulary-daily-routines-3d"
       ],
       "study_pages": [
-        101
+        115,
+        117,
+        118,
+        120
       ],
       "activity_pages": [
-        102,
-        103
+        116,
+        117,
+        119,
+        120
+      ],
+      "combined_pages": [
+        117,
+        120
+      ],
+      "lessons": [
+        {
+          "code": "3A",
+          "pages": [
+            115,
+            116
+          ]
+        },
+        {
+          "code": "3B",
+          "pages": [
+            117
+          ]
+        },
+        {
+          "code": "3C",
+          "pages": [
+            118,
+            119
+          ]
+        },
+        {
+          "code": "3D",
+          "pages": [
+            120
+          ]
+        }
       ]
     },
     {
@@ -213,9 +523,11 @@
       "kind": "vocabulary",
       "file": "Practice/Vocabulary/V4.html",
       "pages": [
-        104,
-        105,
-        106
+        121,
+        122,
+        123,
+        124,
+        125
       ],
       "topics": [
         "vocabulary-food-and-drink",
@@ -224,11 +536,48 @@
         "vocabulary-sharing-food"
       ],
       "study_pages": [
-        104
+        121,
+        123,
+        124,
+        125
       ],
       "activity_pages": [
-        105,
-        106
+        122,
+        123,
+        124,
+        125
+      ],
+      "combined_pages": [
+        123,
+        124,
+        125
+      ],
+      "lessons": [
+        {
+          "code": "4A",
+          "pages": [
+            121,
+            122
+          ]
+        },
+        {
+          "code": "4B",
+          "pages": [
+            123
+          ]
+        },
+        {
+          "code": "4C",
+          "pages": [
+            124
+          ]
+        },
+        {
+          "code": "4D",
+          "pages": [
+            125
+          ]
+        }
       ]
     },
     {
@@ -237,9 +586,13 @@
       "kind": "vocabulary",
       "file": "Practice/Vocabulary/V5.html",
       "pages": [
-        107,
-        108,
-        109
+        126,
+        127,
+        128,
+        129,
+        130,
+        131,
+        132
       ],
       "topics": [
         "vocabulary-clothes-and-accessories",
@@ -248,11 +601,48 @@
         "vocabulary-at-the-store"
       ],
       "study_pages": [
-        107
+        126,
+        128,
+        129,
+        131
       ],
       "activity_pages": [
-        108,
-        109
+        127,
+        128,
+        130,
+        132
+      ],
+      "combined_pages": [
+        128
+      ],
+      "lessons": [
+        {
+          "code": "5A",
+          "pages": [
+            126,
+            127
+          ]
+        },
+        {
+          "code": "5B",
+          "pages": [
+            128
+          ]
+        },
+        {
+          "code": "5C",
+          "pages": [
+            129,
+            130
+          ]
+        },
+        {
+          "code": "5D",
+          "pages": [
+            131,
+            132
+          ]
+        }
       ]
     },
     {
@@ -261,10 +651,12 @@
       "kind": "vocabulary",
       "file": "Practice/Vocabulary/V6.html",
       "pages": [
-        110,
-        111,
-        112,
-        113
+        133,
+        134,
+        135,
+        136,
+        137,
+        138
       ],
       "topics": [
         "vocabulary-places-in-town-2",
@@ -273,12 +665,48 @@
         "vocabulary-shopping-centers-and-attractions"
       ],
       "study_pages": [
-        110,
-        112
+        133,
+        135,
+        137,
+        138
       ],
       "activity_pages": [
-        111,
-        113
+        134,
+        136,
+        137,
+        138
+      ],
+      "combined_pages": [
+        137,
+        138
+      ],
+      "lessons": [
+        {
+          "code": "6A",
+          "pages": [
+            133,
+            134
+          ]
+        },
+        {
+          "code": "6B",
+          "pages": [
+            135,
+            136
+          ]
+        },
+        {
+          "code": "6C",
+          "pages": [
+            137
+          ]
+        },
+        {
+          "code": "6D",
+          "pages": [
+            138
+          ]
+        }
       ]
     },
     {
@@ -287,26 +715,65 @@
       "kind": "vocabulary",
       "file": "Practice/Vocabulary/V7.html",
       "pages": [
-        114,
-        115,
-        116,
-        117
+        139,
+        140,
+        141,
+        142,
+        143,
+        144
       ],
       "topics": [
+        "vocabulary-past-time-expressions",
         "vocabulary-months",
         "vocabulary-dates-and-ordinal-numbers",
-        "vocabulary-past-time-expressions",
+        "vocabulary-past-time-expressions-7b",
         "vocabulary-music",
         "vocabulary-irregular-past-verbs",
         "vocabulary-sequencing-words"
       ],
       "study_pages": [
-        114,
-        116
+        139,
+        140,
+        142,
+        143
       ],
       "activity_pages": [
-        115,
-        117
+        139,
+        141,
+        142,
+        144
+      ],
+      "combined_pages": [
+        139,
+        142
+      ],
+      "lessons": [
+        {
+          "code": "7A",
+          "pages": [
+            139
+          ]
+        },
+        {
+          "code": "7B",
+          "pages": [
+            140,
+            141
+          ]
+        },
+        {
+          "code": "7C",
+          "pages": [
+            142
+          ]
+        },
+        {
+          "code": "7D",
+          "pages": [
+            143,
+            144
+          ]
+        }
       ]
     },
     {
@@ -315,30 +782,70 @@
       "kind": "vocabulary",
       "file": "Practice/Vocabulary/V8.html",
       "pages": [
-        118,
-        119,
-        120,
-        121,
-        122,
-        123
+        145,
+        146,
+        147,
+        148,
+        149,
+        150,
+        151,
+        152
       ],
       "topics": [
         "vocabulary-travel-verbs",
         "vocabulary-animals",
         "vocabulary-weather-and-seasons",
-        "vocabulary-phone-and-ticket-language",
         "vocabulary-body-parts",
-        "vocabulary-health-complaints"
+        "vocabulary-health-complaints",
+        "vocabulary-phone-and-ticket-language"
       ],
       "study_pages": [
-        118,
-        120,
-        122
+        145,
+        147,
+        149,
+        151
       ],
       "activity_pages": [
-        119,
-        121,
-        123
+        145,
+        146,
+        148,
+        149,
+        150,
+        152
+      ],
+      "combined_pages": [
+        145,
+        149
+      ],
+      "lessons": [
+        {
+          "code": "8A",
+          "pages": [
+            145,
+            146
+          ]
+        },
+        {
+          "code": "8B",
+          "pages": [
+            147,
+            148
+          ]
+        },
+        {
+          "code": "8C",
+          "pages": [
+            149,
+            150
+          ]
+        },
+        {
+          "code": "8D",
+          "pages": [
+            151,
+            152
+          ]
+        }
       ]
     },
     {
@@ -347,11 +854,12 @@
       "kind": "communication",
       "file": "Practice/Communication/C5.html",
       "pages": [
-        124
+        153
       ],
       "topics": [
         "communication-grocery-shopping"
-      ]
+      ],
+      "lessons": []
     },
     {
       "code": "C6",
@@ -359,11 +867,12 @@
       "kind": "communication",
       "file": "Practice/Communication/C6.html",
       "pages": [
-        125
+        154
       ],
       "topics": [
         "communication-helping-a-visitor"
-      ]
+      ],
+      "lessons": []
     },
     {
       "code": "C7",
@@ -371,11 +880,12 @@
       "kind": "communication",
       "file": "Practice/Communication/C7.html",
       "pages": [
-        126
+        155
       ],
       "topics": [
         "communication-diary-writing"
-      ]
+      ],
+      "lessons": []
     },
     {
       "code": "C8",
@@ -383,11 +893,12 @@
       "kind": "communication",
       "file": "Practice/Communication/C8.html",
       "pages": [
-        127
+        156
       ],
       "topics": [
         "communication-buying-a-ticket-by-phone"
-      ]
+      ],
+      "lessons": []
     }
   ],
   "destinations": {
@@ -398,6 +909,7 @@
       "anchor": "grammar-verb-to-be",
       "bank": "grammar",
       "unit": 1,
+      "lesson": "1A",
       "title": "The verb be: am, is and are 1A"
     },
     "grammar-a-an": {
@@ -407,6 +919,7 @@
       "anchor": "grammar-a-an",
       "bank": "grammar",
       "unit": 1,
+      "lesson": "1B",
       "title": "A job: a or an? 1B"
     },
     "grammar-verb-to-be-contractions": {
@@ -416,729 +929,761 @@
       "anchor": "grammar-verb-to-be-contractions",
       "bank": "grammar",
       "unit": 1,
+      "lesson": "1B",
       "title": "Two words, one short form 1B"
     },
     "grammar-capital-letters": {
       "destination_id": "grammar-capital-letters",
       "file": "Practice/Grammar/G1.html",
-      "page": 78,
+      "page": 79,
       "anchor": "grammar-capital-letters",
       "bank": "grammar",
       "unit": 1,
+      "lesson": "1D",
       "title": "Names on a form 1D"
     },
     "grammar-this-that-these-those": {
       "destination_id": "grammar-this-that-these-those",
       "file": "Practice/Grammar/G2.html",
-      "page": 79,
+      "page": 80,
       "anchor": "grammar-this-that-these-those",
       "bank": "grammar",
       "unit": 2,
+      "lesson": "2A",
       "title": "Point to it 2A"
     },
     "grammar-a-an-the": {
       "destination_id": "grammar-a-an-the",
       "file": "Practice/Grammar/G2.html",
-      "page": 79,
+      "page": 81,
       "anchor": "grammar-a-an-the",
       "bank": "grammar",
       "unit": 2,
+      "lesson": "2B",
       "title": "One item, then the same item 2B"
     },
     "grammar-possessive-case": {
       "destination_id": "grammar-possessive-case",
       "file": "Practice/Grammar/G2.html",
-      "page": 80,
+      "page": 82,
       "anchor": "grammar-possessive-case",
       "bank": "grammar",
       "unit": 2,
+      "lesson": "2C",
       "title": "Who does it belong to? 2C"
     },
     "grammar-adjective-position": {
       "destination_id": "grammar-adjective-position",
       "file": "Practice/Grammar/G2.html",
-      "page": 80,
+      "page": 83,
       "anchor": "grammar-adjective-position",
       "bank": "grammar",
       "unit": 2,
+      "lesson": "2D",
       "title": "Where does the adjective go? 2D"
     },
     "grammar-present-simple-affirmative": {
       "destination_id": "grammar-present-simple-affirmative",
       "file": "Practice/Grammar/G3.html",
-      "page": 81,
+      "page": 84,
       "anchor": "grammar-present-simple-affirmative",
       "bank": "grammar",
       "unit": 3,
+      "lesson": "3A",
       "title": "Present simple: routines 3A"
     },
     "grammar-present-simple-negatives-and-questions": {
       "destination_id": "grammar-present-simple-negatives-and-questions",
       "file": "Practice/Grammar/G3.html",
-      "page": 81,
+      "page": 85,
       "anchor": "grammar-present-simple-negatives-and-questions",
       "bank": "grammar",
       "unit": 3,
+      "lesson": "3B",
       "title": "Do you? Does she? 3B"
     },
     "grammar-question-words": {
       "destination_id": "grammar-question-words",
       "file": "Practice/Grammar/G3.html",
-      "page": 82,
+      "page": 86,
       "anchor": "grammar-question-words",
       "bank": "grammar",
       "unit": 3,
+      "lesson": "3C",
       "title": "Ask for the missing detail 3C"
     },
     "grammar-frequency-adverbs": {
       "destination_id": "grammar-frequency-adverbs",
       "file": "Practice/Grammar/G3.html",
-      "page": 82,
+      "page": 87,
       "anchor": "grammar-frequency-adverbs",
       "bank": "grammar",
       "unit": 3,
+      "lesson": "3D",
       "title": "How often? Where in the sentence? 3D"
     },
     "grammar-before-after": {
       "destination_id": "grammar-before-after",
       "file": "Practice/Grammar/G3.html",
-      "page": 82,
+      "page": 87,
       "anchor": "grammar-before-after",
       "bank": "grammar",
       "unit": 3,
+      "lesson": "3D",
       "title": "Put the day in order 3D"
     },
     "grammar-countable-and-uncountable-nouns": {
       "destination_id": "grammar-countable-and-uncountable-nouns",
       "file": "Practice/Grammar/G4.html",
-      "page": 83,
+      "page": 88,
       "anchor": "grammar-countable-and-uncountable-nouns",
       "bank": "grammar",
       "unit": 4,
+      "lesson": "4A",
       "title": "Can you count it? 4A"
     },
     "grammar-object-pronouns": {
       "destination_id": "grammar-object-pronouns",
       "file": "Practice/Grammar/G4.html",
-      "page": 83,
+      "page": 89,
       "anchor": "grammar-object-pronouns",
       "bank": "grammar",
       "unit": 4,
+      "lesson": "4B",
       "title": "Say it once; refer to it again 4B"
     },
     "grammar-too-much-too-many-enough": {
       "destination_id": "grammar-too-much-too-many-enough",
       "file": "Practice/Grammar/G4.html",
-      "page": 84,
+      "page": 90,
       "anchor": "grammar-too-much-too-many-enough",
       "bank": "grammar",
       "unit": 4,
+      "lesson": "4C",
       "title": "More, enough or less than we need 4C"
     },
     "grammar-because-so-and-punctuation": {
       "destination_id": "grammar-because-so-and-punctuation",
       "file": "Practice/Grammar/G4.html",
-      "page": 84,
+      "page": 91,
       "anchor": "grammar-because-so-and-punctuation",
       "bank": "grammar",
       "unit": 4,
+      "lesson": "4D",
       "title": "Give a reason; show a result 4D"
     },
     "grammar-present-continuous": {
       "destination_id": "grammar-present-continuous",
       "file": "Practice/Grammar/G5.html",
-      "page": 85,
+      "page": 92,
       "anchor": "grammar-present-continuous",
       "bank": "grammar",
       "unit": 5,
-      "title": "5A Actions happening now"
+      "lesson": "5A",
+      "title": "Actions happening now 5A"
     },
     "grammar-too-and-enough-with-adjectives": {
       "destination_id": "grammar-too-and-enough-with-adjectives",
       "file": "Practice/Grammar/G5.html",
-      "page": 86,
+      "page": 93,
       "anchor": "grammar-too-and-enough-with-adjectives",
       "bank": "grammar",
       "unit": 5,
-      "title": "5B Too big? Big enough?"
+      "lesson": "5B",
+      "title": "Too big? Big enough? 5B"
     },
     "grammar-frequency-expressions": {
       "destination_id": "grammar-frequency-expressions",
       "file": "Practice/Grammar/G5.html",
-      "page": 86,
+      "page": 94,
       "anchor": "grammar-frequency-expressions",
       "bank": "grammar",
       "unit": 5,
-      "title": "5C How often?"
+      "lesson": "5C",
+      "title": "How often? 5C"
     },
     "grammar-prepositions-of-place": {
       "destination_id": "grammar-prepositions-of-place",
       "file": "Practice/Grammar/G6.html",
-      "page": 87,
+      "page": 95,
       "anchor": "grammar-prepositions-of-place",
       "bank": "grammar",
       "unit": 6,
-      "title": "6B Where is it?"
+      "lesson": "6B",
+      "title": "Where is it? 6B"
     },
     "grammar-giving-directions": {
       "destination_id": "grammar-giving-directions",
       "file": "Practice/Grammar/G6.html",
-      "page": 88,
+      "page": 96,
       "anchor": "grammar-giving-directions",
       "bank": "grammar",
       "unit": 6,
-      "title": "6C A route that works"
+      "lesson": "6C",
+      "title": "A route that works 6C"
     },
     "grammar-can-and-cant": {
       "destination_id": "grammar-can-and-cant",
       "file": "Practice/Grammar/G6.html",
-      "page": 88,
+      "page": 97,
       "anchor": "grammar-can-and-cant",
       "bank": "grammar",
       "unit": 6,
-      "title": "6D What is possible?"
+      "lesson": "6D",
+      "title": "What is possible? 6D"
     },
     "grammar-past-of-be": {
       "destination_id": "grammar-past-of-be",
       "file": "Practice/Grammar/G7.html",
-      "page": 89,
+      "page": 98,
       "anchor": "grammar-past-of-be",
       "bank": "grammar",
       "unit": 7,
-      "title": "7A Yesterday was different"
+      "lesson": "7A",
+      "title": "Yesterday was different 7A"
     },
     "grammar-dates-and-ago": {
       "destination_id": "grammar-dates-and-ago",
       "file": "Practice/Grammar/G7.html",
-      "page": 89,
+      "page": 99,
       "anchor": "grammar-dates-and-ago",
       "bank": "grammar",
       "unit": 7,
-      "title": "7B Dates and ago"
+      "lesson": "7B",
+      "title": "Dates and ago 7B"
     },
     "grammar-past-simple-regular-verbs": {
       "destination_id": "grammar-past-simple-regular-verbs",
       "file": "Practice/Grammar/G7.html",
-      "page": 90,
+      "page": 100,
       "anchor": "grammar-past-simple-regular-verbs",
       "bank": "grammar",
       "unit": 7,
-      "title": "7C Past statements, negatives and questions"
+      "lesson": "7C",
+      "title": "Past statements, negatives and questions 7C"
     },
     "grammar-past-simple-travel-verbs": {
       "destination_id": "grammar-past-simple-travel-verbs",
       "file": "Practice/Grammar/G8.html",
-      "page": 91,
+      "page": 101,
       "anchor": "grammar-past-simple-travel-verbs",
       "bank": "grammar",
       "unit": 8,
-      "title": "8A A day away"
+      "lesson": "8A",
+      "title": "A day away 8A"
     },
     "grammar-should-advice": {
       "destination_id": "grammar-should-advice",
       "file": "Practice/Grammar/G8.html",
-      "page": 92,
+      "page": 102,
       "anchor": "grammar-should-advice",
       "bank": "grammar",
       "unit": 8,
-      "title": "8B Give useful advice"
+      "lesson": "8B",
+      "title": "Give useful advice 8B"
     },
     "grammar-talking-about-health": {
       "destination_id": "grammar-talking-about-health",
       "file": "Practice/Grammar/G8.html",
-      "page": 92,
+      "page": 103,
       "anchor": "grammar-talking-about-health",
       "bank": "grammar",
       "unit": 8,
-      "title": "8C Say what’s wrong"
+      "lesson": "8C",
+      "title": "Say what’s wrong 8C"
     },
     "vocabulary-greetings": {
       "destination_id": "vocabulary-greetings",
       "file": "Practice/Vocabulary/V1.html",
-      "page": 93,
+      "page": 104,
       "anchor": "vocabulary-greetings",
       "bank": "vocabulary",
       "unit": 1,
+      "lesson": "1A",
       "title": "Greetings and goodbyes 1A"
     },
     "vocabulary-personal-information": {
       "destination_id": "vocabulary-personal-information",
       "file": "Practice/Vocabulary/V1.html",
-      "page": 95,
+      "page": 104,
       "anchor": "vocabulary-personal-information",
       "bank": "vocabulary",
       "unit": 1,
-      "title": "Personal information 1A · 1D"
+      "lesson": "1A",
+      "title": "Personal information 1A"
     },
     "vocabulary-alphabet": {
       "destination_id": "vocabulary-alphabet",
       "file": "Practice/Vocabulary/V1.html",
-      "page": 93,
+      "page": 104,
       "anchor": "vocabulary-alphabet",
       "bank": "vocabulary",
       "unit": 1,
+      "lesson": "1A",
       "title": "The alphabet 1A"
     },
     "vocabulary-numbers": {
       "destination_id": "vocabulary-numbers",
       "file": "Practice/Vocabulary/V1.html",
-      "page": 93,
+      "page": 104,
       "anchor": "vocabulary-numbers",
       "bank": "vocabulary",
       "unit": 1,
+      "lesson": "1A",
       "title": "Numbers 0–10 1A"
     },
     "vocabulary-occupations": {
       "destination_id": "vocabulary-occupations",
       "file": "Practice/Vocabulary/V1.html",
-      "page": 95,
+      "page": 106,
       "anchor": "vocabulary-occupations",
       "bank": "vocabulary",
       "unit": 1,
+      "lesson": "1B",
       "title": "Jobs 1B"
-    },
-    "vocabulary-countries": {
-      "destination_id": "vocabulary-countries",
-      "file": "Practice/Vocabulary/V1.html",
-      "page": 95,
-      "anchor": "vocabulary-countries",
-      "bank": "vocabulary",
-      "unit": 1,
-      "title": "Countries and nationalities 1C"
     },
     "vocabulary-adjectives": {
       "destination_id": "vocabulary-adjectives",
       "file": "Practice/Vocabulary/V1.html",
-      "page": 95,
+      "page": 106,
       "anchor": "vocabulary-adjectives",
       "bank": "vocabulary",
       "unit": 1,
-      "title": "Adjectives 1B · 1C · 2D"
+      "lesson": "1B",
+      "title": "Adjectives 1B"
+    },
+    "vocabulary-countries": {
+      "destination_id": "vocabulary-countries",
+      "file": "Practice/Vocabulary/V1.html",
+      "page": 108,
+      "anchor": "vocabulary-countries",
+      "bank": "vocabulary",
+      "unit": 1,
+      "lesson": "1C",
+      "title": "Countries and nationalities 1C"
+    },
+    "vocabulary-adjectives-1c": {
+      "destination_id": "vocabulary-adjectives-1c",
+      "file": "Practice/Vocabulary/V1.html",
+      "page": 108,
+      "anchor": "vocabulary-adjectives-1c",
+      "bank": "vocabulary",
+      "unit": 1,
+      "lesson": "1C",
+      "title": "Adjectives 1C"
+    },
+    "vocabulary-personal-information-1d": {
+      "destination_id": "vocabulary-personal-information-1d",
+      "file": "Practice/Vocabulary/V1.html",
+      "page": 110,
+      "anchor": "vocabulary-personal-information-1d",
+      "bank": "vocabulary",
+      "unit": 1,
+      "lesson": "1D",
+      "title": "Personal information 1D"
     },
     "vocabulary-personal-items": {
       "destination_id": "vocabulary-personal-items",
       "file": "Practice/Vocabulary/V2.html",
-      "page": 98,
+      "page": 111,
       "anchor": "vocabulary-personal-items",
       "bank": "vocabulary",
       "unit": 2,
+      "lesson": "2A",
       "title": "Personal items 2A"
     },
     "vocabulary-telling-time": {
       "destination_id": "vocabulary-telling-time",
       "file": "Practice/Vocabulary/V2.html",
-      "page": 98,
+      "page": 112,
       "anchor": "vocabulary-telling-time",
       "bank": "vocabulary",
       "unit": 2,
+      "lesson": "2B",
       "title": "Telling the time 2B"
     },
     "vocabulary-family-members": {
       "destination_id": "vocabulary-family-members",
       "file": "Practice/Vocabulary/V2.html",
-      "page": 98,
+      "page": 113,
       "anchor": "vocabulary-family-members",
       "bank": "vocabulary",
       "unit": 2,
+      "lesson": "2C",
       "title": "Family words 2C"
+    },
+    "vocabulary-adjectives-2d": {
+      "destination_id": "vocabulary-adjectives-2d",
+      "file": "Practice/Vocabulary/V2.html",
+      "page": 114,
+      "anchor": "vocabulary-adjectives-2d",
+      "bank": "vocabulary",
+      "unit": 2,
+      "lesson": "2D",
+      "title": "Adjectives 2D"
     },
     "vocabulary-colors": {
       "destination_id": "vocabulary-colors",
       "file": "Practice/Vocabulary/V2.html",
-      "page": 98,
+      "page": 114,
       "anchor": "vocabulary-colors",
       "bank": "vocabulary",
       "unit": 2,
+      "lesson": "2D",
       "title": "Colors 2D"
     },
     "vocabulary-daily-routines": {
       "destination_id": "vocabulary-daily-routines",
       "file": "Practice/Vocabulary/V3.html",
-      "page": 101,
+      "page": 115,
       "anchor": "vocabulary-daily-routines",
       "bank": "vocabulary",
       "unit": 3,
-      "title": "Daily routines 3A · 3D"
+      "lesson": "3A",
+      "title": "Daily routines 3A"
     },
     "vocabulary-days-of-the-week": {
       "destination_id": "vocabulary-days-of-the-week",
       "file": "Practice/Vocabulary/V3.html",
-      "page": 101,
+      "page": 117,
       "anchor": "vocabulary-days-of-the-week",
       "bank": "vocabulary",
       "unit": 3,
+      "lesson": "3B",
       "title": "Days of the week 3B"
     },
     "vocabulary-place-adjectives-recall": {
       "destination_id": "vocabulary-place-adjectives-recall",
       "file": "Practice/Vocabulary/V3.html",
-      "page": 101,
+      "page": 118,
       "anchor": "vocabulary-place-adjectives-recall",
       "bank": "vocabulary",
       "unit": 3,
+      "lesson": "3C",
       "title": "Places: what are they like? 3C"
+    },
+    "vocabulary-daily-routines-3d": {
+      "destination_id": "vocabulary-daily-routines-3d",
+      "file": "Practice/Vocabulary/V3.html",
+      "page": 120,
+      "anchor": "vocabulary-daily-routines-3d",
+      "bank": "vocabulary",
+      "unit": 3,
+      "lesson": "3D",
+      "title": "Daily routines 3D"
     },
     "vocabulary-food-and-drink": {
       "destination_id": "vocabulary-food-and-drink",
       "file": "Practice/Vocabulary/V4.html",
-      "page": 104,
+      "page": 121,
       "anchor": "vocabulary-food-and-drink",
       "bank": "vocabulary",
       "unit": 4,
+      "lesson": "4A",
       "title": "Food and drink 4A"
     },
     "vocabulary-flavors": {
       "destination_id": "vocabulary-flavors",
       "file": "Practice/Vocabulary/V4.html",
-      "page": 104,
+      "page": 123,
       "anchor": "vocabulary-flavors",
       "bank": "vocabulary",
       "unit": 4,
+      "lesson": "4B",
       "title": "Flavors and food opinions 4B"
     },
     "vocabulary-cooking-verbs": {
       "destination_id": "vocabulary-cooking-verbs",
       "file": "Practice/Vocabulary/V4.html",
-      "page": 104,
+      "page": 124,
       "anchor": "vocabulary-cooking-verbs",
       "bank": "vocabulary",
       "unit": 4,
+      "lesson": "4C",
       "title": "Cooking verbs and recipe words 4C"
     },
     "vocabulary-sharing-food": {
       "destination_id": "vocabulary-sharing-food",
       "file": "Practice/Vocabulary/V4.html",
-      "page": 104,
+      "page": 125,
       "anchor": "vocabulary-sharing-food",
       "bank": "vocabulary",
       "unit": 4,
+      "lesson": "4D",
       "title": "Sharing food 4D"
     },
     "vocabulary-clothes-and-accessories": {
       "destination_id": "vocabulary-clothes-and-accessories",
       "file": "Practice/Vocabulary/V5.html",
-      "page": 107,
+      "page": 126,
       "anchor": "vocabulary-clothes-and-accessories",
       "bank": "vocabulary",
       "unit": 5,
+      "lesson": "5A",
       "title": "Clothes and accessories 5A"
     },
     "vocabulary-shopping-verbs": {
       "destination_id": "vocabulary-shopping-verbs",
       "file": "Practice/Vocabulary/V5.html",
-      "page": 107,
+      "page": 128,
       "anchor": "vocabulary-shopping-verbs",
       "bank": "vocabulary",
       "unit": 5,
+      "lesson": "5B",
       "title": "Shopping actions 5B"
     },
     "vocabulary-places-in-town": {
       "destination_id": "vocabulary-places-in-town",
       "file": "Practice/Vocabulary/V5.html",
-      "page": 107,
+      "page": 129,
       "anchor": "vocabulary-places-in-town",
       "bank": "vocabulary",
       "unit": 5,
+      "lesson": "5C",
       "title": "Places and habits 5C"
     },
     "vocabulary-at-the-store": {
       "destination_id": "vocabulary-at-the-store",
       "file": "Practice/Vocabulary/V5.html",
-      "page": 107,
+      "page": 131,
       "anchor": "vocabulary-at-the-store",
       "bank": "vocabulary",
       "unit": 5,
+      "lesson": "5D",
       "title": "At the store 5D"
     },
     "vocabulary-places-in-town-2": {
       "destination_id": "vocabulary-places-in-town-2",
       "file": "Practice/Vocabulary/V6.html",
-      "page": 110,
+      "page": 133,
       "anchor": "vocabulary-places-in-town-2",
       "bank": "vocabulary",
       "unit": 6,
+      "lesson": "6A",
       "title": "Places and purposes 6A"
     },
     "vocabulary-rooms-and-furniture": {
       "destination_id": "vocabulary-rooms-and-furniture",
       "file": "Practice/Vocabulary/V6.html",
-      "page": 112,
+      "page": 135,
       "anchor": "vocabulary-rooms-and-furniture",
       "bank": "vocabulary",
       "unit": 6,
+      "lesson": "6B",
       "title": "Rooms and furniture 6B"
     },
     "vocabulary-movement-and-directions": {
       "destination_id": "vocabulary-movement-and-directions",
       "file": "Practice/Vocabulary/V6.html",
-      "page": 112,
+      "page": 137,
       "anchor": "vocabulary-movement-and-directions",
       "bank": "vocabulary",
       "unit": 6,
+      "lesson": "6C",
       "title": "Find the way 6C"
     },
     "vocabulary-shopping-centers-and-attractions": {
       "destination_id": "vocabulary-shopping-centers-and-attractions",
       "file": "Practice/Vocabulary/V6.html",
-      "page": 110,
+      "page": 138,
       "anchor": "vocabulary-shopping-centers-and-attractions",
       "bank": "vocabulary",
       "unit": 6,
+      "lesson": "6D",
       "title": "A day out 6D"
+    },
+    "vocabulary-past-time-expressions": {
+      "destination_id": "vocabulary-past-time-expressions",
+      "file": "Practice/Vocabulary/V7.html",
+      "page": 139,
+      "anchor": "vocabulary-past-time-expressions",
+      "bank": "vocabulary",
+      "unit": 7,
+      "lesson": "7A",
+      "title": "Past time 7A"
     },
     "vocabulary-months": {
       "destination_id": "vocabulary-months",
       "file": "Practice/Vocabulary/V7.html",
-      "page": 114,
+      "page": 140,
       "anchor": "vocabulary-months",
       "bank": "vocabulary",
       "unit": 7,
+      "lesson": "7B",
       "title": "Months 7B"
     },
     "vocabulary-dates-and-ordinal-numbers": {
       "destination_id": "vocabulary-dates-and-ordinal-numbers",
       "file": "Practice/Vocabulary/V7.html",
-      "page": 114,
+      "page": 140,
       "anchor": "vocabulary-dates-and-ordinal-numbers",
       "bank": "vocabulary",
       "unit": 7,
+      "lesson": "7B",
       "title": "Dates and ordinal numbers 7B"
     },
-    "vocabulary-past-time-expressions": {
-      "destination_id": "vocabulary-past-time-expressions",
+    "vocabulary-past-time-expressions-7b": {
+      "destination_id": "vocabulary-past-time-expressions-7b",
       "file": "Practice/Vocabulary/V7.html",
-      "page": 114,
-      "anchor": "vocabulary-past-time-expressions",
+      "page": 140,
+      "anchor": "vocabulary-past-time-expressions-7b",
       "bank": "vocabulary",
       "unit": 7,
-      "title": "Past time 7A · 7B"
+      "lesson": "7B",
+      "title": "Past time 7B"
     },
     "vocabulary-music": {
       "destination_id": "vocabulary-music",
       "file": "Practice/Vocabulary/V7.html",
-      "page": 116,
+      "page": 142,
       "anchor": "vocabulary-music",
       "bank": "vocabulary",
       "unit": 7,
+      "lesson": "7C",
       "title": "Music objects 7C"
     },
     "vocabulary-irregular-past-verbs": {
       "destination_id": "vocabulary-irregular-past-verbs",
       "file": "Practice/Vocabulary/V7.html",
-      "page": 116,
+      "page": 143,
       "anchor": "vocabulary-irregular-past-verbs",
       "bank": "vocabulary",
       "unit": 7,
+      "lesson": "7D",
       "title": "Irregular past verbs 7D"
     },
     "vocabulary-sequencing-words": {
       "destination_id": "vocabulary-sequencing-words",
       "file": "Practice/Vocabulary/V7.html",
-      "page": 116,
+      "page": 143,
       "anchor": "vocabulary-sequencing-words",
       "bank": "vocabulary",
       "unit": 7,
+      "lesson": "7D",
       "title": "The order of events 7D"
     },
     "vocabulary-travel-verbs": {
       "destination_id": "vocabulary-travel-verbs",
       "file": "Practice/Vocabulary/V8.html",
-      "page": 118,
+      "page": 145,
       "anchor": "vocabulary-travel-verbs",
       "bank": "vocabulary",
       "unit": 8,
+      "lesson": "8A",
       "title": "Travel verbs and chunks 8A"
     },
     "vocabulary-animals": {
       "destination_id": "vocabulary-animals",
       "file": "Practice/Vocabulary/V8.html",
-      "page": 118,
+      "page": 145,
       "anchor": "vocabulary-animals",
       "bank": "vocabulary",
       "unit": 8,
+      "lesson": "8A",
       "title": "Animals 8A"
     },
     "vocabulary-weather-and-seasons": {
       "destination_id": "vocabulary-weather-and-seasons",
       "file": "Practice/Vocabulary/V8.html",
-      "page": 120,
+      "page": 147,
       "anchor": "vocabulary-weather-and-seasons",
       "bank": "vocabulary",
       "unit": 8,
+      "lesson": "8B",
       "title": "Weather and seasons 8B"
-    },
-    "vocabulary-phone-and-ticket-language": {
-      "destination_id": "vocabulary-phone-and-ticket-language",
-      "file": "Practice/Vocabulary/V8.html",
-      "page": 122,
-      "anchor": "vocabulary-phone-and-ticket-language",
-      "bank": "vocabulary",
-      "unit": 8,
-      "title": "Phone and ticket language 8D"
     },
     "vocabulary-body-parts": {
       "destination_id": "vocabulary-body-parts",
       "file": "Practice/Vocabulary/V8.html",
-      "page": 122,
+      "page": 149,
       "anchor": "vocabulary-body-parts",
       "bank": "vocabulary",
       "unit": 8,
+      "lesson": "8C",
       "title": "Body parts 8C"
     },
     "vocabulary-health-complaints": {
       "destination_id": "vocabulary-health-complaints",
       "file": "Practice/Vocabulary/V8.html",
-      "page": 122,
+      "page": 149,
       "anchor": "vocabulary-health-complaints",
       "bank": "vocabulary",
       "unit": 8,
+      "lesson": "8C",
       "title": "Health complaints 8C"
+    },
+    "vocabulary-phone-and-ticket-language": {
+      "destination_id": "vocabulary-phone-and-ticket-language",
+      "file": "Practice/Vocabulary/V8.html",
+      "page": 151,
+      "anchor": "vocabulary-phone-and-ticket-language",
+      "bank": "vocabulary",
+      "unit": 8,
+      "lesson": "8D",
+      "title": "Phone and ticket language 8D"
     },
     "communication-grocery-shopping": {
       "destination_id": "communication-grocery-shopping",
       "file": "Practice/Communication/C5.html",
-      "page": 124,
+      "page": 153,
       "anchor": "communication-grocery-shopping",
       "bank": "communication",
       "unit": 5,
+      "lesson": "5D",
       "title": "A useful shopping conversation 5D"
     },
     "communication-helping-a-visitor": {
       "destination_id": "communication-helping-a-visitor",
       "file": "Practice/Communication/C6.html",
-      "page": 125,
+      "page": 154,
       "anchor": "communication-helping-a-visitor",
       "bank": "communication",
       "unit": 6,
+      "lesson": "6D",
       "title": "Make a visitor’s plan work 6D"
     },
     "communication-diary-writing": {
       "destination_id": "communication-diary-writing",
       "file": "Practice/Communication/C7.html",
-      "page": 126,
+      "page": 155,
       "anchor": "communication-diary-writing",
       "bank": "communication",
       "unit": 7,
+      "lesson": "7D",
       "title": "Turn a small event into a readable story 7D"
     },
     "communication-buying-a-ticket-by-phone": {
       "destination_id": "communication-buying-a-ticket-by-phone",
       "file": "Practice/Communication/C8.html",
-      "page": 127,
+      "page": 156,
       "anchor": "communication-buying-a-ticket-by-phone",
       "bank": "communication",
       "unit": 8,
+      "lesson": "8D",
       "title": "Ask, choose and confirm 8D"
     }
   },
   "counts": {
-    "grammar_pages": 16,
-    "vocabulary_pages": 31,
-    "vocabulary_study_pages": 13,
-    "vocabulary_activity_pages": 18,
+    "grammar_pages": 27,
+    "vocabulary_pages": 49,
+    "vocabulary_study_pages": 32,
+    "vocabulary_activity_pages": 35,
     "communication_pages": 4,
-    "total_practice_pages": 51,
+    "total_practice_pages": 80,
     "forward_references": 75,
-    "distinct_referenced_destinations": 70,
-    "total_authored_destinations": 71
+    "distinct_referenced_destinations": 75,
+    "total_authored_destinations": 76,
+    "vocabulary_combined_pages": 18,
+    "grammar_lesson_groups": 27,
+    "vocabulary_lesson_groups": 32,
+    "vocabulary_reference_topics": 43
   },
   "first_printed_page": 77,
-  "last_printed_page": 127,
-  "vocabulary_adjacency": {
-    "maximum_pages_after_reference": 2,
-    "unrelated_reference_pages_between": false,
-    "activity_page_uses_one_reference_page": true,
-    "groups": [
-      {
-        "activity_page": 94,
-        "study_page": 93,
-        "unit": 1
-      },
-      {
-        "activity_page": 96,
-        "study_page": 95,
-        "unit": 1
-      },
-      {
-        "activity_page": 97,
-        "study_page": 95,
-        "unit": 1
-      },
-      {
-        "activity_page": 99,
-        "study_page": 98,
-        "unit": 2
-      },
-      {
-        "activity_page": 100,
-        "study_page": 98,
-        "unit": 2
-      },
-      {
-        "activity_page": 102,
-        "study_page": 101,
-        "unit": 3
-      },
-      {
-        "activity_page": 103,
-        "study_page": 101,
-        "unit": 3
-      },
-      {
-        "activity_page": 105,
-        "study_page": 104,
-        "unit": 4
-      },
-      {
-        "activity_page": 106,
-        "study_page": 104,
-        "unit": 4
-      },
-      {
-        "activity_page": 108,
-        "study_page": 107,
-        "unit": 5
-      },
-      {
-        "activity_page": 109,
-        "study_page": 107,
-        "unit": 5
-      },
-      {
-        "activity_page": 111,
-        "study_page": 110,
-        "unit": 6
-      },
-      {
-        "activity_page": 113,
-        "study_page": 112,
-        "unit": 6
-      },
-      {
-        "activity_page": 115,
-        "study_page": 114,
-        "unit": 7
-      },
-      {
-        "activity_page": 117,
-        "study_page": 116,
-        "unit": 7
-      },
-      {
-        "activity_page": 119,
-        "study_page": 118,
-        "unit": 8
-      },
-      {
-        "activity_page": 121,
-        "study_page": 120,
-        "unit": 8
-      },
-      {
-        "activity_page": 123,
-        "study_page": 122,
-        "unit": 8
-      }
-    ]
+  "last_printed_page": 156,
+  "lesson_header_policy": {
+    "source": "Actual main lesson header, title, objective and lesson code",
+    "grammar_color": "#245b9a",
+    "vocabulary_color": "#247348",
+    "mixed_lesson_pages": false
   }
 }

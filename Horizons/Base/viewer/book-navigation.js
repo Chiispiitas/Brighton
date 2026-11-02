@@ -14,8 +14,9 @@
   let current = 0;
   pages.forEach((page, i) => {
     page.id ||= `page-${page.dataset.page}`;
-    const header = page.querySelector('.hz-lesson-header');
-    const practice = page.dataset.practiceStart === 'true';
+    const practicePage = page.classList.contains('hz-practice-page');
+    const header = practicePage ? null : page.querySelector('.hz-lesson-header');
+    const practice = practicePage && page.dataset.practiceStart === 'true';
     if (header || practice || (page.classList.contains('hz-credits-page') && !starts.some(x => x.credits))) {
       const code = header?.querySelector('.hz-lesson-tab__id')?.textContent.trim();
       const title = header?.querySelector('.hz-lesson-title')?.textContent.trim() || (practice ? page.dataset.practiceTitle : 'Image credits');

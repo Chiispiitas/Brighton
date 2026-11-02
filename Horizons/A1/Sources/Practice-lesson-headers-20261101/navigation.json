@@ -1,0 +1,1615 @@
+{
+  "baseline": "ad73e4b64900537e69ad9c09baae21b3a982b184",
+  "physical_pages": 156,
+  "printed_pages": [
+    5,
+    160
+  ],
+  "counts": {
+    "grammar_pages": 27,
+    "vocabulary_pages": 49,
+    "vocabulary_study_pages": 32,
+    "vocabulary_activity_pages": 35,
+    "communication_pages": 4,
+    "total_practice_pages": 80,
+    "forward_references": 75,
+    "distinct_referenced_destinations": 75,
+    "total_authored_destinations": 76,
+    "vocabulary_combined_pages": 18,
+    "grammar_lesson_groups": 27,
+    "vocabulary_lesson_groups": 32,
+    "vocabulary_reference_topics": 43
+  },
+  "pairs": [
+    {
+      "topic": "vocabulary-greetings",
+      "canonical_topic": "vocabulary-greetings",
+      "lesson": "1A",
+      "study_page": 104,
+      "activity_page": 105,
+      "activity_id": "activity-vocabulary-greetings"
+    },
+    {
+      "topic": "vocabulary-personal-information",
+      "canonical_topic": "vocabulary-personal-information",
+      "lesson": "1A",
+      "study_page": 104,
+      "activity_page": 105,
+      "activity_id": "activity-vocabulary-personal-information"
+    },
+    {
+      "topic": "vocabulary-alphabet",
+      "canonical_topic": "vocabulary-alphabet",
+      "lesson": "1A",
+      "study_page": 104,
+      "activity_page": 105,
+      "activity_id": "activity-vocabulary-alphabet"
+    },
+    {
+      "topic": "vocabulary-numbers",
+      "canonical_topic": "vocabulary-numbers",
+      "lesson": "1A",
+      "study_page": 104,
+      "activity_page": 105,
+      "activity_id": "activity-vocabulary-numbers"
+    },
+    {
+      "topic": "vocabulary-occupations",
+      "canonical_topic": "vocabulary-occupations",
+      "lesson": "1B",
+      "study_page": 106,
+      "activity_page": 107,
+      "activity_id": "activity-vocabulary-occupations"
+    },
+    {
+      "topic": "vocabulary-adjectives",
+      "canonical_topic": "vocabulary-adjectives",
+      "lesson": "1B",
+      "study_page": 106,
+      "activity_page": 107,
+      "activity_id": "activity-vocabulary-adjectives"
+    },
+    {
+      "topic": "vocabulary-countries",
+      "canonical_topic": "vocabulary-countries",
+      "lesson": "1C",
+      "study_page": 108,
+      "activity_page": 108,
+      "activity_id": "activity-vocabulary-countries"
+    },
+    {
+      "topic": "vocabulary-adjectives-1c",
+      "canonical_topic": "vocabulary-adjectives",
+      "lesson": "1C",
+      "study_page": 108,
+      "activity_page": 109,
+      "activity_id": "activity-vocabulary-adjectives-1c"
+    },
+    {
+      "topic": "vocabulary-personal-information-1d",
+      "canonical_topic": "vocabulary-personal-information",
+      "lesson": "1D",
+      "study_page": 110,
+      "activity_page": 110,
+      "activity_id": "activity-vocabulary-personal-information-1d"
+    },
+    {
+      "topic": "vocabulary-personal-items",
+      "canonical_topic": "vocabulary-personal-items",
+      "lesson": "2A",
+      "study_page": 111,
+      "activity_page": 111,
+      "activity_id": "activity-vocabulary-personal-items"
+    },
+    {
+      "topic": "vocabulary-telling-time",
+      "canonical_topic": "vocabulary-telling-time",
+      "lesson": "2B",
+      "study_page": 112,
+      "activity_page": 112,
+      "activity_id": "activity-vocabulary-telling-time"
+    },
+    {
+      "topic": "vocabulary-family-members",
+      "canonical_topic": "vocabulary-family-members",
+      "lesson": "2C",
+      "study_page": 113,
+      "activity_page": 113,
+      "activity_id": "activity-vocabulary-family-members"
+    },
+    {
+      "topic": "vocabulary-adjectives-2d",
+      "canonical_topic": "vocabulary-adjectives",
+      "lesson": "2D",
+      "study_page": 114,
+      "activity_page": 114,
+      "activity_id": "activity-vocabulary-adjectives-2d"
+    },
+    {
+      "topic": "vocabulary-colors",
+      "canonical_topic": "vocabulary-colors",
+      "lesson": "2D",
+      "study_page": 114,
+      "activity_page": 114,
+      "activity_id": "activity-vocabulary-colors"
+    },
+    {
+      "topic": "vocabulary-daily-routines",
+      "canonical_topic": "vocabulary-daily-routines",
+      "lesson": "3A",
+      "study_page": 115,
+      "activity_page": 116,
+      "activity_id": "activity-vocabulary-daily-routines"
+    },
+    {
+      "topic": "vocabulary-days-of-the-week",
+      "canonical_topic": "vocabulary-days-of-the-week",
+      "lesson": "3B",
+      "study_page": 117,
+      "activity_page": 117,
+      "activity_id": "activity-vocabulary-days-of-the-week"
+    },
+    {
+      "topic": "vocabulary-place-adjectives-recall",
+      "canonical_topic": "vocabulary-place-adjectives-recall",
+      "lesson": "3C",
+      "study_page": 118,
+      "activity_page": 119,
+      "activity_id": "activity-vocabulary-place-adjectives-recall"
+    },
+    {
+      "topic": "vocabulary-daily-routines-3d",
+      "canonical_topic": "vocabulary-daily-routines",
+      "lesson": "3D",
+      "study_page": 120,
+      "activity_page": 120,
+      "activity_id": "activity-vocabulary-daily-routines-3d"
+    },
+    {
+      "topic": "vocabulary-food-and-drink",
+      "canonical_topic": "vocabulary-food-and-drink",
+      "lesson": "4A",
+      "study_page": 121,
+      "activity_page": 122,
+      "activity_id": "activity-vocabulary-food-and-drink"
+    },
+    {
+      "topic": "vocabulary-flavors",
+      "canonical_topic": "vocabulary-flavors",
+      "lesson": "4B",
+      "study_page": 123,
+      "activity_page": 123,
+      "activity_id": "activity-vocabulary-flavors"
+    },
+    {
+      "topic": "vocabulary-cooking-verbs",
+      "canonical_topic": "vocabulary-cooking-verbs",
+      "lesson": "4C",
+      "study_page": 124,
+      "activity_page": 124,
+      "activity_id": "activity-vocabulary-cooking-verbs"
+    },
+    {
+      "topic": "vocabulary-sharing-food",
+      "canonical_topic": "vocabulary-sharing-food",
+      "lesson": "4D",
+      "study_page": 125,
+      "activity_page": 125,
+      "activity_id": "activity-vocabulary-sharing-food"
+    },
+    {
+      "topic": "vocabulary-clothes-and-accessories",
+      "canonical_topic": "vocabulary-clothes-and-accessories",
+      "lesson": "5A",
+      "study_page": 126,
+      "activity_page": 127,
+      "activity_id": "activity-vocabulary-clothes-and-accessories"
+    },
+    {
+      "topic": "vocabulary-shopping-verbs",
+      "canonical_topic": "vocabulary-shopping-verbs",
+      "lesson": "5B",
+      "study_page": 128,
+      "activity_page": 128,
+      "activity_id": "activity-vocabulary-shopping-verbs"
+    },
+    {
+      "topic": "vocabulary-places-in-town",
+      "canonical_topic": "vocabulary-places-in-town",
+      "lesson": "5C",
+      "study_page": 129,
+      "activity_page": 130,
+      "activity_id": "activity-vocabulary-places-in-town"
+    },
+    {
+      "topic": "vocabulary-at-the-store",
+      "canonical_topic": "vocabulary-at-the-store",
+      "lesson": "5D",
+      "study_page": 131,
+      "activity_page": 132,
+      "activity_id": "activity-vocabulary-at-the-store"
+    },
+    {
+      "topic": "vocabulary-places-in-town-2",
+      "canonical_topic": "vocabulary-places-in-town-2",
+      "lesson": "6A",
+      "study_page": 133,
+      "activity_page": 134,
+      "activity_id": "activity-vocabulary-places-in-town-2"
+    },
+    {
+      "topic": "vocabulary-rooms-and-furniture",
+      "canonical_topic": "vocabulary-rooms-and-furniture",
+      "lesson": "6B",
+      "study_page": 135,
+      "activity_page": 136,
+      "activity_id": "activity-vocabulary-rooms-and-furniture"
+    },
+    {
+      "topic": "vocabulary-movement-and-directions",
+      "canonical_topic": "vocabulary-movement-and-directions",
+      "lesson": "6C",
+      "study_page": 137,
+      "activity_page": 137,
+      "activity_id": "activity-vocabulary-movement-and-directions"
+    },
+    {
+      "topic": "vocabulary-shopping-centers-and-attractions",
+      "canonical_topic": "vocabulary-shopping-centers-and-attractions",
+      "lesson": "6D",
+      "study_page": 138,
+      "activity_page": 138,
+      "activity_id": "activity-vocabulary-shopping-centers-and-attractions"
+    },
+    {
+      "topic": "vocabulary-past-time-expressions",
+      "canonical_topic": "vocabulary-past-time-expressions",
+      "lesson": "7A",
+      "study_page": 139,
+      "activity_page": 139,
+      "activity_id": "activity-vocabulary-past-time-expressions"
+    },
+    {
+      "topic": "vocabulary-months",
+      "canonical_topic": "vocabulary-months",
+      "lesson": "7B",
+      "study_page": 140,
+      "activity_page": 141,
+      "activity_id": "activity-vocabulary-months"
+    },
+    {
+      "topic": "vocabulary-dates-and-ordinal-numbers",
+      "canonical_topic": "vocabulary-dates-and-ordinal-numbers",
+      "lesson": "7B",
+      "study_page": 140,
+      "activity_page": 141,
+      "activity_id": "activity-vocabulary-dates-and-ordinal-numbers"
+    },
+    {
+      "topic": "vocabulary-past-time-expressions-7b",
+      "canonical_topic": "vocabulary-past-time-expressions",
+      "lesson": "7B",
+      "study_page": 140,
+      "activity_page": 141,
+      "activity_id": "activity-vocabulary-past-time-expressions-7b"
+    },
+    {
+      "topic": "vocabulary-music",
+      "canonical_topic": "vocabulary-music",
+      "lesson": "7C",
+      "study_page": 142,
+      "activity_page": 142,
+      "activity_id": "activity-vocabulary-music"
+    },
+    {
+      "topic": "vocabulary-irregular-past-verbs",
+      "canonical_topic": "vocabulary-irregular-past-verbs",
+      "lesson": "7D",
+      "study_page": 143,
+      "activity_page": 144,
+      "activity_id": "activity-vocabulary-irregular-past-verbs"
+    },
+    {
+      "topic": "vocabulary-sequencing-words",
+      "canonical_topic": "vocabulary-sequencing-words",
+      "lesson": "7D",
+      "study_page": 143,
+      "activity_page": 144,
+      "activity_id": "activity-vocabulary-sequencing-words"
+    },
+    {
+      "topic": "vocabulary-travel-verbs",
+      "canonical_topic": "vocabulary-travel-verbs",
+      "lesson": "8A",
+      "study_page": 145,
+      "activity_page": 145,
+      "activity_id": "activity-vocabulary-travel-verbs"
+    },
+    {
+      "topic": "vocabulary-animals",
+      "canonical_topic": "vocabulary-animals",
+      "lesson": "8A",
+      "study_page": 145,
+      "activity_page": 146,
+      "activity_id": "activity-vocabulary-animals"
+    },
+    {
+      "topic": "vocabulary-weather-and-seasons",
+      "canonical_topic": "vocabulary-weather-and-seasons",
+      "lesson": "8B",
+      "study_page": 147,
+      "activity_page": 148,
+      "activity_id": "activity-vocabulary-weather-and-seasons"
+    },
+    {
+      "topic": "vocabulary-body-parts",
+      "canonical_topic": "vocabulary-body-parts",
+      "lesson": "8C",
+      "study_page": 149,
+      "activity_page": 149,
+      "activity_id": "activity-vocabulary-body-parts"
+    },
+    {
+      "topic": "vocabulary-health-complaints",
+      "canonical_topic": "vocabulary-health-complaints",
+      "lesson": "8C",
+      "study_page": 149,
+      "activity_page": 150,
+      "activity_id": "activity-vocabulary-health-complaints"
+    },
+    {
+      "topic": "vocabulary-phone-and-ticket-language",
+      "canonical_topic": "vocabulary-phone-and-ticket-language",
+      "lesson": "8D",
+      "study_page": 151,
+      "activity_page": 152,
+      "activity_id": "activity-vocabulary-phone-and-ticket-language"
+    }
+  ],
+  "lesson_pages": [
+    {
+      "bank": "grammar",
+      "lesson": "1A",
+      "pages": [
+        77
+      ]
+    },
+    {
+      "bank": "grammar",
+      "lesson": "1B",
+      "pages": [
+        78
+      ]
+    },
+    {
+      "bank": "grammar",
+      "lesson": "1D",
+      "pages": [
+        79
+      ]
+    },
+    {
+      "bank": "grammar",
+      "lesson": "2A",
+      "pages": [
+        80
+      ]
+    },
+    {
+      "bank": "grammar",
+      "lesson": "2B",
+      "pages": [
+        81
+      ]
+    },
+    {
+      "bank": "grammar",
+      "lesson": "2C",
+      "pages": [
+        82
+      ]
+    },
+    {
+      "bank": "grammar",
+      "lesson": "2D",
+      "pages": [
+        83
+      ]
+    },
+    {
+      "bank": "grammar",
+      "lesson": "3A",
+      "pages": [
+        84
+      ]
+    },
+    {
+      "bank": "grammar",
+      "lesson": "3B",
+      "pages": [
+        85
+      ]
+    },
+    {
+      "bank": "grammar",
+      "lesson": "3C",
+      "pages": [
+        86
+      ]
+    },
+    {
+      "bank": "grammar",
+      "lesson": "3D",
+      "pages": [
+        87
+      ]
+    },
+    {
+      "bank": "grammar",
+      "lesson": "4A",
+      "pages": [
+        88
+      ]
+    },
+    {
+      "bank": "grammar",
+      "lesson": "4B",
+      "pages": [
+        89
+      ]
+    },
+    {
+      "bank": "grammar",
+      "lesson": "4C",
+      "pages": [
+        90
+      ]
+    },
+    {
+      "bank": "grammar",
+      "lesson": "4D",
+      "pages": [
+        91
+      ]
+    },
+    {
+      "bank": "grammar",
+      "lesson": "5A",
+      "pages": [
+        92
+      ]
+    },
+    {
+      "bank": "grammar",
+      "lesson": "5B",
+      "pages": [
+        93
+      ]
+    },
+    {
+      "bank": "grammar",
+      "lesson": "5C",
+      "pages": [
+        94
+      ]
+    },
+    {
+      "bank": "grammar",
+      "lesson": "6B",
+      "pages": [
+        95
+      ]
+    },
+    {
+      "bank": "grammar",
+      "lesson": "6C",
+      "pages": [
+        96
+      ]
+    },
+    {
+      "bank": "grammar",
+      "lesson": "6D",
+      "pages": [
+        97
+      ]
+    },
+    {
+      "bank": "grammar",
+      "lesson": "7A",
+      "pages": [
+        98
+      ]
+    },
+    {
+      "bank": "grammar",
+      "lesson": "7B",
+      "pages": [
+        99
+      ]
+    },
+    {
+      "bank": "grammar",
+      "lesson": "7C",
+      "pages": [
+        100
+      ]
+    },
+    {
+      "bank": "grammar",
+      "lesson": "8A",
+      "pages": [
+        101
+      ]
+    },
+    {
+      "bank": "grammar",
+      "lesson": "8B",
+      "pages": [
+        102
+      ]
+    },
+    {
+      "bank": "grammar",
+      "lesson": "8C",
+      "pages": [
+        103
+      ]
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "1A",
+      "pages": [
+        104,
+        105
+      ]
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "1B",
+      "pages": [
+        106,
+        107
+      ]
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "1C",
+      "pages": [
+        108,
+        109
+      ]
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "1D",
+      "pages": [
+        110
+      ]
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "2A",
+      "pages": [
+        111
+      ]
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "2B",
+      "pages": [
+        112
+      ]
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "2C",
+      "pages": [
+        113
+      ]
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "2D",
+      "pages": [
+        114
+      ]
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "3A",
+      "pages": [
+        115,
+        116
+      ]
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "3B",
+      "pages": [
+        117
+      ]
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "3C",
+      "pages": [
+        118,
+        119
+      ]
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "3D",
+      "pages": [
+        120
+      ]
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "4A",
+      "pages": [
+        121,
+        122
+      ]
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "4B",
+      "pages": [
+        123
+      ]
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "4C",
+      "pages": [
+        124
+      ]
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "4D",
+      "pages": [
+        125
+      ]
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "5A",
+      "pages": [
+        126,
+        127
+      ]
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "5B",
+      "pages": [
+        128
+      ]
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "5C",
+      "pages": [
+        129,
+        130
+      ]
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "5D",
+      "pages": [
+        131,
+        132
+      ]
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "6A",
+      "pages": [
+        133,
+        134
+      ]
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "6B",
+      "pages": [
+        135,
+        136
+      ]
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "6C",
+      "pages": [
+        137
+      ]
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "6D",
+      "pages": [
+        138
+      ]
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "7A",
+      "pages": [
+        139
+      ]
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "7B",
+      "pages": [
+        140,
+        141
+      ]
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "7C",
+      "pages": [
+        142
+      ]
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "7D",
+      "pages": [
+        143,
+        144
+      ]
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "8A",
+      "pages": [
+        145,
+        146
+      ]
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "8B",
+      "pages": [
+        147,
+        148
+      ]
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "8C",
+      "pages": [
+        149,
+        150
+      ]
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "8D",
+      "pages": [
+        151,
+        152
+      ]
+    }
+  ],
+  "task_map": [
+    {
+      "bank": "grammar",
+      "lesson": "1A",
+      "number": 1,
+      "source": "G1:0"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "1A",
+      "number": 2,
+      "source": "G1:1"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "1A",
+      "number": 3,
+      "source": "G1:2"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "1B",
+      "number": 1,
+      "source": "G1:3"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "1B",
+      "number": 2,
+      "source": "G1:4"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "1B",
+      "number": 3,
+      "source": "G1:5"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "1B",
+      "number": 4,
+      "source": "G1:6"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "1D",
+      "number": 1,
+      "source": "G1:7"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "2A",
+      "number": 1,
+      "source": "G2:0"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "2A",
+      "number": 2,
+      "source": "G2:1"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "2B",
+      "number": 1,
+      "source": "G2:2"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "2B",
+      "number": 2,
+      "source": "G2:3"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "2C",
+      "number": 1,
+      "source": "G2:4"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "2C",
+      "number": 2,
+      "source": "G2:5"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "2D",
+      "number": 1,
+      "source": "G2:6"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "2D",
+      "number": 2,
+      "source": "G2:7"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "2D",
+      "number": 3,
+      "source": "G2:8"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "3A",
+      "number": 1,
+      "source": "G3:0"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "3A",
+      "number": 2,
+      "source": "G3:1"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "3B",
+      "number": 1,
+      "source": "G3:2"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "3B",
+      "number": 2,
+      "source": "G3:3"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "3C",
+      "number": 1,
+      "source": "G3:4"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "3C",
+      "number": 2,
+      "source": "G3:5"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "3D",
+      "number": 1,
+      "source": "G3:6"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "3D",
+      "number": 2,
+      "source": "G3:7"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "3D",
+      "number": 3,
+      "source": "G3:8"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "3D",
+      "number": 4,
+      "source": "G3:9"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "4A",
+      "number": 1,
+      "source": "G4:0"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "4A",
+      "number": 2,
+      "source": "G4:1"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "4B",
+      "number": 1,
+      "source": "G4:2"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "4B",
+      "number": 2,
+      "source": "G4:3"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "4C",
+      "number": 1,
+      "source": "G4:4"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "4C",
+      "number": 2,
+      "source": "G4:5"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "4D",
+      "number": 1,
+      "source": "G4:6"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "4D",
+      "number": 2,
+      "source": "G4:7"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "4D",
+      "number": 3,
+      "source": "G4:8"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "5A",
+      "number": 1,
+      "source": "G5:0"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "5A",
+      "number": 2,
+      "source": "G5:1"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "5A",
+      "number": 3,
+      "source": "G5:2"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "5A",
+      "number": 4,
+      "source": "G5:3"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "5B",
+      "number": 1,
+      "source": "G5:4"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "5B",
+      "number": 2,
+      "source": "G5:5"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "5C",
+      "number": 1,
+      "source": "G5:6"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "5C",
+      "number": 2,
+      "source": "G5:7"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "6B",
+      "number": 1,
+      "source": "G6:0"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "6B",
+      "number": 2,
+      "source": "G6:1"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "6B",
+      "number": 3,
+      "source": "G6:2"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "6C",
+      "number": 1,
+      "source": "G6:3"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "6C",
+      "number": 2,
+      "source": "G6:4"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "6D",
+      "number": 1,
+      "source": "G6:5"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "6D",
+      "number": 2,
+      "source": "G6:6"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "7A",
+      "number": 1,
+      "source": "G7:0"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "7A",
+      "number": 2,
+      "source": "G7:1"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "7B",
+      "number": 1,
+      "source": "G7:2"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "7B",
+      "number": 2,
+      "source": "G7:3"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "7C",
+      "number": 1,
+      "source": "G7:4"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "7C",
+      "number": 2,
+      "source": "G7:5"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "7C",
+      "number": 3,
+      "source": "G7:6"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "7C",
+      "number": 4,
+      "source": "G7:7"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "8A",
+      "number": 1,
+      "source": "G8:0"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "8A",
+      "number": 2,
+      "source": "G8:1"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "8A",
+      "number": 3,
+      "source": "G8:2"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "8A",
+      "number": 4,
+      "source": "G8:3"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "8B",
+      "number": 1,
+      "source": "G8:4"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "8B",
+      "number": 2,
+      "source": "G8:5"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "8C",
+      "number": 1,
+      "source": "G8:6"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "8C",
+      "number": 2,
+      "source": "G8:7"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "1A",
+      "number": 1,
+      "source": "V1:1"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "1A",
+      "number": 2,
+      "source": "V1:2"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "1A",
+      "number": 3,
+      "source": "V1:3"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "1D",
+      "number": 1,
+      "source": "V1:4"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "1B",
+      "number": 1,
+      "source": "V1:5"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "1B",
+      "number": 2,
+      "source": "V1:6"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "1B",
+      "number": 3,
+      "source": "V1:9"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "1C",
+      "number": 1,
+      "source": "V1:7"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "1C",
+      "number": 2,
+      "source": "V1:8"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "1C",
+      "number": 3,
+      "source": "V1:10"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "2A",
+      "number": 1,
+      "source": "V2:1"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "2A",
+      "number": 2,
+      "source": "V2:2"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "2B",
+      "number": 1,
+      "source": "V2:3"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "2B",
+      "number": 2,
+      "source": "V2:4"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "2C",
+      "number": 1,
+      "source": "V2:5"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "2C",
+      "number": 2,
+      "source": "V2:6"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "2D",
+      "number": 1,
+      "source": "V2:7"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "2D",
+      "number": 2,
+      "source": "V2:8"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "3A",
+      "number": 1,
+      "source": "V3:1"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "3A",
+      "number": 2,
+      "source": "V3:2"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "3D",
+      "number": 1,
+      "source": "V3:3"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "3B",
+      "number": 1,
+      "source": "V3:4"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "3B",
+      "number": 2,
+      "source": "V3:5"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "3C",
+      "number": 1,
+      "source": "V3:6"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "3C",
+      "number": 2,
+      "source": "V3:7"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "3C",
+      "number": 3,
+      "source": "V3:8"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "4A",
+      "number": 1,
+      "source": "V4:1"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "4A",
+      "number": 2,
+      "source": "V4:2"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "4A",
+      "number": 3,
+      "source": "V4:3"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "4B",
+      "number": 1,
+      "source": "V4:4"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "4C",
+      "number": 1,
+      "source": "V4:5"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "4C",
+      "number": 2,
+      "source": "V4:6"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "4D",
+      "number": 1,
+      "source": "V4:7"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "4D",
+      "number": 2,
+      "source": "V4:8"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "5A",
+      "number": 1,
+      "source": "V5:1"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "5A",
+      "number": 2,
+      "source": "V5:2"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "5B",
+      "number": 1,
+      "source": "V5:3"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "5C",
+      "number": 1,
+      "source": "V5:4"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "5C",
+      "number": 2,
+      "source": "V5:5"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "5D",
+      "number": 1,
+      "source": "V5:6"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "5D",
+      "number": 2,
+      "source": "V5:7"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "6A",
+      "number": 1,
+      "source": "V6:1"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "6A",
+      "number": 2,
+      "source": "V6:2"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "6D",
+      "number": 1,
+      "source": "V6:3"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "6B",
+      "number": 1,
+      "source": "V6:4"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "6B",
+      "number": 2,
+      "source": "V6:5"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "6B",
+      "number": 3,
+      "source": "V6:6"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "6C",
+      "number": 1,
+      "source": "V6:7"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "6C",
+      "number": 2,
+      "source": "V6:8"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "7B",
+      "number": 1,
+      "source": "V7:1"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "7B",
+      "number": 2,
+      "source": "V7:2"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "7A",
+      "number": 1,
+      "source": "V7:3"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "7C",
+      "number": 1,
+      "source": "V7:4"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "7D",
+      "number": 1,
+      "source": "V7:5"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "7D",
+      "number": 2,
+      "source": "V7:6"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "7D",
+      "number": 3,
+      "source": "V7:7"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "8A",
+      "number": 1,
+      "source": "V8:1"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "8A",
+      "number": 2,
+      "source": "V8:2"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "8A",
+      "number": 3,
+      "source": "V8:3"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "8B",
+      "number": 1,
+      "source": "V8:4"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "8B",
+      "number": 2,
+      "source": "V8:5"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "8B",
+      "number": 3,
+      "source": "V8:6"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "8B",
+      "number": 4,
+      "source": "V8:7"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "8C",
+      "number": 1,
+      "source": "V8:8"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "8C",
+      "number": 2,
+      "source": "V8:9"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "8C",
+      "number": 3,
+      "source": "V8:10"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "8D",
+      "number": 1,
+      "source": "V8:11"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "8D",
+      "number": 2,
+      "source": "V8:12"
+    }
+  ],
+  "active_images": 51,
+  "image_uses": 104
+}
