@@ -12,9 +12,30 @@ from bs4 import BeautifulSoup
 def main():
  book=Path(sys.argv[1] if len(sys.argv)>1 else 'Horizons/A1').resolve()
  manifest=json.loads((book/'Practice/manifest.json').read_text(encoding='utf-8-sig'))
- pages=[];topics={};images=0
+ pages=[];topics={};images=0;study_topics=set();study_pages=0
+ lexicon=json.loads((book/'Practice/Vocabulary/study-vocabulary.json').read_text(encoding='utf-8'))
+ required={t['topic']:t for t in lexicon['topics']}
  for master in manifest['masters']:
   file=book/master['file'];doc=BeautifulSoup(file.read_text(encoding='utf-8'),'html.parser')
+  if master['kind']=='vocabulary':
+   study=doc.select('.vs-study-page');activity=doc.select('.hz-page:not(.vs-study-page)')
+   assert study and activity,f'{file}: vocabulary needs study references before activities'
+   assert [int(x['data-page']) for x in study]==master['study_pages'],f'{file}: study pagination differs'
+   assert [int(x['data-page']) for x in activity]==master['activity_pages'],f'{file}: activity pagination differs'
+   assert max(master['study_pages'])<min(master['activity_pages']),f'{file}: study words must come first'
+   assert not doc.select('.vs-study-page .practice-task'),f'{file}: reference pages cannot contain only games'
+   study_pages+=len(study)
+   for section in doc.select('.vs-study-page .practice-topic[id]'):
+    name=section['id'];assert name in required,f'{name}: vocabulary inventory missing'
+    nodes=section.select('[data-vocab-item]');items={e['data-vocab-item'].strip() for e in nodes}
+    assert nodes and all(e.get_text(' ',strip=True) for e in nodes),f'{name}: study words are empty'
+    missing=set(required[name]['required_items'])-items
+    assert not missing,f'{name}: missing study vocabulary {sorted(missing)}'
+    target=doc.find(id='activity-'+name);assert target and not target.find_parent(class_='vs-study-page'),f'{name}: activity missing'
+    link=section.select_one('.vs-practice-link');n=int(target.find_parent('article')['data-page'])
+    assert link and link.get('href')=='#activity-'+name and re.search(r'\bpage\s+'+str(n)+r'\b',link.get_text()),f'{name}: activity link/page wrong'
+    back=target.select_one('h2 a.vs-wordbank-return');assert back and back.get('href')=='#'+name,f'{name}: word-bank return missing'
+    study_topics.add(name)
   actual=[]
   for page in doc.select('.hz-page'):
    n=int(page['data-page']);actual.append(n);pages.append(n)
@@ -67,6 +88,7 @@ def main():
    assert not slot.select('img,a[href]'), 'Reserved QR slot must not fake a code or enabled link'
    slots.append((slot.get('data-blooket-bank'),int(slot['data-blooket-unit'])))
  assert sorted(slots)==sorted((bank,u)for bank in ['grammar','vocabulary']for u in range(1,9)), 'Expected one reserved grammar and vocabulary QR slot per unit'
- print(json.dumps({'practice_pages':len(pages),'masters':len(manifest['masters']),'authored_topics':len(topics),'resolved_lesson_links':refs,'raster_uses':images,'structural_checks':'passed'}))
+ assert study_topics==set(required),'Study reference coverage differs from the reviewed vocabulary inventory'
+ print(json.dumps({'practice_pages':len(pages),'masters':len(manifest['masters']),'authored_topics':len(topics),'resolved_lesson_links':refs,'vocabulary_study_pages':study_pages,'studied_vocabulary_topics':len(study_topics),'required_entry_occurrences':sum(len(t['required_items'])for t in required.values()),'raster_uses':images,'structural_checks':'passed'}))
  return 0
 if __name__=='__main__':sys.exit(main())

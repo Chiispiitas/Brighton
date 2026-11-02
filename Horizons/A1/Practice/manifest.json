@@ -1,8 +1,8 @@
 {
-  "version": 1,
+  "version": 2,
   "edition": "2026-11-01",
-  "status": "authored; verification recorded in practice audit",
-  "organization": "Grammar by unit; illustrated vocabulary by unit; practical language; end credits last",
+  "status": "authored; study-first vocabulary references and approved activities",
+  "organization": "Grammar by unit; vocabulary word bank then activities within each unit; practical language; credits last",
   "masters": [
     {
       "code": "G1",
@@ -137,16 +137,27 @@
       "pages": [
         93,
         94,
-        95
+        95,
+        96,
+        97
       ],
       "topics": [
         "vocabulary-greetings",
+        "vocabulary-personal-information",
         "vocabulary-alphabet",
         "vocabulary-numbers",
-        "vocabulary-personal-information",
         "vocabulary-occupations",
         "vocabulary-countries",
         "vocabulary-adjectives"
+      ],
+      "study_pages": [
+        93,
+        94
+      ],
+      "activity_pages": [
+        95,
+        96,
+        97
       ]
     },
     {
@@ -155,14 +166,22 @@
       "kind": "vocabulary",
       "file": "Practice/Vocabulary/V2.html",
       "pages": [
-        96,
-        97
+        98,
+        99,
+        100
       ],
       "topics": [
         "vocabulary-personal-items",
         "vocabulary-telling-time",
         "vocabulary-family-members",
         "vocabulary-colors"
+      ],
+      "study_pages": [
+        98
+      ],
+      "activity_pages": [
+        99,
+        100
       ]
     },
     {
@@ -171,13 +190,21 @@
       "kind": "vocabulary",
       "file": "Practice/Vocabulary/V3.html",
       "pages": [
-        98,
-        99
+        101,
+        102,
+        103
       ],
       "topics": [
         "vocabulary-daily-routines",
         "vocabulary-days-of-the-week",
         "vocabulary-place-adjectives-recall"
+      ],
+      "study_pages": [
+        101
+      ],
+      "activity_pages": [
+        102,
+        103
       ]
     },
     {
@@ -186,14 +213,22 @@
       "kind": "vocabulary",
       "file": "Practice/Vocabulary/V4.html",
       "pages": [
-        100,
-        101
+        104,
+        105,
+        106
       ],
       "topics": [
         "vocabulary-food-and-drink",
         "vocabulary-flavors",
         "vocabulary-cooking-verbs",
         "vocabulary-sharing-food"
+      ],
+      "study_pages": [
+        104
+      ],
+      "activity_pages": [
+        105,
+        106
       ]
     },
     {
@@ -202,14 +237,22 @@
       "kind": "vocabulary",
       "file": "Practice/Vocabulary/V5.html",
       "pages": [
-        102,
-        103
+        107,
+        108,
+        109
       ],
       "topics": [
         "vocabulary-clothes-and-accessories",
         "vocabulary-shopping-verbs",
         "vocabulary-places-in-town",
         "vocabulary-at-the-store"
+      ],
+      "study_pages": [
+        107
+      ],
+      "activity_pages": [
+        108,
+        109
       ]
     },
     {
@@ -218,14 +261,24 @@
       "kind": "vocabulary",
       "file": "Practice/Vocabulary/V6.html",
       "pages": [
-        104,
-        105
+        110,
+        111,
+        112,
+        113
       ],
       "topics": [
         "vocabulary-places-in-town-2",
-        "vocabulary-shopping-centers-and-attractions",
         "vocabulary-rooms-and-furniture",
-        "vocabulary-movement-and-directions"
+        "vocabulary-movement-and-directions",
+        "vocabulary-shopping-centers-and-attractions"
+      ],
+      "study_pages": [
+        110,
+        111
+      ],
+      "activity_pages": [
+        112,
+        113
       ]
     },
     {
@@ -234,8 +287,10 @@
       "kind": "vocabulary",
       "file": "Practice/Vocabulary/V7.html",
       "pages": [
-        106,
-        107
+        114,
+        115,
+        116,
+        117
       ],
       "topics": [
         "vocabulary-months",
@@ -244,6 +299,14 @@
         "vocabulary-music",
         "vocabulary-irregular-past-verbs",
         "vocabulary-sequencing-words"
+      ],
+      "study_pages": [
+        114,
+        115
+      ],
+      "activity_pages": [
+        116,
+        117
       ]
     },
     {
@@ -252,17 +315,30 @@
       "kind": "vocabulary",
       "file": "Practice/Vocabulary/V8.html",
       "pages": [
-        108,
-        109,
-        110
+        118,
+        119,
+        120,
+        121,
+        122,
+        123
       ],
       "topics": [
         "vocabulary-travel-verbs",
         "vocabulary-animals",
         "vocabulary-weather-and-seasons",
+        "vocabulary-phone-and-ticket-language",
         "vocabulary-body-parts",
-        "vocabulary-health-complaints",
-        "vocabulary-phone-and-ticket-language"
+        "vocabulary-health-complaints"
+      ],
+      "study_pages": [
+        118,
+        119,
+        120
+      ],
+      "activity_pages": [
+        121,
+        122,
+        123
       ]
     },
     {
@@ -271,7 +347,7 @@
       "kind": "communication",
       "file": "Practice/Communication/C5.html",
       "pages": [
-        111
+        124
       ],
       "topics": [
         "communication-grocery-shopping"
@@ -283,7 +359,7 @@
       "kind": "communication",
       "file": "Practice/Communication/C6.html",
       "pages": [
-        112
+        125
       ],
       "topics": [
         "communication-helping-a-visitor"
@@ -295,7 +371,7 @@
       "kind": "communication",
       "file": "Practice/Communication/C7.html",
       "pages": [
-        113
+        126
       ],
       "topics": [
         "communication-diary-writing"
@@ -307,7 +383,7 @@
       "kind": "communication",
       "file": "Practice/Communication/C8.html",
       "pages": [
-        114
+        127
       ],
       "topics": [
         "communication-buying-a-ticket-by-phone"
@@ -394,7 +470,7 @@
       "anchor": "grammar-present-simple-affirmative",
       "bank": "grammar",
       "unit": 3,
-      "title": "A normal day 3A"
+      "title": "Present simple: routines 3A"
     },
     "grammar-present-simple-negatives-and-questions": {
       "destination_id": "grammar-present-simple-negatives-and-questions",
@@ -583,7 +659,16 @@
       "anchor": "vocabulary-greetings",
       "bank": "vocabulary",
       "unit": 1,
-      "title": "Choose your reply 1A"
+      "title": "Greetings and goodbyes 1A"
+    },
+    "vocabulary-personal-information": {
+      "destination_id": "vocabulary-personal-information",
+      "file": "Practice/Vocabulary/V1.html",
+      "page": 93,
+      "anchor": "vocabulary-personal-information",
+      "bank": "vocabulary",
+      "unit": 1,
+      "title": "Personal information 1A · 1D"
     },
     "vocabulary-alphabet": {
       "destination_id": "vocabulary-alphabet",
@@ -592,7 +677,7 @@
       "anchor": "vocabulary-alphabet",
       "bank": "vocabulary",
       "unit": 1,
-      "title": "The password is a name 1A"
+      "title": "The alphabet 1A"
     },
     "vocabulary-numbers": {
       "destination_id": "vocabulary-numbers",
@@ -601,16 +686,7 @@
       "anchor": "vocabulary-numbers",
       "bank": "vocabulary",
       "unit": 1,
-      "title": "Open the right locker 1A"
-    },
-    "vocabulary-personal-information": {
-      "destination_id": "vocabulary-personal-information",
-      "file": "Practice/Vocabulary/V1.html",
-      "page": 94,
-      "anchor": "vocabulary-personal-information",
-      "bank": "vocabulary",
-      "unit": 1,
-      "title": "The club card mix-up 1A · 1D"
+      "title": "Numbers 0–10 1A"
     },
     "vocabulary-occupations": {
       "destination_id": "vocabulary-occupations",
@@ -619,309 +695,309 @@
       "anchor": "vocabulary-occupations",
       "bank": "vocabulary",
       "unit": 1,
-      "title": "Repair the duty board 1B"
+      "title": "Jobs 1B"
     },
     "vocabulary-countries": {
       "destination_id": "vocabulary-countries",
       "file": "Practice/Vocabulary/V1.html",
-      "page": 95,
+      "page": 94,
       "anchor": "vocabulary-countries",
       "bank": "vocabulary",
       "unit": 1,
-      "title": "Five postcards need a country 1C"
+      "title": "Countries and nationalities 1C"
     },
     "vocabulary-adjectives": {
       "destination_id": "vocabulary-adjectives",
       "file": "Practice/Vocabulary/V1.html",
-      "page": 95,
+      "page": 94,
       "anchor": "vocabulary-adjectives",
       "bank": "vocabulary",
       "unit": 1,
-      "title": "A new message for a new room 1B · 1C · 2D · 3C"
+      "title": "Adjectives 1B · 1C · 2D"
     },
     "vocabulary-personal-items": {
       "destination_id": "vocabulary-personal-items",
       "file": "Practice/Vocabulary/V2.html",
-      "page": 96,
+      "page": 98,
       "anchor": "vocabulary-personal-items",
       "bank": "vocabulary",
       "unit": 2,
-      "title": "Whose things are on the table? 2A"
+      "title": "Personal items 2A"
     },
     "vocabulary-telling-time": {
       "destination_id": "vocabulary-telling-time",
       "file": "Practice/Vocabulary/V2.html",
-      "page": 96,
+      "page": 98,
       "anchor": "vocabulary-telling-time",
       "bank": "vocabulary",
       "unit": 2,
-      "title": "Find the two time mistakes 2B"
+      "title": "Telling the time 2B"
     },
     "vocabulary-family-members": {
       "destination_id": "vocabulary-family-members",
       "file": "Practice/Vocabulary/V2.html",
-      "page": 97,
+      "page": 98,
       "anchor": "vocabulary-family-members",
       "bank": "vocabulary",
       "unit": 2,
-      "title": "Six replies in the family chat 2C"
+      "title": "Family words 2C"
     },
     "vocabulary-colors": {
       "destination_id": "vocabulary-colors",
       "file": "Practice/Vocabulary/V2.html",
-      "page": 97,
+      "page": 98,
       "anchor": "vocabulary-colors",
       "bank": "vocabulary",
       "unit": 2,
-      "title": "The color trail 2D"
+      "title": "Colors 2D"
     },
     "vocabulary-daily-routines": {
       "destination_id": "vocabulary-daily-routines",
       "file": "Practice/Vocabulary/V3.html",
-      "page": 98,
+      "page": 101,
       "anchor": "vocabulary-daily-routines",
       "bank": "vocabulary",
       "unit": 3,
-      "title": "The photo editor’s day 3A · 3D"
+      "title": "Daily routines 3A · 3D"
     },
     "vocabulary-days-of-the-week": {
       "destination_id": "vocabulary-days-of-the-week",
       "file": "Practice/Vocabulary/V3.html",
-      "page": 99,
+      "page": 101,
       "anchor": "vocabulary-days-of-the-week",
       "bank": "vocabulary",
       "unit": 3,
-      "title": "The meeting puzzle 3B"
+      "title": "Days of the week 3B"
     },
     "vocabulary-place-adjectives-recall": {
       "destination_id": "vocabulary-place-adjectives-recall",
       "file": "Practice/Vocabulary/V3.html",
-      "page": 99,
+      "page": 101,
       "anchor": "vocabulary-place-adjectives-recall",
       "bank": "vocabulary",
       "unit": 3,
-      "title": "A room for the group 3C"
+      "title": "Places: what are they like? 3C"
     },
     "vocabulary-food-and-drink": {
       "destination_id": "vocabulary-food-and-drink",
       "file": "Practice/Vocabulary/V4.html",
-      "page": 100,
+      "page": 104,
       "anchor": "vocabulary-food-and-drink",
       "bank": "vocabulary",
       "unit": 4,
-      "title": "Choose the picnic boxes 4A"
+      "title": "Food and drink 4A"
     },
     "vocabulary-flavors": {
       "destination_id": "vocabulary-flavors",
       "file": "Practice/Vocabulary/V4.html",
-      "page": 100,
+      "page": 104,
       "anchor": "vocabulary-flavors",
       "bank": "vocabulary",
       "unit": 4,
-      "title": "The flavor guessing round 4B"
+      "title": "Flavors and food opinions 4B"
     },
     "vocabulary-cooking-verbs": {
       "destination_id": "vocabulary-cooking-verbs",
       "file": "Practice/Vocabulary/V4.html",
-      "page": 101,
+      "page": 104,
       "anchor": "vocabulary-cooking-verbs",
       "bank": "vocabulary",
       "unit": 4,
-      "title": "The cook’s cards went wrong 4C"
+      "title": "Cooking verbs and recipe words 4C"
     },
     "vocabulary-sharing-food": {
       "destination_id": "vocabulary-sharing-food",
       "file": "Practice/Vocabulary/V4.html",
-      "page": 101,
+      "page": 104,
       "anchor": "vocabulary-sharing-food",
       "bank": "vocabulary",
       "unit": 4,
-      "title": "Rescue the picnic food 4D"
+      "title": "Sharing food 4D"
     },
     "vocabulary-clothes-and-accessories": {
       "destination_id": "vocabulary-clothes-and-accessories",
       "file": "Practice/Vocabulary/V5.html",
-      "page": 102,
+      "page": 107,
       "anchor": "vocabulary-clothes-and-accessories",
       "bank": "vocabulary",
       "unit": 5,
-      "title": "Pack, remember, guess 5A"
+      "title": "Clothes and accessories 5A"
     },
     "vocabulary-shopping-verbs": {
       "destination_id": "vocabulary-shopping-verbs",
       "file": "Practice/Vocabulary/V5.html",
-      "page": 102,
+      "page": 107,
       "anchor": "vocabulary-shopping-verbs",
       "bank": "vocabulary",
       "unit": 5,
-      "title": "Which way at the checkout? 5B"
+      "title": "Shopping actions 5B"
     },
     "vocabulary-places-in-town": {
       "destination_id": "vocabulary-places-in-town",
       "file": "Practice/Vocabulary/V5.html",
-      "page": 103,
+      "page": 107,
       "anchor": "vocabulary-places-in-town",
       "bank": "vocabulary",
       "unit": 5,
-      "title": "Two stops, not four 5C"
+      "title": "Places and habits 5C"
     },
     "vocabulary-at-the-store": {
       "destination_id": "vocabulary-at-the-store",
       "file": "Practice/Vocabulary/V5.html",
-      "page": 103,
+      "page": 107,
       "anchor": "vocabulary-at-the-store",
       "bank": "vocabulary",
       "unit": 5,
-      "title": "The counter crew 5D"
+      "title": "At the store 5D"
     },
     "vocabulary-places-in-town-2": {
       "destination_id": "vocabulary-places-in-town-2",
       "file": "Practice/Vocabulary/V6.html",
-      "page": 104,
+      "page": 110,
       "anchor": "vocabulary-places-in-town-2",
       "bank": "vocabulary",
       "unit": 6,
-      "title": "Six stops, three short routes 6A"
-    },
-    "vocabulary-shopping-centers-and-attractions": {
-      "destination_id": "vocabulary-shopping-centers-and-attractions",
-      "file": "Practice/Vocabulary/V6.html",
-      "page": 104,
-      "anchor": "vocabulary-shopping-centers-and-attractions",
-      "bank": "vocabulary",
-      "unit": 6,
-      "title": "A quiet day or a fast ride? 6D"
+      "title": "Places and purposes 6A"
     },
     "vocabulary-rooms-and-furniture": {
       "destination_id": "vocabulary-rooms-and-furniture",
       "file": "Practice/Vocabulary/V6.html",
-      "page": 105,
+      "page": 110,
       "anchor": "vocabulary-rooms-and-furniture",
       "bank": "vocabulary",
       "unit": 6,
-      "title": "A new home, a sharp memory 6B"
+      "title": "Rooms and furniture 6B"
     },
     "vocabulary-movement-and-directions": {
       "destination_id": "vocabulary-movement-and-directions",
       "file": "Practice/Vocabulary/V6.html",
-      "page": 105,
+      "page": 111,
       "anchor": "vocabulary-movement-and-directions",
       "bank": "vocabulary",
       "unit": 6,
-      "title": "Follow the delivery 6C"
+      "title": "Find the way 6C"
+    },
+    "vocabulary-shopping-centers-and-attractions": {
+      "destination_id": "vocabulary-shopping-centers-and-attractions",
+      "file": "Practice/Vocabulary/V6.html",
+      "page": 111,
+      "anchor": "vocabulary-shopping-centers-and-attractions",
+      "bank": "vocabulary",
+      "unit": 6,
+      "title": "A day out 6D"
     },
     "vocabulary-months": {
       "destination_id": "vocabulary-months",
       "file": "Practice/Vocabulary/V7.html",
-      "page": 106,
+      "page": 114,
       "anchor": "vocabulary-months",
       "bank": "vocabulary",
       "unit": 7,
-      "title": "The year relay 7B"
+      "title": "Months 7B"
     },
     "vocabulary-dates-and-ordinal-numbers": {
       "destination_id": "vocabulary-dates-and-ordinal-numbers",
       "file": "Practice/Vocabulary/V7.html",
-      "page": 106,
+      "page": 114,
       "anchor": "vocabulary-dates-and-ordinal-numbers",
       "bank": "vocabulary",
       "unit": 7,
-      "title": "Birthday detective 7B"
+      "title": "Dates and ordinal numbers 7B"
     },
     "vocabulary-past-time-expressions": {
       "destination_id": "vocabulary-past-time-expressions",
       "file": "Practice/Vocabulary/V7.html",
-      "page": 106,
+      "page": 114,
       "anchor": "vocabulary-past-time-expressions",
       "bank": "vocabulary",
       "unit": 7,
-      "title": "A different “today” 7A · 7B"
+      "title": "Past time 7A · 7B"
     },
     "vocabulary-music": {
       "destination_id": "vocabulary-music",
       "file": "Practice/Vocabulary/V7.html",
-      "page": 107,
+      "page": 115,
       "anchor": "vocabulary-music",
       "bank": "vocabulary",
       "unit": 7,
-      "title": "The museum’s mixed-up labels 7C"
+      "title": "Music objects 7C"
     },
     "vocabulary-irregular-past-verbs": {
       "destination_id": "vocabulary-irregular-past-verbs",
       "file": "Practice/Vocabulary/V7.html",
-      "page": 107,
+      "page": 115,
       "anchor": "vocabulary-irregular-past-verbs",
       "bank": "vocabulary",
       "unit": 7,
-      "title": "Rescue yesterday’s story 7D"
+      "title": "Irregular past verbs 7D"
     },
     "vocabulary-sequencing-words": {
       "destination_id": "vocabulary-sequencing-words",
       "file": "Practice/Vocabulary/V7.html",
-      "page": 107,
+      "page": 115,
       "anchor": "vocabulary-sequencing-words",
       "bank": "vocabulary",
       "unit": 7,
-      "title": "Another day, four cards 7D"
+      "title": "The order of events 7D"
     },
     "vocabulary-travel-verbs": {
       "destination_id": "vocabulary-travel-verbs",
       "file": "Practice/Vocabulary/V8.html",
-      "page": 108,
+      "page": 118,
       "anchor": "vocabulary-travel-verbs",
       "bank": "vocabulary",
       "unit": 8,
-      "title": "The verbs took the wrong train 8A"
+      "title": "Travel verbs and chunks 8A"
     },
     "vocabulary-animals": {
       "destination_id": "vocabulary-animals",
       "file": "Practice/Vocabulary/V8.html",
-      "page": 108,
+      "page": 118,
       "anchor": "vocabulary-animals",
       "bank": "vocabulary",
       "unit": 8,
-      "title": "The animal code 8A"
+      "title": "Animals 8A"
     },
     "vocabulary-weather-and-seasons": {
       "destination_id": "vocabulary-weather-and-seasons",
       "file": "Practice/Vocabulary/V8.html",
-      "page": 109,
+      "page": 119,
       "anchor": "vocabulary-weather-and-seasons",
       "bank": "vocabulary",
       "unit": 8,
-      "title": "Forecast fact-check 8B"
-    },
-    "vocabulary-body-parts": {
-      "destination_id": "vocabulary-body-parts",
-      "file": "Practice/Vocabulary/V8.html",
-      "page": 110,
-      "anchor": "vocabulary-body-parts",
-      "bank": "vocabulary",
-      "unit": 8,
-      "title": "Move, notice, name 8C"
-    },
-    "vocabulary-health-complaints": {
-      "destination_id": "vocabulary-health-complaints",
-      "file": "Practice/Vocabulary/V8.html",
-      "page": 110,
-      "anchor": "vocabulary-health-complaints",
-      "bank": "vocabulary",
-      "unit": 8,
-      "title": "The messages are mixed up 8C"
+      "title": "Weather and seasons 8B"
     },
     "vocabulary-phone-and-ticket-language": {
       "destination_id": "vocabulary-phone-and-ticket-language",
       "file": "Practice/Vocabulary/V8.html",
-      "page": 110,
+      "page": 119,
       "anchor": "vocabulary-phone-and-ticket-language",
       "bank": "vocabulary",
       "unit": 8,
-      "title": "The hidden booking 8D"
+      "title": "Phone and ticket language 8D"
+    },
+    "vocabulary-body-parts": {
+      "destination_id": "vocabulary-body-parts",
+      "file": "Practice/Vocabulary/V8.html",
+      "page": 120,
+      "anchor": "vocabulary-body-parts",
+      "bank": "vocabulary",
+      "unit": 8,
+      "title": "Body parts 8C"
+    },
+    "vocabulary-health-complaints": {
+      "destination_id": "vocabulary-health-complaints",
+      "file": "Practice/Vocabulary/V8.html",
+      "page": 120,
+      "anchor": "vocabulary-health-complaints",
+      "bank": "vocabulary",
+      "unit": 8,
+      "title": "Health complaints 8C"
     },
     "communication-grocery-shopping": {
       "destination_id": "communication-grocery-shopping",
       "file": "Practice/Communication/C5.html",
-      "page": 111,
+      "page": 124,
       "anchor": "communication-grocery-shopping",
       "bank": "communication",
       "unit": 5,
@@ -930,7 +1006,7 @@
     "communication-helping-a-visitor": {
       "destination_id": "communication-helping-a-visitor",
       "file": "Practice/Communication/C6.html",
-      "page": 112,
+      "page": 125,
       "anchor": "communication-helping-a-visitor",
       "bank": "communication",
       "unit": 6,
@@ -939,7 +1015,7 @@
     "communication-diary-writing": {
       "destination_id": "communication-diary-writing",
       "file": "Practice/Communication/C7.html",
-      "page": 113,
+      "page": 126,
       "anchor": "communication-diary-writing",
       "bank": "communication",
       "unit": 7,
@@ -948,7 +1024,7 @@
     "communication-buying-a-ticket-by-phone": {
       "destination_id": "communication-buying-a-ticket-by-phone",
       "file": "Practice/Communication/C8.html",
-      "page": 114,
+      "page": 127,
       "anchor": "communication-buying-a-ticket-by-phone",
       "bank": "communication",
       "unit": 8,
@@ -957,13 +1033,15 @@
   },
   "counts": {
     "grammar_pages": 16,
-    "vocabulary_pages": 18,
+    "vocabulary_pages": 31,
+    "vocabulary_study_pages": 13,
+    "vocabulary_activity_pages": 18,
     "communication_pages": 4,
-    "total_practice_pages": 38,
+    "total_practice_pages": 51,
     "forward_references": 75,
     "distinct_referenced_destinations": 70,
     "total_authored_destinations": 71
   },
   "first_printed_page": 77,
-  "last_printed_page": 114
+  "last_printed_page": 127
 }

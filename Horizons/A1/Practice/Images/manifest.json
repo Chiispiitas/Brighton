@@ -1,5 +1,5 @@
 {
-  "edition": "2026-11-01 unique practice revision",
+  "edition": "2026-11-01 vocabulary study references and original practice",
   "assets": [
     {
       "file": "U2-personal-items-v1.png",
@@ -20,7 +20,7 @@
       "fictional_boundary": "Original illustrative specimens, acted poses or modeled rooms, not documentary people/events.",
       "active": true,
       "pages": [
-        96
+        99
       ]
     },
     {
@@ -39,7 +39,7 @@
       "fictional_boundary": "Original illustrative specimens, acted poses or modeled rooms, not documentary people/events.",
       "active": true,
       "pages": [
-        98
+        102
       ]
     },
     {
@@ -58,7 +58,7 @@
       "fictional_boundary": "Original illustrative specimens, acted poses or modeled rooms, not documentary people/events.",
       "active": true,
       "pages": [
-        100
+        105
       ]
     },
     {
@@ -80,7 +80,7 @@
       "fictional_boundary": "Original illustrative specimens, acted poses or modeled rooms, not documentary people/events.",
       "active": true,
       "pages": [
-        102
+        108
       ]
     },
     {
@@ -99,7 +99,7 @@
       "fictional_boundary": "Original illustrative specimens, acted poses or modeled rooms, not documentary people/events.",
       "active": true,
       "pages": [
-        105
+        113
       ]
     },
     {
@@ -121,8 +121,76 @@
       "fictional_boundary": "Original illustrative specimens, acted poses or modeled rooms, not documentary people/events.",
       "active": true,
       "pages": [
-        110
+        123
       ]
+    },
+    {
+      "file": "U8-study-animals-v1.png",
+      "generator": "built-in image_gen",
+      "operation": "generate",
+      "prompt": "Use case: scientific-educational. Original photographic reference cutouts for an adult beginner English vocabulary word bank. A wide landscape composition with EXACTLY FIVE separate, whole animals, in one evenly spaced row from LEFT TO RIGHT: 1 a mallard duck (green head), 2 a red squirrel with its complete curled bushy tail, 3 a raccoon facing three-quarters toward the camera with clear eye mask and ringed tail, 4 a brown beaver in side view with its entire broad flat paddle tail visible beside it, 5 a Canada goose in three-quarter side view with complete long neck and white chin patch. All five are comparable readable visual scale and completely separated by clear transparent gaps; whole feet, bills, ears and all tails in frame. Regular centers approximately 10%,30%,50%,70%,90% of canvas width. Each specimen grounded on the same horizontal baseline at 88% height; keep silhouette mainly between12% and88% height and within its own fifth of the canvas. Natural wildlife photographic detail, accurate species anatomy, ordinary soft even daylight. This is a clear reference for identifying these five nouns, not a fantasy animal scene. Transparent alpha background with NO scenery, objects, frames, labels, letters, numbers, captions or watermark. Do not merge animals or crop a tail.",
+      "requested_transparent_background": true,
+      "dimensions": [
+        2048,
+        768
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "sha256": "6a96af7d869eb69f6cf4cce8c858e07fdd1cfc28656cbbe89272401c9c9e13a1",
+      "changes": "Native generated PNG and alpha bytes preserved. Editable reference labels and leaders are separate HTML/SVG.",
+      "fictional_boundary": "Original illustrative animal specimens, not records of particular sightings.",
+      "active": true,
+      "pages": [
+        118
+      ]
+    },
+    {
+      "file": "U8-study-body-v1.png",
+      "generator": "built-in image_gen",
+      "operation": "generate",
+      "prompt": "Use case: scientific-educational. A new original natural photographic teaching asset for an adult beginner English BODY PARTS word bank, on a fully TRANSPARENT alpha background, no text or labels. Landscape composition containing TWO clearly separated views of the SAME ordinary friendly adult man age around30, medium brown skin, short dark hair, natural skin texture, no glossy fashion retouching. LEFT HALF: a large front-facing head-and-neck close-up, both ears fully exposed, both eyes, nose, closed relaxed mouth and whole top of head clear; face centered around x25%, y45%, filling approximately left40% of the canvas. RIGHT HALF: a completely whole front-facing standing full-body view centered x75%, from top of head at6% height to bare feet at94% height, wearing a modest plain charcoal crew-neck T-shirt and simple blue trousers ending above ankles. Arms held slightly away from torso at about20 degrees, palms facing forward, fingers naturally separate and anatomically correct, legs relaxed with feet apart enough to see both whole feet. The full-body view must show whole hands and fingers, both arms, both legs and all feet. Ordinary non-muscular adult proportions, neutral upright pose. Same person in both views. Natural even documentary photo lighting, clean precise cutout edges. Purpose is to add editable native labels later for head, face, eye, ear, nose, mouth, arm, hand, leg and foot. Do NOT draw arrows, marker dots, labels, numbers, letters, backgrounds, borders, typography or shadows onto the image. Keep the two views separate and entirely inside the canvas. Not a cartoon, painting, 3D avatar, fashion portrait or anatomical nude.",
+      "requested_transparent_background": true,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "sha256": "67c45fb168274ef54665b43d8385dfbeafc593537b50831acc7300714add332d",
+      "changes": "Native generated PNG and alpha bytes preserved. Editable reference labels and leaders are separate HTML/SVG.",
+      "fictional_boundary": "Original modeled adult teaching cutout, not a documentary person or medical diagnosis.",
+      "active": false,
+      "pages": []
+    },
+    {
+      "file": "U8-study-body-v2.png",
+      "generator": "built-in image_gen",
+      "operation": "edit",
+      "prompt": "Edit this original teaching asset for a beginner English BODY PARTS reference. Remove the entire large head-and-shoulders close-up on the left. Retain ONLY the whole standing clothed man from the right, preserving his identity, natural face, clothing, pose, hands, bare feet, anatomy and photographic style. Reposition that full-body man to the horizontal center of a wide landscape canvas, with top of head near6% height and both complete feet ending near94% height. One person, one whole full-body view only. Keep ample empty transparent margins on BOTH sides for six live labels added later (head, stomach, arm, hand, leg, foot). Preserve real alpha transparency; no background, backdrop, glow, portrait inset, duplicate person, labels, dots, leader lines, text, letters, numbers or border. Do not crop head, fingers or feet. This is an edited photographic learning cutout, not a new cartoon or portrait design.",
+      "requested_transparent_background": true,
+      "dimensions": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        254
+      ],
+      "sha256": "f567ca2b473341359759c5a0e886a80dfba6d7975dd0eb03f3a6be9ea8aeb744",
+      "changes": "Native generated PNG and alpha bytes preserved. Editable reference labels and leaders are separate HTML/SVG.",
+      "fictional_boundary": "Original modeled adult teaching cutout, not a documentary person or medical diagnosis.",
+      "active": true,
+      "pages": [
+        120
+      ],
+      "edit_source": "U8-study-body-v1.png"
     }
   ],
   "purpose": "Fresh practice-specific resources for original revision games. Not re-presentations or new crops of the core lesson art.",

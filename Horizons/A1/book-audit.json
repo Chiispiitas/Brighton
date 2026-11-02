@@ -1,9 +1,9 @@
 {
   "schema_version": 3,
   "updated": "2026-11-01",
-  "status": "Grammar practice visual clarity complete; saved-PDF and live-viewer verification passed",
+  "status": "Vocabulary study-first references complete; local source, layout and saved-PDF checks passed; live publication pending",
   "authority": "Author delegates editorial authority; his own B2 book sets emotional direction. Preserve colourful learning objects and warm adult playfulness alongside coherent functional roles.",
-  "scope": "Units1–8:32lessons,4pairedreviews,72corepages;38new practice pages and4end-creditpages.114physicalpages, printed5–118. Front matter,index,workbook andoptionalannexes remainfuturework.",
+  "scope": "Units1–8:32lessons,4pairedreviews,72corepages;51practicepages and4end-creditpages.127physicalpages, printed5–131. Front matter,index,workbook andoptionalannexes remainfuturework.",
   "baseline": {
     "commit": "fd497fd",
     "safety_branch": "safety/horizons-before-editorial-overhaul-20261031",
@@ -24,6 +24,11 @@
       "commit": "e2b520bc82b3467f083eff0983cf088b8fd13436",
       "safety_branch": "safety/horizons-before-grammar-clarity-20261101",
       "previous_audit": "Audit archive/2026-11-01-before-grammar-clarity/book-audit.json"
+    },
+    "vocabulary_study_banks": {
+      "commit": "519aa60491a431cc208005aeb7ffd26c08dae74f",
+      "safety_branch": "safety/horizons-before-vocabulary-study-banks-20261101",
+      "previous_audit": "Audit archive/2026-11-01-before-vocabulary-study-banks/book-audit.json"
     }
   },
   "inventory": {
@@ -67,11 +72,11 @@
     ],
     "core_spreads": 36,
     "core_pages": 72,
-    "html_pages": 114,
-    "pdf_pages": 114,
+    "html_pages": 127,
+    "pdf_pages": 127,
     "printed_pages": [
       5,
-      118
+      131
     ],
     "credits_pages": 4,
     "lesson_audio_files": 84,
@@ -84,9 +89,9 @@
     "external_photo_credit_records": 81,
     "practice_masters": 20,
     "grammar_practice_pages": 16,
-    "vocabulary_practice_pages": 18,
+    "vocabulary_practice_pages": 31,
     "practical_language_pages": 4,
-    "practice_pages": 38,
+    "practice_pages": 51,
     "core_activity_blocks": 253,
     "practice_activity_blocks": 147,
     "grammar_practice_activities": 67,
@@ -95,10 +100,15 @@
     "practice_topics": 71,
     "distinct_referenced_topics": 70,
     "blooket_reserved_slots": 16,
-    "practice_specific_generated_assets": 6,
+    "practice_specific_generated_assets": 8,
     "prior_editorial_generated_object_assets": 12,
     "core_focus_panels": 35,
-    "total_activity_blocks": 400
+    "total_activity_blocks": 400,
+    "vocabulary_study_pages": 13,
+    "vocabulary_activity_pages": 18,
+    "vocabulary_study_topics": 38,
+    "vocabulary_marked_lexical_entry_occurrences": 415,
+    "vocabulary_required_within_topic_items": 404
   },
   "standards": {
     "canonical_style": "../Base/design-system/CANONICAL-STYLE.md",
@@ -115,23 +125,25 @@
     "practice_reference_study": "Sources/Practice-reference-study.json",
     "practice_visual_register": "Sources/Practice-personality.json",
     "practice_teacher_key": "Practice/Answer key.md",
-    "future_blooket_slots": "Practice/Blooket-links.json"
+    "future_blooket_slots": "Practice/Blooket-links.json",
+    "study_vocabulary_inventory": "Practice/Vocabulary/study-vocabulary.json"
   },
   "editorial_judgment": {
-    "basis": "Grammar reference areas use concise charts, arrows, short labels and worked models. Remove explanatory rule sentences and procedural paragraphs. Task instructions, model sentences and contextual givens remain. Avoid over-expansion; retain the approved vocabulary practice direction.",
-    "current_decision": "Sources/Grammar-clarity-20261101/editorial-decision.json",
+    "basis": "Keep approved vocabulary activities, but precede them with complete topic word banks for study before a test. Grammar keeps concise visual explanations and complete sentence models.",
+    "current_decision": "Sources/Vocabulary-study-banks-20261101/editorial-decision.json",
     "independent_saved_pdf_reviews": [
-      "Sources/Grammar-clarity-20261101/independent-g1-g5-g8-proof.json",
-      "Sources/Grammar-clarity-20261101/independent-g2-g4-proof.json"
+      "Sources/Vocabulary-study-banks-20261101/final-independent-v5-8-study-and-pdf-review.json",
+      "Sources/Vocabulary-study-banks-20261101/final-pdf-independent-V1-V4.json",
+      "Sources/Vocabulary-study-banks-20261101/independent-final-PDF-C5-C8-credits-study-review.json"
     ],
-    "independent_pedagogical_review": "Sources/Grammar-clarity-20261101/independent-final-visual-grammar-review.json",
-    "root_review": "All16saved-PDF grammar pages viewed in contact sequences;G1and critical present/past diagrams also inspected full size. Existing vocabulary/core preserved.",
+    "independent_pedagogical_review": "Sources/Vocabulary-study-banks-20261101/independent-lexical-source-map.json",
+    "root_review": "Inspected selected reference pages full size, including initial V1 references and final labeled whole-body figure. Independent editors inspected every vocabulary/practical/credit saved-PDF page.",
     "author_acceptance_claimed": false,
     "vocabulary_approach_endorsed": true
   },
   "verification": {
     "layout": {
-      "pages": 114,
+      "pages": 127,
       "text_faults": [],
       "response_fields": 368,
       "clipped_fields": [],
@@ -139,37 +151,533 @@
     },
     "standalone_assembled_parity": {
       "standalone_masters": 56,
-      "pages": 110,
+      "pages": 123,
       "failures": []
     },
     "pdf": {
-      "sha256": "752a6f94779b42354f9fe3f6b1c6d7034bb439131991fc7eb7b8a095af2b0772",
-      "bytes": 37339903,
-      "physical_pages": 114,
+      "sha256": "dc91d0d8e70c8d50aa2983f1f52e1c6e9ec55a97a570d60943bcc76e013394b8",
+      "bytes": 38097803,
+      "physical_pages": 127,
       "printed_pages": [
         5,
-        118
+        131
       ],
-      "paper_pt": [
-        594.9599609375,
-        841.9199829101562
-      ],
-      "size_failures": [],
+      "a4_failures": [],
       "footer_failures": [],
       "mupdf_warnings": "",
       "strict_pypdf_read": true,
-      "lesson_practice_links_verified": 75,
+      "all_internal_links_verified": 293,
+      "core_lesson_practice_links": 75,
+      "study_to_activity_links": 38,
+      "activity_to_study_links": 38,
       "destination_failures": [],
-      "non_grammar_pages_text_unchanged": 98,
-      "non_grammar_text_failures": []
+      "grammar_pages_text_unchanged": 16,
+      "grammar_text_failures": [],
+      "grammar_render_pixel_differences": []
     },
     "preservation": {
-      "baseline": "e2b520bc82b3467f083eff0983cf088b8fd13436",
-      "protected_files": 668,
-      "changed_files": [],
-      "non_grammar_pdf_text_pages": 98,
-      "new_raster_images": 0,
-      "new_audio": false
+      "reviewer": "grammar_1_4 independent agent",
+      "baseline_commit": "519aa60491a431cc208005aeb7ffd26c08dae74f",
+      "scope": "Final content-preservation check only; no student source edits.",
+      "normalization": "HTML parsed with BeautifulSoup html.parser; compare full serialized .practice-task/img/svg arrays in activity pages. Core comparison removes only .hz-go-to reference elements. Text file comparisons normalize CRLF/LF; original PNGs compare exact bytes. Teacher comparisons retain complete keyed answer paragraphs while excluding page headings/new study-guidance prose.",
+      "summary": {
+        "vocabulary_tasks": 68,
+        "activity_pages": 18,
+        "core_masters": 36,
+        "grammar_masters": 8,
+        "legacy_practice_css_files": 6,
+        "original_game_images": 6,
+        "original_game_img_uses": 6,
+        "original_game_svg_uses": 16
+      },
+      "vocabulary_activity_preservation": [
+        {
+          "master": "V1",
+          "tasks": 10,
+          "task_blocks_identical": true,
+          "original_game_img_uses": 0,
+          "img_markup_array_identical": true,
+          "original_game_svg_uses": 0,
+          "svg_markup_array_identical": true,
+          "original_activity_page_count_preserved": true
+        },
+        {
+          "master": "V2",
+          "tasks": 8,
+          "task_blocks_identical": true,
+          "original_game_img_uses": 1,
+          "img_markup_array_identical": true,
+          "original_game_svg_uses": 4,
+          "svg_markup_array_identical": true,
+          "original_activity_page_count_preserved": true
+        },
+        {
+          "master": "V3",
+          "tasks": 8,
+          "task_blocks_identical": true,
+          "original_game_img_uses": 1,
+          "img_markup_array_identical": true,
+          "original_game_svg_uses": 0,
+          "svg_markup_array_identical": true,
+          "original_activity_page_count_preserved": true
+        },
+        {
+          "master": "V4",
+          "tasks": 8,
+          "task_blocks_identical": true,
+          "original_game_img_uses": 1,
+          "img_markup_array_identical": true,
+          "original_game_svg_uses": 4,
+          "svg_markup_array_identical": true,
+          "original_activity_page_count_preserved": true
+        },
+        {
+          "master": "V5",
+          "tasks": 7,
+          "task_blocks_identical": true,
+          "original_game_img_uses": 1,
+          "img_markup_array_identical": true,
+          "original_game_svg_uses": 1,
+          "svg_markup_array_identical": true,
+          "original_activity_page_count_preserved": true
+        },
+        {
+          "master": "V6",
+          "tasks": 8,
+          "task_blocks_identical": true,
+          "original_game_img_uses": 1,
+          "img_markup_array_identical": true,
+          "original_game_svg_uses": 2,
+          "svg_markup_array_identical": true,
+          "original_activity_page_count_preserved": true
+        },
+        {
+          "master": "V7",
+          "tasks": 7,
+          "task_blocks_identical": true,
+          "original_game_img_uses": 0,
+          "img_markup_array_identical": true,
+          "original_game_svg_uses": 1,
+          "svg_markup_array_identical": true,
+          "original_activity_page_count_preserved": true
+        },
+        {
+          "master": "V8",
+          "tasks": 12,
+          "task_blocks_identical": true,
+          "original_game_img_uses": 1,
+          "img_markup_array_identical": true,
+          "original_game_svg_uses": 4,
+          "svg_markup_array_identical": true,
+          "original_activity_page_count_preserved": true
+        }
+      ],
+      "legacy_practice_css": [
+        {
+          "file": "Horizons/A1/Practice/Communication/communication-bank.css",
+          "normalized_text_unchanged": true,
+          "baseline_sha256_normalized": "778092a2e3c7fa236d8c9872daa5ec674a1597bb37dd648db14595a0905beb77",
+          "current_sha256_normalized": "778092a2e3c7fa236d8c9872daa5ec674a1597bb37dd648db14595a0905beb77"
+        },
+        {
+          "file": "Horizons/A1/Practice/Grammar/grammar-1-4.css",
+          "normalized_text_unchanged": true,
+          "baseline_sha256_normalized": "1761f5f07b80d784e80811990bd0c54d2635d6f776a6c0e93f8afd50d4ea7265",
+          "current_sha256_normalized": "1761f5f07b80d784e80811990bd0c54d2635d6f776a6c0e93f8afd50d4ea7265"
+        },
+        {
+          "file": "Horizons/A1/Practice/Grammar/grammar-5-8.css",
+          "normalized_text_unchanged": true,
+          "baseline_sha256_normalized": "302761cff88d87a01b99b318199f21edfbe4bbc31f95f478e726d8e977c58e91",
+          "current_sha256_normalized": "302761cff88d87a01b99b318199f21edfbe4bbc31f95f478e726d8e977c58e91"
+        },
+        {
+          "file": "Horizons/A1/Practice/Vocabulary/vocabulary-1-4.css",
+          "normalized_text_unchanged": true,
+          "baseline_sha256_normalized": "120d3f5bfb2576800685473c1efa686495c93ebd350c07b5c7117c2855e1e36a",
+          "current_sha256_normalized": "120d3f5bfb2576800685473c1efa686495c93ebd350c07b5c7117c2855e1e36a"
+        },
+        {
+          "file": "Horizons/A1/Practice/Vocabulary/vocabulary-5-8.css",
+          "normalized_text_unchanged": true,
+          "baseline_sha256_normalized": "17a47ee3ed73655205884d3cabdb6fe1b4e577e87316dce30879f49681cc08f1",
+          "current_sha256_normalized": "17a47ee3ed73655205884d3cabdb6fe1b4e577e87316dce30879f49681cc08f1"
+        },
+        {
+          "file": "Horizons/A1/Practice/practice-bank.css",
+          "normalized_text_unchanged": true,
+          "baseline_sha256_normalized": "8f36da8d8e47b7cd63d9f09d1835b80b5e3d3f037499e0e5a9fb13fd7146b543",
+          "current_sha256_normalized": "8f36da8d8e47b7cd63d9f09d1835b80b5e3d3f037499e0e5a9fb13fd7146b543"
+        }
+      ],
+      "grammar_master_preservation": [
+        {
+          "file": "Horizons/A1/Practice/Grammar/G1.html",
+          "normalized_text_unchanged": true,
+          "sha256_normalized": "d6fe462bac8d02166f504840b4009d83b923f563d9bc5c85c53103387c08e6fa"
+        },
+        {
+          "file": "Horizons/A1/Practice/Grammar/G2.html",
+          "normalized_text_unchanged": true,
+          "sha256_normalized": "c01610fbe89431f1016a5c9e11a700bd0254c38f91159842e849ee9ba0de2259"
+        },
+        {
+          "file": "Horizons/A1/Practice/Grammar/G3.html",
+          "normalized_text_unchanged": true,
+          "sha256_normalized": "636a1981cf779c2f3fdd88cd46d23b9d9fb5f64541d917f2a79bc1033d8d5540"
+        },
+        {
+          "file": "Horizons/A1/Practice/Grammar/G4.html",
+          "normalized_text_unchanged": true,
+          "sha256_normalized": "59f8cdd5ba863d8cd457fbad97390e5454b64ffa3cad06e480270069ed769b91"
+        },
+        {
+          "file": "Horizons/A1/Practice/Grammar/G5.html",
+          "normalized_text_unchanged": true,
+          "sha256_normalized": "6a4831108901ee0f5e122beaf32f6961bb3253c3c9e80fb0f23adbb11447550c"
+        },
+        {
+          "file": "Horizons/A1/Practice/Grammar/G6.html",
+          "normalized_text_unchanged": true,
+          "sha256_normalized": "92a006e0e75b170f140dbe0cbf33b4ab11f34d3cb5cf4b99c1e26115946ad91b"
+        },
+        {
+          "file": "Horizons/A1/Practice/Grammar/G7.html",
+          "normalized_text_unchanged": true,
+          "sha256_normalized": "a6e10f8c21a265fb1207b89e9996b445e3bc4815bac4995892f90eb4beddf6bd"
+        },
+        {
+          "file": "Horizons/A1/Practice/Grammar/G8.html",
+          "normalized_text_unchanged": true,
+          "sha256_normalized": "c66f2a01e70d8e6183faf026586bc737cf8419af7cd4f619c79a70eb859c5425"
+        }
+      ],
+      "core_master_preservation": [
+        {
+          "master": "1A",
+          "all_markup_outside_go_to_refs_unchanged": true,
+          "baseline_go_to_count": 5,
+          "current_go_to_count": 5
+        },
+        {
+          "master": "1B",
+          "all_markup_outside_go_to_refs_unchanged": true,
+          "baseline_go_to_count": 4,
+          "current_go_to_count": 4
+        },
+        {
+          "master": "1C",
+          "all_markup_outside_go_to_refs_unchanged": true,
+          "baseline_go_to_count": 2,
+          "current_go_to_count": 2
+        },
+        {
+          "master": "1D",
+          "all_markup_outside_go_to_refs_unchanged": true,
+          "baseline_go_to_count": 1,
+          "current_go_to_count": 1
+        },
+        {
+          "master": "2A",
+          "all_markup_outside_go_to_refs_unchanged": true,
+          "baseline_go_to_count": 2,
+          "current_go_to_count": 2
+        },
+        {
+          "master": "2B",
+          "all_markup_outside_go_to_refs_unchanged": true,
+          "baseline_go_to_count": 2,
+          "current_go_to_count": 2
+        },
+        {
+          "master": "2C",
+          "all_markup_outside_go_to_refs_unchanged": true,
+          "baseline_go_to_count": 2,
+          "current_go_to_count": 2
+        },
+        {
+          "master": "2D",
+          "all_markup_outside_go_to_refs_unchanged": true,
+          "baseline_go_to_count": 3,
+          "current_go_to_count": 3
+        },
+        {
+          "master": "2R",
+          "all_markup_outside_go_to_refs_unchanged": true,
+          "baseline_go_to_count": 0,
+          "current_go_to_count": 0
+        },
+        {
+          "master": "3A",
+          "all_markup_outside_go_to_refs_unchanged": true,
+          "baseline_go_to_count": 2,
+          "current_go_to_count": 2
+        },
+        {
+          "master": "3B",
+          "all_markup_outside_go_to_refs_unchanged": true,
+          "baseline_go_to_count": 2,
+          "current_go_to_count": 2
+        },
+        {
+          "master": "3C",
+          "all_markup_outside_go_to_refs_unchanged": true,
+          "baseline_go_to_count": 2,
+          "current_go_to_count": 2
+        },
+        {
+          "master": "3D",
+          "all_markup_outside_go_to_refs_unchanged": true,
+          "baseline_go_to_count": 3,
+          "current_go_to_count": 3
+        },
+        {
+          "master": "4A",
+          "all_markup_outside_go_to_refs_unchanged": true,
+          "baseline_go_to_count": 2,
+          "current_go_to_count": 2
+        },
+        {
+          "master": "4B",
+          "all_markup_outside_go_to_refs_unchanged": true,
+          "baseline_go_to_count": 2,
+          "current_go_to_count": 2
+        },
+        {
+          "master": "4C",
+          "all_markup_outside_go_to_refs_unchanged": true,
+          "baseline_go_to_count": 2,
+          "current_go_to_count": 2
+        },
+        {
+          "master": "4D",
+          "all_markup_outside_go_to_refs_unchanged": true,
+          "baseline_go_to_count": 2,
+          "current_go_to_count": 2
+        },
+        {
+          "master": "4R",
+          "all_markup_outside_go_to_refs_unchanged": true,
+          "baseline_go_to_count": 0,
+          "current_go_to_count": 0
+        },
+        {
+          "master": "5A",
+          "all_markup_outside_go_to_refs_unchanged": true,
+          "baseline_go_to_count": 2,
+          "current_go_to_count": 2
+        },
+        {
+          "master": "5B",
+          "all_markup_outside_go_to_refs_unchanged": true,
+          "baseline_go_to_count": 2,
+          "current_go_to_count": 2
+        },
+        {
+          "master": "5C",
+          "all_markup_outside_go_to_refs_unchanged": true,
+          "baseline_go_to_count": 2,
+          "current_go_to_count": 2
+        },
+        {
+          "master": "5D",
+          "all_markup_outside_go_to_refs_unchanged": true,
+          "baseline_go_to_count": 2,
+          "current_go_to_count": 2
+        },
+        {
+          "master": "6A",
+          "all_markup_outside_go_to_refs_unchanged": true,
+          "baseline_go_to_count": 1,
+          "current_go_to_count": 1
+        },
+        {
+          "master": "6B",
+          "all_markup_outside_go_to_refs_unchanged": true,
+          "baseline_go_to_count": 2,
+          "current_go_to_count": 2
+        },
+        {
+          "master": "6C",
+          "all_markup_outside_go_to_refs_unchanged": true,
+          "baseline_go_to_count": 2,
+          "current_go_to_count": 2
+        },
+        {
+          "master": "6D",
+          "all_markup_outside_go_to_refs_unchanged": true,
+          "baseline_go_to_count": 3,
+          "current_go_to_count": 3
+        },
+        {
+          "master": "6R",
+          "all_markup_outside_go_to_refs_unchanged": true,
+          "baseline_go_to_count": 0,
+          "current_go_to_count": 0
+        },
+        {
+          "master": "7A",
+          "all_markup_outside_go_to_refs_unchanged": true,
+          "baseline_go_to_count": 2,
+          "current_go_to_count": 2
+        },
+        {
+          "master": "7B",
+          "all_markup_outside_go_to_refs_unchanged": true,
+          "baseline_go_to_count": 4,
+          "current_go_to_count": 4
+        },
+        {
+          "master": "7C",
+          "all_markup_outside_go_to_refs_unchanged": true,
+          "baseline_go_to_count": 2,
+          "current_go_to_count": 2
+        },
+        {
+          "master": "7D",
+          "all_markup_outside_go_to_refs_unchanged": true,
+          "baseline_go_to_count": 3,
+          "current_go_to_count": 3
+        },
+        {
+          "master": "8A",
+          "all_markup_outside_go_to_refs_unchanged": true,
+          "baseline_go_to_count": 3,
+          "current_go_to_count": 3
+        },
+        {
+          "master": "8B",
+          "all_markup_outside_go_to_refs_unchanged": true,
+          "baseline_go_to_count": 2,
+          "current_go_to_count": 2
+        },
+        {
+          "master": "8C",
+          "all_markup_outside_go_to_refs_unchanged": true,
+          "baseline_go_to_count": 3,
+          "current_go_to_count": 3
+        },
+        {
+          "master": "8D",
+          "all_markup_outside_go_to_refs_unchanged": true,
+          "baseline_go_to_count": 2,
+          "current_go_to_count": 2
+        },
+        {
+          "master": "8R",
+          "all_markup_outside_go_to_refs_unchanged": true,
+          "baseline_go_to_count": 0,
+          "current_go_to_count": 0
+        }
+      ],
+      "original_game_image_hashes": [
+        {
+          "file": "Horizons/A1/Practice/Images/U2-personal-items-v1.png",
+          "baseline_sha256": "e035a1c71c70554b52b465cc98fad263c05e6409bf146d63306c132432f8db0e",
+          "current_sha256": "e035a1c71c70554b52b465cc98fad263c05e6409bf146d63306c132432f8db0e",
+          "byte_identical": true
+        },
+        {
+          "file": "Horizons/A1/Practice/Images/U3-routines-v1.png",
+          "baseline_sha256": "79b1c1c54e2294ec6a4fa5d95f0a5004970ded4a03f37a23fd4530d15ed9a0f4",
+          "current_sha256": "79b1c1c54e2294ec6a4fa5d95f0a5004970ded4a03f37a23fd4530d15ed9a0f4",
+          "byte_identical": true
+        },
+        {
+          "file": "Horizons/A1/Practice/Images/U4-picnic-boxes-v1.png",
+          "baseline_sha256": "e1111f42c0a84f1699e0d9cd6bbffa5e9c57245bd552d3a3157469ed489b4f1c",
+          "current_sha256": "e1111f42c0a84f1699e0d9cd6bbffa5e9c57245bd552d3a3157469ed489b4f1c",
+          "byte_identical": true
+        },
+        {
+          "file": "Horizons/A1/Practice/Images/U5-clothes-v1.png",
+          "baseline_sha256": "3180a800ed81b4d074fa6afabe5ff78fd97f74c841d69716c858fd40c4e447e4",
+          "current_sha256": "3180a800ed81b4d074fa6afabe5ff78fd97f74c841d69716c858fd40c4e447e4",
+          "byte_identical": true
+        },
+        {
+          "file": "Horizons/A1/Practice/Images/U6-apartment-v1.png",
+          "baseline_sha256": "d613cc9cea162e2dab523735f3aba4d5609a882f08a1af85e0a0150930bcfeab",
+          "current_sha256": "d613cc9cea162e2dab523735f3aba4d5609a882f08a1af85e0a0150930bcfeab",
+          "byte_identical": true
+        },
+        {
+          "file": "Horizons/A1/Practice/Images/U8-travelers-v1.png",
+          "baseline_sha256": "a9599c61ea3e46f1aa92ebc1e52d48971457cf09e3c78b8118f59ae6bcb2b3e2",
+          "current_sha256": "a9599c61ea3e46f1aa92ebc1e52d48971457cf09e3c78b8118f59ae6bcb2b3e2",
+          "byte_identical": true
+        }
+      ],
+      "core_media_untouched": [
+        {
+          "directory": "Horizons/A1/Images",
+          "baseline_tracked_files": 340,
+          "changed_tracked_paths": [],
+          "new_untracked_paths": [],
+          "no_changes": true
+        },
+        {
+          "directory": "Horizons/A1/Audios",
+          "baseline_tracked_files": 86,
+          "changed_tracked_paths": [],
+          "new_untracked_paths": [],
+          "no_changes": true
+        },
+        {
+          "directory": "Horizons/A1/Audio scripts",
+          "baseline_tracked_files": 137,
+          "changed_tracked_paths": [],
+          "new_untracked_paths": [],
+          "no_changes": true
+        }
+      ],
+      "teacher_key_answers": [
+        {
+          "file": "Horizons/A1/Answer keys/Grammar practice 1-4.md",
+          "keyed_answer_blocks": 36,
+          "all_keyed_answer_blocks_identical": true,
+          "full_file_normalized_identical": true
+        },
+        {
+          "file": "Horizons/A1/Answer keys/Grammar practice 5-8.md",
+          "keyed_answer_blocks": 8,
+          "all_keyed_answer_blocks_identical": true,
+          "full_file_normalized_identical": true
+        },
+        {
+          "file": "Horizons/A1/Answer keys/Practical language practice.md",
+          "keyed_answer_blocks": 3,
+          "all_keyed_answer_blocks_identical": true,
+          "full_file_normalized_identical": true
+        },
+        {
+          "file": "Horizons/A1/Answer keys/Vocabulary practice 1-4.md",
+          "keyed_answer_blocks": 34,
+          "all_keyed_answer_blocks_identical": true,
+          "full_file_normalized_identical": false
+        },
+        {
+          "file": "Horizons/A1/Answer keys/Vocabulary practice 5-8.md",
+          "keyed_answer_blocks": 4,
+          "all_keyed_answer_blocks_identical": true,
+          "full_file_normalized_identical": false
+        },
+        {
+          "file": "Horizons/A1/Answer keys/Vocabulary practice.md",
+          "keyed_answer_blocks": 38,
+          "all_keyed_answer_blocks_identical": true,
+          "full_file_normalized_identical": false
+        },
+        {
+          "file": "Horizons/A1/Practice/Answer key.md",
+          "keyed_answer_blocks": 85,
+          "all_keyed_answer_blocks_identical": true,
+          "full_file_normalized_identical": false
+        }
+      ],
+      "blockers": [],
+      "source_files_mutated_by_this_check": false,
+      "result": "pass"
     },
     "protected_object_regression": {
       "current_design_passes": true,
@@ -213,7 +721,8 @@
           "passed": true
         }
       ],
-      "scope": "Protected affordances only; manual emotional/editorial review remains required."
+      "scope": "Protected affordances only; manual emotional/editorial review remains required.",
+      "evidence_scope": "Historical expressive-spirit regression; relevant core design preserved by source comparison in this pass."
     },
     "audio": {
       "existing_core_recordings_and_scripts_unchanged": true,
@@ -221,9 +730,38 @@
       "forbidden_tag_issues": [],
       "new_audio_generated": false,
       "subjective_listening_review": false,
-      "html_controls": 90
+      "html_controls": 90,
+      "verification_scope": "No new audio. Existing core recordings/scripts and all90 controls preserved; current live sample playback pending."
     },
-    "live_viewer": {
+    "evidence_directory": "Sources/Vocabulary-study-banks-20261101",
+    "prior_editorial_evidence": [
+      "Sources/Editorial-overhaul-20261031",
+      "Sources/Expressive-spirit-20261031",
+      "Sources/Grammar-clarity-20261101"
+    ],
+    "study_words": {
+      "topics": 38,
+      "required_within_topic_items": 404,
+      "marked_entry_occurrences": 415,
+      "ordinary_reference_pt": 10,
+      "body_diagram_label_pt": 10.039,
+      "topic_coverage_complete": true,
+      "source_map": "Sources/Vocabulary-study-banks-20261101/independent-lexical-source-map.json",
+      "layout_and_links": "Sources/Vocabulary-study-banks-20261101/study-page-checks.json"
+    },
+    "qr": {
+      "blank_slots": 16,
+      "square_mm": 24,
+      "collisions": [],
+      "report": "Sources/Vocabulary-study-banks-20261101/final-qr-bounds.json"
+    },
+    "current_visual_identity_checks": {
+      "coverage_spreads": 36,
+      "functional_tools": 35,
+      "protected_selectors": 73,
+      "standalone_and_assembled_number_and_alphabet_checks_passed": true
+    },
+    "prior_live_viewer": {
       "completed": true,
       "content_commit": "2c75e7eea6cd374a9370613eaed54e198eee95ab",
       "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=grammarclarity-2c75e7eea6cd",
@@ -243,13 +781,13 @@
       "changed_files_match": 35,
       "file_report": "Sources/Grammar-clarity-20261101/published-file-verification.json",
       "viewer_report": "Sources/Grammar-clarity-20261101/live-viewer-verification.json",
-      "failures": []
+      "failures": [],
+      "evidence_scope": "Historical grammar-clarity edition only; not current publication proof."
     },
-    "evidence_directory": "Sources/Grammar-clarity-20261101",
-    "prior_editorial_evidence": [
-      "Sources/Editorial-overhaul-20261031",
-      "Sources/Expressive-spirit-20261031"
-    ]
+    "live_viewer": {
+      "completed": false,
+      "status": "pending publication"
+    }
   },
   "new_objects": "Images/Editorial-objects/manifest.json",
   "resource_registry": "Sources/Lesson-resources.json",
@@ -398,9 +936,9 @@
         "Practice"
       ],
       "fingerprint": {
-        "files": 853,
-        "bytes": 591238648,
-        "sha256": "9679a712f5e3d3290a31aab1acb3b816f97e5ca0b3b4f354f9d5f77df943c6b3"
+        "files": 873,
+        "bytes": 597021549,
+        "sha256": "60b1fa6cd2f356ee851acc3a6e7a8e3b1a2fbd2a5bf0ce8c6f42b15999539200"
       },
       "normalize_text_line_endings": true
     },
@@ -411,8 +949,8 @@
       "exclude_markdown": true,
       "fingerprint": {
         "files": 21,
-        "bytes": 86355,
-        "sha256": "4f3816521fba017d5bad6bfbde3beb55bf7c69d92136f41d6a4312e4585f751d"
+        "bytes": 88529,
+        "sha256": "749dca4107294fd3157659aa0912992545dd6a616f61c0675c00e9e607f65c19"
       },
       "normalize_text_line_endings": true
     },
@@ -422,8 +960,8 @@
       ],
       "fingerprint": {
         "files": 1,
-        "bytes": 37339903,
-        "sha256": "4532401e239bbd87eb715a81f839d91f71e9a1fc059afbbb282b517315b83ae6"
+        "bytes": 38097803,
+        "sha256": "2023230f81ff2b16852387858f41b90c503c8fb571ded955aea15ea98b4593d5"
       },
       "normalize_text_line_endings": true
     },
@@ -447,8 +985,8 @@
       ],
       "fingerprint": {
         "files": 15,
-        "bytes": 120873,
-        "sha256": "ea7303f2da06a9f3bc8476f209e9e7891f29cfaa51449b5ed563a2387786cd42"
+        "bytes": 128369,
+        "sha256": "ef3bf43a683c6e64c573ae7e83c34e72e7d0ac679b2061e9cdead76173affce4"
       },
       "normalize_text_line_endings": true
     }
@@ -459,7 +997,7 @@
     "priority": "Warm adult playfulness, saturated local colour, tactile concept metaphors and protected letter/number graphics; functional consistency does not mean visual uniformity.",
     "regression_baseline": "8069492116058e45846c79601c66ebd8a3207abb",
     "protected_register": "Sources/Visual-personality.json",
-    "verification": "Core and vocabulary preserved; all grammar source, saved-PDF and published-viewer checks complete",
+    "verification": "Core visual sources preserved outside updated Go-to references; all16 grammar PDF pages remain text- and pixel-identical.",
     "functional_tool_counts": {
       "grammar": 25,
       "pronunciation": 1,
@@ -487,19 +1025,25 @@
     "qr_registry": "Practice/Blooket-links.json",
     "counts": {
       "grammar_pages": 16,
-      "vocabulary_pages": 18,
+      "vocabulary_pages": 31,
       "communication_pages": 4,
-      "total_practice_pages": 38,
+      "total_practice_pages": 51,
       "forward_references": 75,
       "distinct_referenced_destinations": 70,
-      "total_authored_destinations": 71
+      "total_authored_destinations": 71,
+      "vocabulary_study_pages": 13,
+      "vocabulary_activity_pages": 18,
+      "vocabulary_topics": 38,
+      "required_within_topic_items": 404,
+      "marked_lexical_entry_occurrences": 415
     },
     "unique_vocabulary_resources": true,
-    "games_created_in_blooket": false
+    "games_created_in_blooket": false,
+    "study_inventory": "Practice/Vocabulary/study-vocabulary.json"
   },
   "author_feedback": {
     "date": "2026-11-01",
-    "vocabulary_practice_approach": "endorsed; retain current fresh games/resources",
+    "vocabulary_practice_approach": "Fresh activities endorsed; add complete study word banks before the approved activities, including all necessary topic vocabulary for test revision.",
     "grammar_practice": "Remove inline explanatory prose; use compact charts, arrows, diagrams, short labels and complete models. Do not overdo present simple or spread excess detail to other pages."
   }
 }

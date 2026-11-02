@@ -1,0 +1,1263 @@
+{
+  "reviewed_at": "2026-11-01T19:04:03.116321",
+  "scope": "Read-only lexical completeness source map for new study-first vocabulary word banks. All32teacherwordlists and actual NEW WORDS intro regions read; all38topic sets and approved68game groups/keys reviewed in this task chain. This is not final study-page coverage approval.",
+  "primary_source_policy": "Actual core introduction + teacher Wordlists + correct approved activity/key language. Preserve game content and unique resources. Separate core target, practice-only scaffold and incidental example.",
+  "topic_count": 38,
+  "lesson_count": 32,
+  "topic_source_map": [
+    {
+      "unit": 1,
+      "topic_id": "vocabulary-greetings",
+      "source_lessons": [
+        "1A"
+      ],
+      "required_core_or_existing_practice_entries": [
+        "Hello",
+        "Hi",
+        "Good morning",
+        "Good afternoon",
+        "Good evening",
+        "Goodbye",
+        "See you later",
+        "Nice to meet you"
+      ],
+      "meaning_form_scope_note": "Time-of-day or meeting/leaving cues. Exact core greetings and approved goodbye extension."
+    },
+    {
+      "unit": 1,
+      "topic_id": "vocabulary-alphabet",
+      "source_lessons": [
+        "1A"
+      ],
+      "required_core_or_existing_practice_entries": [
+        "A–Z",
+        "lowercase a–z"
+      ],
+      "meaning_form_scope_note": "Complete alphabet, not only letters used in Kim/Luz/Sam/Ida. No claim of a new recording."
+    },
+    {
+      "unit": 1,
+      "topic_id": "vocabulary-numbers",
+      "source_lessons": [
+        "1A"
+      ],
+      "required_core_or_existing_practice_entries": [
+        "zero",
+        "one",
+        "two",
+        "three",
+        "four",
+        "five",
+        "six",
+        "seven",
+        "eight",
+        "nine",
+        "ten"
+      ],
+      "meaning_form_scope_note": "0–10 matched to spelled forms; ten is one number, not a digit."
+    },
+    {
+      "unit": 1,
+      "topic_id": "vocabulary-personal-information",
+      "source_lessons": [
+        "1A",
+        "1D"
+      ],
+      "required_core_or_existing_practice_entries": [
+        "first name",
+        "last name",
+        "country",
+        "city",
+        "phone number",
+        "email",
+        "What is your name?",
+        "My name is…",
+        "How do you spell that?",
+        "What is your phone number?",
+        "Where are you from?"
+      ],
+      "meaning_form_scope_note": "A miniature fictional form/message makes fields distinct; no real data disclosure needed."
+    },
+    {
+      "unit": 1,
+      "topic_id": "vocabulary-occupations",
+      "source_lessons": [
+        "1B"
+      ],
+      "required_core_or_existing_practice_entries": [
+        "teacher",
+        "student",
+        "chef",
+        "doctor",
+        "office worker",
+        "receptionist",
+        "salesclerk",
+        "taxi driver",
+        "waiter",
+        "waitress",
+        "farmer"
+      ],
+      "meaning_form_scope_note": "Both waiter/waitress; role/workplace cues. Practice-only actor must be labeled separately."
+    },
+    {
+      "unit": 1,
+      "topic_id": "vocabulary-countries",
+      "source_lessons": [
+        "1C"
+      ],
+      "required_core_or_existing_practice_entries": [
+        "Canada/Canadian",
+        "the US/American",
+        "South Korea/South Korean",
+        "Argentina/Argentinian",
+        "the UK/British"
+      ],
+      "meaning_form_scope_note": "Country↔nationality pair table; capitals and the US/the UK. No incidental-name expansion."
+    },
+    {
+      "unit": 1,
+      "topic_id": "vocabulary-adjectives",
+      "source_lessons": [
+        "1B",
+        "1C",
+        "2D"
+      ],
+      "required_core_or_existing_practice_entries": [
+        "smart",
+        "fun",
+        "busy",
+        "big",
+        "beautiful",
+        "hot",
+        "cold",
+        "friendly",
+        "old",
+        "new",
+        "calm",
+        "famous",
+        "good",
+        "cheap",
+        "expensive",
+        "small"
+      ],
+      "meaning_form_scope_note": "Group by source:1B/1C early set, small reinforced2D. Keep quiet/noisy inV3. Busy/calm is a source-place contrast, not universal antonyms."
+    },
+    {
+      "unit": 2,
+      "topic_id": "vocabulary-personal-items",
+      "source_lessons": [
+        "2A"
+      ],
+      "required_core_or_existing_practice_entries": [
+        "phone",
+        "keys",
+        "wallet",
+        "notebook",
+        "pen",
+        "headphones",
+        "bottle",
+        "umbrella"
+      ],
+      "meaning_form_scope_note": "All8, including unpictured-in-game headphones. Keys/headphones use plural forms. Bag is useful existing2A context."
+    },
+    {
+      "unit": 2,
+      "topic_id": "vocabulary-telling-time",
+      "source_lessons": [
+        "2B"
+      ],
+      "required_core_or_existing_practice_entries": [
+        "six twenty",
+        "six forty",
+        "seven thirty",
+        "eight fifty",
+        "six ten",
+        "seven twenty",
+        "eight forty",
+        "nine fifty",
+        "What time…?",
+        "It’s…"
+      ],
+      "meaning_form_scope_note": "First4 are core exact models; last4 support approved game. A digital hour/minute spelling key should cover ten/twenty/thirty/forty/fifty; avoid using deliberately wrong game captions as reference."
+    },
+    {
+      "unit": 2,
+      "topic_id": "vocabulary-family-members",
+      "source_lessons": [
+        "2C"
+      ],
+      "required_core_or_existing_practice_entries": [
+        "father",
+        "mother",
+        "son",
+        "daughter",
+        "brother",
+        "sister",
+        "husband",
+        "wife",
+        "children"
+      ],
+      "meaning_form_scope_note": "Actual Rivera input adds husband/wife/children beyond current game. Parents supported by2C possessive model; relation chart must identify roles, not stereotypes."
+    },
+    {
+      "unit": 2,
+      "topic_id": "vocabulary-colors",
+      "source_lessons": [
+        "2D"
+      ],
+      "required_core_or_existing_practice_entries": [
+        "red",
+        "blue",
+        "green",
+        "yellow",
+        "black",
+        "white",
+        "brown",
+        "orange",
+        "gray",
+        "pink"
+      ],
+      "meaning_form_scope_note": "All10; white has visible outline, US gray; use color+label cues."
+    },
+    {
+      "unit": 3,
+      "topic_id": "vocabulary-daily-routines",
+      "source_lessons": [
+        "3A",
+        "3D"
+      ],
+      "required_core_or_existing_practice_entries": [
+        "get up",
+        "have breakfast",
+        "go to work",
+        "have lunch",
+        "go home",
+        "have dinner",
+        "watch TV",
+        "go to bed",
+        "drink water",
+        "walk",
+        "read a book",
+        "listen to music",
+        "sleep"
+      ],
+      "meaning_form_scope_note": "8from3A plus5 additional unique3D chunks. Show meaningful whole chunks, not isolated verbs; do not equate get up with wake up."
+    },
+    {
+      "unit": 3,
+      "topic_id": "vocabulary-days-of-the-week",
+      "source_lessons": [
+        "3B"
+      ],
+      "required_core_or_existing_practice_entries": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+        "weekday",
+        "weekend"
+      ],
+      "meaning_form_scope_note": "All7 spelled correctly. Weekday/weekend source context; avoid claiming every learner has the same workweek."
+    },
+    {
+      "unit": 3,
+      "topic_id": "vocabulary-place-adjectives-recall",
+      "source_lessons": [
+        "3C"
+      ],
+      "required_core_or_existing_practice_entries": [
+        "beautiful",
+        "quiet",
+        "busy",
+        "noisy",
+        "cheap",
+        "expensive"
+      ],
+      "meaning_form_scope_note": "Canonical new quiet/noisy belong here; source price/noise/appearance cues support meaning."
+    },
+    {
+      "unit": 4,
+      "topic_id": "vocabulary-food-and-drink",
+      "source_lessons": [
+        "4A"
+      ],
+      "required_core_or_existing_practice_entries": [
+        "bread",
+        "rice",
+        "fish",
+        "cheese",
+        "milk",
+        "tea",
+        "coffee",
+        "juice",
+        "egg/eggs",
+        "tomato/tomatoes",
+        "banana/bananas",
+        "apple/apples"
+      ],
+      "meaning_form_scope_note": "12food categories; countable singular/plural pairs useful; mass-food meanings of bread/rice/milk/cheese."
+    },
+    {
+      "unit": 4,
+      "topic_id": "vocabulary-flavors",
+      "source_lessons": [
+        "4B"
+      ],
+      "required_core_or_existing_practice_entries": [
+        "salty",
+        "sweet",
+        "sour",
+        "spicy"
+      ],
+      "meaning_form_scope_note": "Use known/supported food meanings: chips/salt,ice cream/sugar,lemon,chili pepper. Useful core context vegan,plants,meat,burger,chips,ice cream,strawberry,lemon,chili pepper,fries,menu; tasty is title support. Do not infer every version of a food has one flavor."
+    },
+    {
+      "unit": 4,
+      "topic_id": "vocabulary-cooking-verbs",
+      "source_lessons": [
+        "4C"
+      ],
+      "required_core_or_existing_practice_entries": [
+        "wash the tomatoes",
+        "cut the tomatoes",
+        "add the cheese and oil",
+        "mix the salad",
+        "recipe",
+        "salad",
+        "spoon",
+        "oil"
+      ],
+      "meaning_form_scope_note": "All4 verbs with their objects; bowl is a practice-only scaffold. Sequence must wash→cut→add→mix in existing recipe game."
+    },
+    {
+      "unit": 4,
+      "topic_id": "vocabulary-sharing-food",
+      "source_lessons": [
+        "4D"
+      ],
+      "required_core_or_existing_practice_entries": [
+        "share food",
+        "free",
+        "waste food"
+      ],
+      "meaning_form_scope_note": "Free=$0/no money; share=food for you/me; waste=usable food not eaten/shared. No safety claims or compulsory real sharing."
+    },
+    {
+      "unit": 5,
+      "topic_id": "vocabulary-clothes-and-accessories",
+      "source_lessons": [
+        "5A"
+      ],
+      "required_core_or_existing_practice_entries": [
+        "T-shirt",
+        "shirt",
+        "sweater",
+        "jacket",
+        "jeans",
+        "dress",
+        "shoes",
+        "hat",
+        "scarf",
+        "bag"
+      ],
+      "meaning_form_scope_note": "All10: new picture shows6, missing-item clues retrieve4. Jeans/shoes plural, other nouns take a/an when singular."
+    },
+    {
+      "unit": 5,
+      "topic_id": "vocabulary-shopping-verbs",
+      "source_lessons": [
+        "5B"
+      ],
+      "required_core_or_existing_practice_entries": [
+        "pay",
+        "try on",
+        "keep",
+        "return"
+      ],
+      "meaning_form_scope_note": "Meaningful chunks pay by card,try on a jacket,keep an item,return an item. Return-item meaning differs from8D return-ticket."
+    },
+    {
+      "unit": 5,
+      "topic_id": "vocabulary-places-in-town",
+      "source_lessons": [
+        "5C"
+      ],
+      "required_core_or_existing_practice_entries": [
+        "supermarket",
+        "market",
+        "clothes store",
+        "library"
+      ],
+      "meaning_form_scope_note": "Only these4at5C; do not pre-teach6A full town set. Places↔visible stock/purpose cues support mission."
+    },
+    {
+      "unit": 5,
+      "topic_id": "vocabulary-at-the-store",
+      "source_lessons": [
+        "5D"
+      ],
+      "required_core_or_existing_practice_entries": [
+        "cashier",
+        "customer",
+        "checkout",
+        "cash",
+        "card",
+        "receipt"
+      ],
+      "meaning_form_scope_note": "Person/place/payment/document distinctions. Useful chunks Do you have any…? I’d like some…,please;Anything else?No,thanks;How much is it?Can I pay by card?Here’s your receipt;Can I get a receipt?"
+    },
+    {
+      "unit": 6,
+      "topic_id": "vocabulary-places-in-town-2",
+      "source_lessons": [
+        "6A"
+      ],
+      "required_core_or_existing_practice_entries": [
+        "bank",
+        "pharmacy",
+        "post office",
+        "hospital",
+        "train station",
+        "museum",
+        "get cash",
+        "buy medicine",
+        "send a letter",
+        "take a train",
+        "look at art and history"
+      ],
+      "meaning_form_scope_note": "All6places and functional chunks. Letter-envelope meaning differs from alphabet letter."
+    },
+    {
+      "unit": 6,
+      "topic_id": "vocabulary-shopping-centers-and-attractions",
+      "source_lessons": [
+        "6D"
+      ],
+      "required_core_or_existing_practice_entries": [
+        "waterfall",
+        "garden",
+        "roller coaster",
+        "mall",
+        "shopping center",
+        "see a waterfall",
+        "walk in a garden",
+        "ride a roller coaster",
+        "go shopping",
+        "closed",
+        "open"
+      ],
+      "meaning_form_scope_note": "Mall=shopping center; closed=not open. No actual venue hours/safety rules claimed."
+    },
+    {
+      "unit": 6,
+      "topic_id": "vocabulary-rooms-and-furniture",
+      "source_lessons": [
+        "6B"
+      ],
+      "required_core_or_existing_practice_entries": [
+        "kitchen",
+        "living room",
+        "bedroom",
+        "bathroom",
+        "bed",
+        "sofa",
+        "table",
+        "chair"
+      ],
+      "meaning_form_scope_note": "4rooms+4furniture. Useful source gloss tiny=very small;free time=available leisure, distinct from free=$0. Optional lamp/armchair only if clearly labeled as practice picture extras, not required core."
+    },
+    {
+      "unit": 6,
+      "topic_id": "vocabulary-movement-and-directions",
+      "source_lessons": [
+        "6C"
+      ],
+      "required_core_or_existing_practice_entries": [
+        "go along the street",
+        "go across the street",
+        "go through the park",
+        "go past the bank",
+        "go straight",
+        "turn left",
+        "turn right",
+        "on foot",
+        "on your left",
+        "on your right"
+      ],
+      "meaning_form_scope_note": "Arrows distinguish along/across/through/past. On foot=walking. Crossroads is a grammar-bank scaffold; opposite belongs to explicitly labeled practical extension, not retroactive6B target."
+    },
+    {
+      "unit": 7,
+      "topic_id": "vocabulary-months",
+      "source_lessons": [
+        "7B"
+      ],
+      "required_core_or_existing_practice_entries": [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+      ],
+      "meaning_form_scope_note": "All12calendar order and accurate spelling."
+    },
+    {
+      "unit": 7,
+      "topic_id": "vocabulary-dates-and-ordinal-numbers",
+      "source_lessons": [
+        "7B"
+      ],
+      "required_core_or_existing_practice_entries": [
+        "first",
+        "second",
+        "third",
+        "fourth",
+        "fifth",
+        "sixth",
+        "seventh",
+        "eighth",
+        "ninth",
+        "tenth",
+        "eleventh",
+        "twelfth",
+        "twentieth",
+        "twenty-first",
+        "twenty-second",
+        "twenty-third",
+        "thirtieth",
+        "thirty-first"
+      ],
+      "meaning_form_scope_note": "Exact core models. Reference must support all calendar dates1–31 using a complete list or a clear pattern; ensure fifth/eighth/ninth/twelfth/twentieth/thirtieth and compound endings. July twelfth / the twelfth of July."
+    },
+    {
+      "unit": 7,
+      "topic_id": "vocabulary-past-time-expressions",
+      "source_lessons": [
+        "7A",
+        "7B"
+      ],
+      "required_core_or_existing_practice_entries": [
+        "yesterday",
+        "last night",
+        "last weekend",
+        "last year",
+        "one day ago",
+        "two days ago",
+        "ago"
+      ],
+      "meaning_form_scope_note": "Visible fictional today/year anchor; ago=before now after duration. Last night and yesterday are not identical periods."
+    },
+    {
+      "unit": 7,
+      "topic_id": "vocabulary-music",
+      "source_lessons": [
+        "7C"
+      ],
+      "required_core_or_existing_practice_entries": [
+        "record",
+        "cassette",
+        "radio"
+      ],
+      "meaning_form_scope_note": "Correct labels, not intentionally wrong game labels. Simple fresh visual/meaning cues; no new music-style taxonomy."
+    },
+    {
+      "unit": 7,
+      "topic_id": "vocabulary-irregular-past-verbs",
+      "source_lessons": [
+        "7D"
+      ],
+      "required_core_or_existing_practice_entries": [
+        "get/got",
+        "go/went",
+        "have/had",
+        "see/saw",
+        "eat/ate",
+        "buy/bought",
+        "write/wrote",
+        "got up",
+        "had breakfast",
+        "saw a friend",
+        "ate an apple",
+        "bought bread",
+        "wrote in a diary",
+        "went to the bank",
+        "went to the market",
+        "went home"
+      ],
+      "meaning_form_scope_note": "All7pairs and useful chunks; approved repair story retrieves every form. Base after did/didn’t remains a grammar-bank pattern."
+    },
+    {
+      "unit": 7,
+      "topic_id": "vocabulary-sequencing-words",
+      "source_lessons": [
+        "7D"
+      ],
+      "required_core_or_existing_practice_entries": [
+        "First",
+        "Then",
+        "After that",
+        "Finally"
+      ],
+      "meaning_form_scope_note": "Ordered event-arrow cue; existing open retelling preserved. Do not turn an exact printed ordered list into a claimed memory challenge without covering it."
+    },
+    {
+      "unit": 8,
+      "topic_id": "vocabulary-travel-verbs",
+      "source_lessons": [
+        "8A"
+      ],
+      "required_core_or_existing_practice_entries": [
+        "travel by train",
+        "arrive in Toronto",
+        "stay in a hotel",
+        "visit a market",
+        "take photos",
+        "leave at six",
+        "travel/traveled",
+        "arrive/arrived",
+        "stay/stayed",
+        "visit/visited",
+        "take/took",
+        "leave/left",
+        "leave a bag at a hotel"
+      ],
+      "meaning_form_scope_note": "Six whole chunks plus supported past forms. Leave-at-time and leave-an-object are distinct source meanings; American traveled."
+    },
+    {
+      "unit": 8,
+      "topic_id": "vocabulary-animals",
+      "source_lessons": [
+        "8A"
+      ],
+      "required_core_or_existing_practice_entries": [
+        "raccoon",
+        "duck",
+        "squirrel",
+        "goose",
+        "beaver"
+      ],
+      "meaning_form_scope_note": "All5need unambiguous meaning cues/fresh visual. Goose/beaver are print-only, not falsely part of3-word track. No untaught bushy/tail/mask descriptors as hidden required words."
+    },
+    {
+      "unit": 8,
+      "topic_id": "vocabulary-weather-and-seasons",
+      "source_lessons": [
+        "8B"
+      ],
+      "required_core_or_existing_practice_entries": [
+        "sunny",
+        "cloudy",
+        "rainy",
+        "windy",
+        "snowy",
+        "hot",
+        "cold",
+        "spring",
+        "summer",
+        "fall",
+        "winter"
+      ],
+      "meaning_form_scope_note": "7weather+4seasons. Fall American model. Weather icons/new cues; no universal weather-season mapping."
+    },
+    {
+      "unit": 8,
+      "topic_id": "vocabulary-body-parts",
+      "source_lessons": [
+        "8C"
+      ],
+      "required_core_or_existing_practice_entries": [
+        "foot",
+        "hand",
+        "head",
+        "leg",
+        "stomach",
+        "arm"
+      ],
+      "meaning_form_scope_note": "All6with fresh visual/clear cues. Singular/plural models arm/arms,leg/legs; optional foot/feet if used correctly. Approved acted travelers are for a new symptom-matching activity, not the reused core body diagram."
+    },
+    {
+      "unit": 8,
+      "topic_id": "vocabulary-health-complaints",
+      "source_lessons": [
+        "8C"
+      ],
+      "required_core_or_existing_practice_entries": [
+        "a cold",
+        "a headache",
+        "a stomachache",
+        "a toothache",
+        "I have a…",
+        "She has a…",
+        "My head/arm/stomach hurts",
+        "My legs hurt"
+      ],
+      "meaning_form_scope_note": "Retain articles and agreement; cold illness differs from temperature adjective. Poses/messages illustrate fictional problems, no diagnosis/treatment."
+    },
+    {
+      "unit": 8,
+      "topic_id": "vocabulary-phone-and-ticket-language",
+      "source_lessons": [
+        "8D"
+      ],
+      "required_core_or_existing_practice_entries": [
+        "I’d like a ticket to…,please",
+        "one way",
+        "return",
+        "What time does it leave?",
+        "How much is it?",
+        "Can you repeat that?",
+        "Can you spell your name?",
+        "That’s a ticket to…at…",
+        "ticket",
+        "flight",
+        "passenger",
+        "agent"
+      ],
+      "meaning_form_scope_note": "All6recorded request/question models plus noun roles and confirmation. One-way/return directional cue, departure versus arrival; destination/To is contextual field, no extra country set."
+    }
+  ],
+  "modest_practice_scaffolds": [
+    {
+      "unit": 1,
+      "entries": [
+        "actor"
+      ],
+      "source": "G1 a/an chart and tasks",
+      "status": "Practice-only lexical model; no actor occurrence in core32lesson stripped text"
+    },
+    {
+      "unit": 2,
+      "entries": [
+        "bag",
+        "parents",
+        "school"
+      ],
+      "source": "G2 models; bag2A title,parents2C apostrophe,school1D form context",
+      "status": "Already contextual core language; useful modest cue, not a new target set"
+    },
+    {
+      "unit": 4,
+      "entries": [
+        "soup",
+        "sandwich"
+      ],
+      "source": "G4 object-pronoun models/task",
+      "status": "Practice-only models, absent core32lesson stripped text"
+    },
+    {
+      "unit": 4,
+      "entries": [
+        "bowl",
+        "salt",
+        "sugar"
+      ],
+      "source": "V4 recipe and flavor prompts",
+      "status": "Practice-only context, absent core32lesson stripped text"
+    },
+    {
+      "unit": 5,
+      "entries": [
+        "warm",
+        "light",
+        "comfortable",
+        "fit/fits",
+        "broken"
+      ],
+      "source": "G5 adjective tasks and V5 decision trail",
+      "status": "Practice meaning support; comfortable also5B receptive audio support per Wordlist"
+    },
+    {
+      "unit": 6,
+      "entries": [
+        "crossroads"
+      ],
+      "source": "G6 route task",
+      "status": "Practice-only task scaffold, absent core32lesson stripped text"
+    },
+    {
+      "unit": 6,
+      "entries": [
+        "opposite"
+      ],
+      "source": "PracticalC6 model and explicit Practice banks wordlist extension",
+      "status": "Already scaffolded practical extension; optional word-bank consolidation, not6B core"
+    },
+    {
+      "unit": 7,
+      "entries": [
+        "guitar",
+        "dance/danced",
+        "stay/stayed at home",
+        "cook"
+      ],
+      "source": "G7 diary/question model",
+      "status": "Practice models; stay firstcore8A, other3absent coretext; label extras, not music taxonomy"
+    }
+  ],
+  "cross_bank_grammar_lexical_sets": {
+    "G3": "Actual routine chunks and present verbs from3A/3D, not a new action taxonomy.",
+    "G5_frequency": "How often;once/twice/three times/every;day/week/month/year already modeled inG5; useful small source-linked row if study page includes5Cperiod chunks.",
+    "G7_regular_forms": "walk/walked,listen/listened,talk/talked,use/used,play/played,watch/watched,study/studied,visit/visited,live/lived,plan/planned,want/wanted; worked,started,needed are explicit additional print-pronunciation support. G7 existing game extra danced/stayed distinguish as practice support."
+  },
+  "strongest_completeness_risks": [
+    "V1alphabet must be allA–Z, not just password letters;0–10 not just code examples; alljobs and bothwaiter/waitress.",
+    "V2family husband/wife/children are actual core input despite missing from old game; headphone missing-object cue still needs complete8-item reference.",
+    "V3daily routines must include3D fiveadditional uniquechunks, not only3A eight.",
+    "V4support nouns in recipes/flavor cues and object models need modest source scaffolding.",
+    "V7allmonths, supported1–31ordinalspellings and all7irregularpairs required; reference must use correct forms, not deliberate game errors.",
+    "V8all5animals, including unrecorded goose/beaver; all6bodyparts and4complaints with articles; opaque nouns need genuine meaning cues."
+  ],
+  "correct_reference_not_game_errors": [
+    "V2wrongclockcaptions",
+    "V1wrongdutylables",
+    "V7misplacedmusiclabels",
+    "V7wrongpaststoryforms",
+    "V8misplacedtravelverbs",
+    "V8wrongforecastwords"
+  ],
+  "avoid_future_dump": "Early adjective destinationV1 contains1B/1C plus2Dreinforcement only; quiet/noisy and3Cplace input stayV3.5Cfourplaces remain separate from6Asixplaces.",
+  "intentional_exclusions": [
+    "Incidental proper names/cities/celebrities are not new spelling lists. Mexico in a capital-letter model does not justify Mexican nationality.",
+    "Function words and every classroom instruction verb do not become a second vocabulary syllabus.",
+    "Incidental visible apartment furniture extras are optional unless explicitly labeled/input; no need to assess every object in a photograph.",
+    "No stock/core image recycling or change to approved private/memory game mechanics."
+  ],
+  "key_sources": [
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Answer keys\\Vocabulary practice 1-4.md",
+      "sha256_at_review": "6b1e886063dd00ffbc06cc5906e44a6909a52f29c127b011078f9a0fa8fc2fa0"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Answer keys\\Vocabulary practice 5-8.md",
+      "sha256_at_review": "b7af865ef1b42bc8e7ea5e8a274e102e2bf27f8423382b8fc51b42aa25dcf78c"
+    }
+  ],
+  "lesson_evidence": [
+    {
+      "lesson": "1A",
+      "wordlist": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Wordlists\\1A.md",
+      "wordlist_sha256": "65975ac555633a35c698a4a129d35a995126e31a74194f716022ccbca6041a87",
+      "lesson_sha256": "7559463410d12453bec9ae495c6f58d3feaa9ed9168e1d6d073426ce4430c4de",
+      "actual_new_words_intro_evidence": [
+        "1 ♪ 1.1 Read and listen. What class is Mary in? NEW WORDS Tom: Hello! I am Tom. Mary: I am Mary. Nice to meet you. Tom: Are you a student? Mary: Yes, I am in Class 4. Tom: Is your teacher Mr. Wilson? Mary: Yes, he is! Tom: Good! See you later.",
+        "5 ♪ 1.3 Read and listen. NEW WORDS What is your name ? My name is Ariana. How do you spell that? A-R-I-A-N-A. What is your phone number ? It’s 095 210 7168."
+      ],
+      "referenced_vocabulary_ids": [
+        "vocabulary-greetings",
+        "vocabulary-personal-information",
+        "vocabulary-alphabet",
+        "vocabulary-numbers"
+      ]
+    },
+    {
+      "lesson": "1B",
+      "wordlist": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Wordlists\\1B.md",
+      "wordlist_sha256": "d03c4939eba0a24229cb41f978f8836c970c84d68ee58d641ea2c56163996551",
+      "lesson_sha256": "284ca46828af27af46ffccef5f048384eaf25b228f1180011fbf9f3a286e4750",
+      "actual_new_words_intro_evidence": [
+        "1 ♪ 1.8 Read and listen. NEW WORDS A teacher A student A chef A doctor An office worker A receptionist A salesclerk A taxi driver A waiter/waitress A farmer",
+        "4 a ♪ 1.8 Read and listen. Who has two jobs? At work, in their words NEW WORDS TOM Hey! I’m Tom. I’m a taxi driver. I drive a taxi in the morning. But in the evening, I’m a teacher! I teach English to my students. They’re smart ! SARAH Hi! I’m Sarah. I’m a doctor, and work in a hospital. I’m busy in the morning, but in the evening I’m with my friends. They’re doctors! MARCO Hello! I’m Marco. I am a chef, and work in a restaurant in the afternoon. But in the morning, I always talk with my friends and play soccer. It is very fun !"
+      ],
+      "referenced_vocabulary_ids": [
+        "vocabulary-occupations",
+        "vocabulary-adjectives"
+      ]
+    },
+    {
+      "lesson": "1C",
+      "wordlist": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Wordlists\\1C.md",
+      "wordlist_sha256": "d65828bece36541dd1d6c404185ddf20ab73d748f2c59eb7f59c1970c48e3a9f",
+      "lesson_sha256": "1f20fc256a6ec73012f971f6a028f193023b55524f2fe2421460696e31ccd8eb",
+      "actual_new_words_intro_evidence": [
+        "1 ♪ 1.10 Match the people with the countries. Argentina the US the UK Canada South Korea NEW WORDS 1 Lionel Messi 2 Taylor Swift 3 Keanu Reeves 4 Millie B. Brown 5 Lee Jung-jae"
+      ],
+      "referenced_vocabulary_ids": [
+        "vocabulary-countries",
+        "vocabulary-adjectives"
+      ]
+    },
+    {
+      "lesson": "1D",
+      "wordlist": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Wordlists\\1D.md",
+      "wordlist_sha256": "50b0b892874ff6954cd17bf789f00dba049d2906d305c4ec0c8e31535bb47c99",
+      "lesson_sha256": "61c89addb3d7a6f0035e124c87bcd916601aacd569260f35adea4091ca38f908",
+      "actual_new_words_intro_evidence": [
+        "1 ♪ 1.12 Read and listen to the conversation. SEASIDE HOTEL Receptionist: Good afternoon. I’m Lisa. I’m a receptionist. Receptionist: What is your first name ? Emma: I’m Emma. Receptionist: What is your last name ? Emma: Carter. C-A-R-T-E-R. Receptionist: Where are you from? Emma: I’m from Canada. Receptionist: What is your city ? Emma: Toronto. Receptionist: What is your phone number ? Emma: It’s 416 555 0182. Receptionist: What is your email ? Emma: emma.carter@email.com Receptionist: Thank you. NEW WORDS"
+      ],
+      "referenced_vocabulary_ids": [
+        "vocabulary-personal-information"
+      ]
+    },
+    {
+      "lesson": "2A",
+      "wordlist": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Wordlists\\2A.md",
+      "wordlist_sha256": "2b0dc0f488c047295eaa4710687b3ac6b0f19d15f4196b13994c6d4ffaa0489f",
+      "lesson_sha256": "0aa3d4159a2adde47f77cad230f5913ec5e227847b727b57f15534ad924a50e5",
+      "actual_new_words_intro_evidence": [
+        "1 Look and match. Your bag: choose three items. A B C D E F G H NEW WORDS phone keys wallet notebook pen headphones bottle umbrella My three items"
+      ],
+      "referenced_vocabulary_ids": [
+        "vocabulary-personal-items"
+      ]
+    },
+    {
+      "lesson": "2B",
+      "wordlist": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Wordlists\\2B.md",
+      "wordlist_sha256": "05cb5cf47ef2cfcdc3e5719b164516398f059225351415813d9f75e019280aef",
+      "lesson_sha256": "bba9e4016a160545efb738f625d2f9a5314ac40dbdf625ab917c0007f08c6728",
+      "actual_new_words_intro_evidence": [
+        "1 Look and match. A 6:20 B 6:40 C 7:30 D 8:50 six twenty six forty seven thirty eight fifty NEW WORDS",
+        "2 HORIZONS ON AIR BUS OR CAR? ♪ 2.3 Look at the city. Bus or car? Guess. Listen and answer. 1 What is Moovit? 2 What is inDrive? 3 What city? 4 What is the same for Julia and Ana? 5 Who is different ? NEW WORDS"
+      ],
+      "referenced_vocabulary_ids": [
+        "vocabulary-telling-time"
+      ]
+    },
+    {
+      "lesson": "2C",
+      "wordlist": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Wordlists\\2C.md",
+      "wordlist_sha256": "6fa3402731dc5eba452074cafa52e34767ee6e1049fcf1078e74fd0618be622b",
+      "lesson_sha256": "b120e76d0135048caa50ef2f5fe9e2eca517ef32c765ff09eda3eb8051eb7302",
+      "actual_new_words_intro_evidence": [
+        "2 ♪ 2.6 Read and listen. Write the occupations. NEW WORDS Rivera Restaurant The Rivera family This is Rivera Restaurant in Manta. It is a small family business. Diego and Elena work there from Monday to Saturday. The restaurant is busy in the afternoon. Diego is a chef. He makes the food. Elena is a receptionist, and she talks to people at the restaurant. They like working together. Diego is Elena's husband , and Elena is Diego's wife . Nico and Sofía are their children. They are students. Nico and Sofía are at the restaurant on Saturdays. Nico is Elena's son , and Sofía is Diego's daughter . Nico is Sofía's brother , and Sofía is Nico's sister . On Saturdays, they sit together at a table. The family has some things at the restaurant. This is Diego's phone . These are Elena's keys . The blue notebook is Nico's notebook . Sofía's bottle is on the table. Diego father Occupation: Elena mother Occupation: Nico son Occupation: Sofía daughter Occupation:"
+      ],
+      "referenced_vocabulary_ids": [
+        "vocabulary-family-members"
+      ]
+    },
+    {
+      "lesson": "2D",
+      "wordlist": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Wordlists\\2D.md",
+      "wordlist_sha256": "5c488b28fccca58fce35282f3885aaeba5f5163e7a91796b3da1bce614001891",
+      "lesson_sha256": "e26b10774d4179ab9e17c7cc2d7a62a6e20ed292627ff8f643692a6e8dd8c661",
+      "actual_new_words_intro_evidence": [
+        "1 ♪ 2.4 Listen and repeat. NEW WORDS red blue green yellow black white brown orange gray pink"
+      ],
+      "referenced_vocabulary_ids": [
+        "vocabulary-colors",
+        "vocabulary-adjectives"
+      ]
+    },
+    {
+      "lesson": "3A",
+      "wordlist": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Wordlists\\3A.md",
+      "wordlist_sha256": "7d52697546759ea8f694160ddfc6edf6c92f33698f9d2daf622c07059afc2b01",
+      "lesson_sha256": "c8f5a04073c3b1f26d989da7941ac01169fa33a6e40d1016b9f1e8bb81b6f554",
+      "actual_new_words_intro_evidence": [
+        "1 ♪ 3.1 Listen and repeat. Look and match. Then look at the photos. Say the routines. NEW WORDS A B C D E F G H 1 B have breakfast 2 go to bed 3 go to work 4 get up 5 watch TV 6 have lunch 7 go home 8 have dinner"
+      ],
+      "referenced_vocabulary_ids": [
+        "vocabulary-daily-routines"
+      ]
+    },
+    {
+      "lesson": "3B",
+      "wordlist": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Wordlists\\3B.md",
+      "wordlist_sha256": "26e1e3636fb7a99f8143d139952d2d107b009b57aeb59af276cbc6a459647ba7",
+      "lesson_sha256": "b413e9b312e4ba5a1ba5cb09c70af84b443847d48b13f9699c026d819a032bf2",
+      "actual_new_words_intro_evidence": [
+        "1 ♪ 3.4 Listen and repeat. In your country: weekend? Circle the days. NEW WORDS 1 Monday 2 Tuesday 3 Wednesday 4 Thursday 5 Friday 6 Saturday 7 Sunday"
+      ],
+      "referenced_vocabulary_ids": [
+        "vocabulary-days-of-the-week"
+      ]
+    },
+    {
+      "lesson": "3C",
+      "wordlist": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Wordlists\\3C.md",
+      "wordlist_sha256": "81522812a2cb1114d6a8208a6cf8739ac6f5718f21b4271077bc0a71838bdcc5",
+      "lesson_sha256": "6b86c9b2c404d01387bace5719b990e1bf97ec6ef9a8158b064053c09e117c46",
+      "actual_new_words_intro_evidence": [
+        "2 ♪ 3.6 Listen and repeat. Find these words in the reviews. NEW WORDS beautiful quiet busy noisy cheap expensive"
+      ],
+      "referenced_vocabulary_ids": [
+        "vocabulary-place-adjectives-recall"
+      ]
+    },
+    {
+      "lesson": "3D",
+      "wordlist": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Wordlists\\3D.md",
+      "wordlist_sha256": "d066d095c0cb6569600c6443e3164b0b82647191039893a3547e43cabe95f6ae",
+      "lesson_sha256": "30fc1a1e1bb79c8b312a13fb90d877a3a3f3483dd748803041e677a0044e9b6c",
+      "actual_new_words_intro_evidence": [
+        "1 ♪ 3.8 Listen and repeat. Match the words and photos. NEW WORDS A B C D E F 1 drink water 2 walk 3 read a book 4 listen to music 5 have breakfast 6 sleep",
+        "2 ♪ 3.9 Read and listen. Look at Zoe's week. NEW WORDS 7 DAYS #MyWeek Zoe · @zoe.walks I always drink water after breakfast. I usually walk before dinner. I sometimes watch TV after dinner. I never go to bed at twelve. I am usually at home at six. Zoe's week Mon Tue Wed Thu Fri Sat Sun drink water ✓ ✓ ✓ ✓ ✓ ✓ ✓ walk ✓ ✓ ✓ ✓ ✓ – ✓ watch TV – ✓ – – – ✓ – go to bed at twelve – – – – – – –",
+        "4 Look at Zoe’s morning. Write A–C. Then circle the correct words. NEW WORDS A B C 7:00 have breakfast 7:10 drink water 8:00 go to work Zoe drinks water before / after she has breakfast. Zoe has breakfast before / after she drinks water."
+      ],
+      "referenced_vocabulary_ids": [
+        "vocabulary-daily-routines"
+      ]
+    },
+    {
+      "lesson": "4A",
+      "wordlist": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Wordlists\\4A.md",
+      "wordlist_sha256": "98bb15c720728ed00ff5bdb544b0e73c06ee1d8b2f20eede64d24e09ae6d247b",
+      "lesson_sha256": "17688cec64be284255846621d41f43e60f3a46765d526c115fc041b9d958ad1b",
+      "actual_new_words_intro_evidence": [
+        "1 ♪ 4.1 Listen and repeat. Match the words and photos. NEW WORDS A B C D E F G H I J K L 1 B rice 2 milk 3 eggs 4 bread 5 fish 6 cheese 7 tea 8 tomatoes 9 coffee 10 bananas 11 juice 12 apples"
+      ],
+      "referenced_vocabulary_ids": [
+        "vocabulary-food-and-drink"
+      ]
+    },
+    {
+      "lesson": "4B",
+      "wordlist": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Wordlists\\4B.md",
+      "wordlist_sha256": "8d9c458b3d246344648d4aeccb0aa1a43dc1557c7e541309d17d4539fe7a0f06",
+      "lesson_sha256": "17e7ca23e79b581f80e5cbde4f11eea3a0a1bab0bcae51645e9ab391a133ba48",
+      "actual_new_words_intro_evidence": [
+        "1 ♪ 4.3 Listen and repeat. Match the words and photos. NEW WORDS A B C D salty sweet sour spicy"
+      ],
+      "referenced_vocabulary_ids": [
+        "vocabulary-flavors"
+      ]
+    },
+    {
+      "lesson": "4C",
+      "wordlist": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Wordlists\\4C.md",
+      "wordlist_sha256": "e859e3073d09f26d3d20b5b7d8ce0a0ef472de5989155e8e8acdcebe5a91593d",
+      "lesson_sha256": "295f43f599dce796453d2f9c2cdb3cac66f03c894284a1228a17b7a3580d97e9",
+      "actual_new_words_intro_evidence": [
+        "1 ♪ 4.5 Listen and repeat. Complete the recipe with the verbs. NEW WORDS mix · wash · add · cut A SIMPLE RECIPE Tomato salad FOR 2 PEOPLE You need 2 tomatoes 2 spoons of cheese 1 spoon of oil A the tomatoes. B the tomatoes. C the cheese and oil. D the salad."
+      ],
+      "referenced_vocabulary_ids": [
+        "vocabulary-cooking-verbs"
+      ]
+    },
+    {
+      "lesson": "4D",
+      "wordlist": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Wordlists\\4D.md",
+      "wordlist_sha256": "d70a8c3e6e3d902849002c1336b834009eca131f54760a4a62215c4dd5e56d4c",
+      "lesson_sha256": "84e5f1ad06368207949e94f3e1665ccfe5f4d99a6e395780358f2a4b453d9ca3",
+      "actual_new_words_intro_evidence": [
+        "1 ♪ 4.7 Listen and repeat. Read the new words. NEW WORDS share food Food for you and for me. free $0. No money. waste food Good food: we don't eat it or share it."
+      ],
+      "referenced_vocabulary_ids": [
+        "vocabulary-sharing-food"
+      ]
+    },
+    {
+      "lesson": "5A",
+      "wordlist": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Wordlists\\5A.md",
+      "wordlist_sha256": "fc613aa4cfbc4aa0ee12d7ff396473d652b5ab6e11ffd714a55d68aba80610cc",
+      "lesson_sha256": "9981cfbd0c4f9e58bcf75f706a6c4eda5e0b121f7abc4b0dd736f6ac268a589e",
+      "actual_new_words_intro_evidence": [
+        "1 ♪ 5.1 Listen and repeat. Match the words and pictures. NEW WORDS A B C D E F G H I J 1 jacket D 2 dress 3 shoes 4 T-shirt 5 hat 6 jeans 7 shirt 8 bag 9 sweater 10 scarf"
+      ],
+      "referenced_vocabulary_ids": [
+        "vocabulary-clothes-and-accessories"
+      ]
+    },
+    {
+      "lesson": "5B",
+      "wordlist": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Wordlists\\5B.md",
+      "wordlist_sha256": "d493817d6f566dbfd1b90a79c12b6f0251f17f159e432b3e92e59ef5828d3840",
+      "lesson_sha256": "b0dba5beff63b899f24675f23ecc8991bab7667e5e7dbb2731cd1c7aada00148",
+      "actual_new_words_intro_evidence": [
+        "1 ♪ 5.4 Listen and repeat. Match the words and pictures. NEW WORDS A B C D 1 return 2 pay 3 try on 4 keep"
+      ],
+      "referenced_vocabulary_ids": [
+        "vocabulary-shopping-verbs"
+      ]
+    },
+    {
+      "lesson": "5C",
+      "wordlist": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Wordlists\\5C.md",
+      "wordlist_sha256": "a987b62ac13e8f436d577f6092e31001be14f7bee28305994f4bab1e89c55019",
+      "lesson_sha256": "eb097d3001216bb143766e8feafccdc8186b44092471bb5dd163d7b6fcf1dd14",
+      "actual_new_words_intro_evidence": [
+        "1 ♪ 5.7 Listen and repeat. Match the places and photos. NEW WORDS A B C D 1 supermarket 2 library 3 market 4 clothes store"
+      ],
+      "referenced_vocabulary_ids": [
+        "vocabulary-places-in-town"
+      ]
+    },
+    {
+      "lesson": "5D",
+      "wordlist": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Wordlists\\5D.md",
+      "wordlist_sha256": "6d179a1c0a6021c91988850ddae461759e1de7b3f5f843787723ee15e7362183",
+      "lesson_sha256": "bcc1c33a6fe3f0a4946f61dbfc4ea7bb5b1aef9e492164a1aeac9d0fbba2f3b9",
+      "actual_new_words_intro_evidence": [
+        "1 ♪ 5.10 Listen and repeat. Match the words and pictures. NEW WORDS A B C D E F 1 receipt 2 cashier 3 card 4 customer 5 cash 6 checkout"
+      ],
+      "referenced_vocabulary_ids": [
+        "vocabulary-at-the-store"
+      ]
+    },
+    {
+      "lesson": "6A",
+      "wordlist": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Wordlists\\6A.md",
+      "wordlist_sha256": "9a69bf8c2780cdbb68da2129507c1eb64b67ce06fa4e659550de6430f043e1ea",
+      "lesson_sha256": "b107dc6ead553c6c3fcd1d9e273b4731ea265817446907ba6a64d49cf30a4a47",
+      "actual_new_words_intro_evidence": [
+        "2 ♪ 6.1 Listen and repeat. Match the words and pictures. NEW WORDS A B C D E F 1 museum 2 hospital 3 bank 4 train station 5 post office 6 pharmacy"
+      ],
+      "referenced_vocabulary_ids": [
+        "vocabulary-places-in-town-2"
+      ]
+    },
+    {
+      "lesson": "6B",
+      "wordlist": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Wordlists\\6B.md",
+      "wordlist_sha256": "15830a09717721cf8698d2483cc4c0a6f23b53cfcbfebd7c10b98c43ccfb1548",
+      "lesson_sha256": "3a5a817086e175713ad9190574b14b8e030f4652283f8ca7417482e4d29b7698",
+      "actual_new_words_intro_evidence": [
+        "1 ♪ 6.4 Listen and repeat. Match the words and pictures. NEW WORDS A B C D E F H G Rooms 1 kitchen 2 living room 3 bedroom 4 bathroom Furniture 5 bed 6 sofa 7 table 8 chair",
+        "5 ♪ 6.6 Look. Circle the answer. Then listen and repeat the models. NEW WORDS The phone is on / under the table."
+      ],
+      "referenced_vocabulary_ids": [
+        "vocabulary-rooms-and-furniture"
+      ]
+    },
+    {
+      "lesson": "6C",
+      "wordlist": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Wordlists\\6C.md",
+      "wordlist_sha256": "9496bb686c4cd380d296b194e3778e8859ced1a72e556b7aeb1d1c8fe20db664",
+      "lesson_sha256": "74d40ab2e975efa538e4117327ddfbe49cc54179cfe6618e9ed8b3a2ed40a36a",
+      "actual_new_words_intro_evidence": [
+        "1 Look. Which places do you walk to? NEW WORDS ON FOOT What’s near you? Walk Score gives an address a number from 0 to 100. Places with shops and other services near them get more points. on foot = walking About Walk Score",
+        "2 ♪ 6.7 Listen and repeat. Match the directions and pictures. NEW WORDS A B C D go across the street go along the street go past the bank go through the park",
+        "3 ♪ 6.8 Read and listen. Is the supermarket far? NEW WORDS Five minutes from here ASK A LOCAL A: Excuse me. Where’s the supermarket? B: Go straight. Turn right at the park. Go past the bank. It’s on your left. A: Is it far? B: No. It’s five minutes on foot. A: Thank you!"
+      ],
+      "referenced_vocabulary_ids": [
+        "vocabulary-movement-and-directions"
+      ]
+    },
+    {
+      "lesson": "6D",
+      "wordlist": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Wordlists\\6D.md",
+      "wordlist_sha256": "45f81d9e27618ce3bdb2071c54d6eeba7222ab89a886d53d84a44134818f28bf",
+      "lesson_sha256": "ea6b7a5a01a65f22ffbf623dc23a3b0e5b4a51f7555d3d0e5a18b63386a85d5e",
+      "actual_new_words_intro_evidence": [
+        "1 ♪ 6.10 Look at the photos. Write A, B or both. Listen and repeat. NEW WORDS A · JEWEL Singapore Walk in a garden. See a waterfall. B · MALL OF AMERICA USA Ride a roller coaster. waterfall garden roller coaster mall A mall is a shopping center. Both places have stores."
+      ],
+      "referenced_vocabulary_ids": [
+        "vocabulary-shopping-centers-and-attractions"
+      ]
+    },
+    {
+      "lesson": "7A",
+      "wordlist": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Wordlists\\7A.md",
+      "wordlist_sha256": "1b3e417b7580223ea99066f825a9e31bf45a8c912c6730056d6bfbdc1fe7a914",
+      "lesson_sha256": "b73dd851fe8ae867e432a58a4007030c4ad1415c9718ae614faf3dca33ae7c4a",
+      "actual_new_words_intro_evidence": [
+        "2 ♪ 7.1 Listen and repeat. NEW WORDS yesterday last night last weekend last year Example: Today is Monday. This year is 2026. Yesterday Sunday Last night Sunday night Last weekend Saturday and Sunday Last year 2025 Go to: Vocabulary - Past time expressions, page 106"
+      ],
+      "referenced_vocabulary_ids": [
+        "vocabulary-past-time-expressions"
+      ]
+    },
+    {
+      "lesson": "7B",
+      "wordlist": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Wordlists\\7B.md",
+      "wordlist_sha256": "7c065eb127c482f4b499f5b811e794ec7c961a0b419fa3f6b38770d9dfa0a665",
+      "lesson_sha256": "5ec4fa51124bfac3d2eb5aab4cc44d4b800515ca20fbfadeae04cf15a5048f55",
+      "actual_new_words_intro_evidence": [
+        "1 ♪ 7.4 Listen and repeat. Which month is your birthday? NEW WORDS 1 January 2 February 3 March 4 April 5 May 6 June 7 July 8 August 9 September 10 October 11 November 12 December Go to: Vocabulary - Months, page 106",
+        "2 ♪ 7.5 Look at the dates. Listen and repeat. NEW WORDS 1 st first 2 nd second 3 rd third 4 th fourth 5 th fifth 6 th sixth 7 th seventh 8 th eighth 9 th ninth 10 th tenth 11 th eleventh 12 th twelfth 20 th twentieth 21 st twenty-first 22 nd twenty-second 23 rd twenty-third 30 th thirtieth 31 st thirty-first Go to: Vocabulary - Dates and ordinal numbers, page 106",
+        "3 Birthday detective HORIZONS ON AIR ♪ 7.6 Listen. Who has the same birthday as Lucy? NEW WORDS Episode day: Sunday July 12th 2026 Frida Kahlo Malala Yousafzai Daniel Radcliffe Frida / Malala / Daniel ago = before now Go to: Vocabulary - Past time expressions, page 106"
+      ],
+      "referenced_vocabulary_ids": [
+        "vocabulary-months",
+        "vocabulary-dates-and-ordinal-numbers",
+        "vocabulary-past-time-expressions"
+      ]
+    },
+    {
+      "lesson": "7C",
+      "wordlist": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Wordlists\\7C.md",
+      "wordlist_sha256": "c47f9c223f041bf19edf5dc64d823d3974f7ed880e6da705f2cf9d307d914411",
+      "lesson_sha256": "ae8a00eef2d7e0a074d4dcfce0ca1c44435fb3492f514dfacd6f3d2133e02f1c",
+      "actual_new_words_intro_evidence": [
+        "1 ♪ 7.7 Listen and repeat. Match the words and the objects. NEW WORDS A B C cassette radio record Go to: Vocabulary - Music, page 107"
+      ],
+      "referenced_vocabulary_ids": [
+        "vocabulary-music"
+      ]
+    },
+    {
+      "lesson": "7D",
+      "wordlist": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Wordlists\\7D.md",
+      "wordlist_sha256": "d192a34f1bab198691e81c5d7b03bccaca1e9bbbf75f1e0fef82f4912e0c4c6b",
+      "lesson_sha256": "d88eeb71802d01f8bc3bcfbaa2676807efb035fa7e988eeae7ea197098e4c25e",
+      "actual_new_words_intro_evidence": [
+        "2 ♪ 7.10 Listen and repeat. NEW WORDS get → got go → went have → had see → saw eat → ate buy → bought write → wrote Go to: Vocabulary - Irregular past verbs, page 107",
+        "3 ♪ 7.11 Read and listen. What was different: Tessa’s bag / Tessa’s shoes ? NEW WORDS Tessa’s diary One black, one brown Monday, September 14th First, I got up at seven and had breakfast. Then I went to the bank. I saw my friend Mia. My shoes were different! One was black and one was brown. After that, I went home and ate an apple. Finally, I wrote about my day. It wasn’t a bad day! Go to: Vocabulary - Sequencing words, page 107"
+      ],
+      "referenced_vocabulary_ids": [
+        "vocabulary-irregular-past-verbs",
+        "vocabulary-sequencing-words"
+      ]
+    },
+    {
+      "lesson": "8A",
+      "wordlist": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Wordlists\\8A.md",
+      "wordlist_sha256": "83d06fcc1b344ba8ef8ef9beb88fac2a8de57ae20379e07574f43ea1a1411185",
+      "lesson_sha256": "7dbf9368b6e542ca580868e3dccc3c6facb02371bf0646c1b211933873076df5",
+      "actual_new_words_intro_evidence": [
+        "2 ♪ 8.1 Listen and repeat. NEW WORDS travel by train arrive in Toronto stay in a hotel visit a market take photos leave at six Go to: Vocabulary - Travel verbs, page 108",
+        "5 ♪ 8.3 Listen and repeat the first three words. Then match all five animals. NEW WORDS A B C D E duck squirrel raccoon goose beaver Go to: Vocabulary - Animals, page 108"
+      ],
+      "referenced_vocabulary_ids": [
+        "vocabulary-travel-verbs",
+        "vocabulary-animals"
+      ]
+    },
+    {
+      "lesson": "8B",
+      "wordlist": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Wordlists\\8B.md",
+      "wordlist_sha256": "c237849d9847e2ff5037ee667314a5546e42c591b1b0445253419232600a170d",
+      "lesson_sha256": "8f57bc9b702a0cd60db31b8e4415a8ab387ab8ae83b0f1f41378011e1fcc5d4c",
+      "actual_new_words_intro_evidence": [
+        "1 ♪ 8.5 Listen and repeat. NEW WORDS sunny cloudy rainy windy snowy hot cold Seasons: spring · summer · fall · winter Go to: Vocabulary - Weather and seasons, page 109"
+      ],
+      "referenced_vocabulary_ids": [
+        "vocabulary-weather-and-seasons"
+      ]
+    },
+    {
+      "lesson": "8C",
+      "wordlist": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Wordlists\\8C.md",
+      "wordlist_sha256": "5e644abc0b7ceba29fd6707f49c7abe05f4dd3dc11bc926666dd6d982153639f",
+      "lesson_sha256": "8dff4438077ca9606475b9035a12d955da247b234ebe0f7bdd3891eb574ba8e0",
+      "actual_new_words_intro_evidence": [
+        "1 ♪ 8.7 Listen and repeat. Match the words and the body parts. NEW WORDS A B C D E F foot hand head leg stomach arm Go to: Vocabulary - Body parts, page 110",
+        "3 ♪ 8.8 Read and listen. When can Lia go? NEW WORDS Tomorrow’s trip · messages A different day Dan Hi, Lia. Can you go to Toronto tomorrow? Lia I'm sorry, I can't. I have a cold and a headache. My head hurts. Dan Oh, I'm sorry. Can you go on Sunday? Lia Yes, I can. Sunday is good. What time? Dan Let's leave at ten. Lia Great. Thank you! I can call the hotel today. Go to: Vocabulary - Health complaints, page 110",
+        "5 ♪ 8.9 Listen and repeat. Write the health problems for A–D. NEW WORDS A B C D a toothache a headache a stomachache a cold A B C D"
+      ],
+      "referenced_vocabulary_ids": [
+        "vocabulary-body-parts",
+        "vocabulary-health-complaints"
+      ]
+    },
+    {
+      "lesson": "8D",
+      "wordlist": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Wordlists\\8D.md",
+      "wordlist_sha256": "05ef078b948d750ff00b97a239df75d267add271ed38c51bd9539039a8663873",
+      "lesson_sha256": "44c87fd903f0013d6a3d46d6794d292f985beeeddffa62ad5806f152bfb5adf9",
+      "actual_new_words_intro_evidence": [
+        "2 ♪ 8.10 Listen and repeat. NEW WORDS I’d like a ticket to Toronto, please. One way or return? What time does it leave? How much is it? Can you repeat that? Can you spell your name? Go to: Vocabulary - Phone and ticket language, page 110"
+      ],
+      "referenced_vocabulary_ids": [
+        "vocabulary-phone-and-ticket-language"
+      ]
+    }
+  ],
+  "authors_notified": [
+    "root",
+    "grammar_1_4",
+    "grammar_5_8"
+  ],
+  "source_edits": false,
+  "next_review": "After authors freeze study pages, verify every mapped entry/cue, canonical topicIDs on reference pages, practicealias links, unchanged game/key meaning, saved PDF and live navigation."
+}

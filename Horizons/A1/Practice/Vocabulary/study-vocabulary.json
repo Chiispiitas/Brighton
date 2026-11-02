@@ -1,0 +1,877 @@
+{
+  "updated": "2026-11-01",
+  "scope": "Reviewed study vocabulary for all 38 topics; based on current lessons/wordlists plus modest practice scaffolds. Entry metadata includes complete phrases, alphabet pairs and ordinal forms, not only single words.",
+  "source_audit": "../../Sources/Vocabulary-study-banks-20261101/independent-lexical-source-map.json",
+  "topics": [
+    {
+      "topic": "vocabulary-greetings",
+      "unit": 1,
+      "source_lessons": [
+        "1A"
+      ],
+      "required_items": [
+        "Good morning",
+        "Good afternoon",
+        "Good evening",
+        "Hello",
+        "Hi",
+        "Nice to meet you",
+        "See you later",
+        "Goodbye"
+      ],
+      "source_scope_note": "Time-of-day or meeting/leaving cues. Exact core greetings and approved goodbye extension.",
+      "study_page": 93,
+      "activity_anchor": "activity-vocabulary-greetings"
+    },
+    {
+      "topic": "vocabulary-personal-information",
+      "unit": 1,
+      "source_lessons": [
+        "1A",
+        "1D"
+      ],
+      "required_items": [
+        "name",
+        "class",
+        "first name",
+        "last name",
+        "country",
+        "city",
+        "phone number",
+        "email",
+        "What is your phone number?"
+      ],
+      "source_scope_note": "A miniature fictional form/message makes fields distinct; no real data disclosure needed.",
+      "study_page": 93,
+      "activity_anchor": "activity-vocabulary-personal-information"
+    },
+    {
+      "topic": "vocabulary-alphabet",
+      "unit": 1,
+      "source_lessons": [
+        "1A"
+      ],
+      "required_items": [
+        "Aa",
+        "Bb",
+        "Cc",
+        "Dd",
+        "Ee",
+        "Ff",
+        "Gg",
+        "Hh",
+        "Ii",
+        "Jj",
+        "Kk",
+        "Ll",
+        "Mm",
+        "Nn",
+        "Oo",
+        "Pp",
+        "Qq",
+        "Rr",
+        "Ss",
+        "Tt",
+        "Uu",
+        "Vv",
+        "Ww",
+        "Xx",
+        "Yy",
+        "Zz"
+      ],
+      "source_scope_note": "Complete alphabet, not only letters used in Kim/Luz/Sam/Ida. No claim of a new recording.",
+      "study_page": 93,
+      "activity_anchor": "activity-vocabulary-alphabet"
+    },
+    {
+      "topic": "vocabulary-numbers",
+      "unit": 1,
+      "source_lessons": [
+        "1A"
+      ],
+      "required_items": [
+        "zero",
+        "one",
+        "two",
+        "three",
+        "four",
+        "five",
+        "six",
+        "seven",
+        "eight",
+        "nine",
+        "ten"
+      ],
+      "source_scope_note": "0–10 matched to spelled forms; ten is one number, not a digit.",
+      "study_page": 93,
+      "activity_anchor": "activity-vocabulary-numbers"
+    },
+    {
+      "topic": "vocabulary-occupations",
+      "unit": 1,
+      "source_lessons": [
+        "1B"
+      ],
+      "required_items": [
+        "teacher",
+        "student",
+        "chef",
+        "doctor",
+        "office worker",
+        "receptionist",
+        "salesclerk",
+        "taxi driver",
+        "waiter",
+        "waitress",
+        "farmer",
+        "actor",
+        "school"
+      ],
+      "source_scope_note": "Both waiter/waitress; role/workplace cues. Practice-only actor must be labeled separately.",
+      "study_page": 94,
+      "activity_anchor": "activity-vocabulary-occupations"
+    },
+    {
+      "topic": "vocabulary-countries",
+      "unit": 1,
+      "source_lessons": [
+        "1C"
+      ],
+      "required_items": [
+        "Argentina",
+        "Argentinian",
+        "the US",
+        "American",
+        "the UK",
+        "British",
+        "Canada",
+        "Canadian",
+        "South Korea",
+        "South Korean"
+      ],
+      "source_scope_note": "Country↔nationality pair table; capitals and the US/the UK. No incidental-name expansion.",
+      "study_page": 94,
+      "activity_anchor": "activity-vocabulary-countries"
+    },
+    {
+      "topic": "vocabulary-adjectives",
+      "unit": 1,
+      "source_lessons": [
+        "1B",
+        "1C",
+        "2D"
+      ],
+      "required_items": [
+        "big",
+        "small",
+        "hot",
+        "cold",
+        "old",
+        "new",
+        "busy",
+        "calm",
+        "cheap",
+        "expensive",
+        "beautiful",
+        "friendly",
+        "famous",
+        "good",
+        "smart",
+        "fun"
+      ],
+      "source_scope_note": "Group by source:1B/1C early set, small reinforced2D. Keep quiet/noisy inV3. Busy/calm is a source-place contrast, not universal antonyms.",
+      "study_page": 94,
+      "activity_anchor": "activity-vocabulary-adjectives"
+    },
+    {
+      "topic": "vocabulary-personal-items",
+      "unit": 2,
+      "source_lessons": [
+        "2A"
+      ],
+      "required_items": [
+        "phone",
+        "keys",
+        "wallet",
+        "notebook",
+        "pen",
+        "headphones",
+        "bottle",
+        "umbrella",
+        "bag"
+      ],
+      "source_scope_note": "All8, including unpictured-in-game headphones. Keys/headphones use plural forms. Bag is useful existing2A context.",
+      "study_page": 98,
+      "activity_anchor": "activity-vocabulary-personal-items"
+    },
+    {
+      "topic": "vocabulary-telling-time",
+      "unit": 2,
+      "source_lessons": [
+        "2B"
+      ],
+      "required_items": [
+        "six twenty",
+        "six forty",
+        "seven thirty",
+        "eight fifty",
+        "twenty",
+        "thirty",
+        "forty",
+        "fifty",
+        "six ten",
+        "seven twenty",
+        "eight forty",
+        "nine fifty",
+        "eleven",
+        "twelve"
+      ],
+      "source_scope_note": "First4 are core exact models; last4 support approved game. A digital hour/minute spelling key should cover ten/twenty/thirty/forty/fifty; avoid using deliberately wrong game captions as reference.",
+      "study_page": 98,
+      "activity_anchor": "activity-vocabulary-telling-time",
+      "additional_study_support": [
+        "eleven",
+        "twelve"
+      ],
+      "study_support_note": "The reference completes the two remaining12-hour clock names after1A zero-ten. No new recorded models are claimed."
+    },
+    {
+      "topic": "vocabulary-family-members",
+      "unit": 2,
+      "source_lessons": [
+        "2C"
+      ],
+      "required_items": [
+        "father",
+        "mother",
+        "parents",
+        "son",
+        "daughter",
+        "children",
+        "husband",
+        "wife",
+        "brother",
+        "sister"
+      ],
+      "source_scope_note": "Actual Rivera input adds husband/wife/children beyond current game. Parents supported by2C possessive model; relation chart must identify roles, not stereotypes.",
+      "study_page": 98,
+      "activity_anchor": "activity-vocabulary-family-members"
+    },
+    {
+      "topic": "vocabulary-colors",
+      "unit": 2,
+      "source_lessons": [
+        "2D"
+      ],
+      "required_items": [
+        "red",
+        "blue",
+        "green",
+        "yellow",
+        "black",
+        "white",
+        "brown",
+        "orange",
+        "gray",
+        "pink"
+      ],
+      "source_scope_note": "All10; white has visible outline, US gray; use color+label cues.",
+      "study_page": 98,
+      "activity_anchor": "activity-vocabulary-colors"
+    },
+    {
+      "topic": "vocabulary-daily-routines",
+      "unit": 3,
+      "source_lessons": [
+        "3A",
+        "3D"
+      ],
+      "required_items": [
+        "get up",
+        "have breakfast",
+        "go to work",
+        "have lunch",
+        "go home",
+        "have dinner",
+        "watch TV",
+        "go to bed",
+        "drink water",
+        "walk",
+        "read a book",
+        "listen to music",
+        "sleep"
+      ],
+      "source_scope_note": "8from3A plus5 additional unique3D chunks. Show meaningful whole chunks, not isolated verbs; do not equate get up with wake up.",
+      "study_page": 101,
+      "activity_anchor": "activity-vocabulary-daily-routines"
+    },
+    {
+      "topic": "vocabulary-days-of-the-week",
+      "unit": 3,
+      "source_lessons": [
+        "3B"
+      ],
+      "required_items": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+        "weekday",
+        "weekend"
+      ],
+      "source_scope_note": "All7 spelled correctly. Weekday/weekend source context; avoid claiming every learner has the same workweek.",
+      "study_page": 101,
+      "activity_anchor": "activity-vocabulary-days-of-the-week"
+    },
+    {
+      "topic": "vocabulary-place-adjectives-recall",
+      "unit": 3,
+      "source_lessons": [
+        "3C"
+      ],
+      "required_items": [
+        "quiet",
+        "noisy",
+        "cheap",
+        "expensive",
+        "beautiful",
+        "busy",
+        "free"
+      ],
+      "source_scope_note": "Canonical new quiet/noisy belong here; source price/noise/appearance cues support meaning.",
+      "study_page": 101,
+      "activity_anchor": "activity-vocabulary-place-adjectives-recall"
+    },
+    {
+      "topic": "vocabulary-food-and-drink",
+      "unit": 4,
+      "source_lessons": [
+        "4A"
+      ],
+      "required_items": [
+        "bread",
+        "rice",
+        "fish",
+        "cheese",
+        "eggs",
+        "tomatoes",
+        "bananas",
+        "apples",
+        "milk",
+        "tea",
+        "coffee",
+        "juice",
+        "soup",
+        "sandwich"
+      ],
+      "source_scope_note": "12food categories; countable singular/plural pairs useful; mass-food meanings of bread/rice/milk/cheese.",
+      "study_page": 104,
+      "activity_anchor": "activity-vocabulary-food-and-drink"
+    },
+    {
+      "topic": "vocabulary-flavors",
+      "unit": 4,
+      "source_lessons": [
+        "4B"
+      ],
+      "required_items": [
+        "salty",
+        "salt",
+        "sweet",
+        "sugar",
+        "sour",
+        "spicy",
+        "burger",
+        "chips",
+        "ice cream",
+        "lemon",
+        "chili pepper",
+        "fries",
+        "strawberries",
+        "menu",
+        "tasty",
+        "vegan",
+        "plants",
+        "meat"
+      ],
+      "source_scope_note": "Use known/supported food meanings: chips/salt,ice cream/sugar,lemon,chili pepper. Useful core context vegan,plants,meat,burger,chips,ice cream,strawberry,lemon,chili pepper,fries,menu; tasty is title support. Do not infer every version of a food has one flavor.",
+      "study_page": 104,
+      "activity_anchor": "activity-vocabulary-flavors"
+    },
+    {
+      "topic": "vocabulary-cooking-verbs",
+      "unit": 4,
+      "source_lessons": [
+        "4C"
+      ],
+      "required_items": [
+        "wash the tomatoes",
+        "cut the tomatoes",
+        "add the cheese and oil",
+        "mix the salad",
+        "recipe",
+        "salad",
+        "spoon",
+        "oil",
+        "bowl"
+      ],
+      "source_scope_note": "All4 verbs with their objects; bowl is a practice-only scaffold. Sequence must wash→cut→add→mix in existing recipe game.",
+      "study_page": 104,
+      "activity_anchor": "activity-vocabulary-cooking-verbs"
+    },
+    {
+      "topic": "vocabulary-sharing-food",
+      "unit": 4,
+      "source_lessons": [
+        "4D"
+      ],
+      "required_items": [
+        "share food",
+        "free",
+        "waste food"
+      ],
+      "source_scope_note": "Free=$0/no money; share=food for you/me; waste=usable food not eaten/shared. No safety claims or compulsory real sharing.",
+      "study_page": 104,
+      "activity_anchor": "activity-vocabulary-sharing-food"
+    },
+    {
+      "topic": "vocabulary-clothes-and-accessories",
+      "unit": 5,
+      "source_lessons": [
+        "5A"
+      ],
+      "required_items": [
+        "T-shirt",
+        "shirt",
+        "sweater",
+        "jacket",
+        "jeans",
+        "dress",
+        "shoes",
+        "hat",
+        "scarf",
+        "bag"
+      ],
+      "source_scope_note": "All10: new picture shows6, missing-item clues retrieve4. Jeans/shoes plural, other nouns take a/an when singular.",
+      "study_page": 107,
+      "activity_anchor": "activity-vocabulary-clothes-and-accessories"
+    },
+    {
+      "topic": "vocabulary-shopping-verbs",
+      "unit": 5,
+      "source_lessons": [
+        "5B"
+      ],
+      "required_items": [
+        "try on",
+        "pay",
+        "keep",
+        "return",
+        "warm",
+        "light",
+        "comfortable",
+        "fit/fits",
+        "broken"
+      ],
+      "source_scope_note": "Meaningful chunks pay by card,try on a jacket,keep an item,return an item. Return-item meaning differs from8D return-ticket.",
+      "study_page": 107,
+      "activity_anchor": "activity-vocabulary-shopping-verbs"
+    },
+    {
+      "topic": "vocabulary-places-in-town",
+      "unit": 5,
+      "source_lessons": [
+        "5C"
+      ],
+      "required_items": [
+        "supermarket",
+        "market",
+        "clothes store",
+        "library"
+      ],
+      "source_scope_note": "Only these4at5C; do not pre-teach6A full town set. Places↔visible stock/purpose cues support mission.",
+      "study_page": 107,
+      "activity_anchor": "activity-vocabulary-places-in-town"
+    },
+    {
+      "topic": "vocabulary-at-the-store",
+      "unit": 5,
+      "source_lessons": [
+        "5D"
+      ],
+      "required_items": [
+        "cashier",
+        "customer",
+        "checkout",
+        "cash",
+        "card",
+        "receipt"
+      ],
+      "source_scope_note": "Person/place/payment/document distinctions. Useful chunks Do you have any…? I’d like some…,please;Anything else?No,thanks;How much is it?Can I pay by card?Here’s your receipt;Can I get a receipt?",
+      "study_page": 107,
+      "activity_anchor": "activity-vocabulary-at-the-store"
+    },
+    {
+      "topic": "vocabulary-places-in-town-2",
+      "unit": 6,
+      "source_lessons": [
+        "6A"
+      ],
+      "required_items": [
+        "bank",
+        "get cash",
+        "pharmacy",
+        "buy medicine",
+        "post office",
+        "send a letter",
+        "hospital",
+        "train station",
+        "take a train",
+        "museum",
+        "look at art and history"
+      ],
+      "source_scope_note": "All6places and functional chunks. Letter-envelope meaning differs from alphabet letter.",
+      "study_page": 110,
+      "activity_anchor": "activity-vocabulary-places-in-town-2"
+    },
+    {
+      "topic": "vocabulary-rooms-and-furniture",
+      "unit": 6,
+      "source_lessons": [
+        "6B"
+      ],
+      "required_items": [
+        "kitchen",
+        "living room",
+        "bedroom",
+        "bathroom",
+        "bed",
+        "sofa",
+        "table",
+        "chair"
+      ],
+      "source_scope_note": "4rooms+4furniture. Useful source gloss tiny=very small;free time=available leisure, distinct from free=$0. Optional lamp/armchair only if clearly labeled as practice picture extras, not required core.",
+      "study_page": 110,
+      "activity_anchor": "activity-vocabulary-rooms-and-furniture"
+    },
+    {
+      "topic": "vocabulary-movement-and-directions",
+      "unit": 6,
+      "source_lessons": [
+        "6C"
+      ],
+      "required_items": [
+        "go along the street",
+        "go across the street",
+        "go through the park",
+        "go past the bank",
+        "go straight",
+        "turn left",
+        "turn right",
+        "on foot",
+        "on your left",
+        "on your right"
+      ],
+      "source_scope_note": "Arrows distinguish along/across/through/past. On foot=walking. Crossroads is a grammar-bank scaffold; opposite belongs to explicitly labeled practical extension, not retroactive6B target.",
+      "study_page": 111,
+      "activity_anchor": "activity-vocabulary-movement-and-directions"
+    },
+    {
+      "topic": "vocabulary-shopping-centers-and-attractions",
+      "unit": 6,
+      "source_lessons": [
+        "6D"
+      ],
+      "required_items": [
+        "waterfall",
+        "see a waterfall",
+        "garden",
+        "walk in a garden",
+        "roller coaster",
+        "ride a roller coaster",
+        "mall",
+        "shopping center",
+        "go shopping",
+        "open",
+        "closed"
+      ],
+      "source_scope_note": "Mall=shopping center; closed=not open. No actual venue hours/safety rules claimed.",
+      "study_page": 111,
+      "activity_anchor": "activity-vocabulary-shopping-centers-and-attractions"
+    },
+    {
+      "topic": "vocabulary-months",
+      "unit": 7,
+      "source_lessons": [
+        "7B"
+      ],
+      "required_items": [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September",
+        "October",
+        "November",
+        "December"
+      ],
+      "source_scope_note": "All12calendar order and accurate spelling.",
+      "study_page": 114,
+      "activity_anchor": "activity-vocabulary-months"
+    },
+    {
+      "topic": "vocabulary-dates-and-ordinal-numbers",
+      "unit": 7,
+      "source_lessons": [
+        "7B"
+      ],
+      "required_items": [
+        "first",
+        "second",
+        "third",
+        "fourth",
+        "fifth",
+        "sixth",
+        "seventh",
+        "eighth",
+        "ninth",
+        "tenth",
+        "eleventh",
+        "twelfth",
+        "thirteenth",
+        "fourteenth",
+        "fifteenth",
+        "sixteenth",
+        "seventeenth",
+        "eighteenth",
+        "nineteenth",
+        "twentieth",
+        "twenty-first",
+        "twenty-second",
+        "twenty-third",
+        "twenty-fourth",
+        "twenty-fifth",
+        "twenty-sixth",
+        "twenty-seventh",
+        "twenty-eighth",
+        "twenty-ninth",
+        "thirtieth",
+        "thirty-first"
+      ],
+      "source_scope_note": "Exact core models. Reference must support all calendar dates1–31 using a complete list or a clear pattern; ensure fifth/eighth/ninth/twelfth/twentieth/thirtieth and compound endings. July twelfth / the twelfth of July.",
+      "study_page": 114,
+      "activity_anchor": "activity-vocabulary-dates-and-ordinal-numbers"
+    },
+    {
+      "topic": "vocabulary-past-time-expressions",
+      "unit": 7,
+      "source_lessons": [
+        "7A",
+        "7B"
+      ],
+      "required_items": [
+        "yesterday",
+        "last night",
+        "last weekend",
+        "last year",
+        "one day ago",
+        "two days ago",
+        "ago"
+      ],
+      "source_scope_note": "Visible fictional today/year anchor; ago=before now after duration. Last night and yesterday are not identical periods.",
+      "study_page": 114,
+      "activity_anchor": "activity-vocabulary-past-time-expressions"
+    },
+    {
+      "topic": "vocabulary-music",
+      "unit": 7,
+      "source_lessons": [
+        "7C"
+      ],
+      "required_items": [
+        "record",
+        "cassette",
+        "radio"
+      ],
+      "source_scope_note": "Correct labels, not intentionally wrong game labels. Simple fresh visual/meaning cues; no new music-style taxonomy.",
+      "study_page": 115,
+      "activity_anchor": "activity-vocabulary-music"
+    },
+    {
+      "topic": "vocabulary-irregular-past-verbs",
+      "unit": 7,
+      "source_lessons": [
+        "7D"
+      ],
+      "required_items": [
+        "get/got",
+        "got up",
+        "go/went",
+        "went to the bank / market · went home",
+        "have/had",
+        "had breakfast",
+        "see/saw",
+        "saw a friend",
+        "eat/ate",
+        "ate an apple",
+        "buy/bought",
+        "bought bread",
+        "write/wrote",
+        "wrote in a diary"
+      ],
+      "source_scope_note": "All7pairs and useful chunks; approved repair story retrieves every form. Base after did/didn’t remains a grammar-bank pattern.",
+      "study_page": 115,
+      "activity_anchor": "activity-vocabulary-irregular-past-verbs"
+    },
+    {
+      "topic": "vocabulary-sequencing-words",
+      "unit": 7,
+      "source_lessons": [
+        "7D"
+      ],
+      "required_items": [
+        "First",
+        "Then",
+        "After that",
+        "Finally"
+      ],
+      "source_scope_note": "Ordered event-arrow cue; existing open retelling preserved. Do not turn an exact printed ordered list into a claimed memory challenge without covering it.",
+      "study_page": 115,
+      "activity_anchor": "activity-vocabulary-sequencing-words"
+    },
+    {
+      "topic": "vocabulary-travel-verbs",
+      "unit": 8,
+      "source_lessons": [
+        "8A"
+      ],
+      "required_items": [
+        "travel by train",
+        "travel/traveled",
+        "arrive in Toronto",
+        "arrive/arrived",
+        "stay in a hotel",
+        "stay/stayed",
+        "visit a market",
+        "visit/visited",
+        "take photos",
+        "take/took",
+        "leave at six",
+        "leave/left",
+        "leave a bag at a hotel"
+      ],
+      "source_scope_note": "Six whole chunks plus supported past forms. Leave-at-time and leave-an-object are distinct source meanings; American traveled.",
+      "study_page": 118,
+      "activity_anchor": "activity-vocabulary-travel-verbs"
+    },
+    {
+      "topic": "vocabulary-animals",
+      "unit": 8,
+      "source_lessons": [
+        "8A"
+      ],
+      "required_items": [
+        "duck",
+        "squirrel",
+        "raccoon",
+        "beaver",
+        "goose"
+      ],
+      "source_scope_note": "All5need unambiguous meaning cues/fresh visual. Goose/beaver are print-only, not falsely part of3-word track. No untaught bushy/tail/mask descriptors as hidden required words.",
+      "study_page": 118,
+      "activity_anchor": "activity-vocabulary-animals"
+    },
+    {
+      "topic": "vocabulary-weather-and-seasons",
+      "unit": 8,
+      "source_lessons": [
+        "8B"
+      ],
+      "required_items": [
+        "sunny",
+        "cloudy",
+        "rainy",
+        "windy",
+        "snowy",
+        "hot",
+        "cold",
+        "spring",
+        "summer",
+        "fall",
+        "winter"
+      ],
+      "source_scope_note": "7weather+4seasons. Fall American model. Weather icons/new cues; no universal weather-season mapping.",
+      "study_page": 119,
+      "activity_anchor": "activity-vocabulary-weather-and-seasons"
+    },
+    {
+      "topic": "vocabulary-phone-and-ticket-language",
+      "unit": 8,
+      "source_lessons": [
+        "8D"
+      ],
+      "required_items": [
+        "ticket",
+        "flight",
+        "passenger",
+        "agent",
+        "one way",
+        "return",
+        "I’d like a ticket to…,please",
+        "What time does it leave?",
+        "How much is it?",
+        "Can you repeat that?",
+        "Can you spell your name?",
+        "That’s a ticket to…at…"
+      ],
+      "source_scope_note": "All6recorded request/question models plus noun roles and confirmation. One-way/return directional cue, departure versus arrival; destination/To is contextual field, no extra country set.",
+      "study_page": 119,
+      "activity_anchor": "activity-vocabulary-phone-and-ticket-language"
+    },
+    {
+      "topic": "vocabulary-body-parts",
+      "unit": 8,
+      "source_lessons": [
+        "8C"
+      ],
+      "required_items": [
+        "head",
+        "arm",
+        "hand",
+        "stomach",
+        "leg",
+        "foot"
+      ],
+      "source_scope_note": "All6with fresh visual/clear cues. Singular/plural models arm/arms,leg/legs; optional foot/feet if used correctly. Approved acted travelers are for a new symptom-matching activity, not the reused core body diagram.",
+      "study_page": 120,
+      "activity_anchor": "activity-vocabulary-body-parts"
+    },
+    {
+      "topic": "vocabulary-health-complaints",
+      "unit": 8,
+      "source_lessons": [
+        "8C"
+      ],
+      "required_items": [
+        "a cold",
+        "a headache",
+        "a stomachache",
+        "a toothache",
+        "I have a…",
+        "She has a…",
+        "My head/arm/stomach hurts",
+        "My legs hurt"
+      ],
+      "source_scope_note": "Retain articles and agreement; cold illness differs from temperature adjective. Poses/messages illustrate fictional problems, no diagnosis/treatment.",
+      "study_page": 120,
+      "activity_anchor": "activity-vocabulary-health-complaints"
+    }
+  ]
+}

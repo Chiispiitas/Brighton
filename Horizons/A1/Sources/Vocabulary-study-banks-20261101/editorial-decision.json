@@ -1,0 +1,43 @@
+{
+  "date": "2026-11-01",
+  "request": "Keep approved vocabulary activities, but precede them with complete topic word banks for study before a test.",
+  "baseline": "519aa60491a431cc208005aeb7ffd26c08dae74f",
+  "policy": "../../../Base/design-system/PRACTICE-BANKS.md",
+  "study_inventory": "../../Practice/Vocabulary/study-vocabulary.json",
+  "outcome": {
+    "study_pages": 13,
+    "vocabulary_activity_pages": 18,
+    "topics": 38,
+    "marked_lexical_entry_occurrences": 415,
+    "required_within_topic_items": 404,
+    "vocabulary_activities_preserved": 68,
+    "practice_activities_total": 147
+  },
+  "entry_count_boundary": "Items include complete phrases, alphabet pairs and ordinal forms. Counts are not unique English word counts.",
+  "meaning_support": "Grouped words and useful chunks, opposite pairs, examples, color swatches, clocks, calendars and original animal/body references.",
+  "source_boundary": "Actual 32 lesson wordlists and inputs plus documented modest practice-only scaffolds; no invented audio claims.",
+  "changes": "Study references precede each unit bank. Canonical lesson references point to study topics. All38 topics have reciprocal study/activity links;18 activity-page headers identify actual word-bank pages.",
+  "preserved": "All68 vocabulary games and original resources, all16 grammar pages, core learning content and recordings.",
+  "images": {
+    "active_new": [
+      "U8-study-animals-v1.png",
+      "U8-study-body-v2.png"
+    ],
+    "inactive_retained": "U8-study-body-v1.png",
+    "mode": "built-in imagegen",
+    "manifest": "../../Practice/Images/manifest.json"
+  },
+  "qr_slots": {
+    "count": 16,
+    "square_mm": 24,
+    "urls": null,
+    "status": "Reserved blank spaces only; no Blooket games or live codes created"
+  },
+  "review": {
+    "independent_final_saved_pdf_pages": 39,
+    "scope": "All31 vocabulary pages,4 practical-language pages,4 credit pages; root also inspected selected study pages full size.",
+    "no_blockers": true,
+    "author_acceptance_of_new_reference_pages_claimed": false
+  },
+  "publication": "Local final content verified; live publication pending."
+}

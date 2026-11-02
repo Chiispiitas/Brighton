@@ -1,6 +1,7 @@
 # Vocabulary practice — Units 5–8
 
-User-steered original revision games. These pages use new practice-only clothing, apartment and acted-traveler images; no core lesson raster or body-label diagram is reused. All references retain the original topic IDs. Tasks are keyed by their printed numbers within each unit. Ordinary writing rows remain 7mm. First pages keep the lower area for the future Blooket QR placeholder.
+Page references below identify the activity pages after each unit’s Word bank. Study the words first; cover the bank for memory games. The approved activity answers and game conditions are unchanged.
+User-steered original revision games. These pages use new practice-only clothing, apartment and acted-traveler images; no core lesson raster or body-label diagram is reused. All references retain the original topic IDs. Tasks are keyed by their printed numbers within each unit. Ordinary writing rows remain 7mm. The first study pages107,110,114 and118 reserve blank24mm squares for future Blooket games.
 
 ## Unit 5 — The secret suitcase / A shopping mission
 
