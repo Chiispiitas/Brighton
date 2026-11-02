@@ -1,0 +1,1259 @@
+{
+  "content_commit": "5f62bb324678a7062d4147ff2babea548d55d157",
+  "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=lessonpractice-5f62bb324678",
+  "checks": [
+    {
+      "name": "Published HTML matches saved source",
+      "pass": true,
+      "detail": 200
+    },
+    {
+      "name": "156 pages and100 correctly grouped navigation entries",
+      "pass": true,
+      "detail": {
+        "pages": 156,
+        "nav": 100
+      }
+    },
+    {
+      "name": "76 matching lesson headers and bank colors",
+      "pass": true,
+      "detail": [
+        {
+          "page": "77",
+          "lesson": "1A",
+          "bank": "grammar",
+          "pass": true
+        },
+        {
+          "page": "78",
+          "lesson": "1B",
+          "bank": "grammar",
+          "pass": true
+        },
+        {
+          "page": "79",
+          "lesson": "1D",
+          "bank": "grammar",
+          "pass": true
+        },
+        {
+          "page": "80",
+          "lesson": "2A",
+          "bank": "grammar",
+          "pass": true
+        },
+        {
+          "page": "81",
+          "lesson": "2B",
+          "bank": "grammar",
+          "pass": true
+        },
+        {
+          "page": "82",
+          "lesson": "2C",
+          "bank": "grammar",
+          "pass": true
+        },
+        {
+          "page": "83",
+          "lesson": "2D",
+          "bank": "grammar",
+          "pass": true
+        },
+        {
+          "page": "84",
+          "lesson": "3A",
+          "bank": "grammar",
+          "pass": true
+        },
+        {
+          "page": "85",
+          "lesson": "3B",
+          "bank": "grammar",
+          "pass": true
+        },
+        {
+          "page": "86",
+          "lesson": "3C",
+          "bank": "grammar",
+          "pass": true
+        },
+        {
+          "page": "87",
+          "lesson": "3D",
+          "bank": "grammar",
+          "pass": true
+        },
+        {
+          "page": "88",
+          "lesson": "4A",
+          "bank": "grammar",
+          "pass": true
+        },
+        {
+          "page": "89",
+          "lesson": "4B",
+          "bank": "grammar",
+          "pass": true
+        },
+        {
+          "page": "90",
+          "lesson": "4C",
+          "bank": "grammar",
+          "pass": true
+        },
+        {
+          "page": "91",
+          "lesson": "4D",
+          "bank": "grammar",
+          "pass": true
+        },
+        {
+          "page": "92",
+          "lesson": "5A",
+          "bank": "grammar",
+          "pass": true
+        },
+        {
+          "page": "93",
+          "lesson": "5B",
+          "bank": "grammar",
+          "pass": true
+        },
+        {
+          "page": "94",
+          "lesson": "5C",
+          "bank": "grammar",
+          "pass": true
+        },
+        {
+          "page": "95",
+          "lesson": "6B",
+          "bank": "grammar",
+          "pass": true
+        },
+        {
+          "page": "96",
+          "lesson": "6C",
+          "bank": "grammar",
+          "pass": true
+        },
+        {
+          "page": "97",
+          "lesson": "6D",
+          "bank": "grammar",
+          "pass": true
+        },
+        {
+          "page": "98",
+          "lesson": "7A",
+          "bank": "grammar",
+          "pass": true
+        },
+        {
+          "page": "99",
+          "lesson": "7B",
+          "bank": "grammar",
+          "pass": true
+        },
+        {
+          "page": "100",
+          "lesson": "7C",
+          "bank": "grammar",
+          "pass": true
+        },
+        {
+          "page": "101",
+          "lesson": "8A",
+          "bank": "grammar",
+          "pass": true
+        },
+        {
+          "page": "102",
+          "lesson": "8B",
+          "bank": "grammar",
+          "pass": true
+        },
+        {
+          "page": "103",
+          "lesson": "8C",
+          "bank": "grammar",
+          "pass": true
+        },
+        {
+          "page": "104",
+          "lesson": "1A",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "105",
+          "lesson": "1A",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "106",
+          "lesson": "1B",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "107",
+          "lesson": "1B",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "108",
+          "lesson": "1C",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "109",
+          "lesson": "1C",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "110",
+          "lesson": "1D",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "111",
+          "lesson": "2A",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "112",
+          "lesson": "2B",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "113",
+          "lesson": "2C",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "114",
+          "lesson": "2D",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "115",
+          "lesson": "3A",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "116",
+          "lesson": "3A",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "117",
+          "lesson": "3B",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "118",
+          "lesson": "3C",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "119",
+          "lesson": "3C",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "120",
+          "lesson": "3D",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "121",
+          "lesson": "4A",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "122",
+          "lesson": "4A",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "123",
+          "lesson": "4B",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "124",
+          "lesson": "4C",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "125",
+          "lesson": "4D",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "126",
+          "lesson": "5A",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "127",
+          "lesson": "5A",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "128",
+          "lesson": "5B",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "129",
+          "lesson": "5C",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "130",
+          "lesson": "5C",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "131",
+          "lesson": "5D",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "132",
+          "lesson": "5D",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "133",
+          "lesson": "6A",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "134",
+          "lesson": "6A",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "135",
+          "lesson": "6B",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "136",
+          "lesson": "6B",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "137",
+          "lesson": "6C",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "138",
+          "lesson": "6D",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "139",
+          "lesson": "7A",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "140",
+          "lesson": "7B",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "141",
+          "lesson": "7B",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "142",
+          "lesson": "7C",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "143",
+          "lesson": "7D",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "144",
+          "lesson": "7D",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "145",
+          "lesson": "8A",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "146",
+          "lesson": "8A",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "147",
+          "lesson": "8B",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "148",
+          "lesson": "8B",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "149",
+          "lesson": "8C",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "150",
+          "lesson": "8C",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "151",
+          "lesson": "8D",
+          "bank": "vocabulary",
+          "pass": true
+        },
+        {
+          "page": "152",
+          "lesson": "8D",
+          "bank": "vocabulary",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "name": "43 same-lesson word banks beside practice",
+      "pass": true,
+      "detail": [
+        {
+          "topic": "vocabulary-greetings",
+          "source": "104",
+          "target": "105",
+          "lesson": "1A",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-personal-information",
+          "source": "104",
+          "target": "105",
+          "lesson": "1A",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-alphabet",
+          "source": "104",
+          "target": "105",
+          "lesson": "1A",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-numbers",
+          "source": "104",
+          "target": "105",
+          "lesson": "1A",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-occupations",
+          "source": "106",
+          "target": "107",
+          "lesson": "1B",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-adjectives",
+          "source": "106",
+          "target": "107",
+          "lesson": "1B",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-countries",
+          "source": "108",
+          "target": "108",
+          "lesson": "1C",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-adjectives-1c",
+          "source": "108",
+          "target": "109",
+          "lesson": "1C",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-personal-information-1d",
+          "source": "110",
+          "target": "110",
+          "lesson": "1D",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-personal-items",
+          "source": "111",
+          "target": "111",
+          "lesson": "2A",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-telling-time",
+          "source": "112",
+          "target": "112",
+          "lesson": "2B",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-family-members",
+          "source": "113",
+          "target": "113",
+          "lesson": "2C",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-adjectives-2d",
+          "source": "114",
+          "target": "114",
+          "lesson": "2D",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-colors",
+          "source": "114",
+          "target": "114",
+          "lesson": "2D",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-daily-routines",
+          "source": "115",
+          "target": "116",
+          "lesson": "3A",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-days-of-the-week",
+          "source": "117",
+          "target": "117",
+          "lesson": "3B",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-place-adjectives-recall",
+          "source": "118",
+          "target": "119",
+          "lesson": "3C",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-daily-routines-3d",
+          "source": "120",
+          "target": "120",
+          "lesson": "3D",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-food-and-drink",
+          "source": "121",
+          "target": "122",
+          "lesson": "4A",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-flavors",
+          "source": "123",
+          "target": "123",
+          "lesson": "4B",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-cooking-verbs",
+          "source": "124",
+          "target": "124",
+          "lesson": "4C",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-sharing-food",
+          "source": "125",
+          "target": "125",
+          "lesson": "4D",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-clothes-and-accessories",
+          "source": "126",
+          "target": "127",
+          "lesson": "5A",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-shopping-verbs",
+          "source": "128",
+          "target": "128",
+          "lesson": "5B",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-places-in-town",
+          "source": "129",
+          "target": "130",
+          "lesson": "5C",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-at-the-store",
+          "source": "131",
+          "target": "132",
+          "lesson": "5D",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-places-in-town-2",
+          "source": "133",
+          "target": "134",
+          "lesson": "6A",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-rooms-and-furniture",
+          "source": "135",
+          "target": "136",
+          "lesson": "6B",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-movement-and-directions",
+          "source": "137",
+          "target": "137",
+          "lesson": "6C",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-shopping-centers-and-attractions",
+          "source": "138",
+          "target": "138",
+          "lesson": "6D",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-past-time-expressions",
+          "source": "139",
+          "target": "139",
+          "lesson": "7A",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-months",
+          "source": "140",
+          "target": "141",
+          "lesson": "7B",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-dates-and-ordinal-numbers",
+          "source": "140",
+          "target": "141",
+          "lesson": "7B",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-past-time-expressions-7b",
+          "source": "140",
+          "target": "141",
+          "lesson": "7B",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-music",
+          "source": "142",
+          "target": "142",
+          "lesson": "7C",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-irregular-past-verbs",
+          "source": "143",
+          "target": "144",
+          "lesson": "7D",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-sequencing-words",
+          "source": "143",
+          "target": "144",
+          "lesson": "7D",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-travel-verbs",
+          "source": "145",
+          "target": "145",
+          "lesson": "8A",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-animals",
+          "source": "145",
+          "target": "146",
+          "lesson": "8A",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-weather-and-seasons",
+          "source": "147",
+          "target": "148",
+          "lesson": "8B",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-body-parts",
+          "source": "149",
+          "target": "149",
+          "lesson": "8C",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-health-complaints",
+          "source": "149",
+          "target": "150",
+          "lesson": "8C",
+          "pass": true
+        },
+        {
+          "topic": "vocabulary-phone-and-ticket-language",
+          "source": "151",
+          "target": "152",
+          "lesson": "8D",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "name": "75 main lesson references have correct destination lesson and printed page",
+      "pass": true,
+      "detail": [
+        {
+          "source": "1A",
+          "target": "1A",
+          "pass": true
+        },
+        {
+          "source": "1A",
+          "target": "1A",
+          "pass": true
+        },
+        {
+          "source": "1A",
+          "target": "1A",
+          "pass": true
+        },
+        {
+          "source": "1A",
+          "target": "1A",
+          "pass": true
+        },
+        {
+          "source": "1A",
+          "target": "1A",
+          "pass": true
+        },
+        {
+          "source": "1B",
+          "target": "1B",
+          "pass": true
+        },
+        {
+          "source": "1B",
+          "target": "1B",
+          "pass": true
+        },
+        {
+          "source": "1B",
+          "target": "1B",
+          "pass": true
+        },
+        {
+          "source": "1B",
+          "target": "1B",
+          "pass": true
+        },
+        {
+          "source": "1C",
+          "target": "1C",
+          "pass": true
+        },
+        {
+          "source": "1C",
+          "target": "1C",
+          "pass": true
+        },
+        {
+          "source": "1D",
+          "target": "1D",
+          "pass": true
+        },
+        {
+          "source": "2A",
+          "target": "2A",
+          "pass": true
+        },
+        {
+          "source": "2A",
+          "target": "2A",
+          "pass": true
+        },
+        {
+          "source": "2B",
+          "target": "2B",
+          "pass": true
+        },
+        {
+          "source": "2B",
+          "target": "2B",
+          "pass": true
+        },
+        {
+          "source": "2C",
+          "target": "2C",
+          "pass": true
+        },
+        {
+          "source": "2C",
+          "target": "2C",
+          "pass": true
+        },
+        {
+          "source": "2D",
+          "target": "2D",
+          "pass": true
+        },
+        {
+          "source": "2D",
+          "target": "2D",
+          "pass": true
+        },
+        {
+          "source": "2D",
+          "target": "2D",
+          "pass": true
+        },
+        {
+          "source": "3A",
+          "target": "3A",
+          "pass": true
+        },
+        {
+          "source": "3A",
+          "target": "3A",
+          "pass": true
+        },
+        {
+          "source": "3B",
+          "target": "3B",
+          "pass": true
+        },
+        {
+          "source": "3B",
+          "target": "3B",
+          "pass": true
+        },
+        {
+          "source": "3C",
+          "target": "3C",
+          "pass": true
+        },
+        {
+          "source": "3C",
+          "target": "3C",
+          "pass": true
+        },
+        {
+          "source": "3D",
+          "target": "3D",
+          "pass": true
+        },
+        {
+          "source": "3D",
+          "target": "3D",
+          "pass": true
+        },
+        {
+          "source": "3D",
+          "target": "3D",
+          "pass": true
+        },
+        {
+          "source": "4A",
+          "target": "4A",
+          "pass": true
+        },
+        {
+          "source": "4A",
+          "target": "4A",
+          "pass": true
+        },
+        {
+          "source": "4B",
+          "target": "4B",
+          "pass": true
+        },
+        {
+          "source": "4B",
+          "target": "4B",
+          "pass": true
+        },
+        {
+          "source": "4C",
+          "target": "4C",
+          "pass": true
+        },
+        {
+          "source": "4C",
+          "target": "4C",
+          "pass": true
+        },
+        {
+          "source": "4D",
+          "target": "4D",
+          "pass": true
+        },
+        {
+          "source": "4D",
+          "target": "4D",
+          "pass": true
+        },
+        {
+          "source": "5A",
+          "target": "5A",
+          "pass": true
+        },
+        {
+          "source": "5A",
+          "target": "5A",
+          "pass": true
+        },
+        {
+          "source": "5B",
+          "target": "5B",
+          "pass": true
+        },
+        {
+          "source": "5B",
+          "target": "5B",
+          "pass": true
+        },
+        {
+          "source": "5C",
+          "target": "5C",
+          "pass": true
+        },
+        {
+          "source": "5C",
+          "target": "5C",
+          "pass": true
+        },
+        {
+          "source": "5D",
+          "target": "5D",
+          "pass": true
+        },
+        {
+          "source": "5D",
+          "pass": true
+        },
+        {
+          "source": "6A",
+          "target": "6A",
+          "pass": true
+        },
+        {
+          "source": "6B",
+          "target": "6B",
+          "pass": true
+        },
+        {
+          "source": "6B",
+          "target": "6B",
+          "pass": true
+        },
+        {
+          "source": "6C",
+          "target": "6C",
+          "pass": true
+        },
+        {
+          "source": "6C",
+          "target": "6C",
+          "pass": true
+        },
+        {
+          "source": "6D",
+          "target": "6D",
+          "pass": true
+        },
+        {
+          "source": "6D",
+          "target": "6D",
+          "pass": true
+        },
+        {
+          "source": "6D",
+          "pass": true
+        },
+        {
+          "source": "7A",
+          "target": "7A",
+          "pass": true
+        },
+        {
+          "source": "7A",
+          "target": "7A",
+          "pass": true
+        },
+        {
+          "source": "7B",
+          "target": "7B",
+          "pass": true
+        },
+        {
+          "source": "7B",
+          "target": "7B",
+          "pass": true
+        },
+        {
+          "source": "7B",
+          "target": "7B",
+          "pass": true
+        },
+        {
+          "source": "7B",
+          "target": "7B",
+          "pass": true
+        },
+        {
+          "source": "7C",
+          "target": "7C",
+          "pass": true
+        },
+        {
+          "source": "7C",
+          "target": "7C",
+          "pass": true
+        },
+        {
+          "source": "7D",
+          "target": "7D",
+          "pass": true
+        },
+        {
+          "source": "7D",
+          "target": "7D",
+          "pass": true
+        },
+        {
+          "source": "7D",
+          "pass": true
+        },
+        {
+          "source": "8A",
+          "target": "8A",
+          "pass": true
+        },
+        {
+          "source": "8A",
+          "target": "8A",
+          "pass": true
+        },
+        {
+          "source": "8A",
+          "target": "8A",
+          "pass": true
+        },
+        {
+          "source": "8B",
+          "target": "8B",
+          "pass": true
+        },
+        {
+          "source": "8B",
+          "target": "8B",
+          "pass": true
+        },
+        {
+          "source": "8C",
+          "target": "8C",
+          "pass": true
+        },
+        {
+          "source": "8C",
+          "target": "8C",
+          "pass": true
+        },
+        {
+          "source": "8C",
+          "target": "8C",
+          "pass": true
+        },
+        {
+          "source": "8D",
+          "target": "8D",
+          "pass": true
+        },
+        {
+          "source": "8D",
+          "pass": true
+        }
+      ]
+    },
+    {
+      "name": "104 practice images decode across all49 vocabulary pages",
+      "pass": true,
+      "detail": {
+        "images": 104,
+        "pages": 49
+      }
+    },
+    {
+      "name": "147 tasks,16 blank QR reserves,90 audio controls retained",
+      "pass": true,
+      "detail": {
+        "activities": 147,
+        "qr": 16,
+        "audio": 90
+      }
+    },
+    {
+      "name": "2D main reference opens its own green2D practice",
+      "pass": true
+    },
+    {
+      "name": "Reference and task return flow works",
+      "pass": true
+    },
+    {
+      "name": "Practice header returns to its main lesson",
+      "pass": true,
+      "detail": "#page-19"
+    },
+    {
+      "name": "Track 1.1 plays and pauses",
+      "pass": true,
+      "detail": {
+        "src": "https://exams.bebrighton.net/Horizons/A1/Audios/Track%201.1.mp3",
+        "time": 0.220936,
+        "playing": true
+      }
+    },
+    {
+      "name": "Track 8.7 plays and pauses",
+      "pass": true,
+      "detail": {
+        "src": "https://exams.bebrighton.net/Horizons/A1/Audios/Track%208.7.mp3",
+        "time": 0.229392,
+        "playing": true
+      }
+    },
+    {
+      "name": "Standalone reference opens same8C task group",
+      "pass": true
+    },
+    {
+      "name": "Standalone header returns to main8C",
+      "pass": true
+    },
+    {
+      "name": "Audio and navigation hidden in print",
+      "pass": true
+    }
+  ],
+  "screenshots": [
+    {
+      "bank": "grammar",
+      "lesson": "1A",
+      "file": "grammar-1A.png"
+    },
+    {
+      "bank": "grammar",
+      "lesson": "8A",
+      "file": "grammar-8A.png"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "1A",
+      "file": "vocabulary-1A.png"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "2C",
+      "file": "vocabulary-2C.png"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "5B",
+      "file": "vocabulary-5B.png"
+    },
+    {
+      "bank": "vocabulary",
+      "lesson": "8C",
+      "file": "vocabulary-8C.png"
+    }
+  ],
+  "failures": [],
+  "passed": true
+}

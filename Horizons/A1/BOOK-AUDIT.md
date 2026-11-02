@@ -1,6 +1,6 @@
 # Horizons A1 — current book audit
 
-Updated 1 November 2026. Grammar and vocabulary practice now follow the actual main lessons individually. Local source, saved-PDF and navigation verification passed; published-viewer verification is pending.
+Updated 2 November 2026. Grammar and vocabulary practice now follow the actual main lessons individually. Source, saved-PDF, navigation and published-viewer verification passed.
 
 ## Current practice standard
 
@@ -27,6 +27,8 @@ The final saved PDF passes strict pypdf and MuPDF reads, has156A4pages with corr
 The root editor reviewed all76grammar/vocabulary pages in saved-PDF layout contacts and12selected pages at readable size. The final vocabulary review covers all49pages; the27grammar pages transfer by exact pixel comparison from the reviewed interim PDF. Redundant cues and misleading split-task headings were corrected before the final export. No independent second-editor or author approval is claimed. Some short lesson sets intentionally retain white space instead of unrelated extra drills.
 
 Current evidence: [lesson and reference map](Sources/Practice-lesson-headers-20261101/navigation.json), [content preservation](Sources/Practice-lesson-headers-20261101/content-preservation.json), [header and font checks](Sources/Practice-lesson-headers-20261101/header-and-font-checks.json), [PDF validation](Sources/Practice-lesson-headers-20261101/pdf-validation.json) and [saved-PDF review](Sources/Practice-lesson-headers-20261101/saved-PDF-review.json). Earlier evidence remains historical.
+
+The [published viewer](https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=lessonpractice-5f62bb324678#vocabulary-greetings) is verified at content commit `5f62bb324678a7062d4147ff2babea548d55d157`. All106changed files match the deployed site (text line endings normalized; binary assets and PDF byte-exact). Fifteen live checks confirm156pages,100navigation entries,76matching practice headers,75same-lesson destinations,43same/adjacent reference pairs,104decoding practice images across49pictured vocabulary pages,147tasks,16blankQRreserves and90audio controls. Actual clicks confirm assembled2D navigation, word-bank/task returns, header returns to main lessons and standalone8C flows. Tracks1.1and8.7play and pause; controls hide in print. The root editor inspected six selected live captures. See [live checks](Sources/Practice-lesson-headers-20261101/live-viewer-verification.json), [published file readback](Sources/Practice-lesson-headers-20261101/live-file-verification.json) and [live visual review](Sources/Practice-lesson-headers-20261101/live-visual-review.json).
 
 ## Reversibility and remaining scope
 

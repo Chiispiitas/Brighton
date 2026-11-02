@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
-  "updated": "2026-11-01",
-  "status": "Lesson-specific grammar and vocabulary practices complete; local source, saved-PDF and navigation checks pass; publication verification pending",
+  "updated": "2026-11-02",
+  "status": "Lesson-specific grammar/vocabulary headers and split complete; source, saved-PDF and published-viewer verification passed",
   "authority": "Author delegates editorial authority; his own B2 book sets emotional direction. Preserve colourful learning objects and warm adult playfulness alongside coherent functional roles.",
   "scope": "Units1–8:32lessons,4pairedreviews,72corepages;80practicepages and4creditpages.156physical A4pages, printed5–160. Front matter,index,workbook andoptionalannexes remainfuturework.",
   "baseline": {
@@ -694,6 +694,30 @@
         "visual_report": "Sources/Practice-adjacency-20261101/live-visual-review.json",
         "failures": []
       }
+    },
+    "live_viewer": {
+      "completed": true,
+      "date": "2026-11-02",
+      "content_commit": "5f62bb324678a7062d4147ff2babea548d55d157",
+      "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=lessonpractice-5f62bb324678",
+      "pages": 156,
+      "navigation_options": 100,
+      "matching_practice_headers": 76,
+      "same_lesson_references": 75,
+      "adjacent_or_same_page_reference_pairs": 43,
+      "pictured_vocabulary_pages": 49,
+      "images_decoded": 104,
+      "blank_qr_reserves": 16,
+      "audio_controls": 90,
+      "audio_tracks_played_and_paused": [
+        "1.1",
+        "8.7"
+      ],
+      "all_changed_files_match": 106,
+      "viewer_report": "Sources/Practice-lesson-headers-20261101/live-viewer-verification.json",
+      "file_report": "Sources/Practice-lesson-headers-20261101/live-file-verification.json",
+      "visual_report": "Sources/Practice-lesson-headers-20261101/live-visual-review.json",
+      "failures": []
     }
   },
   "new_objects": "Images/Editorial-objects/manifest.json",
@@ -843,9 +867,9 @@
         "Practice"
       ],
       "fingerprint": {
-        "files": 962,
-        "bytes": 699258133,
-        "sha256": "6ec65fc92062ea7d34dc5c9f7ca01b95678c05b472096966f54417793b8b139c"
+        "files": 965,
+        "bytes": 699309744,
+        "sha256": "b0399a6b3b1a92278128505517e4dcabb5feb82b36be7cb81bea2c27d281f580"
       },
       "normalize_text_line_endings": true
     },
@@ -892,8 +916,8 @@
       ],
       "fingerprint": {
         "files": 15,
-        "bytes": 165850,
-        "sha256": "26ac6ae7759cb61c7a3076224ea3834af510e36f378cfcd71357f3955b55279b"
+        "bytes": 166919,
+        "sha256": "f89df27a221b9cf84d95404f0176d2b6a6cae003ca81e4b7d5fbf78944e24156"
       },
       "normalize_text_line_endings": true
     }
