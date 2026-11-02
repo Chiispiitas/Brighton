@@ -22,7 +22,8 @@
         "Correct main-lesson number and exact header typography",
         "Maximum two clearly separated lesson sections; preserve each original header",
         "Original activities and controlled answers, renumbered within their own lesson",
-        "Reference and practice on the same or immediately adjacent lesson-specific page"
+        "Reference and practice on the same or immediately adjacent lesson-specific page",
+        "No compressed inline rule chains; preserve aligned complete models and meaningful physical diagrams."
       ],
       "topic_anchors": [
         "grammar-verb-to-be",
@@ -125,7 +126,8 @@
         "Correct main-lesson number and exact header typography",
         "Maximum two clearly separated lesson sections; preserve each original header",
         "Original activities and controlled answers, renumbered within their own lesson",
-        "Reference and practice on the same or immediately adjacent lesson-specific page"
+        "Reference and practice on the same or immediately adjacent lesson-specific page",
+        "No compressed inline rule chains; preserve aligned complete models and meaningful physical diagrams."
       ],
       "topic_anchors": [
         "grammar-this-that-these-those",
@@ -251,7 +253,8 @@
         "Correct main-lesson number and exact header typography",
         "Maximum two clearly separated lesson sections; preserve each original header",
         "Original activities and controlled answers, renumbered within their own lesson",
-        "Reference and practice on the same or immediately adjacent lesson-specific page"
+        "Reference and practice on the same or immediately adjacent lesson-specific page",
+        "No compressed inline rule chains; preserve aligned complete models and meaningful physical diagrams."
       ],
       "topic_anchors": [
         "grammar-present-simple-affirmative",
@@ -375,7 +378,8 @@
         "Correct main-lesson number and exact header typography",
         "Maximum two clearly separated lesson sections; preserve each original header",
         "Original activities and controlled answers, renumbered within their own lesson",
-        "Reference and practice on the same or immediately adjacent lesson-specific page"
+        "Reference and practice on the same or immediately adjacent lesson-specific page",
+        "No compressed inline rule chains; preserve aligned complete models and meaningful physical diagrams."
       ],
       "topic_anchors": [
         "grammar-countable-and-uncountable-nouns",
@@ -501,7 +505,8 @@
         "Correct main-lesson number and exact header typography",
         "Maximum two clearly separated lesson sections; preserve each original header",
         "Original activities and controlled answers, renumbered within their own lesson",
-        "Reference and practice on the same or immediately adjacent lesson-specific page"
+        "Reference and practice on the same or immediately adjacent lesson-specific page",
+        "No compressed inline rule chains; preserve aligned complete models and meaningful physical diagrams."
       ],
       "topic_anchors": [
         "grammar-present-continuous",
@@ -606,7 +611,8 @@
         "Correct main-lesson number and exact header typography",
         "Maximum two clearly separated lesson sections; preserve each original header",
         "Original activities and controlled answers, renumbered within their own lesson",
-        "Reference and practice on the same or immediately adjacent lesson-specific page"
+        "Reference and practice on the same or immediately adjacent lesson-specific page",
+        "No compressed inline rule chains; preserve aligned complete models and meaningful physical diagrams."
       ],
       "topic_anchors": [
         "grammar-prepositions-of-place",
@@ -712,7 +718,8 @@
         "Correct main-lesson number and exact header typography",
         "Maximum two clearly separated lesson sections; preserve each original header",
         "Original activities and controlled answers, renumbered within their own lesson",
-        "Reference and practice on the same or immediately adjacent lesson-specific page"
+        "Reference and practice on the same or immediately adjacent lesson-specific page",
+        "No compressed inline rule chains; preserve aligned complete models and meaningful physical diagrams."
       ],
       "topic_anchors": [
         "grammar-past-of-be",
@@ -815,7 +822,8 @@
         "Correct main-lesson number and exact header typography",
         "Maximum two clearly separated lesson sections; preserve each original header",
         "Original activities and controlled answers, renumbered within their own lesson",
-        "Reference and practice on the same or immediately adjacent lesson-specific page"
+        "Reference and practice on the same or immediately adjacent lesson-specific page",
+        "No compressed inline rule chains; preserve aligned complete models and meaningful physical diagrams."
       ],
       "topic_anchors": [
         "grammar-past-simple-travel-verbs",
@@ -2473,5 +2481,7 @@
     "ownership": "Each lp-section retains its actual main header/code; page lists all contained lessons."
   },
   "scope": "27 grammar and32 vocabulary lesson groups;24 grammar pages and47 vocabulary pages. Full headers retained on each section; up to2 consecutive lesson sections may share a page.",
-  "pairing_policy": "Up to two consecutive lesson sections per page, each with full source header. No smaller teaching type or writing lines."
+  "pairing_policy": "Up to two consecutive lesson sections per page, each with full source header. No smaller teaching type or writing lines.",
+  "grammar_explanation_policy": "Subject agreement, contractions, form contrasts and corrections use real chart cells/full models, never inline arrow-dot/slash prose.",
+  "grammar_clarity_evidence": "Sources/Grammar-visual-clarity-20261102"
 }

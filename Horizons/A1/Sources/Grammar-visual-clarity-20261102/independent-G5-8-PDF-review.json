@@ -1,0 +1,126 @@
+{
+  "reviewer": "Independent second editor /root/grammar_1_4_clarity",
+  "date": "2026-11-02",
+  "scope": "Other agent authored grammar practice G5–G8, all12 physical pages printed89–100",
+  "pdf_sha256": "98d3e8b12f376d9153eb67754b663fae2e49842b0e641bd706229871c3d40b7b",
+  "hash_verified_against_saved_pdf": true,
+  "method": "Direct readable full-page inspection of the initial saved-PDF Poppler100dpi PNGs page-085.png throughpage-096.png, followed by exact full-page raster transfer of all12reviewed pages to the finalPDF. No new subjective inspection claimed.",
+  "printed_pages_inspected": [
+    89,
+    90,
+    91,
+    92,
+    93,
+    94,
+    95,
+    96,
+    97,
+    98,
+    99,
+    100
+  ],
+  "findings": [
+    {
+      "page": 89,
+      "lesson": "5A",
+      "decision": "Pass",
+      "notes": "The subject/positive/negative/question chart replaces the rejected subject-to-be chain. Full and contracted negatives occupy their own visible lines. Usually and Now are separate labeled example columns. Text remains legible; all response fields fit."
+    },
+    {
+      "page": 90,
+      "lesson": "5B",
+      "decision": "Pass",
+      "notes": "Bag evidence and full too-small/not-big-enough versus big-enough sentence models remain meaningful and clear. No formula prose; correction rules have usable writing room."
+    },
+    {
+      "page": 91,
+      "lesson": "5C",
+      "decision": "Pass",
+      "notes": "Frequency counts use clear numbered circles and short labels. Complete Question/Answer models occupy separate columns. Task source days and blank Unit5QRreserve are readable and unobstructed."
+    },
+    {
+      "page": 92,
+      "lesson": "6B",
+      "decision": "Pass",
+      "notes": "All six spatial pictures retain useful scale and unambiguous labels; complete examples support meaning. Sources, empty rewrite rules and final open lines remain readable and inside the page."
+    },
+    {
+      "page": 93,
+      "lesson": "6C",
+      "decision": "Pass",
+      "notes": "The route map retains legible building labels and a clear starting orientation. Directions are actual imperative models; the controlled route information and response spaces are usable."
+    },
+    {
+      "page": 94,
+      "lesson": "6D",
+      "decision": "Pass",
+      "notes": "Opening-day facts, modal positive/negative/question forms and complete avoid/use examples are aligned in distinct tables. Can uses the base verb correctly. QRreserve and rewrite rows remain clear."
+    },
+    {
+      "page": 95,
+      "lesson": "7A",
+      "decision": "Pass",
+      "notes": "Yesterday/today facts, was/were form contrasts and full short answers occupy readable chart rows. Subject groups are explicit labels, not compressed rule chains. Both question-writing areas fit."
+    },
+    {
+      "page": 96,
+      "lesson": "7B",
+      "decision": "Pass",
+      "notes": "The three-day timeline makes ago concrete. Month/year/date columns contain complete preposition examples. No inline mapping chain remains; Unit7QRreserve is clear."
+    },
+    {
+      "page": 97,
+      "lesson": "7C",
+      "decision": "Pass",
+      "notes": "Past positive/negative/question forms, a be-question correction and regular-past spellings are compact aligned charts. No congested grammar prose remains. The diary source and controlled/freer response areas fit without crowding."
+    },
+    {
+      "page": 98,
+      "lesson": "8A",
+      "decision": "Pass",
+      "notes": "Four action images/captions remain whole enough to supply the task evidence. The verb/past table and full past-simple form chart are clear at print scale. All account, rewriting, question and open-writing lines remain available."
+    },
+    {
+      "page": 99,
+      "lesson": "8B",
+      "decision": "Pass",
+      "notes": "Should positive/negative/question models and full avoid/use examples make base-verb use explicit. The matching layout and rewrite fields are easy to follow; no compressed all-subject rule paragraph remains."
+    },
+    {
+      "page": 100,
+      "lesson": "8C",
+      "decision": "Pass",
+      "notes": "Have/has and singular/plural hurt(s) appear in two concise full-example charts. Task models, message frame, answer rules and Unit8QRreserve remain legible and clear."
+    }
+  ],
+  "overall_judgment": "Pass. The changed grammar explanations use actual charts, aligned examples or task-serving physical evidence, with consistent ordinary text and clear response space. None of the rejected inline pronoun/form, contraction or rule chains was visible in these explanation areas.",
+  "remaining_defects": [],
+  "source_edits_requested": false,
+  "author_acceptance_claimed": false,
+  "review_scope_limit": "Independent visual/editorial review of the specified final PDF pages; root owns whole-book structural, parity and publication checks.",
+  "subjective_review_pdf_sha256": "9dad51661c9bd778e93e18c20767f824936b825e249e1606247be3857bc3e6fe",
+  "pixel_transfer": {
+    "source_file": "first-proof.pdf",
+    "source_sha256": "9dad51661c9bd778e93e18c20767f824936b825e249e1606247be3857bc3e6fe",
+    "final_sha256": "98d3e8b12f376d9153eb67754b663fae2e49842b0e641bd706229871c3d40b7b",
+    "printed_pages_compared": [
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100
+    ],
+    "method": "PyMuPDF default-resolution full-page raster size/channels/bytes compared directly",
+    "pixel_differences": [],
+    "all12_reviewed_pages_pixel_identical": true,
+    "editorial_review_carried_forward": true,
+    "new_subjective_inspection_claimed": false
+  }
+}

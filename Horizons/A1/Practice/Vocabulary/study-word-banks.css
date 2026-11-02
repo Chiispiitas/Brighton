@@ -42,3 +42,12 @@
 .hz-practice-page.vs-study-page .vs-body-labels .vs-body-line-halo {fill:none;stroke:#fffefa;stroke-width:7;}
 .hz-practice-page.vs-study-page .vs-body-labels .vs-body-line {fill:none;stroke:#226b46;stroke-width:2;}
 .hz-practice-page.vs-study-page .vs-body-labels circle {fill:#fffefa;stroke:#226b46;stroke-width:2;}
+
+/* Grammar forms in a word bank remain a real, readable reference chart. */
+.hz-practice-page.vs-study-page .vs-form-reference {width:100%;border-collapse:collapse;table-layout:fixed;margin:2mm 0;font:400 10pt/1.25 var(--hz-font-sans);}
+.hz-practice-page.vs-study-page .vs-form-reference th {text-align:left;color:#226b46;font-weight:650;padding:.7mm 2mm .7mm 0;border-bottom:.3mm solid #90b59e;}
+.hz-practice-page.vs-study-page .vs-form-reference td {vertical-align:top;padding:.65mm 2mm .65mm 0;border-bottom:.15mm solid #e0e8e2;}
+
+.hz-practice-page.vs-study-page .vs-form-pairs {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:3mm;}
+.hz-practice-page.vs-study-page .vs-form-pairs .vs-form-reference td,.hz-practice-page.vs-study-page .vs-form-pairs .vs-form-reference th {padding-right:1mm;}
+.hz-practice-page.vs-study-page .vs-irregular-chart th:first-child,.hz-practice-page.vs-study-page .vs-irregular-chart th:nth-child(2) {width:22%;}

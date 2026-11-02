@@ -1,0 +1,154 @@
+{
+  "reviewer": "Independent second editor /root/main_lesson_clarity",
+  "date": "2026-11-02",
+  "scope": "Other-authored G1–G4 explanation changes and root vocabulary/practical bank charts",
+  "author_of_reviewed_sources": false,
+  "pdf_sha256": "98d3e8b12f376d9153eb67754b663fae2e49842b0e641bd706229871c3d40b7b",
+  "physical_pages": 151,
+  "method": "Direct visual inspection of saved-PDF Poppler full-page PNGs at readable size. Final font-span evidence confirms 10 pt ordinary model text on every inspected bank page; body labels retain their intentional larger role. First/final PDF raster comparison proves the transferred pages unchanged.",
+  "inspected_printed_pages": [
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    86,
+    87,
+    88,
+    118,
+    136,
+    138,
+    139,
+    145,
+    151
+  ],
+  "judgments": [
+    {
+      "page": 78,
+      "decision": "Pass",
+      "notes": "Seven full-form/short-form contraction models are accurate and aligned; a/an sound cards and tasks stay readable."
+    },
+    {
+      "page": 79,
+      "decision": "Pass",
+      "notes": "Capitalization labels are distinct from examples. Full two-row response area and blank QR reserve fit."
+    },
+    {
+      "page": 80,
+      "decision": "Pass",
+      "notes": "Near/far examples show is/are explicitly; article contrast reads across two separate source/result cards. Both lesson headers and response fields fit."
+    },
+    {
+      "page": 81,
+      "decision": "Pass",
+      "notes": "Possessive owner labels sit above the correct tokens. Adjective models show placement clearly; paired sections and relocated QR remain separate from response areas."
+    },
+    {
+      "page": 82,
+      "decision": "Pass",
+      "notes": "Full present-simple sentence pairs show third-person endings without arrow-rule chains. Both controlled tasks retain clear writing areas."
+    },
+    {
+      "page": 83,
+      "decision": "Pass",
+      "notes": "Positive/negative/question/short-answer chart, wrong/right base-verb examples and be/do comparison are accurate and distinct. No compressed inline rule chain remains."
+    },
+    {
+      "page": 84,
+      "decision": "Pass",
+      "notes": "Question words, answer categories and full question/answer examples are aligned in columns. Exercises remain readable and answerable."
+    },
+    {
+      "page": 86,
+      "decision": "Pass",
+      "notes": "Countability photos and object-pronoun tables are complete and accurate. Shared 4A/4B page retains both headers and complete writing fields."
+    },
+    {
+      "page": 87,
+      "decision": "Pass",
+      "notes": "The quantity pictures show 6/2/1 tomatoes against a need for 2. Enough/not-enough repairs are explicit; countable/uncountable contrast and tasks fit."
+    },
+    {
+      "page": 88,
+      "decision": "Pass",
+      "notes": "Because/so diagrams show actual result/reason clause arrangement with punctuation. Controlled and open writing rows and QR reserve are clear."
+    },
+    {
+      "page": 118,
+      "decision": "Pass",
+      "notes": "Singular/plural food forms are aligned correctly; complete soup/sandwich pictures and reference link retained."
+    },
+    {
+      "page": 136,
+      "decision": "Pass",
+      "notes": "Ordinal write/say chart is legible and correct; complete month/date inventory, calendar image and source-time example remain."
+    },
+    {
+      "page": 138,
+      "decision": "Pass",
+      "notes": "All 14 regular verb/past pairs now appear in two parallel, aligned tables. Practice-only chunks have their own aligned Verb or phrase/Past table. Forms are accurate, ordinary models remain 10 pt, whole music objects and task response fields remain clear."
+    },
+    {
+      "page": 139,
+      "decision": "Pass",
+      "notes": "Irregular verbs have explicit Verb, Past and Useful chunk columns. All seven past forms and the sequencing strip are accurate and legible. The whole contextual picture and both practice links remain visible."
+    },
+    {
+      "page": 145,
+      "decision": "Pass",
+      "notes": "The cold distinction now uses a clear Word/Meaning chart. Whole body cutout, live labels, singular/plural table and symptom pictures fit; reference/task linkage and the existing learner models remain clear."
+    },
+    {
+      "page": 151,
+      "decision": "Pass",
+      "notes": "Booking facts and fare table are clear and internally consistent; source/response fields are complete and controlled answers remain available."
+    }
+  ],
+  "decision": "Pass",
+  "residual_corrections_requested": [
+    {
+      "page": 138,
+      "issue": "Past-form reference arrow rows mixed with support tables.",
+      "status": "Resolved in final PDF: all 14 pairs aligned in parallel Verb/Past charts."
+    },
+    {
+      "page": 145,
+      "issue": "Inline a cold/illness versus cold/temperature arrow-dot clause.",
+      "status": "Resolved in final PDF: explicit Word/Meaning chart."
+    }
+  ],
+  "layout_or_image_defects": [],
+  "author_acceptance_claimed": false,
+  "limits": "Selected 16 bank pages only. Thirteen final-page judgments transfer from the directly inspected first proof by exact pixel comparison; revised pages 138,139,145 were directly inspected again. This is not a new audio review or an independent regrade of all book activities. Main lessons authored by this reviewer are excluded from this independent judgment.",
+  "font_evidence": "independent-bank-type-evidence.json",
+  "first_proof_sha256": "9dad51661c9bd778e93e18c20767f824936b825e249e1606247be3857bc3e6fe",
+  "final_refined_pages_directly_inspected": [
+    138,
+    139,
+    145
+  ],
+  "earlier_review_transferred_by_pixel_identity": [
+    78,
+    79,
+    80,
+    81,
+    82,
+    83,
+    84,
+    86,
+    87,
+    88,
+    118,
+    136,
+    151
+  ],
+  "first_to_final_pixel_change_pages": [
+    62,
+    138,
+    139,
+    145
+  ],
+  "first_to_final_other147pages_pixel_identical": true
+}

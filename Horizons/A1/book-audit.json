@@ -1,9 +1,9 @@
 {
   "schema_version": 3,
   "updated": "2026-11-02",
-  "status": "Grammar3D spacing corrected; source, saved-PDF and published standalone/assembled views verified",
+  "status": "Book-wide visual grammar clarification complete; source and independent saved-PDF reviews pass; publication verification pending",
   "authority": "Author delegates editorial authority; his own B2 book sets emotional direction. Preserve colourful learning objects and warm adult playfulness alongside coherent functional roles.",
-  "scope": "Units1–8:32lessons,4pairedreviews,72corepages;75practicepages and4credits.151physicalA4pages, printed5–155. Front matter,index,workbook andoptionalannexes remainfuturework.",
+  "scope": "Units 1–8: 32 lessons, four paired reviews and 72 core pages; 75 practice pages and four credits. 151 physical A4 pages, printed 5–155. Front matter, index, workbook and optional annexes remain future work.",
   "baseline": {
     "commit": "fd497fd",
     "safety_branch": "safety/horizons-before-editorial-overhaul-20261031",
@@ -52,6 +52,11 @@
     },
     "grammar_3d_spacing": {
       "commit": "59628ea4652eb651c3d0d3cec553a1d63cd0073e"
+    },
+    "grammar_visual_clarity": {
+      "commit": "cdae9fefa0adda5639a0f53e372a1a19969b1025",
+      "safety_branch": "safety/horizons-before-grammar-visual-clarity-20261102",
+      "previous_audit": "Audit archive/2026-11-02-before-grammar-visual-clarity/book-audit.json"
     }
   },
   "inventory": {
@@ -142,7 +147,7 @@
     "vocabulary_lesson_groups": 32,
     "practice_lesson_headers": 74,
     "paired_practice_pages": 3,
-    "saved_pages_this_pass": 5
+    "saved_pages_this_pass": 0
   },
   "standards": {
     "canonical_style": "../Base/design-system/CANONICAL-STYLE.md",
@@ -163,16 +168,17 @@
     "study_vocabulary_inventory": "Practice/Vocabulary/study-vocabulary.json"
   },
   "editorial_judgment": {
-    "basis": "Save space by putting two lessons on a grammar/vocabulary practice page where possible, like Personal Best.",
-    "current_decision": "Sources/Practice-compact-20261102/editorial-decision.json",
-    "saved_pdf_review": "Sources/Practice-compact-20261102/saved-PDF-review.json",
+    "basis": "Author explicitly abolishes compressed inline grammar explanations throughout the book, including subject/verb arrow chains, contraction chains and inline Usually/Now contrasts.",
+    "current_decision": "Sources/Grammar-visual-clarity-20261102/editorial-decision.json",
+    "saved_pdf_review": "Sources/Grammar-visual-clarity-20261102/saved-PDF-review.json",
     "independent_second_editor": true,
-    "author_acceptance_claimed": false,
-    "independent_review": "Sources/Practice-compact-20261102/independent-PDF-review.json",
-    "latest_spacing_correction": {
-      "review": "Sources/Grammar-3D-spacing-20261102/saved-PDF-review.json",
-      "independent_second_editor_this_patch": false
-    }
+    "independent_reviews": [
+      "Sources/Grammar-visual-clarity-20261102/independent-main-PDF-review.json",
+      "Sources/Grammar-visual-clarity-20261102/independent-G5-8-PDF-review.json",
+      "Sources/Grammar-visual-clarity-20261102/independent-G1-4-banks-PDF-review.json"
+    ],
+    "changed_pages_reviewed": 45,
+    "author_acceptance_claimed": false
   },
   "verification": {
     "layout": {
@@ -188,41 +194,167 @@
       "failures": []
     },
     "pdf": {
-      "sha256": "53ef4da441c978a213de693bc49845e8afe11cb01b5cee8cf732d5ed572abb65",
-      "bytes": 50196017,
+      "baseline": "cdae9fefa0adda5639a0f53e372a1a19969b1025",
+      "sha256": "98d3e8b12f376d9153eb67754b663fae2e49842b0e641bd706229871c3d40b7b",
+      "bytes": 50203016,
       "physical_pages": 151,
       "printed_pages": [
         5,
         155
       ],
-      "strict_pypdf_read": true,
-      "mupdf_warnings": "",
       "a4_failures": [],
       "footer_failures": [],
+      "strict_pypdf_read": true,
+      "mupdf_warnings": "",
       "all_internal_links_verified": 367,
       "changed_rendered_pages": [
-        85
+        19,
+        32,
+        34,
+        35,
+        37,
+        42,
+        44,
+        45,
+        53,
+        55,
+        60,
+        62,
+        64,
+        66,
+        68,
+        70,
+        72,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        118,
+        136,
+        138,
+        139,
+        145,
+        151
       ],
-      "other150pages_pixel_identical": true,
+      "unchanged_rendered_pages": 106,
+      "all_unedited_sources_pixel_identical": true,
+      "source_candidate_pages": [
+        19,
+        20,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        53,
+        54,
+        55,
+        56,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        118,
+        119,
+        120,
+        121,
+        122,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        151
+      ],
+      "refined_after_first_independent_review": [
+        62,
+        138,
+        139,
+        145
+      ],
+      "other147pages_identical_to_first_reviewed_proof": true,
       "failures": []
     },
     "preservation": {
-      "baseline": "8729a04578fbffc42efc3b508553550766cfc97c",
-      "grammar_vocabulary_activities_unchanged": 135,
-      "practical_language_activities": 12,
-      "all43_reference_model_texts_unchanged": true,
-      "marked_lexical_occurrences": 476,
-      "required_canonical_vocabulary_items": 404,
-      "keys_unchanged_except_page_numbers": [
-        "Grammar practice 1-4.md",
-        "Grammar practice 5-8.md",
-        "Vocabulary practice 1-4.md",
-        "Vocabulary practice 5-8.md",
-        "Vocabulary practice.md"
-      ],
-      "main_lesson_changes_only_go_to_links": true,
-      "artwork_recordings_and_scripts_unchanged": true,
-      "one_duplicate_generic_cue_removed_from_8D_combined_page": true,
+      "baseline": "cdae9fefa0adda5639a0f53e372a1a19969b1025",
+      "core_exercises_preserved": 253,
+      "practice_activities_preserved": 147,
+      "total_activities": 400,
+      "all_original_directions_questions_and_source_text_preserved": true,
+      "exercise_comparison_excludes_grammar_focus_panels": true,
+      "marked_vocabulary_occurrences": 476,
+      "lexical_inventory_preserved": true,
+      "all_existing_image_sources_in_original_order": true,
+      "answer_keys_audio_scripts_and_artwork_unchanged": true,
       "failures": []
     },
     "study_words": {
@@ -232,7 +364,7 @@
       "marked_entry_occurrences": 476,
       "ordinary_reference_pt_minimum": 10,
       "body_label_pt": 10.275,
-      "report": "Sources/Practice-compact-20261102/header-and-font-checks.json"
+      "report": "Sources/Grammar-visual-clarity-20261102/header-and-font-checks.json"
     },
     "qr": [
       {
@@ -412,7 +544,7 @@
         ]
       }
     ],
-    "evidence_directory": "Sources/Practice-compact-20261102",
+    "evidence_directory": "Sources/Grammar-visual-clarity-20261102",
     "current_visual_identity_checks": {
       "coverage_spreads": 36,
       "functional_tools": 35,
@@ -500,31 +632,45 @@
         "file_report": "Sources/Practice-compact-20261102/live-file-verification.json",
         "visual_report": "Sources/Practice-compact-20261102/live-visual-review.json",
         "failures": []
+      },
+      "grammar_3d_spacing": {
+        "completed": true,
+        "content_commit": "e78aeb5929d3f5c3ec84a87e66cad763222338b0",
+        "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=spacing3d-e78aeb5929d3#practice-grammar-3d",
+        "scope": "Latest3D spacing fix; all other150PDFpages pixel-identical to verified baseline",
+        "standalone_and_assembled_labels_separate": true,
+        "all_changed_files_match": 13,
+        "viewer_report": "Sources/Grammar-3D-spacing-20261102/live-viewer-verification.json",
+        "file_report": "Sources/Grammar-3D-spacing-20261102/live-file-verification.json",
+        "failures": []
+      },
+      "grammar_3d_spacing_local": {
+        "report": "Sources/Grammar-3D-spacing-20261102/spacing-fix.json",
+        "saved_pdf_review": "Sources/Grammar-3D-spacing-20261102/saved-PDF-review.json",
+        "changed_printed_page": 85,
+        "other150pages_pixel_identical": true
       }
     },
     "local_viewer": {
-      "checks_passed": 20,
-      "separate_paired_lesson_dropdown_choices": true,
-      "physical_previous_next": true,
-      "audio_and_print": true,
-      "report": "Sources/Practice-compact-20261102/local-viewer-verification.json"
+      "checks_passed": 24,
+      "failures": [],
+      "report": "Sources/Grammar-visual-clarity-20261102/local-viewer-verification.json"
     },
-    "grammar_3d_spacing": {
-      "report": "Sources/Grammar-3D-spacing-20261102/spacing-fix.json",
-      "saved_pdf_review": "Sources/Grammar-3D-spacing-20261102/saved-PDF-review.json",
-      "changed_printed_page": 85,
-      "other150pages_pixel_identical": true
+    "grammar_clarity": {
+      "master_files_checked": 56,
+      "main_lesson_masters_changed": 17,
+      "grammar_lesson_sections_reworked": 24,
+      "known_baseline_rejected_fragments": 15,
+      "remaining_flagged_fragments": 0,
+      "explanatory_paragraphs_checked": 169,
+      "native_tables_total": 101,
+      "checker": "../Base/build/check-grammar-clarity.py",
+      "report": "Sources/Grammar-visual-clarity-20261102/grammar-clarity-scan.json",
+      "limitations": "Pattern checks supplement complete editorial review. Table counts alone do not establish educational or visual quality."
     },
     "live_viewer": {
-      "completed": true,
-      "content_commit": "e78aeb5929d3f5c3ec84a87e66cad763222338b0",
-      "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=spacing3d-e78aeb5929d3#practice-grammar-3d",
-      "scope": "Latest3D spacing fix; all other150PDFpages pixel-identical to verified baseline",
-      "standalone_and_assembled_labels_separate": true,
-      "all_changed_files_match": 13,
-      "viewer_report": "Sources/Grammar-3D-spacing-20261102/live-viewer-verification.json",
-      "file_report": "Sources/Grammar-3D-spacing-20261102/live-file-verification.json",
-      "failures": []
+      "completed": false,
+      "status": "Publication pending; local 24-check verification passed."
     }
   },
   "new_objects": "Images/Editorial-objects/manifest.json",
@@ -674,9 +820,9 @@
         "Practice"
       ],
       "fingerprint": {
-        "files": 990,
-        "bytes": 700075026,
-        "sha256": "d532e82eca8e5a088bf339abe060b1010e1dff1ae3f1f492f2b4179649d297bf"
+        "files": 1018,
+        "bytes": 700658785,
+        "sha256": "14104dc9c604a1d91a0339fe5232d9bd7c566fe70df65da28856dc5e2702f56b"
       },
       "normalize_text_line_endings": true
     },
@@ -686,9 +832,9 @@
       ],
       "exclude_markdown": true,
       "fingerprint": {
-        "files": 21,
-        "bytes": 99316,
-        "sha256": "e539059f78667f04798306b914194acc904c84aea1fbb41c39b1f55ccd918a8b"
+        "files": 22,
+        "bytes": 102398,
+        "sha256": "e03eb8e79c44a7ee81e80a35dee4b705488331af126c8b6d995ca3fd40dfeb6e"
       },
       "normalize_text_line_endings": true
     },
@@ -698,8 +844,8 @@
       ],
       "fingerprint": {
         "files": 1,
-        "bytes": 50196017,
-        "sha256": "83b8a28fdeee18c43751f09229b6739d532b836c6ac4dda2f537f6929bf6817c"
+        "bytes": 50203016,
+        "sha256": "414f4a0a00302d0e5a5e1de6630770b95db8ff780debbbc7d398da3fb4c39b7b"
       },
       "normalize_text_line_endings": true
     },
@@ -723,8 +869,8 @@
       ],
       "fingerprint": {
         "files": 15,
-        "bytes": 183664,
-        "sha256": "3b62ae403a86728e012e22e5e4b7878392a464c599b0260663c14c640f93a24f"
+        "bytes": 189442,
+        "sha256": "0a86ce3f12aa8847a69dce20fd186231762ee80e105c6d64a2f1208e5f501429"
       },
       "normalize_text_line_endings": true
     }
@@ -735,7 +881,7 @@
     "priority": "Warm adult playfulness, saturated local colour, tactile concept metaphors and protected letter/number graphics; functional consistency does not mean visual uniformity.",
     "regression_baseline": "8069492116058e45846c79601c66ebd8a3207abb",
     "protected_register": "Sources/Visual-personality.json",
-    "verification": "Core lesson content/images/audio preserved except actual Go-to page references. Seventeen unaffected core PDF pages pixel-identical. Four practical-language and first three credit bodies preserved, apart from one-row divider antialias. Root reviewed all71G/V pages in contacts; independent editor reviewed the5changed compositions and8neighbours.",
+    "verification": "All 45 changed saved-PDF pages pass root and independent editorial review. All other 106 pages are pixel-identical to the immediate baseline. Preferred art, recordings, learning activities, protected expressive number/alphabet objects and functional colours remain intact.",
     "functional_tool_counts": {
       "grammar": 25,
       "pronunciation": 1,
@@ -1060,11 +1206,12 @@
     "lesson_headers": "Exact source header per section; maximum2consecutive lesson sections per page, source order, separate navigation destinations."
   },
   "author_feedback": {
-    "date": "2026-11-01",
+    "date": "2026-11-02",
     "vocabulary_practice_approach": "Fresh activities endorsed; add complete study word banks before the approved activities, including all necessary topic vocabulary for test revision.",
-    "grammar_practice": "Remove inline explanatory prose; use compact charts, arrows, diagrams, short labels and complete models. Do not overdo present simple or spread excess detail to other pages.",
+    "grammar_practice": "Abolish compressed inline grammar explanation chains throughout all lessons and banks. Dots, slashes, arrows, bold text or new lines do not convert prose into a diagram. Use real labelled charts, aligned complete examples, or selective actual word-movement transformations. Keep ordinary teaching type and response space; avoid unnecessary detail.",
     "practice_artwork": "Replace all vector-like pictorial graphics with imagegen-quality images. Every vocabulary study and activity page must use useful pictures or cutouts.",
     "vocabulary_adjacency": "Keep each lesson word bank beside its matching practice; short sets can share one page.",
-    "practice_headers": "Retain main lesson headers and codes. Two consecutive short lesson sections may share a page if they fit comfortably; preserve readability and writing space."
+    "practice_headers": "Retain main lesson headers and codes. Two consecutive short lesson sections may share a page if they fit comfortably; preserve readability and writing space.",
+    "grammar_scope": "Applies to the main lessons, reviews, grammar banks and grammatical form references in vocabulary/practical banks. Preserve actual reading/listening texts, activity prompts, ordinary lexical definitions and genuine spatial/timeline diagrams."
   }
 }

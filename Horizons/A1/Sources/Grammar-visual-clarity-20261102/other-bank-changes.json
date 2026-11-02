@@ -1,0 +1,156 @@
+{
+  "reviewed_vocabulary_files": 8,
+  "reviewed_practical_language_files": 4,
+  "changes": [
+    {
+      "file": "V4.html",
+      "page": 118,
+      "original": "an egg → eggs · a tomato → tomatoes a banana → bananas · an apple → apples",
+      "replacement": {
+        "headers": [
+          "One",
+          "More than one"
+        ],
+        "rows": [
+          [
+            "an egg",
+            "eggs"
+          ],
+          [
+            "a tomato",
+            "tomatoes"
+          ],
+          [
+            "a banana",
+            "bananas"
+          ],
+          [
+            "an apple",
+            "apples"
+          ]
+        ]
+      }
+    },
+    {
+      "file": "V7.html",
+      "page": 136,
+      "original": "July 12th → July twelfth / the twelfth of July",
+      "replacement": {
+        "headers": [
+          "Write",
+          "Say"
+        ],
+        "rows": [
+          [
+            "July 12th",
+            "July twelfth"
+          ],
+          [
+            "July 12th",
+            "the twelfth of July"
+          ]
+        ]
+      }
+    },
+    {
+      "file": "V7.html",
+      "page": 138,
+      "original": "More print practice: work → worked · start → started · need → needed",
+      "replacement": {
+        "headers": [
+          "Verb",
+          "Past"
+        ],
+        "rows": [
+          [
+            "work",
+            "worked"
+          ],
+          [
+            "start",
+            "started"
+          ],
+          [
+            "need",
+            "needed"
+          ]
+        ]
+      }
+    },
+    {
+      "file": "V7.html",
+      "page": 138,
+      "original": "play the guitar · dance → danced stay at home → stayed at home cook → cooked",
+      "replacement": {
+        "headers": [
+          "Verb or phrase",
+          "Past"
+        ],
+        "rows": [
+          [
+            "play the guitar",
+            "played the guitar"
+          ],
+          [
+            "dance",
+            "danced"
+          ],
+          [
+            "stay at home",
+            "stayed at home"
+          ],
+          [
+            "cook",
+            "cooked"
+          ]
+        ]
+      }
+    },
+    {
+      "file": "V8.html",
+      "page": 145,
+      "original": "one arm → two arms · one leg → two legs one foot → two feet",
+      "replacement": {
+        "headers": [
+          "One",
+          "Two"
+        ],
+        "rows": [
+          [
+            "one arm",
+            "two arms"
+          ],
+          [
+            "one leg",
+            "two legs"
+          ],
+          [
+            "one foot",
+            "two feet"
+          ]
+        ]
+      }
+    },
+    {
+      "file": "C8.html",
+      "original": "Ask → repeat → confirm",
+      "replacement": "Three numbered steps: Ask, Repeat, Confirm.",
+      "page": 151
+    }
+  ],
+  "scope_note": "Lexical definitions, single question/reply pairs and real travel/sequence diagrams remain valid. Grammar morphology chains now use explicit form charts.",
+  "independent_review_followup": [
+    {
+      "page": 138,
+      "change": "All14regular verb pairs consolidated into two parallel Verb/Past tables; lexical markers preserved on rows."
+    },
+    {
+      "page": 139,
+      "change": "Irregular reference uses separate Verb/Past/Useful chunk columns."
+    },
+    {
+      "page": 145,
+      "change": "Word/Meaning chart replaces the a cold/cold compressed definition pair."
+    }
+  ]
+}

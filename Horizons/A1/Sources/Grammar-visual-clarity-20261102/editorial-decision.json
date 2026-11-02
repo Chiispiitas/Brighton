@@ -1,0 +1,179 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-02",
+  "edition": "Horizons A1",
+  "baseline_commit": "cdae9fefa0adda5639a0f53e372a1a19969b1025",
+  "safety_branch": "safety/horizons-before-grammar-visual-clarity-20261102",
+  "pdf": {
+    "path": "../../Student's Book.pdf",
+    "sha256": "98d3e8b12f376d9153eb67754b663fae2e49842b0e641bd706229871c3d40b7b",
+    "bytes": 50203016,
+    "physical_pages": 151,
+    "printed_page_range": [
+      5,
+      155
+    ]
+  },
+  "decision": "Pass for the requested grammar-clarity correction; author acceptance is not claimed.",
+  "request": "Abolish compressed inline grammar explanation prose throughout the book, including subject-to-be/contraction chains and same-line Usually/Now contrasts.",
+  "policy": {
+    "required": [
+      "Use real tables with explicit column and row relationships for forms, spelling, contractions and meanings.",
+      "Use aligned complete example sentences for positive, negative and question forms and for contextual contrasts.",
+      "Use genuine spatial word movement or insertion diagrams where they teach a transformation.",
+      "Preserve readable 10 pt ordinary teaching models and the established functional label roles."
+    ],
+    "prohibited": [
+      "Inline subject-to-form arrow chains joined with middle dots or slash-delimited rule fragments.",
+      "Contraction lists presented as punctuation chains rather than aligned full models.",
+      "Same-line Usually/Now explanations that hide the contrast in prose.",
+      "Formulaic plus-rules used as explanatory prose."
+    ],
+    "retained": [
+      "Accurate existing charts and pictorial meaning diagrams.",
+      "Genuine spatial arrows, word movement and insertion, timelines, and task-serving maps.",
+      "Authentic readings, dialogue, task directions, questions, source facts and response models."
+    ]
+  },
+  "scope": {
+    "main_lessons_audited": 32,
+    "main_lessons_changed": [
+      "2D",
+      "4A",
+      "4B",
+      "4C",
+      "4D",
+      "5A",
+      "5B",
+      "5C",
+      "6C",
+      "6D",
+      "7A",
+      "7B",
+      "7C",
+      "7D",
+      "8A",
+      "8B",
+      "8C"
+    ],
+    "main_lesson_coverage_report": "main-lesson-changes.json",
+    "grammar_practice_masters_audited": 8,
+    "vocabulary_masters_audited": 8,
+    "practical_language_masters_audited": 4,
+    "explanatory_source_masters_scanned": 56,
+    "changed_printed_pages": [
+      19,
+      32,
+      34,
+      35,
+      37,
+      42,
+      44,
+      45,
+      53,
+      55,
+      60,
+      62,
+      64,
+      66,
+      68,
+      70,
+      72,
+      78,
+      79,
+      80,
+      81,
+      82,
+      83,
+      84,
+      86,
+      87,
+      88,
+      89,
+      90,
+      91,
+      92,
+      93,
+      94,
+      95,
+      96,
+      97,
+      98,
+      99,
+      100,
+      118,
+      136,
+      138,
+      139,
+      145,
+      151
+    ],
+    "changed_page_count": 45,
+    "baseline_pixel_identical_pages": 106
+  },
+  "editorial_change_reports": [
+    "main-lesson-changes.json",
+    "grammar-1-4-changes.json",
+    "grammar-5-8-changes.json",
+    "other-bank-changes.json"
+  ],
+  "preservation": {
+    "total_activities": 400,
+    "core_activities": 253,
+    "practice_activities_including_practical_language": 147,
+    "marked_lexical_occurrences": 476,
+    "saved_pdf_pages": 151,
+    "response_fields": 368,
+    "blank_24mm_qr_spaces": 16,
+    "internal_links_verified": 367,
+    "original_activity_and_source_text_preserved": true,
+    "lexical_inventory_preserved": true,
+    "existing_media_and_order_preserved": true,
+    "audio_scripts_answer_keys_artwork_unchanged": true,
+    "new_images_or_audio": false,
+    "report": "content-preservation.json"
+  },
+  "readability_and_fit": {
+    "ordinary_teaching_models_pt": 10,
+    "response_area_sizes_preserved": true,
+    "no_font_shrink_to_force_fit": true,
+    "all_page_and_field_checks_pass": true,
+    "standalone_and_assembled_parity_pass": true,
+    "reports": [
+      "all-layout.json",
+      "final-response-layout.json",
+      "final-qr-bounds.json",
+      "header-and-font-checks.json",
+      "standalone-assembled-parity.json",
+      "independent-bank-type-evidence.json"
+    ]
+  },
+  "source_and_saved_pdf_checks": {
+    "grammar_rule_scanner": "grammar-clarity-scan.json",
+    "saved_pdf_validation": "pdf-validation.json",
+    "independent_review_summary": "saved-PDF-review.json",
+    "local_viewer_verification": "local-viewer-verification.json"
+  },
+  "review_followup": {
+    "final_refined_printed_pages": [
+      62,
+      138,
+      139,
+      145
+    ],
+    "resolved_changes": [
+      "7B date models separated into Month/Year/Date cells and a separate complete Question/Answer pair.",
+      "Regular-past lexical reference arranged in two parallel Verb/Past tables.",
+      "Irregular-past lexical reference arranged as Verb/Past/Useful chunk columns.",
+      "Cold lexical distinction arranged in an explicit Word/Meaning chart."
+    ],
+    "no_remaining_reported_defects": true
+  },
+  "limits": [
+    "This evidence records the requested grammar clarity correction, not a redesign or independent regrade of every activity.",
+    "No new subjective audio review was performed. Existing audio, media and answer-key content was preserved.",
+    "Publication and live-site release verification are handled separately by the parent task.",
+    "No author approval or final acceptance by the user is claimed."
+  ],
+  "author_approval_claimed": false
+}

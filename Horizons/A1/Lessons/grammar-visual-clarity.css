@@ -1,0 +1,28 @@
+/* Grammar reference uses aligned examples, never compressed rule paragraphs. */
+.hz-page.hz-content .hz-focus-box .gvc-table {width:100%;table-layout:fixed;border-collapse:collapse;font:400 10pt/1.24 var(--hz-font-sans);margin:.6mm 0;}
+.hz-page.hz-content .hz-focus-box .gvc-table th,.hz-page.hz-content .hz-focus-box .gvc-table td {font:inherit;font-size:10pt;vertical-align:top;text-align:left;padding:.5mm 1.6mm;border-bottom:.2mm solid #c7d4df;}
+.hz-page.hz-content .hz-focus-box .gvc-table th {font-weight:650;color:var(--hz-unit-dark,#245b9a);background:#eef3f8;}
+.hz-page.hz-content .hz-focus-box .gvc-table th+th,.hz-page.hz-content .hz-focus-box .gvc-table td+td {border-left:.2mm solid #dce3e8;}
+.hz-page.hz-content .hz-focus-box .gvc-repair th {background:transparent;}
+.hz-page.hz-content .hz-focus-box .gvc-repair td:first-child {color:#50585b;}
+.hz-page.hz-content .hz-focus-box .gvc-model-pair {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:1mm 4mm;margin:1.4mm 0;}
+.hz-page.hz-content .hz-focus-box .gvc-model-trio {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:1mm 4mm;margin:1.4mm 0;}
+.hz-page.hz-content .hz-focus-box .gvc-model-pair p,.hz-page.hz-content .hz-focus-box .gvc-model-trio p {margin:0;font:400 10pt/1.28 var(--hz-font-sans);}
+.hz-page.hz-content .hz-focus-box .gvc-label {margin:0 0 1mm;font:650 10pt/1.2 var(--hz-font-sans);color:var(--hz-unit-dark,#245b9a);}
+.hz-page.hz-content .hz-focus-box .gvc-chunks {display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:3mm;margin:2mm 0;font:400 10pt/1.25 var(--hz-font-sans);}
+.hz-page.hz-content .hz-focus-box .gvc-pronoun-map th,.hz-page.hz-content .hz-focus-box .gvc-pronoun-map td {text-align:center;padding-inline:.7mm;}
+.hz-page.hz-content .hz-focus-box .gvc-pronoun-map th:first-child,.hz-page.hz-content .hz-focus-box .gvc-pronoun-map td:first-child {text-align:left;}
+.hz-page.hz-content .hz-focus-box .gvc-verb-forms th,.hz-page.hz-content .hz-focus-box .gvc-verb-forms td,.hz-page.hz-content .hz-focus-box .gvc-ordinals th,.hz-page.hz-content .hz-focus-box .gvc-ordinals td {padding-inline:1mm;}
+.hz-page.hz-content .hz-focus-box .gvc-transform-table {margin:.8mm 0;}
+.hz-page.hz-content .hz-focus-box .gvc-transform-table .gvc-transform-arrow {width:7mm;}
+.hz-page.hz-content .hz-focus-box .gvc-transform-table td {border:0;padding:.3mm .7mm;}
+.hz-page.hz-content .hz-focus-box .gvc-transform-table td:nth-child(2) {text-align:center;color:var(--hz-unit-dark,#245b9a);}
+.hz-page.hz-content .hz-focus-box .gvc-model-pair--compact {margin:0;align-items:start;}
+.hz-page.hz-content .hz-focus-box .gvc-model-pair--compact .gvc-transform-table {margin:0;}
+.hz-page.hz-content .hz-focus-box .gvc-model-pair--compact p {margin:0!important;}
+.hz-page.hz-content .hz-focus-box .u8-focus-last .gvc-model-pair {margin:0;}
+.hz-page.hz-content .hz-focus-box .u8-focus-last.gvc-compact-last {margin-top:.5mm;padding-top:.6mm;}
+.hz-page.hz-content .hz-focus-box .gvc-date-cells {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4mm;}
+.hz-page.hz-content .hz-focus-box .gvc-cell-label {display:block;margin:0 0 .4mm;font:650 10pt/1.15 var(--hz-font-sans);color:var(--hz-unit-dark,#245b9a);}
+.hz-page.hz-content .hz-focus-box .gvc-date-cells p {margin:0;font:400 10pt/1.28 var(--hz-font-sans);}
+.hz-page.hz-content .hz-focus-box .gvc-date-reference .gvc-question-answer {margin-top:1mm;}

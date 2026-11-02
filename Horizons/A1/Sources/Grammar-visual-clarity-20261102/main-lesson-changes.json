@@ -1,0 +1,437 @@
+{
+  "scope": "All32main lessons, including grammar content in skills/communication/writing panels",
+  "coverage": [
+    {
+      "lesson": "1A",
+      "status": "no compressed explanatory prose found; valid charts/models or no relevant panel retained"
+    },
+    {
+      "lesson": "1B",
+      "status": "no compressed explanatory prose found; valid charts/models or no relevant panel retained"
+    },
+    {
+      "lesson": "1C",
+      "status": "no compressed explanatory prose found; valid charts/models or no relevant panel retained"
+    },
+    {
+      "lesson": "1D",
+      "status": "no compressed explanatory prose found; valid charts/models or no relevant panel retained"
+    },
+    {
+      "lesson": "2A",
+      "status": "no compressed explanatory prose found; valid charts/models or no relevant panel retained"
+    },
+    {
+      "lesson": "2B",
+      "status": "no compressed explanatory prose found; valid charts/models or no relevant panel retained"
+    },
+    {
+      "lesson": "2C",
+      "status": "no compressed explanatory prose found; valid charts/models or no relevant panel retained"
+    },
+    {
+      "lesson": "2D",
+      "status": "revised"
+    },
+    {
+      "lesson": "3A",
+      "status": "no compressed explanatory prose found; valid charts/models or no relevant panel retained"
+    },
+    {
+      "lesson": "3B",
+      "status": "no compressed explanatory prose found; valid charts/models or no relevant panel retained"
+    },
+    {
+      "lesson": "3C",
+      "status": "no compressed explanatory prose found; valid charts/models or no relevant panel retained"
+    },
+    {
+      "lesson": "3D",
+      "status": "no compressed explanatory prose found; valid charts/models or no relevant panel retained"
+    },
+    {
+      "lesson": "4A",
+      "status": "revised"
+    },
+    {
+      "lesson": "4B",
+      "status": "revised"
+    },
+    {
+      "lesson": "4C",
+      "status": "revised"
+    },
+    {
+      "lesson": "4D",
+      "status": "revised"
+    },
+    {
+      "lesson": "5A",
+      "status": "revised"
+    },
+    {
+      "lesson": "5B",
+      "status": "revised"
+    },
+    {
+      "lesson": "5C",
+      "status": "revised"
+    },
+    {
+      "lesson": "5D",
+      "status": "no compressed explanatory prose found; valid charts/models or no relevant panel retained"
+    },
+    {
+      "lesson": "6A",
+      "status": "no compressed explanatory prose found; valid charts/models or no relevant panel retained"
+    },
+    {
+      "lesson": "6B",
+      "status": "no compressed explanatory prose found; valid charts/models or no relevant panel retained"
+    },
+    {
+      "lesson": "6C",
+      "status": "revised"
+    },
+    {
+      "lesson": "6D",
+      "status": "revised"
+    },
+    {
+      "lesson": "7A",
+      "status": "revised"
+    },
+    {
+      "lesson": "7B",
+      "status": "revised"
+    },
+    {
+      "lesson": "7C",
+      "status": "revised"
+    },
+    {
+      "lesson": "7D",
+      "status": "revised"
+    },
+    {
+      "lesson": "8A",
+      "status": "revised"
+    },
+    {
+      "lesson": "8B",
+      "status": "revised"
+    },
+    {
+      "lesson": "8C",
+      "status": "revised"
+    },
+    {
+      "lesson": "8D",
+      "status": "no compressed explanatory prose found; valid charts/models or no relevant panel retained"
+    }
+  ],
+  "changed_lessons": [
+    "2D",
+    "4A",
+    "4B",
+    "4C",
+    "4D",
+    "5A",
+    "5B",
+    "5C",
+    "6C",
+    "6D",
+    "7A",
+    "7B",
+    "7C",
+    "7D",
+    "8A",
+    "8B",
+    "8C"
+  ],
+  "changes": [
+    {
+      "lesson": "2D",
+      "selector": "[data-hz-tool=\"grammar\"] table",
+      "original": "English Español a black phone · before the item un teléfono negro My phone is black . · after is Mi teléfono es negro .",
+      "replacement": "Position English Español Before the item a black phone un teléfono negro After be My phone is black . Mi teléfono es negro ."
+    },
+    {
+      "lesson": "4A",
+      "selector": "section[aria-labelledby=\"l4a-countable-title\"] .hz-grammar-concept__rule",
+      "original": "Use a or an with one. Two or more: use the plural.",
+      "replacement": "One Two or more a tomato two tomato es an apple two apple s"
+    },
+    {
+      "lesson": "4A",
+      "selector": "section[aria-labelledby=\"l4a-uncountable-title\"] .hz-grammar-concept__rule",
+      "original": "No a or an . a rice → rice No plural -s .",
+      "replacement": "Not like this Like this a rice rice rices rice"
+    },
+    {
+      "lesson": "4B",
+      "selector": "[data-hz-tool=\"grammar\"] .hz-concept-grid",
+      "original": "I → me · you → you he → him · she → her it → it · we → us they → them",
+      "replacement": "Subject I you he she it we they Object me you him her it us them"
+    },
+    {
+      "lesson": "4B",
+      "selector": "[data-hz-tool=\"grammar\"] .hz-concept-note",
+      "original": "After the verb: Max helps me . I help him . I help you .",
+      "replacement": "Max helps me . I help him . I help you ."
+    },
+    {
+      "lesson": "4C",
+      "selector": "[data-hz-tool=\"grammar\"] .hz-concept-note",
+      "original": "Enough and not enough go before the noun.",
+      "replacement": ""
+    },
+    {
+      "lesson": "4C",
+      "selector": "[data-hz-tool=\"grammar\"] .hz-concept-flow",
+      "original": "cheese enough tomatoes not enough → → enough cheese not enough tomatoes",
+      "replacement": "Not like this Like this cheese enough enough cheese tomatoes not enough not enough tomatoes"
+    },
+    {
+      "lesson": "4D",
+      "selector": "[aria-label=\"Skills: because and so\"] .hz-focus-box__body",
+      "original": "Because: Why? I share them because I don't need them. So: result I have too many apples , so four apples are free. Use a comma before so .",
+      "replacement": "Reason Result I share them because I don't need them. I have too many apples , so four apples are free."
+    },
+    {
+      "lesson": "5A",
+      "selector": "[data-hz-tool=\"grammar\"] .hz-focus-box__body >p:first-child",
+      "original": "For actions now : use am , is or are and a verb ending in -ing .",
+      "replacement": "Now"
+    },
+    {
+      "lesson": "5A",
+      "selector": ".l5a-forms affirmative column",
+      "original": "I’m wearing a hat. She’s reading. They’re talking.",
+      "replacement": "I am wearing a hat. She is reading. They are talking.",
+      "reason": "Expose auxiliary agreement in complete parallel models, without a compressed rule paragraph."
+    },
+    {
+      "lesson": "5A",
+      "selector": ".l5a-now-contrast",
+      "original": "I usually wear black. Now, I ’m wearing blue.",
+      "replacement": "Usually Now I wear black. I am wearing blue."
+    },
+    {
+      "lesson": "5B",
+      "selector": "[data-hz-tool=\"grammar\"] .l5b-grammar",
+      "original": "More than we need What we need The jacket is too big . The bag is big enough . too + adjective adjective + enough",
+      "replacement": "More than we need What we need We need more The jacket is too big . The bag is big enough . The bag isn’t big enough ."
+    },
+    {
+      "lesson": "5B",
+      "selector": "[data-hz-tool=\"grammar\"] .hz-concept-note",
+      "original": "Not what we need: The bag isn’t big enough .",
+      "replacement": ""
+    },
+    {
+      "lesson": "5B",
+      "selector": "[data-hz-tool=\"grammar\"] .l5b-correct",
+      "original": "It’s enough big. → It’s big enough .",
+      "replacement": "Not like this Like this It’s enough big. It’s big enough ."
+    },
+    {
+      "lesson": "5C",
+      "selector": "[data-hz-tool=\"grammar\"] .l5c-every",
+      "original": "Every + singular noun: every day / week / month / year every weeks → every week every a week → every week",
+      "replacement": "every day every week every month every year Not like this Like this every weeks every week every a week every week"
+    },
+    {
+      "lesson": "6C",
+      "selector": "[data-hz-tool=\"communication\"] .l6c-form",
+      "original": "Start with the verb: Go straight. Goes straight.",
+      "replacement": "Not like this Like this Goes straight. Go straight."
+    },
+    {
+      "lesson": "6D",
+      "selector": "[data-hz-tool=\"grammar\"] .l6d-can-form",
+      "original": "After can / can’t, use come , walk , go …",
+      "replacement": ""
+    },
+    {
+      "lesson": "6D",
+      "selector": "[data-hz-tool=\"grammar\"] .l6d-can-fix",
+      "original": "She can comes. → She can come . Do you can go? → Can you go?",
+      "replacement": "Not like this Like this She can comes. She can come . Do you can go? Can you go?"
+    },
+    {
+      "lesson": "7A",
+      "selector": "[data-hz-tool=\"grammar\"] .u7-two >div:first-child",
+      "original": "Past I / he / she / it was at home. You / we / they were at home. I wasn’t online. We weren’t online.",
+      "replacement": "Subject Past Negative I / he / she / it I was at home. I wasn’t online. you / we / they You were at home. We weren’t online."
+    },
+    {
+      "lesson": "7A",
+      "selector": "[data-hz-tool=\"grammar\"] .u7-focus-last",
+      "original": "Where were you? At home. We was at school. → We were at school.",
+      "replacement": "Where were you? At home. Not like this Like this We was at school. We were at school."
+    },
+    {
+      "lesson": "7B",
+      "selector": "[data-hz-tool=\"grammar\"] .hz-focus-box__body >p:nth-last-child(2)",
+      "original": "Most dates end in -th : 4th, 6th, 17th.",
+      "replacement": ""
+    },
+    {
+      "lesson": "7B",
+      "selector": "[data-hz-tool=\"grammar\"] .hz-focus-box__body >p:last-child",
+      "original": "1st = first · 2nd = second · 3rd = third",
+      "replacement": "1st 2nd 3rd 4th 6th 17th first second third fourth sixth seventeenth"
+    },
+    {
+      "lesson": "7C",
+      "selector": "[data-hz-tool=\"grammar\"] .u7-two >div:first-child >p:last-child",
+      "original": "I didn’t played. → I didn’t play .",
+      "replacement": "Not like this Like this I didn’t played. I didn’t play ."
+    },
+    {
+      "lesson": "7C",
+      "selector": "[data-hz-tool=\"grammar\"] .u7-forms-row",
+      "original": "play → played live → lived study → studied plan → planned",
+      "replacement": "Verb play live study plan Past play ed live d stud ied plan ned"
+    },
+    {
+      "lesson": "7D",
+      "selector": "[data-hz-tool=\"writing\"] .u7-focus-last",
+      "original": "Use past verbs: I went . I saw a friend. I didn’t went. → I didn’t go .",
+      "replacement": "I went . I saw a friend. Not like this Like this I didn’t went. I didn’t go ."
+    },
+    {
+      "lesson": "8A",
+      "selector": "[data-hz-tool=\"grammar\"] .u8-three",
+      "original": "arrive → arriv ed stay → stay ed visit → visit ed travel → travel ed take → took leave → left",
+      "replacement": "Verb arrive stay visit travel take leave Past arriv ed stay ed visit ed travel ed took left"
+    },
+    {
+      "lesson": "8A",
+      "selector": "[data-hz-tool=\"grammar\"] .u8-focus-last",
+      "original": "I took photos . I left my bag at the hotel.",
+      "replacement": "I took photos . I left my bag at the hotel."
+    },
+    {
+      "lesson": "8B",
+      "selector": "[data-hz-tool=\"grammar\"] .u8-focus-last",
+      "original": "She should wears a coat. → She should wear a coat.",
+      "replacement": "Not like this Like this She should wears a coat. She should wear a coat."
+    },
+    {
+      "lesson": "8C",
+      "selector": "[data-hz-tool=\"communication\"] .u8-focus-last",
+      "original": "I am a cold. → I have a cold . Can you go tomorrow? No, I can’t . Can we go on Sunday?",
+      "replacement": "Not like this Like this I am a cold. I have a cold . Can you go tomorrow? No, I can’t . Can we go on Sunday?"
+    },
+    {
+      "lesson": "4A",
+      "selector": ".gvc-repair",
+      "original": "Not like this Like this a rice rice rices rice",
+      "replacement": "a rice → rice rices → rice"
+    },
+    {
+      "lesson": "4C",
+      "selector": ".gvc-repair",
+      "original": "Not like this Like this cheese enough enough cheese tomatoes not enough not enough tomatoes",
+      "replacement": "cheese enough → enough cheese tomatoes not enough → not enough tomatoes"
+    },
+    {
+      "lesson": "5B",
+      "selector": ".gvc-repair",
+      "original": "Not like this Like this It’s enough big. It’s big enough .",
+      "replacement": "It’s enough big. → It’s big enough ."
+    },
+    {
+      "lesson": "5C",
+      "selector": ".gvc-repair",
+      "original": "Not like this Like this every weeks every week every a week every week",
+      "replacement": "every weeks → every week every a week → every week"
+    },
+    {
+      "lesson": "6C",
+      "selector": ".gvc-repair",
+      "original": "Not like this Like this Goes straight. Go straight.",
+      "replacement": "Goes straight. → Go straight."
+    },
+    {
+      "lesson": "6D",
+      "selector": ".gvc-repair",
+      "original": "Not like this Like this She can comes. She can come . Do you can go? Can you go?",
+      "replacement": "She can comes. → She can come . Do you can go? → Can you go?"
+    },
+    {
+      "lesson": "7A",
+      "selector": ".gvc-repair",
+      "original": "Not like this Like this We was at school. We were at school.",
+      "replacement": "We was at school. → We were at school."
+    },
+    {
+      "lesson": "7C",
+      "selector": ".gvc-repair",
+      "original": "Not like this Like this I didn’t played. I didn’t play .",
+      "replacement": "I didn’t played. → I didn’t play ."
+    },
+    {
+      "lesson": "7D",
+      "selector": ".gvc-repair",
+      "original": "Not like this Like this I didn’t went. I didn’t go .",
+      "replacement": "I didn’t went. → I didn’t go ."
+    },
+    {
+      "lesson": "8B",
+      "selector": ".gvc-repair",
+      "original": "Not like this Like this She should wears a coat. She should wear a coat.",
+      "replacement": "She should wears a coat. → She should wear a coat."
+    },
+    {
+      "lesson": "8C",
+      "selector": ".gvc-repair",
+      "original": "Not like this Like this I am a cold. I have a cold .",
+      "replacement": "I am a cold. → I have a cold ."
+    },
+    {
+      "lesson": "4A",
+      "selector": "section[aria-labelledby=\"l4a-countable-title\"] .gvc-table tbody tr:last-child",
+      "original": "an apple two apple s",
+      "replacement": ""
+    },
+    {
+      "lesson": "5C",
+      "selector": "[data-hz-tool=\"grammar\"] .gvc-transform-table",
+      "original": "every weeks → every week every a week → every week",
+      "replacement": ""
+    },
+    {
+      "lesson": "7A",
+      "selector": "[data-hz-tool=\"grammar\"] .u7-focus-last",
+      "original": "Where were you? At home. We was at school. → We were at school.",
+      "replacement": "Where were you? At home. We was at school. → We were at school."
+    },
+    {
+      "lesson": "7D",
+      "selector": "[data-hz-tool=\"writing\"] .u7-focus-last",
+      "original": "I went . I saw a friend. I didn’t went. → I didn’t go .",
+      "replacement": "I went . I saw a friend. I didn’t went. → I didn’t go ."
+    },
+    {
+      "lesson": "8C",
+      "selector": "[data-hz-tool=\"communication\"] .u8-focus-last",
+      "original": "I am a cold. → I have a cold . Can you go tomorrow? No, I can’t . Can we go on Sunday?",
+      "replacement": "I am a cold. → I have a cold . Can you go tomorrow? No, I can’t . Can we go on Sunday?"
+    },
+    {
+      "lesson": "7B",
+      "selector": "[data-hz-tool=\"grammar\"] .l7b-date-models",
+      "original": "In July. In 1997. On July 12th. When were you born ? On July 12th.",
+      "replacement": "Month In July. Year In 1997. Date On July 12th. Question When were you born ? Answer On July 12th."
+    }
+  ],
+  "protected": "All exercises, task directions, readings, source dialogues, pictures, audio badges, response fields and real page/lesson links remain unchanged. Only explanation models/arrangement changed.",
+  "new_same_lesson_models": "4A uses tomato/tomatoes, already in4Afood vocabulary and exercises, to retain a/an and plural meaning without prose.7B displays the known spoken ordinal words in a chart.5A contracts expanded in affirmative examples to make am/is/are explicit.",
+  "ordinary_teaching_pt": 10,
+  "fit_refinements": "Duplicate wrong/right headings removed in favor of spatial correction rows.4Aapplecountability model stays in picture captions, with tomato model in compact chart.5Credundant wrong-word repairs removed because all four complete every-chunks show the singular pattern.7A/7D/8C preserve full models in parallel columns. No task, image or response-field changes.",
+  "shared_style_note": "Grammarvisualclarityselectors include hz-page.hz-content ownership tooverride generic latercompiledparagraph rules, keeping identical10pt/1.28model role in standalone andassembled views.",
+  "independent_review_followup": "Main7Btopdateinput now has Month/Year/Datecells andseparateQuestion/Answerpair, preservingInJuly,In1997,OnJuly12thandthebornquestion. Timeline,ordinalchartandalltasks unchanged."
+}

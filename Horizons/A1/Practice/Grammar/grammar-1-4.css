@@ -189,3 +189,35 @@
 .gp14-page .g1-capital-map p {display:block;font-size:10pt;margin:0 0 1mm;}
 .gp14-page .g1-capital-map p > span {display:inline-block;width:34mm;color:#4b5564;}
 .gp14-page .g1-capital-map b {color:#204f86;font-weight:750;}
+
+/* Visual grammar1–4: actual aligned models replace compressed rule prose. */
+.gp14-page .g14-clarity-table {width:100%;table-layout:fixed;border-collapse:collapse;font:400 10pt/1.25 var(--hz-font-sans);margin:1.2mm 0 2mm;}
+.gp14-page .g14-clarity-table caption {text-align:left;font:650 10pt/1.2 var(--hz-font-sans);color:#344a62;padding:0 0 1.2mm;}
+.gp14-page .g14-clarity-table th,.gp14-page .g14-clarity-table td {font-size:10pt;text-align:left;vertical-align:top;padding:1mm 2mm;border-bottom:.2mm solid #c2d0e2;}
+.gp14-page .g14-clarity-table thead th {font-weight:650;color:#204f86;background:#edf3fb;}
+.gp14-page .g14-clarity-table td > span {display:block;}
+.gp14-page .g14-form-chart th:first-child {width:27mm;}
+.gp14-page .g14-question-chart th:nth-child(1) {width:26mm;}
+.gp14-page .g14-question-chart th:nth-child(2) {width:31mm;}
+.gp14-page .g14-question-chart th:nth-child(4) {width:29mm;}
+.gp14-page .g14-contractions {max-width:140mm;}
+.gp14-page .g14-sound-label {font:650 10pt/1.2 var(--hz-font-sans);color:#445569;margin:0 0 1.5mm;}
+.gp14-page .g14-model-pair {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:5mm;margin:1.5mm 0 2mm;}
+.gp14-page .g14-model-pair h3 {font:650 10pt/1.2 var(--hz-font-sans);margin:0 0 .8mm;color:#445569;}
+.gp14-page .g14-model-pair p {font-size:10pt;margin:0;}
+.gp14-page .g14-owner-cards {display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:4mm;}
+.gp14-page .g14-owner-cards p {display:grid;grid-template-columns:max-content max-content 1fr;gap:1mm 1.5mm;align-items:center;}
+.gp14-page .g14-owner-cards .gp14-owner-label {grid-column:1/-1;display:block;font-size:10pt;line-height:1.2;color:#445569;}
+.gp14-page .g14-food-labels {display:grid;grid-template-columns:1fr 1fr;gap:3mm;font-size:10pt;margin-top:1mm;}
+.gp14-page .g14-wrong-forms {display:flex;gap:3mm;font-size:10pt;align-items:center;}
+.gp14-page .g14-wrong-forms [aria-label="incorrect"] {color:#91442c;font-weight:650;}
+.gp14-page .g14-pronoun-tables {display:grid;grid-template-columns:27mm 27mm minmax(0,1fr);gap:3mm;padding:1.5mm 2mm;background:#f3f7fd;border-top:.4mm solid #779cca;}
+.gp14-page .g14-pronoun-tables .g14-clarity-table {margin:0;line-height:1.2;}
+.gp14-page .g14-pronoun-tables .g14-clarity-table th,.gp14-page .g14-pronoun-tables .g14-clarity-table td {padding:.4mm .7mm;}
+.gp14-page .g14-pronoun-tables .g14-clarity-table th {background:none;}
+.gp14-page .g14-pronoun-tables .g14-clarity-table th + th,.gp14-page .g14-pronoun-tables .g14-clarity-table td + td {border-left:.2mm solid #c2d0e2;padding-left:1.2mm;}
+.gp14-page .g14-clause-models {display:grid;gap:3mm;margin:2mm 0;}
+.gp14-page .g14-clause-model {display:grid;grid-template-columns:minmax(0,1fr) 24mm minmax(0,1fr);gap:3mm;align-items:center;padding:2mm 3mm;border-left:.7mm solid #b56a36;background:#faf6ef;}
+.gp14-page .g14-clause-model h3 {font:650 10pt/1.2 var(--hz-font-sans);color:#72502f;margin:0 0 1mm;}
+.gp14-page .g14-clause-model p {font-size:10pt;margin:0;}
+.gp14-page .g14-clause-model > b {font-size:10pt;text-align:center;color:#204f86;}

@@ -85,3 +85,21 @@
 .gp58-page .gp58-health-rule {font-size:10pt;line-height:1.35;margin:.7mm 0;}
 
 .gp58-page .gp58-date-tight .practice-note {margin:.5mm 0;}
+
+/* Grammar is read through aligned complete models, never inline rule chains. */
+.gp58-page .gp58-context-heading {margin:0 0 1.4mm;font:700 10pt/1.25 var(--hz-font-sans);color:#204f86;}
+.gp58-page .gp58-reference-chart {width:100%;border-collapse:collapse;table-layout:fixed;margin:0 0 2mm;font:400 10pt/1.25 var(--hz-font-sans);}
+.gp58-page .gp58-reference-chart th,.gp58-page .gp58-reference-chart td {padding:.5mm 1.4mm;text-align:left;vertical-align:top;font-size:10pt;border-bottom:.2mm solid #c7d4e4;}
+.gp58-page .gp58-reference-chart th {font-weight:700;color:#204f86;background:#e5edf9;}
+.gp58-page .gp58-reference-chart th+th,.gp58-page .gp58-reference-chart td+td {border-left:.2mm solid #c7d4e4;}
+.gp58-page .gp58-reference-chart:last-child {margin-bottom:0;}
+.gp58-page .gp58-form-chart.gp58-subject-chart th:first-child {width:22%;}
+.gp58-page .gp58-cell-example {display:block;margin-top:.5mm;}
+.gp58-page .gp58-separated-models {display:grid;grid-template-columns:1fr 1fr;gap:5mm;margin:2mm 0 0;}
+.gp58-page .gp58-separated-models h3 {margin:0 0 1mm;font:700 10pt/1.25 var(--hz-font-sans);color:#204f86;}
+.gp58-page .gp58-separated-models p {margin:0;font:400 10pt/1.35 var(--hz-font-sans);}
+.gp58-page .gp58-picture-models {margin:2mm 0 3mm;}
+.gp58-page .gp58-visual-reference {display:grid;grid-template-columns:90mm minmax(0,1fr);gap:5mm;align-items:center;margin-bottom:1mm;}
+.hz-practice-page.gp58-page .gp58-visual-reference .ig-travel-record {margin:0;}
+.gp58-page .gp58-ending-chart th {width:18mm;}
+.gp58-page .gp58-message-models p {margin:1mm 0;}
