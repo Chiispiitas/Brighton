@@ -168,7 +168,7 @@
 #page-81 .gp14-model-pair {display:grid;grid-template-columns:20mm 1fr 1.2fr;gap:3mm;align-items:baseline;margin:1.5mm 0;}
 #page-81 .gp14-model-pair p {margin:0;font-size:10pt;white-space:nowrap;}
 #page-81 .gp14-model-label {font-size:10pt;color:#445569;}
-#page-82 .gp14-position-label {display:block;margin-bottom:.8mm;color:#445569;font-size:10pt;}
+.gp14-page .gp14-position-label {display:block;margin-bottom:.8mm;color:#445569;font-size:10pt;}
 #page-83 .gp14-rice-contrast {margin-top:2mm;font-size:10pt;}
 #page-84 .gp14-clause-label {display:block;margin-top:1.5mm;color:#72502f;font-size:10pt;font-weight:650;}
 

@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "updated": "2026-11-02",
-  "status": "Compact practice edition complete: source, layout, independent saved-PDF and published-viewer verification passed",
+  "status": "Grammar3D spacing corrected; local source/layout and saved-PDF verified; publication verification pending",
   "authority": "Author delegates editorial authority; his own B2 book sets emotional direction. Preserve colourful learning objects and warm adult playfulness alongside coherent functional roles.",
   "scope": "Units1–8:32lessons,4pairedreviews,72corepages;75practicepages and4credits.151physicalA4pages, printed5–155. Front matter,index,workbook andoptionalannexes remainfuturework.",
   "baseline": {
@@ -49,6 +49,9 @@
       "commit": "8729a04578fbffc42efc3b508553550766cfc97c",
       "safety_branch": "safety/horizons-before-compact-practice-20261102",
       "previous_audit": "Audit archive/2026-11-02-before-compact-practice/book-audit.json"
+    },
+    "grammar_3d_spacing": {
+      "commit": "59628ea4652eb651c3d0d3cec553a1d63cd0073e"
     }
   },
   "inventory": {
@@ -165,7 +168,11 @@
     "saved_pdf_review": "Sources/Practice-compact-20261102/saved-PDF-review.json",
     "independent_second_editor": true,
     "author_acceptance_claimed": false,
-    "independent_review": "Sources/Practice-compact-20261102/independent-PDF-review.json"
+    "independent_review": "Sources/Practice-compact-20261102/independent-PDF-review.json",
+    "latest_spacing_correction": {
+      "review": "Sources/Grammar-3D-spacing-20261102/saved-PDF-review.json",
+      "independent_second_editor_this_patch": false
+    }
   },
   "verification": {
     "layout": {
@@ -181,34 +188,23 @@
       "failures": []
     },
     "pdf": {
-      "sha256": "68d90111b76d565858b531284ba9d5cf793374579704076668d20de72d3f7e20",
-      "bytes": 50196018,
+      "sha256": "53ef4da441c978a213de693bc49845e8afe11cb01b5cee8cf732d5ed572abb65",
+      "bytes": 50196017,
       "physical_pages": 151,
       "printed_pages": [
         5,
         155
       ],
+      "strict_pypdf_read": true,
+      "mupdf_warnings": "",
       "a4_failures": [],
       "footer_failures": [],
-      "mupdf_warnings": "",
-      "strict_pypdf_read": true,
       "all_internal_links_verified": 367,
-      "destination_failures": [],
-      "unchanged_core_pages_without_updated_go_to": 17,
-      "protected_core_pixel_differences": [],
-      "practical_and_credit_body_pixel_differences": [],
-      "raster_notes": [
-        {
-          "page": 152,
-          "bbox": [
-            80,
-            353,
-            351,
-            354
-          ],
-          "note": "One-row divider antialias only; body text unchanged."
-        }
-      ]
+      "changed_rendered_pages": [
+        85
+      ],
+      "other150pages_pixel_identical": true,
+      "failures": []
     },
     "preservation": {
       "baseline": "8729a04578fbffc42efc3b508553550766cfc97c",
@@ -470,6 +466,40 @@
         "file_report": "Sources/Practice-lesson-headers-20261101/live-file-verification.json",
         "visual_report": "Sources/Practice-lesson-headers-20261101/live-visual-review.json",
         "failures": []
+      },
+      "compact_practice": {
+        "completed": true,
+        "date": "2026-11-02",
+        "content_commit": "bb087be605e87d089ea33ef483d4e485b85ef86a",
+        "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=compactpractice-bb087be605e8",
+        "pages": 151,
+        "navigation_options": 100,
+        "lesson_section_headers": 74,
+        "paired_pages": 3,
+        "separate_dropdown_destinations_checked": [
+          "grammar2A",
+          "grammar2B",
+          "grammar2C",
+          "grammar2D"
+        ],
+        "physical_previous_next": true,
+        "same_lesson_references": 75,
+        "reference_pairs": 43,
+        "images_decoded": 103,
+        "pictured_vocabulary_pages": 47,
+        "tasks": 147,
+        "blank_qr_reserves": 16,
+        "audio_controls": 90,
+        "audio_tracks_played_and_paused": [
+          "1.1",
+          "8.7"
+        ],
+        "all_changed_files_match": 93,
+        "checks_passed": 20,
+        "viewer_report": "Sources/Practice-compact-20261102/live-viewer-verification.json",
+        "file_report": "Sources/Practice-compact-20261102/live-file-verification.json",
+        "visual_report": "Sources/Practice-compact-20261102/live-visual-review.json",
+        "failures": []
       }
     },
     "local_viewer": {
@@ -479,39 +509,11 @@
       "audio_and_print": true,
       "report": "Sources/Practice-compact-20261102/local-viewer-verification.json"
     },
-    "live_viewer": {
-      "completed": true,
-      "date": "2026-11-02",
-      "content_commit": "bb087be605e87d089ea33ef483d4e485b85ef86a",
-      "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=compactpractice-bb087be605e8",
-      "pages": 151,
-      "navigation_options": 100,
-      "lesson_section_headers": 74,
-      "paired_pages": 3,
-      "separate_dropdown_destinations_checked": [
-        "grammar2A",
-        "grammar2B",
-        "grammar2C",
-        "grammar2D"
-      ],
-      "physical_previous_next": true,
-      "same_lesson_references": 75,
-      "reference_pairs": 43,
-      "images_decoded": 103,
-      "pictured_vocabulary_pages": 47,
-      "tasks": 147,
-      "blank_qr_reserves": 16,
-      "audio_controls": 90,
-      "audio_tracks_played_and_paused": [
-        "1.1",
-        "8.7"
-      ],
-      "all_changed_files_match": 93,
-      "checks_passed": 20,
-      "viewer_report": "Sources/Practice-compact-20261102/live-viewer-verification.json",
-      "file_report": "Sources/Practice-compact-20261102/live-file-verification.json",
-      "visual_report": "Sources/Practice-compact-20261102/live-visual-review.json",
-      "failures": []
+    "grammar_3d_spacing": {
+      "report": "Sources/Grammar-3D-spacing-20261102/spacing-fix.json",
+      "saved_pdf_review": "Sources/Grammar-3D-spacing-20261102/saved-PDF-review.json",
+      "changed_printed_page": 85,
+      "other150pages_pixel_identical": true
     }
   },
   "new_objects": "Images/Editorial-objects/manifest.json",
@@ -661,9 +663,9 @@
         "Practice"
       ],
       "fingerprint": {
-        "files": 981,
-        "bytes": 699816067,
-        "sha256": "68efc7f32e96ac60bf612728b59f07f97f09b683901b3c23c44fa9a6c1574a96"
+        "files": 988,
+        "bytes": 700070695,
+        "sha256": "90580b046d4b1a83dd9b431291451b623c577af47834486e74a496ed7e94e343"
       },
       "normalize_text_line_endings": true
     },
@@ -685,8 +687,8 @@
       ],
       "fingerprint": {
         "files": 1,
-        "bytes": 50196018,
-        "sha256": "f89a2a836303946db8490c2043f763dfee476368cb136d2ff3ae86cd62cbe2c1"
+        "bytes": 50196017,
+        "sha256": "83b8a28fdeee18c43751f09229b6739d532b836c6ac4dda2f537f6929bf6817c"
       },
       "normalize_text_line_endings": true
     },
@@ -710,8 +712,8 @@
       ],
       "fingerprint": {
         "files": 15,
-        "bytes": 182231,
-        "sha256": "0bd6901f05e90ef49e70efa2051d1c4d41a4e474e477f63b087fa99fad78de58"
+        "bytes": 183282,
+        "sha256": "d029e0b9ef559da77f747ab4c7fc8a0e16a29db320a382cb4b30901e4cc1ce79"
       },
       "normalize_text_line_endings": true
     }
