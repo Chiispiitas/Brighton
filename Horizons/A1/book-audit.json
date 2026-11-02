@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "updated": "2026-11-01",
-  "status": "Vocabulary study-first references complete; local source, layout and saved-PDF checks passed; live publication pending",
+  "status": "Vocabulary study-first references complete; source, saved-PDF and published-viewer verification passed",
   "authority": "Author delegates editorial authority; his own B2 book sets emotional direction. Preserve colourful learning objects and warm adult playfulness alongside coherent functional roles.",
   "scope": "Units1–8:32lessons,4pairedreviews,72corepages;51practicepages and4end-creditpages.127physicalpages, printed5–131. Front matter,index,workbook andoptionalannexes remainfuturework.",
   "baseline": {
@@ -179,7 +179,7 @@
       "reviewer": "grammar_1_4 independent agent",
       "baseline_commit": "519aa60491a431cc208005aeb7ffd26c08dae74f",
       "scope": "Final content-preservation check only; no student source edits.",
-      "normalization": "HTML parsed with BeautifulSoup html.parser; compare full serialized .practice-task/img/svg arrays in activity pages. Core comparison removes only .hz-go-to reference elements. Text file comparisons normalize CRLF/LF; original PNGs compare exact bytes. Teacher comparisons retain complete keyed answer paragraphs while excluding page headings/new study-guidance prose.",
+      "normalization": "HTML parsed with BeautifulSoup html.parser; compare full serialized .practice-task/img/svg arrays in activity pages. Core comparison removes only .hz-go-to reference elements. Text file comparisons normalize CRLF/LF; original PNGs compare exact bytes. Teacher comparisons retain complete keyed answer paragraphs/lists while excluding page headings/new study-guidance and resource-note prose. One contiguous numbered list may contain several activity answers; separate activity-item counts are supplied.",
       "summary": {
         "vocabulary_tasks": 68,
         "activity_pages": 18,
@@ -635,46 +635,68 @@
         {
           "file": "Horizons/A1/Answer keys/Grammar practice 1-4.md",
           "keyed_answer_blocks": 36,
+          "keyed_activity_answer_items": 36,
           "all_keyed_answer_blocks_identical": true,
+          "baseline_answer_sha256": "3312ddecc9faec658f6e6372274aa9faa03e625092994f46d62d9205f74a4517",
+          "current_answer_sha256": "3312ddecc9faec658f6e6372274aa9faa03e625092994f46d62d9205f74a4517",
           "full_file_normalized_identical": true
         },
         {
           "file": "Horizons/A1/Answer keys/Grammar practice 5-8.md",
           "keyed_answer_blocks": 8,
+          "keyed_activity_answer_items": 31,
           "all_keyed_answer_blocks_identical": true,
+          "baseline_answer_sha256": "caf933bfcdf76bb401ea6c466f8d2ce19d8dca160790319e2d4b03ab91fa41c7",
+          "current_answer_sha256": "caf933bfcdf76bb401ea6c466f8d2ce19d8dca160790319e2d4b03ab91fa41c7",
           "full_file_normalized_identical": true
         },
         {
           "file": "Horizons/A1/Answer keys/Practical language practice.md",
-          "keyed_answer_blocks": 3,
+          "keyed_answer_blocks": 4,
+          "keyed_activity_answer_items": 12,
           "all_keyed_answer_blocks_identical": true,
+          "baseline_answer_sha256": "a914c64465c7028fe40adac86736a4c9504f7a95ca22b0278eac528f67ddae48",
+          "current_answer_sha256": "a914c64465c7028fe40adac86736a4c9504f7a95ca22b0278eac528f67ddae48",
           "full_file_normalized_identical": true
         },
         {
           "file": "Horizons/A1/Answer keys/Vocabulary practice 1-4.md",
           "keyed_answer_blocks": 34,
+          "keyed_activity_answer_items": 34,
           "all_keyed_answer_blocks_identical": true,
+          "baseline_answer_sha256": "d58a6ff0b7e5b159809000a5cb92899880f2295f72e12c393153528e6edd6a70",
+          "current_answer_sha256": "d58a6ff0b7e5b159809000a5cb92899880f2295f72e12c393153528e6edd6a70",
           "full_file_normalized_identical": false
         },
         {
           "file": "Horizons/A1/Answer keys/Vocabulary practice 5-8.md",
           "keyed_answer_blocks": 4,
+          "keyed_activity_answer_items": 34,
           "all_keyed_answer_blocks_identical": true,
+          "baseline_answer_sha256": "e5f5e9a95d908e945fc583ce64c720dd759d9ed12410c4b53f7dd2819542c9b6",
+          "current_answer_sha256": "e5f5e9a95d908e945fc583ce64c720dd759d9ed12410c4b53f7dd2819542c9b6",
           "full_file_normalized_identical": false
         },
         {
           "file": "Horizons/A1/Answer keys/Vocabulary practice.md",
           "keyed_answer_blocks": 38,
+          "keyed_activity_answer_items": 68,
           "all_keyed_answer_blocks_identical": true,
+          "baseline_answer_sha256": "de852f06c08032739635c4685d30e21c0ca709a8df42b58743d0f68fa3272ec2",
+          "current_answer_sha256": "de852f06c08032739635c4685d30e21c0ca709a8df42b58743d0f68fa3272ec2",
           "full_file_normalized_identical": false
         },
         {
           "file": "Horizons/A1/Practice/Answer key.md",
-          "keyed_answer_blocks": 85,
+          "keyed_answer_blocks": 86,
+          "keyed_activity_answer_items": 147,
           "all_keyed_answer_blocks_identical": true,
+          "baseline_answer_sha256": "4e6d8d2bbb4cdca91e9731936867c8d39e55189a9c6f9e6fd4e4c44b49aac0c6",
+          "current_answer_sha256": "4e6d8d2bbb4cdca91e9731936867c8d39e55189a9c6f9e6fd4e4c44b49aac0c6",
           "full_file_normalized_identical": false
         }
       ],
+      "editorial_notes": "Teacher page headings, new study/cover guidance and QR resource-location notes intentionally differ. The prior stale QR-location sentence was reported and root corrected it; no keyed answer content changed.",
       "blockers": [],
       "source_files_mutated_by_this_check": false,
       "result": "pass"
@@ -731,7 +753,7 @@
       "new_audio_generated": false,
       "subjective_listening_review": false,
       "html_controls": 90,
-      "verification_scope": "No new audio. Existing core recordings/scripts and all90 controls preserved; current live sample playback pending."
+      "verification_scope": "Existing recordings/scripts and90controls preserved. Unchanged samples1.1and8.7 played with real time progression and paused on the current published edition."
     },
     "evidence_directory": "Sources/Vocabulary-study-banks-20261101",
     "prior_editorial_evidence": [
@@ -785,8 +807,29 @@
       "evidence_scope": "Historical grammar-clarity edition only; not current publication proof."
     },
     "live_viewer": {
-      "completed": false,
-      "status": "pending publication"
+      "completed": true,
+      "content_commit": "caeedc16a559063eb0c7e93a5afa5dd847e5b1c3",
+      "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=wordbankstudy-caeedc16a559",
+      "book_pages": 127,
+      "navigation_options": 57,
+      "forward_links_checked": 75,
+      "return_links_checked": 124,
+      "study_activity_pairs": 38,
+      "activity_header_links": 18,
+      "blank_blooket_slots": 16,
+      "active_practice_reference_images_decoded": 8,
+      "sample_recordings_play_progress_pause": [
+        "1.1",
+        "8.7"
+      ],
+      "audio_controls_preserved": 90,
+      "print_controls_hidden": true,
+      "topic_headings_clear_fixed_navigation": true,
+      "changed_files_match": 84,
+      "file_report": "Sources/Vocabulary-study-banks-20261101/published-file-verification.json",
+      "viewer_report": "Sources/Vocabulary-study-banks-20261101/live-viewer-verification.json",
+      "visual_report": "Sources/Vocabulary-study-banks-20261101/independent-live-visual-review.json",
+      "failures": []
     }
   },
   "new_objects": "Images/Editorial-objects/manifest.json",
@@ -936,9 +979,9 @@
         "Practice"
       ],
       "fingerprint": {
-        "files": 873,
-        "bytes": 597021549,
-        "sha256": "60b1fa6cd2f356ee851acc3a6e7a8e3b1a2fbd2a5bf0ce8c6f42b15999539200"
+        "files": 876,
+        "bytes": 597155437,
+        "sha256": "5af93e0b4e37e83812bbff1dd49059227596150899d28eb870ebb16eab93dc0c"
       },
       "normalize_text_line_endings": true
     },
@@ -985,8 +1028,8 @@
       ],
       "fingerprint": {
         "files": 15,
-        "bytes": 128369,
-        "sha256": "ef3bf43a683c6e64c573ae7e83c34e72e7d0ac679b2061e9cdead76173affce4"
+        "bytes": 129203,
+        "sha256": "c40a4ebd9ef215feaf0b0f04d0c92f4b15e455832e358ef05f85d455ac8a1da6"
       },
       "normalize_text_line_endings": true
     }

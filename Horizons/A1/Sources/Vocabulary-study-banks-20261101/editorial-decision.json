@@ -39,5 +39,11 @@
     "no_blockers": true,
     "author_acceptance_of_new_reference_pages_claimed": false
   },
-  "publication": "Local final content verified; live publication pending."
+  "publication": {
+    "status": "verified",
+    "content_commit": "caeedc16a559063eb0c7e93a5afa5dd847e5b1c3",
+    "viewer": "live-viewer-verification.json",
+    "files": "published-file-verification.json",
+    "visual_review": "independent-live-visual-review.json"
+  }
 }

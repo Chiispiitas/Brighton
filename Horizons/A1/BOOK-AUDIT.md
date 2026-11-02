@@ -1,6 +1,6 @@
 # Horizons A1 — current book audit
 
-Updated 1 November 2026. Vocabulary references now follow the author’s study-first direction. Local content, layout, link and saved-PDF reviews pass. Publication checks are pending.
+Updated 1 November 2026. Vocabulary references now follow the author’s study-first direction. Source, layout, link, saved-PDF and published-viewer checks pass.
 
 ## Author feedback and current standard
 
@@ -26,7 +26,7 @@ The final PDF has 127 A4 pages and correct printed footers. Strict pypdf, MuPDF 
 
 Current evidence is in [the study-bank decision](Sources/Vocabulary-study-banks-20261101/editorial-decision.json), [saved-PDF checks](Sources/Vocabulary-study-banks-20261101/pdf-validation.json), [preservation checks](Sources/Vocabulary-study-banks-20261101/final-content-preservation.json) and the other reports in that directory. Core teaching content, media, recordings and scripts remain unchanged. Core source edits only update the actual Go-to page references. The author’s approval of the previous games is recorded; approval of these new study pages is not claimed.
 
-**Publication status:** pending. Local proof is complete; the current live viewer and changed-file matches must still be verified before claiming publication complete.
+The published book is verified at content commit `caeedc16a559063eb0c7e93a5afa5dd847e5b1c3`: 127 pages, 57 navigation destinations, 75 lesson-to-practice references, 124 lesson returns, 38 reciprocal study/activity pairs and 18 word-bank header routes. All 8 active practice/reference images decode and all 16 QR areas remain blank. Two unchanged sample recordings (1.1 and 8.7) played with real time progression and paused. All 90 audio controls remain, and screen controls hide in print. The revised V1 study page, V8 body reference and last activity page were independently inspected live. All 84 changed Horizons files match the published site; text comparisons normalize line endings and binary media comparisons are exact. See [live-viewer evidence](Sources/Vocabulary-study-banks-20261101/live-viewer-verification.json), [visual review](Sources/Vocabulary-study-banks-20261101/independent-live-visual-review.json) and [published-file checks](Sources/Vocabulary-study-banks-20261101/published-file-verification.json).
 
 ## Reversibility and future work
 

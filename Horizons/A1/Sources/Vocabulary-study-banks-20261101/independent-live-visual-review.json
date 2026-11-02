@@ -1,0 +1,33 @@
+{
+  "reviewed_at": "2026-11-01T20:36:45.823566",
+  "published_content_sha": "caeedc16a559063eb0c7e93a5afa5dd847e5b1c3",
+  "live_url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=wordbankstudy-caeedc16a559",
+  "qa_report": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\vocabulary-study-banks-20261101\\live-wordbank-proof-caeedc16a559\\independent-live-viewer-qa.json",
+  "qa_passed": true,
+  "qa_checks": 42,
+  "screenshots_reviewed_at_full_size": [
+    {
+      "printed_page": "93",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\vocabulary-study-banks-20261101\\live-wordbank-proof-caeedc16a559\\live-wordbank-V1.png",
+      "sha256": "fc5460aaa3bd7434e7541b65ff53c78d03cec2b0eb69c8573ee6f4cda00dad76"
+    },
+    {
+      "printed_page": "120",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\vocabulary-study-banks-20261101\\live-wordbank-proof-caeedc16a559\\live-wordbank-V8-body.png",
+      "sha256": "1fdec7e41e557ff8a010686b2df712897bf81d705a8ced4b5f52f3660d8c8bd0"
+    },
+    {
+      "printed_page": "123",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\vocabulary-study-banks-20261101\\live-wordbank-proof-caeedc16a559\\live-V8-body-activity.png",
+      "sha256": "2e1b0bc847b6dd561e95a024550e4a16da313c192bbfb518be6ba9157aed2934"
+    }
+  ],
+  "visual_observations": [
+    "Page93: complete readable word bank, correct Practice95/96 labels, full alphabet and0–10 set; blank QR reserve and footer clear.",
+    "Page120: final whole-body reference has all six accurate leaders, clean white edges and useful scale. Health models and Practice123 links fit. Screen target highlight does not obscure content.",
+    "Page123: original acted-traveler game remains complete and readable. Header Wordbank pages118–120 matches navigation; all response fields and footer visible."
+  ],
+  "visual_result": "No visual blocker in the three reviewed live pages.",
+  "blockers": [],
+  "limits": "Only these three live screenshots received visual review here; all generated structural/navigation/media checks are recorded in the main QA JSON. No source edits."
+}

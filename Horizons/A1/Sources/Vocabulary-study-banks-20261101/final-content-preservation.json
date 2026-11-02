@@ -2,7 +2,7 @@
   "reviewer": "grammar_1_4 independent agent",
   "baseline_commit": "519aa60491a431cc208005aeb7ffd26c08dae74f",
   "scope": "Final content-preservation check only; no student source edits.",
-  "normalization": "HTML parsed with BeautifulSoup html.parser; compare full serialized .practice-task/img/svg arrays in activity pages. Core comparison removes only .hz-go-to reference elements. Text file comparisons normalize CRLF/LF; original PNGs compare exact bytes. Teacher comparisons retain complete keyed answer paragraphs while excluding page headings/new study-guidance prose.",
+  "normalization": "HTML parsed with BeautifulSoup html.parser; compare full serialized .practice-task/img/svg arrays in activity pages. Core comparison removes only .hz-go-to reference elements. Text file comparisons normalize CRLF/LF; original PNGs compare exact bytes. Teacher comparisons retain complete keyed answer paragraphs/lists while excluding page headings/new study-guidance and resource-note prose. One contiguous numbered list may contain several activity answers; separate activity-item counts are supplied.",
   "summary": {
     "vocabulary_tasks": 68,
     "activity_pages": 18,
@@ -458,46 +458,68 @@
     {
       "file": "Horizons/A1/Answer keys/Grammar practice 1-4.md",
       "keyed_answer_blocks": 36,
+      "keyed_activity_answer_items": 36,
       "all_keyed_answer_blocks_identical": true,
+      "baseline_answer_sha256": "3312ddecc9faec658f6e6372274aa9faa03e625092994f46d62d9205f74a4517",
+      "current_answer_sha256": "3312ddecc9faec658f6e6372274aa9faa03e625092994f46d62d9205f74a4517",
       "full_file_normalized_identical": true
     },
     {
       "file": "Horizons/A1/Answer keys/Grammar practice 5-8.md",
       "keyed_answer_blocks": 8,
+      "keyed_activity_answer_items": 31,
       "all_keyed_answer_blocks_identical": true,
+      "baseline_answer_sha256": "caf933bfcdf76bb401ea6c466f8d2ce19d8dca160790319e2d4b03ab91fa41c7",
+      "current_answer_sha256": "caf933bfcdf76bb401ea6c466f8d2ce19d8dca160790319e2d4b03ab91fa41c7",
       "full_file_normalized_identical": true
     },
     {
       "file": "Horizons/A1/Answer keys/Practical language practice.md",
-      "keyed_answer_blocks": 3,
+      "keyed_answer_blocks": 4,
+      "keyed_activity_answer_items": 12,
       "all_keyed_answer_blocks_identical": true,
+      "baseline_answer_sha256": "a914c64465c7028fe40adac86736a4c9504f7a95ca22b0278eac528f67ddae48",
+      "current_answer_sha256": "a914c64465c7028fe40adac86736a4c9504f7a95ca22b0278eac528f67ddae48",
       "full_file_normalized_identical": true
     },
     {
       "file": "Horizons/A1/Answer keys/Vocabulary practice 1-4.md",
       "keyed_answer_blocks": 34,
+      "keyed_activity_answer_items": 34,
       "all_keyed_answer_blocks_identical": true,
+      "baseline_answer_sha256": "d58a6ff0b7e5b159809000a5cb92899880f2295f72e12c393153528e6edd6a70",
+      "current_answer_sha256": "d58a6ff0b7e5b159809000a5cb92899880f2295f72e12c393153528e6edd6a70",
       "full_file_normalized_identical": false
     },
     {
       "file": "Horizons/A1/Answer keys/Vocabulary practice 5-8.md",
       "keyed_answer_blocks": 4,
+      "keyed_activity_answer_items": 34,
       "all_keyed_answer_blocks_identical": true,
+      "baseline_answer_sha256": "e5f5e9a95d908e945fc583ce64c720dd759d9ed12410c4b53f7dd2819542c9b6",
+      "current_answer_sha256": "e5f5e9a95d908e945fc583ce64c720dd759d9ed12410c4b53f7dd2819542c9b6",
       "full_file_normalized_identical": false
     },
     {
       "file": "Horizons/A1/Answer keys/Vocabulary practice.md",
       "keyed_answer_blocks": 38,
+      "keyed_activity_answer_items": 68,
       "all_keyed_answer_blocks_identical": true,
+      "baseline_answer_sha256": "de852f06c08032739635c4685d30e21c0ca709a8df42b58743d0f68fa3272ec2",
+      "current_answer_sha256": "de852f06c08032739635c4685d30e21c0ca709a8df42b58743d0f68fa3272ec2",
       "full_file_normalized_identical": false
     },
     {
       "file": "Horizons/A1/Practice/Answer key.md",
-      "keyed_answer_blocks": 85,
+      "keyed_answer_blocks": 86,
+      "keyed_activity_answer_items": 147,
       "all_keyed_answer_blocks_identical": true,
+      "baseline_answer_sha256": "4e6d8d2bbb4cdca91e9731936867c8d39e55189a9c6f9e6fd4e4c44b49aac0c6",
+      "current_answer_sha256": "4e6d8d2bbb4cdca91e9731936867c8d39e55189a9c6f9e6fd4e4c44b49aac0c6",
       "full_file_normalized_identical": false
     }
   ],
+  "editorial_notes": "Teacher page headings, new study/cover guidance and QR resource-location notes intentionally differ. The prior stale QR-location sentence was reported and root corrected it; no keyed answer content changed.",
   "blockers": [],
   "source_files_mutated_by_this_check": false,
   "result": "pass"
