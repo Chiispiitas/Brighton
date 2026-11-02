@@ -1,0 +1,528 @@
+{
+  "commit": "3d67e4d4a83e9ac510975b06c0338b643242232b",
+  "base": "https://exams.bebrighton.net/",
+  "files": 74,
+  "line_endings_normalized_for_text": true,
+  "media_byte_exact": true,
+  "failures": [],
+  "results": [
+    {
+      "file": "Horizons/A1/Audit archive/2026-11-02-before-grammar-visual-clarity/BOOK-AUDIT.md",
+      "status": 200,
+      "match": true,
+      "bytes": 8885,
+      "sha256": "17214a86e67c534a1b5d40ccf50501645777dd8d799cadf69de91f9ad0061079"
+    },
+    {
+      "file": "Horizons/A1/Audit archive/2026-11-02-before-grammar-visual-clarity/book-audit.json",
+      "status": 200,
+      "match": true,
+      "bytes": 34537,
+      "sha256": "383f2496bdee41b11a602f7510893185deb8a6f88db3790607da50601550f599"
+    },
+    {
+      "file": "Horizons/A1/BOOK-AUDIT.md",
+      "status": 200,
+      "match": true,
+      "bytes": 7025,
+      "sha256": "c6435e938ac5200d8a3a55fdeaf54f2b9f16bd7e1e2292dd1e9a540f82c92d7c"
+    },
+    {
+      "file": "Horizons/A1/Lessons/2D.html",
+      "status": 200,
+      "match": true,
+      "bytes": 11476,
+      "sha256": "62cd106185dfb3b4362fa541beb8bd9e92ac86f83561141ddcfbe2311f93a7e0"
+    },
+    {
+      "file": "Horizons/A1/Lessons/4A.html",
+      "status": 200,
+      "match": true,
+      "bytes": 12787,
+      "sha256": "2cdf11359f0a6244336140a6347921e8bb5fd103d3e3c163a9fba014708c68f7"
+    },
+    {
+      "file": "Horizons/A1/Lessons/4B.html",
+      "status": 200,
+      "match": true,
+      "bytes": 10281,
+      "sha256": "2a69b95fc9df8db011d76e8646ac18d5e049b5e081db51b4f0d0e20b182f4b6e"
+    },
+    {
+      "file": "Horizons/A1/Lessons/4C.html",
+      "status": 200,
+      "match": true,
+      "bytes": 10219,
+      "sha256": "47d26dc2ca0bb366be12dced6263b2e3360e437758c71118baf0a3b382c531e9"
+    },
+    {
+      "file": "Horizons/A1/Lessons/4D.html",
+      "status": 200,
+      "match": true,
+      "bytes": 8534,
+      "sha256": "ff67e38a4f4cce4eda244a17a03214eafc5119072d36e75a6e25e403cda6887b"
+    },
+    {
+      "file": "Horizons/A1/Lessons/5A.html",
+      "status": 200,
+      "match": true,
+      "bytes": 11364,
+      "sha256": "8831fa86e23c432874ea18de038de0e2dfb6119106f4c5922e3ffd79159460a7"
+    },
+    {
+      "file": "Horizons/A1/Lessons/5B.html",
+      "status": 200,
+      "match": true,
+      "bytes": 11372,
+      "sha256": "235a36882cbe6af1d3d9c1c1f3558931f12bca383fc169c4e035276bcc2eb4a6"
+    },
+    {
+      "file": "Horizons/A1/Lessons/5C.html",
+      "status": 200,
+      "match": true,
+      "bytes": 9502,
+      "sha256": "c0bbb97f9df3bf9d6bd29b779a60c4c328cca6e310ef0d011f49bb2161b8f699"
+    },
+    {
+      "file": "Horizons/A1/Lessons/6C.html",
+      "status": 200,
+      "match": true,
+      "bytes": 10719,
+      "sha256": "71467a93c27c7505a812330c385bd0b2b96025d2a0c046fb1e7731f722d77d8a"
+    },
+    {
+      "file": "Horizons/A1/Lessons/6D.html",
+      "status": 200,
+      "match": true,
+      "bytes": 10034,
+      "sha256": "46b7c66fe281aea19782f1206ce24205d0d9d65c496de7f73ae41cf6590d967e"
+    },
+    {
+      "file": "Horizons/A1/Lessons/7A.html",
+      "status": 200,
+      "match": true,
+      "bytes": 9967,
+      "sha256": "7553336fb2688bc3a854a0f5661578fae4f9c9967ba8667e58848226f518b1c7"
+    },
+    {
+      "file": "Horizons/A1/Lessons/7B.html",
+      "status": 200,
+      "match": true,
+      "bytes": 14116,
+      "sha256": "d173bdf7d75afd40d520db85d2027abda27d185f5a593c478adc6e4d01e44ef2"
+    },
+    {
+      "file": "Horizons/A1/Lessons/7C.html",
+      "status": 200,
+      "match": true,
+      "bytes": 10247,
+      "sha256": "48de137b12053ed0fa815cb7c7a473a840abf6ae3d8c2eb463cc897f275a9d6a"
+    },
+    {
+      "file": "Horizons/A1/Lessons/7D.html",
+      "status": 200,
+      "match": true,
+      "bytes": 9075,
+      "sha256": "3801b2ea2dc6276a5988b7e7046e50685805d462672966e295ce4afd1e0f8400"
+    },
+    {
+      "file": "Horizons/A1/Lessons/8A.html",
+      "status": 200,
+      "match": true,
+      "bytes": 10708,
+      "sha256": "4656ea0ffae3ca3c28142885ecc6501a20cb0526f070847479bfabd0d9a0e892"
+    },
+    {
+      "file": "Horizons/A1/Lessons/8B.html",
+      "status": 200,
+      "match": true,
+      "bytes": 10260,
+      "sha256": "55fc525fc223c14c70c34a1487c64ab0257ac4abe62520d6bb588b6c32433023"
+    },
+    {
+      "file": "Horizons/A1/Lessons/8C.html",
+      "status": 200,
+      "match": true,
+      "bytes": 10632,
+      "sha256": "c5621fe5f384c678b1a32b49ad42de13bb070460814bc1a9cc791079961f5587"
+    },
+    {
+      "file": "Horizons/A1/Lessons/grammar-visual-clarity.css",
+      "status": 200,
+      "match": true,
+      "bytes": 3416,
+      "sha256": "8e6941ac4db6ebcb00a21fe3a5cac95dbf91c9dc09c9efd377bbc288845fd823"
+    },
+    {
+      "file": "Horizons/A1/Practice/Communication/C8.html",
+      "status": 200,
+      "match": true,
+      "bytes": 3652,
+      "sha256": "4d3a780254aebf60fe32b92021de84ca786936d4debd09ad584ad3abaff01746"
+    },
+    {
+      "file": "Horizons/A1/Practice/Communication/communication-bank.css",
+      "status": 200,
+      "match": true,
+      "bytes": 3555,
+      "sha256": "ac22e31834e5ba9a7cd4343c3d7dd362fbcfaa1b630389dbdae57f033f54e00d"
+    },
+    {
+      "file": "Horizons/A1/Practice/Grammar/G1.html",
+      "status": 200,
+      "match": true,
+      "bytes": 12626,
+      "sha256": "06a61d2e36e798b54bcacbe38889111256160db7b85bc4d301389dda1ec0851d"
+    },
+    {
+      "file": "Horizons/A1/Practice/Grammar/G2.html",
+      "status": 200,
+      "match": true,
+      "bytes": 11435,
+      "sha256": "50f412ca7caff10a504b0be979fe2959317455575ef86dc99643d81368820c31"
+    },
+    {
+      "file": "Horizons/A1/Practice/Grammar/G3.html",
+      "status": 200,
+      "match": true,
+      "bytes": 14705,
+      "sha256": "542db621383a602fd23b02742a986e7b51f688e74714fb28382ad008a64ab6cd"
+    },
+    {
+      "file": "Horizons/A1/Practice/Grammar/G4.html",
+      "status": 200,
+      "match": true,
+      "bytes": 14491,
+      "sha256": "cdbb157df487216d7353965d425aa2f95bbb150c29be22ef34b6a03df074bb4c"
+    },
+    {
+      "file": "Horizons/A1/Practice/Grammar/G5.html",
+      "status": 200,
+      "match": true,
+      "bytes": 10720,
+      "sha256": "8de298c1fab3d7c0f0e58837abc15037269a6d14fec90d94526bc10aff1617ed"
+    },
+    {
+      "file": "Horizons/A1/Practice/Grammar/G6.html",
+      "status": 200,
+      "match": true,
+      "bytes": 12310,
+      "sha256": "7decbf1dcf82c35639563b34f902a391cf4c575538852d39d074401c143fa764"
+    },
+    {
+      "file": "Horizons/A1/Practice/Grammar/G7.html",
+      "status": 200,
+      "match": true,
+      "bytes": 12444,
+      "sha256": "8ca5a1cfb2578abbcce918cffebec50b646eb6053434ee72fe9036a31c60b736"
+    },
+    {
+      "file": "Horizons/A1/Practice/Grammar/G8.html",
+      "status": 200,
+      "match": true,
+      "bytes": 12073,
+      "sha256": "ed76f986420375bf711f7e14a0602cd65b3e33c472ebb5a3c675aa8a9d4f641e"
+    },
+    {
+      "file": "Horizons/A1/Practice/Grammar/grammar-1-4.css",
+      "status": 200,
+      "match": true,
+      "bytes": 19619,
+      "sha256": "26687fdc092f072ae7305a2994f3ebc1d4614d9891075a024459cc2cbb765731"
+    },
+    {
+      "file": "Horizons/A1/Practice/Grammar/grammar-5-8.css",
+      "status": 200,
+      "match": true,
+      "bytes": 8722,
+      "sha256": "8764f6a49c66cd2c75087fe4d910c8b2d0cbaef61d4f46d68ecb050fa3ca3f35"
+    },
+    {
+      "file": "Horizons/A1/Practice/Vocabulary/V4.html",
+      "status": 200,
+      "match": true,
+      "bytes": 22563,
+      "sha256": "8e2a3621bdb4df7446da954f6085bebb747e6e9180d4bb8cfa7b6a1c78af26e8"
+    },
+    {
+      "file": "Horizons/A1/Practice/Vocabulary/V7.html",
+      "status": 200,
+      "match": true,
+      "bytes": 30056,
+      "sha256": "fbb404f3f6fa872ec6aaa51a20b341aaf05479939b32bbee33b5a279194911ba"
+    },
+    {
+      "file": "Horizons/A1/Practice/Vocabulary/V8.html",
+      "status": 200,
+      "match": true,
+      "bytes": 38928,
+      "sha256": "d71370b41a6c3614b818b9311e2b5b3d9aeebc8dfec867764dfc3b667412b6ec"
+    },
+    {
+      "file": "Horizons/A1/Practice/Vocabulary/study-word-banks.css",
+      "status": 200,
+      "match": true,
+      "bytes": 5711,
+      "sha256": "82e222cf16e4402bf4a6efac3bdf31f2b472a726204c52afb64751b4e7cb7259"
+    },
+    {
+      "file": "Horizons/A1/Sources/Grammar-visual-clarity-20261102/G8-parity-detail.json",
+      "status": 200,
+      "match": true,
+      "bytes": 2,
+      "sha256": "4f53cda18c2baa0c0354bb5f9a3ecbe5ed12ab4d8e11ba873c2f11161202b945"
+    },
+    {
+      "file": "Horizons/A1/Sources/Grammar-visual-clarity-20261102/all-layout.json",
+      "status": 200,
+      "match": true,
+      "bytes": 249347,
+      "sha256": "b856485f26cb953df477f5c789d3f19ce5cd9ddc06a62568f01f055550b1e5b7"
+    },
+    {
+      "file": "Horizons/A1/Sources/Grammar-visual-clarity-20261102/content-preservation.json",
+      "status": 200,
+      "match": true,
+      "bytes": 507,
+      "sha256": "11269d957cd910bfc480ac01b145ca09f8b6b1a5a75b4935d9cb88ab5c474d80"
+    },
+    {
+      "file": "Horizons/A1/Sources/Grammar-visual-clarity-20261102/editorial-decision.json",
+      "status": 200,
+      "match": true,
+      "bytes": 5456,
+      "sha256": "33cc188339fffef652fe5402209239bea35d74716b53a58c86e1074b5b5e03e8"
+    },
+    {
+      "file": "Horizons/A1/Sources/Grammar-visual-clarity-20261102/final-qr-bounds.json",
+      "status": 200,
+      "match": true,
+      "bytes": 2995,
+      "sha256": "06b8d15760486b7298b8e6fd6991f3d8ed8ddae9b80c4f7d0879c40b111d0fcc"
+    },
+    {
+      "file": "Horizons/A1/Sources/Grammar-visual-clarity-20261102/final-response-layout.json",
+      "status": 200,
+      "match": true,
+      "bytes": 115,
+      "sha256": "bda07b2baa31200c5e3bebb7139dce6667a9389eb3b6b2f323f8c2738476c6c5"
+    },
+    {
+      "file": "Horizons/A1/Sources/Grammar-visual-clarity-20261102/grammar-1-4-changes.json",
+      "status": 200,
+      "match": true,
+      "bytes": 9248,
+      "sha256": "087260a236a986f4e8251a2178f9d017b1332673e26ec492a00ab95924293a80"
+    },
+    {
+      "file": "Horizons/A1/Sources/Grammar-visual-clarity-20261102/grammar-1-4-layout.json",
+      "status": 200,
+      "match": true,
+      "bytes": 2492,
+      "sha256": "b9e91a57f41c97165e451732f773e5c57a2b819e63431e9cb83ee5a6d6b69bcf"
+    },
+    {
+      "file": "Horizons/A1/Sources/Grammar-visual-clarity-20261102/grammar-5-8-changes.json",
+      "status": 200,
+      "match": true,
+      "bytes": 8876,
+      "sha256": "7a1faddd8d7671b779aebedc308dda82ee090f50f32e288e012d8d19867a7570"
+    },
+    {
+      "file": "Horizons/A1/Sources/Grammar-visual-clarity-20261102/grammar-5-8-standalone-QA.json",
+      "status": 200,
+      "match": true,
+      "bytes": 13834,
+      "sha256": "3a1a236baf5c662fb95a5a61e70a42a7e5c335129a6adccf989760e9375740de"
+    },
+    {
+      "file": "Horizons/A1/Sources/Grammar-visual-clarity-20261102/grammar-clarity-scan.json",
+      "status": 200,
+      "match": true,
+      "bytes": 1816,
+      "sha256": "7b14d625b5e7ede518b5e0475a23736e8f7bcb8d4519529925f1819e7ddf681b"
+    },
+    {
+      "file": "Horizons/A1/Sources/Grammar-visual-clarity-20261102/header-and-font-checks.json",
+      "status": 200,
+      "match": true,
+      "bytes": 42108,
+      "sha256": "e5ecac6c47e2af3ca5f750a979c34827b6aeecdd07b408bebe951194157c32c1"
+    },
+    {
+      "file": "Horizons/A1/Sources/Grammar-visual-clarity-20261102/independent-G1-4-banks-PDF-review.json",
+      "status": 200,
+      "match": true,
+      "bytes": 5903,
+      "sha256": "6c295be4a517c8ed4d5ae154b00037fcb9afec3c83c96aa90c5a1bcec984751e"
+    },
+    {
+      "file": "Horizons/A1/Sources/Grammar-visual-clarity-20261102/independent-G5-8-PDF-review.json",
+      "status": 200,
+      "match": true,
+      "bytes": 5592,
+      "sha256": "e0e4c9a6336d69f2b3b0541bf728e91e7db7985f3d0cf3cbc6731ea6d4ba6d80"
+    },
+    {
+      "file": "Horizons/A1/Sources/Grammar-visual-clarity-20261102/independent-bank-type-evidence.json",
+      "status": 200,
+      "match": true,
+      "bytes": 4408,
+      "sha256": "19793731eff12da1f4dff11b8f9120c76cfaee6092c5b7ada4a460e9d007a67f"
+    },
+    {
+      "file": "Horizons/A1/Sources/Grammar-visual-clarity-20261102/independent-main-PDF-review.json",
+      "status": 200,
+      "match": true,
+      "bytes": 6435,
+      "sha256": "ca96e6d9c84757389c0e3465af025a5f719452ec65f505b523f561b2e22eb241"
+    },
+    {
+      "file": "Horizons/A1/Sources/Grammar-visual-clarity-20261102/independent-main-final-pixel-transfer.json",
+      "status": 200,
+      "match": true,
+      "bytes": 1361,
+      "sha256": "db431e4be143b91f8764cacc2e08dfa2f666693d240150ab742c4b61e7e7b98b"
+    },
+    {
+      "file": "Horizons/A1/Sources/Grammar-visual-clarity-20261102/independent-main-initial-render-hashes.json",
+      "status": 200,
+      "match": true,
+      "bytes": 1464,
+      "sha256": "d5ded30791419189ed99920b4108491613c76d8df12e4d83ba74d0063a778d41"
+    },
+    {
+      "file": "Horizons/A1/Sources/Grammar-visual-clarity-20261102/local-viewer-verification.json",
+      "status": 200,
+      "match": true,
+      "bytes": 38804,
+      "sha256": "88a74dff4ca6f43d5796a7f97adf70ea256833c78b818227058ab31626c9a2c7"
+    },
+    {
+      "file": "Horizons/A1/Sources/Grammar-visual-clarity-20261102/main-layout.json",
+      "status": 200,
+      "match": true,
+      "bytes": 83083,
+      "sha256": "39f5bff9ecb8e43300db5758fefd62873e99753937fd61071c897fd0af0f9ac2"
+    },
+    {
+      "file": "Horizons/A1/Sources/Grammar-visual-clarity-20261102/main-lesson-changes.json",
+      "status": 200,
+      "match": true,
+      "bytes": 17120,
+      "sha256": "e427d340ed2170321c9f93d3cf470276ec1b6c58103015b3b6a0a2aba8d30f01"
+    },
+    {
+      "file": "Horizons/A1/Sources/Grammar-visual-clarity-20261102/other-bank-changes.json",
+      "status": 200,
+      "match": true,
+      "bytes": 3427,
+      "sha256": "a852d75c0dd0171139a6f837fbe8ad640c2e939d821d6fa5e35615a5726d8d31"
+    },
+    {
+      "file": "Horizons/A1/Sources/Grammar-visual-clarity-20261102/other-bank-layout.json",
+      "status": 200,
+      "match": true,
+      "bytes": 613,
+      "sha256": "3c41a1960bfe1d157ebecef2acb9bb18c8211d83e1881838075834b486f83f32"
+    },
+    {
+      "file": "Horizons/A1/Sources/Grammar-visual-clarity-20261102/pdf-validation.json",
+      "status": 200,
+      "match": true,
+      "bytes": 1681,
+      "sha256": "801234e83c8e9dbf577c6ba7681710ba2b1b671926e5de380972952b8c2ab296"
+    },
+    {
+      "file": "Horizons/A1/Sources/Grammar-visual-clarity-20261102/proof-contacts.json",
+      "status": 200,
+      "match": true,
+      "bytes": 1186,
+      "sha256": "6c3a6da99dd6a1c8d45bf48b7df74c74164d02049c0a4ccd164a0b7c3d4afe2f"
+    },
+    {
+      "file": "Horizons/A1/Sources/Grammar-visual-clarity-20261102/saved-PDF-review.json",
+      "status": 200,
+      "match": true,
+      "bytes": 35789,
+      "sha256": "c21ecd61ffdd61afaa5226c7dbb8f0fc1bcc2d574f3633f1a6dcec5fe61dff04"
+    },
+    {
+      "file": "Horizons/A1/Sources/Grammar-visual-clarity-20261102/standalone-assembled-parity.json",
+      "status": 200,
+      "match": true,
+      "bytes": 64,
+      "sha256": "0dc4bdf7f9aeac3424cfe13f144a746f2ab84db9da536e067c43d773e125d0bf"
+    },
+    {
+      "file": "Horizons/A1/Sources/Practice-personality.json",
+      "status": 200,
+      "match": true,
+      "bytes": 75206,
+      "sha256": "62c457dc0e8e2de87e1ccd1c76883a78a912643ee3a02aa1abfa3deeacc254f1"
+    },
+    {
+      "file": "Horizons/A1/Sources/Visual-personality.json",
+      "status": 200,
+      "match": true,
+      "bytes": 37937,
+      "sha256": "510814cb4ba12e5573404343dd36945404607be6c9e5101ed89f9459fbb12253"
+    },
+    {
+      "file": "Horizons/A1/Student's Book.html",
+      "status": 200,
+      "match": true,
+      "bytes": 1268939,
+      "sha256": "41fefae5e0693953e37c3fa57c66dca1c25f8f807021cd4b2c6ffce1329a3f3c"
+    },
+    {
+      "file": "Horizons/A1/Student's Book.pdf",
+      "status": 200,
+      "match": true,
+      "bytes": 50203016,
+      "sha256": "98d3e8b12f376d9153eb67754b663fae2e49842b0e641bd706229871c3d40b7b"
+    },
+    {
+      "file": "Horizons/A1/Wordlists/Practice banks.md",
+      "status": 200,
+      "match": true,
+      "bytes": 2504,
+      "sha256": "aaa9d893eedfdad4ef131eaa75812b47e43c479299c0809b54e16952a9b30402"
+    },
+    {
+      "file": "Horizons/A1/book-audit.json",
+      "status": 200,
+      "match": true,
+      "bytes": 37698,
+      "sha256": "51b66a8d18c58fe6e9e4a25cdbfd38f24c2af26cd47b7b326bbff654859f233a"
+    },
+    {
+      "file": "Horizons/Base/build/check-grammar-clarity.py",
+      "status": 200,
+      "match": true,
+      "bytes": 3082,
+      "sha256": "d75692fdfa6f983702ed6df5862808b8fb34f30fb9add2e1ed5156933358583e"
+    },
+    {
+      "file": "Horizons/Base/design-system/CANONICAL-STYLE.md",
+      "status": 200,
+      "match": true,
+      "bytes": 11613,
+      "sha256": "ac66ceb1480cbac87e3bc6a36c6cf2559f6d858f71a1500bb58fea2654f67d8e"
+    },
+    {
+      "file": "Horizons/Base/design-system/PRACTICE-BANKS.md",
+      "status": 200,
+      "match": true,
+      "bytes": 10517,
+      "sha256": "00ddc39702527a42897821b50d7f6ccefc5eb2b1df3cb88a22b6657da35b45da"
+    },
+    {
+      "file": "Horizons/Base/design-system/component-contracts.md",
+      "status": 200,
+      "match": true,
+      "bytes": 6088,
+      "sha256": "00e41f157147b25cd443bd6daa6d24ba52bdc2fe12438aafe3a35059a15419c3"
+    }
+  ]
+}

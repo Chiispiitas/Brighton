@@ -1,6 +1,6 @@
 # Horizons A1 — current book audit
 
-Updated 2 November 2026. The book-wide visual grammar correction is complete. Source checks and independent saved-PDF reviews pass. Publication verification is pending; prior release evidence is historical.
+Updated 2 November 2026. The book-wide visual grammar correction is complete. Source checks and independent saved-PDF reviews pass. Published standalone and assembled views are verified; prior release evidence is historical.
 
 ## Grammar explanation standard
 
@@ -33,3 +33,7 @@ Current evidence: [decisions](Sources/Grammar-visual-clarity-20261102/editorial-
 ## Reversibility and remaining scope
 
 Baseline `cdae9fefa0adda5639a0f53e372a1a19969b1025` and `safety/horizons-before-grammar-visual-clarity-20261102` preserve the preceding edition. [Its audit](Audit%20archive/2026-11-02-before-grammar-visual-clarity/BOOK-AUDIT.md) is archived. Earlier edition evidence remains historical rather than being claimed as current verification. Front matter, index, workbook and optional annexes remain future work.
+
+## Current publication
+
+The [published edition](https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=visualgrammar-3d67e4d4a83e#practice-grammar-5a) is verified at content commit `3d67e4d4a83e9ac510975b06c0338b643242232b`. All 24 live viewer checks pass. All 74 changed hosted files match the reviewed local edition, normalizing text line endings and comparing the PDF bytes exactly. The root editor inspected all 12 selected live captures, including main/practice 5A and the final date, verb and word-meaning refinements. Navigation, separate paired-lesson selections, source returns, image decoding, audio playback and print hiding pass. See [viewer checks](Sources/Grammar-visual-clarity-20261102/live-viewer-verification.json), [file readback](Sources/Grammar-visual-clarity-20261102/live-file-verification.json) and [live visual review](Sources/Grammar-visual-clarity-20261102/live-visual-review.json).

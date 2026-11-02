@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "updated": "2026-11-02",
-  "status": "Book-wide visual grammar clarification complete; source and independent saved-PDF reviews pass; publication verification pending",
+  "status": "Book-wide visual grammar clarification complete; source, independent saved-PDF and published standalone/assembled views verified",
   "authority": "Author delegates editorial authority; his own B2 book sets emotional direction. Preserve colourful learning objects and warm adult playfulness alongside coherent functional roles.",
   "scope": "Units 1–8: 32 lessons, four paired reviews and 72 core pages; 75 practice pages and four credits. 151 physical A4 pages, printed 5–155. Front matter, index, workbook and optional annexes remain future work.",
   "baseline": {
@@ -669,8 +669,23 @@
       "limitations": "Pattern checks supplement complete editorial review. Table counts alone do not establish educational or visual quality."
     },
     "live_viewer": {
-      "completed": false,
-      "status": "Publication pending; local 24-check verification passed."
+      "completed": true,
+      "content_commit": "3d67e4d4a83e9ac510975b06c0338b643242232b",
+      "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=visualgrammar-3d67e4d4a83e",
+      "checks_passed": 24,
+      "pages": 151,
+      "navigation_options": 100,
+      "separate_paired_lesson_destinations": true,
+      "actual_audio_playback_and_print_hiding": true,
+      "main_and_practice_5a_chart_checks": true,
+      "no_legacy_compressed_grammar_nodes": true,
+      "all_changed_files_match": 74,
+      "text_line_endings_normalized": true,
+      "pdf_and_media_byte_exact": true,
+      "viewer_report": "Sources/Grammar-visual-clarity-20261102/live-viewer-verification.json",
+      "file_report": "Sources/Grammar-visual-clarity-20261102/live-file-verification.json",
+      "visual_report": "Sources/Grammar-visual-clarity-20261102/live-visual-review.json",
+      "failures": []
     }
   },
   "new_objects": "Images/Editorial-objects/manifest.json",
@@ -820,9 +835,9 @@
         "Practice"
       ],
       "fingerprint": {
-        "files": 1018,
-        "bytes": 700658785,
-        "sha256": "14104dc9c604a1d91a0339fe5232d9bd7c566fe70df65da28856dc5e2702f56b"
+        "files": 1021,
+        "bytes": 700715519,
+        "sha256": "b7f9e580e577086f5b2fac606e65765965777a9ca00ac977433c1ffbf651a9bc"
       },
       "normalize_text_line_endings": true
     },
@@ -869,8 +884,8 @@
       ],
       "fingerprint": {
         "files": 15,
-        "bytes": 189442,
-        "sha256": "0a86ce3f12aa8847a69dce20fd186231762ee80e105c6d64a2f1208e5f501429"
+        "bytes": 190389,
+        "sha256": "85c3661fdb8e983ad1c76eda47c1c0ab64e0e972525a672a17dfb0ff534a5b38"
       },
       "normalize_text_line_endings": true
     }
