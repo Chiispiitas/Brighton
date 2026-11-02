@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "updated": "2026-11-02",
-  "status": "Grammar3D spacing corrected; local source/layout and saved-PDF verified; publication verification pending",
+  "status": "Grammar3D spacing corrected; source, saved-PDF and published standalone/assembled views verified",
   "authority": "Author delegates editorial authority; his own B2 book sets emotional direction. Preserve colourful learning objects and warm adult playfulness alongside coherent functional roles.",
   "scope": "Units1–8:32lessons,4pairedreviews,72corepages;75practicepages and4credits.151physicalA4pages, printed5–155. Front matter,index,workbook andoptionalannexes remainfuturework.",
   "baseline": {
@@ -514,6 +514,17 @@
       "saved_pdf_review": "Sources/Grammar-3D-spacing-20261102/saved-PDF-review.json",
       "changed_printed_page": 85,
       "other150pages_pixel_identical": true
+    },
+    "live_viewer": {
+      "completed": true,
+      "content_commit": "e78aeb5929d3f5c3ec84a87e66cad763222338b0",
+      "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=spacing3d-e78aeb5929d3#practice-grammar-3d",
+      "scope": "Latest3D spacing fix; all other150PDFpages pixel-identical to verified baseline",
+      "standalone_and_assembled_labels_separate": true,
+      "all_changed_files_match": 13,
+      "viewer_report": "Sources/Grammar-3D-spacing-20261102/live-viewer-verification.json",
+      "file_report": "Sources/Grammar-3D-spacing-20261102/live-file-verification.json",
+      "failures": []
     }
   },
   "new_objects": "Images/Editorial-objects/manifest.json",
@@ -663,9 +674,9 @@
         "Practice"
       ],
       "fingerprint": {
-        "files": 988,
-        "bytes": 700070695,
-        "sha256": "90580b046d4b1a83dd9b431291451b623c577af47834486e74a496ed7e94e343"
+        "files": 990,
+        "bytes": 700075026,
+        "sha256": "d532e82eca8e5a088bf339abe060b1010e1dff1ae3f1f492f2b4179649d297bf"
       },
       "normalize_text_line_endings": true
     },
@@ -712,8 +723,8 @@
       ],
       "fingerprint": {
         "files": 15,
-        "bytes": 183282,
-        "sha256": "d029e0b9ef559da77f747ab4c7fc8a0e16a29db320a382cb4b30901e4cc1ce79"
+        "bytes": 183664,
+        "sha256": "3b62ae403a86728e012e22e5e4b7878392a464c599b0260663c14c640f93a24f"
       },
       "normalize_text_line_endings": true
     }

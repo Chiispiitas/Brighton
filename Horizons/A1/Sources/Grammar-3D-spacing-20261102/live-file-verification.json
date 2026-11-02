@@ -1,0 +1,101 @@
+{
+  "commit": "e78aeb5929d3f5c3ec84a87e66cad763222338b0",
+  "base": "https://exams.bebrighton.net/",
+  "files": 13,
+  "line_endings_normalized_for_text": true,
+  "media_byte_exact": true,
+  "failures": [],
+  "results": [
+    {
+      "file": "Horizons/A1/BOOK-AUDIT.md",
+      "status": 200,
+      "match": true,
+      "bytes": 8503,
+      "sha256": "f6a3c5c3550f89de9df495271ed5fc5878233f5661ef4f729253bef3c42dc6d3"
+    },
+    {
+      "file": "Horizons/A1/Practice/Grammar/G3.html",
+      "status": 200,
+      "match": true,
+      "bytes": 14173,
+      "sha256": "34079c773e83e22b406d36261ac56a1dfe3321c6f04ce31c24cb0e394202d14d"
+    },
+    {
+      "file": "Horizons/A1/Practice/Grammar/grammar-1-4.css",
+      "status": 200,
+      "match": true,
+      "bytes": 16536,
+      "sha256": "2425c2949c04ceb9e58b75b4c5cffda8ae33dbcc123787e35d102721b053117e"
+    },
+    {
+      "file": "Horizons/A1/Sources/Grammar-3D-spacing-20261102/all-layout.json",
+      "status": 200,
+      "match": true,
+      "bytes": 250049,
+      "sha256": "cdb523eaed80259b82b2a4c947fb7f01fde089ca9f92896b8791ab260f8f0e97"
+    },
+    {
+      "file": "Horizons/A1/Sources/Grammar-3D-spacing-20261102/final-qr-bounds.json",
+      "status": 200,
+      "match": true,
+      "bytes": 2995,
+      "sha256": "06b8d15760486b7298b8e6fd6991f3d8ed8ddae9b80c4f7d0879c40b111d0fcc"
+    },
+    {
+      "file": "Horizons/A1/Sources/Grammar-3D-spacing-20261102/final-response-layout.json",
+      "status": 200,
+      "match": true,
+      "bytes": 115,
+      "sha256": "bda07b2baa31200c5e3bebb7139dce6667a9389eb3b6b2f323f8c2738476c6c5"
+    },
+    {
+      "file": "Horizons/A1/Sources/Grammar-3D-spacing-20261102/pdf-validation.json",
+      "status": 200,
+      "match": true,
+      "bytes": 408,
+      "sha256": "bf227adc01f7bdf75a0b07220751acc60cbd1af3b886a6403b4580a3809c371e"
+    },
+    {
+      "file": "Horizons/A1/Sources/Grammar-3D-spacing-20261102/saved-PDF-review.json",
+      "status": 200,
+      "match": true,
+      "bytes": 441,
+      "sha256": "3ce5173f9f53001dd7f9bcc8ee1f26507b043cb22655ab5132b4c22b510ba4e7"
+    },
+    {
+      "file": "Horizons/A1/Sources/Grammar-3D-spacing-20261102/spacing-fix.json",
+      "status": 200,
+      "match": true,
+      "bytes": 548,
+      "sha256": "c821f5957fc43914538ecb8da9993dfbd15c00b1c014f70277b953770773455e"
+    },
+    {
+      "file": "Horizons/A1/Sources/Grammar-3D-spacing-20261102/standalone-assembled-parity.json",
+      "status": 200,
+      "match": true,
+      "bytes": 64,
+      "sha256": "0dc4bdf7f9aeac3424cfe13f144a746f2ab84db9da536e067c43d773e125d0bf"
+    },
+    {
+      "file": "Horizons/A1/Student's Book.html",
+      "status": 200,
+      "match": true,
+      "bytes": 1252106,
+      "sha256": "b88850ab67934e8854ee003483764cec53254e6f9647f06ac79e36dbf483a771"
+    },
+    {
+      "file": "Horizons/A1/Student's Book.pdf",
+      "status": 200,
+      "match": true,
+      "bytes": 50196017,
+      "sha256": "53ef4da441c978a213de693bc49845e8afe11cb01b5cee8cf732d5ed572abb65"
+    },
+    {
+      "file": "Horizons/A1/book-audit.json",
+      "status": 200,
+      "match": true,
+      "bytes": 33901,
+      "sha256": "2a1e08cc7e8963913b1e7f1b2de9f0c1b849740158f307b7499fb5e630f35783"
+    }
+  ]
+}
