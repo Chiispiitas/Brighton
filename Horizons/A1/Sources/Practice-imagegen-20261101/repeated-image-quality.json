@@ -1,0 +1,104 @@
+{
+  "pdf_sha256": "9da7e5b1bc4e7cb5366971d4e3249f70d14bc4bab4ea9afba2f4358eb6322def",
+  "repeated_uses_isolated_before_optimization": 55,
+  "optimizer": "../Base/build/optimize-students-book.py",
+  "issue": "Shared image XObjects were downsampled again on each repeated CSS-viewport use, degrading resolution and alpha.",
+  "fix": "Clone repeated original encoded image streams and their masks per Do use before image optimization, then let the writer deduplicate optimized copies.",
+  "tomato_sheet_before_fix_pixels": [
+    34,
+    12
+  ],
+  "tomato_sheet_final_pixels": [
+    [
+      543,
+      181
+    ]
+  ],
+  "sample_resources": [
+    {
+      "printed_page": 84,
+      "image_resources": [
+        {
+          "width": 543,
+          "height": 181,
+          "smask": true,
+          "mask_dimensions": [
+            2172,
+            724
+          ]
+        }
+      ]
+    },
+    {
+      "printed_page": 98,
+      "image_resources": [
+        {
+          "width": 887,
+          "height": 444,
+          "smask": true,
+          "mask_dimensions": [
+            1774,
+            887
+          ]
+        }
+      ]
+    },
+    {
+      "printed_page": 99,
+      "image_resources": [
+        {
+          "width": 1774,
+          "height": 887,
+          "smask": true,
+          "mask_dimensions": [
+            1774,
+            887
+          ]
+        },
+        {
+          "width": 2172,
+          "height": 724,
+          "smask": true,
+          "mask_dimensions": [
+            2172,
+            724
+          ]
+        }
+      ]
+    },
+    {
+      "printed_page": 106,
+      "image_resources": [
+        {
+          "width": 887,
+          "height": 444,
+          "smask": false
+        }
+      ]
+    },
+    {
+      "printed_page": 119,
+      "image_resources": [
+        {
+          "width": 1774,
+          "height": 887,
+          "smask": false
+        }
+      ]
+    },
+    {
+      "printed_page": 122,
+      "image_resources": [
+        {
+          "width": 2172,
+          "height": 724,
+          "smask": false
+        }
+      ]
+    }
+  ],
+  "alpha_resolution_at_least_final_color_resolution": true,
+  "alpha_note": "PDF masks may retain original higher resolution while color data is downsampled. This is permitted and retains edge detail.",
+  "manual_detail_review_passed": true,
+  "protected_pages_pixel_identical": 88
+}

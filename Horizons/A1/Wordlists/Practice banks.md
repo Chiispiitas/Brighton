@@ -7,3 +7,7 @@ The target sources are the current 1A–8D wordlists and actual lesson introduct
 Additional practice words are made visible where needed, including actor; soup, sandwich, bowl, salt and sugar; eleven/twelve to complete the clock-hour reference; relevant clothing/fit descriptors; crossroads; and familiar modeled activity chunks. Opposite remains scaffolded in Practical language C6, printed 125, with the original café/library model and schematic map. These additions are not retroactively claimed as lesson audio content.
 
 The original vocabulary games, resources, answer facts and writing space remain. Study pages add lexical references, grouped examples and useful meaning cues; memory games require covering the word bank as well as the game’s own covered evidence. New animal/body reference pictures are original assets, while the original six practice images remain in their games. Native labels stay editable; original bitmap bytes and alpha are preserved. Detailed prompts/hashes and current page uses are in Practice/Images/manifest.json. Sixteen blank Blooket areas remain reserved for real links later.
+
+## Practice-art correction — 1 November 2026
+
+All grammar/vocabulary pictorial assets use built-in imagegen. All 31 vocabulary pages now have useful topic imagery. Native grammar charts, labels, arrows, data tables and response grids remain editable. No vocabulary targets or recordings were added in this art pass. The shopping source is now a photo directory, so its instruction refers to the places above; controlled answers are unchanged.

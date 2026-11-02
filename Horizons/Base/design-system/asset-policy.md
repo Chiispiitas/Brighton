@@ -15,6 +15,8 @@ The author explicitly requests generous use of imagegen for redesigned sections,
 
 ## Inspection and provenance
 
+Practice-bank exception, 1 November 2026: grammar and vocabulary pictorial assets must use built-in imagegen, including maps, clocks, food, furniture, weather and positional scenes. The general permission for native illustrations does not apply to those bank pictures. Keep learner words, charts, arrows, labels and response rules live. Every vocabulary bank page needs useful imagery. See PRACTICE-BANKS.md for this author correction.
+
 Visual spirit is governed by VISUAL-SPIRIT.md. Preserve the author's approved expressive objects, local colour relationships and purposeful cutouts during media cleanup. The personal B2 reference supplies emotional and conceptual principles; its mascot and third-party photographs are not automatically new Horizons assets. New physical metaphors should be original and useful to the current learning task.
 
 View every final asset and its actual crop at print size. Preserve whole faces and answer-bearing hands/actions/counts/objects. Judge the opaque subject rather than the canvas dimensions; keep alpha edges clean. Repeated picture tasks need fresh visual evidence, not a slightly different crop of the source photo. A picture should not disclose a private task answer.

@@ -1,0 +1,548 @@
+{
+  "book_pages": 127,
+  "study_pages": [
+    93,
+    94,
+    98,
+    101,
+    104,
+    107,
+    110,
+    111,
+    114,
+    115,
+    118,
+    119,
+    120
+  ],
+  "entries": 415,
+  "entry_font_failures": [],
+  "entry_weights": [
+    "400",
+    "500"
+  ],
+  "study_practice_links": [
+    {
+      "topic": "vocabulary-greetings",
+      "study": "93",
+      "target": "activity-vocabulary-greetings",
+      "activity": "95",
+      "label": "Practice · page 95",
+      "pass": true
+    },
+    {
+      "topic": "vocabulary-personal-information",
+      "study": "93",
+      "target": "activity-vocabulary-personal-information",
+      "activity": "96",
+      "label": "Practice · page 96",
+      "pass": true
+    },
+    {
+      "topic": "vocabulary-alphabet",
+      "study": "93",
+      "target": "activity-vocabulary-alphabet",
+      "activity": "95",
+      "label": "Practice · page 95",
+      "pass": true
+    },
+    {
+      "topic": "vocabulary-numbers",
+      "study": "93",
+      "target": "activity-vocabulary-numbers",
+      "activity": "95",
+      "label": "Practice · page 95",
+      "pass": true
+    },
+    {
+      "topic": "vocabulary-occupations",
+      "study": "94",
+      "target": "activity-vocabulary-occupations",
+      "activity": "96",
+      "label": "Practice · page 96",
+      "pass": true
+    },
+    {
+      "topic": "vocabulary-countries",
+      "study": "94",
+      "target": "activity-vocabulary-countries",
+      "activity": "97",
+      "label": "Practice · page 97",
+      "pass": true
+    },
+    {
+      "topic": "vocabulary-adjectives",
+      "study": "94",
+      "target": "activity-vocabulary-adjectives",
+      "activity": "97",
+      "label": "Practice · page 97",
+      "pass": true
+    },
+    {
+      "topic": "vocabulary-personal-items",
+      "study": "98",
+      "target": "activity-vocabulary-personal-items",
+      "activity": "99",
+      "label": "Practice · page 99",
+      "pass": true
+    },
+    {
+      "topic": "vocabulary-telling-time",
+      "study": "98",
+      "target": "activity-vocabulary-telling-time",
+      "activity": "99",
+      "label": "Practice · page 99",
+      "pass": true
+    },
+    {
+      "topic": "vocabulary-family-members",
+      "study": "98",
+      "target": "activity-vocabulary-family-members",
+      "activity": "100",
+      "label": "Practice · page 100",
+      "pass": true
+    },
+    {
+      "topic": "vocabulary-colors",
+      "study": "98",
+      "target": "activity-vocabulary-colors",
+      "activity": "100",
+      "label": "Practice · page 100",
+      "pass": true
+    },
+    {
+      "topic": "vocabulary-daily-routines",
+      "study": "101",
+      "target": "activity-vocabulary-daily-routines",
+      "activity": "102",
+      "label": "Practice · page 102",
+      "pass": true
+    },
+    {
+      "topic": "vocabulary-days-of-the-week",
+      "study": "101",
+      "target": "activity-vocabulary-days-of-the-week",
+      "activity": "103",
+      "label": "Practice · page 103",
+      "pass": true
+    },
+    {
+      "topic": "vocabulary-place-adjectives-recall",
+      "study": "101",
+      "target": "activity-vocabulary-place-adjectives-recall",
+      "activity": "103",
+      "label": "Practice · page 103",
+      "pass": true
+    },
+    {
+      "topic": "vocabulary-food-and-drink",
+      "study": "104",
+      "target": "activity-vocabulary-food-and-drink",
+      "activity": "105",
+      "label": "Practice · page 105",
+      "pass": true
+    },
+    {
+      "topic": "vocabulary-flavors",
+      "study": "104",
+      "target": "activity-vocabulary-flavors",
+      "activity": "105",
+      "label": "Practice · page 105",
+      "pass": true
+    },
+    {
+      "topic": "vocabulary-cooking-verbs",
+      "study": "104",
+      "target": "activity-vocabulary-cooking-verbs",
+      "activity": "106",
+      "label": "Practice · page 106",
+      "pass": true
+    },
+    {
+      "topic": "vocabulary-sharing-food",
+      "study": "104",
+      "target": "activity-vocabulary-sharing-food",
+      "activity": "106",
+      "label": "Practice · page 106",
+      "pass": true
+    },
+    {
+      "topic": "vocabulary-clothes-and-accessories",
+      "study": "107",
+      "target": "activity-vocabulary-clothes-and-accessories",
+      "activity": "108",
+      "label": "Practice · page 108",
+      "pass": true
+    },
+    {
+      "topic": "vocabulary-shopping-verbs",
+      "study": "107",
+      "target": "activity-vocabulary-shopping-verbs",
+      "activity": "108",
+      "label": "Practice · page 108",
+      "pass": true
+    },
+    {
+      "topic": "vocabulary-places-in-town",
+      "study": "107",
+      "target": "activity-vocabulary-places-in-town",
+      "activity": "109",
+      "label": "Practice · page 109",
+      "pass": true
+    },
+    {
+      "topic": "vocabulary-at-the-store",
+      "study": "107",
+      "target": "activity-vocabulary-at-the-store",
+      "activity": "109",
+      "label": "Practice · page 109",
+      "pass": true
+    },
+    {
+      "topic": "vocabulary-places-in-town-2",
+      "study": "110",
+      "target": "activity-vocabulary-places-in-town-2",
+      "activity": "112",
+      "label": "Practice · page 112",
+      "pass": true
+    },
+    {
+      "topic": "vocabulary-rooms-and-furniture",
+      "study": "110",
+      "target": "activity-vocabulary-rooms-and-furniture",
+      "activity": "113",
+      "label": "Practice · page 113",
+      "pass": true
+    },
+    {
+      "topic": "vocabulary-movement-and-directions",
+      "study": "111",
+      "target": "activity-vocabulary-movement-and-directions",
+      "activity": "113",
+      "label": "Practice · page 113",
+      "pass": true
+    },
+    {
+      "topic": "vocabulary-shopping-centers-and-attractions",
+      "study": "111",
+      "target": "activity-vocabulary-shopping-centers-and-attractions",
+      "activity": "112",
+      "label": "Practice · page 112",
+      "pass": true
+    },
+    {
+      "topic": "vocabulary-months",
+      "study": "114",
+      "target": "activity-vocabulary-months",
+      "activity": "116",
+      "label": "Practice · page 116",
+      "pass": true
+    },
+    {
+      "topic": "vocabulary-dates-and-ordinal-numbers",
+      "study": "114",
+      "target": "activity-vocabulary-dates-and-ordinal-numbers",
+      "activity": "116",
+      "label": "Practice · page 116",
+      "pass": true
+    },
+    {
+      "topic": "vocabulary-past-time-expressions",
+      "study": "114",
+      "target": "activity-vocabulary-past-time-expressions",
+      "activity": "116",
+      "label": "Practice · page 116",
+      "pass": true
+    },
+    {
+      "topic": "vocabulary-music",
+      "study": "115",
+      "target": "activity-vocabulary-music",
+      "activity": "117",
+      "label": "Practice · page 117",
+      "pass": true
+    },
+    {
+      "topic": "vocabulary-irregular-past-verbs",
+      "study": "115",
+      "target": "activity-vocabulary-irregular-past-verbs",
+      "activity": "117",
+      "label": "Practice · page 117",
+      "pass": true
+    },
+    {
+      "topic": "vocabulary-sequencing-words",
+      "study": "115",
+      "target": "activity-vocabulary-sequencing-words",
+      "activity": "117",
+      "label": "Practice · page 117",
+      "pass": true
+    },
+    {
+      "topic": "vocabulary-travel-verbs",
+      "study": "118",
+      "target": "activity-vocabulary-travel-verbs",
+      "activity": "121",
+      "label": "Practice · page 121",
+      "pass": true
+    },
+    {
+      "topic": "vocabulary-animals",
+      "study": "118",
+      "target": "activity-vocabulary-animals",
+      "activity": "121",
+      "label": "Practice · page 121",
+      "pass": true
+    },
+    {
+      "topic": "vocabulary-weather-and-seasons",
+      "study": "119",
+      "target": "activity-vocabulary-weather-and-seasons",
+      "activity": "122",
+      "label": "Practice · page 122",
+      "pass": true
+    },
+    {
+      "topic": "vocabulary-phone-and-ticket-language",
+      "study": "119",
+      "target": "activity-vocabulary-phone-and-ticket-language",
+      "activity": "123",
+      "label": "Practice · page 123",
+      "pass": true
+    },
+    {
+      "topic": "vocabulary-body-parts",
+      "study": "120",
+      "target": "activity-vocabulary-body-parts",
+      "activity": "123",
+      "label": "Practice · page 123",
+      "pass": true
+    },
+    {
+      "topic": "vocabulary-health-complaints",
+      "study": "120",
+      "target": "activity-vocabulary-health-complaints",
+      "activity": "123",
+      "label": "Practice · page 123",
+      "pass": true
+    }
+  ],
+  "activity_study_links": [
+    {
+      "activity": "95",
+      "study": "93",
+      "pass": true
+    },
+    {
+      "activity": "95",
+      "study": "93",
+      "pass": true
+    },
+    {
+      "activity": "95",
+      "study": "93",
+      "pass": true
+    },
+    {
+      "activity": "96",
+      "study": "93",
+      "pass": true
+    },
+    {
+      "activity": "96",
+      "study": "94",
+      "pass": true
+    },
+    {
+      "activity": "97",
+      "study": "94",
+      "pass": true
+    },
+    {
+      "activity": "97",
+      "study": "94",
+      "pass": true
+    },
+    {
+      "activity": "99",
+      "study": "98",
+      "pass": true
+    },
+    {
+      "activity": "99",
+      "study": "98",
+      "pass": true
+    },
+    {
+      "activity": "100",
+      "study": "98",
+      "pass": true
+    },
+    {
+      "activity": "100",
+      "study": "98",
+      "pass": true
+    },
+    {
+      "activity": "102",
+      "study": "101",
+      "pass": true
+    },
+    {
+      "activity": "103",
+      "study": "101",
+      "pass": true
+    },
+    {
+      "activity": "103",
+      "study": "101",
+      "pass": true
+    },
+    {
+      "activity": "105",
+      "study": "104",
+      "pass": true
+    },
+    {
+      "activity": "105",
+      "study": "104",
+      "pass": true
+    },
+    {
+      "activity": "106",
+      "study": "104",
+      "pass": true
+    },
+    {
+      "activity": "106",
+      "study": "104",
+      "pass": true
+    },
+    {
+      "activity": "108",
+      "study": "107",
+      "pass": true
+    },
+    {
+      "activity": "108",
+      "study": "107",
+      "pass": true
+    },
+    {
+      "activity": "109",
+      "study": "107",
+      "pass": true
+    },
+    {
+      "activity": "109",
+      "study": "107",
+      "pass": true
+    },
+    {
+      "activity": "112",
+      "study": "110",
+      "pass": true
+    },
+    {
+      "activity": "112",
+      "study": "111",
+      "pass": true
+    },
+    {
+      "activity": "113",
+      "study": "110",
+      "pass": true
+    },
+    {
+      "activity": "113",
+      "study": "111",
+      "pass": true
+    },
+    {
+      "activity": "116",
+      "study": "114",
+      "pass": true
+    },
+    {
+      "activity": "116",
+      "study": "114",
+      "pass": true
+    },
+    {
+      "activity": "116",
+      "study": "114",
+      "pass": true
+    },
+    {
+      "activity": "117",
+      "study": "115",
+      "pass": true
+    },
+    {
+      "activity": "117",
+      "study": "115",
+      "pass": true
+    },
+    {
+      "activity": "117",
+      "study": "115",
+      "pass": true
+    },
+    {
+      "activity": "121",
+      "study": "118",
+      "pass": true
+    },
+    {
+      "activity": "121",
+      "study": "118",
+      "pass": true
+    },
+    {
+      "activity": "122",
+      "study": "119",
+      "pass": true
+    },
+    {
+      "activity": "123",
+      "study": "120",
+      "pass": true
+    },
+    {
+      "activity": "123",
+      "study": "120",
+      "pass": true
+    },
+    {
+      "activity": "123",
+      "study": "119",
+      "pass": true
+    }
+  ],
+  "body_labels": [
+    {
+      "label": "head",
+      "physical_pt": 10.039146423339844
+    },
+    {
+      "label": "stomach",
+      "physical_pt": 10.039146423339844
+    },
+    {
+      "label": "arm",
+      "physical_pt": 10.039146423339844
+    },
+    {
+      "label": "hand",
+      "physical_pt": 10.039146423339844
+    },
+    {
+      "label": "leg",
+      "physical_pt": 10.039146423339844
+    },
+    {
+      "label": "foot",
+      "physical_pt": 10.039146423339844
+    }
+  ]
+}

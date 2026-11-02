@@ -41,7 +41,10 @@ def main():
    n=int(page['data-page']);actual.append(n);pages.append(n)
    assert page.get('id')==f'page-{n}',f'{file}: missing page target'
    assert page.select_one('.hz-page-number').get_text(strip=True)==str(n),f'{file}: wrong footer'
-   if master['kind']=='vocabulary':assert page.select('img,svg,table,[data-practice-resource]'),f'{file}: vocabulary page has no visible teaching evidence'
+   if master['kind']=='vocabulary':assert page.select('img[src]'),f'{file}: every vocabulary study/activity page needs a meaningful imagegen picture'
+   if master['kind'] in ['grammar','vocabulary']:
+    assert all(svg.get('data-editorial-labels')=='true' for svg in page.select('svg')),f'{file}: pictorial SVG must be replaced with imagegen artwork'
+    assert not page.select('.gp14-phone,.gp14-tokens,.gp14-tomatoes,.gp58-weather-symbol'),f'{file}: CSS/symbol clipart is not permitted in practice'
    for img in page.select('img[src]'):
     image_path=(file.parent/unquote(img['src'])).resolve()
     assert image_path.is_file(),f'{file}: missing {img["src"]}'

@@ -23,3 +23,5 @@ Current edition, 31 October 2026. Design is governed by VISUAL-SPIRIT.md, CANONI
 Acceptance requires source/key/audio alignment, actual font roles, decoded imagery/backgrounds, ordered exercises/pages, no clipped copy or image evidence, independent saved-PDF inspection and live media verification. It also requires a comparison with the protected expressive-element register: functional consistency must not flatten warm, colourful, memorable design. Preserve a versioned baseline; audits are evidence records, not automatic permission to declare quality.
 
 Practice-bank components and acceptance are defined in PRACTICE-BANKS.md. Practice masters are ordered by Practice/manifest.json; their pages precede end credits, and their topic/return links work in both HTML views.
+
+In grammar and vocabulary practice banks, pictorial objects/scenes/maps use imagegen, never SVG/CSS clipart. Every vocabulary study and activity page has a meaningful image. Native form charts, editorial labels/arrows, tabular data, response grids and writing rules remain editable; those functional components are distinct from illustrated teaching assets.
