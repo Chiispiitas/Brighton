@@ -1,0 +1,64 @@
+{
+  "reviewer": "Independent second editor /root/pairing_review",
+  "date": "2026-11-02",
+  "pdf_sha256": "68d90111b76d565858b531284ba9d5cf793374579704076668d20de72d3f7e20",
+  "physical_pages": 151,
+  "changed_printed_pages_inspected": [
+    80,
+    81,
+    86,
+    123,
+    147
+  ],
+  "neighbor_printed_pages_inspected": [
+    79,
+    82,
+    85,
+    87,
+    122,
+    124,
+    146,
+    148
+  ],
+  "inspection_method": "Read actual saved-PDF Poppler PNGs at readable full-page size; direct visual review independent of source layout tests. Physical PDF page equals printed page minus4.",
+  "judgments": [
+    {
+      "page": 80,
+      "content": "Grammar2A/2B",
+      "decision": "Pass",
+      "notes": "Both full source-lesson headers remain recognizable. Diagram and response tasks have clear vertical separation; empty final rule stays inside the page."
+    },
+    {
+      "page": 81,
+      "content": "Grammar2C/2D with relocated Unit2 QR reserve",
+      "decision": "Pass",
+      "notes": "Lesson boundary is explicit. QR reserve sits in a genuinely clear right-hand area beside activity2, above activity3, without covering response lines or instructions. Both open rows at the end are visible."
+    },
+    {
+      "page": 86,
+      "content": "Grammar4A/4B",
+      "decision": "Pass",
+      "notes": "Fruit/rice concepts are complete and legible; the second lesson has a clear header and balanced transition. Pronoun mappings remain easy to scan; no writing-field squeeze."
+    },
+    {
+      "page": 123,
+      "content": "Vocabulary5A single-page word bank and practice",
+      "decision": "Pass",
+      "notes": "Complete clothing reference and different retrieval-picture set coexist clearly. Both pictures retain recognizable whole objects. Word bank is visibly separated from the game; the final clues and answer rows fit."
+    },
+    {
+      "page": 147,
+      "content": "Vocabulary8D single-page word bank and practice",
+      "decision": "Pass",
+      "notes": "Phone cutout is purposeful and complete. Study chunks, ticket contrast and role-play fields follow a readable order. Final fields and self-study option stay comfortably above the footer."
+    }
+  ],
+  "neighbor_rhythm": "Changed pages are denser than their short neighbors, appropriately reflecting amount of content. They retain adequate whitespace, recognizable headers and comfortable reading order. No abrupt palette or type shift introduced.",
+  "defects": [],
+  "decision": "Accept the five composed pages for this space-saving pass. No source correction requested.",
+  "limitations": [
+    "This is an editorial visual judgment, not author approval.",
+    "The reviewer inspected13 listed pages, not every page of the151-page book.",
+    "Exact font sizes and minimum row dimensions should be supported by the root automated source/PDF measurements; this review confirms visual readability and visible complete fields."
+  ]
+}

@@ -1,9 +1,9 @@
 {
   "schema_version": 3,
   "updated": "2026-11-02",
-  "status": "Lesson-specific grammar/vocabulary headers and split complete; source, saved-PDF and published-viewer verification passed",
+  "status": "Compact practice edition: source, layout and independently reviewed saved-PDF checks passed; publication verification pending",
   "authority": "Author delegates editorial authority; his own B2 book sets emotional direction. Preserve colourful learning objects and warm adult playfulness alongside coherent functional roles.",
-  "scope": "Units1–8:32lessons,4pairedreviews,72corepages;80practicepages and4creditpages.156physical A4pages, printed5–160. Front matter,index,workbook andoptionalannexes remainfuturework.",
+  "scope": "Units1–8:32lessons,4pairedreviews,72corepages;75practicepages and4credits.151physicalA4pages, printed5–155. Front matter,index,workbook andoptionalannexes remainfuturework.",
   "baseline": {
     "commit": "fd497fd",
     "safety_branch": "safety/horizons-before-editorial-overhaul-20261031",
@@ -44,6 +44,11 @@
       "commit": "ad73e4b64900537e69ad9c09baae21b3a982b184",
       "safety_branch": "safety/horizons-before-practice-lesson-headers-20261101",
       "previous_audit": "Audit archive/2026-11-01-before-practice-lesson-headers/book-audit.json"
+    },
+    "compact_practice": {
+      "commit": "8729a04578fbffc42efc3b508553550766cfc97c",
+      "safety_branch": "safety/horizons-before-compact-practice-20261102",
+      "previous_audit": "Audit archive/2026-11-02-before-compact-practice/book-audit.json"
     }
   },
   "inventory": {
@@ -87,11 +92,11 @@
     ],
     "core_spreads": 36,
     "core_pages": 72,
-    "html_pages": 156,
-    "pdf_pages": 156,
+    "html_pages": 151,
+    "pdf_pages": 151,
     "printed_pages": [
       5,
-      160
+      155
     ],
     "credits_pages": 4,
     "lesson_audio_files": 84,
@@ -103,10 +108,10 @@
     "page_placeholders": 0,
     "external_photo_credit_records": 81,
     "practice_masters": 20,
-    "grammar_practice_pages": 27,
-    "vocabulary_practice_pages": 49,
+    "grammar_practice_pages": 24,
+    "vocabulary_practice_pages": 47,
     "practical_language_pages": 4,
-    "practice_pages": 80,
+    "practice_pages": 75,
     "core_activity_blocks": 253,
     "practice_activity_blocks": 147,
     "grammar_practice_activities": 67,
@@ -124,15 +129,17 @@
     "vocabulary_study_topics": 43,
     "vocabulary_marked_lexical_entry_occurrences": 476,
     "vocabulary_required_within_topic_items": 404,
-    "new_active_practice_assets_this_pass": 10,
-    "practice_raster_occurrences": 104,
-    "vocabulary_pages_with_pictures": 49,
-    "physical_pages": 156,
-    "vocabulary_combined_pages": 18,
+    "new_active_practice_assets_this_pass": 0,
+    "practice_raster_occurrences": 103,
+    "vocabulary_pages_with_pictures": 47,
+    "physical_pages": 151,
+    "vocabulary_combined_pages": 20,
     "vocabulary_canonical_topics": 38,
     "grammar_lesson_groups": 27,
     "vocabulary_lesson_groups": 32,
-    "practice_lesson_headers": 76
+    "practice_lesson_headers": 74,
+    "paired_practice_pages": 3,
+    "saved_pages_this_pass": 5
   },
   "standards": {
     "canonical_style": "../Base/design-system/CANONICAL-STYLE.md",
@@ -153,15 +160,16 @@
     "study_vocabulary_inventory": "Practice/Vocabulary/study-vocabulary.json"
   },
   "editorial_judgment": {
-    "basis": "Same header and lesson number as main lesson, with a different color; split pages covering multiple lessons.",
-    "current_decision": "Sources/Practice-lesson-headers-20261101/editorial-decision.json",
-    "saved_pdf_review": "Sources/Practice-lesson-headers-20261101/saved-PDF-review.json",
-    "independent_second_editor": false,
-    "author_acceptance_claimed": false
+    "basis": "Save space by putting two lessons on a grammar/vocabulary practice page where possible, like Personal Best.",
+    "current_decision": "Sources/Practice-compact-20261102/editorial-decision.json",
+    "saved_pdf_review": "Sources/Practice-compact-20261102/saved-PDF-review.json",
+    "independent_second_editor": true,
+    "author_acceptance_claimed": false,
+    "independent_review": "Sources/Practice-compact-20261102/independent-PDF-review.json"
   },
   "verification": {
     "layout": {
-      "pages": 156,
+      "pages": 151,
       "text_faults": [],
       "response_fields": 368,
       "clipped_fields": [],
@@ -169,311 +177,56 @@
     },
     "standalone_assembled_parity": {
       "standalone_masters": 56,
-      "pages": 152,
+      "pages": 147,
       "failures": []
     },
     "pdf": {
-      "reviewed_grammar_pages_pixel_identical_to_interim": 27,
-      "sha256": "f536327bcf90884c212a4b3e229f69820df72e646f8a6e369a65e78d37e3ebf6",
-      "bytes": 50203845,
-      "physical_pages": 156,
+      "sha256": "68d90111b76d565858b531284ba9d5cf793374579704076668d20de72d3f7e20",
+      "bytes": 50196018,
+      "physical_pages": 151,
       "printed_pages": [
         5,
-        160
+        155
       ],
       "a4_failures": [],
       "footer_failures": [],
       "mupdf_warnings": "",
       "strict_pypdf_read": true,
-      "all_internal_links_verified": 371,
+      "all_internal_links_verified": 367,
       "destination_failures": [],
-      "source_lesson_references": 75,
-      "lesson_specific_vocabulary_pairs": 43,
       "unchanged_core_pages_without_updated_go_to": 17,
       "protected_core_pixel_differences": [],
-      "practical_and_first_credit_bodies_compared": [
-        153,
-        154,
-        155,
-        156,
-        157,
-        158,
-        159
-      ],
-      "preserved_body_pixel_differences": [],
+      "practical_and_credit_body_pixel_differences": [],
       "raster_notes": [
         {
-          "printed_page": 157,
+          "page": 152,
           "bbox": [
             80,
             353,
             351,
             354
           ],
-          "note": "One-pixel divider-rule antialias after repagination; all body text identical."
+          "note": "One-row divider antialias only; body text unchanged."
         }
       ]
     },
     "preservation": {
-      "baseline": "ad73e4b64900537e69ad9c09baae21b3a982b184",
-      "original_grammar_and_vocabulary_activities_preserved": 135,
-      "all_original_task_texts_unchanged_except_numbering": true,
-      "canonical_topics_with_all_original_reference_models": 38,
-      "canonical_required_items": 404,
-      "lesson_specific_reference_topics": 43,
+      "baseline": "8729a04578fbffc42efc3b508553550766cfc97c",
+      "grammar_vocabulary_activities_unchanged": 135,
+      "practical_language_activities": 12,
+      "all43_reference_model_texts_unchanged": true,
       "marked_lexical_occurrences": 476,
-      "core_changes_only_go_to_references": true,
-      "core_images_recordings_scripts_unchanged": true,
-      "practice_image_file_hash_failures": [],
-      "vocabulary_pages": [
-        {
-          "page": 104,
-          "lesson": "1A",
-          "images": 1
-        },
-        {
-          "page": 105,
-          "lesson": "1A",
-          "images": 1
-        },
-        {
-          "page": 106,
-          "lesson": "1B",
-          "images": 1
-        },
-        {
-          "page": 107,
-          "lesson": "1B",
-          "images": 1
-        },
-        {
-          "page": 108,
-          "lesson": "1C",
-          "images": 1
-        },
-        {
-          "page": 109,
-          "lesson": "1C",
-          "images": 1
-        },
-        {
-          "page": 110,
-          "lesson": "1D",
-          "images": 1
-        },
-        {
-          "page": 111,
-          "lesson": "2A",
-          "images": 1
-        },
-        {
-          "page": 112,
-          "lesson": "2B",
-          "images": 4
-        },
-        {
-          "page": 113,
-          "lesson": "2C",
-          "images": 1
-        },
-        {
-          "page": 114,
-          "lesson": "2D",
-          "images": 11
-        },
-        {
-          "page": 115,
-          "lesson": "3A",
-          "images": 1
-        },
-        {
-          "page": 116,
-          "lesson": "3A",
-          "images": 1
-        },
-        {
-          "page": 117,
-          "lesson": "3B",
-          "images": 1
-        },
-        {
-          "page": 118,
-          "lesson": "3C",
-          "images": 1
-        },
-        {
-          "page": 119,
-          "lesson": "3C",
-          "images": 3
-        },
-        {
-          "page": 120,
-          "lesson": "3D",
-          "images": 1
-        },
-        {
-          "page": 121,
-          "lesson": "4A",
-          "images": 2
-        },
-        {
-          "page": 122,
-          "lesson": "4A",
-          "images": 1
-        },
-        {
-          "page": 123,
-          "lesson": "4B",
-          "images": 1
-        },
-        {
-          "page": 124,
-          "lesson": "4C",
-          "images": 5
-        },
-        {
-          "page": 125,
-          "lesson": "4D",
-          "images": 1
-        },
-        {
-          "page": 126,
-          "lesson": "5A",
-          "images": 1
-        },
-        {
-          "page": 127,
-          "lesson": "5A",
-          "images": 1
-        },
-        {
-          "page": 128,
-          "lesson": "5B",
-          "images": 1
-        },
-        {
-          "page": 129,
-          "lesson": "5C",
-          "images": 1
-        },
-        {
-          "page": 130,
-          "lesson": "5C",
-          "images": 4
-        },
-        {
-          "page": 131,
-          "lesson": "5D",
-          "images": 1
-        },
-        {
-          "page": 132,
-          "lesson": "5D",
-          "images": 1
-        },
-        {
-          "page": 133,
-          "lesson": "6A",
-          "images": 1
-        },
-        {
-          "page": 134,
-          "lesson": "6A",
-          "images": 1
-        },
-        {
-          "page": 135,
-          "lesson": "6B",
-          "images": 1
-        },
-        {
-          "page": 136,
-          "lesson": "6B",
-          "images": 1
-        },
-        {
-          "page": 137,
-          "lesson": "6C",
-          "images": 5
-        },
-        {
-          "page": 138,
-          "lesson": "6D",
-          "images": 1
-        },
-        {
-          "page": 139,
-          "lesson": "7A",
-          "images": 1
-        },
-        {
-          "page": 140,
-          "lesson": "7B",
-          "images": 1
-        },
-        {
-          "page": 141,
-          "lesson": "7B",
-          "images": 1
-        },
-        {
-          "page": 142,
-          "lesson": "7C",
-          "images": 2
-        },
-        {
-          "page": 143,
-          "lesson": "7D",
-          "images": 1
-        },
-        {
-          "page": 144,
-          "lesson": "7D",
-          "images": 1
-        },
-        {
-          "page": 145,
-          "lesson": "8A",
-          "images": 2
-        },
-        {
-          "page": 146,
-          "lesson": "8A",
-          "images": 1
-        },
-        {
-          "page": 147,
-          "lesson": "8B",
-          "images": 7
-        },
-        {
-          "page": 148,
-          "lesson": "8B",
-          "images": 4
-        },
-        {
-          "page": 149,
-          "lesson": "8C",
-          "images": 2
-        },
-        {
-          "page": 150,
-          "lesson": "8C",
-          "images": 1
-        },
-        {
-          "page": 151,
-          "lesson": "8D",
-          "images": 1
-        },
-        {
-          "page": 152,
-          "lesson": "8D",
-          "images": 1
-        }
+      "required_canonical_vocabulary_items": 404,
+      "keys_unchanged_except_page_numbers": [
+        "Grammar practice 1-4.md",
+        "Grammar practice 5-8.md",
+        "Vocabulary practice 1-4.md",
+        "Vocabulary practice 5-8.md",
+        "Vocabulary practice.md"
       ],
-      "context_notes": "The7A date example aligns with its existing Thursday/year2030 task; the original example is preserved in7B.3D receives the same original four-time source needed after its activity is split.",
-      "key_alignment": "All135 original answers/criteria are regrouped and renumbered from their original answer records by the source-activity map.",
+      "main_lesson_changes_only_go_to_links": true,
+      "artwork_recordings_and_scripts_unchanged": true,
+      "one_duplicate_generic_cue_removed_from_8D_combined_page": true,
       "failures": []
     },
     "study_words": {
@@ -483,7 +236,7 @@
       "marked_entry_occurrences": 476,
       "ordinary_reference_pt_minimum": 10,
       "body_label_pt": 10.275,
-      "report": "Sources/Practice-lesson-headers-20261101/header-and-font-checks.json"
+      "report": "Sources/Practice-compact-20261102/header-and-font-checks.json"
     },
     "qr": [
       {
@@ -498,7 +251,7 @@
         ]
       },
       {
-        "page": "83",
+        "page": "81",
         "bank": "grammar",
         "unit": "2",
         "collisions": [],
@@ -509,9 +262,20 @@
         ]
       },
       {
-        "page": "87",
+        "page": "85",
         "bank": "grammar",
         "unit": "3",
+        "collisions": [],
+        "inside": true,
+        "square_mm": [
+          23.998535156599978,
+          23.998535156599978
+        ]
+      },
+      {
+        "page": "88",
+        "bank": "grammar",
+        "unit": "4",
         "collisions": [],
         "inside": true,
         "square_mm": [
@@ -522,7 +286,7 @@
       {
         "page": "91",
         "bank": "grammar",
-        "unit": "4",
+        "unit": "5",
         "collisions": [],
         "inside": true,
         "square_mm": [
@@ -533,17 +297,6 @@
       {
         "page": "94",
         "bank": "grammar",
-        "unit": "5",
-        "collisions": [],
-        "inside": true,
-        "square_mm": [
-          23.998535156599978,
-          23.998535156599978
-        ]
-      },
-      {
-        "page": "97",
-        "bank": "grammar",
         "unit": "6",
         "collisions": [],
         "inside": true,
@@ -553,7 +306,7 @@
         ]
       },
       {
-        "page": "99",
+        "page": "96",
         "bank": "grammar",
         "unit": "7",
         "collisions": [],
@@ -564,7 +317,7 @@
         ]
       },
       {
-        "page": "103",
+        "page": "100",
         "bank": "grammar",
         "unit": "8",
         "collisions": [],
@@ -575,7 +328,7 @@
         ]
       },
       {
-        "page": "109",
+        "page": "107",
         "bank": "vocabulary",
         "unit": "1",
         "collisions": [],
@@ -586,7 +339,7 @@
         ]
       },
       {
-        "page": "113",
+        "page": "110",
         "bank": "vocabulary",
         "unit": "2",
         "collisions": [],
@@ -597,7 +350,7 @@
         ]
       },
       {
-        "page": "120",
+        "page": "117",
         "bank": "vocabulary",
         "unit": "3",
         "collisions": [],
@@ -608,7 +361,7 @@
         ]
       },
       {
-        "page": "124",
+        "page": "122",
         "bank": "vocabulary",
         "unit": "4",
         "collisions": [],
@@ -619,7 +372,7 @@
         ]
       },
       {
-        "page": "132",
+        "page": "128",
         "bank": "vocabulary",
         "unit": "5",
         "collisions": [],
@@ -630,7 +383,7 @@
         ]
       },
       {
-        "page": "138",
+        "page": "134",
         "bank": "vocabulary",
         "unit": "6",
         "collisions": [],
@@ -641,7 +394,7 @@
         ]
       },
       {
-        "page": "144",
+        "page": "140",
         "bank": "vocabulary",
         "unit": "7",
         "collisions": [],
@@ -652,7 +405,7 @@
         ]
       },
       {
-        "page": "152",
+        "page": "146",
         "bank": "vocabulary",
         "unit": "8",
         "collisions": [],
@@ -663,7 +416,7 @@
         ]
       }
     ],
-    "evidence_directory": "Sources/Practice-lesson-headers-20261101",
+    "evidence_directory": "Sources/Practice-compact-20261102",
     "current_visual_identity_checks": {
       "coverage_spreads": 36,
       "functional_tools": 35,
@@ -693,31 +446,38 @@
         "file_report": "Sources/Practice-adjacency-20261101/live-file-verification.json",
         "visual_report": "Sources/Practice-adjacency-20261101/live-visual-review.json",
         "failures": []
+      },
+      "practice_lesson_headers": {
+        "completed": true,
+        "date": "2026-11-02",
+        "content_commit": "5f62bb324678a7062d4147ff2babea548d55d157",
+        "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=lessonpractice-5f62bb324678",
+        "pages": 156,
+        "navigation_options": 100,
+        "matching_practice_headers": 76,
+        "same_lesson_references": 75,
+        "adjacent_or_same_page_reference_pairs": 43,
+        "pictured_vocabulary_pages": 49,
+        "images_decoded": 104,
+        "blank_qr_reserves": 16,
+        "audio_controls": 90,
+        "audio_tracks_played_and_paused": [
+          "1.1",
+          "8.7"
+        ],
+        "all_changed_files_match": 106,
+        "viewer_report": "Sources/Practice-lesson-headers-20261101/live-viewer-verification.json",
+        "file_report": "Sources/Practice-lesson-headers-20261101/live-file-verification.json",
+        "visual_report": "Sources/Practice-lesson-headers-20261101/live-visual-review.json",
+        "failures": []
       }
     },
-    "live_viewer": {
-      "completed": true,
-      "date": "2026-11-02",
-      "content_commit": "5f62bb324678a7062d4147ff2babea548d55d157",
-      "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=lessonpractice-5f62bb324678",
-      "pages": 156,
-      "navigation_options": 100,
-      "matching_practice_headers": 76,
-      "same_lesson_references": 75,
-      "adjacent_or_same_page_reference_pairs": 43,
-      "pictured_vocabulary_pages": 49,
-      "images_decoded": 104,
-      "blank_qr_reserves": 16,
-      "audio_controls": 90,
-      "audio_tracks_played_and_paused": [
-        "1.1",
-        "8.7"
-      ],
-      "all_changed_files_match": 106,
-      "viewer_report": "Sources/Practice-lesson-headers-20261101/live-viewer-verification.json",
-      "file_report": "Sources/Practice-lesson-headers-20261101/live-file-verification.json",
-      "visual_report": "Sources/Practice-lesson-headers-20261101/live-visual-review.json",
-      "failures": []
+    "local_viewer": {
+      "checks_passed": 20,
+      "separate_paired_lesson_dropdown_choices": true,
+      "physical_previous_next": true,
+      "audio_and_print": true,
+      "report": "Sources/Practice-compact-20261102/local-viewer-verification.json"
     }
   },
   "new_objects": "Images/Editorial-objects/manifest.json",
@@ -867,9 +627,9 @@
         "Practice"
       ],
       "fingerprint": {
-        "files": 965,
-        "bytes": 699309744,
-        "sha256": "b0399a6b3b1a92278128505517e4dcabb5feb82b36be7cb81bea2c27d281f580"
+        "files": 978,
+        "bytes": 699758255,
+        "sha256": "a722f5a78bc8eaeabbb669b1fe627cd04f3b482f4605640c68aa377add36430d"
       },
       "normalize_text_line_endings": true
     },
@@ -880,8 +640,8 @@
       "exclude_markdown": true,
       "fingerprint": {
         "files": 21,
-        "bytes": 97121,
-        "sha256": "3fad715f24892bdccf4b3f3150f33c745cc0b6ef37013d599ce3cc5daf5989c0"
+        "bytes": 99316,
+        "sha256": "e539059f78667f04798306b914194acc904c84aea1fbb41c39b1f55ccd918a8b"
       },
       "normalize_text_line_endings": true
     },
@@ -891,8 +651,8 @@
       ],
       "fingerprint": {
         "files": 1,
-        "bytes": 50203845,
-        "sha256": "fb58be0876cab991749168869c7d091933dbf84083fba9fd1670ccf137dc1116"
+        "bytes": 50196018,
+        "sha256": "f89a2a836303946db8490c2043f763dfee476368cb136d2ff3ae86cd62cbe2c1"
       },
       "normalize_text_line_endings": true
     },
@@ -916,8 +676,8 @@
       ],
       "fingerprint": {
         "files": 15,
-        "bytes": 166919,
-        "sha256": "f89df27a221b9cf84d95404f0176d2b6a6cae003ca81e4b7d5fbf78944e24156"
+        "bytes": 181057,
+        "sha256": "077d37f5b975008b14016e07995b3915a14cbc120970032e733704cec39f216d"
       },
       "normalize_text_line_endings": true
     }
@@ -928,7 +688,7 @@
     "priority": "Warm adult playfulness, saturated local colour, tactile concept metaphors and protected letter/number graphics; functional consistency does not mean visual uniformity.",
     "regression_baseline": "8069492116058e45846c79601c66ebd8a3207abb",
     "protected_register": "Sources/Visual-personality.json",
-    "verification": "Core content, images and audio unchanged except Go-to references;17 unaffected core PDF pages pixel-identical to baseline. Four practical-language and first three credit bodies preserved; one credit divider has a one-row antialias difference.",
+    "verification": "Core lesson content/images/audio preserved except actual Go-to page references. Seventeen unaffected core PDF pages pixel-identical. Four practical-language and first three credit bodies preserved, apart from one-row divider antialias. Root reviewed all71G/V pages in contacts; independent editor reviewed the5changed compositions and8neighbours.",
     "functional_tool_counts": {
       "grammar": 25,
       "pronunciation": 1,
@@ -955,19 +715,20 @@
     "fresh_assets": "Practice/Images/manifest.json",
     "qr_registry": "Practice/Blooket-links.json",
     "counts": {
-      "grammar_pages": 27,
-      "vocabulary_pages": 49,
+      "grammar_pages": 24,
+      "vocabulary_pages": 47,
       "vocabulary_study_pages": 32,
       "vocabulary_activity_pages": 35,
       "communication_pages": 4,
-      "total_practice_pages": 80,
+      "total_practice_pages": 75,
       "forward_references": 75,
       "distinct_referenced_destinations": 75,
       "total_authored_destinations": 76,
-      "vocabulary_combined_pages": 18,
+      "vocabulary_combined_pages": 20,
       "grammar_lesson_groups": 27,
       "vocabulary_lesson_groups": 32,
       "vocabulary_reference_topics": 43,
+      "lesson_section_headers": 74,
       "vocabulary_topics": 43,
       "canonical_topics": 38,
       "required_within_topic_items": 404,
@@ -982,360 +743,274 @@
       "editable_functional_charts_arrows_and_labels": true,
       "assets": "Practice/Images/manifest.json",
       "policy": "../Base/design-system/PRACTICE-BANKS.md",
-      "current_evidence": "Sources/Practice-lesson-headers-20261101"
+      "current_evidence": "Sources/Practice-compact-20261102"
     },
     "adjacency": {
       "policy": "Same page or immediately adjacent pages, always within the same lesson",
       "pairs": [
         {
           "topic": "vocabulary-greetings",
-          "canonical_topic": "vocabulary-greetings",
           "lesson": "1A",
-          "study_page": 104,
-          "activity_page": 105,
-          "activity_id": "activity-vocabulary-greetings"
+          "study_page": 101,
+          "activity_page": 102
         },
         {
           "topic": "vocabulary-personal-information",
-          "canonical_topic": "vocabulary-personal-information",
           "lesson": "1A",
-          "study_page": 104,
-          "activity_page": 105,
-          "activity_id": "activity-vocabulary-personal-information"
+          "study_page": 101,
+          "activity_page": 102
         },
         {
           "topic": "vocabulary-alphabet",
-          "canonical_topic": "vocabulary-alphabet",
           "lesson": "1A",
-          "study_page": 104,
-          "activity_page": 105,
-          "activity_id": "activity-vocabulary-alphabet"
+          "study_page": 101,
+          "activity_page": 102
         },
         {
           "topic": "vocabulary-numbers",
-          "canonical_topic": "vocabulary-numbers",
           "lesson": "1A",
-          "study_page": 104,
-          "activity_page": 105,
-          "activity_id": "activity-vocabulary-numbers"
+          "study_page": 101,
+          "activity_page": 102
         },
         {
           "topic": "vocabulary-occupations",
-          "canonical_topic": "vocabulary-occupations",
           "lesson": "1B",
-          "study_page": 106,
-          "activity_page": 107,
-          "activity_id": "activity-vocabulary-occupations"
+          "study_page": 103,
+          "activity_page": 104
         },
         {
           "topic": "vocabulary-adjectives",
-          "canonical_topic": "vocabulary-adjectives",
           "lesson": "1B",
-          "study_page": 106,
-          "activity_page": 107,
-          "activity_id": "activity-vocabulary-adjectives"
+          "study_page": 103,
+          "activity_page": 104
         },
         {
           "topic": "vocabulary-countries",
-          "canonical_topic": "vocabulary-countries",
           "lesson": "1C",
-          "study_page": 108,
-          "activity_page": 108,
-          "activity_id": "activity-vocabulary-countries"
+          "study_page": 105,
+          "activity_page": 105
         },
         {
           "topic": "vocabulary-adjectives-1c",
-          "canonical_topic": "vocabulary-adjectives",
           "lesson": "1C",
-          "study_page": 108,
-          "activity_page": 109,
-          "activity_id": "activity-vocabulary-adjectives-1c"
+          "study_page": 105,
+          "activity_page": 106
         },
         {
           "topic": "vocabulary-personal-information-1d",
-          "canonical_topic": "vocabulary-personal-information",
           "lesson": "1D",
-          "study_page": 110,
-          "activity_page": 110,
-          "activity_id": "activity-vocabulary-personal-information-1d"
+          "study_page": 107,
+          "activity_page": 107
         },
         {
           "topic": "vocabulary-personal-items",
-          "canonical_topic": "vocabulary-personal-items",
           "lesson": "2A",
-          "study_page": 111,
-          "activity_page": 111,
-          "activity_id": "activity-vocabulary-personal-items"
+          "study_page": 108,
+          "activity_page": 108
         },
         {
           "topic": "vocabulary-telling-time",
-          "canonical_topic": "vocabulary-telling-time",
           "lesson": "2B",
-          "study_page": 112,
-          "activity_page": 112,
-          "activity_id": "activity-vocabulary-telling-time"
+          "study_page": 109,
+          "activity_page": 109
         },
         {
           "topic": "vocabulary-family-members",
-          "canonical_topic": "vocabulary-family-members",
           "lesson": "2C",
-          "study_page": 113,
-          "activity_page": 113,
-          "activity_id": "activity-vocabulary-family-members"
+          "study_page": 110,
+          "activity_page": 110
         },
         {
           "topic": "vocabulary-adjectives-2d",
-          "canonical_topic": "vocabulary-adjectives",
           "lesson": "2D",
-          "study_page": 114,
-          "activity_page": 114,
-          "activity_id": "activity-vocabulary-adjectives-2d"
+          "study_page": 111,
+          "activity_page": 111
         },
         {
           "topic": "vocabulary-colors",
-          "canonical_topic": "vocabulary-colors",
           "lesson": "2D",
-          "study_page": 114,
-          "activity_page": 114,
-          "activity_id": "activity-vocabulary-colors"
+          "study_page": 111,
+          "activity_page": 111
         },
         {
           "topic": "vocabulary-daily-routines",
-          "canonical_topic": "vocabulary-daily-routines",
           "lesson": "3A",
-          "study_page": 115,
-          "activity_page": 116,
-          "activity_id": "activity-vocabulary-daily-routines"
+          "study_page": 112,
+          "activity_page": 113
         },
         {
           "topic": "vocabulary-days-of-the-week",
-          "canonical_topic": "vocabulary-days-of-the-week",
           "lesson": "3B",
-          "study_page": 117,
-          "activity_page": 117,
-          "activity_id": "activity-vocabulary-days-of-the-week"
+          "study_page": 114,
+          "activity_page": 114
         },
         {
           "topic": "vocabulary-place-adjectives-recall",
-          "canonical_topic": "vocabulary-place-adjectives-recall",
           "lesson": "3C",
-          "study_page": 118,
-          "activity_page": 119,
-          "activity_id": "activity-vocabulary-place-adjectives-recall"
+          "study_page": 115,
+          "activity_page": 116
         },
         {
           "topic": "vocabulary-daily-routines-3d",
-          "canonical_topic": "vocabulary-daily-routines",
           "lesson": "3D",
-          "study_page": 120,
-          "activity_page": 120,
-          "activity_id": "activity-vocabulary-daily-routines-3d"
+          "study_page": 117,
+          "activity_page": 117
         },
         {
           "topic": "vocabulary-food-and-drink",
-          "canonical_topic": "vocabulary-food-and-drink",
           "lesson": "4A",
-          "study_page": 121,
-          "activity_page": 122,
-          "activity_id": "activity-vocabulary-food-and-drink"
+          "study_page": 118,
+          "activity_page": 119
         },
         {
           "topic": "vocabulary-flavors",
-          "canonical_topic": "vocabulary-flavors",
           "lesson": "4B",
-          "study_page": 123,
-          "activity_page": 123,
-          "activity_id": "activity-vocabulary-flavors"
+          "study_page": 120,
+          "activity_page": 120
         },
         {
           "topic": "vocabulary-cooking-verbs",
-          "canonical_topic": "vocabulary-cooking-verbs",
           "lesson": "4C",
-          "study_page": 124,
-          "activity_page": 124,
-          "activity_id": "activity-vocabulary-cooking-verbs"
+          "study_page": 121,
+          "activity_page": 121
         },
         {
           "topic": "vocabulary-sharing-food",
-          "canonical_topic": "vocabulary-sharing-food",
           "lesson": "4D",
-          "study_page": 125,
-          "activity_page": 125,
-          "activity_id": "activity-vocabulary-sharing-food"
+          "study_page": 122,
+          "activity_page": 122
         },
         {
           "topic": "vocabulary-clothes-and-accessories",
-          "canonical_topic": "vocabulary-clothes-and-accessories",
           "lesson": "5A",
-          "study_page": 126,
-          "activity_page": 127,
-          "activity_id": "activity-vocabulary-clothes-and-accessories"
+          "study_page": 123,
+          "activity_page": 123
         },
         {
           "topic": "vocabulary-shopping-verbs",
-          "canonical_topic": "vocabulary-shopping-verbs",
           "lesson": "5B",
-          "study_page": 128,
-          "activity_page": 128,
-          "activity_id": "activity-vocabulary-shopping-verbs"
+          "study_page": 124,
+          "activity_page": 124
         },
         {
           "topic": "vocabulary-places-in-town",
-          "canonical_topic": "vocabulary-places-in-town",
           "lesson": "5C",
-          "study_page": 129,
-          "activity_page": 130,
-          "activity_id": "activity-vocabulary-places-in-town"
+          "study_page": 125,
+          "activity_page": 126
         },
         {
           "topic": "vocabulary-at-the-store",
-          "canonical_topic": "vocabulary-at-the-store",
           "lesson": "5D",
-          "study_page": 131,
-          "activity_page": 132,
-          "activity_id": "activity-vocabulary-at-the-store"
+          "study_page": 127,
+          "activity_page": 128
         },
         {
           "topic": "vocabulary-places-in-town-2",
-          "canonical_topic": "vocabulary-places-in-town-2",
           "lesson": "6A",
-          "study_page": 133,
-          "activity_page": 134,
-          "activity_id": "activity-vocabulary-places-in-town-2"
+          "study_page": 129,
+          "activity_page": 130
         },
         {
           "topic": "vocabulary-rooms-and-furniture",
-          "canonical_topic": "vocabulary-rooms-and-furniture",
           "lesson": "6B",
-          "study_page": 135,
-          "activity_page": 136,
-          "activity_id": "activity-vocabulary-rooms-and-furniture"
+          "study_page": 131,
+          "activity_page": 132
         },
         {
           "topic": "vocabulary-movement-and-directions",
-          "canonical_topic": "vocabulary-movement-and-directions",
           "lesson": "6C",
-          "study_page": 137,
-          "activity_page": 137,
-          "activity_id": "activity-vocabulary-movement-and-directions"
+          "study_page": 133,
+          "activity_page": 133
         },
         {
           "topic": "vocabulary-shopping-centers-and-attractions",
-          "canonical_topic": "vocabulary-shopping-centers-and-attractions",
           "lesson": "6D",
-          "study_page": 138,
-          "activity_page": 138,
-          "activity_id": "activity-vocabulary-shopping-centers-and-attractions"
+          "study_page": 134,
+          "activity_page": 134
         },
         {
           "topic": "vocabulary-past-time-expressions",
-          "canonical_topic": "vocabulary-past-time-expressions",
           "lesson": "7A",
-          "study_page": 139,
-          "activity_page": 139,
-          "activity_id": "activity-vocabulary-past-time-expressions"
+          "study_page": 135,
+          "activity_page": 135
         },
         {
           "topic": "vocabulary-months",
-          "canonical_topic": "vocabulary-months",
           "lesson": "7B",
-          "study_page": 140,
-          "activity_page": 141,
-          "activity_id": "activity-vocabulary-months"
+          "study_page": 136,
+          "activity_page": 137
         },
         {
           "topic": "vocabulary-dates-and-ordinal-numbers",
-          "canonical_topic": "vocabulary-dates-and-ordinal-numbers",
           "lesson": "7B",
-          "study_page": 140,
-          "activity_page": 141,
-          "activity_id": "activity-vocabulary-dates-and-ordinal-numbers"
+          "study_page": 136,
+          "activity_page": 137
         },
         {
           "topic": "vocabulary-past-time-expressions-7b",
-          "canonical_topic": "vocabulary-past-time-expressions",
           "lesson": "7B",
-          "study_page": 140,
-          "activity_page": 141,
-          "activity_id": "activity-vocabulary-past-time-expressions-7b"
+          "study_page": 136,
+          "activity_page": 137
         },
         {
           "topic": "vocabulary-music",
-          "canonical_topic": "vocabulary-music",
           "lesson": "7C",
-          "study_page": 142,
-          "activity_page": 142,
-          "activity_id": "activity-vocabulary-music"
+          "study_page": 138,
+          "activity_page": 138
         },
         {
           "topic": "vocabulary-irregular-past-verbs",
-          "canonical_topic": "vocabulary-irregular-past-verbs",
           "lesson": "7D",
-          "study_page": 143,
-          "activity_page": 144,
-          "activity_id": "activity-vocabulary-irregular-past-verbs"
+          "study_page": 139,
+          "activity_page": 140
         },
         {
           "topic": "vocabulary-sequencing-words",
-          "canonical_topic": "vocabulary-sequencing-words",
           "lesson": "7D",
-          "study_page": 143,
-          "activity_page": 144,
-          "activity_id": "activity-vocabulary-sequencing-words"
+          "study_page": 139,
+          "activity_page": 140
         },
         {
           "topic": "vocabulary-travel-verbs",
-          "canonical_topic": "vocabulary-travel-verbs",
           "lesson": "8A",
-          "study_page": 145,
-          "activity_page": 145,
-          "activity_id": "activity-vocabulary-travel-verbs"
+          "study_page": 141,
+          "activity_page": 141
         },
         {
           "topic": "vocabulary-animals",
-          "canonical_topic": "vocabulary-animals",
           "lesson": "8A",
-          "study_page": 145,
-          "activity_page": 146,
-          "activity_id": "activity-vocabulary-animals"
+          "study_page": 141,
+          "activity_page": 142
         },
         {
           "topic": "vocabulary-weather-and-seasons",
-          "canonical_topic": "vocabulary-weather-and-seasons",
           "lesson": "8B",
-          "study_page": 147,
-          "activity_page": 148,
-          "activity_id": "activity-vocabulary-weather-and-seasons"
+          "study_page": 143,
+          "activity_page": 144
         },
         {
           "topic": "vocabulary-body-parts",
-          "canonical_topic": "vocabulary-body-parts",
           "lesson": "8C",
-          "study_page": 149,
-          "activity_page": 149,
-          "activity_id": "activity-vocabulary-body-parts"
+          "study_page": 145,
+          "activity_page": 145
         },
         {
           "topic": "vocabulary-health-complaints",
-          "canonical_topic": "vocabulary-health-complaints",
           "lesson": "8C",
-          "study_page": 149,
-          "activity_page": 150,
-          "activity_id": "activity-vocabulary-health-complaints"
+          "study_page": 145,
+          "activity_page": 146
         },
         {
           "topic": "vocabulary-phone-and-ticket-language",
-          "canonical_topic": "vocabulary-phone-and-ticket-language",
           "lesson": "8D",
-          "study_page": 151,
-          "activity_page": 152,
-          "activity_id": "activity-vocabulary-phone-and-ticket-language"
+          "study_page": 147,
+          "activity_page": 147
         }
       ],
       "maximum_pages_after_reference": 1,
       "unrelated_references_intervene": false
     },
-    "lesson_headers": "Every grammar/vocabulary page contains one actual main lesson code, title and objectives, with matching header geometry and typography. Grammar blue #245b9a; vocabulary green #247348."
+    "lesson_headers": "Exact source header per section; maximum2consecutive lesson sections per page, source order, separate navigation destinations."
   },
   "author_feedback": {
     "date": "2026-11-01",
@@ -1343,6 +1018,6 @@
     "grammar_practice": "Remove inline explanatory prose; use compact charts, arrows, diagrams, short labels and complete models. Do not overdo present simple or spread excess detail to other pages.",
     "practice_artwork": "Replace all vector-like pictorial graphics with imagegen-quality images. Every vocabulary study and activity page must use useful pictures or cutouts.",
     "vocabulary_adjacency": "Keep each lesson word bank beside its matching practice; short sets can share one page.",
-    "practice_headers": "Same header and lesson number as main lesson, with a different color; split pages covering multiple lessons."
+    "practice_headers": "Retain main lesson headers and codes. Two consecutive short lesson sections may share a page if they fit comfortably; preserve readability and writing space."
   }
 }

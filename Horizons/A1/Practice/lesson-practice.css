@@ -23,10 +23,14 @@
 .hz-page.hz-content.hz-practice-page.lp-lesson .lp-related-anchor {display:block;height:0;scroll-margin-top:66px;}
 .hz-page.hz-content.hz-practice-page.lp-lesson .lp-reference .vs-topic:only-child {grid-column:1/-1;}
 .hz-page.hz-content.hz-practice-page.lp-lesson .blooket-slot ~ .lp-flow {padding-bottom:30mm;}
-.hz-page.hz-content.hz-practice-page.lp-grammar[data-practice-lesson="8A"] .ig-travel-record {width:90mm;}
-.hz-page.hz-content.hz-practice-page.lp-vocabulary[data-practice-lesson="8B"] .practice-task {margin-top:2mm;}
-.hz-page.hz-content.hz-practice-page.lp-vocabulary[data-practice-lesson="2C"] .lp-cue img {height:48mm;}
-.hz-page.hz-content.hz-practice-page.lp-vocabulary[data-practice-lesson="3B"] .lp-cue img {height:44mm;}
-.hz-page.hz-content.hz-practice-page.lp-vocabulary[data-practice-lesson="4D"] .lp-cue img {height:42mm;}
-.hz-page.hz-content.hz-practice-page.lp-vocabulary[data-practice-lesson="5B"] .lp-cue img {height:65mm;}
-.hz-page.hz-content.hz-practice-page.lp-vocabulary[data-practice-lesson="8D"] .lp-cue img {height:50mm;}
+.hz-page.hz-content.hz-practice-page.lp-grammar .lp-section[data-practice-lesson="8A"] .ig-travel-record {width:90mm;}
+.hz-page.hz-content.hz-practice-page.lp-vocabulary .lp-section[data-practice-lesson="8B"] .practice-task {margin-top:2mm;}
+.hz-page.hz-content.hz-practice-page.lp-vocabulary .lp-section[data-practice-lesson="2C"] .lp-cue img {height:48mm;}
+.hz-page.hz-content.hz-practice-page.lp-vocabulary .lp-section[data-practice-lesson="3B"] .lp-cue img {height:44mm;}
+.hz-page.hz-content.hz-practice-page.lp-vocabulary .lp-section[data-practice-lesson="4D"] .lp-cue img {height:42mm;}
+.hz-page.hz-content.hz-practice-page.lp-vocabulary .lp-section[data-practice-lesson="5B"] .lp-cue img {height:65mm;}
+.hz-page.hz-content.hz-practice-page.lp-vocabulary .lp-section[data-practice-lesson="8D"] .lp-cue img {height:50mm;}
+
+/* Two clear lesson sections may share a page; never compress teaching type. */
+.hz-page.hz-practice-page .lp-section {display:flow-root;scroll-margin-top:65px;}
+.hz-page.hz-practice-page .lp-section + .lp-section {margin-top:8mm;padding-top:2mm;border-top:.3mm solid #a9b3b8;}

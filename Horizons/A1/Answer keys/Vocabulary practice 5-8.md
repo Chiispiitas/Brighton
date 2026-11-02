@@ -2,35 +2,35 @@
 
 Numbers restart within each main lesson. The original controlled answers and open-response criteria are retained; page references and activity numbers follow the lesson-specific practice.
 
-## 5A — What are you wearing? · pages 126–127
+## 5A — What are you wearing? · page 123
 
 **1.** Open memory game. Exact visible set: red jacket, blue shirt, yellow T-shirt, black jeans, white shoes, pink scarf. Accept singular/plural where grammatical (a pair of white shoes). The writer chooses two privately and records color+item, shows the list to the partner for ten seconds, and then covers it. The partner recalls the briefly exposed pair, not a predetermined pair. Alone, retrieve any/all six and check the new image. One point per correct recalled item.
 
 **2.** bag; dress; hat; sweater. A sensible extra choice is open.
 
-## 5B — That’s my favorite! · page 128
+## 5B — That’s my favorite! · page 124
 
 **1.** Before buying: try on. At checkout: pay. Fits at home: keep. Broken at home: return. These are alternate outcomes, not an instruction that all kept items must later be returned.
 
-## 5C — How often do you shop? · pages 129–130
+## 5C — How often do you shop? · pages 125–126
 
 **1.** Rosa: supermarket + library, either order. Amir: market + clothes store, either order. The learner instruction explicitly says to use only items shown on the fictional map, so the two-stop answers are supported; do not require actual stores in the learner’s town to stock the same things.
 
 **2.** Open. A private two-stop need; partner names the two corresponding places. Names must match the source stock list and the speaker’s actual request. No false claim of separate hidden maps.
 
-## 5D — At the store · pages 131–132
+## 5D — At the store · pages 127–128
 
 **1.** customer; cashier; cash; receipt; card; checkout.
 
 **2.** Open. Clues correctly identify a selected payment/role/place word without naming it. First partner to identify three words wins. Solitary option: two useful clues and accurate recall.
 
-## 6A — City life or country life? · pages 133–134
+## 6A — City life or country life? · pages 129–130
 
 **1.** Cross out: A bank (cash is already available); B post office (no letter); C museum (no art visit today). Remaining stops are respectively pharmacy/train station, bank/train station, hospital/post office. The map is original classroom fiction; no actual opening times are claimed.
 
 **2.** Open. Two privately chosen needs supported by the six places. Check both named places against the speaker’s needs. One point per useful correct place. Alone: any three accurate place names.
 
-## 6B — My dream home · pages 135–136
+## 6B — My dream home · pages 131–132
 
 **1.** Exact four rooms: bedroom (upper left), bathroom (upper right), kitchen (lower left), living room/living area (lower right). Furniture includes bed, sofa, table, chair/armchair; lamp also visible. At least two room names and two accurate furniture names per turn; second player uses different words where possible. Do not assess bathtub versus shower, which the image does not establish unambiguously.
 
@@ -38,31 +38,31 @@ Numbers restart within each main lesson. The original controlled answers and ope
 
 **3.** Open. One of the pictured rooms with one changed furniture item; the partner accurately identifies the change from the shared picture. A genuine unknown choice exists in the new drawing, not in the visible source itself.
 
-## 6C — My neighborhood · page 137
+## 6C — My neighborhood · page 133
 
 **1.** go past the bank 3; go along the street 4; go through the park 1; go across the street 2. The red delivery path visibly passes through the green park, crosses the gray first street, passes below the bank, and turns to follow the second gray street.
 
 **2.** Open. Correct ordered route chunks with the listener’s own identical book explicitly closed while the speaker describes the source; the listener’s new drawing checks comprehension. The route initially travels right/east and then turns left/up/north to follow the second street. If the speaker includes a turn, it must agree with this route; assess the four named movement relations rather than inventing a compass requirement.
 
-## 6D — Where’s the mall? · page 138
+## 6D — Where’s the mall? · page 134
 
 **1.** Preferred plan: walk in a garden and see a waterfall; reasons connect to plants/water/quiet walking. Do not choose ride a roller coaster for this guest. Accept another defensible quiet choice with a clear reason, e.g. shopping in a quiet place, without requiring that every attraction belongs to the same real mall.
 
-## 7A — When I was little… · page 139
+## 7A — When I was little… · page 135
 
 **1.** Wednesday: yesterday. Wednesday night: last night. Previous Saturday/Sunday: last weekend. 2029: last year. Today Thursday/year2030 is explicitly an example anchor, not a real-time classroom claim.
 
-## 7B — I was born in July! · pages 140–141
+## 7B — I was born in July! · pages 136–137
 
 **1.** January, February, March, April, May, June, July, August, September, October, November, December. One spelling point per month. Assistance is allowed after a pause; the game is cooperative practice rather than a surprise test.
 
 **2.** Luca: June 21st (June twenty-first); Jade: December 3rd (December third); Omar: March 12th (March twelfth). Equivalent spoken ordinal-of-month forms accepted.
 
-## 7C — Life in the 80s · page 142
+## 7C — Life in the 80s · page 138
 
 **1.** A record; B cassette; C radio. The three original native diagrams show record grooves/center, cassette reels, and radio speaker/antenna. Private-object clues should distinguish the object while withholding the name.
 
-## 7D — Dear diary · pages 143–144
+## 7D — Dear diary · pages 139–140
 
 **1.** got; went; had; saw; ate; bought; wrote. Corrected story: Yesterday, I got up at seven. I went to a small market. I had breakfast with my brother. I saw an old friend. We ate fruit. I bought a red notebook. I wrote about our day. Each of the seven target present/past pairs is practiced in context. Then the learner retells any three supported events from memory.
 
@@ -70,7 +70,7 @@ Numbers restart within each main lesson. The original controlled answers and ope
 
 **3.** Open. Retell the ordered story with one plausible additional event and a relevant title supplied by the partner. Alone: a relevant title and extra past event. No compulsory personal disclosure.
 
-## 8A — Let’s go to Toronto! · pages 145–146
+## 8A — Let’s go to Toronto! · pages 141–142
 
 **1.** 08:00 travel by train; 10:00 arrive in a city; 12:00 stay in a hotel; 15:00 visit a market; 16:00 take photos; 18:00 leave at six. Each misplaced verb is used once in the repair.
 
@@ -78,7 +78,7 @@ Numbers restart within each main lesson. The original controlled answers and ope
 
 **3.** Crossword: Down1 BEAVER, Down2 DUCK, Down3 GOOSE; Across4 RACCOON, Across5 SQUIRREL. Every crossing agrees. Numbered positions are 1 row1/col2,2 row4/col4,3 row5/col7,4 row6/col2,5 row8/col7 in a9×14 grid. The scrambled-letter clues retrieve already introduced animal spellings; they do not require untaught bushy/tail/mask/neck terminology. Open extra clue uses accurate known language about an animal without naming it. If more than one animal fits, accept supported guesses and ask for another clue; a single clue is not guaranteed to identify a unique answer.
 
-## 8B — It’s so cold! · pages 147–148
+## 8B — It’s so cold! · pages 143–144
 
 **1.** Monday rainy; Tuesday hot (sunny also describes the icon, but the wrong cold is corrected most directly by hot); Wednesday windy; Thursday cold (snowy is also visible and is acceptable if the learner chooses a true replacement). The source forecasts are invented classroom cards, not travel-safety guidance.
 
@@ -88,7 +88,7 @@ Numbers restart within each main lesson. The original controlled answers and ope
 
 **4.** Open. Two personal or imagined seasonal activities, a supported guess and correct season spelling. Do not treat weather as universal across countries or seasons; several guesses may be defensible.
 
-## 8C — Can you go tomorrow? · pages 149–150
+## 8C — Can you go tomorrow? · pages 145–146
 
 **1.** Kinesthetic naming: head, arm, hand, stomach, leg, foot. Point to one’s own body only; no contact with a partner is needed. Partner names each target. Alone: six correctly spelled body words recalled and checked against Lesson8C.
 
@@ -96,7 +96,7 @@ Numbers restart within each main lesson. The original controlled answers and ope
 
 **3.** toothache; stomachache.
 
-## 8D — Tickets, please! · pages 151–152
+## 8D — Tickets, please! · page 147
 
 **1.** return, not one way. Model: A return ticket to Riverford at two forty. Twelve dollars. The other details already match fictional TicketB.
 

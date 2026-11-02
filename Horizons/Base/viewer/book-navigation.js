@@ -16,26 +16,36 @@
     page.id ||= `page-${page.dataset.page}`;
     const practicePage = page.classList.contains('hz-practice-page');
     const header = practicePage ? null : page.querySelector('.hz-lesson-header');
+    const sections = practicePage ? [...page.querySelectorAll('.lp-section[data-practice-start="true"]')] : [];
+    if (sections.length) {
+      sections.forEach(section => {
+        const option = new Option(section.dataset.practiceTitle, section.id);
+        select.add(option);starts.push({i, target:section, value:section.id});
+      });
+      return;
+    }
     const practice = practicePage && page.dataset.practiceStart === 'true';
     if (header || practice || (page.classList.contains('hz-credits-page') && !starts.some(x => x.credits))) {
       const code = header?.querySelector('.hz-lesson-tab__id')?.textContent.trim();
       const title = header?.querySelector('.hz-lesson-title')?.textContent.trim() || (practice ? page.dataset.practiceTitle : 'Image credits');
-      const option = new Option(code ? `${code} · ${title}` : title, String(i));
-      select.add(option);starts.push({i, credits:!header && !practice});
+      const option = new Option(code ? `${code} · ${title}` : title, page.id);
+      select.add(option);starts.push({i, target:page, value:page.id, credits:!header && !practice});
     }
   });
   function sync(i) {
     current = Math.max(0, Math.min(pages.length - 1, i));
     previous.disabled = current === 0;next.disabled = current === pages.length - 1;
     output.textContent = `p. ${pages[current].dataset.page}`;
-    const first = starts.filter(x => x.i <= current).at(-1);
-    if (first) select.value = String(first.i);
+    // A second lesson visible lower on the page is not the active reading anchor.
+    const readingEdge = Math.max(100, nav.getBoundingClientRect().bottom + 40);
+    const first = starts.filter(x => x.i < current || (x.i === current && x.target.getBoundingClientRect().top < readingEdge)).at(-1) || starts.find(x => x.i === current);
+    if (first) select.value = first.value;
   }
-  function go(i) {
-    sync(i);pages[current].scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
-    history.replaceState(null,'',`#${pages[current].id}`);
+  function go(i, target = pages[i]) {
+    sync(i);target.scrollIntoView({block:'start',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'auto':'smooth'});
+    history.replaceState(null,'',`#${target.id}`);
   }
-  select.addEventListener('change',() => go(Number(select.value)));
+  select.addEventListener('change',() => {const entry=starts.find(x=>x.value===select.value);if(entry)go(entry.i,entry.target);});
   previous.addEventListener('click',() => go(current-1));next.addEventListener('click',() => go(current+1));
   document.body.append(nav);
   let queued = false;

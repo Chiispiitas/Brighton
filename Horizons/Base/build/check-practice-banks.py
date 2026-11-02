@@ -11,20 +11,34 @@ from bs4 import BeautifulSoup
 
 def lesson_banks(book,manifest):
  required={t['topic']:t for t in json.loads((book/'Practice/Vocabulary/study-vocabulary.json').read_text(encoding='utf-8'))['topics']}
- topics={};numbers=[];slots=[];lessons=set();refs=0;studies=0;images=0;tasks=0
+ topics={};numbers=[];slots=[];lessons=set();refs=0;studies=0;images=0;tasks=0;section_count=0;paired_pages=0
+ def owner(node):
+  return node if 'lp-section'in node.get('class',[])else node.find_parent(class_='lp-section')or(node if node.name=='article'else node.find_parent('article'))
  for master in manifest['masters']:
-  file=book/master['file'];doc=BeautifulSoup(file.read_text(encoding='utf-8'),'html.parser');actual=[]
+  file=book/master['file'];doc=BeautifulSoup(file.read_text(encoding='utf-8'),'html.parser');actual=[];section_codes=[]
   for page in doc.select('article.hz-page'):
    n=int(page['data-page']);actual.append(n);numbers.append(n);assert page['id']==f'page-{n}' and page.select_one('.hz-page-number').get_text(strip=True)==str(n)
-   kind=master['kind'];code=page.get('data-practice-lesson');tasks+=len(page.select('.practice-task,.cp-task'))
+   kind=master['kind'];tasks+=len(page.select('.practice-task,.cp-task'))
    if kind in ['grammar','vocabulary']:
-    assert re.fullmatch(r'[1-8][A-D]',code or''),f'{file}: practice page needs one actual lesson code'
-    source=BeautifulSoup((book/f'Lessons/{code}.html').read_text(encoding='utf-8'),'html.parser')
-    assert page.select_one('.hz-lesson-tab__id').get_text(strip=True)==code,f'{file}: lesson badge mismatch'
-    assert page.select_one('.hz-lesson-title').get_text(' ',strip=True)==source.select_one('.hz-lesson-title').get_text(' ',strip=True),f'{file}: main title mismatch'
-    assert page.select_one('.hz-objectives').get_text(' ',strip=True)==source.select_one('.hz-objectives').get_text(' ',strip=True),f'{file}: main outcome mismatch'
-    lessons.add((kind,code))
-    for a in page.select('.practice-topic >h2 small a'):assert a.get_text(strip=True)==code,f'{file}: mixed lesson topic labels'
+    sections=page.select('main > .lp-section')
+    if manifest.get('version',1)>=4:assert sections,f'{file}: practice page needs explicit lesson sections'
+    sections=sections or[page]
+    assert 1<=len(sections)<=2,f'{file}: maximum two lesson sections per page'
+    codes=[section.get('data-practice-lesson')for section in sections]
+    assert len(set(codes))==len(codes),f'{file}: duplicate lesson sections on one page'
+    if page.has_attr('data-practice-lessons'):assert page['data-practice-lessons'].split()==codes,f'{file}: page lesson list mismatch'
+    section_count+=len(sections);paired_pages+=len(sections)==2
+    for section,code in zip(sections,codes):
+     assert re.fullmatch(r'[1-8][A-D]',code or''),f'{file}: section needs one actual lesson code'
+     assert int(code[0])==master['unit'],f'{file}: section belongs to another unit'
+     source=BeautifulSoup((book/f'Lessons/{code}.html').read_text(encoding='utf-8'),'html.parser')
+     headers=section.select('.lp-header');assert len(headers)==1,f'{file}: each section needs its own full lesson header'
+     assert headers[0].select_one('.hz-lesson-tab__id').get_text(strip=True)==code,f'{file}: lesson badge mismatch'
+     assert headers[0].select_one('.hz-lesson-title').get_text(' ',strip=True)==source.select_one('.hz-lesson-title').get_text(' ',strip=True),f'{file}: main title mismatch'
+     assert headers[0].select_one('.hz-objectives').get_text(' ',strip=True)==source.select_one('.hz-objectives').get_text(' ',strip=True),f'{file}: main outcome mismatch'
+     lessons.add((kind,code));section_codes.append(code)
+     for a in section.select('.practice-topic >h2 small a'):assert a.get_text(strip=True)==code,f'{file}: mixed lesson topic labels'
+     if kind=='vocabulary':assert section.select('img[src]'),f'{file}: vocabulary lesson section has no picture'
     assert all(svg.get('data-editorial-labels')=='true'for svg in page.select('svg')),f'{file}: pictorial SVG is not allowed'
     assert not page.select('.gp14-phone,.gp14-tokens,.gp14-tomatoes,.gp58-weather-symbol'),f'{file}: pictorial CSS substitute'
    if kind=='vocabulary':
@@ -33,7 +47,7 @@ def lesson_banks(book,manifest):
      key=section['id'];assert key in required,key;studies+=1
      items={x['data-vocab-item']for x in section.select('[data-vocab-item]')};assert not set(required[key]['required_items'])-items,f'{key}: incomplete word bank'
      a=section.select_one('.vs-practice-link');target=doc.find(id=a['href'][1:]);assert target,key
-     ap=target.find_parent('article');delta=int(ap['data-page'])-n;assert 0<=delta<=1 and ap.get('data-practice-lesson')==code,f'{key}: practice separated from its own lesson'
+     ap=target.find_parent('article');delta=int(ap['data-page'])-n;code=owner(section).get('data-practice-lesson');assert 0<=delta<=1 and owner(target).get('data-practice-lesson')==code,f'{key}: practice separated from its own lesson'
      assert a.get('data-target-page')==ap['data-page']and('below'in a.get_text().lower()if delta==0 else ap['data-page']in a.get_text()),f'{key}: practice page label mismatch'
    for img in page.select('img[src]'):
     p=(file.parent/unquote(img['src'])).resolve();assert p.is_file()and img.get('alt','').strip(),f'{file}: image missing or undescribed'
@@ -41,10 +55,11 @@ def lesson_banks(book,manifest):
     images+=1
    for t in page.select('[id]'):
     key=t['id']
-    if re.match(r'^(grammar|vocabulary|communication)-',key):assert key not in topics,key;topics[key]=(master['file'],n,code)
+    if re.match(r'^(grammar|vocabulary|communication)-',key):assert key not in topics,key;topics[key]=(master['file'],n,owner(t).get('data-practice-lesson'))
    for slot in page.select('.blooket-slot'):
     assert slot.select_one('.blooket-slot__qr')and not slot.select('img,a[href]');slots.append((slot['data-blooket-bank'],int(slot['data-blooket-unit'])))
   assert actual==master['pages'],file
+  assert section_codes==sorted(section_codes),f'{file}: lesson sections are out of source order'
  assert numbers==list(range(manifest['first_printed_page'],manifest['last_printed_page']+1))
  assert sorted(slots)==sorted((k,u)for k in ['grammar','vocabulary']for u in range(1,9))
  assert studies==len(required)==43
@@ -63,7 +78,7 @@ def lesson_banks(book,manifest):
  compiled=BeautifulSoup((book/"Student's Book.html").read_text(encoding='utf-8'),'html.parser');ids=[n['id']for n in compiled.select('[id]')];assert len(ids)==len(set(ids))
  nums=[int(n['data-page'])for n in compiled.select('.hz-page')];assert nums==list(range(5,nums[-1]+1))
  for a in compiled.select('a[href^="#"]'):assert unquote(a['href'][1:])in ids,a['href']
- print(json.dumps({'practice_pages':len(numbers),'lesson_specific_grammar':27,'lesson_specific_vocabulary':32,'reference_topics':studies,'lesson_references':refs,'activities':tasks,'raster_uses':images,'structural_checks':'passed'}))
+ print(json.dumps({'practice_pages':len(numbers),'lesson_sections':section_count,'paired_pages':paired_pages,'lesson_specific_grammar':27,'lesson_specific_vocabulary':32,'reference_topics':studies,'lesson_references':refs,'activities':tasks,'raster_uses':images,'structural_checks':'passed'}))
  return 0
 
 def main():

@@ -1,0 +1,31 @@
+{
+  "request": "Save space by putting two lessons on a grammar/vocabulary practice page where possible, like Personal Best.",
+  "before_pages": 156,
+  "after_pages": 151,
+  "pages_saved": 5,
+  "paired_grammar_lessons": [
+    [
+      "2A",
+      "2B"
+    ],
+    [
+      "2C",
+      "2D"
+    ],
+    [
+      "4A",
+      "4B"
+    ]
+  ],
+  "vocabulary_same_lesson_combinations": [
+    "5A",
+    "8D"
+  ],
+  "retained": "All147bank activities, all476marked vocabulary occurrences, every main lesson header/title/objective and 368response fields. Teaching type and picture sizes unchanged.",
+  "removed": "One repeated header per same-lesson vocabulary combination, plus the duplicate8D generic picture cue. The original picture remains on that same combined page.",
+  "excluded": "Longer/dense sets kept separate; no smaller type, reduced writing rows or forced page quota. No new images or recordings.",
+  "navigation": "Each lesson remains separately selectable even when sharing a page. All75main reference links retain correct lesson ownership.",
+  "qr": "All16blank24mm reserves retained; GrammarUnit2 moves into verified empty right-hand space beside2Dactivity2.",
+  "baseline": "8729a04578fbffc42efc3b508553550766cfc97c",
+  "safety_branch": "safety/horizons-before-compact-practice-20261102"
+}

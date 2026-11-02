@@ -35,12 +35,12 @@
 .hz-practice-page.ig-practice .ig-map-and-phrases p {margin:0;}
 .hz-practice-page.ig-practice .ig-travel-record {width:100mm;max-width:100%;margin:0 auto 1mm;}
 .hz-practice-page.ig-practice .ig-travel-record .ig-captions {font-size:10pt;line-height:1.2;gap:0;}
-.hz-practice-page.ig-practice[data-practice-bank="grammar"][data-practice-lesson="8A"] .practice-task {margin-top:1.5mm;}
-.hz-practice-page.ig-practice[data-practice-bank="grammar"][data-practice-lesson="8A"] .practice-items li {margin-bottom:1.3mm;}
-.hz-practice-page.ig-practice[data-practice-bank="grammar"][data-practice-lesson="8A"] .practice-diagram {padding:1mm 3mm;margin-bottom:2mm;}
+.hz-practice-page.ig-practice[data-practice-bank="grammar"] .lp-section[data-practice-lesson="8A"] .practice-task {margin-top:1.5mm;}
+.hz-practice-page.ig-practice[data-practice-bank="grammar"] .lp-section[data-practice-lesson="8A"] .practice-items li {margin-bottom:1.3mm;}
+.hz-practice-page.ig-practice[data-practice-bank="grammar"] .lp-section[data-practice-lesson="8A"] .practice-diagram {padding:1mm 3mm;margin-bottom:2mm;}
 .hz-practice-page.ig-practice .ig-greeting-cue {float:none;width:60mm;max-width:100%;margin:0 auto 1mm;}
 .hz-practice-page.ig-practice .ig-jobs-cue img {height:32mm;}
-.hz-practice-page.ig-practice[data-practice-lesson="1A"] #vocabulary-numbers {max-width:115mm;}
+.hz-practice-page.ig-practice .lp-section[data-practice-lesson="1A"] #vocabulary-numbers {max-width:115mm;}
 .hz-practice-page.ig-practice .vs-topic:has(.ig-greeting-cue) {display:flow-root;}
 .hz-practice-page.ig-practice .ig-locker-task {display:grid;grid-template-columns:70mm 1fr;gap:5mm;align-items:center;}
 .hz-practice-page.ig-practice .ig-lockers-picture {position:relative;margin:0;}
@@ -64,7 +64,7 @@
 .hz-practice-page.ig-practice .ig-recipe-action {width:32mm;}
 .hz-practice-page.ig-practice .vp14-rescue .vp14-bread {padding:0;color:inherit;background:none;border-radius:0;}
 .hz-practice-page.ig-practice .ig-clothes-cue img {height:28mm;}
-.hz-practice-page.ig-practice[data-practice-bank="grammar"][data-practice-lesson="6B"] .practice-task:last-child .practice-lines {max-width:115mm;}
+.hz-practice-page.ig-practice[data-practice-bank="grammar"] .lp-section[data-practice-lesson="6B"] .practice-task:last-child .practice-lines {max-width:115mm;}
 .hz-practice-page.ig-practice .ig-shopping-columns {display:grid;grid-template-columns:1fr 1fr;gap:7mm;align-items:start;}
 .hz-practice-page.ig-practice .ig-shopping-directory {display:grid;grid-template-columns:1fr 1fr;gap:3mm;margin-bottom:3mm;}
 .hz-practice-page.ig-practice .ig-shopping-directory figure {margin:0;}

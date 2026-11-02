@@ -30,19 +30,19 @@ Numbers restart within each main lesson. The original controlled answers and ope
 
 **2.** 1 This is; 2 Those are; 3 These are.
 
-## 2B — What time is the next bus? · page 81
+## 2B — What time is the next bus? · page 80
 
 **1.** a; an; The; The.
 
 **2.** I have a phone. The phone is in my bag. The first change is the consonant-sound article; the second identifies the already introduced phone.
 
-## 2C — Meet my family! · page 82
+## 2C — Meet my family! · page 81
 
 **1.** 1 Ana’s bag; 2 Carlos’s phone; 3 my parents’ shop. The book explicitly models Carlos’s. The plural parents takes a final apostrophe.
 
 **2.** 1 teacher’s; 2 sisters’; 3 Diego’s. The parenthetical one/two-owner clues remove ambiguity.
 
-## 2D — Is that my phone? · page 83
+## 2D — Is that my phone? · page 81
 
 **1.** 1 a blue bag; 2 two red notebooks; 3 My keys are black.
 
@@ -50,25 +50,25 @@ Numbers restart within each main lesson. The original controlled answers and ope
 
 **3.** A noun phrase with the adjective before the noun and a complete corresponding sentence with the adjective after be. Example: a black phone; My phone is black. In a plural example, the adjective remains unchanged and the verb agrees. No adjective-order hierarchy is assessed.
 
-## 3A — What's your routine? · page 84
+## 3A — What's your routine? · page 82
 
 **1.** 1 works; 2 have; 3 goes; 4 watch.
 
 **2.** 1 She gets up at six. 2 She has lunch at one. 3 She goes home at five.
 
-## 3B — Weekdays or weekends? · page 85
+## 3B — Weekdays or weekends? · page 83
 
 **1.** 1 We don’t work on Saturday. / We do not work on Saturday. 2 Leo doesn’t eat breakfast at home. / Leo does not eat breakfast at home.
 
 **2.** 1 Does Mia live near the café? Yes, she does. 2 Do you walk to work? No, I don’t. The main verb remains in its base form after does/doesn’t.
 
-## 3C — Where do you go? · page 86
+## 3C — Where do you go? · page 84
 
 **1.** 1 Where; 2 What time; 3 Who. The instruction supplies these three choices. A learner’s separately phrased question with When and a clock-time answer is meaningful English, but the controlled item asks for the supplied specific expression What time.
 
 **2.** Where do you go on Saturday?
 
-## 3D — My week in order · page 87
+## 3D — My week in order · page 85
 
 **1.** 1 always drink; 2 is usually; 3 never watch.
 
@@ -78,25 +78,25 @@ Numbers restart within each main lesson. The original controlled answers and ope
 
 **4.** One original sentence linking two events in a coherent order with before or after. Example: I drink water after I have breakfast. Accept a noun or a full clause after before/after, as modeled. The answer must remain in the present simple for routine actions.
 
-## 4A — What do you eat? · page 88
+## 4A — What do you eat? · page 86
 
 **1.** Countable: egg, banana, tomato. Uncountable: water, rice, bread.
 
 **2.** 1 three eggs; 2 rice; 3 an apple; 4 bread.
 
-## 4B — Tasty or not? · page 89
+## 4B — Tasty or not? · page 86
 
 **1.** 1 it; 2 us; 3 him; 4 them.
 
 **2.** 1 I help her. 2 Our teacher helps us.
 
-## 4C — Cooking time! · page 90
+## 4C — Cooking time! · page 87
 
 **1.** 1 too many; 2 not enough; 3 too much.
 
 **2.** 1 We have enough rice. 2 We do not have enough tomatoes. The first is an affirmative amount and the second a shortage; both place enough immediately before the noun. Alternative order is not expected because the task asks for the supplied words.
 
-## 4D — Food for everyone! · page 91
+## 4D — Food for everyone! · page 88
 
 **1.** 1 because; 2 so.
 
