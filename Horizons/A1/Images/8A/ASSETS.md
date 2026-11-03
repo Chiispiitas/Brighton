@@ -1,7 +1,7 @@
-# 8A artwork — current uses
+# 8A — current picture scope
 
-Activity 5 expanded at the author’s request, 2 November 2026: twelve whole-animal photographic cutouts with native transparent backgrounds. The existing raccoon, duck, squirrel, beaver and goose remain. New cat, dog, rabbit, fish, horse, cow and sheep assets broaden the A1 foundation. Six columns and two rows keep whole subjects legible. All matching letters, names and answer gaps remain live.
+The main lesson keeps five whole transparent wildlife cutouts: raccoon, duck, squirrel, beaver and goose. The full skyline and map traveler retain their approved composition. Main Track8.3 models the five starter names.
 
-The original Toronto skyline/ferry photograph and transparent map traveler remain active. The complete skyline is proportionately smaller, without cropping, so the trip reference fits immediately after Activity4 on page67. Previous animal photos and the rejected map-photo experiment remain inactive and reversible.
+Vocabulary Practice141 provides the fuller twelve-animal bank. Its own five-wildlife study picture is distinct from the lesson cutouts; seven pet/farm cutouts now belong only to the bank. Full-bank Track8.13 models all twelve names. Games sit next to the reference on142 with their own wildlife resource. The rejected twelve-item main input is not active.
 
-The built-in imagegen tool created seven new individual specimens. Exact prompts, native dimensions, alpha, hashes and active uses are in [asset-manifest.json](asset-manifest.json). No code background removal or raster redraw was used. These illustrative specimens do not document Sam’s sightings. Required source attribution stays in the existing end credits.
+Original generated files, alpha and exact prompts remain recorded in [asset-manifest.json](asset-manifest.json); active bank copies/provenance are in Practice/Images/manifest.json. No raster background removal or code redraw was used. These specimens illustrate vocabulary rather than document Sam’s Toronto sightings.

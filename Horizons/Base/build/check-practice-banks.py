@@ -96,7 +96,9 @@ def lesson_banks(book,manifest):
    assert re.search(r'\bpage\s+'+str(n)+r'\b',ref.get_text()),file
    assert key.startswith('communication-')or code==file.stem,f'{file}: practice goes to another lesson'
    refs+=1
- assert refs==75 and tasks==147
+ source_routes=json.loads((book/'Sources/Practice-destinations.json').read_text(encoding='utf-8'))['references']
+ assert refs==len(source_routes)==manifest['counts']['forward_references'],'Main/practice reference registry differs from actual links'
+ assert tasks==147,'Existing authored practice task count changed; review task/key scope explicitly'
  assert set(topics)==set(manifest['destinations'])
  for key,r in manifest['destinations'].items():assert topics[key][:2]==(r['file'],r['page'])
  compiled=BeautifulSoup((book/"Student's Book.html").read_text(encoding='utf-8'),'html.parser');ids=[n['id']for n in compiled.select('[id]')];assert len(ids)==len(set(ids))

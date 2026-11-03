@@ -1,17 +1,6 @@
 {
-  "status": "All main references point to their own lesson section.",
+  "status": "All76 main routes reach their fuller reference/adjacent practice sections; mainstarter/fullbank scope is separately reviewed.",
   "references": [
-    {
-      "lesson": "1A",
-      "canonical_topic": "vocabulary-greetings",
-      "destination_id": "vocabulary-greetings",
-      "topic": "Go to: Vocabulary - Greetings",
-      "file": "Practice/Vocabulary/V1.html",
-      "page": 101,
-      "anchor": "vocabulary-greetings",
-      "href": "../Practice/Vocabulary/V1.html#vocabulary-greetings",
-      "status": "implemented"
-    },
     {
       "lesson": "1A",
       "canonical_topic": "grammar-verb-to-be",
@@ -21,17 +10,6 @@
       "page": 77,
       "anchor": "grammar-verb-to-be",
       "href": "../Practice/Grammar/G1.html#grammar-verb-to-be",
-      "status": "implemented"
-    },
-    {
-      "lesson": "1A",
-      "canonical_topic": "vocabulary-personal-information",
-      "destination_id": "vocabulary-personal-information",
-      "topic": "Go to: Vocabulary - Personal information",
-      "file": "Practice/Vocabulary/V1.html",
-      "page": 101,
-      "anchor": "vocabulary-personal-information",
-      "href": "../Practice/Vocabulary/V1.html#vocabulary-personal-information",
       "status": "implemented"
     },
     {
@@ -47,6 +25,17 @@
     },
     {
       "lesson": "1A",
+      "canonical_topic": "vocabulary-greetings",
+      "destination_id": "vocabulary-greetings",
+      "topic": "Go to: Vocabulary - Greetings",
+      "file": "Practice/Vocabulary/V1.html",
+      "page": 101,
+      "anchor": "vocabulary-greetings",
+      "href": "../Practice/Vocabulary/V1.html#vocabulary-greetings",
+      "status": "implemented"
+    },
+    {
+      "lesson": "1A",
       "canonical_topic": "vocabulary-numbers",
       "destination_id": "vocabulary-numbers",
       "topic": "Go to: Vocabulary - Numbers",
@@ -57,14 +46,14 @@
       "status": "implemented"
     },
     {
-      "lesson": "1B",
-      "canonical_topic": "vocabulary-occupations",
-      "destination_id": "vocabulary-occupations",
-      "topic": "Go to: Vocabulary - Occupations",
+      "lesson": "1A",
+      "canonical_topic": "vocabulary-personal-information",
+      "destination_id": "vocabulary-personal-information",
+      "topic": "Go to: Vocabulary - Personal information",
       "file": "Practice/Vocabulary/V1.html",
-      "page": 103,
-      "anchor": "vocabulary-occupations",
-      "href": "../Practice/Vocabulary/V1.html#vocabulary-occupations",
+      "page": 101,
+      "anchor": "vocabulary-personal-information",
+      "href": "../Practice/Vocabulary/V1.html#vocabulary-personal-information",
       "status": "implemented"
     },
     {
@@ -101,14 +90,14 @@
       "status": "implemented"
     },
     {
-      "lesson": "1C",
-      "canonical_topic": "vocabulary-countries",
-      "destination_id": "vocabulary-countries",
-      "topic": "Go to: Vocabulary - Countries",
+      "lesson": "1B",
+      "canonical_topic": "vocabulary-occupations",
+      "destination_id": "vocabulary-occupations",
+      "topic": "Go to: Vocabulary - Occupations",
       "file": "Practice/Vocabulary/V1.html",
-      "page": 105,
-      "anchor": "vocabulary-countries",
-      "href": "../Practice/Vocabulary/V1.html#vocabulary-countries",
+      "page": 103,
+      "anchor": "vocabulary-occupations",
+      "href": "../Practice/Vocabulary/V1.html#vocabulary-occupations",
       "status": "implemented"
     },
     {
@@ -120,6 +109,28 @@
       "page": 105,
       "anchor": "vocabulary-adjectives-1c",
       "href": "../Practice/Vocabulary/V1.html#vocabulary-adjectives-1c",
+      "status": "implemented"
+    },
+    {
+      "lesson": "1C",
+      "canonical_topic": "vocabulary-countries",
+      "destination_id": "vocabulary-countries",
+      "topic": "Go to: Vocabulary - Countries",
+      "file": "Practice/Vocabulary/V1.html",
+      "page": 105,
+      "anchor": "vocabulary-countries",
+      "href": "../Practice/Vocabulary/V1.html#vocabulary-countries",
+      "status": "implemented"
+    },
+    {
+      "lesson": "1D",
+      "canonical_topic": "grammar-capital-letters",
+      "destination_id": "grammar-capital-letters",
+      "topic": "Go to: Grammar - Capital letters",
+      "file": "Practice/Grammar/G1.html",
+      "page": 79,
+      "anchor": "grammar-capital-letters",
+      "href": "../Practice/Grammar/G1.html#grammar-capital-letters",
       "status": "implemented"
     },
     {
@@ -135,17 +146,6 @@
     },
     {
       "lesson": "2A",
-      "canonical_topic": "vocabulary-personal-items",
-      "destination_id": "vocabulary-personal-items",
-      "topic": "Go to: Vocabulary - Personal items",
-      "file": "Practice/Vocabulary/V2.html",
-      "page": 108,
-      "anchor": "vocabulary-personal-items",
-      "href": "../Practice/Vocabulary/V2.html#vocabulary-personal-items",
-      "status": "implemented"
-    },
-    {
-      "lesson": "2A",
       "canonical_topic": "grammar-this-that-these-those",
       "destination_id": "grammar-this-that-these-those",
       "topic": "Go to: Grammar - This / that / these / those",
@@ -156,14 +156,14 @@
       "status": "implemented"
     },
     {
-      "lesson": "2B",
-      "canonical_topic": "vocabulary-telling-time",
-      "destination_id": "vocabulary-telling-time",
-      "topic": "Go to: Vocabulary - Telling time",
+      "lesson": "2A",
+      "canonical_topic": "vocabulary-personal-items",
+      "destination_id": "vocabulary-personal-items",
+      "topic": "Go to: Vocabulary - Personal items",
       "file": "Practice/Vocabulary/V2.html",
-      "page": 109,
-      "anchor": "vocabulary-telling-time",
-      "href": "../Practice/Vocabulary/V2.html#vocabulary-telling-time",
+      "page": 108,
+      "anchor": "vocabulary-personal-items",
+      "href": "../Practice/Vocabulary/V2.html#vocabulary-personal-items",
       "status": "implemented"
     },
     {
@@ -178,14 +178,14 @@
       "status": "implemented"
     },
     {
-      "lesson": "2C",
-      "canonical_topic": "vocabulary-family-members",
-      "destination_id": "vocabulary-family-members",
-      "topic": "Go to: Vocabulary - Family members",
+      "lesson": "2B",
+      "canonical_topic": "vocabulary-telling-time",
+      "destination_id": "vocabulary-telling-time",
+      "topic": "Go to: Vocabulary - Telling time",
       "file": "Practice/Vocabulary/V2.html",
-      "page": 110,
-      "anchor": "vocabulary-family-members",
-      "href": "../Practice/Vocabulary/V2.html#vocabulary-family-members",
+      "page": 109,
+      "anchor": "vocabulary-telling-time",
+      "href": "../Practice/Vocabulary/V2.html#vocabulary-telling-time",
       "status": "implemented"
     },
     {
@@ -200,14 +200,14 @@
       "status": "implemented"
     },
     {
-      "lesson": "2D",
-      "canonical_topic": "vocabulary-colors",
-      "destination_id": "vocabulary-colors",
-      "topic": "Go to: Vocabulary - Colors",
+      "lesson": "2C",
+      "canonical_topic": "vocabulary-family-members",
+      "destination_id": "vocabulary-family-members",
+      "topic": "Go to: Vocabulary - Family members",
       "file": "Practice/Vocabulary/V2.html",
-      "page": 111,
-      "anchor": "vocabulary-colors",
-      "href": "../Practice/Vocabulary/V2.html#vocabulary-colors",
+      "page": 110,
+      "anchor": "vocabulary-family-members",
+      "href": "../Practice/Vocabulary/V2.html#vocabulary-family-members",
       "status": "implemented"
     },
     {
@@ -233,14 +233,14 @@
       "status": "implemented"
     },
     {
-      "lesson": "3A",
-      "canonical_topic": "vocabulary-daily-routines",
-      "destination_id": "vocabulary-daily-routines",
-      "topic": "Go to: Vocabulary - Daily routines",
-      "file": "Practice/Vocabulary/V3.html",
-      "page": 112,
-      "anchor": "vocabulary-daily-routines",
-      "href": "../Practice/Vocabulary/V3.html#vocabulary-daily-routines",
+      "lesson": "2D",
+      "canonical_topic": "vocabulary-colors",
+      "destination_id": "vocabulary-colors",
+      "topic": "Go to: Vocabulary - Colors",
+      "file": "Practice/Vocabulary/V2.html",
+      "page": 111,
+      "anchor": "vocabulary-colors",
+      "href": "../Practice/Vocabulary/V2.html#vocabulary-colors",
       "status": "implemented"
     },
     {
@@ -255,14 +255,14 @@
       "status": "implemented"
     },
     {
-      "lesson": "3B",
-      "canonical_topic": "vocabulary-days-of-the-week",
-      "destination_id": "vocabulary-days-of-the-week",
-      "topic": "Go to: Vocabulary - Days of the week",
+      "lesson": "3A",
+      "canonical_topic": "vocabulary-daily-routines",
+      "destination_id": "vocabulary-daily-routines",
+      "topic": "Go to: Vocabulary - Daily routines",
       "file": "Practice/Vocabulary/V3.html",
-      "page": 114,
-      "anchor": "vocabulary-days-of-the-week",
-      "href": "../Practice/Vocabulary/V3.html#vocabulary-days-of-the-week",
+      "page": 112,
+      "anchor": "vocabulary-daily-routines",
+      "href": "../Practice/Vocabulary/V3.html#vocabulary-daily-routines",
       "status": "implemented"
     },
     {
@@ -277,14 +277,14 @@
       "status": "implemented"
     },
     {
-      "lesson": "3C",
-      "canonical_topic": "vocabulary-place-adjectives-recall",
-      "destination_id": "vocabulary-place-adjectives-recall",
-      "topic": "Go to: Vocabulary - Adjectives",
+      "lesson": "3B",
+      "canonical_topic": "vocabulary-days-of-the-week",
+      "destination_id": "vocabulary-days-of-the-week",
+      "topic": "Go to: Vocabulary - Days of the week",
       "file": "Practice/Vocabulary/V3.html",
-      "page": 115,
-      "anchor": "vocabulary-place-adjectives-recall",
-      "href": "../Practice/Vocabulary/V3.html#vocabulary-place-adjectives-recall",
+      "page": 114,
+      "anchor": "vocabulary-days-of-the-week",
+      "href": "../Practice/Vocabulary/V3.html#vocabulary-days-of-the-week",
       "status": "implemented"
     },
     {
@@ -299,14 +299,25 @@
       "status": "implemented"
     },
     {
-      "lesson": "3D",
-      "canonical_topic": "vocabulary-daily-routines",
-      "destination_id": "vocabulary-daily-routines-3d",
-      "topic": "Go to: Vocabulary - Daily routines",
+      "lesson": "3C",
+      "canonical_topic": "vocabulary-place-adjectives-recall",
+      "destination_id": "vocabulary-place-adjectives-recall",
+      "topic": "Go to: Vocabulary - Adjectives",
       "file": "Practice/Vocabulary/V3.html",
-      "page": 117,
-      "anchor": "vocabulary-daily-routines-3d",
-      "href": "../Practice/Vocabulary/V3.html#vocabulary-daily-routines-3d",
+      "page": 115,
+      "anchor": "vocabulary-place-adjectives-recall",
+      "href": "../Practice/Vocabulary/V3.html#vocabulary-place-adjectives-recall",
+      "status": "implemented"
+    },
+    {
+      "lesson": "3D",
+      "canonical_topic": "grammar-before-after",
+      "destination_id": "grammar-before-after",
+      "topic": "Go to: Grammar - Before / after",
+      "file": "Practice/Grammar/G3.html",
+      "page": 85,
+      "anchor": "grammar-before-after",
+      "href": "../Practice/Grammar/G3.html#grammar-before-after",
       "status": "implemented"
     },
     {
@@ -322,24 +333,13 @@
     },
     {
       "lesson": "3D",
-      "canonical_topic": "grammar-before-after",
-      "destination_id": "grammar-before-after",
-      "topic": "Go to: Grammar - Before / after",
-      "file": "Practice/Grammar/G3.html",
-      "page": 85,
-      "anchor": "grammar-before-after",
-      "href": "../Practice/Grammar/G3.html#grammar-before-after",
-      "status": "implemented"
-    },
-    {
-      "lesson": "4A",
-      "canonical_topic": "vocabulary-food-and-drink",
-      "destination_id": "vocabulary-food-and-drink",
-      "topic": "Go to: Vocabulary - Food and drink",
-      "file": "Practice/Vocabulary/V4.html",
-      "page": 118,
-      "anchor": "vocabulary-food-and-drink",
-      "href": "../Practice/Vocabulary/V4.html#vocabulary-food-and-drink",
+      "canonical_topic": "vocabulary-daily-routines",
+      "destination_id": "vocabulary-daily-routines-3d",
+      "topic": "Go to: Vocabulary - Daily routines",
+      "file": "Practice/Vocabulary/V3.html",
+      "page": 117,
+      "anchor": "vocabulary-daily-routines-3d",
+      "href": "../Practice/Vocabulary/V3.html#vocabulary-daily-routines-3d",
       "status": "implemented"
     },
     {
@@ -354,14 +354,14 @@
       "status": "implemented"
     },
     {
-      "lesson": "4B",
-      "canonical_topic": "vocabulary-flavors",
-      "destination_id": "vocabulary-flavors",
-      "topic": "Go to: Vocabulary - Flavors",
+      "lesson": "4A",
+      "canonical_topic": "vocabulary-food-and-drink",
+      "destination_id": "vocabulary-food-and-drink",
+      "topic": "Go to: Vocabulary - Food and drink",
       "file": "Practice/Vocabulary/V4.html",
-      "page": 120,
-      "anchor": "vocabulary-flavors",
-      "href": "../Practice/Vocabulary/V4.html#vocabulary-flavors",
+      "page": 118,
+      "anchor": "vocabulary-food-and-drink",
+      "href": "../Practice/Vocabulary/V4.html#vocabulary-food-and-drink",
       "status": "implemented"
     },
     {
@@ -376,14 +376,14 @@
       "status": "implemented"
     },
     {
-      "lesson": "4C",
-      "canonical_topic": "vocabulary-cooking-verbs",
-      "destination_id": "vocabulary-cooking-verbs",
-      "topic": "Go to: Vocabulary - Cooking verbs",
+      "lesson": "4B",
+      "canonical_topic": "vocabulary-flavors",
+      "destination_id": "vocabulary-flavors",
+      "topic": "Go to: Vocabulary - Flavors",
       "file": "Practice/Vocabulary/V4.html",
-      "page": 121,
-      "anchor": "vocabulary-cooking-verbs",
-      "href": "../Practice/Vocabulary/V4.html#vocabulary-cooking-verbs",
+      "page": 120,
+      "anchor": "vocabulary-flavors",
+      "href": "../Practice/Vocabulary/V4.html#vocabulary-flavors",
       "status": "implemented"
     },
     {
@@ -398,14 +398,14 @@
       "status": "implemented"
     },
     {
-      "lesson": "4D",
-      "canonical_topic": "vocabulary-sharing-food",
-      "destination_id": "vocabulary-sharing-food",
-      "topic": "Go to: Vocabulary - Sharing food",
+      "lesson": "4C",
+      "canonical_topic": "vocabulary-cooking-verbs",
+      "destination_id": "vocabulary-cooking-verbs",
+      "topic": "Go to: Vocabulary - Cooking verbs",
       "file": "Practice/Vocabulary/V4.html",
-      "page": 122,
-      "anchor": "vocabulary-sharing-food",
-      "href": "../Practice/Vocabulary/V4.html#vocabulary-sharing-food",
+      "page": 121,
+      "anchor": "vocabulary-cooking-verbs",
+      "href": "../Practice/Vocabulary/V4.html#vocabulary-cooking-verbs",
       "status": "implemented"
     },
     {
@@ -420,14 +420,14 @@
       "status": "implemented"
     },
     {
-      "lesson": "5A",
-      "canonical_topic": "vocabulary-clothes-and-accessories",
-      "destination_id": "vocabulary-clothes-and-accessories",
-      "topic": "Go to: Vocabulary - Clothes and accessories",
-      "file": "Practice/Vocabulary/V5.html",
-      "page": 123,
-      "anchor": "vocabulary-clothes-and-accessories",
-      "href": "../Practice/Vocabulary/V5.html#vocabulary-clothes-and-accessories",
+      "lesson": "4D",
+      "canonical_topic": "vocabulary-sharing-food",
+      "destination_id": "vocabulary-sharing-food",
+      "topic": "Go to: Vocabulary - Sharing food",
+      "file": "Practice/Vocabulary/V4.html",
+      "page": 122,
+      "anchor": "vocabulary-sharing-food",
+      "href": "../Practice/Vocabulary/V4.html#vocabulary-sharing-food",
       "status": "implemented"
     },
     {
@@ -442,14 +442,14 @@
       "status": "implemented"
     },
     {
-      "lesson": "5B",
-      "canonical_topic": "vocabulary-shopping-verbs",
-      "destination_id": "vocabulary-shopping-verbs",
-      "topic": "Go to: Vocabulary - Shopping verbs",
+      "lesson": "5A",
+      "canonical_topic": "vocabulary-clothes-and-accessories",
+      "destination_id": "vocabulary-clothes-and-accessories",
+      "topic": "Go to: Vocabulary - Clothes and accessories",
       "file": "Practice/Vocabulary/V5.html",
-      "page": 124,
-      "anchor": "vocabulary-shopping-verbs",
-      "href": "../Practice/Vocabulary/V5.html#vocabulary-shopping-verbs",
+      "page": 123,
+      "anchor": "vocabulary-clothes-and-accessories",
+      "href": "../Practice/Vocabulary/V5.html#vocabulary-clothes-and-accessories",
       "status": "implemented"
     },
     {
@@ -464,14 +464,14 @@
       "status": "implemented"
     },
     {
-      "lesson": "5C",
-      "canonical_topic": "vocabulary-places-in-town",
-      "destination_id": "vocabulary-places-in-town",
-      "topic": "Go to: Vocabulary - Places in town",
+      "lesson": "5B",
+      "canonical_topic": "vocabulary-shopping-verbs",
+      "destination_id": "vocabulary-shopping-verbs",
+      "topic": "Go to: Vocabulary - Shopping verbs",
       "file": "Practice/Vocabulary/V5.html",
-      "page": 125,
-      "anchor": "vocabulary-places-in-town",
-      "href": "../Practice/Vocabulary/V5.html#vocabulary-places-in-town",
+      "page": 124,
+      "anchor": "vocabulary-shopping-verbs",
+      "href": "../Practice/Vocabulary/V5.html#vocabulary-shopping-verbs",
       "status": "implemented"
     },
     {
@@ -486,14 +486,14 @@
       "status": "implemented"
     },
     {
-      "lesson": "5D",
-      "canonical_topic": "vocabulary-at-the-store",
-      "destination_id": "vocabulary-at-the-store",
-      "topic": "Go to: Vocabulary - At the store",
+      "lesson": "5C",
+      "canonical_topic": "vocabulary-places-in-town",
+      "destination_id": "vocabulary-places-in-town",
+      "topic": "Go to: Vocabulary - Places in town",
       "file": "Practice/Vocabulary/V5.html",
-      "page": 127,
-      "anchor": "vocabulary-at-the-store",
-      "href": "../Practice/Vocabulary/V5.html#vocabulary-at-the-store",
+      "page": 125,
+      "anchor": "vocabulary-places-in-town",
+      "href": "../Practice/Vocabulary/V5.html#vocabulary-places-in-town",
       "status": "implemented"
     },
     {
@@ -505,6 +505,17 @@
       "page": 148,
       "anchor": "communication-grocery-shopping",
       "href": "../Practice/Communication/C5.html#communication-grocery-shopping",
+      "status": "implemented"
+    },
+    {
+      "lesson": "5D",
+      "canonical_topic": "vocabulary-at-the-store",
+      "destination_id": "vocabulary-at-the-store",
+      "topic": "Go to: Vocabulary - At the store",
+      "file": "Practice/Vocabulary/V5.html",
+      "page": 127,
+      "anchor": "vocabulary-at-the-store",
+      "href": "../Practice/Vocabulary/V5.html#vocabulary-at-the-store",
       "status": "implemented"
     },
     {
@@ -520,17 +531,6 @@
     },
     {
       "lesson": "6B",
-      "canonical_topic": "vocabulary-rooms-and-furniture",
-      "destination_id": "vocabulary-rooms-and-furniture",
-      "topic": "Go to: Vocabulary - Rooms and furniture",
-      "file": "Practice/Vocabulary/V6.html",
-      "page": 131,
-      "anchor": "vocabulary-rooms-and-furniture",
-      "href": "../Practice/Vocabulary/V6.html#vocabulary-rooms-and-furniture",
-      "status": "implemented"
-    },
-    {
-      "lesson": "6B",
       "canonical_topic": "grammar-prepositions-of-place",
       "destination_id": "grammar-prepositions-of-place",
       "topic": "Go to: Grammar - Prepositions of place",
@@ -541,14 +541,14 @@
       "status": "implemented"
     },
     {
-      "lesson": "6C",
-      "canonical_topic": "vocabulary-movement-and-directions",
-      "destination_id": "vocabulary-movement-and-directions",
-      "topic": "Go to: Vocabulary - Movement and directions",
+      "lesson": "6B",
+      "canonical_topic": "vocabulary-rooms-and-furniture",
+      "destination_id": "vocabulary-rooms-and-furniture",
+      "topic": "Go to: Vocabulary - Rooms and furniture",
       "file": "Practice/Vocabulary/V6.html",
-      "page": 133,
-      "anchor": "vocabulary-movement-and-directions",
-      "href": "../Practice/Vocabulary/V6.html#vocabulary-movement-and-directions",
+      "page": 131,
+      "anchor": "vocabulary-rooms-and-furniture",
+      "href": "../Practice/Vocabulary/V6.html#vocabulary-rooms-and-furniture",
       "status": "implemented"
     },
     {
@@ -563,14 +563,25 @@
       "status": "implemented"
     },
     {
-      "lesson": "6D",
-      "canonical_topic": "vocabulary-shopping-centers-and-attractions",
-      "destination_id": "vocabulary-shopping-centers-and-attractions",
-      "topic": "Go to: Vocabulary - Shopping centers and attractions",
+      "lesson": "6C",
+      "canonical_topic": "vocabulary-movement-and-directions",
+      "destination_id": "vocabulary-movement-and-directions",
+      "topic": "Go to: Vocabulary - Movement and directions",
       "file": "Practice/Vocabulary/V6.html",
-      "page": 134,
-      "anchor": "vocabulary-shopping-centers-and-attractions",
-      "href": "../Practice/Vocabulary/V6.html#vocabulary-shopping-centers-and-attractions",
+      "page": 133,
+      "anchor": "vocabulary-movement-and-directions",
+      "href": "../Practice/Vocabulary/V6.html#vocabulary-movement-and-directions",
+      "status": "implemented"
+    },
+    {
+      "lesson": "6D",
+      "canonical_topic": "communication-helping-a-visitor",
+      "destination_id": "communication-helping-a-visitor",
+      "topic": "Go to: Communication - Helping a visitor",
+      "file": "Practice/Communication/C6.html",
+      "page": 149,
+      "anchor": "communication-helping-a-visitor",
+      "href": "../Practice/Communication/C6.html#communication-helping-a-visitor",
       "status": "implemented"
     },
     {
@@ -586,24 +597,13 @@
     },
     {
       "lesson": "6D",
-      "canonical_topic": "communication-helping-a-visitor",
-      "destination_id": "communication-helping-a-visitor",
-      "topic": "Go to: Communication - Helping a visitor",
-      "file": "Practice/Communication/C6.html",
-      "page": 149,
-      "anchor": "communication-helping-a-visitor",
-      "href": "../Practice/Communication/C6.html#communication-helping-a-visitor",
-      "status": "implemented"
-    },
-    {
-      "lesson": "7A",
-      "canonical_topic": "vocabulary-past-time-expressions",
-      "destination_id": "vocabulary-past-time-expressions",
-      "topic": "Go to: Vocabulary - Past time expressions",
-      "file": "Practice/Vocabulary/V7.html",
-      "page": 135,
-      "anchor": "vocabulary-past-time-expressions",
-      "href": "../Practice/Vocabulary/V7.html#vocabulary-past-time-expressions",
+      "canonical_topic": "vocabulary-shopping-centers-and-attractions",
+      "destination_id": "vocabulary-shopping-centers-and-attractions",
+      "topic": "Go to: Vocabulary - Shopping centers and attractions",
+      "file": "Practice/Vocabulary/V6.html",
+      "page": 134,
+      "anchor": "vocabulary-shopping-centers-and-attractions",
+      "href": "../Practice/Vocabulary/V6.html#vocabulary-shopping-centers-and-attractions",
       "status": "implemented"
     },
     {
@@ -618,14 +618,25 @@
       "status": "implemented"
     },
     {
-      "lesson": "7B",
-      "canonical_topic": "vocabulary-months",
-      "destination_id": "vocabulary-months",
-      "topic": "Go to: Vocabulary - Months",
+      "lesson": "7A",
+      "canonical_topic": "vocabulary-past-time-expressions",
+      "destination_id": "vocabulary-past-time-expressions",
+      "topic": "Go to: Vocabulary - Past time expressions",
       "file": "Practice/Vocabulary/V7.html",
-      "page": 136,
-      "anchor": "vocabulary-months",
-      "href": "../Practice/Vocabulary/V7.html#vocabulary-months",
+      "page": 135,
+      "anchor": "vocabulary-past-time-expressions",
+      "href": "../Practice/Vocabulary/V7.html#vocabulary-past-time-expressions",
+      "status": "implemented"
+    },
+    {
+      "lesson": "7B",
+      "canonical_topic": "grammar-dates-and-ago",
+      "destination_id": "grammar-dates-and-ago",
+      "topic": "Go to: Grammar - Dates and ago",
+      "file": "Practice/Grammar/G7.html",
+      "page": 96,
+      "anchor": "grammar-dates-and-ago",
+      "href": "../Practice/Grammar/G7.html#grammar-dates-and-ago",
       "status": "implemented"
     },
     {
@@ -641,6 +652,17 @@
     },
     {
       "lesson": "7B",
+      "canonical_topic": "vocabulary-months",
+      "destination_id": "vocabulary-months",
+      "topic": "Go to: Vocabulary - Months",
+      "file": "Practice/Vocabulary/V7.html",
+      "page": 136,
+      "anchor": "vocabulary-months",
+      "href": "../Practice/Vocabulary/V7.html#vocabulary-months",
+      "status": "implemented"
+    },
+    {
+      "lesson": "7B",
       "canonical_topic": "vocabulary-past-time-expressions",
       "destination_id": "vocabulary-past-time-expressions-7b",
       "topic": "Go to: Vocabulary - Past time expressions",
@@ -651,14 +673,14 @@
       "status": "implemented"
     },
     {
-      "lesson": "7B",
-      "canonical_topic": "grammar-dates-and-ago",
-      "destination_id": "grammar-dates-and-ago",
-      "topic": "Go to: Grammar - Dates and ago",
+      "lesson": "7C",
+      "canonical_topic": "grammar-past-simple-regular-verbs",
+      "destination_id": "grammar-past-simple-regular-verbs",
+      "topic": "Go to: Grammar - Past simple - Regular verbs",
       "file": "Practice/Grammar/G7.html",
-      "page": 96,
-      "anchor": "grammar-dates-and-ago",
-      "href": "../Practice/Grammar/G7.html#grammar-dates-and-ago",
+      "page": 97,
+      "anchor": "grammar-past-simple-regular-verbs",
+      "href": "../Practice/Grammar/G7.html#grammar-past-simple-regular-verbs",
       "status": "implemented"
     },
     {
@@ -673,14 +695,14 @@
       "status": "implemented"
     },
     {
-      "lesson": "7C",
-      "canonical_topic": "grammar-past-simple-regular-verbs",
-      "destination_id": "grammar-past-simple-regular-verbs",
-      "topic": "Go to: Grammar - Past simple - Regular verbs",
-      "file": "Practice/Grammar/G7.html",
-      "page": 97,
-      "anchor": "grammar-past-simple-regular-verbs",
-      "href": "../Practice/Grammar/G7.html#grammar-past-simple-regular-verbs",
+      "lesson": "7D",
+      "canonical_topic": "communication-diary-writing",
+      "destination_id": "communication-diary-writing",
+      "topic": "Go to: Communication - Diary writing",
+      "file": "Practice/Communication/C7.html",
+      "page": 150,
+      "anchor": "communication-diary-writing",
+      "href": "../Practice/Communication/C7.html#communication-diary-writing",
       "status": "implemented"
     },
     {
@@ -706,28 +728,6 @@
       "status": "implemented"
     },
     {
-      "lesson": "7D",
-      "canonical_topic": "communication-diary-writing",
-      "destination_id": "communication-diary-writing",
-      "topic": "Go to: Communication - Diary writing",
-      "file": "Practice/Communication/C7.html",
-      "page": 150,
-      "anchor": "communication-diary-writing",
-      "href": "../Practice/Communication/C7.html#communication-diary-writing",
-      "status": "implemented"
-    },
-    {
-      "lesson": "8A",
-      "canonical_topic": "vocabulary-travel-verbs",
-      "destination_id": "vocabulary-travel-verbs",
-      "topic": "Go to: Vocabulary - Travel verbs",
-      "file": "Practice/Vocabulary/V8.html",
-      "page": 141,
-      "anchor": "vocabulary-travel-verbs",
-      "href": "../Practice/Vocabulary/V8.html#vocabulary-travel-verbs",
-      "status": "implemented"
-    },
-    {
       "lesson": "8A",
       "canonical_topic": "grammar-past-simple-travel-verbs",
       "destination_id": "grammar-past-simple-travel-verbs",
@@ -742,11 +742,33 @@
       "lesson": "8A",
       "canonical_topic": "vocabulary-animals",
       "destination_id": "vocabulary-animals",
-      "topic": "Go to: Vocabulary - Animals",
+      "topic": "More animals: Vocabulary - Animals",
       "file": "Practice/Vocabulary/V8.html",
       "page": 141,
       "anchor": "vocabulary-animals",
       "href": "../Practice/Vocabulary/V8.html#vocabulary-animals",
+      "status": "implemented"
+    },
+    {
+      "lesson": "8A",
+      "canonical_topic": "vocabulary-travel-verbs",
+      "destination_id": "vocabulary-travel-verbs",
+      "topic": "Go to: Vocabulary - Travel verbs",
+      "file": "Practice/Vocabulary/V8.html",
+      "page": 141,
+      "anchor": "vocabulary-travel-verbs",
+      "href": "../Practice/Vocabulary/V8.html#vocabulary-travel-verbs",
+      "status": "implemented"
+    },
+    {
+      "lesson": "8B",
+      "canonical_topic": "grammar-should-advice",
+      "destination_id": "grammar-should-advice",
+      "topic": "Go to: Grammar - Should - Advice",
+      "file": "Practice/Grammar/G8.html",
+      "page": 99,
+      "anchor": "grammar-should-advice",
+      "href": "../Practice/Grammar/G8.html#grammar-should-advice",
       "status": "implemented"
     },
     {
@@ -761,14 +783,14 @@
       "status": "implemented"
     },
     {
-      "lesson": "8B",
-      "canonical_topic": "grammar-should-advice",
-      "destination_id": "grammar-should-advice",
-      "topic": "Go to: Grammar - Should - Advice",
+      "lesson": "8C",
+      "canonical_topic": "grammar-talking-about-health",
+      "destination_id": "grammar-talking-about-health",
+      "topic": "Go to: Grammar - Talking about health",
       "file": "Practice/Grammar/G8.html",
-      "page": 99,
-      "anchor": "grammar-should-advice",
-      "href": "../Practice/Grammar/G8.html#grammar-should-advice",
+      "page": 100,
+      "anchor": "grammar-talking-about-health",
+      "href": "../Practice/Grammar/G8.html#grammar-talking-about-health",
       "status": "implemented"
     },
     {
@@ -794,14 +816,14 @@
       "status": "implemented"
     },
     {
-      "lesson": "8C",
-      "canonical_topic": "grammar-talking-about-health",
-      "destination_id": "grammar-talking-about-health",
-      "topic": "Go to: Grammar - Talking about health",
-      "file": "Practice/Grammar/G8.html",
-      "page": 100,
-      "anchor": "grammar-talking-about-health",
-      "href": "../Practice/Grammar/G8.html#grammar-talking-about-health",
+      "lesson": "8D",
+      "canonical_topic": "communication-buying-a-ticket-by-phone",
+      "destination_id": "communication-buying-a-ticket-by-phone",
+      "topic": "Go to: Communication - Buying a ticket by phone",
+      "file": "Practice/Communication/C8.html",
+      "page": 151,
+      "anchor": "communication-buying-a-ticket-by-phone",
+      "href": "../Practice/Communication/C8.html#communication-buying-a-ticket-by-phone",
       "status": "implemented"
     },
     {
@@ -813,17 +835,6 @@
       "page": 147,
       "anchor": "vocabulary-phone-and-ticket-language",
       "href": "../Practice/Vocabulary/V8.html#vocabulary-phone-and-ticket-language",
-      "status": "implemented"
-    },
-    {
-      "lesson": "8D",
-      "canonical_topic": "communication-buying-a-ticket-by-phone",
-      "destination_id": "communication-buying-a-ticket-by-phone",
-      "topic": "Go to: Communication - Buying a ticket by phone",
-      "file": "Practice/Communication/C8.html",
-      "page": 151,
-      "anchor": "communication-buying-a-ticket-by-phone",
-      "href": "../Practice/Communication/C8.html#communication-buying-a-ticket-by-phone",
       "status": "implemented"
     }
   ],

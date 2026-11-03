@@ -196,7 +196,7 @@ Numbers restart within each main lesson. The original controlled answers and ope
 
 ## 8C — Can you go tomorrow? · pages 145–146
 
-**1.** Kinesthetic naming: head, arm, hand, stomach, leg, foot. Point to one’s own body only; no contact with a partner is needed. Partner names each target. Alone: six correctly spelled body words recalled and checked against Lesson8C.
+**1.** Kinesthetic naming: accept any correctly identified body or face word from the full bank on page145. Point to one’s own body only; no contact with a partner is needed. Partner names each target. Alone: six body words and three face words recalled, spelled and checked against the bank. Example body answers: head, arm, hand, stomach, leg, foot; example face answers: eye, ear, nose.
 
 **2.** B; C; A; X. The three photographs are acted complaint cues: hand on stomach, hand at ankle/foot, hand on forehead. A cold is the extra message. No medical diagnosis is inferred from the actual photographed models.
 
@@ -207,3 +207,8 @@ Numbers restart within each main lesson. The original controlled answers and ope
 **1.** return, not one way. Model: A return ticket to Riverford at two forty. Twelve dollars. The other details already match fictional TicketB.
 
 **2.** Open hidden choice. TicketA: Riverford,10:20,one way,$8. TicketB: Riverford,14:40,return,$12. Passenger name invented. Check actual ticket choice, time, price/type, understandable repetition/spelling request and accurate read-back. The timetable is shared but the customer’s selected ticket is unknown. Alone: recall all four details of either ticket, then check.
+
+
+### 8A reference expansion — travel practice2
+
+Learners choose three chunks from the fuller bank and describe what they do on a trip, using familiar present simple. The listener records the three verbs and checks them with the speaker; then swap. Original controlled ticket answers remain unchanged. Bank-only alternatives include book a room, pack a bag, buy a ticket, catch a bus, get on a bus and get off a bus. Do not require unmodeled irregular past forms; this is a general travel-habit task, not past narrative. Solo learners cover both word bank and tickets before retrieving three chunks.

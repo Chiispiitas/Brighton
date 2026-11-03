@@ -1,0 +1,128 @@
+{
+  "status": "PASS",
+  "reviewer": "checker_update independent agent",
+  "scope": "Current frozen local viewer; representative word-bank/reference pages,8A starter/full bank/practice,1D grammar route andpost-fixUnit6QR placement; unchanged matter andlanding also inspected.",
+  "captures_inspected": [
+    {
+      "page": "101",
+      "file": "unit-1-reference.png",
+      "sha256": "250789120b0d3e3dc6309818bf6ab4125a81581b5fbe780251cd7c1327ef7e0f"
+    },
+    {
+      "page": "108",
+      "file": "unit-2-reference.png",
+      "sha256": "c02e8ca11d23e72517cd24780a4fbd65d23081dbd428a8eabf2ebbc594f225a2"
+    },
+    {
+      "page": "112",
+      "file": "unit-3-reference.png",
+      "sha256": "77463c36636be006d3213a892292f49db45d1949b29eccb30b13d2c3c9c48351"
+    },
+    {
+      "page": "118",
+      "file": "unit-4-reference.png",
+      "sha256": "504ae23901a863e849226b240d3a2b1c2ae248eae0961338506bb7d15a2fdb62"
+    },
+    {
+      "page": "123",
+      "file": "unit-5-reference.png",
+      "sha256": "55e384b9241a2f96ce3c0a168d03da24ff945e6d2eeded7b6db8643185052825"
+    },
+    {
+      "page": "129",
+      "file": "unit-6-reference.png",
+      "sha256": "13d81d9852f3c76c074f5a37ad90e38c5d2873c1b7f76877b27405dfa11b33f6"
+    },
+    {
+      "page": "135",
+      "file": "unit-7-reference.png",
+      "sha256": "dff40c626afa60542b2b1b3fa813ef143b2a6d9bc7ca9f45f5f3db9cf74d8559"
+    },
+    {
+      "page": "141",
+      "file": "8A-full-reference.png",
+      "sha256": "5b2448b8635e63107397437c64d7a4bd337b8c6d6da47a98777ae04a3dfe5e63"
+    },
+    {
+      "page": "68",
+      "file": "main-8A-starter.png",
+      "sha256": "ba3fbb6c287c65c405201a8b9d7c2ccef158fba9d32ed3ab6b6bb227968f10da"
+    },
+    {
+      "page": "142",
+      "file": "8A-original-practice.png",
+      "sha256": "0d702e6a609410f6dc944689954ceed56cbf148bdc935752740095d8ce20aa29"
+    },
+    {
+      "page": "79",
+      "file": "1D-grammar-reference.png",
+      "sha256": "d24f63b27244b7e53f9c7655033c0ef6a4e849b4e378648355cc711304f7f0bc"
+    },
+    {
+      "page": "134",
+      "file": "unit6-QR-clearance.png",
+      "sha256": "885d44a990ac0bd0b53d3cd2664a51f0bc28e519f96c9635516d5c6615047816"
+    },
+    {
+      "page": "front-cover",
+      "file": "book-front-cover.png",
+      "sha256": "29534159cc23744c9524288d27484993fac23a13bc94d17d95b43b62fd14b118"
+    },
+    {
+      "page": "1",
+      "file": "book-1.png",
+      "sha256": "5afdc327d466703c367bde0fb930fc2fe010aa1e5dc21e8ea168637f3834e8f8"
+    },
+    {
+      "page": "2",
+      "file": "book-2.png",
+      "sha256": "6f597af1edb46eeffca8a403a12d70c2858cb7cec1c5eb9b9ac075d79780ceeb"
+    },
+    {
+      "page": "3",
+      "file": "book-3.png",
+      "sha256": "99e8167cdacaac25869d1c332a98286d999747e8b6293c7c07af44a5a8148757"
+    },
+    {
+      "page": "4",
+      "file": "book-4.png",
+      "sha256": "f5240b5aec6c29892755516e3a18340fcb1169e61d7268f8869097652f5b88c4"
+    },
+    {
+      "page": "152",
+      "file": "book-152.png",
+      "sha256": "51975d0c4cf1dd7babbd4430269e89bd46db9e730cec11ddd53dc16297865202"
+    },
+    {
+      "page": "153",
+      "file": "book-153.png",
+      "sha256": "5ee378033d9eabaf6bee6dd5b1bbe8a5d74d6942aa2842c5773f8a77c246152d"
+    },
+    {
+      "page": "back-cover",
+      "file": "book-back-cover.png",
+      "sha256": "8a81fc9d0773450956f019d2e66707f7020a8a1298bda61fbe69dc1d02a95db1"
+    },
+    {
+      "page": "landing desktop",
+      "file": "landing-desktop.png",
+      "sha256": "cfa6b2d413da8e01e9facfdfa55eacd55a6caa66aade5204b2b7a3bd0c08afdf"
+    },
+    {
+      "page": "landing mobile",
+      "file": "landing-mobile.png",
+      "sha256": "564ef660744b24dc1f44ba9e599d58af720966926540ab27420ee6d45a144c88"
+    }
+  ],
+  "findings": [
+    "All22 current local UI captures inspected.",
+    "Main8A retains five complete wild-animal cutouts and a separate short8.3recording; bank141shows12named animals,extra travel chunks and its own8.13control.",
+    "All original8Atravel/animal tasks sit on adjacent142with clear response fields and complete picture evidence.",
+    "Representative expanded personal-information,numbers,personal-items,food,clothing,places andpast-time references remain legible and organized. New pictures have useful scale and complete subjects.",
+    "Unit6page134QR square is now clear of the two response lines; no other visual overlap was found in the selected captures.",
+    "Both newly generated recording URLs contain their exact content versions; localbytes,durations andrealplay/pause pass.",
+    "All43 reviewed reference-scope records match their learner-facing bankwords andsource evidence; baselineDOMchanges equal the reviewed43page allowlist."
+  ],
+  "failures": [],
+  "limits": "This is a local viewer review. Root independently owns saved-PDF export and full bank-page inspection; live website readback remains pending."
+}

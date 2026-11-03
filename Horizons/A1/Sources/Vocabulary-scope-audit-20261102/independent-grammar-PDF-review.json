@@ -1,0 +1,219 @@
+{
+  "reviewer": "/root/vocab_scope_1_4",
+  "independence": "Reviewer did not author the reviewed main/grammar files. Source and final saved PDF were read-only. No artifact marker or authoring/export operation performed.",
+  "pdf": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Student's Book.pdf",
+  "bytes": 53620818,
+  "sha256": "5cb46f0cb97a2bc38a976ad8495dd22e7c2bbfe47b1ab799dae93a39ec148e34",
+  "pages": 159,
+  "inspection_method": "Opened seven whole final-PDF PNG renders at native120dpi/full readable resolution; separately checked HEAD-to-current assessed-task DOMs and current answer keys. Parent generated these renders from exactly this final saved PDF.",
+  "overall": "PASS; no release-blocking pedagogical or visual regressions found. Two pre-existing/nonblocking improvement observations recorded.",
+  "page_reviews": [
+    {
+      "folio": 11,
+      "lesson": "1D",
+      "status": "PASS",
+      "pedagogy": "The new Grammar - Capital letters link completes the clear transition from contextual names/sentences/email examples to the fuller capital-letter reference. The destination is79; original language and activities remain.",
+      "spacing": "New link below purple skills panel is readable, leaves clear separation before Activity3, and does not compress the six handwriting lines or activity4. Photo and dialogue retain full visual evidence.",
+      "task_key_preservation": "All8 lesson1D activity DOMs unchanged against HEAD; this inspected page retains activities1–4. No key/audio/image change.",
+      "physical_pdf_page": 12,
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\vocab-scope-audit-20261102\\pdf-proof\\page-11.png",
+      "proof_pixels": [
+        992,
+        1404
+      ],
+      "inspected_at_full_readable_resolution": true
+    },
+    {
+      "folio": 87,
+      "lesson": "4C",
+      "status": "PASS",
+      "pedagogy": "Three tomato quantities correctly establish need/excess/sufficiency/shortage. New parallel countable not enough tomatoes and uncountable not enough oil models broaden the reference. Incorrect/correct chart clearly shows enough before the noun.",
+      "spacing": "Distinct image/caption columns, aligned countability headings and clear chart rows. All photos/crops and answer lines visible; generous room remains.",
+      "task_key_preservation": "Both assessed tasks unchanged; choices too many / not enough / too much and ordered sentences match the current key.",
+      "physical_pdf_page": 88,
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\vocab-scope-audit-20261102\\pdf-proof\\page-87.png",
+      "proof_pixels": [
+        992,
+        1404
+      ],
+      "inspected_at_full_readable_resolution": true
+    },
+    {
+      "folio": 89,
+      "lesson": "5A",
+      "status": "PASS",
+      "pedagogy": "Aligned subject/positive/negative/question chart is correct. Full and contracted negatives, question/short-answer table and labelled What-question/answer cells are complete. Usually/Now contrast is separated into readable models rather than inline prose.",
+      "spacing": "Densest assigned page but every chart row, instruction, correction line and final two writing lines is readable and inside the page. The two longer negative rows retain clear vertical separation.",
+      "task_key_preservation": "All4 tasks unchanged. is/am/are/Is, full corrections and wear/am wearing/works/is eating agree with key; open writing remains unconstrained beyond target language.",
+      "physical_pdf_page": 90,
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\vocab-scope-audit-20261102\\pdf-proof\\page-89.png",
+      "proof_pixels": [
+        992,
+        1404
+      ],
+      "inspected_at_full_readable_resolution": true
+    },
+    {
+      "folio": 91,
+      "lesson": "5C",
+      "status": "PASS_WITH_NONBLOCKING_ADVISORY",
+      "pedagogy": "Day/week/month/year rows correctly cross every/once/twice/three times. Singular period after a is explicit throughout. How often question and answer align naturally.",
+      "spacing": "Five chart columns remain readable; full-sentence answer lines and Blooket QR region are clear. Three pre-existing short correction gaps remain visible but are modest for normal handwriting of twice a week.",
+      "task_key_preservation": "Both tasks unchanged; Ana twice a week/once a week and repairs every week/twice a week/every day agree with key.",
+      "advisory": "Existing short correction fields are18mm wide in source. Consider a later vertical arrangement or wider correction fields; this is pre-existing and not a regression from the reference expansion.",
+      "physical_pdf_page": 92,
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\vocab-scope-audit-20261102\\pdf-proof\\page-91.png",
+      "proof_pixels": [
+        992,
+        1404
+      ],
+      "inspected_at_full_readable_resolution": true
+    },
+    {
+      "folio": 93,
+      "lesson": "6C",
+      "status": "PASS_WITH_NONBLOCKING_ADVISORY",
+      "pedagogy": "Added along/across/through command examples are grammatical. Saved map retains long streets, visible marked crossings and connected park paths. The north-facing start makes both controlled routes determinate.",
+      "spacing": "Full map occupies a readable left panel and commands fit cleanly in the right panel. No clipped labels, street edges or route start. All short answer fields remain available.",
+      "task_key_preservation": "Both tasks unchanged; straight/right/right and left/left match the traveler-facing map and current key. No assessment requires guessing an unspecified new through-park route.",
+      "advisory": "Reference currently colors/bolds Go and Turn; a future polish could emphasize along/across/through themselves to make the distinguishing concept more obvious. No current grammatical or key error.",
+      "physical_pdf_page": 94,
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\vocab-scope-audit-20261102\\pdf-proof\\page-93.png",
+      "proof_pixels": [
+        992,
+        1404
+      ],
+      "inspected_at_full_readable_resolution": true
+    },
+    {
+      "folio": 94,
+      "lesson": "6D",
+      "status": "PASS",
+      "pedagogy": "Availability table, positive/negative/question can chart, new complete Can you come? short answers and avoid/use base-verb contrast are mutually consistent. Cannot/can’t forms are complete and correctly spaced.",
+      "spacing": "Aligned tables and three response-model cells have clear labels and no collision. Three full-width correction lines and reserved QR region remain generous and unobstructed.",
+      "task_key_preservation": "Both tasks unchanged; can’t/can follow the garden hours; She can visit the museum / Can you go on Friday? / He can’t come match key.",
+      "physical_pdf_page": 95,
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\vocab-scope-audit-20261102\\pdf-proof\\page-94.png",
+      "proof_pixels": [
+        992,
+        1404
+      ],
+      "inspected_at_full_readable_resolution": true
+    },
+    {
+      "folio": 99,
+      "lesson": "8B",
+      "status": "PASS",
+      "pedagogy": "Should/should not/shouldn’t and inverted yes/no question are correctly modelled, with no to or third-person-s after the modal. New Should we go outside? / Yes, you should / No, you shouldn’t is a valid exchange to an external adviser; you refers to the group.",
+      "spacing": "Question/Yes/No cells and avoid/use examples are fully readable; full correction lines remain clear and the advice-matching columns do not collide.",
+      "task_key_preservation": "Both tasks unchanged; matching c/a/b and repairs Should I take a coat? / You shouldn’t go outside agree with key.",
+      "physical_pdf_page": 100,
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\vocab-scope-audit-20261102\\pdf-proof\\page-99.png",
+      "proof_pixels": [
+        992,
+        1404
+      ],
+      "inspected_at_full_readable_resolution": true
+    }
+  ],
+  "source_preservation": [
+    {
+      "file": "Practice/Grammar/G4.html",
+      "before_tasks": 9,
+      "after_tasks": 9,
+      "task_DOM_changed_indices": [],
+      "counts_equal": true
+    },
+    {
+      "file": "Practice/Grammar/G5.html",
+      "before_tasks": 8,
+      "after_tasks": 8,
+      "task_DOM_changed_indices": [],
+      "counts_equal": true
+    },
+    {
+      "file": "Practice/Grammar/G6.html",
+      "before_tasks": 7,
+      "after_tasks": 7,
+      "task_DOM_changed_indices": [],
+      "counts_equal": true
+    },
+    {
+      "file": "Practice/Grammar/G8.html",
+      "before_tasks": 8,
+      "after_tasks": 8,
+      "task_DOM_changed_indices": [],
+      "counts_equal": true
+    },
+    {
+      "file": "Lessons/1D.html",
+      "before_tasks": 8,
+      "after_tasks": 8,
+      "task_DOM_changed_indices": [],
+      "counts_equal": true
+    }
+  ],
+  "font_evidence": [
+    {
+      "folio": 11,
+      "body_fonts_pt": [
+        10.0,
+        13.99,
+        25.0
+      ]
+    },
+    {
+      "folio": 87,
+      "body_fonts_pt": [
+        10.0,
+        13.0,
+        25.0
+      ]
+    },
+    {
+      "folio": 89,
+      "body_fonts_pt": [
+        10.0,
+        13.0,
+        25.0
+      ]
+    },
+    {
+      "folio": 91,
+      "body_fonts_pt": [
+        10.0,
+        13.0,
+        25.0
+      ]
+    },
+    {
+      "folio": 93,
+      "body_fonts_pt": [
+        10.0,
+        13.0,
+        25.0
+      ]
+    },
+    {
+      "folio": 94,
+      "body_fonts_pt": [
+        10.0,
+        13.0,
+        25.0
+      ]
+    },
+    {
+      "folio": 99,
+      "body_fonts_pt": [
+        10.0,
+        13.0,
+        25.0
+      ]
+    }
+  ],
+  "keys_checked": [
+    "Answer keys/Grammar practice 1-4.md",
+    "Answer keys/Grammar practice 5-8.md"
+  ],
+  "release_blockers": []
+}

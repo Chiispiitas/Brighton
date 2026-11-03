@@ -86,11 +86,11 @@
       "cgSgspJ2msm6clMCkdW9",
       "cgSgspJ2msm6clMCkdW9"
     ],
-    "generation_utc": "2026-11-03T02:21:42.135156+00:00",
-    "request_id": "5qGLVmcqjArXScweqO1G",
-    "script_sha256": "587a7e0d26a8913a73064b90884267e3f6a4fa1675df5dd418961609625aca5e",
-    "bytes": 451438,
-    "duration_seconds": 28.19,
+    "generation_utc": "2026-11-03T02:58:29.906533+00:00",
+    "request_id": "dNW05tZcviB52PoypxHR",
+    "script_sha256": "5373455f7f4287de6ef2154bf2fd1949e0b0e5f3935ffc47f4e7e8622234a2ad",
+    "bytes": 221143,
+    "duration_seconds": 13.79,
     "transcript_checked": true,
     "transcript_similarity": 1.0,
     "answer_bearing_phrases_checked": true,
@@ -102,7 +102,7 @@
     "activity": 5,
     "internal_audio_id": "HZN_A1_U08_LA_E05_AUD_01",
     "subjective_listening_review": false,
-    "sha256": "5cdb1588d74d77f291ad4738dc26afdda1e0659c3e3d856a8030ff12c996040d"
+    "sha256": "90626bc133c22da24e575c25d123e9b3a81a397af411793cf237ea50f0e5d406"
   },
   {
     "lesson": "8A",
@@ -152,5 +152,40 @@
     "master_audio_events": [],
     "pitch_preserving_pace_factor": 0.88,
     "speech_loudness_target_lufs": -16
+  },
+  {
+    "lesson": "8A",
+    "track": "8.13",
+    "filename": "Track 8.13.mp3",
+    "script": "ElevenCreative Studio/8A - Track 8.13.txt",
+    "model": "eleven_v3",
+    "stability": 0.5,
+    "paragraph_voice_names": [
+      "Jessica",
+      "Jessica"
+    ],
+    "paragraph_voice_ids": [
+      "cgSgspJ2msm6clMCkdW9",
+      "cgSgspJ2msm6clMCkdW9"
+    ],
+    "generation_utc": "2026-11-03T02:58:37.686609+00:00",
+    "request_id": "dRTkXusA9xiPU8hgGjx6",
+    "script_sha256": "741a9aacabfd21f8bdb35d04805c95dec3de866d7dbc3b4dc856045bc6de9d0b",
+    "bytes": 433884,
+    "duration_seconds": 27.09,
+    "transcript_checked": true,
+    "transcript_similarity": 1.0,
+    "answer_bearing_phrases_checked": true,
+    "audio_events_checked": true,
+    "throat_clearing_events_detected": false,
+    "forbidden_tag_preflight_passed": true,
+    "transcription_name_aliases": {},
+    "transcript_normalization": "Track label, punctuation/case, exact numerical/ordinal/year spellings, equivalent H:00 whole-hour notation and dollar-symbol amounts, Lia/Leah homophone spelling, contractions and TV/OK spellings. Numerical values, dates and negatives are preserved; no answer-bearing substitutions.",
+    "activity": "Vocabulary Practice8A:Animals",
+    "internal_audio_id": "HZN_A1_U08_VOCAB_ANIMALS_AUD_01",
+    "subjective_listening_review": false,
+    "sha256": "0e0382df0a3fec111b3ecedcbcde127026214803645256abfefc480ca37260e9",
+    "printed_page": 141,
+    "scope": "Fuller reference bank, twelve nouns; main lesson introduces five."
   }
 ]

@@ -1,7 +1,7 @@
 {
   "updated": "2026-11-02",
-  "scope": "Reviewed study vocabulary for all 38 topics; based on current lessons/wordlists plus modest practice scaffolds. Entry metadata includes complete phrases, alphabet pairs and ordinal forms, not only single words.",
-  "source_audit": "../../Sources/Vocabulary-study-banks-20261101/independent-lexical-source-map.json",
+  "scope": "38canonical fuller-topic selections, reconciled with all43actual study banks and their main starter selections.",
+  "source_audit": "../../Sources/Vocabulary-reference-scope.json",
   "topics": [
     {
       "topic": "vocabulary-greetings",
@@ -17,11 +17,16 @@
         "Hi",
         "Nice to meet you",
         "See you later",
-        "Goodbye"
+        "Goodbye",
+        "Bye",
+        "Good night"
       ],
-      "source_scope_note": "Time-of-day or meeting/leaving cues. Exact core greetings and approved goodbye extension.",
-      "study_page": 93,
-      "activity_anchor": "activity-vocabulary-greetings"
+      "source_scope_note": "Fuller A1 field selected through reviewed lesson starters, useful bank extensions and justified finite/functional sets. See the43-reference scope register; base/past models alone are not extra lexical breadth.",
+      "study_page": 101,
+      "activity_anchor": "activity-vocabulary-greetings",
+      "study_pages": [
+        101
+      ]
     },
     {
       "topic": "vocabulary-personal-information",
@@ -39,11 +44,19 @@
         "city",
         "phone number",
         "email",
+        "age",
+        "address",
+        "postal code",
+        "nationality",
         "What is your phone number?"
       ],
-      "source_scope_note": "A miniature fictional form/message makes fields distinct; no real data disclosure needed.",
-      "study_page": 95,
-      "activity_anchor": "activity-vocabulary-personal-information"
+      "source_scope_note": "Fuller A1 field selected through reviewed lesson starters, useful bank extensions and justified finite/functional sets. See the43-reference scope register; base/past models alone are not extra lexical breadth.",
+      "study_page": 101,
+      "activity_anchor": "activity-vocabulary-personal-information",
+      "study_pages": [
+        101,
+        107
+      ]
     },
     {
       "topic": "vocabulary-alphabet",
@@ -79,9 +92,12 @@
         "Yy",
         "Zz"
       ],
-      "source_scope_note": "Complete alphabet, not only letters used in Kim/Luz/Sam/Ida. No claim of a new recording.",
-      "study_page": 93,
-      "activity_anchor": "activity-vocabulary-alphabet"
+      "source_scope_note": "Fuller A1 field selected through reviewed lesson starters, useful bank extensions and justified finite/functional sets. See the43-reference scope register; base/past models alone are not extra lexical breadth.",
+      "study_page": 101,
+      "activity_anchor": "activity-vocabulary-alphabet",
+      "study_pages": [
+        101
+      ]
     },
     {
       "topic": "vocabulary-numbers",
@@ -100,11 +116,32 @@
         "seven",
         "eight",
         "nine",
-        "ten"
+        "ten",
+        "eleven",
+        "twelve",
+        "thirteen",
+        "fourteen",
+        "fifteen",
+        "sixteen",
+        "seventeen",
+        "eighteen",
+        "nineteen",
+        "twenty",
+        "thirty",
+        "forty",
+        "fifty",
+        "sixty",
+        "seventy",
+        "eighty",
+        "ninety",
+        "one hundred"
       ],
-      "source_scope_note": "0–10 matched to spelled forms; ten is one number, not a digit.",
-      "study_page": 93,
-      "activity_anchor": "activity-vocabulary-numbers"
+      "source_scope_note": "Fuller A1 field selected through reviewed lesson starters, useful bank extensions and justified finite/functional sets. See the43-reference scope register; base/past models alone are not extra lexical breadth.",
+      "study_page": 101,
+      "activity_anchor": "activity-vocabulary-numbers",
+      "study_pages": [
+        101
+      ]
     },
     {
       "topic": "vocabulary-occupations",
@@ -125,11 +162,18 @@
         "waitress",
         "farmer",
         "actor",
-        "school"
+        "school",
+        "nurse",
+        "dentist",
+        "police officer",
+        "driver"
       ],
-      "source_scope_note": "Both waiter/waitress; role/workplace cues. Practice-only actor must be labeled separately.",
-      "study_page": 95,
-      "activity_anchor": "activity-vocabulary-occupations"
+      "source_scope_note": "Fuller A1 field selected through reviewed lesson starters, useful bank extensions and justified finite/functional sets. See the43-reference scope register; base/past models alone are not extra lexical breadth.",
+      "study_page": 103,
+      "activity_anchor": "activity-vocabulary-occupations",
+      "study_pages": [
+        103
+      ]
     },
     {
       "topic": "vocabulary-countries",
@@ -147,11 +191,26 @@
         "Canada",
         "Canadian",
         "South Korea",
-        "South Korean"
+        "South Korean",
+        "Ecuador",
+        "Ecuadorian",
+        "Mexico",
+        "Mexican",
+        "Brazil",
+        "Brazilian",
+        "Spain",
+        "Spanish",
+        "China",
+        "Chinese",
+        "Japan",
+        "Japanese"
       ],
-      "source_scope_note": "Country↔nationality pair table; capitals and the US/the UK. No incidental-name expansion.",
-      "study_page": 95,
-      "activity_anchor": "activity-vocabulary-countries"
+      "source_scope_note": "Fuller A1 field selected through reviewed lesson starters, useful bank extensions and justified finite/functional sets. See the43-reference scope register; base/past models alone are not extra lexical breadth.",
+      "study_page": 105,
+      "activity_anchor": "activity-vocabulary-countries",
+      "study_pages": [
+        105
+      ]
     },
     {
       "topic": "vocabulary-adjectives",
@@ -177,11 +236,18 @@
         "famous",
         "good",
         "smart",
-        "fun"
+        "fun",
+        "long",
+        "short"
       ],
-      "source_scope_note": "Group by source:1B/1C early set, small reinforced2D. Keep quiet/noisy inV3. Busy/calm is a source-place contrast, not universal antonyms.",
-      "study_page": 95,
-      "activity_anchor": "activity-vocabulary-adjectives"
+      "source_scope_note": "Fuller A1 field selected through reviewed lesson starters, useful bank extensions and justified finite/functional sets. See the43-reference scope register; base/past models alone are not extra lexical breadth.",
+      "study_page": 103,
+      "activity_anchor": "activity-vocabulary-adjectives",
+      "study_pages": [
+        103,
+        105,
+        111
+      ]
     },
     {
       "topic": "vocabulary-personal-items",
@@ -198,11 +264,20 @@
         "headphones",
         "bottle",
         "umbrella",
-        "bag"
+        "bag",
+        "book",
+        "pencil",
+        "eraser",
+        "glasses",
+        "watch",
+        "camera"
       ],
-      "source_scope_note": "All8, including unpictured-in-game headphones. Keys/headphones use plural forms. Bag is useful existing2A context.",
-      "study_page": 98,
-      "activity_anchor": "activity-vocabulary-personal-items"
+      "source_scope_note": "Fuller A1 field selected through reviewed lesson starters, useful bank extensions and justified finite/functional sets. See the43-reference scope register; base/past models alone are not extra lexical breadth.",
+      "study_page": 108,
+      "activity_anchor": "activity-vocabulary-personal-items",
+      "study_pages": [
+        108
+      ]
     },
     {
       "topic": "vocabulary-telling-time",
@@ -224,16 +299,23 @@
         "eight forty",
         "nine fifty",
         "eleven",
-        "twelve"
+        "twelve",
+        "o’clock",
+        "half past",
+        "a quarter past",
+        "a quarter to"
       ],
-      "source_scope_note": "First4 are core exact models; last4 support approved game. A digital hour/minute spelling key should cover ten/twenty/thirty/forty/fifty; avoid using deliberately wrong game captions as reference.",
-      "study_page": 98,
+      "source_scope_note": "Fuller A1 field selected through reviewed lesson starters, useful bank extensions and justified finite/functional sets. See the43-reference scope register; base/past models alone are not extra lexical breadth.",
+      "study_page": 109,
       "activity_anchor": "activity-vocabulary-telling-time",
       "additional_study_support": [
         "eleven",
         "twelve"
       ],
-      "study_support_note": "The reference completes the two remaining12-hour clock names after1A zero-ten. No new recorded models are claimed."
+      "study_support_note": "The reference completes the two remaining12-hour clock names after1A zero-ten. No new recorded models are claimed.",
+      "study_pages": [
+        109
+      ]
     },
     {
       "topic": "vocabulary-family-members",
@@ -251,11 +333,20 @@
         "husband",
         "wife",
         "brother",
-        "sister"
+        "sister",
+        "grandmother",
+        "grandfather",
+        "grandparents",
+        "aunt",
+        "uncle",
+        "cousin"
       ],
-      "source_scope_note": "Actual Rivera input adds husband/wife/children beyond current game. Parents supported by2C possessive model; relation chart must identify roles, not stereotypes.",
-      "study_page": 98,
-      "activity_anchor": "activity-vocabulary-family-members"
+      "source_scope_note": "Fuller A1 field selected through reviewed lesson starters, useful bank extensions and justified finite/functional sets. See the43-reference scope register; base/past models alone are not extra lexical breadth.",
+      "study_page": 110,
+      "activity_anchor": "activity-vocabulary-family-members",
+      "study_pages": [
+        110
+      ]
     },
     {
       "topic": "vocabulary-colors",
@@ -273,11 +364,15 @@
         "brown",
         "orange",
         "gray",
-        "pink"
+        "pink",
+        "purple"
       ],
-      "source_scope_note": "All10; white has visible outline, US gray; use color+label cues.",
-      "study_page": 98,
-      "activity_anchor": "activity-vocabulary-colors"
+      "source_scope_note": "Fuller A1 field selected through reviewed lesson starters, useful bank extensions and justified finite/functional sets. See the43-reference scope register; base/past models alone are not extra lexical breadth.",
+      "study_page": 111,
+      "activity_anchor": "activity-vocabulary-colors",
+      "study_pages": [
+        111
+      ]
     },
     {
       "topic": "vocabulary-daily-routines",
@@ -301,9 +396,13 @@
         "listen to music",
         "sleep"
       ],
-      "source_scope_note": "8from3A plus5 additional unique3D chunks. Show meaningful whole chunks, not isolated verbs; do not equate get up with wake up.",
-      "study_page": 101,
-      "activity_anchor": "activity-vocabulary-daily-routines"
+      "source_scope_note": "Fuller A1 field selected through reviewed lesson starters, useful bank extensions and justified finite/functional sets. See the43-reference scope register; base/past models alone are not extra lexical breadth.",
+      "study_page": 112,
+      "activity_anchor": "activity-vocabulary-daily-routines",
+      "study_pages": [
+        112,
+        117
+      ]
     },
     {
       "topic": "vocabulary-days-of-the-week",
@@ -322,9 +421,12 @@
         "weekday",
         "weekend"
       ],
-      "source_scope_note": "All7 spelled correctly. Weekday/weekend source context; avoid claiming every learner has the same workweek.",
-      "study_page": 101,
-      "activity_anchor": "activity-vocabulary-days-of-the-week"
+      "source_scope_note": "Fuller A1 field selected through reviewed lesson starters, useful bank extensions and justified finite/functional sets. See the43-reference scope register; base/past models alone are not extra lexical breadth.",
+      "study_page": 114,
+      "activity_anchor": "activity-vocabulary-days-of-the-week",
+      "study_pages": [
+        114
+      ]
     },
     {
       "topic": "vocabulary-place-adjectives-recall",
@@ -339,11 +441,20 @@
         "expensive",
         "beautiful",
         "busy",
-        "free"
+        "free",
+        "big",
+        "small",
+        "old",
+        "new",
+        "calm",
+        "friendly"
       ],
-      "source_scope_note": "Canonical new quiet/noisy belong here; source price/noise/appearance cues support meaning.",
-      "study_page": 101,
-      "activity_anchor": "activity-vocabulary-place-adjectives-recall"
+      "source_scope_note": "Fuller A1 field selected through reviewed lesson starters, useful bank extensions and justified finite/functional sets. See the43-reference scope register; base/past models alone are not extra lexical breadth.",
+      "study_page": 115,
+      "activity_anchor": "activity-vocabulary-place-adjectives-recall",
+      "study_pages": [
+        115
+      ]
     },
     {
       "topic": "vocabulary-food-and-drink",
@@ -365,11 +476,22 @@
         "coffee",
         "juice",
         "soup",
-        "sandwich"
+        "sandwich",
+        "water",
+        "chicken",
+        "potatoes",
+        "carrots",
+        "onions",
+        "oranges",
+        "pasta",
+        "yogurt"
       ],
-      "source_scope_note": "12food categories; countable singular/plural pairs useful; mass-food meanings of bread/rice/milk/cheese.",
-      "study_page": 104,
-      "activity_anchor": "activity-vocabulary-food-and-drink"
+      "source_scope_note": "Fuller A1 field selected through reviewed lesson starters, useful bank extensions and justified finite/functional sets. See the43-reference scope register; base/past models alone are not extra lexical breadth.",
+      "study_page": 118,
+      "activity_anchor": "activity-vocabulary-food-and-drink",
+      "study_pages": [
+        118
+      ]
     },
     {
       "topic": "vocabulary-flavors",
@@ -395,11 +517,16 @@
         "tasty",
         "vegan",
         "plants",
-        "meat"
+        "meat",
+        "bitter",
+        "delicious"
       ],
-      "source_scope_note": "Use known/supported food meanings: chips/salt,ice cream/sugar,lemon,chili pepper. Useful core context vegan,plants,meat,burger,chips,ice cream,strawberry,lemon,chili pepper,fries,menu; tasty is title support. Do not infer every version of a food has one flavor.",
-      "study_page": 104,
-      "activity_anchor": "activity-vocabulary-flavors"
+      "source_scope_note": "Fuller A1 field selected through reviewed lesson starters, useful bank extensions and justified finite/functional sets. See the43-reference scope register; base/past models alone are not extra lexical breadth.",
+      "study_page": 120,
+      "activity_anchor": "activity-vocabulary-flavors",
+      "study_pages": [
+        120
+      ]
     },
     {
       "topic": "vocabulary-cooking-verbs",
@@ -416,11 +543,18 @@
         "salad",
         "spoon",
         "oil",
-        "bowl"
+        "bowl",
+        "peel an orange",
+        "boil water",
+        "fry an egg",
+        "bake bread"
       ],
-      "source_scope_note": "All4 verbs with their objects; bowl is a practice-only scaffold. Sequence must wash→cut→add→mix in existing recipe game.",
-      "study_page": 104,
-      "activity_anchor": "activity-vocabulary-cooking-verbs"
+      "source_scope_note": "Fuller A1 field selected through reviewed lesson starters, useful bank extensions and justified finite/functional sets. See the43-reference scope register; base/past models alone are not extra lexical breadth.",
+      "study_page": 121,
+      "activity_anchor": "activity-vocabulary-cooking-verbs",
+      "study_pages": [
+        121
+      ]
     },
     {
       "topic": "vocabulary-sharing-food",
@@ -431,11 +565,20 @@
       "required_items": [
         "share food",
         "free",
-        "waste food"
+        "waste food",
+        "give food",
+        "take food",
+        "keep food",
+        "leftovers",
+        "hungry",
+        "full"
       ],
-      "source_scope_note": "Free=$0/no money; share=food for you/me; waste=usable food not eaten/shared. No safety claims or compulsory real sharing.",
-      "study_page": 104,
-      "activity_anchor": "activity-vocabulary-sharing-food"
+      "source_scope_note": "Fuller A1 field selected through reviewed lesson starters, useful bank extensions and justified finite/functional sets. See the43-reference scope register; base/past models alone are not extra lexical breadth.",
+      "study_page": 122,
+      "activity_anchor": "activity-vocabulary-sharing-food",
+      "study_pages": [
+        122
+      ]
     },
     {
       "topic": "vocabulary-clothes-and-accessories",
@@ -453,11 +596,20 @@
         "shoes",
         "hat",
         "scarf",
-        "bag"
+        "bag",
+        "skirt",
+        "shorts",
+        "socks",
+        "pants",
+        "boots",
+        "coat"
       ],
-      "source_scope_note": "All10: new picture shows6, missing-item clues retrieve4. Jeans/shoes plural, other nouns take a/an when singular.",
-      "study_page": 107,
-      "activity_anchor": "activity-vocabulary-clothes-and-accessories"
+      "source_scope_note": "Fuller A1 field selected through reviewed lesson starters, useful bank extensions and justified finite/functional sets. See the43-reference scope register; base/past models alone are not extra lexical breadth.",
+      "study_page": 123,
+      "activity_anchor": "activity-vocabulary-clothes-and-accessories",
+      "study_pages": [
+        123
+      ]
     },
     {
       "topic": "vocabulary-shopping-verbs",
@@ -474,11 +626,18 @@
         "light",
         "comfortable",
         "fit/fits",
-        "broken"
+        "broken",
+        "buy",
+        "sell",
+        "choose",
+        "order"
       ],
-      "source_scope_note": "Meaningful chunks pay by card,try on a jacket,keep an item,return an item. Return-item meaning differs from8D return-ticket.",
-      "study_page": 107,
-      "activity_anchor": "activity-vocabulary-shopping-verbs"
+      "source_scope_note": "Fuller A1 field selected through reviewed lesson starters, useful bank extensions and justified finite/functional sets. See the43-reference scope register; base/past models alone are not extra lexical breadth.",
+      "study_page": 124,
+      "activity_anchor": "activity-vocabulary-shopping-verbs",
+      "study_pages": [
+        124
+      ]
     },
     {
       "topic": "vocabulary-places-in-town",
@@ -490,11 +649,20 @@
         "supermarket",
         "market",
         "clothes store",
-        "library"
+        "library",
+        "bakery",
+        "bookstore",
+        "shoe store",
+        "department store",
+        "café",
+        "restaurant"
       ],
-      "source_scope_note": "Only these4at5C; do not pre-teach6A full town set. Places↔visible stock/purpose cues support mission.",
-      "study_page": 107,
-      "activity_anchor": "activity-vocabulary-places-in-town"
+      "source_scope_note": "Fuller A1 field selected through reviewed lesson starters, useful bank extensions and justified finite/functional sets. See the43-reference scope register; base/past models alone are not extra lexical breadth.",
+      "study_page": 125,
+      "activity_anchor": "activity-vocabulary-places-in-town",
+      "study_pages": [
+        125
+      ]
     },
     {
       "topic": "vocabulary-at-the-store",
@@ -508,11 +676,19 @@
         "checkout",
         "cash",
         "card",
-        "receipt"
+        "receipt",
+        "shopping bag",
+        "shopping list",
+        "price label",
+        "coins",
+        "bills"
       ],
-      "source_scope_note": "Person/place/payment/document distinctions. Useful chunks Do you have any…? I’d like some…,please;Anything else?No,thanks;How much is it?Can I pay by card?Here’s your receipt;Can I get a receipt?",
-      "study_page": 107,
-      "activity_anchor": "activity-vocabulary-at-the-store"
+      "source_scope_note": "Fuller A1 field selected through reviewed lesson starters, useful bank extensions and justified finite/functional sets. See the43-reference scope register; base/past models alone are not extra lexical breadth.",
+      "study_page": 127,
+      "activity_anchor": "activity-vocabulary-at-the-store",
+      "study_pages": [
+        127
+      ]
     },
     {
       "topic": "vocabulary-places-in-town-2",
@@ -531,11 +707,20 @@
         "train station",
         "take a train",
         "museum",
-        "look at art and history"
+        "look at art and history",
+        "park",
+        "school",
+        "cinema",
+        "police station",
+        "bus stop",
+        "hotel"
       ],
-      "source_scope_note": "All6places and functional chunks. Letter-envelope meaning differs from alphabet letter.",
-      "study_page": 110,
-      "activity_anchor": "activity-vocabulary-places-in-town-2"
+      "source_scope_note": "Fuller A1 field selected through reviewed lesson starters, useful bank extensions and justified finite/functional sets. See the43-reference scope register; base/past models alone are not extra lexical breadth.",
+      "study_page": 129,
+      "activity_anchor": "activity-vocabulary-places-in-town-2",
+      "study_pages": [
+        129
+      ]
     },
     {
       "topic": "vocabulary-rooms-and-furniture",
@@ -551,11 +736,21 @@
         "bed",
         "sofa",
         "table",
-        "chair"
+        "chair",
+        "desk",
+        "lamp",
+        "closet",
+        "shelf",
+        "mirror",
+        "dining room",
+        "home office"
       ],
-      "source_scope_note": "4rooms+4furniture. Useful source gloss tiny=very small;free time=available leisure, distinct from free=$0. Optional lamp/armchair only if clearly labeled as practice picture extras, not required core.",
-      "study_page": 112,
-      "activity_anchor": "activity-vocabulary-rooms-and-furniture"
+      "source_scope_note": "Fuller A1 field selected through reviewed lesson starters, useful bank extensions and justified finite/functional sets. See the43-reference scope register; base/past models alone are not extra lexical breadth.",
+      "study_page": 131,
+      "activity_anchor": "activity-vocabulary-rooms-and-furniture",
+      "study_pages": [
+        131
+      ]
     },
     {
       "topic": "vocabulary-movement-and-directions",
@@ -573,11 +768,19 @@
         "turn right",
         "on foot",
         "on your left",
-        "on your right"
+        "on your right",
+        "crossroads",
+        "go back",
+        "stop here",
+        "How do I get to…?",
+        "Is it near?"
       ],
-      "source_scope_note": "Arrows distinguish along/across/through/past. On foot=walking. Crossroads is a grammar-bank scaffold; opposite belongs to explicitly labeled practical extension, not retroactive6B target.",
-      "study_page": 112,
-      "activity_anchor": "activity-vocabulary-movement-and-directions"
+      "source_scope_note": "Fuller A1 field selected through reviewed lesson starters, useful bank extensions and justified finite/functional sets. See the43-reference scope register; base/past models alone are not extra lexical breadth.",
+      "study_page": 133,
+      "activity_anchor": "activity-vocabulary-movement-and-directions",
+      "study_pages": [
+        133
+      ]
     },
     {
       "topic": "vocabulary-shopping-centers-and-attractions",
@@ -596,11 +799,20 @@
         "shopping center",
         "go shopping",
         "open",
-        "closed"
+        "closed",
+        "movie theater",
+        "swimming pool",
+        "restaurant",
+        "café",
+        "beach",
+        "park"
       ],
-      "source_scope_note": "Mall=shopping center; closed=not open. No actual venue hours/safety rules claimed.",
-      "study_page": 110,
-      "activity_anchor": "activity-vocabulary-shopping-centers-and-attractions"
+      "source_scope_note": "Fuller A1 field selected through reviewed lesson starters, useful bank extensions and justified finite/functional sets. See the43-reference scope register; base/past models alone are not extra lexical breadth.",
+      "study_page": 134,
+      "activity_anchor": "activity-vocabulary-shopping-centers-and-attractions",
+      "study_pages": [
+        134
+      ]
     },
     {
       "topic": "vocabulary-months",
@@ -622,9 +834,12 @@
         "November",
         "December"
       ],
-      "source_scope_note": "All12calendar order and accurate spelling.",
-      "study_page": 114,
-      "activity_anchor": "activity-vocabulary-months"
+      "source_scope_note": "Fuller A1 field selected through reviewed lesson starters, useful bank extensions and justified finite/functional sets. See the43-reference scope register; base/past models alone are not extra lexical breadth.",
+      "study_page": 136,
+      "activity_anchor": "activity-vocabulary-months",
+      "study_pages": [
+        136
+      ]
     },
     {
       "topic": "vocabulary-dates-and-ordinal-numbers",
@@ -665,9 +880,12 @@
         "thirtieth",
         "thirty-first"
       ],
-      "source_scope_note": "Exact core models. Reference must support all calendar dates1–31 using a complete list or a clear pattern; ensure fifth/eighth/ninth/twelfth/twentieth/thirtieth and compound endings. July twelfth / the twelfth of July.",
-      "study_page": 114,
-      "activity_anchor": "activity-vocabulary-dates-and-ordinal-numbers"
+      "source_scope_note": "Fuller A1 field selected through reviewed lesson starters, useful bank extensions and justified finite/functional sets. See the43-reference scope register; base/past models alone are not extra lexical breadth.",
+      "study_page": 136,
+      "activity_anchor": "activity-vocabulary-dates-and-ordinal-numbers",
+      "study_pages": [
+        136
+      ]
     },
     {
       "topic": "vocabulary-past-time-expressions",
@@ -683,11 +901,21 @@
         "last year",
         "one day ago",
         "two days ago",
-        "ago"
+        "ago",
+        "last week",
+        "last month",
+        "yesterday morning",
+        "yesterday afternoon",
+        "yesterday evening",
+        "a week ago"
       ],
-      "source_scope_note": "Visible fictional today/year anchor; ago=before now after duration. Last night and yesterday are not identical periods.",
-      "study_page": 114,
-      "activity_anchor": "activity-vocabulary-past-time-expressions"
+      "source_scope_note": "Fuller A1 field selected through reviewed lesson starters, useful bank extensions and justified finite/functional sets. See the43-reference scope register; base/past models alone are not extra lexical breadth.",
+      "study_page": 135,
+      "activity_anchor": "activity-vocabulary-past-time-expressions",
+      "study_pages": [
+        135,
+        136
+      ]
     },
     {
       "topic": "vocabulary-music",
@@ -698,11 +926,20 @@
       "required_items": [
         "record",
         "cassette",
-        "radio"
+        "radio",
+        "CD",
+        "headphones",
+        "speaker",
+        "guitar",
+        "piano",
+        "drums"
       ],
-      "source_scope_note": "Correct labels, not intentionally wrong game labels. Simple fresh visual/meaning cues; no new music-style taxonomy.",
-      "study_page": 116,
-      "activity_anchor": "activity-vocabulary-music"
+      "source_scope_note": "Fuller A1 field selected through reviewed lesson starters, useful bank extensions and justified finite/functional sets. See the43-reference scope register; base/past models alone are not extra lexical breadth.",
+      "study_page": 138,
+      "activity_anchor": "activity-vocabulary-music",
+      "study_pages": [
+        138
+      ]
     },
     {
       "topic": "vocabulary-irregular-past-verbs",
@@ -724,11 +961,19 @@
         "buy/bought",
         "bought bread",
         "write/wrote",
-        "wrote in a diary"
+        "wrote in a diary",
+        "come/came",
+        "do/did",
+        "make/made",
+        "drink/drank",
+        "read/read"
       ],
-      "source_scope_note": "All7pairs and useful chunks; approved repair story retrieves every form. Base after did/didn’t remains a grammar-bank pattern.",
-      "study_page": 116,
-      "activity_anchor": "activity-vocabulary-irregular-past-verbs"
+      "source_scope_note": "Fuller A1 field selected through reviewed lesson starters, useful bank extensions and justified finite/functional sets. See the43-reference scope register; base/past models alone are not extra lexical breadth.",
+      "study_page": 139,
+      "activity_anchor": "activity-vocabulary-irregular-past-verbs",
+      "study_pages": [
+        139
+      ]
     },
     {
       "topic": "vocabulary-sequencing-words",
@@ -740,11 +985,16 @@
         "First",
         "Then",
         "After that",
-        "Finally"
+        "Finally",
+        "Next",
+        "Later"
       ],
-      "source_scope_note": "Ordered event-arrow cue; existing open retelling preserved. Do not turn an exact printed ordered list into a claimed memory challenge without covering it.",
-      "study_page": 116,
-      "activity_anchor": "activity-vocabulary-sequencing-words"
+      "source_scope_note": "Fuller A1 field selected through reviewed lesson starters, useful bank extensions and justified finite/functional sets. See the43-reference scope register; base/past models alone are not extra lexical breadth.",
+      "study_page": 139,
+      "activity_anchor": "activity-vocabulary-sequencing-words",
+      "study_pages": [
+        139
+      ]
     },
     {
       "topic": "vocabulary-travel-verbs",
@@ -765,11 +1015,20 @@
         "take/took",
         "leave at six",
         "leave/left",
-        "leave a bag at a hotel"
+        "leave a bag at a hotel",
+        "book a room",
+        "pack a bag",
+        "buy a ticket",
+        "catch a bus",
+        "get on a bus",
+        "get off a bus"
       ],
-      "source_scope_note": "Six whole chunks plus supported past forms. Leave-at-time and leave-an-object are distinct source meanings; American traveled.",
-      "study_page": 118,
-      "activity_anchor": "activity-vocabulary-travel-verbs"
+      "source_scope_note": "Fuller A1 field selected through reviewed lesson starters, useful bank extensions and justified finite/functional sets. See the43-reference scope register; base/past models alone are not extra lexical breadth.",
+      "study_page": 141,
+      "activity_anchor": "activity-vocabulary-travel-verbs",
+      "study_pages": [
+        141
+      ]
     },
     {
       "topic": "vocabulary-animals",
@@ -791,9 +1050,12 @@
         "cow",
         "sheep"
       ],
-      "source_scope_note": "Twelve animal nouns explicitly introduced in8A and modeled in regenerated Jessica Track8.3. Study bank uses its own five-wildlife specimen photo plus grouped pet/farm words; no lesson cutout sheet is recycled. Crossword retrieves five wildlife names; partner/solo retrieval extends to the other seven.",
+      "source_scope_note": "Fuller A1 field selected through reviewed lesson starters, useful bank extensions and justified finite/functional sets. See the43-reference scope register; base/past models alone are not extra lexical breadth.",
       "study_page": 141,
-      "activity_anchor": "activity-vocabulary-animals"
+      "activity_anchor": "activity-vocabulary-animals",
+      "study_pages": [
+        141
+      ]
     },
     {
       "topic": "vocabulary-weather-and-seasons",
@@ -812,11 +1074,18 @@
         "spring",
         "summer",
         "fall",
-        "winter"
+        "winter",
+        "cool",
+        "warm",
+        "wet",
+        "dry"
       ],
-      "source_scope_note": "7weather+4seasons. Fall American model. Weather icons/new cues; no universal weather-season mapping.",
-      "study_page": 120,
-      "activity_anchor": "activity-vocabulary-weather-and-seasons"
+      "source_scope_note": "Fuller A1 field selected through reviewed lesson starters, useful bank extensions and justified finite/functional sets. See the43-reference scope register; base/past models alone are not extra lexical breadth.",
+      "study_page": 143,
+      "activity_anchor": "activity-vocabulary-weather-and-seasons",
+      "study_pages": [
+        143
+      ]
     },
     {
       "topic": "vocabulary-phone-and-ticket-language",
@@ -836,11 +1105,18 @@
         "How much is it?",
         "Can you repeat that?",
         "Can you spell your name?",
-        "That’s a ticket to…at…"
+        "That’s a ticket to…at…",
+        "Can you say that again, please?",
+        "Please speak slowly.",
+        "One moment, please.",
+        "Sorry, I don’t understand."
       ],
-      "source_scope_note": "All6recorded request/question models plus noun roles and confirmation. One-way/return directional cue, departure versus arrival; destination/To is contextual field, no extra country set.",
-      "study_page": 122,
-      "activity_anchor": "activity-vocabulary-phone-and-ticket-language"
+      "source_scope_note": "Fuller A1 field selected through reviewed lesson starters, useful bank extensions and justified finite/functional sets. See the43-reference scope register; base/past models alone are not extra lexical breadth.",
+      "study_page": 147,
+      "activity_anchor": "activity-vocabulary-phone-and-ticket-language",
+      "study_pages": [
+        147
+      ]
     },
     {
       "topic": "vocabulary-body-parts",
@@ -850,15 +1126,24 @@
       ],
       "required_items": [
         "head",
+        "stomach",
         "arm",
         "hand",
-        "stomach",
         "leg",
-        "foot"
+        "foot",
+        "hair",
+        "eye",
+        "ear",
+        "nose",
+        "mouth",
+        "neck"
       ],
-      "source_scope_note": "All6with fresh visual/clear cues. Singular/plural models arm/arms,leg/legs; optional foot/feet if used correctly. Approved acted travelers are for a new symptom-matching activity, not the reused core body diagram.",
-      "study_page": 122,
-      "activity_anchor": "activity-vocabulary-body-parts"
+      "source_scope_note": "Fuller A1 field selected through reviewed lesson starters, useful bank extensions and justified finite/functional sets. See the43-reference scope register; base/past models alone are not extra lexical breadth.",
+      "study_page": 145,
+      "activity_anchor": "activity-vocabulary-body-parts",
+      "study_pages": [
+        145
+      ]
     },
     {
       "topic": "vocabulary-health-complaints",
@@ -871,14 +1156,20 @@
         "a headache",
         "a stomachache",
         "a toothache",
+        "an earache",
+        "a fever",
         "I have a…",
         "She has a…",
         "My head/arm/stomach hurts",
-        "My legs hurt"
+        "My legs hurt",
+        "I feel sick"
       ],
-      "source_scope_note": "Retain articles and agreement; cold illness differs from temperature adjective. Poses/messages illustrate fictional problems, no diagnosis/treatment.",
-      "study_page": 122,
-      "activity_anchor": "activity-vocabulary-health-complaints"
+      "source_scope_note": "Fuller A1 field selected through reviewed lesson starters, useful bank extensions and justified finite/functional sets. See the43-reference scope register; base/past models alone are not extra lexical breadth.",
+      "study_page": 145,
+      "activity_anchor": "activity-vocabulary-health-complaints",
+      "study_pages": [
+        145
+      ]
     }
   ]
 }

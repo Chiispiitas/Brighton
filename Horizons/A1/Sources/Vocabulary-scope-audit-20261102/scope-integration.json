@@ -1,0 +1,707 @@
+{
+  "references": 43,
+  "canonical_topics": 38,
+  "main_lesson_files": 32,
+  "canonical_required_entries": 583,
+  "actual_marked_entry_occurrences": 669,
+  "meaningful_extension_occurrences": 306,
+  "closed_or_functional_sets": [
+    "vocabulary-alphabet",
+    "vocabulary-days-of-the-week",
+    "vocabulary-months",
+    "vocabulary-sequencing-words"
+  ],
+  "scope_by_topic": [
+    {
+      "topic": "vocabulary-greetings",
+      "lesson": "1A",
+      "starter": 6,
+      "full_bank": 10,
+      "lexical_extensions": [
+        "Hi",
+        "Goodbye",
+        "Bye",
+        "Good night"
+      ],
+      "scope_type": "open-expanded"
+    },
+    {
+      "topic": "vocabulary-personal-information",
+      "lesson": "1A",
+      "starter": 4,
+      "full_bank": 13,
+      "lexical_extensions": [
+        "first name",
+        "last name",
+        "country",
+        "city",
+        "email",
+        "age",
+        "address",
+        "postal code",
+        "nationality"
+      ],
+      "scope_type": "open-expanded"
+    },
+    {
+      "topic": "vocabulary-alphabet",
+      "lesson": "1A",
+      "starter": 26,
+      "full_bank": 26,
+      "lexical_extensions": [],
+      "scope_type": "closed-set"
+    },
+    {
+      "topic": "vocabulary-numbers",
+      "lesson": "1A",
+      "starter": 11,
+      "full_bank": 29,
+      "lexical_extensions": [
+        "eleven",
+        "twelve",
+        "thirteen",
+        "fourteen",
+        "fifteen",
+        "sixteen",
+        "seventeen",
+        "eighteen",
+        "nineteen",
+        "twenty",
+        "thirty",
+        "forty",
+        "fifty",
+        "sixty",
+        "seventy",
+        "eighty",
+        "ninety",
+        "one hundred"
+      ],
+      "scope_type": "open-expanded"
+    },
+    {
+      "topic": "vocabulary-occupations",
+      "lesson": "1B",
+      "starter": 11,
+      "full_bank": 17,
+      "lexical_extensions": [
+        "actor",
+        "school",
+        "nurse",
+        "dentist",
+        "police officer",
+        "driver"
+      ],
+      "scope_type": "open-expanded"
+    },
+    {
+      "topic": "vocabulary-adjectives",
+      "lesson": "1B",
+      "starter": 3,
+      "full_bank": 18,
+      "lexical_extensions": [
+        "big",
+        "small",
+        "hot",
+        "cold",
+        "old",
+        "new",
+        "calm",
+        "cheap",
+        "expensive",
+        "beautiful",
+        "friendly",
+        "famous",
+        "good",
+        "long",
+        "short"
+      ],
+      "scope_type": "open-expanded"
+    },
+    {
+      "topic": "vocabulary-countries",
+      "lesson": "1C",
+      "starter": 10,
+      "full_bank": 22,
+      "lexical_extensions": [
+        "Ecuador",
+        "Ecuadorian",
+        "Mexico",
+        "Mexican",
+        "Brazil",
+        "Brazilian",
+        "Spain",
+        "Spanish",
+        "China",
+        "Chinese",
+        "Japan",
+        "Japanese"
+      ],
+      "scope_type": "open-expanded"
+    },
+    {
+      "topic": "vocabulary-adjectives-1c",
+      "lesson": "1C",
+      "starter": 13,
+      "full_bank": 18,
+      "lexical_extensions": [
+        "small",
+        "smart",
+        "fun",
+        "long",
+        "short"
+      ],
+      "scope_type": "open-expanded"
+    },
+    {
+      "topic": "vocabulary-personal-information-1d",
+      "lesson": "1D",
+      "starter": 6,
+      "full_bank": 13,
+      "lexical_extensions": [
+        "name",
+        "class",
+        "age",
+        "address",
+        "postal code",
+        "nationality",
+        "What is your phone number?"
+      ],
+      "scope_type": "open-expanded"
+    },
+    {
+      "topic": "vocabulary-personal-items",
+      "lesson": "2A",
+      "starter": 8,
+      "full_bank": 15,
+      "lexical_extensions": [
+        "bag",
+        "book",
+        "pencil",
+        "eraser",
+        "glasses",
+        "watch",
+        "camera"
+      ],
+      "scope_type": "open-expanded"
+    },
+    {
+      "topic": "vocabulary-telling-time",
+      "lesson": "2B",
+      "starter": 4,
+      "full_bank": 18,
+      "lexical_extensions": [
+        "twenty",
+        "thirty",
+        "forty",
+        "fifty",
+        "six ten",
+        "seven twenty",
+        "eight forty",
+        "nine fifty",
+        "eleven",
+        "twelve",
+        "o’clock",
+        "half past",
+        "a quarter past",
+        "a quarter to"
+      ],
+      "scope_type": "open-expanded"
+    },
+    {
+      "topic": "vocabulary-family-members",
+      "lesson": "2C",
+      "starter": 9,
+      "full_bank": 16,
+      "lexical_extensions": [
+        "parents",
+        "grandmother",
+        "grandfather",
+        "grandparents",
+        "aunt",
+        "uncle",
+        "cousin"
+      ],
+      "scope_type": "open-expanded"
+    },
+    {
+      "topic": "vocabulary-adjectives-2d",
+      "lesson": "2D",
+      "starter": 2,
+      "full_bank": 18,
+      "lexical_extensions": [
+        "hot",
+        "cold",
+        "old",
+        "new",
+        "busy",
+        "calm",
+        "cheap",
+        "expensive",
+        "beautiful",
+        "friendly",
+        "famous",
+        "good",
+        "smart",
+        "fun",
+        "long",
+        "short"
+      ],
+      "scope_type": "open-expanded"
+    },
+    {
+      "topic": "vocabulary-colors",
+      "lesson": "2D",
+      "starter": 10,
+      "full_bank": 11,
+      "lexical_extensions": [
+        "purple"
+      ],
+      "scope_type": "open-expanded"
+    },
+    {
+      "topic": "vocabulary-daily-routines",
+      "lesson": "3A",
+      "starter": 8,
+      "full_bank": 13,
+      "lexical_extensions": [
+        "drink water",
+        "walk",
+        "read a book",
+        "listen to music",
+        "sleep"
+      ],
+      "scope_type": "open-expanded"
+    },
+    {
+      "topic": "vocabulary-days-of-the-week",
+      "lesson": "3B",
+      "starter": 7,
+      "full_bank": 9,
+      "lexical_extensions": [
+        "weekday",
+        "weekend"
+      ],
+      "scope_type": "closed-set"
+    },
+    {
+      "topic": "vocabulary-place-adjectives-recall",
+      "lesson": "3C",
+      "starter": 6,
+      "full_bank": 13,
+      "lexical_extensions": [
+        "free",
+        "big",
+        "small",
+        "old",
+        "new",
+        "calm",
+        "friendly"
+      ],
+      "scope_type": "open-expanded"
+    },
+    {
+      "topic": "vocabulary-daily-routines-3d",
+      "lesson": "3D",
+      "starter": 6,
+      "full_bank": 13,
+      "lexical_extensions": [
+        "get up",
+        "go to work",
+        "have lunch",
+        "go home",
+        "have dinner",
+        "watch TV",
+        "go to bed"
+      ],
+      "scope_type": "open-expanded"
+    },
+    {
+      "topic": "vocabulary-food-and-drink",
+      "lesson": "4A",
+      "starter": 12,
+      "full_bank": 22,
+      "lexical_extensions": [
+        "soup",
+        "sandwich",
+        "water",
+        "chicken",
+        "potatoes",
+        "carrots",
+        "onions",
+        "oranges",
+        "pasta",
+        "yogurt"
+      ],
+      "scope_type": "open-expanded"
+    },
+    {
+      "topic": "vocabulary-flavors",
+      "lesson": "4B",
+      "starter": 4,
+      "full_bank": 20,
+      "lexical_extensions": [
+        "salt",
+        "sugar",
+        "burger",
+        "chips",
+        "ice cream",
+        "lemon",
+        "chili pepper",
+        "fries",
+        "strawberries",
+        "menu",
+        "tasty",
+        "vegan",
+        "plants",
+        "meat",
+        "bitter",
+        "delicious"
+      ],
+      "scope_type": "open-expanded"
+    },
+    {
+      "topic": "vocabulary-cooking-verbs",
+      "lesson": "4C",
+      "starter": 4,
+      "full_bank": 13,
+      "lexical_extensions": [
+        "recipe",
+        "salad",
+        "spoon",
+        "oil",
+        "bowl",
+        "peel an orange",
+        "boil water",
+        "fry an egg",
+        "bake bread"
+      ],
+      "scope_type": "open-expanded"
+    },
+    {
+      "topic": "vocabulary-sharing-food",
+      "lesson": "4D",
+      "starter": 3,
+      "full_bank": 9,
+      "lexical_extensions": [
+        "give food",
+        "take food",
+        "keep food",
+        "leftovers",
+        "hungry",
+        "full"
+      ],
+      "scope_type": "open-expanded"
+    },
+    {
+      "topic": "vocabulary-clothes-and-accessories",
+      "lesson": "5A",
+      "starter": 10,
+      "full_bank": 16,
+      "lexical_extensions": [
+        "skirt",
+        "shorts",
+        "socks",
+        "pants",
+        "boots",
+        "coat"
+      ],
+      "scope_type": "open-expanded"
+    },
+    {
+      "topic": "vocabulary-shopping-verbs",
+      "lesson": "5B",
+      "starter": 4,
+      "full_bank": 13,
+      "lexical_extensions": [
+        "light",
+        "fit/fits",
+        "broken",
+        "buy",
+        "sell",
+        "choose",
+        "order"
+      ],
+      "scope_type": "open-expanded"
+    },
+    {
+      "topic": "vocabulary-places-in-town",
+      "lesson": "5C",
+      "starter": 4,
+      "full_bank": 10,
+      "lexical_extensions": [
+        "bakery",
+        "bookstore",
+        "shoe store",
+        "department store",
+        "café",
+        "restaurant"
+      ],
+      "scope_type": "open-expanded"
+    },
+    {
+      "topic": "vocabulary-at-the-store",
+      "lesson": "5D",
+      "starter": 6,
+      "full_bank": 11,
+      "lexical_extensions": [
+        "shopping bag",
+        "shopping list",
+        "price label",
+        "coins",
+        "bills"
+      ],
+      "scope_type": "open-expanded"
+    },
+    {
+      "topic": "vocabulary-places-in-town-2",
+      "lesson": "6A",
+      "starter": 6,
+      "full_bank": 17,
+      "lexical_extensions": [
+        "park",
+        "school",
+        "cinema",
+        "police station",
+        "bus stop",
+        "hotel"
+      ],
+      "scope_type": "open-expanded"
+    },
+    {
+      "topic": "vocabulary-rooms-and-furniture",
+      "lesson": "6B",
+      "starter": 8,
+      "full_bank": 15,
+      "lexical_extensions": [
+        "desk",
+        "lamp",
+        "closet",
+        "shelf",
+        "mirror",
+        "dining room",
+        "home office"
+      ],
+      "scope_type": "open-expanded"
+    },
+    {
+      "topic": "vocabulary-movement-and-directions",
+      "lesson": "6C",
+      "starter": 10,
+      "full_bank": 15,
+      "lexical_extensions": [
+        "crossroads",
+        "go back",
+        "stop here",
+        "How do I get to…?",
+        "Is it near?"
+      ],
+      "scope_type": "open-expanded"
+    },
+    {
+      "topic": "vocabulary-shopping-centers-and-attractions",
+      "lesson": "6D",
+      "starter": 4,
+      "full_bank": 17,
+      "lexical_extensions": [
+        "movie theater",
+        "swimming pool",
+        "restaurant",
+        "café",
+        "beach",
+        "park"
+      ],
+      "scope_type": "open-expanded"
+    },
+    {
+      "topic": "vocabulary-past-time-expressions",
+      "lesson": "7A",
+      "starter": 4,
+      "full_bank": 13,
+      "lexical_extensions": [
+        "one day ago",
+        "two days ago",
+        "ago",
+        "last week",
+        "last month",
+        "yesterday morning",
+        "yesterday afternoon",
+        "yesterday evening",
+        "a week ago"
+      ],
+      "scope_type": "open-expanded"
+    },
+    {
+      "topic": "vocabulary-months",
+      "lesson": "7B",
+      "starter": 12,
+      "full_bank": 12,
+      "lexical_extensions": [],
+      "scope_type": "closed-set"
+    },
+    {
+      "topic": "vocabulary-dates-and-ordinal-numbers",
+      "lesson": "7B",
+      "starter": 18,
+      "full_bank": 31,
+      "lexical_extensions": [
+        "thirteenth",
+        "fourteenth",
+        "fifteenth",
+        "sixteenth",
+        "seventeenth",
+        "eighteenth",
+        "nineteenth",
+        "twenty-fourth",
+        "twenty-fifth",
+        "twenty-sixth",
+        "twenty-seventh",
+        "twenty-eighth",
+        "twenty-ninth"
+      ],
+      "scope_type": "open-expanded"
+    },
+    {
+      "topic": "vocabulary-past-time-expressions-7b",
+      "lesson": "7B",
+      "starter": 3,
+      "full_bank": 13,
+      "lexical_extensions": [
+        "yesterday",
+        "last night",
+        "last weekend",
+        "last year",
+        "last week",
+        "last month",
+        "yesterday morning",
+        "yesterday afternoon",
+        "yesterday evening",
+        "a week ago"
+      ],
+      "scope_type": "open-expanded"
+    },
+    {
+      "topic": "vocabulary-music",
+      "lesson": "7C",
+      "starter": 3,
+      "full_bank": 9,
+      "lexical_extensions": [
+        "CD",
+        "headphones",
+        "speaker",
+        "guitar",
+        "piano",
+        "drums"
+      ],
+      "scope_type": "open-expanded"
+    },
+    {
+      "topic": "vocabulary-irregular-past-verbs",
+      "lesson": "7D",
+      "starter": 7,
+      "full_bank": 19,
+      "lexical_extensions": [
+        "come/came",
+        "do/did",
+        "make/made",
+        "drink/drank",
+        "read/read"
+      ],
+      "scope_type": "open-expanded"
+    },
+    {
+      "topic": "vocabulary-sequencing-words",
+      "lesson": "7D",
+      "starter": 4,
+      "full_bank": 6,
+      "lexical_extensions": [
+        "Next",
+        "Later"
+      ],
+      "scope_type": "coherent-functional-set"
+    },
+    {
+      "topic": "vocabulary-travel-verbs",
+      "lesson": "8A",
+      "starter": 6,
+      "full_bank": 19,
+      "lexical_extensions": [
+        "book a room",
+        "pack a bag",
+        "buy a ticket",
+        "catch a bus",
+        "get on a bus",
+        "get off a bus"
+      ],
+      "scope_type": "open-expanded"
+    },
+    {
+      "topic": "vocabulary-animals",
+      "lesson": "8A",
+      "starter": 5,
+      "full_bank": 12,
+      "lexical_extensions": [
+        "cat",
+        "dog",
+        "rabbit",
+        "fish",
+        "horse",
+        "cow",
+        "sheep"
+      ],
+      "scope_type": "open-expanded"
+    },
+    {
+      "topic": "vocabulary-weather-and-seasons",
+      "lesson": "8B",
+      "starter": 11,
+      "full_bank": 15,
+      "lexical_extensions": [
+        "cool",
+        "warm",
+        "wet",
+        "dry"
+      ],
+      "scope_type": "open-expanded"
+    },
+    {
+      "topic": "vocabulary-body-parts",
+      "lesson": "8C",
+      "starter": 6,
+      "full_bank": 12,
+      "lexical_extensions": [
+        "hair",
+        "eye",
+        "ear",
+        "nose",
+        "mouth",
+        "neck"
+      ],
+      "scope_type": "open-expanded"
+    },
+    {
+      "topic": "vocabulary-health-complaints",
+      "lesson": "8C",
+      "starter": 4,
+      "full_bank": 11,
+      "lexical_extensions": [
+        "an earache",
+        "a fever",
+        "I feel sick"
+      ],
+      "scope_type": "open-expanded"
+    },
+    {
+      "topic": "vocabulary-phone-and-ticket-language",
+      "lesson": "8D",
+      "starter": 7,
+      "full_bank": 16,
+      "lexical_extensions": [
+        "Can you say that again, please?",
+        "Please speak slowly.",
+        "One moment, please.",
+        "Sorry, I don’t understand."
+      ],
+      "scope_type": "open-expanded"
+    }
+  ]
+}

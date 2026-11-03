@@ -12,6 +12,7 @@ on:
       - "Horizons/A1/Annexes/**"
       - "Horizons/Base/build/check-practice-banks.py"
       - "Horizons/Base/build/check-grammar-clarity.py"
+      - "Horizons/Base/build/check-vocabulary-scope.py"
       - "Horizons/A1/Audio scripts/**"
       - "Horizons/Base/design-system/**"
       - "Horizons/Base/shell/**"
@@ -23,6 +24,7 @@ on:
       - "Horizons/Base/build/check-visual-spirit.py"
       - "Horizons/Base/build/check-visual-objects.mjs"
       - "Horizons/A1/Sources/Visual-personality.json"
+      - "Horizons/A1/Sources/Vocabulary-reference-scope.json"
       - ".github/workflows/build-horizons-a1-student-book.yml"
   workflow_dispatch:
 
@@ -67,6 +69,9 @@ jobs:
 
       - name: Reject compressed grammar explanation prose
         run: python Horizons/Base/build/check-grammar-clarity.py Horizons/A1
+
+      - name: Check lesson starters and fuller vocabulary references
+        run: python Horizons/Base/build/check-vocabulary-scope.py Horizons/A1
 
       - name: Install PDF renderer
         run: npm install --no-save --no-package-lock puppeteer-core@24

@@ -1,7 +1,7 @@
 {
   "version": 4,
-  "edition": "2026-11-01",
-  "status": "Comfortably paired lesson sections; full source headers and response space retained",
+  "edition": "2026-11-02",
+  "status": "Starter lessons link to fuller study/reference banks and adjacent original practice",
   "organization": "Grammar and vocabulary by lesson, up to two consecutive lessons per page when comfortably fitted; word bank beside matching practice",
   "masters": [
     {
@@ -801,7 +801,6 @@
         147
       ],
       "activity_pages": [
-        141,
         142,
         144,
         145,
@@ -809,7 +808,6 @@
         147
       ],
       "combined_pages": [
-        141,
         145,
         147
       ],
@@ -1662,13 +1660,13 @@
     "grammar_pages": 24,
     "vocabulary_pages": 47,
     "vocabulary_study_pages": 32,
-    "vocabulary_activity_pages": 35,
+    "vocabulary_activity_pages": 34,
     "communication_pages": 4,
     "total_practice_pages": 75,
-    "forward_references": 75,
-    "distinct_referenced_destinations": 75,
+    "forward_references": 76,
+    "distinct_referenced_destinations": 76,
     "total_authored_destinations": 76,
-    "vocabulary_combined_pages": 20,
+    "vocabulary_combined_pages": 19,
     "grammar_lesson_groups": 27,
     "vocabulary_lesson_groups": 32,
     "vocabulary_reference_topics": 43,
@@ -1683,5 +1681,6 @@
     "mixed_lesson_pages": true,
     "maximum_lessons_per_page": 2,
     "ownership": "Each lp-section retains its actual main header/code; page lists all contained lessons."
-  }
+  },
+  "scope_register": "Sources/Vocabulary-reference-scope.json"
 }
