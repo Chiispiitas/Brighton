@@ -37,6 +37,15 @@
       "actual_valid": true,
       "passed": true,
       "guard_findings": []
+    },
+    {
+      "case": "canonical_inventory_drift",
+      "expected_valid": false,
+      "actual_valid": false,
+      "passed": true,
+      "guard_findings": [
+        "Canonical full-bank items differ for vocabulary-animals"
+      ]
     }
   ],
   "all_passed": true

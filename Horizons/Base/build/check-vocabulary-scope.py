@@ -18,6 +18,9 @@ def check(book):
  required={x['topic']:x for x in inventory['topics']};records={x['destination_id']:x for x in register['references']}
  assert len(records)==len(register['references'])and set(records)==set(required),'Every actual lesson-specific reference needs one scope judgment'
  assert {x['canonical_topic']for x in records.values()}=={x['topic']for x in canonical['topics']},'Canonical scope coverage differs'
+ for topic in canonical['topics']:
+  union={word for row in records.values()if row['canonical_topic']==topic['topic']for word in row['bank_items']}
+  assert union==set(topic['required_items']),'Canonical full-bank items differ for '+topic['topic']
  docs={};failures=[];exceptions=[];extensions=0;main_files=set()
  def doc(file):
   if file not in docs:docs[file]=BeautifulSoup((book/file).read_text(encoding='utf-8'),'html.parser')

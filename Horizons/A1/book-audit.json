@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "updated": "2026-11-02",
-  "status": "Book-wide starter-to-fuller-reference audit corrected; source, local viewer and independent saved-PDF reviews complete; publication pending",
+  "status": "Book-wide starter-to-fuller-reference audit corrected and verified in source, independent saved-PDF review and published viewer, banks, recordings and PDF",
   "authority": "Author delegates editorial authority; his own B2 book sets emotional direction. Preserve colourful learning objects and warm adult playfulness alongside coherent functional roles.",
   "scope": "A1 Student’s Book:32 lessons,4 reviews, existing grammar/vocabulary/practical banks, minimal opening matter, two notes pages and current end credits.159 physical A4 pages; numbered1–157 plus2 unnumbered covers. Optional reference guides/finders/progress are excluded. Workbook/teacher editions remain separate.",
   "baseline": {
@@ -933,8 +933,30 @@
       "scope": "Core, practice, opening and annex masters; native charts retain explicit structure."
     },
     "live_viewer": {
-      "completed": false,
-      "status": "Pending current deployment verification"
+      "completed": true,
+      "content_commit": "5c8c72244e77b3dba8fc159a4343ba8f4a6caf68",
+      "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=vocabularyscope-5c8c72244e77#page-141",
+      "checks_passed": 47,
+      "physical_pages": 159,
+      "audio_controls": 91,
+      "starter8A_animals": 5,
+      "reference8A_animals": 12,
+      "reviewed_vocabulary_destinations": 43,
+      "canonical_topics": 38,
+      "actual_lesson_bank_practice_return_routes": true,
+      "new_audio_tracks_byte_exact_play_pause": [
+        "8.3",
+        "8.13"
+      ],
+      "landing_PDF_download_hash_verified": true,
+      "approved_PDF_sha256": "5cb46f0cb97a2bc38a976ad8495dd22e7c2bbfe47b1ab799dae93a39ec148e34",
+      "all_changed_hosted_files_match": 143,
+      "text_line_endings_normalized": true,
+      "PDF_images_audio_byte_exact": true,
+      "viewer_report": "Sources/Vocabulary-scope-audit-20261102/live-viewer-verification.json",
+      "file_report": "Sources/Vocabulary-scope-audit-20261102/live-file-verification.json",
+      "visual_report": "Sources/Vocabulary-scope-audit-20261102/live-visual-review.json",
+      "failures": []
     },
     "book_completion": {
       "minimal_matter_only": true,
@@ -1145,9 +1167,9 @@
         "index.html"
       ],
       "fingerprint": {
-        "files": 1197,
-        "bytes": 749272736,
-        "sha256": "9563715fa5f0fe85c909bddd8c7b86d878b111f86758f5e5638c13c3191daf6d"
+        "files": 1203,
+        "bytes": 749966515,
+        "sha256": "a20712c0a7f9303b1086800c59fd3519e766864bcb76a07b6f0943ecc789d313"
       },
       "normalize_text_line_endings": true
     },
@@ -1158,8 +1180,8 @@
       "exclude_markdown": true,
       "fingerprint": {
         "files": 32,
-        "bytes": 695674,
-        "sha256": "6d3ae2b3a2937e3e2dbc57df880a8022f2977682f4e4b56d03cb2e47f1717ee1"
+        "bytes": 695922,
+        "sha256": "b0f17bd86247f385cb5d9dabe2101242b138f52405627b75295588a4566a895d"
       },
       "normalize_text_line_endings": true
     },
@@ -1196,8 +1218,8 @@
       ],
       "fingerprint": {
         "files": 17,
-        "bytes": 296433,
-        "sha256": "efff20bd40e9b6dfb500c415b581119c790f6e5699209e9964041105844952c1"
+        "bytes": 297272,
+        "sha256": "874cc31a60b75dd8c596398322bcda258fd050a19f8357c5989b5daeefa7a6d4"
       },
       "normalize_text_line_endings": true
     }

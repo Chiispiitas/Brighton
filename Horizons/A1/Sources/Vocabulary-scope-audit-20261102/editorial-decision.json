@@ -46,5 +46,15 @@
     "original_cover_and_minimal_matter": true
   },
   "source_guard_limit": "Declared scope/freshness checks do not replace semantic or visual judgment.",
-  "publication_status": "Pending current deployment verification"
+  "publication_status": "Verified live",
+  "published_content_commit": "5c8c72244e77b3dba8fc159a4343ba8f4a6caf68",
+  "root_live_visual_review": {
+    "status": "PASS",
+    "pages": [
+      68,
+      141,
+      142
+    ],
+    "method": "Root inspected the actual deployed main starter, fuller bank and adjacent practice captures; whole subjects, clear labels and usable response areas."
+  }
 }
