@@ -1,0 +1,53 @@
+{
+  "checker": "Horizons/Base/build/check-practice-banks.py",
+  "change": "Require two unnumbered covers; permit the original unnumbered title optionally. Numbered title/imprint is a valid learner-book composition.",
+  "physical_page_schemes": [
+    172,
+    159
+  ],
+  "fixtures": [
+    {
+      "case": "Legacy172: unnumbered title remains accepted",
+      "expected": true,
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "case": "Minimal159: numbered title/imprint1/2 accepted",
+      "expected": true,
+      "passed": true,
+      "rejection": null
+    },
+    {
+      "case": "Missing back cover is rejected",
+      "expected": false,
+      "passed": true,
+      "rejection": "The back cover must be last"
+    },
+    {
+      "case": "Unknown unnumbered page is rejected",
+      "expected": false,
+      "passed": true,
+      "rejection": "Unknown unnumbered page: dedication"
+    },
+    {
+      "case": "Missing folio is rejected",
+      "expected": false,
+      "passed": true,
+      "rejection": "Assembled numbered pages are not consecutive"
+    },
+    {
+      "case": "Wrong footer is rejected",
+      "expected": false,
+      "passed": true,
+      "rejection": "Wrong assembled printed footer: 7"
+    },
+    {
+      "case": "Duplicate cover identity is rejected",
+      "expected": false,
+      "passed": true,
+      "rejection": "Duplicate assembled page identities"
+    }
+  ],
+  "failures": []
+}

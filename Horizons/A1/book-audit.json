@@ -1,9 +1,9 @@
 {
   "schema_version": 3,
   "updated": "2026-11-02",
-  "status": "Complete Student’s Book verified in source, independent saved-PDF and published entry/viewer/audio/PDF flows",
+  "status": "Cover and minimal book matter pass source, saved-PDF, independent visual and local viewer checks; publication pending",
   "authority": "Author delegates editorial authority; his own B2 book sets emotional direction. Preserve colourful learning objects and warm adult playfulness alongside coherent functional roles.",
-  "scope": "Complete A1 Student’s Book:32lessons and4reviews, grammar/vocabulary/practical banks, opening matter, course-specific references/finders, notes and credits.172physicalA4pages; numbered1–169 plus3unnumberedcover/titlepages. Separate workbook/teacher editions remain separate work.",
+  "scope": "A1 Student’s Book:32 lessons,4 reviews, existing grammar/vocabulary/practical banks, minimal opening matter, two notes pages and current end credits.159 physical A4 pages; numbered1–157 plus2 unnumbered covers. Optional reference guides/finders/progress are excluded. Workbook/teacher editions remain separate.",
   "baseline": {
     "commit": "fd497fd",
     "safety_branch": "safety/horizons-before-editorial-overhaul-20261031",
@@ -63,6 +63,12 @@
       "safety_branch": "safety/horizons-before-book-completion-20261102",
       "previous_audit": "Audit archive/2026-11-02-before-book-completion/book-audit.json",
       "old_pdf_sha256": "98d3e8b12f376d9153eb67754b663fae2e49842b0e641bd706229871c3d40b7b"
+    },
+    "cover_correction": {
+      "commit": "77284d826886b91568496608f82e34e70b39cdc7",
+      "safety_branch": "safety/horizons-before-cover-correction-20261102",
+      "previous_audit": "Audit archive/2026-11-02-before-cover-correction/book-audit.json",
+      "old_pdf_sha256": "449ee8ebfab19b20f7693385e6637e4b636ae5ef0b216a4df8442b90d27cd6ad"
     }
   },
   "inventory": {
@@ -106,16 +112,16 @@
     ],
     "core_spreads": 36,
     "core_pages": 72,
-    "html_pages": 172,
-    "pdf_pages": 172,
+    "html_pages": 159,
+    "pdf_pages": 159,
     "printed_pages": [
       1,
-      169
+      157
     ],
     "credits_pages": 4,
     "lesson_audio_files": 84,
     "production_audio_files": 1,
-    "html_audio_controls": 91,
+    "html_audio_controls": 90,
     "new_words_badges": 46,
     "extra_practice_footers": 32,
     "go_to_references": 75,
@@ -146,7 +152,7 @@
     "new_active_practice_assets_this_pass": 0,
     "practice_raster_occurrences": 103,
     "vocabulary_pages_with_pictures": 47,
-    "physical_pages": 172,
+    "physical_pages": 159,
     "vocabulary_combined_pages": 20,
     "vocabulary_canonical_topics": 38,
     "grammar_lesson_groups": 27,
@@ -154,24 +160,18 @@
     "practice_lesson_headers": 74,
     "paired_practice_pages": 3,
     "saved_pages_this_pass": 0,
-    "front_matter_pages": 6,
+    "front_matter_pages": 5,
     "numbered_front_pages": 4,
-    "unnumbered_cover_title_pages": 3,
-    "annex_pages": 14,
+    "annex_pages": 2,
     "closing_pages": 1,
-    "grammar_finder_topics": 29,
-    "word_finder_entries": 428,
-    "word_finder_source_keys": 404,
-    "audio_finder_files": 83,
-    "audio_finder_track_ids": 82,
-    "progress_goals": 16,
-    "new_annex_response_fields": 69,
+    "new_annex_response_fields": 56,
     "notes_pages": 2,
     "notes_lines": 56,
     "preserved_lesson_audio_controls": 90,
-    "guide_audio_demonstrations": 1,
+    "guide_audio_demonstrations": 0,
     "new_book_generated_assets": 2,
-    "pdf_bookmarks": 126
+    "pdf_bookmarks": 118,
+    "unnumbered_covers": 2
   },
   "standards": {
     "canonical_style": "../Base/design-system/CANONICAL-STYLE.md",
@@ -192,48 +192,47 @@
     "study_vocabulary_inventory": "Practice/Vocabulary/study-vocabulary.json",
     "book_completion": "../Base/design-system/BOOK-COMPLETION.md",
     "book_visual_register": "Sources/Book-personality.json",
-    "book_artwork_manifest": "Images/Book-completion/manifest.json"
+    "book_artwork_manifest": "Images/Book-completion/manifest.json",
+    "cover_fonts_manifest": "../Base/design-system/fonts/manifest.json"
   },
   "editorial_judgment": {
-    "basis": "Complete the Student’s Book using the original Horizons DOCX and the five supplied reference photographs as inspiration.",
-    "current_decision": "Sources/Book-completion-20261102/editorial-decision.json",
-    "saved_pdf_review": "Sources/Book-completion-20261102/saved-PDF-review.json",
-    "independent_review": "Sources/Book-completion-20261102/independent-PDF-review.json",
+    "basis": "Restore old cover typography and exact feature wording; regenerate the old side-profile mountain-view idea; remove unwanted extras and keep contents, notes and current credits.",
+    "current_decision": "Sources/Cover-correction-20261102/editorial-decision.json",
+    "saved_pdf_review": "Sources/Cover-correction-20261102/saved-PDF-review.json",
+    "independent_review": "Sources/Cover-correction-20261102/independent-PDF-review.json",
     "independent_second_editor": true,
-    "new_and_modified_pages_reviewed": 25,
+    "new_and_modified_pages_reviewed": 12,
     "author_acceptance_claimed": false
   },
   "verification": {
     "layout": {
-      "pages": 172,
+      "pages": 159,
       "text_faults": [],
       "practice_response_fields": 368,
-      "new_annex_response_fields": 69,
+      "notes_lines": 56,
       "practice_clipped_fields": [],
-      "annex_clipped_fields": [],
       "reports": [
-        "Sources/Book-completion-20261102/assembled-layout.json",
-        "Sources/Book-completion-20261102/final-response-layout.json",
-        "Sources/Book-completion-20261102/annex-layout.json"
+        "Sources/Cover-correction-20261102/assembled-layout.json",
+        "Sources/Cover-correction-20261102/final-response-layout.json",
+        "Sources/Cover-correction-20261102/trim-matter-layout.json"
       ]
     },
     "standalone_assembled_parity": {
-      "standalone_masters": 67,
-      "pages": 172,
+      "standalone_masters": 62,
+      "pages": 159,
       "failures": []
     },
     "pdf": {
-      "baseline": "b12ec301dc32c864a3def720fbb0f0e82511e466",
-      "sha256": "449ee8ebfab19b20f7693385e6637e4b636ae5ef0b216a4df8442b90d27cd6ad",
-      "bytes": 51003336,
-      "physical_pages": 172,
+      "baseline": "77284d826886b91568496608f82e34e70b39cdc7",
+      "sha256": "406286a2c7fd93bc8dc5f026a14545bd1d38da45a1a04e63d794348b17ad6a69",
+      "bytes": 50899065,
+      "physical_pages": 159,
       "numbered_pages": [
         1,
-        169
+        157
       ],
       "unnumbered_pages": [
         "front-cover",
-        "title-page",
         "back-cover"
       ],
       "strict_pypdf_read": true,
@@ -242,54 +241,42 @@
       "mupdf_warnings": "",
       "preserved_teaching_pages": 147,
       "preserved_teaching_text_differences": [],
-      "teaching_pages_pixel_identical": 105,
+      "teaching_pages_pixel_identical": 108,
       "teaching_pages_with_minor_raster_variation": [
         {
           "page": 5,
-          "mean_8bit_channel_error": 0.00014238474487182046,
-          "changed_channel_values": 83,
-          "changed_channel_fraction": 5.5223989833463075e-05,
+          "mean_8bit_channel_error": 9.314889851427506e-06,
+          "changed_channel_values": 14,
+          "changed_channel_fraction": 9.314889851427506e-06,
           "bounds": [
-            88,
-            354,
-            517,
-            520
+            104,
+            386,
+            520,
+            513
           ]
         },
         {
           "page": 6,
-          "mean_8bit_channel_error": 0.0002035968781812012,
-          "changed_channel_values": 80,
-          "changed_channel_fraction": 5.3227942008157185e-05,
+          "mean_8bit_channel_error": 6.121213330938076e-05,
+          "changed_channel_values": 36,
+          "changed_channel_fraction": 2.395257390367073e-05,
           "bounds": [
             76,
-            465,
+            471,
             503,
             488
           ]
         },
         {
           "page": 7,
-          "mean_8bit_channel_error": 9.4479597064479e-05,
-          "changed_channel_values": 72,
-          "changed_channel_fraction": 4.790514780734146e-05,
+          "mean_8bit_channel_error": 2.26218753534668e-05,
+          "changed_channel_values": 34,
+          "changed_channel_fraction": 2.26218753534668e-05,
           "bounds": [
-            69,
-            521,
+            171,
+            534,
             495,
-            631
-          ]
-        },
-        {
-          "page": 9,
-          "mean_8bit_channel_error": 0.0018669700659361133,
-          "changed_channel_values": 544,
-          "changed_channel_fraction": 0.0003619500056554688,
-          "bounds": [
-            80,
-            460,
-            509,
-            610
+            607
           ]
         },
         {
@@ -306,191 +293,179 @@
         },
         {
           "page": 15,
-          "mean_8bit_channel_error": 6.919632461060434e-05,
-          "changed_channel_values": 47,
-          "changed_channel_fraction": 3.127141592979234e-05,
+          "mean_8bit_channel_error": 5.3227942008157185e-05,
+          "changed_channel_values": 30,
+          "changed_channel_fraction": 1.9960478253058943e-05,
           "bounds": [
-            72,
-            515,
-            212,
+            77,
+            448,
+            206,
             680
           ]
         },
         {
           "page": 16,
-          "mean_8bit_channel_error": 5.6554688383667005e-05,
+          "mean_8bit_channel_error": 5.9216085484074867e-05,
           "changed_channel_values": 54,
           "changed_channel_fraction": 3.59288608555061e-05,
           "bounds": [
-            80,
-            188,
-            547,
+            81,
+            242,
+            223,
             654
           ]
         },
         {
-          "page": 17,
-          "mean_8bit_channel_error": 0.0002568248201893584,
-          "changed_channel_values": 386,
-          "changed_channel_fraction": 0.0002568248201893584,
-          "bounds": [
-            86,
-            522,
-            540,
-            594
-          ]
-        },
-        {
-          "page": 21,
-          "mean_8bit_channel_error": 2.794466955428252e-05,
+          "page": 22,
+          "mean_8bit_channel_error": 6.653492751019648e-06,
           "changed_channel_values": 7,
           "changed_channel_fraction": 4.657444925713753e-06,
           "bounds": [
-            90,
-            147,
-            103,
-            149
-          ]
-        },
-        {
-          "page": 22,
-          "mean_8bit_channel_error": 3.6594210130608066e-05,
-          "changed_channel_values": 35,
-          "changed_channel_fraction": 2.3287224628568766e-05,
-          "bounds": [
-            69,
-            528,
-            433,
-            546
+            259,
+            544,
+            427,
+            547
           ]
         },
         {
           "page": 24,
-          "mean_8bit_channel_error": 1.397233477714126e-05,
-          "changed_channel_values": 10,
-          "changed_channel_fraction": 6.653492751019648e-06,
+          "mean_8bit_channel_error": 1.7299081152651085e-05,
+          "changed_channel_values": 15,
+          "changed_channel_fraction": 9.980239126529471e-06,
           "bounds": [
-            74,
-            525,
-            83,
+            68,
+            517,
+            89,
             526
           ]
         },
         {
           "page": 27,
-          "mean_8bit_channel_error": 9.980239126529471e-06,
-          "changed_channel_values": 15,
-          "changed_channel_fraction": 9.980239126529471e-06,
+          "mean_8bit_channel_error": 1.13109376767334e-05,
+          "changed_channel_values": 16,
+          "changed_channel_fraction": 1.0645588401631437e-05,
           "bounds": [
-            69,
+            70,
             119,
-            555,
-            425
+            554,
+            533
           ]
         },
         {
           "page": 29,
-          "mean_8bit_channel_error": 3.9920956506117886e-06,
-          "changed_channel_values": 2,
-          "changed_channel_fraction": 1.3306985502039296e-06,
+          "mean_8bit_channel_error": 6.653492751019648e-06,
+          "changed_channel_values": 4,
+          "changed_channel_fraction": 2.661397100407859e-06,
           "bounds": [
+            543,
+            384,
             545,
-            380,
-            546,
-            381
+            385
           ]
         },
         {
           "page": 30,
-          "mean_8bit_channel_error": 8.183796083754167e-05,
-          "changed_channel_values": 66,
-          "changed_channel_fraction": 4.391305215672968e-05,
+          "mean_8bit_channel_error": 2.5283272453874662e-05,
+          "changed_channel_values": 29,
+          "changed_channel_fraction": 1.9295128977956978e-05,
           "bounds": [
-            184,
+            237,
             704,
             531,
-            710
+            707
           ]
         },
         {
           "page": 32,
-          "mean_8bit_channel_error": 6.05467840342788e-05,
-          "changed_channel_values": 48,
-          "changed_channel_fraction": 3.193676520489431e-05,
+          "mean_8bit_channel_error": 6.520422895999255e-05,
+          "changed_channel_values": 45,
+          "changed_channel_fraction": 2.9940717379588416e-05,
           "bounds": [
-            156,
+            157,
             638,
             225,
             661
           ]
         },
         {
+          "page": 34,
+          "mean_8bit_channel_error": 1.9960478253058943e-05,
+          "changed_channel_values": 15,
+          "changed_channel_fraction": 9.980239126529471e-06,
+          "bounds": [
+            307,
+            488,
+            555,
+            550
+          ]
+        },
+        {
           "page": 35,
-          "mean_8bit_channel_error": 6.853097533550237e-05,
-          "changed_channel_values": 46,
-          "changed_channel_fraction": 3.060606665469038e-05,
+          "mean_8bit_channel_error": 6.720027678529844e-05,
+          "changed_channel_values": 41,
+          "changed_channel_fraction": 2.7279320279180555e-05,
           "bounds": [
             495,
-            156,
-            543,
+            158,
+            538,
             203
           ]
         },
         {
           "page": 37,
-          "mean_8bit_channel_error": 5.5223989833463075e-05,
-          "changed_channel_values": 42,
-          "changed_channel_fraction": 2.794466955428252e-05,
+          "mean_8bit_channel_error": 2.4617923178772697e-05,
+          "changed_channel_values": 17,
+          "changed_channel_fraction": 1.13109376767334e-05,
           "bounds": [
-            348,
-            231,
+            355,
+            234,
             553,
             422
           ]
         },
         {
           "page": 39,
-          "mean_8bit_channel_error": 0.00010512518546611044,
-          "changed_channel_values": 48,
-          "changed_channel_fraction": 3.193676520489431e-05,
+          "mean_8bit_channel_error": 4.258235360652575e-05,
+          "changed_channel_values": 20,
+          "changed_channel_fraction": 1.3306985502039296e-05,
           "bounds": [
-            134,
-            131,
-            205,
-            388
+            174,
+            376,
+            201,
+            386
           ]
         },
         {
           "page": 40,
-          "mean_8bit_channel_error": 4.790514780734146e-05,
-          "changed_channel_values": 39,
-          "changed_channel_fraction": 2.5948621728976627e-05,
+          "mean_8bit_channel_error": 7.318842026121613e-06,
+          "changed_channel_values": 11,
+          "changed_channel_fraction": 7.318842026121613e-06,
           "bounds": [
-            68,
-            519,
-            433,
-            536
+            72,
+            517,
+            427,
+            520
           ]
         },
         {
           "page": 42,
-          "mean_8bit_channel_error": 6.853097533550237e-05,
-          "changed_channel_values": 23,
-          "changed_channel_fraction": 1.530303332734519e-05,
+          "mean_8bit_channel_error": 7.651516663672595e-05,
+          "changed_channel_values": 30,
+          "changed_channel_fraction": 1.9960478253058943e-05,
           "bounds": [
-            312,
-            500,
-            446,
+            174,
+            503,
+            441,
             509
           ]
         },
         {
           "page": 45,
-          "mean_8bit_channel_error": 4.790514780734146e-05,
-          "changed_channel_values": 20,
-          "changed_channel_fraction": 1.3306985502039296e-05,
+          "mean_8bit_channel_error": 8.449935793794952e-05,
+          "changed_channel_values": 42,
+          "changed_channel_fraction": 2.794466955428252e-05,
           "bounds": [
-            86,
+            84,
             349,
             96,
             438
@@ -498,14 +473,14 @@
         },
         {
           "page": 49,
-          "mean_8bit_channel_error": 4.657444925713753e-06,
-          "changed_channel_values": 5,
-          "changed_channel_fraction": 3.326746375509824e-06,
+          "mean_8bit_channel_error": 5.455864055836111e-05,
+          "changed_channel_values": 42,
+          "changed_channel_fraction": 2.794466955428252e-05,
           "bounds": [
-            76,
-            231,
-            337,
-            241
+            75,
+            230,
+            344,
+            232
           ]
         },
         {
@@ -521,10 +496,22 @@
           ]
         },
         {
+          "page": 53,
+          "mean_8bit_channel_error": 2.794466955428252e-05,
+          "changed_channel_values": 28,
+          "changed_channel_fraction": 1.8629779702855012e-05,
+          "bounds": [
+            131,
+            388,
+            505,
+            390
+          ]
+        },
+        {
           "page": 55,
-          "mean_8bit_channel_error": 3.326746375509824e-05,
-          "changed_channel_values": 22,
-          "changed_channel_fraction": 1.4637684052243225e-05,
+          "mean_8bit_channel_error": 4.9235846357545393e-05,
+          "changed_channel_values": 26,
+          "changed_channel_fraction": 1.7299081152651085e-05,
           "bounds": [
             122,
             254,
@@ -534,69 +521,69 @@
         },
         {
           "page": 56,
-          "mean_8bit_channel_error": 2.1291176803262873e-05,
-          "changed_channel_values": 12,
-          "changed_channel_fraction": 7.984191301223577e-06,
+          "mean_8bit_channel_error": 3.59288608555061e-05,
+          "changed_channel_values": 18,
+          "changed_channel_fraction": 1.1976286951835366e-05,
           "bounds": [
-            89,
-            599,
-            343,
+            79,
+            598,
+            333,
             600
           ]
         },
         {
           "page": 57,
-          "mean_8bit_channel_error": 2.9940717379588416e-05,
-          "changed_channel_values": 16,
-          "changed_channel_fraction": 1.0645588401631437e-05,
+          "mean_8bit_channel_error": 2.5283272453874662e-05,
+          "changed_channel_values": 9,
+          "changed_channel_fraction": 5.988143475917683e-06,
           "bounds": [
-            88,
-            140,
-            111,
-            143
+            87,
+            133,
+            108,
+            142
           ]
         },
         {
           "page": 58,
-          "mean_8bit_channel_error": 0.00024085643758691124,
-          "changed_channel_values": 189,
-          "changed_channel_fraction": 0.00012575101299427133,
+          "mean_8bit_channel_error": 0.00015901847674936958,
+          "changed_channel_values": 99,
+          "changed_channel_fraction": 6.58695782350945e-05,
           "bounds": [
-            68,
+            72,
             575,
-            435,
-            595
+            431,
+            593
           ]
         },
         {
           "page": 60,
-          "mean_8bit_channel_error": 3.2602114479996274e-05,
-          "changed_channel_values": 29,
-          "changed_channel_fraction": 1.9295128977956978e-05,
+          "mean_8bit_channel_error": 0.00010911728111672222,
+          "changed_channel_values": 87,
+          "changed_channel_fraction": 5.7885386933870936e-05,
           "bounds": [
             357,
-            451,
+            452,
             556,
-            490
+            489
           ]
         },
         {
           "page": 61,
-          "mean_8bit_channel_error": 0.0004304809809909712,
-          "changed_channel_values": 242,
-          "changed_channel_fraction": 0.0001610145245746755,
+          "mean_8bit_channel_error": 0.00027478925061711143,
+          "changed_channel_values": 153,
+          "changed_channel_fraction": 0.0001017984390906006,
           "bounds": [
             68,
-            113,
+            114,
             492,
-            144
+            147
           ]
         },
         {
           "page": 63,
-          "mean_8bit_channel_error": 6.05467840342788e-05,
-          "changed_channel_values": 29,
-          "changed_channel_fraction": 1.9295128977956978e-05,
+          "mean_8bit_channel_error": 5.9216085484074867e-05,
+          "changed_channel_values": 26,
+          "changed_channel_fraction": 1.7299081152651085e-05,
           "bounds": [
             111,
             330,
@@ -605,106 +592,82 @@
           ]
         },
         {
-          "page": 69,
-          "mean_8bit_channel_error": 0.00010845193184162026,
-          "changed_channel_values": 34,
-          "changed_channel_fraction": 2.26218753534668e-05,
-          "bounds": [
-            72,
-            267,
-            329,
-            268
-          ]
-        },
-        {
           "page": 71,
-          "mean_8bit_channel_error": 0.000188959194128958,
-          "changed_channel_values": 95,
-          "changed_channel_fraction": 6.320818113468666e-05,
+          "mean_8bit_channel_error": 0.00016833336660079709,
+          "changed_channel_values": 118,
+          "changed_channel_fraction": 7.851121446203184e-05,
           "bounds": [
-            70,
-            147,
+            69,
+            179,
             555,
             644
           ]
         },
         {
           "page": 76,
-          "mean_8bit_channel_error": 9.581029561468293e-05,
-          "changed_channel_values": 95,
-          "changed_channel_fraction": 6.320818113468666e-05,
+          "mean_8bit_channel_error": 0.000358623259279959,
+          "changed_channel_values": 200,
+          "changed_channel_fraction": 0.00013306985502039296,
           "bounds": [
             69,
             575,
-            433,
-            595
+            432,
+            594
           ]
         },
         {
           "page": 78,
-          "mean_8bit_channel_error": 0.00020625827528160907,
-          "changed_channel_values": 96,
-          "changed_channel_fraction": 6.387353040978862e-05,
+          "mean_8bit_channel_error": 3.3932813030200205e-05,
+          "changed_channel_values": 14,
+          "changed_channel_fraction": 9.314889851427506e-06,
           "bounds": [
             39,
-            144,
+            160,
             343,
-            178
-          ]
-        },
-        {
-          "page": 80,
-          "mean_8bit_channel_error": 1.1976286951835366e-05,
-          "changed_channel_values": 3,
-          "changed_channel_fraction": 1.9960478253058943e-06,
-          "bounds": [
-            368,
-            208,
-            369,
-            209
+            163
           ]
         },
         {
           "page": 81,
-          "mean_8bit_channel_error": 5.322794200815718e-06,
-          "changed_channel_values": 8,
-          "changed_channel_fraction": 5.322794200815718e-06,
+          "mean_8bit_channel_error": 3.326746375509824e-06,
+          "changed_channel_values": 5,
+          "changed_channel_fraction": 3.326746375509824e-06,
           "bounds": [
             41,
-            145,
+            162,
             394,
             164
           ]
         },
         {
           "page": 91,
-          "mean_8bit_channel_error": 0.0001929512897795698,
-          "changed_channel_values": 216,
-          "changed_channel_fraction": 0.0001437154434220244,
+          "mean_8bit_channel_error": 0.00017831360572732657,
+          "changed_channel_values": 194,
+          "changed_channel_fraction": 0.00012907775936978118,
           "bounds": [
             50,
-            134,
+            130,
             416,
             156
           ]
         },
         {
           "page": 102,
-          "mean_8bit_channel_error": 0.00027279320279180555,
-          "changed_channel_values": 130,
-          "changed_channel_fraction": 8.649540576325542e-05,
+          "mean_8bit_channel_error": 0.00033267463755098236,
+          "changed_channel_values": 172,
+          "changed_channel_fraction": 0.00011444007531753794,
           "bounds": [
             39,
             329,
             524,
-            551
+            573
           ]
         },
         {
           "page": 105,
-          "mean_8bit_channel_error": 6.653492751019648e-06,
-          "changed_channel_values": 10,
-          "changed_channel_fraction": 6.653492751019648e-06,
+          "mean_8bit_channel_error": 1.397233477714126e-05,
+          "changed_channel_values": 21,
+          "changed_channel_fraction": 1.397233477714126e-05,
           "bounds": [
             40,
             568,
@@ -713,107 +676,74 @@
           ]
         },
         {
-          "page": 113,
-          "mean_8bit_channel_error": 6.453887968489059e-05,
-          "changed_channel_values": 40,
-          "changed_channel_fraction": 2.6613971004078593e-05,
+          "page": 110,
+          "mean_8bit_channel_error": 6.653492751019648e-07,
+          "changed_channel_values": 1,
+          "changed_channel_fraction": 6.653492751019648e-07,
           "bounds": [
-            104,
-            275,
-            308,
-            420
+            550,
+            444,
+            551,
+            445
           ]
         },
         {
-          "page": 117,
-          "mean_8bit_channel_error": 8.383400866284756e-05,
-          "changed_channel_values": 36,
-          "changed_channel_fraction": 2.395257390367073e-05,
+          "page": 113,
+          "mean_8bit_channel_error": 5.3227942008157185e-05,
+          "changed_channel_values": 38,
+          "changed_channel_fraction": 2.5283272453874662e-05,
           "bounds": [
-            399,
-            719,
-            468,
-            757
+            103,
+            273,
+            316,
+            416
           ]
         },
         {
           "page": 119,
-          "mean_8bit_channel_error": 8.383400866284756e-05,
-          "changed_channel_values": 79,
-          "changed_channel_fraction": 5.256259273305522e-05,
+          "mean_8bit_channel_error": 0.00010978263039182419,
+          "changed_channel_values": 78,
+          "changed_channel_fraction": 5.1897243457953255e-05,
           "bounds": [
-            44,
+            45,
             229,
-            192,
+            191,
             333
           ]
         }
       ],
-      "raster_note": "Small isolated glyph antialias variations after the rebuilt font/resource subsets; all 147 page texts and source files are preserved and native geometry parity passes. These 42 pages are not claimed pixel-identical.",
-      "all_internal_links_verified": 1112,
+      "raster_note": "Small isolated glyph antialias variations after the rebuilt font/resource subsets; all 147 page texts and source files are preserved and native geometry parity passes. Any varying pages are not claimed pixel-identical.",
+      "all_internal_links_verified": 440,
       "local_disk_links": [],
-      "public_audio_annotations": 85,
-      "distinct_audio_urls": 83,
-      "bookmarks": 126,
-      "new_and_modified_pages_rendered": 25,
+      "public_audio_annotations": 0,
+      "distinct_audio_urls": 0,
+      "bookmarks": 118,
+      "new_and_modified_pages_rendered": 12,
       "contacts": [
         {
           "file": "contact-01.png",
           "labels": [
             "front-cover",
-            "title-page",
             "1",
-            "2"
+            "2",
+            "3"
           ]
         },
         {
           "file": "contact-02.png",
           "labels": [
-            "3",
             "4",
             "152",
-            "153"
+            "153",
+            "154"
           ]
         },
         {
           "file": "contact-03.png",
           "labels": [
-            "154",
             "155",
             "156",
-            "157"
-          ]
-        },
-        {
-          "file": "contact-04.png",
-          "labels": [
-            "158",
-            "159",
-            "160",
-            "161"
-          ]
-        },
-        {
-          "file": "contact-05.png",
-          "labels": [
-            "162",
-            "163",
-            "164",
-            "165"
-          ]
-        },
-        {
-          "file": "contact-06.png",
-          "labels": [
-            "166",
-            "167",
-            "168",
-            "169"
-          ]
-        },
-        {
-          "file": "contact-07.png",
-          "labels": [
+            "157",
             "back-cover"
           ]
         }
@@ -821,7 +751,7 @@
       "failures": []
     },
     "preservation": {
-      "baseline": "b12ec301dc32c864a3def720fbb0f0e82511e466",
+      "baseline": "77284d826886b91568496608f82e34e70b39cdc7",
       "unchanged_source_areas": {
         "Lessons": true,
         "Practice": true,
@@ -838,10 +768,43 @@
         5,
         151
       ],
-      "answer_keys_recordings_scripts_and_preferred_artwork_unchanged": true,
-      "source_DOCX_unchanged_reference": true,
       "failures": [],
-      "all_existing_external_credit_entries_preserved": true
+      "all_existing_external_credit_entries_preserved": true,
+      "back_cover_feature_wording_unchanged": true,
+      "source_DOCX_unchanged_reference": true,
+      "source_DOCX_sha256": "5a485d5b88bfddf5d602c18ad5d8423f8f00468b0a149d5395c07c25abf2d154",
+      "active_front_masters": [
+        {
+          "file": "Frontmatter/Cover.html"
+        },
+        {
+          "file": "Frontmatter/Title.html"
+        },
+        {
+          "file": "Frontmatter/Contents.html"
+        }
+      ],
+      "active_annex_masters": [
+        {
+          "file": "Annexes/Notes.html"
+        }
+      ],
+      "page_order_contiguous": true,
+      "physical_pages": 159,
+      "excluded_optional_sections": [
+        "Useful English",
+        "Sounds and past verbs",
+        "Progress records",
+        "Grammar finder",
+        "Word finder",
+        "Audio finder",
+        "How to use / digital guide"
+      ],
+      "excluded_source_files_retained_inactive_for_reversibility": true,
+      "native_generated_bytes_preserved": [
+        "horizon-cover-side-v2.png",
+        "cover-orange-swash-v2.png"
+      ]
     },
     "study_words": {
       "required_within_topic_items": 404,
@@ -850,7 +813,7 @@
       "marked_entry_occurrences": 476,
       "ordinary_reference_pt_minimum": 10,
       "body_label_pt": 10.275,
-      "report": "Sources/Book-completion-20261102/header-and-font-checks.json"
+      "report": "Sources/Cover-correction-20261102/header-and-font-checks.json"
     },
     "qr": [
       {
@@ -1030,7 +993,7 @@
         ]
       }
     ],
-    "evidence_directory": "Sources/Book-completion-20261102",
+    "evidence_directory": "Sources/Cover-correction-20261102",
     "current_visual_identity_checks": {
       "coverage_spreads": 36,
       "functional_tools": 35,
@@ -1154,15 +1117,36 @@
         "file_report": "Sources/Grammar-visual-clarity-20261102/live-file-verification.json",
         "visual_report": "Sources/Grammar-visual-clarity-20261102/live-visual-review.json",
         "failures": []
+      },
+      "book_completion": {
+        "completed": true,
+        "content_commit": "957d34dc1f698cf7f655f1b41e722468aaa39e82",
+        "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=completebook-957d34dc1f69",
+        "resource_entry": "https://exams.bebrighton.net/Horizons/A1/",
+        "checks_passed": 33,
+        "physical_pages": 172,
+        "unique_navigation_choices": 114,
+        "grammar_and_word_index_routes": true,
+        "real_audio_index_files": 83,
+        "preserved_lesson_controls": 90,
+        "guide_audio_sample": 1,
+        "actual_play_pause_and_print_hiding": true,
+        "all_changed_hosted_files_match": 72,
+        "text_line_endings_normalized": true,
+        "PDF_media_byte_exact": true,
+        "viewer_report": "Sources/Book-completion-20261102/live-viewer-verification.json",
+        "file_report": "Sources/Book-completion-20261102/live-file-verification.json",
+        "visual_report": "Sources/Book-completion-20261102/live-visual-review.json",
+        "failures": []
       }
     },
     "local_viewer": {
-      "checks_passed": 33,
-      "report": "Sources/Book-completion-20261102/local-viewer-verification.json",
+      "checks_passed": 31,
+      "report": "Sources/Cover-correction-20261102/local-viewer-verification.json",
       "failures": []
     },
     "grammar_clarity": {
-      "master_files_checked": 66,
+      "master_files_checked": 61,
       "main_lesson_masters_changed": 17,
       "grammar_lesson_sections_reworked": 24,
       "known_baseline_rejected_fragments": 15,
@@ -1170,39 +1154,25 @@
       "explanatory_paragraphs_checked": 169,
       "native_tables_total": 101,
       "checker": "../Base/build/check-grammar-clarity.py",
-      "report": "Sources/Grammar-visual-clarity-20261102/grammar-clarity-scan.json",
+      "report": "Sources/Cover-correction-20261102/grammar-clarity.json",
       "limitations": "Pattern checks supplement complete editorial review. Table counts alone do not establish educational or visual quality.",
       "scope": "Core, practice, opening and annex masters; native charts retain explicit structure."
     },
     "live_viewer": {
-      "completed": true,
-      "content_commit": "957d34dc1f698cf7f655f1b41e722468aaa39e82",
-      "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=completebook-957d34dc1f69",
-      "resource_entry": "https://exams.bebrighton.net/Horizons/A1/",
-      "checks_passed": 33,
-      "physical_pages": 172,
-      "unique_navigation_choices": 114,
-      "grammar_and_word_index_routes": true,
-      "real_audio_index_files": 83,
-      "preserved_lesson_controls": 90,
-      "guide_audio_sample": 1,
-      "actual_play_pause_and_print_hiding": true,
-      "all_changed_hosted_files_match": 72,
-      "text_line_endings_normalized": true,
-      "PDF_media_byte_exact": true,
-      "viewer_report": "Sources/Book-completion-20261102/live-viewer-verification.json",
-      "file_report": "Sources/Book-completion-20261102/live-file-verification.json",
-      "visual_report": "Sources/Book-completion-20261102/live-visual-review.json",
-      "failures": []
+      "completed": false,
+      "status": "Publication pending"
     },
     "book_completion": {
-      "cover_title_contents_guides": true,
-      "course_references_and_findners": true,
+      "minimal_matter_only": true,
+      "original_cover_feature_wording_preserved": true,
+      "original_Bebas_Neue_Anton_fonts_bundled_and_embedded": true,
+      "existing_course_practice_banks_preserved": true,
       "notes_and_end_credits": true,
-      "all_1112_internal_PDF_links_verified": true,
+      "all_internal_PDF_links_verified": 440,
       "real_QR_decoded_from_saved_PDF": true,
-      "pdf_metadata_and_bookmarks": "Sources/Book-completion-20261102/finalization.json",
-      "wordfinder_coverage": "Sources/Book-completion-20261102/annex-content-and-coverage.json"
+      "pdf_metadata_and_bookmarks": "Sources/Cover-correction-20261102/finalization.json",
+      "font_and_QR_evidence": "Sources/Cover-correction-20261102/PDF-fonts-and-QR.json",
+      "inactive_extras_kept_reversible": true
     }
   },
   "new_objects": "Images/Editorial-objects/manifest.json",
@@ -1355,9 +1325,9 @@
         "index.html"
       ],
       "fingerprint": {
-        "files": 1078,
-        "bytes": 706179976,
-        "sha256": "89b9caee2f6af94b84cd4a253afa37a00a632c976c69389e21b248fe8a2e883e"
+        "files": 1099,
+        "bytes": 710342175,
+        "sha256": "518074bd3650371464275cfc178d465a9f066feefb86861fdd9e466af7087a43"
       },
       "normalize_text_line_endings": true
     },
@@ -1367,9 +1337,9 @@
       ],
       "exclude_markdown": true,
       "fingerprint": {
-        "files": 23,
-        "bytes": 121989,
-        "sha256": "93ecbdcca2e5af0026b9723f4a6175fc7fec0fc07aa48301845d5cdb45272be1"
+        "files": 31,
+        "bytes": 691456,
+        "sha256": "dd9f244a40072768c7d84061d969a0383b3fbce75eebd992e3397e34705b0b22"
       },
       "normalize_text_line_endings": true
     },
@@ -1379,8 +1349,8 @@
       ],
       "fingerprint": {
         "files": 1,
-        "bytes": 51003336,
-        "sha256": "104466b201ea4cd302ae7fd8371f17b69ade875dda935639710879b35ba45b29"
+        "bytes": 50899065,
+        "sha256": "7508a9d718e1b19484c872bba93e93d8ca28c6d830976f3475e11c2ab87179d3"
       },
       "normalize_text_line_endings": true
     },
@@ -1405,8 +1375,8 @@
       ],
       "fingerprint": {
         "files": 16,
-        "bytes": 196871,
-        "sha256": "ee7359f6a5940a97f6ecc0920b24f699ca844d25a02fb84aa8225bb4db443c18"
+        "bytes": 198575,
+        "sha256": "9e63eee43528cd3f6eb190575789ab46b566b99b2ffe70496c1eec4a662dcb2a"
       },
       "normalize_text_line_endings": true
     }
@@ -1417,7 +1387,7 @@
     "priority": "Warm adult playfulness, saturated local colour, tactile concept metaphors and protected letter/number graphics; functional consistency does not mean visual uniformity.",
     "regression_baseline": "8069492116058e45846c79601c66ebd8a3207abb",
     "protected_register": "Sources/Visual-personality.json",
-    "verification": "All25new/modifiedPDFpages pass root and independent reviews, including finalcopy/brandpolishes. Existing147teachingpage texts/source/geometry preserved;105pages pixel-identical,42have minute isolated raster variation quantified in PDF evidence. Protected1A expressive objects pass.",
+    "verification": "All12current nonteaching PDF pages pass root/independent visual reviews. Existing147teaching texts/source/geometry preserved:108pixel-identical,39with tiny isolated glyph alias variation quantified in PDF evidence. Protected1A colour/letter objects pass.",
     "functional_tool_counts": {
       "grammar": 25,
       "pronunciation": 1,
@@ -1749,6 +1719,6 @@
     "vocabulary_adjacency": "Keep each lesson word bank beside its matching practice; short sets can share one page.",
     "practice_headers": "Retain main lesson headers and codes. Two consecutive short lesson sections may share a page if they fit comfortably; preserve readability and writing space.",
     "grammar_scope": "Applies to the main lessons, reviews, grammar banks and grammatical form references in vocabulary/practical banks. Preserve actual reading/listening texts, activity prompts, ordinary lexical definitions and genuine spatial/timeline diagrams.",
-    "book_completion": "Complete the Student’s Book using old Horizons authorship/visual identity and reference photos. Add useful navigational/study/reference matter, original purposeful imagegen art where helpful, and accurate real digital access."
+    "book_completion": "Keep only minimal matter: covers, title/imprint, contents, two notes pages and current end credits. Guides, Useful English, Sounds/past verbs, Progress and all Finders excluded unless explicitly requested. Preserve original cover feature wording and HORIZONS typography; old mountain cyclist composition regenerated in side profile with modest clothing."
   }
 }

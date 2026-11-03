@@ -1347,11 +1347,15 @@
   ],
   "book_completion_artwork": {
     "manifest": "Images/Book-completion/manifest.json",
-    "printed_credits_page": 169,
+    "printed_credits_page": 157,
     "generated_assets": [
+      "horizon-cover-side-v2.png",
+      "cover-orange-swash-v2.png"
+    ],
+    "author_supplied_brand": "wingfield-logo.png",
+    "inactive_previous_assets": [
       "horizon-cover.png",
       "study-kit.png"
-    ],
-    "author_supplied_brand": "wingfield-logo.png"
+    ]
   }
 }

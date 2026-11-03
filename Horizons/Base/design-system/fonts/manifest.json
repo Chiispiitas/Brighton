@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-02",
+  "purpose": "Bundled original Horizons identity fonts; no system fallback or synthetic bold",
+  "fonts": [
+    {
+      "file": "BebasNeue-Regular.ttf",
+      "family": "Bebas Neue",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/bebasneue/BebasNeue-Regular.ttf",
+      "license": "SIL Open Font License 1.1",
+      "license_file": "BebasNeue-OFL.txt",
+      "sha256": "08e4623805102d819f58601e46e345648846075e363b2ceb23313c2d1c83ec73",
+      "role": "Original HORIZONS wordmark, Student’s Book and Digital Pack display roles"
+    },
+    {
+      "file": "Anton-Regular.ttf",
+      "family": "Anton",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/anton/Anton-Regular.ttf",
+      "license": "SIL Open Font License 1.1",
+      "license_file": "Anton-OFL.txt",
+      "sha256": "a4ba3a92350ebb031da0cb47630ac49eb265082ca1bc0450442f4a83ab947cab",
+      "role": "Original large A1 / BEGINNER cover badge"
+    },
+    {
+      "file": "Poppins-Light.ttf",
+      "family": "Poppins",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/poppins/Poppins-Light.ttf",
+      "license": "SIL Open Font License 1.1",
+      "license_file": "Poppins-OFL.txt",
+      "sha256": "650ba57fa99d12ec40c31ccfb680be656be4497fbe14164617d67e32ffe9cd46",
+      "role": "Cover and interior author signature"
+    },
+    {
+      "file": "Poppins-Regular.ttf",
+      "family": "Poppins",
+      "source": "https://raw.githubusercontent.com/google/fonts/main/ofl/poppins/Poppins-Regular.ttf",
+      "license": "SIL Open Font License 1.1",
+      "license_file": "Poppins-OFL.txt",
+      "sha256": "7e65201e9b79159e2300267cc885e16c8dcef2424cdfa09a29bfb0980a94a7ba",
+      "role": "Original identity supporting text"
+    }
+  ]
+}

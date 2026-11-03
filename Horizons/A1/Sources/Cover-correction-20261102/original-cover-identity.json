@@ -1,0 +1,150 @@
+{
+  "task": "Read-only original-cover identity research",
+  "source_docx": "C:/Users/David/Documents/Work/Horizons/A1/Student's Book.docx",
+  "source_docx_sha256": "5a485d5b88bfddf5d602c18ad5d8423f8f00468b0a149d5395c07c25abf2d154",
+  "source_cover": "../book-completion-20261102/old-image2.png",
+  "cover_is_flattened_raster": true,
+  "separate_Horizons_wordmark_asset_found": false,
+  "media_review": "All wide media inspected: only two crimson strips, two repeated flag pairs and Wingfield marks. No isolated HORIZONS asset.",
+  "font_findings": {
+    "front_cover_HORIZONS": {
+      "family": "Bebas Neue Regular",
+      "weight": 400,
+      "confidence": "High: direct visual and white-letter mask fit to official font, not merely interior-font inference.",
+      "pixel_mask_fit_IoU": 0.9514834755868978,
+      "best_derotation_degrees": -1.6,
+      "suggested_CSS_rotation_degrees": -1.6,
+      "physical_appearance_target_A4_mm": {
+        "left": 11.8,
+        "top": 8.4,
+        "width": 132.6,
+        "cap_height_about": 32
+      },
+      "nominal_CSS_font_size_to_start_pt": [
+        126,
+        128
+      ],
+      "note": "The raster cover has no recoverable point-size metadata; fit by real rendered width/cap height."
+    },
+    "front_cover_STUDENTS_BOOK": {
+      "family": "Bebas Neue Regular",
+      "confidence": "High: visual and raster fit",
+      "best_pixel_mask_fit_IoU": 0.9183427975021671,
+      "best_derotation_degrees": -1.5,
+      "raster_literal_text": "STUDENT’S BOOK",
+      "appearance_target_A4_mm": {
+        "left_about": 11,
+        "top_about": 55,
+        "width_about": 97.5,
+        "cap_height_about": 15.5
+      },
+      "nominal_size_to_start_pt_about": 60
+    },
+    "front_cover_DIGITAL_PACK": {
+      "family": "Bebas Neue Regular",
+      "confidence": "Best-supported candidate, native interior family also matches; small raster text fit less exact.",
+      "literal_text": "+ DIGITAL PACK",
+      "note": "Keep magenta plus in its separate white square. Do not replace this feature with with online audio."
+    },
+    "front_cover_A1": {
+      "family": "Anton Regular",
+      "weight": 400,
+      "pixel_mask_fit_IoU": 0.9834211682037769,
+      "rejected_Bebas_fit_IoU": 0.671128630478224,
+      "color": "#B72967",
+      "appearance": "Large magenta A1 on white card; not a tiny masthead kicker.",
+      "nominal_size_to_start_pt_about": 90
+    },
+    "front_cover_BEGINNER": {
+      "family": "Anton Regular",
+      "weight": 400,
+      "pixel_mask_fit_IoU": 0.9361782477341389,
+      "rejected_Bebas_fit_IoU": 0.8006667320325522,
+      "color": "#FFFFFF",
+      "background": "#000000",
+      "nominal_size_to_start_pt_about": 23
+    },
+    "front_cover_author": {
+      "literal_lines": [
+        "Series by",
+        "David Santana"
+      ],
+      "family": "Unrecoverable from flattened raster; light geometric sans, visually single-storey a. Do not claim exact font from native interior.",
+      "color": "#FFFFFF"
+    },
+    "interior_native_runs": {
+      "Horizons": {
+        "font": "Bebas Neue",
+        "pt": 90
+      },
+      "Student’s book": {
+        "font": "Bebas Neue",
+        "pt": 48
+      },
+      "+ digital pack": {
+        "font": "Bebas Neue",
+        "pt": 28
+      },
+      "Series by": {
+        "font": "Poppins",
+        "pt": 14,
+        "bold": true
+      },
+      "David Santana": {
+        "font": "Poppins",
+        "pt": 14,
+        "bold": false
+      }
+    },
+    "interior_native_word_art_rotation": null,
+    "installed_Bebas_or_Anton": false,
+    "important_scope": "Native90/48/28pt runs belong to the interior title page and must not be asserted as exact raster front-cover font sizes."
+  },
+  "colors": {
+    "masthead": "Textured magenta around #B5216B",
+    "HORIZONS": "#FFFFFF",
+    "navy_feature_text": "#004A7F",
+    "orange_brush": "Approx #ECA831 (textured gradient)",
+    "level_magenta": "#B72967",
+    "BEGINNER_strip": "#000000"
+  },
+  "level_card_target_A4_mm": {
+    "left": 13.9,
+    "top": 214.8,
+    "width": 33.5,
+    "total_height": 52.8,
+    "black_strip_height": 14.3
+  },
+  "fixed_cover_features": [
+    "HORIZONS",
+    "STUDENT’S BOOK",
+    "+ DIGITAL PACK",
+    "A1",
+    "BEGINNER",
+    "Series by David Santana",
+    "WINGFIELD mark"
+  ],
+  "composition_reference": {
+    "photo": "Adult woman at the right in side/three-quarter-side profile, facing left toward a mountain horizon; full dark long-sleeve cycling kit and full-length leggings; gray helmet; raspberry backpack; black mountain bike with yellow wheel accents.",
+    "important_pose": "Her face is visible in profile. The camera does not look directly at her back/hips. Hands rest naturally on bicycle.",
+    "design": "Magenta full-width title region; ochre/orange brushed feature block; diagonal lower-left magenta field with A1/Beginner card and author; Wingfield lower right.",
+    "reuse_boundary": "Generate a fresh image inspired by this composition. Do not remove the original stock watermark or use the marked photograph as production art."
+  },
+  "official_primary_font_sources": {
+    "Bebas_metadata": "https://github.com/google/fonts/blob/main/ofl/bebasneue/METADATA.pb",
+    "Bebas_font": "https://raw.githubusercontent.com/google/fonts/main/ofl/bebasneue/BebasNeue-Regular.ttf",
+    "Bebas_license": "https://github.com/google/fonts/blob/main/ofl/bebasneue/OFL.txt",
+    "Anton_metadata": "https://github.com/google/fonts/blob/main/ofl/anton/METADATA.pb",
+    "Anton_font": "https://raw.githubusercontent.com/google/fonts/main/ofl/anton/Anton-Regular.ttf",
+    "Anton_license": "https://github.com/google/fonts/blob/main/ofl/anton/OFL.txt",
+    "license_declared_by_primary_metadata": "OFL for both; retain bundled license notices."
+  },
+  "research_assets": [
+    "wordmark-detail.png",
+    "feature-detail.png",
+    "level-author-detail.png",
+    "font-comparison.png",
+    "wide-media-proof.jpg"
+  ],
+  "mutations": "No old DOCX, production book source, image, PDF, audit or shared stylesheet edited. Only read-only QA extracts, official font samples and this report created in scratch."
+}

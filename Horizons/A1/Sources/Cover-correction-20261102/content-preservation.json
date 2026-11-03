@@ -1,0 +1,56 @@
+{
+  "baseline": "77284d826886b91568496608f82e34e70b39cdc7",
+  "unchanged_source_areas": {
+    "Lessons": true,
+    "Practice": true,
+    "Audios": true,
+    "Audio scripts": true,
+    "Answer keys": true,
+    "Wordlists": true
+  },
+  "existing_activities": 400,
+  "core_activities": 253,
+  "practice_activities": 147,
+  "marked_lexical_occurrences": 476,
+  "taught_printed_pages_unchanged": [
+    5,
+    151
+  ],
+  "failures": [],
+  "all_existing_external_credit_entries_preserved": true,
+  "back_cover_feature_wording_unchanged": true,
+  "source_DOCX_unchanged_reference": true,
+  "source_DOCX_sha256": "5a485d5b88bfddf5d602c18ad5d8423f8f00468b0a149d5395c07c25abf2d154",
+  "active_front_masters": [
+    {
+      "file": "Frontmatter/Cover.html"
+    },
+    {
+      "file": "Frontmatter/Title.html"
+    },
+    {
+      "file": "Frontmatter/Contents.html"
+    }
+  ],
+  "active_annex_masters": [
+    {
+      "file": "Annexes/Notes.html"
+    }
+  ],
+  "page_order_contiguous": true,
+  "physical_pages": 159,
+  "excluded_optional_sections": [
+    "Useful English",
+    "Sounds and past verbs",
+    "Progress records",
+    "Grammar finder",
+    "Word finder",
+    "Audio finder",
+    "How to use / digital guide"
+  ],
+  "excluded_source_files_retained_inactive_for_reversibility": true,
+  "native_generated_bytes_preserved": [
+    "horizon-cover-side-v2.png",
+    "cover-orange-swash-v2.png"
+  ]
+}

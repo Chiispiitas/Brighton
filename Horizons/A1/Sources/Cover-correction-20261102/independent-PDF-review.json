@@ -1,0 +1,143 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-02",
+  "status": "PASS",
+  "reviewer": "Independent editor /root/trim_integration_review; authored only the shared pagination checker, not learner-facing pages or generated artwork",
+  "pdf_path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\A1\\Student's Book.pdf",
+  "pdf_sha256": "406286a2c7fd93bc8dc5f026a14545bd1d38da45a1a04e63d794348b17ad6a69",
+  "physical_pages": 159,
+  "physical_pages_inspected": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159
+  ],
+  "printed_labels_inspected": [
+    "front-cover",
+    "1",
+    "2",
+    "3",
+    "4",
+    "152",
+    "153",
+    "154",
+    "155",
+    "156",
+    "157",
+    "back-cover"
+  ],
+  "inspection_method": "Opened all12 supplied final saved-PDF page PNGs at readable120dpi with view_image. Compared front cover to the old original-cover reference in the preceding independent preflight and verified actual embedded Bebas font families in the final PDF. No source or PDF edits and no artifact-marker run during review.",
+  "page_findings": [
+    {
+      "physical_page": 1,
+      "printed_label": "front-cover",
+      "status": "PASS",
+      "judgment": "PASS. Restored tall condensed HORIZONS wordmark is complete and faithful to the old cover, with clear upper margin and tilt. Student’s Book + Digital Pack, A1 BEGINNER, authorship and Wingfield features remain. Side-profile woman wears full trousers; face, helmet, hands and shoes read naturally. No rear-focused pose, bottom navy gap or visible text clipping. Orange paint swash is quiet and gives the navy feature text strong contrast."
+    },
+    {
+      "physical_page": 2,
+      "printed_label": "1",
+      "status": "PASS",
+      "judgment": "PASS. Numbered title is restrained and readable. HORIZONS and Student’s Book + Digital Pack use the restored cover typography; level and author are clear. The whitespace is appropriate to a title page."
+    },
+    {
+      "physical_page": 3,
+      "printed_label": "2",
+      "status": "PASS",
+      "judgment": "PASS. Imprint is legible with verified author/publication identity and rights distinction. The actual digital-book URL replaces the obsolete page4-guide reference. No fake ISBN, app or access code appears."
+    },
+    {
+      "physical_page": 4,
+      "printed_label": "3",
+      "status": "PASS",
+      "judgment": "PASS. Units1–4 contents remain easy to scan, with clear unit colour, lesson rows, language/vocabulary columns and page references. No text collision or crowding."
+    },
+    {
+      "physical_page": 5,
+      "printed_label": "4",
+      "status": "PASS",
+      "judgment": "PASS. Units5–8 contents and final directory are readable. Only surviving grammar/vocabulary/practical banks, Notes152 and Image credits154 appear; removed guides, finders, progress and new reference appendices are absent."
+    },
+    {
+      "physical_page": 153,
+      "printed_label": "152",
+      "status": "PASS",
+      "judgment": "PASS. First notes page has clear writing rules, consistent spacing and ample footer clearance; no clipped final row."
+    },
+    {
+      "physical_page": 154,
+      "printed_label": "153",
+      "status": "PASS",
+      "judgment": "PASS. Second notes page matches the first and retains useful writing space, without decorative clutter or collisions."
+    },
+    {
+      "physical_page": 155,
+      "printed_label": "154",
+      "status": "PASS",
+      "judgment": "PASS. First credit page uses a clear two-column reading order, readable creator/license entries and correct printed folio."
+    },
+    {
+      "physical_page": 156,
+      "printed_label": "155",
+      "status": "PASS",
+      "judgment": "PASS. Existing credit entries and change notes remain readable and separated; no overflow or overlapping lines."
+    },
+    {
+      "physical_page": 157,
+      "printed_label": "156",
+      "status": "PASS",
+      "judgment": "PASS. Creator/license records and modification notice remain complete, readable and inside the print area."
+    },
+    {
+      "physical_page": 158,
+      "printed_label": "157",
+      "status": "PASS",
+      "judgment": "PASS. Final credits retain existing records and clearly identify current cover artwork and typefaces. Removed study-kit page uses are no longer credited as active. No crowded or clipped final provenance paragraph."
+    },
+    {
+      "physical_page": 159,
+      "printed_label": "back-cover",
+      "status": "PASS",
+      "judgment": "PASS. HORIZONS typography matches the restored identity. Existing actual course features remain readable, canonical split Horizons on Air mark is clear, and the real digital-access QR/URL block has clean contrast. No removed-reference claim or layout collision."
+    }
+  ],
+  "embedded_brand_fonts": {
+    "1": [
+      "AAAAAA+BebasNeue-Regular",
+      "BAAAAA+Anton-Regular",
+      "CAAAAA+Poppins-Light"
+    ],
+    "2": [
+      "AAAAAA+BebasNeue-Regular",
+      "CAAAAA+Poppins-Light",
+      "DAAAAA+SegoeUI-Bold",
+      "EAAAAA+SegoeUIBlack",
+      "FAAAAA+SegoeUI-Bold",
+      "GAAAAA+SegoeUI-Semibold",
+      "HAAAAA+SegoeUIBlack"
+    ],
+    "159": [
+      "AAAAAA+BebasNeue-Regular",
+      "DAAAAA+SegoeUI-Bold",
+      "EAAAAA+SegoeUIBlack",
+      "FAAAAA+SegoeUI-Bold",
+      "IAAAAA+SegoeUI",
+      "JAAAAA+SegoeUI-Bold",
+      "OAAAAA+SegoeUI-Semibold"
+    ]
+  },
+  "scope_judgment": "The reduced book retains only minimal title/imprint and contents opening matter, the original teaching/practice course, notes and updated credits. Restored cover identity and a modest side-profile picture address the author’s correction.",
+  "preserved_teaching_page_review_boundary": "The147 unchanged teaching pages were not individually rereviewed in this independent pass; root source/semantic/pixel evidence covers their preservation separately.",
+  "source_and_numeric_checks_not_claimed_as_visual_review": true,
+  "author_acceptance_claimed": false,
+  "failures": [],
+  "blockers": []
+}

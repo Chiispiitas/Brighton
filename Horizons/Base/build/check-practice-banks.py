@@ -17,6 +17,7 @@ def check_compiled_pages(book,compiled):
  assert numeric and numeric==list(range(first,numeric[-1]+1)),'Assembled numbered pages are not consecutive'
  assert len(values)==len(set(values)),'Duplicate assembled page identities'
  allowed={'front-cover','title-page','back-cover'}
+ required={'front-cover','back-cover'}
  for page,value in zip(pages,values):
   if value.isdecimal():
    assert page.get('id')==f'page-{value}',f'Wrong assembled numbered page target: {value}'
@@ -29,7 +30,8 @@ def check_compiled_pages(book,compiled):
  if first==1:
   assert values[0]=='front-cover','The front cover must be first'
   assert values[-1]=='back-cover','The back cover must be last'
-  assert set(v for v in values if not v.isdecimal())==allowed,'Front cover, title and back cover need distinct unnumbered identities'
+  unnumbered={v for v in values if not v.isdecimal()}
+  assert required<=unnumbered<=allowed,'Front and back covers need distinct unnumbered identities; the title may be numbered or unnumbered'
 
 def lesson_banks(book,manifest):
  required={t['topic']:t for t in json.loads((book/'Practice/Vocabulary/study-vocabulary.json').read_text(encoding='utf-8'))['topics']}

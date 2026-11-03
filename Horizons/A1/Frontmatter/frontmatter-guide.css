@@ -11,14 +11,15 @@
 .fmg-page .fmg-page-heading {padding-bottom:4mm;border-bottom:.45mm solid #b7154b;margin-bottom:5mm;}
 .fmg-page .fmg-page-heading>p:last-child {margin-top:3mm;}
 .fmg-title-page::before {display:none;}
-.fmg-title-page .fmg-title-content {display:flex;flex-direction:column;justify-content:space-between;padding-top:15mm;}
-.fmg-title-page .fmg-title-block>h1 {font-size:52pt;letter-spacing:-.055em;line-height:1;color:#b7154b;margin-top:4mm;}
-.fmg-title-page .fmg-book-name {font-size:26pt;line-height:1.15;margin-top:4mm;font-weight:650;}
+.fmg-title-page .fmg-title-content {display:flex;flex-direction:column;justify-content:flex-start;padding-top:18mm;}
+.fmg-title-page .fmg-title-block>h1 {font-family:'HorizonsBebas',sans-serif;font-size:90pt;letter-spacing:0;line-height:1;color:#b7154b;margin-top:4mm;font-weight:400;font-synthesis:none;}
+.fmg-title-page .fmg-book-name {font-family:'HorizonsBebas',sans-serif;font-size:48pt;line-height:1.15;margin-top:4mm;font-weight:400;font-synthesis:none;}
+.fmg-title-page .fmg-digital-pack {font-family:'HorizonsBebas',sans-serif;font-size:28pt;line-height:1.15;margin-top:1.5mm;color:#173e5c;font-weight:400;font-synthesis:none;}
 .fmg-title-page .fmg-level {display:flex;align-items:center;gap:4mm;margin-top:9mm;}
 .fmg-title-page .fmg-level strong {background:#b7154b;color:white;display:grid;place-items:center;width:21mm;height:21mm;font-size:31pt;line-height:1;font-weight:800;}
 .fmg-title-page .fmg-level span {font-size:16pt;font-weight:650;color:#2d454e;}
-.fmg-title-page .fmg-series {margin-top:8mm;font-size:12pt;}
-.fmg-title-page .fmg-series strong {font-weight:650;}
+.fmg-title-page .fmg-series {margin-top:8mm;font-family:'HorizonsPoppins',sans-serif;font-size:14pt;font-weight:300;}
+.fmg-title-page .fmg-series strong {font-weight:300;}
 .fmg-title-page .fmg-title-lines {display:flex;gap:1.5mm;margin-top:11mm;}
 .fmg-title-page .fmg-title-lines i {display:block;height:2mm;background:#b7154b;width:47mm;}
 .fmg-title-page .fmg-title-lines i:nth-child(2) {width:31mm;background:#d48a1d;}
@@ -32,6 +33,17 @@
 .fmg-title-page .fmg-imprint p {font-size:8.5pt;line-height:1.4;}
 .fmg-title-page .fmg-imprint p.fmg-imprint-gap {margin-top:3mm;}
 .fmg-title-page .fmg-imprint p.fmg-imprint-note {margin-top:3.5mm;color:#4b5054;}
+.fmg-imprint-page::before {display:none;}
+.fmg-imprint-page .fmg-imprint-content {display:flex;flex-direction:column;justify-content:flex-end;padding-bottom:12mm;}
+.fmg-imprint-page .fmg-imprint {border-top:.25mm solid #c9c7c1;padding-top:5mm;}
+.fmg-imprint-page .fmg-imprint-heading {display:flex;justify-content:space-between;align-items:end;gap:8mm;margin-bottom:6mm;}
+.fmg-imprint-page .fmg-wingfield {width:47mm;height:auto;display:block;}
+.fmg-imprint-page .fmg-imprint-heading>p {font-size:8.5pt;color:#424950;}
+.fmg-imprint-page .fmg-imprint-columns {display:grid;grid-template-columns:1fr 1fr;gap:9mm;}
+.fmg-imprint-page .fmg-imprint h2 {font-size:10pt;color:#8f123f;margin-bottom:1.5mm;}
+.fmg-imprint-page .fmg-imprint p {font-size:8.5pt;line-height:1.4;}
+.fmg-imprint-page .fmg-imprint p.fmg-imprint-gap {margin-top:3mm;}
+.fmg-imprint-page .fmg-imprint p.fmg-imprint-note {margin-top:3.5mm;color:#4b5054;}
 .fmg-page .fmg-lesson-map {margin-bottom:6mm;}
 .fmg-page .fmg-lesson-map>h2 {margin-bottom:3mm;}
 .fmg-page .fmg-lesson-row {display:grid;grid-template-columns:28mm minmax(0,1fr);gap:5mm;align-items:center;border-bottom:.2mm solid #d9d4ce;padding:3mm 0;}
@@ -114,3 +126,6 @@
 .fmg-back-cover .fmg-back-brand p {font-size:9pt;line-height:1.5;}
 .fmg-back-cover .fmg-back-brand img {width:45mm;height:auto;display:block;filter:invert(1);}
 @media print {.fmg-page a {text-decoration:none;}}
+
+/* Preserve the series wordmark face on the back cover as well. */
+.fmg-back-cover h1{font-family:HorizonsBebas,sans-serif;font-size:72pt;font-weight:400;font-synthesis:none;letter-spacing:0;line-height:1;}

@@ -1,0 +1,109 @@
+{
+  "reviewer": "Independent editor /root/trim_integration_review; did not author cover pages or generated artwork",
+  "scope": "Standalone actual Frontmatter/Cover.html rendered in print mode and inspected beside original old-image2.png reference",
+  "screenshot": "independent-cover-preflight.png",
+  "screenshot_sha256": "6e8cd9c67e709e8c7a0f7649d7f82510ee300eaf630455f2241936b2129d5c77",
+  "decision": "PASS",
+  "wordmark": {
+    "text": "HORIZONS",
+    "family": "HorizonsBebas",
+    "used_face_loaded": true,
+    "size_pt": 128,
+    "tilt_degrees": -1.6,
+    "judgment": "Faithful tall condensed original identity; clean full glyphs and restored upper margin. No clipping of the visible wordmark."
+  },
+  "preserved_features": [
+    "Student’s Book",
+    "+ Digital Pack",
+    "A1",
+    "BEGINNER",
+    "Series by David Santana",
+    "Wingfield mark"
+  ],
+  "photograph_judgment": "Left-facing side-profile woman, full trousers and normal stance, natural face/helmet and hands. The composition no longer emphasizes the rear. Bike edge crop is ordinary cover framing, consistent with the original and not teaching evidence.",
+  "swash_judgment": "Warm, tactile orange paint shape with quiet working space; dark navy feature lettering stays readable on paint. No synthetic zigzag edge or frame overload.",
+  "correction": {
+    "source_rule": ".bc-cover-photo top:-10mm;height:297mm",
+    "observed": "A 10mm navy background strip remains at the lower-right because the image ends before the page edge.",
+    "pixel_sample_bottom_right_rgb": [
+      23,
+      62,
+      92
+    ],
+    "recommendation": "Extend photo coverage to the bottom edge or remove the negative top offset, preserving whole face, helmet and shoes. Recheck the final saved-PDF cover after adjustment.",
+    "status": "RESOLVED",
+    "final_source_rule": ".bc-cover-photo top:-10mm;height:307mm",
+    "final_judgment": "Fresh print-mode render shows the photograph reaching the bottom edge with no navy strip. Face, helmet, shoes and cover lettering remain whole and clear."
+  },
+  "font_and_image_measurements": {
+    "page_mm": [
+      209.99648437806246,
+      296.99892578558126
+    ],
+    "fonts": [
+      {
+        "family": "HorizonsBebas",
+        "status": "loaded"
+      },
+      {
+        "family": "HorizonsAnton",
+        "status": "loaded"
+      },
+      {
+        "family": "HorizonsPoppins",
+        "status": "loaded"
+      },
+      {
+        "family": "HorizonsPoppins",
+        "status": "unloaded"
+      }
+    ],
+    "wordmark": {
+      "text": "HORIZONS",
+      "family": "HorizonsBebas, sans-serif",
+      "pt": 128.00025,
+      "transform": "matrix(0.99961, -0.0279216, 0.0279216, 0.99961, 0, 0)",
+      "bounds": [
+        42.211029052734375,
+        16.08650779724121,
+        512.4580078125,
+        184.78648376464844
+      ],
+      "mastHeight": 204.09375
+    },
+    "feature_text": [
+      "Student’s Book+Digital Pack",
+      "A1BEGINNER",
+      "Series by David Santana"
+    ],
+    "images": [
+      {
+        "src": "../Images/Book-completion/horizon-cover-side-v2.png",
+        "natural": [
+          1024,
+          1536
+        ],
+        "decoded": true
+      },
+      {
+        "src": "../Images/Book-completion/wingfield-logo.png",
+        "natural": [
+          694,
+          174
+        ],
+        "decoded": true
+      }
+    ]
+  },
+  "author_acceptance_claimed": false,
+  "initial_review": "cover-preflight-initial.json",
+  "final_visual_findings": [
+    "Old condensed HORIZONS typography is restored with actual loaded Bebas font and full visible glyphs.",
+    "Original cover feature wording and type hierarchy are retained.",
+    "Side-profile model in full trousers answers the rear-focus concern; face, helmet and hands remain natural at print size.",
+    "Orange paint edge is quiet and tactile; navy feature lettering remains inside the paint with strong contrast.",
+    "A1 BEGINNER, authorship and Wingfield marks are clear; no visible text clipping.",
+    "Full-bleed photo coverage corrected; no remaining preflight blocker."
+  ],
+  "blockers": []
+}

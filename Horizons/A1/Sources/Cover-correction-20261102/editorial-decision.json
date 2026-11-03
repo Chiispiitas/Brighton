@@ -1,0 +1,54 @@
+{
+  "request": "Restore old cover typography and exact feature wording; regenerate the old side-profile mountain-view idea; remove unwanted extras and keep contents, notes and current credits.",
+  "baseline_commit": "77284d826886b91568496608f82e34e70b39cdc7",
+  "safety_branch": "safety/horizons-before-cover-correction-20261102",
+  "physical_pages": 159,
+  "printed_folios": [
+    1,
+    157
+  ],
+  "unnumbered_covers": 2,
+  "retained_teaching_practice_pages": [
+    5,
+    151
+  ],
+  "active_matter": [
+    "Front cover",
+    "Title and imprint, pages1–2",
+    "Contents, pages3–4",
+    "Notes, pages152–153",
+    "Credits, pages154–157",
+    "Back cover"
+  ],
+  "removed_from_active_edition": [
+    "How-to-use and digital guide",
+    "Useful English",
+    "Sounds and past verbs",
+    "Progress records",
+    "Grammar finder",
+    "Word finder",
+    "Audio finder"
+  ],
+  "reversible_inactive_files_retained": true,
+  "existing_course_practice_banks_retained": true,
+  "cover_features": [
+    "Student’s Book",
+    "+ Digital Pack",
+    "A1",
+    "BEGINNER",
+    "Series by David Santana",
+    "Wingfield"
+  ],
+  "cover_fonts": {
+    "HORIZONS": "Bebas Neue Regular400,128pt,−1.6degree rise",
+    "Student’s Book / Digital Pack": "Bebas Neue Regular400",
+    "A1 / BEGINNER": "Anton Regular400"
+  },
+  "reference_boundary": "The supplied old DOCX is untouched. Its watermarked photograph is composition reference only; fresh artwork is original, native outputs preserved.",
+  "new_assets": [
+    "horizon-cover-side-v2.png",
+    "cover-orange-swash-v2.png"
+  ],
+  "publication_status": "Pending live verification",
+  "author_acceptance_claimed": false
+}

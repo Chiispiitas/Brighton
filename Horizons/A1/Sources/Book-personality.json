@@ -1,55 +1,116 @@
 {
-  "version": 1,
+  "version": 2,
   "date": "2026-11-02",
   "policy": "../../Base/design-system/BOOK-COMPLETION.md",
   "features": [
     {
       "section": "Cover",
-      "visual_idea_and_protected_elements": "Fresh coastal-horizon scene; original saturated magenta/orange identity; whole cyclist and bicycle; author mark."
+      "visual_idea_and_protected_elements": "Original saturated magenta/orange cover identity, protected feature wording and native brand fonts; fresh mountain-view photograph with a modestly dressed cyclist in side profile and natural bicycle context; original Wingfield mark. The person, face, helmet and shoes stay clear; the right-edge bicycle crop is intentional cover framing, as in the old composition."
     },
     {
       "section": "Title and imprint",
-      "visual_idea_and_protected_elements": "Verified David Santana/Wingfield identity and current edition; no invented ISBN, printer or collaborators."
+      "visual_idea_and_protected_elements": "Numbered pages 1–2; native Bebas Neue title roles and verified David Santana/Wingfield identity; truthful current edition and real digital URL; no invented ISBN, printer or collaborators."
     },
     {
       "section": "Contents",
-      "visual_idea_and_protected_elements": "Source-derived8unit/32lesson map,4reviews and exact reference destinations; readable unit colour grouping."
-    },
-    {
-      "section": "How to use and digital guide",
-      "visual_idea_and_protected_elements": "Clear lesson jobs and functional feature roles; actual audio sample, real decoded QR and usable resource entry."
-    },
-    {
-      "section": "Useful English",
-      "visual_idea_and_protected_elements": "Twelve complete exchanges in four functional groups; one purposeful native-alpha study cutout."
-    },
-    {
-      "section": "Sounds and past verbs",
-      "visual_idea_and_protected_elements": "Orange phonetic/stress groups and blue complete verb charts; print-only reference tied to existing recordings."
-    },
-    {
-      "section": "My progress",
-      "visual_idea_and_protected_elements": "Sixteen meaningful course outcomes and eight personal examples, with clear self-assessment choices and next steps."
-    },
-    {
-      "section": "Grammar/word/audio finders",
-      "visual_idea_and_protected_elements": "29topic routes,428normalizedlookup entries covering404keys and83actualaudio files; no fake tracks."
+      "visual_idea_and_protected_elements": "Numbered pages 3–4; source-derived 8-unit/32-lesson map, 4 reviews and only active practice/notes/credits destinations; readable unit colour grouping."
     },
     {
       "section": "Notes",
-      "visual_idea_and_protected_elements": "Two clear pages with28rows each at7.5mm."
+      "visual_idea_and_protected_elements": "Two clear pages, printed 152–153, with 28 rows each at 7.5mm."
     },
     {
       "section": "Credits and back cover",
-      "visual_idea_and_protected_elements": "All existing rights entries retained; new-art provenance at the end; canonical radio mark and real digital access."
+      "visual_idea_and_protected_elements": "Updated end credits, printed 154–157, retain required rights entries and record current artwork and native fonts; recognizable Horizons branding and truthful existing digital access on the unnumbered back cover."
     }
   ],
   "ordinary_models_pt": 10,
   "intentional_display_roles": [
-    "Cover wordmark and level branding",
+    "Cover wordmark and level branding in native Bebas Neue/Anton fonts",
     "Title/back-cover branding",
-    "Alphabet letters, phonetic targets and syllable stress",
-    "Progress unit circles"
+    "Existing alphabet letters, phonetic targets and syllable stress"
   ],
-  "native_generated_assets": "../Images/Book-completion/manifest.json"
+  "native_generated_assets": "../Images/Book-completion/manifest.json",
+  "author_correction": {
+    "date": "2026-11-02",
+    "scope": "Minimal book matter; existing lessons, reviews and grammar/vocabulary/practical-language practice banks remain active.",
+    "cover_feature_wording": [
+      "Student’s Book",
+      "+ Digital Pack",
+      "A1",
+      "BEGINNER",
+      "Series by David Santana",
+      "Wingfield"
+    ],
+    "cover_typography": {
+      "HORIZONS": "Bundled Bebas Neue Regular, weight 400, slight -1.6-degree rise; no substitution or synthetic bold.",
+      "Student’s Book and Digital Pack": "Bundled Bebas Neue Regular, weight 400.",
+      "A1 and BEGINNER": "Bundled Anton Regular, weight 400."
+    },
+    "inactive_unless_explicitly_requested": [
+      "How to use",
+      "Digital guide",
+      "Useful English",
+      "Sounds and past verbs",
+      "Progress Records",
+      "Grammar Finder",
+      "Word Finder",
+      "Audio Finder"
+    ]
+  },
+  "history": [
+    {
+      "date": "2026-11-02",
+      "version": 1,
+      "status": "Superseded by the author’s same-day cover and book-matter correction; retained as reversible history, not active acceptance criteria.",
+      "features": [
+        {
+          "section": "Cover",
+          "visual_idea_and_protected_elements": "Fresh coastal-horizon scene; original saturated magenta/orange identity; whole cyclist and bicycle; author mark."
+        },
+        {
+          "section": "Title and imprint",
+          "visual_idea_and_protected_elements": "Verified David Santana/Wingfield identity and current edition; no invented ISBN, printer or collaborators."
+        },
+        {
+          "section": "Contents",
+          "visual_idea_and_protected_elements": "Source-derived8unit/32lesson map,4reviews and exact reference destinations; readable unit colour grouping."
+        },
+        {
+          "section": "How to use and digital guide",
+          "visual_idea_and_protected_elements": "Clear lesson jobs and functional feature roles; actual audio sample, real decoded QR and usable resource entry."
+        },
+        {
+          "section": "Useful English",
+          "visual_idea_and_protected_elements": "Twelve complete exchanges in four functional groups; one purposeful native-alpha study cutout."
+        },
+        {
+          "section": "Sounds and past verbs",
+          "visual_idea_and_protected_elements": "Orange phonetic/stress groups and blue complete verb charts; print-only reference tied to existing recordings."
+        },
+        {
+          "section": "My progress",
+          "visual_idea_and_protected_elements": "Sixteen meaningful course outcomes and eight personal examples, with clear self-assessment choices and next steps."
+        },
+        {
+          "section": "Grammar/word/audio finders",
+          "visual_idea_and_protected_elements": "29topic routes,428normalizedlookup entries covering404keys and83actualaudio files; no fake tracks."
+        },
+        {
+          "section": "Notes",
+          "visual_idea_and_protected_elements": "Two clear pages with28rows each at7.5mm."
+        },
+        {
+          "section": "Credits and back cover",
+          "visual_idea_and_protected_elements": "All existing rights entries retained; new-art provenance at the end; canonical radio mark and real digital access."
+        }
+      ],
+      "intentional_display_roles": [
+        "Cover wordmark and level branding",
+        "Title/back-cover branding",
+        "Alphabet letters, phonetic targets and syllable stress",
+        "Progress unit circles"
+      ]
+    }
+  ]
 }
