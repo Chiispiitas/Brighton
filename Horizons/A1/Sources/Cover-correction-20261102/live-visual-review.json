@@ -1,0 +1,69 @@
+{
+  "status": "PASS",
+  "date": "2026-11-02",
+  "content_commit": "ff6cfb61f45e674077bad5e619cf03a621c0ec2c",
+  "reviewer": "checker_update independent agent",
+  "scope": "Actual deployed viewer and digital landing UI; no production or audit changes",
+  "captures_inspected": [
+    {
+      "page": "front-cover",
+      "file": "book-front-cover.png",
+      "sha256": "167e12c37f84afba82866cc952e8fb0a3efadf809cd159cc47ad1ad9176fa727"
+    },
+    {
+      "page": "1",
+      "file": "book-1.png",
+      "sha256": "5afdc327d466703c367bde0fb930fc2fe010aa1e5dc21e8ea168637f3834e8f8"
+    },
+    {
+      "page": "2",
+      "file": "book-2.png",
+      "sha256": "6f597af1edb46eeffca8a403a12d70c2858cb7cec1c5eb9b9ac075d79780ceeb"
+    },
+    {
+      "page": "3",
+      "file": "book-3.png",
+      "sha256": "99e8167cdacaac25869d1c332a98286d999747e8b6293c7c07af44a5a8148757"
+    },
+    {
+      "page": "4",
+      "file": "book-4.png",
+      "sha256": "f5240b5aec6c29892755516e3a18340fcb1169e61d7268f8869097652f5b88c4"
+    },
+    {
+      "page": "152",
+      "file": "book-152.png",
+      "sha256": "51975d0c4cf1dd7babbd4430269e89bd46db9e730cec11ddd53dc16297865202"
+    },
+    {
+      "page": "153",
+      "file": "book-153.png",
+      "sha256": "5ee378033d9eabaf6bee6dd5b1bbe8a5d74d6942aa2842c5773f8a77c246152d"
+    },
+    {
+      "page": "back-cover",
+      "file": "book-back-cover.png",
+      "sha256": "8a81fc9d0773450956f019d2e66707f7020a8a1298bda61fbe69dc1d02a95db1"
+    },
+    {
+      "page": "landing desktop",
+      "file": "landing-desktop.png",
+      "sha256": "cfa6b2d413da8e01e9facfdfa55eacd55a6caa66aade5204b2b7a3bd0c08afdf"
+    },
+    {
+      "page": "landing mobile",
+      "file": "landing-mobile.png",
+      "sha256": "564ef660744b24dc1f44ba9e599d58af720966926540ab27420ee6d45a144c88"
+    }
+  ],
+  "findings": [
+    "All10 current deployed captures inspected at readable size.",
+    "New side-profile cyclist, full helmet/face, bright cover masthead, book/digital wording, A1BEGINNER, author signature and Wingfield logo are clear and correctly placed.",
+    "Bebas wordmark/title and Anton level badge load as native fonts; no substitute face or missing glyph is visible.",
+    "Title and imprint are restrained; both contents pages retain clear unit grouping and readable columns.",
+    "Notes pages152/153 retain full unclipped writing lines; back-cover text, QR and branding fit.",
+    "Desktop and390px mobile landing show all five resource links without horizontal clipping.",
+    "All31 live viewer checks pass, including paired-lesson navigation/returns, audio1.1/8.7, preserved core/practice pages and print hiding."
+  ],
+  "failures": []
+}

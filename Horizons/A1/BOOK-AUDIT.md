@@ -1,6 +1,6 @@
 # Horizons A1 — current book audit
 
-Updated 2 November 2026. The corrected cover and minimal book matter pass source, saved-PDF, independent visual and local viewer checks. Live publication remains pending. Earlier release evidence is historical.
+Updated 2 November 2026. The corrected cover and minimal book matter pass source, saved-PDF, independent visual and local viewer checks. The published entry page, viewer, audio and PDF are verified. Earlier release evidence is historical.
 
 ## Current edition and author correction
 
@@ -38,4 +38,4 @@ Current evidence: [decisions](Sources/Cover-correction-20261102/editorial-decisi
 
 Baseline `77284d 826886b 91568496608f 82e 34e 70b 39cdc 7` and `safety/horizons-before-cover-correction-20261102` preserve the previous 172-page edition. [Its audit](Audit%20archive/2026-11-02-before-cover-correction/BOOK-AUDIT.md) is archived. Removed extras remain inactive recoverable sources; artwork versions/native alpha and supplied references are preserved. Shared finalization keeps PDF metadata, bookmarks and public resource links correct on future builds.
 
-Publication is pending live viewer and hosted-file verification. Local checks do not claim a published result.
+The [corrected published edition](https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=covercorrect-ff6cfb61f45e#front-cover) is verified at content commit `ff6cfb61f45e674077bad5e619cf03a621c0ec2c`. All 31 live checks pass: 159 pages, 106 navigation choices, 90 lesson audio controls, actual paired-lesson and contents routes, native cover fonts, new artwork, absence of removed extras, desktop/mobile resource entry, play/pause and print hiding. All 53 changed hosted files match the reviewed local edition, normalizing text line endings and comparing PDF/image/font bytes exactly. Root and independent live captures show the corrected cover and minimal matter clearly. See [live viewer checks](Sources/Cover-correction-20261102/live-viewer-verification.json), [hosted-file readback](Sources/Cover-correction-20261102/live-file-verification.json) and [live visual review](Sources/Cover-correction-20261102/live-visual-review.json).

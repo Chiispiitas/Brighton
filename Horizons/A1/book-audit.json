@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "updated": "2026-11-02",
-  "status": "Cover and minimal book matter pass source, saved-PDF, independent visual and local viewer checks; publication pending",
+  "status": "Corrected cover and minimal Student’s Book verified in source, independent saved-PDF and published viewer/audio/PDF flows",
   "authority": "Author delegates editorial authority; his own B2 book sets emotional direction. Preserve colourful learning objects and warm adult playfulness alongside coherent functional roles.",
   "scope": "A1 Student’s Book:32 lessons,4 reviews, existing grammar/vocabulary/practical banks, minimal opening matter, two notes pages and current end credits.159 physical A4 pages; numbered1–157 plus2 unnumbered covers. Optional reference guides/finders/progress are excluded. Workbook/teacher editions remain separate.",
   "baseline": {
@@ -1159,8 +1159,25 @@
       "scope": "Core, practice, opening and annex masters; native charts retain explicit structure."
     },
     "live_viewer": {
-      "completed": false,
-      "status": "Publication pending"
+      "completed": true,
+      "content_commit": "ff6cfb61f45e674077bad5e619cf03a621c0ec2c",
+      "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=covercorrect-ff6cfb61f45e#front-cover",
+      "resource_entry": "https://exams.bebrighton.net/Horizons/A1/",
+      "checks_passed": 31,
+      "physical_pages": 159,
+      "unique_navigation_choices": 106,
+      "preserved_lesson_controls": 90,
+      "native_cover_fonts_loaded": true,
+      "removed_extras_absent_from_active_book": true,
+      "real_contents_and_paired_lesson_routes": true,
+      "actual_play_pause_and_print_hiding": true,
+      "all_changed_hosted_files_match": 53,
+      "text_line_endings_normalized": true,
+      "PDF_media_byte_exact": true,
+      "viewer_report": "Sources/Cover-correction-20261102/live-viewer-verification.json",
+      "file_report": "Sources/Cover-correction-20261102/live-file-verification.json",
+      "visual_report": "Sources/Cover-correction-20261102/live-visual-review.json",
+      "failures": []
     },
     "book_completion": {
       "minimal_matter_only": true,
@@ -1325,9 +1342,9 @@
         "index.html"
       ],
       "fingerprint": {
-        "files": 1099,
-        "bytes": 710342175,
-        "sha256": "518074bd3650371464275cfc178d465a9f066feefb86861fdd9e466af7087a43"
+        "files": 1102,
+        "bytes": 710419195,
+        "sha256": "cb29a83f542b6ebd0abb1bef743575acfc5927b9c3b92e6252f0673d69ff6815"
       },
       "normalize_text_line_endings": true
     },
@@ -1375,8 +1392,8 @@
       ],
       "fingerprint": {
         "files": 16,
-        "bytes": 198575,
-        "sha256": "9e63eee43528cd3f6eb190575789ab46b566b99b2ffe70496c1eec4a662dcb2a"
+        "bytes": 199446,
+        "sha256": "56c12520b717f6d70061ffc9bf7868cc8bcb9eb3628da02d6d71ce2a68add5f2"
       },
       "normalize_text_line_endings": true
     }

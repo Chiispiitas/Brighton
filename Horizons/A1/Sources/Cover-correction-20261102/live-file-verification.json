@@ -1,0 +1,381 @@
+{
+  "commit": "ff6cfb61f45e674077bad5e619cf03a621c0ec2c",
+  "base": "https://exams.bebrighton.net/",
+  "files": 53,
+  "line_endings_normalized_for_text": true,
+  "media_byte_exact": true,
+  "failures": [],
+  "results": [
+    {
+      "file": "Horizons/A1/Annexes/Notes.html",
+      "status": 200,
+      "match": true,
+      "bytes": 2322,
+      "sha256": "e5a7a1fab749eb6ed90b7f8c05e9786ca14dab01377b61e537c46ad629da7e99"
+    },
+    {
+      "file": "Horizons/A1/Annexes/manifest.json",
+      "status": 200,
+      "match": true,
+      "bytes": 86,
+      "sha256": "2046ae0ae01ca23418e5c3dd0a6e4f81c1225ea0523f6c626e7729570b11d990"
+    },
+    {
+      "file": "Horizons/A1/Audit archive/2026-11-02-before-cover-correction/BOOK-AUDIT.md",
+      "status": 200,
+      "match": true,
+      "bytes": 8985,
+      "sha256": "c2fe3fc696be5d26cf65f5b8e41e9f5b192bef4f04466da81aeab7ce79342e87"
+    },
+    {
+      "file": "Horizons/A1/Audit archive/2026-11-02-before-cover-correction/book-audit.json",
+      "status": 200,
+      "match": true,
+      "bytes": 54618,
+      "sha256": "3bf884483bcf7e5d63e83cbfb5c0527ef5fd827c8d9798cae70818d47c730c4c"
+    },
+    {
+      "file": "Horizons/A1/BOOK-AUDIT.md",
+      "status": 200,
+      "match": true,
+      "bytes": 7901,
+      "sha256": "997272b611d0818ef7bb796caa68b77a4319ae112ed2073bb1ba2ae20233ec2e"
+    },
+    {
+      "file": "Horizons/A1/Backmatter/image-credits.html",
+      "status": 200,
+      "match": true,
+      "bytes": 25202,
+      "sha256": "e83c9241b617b4a199304cf73aa957d851dee1e38f1bdc75b876c011d4bf0b3c"
+    },
+    {
+      "file": "Horizons/A1/Backmatter/image-credits.json",
+      "status": 200,
+      "match": true,
+      "bytes": 43544,
+      "sha256": "473354c325bbdc22ebdc736f8cd9afc0dd00d765cf14d3033add27821abd4c5a"
+    },
+    {
+      "file": "Horizons/A1/Frontmatter/Contents.html",
+      "status": 200,
+      "match": true,
+      "bytes": 11746,
+      "sha256": "7bb287d5312f528f341624a580238c6bd1d47c98ec188dc124e20bcd66c18c8e"
+    },
+    {
+      "file": "Horizons/A1/Frontmatter/Cover.html",
+      "status": 200,
+      "match": true,
+      "bytes": 1236,
+      "sha256": "d8847461a973e88455e8fbafb9de242dc22b5660c5df35dc96f3dc9dfb4fcdd4"
+    },
+    {
+      "file": "Horizons/A1/Frontmatter/Title.html",
+      "status": 200,
+      "match": true,
+      "bytes": 2918,
+      "sha256": "3657b384981bf6a10719f3ee7403ec9c43219c2a681655619221fcde95dde55d"
+    },
+    {
+      "file": "Horizons/A1/Frontmatter/editorial-completion.css",
+      "status": 200,
+      "match": true,
+      "bytes": 5607,
+      "sha256": "b62240d581cb133c321b1f28dd8942d7c1012e44d6206a2be6030a0e42fa4afe"
+    },
+    {
+      "file": "Horizons/A1/Frontmatter/frontmatter-guide.css",
+      "status": 200,
+      "match": true,
+      "bytes": 11365,
+      "sha256": "fddde80977f686644c53b5eaccced400fdb8e7fb418b5a27bf1904c0f58f554c"
+    },
+    {
+      "file": "Horizons/A1/Frontmatter/manifest.json",
+      "status": 200,
+      "match": true,
+      "bytes": 928,
+      "sha256": "c33cfd8027ce1f7e73fb6ba0df336b585c91c1d5d17f58a7b1aa4cf7e701e490"
+    },
+    {
+      "file": "Horizons/A1/Images/Book-completion/cover-orange-swash-v2.png",
+      "status": 200,
+      "match": true,
+      "bytes": 1465132,
+      "sha256": "38de7d0d83a5812a06404412b71c6438946d3485868e2d9f6abfbfb9ba365a48"
+    },
+    {
+      "file": "Horizons/A1/Images/Book-completion/horizon-cover-side-v2.png",
+      "status": 200,
+      "match": true,
+      "bytes": 2620521,
+      "sha256": "df0e10c21c1d8258af5c77ef3b67593bb3a59e78b89dce1c210dc9757d57b7ab"
+    },
+    {
+      "file": "Horizons/A1/Images/Book-completion/manifest.json",
+      "status": 200,
+      "match": true,
+      "bytes": 9568,
+      "sha256": "b8190cbb4c63943fe78ecdc460916b783642e3e2c29999856152a372d1155d03"
+    },
+    {
+      "file": "Horizons/A1/Sources/Book-personality.json",
+      "status": 200,
+      "match": true,
+      "bytes": 5404,
+      "sha256": "6e6f3a11c6fe4d735a8509a6badc4ad21e43c9d19385c876884af6ed93c165d5"
+    },
+    {
+      "file": "Horizons/A1/Sources/Cover-correction-20261102/PDF-fonts-and-QR.json",
+      "status": 200,
+      "match": true,
+      "bytes": 711,
+      "sha256": "4d59f833e277bba104204902ffe6e3b072a7f5b7e0088220263c8700c0df9542"
+    },
+    {
+      "file": "Horizons/A1/Sources/Cover-correction-20261102/assembled-layout.json",
+      "status": 200,
+      "match": true,
+      "bytes": 19327,
+      "sha256": "8bb395baa3514da1a07f182222f4a27e1b1f0172b5244623bbf679e26e42b15e"
+    },
+    {
+      "file": "Horizons/A1/Sources/Cover-correction-20261102/content-preservation.json",
+      "status": 200,
+      "match": true,
+      "bytes": 1389,
+      "sha256": "cd71d6f09ae454c65a5dfc748c91f1c93795baff59ce78e01d6196ac291ce434"
+    },
+    {
+      "file": "Horizons/A1/Sources/Cover-correction-20261102/cover-preflight.json",
+      "status": 200,
+      "match": true,
+      "bytes": 4082,
+      "sha256": "2b498afd77b1a2072c9cce0cf925b5d4c6c9df1ca736e74325d50fcb2425a533"
+    },
+    {
+      "file": "Horizons/A1/Sources/Cover-correction-20261102/editorial-decision.json",
+      "status": 200,
+      "match": true,
+      "bytes": 1672,
+      "sha256": "b328c904bf949e74a147ffb82992c8b4f0e98f9959869399df0b8dc5454d7acd"
+    },
+    {
+      "file": "Horizons/A1/Sources/Cover-correction-20261102/final-qr-bounds.json",
+      "status": 200,
+      "match": true,
+      "bytes": 2995,
+      "sha256": "06b8d15760486b7298b8e6fd6991f3d8ed8ddae9b80c4f7d0879c40b111d0fcc"
+    },
+    {
+      "file": "Horizons/A1/Sources/Cover-correction-20261102/final-response-layout.json",
+      "status": 200,
+      "match": true,
+      "bytes": 157,
+      "sha256": "27a25c92c66494322eaee8638e297752bd91a68fb78f5ce24a4c819eb28dc78d"
+    },
+    {
+      "file": "Horizons/A1/Sources/Cover-correction-20261102/finalization.json",
+      "status": 200,
+      "match": true,
+      "bytes": 10272,
+      "sha256": "53285b267884ce7c7812b0d67e656701085ee0b5dc7760062e7ea641deddc816"
+    },
+    {
+      "file": "Horizons/A1/Sources/Cover-correction-20261102/grammar-clarity.json",
+      "status": 200,
+      "match": true,
+      "bytes": 1970,
+      "sha256": "8befcda828e486079d8b8352b64e7000faf9631e358e634fb9a7605e7c446083"
+    },
+    {
+      "file": "Horizons/A1/Sources/Cover-correction-20261102/header-and-font-checks.json",
+      "status": 200,
+      "match": true,
+      "bytes": 42108,
+      "sha256": "c618d152359d412643fe346135b057426ac468896e688b8d959508affa0e1142"
+    },
+    {
+      "file": "Horizons/A1/Sources/Cover-correction-20261102/independent-PDF-review.json",
+      "status": 200,
+      "match": true,
+      "bytes": 6010,
+      "sha256": "2e4bd9d39bfd04876a43a701749b41fe92eb43a5b2d78c4853ba5eab38e7a9ca"
+    },
+    {
+      "file": "Horizons/A1/Sources/Cover-correction-20261102/local-viewer-verification.json",
+      "status": 200,
+      "match": true,
+      "bytes": 59953,
+      "sha256": "4ca5f6e83dd1d72bb10e109f74a7da9b72b90814f92995332595bcd7755242ce"
+    },
+    {
+      "file": "Horizons/A1/Sources/Cover-correction-20261102/minimal-page-identity-check.json",
+      "status": 200,
+      "match": true,
+      "bytes": 1423,
+      "sha256": "bde5e12bf245431625412922b3486755ccfb599805351b9231ea845df8c39dd2"
+    },
+    {
+      "file": "Horizons/A1/Sources/Cover-correction-20261102/original-cover-identity.json",
+      "status": 200,
+      "match": true,
+      "bytes": 6104,
+      "sha256": "476de20f1138a25468b38d210210a444553f988d381263223cd62e43f4780f86"
+    },
+    {
+      "file": "Horizons/A1/Sources/Cover-correction-20261102/pdf-validation.json",
+      "status": 200,
+      "match": true,
+      "bytes": 11458,
+      "sha256": "a7abc70695db9c629eaed3a2f1daaa9d3632b42f9928b4939cae1947477ab6cc"
+    },
+    {
+      "file": "Horizons/A1/Sources/Cover-correction-20261102/saved-PDF-review.json",
+      "status": 200,
+      "match": true,
+      "bytes": 979,
+      "sha256": "2659063d232b5af5384998d549ef247786f97ef86b2acb1be3f9def6a840d1b7"
+    },
+    {
+      "file": "Horizons/A1/Sources/Cover-correction-20261102/standalone-assembled-parity.json",
+      "status": 200,
+      "match": true,
+      "bytes": 64,
+      "sha256": "841b6f0b4b3914579ef046ec5aca68a6faae52a3e90f48c0f6ce5c1b04261f1e"
+    },
+    {
+      "file": "Horizons/A1/Sources/Cover-correction-20261102/trim-matter-layout.json",
+      "status": 200,
+      "match": true,
+      "bytes": 10030,
+      "sha256": "902ce7a6e5101180a8340f50f348f8e75c67415ef3345785abfdda5876a3154f"
+    },
+    {
+      "file": "Horizons/A1/Sources/Cover-correction-20261102/trim-matter-review.json",
+      "status": 200,
+      "match": true,
+      "bytes": 2422,
+      "sha256": "c5c73d617b14072727a8c948373a73cb17f3607da0bc5e2bdf30a10ff2cb5e33"
+    },
+    {
+      "file": "Horizons/A1/Student's Book.html",
+      "status": 200,
+      "match": true,
+      "bytes": 1313361,
+      "sha256": "1bcd5bd35d2cccf3b2ae060b2cf6c49465644ed2b4e0d1a08b7e606e0e035279"
+    },
+    {
+      "file": "Horizons/A1/Student's Book.pdf",
+      "status": 200,
+      "match": true,
+      "bytes": 50899065,
+      "sha256": "406286a2c7fd93bc8dc5f026a14545bd1d38da45a1a04e63d794348b17ad6a69"
+    },
+    {
+      "file": "Horizons/A1/book-audit.json",
+      "status": 200,
+      "match": true,
+      "bytes": 54661,
+      "sha256": "4f504b3990e9e1685cad71c2accacd30355c1b354a9801349002dbe2b235b1c0"
+    },
+    {
+      "file": "Horizons/A1/index.html",
+      "status": 200,
+      "match": true,
+      "bytes": 3291,
+      "sha256": "a8d2552754bf88a00fbdf51b837826fc3b8955b63fb0ec95ec20a28c27393305"
+    },
+    {
+      "file": "Horizons/AGENTS.md",
+      "status": 200,
+      "match": true,
+      "bytes": 2610,
+      "sha256": "60dc4bfa7d3ea9ce0f811744bf0298ef0af7223f4fc4f8f79f984beb84305a41"
+    },
+    {
+      "file": "Horizons/Base/build/check-practice-banks.py",
+      "status": 200,
+      "match": true,
+      "bytes": 16059,
+      "sha256": "e64673ee3f7db9e234c73cf65f41e14983aa740e3477ea39b7f788ce47bdcc68"
+    },
+    {
+      "file": "Horizons/Base/design-system/BOOK-COMPLETION.md",
+      "status": 200,
+      "match": true,
+      "bytes": 5723,
+      "sha256": "ccd6d0f3a74d609ddf7780ee582e89f3b2a04445b16b6170c9b12962d3e5db6c"
+    },
+    {
+      "file": "Horizons/Base/design-system/CANONICAL-STYLE.md",
+      "status": 200,
+      "match": true,
+      "bytes": 12367,
+      "sha256": "886d865fb0a8a3121477ffbcb2a5e4a47a2d04a7d28aa2e0ddc1f4652219a4f8"
+    },
+    {
+      "file": "Horizons/Base/design-system/component-contracts.md",
+      "status": 200,
+      "match": true,
+      "bytes": 6746,
+      "sha256": "f3f0e48fda8bf62c1a92b0ad654152220c64d0792508f555a6a9e1c98db12cd9"
+    },
+    {
+      "file": "Horizons/Base/design-system/fonts/Anton-OFL.txt",
+      "status": 200,
+      "match": true,
+      "bytes": 4391,
+      "sha256": "eee1d24ff8f553eb732237c7dd9b945a78313ed49ad6de02872a47277741b44a"
+    },
+    {
+      "file": "Horizons/Base/design-system/fonts/Anton-Regular.ttf",
+      "status": 200,
+      "match": true,
+      "bytes": 170812,
+      "sha256": "a4ba3a92350ebb031da0cb47630ac49eb265082ca1bc0450442f4a83ab947cab"
+    },
+    {
+      "file": "Horizons/Base/design-system/fonts/BebasNeue-OFL.txt",
+      "status": 200,
+      "match": true,
+      "bytes": 4337,
+      "sha256": "72082f6cb4d04be2ecf7cc7d9e1e7d73787f0af8a5a278a47cade70c16b78341"
+    },
+    {
+      "file": "Horizons/Base/design-system/fonts/BebasNeue-Regular.ttf",
+      "status": 200,
+      "match": true,
+      "bytes": 61400,
+      "sha256": "08e4623805102d819f58601e46e345648846075e363b2ceb23313c2d1c83ec73"
+    },
+    {
+      "file": "Horizons/Base/design-system/fonts/Poppins-Light.ttf",
+      "status": 200,
+      "match": true,
+      "bytes": 161936,
+      "sha256": "650ba57fa99d12ec40c31ccfb680be656be4497fbe14164617d67e32ffe9cd46"
+    },
+    {
+      "file": "Horizons/Base/design-system/fonts/Poppins-OFL.txt",
+      "status": 200,
+      "match": true,
+      "bytes": 4385,
+      "sha256": "6be04893d770899a015649c7aa3b582f871b272f8747a92b78b17c3e5c8b2573"
+    },
+    {
+      "file": "Horizons/Base/design-system/fonts/Poppins-Regular.ttf",
+      "status": 200,
+      "match": true,
+      "bytes": 160316,
+      "sha256": "7e65201e9b79159e2300267cc885e16c8dcef2424cdfa09a29bfb0980a94a7ba"
+    },
+    {
+      "file": "Horizons/Base/design-system/fonts/manifest.json",
+      "status": 200,
+      "match": true,
+      "bytes": 1791,
+      "sha256": "b8584c507151a7926b00994841b0f126bf964d91ad938f2a16c02507b9a23053"
+    }
+  ]
+}
