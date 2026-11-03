@@ -25,3 +25,11 @@
 .l8a-plan{grid-template-columns:1fr 45mm}.l8a-plan img{width:45mm;height:68mm;object-fit:contain}
 
 .l8a-plan img{height:64mm}
+
+/* Twelve-animal foundation: useful-size borderless specimens, clear letter matching. */
+.l8a-waterfront img {height:50mm;}
+.l8a-trip-reference {margin-top:3mm;}
+.l8a-trip-reference .hz-go-to {margin-top:2mm;}
+.l8a-animals {grid-template-columns:repeat(6,minmax(0,1fr));gap:2mm 2.5mm;}
+.l8a-animals img {height:26mm;}
+.l8a-animal-answers {grid-template-columns:repeat(4,minmax(0,1fr));gap:1.5mm 4mm;grid-auto-flow:row;margin-top:2mm;}

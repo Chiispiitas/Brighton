@@ -182,7 +182,7 @@ Numbers restart within each main lesson. The original controlled answers and ope
 
 **2.** Open. Three correct travel chunks in a real/imagined account; partner accurately identifies the verbs actually used. Alone: three correct chunks from memory.
 
-**3.** Crossword: Down1 BEAVER, Down2 DUCK, Down3 GOOSE; Across4 RACCOON, Across5 SQUIRREL. Every crossing agrees. Numbered positions are 1 row1/col2,2 row4/col4,3 row5/col7,4 row6/col2,5 row8/col7 in a9×14 grid. The scrambled-letter clues retrieve already introduced animal spellings; they do not require untaught bushy/tail/mask/neck terminology. Open extra clue uses accurate known language about an animal without naming it. If more than one animal fits, accept supported guesses and ask for another clue; a single clue is not guaranteed to identify a unique answer.
+**3.** Crossword: Down1 BEAVER, Down2 DUCK, Down3 GOOSE; Across4 RACCOON, Across5 SQUIRREL. Every crossing agrees. Numbered positions are 1 row1/col2,2 row4/col4,3 row5/col7,4 row6/col2,5 row8/col7 in a9×14 grid. The scrambled-letter clues retrieve already introduced animal spellings; they do not require untaught bushy/tail/mask/neck terminology. Open extension: cover the word bank and describe an animal outside the crossword: cat, dog, rabbit, fish, horse, cow or sheep. Partner guesses, then swap. Solo learner recalls two other names. Use accurate known language without naming the animal. If more than one animal fits, accept supported guesses and ask for another clue; a single clue is not guaranteed to identify a unique answer.
 
 ## 8B — It’s so cold! · pages 143–144
 

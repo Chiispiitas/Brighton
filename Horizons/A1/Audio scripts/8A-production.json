@@ -86,11 +86,11 @@
       "cgSgspJ2msm6clMCkdW9",
       "cgSgspJ2msm6clMCkdW9"
     ],
-    "generation_utc": "2026-11-01T01:07:19.104395+00:00",
-    "request_id": "LnN4ODxY8wqSTPPQA2IV",
-    "script_sha256": "099c778fe0802f93029e10eca80cfa5754d382557f555cc2441e662fee9937c8",
-    "bytes": 137969,
-    "duration_seconds": 8.59,
+    "generation_utc": "2026-11-03T02:21:42.135156+00:00",
+    "request_id": "5qGLVmcqjArXScweqO1G",
+    "script_sha256": "587a7e0d26a8913a73064b90884267e3f6a4fa1675df5dd418961609625aca5e",
+    "bytes": 451438,
+    "duration_seconds": 28.19,
     "transcript_checked": true,
     "transcript_similarity": 1.0,
     "answer_bearing_phrases_checked": true,
@@ -98,11 +98,11 @@
     "throat_clearing_events_detected": false,
     "forbidden_tag_preflight_passed": true,
     "transcription_name_aliases": {},
-    "transcript_normalization": "Track label, punctuation/case, exact number spellings, equivalent whole-hour H:00 and dollar-symbol amounts, contractions, and Lia/Leah homophone spelling only. Values and negatives preserved; no answer-bearing substitution.",
+    "transcript_normalization": "Track label, punctuation/case, exact numerical/ordinal/year spellings, equivalent H:00 whole-hour notation and dollar-symbol amounts, Lia/Leah homophone spelling, contractions and TV/OK spellings. Numerical values, dates and negatives are preserved; no answer-bearing substitutions.",
     "activity": 5,
     "internal_audio_id": "HZN_A1_U08_LA_E05_AUD_01",
     "subjective_listening_review": false,
-    "sha256": "47d6c620863d1c8f15547ba564979c24f5666c30fbedae700c6486568c5a7b10"
+    "sha256": "5cdb1588d74d77f291ad4738dc26afdda1e0659c3e3d856a8030ff12c996040d"
   },
   {
     "lesson": "8A",

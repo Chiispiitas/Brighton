@@ -1,0 +1,24 @@
+{
+  "baseline": "f385427fa3882f48fc79ab33b89774cdb24b863f",
+  "safety_branch": "safety/horizons-before-8a-animals-20261102",
+  "changed_printed_pages": [
+    67,
+    68,
+    141,
+    142
+  ],
+  "animals": 12,
+  "new_native_assets": 7,
+  "new_recordings": [
+    "8.3"
+  ],
+  "unchanged_recordings": {
+    "8.1": "07e7b017db402172e7ea9b6afeffd2704ee1f6e6625ed5cdb89e139ec657e339",
+    "8.2": "484fc3ac30dc56e75dd63ea4f823c3845a5e4eaff519948edd795f6a588965de",
+    "8.4": "649068d66127a8ecdb1aeaaedfda2fc64a91d2e7220efdd2029bef1be746fc32"
+  },
+  "unchanged_assembled_pages": 155,
+  "failures": [],
+  "canonical_required_items": 411,
+  "marked_lexical_occurrences": 483
+}

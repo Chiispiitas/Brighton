@@ -1,0 +1,37 @@
+{
+  "request": "Expand8A animals to about12 for a stronger A1 base.",
+  "baseline": "f385427fa3882f48fc79ab33b89774cdb24b863f",
+  "safety_branch": "safety/horizons-before-8a-animals-20261102",
+  "retained_animals": [
+    "raccoon",
+    "duck",
+    "squirrel",
+    "beaver",
+    "goose"
+  ],
+  "added_animals": [
+    "cat",
+    "dog",
+    "rabbit",
+    "fish",
+    "horse",
+    "cow",
+    "sheep"
+  ],
+  "balance": "Familiar pets/farm animals complement the original Toronto-context wildlife. This is a useful foundation, not a claim of an exhaustive CEFR wordlist.",
+  "changed_pages": [
+    67,
+    68,
+    141,
+    142
+  ],
+  "design": "Six-by-two borderless cutouts and regular10pt shuffled matching words. Move unchanged trip chart after noticing on67; complete skyline scaled to50mm height. Keep itinerary/traveler/writing space and all eight activity numbers.",
+  "study_practice": "All12 in word bank141; retain distinct practice images/crossword, extend recall to animals outside its five wildlife answers.",
+  "audio": "Regenerate only8.3 with Jessica, twelve names in printed order; independent ASR exact, no audio events, no subjective listening review claimed. Version player URL to prevent an old cached8.3.",
+  "generated_assets": 7,
+  "native_asset_prompts": "../../Images/8A/asset-manifest.json",
+  "unaffected_pages": 155,
+  "unaffected_pages_pixel_identical": 155,
+  "publication_status": "Pending live verification",
+  "author_acceptance_claimed": false
+}

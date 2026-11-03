@@ -1,0 +1,387 @@
+{
+  "content_commit": "local",
+  "url": "file:///C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/A1/Student's%20Book.html",
+  "checks": [
+    {
+      "name": "Viewer source matches frozen book",
+      "pass": true
+    },
+    {
+      "name": "159 pages,106 navigation choices,90 controls",
+      "pass": true,
+      "detail": {
+        "pages": 159,
+        "nav": 106,
+        "audio": 90,
+        "words": [
+          "cat",
+          "dog",
+          "fish",
+          "horse",
+          "rabbit",
+          "cow",
+          "sheep",
+          "duck",
+          "squirrel",
+          "raccoon",
+          "goose",
+          "beaver"
+        ],
+        "figs": [
+          {
+            "animal": "raccoon",
+            "letter": "A",
+            "src": "file:///C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/A1/Images/8A/Raccoon-cutout-v1.png",
+            "fit": "contain"
+          },
+          {
+            "animal": "duck",
+            "letter": "B",
+            "src": "file:///C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/A1/Images/8A/Duck-cutout-v1.png",
+            "fit": "contain"
+          },
+          {
+            "animal": "squirrel",
+            "letter": "C",
+            "src": "file:///C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/A1/Images/8A/Squirrel-cutout-v1.png",
+            "fit": "contain"
+          },
+          {
+            "animal": "beaver",
+            "letter": "D",
+            "src": "file:///C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/A1/Images/8A/Beaver-cutout-v1.png",
+            "fit": "contain"
+          },
+          {
+            "animal": "goose",
+            "letter": "E",
+            "src": "file:///C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/A1/Images/8A/Goose-cutout-v1.png",
+            "fit": "contain"
+          },
+          {
+            "animal": "dog",
+            "letter": "F",
+            "src": "file:///C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/A1/Images/8A/Dog-cutout-v1.png",
+            "fit": "contain"
+          },
+          {
+            "animal": "cat",
+            "letter": "G",
+            "src": "file:///C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/A1/Images/8A/Cat-cutout-v1.png",
+            "fit": "contain"
+          },
+          {
+            "animal": "fish",
+            "letter": "H",
+            "src": "file:///C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/A1/Images/8A/Fish-cutout-v1.png",
+            "fit": "contain"
+          },
+          {
+            "animal": "horse",
+            "letter": "I",
+            "src": "file:///C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/A1/Images/8A/Horse-cutout-v1.png",
+            "fit": "contain"
+          },
+          {
+            "animal": "rabbit",
+            "letter": "J",
+            "src": "file:///C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/A1/Images/8A/Rabbit-cutout-v1.png",
+            "fit": "contain"
+          },
+          {
+            "animal": "sheep",
+            "letter": "K",
+            "src": "file:///C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/A1/Images/8A/Sheep-cutout-v1.png",
+            "fit": "contain"
+          },
+          {
+            "animal": "cow",
+            "letter": "L",
+            "src": "file:///C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/A1/Images/8A/Cow-cutout-v1.png",
+            "fit": "contain"
+          }
+        ],
+        "forms": [
+          {
+            "pt": 9.999975,
+            "weight": "400"
+          },
+          {
+            "pt": 9.999975,
+            "weight": "400"
+          },
+          {
+            "pt": 9.999975,
+            "weight": "400"
+          },
+          {
+            "pt": 9.999975,
+            "weight": "400"
+          },
+          {
+            "pt": 9.999975,
+            "weight": "400"
+          },
+          {
+            "pt": 9.999975,
+            "weight": "400"
+          },
+          {
+            "pt": 9.999975,
+            "weight": "400"
+          },
+          {
+            "pt": 9.999975,
+            "weight": "400"
+          },
+          {
+            "pt": 9.999975,
+            "weight": "400"
+          },
+          {
+            "pt": 9.999975,
+            "weight": "400"
+          },
+          {
+            "pt": 9.999975,
+            "weight": "400"
+          },
+          {
+            "pt": 9.999975,
+            "weight": "400"
+          }
+        ],
+        "study": [
+          "duck",
+          "squirrel",
+          "raccoon",
+          "beaver",
+          "goose",
+          "cat",
+          "dog",
+          "rabbit",
+          "fish",
+          "horse",
+          "cow",
+          "sheep"
+        ],
+        "badimages": [],
+        "trip67": 1,
+        "trip68": 0
+      }
+    },
+    {
+      "name": "Twelve whole borderless cutouts with A–L labels",
+      "pass": true,
+      "detail": [
+        {
+          "animal": "raccoon",
+          "letter": "A",
+          "src": "file:///C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/A1/Images/8A/Raccoon-cutout-v1.png",
+          "fit": "contain"
+        },
+        {
+          "animal": "duck",
+          "letter": "B",
+          "src": "file:///C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/A1/Images/8A/Duck-cutout-v1.png",
+          "fit": "contain"
+        },
+        {
+          "animal": "squirrel",
+          "letter": "C",
+          "src": "file:///C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/A1/Images/8A/Squirrel-cutout-v1.png",
+          "fit": "contain"
+        },
+        {
+          "animal": "beaver",
+          "letter": "D",
+          "src": "file:///C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/A1/Images/8A/Beaver-cutout-v1.png",
+          "fit": "contain"
+        },
+        {
+          "animal": "goose",
+          "letter": "E",
+          "src": "file:///C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/A1/Images/8A/Goose-cutout-v1.png",
+          "fit": "contain"
+        },
+        {
+          "animal": "dog",
+          "letter": "F",
+          "src": "file:///C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/A1/Images/8A/Dog-cutout-v1.png",
+          "fit": "contain"
+        },
+        {
+          "animal": "cat",
+          "letter": "G",
+          "src": "file:///C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/A1/Images/8A/Cat-cutout-v1.png",
+          "fit": "contain"
+        },
+        {
+          "animal": "fish",
+          "letter": "H",
+          "src": "file:///C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/A1/Images/8A/Fish-cutout-v1.png",
+          "fit": "contain"
+        },
+        {
+          "animal": "horse",
+          "letter": "I",
+          "src": "file:///C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/A1/Images/8A/Horse-cutout-v1.png",
+          "fit": "contain"
+        },
+        {
+          "animal": "rabbit",
+          "letter": "J",
+          "src": "file:///C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/A1/Images/8A/Rabbit-cutout-v1.png",
+          "fit": "contain"
+        },
+        {
+          "animal": "sheep",
+          "letter": "K",
+          "src": "file:///C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/A1/Images/8A/Sheep-cutout-v1.png",
+          "fit": "contain"
+        },
+        {
+          "animal": "cow",
+          "letter": "L",
+          "src": "file:///C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/A1/Images/8A/Cow-cutout-v1.png",
+          "fit": "contain"
+        }
+      ]
+    },
+    {
+      "name": "All twelve shuffled names and complete study bank",
+      "pass": true,
+      "detail": [
+        "duck",
+        "squirrel",
+        "raccoon",
+        "beaver",
+        "goose",
+        "cat",
+        "dog",
+        "rabbit",
+        "fish",
+        "horse",
+        "cow",
+        "sheep"
+      ]
+    },
+    {
+      "name": "Ordinary answer words remain regular10pt",
+      "pass": true,
+      "detail": [
+        {
+          "pt": 9.999975,
+          "weight": "400"
+        },
+        {
+          "pt": 9.999975,
+          "weight": "400"
+        },
+        {
+          "pt": 9.999975,
+          "weight": "400"
+        },
+        {
+          "pt": 9.999975,
+          "weight": "400"
+        },
+        {
+          "pt": 9.999975,
+          "weight": "400"
+        },
+        {
+          "pt": 9.999975,
+          "weight": "400"
+        },
+        {
+          "pt": 9.999975,
+          "weight": "400"
+        },
+        {
+          "pt": 9.999975,
+          "weight": "400"
+        },
+        {
+          "pt": 9.999975,
+          "weight": "400"
+        },
+        {
+          "pt": 9.999975,
+          "weight": "400"
+        },
+        {
+          "pt": 9.999975,
+          "weight": "400"
+        },
+        {
+          "pt": 9.999975,
+          "weight": "400"
+        }
+      ]
+    },
+    {
+      "name": "All book images decoded",
+      "pass": true,
+      "detail": []
+    },
+    {
+      "name": "Trip chart follows noticing on first page only",
+      "pass": true
+    },
+    {
+      "name": "Main reference opens8A word bank141",
+      "pass": true
+    },
+    {
+      "name": "Word bank opens adjacent practice142",
+      "pass": true
+    },
+    {
+      "name": "Practice returns to matching word bank",
+      "pass": true
+    },
+    {
+      "name": "Updated Jessica8.3 plays and pauses at28seconds",
+      "pass": true,
+      "detail": {
+        "src": "file:///C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/A1/Audios/Track%208.3.mp3?v=animals12-5cdb1588d74d",
+        "duration": 28.16,
+        "playing": true
+      }
+    },
+    {
+      "name": "Actual player URL serves exact verified new audio",
+      "pass": true,
+      "detail": "5cdb1588d74d77f291ad4738dc26afdda1e0659c3e3d856a8030ff12c996040d"
+    },
+    {
+      "name": "Audio/navigation controls hidden in print",
+      "pass": true
+    },
+    {
+      "name": "Standalone8A has all12 decoded animals",
+      "pass": true
+    },
+    {
+      "name": "Standalone lesson links to its12word bank",
+      "pass": true
+    },
+    {
+      "name": "Standalone animal practice opens adjacent task",
+      "pass": true
+    },
+    {
+      "name": "Standalone practice returns to8A",
+      "pass": true
+    }
+  ],
+  "screenshots": [
+    "page-67.png",
+    "page-68.png",
+    "page-141.png",
+    "page-142.png"
+  ],
+  "failures": [],
+  "passed": true
+}

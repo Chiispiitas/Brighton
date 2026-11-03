@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "updated": "2026-11-02",
-  "status": "Corrected cover and minimal Student’s Book verified in source, independent saved-PDF and published viewer/audio/PDF flows",
+  "status": "Twelve-animal8A expansion passes source, saved-PDF visual and local viewer checks; publication pending",
   "authority": "Author delegates editorial authority; his own B2 book sets emotional direction. Preserve colourful learning objects and warm adult playfulness alongside coherent functional roles.",
   "scope": "A1 Student’s Book:32 lessons,4 reviews, existing grammar/vocabulary/practical banks, minimal opening matter, two notes pages and current end credits.159 physical A4 pages; numbered1–157 plus2 unnumbered covers. Optional reference guides/finders/progress are excluded. Workbook/teacher editions remain separate.",
   "baseline": {
@@ -69,6 +69,11 @@
       "safety_branch": "safety/horizons-before-cover-correction-20261102",
       "previous_audit": "Audit archive/2026-11-02-before-cover-correction/book-audit.json",
       "old_pdf_sha256": "449ee8ebfab19b20f7693385e6637e4b636ae5ef0b216a4df8442b90d27cd6ad"
+    },
+    "twelve_animals": {
+      "commit": "f385427fa3882f48fc79ab33b89774cdb24b863f",
+      "safety_branch": "safety/horizons-before-8a-animals-20261102",
+      "previous_audit": "Audit archive/2026-11-02-before-twelve-animals/book-audit.json"
     }
   },
   "inventory": {
@@ -147,8 +152,8 @@
     "vocabulary_study_pages": 32,
     "vocabulary_activity_pages": 35,
     "vocabulary_study_topics": 43,
-    "vocabulary_marked_lexical_entry_occurrences": 476,
-    "vocabulary_required_within_topic_items": 404,
+    "vocabulary_marked_lexical_entry_occurrences": 483,
+    "vocabulary_required_within_topic_items": 411,
     "new_active_practice_assets_this_pass": 0,
     "practice_raster_occurrences": 103,
     "vocabulary_pages_with_pictures": 47,
@@ -159,7 +164,7 @@
     "vocabulary_lesson_groups": 32,
     "practice_lesson_headers": 74,
     "paired_practice_pages": 3,
-    "saved_pages_this_pass": 0,
+    "saved_pages_this_pass": 4,
     "front_matter_pages": 5,
     "numbered_front_pages": 4,
     "annex_pages": 2,
@@ -171,7 +176,12 @@
     "guide_audio_demonstrations": 0,
     "new_book_generated_assets": 2,
     "pdf_bookmarks": 118,
-    "unnumbered_covers": 2
+    "unnumbered_covers": 2,
+    "lesson8A_animal_nouns": 12,
+    "new_lesson8A_native_cutouts": 7,
+    "lesson8A_regenerated_tracks": [
+      "8.3"
+    ]
   },
   "standards": {
     "canonical_style": "../Base/design-system/CANONICAL-STYLE.md",
@@ -196,12 +206,12 @@
     "cover_fonts_manifest": "../Base/design-system/fonts/manifest.json"
   },
   "editorial_judgment": {
-    "basis": "Restore old cover typography and exact feature wording; regenerate the old side-profile mountain-view idea; remove unwanted extras and keep contents, notes and current credits.",
-    "current_decision": "Sources/Cover-correction-20261102/editorial-decision.json",
-    "saved_pdf_review": "Sources/Cover-correction-20261102/saved-PDF-review.json",
-    "independent_review": "Sources/Cover-correction-20261102/independent-PDF-review.json",
-    "independent_second_editor": true,
-    "new_and_modified_pages_reviewed": 12,
+    "basis": "Expand8A animals to about12 for a stronger A1 base.",
+    "current_decision": "Sources/8A-twelve-animals-20261102/editorial-decision.json",
+    "saved_pdf_review": "Sources/8A-twelve-animals-20261102/saved-PDF-review.json",
+    "independent_saved_PDF_render": true,
+    "independent_second_editor": false,
+    "new_and_modified_pages_reviewed": 4,
     "author_acceptance_claimed": false
   },
   "verification": {
@@ -209,12 +219,11 @@
       "pages": 159,
       "text_faults": [],
       "practice_response_fields": 368,
+      "clipped_fields": [],
       "notes_lines": 56,
-      "practice_clipped_fields": [],
       "reports": [
-        "Sources/Cover-correction-20261102/assembled-layout.json",
-        "Sources/Cover-correction-20261102/final-response-layout.json",
-        "Sources/Cover-correction-20261102/trim-matter-layout.json"
+        "Sources/8A-twelve-animals-20261102/assembled-layout.json",
+        "Sources/8A-twelve-animals-20261102/final-response-layout.json"
       ]
     },
     "standalone_assembled_parity": {
@@ -223,597 +232,89 @@
       "failures": []
     },
     "pdf": {
-      "baseline": "77284d826886b91568496608f82e34e70b39cdc7",
-      "sha256": "406286a2c7fd93bc8dc5f026a14545bd1d38da45a1a04e63d794348b17ad6a69",
-      "bytes": 50899065,
+      "baseline_commit": "f385427fa3882f48fc79ab33b89774cdb24b863f",
+      "sha256": "003d3f1dceb30f64ad379ba3b581ab3854bc39dd4d3b90a95234d4bb6143cb04",
+      "bytes": 51505387,
       "physical_pages": 159,
-      "numbered_pages": [
+      "numbered_folios": [
         1,
         157
       ],
-      "unnumbered_pages": [
-        "front-cover",
-        "back-cover"
-      ],
       "strict_pypdf_read": true,
-      "a4_failures": [],
-      "footer_failures": [],
       "mupdf_warnings": "",
-      "preserved_teaching_pages": 147,
-      "preserved_teaching_text_differences": [],
-      "teaching_pages_pixel_identical": 108,
-      "teaching_pages_with_minor_raster_variation": [
-        {
-          "page": 5,
-          "mean_8bit_channel_error": 9.314889851427506e-06,
-          "changed_channel_values": 14,
-          "changed_channel_fraction": 9.314889851427506e-06,
-          "bounds": [
-            104,
-            386,
-            520,
-            513
-          ]
-        },
-        {
-          "page": 6,
-          "mean_8bit_channel_error": 6.121213330938076e-05,
-          "changed_channel_values": 36,
-          "changed_channel_fraction": 2.395257390367073e-05,
-          "bounds": [
-            76,
-            471,
-            503,
-            488
-          ]
-        },
-        {
-          "page": 7,
-          "mean_8bit_channel_error": 2.26218753534668e-05,
-          "changed_channel_values": 34,
-          "changed_channel_fraction": 2.26218753534668e-05,
-          "bounds": [
-            171,
-            534,
-            495,
-            607
-          ]
-        },
-        {
-          "page": 11,
-          "mean_8bit_channel_error": 7.318842026121613e-06,
-          "changed_channel_values": 11,
-          "changed_channel_fraction": 7.318842026121613e-06,
-          "bounds": [
-            122,
-            118,
-            225,
-            121
-          ]
-        },
-        {
-          "page": 15,
-          "mean_8bit_channel_error": 5.3227942008157185e-05,
-          "changed_channel_values": 30,
-          "changed_channel_fraction": 1.9960478253058943e-05,
-          "bounds": [
-            77,
-            448,
-            206,
-            680
-          ]
-        },
-        {
-          "page": 16,
-          "mean_8bit_channel_error": 5.9216085484074867e-05,
-          "changed_channel_values": 54,
-          "changed_channel_fraction": 3.59288608555061e-05,
-          "bounds": [
-            81,
-            242,
-            223,
-            654
-          ]
-        },
-        {
-          "page": 22,
-          "mean_8bit_channel_error": 6.653492751019648e-06,
-          "changed_channel_values": 7,
-          "changed_channel_fraction": 4.657444925713753e-06,
-          "bounds": [
-            259,
-            544,
-            427,
-            547
-          ]
-        },
-        {
-          "page": 24,
-          "mean_8bit_channel_error": 1.7299081152651085e-05,
-          "changed_channel_values": 15,
-          "changed_channel_fraction": 9.980239126529471e-06,
-          "bounds": [
-            68,
-            517,
-            89,
-            526
-          ]
-        },
-        {
-          "page": 27,
-          "mean_8bit_channel_error": 1.13109376767334e-05,
-          "changed_channel_values": 16,
-          "changed_channel_fraction": 1.0645588401631437e-05,
-          "bounds": [
-            70,
-            119,
-            554,
-            533
-          ]
-        },
-        {
-          "page": 29,
-          "mean_8bit_channel_error": 6.653492751019648e-06,
-          "changed_channel_values": 4,
-          "changed_channel_fraction": 2.661397100407859e-06,
-          "bounds": [
-            543,
-            384,
-            545,
-            385
-          ]
-        },
-        {
-          "page": 30,
-          "mean_8bit_channel_error": 2.5283272453874662e-05,
-          "changed_channel_values": 29,
-          "changed_channel_fraction": 1.9295128977956978e-05,
-          "bounds": [
-            237,
-            704,
-            531,
-            707
-          ]
-        },
-        {
-          "page": 32,
-          "mean_8bit_channel_error": 6.520422895999255e-05,
-          "changed_channel_values": 45,
-          "changed_channel_fraction": 2.9940717379588416e-05,
-          "bounds": [
-            157,
-            638,
-            225,
-            661
-          ]
-        },
-        {
-          "page": 34,
-          "mean_8bit_channel_error": 1.9960478253058943e-05,
-          "changed_channel_values": 15,
-          "changed_channel_fraction": 9.980239126529471e-06,
-          "bounds": [
-            307,
-            488,
-            555,
-            550
-          ]
-        },
-        {
-          "page": 35,
-          "mean_8bit_channel_error": 6.720027678529844e-05,
-          "changed_channel_values": 41,
-          "changed_channel_fraction": 2.7279320279180555e-05,
-          "bounds": [
-            495,
-            158,
-            538,
-            203
-          ]
-        },
-        {
-          "page": 37,
-          "mean_8bit_channel_error": 2.4617923178772697e-05,
-          "changed_channel_values": 17,
-          "changed_channel_fraction": 1.13109376767334e-05,
-          "bounds": [
-            355,
-            234,
-            553,
-            422
-          ]
-        },
-        {
-          "page": 39,
-          "mean_8bit_channel_error": 4.258235360652575e-05,
-          "changed_channel_values": 20,
-          "changed_channel_fraction": 1.3306985502039296e-05,
-          "bounds": [
-            174,
-            376,
-            201,
-            386
-          ]
-        },
-        {
-          "page": 40,
-          "mean_8bit_channel_error": 7.318842026121613e-06,
-          "changed_channel_values": 11,
-          "changed_channel_fraction": 7.318842026121613e-06,
-          "bounds": [
-            72,
-            517,
-            427,
-            520
-          ]
-        },
-        {
-          "page": 42,
-          "mean_8bit_channel_error": 7.651516663672595e-05,
-          "changed_channel_values": 30,
-          "changed_channel_fraction": 1.9960478253058943e-05,
-          "bounds": [
-            174,
-            503,
-            441,
-            509
-          ]
-        },
-        {
-          "page": 45,
-          "mean_8bit_channel_error": 8.449935793794952e-05,
-          "changed_channel_values": 42,
-          "changed_channel_fraction": 2.794466955428252e-05,
-          "bounds": [
-            84,
-            349,
-            96,
-            438
-          ]
-        },
-        {
-          "page": 49,
-          "mean_8bit_channel_error": 5.455864055836111e-05,
-          "changed_channel_values": 42,
-          "changed_channel_fraction": 2.794466955428252e-05,
-          "bounds": [
-            75,
-            230,
-            344,
-            232
-          ]
-        },
-        {
-          "page": 50,
-          "mean_8bit_channel_error": 1.796443042775305e-05,
-          "changed_channel_values": 6,
-          "changed_channel_fraction": 3.9920956506117886e-06,
-          "bounds": [
-            182,
-            562,
-            184,
-            563
-          ]
-        },
-        {
-          "page": 53,
-          "mean_8bit_channel_error": 2.794466955428252e-05,
-          "changed_channel_values": 28,
-          "changed_channel_fraction": 1.8629779702855012e-05,
-          "bounds": [
-            131,
-            388,
-            505,
-            390
-          ]
-        },
-        {
-          "page": 55,
-          "mean_8bit_channel_error": 4.9235846357545393e-05,
-          "changed_channel_values": 26,
-          "changed_channel_fraction": 1.7299081152651085e-05,
-          "bounds": [
-            122,
-            254,
-            450,
-            258
-          ]
-        },
-        {
-          "page": 56,
-          "mean_8bit_channel_error": 3.59288608555061e-05,
-          "changed_channel_values": 18,
-          "changed_channel_fraction": 1.1976286951835366e-05,
-          "bounds": [
-            79,
-            598,
-            333,
-            600
-          ]
-        },
-        {
-          "page": 57,
-          "mean_8bit_channel_error": 2.5283272453874662e-05,
-          "changed_channel_values": 9,
-          "changed_channel_fraction": 5.988143475917683e-06,
-          "bounds": [
-            87,
-            133,
-            108,
-            142
-          ]
-        },
-        {
-          "page": 58,
-          "mean_8bit_channel_error": 0.00015901847674936958,
-          "changed_channel_values": 99,
-          "changed_channel_fraction": 6.58695782350945e-05,
-          "bounds": [
-            72,
-            575,
-            431,
-            593
-          ]
-        },
-        {
-          "page": 60,
-          "mean_8bit_channel_error": 0.00010911728111672222,
-          "changed_channel_values": 87,
-          "changed_channel_fraction": 5.7885386933870936e-05,
-          "bounds": [
-            357,
-            452,
-            556,
-            489
-          ]
-        },
-        {
-          "page": 61,
-          "mean_8bit_channel_error": 0.00027478925061711143,
-          "changed_channel_values": 153,
-          "changed_channel_fraction": 0.0001017984390906006,
-          "bounds": [
-            68,
-            114,
-            492,
-            147
-          ]
-        },
-        {
-          "page": 63,
-          "mean_8bit_channel_error": 5.9216085484074867e-05,
-          "changed_channel_values": 26,
-          "changed_channel_fraction": 1.7299081152651085e-05,
-          "bounds": [
-            111,
-            330,
-            361,
-            343
-          ]
-        },
-        {
-          "page": 71,
-          "mean_8bit_channel_error": 0.00016833336660079709,
-          "changed_channel_values": 118,
-          "changed_channel_fraction": 7.851121446203184e-05,
-          "bounds": [
-            69,
-            179,
-            555,
-            644
-          ]
-        },
-        {
-          "page": 76,
-          "mean_8bit_channel_error": 0.000358623259279959,
-          "changed_channel_values": 200,
-          "changed_channel_fraction": 0.00013306985502039296,
-          "bounds": [
-            69,
-            575,
-            432,
-            594
-          ]
-        },
-        {
-          "page": 78,
-          "mean_8bit_channel_error": 3.3932813030200205e-05,
-          "changed_channel_values": 14,
-          "changed_channel_fraction": 9.314889851427506e-06,
-          "bounds": [
-            39,
-            160,
-            343,
-            163
-          ]
-        },
-        {
-          "page": 81,
-          "mean_8bit_channel_error": 3.326746375509824e-06,
-          "changed_channel_values": 5,
-          "changed_channel_fraction": 3.326746375509824e-06,
-          "bounds": [
-            41,
-            162,
-            394,
-            164
-          ]
-        },
-        {
-          "page": 91,
-          "mean_8bit_channel_error": 0.00017831360572732657,
-          "changed_channel_values": 194,
-          "changed_channel_fraction": 0.00012907775936978118,
-          "bounds": [
-            50,
-            130,
-            416,
-            156
-          ]
-        },
-        {
-          "page": 102,
-          "mean_8bit_channel_error": 0.00033267463755098236,
-          "changed_channel_values": 172,
-          "changed_channel_fraction": 0.00011444007531753794,
-          "bounds": [
-            39,
-            329,
-            524,
-            573
-          ]
-        },
-        {
-          "page": 105,
-          "mean_8bit_channel_error": 1.397233477714126e-05,
-          "changed_channel_values": 21,
-          "changed_channel_fraction": 1.397233477714126e-05,
-          "bounds": [
-            40,
-            568,
-            553,
-            613
-          ]
-        },
-        {
-          "page": 110,
-          "mean_8bit_channel_error": 6.653492751019648e-07,
-          "changed_channel_values": 1,
-          "changed_channel_fraction": 6.653492751019648e-07,
-          "bounds": [
-            550,
-            444,
-            551,
-            445
-          ]
-        },
-        {
-          "page": 113,
-          "mean_8bit_channel_error": 5.3227942008157185e-05,
-          "changed_channel_values": 38,
-          "changed_channel_fraction": 2.5283272453874662e-05,
-          "bounds": [
-            103,
-            273,
-            316,
-            416
-          ]
-        },
-        {
-          "page": 119,
-          "mean_8bit_channel_error": 0.00010978263039182419,
-          "changed_channel_values": 78,
-          "changed_channel_fraction": 5.1897243457953255e-05,
-          "bounds": [
-            45,
-            229,
-            191,
-            333
-          ]
-        }
+      "changed_printed_pages": [
+        67,
+        68,
+        141,
+        142
       ],
-      "raster_note": "Small isolated glyph antialias variations after the rebuilt font/resource subsets; all 147 page texts and source files are preserved and native geometry parity passes. Any varying pages are not claimed pixel-identical.",
+      "unaffected_pages_compared": 155,
+      "unaffected_page_texts_preserved": true,
+      "unaffected_pages_pixel_identical": 155,
+      "minor_glyph_raster_variations": [],
+      "raster_note": "Only isolated glyph antialias variations; not claimed pixel-identical. All155unaffected page texts and DOMs remain exact.",
       "all_internal_links_verified": 440,
-      "local_disk_links": [],
-      "public_audio_annotations": 0,
-      "distinct_audio_urls": 0,
       "bookmarks": 118,
-      "new_and_modified_pages_rendered": 12,
-      "contacts": [
-        {
-          "file": "contact-01.png",
-          "labels": [
-            "front-cover",
-            "1",
-            "2",
-            "3"
-          ]
-        },
-        {
-          "file": "contact-02.png",
-          "labels": [
-            "4",
-            "152",
-            "153",
-            "154"
-          ]
-        },
-        {
-          "file": "contact-03.png",
-          "labels": [
-            "155",
-            "156",
-            "157",
-            "back-cover"
-          ]
-        }
+      "local_disk_links": 0,
+      "affected_and_neighbor_pages_rendered": [
+        66,
+        67,
+        68,
+        69,
+        140,
+        141,
+        142,
+        143
+      ],
+      "animal_cutouts": 12,
+      "complete_recorded_nouns": [
+        "cat",
+        "dog",
+        "fish",
+        "horse",
+        "rabbit",
+        "cow",
+        "sheep",
+        "duck",
+        "squirrel",
+        "raccoon",
+        "goose",
+        "beaver"
       ],
       "failures": []
     },
     "preservation": {
-      "baseline": "77284d826886b91568496608f82e34e70b39cdc7",
-      "unchanged_source_areas": {
-        "Lessons": true,
-        "Practice": true,
-        "Audios": true,
-        "Audio scripts": true,
-        "Answer keys": true,
-        "Wordlists": true
+      "baseline": "f385427fa3882f48fc79ab33b89774cdb24b863f",
+      "safety_branch": "safety/horizons-before-8a-animals-20261102",
+      "changed_printed_pages": [
+        67,
+        68,
+        141,
+        142
+      ],
+      "animals": 12,
+      "new_native_assets": 7,
+      "new_recordings": [
+        "8.3"
+      ],
+      "unchanged_recordings": {
+        "8.1": "07e7b017db402172e7ea9b6afeffd2704ee1f6e6625ed5cdb89e139ec657e339",
+        "8.2": "484fc3ac30dc56e75dd63ea4f823c3845a5e4eaff519948edd795f6a588965de",
+        "8.4": "649068d66127a8ecdb1aeaaedfda2fc64a91d2e7220efdd2029bef1be746fc32"
       },
-      "existing_activities": 400,
-      "core_activities": 253,
-      "practice_activities": 147,
-      "marked_lexical_occurrences": 476,
-      "taught_printed_pages_unchanged": [
-        5,
-        151
-      ],
+      "unchanged_assembled_pages": 155,
       "failures": [],
-      "all_existing_external_credit_entries_preserved": true,
-      "back_cover_feature_wording_unchanged": true,
-      "source_DOCX_unchanged_reference": true,
-      "source_DOCX_sha256": "5a485d5b88bfddf5d602c18ad5d8423f8f00468b0a149d5395c07c25abf2d154",
-      "active_front_masters": [
-        {
-          "file": "Frontmatter/Cover.html"
-        },
-        {
-          "file": "Frontmatter/Title.html"
-        },
-        {
-          "file": "Frontmatter/Contents.html"
-        }
-      ],
-      "active_annex_masters": [
-        {
-          "file": "Annexes/Notes.html"
-        }
-      ],
-      "page_order_contiguous": true,
-      "physical_pages": 159,
-      "excluded_optional_sections": [
-        "Useful English",
-        "Sounds and past verbs",
-        "Progress records",
-        "Grammar finder",
-        "Word finder",
-        "Audio finder",
-        "How to use / digital guide"
-      ],
-      "excluded_source_files_retained_inactive_for_reversibility": true,
-      "native_generated_bytes_preserved": [
-        "horizon-cover-side-v2.png",
-        "cover-orange-swash-v2.png"
-      ]
+      "canonical_required_items": 411,
+      "marked_lexical_occurrences": 483
     },
     "study_words": {
-      "required_within_topic_items": 404,
+      "required_within_topic_items": 411,
       "canonical_topics": 38,
       "lesson_specific_references": 43,
-      "marked_entry_occurrences": 476,
+      "marked_entry_occurrences": 483,
       "ordinary_reference_pt_minimum": 10,
       "body_label_pt": 10.275,
-      "report": "Sources/Cover-correction-20261102/header-and-font-checks.json"
+      "report": "Sources/8A-twelve-animals-20261102/header-and-font-checks.json"
     },
     "qr": [
       {
@@ -993,7 +494,7 @@
         ]
       }
     ],
-    "evidence_directory": "Sources/Cover-correction-20261102",
+    "evidence_directory": "Sources/8A-twelve-animals-20261102",
     "current_visual_identity_checks": {
       "coverage_spreads": 36,
       "functional_tools": 35,
@@ -1138,11 +639,32 @@
         "file_report": "Sources/Book-completion-20261102/live-file-verification.json",
         "visual_report": "Sources/Book-completion-20261102/live-visual-review.json",
         "failures": []
+      },
+      "cover_correction": {
+        "completed": true,
+        "content_commit": "ff6cfb61f45e674077bad5e619cf03a621c0ec2c",
+        "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=covercorrect-ff6cfb61f45e#front-cover",
+        "resource_entry": "https://exams.bebrighton.net/Horizons/A1/",
+        "checks_passed": 31,
+        "physical_pages": 159,
+        "unique_navigation_choices": 106,
+        "preserved_lesson_controls": 90,
+        "native_cover_fonts_loaded": true,
+        "removed_extras_absent_from_active_book": true,
+        "real_contents_and_paired_lesson_routes": true,
+        "actual_play_pause_and_print_hiding": true,
+        "all_changed_hosted_files_match": 53,
+        "text_line_endings_normalized": true,
+        "PDF_media_byte_exact": true,
+        "viewer_report": "Sources/Cover-correction-20261102/live-viewer-verification.json",
+        "file_report": "Sources/Cover-correction-20261102/live-file-verification.json",
+        "visual_report": "Sources/Cover-correction-20261102/live-visual-review.json",
+        "failures": []
       }
     },
     "local_viewer": {
-      "checks_passed": 31,
-      "report": "Sources/Cover-correction-20261102/local-viewer-verification.json",
+      "checks_passed": 17,
+      "report": "Sources/8A-twelve-animals-20261102/local-viewer-verification.json",
       "failures": []
     },
     "grammar_clarity": {
@@ -1154,30 +676,13 @@
       "explanatory_paragraphs_checked": 169,
       "native_tables_total": 101,
       "checker": "../Base/build/check-grammar-clarity.py",
-      "report": "Sources/Cover-correction-20261102/grammar-clarity.json",
+      "report": "Sources/8A-twelve-animals-20261102/grammar-clarity.json",
       "limitations": "Pattern checks supplement complete editorial review. Table counts alone do not establish educational or visual quality.",
       "scope": "Core, practice, opening and annex masters; native charts retain explicit structure."
     },
     "live_viewer": {
-      "completed": true,
-      "content_commit": "ff6cfb61f45e674077bad5e619cf03a621c0ec2c",
-      "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=covercorrect-ff6cfb61f45e#front-cover",
-      "resource_entry": "https://exams.bebrighton.net/Horizons/A1/",
-      "checks_passed": 31,
-      "physical_pages": 159,
-      "unique_navigation_choices": 106,
-      "preserved_lesson_controls": 90,
-      "native_cover_fonts_loaded": true,
-      "removed_extras_absent_from_active_book": true,
-      "real_contents_and_paired_lesson_routes": true,
-      "actual_play_pause_and_print_hiding": true,
-      "all_changed_hosted_files_match": 53,
-      "text_line_endings_normalized": true,
-      "PDF_media_byte_exact": true,
-      "viewer_report": "Sources/Cover-correction-20261102/live-viewer-verification.json",
-      "file_report": "Sources/Cover-correction-20261102/live-file-verification.json",
-      "visual_report": "Sources/Cover-correction-20261102/live-visual-review.json",
-      "failures": []
+      "completed": false,
+      "status": "Publication pending"
     },
     "book_completion": {
       "minimal_matter_only": true,
@@ -1190,6 +695,22 @@
       "pdf_metadata_and_bookmarks": "Sources/Cover-correction-20261102/finalization.json",
       "font_and_QR_evidence": "Sources/Cover-correction-20261102/PDF-fonts-and-QR.json",
       "inactive_extras_kept_reversible": true
+    },
+    "audio8A": {
+      "regenerated": "8.3",
+      "voice": "Jessica",
+      "voice_id": "cgSgspJ2msm6clMCkdW9",
+      "duration_seconds": 28.19,
+      "exact_ASR_match": true,
+      "events": [],
+      "subjective_listening_review": false,
+      "record": "Sources/8A-twelve-animals-20261102/8.3-record.json",
+      "independent_transcript": "Sources/8A-twelve-animals-20261102/8.3-transcript.json",
+      "unchanged_tracks": [
+        "8.1",
+        "8.2",
+        "8.4"
+      ]
     }
   },
   "new_objects": "Images/Editorial-objects/manifest.json",
@@ -1342,9 +863,9 @@
         "index.html"
       ],
       "fingerprint": {
-        "files": 1102,
-        "bytes": 710419195,
-        "sha256": "cb29a83f542b6ebd0abb1bef743575acfc5927b9c3b92e6252f0673d69ff6815"
+        "files": 1123,
+        "bytes": 721267928,
+        "sha256": "26ee91269de71ba4aa18b1f75801d465551b005046dd9ffcac5d1d8c5274aa28"
       },
       "normalize_text_line_endings": true
     },
@@ -1366,8 +887,8 @@
       ],
       "fingerprint": {
         "files": 1,
-        "bytes": 50899065,
-        "sha256": "7508a9d718e1b19484c872bba93e93d8ca28c6d830976f3475e11c2ab87179d3"
+        "bytes": 51505387,
+        "sha256": "6e858a1f808ce83528ed7d39c767083b6b2fc1fd7f7c07cc3b44e952b494e52e"
       },
       "normalize_text_line_endings": true
     },
@@ -1392,8 +913,8 @@
       ],
       "fingerprint": {
         "files": 16,
-        "bytes": 199446,
-        "sha256": "56c12520b717f6d70061ffc9bf7868cc8bcb9eb3628da02d6d71ce2a68add5f2"
+        "bytes": 198324,
+        "sha256": "fa6e6ef884b4b00fb9472961cfa0bc2f43407fad628f85bfb9f116235d827955"
       },
       "normalize_text_line_endings": true
     }
@@ -1404,7 +925,7 @@
     "priority": "Warm adult playfulness, saturated local colour, tactile concept metaphors and protected letter/number graphics; functional consistency does not mean visual uniformity.",
     "regression_baseline": "8069492116058e45846c79601c66ebd8a3207abb",
     "protected_register": "Sources/Visual-personality.json",
-    "verification": "All12current nonteaching PDF pages pass root/independent visual reviews. Existing147teaching texts/source/geometry preserved:108pixel-identical,39with tiny isolated glyph alias variation quantified in PDF evidence. Protected1A colour/letter objects pass.",
+    "verification": "Latest scope: four changed pages inspected from independently rendered saved PDF plus four neighboring pages in contact proof. Twelve distinct borderless animals, original traveler/itinerary writing space, complete source photograph and readable trip chart pass. All155other pages are pixel-identical to the reviewed baseline; the protected1A and cover identity remain intact.",
     "functional_tool_counts": {
       "grammar": 25,
       "pronunciation": 1,
@@ -1447,8 +968,8 @@
       "lesson_section_headers": 74,
       "vocabulary_topics": 43,
       "canonical_topics": 38,
-      "required_within_topic_items": 404,
-      "marked_lexical_entry_occurrences": 476
+      "required_within_topic_items": 411,
+      "marked_lexical_entry_occurrences": 483
     },
     "unique_vocabulary_resources": true,
     "games_created_in_blooket": false,
@@ -1736,6 +1257,7 @@
     "vocabulary_adjacency": "Keep each lesson word bank beside its matching practice; short sets can share one page.",
     "practice_headers": "Retain main lesson headers and codes. Two consecutive short lesson sections may share a page if they fit comfortably; preserve readability and writing space.",
     "grammar_scope": "Applies to the main lessons, reviews, grammar banks and grammatical form references in vocabulary/practical banks. Preserve actual reading/listening texts, activity prompts, ordinary lexical definitions and genuine spatial/timeline diagrams.",
-    "book_completion": "Keep only minimal matter: covers, title/imprint, contents, two notes pages and current end credits. Guides, Useful English, Sounds/past verbs, Progress and all Finders excluded unless explicitly requested. Preserve original cover feature wording and HORIZONS typography; old mountain cyclist composition regenerated in side profile with modest clothing."
+    "book_completion": "Keep only minimal matter: covers, title/imprint, contents, two notes pages and current end credits. Guides, Useful English, Sounds/past verbs, Progress and all Finders excluded unless explicitly requested. Preserve original cover feature wording and HORIZONS typography; old mountain cyclist composition regenerated in side profile with modest clothing.",
+    "animals8A": "Use12 animals as a broader A1 foundation, preserving the five existing wildlife specimens and adding common pets/farm animals. Provide whole transparent cutouts and keep audio, keys and study inventory aligned."
   }
 }
