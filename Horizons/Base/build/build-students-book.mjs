@@ -410,6 +410,7 @@ body {
 `;
 
 const editionVersion = createHash("sha256").update(readText(path.join(repoRoot, "Horizons", "Base", "design-system", "editorial-edition.css"))).digest("hex").slice(0, 12);
+const navigationVersion = createHash("sha256").update(readText(path.join(repoRoot, "Horizons", "Base", "viewer", "book-navigation.js"))).digest("hex").slice(0, 12);
 const output = `<!doctype html>
 <html lang="en-US">
 <head>
@@ -431,7 +432,7 @@ ${viewerCss}
   <link rel="stylesheet" href="../Base/design-system/editorial-edition.css?v=${editionVersion}">
   <link rel="stylesheet" href="../Base/viewer/book-navigation.css">
   <script src="../Base/viewer/audio-player.js" data-audio-base="./Audios/" defer></script>
-  <script src="../Base/viewer/book-navigation.js" defer></script>
+  <script src="../Base/viewer/book-navigation.js?v=${navigationVersion}" defer></script>
 </head>
 <body class="hz-book">
   <main id="hz-book">
