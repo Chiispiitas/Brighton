@@ -1344,5 +1344,14 @@
       "generator": "built-in image_gen",
       "manifest": "Practice/Images/manifest.json"
     }
-  ]
+  ],
+  "book_completion_artwork": {
+    "manifest": "Images/Book-completion/manifest.json",
+    "printed_credits_page": 169,
+    "generated_assets": [
+      "horizon-cover.png",
+      "study-kit.png"
+    ],
+    "author_supplied_brand": "wingfield-logo.png"
+  }
 }

@@ -140,6 +140,17 @@ try {
     });
   });
 
+  // Downloaded PDFs must not send learners to the renderer's local disk.
+  // HTML masters retain relative resources for offline authoring.
+  await page.evaluate(() => {
+    for (const anchor of document.querySelectorAll('a[href]')) {
+      const href = anchor.getAttribute('href');
+      if (/\.(?:mp3|pdf)(?:[?#]|$)/i.test(href) && !/^(?:https?:|#)/i.test(href)) {
+        anchor.href = new URL(href, 'https://exams.bebrighton.net/Horizons/A1/').href;
+      }
+    }
+  });
+
   console.log("Windows PDF typography snapshot:");
   for (const row of typography) {
     console.log(`${row.selector}: ${row.family}; weight=${row.weight}; size=${row.size}; style=${row.style}; line-height=${row.lineHeight}`);

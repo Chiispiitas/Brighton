@@ -1,0 +1,77 @@
+{
+  "pages": [
+    {
+      "file": "Frontmatter/Title.html",
+      "page": "title-page",
+      "purpose": "Interior title and truthful imprint",
+      "source": "old-book-reference-audit.json:front_matter_evidence"
+    },
+    {
+      "file": "Frontmatter/Guide.html",
+      "pages": [
+        3,
+        4
+      ],
+      "purpose": "Lesson-role orientation, functional feature guide and actual digital access"
+    },
+    {
+      "file": "Frontmatter/Back-cover.html",
+      "page": "back-cover",
+      "purpose": "Series identity, actual course components and digital access"
+    }
+  ],
+  "stylesheet": "Frontmatter/frontmatter-guide.css",
+  "css_scope": "fmg-* classes only; no shared or lesson CSS edits",
+  "facts": [
+    "A1 Beginner; Student’s Book; Series by David Santana",
+    "Author David A. Santana M.",
+    "Wingfield publication name of David Santana",
+    "Brighton English School; Manta, Manabí, Ecuador",
+    "Original2025material revised for2026edition",
+    "Eight units, four paired reviews",
+    "Online viewer and audio already exist"
+  ],
+  "not_claimed": [
+    "ISBN",
+    "Formal accreditation",
+    "App-store app",
+    "Access code",
+    "Live Blooket games",
+    "Physical printing already completed",
+    "All photographs or source material owned by the author"
+  ],
+  "links": {
+    "canonical_viewer": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html",
+    "lesson": "../Lessons/1A.html",
+    "pdf": "../Student%27s%20Book.pdf"
+  },
+  "assets": [
+    "Images/Book-completion/wingfield-logo.png",
+    "Images/Book-completion/study-kit.png",
+    "Images/Book-completion/book-qr.png"
+  ],
+  "display_type_exceptions": {
+    "title_wordmark_pt": 52,
+    "back_wordmark_pt": 43,
+    "title_level_pt": 31,
+    "back_level_pt": 24,
+    "back_counts_pt": 31,
+    "guide_lesson_letters_pt": 17,
+    "reason": "Book identity and visual navigation objects; ordinary explanatory copy stays10pt."
+  },
+  "counter_protection": "Audio and New Words teaching samples use fmg-* rather than active hz-audio-badge/hz-new-words classes. No actual audio controls or new lesson exercises added.",
+  "future_game_copy": "Practice pages have space for class-game QR codes. Ask your teacher about games.",
+  "status": "PASS: four standalone pages rendered and inspected at full-page size with all assets decoded and no text/image bounds faults.",
+  "standalone_review": {
+    "printed_or_page_ids": [
+      "title-page",
+      3,
+      4,
+      "back-cover"
+    ],
+    "reviewer": "old_book_reference author",
+    "independent_review": false,
+    "proof": "frontmatter-proof/standalone-layout.json",
+    "judgment": "Title has strong Horizons identity and clear compact imprint. Guide3 separates lesson jobs and familiar functional labels. Guide4 QR, listening steps and imagegen study cutout are readable and well separated. Back cover has clear hierarchy, course facts, complete QR and branding. No fake app, ISBN or game availability claim."
+  }
+}

@@ -64,4 +64,6 @@ An overhaul must change the learner experience and the page composition, not mer
 
 ## Acceptance
 
+Before releasing a complete Student’s Book, apply BOOK-COMPLETION.md: source-derived opening matter, truthful imprint and digital access, course-aligned references, working finders, notes and end credits. Registered unnumbered covers/title pages are distinct from the consecutive teaching folios. A complete learner book does not imply an invented app, ISBN, exam accreditation or separately unprovided workbook.
+
 Check the actual spread, its neighbours and the whole-book rhythm. Review VISUAL-SPIRIT.md, the protected-element register and the previous edition before accepting a visual cleanup. Inspect the saved PDF independently, not only a browser screenshot. Verify learner reading order, face/action crops, type, contrast, handwriting space, controlled keys, source facts, real audio mappings and live playback. Count evidence accurately. Preserve a reversible baseline and new/versioned assets. Technical fit is necessary; editorial authority also requires an honest, recorded judgment of teaching purpose, warmth and visual quality. Do not confuse inventory, automated checks or previous approval with proof of a current revision.

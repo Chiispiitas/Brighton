@@ -11,6 +11,12 @@ def scan(book):
  path=book/'Practice/manifest.json'
  manifest=json.loads(path.read_text(encoding='utf-8'))if path.exists()else{'masters':[]}
  files=sorted((book/'Lessons').glob('[1-9]*.html'))+[book/m['file']for m in manifest['masters']]
+ for folder in ['Frontmatter','Annexes']:
+  extra=book/folder/'manifest.json'
+  if extra.exists():
+   data=json.loads(extra.read_text(encoding='utf-8'))
+   files.extend(book/m['file']for m in data.get('masters',[])+data.get('closing_masters',[]))
+ files=list(dict.fromkeys(files))
  failures=[];inspected=0;charts=0;coverage=[]
  for file in files:
   doc=BeautifulSoup(file.read_text(encoding='utf-8'),'html.parser');coverage.append(file.relative_to(book).as_posix())

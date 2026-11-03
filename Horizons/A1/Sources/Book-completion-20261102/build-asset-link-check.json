@@ -1,0 +1,15 @@
+{
+  "fixture_audio": "./Audios/Track one.mp3?download=1#start",
+  "fixture_pdf": "./Student's Book.pdf#page=5",
+  "query_and_fragment_retained": true,
+  "single_quoted_encoded_apostrophe_safe": true,
+  "actual_non_html_links_checked": [
+    {
+      "source": "Horizons\\A1\\Frontmatter\\Guide.html",
+      "href": "../Student%27s%20Book.pdf",
+      "exists": true
+    }
+  ],
+  "real_book_built": false,
+  "failures": []
+}

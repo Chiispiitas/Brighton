@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "date": "2026-11-02",
+  "policy": "../../Base/design-system/BOOK-COMPLETION.md",
+  "features": [
+    {
+      "section": "Cover",
+      "visual_idea_and_protected_elements": "Fresh coastal-horizon scene; original saturated magenta/orange identity; whole cyclist and bicycle; author mark."
+    },
+    {
+      "section": "Title and imprint",
+      "visual_idea_and_protected_elements": "Verified David Santana/Wingfield identity and current edition; no invented ISBN, printer or collaborators."
+    },
+    {
+      "section": "Contents",
+      "visual_idea_and_protected_elements": "Source-derived8unit/32lesson map,4reviews and exact reference destinations; readable unit colour grouping."
+    },
+    {
+      "section": "How to use and digital guide",
+      "visual_idea_and_protected_elements": "Clear lesson jobs and functional feature roles; actual audio sample, real decoded QR and usable resource entry."
+    },
+    {
+      "section": "Useful English",
+      "visual_idea_and_protected_elements": "Twelve complete exchanges in four functional groups; one purposeful native-alpha study cutout."
+    },
+    {
+      "section": "Sounds and past verbs",
+      "visual_idea_and_protected_elements": "Orange phonetic/stress groups and blue complete verb charts; print-only reference tied to existing recordings."
+    },
+    {
+      "section": "My progress",
+      "visual_idea_and_protected_elements": "Sixteen meaningful course outcomes and eight personal examples, with clear self-assessment choices and next steps."
+    },
+    {
+      "section": "Grammar/word/audio finders",
+      "visual_idea_and_protected_elements": "29topic routes,428normalizedlookup entries covering404keys and83actualaudio files; no fake tracks."
+    },
+    {
+      "section": "Notes",
+      "visual_idea_and_protected_elements": "Two clear pages with28rows each at7.5mm."
+    },
+    {
+      "section": "Credits and back cover",
+      "visual_idea_and_protected_elements": "All existing rights entries retained; new-art provenance at the end; canonical radio mark and real digital access."
+    }
+  ],
+  "ordinary_models_pt": 10,
+  "intentional_display_roles": [
+    "Cover wordmark and level branding",
+    "Title/back-cover branding",
+    "Alphabet letters, phonetic targets and syllable stress",
+    "Progress unit circles"
+  ],
+  "native_generated_assets": "../Images/Book-completion/manifest.json"
+}

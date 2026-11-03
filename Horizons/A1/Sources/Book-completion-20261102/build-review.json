@@ -1,0 +1,96 @@
+{
+  "scope": "Read-only build and pagination integration review; no book source edits or export.",
+  "baseline": "b12ec30 (parent supplied; verify HEAD before authoring)",
+  "current": {
+    "core_printed": [
+      5,
+      76
+    ],
+    "practice_printed": [
+      77,
+      151
+    ],
+    "credits_printed": [
+      152,
+      155
+    ],
+    "physical_pages": 151,
+    "core_and_practice_masters": 56,
+    "main_routes": 75,
+    "practice_topics": 43,
+    "practice_activities": 147,
+    "viewer_choices": 100
+  },
+  "recommended_order": [
+    "Unnumbered front cover",
+    "Front matter printed1–4: title/imprint1; contents2–3; how-to-use and real online/audio access4",
+    "Existing core printed5–76, unchanged",
+    "Existing practice printed77–151, unchanged",
+    "New appendices printed152 onward",
+    "Existing four image-credit pages renumbered after appendices",
+    "Optional unnumbered back cover"
+  ],
+  "page_identity": {
+    "recommended": "Retain data-page integers on every numbered page. Covers use unique descriptive data-page and explicit id plus data-page-label. Map PDF positions from actual article order rather than arithmetic. New page-number check filters numeric values and checks exactly1..last printed number; covers separately validated as unnumbered first/last.",
+    "alternative": "If four front matter pages cannot fit clearly, use Roman-labelled extra introductory pages with unique IDs, but preserve existing printed5–151; do not silently repaginate the entire course."
+  },
+  "required_source_changes": [
+    {
+      "file": "Horizons/Base/build/build-students-book.mjs",
+      "change": "Read ordered frontmatter and appendix/closing master lists from one book-owned manifest. Compile front files before lessons, appendix files after practice and before Backmatter; keep current default when manifest absent. Reuse collectHeadStyles/rewriteBodyAssetUrls. Limit new styles to section classes so current147 core/practice pages stay pixel-identical."
+    },
+    {
+      "file": "Horizons/Base/build/build-students-book.mjs",
+      "change": "Critical: current automatic Backmatter repagination changes data-page and footer only, leaving id=\"page-152\" unchanged. Update both page ID and footer when credits move; assert all IDs unique."
+    },
+    {
+      "file": "Horizons/Base/build/build-students-book.mjs",
+      "change": "Extend href rewriting from current Lessons/Practice-only cases to every registered front/appendix master with explicit target anchors. Keep standalone relative links; assembled links must point into the book. New image src/poster/srcset and CSS url rebasing already supported."
+    },
+    {
+      "file": "Horizons/Base/viewer/book-navigation.js",
+      "change": "Support generic section starts through data-book-start=true and data-book-title; independent IDs per section. Display data-page-label when present, otherwise p. +data-page. Cover starts correctly; Previous/Next still follow actual DOM order; existing59 lesson-bank choices preserved."
+    },
+    {
+      "file": "Horizons/Base/build/check-practice-banks.py",
+      "change": "Replace two full-book range(5,...) assertions with shared numbered-page validation accepting front1–4 and unnumbered cover pages while retaining strict practice77–151 continuity and all43 references/75 main routes/147 practice tasks. Still reject duplicate IDs and unresolved hrefs."
+    },
+    {
+      "file": ".github/workflows/build-horizons-a1-student-book.yml",
+      "change": "Add frontmatter/appendices/closing folder and new section-manifest trigger paths. Keep native Windows render and grammar/visual checks."
+    },
+    {
+      "file": "Horizons/A1/book-audit.json",
+      "change": "Add new source folders and manifest to source snapshots; update page inventory, final PDF hash, independent review and live evidence. Archive preceding audit. Preserve current exercise/media counts."
+    },
+    {
+      "file": "Horizons/A1/BOOK-AUDIT.md",
+      "change": "Replace future front matter/index/annex scope with actual delivered sections; workbook remains separate unless explicitly creating a workbook."
+    }
+  ],
+  "no_change_required": [
+    "Horizons/Base/build/build-students-book-pdf.mjs already renders arbitrary A4 .hz-page count; leave native font/scale contract intact.",
+    "Horizons/Base/build/check-visual-spirit.py covers exactly36 main lesson masters; keep current register count; declare new editorial section identities separately.",
+    "All existing lesson/practice source numbers and reference page text can remain unchanged.",
+    "Current practice manifest and image-credit provenance can remain structurally intact; only final credit page identities/footers move."
+  ],
+  "validation": [
+    "Build deterministic page map of pageID→physicalPDFindex→printedlabel and reuse it for PDF links, contents, screenshots and comparisons.",
+    "All numeric printed pages1..last are consecutive; covers carry no visible numbered footer; DOM article count equals saved PDF count.",
+    "All56 existing masters and147 core/practice pages still have standalone/assembled parity; compare their printed5–151 raster samples against baseline with explicit page map.",
+    "Verify all400 teaching activities, all476 marked words, existing images/scripts/audio and all16 Blooket reserves preserved.",
+    "Keep 75 source routes and43 adjacent reference/task pairs,74 matching headers and3 paired grammar pages; new navigation choices counted separately from existing100.",
+    "Check every new contents/scope-sequence printed page and actual click/PDF target, not merely presence of links.",
+    "New digital QR must resolve to actual public viewer/audio capabilities; do not imply an app, access-code platform, live Blooket games or future workbook exists.",
+    "Inspect each new page and first/last neighbouring original pages at print size; independent second editor reviews new PDF matter. Verify content generation does not add unused icons or blanket decorative backgrounds.",
+    "Verify final actual internal PDF destinations using article DOM-order indexes; old scratch verify-pdf.py n-5 offsets and151 constants must not be reused unchanged.",
+    "Live viewer checks need dynamic page/option totals, covers/intro/appendix starts, physical Previous/Next acrossboundaries and preserved audio/print hiding; source hashes and PDF bytes must match published copy."
+  ],
+  "evidence_from_code": {
+    "builder_order": "lessons natural-sort; practice manifest; all Backmatter .html natural-sort",
+    "navigation_start_cases": "hz-lesson-header; practice lp-section starts; first hz-credits-page only",
+    "current_compiled_page_invariant": "nums==list(range(5,nums[-1]+1)) in both current and legacy practice checker branches",
+    "source_style_contract": "a4-shell.css: one semantic .hz-page=one print page; scoped section styles can reuse A4 shell without modifying existing type",
+    "automatic_credit_renumbering": "max compiled integer data-page +1; replace data-page and hz-page-number only"
+  }
+}

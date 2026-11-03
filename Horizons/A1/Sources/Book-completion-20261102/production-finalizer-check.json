@@ -1,0 +1,46 @@
+{
+  "status": "PASS",
+  "script": "Horizons/Base/build/finalize-students-book.py",
+  "metadata_source": "Horizons/A1/Frontmatter/manifest.json",
+  "production_pdf_not_modified": true,
+  "production_pdf_sha256": "fbfa3e433e73aac740aa0f3bab7a60fb233031f008dd6d8fe3108d186cd868c3",
+  "optimized_input_not_modified": true,
+  "optimized_input_sha256": "e3a587c16f08ddc9c741bdd7fb71ae6301ac8597337b0c7530c8770d7853b23e",
+  "test_output": "production-finalized-proof.pdf",
+  "physical_pages": 172,
+  "bookmarks": 126,
+  "outline_matches_reviewed_book_exactly": true,
+  "author": "David A. Santana M.",
+  "language": "en-US",
+  "local_links_repaired": 86,
+  "remaining_local_file_links": 0,
+  "all_link_annotations_preserved": 1378,
+  "pixel_comparisons": [
+    {
+      "physical_page": 1,
+      "width": 774,
+      "height": 1095,
+      "pixel_identical": true
+    },
+    {
+      "physical_page": 91,
+      "width": 774,
+      "height": 1095,
+      "pixel_identical": true
+    },
+    {
+      "physical_page": 172,
+      "width": 774,
+      "height": 1095,
+      "pixel_identical": true
+    }
+  ],
+  "repeat_finalization": {
+    "bookmarks_unchanged": true,
+    "further_link_repairs": 0
+  },
+  "future_level_without_metadata": "Graceful skip; no output created",
+  "mismatched_page_count": "Rejected; no output created",
+  "workflow": "Finalizer runs after Ghostscript optimization and before validation; Python3.12 and PyMuPDF/beautifulsoup4 installed; source script included in push triggers",
+  "failures": []
+}

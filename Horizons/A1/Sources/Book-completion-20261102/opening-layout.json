@@ -1,0 +1,101 @@
+[
+  {
+    "file": "Cover.html",
+    "checks": [
+      {
+        "page": "front-cover",
+        "outside": [],
+        "contentOverflow": 0,
+        "images": [
+          {
+            "src": "../Images/Book-completion/horizon-cover.png",
+            "decoded": true
+          },
+          {
+            "src": "../Images/Book-completion/wingfield-logo.png",
+            "decoded": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "Contents.html",
+    "checks": [
+      {
+        "page": "1",
+        "outside": [],
+        "contentOverflow": 0,
+        "images": []
+      },
+      {
+        "page": "2",
+        "outside": [],
+        "contentOverflow": 0,
+        "images": []
+      }
+    ]
+  },
+  {
+    "file": "Title.html",
+    "checks": [
+      {
+        "page": "title-page",
+        "outside": [],
+        "contentOverflow": 0,
+        "images": [
+          {
+            "src": "../Images/Book-completion/wingfield-logo.png",
+            "decoded": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "Guide.html",
+    "checks": [
+      {
+        "page": "3",
+        "outside": [],
+        "contentOverflow": 0,
+        "images": []
+      },
+      {
+        "page": "4",
+        "outside": [],
+        "contentOverflow": 0,
+        "images": [
+          {
+            "src": "../Images/Book-completion/book-qr.png",
+            "decoded": true
+          },
+          {
+            "src": "../Images/Book-completion/study-kit.png",
+            "decoded": true
+          }
+        ]
+      }
+    ]
+  },
+  {
+    "file": "Back-cover.html",
+    "checks": [
+      {
+        "page": "back-cover",
+        "outside": [],
+        "contentOverflow": 0,
+        "images": [
+          {
+            "src": "../Images/Book-completion/book-qr.png",
+            "decoded": true
+          },
+          {
+            "src": "../Images/Book-completion/wingfield-logo.png",
+            "decoded": true
+          }
+        ]
+      }
+    ]
+  }
+]

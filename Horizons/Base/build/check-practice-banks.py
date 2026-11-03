@@ -9,6 +9,28 @@ from urllib.parse import unquote
 import json,re,sys
 from bs4 import BeautifulSoup
 
+def check_compiled_pages(book,compiled):
+ pages=compiled.select('.hz-page')
+ values=[p.get('data-page','')for p in pages]
+ numeric=[int(v)for v in values if v.isdecimal()]
+ first=1 if(book/'Frontmatter/manifest.json').is_file()else 5
+ assert numeric and numeric==list(range(first,numeric[-1]+1)),'Assembled numbered pages are not consecutive'
+ assert len(values)==len(set(values)),'Duplicate assembled page identities'
+ allowed={'front-cover','title-page','back-cover'}
+ for page,value in zip(pages,values):
+  if value.isdecimal():
+   assert page.get('id')==f'page-{value}',f'Wrong assembled numbered page target: {value}'
+   footer=page.select_one('.hz-page-number')
+   assert footer and footer.get_text(strip=True)==value,f'Wrong assembled printed footer: {value}'
+  else:
+   assert first==1 and value in allowed,f'Unknown unnumbered page: {value}'
+   assert page.get('id')==value and page.get('data-page-label','').strip(),f'Unnumbered page needs its own target and viewer label: {value}'
+   assert not any(x.get_text(strip=True)for x in page.select('.hz-page-number')),f'Unnumbered page has a printed number: {value}'
+ if first==1:
+  assert values[0]=='front-cover','The front cover must be first'
+  assert values[-1]=='back-cover','The back cover must be last'
+  assert set(v for v in values if not v.isdecimal())==allowed,'Front cover, title and back cover need distinct unnumbered identities'
+
 def lesson_banks(book,manifest):
  required={t['topic']:t for t in json.loads((book/'Practice/Vocabulary/study-vocabulary.json').read_text(encoding='utf-8'))['topics']}
  topics={};numbers=[];slots=[];lessons=set();refs=0;studies=0;images=0;tasks=0;section_count=0;paired_pages=0
@@ -76,7 +98,7 @@ def lesson_banks(book,manifest):
  assert set(topics)==set(manifest['destinations'])
  for key,r in manifest['destinations'].items():assert topics[key][:2]==(r['file'],r['page'])
  compiled=BeautifulSoup((book/"Student's Book.html").read_text(encoding='utf-8'),'html.parser');ids=[n['id']for n in compiled.select('[id]')];assert len(ids)==len(set(ids))
- nums=[int(n['data-page'])for n in compiled.select('.hz-page')];assert nums==list(range(5,nums[-1]+1))
+ check_compiled_pages(book,compiled)
  for a in compiled.select('a[href^="#"]'):assert unquote(a['href'][1:])in ids,a['href']
  print(json.dumps({'practice_pages':len(numbers),'lesson_sections':section_count,'paired_pages':paired_pages,'lesson_specific_grammar':27,'lesson_specific_vocabulary':32,'reference_topics':studies,'lesson_references':refs,'activities':tasks,'raster_uses':images,'structural_checks':'passed'}))
  return 0
@@ -162,7 +184,7 @@ def main():
  compiled=book/"Student's Book.html"
  if compiled.exists():
   doc=BeautifulSoup(compiled.read_text(encoding='utf-8'),'html.parser');ids=[n['id']for n in doc.select('[id]')];duplicates=sorted(k for k in set(ids)if ids.count(k)>1);assert not duplicates,f'Duplicate assembled targets: {duplicates}'
-  nums=[int(x['data-page'])for x in doc.select('.hz-page')];assert nums==list(range(5,nums[-1]+1)), 'Assembled page order is not consecutive'
+  check_compiled_pages(book,doc)
   for a in doc.select('a[href^="#"]'):
    assert unquote(a['href'][1:])in ids,f'Missing assembled anchor {a["href"]}'
  slots=[]

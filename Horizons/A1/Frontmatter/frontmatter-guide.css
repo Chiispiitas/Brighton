@@ -1,0 +1,116 @@
+/* Opening pages use the course's live typography and functional colours.
+   All selectors belong to these title/guide/back-cover pages only. */
+.hz-page.fmg-page {--hz-unit:#b7154b;--hz-unit-dark:#8f123f;}
+.fmg-page .hz-page__content {font-size:10pt;line-height:1.45;}
+.fmg-page h1,.fmg-page h2,.fmg-page h3,.fmg-page p,.fmg-page figure {margin:0;}
+.fmg-page h1 {font-size:25pt;line-height:1.08;letter-spacing:-.025em;font-weight:760;}
+.fmg-page h2 {font-size:13pt;line-height:1.2;font-weight:740;}
+.fmg-page h3 {font-size:10pt;line-height:1.25;font-weight:740;}
+.fmg-page a {color:inherit;text-underline-offset:.6mm;text-decoration-thickness:.2mm;}
+.fmg-page .fmg-eyebrow {color:#8f123f;font-size:8.5pt;font-weight:750;letter-spacing:.065em;margin-bottom:2.5mm;}
+.fmg-page .fmg-page-heading {padding-bottom:4mm;border-bottom:.45mm solid #b7154b;margin-bottom:5mm;}
+.fmg-page .fmg-page-heading>p:last-child {margin-top:3mm;}
+.fmg-title-page::before {display:none;}
+.fmg-title-page .fmg-title-content {display:flex;flex-direction:column;justify-content:space-between;padding-top:15mm;}
+.fmg-title-page .fmg-title-block>h1 {font-size:52pt;letter-spacing:-.055em;line-height:1;color:#b7154b;margin-top:4mm;}
+.fmg-title-page .fmg-book-name {font-size:26pt;line-height:1.15;margin-top:4mm;font-weight:650;}
+.fmg-title-page .fmg-level {display:flex;align-items:center;gap:4mm;margin-top:9mm;}
+.fmg-title-page .fmg-level strong {background:#b7154b;color:white;display:grid;place-items:center;width:21mm;height:21mm;font-size:31pt;line-height:1;font-weight:800;}
+.fmg-title-page .fmg-level span {font-size:16pt;font-weight:650;color:#2d454e;}
+.fmg-title-page .fmg-series {margin-top:8mm;font-size:12pt;}
+.fmg-title-page .fmg-series strong {font-weight:650;}
+.fmg-title-page .fmg-title-lines {display:flex;gap:1.5mm;margin-top:11mm;}
+.fmg-title-page .fmg-title-lines i {display:block;height:2mm;background:#b7154b;width:47mm;}
+.fmg-title-page .fmg-title-lines i:nth-child(2) {width:31mm;background:#d48a1d;}
+.fmg-title-page .fmg-title-lines i:nth-child(3) {width:19mm;background:#245b9a;}
+.fmg-title-page .fmg-imprint {border-top:.25mm solid #c9c7c1;padding-top:5mm;}
+.fmg-title-page .fmg-imprint-heading {display:flex;justify-content:space-between;align-items:end;gap:8mm;margin-bottom:6mm;}
+.fmg-title-page .fmg-wingfield {width:47mm;height:auto;display:block;}
+.fmg-title-page .fmg-imprint-heading>p {font-size:8.5pt;color:#424950;}
+.fmg-title-page .fmg-imprint-columns {display:grid;grid-template-columns:1fr 1fr;gap:9mm;}
+.fmg-title-page .fmg-imprint h2 {font-size:10pt;color:#8f123f;margin-bottom:1.5mm;}
+.fmg-title-page .fmg-imprint p {font-size:8.5pt;line-height:1.4;}
+.fmg-title-page .fmg-imprint p.fmg-imprint-gap {margin-top:3mm;}
+.fmg-title-page .fmg-imprint p.fmg-imprint-note {margin-top:3.5mm;color:#4b5054;}
+.fmg-page .fmg-lesson-map {margin-bottom:6mm;}
+.fmg-page .fmg-lesson-map>h2 {margin-bottom:3mm;}
+.fmg-page .fmg-lesson-row {display:grid;grid-template-columns:28mm minmax(0,1fr);gap:5mm;align-items:center;border-bottom:.2mm solid #d9d4ce;padding:3mm 0;}
+.fmg-page .fmg-lesson-row h3 {color:#8f123f;margin-bottom:1.2mm;}
+.fmg-page .fmg-lesson-codes {display:flex;gap:2mm;}
+.fmg-page .fmg-lesson-codes span {display:grid;place-items:center;width:12mm;height:12mm;background:#b7154b;color:white;font-size:17pt;font-weight:760;line-height:1;}
+.fmg-page .fmg-codes-reading span {background:#245b9a;}
+.fmg-page .fmg-codes-output span {background:#78458f;}
+.fmg-page .fmg-tools>h2 {margin-bottom:3mm;}
+.fmg-page .fmg-tool-grid {display:grid;grid-template-columns:1fr 1fr;gap:4mm 8mm;}
+.fmg-page .fmg-tool {min-height:27mm;padding-top:2.3mm;border-top:.7mm solid #b7154b;}
+.fmg-page .fmg-tool h3 {margin-bottom:2mm;}
+.fmg-page .fmg-tool p {font-size:10pt;line-height:1.4;}
+.fmg-page .fmg-tool-words {border-color:#247348;}
+.fmg-page .fmg-sample-badge {font-size:8.5pt;color:#1a5e38;background:#e8f5ec;padding:.9mm 2mm;font-weight:750;}
+.fmg-page .fmg-track-sample {display:inline-block;color:#fff;background:#b7154b;padding:.8mm 2mm;margin-right:2mm;font-size:8.5pt;font-weight:750;}
+.fmg-page .fmg-tool-grammar {border-color:#245b9a;}
+.fmg-page .fmg-tool-grammar h3 {color:#204f86;}
+.fmg-page .fmg-tool-practice {border-color:#247348;}
+.fmg-page .fmg-tool-practice h3 {color:#1a5e38;}
+.fmg-page .fmg-tool-extra {border-color:#b24e18;}
+.fmg-page .fmg-tool-extra h3 {color:#944014;}
+.fmg-page .fmg-tool-beyond {border-color:#78458f;}
+.fmg-page .fmg-tool-beyond h3 {color:#68367f;}
+.fmg-page .fmg-review-note {margin-top:5mm;border-left:1mm solid #d48a1d;padding:2mm 0 2mm 4mm;}
+.fmg-page .fmg-review-note strong {color:#8a4b11;font-size:10pt;}
+.fmg-page .fmg-review-note p {margin-top:1.3mm;}
+.fmg-page .fmg-digital-access {display:grid;grid-template-columns:41mm minmax(0,1fr);gap:7mm;align-items:start;padding:4mm 0 6mm;border-bottom:.3mm solid #b7154b;}
+.fmg-page .fmg-qr-wrap img {display:block;width:35mm;height:35mm;}
+.fmg-page .fmg-qr-wrap p {margin-top:2mm;text-align:center;width:35mm;font-size:8.5pt;}
+.fmg-page .fmg-visible-url {font-size:9pt;font-weight:650;overflow-wrap:anywhere;margin-top:2mm;}
+.fmg-page .fmg-digital-steps {list-style:none;counter-reset:fmg-digital;margin:4mm 0 0;padding:0;display:grid;gap:2.2mm;}
+.fmg-page .fmg-digital-steps li {display:grid;grid-template-columns:7mm 17mm minmax(0,1fr);gap:2mm;align-items:start;font-size:10pt;line-height:1.35;}
+.fmg-page .fmg-digital-steps li::before {counter-increment:fmg-digital;content:counter(fmg-digital);display:grid;place-items:center;width:5.5mm;height:5.5mm;background:#b7154b;color:white;border-radius:50%;font-size:9pt;font-weight:750;line-height:1;}
+.fmg-page .fmg-digital-steps li strong {color:#8f123f;padding-top:.5mm;}
+.fmg-page .fmg-digital-steps li span {padding-top:.5mm;}
+.fmg-page .fmg-listen-example {display:grid;grid-template-columns:20mm minmax(0,1fr);gap:2mm 5mm;align-items:start;padding:5mm 0;border-bottom:.2mm solid #d7d1ca;}
+.fmg-page .fmg-listen-number {display:grid;place-items:center;background:#b7154b;color:white;font-size:13pt;font-weight:750;min-height:11mm;}
+.fmg-page .fmg-listen-example h2 {font-size:11pt;margin-bottom:1.5mm;color:#8f123f;}
+.fmg-page .fmg-listen-example p {font-size:10pt;}
+.fmg-page .fmg-text-link {grid-column:2;font-size:9pt;font-weight:650;}
+.fmg-page .fmg-study-area {display:grid;grid-template-columns:1fr 75mm;gap:4mm;align-items:end;margin-top:6mm;}
+.fmg-page .fmg-study-copy>h2 {margin-bottom:3mm;}
+.fmg-page .fmg-study-tip+.fmg-study-tip {margin-top:3mm;}
+.fmg-page .fmg-study-tip h3 {color:#247348;margin-bottom:1mm;}
+.fmg-page .fmg-study-tip p {font-size:10pt;}
+.fmg-page .fmg-study-picture {margin:0;}
+.fmg-page .fmg-study-picture img {display:block;width:75mm;height:auto;object-fit:contain;}
+.fmg-page .fmg-digital-bottom {display:grid;grid-template-columns:1fr 1fr;gap:8mm;margin-top:6mm;padding-top:4mm;border-top:.3mm solid #b7154b;}
+.fmg-page .fmg-digital-bottom h2 {font-size:11pt;color:#8f123f;margin-bottom:2mm;}
+.fmg-page .fmg-digital-bottom p {font-size:10pt;}
+.hz-page.fmg-back-cover {background:#a71348;color:white;}
+.fmg-back-cover::before {display:none;}
+.fmg-back-cover .fmg-back-content {display:flex;flex-direction:column;}
+.fmg-back-cover .fmg-eyebrow {color:#fff;font-weight:600;letter-spacing:.07em;margin-top:4mm;}
+.fmg-back-cover h1 {font-size:43pt;letter-spacing:-.05em;color:#fff;margin-top:3mm;}
+.fmg-back-cover .fmg-back-level {display:flex;align-items:center;gap:4mm;margin-top:5mm;}
+.fmg-back-cover .fmg-back-level strong {background:white;color:#a71348;font-size:24pt;font-weight:800;padding:1.5mm 3mm;line-height:1.1;}
+.fmg-back-cover .fmg-back-level span {font-size:13pt;}
+.fmg-back-cover .fmg-back-intro {margin-top:10mm;max-width:169mm;}
+.fmg-back-cover .fmg-back-intro h2 {font-size:22pt;line-height:1.13;font-weight:740;letter-spacing:-.025em;max-width:152mm;}
+.fmg-back-cover .fmg-back-intro p {font-size:11pt;line-height:1.5;margin-top:4mm;max-width:160mm;}
+.fmg-back-cover .fmg-back-features {display:grid;gap:4mm;margin-top:8mm;}
+.fmg-back-cover .fmg-back-features>section {display:grid;grid-template-columns:21mm minmax(0,1fr);gap:5mm;align-items:center;padding-top:3mm;border-top:.2mm solid rgb(255 255 255 / 45%);}
+.fmg-back-cover .fmg-back-features b {font-size:31pt;line-height:1;color:#ffcf78;font-weight:800;}
+.fmg-back-cover .fmg-back-features h3 {font-size:13pt;line-height:1.2;margin-bottom:1mm;}
+.fmg-back-cover .fmg-back-features p {font-size:10pt;line-height:1.4;}
+.fmg-back-cover .fmg-back-practice>span {font-size:21pt;line-height:1.1;font-weight:750;color:#ffcf78;}
+.fmg-back-cover .fmg-back-radio {font-size:10pt;line-height:1.6;margin-top:5mm;}
+.fmg-back-cover .fmg-back-radio>span {font-size:9pt;font-weight:750;background:#252425;padding:1mm 2mm;letter-spacing:.05em;}
+.fmg-back-cover .fmg-back-radio>.fmg-show-mark {display:inline-flex;background:transparent;padding:0;}
+.fmg-show-mark>span {padding:1mm 2mm;line-height:1.4;background:#252425;color:#fff;}
+.fmg-show-mark>span+span {background:#c60052;}
+.fmg-back-cover .fmg-back-digital {display:grid;grid-template-columns:29mm minmax(0,1fr);gap:5mm;align-items:center;background:white;color:#322a2c;padding:4mm 5mm;margin-top:auto;}
+.fmg-back-cover .fmg-back-digital img {display:block;width:28mm;height:28mm;}
+.fmg-back-cover .fmg-back-digital h2 {font-size:13pt;color:#8f123f;margin-bottom:2mm;}
+.fmg-back-cover .fmg-back-digital p {font-size:10pt;line-height:1.4;}
+.fmg-back-cover .fmg-back-url {font-size:8.5pt!important;font-weight:650;overflow-wrap:anywhere;margin-top:2mm!important;}
+.fmg-back-cover .fmg-back-brand {display:flex;justify-content:space-between;align-items:end;gap:8mm;margin-top:6mm;}
+.fmg-back-cover .fmg-back-brand p {font-size:9pt;line-height:1.5;}
+.fmg-back-cover .fmg-back-brand img {width:45mm;height:auto;display:block;filter:invert(1);}
+@media print {.fmg-page a {text-decoration:none;}}

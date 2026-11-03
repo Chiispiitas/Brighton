@@ -10,4 +10,6 @@ Run the shared visual-spirit coverage and configured object checks, relevant lay
 
 The author has delegated editorial authority. These instructions do not add a new approval step for routine, reversible work within the authorized task.
 
+Before completing or releasing a Student’s Book, also read `Base/design-system/BOOK-COMPLETION.md`. Derive contents and finders from current sources, retain real digital destinations, and verify the final PDF’s metadata, bookmarks and public resource links as well as its pages.
+
 When authoring or revising practice banks, also read `Base/design-system/PRACTICE-BANKS.md`. Inspect all empty response fields in the saved PDF; visible-text overflow checks alone cannot prove that writing lines fit.

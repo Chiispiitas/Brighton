@@ -1,0 +1,340 @@
+{
+  "schema_version": 1,
+  "date": "2026-11-02",
+  "reviewer": "Independent second editor /root/completion_build_review; authored assembly/navigation code, not learner-facing pages or artwork",
+  "pdf_path": "../../Student's Book.pdf",
+  "pdf_sha256": "449ee8ebfab19b20f7693385e6637e4b636ae5ef0b216a4df8442b90d27cd6ad",
+  "physical_pages": 172,
+  "inspection_method": "Reopened immutable proof, rendered every requested page to PNG with MuPDF at120dpi, then viewed all25 full-page images at readable size. Consulted source and extracted PDF text for specific track and provenance questions. No source or PDF edits during review. Final follow-ups rendered and viewed four changed intermediate pages and two final progress pages at120dpi; independently recomputed complete pixel comparisons against both earlier proofs to retain unchanged review coverage.",
+  "physical_pages_inspected": [
+    1,
+    2,
+    3,
+    4,
+    5,
+    6,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    160,
+    161,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169,
+    170,
+    171,
+    172
+  ],
+  "printed_pages_inspected": [
+    1,
+    2,
+    3,
+    4,
+    152,
+    153,
+    154,
+    155,
+    156,
+    157,
+    158,
+    159,
+    160,
+    161,
+    162,
+    163,
+    164,
+    165,
+    166,
+    167,
+    168,
+    169
+  ],
+  "unnumbered_pages_inspected": [
+    "front-cover",
+    "title-page",
+    "back-cover"
+  ],
+  "page_judgments": [
+    {
+      "physical_page": 1,
+      "section": "Cover",
+      "decision": "PASS",
+      "judgment": "Saturated magenta/gold and strong title hierarchy feel like a coherent adult course book. Cyclist, helmet, handlebars, both wheels and feet are visible; the scene gives a genuine horizon rather than a generic portrait."
+    },
+    {
+      "physical_page": 2,
+      "section": "Title and imprint",
+      "decision": "PASS",
+      "judgment": "Clear title, level, author and school identity. Imprint is readable, avoids fabricated ISBN/platform claims and directs image/media provenance to the end."
+    },
+    {
+      "physical_page": 3,
+      "section": "Contents1",
+      "decision": "PASS",
+      "judgment": "All four units and both paired reviews fit in a clear ruled table; long title/vocabulary wraps remain readable and each page locator has a stable right edge."
+    },
+    {
+      "physical_page": 4,
+      "section": "Contents2",
+      "decision": "PASS",
+      "judgment": "Units5–8 and the reference-section directory remain readable. Complete row boundaries and generous title hierarchy keep a dense page navigable."
+    },
+    {
+      "physical_page": 5,
+      "section": "How to use Horizons",
+      "decision": "PASS",
+      "judgment": "A/C language, B reading/listening and D productive work are easy to distinguish. Six actual learning/navigation features explain the book without decorative clutter or invented resources."
+    },
+    {
+      "physical_page": 6,
+      "section": "Digital book",
+      "decision": "PASS",
+      "judgment": "Prominent QR and real course URL, short numbered instructions, actual track example and useful study guidance. Offline PDF wording correctly distinguishes online audio. Class-game copy describes reserved spaces rather than claiming live games."
+    },
+    {
+      "physical_page": 154,
+      "section": "Useful English152",
+      "decision": "PASS",
+      "judgment": "Four functional phrase groups show natural complete exchanges. Helpful clarification/turn-taking phrases and a full response line give the page a real transfer purpose. Study-kit cutout is complete and task-serving."
+    },
+    {
+      "physical_page": 155,
+      "section": "Sounds and spelling153",
+      "decision": "PASS",
+      "judgment": "American alphabet-name groups are accurate; stressed word parts are clear. Gets/goes/watches and the six-ed examples illustrate correct pronunciation groups. Table rules and model emphasis are readable with no clipped IPA glyphs."
+    },
+    {
+      "physical_page": 156,
+      "section": "Past verbs154",
+      "decision": "PASS",
+      "judgment": "Accurate irregular forms and complete examples; clear regular spelling models include walked/lived/studied/planned. Two-column past be models are aligned. Reference scope stays with course language rather than adding an unexplained participle column."
+    },
+    {
+      "physical_page": 157,
+      "section": "Progress155",
+      "decision": "PASS",
+      "judgment": "Units1–4 use meaningful communicative can-do goals, distinct response circles, room for a personal example and a next-step field. It checks usable learning rather than just completion."
+    },
+    {
+      "physical_page": 158,
+      "section": "Progress156",
+      "decision": "PASS",
+      "judgment": "Units5–8 goals map to shopping, directions, past narrative and travel/ticket communication. Repeated self-assessment structure is appropriate, with clear unit boundaries and visible writing fields."
+    },
+    {
+      "physical_page": 159,
+      "section": "Grammar finder157",
+      "decision": "PASS",
+      "judgment": "29 compact topic rows have readable labels and clear lesson/practice columns. Topic wording is indexing rather than compressed grammar exposition; line spacing is consistent and last row remains safely above footer."
+    },
+    {
+      "physical_page": 160,
+      "section": "Word finder158",
+      "decision": "PASS",
+      "judgment": "A–fish page: readable three-column alphabetical route, visible letter dividers and strongly distinguished page locators. Long useful phrases remain intact."
+    },
+    {
+      "physical_page": 161,
+      "section": "Word finder159",
+      "decision": "PASS",
+      "judgment": "Fit–name page: continued alphabet headings, repeated locators and mixed word/phrase entries are readable. No collision across columns."
+    },
+    {
+      "physical_page": 162,
+      "section": "Word finder160",
+      "decision": "PASS",
+      "judgment": "New–studied page: word entries, multi-page locators and continued letter groups fit comfortably; right edges are consistent."
+    },
+    {
+      "physical_page": 163,
+      "section": "Word finder161",
+      "decision": "PASS",
+      "judgment": "Study–Zz page: wrapped ticket/phone phrases keep their locators visible; remaining alphabet and ordinal entries fit without cutting the bottom."
+    },
+    {
+      "physical_page": 164,
+      "section": "Audio finder162",
+      "decision": "PASS",
+      "judgment": "Units1–4 split into readable tables. Recording names and page locations distinguish the two track1.8 files; explanatory footer resolves the numbering exception. Unit2 non-narrative track ordering preserves the published track IDs rather than pretending they are activity numbers."
+    },
+    {
+      "physical_page": 165,
+      "section": "Audio finder163",
+      "decision": "PASS",
+      "judgment": "Units5–8 tables are balanced and readable. PDF text confirms separate5.11 and5.12 rows. Track/page columns remain sufficiently distinct and the long labels do not cross rules."
+    },
+    {
+      "physical_page": 166,
+      "section": "Notes164",
+      "decision": "PASS",
+      "judgment": "A clean useful notebook page with evenly spaced full-width writing rules and visible margins; the page is writable rather than overdecorated."
+    },
+    {
+      "physical_page": 167,
+      "section": "Notes165",
+      "decision": "PASS",
+      "judgment": "Matching notebook page with complete lines and safe footer clearance. Line spacing is appropriate for handwriting; no line extends outside the page body."
+    },
+    {
+      "physical_page": 168,
+      "section": "Image credits166",
+      "decision": "PASS",
+      "judgment": "Readable linked names/licenses with explicit source page numbers and a clear introductory provenance note. No entry is truncated."
+    },
+    {
+      "physical_page": 169,
+      "section": "Image credits167",
+      "decision": "PASS",
+      "judgment": "Two credit columns remain readable; the longer Commons crop explanation fits in its row without encroaching on the next credit."
+    },
+    {
+      "physical_page": 170,
+      "section": "Image credits168",
+      "decision": "PASS",
+      "judgment": "Source/licence links, Commons attribution and crop note fit. White space is suitable for an end reference page rather than forced instructional content."
+    },
+    {
+      "physical_page": 171,
+      "section": "Image credits169",
+      "decision": "PASS",
+      "judgment": "Long attribution and image-change notes wrap cleanly. Generated-art disclosure now includes cover and study-kit pages4/152 plus the author-supplied Wingfield mark; full text fits above footer."
+    },
+    {
+      "physical_page": 172,
+      "section": "Back cover",
+      "decision": "PASS",
+      "judgment": "Saturated series identity, true8-unit/4-review claims and practical-reference summary. Horizons on Air is mentioned and the online-access QR has a clear quiet zone. Logo and author line are complete; no fake barcode, access code or app badge."
+    }
+  ],
+  "overall_decision": "PASS for final449ee8eb edition; all25 requested pages covered through initial full review, four-page intermediate review, two-page final recheck and independently verified pixel transfer. No remaining editorial or page-fit blockers.",
+  "strengths": [
+    "Adult course-book identity with saturated colour and restrained editorial references.",
+    "Course-specific contents, study guidance and meaningful progress goals.",
+    "Readable complete grammar/pronunciation examples without the prohibited compressed prose style.",
+    "Useful searchable-looking word/grammar/audio references and genuinely writable notes.",
+    "Real digital resource claims and attributable end matter without invented commercial identifiers."
+  ],
+  "nonblocking_consistency_observations": [
+    {
+      "scope": "Guide/Progress copy",
+      "observation": "New pages contain verb practise although source language is en-US and the pronunciation reference explicitly uses American English.",
+      "suggestion": "For a consistent American English house style, use practice as the verb too.",
+      "blocker": false,
+      "root_notified": true,
+      "status": "RESOLVED in final449ee8eb edition",
+      "remaining": false
+    },
+    {
+      "physical_page": 172,
+      "scope": "Back-cover show mark",
+      "observation": "Back cover presents HORIZONS ON AIR as a single black badge rather than the split black HORIZONS and magenta ON AIR identity used by the episodes.",
+      "suggestion": "Reusing the canonical two-part mark would strengthen series branding. The current wording remains readable and truthful.",
+      "blocker": false,
+      "root_notified": true,
+      "status": "RESOLVED in final449ee8eb edition",
+      "remaining": false
+    }
+  ],
+  "blockers": [],
+  "author_acceptance_claimed": false,
+  "limitations": [
+    "This independent editorial review covers the25 new/modified pages, not a new proof of all147 unchanged teaching pages.",
+    "Root owns numerical line-spacing, link destinations, QR decoding, bookmarks, audio-link resolution, preservation and live deployment checks; those claims are not substituted for visual judgment here.",
+    "No new subjective audio-quality assessment or full rights-ownership investigation was performed."
+  ],
+  "output_render_directory": "independent-proof (initial); independent-final-proof (follow-ups)",
+  "initial_review_pdf_sha256": "fbfa3e433e73aac740aa0f3bab7a60fb233031f008dd6d8fe3108d186cd868c3",
+  "initial_review_record": "independent-PDF-review-initial.json",
+  "intermediate_review": {
+    "pdf_sha256": "953b2c28dc5a1798e4ed3c9fffa17b6b77150320927cb78fa778843464a31e75",
+    "fresh_physical_pages_inspected": [
+      5,
+      157,
+      158,
+      172
+    ],
+    "method": "All four viewed as saved-PDF120dpi full-page PNGs.",
+    "findings": "Guide practice spelling and canonical split Horizons on Air back-cover mark pass. Progress body copy passes, but capitalized Practise again remained in eight column headings; root notified for final copy correction.",
+    "new_layout_or_factual_blockers": [],
+    "remaining_nonblocking_copy_detail": "Capitalized Practice again headings on155/156."
+  },
+  "final_followup": {
+    "fresh_physical_pages_inspected": [
+      157,
+      158
+    ],
+    "fresh_printed_pages_inspected": [
+      155,
+      156
+    ],
+    "render_dpi": 120,
+    "decision": "PASS",
+    "judgment": "All eight column headings now read Practice again. Body copy, response circles, unit boundaries, personal-example fields and next-step lines remain clear with no lost writing space or clipped text.",
+    "retained_from_intermediate": [
+      "Guide printed3: complete American practice spelling and readable feature explanations.",
+      "Back cover: canonical two-part Horizons on Air mark is clear, with no other branding/layout changes."
+    ],
+    "pixel_transfer_report": "independent-final-transfer.json",
+    "root_transfer_report": "final-review-transfer.json"
+  },
+  "remaining_nonblocking_observations": [],
+  "review_history": [
+    {
+      "sha256": "fbfa3e433e73aac740aa0f3bab7a60fb233031f008dd6d8fe3108d186cd868c3",
+      "fresh_review_pages": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        154,
+        155,
+        156,
+        157,
+        158,
+        159,
+        160,
+        161,
+        162,
+        163,
+        164,
+        165,
+        166,
+        167,
+        168,
+        169,
+        170,
+        171,
+        172
+      ],
+      "record": "independent-PDF-review-initial.json"
+    },
+    {
+      "sha256": "953b2c28dc5a1798e4ed3c9fffa17b6b77150320927cb78fa778843464a31e75",
+      "fresh_review_pages": [
+        5,
+        157,
+        158,
+        172
+      ],
+      "record": "independent-PDF-review-intermediate.json"
+    },
+    {
+      "sha256": "449ee8ebfab19b20f7693385e6637e4b636ae5ef0b216a4df8442b90d27cd6ad",
+      "fresh_review_pages": [
+        157,
+        158
+      ],
+      "record": "independent-PDF-review.json"
+    }
+  ]
+}

@@ -6,6 +6,8 @@ const repoRoot = process.cwd();
 const a1Dir = path.join(repoRoot, "Horizons", "A1");
 const lessonsDir = path.join(a1Dir, "Lessons");
 const backmatterDir = path.join(a1Dir, "Backmatter");
+const frontmatterDir = path.join(a1Dir, "Frontmatter");
+const annexesDir = path.join(a1Dir, "Annexes");
 const practiceDir = path.join(a1Dir, "Practice");
 const practiceManifestPath = path.join(practiceDir, "manifest.json");
 const practiceManifest = fs.existsSync(practiceManifestPath) ? JSON.parse(fs.readFileSync(practiceManifestPath, "utf8")) : { masters: [] };
@@ -17,6 +19,31 @@ const cssCache = new Map();
 const installedStylesheets = new Set();
 const installedLiveLessonStylesheets = new Set();
 const deferredEditorialStyles = [];
+const registeredMasters = new Map();
+
+function readEditorialManifest(directory) {
+  const manifestPath = path.join(directory, "manifest.json");
+  if (!fs.existsSync(manifestPath)) return { masters: [], closing_masters: [] };
+  const manifest = JSON.parse(readText(manifestPath));
+  for (const key of ["masters", "closing_masters"]) {
+    if (manifest[key] !== undefined && !Array.isArray(manifest[key])) {
+      throw new Error(`${manifestPath}: ${key} must be an ordered array.`);
+    }
+  }
+  return { ...manifest, masters: manifest.masters || [], closing_masters: manifest.closing_masters || [] };
+}
+
+function masterPath(entry) {
+  if (!entry || typeof entry.file !== "string" || !entry.file.trim()) throw new Error("A book master needs a file path.");
+  const absolute = path.resolve(a1Dir, entry.file);
+  if (!absolute.startsWith(a1Dir + path.sep) || !/\.html$/i.test(absolute) || !fs.existsSync(absolute) || !fs.statSync(absolute).isFile()) {
+    throw new Error(`Missing or invalid book master: ${entry.file}`);
+  }
+  return absolute;
+}
+
+const frontmatterManifest = readEditorialManifest(frontmatterDir);
+const annexesManifest = readEditorialManifest(annexesDir);
 
 function readText(filePath) {
   return fs.readFileSync(filePath, "utf8");
@@ -78,20 +105,25 @@ function rewriteBodyAssetUrls(bodyHtml, lessonPath) {
     return `srcset=${quote}${rebasedSet}${quote}`;
   });
 
-  // Practice links stay inside the assembled book; standalone masters keep
-  // working relative links. External source/credit links are never rewritten.
+  // Every registered book master stays inside the assembled book. The source
+  // HTML retains real relative links for opening each master independently.
   output = output.replace(/\bhref\s*=\s*(["'])(.*?)\1/gi, (match, quote, value) => {
-    if (/^(?:https?:|mailto:|tel:|#|data:)/i.test(value)) return match;
-    const [localPath, fragment] = value.split("#");
-    const absolute = path.resolve(path.dirname(lessonPath), decodeURIComponent(localPath));
-    if (absolute.startsWith(path.resolve(practiceDir) + path.sep) && /\.html$/i.test(absolute)) {
-      const entry = practiceManifest.masters.find(x => path.resolve(a1Dir, x.file) === absolute);
-      if (!entry) throw new Error(`Practice link has no master: ${value}`);
-      return `href=${quote}#${fragment || "page-" + entry.pages[0]}${quote}`;
+    if (/^(?:https?:|mailto:|tel:|data:|javascript:)/i.test(value)) return match;
+    const hash = value.indexOf("#");
+    const localPath = hash < 0 ? value : value.slice(0, hash);
+    const fragment = hash < 0 ? "" : value.slice(hash + 1);
+    const absolute = localPath ? path.resolve(path.dirname(lessonPath), cleanLocalHref(localPath)) : path.resolve(lessonPath);
+    const entry = registeredMasters.get(absolute);
+    if (entry && (!localPath || /\.html$/i.test(absolute))) {
+      const target = fragment ? (entry.renamedIds.get(decodeURIComponent(fragment)) || fragment) : entry.firstPageId;
+      return `href=${quote}#${target}${quote}`;
     }
-    if (absolute.startsWith(path.resolve(lessonsDir) + path.sep) && /\.html$/i.test(absolute)) {
-      const first = readText(absolute).match(/data-page=["'](\d+)["']/)?.[1];
-      if (first) return `href=${quote}#page-${first}${quote}`;
+    if (localPath && /\.html$/i.test(absolute) && [practiceDir, lessonsDir, frontmatterDir, annexesDir, backmatterDir].some(directory => absolute.startsWith(directory + path.sep))) {
+      throw new Error(`Internal book link has no registered master: ${value}`);
+    }
+    if (localPath && !/\.html$/i.test(absolute)) {
+      const rebased = rebaseLocalAssetUrl(value, lessonPath).replaceAll(quote, quote === "'" ? "&#39;" : "&quot;");
+      return `href=${quote}${rebased}${quote}`;
     }
     return match;
   });
@@ -208,9 +240,53 @@ const lessons = fs.readdirSync(lessonsDir)
 
 if (!lessons.length) throw new Error("No A1 lesson masters found.");
 
+const coreMasters = lessons.map(file => ({ file: `Lessons/${file}` }));
+const contentMasters = [...frontmatterManifest.masters, ...coreMasters, ...practiceManifest.masters, ...annexesManifest.masters];
+const closingMasters = frontmatterManifest.closing_masters;
+const backmatter = fs.existsSync(backmatterDir)
+  ? fs.readdirSync(backmatterDir).filter(name => /\.html$/i.test(name)).sort((a, b) => collator.compare(a, b))
+  : [];
+let nextPrintedPage = Math.max(...contentMasters.flatMap(entry =>
+  [...extractBody(readText(masterPath(entry)), entry.file).matchAll(/<article\b[^>]*>/gi)]
+    .map(match => attrValue(match[0], "data-page")).filter(value => /^\d+$/.test(value)).map(Number)
+)) + 1;
+const backmatterPagination = new Map();
+
+function registerMaster(entry, repaginate = false) {
+  const sourcePath = masterPath(entry);
+  if (registeredMasters.has(sourcePath)) throw new Error(`Book master is registered twice: ${entry.file}`);
+  const articles = [...readText(sourcePath).matchAll(/<article\b[^>]*>/gi)].map(match => match[0]);
+  if (!articles.length) throw new Error(`Book master has no article pages: ${entry.file}`);
+  const renamedIds = new Map();
+  const pageNumbers = [];
+  let firstPageId;
+  for (const tag of articles) {
+    const oldId = attrValue(tag, "id") || `page-${attrValue(tag, "data-page")}`;
+    const assignedPage = repaginate ? nextPrintedPage++ : null;
+    const newId = repaginate ? `page-${assignedPage}` : oldId;
+    renamedIds.set(oldId, newId);
+    pageNumbers.push(assignedPage);
+    firstPageId ||= newId;
+  }
+  registeredMasters.set(sourcePath, { firstPageId, renamedIds });
+  if (repaginate) backmatterPagination.set(sourcePath, pageNumbers);
+}
+
+for (const entry of [...contentMasters, ...closingMasters]) registerMaster(entry);
+for (const filename of backmatter) registerMaster({ file: `Backmatter/${filename}` }, true);
+
 const compiledStyles = [];
 const compiledBodies = [];
 const liveLessonStyles = [];
+
+function compileEditorialMaster(entry) {
+  const sourcePath = masterPath(entry);
+  const html = readText(sourcePath);
+  compiledStyles.push(...collectHeadStyles(extractHead(html), sourcePath, entry.file));
+  compiledBodies.push(`<!-- ===== ${entry.file} ===== -->\n${rewriteBodyAssetUrls(extractBody(html, entry.file), sourcePath)}`);
+}
+
+for (const entry of frontmatterManifest.masters) compileEditorialMaster(entry);
 
 for (const filename of lessons) {
   const lessonPath = path.join(lessonsDir, filename);
@@ -233,28 +309,28 @@ for (const master of practiceManifest.masters) {
   compiledBodies.push(`<!-- ===== ${master.file} ===== -->\n${rewriteBodyAssetUrls(extractBody(html, master.file), sourcePath)}`);
 }
 
+for (const entry of annexesManifest.masters) compileEditorialMaster(entry);
+
 // Book-owned backmatter always follows the lesson and practice masters. Repaginate it from
 // the actual final lesson page so future lessons cannot collide with credits.
-const backmatter = fs.existsSync(backmatterDir)
-  ? fs.readdirSync(backmatterDir).filter((name) => /\.html$/i.test(name)).sort((a, b) => collator.compare(a, b))
-  : [];
-let nextPrintedPage = Math.max(...compiledBodies.flatMap((body) =>
-  [...body.matchAll(/\bdata-page=["'](\d+)["']/g)].map((match) => Number(match[1]))
-)) + 1;
 for (const filename of backmatter) {
   const sourcePath = path.join(backmatterDir, filename);
   const html = readText(sourcePath);
   compiledStyles.push(...collectHeadStyles(extractHead(html), sourcePath, filename));
+  let articleIndex = 0;
   const body = rewriteBodyAssetUrls(extractBody(html, filename), sourcePath).replace(
     /<article\b[\s\S]*?<\/article>/gi,
     (article) => {
-      const page = nextPrintedPage++;
+      const page = backmatterPagination.get(sourcePath)[articleIndex++];
       return article.replace(/\bdata-page=["'][^"']*["']/, `data-page="${page}"`)
+        .replace(/(<article\b[^>]*\s)id=["'][^"']*["']/, `$1id="page-${page}"`)
         .replace(/(<span class="hz-page-number">)[\s\S]*?(<\/span>)/, (_, open, close) => open + page + close);
     }
   );
   compiledBodies.push(`<!-- ===== Backmatter/${filename} ===== -->\n${body}`);
 }
+
+for (const entry of closingMasters) compileEditorialMaster(entry);
 
 const viewerCss = `
 html,

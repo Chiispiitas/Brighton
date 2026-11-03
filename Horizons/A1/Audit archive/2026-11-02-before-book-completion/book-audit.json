@@ -1,0 +1,1232 @@
+{
+  "schema_version": 3,
+  "updated": "2026-11-02",
+  "status": "Book-wide visual grammar clarification complete; source, independent saved-PDF and published standalone/assembled views verified",
+  "authority": "Author delegates editorial authority; his own B2 book sets emotional direction. Preserve colourful learning objects and warm adult playfulness alongside coherent functional roles.",
+  "scope": "Units 1–8: 32 lessons, four paired reviews and 72 core pages; 75 practice pages and four credits. 151 physical A4 pages, printed 5–155. Front matter, index, workbook and optional annexes remain future work.",
+  "baseline": {
+    "commit": "fd497fd",
+    "safety_branch": "safety/horizons-before-editorial-overhaul-20261031",
+    "local_before_copy": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\editorial-overhaul-20261031\\before",
+    "old_pdf_sha256": "968558391f585e85fdb52a29e8840c733e54374f59585a0b5daba108393ee301",
+    "expressive_correction": {
+      "commit": "8069492116058e45846c79601c66ebd8a3207abb",
+      "safety_branch": "safety/horizons-before-expressive-spirit-20261031",
+      "sources": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\expressive-spirit-20261031\\before",
+      "pdf": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\expressive-spirit-20261031\\before-book.pdf"
+    },
+    "practice_banks": {
+      "commit": "90161278603403da17ed4857701984e552c1204c",
+      "safety_branch": "safety/horizons-before-practice-banks-20261101",
+      "previous_audit": "Audit archive/2026-11-01-before-practice/book-audit.json"
+    },
+    "grammar_clarity": {
+      "commit": "e2b520bc82b3467f083eff0983cf088b8fd13436",
+      "safety_branch": "safety/horizons-before-grammar-clarity-20261101",
+      "previous_audit": "Audit archive/2026-11-01-before-grammar-clarity/book-audit.json"
+    },
+    "vocabulary_study_banks": {
+      "commit": "519aa60491a431cc208005aeb7ffd26c08dae74f",
+      "safety_branch": "safety/horizons-before-vocabulary-study-banks-20261101",
+      "previous_audit": "Audit archive/2026-11-01-before-vocabulary-study-banks/book-audit.json"
+    },
+    "practice_imagegen": {
+      "commit": "94f6b86283347d855b5c8dd94c9b550607105f70",
+      "safety_branch": "safety/horizons-before-practice-imagegen-20261101",
+      "previous_audit": "Audit archive/2026-11-01-before-practice-imagegen/book-audit.json"
+    },
+    "practice_adjacency": {
+      "commit": "2bff8ee2a4f9eda2e73927a4a58697d099cb35f4",
+      "safety_branch": "safety/horizons-before-practice-adjacency-20261101",
+      "previous_audit": "Audit archive/2026-11-01-before-practice-adjacency/book-audit.json"
+    },
+    "practice_lesson_headers": {
+      "commit": "ad73e4b64900537e69ad9c09baae21b3a982b184",
+      "safety_branch": "safety/horizons-before-practice-lesson-headers-20261101",
+      "previous_audit": "Audit archive/2026-11-01-before-practice-lesson-headers/book-audit.json"
+    },
+    "compact_practice": {
+      "commit": "8729a04578fbffc42efc3b508553550766cfc97c",
+      "safety_branch": "safety/horizons-before-compact-practice-20261102",
+      "previous_audit": "Audit archive/2026-11-02-before-compact-practice/book-audit.json"
+    },
+    "grammar_3d_spacing": {
+      "commit": "59628ea4652eb651c3d0d3cec553a1d63cd0073e"
+    },
+    "grammar_visual_clarity": {
+      "commit": "cdae9fefa0adda5639a0f53e372a1a19969b1025",
+      "safety_branch": "safety/horizons-before-grammar-visual-clarity-20261102",
+      "previous_audit": "Audit archive/2026-11-02-before-grammar-visual-clarity/book-audit.json"
+    }
+  },
+  "inventory": {
+    "lesson_masters": [
+      "1A",
+      "1B",
+      "1C",
+      "1D",
+      "2A",
+      "2B",
+      "2C",
+      "2D",
+      "2R",
+      "3A",
+      "3B",
+      "3C",
+      "3D",
+      "4A",
+      "4B",
+      "4C",
+      "4D",
+      "4R",
+      "5A",
+      "5B",
+      "5C",
+      "5D",
+      "6A",
+      "6B",
+      "6C",
+      "6D",
+      "6R",
+      "7A",
+      "7B",
+      "7C",
+      "7D",
+      "8A",
+      "8B",
+      "8C",
+      "8D",
+      "8R"
+    ],
+    "core_spreads": 36,
+    "core_pages": 72,
+    "html_pages": 151,
+    "pdf_pages": 151,
+    "printed_pages": [
+      5,
+      155
+    ],
+    "credits_pages": 4,
+    "lesson_audio_files": 84,
+    "production_audio_files": 1,
+    "html_audio_controls": 90,
+    "new_words_badges": 46,
+    "extra_practice_footers": 32,
+    "go_to_references": 75,
+    "page_placeholders": 0,
+    "external_photo_credit_records": 81,
+    "practice_masters": 20,
+    "grammar_practice_pages": 24,
+    "vocabulary_practice_pages": 47,
+    "practical_language_pages": 4,
+    "practice_pages": 75,
+    "core_activity_blocks": 253,
+    "practice_activity_blocks": 147,
+    "grammar_practice_activities": 67,
+    "vocabulary_practice_activities": 68,
+    "practical_language_activities": 12,
+    "practice_topics": 76,
+    "distinct_referenced_topics": 75,
+    "blooket_reserved_slots": 16,
+    "practice_specific_generated_assets": 51,
+    "prior_editorial_generated_object_assets": 12,
+    "core_focus_panels": 35,
+    "total_activity_blocks": 400,
+    "vocabulary_study_pages": 32,
+    "vocabulary_activity_pages": 35,
+    "vocabulary_study_topics": 43,
+    "vocabulary_marked_lexical_entry_occurrences": 476,
+    "vocabulary_required_within_topic_items": 404,
+    "new_active_practice_assets_this_pass": 0,
+    "practice_raster_occurrences": 103,
+    "vocabulary_pages_with_pictures": 47,
+    "physical_pages": 151,
+    "vocabulary_combined_pages": 20,
+    "vocabulary_canonical_topics": 38,
+    "grammar_lesson_groups": 27,
+    "vocabulary_lesson_groups": 32,
+    "practice_lesson_headers": 74,
+    "paired_practice_pages": 3,
+    "saved_pages_this_pass": 0
+  },
+  "standards": {
+    "canonical_style": "../Base/design-system/CANONICAL-STYLE.md",
+    "learning": "../Base/design-system/GUIDED-DISCOVERY.md",
+    "media": "../Base/design-system/asset-policy.md",
+    "components": "../Base/design-system/component-contracts.md",
+    "reference_study": "EDITORIAL-REFERENCE-STUDY.json",
+    "change_register": "Sources/Editorial-overhaul-20261031/change-register.json",
+    "visual_spirit": "../Base/design-system/VISUAL-SPIRIT.md",
+    "author_reference": "../Base/design-system/AUTHOR-REFERENCE-STUDY.json",
+    "protected_visual_register": "Sources/Visual-personality.json",
+    "authoring_instructions": "../AGENTS.md",
+    "practice_banks": "../Base/design-system/PRACTICE-BANKS.md",
+    "practice_reference_study": "Sources/Practice-reference-study.json",
+    "practice_visual_register": "Sources/Practice-personality.json",
+    "practice_teacher_key": "Practice/Answer key.md",
+    "future_blooket_slots": "Practice/Blooket-links.json",
+    "study_vocabulary_inventory": "Practice/Vocabulary/study-vocabulary.json"
+  },
+  "editorial_judgment": {
+    "basis": "Author explicitly abolishes compressed inline grammar explanations throughout the book, including subject/verb arrow chains, contraction chains and inline Usually/Now contrasts.",
+    "current_decision": "Sources/Grammar-visual-clarity-20261102/editorial-decision.json",
+    "saved_pdf_review": "Sources/Grammar-visual-clarity-20261102/saved-PDF-review.json",
+    "independent_second_editor": true,
+    "independent_reviews": [
+      "Sources/Grammar-visual-clarity-20261102/independent-main-PDF-review.json",
+      "Sources/Grammar-visual-clarity-20261102/independent-G5-8-PDF-review.json",
+      "Sources/Grammar-visual-clarity-20261102/independent-G1-4-banks-PDF-review.json"
+    ],
+    "changed_pages_reviewed": 45,
+    "author_acceptance_claimed": false
+  },
+  "verification": {
+    "layout": {
+      "pages": 151,
+      "text_faults": [],
+      "response_fields": 368,
+      "clipped_fields": [],
+      "short_open_lines": []
+    },
+    "standalone_assembled_parity": {
+      "standalone_masters": 56,
+      "pages": 147,
+      "failures": []
+    },
+    "pdf": {
+      "baseline": "cdae9fefa0adda5639a0f53e372a1a19969b1025",
+      "sha256": "98d3e8b12f376d9153eb67754b663fae2e49842b0e641bd706229871c3d40b7b",
+      "bytes": 50203016,
+      "physical_pages": 151,
+      "printed_pages": [
+        5,
+        155
+      ],
+      "a4_failures": [],
+      "footer_failures": [],
+      "strict_pypdf_read": true,
+      "mupdf_warnings": "",
+      "all_internal_links_verified": 367,
+      "changed_rendered_pages": [
+        19,
+        32,
+        34,
+        35,
+        37,
+        42,
+        44,
+        45,
+        53,
+        55,
+        60,
+        62,
+        64,
+        66,
+        68,
+        70,
+        72,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        118,
+        136,
+        138,
+        139,
+        145,
+        151
+      ],
+      "unchanged_rendered_pages": 106,
+      "all_unedited_sources_pixel_identical": true,
+      "source_candidate_pages": [
+        19,
+        20,
+        31,
+        32,
+        33,
+        34,
+        35,
+        36,
+        37,
+        38,
+        41,
+        42,
+        43,
+        44,
+        45,
+        46,
+        53,
+        54,
+        55,
+        56,
+        59,
+        60,
+        61,
+        62,
+        63,
+        64,
+        65,
+        66,
+        67,
+        68,
+        69,
+        70,
+        71,
+        72,
+        77,
+        78,
+        79,
+        80,
+        81,
+        82,
+        83,
+        84,
+        85,
+        86,
+        87,
+        88,
+        89,
+        90,
+        91,
+        92,
+        93,
+        94,
+        95,
+        96,
+        97,
+        98,
+        99,
+        100,
+        118,
+        119,
+        120,
+        121,
+        122,
+        135,
+        136,
+        137,
+        138,
+        139,
+        140,
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147,
+        151
+      ],
+      "refined_after_first_independent_review": [
+        62,
+        138,
+        139,
+        145
+      ],
+      "other147pages_identical_to_first_reviewed_proof": true,
+      "failures": []
+    },
+    "preservation": {
+      "baseline": "cdae9fefa0adda5639a0f53e372a1a19969b1025",
+      "core_exercises_preserved": 253,
+      "practice_activities_preserved": 147,
+      "total_activities": 400,
+      "all_original_directions_questions_and_source_text_preserved": true,
+      "exercise_comparison_excludes_grammar_focus_panels": true,
+      "marked_vocabulary_occurrences": 476,
+      "lexical_inventory_preserved": true,
+      "all_existing_image_sources_in_original_order": true,
+      "answer_keys_audio_scripts_and_artwork_unchanged": true,
+      "failures": []
+    },
+    "study_words": {
+      "required_within_topic_items": 404,
+      "canonical_topics": 38,
+      "lesson_specific_references": 43,
+      "marked_entry_occurrences": 476,
+      "ordinary_reference_pt_minimum": 10,
+      "body_label_pt": 10.275,
+      "report": "Sources/Grammar-visual-clarity-20261102/header-and-font-checks.json"
+    },
+    "qr": [
+      {
+        "page": "79",
+        "bank": "grammar",
+        "unit": "1",
+        "collisions": [],
+        "inside": true,
+        "square_mm": [
+          23.998535156599978,
+          23.998535156599978
+        ]
+      },
+      {
+        "page": "81",
+        "bank": "grammar",
+        "unit": "2",
+        "collisions": [],
+        "inside": true,
+        "square_mm": [
+          23.998535156599978,
+          23.998535156599978
+        ]
+      },
+      {
+        "page": "85",
+        "bank": "grammar",
+        "unit": "3",
+        "collisions": [],
+        "inside": true,
+        "square_mm": [
+          23.998535156599978,
+          23.998535156599978
+        ]
+      },
+      {
+        "page": "88",
+        "bank": "grammar",
+        "unit": "4",
+        "collisions": [],
+        "inside": true,
+        "square_mm": [
+          23.998535156599978,
+          23.998535156599978
+        ]
+      },
+      {
+        "page": "91",
+        "bank": "grammar",
+        "unit": "5",
+        "collisions": [],
+        "inside": true,
+        "square_mm": [
+          23.998535156599978,
+          23.998535156599978
+        ]
+      },
+      {
+        "page": "94",
+        "bank": "grammar",
+        "unit": "6",
+        "collisions": [],
+        "inside": true,
+        "square_mm": [
+          23.998535156599978,
+          23.998535156599978
+        ]
+      },
+      {
+        "page": "96",
+        "bank": "grammar",
+        "unit": "7",
+        "collisions": [],
+        "inside": true,
+        "square_mm": [
+          23.998535156599978,
+          23.998535156599978
+        ]
+      },
+      {
+        "page": "100",
+        "bank": "grammar",
+        "unit": "8",
+        "collisions": [],
+        "inside": true,
+        "square_mm": [
+          23.998535156599978,
+          23.998535156599978
+        ]
+      },
+      {
+        "page": "107",
+        "bank": "vocabulary",
+        "unit": "1",
+        "collisions": [],
+        "inside": true,
+        "square_mm": [
+          23.998535156599978,
+          23.998535156599978
+        ]
+      },
+      {
+        "page": "110",
+        "bank": "vocabulary",
+        "unit": "2",
+        "collisions": [],
+        "inside": true,
+        "square_mm": [
+          23.998535156599978,
+          23.998535156599978
+        ]
+      },
+      {
+        "page": "117",
+        "bank": "vocabulary",
+        "unit": "3",
+        "collisions": [],
+        "inside": true,
+        "square_mm": [
+          23.998535156599978,
+          23.998535156599978
+        ]
+      },
+      {
+        "page": "122",
+        "bank": "vocabulary",
+        "unit": "4",
+        "collisions": [],
+        "inside": true,
+        "square_mm": [
+          23.998535156599978,
+          23.998535156599978
+        ]
+      },
+      {
+        "page": "128",
+        "bank": "vocabulary",
+        "unit": "5",
+        "collisions": [],
+        "inside": true,
+        "square_mm": [
+          23.998535156599978,
+          23.998535156599978
+        ]
+      },
+      {
+        "page": "134",
+        "bank": "vocabulary",
+        "unit": "6",
+        "collisions": [],
+        "inside": true,
+        "square_mm": [
+          23.998535156599978,
+          23.998535156599978
+        ]
+      },
+      {
+        "page": "140",
+        "bank": "vocabulary",
+        "unit": "7",
+        "collisions": [],
+        "inside": true,
+        "square_mm": [
+          23.998535156599978,
+          23.998535156599978
+        ]
+      },
+      {
+        "page": "146",
+        "bank": "vocabulary",
+        "unit": "8",
+        "collisions": [],
+        "inside": true,
+        "square_mm": [
+          23.998535156599978,
+          23.998535156599978
+        ]
+      }
+    ],
+    "evidence_directory": "Sources/Grammar-visual-clarity-20261102",
+    "current_visual_identity_checks": {
+      "coverage_spreads": 36,
+      "functional_tools": 35,
+      "protected_selectors": 73,
+      "standalone_and_assembled_number_and_alphabet_checks_passed": true
+    },
+    "prior_release_evidence": {
+      "prior_imagegen": "Sources/Practice-imagegen-20261101; historical edition only.",
+      "practice_adjacency": {
+        "completed": true,
+        "content_commit": "b325a76e32cddc0c9a8b2bddff557bf0b16766a5",
+        "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=adjacent-b325a76e32cd",
+        "pages": 127,
+        "navigation_options": 57,
+        "topic_pairs": 38,
+        "exact_neighbour_header_links": 18,
+        "lesson_references": 75,
+        "images_decoded": 84,
+        "pictured_vocabulary_pages": 31,
+        "bank_activities": 147,
+        "blank_qr_spaces": 16,
+        "preserved_audio_controls": 90,
+        "print_controls_hidden": true,
+        "source_hash_matches": true,
+        "changed_files_match": 46,
+        "viewer_report": "Sources/Practice-adjacency-20261101/live-viewer-verification.json",
+        "file_report": "Sources/Practice-adjacency-20261101/live-file-verification.json",
+        "visual_report": "Sources/Practice-adjacency-20261101/live-visual-review.json",
+        "failures": []
+      },
+      "practice_lesson_headers": {
+        "completed": true,
+        "date": "2026-11-02",
+        "content_commit": "5f62bb324678a7062d4147ff2babea548d55d157",
+        "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=lessonpractice-5f62bb324678",
+        "pages": 156,
+        "navigation_options": 100,
+        "matching_practice_headers": 76,
+        "same_lesson_references": 75,
+        "adjacent_or_same_page_reference_pairs": 43,
+        "pictured_vocabulary_pages": 49,
+        "images_decoded": 104,
+        "blank_qr_reserves": 16,
+        "audio_controls": 90,
+        "audio_tracks_played_and_paused": [
+          "1.1",
+          "8.7"
+        ],
+        "all_changed_files_match": 106,
+        "viewer_report": "Sources/Practice-lesson-headers-20261101/live-viewer-verification.json",
+        "file_report": "Sources/Practice-lesson-headers-20261101/live-file-verification.json",
+        "visual_report": "Sources/Practice-lesson-headers-20261101/live-visual-review.json",
+        "failures": []
+      },
+      "compact_practice": {
+        "completed": true,
+        "date": "2026-11-02",
+        "content_commit": "bb087be605e87d089ea33ef483d4e485b85ef86a",
+        "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=compactpractice-bb087be605e8",
+        "pages": 151,
+        "navigation_options": 100,
+        "lesson_section_headers": 74,
+        "paired_pages": 3,
+        "separate_dropdown_destinations_checked": [
+          "grammar2A",
+          "grammar2B",
+          "grammar2C",
+          "grammar2D"
+        ],
+        "physical_previous_next": true,
+        "same_lesson_references": 75,
+        "reference_pairs": 43,
+        "images_decoded": 103,
+        "pictured_vocabulary_pages": 47,
+        "tasks": 147,
+        "blank_qr_reserves": 16,
+        "audio_controls": 90,
+        "audio_tracks_played_and_paused": [
+          "1.1",
+          "8.7"
+        ],
+        "all_changed_files_match": 93,
+        "checks_passed": 20,
+        "viewer_report": "Sources/Practice-compact-20261102/live-viewer-verification.json",
+        "file_report": "Sources/Practice-compact-20261102/live-file-verification.json",
+        "visual_report": "Sources/Practice-compact-20261102/live-visual-review.json",
+        "failures": []
+      },
+      "grammar_3d_spacing": {
+        "completed": true,
+        "content_commit": "e78aeb5929d3f5c3ec84a87e66cad763222338b0",
+        "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=spacing3d-e78aeb5929d3#practice-grammar-3d",
+        "scope": "Latest3D spacing fix; all other150PDFpages pixel-identical to verified baseline",
+        "standalone_and_assembled_labels_separate": true,
+        "all_changed_files_match": 13,
+        "viewer_report": "Sources/Grammar-3D-spacing-20261102/live-viewer-verification.json",
+        "file_report": "Sources/Grammar-3D-spacing-20261102/live-file-verification.json",
+        "failures": []
+      },
+      "grammar_3d_spacing_local": {
+        "report": "Sources/Grammar-3D-spacing-20261102/spacing-fix.json",
+        "saved_pdf_review": "Sources/Grammar-3D-spacing-20261102/saved-PDF-review.json",
+        "changed_printed_page": 85,
+        "other150pages_pixel_identical": true
+      }
+    },
+    "local_viewer": {
+      "checks_passed": 24,
+      "failures": [],
+      "report": "Sources/Grammar-visual-clarity-20261102/local-viewer-verification.json"
+    },
+    "grammar_clarity": {
+      "master_files_checked": 56,
+      "main_lesson_masters_changed": 17,
+      "grammar_lesson_sections_reworked": 24,
+      "known_baseline_rejected_fragments": 15,
+      "remaining_flagged_fragments": 0,
+      "explanatory_paragraphs_checked": 169,
+      "native_tables_total": 101,
+      "checker": "../Base/build/check-grammar-clarity.py",
+      "report": "Sources/Grammar-visual-clarity-20261102/grammar-clarity-scan.json",
+      "limitations": "Pattern checks supplement complete editorial review. Table counts alone do not establish educational or visual quality."
+    },
+    "live_viewer": {
+      "completed": true,
+      "content_commit": "3d67e4d4a83e9ac510975b06c0338b643242232b",
+      "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=visualgrammar-3d67e4d4a83e",
+      "checks_passed": 24,
+      "pages": 151,
+      "navigation_options": 100,
+      "separate_paired_lesson_destinations": true,
+      "actual_audio_playback_and_print_hiding": true,
+      "main_and_practice_5a_chart_checks": true,
+      "no_legacy_compressed_grammar_nodes": true,
+      "all_changed_files_match": 74,
+      "text_line_endings_normalized": true,
+      "pdf_and_media_byte_exact": true,
+      "viewer_report": "Sources/Grammar-visual-clarity-20261102/live-viewer-verification.json",
+      "file_report": "Sources/Grammar-visual-clarity-20261102/live-file-verification.json",
+      "visual_report": "Sources/Grammar-visual-clarity-20261102/live-visual-review.json",
+      "failures": []
+    }
+  },
+  "new_objects": "Images/Editorial-objects/manifest.json",
+  "resource_registry": "Sources/Lesson-resources.json",
+  "practice_destinations": "Sources/Practice-destinations.json",
+  "receptive_skill_plan": {
+    "policy": "B lessons provide a planned mix of reading-led and listening-led units; Horizons on Air is not required in every unit. Avoid two consecutive units without the show. Do not impose rigid alternation; 2B and 3B are both listening-led. Declare primary skill and source genre before authoring.",
+    "units": [
+      {
+        "unit": 1,
+        "lesson": "1B",
+        "primary_skill": "reading",
+        "genre": "Occupation profiles and model conversations, with supporting audio",
+        "episode": null
+      },
+      {
+        "unit": 2,
+        "lesson": "2B",
+        "primary_skill": "listening",
+        "genre": "Horizons on Air street interviews",
+        "episode": "Bus or car?",
+        "tracks": [
+          "2.3"
+        ]
+      },
+      {
+        "unit": 3,
+        "lesson": "3B",
+        "primary_skill": "listening",
+        "genre": "Horizons on Air guest interviews",
+        "episode": "Three people. Three weeks.",
+        "tracks": [
+          "3.5"
+        ]
+      },
+      {
+        "unit": 4,
+        "lesson": "4B",
+        "primary_skill": "reading",
+        "genre": "Food opinions and comparison",
+        "episode": null
+      },
+      {
+        "unit": 5,
+        "lesson": "5B",
+        "primary_skill": "listening",
+        "genre": "Horizons on Air shopping reviews and listener calls",
+        "episode": "Keep or return?",
+        "tracks": [
+          "5.5",
+          "5.6"
+        ]
+      },
+      {
+        "unit": 6,
+        "lesson": "6B",
+        "primary_skill": "reading",
+        "genre": "Dated real tiny-home interview adaptation: silent gist/detail/evaluation; supporting audio",
+        "episode": null
+      },
+      {
+        "unit": 7,
+        "lesson": "7B",
+        "primary_skill": "listening",
+        "genre": "Horizons on Air birthday quiz with two hosts and listener voicemail; dated show with gist, exact-date and relative-time listening",
+        "episode": "Birthday detective",
+        "tracks": [
+          "7.6"
+        ]
+      },
+      {
+        "unit": 8,
+        "lesson": "8B",
+        "primary_skill": "reading",
+        "genre": "Dated original simplified Lytton/Texas 2021 weather news reports; silent gist/detail reading followed by advice and independent weather listening",
+        "episode": null,
+        "supporting_tracks": [
+          "8.5",
+          "8.6"
+        ],
+        "status": "produced; technically verified"
+      }
+    ],
+    "next_unit_rule": "8B is reading-led after genuine listening-led 7B. Supporting weather vocabulary/advice audio is not a show. Current eight-unit programme satisfies the no-two-unit-show-gap rule. If the programme is extended, the next unit must restore a genuine show to avoid consecutive show-free units."
+  },
+  "on_air_identity": {
+    "reference": "2B, activities 2 (main), 3 and 4 (secondary); source unchanged",
+    "stylesheet": "Lessons/horizons-on-air.css",
+    "policy": "Share main masthead, compact secondary header, waveform, logo and black/orange source captions. Preserve factual/app imagery and learning content; do not label ordinary preparation/grammar/personal transfer as broadcast.",
+    "episodes": [
+      {
+        "lesson": "2B",
+        "title": "Bus or car?",
+        "main": 2,
+        "secondary": [
+          3,
+          4
+        ]
+      },
+      {
+        "lesson": "3B",
+        "title": "Three people. Three weeks.",
+        "main": 2,
+        "secondary": [
+          3,
+          4,
+          6,
+          7
+        ]
+      },
+      {
+        "lesson": "5B",
+        "title": "Keep or return?",
+        "main": 2,
+        "secondary": [
+          3,
+          4,
+          6,
+          7
+        ]
+      },
+      {
+        "lesson": "7B",
+        "title": "Birthday detective",
+        "main": 3,
+        "secondary": [
+          4,
+          5,
+          6
+        ]
+      }
+    ]
+  },
+  "snapshot": {
+    "book_sources": {
+      "paths": [
+        "Lessons",
+        "Images",
+        "Audios",
+        "Audio scripts",
+        "Answer keys",
+        "Wordlists",
+        "Syllabus.txt",
+        "Student's Book.html",
+        "Backmatter",
+        "Sources",
+        "Practice"
+      ],
+      "fingerprint": {
+        "files": 1021,
+        "bytes": 700715519,
+        "sha256": "b7f9e580e577086f5b2fac606e65765965777a9ca00ac977433c1ffbf651a9bc"
+      },
+      "normalize_text_line_endings": true
+    },
+    "shared_rendering": {
+      "paths": [
+        "../Base"
+      ],
+      "exclude_markdown": true,
+      "fingerprint": {
+        "files": 22,
+        "bytes": 102398,
+        "sha256": "e03eb8e79c44a7ee81e80a35dee4b705488331af126c8b6d995ca3fd40dfeb6e"
+      },
+      "normalize_text_line_endings": true
+    },
+    "saved_pdf": {
+      "paths": [
+        "Student's Book.pdf"
+      ],
+      "fingerprint": {
+        "files": 1,
+        "bytes": 50203016,
+        "sha256": "414f4a0a00302d0e5a5e1de6630770b95db8ff780debbbc7d398da3fb4c39b7b"
+      },
+      "normalize_text_line_endings": true
+    },
+    "audit_criteria": {
+      "paths": [
+        "../Base/design-system/CANONICAL-STYLE.md",
+        "../Base/design-system/GUIDED-DISCOVERY.md",
+        "../Base/design-system/component-contracts.md",
+        "../Base/design-system/asset-policy.md",
+        "../Base/design-system/VISUAL-SPIRIT.md",
+        "../Base/design-system/AUTHOR-REFERENCE-STUDY.json",
+        "../AGENTS.md",
+        "Sources/Visual-personality.json",
+        "EDITORIAL-DIRECTION.md",
+        "EDITORIAL-REFERENCE-STUDY.json",
+        "../../.github/workflows/build-horizons-a1-student-book.yml",
+        "../Base/design-system/PRACTICE-BANKS.md",
+        "BOOK-AUDIT.md",
+        "Sources/Practice-personality.json",
+        "Sources/Practice-reference-study.json"
+      ],
+      "fingerprint": {
+        "files": 15,
+        "bytes": 190389,
+        "sha256": "85c3661fdb8e983ad1c76eda47c1c0ab64e0e972525a672a17dfb0ff534a5b38"
+      },
+      "normalize_text_line_endings": true
+    }
+  },
+  "visual_spirit": {
+    "policy": "../Base/design-system/VISUAL-SPIRIT.md",
+    "primary_emotional_reference": "../Base/design-system/AUTHOR-REFERENCE-STUDY.json",
+    "priority": "Warm adult playfulness, saturated local colour, tactile concept metaphors and protected letter/number graphics; functional consistency does not mean visual uniformity.",
+    "regression_baseline": "8069492116058e45846c79601c66ebd8a3207abb",
+    "protected_register": "Sources/Visual-personality.json",
+    "verification": "All 45 changed saved-PDF pages pass root and independent editorial review. All other 106 pages are pixel-identical to the immediate baseline. Preferred art, recordings, learning activities, protected expressive number/alphabet objects and functional colours remain intact.",
+    "functional_tool_counts": {
+      "grammar": 25,
+      "pronunciation": 1,
+      "skills": 4,
+      "vocabulary": 1,
+      "communication": 3,
+      "writing": 1
+    },
+    "registered_spreads": 36,
+    "protected_selectors": 73,
+    "protected_objects": {
+      "number_bubbles": 11,
+      "number_circle_mm": 10,
+      "numeral_pt": 15,
+      "colour_families": 3,
+      "alphabet_pairs": 26,
+      "alphabet_pt": 15.5
+    },
+    "evidence": "Sources/Expressive-spirit-20261031"
+  },
+  "practice": {
+    "manifest": "Practice/manifest.json",
+    "teacher_key": "Practice/Answer key.md",
+    "fresh_assets": "Practice/Images/manifest.json",
+    "qr_registry": "Practice/Blooket-links.json",
+    "counts": {
+      "grammar_pages": 24,
+      "vocabulary_pages": 47,
+      "vocabulary_study_pages": 32,
+      "vocabulary_activity_pages": 35,
+      "communication_pages": 4,
+      "total_practice_pages": 75,
+      "forward_references": 75,
+      "distinct_referenced_destinations": 75,
+      "total_authored_destinations": 76,
+      "vocabulary_combined_pages": 20,
+      "grammar_lesson_groups": 27,
+      "vocabulary_lesson_groups": 32,
+      "vocabulary_reference_topics": 43,
+      "lesson_section_headers": 74,
+      "vocabulary_topics": 43,
+      "canonical_topics": 38,
+      "required_within_topic_items": 404,
+      "marked_lexical_entry_occurrences": 476
+    },
+    "unique_vocabulary_resources": true,
+    "games_created_in_blooket": false,
+    "study_inventory": "Practice/Vocabulary/study-vocabulary.json",
+    "imagegen_policy": {
+      "all_pictorial_graphics": "Built-in imagegen artwork; no vector-like pictorial substitute",
+      "all_vocabulary_pages_have_pictures": true,
+      "editable_functional_charts_arrows_and_labels": true,
+      "assets": "Practice/Images/manifest.json",
+      "policy": "../Base/design-system/PRACTICE-BANKS.md",
+      "current_evidence": "Sources/Practice-compact-20261102"
+    },
+    "adjacency": {
+      "policy": "Same page or immediately adjacent pages, always within the same lesson",
+      "pairs": [
+        {
+          "topic": "vocabulary-greetings",
+          "lesson": "1A",
+          "study_page": 101,
+          "activity_page": 102
+        },
+        {
+          "topic": "vocabulary-personal-information",
+          "lesson": "1A",
+          "study_page": 101,
+          "activity_page": 102
+        },
+        {
+          "topic": "vocabulary-alphabet",
+          "lesson": "1A",
+          "study_page": 101,
+          "activity_page": 102
+        },
+        {
+          "topic": "vocabulary-numbers",
+          "lesson": "1A",
+          "study_page": 101,
+          "activity_page": 102
+        },
+        {
+          "topic": "vocabulary-occupations",
+          "lesson": "1B",
+          "study_page": 103,
+          "activity_page": 104
+        },
+        {
+          "topic": "vocabulary-adjectives",
+          "lesson": "1B",
+          "study_page": 103,
+          "activity_page": 104
+        },
+        {
+          "topic": "vocabulary-countries",
+          "lesson": "1C",
+          "study_page": 105,
+          "activity_page": 105
+        },
+        {
+          "topic": "vocabulary-adjectives-1c",
+          "lesson": "1C",
+          "study_page": 105,
+          "activity_page": 106
+        },
+        {
+          "topic": "vocabulary-personal-information-1d",
+          "lesson": "1D",
+          "study_page": 107,
+          "activity_page": 107
+        },
+        {
+          "topic": "vocabulary-personal-items",
+          "lesson": "2A",
+          "study_page": 108,
+          "activity_page": 108
+        },
+        {
+          "topic": "vocabulary-telling-time",
+          "lesson": "2B",
+          "study_page": 109,
+          "activity_page": 109
+        },
+        {
+          "topic": "vocabulary-family-members",
+          "lesson": "2C",
+          "study_page": 110,
+          "activity_page": 110
+        },
+        {
+          "topic": "vocabulary-adjectives-2d",
+          "lesson": "2D",
+          "study_page": 111,
+          "activity_page": 111
+        },
+        {
+          "topic": "vocabulary-colors",
+          "lesson": "2D",
+          "study_page": 111,
+          "activity_page": 111
+        },
+        {
+          "topic": "vocabulary-daily-routines",
+          "lesson": "3A",
+          "study_page": 112,
+          "activity_page": 113
+        },
+        {
+          "topic": "vocabulary-days-of-the-week",
+          "lesson": "3B",
+          "study_page": 114,
+          "activity_page": 114
+        },
+        {
+          "topic": "vocabulary-place-adjectives-recall",
+          "lesson": "3C",
+          "study_page": 115,
+          "activity_page": 116
+        },
+        {
+          "topic": "vocabulary-daily-routines-3d",
+          "lesson": "3D",
+          "study_page": 117,
+          "activity_page": 117
+        },
+        {
+          "topic": "vocabulary-food-and-drink",
+          "lesson": "4A",
+          "study_page": 118,
+          "activity_page": 119
+        },
+        {
+          "topic": "vocabulary-flavors",
+          "lesson": "4B",
+          "study_page": 120,
+          "activity_page": 120
+        },
+        {
+          "topic": "vocabulary-cooking-verbs",
+          "lesson": "4C",
+          "study_page": 121,
+          "activity_page": 121
+        },
+        {
+          "topic": "vocabulary-sharing-food",
+          "lesson": "4D",
+          "study_page": 122,
+          "activity_page": 122
+        },
+        {
+          "topic": "vocabulary-clothes-and-accessories",
+          "lesson": "5A",
+          "study_page": 123,
+          "activity_page": 123
+        },
+        {
+          "topic": "vocabulary-shopping-verbs",
+          "lesson": "5B",
+          "study_page": 124,
+          "activity_page": 124
+        },
+        {
+          "topic": "vocabulary-places-in-town",
+          "lesson": "5C",
+          "study_page": 125,
+          "activity_page": 126
+        },
+        {
+          "topic": "vocabulary-at-the-store",
+          "lesson": "5D",
+          "study_page": 127,
+          "activity_page": 128
+        },
+        {
+          "topic": "vocabulary-places-in-town-2",
+          "lesson": "6A",
+          "study_page": 129,
+          "activity_page": 130
+        },
+        {
+          "topic": "vocabulary-rooms-and-furniture",
+          "lesson": "6B",
+          "study_page": 131,
+          "activity_page": 132
+        },
+        {
+          "topic": "vocabulary-movement-and-directions",
+          "lesson": "6C",
+          "study_page": 133,
+          "activity_page": 133
+        },
+        {
+          "topic": "vocabulary-shopping-centers-and-attractions",
+          "lesson": "6D",
+          "study_page": 134,
+          "activity_page": 134
+        },
+        {
+          "topic": "vocabulary-past-time-expressions",
+          "lesson": "7A",
+          "study_page": 135,
+          "activity_page": 135
+        },
+        {
+          "topic": "vocabulary-months",
+          "lesson": "7B",
+          "study_page": 136,
+          "activity_page": 137
+        },
+        {
+          "topic": "vocabulary-dates-and-ordinal-numbers",
+          "lesson": "7B",
+          "study_page": 136,
+          "activity_page": 137
+        },
+        {
+          "topic": "vocabulary-past-time-expressions-7b",
+          "lesson": "7B",
+          "study_page": 136,
+          "activity_page": 137
+        },
+        {
+          "topic": "vocabulary-music",
+          "lesson": "7C",
+          "study_page": 138,
+          "activity_page": 138
+        },
+        {
+          "topic": "vocabulary-irregular-past-verbs",
+          "lesson": "7D",
+          "study_page": 139,
+          "activity_page": 140
+        },
+        {
+          "topic": "vocabulary-sequencing-words",
+          "lesson": "7D",
+          "study_page": 139,
+          "activity_page": 140
+        },
+        {
+          "topic": "vocabulary-travel-verbs",
+          "lesson": "8A",
+          "study_page": 141,
+          "activity_page": 141
+        },
+        {
+          "topic": "vocabulary-animals",
+          "lesson": "8A",
+          "study_page": 141,
+          "activity_page": 142
+        },
+        {
+          "topic": "vocabulary-weather-and-seasons",
+          "lesson": "8B",
+          "study_page": 143,
+          "activity_page": 144
+        },
+        {
+          "topic": "vocabulary-body-parts",
+          "lesson": "8C",
+          "study_page": 145,
+          "activity_page": 145
+        },
+        {
+          "topic": "vocabulary-health-complaints",
+          "lesson": "8C",
+          "study_page": 145,
+          "activity_page": 146
+        },
+        {
+          "topic": "vocabulary-phone-and-ticket-language",
+          "lesson": "8D",
+          "study_page": 147,
+          "activity_page": 147
+        }
+      ],
+      "maximum_pages_after_reference": 1,
+      "unrelated_references_intervene": false
+    },
+    "lesson_headers": "Exact source header per section; maximum2consecutive lesson sections per page, source order, separate navigation destinations."
+  },
+  "author_feedback": {
+    "date": "2026-11-02",
+    "vocabulary_practice_approach": "Fresh activities endorsed; add complete study word banks before the approved activities, including all necessary topic vocabulary for test revision.",
+    "grammar_practice": "Abolish compressed inline grammar explanation chains throughout all lessons and banks. Dots, slashes, arrows, bold text or new lines do not convert prose into a diagram. Use real labelled charts, aligned complete examples, or selective actual word-movement transformations. Keep ordinary teaching type and response space; avoid unnecessary detail.",
+    "practice_artwork": "Replace all vector-like pictorial graphics with imagegen-quality images. Every vocabulary study and activity page must use useful pictures or cutouts.",
+    "vocabulary_adjacency": "Keep each lesson word bank beside its matching practice; short sets can share one page.",
+    "practice_headers": "Retain main lesson headers and codes. Two consecutive short lesson sections may share a page if they fit comfortably; preserve readability and writing space.",
+    "grammar_scope": "Applies to the main lessons, reviews, grammar banks and grammatical form references in vocabulary/practical banks. Preserve actual reading/listening texts, activity prompts, ordinary lexical definitions and genuine spatial/timeline diagrams."
+  }
+}

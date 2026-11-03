@@ -1,0 +1,2925 @@
+{
+  "status": "Read-only source-derived map; no student source edited",
+  "baseline_commit": "b12ec301dc32c864a3def720fbb0f0e82511e466",
+  "page_policy": "All page values are current baseline printed pages, not proposed final folios. Regenerate from final source after any insertion or renumbering. Actual DOM and Practice-destinations take precedence over old syllabus/canonical lexical study_page metadata.",
+  "units": [
+    {
+      "unit": 1,
+      "lessons": [
+        {
+          "code": "1A",
+          "title": "New friends",
+          "current_printed_pages": [
+            5,
+            6
+          ],
+          "objective": "Meet someone, spell a name and exchange numbers.",
+          "secondary_objectives": [],
+          "language": "Verb be: affirmative, negative and questions; personal information",
+          "vocabulary": [
+            "Greetings",
+            "Personal information",
+            "Alphabet",
+            "Numbers"
+          ],
+          "references": [
+            {
+              "canonical_topic": "vocabulary-greetings",
+              "topic": "Go to: Vocabulary - Greetings",
+              "page": 101,
+              "file": "Practice/Vocabulary/V1.html",
+              "anchor": "vocabulary-greetings"
+            },
+            {
+              "canonical_topic": "grammar-verb-to-be",
+              "topic": "Go to: Grammar - Verb to be",
+              "page": 77,
+              "file": "Practice/Grammar/G1.html",
+              "anchor": "grammar-verb-to-be"
+            },
+            {
+              "canonical_topic": "vocabulary-personal-information",
+              "topic": "Go to: Vocabulary - Personal information",
+              "page": 101,
+              "file": "Practice/Vocabulary/V1.html",
+              "anchor": "vocabulary-personal-information"
+            },
+            {
+              "canonical_topic": "vocabulary-alphabet",
+              "topic": "Go to: Vocabulary - Alphabet",
+              "page": 101,
+              "file": "Practice/Vocabulary/V1.html",
+              "anchor": "vocabulary-alphabet"
+            },
+            {
+              "canonical_topic": "vocabulary-numbers",
+              "topic": "Go to: Vocabulary - Numbers",
+              "page": 101,
+              "file": "Practice/Vocabulary/V1.html",
+              "anchor": "vocabulary-numbers"
+            }
+          ],
+          "tracks": [
+            "1.1",
+            "1.2",
+            "1.3",
+            "1.4",
+            "1.5",
+            "1.6",
+            "1.7"
+          ],
+          "source": "Lessons/1A.html"
+        },
+        {
+          "code": "1B",
+          "title": "What's your job?",
+          "current_printed_pages": [
+            7,
+            8
+          ],
+          "objective": "Find out what people do.",
+          "secondary_objectives": [],
+          "language": "A / an; contractions of be",
+          "vocabulary": [
+            "Occupations",
+            "Adjectives"
+          ],
+          "references": [
+            {
+              "canonical_topic": "vocabulary-occupations",
+              "topic": "Go to: Vocabulary - Occupations",
+              "page": 103,
+              "file": "Practice/Vocabulary/V1.html",
+              "anchor": "vocabulary-occupations"
+            },
+            {
+              "canonical_topic": "grammar-a-an",
+              "topic": "Go to: Grammar - A / an",
+              "page": 78,
+              "file": "Practice/Grammar/G1.html",
+              "anchor": "grammar-a-an"
+            },
+            {
+              "canonical_topic": "grammar-verb-to-be-contractions",
+              "topic": "Go to: Grammar - Verb to be: contractions",
+              "page": 78,
+              "file": "Practice/Grammar/G1.html",
+              "anchor": "grammar-verb-to-be-contractions"
+            },
+            {
+              "canonical_topic": "vocabulary-adjectives",
+              "topic": "Go to: Vocabulary - Adjectives",
+              "page": 103,
+              "file": "Practice/Vocabulary/V1.html",
+              "anchor": "vocabulary-adjectives"
+            }
+          ],
+          "tracks": [
+            "1.8",
+            "1.9"
+          ],
+          "source": "Lessons/1B.html"
+        },
+        {
+          "code": "1C",
+          "title": "Where are you from?",
+          "current_printed_pages": [
+            9,
+            10
+          ],
+          "objective": "Describe a city and choose a place for a friend.",
+          "secondary_objectives": [],
+          "language": "Descriptive adjectives; countries and cities",
+          "vocabulary": [
+            "Countries",
+            "Adjectives"
+          ],
+          "references": [
+            {
+              "canonical_topic": "vocabulary-countries",
+              "topic": "Go to: Vocabulary - Countries",
+              "page": 105,
+              "file": "Practice/Vocabulary/V1.html",
+              "anchor": "vocabulary-countries"
+            },
+            {
+              "canonical_topic": "vocabulary-adjectives",
+              "topic": "Go to: Vocabulary - Adjectives",
+              "page": 105,
+              "file": "Practice/Vocabulary/V1.html",
+              "anchor": "vocabulary-adjectives-1c"
+            }
+          ],
+          "tracks": [
+            "1.10"
+          ],
+          "source": "Lessons/1C.html"
+        },
+        {
+          "code": "1D",
+          "title": "Let's fill in a form",
+          "current_printed_pages": [
+            11,
+            12
+          ],
+          "objective": "Ask for details and complete a registration form.",
+          "secondary_objectives": [],
+          "language": "Capital letters; personal-information questions",
+          "vocabulary": [
+            "Personal information"
+          ],
+          "references": [
+            {
+              "canonical_topic": "vocabulary-personal-information",
+              "topic": "Go to: Vocabulary - Personal information",
+              "page": 107,
+              "file": "Practice/Vocabulary/V1.html",
+              "anchor": "vocabulary-personal-information-1d"
+            }
+          ],
+          "tracks": [
+            "1.12"
+          ],
+          "source": "Lessons/1D.html"
+        }
+      ],
+      "title": "New friends",
+      "core_current_printed_pages": [
+        5,
+        12
+      ],
+      "B_lesson_primary_skill": {
+        "unit": 1,
+        "lesson": "1B",
+        "primary_skill": "reading",
+        "genre": "Occupation profiles and model conversations, with supporting audio",
+        "episode": null
+      },
+      "self_assessment": {
+        "can_do": "I can introduce myself, spell my name and exchange contact details.",
+        "evidence": "Introduce yourself to a new classmate and complete a short form.",
+        "source_lessons": [
+          "1A",
+          "1D"
+        ]
+      },
+      "grammar_practice_pages": [
+        77,
+        78,
+        79
+      ],
+      "vocabulary_practice_pages": [
+        101,
+        102,
+        103,
+        104,
+        105,
+        106,
+        107
+      ],
+      "communication_practice_pages": []
+    },
+    {
+      "unit": 2,
+      "lessons": [
+        {
+          "code": "2A",
+          "title": "Look inside my bag!",
+          "current_printed_pages": [
+            13,
+            14
+          ],
+          "objective": "Identify things and play a memory game.",
+          "secondary_objectives": [],
+          "language": "This / that / these / those",
+          "vocabulary": [
+            "Personal items"
+          ],
+          "references": [
+            {
+              "canonical_topic": "vocabulary-personal-items",
+              "topic": "Go to: Vocabulary - Personal items",
+              "page": 108,
+              "file": "Practice/Vocabulary/V2.html",
+              "anchor": "vocabulary-personal-items"
+            },
+            {
+              "canonical_topic": "grammar-this-that-these-those",
+              "topic": "Go to: Grammar - This / that / these / those",
+              "page": 80,
+              "file": "Practice/Grammar/G2.html",
+              "anchor": "grammar-this-that-these-those"
+            }
+          ],
+          "tracks": [
+            "2.1",
+            "2.2"
+          ],
+          "source": "Lessons/2A.html"
+        },
+        {
+          "code": "2B",
+          "title": "What time is the next bus?",
+          "current_printed_pages": [
+            15,
+            16
+          ],
+          "objective": "Understand a journey and choose a departure.",
+          "secondary_objectives": [],
+          "language": "A / an / the; clock times",
+          "vocabulary": [
+            "Telling time"
+          ],
+          "references": [
+            {
+              "canonical_topic": "vocabulary-telling-time",
+              "topic": "Go to: Vocabulary - Telling time",
+              "page": 109,
+              "file": "Practice/Vocabulary/V2.html",
+              "anchor": "vocabulary-telling-time"
+            },
+            {
+              "canonical_topic": "grammar-a-an-the",
+              "topic": "Go to: Grammar - A / an / the",
+              "page": 80,
+              "file": "Practice/Grammar/G2.html",
+              "anchor": "grammar-a-an-the"
+            }
+          ],
+          "tracks": [
+            "2.3"
+          ],
+          "source": "Lessons/2B.html"
+        },
+        {
+          "code": "2C",
+          "title": "Meet my family!",
+          "current_printed_pages": [
+            17,
+            18
+          ],
+          "objective": "Talk about a family and identify their things.",
+          "secondary_objectives": [],
+          "language": "Possessive ’s and s’",
+          "vocabulary": [
+            "Family members"
+          ],
+          "references": [
+            {
+              "canonical_topic": "vocabulary-family-members",
+              "topic": "Go to: Vocabulary - Family members",
+              "page": 110,
+              "file": "Practice/Vocabulary/V2.html",
+              "anchor": "vocabulary-family-members"
+            },
+            {
+              "canonical_topic": "grammar-possessive-case",
+              "topic": "Go to: Grammar - Possessive case",
+              "page": 81,
+              "file": "Practice/Grammar/G2.html",
+              "anchor": "grammar-possessive-case"
+            }
+          ],
+          "tracks": [
+            "2.6"
+          ],
+          "source": "Lessons/2C.html"
+        },
+        {
+          "code": "2D",
+          "title": "Is that my phone?",
+          "current_printed_pages": [
+            19,
+            20
+          ],
+          "objective": "Describe an item and find its owner.",
+          "secondary_objectives": [],
+          "language": "Adjectives before nouns and after be",
+          "vocabulary": [
+            "Colors",
+            "Adjectives"
+          ],
+          "references": [
+            {
+              "canonical_topic": "vocabulary-colors",
+              "topic": "Go to: Vocabulary - Colors",
+              "page": 111,
+              "file": "Practice/Vocabulary/V2.html",
+              "anchor": "vocabulary-colors"
+            },
+            {
+              "canonical_topic": "grammar-adjective-position",
+              "topic": "Go to: Grammar - Adjective position",
+              "page": 81,
+              "file": "Practice/Grammar/G2.html",
+              "anchor": "grammar-adjective-position"
+            },
+            {
+              "canonical_topic": "vocabulary-adjectives",
+              "topic": "Go to: Vocabulary - Adjectives",
+              "page": 111,
+              "file": "Practice/Vocabulary/V2.html",
+              "anchor": "vocabulary-adjectives-2d"
+            }
+          ],
+          "tracks": [
+            "2.4",
+            "2.5"
+          ],
+          "source": "Lessons/2D.html"
+        }
+      ],
+      "title": "What’s in my bag?",
+      "core_current_printed_pages": [
+        13,
+        20
+      ],
+      "B_lesson_primary_skill": {
+        "unit": 2,
+        "lesson": "2B",
+        "primary_skill": "listening",
+        "genre": "Horizons on Air street interviews",
+        "episode": "Bus or car?",
+        "tracks": [
+          "2.3"
+        ]
+      },
+      "self_assessment": {
+        "can_do": "I can describe a lost item and ask questions to find its owner.",
+        "evidence": "Describe the item, its color and its owner in a lost-and-found exchange.",
+        "source_lessons": [
+          "2A",
+          "2C",
+          "2D"
+        ]
+      },
+      "grammar_practice_pages": [
+        80,
+        81
+      ],
+      "vocabulary_practice_pages": [
+        108,
+        109,
+        110,
+        111
+      ],
+      "communication_practice_pages": []
+    },
+    {
+      "unit": 3,
+      "lessons": [
+        {
+          "code": "3A",
+          "title": "What's your routine?",
+          "current_printed_pages": [
+            23,
+            24
+          ],
+          "objective": "Describe a routine and recognise a classmate.",
+          "secondary_objectives": [],
+          "language": "Present simple: affirmative",
+          "vocabulary": [
+            "Daily routines"
+          ],
+          "references": [
+            {
+              "canonical_topic": "vocabulary-daily-routines",
+              "topic": "Go to: Vocabulary - Daily routines",
+              "page": 112,
+              "file": "Practice/Vocabulary/V3.html",
+              "anchor": "vocabulary-daily-routines"
+            },
+            {
+              "canonical_topic": "grammar-present-simple-affirmative",
+              "topic": "Go to: Grammar - Present simple: affirmative",
+              "page": 82,
+              "file": "Practice/Grammar/G3.html",
+              "anchor": "grammar-present-simple-affirmative"
+            }
+          ],
+          "tracks": [
+            "3.1",
+            "3.2",
+            "3.3"
+          ],
+          "source": "Lessons/3A.html"
+        },
+        {
+          "code": "3B",
+          "title": "Weekdays or weekends?",
+          "current_printed_pages": [
+            25,
+            26
+          ],
+          "objective": "Compare schedules and agree a day to meet.",
+          "secondary_objectives": [],
+          "language": "Present simple: negatives and questions",
+          "vocabulary": [
+            "Days of the week"
+          ],
+          "references": [
+            {
+              "canonical_topic": "vocabulary-days-of-the-week",
+              "topic": "Go to: Vocabulary - Days of the week",
+              "page": 114,
+              "file": "Practice/Vocabulary/V3.html",
+              "anchor": "vocabulary-days-of-the-week"
+            },
+            {
+              "canonical_topic": "grammar-present-simple-negatives-and-questions",
+              "topic": "Go to: Grammar - Present simple: negatives and questions",
+              "page": 83,
+              "file": "Practice/Grammar/G3.html",
+              "anchor": "grammar-present-simple-negatives-and-questions"
+            }
+          ],
+          "tracks": [
+            "3.4",
+            "3.5"
+          ],
+          "source": "Lessons/3B.html"
+        },
+        {
+          "code": "3C",
+          "title": "Where do you go?",
+          "current_printed_pages": [
+            27,
+            28
+          ],
+          "objective": "Ask about a place and recommend it.",
+          "secondary_objectives": [],
+          "language": "Wh- question words",
+          "vocabulary": [
+            "Adjectives"
+          ],
+          "references": [
+            {
+              "canonical_topic": "vocabulary-place-adjectives-recall",
+              "topic": "Go to: Vocabulary - Adjectives",
+              "page": 115,
+              "file": "Practice/Vocabulary/V3.html",
+              "anchor": "vocabulary-place-adjectives-recall"
+            },
+            {
+              "canonical_topic": "grammar-question-words",
+              "topic": "Go to: Grammar - Question words",
+              "page": 84,
+              "file": "Practice/Grammar/G3.html",
+              "anchor": "grammar-question-words"
+            }
+          ],
+          "tracks": [
+            "3.6",
+            "3.7"
+          ],
+          "source": "Lessons/3C.html"
+        },
+        {
+          "code": "3D",
+          "title": "My week in order",
+          "current_printed_pages": [
+            29,
+            30
+          ],
+          "objective": "Describe your week and try one small change.",
+          "secondary_objectives": [],
+          "language": "Frequency adverbs; before / after",
+          "vocabulary": [
+            "Daily routines"
+          ],
+          "references": [
+            {
+              "canonical_topic": "vocabulary-daily-routines",
+              "topic": "Go to: Vocabulary - Daily routines",
+              "page": 117,
+              "file": "Practice/Vocabulary/V3.html",
+              "anchor": "vocabulary-daily-routines-3d"
+            },
+            {
+              "canonical_topic": "grammar-frequency-adverbs",
+              "topic": "Go to: Grammar - Frequency adverbs",
+              "page": 85,
+              "file": "Practice/Grammar/G3.html",
+              "anchor": "grammar-frequency-adverbs"
+            },
+            {
+              "canonical_topic": "grammar-before-after",
+              "topic": "Go to: Grammar - Before / after",
+              "page": 85,
+              "file": "Practice/Grammar/G3.html",
+              "anchor": "grammar-before-after"
+            }
+          ],
+          "tracks": [
+            "3.8",
+            "3.9"
+          ],
+          "source": "Lessons/3D.html"
+        }
+      ],
+      "title": "My life",
+      "core_current_printed_pages": [
+        23,
+        30
+      ],
+      "B_lesson_primary_skill": {
+        "unit": 3,
+        "lesson": "3B",
+        "primary_skill": "listening",
+        "genre": "Horizons on Air guest interviews",
+        "episode": "Three people. Three weeks.",
+        "tracks": [
+          "3.5"
+        ]
+      },
+      "self_assessment": {
+        "can_do": "I can compare routines and agree on a day and time to meet.",
+        "evidence": "Ask about a partner’s routine, then choose a time that works for both.",
+        "source_lessons": [
+          "3A",
+          "3B",
+          "3D"
+        ]
+      },
+      "grammar_practice_pages": [
+        82,
+        83,
+        84,
+        85
+      ],
+      "vocabulary_practice_pages": [
+        112,
+        113,
+        114,
+        115,
+        116,
+        117
+      ],
+      "communication_practice_pages": []
+    },
+    {
+      "unit": 4,
+      "lessons": [
+        {
+          "code": "4A",
+          "title": "What do you eat?",
+          "current_printed_pages": [
+            31,
+            32
+          ],
+          "objective": "Plan a breakfast for two",
+          "secondary_objectives": [],
+          "language": "Countable and uncountable nouns",
+          "vocabulary": [
+            "Food and drink"
+          ],
+          "references": [
+            {
+              "canonical_topic": "vocabulary-food-and-drink",
+              "topic": "Go to: Vocabulary - Food and drink",
+              "page": 118,
+              "file": "Practice/Vocabulary/V4.html",
+              "anchor": "vocabulary-food-and-drink"
+            },
+            {
+              "canonical_topic": "grammar-countable-and-uncountable-nouns",
+              "topic": "Go to: Grammar - Countable and uncountable nouns",
+              "page": 86,
+              "file": "Practice/Grammar/G4.html",
+              "anchor": "grammar-countable-and-uncountable-nouns"
+            }
+          ],
+          "tracks": [
+            "4.1",
+            "4.2"
+          ],
+          "source": "Lessons/4A.html"
+        },
+        {
+          "code": "4B",
+          "title": "Tasty or not?",
+          "current_printed_pages": [
+            33,
+            34
+          ],
+          "objective": "Compare food opinions and make a choice.",
+          "secondary_objectives": [],
+          "language": "Object pronouns; food preferences",
+          "vocabulary": [
+            "Flavors"
+          ],
+          "references": [
+            {
+              "canonical_topic": "vocabulary-flavors",
+              "topic": "Go to: Vocabulary - Flavors",
+              "page": 120,
+              "file": "Practice/Vocabulary/V4.html",
+              "anchor": "vocabulary-flavors"
+            },
+            {
+              "canonical_topic": "grammar-object-pronouns",
+              "topic": "Go to: Grammar - Object pronouns",
+              "page": 86,
+              "file": "Practice/Grammar/G4.html",
+              "anchor": "grammar-object-pronouns"
+            }
+          ],
+          "tracks": [
+            "4.3",
+            "4.4"
+          ],
+          "source": "Lessons/4B.html"
+        },
+        {
+          "code": "4C",
+          "title": "Cooking time!",
+          "current_printed_pages": [
+            35,
+            36
+          ],
+          "objective": "Plan and explain a recipe",
+          "secondary_objectives": [],
+          "language": "Too much / too many / enough / not enough",
+          "vocabulary": [
+            "Cooking verbs"
+          ],
+          "references": [
+            {
+              "canonical_topic": "vocabulary-cooking-verbs",
+              "topic": "Go to: Vocabulary - Cooking verbs",
+              "page": 121,
+              "file": "Practice/Vocabulary/V4.html",
+              "anchor": "vocabulary-cooking-verbs"
+            },
+            {
+              "canonical_topic": "grammar-too-much-too-many-enough",
+              "topic": "Go to: Grammar - Too much / too many / enough",
+              "page": 87,
+              "file": "Practice/Grammar/G4.html",
+              "anchor": "grammar-too-much-too-many-enough"
+            }
+          ],
+          "tracks": [
+            "4.5",
+            "4.6"
+          ],
+          "source": "Lessons/4C.html"
+        },
+        {
+          "code": "4D",
+          "title": "Food for everyone!",
+          "current_printed_pages": [
+            37,
+            38
+          ],
+          "objective": "Share food with a clear message",
+          "secondary_objectives": [],
+          "language": "Because / so; sentence punctuation",
+          "vocabulary": [
+            "Sharing food"
+          ],
+          "references": [
+            {
+              "canonical_topic": "vocabulary-sharing-food",
+              "topic": "Go to: Vocabulary - Sharing food",
+              "page": 122,
+              "file": "Practice/Vocabulary/V4.html",
+              "anchor": "vocabulary-sharing-food"
+            },
+            {
+              "canonical_topic": "grammar-because-so-and-punctuation",
+              "topic": "Go to: Grammar - Because / so and punctuation",
+              "page": 88,
+              "file": "Practice/Grammar/G4.html",
+              "anchor": "grammar-because-so-and-punctuation"
+            }
+          ],
+          "tracks": [
+            "4.7",
+            "4.8"
+          ],
+          "source": "Lessons/4D.html"
+        }
+      ],
+      "title": "Let’s eat!",
+      "core_current_printed_pages": [
+        31,
+        38
+      ],
+      "B_lesson_primary_skill": {
+        "unit": 4,
+        "lesson": "4B",
+        "primary_skill": "reading",
+        "genre": "Food opinions and comparison",
+        "episode": null
+      },
+      "self_assessment": {
+        "can_do": "I can plan food and write a clear message that gives a reason.",
+        "evidence": "Plan a simple dish or food-sharing message using because or so.",
+        "source_lessons": [
+          "4A",
+          "4C",
+          "4D"
+        ]
+      },
+      "grammar_practice_pages": [
+        86,
+        87,
+        88
+      ],
+      "vocabulary_practice_pages": [
+        118,
+        119,
+        120,
+        121,
+        122
+      ],
+      "communication_practice_pages": []
+    },
+    {
+      "unit": 5,
+      "lessons": [
+        {
+          "code": "5A",
+          "title": "What are you wearing?",
+          "current_printed_pages": [
+            41,
+            42
+          ],
+          "objective": "Describe clothes and actions now",
+          "secondary_objectives": [],
+          "language": "Present continuous; usually / now contrast",
+          "vocabulary": [
+            "Clothes and accessories"
+          ],
+          "references": [
+            {
+              "canonical_topic": "vocabulary-clothes-and-accessories",
+              "topic": "Go to: Vocabulary - Clothes and accessories",
+              "page": 123,
+              "file": "Practice/Vocabulary/V5.html",
+              "anchor": "vocabulary-clothes-and-accessories"
+            },
+            {
+              "canonical_topic": "grammar-present-continuous",
+              "topic": "Go to: Grammar - Present continuous",
+              "page": 89,
+              "file": "Practice/Grammar/G5.html",
+              "anchor": "grammar-present-continuous"
+            }
+          ],
+          "tracks": [
+            "5.1",
+            "5.2",
+            "5.3"
+          ],
+          "source": "Lessons/5A.html"
+        },
+        {
+          "code": "5B",
+          "title": "That’s my favorite!",
+          "current_printed_pages": [
+            43,
+            44
+          ],
+          "objective": "Decide what to keep or return",
+          "secondary_objectives": [],
+          "language": "Too / enough with adjectives",
+          "vocabulary": [
+            "Shopping verbs"
+          ],
+          "references": [
+            {
+              "canonical_topic": "vocabulary-shopping-verbs",
+              "topic": "Go to: Vocabulary - Shopping verbs",
+              "page": 124,
+              "file": "Practice/Vocabulary/V5.html",
+              "anchor": "vocabulary-shopping-verbs"
+            },
+            {
+              "canonical_topic": "grammar-too-and-enough-with-adjectives",
+              "topic": "Go to: Grammar - Too and enough with adjectives",
+              "page": 90,
+              "file": "Practice/Grammar/G5.html",
+              "anchor": "grammar-too-and-enough-with-adjectives"
+            }
+          ],
+          "tracks": [
+            "5.4",
+            "5.5",
+            "5.6"
+          ],
+          "source": "Lessons/5B.html"
+        },
+        {
+          "code": "5C",
+          "title": "How often do you shop?",
+          "current_printed_pages": [
+            45,
+            46
+          ],
+          "objective": "Compare shopping habits",
+          "secondary_objectives": [],
+          "language": "Frequency expressions",
+          "vocabulary": [
+            "Places in town"
+          ],
+          "references": [
+            {
+              "canonical_topic": "vocabulary-places-in-town",
+              "topic": "Go to: Vocabulary - Places in town",
+              "page": 125,
+              "file": "Practice/Vocabulary/V5.html",
+              "anchor": "vocabulary-places-in-town"
+            },
+            {
+              "canonical_topic": "grammar-frequency-expressions",
+              "topic": "Go to: Grammar - Frequency expressions",
+              "page": 91,
+              "file": "Practice/Grammar/G5.html",
+              "anchor": "grammar-frequency-expressions"
+            }
+          ],
+          "tracks": [
+            "5.7",
+            "5.8",
+            "5.9"
+          ],
+          "source": "Lessons/5C.html"
+        },
+        {
+          "code": "5D",
+          "title": "At the store",
+          "current_printed_pages": [
+            47,
+            48
+          ],
+          "objective": "Buy food and check your receipt",
+          "secondary_objectives": [],
+          "language": "Shopping requests, prices and quantities",
+          "vocabulary": [
+            "At the store"
+          ],
+          "references": [
+            {
+              "canonical_topic": "vocabulary-at-the-store",
+              "topic": "Go to: Vocabulary - At the store",
+              "page": 127,
+              "file": "Practice/Vocabulary/V5.html",
+              "anchor": "vocabulary-at-the-store"
+            },
+            {
+              "canonical_topic": "communication-grocery-shopping",
+              "topic": "Go to: Communication - Grocery shopping",
+              "page": 148,
+              "file": "Practice/Communication/C5.html",
+              "anchor": "communication-grocery-shopping"
+            }
+          ],
+          "tracks": [
+            "5.10",
+            "5.11",
+            "5.12"
+          ],
+          "source": "Lessons/5D.html"
+        }
+      ],
+      "title": "Shopping time",
+      "core_current_printed_pages": [
+        41,
+        48
+      ],
+      "B_lesson_primary_skill": {
+        "unit": 5,
+        "lesson": "5B",
+        "primary_skill": "listening",
+        "genre": "Horizons on Air shopping reviews and listener calls",
+        "episode": "Keep or return?",
+        "tracks": [
+          "5.5",
+          "5.6"
+        ]
+      },
+      "self_assessment": {
+        "can_do": "I can describe what I am wearing and buy or return an item.",
+        "evidence": "Describe an item, ask its price and explain a shopping decision.",
+        "source_lessons": [
+          "5A",
+          "5B",
+          "5D"
+        ]
+      },
+      "grammar_practice_pages": [
+        89,
+        90,
+        91
+      ],
+      "vocabulary_practice_pages": [
+        123,
+        124,
+        125,
+        126,
+        127,
+        128
+      ],
+      "communication_practice_pages": [
+        148
+      ]
+    },
+    {
+      "unit": 6,
+      "lessons": [
+        {
+          "code": "6A",
+          "title": "City life or country life?",
+          "current_printed_pages": [
+            49,
+            50
+          ],
+          "objective": "Choose places for a new town center",
+          "secondary_objectives": [],
+          "language": "Describing and choosing places",
+          "vocabulary": [
+            "Places in town 2"
+          ],
+          "references": [
+            {
+              "canonical_topic": "vocabulary-places-in-town-2",
+              "topic": "Go to: Vocabulary - Places in town 2",
+              "page": 129,
+              "file": "Practice/Vocabulary/V6.html",
+              "anchor": "vocabulary-places-in-town-2"
+            }
+          ],
+          "tracks": [
+            "6.1",
+            "6.2",
+            "6.3"
+          ],
+          "source": "Lessons/6A.html"
+        },
+        {
+          "code": "6B",
+          "title": "My dream home",
+          "current_printed_pages": [
+            51,
+            52
+          ],
+          "objective": "Describe a home and compare rooms",
+          "secondary_objectives": [],
+          "language": "Prepositions of place",
+          "vocabulary": [
+            "Rooms and furniture"
+          ],
+          "references": [
+            {
+              "canonical_topic": "vocabulary-rooms-and-furniture",
+              "topic": "Go to: Vocabulary - Rooms and furniture",
+              "page": 131,
+              "file": "Practice/Vocabulary/V6.html",
+              "anchor": "vocabulary-rooms-and-furniture"
+            },
+            {
+              "canonical_topic": "grammar-prepositions-of-place",
+              "topic": "Go to: Grammar - Prepositions of place",
+              "page": 92,
+              "file": "Practice/Grammar/G6.html",
+              "anchor": "grammar-prepositions-of-place"
+            }
+          ],
+          "tracks": [
+            "6.4",
+            "6.5",
+            "6.6"
+          ],
+          "source": "Lessons/6B.html"
+        },
+        {
+          "code": "6C",
+          "title": "My neighborhood",
+          "current_printed_pages": [
+            53,
+            54
+          ],
+          "objective": "Give a route your partner can follow",
+          "secondary_objectives": [],
+          "language": "Directions and prepositions of movement",
+          "vocabulary": [
+            "Movement and directions"
+          ],
+          "references": [
+            {
+              "canonical_topic": "vocabulary-movement-and-directions",
+              "topic": "Go to: Vocabulary - Movement and directions",
+              "page": 133,
+              "file": "Practice/Vocabulary/V6.html",
+              "anchor": "vocabulary-movement-and-directions"
+            },
+            {
+              "canonical_topic": "grammar-giving-directions",
+              "topic": "Go to: Grammar - Giving directions",
+              "page": 93,
+              "file": "Practice/Grammar/G6.html",
+              "anchor": "grammar-giving-directions"
+            }
+          ],
+          "tracks": [
+            "6.7",
+            "6.8",
+            "6.9"
+          ],
+          "source": "Lessons/6C.html"
+        },
+        {
+          "code": "6D",
+          "title": "Where’s the mall?",
+          "current_printed_pages": [
+            55,
+            56
+          ],
+          "objective": "Plan a day with a visitor",
+          "secondary_objectives": [],
+          "language": "Can / can’t: available actions and plans",
+          "vocabulary": [
+            "Shopping centers and attractions"
+          ],
+          "references": [
+            {
+              "canonical_topic": "vocabulary-shopping-centers-and-attractions",
+              "topic": "Go to: Vocabulary - Shopping centers and attractions",
+              "page": 134,
+              "file": "Practice/Vocabulary/V6.html",
+              "anchor": "vocabulary-shopping-centers-and-attractions"
+            },
+            {
+              "canonical_topic": "grammar-can-and-cant",
+              "topic": "Go to: Grammar - Can and can’t",
+              "page": 94,
+              "file": "Practice/Grammar/G6.html",
+              "anchor": "grammar-can-and-cant"
+            },
+            {
+              "canonical_topic": "communication-helping-a-visitor",
+              "topic": "Go to: Communication - Helping a visitor",
+              "page": 149,
+              "file": "Practice/Communication/C6.html",
+              "anchor": "communication-helping-a-visitor"
+            }
+          ],
+          "tracks": [
+            "6.10",
+            "6.11",
+            "6.12"
+          ],
+          "source": "Lessons/6D.html"
+        }
+      ],
+      "title": "Moving around",
+      "core_current_printed_pages": [
+        49,
+        56
+      ],
+      "B_lesson_primary_skill": {
+        "unit": 6,
+        "lesson": "6B",
+        "primary_skill": "reading",
+        "genre": "Dated real tiny-home interview adaptation: silent gist/detail/evaluation; supporting audio",
+        "episode": null
+      },
+      "self_assessment": {
+        "can_do": "I can describe a place and give directions a visitor can follow.",
+        "evidence": "Use a real or imagined map to guide a partner and check the destination.",
+        "source_lessons": [
+          "6A",
+          "6B",
+          "6C",
+          "6D"
+        ]
+      },
+      "grammar_practice_pages": [
+        92,
+        93,
+        94
+      ],
+      "vocabulary_practice_pages": [
+        129,
+        130,
+        131,
+        132,
+        133,
+        134
+      ],
+      "communication_practice_pages": [
+        149
+      ]
+    },
+    {
+      "unit": 7,
+      "lessons": [
+        {
+          "code": "7A",
+          "title": "When I was little…",
+          "current_printed_pages": [
+            59,
+            60
+          ],
+          "objective": "Talk about childhood",
+          "secondary_objectives": [
+            "was / were"
+          ],
+          "language": "Past of be: was / were",
+          "vocabulary": [
+            "Past time expressions"
+          ],
+          "references": [
+            {
+              "canonical_topic": "vocabulary-past-time-expressions",
+              "topic": "Go to: Vocabulary - Past time expressions",
+              "page": 135,
+              "file": "Practice/Vocabulary/V7.html",
+              "anchor": "vocabulary-past-time-expressions"
+            },
+            {
+              "canonical_topic": "grammar-past-of-be",
+              "topic": "Go to: Grammar - Past of be",
+              "page": 95,
+              "file": "Practice/Grammar/G7.html",
+              "anchor": "grammar-past-of-be"
+            }
+          ],
+          "tracks": [
+            "7.1",
+            "7.2",
+            "7.3"
+          ],
+          "source": "Lessons/7A.html"
+        },
+        {
+          "code": "7B",
+          "title": "I was born in July!",
+          "current_printed_pages": [
+            61,
+            62
+          ],
+          "objective": "Find and share important dates",
+          "secondary_objectives": [
+            "Dates and ago"
+          ],
+          "language": "Dates, ordinal numbers and ago",
+          "vocabulary": [
+            "Months",
+            "Dates and ordinal numbers",
+            "Past time expressions"
+          ],
+          "references": [
+            {
+              "canonical_topic": "vocabulary-months",
+              "topic": "Go to: Vocabulary - Months",
+              "page": 136,
+              "file": "Practice/Vocabulary/V7.html",
+              "anchor": "vocabulary-months"
+            },
+            {
+              "canonical_topic": "vocabulary-dates-and-ordinal-numbers",
+              "topic": "Go to: Vocabulary - Dates and ordinal numbers",
+              "page": 136,
+              "file": "Practice/Vocabulary/V7.html",
+              "anchor": "vocabulary-dates-and-ordinal-numbers"
+            },
+            {
+              "canonical_topic": "vocabulary-past-time-expressions",
+              "topic": "Go to: Vocabulary - Past time expressions",
+              "page": 136,
+              "file": "Practice/Vocabulary/V7.html",
+              "anchor": "vocabulary-past-time-expressions-7b"
+            },
+            {
+              "canonical_topic": "grammar-dates-and-ago",
+              "topic": "Go to: Grammar - Dates and ago",
+              "page": 96,
+              "file": "Practice/Grammar/G7.html",
+              "anchor": "grammar-dates-and-ago"
+            }
+          ],
+          "tracks": [
+            "7.4",
+            "7.5",
+            "7.6"
+          ],
+          "source": "Lessons/7B.html"
+        },
+        {
+          "code": "7C",
+          "title": "Life in the 80s",
+          "current_printed_pages": [
+            63,
+            64
+          ],
+          "objective": "Tell a story from the past",
+          "secondary_objectives": [
+            "Regular past verbs"
+          ],
+          "language": "Past simple: regular verbs, negatives and questions",
+          "vocabulary": [
+            "Music"
+          ],
+          "references": [
+            {
+              "canonical_topic": "vocabulary-music",
+              "topic": "Go to: Vocabulary - Music",
+              "page": 138,
+              "file": "Practice/Vocabulary/V7.html",
+              "anchor": "vocabulary-music"
+            },
+            {
+              "canonical_topic": "grammar-past-simple-regular-verbs",
+              "topic": "Go to: Grammar - Past simple - Regular verbs",
+              "page": 97,
+              "file": "Practice/Grammar/G7.html",
+              "anchor": "grammar-past-simple-regular-verbs"
+            }
+          ],
+          "tracks": [
+            "7.7",
+            "7.8",
+            "7.9"
+          ],
+          "source": "Lessons/7C.html"
+        },
+        {
+          "code": "7D",
+          "title": "Dear diary",
+          "current_printed_pages": [
+            65,
+            66
+          ],
+          "objective": "Write a diary people want to read",
+          "secondary_objectives": [
+            "Past verbs and sequencing"
+          ],
+          "language": "Past simple: irregular verbs; sequencing",
+          "vocabulary": [
+            "Irregular past verbs",
+            "Sequencing words"
+          ],
+          "references": [
+            {
+              "canonical_topic": "vocabulary-irregular-past-verbs",
+              "topic": "Go to: Vocabulary - Irregular past verbs",
+              "page": 139,
+              "file": "Practice/Vocabulary/V7.html",
+              "anchor": "vocabulary-irregular-past-verbs"
+            },
+            {
+              "canonical_topic": "vocabulary-sequencing-words",
+              "topic": "Go to: Vocabulary - Sequencing words",
+              "page": 139,
+              "file": "Practice/Vocabulary/V7.html",
+              "anchor": "vocabulary-sequencing-words"
+            },
+            {
+              "canonical_topic": "communication-diary-writing",
+              "topic": "Go to: Communication - Diary writing",
+              "page": 150,
+              "file": "Practice/Communication/C7.html",
+              "anchor": "communication-diary-writing"
+            }
+          ],
+          "tracks": [
+            "7.10",
+            "7.11",
+            "7.12"
+          ],
+          "source": "Lessons/7D.html"
+        }
+      ],
+      "title": "Back in the day",
+      "core_current_printed_pages": [
+        59,
+        66
+      ],
+      "B_lesson_primary_skill": {
+        "unit": 7,
+        "lesson": "7B",
+        "primary_skill": "listening",
+        "genre": "Horizons on Air birthday quiz with two hosts and listener voicemail; dated show with gist, exact-date and relative-time listening",
+        "episode": "Birthday detective",
+        "tracks": [
+          "7.6"
+        ]
+      },
+      "self_assessment": {
+        "can_do": "I can write a short diary entry about a past day in a clear order.",
+        "evidence": "Write a date and several past events using First, Then, After that and Finally.",
+        "source_lessons": [
+          "7A",
+          "7B",
+          "7C",
+          "7D"
+        ]
+      },
+      "grammar_practice_pages": [
+        95,
+        96,
+        97
+      ],
+      "vocabulary_practice_pages": [
+        135,
+        136,
+        137,
+        138,
+        139,
+        140
+      ],
+      "communication_practice_pages": [
+        150
+      ]
+    },
+    {
+      "unit": 8,
+      "lessons": [
+        {
+          "code": "8A",
+          "title": "Let’s go to Toronto!",
+          "current_printed_pages": [
+            67,
+            68
+          ],
+          "objective": "Plan a day for another traveler",
+          "secondary_objectives": [
+            "Travel and animals"
+          ],
+          "language": "Past simple: travel verbs",
+          "vocabulary": [
+            "Travel verbs",
+            "Animals"
+          ],
+          "references": [
+            {
+              "canonical_topic": "vocabulary-travel-verbs",
+              "topic": "Go to: Vocabulary - Travel verbs",
+              "page": 141,
+              "file": "Practice/Vocabulary/V8.html",
+              "anchor": "vocabulary-travel-verbs"
+            },
+            {
+              "canonical_topic": "grammar-past-simple-travel-verbs",
+              "topic": "Go to: Grammar - Past simple - Travel verbs",
+              "page": 98,
+              "file": "Practice/Grammar/G8.html",
+              "anchor": "grammar-past-simple-travel-verbs"
+            },
+            {
+              "canonical_topic": "vocabulary-animals",
+              "topic": "Go to: Vocabulary - Animals",
+              "page": 141,
+              "file": "Practice/Vocabulary/V8.html",
+              "anchor": "vocabulary-animals"
+            }
+          ],
+          "tracks": [
+            "8.1",
+            "8.2",
+            "8.3",
+            "8.4"
+          ],
+          "source": "Lessons/8A.html"
+        },
+        {
+          "code": "8B",
+          "title": "It’s so cold!",
+          "current_printed_pages": [
+            69,
+            70
+          ],
+          "objective": "Read weather news and give advice",
+          "secondary_objectives": [
+            "Should / shouldn’t"
+          ],
+          "language": "Should / shouldn’t: advice",
+          "vocabulary": [
+            "Weather and seasons"
+          ],
+          "references": [
+            {
+              "canonical_topic": "vocabulary-weather-and-seasons",
+              "topic": "Go to: Vocabulary - Weather and seasons",
+              "page": 143,
+              "file": "Practice/Vocabulary/V8.html",
+              "anchor": "vocabulary-weather-and-seasons"
+            },
+            {
+              "canonical_topic": "grammar-should-advice",
+              "topic": "Go to: Grammar - Should - Advice",
+              "page": 99,
+              "file": "Practice/Grammar/G8.html",
+              "anchor": "grammar-should-advice"
+            }
+          ],
+          "tracks": [
+            "8.5",
+            "8.6"
+          ],
+          "source": "Lessons/8B.html"
+        },
+        {
+          "code": "8C",
+          "title": "Can you go tomorrow?",
+          "current_printed_pages": [
+            71,
+            72
+          ],
+          "objective": "Explain a problem and change a plan",
+          "secondary_objectives": [
+            "Body and health"
+          ],
+          "language": "Health language: have / hurts / hurt",
+          "vocabulary": [
+            "Body parts",
+            "Health complaints"
+          ],
+          "references": [
+            {
+              "canonical_topic": "vocabulary-body-parts",
+              "topic": "Go to: Vocabulary - Body parts",
+              "page": 145,
+              "file": "Practice/Vocabulary/V8.html",
+              "anchor": "vocabulary-body-parts"
+            },
+            {
+              "canonical_topic": "vocabulary-health-complaints",
+              "topic": "Go to: Vocabulary - Health complaints",
+              "page": 145,
+              "file": "Practice/Vocabulary/V8.html",
+              "anchor": "vocabulary-health-complaints"
+            },
+            {
+              "canonical_topic": "grammar-talking-about-health",
+              "topic": "Go to: Grammar - Talking about health",
+              "page": 100,
+              "file": "Practice/Grammar/G8.html",
+              "anchor": "grammar-talking-about-health"
+            }
+          ],
+          "tracks": [
+            "8.7",
+            "8.8",
+            "8.9"
+          ],
+          "source": "Lessons/8C.html"
+        },
+        {
+          "code": "8D",
+          "title": "Tickets, please!",
+          "current_printed_pages": [
+            73,
+            74
+          ],
+          "objective": "Make a call and choose a ticket",
+          "secondary_objectives": [
+            "Requests, time and price"
+          ],
+          "language": "Phone requests and confirmation",
+          "vocabulary": [
+            "Phone and ticket language"
+          ],
+          "references": [
+            {
+              "canonical_topic": "vocabulary-phone-and-ticket-language",
+              "topic": "Go to: Vocabulary - Phone and ticket language",
+              "page": 147,
+              "file": "Practice/Vocabulary/V8.html",
+              "anchor": "vocabulary-phone-and-ticket-language"
+            },
+            {
+              "canonical_topic": "communication-buying-a-ticket-by-phone",
+              "topic": "Go to: Communication - Buying a ticket by phone",
+              "page": 151,
+              "file": "Practice/Communication/C8.html",
+              "anchor": "communication-buying-a-ticket-by-phone"
+            }
+          ],
+          "tracks": [
+            "8.10",
+            "8.11",
+            "8.12"
+          ],
+          "source": "Lessons/8D.html"
+        }
+      ],
+      "title": "Travel adventures",
+      "core_current_printed_pages": [
+        67,
+        74
+      ],
+      "B_lesson_primary_skill": {
+        "unit": 8,
+        "lesson": "8B",
+        "primary_skill": "reading",
+        "genre": "Dated original simplified Lytton/Texas 2021 weather news reports; silent gist/detail reading followed by advice and independent weather listening",
+        "episode": null,
+        "supporting_tracks": [
+          "8.5",
+          "8.6"
+        ],
+        "status": "produced; technically verified"
+      },
+      "self_assessment": {
+        "can_do": "I can change a travel plan and make a ticket-booking phone call.",
+        "evidence": "Explain a simple problem, choose a new time and confirm the destination and price.",
+        "source_lessons": [
+          "8B",
+          "8C",
+          "8D"
+        ]
+      },
+      "grammar_practice_pages": [
+        98,
+        99,
+        100
+      ],
+      "vocabulary_practice_pages": [
+        141,
+        142,
+        143,
+        144,
+        145,
+        146,
+        147
+      ],
+      "communication_practice_pages": [
+        151
+      ]
+    }
+  ],
+  "reviews": [
+    {
+      "code": "2R",
+      "title": "Units 1 & 2 · Review & practice",
+      "current_printed_pages": [
+        21,
+        22
+      ],
+      "source": "Lessons/2R.html"
+    },
+    {
+      "code": "4R",
+      "title": "Units 3 & 4 · Review & practice",
+      "current_printed_pages": [
+        39,
+        40
+      ],
+      "source": "Lessons/4R.html"
+    },
+    {
+      "code": "6R",
+      "title": "Units 5 & 6 · Review & practice",
+      "current_printed_pages": [
+        57,
+        58
+      ],
+      "source": "Lessons/6R.html"
+    },
+    {
+      "code": "8R",
+      "title": "Units 7 & 8 · Review & practice",
+      "current_printed_pages": [
+        75,
+        76
+      ],
+      "source": "Lessons/8R.html"
+    }
+  ],
+  "topic_index": [
+    {
+      "topic": "Vocabulary - Greetings",
+      "canonical_topic": "vocabulary-greetings",
+      "lesson": "1A",
+      "current_printed_page": 101,
+      "file": "Practice/Vocabulary/V1.html",
+      "anchor": "vocabulary-greetings"
+    },
+    {
+      "topic": "Grammar - Verb to be",
+      "canonical_topic": "grammar-verb-to-be",
+      "lesson": "1A",
+      "current_printed_page": 77,
+      "file": "Practice/Grammar/G1.html",
+      "anchor": "grammar-verb-to-be"
+    },
+    {
+      "topic": "Vocabulary - Personal information",
+      "canonical_topic": "vocabulary-personal-information",
+      "lesson": "1A",
+      "current_printed_page": 101,
+      "file": "Practice/Vocabulary/V1.html",
+      "anchor": "vocabulary-personal-information"
+    },
+    {
+      "topic": "Vocabulary - Alphabet",
+      "canonical_topic": "vocabulary-alphabet",
+      "lesson": "1A",
+      "current_printed_page": 101,
+      "file": "Practice/Vocabulary/V1.html",
+      "anchor": "vocabulary-alphabet"
+    },
+    {
+      "topic": "Vocabulary - Numbers",
+      "canonical_topic": "vocabulary-numbers",
+      "lesson": "1A",
+      "current_printed_page": 101,
+      "file": "Practice/Vocabulary/V1.html",
+      "anchor": "vocabulary-numbers"
+    },
+    {
+      "topic": "Vocabulary - Occupations",
+      "canonical_topic": "vocabulary-occupations",
+      "lesson": "1B",
+      "current_printed_page": 103,
+      "file": "Practice/Vocabulary/V1.html",
+      "anchor": "vocabulary-occupations"
+    },
+    {
+      "topic": "Grammar - A / an",
+      "canonical_topic": "grammar-a-an",
+      "lesson": "1B",
+      "current_printed_page": 78,
+      "file": "Practice/Grammar/G1.html",
+      "anchor": "grammar-a-an"
+    },
+    {
+      "topic": "Grammar - Verb to be: contractions",
+      "canonical_topic": "grammar-verb-to-be-contractions",
+      "lesson": "1B",
+      "current_printed_page": 78,
+      "file": "Practice/Grammar/G1.html",
+      "anchor": "grammar-verb-to-be-contractions"
+    },
+    {
+      "topic": "Vocabulary - Adjectives",
+      "canonical_topic": "vocabulary-adjectives",
+      "lesson": "1B",
+      "current_printed_page": 103,
+      "file": "Practice/Vocabulary/V1.html",
+      "anchor": "vocabulary-adjectives"
+    },
+    {
+      "topic": "Vocabulary - Countries",
+      "canonical_topic": "vocabulary-countries",
+      "lesson": "1C",
+      "current_printed_page": 105,
+      "file": "Practice/Vocabulary/V1.html",
+      "anchor": "vocabulary-countries"
+    },
+    {
+      "topic": "Vocabulary - Adjectives",
+      "canonical_topic": "vocabulary-adjectives",
+      "lesson": "1C",
+      "current_printed_page": 105,
+      "file": "Practice/Vocabulary/V1.html",
+      "anchor": "vocabulary-adjectives-1c"
+    },
+    {
+      "topic": "Vocabulary - Personal information",
+      "canonical_topic": "vocabulary-personal-information",
+      "lesson": "1D",
+      "current_printed_page": 107,
+      "file": "Practice/Vocabulary/V1.html",
+      "anchor": "vocabulary-personal-information-1d"
+    },
+    {
+      "topic": "Vocabulary - Personal items",
+      "canonical_topic": "vocabulary-personal-items",
+      "lesson": "2A",
+      "current_printed_page": 108,
+      "file": "Practice/Vocabulary/V2.html",
+      "anchor": "vocabulary-personal-items"
+    },
+    {
+      "topic": "Grammar - This / that / these / those",
+      "canonical_topic": "grammar-this-that-these-those",
+      "lesson": "2A",
+      "current_printed_page": 80,
+      "file": "Practice/Grammar/G2.html",
+      "anchor": "grammar-this-that-these-those"
+    },
+    {
+      "topic": "Vocabulary - Telling time",
+      "canonical_topic": "vocabulary-telling-time",
+      "lesson": "2B",
+      "current_printed_page": 109,
+      "file": "Practice/Vocabulary/V2.html",
+      "anchor": "vocabulary-telling-time"
+    },
+    {
+      "topic": "Grammar - A / an / the",
+      "canonical_topic": "grammar-a-an-the",
+      "lesson": "2B",
+      "current_printed_page": 80,
+      "file": "Practice/Grammar/G2.html",
+      "anchor": "grammar-a-an-the"
+    },
+    {
+      "topic": "Vocabulary - Family members",
+      "canonical_topic": "vocabulary-family-members",
+      "lesson": "2C",
+      "current_printed_page": 110,
+      "file": "Practice/Vocabulary/V2.html",
+      "anchor": "vocabulary-family-members"
+    },
+    {
+      "topic": "Grammar - Possessive case",
+      "canonical_topic": "grammar-possessive-case",
+      "lesson": "2C",
+      "current_printed_page": 81,
+      "file": "Practice/Grammar/G2.html",
+      "anchor": "grammar-possessive-case"
+    },
+    {
+      "topic": "Vocabulary - Colors",
+      "canonical_topic": "vocabulary-colors",
+      "lesson": "2D",
+      "current_printed_page": 111,
+      "file": "Practice/Vocabulary/V2.html",
+      "anchor": "vocabulary-colors"
+    },
+    {
+      "topic": "Grammar - Adjective position",
+      "canonical_topic": "grammar-adjective-position",
+      "lesson": "2D",
+      "current_printed_page": 81,
+      "file": "Practice/Grammar/G2.html",
+      "anchor": "grammar-adjective-position"
+    },
+    {
+      "topic": "Vocabulary - Adjectives",
+      "canonical_topic": "vocabulary-adjectives",
+      "lesson": "2D",
+      "current_printed_page": 111,
+      "file": "Practice/Vocabulary/V2.html",
+      "anchor": "vocabulary-adjectives-2d"
+    },
+    {
+      "topic": "Vocabulary - Daily routines",
+      "canonical_topic": "vocabulary-daily-routines",
+      "lesson": "3A",
+      "current_printed_page": 112,
+      "file": "Practice/Vocabulary/V3.html",
+      "anchor": "vocabulary-daily-routines"
+    },
+    {
+      "topic": "Grammar - Present simple: affirmative",
+      "canonical_topic": "grammar-present-simple-affirmative",
+      "lesson": "3A",
+      "current_printed_page": 82,
+      "file": "Practice/Grammar/G3.html",
+      "anchor": "grammar-present-simple-affirmative"
+    },
+    {
+      "topic": "Vocabulary - Days of the week",
+      "canonical_topic": "vocabulary-days-of-the-week",
+      "lesson": "3B",
+      "current_printed_page": 114,
+      "file": "Practice/Vocabulary/V3.html",
+      "anchor": "vocabulary-days-of-the-week"
+    },
+    {
+      "topic": "Grammar - Present simple: negatives and questions",
+      "canonical_topic": "grammar-present-simple-negatives-and-questions",
+      "lesson": "3B",
+      "current_printed_page": 83,
+      "file": "Practice/Grammar/G3.html",
+      "anchor": "grammar-present-simple-negatives-and-questions"
+    },
+    {
+      "topic": "Vocabulary - Adjectives",
+      "canonical_topic": "vocabulary-place-adjectives-recall",
+      "lesson": "3C",
+      "current_printed_page": 115,
+      "file": "Practice/Vocabulary/V3.html",
+      "anchor": "vocabulary-place-adjectives-recall"
+    },
+    {
+      "topic": "Grammar - Question words",
+      "canonical_topic": "grammar-question-words",
+      "lesson": "3C",
+      "current_printed_page": 84,
+      "file": "Practice/Grammar/G3.html",
+      "anchor": "grammar-question-words"
+    },
+    {
+      "topic": "Vocabulary - Daily routines",
+      "canonical_topic": "vocabulary-daily-routines",
+      "lesson": "3D",
+      "current_printed_page": 117,
+      "file": "Practice/Vocabulary/V3.html",
+      "anchor": "vocabulary-daily-routines-3d"
+    },
+    {
+      "topic": "Grammar - Frequency adverbs",
+      "canonical_topic": "grammar-frequency-adverbs",
+      "lesson": "3D",
+      "current_printed_page": 85,
+      "file": "Practice/Grammar/G3.html",
+      "anchor": "grammar-frequency-adverbs"
+    },
+    {
+      "topic": "Grammar - Before / after",
+      "canonical_topic": "grammar-before-after",
+      "lesson": "3D",
+      "current_printed_page": 85,
+      "file": "Practice/Grammar/G3.html",
+      "anchor": "grammar-before-after"
+    },
+    {
+      "topic": "Vocabulary - Food and drink",
+      "canonical_topic": "vocabulary-food-and-drink",
+      "lesson": "4A",
+      "current_printed_page": 118,
+      "file": "Practice/Vocabulary/V4.html",
+      "anchor": "vocabulary-food-and-drink"
+    },
+    {
+      "topic": "Grammar - Countable and uncountable nouns",
+      "canonical_topic": "grammar-countable-and-uncountable-nouns",
+      "lesson": "4A",
+      "current_printed_page": 86,
+      "file": "Practice/Grammar/G4.html",
+      "anchor": "grammar-countable-and-uncountable-nouns"
+    },
+    {
+      "topic": "Vocabulary - Flavors",
+      "canonical_topic": "vocabulary-flavors",
+      "lesson": "4B",
+      "current_printed_page": 120,
+      "file": "Practice/Vocabulary/V4.html",
+      "anchor": "vocabulary-flavors"
+    },
+    {
+      "topic": "Grammar - Object pronouns",
+      "canonical_topic": "grammar-object-pronouns",
+      "lesson": "4B",
+      "current_printed_page": 86,
+      "file": "Practice/Grammar/G4.html",
+      "anchor": "grammar-object-pronouns"
+    },
+    {
+      "topic": "Vocabulary - Cooking verbs",
+      "canonical_topic": "vocabulary-cooking-verbs",
+      "lesson": "4C",
+      "current_printed_page": 121,
+      "file": "Practice/Vocabulary/V4.html",
+      "anchor": "vocabulary-cooking-verbs"
+    },
+    {
+      "topic": "Grammar - Too much / too many / enough",
+      "canonical_topic": "grammar-too-much-too-many-enough",
+      "lesson": "4C",
+      "current_printed_page": 87,
+      "file": "Practice/Grammar/G4.html",
+      "anchor": "grammar-too-much-too-many-enough"
+    },
+    {
+      "topic": "Vocabulary - Sharing food",
+      "canonical_topic": "vocabulary-sharing-food",
+      "lesson": "4D",
+      "current_printed_page": 122,
+      "file": "Practice/Vocabulary/V4.html",
+      "anchor": "vocabulary-sharing-food"
+    },
+    {
+      "topic": "Grammar - Because / so and punctuation",
+      "canonical_topic": "grammar-because-so-and-punctuation",
+      "lesson": "4D",
+      "current_printed_page": 88,
+      "file": "Practice/Grammar/G4.html",
+      "anchor": "grammar-because-so-and-punctuation"
+    },
+    {
+      "topic": "Vocabulary - Clothes and accessories",
+      "canonical_topic": "vocabulary-clothes-and-accessories",
+      "lesson": "5A",
+      "current_printed_page": 123,
+      "file": "Practice/Vocabulary/V5.html",
+      "anchor": "vocabulary-clothes-and-accessories"
+    },
+    {
+      "topic": "Grammar - Present continuous",
+      "canonical_topic": "grammar-present-continuous",
+      "lesson": "5A",
+      "current_printed_page": 89,
+      "file": "Practice/Grammar/G5.html",
+      "anchor": "grammar-present-continuous"
+    },
+    {
+      "topic": "Vocabulary - Shopping verbs",
+      "canonical_topic": "vocabulary-shopping-verbs",
+      "lesson": "5B",
+      "current_printed_page": 124,
+      "file": "Practice/Vocabulary/V5.html",
+      "anchor": "vocabulary-shopping-verbs"
+    },
+    {
+      "topic": "Grammar - Too and enough with adjectives",
+      "canonical_topic": "grammar-too-and-enough-with-adjectives",
+      "lesson": "5B",
+      "current_printed_page": 90,
+      "file": "Practice/Grammar/G5.html",
+      "anchor": "grammar-too-and-enough-with-adjectives"
+    },
+    {
+      "topic": "Vocabulary - Places in town",
+      "canonical_topic": "vocabulary-places-in-town",
+      "lesson": "5C",
+      "current_printed_page": 125,
+      "file": "Practice/Vocabulary/V5.html",
+      "anchor": "vocabulary-places-in-town"
+    },
+    {
+      "topic": "Grammar - Frequency expressions",
+      "canonical_topic": "grammar-frequency-expressions",
+      "lesson": "5C",
+      "current_printed_page": 91,
+      "file": "Practice/Grammar/G5.html",
+      "anchor": "grammar-frequency-expressions"
+    },
+    {
+      "topic": "Vocabulary - At the store",
+      "canonical_topic": "vocabulary-at-the-store",
+      "lesson": "5D",
+      "current_printed_page": 127,
+      "file": "Practice/Vocabulary/V5.html",
+      "anchor": "vocabulary-at-the-store"
+    },
+    {
+      "topic": "Communication - Grocery shopping",
+      "canonical_topic": "communication-grocery-shopping",
+      "lesson": "5D",
+      "current_printed_page": 148,
+      "file": "Practice/Communication/C5.html",
+      "anchor": "communication-grocery-shopping"
+    },
+    {
+      "topic": "Vocabulary - Places in town 2",
+      "canonical_topic": "vocabulary-places-in-town-2",
+      "lesson": "6A",
+      "current_printed_page": 129,
+      "file": "Practice/Vocabulary/V6.html",
+      "anchor": "vocabulary-places-in-town-2"
+    },
+    {
+      "topic": "Vocabulary - Rooms and furniture",
+      "canonical_topic": "vocabulary-rooms-and-furniture",
+      "lesson": "6B",
+      "current_printed_page": 131,
+      "file": "Practice/Vocabulary/V6.html",
+      "anchor": "vocabulary-rooms-and-furniture"
+    },
+    {
+      "topic": "Grammar - Prepositions of place",
+      "canonical_topic": "grammar-prepositions-of-place",
+      "lesson": "6B",
+      "current_printed_page": 92,
+      "file": "Practice/Grammar/G6.html",
+      "anchor": "grammar-prepositions-of-place"
+    },
+    {
+      "topic": "Vocabulary - Movement and directions",
+      "canonical_topic": "vocabulary-movement-and-directions",
+      "lesson": "6C",
+      "current_printed_page": 133,
+      "file": "Practice/Vocabulary/V6.html",
+      "anchor": "vocabulary-movement-and-directions"
+    },
+    {
+      "topic": "Grammar - Giving directions",
+      "canonical_topic": "grammar-giving-directions",
+      "lesson": "6C",
+      "current_printed_page": 93,
+      "file": "Practice/Grammar/G6.html",
+      "anchor": "grammar-giving-directions"
+    },
+    {
+      "topic": "Vocabulary - Shopping centers and attractions",
+      "canonical_topic": "vocabulary-shopping-centers-and-attractions",
+      "lesson": "6D",
+      "current_printed_page": 134,
+      "file": "Practice/Vocabulary/V6.html",
+      "anchor": "vocabulary-shopping-centers-and-attractions"
+    },
+    {
+      "topic": "Grammar - Can and can’t",
+      "canonical_topic": "grammar-can-and-cant",
+      "lesson": "6D",
+      "current_printed_page": 94,
+      "file": "Practice/Grammar/G6.html",
+      "anchor": "grammar-can-and-cant"
+    },
+    {
+      "topic": "Communication - Helping a visitor",
+      "canonical_topic": "communication-helping-a-visitor",
+      "lesson": "6D",
+      "current_printed_page": 149,
+      "file": "Practice/Communication/C6.html",
+      "anchor": "communication-helping-a-visitor"
+    },
+    {
+      "topic": "Vocabulary - Past time expressions",
+      "canonical_topic": "vocabulary-past-time-expressions",
+      "lesson": "7A",
+      "current_printed_page": 135,
+      "file": "Practice/Vocabulary/V7.html",
+      "anchor": "vocabulary-past-time-expressions"
+    },
+    {
+      "topic": "Grammar - Past of be",
+      "canonical_topic": "grammar-past-of-be",
+      "lesson": "7A",
+      "current_printed_page": 95,
+      "file": "Practice/Grammar/G7.html",
+      "anchor": "grammar-past-of-be"
+    },
+    {
+      "topic": "Vocabulary - Months",
+      "canonical_topic": "vocabulary-months",
+      "lesson": "7B",
+      "current_printed_page": 136,
+      "file": "Practice/Vocabulary/V7.html",
+      "anchor": "vocabulary-months"
+    },
+    {
+      "topic": "Vocabulary - Dates and ordinal numbers",
+      "canonical_topic": "vocabulary-dates-and-ordinal-numbers",
+      "lesson": "7B",
+      "current_printed_page": 136,
+      "file": "Practice/Vocabulary/V7.html",
+      "anchor": "vocabulary-dates-and-ordinal-numbers"
+    },
+    {
+      "topic": "Vocabulary - Past time expressions",
+      "canonical_topic": "vocabulary-past-time-expressions",
+      "lesson": "7B",
+      "current_printed_page": 136,
+      "file": "Practice/Vocabulary/V7.html",
+      "anchor": "vocabulary-past-time-expressions-7b"
+    },
+    {
+      "topic": "Grammar - Dates and ago",
+      "canonical_topic": "grammar-dates-and-ago",
+      "lesson": "7B",
+      "current_printed_page": 96,
+      "file": "Practice/Grammar/G7.html",
+      "anchor": "grammar-dates-and-ago"
+    },
+    {
+      "topic": "Vocabulary - Music",
+      "canonical_topic": "vocabulary-music",
+      "lesson": "7C",
+      "current_printed_page": 138,
+      "file": "Practice/Vocabulary/V7.html",
+      "anchor": "vocabulary-music"
+    },
+    {
+      "topic": "Grammar - Past simple - Regular verbs",
+      "canonical_topic": "grammar-past-simple-regular-verbs",
+      "lesson": "7C",
+      "current_printed_page": 97,
+      "file": "Practice/Grammar/G7.html",
+      "anchor": "grammar-past-simple-regular-verbs"
+    },
+    {
+      "topic": "Vocabulary - Irregular past verbs",
+      "canonical_topic": "vocabulary-irregular-past-verbs",
+      "lesson": "7D",
+      "current_printed_page": 139,
+      "file": "Practice/Vocabulary/V7.html",
+      "anchor": "vocabulary-irregular-past-verbs"
+    },
+    {
+      "topic": "Vocabulary - Sequencing words",
+      "canonical_topic": "vocabulary-sequencing-words",
+      "lesson": "7D",
+      "current_printed_page": 139,
+      "file": "Practice/Vocabulary/V7.html",
+      "anchor": "vocabulary-sequencing-words"
+    },
+    {
+      "topic": "Communication - Diary writing",
+      "canonical_topic": "communication-diary-writing",
+      "lesson": "7D",
+      "current_printed_page": 150,
+      "file": "Practice/Communication/C7.html",
+      "anchor": "communication-diary-writing"
+    },
+    {
+      "topic": "Vocabulary - Travel verbs",
+      "canonical_topic": "vocabulary-travel-verbs",
+      "lesson": "8A",
+      "current_printed_page": 141,
+      "file": "Practice/Vocabulary/V8.html",
+      "anchor": "vocabulary-travel-verbs"
+    },
+    {
+      "topic": "Grammar - Past simple - Travel verbs",
+      "canonical_topic": "grammar-past-simple-travel-verbs",
+      "lesson": "8A",
+      "current_printed_page": 98,
+      "file": "Practice/Grammar/G8.html",
+      "anchor": "grammar-past-simple-travel-verbs"
+    },
+    {
+      "topic": "Vocabulary - Animals",
+      "canonical_topic": "vocabulary-animals",
+      "lesson": "8A",
+      "current_printed_page": 141,
+      "file": "Practice/Vocabulary/V8.html",
+      "anchor": "vocabulary-animals"
+    },
+    {
+      "topic": "Vocabulary - Weather and seasons",
+      "canonical_topic": "vocabulary-weather-and-seasons",
+      "lesson": "8B",
+      "current_printed_page": 143,
+      "file": "Practice/Vocabulary/V8.html",
+      "anchor": "vocabulary-weather-and-seasons"
+    },
+    {
+      "topic": "Grammar - Should - Advice",
+      "canonical_topic": "grammar-should-advice",
+      "lesson": "8B",
+      "current_printed_page": 99,
+      "file": "Practice/Grammar/G8.html",
+      "anchor": "grammar-should-advice"
+    },
+    {
+      "topic": "Vocabulary - Body parts",
+      "canonical_topic": "vocabulary-body-parts",
+      "lesson": "8C",
+      "current_printed_page": 145,
+      "file": "Practice/Vocabulary/V8.html",
+      "anchor": "vocabulary-body-parts"
+    },
+    {
+      "topic": "Vocabulary - Health complaints",
+      "canonical_topic": "vocabulary-health-complaints",
+      "lesson": "8C",
+      "current_printed_page": 145,
+      "file": "Practice/Vocabulary/V8.html",
+      "anchor": "vocabulary-health-complaints"
+    },
+    {
+      "topic": "Grammar - Talking about health",
+      "canonical_topic": "grammar-talking-about-health",
+      "lesson": "8C",
+      "current_printed_page": 100,
+      "file": "Practice/Grammar/G8.html",
+      "anchor": "grammar-talking-about-health"
+    },
+    {
+      "topic": "Vocabulary - Phone and ticket language",
+      "canonical_topic": "vocabulary-phone-and-ticket-language",
+      "lesson": "8D",
+      "current_printed_page": 147,
+      "file": "Practice/Vocabulary/V8.html",
+      "anchor": "vocabulary-phone-and-ticket-language"
+    },
+    {
+      "topic": "Communication - Buying a ticket by phone",
+      "canonical_topic": "communication-buying-a-ticket-by-phone",
+      "lesson": "8D",
+      "current_printed_page": 151,
+      "file": "Practice/Communication/C8.html",
+      "anchor": "communication-buying-a-ticket-by-phone"
+    }
+  ],
+  "audio_occurrences": [
+    {
+      "track": "1.1",
+      "lesson": "1A",
+      "printed_page": 5,
+      "source": "Lessons/1A.html"
+    },
+    {
+      "track": "1.2",
+      "lesson": "1A",
+      "printed_page": 5,
+      "source": "Lessons/1A.html"
+    },
+    {
+      "track": "1.3",
+      "lesson": "1A",
+      "printed_page": 6,
+      "source": "Lessons/1A.html"
+    },
+    {
+      "track": "1.4",
+      "lesson": "1A",
+      "printed_page": 6,
+      "source": "Lessons/1A.html"
+    },
+    {
+      "track": "1.5",
+      "lesson": "1A",
+      "printed_page": 6,
+      "source": "Lessons/1A.html"
+    },
+    {
+      "track": "1.6",
+      "lesson": "1A",
+      "printed_page": 6,
+      "source": "Lessons/1A.html"
+    },
+    {
+      "track": "1.7",
+      "lesson": "1A",
+      "printed_page": 6,
+      "source": "Lessons/1A.html"
+    },
+    {
+      "track": "1.8",
+      "lesson": "1B",
+      "printed_page": 7,
+      "source": "Lessons/1B.html"
+    },
+    {
+      "track": "1.8",
+      "lesson": "1B",
+      "printed_page": 8,
+      "source": "Lessons/1B.html",
+      "audio_file_override": "Track 1.8 - Exercise 4.1.mp3"
+    },
+    {
+      "track": "1.9",
+      "lesson": "1B",
+      "printed_page": 8,
+      "source": "Lessons/1B.html"
+    },
+    {
+      "track": "1.10",
+      "lesson": "1C",
+      "printed_page": 9,
+      "source": "Lessons/1C.html"
+    },
+    {
+      "track": "1.12",
+      "lesson": "1D",
+      "printed_page": 11,
+      "source": "Lessons/1D.html"
+    },
+    {
+      "track": "2.1",
+      "lesson": "2A",
+      "printed_page": 13,
+      "source": "Lessons/2A.html"
+    },
+    {
+      "track": "2.2",
+      "lesson": "2A",
+      "printed_page": 14,
+      "source": "Lessons/2A.html"
+    },
+    {
+      "track": "2.3",
+      "lesson": "2B",
+      "printed_page": 15,
+      "source": "Lessons/2B.html"
+    },
+    {
+      "track": "2.3",
+      "lesson": "2B",
+      "printed_page": 15,
+      "source": "Lessons/2B.html"
+    },
+    {
+      "track": "2.3",
+      "lesson": "2B",
+      "printed_page": 16,
+      "source": "Lessons/2B.html"
+    },
+    {
+      "track": "2.6",
+      "lesson": "2C",
+      "printed_page": 17,
+      "source": "Lessons/2C.html"
+    },
+    {
+      "track": "2.4",
+      "lesson": "2D",
+      "printed_page": 19,
+      "source": "Lessons/2D.html"
+    },
+    {
+      "track": "2.5",
+      "lesson": "2D",
+      "printed_page": 19,
+      "source": "Lessons/2D.html"
+    },
+    {
+      "track": "3.1",
+      "lesson": "3A",
+      "printed_page": 23,
+      "source": "Lessons/3A.html"
+    },
+    {
+      "track": "3.2",
+      "lesson": "3A",
+      "printed_page": 23,
+      "source": "Lessons/3A.html"
+    },
+    {
+      "track": "3.3",
+      "lesson": "3A",
+      "printed_page": 24,
+      "source": "Lessons/3A.html"
+    },
+    {
+      "track": "3.4",
+      "lesson": "3B",
+      "printed_page": 25,
+      "source": "Lessons/3B.html"
+    },
+    {
+      "track": "3.5",
+      "lesson": "3B",
+      "printed_page": 25,
+      "source": "Lessons/3B.html"
+    },
+    {
+      "track": "3.5",
+      "lesson": "3B",
+      "printed_page": 25,
+      "source": "Lessons/3B.html"
+    },
+    {
+      "track": "3.5",
+      "lesson": "3B",
+      "printed_page": 26,
+      "source": "Lessons/3B.html"
+    },
+    {
+      "track": "3.6",
+      "lesson": "3C",
+      "printed_page": 27,
+      "source": "Lessons/3C.html"
+    },
+    {
+      "track": "3.7",
+      "lesson": "3C",
+      "printed_page": 27,
+      "source": "Lessons/3C.html"
+    },
+    {
+      "track": "3.8",
+      "lesson": "3D",
+      "printed_page": 29,
+      "source": "Lessons/3D.html"
+    },
+    {
+      "track": "3.9",
+      "lesson": "3D",
+      "printed_page": 29,
+      "source": "Lessons/3D.html"
+    },
+    {
+      "track": "4.1",
+      "lesson": "4A",
+      "printed_page": 31,
+      "source": "Lessons/4A.html"
+    },
+    {
+      "track": "4.2",
+      "lesson": "4A",
+      "printed_page": 31,
+      "source": "Lessons/4A.html"
+    },
+    {
+      "track": "4.3",
+      "lesson": "4B",
+      "printed_page": 33,
+      "source": "Lessons/4B.html"
+    },
+    {
+      "track": "4.4",
+      "lesson": "4B",
+      "printed_page": 33,
+      "source": "Lessons/4B.html"
+    },
+    {
+      "track": "4.5",
+      "lesson": "4C",
+      "printed_page": 35,
+      "source": "Lessons/4C.html"
+    },
+    {
+      "track": "4.6",
+      "lesson": "4C",
+      "printed_page": 35,
+      "source": "Lessons/4C.html"
+    },
+    {
+      "track": "4.7",
+      "lesson": "4D",
+      "printed_page": 37,
+      "source": "Lessons/4D.html"
+    },
+    {
+      "track": "4.8",
+      "lesson": "4D",
+      "printed_page": 37,
+      "source": "Lessons/4D.html"
+    },
+    {
+      "track": "5.1",
+      "lesson": "5A",
+      "printed_page": 41,
+      "source": "Lessons/5A.html"
+    },
+    {
+      "track": "5.2",
+      "lesson": "5A",
+      "printed_page": 41,
+      "source": "Lessons/5A.html"
+    },
+    {
+      "track": "5.3",
+      "lesson": "5A",
+      "printed_page": 42,
+      "source": "Lessons/5A.html"
+    },
+    {
+      "track": "5.4",
+      "lesson": "5B",
+      "printed_page": 43,
+      "source": "Lessons/5B.html"
+    },
+    {
+      "track": "5.5",
+      "lesson": "5B",
+      "printed_page": 43,
+      "source": "Lessons/5B.html"
+    },
+    {
+      "track": "5.5",
+      "lesson": "5B",
+      "printed_page": 43,
+      "source": "Lessons/5B.html"
+    },
+    {
+      "track": "5.6",
+      "lesson": "5B",
+      "printed_page": 44,
+      "source": "Lessons/5B.html"
+    },
+    {
+      "track": "5.7",
+      "lesson": "5C",
+      "printed_page": 45,
+      "source": "Lessons/5C.html"
+    },
+    {
+      "track": "5.8",
+      "lesson": "5C",
+      "printed_page": 45,
+      "source": "Lessons/5C.html"
+    },
+    {
+      "track": "5.9",
+      "lesson": "5C",
+      "printed_page": 46,
+      "source": "Lessons/5C.html"
+    },
+    {
+      "track": "5.10",
+      "lesson": "5D",
+      "printed_page": 47,
+      "source": "Lessons/5D.html"
+    },
+    {
+      "track": "5.11",
+      "lesson": "5D",
+      "printed_page": 47,
+      "source": "Lessons/5D.html"
+    },
+    {
+      "track": "5.12",
+      "lesson": "5D",
+      "printed_page": 48,
+      "source": "Lessons/5D.html"
+    },
+    {
+      "track": "6.1",
+      "lesson": "6A",
+      "printed_page": 49,
+      "source": "Lessons/6A.html"
+    },
+    {
+      "track": "6.2",
+      "lesson": "6A",
+      "printed_page": 49,
+      "source": "Lessons/6A.html"
+    },
+    {
+      "track": "6.3",
+      "lesson": "6A",
+      "printed_page": 50,
+      "source": "Lessons/6A.html"
+    },
+    {
+      "track": "6.4",
+      "lesson": "6B",
+      "printed_page": 51,
+      "source": "Lessons/6B.html"
+    },
+    {
+      "track": "6.5",
+      "lesson": "6B",
+      "printed_page": 51,
+      "source": "Lessons/6B.html"
+    },
+    {
+      "track": "6.6",
+      "lesson": "6B",
+      "printed_page": 52,
+      "source": "Lessons/6B.html"
+    },
+    {
+      "track": "6.7",
+      "lesson": "6C",
+      "printed_page": 53,
+      "source": "Lessons/6C.html"
+    },
+    {
+      "track": "6.8",
+      "lesson": "6C",
+      "printed_page": 53,
+      "source": "Lessons/6C.html"
+    },
+    {
+      "track": "6.9",
+      "lesson": "6C",
+      "printed_page": 54,
+      "source": "Lessons/6C.html"
+    },
+    {
+      "track": "6.10",
+      "lesson": "6D",
+      "printed_page": 55,
+      "source": "Lessons/6D.html"
+    },
+    {
+      "track": "6.11",
+      "lesson": "6D",
+      "printed_page": 55,
+      "source": "Lessons/6D.html"
+    },
+    {
+      "track": "6.12",
+      "lesson": "6D",
+      "printed_page": 56,
+      "source": "Lessons/6D.html"
+    },
+    {
+      "track": "7.1",
+      "lesson": "7A",
+      "printed_page": 59,
+      "source": "Lessons/7A.html"
+    },
+    {
+      "track": "7.2",
+      "lesson": "7A",
+      "printed_page": 59,
+      "source": "Lessons/7A.html"
+    },
+    {
+      "track": "7.3",
+      "lesson": "7A",
+      "printed_page": 60,
+      "source": "Lessons/7A.html"
+    },
+    {
+      "track": "7.4",
+      "lesson": "7B",
+      "printed_page": 61,
+      "source": "Lessons/7B.html"
+    },
+    {
+      "track": "7.5",
+      "lesson": "7B",
+      "printed_page": 61,
+      "source": "Lessons/7B.html"
+    },
+    {
+      "track": "7.6",
+      "lesson": "7B",
+      "printed_page": 61,
+      "source": "Lessons/7B.html"
+    },
+    {
+      "track": "7.6",
+      "lesson": "7B",
+      "printed_page": 61,
+      "source": "Lessons/7B.html"
+    },
+    {
+      "track": "7.6",
+      "lesson": "7B",
+      "printed_page": 62,
+      "source": "Lessons/7B.html"
+    },
+    {
+      "track": "7.7",
+      "lesson": "7C",
+      "printed_page": 63,
+      "source": "Lessons/7C.html"
+    },
+    {
+      "track": "7.8",
+      "lesson": "7C",
+      "printed_page": 63,
+      "source": "Lessons/7C.html"
+    },
+    {
+      "track": "7.9",
+      "lesson": "7C",
+      "printed_page": 64,
+      "source": "Lessons/7C.html"
+    },
+    {
+      "track": "7.10",
+      "lesson": "7D",
+      "printed_page": 65,
+      "source": "Lessons/7D.html"
+    },
+    {
+      "track": "7.11",
+      "lesson": "7D",
+      "printed_page": 65,
+      "source": "Lessons/7D.html"
+    },
+    {
+      "track": "7.12",
+      "lesson": "7D",
+      "printed_page": 66,
+      "source": "Lessons/7D.html"
+    },
+    {
+      "track": "8.1",
+      "lesson": "8A",
+      "printed_page": 67,
+      "source": "Lessons/8A.html"
+    },
+    {
+      "track": "8.2",
+      "lesson": "8A",
+      "printed_page": 67,
+      "source": "Lessons/8A.html"
+    },
+    {
+      "track": "8.3",
+      "lesson": "8A",
+      "printed_page": 68,
+      "source": "Lessons/8A.html"
+    },
+    {
+      "track": "8.4",
+      "lesson": "8A",
+      "printed_page": 68,
+      "source": "Lessons/8A.html"
+    },
+    {
+      "track": "8.5",
+      "lesson": "8B",
+      "printed_page": 69,
+      "source": "Lessons/8B.html"
+    },
+    {
+      "track": "8.6",
+      "lesson": "8B",
+      "printed_page": 70,
+      "source": "Lessons/8B.html"
+    },
+    {
+      "track": "8.7",
+      "lesson": "8C",
+      "printed_page": 71,
+      "source": "Lessons/8C.html"
+    },
+    {
+      "track": "8.8",
+      "lesson": "8C",
+      "printed_page": 71,
+      "source": "Lessons/8C.html"
+    },
+    {
+      "track": "8.9",
+      "lesson": "8C",
+      "printed_page": 72,
+      "source": "Lessons/8C.html"
+    },
+    {
+      "track": "8.10",
+      "lesson": "8D",
+      "printed_page": 73,
+      "source": "Lessons/8D.html"
+    },
+    {
+      "track": "8.11",
+      "lesson": "8D",
+      "printed_page": 73,
+      "source": "Lessons/8D.html"
+    },
+    {
+      "track": "8.12",
+      "lesson": "8D",
+      "printed_page": 74,
+      "source": "Lessons/8D.html"
+    }
+  ],
+  "irregular_verb_reference": [
+    {
+      "verb": "be",
+      "past": "was / were",
+      "source_lessons": [
+        "7A"
+      ]
+    },
+    {
+      "verb": "buy",
+      "past": "bought",
+      "source_lessons": [
+        "7D"
+      ]
+    },
+    {
+      "verb": "eat",
+      "past": "ate",
+      "source_lessons": [
+        "7D",
+        "8A"
+      ]
+    },
+    {
+      "verb": "get",
+      "past": "got",
+      "source_lessons": [
+        "7D"
+      ]
+    },
+    {
+      "verb": "go",
+      "past": "went",
+      "source_lessons": [
+        "7D"
+      ]
+    },
+    {
+      "verb": "have",
+      "past": "had",
+      "source_lessons": [
+        "7D"
+      ]
+    },
+    {
+      "verb": "leave",
+      "past": "left",
+      "source_lessons": [
+        "8A"
+      ]
+    },
+    {
+      "verb": "see",
+      "past": "saw",
+      "source_lessons": [
+        "7D",
+        "8A"
+      ]
+    },
+    {
+      "verb": "take",
+      "past": "took",
+      "source_lessons": [
+        "8A"
+      ]
+    },
+    {
+      "verb": "write",
+      "past": "wrote",
+      "source_lessons": [
+        "7D"
+      ]
+    }
+  ],
+  "recommendations": {
+    "frontmatter": [
+      {
+        "section": "Cover and title/ownership",
+        "pages": 2,
+        "purpose": "Recognizable Horizons identity; actual level and edition; a usable student name field."
+      },
+      {
+        "section": "Contents and scope and sequence",
+        "pages": 4,
+        "purpose": "Two units per page; exact lesson titles and lesson pages; language and vocabulary; primary B skill; useful output. Add practice-bank starts and review destinations."
+      },
+      {
+        "section": "How to use Horizons and digital/audio guide",
+        "pages": 2,
+        "purpose": "Explain lesson codes, real track playback, NEW WORDS, Go-to practice, Extra Practice and Beyond Horizons; show one real tested viewer QR and a printed short URL. Future Blooket reserves stay blank."
+      }
+    ],
+    "backmatter": [
+      {
+        "section": "Course language index",
+        "pages": 2,
+        "purpose": "Alphabetical grammar and vocabulary topics with actual lesson and practice destinations; do not repeat all word banks."
+      },
+      {
+        "section": "Irregular verbs in this book",
+        "pages": 1,
+        "purpose": "Ten course-taught base forms plus past; full useful chunks, source lesson links; omit past participles because not taught."
+      },
+      {
+        "section": "Pronunciation quick reference",
+        "pages": 1,
+        "purpose": "A helpful sound/stress guide based on actual models and real audio pointers: alphabet1.4; busy/fun1B; -ed7.9. Do not invent an appendix recording."
+      },
+      {
+        "section": "My progress",
+        "pages": 2,
+        "purpose": "Eight source-linked can-do goals with meaningful evidence/result notes and one next step, rather than generic completion ticks."
+      },
+      {
+        "section": "Notes",
+        "pages": 2,
+        "purpose": "Clearly headed, generous lined writing pages inspired by attached sample; small prompt such as Words I want to use may support personal study."
+      },
+      {
+        "section": "Back cover",
+        "pages": 1,
+        "purpose": "Clear level/series identity and tested digital destination without fake commercial claims."
+      }
+    ],
+    "optional_not_needed_for_initial_completion": [
+      {
+        "section": "Exhaustive transcript bank",
+        "reason": "Long and duplicative; full scripts already exist as online resources. A clear audio guide/index is more economical."
+      },
+      {
+        "section": "Student answer keys",
+        "reason": "Teacher resources already exist; do not reveal controlled answers inside the Student Book."
+      },
+      {
+        "section": "Workbook",
+        "reason": "A separate substantial product with fresh tasks; not necessary to finish a Student Book and should not duplicate practice banks."
+      }
+    ],
+    "page_budget": "About 8 front pages plus 9 back pages before existing credits; adapt the contents density and cover folio policy without shrinking type. Current lessons already begin at printed5; insertion needs one explicit pagination plan and regenerated references.",
+    "production_constraints": [
+      "Do not claim ISBN, publisher registrations, certifications or app access that are not documented.",
+      "Do not add past participles, present perfect or future forms to fill a reference table.",
+      "Use actual current lesson titles and source genres; no rigid B-lesson alternation claim.",
+      "Keep all existing 16 future Blooket squares blank until real games are provided.",
+      "Base the audio guide on printed badges and custom files, not all files in Audios; orphaned production files are not current student recordings."
+    ]
+  }
+}

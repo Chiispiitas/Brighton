@@ -1,0 +1,79 @@
+{
+  "version": 1,
+  "date": "2026-11-02",
+  "purpose": "Book completion artwork and machine-readable digital access",
+  "reference_boundary": "The watermarked photograph in the original cover is a reference only and is not reused.",
+  "assets": [
+    {
+      "file": "horizon-cover.png",
+      "dimensions": [
+        1024,
+        1536
+      ],
+      "mode": "RGB",
+      "sha256": "52e47cb5a0c328ec3041d1063b8722c08032304254e35e9d85324a83161bf0fb",
+      "origin": "OpenAI built-in image_gen.imagegen",
+      "prompt": "Use case: photorealistic-natural. Asset type: original vertical cover photograph for Horizons A1, a warm modern English coursebook for adult and young adult learners. Create a believable documentary travel photograph, portrait 2:3 composition. A young adult Latina woman in ordinary navy casual cycling clothes and a simple coral backpack, wearing a properly fitted bicycle helmet, stands relaxed beside a realistic modest city/hybrid bicycle at a wide safe coastal viewpoint. She is looking away toward the open blue Pacific horizon, in a natural three-quarter rear view, so there is no posed beauty portrait. Full bicycle and complete human figure visible including shoes; realistic anatomy and bike mechanics, hands naturally resting on handlebar, no complex action. A second bicycle need not appear. Low coastal hills, warm dry coastal ground and an enormous clear sky and sea. Natural late afternoon light with real imperfect texture, slight atmospheric haze, understated photographic grain, true daylight colors, no cinematic orange-teal grading, no glossy AI skin, no dramatic fantasy mountains. Composition: person and bicycle occupy lower right and lower middle; upper third is uncluttered pale blue sky; left side has quiet ocean and landscape suitable for live cover typography. The photograph itself contains absolutely no text, logos, branding, watermarks, borders or typography. This is a fresh original scene, not a reconstruction of any existing stock photograph.",
+      "native_output_preserved": true,
+      "fiction_boundary": "Illustrative original image; not documentary evidence of a named person or location.",
+      "uses": [
+        "Front cover",
+        "A1 resource landing page"
+      ]
+    },
+    {
+      "file": "study-kit.png",
+      "dimensions": [
+        1448,
+        1086
+      ],
+      "mode": "RGBA",
+      "sha256": "260dea47f6a303b5d85b3035cdb21c396c39e3d49b0a4bb3c0f9d7818efe2b9b",
+      "origin": "OpenAI built-in image_gen.imagegen",
+      "prompt": "Use case: product-mockup. Asset type: a genuine transparent-background photographic cutout for an adult English coursebook's 'How to use the book' and digital study guide. A carefully arranged small study kit: a realistic black smartphone standing at a slight three-quarter angle, over-ear deep blue headphones resting beside it, a simple open white-paper notebook with completely blank pages, and one coral pencil resting diagonally across the notebook. Modest everyday objects, real material textures and tiny natural imperfections, precise clean photographic silhouettes. Smartphone screen is simple flat warm off-white, completely blank with no icons, text, fake app, QR, logo or buttons; we will add any native UI externally. Perspective and light consistent across all objects, neutral soft studio daylight. Balanced compact still life in landscape 4:3 composition, complete objects visible, substantial notebook white writing area, no floating parts, no brands or watermarks, no drawn/vector/cartoon styling, no decorative sparkles or confetti. True alpha transparent background, not white and not checkerboard, with only restrained natural object contact shadows. No words or lettering anywhere.",
+      "native_output_preserved": true,
+      "fiction_boundary": "Illustrative original image; not documentary evidence of a named person or location.",
+      "uses": [
+        4,
+        152
+      ],
+      "alpha_extrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "wingfield-logo.png",
+      "dimensions": [
+        694,
+        174
+      ],
+      "mode": "RGBA",
+      "sha256": "b092ea3e3721495f779cad6ce2a10a27b382efc20dfbf48f95e954a32be0d04e",
+      "origin": "Author-provided original Horizons DOCX, word/media/image4.png",
+      "creator": "David Santana / Wingfield, as identified in original edition",
+      "uses": [
+        "Front cover",
+        "Title/imprint",
+        "Back cover"
+      ]
+    },
+    {
+      "file": "book-qr.png",
+      "dimensions": [
+        540,
+        540
+      ],
+      "mode": "1",
+      "sha256": "7ffba21591295fcba87467b9fd3a2cf9174d4abad18614f5c072a9c1cc79304d",
+      "origin": "Functional QR generated with qrcode 8.2; decoded independently with zxing-cpp 3.1.1",
+      "encoded_url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html",
+      "quiet_zone_modules": 4,
+      "uses": [
+        4,
+        "Back cover"
+      ],
+      "decode_verified": true
+    }
+  ]
+}

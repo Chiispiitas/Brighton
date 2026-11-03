@@ -6,7 +6,7 @@
   const nav = document.createElement('nav');
   nav.className = 'hz-reader-nav';
   nav.setAttribute('aria-label', 'Book navigation');
-  nav.innerHTML = '<label for="hz-reader-jump">Horizons A1</label><select id="hz-reader-jump" aria-label="Go to a lesson"></select><button type="button" aria-label="Previous page">‹</button><output aria-live="off"></output><button type="button" aria-label="Next page">›</button>';
+  nav.innerHTML = '<label for="hz-reader-jump">Horizons A1</label><select id="hz-reader-jump" aria-label="Go to a section"></select><button type="button" aria-label="Previous page">‹</button><output aria-live="off"></output><button type="button" aria-label="Next page">›</button>';
   const select = nav.querySelector('select');
   const [previous, next] = nav.querySelectorAll('button');
   const output = nav.querySelector('output');
@@ -25,17 +25,19 @@
       return;
     }
     const practice = practicePage && page.dataset.practiceStart === 'true';
-    if (header || practice || (page.classList.contains('hz-credits-page') && !starts.some(x => x.credits))) {
+    const editorial = page.dataset.bookStart === 'true';
+    const credits = page.classList.contains('hz-credits-page');
+    if (header || practice || editorial || (credits && !starts.some(x => x.credits))) {
       const code = header?.querySelector('.hz-lesson-tab__id')?.textContent.trim();
-      const title = header?.querySelector('.hz-lesson-title')?.textContent.trim() || (practice ? page.dataset.practiceTitle : 'Image credits');
+      const title = header?.querySelector('.hz-lesson-title')?.textContent.trim() || (practice ? page.dataset.practiceTitle : page.dataset.bookTitle || (credits ? 'Image credits' : 'Book section'));
       const option = new Option(code ? `${code} · ${title}` : title, page.id);
-      select.add(option);starts.push({i, target:page, value:page.id, credits:!header && !practice});
+      select.add(option);starts.push({i, target:page, value:page.id, credits});
     }
   });
   function sync(i) {
     current = Math.max(0, Math.min(pages.length - 1, i));
     previous.disabled = current === 0;next.disabled = current === pages.length - 1;
-    output.textContent = `p. ${pages[current].dataset.page}`;
+    output.textContent = pages[current].dataset.pageLabel || `p. ${pages[current].dataset.page}`;
     // A second lesson visible lower on the page is not the active reading anchor.
     const readingEdge = Math.max(100, nav.getBoundingClientRect().bottom + 40);
     const first = starts.filter(x => x.i < current || (x.i === current && x.target.getBoundingClientRect().top < readingEdge)).at(-1) || starts.find(x => x.i === current);
