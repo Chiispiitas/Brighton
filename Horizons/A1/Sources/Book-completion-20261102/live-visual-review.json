@@ -1,0 +1,16 @@
+{
+  "content_commit": "957d34dc1f698cf7f655f1b41e722468aaa39e82",
+  "status": "PASS",
+  "reviewer": "Root editor",
+  "actual_published_captures_inspected": [
+    "front-cover",
+    4,
+    158,
+    162,
+    "back-cover"
+  ],
+  "findings": "The cover, study guide, word lookup, audio finder and back-cover mark render correctly in the actual published viewer. Saved-PDF full-page independent review covers all25new/modified pages. All source and media read back against the reviewed edition; PDF bytes match exactly.",
+  "all33_live_checks_pass": true,
+  "screenshot_directory_local": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\book-completion-20261102\\live-proof",
+  "failures": []
+}

@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "updated": "2026-11-02",
-  "status": "Student’s Book completion passes source, independent saved-PDF and local viewer checks; live publication pending",
+  "status": "Complete Student’s Book verified in source, independent saved-PDF and published entry/viewer/audio/PDF flows",
   "authority": "Author delegates editorial authority; his own B2 book sets emotional direction. Preserve colourful learning objects and warm adult playfulness alongside coherent functional roles.",
   "scope": "Complete A1 Student’s Book:32lessons and4reviews, grammar/vocabulary/practical banks, opening matter, course-specific references/finders, notes and credits.172physicalA4pages; numbered1–169 plus3unnumberedcover/titlepages. Separate workbook/teacher editions remain separate work.",
   "baseline": {
@@ -1175,8 +1175,25 @@
       "scope": "Core, practice, opening and annex masters; native charts retain explicit structure."
     },
     "live_viewer": {
-      "completed": false,
-      "status": "Publication pending;33local checks pass."
+      "completed": true,
+      "content_commit": "957d34dc1f698cf7f655f1b41e722468aaa39e82",
+      "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=completebook-957d34dc1f69",
+      "resource_entry": "https://exams.bebrighton.net/Horizons/A1/",
+      "checks_passed": 33,
+      "physical_pages": 172,
+      "unique_navigation_choices": 114,
+      "grammar_and_word_index_routes": true,
+      "real_audio_index_files": 83,
+      "preserved_lesson_controls": 90,
+      "guide_audio_sample": 1,
+      "actual_play_pause_and_print_hiding": true,
+      "all_changed_hosted_files_match": 72,
+      "text_line_endings_normalized": true,
+      "PDF_media_byte_exact": true,
+      "viewer_report": "Sources/Book-completion-20261102/live-viewer-verification.json",
+      "file_report": "Sources/Book-completion-20261102/live-file-verification.json",
+      "visual_report": "Sources/Book-completion-20261102/live-visual-review.json",
+      "failures": []
     },
     "book_completion": {
       "cover_title_contents_guides": true,
@@ -1338,9 +1355,9 @@
         "index.html"
       ],
       "fingerprint": {
-        "files": 1075,
-        "bytes": 706120851,
-        "sha256": "ff77fbadf281f53afbf9e72adb2ab8a6d9c6c44732badaa859fea7534c8893e3"
+        "files": 1078,
+        "bytes": 706179976,
+        "sha256": "89b9caee2f6af94b84cd4a253afa37a00a632c976c69389e21b248fe8a2e883e"
       },
       "normalize_text_line_endings": true
     },
@@ -1388,8 +1405,8 @@
       ],
       "fingerprint": {
         "files": 16,
-        "bytes": 195937,
-        "sha256": "1b0670326f77bda0ec7a22e9acee728ac90ac1a59aa25b350d0da73d6b1e7b71"
+        "bytes": 196871,
+        "sha256": "ee7359f6a5940a97f6ecc0920b24f699ca844d25a02fb84aa8225bb4db443c18"
       },
       "normalize_text_line_endings": true
     }

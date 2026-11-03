@@ -1,6 +1,6 @@
 # Horizons A1 — current book audit
 
-Updated 2 November 2026. The completed Student’s Book passes source, layout, independent saved-PDF and local viewer verification. Live publication verification is pending. Earlier release evidence is historical.
+Updated 2 November 2026. The completed Student’s Book passes source, layout, independent saved-PDF and local viewer verification. The published entry page, viewer, audio and PDF are verified. Earlier release evidence is historical.
 
 ## Complete learner edition
 
@@ -35,3 +35,7 @@ Current evidence: [editorial decisions](Sources/Book-completion-20261102/editori
 ## Reversibility
 
 Baseline `b12ec301dc32c864a3def720fbb0f0e82511e466` and `safety/horizons-before-book-completion-20261102` preserve the preceding 151-page edition. [Its audit](Audit%20archive/2026-11-02-before-book-completion/BOOK-AUDIT.md) is archived. The supplied old DOCX remains untouched. New art is versioned; native generated files and alpha are retained. Metadata, bookmarks and public PDF resources now have a production finalization step, so a later build preserves these reader features.
+
+## Current publication
+
+The [complete published edition](https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=completebook-957d34dc1f69#front-cover) is verified at content commit `957d34dc1f698cf7f655f1b41e722468aaa39e82`. All 33 live checks pass, including 172 pages, 114 distinct navigation choices, actual paired-lesson/contents/finder routes, the real digital-entry page, representative audio links and play/pause, image decoding and print hiding. All 72 changed hosted files match the reviewed local edition, normalizing text line endings and comparing PDF/image bytes exactly. The root editor inspected five new-section live captures. See [live viewer checks](Sources/Book-completion-20261102/live-viewer-verification.json), [file readback](Sources/Book-completion-20261102/live-file-verification.json) and [live visual review](Sources/Book-completion-20261102/live-visual-review.json).
