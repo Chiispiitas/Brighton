@@ -1,7 +1,7 @@
 {
   "schema_version": 3,
   "updated": "2026-11-02",
-  "status": "Twelve-animal8A expansion passes source, saved-PDF visual and local viewer checks; publication pending",
+  "status": "Twelve-animal8A expansion verified in source, saved-PDF visuals and published lesson/bank/audio/PDF flows",
   "authority": "Author delegates editorial authority; his own B2 book sets emotional direction. Preserve colourful learning objects and warm adult playfulness alongside coherent functional roles.",
   "scope": "A1 Student’s Book:32 lessons,4 reviews, existing grammar/vocabulary/practical banks, minimal opening matter, two notes pages and current end credits.159 physical A4 pages; numbered1–157 plus2 unnumbered covers. Optional reference guides/finders/progress are excluded. Workbook/teacher editions remain separate.",
   "baseline": {
@@ -681,8 +681,23 @@
       "scope": "Core, practice, opening and annex masters; native charts retain explicit structure."
     },
     "live_viewer": {
-      "completed": false,
-      "status": "Publication pending"
+      "completed": true,
+      "content_commit": "fa0cedc8e44a809c6af111792be87bcdc7af1ab1",
+      "url": "https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=animals12-fa0cedc8e44a#page-68",
+      "checks_passed": 17,
+      "physical_pages": 159,
+      "audio_controls": 90,
+      "animal_cutouts": 12,
+      "study_words": 12,
+      "Jessica8_3_new_master_duration": 28.19,
+      "new_audio_URL_byte_exact": true,
+      "actual_play_pause_and_print_hiding": true,
+      "all_changed_hosted_files_match": 42,
+      "PDF_images_audio_byte_exact": true,
+      "viewer_report": "Sources/8A-twelve-animals-20261102/live-viewer-verification.json",
+      "file_report": "Sources/8A-twelve-animals-20261102/live-file-verification.json",
+      "visual_report": "Sources/8A-twelve-animals-20261102/live-visual-review.json",
+      "failures": []
     },
     "book_completion": {
       "minimal_matter_only": true,
@@ -863,9 +878,9 @@
         "index.html"
       ],
       "fingerprint": {
-        "files": 1123,
-        "bytes": 721267928,
-        "sha256": "26ee91269de71ba4aa18b1f75801d465551b005046dd9ffcac5d1d8c5274aa28"
+        "files": 1126,
+        "bytes": 721288336,
+        "sha256": "0ea2420f042d20ec7809e0fdee4c6bbc7058596adde0eedf2db090d6e05e7f1f"
       },
       "normalize_text_line_endings": true
     },
@@ -913,8 +928,8 @@
       ],
       "fingerprint": {
         "files": 16,
-        "bytes": 198324,
-        "sha256": "fa6e6ef884b4b00fb9472961cfa0bc2f43407fad628f85bfb9f116235d827955"
+        "bytes": 199200,
+        "sha256": "cc33a9125ab929bbfd76555cbee02488f879ccaa14db8aab37db49f0b81a1dd6"
       },
       "normalize_text_line_endings": true
     }

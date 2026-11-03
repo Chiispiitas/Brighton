@@ -1,6 +1,6 @@
 # Horizons A1 — current book audit
 
-Updated 2 November 2026. The latest revision expands Lesson 8A’s animal foundation to twelve nouns. Source, local viewer and saved-PDF checks pass; publication verification is pending. Earlier full-book and independent second-editor reviews remain historical evidence.
+Updated 2 November 2026. The latest revision expands Lesson 8A’s animal foundation to twelve nouns. Source, local viewer and saved-PDF checks pass; the published lesson, bank, new audio and PDF are verified. Earlier full-book and independent second-editor reviews remain historical evidence.
 
 ## Current edition
 
@@ -42,4 +42,4 @@ Local viewer verification passes 17 checks: all twelve specimens/study entries, 
 
 Baseline `f385427fa3882f48fc79ab33b89774cdb24b863f` and `safety/horizons-before-8a-animals-20261102` preserve the preceding edition, including its recording. [The prior audit](Audit%20archive/2026-11-02-before-twelve-animals/BOOK-AUDIT.md) is archived. Original stock images, five prior cutouts, supplied references and cover assets remain intact. New cutouts are individual versioned assets. Shared PDF finalization preserves metadata and actual destinations.
 
-Publication verification is pending; local evidence does not claim a live result.
+The [published twelve-animal lesson](https://exams.bebrighton.net/Horizons/A1/Student%27s%20Book.html?edition=animals12-fa0cedc8e44a#page-68) is verified at content commit `fa0cedc8e44a809c6af111792be87bcdc7af1ab1`. All 17 live checks pass:159 pages,106 navigation choices,90 audio controls, twelve distinct cutouts/names, complete word bank, real lesson/practice/return routes, correct ordinary type, no missing pictures, actual new Jessica8.3 play/pause at28seconds and print hiding. All 42 changed hosted files match the reviewed edition, normalizing text line endings and comparing PDF/image/audio bytes exactly. Root inspected the four affected live page captures. See [live viewer checks](Sources/8A-twelve-animals-20261102/live-viewer-verification.json), [hosted-file readback](Sources/8A-twelve-animals-20261102/live-file-verification.json) and [live visual review](Sources/8A-twelve-animals-20261102/live-visual-review.json).
