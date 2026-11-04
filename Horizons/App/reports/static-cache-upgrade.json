@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-04T23:44:55.865Z",
+  "date": "2026-11-04T23:49:07.010Z",
   "base": "http://127.0.0.1:8898/Horizons/App/",
   "baselineCommit": "bbd859f",
   "baselineCache": "horizons-companion-friendly-v8",
@@ -17,14 +17,13 @@
     "src/art.js": "06c5fabbf7d2e45dfd7fb833a3ddfc7f78081c250b02a189b29a84f79e43aeb0",
     "src/avatar-static.js": "92742ed6eeb76787522b9ef904da7fbf403448a394babd15a154b3ca7cdc55e8",
     "service-worker.js": "1a80bc65f72d7e5bb8ffdcff09cbd995b35e914b4c87f3eb2942d2f4958bf830",
-    "assets/art/manifest.json": "754a1c6ddaa385ac217dd04f32cf2b6f9108509a933906bc28226868f7566b28",
+    "assets/art/manifest.json": "31c83a793d9715ebf9b712f3bca0b3aacd056a628e4131d81020a67d7f6e9263",
     "assets/art/avatar-static-v1.frames.json": "7ea0fd65138b223b3207780386c5437b26eaa5da21b25439b2029d93d4fb4ab5",
     "assets/art/cast-static-pico-v2.png": "6cc557478d70cb3ddbdd893d67bf09fa1236ca327c2384b06ac31ae141beb148",
     "assets/art/cast-static-mina-v2.png": "163449ffe9a3566390a5e196b976a420e3eb58e5f409d4c101a76d82f81bdfc9",
     "assets/art/cast-static-alex-v3.png": "86d6441f1062824451a8aa3cf0a43de137b2aaa17a42cd179561efa7cf227825",
     "assets/art/cast-static-jo-v3.png": "e14e81e2a1912b24702f4fd1a4222f8ec8c6814649c31d624464a0fd06cdc10b",
     "assets/art/avatar-static-heads-v2.png": "79f254047f5541326288ba948051aa82d576f47af105f3eda1c50caab6464779",
-    "assets/art/avatar-friendly-heads-v1.png": "407bcff61341e0b650c9fa360aeb9901ebe068d39e1601dfd5560bfccab4ca82",
     "assets/art/avatar-static-clothes-v1.png": "38c59629065fbc10c6ec5d723c8d89f4630afb859c89699c7581f7b662e8180d",
     "assets/art/avatar-static-hair-v1.png": "c73a9e78139d3ceaf1c6b6cd61392835ebb3c82f13fbb222ccaae0edc9166e97",
     "assets/art/avatar-static-extras-v3.png": "1842d76f71c1a8ccb01dabe6c5a6e5dbe1c71257490d77989f95e1e0022c16fe",
@@ -133,27 +132,27 @@
           "fromServiceWorker": true
         },
         {
-          "path": "assets/art/cast-static-mina-v2.png",
-          "url": "assets/art/cast-static-mina-v2.png",
-          "sha256": "163449ffe9a3566390a5e196b976a420e3eb58e5f409d4c101a76d82f81bdfc9",
-          "fromServiceWorker": true
-        },
-        {
           "path": "assets/art/cast-static-pico-v2.png",
           "url": "assets/art/cast-static-pico-v2.png",
           "sha256": "6cc557478d70cb3ddbdd893d67bf09fa1236ca327c2384b06ac31ae141beb148",
           "fromServiceWorker": true
         },
         {
-          "path": "assets/art/cast-static-jo-v3.png",
-          "url": "assets/art/cast-static-jo-v3.png",
-          "sha256": "e14e81e2a1912b24702f4fd1a4222f8ec8c6814649c31d624464a0fd06cdc10b",
+          "path": "assets/art/cast-static-mina-v2.png",
+          "url": "assets/art/cast-static-mina-v2.png",
+          "sha256": "163449ffe9a3566390a5e196b976a420e3eb58e5f409d4c101a76d82f81bdfc9",
           "fromServiceWorker": true
         },
         {
           "path": "assets/art/cast-static-alex-v3.png",
           "url": "assets/art/cast-static-alex-v3.png",
           "sha256": "86d6441f1062824451a8aa3cf0a43de137b2aaa17a42cd179561efa7cf227825",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/cast-static-jo-v3.png",
+          "url": "assets/art/cast-static-jo-v3.png",
+          "sha256": "e14e81e2a1912b24702f4fd1a4222f8ec8c6814649c31d624464a0fd06cdc10b",
           "fromServiceWorker": true
         }
       ],
@@ -169,29 +168,6 @@
     {
       "event": "new-worker-state",
       "state": "installed"
-    },
-    {
-      "event": "new-worker-state",
-      "state": "activating"
-    },
-    {
-      "event": "controllerchange"
-    },
-    {
-      "event": "new-worker-state",
-      "state": "activated"
-    },
-    {
-      "event": "new-worker-state",
-      "state": "installing"
-    },
-    {
-      "event": "new-worker-state",
-      "state": "installed"
-    },
-    {
-      "event": "new-worker-state",
-      "state": "redundant"
     },
     {
       "event": "new-worker-state",

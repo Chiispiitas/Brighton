@@ -70,7 +70,7 @@ for group,options in old.items():
     if not isinstance(options,list):continue
     values=[]
     for oldoption in options:
-        o={k:v for k,v in oldoption.items() if k not in ['src','atlas','frame','position','rigPosition','animation','asset','thumbnail']};key=o['id']
+        o={k:v for k,v in oldoption.items() if k not in ['src','atlas','frame','position','rigPosition','animation','blinks','blink','motionRig','asset','thumbnail']};key=o['id']
         asset= bases[key]['skins']['skin-1'] if group=='body' else bases['male']['skins'][key] if group=='skin' else clothes.get(key) if group=='outfit' else hair.get(key) if group=='hair' else accessories.get(key) if group=='accessory' else badges.get(key)
         if asset:o.update({k:v for k,v in asset.items() if k in ['src','atlas','frame']})
         values.append(o)

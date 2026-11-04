@@ -9,7 +9,7 @@
     "assets/art/avatar-static-clothes-v1.png": "38c59629065fbc10c6ec5d723c8d89f4630afb859c89699c7581f7b662e8180d",
     "assets/art/avatar-static-hair-v1.png": "c73a9e78139d3ceaf1c6b6cd61392835ebb3c82f13fbb222ccaae0edc9166e97",
     "assets/art/avatar-static-extras-v3.png": "1842d76f71c1a8ccb01dabe6c5a6e5dbe1c71257490d77989f95e1e0022c16fe",
-    "assets/art/manifest.json": "754a1c6ddaa385ac217dd04f32cf2b6f9108509a933906bc28226868f7566b28",
+    "assets/art/manifest.json": "31c83a793d9715ebf9b712f3bca0b3aacd056a628e4131d81020a67d7f6e9263",
     "assets/art/ui-static-v1.png": "fdbf04030127b6a1d6a7061a72b765a540cc25ec732eb4343a639ce7f11e1b42"
   },
   "authorHashesMatch": true,
@@ -141,7 +141,67 @@
   },
   "pass": true,
   "finalSourceHashesMatch": true,
-  "finalReviewedAt": "2026-11-04T23:47:08.158151+00:00",
+  "finalReviewedAt": "2026-11-04T23:51:05.204768+00:00",
   "status": "INDEPENDENT_STATIC_AVATAR_PASS",
-  "limitations": "Finite source-bound family coverage, not a claim that every theoretical option permutation was rendered. No profile/API writes by this reviewer. Real saved-profile and second-device restoration are covered by the separate avatar author persistence proof."
+  "limitations": "Finite source-bound family coverage, not a claim that every theoretical option permutation was rendered. No profile/API writes by this reviewer. Real saved-profile and second-device restoration are covered by the separate avatar author persistence proof.",
+  "metadataCleanupRecheck": {
+    "date": "2026-11-04T23:51:05.193662+00:00",
+    "reason": "Root removed unused legacy avatar.skin[].blinks descriptors and animation/blink metadata from the static manifest/fragment. The static renderer never read those entries. No native PNG, frame, crop, position, renderer or avatar-option changes.",
+    "changedReviewedSourceHashes": {
+      "assets/art/manifest.json": {
+        "before": "754a1c6ddaa385ac217dd04f32cf2b6f9108509a933906bc28226868f7566b28",
+        "after": "31c83a793d9715ebf9b712f3bca0b3aacd056a628e4131d81020a67d7f6e9263"
+      }
+    },
+    "nativeMetadataAndRendererHashesUnchanged": true,
+    "fixture": "tools/static-avatar-independent-proof.mjs",
+    "fixtureSha256": "cedda4c81d2b2a77e059396544749485bee90bba5513a2de61fba2099e4e6bc4",
+    "capture": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-static-avatar-independent\\metadata-cleanup\\capture.json",
+    "captureSha256": "804cdb02285dfdac996f24e36ce46a15e511b83ca51869844eecf3dd40bdac8a",
+    "live": {
+      "proofs": [
+        {
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-static-avatar-independent\\metadata-cleanup\\mounted.png",
+          "sha256": "384e61bf9e77abc36f76cd339082d68b4f50dfad6f315946269b52f1d9c628fe"
+        },
+        {
+          "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-static-avatar-independent\\metadata-cleanup\\after-events.png",
+          "sha256": "384e61bf9e77abc36f76cd339082d68b4f50dfad6f315946269b52f1d9c628fe"
+        }
+      ],
+      "pixelsUnchanged": true,
+      "state": {
+        "frames": 16,
+        "modes": [
+          "static",
+          "static",
+          "static",
+          "static",
+          "static",
+          "static",
+          "static",
+          "static",
+          "static",
+          "static",
+          "static",
+          "static",
+          "static",
+          "static",
+          "static",
+          "static"
+        ],
+        "animations": 0,
+        "errors": 0
+      },
+      "lifecycle": {
+        "frames": 0,
+        "animations": 0
+      },
+      "errors": []
+    },
+    "priorApprovedImageSha256": "384e61bf9e77abc36f76cd339082d68b4f50dfad6f315946269b52f1d9c628fe",
+    "bothCurrentImagesEqualPriorApprovedImage": true,
+    "familyReinspectionRequired": false,
+    "pass": true
+  }
 }

@@ -1,0 +1,119 @@
+{
+  "date": "2026-11-04T23:50:51.897790+00:00",
+  "status": "LOCAL_PASS_PUBLICATION_PENDING",
+  "pass": false,
+  "baselineCommit": "bbd859f40cc5bc692a1ec2798bcb002907eaf17b",
+  "abortedPassPreservedInStash": "d935ff2b4abb68181a6bca3a6d4661f81a2a43da",
+  "backupBranch": "safety/horizons-before-static-redraw-20261104",
+  "scope": "New static art across the companion app; all animation removed from active renderer and UI. Book lessons, canonical app content, backend and recordings unchanged.",
+  "art": {
+    "castCompleteStills": 16,
+    "occupationSchoolStills": 17,
+    "avatarBases": 2,
+    "skinChoices": 6,
+    "newAvatarFamilyStatesReviewed": 114,
+    "nativeActiveAssetPaths": [
+      "assets/art/app-icon-static-v1.png",
+      "assets/art/avatar-static-clothes-v1.png",
+      "assets/art/avatar-static-extras-v3.png",
+      "assets/art/avatar-static-hair-v1.png",
+      "assets/art/avatar-static-heads-v2.png",
+      "assets/art/cast-static-alex-v3.png",
+      "assets/art/cast-static-jo-v3.png",
+      "assets/art/cast-static-mina-v2.png",
+      "assets/art/cast-static-pico-v2.png",
+      "assets/art/jobs-static-1-v2.png",
+      "assets/art/jobs-static-2-v2.png",
+      "assets/art/jobs-static-3-v3.png",
+      "assets/art/jobs-static-4-v2.png",
+      "assets/art/town-static-v1.png",
+      "assets/art/ui-static-v1.png"
+    ]
+  },
+  "verification": {
+    "contentTests": 15,
+    "backendTests": 26,
+    "localResponsiveScreens": 295,
+    "activityScreens": 192,
+    "widths": [
+      320,
+      390,
+      768,
+      1440
+    ],
+    "finalLayoutCorrectionScreens": 4,
+    "layoutCorrectionNote": "Only mobile hero CSS changed after295-screen pass. Four-width text/native-image overlap checks and fresh exact-current cache upgrade passed; final hosted full regression follows.",
+    "metadataCleanup": "Unused legacy blink/animation fields removed from manifest and matching fragment. No rendered pixel/crop/renderer changed. Fresh exact-current cache and independent avatar fixture recheck cover this cleanup.",
+    "realReturningBrowserCacheUpgrade": true,
+    "avatarSaveReloadSecondDeviceRestore": true,
+    "zeroRunningAnimations": true,
+    "timedPixelIdentityAfterHover": true
+  },
+  "runtimeSourceHashes": {
+    "index.html": "66833736593825f275c172d201a077f3be03bb2334b8de019d06c051825c2e9c",
+    "manifest.webmanifest": "55db46a4c79dfd20a17e7c3027fc7424e6d7cf7a239a94cb6104f6a230e4533b",
+    "styles/app.css": "67e2e21c6ceeea54403255307c43c84d6d77a3cf4fdb1adda6c9391d3e241f1e",
+    "src/app.js": "ec5024fdc1c05878525070bd20404d5e7c8ea9587a3bb4df6ed31a59b4e240e7",
+    "src/art.js": "06c5fabbf7d2e45dfd7fb833a3ddfc7f78081c250b02a189b29a84f79e43aeb0",
+    "src/avatar-static.js": "92742ed6eeb76787522b9ef904da7fbf403448a394babd15a154b3ca7cdc55e8",
+    "service-worker.js": "1a80bc65f72d7e5bb8ffdcff09cbd995b35e914b4c87f3eb2942d2f4958bf830",
+    "assets/art/manifest.json": "31c83a793d9715ebf9b712f3bca0b3aacd056a628e4131d81020a67d7f6e9263",
+    "assets/art/avatar-static-v1.frames.json": "7ea0fd65138b223b3207780386c5437b26eaa5da21b25439b2029d93d4fb4ab5",
+    "assets/art/cast-static-pico-v2.png": "6cc557478d70cb3ddbdd893d67bf09fa1236ca327c2384b06ac31ae141beb148",
+    "assets/art/cast-static-mina-v2.png": "163449ffe9a3566390a5e196b976a420e3eb58e5f409d4c101a76d82f81bdfc9",
+    "assets/art/cast-static-alex-v3.png": "86d6441f1062824451a8aa3cf0a43de137b2aaa17a42cd179561efa7cf227825",
+    "assets/art/cast-static-jo-v3.png": "e14e81e2a1912b24702f4fd1a4222f8ec8c6814649c31d624464a0fd06cdc10b",
+    "assets/art/avatar-static-heads-v2.png": "79f254047f5541326288ba948051aa82d576f47af105f3eda1c50caab6464779",
+    "assets/art/avatar-static-clothes-v1.png": "38c59629065fbc10c6ec5d723c8d89f4630afb859c89699c7581f7b662e8180d",
+    "assets/art/avatar-static-hair-v1.png": "c73a9e78139d3ceaf1c6b6cd61392835ebb3c82f13fbb222ccaae0edc9166e97",
+    "assets/art/avatar-static-extras-v3.png": "1842d76f71c1a8ccb01dabe6c5a6e5dbe1c71257490d77989f95e1e0022c16fe",
+    "assets/art/ui-static-v1.png": "fdbf04030127b6a1d6a7061a72b765a540cc25ec732eb4343a639ce7f11e1b42",
+    "assets/art/town-static-v1.png": "2f71a7437854f4062e1d1c04d0c54805f88ff252da4eb5276b737c19957334ba",
+    "assets/art/jobs-static-1-v2.png": "fb6a01224a140eb3f064a1a07cb9711fd10c2def0d4dfaa6f17c33263bc096d3",
+    "assets/art/jobs-static-4-v2.png": "17e6ac1258161ebf5dcca92143d18b95bf29853249baefe7b0ec85a0edaef87d",
+    "assets/art/jobs-static-2-v2.png": "4308ef795398ad9feebbe54bf7179d1b0f37742b4f0dd862e01f8df42e558da4",
+    "assets/art/jobs-static-3-v3.png": "1947efd87948efe32ea2ff300706d782d917c7461e6af7c8c7938abf0be809c1"
+  },
+  "evidence": {
+    "static-cast-independent-review": {
+      "path": "reports/static-cast-independent-review.json",
+      "pass": true
+    },
+    "static-avatar-independent-review": {
+      "path": "reports/static-avatar-independent-review.json",
+      "pass": true
+    },
+    "avatar-static-author-review": {
+      "path": "reports/avatar-static-author-review.json",
+      "pass": true
+    },
+    "avatar-static-persistence": {
+      "path": "reports/avatar-static-persistence.json",
+      "pass": true
+    },
+    "static-release-browser": {
+      "path": "reports/static-release-browser.json",
+      "pass": true
+    },
+    "static-cache-upgrade": {
+      "path": "reports/static-cache-upgrade.json",
+      "pass": true
+    },
+    "static-final-layout": {
+      "path": "reports/static-final-layout.json",
+      "pass": true
+    },
+    "static-integrated-visual-review": {
+      "path": "reports/static-integrated-visual-review.json",
+      "pass": true
+    }
+  },
+  "hosted": {
+    "status": "PENDING"
+  },
+  "limits": [
+    "Edge/Chromium only.",
+    "Finite reviewed poses and avatar families, not every possible customization permutation.",
+    "Native ImageGen raster variation retained; flat design judged at actual UI sizes and enlarged."
+  ]
+}
