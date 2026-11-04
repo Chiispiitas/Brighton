@@ -1,0 +1,73 @@
+{
+  "status": "PASS",
+  "verifiedAt": "2026-11-04T14:25:54.001219+00:00",
+  "url": "https://exams.bebrighton.net/Horizons/App/",
+  "runtimeRevision": "022365c915f86dc0c1071159465bb838e475fa40",
+  "githubPagesRun": "https://github.com/Chiispiitas/Brighton/actions/runs/41845839117",
+  "githubPagesResult": "success",
+  "localViewStates": 284,
+  "hostedViewStates": 34,
+  "finalGuideHostedWidths": [
+    320,
+    390,
+    768,
+    1440
+  ],
+  "localGraphicsSummary": {
+    "viewStates": 284,
+    "allActivities": 48,
+    "activityWidths": [
+      320,
+      390,
+      768,
+      1440
+    ],
+    "nativeImageDeformations": 0,
+    "unloadedGraphics": 0,
+    "characterClippingCandidates": 0,
+    "nativePartTextLineIntersections": 0,
+    "visibleAnimatedCharacterInstances": 633,
+    "staticCharacterInstances": 0,
+    "runtimeErrors": 0,
+    "avatarConfigurationPostureCombinations": 21,
+    "nativePostureFramesWithClearEdges": 64,
+    "actualFramePositionCounts": [
+      4
+    ],
+    "pass": true
+  },
+  "publishedFilesComparedWithCommittedBytes": 198,
+  "publishedBytesMatch": true,
+  "bookSourceRecordingsVerified": 12,
+  "signInProfileBookDeviceChecks": 10,
+  "avatarConfigurationPostureCombinations": 21,
+  "generatedWholeBodyPostures": 16,
+  "actionFramesPerPosture": 4,
+  "occupationActionScenes": 16,
+  "avatarPostures": [
+    "portrait",
+    "wave",
+    "think"
+  ],
+  "allActivitiesRetained": 48,
+  "compactPathReductionAt390": "37.6%",
+  "codeAndContentScope": "App graphics, motion, avatar presentation and path layout only. The Student Book source, content engine, recordings and backend contract remain unchanged.",
+  "reports": {
+    "localGraphics": "graphics-browser.json",
+    "hostedGraphics": "graphics-hosted.json",
+    "layoutAndMotion": "graphics-layout.json",
+    "avatarVariants": "avatar-bust.json",
+    "lastGuideLocal": "lesson-guide-posture.json",
+    "lastGuideHosted": "lesson-guide-hosted.json",
+    "hostedAccountFlows": "release/browser.json",
+    "publicationReadback": "publication-assets.json"
+  },
+  "artAndExactPrompts": "../assets/art/provenance.json",
+  "auditUpdated": "../APP-AUDIT.md",
+  "reversibleBaselines": [
+    "safety/horizons-before-graphics-refinement-20261104",
+    "safety/horizons-before-distinct-postures-20261104"
+  ],
+  "browserScope": "Microsoft Edge / Chromium, viewport widths320/390/768/1440; additional desktop/landscape spot checks. Other browser engines are not claimed as tested.",
+  "finalGuideVisibleAndProportional": true
+}

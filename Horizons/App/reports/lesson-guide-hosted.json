@@ -1,0 +1,42 @@
+{
+  "date": "2026-11-04T14:24:41.083Z",
+  "url": "https://exams.bebrighton.net/Horizons/App/",
+  "scope": "Final1Cseated-readingguide;actualvisiblejumpdestinationafterreturningtojumpcontrolsandsettledscroll",
+  "runtimeRevision": "022365c915f86dc0c1071159465bb838e475fa40",
+  "checks": [
+    {
+      "width": 320,
+      "top": 25.484375,
+      "posture": "read",
+      "imagesLoaded": true,
+      "scrollWidth": 320,
+      "viewport": 320
+    },
+    {
+      "width": 390,
+      "top": 25.46875,
+      "posture": "read",
+      "imagesLoaded": true,
+      "scrollWidth": 390,
+      "viewport": 390
+    },
+    {
+      "width": 768,
+      "top": 25.390625,
+      "posture": "read",
+      "imagesLoaded": true,
+      "scrollWidth": 768,
+      "viewport": 768
+    },
+    {
+      "width": 1440,
+      "top": 25.359375,
+      "posture": "read",
+      "imagesLoaded": true,
+      "scrollWidth": 1440,
+      "viewport": 1440
+    }
+  ],
+  "errors": [],
+  "pass": true
+}

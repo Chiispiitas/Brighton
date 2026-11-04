@@ -46,6 +46,8 @@ Sessions last 90 days. Expired or revoked books cannot start practice or save at
 
 Latest graphics evidence: [site-wide screen audit](reports/graphics-browser.json), [compact paths and motion bounds](reports/graphics-layout.json), [animated bust variants](reports/avatar-bust.json). These cover the refined artwork and animation system; first-release reports remain as historical evidence.
 
+The [verified graphics release](reports/graphics-release.json) links the full 284-view audit, actual hosted checks, native frame-advancement proof, final lesson-header verification and byte-for-byte readback of 198 published runtime files. The two Mina lesson headers intentionally use different body poses: stepping in 1A and reading seated in 1C.
+
 - `npm test`: canonical bank coverage, all activity types, grading and learning boundaries.
 - `cd backend` then `npm test`: entitlement, linked-code identity, input validation, ownership, concurrent redemption, server grading, idempotency, mastery and earned rewards.
 - Browser exercises in `tests/` use isolated example profiles and the real hosted backend; public example 001 is reserved for users.
