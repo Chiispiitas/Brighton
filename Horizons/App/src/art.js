@@ -1,22 +1,19 @@
 let manifest = {characters: {}, avatar: {}};
-let picoModule;
-let companionModule;
 let avatarModule;
 let rasterObserver;
 let rasterMutationObserver;
 const illustratedMotion=new Map();
-const avatarObservers=new Set();
 const sourceBase = new URL('../assets/art/', import.meta.url);
 export async function loadArt() {
   installRasterFit();
-  try { const response = await fetch(new URL('manifest.json', sourceBase)); if (response.ok) { manifest = await response.json(); manifest.characters = manifest.characters || manifest.companions || {}; } }
+  try { const response = await fetch(new URL('manifest.json?anatomy=1', sourceBase),{cache:'no-cache'}); if (response.ok) { manifest = await response.json(); manifest.characters = manifest.characters || manifest.companions || {}; } }
   catch { /* The app remains usable while artwork is loading or unavailable offline. */ }
   return manifest;
 }
 export function artManifest() { return manifest; }
 export function sceneMarkup(name,cls=''){return rasterMarkup(manifest.scenes?.[name],cls,'');}
 export function wordArt(word){return manifest.vocabulary?.[word?.term] || manifest.vocabulary?.[word?.id] || word?.image;}
-export function disposeCharacters(container=document){for(const slot of container.querySelectorAll('[data-pico-rig]'))picoModule?.unmountPico?.(slot);for(const slot of container.querySelectorAll('[data-companion-rig]'))companionModule?.unmountCompanion?.(slot);for(const slot of container.querySelectorAll('[data-avatar-rig]'))avatarModule?.unmountAvatar?.(slot);for(const observer of avatarObservers)observer.disconnect();avatarObservers.clear();}
+export function disposeCharacters(container=document){for(const slot of container.querySelectorAll('[data-avatar-rig]'))avatarModule?.unmountAvatar?.(slot);}
 function installRasterFit(){
   if(rasterObserver)return;
   const style=document.createElement('style');style.id='hzn-raster-fit';style.textContent='.raster-frame[data-raster-slot]{overflow:hidden;flex-shrink:0}.raster-frame>.raster-fit{position:absolute!important;display:block!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;max-width:none!important;max-height:none!important;overflow:hidden}.raster-fit>img{position:absolute!important;display:block;max-width:none!important;max-height:none!important;object-fit:fill!important}.raster-frame[data-raster-slot]>img{display:none}';document.head.append(style);
@@ -51,17 +48,14 @@ export function rasterMarkup(asset, cls = '', alt = '') {
   return `<img class="${esc(cls)}" src="${esc(assetURL(source))}" alt="${esc(alt)}" draggable="false" ${asset.loading === 'eager' ? '' : 'loading="lazy"'}>`;
 }
 export function characterMarkup(name, cls = '', mood = 'idle') {
-  const posture=choosePosture(name,cls,mood),pose=manifest.postures?.[name]?.[posture];
-  if(pose)return `<span class="character character-${esc(name)} ${esc(cls)}" data-character="${esc(name)}" data-posture="${esc(posture)}" data-posture-sprite role="img" aria-label="${esc(name[0].toUpperCase()+name.slice(1))}, ${esc(posture)}">${rasterMarkup(pose,'character-art posture-art','')}</span>`;
-  if (name==='pico' && manifest.pico?.parts) return `<span class="character character-pico ${esc(cls)}" data-character="pico" data-posture="standing" data-pico-rig data-mood="${esc(mood)}" role="img" aria-label="Pico, your mountain-hare companion"></span>`;
-  if(manifest.rigs?.[name])return `<span class="character character-${esc(name)} ${esc(cls)}" data-character="${esc(name)}" data-posture="standing" data-companion-rig data-mood="${esc(mood)}" role="img" aria-label="${esc(name[0].toUpperCase()+name.slice(1))}, your study companion"></span>`;
-  const character = manifest.characters?.[name] || manifest[name];
-  if (!character) return '';
-  const art = character[mood] || character.idle || character.base || character.asset || character;
-  return `<span class="character character-${esc(name)} ${esc(cls)}" data-character="${esc(name)}" data-mood="${esc(mood)}">${rasterMarkup(art, 'character-art', name === 'pico' ? 'Pico, your mountain-hare companion' : name[0].toUpperCase()+name.slice(1))}${character.face ? rasterMarkup(character.face, 'character-face', '') : ''}</span>`;
+  const posture=choosePosture(name,cls,mood),pose=manifest.postures?.[name]?.[posture]||Object.values(manifest.postures?.[name]||{})[0];
+  if(pose)return `<span class="character character-${esc(name)} ${esc(cls)}" data-character="${esc(name)}" data-posture="${esc(pose.posture||posture)}" data-posture-sprite data-anatomy-source="complete-native-frame" role="img" aria-label="${esc(name[0].toUpperCase()+name.slice(1))}, ${esc(posture)}">${rasterMarkup(pose,'character-art posture-art','')}</span>`;
+  const character=manifest.characters?.[name],whole=character?.idle||character?.wave;
+  if(!whole)return '';
+  return `<span class="character character-${esc(name)} ${esc(cls)}" data-character="${esc(name)}" data-anatomy-source="complete-native-fallback" role="img" aria-label="${esc(name)}">${rasterMarkup(whole,'character-art posture-art','')}</span>`;
 }
 function choosePosture(name,cls,mood){
-  if(cls.includes('welcome-'))return null;
+  if(cls.includes('welcome-'))return({pico:'stride',mina:'step',alex:'listen',jo:'offer'})[name];
   if(name==='pico'){if(cls.includes('progress-'))return 'stride';if(mood==='celebrate'||cls.includes('result-'))return 'jump';if(cls.includes('hero-'))return 'explore';return 'read';}
   if(name==='mina'){if(cls.includes('lesson-guide-1c'))return 'read';if(cls.includes('lesson-guide'))return mood==='wave'?'read':'step';if(cls.includes('game-'))return 'skip';return 'map';}
   if(name==='alex'){if(cls.includes('lesson-guide'))return 'fix';if(cls.includes('game-'))return 'dance';return 'sit';}
@@ -83,12 +77,6 @@ export function avatarMarkup(avatar = {}, cls = '', name = 'Your avatar') {
 }
 export function refreshCharacterMotion(container = document) {
   for(const slot of container.querySelectorAll('[data-avatar-rig]')){
-    import('./avatar-rig.js').then(module=>{avatarModule=module;if(slot.isConnected)module.mountAvatar(slot,{avatar:JSON.parse(slot.dataset.avatar||'{}'),manifest,mood:'idle',posture:slot.dataset.avatarPosture||'portrait'});});
-  }
-  for(const slot of container.querySelectorAll('[data-companion-rig]')){
-    import('./companion-rig.js').then(module=>{companionModule=module;if(slot.isConnected)module.mountCompanion(slot,{character:slot.dataset.character,mood:slot.dataset.mood||'idle',manifest});});
-  }
-  for (const slot of container.querySelectorAll('[data-pico-rig]')) {
-    import('./pico-rig.js').then(module=>{picoModule=module;if(slot.isConnected)module.mountPico(slot,{mood:slot.dataset.mood || 'idle',manifest});}).catch(()=>{});
+    import('./avatar-rig.js?v=anatomy1').then(module=>{avatarModule=module;if(slot.isConnected)module.mountAvatar(slot,{avatar:JSON.parse(slot.dataset.avatar||'{}'),manifest,mood:'idle',posture:slot.dataset.avatarPosture||'portrait'});});
   }
 }

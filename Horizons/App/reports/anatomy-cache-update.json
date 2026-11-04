@@ -1,0 +1,235 @@
+{
+  "date": "2026-11-04T15:23:51.144Z",
+  "base": "http://127.0.0.1:8896/Horizons/App/",
+  "baselineCommit": "bf39988",
+  "scope": "Existing real browser service worker and Cache Storage upgraded from committed legacy runtime to current reviewed release; same isolated QA profile, no XP or profile changes.",
+  "status": "PASS",
+  "steps": [
+    {
+      "name": "committed-legacy-worker-installed",
+      "controller": true,
+      "cacheNames": [
+        "horizons-companion-v3"
+      ],
+      "legacyMarkers": 68,
+      "oldWorkerIntercepts": 1,
+      "cachedOldArtHash": "c8868782fade8c1b7a52f7ac6139fdf042d44c9885b0ff92ddf3a0026e29629e",
+      "pass": true
+    },
+    {
+      "name": "isolated-profile-authenticated",
+      "pass": true
+    },
+    {
+      "name": "current-worker-activated",
+      "cacheNames": [
+        "horizons-companion-anatomy-v4"
+      ],
+      "newWorkerState": "activated",
+      "updateStates": [
+        "installing",
+        "installed",
+        "activating",
+        "activated"
+      ],
+      "pass": true
+    },
+    {
+      "name": "real-worker-release-update",
+      "cacheNames": [
+        "horizons-companion-anatomy-v4"
+      ],
+      "controller": true,
+      "legacyMarkers": 0,
+      "nativeFrameMarkers": 6,
+      "modules": [
+        {
+          "path": "src/app.js",
+          "version": "anatomy1"
+        },
+        {
+          "path": "src/art.js",
+          "version": "anatomy1"
+        },
+        {
+          "path": "src/avatar-rig.js",
+          "version": "anatomy1"
+        }
+      ],
+      "authenticated": true,
+      "avatar": {
+        "ready": true,
+        "connectedArm": true,
+        "detachedHandPieces": 0,
+        "nativeConnectedAsset": true
+      },
+      "loadedModuleHashes": [
+        {
+          "url": "src/app.js?v=anatomy1",
+          "sha256": "31397093a17f2c84d1fc6f6f269806e75ffedaed83f261c84dfcb2a1ae6bf125",
+          "fromServiceWorker": true
+        },
+        {
+          "url": "src/art.js?v=anatomy1",
+          "sha256": "9511f69c7e2f1b3d22e4394f1dc980c59653055354fec619940d91ddb7a8e6a0",
+          "fromServiceWorker": true
+        },
+        {
+          "url": "src/avatar-rig.js?v=anatomy1",
+          "sha256": "75b5afdb6f05f7f76f3a807564d894a979bfde71685449eb4acabb9d6b8ed53a",
+          "fromServiceWorker": true
+        }
+      ],
+      "workers": [
+        {
+          "path": "/Horizons/App/service-worker.js",
+          "cache": "horizons-companion-anatomy-v4"
+        }
+      ],
+      "loadedLocalResources": [
+        {
+          "name": "",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "assets/fonts/MPLUSRounded1c-Regular.woff2",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "assets/fonts/MPLUSRounded1c-ExtraBold.woff2",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "styles/app.css?v=anatomy1",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "src/app.js?v=anatomy1",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "src/api-client.js",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "assets/fonts/BebasNeue-Regular.woff2",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "src/art.js?v=anatomy1",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "content/engine.mjs",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "content/unit1.mjs",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "content/source-banks.mjs",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "assets/art/manifest.json?anatomy=1",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "assets/audio/manifest.json",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "assets/art/app-icon-v1.png",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "assets/fonts/MPLUSRounded1c-Medium.woff2",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "assets/fonts/MPLUSRounded1c-Black.woff2",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "src/avatar-rig.js?v=anatomy1",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "assets/art/ui-objects-v1.png",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "assets/art/avatar-kit-v2.png",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "assets/art/avatar-blink-v1.png",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "assets/art/avatar-connected-arms-v2.frames.json",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "assets/art/avatar-connected-arms-v2.png",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "assets/fonts/MPLUSRounded1c-Bold.woff2",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "assets/art/pico-postures-v1.png",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "assets/art/mina-postures-v1.png",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "assets/art/jo-postures-v1.png",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "assets/art/alex-postures-v1.png",
+          "fromServiceWorker": true
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "runtimeErrors": [],
+  "limits": [
+    "Chromium/Edge only. This checks the actual service-worker lifecycle and Cache Storage, not CDN caches or every browser engine. No session values, raw codes or personal data are written to the report."
+  ],
+  "pass": true,
+  "currentSourceHashes": {
+    "src/app.js": "31397093a17f2c84d1fc6f6f269806e75ffedaed83f261c84dfcb2a1ae6bf125",
+    "src/art.js": "9511f69c7e2f1b3d22e4394f1dc980c59653055354fec619940d91ddb7a8e6a0",
+    "src/avatar-rig.js": "75b5afdb6f05f7f76f3a807564d894a979bfde71685449eb4acabb9d6b8ed53a",
+    "service-worker.js": "561a45bb32eda239edea3e0ba74024ed833310b93916bb7e86d1d4a9812e546f"
+  },
+  "workerLifecycle": [
+    {
+      "event": "new-worker-state",
+      "state": "installing"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "installed"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "activating"
+    },
+    {
+      "event": "controllerchange"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "activated"
+    }
+  ],
+  "phase": "complete"
+}

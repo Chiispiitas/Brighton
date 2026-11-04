@@ -1,5 +1,5 @@
 import {api, APIError, getSessionToken, forgetSession} from './api-client.js';
-import {loadArt, artManifest, characterMarkup, avatarMarkup, avatarOptions, defaultAvatar, rasterMarkup, assetURL, refreshCharacterMotion, disposeCharacters, sceneMarkup, wordArt} from './art.js';
+import {loadArt, artManifest, characterMarkup, avatarMarkup, avatarOptions, defaultAvatar, rasterMarkup, assetURL, refreshCharacterMotion, disposeCharacters, sceneMarkup, wordArt} from './art.js?v=anatomy1';
 import {course, lessons, vocabulary, chunks, grammarSets, activities, games, wordById, chunkById, lessonById} from '../content/unit1.mjs';
 import {buildQuiz, getActivityQuestions, getWordsForChunks, getMatchingPairs, checkAnswer} from '../content/engine.mjs';
 
@@ -357,7 +357,7 @@ async function boot() {
     try {setSession(await api.getSession());}catch(error){if(error.status===401)forgetSession();else notify(error.message);}
   }
   render();
-  if('serviceWorker'in navigator&&location.protocol!=='file:')navigator.serviceWorker.register('./service-worker.js').catch(()=>{});
+  if('serviceWorker'in navigator&&location.protocol!=='file:')navigator.serviceWorker.register('./service-worker.js',{updateViaCache:'none'}).catch(()=>{});
 }
 boot().catch(error=>{console.error(error);app.removeAttribute('aria-busy');app.innerHTML=`<main class="recovery-screen"><span class="wordmark">HORIZONS</span><h1>Let’s try that again.</h1><p>We couldn’t open this adventure just yet.</p><button class="primary-button" id="boot-retry">Try again</button></main>`;document.getElementById('boot-retry').addEventListener('click',()=>location.reload());});
 window.HorizonsApp={getState:()=>({signedIn:Boolean(state.session),route:state.route,bookId:state.bookId,activity:state.active?.kind || null}),reload:()=>boot()};

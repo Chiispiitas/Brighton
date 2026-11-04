@@ -1,0 +1,14 @@
+{
+  "tool": "OpenAI built-in image_gen",
+  "date": "2026-11-04",
+  "file": "assets/art/avatar-connected-arms-v2.png",
+  "source": "C:/Users/David/.codex/generated_images/01a1a709-36a6-70b0-b9c9-de72ebf6d0a5/exec-575d7284-ac74-4026-9c66-6a76b2f35937.png",
+  "references": [
+    "assets/art/avatar-kit-v2.png",
+    "assets/art/avatar-gestures-v1.png"
+  ],
+  "sha256": "d3965fce7def67546b63516dcb9b757603fc407179753aa9d5f15441b5a97ce6",
+  "nativeBytesUnchanged": true,
+  "prompt": "Use case: precise-object-edit. Create a production transparent animation asset sheet matching the friendly flat borderless human avatar style and exact six skin tones of the first reference. Replace disconnected forearms with complete anatomically coherent bent right arms from shoulder attachment, upper arm, rounded elbow, forearm, wrist and five-finger hand, all one continuous silhouette. Six equal columns, two rows. Top row cheerful wave with shoulder lower-left, bent elbow lower-right and hand upper-right. Bottom row thoughtful hand-to-chin with shoulder mid-right, elbow lower-right, hand upper-left. Consistent pose scale and tone columns, transparent outside, no labels, no bodies, no glow.",
+  "use": "Complete connected shoulder-elbow-wrist-hand silhouettes. Browser uses native rectangular viewports and occlusion only; no repainted pixels."
+}

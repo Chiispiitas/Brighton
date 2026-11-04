@@ -39,6 +39,10 @@ accessoryPos=[{'x':.32,'y':.16,'w':.36,'h':.1,'z':5},{'x':.27,'y':.015,'w':.46,'
 for row,group in enumerate(groups):
  for col,label in enumerate(labels[row]):
   frame=bounds(im,(col*im.width/6,rows[row],(col+1)*im.width/6,rows[row+1]),union=group in ['outfit','accessory']);entry={'id':f'{group}-{col+1}','label':label,'group':group,**asset('avatar-kit-v2.png',frame),'position':accessoryPos[col]if group=='accessory'else positions[group]};avatars[group].append(entry)
+# Soft waves cross the nominal sixth cell boundary. Expand the viewport without
+# moving or shrinking the original drawing: keep its native pixel scale/anchor.
+waves=avatars['hair'][5];old=waves['frame'];new={'x':1268,'y':684,'w':206,'h':165};p=waves['position'];s=p['w']*500/old['w']
+waves['position']={**p,'x':p['x']-(old['x']-new['x'])*s/500,'y':p['y']-(old['y']-new['y'])*s/525,'w':new['w']*s/500};waves['frame']=new
 icons={};im=Image.open(art/'ui-objects-v1.png')
 for i,name in enumerate(['home','book','games','profile','flame','star','trophy','satchel','sound','key','calendar','compass','settings','flag','heart','addBook']):
  c=i%4;r=i//4;icons[name]=asset('ui-objects-v1.png',bounds(im,(c*im.width/4,r*im.height/4,(c+1)*im.width/4,(r+1)*im.height/4),union=name=='sound'))
@@ -72,6 +76,9 @@ for sheet,words in [(1,['teacher','student','chef','doctor','office worker','rec
  im=Image.open(art/file);cw=im.width/4;ch=im.height/8
  for row,word in enumerate(words):
   frames=[{'x':col*cw,'y':row*ch,'w':cw,'h':ch}for col in range(4)]
+  # Source student column 1 has a third hand. Never display that rejected frame.
+  # Hold the reviewed resting pose before the two coherent reading movements.
+  if word=='student':frames=[frames[i].copy()for i in [0,0,2,3]]
   vocab[word]={**asset(file,frames[0]),'animation':{'id':word.replace(' ','-'),'duration':3400+row*137,'frames':frames}}
 postures={}
 for name,poseNames in [('pico',['explore','read','stride','jump']),('mina',['step','map','read','skip']),('alex',['listen','sit','fix','dance']),('jo',['offer','pour','read','clap'])]:
