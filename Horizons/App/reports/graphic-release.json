@@ -1,0 +1,86 @@
+{
+  "date": "2026-11-04T20:50:54.073143+00:00",
+  "status": "PUBLISHED_AND_VERIFIED",
+  "pass": true,
+  "url": "https://exams.bebrighton.net/Horizons/App/?v=graphic1#learn",
+  "runtimeCommit": "ac8eb5c43562a5095963ac759d8b346a62b04a21",
+  "backupBranch": "safety/horizons-before-graphic-redraw-20261104",
+  "backupCommit": "ec9309910ed8e88611892accc558e1cfbcc18b2d",
+  "changes": [
+    "All active characters redrawn from scratch in the supplied geometric reference language: Pico, Mina, Alex, Jo, every occupation person and supporting adult, avatar and profile/app character icons.",
+    "All avatar hair, clothing, accessories and earned pins newly generated. Saved option IDs remain stable, with upper-chest bust framing and attached sleeve articulation.",
+    "Flat native ImageGen materials without cast/ground shadows or modeled lighting. Existing inert town and driver-control props retained.",
+    "Per-character proportions and native crop/joint calibration; distinct meaningful poses, supported hand props, anticipation, pauses and eased returns. App audit updated."
+  ],
+  "evidence": [
+    "graphic-art-record.json",
+    "graphic-named-capture.json",
+    "graphic-human-independent-review.json",
+    "avatar-graphic-author-review.json",
+    "avatar-graphic-structure.json",
+    "graphic-avatar-pico-independent.json",
+    "jobs-graphic-review.json",
+    "graphic-release-browser.json",
+    "graphic-cache-upgrade.json",
+    "graphic-release-browser-hosted.json",
+    "graphic-cache-upgrade-hosted.json",
+    "publication-assets.json"
+  ],
+  "coverage": {
+    "namedPaintedFrames": 792,
+    "namedContactSheets": 66,
+    "avatarIndependentPaintedStates": 144,
+    "picoAdditionalIndependentPaintedStates": 48,
+    "earnedPinPaintedStates": 6,
+    "avatarDenseGeometrySamples": 52920,
+    "distinctNativeJobPhases": 56,
+    "occupationTopics": 14,
+    "depictedOccupationPeople": 17,
+    "localScreens": 235,
+    "unit1Activities": 48,
+    "viewportWidths": [
+      320,
+      390,
+      768,
+      1440
+    ],
+    "hostedScreens": 41,
+    "hostedRealCallbacks": 4,
+    "targetedJacketGesture": true,
+    "publishedFilesMatchingCommittedBytes": 275,
+    "bookSourceRecordings": 12,
+    "contentTestsPassed": 15,
+    "backendTestsPassed": 26,
+    "countingNote": "Named Pico dense frames are included in the 792 named frames. Independent review and author geometry samples overlap in content and are not added as unique frames."
+  },
+  "rootHostedVisualReview": [
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-graphic-release-hosted\\hosted-welcome-390.png",
+      "sha256": "f00289e272ad687d3d0659fd278b0f19038957dcb317d1e699bb30fa5de5e560",
+      "verdict": "pass",
+      "observations": "All four new geometric companions fit the phone composition; ears, faces, limbs and clothes remain attached, with no visible cast/ground sprite shadows or clipping."
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-graphic-release-hosted\\hosted-avatar-pointer-wave.png",
+      "sha256": "6b416f688adc4416ee80350c1c79898ac630ce04b27001c097305ec724b8eab3",
+      "verdict": "pass",
+      "observations": "New adult bust, registered face and raised hoodie sleeve stay coherent; the hand continues from the cuff without a detached clothing segment."
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-graphic-release-hosted\\hosted-jacket-outfit3-wave.png",
+      "sha256": "a894517097f77883a07231d00ae36407312b32d6a13b4bd919faa73841182de2",
+      "verdict": "pass",
+      "observations": "New jacket follows the raised arm through shoulder and elbow; skin, cuff, torso and neck remain coherent. Bust framing and proportions are preserved."
+    }
+  ],
+  "finalRuntimeFreeze": {
+    "pass": true,
+    "changedRuntimePathsAfterVerifiedCommit": [],
+    "subsequentCommitScope": "Documentation, test-harness correction and saved verification evidence only."
+  },
+  "limits": [
+    "Browser tests cover Edge/Chromium at the four stated widths; other engines are not claimed as tested.",
+    "Finite phase captures and gesture/lifecycle checks establish the reviewed states, not every possible future timing or browser configuration.",
+    "The earlier author review retains its historical independent-review-pending status; the later graphic-avatar-pico-independent report resolves that gate."
+  ]
+}

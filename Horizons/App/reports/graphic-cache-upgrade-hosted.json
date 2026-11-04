@@ -1,0 +1,5296 @@
+{
+  "date": "2026-11-04T20:45:23.947Z",
+  "base": "https://exams.bebrighton.net/Horizons/App/",
+  "baselineCommit": "ec93099",
+  "baselineCache": "horizons-companion-flat-v6",
+  "currentCache": "horizons-companion-graphic-v7",
+  "scope": "Actual committed previous flat renderer and service-worker Cache Storage installed, then replaced through the real update/activate/controller lifecycle by the current redesigned graphic native sprite release. Reserved isolated QA profile; no activity awards or profile edits.",
+  "sourceReference": {
+    "kind": "git-blob",
+    "commit": "ac8eb5c43562a5095963ac759d8b346a62b04a21",
+    "comparison": "Exact committed LF source bytes and raw binary PNG bytes; working-tree CRLF text is not used for hosted comparison."
+  },
+  "currentSourceHashes": {
+    "index.html": "58d8dcd25b5d8ef433e848e5dab4bf914fa605164aa37573c7990b403f4324dc",
+    "manifest.webmanifest": "567340578d00b2c5227fde15a9463da187f87816489db7c06bf8fadf9d43bc30",
+    "styles/app.css": "e5a1dd92574ce5fd4c4189db7218e34758099858e6ec602b9d9aea15a3d5712a",
+    "src/app.js": "ca96cab55c2b857f4c66468201e22662b1cf3c41369e98a983f079e6ab4b5fe2",
+    "src/art.js": "f12ff041826caa8efb088a4e574771d195d66f04cf0237fabd839296212921bf",
+    "src/avatar-rig.js": "058851f0abd24e6bcb1e7dd5ea6c1482ff044582d7652304aa3bf5606a2a6834",
+    "src/pico-articulated.js": "ebcdb3263edd6dfc5e178f2b2d6b3f35b8b0f4f53e412fad50fd402ad5349964",
+    "src/cast-rig.js": "6f2d840e5ae9faf50653a82a932b6a4bfeb65834717d31c2d0c42df7ccdd775e",
+    "service-worker.js": "97b8eea5684275888b83550af3c63816a0e4ed4ed870420b63033b9caee8d7c6",
+    "assets/art/manifest.json": "cf12d15d022ab00b34c0855b4a25dd456426b52a7e7c08e4de310c418e057e86",
+    "assets/art/alex-flat-v1.png": "831f744f2e7ce59d4e540908643c8568ddd1e97db0515860d548df8534be61a2",
+    "assets/art/alex-flat-v1.provenance.json": "281fe4c75ce84247cb7a9bc297431f974ab4641c0314b172901bdc243dd6f8cc",
+    "assets/art/alex-flat-v2.png": "a03b05430868934b21fe6837888b2288f1b9f28d8719db2818ff749c4aa2f882",
+    "assets/art/alex-flat-v2.provenance.json": "72461672d18b84e970b578a05c05ef59cffb8b7546d456b5773f852a0734cf28",
+    "assets/art/alex-geometric-v1.png": "7c3b841e3bfe8f7519a08b18435c2b7b3efea021d33f53d61bba72444696f7e0",
+    "assets/art/alex-geometric-v1.provenance.json": "afc51d9e49d2b49a4e464d555446ed77aa15b753a762994c174fd403e3684089",
+    "assets/art/app-icon-flat-v1.png": "11d7d9300c2011337693898173a3340613c9155152c74b48a09952d8deeceb70",
+    "assets/art/app-icon-flat-v1.provenance.json": "0a4d7a3fae82419a9159d7e529b6cd3b3b496d73d8734a804a3dbc2ba6a61441",
+    "assets/art/app-icon-graphic-v1.png": "5c5e15536f8dbde2487219204592167f3ab56aa14b7aee18225524458723baf6",
+    "assets/art/app-icon-graphic-v1.provenance.json": "24d1b2b7df5a843d1ff2fd72a9e80e9128321c5cc5c579569219207c5e9f874b",
+    "assets/art/avatar-approved-flat-blink-v1.png": "13b807afc72b8fe4a3c9b8d526af441566898499716c7ccbb47e7843d4bf9d99",
+    "assets/art/avatar-approved-flat-blink-v2.png": "6265213d670e840e32ba1ed789acaec11862c12f32429c8f99029467b1fb420b",
+    "assets/art/avatar-approved-flat-core-v1.png": "4a6552111bf65f9140b2565c3689f430595cd44c6a4799edab26228777aace0f",
+    "assets/art/avatar-approved-flat-jacket-v1.png": "48c5245d0545d7302b48cfd8c5d9dd0b742be43dd1f7b057aecef04f3c7cdabf",
+    "assets/art/avatar-approved-flat-kit-v1.png": "c57a104c53cdb46fb62b91bd58c2e964670f65fd1d0cd87393061b4f5f01b9d0",
+    "assets/art/avatar-approved-flat-kit-v2.png": "ade6e895de56d0ac15f0481a515c08603cbc9abcb9d88dcfed98d30024ad9824",
+    "assets/art/avatar-approved-flat-skin-v1.png": "cfdf74f09a9e1b69e5f6cb9ed553a22b2879b35de934ff9fa85a809af2b22524",
+    "assets/art/avatar-approved-flat-sleeves-v1.png": "6a545ecc462a5e65c9984b97c82858095a64091476f256306eb4ca2f4f5fc9b8",
+    "assets/art/avatar-approved-flat-think-v1.png": "32aed82ad1f16a65bc365e98fe412133abde41475d6e43378ecb0b436cf2aec7",
+    "assets/art/avatar-approved-flat-v1.frames.json": "e720a36a834af2468bef07d822f596e9744eb75faa276ffab5b8d66f87eff707",
+    "assets/art/avatar-approved-flat-v1.provenance.json": "e1e2e0deb5bef347ea38a8e0bb3fc33e5f4eb16869f9cd5d79bcf9396a8a78ed",
+    "assets/art/avatar-approved-flat-v2.provenance.json": "756f091e29530dcb4c95f3c9307c0884cd2324d7b2946c386a8e6249f585c420",
+    "assets/art/avatar-graphic-flat-clothing-v1.png": "c34bfbbe559647a4a23fd8d6cb92e2e90d6a67379a97a7fc591d9c64f9036df3",
+    "assets/art/avatar-graphic-flat-clothing-v1.provenance.json": "2c7ede2ae27888d2b44f509e9f6c7c02aca243faa5bb49384cb4dad02caf43f5",
+    "assets/art/avatar-graphic-flat-kit-v1.png": "4db652a88cf5b3fd42bdc0cf5ab6efcf5bee0ec0df356f31fe56ff0276c714b0",
+    "assets/art/avatar-graphic-flat-kit-v1.provenance.json": "8e8754f37bc8aacbbf1478476a9cd3c63ad206840d881c33644c53886d003ee9",
+    "assets/art/avatar-graphic-flat-kit-v2.png": "900603edb8455ab76571b4d37eb1c3d78fb7d58915f6d14dacf1b70069d94c2e",
+    "assets/art/avatar-graphic-flat-kit-v2.provenance.json": "261c85718ff75af2af60c481566f84fb86af9adaf149a36257fd2304fd69d0be",
+    "assets/art/avatar-graphic-flat-limbs-v1.png": "afbe9ba1e3c64392eb3cab82e328043de61f4f35d8ceaa661d96fdf54624047e",
+    "assets/art/avatar-graphic-flat-limbs-v1.provenance.json": "4dcd0525e0233445586abe405c6b1757a50f010a144e5becc7aee1bcd62327fe",
+    "assets/art/avatar-graphic-flat-limbs-v2.png": "0e85aad33465a6f67b798fddda80fea8cef603d7ef1b9d7c04ec49b98287680c",
+    "assets/art/avatar-graphic-flat-limbs-v2.provenance.json": "946739e4135050c5e41292afb0da62a0df1f7dde64e971cac9f4f315fea68f62",
+    "assets/art/avatar-graphic-flat-v1.frames.json": "4795f8d7731eab43465b07ea55eb30ea40abad715a31e9c7f6fd343e7e04c631",
+    "assets/art/badges-graphic-v1.png": "cb07df6b86f632d3c658487b4185761c0404a340278633aa65fa270f7921f325",
+    "assets/art/badges-graphic-v1.provenance.json": "6805a0c6cc872054e98163a01b5fc0c19a76f4783776b13cc223fe9ad7962115",
+    "assets/art/cast-flat-v1.frames.json": "6d63910a0aee6b2221da0e4dfd4cc33cc6a2777f7927f72f99bb2101135ea082",
+    "assets/art/cast-geometric-v1.frames.json": "ea673967f8268ceb57d69c4ef0270f4009b9ad2cb476f6ac1f993d2efff52da4",
+    "assets/art/chef-graphic-v1.png": "b9d9f0a3b44576fc793fe259d8350fa7bd9be5bdd9136b6e1a75d477f5509992",
+    "assets/art/chef-graphic-v2.png": "8d8daa077e495522c76ad02ae2e657e1cfce307e6958223afa49d29015470940",
+    "assets/art/driver-flat-v1.frames.json": "b9a4e740bb62f0932b110e0cf7a7a30a83172ec8f42c4f4d6c700488fb66f607",
+    "assets/art/driver-flat-v1.png": "5e943b749010ca7820c97875b83e74f5a300fd42747f0d0228deeeee95c3145b",
+    "assets/art/driver-flat-v1.provenance.json": "88f422f36aa81f7d31129f07d82c6967d3f41c30570bd33ff848d408e915aae4",
+    "assets/art/flat-extras-v1.provenance.json": "5a9d10c2eebe484503998bb20b44aea6bb55d00c9206f970e31c682f14b1ccd2",
+    "assets/art/graphic-direction-v1.png": "9b5c9f43d11393b95888ee8356d37361c1106e43d0378aa5a5716181fd482ad1",
+    "assets/art/graphic-direction-v1.provenance.json": "4303975f9495d2263df03a7fff29726d2ed46058ace8d9ed1c9f70ee31090b12",
+    "assets/art/jo-flat-v1.png": "b36d1a6ddd02af96eb2cd47754c2d376f63a4d6050354b9358ed3230b37e1643",
+    "assets/art/jo-flat-v1.provenance.json": "15c33e26d469092892eb889b6f18127c8949c5c0ffd6acaa58f98d0820ce8c01",
+    "assets/art/jo-flat-v2.png": "4c66a78897cd9a5f27f204f370ceeb97dcd036cd132832059382f69a17f42fbd",
+    "assets/art/jo-flat-v2.provenance.json": "a876efdd150b9374b21214f86dc3c2bdeaaaf75557826ef8e873b2c6e3c0311c",
+    "assets/art/jo-geometric-v1.png": "6201e31ccacec6a0818c7314cfcaab513c2b2674a8c0987716228d693c364cd9",
+    "assets/art/jo-geometric-v1.provenance.json": "d079be007ca950ce92c58919f48ef90eac639ea3cb8889833b31247374750f66",
+    "assets/art/jobs-flat-1-v1.png": "0628d8208e9e3f93835f4d34936c1c894d037a47704f65de8bb2faeac1cb123d",
+    "assets/art/jobs-flat-2-v1.png": "57ab83192e51cf0e6f0053ff7e781b1db63d59c9a4ae2da275ec02d3fd217852",
+    "assets/art/jobs-flat-v1.frames.json": "f2e2b0ea20063760667d0f1b5c2583d8afae586bd06e46c316c41ca6b7c8e468",
+    "assets/art/jobs-graphic-1-v2.png": "bc9f5a8a94cf23ba055e7169328c4bd4d4cef61c7a588c406e69476e9ed35ee7",
+    "assets/art/jobs-graphic-1-v3.png": "1aaa75de153dd4cc764a4b32689f1ba59528d15c69993d5ec09aad1bdbeef7de",
+    "assets/art/jobs-graphic-2-v2.png": "15151b0b05bf0ec16417b62ea4e71916dd9e58b5b860b5c6af933cef4986e56e",
+    "assets/art/jobs-graphic-2-v3.png": "29631b1cff0e438c3656c8fc976cdd8919a2a27368e7a08b6312cfc73af173d5",
+    "assets/art/jobs-graphic-v2.frames.json": "7c48cd1c7fdcd79287b8bc04f74a87d14539ac27b3ce5a3152ca482777514deb",
+    "assets/art/jobs-graphic-v2.provenance.json": "006f9431ecbb690e0ee4f2a36649b2c76821009ed1112e0886a9d4c2e87c42be",
+    "assets/art/jobs-graphic-v3.provenance.json": "b335e0981036f26e2fb9320df83055396463b16cd1030aa54d1ab22da0efe7dc",
+    "assets/art/mina-flat-v1.png": "79880cd2036c133382ee9b56d6064d4d507ca2af8f549c154af84af088bc84db",
+    "assets/art/mina-flat-v1.provenance.json": "0bf3d6f690d0f43767d4e37c8bd92f4a043fc91c16360da20c291d9f59628b0b",
+    "assets/art/mina-flat-v2.png": "3b9f206f5faf1b1189f8b0dbf9be4df767cfdc450380a177dd7d2ef8e403faa2",
+    "assets/art/mina-flat-v2.provenance.json": "220f87d80f6e3e137495c24053cad2a88169113363c0eb69e42bb413c03baebe",
+    "assets/art/mina-flat-v3.png": "4bc0e2c216e034eb062bf5a02361ad08a991c9b3cae5da182ad001e5fb6b3ef0",
+    "assets/art/mina-flat-v3.provenance.json": "b20800a6f6a4b28b274afc0bb0dfb445d7409cdddcc2b29f57dd2bc1d651b85b",
+    "assets/art/mina-geometric-v2.png": "5c467b282bfaed83cceeb94144e521396abf6e7f2d56b1a11fee7f6461f1e448",
+    "assets/art/mina-geometric-v2.provenance.json": "f08fb3a5bfe5861c11bf7046f639b9da4d9e4626fec541083db03e7fc8367f4e",
+    "assets/art/pico-flat-v1.frames.json": "3a1852fa4cce6c67fa0e692f4864535ba25e29ff6d20f83ea886423b1e32dae4",
+    "assets/art/pico-flat-v1.png": "137263a25f5e7298f0c6ded11a626783da4c5242f250a288c054552f0da19b86",
+    "assets/art/pico-flat-v1.provenance.json": "079d5c4cdf0d646e2418310020751efe69c9d4f67e56127b1584c65918e85dc2",
+    "assets/art/pico-graphic-v1.frames.json": "e842bcaf1eac67fde2743c625231e3c910a3d14403b0c2fdebcdea3689c19c2d",
+    "assets/art/pico-graphic-v1.png": "81c1c5a699c695bb716159cf6f8b7989b51c7d51a4210767de7dd50efb97532c",
+    "assets/art/pico-graphic-v1.provenance.json": "4abd3c60dd40bff464821b06eb91c951606a8ed5a3d246741dd6eed209cceb9e",
+    "assets/art/police-graphic-v1.png": "dd910a337a322bc2630f2e0df8f78c34821b3784bb6b33f0e438dcb2defe3a31",
+    "assets/art/police-graphic-v2.png": "8ea16705e1a7b0d285fe231519ffe41cfba36a5caae9f08644dc57618ee3e969",
+    "assets/art/profile-graphic-v1.png": "949dbde4a8ff204c9a5e45ce8ca270467721502c265020f39f269e13413ca991",
+    "assets/art/profile-graphic-v1.provenance.json": "825d18c58830f48fde90dc3c77f620ae3fa8e8a4396c9461cd7e936b4a05fbbf",
+    "assets/art/town-flat-v1.png": "d7662eb864012b299ccdd6970d1366a0a0b3f1ba4d07e08a6e4b8dc402f7d58a",
+    "assets/art/town-flat-v1.provenance.json": "a602c5d6505a66106bfbf5d87edcb9a5a4848e3098aab3d539df3e47e70e9a29",
+    "assets/art/ui-flat-v1.frames.json": "26416d3fb8e4f46c7e527f7b92b9f3694a7f019a99303db174d9238968ffe176",
+    "assets/art/ui-flat-v1.png": "64b41643467c70456d4e39869f36dd8ef9f2fa40e70e9953946a8139a02252cd",
+    "assets/art/waitress-flat-v1.frames.json": "becf9ec8f7825ad3ce5cfc79c5c3420bf99e14de1ef8f604d0b2787d1c69f776",
+    "assets/art/waitress-flat-v1.png": "ad2bbc259aef0cbe3c7b7242614f620d9d0d2583eaf42ae0f096d145ab29ea5e",
+    "assets/art/waitress-flat-v1.provenance.json": "7e81d395b6a267b92a54e6477e768a3451303e2a3a697255241953b94e51644e"
+  },
+  "steps": [
+    {
+      "name": "committed-shaded-articulated-worker-installed",
+      "controller": true,
+      "cacheNames": [
+        "horizons-companion-flat-v6"
+      ],
+      "cachedArtURL": "src/art.js?v=flat1",
+      "namedCharacters": [
+        {
+          "name": "pico",
+          "wholeframe": false,
+          "jointCount": 18
+        },
+        {
+          "name": "mina",
+          "wholeframe": false,
+          "jointCount": 13
+        },
+        {
+          "name": "alex",
+          "wholeframe": false,
+          "jointCount": 13
+        },
+        {
+          "name": "jo",
+          "wholeframe": false,
+          "jointCount": 12
+        }
+      ],
+      "nativeSources": [
+        "assets/art/pico-flat-v1.png",
+        "assets/art/mina-flat-v3.png",
+        "assets/art/alex-flat-v2.png",
+        "assets/art/jo-flat-v2.png"
+      ],
+      "oldWorkerIntercepts": 1,
+      "cachedOldArtHash": "42e1c9bdde1fa774abe6b65d0d6a86bbbae5efe86ee1593fafcaf2b8bc143569",
+      "workers": [
+        {
+          "path": "/Horizons/App/service-worker.js",
+          "cache": "horizons-companion-flat-v6"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "name": "isolated-profile-authenticated-with-existing-session",
+      "pass": true
+    },
+    {
+      "name": "current-worker-activated",
+      "cacheNames": [
+        "horizons-companion-graphic-v7"
+      ],
+      "newWorkerState": "activated",
+      "updateStates": [
+        "installing",
+        "installed",
+        "activating",
+        "activated"
+      ],
+      "pass": true
+    },
+    {
+      "name": "authenticated-current-flat-sprites-and-clothes-after-real-update",
+      "cacheNames": [
+        "horizons-companion-graphic-v7"
+      ],
+      "controller": true,
+      "wholeframeNamed": [],
+      "characters": [
+        {
+          "name": "pico",
+          "parts": 18,
+          "ready": true
+        },
+        {
+          "name": "mina",
+          "parts": 14,
+          "ready": true
+        },
+        {
+          "name": "jo",
+          "parts": 15,
+          "ready": true
+        },
+        {
+          "name": "mina",
+          "parts": 15,
+          "ready": true
+        },
+        {
+          "name": "alex",
+          "parts": 15,
+          "ready": true
+        },
+        {
+          "name": "jo",
+          "parts": 14,
+          "ready": true
+        }
+      ],
+      "modules": [
+        {
+          "path": "src/app.js",
+          "version": "graphic1"
+        },
+        {
+          "path": "src/art.js",
+          "version": "graphic1"
+        },
+        {
+          "path": "src/avatar-rig.js",
+          "version": "graphic1"
+        },
+        {
+          "path": "src/cast-rig.js",
+          "version": "graphic1"
+        },
+        {
+          "path": "src/pico-articulated.js",
+          "version": "graphic1"
+        }
+      ],
+      "authenticated": true,
+      "motion": [
+        {
+          "name": "pico",
+          "jointCount": 18,
+          "changingJoints": [
+            {
+              "part": "thighLeft",
+              "states": 5
+            },
+            {
+              "part": "lowerLegLeft",
+              "states": 5
+            },
+            {
+              "part": "footLeft",
+              "states": 5
+            },
+            {
+              "part": "thighRight",
+              "states": 5
+            },
+            {
+              "part": "lowerLegRight",
+              "states": 5
+            },
+            {
+              "part": "footRight",
+              "states": 5
+            },
+            {
+              "part": "upperArmLeft",
+              "states": 5
+            },
+            {
+              "part": "forearmLeft",
+              "states": 5
+            },
+            {
+              "part": "upperArmRight",
+              "states": 5
+            },
+            {
+              "part": "forearmRight",
+              "states": 5
+            },
+            {
+              "part": "satchel",
+              "states": 6
+            },
+            {
+              "part": "head",
+              "states": 5
+            },
+            {
+              "part": "earLeft",
+              "states": 6
+            },
+            {
+              "part": "earRight",
+              "states": 6
+            },
+            {
+              "part": "book",
+              "states": 5
+            },
+            {
+              "part": "map",
+              "states": 5
+            }
+          ],
+          "stableImageCrops": true,
+          "samples": [
+            {
+              "timeMs": 0,
+              "joints": [
+                {
+                  "key": "thighLeft:0",
+                  "part": "thighLeft",
+                  "transform": "matrix(0.579004, 0.815325, -0.815325, 0.579004, 0, 0)"
+                },
+                {
+                  "key": "lowerLegLeft:1",
+                  "part": "lowerLegLeft",
+                  "transform": "matrix(-0.0514592, -0.998675, 0.998675, -0.0514592, 0, 0)"
+                },
+                {
+                  "key": "footLeft:2",
+                  "part": "footLeft",
+                  "transform": "matrix(0.78445, 0.620193, -0.620193, 0.78445, 0, 0)"
+                },
+                {
+                  "key": "thighRight:3",
+                  "part": "thighRight",
+                  "transform": "matrix(0.482077, -0.876129, 0.876129, 0.482077, 0, 0)"
+                },
+                {
+                  "key": "lowerLegRight:4",
+                  "part": "lowerLegRight",
+                  "transform": "matrix(0.0400961, 0.999196, -0.999196, 0.0400961, 0, 0)"
+                },
+                {
+                  "key": "footRight:5",
+                  "part": "footRight",
+                  "transform": "matrix(0.894754, -0.44656, 0.44656, 0.894754, 0, 0)"
+                },
+                {
+                  "key": "torso:6",
+                  "part": "torso",
+                  "transform": "none"
+                },
+                {
+                  "key": "upperArmLeft:7",
+                  "part": "upperArmLeft",
+                  "transform": "matrix(0.563351, 0.826218, -0.826218, 0.563351, 0, 0)"
+                },
+                {
+                  "key": "forearmLeft:8",
+                  "part": "forearmLeft",
+                  "transform": "matrix(0.12005, -0.992768, 0.992768, 0.12005, 0, 0)"
+                },
+                {
+                  "key": "upperArmRight:9",
+                  "part": "upperArmRight",
+                  "transform": "matrix(0.566783, -0.823867, 0.823867, 0.566783, 0, 0)"
+                },
+                {
+                  "key": "forearmRight:10",
+                  "part": "forearmRight",
+                  "transform": "matrix(0.186206, 0.982511, -0.982511, 0.186206, 0, 0)"
+                },
+                {
+                  "key": "strap:11",
+                  "part": "strap",
+                  "transform": "none"
+                },
+                {
+                  "key": "satchel:12",
+                  "part": "satchel",
+                  "transform": "matrix(0.999876, -0.0157406, 0.0157406, 0.999876, 0, 0)"
+                },
+                {
+                  "key": "head:13",
+                  "part": "head",
+                  "transform": "matrix(0.996195, 0.0871557, -0.0871557, 0.996195, 0, 0)"
+                },
+                {
+                  "key": "earLeft:14",
+                  "part": "earLeft",
+                  "transform": "matrix(0.999961, 0.00880539, -0.00880539, 0.999961, 0, 0)"
+                },
+                {
+                  "key": "earRight:15",
+                  "part": "earRight",
+                  "transform": "matrix(0.999157, -0.0410628, 0.0410628, 0.999157, 0, 0)"
+                },
+                {
+                  "key": "book:16",
+                  "part": "book",
+                  "transform": "matrix(1, 0, 0, 1, 0, 0)"
+                },
+                {
+                  "key": "map:17",
+                  "part": "map",
+                  "transform": "matrix(1, 0, 0, 1, 0, 0)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-21.6px",
+                  "top": "-196.8px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-184.4px",
+                  "top": "-262.8px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-132.8px",
+                  "top": "-324.4px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-211.8px",
+                  "top": "-195.3px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-403.38px",
+                  "top": "-266.085px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-400.95px",
+                  "top": "-328.455px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-174.8px",
+                  "top": "-39.1px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-21.33px",
+                  "top": "-108.54px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-107.3px",
+                  "top": "-106.43px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-196.04px",
+                  "top": "-118.03px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-284.1px",
+                  "top": "-109.8px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-98px",
+                  "top": "-272.72px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-13.76px",
+                  "top": "-323.52px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-27.26px",
+                  "top": "-43.5px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-348px",
+                  "top": "-16.32px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-386.4px",
+                  "top": "-31.2px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-247.2px",
+                  "top": "-395.2px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-372px",
+                  "top": "-392.8px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 1292,
+              "joints": [
+                {
+                  "key": "thighLeft:0",
+                  "part": "thighLeft",
+                  "transform": "matrix(0.56655, 0.824028, -0.824028, 0.56655, 0, 0)"
+                },
+                {
+                  "key": "lowerLegLeft:1",
+                  "part": "lowerLegLeft",
+                  "transform": "matrix(-0.0782388, -0.996935, 0.996935, -0.0782388, 0, 0)"
+                },
+                {
+                  "key": "footLeft:2",
+                  "part": "footLeft",
+                  "transform": "matrix(0.777175, 0.629284, -0.629284, 0.777175, 0, 0)"
+                },
+                {
+                  "key": "thighRight:3",
+                  "part": "thighRight",
+                  "transform": "matrix(0.466439, -0.884553, 0.884553, 0.466439, 0, 0)"
+                },
+                {
+                  "key": "lowerLegRight:4",
+                  "part": "lowerLegRight",
+                  "transform": "matrix(0.0127517, 0.999919, -0.999919, 0.0127517, 0, 0)"
+                },
+                {
+                  "key": "footRight:5",
+                  "part": "footRight",
+                  "transform": "matrix(0.890429, -0.455122, 0.455122, 0.890429, 0, 0)"
+                },
+                {
+                  "key": "torso:6",
+                  "part": "torso",
+                  "transform": "none"
+                },
+                {
+                  "key": "upperArmLeft:7",
+                  "part": "upperArmLeft",
+                  "transform": "matrix(0.577954, 0.816069, -0.816069, 0.577954, 0, 0)"
+                },
+                {
+                  "key": "forearmLeft:8",
+                  "part": "forearmLeft",
+                  "transform": "matrix(0.147099, -0.989122, 0.989122, 0.147099, 0, 0)"
+                },
+                {
+                  "key": "upperArmRight:9",
+                  "part": "upperArmRight",
+                  "transform": "matrix(0.638327, -0.769765, 0.769765, 0.638327, 0, 0)"
+                },
+                {
+                  "key": "forearmRight:10",
+                  "part": "forearmRight",
+                  "transform": "matrix(0.319178, 0.947695, -0.947695, 0.319178, 0, 0)"
+                },
+                {
+                  "key": "strap:11",
+                  "part": "strap",
+                  "transform": "none"
+                },
+                {
+                  "key": "satchel:12",
+                  "part": "satchel",
+                  "transform": "matrix(0.999961, 0.00879054, -0.00879054, 0.999961, 0, 0)"
+                },
+                {
+                  "key": "head:13",
+                  "part": "head",
+                  "transform": "matrix(0.994428, 0.105418, -0.105418, 0.994428, 0, 0)"
+                },
+                {
+                  "key": "earLeft:14",
+                  "part": "earLeft",
+                  "transform": "matrix(0.998832, 0.0483144, -0.0483144, 0.998832, 0, 0)"
+                },
+                {
+                  "key": "earRight:15",
+                  "part": "earRight",
+                  "transform": "matrix(0.999895, 0.0144802, -0.0144802, 0.999895, 0, 0)"
+                },
+                {
+                  "key": "book:16",
+                  "part": "book",
+                  "transform": "matrix(0.999701, 0.0244606, -0.0244606, 0.999701, 0, 2.62805)"
+                },
+                {
+                  "key": "map:17",
+                  "part": "map",
+                  "transform": "matrix(0.999485, 0.0321022, -0.0321022, 0.999485, 0, 2.27765)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-21.6px",
+                  "top": "-196.8px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-184.4px",
+                  "top": "-262.8px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-132.8px",
+                  "top": "-324.4px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-211.8px",
+                  "top": "-195.3px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-403.38px",
+                  "top": "-266.085px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-400.95px",
+                  "top": "-328.455px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-174.8px",
+                  "top": "-39.1px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-21.33px",
+                  "top": "-108.54px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-107.3px",
+                  "top": "-106.43px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-196.04px",
+                  "top": "-118.03px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-284.1px",
+                  "top": "-109.8px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-98px",
+                  "top": "-272.72px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-13.76px",
+                  "top": "-323.52px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-27.26px",
+                  "top": "-43.5px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-348px",
+                  "top": "-16.32px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-386.4px",
+                  "top": "-31.2px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-247.2px",
+                  "top": "-395.2px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-372px",
+                  "top": "-392.8px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 2508,
+              "joints": [
+                {
+                  "key": "thighLeft:0",
+                  "part": "thighLeft",
+                  "transform": "matrix(0.56655, 0.824028, -0.824028, 0.56655, 0, 0)"
+                },
+                {
+                  "key": "lowerLegLeft:1",
+                  "part": "lowerLegLeft",
+                  "transform": "matrix(-0.0782388, -0.996935, 0.996935, -0.0782388, 0, 0)"
+                },
+                {
+                  "key": "footLeft:2",
+                  "part": "footLeft",
+                  "transform": "matrix(0.777175, 0.629284, -0.629284, 0.777175, 0, 0)"
+                },
+                {
+                  "key": "thighRight:3",
+                  "part": "thighRight",
+                  "transform": "matrix(0.466439, -0.884553, 0.884553, 0.466439, 0, 0)"
+                },
+                {
+                  "key": "lowerLegRight:4",
+                  "part": "lowerLegRight",
+                  "transform": "matrix(0.0127517, 0.999919, -0.999919, 0.0127517, 0, 0)"
+                },
+                {
+                  "key": "footRight:5",
+                  "part": "footRight",
+                  "transform": "matrix(0.890429, -0.455122, 0.455122, 0.890429, 0, 0)"
+                },
+                {
+                  "key": "torso:6",
+                  "part": "torso",
+                  "transform": "none"
+                },
+                {
+                  "key": "upperArmLeft:7",
+                  "part": "upperArmLeft",
+                  "transform": "matrix(0.577954, 0.816069, -0.816069, 0.577954, 0, 0)"
+                },
+                {
+                  "key": "forearmLeft:8",
+                  "part": "forearmLeft",
+                  "transform": "matrix(0.147099, -0.989122, 0.989122, 0.147099, 0, 0)"
+                },
+                {
+                  "key": "upperArmRight:9",
+                  "part": "upperArmRight",
+                  "transform": "matrix(0.638327, -0.769765, 0.769765, 0.638327, 0, 0)"
+                },
+                {
+                  "key": "forearmRight:10",
+                  "part": "forearmRight",
+                  "transform": "matrix(0.319178, 0.947695, -0.947695, 0.319178, 0, 0)"
+                },
+                {
+                  "key": "strap:11",
+                  "part": "strap",
+                  "transform": "none"
+                },
+                {
+                  "key": "satchel:12",
+                  "part": "satchel",
+                  "transform": "matrix(0.999713, 0.0239502, -0.0239502, 0.999713, 0, 0)"
+                },
+                {
+                  "key": "head:13",
+                  "part": "head",
+                  "transform": "matrix(0.994428, 0.105418, -0.105418, 0.994428, 0, 0)"
+                },
+                {
+                  "key": "earLeft:14",
+                  "part": "earLeft",
+                  "transform": "matrix(0.999914, 0.0131203, -0.0131203, 0.999914, 0, 0)"
+                },
+                {
+                  "key": "earRight:15",
+                  "part": "earRight",
+                  "transform": "matrix(0.999512, 0.0312418, -0.0312418, 0.999512, 0, 0)"
+                },
+                {
+                  "key": "book:16",
+                  "part": "book",
+                  "transform": "matrix(0.999701, 0.0244606, -0.0244606, 0.999701, 0, 2.62805)"
+                },
+                {
+                  "key": "map:17",
+                  "part": "map",
+                  "transform": "matrix(0.999485, 0.0321022, -0.0321022, 0.999485, 0, 2.27765)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-21.6px",
+                  "top": "-196.8px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-184.4px",
+                  "top": "-262.8px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-132.8px",
+                  "top": "-324.4px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-211.8px",
+                  "top": "-195.3px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-403.38px",
+                  "top": "-266.085px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-400.95px",
+                  "top": "-328.455px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-174.8px",
+                  "top": "-39.1px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-21.33px",
+                  "top": "-108.54px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-107.3px",
+                  "top": "-106.43px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-196.04px",
+                  "top": "-118.03px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-284.1px",
+                  "top": "-109.8px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-98px",
+                  "top": "-272.72px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-13.76px",
+                  "top": "-323.52px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-27.26px",
+                  "top": "-43.5px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-348px",
+                  "top": "-16.32px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-386.4px",
+                  "top": "-31.2px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-247.2px",
+                  "top": "-395.2px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-372px",
+                  "top": "-392.8px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 3952,
+              "joints": [
+                {
+                  "key": "thighLeft:0",
+                  "part": "thighLeft",
+                  "transform": "matrix(0.580782, 0.814059, -0.814059, 0.580782, 0, 0)"
+                },
+                {
+                  "key": "lowerLegLeft:1",
+                  "part": "lowerLegLeft",
+                  "transform": "matrix(-0.0475968, -0.998867, 0.998867, -0.0475968, 0, 0)"
+                },
+                {
+                  "key": "footLeft:2",
+                  "part": "footLeft",
+                  "transform": "matrix(0.785493, 0.61887, -0.61887, 0.785493, 0, 0)"
+                },
+                {
+                  "key": "thighRight:3",
+                  "part": "thighRight",
+                  "transform": "matrix(0.484309, -0.874897, 0.874897, 0.484309, 0, 0)"
+                },
+                {
+                  "key": "lowerLegRight:4",
+                  "part": "lowerLegRight",
+                  "transform": "matrix(0.0440401, 0.99903, -0.99903, 0.0440401, 0, 0)"
+                },
+                {
+                  "key": "footRight:5",
+                  "part": "footRight",
+                  "transform": "matrix(0.895377, -0.445308, 0.445308, 0.895377, 0, 0)"
+                },
+                {
+                  "key": "torso:6",
+                  "part": "torso",
+                  "transform": "none"
+                },
+                {
+                  "key": "upperArmLeft:7",
+                  "part": "upperArmLeft",
+                  "transform": "matrix(0.561292, 0.827618, -0.827618, 0.561292, 0, 0)"
+                },
+                {
+                  "key": "forearmLeft:8",
+                  "part": "forearmLeft",
+                  "transform": "matrix(0.116187, -0.993227, 0.993227, 0.116187, 0, 0)"
+                },
+                {
+                  "key": "upperArmRight:9",
+                  "part": "upperArmRight",
+                  "transform": "matrix(0.556507, -0.830843, 0.830843, 0.556507, 0, 0)"
+                },
+                {
+                  "key": "forearmRight:10",
+                  "part": "forearmRight",
+                  "transform": "matrix(0.167756, 0.985829, -0.985829, 0.167756, 0, 0)"
+                },
+                {
+                  "key": "strap:11",
+                  "part": "strap",
+                  "transform": "none"
+                },
+                {
+                  "key": "satchel:12",
+                  "part": "satchel",
+                  "transform": "matrix(0.999912, 0.01327, -0.01327, 0.999912, 0, 0)"
+                },
+                {
+                  "key": "head:13",
+                  "part": "head",
+                  "transform": "matrix(0.99642, 0.0845413, -0.0845413, 0.99642, 0, 0)"
+                },
+                {
+                  "key": "earLeft:14",
+                  "part": "earLeft",
+                  "transform": "matrix(0.999822, -0.0188826, 0.0188826, 0.999822, 0, 0)"
+                },
+                {
+                  "key": "earRight:15",
+                  "part": "earRight",
+                  "transform": "matrix(0.999734, 0.0230798, -0.0230798, 0.999734, 0, 0)"
+                },
+                {
+                  "key": "book:16",
+                  "part": "book",
+                  "transform": "matrix(0.999994, -0.00349877, 0.00349877, 0.999994, 0, -0.375873)"
+                },
+                {
+                  "key": "map:17",
+                  "part": "map",
+                  "transform": "matrix(0.999989, -0.00459213, 0.00459213, 0.999989, 0, -0.325756)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-21.6px",
+                  "top": "-196.8px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-184.4px",
+                  "top": "-262.8px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-132.8px",
+                  "top": "-324.4px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-211.8px",
+                  "top": "-195.3px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-403.38px",
+                  "top": "-266.085px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-400.95px",
+                  "top": "-328.455px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-174.8px",
+                  "top": "-39.1px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-21.33px",
+                  "top": "-108.54px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-107.3px",
+                  "top": "-106.43px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-196.04px",
+                  "top": "-118.03px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-284.1px",
+                  "top": "-109.8px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-98px",
+                  "top": "-272.72px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-13.76px",
+                  "top": "-323.52px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-27.26px",
+                  "top": "-43.5px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-348px",
+                  "top": "-16.32px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-386.4px",
+                  "top": "-31.2px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-247.2px",
+                  "top": "-395.2px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-372px",
+                  "top": "-392.8px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 5396,
+              "joints": [
+                {
+                  "key": "thighLeft:0",
+                  "part": "thighLeft",
+                  "transform": "matrix(0.592728, 0.805402, -0.805402, 0.592728, 0, 0)"
+                },
+                {
+                  "key": "lowerLegLeft:1",
+                  "part": "lowerLegLeft",
+                  "transform": "matrix(-0.0213982, -0.999771, 0.999771, -0.0213982, 0, 0)"
+                },
+                {
+                  "key": "footLeft:2",
+                  "part": "footLeft",
+                  "transform": "matrix(0.792535, 0.609827, -0.609827, 0.792535, 0, 0)"
+                },
+                {
+                  "key": "thighRight:3",
+                  "part": "thighRight",
+                  "transform": "matrix(0.499295, -0.866432, 0.866432, 0.499295, 0, 0)"
+                },
+                {
+                  "key": "lowerLegRight:4",
+                  "part": "lowerLegRight",
+                  "transform": "matrix(0.0707913, 0.997491, -0.997491, 0.0707913, 0, 0)"
+                },
+                {
+                  "key": "footRight:5",
+                  "part": "footRight",
+                  "transform": "matrix(0.899604, -0.436706, 0.436706, 0.899604, 0, 0)"
+                },
+                {
+                  "key": "torso:6",
+                  "part": "torso",
+                  "transform": "none"
+                },
+                {
+                  "key": "upperArmLeft:7",
+                  "part": "upperArmLeft",
+                  "transform": "matrix(0.54763, 0.83672, -0.83672, 0.54763, 0, 0)"
+                },
+                {
+                  "key": "forearmLeft:8",
+                  "part": "forearmLeft",
+                  "transform": "matrix(0.0902105, -0.995923, 0.995923, 0.0902105, 0, 0)"
+                },
+                {
+                  "key": "upperArmRight:9",
+                  "part": "upperArmRight",
+                  "transform": "matrix(0.486936, -0.873438, 0.873438, 0.486936, 0, 0)"
+                },
+                {
+                  "key": "forearmRight:10",
+                  "part": "forearmRight",
+                  "transform": "matrix(0.0472583, 0.998883, -0.998883, 0.0472583, 0, 0)"
+                },
+                {
+                  "key": "strap:11",
+                  "part": "strap",
+                  "transform": "none"
+                },
+                {
+                  "key": "satchel:12",
+                  "part": "satchel",
+                  "transform": "matrix(0.999899, -0.0141832, 0.0141832, 0.999899, 0, 0)"
+                },
+                {
+                  "key": "head:13",
+                  "part": "head",
+                  "transform": "matrix(0.997757, 0.0669349, -0.0669349, 0.997757, 0, 0)"
+                },
+                {
+                  "key": "earLeft:14",
+                  "part": "earLeft",
+                  "transform": "matrix(0.999712, -0.0240064, 0.0240064, 0.999712, 0, 0)"
+                },
+                {
+                  "key": "earRight:15",
+                  "part": "earRight",
+                  "transform": "matrix(1, -0.000285954, 0.000285954, 1, 0, 0)"
+                },
+                {
+                  "key": "book:16",
+                  "part": "book",
+                  "transform": "matrix(0.999634, -0.0270387, 0.0270387, 0.999634, 0, -2.90511)"
+                },
+                {
+                  "key": "map:17",
+                  "part": "map",
+                  "transform": "matrix(0.99937, -0.0354852, 0.0354852, 0.99937, 0, -2.51776)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-21.6px",
+                  "top": "-196.8px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-184.4px",
+                  "top": "-262.8px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-132.8px",
+                  "top": "-324.4px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-211.8px",
+                  "top": "-195.3px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-403.38px",
+                  "top": "-266.085px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-400.95px",
+                  "top": "-328.455px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-174.8px",
+                  "top": "-39.1px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-21.33px",
+                  "top": "-108.54px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-107.3px",
+                  "top": "-106.43px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-196.04px",
+                  "top": "-118.03px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-284.1px",
+                  "top": "-109.8px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-98px",
+                  "top": "-272.72px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-13.76px",
+                  "top": "-323.52px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-27.26px",
+                  "top": "-43.5px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-348px",
+                  "top": "-16.32px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-386.4px",
+                  "top": "-31.2px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-247.2px",
+                  "top": "-395.2px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-372px",
+                  "top": "-392.8px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 6916,
+              "joints": [
+                {
+                  "key": "thighLeft:0",
+                  "part": "thighLeft",
+                  "transform": "matrix(0.586602, 0.809876, -0.809876, 0.586602, 0, 0)"
+                },
+                {
+                  "key": "lowerLegLeft:1",
+                  "part": "lowerLegLeft",
+                  "transform": "matrix(-0.0348886, -0.999391, 0.999391, -0.0348886, 0, 0)"
+                },
+                {
+                  "key": "footLeft:2",
+                  "part": "footLeft",
+                  "transform": "matrix(0.788917, 0.6145, -0.6145, 0.788917, 0, 0)"
+                },
+                {
+                  "key": "thighRight:3",
+                  "part": "thighRight",
+                  "transform": "matrix(0.491611, -0.870815, 0.870815, 0.491611, 0, 0)"
+                },
+                {
+                  "key": "lowerLegRight:4",
+                  "part": "lowerLegRight",
+                  "transform": "matrix(0.0570163, 0.998373, -0.998373, 0.0570163, 0, 0)"
+                },
+                {
+                  "key": "footRight:5",
+                  "part": "footRight",
+                  "transform": "matrix(0.897428, -0.44116, 0.44116, 0.897428, 0, 0)"
+                },
+                {
+                  "key": "torso:6",
+                  "part": "torso",
+                  "transform": "none"
+                },
+                {
+                  "key": "upperArmLeft:7",
+                  "part": "upperArmLeft",
+                  "transform": "matrix(0.554599, 0.832118, -0.832118, 0.554599, 0, 0)"
+                },
+                {
+                  "key": "forearmLeft:8",
+                  "part": "forearmLeft",
+                  "transform": "matrix(0.103538, -0.994625, 0.994625, 0.103538, 0, 0)"
+                },
+                {
+                  "key": "upperArmRight:9",
+                  "part": "upperArmRight",
+                  "transform": "matrix(0.522735, -0.852495, 0.852495, 0.522735, 0, 0)"
+                },
+                {
+                  "key": "forearmRight:10",
+                  "part": "forearmRight",
+                  "transform": "matrix(0.108294, 0.994119, -0.994119, 0.108294, 0, 0)"
+                },
+                {
+                  "key": "strap:11",
+                  "part": "strap",
+                  "transform": "none"
+                },
+                {
+                  "key": "satchel:12",
+                  "part": "satchel",
+                  "transform": "matrix(0.999729, -0.0232974, 0.0232974, 0.999729, 0, 0)"
+                },
+                {
+                  "key": "head:13",
+                  "part": "head",
+                  "transform": "matrix(0.99711, 0.0759733, -0.0759733, 0.99711, 0, 0)"
+                },
+                {
+                  "key": "earLeft:14",
+                  "part": "earLeft",
+                  "transform": "matrix(0.999807, -0.019642, 0.019642, 0.999807, 0, 0)"
+                },
+                {
+                  "key": "earRight:15",
+                  "part": "earRight",
+                  "transform": "matrix(0.99876, -0.049791, 0.049791, 0.99876, 0, 0)"
+                },
+                {
+                  "key": "book:16",
+                  "part": "book",
+                  "transform": "matrix(0.999888, -0.0149593, 0.0149593, 0.999888, 0, -1.60713)"
+                },
+                {
+                  "key": "map:17",
+                  "part": "map",
+                  "transform": "matrix(0.999807, -0.0196336, 0.0196336, 0.999807, 0, -1.39285)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-21.6px",
+                  "top": "-196.8px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-184.4px",
+                  "top": "-262.8px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-132.8px",
+                  "top": "-324.4px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-211.8px",
+                  "top": "-195.3px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-403.38px",
+                  "top": "-266.085px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-400.95px",
+                  "top": "-328.455px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-174.8px",
+                  "top": "-39.1px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-21.33px",
+                  "top": "-108.54px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-107.3px",
+                  "top": "-106.43px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-196.04px",
+                  "top": "-118.03px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-284.1px",
+                  "top": "-109.8px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-98px",
+                  "top": "-272.72px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-13.76px",
+                  "top": "-323.52px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-27.26px",
+                  "top": "-43.5px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-348px",
+                  "top": "-16.32px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-386.4px",
+                  "top": "-31.2px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-247.2px",
+                  "top": "-395.2px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                },
+                {
+                  "left": "-372px",
+                  "top": "-392.8px",
+                  "src": "assets/art/pico-graphic-v1.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "mina",
+          "jointCount": 13,
+          "changingJoints": [
+            {
+              "part": "accessory",
+              "states": 5
+            },
+            {
+              "part": "hipLeft",
+              "states": 5
+            },
+            {
+              "part": "hipRight",
+              "states": 5
+            },
+            {
+              "part": "kneeLeft",
+              "states": 6
+            },
+            {
+              "part": "kneeRight",
+              "states": 6
+            },
+            {
+              "part": "ankleLeft",
+              "states": 6
+            },
+            {
+              "part": "ankleRight",
+              "states": 6
+            },
+            {
+              "part": "shoulderLeft",
+              "states": 5
+            },
+            {
+              "part": "shoulderRight",
+              "states": 6
+            },
+            {
+              "part": "neck",
+              "states": 6
+            },
+            {
+              "part": "elbowLeft",
+              "states": 6
+            },
+            {
+              "part": "elbowRight",
+              "states": 6
+            }
+          ],
+          "stableImageCrops": true,
+          "samples": [
+            {
+              "timeMs": 0,
+              "joints": [
+                {
+                  "key": "accessory:0",
+                  "part": "accessory",
+                  "transform": "matrix(1, 0, 0, 1, 132, 246)"
+                },
+                {
+                  "key": "hipLeft:1",
+                  "part": "hipLeft",
+                  "transform": "matrix(1, 0, 0, 1, 158, 329)"
+                },
+                {
+                  "key": "hipRight:2",
+                  "part": "hipRight",
+                  "transform": "matrix(1, 0, 0, 1, 202, 329)"
+                },
+                {
+                  "key": "kneeLeft:3",
+                  "part": "kneeLeft",
+                  "transform": "matrix(1, 0, 0, 1, 157.744, 424)"
+                },
+                {
+                  "key": "kneeRight:4",
+                  "part": "kneeRight",
+                  "transform": "matrix(1, 0, 0, 1, 202.249, 424)"
+                },
+                {
+                  "key": "ankleLeft:5",
+                  "part": "ankleLeft",
+                  "transform": "matrix(1, 0, 0, 1, 154.715, 530.957)"
+                },
+                {
+                  "key": "ankleRight:6",
+                  "part": "ankleRight",
+                  "transform": "matrix(1, 0, 0, 1, 201.055, 530.993)"
+                },
+                {
+                  "key": "shoulderLeft:7",
+                  "part": "shoulderLeft",
+                  "transform": "matrix(0.994522, 0.104528, -0.104528, 0.994522, 137, 184)"
+                },
+                {
+                  "key": "shoulderRight:8",
+                  "part": "shoulderRight",
+                  "transform": "matrix(0.988171, -0.153356, 0.153356, 0.988171, 223, 184)"
+                },
+                {
+                  "key": "neck:9",
+                  "part": "neck",
+                  "transform": "matrix(0.999154, -0.04113, 0.04113, 0.999154, 180, 169)"
+                },
+                {
+                  "key": "torso:10",
+                  "part": "torso",
+                  "transform": "matrix(1, 0, 0, 1, 180, 174)"
+                },
+                {
+                  "key": "elbowLeft:11",
+                  "part": "elbowLeft",
+                  "transform": "matrix(0.994522, -0.104528, 0.104528, 0.994522, 110.268, 257.276)"
+                },
+                {
+                  "key": "elbowRight:12",
+                  "part": "elbowRight",
+                  "transform": "matrix(0.997342, 0.0728647, -0.0728647, 0.997342, 251.772, 256.5)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-305.841px",
+                  "top": "-310.221px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-428.562px",
+                  "top": "-219.907px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-53.7734px",
+                  "top": "-391.351px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-708.321px",
+                  "top": "-263.575px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-286.056px",
+                  "top": "-474.172px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-708.321px",
+                  "top": "-385.971px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-286.056px",
+                  "top": "-596.597px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-371.398px",
+                  "top": "-37.407px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-47.775px",
+                  "top": "-193.292px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-14.8235px",
+                  "top": "-7.24706px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-293.526px",
+                  "top": "-51.3158px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-630.048px",
+                  "top": "-43.7027px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-241.85px",
+                  "top": "-223.482px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 1292,
+              "joints": [
+                {
+                  "key": "accessory:0",
+                  "part": "accessory",
+                  "transform": "matrix(0.999832, 0.0183518, -0.0183518, 0.999832, 132, 246)"
+                },
+                {
+                  "key": "hipLeft:1",
+                  "part": "hipLeft",
+                  "transform": "matrix(0.994275, 0.106854, -0.106854, 0.994275, 158, 329)"
+                },
+                {
+                  "key": "hipRight:2",
+                  "part": "hipRight",
+                  "transform": "matrix(0.994275, -0.106854, 0.106854, 0.994275, 202, 329)"
+                },
+                {
+                  "key": "kneeLeft:3",
+                  "part": "kneeLeft",
+                  "transform": "matrix(0.999188, -0.0402793, 0.0402793, 0.999188, 147.595, 423.428)"
+                },
+                {
+                  "key": "kneeRight:4",
+                  "part": "kneeRight",
+                  "transform": "matrix(0.994275, -0.106854, 0.106854, 0.994275, 212.399, 423.429)"
+                },
+                {
+                  "key": "ankleLeft:5",
+                  "part": "ankleLeft",
+                  "transform": "matrix(0.999756, 0.0221005, -0.0221005, 0.999756, 148.876, 530.421)"
+                },
+                {
+                  "key": "ankleRight:6",
+                  "part": "ankleRight",
+                  "transform": "matrix(0.999756, -0.0221005, 0.0221005, 0.999756, 222.644, 529.938)"
+                },
+                {
+                  "key": "shoulderLeft:7",
+                  "part": "shoulderLeft",
+                  "transform": "matrix(0.998914, 0.0465855, -0.0465855, 0.998914, 137, 184)"
+                },
+                {
+                  "key": "shoulderRight:8",
+                  "part": "shoulderRight",
+                  "transform": "matrix(0.998394, -0.0566538, 0.0566538, 0.998394, 223, 184)"
+                },
+                {
+                  "key": "neck:9",
+                  "part": "neck",
+                  "transform": "matrix(0.999818, -0.0190959, 0.0190959, 0.999818, 180, 169)"
+                },
+                {
+                  "key": "torso:10",
+                  "part": "torso",
+                  "transform": "matrix(1, 0, 0, 1, 180, 174)"
+                },
+                {
+                  "key": "elbowLeft:11",
+                  "part": "elbowLeft",
+                  "transform": "matrix(0.990113, -0.140271, 0.140271, 0.990113, 114.569, 258.705)"
+                },
+                {
+                  "key": "elbowRight:12",
+                  "part": "elbowRight",
+                  "transform": "matrix(0.981846, 0.189681, -0.189681, 0.981846, 244.594, 258.951)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-305.841px",
+                  "top": "-310.221px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-428.562px",
+                  "top": "-219.907px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-53.7734px",
+                  "top": "-391.351px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-708.321px",
+                  "top": "-263.575px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-286.056px",
+                  "top": "-474.172px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-708.321px",
+                  "top": "-385.971px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-286.056px",
+                  "top": "-596.597px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-371.398px",
+                  "top": "-37.407px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-47.775px",
+                  "top": "-193.292px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-14.8235px",
+                  "top": "-7.24706px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-293.526px",
+                  "top": "-51.3158px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-630.048px",
+                  "top": "-43.7027px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-241.85px",
+                  "top": "-223.482px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 2508,
+              "joints": [
+                {
+                  "key": "accessory:0",
+                  "part": "accessory",
+                  "transform": "matrix(0.999832, 0.0183518, -0.0183518, 0.999832, 132, 246)"
+                },
+                {
+                  "key": "hipLeft:1",
+                  "part": "hipLeft",
+                  "transform": "matrix(0.994275, 0.106854, -0.106854, 0.994275, 158, 329)"
+                },
+                {
+                  "key": "hipRight:2",
+                  "part": "hipRight",
+                  "transform": "matrix(0.994275, -0.106854, 0.106854, 0.994275, 202, 329)"
+                },
+                {
+                  "key": "kneeLeft:3",
+                  "part": "kneeLeft",
+                  "transform": "matrix(0.994275, 0.106854, -0.106854, 0.994275, 147.595, 423.428)"
+                },
+                {
+                  "key": "kneeRight:4",
+                  "part": "kneeRight",
+                  "transform": "matrix(0.999188, 0.0402793, -0.0402793, 0.999188, 212.399, 423.429)"
+                },
+                {
+                  "key": "ankleLeft:5",
+                  "part": "ankleLeft",
+                  "transform": "matrix(0.999756, -0.0221005, 0.0221005, 0.999756, 133.154, 529.449)"
+                },
+                {
+                  "key": "ankleRight:6",
+                  "part": "ankleRight",
+                  "transform": "matrix(0.999756, 0.0221005, -0.0221005, 0.999756, 206.896, 530.287)"
+                },
+                {
+                  "key": "shoulderLeft:7",
+                  "part": "shoulderLeft",
+                  "transform": "matrix(0.998914, 0.0465855, -0.0465855, 0.998914, 137, 184)"
+                },
+                {
+                  "key": "shoulderRight:8",
+                  "part": "shoulderRight",
+                  "transform": "matrix(0.999081, -0.0428575, 0.0428575, 0.999081, 223, 184)"
+                },
+                {
+                  "key": "neck:9",
+                  "part": "neck",
+                  "transform": "matrix(0.999993, 0.00372627, -0.00372627, 0.999993, 180, 169)"
+                },
+                {
+                  "key": "torso:10",
+                  "part": "torso",
+                  "transform": "matrix(1, 0, 0, 1, 180, 174)"
+                },
+                {
+                  "key": "elbowLeft:11",
+                  "part": "elbowLeft",
+                  "transform": "matrix(0.982947, -0.183887, 0.183887, 0.982947, 114.569, 258.705)"
+                },
+                {
+                  "key": "elbowRight:12",
+                  "part": "elbowRight",
+                  "transform": "matrix(0.986681, 0.162667, -0.162667, 0.986681, 243.557, 259.242)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-305.841px",
+                  "top": "-310.221px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-428.562px",
+                  "top": "-219.907px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-53.7734px",
+                  "top": "-391.351px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-708.321px",
+                  "top": "-263.575px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-286.056px",
+                  "top": "-474.172px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-708.321px",
+                  "top": "-385.971px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-286.056px",
+                  "top": "-596.597px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-371.398px",
+                  "top": "-37.407px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-47.775px",
+                  "top": "-193.292px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-14.8235px",
+                  "top": "-7.24706px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-293.526px",
+                  "top": "-51.3158px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-630.048px",
+                  "top": "-43.7027px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-241.85px",
+                  "top": "-223.482px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 3952,
+              "joints": [
+                {
+                  "key": "accessory:0",
+                  "part": "accessory",
+                  "transform": "matrix(0.999997, -0.00262487, 0.00262487, 0.999997, 132, 246)"
+                },
+                {
+                  "key": "hipLeft:1",
+                  "part": "hipLeft",
+                  "transform": "matrix(0.999883, -0.0153114, 0.0153114, 0.999883, 158, 329)"
+                },
+                {
+                  "key": "hipRight:2",
+                  "part": "hipRight",
+                  "transform": "matrix(0.999883, 0.0153114, -0.0153114, 0.999883, 202, 329)"
+                },
+                {
+                  "key": "kneeLeft:3",
+                  "part": "kneeLeft",
+                  "transform": "matrix(0.998277, -0.0586784, 0.0586784, 0.998277, 159.199, 423.992)"
+                },
+                {
+                  "key": "kneeRight:4",
+                  "part": "kneeRight",
+                  "transform": "matrix(0.999883, 0.0153114, -0.0153114, 0.999883, 200.794, 423.992)"
+                },
+                {
+                  "key": "ankleLeft:5",
+                  "part": "ankleLeft",
+                  "transform": "matrix(0.999979, 0.00650996, -0.00650996, 0.999979, 162.451, 530.942)"
+                },
+                {
+                  "key": "ankleRight:6",
+                  "part": "ankleRight",
+                  "transform": "matrix(0.999979, -0.00650996, 0.00650996, 0.999979, 197.962, 530.955)"
+                },
+                {
+                  "key": "shoulderLeft:7",
+                  "part": "shoulderLeft",
+                  "transform": "matrix(0.993619, 0.112791, -0.112791, 0.993619, 137, 184)"
+                },
+                {
+                  "key": "shoulderRight:8",
+                  "part": "shoulderRight",
+                  "transform": "matrix(0.990458, -0.137813, 0.137813, 0.990458, 223, 184)"
+                },
+                {
+                  "key": "neck:9",
+                  "part": "neck",
+                  "transform": "matrix(0.999989, 0.00465062, -0.00465062, 0.999989, 180, 169)"
+                },
+                {
+                  "key": "torso:10",
+                  "part": "torso",
+                  "transform": "matrix(1, 0, 0, 1, 180, 174)"
+                },
+                {
+                  "key": "elbowLeft:11",
+                  "part": "elbowLeft",
+                  "transform": "matrix(0.995962, -0.0897764, 0.0897764, 0.995962, 109.66, 257.051)"
+                },
+                {
+                  "key": "elbowRight:12",
+                  "part": "elbowRight",
+                  "transform": "matrix(0.995518, 0.0945741, -0.0945741, 0.995518, 250.629, 256.943)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-305.841px",
+                  "top": "-310.221px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-428.562px",
+                  "top": "-219.907px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-53.7734px",
+                  "top": "-391.351px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-708.321px",
+                  "top": "-263.575px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-286.056px",
+                  "top": "-474.172px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-708.321px",
+                  "top": "-385.971px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-286.056px",
+                  "top": "-596.597px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-371.398px",
+                  "top": "-37.407px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-47.775px",
+                  "top": "-193.292px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-14.8235px",
+                  "top": "-7.24706px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-293.526px",
+                  "top": "-51.3158px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-630.048px",
+                  "top": "-43.7027px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-241.85px",
+                  "top": "-223.482px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 5396,
+              "joints": [
+                {
+                  "key": "accessory:0",
+                  "part": "accessory",
+                  "transform": "matrix(0.999794, -0.0202838, 0.0202838, 0.999794, 132, 246)"
+                },
+                {
+                  "key": "hipLeft:1",
+                  "part": "hipLeft",
+                  "transform": "matrix(0.993007, -0.118054, 0.118054, 0.993007, 158, 329)"
+                },
+                {
+                  "key": "hipRight:2",
+                  "part": "hipRight",
+                  "transform": "matrix(0.993007, 0.118054, -0.118054, 0.993007, 202, 329)"
+                },
+                {
+                  "key": "kneeLeft:3",
+                  "part": "kneeLeft",
+                  "transform": "matrix(0.979587, -0.201021, 0.201021, 0.979587, 168.961, 423.366)"
+                },
+                {
+                  "key": "kneeRight:4",
+                  "part": "kneeRight",
+                  "transform": "matrix(0.993007, 0.118054, -0.118054, 0.993007, 191.032, 423.365)"
+                },
+                {
+                  "key": "ankleLeft:5",
+                  "part": "ankleLeft",
+                  "transform": "matrix(0.99992, 0.0126101, -0.0126101, 0.99992, 187.494, 528.748)"
+                },
+                {
+                  "key": "ankleRight:6",
+                  "part": "ankleRight",
+                  "transform": "matrix(0.99992, -0.0126101, 0.0126101, 0.99992, 177.215, 529.469)"
+                },
+                {
+                  "key": "shoulderLeft:7",
+                  "part": "shoulderLeft",
+                  "transform": "matrix(0.985761, 0.168154, -0.168154, 0.985761, 137, 184)"
+                },
+                {
+                  "key": "shoulderRight:8",
+                  "part": "shoulderRight",
+                  "transform": "matrix(0.972428, -0.233203, 0.233203, 0.972428, 223, 184)"
+                },
+                {
+                  "key": "neck:9",
+                  "part": "neck",
+                  "transform": "matrix(0.99975, -0.0223569, 0.0223569, 0.99975, 180, 169)"
+                },
+                {
+                  "key": "torso:10",
+                  "part": "torso",
+                  "transform": "matrix(1, 0, 0, 1, 180, 174)"
+                },
+                {
+                  "key": "elbowLeft:11",
+                  "part": "elbowLeft",
+                  "transform": "matrix(0.999612, -0.0278692, 0.0278692, 0.999612, 105.619, 255.409)"
+                },
+                {
+                  "key": "elbowRight:12",
+                  "part": "elbowRight",
+                  "transform": "matrix(0.999995, 0.00329249, -0.00329249, 0.999995, 257.572, 253.92)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-305.841px",
+                  "top": "-310.221px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-428.562px",
+                  "top": "-219.907px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-53.7734px",
+                  "top": "-391.351px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-708.321px",
+                  "top": "-263.575px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-286.056px",
+                  "top": "-474.172px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-708.321px",
+                  "top": "-385.971px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-286.056px",
+                  "top": "-596.597px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-371.398px",
+                  "top": "-37.407px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-47.775px",
+                  "top": "-193.292px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-14.8235px",
+                  "top": "-7.24706px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-293.526px",
+                  "top": "-51.3158px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-630.048px",
+                  "top": "-43.7027px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-241.85px",
+                  "top": "-223.482px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 6916,
+              "joints": [
+                {
+                  "key": "accessory:0",
+                  "part": "accessory",
+                  "transform": "matrix(0.999937, -0.0112217, 0.0112217, 0.999937, 132, 246)"
+                },
+                {
+                  "key": "hipLeft:1",
+                  "part": "hipLeft",
+                  "transform": "matrix(0.997858, -0.0654144, 0.0654144, 0.997858, 158, 329)"
+                },
+                {
+                  "key": "hipRight:2",
+                  "part": "hipRight",
+                  "transform": "matrix(0.997858, 0.0654144, -0.0654144, 0.997858, 202, 329)"
+                },
+                {
+                  "key": "kneeLeft:3",
+                  "part": "kneeLeft",
+                  "transform": "matrix(0.997858, -0.0654144, 0.0654144, 0.997858, 163.959, 423.813)"
+                },
+                {
+                  "key": "kneeRight:4",
+                  "part": "kneeRight",
+                  "transform": "matrix(0.975159, 0.221508, -0.221508, 0.975159, 196.034, 423.812)"
+                },
+                {
+                  "key": "ankleLeft:5",
+                  "part": "ankleLeft",
+                  "transform": "matrix(0.99972, -0.0236826, 0.0236826, 0.99972, 167.933, 530.739)"
+                },
+                {
+                  "key": "ankleRight:6",
+                  "part": "ankleRight",
+                  "transform": "matrix(0.99972, 0.0236826, -0.0236826, 0.99972, 171.17, 527.883)"
+                },
+                {
+                  "key": "shoulderLeft:7",
+                  "part": "shoulderLeft",
+                  "transform": "matrix(0.99018, 0.139796, -0.139796, 0.99018, 137, 184)"
+                },
+                {
+                  "key": "shoulderRight:8",
+                  "part": "shoulderRight",
+                  "transform": "matrix(0.97872, -0.205201, 0.205201, 0.97872, 223, 184)"
+                },
+                {
+                  "key": "neck:9",
+                  "part": "neck",
+                  "transform": "matrix(0.999057, -0.0434122, 0.0434122, 0.999057, 180, 169)"
+                },
+                {
+                  "key": "torso:10",
+                  "part": "torso",
+                  "transform": "matrix(1, 0, 0, 1, 180, 174)"
+                },
+                {
+                  "key": "elbowLeft:11",
+                  "part": "elbowLeft",
+                  "transform": "matrix(0.995691, -0.0927351, 0.0927351, 0.995691, 107.681, 256.28)"
+                },
+                {
+                  "key": "elbowRight:12",
+                  "part": "elbowRight",
+                  "transform": "matrix(0.999998, -0.00188265, 0.00188265, 0.999998, 255.551, 254.883)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-305.841px",
+                  "top": "-310.221px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-428.562px",
+                  "top": "-219.907px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-53.7734px",
+                  "top": "-391.351px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-708.321px",
+                  "top": "-263.575px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-286.056px",
+                  "top": "-474.172px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-708.321px",
+                  "top": "-385.971px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-286.056px",
+                  "top": "-596.597px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-371.398px",
+                  "top": "-37.407px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-47.775px",
+                  "top": "-193.292px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-14.8235px",
+                  "top": "-7.24706px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-293.526px",
+                  "top": "-51.3158px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-630.048px",
+                  "top": "-43.7027px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                },
+                {
+                  "left": "-241.85px",
+                  "top": "-223.482px",
+                  "src": "assets/art/mina-geometric-v2.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "alex",
+          "jointCount": 14,
+          "changingJoints": [
+            {
+              "part": "hipLeft",
+              "states": 5
+            },
+            {
+              "part": "hipRight",
+              "states": 5
+            },
+            {
+              "part": "kneeLeft",
+              "states": 5
+            },
+            {
+              "part": "kneeRight",
+              "states": 5
+            },
+            {
+              "part": "ankleLeft",
+              "states": 6
+            },
+            {
+              "part": "ankleRight",
+              "states": 6
+            },
+            {
+              "part": "shoulderLeft",
+              "states": 6
+            },
+            {
+              "part": "shoulderRight",
+              "states": 6
+            },
+            {
+              "part": "neck",
+              "states": 6
+            },
+            {
+              "part": "elbowLeft",
+              "states": 6
+            },
+            {
+              "part": "elbowRight",
+              "states": 6
+            },
+            {
+              "part": "prop",
+              "states": 6
+            }
+          ],
+          "stableImageCrops": true,
+          "samples": [
+            {
+              "timeMs": 0,
+              "joints": [
+                {
+                  "key": "hipLeft:0",
+                  "part": "hipLeft",
+                  "transform": "matrix(1, 0, 0, 1, 150, 315)"
+                },
+                {
+                  "key": "hipRight:1",
+                  "part": "hipRight",
+                  "transform": "matrix(1, 0, 0, 1, 210, 315)"
+                },
+                {
+                  "key": "kneeLeft:2",
+                  "part": "kneeLeft",
+                  "transform": "matrix(1, 0, 0, 1, 146.817, 396.938)"
+                },
+                {
+                  "key": "kneeRight:3",
+                  "part": "kneeRight",
+                  "transform": "matrix(1, 0, 0, 1, 208.744, 396.99)"
+                },
+                {
+                  "key": "ankleLeft:4",
+                  "part": "ankleLeft",
+                  "transform": "matrix(1, 0, 0, 1, 146.062, 492.935)"
+                },
+                {
+                  "key": "ankleRight:5",
+                  "part": "ankleRight",
+                  "transform": "matrix(1, 0, 0, 1, 207.421, 492.981)"
+                },
+                {
+                  "key": "shoulderLeft:6",
+                  "part": "shoulderLeft",
+                  "transform": "matrix(0.842594, 0.53855, -0.53855, 0.842594, 123, 192)"
+                },
+                {
+                  "key": "shoulderRight:7",
+                  "part": "shoulderRight",
+                  "transform": "matrix(0.774403, -0.632693, 0.632693, 0.774403, 237, 192)"
+                },
+                {
+                  "key": "neck:8",
+                  "part": "neck",
+                  "transform": "matrix(0.999514, -0.0311632, 0.0311632, 0.999514, 180, 177)"
+                },
+                {
+                  "key": "torso:9",
+                  "part": "torso",
+                  "transform": "matrix(1, 0, 0, 1, 180, 182)"
+                },
+                {
+                  "key": "elbowLeft:10",
+                  "part": "elbowLeft",
+                  "transform": "matrix(0.300738, -0.953707, 0.953707, 0.300738, 82.3381, 251.419)"
+                },
+                {
+                  "key": "elbowRight:11",
+                  "part": "elbowRight",
+                  "transform": "matrix(0.338332, 0.941027, -0.941027, 0.338332, 283.893, 246.636)"
+                },
+                {
+                  "key": "accessory:12",
+                  "part": "accessory",
+                  "transform": "matrix(1, 0, 0, 1, 180, 202)"
+                },
+                {
+                  "key": "prop:13",
+                  "part": "prop",
+                  "transform": "matrix(1, 0, 0, 1, 180, 265)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-322.707px",
+                  "top": "-173.092px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-42.7033px",
+                  "top": "-329.904px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-578.095px",
+                  "top": "-219.364px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-250.88px",
+                  "top": "-417.076px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-578.095px",
+                  "top": "-330.053px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-250.88px",
+                  "top": "-527.696px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-384.426px",
+                  "top": "-43.4175px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-54.1325px",
+                  "top": "-199.505px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-20.7972px",
+                  "top": "-8.13803px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-260.852px",
+                  "top": "-57.4241px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-524.029px",
+                  "top": "-29.5718px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-212.297px",
+                  "top": "-195.864px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-193.709px",
+                  "top": "-209.98px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-440.809px",
+                  "top": "-288.603px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 1088,
+              "joints": [
+                {
+                  "key": "hipLeft:0",
+                  "part": "hipLeft",
+                  "transform": "matrix(0.999434, 0.0336405, -0.0336405, 0.999434, 150, 315)"
+                },
+                {
+                  "key": "hipRight:1",
+                  "part": "hipRight",
+                  "transform": "matrix(0.999434, -0.0336405, 0.0336405, 0.999434, 210, 315)"
+                },
+                {
+                  "key": "kneeLeft:2",
+                  "part": "kneeLeft",
+                  "transform": "matrix(0.999931, 0.0117762, -0.0117762, 0.999931, 144.062, 396.785)"
+                },
+                {
+                  "key": "kneeRight:3",
+                  "part": "kneeRight",
+                  "transform": "matrix(0.999931, -0.0117762, 0.0117762, 0.999931, 211.503, 396.986)"
+                },
+                {
+                  "key": "ankleLeft:4",
+                  "part": "ankleLeft",
+                  "transform": "matrix(0.999756, 0.0221005, -0.0221005, 0.999756, 142.177, 492.766)"
+                },
+                {
+                  "key": "ankleRight:5",
+                  "part": "ankleRight",
+                  "transform": "matrix(0.999756, -0.0221005, 0.0221005, 0.999756, 211.31, 492.986)"
+                },
+                {
+                  "key": "shoulderLeft:6",
+                  "part": "shoulderLeft",
+                  "transform": "matrix(0.865219, 0.501394, -0.501394, 0.865219, 123, 192)"
+                },
+                {
+                  "key": "shoulderRight:7",
+                  "part": "shoulderRight",
+                  "transform": "matrix(0.237446, -0.971401, 0.971401, 0.237446, 237, 192)"
+                },
+                {
+                  "key": "neck:8",
+                  "part": "neck",
+                  "transform": "matrix(0.999991, -0.00434313, 0.00434313, 0.999991, 180, 177)"
+                },
+                {
+                  "key": "torso:9",
+                  "part": "torso",
+                  "transform": "matrix(1, 0, 0, 1, 180, 182)"
+                },
+                {
+                  "key": "elbowLeft:10",
+                  "part": "elbowLeft",
+                  "transform": "matrix(0.300426, -0.953805, 0.953805, 0.300426, 84.9609, 253.131)"
+                },
+                {
+                  "key": "elbowRight:11",
+                  "part": "elbowRight",
+                  "transform": "matrix(-0.67681, 0.736157, -0.736157, -0.67681, 307.331, 207.394)"
+                },
+                {
+                  "key": "accessory:12",
+                  "part": "accessory",
+                  "transform": "matrix(1, 0, 0, 1, 180, 202)"
+                },
+                {
+                  "key": "prop:13",
+                  "part": "prop",
+                  "transform": "matrix(1, -0.000327249, 0.000327249, 1, 182.627, 266.68)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-322.707px",
+                  "top": "-173.092px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-42.7033px",
+                  "top": "-329.904px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-578.095px",
+                  "top": "-219.364px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-250.88px",
+                  "top": "-417.076px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-578.095px",
+                  "top": "-330.053px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-250.88px",
+                  "top": "-527.696px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-384.426px",
+                  "top": "-43.4175px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-54.1325px",
+                  "top": "-199.505px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-20.7972px",
+                  "top": "-8.13803px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-260.852px",
+                  "top": "-57.4241px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-524.029px",
+                  "top": "-29.5718px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-212.297px",
+                  "top": "-195.864px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-193.709px",
+                  "top": "-209.98px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-440.809px",
+                  "top": "-288.603px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 2112,
+              "joints": [
+                {
+                  "key": "hipLeft:0",
+                  "part": "hipLeft",
+                  "transform": "matrix(0.999434, 0.0336405, -0.0336405, 0.999434, 150, 315)"
+                },
+                {
+                  "key": "hipRight:1",
+                  "part": "hipRight",
+                  "transform": "matrix(0.999434, -0.0336405, 0.0336405, 0.999434, 210, 315)"
+                },
+                {
+                  "key": "kneeLeft:2",
+                  "part": "kneeLeft",
+                  "transform": "matrix(0.999931, 0.0117762, -0.0117762, 0.999931, 144.062, 396.785)"
+                },
+                {
+                  "key": "kneeRight:3",
+                  "part": "kneeRight",
+                  "transform": "matrix(0.999931, -0.0117762, 0.0117762, 0.999931, 211.503, 396.986)"
+                },
+                {
+                  "key": "ankleLeft:4",
+                  "part": "ankleLeft",
+                  "transform": "matrix(0.999756, -0.0221005, 0.0221005, 0.999756, 142.177, 492.766)"
+                },
+                {
+                  "key": "ankleRight:5",
+                  "part": "ankleRight",
+                  "transform": "matrix(0.999756, 0.0221005, -0.0221005, 0.999756, 211.31, 492.986)"
+                },
+                {
+                  "key": "shoulderLeft:6",
+                  "part": "shoulderLeft",
+                  "transform": "matrix(0.859495, 0.511144, -0.511144, 0.859495, 123, 192)"
+                },
+                {
+                  "key": "shoulderRight:7",
+                  "part": "shoulderRight",
+                  "transform": "matrix(-0.279786, -0.960062, 0.960062, -0.279786, 237, 192)"
+                },
+                {
+                  "key": "neck:8",
+                  "part": "neck",
+                  "transform": "matrix(0.999288, 0.0377356, -0.0377356, 0.999288, 180, 177)"
+                },
+                {
+                  "key": "torso:9",
+                  "part": "torso",
+                  "transform": "matrix(1, 0, 0, 1, 180, 182)"
+                },
+                {
+                  "key": "elbowLeft:10",
+                  "part": "elbowLeft",
+                  "transform": "matrix(0.261751, -0.965135, 0.965135, 0.261751, 84.2722, 252.697)"
+                },
+                {
+                  "key": "elbowRight:11",
+                  "part": "elbowRight",
+                  "transform": "matrix(-0.900845, -0.434141, 0.434141, -0.900845, 305.616, 170.185)"
+                },
+                {
+                  "key": "accessory:12",
+                  "part": "accessory",
+                  "transform": "matrix(1, 0, 0, 1, 180, 202)"
+                },
+                {
+                  "key": "prop:13",
+                  "part": "prop",
+                  "transform": "matrix(0.999175, -0.0406192, 0.0406192, 0.999175, 182.405, 262.3)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-322.707px",
+                  "top": "-173.092px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-42.7033px",
+                  "top": "-329.904px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-578.095px",
+                  "top": "-219.364px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-250.88px",
+                  "top": "-417.076px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-578.095px",
+                  "top": "-330.053px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-250.88px",
+                  "top": "-527.696px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-384.426px",
+                  "top": "-43.4175px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-54.1325px",
+                  "top": "-199.505px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-20.7972px",
+                  "top": "-8.13803px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-260.852px",
+                  "top": "-57.4241px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-524.029px",
+                  "top": "-29.5718px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-212.297px",
+                  "top": "-195.864px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-193.709px",
+                  "top": "-209.98px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-440.809px",
+                  "top": "-288.603px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 3328,
+              "joints": [
+                {
+                  "key": "hipLeft:0",
+                  "part": "hipLeft",
+                  "transform": "matrix(0.999988, -0.00481227, 0.00481227, 0.999988, 150, 315)"
+                },
+                {
+                  "key": "hipRight:1",
+                  "part": "hipRight",
+                  "transform": "matrix(0.999988, 0.00481227, -0.00481227, 0.999988, 210, 315)"
+                },
+                {
+                  "key": "kneeLeft:2",
+                  "part": "kneeLeft",
+                  "transform": "matrix(0.999999, -0.00168431, 0.00168431, 0.999999, 147.211, 396.953)"
+                },
+                {
+                  "key": "kneeRight:3",
+                  "part": "kneeRight",
+                  "transform": "matrix(0.999999, 0.00168431, -0.00168431, 0.999999, 208.349, 396.983)"
+                },
+                {
+                  "key": "ankleLeft:4",
+                  "part": "ankleLeft",
+                  "transform": "matrix(0.999979, 0.00650996, -0.00650996, 0.999979, 146.618, 492.951)"
+                },
+                {
+                  "key": "ankleRight:5",
+                  "part": "ankleRight",
+                  "transform": "matrix(0.999979, -0.00650996, 0.00650996, 0.999979, 206.865, 492.972)"
+                },
+                {
+                  "key": "shoulderLeft:6",
+                  "part": "shoulderLeft",
+                  "transform": "matrix(0.840691, 0.541515, -0.541515, 0.840691, 123, 192)"
+                },
+                {
+                  "key": "shoulderRight:7",
+                  "part": "shoulderRight",
+                  "transform": "matrix(-0.313175, -0.949696, 0.949696, -0.313175, 237, 192)"
+                },
+                {
+                  "key": "neck:8",
+                  "part": "neck",
+                  "transform": "matrix(0.998342, 0.0575633, -0.0575633, 0.998342, 180, 177)"
+                },
+                {
+                  "key": "torso:9",
+                  "part": "torso",
+                  "transform": "matrix(1, 0, 0, 1, 180, 182)"
+                },
+                {
+                  "key": "elbowLeft:10",
+                  "part": "elbowLeft",
+                  "transform": "matrix(0.309149, -0.951014, 0.951014, 0.309149, 82.1291, 251.275)"
+                },
+                {
+                  "key": "elbowRight:11",
+                  "part": "elbowRight",
+                  "transform": "matrix(-0.996981, -0.0776519, 0.0776519, -0.996981, 304.811, 167.8)"
+                },
+                {
+                  "key": "accessory:12",
+                  "part": "accessory",
+                  "transform": "matrix(1, 0, 0, 1, 180, 202)"
+                },
+                {
+                  "key": "prop:13",
+                  "part": "prop",
+                  "transform": "matrix(0.999961, 0.0088308, -0.0088308, 0.999961, 179.667, 265.718)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-322.707px",
+                  "top": "-173.092px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-42.7033px",
+                  "top": "-329.904px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-578.095px",
+                  "top": "-219.364px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-250.88px",
+                  "top": "-417.076px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-578.095px",
+                  "top": "-330.053px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-250.88px",
+                  "top": "-527.696px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-384.426px",
+                  "top": "-43.4175px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-54.1325px",
+                  "top": "-199.505px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-20.7972px",
+                  "top": "-8.13803px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-260.852px",
+                  "top": "-57.4241px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-524.029px",
+                  "top": "-29.5718px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-212.297px",
+                  "top": "-195.864px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-193.709px",
+                  "top": "-209.98px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-440.809px",
+                  "top": "-288.603px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 4544,
+              "joints": [
+                {
+                  "key": "hipLeft:0",
+                  "part": "hipLeft",
+                  "transform": "matrix(0.999309, -0.037181, 0.037181, 0.999309, 150, 315)"
+                },
+                {
+                  "key": "hipRight:1",
+                  "part": "hipRight",
+                  "transform": "matrix(0.999309, 0.037181, -0.037181, 0.999309, 210, 315)"
+                },
+                {
+                  "key": "kneeLeft:2",
+                  "part": "kneeLeft",
+                  "transform": "matrix(0.999915, -0.013016, 0.013016, 0.999915, 149.865, 397)"
+                },
+                {
+                  "key": "kneeRight:3",
+                  "part": "kneeRight",
+                  "transform": "matrix(0.999915, 0.013016, -0.013016, 0.999915, 205.696, 396.887)"
+                },
+                {
+                  "key": "ankleLeft:4",
+                  "part": "ankleLeft",
+                  "transform": "matrix(0.99992, 0.0126101, -0.0126101, 0.99992, 150.36, 492.999)"
+                },
+                {
+                  "key": "ankleRight:5",
+                  "part": "ankleRight",
+                  "transform": "matrix(0.99992, -0.0126101, 0.0126101, 0.99992, 203.124, 492.853)"
+                },
+                {
+                  "key": "shoulderLeft:6",
+                  "part": "shoulderLeft",
+                  "transform": "matrix(0.821711, 0.569905, -0.569905, 0.821711, 123, 192)"
+                },
+                {
+                  "key": "shoulderRight:7",
+                  "part": "shoulderRight",
+                  "transform": "matrix(-0.285221, -0.958462, 0.958462, -0.285221, 237, 192)"
+                },
+                {
+                  "key": "neck:8",
+                  "part": "neck",
+                  "transform": "matrix(0.999333, 0.0365143, -0.0365143, 0.999333, 180, 177)"
+                },
+                {
+                  "key": "torso:9",
+                  "part": "torso",
+                  "transform": "matrix(1, 0, 0, 1, 180, 182)"
+                },
+                {
+                  "key": "elbowLeft:10",
+                  "part": "elbowLeft",
+                  "transform": "matrix(0.334004, -0.942572, 0.942572, 0.334004, 80.1289, 249.845)"
+                },
+                {
+                  "key": "elbowRight:11",
+                  "part": "elbowRight",
+                  "transform": "matrix(-0.974458, -0.22457, 0.22457, -0.974458, 305.49, 169.797)"
+                },
+                {
+                  "key": "accessory:12",
+                  "part": "accessory",
+                  "transform": "matrix(1, 0, 0, 1, 180, 202)"
+                },
+                {
+                  "key": "prop:13",
+                  "part": "prop",
+                  "transform": "matrix(0.999385, 0.035074, -0.035074, 0.999385, 177.254, 266.843)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-322.707px",
+                  "top": "-173.092px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-42.7033px",
+                  "top": "-329.904px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-578.095px",
+                  "top": "-219.364px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-250.88px",
+                  "top": "-417.076px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-578.095px",
+                  "top": "-330.053px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-250.88px",
+                  "top": "-527.696px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-384.426px",
+                  "top": "-43.4175px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-54.1325px",
+                  "top": "-199.505px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-20.7972px",
+                  "top": "-8.13803px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-260.852px",
+                  "top": "-57.4241px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-524.029px",
+                  "top": "-29.5718px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-212.297px",
+                  "top": "-195.864px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-193.709px",
+                  "top": "-209.98px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-440.809px",
+                  "top": "-288.603px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 5824,
+              "joints": [
+                {
+                  "key": "hipLeft:0",
+                  "part": "hipLeft",
+                  "transform": "matrix(0.999788, -0.0205721, 0.0205721, 0.999788, 150, 315)"
+                },
+                {
+                  "key": "hipRight:1",
+                  "part": "hipRight",
+                  "transform": "matrix(0.999788, 0.0205721, -0.0205721, 0.999788, 210, 315)"
+                },
+                {
+                  "key": "kneeLeft:2",
+                  "part": "kneeLeft",
+                  "transform": "matrix(0.999974, -0.00720068, 0.00720068, 0.999974, 148.503, 396.986)"
+                },
+                {
+                  "key": "kneeRight:3",
+                  "part": "kneeRight",
+                  "transform": "matrix(0.999974, 0.00720068, -0.00720068, 0.999974, 207.058, 396.947)"
+                },
+                {
+                  "key": "ankleLeft:4",
+                  "part": "ankleLeft",
+                  "transform": "matrix(0.99972, -0.0236826, 0.0236826, 0.99972, 148.44, 492.986)"
+                },
+                {
+                  "key": "ankleRight:5",
+                  "part": "ankleRight",
+                  "transform": "matrix(0.99972, 0.0236826, -0.0236826, 0.99972, 205.043, 492.926)"
+                },
+                {
+                  "key": "shoulderLeft:6",
+                  "part": "shoulderLeft",
+                  "transform": "matrix(0.826183, 0.563402, -0.563402, 0.826183, 123, 192)"
+                },
+                {
+                  "key": "shoulderRight:7",
+                  "part": "shoulderRight",
+                  "transform": "matrix(0.788951, -0.614456, 0.614456, 0.788951, 237, 192)"
+                },
+                {
+                  "key": "neck:8",
+                  "part": "neck",
+                  "transform": "matrix(0.999707, -0.0242015, 0.0242015, 0.999707, 180, 177)"
+                },
+                {
+                  "key": "torso:9",
+                  "part": "torso",
+                  "transform": "matrix(1, 0, 0, 1, 180, 182)"
+                },
+                {
+                  "key": "elbowLeft:10",
+                  "part": "elbowLeft",
+                  "transform": "matrix(0.293226, -0.956043, 0.956043, 0.293226, 80.5868, 250.182)"
+                },
+                {
+                  "key": "elbowRight:11",
+                  "part": "elbowRight",
+                  "transform": "matrix(0.347717, 0.937599, -0.937599, 0.347717, 282.605, 247.715)"
+                },
+                {
+                  "key": "accessory:12",
+                  "part": "accessory",
+                  "transform": "matrix(1, 0, 0, 1, 180, 202)"
+                },
+                {
+                  "key": "prop:13",
+                  "part": "prop",
+                  "transform": "matrix(0.999969, -0.00786699, 0.00786699, 0.999969, 178.352, 262.994)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-322.707px",
+                  "top": "-173.092px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-42.7033px",
+                  "top": "-329.904px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-578.095px",
+                  "top": "-219.364px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-250.88px",
+                  "top": "-417.076px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-578.095px",
+                  "top": "-330.053px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-250.88px",
+                  "top": "-527.696px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-384.426px",
+                  "top": "-43.4175px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-54.1325px",
+                  "top": "-199.505px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-20.7972px",
+                  "top": "-8.13803px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-260.852px",
+                  "top": "-57.4241px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-524.029px",
+                  "top": "-29.5718px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-212.297px",
+                  "top": "-195.864px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-193.709px",
+                  "top": "-209.98px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                },
+                {
+                  "left": "-440.809px",
+                  "top": "-288.603px",
+                  "src": "assets/art/alex-geometric-v1.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "jo",
+          "jointCount": 14,
+          "changingJoints": [
+            {
+              "part": "hipLeft",
+              "states": 5
+            },
+            {
+              "part": "hipRight",
+              "states": 5
+            },
+            {
+              "part": "kneeLeft",
+              "states": 5
+            },
+            {
+              "part": "kneeRight",
+              "states": 5
+            },
+            {
+              "part": "ankleLeft",
+              "states": 6
+            },
+            {
+              "part": "ankleRight",
+              "states": 6
+            },
+            {
+              "part": "shoulderLeft",
+              "states": 6
+            },
+            {
+              "part": "shoulderRight",
+              "states": 6
+            },
+            {
+              "part": "neck",
+              "states": 6
+            },
+            {
+              "part": "elbowLeft",
+              "states": 6
+            },
+            {
+              "part": "elbowRight",
+              "states": 6
+            },
+            {
+              "part": "accessory",
+              "states": 6
+            },
+            {
+              "part": "prop",
+              "states": 6
+            }
+          ],
+          "stableImageCrops": true,
+          "samples": [
+            {
+              "timeMs": 0,
+              "joints": [
+                {
+                  "key": "hipLeft:0",
+                  "part": "hipLeft",
+                  "transform": "matrix(1, 0, 0, 1, 148, 332)"
+                },
+                {
+                  "key": "hipRight:1",
+                  "part": "hipRight",
+                  "transform": "matrix(1, 0, 0, 1, 212, 332)"
+                },
+                {
+                  "key": "kneeLeft:2",
+                  "part": "kneeLeft",
+                  "transform": "matrix(1, 0, 0, 1, 145.672, 402.962)"
+                },
+                {
+                  "key": "kneeRight:3",
+                  "part": "kneeRight",
+                  "transform": "matrix(1, 0, 0, 1, 211.81, 403)"
+                },
+                {
+                  "key": "ankleLeft:4",
+                  "part": "ankleLeft",
+                  "transform": "matrix(1, 0, 0, 1, 142.717, 485.909)"
+                },
+                {
+                  "key": "ankleRight:5",
+                  "part": "ankleRight",
+                  "transform": "matrix(1, 0, 0, 1, 212.06, 485.999)"
+                },
+                {
+                  "key": "shoulderLeft:6",
+                  "part": "shoulderLeft",
+                  "transform": "matrix(0.998714, 0.050708, -0.050708, 0.998714, 116, 195)"
+                },
+                {
+                  "key": "shoulderRight:7",
+                  "part": "shoulderRight",
+                  "transform": "matrix(0.831574, -0.555414, 0.555414, 0.831574, 244, 195)"
+                },
+                {
+                  "key": "neck:8",
+                  "part": "neck",
+                  "transform": "matrix(0.999931, -0.0117713, 0.0117713, 0.999931, 180, 180)"
+                },
+                {
+                  "key": "torso:9",
+                  "part": "torso",
+                  "transform": "matrix(1, 0, 0, 1, 180, 185)"
+                },
+                {
+                  "key": "elbowLeft:10",
+                  "part": "elbowLeft",
+                  "transform": "matrix(-0.0830354, -0.996547, 0.996547, -0.0830354, 102.397, 265.703)"
+                },
+                {
+                  "key": "elbowRight:11",
+                  "part": "elbowRight",
+                  "transform": "matrix(0.387675, 0.921796, -0.921796, 0.387675, 289.498, 250.803)"
+                },
+                {
+                  "key": "accessory:12",
+                  "part": "accessory",
+                  "transform": "matrix(0.996195, 0.0871557, -0.0871557, 0.996195, 188.682, 281.279)"
+                },
+                {
+                  "key": "prop:13",
+                  "part": "prop",
+                  "transform": "matrix(0.996547, -0.0830354, 0.0830354, 0.996547, 201.914, 255.924)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-310.807px",
+                  "top": "-173.835px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-33.3759px",
+                  "top": "-294.315px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-566.311px",
+                  "top": "-219.63px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-232.219px",
+                  "top": "-388.031px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-566.311px",
+                  "top": "-315.657px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-232.219px",
+                  "top": "-484.414px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-419.051px",
+                  "top": "-50.2471px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-56.6147px",
+                  "top": "-217.967px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-13.5993px",
+                  "top": "-23.8907px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-265.511px",
+                  "top": "-56.7111px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-593.264px",
+                  "top": "-43.4698px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-227.643px",
+                  "top": "-212.435px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-270.008px",
+                  "top": "-287.632px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-209.688px",
+                  "top": "-152.396px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 1598.0000000000002,
+              "joints": [
+                {
+                  "key": "hipLeft:0",
+                  "part": "hipLeft",
+                  "transform": "matrix(0.999434, 0.0336405, -0.0336405, 0.999434, 148, 332)"
+                },
+                {
+                  "key": "hipRight:1",
+                  "part": "hipRight",
+                  "transform": "matrix(0.999434, -0.0336405, 0.0336405, 0.999434, 212, 332)"
+                },
+                {
+                  "key": "kneeLeft:2",
+                  "part": "kneeLeft",
+                  "transform": "matrix(0.999931, 0.0117762, -0.0117762, 0.999931, 143.286, 402.843)"
+                },
+                {
+                  "key": "kneeRight:3",
+                  "part": "kneeRight",
+                  "transform": "matrix(0.999931, -0.0117762, 0.0117762, 0.999931, 214.199, 402.966)"
+                },
+                {
+                  "key": "ankleLeft:4",
+                  "part": "ankleLeft",
+                  "transform": "matrix(0.999756, 0.0221005, -0.0221005, 0.999756, 139.355, 485.75)"
+                },
+                {
+                  "key": "ankleRight:5",
+                  "part": "ankleRight",
+                  "transform": "matrix(0.999756, -0.0221005, 0.0221005, 0.999756, 215.426, 485.957)"
+                },
+                {
+                  "key": "shoulderLeft:6",
+                  "part": "shoulderLeft",
+                  "transform": "matrix(0.999971, 0.00761857, -0.00761857, 0.999971, 116, 195)"
+                },
+                {
+                  "key": "shoulderRight:7",
+                  "part": "shoulderRight",
+                  "transform": "matrix(0.824352, -0.566077, 0.566077, 0.824352, 244, 195)"
+                },
+                {
+                  "key": "neck:8",
+                  "part": "neck",
+                  "transform": "matrix(0.999998, 0.00179455, -0.00179455, 0.999998, 180, 180)"
+                },
+                {
+                  "key": "torso:9",
+                  "part": "torso",
+                  "transform": "matrix(1, 0, 0, 1, 180, 185)"
+                },
+                {
+                  "key": "elbowLeft:10",
+                  "part": "elbowLeft",
+                  "transform": "matrix(-0.829973, -0.557803, 0.557803, -0.829973, 105.457, 266.223)"
+                },
+                {
+                  "key": "elbowRight:11",
+                  "part": "elbowRight",
+                  "transform": "matrix(0.406703, 0.913561, -0.913561, 0.406703, 290.213, 250.212)"
+                },
+                {
+                  "key": "accessory:12",
+                  "part": "accessory",
+                  "transform": "matrix(0.997071, 0.0764859, -0.0764859, 0.997071, 190.023, 282.459)"
+                },
+                {
+                  "key": "prop:13",
+                  "part": "prop",
+                  "transform": "matrix(0.557803, -0.829973, 0.829973, 0.557803, 159.995, 182.417)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-310.807px",
+                  "top": "-173.835px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-33.3759px",
+                  "top": "-294.315px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-566.311px",
+                  "top": "-219.63px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-232.219px",
+                  "top": "-388.031px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-566.311px",
+                  "top": "-315.657px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-232.219px",
+                  "top": "-484.414px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-419.051px",
+                  "top": "-50.2471px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-56.6147px",
+                  "top": "-217.967px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-13.5993px",
+                  "top": "-23.8907px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-265.511px",
+                  "top": "-56.7111px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-593.264px",
+                  "top": "-43.4698px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-227.643px",
+                  "top": "-212.435px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-270.008px",
+                  "top": "-287.632px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-209.688px",
+                  "top": "-152.396px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 3102,
+              "joints": [
+                {
+                  "key": "hipLeft:0",
+                  "part": "hipLeft",
+                  "transform": "matrix(0.999434, 0.0336405, -0.0336405, 0.999434, 148, 332)"
+                },
+                {
+                  "key": "hipRight:1",
+                  "part": "hipRight",
+                  "transform": "matrix(0.999434, -0.0336405, 0.0336405, 0.999434, 212, 332)"
+                },
+                {
+                  "key": "kneeLeft:2",
+                  "part": "kneeLeft",
+                  "transform": "matrix(0.999931, 0.0117762, -0.0117762, 0.999931, 143.286, 402.843)"
+                },
+                {
+                  "key": "kneeRight:3",
+                  "part": "kneeRight",
+                  "transform": "matrix(0.999931, -0.0117762, 0.0117762, 0.999931, 214.199, 402.966)"
+                },
+                {
+                  "key": "ankleLeft:4",
+                  "part": "ankleLeft",
+                  "transform": "matrix(0.999756, -0.0221005, 0.0221005, 0.999756, 139.355, 485.75)"
+                },
+                {
+                  "key": "ankleRight:5",
+                  "part": "ankleRight",
+                  "transform": "matrix(0.999756, 0.0221005, -0.0221005, 0.999756, 215.426, 485.957)"
+                },
+                {
+                  "key": "shoulderLeft:6",
+                  "part": "shoulderLeft",
+                  "transform": "matrix(0.997298, 0.0734599, -0.0734599, 0.997298, 116, 195)"
+                },
+                {
+                  "key": "shoulderRight:7",
+                  "part": "shoulderRight",
+                  "transform": "matrix(0.818932, -0.57389, 0.57389, 0.818932, 244, 195)"
+                },
+                {
+                  "key": "neck:8",
+                  "part": "neck",
+                  "transform": "matrix(0.999994, 0.00349002, -0.00349002, 0.999994, 180, 180)"
+                },
+                {
+                  "key": "torso:9",
+                  "part": "torso",
+                  "transform": "matrix(1, 0, 0, 1, 180, 185)"
+                },
+                {
+                  "key": "elbowLeft:10",
+                  "part": "elbowLeft",
+                  "transform": "matrix(-0.987497, 0.157636, -0.157636, -0.987497, 100.789, 265.374)"
+                },
+                {
+                  "key": "elbowRight:11",
+                  "part": "elbowRight",
+                  "transform": "matrix(0.390171, 0.920742, -0.920742, 0.390171, 290.735, 249.77)"
+                },
+                {
+                  "key": "accessory:12",
+                  "part": "accessory",
+                  "transform": "matrix(0.997071, 0.0764859, -0.0764859, 0.997071, 190.023, 280.77)"
+                },
+                {
+                  "key": "prop:13",
+                  "part": "prop",
+                  "transform": "matrix(-0.157636, -0.987497, 0.987497, -0.157636, 83.5643, 166.873)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-310.807px",
+                  "top": "-173.835px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-33.3759px",
+                  "top": "-294.315px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-566.311px",
+                  "top": "-219.63px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-232.219px",
+                  "top": "-388.031px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-566.311px",
+                  "top": "-315.657px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-232.219px",
+                  "top": "-484.414px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-419.051px",
+                  "top": "-50.2471px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-56.6147px",
+                  "top": "-217.967px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-13.5993px",
+                  "top": "-23.8907px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-265.511px",
+                  "top": "-56.7111px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-593.264px",
+                  "top": "-43.4698px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-227.643px",
+                  "top": "-212.435px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-270.008px",
+                  "top": "-287.632px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-209.688px",
+                  "top": "-152.396px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 4888,
+              "joints": [
+                {
+                  "key": "hipLeft:0",
+                  "part": "hipLeft",
+                  "transform": "matrix(0.999988, -0.00481227, 0.00481227, 0.999988, 148, 332)"
+                },
+                {
+                  "key": "hipRight:1",
+                  "part": "hipRight",
+                  "transform": "matrix(0.999988, 0.00481227, -0.00481227, 0.999988, 212, 332)"
+                },
+                {
+                  "key": "kneeLeft:2",
+                  "part": "kneeLeft",
+                  "transform": "matrix(0.999999, -0.00168431, 0.00168431, 0.999999, 146.013, 402.972)"
+                },
+                {
+                  "key": "kneeRight:3",
+                  "part": "kneeRight",
+                  "transform": "matrix(0.999999, 0.00168431, -0.00168431, 0.999999, 211.469, 402.998)"
+                },
+                {
+                  "key": "ankleLeft:4",
+                  "part": "ankleLeft",
+                  "transform": "matrix(0.999979, 0.00650996, -0.00650996, 0.999979, 143.198, 485.924)"
+                },
+                {
+                  "key": "ankleRight:5",
+                  "part": "ankleRight",
+                  "transform": "matrix(0.999979, -0.00650996, 0.00650996, 0.999979, 211.579, 485.998)"
+                },
+                {
+                  "key": "shoulderLeft:6",
+                  "part": "shoulderLeft",
+                  "transform": "matrix(0.986068, 0.166344, -0.166344, 0.986068, 116, 195)"
+                },
+                {
+                  "key": "shoulderRight:7",
+                  "part": "shoulderRight",
+                  "transform": "matrix(0.833727, -0.552176, 0.552176, 0.833727, 244, 195)"
+                },
+                {
+                  "key": "neck:8",
+                  "part": "neck",
+                  "transform": "matrix(0.999929, -0.011949, 0.011949, 0.999929, 180, 180)"
+                },
+                {
+                  "key": "torso:9",
+                  "part": "torso",
+                  "transform": "matrix(1, 0, 0, 1, 180, 185)"
+                },
+                {
+                  "key": "elbowLeft:10",
+                  "part": "elbowLeft",
+                  "transform": "matrix(-0.992264, 0.124147, -0.124147, -0.992264, 94.2783, 263.645)"
+                },
+                {
+                  "key": "elbowRight:11",
+                  "part": "elbowRight",
+                  "transform": "matrix(0.388632, 0.921393, -0.921393, 0.388632, 289.28, 250.979)"
+                },
+                {
+                  "key": "accessory:12",
+                  "part": "accessory",
+                  "transform": "matrix(0.99606, 0.088681, -0.088681, 0.99606, 188.491, 281.48)"
+                },
+                {
+                  "key": "prop:13",
+                  "part": "prop",
+                  "transform": "matrix(-0.124147, -0.992264, 0.992264, -0.124147, 80.395, 164.617)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-310.807px",
+                  "top": "-173.835px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-33.3759px",
+                  "top": "-294.315px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-566.311px",
+                  "top": "-219.63px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-232.219px",
+                  "top": "-388.031px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-566.311px",
+                  "top": "-315.657px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-232.219px",
+                  "top": "-484.414px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-419.051px",
+                  "top": "-50.2471px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-56.6147px",
+                  "top": "-217.967px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-13.5993px",
+                  "top": "-23.8907px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-265.511px",
+                  "top": "-56.7111px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-593.264px",
+                  "top": "-43.4698px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-227.643px",
+                  "top": "-212.435px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-270.008px",
+                  "top": "-287.632px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-209.688px",
+                  "top": "-152.396px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 6674,
+              "joints": [
+                {
+                  "key": "hipLeft:0",
+                  "part": "hipLeft",
+                  "transform": "matrix(0.999309, -0.037181, 0.037181, 0.999309, 148, 332)"
+                },
+                {
+                  "key": "hipRight:1",
+                  "part": "hipRight",
+                  "transform": "matrix(0.999309, 0.037181, -0.037181, 0.999309, 212, 332)"
+                },
+                {
+                  "key": "kneeLeft:2",
+                  "part": "kneeLeft",
+                  "transform": "matrix(0.999915, -0.013016, 0.013016, 0.999915, 148.312, 402.999)"
+                },
+                {
+                  "key": "kneeRight:3",
+                  "part": "kneeRight",
+                  "transform": "matrix(0.999915, 0.013016, -0.013016, 0.999915, 209.171, 402.944)"
+                },
+                {
+                  "key": "ankleLeft:4",
+                  "part": "ankleLeft",
+                  "transform": "matrix(0.99992, 0.0126101, -0.0126101, 0.99992, 146.437, 485.978)"
+                },
+                {
+                  "key": "ankleRight:5",
+                  "part": "ankleRight",
+                  "transform": "matrix(0.99992, -0.0126101, 0.0126101, 0.99992, 208.34, 485.939)"
+                },
+                {
+                  "key": "shoulderLeft:6",
+                  "part": "shoulderLeft",
+                  "transform": "matrix(0.999491, -0.0319154, 0.0319154, 0.999491, 116, 195)"
+                },
+                {
+                  "key": "shoulderRight:7",
+                  "part": "shoulderRight",
+                  "transform": "matrix(0.843672, -0.536859, 0.536859, 0.843672, 244, 195)"
+                },
+                {
+                  "key": "neck:8",
+                  "part": "neck",
+                  "transform": "matrix(0.999287, -0.0377687, 0.0377687, 0.999287, 180, 180)"
+                },
+                {
+                  "key": "torso:9",
+                  "part": "torso",
+                  "transform": "matrix(1, 0, 0, 1, 180, 185)"
+                },
+                {
+                  "key": "elbowLeft:10",
+                  "part": "elbowLeft",
+                  "transform": "matrix(-0.961473, 0.274901, -0.274901, -0.961473, 108.28, 266.585)"
+                },
+                {
+                  "key": "elbowRight:11",
+                  "part": "elbowRight",
+                  "transform": "matrix(0.380878, 0.924625, -0.924625, 0.380878, 288.25, 251.797)"
+                },
+                {
+                  "key": "accessory:12",
+                  "part": "accessory",
+                  "transform": "matrix(0.995094, 0.0989374, -0.0989374, 0.995094, 187.205, 281.39)"
+                },
+                {
+                  "key": "prop:13",
+                  "part": "prop",
+                  "transform": "matrix(-0.274901, -0.961473, 0.961473, -0.274901, 79.3695, 170.86)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-310.807px",
+                  "top": "-173.835px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-33.3759px",
+                  "top": "-294.315px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-566.311px",
+                  "top": "-219.63px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-232.219px",
+                  "top": "-388.031px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-566.311px",
+                  "top": "-315.657px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-232.219px",
+                  "top": "-484.414px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-419.051px",
+                  "top": "-50.2471px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-56.6147px",
+                  "top": "-217.967px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-13.5993px",
+                  "top": "-23.8907px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-265.511px",
+                  "top": "-56.7111px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-593.264px",
+                  "top": "-43.4698px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-227.643px",
+                  "top": "-212.435px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-270.008px",
+                  "top": "-287.632px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-209.688px",
+                  "top": "-152.396px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 8554,
+              "joints": [
+                {
+                  "key": "hipLeft:0",
+                  "part": "hipLeft",
+                  "transform": "matrix(0.999788, -0.0205721, 0.0205721, 0.999788, 148, 332)"
+                },
+                {
+                  "key": "hipRight:1",
+                  "part": "hipRight",
+                  "transform": "matrix(0.999788, 0.0205721, -0.0205721, 0.999788, 212, 332)"
+                },
+                {
+                  "key": "kneeLeft:2",
+                  "part": "kneeLeft",
+                  "transform": "matrix(0.999974, -0.00720068, 0.00720068, 0.999974, 147.132, 402.995)"
+                },
+                {
+                  "key": "kneeRight:3",
+                  "part": "kneeRight",
+                  "transform": "matrix(0.999974, 0.00720068, -0.00720068, 0.999974, 210.35, 402.981)"
+                },
+                {
+                  "key": "ankleLeft:4",
+                  "part": "ankleLeft",
+                  "transform": "matrix(0.99972, -0.0236826, 0.0236826, 0.99972, 144.775, 485.961)"
+                },
+                {
+                  "key": "ankleRight:5",
+                  "part": "ankleRight",
+                  "transform": "matrix(0.99972, 0.0236826, -0.0236826, 0.99972, 210.002, 485.98)"
+                },
+                {
+                  "key": "shoulderLeft:6",
+                  "part": "shoulderLeft",
+                  "transform": "matrix(0.983902, 0.17871, -0.17871, 0.983902, 116, 195)"
+                },
+                {
+                  "key": "shoulderRight:7",
+                  "part": "shoulderRight",
+                  "transform": "matrix(0.834908, -0.55039, 0.55039, 0.834908, 244, 195)"
+                },
+                {
+                  "key": "neck:8",
+                  "part": "neck",
+                  "transform": "matrix(0.999771, -0.0214111, 0.0214111, 0.999771, 180, 180)"
+                },
+                {
+                  "key": "torso:9",
+                  "part": "torso",
+                  "transform": "matrix(1, 0, 0, 1, 180, 185)"
+                },
+                {
+                  "key": "elbowLeft:10",
+                  "part": "elbowLeft",
+                  "transform": "matrix(-0.0916695, -0.995789, 0.995789, -0.0916695, 93.418, 263.367)"
+                },
+                {
+                  "key": "elbowRight:11",
+                  "part": "elbowRight",
+                  "transform": "matrix(0.372048, 0.928214, -0.928214, 0.372048, 289.16, 251.076)"
+                },
+                {
+                  "key": "accessory:12",
+                  "part": "accessory",
+                  "transform": "matrix(0.995603, 0.093675, -0.093675, 0.995603, 187.864, 280.169)"
+                },
+                {
+                  "key": "prop:13",
+                  "part": "prop",
+                  "transform": "matrix(0.995789, -0.0916695, 0.0916695, 0.995789, 192.846, 252.726)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-310.807px",
+                  "top": "-173.835px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-33.3759px",
+                  "top": "-294.315px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-566.311px",
+                  "top": "-219.63px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-232.219px",
+                  "top": "-388.031px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-566.311px",
+                  "top": "-315.657px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-232.219px",
+                  "top": "-484.414px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-419.051px",
+                  "top": "-50.2471px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-56.6147px",
+                  "top": "-217.967px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-13.5993px",
+                  "top": "-23.8907px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-265.511px",
+                  "top": "-56.7111px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-593.264px",
+                  "top": "-43.4698px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-227.643px",
+                  "top": "-212.435px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-270.008px",
+                  "top": "-287.632px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                },
+                {
+                  "left": "-209.688px",
+                  "top": "-152.396px",
+                  "src": "assets/art/jo-geometric-v1.png"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "avatar": {
+        "ready": true,
+        "posture": "wave",
+        "sleeves": [
+          {
+            "part": "upper-sleeve-left",
+            "joint": "upper-left",
+            "parent": "upper-left",
+            "src": "assets/art/avatar-graphic-flat-clothing-v1.png"
+          },
+          {
+            "part": "fore-sleeve-left",
+            "joint": "elbow-left",
+            "parent": "elbow-left",
+            "src": "assets/art/avatar-graphic-flat-clothing-v1.png"
+          },
+          {
+            "part": "upper-sleeve-right",
+            "joint": "upper-right",
+            "parent": "upper-right",
+            "src": "assets/art/avatar-graphic-flat-clothing-v1.png"
+          },
+          {
+            "part": "fore-sleeve-right",
+            "joint": "elbow-right",
+            "parent": "elbow-right",
+            "src": "assets/art/avatar-graphic-flat-clothing-v1.png"
+          }
+        ],
+        "loadedImages": [
+          "assets/art/avatar-graphic-flat-kit-v2.png",
+          "assets/art/avatar-graphic-flat-clothing-v1.png",
+          "assets/art/avatar-graphic-flat-kit-v2.png",
+          "assets/art/avatar-graphic-flat-kit-v2.png",
+          "assets/art/avatar-graphic-flat-kit-v2.png",
+          "assets/art/avatar-graphic-flat-kit-v2.png",
+          "assets/art/avatar-graphic-flat-limbs-v2.png",
+          "assets/art/avatar-graphic-flat-clothing-v1.png",
+          "assets/art/avatar-graphic-flat-limbs-v2.png",
+          "assets/art/avatar-graphic-flat-limbs-v2.png",
+          "assets/art/avatar-graphic-flat-clothing-v1.png",
+          "assets/art/avatar-graphic-flat-limbs-v2.png",
+          "assets/art/avatar-graphic-flat-clothing-v1.png",
+          "assets/art/avatar-graphic-flat-limbs-v2.png",
+          "assets/art/avatar-graphic-flat-limbs-v2.png",
+          "assets/art/avatar-graphic-flat-clothing-v1.png"
+        ]
+      },
+      "avatarMotion": {
+        "name": "avatar",
+        "jointCount": 6,
+        "changingJoints": [
+          {
+            "part": "upper-left",
+            "states": 6
+          },
+          {
+            "part": "elbow-left",
+            "states": 6
+          },
+          {
+            "part": "wrist-left",
+            "states": 6
+          },
+          {
+            "part": "upper-right",
+            "states": 4
+          },
+          {
+            "part": "elbow-right",
+            "states": 4
+          },
+          {
+            "part": "wrist-right",
+            "states": 4
+          }
+        ],
+        "stableImageCrops": true,
+        "samples": [
+          {
+            "timeMs": 0,
+            "joints": [
+              {
+                "key": "upper-left:0",
+                "part": "upper-left",
+                "transform": "matrix(0.984808, 0.173648, -0.173648, 0.984808, 0, 0)"
+              },
+              {
+                "key": "elbow-left:1",
+                "part": "elbow-left",
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              },
+              {
+                "key": "wrist-left:2",
+                "part": "wrist-left",
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              },
+              {
+                "key": "upper-right:3",
+                "part": "upper-right",
+                "transform": "matrix(0.587785, -0.809017, 0.809017, 0.587785, 0, 0)"
+              },
+              {
+                "key": "elbow-right:4",
+                "part": "elbow-right",
+                "transform": "matrix(-0.438371, -0.898794, 0.898794, -0.438371, 0, 0)"
+              },
+              {
+                "key": "wrist-right:5",
+                "part": "wrist-right",
+                "transform": "matrix(0.999391, 0.0348995, -0.0348995, 0.999391, 0, 0)"
+              }
+            ],
+            "imageOrigins": [
+              {
+                "left": "-57.7895px",
+                "top": "-150.603px",
+                "src": "assets/art/avatar-graphic-flat-kit-v2.png"
+              },
+              {
+                "left": "-34.4348px",
+                "top": "-48.2087px",
+                "src": "assets/art/avatar-graphic-flat-clothing-v1.png"
+              },
+              {
+                "left": "-30.3541px",
+                "top": "-29.1866px",
+                "src": "assets/art/avatar-graphic-flat-kit-v2.png"
+              },
+              {
+                "left": "-54.8708px",
+                "top": "-530.612px",
+                "src": "assets/art/avatar-graphic-flat-kit-v2.png"
+              },
+              {
+                "left": "-95.1483px",
+                "top": "-530.612px",
+                "src": "assets/art/avatar-graphic-flat-kit-v2.png"
+              },
+              {
+                "left": "-34.9597px",
+                "top": "-238.548px",
+                "src": "assets/art/avatar-graphic-flat-kit-v2.png"
+              },
+              {
+                "left": "-30.1379px",
+                "top": "-6.34483px",
+                "src": "assets/art/avatar-graphic-flat-limbs-v2.png"
+              },
+              {
+                "left": "-28.3522px",
+                "top": "-121.799px",
+                "src": "assets/art/avatar-graphic-flat-clothing-v1.png"
+              },
+              {
+                "left": "-31.4448px",
+                "top": "-86.6856px",
+                "src": "assets/art/avatar-graphic-flat-limbs-v2.png"
+              },
+              {
+                "left": "-11.88px",
+                "top": "-124.96px",
+                "src": "assets/art/avatar-graphic-flat-limbs-v2.png"
+              },
+              {
+                "left": "-30.5085px",
+                "top": "-202.825px",
+                "src": "assets/art/avatar-graphic-flat-clothing-v1.png"
+              },
+              {
+                "left": "-30.1379px",
+                "top": "-6.34483px",
+                "src": "assets/art/avatar-graphic-flat-limbs-v2.png"
+              },
+              {
+                "left": "-28.3522px",
+                "top": "-121.799px",
+                "src": "assets/art/avatar-graphic-flat-clothing-v1.png"
+              },
+              {
+                "left": "-31.4448px",
+                "top": "-86.6856px",
+                "src": "assets/art/avatar-graphic-flat-limbs-v2.png"
+              },
+              {
+                "left": "-11.88px",
+                "top": "-124.96px",
+                "src": "assets/art/avatar-graphic-flat-limbs-v2.png"
+              },
+              {
+                "left": "-30.5085px",
+                "top": "-202.825px",
+                "src": "assets/art/avatar-graphic-flat-clothing-v1.png"
+              }
+            ]
+          },
+          {
+            "timeMs": 1428,
+            "joints": [
+              {
+                "key": "upper-left:0",
+                "part": "upper-left",
+                "transform": "matrix(0.989537, 0.14428, -0.14428, 0.989537, 0, 0)"
+              },
+              {
+                "key": "elbow-left:1",
+                "part": "elbow-left",
+                "transform": "matrix(0.999698, 0.0245781, -0.0245781, 0.999698, 0, 0)"
+              },
+              {
+                "key": "wrist-left:2",
+                "part": "wrist-left",
+                "transform": "matrix(0.999484, -0.0321253, 0.0321253, 0.999484, 0, 0)"
+              },
+              {
+                "key": "upper-right:3",
+                "part": "upper-right",
+                "transform": "matrix(0.567636, -0.82328, 0.82328, 0.567636, 0, 0)"
+              },
+              {
+                "key": "elbow-right:4",
+                "part": "elbow-right",
+                "transform": "matrix(-0.422687, -0.906276, 0.906276, -0.422687, 0, 0)"
+              },
+              {
+                "key": "wrist-right:5",
+                "part": "wrist-right",
+                "transform": "matrix(0.999888, 0.0149528, -0.0149528, 0.999888, 0, 0)"
+              }
+            ],
+            "imageOrigins": [
+              {
+                "left": "-57.7895px",
+                "top": "-150.603px",
+                "src": "assets/art/avatar-graphic-flat-kit-v2.png"
+              },
+              {
+                "left": "-34.4348px",
+                "top": "-48.2087px",
+                "src": "assets/art/avatar-graphic-flat-clothing-v1.png"
+              },
+              {
+                "left": "-30.3541px",
+                "top": "-29.1866px",
+                "src": "assets/art/avatar-graphic-flat-kit-v2.png"
+              },
+              {
+                "left": "-54.8708px",
+                "top": "-530.612px",
+                "src": "assets/art/avatar-graphic-flat-kit-v2.png"
+              },
+              {
+                "left": "-95.1483px",
+                "top": "-530.612px",
+                "src": "assets/art/avatar-graphic-flat-kit-v2.png"
+              },
+              {
+                "left": "-34.9597px",
+                "top": "-238.548px",
+                "src": "assets/art/avatar-graphic-flat-kit-v2.png"
+              },
+              {
+                "left": "-30.1379px",
+                "top": "-6.34483px",
+                "src": "assets/art/avatar-graphic-flat-limbs-v2.png"
+              },
+              {
+                "left": "-28.3522px",
+                "top": "-121.799px",
+                "src": "assets/art/avatar-graphic-flat-clothing-v1.png"
+              },
+              {
+                "left": "-31.4448px",
+                "top": "-86.6856px",
+                "src": "assets/art/avatar-graphic-flat-limbs-v2.png"
+              },
+              {
+                "left": "-11.88px",
+                "top": "-124.96px",
+                "src": "assets/art/avatar-graphic-flat-limbs-v2.png"
+              },
+              {
+                "left": "-30.5085px",
+                "top": "-202.825px",
+                "src": "assets/art/avatar-graphic-flat-clothing-v1.png"
+              },
+              {
+                "left": "-30.1379px",
+                "top": "-6.34483px",
+                "src": "assets/art/avatar-graphic-flat-limbs-v2.png"
+              },
+              {
+                "left": "-28.3522px",
+                "top": "-121.799px",
+                "src": "assets/art/avatar-graphic-flat-clothing-v1.png"
+              },
+              {
+                "left": "-31.4448px",
+                "top": "-86.6856px",
+                "src": "assets/art/avatar-graphic-flat-limbs-v2.png"
+              },
+              {
+                "left": "-11.88px",
+                "top": "-124.96px",
+                "src": "assets/art/avatar-graphic-flat-limbs-v2.png"
+              },
+              {
+                "left": "-30.5085px",
+                "top": "-202.825px",
+                "src": "assets/art/avatar-graphic-flat-clothing-v1.png"
+              }
+            ]
+          },
+          {
+            "timeMs": 2772,
+            "joints": [
+              {
+                "key": "upper-left:0",
+                "part": "upper-left",
+                "transform": "matrix(0.992477, 0.12243, -0.12243, 0.992477, 0, 0)"
+              },
+              {
+                "key": "elbow-left:1",
+                "part": "elbow-left",
+                "transform": "matrix(0.998651, 0.051922, -0.051922, 0.998651, 0, 0)"
+              },
+              {
+                "key": "wrist-left:2",
+                "part": "wrist-left",
+                "transform": "matrix(0.998768, -0.0496243, 0.0496243, 0.998768, 0, 0)"
+              },
+              {
+                "key": "upper-right:3",
+                "part": "upper-right",
+                "transform": "matrix(0.609614, -0.792698, 0.792698, 0.609614, 0, 0)"
+              },
+              {
+                "key": "elbow-right:4",
+                "part": "elbow-right",
+                "transform": "matrix(-0.48481, -0.87462, 0.87462, -0.48481, 0, 0)"
+              },
+              {
+                "key": "wrist-right:5",
+                "part": "wrist-right",
+                "transform": "matrix(0.981765, 0.190098, -0.190098, 0.981765, 0, 0)"
+              }
+            ],
+            "imageOrigins": [
+              {
+                "left": "-57.7895px",
+                "top": "-150.603px",
+                "src": "assets/art/avatar-graphic-flat-kit-v2.png"
+              },
+              {
+                "left": "-34.4348px",
+                "top": "-48.2087px",
+                "src": "assets/art/avatar-graphic-flat-clothing-v1.png"
+              },
+              {
+                "left": "-30.3541px",
+                "top": "-29.1866px",
+                "src": "assets/art/avatar-graphic-flat-kit-v2.png"
+              },
+              {
+                "left": "-54.8708px",
+                "top": "-530.612px",
+                "src": "assets/art/avatar-graphic-flat-kit-v2.png"
+              },
+              {
+                "left": "-95.1483px",
+                "top": "-530.612px",
+                "src": "assets/art/avatar-graphic-flat-kit-v2.png"
+              },
+              {
+                "left": "-34.9597px",
+                "top": "-238.548px",
+                "src": "assets/art/avatar-graphic-flat-kit-v2.png"
+              },
+              {
+                "left": "-30.1379px",
+                "top": "-6.34483px",
+                "src": "assets/art/avatar-graphic-flat-limbs-v2.png"
+              },
+              {
+                "left": "-28.3522px",
+                "top": "-121.799px",
+                "src": "assets/art/avatar-graphic-flat-clothing-v1.png"
+              },
+              {
+                "left": "-31.4448px",
+                "top": "-86.6856px",
+                "src": "assets/art/avatar-graphic-flat-limbs-v2.png"
+              },
+              {
+                "left": "-11.88px",
+                "top": "-124.96px",
+                "src": "assets/art/avatar-graphic-flat-limbs-v2.png"
+              },
+              {
+                "left": "-30.5085px",
+                "top": "-202.825px",
+                "src": "assets/art/avatar-graphic-flat-clothing-v1.png"
+              },
+              {
+                "left": "-30.1379px",
+                "top": "-6.34483px",
+                "src": "assets/art/avatar-graphic-flat-limbs-v2.png"
+              },
+              {
+                "left": "-28.3522px",
+                "top": "-121.799px",
+                "src": "assets/art/avatar-graphic-flat-clothing-v1.png"
+              },
+              {
+                "left": "-31.4448px",
+                "top": "-86.6856px",
+                "src": "assets/art/avatar-graphic-flat-limbs-v2.png"
+              },
+              {
+                "left": "-11.88px",
+                "top": "-124.96px",
+                "src": "assets/art/avatar-graphic-flat-limbs-v2.png"
+              },
+              {
+                "left": "-30.5085px",
+                "top": "-202.825px",
+                "src": "assets/art/avatar-graphic-flat-clothing-v1.png"
+              }
+            ]
+          },
+          {
+            "timeMs": 4368,
+            "joints": [
+              {
+                "key": "upper-left:0",
+                "part": "upper-left",
+                "transform": "matrix(0.981995, 0.188904, -0.188904, 0.981995, 0, 0)"
+              },
+              {
+                "key": "elbow-left:1",
+                "part": "elbow-left",
+                "transform": "matrix(0.999933, -0.0116116, 0.0116116, 0.999933, 0, 0)"
+              },
+              {
+                "key": "wrist-left:2",
+                "part": "wrist-left",
+                "transform": "matrix(0.999432, 0.033713, -0.033713, 0.999432, 0, 0)"
+              },
+              {
+                "key": "upper-right:3",
+                "part": "upper-right",
+                "transform": "matrix(0.614576, -0.788858, 0.788858, 0.614576, 0, 0)"
+              },
+              {
+                "key": "elbow-right:4",
+                "part": "elbow-right",
+                "transform": "matrix(-0.467554, -0.883965, 0.883965, -0.467554, 0, 0)"
+              },
+              {
+                "key": "wrist-right:5",
+                "part": "wrist-right",
+                "transform": "matrix(0.999962, 0.00872654, -0.00872654, 0.999962, 0, 0)"
+              }
+            ],
+            "imageOrigins": [
+              {
+                "left": "-57.7895px",
+                "top": "-150.603px",
+                "src": "assets/art/avatar-graphic-flat-kit-v2.png"
+              },
+              {
+                "left": "-34.4348px",
+                "top": "-48.2087px",
+                "src": "assets/art/avatar-graphic-flat-clothing-v1.png"
+              },
+              {
+                "left": "-30.3541px",
+                "top": "-29.1866px",
+                "src": "assets/art/avatar-graphic-flat-kit-v2.png"
+              },
+              {
+                "left": "-54.8708px",
+                "top": "-530.612px",
+                "src": "assets/art/avatar-graphic-flat-kit-v2.png"
+              },
+              {
+                "left": "-95.1483px",
+                "top": "-530.612px",
+                "src": "assets/art/avatar-graphic-flat-kit-v2.png"
+              },
+              {
+                "left": "-34.9597px",
+                "top": "-238.548px",
+                "src": "assets/art/avatar-graphic-flat-kit-v2.png"
+              },
+              {
+                "left": "-30.1379px",
+                "top": "-6.34483px",
+                "src": "assets/art/avatar-graphic-flat-limbs-v2.png"
+              },
+              {
+                "left": "-28.3522px",
+                "top": "-121.799px",
+                "src": "assets/art/avatar-graphic-flat-clothing-v1.png"
+              },
+              {
+                "left": "-31.4448px",
+                "top": "-86.6856px",
+                "src": "assets/art/avatar-graphic-flat-limbs-v2.png"
+              },
+              {
+                "left": "-11.88px",
+                "top": "-124.96px",
+                "src": "assets/art/avatar-graphic-flat-limbs-v2.png"
+              },
+              {
+                "left": "-30.5085px",
+                "top": "-202.825px",
+                "src": "assets/art/avatar-graphic-flat-clothing-v1.png"
+              },
+              {
+                "left": "-30.1379px",
+                "top": "-6.34483px",
+                "src": "assets/art/avatar-graphic-flat-limbs-v2.png"
+              },
+              {
+                "left": "-28.3522px",
+                "top": "-121.799px",
+                "src": "assets/art/avatar-graphic-flat-clothing-v1.png"
+              },
+              {
+                "left": "-31.4448px",
+                "top": "-86.6856px",
+                "src": "assets/art/avatar-graphic-flat-limbs-v2.png"
+              },
+              {
+                "left": "-11.88px",
+                "top": "-124.96px",
+                "src": "assets/art/avatar-graphic-flat-limbs-v2.png"
+              },
+              {
+                "left": "-30.5085px",
+                "top": "-202.825px",
+                "src": "assets/art/avatar-graphic-flat-clothing-v1.png"
+              }
+            ]
+          },
+          {
+            "timeMs": 5964,
+            "joints": [
+              {
+                "key": "upper-left:0",
+                "part": "upper-left",
+                "transform": "matrix(0.984566, 0.175016, -0.175016, 0.984566, 0, 0)"
+              },
+              {
+                "key": "elbow-left:1",
+                "part": "elbow-left",
+                "transform": "matrix(0.999999, -0.00162754, 0.00162754, 0.999999, 0, 0)"
+              },
+              {
+                "key": "wrist-left:2",
+                "part": "wrist-left",
+                "transform": "matrix(0.999997, 0.0025783, -0.0025783, 0.999997, 0, 0)"
+              },
+              {
+                "key": "upper-right:3",
+                "part": "upper-right",
+                "transform": "matrix(0.587785, -0.809017, 0.809017, 0.587785, 0, 0)"
+              },
+              {
+                "key": "elbow-right:4",
+                "part": "elbow-right",
+                "transform": "matrix(-0.438371, -0.898794, 0.898794, -0.438371, 0, 0)"
+              },
+              {
+                "key": "wrist-right:5",
+                "part": "wrist-right",
+                "transform": "matrix(0.999391, 0.0348995, -0.0348995, 0.999391, 0, 0)"
+              }
+            ],
+            "imageOrigins": [
+              {
+                "left": "-57.7895px",
+                "top": "-150.603px",
+                "src": "assets/art/avatar-graphic-flat-kit-v2.png"
+              },
+              {
+                "left": "-34.4348px",
+                "top": "-48.2087px",
+                "src": "assets/art/avatar-graphic-flat-clothing-v1.png"
+              },
+              {
+                "left": "-30.3541px",
+                "top": "-29.1866px",
+                "src": "assets/art/avatar-graphic-flat-kit-v2.png"
+              },
+              {
+                "left": "-54.8708px",
+                "top": "-530.612px",
+                "src": "assets/art/avatar-graphic-flat-kit-v2.png"
+              },
+              {
+                "left": "-95.1483px",
+                "top": "-530.612px",
+                "src": "assets/art/avatar-graphic-flat-kit-v2.png"
+              },
+              {
+                "left": "-34.9597px",
+                "top": "-238.548px",
+                "src": "assets/art/avatar-graphic-flat-kit-v2.png"
+              },
+              {
+                "left": "-30.1379px",
+                "top": "-6.34483px",
+                "src": "assets/art/avatar-graphic-flat-limbs-v2.png"
+              },
+              {
+                "left": "-28.3522px",
+                "top": "-121.799px",
+                "src": "assets/art/avatar-graphic-flat-clothing-v1.png"
+              },
+              {
+                "left": "-31.4448px",
+                "top": "-86.6856px",
+                "src": "assets/art/avatar-graphic-flat-limbs-v2.png"
+              },
+              {
+                "left": "-11.88px",
+                "top": "-124.96px",
+                "src": "assets/art/avatar-graphic-flat-limbs-v2.png"
+              },
+              {
+                "left": "-30.5085px",
+                "top": "-202.825px",
+                "src": "assets/art/avatar-graphic-flat-clothing-v1.png"
+              },
+              {
+                "left": "-30.1379px",
+                "top": "-6.34483px",
+                "src": "assets/art/avatar-graphic-flat-limbs-v2.png"
+              },
+              {
+                "left": "-28.3522px",
+                "top": "-121.799px",
+                "src": "assets/art/avatar-graphic-flat-clothing-v1.png"
+              },
+              {
+                "left": "-31.4448px",
+                "top": "-86.6856px",
+                "src": "assets/art/avatar-graphic-flat-limbs-v2.png"
+              },
+              {
+                "left": "-11.88px",
+                "top": "-124.96px",
+                "src": "assets/art/avatar-graphic-flat-limbs-v2.png"
+              },
+              {
+                "left": "-30.5085px",
+                "top": "-202.825px",
+                "src": "assets/art/avatar-graphic-flat-clothing-v1.png"
+              }
+            ]
+          },
+          {
+            "timeMs": 7644,
+            "joints": [
+              {
+                "key": "upper-left:0",
+                "part": "upper-left",
+                "transform": "matrix(0.989121, 0.147101, -0.147101, 0.989121, 0, 0)"
+              },
+              {
+                "key": "elbow-left:1",
+                "part": "elbow-left",
+                "transform": "matrix(0.999757, 0.022039, -0.022039, 0.999757, 0, 0)"
+              },
+              {
+                "key": "wrist-left:2",
+                "part": "wrist-left",
+                "transform": "matrix(0.999574, -0.0291765, 0.0291765, 0.999574, 0, 0)"
+              },
+              {
+                "key": "upper-right:3",
+                "part": "upper-right",
+                "transform": "matrix(0.587785, -0.809017, 0.809017, 0.587785, 0, 0)"
+              },
+              {
+                "key": "elbow-right:4",
+                "part": "elbow-right",
+                "transform": "matrix(-0.438371, -0.898794, 0.898794, -0.438371, 0, 0)"
+              },
+              {
+                "key": "wrist-right:5",
+                "part": "wrist-right",
+                "transform": "matrix(0.999391, 0.0348995, -0.0348995, 0.999391, 0, 0)"
+              }
+            ],
+            "imageOrigins": [
+              {
+                "left": "-57.7895px",
+                "top": "-150.603px",
+                "src": "assets/art/avatar-graphic-flat-kit-v2.png"
+              },
+              {
+                "left": "-34.4348px",
+                "top": "-48.2087px",
+                "src": "assets/art/avatar-graphic-flat-clothing-v1.png"
+              },
+              {
+                "left": "-30.3541px",
+                "top": "-29.1866px",
+                "src": "assets/art/avatar-graphic-flat-kit-v2.png"
+              },
+              {
+                "left": "-54.8708px",
+                "top": "-530.612px",
+                "src": "assets/art/avatar-graphic-flat-kit-v2.png"
+              },
+              {
+                "left": "-95.1483px",
+                "top": "-530.612px",
+                "src": "assets/art/avatar-graphic-flat-kit-v2.png"
+              },
+              {
+                "left": "-34.9597px",
+                "top": "-238.548px",
+                "src": "assets/art/avatar-graphic-flat-kit-v2.png"
+              },
+              {
+                "left": "-30.1379px",
+                "top": "-6.34483px",
+                "src": "assets/art/avatar-graphic-flat-limbs-v2.png"
+              },
+              {
+                "left": "-28.3522px",
+                "top": "-121.799px",
+                "src": "assets/art/avatar-graphic-flat-clothing-v1.png"
+              },
+              {
+                "left": "-31.4448px",
+                "top": "-86.6856px",
+                "src": "assets/art/avatar-graphic-flat-limbs-v2.png"
+              },
+              {
+                "left": "-11.88px",
+                "top": "-124.96px",
+                "src": "assets/art/avatar-graphic-flat-limbs-v2.png"
+              },
+              {
+                "left": "-30.5085px",
+                "top": "-202.825px",
+                "src": "assets/art/avatar-graphic-flat-clothing-v1.png"
+              },
+              {
+                "left": "-30.1379px",
+                "top": "-6.34483px",
+                "src": "assets/art/avatar-graphic-flat-limbs-v2.png"
+              },
+              {
+                "left": "-28.3522px",
+                "top": "-121.799px",
+                "src": "assets/art/avatar-graphic-flat-clothing-v1.png"
+              },
+              {
+                "left": "-31.4448px",
+                "top": "-86.6856px",
+                "src": "assets/art/avatar-graphic-flat-limbs-v2.png"
+              },
+              {
+                "left": "-11.88px",
+                "top": "-124.96px",
+                "src": "assets/art/avatar-graphic-flat-limbs-v2.png"
+              },
+              {
+                "left": "-30.5085px",
+                "top": "-202.825px",
+                "src": "assets/art/avatar-graphic-flat-clothing-v1.png"
+              }
+            ]
+          }
+        ]
+      },
+      "loadedModuleHashes": [
+        {
+          "path": "styles/app.css",
+          "url": "styles/app.css?v=graphic1",
+          "sha256": "e5a1dd92574ce5fd4c4189db7218e34758099858e6ec602b9d9aea15a3d5712a",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "src/app.js",
+          "url": "src/app.js?v=graphic1",
+          "sha256": "ca96cab55c2b857f4c66468201e22662b1cf3c41369e98a983f079e6ab4b5fe2",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "src/art.js",
+          "url": "src/art.js?v=graphic1",
+          "sha256": "f12ff041826caa8efb088a4e574771d195d66f04cf0237fabd839296212921bf",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "src/avatar-rig.js",
+          "url": "src/avatar-rig.js?v=graphic1",
+          "sha256": "058851f0abd24e6bcb1e7dd5ea6c1482ff044582d7652304aa3bf5606a2a6834",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "src/cast-rig.js",
+          "url": "src/cast-rig.js?v=graphic1",
+          "sha256": "6f2d840e5ae9faf50653a82a932b6a4bfeb65834717d31c2d0c42df7ccdd775e",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "src/pico-articulated.js",
+          "url": "src/pico-articulated.js?v=graphic1",
+          "sha256": "ebcdb3263edd6dfc5e178f2b2d6b3f35b8b0f4f53e412fad50fd402ad5349964",
+          "fromServiceWorker": true
+        }
+      ],
+      "loadedAssetHashes": [
+        {
+          "path": "assets/art/manifest.json",
+          "url": "assets/art/manifest.json?graphic=1",
+          "sha256": "cf12d15d022ab00b34c0855b4a25dd456426b52a7e7c08e4de310c418e057e86",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/app-icon-graphic-v1.png",
+          "url": "assets/art/app-icon-graphic-v1.png",
+          "sha256": "5c5e15536f8dbde2487219204592167f3ab56aa14b7aee18225524458723baf6",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/badges-graphic-v1.png",
+          "url": "assets/art/badges-graphic-v1.png",
+          "sha256": "cb07df6b86f632d3c658487b4185761c0404a340278633aa65fa270f7921f325",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-graphic-flat-v1.frames.json",
+          "url": "assets/art/avatar-graphic-flat-v1.frames.json",
+          "sha256": "4795f8d7731eab43465b07ea55eb30ea40abad715a31e9c7f6fd343e7e04c631",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/ui-flat-v1.png",
+          "url": "assets/art/ui-flat-v1.png",
+          "sha256": "64b41643467c70456d4e39869f36dd8ef9f2fa40e70e9953946a8139a02252cd",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-graphic-flat-clothing-v1.png",
+          "url": "assets/art/avatar-graphic-flat-clothing-v1.png",
+          "sha256": "c34bfbbe559647a4a23fd8d6cb92e2e90d6a67379a97a7fc591d9c64f9036df3",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-graphic-flat-kit-v2.png",
+          "url": "assets/art/avatar-graphic-flat-kit-v2.png",
+          "sha256": "900603edb8455ab76571b4d37eb1c3d78fb7d58915f6d14dacf1b70069d94c2e",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-graphic-flat-limbs-v2.png",
+          "url": "assets/art/avatar-graphic-flat-limbs-v2.png",
+          "sha256": "0e85aad33465a6f67b798fddda80fea8cef603d7ef1b9d7c04ec49b98287680c",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/cast-geometric-v1.frames.json",
+          "url": "assets/art/cast-geometric-v1.frames.json?geometric=1",
+          "sha256": "ea673967f8268ceb57d69c4ef0270f4009b9ad2cb476f6ac1f993d2efff52da4",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/pico-graphic-v1.frames.json",
+          "url": "assets/art/pico-graphic-v1.frames.json",
+          "sha256": "e842bcaf1eac67fde2743c625231e3c910a3d14403b0c2fdebcdea3689c19c2d",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/jo-geometric-v1.png",
+          "url": "assets/art/jo-geometric-v1.png",
+          "sha256": "6201e31ccacec6a0818c7314cfcaab513c2b2674a8c0987716228d693c364cd9",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/mina-geometric-v2.png",
+          "url": "assets/art/mina-geometric-v2.png",
+          "sha256": "5c467b282bfaed83cceeb94144e521396abf6e7f2d56b1a11fee7f6461f1e448",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/alex-geometric-v1.png",
+          "url": "assets/art/alex-geometric-v1.png",
+          "sha256": "7c3b841e3bfe8f7519a08b18435c2b7b3efea021d33f53d61bba72444696f7e0",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/pico-graphic-v1.png",
+          "url": "assets/art/pico-graphic-v1.png",
+          "sha256": "81c1c5a699c695bb716159cf6f8b7989b51c7d51a4210767de7dd50efb97532c",
+          "fromServiceWorker": true
+        }
+      ],
+      "workers": [
+        {
+          "path": "/Horizons/App/service-worker.js",
+          "cache": "horizons-companion-graphic-v7"
+        }
+      ],
+      "loadedLocalResources": [
+        {
+          "path": "",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/fonts/MPLUSRounded1c-Regular.woff2",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/fonts/MPLUSRounded1c-ExtraBold.woff2",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "styles/app.css?v=graphic1",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/fonts/BebasNeue-Regular.woff2",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "src/app.js?v=graphic1",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "src/api-client.js",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "src/art.js?v=graphic1",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "content/engine.mjs",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "content/unit1.mjs",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "content/source-banks.mjs",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/manifest.json?graphic=1",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/audio/manifest.json",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/app-icon-graphic-v1.png",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "src/avatar-rig.js?v=graphic1",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/fonts/MPLUSRounded1c-Medium.woff2",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/fonts/MPLUSRounded1c-Black.woff2",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/badges-graphic-v1.png",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-graphic-flat-v1.frames.json",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/ui-flat-v1.png",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-graphic-flat-clothing-v1.png",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-graphic-flat-kit-v2.png",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "src/cast-rig.js?v=graphic1",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "src/pico-articulated.js?v=graphic1",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/fonts/MPLUSRounded1c-Bold.woff2",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-graphic-flat-limbs-v2.png",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/cast-geometric-v1.frames.json?geometric=1",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/pico-graphic-v1.frames.json",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/jo-geometric-v1.png",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/alex-geometric-v1.png",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/mina-geometric-v2.png",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/pico-graphic-v1.png",
+          "fromServiceWorker": true
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "runtimeErrors": [],
+  "workerLifecycle": [
+    {
+      "event": "new-worker-state",
+      "state": "installing"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "installed"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "activating"
+    },
+    {
+      "event": "controllerchange"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "activated"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "installing"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "installed"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "redundant"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "activating"
+    },
+    {
+      "event": "controllerchange"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "activated"
+    }
+  ],
+  "limits": [
+    "Chromium/Edge only. This verifies a real returning-browser service worker and Cache Storage upgrade, not every browser engine or CDN.",
+    "Old runtime requests are served from committed repository blobs during the baseline phase; API requests continue to the actual backend.",
+    "No session values, raw codes or personal details are logged.",
+    "Joint samples use one shared physical time across all animations. Automated movement and clothing attachment checks do not replace independent painted-frame anatomy review."
+  ],
+  "pass": true,
+  "status": "PASS",
+  "phase": "complete",
+  "changedSources": []
+}
