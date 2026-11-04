@@ -1,0 +1,65 @@
+{
+  "date": "2026-11-04T19:51:13.458200+00:00",
+  "status": "PUBLISHED_AND_VERIFIED",
+  "pass": true,
+  "url": "https://exams.bebrighton.net/Horizons/App/?v=flat1#learn",
+  "runtimeCommit": "87721159b8d55046659cb2a947d1d728c83333d4",
+  "backupBranch": "safety/horizons-before-flat-sprites-20261104",
+  "changes": [
+    "Active sprites, props, illustrations, selectors and rewards use flat native ImageGen artwork without modeled or cast/ground shadows.",
+    "Earlier approved avatar proportions, faces, hairstyles and clothing restored; rejected round-head redesign archived outside the app.",
+    "Natural gesture anticipation, pauses, wrist/head timing, supported props and eased return; sleeves share arm joints.",
+    "App audit records the flat finish and preservation of approved avatar geometry."
+  ],
+  "evidence": [
+    "flat-named-review.json",
+    "avatar-approved-flat-review.json",
+    "avatar-approved-independent-review.json",
+    "flat-extras-review.json",
+    "flat-pico-lifecycle.json",
+    "flat-release-browser.json",
+    "flat-cache-upgrade.json",
+    "flat-release-browser-hosted.json",
+    "flat-cache-upgrade-hosted.json",
+    "publication-assets.json"
+  ],
+  "coverage": {
+    "namedPaintedFrames": 792,
+    "restoredAvatarAuthorPaintedViews": 1386,
+    "restoredAvatarIndependentPaintedViews": 420,
+    "avatarDenseGeometrySamples": 52920,
+    "localScreens": 235,
+    "unit1Activities": 48,
+    "viewportWidths": [
+      320,
+      390,
+      768,
+      1440
+    ],
+    "hostedScreens": 41,
+    "hostedStandardCallbacks": 4,
+    "targetedJacketGesture": true,
+    "publishedFilesMatchingCommittedBytes": 250,
+    "contentTestsPassed": 15,
+    "backendTestsPassed": 26
+  },
+  "rootHostedVisualReview": [
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-flat-release-hosted\\hosted-welcome-390.png",
+      "sha256": "db94fada89133ea8c757b9b9240e143a27c6c4bf4b25f03eea352c88e22d2ab2",
+      "verdict": "pass"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-flat-release-hosted\\hosted-jacket-outfit3-wave.png",
+      "sha256": "972678c1ec34c5bf5ab20a31ac84168a7598c85e197295d0d0a092e62141fb7c",
+      "verdict": "pass"
+    }
+  ],
+  "artworkAndExactPrompts": "flat-art-record.json",
+  "runtimeChangesAfterPublication": [],
+  "limits": [
+    "Finite Edge/Chromium phase and interaction coverage; no promise about every possible customization or timing instant.",
+    "Independent avatar and author coverage overlap and must not be added as unique frame counts.",
+    "Local full geometry and hosted UI/cache evidence are separate; committed LF bytes are compared with the actual server."
+  ]
+}

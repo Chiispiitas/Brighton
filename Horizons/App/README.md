@@ -44,6 +44,8 @@ Sessions last 90 days. Expired or revoked books cannot start practice or save at
 
 ## Validation and maintenance
 
+Verified release summary: [flat sprites and restored avatars](reports/flat-release.json).
+
 Current flat release evidence: [named companion frame review](reports/flat-named-review.json), [avatar frame review](reports/avatar-approved-flat-review.json), [job/icon review](reports/flat-extras-review.json), [site-wide regression](reports/flat-release-browser.json) and [real cache upgrade](reports/flat-cache-upgrade.json). Motion approval requires independent limb movement plus visual checks of joints, clothes, props, loop boundaries and actual greeting/return callbacks. Counts or animation objects cannot substitute for those checks.
 
 Published checks are separate: [hosted UI/callbacks](reports/flat-release-browser-hosted.json), [hosted cache upgrade](reports/flat-cache-upgrade-hosted.json) and [committed asset parity](reports/publication-assets.json). The previous [articulated frame review](reports/articulation-review.json) and [articulated release](reports/articulation-release.json) are historical evidence for the shaded artwork that this flat pass replaces. Browser coverage is Edge/Chromium; other engines are not claimed as tested.
