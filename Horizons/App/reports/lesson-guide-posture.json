@@ -1,0 +1,148 @@
+{
+  "date": "2026-11-04T14:13:59.341Z",
+  "status": "PASS",
+  "scope": "Targeted actual1C header after lessonjump; Mina bench-reading posture, exactnative4frame sequence",
+  "base": "http://127.0.0.1:8892/Horizons/App/",
+  "browser": "Microsoft Edge/Chromium",
+  "checks": [
+    {
+      "width": 320,
+      "pass": true,
+      "character": "mina",
+      "posture": "read",
+      "source": "mina-postures-v1.png",
+      "frameCount": 4,
+      "aspectError": 0.000031228255031212626,
+      "nativeBoundsInsideHeader": true,
+      "nativeBoundsInsideCharacter": true,
+      "nativeBoundsInsideViewport": true,
+      "phases": [
+        {
+          "phase": 0,
+          "opaqueGraphicTextOverlapCount": 0,
+          "nativeFramePositionErrorPx": 0.008317433093061408
+        },
+        {
+          "phase": 0.45,
+          "opaqueGraphicTextOverlapCount": 0,
+          "nativeFramePositionErrorPx": 0.013577950139482963
+        },
+        {
+          "phase": 0.65,
+          "opaqueGraphicTextOverlapCount": 0,
+          "nativeFramePositionErrorPx": 0.008035521308421629
+        },
+        {
+          "phase": 0.85,
+          "opaqueGraphicTextOverlapCount": 0,
+          "nativeFramePositionErrorPx": 0.013360578932485748
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "pass": true,
+      "character": "mina",
+      "posture": "read",
+      "source": "mina-postures-v1.png",
+      "frameCount": 4,
+      "aspectError": 0.0001425372366986588,
+      "nativeBoundsInsideHeader": true,
+      "nativeBoundsInsideCharacter": true,
+      "nativeBoundsInsideViewport": true,
+      "phases": [
+        {
+          "phase": 0,
+          "opaqueGraphicTextOverlapCount": 0,
+          "nativeFramePositionErrorPx": 0.012245903631605815
+        },
+        {
+          "phase": 0.45,
+          "opaqueGraphicTextOverlapCount": 0,
+          "nativeFramePositionErrorPx": 0.017319193176773363
+        },
+        {
+          "phase": 0.65,
+          "opaqueGraphicTextOverlapCount": 0,
+          "nativeFramePositionErrorPx": 0.013315181956062695
+        },
+        {
+          "phase": 0.85,
+          "opaqueGraphicTextOverlapCount": 0,
+          "nativeFramePositionErrorPx": 0.011967480193291368
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "pass": true,
+      "character": "mina",
+      "posture": "read",
+      "source": "mina-postures-v1.png",
+      "frameCount": 4,
+      "aspectError": 0.00002376840070361652,
+      "nativeBoundsInsideHeader": true,
+      "nativeBoundsInsideCharacter": true,
+      "nativeBoundsInsideViewport": true,
+      "phases": [
+        {
+          "phase": 0,
+          "opaqueGraphicTextOverlapCount": 0,
+          "nativeFramePositionErrorPx": 0.012466735262969144
+        },
+        {
+          "phase": 0.45,
+          "opaqueGraphicTextOverlapCount": 0,
+          "nativeFramePositionErrorPx": 0.013614381936153377
+        },
+        {
+          "phase": 0.65,
+          "opaqueGraphicTextOverlapCount": 0,
+          "nativeFramePositionErrorPx": 0.015877049576763683
+        },
+        {
+          "phase": 0.85,
+          "opaqueGraphicTextOverlapCount": 0,
+          "nativeFramePositionErrorPx": 0.019644861428877287
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "pass": true,
+      "character": "mina",
+      "posture": "read",
+      "source": "mina-postures-v1.png",
+      "frameCount": 4,
+      "aspectError": 0.00002376840070361652,
+      "nativeBoundsInsideHeader": true,
+      "nativeBoundsInsideCharacter": true,
+      "nativeBoundsInsideViewport": true,
+      "phases": [
+        {
+          "phase": 0,
+          "opaqueGraphicTextOverlapCount": 0,
+          "nativeFramePositionErrorPx": 0.012466735262969144
+        },
+        {
+          "phase": 0.45,
+          "opaqueGraphicTextOverlapCount": 0,
+          "nativeFramePositionErrorPx": 0.013614381936153377
+        },
+        {
+          "phase": 0.65,
+          "opaqueGraphicTextOverlapCount": 0,
+          "nativeFramePositionErrorPx": 0.015877049576763683
+        },
+        {
+          "phase": 0.85,
+          "opaqueGraphicTextOverlapCount": 0,
+          "nativeFramePositionErrorPx": 0.019644861428877287
+        }
+      ]
+    }
+  ],
+  "runtimeErrors": [],
+  "proofFolder": "C:/Users/David/Documents/Codex/2026-11-04/horizons-app-layout",
+  "totalNativeFrameChecks": 16
+}

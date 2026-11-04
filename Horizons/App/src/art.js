@@ -63,7 +63,7 @@ export function characterMarkup(name, cls = '', mood = 'idle') {
 function choosePosture(name,cls,mood){
   if(cls.includes('welcome-'))return null;
   if(name==='pico'){if(cls.includes('progress-'))return 'stride';if(mood==='celebrate'||cls.includes('result-'))return 'jump';if(cls.includes('hero-'))return 'explore';return 'read';}
-  if(name==='mina'){if(cls.includes('lesson-guide'))return mood==='wave'?'read':'step';if(cls.includes('game-'))return 'skip';return 'map';}
+  if(name==='mina'){if(cls.includes('lesson-guide-1c'))return 'read';if(cls.includes('lesson-guide'))return mood==='wave'?'read':'step';if(cls.includes('game-'))return 'skip';return 'map';}
   if(name==='alex'){if(cls.includes('lesson-guide'))return 'fix';if(cls.includes('game-'))return 'dance';return 'sit';}
   if(name==='jo'){if(cls.includes('aside-'))return 'read';if(cls.includes('goal-'))return 'clap';return 'pour';}
   return null;
