@@ -1,0 +1,95 @@
+{
+  "date": "2026-11-04T18:05:14.980644+00:00",
+  "status": "PASS",
+  "pass": true,
+  "url": "https://exams.bebrighton.net/Horizons/App/?v=articulation2#learn",
+  "runtimeCommit": "432f63a417c86ffe21fe248cd6c2a70913bec7a3",
+  "safetyBranch": "safety/horizons-before-clothed-articulation-20261104",
+  "scope": "Continuously articulated named cast and clothed avatar; distinct poses, complete native faces, attached sleeves, hands and task props; actual welcome and routed app callbacks.",
+  "evidence": {
+    "paintedReview": {
+      "path": "articulation-review.json",
+      "sha256": "fb578b1eeaeb3547708875b668af818d55852b3bc200239c41e4431f85dfc23c"
+    },
+    "accessoryReview": {
+      "path": "articulation-accessory-review.json",
+      "sha256": "7a298dead24739dc12176fcb83803ef9bdbc65512b2d2aaf91fe0e5b75d103b9"
+    },
+    "avatarStructure": {
+      "path": "avatar-clothed-structure.json",
+      "sha256": "3bb520e097705006136b98e825213ce65e1161eaef17ee8cb4fe4ecb30c48bf0"
+    },
+    "localBrowser": {
+      "path": "articulated-release-browser.json",
+      "sha256": "ff30d892d85726d45f1f1ea1c4298f7f3be423fabea09375f336e240745460df"
+    },
+    "hostedBrowser": {
+      "path": "articulated-release-browser-hosted.json",
+      "sha256": "e2a746da036e6893706f5f440c6b79c19358963a1de91c9243c9afd320d51bed"
+    },
+    "hostedCache": {
+      "path": "articulation-cache-update-hosted.json",
+      "sha256": "66c81399c78d4bdcb55c234b3ac81a116cb3b7a83775bcbb477be5144854fd00"
+    },
+    "publication": {
+      "path": "publication-assets.json",
+      "sha256": "3b6124050afcb2b648b687ac4dc7b8bed5adb0a5d06be2f67e9cc850515db12e"
+    }
+  },
+  "coverage": {
+    "paintedViews": 1904,
+    "canonicalWelcomeViewports": 4,
+    "actualGestureCycles": 38,
+    "additionalAccessoryViews": 84,
+    "hostedViews": 40,
+    "hostedCallbacks": 4,
+    "publishedFilesMatchingCommittedBytes": 219
+  },
+  "rootHostedSpotReview": {
+    "pass": true,
+    "screens": [
+      {
+        "name": "hosted-welcome-320",
+        "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-articulated-release-hosted\\hosted-welcome-320.png",
+        "proofSha256": "c8683f248486a98db73cb73aca3e28bb2f44127389c74cb597c1b480c486b046",
+        "verdict": "layout-pass"
+      },
+      {
+        "name": "hosted-welcome-1440",
+        "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-articulated-release-hosted\\hosted-welcome-1440.png",
+        "proofSha256": "e0ea2ade2db19b070caac423b55737626d4e7a7e2c8bed24b6b73976ca41e57a",
+        "verdict": "layout-pass"
+      },
+      {
+        "name": "hosted-avatar-pointer-wave",
+        "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-articulated-release-hosted\\hosted-avatar-pointer-wave.png",
+        "proofSha256": "2fbdcf6d39791d7cc651dd9d50fbb564c8b0ab4c625664e79f54c67e58e42946",
+        "verdict": "layout-pass"
+      },
+      {
+        "name": "focused-student-390",
+        "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-articulated-release-hosted\\focused-student-390.png",
+        "proofSha256": "320ea0a2b6cc51ef1e615202ad728eeaefb70995ba777fc2c5020c21749c0b0d",
+        "verdict": "layout-pass"
+      },
+      {
+        "name": "focused-driver-390",
+        "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-articulated-release-hosted\\focused-driver-390.png",
+        "proofSha256": "30bf115406b5706acfd261540f548ea998d6fa2f881960d941c6574db6377e71",
+        "verdict": "layout-pass"
+      }
+    ],
+    "observations": [
+      "Complete cast remains inside mobile and desktop welcome stages.",
+      "Avatar sleeve follows raised shoulder, elbow and wrist.",
+      "Student and driver native parts and task props remain connected in their actual dialogs."
+    ]
+  },
+  "artworkAndExactPrompts": "articulation-art-record.json",
+  "runtimeChangesAfterPublishedCommit": [],
+  "limits": [
+    "Finite phase, callback and customization coverage; no claim of perfection at every possible animation time.",
+    "Edge/Chromium at widths320,390,768,1440; no Safari or Firefox claim.",
+    "Full local geometry evidence is retained with explicit final-source binding; hosted checks are separately recorded."
+  ]
+}

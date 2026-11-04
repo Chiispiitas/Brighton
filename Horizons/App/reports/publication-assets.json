@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-04T15:41:28.188293+00:00",
+  "date": "2026-11-04T18:01:03.710395+00:00",
   "url": "https://exams.bebrighton.net/Horizons/App/",
-  "revision": "048c88edf0f5d39d4144e0dfc15feda943369f1b",
-  "checkedFiles": 200,
+  "revision": "432f63a417c86ffe21fe248cd6c2a70913bec7a3",
+  "checkedFiles": 219,
   "bookSourceRecordings": 12,
   "pass": true,
   "files": [
@@ -91,6 +91,20 @@
       "matchesCommittedBytes": true
     },
     {
+      "path": "Horizons/App/assets/art/alex-articulated-v3.png",
+      "status": 200,
+      "bytes": 719166,
+      "sha256": "2c5ecbd0a8e4e60e6c9b7356ff9f3b83c8459a48a174c5fab2694b565914748a",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/alex-articulated-v4.png",
+      "status": 200,
+      "bytes": 739579,
+      "sha256": "bbc9ca1ab459d86673d765240ca9afba72ad4fd139c550e808ae5d5d111cced2",
+      "matchesCommittedBytes": true
+    },
+    {
       "path": "Horizons/App/assets/art/alex-postures-v1.png",
       "status": 200,
       "bytes": 1161216,
@@ -116,6 +130,48 @@
       "status": 200,
       "bytes": 1666553,
       "sha256": "ad87c68e4bfe2a84a7b8524af303144e5ed7de868ce8f6f8bd5169c20985dba1",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/avatar-clothed-jacket-v1.png",
+      "status": 200,
+      "bytes": 1131850,
+      "sha256": "b2d0d90794d361f668748807f41f2c100d46ea00af428d8140fd43566abdf7e5",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/avatar-clothed-kit-v1.frames.json",
+      "status": 200,
+      "bytes": 11771,
+      "sha256": "51fa31cdb8b2f4ad0cd9697c09334539bb59c33ffb6e608a05558e2cc41d6e25",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/avatar-clothed-kit-v1.png",
+      "status": 200,
+      "bytes": 1376039,
+      "sha256": "777f61a4c76df207500ed8f7719bfef0e55134bdd7c9879023e6ce622a7c3a52",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/avatar-clothed-kit-v2.png",
+      "status": 200,
+      "bytes": 1370688,
+      "sha256": "29464069c83c95e4179112b4f2a5687080ea1808a3a271f19a47e91528ff9d8d",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/avatar-clothed-skin-v1.png",
+      "status": 200,
+      "bytes": 1394200,
+      "sha256": "fb1bf80e11506d14ae8b491b4ed3aba1e1aa7fc2c66d7d2eca9cba5cafb9c509",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/avatar-clothed-think-v1.png",
+      "status": 200,
+      "bytes": 552370,
+      "sha256": "7b10347fb0353c7d3fdb7badfdf7213fcd17de2b9b49a700bfbddc59e6ab595a",
       "matchesCommittedBytes": true
     },
     {
@@ -154,10 +210,45 @@
       "matchesCommittedBytes": true
     },
     {
+      "path": "Horizons/App/assets/art/cast-articulated-v3.frames.json",
+      "status": 200,
+      "bytes": 13014,
+      "sha256": "ad6227f2785adfe038870925b98af6070032ff6cf7130a7ae299428119385b83",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/cast-articulated-v4.frames.json",
+      "status": 200,
+      "bytes": 13476,
+      "sha256": "1fb3feb873fa342913835089228f2359e309e68473ab071802fdd579bd12a006",
+      "matchesCommittedBytes": true
+    },
+    {
       "path": "Horizons/App/assets/art/companions-v1.png",
       "status": 200,
       "bytes": 796540,
       "sha256": "7eb45ce0c5bc03a83265b3bdb9630de8ec9da8fdaf72530c3c4dca200a527106",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/driver-props-v1.frames.json",
+      "status": 200,
+      "bytes": 559,
+      "sha256": "c3d26bce9e6484e4dfdad6b67c04b8dd762cfb5f9a163431ddc1a898087376b1",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/driver-props-v1.png",
+      "status": 200,
+      "bytes": 1404364,
+      "sha256": "a02879086cb910d70b1b0da18ce5dae30c1b7fb2fa4f7cc48dbf66e31a6a4629",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/jo-articulated-v3.png",
+      "status": 200,
+      "bytes": 1011239,
+      "sha256": "d4226bd3e260dcd9d3c7a196df562eda31cb3c92f43d6d0e8b78b8ad40fa931e",
       "matchesCommittedBytes": true
     },
     {
@@ -203,6 +294,20 @@
       "matchesCommittedBytes": true
     },
     {
+      "path": "Horizons/App/assets/art/mina-articulated-v3.png",
+      "status": 200,
+      "bytes": 677488,
+      "sha256": "1618f6a5578dbdc160666b48123942a052b9deaf8ef57457b3caa15b95e3da14",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/mina-articulated-v4.png",
+      "status": 200,
+      "bytes": 750650,
+      "sha256": "4804eed152ff256b36607615c40750eb0fcfd55aec7443b42746015885335c35",
+      "matchesCommittedBytes": true
+    },
+    {
       "path": "Horizons/App/assets/art/mina-postures-v1.png",
       "status": 200,
       "bytes": 1120984,
@@ -214,6 +319,20 @@
       "status": 200,
       "bytes": 911586,
       "sha256": "f67508766e595ac941113cab53c6f15f25ed7adb636467c0354cb9533a2abd63",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/pico-articulated-v3.frames.json",
+      "status": 200,
+      "bytes": 4257,
+      "sha256": "789397ade550d03c8edac6642d66d0136d6b28f9a76415650eb855798f389140",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/pico-articulated-v3.png",
+      "status": 200,
+      "bytes": 1222981,
+      "sha256": "c29e442e49348638f64dfcc142d82d42d8d430203fb2ca7a2c50054286ea4aed",
       "matchesCommittedBytes": true
     },
     {
@@ -1339,8 +1458,8 @@
     {
       "path": "Horizons/App/index.html",
       "status": 200,
-      "bytes": 1679,
-      "sha256": "5974138275b5a6d801e34463c8d82583e8339144eda2f5d23ace3edbbfddd4f4",
+      "bytes": 1689,
+      "sha256": "f62348ffe16be61f8cb3cffc91e5dc01bbb8b48e6255088113a1797b4dac3988",
       "matchesCommittedBytes": true
     },
     {
@@ -1353,8 +1472,8 @@
     {
       "path": "Horizons/App/service-worker.js",
       "status": 200,
-      "bytes": 1620,
-      "sha256": "9bb673a76c8c7873b13ad9c1d9fb00a466d4be991b921fbb3b5bf8bf86fcdfce",
+      "bytes": 1859,
+      "sha256": "ad32746f0ca335764b7da62d389968f4c2d10659a4f66d26740cb694318afb74",
       "matchesCommittedBytes": true
     },
     {
@@ -1367,22 +1486,29 @@
     {
       "path": "Horizons/App/src/app.js",
       "status": 200,
-      "bytes": 60186,
-      "sha256": "8bd04d2fa7495d814d3c1c75485a5b70a7d9f6998c3f4bf6049dfeb284d08708",
+      "bytes": 60631,
+      "sha256": "164e6113e9f0f7dc71743b16eaa033006bdaa76580383cc4b0a59f623adf6b24",
       "matchesCommittedBytes": true
     },
     {
       "path": "Horizons/App/src/art.js",
       "status": 200,
-      "bytes": 8736,
-      "sha256": "dfd9182995912540cfcda861e3224abcc354636f916a81f03622501a8db232df",
+      "bytes": 10733,
+      "sha256": "41e3da86ab31b0ffc19b584910f51e18616631251b9c9d1ef77f3af4f4c08238",
       "matchesCommittedBytes": true
     },
     {
       "path": "Horizons/App/src/avatar-rig.js",
       "status": 200,
-      "bytes": 12532,
-      "sha256": "14753954e53d444f364dfb6cc0b701c1b79a65df9286c5f98a725d168478ed26",
+      "bytes": 23797,
+      "sha256": "5975dc6956baf13c072816ec63d16f9af28b306d274aeb045570cb4a19507728",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/src/cast-rig.js",
+      "status": 200,
+      "bytes": 18648,
+      "sha256": "2208e6cd8675f6ce3c5c27c52bae11fe721622cdf5228cd20be8b130ddb26b04",
       "matchesCommittedBytes": true
     },
     {
@@ -1390,6 +1516,13 @@
       "status": 200,
       "bytes": 10990,
       "sha256": "2954cc181b9e7f5006e08ac275c55739ffde54d5f5ec229c2958e12445356a21",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/src/pico-articulated.js",
+      "status": 200,
+      "bytes": 9667,
+      "sha256": "f239b037352a6aaf00b1a07eab184925e7b3a7269a14fa08aba2f14f017749fa",
       "matchesCommittedBytes": true
     },
     {
@@ -1402,8 +1535,8 @@
     {
       "path": "Horizons/App/styles/app.css",
       "status": 200,
-      "bytes": 81950,
-      "sha256": "dfcee143c0f9c8c98b35c315d1dc9bc52b695ec5d9708cb90e3db90a62c1b4bf",
+      "bytes": 82019,
+      "sha256": "e5a1dd92574ce5fd4c4189db7218e34758099858e6ec602b9d9aea15a3d5712a",
       "matchesCommittedBytes": true
     }
   ]
