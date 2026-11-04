@@ -44,5 +44,6 @@ Sessions last 90 days. Expired or revoked books cannot start practice or save at
 - `cd backend` then `npm test`: entitlement, linked-code identity, input validation, ownership, concurrent redemption, server grading, idempotency, mastery and earned rewards.
 - Browser exercises in `tests/` use isolated example profiles and the real hosted backend; public example 001 is reserved for users.
 - [Content coverage](reports/content-coverage.json), [independent learning checks](reports/learning-browser.json), [backend checks](backend/reports/live-backend.json) and [avatar/reward checks](backend/reports/live-profile.json) record scope and limitations.
+- Release evidence: [hosted release](reports/release.json). The deployed app passed 19 learning-flow checks and 10 sign-in/profile/book/device checks. All 184 runtime/media files matched committed bytes. The 35 responsive/refinement checks and 41 content/backend unit tests also passed. Browser automation used Microsoft Edge/Chromium; Safari and Firefox are not claimed as tested.
 
 Keep the client content engine and backend copy synchronized with `backend/scripts/sync-content.mjs` before redeploying. New content must pass the [app audit](APP-AUDIT.md). Runtime credentials, build folders and dependencies stay ignored. No book lesson file was modified to create this app.

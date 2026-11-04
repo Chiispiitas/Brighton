@@ -1,0 +1,20 @@
+{
+  "status": "PASS",
+  "date": "2026-11-04",
+  "url": "https://exams.bebrighton.net/Horizons/App/",
+  "runtimeRevision": "03662a8842f449c5c0f12a26a8fd60d42ad2560a",
+  "githubPagesRun": "https://github.com/Chiispiitas/Brighton/actions/runs/41787358534",
+  "githubPagesResult": "success",
+  "rollbackBranch": "safety/horizons-before-companion-app-20261104",
+  "bookSourceFilesChanged": false,
+  "backendDeployment": "505a6326-3a2a-4c87-936b-034a329647b7",
+  "backendSourceRevision": "d1a51e5796beb949bdd48e75b7276043b9a5823d",
+  "content": {"lessons": ["1A", "1B", "1C", "1D"], "activities": 48, "wordSets": 23, "canonicalBankEntries": 135, "supportQuestionModels": 7, "recordedVocabularyModels": 142, "grammarTemplates": 66, "originalBookRecordings": 12},
+  "verification": {"contentUnitTests": 15, "backendUnitTests": 26, "responsiveAndRefinementChecks": 35, "hostedLearningFlowChecks": 19, "hostedReleaseBrowserChecks": 10, "publishedRuntimeAndMediaFiles": 184, "publishedBytesMatch": true, "runtimeErrors": 0},
+  "browserScope": {"engine": "Microsoft Edge / Chromium", "widths": [320, 390, 768, 1440], "otherEnginesClaimed": false},
+  "reports": {"learning": "learning-browser.json", "releaseBrowser": "release/browser.json", "assetReadback": "publication-assets.json", "frontend": "frontend-browser.json", "content": "content-coverage.json", "backend": "../backend/reports/live-backend.json", "rewards": "../backend/reports/live-profile.json"},
+  "exampleCodesReservedFromQA": ["DEMO-HZ-A1-001", "DEMO-HZ-A2-001"],
+  "scopeNotes": ["A1 Unit 1 is complete. A2 is only a clearly labelled second-book linking preview.", "Public example codes share demonstration profiles; use fictional personal details.", "Date of birth is optional and private. There is no public social profile.", "First-party opaque cookies are Secure on HTTPS and JavaScript-readable on static GitHub hosting. No third-party cookie dependency or HttpOnly claim.", "A distributed redemption throttle is a future requirement before a broad printed-code campaign; the current isolated backend uses a per-worker limit."],
+  "art": "../assets/art/provenance.json",
+  "audio": "../assets/audio/generation-records.json"
+}
