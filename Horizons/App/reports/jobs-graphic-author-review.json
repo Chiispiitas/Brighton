@@ -1,0 +1,36 @@
+{
+  "date": "2026-11-04T20:19:33.098013+00:00",
+  "status": "PASS_WITH_INDEPENDENT_ROOT_STYLE_REVIEW",
+  "scope": "14 jobs, 56 distinct native phases, all 17 depicted adults including patients and older woman",
+  "sources": {
+    "src/art.js": "fa62478ccbe7b537215de0327e10d3217faeb4494d485a16412daae81d3822e2",
+    "assets/art/jobs-graphic-v2.frames.json": "7b49740c3688025fad381172b70fa9536feb2d4142a259f593e91972298fb762",
+    "assets/art/jobs-graphic-1-v3.png": "1aaa75de153dd4cc764a4b32689f1ba59528d15c69993d5ec09aad1bdbeef7de",
+    "assets/art/jobs-graphic-2-v3.png": "29631b1cff0e438c3656c8fc976cdd8919a2a27368e7a08b6312cfc73af173d5",
+    "assets/art/chef-graphic-v2.png": "8d8daa077e495522c76ad02ae2e657e1cfce307e6958223afa49d29015470940",
+    "assets/art/police-graphic-v2.png": "8ea16705e1a7b0d285fe231519ffe41cfba36a5caae9f08644dc57618ee3e969"
+  },
+  "nativeOutputBytesPreserved": true,
+  "pixelEditing": "none",
+  "promptProvenance": "assets/art/jobs-graphic-v3.provenance.json",
+  "browserReport": "reports/jobs-graphic-review.json",
+  "rowProofFolder": "C:/Users/David/Documents/Codex/2026-11-04/horizons-jobs-graphic-v2/native-rows",
+  "observations": [
+    "All 56 actual playback phases and all 14 enlarged four-phase rows inspected on white browser canvas.",
+    "All held trays, spoon, model tooth, theatre mask, tomato, basket and cane touch their supporting hands in active phases.",
+    "Waiter unsupported source phase was replaced; chef and police near-duplicate source rows were superseded by four distinct native strip actions.",
+    "Heads, clothing identities, connected arm anatomy and task meaning remain coherent across each four-phase sequence.",
+    "Root independently approved the final flat graphic style. Subtle native RGB variation remains without code recoloring; the separate police ground oval is excluded by native crop."
+  ],
+  "limits": [
+    "Finite native phase playback only. Overall named-body animations and actual app routes require separate checks.",
+    "A flat visual style verdict cannot be inferred from alpha bounds or browser loading."
+  ],
+  "finalPoliceCrop": {
+    "y": 126,
+    "h": 444,
+    "w": 543,
+    "reason": "Excludes separate ground oval below y574; complete shoes end at y567 and retain3px margin."
+  },
+  "independentStyleVerdict": "Root reviewed all56 native phases and approved flat graphic style; only requested finite ground-oval crop is completed."
+}

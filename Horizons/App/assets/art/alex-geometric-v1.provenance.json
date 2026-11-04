@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "tool": "built-in image_gen.imagegen",
+  "date": "2026-11-04",
+  "useCase": "stylized-concept",
+  "artifact": "alex-geometric-v1.png",
+  "generatedSource": "C:/Users/David/.codex/generated_images/01a1a821-f54c-74b0-a1e7-e96dc5bfc498/exec-7172a6b1-e8e9-4031-9ec0-885b474461cd.png",
+  "referenceImages": [
+    "C:/Users/David/AppData/Local/Temp/codex-clipboard-ba1ebdff-2199-4ad7-af10-2d0cb9e571a2.png"
+  ],
+  "sharedIdentityDirection": "assets/art/graphic-direction-v1.png",
+  "prompt": "Use case: stylized-concept. Production native transparent PNG modular character atlas. The supplied image is the GOVERNING STYLE REFERENCE: study its very simple opaque solid geometric fills and adult angular shapes. Draw ONE new character as twelve separate native animation parts, not an assembled person.\nFlat vector-export aesthetic saved as PNG, LIKE A CLEAN SVG RASTER EXPORT: large crisp contiguous uniform color regions, no rendering. ABSOLUTELY NO GRADIENTS, SHADOWS, SHADING, HIGHLIGHTS, TEXTURE, GLOW, LIGHTING OR TRANSLUCENT SURFACES. NO face side-plane shading, NO neck shadow triangle, NO decorative lighter center on limbs. Each material has only one solid opaque color; antialias only the outer edges. Nose and facial features are intentional distinct solid shapes. Minimal colors, geometric editorial Duolingo-like adult character construction.\nRegular 4 COLUMNS × 3 ROWS of square cells. Each cell contains one isolated native piece centered with 25px or more empty transparent gap from boundaries. No labels, no text, no grid lines, no background/checkerboard, no watermark. All limbs straight vertical pointing DOWN, usable rounded connection ends. No miniature assembled figures.\nRow1 left-to-right: complete full front-facing head/hair/ears/face/short PLAIN skin-colored neck, no collar; complete torso only with clothing, no arms/head; viewer-left upper sleeve shoulder-to-elbow; viewer-left plain skin forearm elbow-to-relaxed complete mitten hand, thumb pointing inward.\nRow2: viewer-right upper sleeve shoulder-to-elbow; viewer-right skin forearm down to complete mitten hand, thumb inward; viewer-left upper trouser leg hip-to-knee; viewer-left trouser shin with attached flat shoe pointing LEFT, clear sharp trouser/shoe color boundary.\nRow3: viewer-right upper trouser leg hip-to-knee; viewer-right trouser shin plus attached flat shoe pointing RIGHT; the one accessory described; the one prop described.\nUpper arms and thighs are simple capsules or tapered blocks with soft ends. Hands have one solid mitten silhouette and one integrated thumb, no articulated fingers. Face is a complete intact native drawing, not separate facial features. Transparent background.\nCharacter specification: ALEX: shorter broad ADULT brown-skinned man with BLOCKY rectangular brown face, dark curly hair made from a cluster of few solid circles, thick expressive black angled eyebrows, oval white eyes with dark pupils, large geometric burnt-orange nose, open friendly smiling mouth, teal open work jacket over a pure orange shirt, navy trousers, cream flat shoes. Torso is broad rectangular, limbs chunky but adult, head is not round/babyish. Accessory: navy over-ear headphones, connected by a simple solid headband, no lighting panels. Prop: one simple orange/cream hand wrench with flat geometric handle.",
+  "transparentBackground": true,
+  "pixelEdits": "None. PNG bytes copied unchanged from native generated output; runtime crops and joint metadata only.",
+  "design": "New adult angular design and individualized proportions, complete native face; no facial overlays.",
+  "sourceAtlasGrid": {
+    "columns": 4,
+    "rows": 3
+  },
+  "measurementTool": "tools/build-graphic-cast.py"
+}

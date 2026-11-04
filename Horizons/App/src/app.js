@@ -1,5 +1,5 @@
 import {api, APIError, getSessionToken, forgetSession} from './api-client.js';
-import {loadArt, artManifest, characterMarkup, avatarMarkup, avatarOptions, defaultAvatar, rasterMarkup, assetURL, refreshCharacterMotion, disposeCharacters, sceneMarkup, wordArt} from './art.js?v=flat1';
+import {loadArt, artManifest, characterMarkup, avatarMarkup, avatarOptions, defaultAvatar, rasterMarkup, assetURL, refreshCharacterMotion, disposeCharacters, sceneMarkup, wordArt} from './art.js?v=graphic1';
 import {course, lessons, vocabulary, chunks, grammarSets, activities, games, wordById, chunkById, lessonById} from '../content/unit1.mjs';
 import {buildQuiz, getActivityQuestions, getWordsForChunks, getMatchingPairs, checkAnswer} from '../content/engine.mjs';
 

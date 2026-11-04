@@ -1,0 +1,466 @@
+{
+  "tool": "built-in image_gen",
+  "scope": "Complete character and avatar/accessory redraw; all active people/mascot newly generated, saved option IDs preserved.",
+  "direction": "Bold geometric silhouettes, adult-friendly proportions, expressive brows/noses, small white eyes; flat opaque materials without cast/ground shadows or modeled lighting.",
+  "selectedNativeFiles": [
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-geometric-v1.png",
+      "repositoryPath": "Horizons/App/assets/art/alex-geometric-v1.png",
+      "sha256": "7c3b841e3bfe8f7519a08b18435c2b7b3efea021d33f53d61bba72444696f7e0"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\app-icon-graphic-v1.png",
+      "repositoryPath": "Horizons/App/assets/art/app-icon-graphic-v1.png",
+      "sha256": "5c5e15536f8dbde2487219204592167f3ab56aa14b7aee18225524458723baf6"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-graphic-flat-clothing-v1.png",
+      "repositoryPath": "Horizons/App/assets/art/avatar-graphic-flat-clothing-v1.png",
+      "sha256": "c34bfbbe559647a4a23fd8d6cb92e2e90d6a67379a97a7fc591d9c64f9036df3"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-graphic-flat-kit-v2.png",
+      "repositoryPath": "Horizons/App/assets/art/avatar-graphic-flat-kit-v2.png",
+      "sha256": "900603edb8455ab76571b4d37eb1c3d78fb7d58915f6d14dacf1b70069d94c2e"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-graphic-flat-limbs-v2.png",
+      "repositoryPath": "Horizons/App/assets/art/avatar-graphic-flat-limbs-v2.png",
+      "sha256": "0e85aad33465a6f67b798fddda80fea8cef603d7ef1b9d7c04ec49b98287680c"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\badges-graphic-v1.png",
+      "repositoryPath": "Horizons/App/assets/art/badges-graphic-v1.png",
+      "sha256": "cb07df6b86f632d3c658487b4185761c0404a340278633aa65fa270f7921f325"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\chef-graphic-v2.png",
+      "repositoryPath": "Horizons/App/assets/art/chef-graphic-v2.png",
+      "sha256": "8d8daa077e495522c76ad02ae2e657e1cfce307e6958223afa49d29015470940"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-geometric-v1.png",
+      "repositoryPath": "Horizons/App/assets/art/jo-geometric-v1.png",
+      "sha256": "6201e31ccacec6a0818c7314cfcaab513c2b2674a8c0987716228d693c364cd9"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jobs-graphic-1-v3.png",
+      "repositoryPath": "Horizons/App/assets/art/jobs-graphic-1-v3.png",
+      "sha256": "1aaa75de153dd4cc764a4b32689f1ba59528d15c69993d5ec09aad1bdbeef7de"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jobs-graphic-2-v3.png",
+      "repositoryPath": "Horizons/App/assets/art/jobs-graphic-2-v3.png",
+      "sha256": "29631b1cff0e438c3656c8fc976cdd8919a2a27368e7a08b6312cfc73af173d5"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-geometric-v2.png",
+      "repositoryPath": "Horizons/App/assets/art/mina-geometric-v2.png",
+      "sha256": "5c467b282bfaed83cceeb94144e521396abf6e7f2d56b1a11fee7f6461f1e448"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\pico-graphic-v1.png",
+      "repositoryPath": "Horizons/App/assets/art/pico-graphic-v1.png",
+      "sha256": "81c1c5a699c695bb716159cf6f8b7989b51c7d51a4210767de7dd50efb97532c"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\police-graphic-v2.png",
+      "repositoryPath": "Horizons/App/assets/art/police-graphic-v2.png",
+      "sha256": "8ea16705e1a7b0d285fe231519ffe41cfba36a5caae9f08644dc57618ee3e969"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\profile-graphic-v1.png",
+      "repositoryPath": "Horizons/App/assets/art/profile-graphic-v1.png",
+      "sha256": "949dbde4a8ff204c9a5e45ce8ca270467721502c265020f39f269e13413ca991"
+    }
+  ],
+  "promptDocuments": [
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-geometric-v1.provenance.json",
+      "record": {
+        "version": 1,
+        "tool": "built-in image_gen.imagegen",
+        "date": "2026-11-04",
+        "useCase": "stylized-concept",
+        "artifact": "alex-geometric-v1.png",
+        "generatedSource": "C:/Users/David/.codex/generated_images/01a1a821-f54c-74b0-a1e7-e96dc5bfc498/exec-7172a6b1-e8e9-4031-9ec0-885b474461cd.png",
+        "referenceImages": [
+          "C:/Users/David/AppData/Local/Temp/codex-clipboard-ba1ebdff-2199-4ad7-af10-2d0cb9e571a2.png"
+        ],
+        "sharedIdentityDirection": "assets/art/graphic-direction-v1.png",
+        "prompt": "Use case: stylized-concept. Production native transparent PNG modular character atlas. The supplied image is the GOVERNING STYLE REFERENCE: study its very simple opaque solid geometric fills and adult angular shapes. Draw ONE new character as twelve separate native animation parts, not an assembled person.\nFlat vector-export aesthetic saved as PNG, LIKE A CLEAN SVG RASTER EXPORT: large crisp contiguous uniform color regions, no rendering. ABSOLUTELY NO GRADIENTS, SHADOWS, SHADING, HIGHLIGHTS, TEXTURE, GLOW, LIGHTING OR TRANSLUCENT SURFACES. NO face side-plane shading, NO neck shadow triangle, NO decorative lighter center on limbs. Each material has only one solid opaque color; antialias only the outer edges. Nose and facial features are intentional distinct solid shapes. Minimal colors, geometric editorial Duolingo-like adult character construction.\nRegular 4 COLUMNS × 3 ROWS of square cells. Each cell contains one isolated native piece centered with 25px or more empty transparent gap from boundaries. No labels, no text, no grid lines, no background/checkerboard, no watermark. All limbs straight vertical pointing DOWN, usable rounded connection ends. No miniature assembled figures.\nRow1 left-to-right: complete full front-facing head/hair/ears/face/short PLAIN skin-colored neck, no collar; complete torso only with clothing, no arms/head; viewer-left upper sleeve shoulder-to-elbow; viewer-left plain skin forearm elbow-to-relaxed complete mitten hand, thumb pointing inward.\nRow2: viewer-right upper sleeve shoulder-to-elbow; viewer-right skin forearm down to complete mitten hand, thumb inward; viewer-left upper trouser leg hip-to-knee; viewer-left trouser shin with attached flat shoe pointing LEFT, clear sharp trouser/shoe color boundary.\nRow3: viewer-right upper trouser leg hip-to-knee; viewer-right trouser shin plus attached flat shoe pointing RIGHT; the one accessory described; the one prop described.\nUpper arms and thighs are simple capsules or tapered blocks with soft ends. Hands have one solid mitten silhouette and one integrated thumb, no articulated fingers. Face is a complete intact native drawing, not separate facial features. Transparent background.\nCharacter specification: ALEX: shorter broad ADULT brown-skinned man with BLOCKY rectangular brown face, dark curly hair made from a cluster of few solid circles, thick expressive black angled eyebrows, oval white eyes with dark pupils, large geometric burnt-orange nose, open friendly smiling mouth, teal open work jacket over a pure orange shirt, navy trousers, cream flat shoes. Torso is broad rectangular, limbs chunky but adult, head is not round/babyish. Accessory: navy over-ear headphones, connected by a simple solid headband, no lighting panels. Prop: one simple orange/cream hand wrench with flat geometric handle.",
+        "transparentBackground": true,
+        "pixelEdits": "None. PNG bytes copied unchanged from native generated output; runtime crops and joint metadata only.",
+        "design": "New adult angular design and individualized proportions, complete native face; no facial overlays.",
+        "sourceAtlasGrid": {
+          "columns": 4,
+          "rows": 3
+        },
+        "measurementTool": "tools/build-graphic-cast.py"
+      },
+      "sha256": "afc51d9e49d2b49a4e464d555446ed77aa15b753a762994c174fd403e3684089"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\app-icon-graphic-v1.provenance.json",
+      "record": {
+        "tool": "built-in image_gen",
+        "purpose": "New Pico application icon",
+        "prompt": "Create a NEW Horizons app icon using Image1's TOP-LEFT mountain hare Pico, same angular long muzzle, small white eyes/navy pupils, bold navy eyebrow, orange triangular nose, tall straight and bent ears. Image2 is graphic style reference. Square cream background, large friendly Pico head and ears centered fully within generous margins, no body/text. Strong geometric silhouette and witty expression. Every material uniform flat opaque color; no shadow triangles, shading, highlights, gradients, texture, 3D, outlines or floor shadows. Original Horizons hare identity fromImage1, not a generic babybunny. Square app icon with clean simple saturated cream/orange/navy/magenta shapes.",
+        "source": "assets/art/app-icon-graphic-v1.png",
+        "pixelPolicy": "Native PNG retained without code pixel edits."
+      },
+      "sha256": "24d1b2b7df5a843d1ff2fd72a9e80e9128321c5cc5c579569219207c5e9f874b"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-graphic-flat-clothing-v1.provenance.json",
+      "record": {
+        "tool": "built-in image_gen",
+        "creator": "OpenAI ImageGen",
+        "date": "2026-11-04",
+        "purpose": "Active native torso and sleeve cutouts.",
+        "source": "assets/art/avatar-graphic-flat-clothing-v1.png",
+        "references": [
+          "assets/art/graphic-direction-v1.png"
+        ],
+        "promptSet": [
+          "Use case: illustration-story. Asset type: original transparent modular avatar CLOTHING sprite sheet.\nUse supplied image only as the adult geometric STYLE REFERENCE. Create fresh production clothing in that graphic design language but with STRICT solid flat opaque colors. Do NOT imitate its shading or dark neck triangles.\nCanvas wide 1536x1024. EXACTLY six equal columns and THREE equal rows of independent cutout parts. Each cell has spacious transparent margin. No text, labels, grid, body, head, hands, skin, background or shadows. Front orthographic view.\nRow 1 six broad-shouldered SLEEVELESS TORSO CORES for adult busts, each matching one outfit. All have broad upper chest, modest neck opening, geometric shoulders and a long clean torso bottom. There MUST NOT be any resting sleeve or detached forearm on a torso core. Left to right: 1 magenta hoodie body with cream drawstrings and graphic hood rim; 2 teal summer crew-neck T-shirt body; 3 teal explorer jacket open over solid orange shirt with cream chest label; 4 orange sweater body with simple squared ribbed neck; 5 dark teal overalls body with cream under-shirt, two gold strap buttons and broad bib; 6 magenta cardigan open over cream shirt, three simple navy buttons. Each material one SOLID COLOR, no folds depicted as shading.\nRow 2 six separate UPPER SLEEVE segments, matching corresponding outfits, all vertical with shoulder joint at TOP and elbow at BOTTOM. Geometric rounded top overlap cap, wide enough to join broad shoulders. Matching material: magenta full sleeve, teal SHORT sleeve ending halfway through cell leaving blank underneath, teal jacket full sleeve, orange full sleeve, cream SHORT sleeve ending halfway through cell leaving blank underneath, magenta full sleeve. Long sleeve segments about 80 pixels wide by 220 high, short sleeves about 80 by 105. Flat solid colors.\nRow 3 six separate FOREARM SLEEVE segments, vertical with elbow joint at TOP and wrist cuff at BOTTOM, matching outfits 1 magenta, 3 teal, 4 orange, 6 magenta. Cell 2 and cell 5 are COMPLETELY EMPTY TRANSPARENT because their outfits have short sleeves. Each present forearm sleeve about 70 pixels wide by 210 high with simple flat cuff, rounded top overlap cap. No hands.\nThese are animation components, not illustrated assembled clothing mannequins. Each torso/upper sleeve/fore sleeve independent, centered in its own cell. Crisp clean angular graphic silhouettes, uniform opaque color blocks, adult proportions. ABSOLUTELY NO GRADIENTS, shading, highlights, highlights on curved edges, soft light, fabric texture, glossy effects, dark side planes, stroke outlines, drop shadows, cast shadows, ground shadows. Native true transparent alpha throughout empty areas."
+        ],
+        "transformations": "Original generated PNG bytes copied without repainting, tracing, alpha thresholding or color edits. Runtime uses measured rectangular viewports and uniform scale.",
+        "fiction": "Original fictional customization artwork, not portraits of real named people.",
+        "license": "Original generated project artwork",
+        "dimensions": {
+          "width": 1536,
+          "height": 1024
+        },
+        "sha256": "c34bfbbe559647a4a23fd8d6cb92e2e90d6a67379a97a7fc591d9c64f9036df3",
+        "mode": "RGBA"
+      },
+      "sha256": "8921357e807f836d5833e72250f988a6f291a2c224c6605474c1bd1ca442db9e"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-graphic-flat-kit-v1.provenance.json",
+      "record": {
+        "tool": "built-in image_gen",
+        "creator": "OpenAI ImageGen",
+        "date": "2026-11-04",
+        "purpose": "Inactive initial native design; replaced by flattening edit v2.",
+        "source": "assets/art/avatar-graphic-flat-kit-v1.png",
+        "references": [
+          "assets/art/graphic-direction-v1.png"
+        ],
+        "promptSet": [
+          "Use case: illustration-story. Asset type: native transparent raster modular avatar character sheet for Horizons, brand NEW design.\nInput image is STYLE REFERENCE ONLY, use its bottom-row adult geometric bust designs for expression and shape language; never copy old art.\nCreate one wide transparent sprite sheet with EXACTLY SIX EQUAL COLUMNS and FOUR EQUAL ROWS, 24 spacious cells, no grid lines and absolutely NO TEXT. Every component isolated inside its cell with transparent margins, aligned cleanly to this grid.\nSTYLE: bold witty geometric flat illustration for adults. Rounded RECTANGULAR heads, long angular noses, strong distinctive brows, SMALL white eye shapes with black pupils, expressive asymmetric open smirks. Head proportions tall and adult, broad angular jaws. Crisp geometric hair and saturated block accessories. Uniform opaque flat fill per material. NO gradients, highlights, texture, cast/ground shadows, side-plane face shading, neck-shadow triangles, 3D, outlines, baby roundheads, giant eyes or tiny dot smiles.\n\nROW 1 (top quarter), six front-facing BALD adult heads with ears and a short natural neck, without hair, hats or glasses. Same head shape and identical facial feature positions in all 6 cells, all eyes looking forward. Soft rectangular face about 170 pixels wide and 205 pixels tall in its cell, natural short neck. Flat skin tones left to right: pale cream-peach #f7cfb5, warm peach #edb899, honey #d99a63, caramel #b77a49, chestnut #885035, deep brown #573328. For all: strong navy eyebrows, small white eyes with black pupils, a distinct long geometric nose using only a separate uniform muted warm nose color, jaunty open smiling mouth, no cheeks/blush/shadows. Skin itself one uniform color including ears and neck.\nROW 2 (second quarter), six DETACHED HAIR CUTOUTS with transparent face openings; nothing else in these cells. Left to right: 1 bold navy asymmetrical swept quiff, 2 compact dark brown blocky curls, 3 shoulder-length angular auburn straight hair with asymmetric part, 4 dark brown twin sculptural puffs with short central hair cap, 5 golden blonde angular bob with side part, 6 navy-teal angular wavy bob. All hairstyles sized to the same adult head silhouette from row 1; bangs stay above the eyebrows, long side pieces beside the face opening. Hair is uniform single-color each, no individual strands or highlights.\nROW 3 (third quarter), six completely NEW separate accessory cutouts. Left to right: 1 thick stylish navy rounded-rectangular eyeglass frame, TRANSPARENT LENS OPENINGS and thin bridge; 2 geometric orange baseball cap with sideways projecting flat brim; 3 crisp teal over-ear headphones with a thin U-shaped arch and rectangular ear pads, EMPTY TRANSPARENT HEAD OPENING; 4 geometric magenta crossbody satchel with long diagonal strap, orange round closure and navy strap, complete strap attached to bag; 5 vivid orange angular wrapped neck scarf, two crisp folded tails; 6 broad navy backpack with teal straps, one orange fastening, simple graphic front pocket, front view. Different graphic shapes, complete clean isolated objects. No lighting, volume/shading.\nROW 4 (bottom quarter), six small CLOSED-EYE BLINK PATCHES matching row 1 skin tones and identical eye spacing. Each patch is one horizontal flat skin-colored band with two simple dark closed smiling eyelid arcs. NO brows, NO nose, NO mouth, NO head silhouette. The skin band has straight horizontal top/bottom edges and rounded outer ends, width matching the eye span of row 1 heads, about 110 pixels wide and 28 pixels high. Place at cell center. Use exact same uniform skin colors as row 1.\nCanvas truly transparent, preserve native alpha. No white backdrop, checkerboard art, text, labels, symbols, cell borders, cast shadows. Every cell independent, uncropped, no overlap with adjacent cells."
+        ],
+        "transformations": "Original generated PNG bytes copied without repainting, tracing, alpha thresholding or color edits. Runtime uses measured rectangular viewports and uniform scale.",
+        "fiction": "Original fictional customization artwork, not portraits of real named people.",
+        "license": "Original generated project artwork",
+        "dimensions": {
+          "width": 1536,
+          "height": 1024
+        },
+        "sha256": "4db652a88cf5b3fd42bdc0cf5ab6efcf5bee0ec0df356f31fe56ff0276c714b0",
+        "mode": "RGBA"
+      },
+      "sha256": "9900502b531ffae548bd9175d468461d57e9c778de9d0a4c41e584373b91dd88"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-graphic-flat-kit-v2.provenance.json",
+      "record": {
+        "tool": "built-in image_gen",
+        "creator": "OpenAI ImageGen",
+        "date": "2026-11-04",
+        "purpose": "Active native head/hair/accessory/blink cutouts.",
+        "source": "assets/art/avatar-graphic-flat-kit-v2.png",
+        "references": [
+          "assets/art/graphic-direction-v1.png",
+          "assets/art/avatar-graphic-flat-kit-v1.png"
+        ],
+        "promptSet": [
+          "Use case: illustration-story. Asset type: native transparent raster modular avatar character sheet for Horizons, brand NEW design.\nInput image is STYLE REFERENCE ONLY, use its bottom-row adult geometric bust designs for expression and shape language; never copy old art.\nCreate one wide transparent sprite sheet with EXACTLY SIX EQUAL COLUMNS and FOUR EQUAL ROWS, 24 spacious cells, no grid lines and absolutely NO TEXT. Every component isolated inside its cell with transparent margins, aligned cleanly to this grid.\nSTYLE: bold witty geometric flat illustration for adults. Rounded RECTANGULAR heads, long angular noses, strong distinctive brows, SMALL white eye shapes with black pupils, expressive asymmetric open smirks. Head proportions tall and adult, broad angular jaws. Crisp geometric hair and saturated block accessories. Uniform opaque flat fill per material. NO gradients, highlights, texture, cast/ground shadows, side-plane face shading, neck-shadow triangles, 3D, outlines, baby roundheads, giant eyes or tiny dot smiles.\n\nROW 1 (top quarter), six front-facing BALD adult heads with ears and a short natural neck, without hair, hats or glasses. Same head shape and identical facial feature positions in all 6 cells, all eyes looking forward. Soft rectangular face about 170 pixels wide and 205 pixels tall in its cell, natural short neck. Flat skin tones left to right: pale cream-peach #f7cfb5, warm peach #edb899, honey #d99a63, caramel #b77a49, chestnut #885035, deep brown #573328. For all: strong navy eyebrows, small white eyes with black pupils, a distinct long geometric nose using only a separate uniform muted warm nose color, jaunty open smiling mouth, no cheeks/blush/shadows. Skin itself one uniform color including ears and neck.\nROW 2 (second quarter), six DETACHED HAIR CUTOUTS with transparent face openings; nothing else in these cells. Left to right: 1 bold navy asymmetrical swept quiff, 2 compact dark brown blocky curls, 3 shoulder-length angular auburn straight hair with asymmetric part, 4 dark brown twin sculptural puffs with short central hair cap, 5 golden blonde angular bob with side part, 6 navy-teal angular wavy bob. All hairstyles sized to the same adult head silhouette from row 1; bangs stay above the eyebrows, long side pieces beside the face opening. Hair is uniform single-color each, no individual strands or highlights.\nROW 3 (third quarter), six completely NEW separate accessory cutouts. Left to right: 1 thick stylish navy rounded-rectangular eyeglass frame, TRANSPARENT LENS OPENINGS and thin bridge; 2 geometric orange baseball cap with sideways projecting flat brim; 3 crisp teal over-ear headphones with a thin U-shaped arch and rectangular ear pads, EMPTY TRANSPARENT HEAD OPENING; 4 geometric magenta crossbody satchel with long diagonal strap, orange round closure and navy strap, complete strap attached to bag; 5 vivid orange angular wrapped neck scarf, two crisp folded tails; 6 broad navy backpack with teal straps, one orange fastening, simple graphic front pocket, front view. Different graphic shapes, complete clean isolated objects. No lighting, volume/shading.\nROW 4 (bottom quarter), six small CLOSED-EYE BLINK PATCHES matching row 1 skin tones and identical eye spacing. Each patch is one horizontal flat skin-colored band with two simple dark closed smiling eyelid arcs. NO brows, NO nose, NO mouth, NO head silhouette. The skin band has straight horizontal top/bottom edges and rounded outer ends, width matching the eye span of row 1 heads, about 110 pixels wide and 28 pixels high. Place at cell center. Use exact same uniform skin colors as row 1.\nCanvas truly transparent, preserve native alpha. No white backdrop, checkerboard art, text, labels, symbols, cell borders, cast shadows. Every cell independent, uncropped, no overlap with adjacent cells.",
+          "Use case: precise-object-edit. Edit target: the supplied complete modular 6-column sprite sheet. Preserve EVERY silhouette, face shape, placement, cell spacing, transparent opening, component and the 1536x1024 grid exactly. Change only paint treatment.\nFlatten the art into strict SCREEN-PRINT SOLID SPOT COLORS. Each face including ears AND NECK must have exactly ONE uniform solid skin paint color, NO darker neck or left/right tones. Same for each hair cutout: exactly ONE solid hair color, no dark inner hair planes. Same for every accessory material: flat solid navy frame, flat solid orange cap, flat teal headphone arch/pads, flat magenta bag, flat orange scarf, flat navy backpack and flat teal straps. Do not add dark edge shading, gradients, bevels, highlights, texture, light effects, simulated volume, glow, drop shadow or ground shadow. Mouths/eyes/brows and noses remain separate graphic facial features. Keep blink patches same uniform face color. This is geometric 2D graphic art with solid opaque shapes, no lighting whatsoever. Preserve true transparent alpha outside every silhouette, including lens openings and hair face openings. No labels or text."
+        ],
+        "transformations": "Original generated PNG bytes copied without repainting, tracing, alpha thresholding or color edits. Runtime uses measured rectangular viewports and uniform scale.",
+        "fiction": "Original fictional customization artwork, not portraits of real named people.",
+        "license": "Original generated project artwork",
+        "dimensions": {
+          "width": 1536,
+          "height": 1024
+        },
+        "sha256": "900603edb8455ab76571b4d37eb1c3d78fb7d58915f6d14dacf1b70069d94c2e",
+        "mode": "RGBA"
+      },
+      "sha256": "a6daf60704c3f3000468f59ba2d4aff2518682f0396a59cf322a88ddd6be19fb"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-graphic-flat-limbs-v1.provenance.json",
+      "record": {
+        "tool": "built-in image_gen",
+        "creator": "OpenAI ImageGen",
+        "date": "2026-11-04",
+        "purpose": "Inactive first limb colors; matched to head skin in v2.",
+        "source": "assets/art/avatar-graphic-flat-limbs-v1.png",
+        "references": [
+          "assets/art/graphic-direction-v1.png"
+        ],
+        "promptSet": [
+          "Use case: illustration-story. Asset type: original transparent modular avatar SKIN LIMBS sprite sheet.\nInput is adult geometric STYLE REFERENCE ONLY. Create production animation cutouts in strict solid spot colors. No lighting or 3D.\nWide 1536x1024 sheet, EXACTLY SIX equal columns and FOUR equal rows, 24 separate centered parts with transparent margins, no text or grid. The six columns are six uniform skin colors, left to right pale cream-peach #f7cfb5, warm peach #edb899, honey #d99a63, caramel #b77a49, chestnut #885035, deep brown #573328. Every single part in one column must be exactly the SAME single uniform skin color. No outlines, lines, knuckles, nail marks, fingershading, gradients, shadows, highlights, texture or secondary skin colors.\nROW 1 six detached straight UPPER ARM segments, vertical, rounded shoulder at TOP, elbow at BOTTOM; simple long narrow geometric rounded bars 70 pixels wide by 200 pixels high.\nROW 2 six detached straight FOREARM segments, vertical, elbow at TOP, wrist at BOTTOM; simple slightly tapered rounded bars 64 pixels wide by 200 high.\nROW 3 six detached OPEN FRIENDLY HANDS, identical shape, wrist at TOP with short narrow straight cuff stem, fingertips pointing DOWN. Graphic 4-finger mitten-style hand with distinct broad thumb sticking to viewer LEFT, modest finger lobes on bottom; simple adult proportions, about 100 pixels wide by 180 high. These are complete hand silhouettes, no arms.\nROW 4 six detached THINKING HANDS, identical shape, wrist at TOP with narrow cuff stem, fingers pointing DOWN. Relaxed loosely folded palm shape with one extended index finger on the viewer LEFT edge pointing DOWN, thumb touching bent middle fingers, about 90 wide by 170 high. Clear simple connected hand silhouette.\nEach limb or hand is a single SOLID opaque flat color and a complete independent connected cutout. The 6 skin tone columns must align precisely. True transparent background, no checkerboard, no floor. This is flat geometric animation artwork, no lighting whatsoever."
+        ],
+        "transformations": "Original generated PNG bytes copied without repainting, tracing, alpha thresholding or color edits. Runtime uses measured rectangular viewports and uniform scale.",
+        "fiction": "Original fictional customization artwork, not portraits of real named people.",
+        "license": "Original generated project artwork",
+        "dimensions": {
+          "width": 1536,
+          "height": 1024
+        },
+        "sha256": "afbe9ba1e3c64392eb3cab82e328043de61f4f35d8ceaa661d96fdf54624047e",
+        "mode": "RGBA"
+      },
+      "sha256": "128f063387cbc7f4cf416987934324b49efb5519ec74236fbce24d5b7b0e632e"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-graphic-flat-limbs-v2.provenance.json",
+      "record": {
+        "tool": "built-in image_gen",
+        "creator": "OpenAI ImageGen",
+        "date": "2026-11-04",
+        "purpose": "Active native skin limbs and hands.",
+        "source": "assets/art/avatar-graphic-flat-limbs-v2.png",
+        "references": [
+          "assets/art/graphic-direction-v1.png",
+          "assets/art/avatar-graphic-flat-limbs-v1.png",
+          "assets/art/avatar-graphic-flat-kit-v2.png"
+        ],
+        "promptSet": [
+          "Use case: illustration-story. Asset type: original transparent modular avatar SKIN LIMBS sprite sheet.\nInput is adult geometric STYLE REFERENCE ONLY. Create production animation cutouts in strict solid spot colors. No lighting or 3D.\nWide 1536x1024 sheet, EXACTLY SIX equal columns and FOUR equal rows, 24 separate centered parts with transparent margins, no text or grid. The six columns are six uniform skin colors, left to right pale cream-peach #f7cfb5, warm peach #edb899, honey #d99a63, caramel #b77a49, chestnut #885035, deep brown #573328. Every single part in one column must be exactly the SAME single uniform skin color. No outlines, lines, knuckles, nail marks, fingershading, gradients, shadows, highlights, texture or secondary skin colors.\nROW 1 six detached straight UPPER ARM segments, vertical, rounded shoulder at TOP, elbow at BOTTOM; simple long narrow geometric rounded bars 70 pixels wide by 200 pixels high.\nROW 2 six detached straight FOREARM segments, vertical, elbow at TOP, wrist at BOTTOM; simple slightly tapered rounded bars 64 pixels wide by 200 high.\nROW 3 six detached OPEN FRIENDLY HANDS, identical shape, wrist at TOP with short narrow straight cuff stem, fingertips pointing DOWN. Graphic 4-finger mitten-style hand with distinct broad thumb sticking to viewer LEFT, modest finger lobes on bottom; simple adult proportions, about 100 pixels wide by 180 high. These are complete hand silhouettes, no arms.\nROW 4 six detached THINKING HANDS, identical shape, wrist at TOP with narrow cuff stem, fingers pointing DOWN. Relaxed loosely folded palm shape with one extended index finger on the viewer LEFT edge pointing DOWN, thumb touching bent middle fingers, about 90 wide by 170 high. Clear simple connected hand silhouette.\nEach limb or hand is a single SOLID opaque flat color and a complete independent connected cutout. The 6 skin tone columns must align precisely. True transparent background, no checkerboard, no floor. This is flat geometric animation artwork, no lighting whatsoever.",
+          "Use case: precise-object-edit. Image 1 is the EDIT TARGET: six-column/four-row skin limb sprite sheet. Image 2 is a COLOR REFERENCE ONLY: avatar heads in its TOP ROW. Keep every limb/hand silhouette, pixel position, cell spacing, transparency and canvas size of Image 1 exactly unchanged. Repaint all four parts in each limb column to match the uniform main FACE SKIN COLOR of the corresponding top-row head in Image 2, left to right. In particular the honey/caramel columns must match the head colors, not become golden/desaturated. Each column one solid flat skin color. No shadows, gradients, highlights, side planes, texture, dark wrist/neck bands, outlines or lighting. Preserve native transparency and clean anti-aliased edges. Do not copy any face, hair, accessory, labels or objects from reference onto the limb sheet. Return only the same 24 limb cutouts."
+        ],
+        "transformations": "Original generated PNG bytes copied without repainting, tracing, alpha thresholding or color edits. Runtime uses measured rectangular viewports and uniform scale.",
+        "fiction": "Original fictional customization artwork, not portraits of real named people.",
+        "license": "Original generated project artwork",
+        "dimensions": {
+          "width": 1536,
+          "height": 1024
+        },
+        "sha256": "0e85aad33465a6f67b798fddda80fea8cef603d7ef1b9d7c04ec49b98287680c",
+        "mode": "RGBA"
+      },
+      "sha256": "51a59e10111fcbe14fdf5feb6b94bef01662df840ef32a96abd007f38a007375"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\badges-graphic-v1.provenance.json",
+      "record": {
+        "tool": "built-in image_gen",
+        "purpose": "All three newly designed avatar reward pins",
+        "prompt": "Use case: illustration-story. Create a NEW transparent three-column sprite sheet of3Horizons avatar reward pins in the bold geometric flat cartoon language of the reference. Left: orange five-point star medallion with a small magenta lower ribbon. Middle: angular orange trophy with simple handles, cream center and navy flatbase. Right: navy soft-hexagonal compass badge with a flat cream dial and magenta/orange pointer. Distinct, bold, readable atsmallsize, allfullyinside separatecells withtransparentgutters. Flat opaque uniform color blocks ONLY. No shadows, no gradient, no shine, no texture, no dark sideplanes, no lighting, no bevels, no outlines, no text or background. These are accessories for original Horizons avatars; no character faces. Square transparent sheet arrangedonehorizontalrow.",
+        "source": "assets/art/badges-graphic-v1.png",
+        "pixelPolicy": "Native PNG retained without code pixel edits."
+      },
+      "sha256": "6805a0c6cc872054e98163a01b5fc0c19a76f4783776b13cc223fe9ad7962115"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\graphic-direction-v1.provenance.json",
+      "record": {
+        "tool": "built-in image_gen",
+        "purpose": "Art direction reference; not a runtime sprite",
+        "prompt": "Use case: illustration-story. Create a NEW professional character art-direction sheet for the Horizons language-learning app, using the supplied image only as STYLE REFERENCE. Four columns and two rows, eight separate fully connected designs on a plain white background. No labels or text. Match the reference's bold, witty, confident GEOMETRIC flat cartoon language: distinctive silhouettes, adult-friendly proportions, angular/rounded-rectangle faces, strong simple noses and expressive eyebrows, SMALL white eye shapes with black pupils. Clean simple hands, graphic clothing, saturated color blocks. NOT generic cutesy preschool figures, NOT baby heads, NOT big circular heads with tiny dot-smiles, NOT inflated/puffy/3D illustration. Every shape is an opaque uniform color. NO SHADOWS, NO gradients, highlights, texture, lighting, soft shading, ground shadows, strokes or outlines.\nTOP ROW four full-body original companions, each comfortably inside its own column:\n1 Pico, an adventurous cream mountain hare. Tall graphic ears, one straight and one bent; long compact softly rectangular hare muzzle, small expressive white eyes, asymmetrical brow, broad simple feet, slim torso, magenta diagonal satchel with orange button. Clearly a hare, not a toy baby rabbit. Cheerful open mouth; hand on hip.\n2 Mina, a tall slim adult woman in her late twenties, warm peach skin, angular medium-length dark auburn side-swept hair, softly trapezoid face, prominent angular nose, expressive brows, small white eyes. Magenta open jacket over pale cream shirt, narrow navy trousers, orange flat shoes. One elbow bent with friendly open palm.\n3 Alex, a shorter broad-shouldered adult man in his twenties, rich brown skin, short blocky curls, rounded-rectangle face with broad nose and strong eyebrows, small white eyes. Teal casual jacket, orange shirt, slate navy trousers, cream shoes, simple navy headphones around neck. Confident relaxed stance, one forearm out.\n4 Jo, a stocky older adult woman in her fifties, warm medium-brown skin, compact graphic grey bob, soft-square face, long simple nose, cheerful brows behind small navy glasses. Orange shirt and broad navy café apron, olive trousers, cream shoes. Holds a small teal mug with the supporting hand directly touching it.\nBOTTOM ROW four fully clothed UPPER-CHEST BUST avatar design examples. Genuinely adult facial proportions: head width about two thirds of shoulder width, visible natural neck, small eyes, expressive nose/brows, varied jaw shapes. Same geometric illustration system as the top row. Distinct hairstyles and accessories: navy quiff with bold glasses and teal jacket; auburn asymmetric bob with a vivid magenta scarf; short black curls with orange beanie and navy hoodie; long blonde angular hair with teal headphones and orange sweater. Include varied skin tones. Friendly and stylish for all ages, not childlike dolls. Broad shoulder silhouettes, crisp simple clothes, and clear faces. These are original Horizons designs inspired by the supplied graphic language; do not reproduce the reference's characters. Emphasize designed personality and asymmetry rather than soft circular generic faces.",
+        "source": "assets/art/graphic-direction-v1.png",
+        "productionConstraint": "Use geometric silhouettes and expression only. Omit directional side-plane shading, dark neck triangles, gradients and cast shadows from production sprites."
+      },
+      "sha256": "4303975f9495d2263df03a7fff29726d2ed46058ace8d9ed1c9f70ee31090b12"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-geometric-v1.provenance.json",
+      "record": {
+        "version": 1,
+        "tool": "built-in image_gen.imagegen",
+        "date": "2026-11-04",
+        "useCase": "stylized-concept",
+        "artifact": "jo-geometric-v1.png",
+        "generatedSource": "C:/Users/David/.codex/generated_images/01a1a821-f54c-74b0-a1e7-e96dc5bfc498/exec-d898119e-f481-4655-8e74-1e779d91d641.png",
+        "referenceImages": [
+          "C:/Users/David/AppData/Local/Temp/codex-clipboard-ba1ebdff-2199-4ad7-af10-2d0cb9e571a2.png"
+        ],
+        "sharedIdentityDirection": "assets/art/graphic-direction-v1.png",
+        "prompt": "Use case: stylized-concept. Production native transparent PNG modular character atlas. The supplied image is the GOVERNING STYLE REFERENCE: study its very simple opaque solid geometric fills and adult angular shapes. Draw ONE new character as twelve separate native animation parts, not an assembled person.\nFlat vector-export aesthetic saved as PNG, LIKE A CLEAN SVG RASTER EXPORT: large crisp contiguous uniform color regions, no rendering. ABSOLUTELY NO GRADIENTS, SHADOWS, SHADING, HIGHLIGHTS, TEXTURE, GLOW, LIGHTING OR TRANSLUCENT SURFACES. NO face side-plane shading, NO neck shadow triangle, NO decorative lighter center on limbs. Each material has only one solid opaque color; antialias only the outer edges. Nose and facial features are intentional distinct solid shapes. Minimal colors, geometric editorial Duolingo-like adult character construction.\nRegular 4 COLUMNS × 3 ROWS of square cells. Each cell contains one isolated native piece centered with 25px or more empty transparent gap from boundaries. No labels, no text, no grid lines, no background/checkerboard, no watermark. All limbs straight vertical pointing DOWN, usable rounded connection ends. No miniature assembled figures.\nRow1 left-to-right: complete full front-facing head/hair/ears/face/short PLAIN skin-colored neck, no collar; complete torso only with clothing, no arms/head; viewer-left upper sleeve shoulder-to-elbow; viewer-left plain skin forearm elbow-to-relaxed complete mitten hand, thumb pointing inward.\nRow2: viewer-right upper sleeve shoulder-to-elbow; viewer-right skin forearm down to complete mitten hand, thumb inward; viewer-left upper trouser leg hip-to-knee; viewer-left trouser shin with attached flat shoe pointing LEFT, clear sharp trouser/shoe color boundary.\nRow3: viewer-right upper trouser leg hip-to-knee; viewer-right trouser shin plus attached flat shoe pointing RIGHT; the one accessory described; the one prop described.\nUpper arms and thighs are simple capsules or tapered blocks with soft ends. Hands have one solid mitten silhouette and one integrated thumb, no articulated fingers. Face is a complete intact native drawing, not separate facial features. Transparent background.\nCharacter specification: JO: older STOUT ADULT woman with a soft SQUARED peach-orange face, large simple grey hair silhouette angular at shoulders, navy rectangular glasses across white oval eyes with dark pupils, thick expressive tilted brows, flat triangular orange nose, open warm smile. Orange collared shirt under wide navy apron with one cream rectangular pocket. Olive trousers and cream flat shoes. Torso is wide/trapezoid, short sturdy adult legs. NOT a baby face. Accessory: one simple teal ceramic mug with handle on its right, entirely one solid teal fill, no rim/lighting stripe. Prop: one crumpled cream polishing cloth simple solid angular silhouette.",
+        "transparentBackground": true,
+        "pixelEdits": "None. PNG bytes copied unchanged from native generated output; runtime crops and joint metadata only.",
+        "design": "New adult angular design and individualized proportions, complete native face; no facial overlays.",
+        "sourceAtlasGrid": {
+          "columns": 4,
+          "rows": 3
+        },
+        "measurementTool": "tools/build-graphic-cast.py"
+      },
+      "sha256": "d079be007ca950ce92c58919f48ef90eac639ea3cb8889833b31247374750f66"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jobs-graphic-v2.provenance.json",
+      "record": {
+        "tool": "built-in image_gen.imagegen",
+        "intent": "generate from style references, not reuse prior job characters",
+        "nativeOutputsPreserved": true,
+        "pixelEditing": "none",
+        "references": [
+          {
+            "path": "assets/art/graphic-direction-v1.png",
+            "role": "approved graphic adult direction, style only"
+          },
+          {
+            "path": "C:/Users/David/AppData/Local/Temp/codex-clipboard-ba1ebdff-2199-4ad7-af10-2d0cb9e571a2.png",
+            "role": "user-supplied geometric character reference, style only"
+          }
+        ],
+        "prompts": {
+          "jobs1": [
+            "Use case: illustration-story. Asset type: production transparent raster sprite atlas for an English learning app.\nINPUT REFERENCES: image 1 is the approved character STYLE DIRECTION only; image 2 is the user's geometric cartoon reference, STYLE ONLY. Invent entirely NEW adult characters, never reuse old app characters.\nSTYLE: Bold geometric Duolingo-like 2D cut-paper graphics. Varied ADULT angular and soft-rectangular heads, conspicuous noses, strong black eyebrows, small white eyes with black pupils, expressive mouth shapes. Varied adult body silhouettes: tall lanky, broad barrel, pear-shaped, slim and muscular. Head/body ratio generally 1:3 or 1:3.5; avoid babies and toddlers. Sharp memorable hair silhouettes. Simple block forearms and rounded hands, correct connected joints. Saturated palette teal, magenta, navy, orange, yellow, cream and varied natural skin tones.\nFLATNESS IS MANDATORY: every contiguous material shape is one UNIFORM solid color, including face, neck, hands, hair and clothes. Remove the style direction's neck-shadow triangles, cheek side-plane lighting and any gradient. A darker nose may be a distinct single-color nose shape. NO lighting, shadows of any kind, contact shadows, floor shadows, highlights, modeled volume, gradients, texture, folds, hair shine, outline strokes or 3D.\nLAYOUT: exactly FOUR COLUMNS by SEVEN ROWS: 28 separate square scene cells on a tall transparent canvas, generous empty transparent gutters. Four native successive action poses of the same adult character per row. Repeat exact character identity, head/body size, clothes and base position in all four columns. Safe margins around whole complete figures including feet, hair, props and the supporting people. Each entire scene stays within its seventh of canvas and its quarter of width. No labels, lettering, words, grid lines, panels, decorative background, watermark or floor planes. Only minimal necessary task props.\nANATOMY AND ANIMATION: four genuinely DISTINCT connected hand/forearm phases of one understandable task. Heads stable, limb lengths stable, exact two arms per person, wrists touch hands, sleeves touch arms. A held object ALWAYS physically touches its holding palm or fingers, no floating or detached objects. Stable stationary props. Do not replace real arm poses with whole-body wobble. All adults and supporting adults share the bold new geometric design language.\nROW 1 TEACHER: tall slim adult woman with a long soft-rectangular warm brown face, strong nose and brows, asymmetrical dark burgundy wedge bob, magenta blazer and navy trousers. Supports a small open book with her LEFT hand in all columns, next to a minimal blank teal board. Her RIGHT connected arm points to the board: low, chest level, higher, then open explanatory palm.\nROW 2 CHEF: broad short barrel-bodied adult man with square peach face, large nose, navy moustache and thick brows, white angular chef hat, cream jacket, magenta neckerchief, navy trousers. A simple teal pot rests on a tiny orange counter. His connected RIGHT hand grips a spoon continuously while his forearm follows four distinct stirring positions. LEFT hand on pot handle throughout.\nROW 3 DOCTOR: tall slim middle-aged man with dark brown angular rectangular face, black geometric hair and brows, cream coat with teal stethoscope, navy trousers. Beside him sits a fully NEW adult woman patient, broad head with angular orange bob, magenta shirt and teal trousers on one simple stool. Doctor's LEFT hand supports the patient's outstretched wrist continuously; RIGHT hand checks the wrist, indicates pulse, opens in reassurance, returns. Adult patient fully visible, two connected arms, face unobstructed.\nROW 4 OFFICE WORKER: broad pear-shaped adult woman with an angular honey-colored face, navy rectangular glasses, orange side-part geometric hair, teal blouse. Seated at a minimal orange desk and teal laptop. Four distinct connected arm phases: both hands keyboard, right hand lifted thinking, right index points screen, hands return typing. Entire seated figure and chair contained.\nROW 5 RECEPTIONIST: slim adult woman with long peach rectangular face, oversized triangular nose, strong brows and dark purple asymmetric short hair, magenta tunic. Behind a small plain teal desk with a yellow bell. LEFT hand rests desk continuously; RIGHT connected arm makes four distinct greeting gestures: low open palm, bent at chest, raised sideways, fingers touching bell. Face unchanged.\nROW 6 SALESCLERK: tall lanky adult man with olive tan angular head, large nose, thick brows and a bold black side-part quiff, teal apron over cream shirt, navy trousers. Two folded shirts on a tiny orange counter. Four connected two-hand folding phases of a single magenta shirt: gripping lower edges, lifting at chest, bringing edges inward, laying down folded. Cloth always touches both hands. No extra limbs.\nROW 7 TAXI DRIVER: broad muscular adult woman with dark brown soft-square head, bold nose, small white eyes, navy short hair under a navy cap, yellow vest, cream shirt, navy trousers. Beside a small front-view yellow taxi. Her LEFT hand stays on hip. RIGHT connected arm makes four welcoming gestures toward the taxi: bent low, open palm chest height, pointing to car, broad open palm. Taxi remains fixed.\nRemember: adult rectangular features, graphic silhouette variety, strict solid fills and actual transparent background."
+          ],
+          "jobs2": [
+            "Use case: illustration-story. Asset type: production transparent raster sprite atlas for an English learning app.\nINPUT REFERENCES: image 1 is the approved character STYLE DIRECTION only; image 2 is the user's geometric cartoon reference, STYLE ONLY. Invent entirely NEW adult characters, never reuse old app characters.\nSTYLE: Bold geometric Duolingo-like 2D cut-paper graphics. Varied ADULT angular and soft-rectangular heads, conspicuous noses, strong black eyebrows, small white eyes with black pupils, expressive mouth shapes. Varied adult body silhouettes: tall lanky, broad barrel, pear-shaped, slim and muscular. Head/body ratio generally 1:3 or 1:3.5; avoid babies and toddlers. Sharp memorable hair silhouettes. Simple block forearms and rounded hands, correct connected joints. Saturated palette teal, magenta, navy, orange, yellow, cream and varied natural skin tones.\nFLATNESS IS MANDATORY: every contiguous material shape is one UNIFORM solid color, including face, neck, hands, hair and clothes. Remove the style direction's neck-shadow triangles, cheek side-plane lighting and any gradient. A darker nose may be a distinct single-color nose shape. NO lighting, shadows of any kind, contact shadows, floor shadows, highlights, modeled volume, gradients, texture, folds, hair shine, outline strokes or 3D.\nLAYOUT: exactly FOUR COLUMNS by SEVEN ROWS: 28 separate square scene cells on a tall transparent canvas, generous empty transparent gutters. Four native successive action poses of the same adult character per row. Repeat exact character identity, head/body size, clothes and base position in all four columns. Safe margins around whole complete figures including feet, hair, props and the supporting people. Each entire scene stays within its seventh of canvas and its quarter of width. No labels, lettering, words, grid lines, panels, decorative background, watermark or floor planes. Only minimal necessary task props.\nANATOMY AND ANIMATION: four genuinely DISTINCT connected hand/forearm phases of one understandable task. Heads stable, limb lengths stable, exact two arms per person, wrists touch hands, sleeves touch arms. A held object ALWAYS physically touches its holding palm or fingers, no floating or detached objects. Stable stationary props. Do not replace real arm poses with whole-body wobble. All adults and supporting adults share the bold new geometric design language.\nROW 1 WAITER: tall lanky adult man with long peach rectangular head, big angular nose, navy moustache and strong brows, dark geometric quiff, magenta waistcoat, cream sleeves and navy trousers. RIGHT arm is the FIXED SUPPORT ARM: upper arm down, elbow bent, forearm rises, palm perfectly horizontal. A small teal tray with one cream cup sits DIRECTLY ON that palm in ALL FOUR columns; zero air gap. The entire support arm, tray and cup remain IDENTICAL and physically connected across four columns. LEFT FREE arm changes: down by side, open hand at waist, open palm at chest, extended welcome at shoulder. Keep BOTH attached arms and all tray support visible.\nROW 2 WAITRESS: short broad adult woman with honey-colored soft-square head, strong nose/brows, small white eyes, bold purple bob, orange shirt, magenta apron and navy trousers. LEFT arm is the FIXED SUPPORT ARM: elbow bent, forearm rises, horizontal palm. Small teal tray and one cream cup sit DIRECTLY ON this palm in ALL FOUR columns; no gap, tray always supported. Support arm/tray/cup IDENTICAL across columns. RIGHT FREE arm changes: down, bent at waist, palm raised at chest, welcome extended at shoulder. No dropped or hidden support hand.\nROW 3 FARMER: broad adult man with brown angular long face, large nose, dark block beard, yellow geometric hat, teal shirt and magenta overalls. One minimal tomato plant and a basket on the ground. Four connected RIGHT hand actions: reach plant, grip red tomato still on plant, hold tomato near chest, lower tomato into basket. LEFT hand touches basket handle throughout. Props never float.\nROW 4 NURSE: tall adult woman with dark brown rectangular face, strong brows and nose, angular black hair bun, teal scrubs, cream shoes. Seated adult man patient has a NEW wide peach rectangular face, navy flat-top hair and moustache, orange shirt, navy trousers, plain stool. Nurse LEFT hand supports patient's extended wrist continuously; RIGHT hand checks pulse, points to wrist, opens reassuring palm, returns. Both adults fully visible and adult-proportioned.\nROW 5 DENTIST: slim adult man with long tan rectangular face, large nose, navy rectangular glasses, black wedge hair, cream coat, teal shirt and navy trousers. LEFT hand continuously supports one large cream tooth model at chest height; tooth touches palm. RIGHT connected free arm points low on tooth, points high on tooth, opens explanatory palm beside it, returns to lower point. One very small simple teal dental chair beside him. No other props.\nROW 6 POLICE OFFICER: broad adult woman with dark brown angular square head, bold nose and brows, black block hair, navy cap and navy uniform with a flat yellow badge. Beside a fully NEW short older woman with a long peach rectangular face, bold nose, white angular bob, navy glasses, magenta tunic and olive trousers. Older woman's LEFT hand grips a cane continuously, cane grounded. Officer RIGHT connected arm guides across a minimal pair of cream zebra-crossing stripes: low open palm, extended pointing, raised open palm, lowered reassurance. Officer LEFT hand stays on hip. Older adult remains stable with exactly two arms. Entire scene contained.\nROW 7 ACTOR: tall slender adult man with angular warm-brown rectangular face, oversized nose, thick expressive brows, dark burgundy wavy geometric hair and moustache, magenta waistcoat, cream shirt and navy trousers. LEFT hand continuously GRIPS a simple yellow comedy theatre mask by its lower edge. RIGHT connected free arm makes four expressive theatrical gestures: bent low palm, palm raised, arm extended, then hand at chest with a small bow. Mask remains in its connected hand. No stage, curtains or floor.\nRemember: adult rectangular features, graphic silhouette variety, strict solid fills and actual transparent background."
+          ]
+        },
+        "outputs": [
+          {
+            "file": "jobs-graphic-1-v2.png",
+            "original": "C:/Users/David/.codex/generated_images/01a1a822-4dc1-7a51-8a0f-6b28e7239e61/exec-1e87c5b3-0c25-4316-a614-2e658eccf1b0.png"
+          },
+          {
+            "file": "jobs-graphic-2-v2.png",
+            "original": "C:/Users/David/.codex/generated_images/01a1a822-4dc1-7a51-8a0f-6b28e7239e61/exec-1d076252-6d1c-4665-b9c1-1133decbad00.png"
+          }
+        ]
+      },
+      "sha256": "006f9431ecbb690e0ee4f2a36649b2c76821009ed1112e0886a9d4c2e87c42be"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jobs-graphic-v3.provenance.json",
+      "record": {
+        "tool": "built-in image_gen.imagegen",
+        "intent": "generate from style references, not reuse prior job characters",
+        "nativeOutputsPreserved": true,
+        "pixelEditing": "none",
+        "references": [
+          {
+            "path": "assets/art/graphic-direction-v1.png",
+            "role": "approved graphic adult direction, style only"
+          },
+          {
+            "path": "C:/Users/David/AppData/Local/Temp/codex-clipboard-ba1ebdff-2199-4ad7-af10-2d0cb9e571a2.png",
+            "role": "user-supplied geometric character reference, style only"
+          }
+        ],
+        "prompts": {
+          "jobs1": [
+            "Use case: illustration-story. Asset type: production transparent raster sprite atlas for an English learning app.\nINPUT REFERENCES: image 1 is the approved character STYLE DIRECTION only; image 2 is the user's geometric cartoon reference, STYLE ONLY. Invent entirely NEW adult characters, never reuse old app characters.\nSTYLE: Bold geometric Duolingo-like 2D cut-paper graphics. Varied ADULT angular and soft-rectangular heads, conspicuous noses, strong black eyebrows, small white eyes with black pupils, expressive mouth shapes. Varied adult body silhouettes: tall lanky, broad barrel, pear-shaped, slim and muscular. Head/body ratio generally 1:3 or 1:3.5; avoid babies and toddlers. Sharp memorable hair silhouettes. Simple block forearms and rounded hands, correct connected joints. Saturated palette teal, magenta, navy, orange, yellow, cream and varied natural skin tones.\nFLATNESS IS MANDATORY: every contiguous material shape is one UNIFORM solid color, including face, neck, hands, hair and clothes. Remove the style direction's neck-shadow triangles, cheek side-plane lighting and any gradient. A darker nose may be a distinct single-color nose shape. NO lighting, shadows of any kind, contact shadows, floor shadows, highlights, modeled volume, gradients, texture, folds, hair shine, outline strokes or 3D.\nLAYOUT: exactly FOUR COLUMNS by SEVEN ROWS: 28 separate square scene cells on a tall transparent canvas, generous empty transparent gutters. Four native successive action poses of the same adult character per row. Repeat exact character identity, head/body size, clothes and base position in all four columns. Safe margins around whole complete figures including feet, hair, props and the supporting people. Each entire scene stays within its seventh of canvas and its quarter of width. No labels, lettering, words, grid lines, panels, decorative background, watermark or floor planes. Only minimal necessary task props.\nANATOMY AND ANIMATION: four genuinely DISTINCT connected hand/forearm phases of one understandable task. Heads stable, limb lengths stable, exact two arms per person, wrists touch hands, sleeves touch arms. A held object ALWAYS physically touches its holding palm or fingers, no floating or detached objects. Stable stationary props. Do not replace real arm poses with whole-body wobble. All adults and supporting adults share the bold new geometric design language.\nROW 1 TEACHER: tall slim adult woman with a long soft-rectangular warm brown face, strong nose and brows, asymmetrical dark burgundy wedge bob, magenta blazer and navy trousers. Supports a small open book with her LEFT hand in all columns, next to a minimal blank teal board. Her RIGHT connected arm points to the board: low, chest level, higher, then open explanatory palm.\nROW 2 CHEF: broad short barrel-bodied adult man with square peach face, large nose, navy moustache and thick brows, white angular chef hat, cream jacket, magenta neckerchief, navy trousers. A simple teal pot rests on a tiny orange counter. His connected RIGHT hand grips a spoon continuously while his forearm follows four distinct stirring positions. LEFT hand on pot handle throughout.\nROW 3 DOCTOR: tall slim middle-aged man with dark brown angular rectangular face, black geometric hair and brows, cream coat with teal stethoscope, navy trousers. Beside him sits a fully NEW adult woman patient, broad head with angular orange bob, magenta shirt and teal trousers on one simple stool. Doctor's LEFT hand supports the patient's outstretched wrist continuously; RIGHT hand checks the wrist, indicates pulse, opens in reassurance, returns. Adult patient fully visible, two connected arms, face unobstructed.\nROW 4 OFFICE WORKER: broad pear-shaped adult woman with an angular honey-colored face, navy rectangular glasses, orange side-part geometric hair, teal blouse. Seated at a minimal orange desk and teal laptop. Four distinct connected arm phases: both hands keyboard, right hand lifted thinking, right index points screen, hands return typing. Entire seated figure and chair contained.\nROW 5 RECEPTIONIST: slim adult woman with long peach rectangular face, oversized triangular nose, strong brows and dark purple asymmetric short hair, magenta tunic. Behind a small plain teal desk with a yellow bell. LEFT hand rests desk continuously; RIGHT connected arm makes four distinct greeting gestures: low open palm, bent at chest, raised sideways, fingers touching bell. Face unchanged.\nROW 6 SALESCLERK: tall lanky adult man with olive tan angular head, large nose, thick brows and a bold black side-part quiff, teal apron over cream shirt, navy trousers. Two folded shirts on a tiny orange counter. Four connected two-hand folding phases of a single magenta shirt: gripping lower edges, lifting at chest, bringing edges inward, laying down folded. Cloth always touches both hands. No extra limbs.\nROW 7 TAXI DRIVER: broad muscular adult woman with dark brown soft-square head, bold nose, small white eyes, navy short hair under a navy cap, yellow vest, cream shirt, navy trousers. Beside a small front-view yellow taxi. Her LEFT hand stays on hip. RIGHT connected arm makes four welcoming gestures toward the taxi: bent low, open palm chest height, pointing to car, broad open palm. Taxi remains fixed.\nRemember: adult rectangular features, graphic silhouette variety, strict solid fills and actual transparent background.",
+            "Use case: precise-object-edit. EDIT TARGET: the attached native 4-column by 7-row job sprite atlas. Change only the rendering finish and the explicitly named anatomy/action repairs below. Keep all 28 scene cells, every character identity, rectangular adult facial features, strong noses/brows, varied adult body silhouettes, hairstyles, clothes, task props, stable layout/scale, four columns and seven rows, safe margins and genuine transparent background.\nHARD RENDERING REQUIREMENT: repaint every material interior as a completely UNIFORM single solid fill, like strict flat cut-paper or flat vector graphics. It currently has subtle gradients, darker neck triangles, side planes and material shading. REMOVE ALL OF THEM. Every hair silhouette is one flat hair color. Each face/neck/hand material is one consistent flat skin color. Each shirt, sleeve, trouser leg, jacket, apron, desk face, pot, plant leaf, hat and shoe material is one uniform color with NO light/dark progression. Distinct overlapping object silhouettes may have different flat fills, but no colored lighting, no darker underside, no bevel, no contact-shadow band. Remove cream shoe edge shading, dark neck triangles, lapel-side lighting, glows, grain, tonal texture, wrinkles and hair shine. NO cast, floor or contact shadows, highlights, gradients, modeled volume, strokes, outlines, 3D or background. Keep simple solid nose shapes, small white eyes/black pupils, strong eyebrows and expressive mouth.\nUse the same saturated magenta, teal, orange, yellow, navy, cream, hair and skin palette as the target. Preserve safe transparent gutters and complete figures. Never add letters, labels, border, grid lines or watermark. All hands/wrists/sleeves connected, exact two arms per person.\nANATOMY/ACTION REPAIRS:\nROW3 DOCTOR: In ALL four cells, the doctor's support hand beneath the patient's wrist must be the SAME dark-brown skin tone as his face and other hand, continuously connected to his own sleeve; remove peach doctor's-hand artifact in column3. The woman patient's hand/arm remains her peach skin tone. Keep their hands anatomically separate and clear.\nROW2 CHEF: make four stirring phases distinct: spoon hand moves left-up, right-up, right-low, left-low, continuously gripping spoon, support hand on pot handle.\nROW3 DOCTOR phase4 must differ from phase2: phase2 points at pulse, phase4 free hand at his own chest reassuring the patient. Keep the fixed support hand at the patient's wrist.\nROW4 OFFICE WORKER phase4 differs from phase1 by left hand lifted just above keyboard while right hand rests keyboard.\nAll other scenes preserve four distinct meaningful connected arm actions."
+          ],
+          "jobs2": [
+            "Use case: illustration-story. Asset type: production transparent raster sprite atlas for an English learning app.\nINPUT REFERENCES: image 1 is the approved character STYLE DIRECTION only; image 2 is the user's geometric cartoon reference, STYLE ONLY. Invent entirely NEW adult characters, never reuse old app characters.\nSTYLE: Bold geometric Duolingo-like 2D cut-paper graphics. Varied ADULT angular and soft-rectangular heads, conspicuous noses, strong black eyebrows, small white eyes with black pupils, expressive mouth shapes. Varied adult body silhouettes: tall lanky, broad barrel, pear-shaped, slim and muscular. Head/body ratio generally 1:3 or 1:3.5; avoid babies and toddlers. Sharp memorable hair silhouettes. Simple block forearms and rounded hands, correct connected joints. Saturated palette teal, magenta, navy, orange, yellow, cream and varied natural skin tones.\nFLATNESS IS MANDATORY: every contiguous material shape is one UNIFORM solid color, including face, neck, hands, hair and clothes. Remove the style direction's neck-shadow triangles, cheek side-plane lighting and any gradient. A darker nose may be a distinct single-color nose shape. NO lighting, shadows of any kind, contact shadows, floor shadows, highlights, modeled volume, gradients, texture, folds, hair shine, outline strokes or 3D.\nLAYOUT: exactly FOUR COLUMNS by SEVEN ROWS: 28 separate square scene cells on a tall transparent canvas, generous empty transparent gutters. Four native successive action poses of the same adult character per row. Repeat exact character identity, head/body size, clothes and base position in all four columns. Safe margins around whole complete figures including feet, hair, props and the supporting people. Each entire scene stays within its seventh of canvas and its quarter of width. No labels, lettering, words, grid lines, panels, decorative background, watermark or floor planes. Only minimal necessary task props.\nANATOMY AND ANIMATION: four genuinely DISTINCT connected hand/forearm phases of one understandable task. Heads stable, limb lengths stable, exact two arms per person, wrists touch hands, sleeves touch arms. A held object ALWAYS physically touches its holding palm or fingers, no floating or detached objects. Stable stationary props. Do not replace real arm poses with whole-body wobble. All adults and supporting adults share the bold new geometric design language.\nROW 1 WAITER: tall lanky adult man with long peach rectangular head, big angular nose, navy moustache and strong brows, dark geometric quiff, magenta waistcoat, cream sleeves and navy trousers. RIGHT arm is the FIXED SUPPORT ARM: upper arm down, elbow bent, forearm rises, palm perfectly horizontal. A small teal tray with one cream cup sits DIRECTLY ON that palm in ALL FOUR columns; zero air gap. The entire support arm, tray and cup remain IDENTICAL and physically connected across four columns. LEFT FREE arm changes: down by side, open hand at waist, open palm at chest, extended welcome at shoulder. Keep BOTH attached arms and all tray support visible.\nROW 2 WAITRESS: short broad adult woman with honey-colored soft-square head, strong nose/brows, small white eyes, bold purple bob, orange shirt, magenta apron and navy trousers. LEFT arm is the FIXED SUPPORT ARM: elbow bent, forearm rises, horizontal palm. Small teal tray and one cream cup sit DIRECTLY ON this palm in ALL FOUR columns; no gap, tray always supported. Support arm/tray/cup IDENTICAL across columns. RIGHT FREE arm changes: down, bent at waist, palm raised at chest, welcome extended at shoulder. No dropped or hidden support hand.\nROW 3 FARMER: broad adult man with brown angular long face, large nose, dark block beard, yellow geometric hat, teal shirt and magenta overalls. One minimal tomato plant and a basket on the ground. Four connected RIGHT hand actions: reach plant, grip red tomato still on plant, hold tomato near chest, lower tomato into basket. LEFT hand touches basket handle throughout. Props never float.\nROW 4 NURSE: tall adult woman with dark brown rectangular face, strong brows and nose, angular black hair bun, teal scrubs, cream shoes. Seated adult man patient has a NEW wide peach rectangular face, navy flat-top hair and moustache, orange shirt, navy trousers, plain stool. Nurse LEFT hand supports patient's extended wrist continuously; RIGHT hand checks pulse, points to wrist, opens reassuring palm, returns. Both adults fully visible and adult-proportioned.\nROW 5 DENTIST: slim adult man with long tan rectangular face, large nose, navy rectangular glasses, black wedge hair, cream coat, teal shirt and navy trousers. LEFT hand continuously supports one large cream tooth model at chest height; tooth touches palm. RIGHT connected free arm points low on tooth, points high on tooth, opens explanatory palm beside it, returns to lower point. One very small simple teal dental chair beside him. No other props.\nROW 6 POLICE OFFICER: broad adult woman with dark brown angular square head, bold nose and brows, black block hair, navy cap and navy uniform with a flat yellow badge. Beside a fully NEW short older woman with a long peach rectangular face, bold nose, white angular bob, navy glasses, magenta tunic and olive trousers. Older woman's LEFT hand grips a cane continuously, cane grounded. Officer RIGHT connected arm guides across a minimal pair of cream zebra-crossing stripes: low open palm, extended pointing, raised open palm, lowered reassurance. Officer LEFT hand stays on hip. Older adult remains stable with exactly two arms. Entire scene contained.\nROW 7 ACTOR: tall slender adult man with angular warm-brown rectangular face, oversized nose, thick expressive brows, dark burgundy wavy geometric hair and moustache, magenta waistcoat, cream shirt and navy trousers. LEFT hand continuously GRIPS a simple yellow comedy theatre mask by its lower edge. RIGHT connected free arm makes four expressive theatrical gestures: bent low palm, palm raised, arm extended, then hand at chest with a small bow. Mask remains in its connected hand. No stage, curtains or floor.\nRemember: adult rectangular features, graphic silhouette variety, strict solid fills and actual transparent background.",
+            "Use case: precise-object-edit. EDIT TARGET: the attached native 4-column by 7-row job sprite atlas. Change only the rendering finish and the explicitly named anatomy/action repairs below. Keep all 28 scene cells, every character identity, rectangular adult facial features, strong noses/brows, varied adult body silhouettes, hairstyles, clothes, task props, stable layout/scale, four columns and seven rows, safe margins and genuine transparent background.\nHARD RENDERING REQUIREMENT: repaint every material interior as a completely UNIFORM single solid fill, like strict flat cut-paper or flat vector graphics. It currently has subtle gradients, darker neck triangles, side planes and material shading. REMOVE ALL OF THEM. Every hair silhouette is one flat hair color. Each face/neck/hand material is one consistent flat skin color. Each shirt, sleeve, trouser leg, jacket, apron, desk face, pot, plant leaf, hat and shoe material is one uniform color with NO light/dark progression. Distinct overlapping object silhouettes may have different flat fills, but no colored lighting, no darker underside, no bevel, no contact-shadow band. Remove cream shoe edge shading, dark neck triangles, lapel-side lighting, glows, grain, tonal texture, wrinkles and hair shine. NO cast, floor or contact shadows, highlights, gradients, modeled volume, strokes, outlines, 3D or background. Keep simple solid nose shapes, small white eyes/black pupils, strong eyebrows and expressive mouth.\nUse the same saturated magenta, teal, orange, yellow, navy, cream, hair and skin palette as the target. Preserve safe transparent gutters and complete figures. Never add letters, labels, border, grid lines or watermark. All hands/wrists/sleeves connected, exact two arms per person.\nANATOMY/ACTION REPAIRS:\nROW1 WAITER COLUMN4 CURRENTLY FAILS: the arm that supports the tray disappears into the free arm. REPAIR ONLY THIS ARM ANATOMY. In every column, his tray-support arm MUST be a visibly separate cream sleeve starting from his RIGHT shoulder (viewer-right), descending to an elbow clearly to the right of his ribcage, then rising diagonally to his peach horizontal supporting PALM directly under the tray. The tray bottom TOUCHES that supporting palm with zero air gap. The support arm/palm/tray/cup arrangement must match the correct connected support arm in column1. In column4 the FREE LEFT arm on viewer-left bends with his hand placed on the upper chest, palm facing outward. Its sleeve starts from the OTHER shoulder, bends at the viewer-left elbow, stays entirely on the viewer-left side and NEVER passes through or replaces the tray-support arm. Both arms MUST be visible as separately connected arms. Column3 free hand is lower on abdomen so column4 is a distinct fourth pose.\nROW4 NURSE phase4 differs from phase1: the nurse keeps her support hand at patient's wrist and raises the free hand to her own chest reassuringly.\nALL ROW1 and ROW2 serving trays must physically rest on the supporting palm in all four cells. Maintain the correct waitress support arrangement.\nEvery held tooth, theatre mask, cane, tomato or basket physically touches its holding fingers in every phase. Keep every other action and identity unchanged."
+          ],
+          "chef": [
+            "Use case: illustration-story. Generate a NEW transparent one-row four-column native sprite strip, four square action cells on a wide canvas, using the adult CHEF FROM ROW2 of the reference atlas as character identity/style reference only. No other rows or people. Preserve that chef's broad body, angular peach adult face, big navy moustache/nose, strong brows, small white eyes, angular white chef hat, magenta neckerchief, cream coat, navy trousers and cream shoes. Minimal teal pot on orange block counter stays fixed.\nUse strict flat saturated geometric cut-paper shapes. Each shape ONE uniform solid fill. No gradients, lights, modeling, shadows, highlights, texture, fabric folds, neck triangles, darker edges, outlines, floor marks, lettering, background or watermark. Genuine PNG alpha transparency. Entire complete chef, hat, hands, pot and counter fit safely in EACH cell with wide transparent gutters.\nFIXED left supporting hand grips pot handle continuously. MOVING right hand ALWAYS GRIPS a long clearly VISIBLE brown spoon, with palm and fingers touching its handle in all four frames. The spoon extends WELL ABOVE the pot rim in EVERY frame so it never disappears inside the pot or behind the body. No phase with two hands merely holding the pot.\nThe four native hand/forearm and spoon phases are deliberately distinct: 1 right hand at height of mid chest to viewer-left of pot center, spoon slants down-right into pot; 2 right hand higher at collar height above center, spoon nearly vertical into pot; 3 right hand at mid chest to viewer-right of pot center, spoon slants down-left into pot; 4 right hand at lower chest but still well above rim, toward far viewer-left, spoon slants down-right into pot. These are four stirring phases with stable body/head/prop positions, correct connected elbows and wrist. Exactly two arms, no floating spoon. Support hand stays pot handle. Small white eyes and expressive happy adult face consistent. Four full scenes only.",
+            "Use case: style-transfer. EDIT TARGET image1. STYLE REFERENCE image2, FLAT COLOR ONLY. Preserve the exact four distinct poses, complete scene shapes, adult face, clothes, props, four-column strip, exact composition and transparent background in image1. Change ONLY shading finish. Render the target as literal flat SVG-style fill artwork: every material has ONE solid unchanging RGB fill. Technically uniform interiors. NO smooth tonal transition or mottled texture anywhere. A white coat must be a single solid cream #fff0d3, never grey under an arm. The chef hat is same single cream. Face, ears, neck and hands each one peach #f6ac80, with a separate one-color orange nose. Each teal pot is single teal #007f83, never brighter left or darker right. Each orange counter is single orange #ff8000, not shaded. Each magenta cloth area single magenta #b8135f. Navy uniform/trousers single navy #183e57. Every hair silhouette one solid color. All white shoes one solid cream. Every discrete shape flat from edge to edge, exactly like original flat geometric style reference. Remove ALL gradients, texture, light, shadows, dark undersides, highlights, modeled roundness, depth, volume, edge bands, folds, neck-shadow triangles, cheek planes, outlining. Keep small eye whites/pupils/eyebrows and mouth, supported touching hands and props, and transparent gutters. Preserve native four-pose action differences. No new shapes, no words, no labels, no watermark."
+          ],
+          "police": [
+            "Use case: illustration-story. Generate a NEW transparent one-row four-column native sprite strip, four square action cells on a wide canvas. Identity/style reference only: use the POLICE OFFICER AND OLDER WOMAN FROM ROW6 of attached reference atlas, no other people or rows. Preserve broad adult officer with dark warm-brown rectangular face, bold nose/brows, small white eyes, navy hair/cap/uniform and yellow badge. Preserve older woman's rectangular peach adult face, large nose, white angular bob, navy glasses, magenta tunic and olive trousers. Her hand physically grips a brown cane continuously, cane grounded. Put only two small cream flat crossing stripes below the pair; no ground plane.\nStrict flat saturated geometric cut-paper shapes: each shape ONE uniform solid fill. No gradients, lighting, shadows, highlights, texture, folds, neck triangles, darker material edges, outlines, floor shadows, lettering, background or watermark. Genuine transparent PNG alpha. Entire pair, head/hair, feet, both hands, cane and stripes fit safely INSIDE every square cell with wide transparent gutters.\nFour unmistakably DISTINCT connected guiding-arm actions. Officer's LEFT hand rests on hip in every phase. Her RIGHT arm: FRAME1 bends down with open palm at her waist, never holding the older woman's hand. FRAME2 extends sideways, index points clearly across crossing. FRAME3 elbow bends and open hand raises beside her head, palm outward. FRAME4 elbow bends with hand placed clearly on her OWN upper chest, reassuringly. FRAME4 must NOT repeat FRAME1. Exactly two arms per person and connected shoulders, elbows, wrists, hands. Keep older woman in identical stable standing pose in all4, free hand resting at her side, other hand grips cane. Stable character sizes and faces across frames. Four full scenes only.",
+            "Use case: style-transfer. EDIT TARGET image1. STYLE REFERENCE image2, FLAT COLOR ONLY. Preserve the exact four distinct poses, complete scene shapes, adult face, clothes, props, four-column strip, exact composition and transparent background in image1. Change ONLY shading finish. Render the target as literal flat SVG-style fill artwork: every material has ONE solid unchanging RGB fill. Technically uniform interiors. NO smooth tonal transition or mottled texture anywhere. A white coat must be a single solid cream #fff0d3, never grey under an arm. The chef hat is same single cream. Face, ears, neck and hands each one peach #f6ac80, with a separate one-color orange nose. Each teal pot is single teal #007f83, never brighter left or darker right. Each orange counter is single orange #ff8000, not shaded. Each magenta cloth area single magenta #b8135f. Navy uniform/trousers single navy #183e57. Every hair silhouette one solid color. All white shoes one solid cream. Every discrete shape flat from edge to edge, exactly like original flat geometric style reference. Remove ALL gradients, texture, light, shadows, dark undersides, highlights, modeled roundness, depth, volume, edge bands, folds, neck-shadow triangles, cheek planes, outlining. Keep small eye whites/pupils/eyebrows and mouth, supported touching hands and props, and transparent gutters. Preserve native four-pose action differences. No new shapes, no words, no labels, no watermark."
+          ]
+        },
+        "outputs": [
+          {
+            "file": "jobs-graphic-1-v2.png",
+            "original": "C:/Users/David/.codex/generated_images/01a1a822-4dc1-7a51-8a0f-6b28e7239e61/exec-1e87c5b3-0c25-4316-a614-2e658eccf1b0.png",
+            "status": "unused candidate"
+          },
+          {
+            "file": "jobs-graphic-2-v2.png",
+            "original": "C:/Users/David/.codex/generated_images/01a1a822-4dc1-7a51-8a0f-6b28e7239e61/exec-1d076252-6d1c-4665-b9c1-1133decbad00.png",
+            "status": "unused candidate"
+          },
+          {
+            "file": "jobs-graphic-1-v3.png",
+            "original": "C:/Users/David/.codex/generated_images/01a1a822-4dc1-7a51-8a0f-6b28e7239e61/exec-e7876716-3f69-404e-8daa-a3e3d091216e.png",
+            "status": "active except superseded chef row"
+          },
+          {
+            "file": "jobs-graphic-2-v3.png",
+            "original": "C:/Users/David/.codex/generated_images/01a1a822-4dc1-7a51-8a0f-6b28e7239e61/exec-696d2459-33dc-4b69-be2a-052e17cbded2.png",
+            "status": "active except superseded police row"
+          },
+          {
+            "file": "chef-graphic-v1.png",
+            "original": "C:/Users/David/.codex/generated_images/01a1a822-4dc1-7a51-8a0f-6b28e7239e61/exec-0f0536a9-5e06-487b-92c3-f7a3104f5df4.png",
+            "status": "unused initial strip"
+          },
+          {
+            "file": "police-graphic-v1.png",
+            "original": "C:/Users/David/.codex/generated_images/01a1a822-4dc1-7a51-8a0f-6b28e7239e61/exec-711f6d7a-7d93-49c7-88a1-166da5e17934.png",
+            "status": "unused initial strip"
+          },
+          {
+            "file": "chef-graphic-v2.png",
+            "original": "C:/Users/David/.codex/generated_images/01a1a822-4dc1-7a51-8a0f-6b28e7239e61/exec-de3e3178-3ad6-4d61-8979-d3eae75636e7.png",
+            "status": "active"
+          },
+          {
+            "file": "police-graphic-v2.png",
+            "original": "C:/Users/David/.codex/generated_images/01a1a822-4dc1-7a51-8a0f-6b28e7239e61/exec-ed0894cb-1110-45d3-a6de-d47c1ef99e40.png",
+            "status": "active"
+          }
+        ]
+      },
+      "sha256": "b335e0981036f26e2fb9320df83055396463b16cd1030aa54d1ab22da0efe7dc"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-geometric-v2.provenance.json",
+      "record": {
+        "version": 1,
+        "tool": "built-in image_gen.imagegen",
+        "date": "2026-11-04",
+        "useCase": "stylized-concept",
+        "artifact": "mina-geometric-v2.png",
+        "generatedSource": "C:/Users/David/.codex/generated_images/01a1a821-f54c-74b0-a1e7-e96dc5bfc498/exec-685baa6b-34b5-44ab-af94-60361b45fcb4.png",
+        "referenceImages": [
+          "C:/Users/David/AppData/Local/Temp/codex-clipboard-ba1ebdff-2199-4ad7-af10-2d0cb9e571a2.png"
+        ],
+        "sharedIdentityDirection": "assets/art/graphic-direction-v1.png",
+        "prompt": "Use case: stylized-concept. Production native transparent PNG modular character atlas. The supplied image is the GOVERNING STYLE REFERENCE: study its very simple opaque solid geometric fills and adult angular shapes. Draw ONE new character as twelve separate native animation parts, not an assembled person.\nFlat vector-export aesthetic saved as PNG, LIKE A CLEAN SVG RASTER EXPORT: large crisp contiguous uniform color regions, no rendering. ABSOLUTELY NO GRADIENTS, SHADOWS, SHADING, HIGHLIGHTS, TEXTURE, GLOW, LIGHTING OR TRANSLUCENT SURFACES. NO face side-plane shading, NO neck shadow triangle, NO decorative lighter center on limbs. Each material has only one solid opaque color; antialias only the outer edges. Nose and facial features are intentional distinct solid shapes. Minimal colors, geometric editorial Duolingo-like adult character construction.\nRegular 4 COLUMNS × 3 ROWS of square cells. Each cell contains one isolated native piece centered with 25px or more empty transparent gap from boundaries. No labels, no text, no grid lines, no background/checkerboard, no watermark. All limbs straight vertical pointing DOWN, usable rounded connection ends. No miniature assembled figures.\nRow1 left-to-right: complete full front-facing head/hair/ears/face/short PLAIN skin-colored neck, no collar; complete torso only with clothing, no arms/head; viewer-left upper sleeve shoulder-to-elbow; viewer-left plain skin forearm elbow-to-relaxed complete mitten hand, thumb pointing inward.\nRow2: viewer-right upper sleeve shoulder-to-elbow; viewer-right skin forearm down to complete mitten hand, thumb inward; viewer-left upper trouser leg hip-to-knee; viewer-left trouser shin with attached flat shoe pointing LEFT, clear sharp trouser/shoe color boundary.\nRow3: viewer-right upper trouser leg hip-to-knee; viewer-right trouser shin plus attached flat shoe pointing RIGHT; the one accessory described; the one prop described.\nUpper arms and thighs are simple capsules or tapered blocks with soft ends. Hands have one solid mitten silhouette and one integrated thumb, no articulated fingers. Face is a complete intact native drawing, not separate facial features. Transparent background.\nCharacter specification: MINA: tall slim ADULT woman with a LONG ANGULAR peach face, dramatic large geometric swept burgundy hair pointing diagonally above her forehead, golden rectangular earrings, thick asymmetrically tilted eyebrows, open friendly smiling mouth, cream shirt under a magenta tailored jacket, slim navy trousers, orange flat shoes. Match the adult angular woman identity of the master described here; head must not be round or babyish. Accessory: small magenta backpack with cream loop strap. Prop: folded cream map with solid teal and orange region blocks.",
+        "transparentBackground": true,
+        "pixelEdits": "None. PNG bytes copied unchanged from native generated output; runtime crops and joint metadata only.",
+        "design": "New adult angular design and individualized proportions, complete native face; no facial overlays.",
+        "sourceAtlasGrid": {
+          "columns": 4,
+          "rows": 3
+        },
+        "measurementTool": "tools/build-graphic-cast.py"
+      },
+      "sha256": "f08fb3a5bfe5861c11bf7046f639b9da4d9e4626fec541083db03e7fc8367f4e"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\pico-graphic-v1.provenance.json",
+      "record": {
+        "tool": "built-in image_gen",
+        "prompt": "Use case: illustration-story. Create a NEW transparent production animation-part atlas for PICO, the mountain hare shown at top-left of Image1. Image1 is the new Horizons art direction; Image2 is graphic style reference only. Match Pico's NEW angular, witty graphic design: long softly rectangular hare muzzle, small white oval eyes with navy pupils, strong expressive eyebrow, flat triangular orange nose, open magenta mouth, tall straight ear and bent ear, slim warm-cream body in a simple NAVY VEST, broad flat feet, magenta satchel. NOT a baby rabbit, not old rounded mascot art, not a 3D plush figure.\nExactly4columns×4rows, separate well-spaced parts with transparent gutters. Row1: complete head WITHOUT ears, facing slightly right, eyes/nose/brow/mouth together; sleeveless torso in navy vest with no head/limbs/satchel; straight left ear; bent right ear. Row2: left upper arm, diagonal rounded capsule; left forearm ending in a downward relaxed simple paw; right upper arm, diagonal rounded capsule; right forearm with an open friendly paw, clear elbow-to-wrist line and small fingers. Row3: left thigh; left lower leg with broad foot pointing LEFT; right thigh; right lower leg with broad foot pointing RIGHT. Row4: separate magenta satchel with orange button; separate diagonal curved magenta strap; small open navy book with orange spine and flat cream pages; folded cream map with bold green hills, blue lake and orange dotted route. Everypart alone, no attached neighboringparts, no part labels/grid/text.\nEverymaterial is ONE uniform opaque color. Use geometric silhouettes and crisp antialiased edges. NO SHADOWS: no neck-shadow triangles or dark ear-base shading from the master; no side-plane lighting, gradients, rim light, highlights, texture, soft shading, beveled joints, folds or endcap rings. Allcream fur same #FFE1B8; vest/eyes navy#183B56; earinterior orange#FF9230; satchelmagenta#BC185B. Flat intentional vest/material panels allowed. Genuinely transparent alpha outside silhouettes; no ground, glow or shadow. All parts fully inside canvas, square atlas. Retain the master’s designed expression and proportions.",
+        "source": "assets/art/pico-graphic-v1.png",
+        "notes": "New character from scratch; native PNG unchanged; alpha and joints measured read-only."
+      },
+      "sha256": "4abd3c60dd40bff464821b06eb91c951606a8ed5a3d246741dd6eed209cceb9e"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\profile-graphic-v1.provenance.json",
+      "record": {
+        "tool": "built-in image_gen",
+        "purpose": "New profile navigation bust",
+        "prompt": [
+          "Create one NEW simple profile navigation icon for Horizons, inspired by the graphic adult avatar busts at BOTTOM of Image1. Image2 is style reference. A single original adult upper-chest bust with a softly rectangular/angular peach face, strong angular nose and eyebrow, small white eyes, tall sweeping navy quiff, broad teal collar shoulders. Three-quarter friendly view, stylish geometric silhouette, not a baby or roundheaded doll. Fit entirely inside a square with ample transparent margins. Absolutely flat opaque color blocks, no shadows, shading, gradients, highlights, texture, 3D, outlines, ground or background. No text. Clean transparent alpha.",
+          "Use case: precise-object-edit. Edit this profile icon ONLY to remove modeled shading. Keep exact silhouette, pose, face, glasses, hair and clothing geometry. REMOVE the dark triangular shadow under the chin: the ENTIRE neck and face must be one uniform flat peach color. Remove cheek side-plane gradients, hair gradients and dark lit/shaded collar planes. Keep a flat orange nose, black pupils/eyebrows and dark glasses as facial features. Make navy hair one solid navy, teal jacket one solid teal, cream shirt one solid cream. Glass lenses flat white without shine. No shadow, highlight, gradient, texture, bevel or 3D anywhere. No new shapes, no outline. Preserve transparent alpha outside silhouette. This is crisp FLAT vector-cutout illustration with intentionally different material colors only."
+        ],
+        "source": "assets/art/profile-graphic-v1.png",
+        "pixelPolicy": "Native PNG retained without code pixel edits."
+      },
+      "sha256": "825d18c58830f48fde90dc3c77f620ae3fa8e8a4396c9461cd7e936b4a05fbbf"
+    }
+  ],
+  "pixelPolicy": "Native generated PNGs retained. Alpha analysis/crop/anchor metadata and browser articulation only; no code pixel painting or replacement character vectors.",
+  "inertExistingProps": "Existing flat town and driver control props are non-character artwork and remain in use."
+}

@@ -14,7 +14,7 @@ const css = `
 .hzn-avatar-bust[data-personality=cheerful] .hzn-avatar-body{animation-name:hz-avatar-cheerful}
 .hzn-avatar-pixels{position:absolute;overflow:hidden;display:block;transform-origin:50% 50%}
 .hzn-avatar-pixels>img{position:absolute;max-width:none!important;max-height:none!important;display:block;pointer-events:none;user-select:none}
-.hzn-avatar-eyes{opacity:0;z-index:4;animation:hz-avatar-blink var(--avatar-blink,5.6s) steps(1,end) infinite;animation-delay:var(--avatar-blink-phase,0s);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent),linear-gradient(0deg,transparent,#000 15%,#000 85%,transparent);mask-composite:intersect}
+.hzn-avatar-eyes{opacity:0;z-index:4;animation:hz-avatar-blink var(--avatar-blink,5.6s) steps(1,end) infinite;animation-delay:var(--avatar-blink-phase,0s)}
 .hzn-avatar-arm-root,.hzn-avatar-joint{position:absolute;width:0;height:0;transform-origin:0 0}
 .hzn-avatar-arm-root{z-index:2}.hzn-avatar-arm-root[data-side=left]{z-index:0}
 .hzn-avatar-upper-right{animation:hz-avatar-upper-rest 5.2s ease-in-out infinite}.hzn-avatar-elbow-right{animation:hz-avatar-elbow-rest 5.2s ease-in-out infinite}.hzn-avatar-wrist-right{animation:hz-avatar-wrist-rest 5.2s ease-in-out infinite}
@@ -43,7 +43,7 @@ const css = `
 `;
 function installStyle(){if(document.getElementById('hzn-avatar-bust-style'))return;const style=document.createElement('style');style.id='hzn-avatar-bust-style';style.textContent=css;document.head.append(style);}
 function getManifest(){return manifestPromise??=fetch(new URL('assets/art/manifest.json',appURL)).then(response=>{if(!response.ok)throw Error('Avatar artwork could not be opened');return response.json();});}
-function getGestures(){return gesturesPromise??=fetch(new URL('assets/art/avatar-approved-flat-v1.frames.json',appURL)).then(response=>{if(!response.ok)throw Error('Avatar gesture artwork could not be opened');return response.json();});}
+function getGestures(){return gesturesPromise??=fetch(new URL('assets/art/avatar-graphic-flat-v1.frames.json',appURL)).then(response=>{if(!response.ok)throw Error('Avatar gesture artwork could not be opened');return response.json();});}
 function groups(data){return data.avatar?.groups||data.avatar?.layers||data.avatar||{};}
 function choice(data,group,id){const values=groups(data)[group];const options=Array.isArray(values)?values:values?.options||[];return options.find(option=>option.id===id)||options[0];}
 function seedFor(avatar){return Object.values(avatar||{}).join(':').split('').reduce((value,char)=>(value*31+char.charCodeAt(0))>>>0,7);}
@@ -114,47 +114,32 @@ export function mountAvatar(element,{avatar={},manifest,mood='idle',posture='por
   const frame=document.createElement('span');frame.className='hzn-avatar-bust';frame.dataset.intentionalCrop='bust';frame.dataset.avatarBust='true';frame.dataset.posture=pose;frame.dataset.personality=['thoughtful','curious','cheerful'][seedFor(avatar)%3];frame.setAttribute('aria-hidden','true');
   const seed=seedFor(avatar);frame.style.setProperty('--avatar-period',`${6.8+(seed%27)/10}s`);frame.style.setProperty('--avatar-phase',`-${(seed%47)/10}s`);frame.style.setProperty('--avatar-blink',`${4.7+(seed%23)/10}s`);frame.style.setProperty('--avatar-blink-phase',`-${(seed%29)/10}s`);
   const stage=document.createElement('span');stage.className='hzn-avatar-stage';frame.append(stage);const body=document.createElement('span');body.className='hzn-avatar-body';body.dataset.rigPart='anatomical-body';stage.append(body);const torso=document.createElement('span');torso.className='hzn-avatar-torso';torso.dataset.rigPart='torso';torso.dataset.part='torso';const head=document.createElement('span');head.className='hzn-avatar-head';head.dataset.rigPart='head';head.dataset.part='head';body.append(torso,head);element.replaceChildren(frame);state.frame=frame;state.body=body;
-  const virtualWidth=500,virtualHeight=525,offsetX=(320-virtualWidth)/2,offsetY=44;
-  const scale=.94*virtualHeight/skin.frame.h,skinLeft=(320-skin.frame.w*scale)/2,skinTop=.04*virtualHeight+offsetY;
-  const sourceCenter=skin.frame.x+skin.frame.w/2;
+  const registration=gestureAtlas.registration;
   function pixels(parent,asset,box,left,top,scale,part,z=1,extra=''){
    const view=document.createElement('span');view.className='hzn-avatar-pixels '+extra;view.dataset.rigPart=part;view.dataset.part=part;view.dataset.nativeFrame=JSON.stringify(box);view.dataset.nativeAtlas=JSON.stringify(asset.atlas);view.style.cssText=`left:${left}px;top:${top}px;width:${box.w*scale}px;height:${box.h*scale}px;z-index:${z}`;
    const img=document.createElement('img');img.src=new URL(asset.src,appURL).href;img.alt='';img.draggable=false;img.decoding='async';img.style.cssText=`width:${asset.atlas.width*scale}px;height:${asset.atlas.height*scale}px;left:${-box.x*scale}px;top:${-box.y*scale}px`;view.append(img);parent.append(view);return view;
   }
-  function fullLayer(parent,asset,part,position=asset.position,z=position?.z||2){
-   if(!asset?.frame)return;const box=asset.frame,p=position||{},height=p.h*virtualHeight,width=part==='skin'?height*box.w/box.h:p.w*virtualWidth;
-   const s=['outfit','skin'].includes(part)?height/box.h:width/box.w;return pixels(parent,asset,box,['outfit','skin'].includes(part)?(320-box.w*s)/2:offsetX+p.x*virtualWidth,offsetY+p.y*virtualHeight,s,part,z);
+  function fullLayer(parent,asset,part,position=asset?.rigPosition,z=position?.z||2){
+   if(!asset?.frame||!position)return;const box=asset.frame,p=position,s=p.w/box.w;
+   return pixels(parent,asset,box,p.x,p.y,s,part,z);
   }
-  // Only the naturally low body/bag is cropped at the requested upper-chest edge.
-  if(accessory?.id==='accessory-6')fullLayer(torso,accessory,'accessory',accessory.position,0);
-  // The original base wears an undershirt. Keep only generated neck/arm skin,
-  // so that tank-top straps cannot protrude above a different outfit's collar.
-  const neckBox={x:sourceCenter-11,y:110,w:22,h:30};
-  pixels(torso,skin,neckBox,skinLeft+(neckBox.x-skin.frame.x)*scale,skinTop+(neckBox.y-skin.frame.y)*scale,scale,'skin',1);
-  // Seat the generated collar over the natural neck end, rather than leaving
-  // the undershirt/neck crop visible as a square tab above the garment.
+  // Head, neck and clothing share measured native-image registration. The
+  // narrower head and broad shoulders are part of the new adult graphic design.
+  const faceScale=registration.headWidth/skin.frame.w,skinLeft=(320-skin.frame.w*faceScale)/2,skinTop=registration.headTop;
+  if(accessory?.id==='accessory-6')fullLayer(torso,accessory,'accessory',accessory.rigPosition,0);
+  if(skin.neckFrame){const neck=skin.neckFrame;pixels(torso,skin,neck,skinLeft+(neck.x-skin.frame.x)*faceScale,skinTop+(neck.y-skin.frame.y)*faceScale+3,faceScale,'skin',1);}
   const clothing=gestureAtlas.clothing,skinKit=gestureAtlas.skin,garment=clothing.outfits[outfit.id],skinParts=skinKit.skins[skin.id];
-  const torsoBox=garment.torso,torsoScale=170/torsoBox.w;
-  const torsoView=pixels(torso,garment.torsoAsset||clothing,torsoBox,(320-torsoBox.w*torsoScale)/2,254-(garment.collarBottom-torsoBox.y)*torsoScale,torsoScale,'outfit',2);
-  // Native sleeveless torso cores are masked only at their shoulder overlap.
-  // No resting sleeve remains behind the animated sleeve on either side.
-  torsoView.style.clipPath='polygon(13% 0,87% 0,87% 35%,94% 100%,6% 100%,13% 35%)';
-  // Only the jaw and top of the neck belong in front of the outfit. The lower
-  // neck is the torso's native skin layer, naturally occluded by every collar.
-  const headBox={x:sourceCenter-60,y:18,w:120,h:100};
-  const face=pixels(head,skin,headBox,skinLeft+(headBox.x-skin.frame.x)*scale,skinTop,scale,'face',1);
-  const closed={...skin,src:'assets/art/avatar-approved-flat-blink-v2.png'},eyeBounds={1:[133,194],2:[376,437],3:[618,680],4:[859,921],5:[1101,1163],6:[1343,1405]}[Number(skin.id.split('-')[1])];
-  const leftStart=eyeBounds?.[0]||sourceCenter-30,rightEnd=eyeBounds?.[1]||sourceCenter+30;
-  for(const x of [leftStart-4,rightEnd-23]){const band={x,y:60,w:28,h:26};pixels(head,closed,band,skinLeft+(band.x-skin.frame.x)*scale,skinTop+(band.y-skin.frame.y)*scale,scale,'eyes',3,'hzn-avatar-eyes');}
-  if(hair?.id!=='none')fullLayer(head,hair,'hair',hair?.position,5)?.classList.add('hzn-avatar-hair');
+  const torsoBox=garment.torso,torsoScale=registration.torsoWidth/torsoBox.w;
+  pixels(torso,garment.torsoAsset||clothing,torsoBox,(320-torsoBox.w*torsoScale)/2,registration.collarY-(garment.collarBottom-torsoBox.y)*torsoScale,torsoScale,'outfit',2);
+  const headBox=skin.headFrame||skin.frame;
+  pixels(head,skin,headBox,skinLeft+(headBox.x-skin.frame.x)*faceScale,skinTop+(headBox.y-skin.frame.y)*faceScale,faceScale,'face',1);
+  for(const blink of skin.blinks||[])fullLayer(head,blink,'eyes',blink.rigPosition,4)?.classList.add('hzn-avatar-eyes');
+  if(hair?.id!=='none')fullLayer(head,hair,'hair',hair?.rigPosition,5)?.classList.add('hzn-avatar-hair');
   if(accessory?.id&&accessory.id!=='none'&&accessory.id!=='accessory-6'){
-   const p={...accessory.position};if(accessory.id==='accessory-2')p.y=-.06;if(accessory.id==='accessory-3')p.y=.015;if(accessory.id==='accessory-4'){p.x=.27;p.y=.41;}if(accessory.id==='accessory-5')p.y=.32;
    const onHead=['accessory-1','accessory-2','accessory-3'].includes(accessory.id);
-   const part=fullLayer(onHead?head:torso,accessory,'accessory',p,onHead?6:4);
-   if(accessory.id==='accessory-1'&&part){const height=accessory.frame.h*(p.w*virtualWidth/accessory.frame.w);part.style.top=`${skinTop+(73-skin.frame.y)*scale-height/2}px`;}
+   fullLayer(onHead?head:torso,accessory,'accessory',accessory.rigPosition,onHead?6:4);
   }
-  if(badge?.id&&badge.id!=='none'&&badge.frame){const s=34/badge.frame.w;pixels(torso,badge,badge.frame,207,278,s,'badge',8);}
-  const registration=gestureAtlas.registration;
+  if(badge?.id&&badge.id!=='none'&&badge.frame){const s=26/badge.frame.w;pixels(torso,badge,badge.frame,198,253,s,'badge',8);}
   function joint(parent,name,x,y){const element=document.createElement('span');element.className='hzn-avatar-joint hzn-avatar-'+name;element.dataset.rigPart=name;element.dataset.joint=name;element.style.left=x+'px';element.style.top=y+'px';parent.append(element);return element;}
   function pinned(parent,source,spec,s,part,z){const view=pixels(parent,source,spec.frame,(spec.frame.x-spec.pin.x)*s,(spec.frame.y-spec.pin.y)*s,s,part,z);view.dataset.attachmentJoint=parent.dataset.joint;view.dataset.layerRole=part.includes('sleeve')?'sleeve':'skin';return view;}
   for(const side of ['left','right']){

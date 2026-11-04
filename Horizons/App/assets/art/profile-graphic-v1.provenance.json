@@ -1,0 +1,10 @@
+{
+  "tool": "built-in image_gen",
+  "purpose": "New profile navigation bust",
+  "prompt": [
+    "Create one NEW simple profile navigation icon for Horizons, inspired by the graphic adult avatar busts at BOTTOM of Image1. Image2 is style reference. A single original adult upper-chest bust with a softly rectangular/angular peach face, strong angular nose and eyebrow, small white eyes, tall sweeping navy quiff, broad teal collar shoulders. Three-quarter friendly view, stylish geometric silhouette, not a baby or roundheaded doll. Fit entirely inside a square with ample transparent margins. Absolutely flat opaque color blocks, no shadows, shading, gradients, highlights, texture, 3D, outlines, ground or background. No text. Clean transparent alpha.",
+    "Use case: precise-object-edit. Edit this profile icon ONLY to remove modeled shading. Keep exact silhouette, pose, face, glasses, hair and clothing geometry. REMOVE the dark triangular shadow under the chin: the ENTIRE neck and face must be one uniform flat peach color. Remove cheek side-plane gradients, hair gradients and dark lit/shaded collar planes. Keep a flat orange nose, black pupils/eyebrows and dark glasses as facial features. Make navy hair one solid navy, teal jacket one solid teal, cream shirt one solid cream. Glass lenses flat white without shine. No shadow, highlight, gradient, texture, bevel or 3D anywhere. No new shapes, no outline. Preserve transparent alpha outside silhouette. This is crisp FLAT vector-cutout illustration with intentionally different material colors only."
+  ],
+  "source": "assets/art/profile-graphic-v1.png",
+  "pixelPolicy": "Native PNG retained without code pixel edits."
+}

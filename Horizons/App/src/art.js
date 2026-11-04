@@ -8,7 +8,7 @@ const illustratedMotion=new Map();
 const sourceBase = new URL('../assets/art/', import.meta.url);
 export async function loadArt() {
   installRasterFit();
-  try { const response = await fetch(new URL('manifest.json?flat=1', sourceBase),{cache:'no-cache'}); if (response.ok) { manifest = await response.json(); manifest.characters = manifest.characters || manifest.companions || {}; } }
+  try { const response = await fetch(new URL('manifest.json?graphic=1', sourceBase),{cache:'no-cache'}); if (response.ok) { manifest = await response.json(); manifest.characters = manifest.characters || manifest.companions || {}; } }
   catch { /* The app remains usable while artwork is loading or unavailable offline. */ }
   return manifest;
 }
@@ -82,12 +82,12 @@ export function avatarMarkup(avatar = {}, cls = '', name = 'Your avatar') {
 }
 export function refreshCharacterMotion(container = document) {
   for(const slot of container.querySelectorAll('[data-cast-articulated]')){
-    import('./cast-rig.js?v=flat1').then(module=>{castModule=module;if(slot.isConnected)module.mountCast(slot,{character:slot.dataset.castCharacter,posture:slot.dataset.rigPosture,mood:slot.dataset.rigMood});});
+    import('./cast-rig.js?v=graphic1').then(module=>{castModule=module;if(slot.isConnected)module.mountCast(slot,{character:slot.dataset.castCharacter,posture:slot.dataset.rigPosture,mood:slot.dataset.rigMood});});
   }
   for(const slot of container.querySelectorAll('[data-pico-articulated]')){
-    import('./pico-articulated.js?v=flat1').then(module=>{picoArticulatedModule=module;if(slot.isConnected)module.mountPico(slot,{posture:slot.dataset.rigPosture,mood:slot.dataset.rigMood});});
+    import('./pico-articulated.js?v=graphic1').then(module=>{picoArticulatedModule=module;if(slot.isConnected)module.mountPico(slot,{posture:slot.dataset.rigPosture,mood:slot.dataset.rigMood});});
   }
   for(const slot of container.querySelectorAll('[data-avatar-rig]')){
-    import('./avatar-rig.js?v=flat1').then(module=>{avatarModule=module;if(slot.isConnected)module.mountAvatar(slot,{avatar:JSON.parse(slot.dataset.avatar||'{}'),manifest,mood:'idle',posture:slot.dataset.avatarPosture||'portrait'});});
+    import('./avatar-rig.js?v=graphic1').then(module=>{avatarModule=module;if(slot.isConnected)module.mountAvatar(slot,{avatar:JSON.parse(slot.dataset.avatar||'{}'),manifest,mood:'idle',posture:slot.dataset.avatarPosture||'portrait'});});
   }
 }

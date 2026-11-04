@@ -1,0 +1,22 @@
+{
+  "tool": "built-in image_gen",
+  "creator": "OpenAI ImageGen",
+  "date": "2026-11-04",
+  "purpose": "Active native torso and sleeve cutouts.",
+  "source": "assets/art/avatar-graphic-flat-clothing-v1.png",
+  "references": [
+    "assets/art/graphic-direction-v1.png"
+  ],
+  "promptSet": [
+    "Use case: illustration-story. Asset type: original transparent modular avatar CLOTHING sprite sheet.\nUse supplied image only as the adult geometric STYLE REFERENCE. Create fresh production clothing in that graphic design language but with STRICT solid flat opaque colors. Do NOT imitate its shading or dark neck triangles.\nCanvas wide 1536x1024. EXACTLY six equal columns and THREE equal rows of independent cutout parts. Each cell has spacious transparent margin. No text, labels, grid, body, head, hands, skin, background or shadows. Front orthographic view.\nRow 1 six broad-shouldered SLEEVELESS TORSO CORES for adult busts, each matching one outfit. All have broad upper chest, modest neck opening, geometric shoulders and a long clean torso bottom. There MUST NOT be any resting sleeve or detached forearm on a torso core. Left to right: 1 magenta hoodie body with cream drawstrings and graphic hood rim; 2 teal summer crew-neck T-shirt body; 3 teal explorer jacket open over solid orange shirt with cream chest label; 4 orange sweater body with simple squared ribbed neck; 5 dark teal overalls body with cream under-shirt, two gold strap buttons and broad bib; 6 magenta cardigan open over cream shirt, three simple navy buttons. Each material one SOLID COLOR, no folds depicted as shading.\nRow 2 six separate UPPER SLEEVE segments, matching corresponding outfits, all vertical with shoulder joint at TOP and elbow at BOTTOM. Geometric rounded top overlap cap, wide enough to join broad shoulders. Matching material: magenta full sleeve, teal SHORT sleeve ending halfway through cell leaving blank underneath, teal jacket full sleeve, orange full sleeve, cream SHORT sleeve ending halfway through cell leaving blank underneath, magenta full sleeve. Long sleeve segments about 80 pixels wide by 220 high, short sleeves about 80 by 105. Flat solid colors.\nRow 3 six separate FOREARM SLEEVE segments, vertical with elbow joint at TOP and wrist cuff at BOTTOM, matching outfits 1 magenta, 3 teal, 4 orange, 6 magenta. Cell 2 and cell 5 are COMPLETELY EMPTY TRANSPARENT because their outfits have short sleeves. Each present forearm sleeve about 70 pixels wide by 210 high with simple flat cuff, rounded top overlap cap. No hands.\nThese are animation components, not illustrated assembled clothing mannequins. Each torso/upper sleeve/fore sleeve independent, centered in its own cell. Crisp clean angular graphic silhouettes, uniform opaque color blocks, adult proportions. ABSOLUTELY NO GRADIENTS, shading, highlights, highlights on curved edges, soft light, fabric texture, glossy effects, dark side planes, stroke outlines, drop shadows, cast shadows, ground shadows. Native true transparent alpha throughout empty areas."
+  ],
+  "transformations": "Original generated PNG bytes copied without repainting, tracing, alpha thresholding or color edits. Runtime uses measured rectangular viewports and uniform scale.",
+  "fiction": "Original fictional customization artwork, not portraits of real named people.",
+  "license": "Original generated project artwork",
+  "dimensions": {
+    "width": 1536,
+    "height": 1024
+  },
+  "sha256": "c34bfbbe559647a4a23fd8d6cb92e2e90d6a67379a97a7fc591d9c64f9036df3",
+  "mode": "RGBA"
+}

@@ -17,15 +17,15 @@ const CSS=`
 .hzn-cast-native>img{position:absolute;display:block;max-width:none!important;max-height:none!important;pointer-events:none;user-select:none}
 `;
 function styles(){if(document.getElementById('hzn-cast-style'))return;const s=document.createElement('style');s.id='hzn-cast-style';s.textContent=CSS;document.head.append(s);}
-function load(){return artwork??=fetch(new URL('assets/art/cast-flat-v1.frames.json?flat=1',appURL),{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('Character artwork could not be loaded');return r.json();});}
+function load(){return artwork??=fetch(new URL('assets/art/cast-geometric-v1.frames.json?geometric=1',appURL),{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('Character artwork could not be loaded');return r.json();});}
 function scaleFor(name,part){
  const heights={head:name==='jo'?148:142,torso:name==='jo'?200:name==='alex'?195:185,upperLeft:105,upperRight:105,lowerLeft:108,lowerRight:108,thighLeft:name==='jo'?90:105,thighRight:name==='jo'?90:105,shinLeft:145,shinRight:145,footLeft:145,footRight:145};
  return heights[part];
 }
 function makeGeometry(name,asset){
- const geometry={};
+ const geometry={rig:asset.rig};
  for(const [part,d]of Object.entries(asset.parts)){
-  const h=scaleFor(name,part),s=h?h/(d.nativeFullHeight||d.frame.h):1;
+  const h=d.displayHeight||scaleFor(name,part),nativeLength=d.end?Math.hypot(d.end.x-d.pin.x,d.end.y-d.pin.y):0,s=d.scale|| (d.segmentLength?d.segmentLength/nativeLength:h?h/(d.nativeFullHeight||d.frame.h):1);
   geometry[part]={...d,scale:s,vector:d.end?{x:(d.end.x-d.pin.x)*s,y:(d.end.y-d.pin.y)*s}:null};
  }
  return geometry;
@@ -45,11 +45,11 @@ function solveArm(g,start,target,upper,lower,outward){
 function family(posture){if(posture==='drive')return'drive';if(['read','sit'].includes(posture))return'seated';if(['map','fix'].includes(posture))return'study';if(['skip','dance'].includes(posture))return'dance';return'standing';}
 function drivePose(pose,g){
  const center=pose.wheel.p,a=pose.wheel.a;
- const left=solveArm(g,{x:124,y:177},plus(center,rotate({x:-64,y:-9},a)),'upperLeft','lowerLeft',1),right=solveArm(g,{x:236,y:177},plus(center,rotate({x:64,y:-9},a)),'upperRight','lowerRight',-1);
+ const left=solveArm(g,g.rig.shoulders.left,plus(center,rotate({x:-46,y:-6},a)),'upperLeft','lowerLeft',1),right=solveArm(g,g.rig.shoulders.right,plus(center,rotate({x:46,y:-6},a)),'upperRight','lowerRight',-1);
  pose.upperLeft=left.upper;pose.lowerLeft=left.lower;pose.upperRight=right.upper;pose.lowerRight=right.lower;
 }
 function bookPose(pose,g){
- const reference=solveArm(g,{x:124,y:177},{x:155,y:255},'upperLeft','lowerLeft',1).lower.a,a=pose.lowerLeft.a-reference;
+ const reference=solveArm(g,g.rig.shoulders.left,g.rig.study.left,'upperLeft','lowerLeft',1).lower.a,a=pose.lowerLeft.a-reference;
  const wrist=plus(pose.lowerLeft.p,rotate(g.lowerLeft.vector,pose.lowerLeft.a));
  return{p:plus(wrist,rotate({x:25,y:-5},a)),a};
 }
@@ -57,7 +57,7 @@ function polishProps(pose,g){
  const rightWrist=plus(pose.lowerRight.p,rotate(g.lowerRight.vector,pose.lowerRight.a)),leftWrist=plus(pose.lowerLeft.p,rotate(g.lowerLeft.vector,pose.lowerLeft.a));
  // The mug handle stays in the supporting hand; the cloth stays under the wiping palm.
  pose.accessory={p:plus(rightWrist,rotate({x:-31,y:5},-pose.body.lean)),a:-pose.body.lean};
- pose.prop={p:plus(leftWrist,rotate({x:0,y:15},pose.lowerLeft.a)),a:pose.lowerLeft.a+90};
+ pose.prop={p:plus(leftWrist,rotate({x:0,y:25},pose.lowerLeft.a)),a:pose.lowerLeft.a+90};
 }
 function sample(name,posture,g,t,mood='idle'){
  const wave=Math.sin(2*Math.PI*t),beat=Math.sin(4*Math.PI*t),fine=Math.sin(6*Math.PI*t),kind=family(posture),greet=greetingEnvelope(t);
@@ -74,20 +74,21 @@ function sample(name,posture,g,t,mood='idle'){
   head+=greet*({mina:-2.2,alex:1.5,jo:-1.2}[name]);
  }
  let thighL=2.2*wave,thighR=-2.2*wave,shinL=-thighL*.65,shinR=-thighR*.65;
- if(kind==='seated'){thighL=65+wave;thighR=-65-wave;shinL=-150+1.6*beat;shinR=150-1.6*beat;}
+ if(kind==='seated'){thighL=48+wave;thighR=-48-wave;shinL=-thighL+1.6*beat;shinR=-thighR-1.6*beat;}
  if(kind==='crouch'){thighL=60+wave;thighR=-60-wave;shinL=-60+.8*beat;shinR=60-.8*beat;}
  if(kind==='drive'){thighL=35+.8*wave;thighR=-35-.8*wave;shinL=-35+2.5*beat;shinR=35-2.5*beat;}
- if(kind==='dance'){thighL=7*wave;thighR=-7*wave;shinL=4*beat;shinR=-4*beat;head=4*wave;}
- const shoulders={left:{x:124,y:177},right:{x:236,y:177}},hips={left:{x:154,y:316},right:{x:206,y:316}};
+ if(kind==='dance'){thighL=13*wave;thighR=-13*wave;shinL=8*beat;shinR=-8*beat;head=4*wave;leftA+=18*wave;rightA-=18*wave;leftB-=12*beat;rightB+=12*beat;}
+ if(posture==='step'){thighL=7*wave;thighR=-7*wave;shinL=-Math.max(0,beat)*10;shinR=-Math.min(0,beat)*10;leftA-=5*wave;rightA+=5*wave;}
+ const {shoulders,hips,study}=g.rig;
  let armL,armR;
  if(posture==='clap'||mood==='celebrate'){
-  const gap=posture==='clap'?12+10*(1-Math.cos(6*Math.PI*t)):85+5*wave,y=posture==='clap'?230:95+3*beat;
-  armL=solveArm(g,shoulders.left,{x:180-gap,y},'upperLeft','lowerLeft',y<177?-1:1);
-  armR=solveArm(g,shoulders.right,{x:180+gap,y},'upperRight','lowerRight',y<177?1:-1);
+  const gap=posture==='clap'?9+10*(1-Math.cos(6*Math.PI*t)):85+5*wave,y=posture==='clap'?shoulders.left.y+49:shoulders.left.y-78+3*beat;
+  armL=solveArm(g,shoulders.left,{x:180-gap,y},'upperLeft','lowerLeft',y<shoulders.left.y?-1:1);
+  armR=solveArm(g,shoulders.right,{x:180+gap,y},'upperRight','lowerRight',y<shoulders.right.y?1:-1);
   if(mood==='celebrate'){thighL+=3*wave;thighR-=3*wave;}
  }else if(kind==='seated'||kind==='study'){
-  armL=solveArm(g,shoulders.left,{x:155+3*wave,y:255+2*beat},'upperLeft','lowerLeft',1);
-  const rest=solveArm(g,shoulders.right,{x:212+2*wave,y:253-2*beat},'upperRight','lowerRight',-1);
+  armL=solveArm(g,shoulders.left,{x:study.left.x+3*wave,y:study.left.y+2*beat},'upperLeft','lowerLeft',1);
+  const rest=solveArm(g,shoulders.right,{x:study.right.x+2*wave,y:study.right.y-2*beat},'upperRight','lowerRight',-1);
   armR=mood==='wave'?blendArm(g,shoulders.right,'upperRight','lowerRight',rest,chain(g,shoulders.right,'upperRight','lowerRight',-108+2*wave,-58+10*Math.sin(6*Math.PI*(t-.25))),greet):rest;
  }else{
   armL=chain(g,shoulders.left,'upperLeft','lowerLeft',leftA,leftB);
@@ -96,20 +97,20 @@ function sample(name,posture,g,t,mood='idle'){
  const legL=chain(g,hips.left,'thighLeft','shinLeft',thighL,shinL),legR=chain(g,hips.right,'thighRight','shinRight',thighR,shinR);
  const lean=posture==='pour'?-5:kind==='study'?2:kind==='seated'?2:0;
  const result={
-  head:{p:{x:180,y:169},a:head},torso:{p:{x:180,y:173},a:0},
+  head:{p:g.rig.head,a:head},torso:{p:g.rig.torso,a:0},
   upperLeft:armL.upper,lowerLeft:armL.lower,upperRight:armR.upper,lowerRight:armR.lower,
-  thighLeft:legL.upper,shinLeft:legL.lower,footLeft:{p:legL.end,a:kind==='seated'?8:kind==='drive'?-3-4*beat:1.5*beat,mirror:kind==='seated'},thighRight:legR.upper,shinRight:legR.lower,footRight:{p:legR.end,a:kind==='seated'?-8:kind==='drive'?3+4*beat:-1.5*beat,mirror:kind==='seated'},
+  thighLeft:legL.upper,shinLeft:legL.lower,footLeft:{p:legL.end,a:kind==='seated'?3:kind==='drive'?-3-4*beat:1.5*beat},thighRight:legR.upper,shinRight:legR.lower,footRight:{p:legR.end,a:kind==='seated'?-3:kind==='drive'?3+4*beat:-1.5*beat},
   body:{lean:kind==='drive'?0:lean+.7*wave,hop:mood==='celebrate'&&kind!=='drive'?-Math.max(0,beat)*6:0},
-  accessory:{p:name==='mina'?{x:122,y:244}:name==='alex'?{x:180,y:195}:{x:0,y:0},a:name==='mina'?1.2*wave:0},
-  wheel:{p:{x:180,y:260},a:5*wave},dashboard:{p:{x:180,y:368},a:0}
+  accessory:{p:g.rig.accessory,a:name==='mina'?1.2*wave:0},
+  wheel:{p:g.rig.wheel,a:5*wave},dashboard:{p:g.rig.dashboard,a:0}
  };
  if(kind==='drive')drivePose(result,g);
  result.book=bookPose(result,g);result.studyProp=result.book;result.prop=result.book;
  if(name==='jo'&&posture==='pour'){
   // A real café task rather than a generic wave: hold the cup upright and polish its rim.
-  const right=solveArm(g,shoulders.right,{x:222+1.5*wave,y:263+beat},'upperRight','lowerRight',-1);
-  const rest=solveArm(g,shoulders.left,{x:177+10*beat,y:240+3*fine},'upperLeft','lowerLeft',1);
-  const lifted=solveArm(g,shoulders.left,mood==='celebrate'?{x:78+4*wave,y:108+5*beat}:{x:84+4*wave,y:174+7*fine},'upperLeft','lowerLeft',-1);
+  const right=solveArm(g,shoulders.right,{x:study.right.x+8+1.5*wave,y:study.right.y+8+beat},'upperRight','lowerRight',-1);
+  const rest=solveArm(g,shoulders.left,{x:study.left.x+22+10*beat,y:study.left.y-15+3*fine},'upperLeft','lowerLeft',1);
+  const lifted=solveArm(g,shoulders.left,mood==='celebrate'?{x:78+4*wave,y:shoulders.left.y-69+5*beat}:{x:84+4*wave,y:shoulders.left.y-3+7*fine},'upperLeft','lowerLeft',-1);
   const left=mood==='wave'?blendArm(g,shoulders.left,'upperLeft','lowerLeft',rest,lifted,greet):mood==='celebrate'?lifted:rest;
   result.upperRight=right.upper;result.lowerRight=right.lower;result.upperLeft=left.upper;result.lowerLeft=left.lower;
   polishProps(result,g);
@@ -147,7 +148,7 @@ export function mountCast(element,{character='mina',mood='idle',posture='step'}=
   if(disposed)return;const asset=data.characters[character];if(!asset)throw Error('Unknown companion');const g=makeGeometry(character,asset),duration=periods[character],y=groundOffset(character,posture,g);g.isDriving=posture==='drive';g.isPolishing=character==='jo'&&posture==='pour';
   const frame=document.createElement('span');frame.className='hzn-cast';frame.dataset.articulatedCharacter=character;frame.dataset.posture=posture;frame.dataset.motionDuration=duration;frame.dataset.nativeHead='complete-face';
   frame.__articulatedRig=state;state.frame=frame;
-  const stage=document.createElement('span');stage.className='hzn-cast-stage';const body=document.createElement('span');body.className='hzn-cast-body';body.dataset.rigPart='body';stage.append(body);frame.append(stage);element.replaceChildren(frame);
+  const stage=document.createElement('span');stage.className='hzn-cast-stage';const body=document.createElement('span');body.className='hzn-cast-body';body.style.transformOrigin=`180px ${g.rig.hips.left.y}px`;body.dataset.rigPart='body';stage.append(body);frame.append(stage);element.replaceChildren(frame);
   const nodes={};
   function part(name,z,customWidth){
    const d=g[name],s=customWidth?customWidth/d.frame.w:d.scale,box=d.frame;
@@ -161,7 +162,7 @@ export function mountCast(element,{character='mina',mood='idle',posture='step'}=
   part('thighLeft',1);part('thighRight',1);part('shinLeft',2);part('shinRight',2);part('footLeft',2);part('footRight',2);
   part('upperLeft',3);part('upperRight',3);part('head',3);part('torso',4);part('lowerLeft',posture==='drive'?8:6);part('lowerRight',posture==='drive'?8:6);
   if(character==='alex'&&posture!=='drive')part('accessory',5,78);
-  if(g.isPolishing){part('accessory',5,92);part('prop',5,47);frame.dataset.task='polish-mug';}
+  if(g.isPolishing){part('accessory',5,92);part('prop',5,55);frame.dataset.task='polish-mug';}
   function foreignPart(name,z,src,atlas,frameBox,pin,width){
    const s=width/frameBox.w,n=document.createElement('span');n.className='hzn-cast-bone';n.dataset.rigPart=name;n.dataset.joint=name;n.style.zIndex=z;
    n.dataset.nativeFrame=JSON.stringify(frameBox);n.dataset.nativePin=JSON.stringify(pin);n.dataset.nativeScale=s;
@@ -175,10 +176,8 @@ export function mountCast(element,{character='mina',mood='idle',posture='step'}=
   if(posture==='map'){const d=g.prop;foreignPart('studyProp',5,d.src||asset.src,d.atlas||asset.atlas,d.frame,d.pin,102);}
   if(posture==='fix')part('prop',5,50);
   if(family(posture)==='seated'){
-   const frameBox={x:649,y:1002,w:268,h:209},pin={x:133,y:98},s=86/frameBox.w;
-   const n=document.createElement('span');n.className='hzn-cast-bone';n.dataset.rigPart='book';n.dataset.joint='leftWristGrip';n.style.zIndex=5;
-   const view=document.createElement('span');view.className='hzn-cast-native';view.style.cssText=`left:${-pin.x*s}px;top:${-pin.y*s}px;width:${frameBox.w*s}px;height:${frameBox.h*s}px`;
-   const im=document.createElement('img');im.src=new URL('assets/art/pico-flat-v1.png',appURL).href;im.alt='';im.style.cssText=`left:${-frameBox.x*s}px;top:${-frameBox.y*s}px;width:${1254*s}px;height:${1254*s}px`;view.append(im);n.append(view);body.append(n);nodes.book=n;
+   foreignPart('book',5,'assets/art/pico-graphic-v1.png',{width:1254,height:1254},{x:618,y:988,w:277,h:235},{x:139,y:112},86);
+   nodes.book.dataset.joint='leftWristGrip';
   }
   function currentPose(){
    const result=sample(character,posture,g,0,state.mood||'idle');

@@ -1,0 +1,22 @@
+{
+  "tool": "built-in image_gen",
+  "creator": "OpenAI ImageGen",
+  "date": "2026-11-04",
+  "purpose": "Inactive first limb colors; matched to head skin in v2.",
+  "source": "assets/art/avatar-graphic-flat-limbs-v1.png",
+  "references": [
+    "assets/art/graphic-direction-v1.png"
+  ],
+  "promptSet": [
+    "Use case: illustration-story. Asset type: original transparent modular avatar SKIN LIMBS sprite sheet.\nInput is adult geometric STYLE REFERENCE ONLY. Create production animation cutouts in strict solid spot colors. No lighting or 3D.\nWide 1536x1024 sheet, EXACTLY SIX equal columns and FOUR equal rows, 24 separate centered parts with transparent margins, no text or grid. The six columns are six uniform skin colors, left to right pale cream-peach #f7cfb5, warm peach #edb899, honey #d99a63, caramel #b77a49, chestnut #885035, deep brown #573328. Every single part in one column must be exactly the SAME single uniform skin color. No outlines, lines, knuckles, nail marks, fingershading, gradients, shadows, highlights, texture or secondary skin colors.\nROW 1 six detached straight UPPER ARM segments, vertical, rounded shoulder at TOP, elbow at BOTTOM; simple long narrow geometric rounded bars 70 pixels wide by 200 pixels high.\nROW 2 six detached straight FOREARM segments, vertical, elbow at TOP, wrist at BOTTOM; simple slightly tapered rounded bars 64 pixels wide by 200 high.\nROW 3 six detached OPEN FRIENDLY HANDS, identical shape, wrist at TOP with short narrow straight cuff stem, fingertips pointing DOWN. Graphic 4-finger mitten-style hand with distinct broad thumb sticking to viewer LEFT, modest finger lobes on bottom; simple adult proportions, about 100 pixels wide by 180 high. These are complete hand silhouettes, no arms.\nROW 4 six detached THINKING HANDS, identical shape, wrist at TOP with narrow cuff stem, fingers pointing DOWN. Relaxed loosely folded palm shape with one extended index finger on the viewer LEFT edge pointing DOWN, thumb touching bent middle fingers, about 90 wide by 170 high. Clear simple connected hand silhouette.\nEach limb or hand is a single SOLID opaque flat color and a complete independent connected cutout. The 6 skin tone columns must align precisely. True transparent background, no checkerboard, no floor. This is flat geometric animation artwork, no lighting whatsoever."
+  ],
+  "transformations": "Original generated PNG bytes copied without repainting, tracing, alpha thresholding or color edits. Runtime uses measured rectangular viewports and uniform scale.",
+  "fiction": "Original fictional customization artwork, not portraits of real named people.",
+  "license": "Original generated project artwork",
+  "dimensions": {
+    "width": 1536,
+    "height": 1024
+  },
+  "sha256": "afbe9ba1e3c64392eb3cab82e328043de61f4f35d8ceaa661d96fdf54624047e",
+  "mode": "RGBA"
+}

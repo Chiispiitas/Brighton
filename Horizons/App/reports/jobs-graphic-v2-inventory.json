@@ -1,0 +1,142 @@
+{
+  "status": "PASS_REMADE_INTEGRATED_AND_REVIEWED",
+  "scope": "All 14 job vocabulary illustrations and every depicted supporting adult, remade from scratch; student and driver use the separate companion cast.",
+  "activeJobSlots": 56,
+  "requiredDistinctNativePhases": 56,
+  "depictedAdults": 17,
+  "activeNativeSources": [
+    "assets/art/jobs-graphic-1-v3.png",
+    "assets/art/jobs-graphic-2-v3.png",
+    "assets/art/chef-graphic-v2.png",
+    "assets/art/police-graphic-v2.png"
+  ],
+  "frameMetadata": "assets/art/jobs-graphic-v2.frames.json",
+  "exactPromptProvenance": "assets/art/jobs-graphic-v3.provenance.json",
+  "browserVerification": "reports/jobs-graphic-review.json",
+  "atlases": [
+    {
+      "id": "jobs-graphic-1-v2",
+      "rows": [
+        {
+          "term": "teacher",
+          "adults": [
+            "teacher"
+          ],
+          "action": "Point across a blank board while supporting an open book."
+        },
+        {
+          "term": "chef",
+          "adults": [
+            "chef"
+          ],
+          "action": "Move a connected spoon hand through four stirring phases."
+        },
+        {
+          "term": "doctor",
+          "adults": [
+            "doctor",
+            "adult woman patient"
+          ],
+          "action": "Support the patient wrist; free hand checks, indicates and reassures."
+        },
+        {
+          "term": "office worker",
+          "adults": [
+            "office worker"
+          ],
+          "action": "Alternate keyboard hands, gesture, and return to typing."
+        },
+        {
+          "term": "receptionist",
+          "adults": [
+            "receptionist"
+          ],
+          "action": "Four connected greeting and desk-bell gestures."
+        },
+        {
+          "term": "salesclerk",
+          "adults": [
+            "salesclerk"
+          ],
+          "action": "Hold and fold one shirt using two connected hands."
+        },
+        {
+          "term": "taxi driver",
+          "adults": [
+            "taxi driver"
+          ],
+          "action": "Four welcoming arm gestures beside a compact taxi."
+        }
+      ]
+    },
+    {
+      "id": "jobs-graphic-2-v2",
+      "rows": [
+        {
+          "term": "waiter",
+          "adults": [
+            "waiter"
+          ],
+          "action": "Tray rests on a fixed supporting palm; free arm performs four distinct gestures."
+        },
+        {
+          "term": "waitress",
+          "adults": [
+            "waitress"
+          ],
+          "action": "Tray rests on a fixed supporting palm; free arm performs four distinct gestures."
+        },
+        {
+          "term": "farmer",
+          "adults": [
+            "farmer"
+          ],
+          "action": "Pick a tomato and bring it toward a basket."
+        },
+        {
+          "term": "nurse",
+          "adults": [
+            "nurse",
+            "adult man patient"
+          ],
+          "action": "Support the patient wrist; free hand checks, indicates and reassures."
+        },
+        {
+          "term": "dentist",
+          "adults": [
+            "dentist"
+          ],
+          "action": "Hold a tooth model against a fixed supporting palm while pointing with the free hand."
+        },
+        {
+          "term": "police officer",
+          "adults": [
+            "police officer",
+            "older woman"
+          ],
+          "action": "Guide an older adult beside a minimal crossing; cane touches its hand in every phase."
+        },
+        {
+          "term": "actor",
+          "adults": [
+            "actor"
+          ],
+          "action": "Hold a theatre mask by a connected hand; free arm gestures and bows."
+        }
+      ]
+    }
+  ],
+  "nativeArtAcceptance": [
+    "Built-in ImageGen output with original alpha preserved; no pixel recoloring, filtering, repainting or synthesized vector characters.",
+    "New adult geometric character silhouettes with varied body and head shapes, expressive brows and noses, small eye whites.",
+    "Flat saturated color blocks; no shadows, shading, gradients, highlights, texture or modeled volume.",
+    "Four distinct connected hand and arm phases per job, with stable identity and supported task props.",
+    "Complete scenes fit measured crop rectangles with safe margins and no neighboring row contamination."
+  ],
+  "verificationPlan": [
+    "Inspect both complete native atlases and every final active job phase.",
+    "Use the actual rasterMarkup renderer in the job frame gallery; verify native image loading, uniform scaling, shadow-free CSS and containment.",
+    "Review the actual animated sequence for stability and meaningful arm motion.",
+    "Keep evidence tied to final asset and manifest hashes."
+  ]
+}

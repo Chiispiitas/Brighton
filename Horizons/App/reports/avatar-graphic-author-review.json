@@ -1,0 +1,78 @@
+{
+  "date": "2026-11-04",
+  "status": "AUTHOR_PASS_INDEPENDENT_REVIEW_PENDING",
+  "activeArt": [
+    "assets/art/avatar-graphic-flat-kit-v2.png",
+    "assets/art/avatar-graphic-flat-clothing-v1.png",
+    "assets/art/avatar-graphic-flat-limbs-v2.png"
+  ],
+  "sourceHashes": {
+    "src/avatar-rig.js": "346d64ad2afd8c8a46e29404e206f85900b80b50b19afb5d05c233a5c0fc1456",
+    "assets/art/avatar-graphic-flat-v1.frames.json": "40eaabb07e122bfe85e7e817511ff720a1de7ec5c6734bf04daaadda5429de5d",
+    "assets/art/avatar-graphic-flat-kit-v2.png": "900603edb8455ab76571b4d37eb1c3d78fb7d58915f6d14dacf1b70069d94c2e",
+    "assets/art/avatar-graphic-flat-clothing-v1.png": "c34bfbbe559647a4a23fd8d6cb92e2e90d6a67379a97a7fc591d9c64f9036df3",
+    "assets/art/avatar-graphic-flat-limbs-v2.png": "0e85aad33465a6f67b798fddda80fea8cef603d7ef1b9d7c04ec49b98287680c"
+  },
+  "frameBoundsErrors": [],
+  "visualReview": {
+    "reviewer": "authoring agent",
+    "method": "Direct visual inspection of final browser-painted full-size PNGs on warm light background. Native alpha not altered.",
+    "proofs": [
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-graphic\\avatar-graphic-all-poses.png",
+        "sha256": "8267aa34d3bf35aed2aa664274e8a033fa3ca929072df77657284800de0e918c"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-graphic\\avatar-graphic-blink.png",
+        "sha256": "3fdb0e743c24d2e908322b1e6ae4ee5bed0c48f329077a4df91cdd6a07191eae"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-graphic\\avatar-graphic-celebrate.png",
+        "sha256": "2334465c8d99609c4d9732625b4689b5a7a900770ab780be4e1fcbfd5352e605"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-graphic\\avatar-graphic-hair-accessory-cross.png",
+        "sha256": "30ea69959d10caafba7d93a56c8c515da712a7dc062d5809dde0db506d30560a"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-graphic\\avatar-graphic-backpack-proof.png",
+        "sha256": "5146efa18c1db8bee7f96c2c12f56be30ea3929ac49f14e7d2c3b460d13b2c84"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-graphic\\avatar-graphic-dense-portrait-contact.png",
+        "sha256": "a8d31121e446d23b8a8292cbbec2e14fef9fb5d6b166206e93d8c5265fd056c2"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-graphic\\avatar-graphic-dense-wave-contact.png",
+        "sha256": "bf2fa2c05136edf7ae6b65f40cd4641ba334949583ed6aa7f4ace753bc2e417b"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-graphic\\avatar-graphic-dense-think-contact.png",
+        "sha256": "f4984c58411dc83b498722e70353844c58f3c2451c7bec9bf54a6fc2fbfa503a"
+      }
+    ],
+    "verdict": "PASS: Adult long geometric faces, white expressive eyes, bold brows/noses, wider shoulders and original crisp silhouettes. Six face tones, six hairstyles and every accessory visible in portrait/wave/think; native closed eyes cover open eyes without covering brows or lenses. Moving upper/fore sleeves stay on anatomical joints, no frozen resting sleeves or detached skin. Satchel strap joins bag; backpack is visible behind one shoulder. No actual cast/ground shadows, side-plane skin shading or volumetric highlights.",
+    "coverage": "18 matching customization/base-pose combinations; forced blink and celebration; all 36 hair/accessory pairings with varied skin/outfits. Dense arm sweep separately checks all 36 skin/outfit pairs.",
+    "limits": "Finite rendered cases do not establish every theoretical phase of all customization permutations; independent visual QA remains required.",
+    "finiteGestureFrames": {
+      "timingsMilliseconds": [
+        80,
+        480,
+        2280
+      ],
+      "postures": [
+        "portrait",
+        "wave",
+        "think"
+      ],
+      "moods": [
+        "wave",
+        "celebrate"
+      ],
+      "displayedSkinOutfitCombinations": 12,
+      "paintedAvatarStatesInspected": 216,
+      "scope": "Entry, preparation and return frames on lightest/deepest skin with all six outfits; peak gestures also reviewed in all-poses and celebration proof."
+    }
+  },
+  "denseArmsReport": "reports/avatar-graphic-structure.json"
+}

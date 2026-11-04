@@ -1,0 +1,1938 @@
+{
+  "date": "2026-11-04T20:29:15.940Z",
+  "base": "http://127.0.0.1:8896/Horizons/App/",
+  "status": "PASS",
+  "pass": true,
+  "scope": "All 56 native phases across 14 remade jobs, including all patient and older-adult supporting characters. Actual rasterMarkup animation positions, scaling, containment and reduced-motion behavior.",
+  "sources": {
+    "assets/art/manifest.json": "c03182c252c4e9225717780354e9344e57cfd2ab79832375eb382199d97acde9",
+    "src/art.js": "fa62478ccbe7b537215de0327e10d3217faeb4494d485a16412daae81d3822e2",
+    "styles/app.css": "fdb8f80ce698e7881dd346056c373b143a7721ef5b09f784b727d6c68aafc7fc",
+    "assets/art/jobs-graphic-v2.frames.json": "7b49740c3688025fad381172b70fa9536feb2d4142a259f593e91972298fb762",
+    "assets/art/jobs-graphic-1-v3.png": "1aaa75de153dd4cc764a4b32689f1ba59528d15c69993d5ec09aad1bdbeef7de",
+    "assets/art/chef-graphic-v2.png": "8d8daa077e495522c76ad02ae2e657e1cfce307e6958223afa49d29015470940",
+    "assets/art/jobs-graphic-2-v3.png": "29631b1cff0e438c3656c8fc976cdd8919a2a27368e7a08b6312cfc73af173d5",
+    "assets/art/police-graphic-v2.png": "8ea16705e1a7b0d285fe231519ffe41cfba36a5caae9f08644dc57618ee3e969"
+  },
+  "screens": [
+    {
+      "id": "jobs-graphic-1-v2",
+      "cells": [
+        {
+          "term": "teacher",
+          "phase": 0,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-1-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": 0,
+            "top": 0
+          },
+          "actual": {
+            "left": 0,
+            "top": 0
+          },
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 237,
+            "h": 252
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "teacher",
+          "phase": 1,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-1-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -100,
+            "top": 0
+          },
+          "actual": {
+            "left": -99.99988132324582,
+            "top": 0
+          },
+          "frame": {
+            "x": 237,
+            "y": 0,
+            "w": 237,
+            "h": 252
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "teacher",
+          "phase": 2,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-1-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -200,
+            "top": 0
+          },
+          "actual": {
+            "left": -199.99976264649163,
+            "top": 0
+          },
+          "frame": {
+            "x": 474,
+            "y": 0,
+            "w": 237,
+            "h": 252
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "teacher",
+          "phase": 3,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-1-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -300,
+            "top": 0
+          },
+          "actual": {
+            "left": -300.0001186767542,
+            "top": 0
+          },
+          "frame": {
+            "x": 711,
+            "y": 0,
+            "w": 237,
+            "h": 252
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "chef",
+          "phase": 0,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/chef-graphic-v2.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": 0,
+            "top": 0
+          },
+          "actual": {
+            "left": 0,
+            "top": 0
+          },
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 543,
+            "h": 724
+          },
+          "atlas": {
+            "width": 2172,
+            "height": 724
+          }
+        },
+        {
+          "term": "chef",
+          "phase": 1,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/chef-graphic-v2.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -100,
+            "top": 0
+          },
+          "actual": {
+            "left": -100,
+            "top": 0
+          },
+          "frame": {
+            "x": 543,
+            "y": 0,
+            "w": 543,
+            "h": 724
+          },
+          "atlas": {
+            "width": 2172,
+            "height": 724
+          }
+        },
+        {
+          "term": "chef",
+          "phase": 2,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/chef-graphic-v2.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -200,
+            "top": 0
+          },
+          "actual": {
+            "left": -200,
+            "top": 0
+          },
+          "frame": {
+            "x": 1086,
+            "y": 0,
+            "w": 543,
+            "h": 724
+          },
+          "atlas": {
+            "width": 2172,
+            "height": 724
+          }
+        },
+        {
+          "term": "chef",
+          "phase": 3,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/chef-graphic-v2.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -300,
+            "top": 0
+          },
+          "actual": {
+            "left": -300,
+            "top": 0
+          },
+          "frame": {
+            "x": 1629,
+            "y": 0,
+            "w": 543,
+            "h": 724
+          },
+          "atlas": {
+            "width": 2172,
+            "height": 724
+          }
+        },
+        {
+          "term": "doctor",
+          "phase": 0,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-1-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": 0,
+            "top": -194.65648854961833
+          },
+          "actual": {
+            "left": 0,
+            "top": -194.65
+          },
+          "frame": {
+            "x": 0,
+            "y": 510,
+            "w": 237,
+            "h": 262
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "doctor",
+          "phase": 1,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-1-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -100,
+            "top": -194.65648854961833
+          },
+          "actual": {
+            "left": -100,
+            "top": -194.65
+          },
+          "frame": {
+            "x": 237,
+            "y": 510,
+            "w": 237,
+            "h": 262
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "doctor",
+          "phase": 2,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-1-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -200,
+            "top": -194.65648854961833
+          },
+          "actual": {
+            "left": -200,
+            "top": -194.65
+          },
+          "frame": {
+            "x": 474,
+            "y": 510,
+            "w": 237,
+            "h": 262
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "doctor",
+          "phase": 3,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-1-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -300,
+            "top": -194.65648854961833
+          },
+          "actual": {
+            "left": -300,
+            "top": -194.65
+          },
+          "frame": {
+            "x": 711,
+            "y": 510,
+            "w": 237,
+            "h": 262
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "office worker",
+          "phase": 0,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-1-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": 0,
+            "top": -365.8767772511848
+          },
+          "actual": {
+            "left": 0,
+            "top": -365.87009323826686
+          },
+          "frame": {
+            "x": 0,
+            "y": 772,
+            "w": 237,
+            "h": 211
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "office worker",
+          "phase": 1,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-1-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -100,
+            "top": -365.8767772511848
+          },
+          "actual": {
+            "left": -100,
+            "top": -365.87009323826686
+          },
+          "frame": {
+            "x": 237,
+            "y": 772,
+            "w": 237,
+            "h": 211
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "office worker",
+          "phase": 2,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-1-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -200,
+            "top": -365.8767772511848
+          },
+          "actual": {
+            "left": -200,
+            "top": -365.87009323826686
+          },
+          "frame": {
+            "x": 474,
+            "y": 772,
+            "w": 237,
+            "h": 211
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "office worker",
+          "phase": 3,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-1-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -300,
+            "top": -365.8767772511848
+          },
+          "actual": {
+            "left": -300,
+            "top": -365.87009323826686
+          },
+          "frame": {
+            "x": 711,
+            "y": 772,
+            "w": 237,
+            "h": 211
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "receptionist",
+          "phase": 0,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-1-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": 0,
+            "top": -434.9557522123894
+          },
+          "actual": {
+            "left": 0,
+            "top": -434.95233357717626
+          },
+          "frame": {
+            "x": 0,
+            "y": 983,
+            "w": 237,
+            "h": 226
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "receptionist",
+          "phase": 1,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-1-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -100,
+            "top": -434.9557522123894
+          },
+          "actual": {
+            "left": -100,
+            "top": -434.95233357717626
+          },
+          "frame": {
+            "x": 237,
+            "y": 983,
+            "w": 237,
+            "h": 226
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "receptionist",
+          "phase": 2,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-1-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -200,
+            "top": -434.9557522123894
+          },
+          "actual": {
+            "left": -200,
+            "top": -434.95233357717626
+          },
+          "frame": {
+            "x": 474,
+            "y": 983,
+            "w": 237,
+            "h": 226
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "receptionist",
+          "phase": 3,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-1-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -300,
+            "top": -434.9557522123894
+          },
+          "actual": {
+            "left": -300,
+            "top": -434.95233357717626
+          },
+          "frame": {
+            "x": 711,
+            "y": 983,
+            "w": 237,
+            "h": 226
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "salesclerk",
+          "phase": 0,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-1-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": 0,
+            "top": -475.984251968504
+          },
+          "actual": {
+            "left": 0,
+            "top": -475.9821428571429
+          },
+          "frame": {
+            "x": 0,
+            "y": 1209,
+            "w": 237,
+            "h": 254
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "salesclerk",
+          "phase": 1,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-1-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -100,
+            "top": -475.984251968504
+          },
+          "actual": {
+            "left": -100,
+            "top": -475.9821428571429
+          },
+          "frame": {
+            "x": 237,
+            "y": 1209,
+            "w": 237,
+            "h": 254
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "salesclerk",
+          "phase": 2,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-1-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -200,
+            "top": -475.984251968504
+          },
+          "actual": {
+            "left": -200,
+            "top": -475.9821428571429
+          },
+          "frame": {
+            "x": 474,
+            "y": 1209,
+            "w": 237,
+            "h": 254
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "salesclerk",
+          "phase": 3,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-1-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -300,
+            "top": -475.984251968504
+          },
+          "actual": {
+            "left": -300,
+            "top": -475.9821428571429
+          },
+          "frame": {
+            "x": 711,
+            "y": 1209,
+            "w": 237,
+            "h": 254
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "taxi driver",
+          "phase": 0,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-1-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": 0,
+            "top": -746.4285714285714
+          },
+          "actual": {
+            "left": 0,
+            "top": -746.427330240405
+          },
+          "frame": {
+            "x": 0,
+            "y": 1463,
+            "w": 237,
+            "h": 196
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "taxi driver",
+          "phase": 1,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-1-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -100,
+            "top": -746.4285714285714
+          },
+          "actual": {
+            "left": -100,
+            "top": -746.427330240405
+          },
+          "frame": {
+            "x": 237,
+            "y": 1463,
+            "w": 237,
+            "h": 196
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "taxi driver",
+          "phase": 2,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-1-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -200,
+            "top": -746.4285714285714
+          },
+          "actual": {
+            "left": -200,
+            "top": -746.427330240405
+          },
+          "frame": {
+            "x": 474,
+            "y": 1463,
+            "w": 237,
+            "h": 196
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "taxi driver",
+          "phase": 3,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-1-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -300,
+            "top": -746.4285714285714
+          },
+          "actual": {
+            "left": -300,
+            "top": -746.427330240405
+          },
+          "frame": {
+            "x": 711,
+            "y": 1463,
+            "w": 237,
+            "h": 196
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        }
+      ],
+      "forbiddenStyles": [],
+      "width": 1060,
+      "scrollWidth": 1060,
+      "height": 2000,
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-jobs-graphic-v2\\jobs-graphic-1-v2.png",
+      "sha256": "b53f2c6adf2cfc5dabaefbb46987fba8ceb47e052303d1fbf9ebe817999da629",
+      "visualVerdict": "pass",
+      "observations": [
+        "Root independently reviewed the final56 native job phases for geometric adult style, anatomy, supported props and distinct actions.",
+        "The separate police ground oval was excluded with uniform native crop y126 h444; complete shoes end at native y567 with3px margin.",
+        "All56 actual animation phase positions, native crop containment, image loading and uniform scaling passed.",
+        "Reduced motion stops native job playback in both7-job groups.",
+        "No image pixels, colors or alpha were edited; native ImageGen outputs preserved."
+      ]
+    },
+    {
+      "id": "jobs-graphic-2-v2",
+      "cells": [
+        {
+          "term": "waiter",
+          "phase": 0,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-2-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": 0,
+            "top": 0
+          },
+          "actual": {
+            "left": 0,
+            "top": 0
+          },
+          "frame": {
+            "x": 0,
+            "y": 0,
+            "w": 237,
+            "h": 246
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "waiter",
+          "phase": 1,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-2-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -100,
+            "top": 0
+          },
+          "actual": {
+            "left": -100.00005792484252,
+            "top": 0
+          },
+          "frame": {
+            "x": 237,
+            "y": 0,
+            "w": 237,
+            "h": 246
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "waiter",
+          "phase": 2,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-2-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -200,
+            "top": 0
+          },
+          "actual": {
+            "left": -200.00011584968505,
+            "top": 0
+          },
+          "frame": {
+            "x": 474,
+            "y": 0,
+            "w": 237,
+            "h": 246
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "waiter",
+          "phase": 3,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-2-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -300,
+            "top": 0
+          },
+          "actual": {
+            "left": -300.0001737745275,
+            "top": 0
+          },
+          "frame": {
+            "x": 711,
+            "y": 0,
+            "w": 237,
+            "h": 246
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "waitress",
+          "phase": 0,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-2-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": 0,
+            "top": -105.5793991416309
+          },
+          "actual": {
+            "left": 0,
+            "top": -105.5768412090251
+          },
+          "frame": {
+            "x": 0,
+            "y": 246,
+            "w": 237,
+            "h": 233
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "waitress",
+          "phase": 1,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-2-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -100,
+            "top": -105.5793991416309
+          },
+          "actual": {
+            "left": -100,
+            "top": -105.5768412090251
+          },
+          "frame": {
+            "x": 237,
+            "y": 246,
+            "w": 237,
+            "h": 233
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "waitress",
+          "phase": 2,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-2-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -200,
+            "top": -105.5793991416309
+          },
+          "actual": {
+            "left": -200,
+            "top": -105.5768412090251
+          },
+          "frame": {
+            "x": 474,
+            "y": 246,
+            "w": 237,
+            "h": 233
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "waitress",
+          "phase": 3,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-2-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -296.6244725738397,
+            "top": -105.5793991416309
+          },
+          "actual": {
+            "left": -296.6241071428571,
+            "top": -105.5768412090251
+          },
+          "frame": {
+            "x": 703,
+            "y": 246,
+            "w": 237,
+            "h": 233
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "farmer",
+          "phase": 0,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-2-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": 0,
+            "top": -202.10970464135022
+          },
+          "actual": {
+            "left": 0,
+            "top": -202.1066964285714
+          },
+          "frame": {
+            "x": 0,
+            "y": 479,
+            "w": 237,
+            "h": 237
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "farmer",
+          "phase": 1,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-2-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -100,
+            "top": -202.10970464135022
+          },
+          "actual": {
+            "left": -100,
+            "top": -202.1066964285714
+          },
+          "frame": {
+            "x": 237,
+            "y": 479,
+            "w": 237,
+            "h": 237
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "farmer",
+          "phase": 2,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-2-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -200,
+            "top": -202.10970464135022
+          },
+          "actual": {
+            "left": -200,
+            "top": -202.1066964285714
+          },
+          "frame": {
+            "x": 474,
+            "y": 479,
+            "w": 237,
+            "h": 237
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "farmer",
+          "phase": 3,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-2-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -300,
+            "top": -202.10970464135022
+          },
+          "actual": {
+            "left": -300,
+            "top": -202.1066964285714
+          },
+          "frame": {
+            "x": 711,
+            "y": 479,
+            "w": 237,
+            "h": 237
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "nurse",
+          "phase": 0,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-2-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": 0,
+            "top": -297.0954356846473
+          },
+          "actual": {
+            "left": 0,
+            "top": -297.09107142857147
+          },
+          "frame": {
+            "x": 0,
+            "y": 716,
+            "w": 237,
+            "h": 241
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "nurse",
+          "phase": 1,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-2-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -100,
+            "top": -297.0954356846473
+          },
+          "actual": {
+            "left": -99.99988650872464,
+            "top": -297.09107142857147
+          },
+          "frame": {
+            "x": 237,
+            "y": 716,
+            "w": 237,
+            "h": 241
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "nurse",
+          "phase": 2,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-2-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -200,
+            "top": -297.0954356846473
+          },
+          "actual": {
+            "left": -199.9997730174493,
+            "top": -297.09107142857147
+          },
+          "frame": {
+            "x": 474,
+            "y": 716,
+            "w": 237,
+            "h": 241
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "nurse",
+          "phase": 3,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-2-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -300,
+            "top": -297.0954356846473
+          },
+          "actual": {
+            "left": -300.0001134912754,
+            "top": -297.09107142857147
+          },
+          "frame": {
+            "x": 711,
+            "y": 716,
+            "w": 237,
+            "h": 241
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "dentist",
+          "phase": 0,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-2-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": 0,
+            "top": -389.0243902439024
+          },
+          "actual": {
+            "left": 0,
+            "top": -389.0205357142857
+          },
+          "frame": {
+            "x": 0,
+            "y": 957,
+            "w": 237,
+            "h": 246
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "dentist",
+          "phase": 1,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-2-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -100,
+            "top": -389.0243902439024
+          },
+          "actual": {
+            "left": -100.00005792484252,
+            "top": -389.0205357142857
+          },
+          "frame": {
+            "x": 237,
+            "y": 957,
+            "w": 237,
+            "h": 246
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "dentist",
+          "phase": 2,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-2-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -200,
+            "top": -389.0243902439024
+          },
+          "actual": {
+            "left": -200.00011584968505,
+            "top": -389.0205357142857
+          },
+          "frame": {
+            "x": 474,
+            "y": 957,
+            "w": 237,
+            "h": 246
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "dentist",
+          "phase": 3,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-2-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -300,
+            "top": -389.0243902439024
+          },
+          "actual": {
+            "left": -300.0001737745275,
+            "top": -389.0205357142857
+          },
+          "frame": {
+            "x": 711,
+            "y": 957,
+            "w": 237,
+            "h": 246
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "police officer",
+          "phase": 0,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/police-graphic-v2.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": 0,
+            "top": -28.37837837837838
+          },
+          "actual": {
+            "left": 0,
+            "top": -28.374024910424843
+          },
+          "frame": {
+            "x": 0,
+            "y": 126,
+            "w": 543,
+            "h": 444
+          },
+          "atlas": {
+            "width": 2172,
+            "height": 724
+          }
+        },
+        {
+          "term": "police officer",
+          "phase": 1,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/police-graphic-v2.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -100,
+            "top": -28.37837837837838
+          },
+          "actual": {
+            "left": -100,
+            "top": -28.374024910424843
+          },
+          "frame": {
+            "x": 543,
+            "y": 126,
+            "w": 543,
+            "h": 444
+          },
+          "atlas": {
+            "width": 2172,
+            "height": 724
+          }
+        },
+        {
+          "term": "police officer",
+          "phase": 2,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/police-graphic-v2.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -200,
+            "top": -28.37837837837838
+          },
+          "actual": {
+            "left": -200,
+            "top": -28.374024910424843
+          },
+          "frame": {
+            "x": 1086,
+            "y": 126,
+            "w": 543,
+            "h": 444
+          },
+          "atlas": {
+            "width": 2172,
+            "height": 724
+          }
+        },
+        {
+          "term": "police officer",
+          "phase": 3,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/police-graphic-v2.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -300,
+            "top": -28.37837837837838
+          },
+          "actual": {
+            "left": -300,
+            "top": -28.374024910424843
+          },
+          "frame": {
+            "x": 1629,
+            "y": 126,
+            "w": 543,
+            "h": 444
+          },
+          "atlas": {
+            "width": 2172,
+            "height": 724
+          }
+        },
+        {
+          "term": "actor",
+          "phase": 0,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-2-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": 0,
+            "top": -597.0588235294118
+          },
+          "actual": {
+            "left": 0,
+            "top": -597.0580357142858
+          },
+          "frame": {
+            "x": 0,
+            "y": 1421,
+            "w": 237,
+            "h": 238
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "actor",
+          "phase": 1,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-2-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -100,
+            "top": -597.0588235294118
+          },
+          "actual": {
+            "left": -100.00005604203153,
+            "top": -597.0580357142858
+          },
+          "frame": {
+            "x": 237,
+            "y": 1421,
+            "w": 237,
+            "h": 238
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "actor",
+          "phase": 2,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-2-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -197.89029535864978,
+            "top": -597.0588235294118
+          },
+          "actual": {
+            "left": -197.88441330998248,
+            "top": -597.0580357142858
+          },
+          "frame": {
+            "x": 469,
+            "y": 1421,
+            "w": 237,
+            "h": 238
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        },
+        {
+          "term": "actor",
+          "phase": 3,
+          "src": "http://127.0.0.1:8896/Horizons/App/assets/art/jobs-graphic-2-v3.png",
+          "loaded": true,
+          "uniform": true,
+          "hasAnimation": true,
+          "expected": {
+            "left": -300,
+            "top": -597.0588235294118
+          },
+          "actual": {
+            "left": -300.00016812609454,
+            "top": -597.0580357142858
+          },
+          "frame": {
+            "x": 711,
+            "y": 1421,
+            "w": 237,
+            "h": 238
+          },
+          "atlas": {
+            "width": 948,
+            "height": 1659
+          }
+        }
+      ],
+      "forbiddenStyles": [],
+      "width": 1060,
+      "scrollWidth": 1060,
+      "height": 2000,
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-jobs-graphic-v2\\jobs-graphic-2-v2.png",
+      "sha256": "c01264d1aaf68eb59f6f83ce096a055a751da031416a0d3dd1340ae03b2410c9",
+      "visualVerdict": "pass",
+      "observations": [
+        "Root independently reviewed the final56 native job phases for geometric adult style, anatomy, supported props and distinct actions.",
+        "The separate police ground oval was excluded with uniform native crop y126 h444; complete shoes end at native y567 with3px margin.",
+        "All56 actual animation phase positions, native crop containment, image loading and uniform scaling passed.",
+        "Reduced motion stops native job playback in both7-job groups.",
+        "No image pixels, colors or alpha were edited; native ImageGen outputs preserved."
+      ]
+    }
+  ],
+  "animationCases": [
+    {
+      "term": "teacher",
+      "phase": 0,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "teacher",
+      "phase": 1,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "teacher",
+      "phase": 2,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "teacher",
+      "phase": 3,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "chef",
+      "phase": 0,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "chef",
+      "phase": 1,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "chef",
+      "phase": 2,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "chef",
+      "phase": 3,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "doctor",
+      "phase": 0,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "doctor",
+      "phase": 1,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "doctor",
+      "phase": 2,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "doctor",
+      "phase": 3,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "office worker",
+      "phase": 0,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "office worker",
+      "phase": 1,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "office worker",
+      "phase": 2,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "office worker",
+      "phase": 3,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "receptionist",
+      "phase": 0,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "receptionist",
+      "phase": 1,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "receptionist",
+      "phase": 2,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "receptionist",
+      "phase": 3,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "salesclerk",
+      "phase": 0,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "salesclerk",
+      "phase": 1,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "salesclerk",
+      "phase": 2,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "salesclerk",
+      "phase": 3,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "taxi driver",
+      "phase": 0,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "taxi driver",
+      "phase": 1,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "taxi driver",
+      "phase": 2,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "taxi driver",
+      "phase": 3,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "waiter",
+      "phase": 0,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "waiter",
+      "phase": 1,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "waiter",
+      "phase": 2,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "waiter",
+      "phase": 3,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "waitress",
+      "phase": 0,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "waitress",
+      "phase": 1,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "waitress",
+      "phase": 2,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "waitress",
+      "phase": 3,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "farmer",
+      "phase": 0,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "farmer",
+      "phase": 1,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "farmer",
+      "phase": 2,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "farmer",
+      "phase": 3,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "nurse",
+      "phase": 0,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "nurse",
+      "phase": 1,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "nurse",
+      "phase": 2,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "nurse",
+      "phase": 3,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "dentist",
+      "phase": 0,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "dentist",
+      "phase": 1,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "dentist",
+      "phase": 2,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "dentist",
+      "phase": 3,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "police officer",
+      "phase": 0,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "police officer",
+      "phase": 1,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "police officer",
+      "phase": 2,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "police officer",
+      "phase": 3,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "actor",
+      "phase": 0,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "actor",
+      "phase": 1,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "actor",
+      "phase": 2,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    },
+    {
+      "term": "actor",
+      "phase": 3,
+      "positionMatches": true,
+      "contained": true,
+      "hasAnimation": true
+    }
+  ],
+  "reducedMotionCases": [
+    {
+      "group": "jobs-graphic-1-v2",
+      "jobCount": 7,
+      "remainingNativeAnimations": 0
+    },
+    {
+      "group": "jobs-graphic-2-v2",
+      "jobCount": 7,
+      "remainingNativeAnimations": 0
+    }
+  ],
+  "failures": [],
+  "runtimeErrors": [],
+  "consoleErrors": [],
+  "requests": [],
+  "limits": [
+    "A rendered browser proof establishes finite native phase playback and painted containment. Each image still requires visual anatomy and flat-style review.",
+    "Source ImageGen alpha and color bytes are unchanged. Screenshots show those native images on a white browser canvas.",
+    "This job-specific check does not establish every companion, avatar or application route."
+  ],
+  "structuralPass": true,
+  "nativeJobSlots": 56,
+  "distinctNativeCells": 56,
+  "visualReview": {
+    "status": "PASS",
+    "reviewer": "Root agent independent of job art authorship; final ground-crop completion verified by job author",
+    "nativePhases": 56,
+    "approvedScreens": 2,
+    "reviewedAt": "2026-11-04T20:30:35.009146+00:00"
+  }
+}
