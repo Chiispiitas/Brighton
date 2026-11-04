@@ -43,7 +43,7 @@ const css = `
 `;
 function installStyle(){if(document.getElementById('hzn-avatar-bust-style'))return;const style=document.createElement('style');style.id='hzn-avatar-bust-style';style.textContent=css;document.head.append(style);}
 function getManifest(){return manifestPromise??=fetch(new URL('assets/art/manifest.json',appURL)).then(response=>{if(!response.ok)throw Error('Avatar artwork could not be opened');return response.json();});}
-function getGestures(){return gesturesPromise??=fetch(new URL('assets/art/avatar-graphic-flat-v1.frames.json',appURL)).then(response=>{if(!response.ok)throw Error('Avatar gesture artwork could not be opened');return response.json();});}
+function getGestures(){return gesturesPromise??=fetch(new URL('assets/art/avatar-friendly-v1.frames.json',appURL)).then(response=>{if(!response.ok)throw Error('Avatar gesture artwork could not be opened');return response.json();});}
 function groups(data){return data.avatar?.groups||data.avatar?.layers||data.avatar||{};}
 function choice(data,group,id){const values=groups(data)[group];const options=Array.isArray(values)?values:values?.options||[];return options.find(option=>option.id===id)||options[0];}
 function seedFor(avatar){return Object.values(avatar||{}).join(':').split('').reduce((value,char)=>(value*31+char.charCodeAt(0))>>>0,7);}
@@ -109,12 +109,12 @@ export function mountAvatar(element,{avatar={},manifest,mood='idle',posture='por
  const greet=()=>state.setMood('wave');mounts.set(element,state);
  Promise.all([Promise.resolve(manifest||getManifest()),getGestures()]).then(([data,gestureAtlas])=>{
   if(disposed)return;
-  const flatData={avatar:{...groups(data),...gestureAtlas.avatar}},skin=choice(flatData,'skin',avatar.skin),outfit=choice(flatData,'outfit',avatar.outfit),hair=choice(flatData,'hair',avatar.hair),accessory=choice(flatData,'accessory',avatar.accessory),badge=choice(data,'badge',avatar.badge);
+  const flatData={avatar:{...groups(data),...gestureAtlas.avatar}},baseName=avatar.body==='female'?'female':'male',baseKit=gestureAtlas.bases[baseName],skinOption=choice(flatData,'skin',avatar.skin),skin={...skinOption,...baseKit.skins[skinOption.id]},outfit=choice(flatData,'outfit',avatar.outfit),hair=choice(flatData,'hair',avatar.hair),accessory=choice(flatData,'accessory',avatar.accessory),badge=choice(data,'badge',avatar.badge);
   if(!skin?.frame)return;
-  const frame=document.createElement('span');frame.className='hzn-avatar-bust';frame.dataset.intentionalCrop='bust';frame.dataset.avatarBust='true';frame.dataset.posture=pose;frame.dataset.personality=['thoughtful','curious','cheerful'][seedFor(avatar)%3];frame.setAttribute('aria-hidden','true');
+  const frame=document.createElement('span');frame.className='hzn-avatar-bust';frame.dataset.intentionalCrop='bust';frame.dataset.avatarBust='true';frame.dataset.avatarBase=baseName;frame.dataset.posture=pose;frame.dataset.personality=['thoughtful','curious','cheerful'][seedFor(avatar)%3];frame.setAttribute('aria-hidden','true');
   const seed=seedFor(avatar);frame.style.setProperty('--avatar-period',`${6.8+(seed%27)/10}s`);frame.style.setProperty('--avatar-phase',`-${(seed%47)/10}s`);frame.style.setProperty('--avatar-blink',`${4.7+(seed%23)/10}s`);frame.style.setProperty('--avatar-blink-phase',`-${(seed%29)/10}s`);
   const stage=document.createElement('span');stage.className='hzn-avatar-stage';frame.append(stage);const body=document.createElement('span');body.className='hzn-avatar-body';body.dataset.rigPart='anatomical-body';stage.append(body);const torso=document.createElement('span');torso.className='hzn-avatar-torso';torso.dataset.rigPart='torso';torso.dataset.part='torso';const head=document.createElement('span');head.className='hzn-avatar-head';head.dataset.rigPart='head';head.dataset.part='head';body.append(torso,head);element.replaceChildren(frame);state.frame=frame;state.body=body;
-  const registration=gestureAtlas.registration;
+  const registration=baseKit.registration;
   function pixels(parent,asset,box,left,top,scale,part,z=1,extra=''){
    const view=document.createElement('span');view.className='hzn-avatar-pixels '+extra;view.dataset.rigPart=part;view.dataset.part=part;view.dataset.nativeFrame=JSON.stringify(box);view.dataset.nativeAtlas=JSON.stringify(asset.atlas);view.style.cssText=`left:${left}px;top:${top}px;width:${box.w*scale}px;height:${box.h*scale}px;z-index:${z}`;
    const img=document.createElement('img');img.src=new URL(asset.src,appURL).href;img.alt='';img.draggable=false;img.decoding='async';img.style.cssText=`width:${asset.atlas.width*scale}px;height:${asset.atlas.height*scale}px;left:${-box.x*scale}px;top:${-box.y*scale}px`;view.append(img);parent.append(view);return view;
@@ -127,7 +127,7 @@ export function mountAvatar(element,{avatar={},manifest,mood='idle',posture='por
   // narrower head and broad shoulders are part of the new adult graphic design.
   const faceScale=registration.headWidth/skin.frame.w,skinLeft=(320-skin.frame.w*faceScale)/2,skinTop=registration.headTop;
   if(accessory?.id==='accessory-6')fullLayer(torso,accessory,'accessory',accessory.rigPosition,0);
-  if(skin.neckFrame){const neck=skin.neckFrame;pixels(torso,skin,neck,skinLeft+(neck.x-skin.frame.x)*faceScale,skinTop+(neck.y-skin.frame.y)*faceScale+3,faceScale,'skin',1);}
+  if(skin.neckFrame){const neck=skin.neckFrame;pixels(torso,skin,neck,skinLeft+(neck.x-skin.frame.x)*faceScale,skinTop+(neck.y-skin.frame.y)*faceScale,faceScale,'skin',1);}
   const clothing=gestureAtlas.clothing,skinKit=gestureAtlas.skin,garment=clothing.outfits[outfit.id],skinParts=skinKit.skins[skin.id];
   const torsoBox=garment.torso,torsoScale=registration.torsoWidth/torsoBox.w;
   pixels(torso,garment.torsoAsset||clothing,torsoBox,(320-torsoBox.w*torsoScale)/2,registration.collarY-(garment.collarBottom-torsoBox.y)*torsoScale,torsoScale,'outfit',2);
@@ -137,7 +137,9 @@ export function mountAvatar(element,{avatar={},manifest,mood='idle',posture='por
   if(hair?.id!=='none')fullLayer(head,hair,'hair',hair?.rigPosition,5)?.classList.add('hzn-avatar-hair');
   if(accessory?.id&&accessory.id!=='none'&&accessory.id!=='accessory-6'){
    const onHead=['accessory-1','accessory-2','accessory-3'].includes(accessory.id);
-   fullLayer(onHead?head:torso,accessory,'accessory',accessory.rigPosition,onHead?6:4);
+   const position={...accessory.rigPosition};
+   if(accessory.id==='accessory-1')position.y=skin.eyeStageY-accessory.frame.h*(position.w/accessory.frame.w)/2;
+   fullLayer(onHead?head:torso,accessory,'accessory',position,onHead?6:4);
   }
   if(badge?.id&&badge.id!=='none'&&badge.frame){const s=26/badge.frame.w;pixels(torso,badge,badge.frame,198,253,s,'badge',8);}
   function joint(parent,name,x,y){const element=document.createElement('span');element.className='hzn-avatar-joint hzn-avatar-'+name;element.dataset.rigPart=name;element.dataset.joint=name;element.style.left=x+'px';element.style.top=y+'px';parent.append(element);return element;}

@@ -1,0 +1,8 @@
+{
+  "tool": "built-in image_gen",
+  "source": "assets/art/pico-friendly-head-v1.png",
+  "sourceSha256": "0e3021ace8dda55226b628120ebe013e5398fd59fa46fb0b75cfdd86657b79cb",
+  "prompt": "Use case: illustration-story. Create a replacement HEAD ONLY for Pico the mountain hare, based on the head in top-left of this animation atlas. Other parts of this reference are context only. The user says faces look evil. Make this character genuinely welcoming and gentle: a short soft-curved level eyebrow instead of a heavy diagonal slab, relaxed open oval white eyes with navy pupils, a small rounded orange triangle nose, and a warm softly curved smile with a modest magenta mouth interior. No pointy aggressive grin, no downward/inward angry eyebrow. Keep recognizably Pico: warm cream slightly geometric hare muzzle, looking slightly right, friendly adult-appropriate wit. HEAD WITHOUT EARS, no body, no limbs, no props, no labels; ears will be separate animation parts. The base of the head includes a short broad cream neck attachment so it connects continuously to a navy vest. One large head centered with transparent margin. Completely FLAT uniform opaque material colors, no gradients, no modeled lighting, no shadows anywhere, no texture, no rim highlights or white contour. Crisp clean vector-like native bitmap edges, genuinely transparent background. Keep facial features together in one native head.",
+  "reference": "assets/art/pico-graphic-v1.png",
+  "pixelPolicy": "Native ImageGen PNG retained without pixel painting. Head alpha and source dimensions measured for registration."
+}

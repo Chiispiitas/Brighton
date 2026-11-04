@@ -9,7 +9,7 @@ const {chromium}=require('C:/Users/David/.cache/codex-runtimes/codex-primary-run
 const app=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 const base=process.env.HZ_APP_URL||'http://127.0.0.1:8899/Horizons/App/';
 const output=process.env.HZ_JOBS_GRAPHIC_PROOF||'C:/Users/David/Documents/Codex/2026-11-04/horizons-jobs-graphic-v2';
-const reportFile=path.join(app,'reports/jobs-graphic-review.json');
+const reportFile=path.resolve(app,process.env.HZ_JOBS_REPORT||'reports/jobs-graphic-review.json');
 let previous;
 try{previous=JSON.parse(fs.readFileSync(reportFile,'utf8'));}catch{}
 const sha=bytes=>crypto.createHash('sha256').update(bytes).digest('hex');
@@ -18,8 +18,11 @@ const groups=[
  {id:'jobs-graphic-2-v2',terms:['waiter','waitress','farmer','nurse','dentist','police officer','actor']}
 ];
 const manifest=JSON.parse(fs.readFileSync(path.join(app,'assets/art/manifest.json'),'utf8'));
+const fragmentFile=process.env.HZ_JOBS_VOCAB_FRAGMENT;
+const fragment=fragmentFile?JSON.parse(fs.readFileSync(path.resolve(app,fragmentFile),'utf8')):null;
+if(fragment)Object.assign(manifest.vocabulary,fragment.vocabulary||fragment);
 const terms=groups.flatMap(group=>group.terms);
-const sources=[...new Set(['assets/art/manifest.json','src/art.js','styles/app.css','assets/art/jobs-graphic-v2.frames.json',...terms.map(term=>manifest.vocabulary[term].src)])];
+const sources=[...new Set(['assets/art/manifest.json','src/art.js','styles/app.css',process.env.HZ_JOBS_FRAMES||'assets/art/jobs-graphic-v2.frames.json',...(fragmentFile?[fragmentFile]:[]),...terms.map(term=>manifest.vocabulary[term].src)])];
 const report={date:new Date().toISOString(),base,status:'PENDING_VISUAL_REVIEW',pass:false,
  scope:'All 56 native phases across 14 remade jobs, including all patient and older-adult supporting characters. Actual rasterMarkup animation positions, scaling, containment and reduced-motion behavior.',
  sources:Object.fromEntries(sources.filter(file=>fs.existsSync(path.join(app,file))).map(file=>[file,sha(fs.readFileSync(path.join(app,file)))])),
@@ -35,7 +38,7 @@ page.on('requestfailed',request=>report.requests.push({url:request.url(),error:r
 
 for(const group of groups){
  const code=`import{loadArt,artManifest,rasterMarkup}from'./src/art.js?jobs-graphic-proof=2';
- await loadArt();const m=artManifest(),terms=${JSON.stringify(group.terms)};
+ await loadArt();const m=artManifest(),terms=${JSON.stringify(group.terms)};Object.assign(m.vocabulary,${JSON.stringify(fragment?(fragment.vocabulary||fragment):{})});
  document.getElementById('grid').innerHTML=terms.flatMap(term=>Array.from({length:4},(_,phase)=>'<section class="cell" data-term="'+term+'" data-phase="'+phase+'"><div class="picture">'+rasterMarkup(m.vocabulary[term],'qa-native',term)+'</div><p>'+term+' · '+(phase+1)+'</p></section>')).join('');
  await Promise.all([...document.images].map(image=>image.decode().catch(()=>{})));
  await new Promise(requestAnimationFrame);await new Promise(requestAnimationFrame);

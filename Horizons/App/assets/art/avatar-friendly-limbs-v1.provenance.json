@@ -1,0 +1,23 @@
+{
+  "tool": "built-in image_gen",
+  "creator": "OpenAI ImageGen",
+  "date": "2026-11-04",
+  "purpose": "Intermediate slim skin limbs; superseded by v2 to match native friendly head tones.",
+  "source": "assets/art/avatar-friendly-limbs-v1.png",
+  "nativeOutput": "C:/Users/David/.codex/generated_images/01a1a821-92b9-7283-9fb1-1e81fe81ee51/exec-66fb2714-82bb-444f-9055-7350b2c89b12.png",
+  "references": [
+    "assets/art/avatar-graphic-flat-limbs-v2.png"
+  ],
+  "promptSet": [
+    "Use case: precise-object-edit. Edit target: supplied six-column/four-row native skin limb sheet. Keep exact skin colors, grid centers, vertical positions and all four rows. Make adult limbs more SLENDER, not inflated:\nRows1and2 upper arms and forearms: reduce each part width by about20 percent around its existing vertical center axis, keep vertical heights unchanged. Maintain rounded shoulder/elbow caps and tapered wrists with generous rounded overlap material.\nRows3and4 open hands and thinking hands: preserve complete clear connected hand anatomy, thumb/fingers and wrist stem; make hand widths about10 percent narrower and keep heights unchanged. Widen/extend the top wrist stems just enough to overlap slender forearm ends naturally, without a visible detached seam. Wrist is at TOP, fingers point DOWN, same orientation as target.\nEvery column remains one EXACT matching uniform skin color. No new nail/knuckle lines, no wrist bands, no outlines, no darkening or shading. Strict flat opaque spot-color shapes. NO gradients, shadows, highlights, glow, texture, 3D or lighting. Preserve native alpha and completely transparent space between every cutout. No text or grid."
+  ],
+  "transformations": "Original generated PNG bytes copied without repainting, tracing, alpha thresholding, color edits or post-processing. Runtime uses measured rectangular native viewports and uniform transforms.",
+  "fiction": "Original fictional customization artwork, not portraits of real people.",
+  "license": "Original generated project artwork",
+  "dimensions": {
+    "width": 1536,
+    "height": 1024
+  },
+  "mode": "RGBA",
+  "sha256": "b3f381a4207536642a89a990a1ca36fbf5b94c0470ec9e595f63270d05e826ad"
+}

@@ -1,0 +1,528 @@
+{
+  "date": "2026-11-04T21:32:36.370Z",
+  "scope": "Independent actual Playwright pointer hover across all13 human contexts, then celebration interruption and actual timed return; finite painted screenshots, no seek/pause applied.",
+  "sourceHashes": {
+    "src/cast-rig.js": "8b723443ab456329d7ae909fe404b05fc170ccb8baba12b7f1f612df8c254bf8",
+    "assets/art/cast-friendly-v1.frames.json": "1e94b46522f50424aa12d453af0140547ab5f61d25c906194022a7e12f42b9ac",
+    "assets/art/mina-friendly-v2.png": "e22e7135ec15815e5b580e96514300b55590848a02faff7deed27294f048b016",
+    "assets/art/alex-friendly-v1.png": "b7064394db3dc6972adb41148559fcfff198860126f05c46368afc1a807d8e43",
+    "assets/art/jo-friendly-v1.png": "7682ab806ebcdc9879232ad74e8031d1d875af0d7f859269023114b931e4ccf4"
+  },
+  "sourceStable": true,
+  "errors": [],
+  "files": [
+    {
+      "label": "pointer-greeting-start",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-human-independent\\pointer-greeting-start.png",
+      "sha256": "7033d5dc7f89e147e8564238e180cb7fe1806db27a80f4602631f054983a1fe5",
+      "elapsed": 213,
+      "moods": [
+        {
+          "character": "mina",
+          "posture": "step",
+          "mood": "wave"
+        },
+        {
+          "character": "mina",
+          "posture": "read",
+          "mood": "wave"
+        },
+        {
+          "character": "mina",
+          "posture": "map",
+          "mood": "wave"
+        },
+        {
+          "character": "mina",
+          "posture": "skip",
+          "mood": "wave"
+        },
+        {
+          "character": "alex",
+          "posture": "listen",
+          "mood": "wave"
+        },
+        {
+          "character": "alex",
+          "posture": "sit",
+          "mood": "wave"
+        },
+        {
+          "character": "alex",
+          "posture": "fix",
+          "mood": "wave"
+        },
+        {
+          "character": "alex",
+          "posture": "dance",
+          "mood": "wave"
+        },
+        {
+          "character": "alex",
+          "posture": "drive",
+          "mood": "wave"
+        },
+        {
+          "character": "jo",
+          "posture": "offer",
+          "mood": "wave"
+        },
+        {
+          "character": "jo",
+          "posture": "read",
+          "mood": "wave"
+        },
+        {
+          "character": "jo",
+          "posture": "pour",
+          "mood": "wave"
+        },
+        {
+          "character": "jo",
+          "posture": "clap",
+          "mood": "wave"
+        }
+      ]
+    },
+    {
+      "label": "pointer-greeting-raised",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-human-independent\\pointer-greeting-raised.png",
+      "sha256": "17777925e3a8ab18cc147693e7e8fefc18b372e17b91f7cb83f299e257543366",
+      "elapsed": 1289,
+      "moods": [
+        {
+          "character": "mina",
+          "posture": "step",
+          "mood": "wave"
+        },
+        {
+          "character": "mina",
+          "posture": "read",
+          "mood": "wave"
+        },
+        {
+          "character": "mina",
+          "posture": "map",
+          "mood": "wave"
+        },
+        {
+          "character": "mina",
+          "posture": "skip",
+          "mood": "wave"
+        },
+        {
+          "character": "alex",
+          "posture": "listen",
+          "mood": "wave"
+        },
+        {
+          "character": "alex",
+          "posture": "sit",
+          "mood": "wave"
+        },
+        {
+          "character": "alex",
+          "posture": "fix",
+          "mood": "wave"
+        },
+        {
+          "character": "alex",
+          "posture": "dance",
+          "mood": "wave"
+        },
+        {
+          "character": "alex",
+          "posture": "drive",
+          "mood": "wave"
+        },
+        {
+          "character": "jo",
+          "posture": "offer",
+          "mood": "wave"
+        },
+        {
+          "character": "jo",
+          "posture": "read",
+          "mood": "wave"
+        },
+        {
+          "character": "jo",
+          "posture": "pour",
+          "mood": "wave"
+        },
+        {
+          "character": "jo",
+          "posture": "clap",
+          "mood": "wave"
+        }
+      ]
+    },
+    {
+      "label": "interruption-first-frame",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-human-independent\\interruption-first-frame.png",
+      "sha256": "71f74214b1bb564f4f298187334605ed2260ecac90178afb686e5eca169350ee",
+      "elapsed": 1502,
+      "moods": [
+        {
+          "character": "mina",
+          "posture": "step",
+          "mood": "celebrate"
+        },
+        {
+          "character": "mina",
+          "posture": "read",
+          "mood": "celebrate"
+        },
+        {
+          "character": "mina",
+          "posture": "map",
+          "mood": "celebrate"
+        },
+        {
+          "character": "mina",
+          "posture": "skip",
+          "mood": "celebrate"
+        },
+        {
+          "character": "alex",
+          "posture": "listen",
+          "mood": "celebrate"
+        },
+        {
+          "character": "alex",
+          "posture": "sit",
+          "mood": "celebrate"
+        },
+        {
+          "character": "alex",
+          "posture": "fix",
+          "mood": "celebrate"
+        },
+        {
+          "character": "alex",
+          "posture": "dance",
+          "mood": "celebrate"
+        },
+        {
+          "character": "alex",
+          "posture": "drive",
+          "mood": "celebrate"
+        },
+        {
+          "character": "jo",
+          "posture": "offer",
+          "mood": "celebrate"
+        },
+        {
+          "character": "jo",
+          "posture": "read",
+          "mood": "celebrate"
+        },
+        {
+          "character": "jo",
+          "posture": "pour",
+          "mood": "celebrate"
+        },
+        {
+          "character": "jo",
+          "posture": "clap",
+          "mood": "celebrate"
+        }
+      ]
+    },
+    {
+      "label": "interruption-blend",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-human-independent\\interruption-blend.png",
+      "sha256": "d7646f65d4ea8b50cd0b7d2b189e59c73bd239f91950d372027d3de65f9cc6d5",
+      "elapsed": 2150,
+      "moods": [
+        {
+          "character": "mina",
+          "posture": "step",
+          "mood": "celebrate"
+        },
+        {
+          "character": "mina",
+          "posture": "read",
+          "mood": "celebrate"
+        },
+        {
+          "character": "mina",
+          "posture": "map",
+          "mood": "celebrate"
+        },
+        {
+          "character": "mina",
+          "posture": "skip",
+          "mood": "celebrate"
+        },
+        {
+          "character": "alex",
+          "posture": "listen",
+          "mood": "celebrate"
+        },
+        {
+          "character": "alex",
+          "posture": "sit",
+          "mood": "celebrate"
+        },
+        {
+          "character": "alex",
+          "posture": "fix",
+          "mood": "celebrate"
+        },
+        {
+          "character": "alex",
+          "posture": "dance",
+          "mood": "celebrate"
+        },
+        {
+          "character": "alex",
+          "posture": "drive",
+          "mood": "celebrate"
+        },
+        {
+          "character": "jo",
+          "posture": "offer",
+          "mood": "celebrate"
+        },
+        {
+          "character": "jo",
+          "posture": "read",
+          "mood": "celebrate"
+        },
+        {
+          "character": "jo",
+          "posture": "pour",
+          "mood": "celebrate"
+        },
+        {
+          "character": "jo",
+          "posture": "clap",
+          "mood": "celebrate"
+        }
+      ]
+    },
+    {
+      "label": "celebration-raised",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-human-independent\\celebration-raised.png",
+      "sha256": "b4267d45cc865c0c5a018449b4bd33f88ecd48f91462a6fe23810425fce1a9f2",
+      "elapsed": 3501,
+      "moods": [
+        {
+          "character": "mina",
+          "posture": "step",
+          "mood": "celebrate"
+        },
+        {
+          "character": "mina",
+          "posture": "read",
+          "mood": "celebrate"
+        },
+        {
+          "character": "mina",
+          "posture": "map",
+          "mood": "celebrate"
+        },
+        {
+          "character": "mina",
+          "posture": "skip",
+          "mood": "celebrate"
+        },
+        {
+          "character": "alex",
+          "posture": "listen",
+          "mood": "celebrate"
+        },
+        {
+          "character": "alex",
+          "posture": "sit",
+          "mood": "celebrate"
+        },
+        {
+          "character": "alex",
+          "posture": "fix",
+          "mood": "celebrate"
+        },
+        {
+          "character": "alex",
+          "posture": "dance",
+          "mood": "celebrate"
+        },
+        {
+          "character": "alex",
+          "posture": "drive",
+          "mood": "celebrate"
+        },
+        {
+          "character": "jo",
+          "posture": "offer",
+          "mood": "celebrate"
+        },
+        {
+          "character": "jo",
+          "posture": "read",
+          "mood": "celebrate"
+        },
+        {
+          "character": "jo",
+          "posture": "pour",
+          "mood": "celebrate"
+        },
+        {
+          "character": "jo",
+          "posture": "clap",
+          "mood": "celebrate"
+        }
+      ]
+    },
+    {
+      "label": "celebration-timed-return",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-human-independent\\celebration-timed-return.png",
+      "sha256": "942073d328a7124f8d77344fcb1d895211dccacead7bd782c0b395c64c0c2f46",
+      "elapsed": 5946,
+      "moods": [
+        {
+          "character": "mina",
+          "posture": "step",
+          "mood": "celebrate"
+        },
+        {
+          "character": "mina",
+          "posture": "read",
+          "mood": "celebrate"
+        },
+        {
+          "character": "mina",
+          "posture": "map",
+          "mood": "celebrate"
+        },
+        {
+          "character": "mina",
+          "posture": "skip",
+          "mood": "celebrate"
+        },
+        {
+          "character": "alex",
+          "posture": "listen",
+          "mood": "celebrate"
+        },
+        {
+          "character": "alex",
+          "posture": "sit",
+          "mood": "celebrate"
+        },
+        {
+          "character": "alex",
+          "posture": "fix",
+          "mood": "celebrate"
+        },
+        {
+          "character": "alex",
+          "posture": "dance",
+          "mood": "celebrate"
+        },
+        {
+          "character": "alex",
+          "posture": "drive",
+          "mood": "celebrate"
+        },
+        {
+          "character": "jo",
+          "posture": "offer",
+          "mood": "celebrate"
+        },
+        {
+          "character": "jo",
+          "posture": "read",
+          "mood": "celebrate"
+        },
+        {
+          "character": "jo",
+          "posture": "pour",
+          "mood": "celebrate"
+        },
+        {
+          "character": "jo",
+          "posture": "clap",
+          "mood": "celebrate"
+        }
+      ]
+    },
+    {
+      "label": "idle-restored",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-human-independent\\idle-restored.png",
+      "sha256": "61dea330b14eb1decb66d2e2cea7cc09cf5661e4b8cf7691a9b283625fddecc2",
+      "elapsed": 11585,
+      "moods": [
+        {
+          "character": "mina",
+          "posture": "step",
+          "mood": "idle"
+        },
+        {
+          "character": "mina",
+          "posture": "read",
+          "mood": "idle"
+        },
+        {
+          "character": "mina",
+          "posture": "map",
+          "mood": "idle"
+        },
+        {
+          "character": "mina",
+          "posture": "skip",
+          "mood": "idle"
+        },
+        {
+          "character": "alex",
+          "posture": "listen",
+          "mood": "idle"
+        },
+        {
+          "character": "alex",
+          "posture": "sit",
+          "mood": "idle"
+        },
+        {
+          "character": "alex",
+          "posture": "fix",
+          "mood": "idle"
+        },
+        {
+          "character": "alex",
+          "posture": "dance",
+          "mood": "idle"
+        },
+        {
+          "character": "alex",
+          "posture": "drive",
+          "mood": "idle"
+        },
+        {
+          "character": "jo",
+          "posture": "offer",
+          "mood": "idle"
+        },
+        {
+          "character": "jo",
+          "posture": "read",
+          "mood": "idle"
+        },
+        {
+          "character": "jo",
+          "posture": "pour",
+          "mood": "idle"
+        },
+        {
+          "character": "jo",
+          "posture": "clap",
+          "mood": "idle"
+        }
+      ]
+    }
+  ],
+  "pass": true,
+  "visualReview": "INDEPENDENT PASS: All seven saved actual pointer/interruption/timed-return sheets,91 painted contexts, directly inspected. Friendly expressions, connected neck/sleeve/leg silhouettes, supported props and separated feet. No detached cloth or limb seen. Final13 contexts idle; no seek/pause was applied."
+}

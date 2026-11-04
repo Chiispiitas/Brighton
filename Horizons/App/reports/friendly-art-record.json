@@ -1,0 +1,497 @@
+{
+  "date": "2026-11-04T21:46:25.482618+00:00",
+  "tool": "built-in image_gen",
+  "scope": "Friendly faces and balanced proportions; new male/female avatar bases; painted body-part connectivity corrections.",
+  "selectedNativeFiles": [
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-friendly-v1.png",
+      "repositoryPath": "Horizons/App/assets/art/alex-friendly-v1.png",
+      "sha256": "b7064394db3dc6972adb41148559fcfff198860126f05c46368afc1a807d8e43"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\app-icon-friendly-v2.png",
+      "repositoryPath": "Horizons/App/assets/art/app-icon-friendly-v2.png",
+      "sha256": "b9f6bee53f0b5996450195431cddaa60f341d440360537ffe2e17c01ce9f7426"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-friendly-clothing-v2.png",
+      "repositoryPath": "Horizons/App/assets/art/avatar-friendly-clothing-v2.png",
+      "sha256": "4f7360e8365d0a162e670dfe54f8375b7d9ac76fa94372312782902b1e527d99"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-friendly-heads-v1.png",
+      "repositoryPath": "Horizons/App/assets/art/avatar-friendly-heads-v1.png",
+      "sha256": "407bcff61341e0b650c9fa360aeb9901ebe068d39e1601dfd5560bfccab4ca82"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-friendly-limbs-v2.png",
+      "repositoryPath": "Horizons/App/assets/art/avatar-friendly-limbs-v2.png",
+      "sha256": "ac04d55b7e3edf0e0a4a11ad44b501e7aad18fc22a711923cf48dc0aab2fc4dd"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-graphic-flat-kit-v2.png",
+      "repositoryPath": "Horizons/App/assets/art/avatar-graphic-flat-kit-v2.png",
+      "sha256": "900603edb8455ab76571b4d37eb1c3d78fb7d58915f6d14dacf1b70069d94c2e"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-friendly-v1.png",
+      "repositoryPath": "Horizons/App/assets/art/jo-friendly-v1.png",
+      "sha256": "7682ab806ebcdc9879232ad74e8031d1d875af0d7f859269023114b931e4ccf4"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jobs-friendly-1-v4.png",
+      "repositoryPath": "Horizons/App/assets/art/jobs-friendly-1-v4.png",
+      "sha256": "84896603b339e390d348705da2d2b2ff8c4679fc07c924748d7fccd5b22c1652"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jobs-friendly-2-v2.png",
+      "repositoryPath": "Horizons/App/assets/art/jobs-friendly-2-v2.png",
+      "sha256": "a8b60a5d945358974efc0cd8069a7d556588901efccfcc8c44fad3eb21c1debd"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jobs-friendly-3-v2.png",
+      "repositoryPath": "Horizons/App/assets/art/jobs-friendly-3-v2.png",
+      "sha256": "d15a3d940e000fa0a60fd5b9a9c55010407412974f866401aa5a834b16baf0bb"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jobs-friendly-4-v2.png",
+      "repositoryPath": "Horizons/App/assets/art/jobs-friendly-4-v2.png",
+      "sha256": "465fbad055cf3e5c4b419baaf82d2ac7e0c7346a45711d025d2150d3baa9ccb2"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-friendly-v2.png",
+      "repositoryPath": "Horizons/App/assets/art/mina-friendly-v2.png",
+      "sha256": "e22e7135ec15815e5b580e96514300b55590848a02faff7deed27294f048b016"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\pico-friendly-head-v2.png",
+      "repositoryPath": "Horizons/App/assets/art/pico-friendly-head-v2.png",
+      "sha256": "3cf032cea26eb0e2fc4911c51b6740fd562f73e306c1eb2bb9ba2c27648a622b"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\pico-graphic-v1.png",
+      "repositoryPath": "Horizons/App/assets/art/pico-graphic-v1.png",
+      "sha256": "81c1c5a699c695bb716159cf6f8b7989b51c7d51a4210767de7dd50efb97532c"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\profile-friendly-v2.png",
+      "repositoryPath": "Horizons/App/assets/art/profile-friendly-v2.png",
+      "sha256": "a9713022283e29c1219350ba7179bac6277a4061c023f37dab2396b4a8fdf531"
+    }
+  ],
+  "metadata": [
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-friendly-v1.frames.json",
+      "sha256": "f2339ebd8938ae5d8c36660acdeeb21dcfd8e2b4442c915e094a50529d5b893c"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\pico-friendly-v1.frames.json",
+      "sha256": "dedad9c1965b51f04eaa2f7594694ea16da74d0f9db2073254deaa98641e47bf"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\cast-friendly-v1.frames.json",
+      "sha256": "1e94b46522f50424aa12d453af0140547ab5f61d25c906194022a7e12f42b9ac"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jobs-friendly-v1.frames.json",
+      "sha256": "6260cb720e573faf0caa22b55e26ef5235d3271a50432053487f006ff3cbe733"
+    }
+  ],
+  "promptSets": [
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-friendly-v1.provenance.json",
+      "sha256": "f053d5b9d384dbedf8c1437e8bc6625da9aa9c5e00e8c7ff36d3e0c05190a4f6",
+      "record": {
+        "version": 1,
+        "date": "2026-11-04",
+        "tool": "built-in image_gen.imagegen",
+        "useCase": "precise-object-edit",
+        "artifact": "alex-friendly-v1.png",
+        "editTarget": "assets/art/alex-geometric-v1.png",
+        "generatedSource": "C:/Users/David/.codex/generated_images/01a1a821-f54c-74b0-a1e7-e96dc5bfc498/exec-88289c9e-04c2-49ae-bdc7-a64003e3c940.png",
+        "prompt": "Use case: precise-object-edit. Edit target: this 4-column by 3-row native transparent character animation atlas. Correct the personality, heavy proportions and joint shapes; keep the same identity, clothing colors, 12-cell part arrangement, transparent background and native raster format.\nAlex, a friendly adult man with brown skin, curly dark hair, teal jacket over orange shirt, navy trousers, cream shoes. Keep his moderately broad adult build distinct from slim Mina, but reduce the torso width by about ONE THIRD and arm/trouser shafts by about HALF versus this overly blocky old atlas. Torso should be about 78% as wide as it is tall. Upper teal sleeves should be slim rounded capsules; hands modest relaxed mitten hands wider than wrists without big club-like palms. Thighs navy slender capsules, shins narrow and connected smoothly to cream shoes. Preserve navy headphones and flat orange wrench.\nFACE CORRECTION IS CRITICAL: the current sharply inward-slanted eyebrows look angry/evil. Replace them with relaxed almost-HORIZONTAL eyebrows or a very gentle friendly upward arch, with soft round ends. NO V-shaped angry brows, NO lowered inner brows, NO skeptical sharply cocked eyebrow. Show broad OPEN approachable white eyes, small calm centered pupils and a warm unambiguous friendly smile with gently upturned corners. No smirk, narrow eyes, stern face or sinister expression. Keep an adult long/angular or soft-square face, not a baby/chibi head.\nJOINT CORRECTION: The disconnected reusable pieces must have generous ROUND opaque connecting ends at shoulders, elbows, hips and knees, not squared-off severed planks. Each upper arm and thigh is a long SLIM CAPSULE with round ends extending beyond the anatomical pivot, so adjoining pieces overlap naturally. Each skin forearm starts with a round elbow cap and narrows slightly to the wrist before its attached complete modest mitten hand. Each shin starts with a round knee cap and ends in an attached flat shoe at a clean material boundary. Parts straight DOWN. Shoes point outward (left cell shoe left, right cell shoe right), with shoe width only about1.5\u20131.7 times trouser shaft width.\nLayout must stay: row1 head, torso, left upper arm, left forearm+hand; row2 right upper arm, right forearm+hand, left thigh, left shin+shoe; row3 right thigh, right shin+shoe, accessory, prop. Every whole native piece isolated and centered in its own cell with generous transparent gaps. NO assembled person.\nSTYLE: clean adult flat geometric 2D illustration, crisp opaque single-color regions. Absolutely no gradients, cast shadows, highlights, cheek/neck shading, 3D, texture, glow, outlines, transparency inside the body, labels or text. Any different panel is a deliberate garment/material region, never lighting. True transparent background. Do not add a ground shadow. Preserve all complete faces and full hands.",
+        "transparentBackground": true,
+        "pixelEdits": "None; native generated PNG bytes copied unchanged. Only rectangular runtime viewports and measured pivots/lengths are used.",
+        "correction": "Relaxed brows/open eyes/warm smile; narrower distinct adult bodies and limb shafts; round overlapping connection ends."
+      }
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\app-icon-friendly-v1.provenance.json",
+      "sha256": "c256c4b795f05331adde45cb1ddcf5b364319821d2a7ef6359ad7728e4af4a65",
+      "record": {
+        "tool": "built-in image_gen",
+        "source": "assets/art/app-icon-friendly-v1.png",
+        "references": [
+          "assets/art/pico-friendly-head-v1.png",
+          "assets/art/app-icon-graphic-v1.png"
+        ],
+        "prompt": "Use case: illustration-story. Replacement Horizons app icon. Image1 is the NEW friendly Pico face identity to use; Image2 shows the previous full head-and-ears icon framing. Redraw the icon with Image1's gentle soft-curved eyebrow, relaxed open oval eyes, modest rounded orange nose, warm softly curved magenta smile, short cream neck. Add one long upright ear and one bent ear as in Image2. A welcoming mountain hare, never sly, scary or aggressive. No inward angry eyebrow, no sharp evil grin. Center the complete head and ears at generous but usable app-icon scale on a perfectly flat solid warm-white background. Crisp flat opaque color blocks only, zero gradients, zero shadows, zero lighting, zero texture, no outlines, no labels/text, no border. Face/head is one coherent shape. Preserve overall recognizable Pico cream/navy/orange/magenta identity."
+      }
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\app-icon-friendly-v2.provenance.json",
+      "sha256": "7e84bc9474abe7015b55e57aa0785b02b3e717e0879e3ed949ec7165489c83d5",
+      "record": {
+        "tool": "built-in image_gen",
+        "source": "assets/art/app-icon-friendly-v2.png",
+        "reference": "assets/art/app-icon-friendly-v1.png",
+        "prompt": "Use case: precise-object-edit. ONE STRICT CHANGE to this exact Pico app icon: TWO separate gentle navy eyebrows, one above EACH eye. Replace the current one long brow with two matching short shallow-curved eyebrows, separated by a clear gap. Both should look relaxed and welcoming, never angled down toward the nose. Count exactly TWO eyebrows. Preserve all other design and geometry: ears, face, neck, eyes, nose, smile, framing, colors, warm-white solid background. Keep completely flat uniform materials, no shadows, gradients, highlights, texture, outlines or lighting. No added objects/text."
+      }
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-friendly-clothing-v1.provenance.json",
+      "sha256": "892ccb18b3a602f9e9b902bec6e94ff373af8dfedf18d5e146d810335e6144d8",
+      "record": {
+        "tool": "built-in image_gen",
+        "creator": "OpenAI ImageGen",
+        "date": "2026-11-04",
+        "purpose": "Intermediate slim clothing generation; superseded by v2 because two short sleeves were omitted.",
+        "source": "assets/art/avatar-friendly-clothing-v1.png",
+        "nativeOutput": "C:/Users/David/.codex/generated_images/01a1a821-92b9-7283-9fb1-1e81fe81ee51/exec-b7d04744-4000-472b-939a-edcddacea62c.png",
+        "references": [
+          "assets/art/avatar-graphic-flat-clothing-v1.png"
+        ],
+        "promptSet": [
+          "Use case: precise-object-edit. Edit target: supplied six-column, three-row modular clothing sheet. Keep all SIX TORSO CORES in row1 EXACTLY the same designs, native positions and colors, but slightly slim their silhouettes by about8 percent around their centers while keeping the existing neck opening positions and full vertical heights. Keep each column centered.\nModify the row2 detached UPPER SLEEVES and row3 detached FOREARM SLEEVES: make them about25 percent NARROWER while preserving their vertical heights, round attachment cap shapes and center axes. Slender natural adult arm proportions, not thick inflated tubes. Keep the short sleeves in columns2and5, and keep their row3 cells blank transparent. Keep every clothing part separated and aligned to its original cell; no assembled body/head/skin/hands. Preserve hoodie/jacket/sweater/overalls/cardigan details and palette.\nEach component must have enough natural overlapping rounded material at its top/bottom to join shoulder/elbow/wrist animation pivots without gaps. Long sleeve cuffs remain simple and complete.\nFlat uniform solid material colors only. No gradients, shading, shadows, highlights, fabric folds/texture, lighting, dark side planes, outlines or 3D. Preserve native transparent alpha outside all cutouts. No text or labels. Return only the same garment component sheet."
+        ],
+        "transformations": "Original generated PNG bytes copied without repainting, tracing, alpha thresholding, color edits or post-processing. Runtime uses measured rectangular native viewports and uniform transforms.",
+        "fiction": "Original fictional customization artwork, not portraits of real people.",
+        "license": "Original generated project artwork",
+        "dimensions": {
+          "width": 1536,
+          "height": 1024
+        },
+        "mode": "RGBA",
+        "sha256": "f1fdf03414d3699e4ca9dadfec2ea980637b48e712c54459f26cac6ff9dda7fa"
+      }
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-friendly-clothing-v2.provenance.json",
+      "sha256": "0dfc69a5339ad87ff6ca82079fff5e63f597d8fd488f6cadf318b19a0fc9d621",
+      "record": {
+        "tool": "built-in image_gen",
+        "creator": "OpenAI ImageGen",
+        "date": "2026-11-04",
+        "purpose": "Active native slim torso and sleeve cutouts, including both short sleeves.",
+        "source": "assets/art/avatar-friendly-clothing-v2.png",
+        "nativeOutput": "C:/Users/David/.codex/generated_images/01a1a821-92b9-7283-9fb1-1e81fe81ee51/exec-926e6552-a07e-405a-a435-ee8ce8281804.png",
+        "references": [
+          "assets/art/avatar-friendly-clothing-v1.png",
+          "assets/art/avatar-graphic-flat-clothing-v1.png"
+        ],
+        "promptSet": [
+          "Use case: precise-object-edit. Image1 is EDIT TARGET: six-column, three-row clothing components. Image2 is reference ONLY for the TWO short-sleeve parts that are missing from image1. Preserve every existing image1 torso core and long upper/fore sleeve exactly at its current position and size.\nAdd ONLY these two native transparent cutouts: row2 column2 a short teal upper sleeve, row2 column5 a short cream upper sleeve. Use the reference image2 short-sleeve silhouettes, but width about85 pixels and height about120 pixels, centered at x400 and x1136 with rounded shoulder cap top at y423 and bottom at y550. Keep row3 column2 andcolumn5 completely transparent. Do not add skin or hands. Do not change other cells.\nFlat uniform solid colors matching target outfits. No gradients, shadows, highlights, lighting, texture, outlines or 3D. True transparent alpha outside all parts. No labels or text."
+        ],
+        "transformations": "Original generated PNG bytes copied without repainting, tracing, alpha thresholding, color edits or post-processing. Runtime uses measured rectangular native viewports and uniform transforms.",
+        "fiction": "Original fictional customization artwork, not portraits of real people.",
+        "license": "Original generated project artwork",
+        "dimensions": {
+          "width": 1536,
+          "height": 1024
+        },
+        "mode": "RGBA",
+        "sha256": "4f7360e8365d0a162e670dfe54f8375b7d9ac76fa94372312782902b1e527d99"
+      }
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-friendly-heads-v1.provenance.json",
+      "sha256": "88cc15a81a682e9335dbd1b1d45cc2b0a568ed8e64c0d4e37df245237b42f146",
+      "record": {
+        "tool": "built-in image_gen",
+        "creator": "OpenAI ImageGen",
+        "date": "2026-11-04",
+        "purpose": "Active distinct Male/Female base heads and native closed-eye patches.",
+        "source": "assets/art/avatar-friendly-heads-v1.png",
+        "nativeOutput": "C:/Users/David/.codex/generated_images/01a1a821-92b9-7283-9fb1-1e81fe81ee51/exec-b87e36ad-b0b3-475d-8813-bb4f59a863aa.png",
+        "references": [
+          "assets/art/avatar-graphic-flat-kit-v2.png"
+        ],
+        "promptSet": [
+          "Use case: illustration-story. Asset type: NEW native transparent avatar head/base sheet for an adult language learning app.\nThe reference image is ONLY for the six skin colors and the existing modular geometric artwork family. The current expressions have been rejected as angry/evil: DO NOT repeat their heavy diagonal eyebrows, sharp long noses or black triangular grins. Make unmistakably KIND, RELAXED, APPROACHABLE adult faces.\nOne 1536x1024 transparent sheet, exactly SIX evenly spaced columns and FOUR rows, no labels/grid/text.\nROW 1, upper quarter: six separate BALD adult MALE head-and-neck cutouts, all the same geometry/facial positions, changing only skin tone from pale peach through warm peach, honey, caramel, chestnut to deep brown to MATCH the top row of the reference. Soft square/tapered adult face, discreet rounded ears, gentle jaw, short natural neck extending downward about35 pixels. Adult facial proportions, slim balanced head, not a baby circle.\nROW 2, second quarter: six separate BALD adult FEMALE head-and-neck cutouts in the same six matching tones and same frontal registration. This is a real female FACE BASE, recognizable through a softer narrower lower jaw, gently rounded cheeks, slightly smaller nose and graceful natural neck. NO HAIR, no hats, no earrings, no makeup required. She must still read clearly as an adult woman with any hairstyle, including short hair or no hair. Same forehead height, eye line and ear placement as male bases, compatible with interchangeable hair and accessories.\nALL TWELVE heads: small expressive white eyes with gentle round black pupils, relaxed THIN curved eyebrows with nearly LEVEL endpoints and no inward/downward angry tilt. Eyebrows about half the prior thickness, soft shallow arcs. Small modest rounded geometric nose, not a long pointed block. A small warm friendly smile, gently upturned corners and one simple pale teeth shape; avoid a large open black mouth, exaggerated smirk, fangs or sinister grin. Calm attentive happy expression, easy-going friendly personality. Flat skin including neck is one uniform color, no blush or side planes.\nROW 3, third quarter: six male CLOSED-EYE BLINK bands matching row1 tones, small horizontal skin-colored patches with two soft closed-eyelid curved lines, no brows/nose/mouth/head. Center each in its column. Skin band about145x50 pixels, each closed eye about25 pixels wide, identical spacing to eyes in row1.\nROW 4, bottom quarter: six female CLOSED-EYE BLINK bands matching row2 tones/spacing, same kind relaxed closed-eyelid shape and solid skin colored band, no other face features.\nStrict original geometric 2D flat spot-color art. Opaque solid fills per shape. NO gradients, shadows, highlights, dark neck triangles, depth, texture, glow, strokes around silhouettes, 3D, baby heads or aggressive expressions. Native alpha fully transparent outside components. Whole heads/necks inside cells, with clear transparent space between all components."
+        ],
+        "transformations": "Original generated PNG bytes copied without repainting, tracing, alpha thresholding, color edits or post-processing. Runtime uses measured rectangular native viewports and uniform transforms.",
+        "fiction": "Original fictional customization artwork, not portraits of real people.",
+        "license": "Original generated project artwork",
+        "dimensions": {
+          "width": 1536,
+          "height": 1024
+        },
+        "mode": "RGBA",
+        "sha256": "407bcff61341e0b650c9fa360aeb9901ebe068d39e1601dfd5560bfccab4ca82"
+      }
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-friendly-limbs-v1.provenance.json",
+      "sha256": "7546d6b6093f79c836b39756cf85ee7a2b8dc5ccea4f44fa4beafdbacfd4cfc9",
+      "record": {
+        "tool": "built-in image_gen",
+        "creator": "OpenAI ImageGen",
+        "date": "2026-11-04",
+        "purpose": "Intermediate slim skin limbs; superseded by v2 to match native friendly head tones.",
+        "source": "assets/art/avatar-friendly-limbs-v1.png",
+        "nativeOutput": "C:/Users/David/.codex/generated_images/01a1a821-92b9-7283-9fb1-1e81fe81ee51/exec-66fb2714-82bb-444f-9055-7350b2c89b12.png",
+        "references": [
+          "assets/art/avatar-graphic-flat-limbs-v2.png"
+        ],
+        "promptSet": [
+          "Use case: precise-object-edit. Edit target: supplied six-column/four-row native skin limb sheet. Keep exact skin colors, grid centers, vertical positions and all four rows. Make adult limbs more SLENDER, not inflated:\nRows1and2 upper arms and forearms: reduce each part width by about20 percent around its existing vertical center axis, keep vertical heights unchanged. Maintain rounded shoulder/elbow caps and tapered wrists with generous rounded overlap material.\nRows3and4 open hands and thinking hands: preserve complete clear connected hand anatomy, thumb/fingers and wrist stem; make hand widths about10 percent narrower and keep heights unchanged. Widen/extend the top wrist stems just enough to overlap slender forearm ends naturally, without a visible detached seam. Wrist is at TOP, fingers point DOWN, same orientation as target.\nEvery column remains one EXACT matching uniform skin color. No new nail/knuckle lines, no wrist bands, no outlines, no darkening or shading. Strict flat opaque spot-color shapes. NO gradients, shadows, highlights, glow, texture, 3D or lighting. Preserve native alpha and completely transparent space between every cutout. No text or grid."
+        ],
+        "transformations": "Original generated PNG bytes copied without repainting, tracing, alpha thresholding, color edits or post-processing. Runtime uses measured rectangular native viewports and uniform transforms.",
+        "fiction": "Original fictional customization artwork, not portraits of real people.",
+        "license": "Original generated project artwork",
+        "dimensions": {
+          "width": 1536,
+          "height": 1024
+        },
+        "mode": "RGBA",
+        "sha256": "b3f381a4207536642a89a990a1ca36fbf5b94c0470ec9e595f63270d05e826ad"
+      }
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-friendly-limbs-v2.provenance.json",
+      "sha256": "da8bf589097ccdbc6b7665ef41480488ec84a523763c89fe484ae042f990f49f",
+      "record": {
+        "tool": "built-in image_gen",
+        "creator": "OpenAI ImageGen",
+        "date": "2026-11-04",
+        "purpose": "Active native slim upper/fore limbs and hands color matched to friendly faces.",
+        "source": "assets/art/avatar-friendly-limbs-v2.png",
+        "nativeOutput": "C:/Users/David/.codex/generated_images/01a1a821-92b9-7283-9fb1-1e81fe81ee51/exec-d28ff5ee-7e0f-4413-a83f-23ef24f6769d.png",
+        "references": [
+          "assets/art/avatar-friendly-limbs-v1.png",
+          "assets/art/avatar-friendly-heads-v1.png"
+        ],
+        "promptSet": [
+          "Use case: precise-object-edit. Image1 is EDIT TARGET: six-column/four-row slim skin limb/hand cutouts. Image2 is COLOR REFERENCE ONLY: use the top-row MALE FACE SKIN colors. Preserve every limb/hand position, height and shape from image1. Repaint each entire column, including upper arm, forearm, open hand and thinking hand, to exactly the same single uniform skin color as the corresponding top-row face in image2. The target's columns4/5/6 have drifted too pink/desaturated; match the faces' rich caramel/chestnut/deep-brown colors faithfully.\nEvery cutout one opaque flat skin color including the wrist, with no gradient, shading, highlight, texture, dark edges or outlines. Preserve all native transparent alpha outside each complete cutout. Do not copy heads, faces or other reference objects into the limb sheet."
+        ],
+        "transformations": "Original generated PNG bytes copied without repainting, tracing, alpha thresholding, color edits or post-processing. Runtime uses measured rectangular native viewports and uniform transforms.",
+        "fiction": "Original fictional customization artwork, not portraits of real people.",
+        "license": "Original generated project artwork",
+        "dimensions": {
+          "width": 1536,
+          "height": 1024
+        },
+        "mode": "RGBA",
+        "sha256": "ac04d55b7e3edf0e0a4a11ad44b501e7aad18fc22a711923cf48dc0aab2fc4dd"
+      }
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-friendly-v1.provenance.json",
+      "sha256": "2aaa02c00638c096fc6f633bbc72067ee6645d3264331c115fe6ccf3f21ec0ce",
+      "record": {
+        "version": 1,
+        "date": "2026-11-04",
+        "tool": "built-in image_gen.imagegen",
+        "useCase": "precise-object-edit",
+        "artifact": "jo-friendly-v1.png",
+        "editTarget": "assets/art/jo-geometric-v1.png",
+        "generatedSource": "C:/Users/David/.codex/generated_images/01a1a821-f54c-74b0-a1e7-e96dc5bfc498/exec-61d0b60a-0e5c-4851-8d68-7289bf4359b8.png",
+        "prompt": "Use case: precise-object-edit. Edit target: this 4-column by 3-row native transparent character animation atlas. Correct the personality, heavy proportions and joint shapes; keep the same identity, clothing colors, 12-cell part arrangement, transparent background and native raster format.\nJo, an older adult woman, warm peach-orange skin, grey hair, navy rectangular glasses, orange collared shirt, navy apron with cream pocket, olive trousers, cream shoes. Keep her softly broad older adult build, distinct from Mina and Alex, but reduce her torso width by ONE THIRD and arm/trouser shafts by about HALF versus this overly bulky old atlas. Torso should be about 85% as wide as it is tall, gently shaped, not a huge trapezoid. Orange upper sleeves are slim rounded capsules. Hands modest relaxed mitten hands, not giant blocky clubs. Olive thighs are slim rounded capsules, shins narrow and smoothly joined to cream shoes. Preserve teal mug and cream cloth.\nFACE CORRECTION IS CRITICAL: the current sharply inward-slanted eyebrows look angry/evil. Replace them with relaxed almost-HORIZONTAL eyebrows or a very gentle friendly upward arch, with soft round ends. NO V-shaped angry brows, NO lowered inner brows, NO skeptical sharply cocked eyebrow. Show broad OPEN approachable white eyes, small calm centered pupils and a warm unambiguous friendly smile with gently upturned corners. No smirk, narrow eyes, stern face or sinister expression. Keep an adult long/angular or soft-square face, not a baby/chibi head.\nJOINT CORRECTION: The disconnected reusable pieces must have generous ROUND opaque connecting ends at shoulders, elbows, hips and knees, not squared-off severed planks. Each upper arm and thigh is a long SLIM CAPSULE with round ends extending beyond the anatomical pivot, so adjoining pieces overlap naturally. Each skin forearm starts with a round elbow cap and narrows slightly to the wrist before its attached complete modest mitten hand. Each shin starts with a round knee cap and ends in an attached flat shoe at a clean material boundary. Parts straight DOWN. Shoes point outward (left cell shoe left, right cell shoe right), with shoe width only about1.5\u20131.7 times trouser shaft width.\nLayout must stay: row1 head, torso, left upper arm, left forearm+hand; row2 right upper arm, right forearm+hand, left thigh, left shin+shoe; row3 right thigh, right shin+shoe, accessory, prop. Every whole native piece isolated and centered in its own cell with generous transparent gaps. NO assembled person.\nSTYLE: clean adult flat geometric 2D illustration, crisp opaque single-color regions. Absolutely no gradients, cast shadows, highlights, cheek/neck shading, 3D, texture, glow, outlines, transparency inside the body, labels or text. Any different panel is a deliberate garment/material region, never lighting. True transparent background. Do not add a ground shadow. Preserve all complete faces and full hands.",
+        "transparentBackground": true,
+        "pixelEdits": "None; native generated PNG bytes copied unchanged. Only rectangular runtime viewports and measured pivots/lengths are used.",
+        "correction": "Relaxed brows/open eyes/warm smile; narrower distinct adult bodies and limb shafts; round overlapping connection ends."
+      }
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jobs-friendly-v1.provenance.json",
+      "sha256": "b903edfaa9dc7c577ae15f9fd89a1ead04561d045ba6e2f1c9dffa53808193b4",
+      "record": {
+        "tool": "built-in image_gen.imagegen",
+        "nativeRgbaPreserved": true,
+        "pixelEditing": "none; native alpha/color bytes copied unchanged",
+        "inputReference": "C:/Users/David/AppData/Local/Temp/codex-clipboard-ba1ebdff-2199-4ad7-af10-2d0cb9e571a2.png",
+        "scope": "Friendly faces, balanced adult proportions and connected task anatomy for 14 occupations and all 3 supporting adults",
+        "calls": [
+          {
+            "output": "jobs-friendly-1-v1.png",
+            "original": "C:/Users/David/.codex/generated_images/01a1a822-4dc1-7a51-8a0f-6b28e7239e61/exec-ebbe333e-e699-44ee-af10-553484f588ab.png",
+            "prompt": "Use case: illustration-story. Asset type: production transparent native PNG sprite atlas for an English-learning app.\nSTYLE REFERENCE: attached user-supplied flat geometric cartoon sheet, STYLE ONLY. New corrected ADULT occupation people in that friendly graphic language. The user explicitly says the current people look evil, some are too thick, and some parts look disconnected. Correct those problems visibly.\nFACE REQUIREMENT FOR EVERY PERSON IN EVERY CELL: approachable and warm, open round/oval white eyes and friendly black pupils, both eyebrows relaxed and gently curved upward like shallow soft arches, brows separated and never pointing down toward the nose. Clear upturned smiling mouth, kind expression, rounded nose, soft jaw corners. No scowl, inward V brows, thick dark slanted brow blocks, half-lidded stare, smirk, villain expression, pointed moustache, sharp teeth or tiny glaring eyes. Preserve adult appearance, not babies.\nBODY REQUIREMENT: balanced ADULT proportions, roughly three to three-and-a-half head-heights tall, moderate shoulder width, visible neck, medium/slender connected limbs, hands smaller than the face, enough leg length. Some people slim, some average, a few moderately curvy/stocky; none massive, square, barrel-thick or inflated. Clean memorable soft geometric silhouettes with rounded corners.\nFLATNESS: literal flat 2D cut-paper solid fills. Each material region has ONE uniform unshaded color. Palette magenta, teal, navy, orange, yellow, cream, varied warm skin and hair colors. No shading, gradients, darker undersides, highlights, shadows of any kind, ground marks, floor ovals, texture, hair shine, light source, modeled volume, outlines, 3D or background. A nose may be its own one-color shape. Native transparent alpha background.\nANATOMY: EXACTLY TWO ARMS PER PERSON. Every upper arm starts visibly at its shoulder; every forearm visibly meets its elbow; every hand overlaps and physically touches its wrist/sleeve. No gap, detached hand, extra hand, stray skin-colored fleck or sliver, duplicate limb, fused patient/doctor hand mass. All fingers belong to an attached hand. Held objects physically touch supporting palms/fingers in ALL four phases.\nANIMATION: four distinct meaningful connected arm/hand poses per row. Stable character face/body size, clothes, feet/base position and stationary props across columns; do not move the basket/desk/plant/car from side to side. Same limb lengths across all four phases. Keep the full person, hair, feet, both complete hands and every prop inside its cell, with at least 12% empty transparent gutters on all sides. No neighbor touching or cropped fingers.\nNo letters, words, labels, panel borders, grid lines or watermark.\nLAYOUT: exactly FOUR COLUMNS by FOUR ROWS, sixteen full isolated scenes on a square transparent canvas. Each row repeats one job scene in four successive action phases.\nROW1 TEACHER: slim adult woman, warm tan face, burgundy soft side-swept bob, magenta jacket, cream blouse and navy trousers, orange shoes. Friendly relaxed eyebrow arches and warm open smile. Her LEFT arm continuously supports a small open teal book against her waist, palm touching its lower edge. Beside her a small blank teal board stays fixed. RIGHT arm phases: point low at board, point chest-height, point higher, open explanatory palm. Full connected arms, book never floats.\nROW2 CHEF: average adult man with only a moderately stocky build, NOT a wide barrel; peach face, small rounded navy moustache, friendly open eyes/relaxed arch brows, white chef hat, cream jacket, magenta neckerchief, navy trousers. Small teal pot on orange block counter remains fixed. LEFT hand continuously grips pot handle. RIGHT hand continuously GRIPS a long brown spoon visible above rim through four clearly different stirring phases: hand left/up, center/high, right/up, left/lower but still above rim. Both arms completely connected, moving forearm visible; do not hide it inside torso. Spoon always touches fingers.\nROW3 DOCTOR AND PATIENT: average slim dark-brown adult male doctor with short rounded black hair, relaxed gentle brows, warm smile, cream coat, teal stethoscope, navy trousers. Beside him sits an average-build peach-skinned adult woman patient with soft orange bob, magenta shirt, teal trousers and a simple stool. BOTH friendly smiling adult faces. Doctor LEFT dark-brown hand supports the woman's PEACH hand/wrist from beneath, with distinct visible shapes and clear connected sleeves; never recolor the patient's hand brown. Patient's other hand rests on her own thigh. Doctor RIGHT free arm phases: points to pulse, lightly checks above wrist, opens reassuring palm beside chest, touches his own chest reassuringly. Their contact area is small and readable, no merged multi-hand mass. Whole seated patient visible.\nROW4 OFFICE WORKER: average adult woman, soft peach/tan face, orange side-part hair, navy rounded rectangular glasses, gently arched brows and warm smile, teal blouse. Seated behind small fixed orange desk and teal laptop. Four connected arm phases: both typing, right hand at chin, right hand points to screen, left hand hovering over keyboard while right hand types. Shoulder/elbow/wrist routes readable, hands not giant. No legs or chair parts detached.\nPrioritize kind faces and balanced connected adults, strict flat fills and safe cell gutters.",
+            "refs": [
+              "user original flat geometric style reference"
+            ],
+            "status": "superseded candidate"
+          },
+          {
+            "output": "jobs-friendly-2-v1.png",
+            "original": "C:/Users/David/.codex/generated_images/01a1a822-4dc1-7a51-8a0f-6b28e7239e61/exec-2717df80-0534-4157-84a5-3afffb191561.png",
+            "prompt": "Use case: illustration-story. Asset type: production transparent native PNG sprite atlas for an English-learning app.\nSTYLE REFERENCE: attached user-supplied flat geometric cartoon sheet, STYLE ONLY. New corrected ADULT occupation people in that friendly graphic language. The user explicitly says the current people look evil, some are too thick, and some parts look disconnected. Correct those problems visibly.\nFACE REQUIREMENT FOR EVERY PERSON IN EVERY CELL: approachable and warm, open round/oval white eyes and friendly black pupils, both eyebrows relaxed and gently curved upward like shallow soft arches, brows separated and never pointing down toward the nose. Clear upturned smiling mouth, kind expression, rounded nose, soft jaw corners. No scowl, inward V brows, thick dark slanted brow blocks, half-lidded stare, smirk, villain expression, pointed moustache, sharp teeth or tiny glaring eyes. Preserve adult appearance, not babies.\nBODY REQUIREMENT: balanced ADULT proportions, roughly three to three-and-a-half head-heights tall, moderate shoulder width, visible neck, medium/slender connected limbs, hands smaller than the face, enough leg length. Some people slim, some average, a few moderately curvy/stocky; none massive, square, barrel-thick or inflated. Clean memorable soft geometric silhouettes with rounded corners.\nFLATNESS: literal flat 2D cut-paper solid fills. Each material region has ONE uniform unshaded color. Palette magenta, teal, navy, orange, yellow, cream, varied warm skin and hair colors. No shading, gradients, darker undersides, highlights, shadows of any kind, ground marks, floor ovals, texture, hair shine, light source, modeled volume, outlines, 3D or background. A nose may be its own one-color shape. Native transparent alpha background.\nANATOMY: EXACTLY TWO ARMS PER PERSON. Every upper arm starts visibly at its shoulder; every forearm visibly meets its elbow; every hand overlaps and physically touches its wrist/sleeve. No gap, detached hand, extra hand, stray skin-colored fleck or sliver, duplicate limb, fused patient/doctor hand mass. All fingers belong to an attached hand. Held objects physically touch supporting palms/fingers in ALL four phases.\nANIMATION: four distinct meaningful connected arm/hand poses per row. Stable character face/body size, clothes, feet/base position and stationary props across columns; do not move the basket/desk/plant/car from side to side. Same limb lengths across all four phases. Keep the full person, hair, feet, both complete hands and every prop inside its cell, with at least 12% empty transparent gutters on all sides. No neighbor touching or cropped fingers.\nNo letters, words, labels, panel borders, grid lines or watermark.\nLAYOUT: exactly FOUR COLUMNS by THREE ROWS, twelve full isolated scenes on a wide transparent canvas. Each row repeats one job scene in four successive phases.\nROW1 RECEPTIONIST: slim adult woman with a soft oval/rounded-square peach face, moderate rounded nose (NOT a pointed witch nose), soft purple side-part bob, relaxed gently arched brows and warm smile, magenta blouse. Behind a small plain teal desk with a yellow bell. LEFT hand continuously rests on desk. RIGHT connected arm phases: low welcoming palm, bent greeting palm, raised welcoming palm, fingertips touching bell. Keep same friendly face in all4.\nROW2 SALESCLERK: slim/average adult man with tan rounded-rectangle face, rounded nose, short soft black side-part hair, relaxed thin gently arched brows, open warm smile, teal apron over cream shirt, navy trousers. Two folded shirts on a small fixed orange counter. Four connected two-hand folding phases of one magenta shirt: hold lower edges, lift shirt at chest, fold edges inward, lay down folded. Both hands remain on the shirt, attached to wrists/sleeves, no extra fingers/limbs. Not an elongated villain jaw.\nROW3 TAXI DRIVER: average adult woman with warm dark-brown face, soft black shoulder-length hair under navy cap, yellow vest over cream shirt and navy trousers. Balanced shoulders/torso and longer adult legs, NOT short thick muscular blocks. Relaxed soft-arch brows, open friendly eyes, warm upturned smile. Beside fixed small front-view yellow taxi. LEFT hand stays on hip. RIGHT connected arm phases: low open hand, palm at chest, point to taxi, open welcome palm higher. Full figures and taxi fit with generous transparent margins. No floor shadow.\nPrioritize kind faces and balanced connected adults, strict flat fills and safe cell gutters.",
+            "refs": [
+              "user original flat geometric style reference"
+            ],
+            "status": "superseded candidate"
+          },
+          {
+            "output": "jobs-friendly-3-v1.png",
+            "original": "C:/Users/David/.codex/generated_images/01a1a822-4dc1-7a51-8a0f-6b28e7239e61/exec-501e58b1-e033-41e8-a679-4f902bb317bb.png",
+            "prompt": "Use case: illustration-story. Asset type: production transparent native PNG sprite atlas for an English-learning app.\nSTYLE REFERENCE: attached user-supplied flat geometric cartoon sheet, STYLE ONLY. New corrected ADULT occupation people in that friendly graphic language. The user explicitly says the current people look evil, some are too thick, and some parts look disconnected. Correct those problems visibly.\nFACE REQUIREMENT FOR EVERY PERSON IN EVERY CELL: approachable and warm, open round/oval white eyes and friendly black pupils, both eyebrows relaxed and gently curved upward like shallow soft arches, brows separated and never pointing down toward the nose. Clear upturned smiling mouth, kind expression, rounded nose, soft jaw corners. No scowl, inward V brows, thick dark slanted brow blocks, half-lidded stare, smirk, villain expression, pointed moustache, sharp teeth or tiny glaring eyes. Preserve adult appearance, not babies.\nBODY REQUIREMENT: balanced ADULT proportions, roughly three to three-and-a-half head-heights tall, moderate shoulder width, visible neck, medium/slender connected limbs, hands smaller than the face, enough leg length. Some people slim, some average, a few moderately curvy/stocky; none massive, square, barrel-thick or inflated. Clean memorable soft geometric silhouettes with rounded corners.\nFLATNESS: literal flat 2D cut-paper solid fills. Each material region has ONE uniform unshaded color. Palette magenta, teal, navy, orange, yellow, cream, varied warm skin and hair colors. No shading, gradients, darker undersides, highlights, shadows of any kind, ground marks, floor ovals, texture, hair shine, light source, modeled volume, outlines, 3D or background. A nose may be its own one-color shape. Native transparent alpha background.\nANATOMY: EXACTLY TWO ARMS PER PERSON. Every upper arm starts visibly at its shoulder; every forearm visibly meets its elbow; every hand overlaps and physically touches its wrist/sleeve. No gap, detached hand, extra hand, stray skin-colored fleck or sliver, duplicate limb, fused patient/doctor hand mass. All fingers belong to an attached hand. Held objects physically touch supporting palms/fingers in ALL four phases.\nANIMATION: four distinct meaningful connected arm/hand poses per row. Stable character face/body size, clothes, feet/base position and stationary props across columns; do not move the basket/desk/plant/car from side to side. Same limb lengths across all four phases. Keep the full person, hair, feet, both complete hands and every prop inside its cell, with at least 12% empty transparent gutters on all sides. No neighbor touching or cropped fingers.\nNo letters, words, labels, panel borders, grid lines or watermark.\nLAYOUT: exactly FOUR COLUMNS by FOUR ROWS, sixteen full isolated scenes on a square transparent canvas. Each row repeats one job scene in four successive phases.\nROW1 WAITER: average-slim adult man, peach rounded-rectangle face, soft navy quiff, small rounded moustache, magenta waistcoat, cream sleeves and navy trousers. Relaxed gentle eyebrow arches, open welcoming eyes, warm smile. RIGHT SUPPORT ARM on viewer-right stays IDENTICAL all4: shoulder joins upper sleeve, bent elbow clearly visible, forearm rises to a horizontal peach PALM, small teal tray with cream cup rests DIRECTLY ON PALM. Zero gap, complete visible shoulder-to-elbow-to-palm route. LEFT FREE arm on viewer-left phases: down, hand on hip, open hand at abdomen, open hand at chest. Free arm NEVER replaces or crosses through the tray-support arm. All two arms attached.\nROW2 WAITRESS: average gently curvy adult woman (25% narrower body than a broad barrel), honey-peach soft oval face, purple bob, orange shirt, magenta apron, navy trousers with normal adult leg length. Relaxed arched brows, open kind eyes, warm smile. RIGHT SUPPORT ARM on viewer-right stays IDENTICAL all4: visible shoulder, bent elbow, rising forearm, horizontal palm physically under a small teal tray with one cream cup. LEFT FREE arm phases: down, hand on hip, palm at chest, extended welcoming palm. Entire last hand stays WELL INSIDE its cell; no skin slivers or floating flecks. Exactly two complete arms.\nROW3 FARMER: average fit adult man with warm tan face, moderate rounded dark beard and nose, yellow hat, teal shirt and magenta overalls, balanced adult legs/torso, not wide thick blocks. Kind open eyes, relaxed soft arch brows and warm smile visible above beard. A simple tomato plant stays at viewer-right and one yellow basket stays FIXED on the ground at viewer-left in every phase. LEFT hand continuously grips this basket handle in the SAME place. RIGHT connected arm phases: reach plant, grip red tomato at plant, hold tomato near chest, lower tomato into basket. Tomato always touches fingers while held; basket never switches sides.\nROW4 NURSE AND PATIENT: slim adult dark-brown woman nurse, rounded face, black soft bun, teal scrubs, cream shoes; seated average adult peach-skinned male patient with short navy hair, small rounded moustache, orange shirt and navy trousers on a plain stool. BOTH have relaxed soft arch brows, open kind eyes, warm smiles. Nurse LEFT brown hand continuously supports patient's peach wrist/hand from below; patient hand stays peach and has clear ownership, no fused hand mass. Patient other hand on own thigh. Nurse RIGHT free hand phases: points pulse, lightly checks wrist, opens reassuring palm, touches own chest. Visible connected shoulders, elbows, wrists and sleeves for both people. Entire patient in frame.\nPrioritize kind faces and balanced connected adults, strict flat fills and safe cell gutters.",
+            "refs": [
+              "user original flat geometric style reference"
+            ],
+            "status": "rejected waitress fourth arm and modeled finish"
+          },
+          {
+            "output": "jobs-friendly-4-v1.png",
+            "original": "C:/Users/David/.codex/generated_images/01a1a822-4dc1-7a51-8a0f-6b28e7239e61/exec-0d4f1b24-8976-4042-99a6-c77f9572350d.png",
+            "prompt": "Use case: illustration-story. Asset type: production transparent native PNG sprite atlas for an English-learning app.\nSTYLE REFERENCE: attached user-supplied flat geometric cartoon sheet, STYLE ONLY. New corrected ADULT occupation people in that friendly graphic language. The user explicitly says the current people look evil, some are too thick, and some parts look disconnected. Correct those problems visibly.\nFACE REQUIREMENT FOR EVERY PERSON IN EVERY CELL: approachable and warm, open round/oval white eyes and friendly black pupils, both eyebrows relaxed and gently curved upward like shallow soft arches, brows separated and never pointing down toward the nose. Clear upturned smiling mouth, kind expression, rounded nose, soft jaw corners. No scowl, inward V brows, thick dark slanted brow blocks, half-lidded stare, smirk, villain expression, pointed moustache, sharp teeth or tiny glaring eyes. Preserve adult appearance, not babies.\nBODY REQUIREMENT: balanced ADULT proportions, roughly three to three-and-a-half head-heights tall, moderate shoulder width, visible neck, medium/slender connected limbs, hands smaller than the face, enough leg length. Some people slim, some average, a few moderately curvy/stocky; none massive, square, barrel-thick or inflated. Clean memorable soft geometric silhouettes with rounded corners.\nFLATNESS: literal flat 2D cut-paper solid fills. Each material region has ONE uniform unshaded color. Palette magenta, teal, navy, orange, yellow, cream, varied warm skin and hair colors. No shading, gradients, darker undersides, highlights, shadows of any kind, ground marks, floor ovals, texture, hair shine, light source, modeled volume, outlines, 3D or background. A nose may be its own one-color shape. Native transparent alpha background.\nANATOMY: EXACTLY TWO ARMS PER PERSON. Every upper arm starts visibly at its shoulder; every forearm visibly meets its elbow; every hand overlaps and physically touches its wrist/sleeve. No gap, detached hand, extra hand, stray skin-colored fleck or sliver, duplicate limb, fused patient/doctor hand mass. All fingers belong to an attached hand. Held objects physically touch supporting palms/fingers in ALL four phases.\nANIMATION: four distinct meaningful connected arm/hand poses per row. Stable character face/body size, clothes, feet/base position and stationary props across columns; do not move the basket/desk/plant/car from side to side. Same limb lengths across all four phases. Keep the full person, hair, feet, both complete hands and every prop inside its cell, with at least 12% empty transparent gutters on all sides. No neighbor touching or cropped fingers.\nNo letters, words, labels, panel borders, grid lines or watermark.\nLAYOUT: exactly FOUR COLUMNS by THREE ROWS, twelve full isolated scenes on a wide transparent canvas. Each row repeats one job scene in four successive phases.\nROW1 DENTIST: average-slim adult man with tan rounded-rectangle face, small rounded nose, navy rounded rectangular glasses, soft black side-part hair, relaxed gentle brows and warm smile, cream coat, teal shirt, navy trousers. LEFT arm continuously supports one large simple cream tooth model on its visible peach palm at chest height; tooth touches palm/fingers. RIGHT connected free arm phases: points lower tooth, points upper tooth, open explanatory palm, points center tooth. Minimal small teal dental chair beside him stays fixed. No giant hands, no fusing wrist into tooth.\nROW2 POLICE OFFICER AND OLDER WOMAN: average fit adult policewoman with warm brown face, soft dark bob under navy cap, navy uniform, yellow flat badge, balanced moderate shoulders/arms and normal adult legs (NOT muscular broad square body). Beside a slim-average older woman with peach rounded face, soft white bob, navy glasses, magenta tunic and olive trousers. BOTH visibly kind with relaxed shallow-arched brows, open white eyes and warm upturned smiles. Older woman's hand continuously grips a cane, other hand rests at her side. Officer LEFT hand stays on hip. RIGHT arm phases: low welcoming palm, points across, raises open palm, hand on own chest reassuringly. Full continuous attached arms. Absolutely NO zebra stripes, ground ovals/bars, floor patches or ground shadows; just two adults and the cane on transparent background.\nROW3 ACTOR: average-slim adult man with warm tan rounded-rectangle face, moderate rounded nose, small soft rounded moustache, soft burgundy wavy hair, cream shirt, magenta waistcoat, navy trousers. Welcoming open eyes, relaxed gentle-arch eyebrows and warm upturned smile, NOT mischievous or villainous. LEFT hand continuously grips a simple yellow smiling theatre mask by its lower edge, fingers physically touching it. RIGHT connected arm phases: open palm at waist, palm raised beside shoulder, extended theatrical palm, hand at chest with slight bow. Keep eyes open and friendly even in bow. Extended hand completely inside safe cell margins; no detached skin fleck/sliver. No stage or floor.\nPrioritize kind faces and balanced connected adults, strict flat fills and safe cell gutters.",
+            "refs": [
+              "user original flat geometric style reference"
+            ],
+            "status": "superseded modeled finish candidate"
+          },
+          {
+            "output": "jobs-friendly-1-v2.png",
+            "original": "C:/Users/David/.codex/generated_images/01a1a822-4dc1-7a51-8a0f-6b28e7239e61/exec-9e5d18d7-4642-4889-a113-92a486231085.png",
+            "prompt": "Use case: precise-object-edit. EDIT TARGET attached atlas. Preserve all friendly relaxed faces, shallow curved eyebrows, open eyes, kind smiles, balanced slimmer adult proportions, identities, clothes, exact four-column row order/grid, stable scene sizes, four distinct connected arm phases, all whole people and supporting adults, safe gutters and genuine transparent PNG alpha. These friendly expressions are REQUIRED; do not reintroduce severe slanted brows, scowls or chunky bodies.\nChange the rendering finish ONLY unless an explicit anatomy repair follows. Flatten every material to one completely UNIFORM solid-color fill. Remove ALL tonal modeling, gradients, smooth color transitions, brighter middles/darker edges, shadows, highlights, texture, thin fold/wrinkle lines, hair shine and shadow triangles. White coats/hats/sleeves must be one solid cream from edge to edge with no grey-beige outlines, inner folds, undersides or seam shadows. Skin regions one flat skin fill; hair one flat hair fill; teal board/pot/shirt/chair/desk areas one solid teal; navy trousers one solid navy; orange counters one solid orange. Keep only necessary separate graphic shapes such as eyes, brows, mouth, collar, apron pocket, buttons and actual objects.\nNo ground ovals, floor marks, cast/contact shadows, grey underfoot bands, light source, 3D, outlines/strokes, lettering, labels, borders or watermark. Transparent background remains native. All wrists/forearms/sleeves and held props physically touch. Never change a complete attached hand into a detached fleck.\nClarify ROW3 doctor's support anatomy without changing scene meaning: the lower supporting brown hand must visibly meet a slim continuous cream forearm extending from the doctor's sleeve and elbow at his waist; keep patient's peach hand distinct on top. In every phase, viewer can trace BOTH doctor's arms continuously from shoulder to hand. Keep the other patient's arm on her thigh. Maintain every other action.",
+            "refs": [
+              "assets/art/jobs-friendly-1-v1.png"
+            ],
+            "status": "rejected office fourth detached hover hand"
+          },
+          {
+            "output": "jobs-friendly-2-v2.png",
+            "original": "C:/Users/David/.codex/generated_images/01a1a822-4dc1-7a51-8a0f-6b28e7239e61/exec-5babdd81-3780-492a-91ad-8181a874580b.png",
+            "prompt": "Use case: precise-object-edit. EDIT TARGET attached atlas. Preserve all friendly relaxed faces, shallow curved eyebrows, open eyes, kind smiles, balanced slimmer adult proportions, identities, clothes, exact four-column row order/grid, stable scene sizes, four distinct connected arm phases, all whole people and supporting adults, safe gutters and genuine transparent PNG alpha. These friendly expressions are REQUIRED; do not reintroduce severe slanted brows, scowls or chunky bodies.\nChange the rendering finish ONLY unless an explicit anatomy repair follows. Flatten every material to one completely UNIFORM solid-color fill. Remove ALL tonal modeling, gradients, smooth color transitions, brighter middles/darker edges, shadows, highlights, texture, thin fold/wrinkle lines, hair shine and shadow triangles. White coats/hats/sleeves must be one solid cream from edge to edge with no grey-beige outlines, inner folds, undersides or seam shadows. Skin regions one flat skin fill; hair one flat hair fill; teal board/pot/shirt/chair/desk areas one solid teal; navy trousers one solid navy; orange counters one solid orange. Keep only necessary separate graphic shapes such as eyes, brows, mouth, collar, apron pocket, buttons and actual objects.\nNo ground ovals, floor marks, cast/contact shadows, grey underfoot bands, light source, 3D, outlines/strokes, lettering, labels, borders or watermark. Transparent background remains native. All wrists/forearms/sleeves and held props physically touch. Never change a complete attached hand into a detached fleck.\nMake each desk/counter front a simple single flat color shape; remove dark lower edges and 3D side panels. Preserve all12 friendly scenes and actions.",
+            "refs": [
+              "assets/art/jobs-friendly-2-v1.png"
+            ],
+            "status": "proposed active"
+          },
+          {
+            "output": "jobs-friendly-3-v2.png",
+            "original": "C:/Users/David/.codex/generated_images/01a1a822-4dc1-7a51-8a0f-6b28e7239e61/exec-9ef55beb-852c-4fd7-8390-48ad7a728b44.png",
+            "prompt": "Use case: precise-object-edit. EDIT TARGET attached atlas. Preserve all friendly relaxed faces, shallow curved eyebrows, open eyes, kind smiles, balanced slimmer adult proportions, identities, clothes, exact four-column row order/grid, stable scene sizes, four distinct connected arm phases, all whole people and supporting adults, safe gutters and genuine transparent PNG alpha. These friendly expressions are REQUIRED; do not reintroduce severe slanted brows, scowls or chunky bodies.\nChange the rendering finish ONLY unless an explicit anatomy repair follows. Flatten every material to one completely UNIFORM solid-color fill. Remove ALL tonal modeling, gradients, smooth color transitions, brighter middles/darker edges, shadows, highlights, texture, thin fold/wrinkle lines, hair shine and shadow triangles. White coats/hats/sleeves must be one solid cream from edge to edge with no grey-beige outlines, inner folds, undersides or seam shadows. Skin regions one flat skin fill; hair one flat hair fill; teal board/pot/shirt/chair/desk areas one solid teal; navy trousers one solid navy; orange counters one solid orange. Keep only necessary separate graphic shapes such as eyes, brows, mouth, collar, apron pocket, buttons and actual objects.\nNo ground ovals, floor marks, cast/contact shadows, grey underfoot bands, light source, 3D, outlines/strokes, lettering, labels, borders or watermark. Transparent background remains native. All wrists/forearms/sleeves and held props physically touch. Never change a complete attached hand into a detached fleck.\nMANDATORY ANATOMY REPAIR: ROW2 WAITRESS COLUMN4 currently wrongly fuses the free arm with the tray-support arm. Replace ONLY the FREE arm pose in column4. Keep the correctly connected tray-support arm on viewer-right EXACTLY as it is in column1: shoulder \u2192 orange sleeve \u2192 bent elbow \u2192 rising peach forearm \u2192 horizontal supporting palm directly touching tray. On viewer-LEFT, her separate free arm must start at the other shoulder, descend to a visible left elbow, then bend inward so its hand rests at her own lower abdomen below the apron pocket. This free hand stays ENTIRELY on viewer-left/center torso, never extends under the tray and never crosses through the support arm. Column3 free hand is at upper chest; column4 free hand is much lower at abdomen, hence four distinct phases. Exactly TWO arms, both complete and attached, no empty leftover sleeve. Keep other15 scenes/actions unchanged.",
+            "refs": [
+              "assets/art/jobs-friendly-3-v1.png"
+            ],
+            "status": "proposed active; fixed separate waitress arm"
+          },
+          {
+            "output": "jobs-friendly-4-v2.png",
+            "original": "C:/Users/David/.codex/generated_images/01a1a822-4dc1-7a51-8a0f-6b28e7239e61/exec-0553bda9-71aa-4178-83ec-c1c2dd00283c.png",
+            "prompt": "Use case: precise-object-edit. EDIT TARGET attached atlas. Preserve all friendly relaxed faces, shallow curved eyebrows, open eyes, kind smiles, balanced slimmer adult proportions, identities, clothes, exact four-column row order/grid, stable scene sizes, four distinct connected arm phases, all whole people and supporting adults, safe gutters and genuine transparent PNG alpha. These friendly expressions are REQUIRED; do not reintroduce severe slanted brows, scowls or chunky bodies.\nChange the rendering finish ONLY unless an explicit anatomy repair follows. Flatten every material to one completely UNIFORM solid-color fill. Remove ALL tonal modeling, gradients, smooth color transitions, brighter middles/darker edges, shadows, highlights, texture, thin fold/wrinkle lines, hair shine and shadow triangles. White coats/hats/sleeves must be one solid cream from edge to edge with no grey-beige outlines, inner folds, undersides or seam shadows. Skin regions one flat skin fill; hair one flat hair fill; teal board/pot/shirt/chair/desk areas one solid teal; navy trousers one solid navy; orange counters one solid orange. Keep only necessary separate graphic shapes such as eyes, brows, mouth, collar, apron pocket, buttons and actual objects.\nNo ground ovals, floor marks, cast/contact shadows, grey underfoot bands, light source, 3D, outlines/strokes, lettering, labels, borders or watermark. Transparent background remains native. All wrists/forearms/sleeves and held props physically touch. Never change a complete attached hand into a detached fleck.\nROW1 tooth model must be one plain solid cream silhouette with no gray creases, grey modeling or grey shadow patches. Dental chair one flat teal silhouette with a navy base, no volumetric light bands. Keep all12 friendly people scenes and four distinct connected actions unchanged.",
+            "refs": [
+              "assets/art/jobs-friendly-4-v1.png"
+            ],
+            "status": "proposed active"
+          },
+          {
+            "output": "jobs-friendly-1-v3.png",
+            "original": "C:/Users/David/.codex/generated_images/01a1a822-4dc1-7a51-8a0f-6b28e7239e61/exec-92dcaad0-2cba-4b93-a042-3ee49d3b7499.png",
+            "prompt": "Use case: precise-object-edit. EDIT TARGET this friendly 4-column by4-row occupation atlas. Change ONLY the bottom-row OFFICE WORKER in COLUMN4 (bottom-right cell), specifically her detached hovering hand. Preserve the other15 full scene cells byte-layout/composition as closely as possible: their friendly faces, relaxed curved eyebrows, open warm eyes/smiles, balanced slim/average adult bodies, connected limbs/actions, props, cell grid and transparent margins remain unchanged.\nBottom-right repair: REMOVE the detached hovering right hand above keyboard and replace it with a clearly complete connected RIGHT arm doing a small open-palm greeting beside her right shoulder. The arm starts visibly at her right shoulder on viewer-right of her torso; teal upper sleeve angles gently outward from that shoulder to a visible elbow at lower-chest height; teal forearm bends upward to a visible peach wrist; open peach hand sits beside her right cheek at shoulder/head height, fingers upward. Every segment physically touches and overlaps the next with no gap. The greeting arm stays outside and above the laptop, not behind it, so the whole shoulder-elbow-wrist-hand route is visible. Exactly TWO arms: her other LEFT arm and hand remain attached and resting on the keyboard as before. Do not retain any floating old hand. Keep friendly open smile, round glasses, curved relaxed eyebrows, orange hair, teal blouse, fixed desk and laptop unchanged. This new greeting phase must differ clearly from typing, chin-thinking and screen-pointing in the other3 columns.\nSTRICT FLAT 2D solid fills, no shading, gradients, textures, folds, shadows, grey modeling, highlights, outline strokes, floor marks, labels or watermark. Preserve genuine native transparent alpha background and full four-row sixteen-scene atlas.",
+            "refs": [
+              "assets/art/jobs-friendly-1-v2.png"
+            ],
+            "status": "proposed active; attached office greeting arm"
+          }
+        ],
+        "proposal": "reports/jobs-friendly-vocabulary-fragment.json",
+        "frames": "assets/art/jobs-friendly-v1.frames.json",
+        "sharedManifestEdited": false
+      }
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jobs-friendly-v2.provenance.json",
+      "sha256": "85abd1b900ec9220f10d75a77907230e51347978f531bd673e42a5b3a7376819",
+      "record": {
+        "tool": "built-in image_gen.imagegen",
+        "inheritsExactEarlierCalls": "assets/art/jobs-friendly-v1.provenance.json",
+        "nativeRgbaPreserved": true,
+        "pixelEditing": "none; all native output alpha/color bytes preserved",
+        "superseded": [
+          {
+            "file": "jobs-friendly-1-v3.png",
+            "reason": "Doctor supporting palm remained detached in an800px clinical closeup; replaced with clipboard consultation."
+          }
+        ],
+        "additionalCall": {
+          "output": "jobs-friendly-1-v4.png",
+          "original": "C:/Users/David/.codex/generated_images/01a1a822-4dc1-7a51-8a0f-6b28e7239e61/exec-c619cd06-06df-4e9d-b255-d3997e49d1a3.png",
+          "prompt": "Use case: precise-object-edit. EDIT TARGET this friendly 4-column by4-row occupation atlas. Replace ONLY ROW3 (all four doctor-and-patient cells) with a clearer consultation action. Preserve the other12 scenes exactly in layout, kind faces, proportions, connected limbs, actions and props. Keep the exact4-column by4-row grid, transparent gutters and entire square composition.\nThe old brown supporting hand beneath the patient's outstretched peach arm is detached: REMOVE that entire hand-contact arrangement in every row3 cell. No brown hand remains on or under the patient.\nROW3 NEW CONSULTATION: retain the SAME warm friendly dark-brown male adult doctor with soft black hair, curved relaxed eyebrows, open white eyes, warm smile, cream coat, teal shirt/stethoscope, navy trousers. Retain the SAME friendly peach adult woman patient with soft orange bob, magenta shirt, teal trousers, orange shoes, seated on the same stool. Patient now has BOTH of her peach hands resting visibly on her OWN lap/thighs, both arms continuously connected to her shoulders, short sleeves, elbows and wrists. She does not extend her arm toward the doctor. Keep a small transparent gap between the two people.\nDoctor's LEFT arm on VIEWER-LEFT continuously holds a small navy clipboard with blank cream page against HIS OWN waist/torso in ALL4 cells. The clipboard physically touches his attached brown gripping hand; thumb/fingers visibly grip its left/lower edge. Trace this left arm continuously from doctor left shoulder through cream upper sleeve, visible elbow, forearm, wrist and brown hand. No detached palm.\nDoctor's separate RIGHT arm on VIEWER-RIGHT makes FOUR DISTINCT consultation gestures: column1 points to lower clipboard/page; column2 points to upper clipboard/page; column3 opens a welcoming explanatory palm at chest height toward patient; column4 hand touches HIS OWN chest reassuringly. Each right arm is one complete connected shoulder\u2192upper sleeve\u2192elbow\u2192forearm\u2192wrist\u2192hand, stable limb lengths and exactly two arms total. This hand NEVER touches the patient's hands. No spare hands under patient. Patient keeps identical calm hands-on-lap pose through all4. Both adult faces remain warm and gently smiling.\nStrict flat 2D solid colors: no shading, gradients, texture, folds, shadows, grey modeling, highlights, outline strokes, floor marks, labels or watermark. Native genuinely transparent alpha. Complete hands, hair, feet, stool and clipboard fully inside their own cells.",
+          "references": [
+            "assets/art/jobs-friendly-1-v3.png"
+          ]
+        },
+        "activeAssets": [
+          "assets/art/jobs-friendly-1-v4.png",
+          "assets/art/jobs-friendly-2-v2.png",
+          "assets/art/jobs-friendly-3-v2.png",
+          "assets/art/jobs-friendly-4-v2.png"
+        ],
+        "frames": "assets/art/jobs-friendly-v1.frames.json",
+        "proposal": "reports/jobs-friendly-vocabulary-fragment.json",
+        "sharedManifestEdited": false
+      }
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-friendly-v1.provenance.json",
+      "sha256": "5b3a18e5361960cd6d224fbf4af362edb03af788a09b36390ccb75ecce477a6d",
+      "record": {
+        "version": 1,
+        "date": "2026-11-04",
+        "tool": "built-in image_gen.imagegen",
+        "useCase": "precise-object-edit",
+        "artifact": "mina-friendly-v1.png",
+        "editTarget": "assets/art/mina-geometric-v2.png",
+        "generatedSource": "C:/Users/David/.codex/generated_images/01a1a821-f54c-74b0-a1e7-e96dc5bfc498/exec-af71e171-6349-44cb-8a99-05f1b8019a2a.png",
+        "prompt": "Use case: precise-object-edit. Edit target: this 4-column by 3-row native transparent character animation atlas. Correct the personality, heavy proportions and joint shapes; keep the same identity, clothing colors, 12-cell part arrangement, transparent background and native raster format.\nMina, a tall slim adult woman, peach skin, swept burgundy hair, rectangular golden earrings, tailored magenta jacket over cream shirt, navy trousers, orange shoes. Make the torso distinctly SLIM, gently tapered, around 60% as wide as it is tall. Make arm shafts and trouser-leg shafts about HALF the width seen in this old atlas, while keeping limb length and full reusable pieces. Hands should be modest little relaxed mitten hands, clearly wider than wrists but not club-like. Upper arms are slim magenta capsules with generous rounded ends. Thighs are narrow navy capsules; shins are narrow navy and connected smoothly to the orange shoes. Preserve backpack/map as simple flat props.\nFACE CORRECTION IS CRITICAL: the current sharply inward-slanted eyebrows look angry/evil. Replace them with relaxed almost-HORIZONTAL eyebrows or a very gentle friendly upward arch, with soft round ends. NO V-shaped angry brows, NO lowered inner brows, NO skeptical sharply cocked eyebrow. Show broad OPEN approachable white eyes, small calm centered pupils and a warm unambiguous friendly smile with gently upturned corners. No smirk, narrow eyes, stern face or sinister expression. Keep an adult long/angular or soft-square face, not a baby/chibi head.\nJOINT CORRECTION: The disconnected reusable pieces must have generous ROUND opaque connecting ends at shoulders, elbows, hips and knees, not squared-off severed planks. Each upper arm and thigh is a long SLIM CAPSULE with round ends extending beyond the anatomical pivot, so adjoining pieces overlap naturally. Each skin forearm starts with a round elbow cap and narrows slightly to the wrist before its attached complete modest mitten hand. Each shin starts with a round knee cap and ends in an attached flat shoe at a clean material boundary. Parts straight DOWN. Shoes point outward (left cell shoe left, right cell shoe right), with shoe width only about1.5\u20131.7 times trouser shaft width.\nLayout must stay: row1 head, torso, left upper arm, left forearm+hand; row2 right upper arm, right forearm+hand, left thigh, left shin+shoe; row3 right thigh, right shin+shoe, accessory, prop. Every whole native piece isolated and centered in its own cell with generous transparent gaps. NO assembled person.\nSTYLE: clean adult flat geometric 2D illustration, crisp opaque single-color regions. Absolutely no gradients, cast shadows, highlights, cheek/neck shading, 3D, texture, glow, outlines, transparency inside the body, labels or text. Any different panel is a deliberate garment/material region, never lighting. True transparent background. Do not add a ground shadow. Preserve all complete faces and full hands.",
+        "transparentBackground": true,
+        "pixelEdits": "None; native generated PNG bytes copied unchanged. Only rectangular runtime viewports and measured pivots/lengths are used.",
+        "correction": "Relaxed brows/open eyes/warm smile; narrower distinct adult bodies and limb shafts; round overlapping connection ends."
+      }
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-friendly-v2.provenance.json",
+      "sha256": "019ba6a92a2f0ac7604ae302fcb059ff502822a86a8a07a53a6ef99f8006c5a5",
+      "record": {
+        "version": 2,
+        "date": "2026-11-04",
+        "tool": "built-in image_gen.imagegen",
+        "useCase": "precise-object-edit",
+        "artifact": "mina-friendly-v2.png",
+        "editTarget": "assets/art/mina-friendly-v1.png",
+        "generatedSource": "C:/Users/David/.codex/generated_images/01a1a821-f54c-74b0-a1e7-e96dc5bfc498/exec-7b8a357f-77a2-4b28-9b81-bfc3d4e53076.png",
+        "prompt": "Use case: precise-object-edit. Edit target: Mina's new friendly native transparent 4-column by 3-row animation parts atlas.\nMake ONE targeted correction: make her arm and hand parts more slender while preserving their current lengths. Currently her forearm/hand is almost as wide as her actual face and the upper sleeve is bulky.\nChange ONLY four cells: row1 column3 left magenta upper sleeve; row1 column4 left skin forearm/mitten hand; row2 column1 right magenta upper sleeve; row2 column2 right skin forearm/mitten hand.\nIn these four cells, reduce the maximum width of the upper sleeve to about60% of its current width, reduce the skin forearm shaft to about65% of its current width, and reduce the complete mitten hand to about65% of its current width. Keep each piece the exact same total HEIGHT and the same cell CENTER. These are long slim adult limbs with round opaque joint caps, a narrow wrist and a modest complete hand with one integrated thumb. Do not shorten the arms. The hand should read smaller than her face, not club-like.\nPreserve ALL eight other cells EXACTLY: the already approved warm friendly complete face with gentle arched brows/open eyes/smile; hair and earrings; slim jacket torso; four leg/shoe pieces; backpack and map. Do not change expression, body build, colors, layout, pixel canvas size or transparent background. Keep all complete parts isolated.\nKeep the clean flat opaque geometric style with solid material regions. Absolutely NO gradients, shadows, highlights, 3D, outline, texture, lighting panels, neck shadow, labels, text or checkerboard. No assembled person.",
+        "transparentBackground": true,
+        "pixelEdits": "None. Native generated PNG copied unchanged, with runtime rectangular viewports and joint registration only.",
+        "correction": "Mina-only narrower sleeves, forearm shafts and hand silhouettes; lengths and friendly adult identity preserved."
+      }
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\pico-friendly-head-v1.provenance.json",
+      "sha256": "1c90f1addfd27da387a439dce68604c2d344d0add62428f22b6b6b3b490fddd7",
+      "record": {
+        "tool": "built-in image_gen",
+        "source": "assets/art/pico-friendly-head-v1.png",
+        "sourceSha256": "0e3021ace8dda55226b628120ebe013e5398fd59fa46fb0b75cfdd86657b79cb",
+        "prompt": "Use case: illustration-story. Create a replacement HEAD ONLY for Pico the mountain hare, based on the head in top-left of this animation atlas. Other parts of this reference are context only. The user says faces look evil. Make this character genuinely welcoming and gentle: a short soft-curved level eyebrow instead of a heavy diagonal slab, relaxed open oval white eyes with navy pupils, a small rounded orange triangle nose, and a warm softly curved smile with a modest magenta mouth interior. No pointy aggressive grin, no downward/inward angry eyebrow. Keep recognizably Pico: warm cream slightly geometric hare muzzle, looking slightly right, friendly adult-appropriate wit. HEAD WITHOUT EARS, no body, no limbs, no props, no labels; ears will be separate animation parts. The base of the head includes a short broad cream neck attachment so it connects continuously to a navy vest. One large head centered with transparent margin. Completely FLAT uniform opaque material colors, no gradients, no modeled lighting, no shadows anywhere, no texture, no rim highlights or white contour. Crisp clean vector-like native bitmap edges, genuinely transparent background. Keep facial features together in one native head.",
+        "reference": "assets/art/pico-graphic-v1.png",
+        "pixelPolicy": "Native ImageGen PNG retained without pixel painting. Head alpha and source dimensions measured for registration."
+      }
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\pico-friendly-head-v2.provenance.json",
+      "sha256": "c6a2c496e3e7cae793572e457ed058283f7ec8c774a9b7ece8cf8ecfa01428bc",
+      "record": {
+        "tool": "built-in image_gen",
+        "source": "assets/art/pico-friendly-head-v2.png",
+        "reference": "assets/art/pico-friendly-head-v1.png",
+        "prompt": "Use case: precise-object-edit. ONE STRICT CHANGE to this exact Pico animation head: it MUST have TWO separate short gentle navy eyebrows, one above EACH eye. Currently there is one shared long brow. Replace that shared brow by two matching short shallow curved eyebrows, with a clear small space between them, both relaxed and friendly, never angled down toward the nose. Count TWO eyebrows. Keep both eyes, nose, smile, head silhouette, short neck, cream fill, position, dimensions and transparent alpha as close to pixel-identical as possible. Do not add ears, limbs, clothing, objects or text. Maintain completely flat uniform material fills, no shadows, gradients, highlights, texture, outline or lighting. All facial features remain together on the one head."
+      }
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\profile-friendly-v2.provenance.json",
+      "sha256": "a8e140265e54510d435adb2e8448d565a8d9c57c33bc896d9e7726b2bc475258",
+      "record": {
+        "tool": "built-in image_gen",
+        "source": "assets/art/profile-friendly-v2.png",
+        "reference": "assets/art/profile-graphic-v1.png",
+        "prompt": [
+          "Use case: precise-object-edit. Edit target is this Horizons profile navigation bust. Make this adult face warm, friendly, welcoming rather than intense/evil. Replace the heavy slanted eyebrows with short fine softly rounded near-horizontal eyebrows, keep generous relaxed open white eyes and clear navy pupils. Replace the oversized triangular nose with a smaller softened orange nose and the huge open grin with a modest warm magenta smile. Maintain an adult geometric but gently rounded face, navy sweeping hair, dark glasses, teal jacket and cream shirt. Slightly narrower natural shoulders, comfortable neck; shoulders/head stay one connected upper-chest bust. Face is coherent, no feature detached. Use one flat uniform opaque fill per material, no gradients or shadows, no modeling, highlights, texture, outlines or background. Keep transparent alpha and generous margin. No hands, no body below upper chest, no text.",
+          "Use case: precise-object-edit. Finish-only correction to this exact icon, preserving its new friendly face and rounded eyebrows, small nose, smile, glasses, hairstyle, clothing and all silhouette geometry. Remove the darker peach neck/chin-shadow region: the face, ears and ENTIRE neck must have exactly one identical uniform peach fill with no boundary or color difference under the chin. Navy hair one uniform navy; teal jacket one uniform teal; cream shirt one uniform cream. Absolutely no lighting, shading, cast/drop/ground shadows, gradients, texture, highlights, outline or depth. Do not add or remove objects. Preserve transparent background and exact framing. The ONLY intended change is removing any modeled shading while preserving all design."
+        ]
+      }
+    }
+  ],
+  "pixelPolicy": "Native generated images retained. Alpha analysis, crop/registration metadata and browser articulation only; no code painting or replacement character vectors.",
+  "retainedArt": "Existing native hair/accessories, earned pins and inert town/control props are retained where compatible; active new face and garment parts are selected by friendly frame metadata."
+}

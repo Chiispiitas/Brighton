@@ -17,7 +17,7 @@ const CSS=`
 .hzn-cast-native>img{position:absolute;display:block;max-width:none!important;max-height:none!important;pointer-events:none;user-select:none}
 `;
 function styles(){if(document.getElementById('hzn-cast-style'))return;const s=document.createElement('style');s.id='hzn-cast-style';s.textContent=CSS;document.head.append(s);}
-function load(){return artwork??=fetch(new URL('assets/art/cast-geometric-v1.frames.json?geometric=1',appURL),{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('Character artwork could not be loaded');return r.json();});}
+function load(){return artwork??=fetch(new URL('assets/art/cast-friendly-v1.frames.json?friendly=1',appURL),{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('Character artwork could not be loaded');return r.json();});}
 function scaleFor(name,part){
  const heights={head:name==='jo'?148:142,torso:name==='jo'?200:name==='alex'?195:185,upperLeft:105,upperRight:105,lowerLeft:108,lowerRight:108,thighLeft:name==='jo'?90:105,thighRight:name==='jo'?90:105,shinLeft:145,shinRight:145,footLeft:145,footRight:145};
  return heights[part];
@@ -66,6 +66,7 @@ function sample(name,posture,g,t,mood='idle'){
  let leftA=6+1.2*wave,leftB=-12+1.5*beat,rightA=-8+1.2*Math.sin(2*Math.PI*(t-.12)),rightB=13+1.4*beat,head=-1+1.5*Math.sin(2*Math.PI*(t-.18));
  if(name==='alex'){leftA=14+1.8*wave;leftB=-35+2.5*beat;rightA=-12+1.6*wave;rightB=22+2*beat;head=1.8*Math.sin(2*Math.PI*(t-.27));}
  if(name==='jo'){leftA=12+1.5*wave;leftB=-28+2*beat;rightA=-17+1.4*wave;rightB=38+2*beat;head=1.4*Math.sin(2*Math.PI*(t-.08));}
+ if(kind==='dance'){leftA=18+9*wave;rightA=-18+9*wave;leftB=-35+6*beat;rightB=35+6*beat;}
  if(mood==='wave'){
   const flutter=Math.sin(6*Math.PI*(t-.25)),lift={mina:-112,alex:-106,jo:-102}[name];
   const shoulderLift=smooth((greet-.05)/.95),elbowLead=smooth(greet/.35)*(1-smooth((greet-.65)/.35));
@@ -73,19 +74,24 @@ function sample(name,posture,g,t,mood='idle'){
   rightB=mixAngle(rightB,-58+10*flutter,greet)-100*elbowLead;
   head+=greet*({mina:-2.2,alex:1.5,jo:-1.2}[name]);
  }
- let thighL=2.2*wave,thighR=-2.2*wave,shinL=-thighL*.65,shinR=-thighR*.65;
+ let thighL=4+2.2*wave,thighR=-4+2.2*wave,shinL=-thighL*.65,shinR=-thighR*.65;
  if(kind==='seated'){thighL=48+wave;thighR=-48-wave;shinL=-thighL+1.6*beat;shinR=-thighR-1.6*beat;}
  if(kind==='crouch'){thighL=60+wave;thighR=-60-wave;shinL=-60+.8*beat;shinR=60-.8*beat;}
  if(kind==='drive'){thighL=35+.8*wave;thighR=-35-.8*wave;shinL=-35+2.5*beat;shinR=35-2.5*beat;}
- if(kind==='dance'){thighL=13*wave;thighR=-13*wave;shinL=8*beat;shinR=-8*beat;head=4*wave;leftA+=18*wave;rightA-=18*wave;leftB-=12*beat;rightB+=12*beat;}
- if(posture==='step'){thighL=7*wave;thighR=-7*wave;shinL=-Math.max(0,beat)*10;shinR=-Math.min(0,beat)*10;leftA-=5*wave;rightA+=5*wave;}
+ if(kind==='dance'){
+  // Keep each leg on its own side of the body. The old signed mirror swing
+  // crossed both knees and merged the shoes during the second half-cycle.
+  thighL=8+6*wave;thighR=-8+6*wave;shinL=-thighL+4+3*beat;shinR=-thighR-4+3*beat;
+  head=4*wave;
+ }
+ if(posture==='step'){thighL=4+3*wave;thighR=-4+3*wave;shinL=-Math.max(0,beat)*8;shinR=-Math.min(0,beat)*8;leftA-=5*wave;rightA+=5*wave;}
  const {shoulders,hips,study}=g.rig;
  let armL,armR;
  if(posture==='clap'||mood==='celebrate'){
   const gap=posture==='clap'?9+10*(1-Math.cos(6*Math.PI*t)):85+5*wave,y=posture==='clap'?shoulders.left.y+49:shoulders.left.y-78+3*beat;
   armL=solveArm(g,shoulders.left,{x:180-gap,y},'upperLeft','lowerLeft',y<shoulders.left.y?-1:1);
   armR=solveArm(g,shoulders.right,{x:180+gap,y},'upperRight','lowerRight',y<shoulders.right.y?1:-1);
-  if(mood==='celebrate'){thighL+=3*wave;thighR-=3*wave;}
+  if(mood==='celebrate'){thighL+=1.5*(1+wave);thighR-=1.5*(1-wave);}
  }else if(kind==='seated'||kind==='study'){
   armL=solveArm(g,shoulders.left,{x:study.left.x+3*wave,y:study.left.y+2*beat},'upperLeft','lowerLeft',1);
   const rest=solveArm(g,shoulders.right,{x:study.right.x+2*wave,y:study.right.y-2*beat},'upperRight','lowerRight',-1);

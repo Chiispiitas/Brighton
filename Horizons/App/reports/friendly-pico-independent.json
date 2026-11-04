@@ -1,0 +1,173 @@
+{
+  "date": "2026-11-04T21:18:35.679Z",
+  "reviewer": "graphic_cast agent, independent of root Pico/profile/icon authorship",
+  "sources": {
+    "src/pico-articulated.js": "9914e137b2a9a4c3f505c5a4269c8fc1113183bf8f60faa3547e37894faa61ba",
+    "assets/art/pico-friendly-v1.frames.json": "6b837e1145c0a78f71921e76666f43b471cf3b156fdc41391ec04cb4468a520b",
+    "assets/art/pico-graphic-v1.png": "81c1c5a699c695bb716159cf6f8b7989b51c7d51a4210767de7dd50efb97532c",
+    "assets/art/pico-friendly-head-v1.png": "0e3021ace8dda55226b628120ebe013e5398fd59fa46fb0b75cfdd86657b79cb",
+    "assets/art/profile-friendly-v2.png": "a9713022283e29c1219350ba7179bac6277a4061c023f37dab2396b4a8fdf531",
+    "assets/art/app-icon-friendly-v1.png": "e66a35a741b480ce59df73c33779f749cc004ef2b500cc696346120d6cd2403c"
+  },
+  "sourceStable": true,
+  "captureReviewed": {
+    "frames": 180,
+    "sheets": [
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico\\sheet-greet-idle.png",
+        "sha256": "62db9c9e54fbe7d8a57717c8446793369bac0ae3ceb5aab0bac3154c21cf7ddd"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico\\sheet-greet-wave.png",
+        "sha256": "398bdacf65702c380efa295df27bb5017c9038c88415ff4fe9bdca65c2df0968"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico\\sheet-greet-celebrate.png",
+        "sha256": "1e021ac9868c41b09e8f144e489d922a5b427e98e0fe431de4e71f5c322d0fc7"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico\\sheet-read-idle.png",
+        "sha256": "d94561574b9f64065cc959b2c789c502aefd70eb47b83feba583b9513450fd52"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico\\sheet-read-wave.png",
+        "sha256": "62d9572774689579269012ac847472b44560f6b54edcc3cb8ba946cace2a9c23"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico\\sheet-read-celebrate.png",
+        "sha256": "424f4b7e98c828ab2ba6c08be1a31d820d04fd6fe456102fb8d89e037bf59950"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico\\sheet-explore-idle.png",
+        "sha256": "0674bfe30c12bd31d90807bcba5cda7337849d26a5651fb0c0b84f7bc6cb4194"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico\\sheet-explore-wave.png",
+        "sha256": "7867c8171e82149d81af41d9a5e480d9acaee742d75794997537913d9b5c35ca"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico\\sheet-explore-celebrate.png",
+        "sha256": "1295e7d080969a8d2db20e7cdfb37bbfd607af984f1a01595c2b96effce7b3c2"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico\\sheet-stride-idle.png",
+        "sha256": "eb52cf39cb1326d9fe76afb3e1800e9f15b1d1775b8f0c3432f424f7887b31d9"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico\\sheet-stride-wave.png",
+        "sha256": "eaef49bffad0104dfc28f6160fc35176ae3695a15970da60059f0a22dd4e456a"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico\\sheet-stride-celebrate.png",
+        "sha256": "e3bce743af1a61b0a2eb7956cb14887929cededa5fbc57f00c121085049c0bfa"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico\\sheet-idle-idle.png",
+        "sha256": "965080864c5911c060936ae8035c02401575ece813dc4ffb92bc2b259d853fdb"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico\\sheet-idle-wave.png",
+        "sha256": "763686beff4d6ec75b9db410abb3543956fac3e438a46a330c67867376792406"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico\\sheet-idle-celebrate.png",
+        "sha256": "81c81f26829445d376d8f8bc120b460f3a95084c929509a5d8eda9633e0c6364"
+      }
+    ],
+    "verdict": "PASS: Directly inspected every frame in all15saved sheets. Gentle brow/open eyes/warm smile; intact complete face, ears touching head, neck joining vest, attached knees/ankles and supported satchel. Read/explore remain left-hand-supported during waving and celebration; no floating book/map, stray source-cell pixels, cast shadows or lighting bands seen."
+  },
+  "trace": {
+    "samples": 860,
+    "sequence": "Actual pointer entry to wave; interrupt at1200ms with celebrate; actual timed return and620ms pose restoration; no seek or simulated completion.",
+    "failures": [],
+    "states": [
+      {
+        "posture": "read",
+        "seen": [
+          "wave",
+          "celebrate",
+          "idle"
+        ],
+        "mood": "idle",
+        "restoredPose": "read",
+        "bookOpacity": "1",
+        "mapOpacity": "0"
+      },
+      {
+        "posture": "explore",
+        "seen": [
+          "wave",
+          "celebrate",
+          "idle"
+        ],
+        "mood": "idle",
+        "restoredPose": "explore",
+        "bookOpacity": "0",
+        "mapOpacity": "1"
+      },
+      {
+        "posture": "stride",
+        "seen": [
+          "wave",
+          "celebrate",
+          "idle"
+        ],
+        "mood": "idle",
+        "restoredPose": "stride",
+        "bookOpacity": "0",
+        "mapOpacity": "0"
+      },
+      {
+        "posture": "greet",
+        "seen": [
+          "wave",
+          "celebrate",
+          "idle"
+        ],
+        "mood": "idle",
+        "restoredPose": "greet",
+        "bookOpacity": "0",
+        "mapOpacity": "0"
+      },
+      {
+        "posture": "idle",
+        "seen": [
+          "wave",
+          "celebrate",
+          "idle"
+        ],
+        "mood": "idle",
+        "restoredPose": "idle",
+        "bookOpacity": "0",
+        "mapOpacity": "0"
+      }
+    ]
+  },
+  "lifecycle": {
+    "remainingParts": 0,
+    "animations": 0,
+    "staleControllers": 0
+  },
+  "errors": [],
+  "proofs": [
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico-independent\\entry.png",
+      "sha256": "8ec401c409be621ccd8c394904e540f0cbbe6d7d08656907c105019cf4325685"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico-independent\\interrupted.png",
+      "sha256": "85b734d2bfb6466dbe381d340a5db934095314308d7498289fc402fd5d7c0557"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico-independent\\returned.png",
+      "sha256": "b68d0ea2d5f5ad16ee406970d1e1b4fa0f617da3aeddc8523f750b9460cad3cc"
+    }
+  ],
+  "profileVerdict": "PASS: New profile-friendly-v2 has relaxed arched brows, open eyes inside glasses and an unambiguous warm smile; continuous head/neck/clothing. No cast shadow, neck-shadow triangle or volumetric highlight band visible.",
+  "iconVerdict": "PASS: app-icon-friendly-v1 shows a gentle friendly hare with soft brow and open eyes, complete connected ears/head/neck and a warm smile. No cast shadow or detached feature visible.",
+  "pass": true,
+  "limits": [
+    "Finite180saved states plus live entry/interruption/return evidence; does not claim every theoretical animation phase.",
+    "Native raster fills retain slight color variation without directional shadow bands."
+  ]
+}

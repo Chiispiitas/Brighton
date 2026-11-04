@@ -1,0 +1,23 @@
+{
+  "tool": "built-in image_gen",
+  "creator": "OpenAI ImageGen",
+  "date": "2026-11-04",
+  "purpose": "Intermediate slim clothing generation; superseded by v2 because two short sleeves were omitted.",
+  "source": "assets/art/avatar-friendly-clothing-v1.png",
+  "nativeOutput": "C:/Users/David/.codex/generated_images/01a1a821-92b9-7283-9fb1-1e81fe81ee51/exec-b7d04744-4000-472b-939a-edcddacea62c.png",
+  "references": [
+    "assets/art/avatar-graphic-flat-clothing-v1.png"
+  ],
+  "promptSet": [
+    "Use case: precise-object-edit. Edit target: supplied six-column, three-row modular clothing sheet. Keep all SIX TORSO CORES in row1 EXACTLY the same designs, native positions and colors, but slightly slim their silhouettes by about8 percent around their centers while keeping the existing neck opening positions and full vertical heights. Keep each column centered.\nModify the row2 detached UPPER SLEEVES and row3 detached FOREARM SLEEVES: make them about25 percent NARROWER while preserving their vertical heights, round attachment cap shapes and center axes. Slender natural adult arm proportions, not thick inflated tubes. Keep the short sleeves in columns2and5, and keep their row3 cells blank transparent. Keep every clothing part separated and aligned to its original cell; no assembled body/head/skin/hands. Preserve hoodie/jacket/sweater/overalls/cardigan details and palette.\nEach component must have enough natural overlapping rounded material at its top/bottom to join shoulder/elbow/wrist animation pivots without gaps. Long sleeve cuffs remain simple and complete.\nFlat uniform solid material colors only. No gradients, shading, shadows, highlights, fabric folds/texture, lighting, dark side planes, outlines or 3D. Preserve native transparent alpha outside all cutouts. No text or labels. Return only the same garment component sheet."
+  ],
+  "transformations": "Original generated PNG bytes copied without repainting, tracing, alpha thresholding, color edits or post-processing. Runtime uses measured rectangular native viewports and uniform transforms.",
+  "fiction": "Original fictional customization artwork, not portraits of real people.",
+  "license": "Original generated project artwork",
+  "dimensions": {
+    "width": 1536,
+    "height": 1024
+  },
+  "mode": "RGBA",
+  "sha256": "f1fdf03414d3699e4ca9dadfec2ea980637b48e712c54459f26cac6ff9dda7fa"
+}

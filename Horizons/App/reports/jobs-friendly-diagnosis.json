@@ -1,0 +1,184 @@
+{
+  "status": "AUTHOR_REPLACEMENTS_READY_INDEPENDENT_REVIEW_PENDING",
+  "scope": "14 job scenes, 56 native phases and all 17 adults; current enlarged white-browser rows inspected directly.",
+  "correction": "Make expressions relaxed and welcoming, moderate overly broad bodies, and make limb and object ownership unambiguous at enlarged size.",
+  "findings": [
+    {
+      "term": "teacher",
+      "phases": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "face": "Straight heavy brows and sharp wedge hair/jaw give a more severe expression than requested.",
+      "anatomy": "No definite native arm gap found; retain visible wrist-to-sleeve overlap and book-to-palm contact in the redraw."
+    },
+    {
+      "term": "chef",
+      "phases": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "face": "Oversized head, heavy brow and moustache need a gentler eye/brow expression.",
+      "proportions": "Torso and upper arms are disproportionately broad; narrow them while retaining a moderately stocky adult silhouette.",
+      "anatomy": "Moving spoon arm emerges from a large cream torso region, making its shoulder/elbow route hard to read. Redraw an explicit connected forearm in every phase."
+    },
+    {
+      "term": "doctor",
+      "phases": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "face": "Both doctor and patient need relaxed curved brows and warmer open eyes.",
+      "anatomy": "Overlapping brown and peach wrist/hand shapes make ownership ambiguous; separate the patient's hand silhouette from the doctor's supporting hand and visible sleeve."
+    },
+    {
+      "term": "office worker",
+      "phases": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "face": "Brows and rectangular glasses emphasize a stern expression.",
+      "proportions": "Moderate torso width and hand size while retaining an adult seated figure.",
+      "anatomy": "Keep both keyboard/gesture wrists explicitly attached and do not hide shoulder-to-elbow routes in the desk."
+    },
+    {
+      "term": "receptionist",
+      "phases": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "face": "Oversized pointed nose, rigid brow and angular hair silhouette create an unnecessarily severe face.",
+      "anatomy": "No definite native gap found; preserve desk hand and connected bell/greeting arm."
+    },
+    {
+      "term": "salesclerk",
+      "phases": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "face": "Long angular jaw and heavy straight brows need softening.",
+      "anatomy": "Each folding shirt edge must remain visibly inside the same connected hand, with stable head/body scale."
+    },
+    {
+      "term": "taxi driver",
+      "phases": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "face": "Relax brows and make the smile more welcoming.",
+      "proportions": "Broad torso, very short legs and large forearms read too chunky; use a balanced average adult build and longer legs.",
+      "anatomy": "Keep hip hand separate from the moving gesture arm and taxi body."
+    },
+    {
+      "term": "waiter",
+      "phases": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "face": "Heavy uneven brows and prominent angular moustache need gentler expression.",
+      "anatomy": "Current fixed tray support is visible, but retain an unmistakable continuous shoulder-elbow-palm route in every replacement phase."
+    },
+    {
+      "term": "waitress",
+      "phases": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "face": "Use relaxed rounded brows and warm open eyes.",
+      "proportions": "Reduce broad apron/torso and forearm width; preserve a moderately curvy adult silhouette.",
+      "anatomy": "Phase3 has a tiny detached skin-colored sliver to the left of the free hand. Replace with one clean complete hand silhouette and safe cell gutters."
+    },
+    {
+      "term": "farmer",
+      "phases": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "face": "Thick brows, very large beard/head and compact body need a friendlier balanced treatment.",
+      "proportions": "Narrow the torso and moderate beard/hand size.",
+      "anatomy": "Basket/support-hand position switches sides between phases1 and2. Keep the basket fixed and the supporting hand attached throughout the picking action."
+    },
+    {
+      "term": "nurse",
+      "phases": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "face": "Both nurse and patient need gently curved relaxed brows and open friendly eyes.",
+      "anatomy": "Overlapping checking hands and the long patient forearm make contact ownership hard to read. Draw distinct skin-colored hands and continuous sleeve/wrist connections."
+    },
+    {
+      "term": "dentist",
+      "phases": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "face": "Angular brows/glasses and long jaw need a gentler smile and brow treatment.",
+      "anatomy": "Keep the tooth model seated on a clearly visible supporting palm while the other hand points; do not merge the pointing wrist into the model."
+    },
+    {
+      "term": "police officer",
+      "phases": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "face": "Officer and older woman need relaxed brows and welcoming smiles.",
+      "proportions": "Officer shoulders, torso and arms are too broad relative to legs; use a balanced fit adult build.",
+      "anatomy": "Draw the moving arm from one shoulder and the hip hand from the other. Keep the older woman's cane continuously in its gripping hand. Omit all ground ovals/stripes."
+    },
+    {
+      "term": "actor",
+      "phases": [
+        0,
+        1,
+        2,
+        3
+      ],
+      "face": "Pointed moustache, large nose and brows produce a mischievous severe expression; use softer nose/moustache and warmly curved brows.",
+      "anatomy": "Phase2 has a tiny skin-colored sliver detached to the left of the extended hand. Replace with a clean connected hand, keep mask touching fingers and retain all four theatrical poses."
+    }
+  ],
+  "acceptance": [
+    "Every depicted face is visibly warm with relaxed non-converging brows, open eyes and an upturned smile.",
+    "Diverse adult silhouettes remain, with balanced shoulders, torso, limb thickness and leg length.",
+    "Every phase has exactly two connected arms and complete wrists/hands, with visible prop contact and no stray skin slivers.",
+    "Each row has four meaningful distinct phases with stable identity and stationary supporting props.",
+    "Flat shadow-free native ImageGen art and alpha are preserved; no pixel recoloring or code-painted anatomy."
+  ],
+  "finalProposal": "reports/jobs-friendly-vocabulary-fragment.json",
+  "finalAuthorReview": "reports/jobs-friendly-author-review.json",
+  "resolvedNativeFailures": [
+    "Detached waitress free-arm fleck/merged fourth arm replaced with separate attached lower-abdomen gesture.",
+    "Detached office fourth hand replaced with visibly connected greeting arm.",
+    "Ambiguous detached doctor support palm retired; clipboard consultation keeps every hand on its own body/prop.",
+    "Farmer basket/support hand remains in fixed left position through all4 phases.",
+    "Actor extended-hand skin sliver absent from new complete connected hand.",
+    "All17 adults have relaxed curved separated brows, open eyes and warm smiles; oversized broad builds moderated."
+  ]
+}

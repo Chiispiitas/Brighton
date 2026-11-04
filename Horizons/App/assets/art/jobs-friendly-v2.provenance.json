@@ -1,0 +1,29 @@
+{
+  "tool": "built-in image_gen.imagegen",
+  "inheritsExactEarlierCalls": "assets/art/jobs-friendly-v1.provenance.json",
+  "nativeRgbaPreserved": true,
+  "pixelEditing": "none; all native output alpha/color bytes preserved",
+  "superseded": [
+    {
+      "file": "jobs-friendly-1-v3.png",
+      "reason": "Doctor supporting palm remained detached in an800px clinical closeup; replaced with clipboard consultation."
+    }
+  ],
+  "additionalCall": {
+    "output": "jobs-friendly-1-v4.png",
+    "original": "C:/Users/David/.codex/generated_images/01a1a822-4dc1-7a51-8a0f-6b28e7239e61/exec-c619cd06-06df-4e9d-b255-d3997e49d1a3.png",
+    "prompt": "Use case: precise-object-edit. EDIT TARGET this friendly 4-column by4-row occupation atlas. Replace ONLY ROW3 (all four doctor-and-patient cells) with a clearer consultation action. Preserve the other12 scenes exactly in layout, kind faces, proportions, connected limbs, actions and props. Keep the exact4-column by4-row grid, transparent gutters and entire square composition.\nThe old brown supporting hand beneath the patient's outstretched peach arm is detached: REMOVE that entire hand-contact arrangement in every row3 cell. No brown hand remains on or under the patient.\nROW3 NEW CONSULTATION: retain the SAME warm friendly dark-brown male adult doctor with soft black hair, curved relaxed eyebrows, open white eyes, warm smile, cream coat, teal shirt/stethoscope, navy trousers. Retain the SAME friendly peach adult woman patient with soft orange bob, magenta shirt, teal trousers, orange shoes, seated on the same stool. Patient now has BOTH of her peach hands resting visibly on her OWN lap/thighs, both arms continuously connected to her shoulders, short sleeves, elbows and wrists. She does not extend her arm toward the doctor. Keep a small transparent gap between the two people.\nDoctor's LEFT arm on VIEWER-LEFT continuously holds a small navy clipboard with blank cream page against HIS OWN waist/torso in ALL4 cells. The clipboard physically touches his attached brown gripping hand; thumb/fingers visibly grip its left/lower edge. Trace this left arm continuously from doctor left shoulder through cream upper sleeve, visible elbow, forearm, wrist and brown hand. No detached palm.\nDoctor's separate RIGHT arm on VIEWER-RIGHT makes FOUR DISTINCT consultation gestures: column1 points to lower clipboard/page; column2 points to upper clipboard/page; column3 opens a welcoming explanatory palm at chest height toward patient; column4 hand touches HIS OWN chest reassuringly. Each right arm is one complete connected shoulder→upper sleeve→elbow→forearm→wrist→hand, stable limb lengths and exactly two arms total. This hand NEVER touches the patient's hands. No spare hands under patient. Patient keeps identical calm hands-on-lap pose through all4. Both adult faces remain warm and gently smiling.\nStrict flat 2D solid colors: no shading, gradients, texture, folds, shadows, grey modeling, highlights, outline strokes, floor marks, labels or watermark. Native genuinely transparent alpha. Complete hands, hair, feet, stool and clipboard fully inside their own cells.",
+    "references": [
+      "assets/art/jobs-friendly-1-v3.png"
+    ]
+  },
+  "activeAssets": [
+    "assets/art/jobs-friendly-1-v4.png",
+    "assets/art/jobs-friendly-2-v2.png",
+    "assets/art/jobs-friendly-3-v2.png",
+    "assets/art/jobs-friendly-4-v2.png"
+  ],
+  "frames": "assets/art/jobs-friendly-v1.frames.json",
+  "proposal": "reports/jobs-friendly-vocabulary-fragment.json",
+  "sharedManifestEdited": false
+}

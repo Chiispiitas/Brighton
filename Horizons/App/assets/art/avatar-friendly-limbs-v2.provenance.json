@@ -1,0 +1,24 @@
+{
+  "tool": "built-in image_gen",
+  "creator": "OpenAI ImageGen",
+  "date": "2026-11-04",
+  "purpose": "Active native slim upper/fore limbs and hands color matched to friendly faces.",
+  "source": "assets/art/avatar-friendly-limbs-v2.png",
+  "nativeOutput": "C:/Users/David/.codex/generated_images/01a1a821-92b9-7283-9fb1-1e81fe81ee51/exec-d28ff5ee-7e0f-4413-a83f-23ef24f6769d.png",
+  "references": [
+    "assets/art/avatar-friendly-limbs-v1.png",
+    "assets/art/avatar-friendly-heads-v1.png"
+  ],
+  "promptSet": [
+    "Use case: precise-object-edit. Image1 is EDIT TARGET: six-column/four-row slim skin limb/hand cutouts. Image2 is COLOR REFERENCE ONLY: use the top-row MALE FACE SKIN colors. Preserve every limb/hand position, height and shape from image1. Repaint each entire column, including upper arm, forearm, open hand and thinking hand, to exactly the same single uniform skin color as the corresponding top-row face in image2. The target's columns4/5/6 have drifted too pink/desaturated; match the faces' rich caramel/chestnut/deep-brown colors faithfully.\nEvery cutout one opaque flat skin color including the wrist, with no gradient, shading, highlight, texture, dark edges or outlines. Preserve all native transparent alpha outside each complete cutout. Do not copy heads, faces or other reference objects into the limb sheet."
+  ],
+  "transformations": "Original generated PNG bytes copied without repainting, tracing, alpha thresholding, color edits or post-processing. Runtime uses measured rectangular native viewports and uniform transforms.",
+  "fiction": "Original fictional customization artwork, not portraits of real people.",
+  "license": "Original generated project artwork",
+  "dimensions": {
+    "width": 1536,
+    "height": 1024
+  },
+  "mode": "RGBA",
+  "sha256": "ac04d55b7e3edf0e0a4a11ad44b501e7aad18fc22a711923cf48dc0aab2fc4dd"
+}

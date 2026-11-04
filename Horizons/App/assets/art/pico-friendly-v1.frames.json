@@ -1,0 +1,285 @@
+{
+  "src": "assets/art/pico-graphic-v1.png",
+  "atlas": {
+    "width": 1254,
+    "height": 1254
+  },
+  "sourceSha256": "81c1c5a699c695bb716159cf6f8b7989b51c7d51a4210767de7dd50efb97532c",
+  "parts": {
+    "head": {
+      "src": "assets/art/pico-friendly-head-v2.png",
+      "atlas": {
+        "width": 1312,
+        "height": 1199
+      },
+      "frame": {
+        "x": 190,
+        "y": 163,
+        "w": 922,
+        "h": 861
+      },
+      "pivot": [
+        620,
+        982
+      ],
+      "scale": 0.165
+    },
+    "torso": {
+      "frame": {
+        "x": 380,
+        "y": 85,
+        "w": 180,
+        "h": 213
+      },
+      "pivot": [
+        477,
+        100
+      ],
+      "scale": 0.46
+    },
+    "earLeft": {
+      "frame": {
+        "x": 725,
+        "y": 34,
+        "w": 97,
+        "h": 271
+      },
+      "pivot": [
+        770,
+        292
+      ],
+      "scale": 0.48
+    },
+    "earRight": {
+      "frame": {
+        "x": 966,
+        "y": 78,
+        "w": 231,
+        "h": 220
+      },
+      "pivot": [
+        1004,
+        292
+      ],
+      "scale": 0.4
+    },
+    "upperArmLeft": {
+      "frame": {
+        "x": 79,
+        "y": 402,
+        "w": 182,
+        "h": 180
+      },
+      "pivot": [
+        225,
+        438
+      ],
+      "scale": 0.27,
+      "end": [
+        117,
+        549
+      ]
+    },
+    "forearmLeft": {
+      "frame": {
+        "x": 370,
+        "y": 367,
+        "w": 182,
+        "h": 243
+      },
+      "pivot": [
+        400,
+        401
+      ],
+      "scale": 0.29,
+      "end": [
+        493,
+        551
+      ]
+    },
+    "upperArmRight": {
+      "frame": {
+        "x": 676,
+        "y": 407,
+        "w": 166,
+        "h": 171
+      },
+      "pivot": [
+        708,
+        444
+      ],
+      "scale": 0.29,
+      "end": [
+        800,
+        545
+      ]
+    },
+    "forearmRight": {
+      "frame": {
+        "x": 947,
+        "y": 366,
+        "w": 255,
+        "h": 220
+      },
+      "pivot": [
+        1015,
+        547
+      ],
+      "scale": 0.3,
+      "end": [
+        1137,
+        440
+      ]
+    },
+    "thighLeft": {
+      "frame": {
+        "x": 72,
+        "y": 656,
+        "w": 148,
+        "h": 257
+      },
+      "pivot": [
+        167,
+        687
+      ],
+      "scale": 0.3,
+      "end": [
+        117,
+        876
+      ]
+    },
+    "lowerLegLeft": {
+      "frame": {
+        "x": 461,
+        "y": 657,
+        "w": 87,
+        "h": 171
+      },
+      "pivot": [
+        507,
+        684
+      ],
+      "scale": 0.4,
+      "end": [
+        497,
+        824
+      ]
+    },
+    "thighRight": {
+      "frame": {
+        "x": 706,
+        "y": 651,
+        "w": 131,
+        "h": 257
+      },
+      "pivot": [
+        754,
+        687
+      ],
+      "scale": 0.3,
+      "end": [
+        792,
+        874
+      ]
+    },
+    "lowerLegRight": {
+      "frame": {
+        "x": 996,
+        "y": 657,
+        "w": 87,
+        "h": 171
+      },
+      "pivot": [
+        1049,
+        685
+      ],
+      "scale": 0.405,
+      "end": [
+        1044,
+        824
+      ]
+    },
+    "satchel": {
+      "frame": {
+        "x": 43,
+        "y": 1011,
+        "w": 233,
+        "h": 198
+      },
+      "pivot": [
+        156,
+        1024
+      ],
+      "scale": 0.32
+    },
+    "strap": {
+      "frame": {
+        "x": 350,
+        "y": 974,
+        "w": 232,
+        "h": 250
+      },
+      "pivot": [
+        550,
+        999
+      ],
+      "scale": 0.28
+    },
+    "book": {
+      "frame": {
+        "x": 618,
+        "y": 988,
+        "w": 277,
+        "h": 235
+      },
+      "pivot": [
+        757,
+        1100
+      ],
+      "scale": 0.4
+    },
+    "map": {
+      "frame": {
+        "x": 930,
+        "y": 982,
+        "w": 285,
+        "h": 247
+      },
+      "pivot": [
+        1077,
+        1100
+      ],
+      "scale": 0.4
+    },
+    "footLeft": {
+      "frame": {
+        "x": 332,
+        "y": 811,
+        "w": 201,
+        "h": 106
+      },
+      "pivot": [
+        497,
+        824
+      ],
+      "scale": 0.4
+    },
+    "footRight": {
+      "frame": {
+        "x": 990,
+        "y": 811,
+        "w": 206,
+        "h": 106
+      },
+      "pivot": [
+        1044,
+        824
+      ],
+      "scale": 0.405
+    }
+  },
+  "sources": {
+    "assets/art/pico-graphic-v1.png": "81c1c5a699c695bb716159cf6f8b7989b51c7d51a4210767de7dd50efb97532c",
+    "assets/art/pico-friendly-head-v2.png": "3cf032cea26eb0e2fc4911c51b6740fd562f73e306c1eb2bb9ba2c27648a622b"
+  }
+}

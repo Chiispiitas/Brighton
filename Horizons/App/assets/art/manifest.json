@@ -1,5 +1,5 @@
 {
-  "version": 5,
+  "version": 6,
   "pico": {
     "parts": {
       "torso": {
@@ -1846,74 +1846,111 @@
     }
   },
   "avatar": {
-    "skin": [
+    "body": [
       {
-        "id": "skin-1",
-        "label": "Porcelain",
-        "group": "skin",
-        "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+        "id": "male",
+        "label": "Male",
+        "group": "body",
+        "src": "assets/art/avatar-friendly-heads-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
         },
         "frame": {
-          "x": 52,
-          "y": 50,
-          "w": 209,
-          "h": 245
+          "x": 45,
+          "y": 53,
+          "w": 222,
+          "h": 264
+        }
+      },
+      {
+        "id": "female",
+        "label": "Female",
+        "group": "body",
+        "src": "assets/art/avatar-friendly-heads-v1.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 48,
+          "y": 377,
+          "w": 214,
+          "h": 273
+        }
+      }
+    ],
+    "skin": [
+      {
+        "id": "skin-1",
+        "label": "Porcelain",
+        "group": "skin",
+        "src": "assets/art/avatar-friendly-heads-v1.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 45,
+          "y": 53,
+          "w": 222,
+          "h": 264
         },
         "headFrame": {
-          "x": 52,
-          "y": 50,
-          "w": 209,
-          "h": 214
+          "x": 45,
+          "y": 53,
+          "w": 222,
+          "h": 227
         },
         "neckFrame": {
-          "x": 99,
-          "y": 258,
-          "w": 116,
-          "h": 37
+          "x": 45,
+          "y": 259,
+          "w": 222,
+          "h": 58
         },
         "blinks": [
           {
-            "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+            "src": "assets/art/avatar-friendly-heads-v1.png",
             "atlas": {
               "width": 1536,
               "height": 1024
             },
             "frame": {
-              "x": 94,
-              "y": 909,
+              "x": 89,
+              "y": 727,
               "w": 50,
-              "h": 40
+              "h": 52
             },
             "rigPosition": {
-              "x": 131.98086124401914,
-              "y": 104.3435894655516,
-              "w": 29.1866028708134,
+              "x": 131.52252252252254,
+              "y": 104.47799499382148,
+              "w": 26.126126126126124,
               "z": 4
             }
           },
           {
-            "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+            "src": "assets/art/avatar-friendly-heads-v1.png",
             "atlas": {
               "width": 1536,
               "height": 1024
             },
             "frame": {
-              "x": 163,
-              "y": 909,
-              "w": 50,
-              "h": 40
+              "x": 172,
+              "y": 728,
+              "w": 49,
+              "h": 52
             },
             "rigPosition": {
-              "x": 161.16746411483254,
-              "y": 104.24044384982275,
-              "w": 29.1866028708134,
+              "x": 163.39639639639643,
+              "y": 104.46627272433723,
+              "w": 25.603603603603602,
               "z": 4
             }
           }
         ],
+        "eyeY": 152.627704454445,
+        "eyeStageY": 118.05771944466495,
+        "jawNeckOverlapPixels": 10.972972972972972,
         "position": {
           "x": 0.2,
           "y": 0.04,
@@ -1926,69 +1963,72 @@
         "id": "skin-2",
         "label": "Peach",
         "group": "skin",
-        "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+        "src": "assets/art/avatar-friendly-heads-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
         },
         "frame": {
-          "x": 297,
-          "y": 50,
-          "w": 209,
-          "h": 245
+          "x": 290,
+          "y": 53,
+          "w": 222,
+          "h": 264
         },
         "headFrame": {
-          "x": 297,
-          "y": 50,
-          "w": 209,
-          "h": 214
+          "x": 290,
+          "y": 53,
+          "w": 222,
+          "h": 227
         },
         "neckFrame": {
-          "x": 343,
-          "y": 258,
-          "w": 117,
-          "h": 37
+          "x": 290,
+          "y": 259,
+          "w": 222,
+          "h": 58
         },
         "blinks": [
           {
-            "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+            "src": "assets/art/avatar-friendly-heads-v1.png",
             "atlas": {
               "width": 1536,
               "height": 1024
             },
             "frame": {
-              "x": 341,
-              "y": 909,
-              "w": 51,
-              "h": 40
+              "x": 335,
+              "y": 727,
+              "w": 49,
+              "h": 52
             },
             "rigPosition": {
-              "x": 131.39712918660288,
-              "y": 104.33798763664304,
-              "w": 29.77033492822967,
+              "x": 131.7837837837838,
+              "y": 104.46233512664608,
+              "w": 25.603603603603602,
               "z": 4
             }
           },
           {
-            "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+            "src": "assets/art/avatar-friendly-heads-v1.png",
             "atlas": {
               "width": 1536,
               "height": 1024
             },
             "frame": {
-              "x": 410,
-              "y": 909,
-              "w": 50,
-              "h": 40
+              "x": 417,
+              "y": 727,
+              "w": 48,
+              "h": 52
             },
             "rigPosition": {
-              "x": 160.87559808612443,
-              "y": 104.34378370167845,
-              "w": 29.1866028708134,
+              "x": 163.13513513513513,
+              "y": 104.56818403036891,
+              "w": 25.08108108108108,
               "z": 4
             }
           }
         ],
+        "eyeY": 152.7102381588678,
+        "eyeStageY": 118.10084516409309,
+        "jawNeckOverlapPixels": 10.972972972972972,
         "position": {
           "x": 0.2,
           "y": 0.04,
@@ -2001,69 +2041,72 @@
         "id": "skin-3",
         "label": "Honey",
         "group": "skin",
-        "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+        "src": "assets/art/avatar-friendly-heads-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
         },
         "frame": {
-          "x": 542,
-          "y": 50,
-          "w": 209,
-          "h": 245
+          "x": 535,
+          "y": 53,
+          "w": 222,
+          "h": 264
         },
         "headFrame": {
-          "x": 542,
-          "y": 50,
-          "w": 209,
-          "h": 213
+          "x": 535,
+          "y": 53,
+          "w": 222,
+          "h": 227
         },
         "neckFrame": {
-          "x": 587,
-          "y": 257,
-          "w": 119,
-          "h": 38
+          "x": 535,
+          "y": 259,
+          "w": 222,
+          "h": 58
         },
         "blinks": [
           {
-            "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+            "src": "assets/art/avatar-friendly-heads-v1.png",
             "atlas": {
               "width": 1536,
               "height": 1024
             },
             "frame": {
-              "x": 587,
-              "y": 909,
-              "w": 51,
-              "h": 40
+              "x": 580,
+              "y": 727,
+              "w": 49,
+              "h": 52
             },
             "rigPosition": {
-              "x": 131.39712918660288,
-              "y": 104.27875085440876,
-              "w": 29.77033492822967,
+              "x": 131.7837837837838,
+              "y": 104.60556780897828,
+              "w": 25.603603603603602,
               "z": 4
             }
           },
           {
-            "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+            "src": "assets/art/avatar-friendly-heads-v1.png",
             "atlas": {
               "width": 1536,
               "height": 1024
             },
             "frame": {
-              "x": 656,
-              "y": 909,
-              "w": 50,
-              "h": 40
+              "x": 662,
+              "y": 727,
+              "w": 49,
+              "h": 52
             },
             "rigPosition": {
-              "x": 160.87559808612443,
-              "y": 104.1799359405275,
-              "w": 29.1866028708134,
+              "x": 163.13513513513516,
+              "y": 104.64069888069886,
+              "w": 25.603603603603602,
               "z": 4
             }
           }
         ],
+        "eyeY": 152.9166862289152,
+        "eyeStageY": 118.20871893042417,
+        "jawNeckOverlapPixels": 10.972972972972972,
         "position": {
           "x": 0.2,
           "y": 0.04,
@@ -2076,69 +2119,72 @@
         "id": "skin-4",
         "label": "Caramel",
         "group": "skin",
-        "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+        "src": "assets/art/avatar-friendly-heads-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
         },
         "frame": {
-          "x": 787,
-          "y": 50,
-          "w": 208,
-          "h": 245
+          "x": 780,
+          "y": 53,
+          "w": 222,
+          "h": 264
         },
         "headFrame": {
-          "x": 787,
-          "y": 50,
-          "w": 208,
-          "h": 215
+          "x": 780,
+          "y": 53,
+          "w": 222,
+          "h": 227
         },
         "neckFrame": {
-          "x": 834,
+          "x": 780,
           "y": 259,
-          "w": 115,
-          "h": 36
+          "w": 222,
+          "h": 58
         },
         "blinks": [
           {
-            "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+            "src": "assets/art/avatar-friendly-heads-v1.png",
             "atlas": {
               "width": 1536,
               "height": 1024
             },
             "frame": {
-              "x": 829,
-              "y": 909,
-              "w": 51,
-              "h": 40
+              "x": 825,
+              "y": 727,
+              "w": 50,
+              "h": 52
             },
             "rigPosition": {
-              "x": 131.2596153846154,
-              "y": 104.38625293920055,
-              "w": 29.91346153846154,
+              "x": 131.26126126126127,
+              "y": 104.63385124254688,
+              "w": 26.126126126126124,
               "z": 4
             }
           },
           {
-            "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+            "src": "assets/art/avatar-friendly-heads-v1.png",
             "atlas": {
               "width": 1536,
               "height": 1024
             },
             "frame": {
-              "x": 899,
-              "y": 909,
-              "w": 50,
-              "h": 40
+              "x": 907,
+              "y": 727,
+              "w": 49,
+              "h": 52
             },
             "rigPosition": {
-              "x": 161.1730769230769,
-              "y": 104.36978330658107,
-              "w": 29.326923076923077,
+              "x": 162.8738738738739,
+              "y": 104.67554447651534,
+              "w": 25.603603603603602,
               "z": 4
             }
           }
         ],
+        "eyeY": 152.97709417944748,
+        "eyeStageY": 118.24028344511669,
+        "jawNeckOverlapPixels": 10.972972972972972,
         "position": {
           "x": 0.2,
           "y": 0.04,
@@ -2151,69 +2197,72 @@
         "id": "skin-5",
         "label": "Chestnut",
         "group": "skin",
-        "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+        "src": "assets/art/avatar-friendly-heads-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
         },
         "frame": {
-          "x": 1031,
-          "y": 50,
-          "w": 210,
-          "h": 245
+          "x": 1024,
+          "y": 53,
+          "w": 223,
+          "h": 264
         },
         "headFrame": {
-          "x": 1031,
-          "y": 50,
-          "w": 210,
-          "h": 214
+          "x": 1024,
+          "y": 53,
+          "w": 223,
+          "h": 227
         },
         "neckFrame": {
-          "x": 1077,
-          "y": 258,
-          "w": 118,
-          "h": 37
+          "x": 1024,
+          "y": 259,
+          "w": 223,
+          "h": 58
         },
         "blinks": [
           {
-            "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+            "src": "assets/art/avatar-friendly-heads-v1.png",
             "atlas": {
               "width": 1536,
               "height": 1024
             },
             "frame": {
-              "x": 1077,
-              "y": 909,
-              "w": 51,
-              "h": 40
+              "x": 1070,
+              "y": 727,
+              "w": 50,
+              "h": 52
             },
             "rigPosition": {
-              "x": 131.82380952380953,
-              "y": 104.02542058739664,
-              "w": 29.62857142857143,
+              "x": 131.65022421524665,
+              "y": 104.43644722462977,
+              "w": 26.00896860986547,
               "z": 4
             }
           },
           {
-            "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+            "src": "assets/art/avatar-friendly-heads-v1.png",
             "atlas": {
               "width": 1536,
               "height": 1024
             },
             "frame": {
-              "x": 1146,
-              "y": 909,
-              "w": 50,
-              "h": 40
+              "x": 1152,
+              "y": 728,
+              "w": 49,
+              "h": 52
             },
             "rigPosition": {
-              "x": 161.16190476190476,
-              "y": 104.05333022097729,
-              "w": 29.04761904761905,
+              "x": 163.12107623318389,
+              "y": 104.47188769174878,
+              "w": 25.488789237668158,
               "z": 4
             }
           }
         ],
+        "eyeY": 152.92482192393283,
+        "eyeStageY": 117.97883113531931,
+        "jawNeckOverlapPixels": 10.923766816143496,
         "position": {
           "x": 0.2,
           "y": 0.04,
@@ -2226,69 +2275,72 @@
         "id": "skin-6",
         "label": "Deep brown",
         "group": "skin",
-        "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+        "src": "assets/art/avatar-friendly-heads-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
         },
         "frame": {
-          "x": 1277,
-          "y": 50,
-          "w": 209,
-          "h": 245
+          "x": 1270,
+          "y": 53,
+          "w": 222,
+          "h": 264
         },
         "headFrame": {
-          "x": 1277,
-          "y": 50,
-          "w": 209,
-          "h": 214
+          "x": 1270,
+          "y": 53,
+          "w": 222,
+          "h": 227
         },
         "neckFrame": {
-          "x": 1322,
-          "y": 258,
-          "w": 118,
-          "h": 37
+          "x": 1270,
+          "y": 259,
+          "w": 222,
+          "h": 58
         },
         "blinks": [
           {
-            "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+            "src": "assets/art/avatar-friendly-heads-v1.png",
             "atlas": {
               "width": 1536,
               "height": 1024
             },
             "frame": {
-              "x": 1323,
-              "y": 909,
-              "w": 51,
-              "h": 40
+              "x": 1316,
+              "y": 727,
+              "w": 50,
+              "h": 52
             },
             "rigPosition": {
-              "x": 131.39712918660288,
-              "y": 104.20356676816006,
-              "w": 29.77033492822967,
+              "x": 131.7837837837838,
+              "y": 104.61270018499665,
+              "w": 26.126126126126124,
               "z": 4
             }
           },
           {
-            "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+            "src": "assets/art/avatar-friendly-heads-v1.png",
             "atlas": {
               "width": 1536,
               "height": 1024
             },
             "frame": {
-              "x": 1392,
-              "y": 909,
-              "w": 51,
-              "h": 40
+              "x": 1398,
+              "y": 728,
+              "w": 50,
+              "h": 52
             },
             "rigPosition": {
-              "x": 160.58373205741628,
-              "y": 104.20695163905255,
-              "w": 29.77033492822967,
+              "x": 163.13513513513516,
+              "y": 104.62476328089937,
+              "w": 26.126126126126124,
               "z": 4
             }
           }
         ],
+        "eyeY": 152.908262454435,
+        "eyeStageY": 118.20431731853361,
+        "jawNeckOverlapPixels": 10.972972972972972,
         "position": {
           "x": 0.2,
           "y": 0.04,
@@ -2303,16 +2355,16 @@
         "id": "outfit-1",
         "label": "Magenta hoodie",
         "group": "outfit",
-        "src": "assets/art/avatar-graphic-flat-clothing-v1.png",
+        "src": "assets/art/avatar-friendly-clothing-v2.png",
         "atlas": {
           "width": 1536,
           "height": 1024
         },
         "frame": {
-          "x": 45,
-          "y": 63,
-          "w": 230,
-          "h": 281
+          "x": 56,
+          "y": 62,
+          "w": 207,
+          "h": 282
         },
         "position": {
           "x": 0.16,
@@ -2326,15 +2378,15 @@
         "id": "outfit-2",
         "label": "Teal summer",
         "group": "outfit",
-        "src": "assets/art/avatar-graphic-flat-clothing-v1.png",
+        "src": "assets/art/avatar-friendly-clothing-v2.png",
         "atlas": {
           "width": 1536,
           "height": 1024
         },
         "frame": {
-          "x": 298,
+          "x": 312,
           "y": 110,
-          "w": 220,
+          "w": 192,
           "h": 234
         },
         "position": {
@@ -2349,15 +2401,15 @@
         "id": "outfit-3",
         "label": "Explorer jacket",
         "group": "outfit",
-        "src": "assets/art/avatar-graphic-flat-clothing-v1.png",
+        "src": "assets/art/avatar-friendly-clothing-v2.png",
         "atlas": {
           "width": 1536,
           "height": 1024
         },
         "frame": {
-          "x": 542,
+          "x": 553,
           "y": 95,
-          "w": 218,
+          "w": 193,
           "h": 249
         },
         "position": {
@@ -2372,16 +2424,16 @@
         "id": "outfit-4",
         "label": "Orange sweater",
         "group": "outfit",
-        "src": "assets/art/avatar-graphic-flat-clothing-v1.png",
+        "src": "assets/art/avatar-friendly-clothing-v2.png",
         "atlas": {
           "width": 1536,
           "height": 1024
         },
         "frame": {
-          "x": 787,
-          "y": 94,
-          "w": 217,
-          "h": 250
+          "x": 796,
+          "y": 93,
+          "w": 194,
+          "h": 251
         },
         "position": {
           "x": 0.16,
@@ -2395,16 +2447,16 @@
         "id": "outfit-5",
         "label": "Teal overalls",
         "group": "outfit",
-        "src": "assets/art/avatar-graphic-flat-clothing-v1.png",
+        "src": "assets/art/avatar-friendly-clothing-v2.png",
         "atlas": {
           "width": 1536,
           "height": 1024
         },
         "frame": {
-          "x": 1030,
-          "y": 108,
-          "w": 218,
-          "h": 236
+          "x": 1040,
+          "y": 106,
+          "w": 194,
+          "h": 238
         },
         "position": {
           "x": 0.16,
@@ -2418,15 +2470,15 @@
         "id": "outfit-6",
         "label": "Magenta cardigan",
         "group": "outfit",
-        "src": "assets/art/avatar-graphic-flat-clothing-v1.png",
+        "src": "assets/art/avatar-friendly-clothing-v2.png",
         "atlas": {
           "width": 1536,
           "height": 1024
         },
         "frame": {
-          "x": 1275,
+          "x": 1283,
           "y": 106,
-          "w": 218,
+          "w": 199,
           "h": 238
         },
         "position": {
@@ -2728,7 +2780,7 @@
           "h": 215
         },
         "rigPosition": {
-          "x": 133,
+          "x": 125,
           "y": 208,
           "w": 112,
           "z": 6
@@ -2936,7 +2988,7 @@
       }
     },
     "profile": {
-      "src": "assets/art/profile-graphic-v1.png"
+      "src": "assets/art/profile-friendly-v2.png"
     },
     "flame": {
       "src": "assets/art/ui-flat-v1.png",
@@ -3097,44 +3149,44 @@
   },
   "vocabulary": {
     "teacher": {
-      "src": "assets/art/jobs-graphic-1-v3.png",
+      "src": "assets/art/jobs-friendly-1-v4.png",
       "atlas": {
-        "width": 948,
-        "height": 1659
+        "width": 1254,
+        "height": 1254
       },
       "frame": {
-        "x": 0,
+        "x": 0.0,
         "y": 0,
-        "w": 237,
-        "h": 252
+        "w": 313.5,
+        "h": 314
       },
       "animation": {
         "id": "teacher",
         "duration": 3400,
         "frames": [
           {
-            "x": 0,
+            "x": 0.0,
             "y": 0,
-            "w": 237,
-            "h": 252
+            "w": 313.5,
+            "h": 314
           },
           {
-            "x": 237,
+            "x": 313.5,
             "y": 0,
-            "w": 237,
-            "h": 252
+            "w": 313.5,
+            "h": 314
           },
           {
-            "x": 474,
+            "x": 627.0,
             "y": 0,
-            "w": 237,
-            "h": 252
+            "w": 313.5,
+            "h": 314
           },
           {
-            "x": 711,
+            "x": 940.5,
             "y": 0,
-            "w": 237,
-            "h": 252
+            "w": 313.5,
+            "h": 314
           }
         ]
       }
@@ -3183,517 +3235,517 @@
       }
     },
     "chef": {
-      "src": "assets/art/chef-graphic-v2.png",
+      "src": "assets/art/jobs-friendly-1-v4.png",
       "atlas": {
-        "width": 2172,
-        "height": 724
+        "width": 1254,
+        "height": 1254
       },
       "frame": {
-        "x": 0,
-        "y": 0,
-        "w": 543,
-        "h": 724
+        "x": 0.0,
+        "y": 314,
+        "w": 313.5,
+        "h": 313
       },
       "animation": {
         "id": "chef",
         "duration": 3674,
         "frames": [
           {
-            "x": 0,
-            "y": 0,
-            "w": 543,
-            "h": 724
+            "x": 0.0,
+            "y": 314,
+            "w": 313.5,
+            "h": 313
           },
           {
-            "x": 543,
-            "y": 0,
-            "w": 543,
-            "h": 724
+            "x": 313.5,
+            "y": 314,
+            "w": 313.5,
+            "h": 313
           },
           {
-            "x": 1086,
-            "y": 0,
-            "w": 543,
-            "h": 724
+            "x": 627.0,
+            "y": 314,
+            "w": 313.5,
+            "h": 313
           },
           {
-            "x": 1629,
-            "y": 0,
-            "w": 543,
-            "h": 724
+            "x": 940.5,
+            "y": 314,
+            "w": 313.5,
+            "h": 313
           }
         ]
       }
     },
     "doctor": {
-      "src": "assets/art/jobs-graphic-1-v3.png",
+      "src": "assets/art/jobs-friendly-1-v4.png",
       "atlas": {
-        "width": 948,
-        "height": 1659
+        "width": 1254,
+        "height": 1254
       },
       "frame": {
-        "x": 0,
-        "y": 510,
-        "w": 237,
-        "h": 262
+        "x": 0.0,
+        "y": 627,
+        "w": 313.5,
+        "h": 324
       },
       "animation": {
         "id": "doctor",
         "duration": 3811,
         "frames": [
           {
-            "x": 0,
-            "y": 510,
-            "w": 237,
-            "h": 262
+            "x": 0.0,
+            "y": 627,
+            "w": 313.5,
+            "h": 324
           },
           {
-            "x": 237,
-            "y": 510,
-            "w": 237,
-            "h": 262
+            "x": 313.5,
+            "y": 627,
+            "w": 313.5,
+            "h": 324
           },
           {
-            "x": 474,
-            "y": 510,
-            "w": 237,
-            "h": 262
+            "x": 627.0,
+            "y": 627,
+            "w": 313.5,
+            "h": 324
           },
           {
-            "x": 711,
-            "y": 510,
-            "w": 237,
-            "h": 262
+            "x": 940.5,
+            "y": 627,
+            "w": 313.5,
+            "h": 324
           }
         ]
       }
     },
     "office worker": {
-      "src": "assets/art/jobs-graphic-1-v3.png",
+      "src": "assets/art/jobs-friendly-1-v4.png",
       "atlas": {
-        "width": 948,
-        "height": 1659
+        "width": 1254,
+        "height": 1254
       },
       "frame": {
-        "x": 0,
-        "y": 772,
-        "w": 237,
-        "h": 211
+        "x": 0.0,
+        "y": 951,
+        "w": 313.5,
+        "h": 303
       },
       "animation": {
         "id": "office-worker",
         "duration": 3948,
         "frames": [
           {
-            "x": 0,
-            "y": 772,
-            "w": 237,
-            "h": 211
+            "x": 0.0,
+            "y": 951,
+            "w": 313.5,
+            "h": 303
           },
           {
-            "x": 237,
-            "y": 772,
-            "w": 237,
-            "h": 211
+            "x": 313.5,
+            "y": 951,
+            "w": 313.5,
+            "h": 303
           },
           {
-            "x": 474,
-            "y": 772,
-            "w": 237,
-            "h": 211
+            "x": 627.0,
+            "y": 951,
+            "w": 313.5,
+            "h": 303
           },
           {
-            "x": 711,
-            "y": 772,
-            "w": 237,
-            "h": 211
+            "x": 940.5,
+            "y": 951,
+            "w": 313.5,
+            "h": 303
           }
         ]
       }
     },
     "receptionist": {
-      "src": "assets/art/jobs-graphic-1-v3.png",
+      "src": "assets/art/jobs-friendly-2-v2.png",
       "atlas": {
-        "width": 948,
-        "height": 1659
+        "width": 1448,
+        "height": 1086
       },
       "frame": {
-        "x": 0,
-        "y": 983,
-        "w": 237,
-        "h": 226
+        "x": 0.0,
+        "y": 0,
+        "w": 362.0,
+        "h": 360
       },
       "animation": {
         "id": "receptionist",
         "duration": 4085,
         "frames": [
           {
-            "x": 0,
-            "y": 983,
-            "w": 237,
-            "h": 226
+            "x": 0.0,
+            "y": 0,
+            "w": 362.0,
+            "h": 360
           },
           {
-            "x": 237,
-            "y": 983,
-            "w": 237,
-            "h": 226
+            "x": 362.0,
+            "y": 0,
+            "w": 362.0,
+            "h": 360
           },
           {
-            "x": 474,
-            "y": 983,
-            "w": 237,
-            "h": 226
+            "x": 724.0,
+            "y": 0,
+            "w": 362.0,
+            "h": 360
           },
           {
-            "x": 711,
-            "y": 983,
-            "w": 237,
-            "h": 226
+            "x": 1086.0,
+            "y": 0,
+            "w": 362.0,
+            "h": 360
           }
         ]
       }
     },
     "salesclerk": {
-      "src": "assets/art/jobs-graphic-1-v3.png",
+      "src": "assets/art/jobs-friendly-2-v2.png",
       "atlas": {
-        "width": 948,
-        "height": 1659
+        "width": 1448,
+        "height": 1086
       },
       "frame": {
-        "x": 0,
-        "y": 1209,
-        "w": 237,
-        "h": 254
+        "x": 0.0,
+        "y": 360,
+        "w": 362.0,
+        "h": 361
       },
       "animation": {
         "id": "salesclerk",
         "duration": 4222,
         "frames": [
           {
-            "x": 0,
-            "y": 1209,
-            "w": 237,
-            "h": 254
+            "x": 0.0,
+            "y": 360,
+            "w": 362.0,
+            "h": 361
           },
           {
-            "x": 237,
-            "y": 1209,
-            "w": 237,
-            "h": 254
+            "x": 362.0,
+            "y": 360,
+            "w": 362.0,
+            "h": 361
           },
           {
-            "x": 474,
-            "y": 1209,
-            "w": 237,
-            "h": 254
+            "x": 724.0,
+            "y": 360,
+            "w": 362.0,
+            "h": 361
           },
           {
-            "x": 711,
-            "y": 1209,
-            "w": 237,
-            "h": 254
+            "x": 1086.0,
+            "y": 360,
+            "w": 362.0,
+            "h": 361
           }
         ]
       }
     },
     "taxi driver": {
-      "src": "assets/art/jobs-graphic-1-v3.png",
+      "src": "assets/art/jobs-friendly-2-v2.png",
       "atlas": {
-        "width": 948,
-        "height": 1659
+        "width": 1448,
+        "height": 1086
       },
       "frame": {
-        "x": 0,
-        "y": 1463,
-        "w": 237,
-        "h": 196
+        "x": 0.0,
+        "y": 721,
+        "w": 362.0,
+        "h": 365
       },
       "animation": {
         "id": "taxi-driver",
         "duration": 4359,
         "frames": [
           {
-            "x": 0,
-            "y": 1463,
-            "w": 237,
-            "h": 196
+            "x": 0.0,
+            "y": 721,
+            "w": 362.0,
+            "h": 365
           },
           {
-            "x": 237,
-            "y": 1463,
-            "w": 237,
-            "h": 196
+            "x": 362.0,
+            "y": 721,
+            "w": 362.0,
+            "h": 365
           },
           {
-            "x": 474,
-            "y": 1463,
-            "w": 237,
-            "h": 196
+            "x": 724.0,
+            "y": 721,
+            "w": 362.0,
+            "h": 365
           },
           {
-            "x": 711,
-            "y": 1463,
-            "w": 237,
-            "h": 196
+            "x": 1086.0,
+            "y": 721,
+            "w": 362.0,
+            "h": 365
           }
         ]
       }
     },
     "waiter": {
-      "src": "assets/art/jobs-graphic-2-v3.png",
+      "src": "assets/art/jobs-friendly-3-v2.png",
       "atlas": {
-        "width": 948,
-        "height": 1659
+        "width": 1254,
+        "height": 1254
       },
       "frame": {
-        "x": 0,
+        "x": 0.0,
         "y": 0,
-        "w": 237,
-        "h": 246
+        "w": 313.5,
+        "h": 317
       },
       "animation": {
         "id": "waiter",
         "duration": 3400,
         "frames": [
           {
-            "x": 0,
+            "x": 0.0,
             "y": 0,
-            "w": 237,
-            "h": 246
+            "w": 313.5,
+            "h": 317
           },
           {
-            "x": 237,
+            "x": 313.5,
             "y": 0,
-            "w": 237,
-            "h": 246
+            "w": 313.5,
+            "h": 317
           },
           {
-            "x": 474,
+            "x": 627.0,
             "y": 0,
-            "w": 237,
-            "h": 246
+            "w": 313.5,
+            "h": 317
           },
           {
-            "x": 711,
+            "x": 940.5,
             "y": 0,
-            "w": 237,
-            "h": 246
+            "w": 313.5,
+            "h": 317
           }
         ]
       }
     },
     "waitress": {
-      "src": "assets/art/jobs-graphic-2-v3.png",
+      "src": "assets/art/jobs-friendly-3-v2.png",
       "atlas": {
-        "width": 948,
-        "height": 1659
+        "width": 1254,
+        "height": 1254
       },
       "frame": {
-        "x": 0,
-        "y": 246,
-        "w": 237,
-        "h": 233
+        "x": 0.0,
+        "y": 317,
+        "w": 313.5,
+        "h": 312
       },
       "animation": {
         "id": "waitress",
         "duration": 3537,
         "frames": [
           {
-            "x": 0,
-            "y": 246,
-            "w": 237,
-            "h": 233
+            "x": 0.0,
+            "y": 317,
+            "w": 313.5,
+            "h": 312
           },
           {
-            "x": 237,
-            "y": 246,
-            "w": 237,
-            "h": 233
+            "x": 313.5,
+            "y": 317,
+            "w": 313.5,
+            "h": 312
           },
           {
-            "x": 474,
-            "y": 246,
-            "w": 237,
-            "h": 233
+            "x": 627.0,
+            "y": 317,
+            "w": 313.5,
+            "h": 312
           },
           {
-            "x": 703,
-            "y": 246,
-            "w": 237,
-            "h": 233
+            "x": 940.5,
+            "y": 317,
+            "w": 313.5,
+            "h": 312
           }
         ]
       }
     },
     "farmer": {
-      "src": "assets/art/jobs-graphic-2-v3.png",
+      "src": "assets/art/jobs-friendly-3-v2.png",
       "atlas": {
-        "width": 948,
-        "height": 1659
+        "width": 1254,
+        "height": 1254
       },
       "frame": {
-        "x": 0,
-        "y": 479,
-        "w": 237,
-        "h": 237
+        "x": 0.0,
+        "y": 629,
+        "w": 313.5,
+        "h": 313
       },
       "animation": {
         "id": "farmer",
         "duration": 3674,
         "frames": [
           {
-            "x": 0,
-            "y": 479,
-            "w": 237,
-            "h": 237
+            "x": 0.0,
+            "y": 629,
+            "w": 313.5,
+            "h": 313
           },
           {
-            "x": 237,
-            "y": 479,
-            "w": 237,
-            "h": 237
+            "x": 313.5,
+            "y": 629,
+            "w": 313.5,
+            "h": 313
           },
           {
-            "x": 474,
-            "y": 479,
-            "w": 237,
-            "h": 237
+            "x": 627.0,
+            "y": 629,
+            "w": 313.5,
+            "h": 313
           },
           {
-            "x": 711,
-            "y": 479,
-            "w": 237,
-            "h": 237
+            "x": 940.5,
+            "y": 629,
+            "w": 313.5,
+            "h": 313
           }
         ]
       }
     },
     "nurse": {
-      "src": "assets/art/jobs-graphic-2-v3.png",
+      "src": "assets/art/jobs-friendly-3-v2.png",
       "atlas": {
-        "width": 948,
-        "height": 1659
+        "width": 1254,
+        "height": 1254
       },
       "frame": {
-        "x": 0,
-        "y": 716,
-        "w": 237,
-        "h": 241
+        "x": 0.0,
+        "y": 942,
+        "w": 313.5,
+        "h": 312
       },
       "animation": {
         "id": "nurse",
         "duration": 3811,
         "frames": [
           {
-            "x": 0,
-            "y": 716,
-            "w": 237,
-            "h": 241
+            "x": 0.0,
+            "y": 942,
+            "w": 313.5,
+            "h": 312
           },
           {
-            "x": 237,
-            "y": 716,
-            "w": 237,
-            "h": 241
+            "x": 313.5,
+            "y": 942,
+            "w": 313.5,
+            "h": 312
           },
           {
-            "x": 474,
-            "y": 716,
-            "w": 237,
-            "h": 241
+            "x": 627.0,
+            "y": 942,
+            "w": 313.5,
+            "h": 312
           },
           {
-            "x": 711,
-            "y": 716,
-            "w": 237,
-            "h": 241
+            "x": 940.5,
+            "y": 942,
+            "w": 313.5,
+            "h": 312
           }
         ]
       }
     },
     "dentist": {
-      "src": "assets/art/jobs-graphic-2-v3.png",
+      "src": "assets/art/jobs-friendly-4-v2.png",
       "atlas": {
-        "width": 948,
-        "height": 1659
+        "width": 1448,
+        "height": 1086
       },
       "frame": {
-        "x": 0,
-        "y": 957,
-        "w": 237,
-        "h": 246
+        "x": 0.0,
+        "y": 0,
+        "w": 362.0,
+        "h": 365
       },
       "animation": {
         "id": "dentist",
         "duration": 3948,
         "frames": [
           {
-            "x": 0,
-            "y": 957,
-            "w": 237,
-            "h": 246
+            "x": 0.0,
+            "y": 0,
+            "w": 362.0,
+            "h": 365
           },
           {
-            "x": 237,
-            "y": 957,
-            "w": 237,
-            "h": 246
+            "x": 362.0,
+            "y": 0,
+            "w": 362.0,
+            "h": 365
           },
           {
-            "x": 474,
-            "y": 957,
-            "w": 237,
-            "h": 246
+            "x": 724.0,
+            "y": 0,
+            "w": 362.0,
+            "h": 365
           },
           {
-            "x": 711,
-            "y": 957,
-            "w": 237,
-            "h": 246
+            "x": 1086.0,
+            "y": 0,
+            "w": 362.0,
+            "h": 365
           }
         ]
       }
     },
     "police officer": {
-      "src": "assets/art/police-graphic-v2.png",
+      "src": "assets/art/jobs-friendly-4-v2.png",
       "atlas": {
-        "width": 2172,
-        "height": 724
+        "width": 1448,
+        "height": 1086
       },
       "frame": {
-        "x": 0,
-        "y": 126,
-        "w": 543,
-        "h": 444
+        "x": 0.0,
+        "y": 365,
+        "w": 362.0,
+        "h": 355
       },
       "animation": {
         "id": "police-officer",
         "duration": 4085,
         "frames": [
           {
-            "x": 0,
-            "y": 126,
-            "w": 543,
-            "h": 444
+            "x": 0.0,
+            "y": 365,
+            "w": 362.0,
+            "h": 355
           },
           {
-            "x": 543,
-            "y": 126,
-            "w": 543,
-            "h": 444
+            "x": 362.0,
+            "y": 365,
+            "w": 362.0,
+            "h": 355
           },
           {
-            "x": 1086,
-            "y": 126,
-            "w": 543,
-            "h": 444
+            "x": 724.0,
+            "y": 365,
+            "w": 362.0,
+            "h": 355
           },
           {
-            "x": 1629,
-            "y": 126,
-            "w": 543,
-            "h": 444
+            "x": 1086.0,
+            "y": 365,
+            "w": 362.0,
+            "h": 355
           }
         ]
       }
@@ -3742,44 +3794,44 @@
       }
     },
     "actor": {
-      "src": "assets/art/jobs-graphic-2-v3.png",
+      "src": "assets/art/jobs-friendly-4-v2.png",
       "atlas": {
-        "width": 948,
-        "height": 1659
+        "width": 1448,
+        "height": 1086
       },
       "frame": {
-        "x": 0,
-        "y": 1421,
-        "w": 237,
-        "h": 238
+        "x": 0.0,
+        "y": 720,
+        "w": 362.0,
+        "h": 366
       },
       "animation": {
         "id": "actor",
         "duration": 4359,
         "frames": [
           {
-            "x": 0,
-            "y": 1421,
-            "w": 237,
-            "h": 238
+            "x": 0.0,
+            "y": 720,
+            "w": 362.0,
+            "h": 366
           },
           {
-            "x": 237,
-            "y": 1421,
-            "w": 237,
-            "h": 238
+            "x": 362.0,
+            "y": 720,
+            "w": 362.0,
+            "h": 366
           },
           {
-            "x": 469,
-            "y": 1421,
-            "w": 237,
-            "h": 238
+            "x": 724.0,
+            "y": 720,
+            "w": 362.0,
+            "h": 366
           },
           {
-            "x": 711,
-            "y": 1421,
-            "w": 237,
-            "h": 238
+            "x": 1086.0,
+            "y": 720,
+            "w": 362.0,
+            "h": 366
           }
         ]
       }

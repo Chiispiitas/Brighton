@@ -1,0 +1,24 @@
+{
+  "tool": "built-in image_gen",
+  "creator": "OpenAI ImageGen",
+  "date": "2026-11-04",
+  "purpose": "Active native slim torso and sleeve cutouts, including both short sleeves.",
+  "source": "assets/art/avatar-friendly-clothing-v2.png",
+  "nativeOutput": "C:/Users/David/.codex/generated_images/01a1a821-92b9-7283-9fb1-1e81fe81ee51/exec-926e6552-a07e-405a-a435-ee8ce8281804.png",
+  "references": [
+    "assets/art/avatar-friendly-clothing-v1.png",
+    "assets/art/avatar-graphic-flat-clothing-v1.png"
+  ],
+  "promptSet": [
+    "Use case: precise-object-edit. Image1 is EDIT TARGET: six-column, three-row clothing components. Image2 is reference ONLY for the TWO short-sleeve parts that are missing from image1. Preserve every existing image1 torso core and long upper/fore sleeve exactly at its current position and size.\nAdd ONLY these two native transparent cutouts: row2 column2 a short teal upper sleeve, row2 column5 a short cream upper sleeve. Use the reference image2 short-sleeve silhouettes, but width about85 pixels and height about120 pixels, centered at x400 and x1136 with rounded shoulder cap top at y423 and bottom at y550. Keep row3 column2 andcolumn5 completely transparent. Do not add skin or hands. Do not change other cells.\nFlat uniform solid colors matching target outfits. No gradients, shadows, highlights, lighting, texture, outlines or 3D. True transparent alpha outside all parts. No labels or text."
+  ],
+  "transformations": "Original generated PNG bytes copied without repainting, tracing, alpha thresholding, color edits or post-processing. Runtime uses measured rectangular native viewports and uniform transforms.",
+  "fiction": "Original fictional customization artwork, not portraits of real people.",
+  "license": "Original generated project artwork",
+  "dimensions": {
+    "width": 1536,
+    "height": 1024
+  },
+  "mode": "RGBA",
+  "sha256": "4f7360e8365d0a162e670dfe54f8375b7d9ac76fa94372312782902b1e527d99"
+}

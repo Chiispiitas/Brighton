@@ -8,7 +8,7 @@ const illustratedMotion=new Map();
 const sourceBase = new URL('../assets/art/', import.meta.url);
 export async function loadArt() {
   installRasterFit();
-  try { const response = await fetch(new URL('manifest.json?graphic=1', sourceBase),{cache:'no-cache'}); if (response.ok) { manifest = await response.json(); manifest.characters = manifest.characters || manifest.companions || {}; } }
+  try { const response = await fetch(new URL('manifest.json?friendly=1', sourceBase),{cache:'no-cache'}); if (response.ok) { manifest = await response.json(); manifest.characters = manifest.characters || manifest.companions || {}; } }
   catch { /* The app remains usable while artwork is loading or unavailable offline. */ }
   return manifest;
 }
@@ -71,7 +71,7 @@ function avatarGroups() { return manifest.avatar?.groups || manifest.avatar?.lay
 export function avatarOptions() {
   const groups = avatarGroups();
   if (Array.isArray(groups)) return groups;
-  return Object.entries(groups).filter(([,values])=>Array.isArray(values)||values?.options).map(([id, values]) => ({id, label:({skin:'Skin tone',outfit:'Clothes',hair:'Hair',accessory:'A little extra'})[id] || id[0].toUpperCase()+id.slice(1), options:Array.isArray(values)?values:values.options || []}));
+  return Object.entries(groups).filter(([,values])=>Array.isArray(values)||values?.options).map(([id, values]) => ({id, label:({body:'Avatar base',skin:'Skin tone',outfit:'Clothes',hair:'Hair',accessory:'A little extra'})[id] || id[0].toUpperCase()+id.slice(1), options:Array.isArray(values)?values:values.options || []}));
 }
 export function defaultAvatar() {
   return Object.fromEntries(avatarOptions().map(group => [group.id, group.options?.[0]?.id || 'none']));
@@ -82,12 +82,12 @@ export function avatarMarkup(avatar = {}, cls = '', name = 'Your avatar') {
 }
 export function refreshCharacterMotion(container = document) {
   for(const slot of container.querySelectorAll('[data-cast-articulated]')){
-    import('./cast-rig.js?v=graphic1').then(module=>{castModule=module;if(slot.isConnected)module.mountCast(slot,{character:slot.dataset.castCharacter,posture:slot.dataset.rigPosture,mood:slot.dataset.rigMood});});
+    import('./cast-rig.js?v=friendly1').then(module=>{castModule=module;if(slot.isConnected)module.mountCast(slot,{character:slot.dataset.castCharacter,posture:slot.dataset.rigPosture,mood:slot.dataset.rigMood});});
   }
   for(const slot of container.querySelectorAll('[data-pico-articulated]')){
-    import('./pico-articulated.js?v=graphic1').then(module=>{picoArticulatedModule=module;if(slot.isConnected)module.mountPico(slot,{posture:slot.dataset.rigPosture,mood:slot.dataset.rigMood});});
+    import('./pico-articulated.js?v=friendly1').then(module=>{picoArticulatedModule=module;if(slot.isConnected)module.mountPico(slot,{posture:slot.dataset.rigPosture,mood:slot.dataset.rigMood});});
   }
   for(const slot of container.querySelectorAll('[data-avatar-rig]')){
-    import('./avatar-rig.js?v=graphic1').then(module=>{avatarModule=module;if(slot.isConnected)module.mountAvatar(slot,{avatar:JSON.parse(slot.dataset.avatar||'{}'),manifest,mood:'idle',posture:slot.dataset.avatarPosture||'portrait'});});
+    import('./avatar-rig.js?v=friendly1').then(module=>{avatarModule=module;if(slot.isConnected)module.mountAvatar(slot,{avatar:JSON.parse(slot.dataset.avatar||'{}'),manifest,mood:'idle',posture:slot.dataset.avatarPosture||'portrait'});});
   }
 }

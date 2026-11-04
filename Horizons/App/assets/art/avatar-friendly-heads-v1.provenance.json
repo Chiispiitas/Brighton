@@ -1,0 +1,23 @@
+{
+  "tool": "built-in image_gen",
+  "creator": "OpenAI ImageGen",
+  "date": "2026-11-04",
+  "purpose": "Active distinct Male/Female base heads and native closed-eye patches.",
+  "source": "assets/art/avatar-friendly-heads-v1.png",
+  "nativeOutput": "C:/Users/David/.codex/generated_images/01a1a821-92b9-7283-9fb1-1e81fe81ee51/exec-b87e36ad-b0b3-475d-8813-bb4f59a863aa.png",
+  "references": [
+    "assets/art/avatar-graphic-flat-kit-v2.png"
+  ],
+  "promptSet": [
+    "Use case: illustration-story. Asset type: NEW native transparent avatar head/base sheet for an adult language learning app.\nThe reference image is ONLY for the six skin colors and the existing modular geometric artwork family. The current expressions have been rejected as angry/evil: DO NOT repeat their heavy diagonal eyebrows, sharp long noses or black triangular grins. Make unmistakably KIND, RELAXED, APPROACHABLE adult faces.\nOne 1536x1024 transparent sheet, exactly SIX evenly spaced columns and FOUR rows, no labels/grid/text.\nROW 1, upper quarter: six separate BALD adult MALE head-and-neck cutouts, all the same geometry/facial positions, changing only skin tone from pale peach through warm peach, honey, caramel, chestnut to deep brown to MATCH the top row of the reference. Soft square/tapered adult face, discreet rounded ears, gentle jaw, short natural neck extending downward about35 pixels. Adult facial proportions, slim balanced head, not a baby circle.\nROW 2, second quarter: six separate BALD adult FEMALE head-and-neck cutouts in the same six matching tones and same frontal registration. This is a real female FACE BASE, recognizable through a softer narrower lower jaw, gently rounded cheeks, slightly smaller nose and graceful natural neck. NO HAIR, no hats, no earrings, no makeup required. She must still read clearly as an adult woman with any hairstyle, including short hair or no hair. Same forehead height, eye line and ear placement as male bases, compatible with interchangeable hair and accessories.\nALL TWELVE heads: small expressive white eyes with gentle round black pupils, relaxed THIN curved eyebrows with nearly LEVEL endpoints and no inward/downward angry tilt. Eyebrows about half the prior thickness, soft shallow arcs. Small modest rounded geometric nose, not a long pointed block. A small warm friendly smile, gently upturned corners and one simple pale teeth shape; avoid a large open black mouth, exaggerated smirk, fangs or sinister grin. Calm attentive happy expression, easy-going friendly personality. Flat skin including neck is one uniform color, no blush or side planes.\nROW 3, third quarter: six male CLOSED-EYE BLINK bands matching row1 tones, small horizontal skin-colored patches with two soft closed-eyelid curved lines, no brows/nose/mouth/head. Center each in its column. Skin band about145x50 pixels, each closed eye about25 pixels wide, identical spacing to eyes in row1.\nROW 4, bottom quarter: six female CLOSED-EYE BLINK bands matching row2 tones/spacing, same kind relaxed closed-eyelid shape and solid skin colored band, no other face features.\nStrict original geometric 2D flat spot-color art. Opaque solid fills per shape. NO gradients, shadows, highlights, dark neck triangles, depth, texture, glow, strokes around silhouettes, 3D, baby heads or aggressive expressions. Native alpha fully transparent outside components. Whole heads/necks inside cells, with clear transparent space between all components."
+  ],
+  "transformations": "Original generated PNG bytes copied without repainting, tracing, alpha thresholding, color edits or post-processing. Runtime uses measured rectangular native viewports and uniform transforms.",
+  "fiction": "Original fictional customization artwork, not portraits of real people.",
+  "license": "Original generated project artwork",
+  "dimensions": {
+    "width": 1536,
+    "height": 1024
+  },
+  "mode": "RGBA",
+  "sha256": "407bcff61341e0b650c9fa360aeb9901ebe068d39e1601dfd5560bfccab4ca82"
+}

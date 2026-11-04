@@ -1,0 +1,231 @@
+{
+  "date": "2026-11-04T21:25:22.856Z",
+  "status": "AUTHOR_VISUAL_AND_PAINTED_CONTACT_PASS_INDEPENDENT_REVIEW_REQUIRED",
+  "reviewer": "Human artwork/runtime author; this is not independent human approval.",
+  "sources": {
+    "src/cast-rig.js": "8b723443ab456329d7ae909fe404b05fc170ccb8baba12b7f1f612df8c254bf8",
+    "assets/art/cast-friendly-v1.frames.json": "1e94b46522f50424aa12d453af0140547ab5f61d25c906194022a7e12f42b9ac",
+    "assets/art/mina-friendly-v2.png": "e22e7135ec15815e5b580e96514300b55590848a02faff7deed27294f048b016",
+    "assets/art/alex-friendly-v1.png": "b7064394db3dc6972adb41148559fcfff198860126f05c46368afc1a807d8e43",
+    "assets/art/jo-friendly-v1.png": "7682ab806ebcdc9879232ad74e8031d1d875af0d7f859269023114b931e4ccf4",
+    "tools/build-friendly-cast.py": "688b68158d793710f50d7202b7902e0c85a57feb6deef04224c4dd16b5ab4fa6",
+    "assets/art/pico-graphic-v1.png": "81c1c5a699c695bb716159cf6f8b7989b51c7d51a4210767de7dd50efb97532c",
+    "assets/art/driver-flat-v1.png": "5e943b749010ca7820c97875b83e74f5a300fd42747f0d0228deeeee95c3145b"
+  },
+  "defectsAndCorrections": [
+    {
+      "defect": "Strong inward-slanting brows and small stern smiles read as angry/evil.",
+      "correction": "Native ImageGen edits replace every complete human face with relaxed arched brows, open approachable eyes and a warm smile. Names, adult identities and clothing remain recognizable."
+    },
+    {
+      "defect": "Broad plank-like torsos and thick sleeves/forearms made Alex and Jo excessively bulky; Mina raised hand was nearly as wide as her peach face.",
+      "correction": "Native bodies and limb shafts redrawn slimmer while retaining tall/slim Mina, medium Alex and softly broad older Jo. A further Mina-only native edit reduced upper sleeve width from108-109px to68px and forearm/hand max width from88-89px to67-68px without shortening limbs.",
+      "torsoMeasurements": [
+        {
+          "character": "mina",
+          "oldTorsoAspect": 0.9135338345864662,
+          "newTorsoAspect": 0.6194029850746269,
+          "relativeWidthReductionAtSameHeight": 0.3219703949388858
+        },
+        {
+          "character": "alex",
+          "oldTorsoAspect": 1.206225680933852,
+          "newTorsoAspect": 0.8036363636363636,
+          "relativeWidthReductionAtSameHeight": 0.3337595307917889
+        },
+        {
+          "character": "jo",
+          "oldTorsoAspect": 1.288888888888889,
+          "newTorsoAspect": 0.8214285714285714,
+          "relativeWidthReductionAtSameHeight": 0.3626847290640395
+        }
+      ]
+    },
+    {
+      "defect": "Squared limb ends, minimal ankle viewport overlap and arbitrary pivots could look disconnected even with coincident skeleton points.",
+      "correction": "Rounded opaque native ends; interior18percent capsule pivots; round forearm elbow registration; trouser-width shin crops and fourteen native pixels of foot overlap. Validation now compares actual opaque painted pixels at each joint and task grip."
+    },
+    {
+      "defect": "Late signed mirrored hip swings crossed dance/skip knees and merged shoes; negative celebration sway also merged standing shoes.",
+      "correction": "Dance/skip legs remain on their own sides, hands retain separate resting positions, standing has a slight outward stance and celebration only adds outward leg motion. Greeting overrides remain active."
+    }
+  ],
+  "beforeAfterPairs": [
+    {
+      "character": "mina",
+      "pose": "standing",
+      "before": {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-cast\\before\\mina-standing.png",
+        "sha256": "4fa5a590d2493d99e99719f6adfc33b00ce63948cbd8c426e280fb1c5603c4e1"
+      },
+      "after": {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-cast\\after\\mina-standing.png",
+        "sha256": "af3a991b78fcb97187e4cb91fad90c1715010801d355a0585431174569700b66"
+      }
+    },
+    {
+      "character": "mina",
+      "pose": "greeting",
+      "before": {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-cast\\before\\mina-greeting.png",
+        "sha256": "3e0c71f97ade6e64c8c6eaa1381a6f5b2bf639780e6dc08fb42c23b38cc7afbd"
+      },
+      "after": {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-cast\\after\\mina-greeting.png",
+        "sha256": "1de86efcb2eb0d3c8d68fb9ced38bde03fd6337afd9ec267a69fee284238818d"
+      }
+    },
+    {
+      "character": "mina",
+      "pose": "seated",
+      "before": {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-cast\\before\\mina-seated.png",
+        "sha256": "c0ffb9801aa6c6d5379bfc67093f2421ea8fae000915e5ea6957a3395d227eca"
+      },
+      "after": {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-cast\\after\\mina-seated.png",
+        "sha256": "5522955059ccdaf30c773064f31562235dbf4f3bf245db8c18093b92ec5ccf6c"
+      }
+    },
+    {
+      "character": "alex",
+      "pose": "standing",
+      "before": {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-cast\\before\\alex-standing.png",
+        "sha256": "b27f6c21d073b19d05436f8cbc896c965b2e20ec11b5f32373c910eff63d98cb"
+      },
+      "after": {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-cast\\after\\alex-standing.png",
+        "sha256": "751cefe236084fdbbdfba92a93d212e7afaeab0461021692da1b4830f6b8a2b3"
+      }
+    },
+    {
+      "character": "alex",
+      "pose": "greeting",
+      "before": {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-cast\\before\\alex-greeting.png",
+        "sha256": "b2509c3812c40f60f4ad849edd43838e30cb224fa7f0c32494d1b8b8b8aa08d7"
+      },
+      "after": {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-cast\\after\\alex-greeting.png",
+        "sha256": "7845339ebfd30ca7c436d01d53093aaaf1c098fec9bec313307968fcee43606a"
+      }
+    },
+    {
+      "character": "alex",
+      "pose": "seated",
+      "before": {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-cast\\before\\alex-seated.png",
+        "sha256": "67122b123431205b9bd370cb23ed76c21502e5f938989b74eaf4269d2afdb2a7"
+      },
+      "after": {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-cast\\after\\alex-seated.png",
+        "sha256": "7ccef6e934866db6d6f5bef8c4f3b5eead4dbb4a85c7d1fe414531c0dc6fdd1f"
+      }
+    },
+    {
+      "character": "jo",
+      "pose": "standing",
+      "before": {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-cast\\before\\jo-standing.png",
+        "sha256": "81c81e692b9706a1d1c6fc7a421a7f2affe5bf2f485cc8241fca541152680e7f"
+      },
+      "after": {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-cast\\after\\jo-standing.png",
+        "sha256": "68f0f3b408303af3c9f5dd0c2697b7cf670f2ff837f643691eaa1fdc46d9e093"
+      }
+    },
+    {
+      "character": "jo",
+      "pose": "greeting",
+      "before": {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-cast\\before\\jo-greeting.png",
+        "sha256": "f68dca6c33e24102bb3efc4b58f5bb823d0cc2f336f50ef5654927358e22d26d"
+      },
+      "after": {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-cast\\after\\jo-greeting.png",
+        "sha256": "5c3fc761a4356d5fad0f3bb3e418ed31e734f29743883c82fe240d2fd7175b73"
+      }
+    },
+    {
+      "character": "jo",
+      "pose": "seated",
+      "before": {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-cast\\before\\jo-seated.png",
+        "sha256": "52d3d1f5d31a90c4fdc1c39e87b30e8763c3333cbba9490167752c695fab5824"
+      },
+      "after": {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-cast\\after\\jo-seated.png",
+        "sha256": "c8e13f43a8ab88d9736c004e9dafe27f8c44202cf95cda618a60ba9c2a2a7c9a"
+      }
+    }
+  ],
+  "paintedContactEvidence": {
+    "report": "reports/friendly-cast-author-connectivity.json",
+    "sha256": "b7e6c8bd516e04c2e06957e22a48b331c66ae7781ed3b0e376dd5003593e1cbd",
+    "postures": 13,
+    "staticPaintedStates": 156,
+    "minimumOpaqueIntersectionPixels": 92,
+    "failures": [],
+    "actualTransitionSequence": "pointer-enter wave; interrupt at1400ms with celebrate; wait for actual timed idle return",
+    "actualRAFFrames": 1261,
+    "allActualCallbacksReturnedIdle": true,
+    "sourceStable": true
+  },
+  "visualReview": {
+    "verdict": "AUTHOR PASS: Friendly faces, reduced distinct builds and coherent neck/shoulder/elbow/hip/knee/ankle silhouettes. Read/sit/map/fix/driving/polishing/clapping/stepping/dance/skip retain distinct task poses and hand-supported props. Directly inspected enlarged standing/greeting/seated pairs and posture/mood contact sheets, with special inspection of late crossed-leg phases after correction. No cast shadows or directional lighting bands seen.",
+    "proofs": [
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-cast\\all-postures-idle-0.png",
+        "sha256": "4d227acf6b8ae138fd81cab6a54488ab9ae8872f6df97b0a18ded2b445c94e55"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-cast\\all-postures-idle-17.png",
+        "sha256": "cd20cfff1a3afd7e231de6f18b853c58a6714f085d805775a0209e31c6c79bdc"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-cast\\all-postures-idle-40.png",
+        "sha256": "4a6293bf0b79f142f5d124c78ba552673b683909b72f9f91d3892b3af291fa7e"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-cast\\all-postures-idle-80.png",
+        "sha256": "0f107a29e85f8fed47e84da360216c0d2b13c785f0858e0b557ec06118fcf60f"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-cast\\all-postures-wave-0.png",
+        "sha256": "4d227acf6b8ae138fd81cab6a54488ab9ae8872f6df97b0a18ded2b445c94e55"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-cast\\all-postures-wave-17.png",
+        "sha256": "9582960578325713e565d28eabba6e76702dc90895d7379c45813bbfd579ade2"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-cast\\all-postures-wave-40.png",
+        "sha256": "e195c08268be994c960dc79d0f5a1714ca5d0d088963717dc2cf6755c3ee4d7d"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-cast\\all-postures-wave-80.png",
+        "sha256": "303f1e0473a65f21285bdb95ca4990a6df4bcbeca0d6719935c78d42f096552b"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-cast\\all-postures-celebrate-0.png",
+        "sha256": "0ae58557d3267e2118246d43bba494b477da75894767e625e6c2d081397601c5"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-cast\\all-postures-celebrate-17.png",
+        "sha256": "97a5937b571f1baba5e1fc04f88f9ca521e07d7c3feca2d323c9a46ce6e780a8"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-cast\\all-postures-celebrate-40.png",
+        "sha256": "082f0c1dcdf2d61c01ade5323d4f025dd5c4ec017683d440e5b7c2e0d812db56"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-cast\\all-postures-celebrate-80.png",
+        "sha256": "c59831f4fddd963a826a2bc5e7c14c2ec92cd202553428968146b2d1498ec046"
+      }
+    ],
+    "limits": "Finite authored samples plus actual interrupted gestures. Independent reviewer must assess the final human sources; contact intersections alone are not a claim of perfect anatomy at every theoretical phase."
+  },
+  "errors": [],
+  "pass": true
+}

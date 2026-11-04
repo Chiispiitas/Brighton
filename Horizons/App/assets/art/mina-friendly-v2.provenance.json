@@ -1,0 +1,13 @@
+{
+  "version": 2,
+  "date": "2026-11-04",
+  "tool": "built-in image_gen.imagegen",
+  "useCase": "precise-object-edit",
+  "artifact": "mina-friendly-v2.png",
+  "editTarget": "assets/art/mina-friendly-v1.png",
+  "generatedSource": "C:/Users/David/.codex/generated_images/01a1a821-f54c-74b0-a1e7-e96dc5bfc498/exec-7b8a357f-77a2-4b28-9b81-bfc3d4e53076.png",
+  "prompt": "Use case: precise-object-edit. Edit target: Mina's new friendly native transparent 4-column by 3-row animation parts atlas.\nMake ONE targeted correction: make her arm and hand parts more slender while preserving their current lengths. Currently her forearm/hand is almost as wide as her actual face and the upper sleeve is bulky.\nChange ONLY four cells: row1 column3 left magenta upper sleeve; row1 column4 left skin forearm/mitten hand; row2 column1 right magenta upper sleeve; row2 column2 right skin forearm/mitten hand.\nIn these four cells, reduce the maximum width of the upper sleeve to about60% of its current width, reduce the skin forearm shaft to about65% of its current width, and reduce the complete mitten hand to about65% of its current width. Keep each piece the exact same total HEIGHT and the same cell CENTER. These are long slim adult limbs with round opaque joint caps, a narrow wrist and a modest complete hand with one integrated thumb. Do not shorten the arms. The hand should read smaller than her face, not club-like.\nPreserve ALL eight other cells EXACTLY: the already approved warm friendly complete face with gentle arched brows/open eyes/smile; hair and earrings; slim jacket torso; four leg/shoe pieces; backpack and map. Do not change expression, body build, colors, layout, pixel canvas size or transparent background. Keep all complete parts isolated.\nKeep the clean flat opaque geometric style with solid material regions. Absolutely NO gradients, shadows, highlights, 3D, outline, texture, lighting panels, neck shadow, labels, text or checkerboard. No assembled person.",
+  "transparentBackground": true,
+  "pixelEdits": "None. Native generated PNG copied unchanged, with runtime rectangular viewports and joint registration only.",
+  "correction": "Mina-only narrower sleeves, forearm shafts and hand silhouettes; lengths and friendly adult identity preserved."
+}

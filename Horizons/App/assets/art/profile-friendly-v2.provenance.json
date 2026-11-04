@@ -1,0 +1,9 @@
+{
+  "tool": "built-in image_gen",
+  "source": "assets/art/profile-friendly-v2.png",
+  "reference": "assets/art/profile-graphic-v1.png",
+  "prompt": [
+    "Use case: precise-object-edit. Edit target is this Horizons profile navigation bust. Make this adult face warm, friendly, welcoming rather than intense/evil. Replace the heavy slanted eyebrows with short fine softly rounded near-horizontal eyebrows, keep generous relaxed open white eyes and clear navy pupils. Replace the oversized triangular nose with a smaller softened orange nose and the huge open grin with a modest warm magenta smile. Maintain an adult geometric but gently rounded face, navy sweeping hair, dark glasses, teal jacket and cream shirt. Slightly narrower natural shoulders, comfortable neck; shoulders/head stay one connected upper-chest bust. Face is coherent, no feature detached. Use one flat uniform opaque fill per material, no gradients or shadows, no modeling, highlights, texture, outlines or background. Keep transparent alpha and generous margin. No hands, no body below upper chest, no text.",
+    "Use case: precise-object-edit. Finish-only correction to this exact icon, preserving its new friendly face and rounded eyebrows, small nose, smile, glasses, hairstyle, clothing and all silhouette geometry. Remove the darker peach neck/chin-shadow region: the face, ears and ENTIRE neck must have exactly one identical uniform peach fill with no boundary or color difference under the chin. Navy hair one uniform navy; teal jacket one uniform teal; cream shirt one uniform cream. Absolutely no lighting, shading, cast/drop/ground shadows, gradients, texture, highlights, outline or depth. Do not add or remove objects. Preserve transparent background and exact framing. The ONLY intended change is removing any modeled shading while preserving all design."
+  ]
+}

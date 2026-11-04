@@ -1,0 +1,115 @@
+{
+  "date": "2026-11-04T21:21:27.025Z",
+  "status": "AUTHOR_PASS",
+  "role": "Avatar author review, not independent approval. Independent painted review requested from cast author.",
+  "scope": "Friendly Male/Female native base artwork, slimmer native clothing/limbs, painted joins, customization compatibility and real profile persistence.",
+  "sourceHashes": {
+    "src/avatar-rig.js": "7194b16d25ea8edb2775fb980c1c2de75eb1323280b75b1a4af7a13a70933c00",
+    "src/app.js": "a68feaffa71cefc826773fd1c15d6833b215a75db8b00d2bb3452894d5d4e8ac",
+    "assets/art/avatar-friendly-v1.frames.json": "f2339ebd8938ae5d8c36660acdeeb21dcfd8e2b4442c915e094a50529d5b893c",
+    "assets/art/avatar-friendly-v1.fragment.json": "fa99bddc151b9c0c0f8287b341bdc09dcb62012d687a2c6a436657691291daff",
+    "assets/art/avatar-friendly-heads-v1.png": "407bcff61341e0b650c9fa360aeb9901ebe068d39e1601dfd5560bfccab4ca82",
+    "assets/art/avatar-friendly-clothing-v2.png": "4f7360e8365d0a162e670dfe54f8375b7d9ac76fa94372312782902b1e527d99",
+    "assets/art/avatar-friendly-limbs-v2.png": "ac04d55b7e3edf0e0a4a11ad44b501e7aad18fc22a711923cf48dc0aab2fc4dd",
+    "assets/art/avatar-graphic-flat-kit-v2.png": "900603edb8455ab76571b4d37eb1c3d78fb7d58915f6d14dacf1b70069d94c2e"
+  },
+  "proofFolder": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-friendly",
+  "proofHashes": {
+    "friendly-all-poses.png": "733aa762303016122f028a734a05cc5e3785ccbee077c1aa16f6f5bb93737a89",
+    "friendly-closed-eyes.png": "6666af418b7c56e3b3084e0cb54e49763a4b90c8388039e13776c3b11fa5d5d4",
+    "friendly-celebrate.png": "01479bb9a77d18832279f0ee559b8b16ddbef4113b9c52abd4850d51a5fb1450",
+    "friendly-interrupted-return.png": "1318191ed05e8ab0fac52e038296d8e7110240788429371bc61a94918d76a188",
+    "friendly-male-all-hair-accessories.png": "fd738f280cf92627f2e0ee06e8ccaf9c5c573a58e37300a6bb5485ebad394700",
+    "friendly-female-all-hair-accessories.png": "7575e1452792af3dd4c016c3f55a9a107da8e720a6e5a112e708ea7f02699e03",
+    "friendly-bald-bases.png": "4e106a802e1a951d0fc9b8220c2254f49bbb5f3c873fa5023fe0b32c047c3102",
+    "friendly-enlarged-joints.png": "8411811005f8ebd87a93e7f967f9bf68ba4a93b598d54c2c2cc8f0076b55fb63",
+    "female-draft-desktop.png": "6ca718984475f676010c23ad746b9e27813e6aad41448c81a934da0cf4b9361e",
+    "female-saved-mobile.png": "12a91078d487022ff664c73e047b5736ad6cca32da6c04028feb35827f50f4db",
+    "female-restored-second-device.png": "447b63de1771c6e007b6c2dfb09de9645fd9f766c99ab55464ffacc00a96b3b0"
+  },
+  "visualReview": {
+    "reviewed": true,
+    "verdict": "Friendly relaxed curved brows, small rounded noses and warm modest smiles. Male soft-square jaw and Female tapered oval jaw/neck are visibly separate native bases even bald. Both balanced slimmer busts retain shoulders, elbows and wrists. No visible isolated parts at enlarged wave, native blink, celebration or interrupted return. All six hair and six accessory cross combinations read as attached on both bases.",
+    "reviewedPaintedCases": 232,
+    "breakdown": {
+      "36-avatar-open-closed-celebrate-interrupted-frames": 144,
+      "both-bases-six-hair-six-accessory-crosses": 72,
+      "bald-bases-six-skins": 12,
+      "enlarged-joints": 4
+    },
+    "closedEyes": "36 native-tone closed-eye band frames visually reviewed; eyelids align with each base and skin tone.",
+    "concreteFitCorrections": [
+      "Removed old translated neck tab and overlapped exact native jaw/neck crops by at least10.744 stage pixels.",
+      "Measured native outfit center paint: corrected jacket/overalls/cardigan collars, particularly cardigan y130 instead of120; avoids near-AA-only neck/clothing contact.",
+      "Satchel strap moved inward to x125 so end remains within slimmer shoulder.",
+      "New native slimmer limbs preserve wider overlapping wrist stems and new native slender sleeves."
+    ],
+    "flatness": "Viewed on white/cream composites: uniform material blocks, no cast shadows, dark neck-shadow triangles or modeled side planes."
+  },
+  "nativeAlphaContacts": {
+    "method": "Actual source PNG alpha >170 rasterized through each current painted DOM matrix at native stage resolution. Tests head/neck, neck/collar, clothing shoulder, skin elbow/wrist and long-sleeve elbow/cuff contact; pivot coincidence is not used as contact proof.",
+    "avatarConfigurations": 936,
+    "contactChecks": 9984,
+    "samples": 26,
+    "zeroOverlapFailures": 0,
+    "weakJoinsBelow10OpaquePixels": 0,
+    "minimumOpaqueOverlapPixels": 33,
+    "status": "PASS"
+  },
+  "persistence": {
+    "date": "2026-11-04T21:23:03.138Z",
+    "scope": "Real isolated QA profile via existing backend avatar.body field. No activity attempts, no private values/codes/tokens logged.",
+    "errors": [],
+    "checks": [
+      {
+        "name": "Legacy body defaults to Male while preserving saved customization values",
+        "pass": true
+      },
+      {
+        "name": "Female is a separate base with every hair/outfit/accessory available and draft-aware thumbnails",
+        "pass": true
+      },
+      {
+        "name": "Changing base keeps the other unsaved selections",
+        "pass": true
+      },
+      {
+        "name": "Real backend accepts and persists avatar.body female without migration or activity changes",
+        "pass": true
+      },
+      {
+        "name": "Saved female base and selections restore on reload and independent device session",
+        "pass": true
+      }
+    ],
+    "pass": true,
+    "savedValue": {
+      "body": "female",
+      "skin": "skin-6",
+      "outfit": "outfit-3",
+      "hair": "hair-1",
+      "accessory": "accessory-3"
+    },
+    "savedHttpStatus": 200,
+    "progressUnchanged": true,
+    "originalAvatarRestored": true
+  },
+  "backend": "Existing cleanProfile avatar.body allowlist already accepts male/female. No backend modification or migration required; real HTTP200 save and separate device reload confirm it.",
+  "legacy": "Absent and unknown legacy body IDs normalize to male in the draft, render Male, and preserve saved skin/outfit/hair/accessory.",
+  "ui": "Both base and skin previews derive from the unsaved draft. Base switching preserves other draft selections; all existing options remain available to both bases.",
+  "runtimeErrors": [],
+  "syntaxChecks": [
+    "node --check src/avatar-rig.js PASS",
+    "node --check src/app.js PASS"
+  ],
+  "artPolicy": "All new bitmap art generated with built-in ImageGen; native PNG bytes preserved. QA alpha masks/composites are measurement only, not replacement artwork. Five per-asset prompt/provenance files retained, including inactive intermediate generations.",
+  "remaining": "Avatar sources frozen. Independent avatar visual/contact review passed; root owns full-site/cache/publication checks.",
+  "independentReview": {
+    "report": "reports/friendly-avatar-pico-independent.json",
+    "section": "avatarIndependent",
+    "status": "PASS",
+    "actualRAFSamples": 401,
+    "minimumOpaqueOverlapPixels": 33,
+    "joinRuntimeLifecycleErrors": 0
+  }
+}

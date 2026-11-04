@@ -1,0 +1,151 @@
+{
+  "date": "2026-11-04T21:21:27.025Z",
+  "errors": [],
+  "connections": {
+    "samples": [
+      {
+        "mood": "wave",
+        "time": 0,
+        "minOpaqueOverlap": 35
+      },
+      {
+        "mood": "wave",
+        "time": 80,
+        "minOpaqueOverlap": 34
+      },
+      {
+        "mood": "wave",
+        "time": 160,
+        "minOpaqueOverlap": 35
+      },
+      {
+        "mood": "wave",
+        "time": 320,
+        "minOpaqueOverlap": 37
+      },
+      {
+        "mood": "wave",
+        "time": 480,
+        "minOpaqueOverlap": 36
+      },
+      {
+        "mood": "wave",
+        "time": 720,
+        "minOpaqueOverlap": 36
+      },
+      {
+        "mood": "wave",
+        "time": 1000,
+        "minOpaqueOverlap": 36
+      },
+      {
+        "mood": "wave",
+        "time": 1248,
+        "minOpaqueOverlap": 36
+      },
+      {
+        "mood": "wave",
+        "time": 1600,
+        "minOpaqueOverlap": 37
+      },
+      {
+        "mood": "wave",
+        "time": 1920,
+        "minOpaqueOverlap": 37
+      },
+      {
+        "mood": "wave",
+        "time": 2112,
+        "minOpaqueOverlap": 36
+      },
+      {
+        "mood": "wave",
+        "time": 2280,
+        "minOpaqueOverlap": 33
+      },
+      {
+        "mood": "wave",
+        "time": 2399,
+        "minOpaqueOverlap": 35
+      },
+      {
+        "mood": "celebrate",
+        "time": 0,
+        "minOpaqueOverlap": 35
+      },
+      {
+        "mood": "celebrate",
+        "time": 80,
+        "minOpaqueOverlap": 34
+      },
+      {
+        "mood": "celebrate",
+        "time": 160,
+        "minOpaqueOverlap": 35
+      },
+      {
+        "mood": "celebrate",
+        "time": 320,
+        "minOpaqueOverlap": 37
+      },
+      {
+        "mood": "celebrate",
+        "time": 480,
+        "minOpaqueOverlap": 34
+      },
+      {
+        "mood": "celebrate",
+        "time": 720,
+        "minOpaqueOverlap": 36
+      },
+      {
+        "mood": "celebrate",
+        "time": 1000,
+        "minOpaqueOverlap": 36
+      },
+      {
+        "mood": "celebrate",
+        "time": 1248,
+        "minOpaqueOverlap": 36
+      },
+      {
+        "mood": "celebrate",
+        "time": 1600,
+        "minOpaqueOverlap": 35
+      },
+      {
+        "mood": "celebrate",
+        "time": 1920,
+        "minOpaqueOverlap": 35
+      },
+      {
+        "mood": "celebrate",
+        "time": 2112,
+        "minOpaqueOverlap": 36
+      },
+      {
+        "mood": "celebrate",
+        "time": 2280,
+        "minOpaqueOverlap": 33
+      },
+      {
+        "mood": "celebrate",
+        "time": 2399,
+        "minOpaqueOverlap": 35
+      }
+    ],
+    "failures": [],
+    "weakConnections": [],
+    "method": "Actual source PNG alpha >170 rasterized through each current painted DOM matrix at native stage resolution. Tests head/neck, neck/collar, clothing shoulder, skin elbow/wrist and long-sleeve elbow/cuff contact; pivot coincidence is not used as contact proof."
+  },
+  "sourceHashes": {
+    "src/avatar-rig.js": "7194b16d25ea8edb2775fb980c1c2de75eb1323280b75b1a4af7a13a70933c00",
+    "src/app.js": "a68feaffa71cefc826773fd1c15d6833b215a75db8b00d2bb3452894d5d4e8ac",
+    "assets/art/avatar-friendly-v1.frames.json": "f2339ebd8938ae5d8c36660acdeeb21dcfd8e2b4442c915e094a50529d5b893c",
+    "assets/art/avatar-friendly-heads-v1.png": "407bcff61341e0b650c9fa360aeb9901ebe068d39e1601dfd5560bfccab4ca82",
+    "assets/art/avatar-friendly-clothing-v2.png": "4f7360e8365d0a162e670dfe54f8375b7d9ac76fa94372312782902b1e527d99",
+    "assets/art/avatar-friendly-limbs-v2.png": "ac04d55b7e3edf0e0a4a11ad44b501e7aad18fc22a711923cf48dc0aab2fc4dd"
+  },
+  "proofFolder": "C:/Users/David/Documents/Codex/2026-11-04/horizons-avatar-friendly",
+  "status": "AUTHOR_VISUAL_REVIEW_PENDING"
+}

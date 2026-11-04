@@ -1,0 +1,655 @@
+{
+  "date": "2026-11-04T21:19:58.683Z",
+  "reviewer": "graphic_cast agent, independent of root Pico/profile/icon and graphic_avatar avatar authorship",
+  "sources": {
+    "src/pico-articulated.js": "9914e137b2a9a4c3f505c5a4269c8fc1113183bf8f60faa3547e37894faa61ba",
+    "assets/art/pico-friendly-v1.frames.json": "6b837e1145c0a78f71921e76666f43b471cf3b156fdc41391ec04cb4468a520b",
+    "assets/art/pico-graphic-v1.png": "81c1c5a699c695bb716159cf6f8b7989b51c7d51a4210767de7dd50efb97532c",
+    "assets/art/pico-friendly-head-v1.png": "0e3021ace8dda55226b628120ebe013e5398fd59fa46fb0b75cfdd86657b79cb",
+    "assets/art/profile-friendly-v2.png": "a9713022283e29c1219350ba7179bac6277a4061c023f37dab2396b4a8fdf531",
+    "assets/art/app-icon-friendly-v1.png": "e66a35a741b480ce59df73c33779f749cc004ef2b500cc696346120d6cd2403c"
+  },
+  "sourceStable": true,
+  "captureReviewed": {
+    "frames": 180,
+    "sheets": [
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico\\sheet-greet-idle.png",
+        "sha256": "62db9c9e54fbe7d8a57717c8446793369bac0ae3ceb5aab0bac3154c21cf7ddd"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico\\sheet-greet-wave.png",
+        "sha256": "398bdacf65702c380efa295df27bb5017c9038c88415ff4fe9bdca65c2df0968"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico\\sheet-greet-celebrate.png",
+        "sha256": "1e021ac9868c41b09e8f144e489d922a5b427e98e0fe431de4e71f5c322d0fc7"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico\\sheet-read-idle.png",
+        "sha256": "d94561574b9f64065cc959b2c789c502aefd70eb47b83feba583b9513450fd52"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico\\sheet-read-wave.png",
+        "sha256": "62d9572774689579269012ac847472b44560f6b54edcc3cb8ba946cace2a9c23"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico\\sheet-read-celebrate.png",
+        "sha256": "424f4b7e98c828ab2ba6c08be1a31d820d04fd6fe456102fb8d89e037bf59950"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico\\sheet-explore-idle.png",
+        "sha256": "0674bfe30c12bd31d90807bcba5cda7337849d26a5651fb0c0b84f7bc6cb4194"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico\\sheet-explore-wave.png",
+        "sha256": "7867c8171e82149d81af41d9a5e480d9acaee742d75794997537913d9b5c35ca"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico\\sheet-explore-celebrate.png",
+        "sha256": "1295e7d080969a8d2db20e7cdfb37bbfd607af984f1a01595c2b96effce7b3c2"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico\\sheet-stride-idle.png",
+        "sha256": "eb52cf39cb1326d9fe76afb3e1800e9f15b1d1775b8f0c3432f424f7887b31d9"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico\\sheet-stride-wave.png",
+        "sha256": "eaef49bffad0104dfc28f6160fc35176ae3695a15970da60059f0a22dd4e456a"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico\\sheet-stride-celebrate.png",
+        "sha256": "e3bce743af1a61b0a2eb7956cb14887929cededa5fbc57f00c121085049c0bfa"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico\\sheet-idle-idle.png",
+        "sha256": "965080864c5911c060936ae8035c02401575ece813dc4ffb92bc2b259d853fdb"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico\\sheet-idle-wave.png",
+        "sha256": "763686beff4d6ec75b9db410abb3543956fac3e438a46a330c67867376792406"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico\\sheet-idle-celebrate.png",
+        "sha256": "81c81f26829445d376d8f8bc120b460f3a95084c929509a5d8eda9633e0c6364"
+      }
+    ],
+    "verdict": "PASS: Directly inspected every frame in all15saved sheets. Gentle brow/open eyes/warm smile; intact complete face, ears touching head, neck joining vest, attached knees/ankles and supported satchel. Read/explore remain left-hand-supported during waving and celebration; no floating book/map, stray source-cell pixels, cast shadows or lighting bands seen."
+  },
+  "trace": {
+    "samples": 855,
+    "sequence": "Actual pointer entry to wave; interrupt at1200ms with celebrate; actual timed return and620ms pose restoration; no seek or simulated completion.",
+    "failures": [],
+    "states": [
+      {
+        "posture": "read",
+        "seen": [
+          "wave",
+          "celebrate",
+          "idle"
+        ],
+        "mood": "idle",
+        "restoredPose": "read",
+        "bookOpacity": "1",
+        "mapOpacity": "0"
+      },
+      {
+        "posture": "explore",
+        "seen": [
+          "wave",
+          "celebrate",
+          "idle"
+        ],
+        "mood": "idle",
+        "restoredPose": "explore",
+        "bookOpacity": "0",
+        "mapOpacity": "1"
+      },
+      {
+        "posture": "stride",
+        "seen": [
+          "wave",
+          "celebrate",
+          "idle"
+        ],
+        "mood": "idle",
+        "restoredPose": "stride",
+        "bookOpacity": "0",
+        "mapOpacity": "0"
+      },
+      {
+        "posture": "greet",
+        "seen": [
+          "wave",
+          "celebrate",
+          "idle"
+        ],
+        "mood": "idle",
+        "restoredPose": "greet",
+        "bookOpacity": "0",
+        "mapOpacity": "0"
+      },
+      {
+        "posture": "idle",
+        "seen": [
+          "wave",
+          "celebrate",
+          "idle"
+        ],
+        "mood": "idle",
+        "restoredPose": "idle",
+        "bookOpacity": "0",
+        "mapOpacity": "0"
+      }
+    ]
+  },
+  "lifecycle": {
+    "remainingParts": 0,
+    "animations": 0,
+    "staleControllers": 0
+  },
+  "errors": [],
+  "proofs": [
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico-independent\\entry.png",
+      "sha256": "73199e8a82d294367bcc44a05bdd3780869541954f2bda2b7603d54e5d88e322"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico-independent\\interrupted.png",
+      "sha256": "53a3a276eeca276a29e12d77a6cc1690ca652dbc754d30c1720c60d9e7db5134"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico-independent\\returned.png",
+      "sha256": "41a5e9189039539566f89c414b1ed8fbd0a8eafaf0269857fc167215311f2192"
+    }
+  ],
+  "profileVerdict": "PASS: New profile-friendly-v2 has relaxed arched brows, open eyes inside glasses and an unambiguous warm smile; continuous head/neck/clothing. No cast shadow, neck-shadow triangle or volumetric highlight band visible.",
+  "iconVerdict": "PASS: app-icon-friendly-v1 shows a gentle friendly hare with soft brow and open eyes, complete connected ears/head/neck and a warm smile. No cast shadow or detached feature visible.",
+  "pass": true,
+  "limits": [
+    "Finite180saved states plus live entry/interruption/return evidence; does not claim every theoretical animation phase.",
+    "Native raster fills retain slight color variation without directional shadow bands."
+  ],
+  "avatarIndependent": {
+    "date": "2026-11-04T21:37:39.505Z",
+    "reviewer": "graphic_cast agent, independent of avatar authorship",
+    "sources": {
+      "src/avatar-rig.js": "7194b16d25ea8edb2775fb980c1c2de75eb1323280b75b1a4af7a13a70933c00",
+      "src/app.js": "a68feaffa71cefc826773fd1c15d6833b215a75db8b00d2bb3452894d5d4e8ac",
+      "assets/art/avatar-friendly-v1.frames.json": "f2339ebd8938ae5d8c36660acdeeb21dcfd8e2b4442c915e094a50529d5b893c",
+      "assets/art/avatar-friendly-v1.fragment.json": "fa99bddc151b9c0c0f8287b341bdc09dcb62012d687a2c6a436657691291daff",
+      "assets/art/avatar-friendly-heads-v1.png": "407bcff61341e0b650c9fa360aeb9901ebe068d39e1601dfd5560bfccab4ca82",
+      "assets/art/avatar-friendly-clothing-v2.png": "4f7360e8365d0a162e670dfe54f8375b7d9ac76fa94372312782902b1e527d99",
+      "assets/art/avatar-friendly-limbs-v2.png": "ac04d55b7e3edf0e0a4a11ad44b501e7aad18fc22a711923cf48dc0aab2fc4dd",
+      "assets/art/avatar-graphic-flat-kit-v2.png": "900603edb8455ab76571b4d37eb1c3d78fb7d58915f6d14dacf1b70069d94c2e"
+    },
+    "authorHashesMatch": true,
+    "sourceStable": true,
+    "inspectedProofs": [
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-friendly\\friendly-all-poses.png",
+        "sha256": "733aa762303016122f028a734a05cc5e3785ccbee077c1aa16f6f5bb93737a89"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-friendly\\friendly-closed-eyes.png",
+        "sha256": "6666af418b7c56e3b3084e0cb54e49763a4b90c8388039e13776c3b11fa5d5d4"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-friendly\\friendly-celebrate.png",
+        "sha256": "01479bb9a77d18832279f0ee559b8b16ddbef4113b9c52abd4850d51a5fb1450"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-friendly\\friendly-interrupted-return.png",
+        "sha256": "1318191ed05e8ab0fac52e038296d8e7110240788429371bc61a94918d76a188"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-friendly\\friendly-male-all-hair-accessories.png",
+        "sha256": "fd738f280cf92627f2e0ee06e8ccaf9c5c573a58e37300a6bb5485ebad394700"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-friendly\\friendly-female-all-hair-accessories.png",
+        "sha256": "7575e1452792af3dd4c016c3f55a9a107da8e720a6e5a112e708ea7f02699e03"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-friendly\\friendly-bald-bases.png",
+        "sha256": "4e106a802e1a951d0fc9b8220c2254f49bbb5f3c873fa5023fe0b32c047c3102"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-friendly\\friendly-enlarged-joints.png",
+        "sha256": "8411811005f8ebd87a93e7f967f9bf68ba4a93b598d54c2c2cc8f0076b55fb63"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-friendly\\female-saved-mobile.png",
+        "sha256": "12a91078d487022ff664c73e047b5736ad6cca32da6c04028feb35827f50f4db"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-friendly\\female-restored-second-device.png",
+        "sha256": "447b63de1771c6e007b6c2dfb09de9645fd9f766c99ab55464ffacc00a96b3b0"
+      }
+    ],
+    "visualVerdict": "PASS: Directly inspected male/female base faces across36poses,36closed-eye states,36celebration and36interrupted-return states;72hair/accessory combinations;12bald bases and4enlarged joint views. Gentle brows/open eyes/white smiles read friendly; native female has distinct tapered jaw/neck. Faces, glasses, blink overlays, collars and moving sleeved/bare arms remain connected. No actual gap, detached accessory, shadow band or cropped active hand seen in the inspected cases.",
+    "persistenceReview": "Read-only review of author real isolated-profile evidence and saved/reloaded second-device screenshots confirms the selected female base is shown with retained customization. Independent reviewer did not perform profile writes.",
+    "actual": {
+      "samples": 401,
+      "sequence": "Actual pointer-enter wave; interrupt at900ms with celebrate; wait for actual finished callbacks and base-loop resumption, without seek/finish.",
+      "minimumByPair": {
+        "male:face/skin": 715,
+        "male:skin/outfit": 180,
+        "male:outfit/upper-sleeve-left": 496,
+        "male:upper-skin-left/fore-skin-left": 296,
+        "male:fore-skin-left/hand-left": 36,
+        "male:upper-sleeve-left/fore-sleeve-left": 259,
+        "male:fore-sleeve-left/hand-left": 44,
+        "male:outfit/upper-sleeve-right": 504,
+        "male:upper-skin-right/fore-skin-right": 296,
+        "male:fore-skin-right/hand-right": 33,
+        "male:upper-sleeve-right/fore-sleeve-right": 261,
+        "male:fore-sleeve-right/hand-right": 41,
+        "female:face/skin": 513,
+        "female:skin/outfit": 158,
+        "female:outfit/upper-sleeve-left": 494,
+        "female:upper-skin-left/fore-skin-left": 293,
+        "female:fore-skin-left/hand-left": 33,
+        "female:upper-sleeve-left/fore-sleeve-left": 259,
+        "female:fore-sleeve-left/hand-left": 41,
+        "female:outfit/upper-sleeve-right": 503,
+        "female:upper-skin-right/fore-skin-right": 296,
+        "female:fore-skin-right/hand-right": 35,
+        "female:upper-sleeve-right/fore-sleeve-right": 258,
+        "female:fore-sleeve-right/hand-right": 43
+      },
+      "failures": [],
+      "states": [
+        {
+          "base": "male",
+          "posture": "portrait",
+          "seen": [
+            "wave",
+            "celebrate",
+            "idle"
+          ],
+          "mood": "idle",
+          "actions": 0,
+          "pausedBase": 0
+        },
+        {
+          "base": "male",
+          "posture": "portrait",
+          "seen": [
+            "wave",
+            "celebrate",
+            "idle"
+          ],
+          "mood": "idle",
+          "actions": 0,
+          "pausedBase": 0
+        },
+        {
+          "base": "male",
+          "posture": "wave",
+          "seen": [
+            "wave",
+            "celebrate",
+            "idle"
+          ],
+          "mood": "idle",
+          "actions": 0,
+          "pausedBase": 0
+        },
+        {
+          "base": "male",
+          "posture": "wave",
+          "seen": [
+            "wave",
+            "celebrate",
+            "idle"
+          ],
+          "mood": "idle",
+          "actions": 0,
+          "pausedBase": 0
+        },
+        {
+          "base": "male",
+          "posture": "think",
+          "seen": [
+            "wave",
+            "celebrate",
+            "idle"
+          ],
+          "mood": "idle",
+          "actions": 0,
+          "pausedBase": 0
+        },
+        {
+          "base": "male",
+          "posture": "think",
+          "seen": [
+            "wave",
+            "celebrate",
+            "idle"
+          ],
+          "mood": "idle",
+          "actions": 0,
+          "pausedBase": 0
+        },
+        {
+          "base": "female",
+          "posture": "portrait",
+          "seen": [
+            "wave",
+            "celebrate",
+            "idle"
+          ],
+          "mood": "idle",
+          "actions": 0,
+          "pausedBase": 0
+        },
+        {
+          "base": "female",
+          "posture": "portrait",
+          "seen": [
+            "wave",
+            "celebrate",
+            "idle"
+          ],
+          "mood": "idle",
+          "actions": 0,
+          "pausedBase": 0
+        },
+        {
+          "base": "female",
+          "posture": "wave",
+          "seen": [
+            "wave",
+            "celebrate",
+            "idle"
+          ],
+          "mood": "idle",
+          "actions": 0,
+          "pausedBase": 0
+        },
+        {
+          "base": "female",
+          "posture": "wave",
+          "seen": [
+            "wave",
+            "celebrate",
+            "idle"
+          ],
+          "mood": "idle",
+          "actions": 0,
+          "pausedBase": 0
+        },
+        {
+          "base": "female",
+          "posture": "think",
+          "seen": [
+            "wave",
+            "celebrate",
+            "idle"
+          ],
+          "mood": "idle",
+          "actions": 0,
+          "pausedBase": 0
+        },
+        {
+          "base": "female",
+          "posture": "think",
+          "seen": [
+            "wave",
+            "celebrate",
+            "idle"
+          ],
+          "mood": "idle",
+          "actions": 0,
+          "pausedBase": 0
+        }
+      ]
+    },
+    "proofs": [
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-avatar-independent\\entry.png",
+        "sha256": "ff50093a2ed3b6754f7ad22a00bd805618929c53eec8e5985ac8c0fe1a47b084"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-avatar-independent\\interruption.png",
+        "sha256": "3f0bd1e5c4c0be240c3bd4088e5f5abde8c55e29f4c7379370be2c5efb883b75"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-avatar-independent\\gesture.png",
+        "sha256": "f1cf87f916a24e01adadddaabf0c392ab911cf2d885e94a93bea983395dbdad3"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-avatar-independent\\return.png",
+        "sha256": "83867cd8727c1d83cbdb9e458f493ebf21e2bfecd227eced5ccb24d1da0c963d"
+      }
+    ],
+    "lifecycle": {
+      "remaining": 0,
+      "animations": 0
+    },
+    "errors": [],
+    "pass": true,
+    "limits": [
+      "Finite source-hashed configurations and actual transition samples; not universal theoretical permutation approval.",
+      "Native-alpha contact test evaluates painted overlap; enlarged image review separately evaluates anatomy."
+    ]
+  },
+  "status": "FINAL_CURRENT_TWO_BROW_PICO_AVATAR_PROFILE_ICON_PASS",
+  "freshNamedPicoIndependent": {
+    "date": "2026-11-04T21:39:03.104Z",
+    "reviewer": "graphic_cast agent, independent of root Pico authorship",
+    "captureReport": "reports/friendly-named-capture.json",
+    "captureSources": {
+      "src/pico-articulated.js": "9914e137b2a9a4c3f505c5a4269c8fc1113183bf8f60faa3547e37894faa61ba",
+      "assets/art/pico-friendly-v1.frames.json": "6b837e1145c0a78f71921e76666f43b471cf3b156fdc41391ec04cb4468a520b",
+      "assets/art/pico-graphic-v1.png": "81c1c5a699c695bb716159cf6f8b7989b51c7d51a4210767de7dd50efb97532c",
+      "assets/art/pico-friendly-head-v1.png": "0e3021ace8dda55226b628120ebe013e5398fd59fa46fb0b75cfdd86657b79cb",
+      "assets/art/profile-friendly-v2.png": "a9713022283e29c1219350ba7179bac6277a4061c023f37dab2396b4a8fdf531",
+      "assets/art/app-icon-friendly-v1.png": "e66a35a741b480ce59df73c33779f749cc004ef2b500cc696346120d6cd2403c"
+    },
+    "sourceHashesMatch": true,
+    "sheets": [
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-named\\pico_welcome_idle-sheet-1.png",
+        "sha256": "286a30b2e252e76fd088121f42e7e343521734aedffb0ec3a951c3bf4a30ca57",
+        "frames": 12
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-named\\pico_welcome_idle-sheet-2.png",
+        "sha256": "df5db2f9df71b47aac0b2f68c4b73f5c3ae84c095887d6293964cdc242de96e9",
+        "frames": 12
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-named\\pico_welcome_idle-sheet-3.png",
+        "sha256": "d9eabd0ac99b78e4c2831837bced2e7d7d11d49d25f29af7e1b4aab3d70eb953",
+        "frames": 12
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-named\\pico_welcome_wave-sheet-1.png",
+        "sha256": "25577d4c4c0fa4c5b953ea53eeab09313578977dd8ba640bd3aad9ec1cfd450c",
+        "frames": 12
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-named\\pico_welcome_wave-sheet-2.png",
+        "sha256": "2dc4b68ebc0ff3c287662100359d24458621bdbe94b14e6a7b98764b78b22485",
+        "frames": 12
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-named\\pico_welcome_wave-sheet-3.png",
+        "sha256": "c3c602acf00c6c5f840a6824a73336ea018d22243905992a01a3eceac43c41ac",
+        "frames": 12
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-named\\pico_welcome_celebrate-sheet-1.png",
+        "sha256": "c8deac04e80574e9a093744c7d135f14363956eae437bac0cc6a6c4dcddee8ee",
+        "frames": 12
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-named\\pico_welcome_celebrate-sheet-2.png",
+        "sha256": "0fb380ffa98af98d1e29aed7d007c010c75366f2c3d2704c34d368dc53415f55",
+        "frames": 12
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-named\\pico_welcome_celebrate-sheet-3.png",
+        "sha256": "bf688477ae0ef27ad08f67cde5f385e76693cc89834df015f3026e2091e50f6e",
+        "frames": 12
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-named\\pico_explore-sheet-1.png",
+        "sha256": "aa30a987a12f7e582a5f0e8e4951a8b0ceb8466739e3dc871180bfb6511b31fb",
+        "frames": 12
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-named\\pico_explore-sheet-2.png",
+        "sha256": "8399b17e025e63a330dd024192541208c4f8c077200f5dc435fcb25eeffe00df",
+        "frames": 12
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-named\\pico_read-sheet-1.png",
+        "sha256": "dec29dc9bc03490d84a92c732a81e7f3676adf56ce4ea4fa4daddb55ce76b9dc",
+        "frames": 12
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-named\\pico_read-sheet-2.png",
+        "sha256": "dcd9a070b295f7033c5b9d2de0122c59374d32413cab47217c91d44fc3cafe0a",
+        "frames": 12
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-named\\pico_jump-sheet-1.png",
+        "sha256": "30421412c4e6aba56aa5f8948eb78d7b6ab0a8ff21918e72000ff8295f3f906a",
+        "frames": 12
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-named\\pico_jump-sheet-2.png",
+        "sha256": "463a1720bea41df525cf5d518c7213a6f93a433f32f0739f8fdca51f1d585ade",
+        "frames": 12
+      }
+    ],
+    "sheetHashesMatch": true,
+    "frames": 180,
+    "contexts": [
+      "pico:welcome:idle",
+      "pico:welcome:wave",
+      "pico:welcome:celebrate",
+      "pico:explore",
+      "pico:read",
+      "pico:jump"
+    ],
+    "visualVerdict": "PASS: Directly inspected all 180 fresh friendly named Pico frames in all 15 sheets. The relaxed brow, open eyes and smile remain approachable. Ears meet the head, the neck meets the vest, and hips, knees and ankles remain connected. Reading and exploring retain visible hand support for the book and map. Celebration and jump extrema retain attached hands, feet and satchel; no detached source-cell fragments, cast shadows or directional highlight bands were seen.",
+    "defects": [],
+    "limits": "Finite saved phases, supplemented by the independent actual gesture-entry, interruption and timed-return trace already in this report. This is independent Pico approval only; human cast approval belongs to the avatar reviewer.",
+    "pass": true
+  },
+  "updated": "2026-11-04T21:47:47.286Z",
+  "historicalEvidenceNotice": "The original sources, captureReviewed, trace and freshNamedPicoIndependent sections preserve the pre-correction one-eyebrow evidence. Final-current Pico and icon approval is bound exclusively by finalCurrentPicoIndependent. Avatar evidence remains current because every avatar source hash is unchanged.",
+  "finalCurrentPicoIndependent": {
+    "date": "2026-11-04T21:47:47.281Z",
+    "reviewer": "graphic_cast agent, independent of root Pico/profile/icon authorship",
+    "correction": "Native second matching gentle eyebrow added to Pico head and app icon.",
+    "sources": {
+      "src/pico-articulated.js": "9914e137b2a9a4c3f505c5a4269c8fc1113183bf8f60faa3547e37894faa61ba",
+      "assets/art/pico-friendly-v1.frames.json": "dedad9c1965b51f04eaa2f7594694ea16da74d0f9db2073254deaa98641e47bf",
+      "assets/art/pico-graphic-v1.png": "81c1c5a699c695bb716159cf6f8b7989b51c7d51a4210767de7dd50efb97532c",
+      "assets/art/pico-friendly-head-v2.png": "3cf032cea26eb0e2fc4911c51b6740fd562f73e306c1eb2bb9ba2c27648a622b",
+      "assets/art/profile-friendly-v2.png": "a9713022283e29c1219350ba7179bac6277a4061c023f37dab2396b4a8fdf531",
+      "assets/art/app-icon-friendly-v2.png": "b9f6bee53f0b5996450195431cddaa60f341d440360537ffe2e17c01ce9f7426"
+    },
+    "sourceHashesMatch": true,
+    "captureReport": "reports/friendly-pico-final-capture.json",
+    "sheets": [
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico-final\\pico_welcome_idle-sheet-1.png",
+        "sha256": "7dd80a4a82565ac3e2122ba41a6dd8b6e188e89d092a96a3b4dea7c0f256d23c",
+        "frames": 12
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico-final\\pico_welcome_idle-sheet-2.png",
+        "sha256": "32c9457884ef323b2e5082fa2fe46d5608c6fbecdb8c662bee81eca79d2b9c46",
+        "frames": 12
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico-final\\pico_welcome_idle-sheet-3.png",
+        "sha256": "55b14b5104fe746428e2b141078fcf8e1c917133eb3e974da281e93bc74bad20",
+        "frames": 12
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico-final\\pico_welcome_wave-sheet-1.png",
+        "sha256": "8bc1824652e04957ccbc37bfa7f706eab42ec8274be3d90fe4fe19657dbfa282",
+        "frames": 12
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico-final\\pico_welcome_wave-sheet-2.png",
+        "sha256": "9d75e1eccfb92d02812d6c227213e5798454143981e6030ba8b00b64c5362efc",
+        "frames": 12
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico-final\\pico_welcome_wave-sheet-3.png",
+        "sha256": "e55114c8074f41e17416c6ae1e28566c957cf5cbd0ff79ecae47363f0428a5a2",
+        "frames": 12
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico-final\\pico_welcome_celebrate-sheet-1.png",
+        "sha256": "cdd3a8e15917eb355310677a20a487b6c8754c0aebad19766fdd1e19aa912b69",
+        "frames": 12
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico-final\\pico_welcome_celebrate-sheet-2.png",
+        "sha256": "bf1f0896b51433e9deba69f02d4a06e1bb043a39dc6e5e1bf2c1c530fdc7a3f6",
+        "frames": 12
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico-final\\pico_welcome_celebrate-sheet-3.png",
+        "sha256": "727aea3693f6d41b6bf04661979bcab5bf0900bb317396834ac2562658a3213d",
+        "frames": 12
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico-final\\pico_explore-sheet-1.png",
+        "sha256": "0c0e7db825f59db65757bd903adc9f3735f70642b5ebd2d6e7d9e8661912a866",
+        "frames": 12
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico-final\\pico_explore-sheet-2.png",
+        "sha256": "9d420bbd7b76b5c9fdb95c87f990b18177f6e0a2175b2f1516a9048d4d2e6dca",
+        "frames": 12
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico-final\\pico_read-sheet-1.png",
+        "sha256": "ab50a85a36b663b40da6f146d3cc78e5fb89565c411dccfc94b941273292622f",
+        "frames": 12
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico-final\\pico_read-sheet-2.png",
+        "sha256": "ca9407275d0ff88c30b5f2dcbea4c6f7c8bed92a1d56624010ac0fe87e17f5d4",
+        "frames": 12
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico-final\\pico_jump-sheet-1.png",
+        "sha256": "970b3b405c786b2b76f5e41d87b64655f2e1b1f32022cf4a777166edecadc46c",
+        "frames": 12
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-pico-final\\pico_jump-sheet-2.png",
+        "sha256": "7fcb72e7d63e05dd8b650cf02964a925b839ba3a8a7e832c598f153fb0bfbcf1",
+        "frames": 12
+      }
+    ],
+    "sheetHashesMatch": true,
+    "frames": 180,
+    "contexts": [
+      "pico:welcome:idle",
+      "pico:welcome:wave",
+      "pico:welcome:celebrate",
+      "pico:explore",
+      "pico:read",
+      "pico:jump"
+    ],
+    "nativeFrameUnchanged": true,
+    "runtimeUnchangedSinceActualCallbackTrace": true,
+    "avatarSourcesUnchanged": true,
+    "visualVerdict": "PASS: Independently inspected the native v2 head and v2 icon and every frame in all 15 fresh affected Pico sheets. Both assets have TWO clearly separate gentle eyebrows, open approachable eyes and a warm smile. The unchanged head registration retains connected ears, neck and vest in standing, wave, celebration, reading, exploring and jumping phases. Hands, knees, ankles and satchel remain attached; book and map remain hand-supported. No visible stray cell fragments, cast shadows or directional lighting bands were seen in the composed character frames.",
+    "defects": [],
+    "limits": "This final review covers all 180 saved affected Pico phases plus direct native head/icon inspection. Runtime, native frame geometry and non-head parts are unchanged from the previously inspected actual entry/interruption/timed-return trace; that trace was not repeated. Avatar and human source checks were not repeated beyond checking existing avatar source hashes.",
+    "pass": true
+  }
+}

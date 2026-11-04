@@ -1,0 +1,1010 @@
+{
+  "avatar": {
+    "body": [
+      {
+        "id": "male",
+        "label": "Male",
+        "group": "body",
+        "src": "assets/art/avatar-friendly-heads-v1.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 45,
+          "y": 53,
+          "w": 222,
+          "h": 264
+        }
+      },
+      {
+        "id": "female",
+        "label": "Female",
+        "group": "body",
+        "src": "assets/art/avatar-friendly-heads-v1.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 48,
+          "y": 377,
+          "w": 214,
+          "h": 273
+        }
+      }
+    ],
+    "skin": [
+      {
+        "id": "skin-1",
+        "label": "Porcelain",
+        "group": "skin",
+        "src": "assets/art/avatar-friendly-heads-v1.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 45,
+          "y": 53,
+          "w": 222,
+          "h": 264
+        },
+        "headFrame": {
+          "x": 45,
+          "y": 53,
+          "w": 222,
+          "h": 227
+        },
+        "neckFrame": {
+          "x": 45,
+          "y": 259,
+          "w": 222,
+          "h": 58
+        },
+        "blinks": [
+          {
+            "src": "assets/art/avatar-friendly-heads-v1.png",
+            "atlas": {
+              "width": 1536,
+              "height": 1024
+            },
+            "frame": {
+              "x": 89,
+              "y": 727,
+              "w": 50,
+              "h": 52
+            },
+            "rigPosition": {
+              "x": 131.52252252252254,
+              "y": 104.47799499382148,
+              "w": 26.126126126126124,
+              "z": 4
+            }
+          },
+          {
+            "src": "assets/art/avatar-friendly-heads-v1.png",
+            "atlas": {
+              "width": 1536,
+              "height": 1024
+            },
+            "frame": {
+              "x": 172,
+              "y": 728,
+              "w": 49,
+              "h": 52
+            },
+            "rigPosition": {
+              "x": 163.39639639639643,
+              "y": 104.46627272433723,
+              "w": 25.603603603603602,
+              "z": 4
+            }
+          }
+        ],
+        "eyeY": 152.627704454445,
+        "eyeStageY": 118.05771944466495,
+        "jawNeckOverlapPixels": 10.972972972972972,
+        "position": {
+          "x": 0.2,
+          "y": 0.04,
+          "w": 0.6,
+          "h": 0.94,
+          "z": 1
+        }
+      },
+      {
+        "id": "skin-2",
+        "label": "Peach",
+        "group": "skin",
+        "src": "assets/art/avatar-friendly-heads-v1.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 290,
+          "y": 53,
+          "w": 222,
+          "h": 264
+        },
+        "headFrame": {
+          "x": 290,
+          "y": 53,
+          "w": 222,
+          "h": 227
+        },
+        "neckFrame": {
+          "x": 290,
+          "y": 259,
+          "w": 222,
+          "h": 58
+        },
+        "blinks": [
+          {
+            "src": "assets/art/avatar-friendly-heads-v1.png",
+            "atlas": {
+              "width": 1536,
+              "height": 1024
+            },
+            "frame": {
+              "x": 335,
+              "y": 727,
+              "w": 49,
+              "h": 52
+            },
+            "rigPosition": {
+              "x": 131.7837837837838,
+              "y": 104.46233512664608,
+              "w": 25.603603603603602,
+              "z": 4
+            }
+          },
+          {
+            "src": "assets/art/avatar-friendly-heads-v1.png",
+            "atlas": {
+              "width": 1536,
+              "height": 1024
+            },
+            "frame": {
+              "x": 417,
+              "y": 727,
+              "w": 48,
+              "h": 52
+            },
+            "rigPosition": {
+              "x": 163.13513513513513,
+              "y": 104.56818403036891,
+              "w": 25.08108108108108,
+              "z": 4
+            }
+          }
+        ],
+        "eyeY": 152.7102381588678,
+        "eyeStageY": 118.10084516409309,
+        "jawNeckOverlapPixels": 10.972972972972972,
+        "position": {
+          "x": 0.2,
+          "y": 0.04,
+          "w": 0.6,
+          "h": 0.94,
+          "z": 1
+        }
+      },
+      {
+        "id": "skin-3",
+        "label": "Honey",
+        "group": "skin",
+        "src": "assets/art/avatar-friendly-heads-v1.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 535,
+          "y": 53,
+          "w": 222,
+          "h": 264
+        },
+        "headFrame": {
+          "x": 535,
+          "y": 53,
+          "w": 222,
+          "h": 227
+        },
+        "neckFrame": {
+          "x": 535,
+          "y": 259,
+          "w": 222,
+          "h": 58
+        },
+        "blinks": [
+          {
+            "src": "assets/art/avatar-friendly-heads-v1.png",
+            "atlas": {
+              "width": 1536,
+              "height": 1024
+            },
+            "frame": {
+              "x": 580,
+              "y": 727,
+              "w": 49,
+              "h": 52
+            },
+            "rigPosition": {
+              "x": 131.7837837837838,
+              "y": 104.60556780897828,
+              "w": 25.603603603603602,
+              "z": 4
+            }
+          },
+          {
+            "src": "assets/art/avatar-friendly-heads-v1.png",
+            "atlas": {
+              "width": 1536,
+              "height": 1024
+            },
+            "frame": {
+              "x": 662,
+              "y": 727,
+              "w": 49,
+              "h": 52
+            },
+            "rigPosition": {
+              "x": 163.13513513513516,
+              "y": 104.64069888069886,
+              "w": 25.603603603603602,
+              "z": 4
+            }
+          }
+        ],
+        "eyeY": 152.9166862289152,
+        "eyeStageY": 118.20871893042417,
+        "jawNeckOverlapPixels": 10.972972972972972,
+        "position": {
+          "x": 0.2,
+          "y": 0.04,
+          "w": 0.6,
+          "h": 0.94,
+          "z": 1
+        }
+      },
+      {
+        "id": "skin-4",
+        "label": "Caramel",
+        "group": "skin",
+        "src": "assets/art/avatar-friendly-heads-v1.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 780,
+          "y": 53,
+          "w": 222,
+          "h": 264
+        },
+        "headFrame": {
+          "x": 780,
+          "y": 53,
+          "w": 222,
+          "h": 227
+        },
+        "neckFrame": {
+          "x": 780,
+          "y": 259,
+          "w": 222,
+          "h": 58
+        },
+        "blinks": [
+          {
+            "src": "assets/art/avatar-friendly-heads-v1.png",
+            "atlas": {
+              "width": 1536,
+              "height": 1024
+            },
+            "frame": {
+              "x": 825,
+              "y": 727,
+              "w": 50,
+              "h": 52
+            },
+            "rigPosition": {
+              "x": 131.26126126126127,
+              "y": 104.63385124254688,
+              "w": 26.126126126126124,
+              "z": 4
+            }
+          },
+          {
+            "src": "assets/art/avatar-friendly-heads-v1.png",
+            "atlas": {
+              "width": 1536,
+              "height": 1024
+            },
+            "frame": {
+              "x": 907,
+              "y": 727,
+              "w": 49,
+              "h": 52
+            },
+            "rigPosition": {
+              "x": 162.8738738738739,
+              "y": 104.67554447651534,
+              "w": 25.603603603603602,
+              "z": 4
+            }
+          }
+        ],
+        "eyeY": 152.97709417944748,
+        "eyeStageY": 118.24028344511669,
+        "jawNeckOverlapPixels": 10.972972972972972,
+        "position": {
+          "x": 0.2,
+          "y": 0.04,
+          "w": 0.6,
+          "h": 0.94,
+          "z": 1
+        }
+      },
+      {
+        "id": "skin-5",
+        "label": "Chestnut",
+        "group": "skin",
+        "src": "assets/art/avatar-friendly-heads-v1.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 1024,
+          "y": 53,
+          "w": 223,
+          "h": 264
+        },
+        "headFrame": {
+          "x": 1024,
+          "y": 53,
+          "w": 223,
+          "h": 227
+        },
+        "neckFrame": {
+          "x": 1024,
+          "y": 259,
+          "w": 223,
+          "h": 58
+        },
+        "blinks": [
+          {
+            "src": "assets/art/avatar-friendly-heads-v1.png",
+            "atlas": {
+              "width": 1536,
+              "height": 1024
+            },
+            "frame": {
+              "x": 1070,
+              "y": 727,
+              "w": 50,
+              "h": 52
+            },
+            "rigPosition": {
+              "x": 131.65022421524665,
+              "y": 104.43644722462977,
+              "w": 26.00896860986547,
+              "z": 4
+            }
+          },
+          {
+            "src": "assets/art/avatar-friendly-heads-v1.png",
+            "atlas": {
+              "width": 1536,
+              "height": 1024
+            },
+            "frame": {
+              "x": 1152,
+              "y": 728,
+              "w": 49,
+              "h": 52
+            },
+            "rigPosition": {
+              "x": 163.12107623318389,
+              "y": 104.47188769174878,
+              "w": 25.488789237668158,
+              "z": 4
+            }
+          }
+        ],
+        "eyeY": 152.92482192393283,
+        "eyeStageY": 117.97883113531931,
+        "jawNeckOverlapPixels": 10.923766816143496,
+        "position": {
+          "x": 0.2,
+          "y": 0.04,
+          "w": 0.6,
+          "h": 0.94,
+          "z": 1
+        }
+      },
+      {
+        "id": "skin-6",
+        "label": "Deep brown",
+        "group": "skin",
+        "src": "assets/art/avatar-friendly-heads-v1.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 1270,
+          "y": 53,
+          "w": 222,
+          "h": 264
+        },
+        "headFrame": {
+          "x": 1270,
+          "y": 53,
+          "w": 222,
+          "h": 227
+        },
+        "neckFrame": {
+          "x": 1270,
+          "y": 259,
+          "w": 222,
+          "h": 58
+        },
+        "blinks": [
+          {
+            "src": "assets/art/avatar-friendly-heads-v1.png",
+            "atlas": {
+              "width": 1536,
+              "height": 1024
+            },
+            "frame": {
+              "x": 1316,
+              "y": 727,
+              "w": 50,
+              "h": 52
+            },
+            "rigPosition": {
+              "x": 131.7837837837838,
+              "y": 104.61270018499665,
+              "w": 26.126126126126124,
+              "z": 4
+            }
+          },
+          {
+            "src": "assets/art/avatar-friendly-heads-v1.png",
+            "atlas": {
+              "width": 1536,
+              "height": 1024
+            },
+            "frame": {
+              "x": 1398,
+              "y": 728,
+              "w": 50,
+              "h": 52
+            },
+            "rigPosition": {
+              "x": 163.13513513513516,
+              "y": 104.62476328089937,
+              "w": 26.126126126126124,
+              "z": 4
+            }
+          }
+        ],
+        "eyeY": 152.908262454435,
+        "eyeStageY": 118.20431731853361,
+        "jawNeckOverlapPixels": 10.972972972972972,
+        "position": {
+          "x": 0.2,
+          "y": 0.04,
+          "w": 0.6,
+          "h": 0.94,
+          "z": 1
+        }
+      }
+    ],
+    "outfit": [
+      {
+        "id": "outfit-1",
+        "label": "Magenta hoodie",
+        "group": "outfit",
+        "src": "assets/art/avatar-friendly-clothing-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 56,
+          "y": 62,
+          "w": 207,
+          "h": 282
+        },
+        "position": {
+          "x": 0.16,
+          "y": 0.39,
+          "w": 0.68,
+          "h": 0.6,
+          "z": 2
+        }
+      },
+      {
+        "id": "outfit-2",
+        "label": "Teal summer",
+        "group": "outfit",
+        "src": "assets/art/avatar-friendly-clothing-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 312,
+          "y": 110,
+          "w": 192,
+          "h": 234
+        },
+        "position": {
+          "x": 0.16,
+          "y": 0.39,
+          "w": 0.68,
+          "h": 0.6,
+          "z": 2
+        }
+      },
+      {
+        "id": "outfit-3",
+        "label": "Explorer jacket",
+        "group": "outfit",
+        "src": "assets/art/avatar-friendly-clothing-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 553,
+          "y": 95,
+          "w": 193,
+          "h": 249
+        },
+        "position": {
+          "x": 0.16,
+          "y": 0.39,
+          "w": 0.68,
+          "h": 0.6,
+          "z": 2
+        }
+      },
+      {
+        "id": "outfit-4",
+        "label": "Orange sweater",
+        "group": "outfit",
+        "src": "assets/art/avatar-friendly-clothing-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 796,
+          "y": 93,
+          "w": 194,
+          "h": 251
+        },
+        "position": {
+          "x": 0.16,
+          "y": 0.39,
+          "w": 0.68,
+          "h": 0.6,
+          "z": 2
+        }
+      },
+      {
+        "id": "outfit-5",
+        "label": "Teal overalls",
+        "group": "outfit",
+        "src": "assets/art/avatar-friendly-clothing-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 1040,
+          "y": 106,
+          "w": 194,
+          "h": 238
+        },
+        "position": {
+          "x": 0.16,
+          "y": 0.39,
+          "w": 0.68,
+          "h": 0.6,
+          "z": 2
+        }
+      },
+      {
+        "id": "outfit-6",
+        "label": "Magenta cardigan",
+        "group": "outfit",
+        "src": "assets/art/avatar-friendly-clothing-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 1283,
+          "y": 106,
+          "w": 199,
+          "h": 238
+        },
+        "position": {
+          "x": 0.16,
+          "y": 0.39,
+          "w": 0.68,
+          "h": 0.6,
+          "z": 2
+        }
+      }
+    ],
+    "hair": [
+      {
+        "id": "hair-1",
+        "label": "Side part",
+        "group": "hair",
+        "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 51,
+          "y": 348,
+          "w": 207,
+          "h": 181
+        },
+        "rigPosition": {
+          "x": 84.93951612903227,
+          "y": 31.30645161290323,
+          "w": 141.89516129032256,
+          "z": 5
+        },
+        "position": {
+          "x": 0.28,
+          "y": 0.025,
+          "w": 0.44,
+          "h": 0.3,
+          "z": 4
+        }
+      },
+      {
+        "id": "hair-2",
+        "label": "Short curls",
+        "group": "hair",
+        "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 298,
+          "y": 352,
+          "w": 208,
+          "h": 153
+        },
+        "rigPosition": {
+          "x": 89.0495867768595,
+          "y": 41.71900826446281,
+          "w": 146.11570247933884,
+          "z": 5
+        },
+        "position": {
+          "x": 0.28,
+          "y": 0.025,
+          "w": 0.44,
+          "h": 0.3,
+          "z": 4
+        }
+      },
+      {
+        "id": "hair-3",
+        "label": "Long straight",
+        "group": "hair",
+        "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 526,
+          "y": 352,
+          "w": 239,
+          "h": 215
+        },
+        "rigPosition": {
+          "x": 68.66228070175438,
+          "y": 35.58771929824562,
+          "w": 178.2017543859649,
+          "z": 5
+        },
+        "position": {
+          "x": 0.28,
+          "y": 0.025,
+          "w": 0.44,
+          "h": 0.3,
+          "z": 4
+        }
+      },
+      {
+        "id": "hair-4",
+        "label": "Twin puffs",
+        "group": "hair",
+        "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 769,
+          "y": 360,
+          "w": 245,
+          "h": 145
+        },
+        "rigPosition": {
+          "x": 65.94907407407406,
+          "y": 37.907407407407405,
+          "w": 192.82407407407408,
+          "z": 5
+        },
+        "position": {
+          "x": 0.28,
+          "y": 0.025,
+          "w": 0.44,
+          "h": 0.3,
+          "z": 4
+        }
+      },
+      {
+        "id": "hair-5",
+        "label": "Blonde bob",
+        "group": "hair",
+        "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 1014,
+          "y": 364,
+          "w": 232,
+          "h": 198
+        },
+        "rigPosition": {
+          "x": 64.08256880733946,
+          "y": 43.87155963302752,
+          "w": 180.91743119266056,
+          "z": 5
+        },
+        "position": {
+          "x": 0.28,
+          "y": 0.025,
+          "w": 0.44,
+          "h": 0.3,
+          "z": 4
+        }
+      },
+      {
+        "id": "hair-6",
+        "label": "Soft waves",
+        "group": "hair",
+        "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 1259,
+          "y": 366,
+          "w": 245,
+          "h": 192
+        },
+        "rigPosition": {
+          "x": 62.52293577981652,
+          "y": 49.330275229357795,
+          "w": 191.05504587155963,
+          "z": 5
+        },
+        "position": {
+          "x": 0.28,
+          "y": 0.025,
+          "w": 0.44,
+          "h": 0.3,
+          "z": 4
+        }
+      },
+      {
+        "id": "none",
+        "label": "No hair",
+        "group": "hair"
+      }
+    ],
+    "accessory": [
+      {
+        "id": "none",
+        "label": "No extra",
+        "group": "accessory"
+      },
+      {
+        "id": "accessory-1",
+        "label": "Round glasses",
+        "group": "accessory",
+        "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 45,
+          "y": 681,
+          "w": 225,
+          "h": 77
+        },
+        "rigPosition": {
+          "x": 120,
+          "y": 103,
+          "w": 80,
+          "z": 6
+        },
+        "position": {
+          "x": 0.32,
+          "y": 0.16,
+          "w": 0.36,
+          "h": 0.1,
+          "z": 6
+        }
+      },
+      {
+        "id": "accessory-2",
+        "label": "Orange cap",
+        "group": "accessory",
+        "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 287,
+          "y": 643,
+          "w": 226,
+          "h": 134
+        },
+        "rigPosition": {
+          "x": 85,
+          "y": 9,
+          "w": 150,
+          "z": 6
+        },
+        "position": {
+          "x": 0.32,
+          "y": 0.16,
+          "w": 0.36,
+          "h": 0.1,
+          "z": 6
+        }
+      },
+      {
+        "id": "accessory-3",
+        "label": "Teal headphones",
+        "group": "accessory",
+        "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 533,
+          "y": 623,
+          "w": 223,
+          "h": 184
+        },
+        "rigPosition": {
+          "x": 86.5,
+          "y": 44,
+          "w": 147,
+          "z": 6
+        },
+        "position": {
+          "x": 0.32,
+          "y": 0.16,
+          "w": 0.36,
+          "h": 0.1,
+          "z": 6
+        }
+      },
+      {
+        "id": "accessory-4",
+        "label": "Pico satchel",
+        "group": "accessory",
+        "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 810,
+          "y": 609,
+          "w": 171,
+          "h": 215
+        },
+        "rigPosition": {
+          "x": 125,
+          "y": 208,
+          "w": 112,
+          "z": 6
+        },
+        "position": {
+          "x": 0.32,
+          "y": 0.16,
+          "w": 0.36,
+          "h": 0.1,
+          "z": 6
+        }
+      },
+      {
+        "id": "accessory-5",
+        "label": "Orange scarf",
+        "group": "accessory",
+        "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 1023,
+          "y": 632,
+          "w": 217,
+          "h": 198
+        },
+        "rigPosition": {
+          "x": 109,
+          "y": 190,
+          "w": 102,
+          "z": 6
+        },
+        "position": {
+          "x": 0.32,
+          "y": 0.16,
+          "w": 0.36,
+          "h": 0.1,
+          "z": 6
+        }
+      },
+      {
+        "id": "accessory-6",
+        "label": "Navy backpack",
+        "group": "accessory",
+        "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 1265,
+          "y": 607,
+          "w": 237,
+          "h": 224
+        },
+        "rigPosition": {
+          "x": 151,
+          "y": 192,
+          "w": 160,
+          "z": 0
+        },
+        "position": {
+          "x": 0.32,
+          "y": 0.16,
+          "w": 0.36,
+          "h": 0.1,
+          "z": 6
+        }
+      }
+    ]
+  }
+}
