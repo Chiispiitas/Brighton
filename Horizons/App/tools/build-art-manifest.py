@@ -73,6 +73,17 @@ for sheet,words in [(1,['teacher','student','chef','doctor','office worker','rec
  for row,word in enumerate(words):
   frames=[{'x':col*cw,'y':row*ch,'w':cw,'h':ch}for col in range(4)]
   vocab[word]={**asset(file,frames[0]),'animation':{'id':word.replace(' ','-'),'duration':3400+row*137,'frames':frames}}
-manifest={'version':2,'pico':{'parts':pico},'companions':companions,'rigs':rigs,'avatar':avatars,'scenes':scenes,'icons':icons,'vocabulary':vocab}
+postures={}
+for name,poseNames in [('pico',['explore','read','stride','jump']),('mina',['step','map','read','skip']),('alex',['listen','sit','fix','dance']),('jo',['offer','pour','read','clap'])]:
+ file=name+'-postures-v1.png'
+ if not(art/file).exists():continue
+ im=Image.open(art/file);cw=im.width/4;rows={'pico':[0,314,628,932,1254],'mina':[0,320,628,938,1254],'alex':[0,340,633,920,1254],'jo':[0,312,626,939,1254]}.get(name,[im.height*i/4 for i in range(5)]);postures[name]={}
+ for row,poseName in enumerate(poseNames):
+  y0,y1=rows[row:row+2];boxes=[bounds(im,(col*cw,y0,(col+1)*cw,y1),union=True)for col in range(4)]
+  left=min(b['x']-col*cw for col,b in enumerate(boxes));top=min(b['y']-y0 for b in boxes);right=max(b['x']-col*cw+b['w']for col,b in enumerate(boxes));bottom=max(b['y']-y0+b['h']for b in boxes)
+  if name=='pico'and poseName=='jump':top=min(top,2)
+  frames=[{'x':col*cw+left,'y':y0+top,'w':right-left,'h':bottom-top}for col in range(4)]
+  postures[name][poseName]={**asset(file,frames[0]),'posture':poseName,'animation':{'id':name+'-'+poseName,'duration':({'pico':3300,'mina':4400,'alex':3600,'jo':5100})[name]+row*131,'frames':frames}}
+manifest={'version':3,'pico':{'parts':pico},'companions':companions,'rigs':rigs,'postures':postures,'avatar':avatars,'scenes':scenes,'icons':icons,'vocabulary':vocab}
 (art/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf8')
 print(json.dumps({'picoParts':len(pico),'companions':len(companions),'avatarLayers':sum(map(len,avatars.values())),'path':str(art/'manifest.json')}))

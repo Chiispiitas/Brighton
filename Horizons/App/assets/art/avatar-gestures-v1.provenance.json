@@ -1,0 +1,13 @@
+{
+  "tool": "OpenAI built-in image_gen",
+  "date": "2026-11-04",
+  "reference": "assets/art/avatar-kit-v2.png",
+  "source": "C:\\Users\\David\\.codex\\generated_images\\01a1a684-e2ae-7610-a8a8-2ea0817864ba\\exec-cc4eb005-9799-4790-a8f4-b78cf66a3d62.png",
+  "file": "assets/art/avatar-gestures-v1.png",
+  "prompt": "Use case: illustration-story. Asset type: production transparent layered avatar gesture sprite atlas for the Horizons English app. Reference image avatar-kit-v2.png supplies the exact warm flat friendly borderless 2D illustration style and six skin colors; retain those colors, soft rounded forms and simple clean silhouette. Generate ONLY TWELVE detached human right forearm-plus-hand gesture cutouts, arranged in a perfectly regular TWO ROWS by SIX COLUMNS atlas, 1536 by 1024 pixels, one isolated sprite centered inside each cell with at least 25px clear transparent gutter. Each sprite is one complete naturally connected elbow/forearm/wrist/hand, not a full person, no head, no body, no clothing. Columns 1–6 in BOTH rows are the six reference skin tones in the same light-to-dark order: approx #f4b290, #eca581, #d68c63, #c8805a, #b56133, #79432b. ROW 1: identical right-arm greeting pose, a vertical/slightly tilted forearm from rounded elbow at bottom to raised open palm at top, palm facing viewer, thumb pointing viewer-left, exactly four relaxed separated fingers and one thumb, friendly wave. ROW 2: identical thoughtful right-arm gesture, the forearm running diagonally from rounded elbow at lower-right towards wrist at upper-left, a softly curled hand with index finger extended gently upward and fingertips posed to rest under the avatar's chin; show an anatomically clear wrist. Preserve identical proportions and placement across each row. Every sprite fully inside its cell; generous transparent space, no touching neighboring sprites. Medium-light warm flat colors; dark skin remains solid and legible. Clean anti-aliased alpha, simple vector-like flat illustration generated as raster. No text, labels, border, shadow, scenery, background, symbols, pattern, nails, jewelry, extra limbs, distorted wrists or extra fingers. Genuine transparent background.",
+  "use": "Six skin-matched raised-palm and hand-to-chin gestures supply genuinely distinct avatar bust silhouettes. Elbow ends stay below the intentional chest crop, keeping every existing outfit unchanged.",
+  "sha256": "f8ab333f9d2cec358767ed72436f3a5a4df9de78932c4fc53b29f9c6d3acb389",
+  "width": 1536,
+  "height": 1024,
+  "nativeBytesUnchanged": true
+}

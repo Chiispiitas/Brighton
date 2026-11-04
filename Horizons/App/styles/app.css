@@ -97,6 +97,8 @@ input,select,textarea{font-size:16px!important}
 .avatar-small{width:46px;height:46px}
 .avatar-preview{max-width:310px;height:310px;border-radius:50%;margin-bottom:26px}
 .avatar-preview>.avatar{width:94%;height:94%}
+.character>.posture-art.raster-frame{width:100%;height:100%;min-width:0;min-height:0;aspect-ratio:auto!important}
+.character>.posture-art>.raster-fit{top:auto!important;bottom:0!important;transform:translateX(-50%)!important}
 
 @media(min-width:761px){.welcome-layout{grid-template-columns:minmax(0,1.35fr) minmax(0,1fr)}}
 
@@ -124,6 +126,9 @@ input,select,textarea{font-size:16px!important}
  .page-heading h1{font-size:31px}
  .page-heading p{max-width:none;margin-top:16px}
  .page-heading>.page-character{position:relative;inset:auto;width:85px;height:164px;max-width:28%;margin:0}
+ .hero-pico{right:8px;bottom:14px;width:146px;height:210px}
+ .hero-progress{flex-direction:column;align-items:flex-start;gap:7px}
+ .hero-progress-track{margin-top:0}
  .question-scene{height:134px;gap:16px}
  .question-character{width:92px;height:128px}
  .question-image.raster-frame{width:175px;height:120px;max-width:calc(100% - 108px);margin:0}
@@ -152,6 +157,7 @@ input,select,textarea{font-size:16px!important}
  .page-heading{gap:11px}
  .page-heading h1{font-size:29px}
  .page-heading>.page-character{width:72px;height:154px;max-width:26%}
+ .hero-pico{right:8px;bottom:12px;width:124px;height:194px}
  .progress-hero{padding:25px 21px;grid-template-columns:minmax(0,1fr) 82px;column-gap:12px}
  .progress-hero h1{font-size:29px}
  .progress-pico{width:82px;height:156px}
@@ -165,3 +171,5 @@ input,select,textarea{font-size:16px!important}
 
 /* The profile destination uses the learner's animated bust rather than a static full-body symbol. */
 .nav-avatar-frame{display:block;width:27px;height:27px;flex:none}.nav-avatar-frame>.avatar-nav{display:block;width:27px;height:27px;aspect-ratio:1;border-radius:50%;overflow:hidden}
+.character>.posture-art{width:100%;height:100%;max-width:100%;max-height:100%;aspect-ratio:auto!important;display:block}.character>.raster-frame.posture-art>.raster-fit{top:100%!important;transform:translate(-50%,-100%)!important}
+.character[data-posture-sprite],.character[data-posture-sprite]>.posture-art{animation:none!important}

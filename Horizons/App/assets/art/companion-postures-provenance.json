@@ -1,0 +1,142 @@
+{
+  "tool": "OpenAI built-in image_gen",
+  "date": "2026-11-04",
+  "processing": "Native generated PNG bytes and alpha are preserved. Four equal action-frame columns and four distinct whole-body posture rows per character.",
+  "assets": [
+    {
+      "file": "mina-postures-v1.png",
+      "prompt": "Use case: illustration-story. Asset type: native raster animation sprite atlas for the Horizons English study companion app. Produce EXACTLY FOUR EQUAL COLUMNS × FOUR EQUAL ROWS, sixteen separate square cells on a square canvas. Every row is one DISTINCT FULL-BODY POSTURE; its four columns are four successive, coherent small-action animation frames. The four ROWS must have genuinely different whole-body silhouettes, leg positions and weight distribution—not a standing character with four arm poses. Keep the camera, body proportions, character scale and prop positions fixed within each row. Body anatomy and identity consistent across the entire sheet, including the same head size; do not enlarge seated/crouched poses to fill all available height. Every complete head, hand, foot and prop must be inside its cell with at least10% transparent safety padding all around. No overlap across cell boundaries. Genuine ALPHA TRANSPARENT background, no colored background, no grid lines, no labels, no letters, no text. Clean, friendly, tasteful flat vector-like RASTER illustrations matching the references exactly, with gentle restrained shading and crisp edges. This is an adult-friendly, all-ages education app. Animate meaningful facial, wrist, elbow and task gestures; do not animate floating, repeated whole-body bobbing or scale wobble. The four frames of each row must form a clear loop, with frame4 returning towards frame1. Four coherent phases, no extra limbs or detached joints. References: Image1 is the full-cast identity/style reference; Image2 is the same character's isolated outfit/head/prop identity reference. Integrate normal open eyes and mouth on the actual face; the second reference contains blank faces only because it was an old rig kit, so DO NOT reproduce a blank face. CHARACTER: MINA, the first/left woman in Image1. Keep her warm tan skin, dark brown shoulder-length wavy bob, friendly expressive brown eyes, magenta open cardigan/jacket, cream T-shirt, navy cropped trousers, orange sneakers and small orange backpack. ROW1: Mina takes an adventurous FORWARD STEPPING stance, one knee bent forward and rear heel raised, torso leaning slightly forward. With one arm she points out a route, then opens the pointing hand in invitation and looks back towards viewer, then resets. Preserve the grounded step silhouette through the four action phases; do not walk her out of the cell. ROW2: Mina is genuinely KNEELING/CROUCHING with one knee on the ground, the opposite knee raised, body lowered. An open folded paper map rests across the raised thigh. She traces a route with her finger, glances up with a pleased smile, blinks, and traces again. This must visibly be a low kneeling body, not a shortened standing person. ROW3: Mina SITS on a simple little wooden bench, hips and both knees visibly bent, feet fully visible below, open navy/cream book in her hands. Her backpack can sit beside her on the bench. She reads, turns a page with one hand, looks up and smiles, then returns to reading. Bench stays exactly fixed and complete in all four cells. ROW4: Mina is in a joyous ONE-LEG SKIPPING CELEBRATION stance: one planted foot, opposite leg bent backwards at the knee, torso tilted with happy energy, both forearms lifted. She opens her hands in delight, brings them closer in a small excited gesture, smiles with a blink, and resets. Keep the full bent-back leg and foot visible. No floating jump: a planted foot anchors every frame. Each of the four row silhouettes must read immediately as stepping, kneeling, bench-sitting, and one-leg skipping.",
+      "source": "C:\\Users\\David\\.codex\\generated_images\\01a1a684-5ebc-7212-88a0-8435cc89b465\\exec-a2486263-b592-4b3a-9db9-5007550d30bc.png",
+      "references": [
+        "assets/art/companions-v1.png",
+        "assets/art/mina-rig-v1.png"
+      ],
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "sha256": "a4b9a9c604c6b73db09743e905930c65ae662a6bf3f2df805e50b544b683ec62",
+      "nativeBytesUnchanged": true,
+      "frameColumns": 4,
+      "postureRows": 4,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "displayRowCuts": [
+        0,
+        320,
+        628,
+        938,
+        1254
+      ],
+      "rowCutPolicy": "Metadata only; cuts are in the actual native transparent gaps. This avoids clipping the complete stance when the generated row spacing differs from exact quarters.",
+      "rowCutAlphaEvidence": [
+        {
+          "y": 320,
+          "pixelsAbove12": 0,
+          "maxAlpha": 1
+        },
+        {
+          "y": 628,
+          "pixelsAbove12": 0,
+          "maxAlpha": 1
+        },
+        {
+          "y": 938,
+          "pixelsAbove12": 0,
+          "maxAlpha": 1
+        }
+      ]
+    },
+    {
+      "file": "alex-postures-v1.png",
+      "prompt": "Use case: illustration-story. Asset type: native raster animation sprite atlas for the Horizons English study companion app. Produce EXACTLY FOUR EQUAL COLUMNS × FOUR EQUAL ROWS, sixteen separate square cells on a square canvas. Every row is one DISTINCT FULL-BODY POSTURE; its four columns are four successive, coherent small-action animation frames. The four ROWS must have genuinely different whole-body silhouettes, leg positions and weight distribution—not a standing character with four arm poses. Keep the camera, body proportions, character scale and prop positions fixed within each row. Body anatomy and identity consistent across the entire sheet, including the same head size; do not enlarge seated/crouched poses to fill all available height. Every complete head, hand, foot and prop must be inside its cell with at least10% transparent safety padding all around. No overlap across cell boundaries. Genuine ALPHA TRANSPARENT background, no colored background, no grid lines, no labels, no letters, no text. Clean, friendly, tasteful flat vector-like RASTER illustrations matching the references exactly, with gentle restrained shading and crisp edges. This is an adult-friendly, all-ages education app. Animate meaningful facial, wrist, elbow and task gestures; do not animate floating, repeated whole-body bobbing or scale wobble. The four frames of each row must form a clear loop, with frame4 returning towards frame1. Four coherent phases, no extra limbs or detached joints. References: Image1 is the full-cast identity/style reference; Image2 is the same character's isolated outfit/head/prop identity reference. Integrate normal open eyes and mouth on the actual face; the second reference contains blank faces only because it was an old rig kit, so DO NOT reproduce a blank face. CHARACTER: ALEX, the middle man in Image1. Keep his warm dark-brown skin, short dark curly hair, friendly expressive eyes, teal open overshirt with rolled sleeves, orange T-shirt, navy trousers, cream sneakers and navy headphones/music-player identity. ROW1: STANDING LISTENING posture with weight relaxed over one leg, the other knee gently bent, head tilted towards the navy headphones worn over his ears. One hand touches an ear cup and the other rests casually at hip; he listens, looks up, makes a tiny pleased head nod, blinks and resets. This should be an engaging asymmetrical full-body stance, not a rigid straight-legged pose. ROW2: Alex SITS CROSS-LEGGED on the ground, hips low, both bent legs and sneakers clearly visible, headphones over ears. His forearms rest naturally at his knees. He gently taps the visible front foot/toe in rhythm, tips his head as he listens, smiles and resets. Hands, crossed legs and feet stay anatomically coherent. ROW3: Alex CROUCHES LOW to fix or adjust a small navy/teal music player/speaker on the ground. One foot flat, the other knee close to ground, torso bends forward, one hand supports him while the other adjusts a clearly visible small knob or connector. He turns the knob, looks closely, glances pleased towards viewer and resets. Device remains absolutely anchored. ROW4: Alex does a celebratory DANCE in a distinct side-weighted stance: one knee deeply bent, opposite leg stretched sideways with foot touching ground, hips angled, torso leaning the other way, arms open at different heights. Four looping beats have real shoulder/elbow/wrist and head gestures, a small heel tap, then return towards the first stance. Every frame remains a recognizably dancing whole body with grounded feet, not a floating straight standing cutout. The four rows must read immediately as listening-stance, cross-legged sitting, low crouching/fixing, and side-weighted dancing.",
+      "source": "C:\\Users\\David\\.codex\\generated_images\\01a1a684-5ebc-7212-88a0-8435cc89b465\\exec-f4d5b32e-9762-4af2-b89e-da210b47424a.png",
+      "references": [
+        "assets/art/companions-v1.png",
+        "assets/art/alex-rig-v1.png"
+      ],
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "sha256": "664f22018537cfd87dc20e253790fd6aeaa8e060aa19e3abf501e1ded02379ff",
+      "nativeBytesUnchanged": true,
+      "frameColumns": 4,
+      "postureRows": 4,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "displayRowCuts": [
+        0,
+        340,
+        633,
+        920,
+        1254
+      ],
+      "rowCutPolicy": "Metadata only; cuts are in the actual native transparent gaps. This avoids clipping the complete stance when the generated row spacing differs from exact quarters.",
+      "rowCutAlphaEvidence": [
+        {
+          "y": 340,
+          "pixelsAbove12": 0,
+          "maxAlpha": 1
+        },
+        {
+          "y": 633,
+          "pixelsAbove12": 0,
+          "maxAlpha": 1
+        },
+        {
+          "y": 920,
+          "pixelsAbove12": 0,
+          "maxAlpha": 1
+        }
+      ]
+    },
+    {
+      "file": "jo-postures-v1.png",
+      "prompt": "Use case: illustration-story. Asset type: native raster animation sprite atlas for the Horizons English study companion app. Produce EXACTLY FOUR EQUAL COLUMNS × FOUR EQUAL ROWS, sixteen separate square cells on a square canvas. Every row is one DISTINCT FULL-BODY POSTURE; its four columns are four successive, coherent small-action animation frames. The four ROWS must have genuinely different whole-body silhouettes, leg positions and weight distribution—not a standing character with four arm poses. Keep the camera, body proportions, character scale and prop positions fixed within each row. Body anatomy and identity consistent across the entire sheet, including the same head size; do not enlarge seated/crouched poses to fill all available height. Every complete head, hand, foot and prop must be inside its cell with at least10% transparent safety padding all around. No overlap across cell boundaries. Genuine ALPHA TRANSPARENT background, no colored background, no grid lines, no labels, no letters, no text. Clean, friendly, tasteful flat vector-like RASTER illustrations matching the references exactly, with gentle restrained shading and crisp edges. This is an adult-friendly, all-ages education app. Animate meaningful facial, wrist, elbow and task gestures; do not animate floating, repeated whole-body bobbing or scale wobble. The four frames of each row must form a clear loop, with frame4 returning towards frame1. Four coherent phases, no extra limbs or detached joints. References: Image1 is the full-cast identity/style reference; Image2 is the same character's isolated outfit/head/prop identity reference. Integrate normal open eyes and mouth on the actual face; the second reference contains blank faces only because it was an old rig kit, so DO NOT reproduce a blank face. CHARACTER: JO, the older woman at the right of Image1. Keep her warm golden tan skin, short white/gray softly waved bob, round navy glasses, friendly expressive eyes and warm smile, orange collared blouse with rolled sleeves, tied navy café apron, sage/olive cropped trousers and cream slip-on shoes. Keep her comfortably adult/older, dignified and welcoming. ROW1: STANDING OFFERING A MUG in an asymmetrical welcome stance, one foot a little forward and knees relaxed, torso leaning slightly towards guest. One hand offers her familiar teal mug while the other opens in a warm invitation; she looks towards guest, gives a tiny reassuring nod/blink, rests and resets. Mug stays level in the hand. ROW2: Jo LEANS FORWARD FROM THE WAIST OVER A SMALL CAFÉ COUNTER to pour tea from a little kettle into a mug. Place the small counter to her SIDE so her full bent-forward torso, apron, both legs and feet remain visible beside it rather than hidden behind furniture. One knee softly bends for balance. Four coherent phases: kettle prepared, gentle pour, kettle raised back upright, warm glance towards viewer. Counter and mug remain perfectly fixed. Small pouring stream is fine; no excessive decoration. ROW3: Jo SITS on a small simple wooden café chair reading an open book. Her hips and knees are visibly bent, feet rest naturally on the ground, elbows comfortably folded towards book. She reads, turns a page, looks up with a warm smile, and returns. Complete chair, hands and shoes visible; no text on book. ROW4: Jo LEANS warmly forward with feet STAGGERED and one heel gently raised, knees softened and torso at a noticeable friendly angle. Both hands come together for a little congratulatory CLAP in front of her chest, separate, clap lightly and return, with happy eyes and a gentle head nod. This is a distinctly different leaning/clapping silhouette from the upright mug-offering stance. Keep her grounded and dignified; no floating. The four rows must read immediately as standing mug-offer, counter-lean tea-pouring, seated book-reading, and forward-leaning warm clap.",
+      "source": "C:\\Users\\David\\.codex\\generated_images\\01a1a684-5ebc-7212-88a0-8435cc89b465\\exec-1f16ed7b-2c84-44d7-b23b-c60c9be980b8.png",
+      "references": [
+        "assets/art/companions-v1.png",
+        "assets/art/jo-rig-v1.png"
+      ],
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGBA",
+      "sha256": "5a415691541e95acb0f8ba41ba171c25438cc7fe59c31414b575394aea62b3f9",
+      "nativeBytesUnchanged": true,
+      "frameColumns": 4,
+      "postureRows": 4,
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "displayRowCuts": [
+        0,
+        312,
+        626,
+        939,
+        1254
+      ],
+      "rowCutPolicy": "Metadata only; cuts are in the actual native transparent gaps. This avoids clipping the complete stance when the generated row spacing differs from exact quarters.",
+      "rowCutAlphaEvidence": [
+        {
+          "y": 312,
+          "pixelsAbove12": 0,
+          "maxAlpha": 1
+        },
+        {
+          "y": 626,
+          "pixelsAbove12": 0,
+          "maxAlpha": 2
+        },
+        {
+          "y": 939,
+          "pixelsAbove12": 0,
+          "maxAlpha": 1
+        }
+      ]
+    }
+  ]
+}

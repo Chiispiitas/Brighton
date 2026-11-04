@@ -1,0 +1,25 @@
+{
+  "id": "pico-postures-v1",
+  "tool": "OpenAI built-in image_gen",
+  "date": "2026-11-04",
+  "file": "assets/art/pico-postures-v1.png",
+  "source": "C:\\Users\\David\\.codex\\generated_images\\01a10ee1-5c4c-7e80-817b-36b2c2dafd47\\exec-217c9255-55a0-456f-add8-cba100a8453d.png",
+  "prompt": "Use case: illustration-story. Asset type: transparent full-body pose/action sprite atlas for Pico, the Horizons study companion. Image1 is his authoritative native part sheet and Image2 is his face icon: preserve exactly the cream mountain hare identity, navy oval eyes, friendly muzzle, one upright long ear and one bent ear, cream rounded belly, magenta crossbody satchel with long diagonal strap and gold button. Flat friendly borderless raster illustration, no drawn outlines, very subtle warm shading. All anatomy must be natural and complete; belly continues below the strap; paws and feet connected; no floating parts.\nSTRICT FOUR EQUAL COLUMNS by FOUR EQUAL ROWS, 16cells on a squarecanvas. Each row has ONE DISTINCT WHOLE-BODY POSTURE in FOUR successive coherent action frames. Same character scale, identity, camera and anchor point across a row; complete ears, paws, feet, bag and props inside every cell with generous transparent padding. No text, labels, grids, frames or watermark. Real transparent alpha outside subjects.\nRow1: Pico is crouched low exploring a folded map on the ground, both knees bent and body leaning forward. Four frames: studies map, touches a route with paw, looks up curiously, returns to map. This must have a crouched silhouette clearly different from upright.\nRow2: Pico sits on the ground with legs comfortably out in front, an open navy-and-orange book on his lap, satchel beside his hip. Four frames: looks down reading, gently turns a page, looks up with a warm smile, returns. Same book/face anatomy and stable ground position.\nRow3: Pico is walking/striding towards an adventure, body tilted forward, one paw pointing ahead. Four coherent gait phases with alternating legs and swinging ears/bag; keep character centered in cell, do not translate whole vignette. Clear walking silhouette, not upright idle.\nRow4: Pico performs a joyful small leap: frame1 knees deeply bent preparing, frame2 bothfeetoffground and armsup with broad happy eyes, frame3 softlandingkneesbent, frame4 settles. His body silhouette genuinely changes, ears follow through, no squished face or detached arms.\nThe four rows must look visibly different in whole body posture: crouching, sitting, striding and leaping. Within each row actions and expressions advance across all four columns, no identical repeated frame. Preserve a tasteful adult-friendly playful educational brand. No decorative objects beyond map/book/satchel, no background scene.",
+  "use": "Four genuinely different full-body postures (crouching/exploring, sitting/reading, striding, leaping), each with four visible action frames; native bytes unchanged.",
+  "width": 1254,
+  "height": 1254,
+  "sha256": "4894738eb0147fef1e382c1f053c870076830e9c67782b52d5fa336c4bff8cea",
+  "nativeBytesUnchanged": true,
+  "alphaExtrema": [
+    0,
+    255
+  ],
+  "rowCuts": [
+    0,
+    314,
+    628,
+    932,
+    1254
+  ],
+  "jumpFrameTop": 934
+}

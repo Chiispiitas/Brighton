@@ -32,6 +32,8 @@ Exact prompts, native source paths and hashes: [art provenance](assets/art/prove
 
 Refinement prompt sets: [human animation parts](assets/art/companion-motion-provenance.json), [occupation animation frames](assets/art/jobs-motion-provenance.json), [avatar blink artwork](assets/art/avatar-blink-v1.provenance.json). Earlier static sheets remain as source references. Raster viewports now contain artwork proportionally even when a UI box has a different shape. Paths use paired mirrored lanes and equal row spacing, retaining all 48 activities while reducing phone path length by about 38% against the first release.
 
+Distinct whole-body postures are used across screens: Pico explores crouched, reads seated, strides and leaps; Mina steps, kneels, reads on a bench and skips; Alex listens standing, sits cross-legged, crouches beside a speaker and dances; Jo offers a mug, leans over a counter, reads seated and claps. Each generated posture has four action frames. Welcome companions retain their articulated standing rigs. Bust avatars have portrait, raised-hand greeting and hand-to-chin thinking postures, with real generated hand and forearm parts. Additional native artwork and exact prompts: [Pico postures](assets/art/pico-postures-v1.provenance.json), [human postures](assets/art/companion-postures-provenance.json), [avatar gestures](assets/art/avatar-gestures-v1.provenance.json).
+
 ## Hosting and identity
 
 The frontend is buildless native JavaScript, hosted in this repository through GitHub Pages. Serve this repository root over HTTP for local development, then visit `/Horizons/App/`.

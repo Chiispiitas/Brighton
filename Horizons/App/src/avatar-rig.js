@@ -2,23 +2,29 @@
 const mounts = new WeakMap();
 const appURL = new URL('../', import.meta.url);
 let manifestPromise;
+let gesturesPromise;
 const css = `
 .hzn-avatar-bust{position:relative;display:block;width:100%;height:100%;overflow:hidden;isolation:isolate;pointer-events:none}
 .hzn-avatar-stage{position:absolute;width:320px;height:320px;transform-origin:0 0}
 .hzn-avatar-torso,.hzn-avatar-head{position:absolute;inset:0;transform-origin:160px 254px}
-.hzn-avatar-torso{z-index:1;animation:hz-avatar-shoulders var(--avatar-period,7s) ease-in-out infinite;animation-delay:var(--avatar-phase,0s)}
-.hzn-avatar-head{z-index:3;animation:hz-avatar-listen var(--avatar-period,7s) ease-in-out infinite;animation-delay:var(--avatar-phase,0s)}
+.hzn-avatar-torso{rotate:var(--avatar-posture-shoulders,0deg);z-index:1;animation:hz-avatar-shoulders var(--avatar-period,7s) ease-in-out infinite;animation-delay:var(--avatar-phase,0s)}
+.hzn-avatar-head{rotate:var(--avatar-posture-head,0deg);z-index:3;animation:hz-avatar-listen var(--avatar-period,7s) ease-in-out infinite;animation-delay:var(--avatar-phase,0s)}
 .hzn-avatar-bust[data-personality=curious] .hzn-avatar-head{animation-name:hz-avatar-curious}
 .hzn-avatar-bust[data-personality=cheerful] .hzn-avatar-head{animation-name:hz-avatar-cheerful}
 .hzn-avatar-pixels{position:absolute;overflow:hidden;display:block;transform-origin:50% 50%}
 .hzn-avatar-pixels>img{position:absolute;max-width:none!important;max-height:none!important;display:block;pointer-events:none;user-select:none}
 .hzn-avatar-eyes{opacity:0;z-index:4;animation:hz-avatar-blink var(--avatar-blink,5.6s) steps(1,end) infinite;animation-delay:var(--avatar-blink-phase,0s);mask-image:linear-gradient(90deg,transparent,#000 10%,#000 90%,transparent),linear-gradient(0deg,transparent,#000 15%,#000 85%,transparent);mask-composite:intersect}
+.hzn-avatar-gesture{position:absolute;z-index:8;transform-origin:34% 90%}.hzn-avatar-gesture[data-gesture=wave]{animation:hz-avatar-wave-arm 4.8s ease-in-out infinite}.hzn-avatar-gesture[data-gesture=think]{animation:hz-avatar-think-arm 6.2s ease-in-out infinite}.hzn-avatar-gesture[data-gesture=wave] .hzn-avatar-gesture-hand{animation:hz-avatar-wave-hand 4.8s ease-in-out infinite}.hzn-avatar-gesture[data-gesture=think] .hzn-avatar-gesture-hand{animation:hz-avatar-chin-touch 6.2s ease-in-out infinite}
 .hzn-avatar-hair{z-index:5;transform-origin:50% 90%}
 .hzn-avatar-bust[data-mood=wave] .hzn-avatar-head{animation:hz-avatar-hello 2.1s ease-in-out both}
 .hzn-avatar-bust[data-mood=wave] .hzn-avatar-torso{animation:hz-avatar-welcome-shoulders 2.1s ease-in-out both}
 .hzn-avatar-bust[data-mood=celebrate] .hzn-avatar-head{animation:hz-avatar-proud 2.1s ease-in-out both}
 .hzn-avatar-bust[data-mood=celebrate] .hzn-avatar-torso{animation:hz-avatar-proud-shoulders 2.1s ease-in-out both}
 .hzn-avatar-bust[data-mood=celebrate] [data-rig-part=badge]{animation:hz-avatar-pin 2.1s ease-in-out both}
+@keyframes hz-avatar-wave-arm{0%,12%,100%{transform:rotate(-1.2deg)}23%,45%{transform:rotate(1.5deg)}34%,57%{transform:rotate(-1.5deg)}72%{transform:rotate(.6deg)}}
+@keyframes hz-avatar-wave-hand{0%,12%,74%,100%{transform:rotate(0)}22%{transform:rotate(3deg)}32%{transform:rotate(-3deg)}42%{transform:rotate(3deg)}52%{transform:rotate(-2.5deg)}62%{transform:rotate(2deg)}}
+@keyframes hz-avatar-think-arm{0%,17%,100%{transform:rotate(0)}34%,63%{transform:rotate(1deg)}77%{transform:rotate(-.5deg)}}
+@keyframes hz-avatar-chin-touch{0%,20%,82%,100%{transform:rotate(0)}36%,56%{transform:rotate(-1.5deg)}46%,66%{transform:rotate(.8deg)}}
 @keyframes hz-avatar-blink{0%,34%,37%,81%,84%,100%{opacity:0}35%,36%,82%,83%{opacity:1}}
 @keyframes hz-avatar-listen{0%,18%,100%{transform:rotate(0)}35%,48%{transform:rotate(-2.3deg)}62%,73%{transform:rotate(1deg)}87%{transform:rotate(-.5deg)}}
 @keyframes hz-avatar-curious{0%,16%,100%{transform:rotate(0)}30%,40%{transform:rotate(2.8deg)}47%{transform:rotate(1.8deg)}55%{transform:rotate(2.8deg)}74%,86%{transform:rotate(-1.2deg)}}
@@ -33,19 +39,20 @@ const css = `
 `;
 function installStyle(){if(document.getElementById('hzn-avatar-bust-style'))return;const style=document.createElement('style');style.id='hzn-avatar-bust-style';style.textContent=css;document.head.append(style);}
 function getManifest(){return manifestPromise??=fetch(new URL('assets/art/manifest.json',appURL)).then(response=>{if(!response.ok)throw Error('Avatar artwork could not be opened');return response.json();});}
+function getGestures(){return gesturesPromise??=fetch(new URL('assets/art/avatar-gestures-v1.frames.json',appURL)).then(response=>{if(!response.ok)throw Error('Avatar gesture artwork could not be opened');return response.json();});}
 function groups(data){return data.avatar?.groups||data.avatar?.layers||data.avatar||{};}
 function choice(data,group,id){const values=groups(data)[group];const options=Array.isArray(values)?values:values?.options||[];return options.find(option=>option.id===id)||options[0];}
 function seedFor(avatar){return Object.values(avatar||{}).join(':').split('').reduce((value,char)=>(value*31+char.charCodeAt(0))>>>0,7);}
 export function unmountAvatar(element){mounts.get(element)?.dispose();mounts.delete(element);}
-export function mountAvatar(element,{avatar={},manifest,mood='idle'}={}){
- installStyle();unmountAvatar(element);let disposed=false,timer,observer;
+export function mountAvatar(element,{avatar={},manifest,mood='idle',posture='portrait'}={}){
+ installStyle();unmountAvatar(element);let disposed=false,timer,observer;const pose=['portrait','wave','think'].includes(posture)?posture:'portrait';
  const state={dispose(){disposed=true;clearTimeout(timer);observer?.disconnect();element.removeEventListener('pointerenter',greet);element.removeEventListener('focusin',greet);element.replaceChildren();},setMood(next='idle'){if(!state.frame)return;clearTimeout(timer);state.frame.dataset.mood='idle';void state.frame.offsetWidth;state.frame.dataset.mood=next;if(next!=='idle')timer=setTimeout(()=>{if(!disposed)state.frame.dataset.mood='idle';},2150);}};
  const greet=()=>state.setMood('wave');mounts.set(element,state);
- Promise.resolve(manifest||getManifest()).then(data=>{
+ Promise.all([Promise.resolve(manifest||getManifest()),pose==='portrait'?null:getGestures()]).then(([data,gestureAtlas])=>{
   if(disposed)return;
   const skin=choice(data,'skin',avatar.skin),outfit=choice(data,'outfit',avatar.outfit),hair=choice(data,'hair',avatar.hair),accessory=choice(data,'accessory',avatar.accessory),badge=choice(data,'badge',avatar.badge);
   if(!skin?.frame)return;
-  const frame=document.createElement('span');frame.className='hzn-avatar-bust';frame.dataset.intentionalCrop='bust';frame.dataset.avatarBust='true';frame.dataset.personality=['thoughtful','curious','cheerful'][seedFor(avatar)%3];frame.setAttribute('aria-hidden','true');
+  const frame=document.createElement('span');frame.className='hzn-avatar-bust';frame.dataset.intentionalCrop='bust';frame.dataset.avatarBust='true';frame.dataset.posture=pose;frame.style.setProperty('--avatar-posture-head',pose==='wave'?'-3deg':pose==='think'?'5deg':'0deg');frame.style.setProperty('--avatar-posture-shoulders',pose==='wave'?'1deg':pose==='think'?'-1.2deg':'0deg');frame.dataset.personality=['thoughtful','curious','cheerful'][seedFor(avatar)%3];frame.setAttribute('aria-hidden','true');
   const seed=seedFor(avatar);frame.style.setProperty('--avatar-period',`${6.8+(seed%27)/10}s`);frame.style.setProperty('--avatar-phase',`-${(seed%47)/10}s`);frame.style.setProperty('--avatar-blink',`${4.7+(seed%23)/10}s`);frame.style.setProperty('--avatar-blink-phase',`-${(seed%29)/10}s`);
   const stage=document.createElement('span');stage.className='hzn-avatar-stage';frame.append(stage);const torso=document.createElement('span');torso.className='hzn-avatar-torso';torso.dataset.rigPart='torso';torso.dataset.part='torso';const head=document.createElement('span');head.className='hzn-avatar-head';head.dataset.rigPart='head';head.dataset.part='head';stage.append(torso,head);element.replaceChildren(frame);state.frame=frame;
   const virtualWidth=500,virtualHeight=525,offsetX=(320-virtualWidth)/2,offsetY=44;
@@ -80,6 +87,13 @@ export function mountAvatar(element,{avatar={},manifest,mood='idle'}={}){
    if(accessory.id==='accessory-1'&&part){const height=accessory.frame.h*(p.w*virtualWidth/accessory.frame.w);part.style.top=`${skinTop+(73-skin.frame.y)*scale-height/2}px`;}
   }
   if(badge?.id&&badge.id!=='none'&&badge.frame){const s=34/badge.frame.w;pixels(torso,badge,badge.frame,207,278,s,'badge',8);}
+  if(gestureAtlas?.parts?.[pose]?.[skin.id]){
+   const box=gestureAtlas.parts[pose][skin.id],s=pose==='wave'?.55:.44,left=pose==='wave'?216:153,top=pose==='wave'?170:210;
+   const limb=document.createElement('span');limb.className='hzn-avatar-gesture';limb.dataset.rigPart='gesture-arm';limb.dataset.part='gesture-arm';limb.dataset.gesture=pose;limb.style.cssText=`left:${left}px;top:${top}px;width:${box.w*s}px;height:${box.h*s}px`;stage.append(limb);
+   const wristY=pose==='wave'?276:711,joinY=pose==='wave'?270:704,handEnd=pose==='wave'?282:719;
+   const forearm={x:box.x,y:joinY,w:box.w,h:box.y+box.h-joinY};pixels(limb,gestureAtlas,forearm,0,(joinY-box.y)*s,s,'forearm',1);
+   const hand={x:box.x,y:box.y,w:box.w,h:handEnd-box.y},palm=pixels(limb,gestureAtlas,hand,0,0,s,'hand',2,'hzn-avatar-gesture-hand');palm.style.transformOrigin=`${(pose==='wave'?86:84)*s}px ${(wristY-box.y)*s}px`;
+  }
   const fit=()=>{const bounds=frame.getBoundingClientRect(),s=Math.min(bounds.width/320,bounds.height/320);stage.style.left=`${(bounds.width-320*s)/2}px`;stage.style.top=`${(bounds.height-320*s)/2}px`;stage.style.transform=`scale(${s})`;};observer=new ResizeObserver(fit);observer.observe(frame);fit();frame.dataset.ready='true';state.setMood(mood);element.addEventListener('pointerenter',greet);element.addEventListener('focusin',greet);
  }).catch(error=>{if(!disposed){element.dataset.avatarError='true';console.error(error);}});
  return state;

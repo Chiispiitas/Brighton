@@ -1,53 +1,206 @@
 {
+  "postureCounts": {
+    "portrait": 7,
+    "wave": 7,
+    "think": 7
+  },
+  "allPosturesPresent": true,
   "motion": [
     {
       "head": "hz-avatar-listen",
       "torso": "hz-avatar-shoulders",
       "eyes": "hz-avatar-blink",
-      "personality": "thoughtful"
+      "personality": "thoughtful",
+      "posture": "portrait",
+      "gesture": null,
+      "gestureFrameY": null
     },
     {
       "head": "hz-avatar-cheerful",
       "torso": "hz-avatar-shoulders",
       "eyes": "hz-avatar-blink",
-      "personality": "cheerful"
+      "personality": "cheerful",
+      "posture": "portrait",
+      "gesture": null,
+      "gestureFrameY": null
     },
     {
       "head": "hz-avatar-listen",
       "torso": "hz-avatar-shoulders",
       "eyes": "hz-avatar-blink",
-      "personality": "thoughtful"
+      "personality": "thoughtful",
+      "posture": "portrait",
+      "gesture": null,
+      "gestureFrameY": null
     },
     {
       "head": "hz-avatar-listen",
       "torso": "hz-avatar-shoulders",
       "eyes": "hz-avatar-blink",
-      "personality": "thoughtful"
+      "personality": "thoughtful",
+      "posture": "portrait",
+      "gesture": null,
+      "gestureFrameY": null
     },
     {
       "head": "hz-avatar-listen",
       "torso": "hz-avatar-shoulders",
       "eyes": "hz-avatar-blink",
-      "personality": "thoughtful"
+      "personality": "thoughtful",
+      "posture": "portrait",
+      "gesture": null,
+      "gestureFrameY": null
     },
     {
       "head": "hz-avatar-curious",
       "torso": "hz-avatar-shoulders",
       "eyes": "hz-avatar-blink",
-      "personality": "curious"
+      "personality": "curious",
+      "posture": "portrait",
+      "gesture": null,
+      "gestureFrameY": null
     },
     {
       "head": "hz-avatar-listen",
       "torso": "hz-avatar-shoulders",
       "eyes": "hz-avatar-blink",
-      "personality": "thoughtful"
+      "personality": "thoughtful",
+      "posture": "wave",
+      "gesture": "wave",
+      "gestureFrameY": 118
+    },
+    {
+      "head": "hz-avatar-cheerful",
+      "torso": "hz-avatar-shoulders",
+      "eyes": "hz-avatar-blink",
+      "personality": "cheerful",
+      "posture": "wave",
+      "gesture": "wave",
+      "gestureFrameY": 118
+    },
+    {
+      "head": "hz-avatar-listen",
+      "torso": "hz-avatar-shoulders",
+      "eyes": "hz-avatar-blink",
+      "personality": "thoughtful",
+      "posture": "wave",
+      "gesture": "wave",
+      "gestureFrameY": 118
+    },
+    {
+      "head": "hz-avatar-listen",
+      "torso": "hz-avatar-shoulders",
+      "eyes": "hz-avatar-blink",
+      "personality": "thoughtful",
+      "posture": "wave",
+      "gesture": "wave",
+      "gestureFrameY": 118
+    },
+    {
+      "head": "hz-avatar-listen",
+      "torso": "hz-avatar-shoulders",
+      "eyes": "hz-avatar-blink",
+      "personality": "thoughtful",
+      "posture": "wave",
+      "gesture": "wave",
+      "gestureFrameY": 118
+    },
+    {
+      "head": "hz-avatar-curious",
+      "torso": "hz-avatar-shoulders",
+      "eyes": "hz-avatar-blink",
+      "personality": "curious",
+      "posture": "wave",
+      "gesture": "wave",
+      "gestureFrameY": 118
+    },
+    {
+      "head": "hz-avatar-listen",
+      "torso": "hz-avatar-shoulders",
+      "eyes": "hz-avatar-blink",
+      "personality": "thoughtful",
+      "posture": "think",
+      "gesture": "think",
+      "gestureFrameY": 588
+    },
+    {
+      "head": "hz-avatar-cheerful",
+      "torso": "hz-avatar-shoulders",
+      "eyes": "hz-avatar-blink",
+      "personality": "cheerful",
+      "posture": "think",
+      "gesture": "think",
+      "gestureFrameY": 588
+    },
+    {
+      "head": "hz-avatar-listen",
+      "torso": "hz-avatar-shoulders",
+      "eyes": "hz-avatar-blink",
+      "personality": "thoughtful",
+      "posture": "think",
+      "gesture": "think",
+      "gestureFrameY": 588
+    },
+    {
+      "head": "hz-avatar-listen",
+      "torso": "hz-avatar-shoulders",
+      "eyes": "hz-avatar-blink",
+      "personality": "thoughtful",
+      "posture": "think",
+      "gesture": "think",
+      "gestureFrameY": 588
+    },
+    {
+      "head": "hz-avatar-listen",
+      "torso": "hz-avatar-shoulders",
+      "eyes": "hz-avatar-blink",
+      "personality": "thoughtful",
+      "posture": "think",
+      "gesture": "think",
+      "gestureFrameY": 588
+    },
+    {
+      "head": "hz-avatar-curious",
+      "torso": "hz-avatar-shoulders",
+      "eyes": "hz-avatar-blink",
+      "personality": "curious",
+      "posture": "think",
+      "gesture": "think",
+      "gestureFrameY": 588
+    },
+    {
+      "head": "hz-avatar-listen",
+      "torso": "hz-avatar-shoulders",
+      "eyes": "hz-avatar-blink",
+      "personality": "thoughtful",
+      "posture": "portrait",
+      "gesture": null,
+      "gestureFrameY": null
+    },
+    {
+      "head": "hz-avatar-listen",
+      "torso": "hz-avatar-shoulders",
+      "eyes": "hz-avatar-blink",
+      "personality": "thoughtful",
+      "posture": "wave",
+      "gesture": "wave",
+      "gestureFrameY": 118
+    },
+    {
+      "head": "hz-avatar-listen",
+      "torso": "hz-avatar-shoulders",
+      "eyes": "hz-avatar-blink",
+      "personality": "thoughtful",
+      "posture": "think",
+      "gesture": "think",
+      "gestureFrameY": 588
     }
   ],
   "distinctHeadGestures": 3,
   "reducedMotion": true,
-  "scope": "Seven native layer avatar combinations; intentional upper-chest crop; no native bitmap edits",
+  "scope": "All six skins and accessories in three genuinely different native ImageGen arm postures, plus three bald variants; intentional upper-chest crop; no native bitmap edits",
   "errors": [],
-  "parts": 51,
+  "parts": 181,
   "maxNativeScaleError": 0.00000651041666688279,
   "maxFrameScaleError": 0.00000451977401128012,
   "screenshots": "C:/Users/David/Documents/Codex/2026-11-04/horizons-avatar-bust-proof",

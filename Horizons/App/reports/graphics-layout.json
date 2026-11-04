@@ -225,5 +225,51 @@
   "limits": [
     "This report covers the listed browser and widths, not every physical device.",
     "Full site activity/modals/occupation frame coverage is in the independent graphics audit."
-  ]
+  ],
+  "postureExtension": {
+    "date": "2026-11-04T13:34:06.907999+00:00",
+    "postures": 16,
+    "actionFramesPerPosture": 4,
+    "testedFootprints": [
+      {
+        "width": 62,
+        "height": 103
+      },
+      {
+        "width": 85,
+        "height": 164
+      },
+      {
+        "width": 140,
+        "height": 220
+      },
+      {
+        "width": 230,
+        "height": 300
+      }
+    ],
+    "nativeActionFrameSamples": 256,
+    "aspectOrViewportOrFrameInterpolationFailures": 0,
+    "runtimeErrors": [],
+    "nativeFramePolicy": "One fixed union bounding rectangle per pose across all four frames, with true native alpha-gap rowcuts; display crop preserves full anatomy. All postures are native ImageGen outputs.",
+    "proofReport": "C:/Users/David/Documents/Codex/2026-11-04/horizons-app-layout/posture-fit-report.json",
+    "proofContactSheet": "C:/Users/David/Documents/Codex/2026-11-04/horizons-app-layout/all-postures-proof.png",
+    "humanProvenance": "../assets/art/companion-postures-provenance.json",
+    "heroCollisionAudit": {
+      "widths": [
+        320,
+        390,
+        768,
+        1440
+      ],
+      "actionFramesPerWidth": 4,
+      "totalPhaseChecks": 16,
+      "visibleGraphicClipFailures": 0,
+      "opaqueGraphicTextOverlapFailures": 0,
+      "runtimeErrors": [],
+      "method": "Read-only alpha sampling from the native sprite atlas against actual browser text character advance rectangles, plus full native fitted-viewport margins against hero bounds. All four displayed action frames tested.",
+      "proofReport": "C:/Users/David/Documents/Codex/2026-11-04/horizons-app-layout/hero-posture-report.json",
+      "change": "Small-screen hero art inset and size fit the clipping surface. Mobile progress bar and caption stack at the left to avoid the map/satchel."
+    }
+  }
 }

@@ -13,7 +13,7 @@ for path in paths:
     rel = path.removeprefix('Horizons/App/')
     if rel.startswith(('src/', 'content/', 'styles/')) or rel in ('index.html', 'manifest.webmanifest', 'service-worker.js', 'demo-codes.json'):
         selected.append(path)
-    elif rel.startswith('assets/') and (rel.endswith(('.woff2', '.mp3', '.png')) or rel in ('assets/art/manifest.json', 'assets/audio/manifest.json')) and 'avatar-kit-v1.png' not in rel:
+    elif rel.startswith('assets/') and (rel.endswith(('.woff2', '.mp3', '.png', '.frames.json')) or rel in ('assets/art/manifest.json', 'assets/audio/manifest.json')) and 'avatar-kit-v1.png' not in rel:
         selected.append(path)
 source = (app / 'content/unit1.mjs').read_text(encoding='utf-8')
 audio = sorted(set(re.findall(r"audio:'([^']+\.mp3)'", source)))
