@@ -1,0 +1,100 @@
+{
+  "date": "2026-11-04T22:02:49.802346+00:00",
+  "status": "PUBLISHED_AND_VERIFIED",
+  "pass": true,
+  "url": "https://exams.bebrighton.net/Horizons/App/?v=friendly1#learn",
+  "runtimeCommit": "3b09c31b934eeb0404a56189bfa9afb1668c30be",
+  "backupBranch": "safety/horizons-before-friendly-faces-20261104",
+  "backupCommit": "fd90f16626533d90b0aa6f84b819757eb749665f",
+  "changes": [
+    "Relaxed gentle brows, open eyes, softened noses and warm smiles across Pico, Mina, Alex, Jo, occupation people, avatar bases and profile/app character icons.",
+    "Slimmer balanced bodies and native limbs, retaining distinct adult builds; Mina raised arm thickness refined further.",
+    "New Male/Female native avatar bases with all existing skin, hair, clothing, accessory and earned-pin IDs preserved. Draft-aware thumbnails, legacy default and real cross-device persistence verified.",
+    "Painted jaw/neck/collar and sleeve contacts repaired; occupation hands/props clarified; dance/skip/celebration leg overlaps constrained. Actual gesture interruption and return reviewed.",
+    "Pico has TWO separate gentle eyebrows in both the animated head and app icon. Native ImageGen source geometry retained with measured registration.",
+    "App audit now requires welcoming expressions, balanced silhouettes, two avatar bases and visible painted contact rather than mathematical pivots alone."
+  ],
+  "evidence": [
+    "friendly-art-record.json",
+    "avatar-friendly-author-review.json",
+    "avatar-friendly-structure.json",
+    "friendly-cast-author-review.json",
+    "friendly-cast-author-connectivity.json",
+    "friendly-human-independent-review.json",
+    "friendly-human-independent-callbacks.json",
+    "friendly-named-capture.json",
+    "friendly-pico-final-capture.json",
+    "friendly-avatar-pico-independent.json",
+    "jobs-friendly-author-review.json",
+    "jobs-friendly-independent-review.json",
+    "friendly-unit-checks.json",
+    "friendly-release-browser.json",
+    "friendly-cache-upgrade.json",
+    "friendly-release-browser-hosted.json",
+    "friendly-cache-upgrade-hosted.json",
+    "avatar-friendly-persistence-hosted.json",
+    "publication-assets.json"
+  ],
+  "coverage": {
+    "currentNamedPaintedFrames": {
+      "humans": 612,
+      "finalTwoEyebrowPico": 180,
+      "total": 792
+    },
+    "avatarAuthorPaintedCases": 232,
+    "avatarAlphaContactConfigurations": 936,
+    "avatarPaintedContactChecks": 9984,
+    "avatarMinimumOpaqueContactPixels": 33,
+    "humanPostures": 13,
+    "humanActualTransitionFrames": 1261,
+    "occupationTopics": 14,
+    "depictedOccupationPeople": 17,
+    "independentlyReviewedJobPhases": 56,
+    "localScreens": 235,
+    "unit1Activities": 48,
+    "viewportWidths": [
+      320,
+      390,
+      768,
+      1440
+    ],
+    "freshHostedViews": 41,
+    "hostedRealCallbacks": 4,
+    "hostedAvatarBasePersistence": true,
+    "hostedAvatarPersistenceProofViews": 5,
+    "publishedFilesMatchingCommittedBytes": 304,
+    "unchangedBookSourceRecordings": 12,
+    "contentTestsPassed": 15,
+    "backendTestsPassed": 26,
+    "countingNote": "Current named coverage combines unchanged612 final human frames with180 freshly captured two-eyebrow Pico frames. The earlier Pico portion of friendly-named-capture is pre-brow history and is not counted as current. Author/independent and static/transition matrices overlap; their counters are not added as unique frames."
+  },
+  "rootHostedVisualReview": [
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-friendly-release-hosted\\hosted-welcome-390.png",
+      "sha256": "2b57ae5f5afa41f0f69b3780f1f137d1ec23c78a15957d2f47982a123832385c",
+      "verdict": "pass",
+      "observations": "Friendly cast, balanced distinct builds, two separate Pico brows and connected body shapes fit the phone layout."
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-friendly-hosted\\male-draft-desktop.png",
+      "sha256": "fd1550b0555da33ab1ba064d92bcc43877b327843cd71c05d4c98433f12df3fc",
+      "verdict": "pass",
+      "observations": "Male base controls and friendly bust are visible; selected short sleeves and waving skin arm connect continuously."
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-friendly-hosted\\female-saved-mobile.png",
+      "sha256": "7685a5bb7ecd47cd427f83600950849bbbb8631f2509a7cc817b37edece3be2a",
+      "verdict": "pass",
+      "observations": "Female base is visibly selected and restored; the tapered face/neck and long-sleeved jacket remain connected during the wave. Headphones and hair fit the head."
+    }
+  ],
+  "runtimeFreeze": {
+    "pass": true,
+    "changedRuntimePathsAfterVerifiedCommit": [],
+    "subsequentCommitScope": "Documentation, test/tool parameterization and verification evidence only."
+  },
+  "limits": [
+    "Finite Edge/Chromium checks at320,390,768,1440px. Other browser engines are not claimed as tested.",
+    "Painted phase sampling, alpha contact and actual gesture/callback tests establish the stated reviewed scope; they are not a promise of universal perfection."
+  ]
+}

@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-04T20:44:56.669364+00:00",
+  "date": "2026-11-04T21:56:17.863895+00:00",
   "url": "https://exams.bebrighton.net/Horizons/App/",
-  "revision": "ac8eb5c43562a5095963ac759d8b346a62b04a21",
-  "checkedFiles": 275,
+  "revision": "3b09c31b934eeb0404a56189bfa9afb1668c30be",
+  "checkedFiles": 304,
   "bookSourceRecordings": 12,
   "pass": true,
   "files": [
@@ -119,6 +119,13 @@
       "matchesCommittedBytes": true
     },
     {
+      "path": "Horizons/App/assets/art/alex-friendly-v1.png",
+      "status": 200,
+      "bytes": 614995,
+      "sha256": "b7064394db3dc6972adb41148559fcfff198860126f05c46368afc1a807d8e43",
+      "matchesCommittedBytes": true
+    },
+    {
       "path": "Horizons/App/assets/art/alex-geometric-v1.png",
       "status": 200,
       "bytes": 793898,
@@ -144,6 +151,20 @@
       "status": 200,
       "bytes": 1188647,
       "sha256": "11d7d9300c2011337693898173a3340613c9155152c74b48a09952d8deeceb70",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/app-icon-friendly-v1.png",
+      "status": 200,
+      "bytes": 1107357,
+      "sha256": "e66a35a741b480ce59df73c33779f749cc004ef2b500cc696346120d6cd2403c",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/app-icon-friendly-v2.png",
+      "status": 200,
+      "bytes": 1090365,
+      "sha256": "b9f6bee53f0b5996450195431cddaa60f341d440360537ffe2e17c01ce9f7426",
       "matchesCommittedBytes": true
     },
     {
@@ -294,6 +315,48 @@
       "matchesCommittedBytes": true
     },
     {
+      "path": "Horizons/App/assets/art/avatar-friendly-clothing-v1.png",
+      "status": 200,
+      "bytes": 1237978,
+      "sha256": "f1fdf03414d3699e4ca9dadfec2ea980637b48e712c54459f26cac6ff9dda7fa",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/avatar-friendly-clothing-v2.png",
+      "status": 200,
+      "bytes": 1320629,
+      "sha256": "4f7360e8365d0a162e670dfe54f8375b7d9ac76fa94372312782902b1e527d99",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/avatar-friendly-heads-v1.png",
+      "status": 200,
+      "bytes": 1452116,
+      "sha256": "407bcff61341e0b650c9fa360aeb9901ebe068d39e1601dfd5560bfccab4ca82",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/avatar-friendly-limbs-v1.png",
+      "status": 200,
+      "bytes": 1311438,
+      "sha256": "b3f381a4207536642a89a990a1ca36fbf5b94c0470ec9e595f63270d05e826ad",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/avatar-friendly-limbs-v2.png",
+      "status": 200,
+      "bytes": 1300568,
+      "sha256": "ac04d55b7e3edf0e0a4a11ad44b501e7aad18fc22a711923cf48dc0aab2fc4dd",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/avatar-friendly-v1.frames.json",
+      "status": 200,
+      "bytes": 55467,
+      "sha256": "9f640237f648d08059097bff8214cabce9401d03a4ab2460ff97fb3a150a69ec",
+      "matchesCommittedBytes": true
+    },
+    {
       "path": "Horizons/App/assets/art/avatar-gestures-v1.frames.json",
       "status": 200,
       "bytes": 1341,
@@ -385,6 +448,13 @@
       "matchesCommittedBytes": true
     },
     {
+      "path": "Horizons/App/assets/art/cast-friendly-v1.frames.json",
+      "status": 200,
+      "bytes": 16681,
+      "sha256": "57713fbc007c34585104877984970b6cc22ab26883b8ad0255a1a923812663f0",
+      "matchesCommittedBytes": true
+    },
+    {
       "path": "Horizons/App/assets/art/cast-geometric-v1.frames.json",
       "status": 200,
       "bytes": 16725,
@@ -469,6 +539,13 @@
       "matchesCommittedBytes": true
     },
     {
+      "path": "Horizons/App/assets/art/jo-friendly-v1.png",
+      "status": 200,
+      "bytes": 638140,
+      "sha256": "7682ab806ebcdc9879232ad74e8031d1d875af0d7f859269023114b931e4ccf4",
+      "matchesCommittedBytes": true
+    },
+    {
       "path": "Horizons/App/assets/art/jo-geometric-v1.png",
       "status": 200,
       "bytes": 709188,
@@ -508,6 +585,83 @@
       "status": 200,
       "bytes": 11076,
       "sha256": "f2e2b0ea20063760667d0f1b5c2583d8afae586bd06e46c316c41ca6b7c8e468",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/jobs-friendly-1-v1.png",
+      "status": 200,
+      "bytes": 1408689,
+      "sha256": "8b01b8009dec88d05f331a68efffbfd6f0e2ef1132e1e9c436181581f914229f",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/jobs-friendly-1-v2.png",
+      "status": 200,
+      "bytes": 1260701,
+      "sha256": "0c6311c242b7160a8c7046141755d8da92d8026e6add4a5e1b95f21ffc21959f",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/jobs-friendly-1-v3.png",
+      "status": 200,
+      "bytes": 1299696,
+      "sha256": "6354d3cc018b5d5ca0a4a1997034c4bcbe9de28a914f138ec9b11c6da66930d5",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/jobs-friendly-1-v4.png",
+      "status": 200,
+      "bytes": 1270073,
+      "sha256": "84896603b339e390d348705da2d2b2ff8c4679fc07c924748d7fccd5b22c1652",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/jobs-friendly-2-v1.png",
+      "status": 200,
+      "bytes": 1071714,
+      "sha256": "4c04d9fe4a90fcb95a6ef348d9ca8a0dc2f5c84fc3daa65085da063ee329a689",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/jobs-friendly-2-v2.png",
+      "status": 200,
+      "bytes": 1057656,
+      "sha256": "a8b60a5d945358974efc0cd8069a7d556588901efccfcc8c44fad3eb21c1debd",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/jobs-friendly-3-v1.png",
+      "status": 200,
+      "bytes": 1229869,
+      "sha256": "326227826db7cd5502b4e0cdbc4ab55a67f7f1468e1209deec5da1bfa1ba406e",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/jobs-friendly-3-v2.png",
+      "status": 200,
+      "bytes": 1725478,
+      "sha256": "d15a3d940e000fa0a60fd5b9a9c55010407412974f866401aa5a834b16baf0bb",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/jobs-friendly-4-v1.png",
+      "status": 200,
+      "bytes": 1204769,
+      "sha256": "a15f019d0db4da5bdf7c31c88950340c28d6021360d098bdc81f79d71751feeb",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/jobs-friendly-4-v2.png",
+      "status": 200,
+      "bytes": 1029746,
+      "sha256": "465fbad055cf3e5c4b419baaf82d2ac7e0c7346a45711d025d2150d3baa9ccb2",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/jobs-friendly-v1.frames.json",
+      "status": 200,
+      "bytes": 17923,
+      "sha256": "c9a9d7c927947fc4620918db678815fa3e1a3ac0a98defb6f93558267f4dea97",
       "matchesCommittedBytes": true
     },
     {
@@ -569,8 +723,8 @@
     {
       "path": "Horizons/App/assets/art/manifest.json",
       "status": 200,
-      "bytes": 78313,
-      "sha256": "cf12d15d022ab00b34c0855b4a25dd456426b52a7e7c08e4de310c418e057e86",
+      "bytes": 80013,
+      "sha256": "2d34bd6a5e9df859849a6cafdc8a822939b186450ce85c4ee903b92467d2067b",
       "matchesCommittedBytes": true
     },
     {
@@ -606,6 +760,20 @@
       "status": 200,
       "bytes": 630623,
       "sha256": "4bc0e2c216e034eb062bf5a02361ad08a991c9b3cae5da182ad001e5fb6b3ef0",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/mina-friendly-v1.png",
+      "status": 200,
+      "bytes": 526962,
+      "sha256": "e19d9b2682bb1abccad1bac352506a24121e85f0c36601a0c8b2684fd984b598",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/mina-friendly-v2.png",
+      "status": 200,
+      "bytes": 535112,
+      "sha256": "e22e7135ec15815e5b580e96514300b55590848a02faff7deed27294f048b016",
       "matchesCommittedBytes": true
     },
     {
@@ -658,6 +826,27 @@
       "matchesCommittedBytes": true
     },
     {
+      "path": "Horizons/App/assets/art/pico-friendly-head-v1.png",
+      "status": 200,
+      "bytes": 642845,
+      "sha256": "0e3021ace8dda55226b628120ebe013e5398fd59fa46fb0b75cfdd86657b79cb",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/pico-friendly-head-v2.png",
+      "status": 200,
+      "bytes": 660985,
+      "sha256": "3cf032cea26eb0e2fc4911c51b6740fd562f73e306c1eb2bb9ba2c27648a622b",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/pico-friendly-v1.frames.json",
+      "status": 200,
+      "bytes": 4438,
+      "sha256": "fe18d9c323e320c2c54a5d0ec974fd12cfac7581d9f257a0e372f07737265eba",
+      "matchesCommittedBytes": true
+    },
+    {
       "path": "Horizons/App/assets/art/pico-graphic-v1.frames.json",
       "status": 200,
       "bytes": 4073,
@@ -697,6 +886,20 @@
       "status": 200,
       "bytes": 841557,
       "sha256": "8ea16705e1a7b0d285fe231519ffe41cfba36a5caae9f08644dc57618ee3e969",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/profile-friendly-v1.png",
+      "status": 200,
+      "bytes": 547952,
+      "sha256": "6ae3c90a9f5ddc18cba9ea4b09e477d73557d7e4e14d16a7e41f0f0fc321faac",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/profile-friendly-v2.png",
+      "status": 200,
+      "bytes": 520557,
+      "sha256": "a9713022283e29c1219350ba7179bac6277a4061c023f37dab2396b4a8fdf531",
       "matchesCommittedBytes": true
     },
     {
@@ -1850,22 +2053,22 @@
     {
       "path": "Horizons/App/index.html",
       "status": 200,
-      "bytes": 1695,
-      "sha256": "58d8dcd25b5d8ef433e848e5dab4bf914fa605164aa37573c7990b403f4324dc",
+      "bytes": 1699,
+      "sha256": "ed440c41eaf210dab048e13600d4cd33d01744eb190bb9793e1700c1ece0d60b",
       "matchesCommittedBytes": true
     },
     {
       "path": "Horizons/App/manifest.webmanifest",
       "status": 200,
-      "bytes": 454,
-      "sha256": "567340578d00b2c5227fde15a9463da187f87816489db7c06bf8fadf9d43bc30",
+      "bytes": 455,
+      "sha256": "ec010556fecbdc9f4636e21e9de152fd846c5f1f828279dfee6bbea2284a3e13",
       "matchesCommittedBytes": true
     },
     {
       "path": "Horizons/App/service-worker.js",
       "status": 200,
-      "bytes": 1818,
-      "sha256": "97b8eea5684275888b83550af3c63816a0e4ed4ed870420b63033b9caee8d7c6",
+      "bytes": 1821,
+      "sha256": "83a4f40d8ac4bf1b12889198f42ea4e4351656e6532c91495d9405edfbd5dad5",
       "matchesCommittedBytes": true
     },
     {
@@ -1878,29 +2081,29 @@
     {
       "path": "Horizons/App/src/app.js",
       "status": 200,
-      "bytes": 60626,
-      "sha256": "ca96cab55c2b857f4c66468201e22662b1cf3c41369e98a983f079e6ab4b5fe2",
+      "bytes": 60797,
+      "sha256": "52cf44110f33d81c172f0719830297034c9e9302fad7fa1a2281cbfcdf8f0cd9",
       "matchesCommittedBytes": true
     },
     {
       "path": "Horizons/App/src/art.js",
       "status": 200,
-      "bytes": 10754,
-      "sha256": "f12ff041826caa8efb088a4e574771d195d66f04cf0237fabd839296212921bf",
+      "bytes": 10777,
+      "sha256": "c9e5c99efbbdc30289b83257ba0616734fda6478526c4a1ff66cf50877f751af",
       "matchesCommittedBytes": true
     },
     {
       "path": "Horizons/App/src/avatar-rig.js",
       "status": 200,
-      "bytes": 21969,
-      "sha256": "058851f0abd24e6bcb1e7dd5ea6c1482ff044582d7652304aa3bf5606a2a6834",
+      "bytes": 22282,
+      "sha256": "597c4bbc97cdd4dac112915ee87e9ae6e52dcd55a018c4981378cde0045d2df8",
       "matchesCommittedBytes": true
     },
     {
       "path": "Horizons/App/src/cast-rig.js",
       "status": 200,
-      "bytes": 19708,
-      "sha256": "6f2d840e5ae9faf50653a82a932b6a4bfeb65834717d31c2d0c42df7ccdd775e",
+      "bytes": 19932,
+      "sha256": "8b723443ab456329d7ae909fe404b05fc170ccb8baba12b7f1f612df8c254bf8",
       "matchesCommittedBytes": true
     },
     {
@@ -1913,8 +2116,8 @@
     {
       "path": "Horizons/App/src/pico-articulated.js",
       "status": 200,
-      "bytes": 10234,
-      "sha256": "ebcdb3263edd6dfc5e178f2b2d6b3f35b8b0f4f53e412fad50fd402ad5349964",
+      "bytes": 10264,
+      "sha256": "9c2f829913d9620ea1f29b87cefad678d42de8893262eac38f489c15132e25f0",
       "matchesCommittedBytes": true
     },
     {

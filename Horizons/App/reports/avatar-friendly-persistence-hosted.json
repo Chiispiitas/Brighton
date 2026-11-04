@@ -1,0 +1,99 @@
+{
+  "date": "2026-11-04T21:58:54.100Z",
+  "base": "https://exams.bebrighton.net/Horizons/App/",
+  "sourceReference": {
+    "kind": "git-blob",
+    "commit": "3b09c31b934eeb0404a56189bfa9afb1668c30be"
+  },
+  "sourceHashes": {
+    "src/app.js": "52cf44110f33d81c172f0719830297034c9e9302fad7fa1a2281cbfcdf8f0cd9",
+    "src/art.js": "c9e5c99efbbdc30289b83257ba0616734fda6478526c4a1ff66cf50877f751af",
+    "src/avatar-rig.js": "597c4bbc97cdd4dac112915ee87e9ae6e52dcd55a018c4981378cde0045d2df8",
+    "assets/art/avatar-friendly-v1.frames.json": "9f640237f648d08059097bff8214cabce9401d03a4ab2460ff97fb3a150a69ec",
+    "assets/art/avatar-friendly-heads-v1.png": "407bcff61341e0b650c9fa360aeb9901ebe068d39e1601dfd5560bfccab4ca82",
+    "assets/art/avatar-friendly-clothing-v2.png": "4f7360e8365d0a162e670dfe54f8375b7d9ac76fa94372312782902b1e527d99",
+    "assets/art/avatar-friendly-limbs-v2.png": "ac04d55b7e3edf0e0a4a11ad44b501e7aad18fc22a711923cf48dc0aab2fc4dd",
+    "assets/art/avatar-graphic-flat-kit-v2.png": "900603edb8455ab76571b4d37eb1c3d78fb7d58915f6d14dacf1b70069d94c2e",
+    "assets/art/pico-friendly-v1.frames.json": "fe18d9c323e320c2c54a5d0ec974fd12cfac7581d9f257a0e372f07737265eba",
+    "assets/art/pico-friendly-head-v2.png": "3cf032cea26eb0e2fc4911c51b6740fd562f73e306c1eb2bb9ba2c27648a622b"
+  },
+  "scope": "Real isolated QA profile via existing backend avatar.body field. No activity attempts, no private values/codes/tokens logged.",
+  "testAdaptation": "Same authorized local persistence flow, configurable production URL/report/proof paths and exact committed source reference. Screenshots are explicitly scrolled to top after the toast clears so both base choices and the friendly female preview remain visible.",
+  "errors": [],
+  "checks": [
+    {
+      "name": "Legacy body defaults to Male while preserving saved customization values",
+      "pass": true
+    },
+    {
+      "name": "Female is a separate base with every hair/outfit/accessory available and draft-aware thumbnails",
+      "pass": true
+    },
+    {
+      "name": "Changing base keeps the other unsaved selections",
+      "pass": true
+    },
+    {
+      "name": "Real backend accepts and persists avatar.body female without migration or activity changes",
+      "pass": true
+    },
+    {
+      "name": "Saved female base and selections restore on reload and independent device session",
+      "pass": true
+    }
+  ],
+  "proofs": [
+    {
+      "name": "hosted-welcome-two-eyebrow-pico",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-friendly-hosted\\hosted-welcome-two-eyebrow-pico.png",
+      "sha256": "d14f39569fe50afc22da03a034915dc1ef8c6092d105ce7644af88a6f0a6ebd7",
+      "width": 390
+    },
+    {
+      "name": "female-draft-desktop",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-friendly-hosted\\female-draft-desktop.png",
+      "sha256": "07a59770f8a79901b77574e6f92609659e84ad460672ee5e37936dbdcf36f012",
+      "width": 1280
+    },
+    {
+      "name": "male-draft-desktop",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-friendly-hosted\\male-draft-desktop.png",
+      "sha256": "fd1550b0555da33ab1ba064d92bcc43877b327843cd71c05d4c98433f12df3fc",
+      "width": 1280
+    },
+    {
+      "name": "female-saved-mobile",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-friendly-hosted\\female-saved-mobile.png",
+      "sha256": "7685a5bb7ecd47cd427f83600950849bbbb8631f2509a7cc817b37edece3be2a",
+      "width": 390
+    },
+    {
+      "name": "female-restored-second-device",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-friendly-hosted\\female-restored-second-device.png",
+      "sha256": "9b762ae57e85b549e48be6c792ba812d9d0a7262f65dc4512bab97fc7ffbbfae",
+      "width": 390
+    }
+  ],
+  "pass": true,
+  "productionPico": {
+    "head": "assets/art/pico-friendly-head-v2.png",
+    "sha256": "3cf032cea26eb0e2fc4911c51b6740fd562f73e306c1eb2bb9ba2c27648a622b",
+    "actualWelcomeDOM": true
+  },
+  "savedValue": {
+    "body": "female",
+    "skin": "skin-6",
+    "outfit": "outfit-3",
+    "hair": "hair-1",
+    "accessory": "accessory-3"
+  },
+  "savedHttpStatus": 200,
+  "progressUnchanged": true,
+  "originalAvatarRestored": true,
+  "visualReview": {
+    "status": "PASS",
+    "reviewedProofs": 5,
+    "verdict": "Allfive actual production proofs directly inspected. Desktop Male/Female selection and six skin previews follow the draft. Mobile saved and second-device Female previews show both base choices visibly selected and connected raised jacket sleeves; welcome uses native two-eyebrow Pico head. No visible part detachment or clipping.",
+    "originalRestoration": "Original isolated avatar was restored and independently read back using getSession. No activity attempts made."
+  }
+}
