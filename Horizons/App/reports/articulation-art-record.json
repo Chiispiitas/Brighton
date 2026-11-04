@@ -1,0 +1,224 @@
+{
+  "date": "2026-11-04T17:21:15.561393+00:00",
+  "tool": "OpenAI built-in ImageGen",
+  "pngPixelsRepaintedInCode": false,
+  "animation": "Native viewports with registered continuously moving body parts; bitmap bytes remain unchanged.",
+  "assets": [
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-articulated-v3.png",
+      "sha256": "2c5ecbd0a8e4e60e6c9b7356ff9f3b83c8459a48a174c5fab2694b565914748a",
+      "bytes": 719166
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-articulated-v4.png",
+      "sha256": "bbc9ca1ab459d86673d765240ca9afba72ad4fd139c550e808ae5d5d111cced2",
+      "bytes": 739579
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-clothed-jacket-v1.png",
+      "sha256": "b2d0d90794d361f668748807f41f2c100d46ea00af428d8140fd43566abdf7e5",
+      "bytes": 1131850
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-clothed-kit-v1.png",
+      "sha256": "777f61a4c76df207500ed8f7719bfef0e55134bdd7c9879023e6ce622a7c3a52",
+      "bytes": 1376039
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-clothed-kit-v2.png",
+      "sha256": "29464069c83c95e4179112b4f2a5687080ea1808a3a271f19a47e91528ff9d8d",
+      "bytes": 1370688
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-clothed-skin-v1.png",
+      "sha256": "fb1bf80e11506d14ae8b491b4ed3aba1e1aa7fc2c66d7d2eca9cba5cafb9c509",
+      "bytes": 1394200
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-clothed-think-v1.png",
+      "sha256": "7b10347fb0353c7d3fdb7badfdf7213fcd17de2b9b49a700bfbddc59e6ab595a",
+      "bytes": 552370
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\driver-props-v1.png",
+      "sha256": "a02879086cb910d70b1b0da18ce5dae30c1b7fb2fa4f7cc48dbf66e31a6a4629",
+      "bytes": 1404364
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-articulated-v3.png",
+      "sha256": "d4226bd3e260dcd9d3c7a196df562eda31cb3c92f43d6d0e8b78b8ad40fa931e",
+      "bytes": 1011239
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-articulated-v3.png",
+      "sha256": "1618f6a5578dbdc160666b48123942a052b9deaf8ef57457b3caa15b95e3da14",
+      "bytes": 677488
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-articulated-v4.png",
+      "sha256": "4804eed152ff256b36607615c40750eb0fcfd55aec7443b42746015885335c35",
+      "bytes": 750650
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\pico-articulated-v3.png",
+      "sha256": "c29e442e49348638f64dfcc142d82d42d8d430203fb2ca7a2c50054286ea4aed",
+      "bytes": 1222981
+    }
+  ],
+  "exactPromptRecords": [
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\pico-articulated-v3.provenance.json",
+      "record": {
+        "tool": "OpenAI built-in ImageGen",
+        "source": "C:/Users/David/.codex/generated_images/01a10ee1-5c4c-7e80-817b-36b2c2dafd47/exec-1255cacd-b0da-49ff-bc1d-82abb8a2c3d6.png",
+        "file": "assets/art/pico-articulated-v3.png",
+        "nativeBytesPreserved": true,
+        "references": [
+          "assets/art/pico-rig-v2.png",
+          "assets/art/pico-postures-v1.png"
+        ],
+        "prompt": "Use case: illustration-story. Create one production transparent layered character-rig atlas for Pico, the Horizons adventurous mountain hare, matching the second reference's exact friendly warm cream fur, navy oval eyes, orange inner ears, magenta satchel with orange clasp, soft borderless rounded illustration aesthetic. The first reference is a PARTS LAYOUT reference only: replace its blank face and ambiguous limb segments with a complete friendly face and unambiguous rounded joint caps. True alpha transparency, no colored background, no glow, no labels, no checkerboard artwork. Strict 4 columns by 4 rows with sixteen separate nonoverlapping cutouts, generous clear gutters, every part fully inside its cell. Each cell equal size. Row1 left to right: (1) complete head looking slightly viewer-right, include both navy eyes, eyebrows, nose, muzzle, open friendly smile, NO ears or neck; (2) intact pear-shaped torso with complete cream belly and high rounded neck/shoulder connection, NO arms legs accessories, no holes; (3) tall upright left ear with rounded attachment base; (4) floppy right ear with rounded attachment base. Row2: (1) screen-left upper arm pointing vertically down with rounded shoulder and elbow caps; (2) matching screen-left forearm pointing vertically down, rounded elbow cap at top and small relaxed paw with three toe lines at bottom; (3) screen-right upper arm pointing vertically down with rounded shoulder/elbow caps; (4) matching screen-right forearm vertically down with open friendly waving paw at bottom, elbow cap at top. Row3: (1) screen-left upper thigh pointing vertically down, rounded hip and knee caps; (2) matching screen-left lower leg vertically down with rounded knee at top and full left-looking large hare foot at bottom; (3) screen-right upper thigh vertically down, rounded hip/knee caps; (4) matching right lower leg vertically down with rounded knee and full right-looking large hare foot. Row4: (1) magenta satchel bag only, soft trapezoid with orange round clasp; (2) separate gently diagonal magenta satchel strap only; (3) open navy and cream book with two clear hands-free covers, no text; (4) small folded cream/orange illustrated town map, no text. Each head/torso native size natural proportions, limb parts designed to overlap at actual rounded joints. Ear bases, arm and leg endpoints have enough native pixels to remain continuous when rotated. No detached facial features. No assembled character. No third arms, no duplicate paws, no cut limbs. Transparent outside every object. Native large crisp atlas, preferably1536 square.",
+        "sha256": "c29e442e49348638f64dfcc142d82d42d8d430203fb2ca7a2c50054286ea4aed"
+      }
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\cast-articulated-v3.provenance.json",
+      "record": {
+        "tool": "OpenAI built-in image_gen",
+        "date": "2026-11-04",
+        "nativeBytesUnchanged": true,
+        "changes": "Native surface cleanup removes drawn joint-cap disks; rounded overlap geometry retained.",
+        "records": [
+          {
+            "name": "mina",
+            "file": "mina-articulated-v3.png",
+            "source": "C:/Users/David/.codex/generated_images/01a1a742-54d1-7693-8b7c-fb270f9ad259/exec-3eb924dd-3be2-44b6-b5af-d0cb2db54893.png",
+            "prompt": "Use case: precise-object-edit. Edit this transparent twelve-part character animation atlas. Keep the same character identity, complete head/face, every part silhouette, pose, part location, scale, 4-column by3-row layout and transparent background. ONLY remove the visible drawn oval/circle/disc patches at all joint ends: torso shoulder round patches, upper arm shoulder/elbow cap patches, forearm upper cap patches, thigh hip/knee cap patches, and lower-leg knee cap patches. The ends of parts must STILL have rounded overlapping silhouette geometry, but their surface must be clean continuous matching cloth or skin, with NO dark circular end-cap shading, NO drawn joint lines, NO metallic pivots or puppet discs. Blend the upper/lower trouser sections into exactly the same navy for Mina/Alex or sage for Jo; make matching sleeves uniform magenta for Mina, teal for Alex, orange for Jo at joins. Keep gentle overall form shading and ordinary clothing folds away from the joints. Do not add anything, do not remove hands, do not change faces or expression or clothing style, do not draw a complete person. This is a targeted surface cleanup of the native art so overlapping body parts animate like a coherent dressed person rather than a robot puppet. Preserve crisp original alpha and true transparency, no glow, labels, grid or backdrop.",
+            "reference": "mina-articulated-v2.png",
+            "sha256": "1618f6a5578dbdc160666b48123942a052b9deaf8ef57457b3caa15b95e3da14"
+          },
+          {
+            "name": "alex",
+            "file": "alex-articulated-v3.png",
+            "source": "C:/Users/David/.codex/generated_images/01a1a742-54d1-7693-8b7c-fb270f9ad259/exec-79cefbd8-9389-4744-b341-bd3364dea10c.png",
+            "prompt": "Use case: precise-object-edit. Edit this transparent twelve-part character animation atlas. Keep the same character identity, complete head/face, every part silhouette, pose, part location, scale, 4-column by3-row layout and transparent background. ONLY remove the visible drawn oval/circle/disc patches at all joint ends: torso shoulder round patches, upper arm shoulder/elbow cap patches, forearm upper cap patches, thigh hip/knee cap patches, and lower-leg knee cap patches. The ends of parts must STILL have rounded overlapping silhouette geometry, but their surface must be clean continuous matching cloth or skin, with NO dark circular end-cap shading, NO drawn joint lines, NO metallic pivots or puppet discs. Blend the upper/lower trouser sections into exactly the same navy for Mina/Alex or sage for Jo; make matching sleeves uniform magenta for Mina, teal for Alex, orange for Jo at joins. Keep gentle overall form shading and ordinary clothing folds away from the joints. Do not add anything, do not remove hands, do not change faces or expression or clothing style, do not draw a complete person. This is a targeted surface cleanup of the native art so overlapping body parts animate like a coherent dressed person rather than a robot puppet. Preserve crisp original alpha and true transparency, no glow, labels, grid or backdrop.",
+            "reference": "alex-articulated-v2.png",
+            "sha256": "2c5ecbd0a8e4e60e6c9b7356ff9f3b83c8459a48a174c5fab2694b565914748a"
+          },
+          {
+            "name": "jo",
+            "file": "jo-articulated-v3.png",
+            "source": "C:/Users/David/.codex/generated_images/01a1a742-54d1-7693-8b7c-fb270f9ad259/exec-6184fa61-a03b-4be2-984a-f25c283ab5aa.png",
+            "prompt": "Use case: precise-object-edit. Edit this transparent twelve-part character animation atlas. Keep the same character identity, complete head/face, every part silhouette, pose, part location, scale, 4-column by3-row layout and transparent background. ONLY remove the visible drawn oval/circle/disc patches at all joint ends: torso shoulder round patches, upper arm shoulder/elbow cap patches, forearm upper cap patches, thigh hip/knee cap patches, and lower-leg knee cap patches. The ends of parts must STILL have rounded overlapping silhouette geometry, but their surface must be clean continuous matching cloth or skin, with NO dark circular end-cap shading, NO drawn joint lines, NO metallic pivots or puppet discs. Blend the upper/lower trouser sections into exactly the same navy for Mina/Alex or sage for Jo; make matching sleeves uniform magenta for Mina, teal for Alex, orange for Jo at joins. Keep gentle overall form shading and ordinary clothing folds away from the joints. Do not add anything, do not remove hands, do not change faces or expression or clothing style, do not draw a complete person. This is a targeted surface cleanup of the native art so overlapping body parts animate like a coherent dressed person rather than a robot puppet. Preserve crisp original alpha and true transparency, no glow, labels, grid or backdrop.",
+            "reference": "jo-articulated-v2.png",
+            "sha256": "d4226bd3e260dcd9d3c7a196df562eda31cb3c92f43d6d0e8b78b8ad40fa931e"
+          }
+        ]
+      }
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\cast-articulated-v4.provenance.json",
+      "record": {
+        "tool": "OpenAI built-in image_gen",
+        "date": "2026-11-04",
+        "nativeBytesUnchanged": true,
+        "records": [
+          {
+            "name": "mina",
+            "file": "mina-articulated-v4.png",
+            "source": "C:/Users/David/.codex/generated_images/01a1a742-54d1-7693-8b7c-fb270f9ad259/exec-58bd5b86-7dd9-40a7-98ce-ca8cf2907750.png",
+            "prompt": "Use case: precise-object-edit. Targeted neckline repair ONLY. In this exact transparent 4x3 twelve-part animation atlas, edit ONLY the torso in cell2 (top row second column). Keep every other pixel/part/head/limb/location/size unchanged. The torso's current top center neckline incorrectly has a horizontal magenta cardigan strip closing across where a human neck must go. Open a shallow natural U-shaped genuinely transparent neck aperture in the TOP CENTER of the torso between the collar/lapels, about one quarter of the torso width and about one tenth of torso height. It must continue down from the top transparent edge to the natural front neckline, so the separately generated skin neck can show through from behind. Keep the front cream T-shirt crew-neck rim as a smooth subtle curved front edge below the aperture. Preserve magenta open cardigan and cream tee shoulders, lapels and chest, no color bridge across the center neck opening. Do not add a neck/head/skin patch to this torso. No high collar or choker. No square slit. Correct native open neckline with clean alpha edges. Preserve all joint parts' clean continuous surfaces without circular caps, correct complete head and eyes, all limb silhouettes, original proportions and sheet layout. True transparent PNG, no added backdrop/shadow/glow/text.",
+            "reference": "mina-articulated-v3.png",
+            "use": "Torso viewport ONLY; every head and limb continues using the approved v3 source pixels.",
+            "sha256": "4804eed152ff256b36607615c40750eb0fcfd55aec7443b42746015885335c35"
+          },
+          {
+            "name": "alex",
+            "file": "alex-articulated-v4.png",
+            "source": "C:/Users/David/.codex/generated_images/01a1a742-54d1-7693-8b7c-fb270f9ad259/exec-14575589-6df4-48ed-82fe-3e8dcb2574ca.png",
+            "prompt": "Use case: precise-object-edit. Targeted neckline repair ONLY. In this exact transparent 4x3 twelve-part animation atlas, edit ONLY the torso in cell2 (top row second column). Keep every other pixel/part/head/limb/location/size unchanged. The torso's current top center neckline incorrectly has a horizontal teal overshirt strip closing across where a human neck must go. Open a shallow natural U-shaped genuinely transparent neck aperture in the TOP CENTER of the torso between the collar/lapels, about one quarter of the torso width and about one tenth of torso height. It must continue down from the top transparent edge to the natural front neckline, so the separately generated skin neck can show through from behind. Keep the front orange T-shirt crew-neck rim as a smooth subtle curved front edge below the aperture. Preserve teal open overshirt and orange tee shoulders, lapels and chest, no color bridge across the center neck opening. Do not add a neck/head/skin patch to this torso. No high collar or choker. No square slit. Correct native open neckline with clean alpha edges. Preserve all joint parts' clean continuous surfaces without circular caps, correct complete head and eyes, all limb silhouettes, original proportions and sheet layout. True transparent PNG, no added backdrop/shadow/glow/text.",
+            "reference": "alex-articulated-v3.png",
+            "use": "Torso viewport ONLY; every head and limb continues using the approved v3 source pixels.",
+            "sha256": "bbc9ca1ab459d86673d765240ca9afba72ad4fd139c550e808ae5d5d111cced2"
+          }
+        ]
+      }
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-clothed-kit-v1.provenance.json",
+      "record": {
+        "tool": "OpenAI built-in ImageGen",
+        "date": "2026-11-04",
+        "asset": "assets/art/avatar-clothed-kit-v1.png",
+        "source": "C:/Users/David/.codex/generated_images/01a1a741-6afe-76d2-9c90-d2d095c7985a/exec-38c83eab-c618-4863-92a8-ad38c76f1109.png",
+        "prompt": "Use case: precise-object-edit. Production layered animation sheet on a true transparent background. The attached image is STYLE AND OUTFIT REFERENCE only. Match these exact six outfits, left to right: magenta hoodie with hood and cream drawstrings; teal short-sleeve T-shirt; navy explorer jacket over cream shirt; orange long-sleeve crewneck sweater; teal overalls over cream short-sleeve T-shirt; magenta cardigan over cream shirt. Keep friendly flat rounded borderless illustration, same colors, subtle shading. Native animation pieces, no people, no faces, no legs, no hands, no labels, no decorative background, no glow or pale fringe. Strict grid SIX EQUAL COLUMNS by THREE EQUAL ROWS, generous transparent gutters between every item. ROW ONE: six front-facing waist-length clothing TORSOS ONLY, each with neck opening at top, original collars/hood/straps/buttons, broad shoulder line ending at rounded arm attachment caps; NO arms or dangling resting sleeves. Finish hidden cloth behind armholes, no holes in torso. ROW TWO: six separate upper-arm sleeves matching the outfit directly above, all oriented straight DOWN, rounded shoulder cap at top, elbow at bottom. Consistent construction scale: upper arm shoulder-to-elbow length 120px, width 50px. Long sleeves in columns1,3,4,6 extend to elbow with a rounded overlapping cloth end; short sleeves columns2 and5 only cover the upper half of a 120px arm, sleeve opening midway, transparent below. ROW THREE: detachable forearm sleeves ONLY for long-sleeve columns1,3,4,6: oriented straight DOWN, rounded overlapping elbow end at top, wrist cuff at bottom, elbow-to-wrist length 115px, width42px. Leave column2 and5 row3 genuinely EMPTY transparent, because these outfits have bare forearms. Smooth rounded joint overlap, no flat-cut floating patches. The shoulder and elbow segments are designed to rotate around circular joints. The pieces must be separate fully visible, no overlap among grid cells, no cropping.",
+        "nativeBytesPreserved": true,
+        "sha256": "777f61a4c76df207500ed8f7719bfef0e55134bdd7c9879023e6ce622a7c3a52"
+      }
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-clothed-kit-v2.provenance.json",
+      "record": {
+        "tool": "OpenAI built-in ImageGen",
+        "date": "2026-11-04",
+        "asset": "assets/art/avatar-clothed-kit-v2.png",
+        "source": "C:/Users/David/.codex/generated_images/01a1a75d-1e76-7570-afda-02c7487c5a8b/exec-c723f801-9d22-48d2-8b4a-24957508e9fc.png",
+        "editTarget": "assets/art/avatar-clothed-kit-v1.png",
+        "prompt": "Use case: precise-object-edit. Edit target: the supplied 1536x1024 native transparent six-outfit animation sheet. Make ONE targeted correction ONLY in sleeve pieces in rows two and three: remove all visible mechanical ellipse/ring outlines, oval cap rims, socket marks and dark endcap seam bands at shoulder/elbow overlap ends. Replace those interior ellipse/ring marks with smoothly continuous matching fabric color and subtle soft fabric shading. Forearm sleeve top should remain a smoothly rounded fabric end, with no outlined oval disc, no ring, no raised button, no separate cap. Upper sleeve lower overlap should have no dark hollow tube oval; it should be solid rounded cloth. Preserve normal actual wrist cuffs and the two short-sleeve openings in columns two and five. Preserve the exact shapes, placements, dimensions, six columns, three rows, all outfit colors, alpha silhouettes and transparent gutters. Keep row one torso artwork completely unchanged. Keep row three columns two and five fully empty transparent. No faces, people, hands, labels, extra items or new designs. Background must remain genuinely transparent and native alpha edge quality retained. This is an animation material seam retouch, not a redesign.",
+        "nativeBytesPreserved": true,
+        "consumption": "Only rows 2 and 3 sleeve viewports are consumed. Existing torso pixels and head assets are preserved by continuing to use their original PNGs.",
+        "sha256": "29464069c83c95e4179112b4f2a5687080ea1808a3a271f19a47e91528ff9d8d"
+      }
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-clothed-skin-v1.provenance.json",
+      "record": {
+        "tool": "OpenAI built-in ImageGen",
+        "date": "2026-11-04",
+        "asset": "assets/art/avatar-clothed-skin-v1.png",
+        "source": "C:/Users/David/.codex/generated_images/01a1a741-6afe-76d2-9c90-d2d095c7985a/exec-b6b13893-90d4-4810-907c-cbab2c3c88df.png",
+        "prompt": "Use case: precise-object-edit. Production transparent modular animation sheet for friendly flat rounded human avatars. Reference is color/style only; match EXACT six skin tones of the six reference heads from pale peach left to deep brown right. No backgrounds, gradients outside pieces, labels, faces, clothing or whole people. Strict SIX equal columns by THREE equal rows, generous transparent gutters. Each column is one consistent skin tone. ROW ONE: separate upper arm skin capsule, oriented vertically DOWN, circular shoulder attachment at top, straight natural upper arm with circular elbow overlap at bottom. All six identical anatomy/size: 50px width, 125px overall length. ROW TWO: forearm skin capsule oriented vertically DOWN, circular elbow attachment at top, gradually tapering toward a narrow wrist at bottom, no hand; same anatomy and construction scale, about42px upper width to26px wrist width,125px length. ROW THREE: separate OPEN HAND seen front/palm, wrist at TOP, fingers naturally pointing DOWN, thumb on viewer LEFT. Exactly five fingers, no sixth digit, gentle rounded forms, single clear silhouette, no cut seams. Fingers not splayed excessively. Same size for all tones: wrist26px, palm42px,finger+handheight90px. All pieces must be full continuous clean silhouettes, no weird flat stumps apart from wrist attachment, no body, no hands attached to row2, no forearms attached to row3. Need very clean transparent alpha, no white outline or fringe. Upperarm and forearm segments will rotate in a real shoulder/elbow joint hierarchy; circular overlap is essential. Subtle natural crease shading only at joint and palm, matching flat illustration reference.",
+        "nativeBytesPreserved": true,
+        "sha256": "fb1bf80e11506d14ae8b491b4ed3aba1e1aa7fc2c66d7d2eca9cba5cafb9c509"
+      }
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-clothed-think-v1.provenance.json",
+      "record": {
+        "tool": "OpenAI built-in ImageGen",
+        "date": "2026-11-04",
+        "asset": "assets/art/avatar-clothed-think-v1.png",
+        "source": "C:/Users/David/.codex/generated_images/01a1a741-6afe-76d2-9c90-d2d095c7985a/exec-7ef49d02-fe69-4ec1-b9b9-78b2e5b6736d.png",
+        "prompt": "Production modular animation asset, true transparent background. Use reference for EXACT six skin colors and simple soft flat borderless illustration style. SIX EQUAL COLUMNS, ONE ROW, generously spaced, same scale, isolated hands only. Each hand is a gentle THINKING HAND: relaxed curled fingers forming a loose fist, index knuckle prominent and thumb resting against curled fingers; NOT an open palm, NOT a pointing finger, NOT holding anything. Wrist attachment at TOP with short straight wrist stump, fingers/knuckles pointing DOWN. All hands identical anatomy and size across six skin tones, approximately75px wide and105px high. Exactly five digits implied anatomically, no extras or disconnected pieces. Smooth clean silhouettes with no white outline, no glow or haze, no faces, no arms, no text. They will attach at a wrist joint and rotate upward to rest lightly under an avatar's chin. Keep soft natural curved shapes and very subtle crease shading matching the reference faces.",
+        "nativeBytesPreserved": true,
+        "sha256": "7b10347fb0353c7d3fdb7badfdf7213fcd17de2b9b49a700bfbddc59e6ab595a"
+      }
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-clothed-jacket-v1.provenance.json",
+      "record": {
+        "tool": "OpenAI built-in ImageGen",
+        "date": "2026-11-04",
+        "asset": "assets/art/avatar-clothed-jacket-v1.png",
+        "source": "C:/Users/David/.codex/generated_images/01a1a741-6afe-76d2-9c90-d2d095c7985a/exec-d129f935-c7e9-43c3-92bc-03cb63da3a36.png",
+        "prompt": "Use case: precise-object-edit. Generate ONLY the navy explorer jacket TORSO from reference column3 row1, as a standalone animation layer on true transparency. Preserve the exact friendly flat borderless blue fabric style and navy/teal-blue shade, cream shirt inside, rounded proportions, understated jacket collar/lapels. No head, no neck, no skin, no hands, NO sleeves or arms beyond small round shoulder attachment caps. Waist-length frontal torso only, completely visible. IMPORTANT correction: remove the flat dark-blue horizontal stripe across the neck. The cream inner T-shirt has a LOW, shallow SCOOP NECK with a genuinely TRANSPARENT open neck hole; no blue band, no dark horizontal line, no choker, no navy piping around the inner neckline. Navy collar is ONLY two separated left/right open jacket flaps, with a wide open space between them. The transparent skin opening should be clearly lower than the collar peaks, shaped like a smooth shallow U. Clean silhouette and soft minimal shading. No labels, no ground, no glow, no white outline. Needs clean alpha and intact cloth core behind the arm attachment areas. One torso centered, with generous empty transparent margins.",
+        "nativeBytesPreserved": true,
+        "sha256": "b2d0d90794d361f668748807f41f2c100d46ea00af428d8140fd43566abdf7e5"
+      }
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\driver-props-v1.provenance.json",
+      "record": {
+        "tool": "OpenAI built-in ImageGen",
+        "source": "C:/Users/David/.codex/generated_images/01a10ee1-5c4c-7e80-817b-36b2c2dafd47/exec-570cd3e4-fe78-4392-b449-2f956569d002.png",
+        "file": "assets/art/driver-props-v1.png",
+        "nativeBytesPreserved": true,
+        "references": [
+          "assets/art/pico-articulated-v3.png"
+        ],
+        "prompt": "Use case: illustration-story. Create a small production transparent prop atlas for an animated English-learning app, matching this reference's softly shaded friendly borderless navy, warm orange and cream illustration style. EXACTLY TWO separate cutout objects stacked vertically in two equal cells, large clear transparent gutters. TOP CELL: one front-on circular navy bus steering wheel, warm orange central round hub, three spokes, no hands, no shaft, no text, center the wheel exactly inside its cell, perfectly circular silhouette. BOTTOM CELL: one simplified front-on curved bus driver's dashboard console seen from the seat, navy/teal/orange/cream, low clean horizontal shape with a few simple softly shaded colored instrument controls, no steering wheel, no person, no seat, no windshield, no fake letters or legible text. These are clean native raster illustration pieces, not icons with borders. Transparent alpha around both props, no background, no glow, no white fringe, no shadows outside the objects. Both objects fully visible and not overlapping. Preserve the provided app illustration aesthetic but include no rabbit or body parts. Crisp large canvas in portrait orientation, two equal rows.",
+        "sha256": "a02879086cb910d70b1b0da18ce5dae30c1b7fb2fa4f7cc48dbf66e31a6a4629"
+      }
+    }
+  ]
+}

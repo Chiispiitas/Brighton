@@ -1,0 +1,48 @@
+// Continuous articulated motion over native ImageGen parts, with registered
+// shoulder/elbow/hip/knee/ankle anchors. The face is a single native image.
+const appURL=new URL('../',import.meta.url),mounts=new WeakMap();let kitPromise;
+const rad=Math.PI/180,deg=180/Math.PI;
+const css=`.pico3{position:relative;display:block;width:100%;height:100%;pointer-events:none;isolation:isolate}.pico3-stage{position:absolute;width:360px;height:520px;transform-origin:0 0}.pico3-actor{position:absolute;inset:0}.pico3-joint{position:absolute;width:0;height:0;transform-origin:0 0}.pico3-pixels{position:absolute;display:block;overflow:hidden;max-width:none!important;max-height:none!important}.pico3-pixels>img{position:absolute;display:block;max-width:none!important;max-height:none!important;pointer-events:none}`;
+function install(){if(document.getElementById('pico3-style'))return;const e=document.createElement('style');e.id='pico3-style';e.textContent=css;document.head.append(e);}
+function kit(){return kitPromise??=fetch(new URL('assets/art/pico-articulated-v3.frames.json',appURL),{cache:'no-cache'}).then(r=>{if(!r.ok)throw Error('Pico artwork unavailable');return r.json();});}
+function ik(x,y,tx,ty,a,b,bend){const dx=tx-x,dy=ty-y,d=Math.max(Math.abs(a-b)+.01,Math.min(a+b-.01,Math.hypot(dx,dy)));const theta=Math.atan2(dy,dx),offset=Math.acos(Math.max(-1,Math.min(1,(a*a+d*d-b*b)/(2*a*d)))),u=theta+bend*offset;const ex=x+a*Math.cos(u),ey=y+a*Math.sin(u),f=Math.atan2(ty-ey,tx-ex);return[(u*deg-90),((f-u)*deg)];}
+export function unmountPico(element){mounts.get(element)?.dispose();mounts.delete(element);}
+export function mountPico(element,{mood='idle',posture='greet'}={}){
+ install();unmountPico(element);let disposed=false,observer,timer,animations=[],currentMood=mood,generation=0,initialized=false,enterCycle;const reduced=matchMedia('(prefers-reduced-motion:reduce)');
+ const controller={setMood(next='idle'){currentMood=next;clearTimeout(timer);const cycle=start();if(next!=='idle')timer=setTimeout(()=>{currentMood='idle';start();},cycle||8000);},seek(ms){enterCycle?.();for(const a of animations){a.pause();a.currentTime=Math.max(0,ms);}},dispose(){disposed=true;generation++;clearTimeout(timer);animations.forEach(a=>a.cancel());observer?.disconnect();reduced.removeEventListener('change',onMotion);element.removeEventListener('pointerenter',greet);element.removeEventListener('focusin',greet);delete element.__articulatedRig;element.replaceChildren();}};
+ const onMotion=()=>start(),greet=()=>controller.setMood('wave');mounts.set(element,controller);element.__articulatedRig=controller;
+ let stage,actor,meta,nodes={};
+ kit().then(data=>{if(disposed)return;meta=data;stage=document.createElement('span');stage.className='pico3-stage';actor=document.createElement('span');actor.className='pico3-actor';stage.append(actor);const frame=document.createElement('span');frame.className='pico3';frame.dataset.articulatedCharacter='pico';frame.dataset.rigPose=posture;frame.append(stage);element.replaceChildren(frame);
+  function joint(parent,name,x,y,z=1){const n=document.createElement('span');n.className='pico3-joint';n.dataset.joint=name;n.dataset.rigPart=name;n.style.cssText=`left:${x}px;top:${y}px;z-index:${z}`;parent.append(n);nodes[name]=n;return n;}
+  function pixels(parent,name,canonical=false){const p=meta.parts[name],b=p.frame,s=p.scale,[px,py]=p.pivot,e=document.createElement('span');e.className='pico3-pixels';e.dataset.nativeFrame=JSON.stringify(b);e.dataset.nativeScale=String(s);e.style.cssText=`left:${(b.x-px)*s}px;top:${(b.y-py)*s}px;width:${b.w*s}px;height:${b.h*s}px;transform-origin:${(px-b.x)*s}px ${(py-b.y)*s}px`;if(p.clip)e.style.clipPath=p.clip;let transforms=[];if(canonical&&p.end)transforms.push(`rotate(${Math.atan2(p.end[0]-px,p.end[1]-py)*deg}deg)`);if(p.mirror)transforms.push('scaleX(-1)');e.style.transform=transforms.join(' ');const im=document.createElement('img');im.src=new URL(meta.src,appURL).href;im.alt='';im.draggable=false;im.style.cssText=`width:${meta.atlas.width*s}px;height:${meta.atlas.height*s}px;left:${-b.x*s}px;top:${-b.y*s}px`;e.append(im);parent.append(e);return e;}
+  const length=name=>{const p=meta.parts[name];return Math.hypot(p.end[0]-p.pivot[0],p.end[1]-p.pivot[1])*p.scale;};
+  for(const side of['Left','Right']){const hip=joint(actor,'thigh'+side,side==='Left'?159:204,355,1);pixels(hip,'thigh'+side,true);const knee=joint(hip,'lowerLeg'+side,0,length('thigh'+side));pixels(knee,'lowerLeg'+side,true);const foot=joint(knee,'foot'+side,0,length('lowerLeg'+side));pixels(foot,'foot'+side);}
+  pixels(joint(actor,'torso',180,251,3),'torso');
+  for(const side of['Left','Right']){const upper=joint(actor,'upperArm'+side,side==='Left'?143:224,282,2);pixels(upper,'upperArm'+side,true);pixels(joint(upper,'forearm'+side,0,length('upperArm'+side)),'forearm'+side,true);}
+  pixels(joint(actor,'strap',205,280,6),'strap');pixels(joint(actor,'satchel',139,342,7),'satchel');
+  const head=joint(actor,'head',180,262,8);pixels(head,'head').style.zIndex='2';pixels(joint(head,'earLeft',-25,-112,0),'earLeft');pixels(joint(head,'earRight',30,-111,0),'earRight');
+  pixels(joint(actor,'book',180,326,9),'book');pixels(joint(actor,'map',180,350,9),'map');
+  controller.length=length;controller.frame=frame;observer=new ResizeObserver(()=>{const r=element.getBoundingClientRect(),s=Math.min(r.width/360,r.height/520);stage.style.transform=`scale(${s})`;stage.style.left=(r.width-360*s)/2+'px';stage.style.top=r.height-520*s+'px';});observer.observe(element);reduced.addEventListener('change',onMotion);element.addEventListener('pointerenter',greet);element.addEventListener('focusin',greet);frame.dataset.rigReady='true';element.dataset.rigReady='true';start();
+ }).catch(error=>{if(!disposed){element.dataset.rigError='true';console.error(error);}});
+ function start(){if(!meta||disposed)return;const token=++generation,wasReady=initialized,current=Object.fromEntries([['actor',actor],...Object.entries(nodes)].map(([name,node])=>[name,getComputedStyle(node).transform]));enterCycle=null;animations.forEach(a=>a.cancel());animations=[];const pose=currentMood==='celebrate'?'jump':currentMood==='wave'?'greet':posture==='stride'?'stride':posture,stance=currentMood!=='idle'&&['read','explore'].includes(posture)?posture:pose;const duration=pose==='greet'?6400:pose==='jump'?4200:pose==='stride'?3600:7600;controller.frame.dataset.rigPose=pose;controller.frame.dataset.mood=currentMood;
+  nodes.book.style.opacity=stance==='read'?'1':'0';nodes.map.style.opacity=stance==='explore'?'1':'0';
+  const frames={actor:[],...Object.fromEntries(Object.keys(nodes).map(name=>[name,[]]))};
+  for(let i=0;i<=120;i++){const q=i/120,t=q*Math.PI*2,w=Math.sin(t),wave=Math.sin(t*3),jump=Math.max(0,Math.sin(t))**2;const bodyY=(stance==='read'?46+w*1.2:stance==='explore'?34+w*1.3:stance==='stride'?-2*Math.abs(Math.sin(t)):0)+(pose==='jump'?-20*jump:0);
+   frames.actor.push({transform:`translateY(${bodyY}px)`,offset:q});
+   const angles={head:(stance==='explore'?5:stance==='read'?3:0)+w*2,earLeft:Math.sin(t*2+.4)*3,earRight:Math.sin(t*2-1)*4,satchel:Math.sin(t-.5)*2};
+   frames.book.push({transform:`translateY(${w*3}px) rotate(${w*1.6}deg)`,offset:q});frames.map.push({transform:`translateY(${w*2.6}px) rotate(${w*2.1}deg)`,offset:q});
+   for(const side of['Left','Right']){const left=side==='Left',hipX=left?159:204,bend=left?1:-1,step=Math.sin(t+(left?0:Math.PI)),lift=pose==='jump'?30*jump:stance==='stride'?Math.max(0,step)*7:0;const footX=(left?145:222)+(stance==='stride'?step*7:stance==='read'?(left?-7:7):0);const leg=ik(hipX,355,footX,462-lift-bodyY,controller.length('thigh'+side),controller.length('lowerLeg'+side),bend);angles['thigh'+side]=leg[0];angles['lowerLeg'+side]=leg[1];angles['foot'+side]=-leg[0]-leg[1]+(stance==='stride'?step*3:0);
+    if(pose==='greet'&&!left){angles.upperArmRight=-125+Math.sin(t)*4;angles.forearmRight=10+wave*9;}
+    else if((stance==='read'||stance==='explore')&&(left||pose!=='jump')){const cy=stance==='read'?326:350,rx=left?-45:45,ry=left?1:-1,a=w*(stance==='read'?1.6:2.1)*rad,lift=w*(stance==='read'?3:2.6);const arm=ik(left?143:224,282,180+rx*Math.cos(a)-ry*Math.sin(a),cy+lift+rx*Math.sin(a)+ry*Math.cos(a),controller.length('upperArm'+side),controller.length('forearm'+side),left?1:-1);angles['upperArm'+side]=arm[0];angles['forearm'+side]=arm[1];}
+    else if(pose==='jump'){angles['upperArm'+side]=(left?18:-24)+(left?137:-131)*jump;angles['forearm'+side]=(left?-48:35)+(left?3:10)*jump;}
+    else{angles['upperArm'+side]=(left?18:-24)+(pose==='stride'?step*17:w*3);angles['forearm'+side]=(left?-48:35)+Math.sin(t+.8)*5;}
+   }
+   for(const[name,value]of Object.entries(angles))frames[name].push({transform:`rotate(${value}deg)`,offset:q});
+  }
+  const entries=Object.entries(frames).filter(([,frames])=>frames.length),run=()=>{if(disposed||generation!==token)return;enterCycle=null;animations.forEach(a=>a.cancel());animations=[];for(const[name,keyframes]of entries){const node=name==='actor'?actor:nodes[name];node.style.transform=keyframes[0].transform;if(!reduced.matches)animations.push(node.animate(keyframes,{duration,iterations:Infinity,easing:'linear'}));}};
+  initialized=true;
+  if(!wasReady||reduced.matches)run();else{for(const[name,keyframes]of entries){const node=name==='actor'?actor:nodes[name];animations.push(node.animate([{transform:current[name]||'none',offset:0},{transform:keyframes[0].transform,offset:1}],{duration:620,easing:'ease-in-out',fill:'forwards'}));}enterCycle=run;Promise.all(animations.map(a=>a.finished.catch(()=>{}))).then(()=>{if(generation===token)enterCycle?.();});}
+  return duration+620;
+ }
+ return controller;
+}

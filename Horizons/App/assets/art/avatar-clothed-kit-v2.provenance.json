@@ -1,0 +1,11 @@
+{
+  "tool": "OpenAI built-in ImageGen",
+  "date": "2026-11-04",
+  "asset": "assets/art/avatar-clothed-kit-v2.png",
+  "source": "C:/Users/David/.codex/generated_images/01a1a75d-1e76-7570-afda-02c7487c5a8b/exec-c723f801-9d22-48d2-8b4a-24957508e9fc.png",
+  "editTarget": "assets/art/avatar-clothed-kit-v1.png",
+  "prompt": "Use case: precise-object-edit. Edit target: the supplied 1536x1024 native transparent six-outfit animation sheet. Make ONE targeted correction ONLY in sleeve pieces in rows two and three: remove all visible mechanical ellipse/ring outlines, oval cap rims, socket marks and dark endcap seam bands at shoulder/elbow overlap ends. Replace those interior ellipse/ring marks with smoothly continuous matching fabric color and subtle soft fabric shading. Forearm sleeve top should remain a smoothly rounded fabric end, with no outlined oval disc, no ring, no raised button, no separate cap. Upper sleeve lower overlap should have no dark hollow tube oval; it should be solid rounded cloth. Preserve normal actual wrist cuffs and the two short-sleeve openings in columns two and five. Preserve the exact shapes, placements, dimensions, six columns, three rows, all outfit colors, alpha silhouettes and transparent gutters. Keep row one torso artwork completely unchanged. Keep row three columns two and five fully empty transparent. No faces, people, hands, labels, extra items or new designs. Background must remain genuinely transparent and native alpha edge quality retained. This is an animation material seam retouch, not a redesign.",
+  "nativeBytesPreserved": true,
+  "consumption": "Only rows 2 and 3 sleeve viewports are consumed. Existing torso pixels and head assets are preserved by continuing to use their original PNGs.",
+  "sha256": "29464069c83c95e4179112b4f2a5687080ea1808a3a271f19a47e91528ff9d8d"
+}

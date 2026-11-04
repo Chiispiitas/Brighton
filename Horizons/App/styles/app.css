@@ -173,3 +173,4 @@ input,select,textarea{font-size:16px!important}
 .nav-avatar-frame{display:block;width:27px;height:27px;flex:none}.nav-avatar-frame>.avatar-nav{display:block;width:27px;height:27px;aspect-ratio:1;border-radius:50%;overflow:hidden}
 .character>.posture-art{width:100%;height:100%;max-width:100%;max-height:100%;aspect-ratio:auto!important;display:block}.character>.raster-frame.posture-art>.raster-fit{top:100%!important;transform:translate(-50%,-100%)!important}
 .character[data-posture-sprite],.character[data-posture-sprite]>.posture-art{animation:none!important}
+.character[data-motion-system=articulated]{animation:none!important}

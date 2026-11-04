@@ -1,0 +1,5311 @@
+{
+  "date": "2026-11-04T17:38:24.349Z",
+  "base": "http://127.0.0.1:8898/Horizons/App/",
+  "baselineCommit": "ab28389",
+  "baselineCache": "horizons-companion-anatomy-v4",
+  "currentCache": "horizons-companion-articulation-v5",
+  "scope": "Actual committed wholeframe renderer and service-worker Cache Storage installed, then replaced through the real update/activate/controller lifecycle by current articulated release. Reserved isolated QA profile; no activity awards or profile edits.",
+  "sourceReference": {
+    "kind": "working-tree",
+    "comparison": "Exact working-tree source and binary bytes."
+  },
+  "currentSourceHashes": {
+    "index.html": "4de0eb6986d1e10cb8322da7bbe0c7c05a98db4a8cb26a3061b96f16f1277498",
+    "styles/app.css": "fdb8f80ce698e7881dd346056c373b143a7721ef5b09f784b727d6c68aafc7fc",
+    "src/app.js": "99422872ef89bb34aeee52541cb9dace90fec78987d95789ebd19d3d22272319",
+    "src/art.js": "4350e45b67772275ab26c1009249a88ca3474c60642ea706e30956860b5cb407",
+    "src/avatar-rig.js": "09ee5d245f9fed2c4b2d3d038b2a6c19fa29714830bf81663d59c2d4816b6699",
+    "src/pico-articulated.js": "f239b037352a6aaf00b1a07eab184925e7b3a7269a14fa08aba2f14f017749fa",
+    "src/cast-rig.js": "2208e6cd8675f6ce3c5c27c52bae11fe721622cdf5228cd20be8b130ddb26b04",
+    "service-worker.js": "64916a06ff0d776f5d16de07a94e578c8bb5bb84108dded5797bed946bbfe3b9",
+    "assets/art/alex-articulated-v3.png": "2c5ecbd0a8e4e60e6c9b7356ff9f3b83c8459a48a174c5fab2694b565914748a",
+    "assets/art/avatar-clothed-jacket-v1.png": "b2d0d90794d361f668748807f41f2c100d46ea00af428d8140fd43566abdf7e5",
+    "assets/art/avatar-clothed-jacket-v1.provenance.json": "91aa364c97b3d9162ba6a4d8da43482fa4c7de0bf22071bbb9d0c1c53a56c3e2",
+    "assets/art/avatar-clothed-kit-v1.frames.json": "524e51b54773f5739834d05a324cd446ac9c4b561af4d6d0d9a707501b2cf1f3",
+    "assets/art/avatar-clothed-kit-v1.png": "777f61a4c76df207500ed8f7719bfef0e55134bdd7c9879023e6ce622a7c3a52",
+    "assets/art/avatar-clothed-kit-v1.provenance.json": "71db34714390e882c0f5ac8713b51f87eb86c636e2fa92ef4bc9cd04663abfae",
+    "assets/art/avatar-clothed-kit-v2.png": "29464069c83c95e4179112b4f2a5687080ea1808a3a271f19a47e91528ff9d8d",
+    "assets/art/avatar-clothed-kit-v2.provenance.json": "1c6a3e0161095b9b53596c6b8c1055e4fc734a5e72d09de4e55521afb3ef968c",
+    "assets/art/avatar-clothed-skin-v1.png": "fb1bf80e11506d14ae8b491b4ed3aba1e1aa7fc2c66d7d2eca9cba5cafb9c509",
+    "assets/art/avatar-clothed-skin-v1.provenance.json": "38bd27ba71acdc8bcecbc85752a56c3b699325446f80ad6d67be20049bf47413",
+    "assets/art/avatar-clothed-think-v1.png": "7b10347fb0353c7d3fdb7badfdf7213fcd17de2b9b49a700bfbddc59e6ab595a",
+    "assets/art/avatar-clothed-think-v1.provenance.json": "1b6be4827fd64aad52059ee725db24329c53e888c2978825bad890b4165ce6bc",
+    "assets/art/cast-articulated-v3.frames.json": "6e1e11b2ffbc16069303ab98b895ce027da4b49d0bc03efc679fa4e2007cc48a",
+    "assets/art/cast-articulated-v3.provenance.json": "bc02b1ea1fdfc73432ba36a58db2f76efb001ba593603d0661970956a62c29aa",
+    "assets/art/cast-articulated-v4.frames.json": "21e240eeeb57d002c73d8c29117e63c6dcfcbc54916e5c72e3a300aeb2b71cc7",
+    "assets/art/cast-articulated-v4.provenance.json": "56a8d5d5195bb311e73a2cb502d1def1fad74027449a1f8a3f747d99b380c62c",
+    "assets/art/jo-articulated-v3.png": "d4226bd3e260dcd9d3c7a196df562eda31cb3c92f43d6d0e8b78b8ad40fa931e",
+    "assets/art/mina-articulated-v3.png": "1618f6a5578dbdc160666b48123942a052b9deaf8ef57457b3caa15b95e3da14",
+    "assets/art/pico-articulated-v3.frames.json": "9d8ec1e22c83a870ce0ccbe070f29ae2356fa2eef59ba27d0da186a07ebff103",
+    "assets/art/pico-articulated-v3.png": "c29e442e49348638f64dfcc142d82d42d8d430203fb2ca7a2c50054286ea4aed",
+    "assets/art/pico-articulated-v3.provenance.json": "c7d00f2a5d6c4954416c7c864a552370437910a34b146b4e094a11721fbfa36c"
+  },
+  "steps": [
+    {
+      "name": "committed-wholeframe-worker-installed",
+      "controller": true,
+      "cacheNames": [
+        "horizons-companion-anatomy-v4"
+      ],
+      "cachedArtURL": "src/art.js?v=anatomy1",
+      "namedCharacters": [
+        {
+          "name": "pico",
+          "wholeframe": true,
+          "jointCount": 0
+        },
+        {
+          "name": "mina",
+          "wholeframe": true,
+          "jointCount": 0
+        },
+        {
+          "name": "alex",
+          "wholeframe": true,
+          "jointCount": 0
+        },
+        {
+          "name": "jo",
+          "wholeframe": true,
+          "jointCount": 0
+        }
+      ],
+      "framePlayback": [
+        {
+          "name": "pico",
+          "atlasPositions": 4,
+          "samples": [
+            {
+              "fraction": 0.1,
+              "left": "-55.3906px",
+              "top": "-586.547px"
+            },
+            {
+              "fraction": 0.42,
+              "left": "-347.266px",
+              "top": "-586.547px"
+            },
+            {
+              "fraction": 0.62,
+              "left": "-639.141px",
+              "top": "-586.547px"
+            },
+            {
+              "fraction": 0.82,
+              "left": "-931.016px",
+              "top": "-586.547px"
+            }
+          ]
+        },
+        {
+          "name": "mina",
+          "atlasPositions": 4,
+          "samples": [
+            {
+              "fraction": 0.1,
+              "left": "-31.3906px",
+              "top": "-9.96875px"
+            },
+            {
+              "fraction": 0.42,
+              "left": "-215.344px",
+              "top": "-9.96875px"
+            },
+            {
+              "fraction": 0.62,
+              "left": "-399.297px",
+              "top": "-9.96875px"
+            },
+            {
+              "fraction": 0.82,
+              "left": "-583.25px",
+              "top": "-9.96875px"
+            }
+          ]
+        },
+        {
+          "name": "alex",
+          "atlasPositions": 4,
+          "samples": [
+            {
+              "fraction": 0.1,
+              "left": "-82.125px",
+              "top": "-11.3438px"
+            },
+            {
+              "fraction": 0.42,
+              "left": "-356.047px",
+              "top": "-11.3438px"
+            },
+            {
+              "fraction": 0.62,
+              "left": "-629.953px",
+              "top": "-11.3438px"
+            },
+            {
+              "fraction": 0.82,
+              "left": "-903.875px",
+              "top": "-11.3438px"
+            }
+          ]
+        },
+        {
+          "name": "jo",
+          "atlasPositions": 4,
+          "samples": [
+            {
+              "fraction": 0.1,
+              "left": "-57.7344px",
+              "top": "-5.39062px"
+            },
+            {
+              "fraction": 0.42,
+              "left": "-269.469px",
+              "top": "-5.39062px"
+            },
+            {
+              "fraction": 0.62,
+              "left": "-481.203px",
+              "top": "-5.39062px"
+            },
+            {
+              "fraction": 0.82,
+              "left": "-692.938px",
+              "top": "-5.39062px"
+            }
+          ]
+        }
+      ],
+      "oldWorkerIntercepts": 1,
+      "cachedOldArtHash": "dfd9182995912540cfcda861e3224abcc354636f916a81f03622501a8db232df",
+      "workers": [
+        {
+          "path": "/Horizons/App/service-worker.js",
+          "cache": "horizons-companion-anatomy-v4"
+        }
+      ],
+      "pass": true
+    },
+    {
+      "name": "isolated-profile-authenticated-with-existing-session",
+      "pass": true
+    },
+    {
+      "name": "current-worker-activated",
+      "cacheNames": [
+        "horizons-companion-articulation-v5"
+      ],
+      "newWorkerState": "activated",
+      "updateStates": [
+        "installing",
+        "installed",
+        "activating",
+        "activated"
+      ],
+      "pass": true
+    },
+    {
+      "name": "authenticated-current-articulation-and-clothes-after-real-update",
+      "cacheNames": [
+        "horizons-companion-articulation-v5"
+      ],
+      "controller": true,
+      "wholeframeNamed": [],
+      "characters": [
+        {
+          "name": "pico",
+          "parts": 18,
+          "ready": true
+        },
+        {
+          "name": "mina",
+          "parts": 14,
+          "ready": true
+        },
+        {
+          "name": "jo",
+          "parts": 15,
+          "ready": true
+        },
+        {
+          "name": "mina",
+          "parts": 15,
+          "ready": true
+        },
+        {
+          "name": "alex",
+          "parts": 15,
+          "ready": true
+        },
+        {
+          "name": "jo",
+          "parts": 14,
+          "ready": true
+        }
+      ],
+      "modules": [
+        {
+          "path": "src/app.js",
+          "version": "articulation2"
+        },
+        {
+          "path": "src/art.js",
+          "version": "articulation2"
+        },
+        {
+          "path": "src/avatar-rig.js",
+          "version": "articulation2"
+        },
+        {
+          "path": "src/cast-rig.js",
+          "version": "articulation2"
+        },
+        {
+          "path": "src/pico-articulated.js",
+          "version": "articulation2"
+        }
+      ],
+      "authenticated": true,
+      "motion": [
+        {
+          "name": "pico",
+          "jointCount": 18,
+          "changingJoints": [
+            {
+              "part": "thighLeft",
+              "states": 5
+            },
+            {
+              "part": "lowerLegLeft",
+              "states": 5
+            },
+            {
+              "part": "footLeft",
+              "states": 5
+            },
+            {
+              "part": "thighRight",
+              "states": 5
+            },
+            {
+              "part": "lowerLegRight",
+              "states": 5
+            },
+            {
+              "part": "footRight",
+              "states": 5
+            },
+            {
+              "part": "upperArmLeft",
+              "states": 5
+            },
+            {
+              "part": "forearmLeft",
+              "states": 5
+            },
+            {
+              "part": "upperArmRight",
+              "states": 5
+            },
+            {
+              "part": "forearmRight",
+              "states": 5
+            },
+            {
+              "part": "satchel",
+              "states": 6
+            },
+            {
+              "part": "head",
+              "states": 5
+            },
+            {
+              "part": "earLeft",
+              "states": 6
+            },
+            {
+              "part": "earRight",
+              "states": 6
+            },
+            {
+              "part": "book",
+              "states": 5
+            },
+            {
+              "part": "map",
+              "states": 5
+            }
+          ],
+          "stableImageCrops": true,
+          "samples": [
+            {
+              "timeMs": 0,
+              "joints": [
+                {
+                  "key": "thighLeft:0",
+                  "part": "thighLeft",
+                  "transform": "matrix(0.575804, 0.817588, -0.817588, 0.575804, 0, 0)"
+                },
+                {
+                  "key": "lowerLegLeft:1",
+                  "part": "lowerLegLeft",
+                  "transform": "matrix(-0.19712, -0.980379, 0.980379, -0.19712, 0, 0)"
+                },
+                {
+                  "key": "footLeft:2",
+                  "part": "footLeft",
+                  "transform": "matrix(0.688044, 0.725669, -0.725669, 0.688044, 0, 0)"
+                },
+                {
+                  "key": "thighRight:3",
+                  "part": "thighRight",
+                  "transform": "matrix(0.488107, -0.872784, 0.872784, 0.488107, 0, 0)"
+                },
+                {
+                  "key": "lowerLegRight:4",
+                  "part": "lowerLegRight",
+                  "transform": "matrix(-0.195747, 0.980654, -0.980654, -0.195747, 0, 0)"
+                },
+                {
+                  "key": "footRight:5",
+                  "part": "footRight",
+                  "transform": "matrix(0.760354, -0.649509, 0.649509, 0.760354, 0, 0)"
+                },
+                {
+                  "key": "torso:6",
+                  "part": "torso",
+                  "transform": "none"
+                },
+                {
+                  "key": "upperArmLeft:7",
+                  "part": "upperArmLeft",
+                  "transform": "matrix(0.533496, 0.845803, -0.845803, 0.533496, 0, 0)"
+                },
+                {
+                  "key": "forearmLeft:8",
+                  "part": "forearmLeft",
+                  "transform": "matrix(-0.270453, -0.962733, 0.962733, -0.270453, 0, 0)"
+                },
+                {
+                  "key": "upperArmRight:9",
+                  "part": "upperArmRight",
+                  "transform": "matrix(0.664596, -0.747203, 0.747203, 0.664596, 0, 0)"
+                },
+                {
+                  "key": "forearmRight:10",
+                  "part": "forearmRight",
+                  "transform": "matrix(-0.238765, 0.971077, -0.971077, -0.238765, 0, 0)"
+                },
+                {
+                  "key": "strap:11",
+                  "part": "strap",
+                  "transform": "none"
+                },
+                {
+                  "key": "satchel:12",
+                  "part": "satchel",
+                  "transform": "matrix(0.99986, -0.0167343, 0.0167343, 0.99986, 0, 0)"
+                },
+                {
+                  "key": "head:13",
+                  "part": "head",
+                  "transform": "matrix(0.996195, 0.0871557, -0.0871557, 0.996195, 0, 0)"
+                },
+                {
+                  "key": "earLeft:14",
+                  "part": "earLeft",
+                  "transform": "matrix(0.999792, 0.0203885, -0.0203885, 0.999792, 0, 0)"
+                },
+                {
+                  "key": "earRight:15",
+                  "part": "earRight",
+                  "transform": "matrix(0.998275, -0.058712, 0.058712, 0.998275, 0, 0)"
+                },
+                {
+                  "key": "book:16",
+                  "part": "book",
+                  "transform": "matrix(1, 0, 0, 1, 0, 0)"
+                },
+                {
+                  "key": "map:17",
+                  "part": "map",
+                  "transform": "matrix(1, 0, 0, 1, 0, 0)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-28.35px",
+                  "top": "-224.7px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-140.01px",
+                  "top": "-250.38px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-142.35px",
+                  "top": "-316.68px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-239.4px",
+                  "top": "-224.7px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-388.83px",
+                  "top": "-252.72px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-388.83px",
+                  "top": "-316.68px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-160.08px",
+                  "top": "-14.72px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-24.42px",
+                  "top": "-118.47px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-130.35px",
+                  "top": "-118.47px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-228.03px",
+                  "top": "-118.14px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-325.71px",
+                  "top": "-118.14px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-95.2px",
+                  "top": "-273.84px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-7.36px",
+                  "top": "-322.24px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-16.12px",
+                  "top": "-42.16px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-335.04px",
+                  "top": "-9.12px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-383.2px",
+                  "top": "-32px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-256px",
+                  "top": "-404px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-378px",
+                  "top": "-403.6px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 1292,
+              "joints": [
+                {
+                  "key": "thighLeft:0",
+                  "part": "thighLeft",
+                  "transform": "matrix(0.565569, 0.824701, -0.824701, 0.565569, 0, 0)"
+                },
+                {
+                  "key": "lowerLegLeft:1",
+                  "part": "lowerLegLeft",
+                  "transform": "matrix(-0.22165, -0.975126, 0.975126, -0.22165, 0, 0)"
+                },
+                {
+                  "key": "footLeft:2",
+                  "part": "footLeft",
+                  "transform": "matrix(0.678829, 0.734296, -0.734296, 0.678829, 0, 0)"
+                },
+                {
+                  "key": "thighRight:3",
+                  "part": "thighRight",
+                  "transform": "matrix(0.475712, -0.879601, 0.879601, 0.475712, 0, 0)"
+                },
+                {
+                  "key": "lowerLegRight:4",
+                  "part": "lowerLegRight",
+                  "transform": "matrix(-0.219383, 0.975639, -0.975639, -0.219383, 0, 0)"
+                },
+                {
+                  "key": "footRight:5",
+                  "part": "footRight",
+                  "transform": "matrix(0.75381, -0.657093, 0.657093, 0.75381, 0, 0)"
+                },
+                {
+                  "key": "torso:6",
+                  "part": "torso",
+                  "transform": "none"
+                },
+                {
+                  "key": "upperArmLeft:7",
+                  "part": "upperArmLeft",
+                  "transform": "matrix(0.541727, 0.840554, -0.840554, 0.541727, 0, 0)"
+                },
+                {
+                  "key": "forearmLeft:8",
+                  "part": "forearmLeft",
+                  "transform": "matrix(-0.252931, -0.967484, 0.967484, -0.252931, 0, 0)"
+                },
+                {
+                  "key": "upperArmRight:9",
+                  "part": "upperArmRight",
+                  "transform": "matrix(0.693022, -0.720916, 0.720916, 0.693022, 0, 0)"
+                },
+                {
+                  "key": "forearmRight:10",
+                  "part": "forearmRight",
+                  "transform": "matrix(-0.150998, 0.988534, -0.988534, -0.150998, 0, 0)"
+                },
+                {
+                  "key": "strap:11",
+                  "part": "strap",
+                  "transform": "none"
+                },
+                {
+                  "key": "satchel:12",
+                  "part": "satchel",
+                  "transform": "matrix(0.999824, 0.0187747, -0.0187747, 0.999824, 0, 0)"
+                },
+                {
+                  "key": "head:13",
+                  "part": "head",
+                  "transform": "matrix(0.993064, 0.117573, -0.117573, 0.993064, 0, 0)"
+                },
+                {
+                  "key": "earLeft:14",
+                  "part": "earLeft",
+                  "transform": "matrix(0.999557, 0.0297505, -0.0297505, 0.999557, 0, 0)"
+                },
+                {
+                  "key": "earRight:15",
+                  "part": "earRight",
+                  "transform": "matrix(0.998001, 0.0632001, -0.0632001, 0.998001, 0, 0)"
+                },
+                {
+                  "key": "book:16",
+                  "part": "book",
+                  "transform": "matrix(0.999701, 0.0244606, -0.0244606, 0.999701, 0, 2.62805)"
+                },
+                {
+                  "key": "map:17",
+                  "part": "map",
+                  "transform": "matrix(0.999485, 0.0321022, -0.0321022, 0.999485, 0, 2.27765)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-28.35px",
+                  "top": "-224.7px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-140.01px",
+                  "top": "-250.38px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-142.35px",
+                  "top": "-316.68px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-239.4px",
+                  "top": "-224.7px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-388.83px",
+                  "top": "-252.72px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-388.83px",
+                  "top": "-316.68px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-160.08px",
+                  "top": "-14.72px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-24.42px",
+                  "top": "-118.47px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-130.35px",
+                  "top": "-118.47px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-228.03px",
+                  "top": "-118.14px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-325.71px",
+                  "top": "-118.14px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-95.2px",
+                  "top": "-273.84px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-7.36px",
+                  "top": "-322.24px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-16.12px",
+                  "top": "-42.16px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-335.04px",
+                  "top": "-9.12px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-383.2px",
+                  "top": "-32px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-256px",
+                  "top": "-404px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-378px",
+                  "top": "-403.6px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 2508,
+              "joints": [
+                {
+                  "key": "thighLeft:0",
+                  "part": "thighLeft",
+                  "transform": "matrix(0.565569, 0.824701, -0.824701, 0.565569, 0, 0)"
+                },
+                {
+                  "key": "lowerLegLeft:1",
+                  "part": "lowerLegLeft",
+                  "transform": "matrix(-0.22165, -0.975126, 0.975126, -0.22165, 0, 0)"
+                },
+                {
+                  "key": "footLeft:2",
+                  "part": "footLeft",
+                  "transform": "matrix(0.678829, 0.734296, -0.734296, 0.678829, 0, 0)"
+                },
+                {
+                  "key": "thighRight:3",
+                  "part": "thighRight",
+                  "transform": "matrix(0.475712, -0.879601, 0.879601, 0.475712, 0, 0)"
+                },
+                {
+                  "key": "lowerLegRight:4",
+                  "part": "lowerLegRight",
+                  "transform": "matrix(-0.219383, 0.975639, -0.975639, -0.219383, 0, 0)"
+                },
+                {
+                  "key": "footRight:5",
+                  "part": "footRight",
+                  "transform": "matrix(0.75381, -0.657093, 0.657093, 0.75381, 0, 0)"
+                },
+                {
+                  "key": "torso:6",
+                  "part": "torso",
+                  "transform": "none"
+                },
+                {
+                  "key": "upperArmLeft:7",
+                  "part": "upperArmLeft",
+                  "transform": "matrix(0.541727, 0.840554, -0.840554, 0.541727, 0, 0)"
+                },
+                {
+                  "key": "forearmLeft:8",
+                  "part": "forearmLeft",
+                  "transform": "matrix(-0.252931, -0.967484, 0.967484, -0.252931, 0, 0)"
+                },
+                {
+                  "key": "upperArmRight:9",
+                  "part": "upperArmRight",
+                  "transform": "matrix(0.693022, -0.720916, 0.720916, 0.693022, 0, 0)"
+                },
+                {
+                  "key": "forearmRight:10",
+                  "part": "forearmRight",
+                  "transform": "matrix(-0.150998, 0.988534, -0.988534, -0.150998, 0, 0)"
+                },
+                {
+                  "key": "strap:11",
+                  "part": "strap",
+                  "transform": "none"
+                },
+                {
+                  "key": "satchel:12",
+                  "part": "satchel",
+                  "transform": "matrix(0.999391, 0.0348879, -0.0348879, 0.999391, 0, 0)"
+                },
+                {
+                  "key": "head:13",
+                  "part": "head",
+                  "transform": "matrix(0.993064, 0.117573, -0.117573, 0.993064, 0, 0)"
+                },
+                {
+                  "key": "earLeft:14",
+                  "part": "earLeft",
+                  "transform": "matrix(0.99867, -0.0515538, 0.0515538, 0.99867, 0, 0)"
+                },
+                {
+                  "key": "earRight:15",
+                  "part": "earRight",
+                  "transform": "matrix(1, -0.000370835, 0.000370835, 1, 0, 0)"
+                },
+                {
+                  "key": "book:16",
+                  "part": "book",
+                  "transform": "matrix(0.999701, 0.0244606, -0.0244606, 0.999701, 0, 2.62805)"
+                },
+                {
+                  "key": "map:17",
+                  "part": "map",
+                  "transform": "matrix(0.999485, 0.0321022, -0.0321022, 0.999485, 0, 2.27765)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-28.35px",
+                  "top": "-224.7px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-140.01px",
+                  "top": "-250.38px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-142.35px",
+                  "top": "-316.68px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-239.4px",
+                  "top": "-224.7px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-388.83px",
+                  "top": "-252.72px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-388.83px",
+                  "top": "-316.68px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-160.08px",
+                  "top": "-14.72px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-24.42px",
+                  "top": "-118.47px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-130.35px",
+                  "top": "-118.47px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-228.03px",
+                  "top": "-118.14px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-325.71px",
+                  "top": "-118.14px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-95.2px",
+                  "top": "-273.84px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-7.36px",
+                  "top": "-322.24px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-16.12px",
+                  "top": "-42.16px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-335.04px",
+                  "top": "-9.12px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-383.2px",
+                  "top": "-32px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-256px",
+                  "top": "-404px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-378px",
+                  "top": "-403.6px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 3952,
+              "joints": [
+                {
+                  "key": "thighLeft:0",
+                  "part": "thighLeft",
+                  "transform": "matrix(0.577268, 0.816555, -0.816555, 0.577268, 0, 0)"
+                },
+                {
+                  "key": "lowerLegLeft:1",
+                  "part": "lowerLegLeft",
+                  "transform": "matrix(-0.19358, -0.981085, 0.981085, -0.19358, 0, 0)"
+                },
+                {
+                  "key": "footLeft:2",
+                  "part": "footLeft",
+                  "transform": "matrix(0.689362, 0.724417, -0.724417, 0.689362, 0, 0)"
+                },
+                {
+                  "key": "thighRight:3",
+                  "part": "thighRight",
+                  "transform": "matrix(0.489876, -0.871792, 0.871792, 0.489876, 0, 0)"
+                },
+                {
+                  "key": "lowerLegRight:4",
+                  "part": "lowerLegRight",
+                  "transform": "matrix(-0.192336, 0.981329, -0.981329, -0.192336, 0, 0)"
+                },
+                {
+                  "key": "footRight:5",
+                  "part": "footRight",
+                  "transform": "matrix(0.761294, -0.648407, 0.648407, 0.761294, 0, 0)"
+                },
+                {
+                  "key": "torso:6",
+                  "part": "torso",
+                  "transform": "none"
+                },
+                {
+                  "key": "upperArmLeft:7",
+                  "part": "upperArmLeft",
+                  "transform": "matrix(0.532359, 0.846519, -0.846519, 0.532359, 0, 0)"
+                },
+                {
+                  "key": "forearmLeft:8",
+                  "part": "forearmLeft",
+                  "transform": "matrix(-0.272952, -0.962028, 0.962028, -0.272952, 0, 0)"
+                },
+                {
+                  "key": "upperArmRight:9",
+                  "part": "upperArmRight",
+                  "transform": "matrix(0.660614, -0.750725, 0.750725, 0.660614, 0, 0)"
+                },
+                {
+                  "key": "forearmRight:10",
+                  "part": "forearmRight",
+                  "transform": "matrix(-0.250929, 0.968006, -0.968006, -0.250929, 0, 0)"
+                },
+                {
+                  "key": "strap:11",
+                  "part": "strap",
+                  "transform": "none"
+                },
+                {
+                  "key": "satchel:12",
+                  "part": "satchel",
+                  "transform": "matrix(0.999919, 0.0127593, -0.0127593, 0.999919, 0, 0)"
+                },
+                {
+                  "key": "head:13",
+                  "part": "head",
+                  "transform": "matrix(0.996566, 0.0827981, -0.0827981, 0.996566, 0, 0)"
+                },
+                {
+                  "key": "earLeft:14",
+                  "part": "earLeft",
+                  "transform": "matrix(0.999498, 0.0316953, -0.0316953, 0.999498, 0, 0)"
+                },
+                {
+                  "key": "earRight:15",
+                  "part": "earRight",
+                  "transform": "matrix(0.998874, -0.0474397, 0.0474397, 0.998874, 0, 0)"
+                },
+                {
+                  "key": "book:16",
+                  "part": "book",
+                  "transform": "matrix(0.999994, -0.00349877, 0.00349877, 0.999994, 0, -0.375873)"
+                },
+                {
+                  "key": "map:17",
+                  "part": "map",
+                  "transform": "matrix(0.999989, -0.00459213, 0.00459213, 0.999989, 0, -0.325756)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-28.35px",
+                  "top": "-224.7px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-140.01px",
+                  "top": "-250.38px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-142.35px",
+                  "top": "-316.68px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-239.4px",
+                  "top": "-224.7px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-388.83px",
+                  "top": "-252.72px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-388.83px",
+                  "top": "-316.68px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-160.08px",
+                  "top": "-14.72px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-24.42px",
+                  "top": "-118.47px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-130.35px",
+                  "top": "-118.47px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-228.03px",
+                  "top": "-118.14px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-325.71px",
+                  "top": "-118.14px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-95.2px",
+                  "top": "-273.84px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-7.36px",
+                  "top": "-322.24px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-16.12px",
+                  "top": "-42.16px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-335.04px",
+                  "top": "-9.12px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-383.2px",
+                  "top": "-32px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-256px",
+                  "top": "-404px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-378px",
+                  "top": "-403.6px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 5396,
+              "joints": [
+                {
+                  "key": "thighLeft:0",
+                  "part": "thighLeft",
+                  "transform": "matrix(0.587113, 0.809505, -0.809505, 0.587113, 0, 0)"
+                },
+                {
+                  "key": "lowerLegLeft:1",
+                  "part": "lowerLegLeft",
+                  "transform": "matrix(-0.169554, -0.985521, 0.985521, -0.169554, 0, 0)"
+                },
+                {
+                  "key": "footLeft:2",
+                  "part": "footLeft",
+                  "transform": "matrix(0.698237, 0.715867, -0.715867, 0.698237, 0, 0)"
+                },
+                {
+                  "key": "thighRight:3",
+                  "part": "thighRight",
+                  "transform": "matrix(0.50175, -0.865013, 0.865013, 0.50175, 0, 0)"
+                },
+                {
+                  "key": "lowerLegRight:4",
+                  "part": "lowerLegRight",
+                  "transform": "matrix(-0.169187, 0.985584, -0.985584, -0.169187, 0, 0)"
+                },
+                {
+                  "key": "footRight:5",
+                  "part": "footRight",
+                  "transform": "matrix(0.767653, -0.640865, 0.640865, 0.767653, 0, 0)"
+                },
+                {
+                  "key": "torso:6",
+                  "part": "torso",
+                  "transform": "none"
+                },
+                {
+                  "key": "upperArmLeft:7",
+                  "part": "upperArmLeft",
+                  "transform": "matrix(0.524978, 0.851116, -0.851116, 0.524978, 0, 0)"
+                },
+                {
+                  "key": "forearmLeft:8",
+                  "part": "forearmLeft",
+                  "transform": "matrix(-0.289734, -0.957107, 0.957107, -0.289734, 0, 0)"
+                },
+                {
+                  "key": "upperArmRight:9",
+                  "part": "upperArmRight",
+                  "transform": "matrix(0.634442, -0.77297, 0.77297, 0.634442, 0, 0)"
+                },
+                {
+                  "key": "forearmRight:10",
+                  "part": "forearmRight",
+                  "transform": "matrix(-0.330254, 0.943892, -0.943892, -0.330254, 0, 0)"
+                },
+                {
+                  "key": "strap:11",
+                  "part": "strap",
+                  "transform": "none"
+                },
+                {
+                  "key": "satchel:12",
+                  "part": "satchel",
+                  "transform": "matrix(0.999675, -0.0255007, 0.0255007, 0.999675, 0, 0)"
+                },
+                {
+                  "key": "head:13",
+                  "part": "head",
+                  "transform": "matrix(0.998571, 0.0534385, -0.0534385, 0.998571, 0, 0)"
+                },
+                {
+                  "key": "earLeft:14",
+                  "part": "earLeft",
+                  "transform": "matrix(0.999986, 0.00536178, -0.00536178, 0.999986, 0, 0)"
+                },
+                {
+                  "key": "earRight:15",
+                  "part": "earRight",
+                  "transform": "matrix(0.99758, 0.069534, -0.069534, 0.99758, 0, 0)"
+                },
+                {
+                  "key": "book:16",
+                  "part": "book",
+                  "transform": "matrix(0.999634, -0.0270387, 0.0270387, 0.999634, 0, -2.90511)"
+                },
+                {
+                  "key": "map:17",
+                  "part": "map",
+                  "transform": "matrix(0.99937, -0.0354852, 0.0354852, 0.99937, 0, -2.51776)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-28.35px",
+                  "top": "-224.7px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-140.01px",
+                  "top": "-250.38px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-142.35px",
+                  "top": "-316.68px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-239.4px",
+                  "top": "-224.7px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-388.83px",
+                  "top": "-252.72px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-388.83px",
+                  "top": "-316.68px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-160.08px",
+                  "top": "-14.72px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-24.42px",
+                  "top": "-118.47px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-130.35px",
+                  "top": "-118.47px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-228.03px",
+                  "top": "-118.14px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-325.71px",
+                  "top": "-118.14px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-95.2px",
+                  "top": "-273.84px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-7.36px",
+                  "top": "-322.24px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-16.12px",
+                  "top": "-42.16px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-335.04px",
+                  "top": "-9.12px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-383.2px",
+                  "top": "-32px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-256px",
+                  "top": "-404px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-378px",
+                  "top": "-403.6px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 6916,
+              "joints": [
+                {
+                  "key": "thighLeft:0",
+                  "part": "thighLeft",
+                  "transform": "matrix(0.582061, 0.813145, -0.813145, 0.582061, 0, 0)"
+                },
+                {
+                  "key": "lowerLegLeft:1",
+                  "part": "lowerLegLeft",
+                  "transform": "matrix(-0.181928, -0.983312, 0.983312, -0.181928, 0, 0)"
+                },
+                {
+                  "key": "footLeft:2",
+                  "part": "footLeft",
+                  "transform": "matrix(0.693682, 0.720281, -0.720281, 0.693682, 0, 0)"
+                },
+                {
+                  "key": "thighRight:3",
+                  "part": "thighRight",
+                  "transform": "matrix(0.495662, -0.868516, 0.868516, 0.495662, 0, 0)"
+                },
+                {
+                  "key": "lowerLegRight:4",
+                  "part": "lowerLegRight",
+                  "transform": "matrix(-0.18111, 0.983463, -0.983463, -0.18111, 0, 0)"
+                },
+                {
+                  "key": "footRight:5",
+                  "part": "footRight",
+                  "transform": "matrix(0.764384, -0.644762, 0.644762, 0.764384, 0, 0)"
+                },
+                {
+                  "key": "torso:6",
+                  "part": "torso",
+                  "transform": "none"
+                },
+                {
+                  "key": "upperArmLeft:7",
+                  "part": "upperArmLeft",
+                  "transform": "matrix(0.528707, 0.848804, -0.848804, 0.528707, 0, 0)"
+                },
+                {
+                  "key": "forearmLeft:8",
+                  "part": "forearmLeft",
+                  "transform": "matrix(-0.281128, -0.95967, 0.95967, -0.281128, 0, 0)"
+                },
+                {
+                  "key": "upperArmRight:9",
+                  "part": "upperArmRight",
+                  "transform": "matrix(0.647731, -0.761869, 0.761869, 0.647731, 0, 0)"
+                },
+                {
+                  "key": "forearmRight:10",
+                  "part": "forearmRight",
+                  "transform": "matrix(-0.290097, 0.956997, -0.956997, -0.290097, 0, 0)"
+                },
+                {
+                  "key": "strap:11",
+                  "part": "strap",
+                  "transform": "none"
+                },
+                {
+                  "key": "satchel:12",
+                  "part": "satchel",
+                  "transform": "matrix(0.999534, -0.0305327, 0.0305327, 0.999534, 0, 0)"
+                },
+                {
+                  "key": "head:13",
+                  "part": "head",
+                  "transform": "matrix(0.99765, 0.0685129, -0.0685129, 0.99765, 0, 0)"
+                },
+                {
+                  "key": "earLeft:14",
+                  "part": "earLeft",
+                  "transform": "matrix(0.99939, -0.0349181, 0.0349181, 0.99939, 0, 0)"
+                },
+                {
+                  "key": "earRight:15",
+                  "part": "earRight",
+                  "transform": "matrix(0.998255, -0.0590561, 0.0590561, 0.998255, 0, 0)"
+                },
+                {
+                  "key": "book:16",
+                  "part": "book",
+                  "transform": "matrix(0.999888, -0.0149593, 0.0149593, 0.999888, 0, -1.60713)"
+                },
+                {
+                  "key": "map:17",
+                  "part": "map",
+                  "transform": "matrix(0.999807, -0.0196336, 0.0196336, 0.999807, 0, -1.39285)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-28.35px",
+                  "top": "-224.7px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-140.01px",
+                  "top": "-250.38px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-142.35px",
+                  "top": "-316.68px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-239.4px",
+                  "top": "-224.7px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-388.83px",
+                  "top": "-252.72px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-388.83px",
+                  "top": "-316.68px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-160.08px",
+                  "top": "-14.72px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-24.42px",
+                  "top": "-118.47px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-130.35px",
+                  "top": "-118.47px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-228.03px",
+                  "top": "-118.14px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-325.71px",
+                  "top": "-118.14px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-95.2px",
+                  "top": "-273.84px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-7.36px",
+                  "top": "-322.24px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-16.12px",
+                  "top": "-42.16px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-335.04px",
+                  "top": "-9.12px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-383.2px",
+                  "top": "-32px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-256px",
+                  "top": "-404px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                },
+                {
+                  "left": "-378px",
+                  "top": "-403.6px",
+                  "src": "assets/art/pico-articulated-v3.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "mina",
+          "jointCount": 13,
+          "changingJoints": [
+            {
+              "part": "accessory",
+              "states": 5
+            },
+            {
+              "part": "hipLeft",
+              "states": 5
+            },
+            {
+              "part": "hipRight",
+              "states": 5
+            },
+            {
+              "part": "kneeLeft",
+              "states": 5
+            },
+            {
+              "part": "kneeRight",
+              "states": 5
+            },
+            {
+              "part": "ankleLeft",
+              "states": 6
+            },
+            {
+              "part": "ankleRight",
+              "states": 6
+            },
+            {
+              "part": "shoulderLeft",
+              "states": 5
+            },
+            {
+              "part": "shoulderRight",
+              "states": 5
+            },
+            {
+              "part": "neck",
+              "states": 6
+            },
+            {
+              "part": "elbowLeft",
+              "states": 6
+            },
+            {
+              "part": "elbowRight",
+              "states": 5
+            }
+          ],
+          "stableImageCrops": true,
+          "samples": [
+            {
+              "timeMs": 0,
+              "joints": [
+                {
+                  "key": "accessory:0",
+                  "part": "accessory",
+                  "transform": "matrix(1, 0, 0, 1, 122, 244)"
+                },
+                {
+                  "key": "hipLeft:1",
+                  "part": "hipLeft",
+                  "transform": "matrix(1, 0, 0, 1, 154, 316)"
+                },
+                {
+                  "key": "hipRight:2",
+                  "part": "hipRight",
+                  "transform": "matrix(1, 0, 0, 1, 206, 316)"
+                },
+                {
+                  "key": "kneeLeft:3",
+                  "part": "kneeLeft",
+                  "transform": "matrix(1, 0, 0, 1, 137.181, 413.2)"
+                },
+                {
+                  "key": "kneeRight:4",
+                  "part": "kneeRight",
+                  "transform": "matrix(1, 0, 0, 1, 217.176, 413.2)"
+                },
+                {
+                  "key": "ankleLeft:5",
+                  "part": "ankleLeft",
+                  "transform": "matrix(1, 0, 0, 1, 135.56, 500.033)"
+                },
+                {
+                  "key": "ankleRight:6",
+                  "part": "ankleRight",
+                  "transform": "matrix(1, 0, 0, 1, 214.405, 498.778)"
+                },
+                {
+                  "key": "shoulderLeft:7",
+                  "part": "shoulderLeft",
+                  "transform": "matrix(0.992546, 0.121869, -0.121869, 0.992546, 124, 177)"
+                },
+                {
+                  "key": "shoulderRight:8",
+                  "part": "shoulderRight",
+                  "transform": "matrix(-0.469472, -0.882948, 0.882948, -0.469472, 236, 177)"
+                },
+                {
+                  "key": "neck:9",
+                  "part": "neck",
+                  "transform": "matrix(0.996617, -0.0821904, 0.0821904, 0.996617, 180, 169)"
+                },
+                {
+                  "key": "torso:10",
+                  "part": "torso",
+                  "transform": "matrix(1, 0, 0, 1, 180, 173)"
+                },
+                {
+                  "key": "elbowLeft:11",
+                  "part": "elbowLeft",
+                  "transform": "matrix(0.999391, -0.0348995, 0.0348995, 0.999391, 108.625, 251.28)"
+                },
+                {
+                  "key": "elbowRight:12",
+                  "part": "elbowRight",
+                  "transform": "matrix(-0.992546, -0.121869, 0.121869, -0.992546, 298.431, 133.384)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-280.37px",
+                  "top": "-287.037px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-363.738px",
+                  "top": "-178.505px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-54.5364px",
+                  "top": "-337.947px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-533.211px",
+                  "top": "-181.597px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-218.885px",
+                  "top": "-347.723px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-533.211px",
+                  "top": "-280.735px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-218.885px",
+                  "top": "-445.621px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-296.554px",
+                  "top": "-16.6723px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-45.8247px",
+                  "top": "-146.134px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-21.4708px",
+                  "top": "-22.4467px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-257.572px",
+                  "top": "-27.9582px",
+                  "src": "assets/art/mina-articulated-v4.png"
+                },
+                {
+                  "left": "-426.618px",
+                  "top": "-16.8638px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-182.089px",
+                  "top": "-149.283px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 1292,
+              "joints": [
+                {
+                  "key": "accessory:0",
+                  "part": "accessory",
+                  "transform": "matrix(0.999832, 0.0183518, -0.0183518, 0.999832, 122, 244)"
+                },
+                {
+                  "key": "hipLeft:1",
+                  "part": "hipLeft",
+                  "transform": "matrix(0.999434, 0.0336405, -0.0336405, 0.999434, 154, 316)"
+                },
+                {
+                  "key": "hipRight:2",
+                  "part": "hipRight",
+                  "transform": "matrix(0.999434, -0.0336405, 0.0336405, 0.999434, 206, 316)"
+                },
+                {
+                  "key": "kneeLeft:3",
+                  "part": "kneeLeft",
+                  "transform": "matrix(0.999931, 0.0117762, -0.0117762, 0.999931, 133.921, 412.579)"
+                },
+                {
+                  "key": "kneeRight:4",
+                  "part": "kneeRight",
+                  "transform": "matrix(0.999931, -0.0117762, 0.0117762, 0.999931, 220.439, 412.769)"
+                },
+                {
+                  "key": "ankleLeft:5",
+                  "part": "ankleLeft",
+                  "transform": "matrix(0.999756, 0.0221005, -0.0221005, 0.999756, 131.277, 499.387)"
+                },
+                {
+                  "key": "ankleRight:6",
+                  "part": "ankleRight",
+                  "transform": "matrix(0.999756, -0.0221005, 0.0221005, 0.999756, 218.676, 498.373)"
+                },
+                {
+                  "key": "shoulderLeft:7",
+                  "part": "shoulderLeft",
+                  "transform": "matrix(0.985912, 0.167265, -0.167265, 0.985912, 124, 177)"
+                },
+                {
+                  "key": "shoulderRight:8",
+                  "part": "shoulderRight",
+                  "transform": "matrix(-0.414612, -0.909998, 0.909998, -0.414612, 236, 177)"
+                },
+                {
+                  "key": "neck:9",
+                  "part": "neck",
+                  "transform": "matrix(0.999271, -0.0381849, 0.0381849, 0.999271, 180, 169)"
+                },
+                {
+                  "key": "torso:10",
+                  "part": "torso",
+                  "transform": "matrix(1, 0, 0, 1, 180, 173)"
+                },
+                {
+                  "key": "elbowLeft:11",
+                  "part": "elbowLeft",
+                  "transform": "matrix(0.993495, 0.113872, -0.113872, 0.993495, 105.234, 250.497)"
+                },
+                {
+                  "key": "elbowRight:12",
+                  "part": "elbowRight",
+                  "transform": "matrix(-0.985551, -0.169381, 0.169381, -0.985551, 300.981, 137.282)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-280.37px",
+                  "top": "-287.037px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-363.738px",
+                  "top": "-178.505px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-54.5364px",
+                  "top": "-337.947px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-533.211px",
+                  "top": "-181.597px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-218.885px",
+                  "top": "-347.723px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-533.211px",
+                  "top": "-280.735px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-218.885px",
+                  "top": "-445.621px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-296.554px",
+                  "top": "-16.6723px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-45.8247px",
+                  "top": "-146.134px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-21.4708px",
+                  "top": "-22.4467px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-257.572px",
+                  "top": "-27.9582px",
+                  "src": "assets/art/mina-articulated-v4.png"
+                },
+                {
+                  "left": "-426.618px",
+                  "top": "-16.8638px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-182.089px",
+                  "top": "-149.283px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 2508,
+              "joints": [
+                {
+                  "key": "accessory:0",
+                  "part": "accessory",
+                  "transform": "matrix(0.999832, 0.0183518, -0.0183518, 0.999832, 122, 244)"
+                },
+                {
+                  "key": "hipLeft:1",
+                  "part": "hipLeft",
+                  "transform": "matrix(0.999434, 0.0336405, -0.0336405, 0.999434, 154, 316)"
+                },
+                {
+                  "key": "hipRight:2",
+                  "part": "hipRight",
+                  "transform": "matrix(0.999434, -0.0336405, 0.0336405, 0.999434, 206, 316)"
+                },
+                {
+                  "key": "kneeLeft:3",
+                  "part": "kneeLeft",
+                  "transform": "matrix(0.999931, 0.0117762, -0.0117762, 0.999931, 133.921, 412.579)"
+                },
+                {
+                  "key": "kneeRight:4",
+                  "part": "kneeRight",
+                  "transform": "matrix(0.999931, -0.0117762, 0.0117762, 0.999931, 220.439, 412.769)"
+                },
+                {
+                  "key": "ankleLeft:5",
+                  "part": "ankleLeft",
+                  "transform": "matrix(0.999756, -0.0221005, 0.0221005, 0.999756, 131.277, 499.387)"
+                },
+                {
+                  "key": "ankleRight:6",
+                  "part": "ankleRight",
+                  "transform": "matrix(0.999756, 0.0221005, -0.0221005, 0.999756, 218.676, 498.373)"
+                },
+                {
+                  "key": "shoulderLeft:7",
+                  "part": "shoulderLeft",
+                  "transform": "matrix(0.985912, 0.167265, -0.167265, 0.985912, 124, 177)"
+                },
+                {
+                  "key": "shoulderRight:8",
+                  "part": "shoulderRight",
+                  "transform": "matrix(-0.414612, -0.909998, 0.909998, -0.414612, 236, 177)"
+                },
+                {
+                  "key": "neck:9",
+                  "part": "neck",
+                  "transform": "matrix(0.999972, 0.00745231, -0.00745231, 0.999972, 180, 169)"
+                },
+                {
+                  "key": "torso:10",
+                  "part": "torso",
+                  "transform": "matrix(1, 0, 0, 1, 180, 173)"
+                },
+                {
+                  "key": "elbowLeft:11",
+                  "part": "elbowLeft",
+                  "transform": "matrix(0.995755, -0.0920381, 0.0920381, 0.995755, 105.234, 250.497)"
+                },
+                {
+                  "key": "elbowRight:12",
+                  "part": "elbowRight",
+                  "transform": "matrix(-0.985551, -0.169381, 0.169381, -0.985551, 300.981, 137.282)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-280.37px",
+                  "top": "-287.037px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-363.738px",
+                  "top": "-178.505px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-54.5364px",
+                  "top": "-337.947px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-533.211px",
+                  "top": "-181.597px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-218.885px",
+                  "top": "-347.723px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-533.211px",
+                  "top": "-280.735px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-218.885px",
+                  "top": "-445.621px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-296.554px",
+                  "top": "-16.6723px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-45.8247px",
+                  "top": "-146.134px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-21.4708px",
+                  "top": "-22.4467px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-257.572px",
+                  "top": "-27.9582px",
+                  "src": "assets/art/mina-articulated-v4.png"
+                },
+                {
+                  "left": "-426.618px",
+                  "top": "-16.8638px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-182.089px",
+                  "top": "-149.283px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 3952,
+              "joints": [
+                {
+                  "key": "accessory:0",
+                  "part": "accessory",
+                  "transform": "matrix(0.999997, -0.00262487, 0.00262487, 0.999997, 122, 244)"
+                },
+                {
+                  "key": "hipLeft:1",
+                  "part": "hipLeft",
+                  "transform": "matrix(0.999988, -0.00481227, 0.00481227, 0.999988, 154, 316)"
+                },
+                {
+                  "key": "hipRight:2",
+                  "part": "hipRight",
+                  "transform": "matrix(0.999988, 0.00481227, -0.00481227, 0.999988, 206, 316)"
+                },
+                {
+                  "key": "kneeLeft:3",
+                  "part": "kneeLeft",
+                  "transform": "matrix(0.999999, -0.00168431, 0.00168431, 0.999999, 137.649, 413.28)"
+                },
+                {
+                  "key": "kneeRight:4",
+                  "part": "kneeRight",
+                  "transform": "matrix(0.999999, 0.00168431, -0.00168431, 0.999999, 216.708, 413.253)"
+                },
+                {
+                  "key": "ankleLeft:5",
+                  "part": "ankleLeft",
+                  "transform": "matrix(0.999979, 0.00650996, -0.00650996, 0.999979, 136.174, 500.116)"
+                },
+                {
+                  "key": "ankleRight:6",
+                  "part": "ankleRight",
+                  "transform": "matrix(0.999979, -0.00650996, 0.00650996, 0.999979, 213.793, 498.826)"
+                },
+                {
+                  "key": "shoulderLeft:7",
+                  "part": "shoulderLeft",
+                  "transform": "matrix(0.993325, 0.115353, -0.115353, 0.993325, 124, 177)"
+                },
+                {
+                  "key": "shoulderRight:8",
+                  "part": "shoulderRight",
+                  "transform": "matrix(-0.477179, -0.878806, 0.878806, -0.477179, 236, 177)"
+                },
+                {
+                  "key": "neck:9",
+                  "part": "neck",
+                  "transform": "matrix(0.999957, 0.00930111, -0.00930111, 0.999957, 180, 169)"
+                },
+                {
+                  "key": "torso:10",
+                  "part": "torso",
+                  "transform": "matrix(1, 0, 0, 1, 180, 173)"
+                },
+                {
+                  "key": "elbowLeft:11",
+                  "part": "elbowLeft",
+                  "transform": "matrix(0.999939, -0.0110884, 0.0110884, 0.999939, 109.113, 251.379)"
+                },
+                {
+                  "key": "elbowRight:12",
+                  "part": "elbowRight",
+                  "transform": "matrix(-0.99934, -0.0363329, 0.0363329, -0.99934, 298.047, 132.839)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-280.37px",
+                  "top": "-287.037px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-363.738px",
+                  "top": "-178.505px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-54.5364px",
+                  "top": "-337.947px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-533.211px",
+                  "top": "-181.597px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-218.885px",
+                  "top": "-347.723px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-533.211px",
+                  "top": "-280.735px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-218.885px",
+                  "top": "-445.621px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-296.554px",
+                  "top": "-16.6723px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-45.8247px",
+                  "top": "-146.134px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-21.4708px",
+                  "top": "-22.4467px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-257.572px",
+                  "top": "-27.9582px",
+                  "src": "assets/art/mina-articulated-v4.png"
+                },
+                {
+                  "left": "-426.618px",
+                  "top": "-16.8638px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-182.089px",
+                  "top": "-149.283px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 5396,
+              "joints": [
+                {
+                  "key": "accessory:0",
+                  "part": "accessory",
+                  "transform": "matrix(0.999794, -0.0202838, 0.0202838, 0.999794, 122, 244)"
+                },
+                {
+                  "key": "hipLeft:1",
+                  "part": "hipLeft",
+                  "transform": "matrix(0.999309, -0.037181, 0.037181, 0.999309, 154, 316)"
+                },
+                {
+                  "key": "hipRight:2",
+                  "part": "hipRight",
+                  "transform": "matrix(0.999309, 0.037181, -0.037181, 0.999309, 206, 316)"
+                },
+                {
+                  "key": "kneeLeft:3",
+                  "part": "kneeLeft",
+                  "transform": "matrix(0.999915, -0.013016, 0.013016, 0.999915, 140.807, 413.758)"
+                },
+                {
+                  "key": "kneeRight:4",
+                  "part": "kneeRight",
+                  "transform": "matrix(0.999915, 0.013016, -0.013016, 0.999915, 213.554, 413.548)"
+                },
+                {
+                  "key": "ankleLeft:5",
+                  "part": "ankleLeft",
+                  "transform": "matrix(0.99992, 0.0126101, -0.0126101, 0.99992, 140.316, 500.605)"
+                },
+                {
+                  "key": "ankleRight:6",
+                  "part": "ankleRight",
+                  "transform": "matrix(0.99992, -0.0126101, 0.0126101, 0.99992, 209.669, 499.083)"
+                },
+                {
+                  "key": "shoulderLeft:7",
+                  "part": "shoulderLeft",
+                  "transform": "matrix(0.997448, 0.0713992, -0.0713992, 0.997448, 124, 177)"
+                },
+                {
+                  "key": "shoulderRight:8",
+                  "part": "shoulderRight",
+                  "transform": "matrix(-0.528056, -0.84921, 0.84921, -0.528056, 236, 177)"
+                },
+                {
+                  "key": "neck:9",
+                  "part": "neck",
+                  "transform": "matrix(0.999, -0.0447025, 0.0447025, 0.999, 180, 169)"
+                },
+                {
+                  "key": "torso:10",
+                  "part": "torso",
+                  "transform": "matrix(1, 0, 0, 1, 180, 173)"
+                },
+                {
+                  "key": "elbowLeft:11",
+                  "part": "elbowLeft",
+                  "transform": "matrix(0.999642, -0.0267678, 0.0267678, 0.999642, 112.41, 251.964)"
+                },
+                {
+                  "key": "elbowRight:12",
+                  "part": "elbowRight",
+                  "transform": "matrix(-0.978615, -0.205702, 0.205702, -0.978615, 295.342, 129.265)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-280.37px",
+                  "top": "-287.037px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-363.738px",
+                  "top": "-178.505px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-54.5364px",
+                  "top": "-337.947px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-533.211px",
+                  "top": "-181.597px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-218.885px",
+                  "top": "-347.723px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-533.211px",
+                  "top": "-280.735px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-218.885px",
+                  "top": "-445.621px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-296.554px",
+                  "top": "-16.6723px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-45.8247px",
+                  "top": "-146.134px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-21.4708px",
+                  "top": "-22.4467px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-257.572px",
+                  "top": "-27.9582px",
+                  "src": "assets/art/mina-articulated-v4.png"
+                },
+                {
+                  "left": "-426.618px",
+                  "top": "-16.8638px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-182.089px",
+                  "top": "-149.283px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 6916,
+              "joints": [
+                {
+                  "key": "accessory:0",
+                  "part": "accessory",
+                  "transform": "matrix(0.999937, -0.0112217, 0.0112217, 0.999937, 122, 244)"
+                },
+                {
+                  "key": "hipLeft:1",
+                  "part": "hipLeft",
+                  "transform": "matrix(0.999788, -0.0205721, 0.0205721, 0.999788, 154, 316)"
+                },
+                {
+                  "key": "hipRight:2",
+                  "part": "hipRight",
+                  "transform": "matrix(0.999788, 0.0205721, -0.0205721, 0.999788, 206, 316)"
+                },
+                {
+                  "key": "kneeLeft:3",
+                  "part": "kneeLeft",
+                  "transform": "matrix(0.999974, -0.00720068, 0.00720068, 0.999974, 139.184, 413.525)"
+                },
+                {
+                  "key": "kneeRight:4",
+                  "part": "kneeRight",
+                  "transform": "matrix(0.999974, 0.00720068, -0.00720068, 0.999974, 215.174, 413.409)"
+                },
+                {
+                  "key": "ankleLeft:5",
+                  "part": "ankleLeft",
+                  "transform": "matrix(0.99972, -0.0236826, 0.0236826, 0.99972, 138.188, 500.368)"
+                },
+                {
+                  "key": "ankleRight:6",
+                  "part": "ankleRight",
+                  "transform": "matrix(0.99972, 0.0236826, -0.0236826, 0.99972, 211.787, 498.965)"
+                },
+                {
+                  "key": "shoulderLeft:7",
+                  "part": "shoulderLeft",
+                  "transform": "matrix(0.995574, 0.0939793, -0.0939793, 0.995574, 124, 177)"
+                },
+                {
+                  "key": "shoulderRight:8",
+                  "part": "shoulderRight",
+                  "transform": "matrix(-0.502163, -0.864773, 0.864773, -0.502163, 236, 177)"
+                },
+                {
+                  "key": "neck:9",
+                  "part": "neck",
+                  "transform": "matrix(0.996231, -0.0867426, 0.0867426, 0.996231, 180, 169)"
+                },
+                {
+                  "key": "torso:10",
+                  "part": "torso",
+                  "transform": "matrix(1, 0, 0, 1, 180, 173)"
+                },
+                {
+                  "key": "elbowLeft:11",
+                  "part": "elbowLeft",
+                  "transform": "matrix(0.984988, -0.172622, 0.172622, 0.984988, 110.715, 251.682)"
+                },
+                {
+                  "key": "elbowRight:12",
+                  "part": "elbowRight",
+                  "transform": "matrix(-0.992451, 0.122644, -0.122644, -0.992451, 296.756, 131.08)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-280.37px",
+                  "top": "-287.037px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-363.738px",
+                  "top": "-178.505px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-54.5364px",
+                  "top": "-337.947px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-533.211px",
+                  "top": "-181.597px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-218.885px",
+                  "top": "-347.723px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-533.211px",
+                  "top": "-280.735px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-218.885px",
+                  "top": "-445.621px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-296.554px",
+                  "top": "-16.6723px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-45.8247px",
+                  "top": "-146.134px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-21.4708px",
+                  "top": "-22.4467px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-257.572px",
+                  "top": "-27.9582px",
+                  "src": "assets/art/mina-articulated-v4.png"
+                },
+                {
+                  "left": "-426.618px",
+                  "top": "-16.8638px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                },
+                {
+                  "left": "-182.089px",
+                  "top": "-149.283px",
+                  "src": "assets/art/mina-articulated-v3.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "alex",
+          "jointCount": 14,
+          "changingJoints": [
+            {
+              "part": "hipLeft",
+              "states": 5
+            },
+            {
+              "part": "hipRight",
+              "states": 5
+            },
+            {
+              "part": "kneeLeft",
+              "states": 5
+            },
+            {
+              "part": "kneeRight",
+              "states": 5
+            },
+            {
+              "part": "ankleLeft",
+              "states": 6
+            },
+            {
+              "part": "ankleRight",
+              "states": 6
+            },
+            {
+              "part": "shoulderLeft",
+              "states": 6
+            },
+            {
+              "part": "shoulderRight",
+              "states": 5
+            },
+            {
+              "part": "neck",
+              "states": 6
+            },
+            {
+              "part": "elbowLeft",
+              "states": 6
+            },
+            {
+              "part": "elbowRight",
+              "states": 5
+            },
+            {
+              "part": "prop",
+              "states": 6
+            }
+          ],
+          "stableImageCrops": true,
+          "samples": [
+            {
+              "timeMs": 0,
+              "joints": [
+                {
+                  "key": "hipLeft:0",
+                  "part": "hipLeft",
+                  "transform": "matrix(1, 0, 0, 1, 154, 316)"
+                },
+                {
+                  "key": "hipRight:1",
+                  "part": "hipRight",
+                  "transform": "matrix(1, 0, 0, 1, 206, 316)"
+                },
+                {
+                  "key": "kneeLeft:2",
+                  "part": "kneeLeft",
+                  "transform": "matrix(1, 0, 0, 1, 140.711, 413.2)"
+                },
+                {
+                  "key": "kneeRight:3",
+                  "part": "kneeRight",
+                  "transform": "matrix(1, 0, 0, 1, 219.373, 413.2)"
+                },
+                {
+                  "key": "ankleLeft:4",
+                  "part": "ankleLeft",
+                  "transform": "matrix(1, 0, 0, 1, 139.352, 501.831)"
+                },
+                {
+                  "key": "ankleRight:5",
+                  "part": "ankleRight",
+                  "transform": "matrix(1, 0, 0, 1, 215.964, 501.709)"
+                },
+                {
+                  "key": "shoulderLeft:6",
+                  "part": "shoulderLeft",
+                  "transform": "matrix(0.879708, 0.475514, -0.475514, 0.879708, 124, 177)"
+                },
+                {
+                  "key": "shoulderRight:7",
+                  "part": "shoulderRight",
+                  "transform": "matrix(-0.422618, -0.906308, 0.906308, -0.422618, 236, 177)"
+                },
+                {
+                  "key": "neck:8",
+                  "part": "neck",
+                  "transform": "matrix(1, 0, 0, 1, 180, 169)"
+                },
+                {
+                  "key": "torso:9",
+                  "part": "torso",
+                  "transform": "matrix(1, 0, 0, 1, 180, 173)"
+                },
+                {
+                  "key": "elbowLeft:10",
+                  "part": "elbowLeft",
+                  "transform": "matrix(0.15229, -0.988336, 0.988336, 0.15229, 91.9725, 245.626)"
+                },
+                {
+                  "key": "elbowRight:11",
+                  "part": "elbowRight",
+                  "transform": "matrix(-0.984808, -0.173648, 0.173648, -0.984808, 304.868, 145.803)"
+                },
+                {
+                  "key": "accessory:12",
+                  "part": "accessory",
+                  "transform": "matrix(1, 0, 0, 1, 180, 195)"
+                },
+                {
+                  "key": "prop:13",
+                  "part": "prop",
+                  "transform": "matrix(1, 0, 0, 1, 180, 250)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-348.047px",
+                  "top": "-162.422px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-45px",
+                  "top": "-316.698px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-516.109px",
+                  "top": "-173.094px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-216.818px",
+                  "top": "-338.636px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-516.109px",
+                  "top": "-273.688px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-216.818px",
+                  "top": "-439.545px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-276.698px",
+                  "top": "-7.92453px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-35.8861px",
+                  "top": "-128.592px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-29.6785px",
+                  "top": "-14.1543px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-256.547px",
+                  "top": "-20.1094px",
+                  "src": "assets/art/alex-articulated-v4.png"
+                },
+                {
+                  "left": "-401px",
+                  "top": "-8px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-164.363px",
+                  "top": "-131.288px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-229.2px",
+                  "top": "-241.2px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-422.34px",
+                  "top": "-274.468px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 1088,
+              "joints": [
+                {
+                  "key": "hipLeft:0",
+                  "part": "hipLeft",
+                  "transform": "matrix(0.999434, 0.0336405, -0.0336405, 0.999434, 154, 316)"
+                },
+                {
+                  "key": "hipRight:1",
+                  "part": "hipRight",
+                  "transform": "matrix(0.999434, -0.0336405, 0.0336405, 0.999434, 206, 316)"
+                },
+                {
+                  "key": "kneeLeft:2",
+                  "part": "kneeLeft",
+                  "transform": "matrix(0.999931, 0.0117762, -0.0117762, 0.999931, 137.449, 412.698)"
+                },
+                {
+                  "key": "kneeRight:3",
+                  "part": "kneeRight",
+                  "transform": "matrix(0.999931, -0.0117762, 0.0117762, 0.999931, 222.635, 412.695)"
+                },
+                {
+                  "key": "ankleLeft:4",
+                  "part": "ankleLeft",
+                  "transform": "matrix(0.999756, 0.0221005, -0.0221005, 0.999756, 135.046, 501.307)"
+                },
+                {
+                  "key": "ankleRight:5",
+                  "part": "ankleRight",
+                  "transform": "matrix(0.999756, -0.0221005, 0.0221005, 0.999756, 220.268, 501.238)"
+                },
+                {
+                  "key": "shoulderLeft:6",
+                  "part": "shoulderLeft",
+                  "transform": "matrix(0.897603, 0.440805, -0.440805, 0.897603, 124, 177)"
+                },
+                {
+                  "key": "shoulderRight:7",
+                  "part": "shoulderRight",
+                  "transform": "matrix(-0.366418, -0.93045, 0.93045, -0.366418, 236, 177)"
+                },
+                {
+                  "key": "neck:8",
+                  "part": "neck",
+                  "transform": "matrix(0.998264, 0.0589053, -0.0589053, 0.998264, 180, 169)"
+                },
+                {
+                  "key": "torso:9",
+                  "part": "torso",
+                  "transform": "matrix(1, 0, 0, 1, 180, 173)"
+                },
+                {
+                  "key": "elbowLeft:10",
+                  "part": "elbowLeft",
+                  "transform": "matrix(0.159979, -0.98712, 0.98712, 0.159979, 94.6762, 246.824)"
+                },
+                {
+                  "key": "elbowRight:11",
+                  "part": "elbowRight",
+                  "transform": "matrix(-0.975576, -0.21966, 0.21966, -0.975576, 306.646, 150.072)"
+                },
+                {
+                  "key": "accessory:12",
+                  "part": "accessory",
+                  "transform": "matrix(1, 0, 0, 1, 180, 195)"
+                },
+                {
+                  "key": "prop:13",
+                  "part": "prop",
+                  "transform": "matrix(0.99997, 0.00778486, -0.00778486, 0.99997, 182.667, 251.883)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-348.047px",
+                  "top": "-162.422px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-45px",
+                  "top": "-316.698px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-516.109px",
+                  "top": "-173.094px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-216.818px",
+                  "top": "-338.636px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-516.109px",
+                  "top": "-273.688px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-216.818px",
+                  "top": "-439.545px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-276.698px",
+                  "top": "-7.92453px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-35.8861px",
+                  "top": "-128.592px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-29.6785px",
+                  "top": "-14.1543px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-256.547px",
+                  "top": "-20.1094px",
+                  "src": "assets/art/alex-articulated-v4.png"
+                },
+                {
+                  "left": "-401px",
+                  "top": "-8px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-164.363px",
+                  "top": "-131.288px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-229.2px",
+                  "top": "-241.2px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-422.34px",
+                  "top": "-274.468px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 2112,
+              "joints": [
+                {
+                  "key": "hipLeft:0",
+                  "part": "hipLeft",
+                  "transform": "matrix(0.999434, 0.0336405, -0.0336405, 0.999434, 154, 316)"
+                },
+                {
+                  "key": "hipRight:1",
+                  "part": "hipRight",
+                  "transform": "matrix(0.999434, -0.0336405, 0.0336405, 0.999434, 206, 316)"
+                },
+                {
+                  "key": "kneeLeft:2",
+                  "part": "kneeLeft",
+                  "transform": "matrix(0.999931, 0.0117762, -0.0117762, 0.999931, 137.449, 412.698)"
+                },
+                {
+                  "key": "kneeRight:3",
+                  "part": "kneeRight",
+                  "transform": "matrix(0.999931, -0.0117762, 0.0117762, 0.999931, 222.635, 412.695)"
+                },
+                {
+                  "key": "ankleLeft:4",
+                  "part": "ankleLeft",
+                  "transform": "matrix(0.999756, -0.0221005, 0.0221005, 0.999756, 135.046, 501.307)"
+                },
+                {
+                  "key": "ankleRight:5",
+                  "part": "ankleRight",
+                  "transform": "matrix(0.999756, 0.0221005, -0.0221005, 0.999756, 220.268, 501.238)"
+                },
+                {
+                  "key": "shoulderLeft:6",
+                  "part": "shoulderLeft",
+                  "transform": "matrix(0.89494, 0.446187, -0.446187, 0.89494, 124, 177)"
+                },
+                {
+                  "key": "shoulderRight:7",
+                  "part": "shoulderRight",
+                  "transform": "matrix(-0.366418, -0.93045, 0.93045, -0.366418, 236, 177)"
+                },
+                {
+                  "key": "neck:8",
+                  "part": "neck",
+                  "transform": "matrix(0.998264, -0.0589053, 0.0589053, 0.998264, 180, 169)"
+                },
+                {
+                  "key": "torso:9",
+                  "part": "torso",
+                  "transform": "matrix(1, 0, 0, 1, 180, 173)"
+                },
+                {
+                  "key": "elbowLeft:10",
+                  "part": "elbowLeft",
+                  "transform": "matrix(0.1098, -0.993954, 0.993954, 0.1098, 94.2575, 246.646)"
+                },
+                {
+                  "key": "elbowRight:11",
+                  "part": "elbowRight",
+                  "transform": "matrix(-0.975576, -0.21966, 0.21966, -0.975576, 306.646, 150.072)"
+                },
+                {
+                  "key": "accessory:12",
+                  "part": "accessory",
+                  "transform": "matrix(1, 0, 0, 1, 180, 195)"
+                },
+                {
+                  "key": "prop:13",
+                  "part": "prop",
+                  "transform": "matrix(0.999082, -0.0428493, 0.0428493, 0.999082, 182.392, 247.245)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-348.047px",
+                  "top": "-162.422px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-45px",
+                  "top": "-316.698px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-516.109px",
+                  "top": "-173.094px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-216.818px",
+                  "top": "-338.636px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-516.109px",
+                  "top": "-273.688px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-216.818px",
+                  "top": "-439.545px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-276.698px",
+                  "top": "-7.92453px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-35.8861px",
+                  "top": "-128.592px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-29.6785px",
+                  "top": "-14.1543px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-256.547px",
+                  "top": "-20.1094px",
+                  "src": "assets/art/alex-articulated-v4.png"
+                },
+                {
+                  "left": "-401px",
+                  "top": "-8px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-164.363px",
+                  "top": "-131.288px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-229.2px",
+                  "top": "-241.2px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-422.34px",
+                  "top": "-274.468px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 3328,
+              "joints": [
+                {
+                  "key": "hipLeft:0",
+                  "part": "hipLeft",
+                  "transform": "matrix(0.999988, -0.00481227, 0.00481227, 0.999988, 154, 316)"
+                },
+                {
+                  "key": "hipRight:1",
+                  "part": "hipRight",
+                  "transform": "matrix(0.999988, 0.00481227, -0.00481227, 0.999988, 206, 316)"
+                },
+                {
+                  "key": "kneeLeft:2",
+                  "part": "kneeLeft",
+                  "transform": "matrix(0.999999, -0.00168431, 0.00168431, 0.999999, 141.179, 413.263)"
+                },
+                {
+                  "key": "kneeRight:3",
+                  "part": "kneeRight",
+                  "transform": "matrix(0.999999, 0.00168431, -0.00168431, 0.999999, 218.905, 413.263)"
+                },
+                {
+                  "key": "ankleLeft:4",
+                  "part": "ankleLeft",
+                  "transform": "matrix(0.999979, 0.00650996, -0.00650996, 0.999979, 139.969, 501.896)"
+                },
+                {
+                  "key": "ankleRight:5",
+                  "part": "ankleRight",
+                  "transform": "matrix(0.999979, -0.00650996, 0.00650996, 0.999979, 215.347, 501.766)"
+                },
+                {
+                  "key": "shoulderLeft:6",
+                  "part": "shoulderLeft",
+                  "transform": "matrix(0.877764, 0.479094, -0.479094, 0.877764, 124, 177)"
+                },
+                {
+                  "key": "shoulderRight:7",
+                  "part": "shoulderRight",
+                  "transform": "matrix(-0.430532, -0.902575, 0.902575, -0.430532, 236, 177)"
+                },
+                {
+                  "key": "neck:8",
+                  "part": "neck",
+                  "transform": "matrix(0.999849, 0.0173593, -0.0173593, 0.999849, 180, 169)"
+                },
+                {
+                  "key": "torso:9",
+                  "part": "torso",
+                  "transform": "matrix(1, 0, 0, 1, 180, 173)"
+                },
+                {
+                  "key": "elbowLeft:10",
+                  "part": "elbowLeft",
+                  "transform": "matrix(0.162143, -0.986767, 0.986767, 0.162143, 91.6932, 245.495)"
+                },
+                {
+                  "key": "elbowRight:11",
+                  "part": "elbowRight",
+                  "transform": "matrix(-0.996617, -0.0821844, 0.0821844, -0.996617, 304.592, 145.202)"
+                },
+                {
+                  "key": "accessory:12",
+                  "part": "accessory",
+                  "transform": "matrix(1, 0, 0, 1, 180, 195)"
+                },
+                {
+                  "key": "prop:13",
+                  "part": "prop",
+                  "transform": "matrix(0.99995, 0.00997736, -0.00997736, 0.99995, 179.673, 250.747)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-348.047px",
+                  "top": "-162.422px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-45px",
+                  "top": "-316.698px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-516.109px",
+                  "top": "-173.094px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-216.818px",
+                  "top": "-338.636px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-516.109px",
+                  "top": "-273.688px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-216.818px",
+                  "top": "-439.545px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-276.698px",
+                  "top": "-7.92453px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-35.8861px",
+                  "top": "-128.592px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-29.6785px",
+                  "top": "-14.1543px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-256.547px",
+                  "top": "-20.1094px",
+                  "src": "assets/art/alex-articulated-v4.png"
+                },
+                {
+                  "left": "-401px",
+                  "top": "-8px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-164.363px",
+                  "top": "-131.288px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-229.2px",
+                  "top": "-241.2px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-422.34px",
+                  "top": "-274.468px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 4544,
+              "joints": [
+                {
+                  "key": "hipLeft:0",
+                  "part": "hipLeft",
+                  "transform": "matrix(0.999309, -0.037181, 0.037181, 0.999309, 154, 316)"
+                },
+                {
+                  "key": "hipRight:1",
+                  "part": "hipRight",
+                  "transform": "matrix(0.999309, 0.037181, -0.037181, 0.999309, 206, 316)"
+                },
+                {
+                  "key": "kneeLeft:2",
+                  "part": "kneeLeft",
+                  "transform": "matrix(0.999915, -0.013016, 0.013016, 0.999915, 144.334, 413.627)"
+                },
+                {
+                  "key": "kneeRight:3",
+                  "part": "kneeRight",
+                  "transform": "matrix(0.999915, 0.013016, -0.013016, 0.999915, 215.749, 413.63)"
+                },
+                {
+                  "key": "ankleLeft:4",
+                  "part": "ankleLeft",
+                  "transform": "matrix(0.99992, 0.0126101, -0.0126101, 0.99992, 144.128, 502.268)"
+                },
+                {
+                  "key": "ankleRight:5",
+                  "part": "ankleRight",
+                  "transform": "matrix(0.99992, -0.0126101, 0.0126101, 0.99992, 211.189, 502.087)"
+                },
+                {
+                  "key": "shoulderLeft:6",
+                  "part": "shoulderLeft",
+                  "transform": "matrix(0.861356, 0.508002, -0.508002, 0.861356, 124, 177)"
+                },
+                {
+                  "key": "shoulderRight:7",
+                  "part": "shoulderRight",
+                  "transform": "matrix(-0.482888, -0.875682, 0.875682, -0.482888, 236, 177)"
+                },
+                {
+                  "key": "neck:8",
+                  "part": "neck",
+                  "transform": "matrix(0.999435, 0.0336215, -0.0336215, 0.999435, 180, 169)"
+                },
+                {
+                  "key": "torso:9",
+                  "part": "torso",
+                  "transform": "matrix(1, 0, 0, 1, 180, 173)"
+                },
+                {
+                  "key": "elbowLeft:10",
+                  "part": "elbowLeft",
+                  "transform": "matrix(0.186878, -0.982383, 0.982383, 0.186878, 89.4346, 244.383)"
+                },
+                {
+                  "key": "elbowRight:11",
+                  "part": "elbowRight",
+                  "transform": "matrix(-0.963166, -0.268908, 0.268908, -0.963166, 302.603, 141.221)"
+                },
+                {
+                  "key": "accessory:12",
+                  "part": "accessory",
+                  "transform": "matrix(1, 0, 0, 1, 180, 195)"
+                },
+                {
+                  "key": "prop:13",
+                  "part": "prop",
+                  "transform": "matrix(0.999384, 0.0350916, -0.0350916, 0.999384, 177.254, 251.844)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-348.047px",
+                  "top": "-162.422px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-45px",
+                  "top": "-316.698px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-516.109px",
+                  "top": "-173.094px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-216.818px",
+                  "top": "-338.636px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-516.109px",
+                  "top": "-273.688px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-216.818px",
+                  "top": "-439.545px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-276.698px",
+                  "top": "-7.92453px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-35.8861px",
+                  "top": "-128.592px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-29.6785px",
+                  "top": "-14.1543px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-256.547px",
+                  "top": "-20.1094px",
+                  "src": "assets/art/alex-articulated-v4.png"
+                },
+                {
+                  "left": "-401px",
+                  "top": "-8px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-164.363px",
+                  "top": "-131.288px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-229.2px",
+                  "top": "-241.2px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-422.34px",
+                  "top": "-274.468px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 5824,
+              "joints": [
+                {
+                  "key": "hipLeft:0",
+                  "part": "hipLeft",
+                  "transform": "matrix(0.999788, -0.0205721, 0.0205721, 0.999788, 154, 316)"
+                },
+                {
+                  "key": "hipRight:1",
+                  "part": "hipRight",
+                  "transform": "matrix(0.999788, 0.0205721, -0.0205721, 0.999788, 206, 316)"
+                },
+                {
+                  "key": "kneeLeft:2",
+                  "part": "kneeLeft",
+                  "transform": "matrix(0.999974, -0.00720068, 0.00720068, 0.999974, 142.713, 413.453)"
+                },
+                {
+                  "key": "kneeRight:3",
+                  "part": "kneeRight",
+                  "transform": "matrix(0.999974, 0.00720068, -0.00720068, 0.999974, 217.37, 413.455)"
+                },
+                {
+                  "key": "ankleLeft:4",
+                  "part": "ankleLeft",
+                  "transform": "matrix(0.99972, -0.0236826, 0.0236826, 0.99972, 141.992, 502.092)"
+                },
+                {
+                  "key": "ankleRight:5",
+                  "part": "ankleRight",
+                  "transform": "matrix(0.99972, 0.0236826, -0.0236826, 0.99972, 213.324, 501.937)"
+                },
+                {
+                  "key": "shoulderLeft:6",
+                  "part": "shoulderLeft",
+                  "transform": "matrix(0.867265, 0.497847, -0.497847, 0.867265, 124, 177)"
+                },
+                {
+                  "key": "shoulderRight:7",
+                  "part": "shoulderRight",
+                  "transform": "matrix(-0.456216, -0.889869, 0.889869, -0.456216, 236, 177)"
+                },
+                {
+                  "key": "neck:8",
+                  "part": "neck",
+                  "transform": "matrix(0.998006, -0.0631176, 0.0631176, 0.998006, 180, 169)"
+                },
+                {
+                  "key": "torso:9",
+                  "part": "torso",
+                  "transform": "matrix(1, 0, 0, 1, 180, 173)"
+                },
+                {
+                  "key": "elbowLeft:10",
+                  "part": "elbowLeft",
+                  "transform": "matrix(0.137106, -0.990556, 0.990556, 0.137106, 90.2286, 244.784)"
+                },
+                {
+                  "key": "elbowRight:11",
+                  "part": "elbowRight",
+                  "transform": "matrix(-0.996139, 0.0877899, -0.0877899, -0.996139, 303.653, 143.249)"
+                },
+                {
+                  "key": "accessory:12",
+                  "part": "accessory",
+                  "transform": "matrix(1, 0, 0, 1, 180, 195)"
+                },
+                {
+                  "key": "prop:13",
+                  "part": "prop",
+                  "transform": "matrix(0.999882, -0.0153444, 0.0153444, 0.999882, 178.313, 247.808)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-348.047px",
+                  "top": "-162.422px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-45px",
+                  "top": "-316.698px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-516.109px",
+                  "top": "-173.094px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-216.818px",
+                  "top": "-338.636px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-516.109px",
+                  "top": "-273.688px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-216.818px",
+                  "top": "-439.545px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-276.698px",
+                  "top": "-7.92453px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-35.8861px",
+                  "top": "-128.592px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-29.6785px",
+                  "top": "-14.1543px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-256.547px",
+                  "top": "-20.1094px",
+                  "src": "assets/art/alex-articulated-v4.png"
+                },
+                {
+                  "left": "-401px",
+                  "top": "-8px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-164.363px",
+                  "top": "-131.288px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-229.2px",
+                  "top": "-241.2px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                },
+                {
+                  "left": "-422.34px",
+                  "top": "-274.468px",
+                  "src": "assets/art/alex-articulated-v3.png"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "name": "jo",
+          "jointCount": 14,
+          "changingJoints": [
+            {
+              "part": "hipLeft",
+              "states": 5
+            },
+            {
+              "part": "hipRight",
+              "states": 5
+            },
+            {
+              "part": "kneeLeft",
+              "states": 5
+            },
+            {
+              "part": "kneeRight",
+              "states": 5
+            },
+            {
+              "part": "ankleLeft",
+              "states": 6
+            },
+            {
+              "part": "ankleRight",
+              "states": 6
+            },
+            {
+              "part": "shoulderLeft",
+              "states": 5
+            },
+            {
+              "part": "shoulderRight",
+              "states": 6
+            },
+            {
+              "part": "neck",
+              "states": 5
+            },
+            {
+              "part": "elbowLeft",
+              "states": 5
+            },
+            {
+              "part": "elbowRight",
+              "states": 6
+            },
+            {
+              "part": "accessory",
+              "states": 6
+            },
+            {
+              "part": "prop",
+              "states": 5
+            }
+          ],
+          "stableImageCrops": true,
+          "samples": [
+            {
+              "timeMs": 0,
+              "joints": [
+                {
+                  "key": "hipLeft:0",
+                  "part": "hipLeft",
+                  "transform": "matrix(1, 0, 0, 1, 154, 316)"
+                },
+                {
+                  "key": "hipRight:1",
+                  "part": "hipRight",
+                  "transform": "matrix(1, 0, 0, 1, 206, 316)"
+                },
+                {
+                  "key": "kneeLeft:2",
+                  "part": "kneeLeft",
+                  "transform": "matrix(1, 0, 0, 1, 139.445, 413.2)"
+                },
+                {
+                  "key": "kneeRight:3",
+                  "part": "kneeRight",
+                  "transform": "matrix(1, 0, 0, 1, 219.793, 413.2)"
+                },
+                {
+                  "key": "ankleLeft:4",
+                  "part": "ankleLeft",
+                  "transform": "matrix(1, 0, 0, 1, 137.792, 498.292)"
+                },
+                {
+                  "key": "ankleRight:5",
+                  "part": "ankleRight",
+                  "transform": "matrix(1, 0, 0, 1, 216.087, 497.717)"
+                },
+                {
+                  "key": "shoulderLeft:6",
+                  "part": "shoulderLeft",
+                  "transform": "matrix(0.863295, 0.5047, -0.5047, 0.863295, 124, 177)"
+                },
+                {
+                  "key": "shoulderRight:7",
+                  "part": "shoulderRight",
+                  "transform": "matrix(0.890049, -0.455864, 0.455864, 0.890049, 236, 177)"
+                },
+                {
+                  "key": "neck:8",
+                  "part": "neck",
+                  "transform": "matrix(1, 0, 0, 1, 180, 169)"
+                },
+                {
+                  "key": "torso:9",
+                  "part": "torso",
+                  "transform": "matrix(1, 0, 0, 1, 180, 173)"
+                },
+                {
+                  "key": "elbowLeft:10",
+                  "part": "elbowLeft",
+                  "transform": "matrix(-0.986236, -0.165341, 0.165341, -0.986236, 77.8188, 237.573)"
+                },
+                {
+                  "key": "elbowRight:11",
+                  "part": "elbowRight",
+                  "transform": "matrix(0.42049, 0.907297, -0.907297, 0.42049, 281.046, 238.867)"
+                },
+                {
+                  "key": "accessory:12",
+                  "part": "accessory",
+                  "transform": "matrix(0.996195, 0.0871557, -0.0871557, 0.996195, 190.682, 265.279)"
+                },
+                {
+                  "key": "prop:13",
+                  "part": "prop",
+                  "transform": "matrix(0.165341, -0.986236, 0.986236, 0.165341, 86.4801, 159.206)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-338.344px",
+                  "top": "-164.531px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-40.9598px",
+                  "top": "-309.706px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-543.16px",
+                  "top": "-187.98px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-210.319px",
+                  "top": "-345.591px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-543.16px",
+                  "top": "-285.277px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-210.319px",
+                  "top": "-442.412px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-298.594px",
+                  "top": "-20.0521px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-44.2683px",
+                  "top": "-147.439px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-11.0373px",
+                  "top": "-26.0881px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-255.522px",
+                  "top": "-18.5075px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-407.887px",
+                  "top": "-16.3019px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-162.518px",
+                  "top": "-138.019px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-280.329px",
+                  "top": "-289.349px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-199.616px",
+                  "top": "-139.213px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 1598.0000000000002,
+              "joints": [
+                {
+                  "key": "hipLeft:0",
+                  "part": "hipLeft",
+                  "transform": "matrix(0.999434, 0.0336405, -0.0336405, 0.999434, 154, 316)"
+                },
+                {
+                  "key": "hipRight:1",
+                  "part": "hipRight",
+                  "transform": "matrix(0.999434, -0.0336405, 0.0336405, 0.999434, 206, 316)"
+                },
+                {
+                  "key": "kneeLeft:2",
+                  "part": "kneeLeft",
+                  "transform": "matrix(0.999931, 0.0117762, -0.0117762, 0.999931, 136.184, 412.655)"
+                },
+                {
+                  "key": "kneeRight:3",
+                  "part": "kneeRight",
+                  "transform": "matrix(0.999931, -0.0117762, 0.0117762, 0.999931, 223.055, 412.681)"
+                },
+                {
+                  "key": "ankleLeft:4",
+                  "part": "ankleLeft",
+                  "transform": "matrix(0.999756, 0.0221005, -0.0221005, 0.999756, 133.529, 497.722)"
+                },
+                {
+                  "key": "ankleRight:5",
+                  "part": "ankleRight",
+                  "transform": "matrix(0.999756, -0.0221005, 0.0221005, 0.999756, 220.344, 497.236)"
+                },
+                {
+                  "key": "shoulderLeft:6",
+                  "part": "shoulderLeft",
+                  "transform": "matrix(0.851069, 0.525054, -0.525054, 0.851069, 124, 177)"
+                },
+                {
+                  "key": "shoulderRight:7",
+                  "part": "shoulderRight",
+                  "transform": "matrix(0.884583, -0.466384, 0.466384, 0.884583, 236, 177)"
+                },
+                {
+                  "key": "neck:8",
+                  "part": "neck",
+                  "transform": "matrix(0.999083, 0.0428103, -0.0428103, 0.999083, 180, 169)"
+                },
+                {
+                  "key": "torso:9",
+                  "part": "torso",
+                  "transform": "matrix(1, 0, 0, 1, 180, 173)"
+                },
+                {
+                  "key": "elbowLeft:10",
+                  "part": "elbowLeft",
+                  "transform": "matrix(-0.970373, -0.241611, 0.241611, -0.970373, 76.394, 236.459)"
+                },
+                {
+                  "key": "elbowRight:11",
+                  "part": "elbowRight",
+                  "transform": "matrix(0.441721, 0.897152, -0.897152, 0.441721, 281.777, 238.329)"
+                },
+                {
+                  "key": "accessory:12",
+                  "part": "accessory",
+                  "transform": "matrix(0.997071, 0.0764859, -0.0764859, 0.997071, 192.023, 266.459)"
+                },
+                {
+                  "key": "prop:13",
+                  "part": "prop",
+                  "transform": "matrix(0.241611, -0.970373, 0.970373, 0.241611, 91.1293, 159.005)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-338.344px",
+                  "top": "-164.531px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-40.9598px",
+                  "top": "-309.706px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-543.16px",
+                  "top": "-187.98px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-210.319px",
+                  "top": "-345.591px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-543.16px",
+                  "top": "-285.277px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-210.319px",
+                  "top": "-442.412px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-298.594px",
+                  "top": "-20.0521px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-44.2683px",
+                  "top": "-147.439px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-11.0373px",
+                  "top": "-26.0881px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-255.522px",
+                  "top": "-18.5075px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-407.887px",
+                  "top": "-16.3019px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-162.518px",
+                  "top": "-138.019px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-280.329px",
+                  "top": "-289.349px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-199.616px",
+                  "top": "-139.213px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 3102,
+              "joints": [
+                {
+                  "key": "hipLeft:0",
+                  "part": "hipLeft",
+                  "transform": "matrix(0.999434, 0.0336405, -0.0336405, 0.999434, 154, 316)"
+                },
+                {
+                  "key": "hipRight:1",
+                  "part": "hipRight",
+                  "transform": "matrix(0.999434, -0.0336405, 0.0336405, 0.999434, 206, 316)"
+                },
+                {
+                  "key": "kneeLeft:2",
+                  "part": "kneeLeft",
+                  "transform": "matrix(0.999931, 0.0117762, -0.0117762, 0.999931, 136.184, 412.655)"
+                },
+                {
+                  "key": "kneeRight:3",
+                  "part": "kneeRight",
+                  "transform": "matrix(0.999931, -0.0117762, 0.0117762, 0.999931, 223.055, 412.681)"
+                },
+                {
+                  "key": "ankleLeft:4",
+                  "part": "ankleLeft",
+                  "transform": "matrix(0.999756, -0.0221005, 0.0221005, 0.999756, 133.529, 497.722)"
+                },
+                {
+                  "key": "ankleRight:5",
+                  "part": "ankleRight",
+                  "transform": "matrix(0.999756, 0.0221005, -0.0221005, 0.999756, 220.344, 497.236)"
+                },
+                {
+                  "key": "shoulderLeft:6",
+                  "part": "shoulderLeft",
+                  "transform": "matrix(0.851069, 0.525054, -0.525054, 0.851069, 124, 177)"
+                },
+                {
+                  "key": "shoulderRight:7",
+                  "part": "shoulderRight",
+                  "transform": "matrix(0.880411, -0.474211, 0.474211, 0.880411, 236, 177)"
+                },
+                {
+                  "key": "neck:8",
+                  "part": "neck",
+                  "transform": "matrix(0.999083, 0.0428103, -0.0428103, 0.999083, 180, 169)"
+                },
+                {
+                  "key": "torso:9",
+                  "part": "torso",
+                  "transform": "matrix(1, 0, 0, 1, 180, 173)"
+                },
+                {
+                  "key": "elbowLeft:10",
+                  "part": "elbowLeft",
+                  "transform": "matrix(-0.970373, -0.241611, 0.241611, -0.970373, 76.394, 236.459)"
+                },
+                {
+                  "key": "elbowRight:11",
+                  "part": "elbowRight",
+                  "transform": "matrix(0.422066, 0.906565, -0.906565, 0.422066, 282.319, 237.921)"
+                },
+                {
+                  "key": "accessory:12",
+                  "part": "accessory",
+                  "transform": "matrix(0.997071, 0.0764859, -0.0764859, 0.997071, 192.023, 264.77)"
+                },
+                {
+                  "key": "prop:13",
+                  "part": "prop",
+                  "transform": "matrix(0.241611, -0.970373, 0.970373, 0.241611, 91.1293, 159.005)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-338.344px",
+                  "top": "-164.531px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-40.9598px",
+                  "top": "-309.706px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-543.16px",
+                  "top": "-187.98px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-210.319px",
+                  "top": "-345.591px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-543.16px",
+                  "top": "-285.277px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-210.319px",
+                  "top": "-442.412px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-298.594px",
+                  "top": "-20.0521px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-44.2683px",
+                  "top": "-147.439px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-11.0373px",
+                  "top": "-26.0881px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-255.522px",
+                  "top": "-18.5075px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-407.887px",
+                  "top": "-16.3019px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-162.518px",
+                  "top": "-138.019px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-280.329px",
+                  "top": "-289.349px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-199.616px",
+                  "top": "-139.213px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 4888,
+              "joints": [
+                {
+                  "key": "hipLeft:0",
+                  "part": "hipLeft",
+                  "transform": "matrix(0.999988, -0.00481227, 0.00481227, 0.999988, 154, 316)"
+                },
+                {
+                  "key": "hipRight:1",
+                  "part": "hipRight",
+                  "transform": "matrix(0.999988, 0.00481227, -0.00481227, 0.999988, 206, 316)"
+                },
+                {
+                  "key": "kneeLeft:2",
+                  "part": "kneeLeft",
+                  "transform": "matrix(0.999999, -0.00168431, 0.00168431, 0.999999, 139.913, 413.269)"
+                },
+                {
+                  "key": "kneeRight:3",
+                  "part": "kneeRight",
+                  "transform": "matrix(0.999999, 0.00168431, -0.00168431, 0.999999, 219.325, 413.265)"
+                },
+                {
+                  "key": "ankleLeft:4",
+                  "part": "ankleLeft",
+                  "transform": "matrix(0.999979, 0.00650996, -0.00650996, 0.999979, 138.403, 498.363)"
+                },
+                {
+                  "key": "ankleRight:5",
+                  "part": "ankleRight",
+                  "transform": "matrix(0.999979, -0.00650996, 0.00650996, 0.999979, 215.476, 497.776)"
+                },
+                {
+                  "key": "shoulderLeft:6",
+                  "part": "shoulderLeft",
+                  "transform": "matrix(0.830557, 0.556934, -0.556934, 0.830557, 124, 177)"
+                },
+                {
+                  "key": "shoulderRight:7",
+                  "part": "shoulderRight",
+                  "transform": "matrix(0.891688, -0.452651, 0.452651, 0.891688, 236, 177)"
+                },
+                {
+                  "key": "neck:8",
+                  "part": "neck",
+                  "transform": "matrix(0.999981, -0.00612467, 0.00612467, 0.999981, 180, 169)"
+                },
+                {
+                  "key": "torso:9",
+                  "part": "torso",
+                  "transform": "matrix(1, 0, 0, 1, 180, 173)"
+                },
+                {
+                  "key": "elbowLeft:10",
+                  "part": "elbowLeft",
+                  "transform": "matrix(-0.97683, -0.214015, 0.214015, -0.97683, 74.1744, 234.612)"
+                },
+                {
+                  "key": "elbowRight:11",
+                  "part": "elbowRight",
+                  "transform": "matrix(0.42182, 0.906679, -0.906679, 0.42182, 280.823, 239.029)"
+                },
+                {
+                  "key": "accessory:12",
+                  "part": "accessory",
+                  "transform": "matrix(0.99606, 0.088681, -0.088681, 0.99606, 190.491, 265.48)"
+                },
+                {
+                  "key": "prop:13",
+                  "part": "prop",
+                  "transform": "matrix(0.214015, -0.97683, 0.97683, 0.214015, 86.7089, 156.771)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-338.344px",
+                  "top": "-164.531px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-40.9598px",
+                  "top": "-309.706px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-543.16px",
+                  "top": "-187.98px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-210.319px",
+                  "top": "-345.591px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-543.16px",
+                  "top": "-285.277px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-210.319px",
+                  "top": "-442.412px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-298.594px",
+                  "top": "-20.0521px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-44.2683px",
+                  "top": "-147.439px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-11.0373px",
+                  "top": "-26.0881px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-255.522px",
+                  "top": "-18.5075px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-407.887px",
+                  "top": "-16.3019px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-162.518px",
+                  "top": "-138.019px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-280.329px",
+                  "top": "-289.349px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-199.616px",
+                  "top": "-139.213px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 6674,
+              "joints": [
+                {
+                  "key": "hipLeft:0",
+                  "part": "hipLeft",
+                  "transform": "matrix(0.999309, -0.037181, 0.037181, 0.999309, 154, 316)"
+                },
+                {
+                  "key": "hipRight:1",
+                  "part": "hipRight",
+                  "transform": "matrix(0.999309, 0.037181, -0.037181, 0.999309, 206, 316)"
+                },
+                {
+                  "key": "kneeLeft:2",
+                  "part": "kneeLeft",
+                  "transform": "matrix(0.999915, -0.013016, 0.013016, 0.999915, 143.069, 413.674)"
+                },
+                {
+                  "key": "kneeRight:3",
+                  "part": "kneeRight",
+                  "transform": "matrix(0.999915, 0.013016, -0.013016, 0.999915, 216.169, 413.646)"
+                },
+                {
+                  "key": "ankleLeft:4",
+                  "part": "ankleLeft",
+                  "transform": "matrix(0.99992, 0.0126101, -0.0126101, 0.99992, 142.524, 498.78)"
+                },
+                {
+                  "key": "ankleRight:5",
+                  "part": "ankleRight",
+                  "transform": "matrix(0.99992, -0.0126101, 0.0126101, 0.99992, 211.363, 498.107)"
+                },
+                {
+                  "key": "shoulderLeft:6",
+                  "part": "shoulderLeft",
+                  "transform": "matrix(0.918313, 0.395854, -0.395854, 0.918313, 124, 177)"
+                },
+                {
+                  "key": "shoulderRight:7",
+                  "part": "shoulderRight",
+                  "transform": "matrix(0.899217, -0.437504, 0.437504, 0.899217, 236, 177)"
+                },
+                {
+                  "key": "neck:8",
+                  "part": "neck",
+                  "transform": "matrix(0.99888, -0.0473145, 0.0473145, 0.99888, 180, 169)"
+                },
+                {
+                  "key": "torso:9",
+                  "part": "torso",
+                  "transform": "matrix(1, 0, 0, 1, 180, 173)"
+                },
+                {
+                  "key": "elbowLeft:10",
+                  "part": "elbowLeft",
+                  "transform": "matrix(-0.999878, 0.0156278, -0.0156278, -0.999878, 85.5361, 242.744)"
+                },
+                {
+                  "key": "elbowRight:11",
+                  "part": "elbowRight",
+                  "transform": "matrix(0.413887, 0.910328, -0.910328, 0.413887, 279.767, 239.779)"
+                },
+                {
+                  "key": "accessory:12",
+                  "part": "accessory",
+                  "transform": "matrix(0.995094, 0.0989374, -0.0989374, 0.995094, 189.205, 265.39)"
+                },
+                {
+                  "key": "prop:13",
+                  "part": "prop",
+                  "transform": "matrix(-0.0156278, -0.999878, 0.999878, -0.0156278, 79.8914, 164.103)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-338.344px",
+                  "top": "-164.531px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-40.9598px",
+                  "top": "-309.706px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-543.16px",
+                  "top": "-187.98px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-210.319px",
+                  "top": "-345.591px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-543.16px",
+                  "top": "-285.277px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-210.319px",
+                  "top": "-442.412px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-298.594px",
+                  "top": "-20.0521px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-44.2683px",
+                  "top": "-147.439px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-11.0373px",
+                  "top": "-26.0881px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-255.522px",
+                  "top": "-18.5075px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-407.887px",
+                  "top": "-16.3019px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-162.518px",
+                  "top": "-138.019px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-280.329px",
+                  "top": "-289.349px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-199.616px",
+                  "top": "-139.213px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                }
+              ]
+            },
+            {
+              "timeMs": 8554,
+              "joints": [
+                {
+                  "key": "hipLeft:0",
+                  "part": "hipLeft",
+                  "transform": "matrix(0.999788, -0.0205721, 0.0205721, 0.999788, 154, 316)"
+                },
+                {
+                  "key": "hipRight:1",
+                  "part": "hipRight",
+                  "transform": "matrix(0.999788, 0.0205721, -0.0205721, 0.999788, 206, 316)"
+                },
+                {
+                  "key": "kneeLeft:2",
+                  "part": "kneeLeft",
+                  "transform": "matrix(0.999974, -0.00720068, 0.00720068, 0.999974, 141.448, 413.479)"
+                },
+                {
+                  "key": "kneeRight:3",
+                  "part": "kneeRight",
+                  "transform": "matrix(0.999974, 0.00720068, -0.00720068, 0.999974, 217.79, 413.463)"
+                },
+                {
+                  "key": "ankleLeft:4",
+                  "part": "ankleLeft",
+                  "transform": "matrix(0.99972, -0.0236826, 0.0236826, 0.99972, 140.408, 498.58)"
+                },
+                {
+                  "key": "ankleRight:5",
+                  "part": "ankleRight",
+                  "transform": "matrix(0.99972, 0.0236826, -0.0236826, 0.99972, 213.475, 497.951)"
+                },
+                {
+                  "key": "shoulderLeft:6",
+                  "part": "shoulderLeft",
+                  "transform": "matrix(0.77374, 0.633504, -0.633504, 0.77374, 124, 177)"
+                },
+                {
+                  "key": "shoulderRight:7",
+                  "part": "shoulderRight",
+                  "transform": "matrix(0.892572, -0.450904, 0.450904, 0.892572, 236, 177)"
+                },
+                {
+                  "key": "neck:8",
+                  "part": "neck",
+                  "transform": "matrix(0.999657, -0.0261814, 0.0261814, 0.999657, 180, 169)"
+                },
+                {
+                  "key": "torso:9",
+                  "part": "torso",
+                  "transform": "matrix(1, 0, 0, 1, 180, 173)"
+                },
+                {
+                  "key": "elbowLeft:10",
+                  "part": "elbowLeft",
+                  "transform": "matrix(-0.962905, -0.269842, 0.269842, -0.962905, 68.9138, 229.605)"
+                },
+                {
+                  "key": "elbowRight:11",
+                  "part": "elbowRight",
+                  "transform": "matrix(0.402742, 0.915313, -0.915313, 0.402742, 280.701, 239.117)"
+                },
+                {
+                  "key": "accessory:12",
+                  "part": "accessory",
+                  "transform": "matrix(0.995603, 0.093675, -0.093675, 0.995603, 189.864, 264.169)"
+                },
+                {
+                  "key": "prop:13",
+                  "part": "prop",
+                  "transform": "matrix(0.269842, -0.962905, 0.962905, 0.269842, 85.9044, 152.614)"
+                }
+              ],
+              "imageOrigins": [
+                {
+                  "left": "-338.344px",
+                  "top": "-164.531px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-40.9598px",
+                  "top": "-309.706px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-543.16px",
+                  "top": "-187.98px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-210.319px",
+                  "top": "-345.591px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-543.16px",
+                  "top": "-285.277px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-210.319px",
+                  "top": "-442.412px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-298.594px",
+                  "top": "-20.0521px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-44.2683px",
+                  "top": "-147.439px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-11.0373px",
+                  "top": "-26.0881px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-255.522px",
+                  "top": "-18.5075px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-407.887px",
+                  "top": "-16.3019px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-162.518px",
+                  "top": "-138.019px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-280.329px",
+                  "top": "-289.349px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                },
+                {
+                  "left": "-199.616px",
+                  "top": "-139.213px",
+                  "src": "assets/art/jo-articulated-v3.png"
+                }
+              ]
+            }
+          ]
+        }
+      ],
+      "avatar": {
+        "ready": true,
+        "posture": "wave",
+        "sleeves": [
+          {
+            "part": "upper-sleeve-left",
+            "joint": "upper-left",
+            "parent": "upper-left",
+            "src": "assets/art/avatar-clothed-kit-v2.png"
+          },
+          {
+            "part": "fore-sleeve-left",
+            "joint": "elbow-left",
+            "parent": "elbow-left",
+            "src": "assets/art/avatar-clothed-kit-v2.png"
+          },
+          {
+            "part": "upper-sleeve-right",
+            "joint": "upper-right",
+            "parent": "upper-right",
+            "src": "assets/art/avatar-clothed-kit-v2.png"
+          },
+          {
+            "part": "fore-sleeve-right",
+            "joint": "elbow-right",
+            "parent": "elbow-right",
+            "src": "assets/art/avatar-clothed-kit-v2.png"
+          }
+        ],
+        "loadedImages": [
+          "assets/art/avatar-kit-v2.png",
+          "assets/art/avatar-clothed-kit-v1.png",
+          "assets/art/avatar-kit-v2.png",
+          "assets/art/avatar-blink-v1.png",
+          "assets/art/avatar-blink-v1.png",
+          "assets/art/avatar-kit-v2.png",
+          "assets/art/avatar-clothed-skin-v1.png",
+          "assets/art/avatar-clothed-kit-v2.png",
+          "assets/art/avatar-clothed-skin-v1.png",
+          "assets/art/avatar-clothed-skin-v1.png",
+          "assets/art/avatar-clothed-kit-v2.png",
+          "assets/art/avatar-clothed-skin-v1.png",
+          "assets/art/avatar-clothed-kit-v2.png",
+          "assets/art/avatar-clothed-skin-v1.png",
+          "assets/art/avatar-clothed-skin-v1.png",
+          "assets/art/avatar-clothed-kit-v2.png"
+        ]
+      },
+      "avatarMotion": {
+        "name": "avatar",
+        "jointCount": 6,
+        "changingJoints": [
+          {
+            "part": "upper-left",
+            "states": 6
+          },
+          {
+            "part": "elbow-left",
+            "states": 6
+          },
+          {
+            "part": "wrist-left",
+            "states": 6
+          },
+          {
+            "part": "upper-right",
+            "states": 6
+          },
+          {
+            "part": "elbow-right",
+            "states": 6
+          },
+          {
+            "part": "wrist-right",
+            "states": 6
+          }
+        ],
+        "stableImageCrops": true,
+        "samples": [
+          {
+            "timeMs": 0,
+            "joints": [
+              {
+                "key": "upper-left:0",
+                "part": "upper-left",
+                "transform": "matrix(0.984808, 0.173648, -0.173648, 0.984808, 0, 0)"
+              },
+              {
+                "key": "elbow-left:1",
+                "part": "elbow-left",
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              },
+              {
+                "key": "wrist-left:2",
+                "part": "wrist-left",
+                "transform": "matrix(1, 0, 0, 1, 0, 0)"
+              },
+              {
+                "key": "upper-right:3",
+                "part": "upper-right",
+                "transform": "matrix(0.587785, -0.809017, 0.809017, 0.587785, 0, 0)"
+              },
+              {
+                "key": "elbow-right:4",
+                "part": "elbow-right",
+                "transform": "matrix(-0.438371, -0.898794, 0.898794, -0.438371, 0, 0)"
+              },
+              {
+                "key": "wrist-right:5",
+                "part": "wrist-right",
+                "transform": "matrix(0.999391, 0.0348995, -0.0348995, 0.999391, 0, 0)"
+              }
+            ],
+            "imageOrigins": [
+              {
+                "left": "-254.278px",
+                "top": "-184.017px",
+                "src": "assets/art/avatar-kit-v2.png"
+              },
+              {
+                "left": "-39.8049px",
+                "top": "-82.0976px",
+                "src": "assets/art/avatar-clothed-kit-v1.png"
+              },
+              {
+                "left": "-172.307px",
+                "top": "-30.1119px",
+                "src": "assets/art/avatar-kit-v2.png"
+              },
+              {
+                "left": "-215.802px",
+                "top": "-100.373px",
+                "src": "assets/art/avatar-blink-v1.png"
+              },
+              {
+                "left": "-286.063px",
+                "top": "-100.373px",
+                "src": "assets/art/avatar-blink-v1.png"
+              },
+              {
+                "left": "-119.625px",
+                "top": "-940.5px",
+                "src": "assets/art/avatar-kit-v2.png"
+              },
+              {
+                "left": "-32.6938px",
+                "top": "-21.7019px",
+                "src": "assets/art/avatar-clothed-skin-v1.png"
+              },
+              {
+                "left": "-32.55px",
+                "top": "-143.5px",
+                "src": "assets/art/avatar-clothed-kit-v2.png"
+              },
+              {
+                "left": "-32.7343px",
+                "top": "-106.86px",
+                "src": "assets/art/avatar-clothed-skin-v1.png"
+              },
+              {
+                "left": "-16.28px",
+                "top": "-159.72px",
+                "src": "assets/art/avatar-clothed-skin-v1.png"
+              },
+              {
+                "left": "-32.0936px",
+                "top": "-233.497px",
+                "src": "assets/art/avatar-clothed-kit-v2.png"
+              },
+              {
+                "left": "-32.6938px",
+                "top": "-21.7019px",
+                "src": "assets/art/avatar-clothed-skin-v1.png"
+              },
+              {
+                "left": "-32.55px",
+                "top": "-143.5px",
+                "src": "assets/art/avatar-clothed-kit-v2.png"
+              },
+              {
+                "left": "-32.7343px",
+                "top": "-106.86px",
+                "src": "assets/art/avatar-clothed-skin-v1.png"
+              },
+              {
+                "left": "-16.28px",
+                "top": "-159.72px",
+                "src": "assets/art/avatar-clothed-skin-v1.png"
+              },
+              {
+                "left": "-32.0936px",
+                "top": "-233.497px",
+                "src": "assets/art/avatar-clothed-kit-v2.png"
+              }
+            ]
+          },
+          {
+            "timeMs": 1428,
+            "joints": [
+              {
+                "key": "upper-left:0",
+                "part": "upper-left",
+                "transform": "matrix(0.989537, 0.14428, -0.14428, 0.989537, 0, 0)"
+              },
+              {
+                "key": "elbow-left:1",
+                "part": "elbow-left",
+                "transform": "matrix(0.999698, 0.0245781, -0.0245781, 0.999698, 0, 0)"
+              },
+              {
+                "key": "wrist-left:2",
+                "part": "wrist-left",
+                "transform": "matrix(0.999484, -0.0321253, 0.0321253, 0.999484, 0, 0)"
+              },
+              {
+                "key": "upper-right:3",
+                "part": "upper-right",
+                "transform": "matrix(0.592739, -0.805395, 0.805395, 0.592739, 0, 0)"
+              },
+              {
+                "key": "elbow-right:4",
+                "part": "elbow-right",
+                "transform": "matrix(-0.426774, -0.904358, 0.904358, -0.426774, 0, 0)"
+              },
+              {
+                "key": "wrist-right:5",
+                "part": "wrist-right",
+                "transform": "matrix(0.999952, -0.00977581, 0.00977581, 0.999952, 0, 0)"
+              }
+            ],
+            "imageOrigins": [
+              {
+                "left": "-254.278px",
+                "top": "-184.017px",
+                "src": "assets/art/avatar-kit-v2.png"
+              },
+              {
+                "left": "-39.8049px",
+                "top": "-82.0976px",
+                "src": "assets/art/avatar-clothed-kit-v1.png"
+              },
+              {
+                "left": "-172.307px",
+                "top": "-30.1119px",
+                "src": "assets/art/avatar-kit-v2.png"
+              },
+              {
+                "left": "-215.802px",
+                "top": "-100.373px",
+                "src": "assets/art/avatar-blink-v1.png"
+              },
+              {
+                "left": "-286.063px",
+                "top": "-100.373px",
+                "src": "assets/art/avatar-blink-v1.png"
+              },
+              {
+                "left": "-119.625px",
+                "top": "-940.5px",
+                "src": "assets/art/avatar-kit-v2.png"
+              },
+              {
+                "left": "-32.6938px",
+                "top": "-21.7019px",
+                "src": "assets/art/avatar-clothed-skin-v1.png"
+              },
+              {
+                "left": "-32.55px",
+                "top": "-143.5px",
+                "src": "assets/art/avatar-clothed-kit-v2.png"
+              },
+              {
+                "left": "-32.7343px",
+                "top": "-106.86px",
+                "src": "assets/art/avatar-clothed-skin-v1.png"
+              },
+              {
+                "left": "-16.28px",
+                "top": "-159.72px",
+                "src": "assets/art/avatar-clothed-skin-v1.png"
+              },
+              {
+                "left": "-32.0936px",
+                "top": "-233.497px",
+                "src": "assets/art/avatar-clothed-kit-v2.png"
+              },
+              {
+                "left": "-32.6938px",
+                "top": "-21.7019px",
+                "src": "assets/art/avatar-clothed-skin-v1.png"
+              },
+              {
+                "left": "-32.55px",
+                "top": "-143.5px",
+                "src": "assets/art/avatar-clothed-kit-v2.png"
+              },
+              {
+                "left": "-32.7343px",
+                "top": "-106.86px",
+                "src": "assets/art/avatar-clothed-skin-v1.png"
+              },
+              {
+                "left": "-16.28px",
+                "top": "-159.72px",
+                "src": "assets/art/avatar-clothed-skin-v1.png"
+              },
+              {
+                "left": "-32.0936px",
+                "top": "-233.497px",
+                "src": "assets/art/avatar-clothed-kit-v2.png"
+              }
+            ]
+          },
+          {
+            "timeMs": 2772,
+            "joints": [
+              {
+                "key": "upper-left:0",
+                "part": "upper-left",
+                "transform": "matrix(0.992477, 0.12243, -0.12243, 0.992477, 0, 0)"
+              },
+              {
+                "key": "elbow-left:1",
+                "part": "elbow-left",
+                "transform": "matrix(0.998651, 0.051922, -0.051922, 0.998651, 0, 0)"
+              },
+              {
+                "key": "wrist-left:2",
+                "part": "wrist-left",
+                "transform": "matrix(0.998768, -0.0496243, 0.0496243, 0.998768, 0, 0)"
+              },
+              {
+                "key": "upper-right:3",
+                "part": "upper-right",
+                "transform": "matrix(0.571782, -0.820405, 0.820405, 0.571782, 0, 0)"
+              },
+              {
+                "key": "elbow-right:4",
+                "part": "elbow-right",
+                "transform": "matrix(-0.362452, -0.932003, 0.932003, -0.362452, 0, 0)"
+              },
+              {
+                "key": "wrist-right:5",
+                "part": "wrist-right",
+                "transform": "matrix(0.976867, -0.213846, 0.213846, 0.976867, 0, 0)"
+              }
+            ],
+            "imageOrigins": [
+              {
+                "left": "-254.278px",
+                "top": "-184.017px",
+                "src": "assets/art/avatar-kit-v2.png"
+              },
+              {
+                "left": "-39.8049px",
+                "top": "-82.0976px",
+                "src": "assets/art/avatar-clothed-kit-v1.png"
+              },
+              {
+                "left": "-172.307px",
+                "top": "-30.1119px",
+                "src": "assets/art/avatar-kit-v2.png"
+              },
+              {
+                "left": "-215.802px",
+                "top": "-100.373px",
+                "src": "assets/art/avatar-blink-v1.png"
+              },
+              {
+                "left": "-286.063px",
+                "top": "-100.373px",
+                "src": "assets/art/avatar-blink-v1.png"
+              },
+              {
+                "left": "-119.625px",
+                "top": "-940.5px",
+                "src": "assets/art/avatar-kit-v2.png"
+              },
+              {
+                "left": "-32.6938px",
+                "top": "-21.7019px",
+                "src": "assets/art/avatar-clothed-skin-v1.png"
+              },
+              {
+                "left": "-32.55px",
+                "top": "-143.5px",
+                "src": "assets/art/avatar-clothed-kit-v2.png"
+              },
+              {
+                "left": "-32.7343px",
+                "top": "-106.86px",
+                "src": "assets/art/avatar-clothed-skin-v1.png"
+              },
+              {
+                "left": "-16.28px",
+                "top": "-159.72px",
+                "src": "assets/art/avatar-clothed-skin-v1.png"
+              },
+              {
+                "left": "-32.0936px",
+                "top": "-233.497px",
+                "src": "assets/art/avatar-clothed-kit-v2.png"
+              },
+              {
+                "left": "-32.6938px",
+                "top": "-21.7019px",
+                "src": "assets/art/avatar-clothed-skin-v1.png"
+              },
+              {
+                "left": "-32.55px",
+                "top": "-143.5px",
+                "src": "assets/art/avatar-clothed-kit-v2.png"
+              },
+              {
+                "left": "-32.7343px",
+                "top": "-106.86px",
+                "src": "assets/art/avatar-clothed-skin-v1.png"
+              },
+              {
+                "left": "-16.28px",
+                "top": "-159.72px",
+                "src": "assets/art/avatar-clothed-skin-v1.png"
+              },
+              {
+                "left": "-32.0936px",
+                "top": "-233.497px",
+                "src": "assets/art/avatar-clothed-kit-v2.png"
+              }
+            ]
+          },
+          {
+            "timeMs": 4368,
+            "joints": [
+              {
+                "key": "upper-left:0",
+                "part": "upper-left",
+                "transform": "matrix(0.981995, 0.188904, -0.188904, 0.981995, 0, 0)"
+              },
+              {
+                "key": "elbow-left:1",
+                "part": "elbow-left",
+                "transform": "matrix(0.999933, -0.0116116, 0.0116116, 0.999933, 0, 0)"
+              },
+              {
+                "key": "wrist-left:2",
+                "part": "wrist-left",
+                "transform": "matrix(0.999432, 0.033713, -0.033713, 0.999432, 0, 0)"
+              },
+              {
+                "key": "upper-right:3",
+                "part": "upper-right",
+                "transform": "matrix(0.594823, -0.803857, 0.803857, 0.594823, 0, 0)"
+              },
+              {
+                "key": "elbow-right:4",
+                "part": "elbow-right",
+                "transform": "matrix(-0.457766, -0.889073, 0.889073, -0.457766, 0, 0)"
+              },
+              {
+                "key": "wrist-right:5",
+                "part": "wrist-right",
+                "transform": "matrix(0.993457, 0.114204, -0.114204, 0.993457, 0, 0)"
+              }
+            ],
+            "imageOrigins": [
+              {
+                "left": "-254.278px",
+                "top": "-184.017px",
+                "src": "assets/art/avatar-kit-v2.png"
+              },
+              {
+                "left": "-39.8049px",
+                "top": "-82.0976px",
+                "src": "assets/art/avatar-clothed-kit-v1.png"
+              },
+              {
+                "left": "-172.307px",
+                "top": "-30.1119px",
+                "src": "assets/art/avatar-kit-v2.png"
+              },
+              {
+                "left": "-215.802px",
+                "top": "-100.373px",
+                "src": "assets/art/avatar-blink-v1.png"
+              },
+              {
+                "left": "-286.063px",
+                "top": "-100.373px",
+                "src": "assets/art/avatar-blink-v1.png"
+              },
+              {
+                "left": "-119.625px",
+                "top": "-940.5px",
+                "src": "assets/art/avatar-kit-v2.png"
+              },
+              {
+                "left": "-32.6938px",
+                "top": "-21.7019px",
+                "src": "assets/art/avatar-clothed-skin-v1.png"
+              },
+              {
+                "left": "-32.55px",
+                "top": "-143.5px",
+                "src": "assets/art/avatar-clothed-kit-v2.png"
+              },
+              {
+                "left": "-32.7343px",
+                "top": "-106.86px",
+                "src": "assets/art/avatar-clothed-skin-v1.png"
+              },
+              {
+                "left": "-16.28px",
+                "top": "-159.72px",
+                "src": "assets/art/avatar-clothed-skin-v1.png"
+              },
+              {
+                "left": "-32.0936px",
+                "top": "-233.497px",
+                "src": "assets/art/avatar-clothed-kit-v2.png"
+              },
+              {
+                "left": "-32.6938px",
+                "top": "-21.7019px",
+                "src": "assets/art/avatar-clothed-skin-v1.png"
+              },
+              {
+                "left": "-32.55px",
+                "top": "-143.5px",
+                "src": "assets/art/avatar-clothed-kit-v2.png"
+              },
+              {
+                "left": "-32.7343px",
+                "top": "-106.86px",
+                "src": "assets/art/avatar-clothed-skin-v1.png"
+              },
+              {
+                "left": "-16.28px",
+                "top": "-159.72px",
+                "src": "assets/art/avatar-clothed-skin-v1.png"
+              },
+              {
+                "left": "-32.0936px",
+                "top": "-233.497px",
+                "src": "assets/art/avatar-clothed-kit-v2.png"
+              }
+            ]
+          },
+          {
+            "timeMs": 5964,
+            "joints": [
+              {
+                "key": "upper-left:0",
+                "part": "upper-left",
+                "transform": "matrix(0.984566, 0.175016, -0.175016, 0.984566, 0, 0)"
+              },
+              {
+                "key": "elbow-left:1",
+                "part": "elbow-left",
+                "transform": "matrix(0.999999, -0.00162754, 0.00162754, 0.999999, 0, 0)"
+              },
+              {
+                "key": "wrist-left:2",
+                "part": "wrist-left",
+                "transform": "matrix(0.999997, 0.0025783, -0.0025783, 0.999997, 0, 0)"
+              },
+              {
+                "key": "upper-right:3",
+                "part": "upper-right",
+                "transform": "matrix(0.559286, -0.828975, 0.828975, 0.559286, 0, 0)"
+              },
+              {
+                "key": "elbow-right:4",
+                "part": "elbow-right",
+                "transform": "matrix(-0.358654, -0.933471, 0.933471, -0.358654, 0, 0)"
+              },
+              {
+                "key": "wrist-right:5",
+                "part": "wrist-right",
+                "transform": "matrix(0.982952, -0.183864, 0.183864, 0.982952, 0, 0)"
+              }
+            ],
+            "imageOrigins": [
+              {
+                "left": "-254.278px",
+                "top": "-184.017px",
+                "src": "assets/art/avatar-kit-v2.png"
+              },
+              {
+                "left": "-39.8049px",
+                "top": "-82.0976px",
+                "src": "assets/art/avatar-clothed-kit-v1.png"
+              },
+              {
+                "left": "-172.307px",
+                "top": "-30.1119px",
+                "src": "assets/art/avatar-kit-v2.png"
+              },
+              {
+                "left": "-215.802px",
+                "top": "-100.373px",
+                "src": "assets/art/avatar-blink-v1.png"
+              },
+              {
+                "left": "-286.063px",
+                "top": "-100.373px",
+                "src": "assets/art/avatar-blink-v1.png"
+              },
+              {
+                "left": "-119.625px",
+                "top": "-940.5px",
+                "src": "assets/art/avatar-kit-v2.png"
+              },
+              {
+                "left": "-32.6938px",
+                "top": "-21.7019px",
+                "src": "assets/art/avatar-clothed-skin-v1.png"
+              },
+              {
+                "left": "-32.55px",
+                "top": "-143.5px",
+                "src": "assets/art/avatar-clothed-kit-v2.png"
+              },
+              {
+                "left": "-32.7343px",
+                "top": "-106.86px",
+                "src": "assets/art/avatar-clothed-skin-v1.png"
+              },
+              {
+                "left": "-16.28px",
+                "top": "-159.72px",
+                "src": "assets/art/avatar-clothed-skin-v1.png"
+              },
+              {
+                "left": "-32.0936px",
+                "top": "-233.497px",
+                "src": "assets/art/avatar-clothed-kit-v2.png"
+              },
+              {
+                "left": "-32.6938px",
+                "top": "-21.7019px",
+                "src": "assets/art/avatar-clothed-skin-v1.png"
+              },
+              {
+                "left": "-32.55px",
+                "top": "-143.5px",
+                "src": "assets/art/avatar-clothed-kit-v2.png"
+              },
+              {
+                "left": "-32.7343px",
+                "top": "-106.86px",
+                "src": "assets/art/avatar-clothed-skin-v1.png"
+              },
+              {
+                "left": "-16.28px",
+                "top": "-159.72px",
+                "src": "assets/art/avatar-clothed-skin-v1.png"
+              },
+              {
+                "left": "-32.0936px",
+                "top": "-233.497px",
+                "src": "assets/art/avatar-clothed-kit-v2.png"
+              }
+            ]
+          },
+          {
+            "timeMs": 7644,
+            "joints": [
+              {
+                "key": "upper-left:0",
+                "part": "upper-left",
+                "transform": "matrix(0.989121, 0.147101, -0.147101, 0.989121, 0, 0)"
+              },
+              {
+                "key": "elbow-left:1",
+                "part": "elbow-left",
+                "transform": "matrix(0.999757, 0.022039, -0.022039, 0.999757, 0, 0)"
+              },
+              {
+                "key": "wrist-left:2",
+                "part": "wrist-left",
+                "transform": "matrix(0.999574, -0.0291765, 0.0291765, 0.999574, 0, 0)"
+              },
+              {
+                "key": "upper-right:3",
+                "part": "upper-right",
+                "transform": "matrix(0.567042, -0.823689, 0.823689, 0.567042, 0, 0)"
+              },
+              {
+                "key": "elbow-right:4",
+                "part": "elbow-right",
+                "transform": "matrix(-0.358808, -0.933411, 0.933411, -0.358808, 0, 0)"
+              },
+              {
+                "key": "wrist-right:5",
+                "part": "wrist-right",
+                "transform": "matrix(0.974645, -0.223756, 0.223756, 0.974645, 0, 0)"
+              }
+            ],
+            "imageOrigins": [
+              {
+                "left": "-254.278px",
+                "top": "-184.017px",
+                "src": "assets/art/avatar-kit-v2.png"
+              },
+              {
+                "left": "-39.8049px",
+                "top": "-82.0976px",
+                "src": "assets/art/avatar-clothed-kit-v1.png"
+              },
+              {
+                "left": "-172.307px",
+                "top": "-30.1119px",
+                "src": "assets/art/avatar-kit-v2.png"
+              },
+              {
+                "left": "-215.802px",
+                "top": "-100.373px",
+                "src": "assets/art/avatar-blink-v1.png"
+              },
+              {
+                "left": "-286.063px",
+                "top": "-100.373px",
+                "src": "assets/art/avatar-blink-v1.png"
+              },
+              {
+                "left": "-119.625px",
+                "top": "-940.5px",
+                "src": "assets/art/avatar-kit-v2.png"
+              },
+              {
+                "left": "-32.6938px",
+                "top": "-21.7019px",
+                "src": "assets/art/avatar-clothed-skin-v1.png"
+              },
+              {
+                "left": "-32.55px",
+                "top": "-143.5px",
+                "src": "assets/art/avatar-clothed-kit-v2.png"
+              },
+              {
+                "left": "-32.7343px",
+                "top": "-106.86px",
+                "src": "assets/art/avatar-clothed-skin-v1.png"
+              },
+              {
+                "left": "-16.28px",
+                "top": "-159.72px",
+                "src": "assets/art/avatar-clothed-skin-v1.png"
+              },
+              {
+                "left": "-32.0936px",
+                "top": "-233.497px",
+                "src": "assets/art/avatar-clothed-kit-v2.png"
+              },
+              {
+                "left": "-32.6938px",
+                "top": "-21.7019px",
+                "src": "assets/art/avatar-clothed-skin-v1.png"
+              },
+              {
+                "left": "-32.55px",
+                "top": "-143.5px",
+                "src": "assets/art/avatar-clothed-kit-v2.png"
+              },
+              {
+                "left": "-32.7343px",
+                "top": "-106.86px",
+                "src": "assets/art/avatar-clothed-skin-v1.png"
+              },
+              {
+                "left": "-16.28px",
+                "top": "-159.72px",
+                "src": "assets/art/avatar-clothed-skin-v1.png"
+              },
+              {
+                "left": "-32.0936px",
+                "top": "-233.497px",
+                "src": "assets/art/avatar-clothed-kit-v2.png"
+              }
+            ]
+          }
+        ]
+      },
+      "loadedModuleHashes": [
+        {
+          "path": "styles/app.css",
+          "url": "styles/app.css?v=articulation2",
+          "sha256": "fdb8f80ce698e7881dd346056c373b143a7721ef5b09f784b727d6c68aafc7fc",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "src/app.js",
+          "url": "src/app.js?v=articulation2",
+          "sha256": "99422872ef89bb34aeee52541cb9dace90fec78987d95789ebd19d3d22272319",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "src/art.js",
+          "url": "src/art.js?v=articulation2",
+          "sha256": "4350e45b67772275ab26c1009249a88ca3474c60642ea706e30956860b5cb407",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "src/avatar-rig.js",
+          "url": "src/avatar-rig.js?v=articulation2",
+          "sha256": "09ee5d245f9fed2c4b2d3d038b2a6c19fa29714830bf81663d59c2d4816b6699",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "src/cast-rig.js",
+          "url": "src/cast-rig.js?v=articulation2",
+          "sha256": "2208e6cd8675f6ce3c5c27c52bae11fe721622cdf5228cd20be8b130ddb26b04",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "src/pico-articulated.js",
+          "url": "src/pico-articulated.js?v=articulation2",
+          "sha256": "f239b037352a6aaf00b1a07eab184925e7b3a7269a14fa08aba2f14f017749fa",
+          "fromServiceWorker": true
+        }
+      ],
+      "loadedAssetHashes": [
+        {
+          "path": "assets/art/avatar-clothed-kit-v1.frames.json",
+          "url": "assets/art/avatar-clothed-kit-v1.frames.json",
+          "sha256": "524e51b54773f5739834d05a324cd446ac9c4b561af4d6d0d9a707501b2cf1f3",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-clothed-think-v1.png",
+          "url": "assets/art/avatar-clothed-think-v1.png",
+          "sha256": "7b10347fb0353c7d3fdb7badfdf7213fcd17de2b9b49a700bfbddc59e6ab595a",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-clothed-kit-v1.png",
+          "url": "assets/art/avatar-clothed-kit-v1.png",
+          "sha256": "777f61a4c76df207500ed8f7719bfef0e55134bdd7c9879023e6ce622a7c3a52",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-clothed-kit-v2.png",
+          "url": "assets/art/avatar-clothed-kit-v2.png",
+          "sha256": "29464069c83c95e4179112b4f2a5687080ea1808a3a271f19a47e91528ff9d8d",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-clothed-skin-v1.png",
+          "url": "assets/art/avatar-clothed-skin-v1.png",
+          "sha256": "fb1bf80e11506d14ae8b491b4ed3aba1e1aa7fc2c66d7d2eca9cba5cafb9c509",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/cast-articulated-v4.frames.json",
+          "url": "assets/art/cast-articulated-v4.frames.json?articulation=4",
+          "sha256": "21e240eeeb57d002c73d8c29117e63c6dcfcbc54916e5c72e3a300aeb2b71cc7",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/pico-articulated-v3.frames.json",
+          "url": "assets/art/pico-articulated-v3.frames.json",
+          "sha256": "9d8ec1e22c83a870ce0ccbe070f29ae2356fa2eef59ba27d0da186a07ebff103",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/mina-articulated-v3.png",
+          "url": "assets/art/mina-articulated-v3.png",
+          "sha256": "1618f6a5578dbdc160666b48123942a052b9deaf8ef57457b3caa15b95e3da14",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/alex-articulated-v3.png",
+          "url": "assets/art/alex-articulated-v3.png",
+          "sha256": "2c5ecbd0a8e4e60e6c9b7356ff9f3b83c8459a48a174c5fab2694b565914748a",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/jo-articulated-v3.png",
+          "url": "assets/art/jo-articulated-v3.png",
+          "sha256": "d4226bd3e260dcd9d3c7a196df562eda31cb3c92f43d6d0e8b78b8ad40fa931e",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/pico-articulated-v3.png",
+          "url": "assets/art/pico-articulated-v3.png",
+          "sha256": "c29e442e49348638f64dfcc142d82d42d8d430203fb2ca7a2c50054286ea4aed",
+          "fromServiceWorker": true
+        }
+      ],
+      "workers": [
+        {
+          "path": "/Horizons/App/service-worker.js",
+          "cache": "horizons-companion-articulation-v5"
+        }
+      ],
+      "loadedLocalResources": [
+        {
+          "path": "assets/art/avatar-connected-arms-v2.frames.json",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-connected-arms-v2.png",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/fonts/MPLUSRounded1c-Regular.woff2",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/fonts/MPLUSRounded1c-ExtraBold.woff2",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "styles/app.css?v=articulation2",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/fonts/BebasNeue-Regular.woff2",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "src/app.js?v=articulation2",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "src/art.js?v=articulation2",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "src/api-client.js",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "content/engine.mjs",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "content/unit1.mjs",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "content/source-banks.mjs",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/manifest.json?articulation=2",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/audio/manifest.json",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/app-icon-v1.png",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/fonts/MPLUSRounded1c-Medium.woff2",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/fonts/MPLUSRounded1c-Black.woff2",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "src/avatar-rig.js?v=articulation2",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/ui-objects-v1.png",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-kit-v2.png",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-clothed-kit-v1.frames.json",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-clothed-kit-v1.png",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-blink-v1.png",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-clothed-skin-v1.png",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-clothed-kit-v2.png",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-clothed-think-v1.png",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/fonts/MPLUSRounded1c-Bold.woff2",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "src/cast-rig.js?v=articulation2",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "src/pico-articulated.js?v=articulation2",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/cast-articulated-v4.frames.json?articulation=4",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/pico-articulated-v3.frames.json",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/mina-articulated-v3.png",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/mina-articulated-v4.png",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/pico-articulated-v3.png",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/alex-articulated-v3.png",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/alex-articulated-v4.png",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/jo-articulated-v3.png",
+          "fromServiceWorker": true
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "runtimeErrors": [],
+  "workerLifecycle": [
+    {
+      "event": "new-worker-state",
+      "state": "installing"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "installed"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "activating"
+    },
+    {
+      "event": "controllerchange"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "activated"
+    }
+  ],
+  "limits": [
+    "Chromium/Edge only. This verifies a real returning-browser service worker and Cache Storage upgrade, not every browser engine or CDN.",
+    "Old runtime requests are served from committed repository blobs during the baseline phase; API requests continue to the actual backend.",
+    "No session values, raw codes or personal details are logged.",
+    "Joint samples use one shared physical time across all animations. Automated movement and clothing attachment checks do not replace independent painted-frame anatomy review."
+  ],
+  "pass": true,
+  "status": "PASS",
+  "phase": "complete",
+  "changedSources": []
+}

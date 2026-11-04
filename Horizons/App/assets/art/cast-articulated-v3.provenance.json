@@ -1,0 +1,32 @@
+{
+  "tool": "OpenAI built-in image_gen",
+  "date": "2026-11-04",
+  "nativeBytesUnchanged": true,
+  "changes": "Native surface cleanup removes drawn joint-cap disks; rounded overlap geometry retained.",
+  "records": [
+    {
+      "name": "mina",
+      "file": "mina-articulated-v3.png",
+      "source": "C:/Users/David/.codex/generated_images/01a1a742-54d1-7693-8b7c-fb270f9ad259/exec-3eb924dd-3be2-44b6-b5af-d0cb2db54893.png",
+      "prompt": "Use case: precise-object-edit. Edit this transparent twelve-part character animation atlas. Keep the same character identity, complete head/face, every part silhouette, pose, part location, scale, 4-column by3-row layout and transparent background. ONLY remove the visible drawn oval/circle/disc patches at all joint ends: torso shoulder round patches, upper arm shoulder/elbow cap patches, forearm upper cap patches, thigh hip/knee cap patches, and lower-leg knee cap patches. The ends of parts must STILL have rounded overlapping silhouette geometry, but their surface must be clean continuous matching cloth or skin, with NO dark circular end-cap shading, NO drawn joint lines, NO metallic pivots or puppet discs. Blend the upper/lower trouser sections into exactly the same navy for Mina/Alex or sage for Jo; make matching sleeves uniform magenta for Mina, teal for Alex, orange for Jo at joins. Keep gentle overall form shading and ordinary clothing folds away from the joints. Do not add anything, do not remove hands, do not change faces or expression or clothing style, do not draw a complete person. This is a targeted surface cleanup of the native art so overlapping body parts animate like a coherent dressed person rather than a robot puppet. Preserve crisp original alpha and true transparency, no glow, labels, grid or backdrop.",
+      "reference": "mina-articulated-v2.png",
+      "sha256": "1618f6a5578dbdc160666b48123942a052b9deaf8ef57457b3caa15b95e3da14"
+    },
+    {
+      "name": "alex",
+      "file": "alex-articulated-v3.png",
+      "source": "C:/Users/David/.codex/generated_images/01a1a742-54d1-7693-8b7c-fb270f9ad259/exec-79cefbd8-9389-4744-b341-bd3364dea10c.png",
+      "prompt": "Use case: precise-object-edit. Edit this transparent twelve-part character animation atlas. Keep the same character identity, complete head/face, every part silhouette, pose, part location, scale, 4-column by3-row layout and transparent background. ONLY remove the visible drawn oval/circle/disc patches at all joint ends: torso shoulder round patches, upper arm shoulder/elbow cap patches, forearm upper cap patches, thigh hip/knee cap patches, and lower-leg knee cap patches. The ends of parts must STILL have rounded overlapping silhouette geometry, but their surface must be clean continuous matching cloth or skin, with NO dark circular end-cap shading, NO drawn joint lines, NO metallic pivots or puppet discs. Blend the upper/lower trouser sections into exactly the same navy for Mina/Alex or sage for Jo; make matching sleeves uniform magenta for Mina, teal for Alex, orange for Jo at joins. Keep gentle overall form shading and ordinary clothing folds away from the joints. Do not add anything, do not remove hands, do not change faces or expression or clothing style, do not draw a complete person. This is a targeted surface cleanup of the native art so overlapping body parts animate like a coherent dressed person rather than a robot puppet. Preserve crisp original alpha and true transparency, no glow, labels, grid or backdrop.",
+      "reference": "alex-articulated-v2.png",
+      "sha256": "2c5ecbd0a8e4e60e6c9b7356ff9f3b83c8459a48a174c5fab2694b565914748a"
+    },
+    {
+      "name": "jo",
+      "file": "jo-articulated-v3.png",
+      "source": "C:/Users/David/.codex/generated_images/01a1a742-54d1-7693-8b7c-fb270f9ad259/exec-6184fa61-a03b-4be2-984a-f25c283ab5aa.png",
+      "prompt": "Use case: precise-object-edit. Edit this transparent twelve-part character animation atlas. Keep the same character identity, complete head/face, every part silhouette, pose, part location, scale, 4-column by3-row layout and transparent background. ONLY remove the visible drawn oval/circle/disc patches at all joint ends: torso shoulder round patches, upper arm shoulder/elbow cap patches, forearm upper cap patches, thigh hip/knee cap patches, and lower-leg knee cap patches. The ends of parts must STILL have rounded overlapping silhouette geometry, but their surface must be clean continuous matching cloth or skin, with NO dark circular end-cap shading, NO drawn joint lines, NO metallic pivots or puppet discs. Blend the upper/lower trouser sections into exactly the same navy for Mina/Alex or sage for Jo; make matching sleeves uniform magenta for Mina, teal for Alex, orange for Jo at joins. Keep gentle overall form shading and ordinary clothing folds away from the joints. Do not add anything, do not remove hands, do not change faces or expression or clothing style, do not draw a complete person. This is a targeted surface cleanup of the native art so overlapping body parts animate like a coherent dressed person rather than a robot puppet. Preserve crisp original alpha and true transparency, no glow, labels, grid or backdrop.",
+      "reference": "jo-articulated-v2.png",
+      "sha256": "d4226bd3e260dcd9d3c7a196df562eda31cb3c92f43d6d0e8b78b8ad40fa931e"
+    }
+  ]
+}

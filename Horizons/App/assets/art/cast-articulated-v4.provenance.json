@@ -1,0 +1,25 @@
+{
+  "tool": "OpenAI built-in image_gen",
+  "date": "2026-11-04",
+  "nativeBytesUnchanged": true,
+  "records": [
+    {
+      "name": "mina",
+      "file": "mina-articulated-v4.png",
+      "source": "C:/Users/David/.codex/generated_images/01a1a742-54d1-7693-8b7c-fb270f9ad259/exec-58bd5b86-7dd9-40a7-98ce-ca8cf2907750.png",
+      "prompt": "Use case: precise-object-edit. Targeted neckline repair ONLY. In this exact transparent 4x3 twelve-part animation atlas, edit ONLY the torso in cell2 (top row second column). Keep every other pixel/part/head/limb/location/size unchanged. The torso's current top center neckline incorrectly has a horizontal magenta cardigan strip closing across where a human neck must go. Open a shallow natural U-shaped genuinely transparent neck aperture in the TOP CENTER of the torso between the collar/lapels, about one quarter of the torso width and about one tenth of torso height. It must continue down from the top transparent edge to the natural front neckline, so the separately generated skin neck can show through from behind. Keep the front cream T-shirt crew-neck rim as a smooth subtle curved front edge below the aperture. Preserve magenta open cardigan and cream tee shoulders, lapels and chest, no color bridge across the center neck opening. Do not add a neck/head/skin patch to this torso. No high collar or choker. No square slit. Correct native open neckline with clean alpha edges. Preserve all joint parts' clean continuous surfaces without circular caps, correct complete head and eyes, all limb silhouettes, original proportions and sheet layout. True transparent PNG, no added backdrop/shadow/glow/text.",
+      "reference": "mina-articulated-v3.png",
+      "use": "Torso viewport ONLY; every head and limb continues using the approved v3 source pixels.",
+      "sha256": "4804eed152ff256b36607615c40750eb0fcfd55aec7443b42746015885335c35"
+    },
+    {
+      "name": "alex",
+      "file": "alex-articulated-v4.png",
+      "source": "C:/Users/David/.codex/generated_images/01a1a742-54d1-7693-8b7c-fb270f9ad259/exec-14575589-6df4-48ed-82fe-3e8dcb2574ca.png",
+      "prompt": "Use case: precise-object-edit. Targeted neckline repair ONLY. In this exact transparent 4x3 twelve-part animation atlas, edit ONLY the torso in cell2 (top row second column). Keep every other pixel/part/head/limb/location/size unchanged. The torso's current top center neckline incorrectly has a horizontal teal overshirt strip closing across where a human neck must go. Open a shallow natural U-shaped genuinely transparent neck aperture in the TOP CENTER of the torso between the collar/lapels, about one quarter of the torso width and about one tenth of torso height. It must continue down from the top transparent edge to the natural front neckline, so the separately generated skin neck can show through from behind. Keep the front orange T-shirt crew-neck rim as a smooth subtle curved front edge below the aperture. Preserve teal open overshirt and orange tee shoulders, lapels and chest, no color bridge across the center neck opening. Do not add a neck/head/skin patch to this torso. No high collar or choker. No square slit. Correct native open neckline with clean alpha edges. Preserve all joint parts' clean continuous surfaces without circular caps, correct complete head and eyes, all limb silhouettes, original proportions and sheet layout. True transparent PNG, no added backdrop/shadow/glow/text.",
+      "reference": "alex-articulated-v3.png",
+      "use": "Torso viewport ONLY; every head and limb continues using the approved v3 source pixels.",
+      "sha256": "bbc9ca1ab459d86673d765240ca9afba72ad4fd139c550e808ae5d5d111cced2"
+    }
+  ]
+}
