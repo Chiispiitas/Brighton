@@ -1,0 +1,240 @@
+{
+  "date": "2026-11-04T15:41:43.035Z",
+  "base": "https://exams.bebrighton.net/Horizons/App/",
+  "baselineCommit": "bf39988",
+  "scope": "Existing real browser service worker and Cache Storage upgraded from committed legacy runtime to current reviewed release; same isolated QA profile, no XP or profile changes.",
+  "status": "PASS",
+  "steps": [
+    {
+      "name": "committed-legacy-worker-installed",
+      "controller": true,
+      "cacheNames": [
+        "horizons-companion-v3"
+      ],
+      "legacyMarkers": 68,
+      "oldWorkerIntercepts": 1,
+      "cachedOldArtHash": "c8868782fade8c1b7a52f7ac6139fdf042d44c9885b0ff92ddf3a0026e29629e",
+      "pass": true
+    },
+    {
+      "name": "isolated-profile-authenticated",
+      "pass": true
+    },
+    {
+      "name": "current-worker-activated",
+      "cacheNames": [
+        "horizons-companion-anatomy-v4"
+      ],
+      "newWorkerState": "activated",
+      "updateStates": [
+        "installing",
+        "installed",
+        "activating",
+        "activated"
+      ],
+      "pass": true
+    },
+    {
+      "name": "real-worker-release-update",
+      "cacheNames": [
+        "horizons-companion-anatomy-v4"
+      ],
+      "controller": true,
+      "legacyMarkers": 0,
+      "nativeFrameMarkers": 6,
+      "modules": [
+        {
+          "path": "src/app.js",
+          "version": "anatomy1"
+        },
+        {
+          "path": "src/art.js",
+          "version": "anatomy1"
+        },
+        {
+          "path": "src/avatar-rig.js",
+          "version": "anatomy1"
+        }
+      ],
+      "authenticated": true,
+      "avatar": {
+        "ready": true,
+        "connectedArm": true,
+        "detachedHandPieces": 0,
+        "nativeConnectedAsset": true
+      },
+      "loadedModuleHashes": [
+        {
+          "url": "src/app.js?v=anatomy1",
+          "sha256": "8bd04d2fa7495d814d3c1c75485a5b70a7d9f6998c3f4bf6049dfeb284d08708",
+          "fromServiceWorker": true
+        },
+        {
+          "url": "src/art.js?v=anatomy1",
+          "sha256": "dfd9182995912540cfcda861e3224abcc354636f916a81f03622501a8db232df",
+          "fromServiceWorker": true
+        },
+        {
+          "url": "src/avatar-rig.js?v=anatomy1",
+          "sha256": "14753954e53d444f364dfb6cc0b701c1b79a65df9286c5f98a725d168478ed26",
+          "fromServiceWorker": true
+        }
+      ],
+      "loadedAssetHashes": [
+        {
+          "url": "assets/art/avatar-connected-arms-v2.png",
+          "sha256": "d3965fce7def67546b63516dcb9b757603fc407179753aa9d5f15441b5a97ce6",
+          "fromServiceWorker": true
+        }
+      ],
+      "workers": [
+        {
+          "path": "/Horizons/App/service-worker.js",
+          "cache": "horizons-companion-anatomy-v4"
+        }
+      ],
+      "loadedLocalResources": [
+        {
+          "name": "",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "assets/fonts/MPLUSRounded1c-Regular.woff2",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "assets/fonts/MPLUSRounded1c-ExtraBold.woff2",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "styles/app.css?v=anatomy1",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "src/app.js?v=anatomy1",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "assets/fonts/BebasNeue-Regular.woff2",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "src/api-client.js",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "src/art.js?v=anatomy1",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "content/unit1.mjs",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "content/engine.mjs",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "content/source-banks.mjs",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "assets/art/app-icon-v1.png",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "assets/art/manifest.json?anatomy=1",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "assets/audio/manifest.json",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "src/avatar-rig.js?v=anatomy1",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "assets/fonts/MPLUSRounded1c-Medium.woff2",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "assets/fonts/MPLUSRounded1c-Black.woff2",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "assets/art/ui-objects-v1.png",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "assets/art/avatar-kit-v2.png",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "assets/art/avatar-blink-v1.png",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "assets/art/avatar-connected-arms-v2.frames.json",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "assets/art/avatar-connected-arms-v2.png",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "assets/fonts/MPLUSRounded1c-Bold.woff2",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "assets/art/mina-postures-v1.png",
+          "fromServiceWorker": true
+        },
+        {
+          "name": "assets/art/jo-postures-v1.png",
+          "fromServiceWorker": true
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "runtimeErrors": [],
+  "limits": [
+    "Chromium/Edge only. This checks the actual service-worker lifecycle and Cache Storage, not CDN caches or every browser engine. No session values, raw codes or personal data are written to the report."
+  ],
+  "pass": true,
+  "currentSourceHashes": {
+    "src/app.js": "8bd04d2fa7495d814d3c1c75485a5b70a7d9f6998c3f4bf6049dfeb284d08708",
+    "src/art.js": "dfd9182995912540cfcda861e3224abcc354636f916a81f03622501a8db232df",
+    "src/avatar-rig.js": "14753954e53d444f364dfb6cc0b701c1b79a65df9286c5f98a725d168478ed26",
+    "service-worker.js": "9bb673a76c8c7873b13ad9c1d9fb00a466d4be991b921fbb3b5bf8bf86fcdfce",
+    "assets/art/avatar-connected-arms-v2.png": "d3965fce7def67546b63516dcb9b757603fc407179753aa9d5f15441b5a97ce6"
+  },
+  "sourceReference": {
+    "kind": "git-blob",
+    "commit": "048c88edf0f5d39d4144e0dfc15feda943369f1b",
+    "comparison": "Exact committed bytes: LF text modules and raw binary PNG. No comparison against CRLF working-tree text."
+  },
+  "workerLifecycle": [
+    {
+      "event": "new-worker-state",
+      "state": "installing"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "installed"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "activating"
+    },
+    {
+      "event": "controllerchange"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "activated"
+    }
+  ],
+  "phase": "complete"
+}

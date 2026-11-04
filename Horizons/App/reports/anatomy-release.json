@@ -1,0 +1,71 @@
+{
+  "date": "2026-11-04T15:47:01.086975+00:00",
+  "url": "https://exams.bebrighton.net/Horizons/App/",
+  "runtimeCommit": "048c88edf0f5d39d4144e0dfc15feda943369f1b",
+  "reversibleBackup": "safety/horizons-before-anatomy-fix-20261104",
+  "status": "PASS",
+  "changes": [
+    "All named characters, including welcome cast, use complete reviewed native pose frames rather than independently positioned faces and limbs.",
+    "Customizable bust avatars use generated continuous shoulder-elbow-wrist-hand silhouettes and one registered body coordinate system.",
+    "Blinks retain native head and facial registration. Neck crops remain behind collars.",
+    "Satchel attaches at the shoulder/chest without crossing the waving forearm. Soft-waves hair viewport includes its previously clipped left edge at unchanged native scale.",
+    "Rejected three-hand student source frame is excluded from playback.",
+    "Obsolete public part-rig prototypes are retired, and visual anatomy is a mandatory release gate.",
+    "Versioned entries and a new service-worker cache prevent returning visitors retaining the old animation modules."
+  ],
+  "verification": {
+    "activityScreens": 192,
+    "viewportWidths": [
+      320,
+      390,
+      768,
+      1440
+    ],
+    "finalLocalScreenContexts": 55,
+    "hostedScreenContexts": 55,
+    "nativePlaybackFramesReviewed": 128,
+    "avatarPhaseViewsReviewed": 84,
+    "hostedExplicitVisualVerdicts": 212,
+    "hostedStructureFailures": 0,
+    "hostedRuntimeErrors": 0,
+    "publishedRuntimeAndMediaFiles": 200,
+    "contentTests": {
+      "passed": 15,
+      "failed": 0
+    },
+    "backendTests": {
+      "passed": 26,
+      "failed": 0
+    },
+    "hostedAuthenticationProfileAndBookChecks": 10,
+    "realOldCacheUpgrade": true,
+    "oldPublicPrototypePagesRetiredOnHost": true
+  },
+  "reports": {
+    "local": "anatomy-integration.json",
+    "hosted": "anatomy-hosted.json",
+    "cacheUpgrade": "anatomy-cache-hosted.json",
+    "publishedBytes": "publication-assets.json",
+    "browserFlows": "release/browser.json",
+    "fullActivitySweep": "anatomy-full-sweep.json",
+    "manualNativeAndLocalAvatarReview": "anatomy-review.json"
+  },
+  "newGeneratedArt": {
+    "tool": "OpenAI built-in ImageGen",
+    "asset": "assets/art/avatar-connected-arms-v2.png",
+    "promptAndNativeProvenance": "assets/art/avatar-connected-arms-v2.provenance.json",
+    "nativeBytesPreserved": true
+  },
+  "limits": [
+    "Automated measurements cannot determine whether a drawing is anatomically sound. The separate per-frame visual verdict is a required gate.",
+    "The matrix covers all six skin tones and every free hair/outfit/accessory option through seven configurations; it does not claim visual review of every possible combined avatar.",
+    "Chromium/Edge at four viewport widths; other browser engines are not claimed tested."
+  ],
+  "scopePreserved": [
+    "Unit1 learning content and recordings",
+    "Saved profile/option IDs",
+    "Backend and access rules",
+    "Compact lesson paths",
+    "Original Horizons wordmark and supplied font"
+  ]
+}

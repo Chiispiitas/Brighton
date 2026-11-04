@@ -12,9 +12,13 @@ const reportPath=process.env.HZ_CACHE_REPORT||path.join(app,'reports/anatomy-cac
 const baseline='bf39988',oldCache='horizons-companion-v3';
 const hash=buffer=>crypto.createHash('sha256').update(buffer).digest('hex');
 const currentCache='horizons-companion-anatomy-v4';
-const currentSourceHashes=Object.fromEntries(['src/app.js','src/art.js','src/avatar-rig.js','service-worker.js'].map(rel=>[rel,hash(fs.readFileSync(path.join(app,rel)))]));
+const sourceRef=process.env.HZ_CACHE_SOURCE_REF||null;
+const resolvedRef=sourceRef?execFileSync('git',['rev-parse',sourceRef],{cwd:app,encoding:'utf8'}).trim():null;
+const currentSources=['src/app.js','src/art.js','src/avatar-rig.js','service-worker.js','assets/art/avatar-connected-arms-v2.png'];
+const currentSourceHashes=Object.fromEntries(currentSources.map(rel=>[rel,hash(sourceRef?execFileSync('git',['show',`${resolvedRef}:Horizons/App/${rel}`],{cwd:app,maxBuffer:64*1024*1024}):fs.readFileSync(path.join(app,rel)))]));
 const report={date:new Date().toISOString(),base:base.href,baselineCommit:baseline,scope:'Existing real browser service worker and Cache Storage upgraded from committed legacy runtime to current reviewed release; same isolated QA profile, no XP or profile changes.',status:'RUNNING',steps:[],runtimeErrors:[],limits:['Chromium/Edge only. This checks the actual service-worker lifecycle and Cache Storage, not CDN caches or every browser engine. No session values, raw codes or personal data are written to the report.'],pass:false};
 report.currentSourceHashes=currentSourceHashes;
+report.sourceReference=resolvedRef?{kind:'git-blob',commit:resolvedRef,comparison:'Exact committed bytes: LF text modules and raw binary PNG. No comparison against CRLF working-tree text.'}:{kind:'working-tree',comparison:'Exact working-tree source bytes.'};
 report.workerLifecycle=[];
 const oldFiles=new Map();
 function oldFile(rel){if(oldFiles.has(rel))return oldFiles.get(rel);let value;try{value=execFileSync('git',['show',`${baseline}:Horizons/App/${rel}`],{cwd:app,stdio:['ignore','pipe','ignore']});}catch{value=null;}oldFiles.set(rel,value);return value;}
@@ -79,14 +83,16 @@ try{
  assert.ok(!upgraded.cacheNames.includes(oldCache),'Old cache removed by activate lifecycle');
  await page.locator('[data-route=profile]:visible').first().click();
  await page.locator('#avatar-preview [data-anatomy="connected-shoulder-elbow-wrist-hand"]').waitFor({timeout:20000});
+ await page.locator('#avatar-preview').evaluate(element=>Promise.all([...element.querySelectorAll('img')].map(image=>image.decode())));
  const connected=await page.locator('#avatar-preview').evaluate(element=>({ready:!!element.querySelector('[data-ready=true]'),connectedArm:!!element.querySelector('[data-anatomy="connected-shoulder-elbow-wrist-hand"]'),detachedHandPieces:element.querySelectorAll('[data-rig-part=forearm],[data-rig-part=hand]').length,nativeConnectedAsset:[...element.querySelectorAll('img')].some(image=>image.src.includes('avatar-connected-arms-v2.png'))}));
  assert.ok(connected.ready&&connected.connectedArm&&connected.nativeConnectedAsset&&connected.detachedHandPieces===0,'Updated profile uses complete connected native arm rather than legacy forearm/wrist slices');
  await Promise.all(pendingResponseHashes);
  for(const rel of ['src/app.js','src/art.js','src/avatar-rig.js'])assert.equal(moduleResponses.get(rel)?.sha256,currentSourceHashes[rel],`${rel} response bytes match the reviewed current source`);
+ assert.equal(moduleResponses.get('assets/art/avatar-connected-arms-v2.png')?.sha256,currentSourceHashes['assets/art/avatar-connected-arms-v2.png'],'Connected native arm PNG response bytes match the reviewed binary asset exactly');
  const finalWorkerTags=await Promise.all(context.serviceWorkers().map(async worker=>({path:new URL(worker.url()).pathname,cache:await worker.evaluate(()=>typeof CACHE==='undefined'?'unknown':CACHE).catch(()=> 'unavailable')})));
  assert.ok(finalWorkerTags.some(worker=>worker.cache===currentCache),'Actual current worker uses the reviewed new cache tag');
  assert.ok(!finalWorkerTags.some(worker=>worker.cache===oldCache),'Legacy worker is redundant after the real replacement lifecycle');
- report.steps.push({name:'real-worker-release-update',...upgraded,avatar:connected,loadedModuleHashes:[...moduleResponses.values()],workers:finalWorkerTags,loadedLocalResources:[...localResources].map(([name,fromServiceWorker])=>({name,fromServiceWorker})),pass:true});
+ report.steps.push({name:'real-worker-release-update',...upgraded,avatar:connected,loadedModuleHashes:[...moduleResponses.values()].filter(item=>item.url.startsWith('src/')),loadedAssetHashes:[...moduleResponses.values()].filter(item=>item.url.startsWith('assets/')),workers:finalWorkerTags,loadedLocalResources:[...localResources].map(([name,fromServiceWorker])=>({name,fromServiceWorker})),pass:true});
  report.phase='complete';
  report.pass=report.runtimeErrors.length===0;report.status=report.pass?'PASS':'FAIL';
 }catch(error){report.status='FAIL';report.failure=error.message;report.debug=await page.evaluate(async()=>{const r=await navigator.serviceWorker.getRegistration();return{cacheNames:await caches.keys(),updateStates:window.__cacheUpdateStates||[],controller:!!navigator.serviceWorker.controller,active:r?.active?.state,waiting:r?.waiting?.state,installing:r?.installing?.state,legacyMarkers:document.querySelectorAll('[data-pico-rig],.p2-joint,[data-companion-rig],.human-joint').length,nativeMarkers:document.querySelectorAll('[data-anatomy-source="complete-native-frame"]').length,characterSources:[...document.querySelectorAll('[data-character]')].map(node=>({character:node.dataset.character,source:node.dataset.anatomySource||null})),modules:performance.getEntriesByType('resource').filter(item=>/\/src\/(app|art|avatar-rig)\.js/.test(item.name)).map(item=>({path:new URL(item.name).pathname.split('/App/')[1],version:new URL(item.name).searchParams.get('v')})),authenticated:!!document.querySelector('.app-shell')};}).catch(()=>null);report.workers=await Promise.all(context.serviceWorkers().map(async worker=>({path:new URL(worker.url()).pathname,cache:await worker.evaluate(()=>typeof CACHE==='undefined'?'unknown':CACHE).catch(()=> 'unavailable')})));report.limits.push('A failed simulation is not evidence that existing user caches update correctly.');}

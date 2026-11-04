@@ -46,6 +46,8 @@ Sessions last 90 days. Expired or revoked books cannot start practice or save at
 
 Current anatomy evidence: [per-frame visual review](reports/anatomy-review.json) and [site-wide integration gate](reports/anatomy-integration.json). The integration check requires explicit visual approval tied to each reviewed source frame or rendered avatar capture. Missing reviews, rejected artwork or stale source hashes block a pass.
 
+The [anatomy release](reports/anatomy-release.json) records the corrected live runtime, [fresh production review](reports/anatomy-hosted.json), real old-cache upgrade and exact readback of 200 published runtime/media files. The production avatar verdicts come from a fresh visual inspection of the hosted frames.
+
 Earlier [screen measurements](reports/graphics-browser.json), [layout measurements](reports/graphics-layout.json), [bust measurements](reports/avatar-bust.json) and [graphics release](reports/graphics-release.json) remain historical evidence. They established fit and frame advancement, but did not establish correct anatomy and missed the defects corrected in this pass. The two Mina lesson headers intentionally use different body poses: stepping in 1A and reading seated in 1C.
 
 - `npm test`: canonical bank coverage, all activity types, grading and learning boundaries.
