@@ -1,0 +1,40 @@
+{
+  "tool": "OpenAI built-in image_gen",
+  "date": "2026-11-04",
+  "reference": "assets/art/jobs-v1.png",
+  "processing": "Native generated PNG bytes and alpha are preserved. Four equal frame columns and eight job rows per sheet; no bitmap retouching.",
+  "assets": [
+    {
+      "file": "jobs-motion-1.png",
+      "prompt": "Use case: scientific-educational. Asset type: transparent animation sprite atlas for an adult-friendly Horizons A1 language-learning app. Image 1 is the authoritative visual reference for character identities, clothing, palette and vignettes. Create a STRICT CONTACT SHEET of EXACTLY FOUR EQUAL COLUMNS and EIGHT EQUAL ROWS: 32 square cells, tall 1:2 canvas. Every row is ONE occupation performing FOUR successive small-action animation frames, left-to-right. No text, no labels, no numerals, no grid lines, no borders. GENUINE ALPHA TRANSPARENT background in all unused pixels. Each vignette and every person fully contained in its own square cell with 10% safe padding; no overlapping cells. Keep the same person(s), facial structure, body proportions, camera, scale, placement and background props perfectly consistent in all four cells of a row. The room props do not float, morph or move; hands, forearms, eyes and heads perform the action. Flat clean friendly vector-like raster art exactly like Image 1, saturated magenta, navy, teal and warm yellow, crisp edges. Do not render a floating/bobbing whole-body animation. Row1 TEACHER: the navy-haired woman in magenta cardigan and navy skirt from reference holding an open teal book beside a green chalkboard; she points at the board, opens her palm towards student, settles back, with a small blink. Row2 STUDENT: the navy-haired boy/young adult in orange top and teal backpack seated at a desk with magenta book and stacked books; he looks down, turns a book page with his hand, looks up, returns. Row3 CHEF: brown-skinned chef with white toque/coat and magenta neckerchief behind teal cooking pot; four-frame stirring motion through wrist and forearm, head looks at pot then up, pot and vegetables stay fixed. Row4 DOCTOR: navy-haired male doctor in white coat and teal stethoscope with the woman in magenta top seated on examination bed, as reference; doctor gently checks the blood-pressure cuff and looks at patient, patient makes a small nod/blink; same two people all four frames. Row5 OFFICE WORKER: glasses-wearing brown-skinned man in white shirt and orange tie at laptop desk; hands alternate typing, he looks from screen to viewer, desk stays anchored. Row6 RECEPTIONIST: navy-haired woman in navy blazer with magenta scarf behind reception counter and keys board; she raises a hand in welcome then gestures towards the counter and rests, small head turn. Row7 SALESCLERK: navy-haired man in white shirt and navy apron behind counter with stacked colorful clothes and register; hands fold the top orange garment then present it, look up; shelf and counter remain fixed. Row8 TAXI DRIVER: dark-skinned man in navy waistcoat/cap and yellow tie beside yellow taxi, as reference; he unfolds his arms, gives a friendly wave towards the taxi door, returns to relaxed pose. Make four clear coherent phases per row, suitable for looping, with frame4 approaching frame1. All anatomy sound. Preserve arms/hands/joints and every face; no cropped heads, hands, feet, vehicles or props. Render only the32 cells, no poster headings.",
+      "source": "C:\\Users\\David\\.codex\\generated_images\\01a1a684-5ebc-7212-88a0-8435cc89b465\\exec-e93e949d-4619-41c0-a0a3-412e5bd19aa3.png",
+      "width": 887,
+      "height": 1774,
+      "mode": "RGBA",
+      "sha256": "6c22c7fef2503b8fbb6a27a7df07dc3eb1fef6c9362e0f0b1878c9dfe85f25c4",
+      "nativeBytesUnchanged": true,
+      "frameColumns": 4,
+      "occupationRows": 8,
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "file": "jobs-motion-2.png",
+      "prompt": "Use case: scientific-educational. Asset type: transparent animation sprite atlas for an adult-friendly Horizons A1 language-learning app. Image1 is the authoritative style and character reference. Create a STRICT CONTACT SHEET of EXACTLY FOUR EQUAL COLUMNS and EIGHT EQUAL ROWS: 32 square cells, tall1:2 canvas. Each ROW contains one of the LAST EIGHT reference occupations performing FOUR successive meaningful small-action frames left-to-right. No text, labels, numerals, grid lines or borders. TRUE ALPHA TRANSPARENT background in all unused pixels. Every vignette/person is completely contained in its own cell with10% clear padding. Fix character identity, facial structure, clothes, camera, scale, scene position and background props within each row. Do not bob/float/translate the whole vignette or morph proportions. Animate only appropriate hand/forearm/eye/head/body-joint action. Match reference's clean flat friendly vector-like raster shapes, saturated navy/magenta/teal/warm yellow, crisp tasteful adult-friendly illustrations. Row1 WAITER: reference's navy-haired male waiter in navy vest, white shirt and magenta bow tie carrying a burger tray in café; he gently presents the tray, turns head towards viewer, smiles/blinks then rests; café furniture, lamp, plant anchored. Row2 WAITRESS: reference's navy-haired bun waitress, white blouse/navy vest/skirt and magenta bow tie carrying tea tray in café; she gestures welcome with free hand then rests, slight head turn; tray balanced, furniture fixed. Row3 FARMER: bearded farmer in straw hat, navy overalls and orange boots holding vegetable basket by garden beds; he lifts a carrot from basket, presents it with small forearm motion, returns it, glances down/up; garden stays fixed. Row4 NURSE: reference's navy-haired nurse in teal scrubs with male patient in cream top seated at examination bed; nurse gently wraps/checks patient's wrist bandage through hand/forearm motion, patient nods/blinks, both settle; same two people every frame, bed/cart fixed. Row5 DENTIST: reference's navy-haired man in white coat with teal collar beside turquoise dental chair, lamp and tools; he points to large tooth model, turns model slightly, smiles and resets; chair/lamp remain anchored. Row6 POLICE OFFICER: reference's navy-uniformed female officer and elderly white-haired woman in magenta cardigan with cane at zebra crossing; officer gestures a safe direction with her free arm, elderly woman nods in response, both return to resting pose; no actual location change, both complete bodies visible every frame. Row7 DRIVER: reference's front view of turquoise bus with navy-haired driver in white shirt/orange tie visible through windshield; driver turns steering wheel a small amount and looks left, then forward and resets; complete bus remains absolutely stationary and identical across frames. Row8 ACTOR: reference's curly-haired male actor in magenta waistcoat, cream shirt and navy breeches on stage holding a white theatre mask; he raises free hand theatrically, does small expressive head/upper-body bow at waist joint, returns; mask stays well held, curtains and stage completely fixed. All four phases per row should loop coherently, fourth close to first. Anatomy sound, no cropped head/hand/foot/vehicle/props, no extra people. Render just32 clean cells, without any titles.",
+      "source": "C:\\Users\\David\\.codex\\generated_images\\01a1a684-5ebc-7212-88a0-8435cc89b465\\exec-f1f088a5-73cc-4a33-80ba-9294f8e6ffa4.png",
+      "width": 887,
+      "height": 1774,
+      "mode": "RGBA",
+      "sha256": "a83247b1cfa7d611d94a9007df000962069aa6adc6a31d22aa6dbbcfc297058d",
+      "nativeBytesUnchanged": true,
+      "frameColumns": 4,
+      "occupationRows": 8,
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    }
+  ]
+}

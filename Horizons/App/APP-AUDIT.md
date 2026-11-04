@@ -21,6 +21,11 @@ This audit governs the companion app. The book's existing audit remains authorit
 - For articulated characters, overlap complete joints. The torso must remain intact behind accessories. Blinking changes only eye overlays, never the head silhouette. Add anticipation, follow-through and soft landings, not rigid whole-body rocking alone.
 - Motion must respond to interaction and feel inviting. Respect reduced-motion preferences, stop media when leaving activities and release animation observers when screens change.
 - Check actual desktop and small mobile screenshots, avatar combinations, path labels, illustration crops and touch targets. A passing size check alone is not visual approval.
+- Fit every raster crop at one uniform scale inside its assigned box. Fixed icon, dialog, thumbnail or illustration dimensions must never stretch native pixels. Audit the visible inner image, not just its outer box.
+- All named companions and learner avatars use independent face/head/limb or shoulder motion. Each companion has its own gesture vocabulary and timing; a whole-image float is insufficient. Occupation vignettes use generated task-action frames. Respect reduced motion throughout.
+- Learner avatars are upper-chest busts everywhere, including navigation and skin-tone previews. Keep saved customization IDs stable. This requested lower-chest crop is deliberate; hair, faces, glasses and headwear must remain intact.
+- Check the complete motion envelope, including hands and held props, during idle, greeting and celebration. Keep a stable scale and ground line; do not zoom a character differently for each pose. Width-only rig scaling is forbidden when the container can be short.
+- Keep paths compact with mirrored paired lanes, equal row spacing and clear progression order. Preserve every activity and touch target. Do not add tall repeated decorative interstitials between learning stops.
 
 ## Access and privacy
 

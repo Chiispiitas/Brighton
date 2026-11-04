@@ -1,0 +1,229 @@
+{
+  "status": "PASS",
+  "date": "2026-11-04T12:59:36.569921+00:00",
+  "target": "http://127.0.0.1:8892/Horizons/App/",
+  "browser": "Microsoft Edge / Chromium via Playwright",
+  "widths": [
+    320,
+    390,
+    768,
+    1440
+  ],
+  "layoutChecks": 24,
+  "layoutChecksPassed": 24,
+  "activitiesRetained": 48,
+  "perLessonActivityCounts": [
+    18,
+    12,
+    10,
+    8
+  ],
+  "spacingPolicy": "Two mirrored lanes, paired equal-height rows, explicit sequential step badges, snake progression in DOM order. No tall interstitial character sections.",
+  "pathHeights390": [
+    {
+      "lesson": "New friends",
+      "before": 2572,
+      "after": 1542,
+      "activityCount": 18
+    },
+    {
+      "lesson": "What’s your job?",
+      "before": 1765,
+      "after": 1074,
+      "activityCount": 12
+    },
+    {
+      "lesson": "Where are you from?",
+      "before": 1386,
+      "after": 922.875,
+      "activityCount": 10
+    },
+    {
+      "lesson": "Let’s fill in a form",
+      "before": 1172,
+      "after": 762,
+      "activityCount": 8
+    }
+  ],
+  "totalPathHeight390": {
+    "before": 6895,
+    "after": 4300.875,
+    "reductionPercent": 37.6
+  },
+  "motion": {
+    "routeWidthCases": 16,
+    "keyframeSamplesPerCase": 12,
+    "totalPhaseSamples": 192,
+    "visibleNativePartOverflows": 0,
+    "subpixelTolerancePx": 2,
+    "runtimeErrors": [],
+    "routes": [
+      "welcome",
+      "learn",
+      "practice",
+      "progress"
+    ],
+    "method": "Pause and seek actual browser animations at12 deterministic phase times. Measure the visible cropped native-part viewport rectangles after image decoding, excluding opacity-hidden layers; compare against the assigned character slot. Huge underlying sprite-atlas image bounds are intentionally excluded.",
+    "scope": "Pico and the three human companion rigs. Intentional avatar-bust framing and occupation frame animation receive separate broader QA."
+  },
+  "checks": [
+    {
+      "name": "Welcome cast isolated within viewport",
+      "w": 320,
+      "pass": true
+    },
+    {
+      "name": "Welcome cast isolated within viewport",
+      "w": 390,
+      "pass": true
+    },
+    {
+      "name": "Welcome cast isolated within viewport",
+      "w": 768,
+      "pass": true
+    },
+    {
+      "name": "Welcome cast isolated within viewport",
+      "w": 1440,
+      "pass": true
+    },
+    {
+      "name": "Route overflow and spacing",
+      "route": "learn",
+      "w": 320,
+      "pass": true
+    },
+    {
+      "name": "Route overflow and spacing",
+      "route": "practice",
+      "w": 320,
+      "pass": true
+    },
+    {
+      "name": "Route overflow and spacing",
+      "route": "bank",
+      "w": 320,
+      "pass": true
+    },
+    {
+      "name": "Route overflow and spacing",
+      "route": "progress",
+      "w": 320,
+      "pass": true
+    },
+    {
+      "name": "Route overflow and spacing",
+      "route": "profile",
+      "w": 320,
+      "pass": true
+    },
+    {
+      "name": "Route overflow and spacing",
+      "route": "learn",
+      "w": 390,
+      "pass": true
+    },
+    {
+      "name": "Route overflow and spacing",
+      "route": "practice",
+      "w": 390,
+      "pass": true
+    },
+    {
+      "name": "Route overflow and spacing",
+      "route": "bank",
+      "w": 390,
+      "pass": true
+    },
+    {
+      "name": "Route overflow and spacing",
+      "route": "progress",
+      "w": 390,
+      "pass": true
+    },
+    {
+      "name": "Route overflow and spacing",
+      "route": "profile",
+      "w": 390,
+      "pass": true
+    },
+    {
+      "name": "Route overflow and spacing",
+      "route": "learn",
+      "w": 768,
+      "pass": true
+    },
+    {
+      "name": "Route overflow and spacing",
+      "route": "practice",
+      "w": 768,
+      "pass": true
+    },
+    {
+      "name": "Route overflow and spacing",
+      "route": "bank",
+      "w": 768,
+      "pass": true
+    },
+    {
+      "name": "Route overflow and spacing",
+      "route": "progress",
+      "w": 768,
+      "pass": true
+    },
+    {
+      "name": "Route overflow and spacing",
+      "route": "profile",
+      "w": 768,
+      "pass": true
+    },
+    {
+      "name": "Route overflow and spacing",
+      "route": "learn",
+      "w": 1440,
+      "pass": true
+    },
+    {
+      "name": "Route overflow and spacing",
+      "route": "practice",
+      "w": 1440,
+      "pass": true
+    },
+    {
+      "name": "Route overflow and spacing",
+      "route": "bank",
+      "w": 1440,
+      "pass": true
+    },
+    {
+      "name": "Route overflow and spacing",
+      "route": "progress",
+      "w": 1440,
+      "pass": true
+    },
+    {
+      "name": "Route overflow and spacing",
+      "route": "profile",
+      "w": 1440,
+      "pass": true
+    }
+  ],
+  "visualNotes": [
+    "Welcome cast fits within reserved columns; no Jo edge crop or cut Pico feet.",
+    "Practice and word-bank headings reserve a separate companion column. Legacy practice top85px displacement was removed.",
+    "Progress uses an actual character column; Pico now fits both available width and height.",
+    "Avatar main view is visibly a bust; multi-combination avatar checks are owned by the independent site audit."
+  ],
+  "evidence": {
+    "folder": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-app-layout",
+    "layoutReport": "layout-report.json",
+    "motionBoundsReport": "motion-bounds.json",
+    "baselineLiveReport": "baseline-live-path390.json",
+    "layoutHarness": "check-layout.mjs",
+    "motionHarness": "check-motion-bounds.mjs"
+  },
+  "limits": [
+    "This report covers the listed browser and widths, not every physical device.",
+    "Full site activity/modals/occupation frame coverage is in the independent graphics audit."
+  ]
+}

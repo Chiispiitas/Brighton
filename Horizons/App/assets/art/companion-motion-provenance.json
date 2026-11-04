@@ -1,0 +1,57 @@
+{
+  "date": "2026-11-04",
+  "processing": "Native PNG bytes preserved. CSS viewports select full parts or isolated eye components; no bitmap paint or character vectors.",
+  "assets": [
+    {
+      "id": "mina-rig-v1",
+      "prompt": "Use case: illustration-story. Asset: native transparent animation-parts atlas for Mina in the Horizons study app. Reference image: the THREE-COLUMN character sheet provided. Rebuild ONLY MINA, the first-column young adult woman with warm medium skin, dark wavy bob, magenta open jacket, cream T-shirt, navy trousers, orange trainers and orange backpack. Preserve her identity, adult proportions and clean friendly flat illustration style; no outlines, gradients only very subtle.\nCreate a STRICT 4-column by 4-row grid, all 16 cells equal size, with abundant transparent gutters. EACH CELL CONTAINS ONLY ONE DETACHED PART, no text labels or grid lines. Every part completely visible, no clipping. Straight neutral orientation, frontal/slight three-quarter face as reference. Parts need round overlapping ends for joints. No full person anywhere.\nRow 1 cells left to right: (1) complete jacket-and-shirt TORSO from neck through hips, no head/arms/legs; (2) HEAD including intact dark hair and neck, eyebrows and nose, but NO EYES and NO MOUTH; (3) viewer-left UPPER ARM magenta jacket sleeve shoulder to elbow, downwards; (4) viewer-left FOREARM including wrist and friendly open hand, elbow at TOP, fingers at BOTTOM, downwards.\nRow 2: (1) viewer-right UPPER ARM magenta sleeve shoulder to elbow downward; (2) viewer-right FOREARM with open hand, elbow at TOP and fingers BOTTOM; (3) viewer-left navy trouser LEG including orange shoe, hip at TOP and shoe at BOTTOM; (4) viewer-right navy trouser LEG including orange shoe, same.\nRow 3: (1) two OPEN expressive dark eyes as one isolated overlay, no surrounding face; (2) two CLOSED eyes as one matching isolated overlay, same eye spacing, no surrounding face; (3) smiling mouth isolated; (4) small speaking open mouth isolated.\nRow 4: (1) orange backpack alone, front/threequarter enough to place behind torso; (2) small folded-open pale map with simple colored route markings, NO TEXT; (3) isolated friendly pointing hand of matching skin; (4) isolated thumbs-up hand of matching skin.\nAll parts same character scale and style, drawing shapes large within their equal cells but separated and never crossing cell boundaries. Real transparent alpha background. No shadows outside parts. No labels, frames, border, watermark.",
+      "source": "C:\\Users\\David\\.codex\\generated_images\\01a10ee1-5c4c-7e80-817b-36b2c2dafd47\\exec-5f809ca6-0365-4cd7-ba78-1b78cef36c08.png",
+      "file": "assets/art/mina-rig-v1.png",
+      "active": true,
+      "tool": "OpenAI built-in image_gen",
+      "use": "Articulated mina with separate face, arms, legs and task props",
+      "width": 1246,
+      "height": 1263,
+      "sha256": "f67508766e595ac941113cab53c6f15f25ed7adb636467c0354cb9533a2abd63",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "nativeBytesUnchanged": true
+    },
+    {
+      "id": "alex-rig-v1",
+      "prompt": "Use case: illustration-story. Native transparent animation-parts atlas for the Horizons study app. Reference image is the three-column cast sheet. Preserve the specified adult character's identity, friendly flat shapes, clean borderless illustration and colors. STRICT 4 columns by 4 rows of equal cells, transparent gutters, no grid lines or text. ONE DETACHED PART per cell, completely visible, no clipping. Every joint has a complete rounded overlap end. No full people. The parts point down in neutral rest pose except small facial overlays and props.\nRow1: torso neck-to-hips NO HEAD/ARMS/LEGS; head including hair and neck, nose+brows but NO EYES and NO MOUTH; viewer-left upperarm shoulder-to-elbow pointing down; viewer-left forearm with wrist+openhand elbow TOP fingers BOTTOM.\nRow2: viewer-right upperarm downward; viewer-right forearm+openhand downward; viewer-left leg hip-to-shoe; viewer-right leg hip-to-shoe.\nRow3: pair of OPEN eyes alone, no face; matching CLOSED eye pair alone, same spacing no face; isolated smiling mouth; isolated small speaking open mouth.\nRow4: main prop; secondary accessory; matching skin pointing hand; matching skin thumbs-up hand.\nKeep proportions and detail consistent throughout. Real transparent alpha. No stray shadows, labels, borders, watermark.\nCharacter: ALEX, center-column young adult man with dark brown skin, short dark tight curly hair, teal overshirt with rolled sleeves, orange T-shirt, navy trousers, cream trainers and navy over-ear headphones around neck. Head contains same curly hair and nose/brows without eyes/mouth. The torso includes teal shirt over orange tee but no headphones (separate accessory). Row4 main prop is a small navy music player with two simple orange musical notes, NO TEXT. Row4 secondary accessory is the navy headphones, isolated. Arms use teal rolled sleeves plus darkbrown forearms. Legs navy with cream trainers.",
+      "source": "C:\\Users\\David\\.codex\\generated_images\\01a10ee1-5c4c-7e80-817b-36b2c2dafd47\\exec-36d46108-3c6a-44c8-be6a-19bf010f3a11.png",
+      "file": "assets/art/alex-rig-v1.png",
+      "active": true,
+      "tool": "OpenAI built-in image_gen",
+      "use": "Articulated alex with separate face, arms, legs and task props",
+      "width": 1261,
+      "height": 1247,
+      "sha256": "75fa76fa3a00f90d6074d294f04bfb53bfd293ee78ef982a8c4e061195b7eb65",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "nativeBytesUnchanged": true
+    },
+    {
+      "id": "jo-rig-v1",
+      "prompt": "Use case: illustration-story. Native transparent animation-parts atlas for the Horizons study app. Reference image is the three-column cast sheet. Preserve the specified adult character's identity, friendly flat shapes, clean borderless illustration and colors. STRICT 4 columns by 4 rows of equal cells, transparent gutters, no grid lines or text. ONE DETACHED PART per cell, completely visible, no clipping. Every joint has a complete rounded overlap end. No full people. The parts point down in neutral rest pose except small facial overlays and props.\nRow1: torso neck-to-hips NO HEAD/ARMS/LEGS; head including hair and neck, nose+brows but NO EYES and NO MOUTH; viewer-left upperarm shoulder-to-elbow pointing down; viewer-left forearm with wrist+openhand elbow TOP fingers BOTTOM.\nRow2: viewer-right upperarm downward; viewer-right forearm+openhand downward; viewer-left leg hip-to-shoe; viewer-right leg hip-to-shoe.\nRow3: pair of OPEN eyes alone, no face; matching CLOSED eye pair alone, same spacing no face; isolated smiling mouth; isolated small speaking open mouth.\nRow4: main prop; secondary accessory; matching skin pointing hand; matching skin thumbs-up hand.\nKeep proportions and detail consistent throughout. Real transparent alpha. No stray shadows, labels, borders, watermark.\nCharacter: JO, right-column older adult woman caf\u00e9 owner with warm tan skin, silver-gray bob, round navy glasses, orange collared shirt, navy tied apron, sagegreen cropped trousers, cream shoes. Preserve mature friendly face, silver hair and glasses. Head includes the whole hair and navy glasses frames but NO EYES and NO MOUTH, so eyes overlays will appear inside unchanged glasses. Torso includes full apron+orange shirt. Upperarms orange rolled sleeves, tan forearms. Legs sagegreen including creamshoes. Row4 main prop is a friendly teal coffee mug with handle, no text or steam. Row4 secondary accessory is a folded cream caf\u00e9 cloth. The pair of open/closed eyes must align within round glasses.",
+      "source": "C:\\Users\\David\\.codex\\generated_images\\01a10ee1-5c4c-7e80-817b-36b2c2dafd47\\exec-75033939-6b39-4fd7-9a32-9b2331b0401a.png",
+      "file": "assets/art/jo-rig-v1.png",
+      "active": true,
+      "tool": "OpenAI built-in image_gen",
+      "use": "Articulated jo with separate face, arms, legs and task props",
+      "width": 1263,
+      "height": 1246,
+      "sha256": "912e1f23719c9a5a6ec4da2f026e2e0f27fed356d51d6652752ea5df51d78fea",
+      "alphaExtrema": [
+        0,
+        255
+      ],
+      "nativeBytesUnchanged": true
+    }
+  ]
+}

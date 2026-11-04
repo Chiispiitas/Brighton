@@ -1,0 +1,13 @@
+{
+  "tool": "OpenAI built-in image_gen",
+  "date": "2026-11-04",
+  "editTarget": "assets/art/avatar-kit-v2.png",
+  "source": "C:\\Users\\David\\.codex\\generated_images\\01a1a684-e2ae-7610-a8a8-2ea0817864ba\\exec-26545421-a7b7-43f4-9f26-94d018000b3b.png",
+  "file": "assets/art/avatar-blink-v1.png",
+  "prompt": "Use case: precise-object-edit. Edit target: the attached native avatar-kit-v2 sprite atlas. This is a production blink overlay source for the Horizons learner avatar. Change ONLY the six pairs of open black eyes in the SIX HEADS IN THE TOP ROW into gently curved closed smiling eyelids, in exactly the same eye locations and same dark ink color. Each closed eyelid is a single short clean curved stroke with round ends. Preserve every existing skin color, face outline, head proportions, eyebrows, nose, smile, ears, neck, bodies, clothes, hairstyle and accessory in the entire image. Keep the exact six-column, four-row atlas arrangement, 1536 by 1024 canvas and existing alpha transparency. Do not move, rescale, rotate, redraw, add or remove any other shape. The narrow source eye bands will be cropped at display time over the original fixed head, so exact eye position, skin tones, outline and color continuity are critical. Top-row skin colors are approximately #f4b290, #eca581, #d68c63, #c8805a, #b56133 and #79432b. No text, labels, border, shadow, background or new character. Genuine transparent background.",
+  "use": "Six narrow closed-eye bands overlay the original fixed heads. Head silhouette, hair, glasses and outfit are never swapped during a blink.",
+  "sha256": "ad87c68e4bfe2a84a7b8524af303144e5ed7de868ce8f6f8bd5169c20985dba1",
+  "width": 1536,
+  "height": 1024,
+  "nativeBytesUnchanged": true
+}

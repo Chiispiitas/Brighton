@@ -1,16 +1,33 @@
 let manifest = {characters: {}, avatar: {}};
 let picoModule;
+let companionModule;
+let avatarModule;
+let rasterObserver;
+let rasterMutationObserver;
+const illustratedMotion=new Map();
 const avatarObservers=new Set();
 const sourceBase = new URL('../assets/art/', import.meta.url);
 export async function loadArt() {
+  installRasterFit();
   try { const response = await fetch(new URL('manifest.json', sourceBase)); if (response.ok) { manifest = await response.json(); manifest.characters = manifest.characters || manifest.companions || {}; } }
   catch { /* The app remains usable while artwork is loading or unavailable offline. */ }
   return manifest;
 }
 export function artManifest() { return manifest; }
 export function sceneMarkup(name,cls=''){return rasterMarkup(manifest.scenes?.[name],cls,'');}
-export function wordArt(word){return word?.image || manifest.vocabulary?.[word?.term] || manifest.vocabulary?.[word?.id];}
-export function disposeCharacters(container=document){for(const slot of container.querySelectorAll('[data-pico-rig]'))picoModule?.unmountPico?.(slot);for(const observer of avatarObservers)observer.disconnect();avatarObservers.clear();}
+export function wordArt(word){return manifest.vocabulary?.[word?.term] || manifest.vocabulary?.[word?.id] || word?.image;}
+export function disposeCharacters(container=document){for(const slot of container.querySelectorAll('[data-pico-rig]'))picoModule?.unmountPico?.(slot);for(const slot of container.querySelectorAll('[data-companion-rig]'))companionModule?.unmountCompanion?.(slot);for(const slot of container.querySelectorAll('[data-avatar-rig]'))avatarModule?.unmountAvatar?.(slot);for(const observer of avatarObservers)observer.disconnect();avatarObservers.clear();}
+function installRasterFit(){
+  if(rasterObserver)return;
+  const style=document.createElement('style');style.id='hzn-raster-fit';style.textContent='.raster-frame[data-raster-slot]{overflow:hidden;flex-shrink:0}.raster-frame>.raster-fit{position:absolute!important;display:block!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;max-width:none!important;max-height:none!important;overflow:hidden}.raster-fit>img{position:absolute!important;display:block;max-width:none!important;max-height:none!important;object-fit:fill!important}.raster-frame[data-raster-slot]>img{display:none}';document.head.append(style);
+  const fit=slot=>{const inner=slot.querySelector(':scope>.raster-fit');if(!inner)return;const w=Number(slot.dataset.nativeWidth),h=Number(slot.dataset.nativeHeight),rect=slot.getBoundingClientRect();if(!w||!h||!rect.width||!rect.height)return;const scale=Math.min(rect.width/w,rect.height/h);inner.style.width=w*scale+'px';inner.style.height=h*scale+'px';};
+  rasterObserver=new ResizeObserver(entries=>entries.forEach(entry=>fit(entry.target)));
+  const animate=slot=>{illustratedMotion.get(slot)?.cancel();illustratedMotion.delete(slot);if(!slot.dataset.illustrationMotion||matchMedia('(prefers-reduced-motion:reduce)').matches)return;const spec=JSON.parse(slot.dataset.illustrationMotion),image=slot.querySelector('.raster-fit>img');if(!image)return;const times=[0,.38,.57,.76,1],frames=[...spec.frames,spec.frames[0]];const animation=image.animate(frames.map((b,i)=>({left:-b.x/b.w*100+'%',top:-b.y/b.h*100+'%',offset:times[i]})),{duration:spec.duration,iterations:Infinity,easing:'steps(1,end)'});illustratedMotion.set(slot,animation);};
+  const register=node=>{if(node.nodeType!==1)return;for(const slot of[node,...node.querySelectorAll('[data-raster-slot]')])if(slot.matches?.('[data-raster-slot]')){rasterObserver.observe(slot);fit(slot);if(slot.dataset.illustrationMotion&&!illustratedMotion.has(slot))animate(slot);}};
+  const unregister=node=>{if(node.nodeType!==1)return;for(const slot of[node,...node.querySelectorAll('[data-raster-slot]')])if(slot.matches?.('[data-raster-slot]')){rasterObserver.unobserve(slot);illustratedMotion.get(slot)?.cancel();illustratedMotion.delete(slot);}};
+  matchMedia('(prefers-reduced-motion:reduce)').addEventListener('change',()=>document.querySelectorAll('[data-illustration-motion]').forEach(animate));
+  rasterMutationObserver=new MutationObserver(records=>{for(const record of records){record.removedNodes.forEach(unregister);record.addedNodes.forEach(register);}});rasterMutationObserver.observe(document.body,{childList:true,subtree:true});register(document.body);
+}
 const esc = value => String(value ?? '').replace(/[&<>"']/g, char => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 export function assetURL(source) {
   if (!source) return '';
@@ -22,18 +39,20 @@ export function assetURL(source) {
 export function rasterMarkup(asset, cls = '', alt = '') {
   if (!asset) return '';
   if (typeof asset === 'string') asset = {src: asset};
+  if(/jobs-v1\.png$/.test(asset.src||'')){const replacement=Object.values(manifest.vocabulary||{}).find(item=>item.animation&&item.animation.id===String(alt).replace(' ','-'));if(replacement)asset=replacement;}
   const source = asset.src || asset.file || asset.image;
   if (!source) return '';
   const frame = asset.frame || asset.bounds || asset.crop;
   const atlas = asset.atlas;
   if (frame && atlas?.width && atlas?.height) {
     const imageStyle = `width:${atlas.width/frame.w*100}%;height:${atlas.height/frame.h*100}%;left:${-frame.x/frame.w*100}%;top:${-frame.y/frame.h*100}%;`;
-    return `<span class="raster-frame ${esc(cls)}" style="aspect-ratio:${frame.w}/${frame.h}" role="img" aria-label="${esc(alt)}"><img src="${esc(assetURL(source))}" alt="" draggable="false" style="${imageStyle}"></span>`;
+    return `<span class="raster-frame ${esc(cls)}" data-raster-slot data-native-width="${frame.w}" data-native-height="${frame.h}" ${asset.animation?`data-illustration-motion="${esc(JSON.stringify(asset.animation))}"`:''} style="aspect-ratio:${frame.w}/${frame.h}" role="img" aria-label="${esc(alt)}"><span class="raster-fit" style="aspect-ratio:${frame.w}/${frame.h}"><img src="${esc(assetURL(source))}" alt="" draggable="false" style="${imageStyle}"></span></span>`;
   }
   return `<img class="${esc(cls)}" src="${esc(assetURL(source))}" alt="${esc(alt)}" draggable="false" ${asset.loading === 'eager' ? '' : 'loading="lazy"'}>`;
 }
 export function characterMarkup(name, cls = '', mood = 'idle') {
   if (name==='pico' && manifest.pico?.parts) return `<span class="character character-pico ${esc(cls)}" data-character="pico" data-pico-rig data-mood="${esc(mood)}" role="img" aria-label="Pico, your mountain-hare companion"></span>`;
+  if(manifest.rigs?.[name])return `<span class="character character-${esc(name)} ${esc(cls)}" data-character="${esc(name)}" data-companion-rig data-mood="${esc(mood)}" role="img" aria-label="${esc(name[0].toUpperCase()+name.slice(1))}, your study companion"></span>`;
   const character = manifest.characters?.[name] || manifest[name];
   if (!character) return '';
   const art = character[mood] || character.idle || character.base || character.asset || character;
@@ -49,32 +68,16 @@ export function defaultAvatar() {
   return Object.fromEntries(avatarOptions().map(group => [group.id, group.options?.[0]?.id || 'none']));
 }
 export function avatarMarkup(avatar = {}, cls = '', name = 'Your avatar') {
-  const groups = avatarOptions();
-  let layers = [];
-  for (const group of groups) {
-    const options = group.options || [];
-    const choice = options.find(option => option.id === avatar[group.id]) || options[0];
-    if (!choice || choice.id === 'none') continue;
-    const position = {...(choice.position || group.position || {})};
-    if(choice.id==='accessory-2')position.y=-.06;
-    if(choice.id==='accessory-3')position.y=.015;
-    if(choice.id==='accessory-5')position.y=.32;
-    const style = position ? `left:${position.x*100}%;top:${position.y*100}%;width:${position.w*100}%;height:${position.h*100}%;z-index:${position.z || 0}` : 'inset:0';
-    const frame=choice.frame || choice.asset?.frame;
-    layers.push(`<span class="avatar-layer" data-art-group="${esc(group.id)}" data-art-placement="${esc(JSON.stringify(position))}" data-art-ratio="${frame?frame.w/frame.h:1}" style="${style}">${rasterMarkup(choice.asset || choice,'','')}</span>`);
-  }
-  if (!layers.length) return `<span class="avatar avatar-initial ${esc(cls)}" aria-label="${esc(name)}">${esc(name.trim().slice(0,1).toUpperCase() || 'H')}</span>`;
-  return `<span class="avatar ${esc(cls)}" role="img" aria-label="${esc(name)}">${layers.join('')}</span>`;
+  return `<span class="avatar avatar-bust ${esc(cls)}" data-avatar-rig data-avatar="${esc(JSON.stringify(avatar))}" role="img" aria-label="${esc(name)}, bust portrait"></span>`;
 }
 export function refreshCharacterMotion(container = document) {
-  for(const avatar of container.querySelectorAll('.avatar:not(.avatar-initial)')){
-    const fit=()=>{const rect=avatar.getBoundingClientRect();if(!rect.width||!rect.height)return;for(const layer of avatar.querySelectorAll('.avatar-layer')){const p=JSON.parse(layer.dataset.artPlacement),ratio=Number(layer.dataset.artRatio)||1,group=layer.dataset.artGroup;let width,height,left,top=p.y*rect.height;if(group==='skin'||group==='outfit'){height=p.h*rect.height;width=height*ratio;left=(rect.width-width)/2;}else{width=p.w*rect.width;height=width/ratio;left=p.x*rect.width;}Object.assign(layer.style,{left:left+'px',top:top+'px',width:width+'px',height:height+'px'});}};
-    const observer=new ResizeObserver(fit);observer.observe(avatar);avatarObservers.add(observer);fit();
+  for(const slot of container.querySelectorAll('[data-avatar-rig]')){
+    import('./avatar-rig.js').then(module=>{avatarModule=module;if(slot.isConnected)module.mountAvatar(slot,{avatar:JSON.parse(slot.dataset.avatar||'{}'),manifest,mood:'idle'});});
+  }
+  for(const slot of container.querySelectorAll('[data-companion-rig]')){
+    import('./companion-rig.js').then(module=>{companionModule=module;if(slot.isConnected)module.mountCompanion(slot,{character:slot.dataset.character,mood:slot.dataset.mood||'idle',manifest});});
   }
   for (const slot of container.querySelectorAll('[data-pico-rig]')) {
     import('./pico-rig.js').then(module=>{picoModule=module;if(slot.isConnected)module.mountPico(slot,{mood:slot.dataset.mood || 'idle',manifest});}).catch(()=>{});
-  }
-  for (const character of container.querySelectorAll('.character')) {
-    character.addEventListener('pointerenter', () => { character.classList.add('character-greet'); setTimeout(() => character.classList.remove('character-greet'), 1200); });
   }
 }

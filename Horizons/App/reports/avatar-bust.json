@@ -1,0 +1,55 @@
+{
+  "motion": [
+    {
+      "head": "hz-avatar-listen",
+      "torso": "hz-avatar-shoulders",
+      "eyes": "hz-avatar-blink",
+      "personality": "thoughtful"
+    },
+    {
+      "head": "hz-avatar-cheerful",
+      "torso": "hz-avatar-shoulders",
+      "eyes": "hz-avatar-blink",
+      "personality": "cheerful"
+    },
+    {
+      "head": "hz-avatar-listen",
+      "torso": "hz-avatar-shoulders",
+      "eyes": "hz-avatar-blink",
+      "personality": "thoughtful"
+    },
+    {
+      "head": "hz-avatar-listen",
+      "torso": "hz-avatar-shoulders",
+      "eyes": "hz-avatar-blink",
+      "personality": "thoughtful"
+    },
+    {
+      "head": "hz-avatar-listen",
+      "torso": "hz-avatar-shoulders",
+      "eyes": "hz-avatar-blink",
+      "personality": "thoughtful"
+    },
+    {
+      "head": "hz-avatar-curious",
+      "torso": "hz-avatar-shoulders",
+      "eyes": "hz-avatar-blink",
+      "personality": "curious"
+    },
+    {
+      "head": "hz-avatar-listen",
+      "torso": "hz-avatar-shoulders",
+      "eyes": "hz-avatar-blink",
+      "personality": "thoughtful"
+    }
+  ],
+  "distinctHeadGestures": 3,
+  "reducedMotion": true,
+  "scope": "Seven native layer avatar combinations; intentional upper-chest crop; no native bitmap edits",
+  "errors": [],
+  "parts": 51,
+  "maxNativeScaleError": 0.00000651041666688279,
+  "maxFrameScaleError": 0.00000451977401128012,
+  "screenshots": "C:/Users/David/Documents/Codex/2026-11-04/horizons-avatar-bust-proof",
+  "pass": true
+}

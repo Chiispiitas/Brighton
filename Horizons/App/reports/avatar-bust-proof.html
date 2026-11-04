@@ -1,0 +1,7 @@
+<!doctype html><html><head><meta charset="utf-8"><title>Avatar bust composition proof</title><style>body{margin:0;padding:24px;background:#fffdf8;font:16px sans-serif;color:#17425b}main{display:grid;grid-template-columns:repeat(4,320px);gap:24px}.portrait{position:relative;width:320px;height:320px;background:#fff2d9;border-radius:22px}.label{text-align:center;max-width:320px;margin:12px 0 0}</style></head><body><main></main><script type="module">
+import {mountAvatar} from '../src/avatar-rig.js';
+const manifest=await fetch('../assets/art/manifest.json').then(r=>r.json());
+const mixes=Array.from({length:6},(_,i)=>({skin:'skin-'+(i+1),outfit:'outfit-'+(i+1),hair:'hair-'+(i+1),accessory:'accessory-'+(i+1),badge:i%2?'star-pin':'none'}));mixes.push({skin:'skin-6',outfit:'outfit-2',hair:'none',accessory:'none',badge:'compass-pin'});
+window.__avatars=[];for(const [i,avatar]of mixes.entries()){const wrapper=document.createElement('section'),slot=document.createElement('div');slot.className='portrait';wrapper.append(slot);const text=document.createElement('p');text.className='label';text.textContent=JSON.stringify(avatar);wrapper.append(text);document.querySelector('main').append(wrapper);window.__avatars.push(mountAvatar(slot,{avatar,manifest}));}
+window.__ready=true;
+</script></body></html>

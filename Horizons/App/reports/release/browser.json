@@ -1,6 +1,6 @@
 {
-  "date": "2026-11-04T06:47:05.056Z",
-  "base": "https://exams.bebrighton.net/Horizons/App/",
+  "date": "2026-11-04T12:56:45.637Z",
+  "base": "http://127.0.0.1:8892/Horizons/App/",
   "checks": [
     {
       "name": "Unknown code shows a useful error without signing in",
@@ -14,7 +14,7 @@
       "pass": true,
       "details": {
         "profileRestored": true,
-        "cookieSecure": true,
+        "cookieSecure": false,
         "bookCount": 2
       }
     },

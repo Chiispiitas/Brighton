@@ -3,7 +3,7 @@ let atlasPromise;
 const manifestURL = new URL('../assets/art/manifest.json', import.meta.url);
 const appURL = new URL('../', import.meta.url);
 const css = `
-.hzn-pico{position:relative;width:100%;aspect-ratio:3/4;pointer-events:none;isolation:isolate;overflow:visible}
+.hzn-pico{position:relative;width:100%;height:100%;aspect-ratio:auto;pointer-events:none;isolation:isolate;overflow:visible}
 .hzn-pico-fit{position:absolute;left:0;top:0;width:360px;height:480px;transform-origin:0 0}
 .p2-actor,.p2-mass,.p2-head{position:absolute;inset:0;transform-origin:180px 445px}
 .p2-mass{transform-origin:180px 375px;animation:p2-breathe 3.7s ease-in-out infinite}
@@ -57,8 +57,8 @@ function artManifest(){return atlasPromise??=(fetch(manifestURL).then(r=>{if(!r.
 export function unmountPico(element){mounts.get(element)?.dispose();mounts.delete(element);}
 export function mountPico(element,{mood='idle',manifest}={}){
  installStyle();unmountPico(element);let disposed=false,timer;const observers=[];
- const state={dispose(){disposed=true;clearTimeout(timer);for(const o of observers)o.disconnect();element.replaceChildren();},setMood(next){if(!state.frame)return;clearTimeout(timer);state.frame.dataset.mood='idle';void state.frame.offsetWidth;state.frame.dataset.mood=next==='hello'?'wave':next;const ms=next==='celebrate'?2850:3700;if(next!=='idle')timer=setTimeout(()=>{if(!disposed&&state.frame)state.frame.dataset.mood='idle';},ms);}};
- mounts.set(element,state);
+ const state={dispose(){disposed=true;clearTimeout(timer);for(const o of observers)o.disconnect();element.removeEventListener('pointerenter',greet);element.removeEventListener('focusin',greet);element.replaceChildren();},setMood(next){if(!state.frame)return;clearTimeout(timer);state.frame.dataset.mood='idle';void state.frame.offsetWidth;state.frame.dataset.mood=next==='hello'?'wave':next;const ms=next==='celebrate'?2850:3700;if(next!=='idle')timer=setTimeout(()=>{if(!disposed&&state.frame)state.frame.dataset.mood='idle';},ms);}};
+ const greet=()=>state.setMood('wave');element.addEventListener('pointerenter',greet);element.addEventListener('focusin',greet);mounts.set(element,state);
  Promise.resolve(manifest||artManifest()).then(data=>{
   if(disposed)return;const parts=data.pico.parts;
   const frame=document.createElement('div');frame.className='hzn-pico';frame.setAttribute('aria-hidden','true');const fit=document.createElement('div');fit.className='hzn-pico-fit';const actor=document.createElement('div');actor.className='p2-actor';fit.append(actor);frame.append(fit);element.replaceChildren(frame);state.frame=frame;
@@ -87,8 +87,8 @@ export function mountPico(element,{mood='idle',manifest}={}){
   joint(head,'p2-eyes-closed','eyesClosed',177,194,111,63,.5,.5,3);
   joint(head,'p2-mouth-smile','mouthSmile',205,244,34,29,.5,.5,3);
   joint(head,'p2-mouth-o','mouthO',205,244,15,22,.5,.5,3);
-  const ro=new ResizeObserver(()=>{fit.style.transform=`scale(${frame.getBoundingClientRect().width/360})`;});ro.observe(frame);observers.push(ro);
-  fit.style.transform=`scale(${frame.getBoundingClientRect().width/360})`;frame.dataset.ready='true';state.setMood(mood);
+  const resize=()=>{const r=frame.getBoundingClientRect(),scale=Math.min(r.width/360,r.height/480);fit.style.transform=`translate(${(r.width-360*scale)/2}px,${r.height-460*scale}px)scale(${scale})`;};const ro=new ResizeObserver(resize);ro.observe(frame);observers.push(ro);
+  resize();frame.dataset.ready='true';state.setMood(mood);
  }).catch(error=>{if(!disposed){element.dataset.picoError='true';console.error(error);}});
  return()=>unmountPico(element);
 }

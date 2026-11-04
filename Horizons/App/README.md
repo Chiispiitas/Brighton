@@ -26,9 +26,11 @@ There is no email or password. A book code creates or restores one saved profile
 
 The interface uses the supplied M PLUS Rounded 1c family. Native TTF files are retained alongside lightweight Latin WOFF2 subsets and their licence. The original Horizons wordmark remains separate.
 
-Pico, Mina, Alex, Jo, the town, avatars, occupation pictures, navigation objects and app icon were made with the built-in ImageGen tool. Native PNG bytes and transparency are preserved. CSS viewports select the generated atlas parts; ordinary transforms animate the images. Pico uses sixteen parts, shoulder/elbow joints, separate eyes for blinking and an intact torso beneath his strap.
+Pico, Mina, Alex, Jo, the town, avatars, occupation pictures, navigation objects and app icon were made with the built-in ImageGen tool. Native PNG bytes and transparency are preserved. CSS viewports select the generated atlas parts at a uniform scale. Pico and the three humans have articulated limbs, fixed head silhouettes and separate blinking eyes. Mina checks a map and points, Alex follows a rhythm and adjusts his headphones, and Jo offers a mug and handles a café cloth. Sixteen occupation vignettes have generated task-action frames. Learner avatars are animated upper-chest busts with head gestures, eye-only blinks and shoulder responses.
 
 Exact prompts, native source paths and hashes: [art provenance](assets/art/provenance.json). Art coordinates: [manifest](assets/art/manifest.json). New pronunciation scripts, hashes and independent transcript checks: [audio records](assets/audio/generation-records.json). Existing book audio remains unchanged.
+
+Refinement prompt sets: [human animation parts](assets/art/companion-motion-provenance.json), [occupation animation frames](assets/art/jobs-motion-provenance.json), [avatar blink artwork](assets/art/avatar-blink-v1.provenance.json). Earlier static sheets remain as source references. Raster viewports now contain artwork proportionally even when a UI box has a different shape. Paths use paired mirrored lanes and equal row spacing, retaining all 48 activities while reducing phone path length by about 38% against the first release.
 
 ## Hosting and identity
 
@@ -39,6 +41,8 @@ The actual deployed Wix API uses six private CMS collections. It validates book 
 Sessions last 90 days. Expired or revoked books cannot start practice or save attempts, while learners can retain their profile and add another book. Production code issuance is a private administrative step, not a public app endpoint. Replace the current per-worker redemption throttle with a distributed limit before a large printed-code campaign.
 
 ## Validation and maintenance
+
+Latest graphics evidence: [site-wide screen audit](reports/graphics-browser.json), [compact paths and motion bounds](reports/graphics-layout.json), [animated bust variants](reports/avatar-bust.json). These cover the refined artwork and animation system; first-release reports remain as historical evidence.
 
 - `npm test`: canonical bank coverage, all activity types, grading and learning boundaries.
 - `cd backend` then `npm test`: entitlement, linked-code identity, input validation, ownership, concurrent redemption, server grading, idempotency, mastery and earned rewards.

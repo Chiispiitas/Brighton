@@ -3,7 +3,7 @@ from PIL import Image
 import numpy as np,json,hashlib
 from collections import deque
 root=Path(__file__).resolve().parent.parent;art=root/'assets/art'
-def bounds(im,region,union=False):
+def bounds(im,region,union=False,return_components=False):
  x0,y0,x1,y1=map(int,region);a=np.asarray(im.getchannel('A'))[y0:y1,x0:x1];mask=(a>170).copy();comps=[]
  for sy,sx in np.argwhere(mask):
   if not mask[sy,sx]:continue
@@ -14,6 +14,8 @@ def bounds(im,region,union=False):
     if 0<=yy<mask.shape[0]and 0<=xx<mask.shape[1]and mask[yy,xx]:mask[yy,xx]=False;q.append((yy,xx))
   if n>12:comps.append((n,left,top,right,bottom))
  assert comps,region
+ if return_components:
+  return [{'x':c[1]+x0,'y':c[2]+y0,'w':c[3]-c[1]+1,'h':c[4]-c[2]+1,'pixels':c[0]}for c in sorted(comps,reverse=True)]
  comps.sort(reverse=True);selected=[c for c in comps if c[0]>=max(20,comps[0][0]*.015)]if union else comps[:1]
  l=min(c[1]for c in selected)+x0;t=min(c[2]for c in selected)+y0;r=max(c[3]for c in selected)+x0;b=max(c[4]for c in selected)+y0;pad=2
  return {'x':max(x0,l-pad),'y':max(y0,t-pad),'w':min(x1,r+pad+1)-max(x0,l-pad),'h':min(y1,b+pad+1)-max(y0,t-pad)}
@@ -49,6 +51,28 @@ avatars['accessory'].insert(0,{'id':'none','label':'No extra','group':'accessory
 avatars['badge']=[{'id':'none','label':'No pin','group':'badge'}]
 for name,label,xp in [('star','First steps',25),('trophy','Word explorer',100),('compass','New horizons',250)]:
  avatars['badge'].append({'id':name+'-pin','label':label,'group':'badge','unlockXp':xp,**icons[name],'position':{'x':.56,'y':.43,'w':.11,'h':.095,'z':8}})
-manifest={'version':1,'pico':{'parts':pico},'companions':companions,'avatar':avatars,'scenes':scenes,'icons':icons,'vocabulary':vocab}
+rigs={}
+names=['torso','head','upperArmLeft','forearmLeft','upperArmRight','forearmRight','legLeft','legRight','eyesOpen','eyesClosed','mouthSmile','mouthTalk','accessory','prop','handPoint','handThumb']
+for character,breaks in [('mina',[0,335,712,920]),('alex',[0,340,702,920]),('jo',[0,395,772,974])]:
+ file=character+'-rig-v1.png'
+ if not(art/file).exists():continue
+ im=Image.open(art/file);rows=breaks+[im.height];parts={}
+ for i,name in enumerate(names):
+  c=i%4;r=i//4;parts[name]=asset(file,bounds(im,(c*im.width/4,rows[r],(c+1)*im.width/4,rows[r+1]),union=name.startswith('eyes')))
+ for pose in ['Open','Closed']:
+  b=parts['eyes'+pose]['frame'];comps=bounds(im,(b['x'],b['y'],b['x']+b['w'],b['y']+b['h']),return_components=True)
+  candidates=[c for c in comps if c['w']<b['w']*.65][:2]
+  for side,c in zip(['Left','Right'],sorted(candidates,key=lambda c:c['x'])):
+   c.pop('pixels');parts['eye'+pose+side]=asset(file,c)
+ if character!='mina':parts['prop'],parts['accessory']=parts['accessory'],parts['prop']
+ rigs[character]={'parts':parts}
+for sheet,words in [(1,['teacher','student','chef','doctor','office worker','receptionist','salesclerk','taxi driver']),(2,['waiter','waitress','farmer','nurse','dentist','police officer','driver','actor'])]:
+ file=f'jobs-motion-{sheet}.png'
+ if not(art/file).exists():continue
+ im=Image.open(art/file);cw=im.width/4;ch=im.height/8
+ for row,word in enumerate(words):
+  frames=[{'x':col*cw,'y':row*ch,'w':cw,'h':ch}for col in range(4)]
+  vocab[word]={**asset(file,frames[0]),'animation':{'id':word.replace(' ','-'),'duration':3400+row*137,'frames':frames}}
+manifest={'version':2,'pico':{'parts':pico},'companions':companions,'rigs':rigs,'avatar':avatars,'scenes':scenes,'icons':icons,'vocabulary':vocab}
 (art/'manifest.json').write_text(json.dumps(manifest,indent=2)+'\n',encoding='utf8')
 print(json.dumps({'picoParts':len(pico),'companions':len(companions),'avatarLayers':sum(map(len,avatars.values())),'path':str(art/'manifest.json')}))

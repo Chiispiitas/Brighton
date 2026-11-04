@@ -1,5 +1,5 @@
 {
-  "version": 1,
+  "version": 2,
   "pico": {
     "parts": {
       "torso": {
@@ -333,6 +333,800 @@
           "y": 863,
           "w": 177,
           "h": 416
+        }
+      }
+    }
+  },
+  "rigs": {
+    "mina": {
+      "parts": {
+        "torso": {
+          "src": "assets/art/mina-rig-v1.png",
+          "atlas": {
+            "width": 1246,
+            "height": 1263
+          },
+          "frame": {
+            "x": 54,
+            "y": 31,
+            "w": 220,
+            "h": 294
+          }
+        },
+        "head": {
+          "src": "assets/art/mina-rig-v1.png",
+          "atlas": {
+            "width": 1246,
+            "height": 1263
+          },
+          "frame": {
+            "x": 327,
+            "y": 42,
+            "w": 291,
+            "h": 267
+          }
+        },
+        "upperArmLeft": {
+          "src": "assets/art/mina-rig-v1.png",
+          "atlas": {
+            "width": 1246,
+            "height": 1263
+          },
+          "frame": {
+            "x": 693,
+            "y": 37,
+            "w": 153,
+            "h": 257
+          }
+        },
+        "forearmLeft": {
+          "src": "assets/art/mina-rig-v1.png",
+          "atlas": {
+            "width": 1246,
+            "height": 1263
+          },
+          "frame": {
+            "x": 1041,
+            "y": 17,
+            "w": 109,
+            "h": 309
+          }
+        },
+        "upperArmRight": {
+          "src": "assets/art/mina-rig-v1.png",
+          "atlas": {
+            "width": 1246,
+            "height": 1263
+          },
+          "frame": {
+            "x": 83,
+            "y": 378,
+            "w": 152,
+            "h": 284
+          }
+        },
+        "forearmRight": {
+          "src": "assets/art/mina-rig-v1.png",
+          "atlas": {
+            "width": 1246,
+            "height": 1263
+          },
+          "frame": {
+            "x": 388,
+            "y": 359,
+            "w": 164,
+            "h": 324
+          }
+        },
+        "legLeft": {
+          "src": "assets/art/mina-rig-v1.png",
+          "atlas": {
+            "width": 1246,
+            "height": 1263
+          },
+          "frame": {
+            "x": 695,
+            "y": 349,
+            "w": 150,
+            "h": 341
+          }
+        },
+        "legRight": {
+          "src": "assets/art/mina-rig-v1.png",
+          "atlas": {
+            "width": 1246,
+            "height": 1263
+          },
+          "frame": {
+            "x": 1011,
+            "y": 350,
+            "w": 165,
+            "h": 338
+          }
+        },
+        "eyesOpen": {
+          "src": "assets/art/mina-rig-v1.png",
+          "atlas": {
+            "width": 1246,
+            "height": 1263
+          },
+          "frame": {
+            "x": 69,
+            "y": 779,
+            "w": 174,
+            "h": 73
+          }
+        },
+        "eyesClosed": {
+          "src": "assets/art/mina-rig-v1.png",
+          "atlas": {
+            "width": 1246,
+            "height": 1263
+          },
+          "frame": {
+            "x": 361,
+            "y": 792,
+            "w": 222,
+            "h": 40
+          }
+        },
+        "mouthSmile": {
+          "src": "assets/art/mina-rig-v1.png",
+          "atlas": {
+            "width": 1246,
+            "height": 1263
+          },
+          "frame": {
+            "x": 709,
+            "y": 782,
+            "w": 158,
+            "h": 97
+          }
+        },
+        "mouthTalk": {
+          "src": "assets/art/mina-rig-v1.png",
+          "atlas": {
+            "width": 1246,
+            "height": 1263
+          },
+          "frame": {
+            "x": 1061,
+            "y": 788,
+            "w": 80,
+            "h": 75
+          }
+        },
+        "accessory": {
+          "src": "assets/art/mina-rig-v1.png",
+          "atlas": {
+            "width": 1246,
+            "height": 1263
+          },
+          "frame": {
+            "x": 35,
+            "y": 950,
+            "w": 252,
+            "h": 295
+          }
+        },
+        "prop": {
+          "src": "assets/art/mina-rig-v1.png",
+          "atlas": {
+            "width": 1246,
+            "height": 1263
+          },
+          "frame": {
+            "x": 339,
+            "y": 1003,
+            "w": 254,
+            "h": 216
+          }
+        },
+        "handPoint": {
+          "src": "assets/art/mina-rig-v1.png",
+          "atlas": {
+            "width": 1246,
+            "height": 1263
+          },
+          "frame": {
+            "x": 656,
+            "y": 1029,
+            "w": 241,
+            "h": 139
+          }
+        },
+        "handThumb": {
+          "src": "assets/art/mina-rig-v1.png",
+          "atlas": {
+            "width": 1246,
+            "height": 1263
+          },
+          "frame": {
+            "x": 987,
+            "y": 987,
+            "w": 188,
+            "h": 197
+          }
+        },
+        "eyeOpenLeft": {
+          "src": "assets/art/mina-rig-v1.png",
+          "atlas": {
+            "width": 1246,
+            "height": 1263
+          },
+          "frame": {
+            "x": 71,
+            "y": 781,
+            "w": 48,
+            "h": 69
+          }
+        },
+        "eyeOpenRight": {
+          "src": "assets/art/mina-rig-v1.png",
+          "atlas": {
+            "width": 1246,
+            "height": 1263
+          },
+          "frame": {
+            "x": 198,
+            "y": 782,
+            "w": 43,
+            "h": 66
+          }
+        },
+        "eyeClosedLeft": {
+          "src": "assets/art/mina-rig-v1.png",
+          "atlas": {
+            "width": 1246,
+            "height": 1263
+          },
+          "frame": {
+            "x": 363,
+            "y": 794,
+            "w": 76,
+            "h": 36
+          }
+        },
+        "eyeClosedRight": {
+          "src": "assets/art/mina-rig-v1.png",
+          "atlas": {
+            "width": 1246,
+            "height": 1263
+          },
+          "frame": {
+            "x": 509,
+            "y": 794,
+            "w": 72,
+            "h": 30
+          }
+        }
+      }
+    },
+    "alex": {
+      "parts": {
+        "torso": {
+          "src": "assets/art/alex-rig-v1.png",
+          "atlas": {
+            "width": 1261,
+            "height": 1247
+          },
+          "frame": {
+            "x": 30,
+            "y": 49,
+            "w": 258,
+            "h": 277
+          }
+        },
+        "head": {
+          "src": "assets/art/alex-rig-v1.png",
+          "atlas": {
+            "width": 1261,
+            "height": 1247
+          },
+          "frame": {
+            "x": 348,
+            "y": 49,
+            "w": 226,
+            "h": 276
+          }
+        },
+        "upperArmLeft": {
+          "src": "assets/art/alex-rig-v1.png",
+          "atlas": {
+            "width": 1261,
+            "height": 1247
+          },
+          "frame": {
+            "x": 705,
+            "y": 65,
+            "w": 133,
+            "h": 253
+          }
+        },
+        "forearmLeft": {
+          "src": "assets/art/alex-rig-v1.png",
+          "atlas": {
+            "width": 1261,
+            "height": 1247
+          },
+          "frame": {
+            "x": 1055,
+            "y": 55,
+            "w": 100,
+            "h": 270
+          }
+        },
+        "upperArmRight": {
+          "src": "assets/art/alex-rig-v1.png",
+          "atlas": {
+            "width": 1261,
+            "height": 1247
+          },
+          "frame": {
+            "x": 79,
+            "y": 377,
+            "w": 146,
+            "h": 272
+          }
+        },
+        "forearmRight": {
+          "src": "assets/art/alex-rig-v1.png",
+          "atlas": {
+            "width": 1261,
+            "height": 1247
+          },
+          "frame": {
+            "x": 408,
+            "y": 376,
+            "w": 104,
+            "h": 279
+          }
+        },
+        "legLeft": {
+          "src": "assets/art/alex-rig-v1.png",
+          "atlas": {
+            "width": 1261,
+            "height": 1247
+          },
+          "frame": {
+            "x": 696,
+            "y": 363,
+            "w": 155,
+            "h": 314
+          }
+        },
+        "legRight": {
+          "src": "assets/art/alex-rig-v1.png",
+          "atlas": {
+            "width": 1261,
+            "height": 1247
+          },
+          "frame": {
+            "x": 1050,
+            "y": 364,
+            "w": 145,
+            "h": 309
+          }
+        },
+        "eyesOpen": {
+          "src": "assets/art/alex-rig-v1.png",
+          "atlas": {
+            "width": 1261,
+            "height": 1247
+          },
+          "frame": {
+            "x": 76,
+            "y": 771,
+            "w": 175,
+            "h": 66
+          }
+        },
+        "eyesClosed": {
+          "src": "assets/art/alex-rig-v1.png",
+          "atlas": {
+            "width": 1261,
+            "height": 1247
+          },
+          "frame": {
+            "x": 373,
+            "y": 782,
+            "w": 199,
+            "h": 40
+          }
+        },
+        "mouthSmile": {
+          "src": "assets/art/alex-rig-v1.png",
+          "atlas": {
+            "width": 1261,
+            "height": 1247
+          },
+          "frame": {
+            "x": 721,
+            "y": 779,
+            "w": 137,
+            "h": 79
+          }
+        },
+        "mouthTalk": {
+          "src": "assets/art/alex-rig-v1.png",
+          "atlas": {
+            "width": 1261,
+            "height": 1247
+          },
+          "frame": {
+            "x": 1059,
+            "y": 776,
+            "w": 75,
+            "h": 73
+          }
+        },
+        "accessory": {
+          "src": "assets/art/alex-rig-v1.png",
+          "atlas": {
+            "width": 1261,
+            "height": 1247
+          },
+          "frame": {
+            "x": 349,
+            "y": 972,
+            "w": 245,
+            "h": 237
+          }
+        },
+        "prop": {
+          "src": "assets/art/alex-rig-v1.png",
+          "atlas": {
+            "width": 1261,
+            "height": 1247
+          },
+          "frame": {
+            "x": 79,
+            "y": 975,
+            "w": 166,
+            "h": 229
+          }
+        },
+        "handPoint": {
+          "src": "assets/art/alex-rig-v1.png",
+          "atlas": {
+            "width": 1261,
+            "height": 1247
+          },
+          "frame": {
+            "x": 651,
+            "y": 1025,
+            "w": 241,
+            "h": 129
+          }
+        },
+        "handThumb": {
+          "src": "assets/art/alex-rig-v1.png",
+          "atlas": {
+            "width": 1261,
+            "height": 1247
+          },
+          "frame": {
+            "x": 991,
+            "y": 973,
+            "w": 192,
+            "h": 208
+          }
+        },
+        "eyeOpenLeft": {
+          "src": "assets/art/alex-rig-v1.png",
+          "atlas": {
+            "width": 1261,
+            "height": 1247
+          },
+          "frame": {
+            "x": 78,
+            "y": 773,
+            "w": 43,
+            "h": 62
+          }
+        },
+        "eyeOpenRight": {
+          "src": "assets/art/alex-rig-v1.png",
+          "atlas": {
+            "width": 1261,
+            "height": 1247
+          },
+          "frame": {
+            "x": 205,
+            "y": 773,
+            "w": 44,
+            "h": 62
+          }
+        },
+        "eyeClosedLeft": {
+          "src": "assets/art/alex-rig-v1.png",
+          "atlas": {
+            "width": 1261,
+            "height": 1247
+          },
+          "frame": {
+            "x": 375,
+            "y": 784,
+            "w": 72,
+            "h": 36
+          }
+        },
+        "eyeClosedRight": {
+          "src": "assets/art/alex-rig-v1.png",
+          "atlas": {
+            "width": 1261,
+            "height": 1247
+          },
+          "frame": {
+            "x": 499,
+            "y": 784,
+            "w": 71,
+            "h": 35
+          }
+        }
+      }
+    },
+    "jo": {
+      "parts": {
+        "torso": {
+          "src": "assets/art/jo-rig-v1.png",
+          "atlas": {
+            "width": 1263,
+            "height": 1246
+          },
+          "frame": {
+            "x": 46,
+            "y": 34,
+            "w": 225,
+            "h": 344
+          }
+        },
+        "head": {
+          "src": "assets/art/jo-rig-v1.png",
+          "atlas": {
+            "width": 1263,
+            "height": 1246
+          },
+          "frame": {
+            "x": 315,
+            "y": 62,
+            "w": 316,
+            "h": 287
+          }
+        },
+        "upperArmLeft": {
+          "src": "assets/art/jo-rig-v1.png",
+          "atlas": {
+            "width": 1263,
+            "height": 1246
+          },
+          "frame": {
+            "x": 721,
+            "y": 73,
+            "w": 118,
+            "h": 256
+          }
+        },
+        "forearmLeft": {
+          "src": "assets/art/jo-rig-v1.png",
+          "atlas": {
+            "width": 1263,
+            "height": 1246
+          },
+          "frame": {
+            "x": 1042,
+            "y": 60,
+            "w": 113,
+            "h": 305
+          }
+        },
+        "upperArmRight": {
+          "src": "assets/art/jo-rig-v1.png",
+          "atlas": {
+            "width": 1263,
+            "height": 1246
+          },
+          "frame": {
+            "x": 103,
+            "y": 436,
+            "w": 112,
+            "h": 271
+          }
+        },
+        "forearmRight": {
+          "src": "assets/art/jo-rig-v1.png",
+          "atlas": {
+            "width": 1263,
+            "height": 1246
+          },
+          "frame": {
+            "x": 420,
+            "y": 426,
+            "w": 109,
+            "h": 311
+          }
+        },
+        "legLeft": {
+          "src": "assets/art/jo-rig-v1.png",
+          "atlas": {
+            "width": 1263,
+            "height": 1246
+          },
+          "frame": {
+            "x": 702,
+            "y": 414,
+            "w": 139,
+            "h": 328
+          }
+        },
+        "legRight": {
+          "src": "assets/art/jo-rig-v1.png",
+          "atlas": {
+            "width": 1263,
+            "height": 1246
+          },
+          "frame": {
+            "x": 1042,
+            "y": 415,
+            "w": 132,
+            "h": 327
+          }
+        },
+        "eyesOpen": {
+          "src": "assets/art/jo-rig-v1.png",
+          "atlas": {
+            "width": 1263,
+            "height": 1246
+          },
+          "frame": {
+            "x": 32,
+            "y": 813,
+            "w": 251,
+            "h": 105
+          }
+        },
+        "eyesClosed": {
+          "src": "assets/art/jo-rig-v1.png",
+          "atlas": {
+            "width": 1263,
+            "height": 1246
+          },
+          "frame": {
+            "x": 348,
+            "y": 813,
+            "w": 251,
+            "h": 105
+          }
+        },
+        "mouthSmile": {
+          "src": "assets/art/jo-rig-v1.png",
+          "atlas": {
+            "width": 1263,
+            "height": 1246
+          },
+          "frame": {
+            "x": 727,
+            "y": 840,
+            "w": 127,
+            "h": 70
+          }
+        },
+        "mouthTalk": {
+          "src": "assets/art/jo-rig-v1.png",
+          "atlas": {
+            "width": 1263,
+            "height": 1246
+          },
+          "frame": {
+            "x": 1064,
+            "y": 833,
+            "w": 79,
+            "h": 76
+          }
+        },
+        "accessory": {
+          "src": "assets/art/jo-rig-v1.png",
+          "atlas": {
+            "width": 1263,
+            "height": 1246
+          },
+          "frame": {
+            "x": 365,
+            "y": 1024,
+            "w": 199,
+            "h": 198
+          }
+        },
+        "prop": {
+          "src": "assets/art/jo-rig-v1.png",
+          "atlas": {
+            "width": 1263,
+            "height": 1246
+          },
+          "frame": {
+            "x": 66,
+            "y": 1032,
+            "w": 219,
+            "h": 182
+          }
+        },
+        "handPoint": {
+          "src": "assets/art/jo-rig-v1.png",
+          "atlas": {
+            "width": 1263,
+            "height": 1246
+          },
+          "frame": {
+            "x": 681,
+            "y": 1059,
+            "w": 212,
+            "h": 129
+          }
+        },
+        "handThumb": {
+          "src": "assets/art/jo-rig-v1.png",
+          "atlas": {
+            "width": 1263,
+            "height": 1246
+          },
+          "frame": {
+            "x": 1014,
+            "y": 1010,
+            "w": 167,
+            "h": 201
+          }
+        },
+        "eyeOpenLeft": {
+          "src": "assets/art/jo-rig-v1.png",
+          "atlas": {
+            "width": 1263,
+            "height": 1246
+          },
+          "frame": {
+            "x": 98,
+            "y": 850,
+            "w": 22,
+            "h": 34
+          }
+        },
+        "eyeOpenRight": {
+          "src": "assets/art/jo-rig-v1.png",
+          "atlas": {
+            "width": 1263,
+            "height": 1246
+          },
+          "frame": {
+            "x": 201,
+            "y": 850,
+            "w": 22,
+            "h": 34
+          }
+        },
+        "eyeClosedLeft": {
+          "src": "assets/art/jo-rig-v1.png",
+          "atlas": {
+            "width": 1263,
+            "height": 1246
+          },
+          "frame": {
+            "x": 392,
+            "y": 855,
+            "w": 45,
+            "h": 17
+          }
+        },
+        "eyeClosedRight": {
+          "src": "assets/art/jo-rig-v1.png",
+          "atlas": {
+            "width": 1263,
+            "height": 1246
+          },
+          "frame": {
+            "x": 510,
+            "y": 855,
+            "w": 45,
+            "h": 17
+          }
         }
       }
     }
@@ -1215,211 +2009,691 @@
   },
   "vocabulary": {
     "teacher": {
-      "src": "assets/art/jobs-v1.png",
+      "src": "assets/art/jobs-motion-1.png",
       "atlas": {
-        "width": 1261,
-        "height": 1247
+        "width": 887,
+        "height": 1774
       },
       "frame": {
-        "x": 28,
-        "y": 16,
-        "w": 262,
-        "h": 295
+        "x": 0.0,
+        "y": 0.0,
+        "w": 221.75,
+        "h": 221.75
+      },
+      "animation": {
+        "id": "teacher",
+        "duration": 3400,
+        "frames": [
+          {
+            "x": 0.0,
+            "y": 0.0,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 221.75,
+            "y": 0.0,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 443.5,
+            "y": 0.0,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 665.25,
+            "y": 0.0,
+            "w": 221.75,
+            "h": 221.75
+          }
+        ]
       }
     },
     "student": {
-      "src": "assets/art/jobs-v1.png",
+      "src": "assets/art/jobs-motion-1.png",
       "atlas": {
-        "width": 1261,
-        "height": 1247
+        "width": 887,
+        "height": 1774
       },
       "frame": {
-        "x": 328,
-        "y": 23,
-        "w": 271,
-        "h": 288
+        "x": 0.0,
+        "y": 221.75,
+        "w": 221.75,
+        "h": 221.75
+      },
+      "animation": {
+        "id": "student",
+        "duration": 3537,
+        "frames": [
+          {
+            "x": 0.0,
+            "y": 221.75,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 221.75,
+            "y": 221.75,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 443.5,
+            "y": 221.75,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 665.25,
+            "y": 221.75,
+            "w": 221.75,
+            "h": 221.75
+          }
+        ]
       }
     },
     "chef": {
-      "src": "assets/art/jobs-v1.png",
+      "src": "assets/art/jobs-motion-1.png",
       "atlas": {
-        "width": 1261,
-        "height": 1247
+        "width": 887,
+        "height": 1774
       },
       "frame": {
-        "x": 630,
-        "y": 5,
-        "w": 295,
-        "h": 306
+        "x": 0.0,
+        "y": 443.5,
+        "w": 221.75,
+        "h": 221.75
+      },
+      "animation": {
+        "id": "chef",
+        "duration": 3674,
+        "frames": [
+          {
+            "x": 0.0,
+            "y": 443.5,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 221.75,
+            "y": 443.5,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 443.5,
+            "y": 443.5,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 665.25,
+            "y": 443.5,
+            "w": 221.75,
+            "h": 221.75
+          }
+        ]
       }
     },
     "doctor": {
-      "src": "assets/art/jobs-v1.png",
+      "src": "assets/art/jobs-motion-1.png",
       "atlas": {
-        "width": 1261,
-        "height": 1247
+        "width": 887,
+        "height": 1774
       },
       "frame": {
-        "x": 953,
-        "y": 17,
-        "w": 299,
-        "h": 294
+        "x": 0.0,
+        "y": 665.25,
+        "w": 221.75,
+        "h": 221.75
+      },
+      "animation": {
+        "id": "doctor",
+        "duration": 3811,
+        "frames": [
+          {
+            "x": 0.0,
+            "y": 665.25,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 221.75,
+            "y": 665.25,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 443.5,
+            "y": 665.25,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 665.25,
+            "y": 665.25,
+            "w": 221.75,
+            "h": 221.75
+          }
+        ]
       }
     },
     "office worker": {
-      "src": "assets/art/jobs-v1.png",
+      "src": "assets/art/jobs-motion-1.png",
       "atlas": {
-        "width": 1261,
-        "height": 1247
+        "width": 887,
+        "height": 1774
       },
       "frame": {
-        "x": 9,
-        "y": 349,
-        "w": 289,
-        "h": 274
+        "x": 0.0,
+        "y": 887.0,
+        "w": 221.75,
+        "h": 221.75
+      },
+      "animation": {
+        "id": "office-worker",
+        "duration": 3948,
+        "frames": [
+          {
+            "x": 0.0,
+            "y": 887.0,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 221.75,
+            "y": 887.0,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 443.5,
+            "y": 887.0,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 665.25,
+            "y": 887.0,
+            "w": 221.75,
+            "h": 221.75
+          }
+        ]
       }
     },
     "receptionist": {
-      "src": "assets/art/jobs-v1.png",
+      "src": "assets/art/jobs-motion-1.png",
       "atlas": {
-        "width": 1261,
-        "height": 1247
+        "width": 887,
+        "height": 1774
       },
       "frame": {
-        "x": 318,
-        "y": 358,
-        "w": 287,
-        "h": 265
+        "x": 0.0,
+        "y": 1108.75,
+        "w": 221.75,
+        "h": 221.75
+      },
+      "animation": {
+        "id": "receptionist",
+        "duration": 4085,
+        "frames": [
+          {
+            "x": 0.0,
+            "y": 1108.75,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 221.75,
+            "y": 1108.75,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 443.5,
+            "y": 1108.75,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 665.25,
+            "y": 1108.75,
+            "w": 221.75,
+            "h": 221.75
+          }
+        ]
       }
     },
     "salesclerk": {
-      "src": "assets/art/jobs-v1.png",
+      "src": "assets/art/jobs-motion-1.png",
       "atlas": {
-        "width": 1261,
-        "height": 1247
+        "width": 887,
+        "height": 1774
       },
       "frame": {
-        "x": 634,
-        "y": 356,
-        "w": 298,
-        "h": 267
+        "x": 0.0,
+        "y": 1330.5,
+        "w": 221.75,
+        "h": 221.75
+      },
+      "animation": {
+        "id": "salesclerk",
+        "duration": 4222,
+        "frames": [
+          {
+            "x": 0.0,
+            "y": 1330.5,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 221.75,
+            "y": 1330.5,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 443.5,
+            "y": 1330.5,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 665.25,
+            "y": 1330.5,
+            "w": 221.75,
+            "h": 221.75
+          }
+        ]
       }
     },
     "taxi driver": {
-      "src": "assets/art/jobs-v1.png",
+      "src": "assets/art/jobs-motion-1.png",
       "atlas": {
-        "width": 1261,
-        "height": 1247
+        "width": 887,
+        "height": 1774
       },
       "frame": {
-        "x": 945,
-        "y": 342,
-        "w": 314,
-        "h": 281
+        "x": 0.0,
+        "y": 1552.25,
+        "w": 221.75,
+        "h": 221.75
+      },
+      "animation": {
+        "id": "taxi-driver",
+        "duration": 4359,
+        "frames": [
+          {
+            "x": 0.0,
+            "y": 1552.25,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 221.75,
+            "y": 1552.25,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 443.5,
+            "y": 1552.25,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 665.25,
+            "y": 1552.25,
+            "w": 221.75,
+            "h": 221.75
+          }
+        ]
       }
     },
     "waiter": {
-      "src": "assets/art/jobs-v1.png",
+      "src": "assets/art/jobs-motion-2.png",
       "atlas": {
-        "width": 1261,
-        "height": 1247
+        "width": 887,
+        "height": 1774
       },
       "frame": {
-        "x": 4,
-        "y": 623,
-        "w": 311,
-        "h": 312
+        "x": 0.0,
+        "y": 0.0,
+        "w": 221.75,
+        "h": 221.75
+      },
+      "animation": {
+        "id": "waiter",
+        "duration": 3400,
+        "frames": [
+          {
+            "x": 0.0,
+            "y": 0.0,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 221.75,
+            "y": 0.0,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 443.5,
+            "y": 0.0,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 665.25,
+            "y": 0.0,
+            "w": 221.75,
+            "h": 221.75
+          }
+        ]
       }
     },
     "waitress": {
-      "src": "assets/art/jobs-v1.png",
+      "src": "assets/art/jobs-motion-2.png",
       "atlas": {
-        "width": 1261,
-        "height": 1247
+        "width": 887,
+        "height": 1774
       },
       "frame": {
-        "x": 325,
-        "y": 623,
-        "w": 297,
-        "h": 312
+        "x": 0.0,
+        "y": 221.75,
+        "w": 221.75,
+        "h": 221.75
+      },
+      "animation": {
+        "id": "waitress",
+        "duration": 3537,
+        "frames": [
+          {
+            "x": 0.0,
+            "y": 221.75,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 221.75,
+            "y": 221.75,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 443.5,
+            "y": 221.75,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 665.25,
+            "y": 221.75,
+            "w": 221.75,
+            "h": 221.75
+          }
+        ]
       }
     },
     "farmer": {
-      "src": "assets/art/jobs-v1.png",
+      "src": "assets/art/jobs-motion-2.png",
       "atlas": {
-        "width": 1261,
-        "height": 1247
+        "width": 887,
+        "height": 1774
       },
       "frame": {
-        "x": 632,
-        "y": 623,
-        "w": 303,
-        "h": 312
+        "x": 0.0,
+        "y": 443.5,
+        "w": 221.75,
+        "h": 221.75
+      },
+      "animation": {
+        "id": "farmer",
+        "duration": 3674,
+        "frames": [
+          {
+            "x": 0.0,
+            "y": 443.5,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 221.75,
+            "y": 443.5,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 443.5,
+            "y": 443.5,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 665.25,
+            "y": 443.5,
+            "w": 221.75,
+            "h": 221.75
+          }
+        ]
       }
     },
     "nurse": {
-      "src": "assets/art/jobs-v1.png",
+      "src": "assets/art/jobs-motion-2.png",
       "atlas": {
-        "width": 1261,
-        "height": 1247
+        "width": 887,
+        "height": 1774
       },
       "frame": {
-        "x": 967,
-        "y": 666,
-        "w": 292,
-        "h": 269
+        "x": 0.0,
+        "y": 665.25,
+        "w": 221.75,
+        "h": 221.75
+      },
+      "animation": {
+        "id": "nurse",
+        "duration": 3811,
+        "frames": [
+          {
+            "x": 0.0,
+            "y": 665.25,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 221.75,
+            "y": 665.25,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 443.5,
+            "y": 665.25,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 665.25,
+            "y": 665.25,
+            "w": 221.75,
+            "h": 221.75
+          }
+        ]
       }
     },
     "dentist": {
-      "src": "assets/art/jobs-v1.png",
+      "src": "assets/art/jobs-motion-2.png",
       "atlas": {
-        "width": 1261,
-        "height": 1247
+        "width": 887,
+        "height": 1774
       },
       "frame": {
-        "x": 32,
-        "y": 969,
-        "w": 281,
-        "h": 271
+        "x": 0.0,
+        "y": 887.0,
+        "w": 221.75,
+        "h": 221.75
+      },
+      "animation": {
+        "id": "dentist",
+        "duration": 3948,
+        "frames": [
+          {
+            "x": 0.0,
+            "y": 887.0,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 221.75,
+            "y": 887.0,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 443.5,
+            "y": 887.0,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 665.25,
+            "y": 887.0,
+            "w": 221.75,
+            "h": 221.75
+          }
+        ]
       }
     },
     "police officer": {
-      "src": "assets/art/jobs-v1.png",
+      "src": "assets/art/jobs-motion-2.png",
       "atlas": {
-        "width": 1261,
-        "height": 1247
+        "width": 887,
+        "height": 1774
       },
       "frame": {
-        "x": 318,
-        "y": 967,
-        "w": 312,
-        "h": 272
+        "x": 0.0,
+        "y": 1108.75,
+        "w": 221.75,
+        "h": 221.75
+      },
+      "animation": {
+        "id": "police-officer",
+        "duration": 4085,
+        "frames": [
+          {
+            "x": 0.0,
+            "y": 1108.75,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 221.75,
+            "y": 1108.75,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 443.5,
+            "y": 1108.75,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 665.25,
+            "y": 1108.75,
+            "w": 221.75,
+            "h": 221.75
+          }
+        ]
       }
     },
     "driver": {
-      "src": "assets/art/jobs-v1.png",
+      "src": "assets/art/jobs-motion-2.png",
       "atlas": {
-        "width": 1261,
-        "height": 1247
+        "width": 887,
+        "height": 1774
       },
       "frame": {
-        "x": 634,
-        "y": 966,
-        "w": 300,
-        "h": 269
+        "x": 0.0,
+        "y": 1330.5,
+        "w": 221.75,
+        "h": 221.75
+      },
+      "animation": {
+        "id": "driver",
+        "duration": 4222,
+        "frames": [
+          {
+            "x": 0.0,
+            "y": 1330.5,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 221.75,
+            "y": 1330.5,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 443.5,
+            "y": 1330.5,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 665.25,
+            "y": 1330.5,
+            "w": 221.75,
+            "h": 221.75
+          }
+        ]
       }
     },
     "actor": {
-      "src": "assets/art/jobs-v1.png",
+      "src": "assets/art/jobs-motion-2.png",
       "atlas": {
-        "width": 1261,
-        "height": 1247
+        "width": 887,
+        "height": 1774
       },
       "frame": {
-        "x": 949,
-        "y": 967,
-        "w": 304,
-        "h": 272
+        "x": 0.0,
+        "y": 1552.25,
+        "w": 221.75,
+        "h": 221.75
+      },
+      "animation": {
+        "id": "actor",
+        "duration": 4359,
+        "frames": [
+          {
+            "x": 0.0,
+            "y": 1552.25,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 221.75,
+            "y": 1552.25,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 443.5,
+            "y": 1552.25,
+            "w": 221.75,
+            "h": 221.75
+          },
+          {
+            "x": 665.25,
+            "y": 1552.25,
+            "w": 221.75,
+            "h": 221.75
+          }
+        ]
       }
     }
   }
