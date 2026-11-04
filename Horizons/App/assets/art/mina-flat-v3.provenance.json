@@ -1,0 +1,7 @@
+{
+  "tool": "built-in image_gen",
+  "intent": "precise-object-edit",
+  "reference": "assets/art/mina-flat-v2.png",
+  "prompt": "Use case: precise-object-edit. Correct ONLY the TWO magenta forearm+hand pieces in this flat disassembled sprite atlas: row1column4 and row2column2. The hands currently have fingers fanning sideways, which makes waving look like a drooping paw. Reorient each hand so that it is a simple front-facing OPEN PALM with FIVE rounded fingers pointing STRAIGHT DOWN along the vertical forearm axis. Fingers extend downward beyond the wrist, not sideways. One small thumb points gently outward. Wrist is centered directly below the magenta sleeve. Keep hand proportions compact and human. The pieces remain straight vertical, arm-to-hand-to-fingertips top-to-bottom. Maintain same original part center positions, sleeves and their lengths, skin/cardigan solid colors. Keep hands fully within each grid cell. Preserve absolutely ALL other atlas parts and their locations, head/torso/legs/backpack/map. Keep strict FLAT solid color, no shadows or gradients or highlights or outlines or texture. Genuine transparent background, exact4x3layout. This is only a hand direction fix for correct anatomical waving.",
+  "pixels": "Unmodified native generated PNG; hand direction corrected through ImageGen for natural waving."
+}

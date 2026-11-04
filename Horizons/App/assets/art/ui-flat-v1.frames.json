@@ -1,0 +1,218 @@
+{
+  "src": "assets/art/ui-flat-v1.png",
+  "atlas": {
+    "width": 1261,
+    "height": 1247
+  },
+  "sha256": "64b41643467c70456d4e39869f36dd8ef9f2fa40e70e9953946a8139a02252cd",
+  "icons": {
+    "home": {
+      "src": "assets/art/ui-flat-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 39,
+        "y": 76,
+        "w": 255,
+        "h": 249
+      }
+    },
+    "book": {
+      "src": "assets/art/ui-flat-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 341,
+        "y": 96,
+        "w": 263,
+        "h": 216
+      }
+    },
+    "games": {
+      "src": "assets/art/ui-flat-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 653,
+        "y": 79,
+        "w": 266,
+        "h": 245
+      }
+    },
+    "profile": {
+      "src": "assets/art/ui-flat-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 963,
+        "y": 54,
+        "w": 237,
+        "h": 280
+      }
+    },
+    "flame": {
+      "src": "assets/art/ui-flat-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 51,
+        "y": 372,
+        "w": 230,
+        "h": 276
+      }
+    },
+    "star": {
+      "src": "assets/art/ui-flat-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 340,
+        "y": 382,
+        "w": 263,
+        "h": 252
+      }
+    },
+    "trophy": {
+      "src": "assets/art/ui-flat-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 646,
+        "y": 385,
+        "w": 273,
+        "h": 254
+      }
+    },
+    "satchel": {
+      "src": "assets/art/ui-flat-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 961,
+        "y": 386,
+        "w": 264,
+        "h": 245
+      }
+    },
+    "sound": {
+      "src": "assets/art/ui-flat-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 38,
+        "y": 715,
+        "w": 262,
+        "h": 204
+      }
+    },
+    "key": {
+      "src": "assets/art/ui-flat-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 330,
+        "y": 724,
+        "w": 276,
+        "h": 162
+      }
+    },
+    "calendar": {
+      "src": "assets/art/ui-flat-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 650,
+        "y": 682,
+        "w": 265,
+        "h": 246
+      }
+    },
+    "compass": {
+      "src": "assets/art/ui-flat-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 978,
+        "y": 675,
+        "w": 228,
+        "h": 269
+      }
+    },
+    "settings": {
+      "src": "assets/art/ui-flat-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 34,
+        "y": 967,
+        "w": 263,
+        "h": 256
+      }
+    },
+    "flag": {
+      "src": "assets/art/ui-flat-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 364,
+        "y": 967,
+        "w": 231,
+        "h": 248
+      }
+    },
+    "heart": {
+      "src": "assets/art/ui-flat-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 650,
+        "y": 983,
+        "w": 270,
+        "h": 231
+      }
+    },
+    "addBook": {
+      "src": "assets/art/ui-flat-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 979,
+        "y": 974,
+        "w": 228,
+        "h": 243
+      }
+    }
+  }
+}

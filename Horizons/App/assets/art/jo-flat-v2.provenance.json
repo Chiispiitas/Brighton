@@ -1,0 +1,7 @@
+{
+  "tool": "built-in image_gen",
+  "intent": "precise-object-edit",
+  "reference": "assets/art/jo-flat-v1.png",
+  "prompt": "Use case: precise-object-edit. Correct only four OLIVE TROUSER parts in the existing flat disassembled animation atlas. They occupy row2columns3and4, row3columns1and2. The two upper thigh capsules need perfectly ROUND semicircular BOTTOM ends, same as rounded tops; no rectangular flat-cut bottoms. The two lower leg/shoe parts need ROUND semicircular TOP ends, no rectangular flat-cut tops. Make upper thigh and lower calf shafts equally narrow so knee joints can rotate smoothly with no protruding angular corners. Preserve cream trainers exactly. Do not move pieces, change their overall heights, recolor or redesign anything else. Preserve face/glasses/torso/arms/mug/cloth and4x3layout, actual transparent background. Keep STRICT flat solid colors, no shadows/gradients/highlights/lighting/texture/outlines/volume modelling. No labels, no new objects, no connecting lines. Production rigging correction for rounded knee-end silhouettes only.",
+  "pixels": "Unmodified native generated PNG; round knee ends requested through ImageGen, not drawn or recolored in code."
+}

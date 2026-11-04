@@ -1,0 +1,41 @@
+{
+  "src": "assets/art/waitress-flat-v1.png",
+  "atlas": {
+    "width": 2172,
+    "height": 724
+  },
+  "frame": {
+    "x": 0,
+    "y": 0,
+    "w": 543,
+    "h": 724
+  },
+  "frames": [
+    {
+      "x": 0,
+      "y": 0,
+      "w": 543,
+      "h": 724
+    },
+    {
+      "x": 543,
+      "y": 0,
+      "w": 543,
+      "h": 724
+    },
+    {
+      "x": 1086,
+      "y": 0,
+      "w": 543,
+      "h": 724
+    },
+    {
+      "x": 1629,
+      "y": 0,
+      "w": 543,
+      "h": 724
+    }
+  ],
+  "sourceSha256": "ad2bbc259aef0cbe3c7b7242614f620d9d0d2583eaf42ae0f096d145ab29ea5e",
+  "notes": "Four complete coherent poses with fixed tray-supporting arm and moving free arm; no code-painted pixels."
+}

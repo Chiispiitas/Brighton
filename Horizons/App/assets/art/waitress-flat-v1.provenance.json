@@ -1,0 +1,16 @@
+{
+  "tool": "built-in image_gen.imagegen",
+  "nativeOutputsPreserved": true,
+  "pixelEditing": "none",
+  "prompt": "Use case: illustration-story. Create a production transparent sprite atlas: exactly FOUR COLUMNS and ONE ROW, four adult WAITRESS poses aligned on the same baseline. Style reference is the supplied flat sprite image only. Friendly literal flat vector-style cut-paper art, ONE opaque uniform color per shape. No shadows of any kind, no ground/contact shadows, no gradients, no modeled volume, no light/dark edge bands, no highlights, no fabric folds, no texture, no outlines, no text or labels. Native transparent background. The same adult woman in every cell: warm peach skin, brown hair in a ponytail, cream short-sleeve shirt, magenta apron, navy trousers and simple flat navy shoes. Whole body including feet, ample transparent gutters. Fixed full head shape, face with big simple white eyes/dark pupils and friendly smile, same proportions in all4. CRITICAL ANATOMY: She holds ONE SMALL TEAL TRAY with ONE CREAM CUP in her LEFT hand, which appears on the VIEWER'S RIGHT. That supporting LEFT upper arm, bent forearm and upturned supporting palm remain EXACTLY IDENTICAL in all four cells. Her supporting palm must DIRECTLY TOUCH the underside of the tray in all four cells, no air gap. The supporting forearm connects visibly from palm to elbow to shoulder. No floating cup or tray. Cup sits ON tray. The entire supporting arm/tray/cup silhouette is an unbroken connected shape, fixed at lower-chest height, away from face. Only her OTHER RIGHT arm, on VIEWER'S LEFT, changes its connected shoulder/elbow/hand pose: CELL1 free arm relaxed down by her side; CELL2 free forearm lifted slightly outward palm up at waist height; CELL3 free arm raised to shoulder height with an open greeting palm; CELL4 free hand gives a gentle thumbs-up at chest height. Both feet stay planted in the same positions, body/head fixed, no body bobbing. Exactly two complete arms per woman. Supporting palm remains in contact with tray during every pose. Flat palette navy#183e57, magenta#b8135f, teal#007f83, cream#fff0d3, peach#f6ac80, brown#714834. Four separate coherent poses, not four repetitions of same whole pose. Do not draw any scene background, table, ground line, sparkle, or oval shadow.",
+  "source": "C:/Users/David/.codex/generated_images/01a1a7c3-3eb9-70a2-a41e-ca0af0276afe/exec-24cb281f-c972-457b-9392-fe14973b6f45.png",
+  "reason": "Replace unsupported cup/tray poses with fixed supporting arm and independently moving free arm.",
+  "output": {
+    "path": "Horizons/App/assets/art/waitress-flat-v1.png",
+    "sha256": "ad2bbc259aef0cbe3c7b7242614f620d9d0d2583eaf42ae0f096d145ab29ea5e",
+    "size": [
+      2172,
+      724
+    ]
+  }
+}

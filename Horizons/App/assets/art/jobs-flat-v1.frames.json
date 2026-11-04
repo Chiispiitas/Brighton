@@ -1,0 +1,508 @@
+{
+  "version": 1,
+  "kind": "native-flat-job-action-cells",
+  "source": "ImageGen native output, no pixel edits",
+  "atlases": [
+    {
+      "src": "assets/art/jobs-flat-1-v1.png",
+      "atlas": {
+        "width": 948,
+        "height": 1659
+      },
+      "sha256": "0628d8208e9e3f93835f4d34936c1c894d037a47704f65de8bb2faeac1cb123d",
+      "rows": [
+        {
+          "term": "teacher",
+          "frames": [
+            {
+              "x": 0,
+              "y": 0,
+              "w": 237,
+              "h": 243
+            },
+            {
+              "x": 237,
+              "y": 0,
+              "w": 237,
+              "h": 243
+            },
+            {
+              "x": 474,
+              "y": 0,
+              "w": 237,
+              "h": 243
+            },
+            {
+              "x": 711,
+              "y": 0,
+              "w": 237,
+              "h": 243
+            }
+          ],
+          "animationId": "teacher"
+        },
+        {
+          "term": "chef",
+          "frames": [
+            {
+              "x": 0,
+              "y": 243,
+              "w": 237,
+              "h": 270
+            },
+            {
+              "x": 237,
+              "y": 243,
+              "w": 237,
+              "h": 270
+            },
+            {
+              "x": 474,
+              "y": 243,
+              "w": 237,
+              "h": 270
+            },
+            {
+              "x": 711,
+              "y": 243,
+              "w": 237,
+              "h": 270
+            }
+          ],
+          "animationId": "chef"
+        },
+        {
+          "term": "doctor",
+          "frames": [
+            {
+              "x": 0,
+              "y": 513,
+              "w": 237,
+              "h": 247
+            },
+            {
+              "x": 237,
+              "y": 513,
+              "w": 237,
+              "h": 247
+            },
+            {
+              "x": 474,
+              "y": 513,
+              "w": 237,
+              "h": 247
+            },
+            {
+              "x": 711,
+              "y": 513,
+              "w": 237,
+              "h": 247
+            }
+          ],
+          "animationId": "doctor"
+        },
+        {
+          "term": "office worker",
+          "frames": [
+            {
+              "x": 0,
+              "y": 760,
+              "w": 237,
+              "h": 240
+            },
+            {
+              "x": 237,
+              "y": 760,
+              "w": 237,
+              "h": 240
+            },
+            {
+              "x": 474,
+              "y": 760,
+              "w": 237,
+              "h": 240
+            },
+            {
+              "x": 711,
+              "y": 760,
+              "w": 237,
+              "h": 240
+            }
+          ],
+          "animationId": "office-worker"
+        },
+        {
+          "term": "receptionist",
+          "frames": [
+            {
+              "x": 0,
+              "y": 1000,
+              "w": 237,
+              "h": 228
+            },
+            {
+              "x": 237,
+              "y": 1000,
+              "w": 237,
+              "h": 228
+            },
+            {
+              "x": 474,
+              "y": 1000,
+              "w": 237,
+              "h": 228
+            },
+            {
+              "x": 711,
+              "y": 1000,
+              "w": 237,
+              "h": 228
+            }
+          ],
+          "animationId": "receptionist"
+        },
+        {
+          "term": "salesclerk",
+          "frames": [
+            {
+              "x": 0,
+              "y": 1228,
+              "w": 237,
+              "h": 224
+            },
+            {
+              "x": 237,
+              "y": 1228,
+              "w": 237,
+              "h": 224
+            },
+            {
+              "x": 474,
+              "y": 1228,
+              "w": 237,
+              "h": 224
+            },
+            {
+              "x": 711,
+              "y": 1228,
+              "w": 237,
+              "h": 224
+            }
+          ],
+          "animationId": "salesclerk"
+        },
+        {
+          "term": "taxi driver",
+          "frames": [
+            {
+              "x": 0,
+              "y": 1452,
+              "w": 237,
+              "h": 207
+            },
+            {
+              "x": 237,
+              "y": 1452,
+              "w": 237,
+              "h": 207
+            },
+            {
+              "x": 474,
+              "y": 1452,
+              "w": 237,
+              "h": 207
+            },
+            {
+              "x": 711,
+              "y": 1452,
+              "w": 237,
+              "h": 207
+            }
+          ],
+          "animationId": "taxi-driver"
+        }
+      ]
+    },
+    {
+      "src": "assets/art/jobs-flat-2-v1.png",
+      "atlas": {
+        "width": 948,
+        "height": 1659
+      },
+      "sha256": "57ab83192e51cf0e6f0053ff7e781b1db63d59c9a4ae2da275ec02d3fd217852",
+      "rows": [
+        {
+          "term": "waiter",
+          "frames": [
+            {
+              "x": 0,
+              "y": 0,
+              "w": 237,
+              "h": 236
+            },
+            {
+              "x": 237,
+              "y": 0,
+              "w": 237,
+              "h": 236
+            },
+            {
+              "x": 474,
+              "y": 0,
+              "w": 237,
+              "h": 236
+            },
+            {
+              "x": 474,
+              "y": 0,
+              "w": 237,
+              "h": 236
+            }
+          ],
+          "animationId": "waiter",
+          "safePoseReuse": {
+            "slot": 3,
+            "sourceColumn": 2,
+            "reason": "Original fourth native pose leaves tray/cup unsupported; safe third pose reused."
+          }
+        },
+        {
+          "term": "waitress",
+          "frames": [
+            {
+              "x": 0,
+              "y": 0,
+              "w": 543,
+              "h": 724
+            },
+            {
+              "x": 543,
+              "y": 0,
+              "w": 543,
+              "h": 724
+            },
+            {
+              "x": 1086,
+              "y": 0,
+              "w": 543,
+              "h": 724
+            },
+            {
+              "x": 1629,
+              "y": 0,
+              "w": 543,
+              "h": 724
+            }
+          ],
+          "animationId": "waitress",
+          "activeSource": "assets/art/waitress-flat-v1.png",
+          "activeAtlas": {
+            "width": 2172,
+            "height": 724
+          }
+        },
+        {
+          "term": "farmer",
+          "frames": [
+            {
+              "x": 0,
+              "y": 475,
+              "w": 237,
+              "h": 241
+            },
+            {
+              "x": 237,
+              "y": 475,
+              "w": 237,
+              "h": 241
+            },
+            {
+              "x": 474,
+              "y": 475,
+              "w": 237,
+              "h": 241
+            },
+            {
+              "x": 711,
+              "y": 475,
+              "w": 237,
+              "h": 241
+            }
+          ],
+          "animationId": "farmer"
+        },
+        {
+          "term": "nurse",
+          "frames": [
+            {
+              "x": 0,
+              "y": 716,
+              "w": 237,
+              "h": 235
+            },
+            {
+              "x": 237,
+              "y": 716,
+              "w": 237,
+              "h": 235
+            },
+            {
+              "x": 474,
+              "y": 716,
+              "w": 237,
+              "h": 235
+            },
+            {
+              "x": 711,
+              "y": 716,
+              "w": 237,
+              "h": 235
+            }
+          ],
+          "animationId": "nurse"
+        },
+        {
+          "term": "dentist",
+          "frames": [
+            {
+              "x": 0,
+              "y": 951,
+              "w": 237,
+              "h": 226
+            },
+            {
+              "x": 237,
+              "y": 951,
+              "w": 237,
+              "h": 226
+            },
+            {
+              "x": 474,
+              "y": 951,
+              "w": 237,
+              "h": 226
+            },
+            {
+              "x": 711,
+              "y": 951,
+              "w": 237,
+              "h": 226
+            }
+          ],
+          "animationId": "dentist"
+        },
+        {
+          "term": "police officer",
+          "frames": [
+            {
+              "x": 0,
+              "y": 1177,
+              "w": 237,
+              "h": 250
+            },
+            {
+              "x": 237,
+              "y": 1177,
+              "w": 237,
+              "h": 250
+            },
+            {
+              "x": 474,
+              "y": 1177,
+              "w": 237,
+              "h": 250
+            },
+            {
+              "x": 711,
+              "y": 1177,
+              "w": 237,
+              "h": 250
+            }
+          ],
+          "animationId": "police-officer"
+        },
+        {
+          "term": "actor",
+          "frames": [
+            {
+              "x": 0,
+              "y": 1427,
+              "w": 237,
+              "h": 232
+            },
+            {
+              "x": 237,
+              "y": 1427,
+              "w": 237,
+              "h": 232
+            },
+            {
+              "x": 474,
+              "y": 1427,
+              "w": 237,
+              "h": 232
+            },
+            {
+              "x": 711,
+              "y": 1427,
+              "w": 237,
+              "h": 232
+            }
+          ],
+          "animationId": "actor"
+        }
+      ]
+    }
+  ],
+  "rejectedUnusedNativeCells": [
+    {
+      "term": "waiter",
+      "src": "assets/art/jobs-flat-2-v1.png",
+      "frame": {
+        "x": 711,
+        "y": 0,
+        "w": 237,
+        "h": 236
+      },
+      "nativeColumn": 3,
+      "verdict": "rejected-unused",
+      "reason": "Tray/cup does not have a supporting hand in the fourth native pose.",
+      "replacement": {
+        "x": 474,
+        "y": 0,
+        "w": 237,
+        "h": 236
+      }
+    },
+    {
+      "term": "waitress",
+      "src": "assets/art/jobs-flat-2-v1.png",
+      "nativeColumn": 0,
+      "verdict": "unused-superseded",
+      "reason": "Entire oldrow superseded by native fourpose fixedtray-support waitress atlas."
+    },
+    {
+      "term": "waitress",
+      "src": "assets/art/jobs-flat-2-v1.png",
+      "nativeColumn": 1,
+      "verdict": "unused-superseded",
+      "reason": "Entire oldrow superseded by native fourpose fixedtray-support waitress atlas."
+    },
+    {
+      "term": "waitress",
+      "src": "assets/art/jobs-flat-2-v1.png",
+      "nativeColumn": 2,
+      "verdict": "unused-superseded",
+      "reason": "Entire oldrow superseded by native fourpose fixedtray-support waitress atlas."
+    },
+    {
+      "term": "waitress",
+      "src": "assets/art/jobs-flat-2-v1.png",
+      "nativeColumn": 3,
+      "verdict": "unused-superseded",
+      "reason": "Entire oldrow superseded by native fourpose fixedtray-support waitress atlas."
+    }
+  ],
+  "activeRenderedSlots": 56,
+  "activeUniqueNativeCells": 55
+}

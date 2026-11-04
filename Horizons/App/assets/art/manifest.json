@@ -1,5 +1,5 @@
 {
-  "version": 3,
+  "version": 4,
   "pico": {
     "parts": {
       "torso": {
@@ -1851,7 +1851,7 @@
         "id": "skin-1",
         "label": "Porcelain",
         "group": "skin",
-        "src": "assets/art/avatar-kit-v2.png",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
@@ -1874,7 +1874,7 @@
         "id": "skin-2",
         "label": "Peach",
         "group": "skin",
-        "src": "assets/art/avatar-kit-v2.png",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
@@ -1897,7 +1897,7 @@
         "id": "skin-3",
         "label": "Honey",
         "group": "skin",
-        "src": "assets/art/avatar-kit-v2.png",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
@@ -1920,7 +1920,7 @@
         "id": "skin-4",
         "label": "Caramel",
         "group": "skin",
-        "src": "assets/art/avatar-kit-v2.png",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
@@ -1943,7 +1943,7 @@
         "id": "skin-5",
         "label": "Chestnut",
         "group": "skin",
-        "src": "assets/art/avatar-kit-v2.png",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
@@ -1966,7 +1966,7 @@
         "id": "skin-6",
         "label": "Deep brown",
         "group": "skin",
-        "src": "assets/art/avatar-kit-v2.png",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
@@ -1991,7 +1991,7 @@
         "id": "outfit-1",
         "label": "Magenta hoodie",
         "group": "outfit",
-        "src": "assets/art/avatar-kit-v2.png",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
@@ -2014,7 +2014,7 @@
         "id": "outfit-2",
         "label": "Teal summer",
         "group": "outfit",
-        "src": "assets/art/avatar-kit-v2.png",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
@@ -2037,7 +2037,7 @@
         "id": "outfit-3",
         "label": "Explorer jacket",
         "group": "outfit",
-        "src": "assets/art/avatar-kit-v2.png",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
@@ -2060,7 +2060,7 @@
         "id": "outfit-4",
         "label": "Orange sweater",
         "group": "outfit",
-        "src": "assets/art/avatar-kit-v2.png",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
@@ -2083,7 +2083,7 @@
         "id": "outfit-5",
         "label": "Teal overalls",
         "group": "outfit",
-        "src": "assets/art/avatar-kit-v2.png",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
@@ -2106,7 +2106,7 @@
         "id": "outfit-6",
         "label": "Magenta cardigan",
         "group": "outfit",
-        "src": "assets/art/avatar-kit-v2.png",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
@@ -2131,7 +2131,7 @@
         "id": "hair-1",
         "label": "Side part",
         "group": "hair",
-        "src": "assets/art/avatar-kit-v2.png",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
@@ -2154,7 +2154,7 @@
         "id": "hair-2",
         "label": "Short curls",
         "group": "hair",
-        "src": "assets/art/avatar-kit-v2.png",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
@@ -2177,7 +2177,7 @@
         "id": "hair-3",
         "label": "Long straight",
         "group": "hair",
-        "src": "assets/art/avatar-kit-v2.png",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
@@ -2200,7 +2200,7 @@
         "id": "hair-4",
         "label": "Twin puffs",
         "group": "hair",
-        "src": "assets/art/avatar-kit-v2.png",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
@@ -2223,7 +2223,7 @@
         "id": "hair-5",
         "label": "Blonde bob",
         "group": "hair",
-        "src": "assets/art/avatar-kit-v2.png",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
@@ -2246,7 +2246,7 @@
         "id": "hair-6",
         "label": "Soft waves",
         "group": "hair",
-        "src": "assets/art/avatar-kit-v2.png",
+        "src": "assets/art/avatar-approved-flat-kit-v2.png",
         "atlas": {
           "width": 1536,
           "height": 1024
@@ -2281,7 +2281,7 @@
         "id": "accessory-1",
         "label": "Round glasses",
         "group": "accessory",
-        "src": "assets/art/avatar-kit-v2.png",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
@@ -2304,7 +2304,7 @@
         "id": "accessory-2",
         "label": "Orange cap",
         "group": "accessory",
-        "src": "assets/art/avatar-kit-v2.png",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
@@ -2327,7 +2327,7 @@
         "id": "accessory-3",
         "label": "Teal headphones",
         "group": "accessory",
-        "src": "assets/art/avatar-kit-v2.png",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
@@ -2350,7 +2350,7 @@
         "id": "accessory-4",
         "label": "Pico satchel",
         "group": "accessory",
-        "src": "assets/art/avatar-kit-v2.png",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
@@ -2373,7 +2373,7 @@
         "id": "accessory-5",
         "label": "Orange scarf",
         "group": "accessory",
-        "src": "assets/art/avatar-kit-v2.png",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
@@ -2396,7 +2396,7 @@
         "id": "accessory-6",
         "label": "Navy backpack",
         "group": "accessory",
-        "src": "assets/art/avatar-kit-v2.png",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
@@ -2427,16 +2427,16 @@
         "label": "First steps",
         "group": "badge",
         "unlockXp": 25,
-        "src": "assets/art/ui-objects-v1.png",
+        "src": "assets/art/ui-flat-v1.png",
         "atlas": {
-          "width": 1263,
-          "height": 1245
+          "width": 1261,
+          "height": 1247
         },
         "frame": {
-          "x": 359,
-          "y": 406,
-          "w": 226,
-          "h": 216
+          "x": 340,
+          "y": 382,
+          "w": 263,
+          "h": 252
         },
         "position": {
           "x": 0.56,
@@ -2451,16 +2451,16 @@
         "label": "Word explorer",
         "group": "badge",
         "unlockXp": 100,
-        "src": "assets/art/ui-objects-v1.png",
+        "src": "assets/art/ui-flat-v1.png",
         "atlas": {
-          "width": 1263,
-          "height": 1245
+          "width": 1261,
+          "height": 1247
         },
         "frame": {
-          "x": 635,
-          "y": 394,
-          "w": 258,
-          "h": 228
+          "x": 646,
+          "y": 385,
+          "w": 273,
+          "h": 254
         },
         "position": {
           "x": 0.56,
@@ -2475,16 +2475,16 @@
         "label": "New horizons",
         "group": "badge",
         "unlockXp": 250,
-        "src": "assets/art/ui-objects-v1.png",
+        "src": "assets/art/ui-flat-v1.png",
         "atlas": {
-          "width": 1263,
-          "height": 1245
+          "width": 1261,
+          "height": 1247
         },
         "frame": {
-          "x": 947,
-          "y": 683,
-          "w": 260,
-          "h": 215
+          "x": 978,
+          "y": 675,
+          "w": 228,
+          "h": 269
         },
         "position": {
           "x": 0.56,
@@ -2498,269 +2498,269 @@
   },
   "scenes": {
     "town": {
-      "src": "assets/art/town-v1.png",
+      "src": "assets/art/town-flat-v1.png",
       "atlas": {
         "width": 2172,
         "height": 724
       },
       "frame": {
-        "x": 0,
-        "y": 337,
-        "w": 2172,
-        "h": 387
+        "x": 30,
+        "y": 271,
+        "w": 2112,
+        "h": 435
       }
     }
   },
   "icons": {
     "home": {
-      "src": "assets/art/ui-objects-v1.png",
+      "src": "assets/art/ui-flat-v1.png",
       "atlas": {
-        "width": 1263,
-        "height": 1245
+        "width": 1261,
+        "height": 1247
       },
       "frame": {
-        "x": 66,
-        "y": 102,
-        "w": 241,
-        "h": 209
+        "x": 39,
+        "y": 76,
+        "w": 255,
+        "h": 249
       }
     },
     "book": {
-      "src": "assets/art/ui-objects-v1.png",
+      "src": "assets/art/ui-flat-v1.png",
       "atlas": {
-        "width": 1263,
-        "height": 1245
+        "width": 1261,
+        "height": 1247
       },
       "frame": {
-        "x": 355,
-        "y": 124,
-        "w": 246,
-        "h": 187
-      }
-    },
-    "games": {
-      "src": "assets/art/ui-objects-v1.png",
-      "atlas": {
-        "width": 1263,
-        "height": 1245
-      },
-      "frame": {
-        "x": 644,
-        "y": 109,
-        "w": 234,
-        "h": 202
-      }
-    },
-    "profile": {
-      "src": "assets/art/ui-objects-v1.png",
-      "atlas": {
-        "width": 1263,
-        "height": 1245
-      },
-      "frame": {
-        "x": 959,
-        "y": 94,
-        "w": 200,
-        "h": 217
-      }
-    },
-    "flame": {
-      "src": "assets/art/ui-objects-v1.png",
-      "atlas": {
-        "width": 1263,
-        "height": 1245
-      },
-      "frame": {
-        "x": 89,
-        "y": 390,
-        "w": 199,
-        "h": 232
-      }
-    },
-    "star": {
-      "src": "assets/art/ui-objects-v1.png",
-      "atlas": {
-        "width": 1263,
-        "height": 1245
-      },
-      "frame": {
-        "x": 359,
-        "y": 406,
-        "w": 226,
+        "x": 341,
+        "y": 96,
+        "w": 263,
         "h": 216
       }
     },
-    "trophy": {
-      "src": "assets/art/ui-objects-v1.png",
+    "games": {
+      "src": "assets/art/ui-flat-v1.png",
       "atlas": {
-        "width": 1263,
-        "height": 1245
+        "width": 1261,
+        "height": 1247
       },
       "frame": {
-        "x": 635,
-        "y": 394,
-        "w": 258,
-        "h": 228
+        "x": 653,
+        "y": 79,
+        "w": 266,
+        "h": 245
+      }
+    },
+    "profile": {
+      "src": "assets/art/ui-flat-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 963,
+        "y": 54,
+        "w": 237,
+        "h": 280
+      }
+    },
+    "flame": {
+      "src": "assets/art/ui-flat-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 51,
+        "y": 372,
+        "w": 230,
+        "h": 276
+      }
+    },
+    "star": {
+      "src": "assets/art/ui-flat-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 340,
+        "y": 382,
+        "w": 263,
+        "h": 252
+      }
+    },
+    "trophy": {
+      "src": "assets/art/ui-flat-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 646,
+        "y": 385,
+        "w": 273,
+        "h": 254
       }
     },
     "satchel": {
-      "src": "assets/art/ui-objects-v1.png",
+      "src": "assets/art/ui-flat-v1.png",
       "atlas": {
-        "width": 1263,
-        "height": 1245
+        "width": 1261,
+        "height": 1247
       },
       "frame": {
-        "x": 947,
-        "y": 394,
-        "w": 244,
-        "h": 228
+        "x": 961,
+        "y": 386,
+        "w": 264,
+        "h": 245
       }
     },
     "sound": {
-      "src": "assets/art/ui-objects-v1.png",
+      "src": "assets/art/ui-flat-v1.png",
       "atlas": {
-        "width": 1263,
-        "height": 1245
+        "width": 1261,
+        "height": 1247
       },
       "frame": {
-        "x": 63,
-        "y": 622,
-        "w": 242,
-        "h": 284
+        "x": 38,
+        "y": 715,
+        "w": 262,
+        "h": 204
       }
     },
     "key": {
-      "src": "assets/art/ui-objects-v1.png",
+      "src": "assets/art/ui-flat-v1.png",
       "atlas": {
-        "width": 1263,
-        "height": 1245
+        "width": 1261,
+        "height": 1247
       },
       "frame": {
-        "x": 354,
-        "y": 709,
-        "w": 227,
-        "h": 191
+        "x": 330,
+        "y": 724,
+        "w": 276,
+        "h": 162
       }
     },
     "calendar": {
-      "src": "assets/art/ui-objects-v1.png",
+      "src": "assets/art/ui-flat-v1.png",
       "atlas": {
-        "width": 1263,
-        "height": 1245
+        "width": 1261,
+        "height": 1247
       },
       "frame": {
-        "x": 644,
-        "y": 687,
-        "w": 241,
-        "h": 215
+        "x": 650,
+        "y": 682,
+        "w": 265,
+        "h": 246
       }
     },
     "compass": {
-      "src": "assets/art/ui-objects-v1.png",
+      "src": "assets/art/ui-flat-v1.png",
       "atlas": {
-        "width": 1263,
-        "height": 1245
+        "width": 1261,
+        "height": 1247
       },
       "frame": {
-        "x": 947,
-        "y": 683,
-        "w": 260,
-        "h": 215
+        "x": 978,
+        "y": 675,
+        "w": 228,
+        "h": 269
       }
     },
     "settings": {
-      "src": "assets/art/ui-objects-v1.png",
+      "src": "assets/art/ui-flat-v1.png",
       "atlas": {
-        "width": 1263,
-        "height": 1245
+        "width": 1261,
+        "height": 1247
       },
       "frame": {
-        "x": 58,
-        "y": 968,
-        "w": 240,
-        "h": 237
+        "x": 34,
+        "y": 967,
+        "w": 263,
+        "h": 256
       }
     },
     "flag": {
-      "src": "assets/art/ui-objects-v1.png",
+      "src": "assets/art/ui-flat-v1.png",
       "atlas": {
-        "width": 1263,
-        "height": 1245
+        "width": 1261,
+        "height": 1247
       },
       "frame": {
-        "x": 378,
-        "y": 974,
-        "w": 197,
-        "h": 222
+        "x": 364,
+        "y": 967,
+        "w": 231,
+        "h": 248
       }
     },
     "heart": {
-      "src": "assets/art/ui-objects-v1.png",
+      "src": "assets/art/ui-flat-v1.png",
       "atlas": {
-        "width": 1263,
-        "height": 1245
+        "width": 1261,
+        "height": 1247
       },
       "frame": {
-        "x": 637,
-        "y": 986,
-        "w": 245,
-        "h": 208
+        "x": 650,
+        "y": 983,
+        "w": 270,
+        "h": 231
       }
     },
     "addBook": {
-      "src": "assets/art/ui-objects-v1.png",
+      "src": "assets/art/ui-flat-v1.png",
       "atlas": {
-        "width": 1263,
-        "height": 1245
+        "width": 1261,
+        "height": 1247
       },
       "frame": {
-        "x": 953,
-        "y": 968,
-        "w": 212,
-        "h": 228
+        "x": 979,
+        "y": 974,
+        "w": 228,
+        "h": 243
       }
     }
   },
   "vocabulary": {
     "teacher": {
-      "src": "assets/art/jobs-motion-1.png",
+      "src": "assets/art/jobs-flat-1-v1.png",
       "atlas": {
-        "width": 887,
-        "height": 1774
+        "width": 948,
+        "height": 1659
       },
       "frame": {
-        "x": 0.0,
-        "y": 0.0,
-        "w": 221.75,
-        "h": 221.75
+        "x": 0,
+        "y": 0,
+        "w": 237,
+        "h": 243
       },
       "animation": {
         "id": "teacher",
         "duration": 3400,
         "frames": [
           {
-            "x": 0.0,
-            "y": 0.0,
-            "w": 221.75,
-            "h": 221.75
+            "x": 0,
+            "y": 0,
+            "w": 237,
+            "h": 243
           },
           {
-            "x": 221.75,
-            "y": 0.0,
-            "w": 221.75,
-            "h": 221.75
+            "x": 237,
+            "y": 0,
+            "w": 237,
+            "h": 243
           },
           {
-            "x": 443.5,
-            "y": 0.0,
-            "w": 221.75,
-            "h": 221.75
+            "x": 474,
+            "y": 0,
+            "w": 237,
+            "h": 243
           },
           {
-            "x": 665.25,
-            "y": 0.0,
-            "w": 221.75,
-            "h": 221.75
+            "x": 711,
+            "y": 0,
+            "w": 237,
+            "h": 243
           }
         ]
       }
@@ -2809,517 +2809,517 @@
       }
     },
     "chef": {
-      "src": "assets/art/jobs-motion-1.png",
+      "src": "assets/art/jobs-flat-1-v1.png",
       "atlas": {
-        "width": 887,
-        "height": 1774
+        "width": 948,
+        "height": 1659
       },
       "frame": {
-        "x": 0.0,
-        "y": 443.5,
-        "w": 221.75,
-        "h": 221.75
+        "x": 0,
+        "y": 243,
+        "w": 237,
+        "h": 270
       },
       "animation": {
         "id": "chef",
         "duration": 3674,
         "frames": [
           {
-            "x": 0.0,
-            "y": 443.5,
-            "w": 221.75,
-            "h": 221.75
+            "x": 0,
+            "y": 243,
+            "w": 237,
+            "h": 270
           },
           {
-            "x": 221.75,
-            "y": 443.5,
-            "w": 221.75,
-            "h": 221.75
+            "x": 237,
+            "y": 243,
+            "w": 237,
+            "h": 270
           },
           {
-            "x": 443.5,
-            "y": 443.5,
-            "w": 221.75,
-            "h": 221.75
+            "x": 474,
+            "y": 243,
+            "w": 237,
+            "h": 270
           },
           {
-            "x": 665.25,
-            "y": 443.5,
-            "w": 221.75,
-            "h": 221.75
+            "x": 711,
+            "y": 243,
+            "w": 237,
+            "h": 270
           }
         ]
       }
     },
     "doctor": {
-      "src": "assets/art/jobs-motion-1.png",
+      "src": "assets/art/jobs-flat-1-v1.png",
       "atlas": {
-        "width": 887,
-        "height": 1774
+        "width": 948,
+        "height": 1659
       },
       "frame": {
-        "x": 0.0,
-        "y": 665.25,
-        "w": 221.75,
-        "h": 221.75
+        "x": 0,
+        "y": 513,
+        "w": 237,
+        "h": 247
       },
       "animation": {
         "id": "doctor",
         "duration": 3811,
         "frames": [
           {
-            "x": 0.0,
-            "y": 665.25,
-            "w": 221.75,
-            "h": 221.75
+            "x": 0,
+            "y": 513,
+            "w": 237,
+            "h": 247
           },
           {
-            "x": 221.75,
-            "y": 665.25,
-            "w": 221.75,
-            "h": 221.75
+            "x": 237,
+            "y": 513,
+            "w": 237,
+            "h": 247
           },
           {
-            "x": 443.5,
-            "y": 665.25,
-            "w": 221.75,
-            "h": 221.75
+            "x": 474,
+            "y": 513,
+            "w": 237,
+            "h": 247
           },
           {
-            "x": 665.25,
-            "y": 665.25,
-            "w": 221.75,
-            "h": 221.75
+            "x": 711,
+            "y": 513,
+            "w": 237,
+            "h": 247
           }
         ]
       }
     },
     "office worker": {
-      "src": "assets/art/jobs-motion-1.png",
+      "src": "assets/art/jobs-flat-1-v1.png",
       "atlas": {
-        "width": 887,
-        "height": 1774
+        "width": 948,
+        "height": 1659
       },
       "frame": {
-        "x": 0.0,
-        "y": 887.0,
-        "w": 221.75,
-        "h": 221.75
+        "x": 0,
+        "y": 760,
+        "w": 237,
+        "h": 240
       },
       "animation": {
         "id": "office-worker",
         "duration": 3948,
         "frames": [
           {
-            "x": 0.0,
-            "y": 887.0,
-            "w": 221.75,
-            "h": 221.75
+            "x": 0,
+            "y": 760,
+            "w": 237,
+            "h": 240
           },
           {
-            "x": 221.75,
-            "y": 887.0,
-            "w": 221.75,
-            "h": 221.75
+            "x": 237,
+            "y": 760,
+            "w": 237,
+            "h": 240
           },
           {
-            "x": 443.5,
-            "y": 887.0,
-            "w": 221.75,
-            "h": 221.75
+            "x": 474,
+            "y": 760,
+            "w": 237,
+            "h": 240
           },
           {
-            "x": 665.25,
-            "y": 887.0,
-            "w": 221.75,
-            "h": 221.75
+            "x": 711,
+            "y": 760,
+            "w": 237,
+            "h": 240
           }
         ]
       }
     },
     "receptionist": {
-      "src": "assets/art/jobs-motion-1.png",
+      "src": "assets/art/jobs-flat-1-v1.png",
       "atlas": {
-        "width": 887,
-        "height": 1774
+        "width": 948,
+        "height": 1659
       },
       "frame": {
-        "x": 0.0,
-        "y": 1108.75,
-        "w": 221.75,
-        "h": 221.75
+        "x": 0,
+        "y": 1000,
+        "w": 237,
+        "h": 228
       },
       "animation": {
         "id": "receptionist",
         "duration": 4085,
         "frames": [
           {
-            "x": 0.0,
-            "y": 1108.75,
-            "w": 221.75,
-            "h": 221.75
+            "x": 0,
+            "y": 1000,
+            "w": 237,
+            "h": 228
           },
           {
-            "x": 221.75,
-            "y": 1108.75,
-            "w": 221.75,
-            "h": 221.75
+            "x": 237,
+            "y": 1000,
+            "w": 237,
+            "h": 228
           },
           {
-            "x": 443.5,
-            "y": 1108.75,
-            "w": 221.75,
-            "h": 221.75
+            "x": 474,
+            "y": 1000,
+            "w": 237,
+            "h": 228
           },
           {
-            "x": 665.25,
-            "y": 1108.75,
-            "w": 221.75,
-            "h": 221.75
+            "x": 711,
+            "y": 1000,
+            "w": 237,
+            "h": 228
           }
         ]
       }
     },
     "salesclerk": {
-      "src": "assets/art/jobs-motion-1.png",
+      "src": "assets/art/jobs-flat-1-v1.png",
       "atlas": {
-        "width": 887,
-        "height": 1774
+        "width": 948,
+        "height": 1659
       },
       "frame": {
-        "x": 0.0,
-        "y": 1330.5,
-        "w": 221.75,
-        "h": 221.75
+        "x": 0,
+        "y": 1228,
+        "w": 237,
+        "h": 224
       },
       "animation": {
         "id": "salesclerk",
         "duration": 4222,
         "frames": [
           {
-            "x": 0.0,
-            "y": 1330.5,
-            "w": 221.75,
-            "h": 221.75
+            "x": 0,
+            "y": 1228,
+            "w": 237,
+            "h": 224
           },
           {
-            "x": 221.75,
-            "y": 1330.5,
-            "w": 221.75,
-            "h": 221.75
+            "x": 237,
+            "y": 1228,
+            "w": 237,
+            "h": 224
           },
           {
-            "x": 443.5,
-            "y": 1330.5,
-            "w": 221.75,
-            "h": 221.75
+            "x": 474,
+            "y": 1228,
+            "w": 237,
+            "h": 224
           },
           {
-            "x": 665.25,
-            "y": 1330.5,
-            "w": 221.75,
-            "h": 221.75
+            "x": 711,
+            "y": 1228,
+            "w": 237,
+            "h": 224
           }
         ]
       }
     },
     "taxi driver": {
-      "src": "assets/art/jobs-motion-1.png",
+      "src": "assets/art/jobs-flat-1-v1.png",
       "atlas": {
-        "width": 887,
-        "height": 1774
+        "width": 948,
+        "height": 1659
       },
       "frame": {
-        "x": 0.0,
-        "y": 1552.25,
-        "w": 221.75,
-        "h": 221.75
+        "x": 0,
+        "y": 1452,
+        "w": 237,
+        "h": 207
       },
       "animation": {
         "id": "taxi-driver",
         "duration": 4359,
         "frames": [
           {
-            "x": 0.0,
-            "y": 1552.25,
-            "w": 221.75,
-            "h": 221.75
+            "x": 0,
+            "y": 1452,
+            "w": 237,
+            "h": 207
           },
           {
-            "x": 221.75,
-            "y": 1552.25,
-            "w": 221.75,
-            "h": 221.75
+            "x": 237,
+            "y": 1452,
+            "w": 237,
+            "h": 207
           },
           {
-            "x": 443.5,
-            "y": 1552.25,
-            "w": 221.75,
-            "h": 221.75
+            "x": 474,
+            "y": 1452,
+            "w": 237,
+            "h": 207
           },
           {
-            "x": 665.25,
-            "y": 1552.25,
-            "w": 221.75,
-            "h": 221.75
+            "x": 711,
+            "y": 1452,
+            "w": 237,
+            "h": 207
           }
         ]
       }
     },
     "waiter": {
-      "src": "assets/art/jobs-motion-2.png",
+      "src": "assets/art/jobs-flat-2-v1.png",
       "atlas": {
-        "width": 887,
-        "height": 1774
+        "width": 948,
+        "height": 1659
       },
       "frame": {
-        "x": 0.0,
-        "y": 0.0,
-        "w": 221.75,
-        "h": 221.75
+        "x": 0,
+        "y": 0,
+        "w": 237,
+        "h": 236
       },
       "animation": {
         "id": "waiter",
         "duration": 3400,
         "frames": [
           {
-            "x": 0.0,
-            "y": 0.0,
-            "w": 221.75,
-            "h": 221.75
+            "x": 0,
+            "y": 0,
+            "w": 237,
+            "h": 236
           },
           {
-            "x": 221.75,
-            "y": 0.0,
-            "w": 221.75,
-            "h": 221.75
+            "x": 237,
+            "y": 0,
+            "w": 237,
+            "h": 236
           },
           {
-            "x": 443.5,
-            "y": 0.0,
-            "w": 221.75,
-            "h": 221.75
+            "x": 474,
+            "y": 0,
+            "w": 237,
+            "h": 236
           },
           {
-            "x": 665.25,
-            "y": 0.0,
-            "w": 221.75,
-            "h": 221.75
+            "x": 474,
+            "y": 0,
+            "w": 237,
+            "h": 236
           }
         ]
       }
     },
     "waitress": {
-      "src": "assets/art/jobs-motion-2.png",
+      "src": "assets/art/waitress-flat-v1.png",
       "atlas": {
-        "width": 887,
-        "height": 1774
+        "width": 2172,
+        "height": 724
       },
       "frame": {
-        "x": 0.0,
-        "y": 221.75,
-        "w": 221.75,
-        "h": 221.75
+        "x": 0,
+        "y": 0,
+        "w": 543,
+        "h": 724
       },
       "animation": {
         "id": "waitress",
         "duration": 3537,
         "frames": [
           {
-            "x": 0.0,
-            "y": 221.75,
-            "w": 221.75,
-            "h": 221.75
+            "x": 0,
+            "y": 0,
+            "w": 543,
+            "h": 724
           },
           {
-            "x": 221.75,
-            "y": 221.75,
-            "w": 221.75,
-            "h": 221.75
+            "x": 543,
+            "y": 0,
+            "w": 543,
+            "h": 724
           },
           {
-            "x": 443.5,
-            "y": 221.75,
-            "w": 221.75,
-            "h": 221.75
+            "x": 1086,
+            "y": 0,
+            "w": 543,
+            "h": 724
           },
           {
-            "x": 665.25,
-            "y": 221.75,
-            "w": 221.75,
-            "h": 221.75
+            "x": 1629,
+            "y": 0,
+            "w": 543,
+            "h": 724
           }
         ]
       }
     },
     "farmer": {
-      "src": "assets/art/jobs-motion-2.png",
+      "src": "assets/art/jobs-flat-2-v1.png",
       "atlas": {
-        "width": 887,
-        "height": 1774
+        "width": 948,
+        "height": 1659
       },
       "frame": {
-        "x": 0.0,
-        "y": 443.5,
-        "w": 221.75,
-        "h": 221.75
+        "x": 0,
+        "y": 475,
+        "w": 237,
+        "h": 241
       },
       "animation": {
         "id": "farmer",
         "duration": 3674,
         "frames": [
           {
-            "x": 0.0,
-            "y": 443.5,
-            "w": 221.75,
-            "h": 221.75
+            "x": 0,
+            "y": 475,
+            "w": 237,
+            "h": 241
           },
           {
-            "x": 221.75,
-            "y": 443.5,
-            "w": 221.75,
-            "h": 221.75
+            "x": 237,
+            "y": 475,
+            "w": 237,
+            "h": 241
           },
           {
-            "x": 443.5,
-            "y": 443.5,
-            "w": 221.75,
-            "h": 221.75
+            "x": 474,
+            "y": 475,
+            "w": 237,
+            "h": 241
           },
           {
-            "x": 665.25,
-            "y": 443.5,
-            "w": 221.75,
-            "h": 221.75
+            "x": 711,
+            "y": 475,
+            "w": 237,
+            "h": 241
           }
         ]
       }
     },
     "nurse": {
-      "src": "assets/art/jobs-motion-2.png",
+      "src": "assets/art/jobs-flat-2-v1.png",
       "atlas": {
-        "width": 887,
-        "height": 1774
+        "width": 948,
+        "height": 1659
       },
       "frame": {
-        "x": 0.0,
-        "y": 665.25,
-        "w": 221.75,
-        "h": 221.75
+        "x": 0,
+        "y": 716,
+        "w": 237,
+        "h": 235
       },
       "animation": {
         "id": "nurse",
         "duration": 3811,
         "frames": [
           {
-            "x": 0.0,
-            "y": 665.25,
-            "w": 221.75,
-            "h": 221.75
+            "x": 0,
+            "y": 716,
+            "w": 237,
+            "h": 235
           },
           {
-            "x": 221.75,
-            "y": 665.25,
-            "w": 221.75,
-            "h": 221.75
+            "x": 237,
+            "y": 716,
+            "w": 237,
+            "h": 235
           },
           {
-            "x": 443.5,
-            "y": 665.25,
-            "w": 221.75,
-            "h": 221.75
+            "x": 474,
+            "y": 716,
+            "w": 237,
+            "h": 235
           },
           {
-            "x": 665.25,
-            "y": 665.25,
-            "w": 221.75,
-            "h": 221.75
+            "x": 711,
+            "y": 716,
+            "w": 237,
+            "h": 235
           }
         ]
       }
     },
     "dentist": {
-      "src": "assets/art/jobs-motion-2.png",
+      "src": "assets/art/jobs-flat-2-v1.png",
       "atlas": {
-        "width": 887,
-        "height": 1774
+        "width": 948,
+        "height": 1659
       },
       "frame": {
-        "x": 0.0,
-        "y": 887.0,
-        "w": 221.75,
-        "h": 221.75
+        "x": 0,
+        "y": 951,
+        "w": 237,
+        "h": 226
       },
       "animation": {
         "id": "dentist",
         "duration": 3948,
         "frames": [
           {
-            "x": 0.0,
-            "y": 887.0,
-            "w": 221.75,
-            "h": 221.75
+            "x": 0,
+            "y": 951,
+            "w": 237,
+            "h": 226
           },
           {
-            "x": 221.75,
-            "y": 887.0,
-            "w": 221.75,
-            "h": 221.75
+            "x": 237,
+            "y": 951,
+            "w": 237,
+            "h": 226
           },
           {
-            "x": 443.5,
-            "y": 887.0,
-            "w": 221.75,
-            "h": 221.75
+            "x": 474,
+            "y": 951,
+            "w": 237,
+            "h": 226
           },
           {
-            "x": 665.25,
-            "y": 887.0,
-            "w": 221.75,
-            "h": 221.75
+            "x": 711,
+            "y": 951,
+            "w": 237,
+            "h": 226
           }
         ]
       }
     },
     "police officer": {
-      "src": "assets/art/jobs-motion-2.png",
+      "src": "assets/art/jobs-flat-2-v1.png",
       "atlas": {
-        "width": 887,
-        "height": 1774
+        "width": 948,
+        "height": 1659
       },
       "frame": {
-        "x": 0.0,
-        "y": 1108.75,
-        "w": 221.75,
-        "h": 221.75
+        "x": 0,
+        "y": 1177,
+        "w": 237,
+        "h": 250
       },
       "animation": {
         "id": "police-officer",
         "duration": 4085,
         "frames": [
           {
-            "x": 0.0,
-            "y": 1108.75,
-            "w": 221.75,
-            "h": 221.75
+            "x": 0,
+            "y": 1177,
+            "w": 237,
+            "h": 250
           },
           {
-            "x": 221.75,
-            "y": 1108.75,
-            "w": 221.75,
-            "h": 221.75
+            "x": 237,
+            "y": 1177,
+            "w": 237,
+            "h": 250
           },
           {
-            "x": 443.5,
-            "y": 1108.75,
-            "w": 221.75,
-            "h": 221.75
+            "x": 474,
+            "y": 1177,
+            "w": 237,
+            "h": 250
           },
           {
-            "x": 665.25,
-            "y": 1108.75,
-            "w": 221.75,
-            "h": 221.75
+            "x": 711,
+            "y": 1177,
+            "w": 237,
+            "h": 250
           }
         ]
       }
@@ -3368,44 +3368,44 @@
       }
     },
     "actor": {
-      "src": "assets/art/jobs-motion-2.png",
+      "src": "assets/art/jobs-flat-2-v1.png",
       "atlas": {
-        "width": 887,
-        "height": 1774
+        "width": 948,
+        "height": 1659
       },
       "frame": {
-        "x": 0.0,
-        "y": 1552.25,
-        "w": 221.75,
-        "h": 221.75
+        "x": 0,
+        "y": 1427,
+        "w": 237,
+        "h": 232
       },
       "animation": {
         "id": "actor",
         "duration": 4359,
         "frames": [
           {
-            "x": 0.0,
-            "y": 1552.25,
-            "w": 221.75,
-            "h": 221.75
+            "x": 0,
+            "y": 1427,
+            "w": 237,
+            "h": 232
           },
           {
-            "x": 221.75,
-            "y": 1552.25,
-            "w": 221.75,
-            "h": 221.75
+            "x": 237,
+            "y": 1427,
+            "w": 237,
+            "h": 232
           },
           {
-            "x": 443.5,
-            "y": 1552.25,
-            "w": 221.75,
-            "h": 221.75
+            "x": 474,
+            "y": 1427,
+            "w": 237,
+            "h": 232
           },
           {
-            "x": 665.25,
-            "y": 1552.25,
-            "w": 221.75,
-            "h": 221.75
+            "x": 711,
+            "y": 1427,
+            "w": 237,
+            "h": 232
           }
         ]
       }

@@ -1,0 +1,7 @@
+{
+  "tool": "built-in image_gen",
+  "intent": "precise-object-edit",
+  "reference": "assets/art/mina-flat-v1.png",
+  "prompt": "Use case: precise-object-edit. Input is a flat disassembled animation sprite atlas. Change ONLY the four trouser parts (row2 columns3and4, row3columns1and2). Make every knee-facing end fully ROUND like a pill/capsule, not a rectangular flat-cut corner. The two upper trouser pieces must be narrow elongated capsules with a semicircle at BOTH top and bottom. The two lower legs must have a semicircle at their TOP edge for bending knee joints; keep the orange shoes exactly the same. Both upper and lower trouser shafts the same thickness so they can rotate smoothly at a knee without a corner sticking out. Do not move any part or change its location, total height, colors or identity. Preserve all other pixels/parts, the face, hands, sleeves, torso, backpack, map and transparent background. Strictly flat solid opaque navy with no shadows, no gradients, no highlights, no texture, no outlines. Preserve original transparent alpha and 4x3 grid layout, no new objects or labels. Production animation cutouts need smooth rounded joint ends.",
+  "pixels": "Unmodified native generated PNG; round knee ends requested through ImageGen, not drawn or recolored in code."
+}

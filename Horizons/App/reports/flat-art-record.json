@@ -1,0 +1,397 @@
+{
+  "generator": "built-in image_gen",
+  "purpose": "Flat shadow-free sprites. Learner avatars retain the earlier approved face, hair, clothing and bust geometry after the fresh round-avatar design was rejected.",
+  "pixelPolicy": "Native tool PNGs retained. Crops, anchors and transforms are metadata; no code pixel repainting or replacement character vectors.",
+  "selectedNativeFiles": [
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\pico-flat-v1.png",
+      "repositoryPath": "Horizons/App/assets/art/pico-flat-v1.png",
+      "sha256": "137263a25f5e7298f0c6ded11a626783da4c5242f250a288c054552f0da19b86"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-flat-v3.png",
+      "repositoryPath": "Horizons/App/assets/art/mina-flat-v3.png",
+      "sha256": "4bc0e2c216e034eb062bf5a02361ad08a991c9b3cae5da182ad001e5fb6b3ef0"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-flat-v2.png",
+      "repositoryPath": "Horizons/App/assets/art/alex-flat-v2.png",
+      "sha256": "a03b05430868934b21fe6837888b2288f1b9f28d8719db2818ff749c4aa2f882"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-flat-v2.png",
+      "repositoryPath": "Horizons/App/assets/art/jo-flat-v2.png",
+      "sha256": "4c66a78897cd9a5f27f204f370ceeb97dcd036cd132832059382f69a17f42fbd"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\driver-flat-v1.png",
+      "repositoryPath": "Horizons/App/assets/art/driver-flat-v1.png",
+      "sha256": "5e943b749010ca7820c97875b83e74f5a300fd42747f0d0228deeeee95c3145b"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jobs-flat-1-v1.png",
+      "repositoryPath": "Horizons/App/assets/art/jobs-flat-1-v1.png",
+      "sha256": "0628d8208e9e3f93835f4d34936c1c894d037a47704f65de8bb2faeac1cb123d"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jobs-flat-2-v1.png",
+      "repositoryPath": "Horizons/App/assets/art/jobs-flat-2-v1.png",
+      "sha256": "57ab83192e51cf0e6f0053ff7e781b1db63d59c9a4ae2da275ec02d3fd217852"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\waitress-flat-v1.png",
+      "repositoryPath": "Horizons/App/assets/art/waitress-flat-v1.png",
+      "sha256": "ad2bbc259aef0cbe3c7b7242614f620d9d0d2583eaf42ae0f096d145ab29ea5e"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\ui-flat-v1.png",
+      "repositoryPath": "Horizons/App/assets/art/ui-flat-v1.png",
+      "sha256": "64b41643467c70456d4e39869f36dd8ef9f2fa40e70e9953946a8139a02252cd"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\town-flat-v1.png",
+      "repositoryPath": "Horizons/App/assets/art/town-flat-v1.png",
+      "sha256": "d7662eb864012b299ccdd6970d1366a0a0b3f1ba4d07e08a6e4b8dc402f7d58a"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\app-icon-flat-v1.png",
+      "repositoryPath": "Horizons/App/assets/art/app-icon-flat-v1.png",
+      "sha256": "11d7d9300c2011337693898173a3340613c9155152c74b48a09952d8deeceb70"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-approved-flat-core-v1.png",
+      "repositoryPath": "Horizons/App/assets/art/avatar-approved-flat-core-v1.png",
+      "sha256": "4a6552111bf65f9140b2565c3689f430595cd44c6a4799edab26228777aace0f"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-approved-flat-jacket-v1.png",
+      "repositoryPath": "Horizons/App/assets/art/avatar-approved-flat-jacket-v1.png",
+      "sha256": "48c5245d0545d7302b48cfd8c5d9dd0b742be43dd1f7b057aecef04f3c7cdabf"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-approved-flat-kit-v1.png",
+      "repositoryPath": "Horizons/App/assets/art/avatar-approved-flat-kit-v1.png",
+      "sha256": "c57a104c53cdb46fb62b91bd58c2e964670f65fd1d0cd87393061b4f5f01b9d0"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-approved-flat-kit-v2.png",
+      "repositoryPath": "Horizons/App/assets/art/avatar-approved-flat-kit-v2.png",
+      "sha256": "ade6e895de56d0ac15f0481a515c08603cbc9abcb9d88dcfed98d30024ad9824"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-approved-flat-skin-v1.png",
+      "repositoryPath": "Horizons/App/assets/art/avatar-approved-flat-skin-v1.png",
+      "sha256": "cfdf74f09a9e1b69e5f6cb9ed553a22b2879b35de934ff9fa85a809af2b22524"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-approved-flat-sleeves-v1.png",
+      "repositoryPath": "Horizons/App/assets/art/avatar-approved-flat-sleeves-v1.png",
+      "sha256": "6a545ecc462a5e65c9984b97c82858095a64091476f256306eb4ca2f4f5fc9b8"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-approved-flat-think-v1.png",
+      "repositoryPath": "Horizons/App/assets/art/avatar-approved-flat-think-v1.png",
+      "sha256": "32aed82ad1f16a65bc365e98fe412133abde41475d6e43378ecb0b436cf2aec7"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-approved-flat-blink-v2.png",
+      "repositoryPath": "Horizons/App/assets/art/avatar-approved-flat-blink-v2.png",
+      "sha256": "6265213d670e840e32ba1ed789acaec11862c12f32429c8f99029467b1fb420b"
+    }
+  ],
+  "promptDocuments": [
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-flat-v1.provenance.json",
+      "sha256": "281fe4c75ce84247cb7a9bc297431f974ab4641c0314b172901bdc243dd6f8cc",
+      "record": {
+        "tool": "built-in image_gen",
+        "intent": "generate",
+        "reference": "C:/Users/David/AppData/Local/Temp/codex-clipboard-a2fc2001-02a4-478e-8a2a-9649ca08552a.png",
+        "prompt": "Use case: illustration-story. NEW animation parts atlas in the exact simple flat graphic art style of attached reference. STRICTLY FLAT, solid-colored paper cutouts, no shadows ANYWHERE. No lighting, gradients, highlights, texture, volume modelling or outlines. Transparent alpha background. Friendly young man Alex: short dark brown tight curly hair, deep warm brown skin, solid teal open short sleeve overshirt with flat cream-orange T-shirt, navy trousers, cream trainers. Complete simple face with oval dark eyes, gentle friendly open smile and one white tooth shape. Body design is simple bold geometric flat shapes, suited to a modern friendly language app, no 3D painted look. Colors: dark brown hair #392923, skin #A9683E, teal #128A96, orange shirt #F5A227, navy #23364D, cream #FFEDCF, mouth #702F29, white. Each region one constant color. TWELVE DISCONNECTED separate body pieces in 4-column x3-row regular grid, canvas4:3. Every part vertical and wholly inside its own cell with generous transparent gaps. Row1: complete head including neck; sleeveless torso of open teal shirt over orange T-shirt, no arms, no skin at neckline; left upper teal sleeve capsule with small skin elbow; left bare forearm ending in small open palm hand. Row2: right upper teal sleeve capsule with small skin elbow; right bare forearm ending in small open palm hand; left upper navy trouser capsule; left lower navy trouser leg ending in LEFT-facing cream trainer. Row3: right upper navy trouser capsule; right lower navy trouser leg ending in RIGHT-facing cream trainer; simple flat navy headphones; small flat navy music player with flat orange note and cream triangle. Straight vertical limbs, hands wrists point downward; fingers simple shapes no tiny detail. Do not connect pieces. No labels, no text, no ground, no floor, no shadows beneath shoes, no ovals. Flat solid colors only. Crisp smooth silhouettes; no colored transparency fringes.",
+        "pixels": "Unmodified native generated PNG; only runtime viewport and pivot metadata measured."
+      }
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\alex-flat-v2.provenance.json",
+      "sha256": "72461672d18b84e970b578a05c05ef59cffb8b7546d456b5773f852a0734cf28",
+      "record": {
+        "tool": "built-in image_gen",
+        "intent": "precise-object-edit",
+        "reference": "assets/art/alex-flat-v1.png",
+        "prompt": "Use case: precise-object-edit. Edit ONLY the four navy trouser pieces in this existing flat animation atlas. Positions row2columns3and4 and row3columns1and2. Make all knee joint ends ROUND semicircular capsule ends. The two upper thigh parts must have rounded semicircular BOTTOMS as well as tops; remove square flat-cut bottoms. The two lower leg+shoe pieces must have rounded semicircular TOPS rather than square flat-cut tops. Make thigh and calf navy shafts equally narrow so their silhouettes join smoothly when rotated at a knee, without sticking-out rectangle corners. Keep the cream shoes, their positions and all other pieces unchanged. Retain exact 4x3 layout, positions, heights, character face/identity, colors and genuine transparent background. Strictly flat solid colors, no shadows, no gradients, no highlights, no modelling, no texture, no outlines. No added objects, no labels. This is a production rigging correction for round knee ends only, not a redesign.",
+        "pixels": "Unmodified native generated PNG; round knee ends requested through ImageGen, not drawn or recolored in code."
+      }
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\app-icon-flat-v1.provenance.json",
+      "sha256": "0a4d7a3fae82419a9159d7e529b6cd3b3b496d73d8734a804a3dbc2ba6a61441",
+      "record": {
+        "generator": "built-in image_gen",
+        "mode": "fresh generation with user flat-style reference",
+        "source": "assets/art/app-icon-flat-v1.png",
+        "prompt": "Use case: illustration-story. Create a NEW square app icon for Horizons: only Pico the friendly cream-colored mountain hare's smiling face and long ears, one straight and one bent, in a completely FLAT opaque solid-color cartoon style like the supplied reference. Warm cream square background with gently rounded corners; navy eyes with white sclera, small navy nose, pink open smile, peach cream fur, orange flat ear interiors. Friendly to all ages. Head and two ears centered and fully inside square with generous breathing room. NO SHADOWS or shading, no gradients, highlights, gloss, texture, bevels, 3D forms, lighting or outline. Pure simple vector-like cutout color shapes. No letters, wordmark, satchel or extra objects.",
+        "pixelPolicy": "Native output copied without pixel editing."
+      }
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-approved-flat-v1.provenance.json",
+      "sha256": "e1e2e0deb5bef347ea38a8e0bb3fc33e5f4eb16869f9cd5d79bcf9396a8a78ed",
+      "record": {
+        "tool": "built-in image_gen.imagegen",
+        "designReferenceCommit": "b751527",
+        "scope": "Identity-preserving flat rendering of original approved avatar native atlases, without changing proportions, facial features, hairstyle geometry, atlas rectangles or joint registration.",
+        "pixelProcessing": "Native ImageGen output bytes copied unchanged. No procedural repaint, recoloring, background removal or vector replacements.",
+        "outputs": [
+          {
+            "path": "C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/App/assets/art/avatar-approved-flat-kit-v1.png",
+            "generatedSource": "C:/Users/David/.codex/generated_images/01a1a7c3-0b03-74d2-9a57-a8a7531392d4/exec-45ae9a5b-a093-4ee8-ac56-c7ea114b1712.png",
+            "editTarget": "C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/App/assets/art/avatar-kit-v2.png",
+            "prompt": "Use case: style-transfer. Edit target: the supplied avatar sprite atlas. Keep exact 1536×1024 canvas, every subject, every part, every pixel silhouette, position, size, expression, direction, layer spacing and transparent cutout footprint. This is a production atlas already cropped by coordinate, so do not rearrange or resize anything. Convert ALL artwork to absolutely FLAT 2D cut-paper character art similar to friendly minimalist language-learning sprites. ZERO SHADOWS, ZERO shading, ZERO gradients, ZERO glow, ZERO highlights or glossy bevels, ZERO soft lighting, ZERO under-foot shadows, ZERO dark cloth folds/seams suggesting volume. Every material region must have one completely uniform solid color all the way to its antialiased edge. Skin columns left-to-right use solid #F8C5A4, #ECAE85, #CC8E61, #BA8058, #A65F31, #70442E. Keep smile/eyebrows/eye shapes with single flat dark colors, keep nose a small flat simple shape. Clothes keep their current magenta/teal/navy/orange/ivory color identities using consistent solid fills. Hair must be flat silhouette, accessories flat color shapes. Do not add outlines around silhouettes. Keep tiny graphic details/buttons/pockets as flat intentional graphic shapes, no dimensional edge/rim shadows. Transparent background with alpha, no background glow or color wash. Do not add text, labels, grid or new objects.",
+            "styleReference": "C:/Users/David/AppData/Local/Temp/codex-clipboard-a2fc2001-02a4-478e-8a2a-9649ca08552a.png"
+          },
+          {
+            "path": "C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/App/assets/art/avatar-approved-flat-core-v1.png",
+            "generatedSource": "C:/Users/David/.codex/generated_images/01a1a7c3-0b03-74d2-9a57-a8a7531392d4/exec-6de44ac6-245b-448c-9563-96ff729f0b36.png",
+            "editTarget": "C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/App/assets/art/avatar-clothed-kit-v1.png",
+            "prompt": "Use case: precise-object-edit. Production sprite atlas style correction. FIRST supplied image is the EDIT TARGET, SECOND is STYLE reference only. Trace every existing outer silhouette and feature EXACTLY in place. Keep the target canvas size, all part positions, dimensions, proportions, spacing, directions and transparency footprint. These sprites are already animated using exact atlas coordinates: shifting or resizing any part breaks the app. Preserve the approved drawing; DO NOT redesign, simplify its geometry, enlarge heads, make circular baby faces, change hair shapes or invent new parts. Change ONLY the color rendering: make every material region an even FLAT solid color with crisp antialiased edges. Remove ALL cast shadows, contact shadows, volume shading, gradients, light-source highlights, texture, glow, bevels and dark shaded rims. Completely flat 2D graphic fill, NOT 3D or soft illustration. Keep the existing palette/material distinctions as flat graphic shapes. Transparent alpha background; empty spaces stay transparent, no checkerboard or glow. No text/labels/grid.\nPreserve all6torso cores and all sleeve pieces exactly where they are. Keep hoodie drawstrings, pocket, open jacket ivory shirt, orange sweater, teal overalls and cardigan buttons. Dark cloth fold/shadow marks must disappear; no new cuffs or circle endcaps.",
+            "styleReference": "C:/Users/David/AppData/Local/Temp/codex-clipboard-a2fc2001-02a4-478e-8a2a-9649ca08552a.png"
+          },
+          {
+            "path": "C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/App/assets/art/avatar-approved-flat-sleeves-v1.png",
+            "generatedSource": "C:/Users/David/.codex/generated_images/01a1a7c3-0b03-74d2-9a57-a8a7531392d4/exec-1d506f06-2f5e-4525-aae8-5eb9bc9579af.png",
+            "editTarget": "C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/App/assets/art/avatar-clothed-kit-v2.png",
+            "prompt": "Use case: precise-object-edit. Production sprite atlas style correction. FIRST supplied image is the EDIT TARGET, SECOND is STYLE reference only. Trace every existing outer silhouette and feature EXACTLY in place. Keep the target canvas size, all part positions, dimensions, proportions, spacing, directions and transparency footprint. These sprites are already animated using exact atlas coordinates: shifting or resizing any part breaks the app. Preserve the approved drawing; DO NOT redesign, simplify its geometry, enlarge heads, make circular baby faces, change hair shapes or invent new parts. Change ONLY the color rendering: make every material region an even FLAT solid color with crisp antialiased edges. Remove ALL cast shadows, contact shadows, volume shading, gradients, light-source highlights, texture, glow, bevels and dark shaded rims. Completely flat 2D graphic fill, NOT 3D or soft illustration. Keep the existing palette/material distinctions as flat graphic shapes. Transparent alpha background; empty spaces stay transparent, no checkerboard or glow. No text/labels/grid.\nPreserve all6torso cores and every separate plain sleeve capsule exactly. Sleeves are flat silhouette cutouts, not shaded cylinders. No seam shading or endcap rings. Keep short-sleeve cells and empty forearm cells empty where they already are.",
+            "styleReference": "C:/Users/David/AppData/Local/Temp/codex-clipboard-a2fc2001-02a4-478e-8a2a-9649ca08552a.png"
+          },
+          {
+            "path": "C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/App/assets/art/avatar-approved-flat-skin-v1.png",
+            "generatedSource": "C:/Users/David/.codex/generated_images/01a1a7c3-0b03-74d2-9a57-a8a7531392d4/exec-ec90c924-320a-4014-b6dd-0e641df4562a.png",
+            "editTarget": "C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/App/assets/art/avatar-clothed-skin-v1.png",
+            "prompt": "Use case: precise-object-edit. Production sprite atlas style correction. FIRST supplied image is the EDIT TARGET, SECOND is STYLE reference only. Trace every existing outer silhouette and feature EXACTLY in place. Keep the target canvas size, all part positions, dimensions, proportions, spacing, directions and transparency footprint. These sprites are already animated using exact atlas coordinates: shifting or resizing any part breaks the app. Preserve the approved drawing; DO NOT redesign, simplify its geometry, enlarge heads, make circular baby faces, change hair shapes or invent new parts. Change ONLY the color rendering: make every material region an even FLAT solid color with crisp antialiased edges. Remove ALL cast shadows, contact shadows, volume shading, gradients, light-source highlights, texture, glow, bevels and dark shaded rims. Completely flat 2D graphic fill, NOT 3D or soft illustration. Keep the existing palette/material distinctions as flat graphic shapes. Transparent alpha background; empty spaces stay transparent, no checkerboard or glow. No text/labels/grid.\nPreserve every existing skin upperarm, forearm and openhand silhouette and pin positions. Do not move fingers or reshape palms. Each skin column is one UNIFORM flat skin color, with no lighter palm or darker knuckle shapes. Remove circular shadow cap marks at upperarm/forearm ends without changing the outside silhouette.",
+            "styleReference": "C:/Users/David/AppData/Local/Temp/codex-clipboard-a2fc2001-02a4-478e-8a2a-9649ca08552a.png"
+          },
+          {
+            "path": "C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/App/assets/art/avatar-approved-flat-jacket-v1.png",
+            "generatedSource": "C:/Users/David/.codex/generated_images/01a1a7c3-0b03-74d2-9a57-a8a7531392d4/exec-3d362650-cb23-4948-a0b3-8f481a5550e7.png",
+            "editTarget": "C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/App/assets/art/avatar-clothed-jacket-v1.png",
+            "prompt": "Use case: precise-object-edit. Production sprite atlas style correction. FIRST supplied image is the EDIT TARGET, SECOND is STYLE reference only. Trace every existing outer silhouette and feature EXACTLY in place. Keep the target canvas size, all part positions, dimensions, proportions, spacing, directions and transparency footprint. These sprites are already animated using exact atlas coordinates: shifting or resizing any part breaks the app. Preserve the approved drawing; DO NOT redesign, simplify its geometry, enlarge heads, make circular baby faces, change hair shapes or invent new parts. Change ONLY the color rendering: make every material region an even FLAT solid color with crisp antialiased edges. Remove ALL cast shadows, contact shadows, volume shading, gradients, light-source highlights, texture, glow, bevels and dark shaded rims. Completely flat 2D graphic fill, NOT 3D or soft illustration. Keep the existing palette/material distinctions as flat graphic shapes. Transparent alpha background; empty spaces stay transparent, no checkerboard or glow. No text/labels/grid.\nPreserve the existing navy open explorer jacket silhouette, entire deep U-neck opening and ivory shirt shape exactly. Keep the two lapels as the same uniform navy fill as the jacket. Remove the collar's bevel shadows, folds and hem shadows. Do not close the neckline or make a neckband.",
+            "styleReference": "C:/Users/David/AppData/Local/Temp/codex-clipboard-a2fc2001-02a4-478e-8a2a-9649ca08552a.png"
+          },
+          {
+            "path": "C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/App/assets/art/avatar-approved-flat-think-v1.png",
+            "generatedSource": "C:/Users/David/.codex/generated_images/01a1a7c3-0b03-74d2-9a57-a8a7531392d4/exec-5ff32e76-b337-4096-8bf1-8e61b687a05e.png",
+            "editTarget": "C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/App/assets/art/avatar-clothed-think-v1.png",
+            "prompt": "Use case: precise-object-edit. Production sprite atlas style correction. FIRST supplied image is the EDIT TARGET, SECOND is STYLE reference only. Trace every existing outer silhouette and feature EXACTLY in place. Keep the target canvas size, all part positions, dimensions, proportions, spacing, directions and transparency footprint. These sprites are already animated using exact atlas coordinates: shifting or resizing any part breaks the app. Preserve the approved drawing; DO NOT redesign, simplify its geometry, enlarge heads, make circular baby faces, change hair shapes or invent new parts. Change ONLY the color rendering: make every material region an even FLAT solid color with crisp antialiased edges. Remove ALL cast shadows, contact shadows, volume shading, gradients, light-source highlights, texture, glow, bevels and dark shaded rims. Completely flat 2D graphic fill, NOT 3D or soft illustration. Keep the existing palette/material distinctions as flat graphic shapes. Transparent alpha background; empty spaces stay transparent, no checkerboard or glow. No text/labels/grid.\nPreserve these SIX existing folded fists exactly, each finger silhouette, thumb position, wrist outline, orientation, cell spacing and2172x724canvas. Replace dimensional crease shadows by at most thin flat graphic separation lines, without moving or straightening the fingers. All skin inside each hand is the same uniform flat skin fill. Do not draw iconic mitten/round blobs; keep the exact existing anatomical hand drawings.",
+            "styleReference": "C:/Users/David/AppData/Local/Temp/codex-clipboard-a2fc2001-02a4-478e-8a2a-9649ca08552a.png"
+          },
+          {
+            "path": "C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/App/assets/art/avatar-approved-flat-blink-v1.png",
+            "generatedSource": "C:/Users/David/.codex/generated_images/01a1a7c3-0b03-74d2-9a57-a8a7531392d4/exec-f8e7d469-ee9a-486c-93c9-b3658b203fa8.png",
+            "editTarget": "C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/App/assets/art/avatar-blink-v1.png",
+            "prompt": "Use case: precise-object-edit. Production sprite atlas style correction. FIRST supplied image is the EDIT TARGET, SECOND is STYLE reference only. Trace every existing outer silhouette and feature EXACTLY in place. Keep the target canvas size, all part positions, dimensions, proportions, spacing, directions and transparency footprint. These sprites are already animated using exact atlas coordinates: shifting or resizing any part breaks the app. Preserve the approved drawing; DO NOT redesign, simplify its geometry, enlarge heads, make circular baby faces, change hair shapes or invent new parts. Change ONLY the color rendering: make every material region an even FLAT solid color with crisp antialiased edges. Remove ALL cast shadows, contact shadows, volume shading, gradients, light-source highlights, texture, glow, bevels and dark shaded rims. Completely flat 2D graphic fill, NOT 3D or soft illustration. Keep the existing palette/material distinctions as flat graphic shapes. Transparent alpha background; empty spaces stay transparent, no checkerboard or glow. No text/labels/grid.\nKeep all six original oval heads, ears, eyebrow strokes, smile curves, closed-eye curves, nose silhouettes, head/body proportions and all hairstyle/clothes/accessory drawings exactly. Eyes stay CLOSED. Do not add or remove eyebrows. Do not enlarge heads. All material rendering uniformly flat. These heads are paired with the original-shape flattened open-eye atlas, so exact face/eye coordinate registration is mandatory.",
+            "styleReference": "C:/Users/David/AppData/Local/Temp/codex-clipboard-a2fc2001-02a4-478e-8a2a-9649ca08552a.png"
+          }
+        ],
+        "rejectedAlternative": {
+          "archive": "C:/Users/David/Documents/Codex/2026-11-04/horizons-rejected-round-avatars",
+          "reason": "User rejected fresh simplified round avatar design. Not part of active app."
+        }
+      }
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\avatar-approved-flat-v2.provenance.json",
+      "sha256": "756f091e29530dcb4c95f3c9307c0884cd2324d7b2946c386a8e6249f585c420",
+      "record": {
+        "tool": "built-in image_gen.imagegen",
+        "designReferenceCommit": "b751527",
+        "retainedGeometry": "Original approved face proportions, eyebrows, ears, hairstyle contours, outfit silhouettes, native rectangles, display positioning and shoulder/elbow/wrist registration. New files are native shading-only edits.",
+        "outputs": [
+          {
+            "path": "C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/App/assets/art/avatar-approved-flat-kit-v2.png",
+            "source": "C:/Users/David/.codex/generated_images/01a1a7c3-0b03-74d2-9a57-a8a7531392d4/exec-cdb65e5d-86f8-4cc0-ac64-de21db46d4a9.png",
+            "usedOnlyFor": "hair-6 native face opening; all other atlas rectangles remain on selectedv1",
+            "prompt": "Precise object edit. Image1 is the selected FLAT avatar customization atlas edit target,1536x1024. Image2 is the ORIGINAL approved version for exact hair silhouette/alpha reference. Change ONLY the sixth hairstyle cutout in row3 (reddish-brown wavy bob, bounding area x1280..1472 y680..823). The current flat copy accidentally filled the face opening; restore the ORIGINAL transparent face opening from Image2 exactly. Hair must be a cutout frame around the face, with completely transparent central face area. Keep the original wavy outer hair contour and fringe. Keep the existing selected flat reddish-brown uniform color. Do NOT make a filled red blob or a solid head silhouette. Do not add a face to the hairpiece; center must be alpha transparent. Keep every other subject, face, hairstyle, clothing item, all positions/sizes and canvas unchanged. No shadows, gradients, highlights, volume or texture. Transparent background and preserve all other transparency."
+          },
+          {
+            "path": "C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/App/assets/art/avatar-approved-flat-blink-v2.png",
+            "source": "C:/Users/David/.codex/generated_images/01a1a7c3-0b03-74d2-9a57-a8a7531392d4/exec-31a15013-87eb-4056-a5b9-42b098be9b2e.png",
+            "usedOnlyFor": "Native closed-eye small patches; entire head silhouette never swaps.",
+            "prompt": "Precise tiny-feature edit on selected approved flat avatar atlas. In ONLY the six bald faces in top row, replace each open black oval eye with a short black closed smiling-eye curve at exactly the same eye center. Keep the eyebrows separate and unchanged. Change nothing else. All head/face shapes, every skin RGB/color and lighting, nose, mouth, body, hairstyle, clothing, accessory, sizes, position, canvas1536x1024 and alpha must remain as in this selected flat input. Especially do NOT recolor the skin around the eye; closed-eye patches need to match the selected input face color exactly. Do not add outlines, shadows or texture. Preserve the approved original avatar design."
+          }
+        ],
+        "sourceProvenance": "avatar-approved-flat-v1.provenance.json",
+        "pixelProcessing": "Generated native output bytes copied unchanged. No procedural pixel painting or vector replacements."
+      }
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\driver-flat-v1.provenance.json",
+      "sha256": "88f422f36aa81f7d31129f07d82c6967d3f41c30570bd33ff848d408e915aae4",
+      "record": {
+        "generator": "built-in image_gen",
+        "mode": "fresh generation with supplied flat style reference",
+        "source": "assets/art/driver-flat-v1.png",
+        "prompt": "Use case: illustration-story. Make a NEW flat opaque solid-color transparent sprite-part sheet for a friendly learning-app driver. The reference is the intended strictly FLAT graphic illustration style. Two independent objects, one above the other, with ample transparent gutters. Upper half: a front-facing perfectly round navy steering wheel ring with three simple solid navy spokes and a flat orange circular center hub. Lower half: a wide flat navy vehicle dashboard silhouette, a pale cream gauge panel with two simple orange needle gauges and dark navy tick marks, three small circular orange/cream buttons and a solid teal rectangular display. Palette only navy #173D58, orange #FF8A19, teal #00999C and cream #FFE7CF. This must look like clean geometric cut-paper vector art. Every color region uniform and opaque. NO SHADOWS, NO SHADING, NO GRADIENTS, NO HIGHLIGHTS, NO beveled edges, NO gloss, NO texture, NO glow, NO dimension or lighting. Do not render plastic or any real material. No background, no person, no hands, no vehicle body or text. Genuine transparent alpha outside both silhouettes. Square-ish steering-wheel object centered in upper half; separate wide dashboard centered in lower quarter. Keep everything fully inside canvas.",
+        "notes": [
+          "Native PNG bytes retained. Transparent preview RGB outside opaque shapes contains hidden color; actual browser on white inspected with no visible glow or shadows."
+        ]
+      }
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\flat-extras-v1.provenance.json",
+      "sha256": "a9bde666871dfad69cd8bc16c13ad5375372ddcf8b1a75df54a0106817269757",
+      "record": {
+        "tool": "built-in image_gen.imagegen",
+        "nativeOutputsPreserved": true,
+        "pixelEditing": "none",
+        "referenceStyle": "User-supplied flat Duolingo sprite reference; style only",
+        "prompts": {
+          "jobs1": [
+            "Use case: illustration-story. Asset type: transparent production sprite atlas for an English-learning app. Reference image is STYLE ONLY, not characters to copy. Create exactly FOUR COLUMNS by SEVEN ROWS, 28 equally spaced scene cells on a tall transparent canvas, with generous transparent gutters. Each row is one repeating adult job character with exactly the same face, hair, clothes, scale, base position and task props in all four columns. The four columns show four successive connected body-part action keyframes, with distinct forearm/hand poses and only a small accompanying head tilt. Clean Duolingo-like flat cut-paper illustration, simple friendly chunky shapes, bold solid color regions, rounded corners, dot eyes. Absolutely NO shadows anywhere: no contact shadow, no ground shadow, no drop shadow, no darker sides, no modeled volume, no gradients, no tonal texture, no lighting highlights, no hair shine, no fabric folds. Each flat material is one uniform solid color. No black outlines, no borders, no letters, no text, no watermark, no boxes, no background. Restrained Horizons palette: magenta, teal, navy, orange, cream, varied warm skin tones. Keep anatomy coherent: hands attached to wrists and sleeves, exactly two arms, stable head shapes. Each scene should be legible as a small vocabulary icon. Rows top to bottom: ROW1 woman TEACHER with a simple blank teal board, holding an open book and using her other arm to point across the board, four pointing poses. ROW2 cheerful male CHEF wearing a white chef hat, stirring a teal cooking pot on a simple counter, hand and spoon rotate through a short stirring arc. ROW3 male DOCTOR with stethoscope gently checking seated adult woman's wrist, four checking-hand poses, both faces fully visible. ROW4 woman OFFICE WORKER seated behind a simple laptop desk, alternate typing hands, small glance up then back. ROW5 woman RECEPTIONIST behind a small desk and a single gold bell, connected right forearm makes a short greeting and returns, no keys board. ROW6 man SALESCLERK behind a small pile of colorful folded shirts, lifts and folds a shirt with both connected hands. ROW7 woman TAXI DRIVER in a simple cap and vest beside a compact yellow taxi, four short welcoming arm gestures toward the taxi. The artwork must remain flat like the supplied reference at enlarged scale. All cells must contain the entire complete scene including feet and props with safe margins, and each row must sit fully inside its seventh of the canvas.",
+            "Use case: style-transfer. EDIT TARGET: first image, the 4-column by7-row job sprite atlas. REFERENCE STYLE: second image. Change ONLY the rendering finish. Preserve all28 complete scenes, four distinct limb keyframes per row, exact cell grid, character identities, faces, uniforms, objects, and transparent gutters. RENDER AS LITERAL FLAT SVG-STYLE SOLID FILL SHAPES. This is a hard technical requirement: every material area must be a single completely uniform color from edge to edge. The teal board is ONE solid teal rectangle (#007f83), not brighter on one side. Each desk front is ONE solid orange rectangle (#ec8a14). Each white shirt is ONE solid cream shape (#fff0d3), not dark under the arms. Each face and each arm uses ONE solid peach or brown skin fill, without lighter middle or darker edge. Each hair silhouette is ONE solid hair color, no strips or shine. Remove every smooth or mottled color transition. Remove all cast shadows, contact shadows, ground shadows, highlights, volumetric modeled shading, bevels, fabric folds, fuzzy texture and light sources. Use clean graphic cut-paper artwork like the flat vector sprite reference. NO tonal rendering. Minimal palette: navy#183e57, magenta#b8135f, teal#007f83, orange#ec8a14, yellow#ffd453, cream#fff0d3, peach#f6ac80, brown#a96744, hair brown#714834. Different object shapes may differ in color; a single contiguous material must never shade across its surface. Keep simple flat facial eye whites and black pupils and one solid smile, no cheek blush. Keep all fingers connected to hands and hands connected to sleeves, no duplicate limbs. No text, no outlines, no labels, no grid lines. Keep genuine transparent background. Preserve the full 28-scene atlas composition."
+          ],
+          "jobs2": [
+            "Use case: illustration-story. A production transparent raster sprite atlas rendered as LITERAL FLAT SVG-STYLE cut-paper solid fills, matching the supplied flat sprite reference STYLE ONLY. Uniform opaque color shapes, simple friendly geometric anatomy, black dot pupils in white eyes, rounded chunky shapes. The material interiors must be completely flat, without modeled shading. NO shadows anywhere, no ground or contact shadows, no gradients, no light sources, no ambient occlusion, no darker material edges, no highlights, no texture, no hair shine, no cloth wrinkles, no bevels, no outlines. Restrained palette of navy#183e57, magenta#b8135f, teal#007f83, orange#ec8a14, yellow#ffd453, cream#fff0d3, and warm varied skin/hair tones. A face uses one flat skin fill, a shirt one flat fill. Clean transparent background, no labels, no grid lines, no text. Exactly FOUR COLUMNS and SEVEN ROWS,28 equally spaced separate square scene cells with transparent gutters on a tall canvas. Each row repeats one adult character in FOUR SUCCESSIVE KEYFRAMES of one action, keeping head/body scale/identity/position and task props stable. Four connected hand/forearm/arm poses, natural coherent anatomy, exactly two arms, hands connected to wrists and sleeves. Entire figures and props fully visible inside each cell with safe margins. No decorative background and only minimal simple solid task props, no lighting, no lamps. Row1 male WAITER holding a tray with one cup in his left hand, his right arm gently welcomes a guest through four gestures. Row2 female WAITRESS holding a tray with one cup in her right hand, her left arm makes four short greeting gestures. Row3 male FARMER beside one tomato plant, he picks one tomato and puts it in a basket with four distinct connected arm poses. Row4 female NURSE checking seated adult man's wrist, four small checking-hand poses, faces unobstructed. Row5 male DENTIST holding a large simple tooth model at chest height, his free hand points to it in four distinct explanatory gestures, beside one small plain teal dental chair. Row6 female POLICE OFFICER helping an older adult woman at a simple zebra crossing, four connected pointing/guiding forearm gestures. Row7 male ACTOR in a cream shirt and magenta waistcoat holding a simple theatre mask in one hand, four expressive connected arm gestures ending in a small bow; no stage backdrop, no curtains. Keep all repeated props stationary, entire scenes within each seventh of canvas. Every material flat from edge to edge. Clear hand motion between adjacent columns, not four identical poses."
+          ],
+          "ui": [
+            "Use case: illustration-story. A production transparent raster sprite atlas rendered as LITERAL FLAT SVG-STYLE cut-paper solid fills, matching the supplied flat sprite reference STYLE ONLY. Uniform opaque color shapes, simple friendly geometric anatomy, black dot pupils in white eyes, rounded chunky shapes. The material interiors must be completely flat, without modeled shading. NO shadows anywhere, no ground or contact shadows, no gradients, no light sources, no ambient occlusion, no darker material edges, no highlights, no texture, no hair shine, no cloth wrinkles, no bevels, no outlines. Restrained palette of navy#183e57, magenta#b8135f, teal#007f83, orange#ec8a14, yellow#ffd453, cream#fff0d3, and warm varied skin/hair tones. A face uses one flat skin fill, a shirt one flat fill. Clean transparent background, no labels, no grid lines, no text. Exactly FOUR COLUMNS by FOUR ROWS,16 equally sized isolated UI icons with generous transparent gutters, all centered in their square cells. Bold minimal solid shape silhouettes, no modeled volume or cast shadows, legible at24px. Row1:1 small cream house with magenta roof/teal door,2 open cream book with magenta cover,3 two overlapping teal and magenta game cards,4 friendly abstract navy-haired bust profile in teal shirt with no facial detail. Row2:5 flat orange flame with a smaller cream inner flame,6 solid yellow five-point star,7 solid yellow trophy with plain navy base,8 magenta satchel with flat orange rectangular clasp. Row3:9 navy loudspeaker with two flat orange sound arcs,10 orange key,11 teal calendar with six cream date squares and two navy binder tabs,12 navy mountain-shaped compass pin with flat orange compass needle and cream snow peaks. Row4:13 navy settings gear,14 orange flag on navy pole,15 magenta heart,16 cream closed book with magenta spine and flat orange plus sign. ONE truly uniform fill per shape. NO gradients, no lighting, no dark edges, no shadow below icons, no glow. All16 icons entirely contained in their cells with safe margins. No oval backplates. No lettering."
+          ]
+        },
+        "sources": {
+          "jobs1": "C:/Users/David/.codex/generated_images/01a1a7c3-3eb9-70a2-a41e-ca0af0276afe/exec-6bedc675-6f1f-4829-bed8-e79c46652f6b.png",
+          "jobs2": "C:/Users/David/.codex/generated_images/01a1a7c3-3eb9-70a2-a41e-ca0af0276afe/exec-8bd96fae-409d-4d64-8680-2df3652f4c5a.png",
+          "ui": "C:/Users/David/.codex/generated_images/01a1a7c3-3eb9-70a2-a41e-ca0af0276afe/exec-1d204543-26a1-4521-9131-3c1dfc532e29.png"
+        },
+        "outputs": [
+          {
+            "path": "Horizons/App/assets/art/jobs-flat-1-v1.png",
+            "sha256": "0628d8208e9e3f93835f4d34936c1c894d037a47704f65de8bb2faeac1cb123d",
+            "size": [
+              948,
+              1659
+            ]
+          },
+          {
+            "path": "Horizons/App/assets/art/jobs-flat-2-v1.png",
+            "sha256": "57ab83192e51cf0e6f0053ff7e781b1db63d59c9a4ae2da275ec02d3fd217852",
+            "size": [
+              948,
+              1659
+            ]
+          },
+          {
+            "path": "Horizons/App/assets/art/ui-flat-v1.png",
+            "sha256": "64b41643467c70456d4e39869f36dd8ef9f2fa40e70e9953946a8139a02252cd",
+            "size": [
+              1261,
+              1247
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-flat-v1.provenance.json",
+      "sha256": "15c33e26d469092892eb889b6f18127c8949c5c0ffd6acaa58f98d0820ce8c01",
+      "record": {
+        "tool": "built-in image_gen",
+        "intent": "generate",
+        "reference": "C:/Users/David/AppData/Local/Temp/codex-clipboard-a2fc2001-02a4-478e-8a2a-9649ca08552a.png",
+        "prompt": "Use case: illustration-story. Create a NEW disconnected animation body-parts atlas in the attached reference's very simple FLAT solid-color graphic style. Transparent background. NO SHADOWS of any kind. No gradient, highlights, lighting, texture, soft edges, bevels, modelling, or outlines. Each colored area must be a single uniform opaque color like cut paper. Friendly older café owner Jo: silver bob haircut, medium golden tan skin, round navy glasses, simple expressive oval eyes, a small friendly open smile. Solid orange collared shirt with cuffed short sleeves, solid navy apron with one flat pocket, olive trousers, cream trainers. Colors only silver #B8BDC0, golden skin #E2A956, orange #F08A21, navy #23364D, olive #93A56A, cream #FFEDCF, mouth #793C30, white. Make a production sprite atlas of TWELVE separate disconnected pieces in a4-column x3-row evenly spaced grid on4:3canvas. All pieces vertical, fully contained in their own cell with transparent gaps. Row1: complete head with neck, bob and round glasses; sleeveless torso with orange collar and navy apron, no arms and no exposed neck skin; left upper sleeve orange capsule with small skin elbow; left bare forearm ending in a simple open palm. Row2: right upper sleeve orange capsule with small skin elbow; right bare forearm ending in simple open palm; left upper olive trouser capsule; left lower olive trouser leg with left-facing cream trainer. Row3: right upper olive trouser capsule; right lower olive trouser leg with right-facing cream trainer; simple flat teal mug with handle and darker flat oval opening, NO shine on mug; small cream cleaning cloth with two navy stripes, unfolded trapezoid shape with no volume modelling. Hands point down and fingers are simple flat rounded shapes. Absolutely no drop shadows or painted shading under chin/hair/glasses/limbs/cuffs/shoes/mug/cloth. Keep bold smooth simple silhouettes like the reference. No text/labels, no floor, no shadow ellipse, no connecting lines, no tiny details, no colored transparency noise.",
+        "pixels": "Unmodified native generated PNG; only runtime viewport and pivot metadata measured."
+      }
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\jo-flat-v2.provenance.json",
+      "sha256": "a876efdd150b9374b21214f86dc3c2bdeaaaf75557826ef8e873b2c6e3c0311c",
+      "record": {
+        "tool": "built-in image_gen",
+        "intent": "precise-object-edit",
+        "reference": "assets/art/jo-flat-v1.png",
+        "prompt": "Use case: precise-object-edit. Correct only four OLIVE TROUSER parts in the existing flat disassembled animation atlas. They occupy row2columns3and4, row3columns1and2. The two upper thigh capsules need perfectly ROUND semicircular BOTTOM ends, same as rounded tops; no rectangular flat-cut bottoms. The two lower leg/shoe parts need ROUND semicircular TOP ends, no rectangular flat-cut tops. Make upper thigh and lower calf shafts equally narrow so knee joints can rotate smoothly with no protruding angular corners. Preserve cream trainers exactly. Do not move pieces, change their overall heights, recolor or redesign anything else. Preserve face/glasses/torso/arms/mug/cloth and4x3layout, actual transparent background. Keep STRICT flat solid colors, no shadows/gradients/highlights/lighting/texture/outlines/volume modelling. No labels, no new objects, no connecting lines. Production rigging correction for rounded knee-end silhouettes only.",
+        "pixels": "Unmodified native generated PNG; round knee ends requested through ImageGen, not drawn or recolored in code."
+      }
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-flat-v1.provenance.json",
+      "sha256": "0bf3d6f690d0f43767d4e37c8bd92f4a043fc91c16360da20c291d9f59628b0b",
+      "record": {
+        "tool": "built-in image_gen",
+        "intent": "generate",
+        "reference": "C:/Users/David/AppData/Local/Temp/codex-clipboard-a2fc2001-02a4-478e-8a2a-9649ca08552a.png",
+        "prompt": "Use case: illustration-story. Make a NEW animation parts atlas in the exact simple flat graphic art style of the attached reference. TRANSPARENT background. Strict flat opaque solid colors, no lighting, NO SHADOWS, no gradients, no highlights, no texture, no outlines. Each shape is a constant single color, like colored paper cutouts. Friendly young woman Mina: dark brown wavy bob, medium ochre skin, magenta open cardigan over cream shirt, navy trousers and orange low trainers. Simple oval eyes and friendly open smile. Artwork must be simpler and flatter than a painted children's illustration. Palette only: hair #38272B, skin #D98645, cardigan #B8175A, cream #FFECCB, navy #23364D, orange #F68B1F, white #FFFFFF, mouth #752F32. Sprite production asset, not a full character picture: TWELVE disconnected separate body pieces arranged in a very regular 4-column x3-row grid with generous transparent gaps. Every piece straight vertical unless specified. Canvas wide4:3. Row1: complete head including neck; sleeveless torso/cardigan with no arms and no exposed skin around neck; left upper sleeve capsule; left forearm sleeve ending in a small palm/open hand. Row2: right upper sleeve capsule; right forearm sleeve ending in palm/open hand; left upper navy trouser capsule; left lower navy trouser leg ending in left-facing orange shoe. Row3: right upper navy trouser capsule; right lower navy trouser leg ending in right-facing orange shoe; simple orange backpack; unfolded cream map with geometric flat green park patches and blue river, no writing. Equal cell widths. Keep every part wholly within its own cell. Sleeves are uniform magenta with no wrinkles and no shadows. Skin including hands/neck/face is uniform ochre with no shadows. No connecting lines, no labels, no ground/floor/ellipses, no tiny texture lines. Anatomically usable rounded joint caps hidden inside seams. Transparent alpha between every part.",
+        "pixels": "Unmodified native generated PNG; only runtime viewport and pivot metadata measured."
+      }
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-flat-v2.provenance.json",
+      "sha256": "220f87d80f6e3e137495c24053cad2a88169113363c0eb69e42bb413c03baebe",
+      "record": {
+        "tool": "built-in image_gen",
+        "intent": "precise-object-edit",
+        "reference": "assets/art/mina-flat-v1.png",
+        "prompt": "Use case: precise-object-edit. Input is a flat disassembled animation sprite atlas. Change ONLY the four trouser parts (row2 columns3and4, row3columns1and2). Make every knee-facing end fully ROUND like a pill/capsule, not a rectangular flat-cut corner. The two upper trouser pieces must be narrow elongated capsules with a semicircle at BOTH top and bottom. The two lower legs must have a semicircle at their TOP edge for bending knee joints; keep the orange shoes exactly the same. Both upper and lower trouser shafts the same thickness so they can rotate smoothly at a knee without a corner sticking out. Do not move any part or change its location, total height, colors or identity. Preserve all other pixels/parts, the face, hands, sleeves, torso, backpack, map and transparent background. Strictly flat solid opaque navy with no shadows, no gradients, no highlights, no texture, no outlines. Preserve original transparent alpha and 4x3 grid layout, no new objects or labels. Production animation cutouts need smooth rounded joint ends.",
+        "pixels": "Unmodified native generated PNG; round knee ends requested through ImageGen, not drawn or recolored in code."
+      }
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\mina-flat-v3.provenance.json",
+      "sha256": "b20800a6f6a4b28b274afc0bb0dfb445d7409cdddcc2b29f57dd2bc1d651b85b",
+      "record": {
+        "tool": "built-in image_gen",
+        "intent": "precise-object-edit",
+        "reference": "assets/art/mina-flat-v2.png",
+        "prompt": "Use case: precise-object-edit. Correct ONLY the TWO magenta forearm+hand pieces in this flat disassembled sprite atlas: row1column4 and row2column2. The hands currently have fingers fanning sideways, which makes waving look like a drooping paw. Reorient each hand so that it is a simple front-facing OPEN PALM with FIVE rounded fingers pointing STRAIGHT DOWN along the vertical forearm axis. Fingers extend downward beyond the wrist, not sideways. One small thumb points gently outward. Wrist is centered directly below the magenta sleeve. Keep hand proportions compact and human. The pieces remain straight vertical, arm-to-hand-to-fingertips top-to-bottom. Maintain same original part center positions, sleeves and their lengths, skin/cardigan solid colors. Keep hands fully within each grid cell. Preserve absolutely ALL other atlas parts and their locations, head/torso/legs/backpack/map. Keep strict FLAT solid color, no shadows or gradients or highlights or outlines or texture. Genuine transparent background, exact4x3layout. This is only a hand direction fix for correct anatomical waving.",
+        "pixels": "Unmodified native generated PNG; hand direction corrected through ImageGen for natural waving."
+      }
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\pico-flat-v1.provenance.json",
+      "sha256": "079d5c4cdf0d646e2418310020751efe69c9d4f67e56127b1584c65918e85dc2",
+      "record": {
+        "generator": "built-in image_gen",
+        "mode": "fresh generation using supplied flat style reference",
+        "source": "assets/art/pico-flat-v1.png",
+        "prompt": "Use case: illustration-story. Create a NEW transparent production sprite atlas for a friendly mountain-hare named Pico, in the completely FLAT solid-color cartoon style of the supplied reference. This is NOT a 3D render or shaded drawing. Use only opaque uniform color fills with clean antialiased outer edges; NO shadows, NO shading, NO gradients, NO highlights, NO texture, NO lighting, NO darkened joint caps. Color palette: fur solid #F7D6B3 everywhere; flat muzzle/belly #FFE7CF; inner ears #FF8A19; eyes/nose #173D58; mouth #A51A4C with pink tongue; satchel and strap #B41659 with #FF9A16 button; navy/orange book; pale cream map with flat green/blue markings. A round friendly smiling hare head, long expressive ears (one straight and one bent), small curvy limbs and soft broad paws, magenta shoulder satchel, suitable for learners of all ages. Atlas layout is a precise 4 columns by 4 rows, each part centered alone with transparent gutters, square canvas. Row1: complete smiling head WITHOUT ears and WITHOUT neck; pear-shaped torso with flat oval belly patch but no limbs/head/strap; straight left ear; bent right ear. Row2: diagonal left upper arm with smooth round joint ends; left forearm pointing down with a paw at bottom; opposite diagonal right upper arm; right forearm pointing upward ending in an open friendly paw with three fingers and thumb. Row3: left thigh; left lower leg with broad flat foot facing left; right thigh; right lower leg with broad flat foot facing right. Row4: magenta satchel with orange circular button; a separate plain curved magenta strap; small open navy book with orange spine and blank pale cream pages; folded cream map with green hills blue lake orange dotted route. Every piece independent and unattached, consistent proportions. Absolutely no mechanical joint rings, dark seams, outlines, floor, ground shadow or background. Everything flat like vector cut-paper shapes and the reference. Genuine transparent background; no colored/noisy pixels outside the silhouettes. NOT a composition of characters from the reference; only Pico's components as described.",
+        "notes": [
+          "Native PNG retained; parts and anchors measured from alpha without pixel repainting.",
+          "Rejected shaded edit was not integrated."
+        ]
+      }
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\town-flat-v1.provenance.json",
+      "sha256": "a602c5d6505a66106bfbf5d87edcb9a5a4848e3098aab3d539df3e47e70e9a29",
+      "record": {
+        "generator": "built-in image_gen",
+        "mode": "fresh generation with user flat-style reference",
+        "source": "assets/art/town-flat-v1.png",
+        "prompt": "Use case: illustration-story. Create a NEW very wide, low horizontal transparent neighborhood backdrop for the Horizons learning app in the completely FLAT solid-color vector-cutout style of the supplied reference. A friendly recurring town: small orange café on left, magenta art/book shop beside it, teal bus stop and small friendly cream/teal minibus in the middle, two simple green trees and a yellow bench, pale cream house with navy roof on right, two overlapping blue mountain silhouettes behind. Open transparent sky above. Every material is a uniform opaque color shape. Minimal geometric forms, smooth borders, no people, no text. NO SHADOWS, no modeled shading, gradients, glows, highlights, textures, bevels, perspective side-panels or lighting. Simple flat front views only. Colors: Horizons magenta, orange, navy, teal, greens, cream, skyblue. No cast or ground shadows. Thin cream ground line only, not a platform with depth. Scene fills lower40percent of a landscape canvas, fully within margins. Genuine transparent alpha outside silhouettes. A quiet friendly backdrop that leaves the character sprites as the focus.",
+        "pixelPolicy": "Native output copied without pixel editing."
+      }
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\waitress-flat-v1.provenance.json",
+      "sha256": "996694b18e389ea961cbb1f8d0e621a58072c6f780ec1797d80bfc443b7b1d9a",
+      "record": {
+        "tool": "built-in image_gen.imagegen",
+        "nativeOutputsPreserved": true,
+        "pixelEditing": "none",
+        "prompt": "Use case: illustration-story. Create a production transparent sprite atlas: exactly FOUR COLUMNS and ONE ROW, four adult WAITRESS poses aligned on the same baseline. Style reference is the supplied flat sprite image only. Friendly literal flat vector-style cut-paper art, ONE opaque uniform color per shape. No shadows of any kind, no ground/contact shadows, no gradients, no modeled volume, no light/dark edge bands, no highlights, no fabric folds, no texture, no outlines, no text or labels. Native transparent background. The same adult woman in every cell: warm peach skin, brown hair in a ponytail, cream short-sleeve shirt, magenta apron, navy trousers and simple flat navy shoes. Whole body including feet, ample transparent gutters. Fixed full head shape, face with big simple white eyes/dark pupils and friendly smile, same proportions in all4. CRITICAL ANATOMY: She holds ONE SMALL TEAL TRAY with ONE CREAM CUP in her LEFT hand, which appears on the VIEWER'S RIGHT. That supporting LEFT upper arm, bent forearm and upturned supporting palm remain EXACTLY IDENTICAL in all four cells. Her supporting palm must DIRECTLY TOUCH the underside of the tray in all four cells, no air gap. The supporting forearm connects visibly from palm to elbow to shoulder. No floating cup or tray. Cup sits ON tray. The entire supporting arm/tray/cup silhouette is an unbroken connected shape, fixed at lower-chest height, away from face. Only her OTHER RIGHT arm, on VIEWER'S LEFT, changes its connected shoulder/elbow/hand pose: CELL1 free arm relaxed down by her side; CELL2 free forearm lifted slightly outward palm up at waist height; CELL3 free arm raised to shoulder height with an open greeting palm; CELL4 free hand gives a gentle thumbs-up at chest height. Both feet stay planted in the same positions, body/head fixed, no body bobbing. Exactly two complete arms per woman. Supporting palm remains in contact with tray during every pose. Flat palette navy#183e57, magenta#b8135f, teal#007f83, cream#fff0d3, peach#f6ac80, brown#714834. Four separate coherent poses, not four repetitions of same whole pose. Do not draw any scene background, table, ground line, sparkle, or oval shadow.",
+        "source": "C:/Users/David/.codex/generated_images/01a1a7c3-3eb9-70a2-a41e-ca0af0276afe/exec-24cb281f-c972-457b-9392-fe14973b6f45.png",
+        "reason": "Replace unsupported cup/tray poses with fixed supporting arm and independently moving free arm.",
+        "output": {
+          "path": "Horizons/App/assets/art/waitress-flat-v1.png",
+          "sha256": "ad2bbc259aef0cbe3c7b7242614f620d9d0d2583eaf42ae0f096d145ab29ea5e",
+          "size": [
+            2172,
+            724
+          ]
+        }
+      }
+    }
+  ],
+  "notes": [
+    "Rejected fresh round-avatar files are archived outside the app and are not delivered as active choices.",
+    "One unsupported waiter native extreme is unused; the waitress uses a new four-pose supported-tray atlas."
+  ]
+}

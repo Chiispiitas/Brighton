@@ -1,0 +1,180 @@
+{
+  "date": "2026-11-04T18:41:38.770521+00:00",
+  "status": "PASS",
+  "pass": true,
+  "scope": "Native ImageGen flat human cast, map/book/driver props and connected natural gestures. Source-bound finite local review; independent routed/hosted review remains separate.",
+  "sources": {
+    "src/cast-rig.js": "3596a27a21de16c32f09ddb4d76d050124ecca54ec340ba83c145905d3d7a0af",
+    "assets/art/cast-flat-v1.frames.json": "5c6dbfe44cfae9669fe3fb23ba1e807afc8e8a348603b5afe0bff7abfd5cbe34",
+    "assets/art/mina-flat-v3.png": "4bc0e2c216e034eb062bf5a02361ad08a991c9b3cae5da182ad001e5fb6b3ef0",
+    "assets/art/alex-flat-v2.png": "a03b05430868934b21fe6837888b2288f1b9f28d8719db2818ff749c4aa2f882",
+    "assets/art/jo-flat-v2.png": "4c66a78897cd9a5f27f204f370ceeb97dcd036cd132832059382f69a17f42fbd",
+    "assets/art/pico-flat-v1.png": "137263a25f5e7298f0c6ded11a626783da4c5242f250a288c054552f0da19b86",
+    "assets/art/driver-flat-v1.png": "5e943b749010ca7820c97875b83e74f5a300fd42747f0d0228deeeee95c3145b"
+  },
+  "nativeGeneration": "Built-in image_gen, output bytes preserved; no code recoloring or pixel painting.",
+  "artworkProvenance": [
+    "assets/art/mina-flat-v1.provenance.json",
+    "assets/art/alex-flat-v1.provenance.json",
+    "assets/art/jo-flat-v1.provenance.json",
+    "assets/art/mina-flat-v2.provenance.json",
+    "assets/art/alex-flat-v2.provenance.json",
+    "assets/art/jo-flat-v2.provenance.json",
+    "assets/art/mina-flat-v3.provenance.json"
+  ],
+  "changes": [
+    "Flat solid-color artwork with no modeled shadows, highlights or texture.",
+    "Native round knee ends replace squared endpoints for smooth seated bends.",
+    "Mina native downward-aligned hands give an upright wave and natural book grip.",
+    "Resting arms, leading elbow anticipation, delayed shoulder lift, finite wrist wave and eased return.",
+    "Mug support remains attached while Jo lifts wiping hand; wheel follows both driver wrists."
+  ],
+  "visualReview": {
+    "paintedViews": 71,
+    "greetingPhases": [
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-flat-cast-natural\\wave-0.png",
+        "sha256": "3bd04e4eb90302ed1a96e1b20bb5ba055bb995124561bd9c1f1361873e62e874",
+        "paintedViews": 7,
+        "verdict": "pass"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-flat-cast-natural\\wave-8.png",
+        "sha256": "c4edff5fd9dade8d632a4bb184c99c97633c601791638fa0f0b2613dc36d5045",
+        "paintedViews": 7,
+        "verdict": "pass"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-flat-cast-natural\\wave-15.png",
+        "sha256": "32cf710051aaef278c9113baf174e0b713002f4d7abfebb0c4b00fb2fcce3514",
+        "paintedViews": 7,
+        "verdict": "pass"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-flat-cast-natural\\wave-24.png",
+        "sha256": "7c778a04085ff44beb3666a3ca0f33e03d68534eba6c1e6f7bdac9acc10ed735",
+        "paintedViews": 7,
+        "verdict": "pass"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-flat-cast-natural\\wave-40.png",
+        "sha256": "727920b37bc03e74642f519da0f3971d9c5f328d29d1bf98a57b4957e5b7b61b",
+        "paintedViews": 7,
+        "verdict": "pass"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-flat-cast-natural\\wave-60.png",
+        "sha256": "38e2140e50ecb2f010b47ea3166640d4c34204f0200ff5480546f52353c2e612",
+        "paintedViews": 7,
+        "verdict": "pass"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-flat-cast-natural\\wave-80.png",
+        "sha256": "5aac2f0e2be58163a6fc0e981e408ff5af2c0804535cc6961d673fb3417236fe",
+        "paintedViews": 7,
+        "verdict": "pass"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-flat-cast-natural\\wave-98.png",
+        "sha256": "a2beb87f7a1386124521712eb8888a98a22ee5007b1fa42bf3b11076ceac35fa",
+        "paintedViews": 7,
+        "verdict": "pass"
+      }
+    ],
+    "additionalPoses": [
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-flat-cast-final-v3\\standing-0.png",
+        "sha256": "f5e13404e4c0ca4f4fdb236df7741bfa3b0f0a21c131884047d613a5a77c307b",
+        "paintedViews": 3,
+        "verdict": "pass"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-flat-cast-final-v3\\celebrate-2000.png",
+        "sha256": "0723631da87a8f2f29435d7d6b1aca9796ad3ddcab28c1eff346447870637fea",
+        "paintedViews": 3,
+        "verdict": "pass"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-flat-cast-final-v3\\study-2000.png",
+        "sha256": "052da4f5b7d940eb317f0505c1e8388264406238e959a4b1fa6f11c9eba28385",
+        "paintedViews": 3,
+        "verdict": "pass"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-flat-cast-final-v3\\seated-2000.png",
+        "sha256": "24d28eda0b6806d5bc120cdbacb71ad9c03dc1fc29730044dc3e9fb5c62092a6",
+        "paintedViews": 3,
+        "verdict": "pass"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-flat-cast-final-v3\\drive-1600.png",
+        "sha256": "459ab1e27a2e813e9894b744a026bc98506544f9f0f90ab07e66d9b54daea477",
+        "paintedViews": 3,
+        "verdict": "pass"
+      }
+    ],
+    "observations": [
+      "No cast shadows or modeled shading visible on rendered cast/props.",
+      "Seated knee silhouettes are round and connected.",
+      "Upright wave palms, attached sleeve/skin joins, consistent face shape and hand grip.",
+      "Lift and settling keep the hand closer to the shoulder instead of sweeping into the neighboring character panel."
+    ]
+  },
+  "structural": {
+    "source": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-flat-cast-final-v3\\joint-registration.json",
+    "sha256": "5dc30c57f96bdd329ef5579b58193d7023c56a5df27f4aaa4a9d3161ac1e3562",
+    "sampledCharacterPoses": 165,
+    "maxGap": 0.0013437110949165178,
+    "errors": []
+  },
+  "actualPointerGreetingReturn": {
+    "maxGap": 0.034908878483647036,
+    "maxDegreesPerMs": 0.6026138064570289,
+    "samples": 1288,
+    "returned": [
+      {
+        "character": "mina",
+        "posture": "step",
+        "mood": "idle"
+      },
+      {
+        "character": "alex",
+        "posture": "listen",
+        "mood": "idle"
+      },
+      {
+        "character": "jo",
+        "posture": "offer",
+        "mood": "idle"
+      },
+      {
+        "character": "mina",
+        "posture": "map",
+        "mood": "idle"
+      },
+      {
+        "character": "mina",
+        "posture": "read",
+        "mood": "idle"
+      },
+      {
+        "character": "jo",
+        "posture": "pour",
+        "mood": "idle"
+      },
+      {
+        "character": "alex",
+        "posture": "drive",
+        "mood": "idle"
+      }
+    ],
+    "cycles": 7,
+    "errors": [],
+    "traceSha256": "d8d7b9d243446abea0666815f897fe1ef52b541cf104cc85950a7333a9c931b7"
+  },
+  "limits": [
+    "Finite painted samples and live RAF trace, not a claim of perfection at every time/customization.",
+    "Edge/Chromium native raster rendering only.",
+    "Tiny raster and alpha quantization variation is retained; no code-based recoloring was applied."
+  ]
+}

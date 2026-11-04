@@ -1,0 +1,1172 @@
+{
+  "version": 1,
+  "clothing": {
+    "src": "assets/art/avatar-approved-flat-core-v1.png",
+    "atlas": {
+      "width": 1536,
+      "height": 1024
+    },
+    "outfits": {
+      "outfit-1": {
+        "torso": {
+          "x": 48,
+          "y": 99,
+          "w": 205,
+          "h": 231
+        },
+        "collarBottom": 149,
+        "sleeveAsset": {
+          "src": "assets/art/avatar-approved-flat-sleeves-v1.png",
+          "atlas": {
+            "width": 1536,
+            "height": 1024
+          }
+        },
+        "upperSleeve": {
+          "frame": {
+            "x": 93,
+            "y": 410,
+            "w": 110,
+            "h": 227
+          },
+          "pin": {
+            "x": 148.0,
+            "y": 465
+          },
+          "scale": 0.35
+        },
+        "foreSleeve": {
+          "frame": {
+            "x": 98,
+            "y": 713,
+            "w": 96,
+            "h": 223
+          },
+          "pin": {
+            "x": 146.0,
+            "y": 746
+          },
+          "wristY": 917
+        }
+      },
+      "outfit-2": {
+        "torso": {
+          "x": 288,
+          "y": 127,
+          "w": 221,
+          "h": 197
+        },
+        "collarBottom": 151,
+        "sleeveAsset": {
+          "src": "assets/art/avatar-approved-flat-sleeves-v1.png",
+          "atlas": {
+            "width": 1536,
+            "height": 1024
+          }
+        },
+        "upperSleeve": {
+          "frame": {
+            "x": 339,
+            "y": 411,
+            "w": 115,
+            "h": 123
+          },
+          "pin": {
+            "x": 396.5,
+            "y": 465
+          },
+          "scale": 0.35
+        },
+        "foreSleeve": null
+      },
+      "outfit-3": {
+        "torso": {
+          "x": 397,
+          "y": 154,
+          "w": 741,
+          "h": 741
+        },
+        "collarBottom": 311,
+        "sleeveAsset": {
+          "src": "assets/art/avatar-approved-flat-sleeves-v1.png",
+          "atlas": {
+            "width": 1536,
+            "height": 1024
+          }
+        },
+        "upperSleeve": {
+          "frame": {
+            "x": 584,
+            "y": 409,
+            "w": 115,
+            "h": 228
+          },
+          "pin": {
+            "x": 641.5,
+            "y": 465
+          },
+          "scale": 0.35
+        },
+        "foreSleeve": {
+          "frame": {
+            "x": 591,
+            "y": 713,
+            "w": 97,
+            "h": 223
+          },
+          "pin": {
+            "x": 639.5,
+            "y": 746
+          },
+          "wristY": 917
+        },
+        "torsoAsset": {
+          "src": "assets/art/avatar-approved-flat-jacket-v1.png",
+          "atlas": {
+            "width": 1536,
+            "height": 1024
+          }
+        }
+      },
+      "outfit-4": {
+        "torso": {
+          "x": 789,
+          "y": 124,
+          "w": 209,
+          "h": 200
+        },
+        "collarBottom": 153,
+        "sleeveAsset": {
+          "src": "assets/art/avatar-approved-flat-sleeves-v1.png",
+          "atlas": {
+            "width": 1536,
+            "height": 1024
+          }
+        },
+        "upperSleeve": {
+          "frame": {
+            "x": 830,
+            "y": 410,
+            "w": 115,
+            "h": 227
+          },
+          "pin": {
+            "x": 887.5,
+            "y": 465
+          },
+          "scale": 0.35
+        },
+        "foreSleeve": {
+          "frame": {
+            "x": 839,
+            "y": 713,
+            "w": 95,
+            "h": 223
+          },
+          "pin": {
+            "x": 886.5,
+            "y": 746
+          },
+          "wristY": 917
+        }
+      },
+      "outfit-5": {
+        "torso": {
+          "x": 1033,
+          "y": 123,
+          "w": 224,
+          "h": 202
+        },
+        "collarBottom": 151,
+        "sleeveAsset": {
+          "src": "assets/art/avatar-approved-flat-sleeves-v1.png",
+          "atlas": {
+            "width": 1536,
+            "height": 1024
+          }
+        },
+        "upperSleeve": {
+          "frame": {
+            "x": 1081,
+            "y": 410,
+            "w": 118,
+            "h": 123
+          },
+          "pin": {
+            "x": 1140.0,
+            "y": 465
+          },
+          "scale": 0.35
+        },
+        "foreSleeve": null
+      },
+      "outfit-6": {
+        "torso": {
+          "x": 1289,
+          "y": 128,
+          "w": 201,
+          "h": 197
+        },
+        "collarBottom": 153,
+        "sleeveAsset": {
+          "src": "assets/art/avatar-approved-flat-sleeves-v1.png",
+          "atlas": {
+            "width": 1536,
+            "height": 1024
+          }
+        },
+        "upperSleeve": {
+          "frame": {
+            "x": 1327,
+            "y": 410,
+            "w": 114,
+            "h": 227
+          },
+          "pin": {
+            "x": 1384.0,
+            "y": 465
+          },
+          "scale": 0.35
+        },
+        "foreSleeve": {
+          "frame": {
+            "x": 1337,
+            "y": 713,
+            "w": 96,
+            "h": 223
+          },
+          "pin": {
+            "x": 1385.0,
+            "y": 746
+          },
+          "wristY": 917
+        }
+      }
+    }
+  },
+  "skin": {
+    "src": "assets/art/avatar-approved-flat-skin-v1.png",
+    "atlas": {
+      "width": 1536,
+      "height": 1024
+    },
+    "skins": {
+      "skin-1": {
+        "upper": {
+          "frame": {
+            "x": 116,
+            "y": 77,
+            "w": 95,
+            "h": 260
+          },
+          "pin": {
+            "x": 163.5,
+            "y": 124.5
+          },
+          "elbowY": 309
+        },
+        "fore": {
+          "frame": {
+            "x": 121,
+            "y": 395,
+            "w": 83,
+            "h": 262
+          },
+          "pin": {
+            "x": 162.5,
+            "y": 436
+          },
+          "wristY": 643
+        },
+        "hand": {
+          "frame": {
+            "x": 74,
+            "y": 726,
+            "w": 161,
+            "h": 225
+          },
+          "pin": {
+            "x": 162.55,
+            "y": 736
+          },
+          "scale": 0.22
+        },
+        "thinkHand": {
+          "frame": {
+            "x": 77,
+            "y": 194,
+            "w": 253,
+            "h": 350
+          },
+          "pin": {
+            "x": 201.0,
+            "y": 206
+          },
+          "scale": 0.11
+        }
+      },
+      "skin-2": {
+        "upper": {
+          "frame": {
+            "x": 357,
+            "y": 77,
+            "w": 95,
+            "h": 260
+          },
+          "pin": {
+            "x": 404.5,
+            "y": 124.5
+          },
+          "elbowY": 309
+        },
+        "fore": {
+          "frame": {
+            "x": 362,
+            "y": 395,
+            "w": 83,
+            "h": 262
+          },
+          "pin": {
+            "x": 403.5,
+            "y": 436
+          },
+          "wristY": 643
+        },
+        "hand": {
+          "frame": {
+            "x": 315,
+            "y": 726,
+            "w": 161,
+            "h": 225
+          },
+          "pin": {
+            "x": 403.55,
+            "y": 736
+          },
+          "scale": 0.22
+        },
+        "thinkHand": {
+          "frame": {
+            "x": 430,
+            "y": 194,
+            "w": 253,
+            "h": 349
+          },
+          "pin": {
+            "x": 554.0,
+            "y": 206
+          },
+          "scale": 0.11
+        }
+      },
+      "skin-3": {
+        "upper": {
+          "frame": {
+            "x": 599,
+            "y": 77,
+            "w": 95,
+            "h": 260
+          },
+          "pin": {
+            "x": 646.5,
+            "y": 124.5
+          },
+          "elbowY": 309
+        },
+        "fore": {
+          "frame": {
+            "x": 603,
+            "y": 395,
+            "w": 83,
+            "h": 262
+          },
+          "pin": {
+            "x": 644.5,
+            "y": 436
+          },
+          "wristY": 643
+        },
+        "hand": {
+          "frame": {
+            "x": 556,
+            "y": 726,
+            "w": 162,
+            "h": 225
+          },
+          "pin": {
+            "x": 645.1,
+            "y": 736
+          },
+          "scale": 0.22
+        },
+        "thinkHand": {
+          "frame": {
+            "x": 783,
+            "y": 194,
+            "w": 253,
+            "h": 349
+          },
+          "pin": {
+            "x": 907.0,
+            "y": 206
+          },
+          "scale": 0.11
+        }
+      },
+      "skin-4": {
+        "upper": {
+          "frame": {
+            "x": 840,
+            "y": 77,
+            "w": 95,
+            "h": 260
+          },
+          "pin": {
+            "x": 887.5,
+            "y": 124.5
+          },
+          "elbowY": 309
+        },
+        "fore": {
+          "frame": {
+            "x": 845,
+            "y": 395,
+            "w": 83,
+            "h": 262
+          },
+          "pin": {
+            "x": 886.5,
+            "y": 436
+          },
+          "wristY": 643
+        },
+        "hand": {
+          "frame": {
+            "x": 798,
+            "y": 726,
+            "w": 162,
+            "h": 225
+          },
+          "pin": {
+            "x": 887.1,
+            "y": 736
+          },
+          "scale": 0.22
+        },
+        "thinkHand": {
+          "frame": {
+            "x": 1136,
+            "y": 194,
+            "w": 254,
+            "h": 349
+          },
+          "pin": {
+            "x": 1261.0,
+            "y": 206
+          },
+          "scale": 0.11
+        }
+      },
+      "skin-5": {
+        "upper": {
+          "frame": {
+            "x": 1083,
+            "y": 77,
+            "w": 95,
+            "h": 260
+          },
+          "pin": {
+            "x": 1130.5,
+            "y": 124.5
+          },
+          "elbowY": 309
+        },
+        "fore": {
+          "frame": {
+            "x": 1087,
+            "y": 395,
+            "w": 83,
+            "h": 262
+          },
+          "pin": {
+            "x": 1128.5,
+            "y": 436
+          },
+          "wristY": 643
+        },
+        "hand": {
+          "frame": {
+            "x": 1040,
+            "y": 726,
+            "w": 162,
+            "h": 225
+          },
+          "pin": {
+            "x": 1129.1,
+            "y": 736
+          },
+          "scale": 0.22
+        },
+        "thinkHand": {
+          "frame": {
+            "x": 1489,
+            "y": 194,
+            "w": 254,
+            "h": 349
+          },
+          "pin": {
+            "x": 1614.0,
+            "y": 206
+          },
+          "scale": 0.11
+        }
+      },
+      "skin-6": {
+        "upper": {
+          "frame": {
+            "x": 1325,
+            "y": 77,
+            "w": 95,
+            "h": 260
+          },
+          "pin": {
+            "x": 1372.5,
+            "y": 124.5
+          },
+          "elbowY": 309
+        },
+        "fore": {
+          "frame": {
+            "x": 1330,
+            "y": 395,
+            "w": 83,
+            "h": 262
+          },
+          "pin": {
+            "x": 1371.5,
+            "y": 436
+          },
+          "wristY": 643
+        },
+        "hand": {
+          "frame": {
+            "x": 1282,
+            "y": 726,
+            "w": 163,
+            "h": 225
+          },
+          "pin": {
+            "x": 1371.65,
+            "y": 736
+          },
+          "scale": 0.22
+        },
+        "thinkHand": {
+          "frame": {
+            "x": 1842,
+            "y": 193,
+            "w": 254,
+            "h": 349
+          },
+          "pin": {
+            "x": 1967.0,
+            "y": 205
+          },
+          "scale": 0.11
+        }
+      }
+    }
+  },
+  "think": {
+    "src": "assets/art/avatar-approved-flat-think-v1.png",
+    "atlas": {
+      "width": 2172,
+      "height": 724
+    }
+  },
+  "registration": {
+    "upperLength": 52,
+    "foreLength": 56,
+    "rightShoulder": {
+      "x": 222,
+      "y": 258
+    },
+    "leftShoulder": {
+      "x": 98,
+      "y": 258
+    }
+  },
+  "avatar": {
+    "skin": [
+      {
+        "id": "skin-1",
+        "label": "Porcelain",
+        "group": "skin",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 81,
+          "y": 18,
+          "w": 164,
+          "h": 295
+        },
+        "position": {
+          "x": 0.2,
+          "y": 0.04,
+          "w": 0.6,
+          "h": 0.94,
+          "z": 1
+        }
+      },
+      {
+        "id": "skin-2",
+        "label": "Peach",
+        "group": "skin",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 325,
+          "y": 18,
+          "w": 163,
+          "h": 295
+        },
+        "position": {
+          "x": 0.2,
+          "y": 0.04,
+          "w": 0.6,
+          "h": 0.94,
+          "z": 1
+        }
+      },
+      {
+        "id": "skin-3",
+        "label": "Honey",
+        "group": "skin",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 567,
+          "y": 18,
+          "w": 164,
+          "h": 296
+        },
+        "position": {
+          "x": 0.2,
+          "y": 0.04,
+          "w": 0.6,
+          "h": 0.94,
+          "z": 1
+        }
+      },
+      {
+        "id": "skin-4",
+        "label": "Caramel",
+        "group": "skin",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 809,
+          "y": 18,
+          "w": 163,
+          "h": 296
+        },
+        "position": {
+          "x": 0.2,
+          "y": 0.04,
+          "w": 0.6,
+          "h": 0.94,
+          "z": 1
+        }
+      },
+      {
+        "id": "skin-5",
+        "label": "Chestnut",
+        "group": "skin",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 1051,
+          "y": 18,
+          "w": 162,
+          "h": 296
+        },
+        "position": {
+          "x": 0.2,
+          "y": 0.04,
+          "w": 0.6,
+          "h": 0.94,
+          "z": 1
+        }
+      },
+      {
+        "id": "skin-6",
+        "label": "Deep brown",
+        "group": "skin",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 1293,
+          "y": 18,
+          "w": 163,
+          "h": 296
+        },
+        "position": {
+          "x": 0.2,
+          "y": 0.04,
+          "w": 0.6,
+          "h": 0.94,
+          "z": 1
+        }
+      }
+    ],
+    "outfit": [
+      {
+        "id": "outfit-1",
+        "label": "Magenta hoodie",
+        "group": "outfit",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 69,
+          "y": 351,
+          "w": 187,
+          "h": 281
+        },
+        "position": {
+          "x": 0.16,
+          "y": 0.39,
+          "w": 0.68,
+          "h": 0.6,
+          "z": 2
+        }
+      },
+      {
+        "id": "outfit-2",
+        "label": "Teal summer",
+        "group": "outfit",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 332,
+          "y": 365,
+          "w": 151,
+          "h": 268
+        },
+        "position": {
+          "x": 0.16,
+          "y": 0.39,
+          "w": 0.68,
+          "h": 0.6,
+          "z": 2
+        }
+      },
+      {
+        "id": "outfit-3",
+        "label": "Explorer jacket",
+        "group": "outfit",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 555,
+          "y": 358,
+          "w": 190,
+          "h": 275
+        },
+        "position": {
+          "x": 0.16,
+          "y": 0.39,
+          "w": 0.68,
+          "h": 0.6,
+          "z": 2
+        }
+      },
+      {
+        "id": "outfit-4",
+        "label": "Orange sweater",
+        "group": "outfit",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 796,
+          "y": 364,
+          "w": 185,
+          "h": 268
+        },
+        "position": {
+          "x": 0.16,
+          "y": 0.39,
+          "w": 0.68,
+          "h": 0.6,
+          "z": 2
+        }
+      },
+      {
+        "id": "outfit-5",
+        "label": "Teal overalls",
+        "group": "outfit",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 1055,
+          "y": 362,
+          "w": 153,
+          "h": 271
+        },
+        "position": {
+          "x": 0.16,
+          "y": 0.39,
+          "w": 0.68,
+          "h": 0.6,
+          "z": 2
+        }
+      },
+      {
+        "id": "outfit-6",
+        "label": "Magenta cardigan",
+        "group": "outfit",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 1282,
+          "y": 365,
+          "w": 187,
+          "h": 268
+        },
+        "position": {
+          "x": 0.16,
+          "y": 0.39,
+          "w": 0.68,
+          "h": 0.6,
+          "z": 2
+        }
+      }
+    ],
+    "hair": [
+      {
+        "id": "hair-1",
+        "label": "Side part",
+        "group": "hair",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 87,
+          "y": 684,
+          "w": 160,
+          "h": 110
+        },
+        "position": {
+          "x": 0.28,
+          "y": 0.025,
+          "w": 0.44,
+          "h": 0.3,
+          "z": 4
+        }
+      },
+      {
+        "id": "hair-2",
+        "label": "Short curls",
+        "group": "hair",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 324,
+          "y": 681,
+          "w": 164,
+          "h": 110
+        },
+        "position": {
+          "x": 0.28,
+          "y": 0.025,
+          "w": 0.44,
+          "h": 0.3,
+          "z": 4
+        }
+      },
+      {
+        "id": "hair-3",
+        "label": "Long straight",
+        "group": "hair",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 563,
+          "y": 687,
+          "w": 172,
+          "h": 162
+        },
+        "position": {
+          "x": 0.28,
+          "y": 0.025,
+          "w": 0.44,
+          "h": 0.3,
+          "z": 4
+        }
+      },
+      {
+        "id": "hair-4",
+        "label": "Twin puffs",
+        "group": "hair",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 792,
+          "y": 683,
+          "w": 195,
+          "h": 114
+        },
+        "position": {
+          "x": 0.28,
+          "y": 0.025,
+          "w": 0.44,
+          "h": 0.3,
+          "z": 4
+        }
+      },
+      {
+        "id": "hair-5",
+        "label": "Blonde bob",
+        "group": "hair",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 1043,
+          "y": 694,
+          "w": 167,
+          "h": 144
+        },
+        "position": {
+          "x": 0.28,
+          "y": 0.025,
+          "w": 0.44,
+          "h": 0.3,
+          "z": 4
+        }
+      },
+      {
+        "id": "hair-6",
+        "label": "Soft waves",
+        "group": "hair",
+        "src": "assets/art/avatar-approved-flat-kit-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 1268,
+          "y": 684,
+          "w": 206,
+          "h": 165
+        },
+        "position": {
+          "x": 0.25264248704663217,
+          "y": 0.02282876881322477,
+          "w": 0.46963730569948187,
+          "h": 0.3,
+          "z": 4
+        }
+      },
+      {
+        "id": "none",
+        "label": "No hair",
+        "group": "hair"
+      }
+    ],
+    "accessory": [
+      {
+        "id": "none",
+        "label": "No extra",
+        "group": "accessory"
+      },
+      {
+        "id": "accessory-1",
+        "label": "Round glasses",
+        "group": "accessory",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 103,
+          "y": 908,
+          "w": 120,
+          "h": 50
+        },
+        "position": {
+          "x": 0.32,
+          "y": 0.16,
+          "w": 0.36,
+          "h": 0.1,
+          "z": 5
+        }
+      },
+      {
+        "id": "accessory-2",
+        "label": "Orange cap",
+        "group": "accessory",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 337,
+          "y": 870,
+          "w": 137,
+          "h": 83
+        },
+        "position": {
+          "x": 0.27,
+          "y": 0.015,
+          "w": 0.46,
+          "h": 0.19,
+          "z": 6
+        }
+      },
+      {
+        "id": "accessory-3",
+        "label": "Teal headphones",
+        "group": "accessory",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 568,
+          "y": 877,
+          "w": 161,
+          "h": 103
+        },
+        "position": {
+          "x": 0.26,
+          "y": 0.09,
+          "w": 0.48,
+          "h": 0.24,
+          "z": 6
+        }
+      },
+      {
+        "id": "accessory-4",
+        "label": "Pico satchel",
+        "group": "accessory",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 822,
+          "y": 878,
+          "w": 114,
+          "h": 132
+        },
+        "position": {
+          "x": 0.33,
+          "y": 0.35,
+          "w": 0.42,
+          "h": 0.39,
+          "z": 5
+        }
+      },
+      {
+        "id": "accessory-5",
+        "label": "Orange scarf",
+        "group": "accessory",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 1064,
+          "y": 891,
+          "w": 126,
+          "h": 116
+        },
+        "position": {
+          "x": 0.36,
+          "y": 0.28,
+          "w": 0.3,
+          "h": 0.28,
+          "z": 5
+        }
+      },
+      {
+        "id": "accessory-6",
+        "label": "Navy backpack",
+        "group": "accessory",
+        "src": "assets/art/avatar-approved-flat-kit-v1.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 1300,
+          "y": 883,
+          "w": 143,
+          "h": 110
+        },
+        "position": {
+          "x": 0.22,
+          "y": 0.32,
+          "w": 0.56,
+          "h": 0.48,
+          "z": 0
+        }
+      }
+    ]
+  },
+  "style": "Original approved b751527 avatar silhouettes, crop geometry and registration; native ImageGen flat color rendering only."
+}

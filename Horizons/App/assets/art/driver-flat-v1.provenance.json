@@ -1,0 +1,9 @@
+{
+  "generator": "built-in image_gen",
+  "mode": "fresh generation with supplied flat style reference",
+  "source": "assets/art/driver-flat-v1.png",
+  "prompt": "Use case: illustration-story. Make a NEW flat opaque solid-color transparent sprite-part sheet for a friendly learning-app driver. The reference is the intended strictly FLAT graphic illustration style. Two independent objects, one above the other, with ample transparent gutters. Upper half: a front-facing perfectly round navy steering wheel ring with three simple solid navy spokes and a flat orange circular center hub. Lower half: a wide flat navy vehicle dashboard silhouette, a pale cream gauge panel with two simple orange needle gauges and dark navy tick marks, three small circular orange/cream buttons and a solid teal rectangular display. Palette only navy #173D58, orange #FF8A19, teal #00999C and cream #FFE7CF. This must look like clean geometric cut-paper vector art. Every color region uniform and opaque. NO SHADOWS, NO SHADING, NO GRADIENTS, NO HIGHLIGHTS, NO beveled edges, NO gloss, NO texture, NO glow, NO dimension or lighting. Do not render plastic or any real material. No background, no person, no hands, no vehicle body or text. Genuine transparent alpha outside both silhouettes. Square-ish steering-wheel object centered in upper half; separate wide dashboard centered in lower quarter. Keep everything fully inside canvas.",
+  "notes": [
+    "Native PNG bytes retained. Transparent preview RGB outside opaque shapes contains hidden color; actual browser on white inspected with no visible glow or shadows."
+  ]
+}

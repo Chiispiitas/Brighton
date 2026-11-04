@@ -1,0 +1,21 @@
+{
+  "tool": "built-in image_gen.imagegen",
+  "designReferenceCommit": "b751527",
+  "retainedGeometry": "Original approved face proportions, eyebrows, ears, hairstyle contours, outfit silhouettes, native rectangles, display positioning and shoulder/elbow/wrist registration. New files are native shading-only edits.",
+  "outputs": [
+    {
+      "path": "C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/App/assets/art/avatar-approved-flat-kit-v2.png",
+      "source": "C:/Users/David/.codex/generated_images/01a1a7c3-0b03-74d2-9a57-a8a7531392d4/exec-cdb65e5d-86f8-4cc0-ac64-de21db46d4a9.png",
+      "usedOnlyFor": "hair-6 native face opening; all other atlas rectangles remain on selectedv1",
+      "prompt": "Precise object edit. Image1 is the selected FLAT avatar customization atlas edit target,1536x1024. Image2 is the ORIGINAL approved version for exact hair silhouette/alpha reference. Change ONLY the sixth hairstyle cutout in row3 (reddish-brown wavy bob, bounding area x1280..1472 y680..823). The current flat copy accidentally filled the face opening; restore the ORIGINAL transparent face opening from Image2 exactly. Hair must be a cutout frame around the face, with completely transparent central face area. Keep the original wavy outer hair contour and fringe. Keep the existing selected flat reddish-brown uniform color. Do NOT make a filled red blob or a solid head silhouette. Do not add a face to the hairpiece; center must be alpha transparent. Keep every other subject, face, hairstyle, clothing item, all positions/sizes and canvas unchanged. No shadows, gradients, highlights, volume or texture. Transparent background and preserve all other transparency."
+    },
+    {
+      "path": "C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/App/assets/art/avatar-approved-flat-blink-v2.png",
+      "source": "C:/Users/David/.codex/generated_images/01a1a7c3-0b03-74d2-9a57-a8a7531392d4/exec-31a15013-87eb-4056-a5b9-42b098be9b2e.png",
+      "usedOnlyFor": "Native closed-eye small patches; entire head silhouette never swaps.",
+      "prompt": "Precise tiny-feature edit on selected approved flat avatar atlas. In ONLY the six bald faces in top row, replace each open black oval eye with a short black closed smiling-eye curve at exactly the same eye center. Keep the eyebrows separate and unchanged. Change nothing else. All head/face shapes, every skin RGB/color and lighting, nose, mouth, body, hairstyle, clothing, accessory, sizes, position, canvas1536x1024 and alpha must remain as in this selected flat input. Especially do NOT recolor the skin around the eye; closed-eye patches need to match the selected input face color exactly. Do not add outlines, shadows or texture. Preserve the approved original avatar design."
+    }
+  ],
+  "sourceProvenance": "avatar-approved-flat-v1.provenance.json",
+  "pixelProcessing": "Generated native output bytes copied unchanged. No procedural pixel painting or vector replacements."
+}

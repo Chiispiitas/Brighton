@@ -1,0 +1,165 @@
+{
+  "date": "2026-11-04T19:25:43.488733+00:00",
+  "status": "PASS",
+  "pass": true,
+  "designReferenceCommit": "b751527",
+  "scope": "Original approved avatar geometry, face proportions, eyebrows, ears, hair and clothing identity retained. Only native flat material rendering and two short wave bursts with a rest interval.",
+  "sourceHashes": {
+    "src/avatar-rig.js": "f3856ba00bc78c1624c9c257c5f554d8159e182c17ce0441b517d8c8dc79576f",
+    "assets/art/avatar-approved-flat-v1.frames.json": "97cb2078e52d754c34298e790c98776f4c1ade6b09b14d51276cf16bf52b7e68",
+    "assets/art/avatar-approved-flat-blink-v1.png": "13b807afc72b8fe4a3c9b8d526af441566898499716c7ccbb47e7843d4bf9d99",
+    "assets/art/avatar-approved-flat-blink-v2.png": "6265213d670e840e32ba1ed789acaec11862c12f32429c8f99029467b1fb420b",
+    "assets/art/avatar-approved-flat-core-v1.png": "4a6552111bf65f9140b2565c3689f430595cd44c6a4799edab26228777aace0f",
+    "assets/art/avatar-approved-flat-jacket-v1.png": "48c5245d0545d7302b48cfd8c5d9dd0b742be43dd1f7b057aecef04f3c7cdabf",
+    "assets/art/avatar-approved-flat-kit-v1.png": "c57a104c53cdb46fb62b91bd58c2e964670f65fd1d0cd87393061b4f5f01b9d0",
+    "assets/art/avatar-approved-flat-kit-v2.png": "ade6e895de56d0ac15f0481a515c08603cbc9abcb9d88dcfed98d30024ad9824",
+    "assets/art/avatar-approved-flat-skin-v1.png": "cfdf74f09a9e1b69e5f6cb9ed553a22b2879b35de934ff9fa85a809af2b22524",
+    "assets/art/avatar-approved-flat-sleeves-v1.png": "6a545ecc462a5e65c9984b97c82858095a64091476f256306eb4ca2f4f5fc9b8",
+    "assets/art/avatar-approved-flat-think-v1.png": "32aed82ad1f16a65bc365e98fe412133abde41475d6e43378ecb0b436cf2aec7"
+  },
+  "coverage": {
+    "baseLoopPaintedViews": 864,
+    "accessoryActionPaintedViews": 504,
+    "closedEyePaintedViews": 18,
+    "totalApprovedPaintedViews": 1386,
+    "denseNativeAlphaPhaseChecks": 52920,
+    "denseCheckStepMilliseconds": 20,
+    "skinOutfitCombinations": 36,
+    "postures": 3,
+    "moods": 2
+  },
+  "approvedSheets": [
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\avatar-approved-flat-final\\contact-00.png",
+      "sha256": "fc63eac3ead5f9f2980aff964c5fd009b184d506e4055bba0a216114df14680b",
+      "paintedViews": 72,
+      "verdict": "pass"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\avatar-approved-flat-final\\contact-01.png",
+      "sha256": "b357582e109286caacc55d2fb231f904e48d1addd3893d35ee1b0b223508332a",
+      "paintedViews": 72,
+      "verdict": "pass"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\avatar-approved-flat-final\\contact-02.png",
+      "sha256": "880d89379783779165a0e544efc4b77d3245ae565b6bef4bcfea5743503c9009",
+      "paintedViews": 72,
+      "verdict": "pass"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\avatar-approved-flat-final\\contact-03.png",
+      "sha256": "ffca2beaab7a23e7b558ee086f41bfaa1bb82c114165b1b67d9f1bbad7baae8b",
+      "paintedViews": 72,
+      "verdict": "pass"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\avatar-approved-flat-final\\contact-04.png",
+      "sha256": "89d59b78ab7e1b49f34e556e0e74a63606d13f0fb189edef2d38434be09b4f9b",
+      "paintedViews": 72,
+      "verdict": "pass"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\avatar-approved-flat-final\\contact-05.png",
+      "sha256": "add1fd27472ea16f74771186f0e2bb24dd225fe128439fb49b30342be0cd9150",
+      "paintedViews": 72,
+      "verdict": "pass"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\avatar-approved-flat-final\\contact-06.png",
+      "sha256": "e441c8af5fd2b9f36dec6fc3c1ca8a324ff4deb5a5f64410699fb8364cadb5b0",
+      "paintedViews": 72,
+      "verdict": "pass"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\avatar-approved-flat-final\\contact-07.png",
+      "sha256": "3c2fa2eb20271d141cb596de2600d1eaa292504bc86147f5f35d4bfd5c715bab",
+      "paintedViews": 72,
+      "verdict": "pass"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\avatar-approved-flat-final\\contact-08.png",
+      "sha256": "9f4fde3f2803c865b459ba985aaff54663a0e509feaea00ea565103bbdee5da3",
+      "paintedViews": 72,
+      "verdict": "pass"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\avatar-approved-flat-final\\contact-09.png",
+      "sha256": "4091d88373f4a7d1e7b9cf3613600bf815bbf2d219675dd3322cd75292bf66e7",
+      "paintedViews": 72,
+      "verdict": "pass"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\avatar-approved-flat-final\\contact-10.png",
+      "sha256": "9dd7e2ef826268e70dd9d081f6aac86b0c28cae971bb5128986624e0d55f80e6",
+      "paintedViews": 72,
+      "verdict": "pass"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\avatar-approved-flat-final\\contact-11.png",
+      "sha256": "4670a691f3c073e5952930508d9e9d7a3a2a4e0c1741afdc597ac72f6b7c27a4",
+      "paintedViews": 72,
+      "verdict": "pass"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\avatar-approved-flat-accessories\\contact-wave-0.png",
+      "sha256": "29c7d4e295c654208c7143046f433f27169ea74c28f6aa7c79856c96c5e53e58",
+      "paintedViews": 84,
+      "verdict": "pass"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\avatar-approved-flat-accessories\\contact-wave-1.png",
+      "sha256": "fbde2b21d91657944b4afb0dce95c2747739dd95e08eaeacdf5ed5ddc6a4fd70",
+      "paintedViews": 84,
+      "verdict": "pass"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\avatar-approved-flat-accessories\\contact-wave-2.png",
+      "sha256": "26dec193ed32e2d62e783be30b8d1a36f87fc4bebf9b2f86fed1660bdec95438",
+      "paintedViews": 84,
+      "verdict": "pass"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\avatar-approved-flat-accessories\\contact-celebrate-0.png",
+      "sha256": "5f06e621330e9c9cdbff4f19dd399cbe1a97d8a645750e10343792852f012dab",
+      "paintedViews": 84,
+      "verdict": "pass"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\avatar-approved-flat-accessories\\contact-celebrate-1.png",
+      "sha256": "7edb70506cd5f61c48f6c99617a5416c427a5704d428971a90fefcd11554957c",
+      "paintedViews": 84,
+      "verdict": "pass"
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\avatar-approved-flat-accessories\\contact-celebrate-2.png",
+      "sha256": "d095e14a7c9dc9f15d343b76b731caf2f6c4bfcf19437aa4a24ace9a71482602",
+      "paintedViews": 84,
+      "verdict": "pass"
+    }
+  ],
+  "closedEyes": {
+    "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\avatar-approved-flat-final\\all-outfits-eyes-closed.png",
+    "sha256": "1d0439924b9ccf7b6897396d9fac4e625bb86a526a4d01b40547f67e44030cc5",
+    "paintedViews": 18,
+    "verdict": "pass"
+  },
+  "observations": [
+    "Original oval-face design and recognizable native hair/outfit proportions restored.",
+    "All six hair face openings are transparent in the active crops.",
+    "Native closed eyes overlay only the eyes; head contour does not swap.",
+    "No detached sleeve/skin/hand joints or fingertip crops in the finite approved phases.",
+    "No cast, ground or volume-shadow shapes in the inspected sprite artwork."
+  ],
+  "limits": [
+    "Finite sampled painted views and automated alpha sweep do not guarantee perfection at every possible animation time.",
+    "Manual phase review covers six matching skin/outfit sets; all36skin/outfit combinations are swept numerically.",
+    "Native ImageGen raster artwork has minor color variation and antialiasing; no code-based pixel repaint was used.",
+    "Actual unseeked lifecycle approval is recorded separately by the independent reviewer."
+  ],
+  "rejectedDesignArchive": "C:/Users/David/Documents/Codex/2026-11-04/horizons-rejected-round-avatars",
+  "provenance": [
+    "assets/art/avatar-approved-flat-v1.provenance.json",
+    "assets/art/avatar-approved-flat-v2.provenance.json"
+  ]
+}

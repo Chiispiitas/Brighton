@@ -1,0 +1,34 @@
+{
+  "src": "assets/art/driver-flat-v1.png",
+  "atlas": {
+    "width": 1536,
+    "height": 1024
+  },
+  "parts": {
+    "wheel": {
+      "frame": {
+        "x": 482,
+        "y": 29,
+        "w": 569,
+        "h": 579
+      },
+      "pin": {
+        "x": 766.5,
+        "y": 318.5
+      }
+    },
+    "dashboard": {
+      "frame": {
+        "x": 123,
+        "y": 670,
+        "w": 1286,
+        "h": 327
+      },
+      "pin": {
+        "x": 768,
+        "y": 833.5
+      }
+    }
+  },
+  "sha256": "5e943b749010ca7820c97875b83e74f5a300fd42747f0d0228deeeee95c3145b"
+}

@@ -8,7 +8,7 @@ const illustratedMotion=new Map();
 const sourceBase = new URL('../assets/art/', import.meta.url);
 export async function loadArt() {
   installRasterFit();
-  try { const response = await fetch(new URL('manifest.json?articulation=2', sourceBase),{cache:'no-cache'}); if (response.ok) { manifest = await response.json(); manifest.characters = manifest.characters || manifest.companions || {}; } }
+  try { const response = await fetch(new URL('manifest.json?flat=1', sourceBase),{cache:'no-cache'}); if (response.ok) { manifest = await response.json(); manifest.characters = manifest.characters || manifest.companions || {}; } }
   catch { /* The app remains usable while artwork is loading or unavailable offline. */ }
   return manifest;
 }
@@ -21,7 +21,7 @@ function installRasterFit(){
   const style=document.createElement('style');style.id='hzn-raster-fit';style.textContent='.raster-frame[data-raster-slot]{overflow:hidden;flex-shrink:0}.raster-frame>.raster-fit{position:absolute!important;display:block!important;left:50%!important;top:50%!important;transform:translate(-50%,-50%)!important;max-width:none!important;max-height:none!important;overflow:hidden}.raster-fit>img{position:absolute!important;display:block;max-width:none!important;max-height:none!important;object-fit:fill!important}.raster-frame[data-raster-slot]>img{display:none}';document.head.append(style);
   const fit=slot=>{const inner=slot.querySelector(':scope>.raster-fit');if(!inner)return;const w=Number(slot.dataset.nativeWidth),h=Number(slot.dataset.nativeHeight),rect=slot.getBoundingClientRect();if(!w||!h||!rect.width||!rect.height)return;const scale=Math.min(rect.width/w,rect.height/h);inner.style.width=w*scale+'px';inner.style.height=h*scale+'px';};
   rasterObserver=new ResizeObserver(entries=>entries.forEach(entry=>fit(entry.target)));
-  const animate=slot=>{illustratedMotion.get(slot)?.cancel();illustratedMotion.delete(slot);if(!slot.dataset.illustrationMotion||matchMedia('(prefers-reduced-motion:reduce)').matches)return;const spec=JSON.parse(slot.dataset.illustrationMotion),image=slot.querySelector('.raster-fit>img');if(!image)return;const times=[0,.38,.57,.76,1],frames=[...spec.frames,spec.frames[0]];const animation=image.animate(frames.map((b,i)=>({left:-b.x/b.w*100+'%',top:-b.y/b.h*100+'%',offset:times[i],easing:'steps(1,end)'})),{duration:spec.duration,iterations:Infinity,easing:'linear'});illustratedMotion.set(slot,animation);};
+  const animate=slot=>{illustratedMotion.get(slot)?.cancel();illustratedMotion.delete(slot);if(!slot.dataset.illustrationMotion||matchMedia('(prefers-reduced-motion:reduce)').matches)return;const spec=JSON.parse(slot.dataset.illustrationMotion),image=slot.querySelector('.raster-fit>img');if(!image)return;const order=[0,1,2,3,2,1,0,0],times=[0,.14,.28,.44,.59,.73,.86,1],frames=order.map(index=>spec.frames[index]);const animation=image.animate(frames.map((b,i)=>({left:-b.x/b.w*100+'%',top:-b.y/b.h*100+'%',offset:times[i],easing:'steps(1,end)'})),{duration:spec.duration,iterations:Infinity,easing:'linear'});illustratedMotion.set(slot,animation);};
   const register=node=>{if(node.nodeType!==1)return;for(const slot of[node,...node.querySelectorAll('[data-raster-slot]')])if(slot.matches?.('[data-raster-slot]')){rasterObserver.observe(slot);fit(slot);if(slot.dataset.illustrationMotion&&!illustratedMotion.has(slot))animate(slot);}};
   const unregister=node=>{if(node.nodeType!==1)return;for(const slot of[node,...node.querySelectorAll('[data-raster-slot]')])if(slot.matches?.('[data-raster-slot]')){rasterObserver.unobserve(slot);illustratedMotion.get(slot)?.cancel();illustratedMotion.delete(slot);}};
   matchMedia('(prefers-reduced-motion:reduce)').addEventListener('change',()=>document.querySelectorAll('[data-illustration-motion]').forEach(animate));
@@ -82,12 +82,12 @@ export function avatarMarkup(avatar = {}, cls = '', name = 'Your avatar') {
 }
 export function refreshCharacterMotion(container = document) {
   for(const slot of container.querySelectorAll('[data-cast-articulated]')){
-    import('./cast-rig.js?v=articulation2').then(module=>{castModule=module;if(slot.isConnected)module.mountCast(slot,{character:slot.dataset.castCharacter,posture:slot.dataset.rigPosture,mood:slot.dataset.rigMood});});
+    import('./cast-rig.js?v=flat1').then(module=>{castModule=module;if(slot.isConnected)module.mountCast(slot,{character:slot.dataset.castCharacter,posture:slot.dataset.rigPosture,mood:slot.dataset.rigMood});});
   }
   for(const slot of container.querySelectorAll('[data-pico-articulated]')){
-    import('./pico-articulated.js?v=articulation2').then(module=>{picoArticulatedModule=module;if(slot.isConnected)module.mountPico(slot,{posture:slot.dataset.rigPosture,mood:slot.dataset.rigMood});});
+    import('./pico-articulated.js?v=flat1').then(module=>{picoArticulatedModule=module;if(slot.isConnected)module.mountPico(slot,{posture:slot.dataset.rigPosture,mood:slot.dataset.rigMood});});
   }
   for(const slot of container.querySelectorAll('[data-avatar-rig]')){
-    import('./avatar-rig.js?v=articulation2').then(module=>{avatarModule=module;if(slot.isConnected)module.mountAvatar(slot,{avatar:JSON.parse(slot.dataset.avatar||'{}'),manifest,mood:'idle',posture:slot.dataset.avatarPosture||'portrait'});});
+    import('./avatar-rig.js?v=flat1').then(module=>{avatarModule=module;if(slot.isConnected)module.mountAvatar(slot,{avatar:JSON.parse(slot.dataset.avatar||'{}'),manifest,mood:'idle',posture:slot.dataset.avatarPosture||'portrait'});});
   }
 }

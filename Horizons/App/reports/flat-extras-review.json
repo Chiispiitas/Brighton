@@ -1,0 +1,516 @@
+{
+  "date": "2026-11-04T18:54:45.310Z",
+  "base": "http://127.0.0.1:8899/Horizons/App/",
+  "status": "PASS",
+  "pass": true,
+  "scope": "56 active job action slots (55distinct nativecells),16 generated UI icons and3 badge mappings; current manifest and actual rasterMarkup containment. Independent human art/rig QA is separate.",
+  "sources": {
+    "assets/art/manifest.json": "25ba117a8481c13027cf9bedf26d562b8f1b85635f32ee3adadc8602a5eaa0fd",
+    "src/art.js": "a72c00490e0dc401243d570ea055d52dd062f7a0d0a9de970c754f0e180f92fa",
+    "assets/art/jobs-flat-1-v1.png": "0628d8208e9e3f93835f4d34936c1c894d037a47704f65de8bb2faeac1cb123d",
+    "assets/art/jobs-flat-2-v1.png": "57ab83192e51cf0e6f0053ff7e781b1db63d59c9a4ae2da275ec02d3fd217852",
+    "assets/art/ui-flat-v1.png": "64b41643467c70456d4e39869f36dd8ef9f2fa40e70e9953946a8139a02252cd",
+    "assets/art/jobs-flat-v1.frames.json": "2345b903fe96cd8bf532b31b5158fa97474946f1f3705c9411205ead7748f224",
+    "assets/art/ui-flat-v1.frames.json": "4bf3d86ceebecd5972da7d975b762df14af01f3181b5033df3f5d02a02735056",
+    "assets/art/waitress-flat-v1.png": "ad2bbc259aef0cbe3c7b7242614f620d9d0d2583eaf42ae0f096d145ab29ea5e",
+    "assets/art/waitress-flat-v1.frames.json": "8fe89263d7f48c3c0c293883c5adbd19e55a19e94e509f576984416e2dc9ea72"
+  },
+  "screens": [
+    {
+      "id": "jobs-flat-1",
+      "cells": 28,
+      "images": [
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-1-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-1-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-1-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-1-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-1-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-1-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-1-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-1-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-1-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-1-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-1-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-1-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-1-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-1-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-1-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-1-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-1-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-1-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-1-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-1-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-1-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-1-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-1-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-1-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-1-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-1-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-1-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-1-v1.png",
+          "loaded": true,
+          "uniform": true
+        }
+      ],
+      "spriteStyles": [],
+      "width": 1060,
+      "scrollWidth": 1060,
+      "height": 2000,
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-flat-extras\\jobs-flat-1.png",
+      "sha256": "d2e5e7a3fae1a6cba37b3e1bd11d1bd2b7f700848d86674da94b0088d5e69cec",
+      "visualVerdict": "pass",
+      "observations": [
+        "All native shapes inspected on actual white browser canvas. No ground, cast or contact shadows; no volumetric dark edge bands.",
+        "Whole scene is contained without cropped heads, hands or feet. Every depicted hand belongs to the correct connected wrist/sleeve.",
+        "Flat color areas allow small native RGB noise from generation; no pixel recoloring or alpha modification was applied.",
+        "All four native action poses per job inspected in sequence, with coherent faces, hands and task props."
+      ],
+      "inheritedPaintedApproval": {
+        "fromReportDate": "2026-11-04T18:50:38.957Z",
+        "exactProofSha256": "d2e5e7a3fae1a6cba37b3e1bd11d1bd2b7f700848d86674da94b0088d5e69cec"
+      }
+    },
+    {
+      "id": "jobs-flat-2",
+      "cells": 28,
+      "images": [
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-2-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-2-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-2-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-2-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/waitress-flat-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/waitress-flat-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/waitress-flat-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/waitress-flat-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-2-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-2-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-2-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-2-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-2-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-2-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-2-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-2-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-2-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-2-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-2-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-2-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-2-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-2-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-2-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-2-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-2-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-2-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-2-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/jobs-flat-2-v1.png",
+          "loaded": true,
+          "uniform": true
+        }
+      ],
+      "spriteStyles": [],
+      "width": 1060,
+      "scrollWidth": 1060,
+      "height": 2000,
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-flat-extras\\jobs-flat-2.png",
+      "sha256": "13fcaa930e3da84cc9f5be33460b3c452c684e818baadaaadcaad0c8df7dacbc",
+      "visualVerdict": "pass",
+      "observations": [
+        "Corrected final white-browser gallery explicitly viewed. Four new waitress poses keep the cup/tray on the fixed supporting palm while the free arm changes pose.",
+        "Waiter end pose safely reuses connected third pose. The unsupported fourth native waiter pose is unused.",
+        "All active job bodies, task props and feet fit their cells; hands and sleeves remain attached."
+      ]
+    },
+    {
+      "id": "ui-flat",
+      "cells": 16,
+      "images": [
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/ui-flat-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/ui-flat-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/ui-flat-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/ui-flat-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/ui-flat-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/ui-flat-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/ui-flat-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/ui-flat-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/ui-flat-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/ui-flat-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/ui-flat-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/ui-flat-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/ui-flat-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/ui-flat-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/ui-flat-v1.png",
+          "loaded": true,
+          "uniform": true
+        },
+        {
+          "src": "http://127.0.0.1:8899/Horizons/App/assets/art/ui-flat-v1.png",
+          "loaded": true,
+          "uniform": true
+        }
+      ],
+      "spriteStyles": [],
+      "width": 1060,
+      "scrollWidth": 1060,
+      "height": 2000,
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-flat-extras\\ui-flat.png",
+      "sha256": "f0e219e55d3d025384f5c48b3727ca460411b64795f2d54e32e5d153e18d25e1",
+      "visualVerdict": "pass",
+      "observations": [
+        "All native shapes inspected on actual white browser canvas. No ground, cast or contact shadows; no volumetric dark edge bands.",
+        "Whole scene is contained without cropped heads, hands or feet. Every depicted hand belongs to the correct connected wrist/sleeve.",
+        "Flat color areas allow small native RGB noise from generation; no pixel recoloring or alpha modification was applied."
+      ],
+      "inheritedPaintedApproval": {
+        "fromReportDate": "2026-11-04T18:50:38.957Z",
+        "exactProofSha256": "f0e219e55d3d025384f5c48b3727ca460411b64795f2d54e32e5d153e18d25e1"
+      }
+    }
+  ],
+  "failures": [],
+  "runtimeErrors": [],
+  "consoleErrors": [],
+  "requests": [],
+  "limits": [
+    "Native sprite interiors and semantic limb actions require manual painted inspection; alpha/color counts alone cannot prove a flat finish.",
+    "No code recoloring, filtering, compositing or pixel repaint was used. The proof displays native ImageGen PNG bytes on a white browser canvas.",
+    "Finite native phase and layout review only; actual welcome/routes/callback motion is checked separately."
+  ],
+  "structuralPass": true,
+  "visualReview": {
+    "status": "PASS",
+    "reviewedAt": "2026-11-04T18:55:18.021984+00:00",
+    "renderedViews": 72,
+    "jobActionSlots": 56,
+    "uniqueActiveJobNativeCells": 55,
+    "uiIcons": 16,
+    "badgeMappings": 3,
+    "notes": "Safe duplicate waiter endpose counts as one renderedslot, not an extra distinct nativecell. Original waitress row and unsupported waiter cell remain unused."
+  },
+  "unusedSourceCells": [
+    {
+      "term": "waiter",
+      "src": "assets/art/jobs-flat-2-v1.png",
+      "frame": {
+        "x": 711,
+        "y": 0,
+        "w": 237,
+        "h": 236
+      },
+      "nativeColumn": 3,
+      "verdict": "rejected-unused",
+      "reason": "Tray/cup does not have a supporting hand in the fourth native pose.",
+      "replacement": {
+        "x": 474,
+        "y": 0,
+        "w": 237,
+        "h": 236
+      }
+    },
+    {
+      "term": "waitress",
+      "src": "assets/art/jobs-flat-2-v1.png",
+      "nativeColumn": 0,
+      "verdict": "unused-superseded",
+      "reason": "Entire oldrow superseded by native fourpose fixedtray-support waitress atlas."
+    },
+    {
+      "term": "waitress",
+      "src": "assets/art/jobs-flat-2-v1.png",
+      "nativeColumn": 1,
+      "verdict": "unused-superseded",
+      "reason": "Entire oldrow superseded by native fourpose fixedtray-support waitress atlas."
+    },
+    {
+      "term": "waitress",
+      "src": "assets/art/jobs-flat-2-v1.png",
+      "nativeColumn": 2,
+      "verdict": "unused-superseded",
+      "reason": "Entire oldrow superseded by native fourpose fixedtray-support waitress atlas."
+    },
+    {
+      "term": "waitress",
+      "src": "assets/art/jobs-flat-2-v1.png",
+      "nativeColumn": 3,
+      "verdict": "unused-superseded",
+      "reason": "Entire oldrow superseded by native fourpose fixedtray-support waitress atlas."
+    }
+  ],
+  "resolvedFindings": [
+    "Unsupported extreme waiter nativepose retired from active sequence.",
+    "Original waitress row replaced entirely by four coherent native fixedtray-support poses after close inspection found gaps in several source poses."
+  ]
+}

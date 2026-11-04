@@ -1,0 +1,7 @@
+{
+  "tool": "built-in image_gen",
+  "intent": "precise-object-edit",
+  "reference": "assets/art/alex-flat-v1.png",
+  "prompt": "Use case: precise-object-edit. Edit ONLY the four navy trouser pieces in this existing flat animation atlas. Positions row2columns3and4 and row3columns1and2. Make all knee joint ends ROUND semicircular capsule ends. The two upper thigh parts must have rounded semicircular BOTTOMS as well as tops; remove square flat-cut bottoms. The two lower leg+shoe pieces must have rounded semicircular TOPS rather than square flat-cut tops. Make thigh and calf navy shafts equally narrow so their silhouettes join smoothly when rotated at a knee, without sticking-out rectangle corners. Keep the cream shoes, their positions and all other pieces unchanged. Retain exact 4x3 layout, positions, heights, character face/identity, colors and genuine transparent background. Strictly flat solid colors, no shadows, no gradients, no highlights, no modelling, no texture, no outlines. No added objects, no labels. This is a production rigging correction for round knee ends only, not a redesign.",
+  "pixels": "Unmodified native generated PNG; round knee ends requested through ImageGen, not drawn or recolored in code."
+}

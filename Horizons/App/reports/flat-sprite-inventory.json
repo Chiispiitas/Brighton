@@ -1,0 +1,144 @@
+{
+  "date": "2026-11-04T18:15:46.850171+00:00",
+  "status": "SOURCE_INVENTORY_COMPLETE",
+  "scope": "Source inventory of live sprite consumers before flat-art replacement. Native image visual inspection, not a final approval of replacement artwork.",
+  "manifestSourcesByGroup": {
+    "version": {},
+    "pico": {
+      "assets/art/pico-rig-v2.png": 16
+    },
+    "companions": {
+      "assets/art/companions-v1.png": 9
+    },
+    "rigs": {
+      "assets/art/mina-rig-v1.png": 20,
+      "assets/art/alex-rig-v1.png": 20,
+      "assets/art/jo-rig-v1.png": 20
+    },
+    "postures": {
+      "assets/art/pico-postures-v1.png": 4,
+      "assets/art/mina-postures-v1.png": 4,
+      "assets/art/alex-postures-v1.png": 4,
+      "assets/art/jo-postures-v1.png": 4
+    },
+    "avatar": {
+      "assets/art/avatar-kit-v2.png": 24,
+      "assets/art/ui-objects-v1.png": 3
+    },
+    "scenes": {
+      "assets/art/town-v1.png": 1
+    },
+    "icons": {
+      "assets/art/ui-objects-v1.png": 16
+    },
+    "vocabulary": {
+      "assets/art/jobs-motion-1.png": 8,
+      "assets/art/jobs-motion-2.png": 8
+    }
+  },
+  "activeArt": {
+    "pico": [
+      "pico-articulated-v3.png"
+    ],
+    "cast": [
+      "mina-articulated-v3.png",
+      "mina-articulated-v4.png",
+      "alex-articulated-v3.png",
+      "alex-articulated-v4.png",
+      "jo-articulated-v3.png"
+    ],
+    "castSecondary": [
+      "mina-rig-v1.png (Mina map crop only)",
+      "pico-articulated-v3.png (Jo book crop only)",
+      "driver-props-v1.png (driver wheel/dashboard only)"
+    ],
+    "avatar": [
+      "avatar-kit-v2.png (heads, necks, hair, accessories, selector thumbnails)",
+      "avatar-blink-v1.png (eye strips)",
+      "avatar-clothed-kit-v1.png (torso cores)",
+      "avatar-clothed-kit-v2.png (sleeves)",
+      "avatar-clothed-jacket-v1.png (outfit3 torso)",
+      "avatar-clothed-skin-v1.png (arm/hand segments)",
+      "avatar-clothed-think-v1.png (chin hand)"
+    ],
+    "vocabulary": [
+      "jobs-motion-1.png",
+      "jobs-motion-2.png"
+    ],
+    "iconsRewards": [
+      "ui-objects-v1.png"
+    ],
+    "scene": [
+      "town-v1.png"
+    ]
+  },
+  "legacyInactive": [
+    "pico-rig-v2.png",
+    "companions-v1.png",
+    "mina/alex/jo-rig-v1.png except Mina map crop",
+    "pico/mina/alex/jo-postures-v1.png",
+    "avatar-gestures-v1.png",
+    "avatar-connected-arms-v2.png"
+  ],
+  "vocabularyExceptions": {
+    "student": "Mina articulated read vignette replaces whole-frame row",
+    "driver": "Alex articulated drive vignette replaces whole-frame row"
+  },
+  "visualFindings": [
+    {
+      "files": [
+        "jobs-motion-1.png",
+        "jobs-motion-2.png"
+      ],
+      "finding": "All native job rows use painted tonal lighting/shading. Replacement is required for strict flat sprite finish; row alignment and four distinct action phases must remain."
+    },
+    {
+      "files": [
+        "ui-objects-v1.png"
+      ],
+      "finding": "All16 generated icons and three avatar reward pins use gradients/highlights. Replace the active native atlas to keep icon and badge style consistent."
+    }
+  ],
+  "cssFindings": {
+    "spriteDropShadows": [],
+    "spriteFilters": [
+      "welcome-town img: saturate(.85)",
+      "topbar-metrics .generated-icon: saturate(.9)",
+      "locked avatar/reward: grayscale(1)"
+    ],
+    "nonSpriteShadows": [
+      "toast box-shadow",
+      "app-dialog box-shadow",
+      "mobile-nav box-shadow",
+      "avatar-option.selected inset bottom indicator"
+    ],
+    "rules": [
+      ".toast{position:fixed;left:50%;bottom:32px;transform:translate(-50%,30px);opacity:0;pointer-events:none;background:var(--ink);color:white;padding:15px 22px;border-radius:22px;max-width:min(90vw,560px);font-size:13px;line-height:1.6;text-align:center;z-index:100;transition:transform .25s,opacity .25s;box-shadow:0 12px 40px #173e5c20}",
+      "\n.app-dialog{border:0;border-radius:35px;background:var(--paper);color:var(--ink);max-width:min(520px,calc(100vw - 32px));width:520px;padding:32px;box-shadow:0 30px 100px #173e5c25;font-family:var(--font)}",
+      ".app-dialog::backdrop{background:#173e5c50;backdrop-filter:blur(5px)}",
+      ".mobile-nav{position:fixed;left:18px;right:18px;bottom:calc(13px + env(safe-area-inset-bottom));height:69px;background:#fffefaed;backdrop-filter:blur(18px);display:flex;align-items:center;justify-content:space-around;border-radius:25px;z-index:35;box-shadow:0 5px 35px #173e5c0b;padding:6px}",
+      ".welcome-town img{filter:saturate(.85)}",
+      ".topbar-metrics .generated-icon{filter:saturate(.9)}",
+      ".avatar-option.reward-locked .raster-frame{filter:grayscale(1)}",
+      ".avatar-option.selected{box-shadow:inset 0 -3px 0 #ad195a20}",
+      ".reward-pin{width:54px;height:54px;aspect-ratio:auto!important;filter:grayscale(1)}",
+      ".earned>.reward-pin{filter:none;animation:companion-breathe 5s ease-in-out infinite}"
+    ]
+  },
+  "efficientQA": {
+    "scope": "Use the app art/render controllers, not alternate vector characters. Finite painted-frame captures must remain source-bound to actually loaded PNGs.",
+    "recommended": [
+      "Keep complete native heads and uniform image scale.",
+      "Capture all distinct named postures36physical phases, then actual unseeked wave/celebrate entry/return.",
+      "Capture all six avatar outfits/skins at fixed shared physical phases; dense automated sweep all36combinations.",
+      "View all64 job frames in each native atlas, with semantic limb movement and consistent whole-scene framing.",
+      "Inspect painted flat-color finish manually at enlarged scale against white/cream background; alpha and color-count metrics alone cannot prove no shading.",
+      "Actual welcome at320,390,768,1440; routed graphics/sleeve callbacks and existing-cache upgrade once final artwork is integrated."
+    ]
+  },
+  "limits": [
+    "Manifest contains inactive historical sheets; consumer tracing is necessary before replacing assets.",
+    "CSS chrome shadows are distinct from shadows painted into the sprite bitmap.",
+    "No final candidate artwork or motion is approved by this inventory."
+  ]
+}
