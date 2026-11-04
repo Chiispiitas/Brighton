@@ -1,0 +1,184 @@
+{
+  "status": "PASS",
+  "checkedAt": "2026-11-04T06:40:56.5559264Z",
+  "totalChecks": 35,
+  "passedChecks": 35,
+  "target": "http://127.0.0.1:8891/Horizons/App/",
+  "browser": "Microsoft Edge via Playwright",
+  "backend": "Actual isolated Wix API",
+  "widths": [
+    320,
+    390,
+    768,
+    1440
+  ],
+  "checks": [
+    {
+      "name": "Supplied font is loaded",
+      "passed": true
+    },
+    {
+      "name": "Actual server redemption signs in",
+      "passed": true
+    },
+    {
+      "name": "Profile saves to server",
+      "passed": true
+    },
+    {
+      "name": "No horizontal overflow learn at320",
+      "passed": true
+    },
+    {
+      "name": "No horizontal overflow practice at320",
+      "passed": true
+    },
+    {
+      "name": "No horizontal overflow progress at320",
+      "passed": true
+    },
+    {
+      "name": "No horizontal overflow profile at320",
+      "passed": true
+    },
+    {
+      "name": "No horizontal overflow learn at390",
+      "passed": true
+    },
+    {
+      "name": "No horizontal overflow practice at390",
+      "passed": true
+    },
+    {
+      "name": "No horizontal overflow progress at390",
+      "passed": true
+    },
+    {
+      "name": "No horizontal overflow profile at390",
+      "passed": true
+    },
+    {
+      "name": "No horizontal overflow learn at768",
+      "passed": true
+    },
+    {
+      "name": "No horizontal overflow practice at768",
+      "passed": true
+    },
+    {
+      "name": "No horizontal overflow progress at768",
+      "passed": true
+    },
+    {
+      "name": "No horizontal overflow profile at768",
+      "passed": true
+    },
+    {
+      "name": "No horizontal overflow learn at1440",
+      "passed": true
+    },
+    {
+      "name": "No horizontal overflow practice at1440",
+      "passed": true
+    },
+    {
+      "name": "No horizontal overflow progress at1440",
+      "passed": true
+    },
+    {
+      "name": "No horizontal overflow profile at1440",
+      "passed": true
+    },
+    {
+      "name": "Actual finished quiz saves to server",
+      "passed": true
+    },
+    {
+      "name": "Cookie restores signed-in profile after reload",
+      "passed": true
+    },
+    {
+      "name": "Cookie contains opaque token, not book code",
+      "passed": true
+    },
+    {
+      "name": "Additional book links in actual backend",
+      "passed": true
+    },
+    {
+      "name": "Profile remains one identity after linking",
+      "passed": true
+    },
+    {
+      "name": "No runtime errors",
+      "passed": true
+    },
+    {
+      "name": "Avatar combination 1 preserves native part proportions",
+      "passed": true
+    },
+    {
+      "name": "Avatar combination 2 preserves native part proportions",
+      "passed": true
+    },
+    {
+      "name": "Avatar combination 3 preserves native part proportions",
+      "passed": true
+    },
+    {
+      "name": "Avatar combination 4 preserves native part proportions",
+      "passed": true
+    },
+    {
+      "name": "1D jump reaches lesson heading",
+      "passed": true
+    },
+    {
+      "name": "Human path artwork does not overlap activity text",
+      "passed": true
+    },
+    {
+      "name": "Expired access hides the learning path",
+      "passed": true
+    },
+    {
+      "name": "Expired access hides practice launchers",
+      "passed": true
+    },
+    {
+      "name": "Expired access keeps profile and add-book available",
+      "passed": true
+    },
+    {
+      "name": "No runtime errors",
+      "passed": true
+    }
+  ],
+  "notes": [
+    "Expired-access cases use read-only browser response overrides; no access dates were changed in the backend.",
+    "Real sample A1-002 and A2-002 were used for profile, quiz, cookie and linked-book checks.",
+    "Avatar combinations were visually inspected and measured for native part proportions."
+  ],
+  "evidence": {
+    "folder": "C:/Users/David/Documents/Codex/2026-11-04/horizons-app-frontend-qa",
+    "reports": [
+      "frontend-check.json",
+      "refinement-check.json"
+    ],
+    "screenshots": [
+      "welcome-desktop.png",
+      "welcome-mobile.png",
+      "learn-390.png",
+      "profile-390.png",
+      "avatar-combination-1.png",
+      "avatar-combination-2.png",
+      "avatar-combination-3.png",
+      "avatar-combination-4.png",
+      "path-mobile-complete-1a.png",
+      "quiz-feedback.png",
+      "quiz-result.png",
+      "book-library.png"
+    ]
+  },
+  "runtimeErrors": []
+}

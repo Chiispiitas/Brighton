@@ -1,0 +1,62 @@
+{
+  "endpoint": "https://headless-hphybypweny-chiispiitas-140b.wix-site-host.com/api/horizons",
+  "date": "2026-11-04T06:33:53.193Z",
+  "checks": [
+    {
+      "name": "Fresh isolated avatar QA profile opens",
+      "pass": true,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "name": "Ordinary full profile patch accepts badge none",
+      "pass": true,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "name": "Unearned badge is rejected using stored XP",
+      "pass": true,
+      "detail": {
+        "status": 403,
+        "error": "BADGE_LOCKED",
+        "xp": 0
+      }
+    },
+    {
+      "name": "Synthetic mix adds XP without phantom path completion",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "xp": 30,
+        "completed": 0
+      }
+    },
+    {
+      "name": "Earned star badge saves successfully",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "xp": 30
+      }
+    },
+    {
+      "name": "Inherited object keys do not count as valid activity IDs",
+      "pass": true,
+      "detail": {
+        "status": 400
+      }
+    },
+    {
+      "name": "A new device restores the earned avatar badge",
+      "pass": true,
+      "detail": {
+        "status": 200
+      }
+    }
+  ],
+  "passed": true,
+  "public001CodesUntouched": true
+}

@@ -1,0 +1,152 @@
+{
+  "endpoint": "https://headless-hphybypweny-chiispiitas-140b.wix-site-host.com/api/horizons",
+  "date": "2026-11-04T06:21:56.190Z",
+  "checks": [
+    {
+      "name": "Public API health",
+      "pass": true,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "name": "Live cross-origin preflight accepts the production app",
+      "pass": true,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "name": "Real CMS redemption and explicit example-data flag",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "books": 2,
+        "demo": true
+      }
+    },
+    {
+      "name": "Profile save acknowledged",
+      "pass": true,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "name": "Fresh device restores the same profile and original expiry",
+      "pass": true,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "name": "Additional book joins the same profile",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "books": 2
+      }
+    },
+    {
+      "name": "Added book code is another gateway to the same profile",
+      "pass": true,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "name": "Different code has a separate profile",
+      "pass": true,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "name": "Existing other profile cannot be merged by link",
+      "pass": true,
+      "detail": {
+        "status": 409
+      }
+    },
+    {
+      "name": "Live server grades submitted answer and controls XP",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "xp": 15,
+        "awardedXp": 15
+      }
+    },
+    {
+      "name": "Repeated request is idempotent in real CMS",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "awardedXp": 0
+      }
+    },
+    {
+      "name": "Rewriting a stored round is rejected",
+      "pass": true,
+      "detail": {
+        "status": 409
+      }
+    },
+    {
+      "name": "Unknown questions cannot award XP",
+      "pass": true,
+      "detail": {
+        "status": 400
+      }
+    },
+    {
+      "name": "Forged correct flag is ignored and wrong word enters review",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "awardedXp": 10
+      }
+    },
+    {
+      "name": "Memory recognition saves without claiming retrieval mastery",
+      "pass": true,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "name": "Another linked-code device sees the newly saved learning progress",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "xp": 60
+      }
+    },
+    {
+      "name": "Logout revokes one session",
+      "pass": true,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "name": "Revoked session rejected while another device remains signed in",
+      "pass": true,
+      "detail": {
+        "revoked": 401,
+        "otherDevice": 200
+      }
+    },
+    {
+      "name": "Unapproved origin rejected before code redemption",
+      "pass": true,
+      "detail": {
+        "status": 403,
+        "error": "ORIGIN_REJECTED",
+        "verifiedAt": "2026-11-04T06:24:40.600Z"
+      }
+    }
+  ],
+  "passed": true,
+  "sample001CodesUntouched": true
+}

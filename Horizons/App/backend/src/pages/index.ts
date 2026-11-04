@@ -1,0 +1,1 @@
+export const GET=()=>new Response(JSON.stringify({name:'Horizons Companion API',status:'ready',version:'1',frontend:'https://exams.bebrighton.net/Horizons/App/'}),{headers:{'Content-Type':'application/json','Cache-Control':'no-store'}});

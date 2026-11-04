@@ -1,0 +1,98 @@
+{
+  "date": "2026-11-04T06:41:03.169Z",
+  "base": "http://127.0.0.1:8875/Horizons/App/",
+  "checks": [
+    {
+      "name": "Unknown code shows a useful error without signing in",
+      "pass": true,
+      "details": {
+        "visibleError": true
+      }
+    },
+    {
+      "name": "Reserved A1 code restores its real saved profile and first-party cookie",
+      "pass": true,
+      "details": {
+        "profileRestored": true,
+        "cookieSecure": false,
+        "bookCount": 2
+      }
+    },
+    {
+      "name": "Locked avatar rewards are disabled at zero XP",
+      "pass": true,
+      "details": {
+        "starLocked": true
+      }
+    },
+    {
+      "name": "A second book links into the existing profile",
+      "pass": true,
+      "details": {
+        "oneProfile": true,
+        "twoBooks": true
+      }
+    },
+    {
+      "name": "A2 stays clearly a preview, with A1 still selectable",
+      "pass": true,
+      "details": {
+        "previewLabel": true,
+        "a1StillOpen": true
+      }
+    },
+    {
+      "name": "Actual page routes and art fit desktop, tablet and small mobile",
+      "pass": true,
+      "details": {
+        "widths": [
+          320,
+          390,
+          768,
+          1440
+        ],
+        "routes": 4
+      }
+    },
+    {
+      "name": "Reload remembers profile without re-entering the book code",
+      "pass": true,
+      "details": {
+        "remembered": true
+      }
+    },
+    {
+      "name": "The linked A2 code is another-device gateway to the same A1 profile",
+      "pass": true,
+      "details": {
+        "sameProfile": true,
+        "nameRestored": true,
+        "avatarRestored": true
+      }
+    },
+    {
+      "name": "Signing out one browser leaves the other browser signed in",
+      "pass": true,
+      "details": {
+        "signedOutOnlyOneDevice": true
+      }
+    },
+    {
+      "name": "Native font and images load under the restrictive content policy",
+      "pass": true,
+      "details": {
+        "font": true,
+        "brokenImages": 0,
+        "csp": true
+      }
+    }
+  ],
+  "runtimeErrors": [],
+  "consoleErrors": [],
+  "requestFailures": [],
+  "scope": "Real first-party cookie and linked-book browser checks on isolated QA profile005; no public001 redemption",
+  "expectedRejectedCodeConsole": [
+    "Failed to load resource: the server responded with a status of 400 ()"
+  ],
+  "pass": true
+}

@@ -1,0 +1,9 @@
+node_modules/
+.env*
+.wix/
+.wrangler/
+dist/
+*.log
+artifacts/
+
+.astro/

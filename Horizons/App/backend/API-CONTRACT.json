@@ -1,0 +1,149 @@
+{
+  "endpoint": "https://headless-hphybypweny-chiispiitas-140b.wix-site-host.com/api/horizons",
+  "method": "POST",
+  "headers": {
+    "Content-Type": "application/json",
+    "X-Requested-With": "Opaque session token returned by redeem; absent for redeem"
+  },
+  "sessionPersistence": "Frontend first-party Secure SameSite=Lax cookie, Path=/Horizons/App/; never store the original book code",
+  "actions": {
+    "redeem": {
+      "request": {
+        "action": "redeem",
+        "code": "DEMO-HZ-A1-001"
+      },
+      "response": "Bootstrap plus token and sessionExpiresAt"
+    },
+    "getSession": {
+      "request": {
+        "action": "getSession"
+      },
+      "response": "Bootstrap"
+    },
+    "updateProfile": {
+      "request": {
+        "action": "updateProfile",
+        "patch": {
+          "displayName": "Learner",
+          "dateOfBirth": "2000-01-01",
+          "goal": 5,
+          "defaultBookId": "horizons-a1",
+          "avatar": {}
+        }
+      },
+      "response": "Bootstrap"
+    },
+    "linkBook": {
+      "request": {
+        "action": "linkBook",
+        "code": "DEMO-HZ-A2-001"
+      },
+      "response": "Bootstrap;409 if the code belongs to a different profile"
+    },
+    "saveAttempt": {
+      "request": {
+        "action": "saveAttempt",
+        "attempt": {
+          "id": "client UUID unique per finished round",
+          "activityId": "shipped activity ID or mixed-practice/custom-mix/mix-quiz/mix-recall/mix-memory/mix-matching",
+          "quizOptions": {
+            "seed": "exact seed used to generate the round",
+            "mode": "vocabulary/recall/grammar/mixed/memory/matching",
+            "chunkIds": [],
+            "lessonIds": [],
+            "grammarSetIds": []
+          },
+          "answers": [
+            {
+              "questionId": "generated question or pair ID",
+              "submitted": "choice text, typed answer, ordered token text array or pair.right",
+              "hintUsed": false
+            }
+          ],
+          "durationMs": 35000
+        }
+      },
+      "response": "Bootstrap plus attempt accepted/duplicate and awardedXp",
+      "maxAnswers": 512
+    },
+    "getProgress": {
+      "request": {
+        "action": "getProgress"
+      },
+      "response": "Bootstrap"
+    },
+    "signOut": {
+      "request": {
+        "action": "signOut"
+      },
+      "response": {
+        "ok": true
+      }
+    }
+  },
+  "bootstrap": {
+    "ok": true,
+    "profile": {
+      "id": "stable profile UUID",
+      "displayName": "Brighton learner",
+      "dateOfBirth": "",
+      "goal": 5,
+      "defaultBookId": "horizons-a1",
+      "avatar": {},
+      "createdAt": "ISO date"
+    },
+    "books": [
+      {
+        "id": "horizons-a1",
+        "title": "Horizons A1",
+        "level": "A1",
+        "activatedAt": "ISO date",
+        "expiresAt": "ISO date",
+        "status": "active",
+        "contentStatus": "unit-1"
+      }
+    ],
+    "progress": {
+      "xp": 0,
+      "streak": 0,
+      "bestStreak": 0,
+      "todayXp": 0,
+      "completedActivities": [],
+      "completedLessons": [],
+      "wordStats": {},
+      "lessons": {},
+      "attempts": 0,
+      "activeDays": [],
+      "reviewItems": [],
+      "lastActivityId": null
+    },
+    "demo": "boolean derived from private issued-code kind; true requires fictional profile details in shared public examples"
+  },
+  "errors": {
+    "shape": {
+      "ok": false,
+      "error": "MACHINE_CODE",
+      "message": "Learner-safe English message"
+    },
+    "statuses": {
+      "400": "invalid input",
+      "401": "session invalid;clear cookie",
+      "403": "origin rejected or book expired",
+      "409": "book code linked to another profile or idempotency conflict",
+      "429": "too many code attempts",
+      "503": "temporary backend/CMS failure"
+    }
+  },
+  "notes": [
+    "Access starts once on first redemption and never resets on login",
+    "Any valid linked book code restores this same profile",
+    "A1 contains Unit1; A2 is a clearly labelled additional-book preview used to verify linking, not advertised as produced learning content",
+    "Requests from localhost are allowed for development; production origin is https://exams.bebrighton.net",
+    "Correctness, word IDs, mastery eligibility and XP are recomputed on the server with the shared seeded Unit1 engine; submitted correct/XP fields are ignored",
+    "Unknown or repeated question IDs are rejected; idempotency keys cannot overwrite previous answers",
+    "Recognition/memory rounds and hinted answers never increase mastery; three successful retrievals and at least75% recall accuracy are required",
+    "Public sample codes ending001 are kept fresh; backend live QA uses A1-019/020 and A2-010",
+    "Only registered48activity IDs enter completedActivities; synthetic mixed rounds still retain XP/history and vocabulary progress",
+    "Avatar badge none is free; star-pin/trophy-pin/compass-pin require25/100/250storedXP and locked selections return403 BADGE_LOCKED"
+  ]
+}

@@ -1,0 +1,140 @@
+{
+  "date": "2026-11-04",
+  "scope": "A1 Unit 1 companion content and grading; source books are read-only",
+  "status": "PASS",
+  "sourceBankReferences": 9,
+  "canonicalRequiredEntries": 135,
+  "lessonSpecificRequiredOccurrences": 166,
+  "extraSourceQuestionModels": 7,
+  "availableVocabularyEntries": 142,
+  "lessonCodes": [
+    "1A",
+    "1B",
+    "1C",
+    "1D"
+  ],
+  "chunks": 23,
+  "activities": 48,
+  "grammarSets": [
+    {
+      "id": "1a-be",
+      "title": "Am, is and are",
+      "questions": 15
+    },
+    {
+      "id": "1b-articles",
+      "title": "A job: a or an?",
+      "questions": 19
+    },
+    {
+      "id": "1b-contractions",
+      "title": "Two words, one short form",
+      "questions": 15
+    },
+    {
+      "id": "1c-be-descriptions",
+      "title": "People and places",
+      "questions": 9
+    },
+    {
+      "id": "1d-capitals",
+      "title": "Names need capitals",
+      "questions": 8
+    }
+  ],
+  "games": [
+    {
+      "id": "1a-greeting-pairs",
+      "type": "memory"
+    },
+    {
+      "id": "1a-locker-codes",
+      "type": "locker"
+    },
+    {
+      "id": "1a-name-password",
+      "type": "spelling"
+    },
+    {
+      "id": "1b-duty-board",
+      "type": "matching"
+    },
+    {
+      "id": "1b-opposite-pairs",
+      "type": "opposites"
+    },
+    {
+      "id": "1c-postcards",
+      "type": "countries"
+    },
+    {
+      "id": "1c-room-message",
+      "type": "reading"
+    },
+    {
+      "id": "1d-club-card",
+      "type": "form"
+    }
+  ],
+  "sourceAudioFilesUsed": 12,
+  "testsDeclared": 15,
+  "testsPassed": 15,
+  "completedChecks": [
+    "all nine actual Unit 1 reference banks remain exactly covered by their lesson sets",
+    "all Unit 1 lesson, word-set and activity identifiers are valid and reachable",
+    "combining repeated lesson references does not duplicate vocabulary learning identities",
+    "every selected word can appear once in an all-words round and is graded independently",
+    "choice sets have one correct choice, no duplicate labels, and every wrong choice fails",
+    "synonyms do not appear as false distractors or falsely master an unseen bank spelling",
+    "capital-letter practice really checks capitals and punctuation while ordinary recall is forgiving",
+    "sentence builders accept the correct order and reject a bag of the same words in the wrong order",
+    "matching games preserve one-to-one meaning, opposite and country relationships",
+    "locker codes retain number boundaries and never turn the game into arithmetic",
+    "number spellings cover zero to one hundred without accepting teen/tens confusions",
+    "all path activities produce real questions; mixed reviews contain vocabulary and grammar",
+    "real listening questions point only to existing book recordings with source-key answers",
+    "fresh club-card practice uses fictional details and checks fields rather than stereotypes",
+    "sessions, selection validation and priority review preserve meaningful learning boundaries"
+  ],
+  "missingReferenceEntries": [],
+  "masteryPolicy": "Only successful retrieval awards word IDs. Accepted synonyms can be correct without claiming that an unentered bank spelling was recalled; mere viewing never masters an item.",
+  "sourceFiles": [
+    {
+      "file": "Horizons/A1/Practice/Vocabulary/study-vocabulary.json",
+      "sha256": "f158a8b116c44bf20998b78c4b9c684a68230811f1d46b21219c7e8ca15f5c02"
+    },
+    {
+      "file": "Horizons/A1/Practice/Vocabulary/V1.html",
+      "sha256": "fb4c9df0813b2f96d851bec0757d1ae76430fa635c0bc19ea1e1c2b2cf2ea207"
+    },
+    {
+      "file": "Horizons/A1/Practice/Grammar/G1.html",
+      "sha256": "a7ed51c96dc82d4b4acb2cccdf54163ce888fb762f05efd0b3086bc4badd36d6"
+    },
+    {
+      "file": "Horizons/A1/Lessons/1A.html",
+      "sha256": "c6c0cc092341063f6e5d7c3cc1c9edf4092cbc5c1a89d84f30b8c6765f2f0633"
+    },
+    {
+      "file": "Horizons/A1/Lessons/1B.html",
+      "sha256": "d2fe49e5c641c90344567dac67bd0f9f24d3a4cb278909d0ff1af047e79e8f2e"
+    },
+    {
+      "file": "Horizons/A1/Lessons/1C.html",
+      "sha256": "6ae8a70f144a91240c83da68552bf749d0c5d768b9791de2928c92368edef8b5"
+    },
+    {
+      "file": "Horizons/A1/Lessons/1D.html",
+      "sha256": "ad730297fd9452a2a70638072ba64aedec439cb1b370f2e4a58d3628c274e90f"
+    },
+    {
+      "file": "Horizons/A1/Answer keys/Grammar practice 1-4.md",
+      "sha256": "4245f600def4c315ab4cadbcb33518278c8b58e2586ec3fa96c64b931e48c92d"
+    },
+    {
+      "file": "Horizons/A1/Answer keys/Vocabulary practice.md",
+      "sha256": "e9d8c018e3b52eb6d6c3fccfad29de04669382df3928877ca6ffd917e961ad11"
+    }
+  ],
+  "limitations": "This verifies the curriculum/content layer and grading. Final artwork, integrated UI, backend persistence and published browser checks belong to the app release review."
+}

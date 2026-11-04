@@ -1,0 +1,139 @@
+{
+  "tool": "OpenAI built-in image_gen",
+  "createdDate": "2026-11-04",
+  "processing": "Native generated PNG bytes are preserved. Parts are displayed through CSS viewports and transformed for animation; no hand-drawn character vectors or bitmap erasing.",
+  "assets": [
+    {
+      "id": "pico-rig-v2",
+      "prompt": "Use case: identity-preserve. Production animation atlas for Pico the mountain hare in the supplied reference, redesigned cleanly for a friendly minimal English-learning app for all ages. Preserve the cream hare, one straight ear and one bent ear, navy face, magenta satchel and warm-orange clasp. Correct anatomy: a COMPLETE broad pear-shaped belly and torso that continues behind a SEPARATE diagonal strap, whole round hips, naturally attached elbows. Perfectly FLAT borderless 2D filled shapes, crisp edges, no gradients, no fur texture, no outlines, no white fringe or shadows. Palette cream #F6DFC1, light belly #EFE1CB, deep navy, crimson magenta #AF1B61 and warm orange. Create EXACTLY SIXTEEN DETACHED PUPPET PIECES in a precisely aligned FOUR-column FOUR-row transparent grid. One piece per equal cell, each comfortably centered wholly inside its cell. TOP ROW left to right: 1 complete headless armless legless torso with full round cream belly/light belly patch, no bag or strap; 2 ONE fixed hare HEAD with nose but NO EYES, NO EYEBROWS and NO MOUTH, NO EARS, no body; 3 detached long straight viewer-left EAR with rounded root; 4 detached bent-tip viewer-right EAR with rounded root. SECOND ROW: 5 viewer-left UPPER ARM only with rounded shoulder and elbow ends; 6 viewer-left FOREARM with paw only, naturally bent and rounded elbow end; 7 viewer-right UPPER ARM only with rounded shoulder/elbow ends; 8 viewer-right FOREARM with open waving paw and rounded elbow root. THIRD ROW: 9 whole viewer-left hind LEG and FOOT, rounded hip overlap, planted large foot; 10 whole viewer-right hind LEG and FOOT; 11 magenta SATCHEL BAG only with orange clasp, NO strap; 12 separate gently CURVED DIAGONAL MAGENTA STRAP ribbon from upper viewer-right to lower viewer-left, no body or bag. BOTTOM ROW: 13 paired OPEN EYES plus eyebrows only on transparency, in correct front-three-quarter spacing; 14 paired CLOSED EYELID ARCS plus eyebrows only in IDENTICAL spacing, no head skin; 15 friendly OPEN SMILING MOUTH only; 16 small surprised O MOUTH only. All face overlays have transparent empty surroundings and must fit the one fixed head; do not draw any duplicate heads. This is a technical animation kit, not complete character poses. All limbs naturally curved with generous hidden overlap at joints. No labels, text, cell borders, numbers, logos, scenery, full assembled characters, checkerboard or painted white backdrop. GENUINE native transparent alpha.",
+      "source": "C:\\Users\\David\\.codex\\generated_images\\01a10ee1-5c4c-7e80-817b-36b2c2dafd47\\exec-7a080941-922a-4a9f-bbab-ed335276da0d.png",
+      "file": "assets/art/pico-rig-v2.png",
+      "active": true,
+      "use": "16-layer articulated Pico with separate face overlays",
+      "width": 1266,
+      "height": 1242,
+      "mode": "RGBA",
+      "sha256": "69fada1195ceac29c85735fbbcf8239c291d5394aaca89f5552b644a0a1adf7d",
+      "nativeBytesUnchanged": true,
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "companions-v1",
+      "prompt": "Use case: stylized-concept. A coherent original character atlas for the HORIZONS learning app, friendly for all ages, very polished MINIMAL FLAT 2D borderless illustrations. Three human companions live in a contemporary friendly town. Distinct simple silhouettes, natural expressive poses, roughly four-head-tall stylised human proportions, modest clothing, charming without baby faces. Crisp flat colored shapes, no black outlines, no gradients, no gloss, no watercolor/fur/paper, no drop shadows. Create a precise THREE-COLUMN by THREE-ROW transparent atlas with NINE COMPLETE full-body figures, one person entirely inside each equal cell with generous safe margins. Each COLUMN is ONE consistently designed person in three different poses. LEFT COLUMN: Mina, young adult woman with medium warm-brown skin, a short wavy dark bob, bright magenta light jacket over cream shirt, navy trousers and orange sneakers, small orange backpack. MIDDLE COLUMN: Alex, young adult man with deep-brown skin and short curly afro hair, teal open overshirt over a warm-orange T-shirt, dark navy trousers, cream trainers, small navy headphones around neck. RIGHT COLUMN: Jo, older woman with warm olive skin, silver chin-length hair, round dark-blue glasses, warm-orange shirt, simple navy café apron over sage trousers, cream shoes. TOP ROW: each stands in a welcoming relaxed pose, hands comfortably visible. MIDDLE ROW: each makes a clear friendly waving or explaining gesture, same exact face/clothes/proportions as above. BOTTOM ROW: each celebrates a little success with lively raised arms or a delighted small step, same identity. All figures must have complete heads/hair/hands/feet wholly in their cell, no overlaps between cells. Minimal faces with small navy eyes and warm smiles. These will be cropped by the app from this unchanged atlas and animated with motion transitions; retain coherent consistent identities across each column. No text, letters, labels, logos, numbers, cell borders, scenery, white painted background or checkerboard. Genuinely transparent alpha around the complete figures.",
+      "source": "C:\\Users\\David\\.codex\\generated_images\\01a10ee1-5c4c-7e80-817b-36b2c2dafd47\\exec-69012915-d59a-4bf9-b9a4-584d38cb7232.png",
+      "file": "assets/art/companions-v1.png",
+      "active": true,
+      "use": "Mina, Alex and Jo: idle, wave and celebration poses",
+      "width": 1216,
+      "height": 1293,
+      "mode": "RGBA",
+      "sha256": "7eb45ce0c5bc03a83265b3bdb9630de8ec9da8fdaf72530c3c4dca200a527106",
+      "nativeBytesUnchanged": true,
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "avatar-kit-v1",
+      "prompt": "Use case: stylized-concept. A production-compatible modular HUMAN AVATAR CREATOR kit for a friendly English study app for all ages. Create EXACTLY TWENTY-FOUR items in a precise SIX-COLUMN by FOUR-ROW transparent grid. Each equal-size cell represents the SAME invisible full-body avatar canvas, same front-facing pose and alignment. Minimal polished flat 2D, filled borderless shapes, no outlines, gradients, texture, shadows, 3D or text. Cute all-age stylisation, roughly four-head-tall, complete full body, relaxed straight standing pose, arms held slightly away from sides to permit outfit layering, feet planted. TOP ROW: SIX IDENTICAL avatar BASE BODIES in six distinct natural skin tones ranging from pale peach to very deep brown. Same head shape, simple friendly eyes/nose/smile, ears, neck, arms, hands and legs, NO HAIR. Every base wears plain cream undershirt and cream simple shorts for modesty. Same exact pose, body proportions and alignment in all six cells. SECOND ROW: SIX DIFFERENT COMPLETE OUTFIT LAYERS ONLY, without any visible head/skin/body/hands. Leave transparent holes where skin should be, but preserve matching shoulder/waist/feet positions for overlaying the bases above. Each outfit includes top, lower garment and shoes: magenta hoodie+navy pants+cream sneakers; teal T-shirt+orange shorts+navy sneakers; navy jacket+cream shirt+sage pants+orange shoes; orange sweater+navy knee-length skirt+cream shoes; cream shirt+teal overalls+orange shoes; magenta cardigan+cream shirt+navy pants+teal shoes. THIRD ROW: SIX HAIRSTYLE LAYERS ONLY for the exact head position of the first row, with transparent face opening: short dark-brown side part; short tight black curls; dark-brown shoulder-length straight hair; black twin puffs; blonde bob; warm-brown wavy medium hair. FOURTH ROW: SIX ACCESSORY LAYERS ONLY, positioned naturally for the same avatar canvas: navy round glasses at eye level; orange cap at head top; teal headphones around ears; small magenta crossbody bag with strap across torso; warm-orange neck scarf; small navy backpack with visible shoulder straps. Keep the avatar bases wholly inside their cells with room above head and below shoes. Clothes must be real separated clothing layers, NOT complete characters and NOT folded clothes. Hair and accessories must be separate transparent wearable overlays, NOT additional faces/heads or bodies. Clearly separated cells without borders. Use rich magenta #AF1B61, navy #173E5C, warm orange and teal local accents. No words, numbers, labels, logos, UI, scenery or checkerboard. GENUINE transparent alpha.",
+      "source": "C:\\Users\\David\\.codex\\generated_images\\01a10ee1-5c4c-7e80-817b-36b2c2dafd47\\exec-94368b5c-16cc-4c17-ac7f-8c866c59d37c.png",
+      "file": "assets/art/avatar-kit-v1.png",
+      "active": false,
+      "use": "Discarded first avatar candidate; not used in UI",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA",
+      "sha256": "997275f26377ebb092084f18dd0689e436e0cd38e31c40ca07e880c7ccdcb4ff",
+      "nativeBytesUnchanged": true,
+      "alphaExtrema": [
+        0,
+        254
+      ]
+    },
+    {
+      "id": "avatar-kit-v2",
+      "prompt": "Use case: background-extraction. Edit the supplied modular avatar kit atlas ONLY to remove the unwanted diffuse colored background, glows and haze around its pieces. Retain every one of the24 actual pieces, its exact existing position, size, silhouette and internal color. Keep six skin-tone body bases in row1, six clothing-only layers in row2, six hairstyle-only layers in row3 and six accessory-only layers in row4. ALL empty space around every piece, including empty face holes in hair layers and missing skin in clothes, must become truly clear alpha0. Pixels inside the actual illustrated shapes must remain fully opaque. Remove all brown/orange/teal/magenta light clouds and all gray background; no replacement white background, checkerboard, drop shadow, feathered edges, blur, gradients outside shapes or halos. Preserve the original crisp flat illustrated art, simple facial details and correct6-column4-row layout exactly. Do not move or redraw the parts, add labels, or combine them into characters. Output a clean transparent alpha PNG sprite atlas, ready for layering without any visible rectangular haze.",
+      "source": "C:\\Users\\David\\.codex\\generated_images\\01a10ee1-5c4c-7e80-817b-36b2c2dafd47\\exec-bf89239d-9d28-4ca9-94d6-c1565c936d3e.png",
+      "file": "assets/art/avatar-kit-v2.png",
+      "active": true,
+      "use": "Layered learner avatar customizer",
+      "width": 1536,
+      "height": 1024,
+      "mode": "RGBA",
+      "sha256": "3e5abc1e52fbabb7f0b2a283e73dfacbb72359db9da53209fd1aebe04058c9c6",
+      "nativeBytesUnchanged": true,
+      "alphaExtrema": [
+        0,
+        254
+      ]
+    },
+    {
+      "id": "town-v1",
+      "prompt": "Use case: illustration-story. A beautiful minimal friendly town illustration for the HORIZONS English study app, matching clean borderless flat 2D characters. Create a very wide LANDSCAPE transparent cutout of a small lively town at the foot of distant gentle blue mountains: a warm-orange little café with cream scalloped awning and outdoor table, a magenta-front arts studio, a teal bus stop with a tiny bus, a little park with round green trees and two simple benches, a cream community house with navy roof. No humans or mascot in this scene; characters will be placed separately. Compose as a low horizontal village ribbon, structures touching a narrow simple cream path/ground strip, lots of transparent sky above, whole complete buildings and tree tops inside canvas. Modest saturated local colors, magenta #AF1B61, warmorange #E9A223, deepblue #173E5C, teal/sage/cream. Mountains are a few simple clean filled layers creating a HORIZON, not detailed geographic realism. Flat filled shapes, few details, no outlines or borders, no gradients, no 3D, no watercolor, no texture, no glows or shadows. Clear inviting adult-and-child-friendly modern illustration. No words, lettering, signs with text, numbers, logos, frames, white painted backdrop or checkerboard. Genuine transparent alpha. The town will decorate the app's open learning path without turning into a crowded UI.",
+      "source": "C:\\Users\\David\\.codex\\generated_images\\01a10ee1-5c4c-7e80-817b-36b2c2dafd47\\exec-eff2ac28-dd97-4c56-9011-2d5c8ea69c02.png",
+      "file": "assets/art/town-v1.png",
+      "active": true,
+      "use": "Recurring town scene",
+      "width": 2172,
+      "height": 724,
+      "mode": "RGBA",
+      "sha256": "045556bd292a2144c3fdc45d377bd7d41c573287056f532dcb4849194abd5477",
+      "nativeBytesUnchanged": true,
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "ui-objects-v1",
+      "prompt": "Use case: stylized-concept. Create one production UI-object icon atlas for the HORIZONS learning companion, minimal FLAT BORDERLESS 2D filled shapes, friendly and playful, no black strokes. A precise FOUR-column FOUR-row transparent grid, EXACTLY sixteen clearly separated simple complete little objects, ONE per equal cell, generous clear margins. TOP ROW left to right: a small welcoming HOUSE; an open BOOK with magenta cover; two facedown colorful MEMORY GAME CARDS slightly overlapped; a simple human PROFILE bust wearing teal. SECOND ROW: a warm-orange FLAME; a little golden XP STAR; a trophy with navy base; a small crimson SATCHEL with orange clasp. THIRD ROW: a navy LOUDSPEAKER with two filled curved sound marks; a golden KEY; a teal CALENDAR; a friendly mountain COMPASS. BOTTOM ROW: a navy GEAR for settings; a small orange FLAG on a navy pole; a magenta HEART; a cream closed BOOK with a prominent simple orange PLUS symbol. Same consistent visual style and optical size for all16. Rich magenta #AF1B61, deep navy #173E5C, warm orange #E9A223 and restrained teal/cream accents, at most2-3colors per icon. Crisp filled areas legible at36px; no gradients, 3D, gloss, texture, shadows, stroke outlines, circular plates or tile backgrounds. Each object entirely inside its own cell. No text, labels, letters, numbers, logos, frames, cell borders, scenes or checkerboard. Genuine transparent alpha.",
+      "source": "C:\\Users\\David\\.codex\\generated_images\\01a10ee1-5c4c-7e80-817b-36b2c2dafd47\\exec-705998c0-197f-4c49-bf1f-a37c3017c2c2.png",
+      "file": "assets/art/ui-objects-v1.png",
+      "active": true,
+      "use": "Sixteen navigation and reward objects",
+      "width": 1263,
+      "height": 1245,
+      "mode": "RGBA",
+      "sha256": "ff7e44a547b2782906a24aaf15a89ecaa680145a5e084eb6744aec9b951b91f3",
+      "nativeBytesUnchanged": true,
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "jobs-v1",
+      "prompt": "Use case: scientific-educational. A minimal flat BORDERLESS2D profession picture atlas for an English A1 study app. Exactly SIXTEEN distinct workplace vignettes in a precise FOUR-column FOUR-row transparent grid, one vignette wholly inside each equal cell. Inclusive stylised adult humans, clear visible workplace props make occupations understandable, not judged from gender/race/clothing alone. Consistent simple friendly illustration, small navy eyes, no outlines, few flatfilled colors, magenta/orange/teal/navy/cream accent palette, no gradients or photographic effects. TOP ROW left to right: TEACHER beside a small board holding an open book; STUDENT with backpack studying a book at a school desk; CHEF with chef hat stirring a cooking pot; DOCTOR with stethoscope examining a patient arm. SECOND ROW: OFFICE WORKER typing at an office desk/laptop; RECEPTIONIST behind a hotel front desk with bell and key slots; SALESCLERK at a shop checkout with folded clothes; TAXI DRIVER seated beside a recognizable yellow taxi with roof light. THIRD ROW: male WAITER carrying food tray in a café; female WAITRESS carrying drinks tray in a café; FARMER with basket of vegetables beside growing plants; NURSE in teal scrubs checking a patient's pulse. BOTTOM ROW: DENTIST beside a dental chair with a large tooth model; POLICE OFFICER helping a pedestrian at a crossing; generic bus DRIVER at steering wheel of small teal bus; ACTOR standing on a little stage with open theater curtains. Keep humans natural modest adultproportions aboutfourheads tall, distinguish every activity context clearly. All heads/hands/feet/props wholly visible inside their cell; generous gaps prevent crop ambiguity. No weapons. No text, words, letters, numberlabels, signage, logos, cell borders, frames, paintedwhite background or checkerboard. Genuinely transparent alpha.",
+      "source": "C:\\Users\\David\\.codex\\generated_images\\01a10ee1-5c4c-7e80-817b-36b2c2dafd47\\exec-eebcf8ea-83a0-4cf4-8065-978439bdd412.png",
+      "file": "assets/art/jobs-v1.png",
+      "active": true,
+      "use": "Unit 1 occupation quiz pictures",
+      "width": 1261,
+      "height": 1247,
+      "mode": "RGBA",
+      "sha256": "b6493eecb2b426bf0d8e4b35e2a5168a2fbc415556ad50968c1800319e672f19",
+      "nativeBytesUnchanged": true,
+      "alphaExtrema": [
+        0,
+        255
+      ]
+    },
+    {
+      "id": "app-icon-v1",
+      "prompt": "Use case: logo-brand. Create a crisp square app icon for the HORIZONS English study companion. The supplied image is an identity reference for Pico the mountain hare: cream face, one long upright ear and one bent ear, tiny navy nose and eyes, warm-orange inner ears. A polished MINIMAL FLAT 2D portrait of Pico's friendly head and complete ears, looking slightly to the right with a small welcoming smile. Rich solid crimson-magenta #AF1B61 square background, a tiny warm-orange horizon arc low behind the head is optional. Entire face and both ears must fit safely inside the CENTRAL70% of the square, with generous magenta margin for phone icon masks. No outer rounded rectangle, border, outline, drop shadow, texture, fur, 3D, gloss or glossy eyes. Only a few clean filled color shapes. Readable and distinctive at32px. No words, HORIZONS lettering, numbers, labels, UI or watermarks. This is an app icon, not a recreation of the book wordmark. Opaque solid background; one image.",
+      "source": "C:\\Users\\David\\.codex\\generated_images\\01a10ee1-5c4c-7e80-817b-36b2c2dafd47\\exec-c2ef4a45-90d8-4472-af5f-f40fdb63a97d.png",
+      "file": "assets/art/app-icon-v1.png",
+      "active": true,
+      "use": "App icon and favicon",
+      "width": 1254,
+      "height": 1254,
+      "mode": "RGB",
+      "sha256": "f98512c0d3845cc1925a424bb6987180ab38d5d58d7d0c58974de79035fb89e3",
+      "nativeBytesUnchanged": true
+    }
+  ]
+}

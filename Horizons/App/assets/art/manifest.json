@@ -1,0 +1,1426 @@
+{
+  "version": 1,
+  "pico": {
+    "parts": {
+      "torso": {
+        "src": "assets/art/pico-rig-v2.png",
+        "atlas": {
+          "width": 1266,
+          "height": 1242
+        },
+        "frame": {
+          "x": 43,
+          "y": 51,
+          "w": 247,
+          "h": 284
+        }
+      },
+      "head": {
+        "src": "assets/art/pico-rig-v2.png",
+        "atlas": {
+          "width": 1266,
+          "height": 1242
+        },
+        "frame": {
+          "x": 347,
+          "y": 92,
+          "w": 266,
+          "h": 210
+        }
+      },
+      "earLeft": {
+        "src": "assets/art/pico-rig-v2.png",
+        "atlas": {
+          "width": 1266,
+          "height": 1242
+        },
+        "frame": {
+          "x": 721,
+          "y": 36,
+          "w": 128,
+          "h": 297
+        }
+      },
+      "earRight": {
+        "src": "assets/art/pico-rig-v2.png",
+        "atlas": {
+          "width": 1266,
+          "height": 1242
+        },
+        "frame": {
+          "x": 985,
+          "y": 101,
+          "w": 242,
+          "h": 214
+        }
+      },
+      "upperArmLeft": {
+        "src": "assets/art/pico-rig-v2.png",
+        "atlas": {
+          "width": 1266,
+          "height": 1242
+        },
+        "frame": {
+          "x": 78,
+          "y": 392,
+          "w": 172,
+          "h": 200
+        }
+      },
+      "forearmLeft": {
+        "src": "assets/art/pico-rig-v2.png",
+        "atlas": {
+          "width": 1266,
+          "height": 1242
+        },
+        "frame": {
+          "x": 368,
+          "y": 425,
+          "w": 217,
+          "h": 153
+        }
+      },
+      "upperArmRight": {
+        "src": "assets/art/pico-rig-v2.png",
+        "atlas": {
+          "width": 1266,
+          "height": 1242
+        },
+        "frame": {
+          "x": 697,
+          "y": 397,
+          "w": 151,
+          "h": 195
+        }
+      },
+      "forearmRight": {
+        "src": "assets/art/pico-rig-v2.png",
+        "atlas": {
+          "width": 1266,
+          "height": 1242
+        },
+        "frame": {
+          "x": 979,
+          "y": 399,
+          "w": 252,
+          "h": 194
+        }
+      },
+      "legLeft": {
+        "src": "assets/art/pico-rig-v2.png",
+        "atlas": {
+          "width": 1266,
+          "height": 1242
+        },
+        "frame": {
+          "x": 42,
+          "y": 631,
+          "w": 220,
+          "h": 287
+        }
+      },
+      "legRight": {
+        "src": "assets/art/pico-rig-v2.png",
+        "atlas": {
+          "width": 1266,
+          "height": 1242
+        },
+        "frame": {
+          "x": 375,
+          "y": 630,
+          "w": 213,
+          "h": 287
+        }
+      },
+      "satchel": {
+        "src": "assets/art/pico-rig-v2.png",
+        "atlas": {
+          "width": 1266,
+          "height": 1242
+        },
+        "frame": {
+          "x": 676,
+          "y": 689,
+          "w": 225,
+          "h": 188
+        }
+      },
+      "strap": {
+        "src": "assets/art/pico-rig-v2.png",
+        "atlas": {
+          "width": 1266,
+          "height": 1242
+        },
+        "frame": {
+          "x": 987,
+          "y": 649,
+          "w": 223,
+          "h": 255
+        }
+      },
+      "eyesOpen": {
+        "src": "assets/art/pico-rig-v2.png",
+        "atlas": {
+          "width": 1266,
+          "height": 1242
+        },
+        "frame": {
+          "x": 51,
+          "y": 1000,
+          "w": 214,
+          "h": 130
+        }
+      },
+      "eyesClosed": {
+        "src": "assets/art/pico-rig-v2.png",
+        "atlas": {
+          "width": 1266,
+          "height": 1242
+        },
+        "frame": {
+          "x": 361,
+          "y": 1002,
+          "w": 227,
+          "h": 114
+        }
+      },
+      "mouthSmile": {
+        "src": "assets/art/pico-rig-v2.png",
+        "atlas": {
+          "width": 1266,
+          "height": 1242
+        },
+        "frame": {
+          "x": 736,
+          "y": 1056,
+          "w": 105,
+          "h": 84
+        }
+      },
+      "mouthO": {
+        "src": "assets/art/pico-rig-v2.png",
+        "atlas": {
+          "width": 1266,
+          "height": 1242
+        },
+        "frame": {
+          "x": 1085,
+          "y": 1062,
+          "w": 41,
+          "h": 60
+        }
+      }
+    }
+  },
+  "companions": {
+    "mina": {
+      "idle": {
+        "src": "assets/art/companions-v1.png",
+        "atlas": {
+          "width": 1216,
+          "height": 1293
+        },
+        "frame": {
+          "x": 124,
+          "y": 11,
+          "w": 159,
+          "h": 409
+        }
+      },
+      "wave": {
+        "src": "assets/art/companions-v1.png",
+        "atlas": {
+          "width": 1216,
+          "height": 1293
+        },
+        "frame": {
+          "x": 90,
+          "y": 441,
+          "w": 241,
+          "h": 400
+        }
+      },
+      "celebrate": {
+        "src": "assets/art/companions-v1.png",
+        "atlas": {
+          "width": 1216,
+          "height": 1293
+        },
+        "frame": {
+          "x": 92,
+          "y": 864,
+          "w": 211,
+          "h": 415
+        }
+      }
+    },
+    "alex": {
+      "idle": {
+        "src": "assets/art/companions-v1.png",
+        "atlas": {
+          "width": 1216,
+          "height": 1293
+        },
+        "frame": {
+          "x": 512,
+          "y": 8,
+          "w": 157,
+          "h": 411
+        }
+      },
+      "wave": {
+        "src": "assets/art/companions-v1.png",
+        "atlas": {
+          "width": 1216,
+          "height": 1293
+        },
+        "frame": {
+          "x": 495,
+          "y": 434,
+          "w": 245,
+          "h": 405
+        }
+      },
+      "celebrate": {
+        "src": "assets/art/companions-v1.png",
+        "atlas": {
+          "width": 1216,
+          "height": 1293
+        },
+        "frame": {
+          "x": 477,
+          "y": 862,
+          "w": 222,
+          "h": 418
+        }
+      }
+    },
+    "jo": {
+      "idle": {
+        "src": "assets/art/companions-v1.png",
+        "atlas": {
+          "width": 1216,
+          "height": 1293
+        },
+        "frame": {
+          "x": 883,
+          "y": 11,
+          "w": 192,
+          "h": 409
+        }
+      },
+      "wave": {
+        "src": "assets/art/companions-v1.png",
+        "atlas": {
+          "width": 1216,
+          "height": 1293
+        },
+        "frame": {
+          "x": 845,
+          "y": 440,
+          "w": 271,
+          "h": 400
+        }
+      },
+      "celebrate": {
+        "src": "assets/art/companions-v1.png",
+        "atlas": {
+          "width": 1216,
+          "height": 1293
+        },
+        "frame": {
+          "x": 885,
+          "y": 863,
+          "w": 177,
+          "h": 416
+        }
+      }
+    }
+  },
+  "avatar": {
+    "skin": [
+      {
+        "id": "skin-1",
+        "label": "Porcelain",
+        "group": "skin",
+        "src": "assets/art/avatar-kit-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 81,
+          "y": 18,
+          "w": 164,
+          "h": 295
+        },
+        "position": {
+          "x": 0.2,
+          "y": 0.04,
+          "w": 0.6,
+          "h": 0.94,
+          "z": 1
+        }
+      },
+      {
+        "id": "skin-2",
+        "label": "Peach",
+        "group": "skin",
+        "src": "assets/art/avatar-kit-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 325,
+          "y": 18,
+          "w": 163,
+          "h": 295
+        },
+        "position": {
+          "x": 0.2,
+          "y": 0.04,
+          "w": 0.6,
+          "h": 0.94,
+          "z": 1
+        }
+      },
+      {
+        "id": "skin-3",
+        "label": "Honey",
+        "group": "skin",
+        "src": "assets/art/avatar-kit-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 567,
+          "y": 18,
+          "w": 164,
+          "h": 296
+        },
+        "position": {
+          "x": 0.2,
+          "y": 0.04,
+          "w": 0.6,
+          "h": 0.94,
+          "z": 1
+        }
+      },
+      {
+        "id": "skin-4",
+        "label": "Caramel",
+        "group": "skin",
+        "src": "assets/art/avatar-kit-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 809,
+          "y": 18,
+          "w": 163,
+          "h": 296
+        },
+        "position": {
+          "x": 0.2,
+          "y": 0.04,
+          "w": 0.6,
+          "h": 0.94,
+          "z": 1
+        }
+      },
+      {
+        "id": "skin-5",
+        "label": "Chestnut",
+        "group": "skin",
+        "src": "assets/art/avatar-kit-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 1051,
+          "y": 18,
+          "w": 162,
+          "h": 296
+        },
+        "position": {
+          "x": 0.2,
+          "y": 0.04,
+          "w": 0.6,
+          "h": 0.94,
+          "z": 1
+        }
+      },
+      {
+        "id": "skin-6",
+        "label": "Deep brown",
+        "group": "skin",
+        "src": "assets/art/avatar-kit-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 1293,
+          "y": 18,
+          "w": 163,
+          "h": 296
+        },
+        "position": {
+          "x": 0.2,
+          "y": 0.04,
+          "w": 0.6,
+          "h": 0.94,
+          "z": 1
+        }
+      }
+    ],
+    "outfit": [
+      {
+        "id": "outfit-1",
+        "label": "Magenta hoodie",
+        "group": "outfit",
+        "src": "assets/art/avatar-kit-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 69,
+          "y": 351,
+          "w": 187,
+          "h": 281
+        },
+        "position": {
+          "x": 0.16,
+          "y": 0.39,
+          "w": 0.68,
+          "h": 0.6,
+          "z": 2
+        }
+      },
+      {
+        "id": "outfit-2",
+        "label": "Teal summer",
+        "group": "outfit",
+        "src": "assets/art/avatar-kit-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 332,
+          "y": 365,
+          "w": 151,
+          "h": 268
+        },
+        "position": {
+          "x": 0.16,
+          "y": 0.39,
+          "w": 0.68,
+          "h": 0.6,
+          "z": 2
+        }
+      },
+      {
+        "id": "outfit-3",
+        "label": "Explorer jacket",
+        "group": "outfit",
+        "src": "assets/art/avatar-kit-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 555,
+          "y": 358,
+          "w": 190,
+          "h": 275
+        },
+        "position": {
+          "x": 0.16,
+          "y": 0.39,
+          "w": 0.68,
+          "h": 0.6,
+          "z": 2
+        }
+      },
+      {
+        "id": "outfit-4",
+        "label": "Orange sweater",
+        "group": "outfit",
+        "src": "assets/art/avatar-kit-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 796,
+          "y": 364,
+          "w": 185,
+          "h": 268
+        },
+        "position": {
+          "x": 0.16,
+          "y": 0.39,
+          "w": 0.68,
+          "h": 0.6,
+          "z": 2
+        }
+      },
+      {
+        "id": "outfit-5",
+        "label": "Teal overalls",
+        "group": "outfit",
+        "src": "assets/art/avatar-kit-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 1055,
+          "y": 362,
+          "w": 153,
+          "h": 271
+        },
+        "position": {
+          "x": 0.16,
+          "y": 0.39,
+          "w": 0.68,
+          "h": 0.6,
+          "z": 2
+        }
+      },
+      {
+        "id": "outfit-6",
+        "label": "Magenta cardigan",
+        "group": "outfit",
+        "src": "assets/art/avatar-kit-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 1282,
+          "y": 365,
+          "w": 187,
+          "h": 268
+        },
+        "position": {
+          "x": 0.16,
+          "y": 0.39,
+          "w": 0.68,
+          "h": 0.6,
+          "z": 2
+        }
+      }
+    ],
+    "hair": [
+      {
+        "id": "hair-1",
+        "label": "Side part",
+        "group": "hair",
+        "src": "assets/art/avatar-kit-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 87,
+          "y": 684,
+          "w": 160,
+          "h": 110
+        },
+        "position": {
+          "x": 0.28,
+          "y": 0.025,
+          "w": 0.44,
+          "h": 0.3,
+          "z": 4
+        }
+      },
+      {
+        "id": "hair-2",
+        "label": "Short curls",
+        "group": "hair",
+        "src": "assets/art/avatar-kit-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 324,
+          "y": 681,
+          "w": 164,
+          "h": 110
+        },
+        "position": {
+          "x": 0.28,
+          "y": 0.025,
+          "w": 0.44,
+          "h": 0.3,
+          "z": 4
+        }
+      },
+      {
+        "id": "hair-3",
+        "label": "Long straight",
+        "group": "hair",
+        "src": "assets/art/avatar-kit-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 563,
+          "y": 687,
+          "w": 172,
+          "h": 162
+        },
+        "position": {
+          "x": 0.28,
+          "y": 0.025,
+          "w": 0.44,
+          "h": 0.3,
+          "z": 4
+        }
+      },
+      {
+        "id": "hair-4",
+        "label": "Twin puffs",
+        "group": "hair",
+        "src": "assets/art/avatar-kit-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 792,
+          "y": 683,
+          "w": 195,
+          "h": 114
+        },
+        "position": {
+          "x": 0.28,
+          "y": 0.025,
+          "w": 0.44,
+          "h": 0.3,
+          "z": 4
+        }
+      },
+      {
+        "id": "hair-5",
+        "label": "Blonde bob",
+        "group": "hair",
+        "src": "assets/art/avatar-kit-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 1043,
+          "y": 694,
+          "w": 167,
+          "h": 144
+        },
+        "position": {
+          "x": 0.28,
+          "y": 0.025,
+          "w": 0.44,
+          "h": 0.3,
+          "z": 4
+        }
+      },
+      {
+        "id": "hair-6",
+        "label": "Soft waves",
+        "group": "hair",
+        "src": "assets/art/avatar-kit-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 1280,
+          "y": 685,
+          "w": 193,
+          "h": 164
+        },
+        "position": {
+          "x": 0.28,
+          "y": 0.025,
+          "w": 0.44,
+          "h": 0.3,
+          "z": 4
+        }
+      },
+      {
+        "id": "none",
+        "label": "No hair",
+        "group": "hair"
+      }
+    ],
+    "accessory": [
+      {
+        "id": "none",
+        "label": "No extra",
+        "group": "accessory"
+      },
+      {
+        "id": "accessory-1",
+        "label": "Round glasses",
+        "group": "accessory",
+        "src": "assets/art/avatar-kit-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 103,
+          "y": 908,
+          "w": 120,
+          "h": 50
+        },
+        "position": {
+          "x": 0.32,
+          "y": 0.16,
+          "w": 0.36,
+          "h": 0.1,
+          "z": 5
+        }
+      },
+      {
+        "id": "accessory-2",
+        "label": "Orange cap",
+        "group": "accessory",
+        "src": "assets/art/avatar-kit-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 337,
+          "y": 870,
+          "w": 137,
+          "h": 83
+        },
+        "position": {
+          "x": 0.27,
+          "y": 0.015,
+          "w": 0.46,
+          "h": 0.19,
+          "z": 6
+        }
+      },
+      {
+        "id": "accessory-3",
+        "label": "Teal headphones",
+        "group": "accessory",
+        "src": "assets/art/avatar-kit-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 568,
+          "y": 877,
+          "w": 161,
+          "h": 103
+        },
+        "position": {
+          "x": 0.26,
+          "y": 0.09,
+          "w": 0.48,
+          "h": 0.24,
+          "z": 6
+        }
+      },
+      {
+        "id": "accessory-4",
+        "label": "Pico satchel",
+        "group": "accessory",
+        "src": "assets/art/avatar-kit-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 822,
+          "y": 878,
+          "w": 114,
+          "h": 132
+        },
+        "position": {
+          "x": 0.33,
+          "y": 0.35,
+          "w": 0.42,
+          "h": 0.39,
+          "z": 5
+        }
+      },
+      {
+        "id": "accessory-5",
+        "label": "Orange scarf",
+        "group": "accessory",
+        "src": "assets/art/avatar-kit-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 1064,
+          "y": 891,
+          "w": 126,
+          "h": 116
+        },
+        "position": {
+          "x": 0.36,
+          "y": 0.28,
+          "w": 0.3,
+          "h": 0.28,
+          "z": 5
+        }
+      },
+      {
+        "id": "accessory-6",
+        "label": "Navy backpack",
+        "group": "accessory",
+        "src": "assets/art/avatar-kit-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 1300,
+          "y": 883,
+          "w": 143,
+          "h": 110
+        },
+        "position": {
+          "x": 0.22,
+          "y": 0.32,
+          "w": 0.56,
+          "h": 0.48,
+          "z": 0
+        }
+      }
+    ],
+    "badge": [
+      {
+        "id": "none",
+        "label": "No pin",
+        "group": "badge"
+      },
+      {
+        "id": "star-pin",
+        "label": "First steps",
+        "group": "badge",
+        "unlockXp": 25,
+        "src": "assets/art/ui-objects-v1.png",
+        "atlas": {
+          "width": 1263,
+          "height": 1245
+        },
+        "frame": {
+          "x": 359,
+          "y": 406,
+          "w": 226,
+          "h": 216
+        },
+        "position": {
+          "x": 0.56,
+          "y": 0.43,
+          "w": 0.11,
+          "h": 0.095,
+          "z": 8
+        }
+      },
+      {
+        "id": "trophy-pin",
+        "label": "Word explorer",
+        "group": "badge",
+        "unlockXp": 100,
+        "src": "assets/art/ui-objects-v1.png",
+        "atlas": {
+          "width": 1263,
+          "height": 1245
+        },
+        "frame": {
+          "x": 635,
+          "y": 394,
+          "w": 258,
+          "h": 228
+        },
+        "position": {
+          "x": 0.56,
+          "y": 0.43,
+          "w": 0.11,
+          "h": 0.095,
+          "z": 8
+        }
+      },
+      {
+        "id": "compass-pin",
+        "label": "New horizons",
+        "group": "badge",
+        "unlockXp": 250,
+        "src": "assets/art/ui-objects-v1.png",
+        "atlas": {
+          "width": 1263,
+          "height": 1245
+        },
+        "frame": {
+          "x": 947,
+          "y": 683,
+          "w": 260,
+          "h": 215
+        },
+        "position": {
+          "x": 0.56,
+          "y": 0.43,
+          "w": 0.11,
+          "h": 0.095,
+          "z": 8
+        }
+      }
+    ]
+  },
+  "scenes": {
+    "town": {
+      "src": "assets/art/town-v1.png",
+      "atlas": {
+        "width": 2172,
+        "height": 724
+      },
+      "frame": {
+        "x": 0,
+        "y": 337,
+        "w": 2172,
+        "h": 387
+      }
+    }
+  },
+  "icons": {
+    "home": {
+      "src": "assets/art/ui-objects-v1.png",
+      "atlas": {
+        "width": 1263,
+        "height": 1245
+      },
+      "frame": {
+        "x": 66,
+        "y": 102,
+        "w": 241,
+        "h": 209
+      }
+    },
+    "book": {
+      "src": "assets/art/ui-objects-v1.png",
+      "atlas": {
+        "width": 1263,
+        "height": 1245
+      },
+      "frame": {
+        "x": 355,
+        "y": 124,
+        "w": 246,
+        "h": 187
+      }
+    },
+    "games": {
+      "src": "assets/art/ui-objects-v1.png",
+      "atlas": {
+        "width": 1263,
+        "height": 1245
+      },
+      "frame": {
+        "x": 644,
+        "y": 109,
+        "w": 234,
+        "h": 202
+      }
+    },
+    "profile": {
+      "src": "assets/art/ui-objects-v1.png",
+      "atlas": {
+        "width": 1263,
+        "height": 1245
+      },
+      "frame": {
+        "x": 959,
+        "y": 94,
+        "w": 200,
+        "h": 217
+      }
+    },
+    "flame": {
+      "src": "assets/art/ui-objects-v1.png",
+      "atlas": {
+        "width": 1263,
+        "height": 1245
+      },
+      "frame": {
+        "x": 89,
+        "y": 390,
+        "w": 199,
+        "h": 232
+      }
+    },
+    "star": {
+      "src": "assets/art/ui-objects-v1.png",
+      "atlas": {
+        "width": 1263,
+        "height": 1245
+      },
+      "frame": {
+        "x": 359,
+        "y": 406,
+        "w": 226,
+        "h": 216
+      }
+    },
+    "trophy": {
+      "src": "assets/art/ui-objects-v1.png",
+      "atlas": {
+        "width": 1263,
+        "height": 1245
+      },
+      "frame": {
+        "x": 635,
+        "y": 394,
+        "w": 258,
+        "h": 228
+      }
+    },
+    "satchel": {
+      "src": "assets/art/ui-objects-v1.png",
+      "atlas": {
+        "width": 1263,
+        "height": 1245
+      },
+      "frame": {
+        "x": 947,
+        "y": 394,
+        "w": 244,
+        "h": 228
+      }
+    },
+    "sound": {
+      "src": "assets/art/ui-objects-v1.png",
+      "atlas": {
+        "width": 1263,
+        "height": 1245
+      },
+      "frame": {
+        "x": 63,
+        "y": 622,
+        "w": 242,
+        "h": 284
+      }
+    },
+    "key": {
+      "src": "assets/art/ui-objects-v1.png",
+      "atlas": {
+        "width": 1263,
+        "height": 1245
+      },
+      "frame": {
+        "x": 354,
+        "y": 709,
+        "w": 227,
+        "h": 191
+      }
+    },
+    "calendar": {
+      "src": "assets/art/ui-objects-v1.png",
+      "atlas": {
+        "width": 1263,
+        "height": 1245
+      },
+      "frame": {
+        "x": 644,
+        "y": 687,
+        "w": 241,
+        "h": 215
+      }
+    },
+    "compass": {
+      "src": "assets/art/ui-objects-v1.png",
+      "atlas": {
+        "width": 1263,
+        "height": 1245
+      },
+      "frame": {
+        "x": 947,
+        "y": 683,
+        "w": 260,
+        "h": 215
+      }
+    },
+    "settings": {
+      "src": "assets/art/ui-objects-v1.png",
+      "atlas": {
+        "width": 1263,
+        "height": 1245
+      },
+      "frame": {
+        "x": 58,
+        "y": 968,
+        "w": 240,
+        "h": 237
+      }
+    },
+    "flag": {
+      "src": "assets/art/ui-objects-v1.png",
+      "atlas": {
+        "width": 1263,
+        "height": 1245
+      },
+      "frame": {
+        "x": 378,
+        "y": 974,
+        "w": 197,
+        "h": 222
+      }
+    },
+    "heart": {
+      "src": "assets/art/ui-objects-v1.png",
+      "atlas": {
+        "width": 1263,
+        "height": 1245
+      },
+      "frame": {
+        "x": 637,
+        "y": 986,
+        "w": 245,
+        "h": 208
+      }
+    },
+    "addBook": {
+      "src": "assets/art/ui-objects-v1.png",
+      "atlas": {
+        "width": 1263,
+        "height": 1245
+      },
+      "frame": {
+        "x": 953,
+        "y": 968,
+        "w": 212,
+        "h": 228
+      }
+    }
+  },
+  "vocabulary": {
+    "teacher": {
+      "src": "assets/art/jobs-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 28,
+        "y": 16,
+        "w": 262,
+        "h": 295
+      }
+    },
+    "student": {
+      "src": "assets/art/jobs-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 328,
+        "y": 23,
+        "w": 271,
+        "h": 288
+      }
+    },
+    "chef": {
+      "src": "assets/art/jobs-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 630,
+        "y": 5,
+        "w": 295,
+        "h": 306
+      }
+    },
+    "doctor": {
+      "src": "assets/art/jobs-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 953,
+        "y": 17,
+        "w": 299,
+        "h": 294
+      }
+    },
+    "office worker": {
+      "src": "assets/art/jobs-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 9,
+        "y": 349,
+        "w": 289,
+        "h": 274
+      }
+    },
+    "receptionist": {
+      "src": "assets/art/jobs-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 318,
+        "y": 358,
+        "w": 287,
+        "h": 265
+      }
+    },
+    "salesclerk": {
+      "src": "assets/art/jobs-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 634,
+        "y": 356,
+        "w": 298,
+        "h": 267
+      }
+    },
+    "taxi driver": {
+      "src": "assets/art/jobs-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 945,
+        "y": 342,
+        "w": 314,
+        "h": 281
+      }
+    },
+    "waiter": {
+      "src": "assets/art/jobs-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 4,
+        "y": 623,
+        "w": 311,
+        "h": 312
+      }
+    },
+    "waitress": {
+      "src": "assets/art/jobs-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 325,
+        "y": 623,
+        "w": 297,
+        "h": 312
+      }
+    },
+    "farmer": {
+      "src": "assets/art/jobs-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 632,
+        "y": 623,
+        "w": 303,
+        "h": 312
+      }
+    },
+    "nurse": {
+      "src": "assets/art/jobs-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 967,
+        "y": 666,
+        "w": 292,
+        "h": 269
+      }
+    },
+    "dentist": {
+      "src": "assets/art/jobs-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 32,
+        "y": 969,
+        "w": 281,
+        "h": 271
+      }
+    },
+    "police officer": {
+      "src": "assets/art/jobs-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 318,
+        "y": 967,
+        "w": 312,
+        "h": 272
+      }
+    },
+    "driver": {
+      "src": "assets/art/jobs-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 634,
+        "y": 966,
+        "w": 300,
+        "h": 269
+      }
+    },
+    "actor": {
+      "src": "assets/art/jobs-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 949,
+        "y": 967,
+        "w": 304,
+        "h": 272
+      }
+    }
+  }
+}

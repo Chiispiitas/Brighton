@@ -1,0 +1,497 @@
+{
+  "date": "2026-11-04T06:37:24.916Z",
+  "base": "http://127.0.0.1:8875/Horizons/App/",
+  "scope": "Independent Unit1 learning-flow QA against the actual deployed backend; no mocked authentication",
+  "testCode": "DEMO-HZ-A1-004",
+  "checks": [
+    {
+      "name": "code-only entry opens a real saved profile",
+      "pass": true,
+      "detail": {
+        "profileId": "b53e123d-a98f-4b2a-b9a0-0c1958452096",
+        "name": "Flow four 247327"
+      }
+    },
+    {
+      "name": "all four lesson paths and every word set are available",
+      "pass": true,
+      "detail": {
+        "lessons": 4,
+        "wordSets": 23,
+        "registeredActivities": 48
+      }
+    },
+    {
+      "name": "a full vocabulary round handles a wrong answer, correction and real progress save",
+      "pass": true,
+      "detail": {
+        "questions": 6,
+        "correct": 5,
+        "xpBefore": 1415,
+        "xpAfter": 1450
+      }
+    },
+    {
+      "name": "real grammar interaction and grading: practice-1b-contractions",
+      "pass": true,
+      "detail": {
+        "questionTypes": [
+          "text"
+        ],
+        "questions": 8
+      }
+    },
+    {
+      "name": "real grammar interaction and grading: practice-1c-be-descriptions",
+      "pass": true,
+      "detail": {
+        "questionTypes": [
+          "text",
+          "order",
+          "choice"
+        ],
+        "questions": 8
+      }
+    },
+    {
+      "name": "real grammar interaction and grading: practice-1d-capitals",
+      "pass": true,
+      "detail": {
+        "questionTypes": [
+          "choice",
+          "text"
+        ],
+        "questions": 8
+      }
+    },
+    {
+      "name": "a mixed round combines selected sets from two lessons and covers all selected words",
+      "pass": true,
+      "detail": {
+        "sets": [
+          "1a-greetings",
+          "1c-world-start"
+        ],
+        "questions": 16,
+        "allSelectedWordsCovered": true
+      }
+    },
+    {
+      "name": "a short mixed recall round uses typed retrieval from two lessons and saves",
+      "pass": true,
+      "detail": {
+        "sets": [
+          "1b-jobs-town",
+          "1d-names-contact"
+        ],
+        "questions": 8,
+        "typedRetrieval": true
+      }
+    },
+    {
+      "name": "the actual memory game reveals, rejects a mismatch, completes and saves",
+      "pass": true,
+      "detail": {
+        "pairs": 6,
+        "wrongPairRecovered": true
+      }
+    },
+    {
+      "name": "postcard delivery is a real country–nationality matching game",
+      "pass": true,
+      "detail": {
+        "pairs": 6
+      }
+    },
+    {
+      "name": "earned image pins can be worn and saved on the learner avatar",
+      "pass": true,
+      "detail": {
+        "earned": [
+          "star-pin",
+          "trophy-pin",
+          "compass-pin"
+        ],
+        "worn": "compass-pin",
+        "saved": true
+      }
+    },
+    {
+      "name": "source reading questions show their evidence and grade correctly",
+      "pass": true,
+      "detail": {
+        "questionId": "read-city-hot"
+      }
+    },
+    {
+      "name": "the word bank plays a real generated Jessica pronunciation clip",
+      "pass": true,
+      "detail": {
+        "src": "http://127.0.0.1:8875/Horizons/App/assets/audio/v-personal-what-is-your-phone-number.mp3",
+        "time": 0.106688,
+        "duration": 1.6,
+        "paused": false,
+        "error": null
+      }
+    },
+    {
+      "name": "actual book audio plays from lesson 1A",
+      "pass": true,
+      "detail": {
+        "src": "http://127.0.0.1:8875/Horizons/A1/Audios/Track%201.5.mp3",
+        "time": 0.375508,
+        "paused": false,
+        "readyState": 4,
+        "duration": 47.76,
+        "error": null,
+        "stopsOnExit": true
+      }
+    },
+    {
+      "name": "actual book audio plays from lesson 1B",
+      "pass": true,
+      "detail": {
+        "src": "http://127.0.0.1:8875/Horizons/A1/Audios/Track%201.9.mp3",
+        "time": 0.367711,
+        "paused": false,
+        "readyState": 4,
+        "duration": 101.52,
+        "error": null,
+        "stopsOnExit": true
+      }
+    },
+    {
+      "name": "actual book audio plays from lesson 1C",
+      "pass": true,
+      "detail": {
+        "src": "http://127.0.0.1:8875/Horizons/A1/Audios/Track%201.10.mp3",
+        "time": 0.373387,
+        "paused": false,
+        "readyState": 4,
+        "duration": 24.8,
+        "error": null,
+        "stopsOnExit": true
+      }
+    },
+    {
+      "name": "actual book audio plays from lesson 1D",
+      "pass": true,
+      "detail": {
+        "src": "http://127.0.0.1:8875/Horizons/A1/Audios/Track%201.12.mp3",
+        "time": 0.36625,
+        "paused": false,
+        "readyState": 4,
+        "duration": 33.84,
+        "error": null,
+        "stopsOnExit": true
+      }
+    },
+    {
+      "name": "cookie restoration survives reload without entering the code again",
+      "pass": true,
+      "detail": {
+        "cookiePresent": true,
+        "cookiePath": "/Horizons/App/",
+        "sameSite": "Lax",
+        "secure": false
+      }
+    },
+    {
+      "name": "the same code restores the saved profile and learning progress in a fresh browser context",
+      "pass": true,
+      "detail": {
+        "sameProfile": true,
+        "sameName": true,
+        "sameXp": true,
+        "xp": 1820,
+        "mobileWidth": {
+          "scroll": 390,
+          "width": 390
+        }
+      }
+    }
+  ],
+  "failures": [],
+  "screenshots": [
+    {
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\horizons-learning-proof-20261104\\learning-path-desktop.png",
+      "scope": "Actual home path with all four lessons available"
+    },
+    {
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\horizons-learning-proof-20261104\\wrong-answer-correction.png",
+      "scope": "choice feedback"
+    },
+    {
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\horizons-learning-proof-20261104\\saved-vocabulary-result.png",
+      "scope": "Completed source-aligned quiz saved by the deployed backend"
+    },
+    {
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\horizons-learning-proof-20261104\\grammar-practice-1b-contractions.png",
+      "scope": "text feedback"
+    },
+    {
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\horizons-learning-proof-20261104\\grammar-practice-1c-be-descriptions.png",
+      "scope": "text feedback"
+    },
+    {
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\horizons-learning-proof-20261104\\grammar-practice-1d-capitals.png",
+      "scope": "choice feedback"
+    },
+    {
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\horizons-learning-proof-20261104\\mixed-set-chooser.png",
+      "scope": "A1 greetings plus1C country/nationality sets, all selected words"
+    },
+    {
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\horizons-learning-proof-20261104\\mixed-recall.png",
+      "scope": "text feedback"
+    },
+    {
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\horizons-learning-proof-20261104\\completed-memory-game.png",
+      "scope": "All genuine greeting/meaning pairs matched after an initial mistake"
+    },
+    {
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\horizons-learning-proof-20261104\\completed-postcards.png",
+      "scope": "Country and nationality pairs remain distinct and readable"
+    },
+    {
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\horizons-learning-proof-20261104\\earned-avatar-pins.png",
+      "scope": "Real XP unlocks ImageGen-created avatar pins and the selected pin is saved"
+    },
+    {
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\horizons-learning-proof-20261104\\source-reading.png",
+      "scope": "A source-aligned class post or room card supports the answer"
+    },
+    {
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\horizons-learning-proof-20261104\\word-pronunciation.png",
+      "scope": "A real Jessica word-bank pronunciation clip opened from the learner word collection"
+    },
+    {
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\horizons-learning-proof-20261104\\book-audio-playing.png",
+      "scope": "The real Unit1C recording is decoded and playing"
+    },
+    {
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\horizons-learning-proof-20261104\\restored-mobile-profile.png",
+      "scope": "The same saved learner returns on a fresh phone-sized browser"
+    },
+    {
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\horizons-learning-proof-20261104\\learning-progress-mobile.png",
+      "scope": "Actual saved learning progress at phone width"
+    }
+  ],
+  "apiCalls": [
+    {
+      "action": "redeem",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "profileId": "b53e123d-a98f-4b2a-b9a0-0c1958452096",
+      "xp": 1415,
+      "completedCount": 6
+    },
+    {
+      "action": "updateProfile",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "profileId": "b53e123d-a98f-4b2a-b9a0-0c1958452096",
+      "xp": 1415,
+      "completedCount": 6
+    },
+    {
+      "action": "saveAttempt",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "profileId": "b53e123d-a98f-4b2a-b9a0-0c1958452096",
+      "xp": 1450,
+      "completedCount": 6,
+      "activityId": "quiz-1a-greetings",
+      "answers": 6
+    },
+    {
+      "action": "saveAttempt",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "profileId": "b53e123d-a98f-4b2a-b9a0-0c1958452096",
+      "xp": 1500,
+      "completedCount": 6,
+      "activityId": "practice-1b-contractions",
+      "answers": 8
+    },
+    {
+      "action": "saveAttempt",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "profileId": "b53e123d-a98f-4b2a-b9a0-0c1958452096",
+      "xp": 1550,
+      "completedCount": 6,
+      "activityId": "practice-1c-be-descriptions",
+      "answers": 8
+    },
+    {
+      "action": "saveAttempt",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "profileId": "b53e123d-a98f-4b2a-b9a0-0c1958452096",
+      "xp": 1600,
+      "completedCount": 6,
+      "activityId": "practice-1d-capitals",
+      "answers": 8
+    },
+    {
+      "action": "saveAttempt",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "profileId": "b53e123d-a98f-4b2a-b9a0-0c1958452096",
+      "xp": 1690,
+      "completedCount": 6,
+      "activityId": "mix-quiz",
+      "answers": 16
+    },
+    {
+      "action": "saveAttempt",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "profileId": "b53e123d-a98f-4b2a-b9a0-0c1958452096",
+      "xp": 1740,
+      "completedCount": 6,
+      "activityId": "mix-recall",
+      "answers": 8
+    },
+    {
+      "action": "saveAttempt",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "profileId": "b53e123d-a98f-4b2a-b9a0-0c1958452096",
+      "xp": 1780,
+      "completedCount": 6,
+      "activityId": "1a-greeting-pairs",
+      "answers": 6
+    },
+    {
+      "action": "saveAttempt",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "profileId": "b53e123d-a98f-4b2a-b9a0-0c1958452096",
+      "xp": 1820,
+      "completedCount": 6,
+      "activityId": "1c-postcards",
+      "answers": 6
+    },
+    {
+      "action": "updateProfile",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "profileId": "b53e123d-a98f-4b2a-b9a0-0c1958452096",
+      "xp": 1820,
+      "completedCount": 6
+    },
+    {
+      "action": "getSession",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "profileId": "b53e123d-a98f-4b2a-b9a0-0c1958452096",
+      "xp": 1820,
+      "completedCount": 6
+    },
+    {
+      "action": "redeem",
+      "status": 200,
+      "ok": true,
+      "error": null,
+      "profileId": "b53e123d-a98f-4b2a-b9a0-0c1958452096",
+      "xp": 1820,
+      "completedCount": 6
+    }
+  ],
+  "runtimeErrors": [],
+  "coverage": {
+    "lessonPaths": [
+      "1A",
+      "1B",
+      "1C",
+      "1D"
+    ],
+    "completedActivities": [
+      "quiz-1a-greetings",
+      "practice-1b-contractions",
+      "practice-1c-be-descriptions",
+      "practice-1d-capitals",
+      "1a-greeting-pairs",
+      "1c-postcards"
+    ],
+    "bookAudioLessons": [
+      "1A",
+      "1B",
+      "1C",
+      "1D"
+    ],
+    "mixedWordIds": [
+      "v-countries-canada",
+      "v-countries-the-us",
+      "v-countries-argentina",
+      "v-countries-the-uk",
+      "v-countries-south-korean",
+      "v-greetings-good-afternoon",
+      "v-countries-south-korea",
+      "v-countries-canadian",
+      "v-greetings-good-morning",
+      "v-greetings-hi",
+      "v-greetings-nice-to-meet-you",
+      "v-countries-argentinian",
+      "v-greetings-hello",
+      "v-countries-american",
+      "v-countries-british",
+      "v-greetings-good-evening"
+    ]
+  },
+  "limits": [
+    "This run uses Chromium/Edge, not every browser engine.",
+    "Runtime audio checks are muted playback/decode checks, not a subjective voice-quality review.",
+    "Code issuance, expiry, linking and adversarial backend cases are reviewed separately by the backend owner.",
+    "The reserved004 profile already exceeds250XP. Earned pin selection and restoration were tested here; locked-pin enforcement is covered separately by the backend and UI owners."
+  ],
+  "profileName": "Flow four 247327",
+  "savedBadge": "compass-pin",
+  "status": "PASS",
+  "checksPassed": 19,
+  "checksTotal": 19,
+  "manualVisualReview": {
+    "date": "2026-11-04T06:39:28.861Z",
+    "inspected": [
+      "learning-path-desktop",
+      "restored-mobile-profile",
+      "learning-progress-mobile",
+      "wrong-answer-correction",
+      "saved-vocabulary-result",
+      "grammar-practice-1c-be-descriptions",
+      "mixed-recall",
+      "completed-memory-game",
+      "completed-postcards",
+      "source-reading",
+      "word-pronunciation",
+      "earned-avatar-pins"
+    ],
+    "findings": [
+      "The saturated Horizons magenta, warm yellow accents, rounded type and ImageGen character art form a consistent app identity.",
+      "Quiz prompts, answer targets and feedback have distinct hierarchy and generous space; the real source reading is contained and readable.",
+      "Phone-sized restored home and progress pages fit at390px with no horizontal overflow. The human companion now occupies reserved header space instead of covering path labels.",
+      "Memory and matching boards show all cards and preserve one-to-one choices; errors recover without consuming practice lives.",
+      "The customizer shows illustrated hair, clothing, accessories and earned pins. The selected compass pin is saved and restored with the same profile."
+    ],
+    "blockers": [],
+    "notes": [
+      "Some screenshots include transient success/welcome notifications.",
+      "This is a review of selected representative screens, not a visual certification of every possible word, avatar combination or browser."
+    ]
+  }
+}

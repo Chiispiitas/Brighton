@@ -1,0 +1,854 @@
+[
+  {
+    "id": "v-greetings-good-morning",
+    "term": "Good morning",
+    "script": "Good morning.",
+    "file": "v-greetings-good-morning.mp3"
+  },
+  {
+    "id": "v-greetings-good-afternoon",
+    "term": "Good afternoon",
+    "script": "Good afternoon.",
+    "file": "v-greetings-good-afternoon.mp3"
+  },
+  {
+    "id": "v-greetings-good-evening",
+    "term": "Good evening",
+    "script": "Good evening.",
+    "file": "v-greetings-good-evening.mp3"
+  },
+  {
+    "id": "v-greetings-hello",
+    "term": "Hello",
+    "script": "Hello.",
+    "file": "v-greetings-hello.mp3"
+  },
+  {
+    "id": "v-greetings-hi",
+    "term": "Hi",
+    "script": "Hi.",
+    "file": "v-greetings-hi.mp3"
+  },
+  {
+    "id": "v-greetings-nice-to-meet-you",
+    "term": "Nice to meet you",
+    "script": "Nice to meet you.",
+    "file": "v-greetings-nice-to-meet-you.mp3"
+  },
+  {
+    "id": "v-greetings-see-you-later",
+    "term": "See you later",
+    "script": "See you later.",
+    "file": "v-greetings-see-you-later.mp3"
+  },
+  {
+    "id": "v-greetings-goodbye",
+    "term": "Goodbye",
+    "script": "Goodbye.",
+    "file": "v-greetings-goodbye.mp3"
+  },
+  {
+    "id": "v-greetings-bye",
+    "term": "Bye",
+    "script": "Bye.",
+    "file": "v-greetings-bye.mp3"
+  },
+  {
+    "id": "v-greetings-good-night",
+    "term": "Good night",
+    "script": "Good night.",
+    "file": "v-greetings-good-night.mp3"
+  },
+  {
+    "id": "v-personal-name",
+    "term": "name",
+    "script": "name.",
+    "file": "v-personal-name.mp3"
+  },
+  {
+    "id": "v-personal-class",
+    "term": "class",
+    "script": "class.",
+    "file": "v-personal-class.mp3"
+  },
+  {
+    "id": "v-personal-first-name",
+    "term": "first name",
+    "script": "first name.",
+    "file": "v-personal-first-name.mp3"
+  },
+  {
+    "id": "v-personal-last-name",
+    "term": "last name",
+    "script": "last name.",
+    "file": "v-personal-last-name.mp3"
+  },
+  {
+    "id": "v-personal-country",
+    "term": "country",
+    "script": "country.",
+    "file": "v-personal-country.mp3"
+  },
+  {
+    "id": "v-personal-city",
+    "term": "city",
+    "script": "city.",
+    "file": "v-personal-city.mp3"
+  },
+  {
+    "id": "v-personal-phone-number",
+    "term": "phone number",
+    "script": "phone number.",
+    "file": "v-personal-phone-number.mp3"
+  },
+  {
+    "id": "v-personal-email",
+    "term": "email",
+    "script": "email.",
+    "file": "v-personal-email.mp3"
+  },
+  {
+    "id": "v-personal-age",
+    "term": "age",
+    "script": "age.",
+    "file": "v-personal-age.mp3"
+  },
+  {
+    "id": "v-personal-address",
+    "term": "address",
+    "script": "address.",
+    "file": "v-personal-address.mp3"
+  },
+  {
+    "id": "v-personal-postal-code",
+    "term": "postal code",
+    "script": "postal code.",
+    "file": "v-personal-postal-code.mp3"
+  },
+  {
+    "id": "v-personal-nationality",
+    "term": "nationality",
+    "script": "nationality.",
+    "file": "v-personal-nationality.mp3"
+  },
+  {
+    "id": "v-personal-what-is-your-phone-number",
+    "term": "What is your phone number?",
+    "script": "What is your phone number.",
+    "file": "v-personal-what-is-your-phone-number.mp3"
+  },
+  {
+    "id": "v-alphabet-aa",
+    "term": "Aa",
+    "script": "The letter A.",
+    "file": "v-alphabet-aa.mp3"
+  },
+  {
+    "id": "v-alphabet-bb",
+    "term": "Bb",
+    "script": "The letter B.",
+    "file": "v-alphabet-bb.mp3"
+  },
+  {
+    "id": "v-alphabet-cc",
+    "term": "Cc",
+    "script": "The letter C.",
+    "file": "v-alphabet-cc.mp3"
+  },
+  {
+    "id": "v-alphabet-dd",
+    "term": "Dd",
+    "script": "The letter D.",
+    "file": "v-alphabet-dd.mp3"
+  },
+  {
+    "id": "v-alphabet-ee",
+    "term": "Ee",
+    "script": "The letter E.",
+    "file": "v-alphabet-ee.mp3"
+  },
+  {
+    "id": "v-alphabet-ff",
+    "term": "Ff",
+    "script": "The letter F.",
+    "file": "v-alphabet-ff.mp3"
+  },
+  {
+    "id": "v-alphabet-gg",
+    "term": "Gg",
+    "script": "The letter G.",
+    "file": "v-alphabet-gg.mp3"
+  },
+  {
+    "id": "v-alphabet-hh",
+    "term": "Hh",
+    "script": "The letter H.",
+    "file": "v-alphabet-hh.mp3"
+  },
+  {
+    "id": "v-alphabet-ii",
+    "term": "Ii",
+    "script": "The letter I.",
+    "file": "v-alphabet-ii.mp3"
+  },
+  {
+    "id": "v-alphabet-jj",
+    "term": "Jj",
+    "script": "The letter J.",
+    "file": "v-alphabet-jj.mp3"
+  },
+  {
+    "id": "v-alphabet-kk",
+    "term": "Kk",
+    "script": "The letter K.",
+    "file": "v-alphabet-kk.mp3"
+  },
+  {
+    "id": "v-alphabet-ll",
+    "term": "Ll",
+    "script": "The letter L.",
+    "file": "v-alphabet-ll.mp3"
+  },
+  {
+    "id": "v-alphabet-mm",
+    "term": "Mm",
+    "script": "The letter M.",
+    "file": "v-alphabet-mm.mp3"
+  },
+  {
+    "id": "v-alphabet-nn",
+    "term": "Nn",
+    "script": "The letter N.",
+    "file": "v-alphabet-nn.mp3"
+  },
+  {
+    "id": "v-alphabet-oo",
+    "term": "Oo",
+    "script": "The letter O.",
+    "file": "v-alphabet-oo.mp3"
+  },
+  {
+    "id": "v-alphabet-pp",
+    "term": "Pp",
+    "script": "The letter P.",
+    "file": "v-alphabet-pp.mp3"
+  },
+  {
+    "id": "v-alphabet-qq",
+    "term": "Qq",
+    "script": "The letter Q.",
+    "file": "v-alphabet-qq.mp3"
+  },
+  {
+    "id": "v-alphabet-rr",
+    "term": "Rr",
+    "script": "The letter R.",
+    "file": "v-alphabet-rr.mp3"
+  },
+  {
+    "id": "v-alphabet-ss",
+    "term": "Ss",
+    "script": "The letter S.",
+    "file": "v-alphabet-ss.mp3"
+  },
+  {
+    "id": "v-alphabet-tt",
+    "term": "Tt",
+    "script": "The letter T.",
+    "file": "v-alphabet-tt.mp3"
+  },
+  {
+    "id": "v-alphabet-uu",
+    "term": "Uu",
+    "script": "The letter U.",
+    "file": "v-alphabet-uu.mp3"
+  },
+  {
+    "id": "v-alphabet-vv",
+    "term": "Vv",
+    "script": "The letter V.",
+    "file": "v-alphabet-vv.mp3"
+  },
+  {
+    "id": "v-alphabet-ww",
+    "term": "Ww",
+    "script": "The letter W.",
+    "file": "v-alphabet-ww.mp3"
+  },
+  {
+    "id": "v-alphabet-xx",
+    "term": "Xx",
+    "script": "The letter X.",
+    "file": "v-alphabet-xx.mp3"
+  },
+  {
+    "id": "v-alphabet-yy",
+    "term": "Yy",
+    "script": "The letter Y.",
+    "file": "v-alphabet-yy.mp3"
+  },
+  {
+    "id": "v-alphabet-zz",
+    "term": "Zz",
+    "script": "The letter Z.",
+    "file": "v-alphabet-zz.mp3"
+  },
+  {
+    "id": "v-numbers-zero",
+    "term": "zero",
+    "script": "zero.",
+    "file": "v-numbers-zero.mp3"
+  },
+  {
+    "id": "v-numbers-one",
+    "term": "one",
+    "script": "one.",
+    "file": "v-numbers-one.mp3"
+  },
+  {
+    "id": "v-numbers-two",
+    "term": "two",
+    "script": "two.",
+    "file": "v-numbers-two.mp3"
+  },
+  {
+    "id": "v-numbers-three",
+    "term": "three",
+    "script": "three.",
+    "file": "v-numbers-three.mp3"
+  },
+  {
+    "id": "v-numbers-four",
+    "term": "four",
+    "script": "four.",
+    "file": "v-numbers-four.mp3"
+  },
+  {
+    "id": "v-numbers-five",
+    "term": "five",
+    "script": "five.",
+    "file": "v-numbers-five.mp3"
+  },
+  {
+    "id": "v-numbers-six",
+    "term": "six",
+    "script": "six.",
+    "file": "v-numbers-six.mp3"
+  },
+  {
+    "id": "v-numbers-seven",
+    "term": "seven",
+    "script": "seven.",
+    "file": "v-numbers-seven.mp3"
+  },
+  {
+    "id": "v-numbers-eight",
+    "term": "eight",
+    "script": "eight.",
+    "file": "v-numbers-eight.mp3"
+  },
+  {
+    "id": "v-numbers-nine",
+    "term": "nine",
+    "script": "nine.",
+    "file": "v-numbers-nine.mp3"
+  },
+  {
+    "id": "v-numbers-ten",
+    "term": "ten",
+    "script": "ten.",
+    "file": "v-numbers-ten.mp3"
+  },
+  {
+    "id": "v-numbers-eleven",
+    "term": "eleven",
+    "script": "eleven.",
+    "file": "v-numbers-eleven.mp3"
+  },
+  {
+    "id": "v-numbers-twelve",
+    "term": "twelve",
+    "script": "twelve.",
+    "file": "v-numbers-twelve.mp3"
+  },
+  {
+    "id": "v-numbers-thirteen",
+    "term": "thirteen",
+    "script": "thirteen.",
+    "file": "v-numbers-thirteen.mp3"
+  },
+  {
+    "id": "v-numbers-fourteen",
+    "term": "fourteen",
+    "script": "fourteen.",
+    "file": "v-numbers-fourteen.mp3"
+  },
+  {
+    "id": "v-numbers-fifteen",
+    "term": "fifteen",
+    "script": "fifteen.",
+    "file": "v-numbers-fifteen.mp3"
+  },
+  {
+    "id": "v-numbers-sixteen",
+    "term": "sixteen",
+    "script": "sixteen.",
+    "file": "v-numbers-sixteen.mp3"
+  },
+  {
+    "id": "v-numbers-seventeen",
+    "term": "seventeen",
+    "script": "seventeen.",
+    "file": "v-numbers-seventeen.mp3"
+  },
+  {
+    "id": "v-numbers-eighteen",
+    "term": "eighteen",
+    "script": "eighteen.",
+    "file": "v-numbers-eighteen.mp3"
+  },
+  {
+    "id": "v-numbers-nineteen",
+    "term": "nineteen",
+    "script": "nineteen.",
+    "file": "v-numbers-nineteen.mp3"
+  },
+  {
+    "id": "v-numbers-twenty",
+    "term": "twenty",
+    "script": "twenty.",
+    "file": "v-numbers-twenty.mp3"
+  },
+  {
+    "id": "v-numbers-thirty",
+    "term": "thirty",
+    "script": "thirty.",
+    "file": "v-numbers-thirty.mp3"
+  },
+  {
+    "id": "v-numbers-forty",
+    "term": "forty",
+    "script": "forty.",
+    "file": "v-numbers-forty.mp3"
+  },
+  {
+    "id": "v-numbers-fifty",
+    "term": "fifty",
+    "script": "fifty.",
+    "file": "v-numbers-fifty.mp3"
+  },
+  {
+    "id": "v-numbers-sixty",
+    "term": "sixty",
+    "script": "sixty.",
+    "file": "v-numbers-sixty.mp3"
+  },
+  {
+    "id": "v-numbers-seventy",
+    "term": "seventy",
+    "script": "seventy.",
+    "file": "v-numbers-seventy.mp3"
+  },
+  {
+    "id": "v-numbers-eighty",
+    "term": "eighty",
+    "script": "eighty.",
+    "file": "v-numbers-eighty.mp3"
+  },
+  {
+    "id": "v-numbers-ninety",
+    "term": "ninety",
+    "script": "ninety.",
+    "file": "v-numbers-ninety.mp3"
+  },
+  {
+    "id": "v-numbers-one-hundred",
+    "term": "one hundred",
+    "script": "one hundred.",
+    "file": "v-numbers-one-hundred.mp3"
+  },
+  {
+    "id": "v-jobs-teacher",
+    "term": "teacher",
+    "script": "teacher.",
+    "file": "v-jobs-teacher.mp3"
+  },
+  {
+    "id": "v-jobs-student",
+    "term": "student",
+    "script": "student.",
+    "file": "v-jobs-student.mp3"
+  },
+  {
+    "id": "v-jobs-chef",
+    "term": "chef",
+    "script": "chef.",
+    "file": "v-jobs-chef.mp3"
+  },
+  {
+    "id": "v-jobs-doctor",
+    "term": "doctor",
+    "script": "doctor.",
+    "file": "v-jobs-doctor.mp3"
+  },
+  {
+    "id": "v-jobs-office-worker",
+    "term": "office worker",
+    "script": "office worker.",
+    "file": "v-jobs-office-worker.mp3"
+  },
+  {
+    "id": "v-jobs-receptionist",
+    "term": "receptionist",
+    "script": "receptionist.",
+    "file": "v-jobs-receptionist.mp3"
+  },
+  {
+    "id": "v-jobs-salesclerk",
+    "term": "salesclerk",
+    "script": "salesclerk.",
+    "file": "v-jobs-salesclerk.mp3"
+  },
+  {
+    "id": "v-jobs-taxi-driver",
+    "term": "taxi driver",
+    "script": "taxi driver.",
+    "file": "v-jobs-taxi-driver.mp3"
+  },
+  {
+    "id": "v-jobs-waiter",
+    "term": "waiter",
+    "script": "waiter.",
+    "file": "v-jobs-waiter.mp3"
+  },
+  {
+    "id": "v-jobs-waitress",
+    "term": "waitress",
+    "script": "waitress.",
+    "file": "v-jobs-waitress.mp3"
+  },
+  {
+    "id": "v-jobs-farmer",
+    "term": "farmer",
+    "script": "farmer.",
+    "file": "v-jobs-farmer.mp3"
+  },
+  {
+    "id": "v-jobs-actor",
+    "term": "actor",
+    "script": "actor.",
+    "file": "v-jobs-actor.mp3"
+  },
+  {
+    "id": "v-jobs-school",
+    "term": "school",
+    "script": "school.",
+    "file": "v-jobs-school.mp3"
+  },
+  {
+    "id": "v-jobs-nurse",
+    "term": "nurse",
+    "script": "nurse.",
+    "file": "v-jobs-nurse.mp3"
+  },
+  {
+    "id": "v-jobs-dentist",
+    "term": "dentist",
+    "script": "dentist.",
+    "file": "v-jobs-dentist.mp3"
+  },
+  {
+    "id": "v-jobs-police-officer",
+    "term": "police officer",
+    "script": "police officer.",
+    "file": "v-jobs-police-officer.mp3"
+  },
+  {
+    "id": "v-jobs-driver",
+    "term": "driver",
+    "script": "driver.",
+    "file": "v-jobs-driver.mp3"
+  },
+  {
+    "id": "v-adjectives-big",
+    "term": "big",
+    "script": "big.",
+    "file": "v-adjectives-big.mp3"
+  },
+  {
+    "id": "v-adjectives-small",
+    "term": "small",
+    "script": "small.",
+    "file": "v-adjectives-small.mp3"
+  },
+  {
+    "id": "v-adjectives-hot",
+    "term": "hot",
+    "script": "hot.",
+    "file": "v-adjectives-hot.mp3"
+  },
+  {
+    "id": "v-adjectives-cold",
+    "term": "cold",
+    "script": "cold.",
+    "file": "v-adjectives-cold.mp3"
+  },
+  {
+    "id": "v-adjectives-old",
+    "term": "old",
+    "script": "old.",
+    "file": "v-adjectives-old.mp3"
+  },
+  {
+    "id": "v-adjectives-new",
+    "term": "new",
+    "script": "new.",
+    "file": "v-adjectives-new.mp3"
+  },
+  {
+    "id": "v-adjectives-busy",
+    "term": "busy",
+    "script": "busy.",
+    "file": "v-adjectives-busy.mp3"
+  },
+  {
+    "id": "v-adjectives-calm",
+    "term": "calm",
+    "script": "calm.",
+    "file": "v-adjectives-calm.mp3"
+  },
+  {
+    "id": "v-adjectives-cheap",
+    "term": "cheap",
+    "script": "cheap.",
+    "file": "v-adjectives-cheap.mp3"
+  },
+  {
+    "id": "v-adjectives-expensive",
+    "term": "expensive",
+    "script": "expensive.",
+    "file": "v-adjectives-expensive.mp3"
+  },
+  {
+    "id": "v-adjectives-beautiful",
+    "term": "beautiful",
+    "script": "beautiful.",
+    "file": "v-adjectives-beautiful.mp3"
+  },
+  {
+    "id": "v-adjectives-friendly",
+    "term": "friendly",
+    "script": "friendly.",
+    "file": "v-adjectives-friendly.mp3"
+  },
+  {
+    "id": "v-adjectives-famous",
+    "term": "famous",
+    "script": "famous.",
+    "file": "v-adjectives-famous.mp3"
+  },
+  {
+    "id": "v-adjectives-good",
+    "term": "good",
+    "script": "good.",
+    "file": "v-adjectives-good.mp3"
+  },
+  {
+    "id": "v-adjectives-smart",
+    "term": "smart",
+    "script": "smart.",
+    "file": "v-adjectives-smart.mp3"
+  },
+  {
+    "id": "v-adjectives-fun",
+    "term": "fun",
+    "script": "fun.",
+    "file": "v-adjectives-fun.mp3"
+  },
+  {
+    "id": "v-adjectives-long",
+    "term": "long",
+    "script": "long.",
+    "file": "v-adjectives-long.mp3"
+  },
+  {
+    "id": "v-adjectives-short",
+    "term": "short",
+    "script": "short.",
+    "file": "v-adjectives-short.mp3"
+  },
+  {
+    "id": "v-countries-argentina",
+    "term": "Argentina",
+    "script": "Argentina.",
+    "file": "v-countries-argentina.mp3"
+  },
+  {
+    "id": "v-countries-argentinian",
+    "term": "Argentinian",
+    "script": "Argentinian.",
+    "file": "v-countries-argentinian.mp3"
+  },
+  {
+    "id": "v-countries-the-us",
+    "term": "the US",
+    "script": "the US.",
+    "file": "v-countries-the-us.mp3"
+  },
+  {
+    "id": "v-countries-american",
+    "term": "American",
+    "script": "American.",
+    "file": "v-countries-american.mp3"
+  },
+  {
+    "id": "v-countries-the-uk",
+    "term": "the UK",
+    "script": "the UK.",
+    "file": "v-countries-the-uk.mp3"
+  },
+  {
+    "id": "v-countries-british",
+    "term": "British",
+    "script": "British.",
+    "file": "v-countries-british.mp3"
+  },
+  {
+    "id": "v-countries-canada",
+    "term": "Canada",
+    "script": "Canada.",
+    "file": "v-countries-canada.mp3"
+  },
+  {
+    "id": "v-countries-canadian",
+    "term": "Canadian",
+    "script": "Canadian.",
+    "file": "v-countries-canadian.mp3"
+  },
+  {
+    "id": "v-countries-south-korea",
+    "term": "South Korea",
+    "script": "South Korea.",
+    "file": "v-countries-south-korea.mp3"
+  },
+  {
+    "id": "v-countries-south-korean",
+    "term": "South Korean",
+    "script": "South Korean.",
+    "file": "v-countries-south-korean.mp3"
+  },
+  {
+    "id": "v-countries-ecuador",
+    "term": "Ecuador",
+    "script": "Ecuador.",
+    "file": "v-countries-ecuador.mp3"
+  },
+  {
+    "id": "v-countries-ecuadorian",
+    "term": "Ecuadorian",
+    "script": "Ecuadorian.",
+    "file": "v-countries-ecuadorian.mp3"
+  },
+  {
+    "id": "v-countries-mexico",
+    "term": "Mexico",
+    "script": "Mexico.",
+    "file": "v-countries-mexico.mp3"
+  },
+  {
+    "id": "v-countries-mexican",
+    "term": "Mexican",
+    "script": "Mexican.",
+    "file": "v-countries-mexican.mp3"
+  },
+  {
+    "id": "v-countries-brazil",
+    "term": "Brazil",
+    "script": "Brazil.",
+    "file": "v-countries-brazil.mp3"
+  },
+  {
+    "id": "v-countries-brazilian",
+    "term": "Brazilian",
+    "script": "Brazilian.",
+    "file": "v-countries-brazilian.mp3"
+  },
+  {
+    "id": "v-countries-spain",
+    "term": "Spain",
+    "script": "Spain.",
+    "file": "v-countries-spain.mp3"
+  },
+  {
+    "id": "v-countries-spanish",
+    "term": "Spanish",
+    "script": "Spanish.",
+    "file": "v-countries-spanish.mp3"
+  },
+  {
+    "id": "v-countries-china",
+    "term": "China",
+    "script": "China.",
+    "file": "v-countries-china.mp3"
+  },
+  {
+    "id": "v-countries-chinese",
+    "term": "Chinese",
+    "script": "Chinese.",
+    "file": "v-countries-chinese.mp3"
+  },
+  {
+    "id": "v-countries-japan",
+    "term": "Japan",
+    "script": "Japan.",
+    "file": "v-countries-japan.mp3"
+  },
+  {
+    "id": "v-countries-japanese",
+    "term": "Japanese",
+    "script": "Japanese.",
+    "file": "v-countries-japanese.mp3"
+  },
+  {
+    "id": "v-phrases-what-is-your-name",
+    "term": "What is your name?",
+    "script": "What is your name.",
+    "file": "v-phrases-what-is-your-name.mp3"
+  },
+  {
+    "id": "v-phrases-how-do-you-spell-that",
+    "term": "How do you spell that?",
+    "script": "How do you spell that.",
+    "file": "v-phrases-how-do-you-spell-that.mp3"
+  },
+  {
+    "id": "v-phrases-where-are-you-from",
+    "term": "Where are you from?",
+    "script": "Where are you from.",
+    "file": "v-phrases-where-are-you-from.mp3"
+  },
+  {
+    "id": "v-phrases-what-is-your-first-name",
+    "term": "What is your first name?",
+    "script": "What is your first name.",
+    "file": "v-phrases-what-is-your-first-name.mp3"
+  },
+  {
+    "id": "v-phrases-what-is-your-last-name",
+    "term": "What is your last name?",
+    "script": "What is your last name.",
+    "file": "v-phrases-what-is-your-last-name.mp3"
+  },
+  {
+    "id": "v-phrases-what-is-your-city",
+    "term": "What is your city?",
+    "script": "What is your city.",
+    "file": "v-phrases-what-is-your-city.mp3"
+  },
+  {
+    "id": "v-phrases-what-is-your-email",
+    "term": "What is your email?",
+    "script": "What is your email.",
+    "file": "v-phrases-what-is-your-email.mp3"
+  }
+]

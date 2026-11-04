@@ -1,0 +1,37 @@
+{
+  "endpoint": "https://headless-hphybypweny-chiispiitas-140b.wix-site-host.com/api/horizons",
+  "date": "2026-11-04T06:29:32.429Z",
+  "checks": [
+    {
+      "name": "All selected words: vocabulary",
+      "pass": true,
+      "questions": 142,
+      "submittedBytes": 9751,
+      "status": 200,
+      "awardedXp": 720
+    },
+    {
+      "name": "All selected words: recall",
+      "pass": true,
+      "questions": 142,
+      "submittedBytes": 9723,
+      "status": 200,
+      "awardedXp": 720
+    },
+    {
+      "name": "All selected words: mixed",
+      "pass": true,
+      "questions": 208,
+      "submittedBytes": 13405,
+      "status": 200,
+      "awardedXp": 1050
+    },
+    {
+      "name": "Unknown synthetic activity rejected",
+      "pass": true,
+      "status": 400
+    }
+  ],
+  "passed": true,
+  "public001CodesUntouched": true
+}
