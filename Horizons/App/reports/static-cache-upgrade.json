@@ -1,0 +1,218 @@
+{
+  "date": "2026-11-04T23:44:55.865Z",
+  "base": "http://127.0.0.1:8898/Horizons/App/",
+  "baselineCommit": "bbd859f",
+  "baselineCache": "horizons-companion-friendly-v8",
+  "currentCache": "horizons-companion-static-v9",
+  "scope": "Actual committed previous friendly renderer and service-worker Cache Storage installed, then replaced through the real update/activate/controller lifecycle by the current complete-still artwork release. Reserved isolated QA profile; no activity awards or profile edits.",
+  "sourceReference": {
+    "kind": "working-tree",
+    "comparison": "Exact working-tree source and binary bytes."
+  },
+  "currentSourceHashes": {
+    "index.html": "66833736593825f275c172d201a077f3be03bb2334b8de019d06c051825c2e9c",
+    "manifest.webmanifest": "55db46a4c79dfd20a17e7c3027fc7424e6d7cf7a239a94cb6104f6a230e4533b",
+    "styles/app.css": "67e2e21c6ceeea54403255307c43c84d6d77a3cf4fdb1adda6c9391d3e241f1e",
+    "src/app.js": "ec5024fdc1c05878525070bd20404d5e7c8ea9587a3bb4df6ed31a59b4e240e7",
+    "src/art.js": "06c5fabbf7d2e45dfd7fb833a3ddfc7f78081c250b02a189b29a84f79e43aeb0",
+    "src/avatar-static.js": "92742ed6eeb76787522b9ef904da7fbf403448a394babd15a154b3ca7cdc55e8",
+    "service-worker.js": "1a80bc65f72d7e5bb8ffdcff09cbd995b35e914b4c87f3eb2942d2f4958bf830",
+    "assets/art/manifest.json": "754a1c6ddaa385ac217dd04f32cf2b6f9108509a933906bc28226868f7566b28",
+    "assets/art/avatar-static-v1.frames.json": "7ea0fd65138b223b3207780386c5437b26eaa5da21b25439b2029d93d4fb4ab5",
+    "assets/art/cast-static-pico-v2.png": "6cc557478d70cb3ddbdd893d67bf09fa1236ca327c2384b06ac31ae141beb148",
+    "assets/art/cast-static-mina-v2.png": "163449ffe9a3566390a5e196b976a420e3eb58e5f409d4c101a76d82f81bdfc9",
+    "assets/art/cast-static-alex-v3.png": "86d6441f1062824451a8aa3cf0a43de137b2aaa17a42cd179561efa7cf227825",
+    "assets/art/cast-static-jo-v3.png": "e14e81e2a1912b24702f4fd1a4222f8ec8c6814649c31d624464a0fd06cdc10b",
+    "assets/art/avatar-static-heads-v2.png": "79f254047f5541326288ba948051aa82d576f47af105f3eda1c50caab6464779",
+    "assets/art/avatar-friendly-heads-v1.png": "407bcff61341e0b650c9fa360aeb9901ebe068d39e1601dfd5560bfccab4ca82",
+    "assets/art/avatar-static-clothes-v1.png": "38c59629065fbc10c6ec5d723c8d89f4630afb859c89699c7581f7b662e8180d",
+    "assets/art/avatar-static-hair-v1.png": "c73a9e78139d3ceaf1c6b6cd61392835ebb3c82f13fbb222ccaae0edc9166e97",
+    "assets/art/avatar-static-extras-v3.png": "1842d76f71c1a8ccb01dabe6c5a6e5dbe1c71257490d77989f95e1e0022c16fe",
+    "assets/art/ui-static-v1.png": "fdbf04030127b6a1d6a7061a72b765a540cc25ec732eb4343a639ce7f11e1b42",
+    "assets/art/town-static-v1.png": "2f71a7437854f4062e1d1c04d0c54805f88ff252da4eb5276b737c19957334ba",
+    "assets/art/jobs-static-1-v2.png": "fb6a01224a140eb3f064a1a07cb9711fd10c2def0d4dfaa6f17c33263bc096d3",
+    "assets/art/jobs-static-4-v2.png": "17e6ac1258161ebf5dcca92143d18b95bf29853249baefe7b0ec85a0edaef87d",
+    "assets/art/jobs-static-2-v2.png": "4308ef795398ad9feebbe54bf7179d1b0f37742b4f0dd862e01f8df42e558da4",
+    "assets/art/jobs-static-3-v3.png": "1947efd87948efe32ea2ff300706d782d917c7461e6af7c8c7938abf0be809c1"
+  },
+  "steps": [
+    {
+      "name": "old-worker-and-exact-old-art-really-installed",
+      "cacheNames": [
+        "horizons-companion-friendly-v8"
+      ],
+      "controller": true,
+      "oldArtHash": "c9e5c99efbbdc30289b83257ba0616734fda6478526c4a1ff66cf50877f751af",
+      "pass": true
+    },
+    {
+      "name": "new-static-worker-activated-and-old-cache-removed",
+      "cacheNames": [
+        "horizons-companion-static-v9"
+      ],
+      "pass": true
+    },
+    {
+      "name": "current-static-source-and-art-loaded-after-real-update",
+      "runningAnimations": 0,
+      "legacySystems": 0,
+      "modules": [
+        {
+          "path": "src/app.js",
+          "version": "static1"
+        },
+        {
+          "path": "src/api-client.js",
+          "version": null
+        },
+        {
+          "path": "src/art.js",
+          "version": "static1"
+        },
+        {
+          "path": "src/avatar-static.js",
+          "version": "static1"
+        }
+      ],
+      "stills": [
+        {
+          "selector": ".character[data-character=pico]",
+          "sha256": "5d2ec4f59b4266aa58fa8963a5713253d4b1e5fd7344615dabb5d6a2028fb24f",
+          "unchangedAfter1100ms": true
+        },
+        {
+          "selector": ".character[data-character=mina]",
+          "sha256": "489ed1f8a94fa170be704a5d84e28c19139a061b967eda0c2423416fa6f6d552",
+          "unchangedAfter1100ms": true
+        },
+        {
+          "selector": ".character[data-character=alex]",
+          "sha256": "57cdbcc654f458bbc5ecd2633ac81a34d51abbd7299e2422735222df7f145d10",
+          "unchangedAfter1100ms": true
+        },
+        {
+          "selector": ".character[data-character=jo]",
+          "sha256": "e1c2933aee93673fa9d4359b69346e0868edaabbee667d9f0aad7fc8f7d77cdb",
+          "unchangedAfter1100ms": true
+        },
+        {
+          "selector": "#avatar-preview [data-avatar-static]",
+          "sha256": "1bd668d63236575bc2a813889d1e1fa29bbcbba616ae9a46f890d9d878d4a66d",
+          "unchangedAfter1100ms": true
+        }
+      ],
+      "loadedNativePNGs": [
+        {
+          "path": "assets/art/ui-static-v1.png",
+          "url": "assets/art/ui-static-v1.png",
+          "sha256": "fdbf04030127b6a1d6a7061a72b765a540cc25ec732eb4343a639ce7f11e1b42",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-static-clothes-v1.png",
+          "url": "assets/art/avatar-static-clothes-v1.png",
+          "sha256": "38c59629065fbc10c6ec5d723c8d89f4630afb859c89699c7581f7b662e8180d",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-static-hair-v1.png",
+          "url": "assets/art/avatar-static-hair-v1.png",
+          "sha256": "c73a9e78139d3ceaf1c6b6cd61392835ebb3c82f13fbb222ccaae0edc9166e97",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-static-extras-v3.png",
+          "url": "assets/art/avatar-static-extras-v3.png",
+          "sha256": "1842d76f71c1a8ccb01dabe6c5a6e5dbe1c71257490d77989f95e1e0022c16fe",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-static-heads-v2.png",
+          "url": "assets/art/avatar-static-heads-v2.png",
+          "sha256": "79f254047f5541326288ba948051aa82d576f47af105f3eda1c50caab6464779",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/cast-static-mina-v2.png",
+          "url": "assets/art/cast-static-mina-v2.png",
+          "sha256": "163449ffe9a3566390a5e196b976a420e3eb58e5f409d4c101a76d82f81bdfc9",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/cast-static-pico-v2.png",
+          "url": "assets/art/cast-static-pico-v2.png",
+          "sha256": "6cc557478d70cb3ddbdd893d67bf09fa1236ca327c2384b06ac31ae141beb148",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/cast-static-jo-v3.png",
+          "url": "assets/art/cast-static-jo-v3.png",
+          "sha256": "e14e81e2a1912b24702f4fd1a4222f8ec8c6814649c31d624464a0fd06cdc10b",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/cast-static-alex-v3.png",
+          "url": "assets/art/cast-static-alex-v3.png",
+          "sha256": "86d6441f1062824451a8aa3cf0a43de137b2aaa17a42cd179561efa7cf227825",
+          "fromServiceWorker": true
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "runtimeErrors": [],
+  "workerLifecycle": [
+    {
+      "event": "new-worker-state",
+      "state": "installing"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "installed"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "activating"
+    },
+    {
+      "event": "controllerchange"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "activated"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "installing"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "installed"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "redundant"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "activating"
+    },
+    {
+      "event": "controllerchange"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "activated"
+    }
+  ],
+  "limits": [
+    "Chromium/Edge only. This verifies a real returning-browser service worker and Cache Storage upgrade, not every browser engine or CDN.",
+    "Old runtime requests are served from committed repository blobs during the baseline phase; API requests continue to the actual backend.",
+    "No session values, raw codes or personal details are logged.",
+    "Joint samples use one shared physical time across all animations. Automated movement and clothing attachment checks do not replace independent painted-frame anatomy review."
+  ],
+  "pass": true,
+  "status": "PASS",
+  "phase": "complete",
+  "changedSources": []
+}

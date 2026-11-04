@@ -1,0 +1,69 @@
+{
+  "character": "pico",
+  "method": "Built-in image_gen; native alpha and output bytes preserved",
+  "nativeOutput": "C:/Users/David/.codex/generated_images/01a1a821-f54c-74b0-a1e7-e96dc5bfc498/exec-d8ed77b3-3ea8-408a-9438-c0db9599bfaf.png",
+  "destination": "assets/art/cast-static-pico-v2.png",
+  "references": [
+    {
+      "path": "C:/Users/David/AppData/Local/Temp/codex-clipboard-0873ce2b-1019-4209-80e0-8afe628e32cc.png",
+      "role": "Identity and palette only"
+    },
+    {
+      "path": "C:/Users/David/AppData/Local/Temp/codex-clipboard-624d5ef7-8576-48fd-96e9-ca0d814badda.png",
+      "role": "Strict flat simple-shape style"
+    }
+  ],
+  "generationPrompt": "Use case: illustration-story. Generate a FRESH production PNG sprite atlas, not joint cutouts.\nInput image 1 is IDENTITY AND PALETTE reference only. Image 1 is NOT a rendering-style reference: do not copy its gradients, textured finish, modeled face planes or shadow triangles. Input image 2 is the STRICT FLAT SHAPE STYLE reference: simple coherent geometric figures with solid flat color regions.\nOutput one square genuinely transparent PNG containing exactly FOUR complete, full-body illustrations of ONE same character, arranged in a spacious 2 by 2 grid, ordered top-left, top-right, bottom-left, bottom-right. Each quadrant has a complete figure with all ears/hair, hands, feet and any held prop inside it. Generous transparent outer margins and central gutters: nothing may touch another quadrant or the canvas boundary. Same character scale and consistent proportions across the four poses. No labels, words, numbers, grid, cell backgrounds, border, watermark or ground line.\nSTRICT FLATNESS: one uniform solid opaque color per shape. Use literal unmodulated solid polygons, circles and rounded rectangles, as flat as solid-color pictograms. NO paper texture or lighting. ZERO gradients, tonal modeling, highlights, cast shadows, neck shadow, side-face darker plane, drop shadows, ambient occlusion, rim light, texture, grain, outlines, contour strokes or 3D effects. Different colors only identify actual different materials such as skin, shirt, trousers and shoes. All skin on a character uses one flat skin color. Preserve the graphic identity from image 1 while simplifying to image 2.\nANATOMY: each pose is one complete coherent native illustration. Continuous visible neck-to-body, sleeve-to-arm, elbow-to-hand, waist-to-leg and ankle-to-shoe silhouettes. No floating or detached hands, no disconnected props, no hidden forearm with an isolated hand peeking out. Friendly relaxed eyebrows, approachable open eyes and a warm smile. Adults retain adult proportions.\nCHARACTER: Pico, the pale cream/peach mountain hare at top-left of image 1. Long ears, one upright and one folded; flat coral ear interiors; angular rounded muzzle, small flat coral triangular nose, navy sleeveless vest, magenta diagonal strap and magenta satchel with a small golden fastening. Crucial: TWO matching gentle navy eyebrows, one clearly above each eye, both visible in every pose. Use one flat cream skin/fur color without any second face plane.\nPOSES: top-left friendly standing greeting with one open paw raised and the other resting naturally near the satchel; top-right standing explorer holding a folded map below the face with two clearly visible paws grasping its side edges; bottom-left standing reader holding an open navy-and-cream book below the face with both paws visibly gripping the covers; bottom-right modest cheerful celebration with two connected arms lifted and both full feet planted. Map uses simple teal, green and coral color patches with no writing. Book has no writing. No floating leap or crouch. Show real supported paw-to-prop contact. All four are complete whole figures, never disassembled.\nUniform-fill requirement: a material shape should have the same RGB color across its entire interior, with edge antialiasing only. Do not add subtle tonal variation, even if it seems attractive.",
+  "rejectedFirstGeneration": {
+    "nativeOutput": "C:/Users/David/.codex/generated_images/01a1a821-f54c-74b0-a1e7-e96dc5bfc498/exec-27871b0b-0f60-421b-a65f-2235bade684e.png",
+    "reason": "Visible tonal modeling inherited from identity reference; not integrated"
+  },
+  "nativeCorrection": {
+    "prompt": "Use case: style-transfer. Native raster edit.\nImage 1: the complete four-pose atlas to correct. Keep the SAME character identity, SAME four poses, SAME coherent full-body silhouettes, supporting hands/props, palette, 2x2 layout, transparent background, generous gutters and margins. Image 2: the requested very simple flat-color rendering style.\nCHANGE ONLY THE RENDERING: redraw every material region with one uniform solid flat fill, like the simple 2D icon people in image 2. The current image1 is NOT flat enough. Remove ALL directional gradients, mottled or painted texture, subtle lighting, highlights, shadows, outlines and contour strokes. Remove every face side-plane and neck-shadow triangle rather than retaining it as a separate dark flat panel. Hair must be one flat hair color. Skin must be one flat skin color. Clothes must have no light/dark fabric bands. Different solid colors are only actual different materials or facial features. Keep eyes white, pupils dark, friendly relaxed eyebrows and a warm smile. No rosy cheeks, no gloss, no dimensional effects.\nThe result should look like a clean simple flat 2D cartoon sprite atlas, not a painted illustration. Every figure and every prop must remain one complete connected native illustration. Retain full hands/feet and clear paw/hand contact with book/map/mug/wrench/wheel. No text, grid, borders, floor marks or background. Real transparency; no shadow or haze around silhouettes. Do not add any element. Pico must retain TWO separate gentle eyebrows in every pose.",
+    "referencedImages": [
+      "C:/Users/David/.codex/generated_images/01a1a821-f54c-74b0-a1e7-e96dc5bfc498/exec-27871b0b-0f60-421b-a65f-2235bade684e.png",
+      "C:/Users/David/AppData/Local/Temp/codex-clipboard-624d5ef7-8576-48fd-96e9-ca0d814badda.png"
+    ]
+  },
+  "postProcessing": "None. No recoloring, quantization, redrawn pixels, alpha edits or compositing into the native asset.",
+  "reviewStatus": "ROOT_INDEPENDENT_STATIC_DESIGN_PASS",
+  "sha256": "6cc557478d70cb3ddbdd893d67bf09fa1236ca327c2384b06ac31ae141beb148",
+  "atlas": {
+    "width": 1254,
+    "height": 1254
+  },
+  "measuredFrames": {
+    "greet": {
+      "x": 206,
+      "y": 17,
+      "w": 250,
+      "h": 585
+    },
+    "explore": {
+      "x": 764,
+      "y": 19,
+      "w": 248,
+      "h": 582
+    },
+    "read": {
+      "x": 206,
+      "y": 639,
+      "w": 236,
+      "h": 594
+    },
+    "jump": {
+      "x": 729,
+      "y": 640,
+      "w": 299,
+      "h": 593
+    }
+  },
+  "reviewProof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-static-cast\\pico-normal-enlarged.png",
+  "nativeBytesMatch": true,
+  "referenceSha256": {
+    "C:/Users/David/AppData/Local/Temp/codex-clipboard-0873ce2b-1019-4209-80e0-8afe628e32cc.png": "5477a5e7b54407f8ec8e03c76f67d1718a670f20bc8f9cedace14c44f4cc3960",
+    "C:/Users/David/AppData/Local/Temp/codex-clipboard-624d5ef7-8576-48fd-96e9-ca0d814badda.png": "5cb13bc2767f5da32fd14dd47bc3781a849d0fad638e9fa8f7823cf05d14d43a"
+  },
+  "authorAnatomyReview": "All four complete poses inspected: connected figure/limb/clothing and visible supported prop contact.",
+  "flatnessReview": "Composed normal/enlarged reviewed by root: subtle native variation at110px does not read as modeled volume; no visible shadow planes/contour outlines."
+}

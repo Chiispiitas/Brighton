@@ -1,0 +1,179 @@
+{
+  "status": "AUTHOR_FROZEN_FOR_ROOT_INTEGRATION",
+  "staticTerms": 17,
+  "animationDescriptors": 0,
+  "completeStillPNGs": 4,
+  "sources": {
+    "assets/art/jobs-static-v1.frames.json": "bffaca9b33eb42a79cfa0d86e65e3bc63e47db0e954170531befe55849caaab9",
+    "assets/art/jobs-static-v1.provenance.json": "1e207112a4f1a44969003f4cb3286900dbaadca3132e60f5fb84219bdc73fc7b",
+    "reports/static-jobs-fragment.json": "800180024eb087d88e4a174c0912d9371f645dcb1dbb78a35a25f76490ed6e62",
+    "assets/art/jobs-static-1-v2.png": "fb6a01224a140eb3f064a1a07cb9711fd10c2def0d4dfaa6f17c33263bc096d3",
+    "assets/art/jobs-static-2-v2.png": "4308ef795398ad9feebbe54bf7179d1b0f37742b4f0dd862e01f8df42e558da4",
+    "assets/art/jobs-static-3-v3.png": "1947efd87948efe32ea2ff300706d782d917c7461e6af7c8c7938abf0be809c1",
+    "assets/art/jobs-static-4-v2.png": "17e6ac1258161ebf5dcca92143d18b95bf29853249baefe7b0ec85a0edaef87d"
+  },
+  "fragment": "reports/static-jobs-fragment.json",
+  "gallery": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-jobs-static\\all-seventeen-normal.png",
+  "cases": [
+    {
+      "term": "teacher",
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-jobs-static\\teacher-800.png",
+      "sha256": "3b613152390abf87d97583ed945f423fed4ed2cced132c011fbd0cc09d6067ad",
+      "verdict": "author-pass",
+      "normalSizePx": 290,
+      "enlargedSizePx": 800,
+      "observation": "Complete head/neck/body/limbs/feet; hand grips open book, opposite connected arm indicates board. Friendly face; simple flat blocks and no floor shadow."
+    },
+    {
+      "term": "chef",
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-jobs-static\\chef-800.png",
+      "sha256": "4902ab626b5d6ead108f1a6dbcf2ac667eb1361856bec15adcda36331b54d818",
+      "verdict": "author-pass",
+      "normalSizePx": 290,
+      "enlargedSizePx": 800,
+      "observation": "Both connected arms terminate in visible hands touching the spoon and pot handle; spoon enters pot. Complete legs/feet and a clear cooking task."
+    },
+    {
+      "term": "doctor",
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-jobs-static\\doctor-800.png",
+      "sha256": "cdd3044c3c1014c33ec4c5ea96f8c24469285d4b5643b3575755a82f714d473a",
+      "verdict": "author-pass",
+      "normalSizePx": 290,
+      "enlargedSizePx": 800,
+      "observation": "Complete standing clinician, joined neck/arms/legs, both hands touching medical clipboard; stethoscope and cross identify role. No extra patient/contact ambiguity."
+    },
+    {
+      "term": "office worker",
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-jobs-static\\office-worker-800.png",
+      "sha256": "1f6e7d85e335963f607cf75d32b93d6bd92eb67bb520d402790466cd798705fa",
+      "verdict": "author-pass",
+      "normalSizePx": 290,
+      "enlargedSizePx": 800,
+      "observation": "Supported seated thighs/knees/shins/feet. Both hands attach to visible teal sleeves and rest at keyboard; no loose hand behind laptop. Warm smile."
+    },
+    {
+      "term": "receptionist",
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-jobs-static\\receptionist-800.png",
+      "sha256": "89775f83b269fbda5a60208d39638f24a56dd70f4ffe4b99c0e826e4deb26cff",
+      "verdict": "author-pass",
+      "normalSizePx": 290,
+      "enlargedSizePx": 800,
+      "observation": "Complete attached torso/neck/arms/legs; resting hand contacts desk and greeting hand joins sleeve. Desk bell clear, no halo in warm-white preview."
+    },
+    {
+      "term": "salesclerk",
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-jobs-static\\salesclerk-800.png",
+      "sha256": "cfd065a6be8f91587d95a17a819d4bb89f4616807394ea69352b938f12ef42c7",
+      "verdict": "author-pass",
+      "normalSizePx": 290,
+      "enlargedSizePx": 800,
+      "observation": "Both joined cream sleeves lead to hands physically holding the folded shirt at counter. Garment/stack and friendly face read clearly."
+    },
+    {
+      "term": "taxi driver",
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-jobs-static\\taxi-driver-800.png",
+      "sha256": "0a86dd5ba88301c90e085bda8bf7f6250cfe58428d9fde7bab60fb232eb83c5e",
+      "verdict": "author-pass",
+      "normalSizePx": 290,
+      "enlargedSizePx": 800,
+      "observation": "Complete connected adult standing beside recognizable taxi; hip hand and open-palm arm attached. Vehicle is a separate intentional object, not a detached anatomy part."
+    },
+    {
+      "term": "waiter",
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-jobs-static\\waiter-800.png",
+      "sha256": "b1be4e1e4e01a614e598610ee986707d39a04ecaf9195e8ccda6bfe2770216f7",
+      "verdict": "author-pass",
+      "normalSizePx": 290,
+      "enlargedSizePx": 800,
+      "observation": "Continuous shoulder/elbow/forearm/palm directly supports tray; cup rests on tray. Free sleeve/wrist/hand and all legs/feet joined, no air gap."
+    },
+    {
+      "term": "waitress",
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-jobs-static\\waitress-800.png",
+      "sha256": "1a983db5a3511ea1eaca40750bc1e43ae4cc891cdf78d283758226cd8f349291",
+      "verdict": "author-pass",
+      "normalSizePx": 290,
+      "enlargedSizePx": 800,
+      "observation": "Tray touches the complete supporting palm and cup touches tray. Separate relaxed arm connected through sleeve/elbow/wrist; two arms only, no loose hand."
+    },
+    {
+      "term": "farmer",
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-jobs-static\\farmer-800.png",
+      "sha256": "ec71d414766951f74f619ac571fa2520dfd044824e4c630c0cf422066db7a3ae",
+      "verdict": "author-pass",
+      "normalSizePx": 290,
+      "enlargedSizePx": 800,
+      "observation": "Hand physically grips basket handle; both arm chains and head/neck/hips/legs/feet continuous. Plant is a separate intact prop with a simple base, no floor shadow."
+    },
+    {
+      "term": "nurse",
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-jobs-static\\nurse-800.png",
+      "sha256": "4e9ffb341e0967273a85f1abe744eab1da3639f3bf01bc699b000ca5e7bf4379",
+      "verdict": "author-pass",
+      "normalSizePx": 290,
+      "enlargedSizePx": 800,
+      "observation": "Clipboard held against body by joined arm and opposite hand visibly grips thermometer. Full-body scrubs silhouette, calm friendly face, no detached medical tool."
+    },
+    {
+      "term": "dentist",
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-jobs-static\\dentist-800.png",
+      "sha256": "80ac5608e5240ca7b5339f24f3deb6aa4d25ebaab11a2751fc15c1ab52f5654c",
+      "verdict": "author-pass",
+      "normalSizePx": 290,
+      "enlargedSizePx": 800,
+      "observation": "Both sleeves join hands; one palm supports tooth and other points to it. Targeted native edit removed grey side plane from tooth. Chair remains a separate intact contextual prop."
+    },
+    {
+      "term": "police officer",
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-jobs-static\\police-officer-800.png",
+      "sha256": "d8f2db332a028fd078b8fddc8693ea63e5f5e4815769f5534a56b5ab73cdb43f",
+      "verdict": "author-pass",
+      "normalSizePx": 290,
+      "enlargedSizePx": 800,
+      "observation": "Full connected uniformed adult with friendly open-palm gesture, attached belt hand and complete legs/feet. No weapons or ground marks."
+    },
+    {
+      "term": "actor",
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-jobs-static\\actor-800.png",
+      "sha256": "dfd5ecfe0cb9fb8776c16b00e27916f8edfc3e43335db81cb9b526f0cbd729d8",
+      "verdict": "author-pass",
+      "normalSizePx": 290,
+      "enlargedSizePx": 800,
+      "observation": "The supporting hand touches lower edge of smiling theatre mask; open-palm arm visibly connected. Complete friendly adult silhouette without stage shadow."
+    },
+    {
+      "term": "student",
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-jobs-static\\student-800.png",
+      "sha256": "68690c22f4fbedc296366b5ed8851b071759c3dd9b99cd48429435919fc2480a",
+      "verdict": "author-pass",
+      "normalSizePx": 290,
+      "enlargedSizePx": 800,
+      "observation": "Both connected hands hold open book; head/neck/shoulders/backpack straps/torso/hips/legs/feet join in a grounded standing pose. No unsupported squat."
+    },
+    {
+      "term": "driver",
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-jobs-static\\driver-800.png",
+      "sha256": "bc1c0afdeb7fb085f952bc1cf9a728dc4c97d5b1b79ef7dbbc58b44d9249d611",
+      "verdict": "author-pass",
+      "normalSizePx": 290,
+      "enlargedSizePx": 800,
+      "observation": "Both full forearms and attached hands grip wheel; seated torso/thighs/shins/feet remain a complete native silhouette within bus front. No loose hand or floating wheel."
+    },
+    {
+      "term": "school",
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-jobs-static\\school-800.png",
+      "sha256": "abd0cc08c9e5ec3a4ce2ff73cd7f850bb070c446adb125514c1a307154782335",
+      "verdict": "author-pass",
+      "normalSizePx": 290,
+      "enlargedSizePx": 800,
+      "observation": "Simple intact roof/walls/door/windows/bell building, no face/people, outlines, signage, landscape or ground shadow."
+    }
+  ],
+  "browserErrors": [],
+  "flatnessReview": "Visual design judged at normal UI scale and enlarged: no modeled volume, cast/floor shadow, visible external halo or texture pattern. Native raster has subtle internal color variation; pixels were not quantized or repainted.",
+  "limits": [
+    "Root owns shared renderer/manifest/CSS integration and final site review.",
+    "This is occupation-bank author approval, not a full-site release result."
+  ],
+  "sharedFilesModified": false
+}

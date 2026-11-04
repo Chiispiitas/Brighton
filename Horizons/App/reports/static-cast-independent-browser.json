@@ -1,0 +1,273 @@
+{
+  "date": "2026-11-04T23:39:06.568Z",
+  "scope": "Fresh independent public static raster renderer capture of all16 complete cast stills at100px and600px high; no inherited motion approval.",
+  "sources": {
+    "reports/static-cast-fragment.json": "b5727b73fc7b03799f6e34a6584a21d7ec4bfb1bcb813630d771740ae7513365",
+    "src/art.js": "06c5fabbf7d2e45dfd7fb833a3ddfc7f78081c250b02a189b29a84f79e43aeb0",
+    "assets/art/cast-static-pico-v2.png": "6cc557478d70cb3ddbdd893d67bf09fa1236ca327c2384b06ac31ae141beb148",
+    "assets/art/cast-static-mina-v2.png": "163449ffe9a3566390a5e196b976a420e3eb58e5f409d4c101a76d82f81bdfc9",
+    "assets/art/cast-static-alex-v3.png": "86d6441f1062824451a8aa3cf0a43de137b2aaa17a42cd179561efa7cf227825",
+    "assets/art/cast-static-jo-v3.png": "e14e81e2a1912b24702f4fd1a4222f8ec8c6814649c31d624464a0fd06cdc10b"
+  },
+  "sourceStable": true,
+  "sheets": [
+    {
+      "name": "pico",
+      "poses": [
+        "greet",
+        "explore",
+        "read",
+        "jump"
+      ],
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-static-cast-independent\\pico-independent-normal-enlarged.png",
+      "sha256": "d6ac399f9182e3ee8b999a213d68e9b09ae639f61b6d7cf4d7a3ad59bd8be6f2",
+      "checks": {
+        "animations": 0,
+        "images": [
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          }
+        ]
+      }
+    },
+    {
+      "name": "mina",
+      "poses": [
+        "step",
+        "read",
+        "map",
+        "skip"
+      ],
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-static-cast-independent\\mina-independent-normal-enlarged.png",
+      "sha256": "818fefe225fe69d02f4900e38c88b2b88bf9828bc1b5601fb1f5413773f0e2fa",
+      "checks": {
+        "animations": 0,
+        "images": [
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          }
+        ]
+      }
+    },
+    {
+      "name": "alex",
+      "poses": [
+        "listen",
+        "fix",
+        "dance",
+        "sit"
+      ],
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-static-cast-independent\\alex-independent-normal-enlarged.png",
+      "sha256": "915c6f66ffe117de873c4b023f028bb1947ee65d07ce111b1be400a10ea15a46",
+      "checks": {
+        "animations": 0,
+        "images": [
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          }
+        ]
+      }
+    },
+    {
+      "name": "jo",
+      "poses": [
+        "offer",
+        "read",
+        "pour",
+        "clap"
+      ],
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-static-cast-independent\\jo-independent-normal-enlarged.png",
+      "sha256": "13f4c207655d0d853e81ec75bda73ff6eb18293161c69bc3516a4d6c55feb46e",
+      "checks": {
+        "animations": 0,
+        "images": [
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          }
+        ]
+      }
+    }
+  ],
+  "errors": [],
+  "pass": true
+}

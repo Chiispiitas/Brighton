@@ -1,0 +1,147 @@
+{
+  "date": "2026-11-04T23:44:45.297Z",
+  "reviewer": "graphic_cast agent, independent of static avatar authorship",
+  "scope": "Read-only native family review plus current-manifest local mount at actual38px and310px portrait sizes; no API/profile writes.",
+  "sources": {
+    "src/avatar-static.js": "92742ed6eeb76787522b9ef904da7fbf403448a394babd15a154b3ca7cdc55e8",
+    "assets/art/avatar-static-v1.frames.json": "7ea0fd65138b223b3207780386c5437b26eaa5da21b25439b2029d93d4fb4ab5",
+    "assets/art/avatar-static-heads-v2.png": "79f254047f5541326288ba948051aa82d576f47af105f3eda1c50caab6464779",
+    "assets/art/avatar-static-clothes-v1.png": "38c59629065fbc10c6ec5d723c8d89f4630afb859c89699c7581f7b662e8180d",
+    "assets/art/avatar-static-hair-v1.png": "c73a9e78139d3ceaf1c6b6cd61392835ebb3c82f13fbb222ccaae0edc9166e97",
+    "assets/art/avatar-static-extras-v3.png": "1842d76f71c1a8ccb01dabe6c5a6e5dbe1c71257490d77989f95e1e0022c16fe",
+    "assets/art/manifest.json": "754a1c6ddaa385ac217dd04f32cf2b6f9108509a933906bc28226868f7566b28",
+    "assets/art/ui-static-v1.png": "fdbf04030127b6a1d6a7061a72b765a540cc25ec732eb4343a639ce7f11e1b42"
+  },
+  "authorHashesMatch": true,
+  "sourceStable": true,
+  "viewedFamilySheets": [
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-static\\final-v2\\primary-sheet-1.png",
+      "sha256": "fb7c30235e5ddcd07b39bfb1b5095083e441917549e4f269c2323eea585e46c0",
+      "matchesCapture": true,
+      "cases": 12
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-static\\final-v2\\families-sheet-1.png",
+      "sha256": "d25855a3d0bc7163615ff040a1588a4883fc53500334266b8e2428f64d45d56a",
+      "matchesCapture": true,
+      "cases": 12
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-static\\final-v2\\families-sheet-2.png",
+      "sha256": "07cea27915ab64a20a200e98fdae32a6d8011621d5d17e14caa16ef717d75c5a",
+      "matchesCapture": true,
+      "cases": 12
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-static\\final-v2\\families-sheet-3.png",
+      "sha256": "fda573f2fb409b3add556aa74d76a89be05ec6fc3bd6c9bfa33c3d39dc6ae7aa",
+      "matchesCapture": true,
+      "cases": 12
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-static\\final-v2\\families-sheet-4.png",
+      "sha256": "be3a73a5900b61bdf0fa6c073f30d85a502d1a966da3fbf4e800624bf0d5b070",
+      "matchesCapture": true,
+      "cases": 12
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-static\\final-v2\\families-sheet-5.png",
+      "sha256": "df711e1548cb728fdf421c7cc87c5a76cd2ff919d8ae1391c239b4e6f8d4a068",
+      "matchesCapture": true,
+      "cases": 12
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-static\\final-v2\\families-sheet-6.png",
+      "sha256": "da8d347095bd149c53ef97b177fd0da02292576273f5db177faa0129f22f421d",
+      "matchesCapture": true,
+      "cases": 12
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-static\\final-v2\\families-sheet-7.png",
+      "sha256": "086f5f0a4e9bf9113690d0b9f6289f109bc2b0dbddfa8bae2f49a7e860784a69",
+      "matchesCapture": true,
+      "cases": 12
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-static\\final-v2\\hair-sheet-1.png",
+      "sha256": "6ac8caafac469d62aafe5cf0165f149fb89e6c7a607ea60961e482062491cd80",
+      "matchesCapture": true,
+      "cases": 12
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-static\\final-v2\\hair-sheet-2.png",
+      "sha256": "f319fe4400d6992fac86b2c6b24e85062dfd7397a21efdc86a88b8ca1fcef0c1",
+      "matchesCapture": true,
+      "cases": 2
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-static\\final-v2\\skins-sheet-1.png",
+      "sha256": "9ae0579df94022c77bcfe9bc72a8b0d1fb325806bc5a402a7b63bc9a2a743c5b",
+      "matchesCapture": true,
+      "cases": 12
+    },
+    {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-static\\final-v2\\badges-sheet-1.png",
+      "sha256": "1c82ff4c7e2fdd19c4d94d991f08bfb97129e243764217a842d57d34592f85f0",
+      "matchesCapture": true,
+      "cases": 6
+    }
+  ],
+  "live": {
+    "proofs": [
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-static-avatar-independent\\mounted.png",
+        "sha256": "384e61bf9e77abc36f76cd339082d68b4f50dfad6f315946269b52f1d9c628fe"
+      },
+      {
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-static-avatar-independent\\after-events.png",
+        "sha256": "384e61bf9e77abc36f76cd339082d68b4f50dfad6f315946269b52f1d9c628fe"
+      }
+    ],
+    "pixelsUnchanged": true,
+    "state": {
+      "frames": 16,
+      "modes": [
+        "static",
+        "static",
+        "static",
+        "static",
+        "static",
+        "static",
+        "static",
+        "static",
+        "static",
+        "static",
+        "static",
+        "static",
+        "static",
+        "static",
+        "static",
+        "static"
+      ],
+      "animations": 0,
+      "errors": 0
+    },
+    "lifecycle": {
+      "frames": 0,
+      "animations": 0
+    },
+    "errors": []
+  },
+  "visualReview": {
+    "referenceStyle": "Both bases use the rounded-square face, open round eyes, small nose and friendly smile shown in user references 3\u20135. Female and male remain distinct native bases in the same simple shape family.",
+    "viewedEvidence": "Directly viewed all twelve final-v2 family sheets, then the independently mounted current-manifest mounted.png and after-events.png at actual 38px thumbnails and enlarged 310px portraits.",
+    "neckAndBust": "All six skin families and six clothing families visibly meet at the neck/collar; no detached neck, sleeve fragments or hands at the bust edge. Native hair and ears remain inside the portrait crop.",
+    "hairAndAccessories": "Bald and all six hairstyles fit both bases. Glasses align over both eyes without clipping; hats and headphones meet the head/hair. Scarves sit at the collar, satchel straps continue onto clothing with visible pouch, and backpacks remain visibly attached behind the shoulder. Lower bag cropping follows the deliberate bust frame and does not create a detached limb.",
+    "badges": "All three earned badge designs stay on the clothing in the supplied badge family sheet.",
+    "flatness": "Simple flat silhouettes and color regions; no cast shadows, lighting planes, modeled facial highlights or outlines around the character shapes. Minor native fill variation visible only in enlargement does not read as volume at the actual UI sizes.",
+    "stillness": "Independently mounted images remained byte-identical after pointer/focus events and inert wave/play/seek calls. Both images were directly viewed; there was no gesture or frame change.",
+    "defects": []
+  },
+  "pass": true,
+  "finalSourceHashesMatch": true,
+  "finalReviewedAt": "2026-11-04T23:47:08.158151+00:00",
+  "status": "INDEPENDENT_STATIC_AVATAR_PASS",
+  "limitations": "Finite source-bound family coverage, not a claim that every theoretical option permutation was rendered. No profile/API writes by this reviewer. Real saved-profile and second-device restoration are covered by the separate avatar author persistence proof."
+}

@@ -1,0 +1,189 @@
+{
+  "version": 1,
+  "date": "2026-11-04T23:42:31.180Z",
+  "scope": "Completely new static flat avatar artwork. Male/Female, six skin IDs, six outfits/hair/accessories and reward IDs preserved. No animated frames, joints, hands, breathing, blinking, floating or hover behavior.",
+  "references": [
+    {
+      "path": "C:/Users/David/AppData/Local/Temp/codex-clipboard-9150a6fb-fd32-4919-ada2-bc909572e994.png",
+      "sha256": "2e014c01847627c2a2c5d80934666d7b8d8b3132ceb56b2055874bc0eccb4c5d",
+      "mode": "RGBA",
+      "width": 2430,
+      "height": 935,
+      "alphaRange": [
+        255,
+        255
+      ]
+    },
+    {
+      "path": "C:/Users/David/AppData/Local/Temp/codex-clipboard-b9c8625b-dff2-48d0-973f-674d2cd74547.png",
+      "sha256": "2dfb4de6d1e73d93c753fb4fb8684d643640568da8b80e77cd97b515f3ab2875",
+      "mode": "RGBA",
+      "width": 2407,
+      "height": 1475,
+      "alphaRange": [
+        255,
+        255
+      ]
+    },
+    {
+      "path": "C:/Users/David/AppData/Local/Temp/codex-clipboard-fd16dec9-910b-404b-a8fc-8f717c7fa11b.png",
+      "sha256": "cf3da28ba78462c1699dcde9818a15c4c576ab739a3f60da36234cbc06484383",
+      "mode": "RGBA",
+      "width": 1940,
+      "height": 1320,
+      "alphaRange": [
+        255,
+        255
+      ]
+    }
+  ],
+  "generations": [
+    {
+      "id": "heads-initial",
+      "intent": "generate",
+      "prompt": "Use case: stylized-concept.\nAsset type: native transparent PNG sprite atlas for a completely static avatar customizer.\nPrimary request: create a consistent set of 12 NEW bald smiling avatar head-and-short-neck cutouts, arranged in an exact 4 column by 3 row grid. Each grid cell is 384 by 384 on a 1536 by 1152 transparent canvas; if the image size differs, maintain the exact 4x3 regular grid. Leave generous transparent separation. No text, no labels, no cell borders, no guides.\nStyle reference: the user's supplied avatar customizer screenshots show a very large soft rounded-square face, simple round ears, huge plain expressive white eyes with black pupils, a tiny simple droplet nose, and a small inviting curved smile. Match that minimal flat shape language, but use awake welcoming open eyes and happy small smiles instead of sleepy eyelids. Face is almost as wide as tall, with gently rounded square jaw, no tiny baby round head. Adult-neutral graphic icon.\nComposition in EVERY cell: straight-on bald head centered, identical eye/ear/nose/mouth registration, entire rounded-square head and ears visible; head including ears about 260 wide and head about 230 high; short centered neck about 65 wide and 35 high extends from the chin. No hair, no glasses, no clothes, no body, no arms, no hands.\nReading order: cells 1–6 are Male base, soft square jaw, first to sixth skin tones; cells 7–12 are Female base, subtly narrower lower jaw with similarly rounded-square face, same facial feature layout, first to sixth skin tones. Female base must be a real face silhouette distinction rather than hair or makeup. No eyelashes, no lipstick.\nSix skin tones in exact sequence repeated for both bases: very light warm porcelain; peach; golden honey tan; caramel brown; chestnut brown; deep warm brown.\nCRITICAL FLATNESS: each face, ears and neck are exactly one identical solid opaque skin color, with absolutely no chin shadow, neck shadow, cheek shading, rim light, highlights, gradients, texture, line borders, outlines or glow. Eyes are plain solid white ovals plus solid charcoal pupils (no glints). Nose is one muted terracotta flat teardrop. Eyebrows are two friendly small rounded charcoal curves, mouth a small charcoal curved smile. No 3D, no lighting, no shadows of any kind. Transparent empty backdrop with genuine alpha. Keep every silhouette separated, centered and complete.",
+      "tool": "built-in image_gen.imagegen",
+      "transparent_background": true,
+      "generatedNativePath": "C:/Users/David/.codex/generated_images/01a1a821-92b9-7283-9fb1-1e81fe81ee51/exec-b8277390-cffc-4240-84fc-e1d972fa1ca2.png",
+      "workspaceCopy": "assets/art/avatar-static-heads-v1.png",
+      "active": false
+    },
+    {
+      "id": "clothes",
+      "intent": "generate",
+      "prompt": "Use case: stylized-concept.\nAsset type: native transparent PNG atlas of six complete STATIC shoulder-to-chest avatar clothing cutouts. NEW art from scratch.\nPrimary request: exact regular 3 columns by 2 rows grid on a landscape transparent canvas, six separate centered clothing busts with generous transparent separation. No heads, no faces, no skin, no arms, no hands, no separate sleeves, no legs, no labels or text. Each clothing piece is ONE complete simple coherent bust silhouette, shoulder width about 300px, chest height about 180px. The top edge has a tiny centered neck opening about 56px wide and 24px deep so a short head neck can overlap it. All six use exactly the same shoulder/body dimensions and neck registration. Softly angular sloping shoulders, simple flat bottom edge; deliberately minimal body smaller than the large rounded-square head that will sit above it.\nReading order: 1 magenta pullover hoodie with a small simple hood collar and two plain cream drawstrings; 2 teal crew-neck tee; 3 teal explorer jacket open over a solid orange shirt, small flat cream rectangular badge; 4 orange sweater with a simple short ribbed collar represented by two small vertical darker-orange rectangles; 5 navy overalls over a cream top, with two simple gold round fasteners; 6 magenta cardigan over a cream shirt with two navy circle buttons.\nStyle: match the user's static avatar references: simple geometric rounded shapes, clean adult-neutral icon design, no 3D. This is a minimal head-and-shoulders portrait. Clothing must form a single connected silhouette, without hanging arm fragments.\nCRITICAL: COMPLETELY FLAT single-color material blocks. Every magenta area is exactly one magenta, every teal area exactly one teal. No outlines, borders, edge strokes, folds, texture, highlights, glows, gradients, shadow planes, cast shadows or lighting effects. Collar pieces can be adjacent simple shapes in the stated palette but no simulated shaded material. Genuine transparent backdrop and native alpha. Keep all six pieces uncut and separated.",
+      "tool": "built-in image_gen.imagegen",
+      "transparent_background": true,
+      "generatedNativePath": "C:/Users/David/.codex/generated_images/01a1a821-92b9-7283-9fb1-1e81fe81ee51/exec-118a5336-4494-4315-b430-db42fdee008b.png",
+      "workspaceCopy": "assets/art/avatar-static-clothes-v1.png",
+      "active": true
+    },
+    {
+      "id": "hair",
+      "intent": "generate",
+      "prompt": "Use case: stylized-concept.\nAsset type: six native transparent HAIR OVERLAY cutouts for a completely static modular avatar; new art.\nExact regular 3-column by 2-row atlas, generous transparent separation, all six face front. No heads, no skin, no face, no ears, no bodies, no labels, no guides. The empty region where the face will go MUST be genuinely transparent, not white.\nA common imaginary bald rounded-square face about 240 wide by 250 high sits centered in each cell; every hair must fit that same face geometry. Leave the broad central face open so both large eyes, eyebrows, nose and smile remain visible. Hair is an opaque connected flat silhouette that overlaps the very top edge of the imaginary head, extends to the temples and closes smoothly around the head with no detached strands. The longer hairstyles have transparent face openings and solid side hair, rather than a filled block that would cover the face. Top scalp should fit the same registration across all six.\nReading order: 1 charcoal short tousled side-part, a simple curved cap with three chunky tufts; 2 dark chocolate short soft curls, five or six simple rounded lobes; 3 auburn long straight hair with a side sweep, simple solid sides to the chin; 4 dark chocolate twin round puffs joined to a short simple curved hair cap; 5 golden blond rounded bob with an open face area and a small simple asymmetric fringe; 6 deep navy shoulder-length soft waves, three broad rounded lobes per side and a gentle front sweep.\nStyle reference: user's screenshot hair is a small number of broad solid rounded shapes, simple flat graphic avatar. Match this exact simplicity. Adult-neutral icon, no realism.\nCRITICAL: each hairstyle uses exactly ONE completely uniform solid opaque color, no outlines/borders/strokes, no hair strands, no streaks, no textures, no highlights, no shadows, no gradients, no rim light, no glow, no 3D. Transparent background with genuine alpha. All six complete and separated.",
+      "tool": "built-in image_gen.imagegen",
+      "transparent_background": true,
+      "generatedNativePath": "C:/Users/David/.codex/generated_images/01a1a821-92b9-7283-9fb1-1e81fe81ee51/exec-985a1f11-c75e-4945-83ce-39d3d724a833.png",
+      "workspaceCopy": "assets/art/avatar-static-hair-v1.png",
+      "active": true
+    },
+    {
+      "id": "extras-initial",
+      "intent": "generate",
+      "prompt": "Use case: stylized-concept.\nAsset type: nine transparent static avatar accessories/reward pin cutouts in one native PNG atlas, brand new simple flat art.\nExact regular 3 columns by 3 rows grid, one complete centered object per cell with very generous transparent separation. No labels, no text, no guides, no cell borders. No people, no heads, no faces, no hair, no body, no mannequin. All front-facing, designed to fit a friendly rounded-square avatar head-and-shoulders portrait.\nReading order:\n1 dark navy ROUND GLASSES: two simple connected round frames and a bridge, transparent inside lenses, no eyes and no shine;\n2 ORANGE CAP: simple clean orange cap silhouette with a short side brim, single orange main block, no panel shading;\n3 TEAL HEADPHONES: one thick smooth curved connected headband with two connected rounded rectangular ear pads, genuine transparent face opening;\n4 MAGENTA SATCHEL: simple small magenta rounded pouch with one gold circle clasp, a connected diagonal navy shoulder strap;\n5 ORANGE SCARF: short simple wraparound neck loop with two connected small scarf tails;\n6 NAVY BACKPACK: compact navy rounded bag, two connected teal shoulder straps and one flat cream pocket rectangle;\n7 GOLD STAR PIN: a simple five-point gold star, no border;\n8 MAGENTA TROPHY PIN: small simple magenta trophy silhouette with two connected round handles and a gold base, no border;\n9 TEAL COMPASS PIN: one simple teal circle with a single cream compass arrow, no outer border.\nStyle reference: user-supplied avatar customizer screenshots use the simplest broad geometric rounded shapes, completely flat graphic shapes. Use that minimal style. Solid opaque material blocks with crisp smooth native edges.\nCRITICAL: no shadows, no highlights, no gradients, no light effects, no glows, no outlines or border strokes around objects, no textures, no 3D, no fake glass reflections. The glasses' dark frame is the physical object, NOT a decorative outline. Every material must be a single flat color. Genuine transparent backdrop with preserved native alpha. Keep all objects complete and separate.",
+      "tool": "built-in image_gen.imagegen",
+      "transparent_background": true,
+      "generatedNativePath": "C:/Users/David/.codex/generated_images/01a1a821-92b9-7283-9fb1-1e81fe81ee51/exec-5668309c-8067-40b2-a6d2-c04b95f2f89d.png",
+      "workspaceCopy": "assets/art/avatar-static-extras-v1.png",
+      "active": false
+    },
+    {
+      "id": "scarf-flatness",
+      "intent": "edit",
+      "prompt": "Use case: precise-object-edit.\nEdit this native transparent avatar accessory atlas. Keep the exact nine-item 3x3 arrangement, the shapes, scale and positions, transparent openings and transparency.\nChange ONLY the orange scarf in the middle cell: remove the darker inner-neck orange band and make the entire scarf one uniform solid bright-orange material with no darker or lighter areas. Keep a transparent opening for the neck. The front, tails and back of the neck loop all have exactly the same solid orange color. No shading, no shadows, no gradient or texture.\nPreserve all other objects as they are: dark round glasses, orange cap, teal headphones, magenta satchel, navy backpack, gold star, trophy and compass. Preserve genuine transparent background and native alpha; do not introduce backdrop or borders.",
+      "tool": "built-in image_gen.imagegen",
+      "transparent_background": true,
+      "generatedNativePath": "C:/Users/David/.codex/generated_images/01a1a821-92b9-7283-9fb1-1e81fe81ee51/exec-9cabe339-7a07-4fca-8753-8dffe247b4c7.png",
+      "workspaceCopy": "assets/art/avatar-static-extras-v2.png",
+      "active": false
+    },
+    {
+      "id": "rounded-square-heads",
+      "intent": "edit",
+      "prompt": "Use case: precise-object-edit.\nImage 1 is the native transparent avatar HEAD ATLAS to edit. Image 2 is the user's STYLE REFERENCE screenshot, not an edit target.\nChange ONLY the silhouette of every face in image 1 from round/oval into the distinctly rounded-RECTANGULAR head shape shown in image 2: long nearly straight vertical cheeks, a broad flat horizontal jaw about 65 percent of face width, and small softly rounded bottom corners. A soft rectangular square-ish shape, NOT a circle, egg, oval or chibi baby face. The top forehead edge should also have a broad flatter centre with softly rounded corners. The friendly heads should read like the rectangular reference avatar.\nPreserve all twelve existing skin/base pairs and their exact grid order and positioning: 4 columns by 3 rows, first six Male, next six Female. Male has a subtly squarer lower jaw; Female has slightly softer lower corners but is ALSO clearly rounded-rectangular with a broad flat jaw, never oval. Preserve existing canvas size and transparent spacing, eye/eyebrow/nose/small happy smile positions and expressions, ear registration and short centered neck. Do not add hair, makeup, glasses, clothes, limbs, extra heads, text or guides.\nEvery head, ears and neck must remain EXACTLY one identical uniform flat solid skin color; no chin/neck shadows, cheek planes, gradients, highlights, glow, texture, outline or borders. Keep the large simple white eyes and charcoal pupils, warm small smiles and friendly curved brows. Genuine transparent background; preserve native alpha.",
+      "tool": "built-in image_gen.imagegen",
+      "transparent_background": true,
+      "generatedNativePath": "C:/Users/David/.codex/generated_images/01a1a821-92b9-7283-9fb1-1e81fe81ee51/exec-c3db5be2-48aa-40c2-8a6d-3d23e3882b02.png",
+      "workspaceCopy": "assets/art/avatar-static-heads-v2.png",
+      "active": true
+    },
+    {
+      "id": "clear-glasses",
+      "intent": "edit",
+      "prompt": "Use case: precise-object-edit.\nEdit only the first object, the top-left round glasses, in this transparent PNG atlas. The existing glasses have incorrectly filled dark-blue circular lenses. REMOVE the fill from BOTH circular lens openings so the viewer sees completely through them: alpha must be zero inside both lens circles. Keep only the solid dark navy round frames and connecting bridge. No eyes, no glass tint, no reflections, no solid discs. This is an overlay worn over an avatar's existing visible eyes; its two big circular windows MUST be genuinely transparent, same as the empty background.\nPreserve the exact existing 3x3 atlas size, every object position and scale and all other eight objects unchanged. Preserve all existing transparent holes, especially headphone centre, satchel strap, backpack straps and scarf neck opening. Keep all color blocks flat and all native alpha. No shadows, glow, gradients, texture, borders or background.",
+      "tool": "built-in image_gen.imagegen",
+      "transparent_background": true,
+      "generatedNativePath": "C:/Users/David/.codex/generated_images/01a1a821-92b9-7283-9fb1-1e81fe81ee51/exec-ff832841-ad13-4c56-a20b-ba9c9d8e1fd8.png",
+      "workspaceCopy": "assets/art/avatar-static-extras-v3.png",
+      "active": true
+    }
+  ],
+  "activeFiles": [
+    {
+      "path": "assets/art/avatar-static-heads-v2.png",
+      "sha256": "79f254047f5541326288ba948051aa82d576f47af105f3eda1c50caab6464779",
+      "mode": "RGBA",
+      "width": 1536,
+      "height": 1024,
+      "alphaRange": [
+        0,
+        254
+      ]
+    },
+    {
+      "path": "assets/art/avatar-static-clothes-v1.png",
+      "sha256": "38c59629065fbc10c6ec5d723c8d89f4630afb859c89699c7581f7b662e8180d",
+      "mode": "RGBA",
+      "width": 1536,
+      "height": 1024,
+      "alphaRange": [
+        0,
+        254
+      ]
+    },
+    {
+      "path": "assets/art/avatar-static-hair-v1.png",
+      "sha256": "c73a9e78139d3ceaf1c6b6cd61392835ebb3c82f13fbb222ccaae0edc9166e97",
+      "mode": "RGBA",
+      "width": 1536,
+      "height": 1024,
+      "alphaRange": [
+        0,
+        254
+      ]
+    },
+    {
+      "path": "assets/art/avatar-static-extras-v3.png",
+      "sha256": "1842d76f71c1a8ccb01dabe6c5a6e5dbe1c71257490d77989f95e1e0022c16fe",
+      "mode": "RGBA",
+      "width": 1536,
+      "height": 1024,
+      "alphaRange": [
+        0,
+        254
+      ]
+    },
+    {
+      "path": "assets/art/avatar-static-v1.frames.json",
+      "sha256": "7ea0fd65138b223b3207780386c5437b26eaa5da21b25439b2029d93d4fb4ab5"
+    },
+    {
+      "path": "assets/art/avatar-static-v1.fragment.json",
+      "sha256": "d79ef7f8156934b68ab715267322ec2674a7fe47074314cc2ba3c2289d8370d4"
+    },
+    {
+      "path": "src/avatar-static.js",
+      "sha256": "92742ed6eeb76787522b9ef904da7fbf403448a394babd15a154b3ca7cdc55e8"
+    },
+    {
+      "path": "assets/art/ui-static-v1.png",
+      "sha256": "fdbf04030127b6a1d6a7061a72b765a540cc25ec732eb4343a639ce7f11e1b42",
+      "mode": "RGBA",
+      "width": 1261,
+      "height": 1247,
+      "alphaRange": [
+        0,
+        255
+      ]
+    }
+  ],
+  "nativeHandling": "Generated native PNG bytes copied intact, alpha preserved. No code drew, repainted, recolored, flattened, thresholded or resampled production bitmap pixels. Measurement code analyzes alpha for metadata and browser proofs render cropped native bitmap layers only.",
+  "selectionNotes": [
+    "Initial heads were too oval; targeted native edit changed all12 silhouettes to softly rounded rectangles.",
+    "First scarf correction unintentionally filled the glasses; final native edit restored alpha-zero lens windows.",
+    "Reward pins use the root-generated ui-static-v1 atlas via exact current manifest crops."
+  ],
+  "measurementScript": "tools/build-avatar-static-metadata.py",
+  "proofScript": "tools/avatar-static-proof.mjs"
+}

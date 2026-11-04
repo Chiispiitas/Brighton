@@ -1,0 +1,49 @@
+{
+  "character": "alex",
+  "method": "Built-in image_gen; native alpha and output bytes preserved",
+  "nativeOutput": "C:/Users/David/.codex/generated_images/01a1a821-f54c-74b0-a1e7-e96dc5bfc498/exec-835f27f4-db44-4578-969b-917f6bd4125e.png",
+  "destination": "assets/art/cast-static-alex-v3.png",
+  "priorProvenance": "assets/art/cast-static-alex-v2.provenance.json",
+  "nativeCorrection": {
+    "prompt": "Native raster precise-object edit. Correct ONLY the bottom-right seated driving illustration in this complete four-pose Alex atlas. The far hand at the VIEWER-RIGHT edge of the steering wheel currently looks detached because no forearm visibly reaches it. Add a plainly visible continuous teal sleeve from his far shoulder, a joined medium-brown forearm and wrist reaching that palm; route the complete arm visibly above or beside the wheel, not entirely hidden behind it. Make the limb simple and anatomically coherent, with a clear uninterrupted shoulder-to-elbow-to-wrist-to-hand connection. Do not rely on connection through the wheel as if it were an arm. Keep a comfortable supported seated posture, visible chair seat/back, both feet planted, and the near arm gripping the wheel. All actual skin is the same flat brown fill. Keep every shape fully flat with no gradient, shadow, texture, outline or modeling. Preserve the other THREE complete poses exactly, the same friendly identity, dark curls, headphones, teal/orange/navy palette, props, 2x2 layout, complete full bodies, transparent background, margins and gutters. Do not add text, backgrounds, floor marks or any unrelated element.",
+    "referencedImages": [
+      "C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/App/assets/art/cast-static-alex-v2.png"
+    ],
+    "reason": "Independent QA found far seated palm visible without a forearm. One native edit adds complete visible far sleeve/forearm to that palm, preserving whole poses."
+  },
+  "postProcessing": "None. Source PNG bytes and alpha preserved exactly; crops are metadata only.",
+  "reviewStatus": "AUTHOR_VISIBLE_SEATED_ARM_PASS_PENDING_INDEPENDENT_REVIEW",
+  "sha256": "86d6441f1062824451a8aa3cf0a43de137b2aaa17a42cd179561efa7cf227825",
+  "nativeBytesMatch": true,
+  "atlas": {
+    "width": 1254,
+    "height": 1254
+  },
+  "measuredFrames": {
+    "listen": {
+      "x": 174,
+      "y": 52,
+      "w": 367,
+      "h": 540
+    },
+    "fix": {
+      "x": 703,
+      "y": 53,
+      "w": 376,
+      "h": 539
+    },
+    "dance": {
+      "x": 145,
+      "y": 650,
+      "w": 352,
+      "h": 554
+    },
+    "sit": {
+      "x": 687,
+      "y": 657,
+      "w": 453,
+      "h": 548
+    }
+  },
+  "reviewProof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-static-cast\\alex-v3-normal-enlarged.png"
+}

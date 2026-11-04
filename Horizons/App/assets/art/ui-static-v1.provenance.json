@@ -1,0 +1,45 @@
+{
+  "method": "Built-in ImageGen. Native PNG bytes retained unchanged; measured crop metadata only.",
+  "selected": [
+    {
+      "file": "assets/art/ui-static-v1.png",
+      "original": "C:/Users/David/.codex/generated_images/01a10ee1-5c4c-7e80-817b-36b2c2dafd47/exec-519f0f2d-a332-4be6-8fdd-047c2f719146.png",
+      "prompt": "Use case: precise-object-edit. This is a FLATNESS CORRECTION of the provided16-icon atlas. Keep exactly the existing4x4 layout and all16silhouettes and icon identities. REDRAW every icon as clean cut-paper SOLID COLOR REGIONS. The result must have ONE CONSTANT RGB COLOR inside each material shape from edge to edge, including cream pages and orange star. Absolutely NO local variations, flecks, noise, texture, tonal gradients, darker edges, highlights, shadows, blurry colored alpha speckles or rim lights. No outlines or cell frames. Pure transparent alpha outside the sixteen clean silhouettes including all gutters. Keep native antialiased contour edges only. Use only these flat colors: magenta#ad195a, orange#ff7900, teal#008f95, navy#163d50, cream#ffe8bc, white#ffffff. Book cover/paper, calendarheader/body, satchelflap/body may be distinct FLAT regions but never tonal lighting. Geometric simple crisp2D pictograms readable24px. No text or numbers. The first image is the EDIT TARGET; second is a flat solid-fill STYLE reference. Do not add objects or alter layout.",
+      "initialPrompt": "Use case: illustration-story. Asset: a native transparent PNG atlas for a flat English-learning app. Generate EXACTLY SIXTEEN separate minimal pictograms in a strict 4-column x 4-row square grid, with generous transparent gutters. No labels, text, cell frames or background. The references indicate the simple shape vocabulary and Horizons palette only. Every image is a complete STILL graphic, never a sprite sequence or rig.\nSTYLE: absolutely flat solid fills, borderless shapes, very simple, crisp friendly geometric silhouettes; no outlines or strokes around silhouettes, no shadows anywhere, no gradients, modeled lighting, texture, highlights, glossy surfaces or 3D. Use saturated magenta #ad195a, orange #ff7900, teal #008f95, dark navy #163d50 and warm cream #ffe8bc. At most four colors per pictogram, consistent optical size. Minimal detail readable at24px.\nROW1 left to right:1 friendly simple house with solid window;2 open book cream pages with magenta cover;3 simple game controller with two solid buttons;4 friendly simple rounded-square human head profile symbol (open eyes, small smile, no hair shading).\nROW2:5 small orange flame;6 solid orange five-point star badge;7 simple orange trophy cup;8 small magenta satchel with navy strap and orange button.\nROW3:9 teal loudspeaker plus two solid curved sound shapes;10 simple orange key;11 magenta calendar with four square dates, no numbers;12 a teal circular compass with a single orange triangular needle (no outline).\nROW4:13 a simple solid teal settings gear;14 a simple orange flag on navy pole;15 magenta heart;16 closed teal book with simple orange plus sign.\nEach pictogram fits fully in its own equal grid cell; no components cross gutters. Transparent alpha including gaps, no white matte. No ground line. No characters except the one profile head.",
+      "references": [
+        "C:/Users/David/.codex/generated_images/01a10ee1-5c4c-7e80-817b-36b2c2dafd47/exec-1e5cae40-d6e4-405e-ac77-fcc72445840f.png",
+        "C:/Users/David/AppData/Local/Temp/codex-clipboard-624d5ef7-8576-48fd-96e9-ca0d814badda.png"
+      ],
+      "sha256": "fdbf04030127b6a1d6a7061a72b765a540cc25ec732eb4343a639ce7f11e1b42"
+    },
+    {
+      "file": "assets/art/town-static-v1.png",
+      "original": "C:/Users/David/.codex/generated_images/01a10ee1-5c4c-7e80-817b-36b2c2dafd47/exec-2373830d-fbd4-4391-8158-aabf9aa7a39f.png",
+      "prompt": "Use case: infographic-diagram. Create a flat vector-look COLOR-BLOCK LANDSCAPE of a small welcoming town for a minimalist English-learning app. Wide3:1 horizontal composition, the town fills the lower two-thirds, transparent sky and outer margins. No typography or labels. Scene: simple magenta-front bookstore, teal caf\u00e9 with orange awning, cream school with teal doorway, a few solid round-canopy trees, two small bushes, distant low geometric orange hills. A single solid cream pedestrian path links the buildings. No people. All buildings are straight-on geometric silhouettes with friendly softened corners; no perspective modeling. Windows are flat navy rectangles. \nABSOLUTELY FLAT PRINT-SIGN DESIGN, as if assembled from separate shapes of opaque colored paper. Each shape has one constant color. Limited palette: magenta#ad195a, teal#008f95, orange#ff7900, navy#163d50, cream#ffe8bc and green#6d9e38. No gradients, texture, noise, shading, lighting, outlines, strokes, borders, drop shadows, cast shadows, ground shadows, glossy details, or3D. No color modulation across a shape. Clean transparent alpha outside the silhouette; no matte/glow/haze or colored debris. Entire scene fits with generous transparent margins. This is one finished STILL image, no animation frames or disassembled parts. Reference is only for simple geometric solid-color vocabulary, not its existing characters.",
+      "references": [
+        "C:/Users/David/AppData/Local/Temp/codex-clipboard-624d5ef7-8576-48fd-96e9-ca0d814badda.png"
+      ],
+      "sha256": "2f71a7437854f4062e1d1c04d0c54805f88ff252da4eb5276b737c19957334ba"
+    },
+    {
+      "file": "assets/art/app-icon-static-v1.png",
+      "original": "C:/Users/David/.codex/generated_images/01a10ee1-5c4c-7e80-817b-36b2c2dafd47/exec-934c1d0c-0835-41e6-9cb6-8a18cc509c66.png",
+      "prompt": "Use case: logo-brand. Generate one square flat app icon using the attached Pico character sheet ONLY AS IDENTITY reference. Show just Pico's recognizable head and both entire long ears, one ear tip bent, in the same slight three-quarter view. Preserve the simple squarish elongated muzzle, tiny orange triangular nose, two open white oval eyes, TWO gentle separate navy eyebrows, happy small open smile. No added fur tufts or rounded bunny redesign. No body or hands. Solid magenta#ad195a square background, ample18% safe margin around both ears and face. Flat solid cream/peach head, coral inner-ear shapes, navy eye pupils/brows, orange nose, simple magenta smile. Each shape is one flat printed color. No outlines, borders, shading, highlights, gradient, texture, noise, 3D or shadow. A clean flat geometric logo. One still image, no panels or atlas.",
+      "references": [
+        "assets/art/cast-static-pico-v2.png"
+      ],
+      "sha256": "f220c0541a5f871b0fa4c6c0fbcd70d2f0043a06730b0f9eb086ec7641141059"
+    }
+  ],
+  "notSelected": [
+    {
+      "file": "C:/Users/David/.codex/generated_images/01a10ee1-5c4c-7e80-817b-36b2c2dafd47/exec-1e5cae40-d6e4-405e-ac77-fcc72445840f.png",
+      "reason": "Stronger native modeling and gutter debris; correction selected instead."
+    },
+    {
+      "file": "C:/Users/David/.codex/generated_images/01a10ee1-5c4c-7e80-817b-36b2c2dafd47/exec-78955cfa-825a-4e66-8771-2810569972cb.png",
+      "reason": "Furry head differed from the approved geometric Pico identity."
+    }
+  ],
+  "scope": "Static UI artwork, town and app icon. No source photographs, book contents or audio changed."
+}

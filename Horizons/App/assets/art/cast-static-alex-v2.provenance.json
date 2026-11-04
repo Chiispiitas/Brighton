@@ -1,0 +1,69 @@
+{
+  "character": "alex",
+  "method": "Built-in image_gen; native alpha and output bytes preserved",
+  "nativeOutput": "C:/Users/David/.codex/generated_images/01a1a821-f54c-74b0-a1e7-e96dc5bfc498/exec-cb465f91-d272-43b3-968e-6c015af55da9.png",
+  "destination": "assets/art/cast-static-alex-v2.png",
+  "references": [
+    {
+      "path": "C:/Users/David/AppData/Local/Temp/codex-clipboard-0873ce2b-1019-4209-80e0-8afe628e32cc.png",
+      "role": "Identity and palette only"
+    },
+    {
+      "path": "C:/Users/David/AppData/Local/Temp/codex-clipboard-624d5ef7-8576-48fd-96e9-ca0d814badda.png",
+      "role": "Strict flat simple-shape style"
+    }
+  ],
+  "generationPrompt": "Use case: illustration-story. Generate a FRESH production PNG sprite atlas, not joint cutouts.\nInput image 1 is IDENTITY AND PALETTE reference only. Image 1 is NOT a rendering-style reference: do not copy its gradients, textured finish, modeled face planes or shadow triangles. Input image 2 is the STRICT FLAT SHAPE STYLE reference: simple coherent geometric figures with solid flat color regions.\nOutput one square genuinely transparent PNG containing exactly FOUR complete, full-body illustrations of ONE same character, arranged in a spacious 2 by 2 grid, ordered top-left, top-right, bottom-left, bottom-right. Each quadrant has a complete figure with all ears/hair, hands, feet and any held prop inside it. Generous transparent outer margins and central gutters: nothing may touch another quadrant or the canvas boundary. Same character scale and consistent proportions across the four poses. No labels, words, numbers, grid, cell backgrounds, border, watermark or ground line.\nSTRICT FLATNESS: one uniform solid opaque color per shape. Use literal unmodulated solid polygons, circles and rounded rectangles, as flat as solid-color pictograms. NO paper texture or lighting. ZERO gradients, tonal modeling, highlights, cast shadows, neck shadow, side-face darker plane, drop shadows, ambient occlusion, rim light, texture, grain, outlines, contour strokes or 3D effects. Different colors only identify actual different materials such as skin, shirt, trousers and shoes. All skin on a character uses one flat skin color. Preserve the graphic identity from image 1 while simplifying to image 2.\nANATOMY: each pose is one complete coherent native illustration. Continuous visible neck-to-body, sleeve-to-arm, elbow-to-hand, waist-to-leg and ankle-to-shoe silhouettes. No floating or detached hands, no disconnected props, no hidden forearm with an isolated hand peeking out. Friendly relaxed eyebrows, approachable open eyes and a warm smile. Adults retain adult proportions.\nCHARACTER: Alex, the shorter broader adult man at top-center-right of image 1, with medium brown skin, a softly blocky face, short dark curly hair, navy headphones around his neck, teal jacket over an orange shirt, navy trousers and cream shoes. Retain a sturdy adult build without making him excessively thick. Medium-brown skin is ONE uniform flat color, no dark side plane, cheek shading or neck-shadow triangle. Friendly relaxed brows rather than angry inward slants; open approachable eyes and a warm smile. Teal jacket is one flat teal material without lighting panels.\nPOSES: top-left calm listening stance with one relaxed open hand; top-right practical work pose holding a small simple cream wrench with a clearly connected gripping hand, other hand steadying naturally; bottom-left playful but balanced dance pose with one full foot planted and modest lifted arms; bottom-right compact driving vignette: seated in a simple visible solid-color chair, chair seat clearly supporting hips, chair back behind torso, both feet complete and planted, both hands visibly on a flat navy steering wheel connected to a compact teal dashboard stand. No floating wheel, no unsupported squat, no car scene or background. All four are complete whole figures with coherent continuous clothed arms. No text, no tiny decorative details.\nUniform-fill requirement: a material shape should have the same RGB color across its entire interior, with edge antialiasing only. Do not add subtle tonal variation, even if it seems attractive.",
+  "rejectedFirstGeneration": {
+    "nativeOutput": "C:/Users/David/.codex/generated_images/01a1a821-f54c-74b0-a1e7-e96dc5bfc498/exec-9442b4b0-158f-48f4-b07a-d967d0ce1699.png",
+    "reason": "Visible tonal modeling inherited from identity reference; not integrated"
+  },
+  "nativeCorrection": {
+    "prompt": "Use case: style-transfer. Native raster edit.\nImage 1: the complete four-pose atlas to correct. Keep the SAME character identity, SAME four poses, SAME coherent full-body silhouettes, supporting hands/props, palette, 2x2 layout, transparent background, generous gutters and margins. Image 2: the requested very simple flat-color rendering style.\nCHANGE ONLY THE RENDERING: redraw every material region with one uniform solid flat fill, like the simple 2D icon people in image 2. The current image1 is NOT flat enough. Remove ALL directional gradients, mottled or painted texture, subtle lighting, highlights, shadows, outlines and contour strokes. Remove every face side-plane and neck-shadow triangle rather than retaining it as a separate dark flat panel. Hair must be one flat hair color. Skin must be one flat skin color. Clothes must have no light/dark fabric bands. Different solid colors are only actual different materials or facial features. Keep eyes white, pupils dark, friendly relaxed eyebrows and a warm smile. No rosy cheeks, no gloss, no dimensional effects.\nThe result should look like a clean simple flat 2D cartoon sprite atlas, not a painted illustration. Every figure and every prop must remain one complete connected native illustration. Retain full hands/feet and clear paw/hand contact with book/map/mug/wrench/wheel. No text, grid, borders, floor marks or background. Real transparency; no shadow or haze around silhouettes. Do not add any element. Especially remove the dark triangular neck plane and every directional clothing band.",
+    "referencedImages": [
+      "C:/Users/David/.codex/generated_images/01a1a821-f54c-74b0-a1e7-e96dc5bfc498/exec-9442b4b0-158f-48f4-b07a-d967d0ce1699.png",
+      "C:/Users/David/AppData/Local/Temp/codex-clipboard-624d5ef7-8576-48fd-96e9-ca0d814badda.png"
+    ]
+  },
+  "postProcessing": "None. No recoloring, quantization, redrawn pixels, alpha edits or compositing into the native asset.",
+  "reviewStatus": "ROOT_INDEPENDENT_STATIC_DESIGN_PASS",
+  "sha256": "bde51b0a3ee43d2424a37518c2df49ec0d876b74b4b68ce227f08879bdae444d",
+  "atlas": {
+    "width": 1254,
+    "height": 1254
+  },
+  "measuredFrames": {
+    "listen": {
+      "x": 175,
+      "y": 53,
+      "w": 365,
+      "h": 539
+    },
+    "fix": {
+      "x": 704,
+      "y": 53,
+      "w": 374,
+      "h": 539
+    },
+    "dance": {
+      "x": 145,
+      "y": 651,
+      "w": 350,
+      "h": 553
+    },
+    "sit": {
+      "x": 690,
+      "y": 657,
+      "w": 448,
+      "h": 548
+    }
+  },
+  "reviewProof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-static-cast\\alex-normal-enlarged.png",
+  "nativeBytesMatch": true,
+  "referenceSha256": {
+    "C:/Users/David/AppData/Local/Temp/codex-clipboard-0873ce2b-1019-4209-80e0-8afe628e32cc.png": "5477a5e7b54407f8ec8e03c76f67d1718a670f20bc8f9cedace14c44f4cc3960",
+    "C:/Users/David/AppData/Local/Temp/codex-clipboard-624d5ef7-8576-48fd-96e9-ca0d814badda.png": "5cb13bc2767f5da32fd14dd47bc3781a849d0fad638e9fa8f7823cf05d14d43a"
+  },
+  "authorAnatomyReview": "All four complete poses inspected: connected figure/limb/clothing and visible supported prop contact.",
+  "flatnessReview": "Composed normal/enlarged reviewed by root: subtle native variation at110px does not read as modeled volume; no visible shadow planes/contour outlines."
+}

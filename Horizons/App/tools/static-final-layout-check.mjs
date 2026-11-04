@@ -1,0 +1,17 @@
+import fs from 'node:fs';
+import path from 'node:path';
+import crypto from 'node:crypto';
+import {createRequire} from 'node:module';
+const require=createRequire(import.meta.url),{chromium}=require('C:/Users/David/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const app=path.resolve('Horizons/App'),base=process.env.HZ_APP_URL||'http://127.0.0.1:8898/Horizons/App/',out='C:/Users/David/Documents/Codex/2026-11-04/horizons-static-final-layout';fs.mkdirSync(out,{recursive:true});
+const sha=b=>crypto.createHash('sha256').update(b).digest('hex'),report={base,scope:'Targeted final mobile hero spacing correction after the complete295-screen run. Only styles/app.css changed; full hosted regression follows publication.',screens:[],errors:[],pass:false};
+const browser=await chromium.launch({executablePath:'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',headless:true}),context=await browser.newContext({viewport:{width:1440,height:1000}}),page=await context.newPage();page.on('pageerror',e=>report.errors.push(e.message));
+try{
+ await page.goto(base);await page.locator('#book-code').fill(['DEMO','HZ','A1','011'].join('-'));await page.locator('#redeem-form [type=submit]').click();await page.locator('.app-shell').waitFor({timeout:45000});
+ for(const width of[320,390,768,1440]){
+  await page.setViewportSize({width,height:width<768?844:1000});await page.locator('[data-route=learn]:visible').first().click();await page.evaluate(async()=>{await document.fonts.ready;await Promise.all([...document.images].map(im=>im.decode().catch(()=>{})));});
+  const data=await page.evaluate(()=>{const native=document.querySelector('.hero-pico .raster-fit').getBoundingClientRect(),hero=document.querySelector('.learn-hero').getBoundingClientRect(),overlaps=[];for(const element of document.querySelectorAll('.hero-copy h1,.hero-copy>p,.hero-continue')){const range=document.createRange();range.selectNodeContents(element);for(const r of range.getClientRects())if(Math.min(r.right,native.right)-Math.max(r.left,native.left)>1&&Math.min(r.bottom,native.bottom)-Math.max(r.top,native.top)>1)overlaps.push(element.tagName);}return{width:innerWidth,scrollWidth:document.documentElement.scrollWidth,overlaps,contained:native.top>=hero.top&&native.bottom<=hero.bottom&&native.left>=hero.left&&native.right<=hero.right,running:document.getAnimations().filter(a=>a.playState==='running').length};});
+  const file=path.join(out,'learn-'+width+'.png');await page.screenshot({path:file});report.screens.push({...data,path:file,sha256:sha(fs.readFileSync(file))});
+ }
+ const previous=JSON.parse(fs.readFileSync(path.join(app,'reports/static-cache-upgrade.json'),'utf8'));report.changedRuntimeFiles=Object.entries(previous.currentSourceHashes).filter(([p,h])=>sha(fs.readFileSync(path.join(app,p)))!==h).map(([p])=>p);report.finalStyleSha256=sha(fs.readFileSync(path.join(app,'styles/app.css')));report.pass=report.errors.length===0&&report.screens.every(s=>!s.overlaps.length&&s.contained&&!s.running&&s.scrollWidth<=s.width+1)&&report.changedRuntimeFiles.length===1&&report.changedRuntimeFiles[0]==='styles/app.css';
+}catch(error){report.errors.push(error.stack);}finally{await browser.close();fs.writeFileSync(path.join(app,'reports/static-final-layout.json'),JSON.stringify(report,null,2)+'\n');console.log(JSON.stringify(report));if(!report.pass)process.exitCode=1;}

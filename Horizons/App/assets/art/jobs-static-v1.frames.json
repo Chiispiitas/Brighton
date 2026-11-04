@@ -1,0 +1,509 @@
+{
+  "version": 1,
+  "kind": "new-native-whole-static-occupation-atlases",
+  "method": "Native built-in ImageGen PNG and alpha unchanged; measured rectangular crops only.",
+  "atlases": [
+    {
+      "src": "assets/art/jobs-static-1-v2.png",
+      "atlas": {
+        "width": 1254,
+        "height": 1254
+      },
+      "sha256": "fb6a01224a140eb3f064a1a07cb9711fd10c2def0d4dfaa6f17c33263bc096d3",
+      "grid": {
+        "columns": 2,
+        "rows": 2
+      },
+      "items": [
+        {
+          "term": "teacher",
+          "cell": 0,
+          "frame": {
+            "x": 84,
+            "y": 48,
+            "w": 495,
+            "h": 568
+          },
+          "nativeOpaqueBounds": {
+            "x": 96,
+            "y": 60,
+            "w": 471,
+            "h": 544
+          },
+          "opaqueComponents": [
+            {
+              "area": 158061,
+              "x": 96,
+              "y": 60,
+              "w": 471,
+              "h": 544
+            }
+          ]
+        },
+        {
+          "term": "chef",
+          "cell": 1,
+          "frame": {
+            "x": 735,
+            "y": 14,
+            "w": 359,
+            "h": 603
+          },
+          "nativeOpaqueBounds": {
+            "x": 747,
+            "y": 26,
+            "w": 335,
+            "h": 579
+          },
+          "opaqueComponents": [
+            {
+              "area": 104109,
+              "x": 747,
+              "y": 26,
+              "w": 335,
+              "h": 579
+            }
+          ]
+        },
+        {
+          "term": "doctor",
+          "cell": 2,
+          "frame": {
+            "x": 167,
+            "y": 648,
+            "w": 292,
+            "h": 593
+          },
+          "nativeOpaqueBounds": {
+            "x": 179,
+            "y": 660,
+            "w": 268,
+            "h": 569
+          },
+          "opaqueComponents": [
+            {
+              "area": 90116,
+              "x": 179,
+              "y": 660,
+              "w": 268,
+              "h": 569
+            }
+          ]
+        },
+        {
+          "term": "office worker",
+          "cell": 3,
+          "frame": {
+            "x": 682,
+            "y": 677,
+            "w": 476,
+            "h": 559
+          },
+          "nativeOpaqueBounds": {
+            "x": 694,
+            "y": 689,
+            "w": 452,
+            "h": 535
+          },
+          "opaqueComponents": [
+            {
+              "area": 121670,
+              "x": 694,
+              "y": 689,
+              "w": 452,
+              "h": 535
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "src": "assets/art/jobs-static-2-v2.png",
+      "atlas": {
+        "width": 1254,
+        "height": 1254
+      },
+      "sha256": "4308ef795398ad9feebbe54bf7179d1b0f37742b4f0dd862e01f8df42e558da4",
+      "grid": {
+        "columns": 2,
+        "rows": 2
+      },
+      "items": [
+        {
+          "term": "receptionist",
+          "cell": 0,
+          "frame": {
+            "x": 81,
+            "y": 53,
+            "w": 470,
+            "h": 571
+          },
+          "nativeOpaqueBounds": {
+            "x": 93,
+            "y": 65,
+            "w": 446,
+            "h": 547
+          },
+          "opaqueComponents": [
+            {
+              "area": 128124,
+              "x": 93,
+              "y": 65,
+              "w": 446,
+              "h": 547
+            }
+          ]
+        },
+        {
+          "term": "salesclerk",
+          "cell": 1,
+          "frame": {
+            "x": 673,
+            "y": 42,
+            "w": 531,
+            "h": 582
+          },
+          "nativeOpaqueBounds": {
+            "x": 685,
+            "y": 54,
+            "w": 507,
+            "h": 558
+          },
+          "opaqueComponents": [
+            {
+              "area": 138132,
+              "x": 685,
+              "y": 54,
+              "w": 507,
+              "h": 558
+            }
+          ]
+        },
+        {
+          "term": "taxi driver",
+          "cell": 2,
+          "frame": {
+            "x": 40,
+            "y": 661,
+            "w": 572,
+            "h": 581
+          },
+          "nativeOpaqueBounds": {
+            "x": 52,
+            "y": 673,
+            "w": 548,
+            "h": 557
+          },
+          "opaqueComponents": [
+            {
+              "area": 77897,
+              "x": 249,
+              "y": 906,
+              "w": 351,
+              "h": 324
+            },
+            {
+              "area": 74230,
+              "x": 52,
+              "y": 673,
+              "w": 335,
+              "h": 557
+            }
+          ]
+        },
+        {
+          "term": "waiter",
+          "cell": 3,
+          "frame": {
+            "x": 766,
+            "y": 651,
+            "w": 395,
+            "h": 591
+          },
+          "nativeOpaqueBounds": {
+            "x": 778,
+            "y": 663,
+            "w": 371,
+            "h": 567
+          },
+          "opaqueComponents": [
+            {
+              "area": 80479,
+              "x": 778,
+              "y": 663,
+              "w": 371,
+              "h": 567
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "src": "assets/art/jobs-static-3-v3.png",
+      "atlas": {
+        "width": 1254,
+        "height": 1254
+      },
+      "sha256": "1947efd87948efe32ea2ff300706d782d917c7461e6af7c8c7938abf0be809c1",
+      "grid": {
+        "columns": 2,
+        "rows": 2
+      },
+      "items": [
+        {
+          "term": "waitress",
+          "cell": 0,
+          "frame": {
+            "x": 183,
+            "y": 26,
+            "w": 360,
+            "h": 595
+          },
+          "nativeOpaqueBounds": {
+            "x": 195,
+            "y": 38,
+            "w": 336,
+            "h": 571
+          },
+          "opaqueComponents": [
+            {
+              "area": 86949,
+              "x": 195,
+              "y": 38,
+              "w": 336,
+              "h": 571
+            }
+          ]
+        },
+        {
+          "term": "farmer",
+          "cell": 1,
+          "frame": {
+            "x": 666,
+            "y": 17,
+            "w": 547,
+            "h": 604
+          },
+          "nativeOpaqueBounds": {
+            "x": 678,
+            "y": 29,
+            "w": 523,
+            "h": 580
+          },
+          "opaqueComponents": [
+            {
+              "area": 105736,
+              "x": 678,
+              "y": 29,
+              "w": 404,
+              "h": 580
+            },
+            {
+              "area": 22542,
+              "x": 1006,
+              "y": 298,
+              "w": 195,
+              "h": 305
+            }
+          ]
+        },
+        {
+          "term": "nurse",
+          "cell": 2,
+          "frame": {
+            "x": 192,
+            "y": 634,
+            "w": 273,
+            "h": 611
+          },
+          "nativeOpaqueBounds": {
+            "x": 204,
+            "y": 646,
+            "w": 249,
+            "h": 587
+          },
+          "opaqueComponents": [
+            {
+              "area": 77183,
+              "x": 204,
+              "y": 646,
+              "w": 249,
+              "h": 587
+            }
+          ]
+        },
+        {
+          "term": "dentist",
+          "cell": 3,
+          "frame": {
+            "x": 674,
+            "y": 640,
+            "w": 495,
+            "h": 606
+          },
+          "nativeOpaqueBounds": {
+            "x": 686,
+            "y": 652,
+            "w": 471,
+            "h": 582
+          },
+          "opaqueComponents": [
+            {
+              "area": 93864,
+              "x": 686,
+              "y": 652,
+              "w": 289,
+              "h": 582
+            },
+            {
+              "area": 38171,
+              "x": 928,
+              "y": 907,
+              "w": 229,
+              "h": 323
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "src": "assets/art/jobs-static-4-v2.png",
+      "atlas": {
+        "width": 1536,
+        "height": 1024
+      },
+      "sha256": "17e6ac1258161ebf5dcca92143d18b95bf29853249baefe7b0ec85a0edaef87d",
+      "grid": {
+        "columns": 3,
+        "rows": 2
+      },
+      "items": [
+        {
+          "term": "police officer",
+          "cell": 0,
+          "frame": {
+            "x": 105,
+            "y": 13,
+            "w": 328,
+            "h": 499
+          },
+          "nativeOpaqueBounds": {
+            "x": 117,
+            "y": 25,
+            "w": 304,
+            "h": 476
+          },
+          "opaqueComponents": [
+            {
+              "area": 61473,
+              "x": 117,
+              "y": 25,
+              "w": 304,
+              "h": 476
+            }
+          ]
+        },
+        {
+          "term": "actor",
+          "cell": 1,
+          "frame": {
+            "x": 600,
+            "y": 13,
+            "w": 348,
+            "h": 499
+          },
+          "nativeOpaqueBounds": {
+            "x": 612,
+            "y": 25,
+            "w": 324,
+            "h": 476
+          },
+          "opaqueComponents": [
+            {
+              "area": 61693,
+              "x": 612,
+              "y": 25,
+              "w": 324,
+              "h": 476
+            }
+          ]
+        },
+        {
+          "term": "student",
+          "cell": 2,
+          "frame": {
+            "x": 1139,
+            "y": 20,
+            "w": 252,
+            "h": 492
+          },
+          "nativeOpaqueBounds": {
+            "x": 1151,
+            "y": 32,
+            "w": 228,
+            "h": 469
+          },
+          "opaqueComponents": [
+            {
+              "area": 60519,
+              "x": 1151,
+              "y": 32,
+              "w": 228,
+              "h": 469
+            }
+          ]
+        },
+        {
+          "term": "driver",
+          "cell": 3,
+          "frame": {
+            "x": 27,
+            "y": 551,
+            "w": 453,
+            "h": 460
+          },
+          "nativeOpaqueBounds": {
+            "x": 39,
+            "y": 563,
+            "w": 429,
+            "h": 436
+          },
+          "opaqueComponents": [
+            {
+              "area": 147208,
+              "x": 39,
+              "y": 563,
+              "w": 429,
+              "h": 436
+            }
+          ]
+        },
+        {
+          "term": "school",
+          "cell": 4,
+          "frame": {
+            "x": 521,
+            "y": 581,
+            "w": 492,
+            "h": 391
+          },
+          "nativeOpaqueBounds": {
+            "x": 533,
+            "y": 593,
+            "w": 468,
+            "h": 367
+          },
+          "opaqueComponents": [
+            {
+              "area": 128109,
+              "x": 533,
+              "y": 593,
+              "w": 468,
+              "h": 367
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,49 @@
+{
+  "character": "jo",
+  "method": "Built-in image_gen; native alpha and output bytes preserved",
+  "nativeOutput": "C:/Users/David/.codex/generated_images/01a1a821-f54c-74b0-a1e7-e96dc5bfc498/exec-280b0618-dc3e-491c-9be5-3936b1bd4ceb.png",
+  "destination": "assets/art/cast-static-jo-v3.png",
+  "priorProvenance": "assets/art/cast-static-jo-v2.provenance.json",
+  "nativeCorrection": {
+    "prompt": "Native raster precise-object edit. Change ONLY Jo's GREY HAIR regions in this four-pose transparent atlas. Replace every grey hair interior across all four figures with ONE absolutely uniform solid grey fill, color #AAA7A8. Remove all swirly/mottled patches, tonal gradients, highlights, arc-shaped patches and texture from the hair. Keep the outer hair silhouettes exactly the same. The hair should be a single flat grey shape in each figure, with edge antialiasing only. Preserve all four complete poses, every face/eye/brow/glasses/mouth, orange blouse, navy apron, cream pocket, olive trousers, cream shoes, teal mugs, book, cream cloth, hands and feet. Preserve their exact layout, scale, supporting grips, transparent background and gutters. Do not modify any other color region. No shadows, outlines, floor marks, labels or extra elements.",
+    "referencedImages": [
+      "C:/Users/David/Documents/Codex/2026-10-05/hav/work/Brighton/Horizons/App/assets/art/cast-static-jo-v2.png"
+    ],
+    "reason": "One targeted native edit: remove visible mottled grey hair patches only; preserve all4 complete poses."
+  },
+  "postProcessing": "None. Source PNG bytes and alpha preserved exactly; crops are metadata only.",
+  "reviewStatus": "AUTHOR_WHOLE_POSE_AND_FLAT_HAIR_PASS_PENDING_INDEPENDENT_REVIEW",
+  "sha256": "e14e81e2a1912b24702f4fd1a4222f8ec8c6814649c31d624464a0fd06cdc10b",
+  "nativeBytesMatch": true,
+  "atlas": {
+    "width": 1254,
+    "height": 1254
+  },
+  "measuredFrames": {
+    "offer": {
+      "x": 193,
+      "y": 38,
+      "w": 284,
+      "h": 556
+    },
+    "read": {
+      "x": 776,
+      "y": 39,
+      "w": 286,
+      "h": 555
+    },
+    "pour": {
+      "x": 198,
+      "y": 652,
+      "w": 294,
+      "h": 568
+    },
+    "clap": {
+      "x": 785,
+      "y": 650,
+      "w": 256,
+      "h": 570
+    }
+  },
+  "reviewProof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-static-cast\\jo-v3-normal-enlarged.png"
+}

@@ -1,0 +1,546 @@
+{
+  "status": "PASS",
+  "pass": true,
+  "reviewer": "graphic_jobs_qa, independent of cast authorship",
+  "scope": "Independent direct review of16 final NEW STATIC whole cast illustrations: source-native white composites plus all four fresh public-renderer sheets at100px and600px heights. No previous animated-frame approval reused.",
+  "sources": {
+    "reports/static-cast-fragment.json": "b5727b73fc7b03799f6e34a6584a21d7ec4bfb1bcb813630d771740ae7513365",
+    "src/art.js": "06c5fabbf7d2e45dfd7fb833a3ddfc7f78081c250b02a189b29a84f79e43aeb0",
+    "assets/art/cast-static-pico-v2.png": "6cc557478d70cb3ddbdd893d67bf09fa1236ca327c2384b06ac31ae141beb148",
+    "assets/art/cast-static-mina-v2.png": "163449ffe9a3566390a5e196b976a420e3eb58e5f409d4c101a76d82f81bdfc9",
+    "assets/art/cast-static-alex-v3.png": "86d6441f1062824451a8aa3cf0a43de137b2aaa17a42cd179561efa7cf227825",
+    "assets/art/cast-static-jo-v3.png": "e14e81e2a1912b24702f4fd1a4222f8ec8c6814649c31d624464a0fd06cdc10b"
+  },
+  "reviewedCases": [
+    {
+      "id": "pico-greet",
+      "verdict": "pass",
+      "source": "assets/art/cast-static-pico-v2.png",
+      "sourceSha256": "6cc557478d70cb3ddbdd893d67bf09fa1236ca327c2384b06ac31ae141beb148",
+      "frame": {
+        "x": 206,
+        "y": 17,
+        "w": 250,
+        "h": 585
+      },
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-static-cast\\pico-greet-large.png",
+      "proofSha256": "7318a12d9e3edda50cc3d6c8986482b3c67752d3a97fd1878cf85f9ef8b0aee8",
+      "observations": "Two relaxed eyebrows; ears/head/neck/vest/arms/legs/feet form a complete silhouette. Raised and hip hands join full arms; satchel strap reaches bag."
+    },
+    {
+      "id": "pico-explore",
+      "verdict": "pass",
+      "source": "assets/art/cast-static-pico-v2.png",
+      "sourceSha256": "6cc557478d70cb3ddbdd893d67bf09fa1236ca327c2384b06ac31ae141beb148",
+      "frame": {
+        "x": 764,
+        "y": 19,
+        "w": 248,
+        "h": 582
+      },
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-static-cast\\pico-explore-large.png",
+      "proofSha256": "6ae33e3eb4dca2bb7a891a008ee20b78a4deb8ed5df5b805ea5ef44682232fd7",
+      "observations": "Both hands touch and support the map edges. Head/ears/neck, shoulders, torso, satchel and both leg/foot chains remain connected; no loose map or shadow."
+    },
+    {
+      "id": "pico-read",
+      "verdict": "pass",
+      "source": "assets/art/cast-static-pico-v2.png",
+      "sourceSha256": "6cc557478d70cb3ddbdd893d67bf09fa1236ca327c2384b06ac31ae141beb148",
+      "frame": {
+        "x": 206,
+        "y": 639,
+        "w": 236,
+        "h": 594
+      },
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-static-cast\\pico-read-large.png",
+      "proofSha256": "c6a0c8ff982cec11fe718402ec637381500d290cc60a79c1e9c95d631726fb22",
+      "observations": "Both palms contact the book edges and sleeves/arms enter behind it naturally. Head/neck/torso and full feet remain complete; two brows and kind open expression."
+    },
+    {
+      "id": "pico-jump",
+      "verdict": "pass",
+      "source": "assets/art/cast-static-pico-v2.png",
+      "sourceSha256": "6cc557478d70cb3ddbdd893d67bf09fa1236ca327c2384b06ac31ae141beb148",
+      "frame": {
+        "x": 729,
+        "y": 640,
+        "w": 299,
+        "h": 593
+      },
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-static-cast\\pico-jump-large.png",
+      "proofSha256": "9c8a95209d5c779a2432c2eb1847bd3798ef65bb681f0b253b8b4bd138f150da",
+      "observations": "Raised arms attach at shoulders; full torso/hips/legs/feet remain joined. This is a still celebratory pose, with no expectation of animation."
+    },
+    {
+      "id": "mina-step",
+      "verdict": "pass",
+      "source": "assets/art/cast-static-mina-v2.png",
+      "sourceSha256": "163449ffe9a3566390a5e196b976a420e3eb58e5f409d4c101a76d82f81bdfc9",
+      "frame": {
+        "x": 234,
+        "y": 32,
+        "w": 285,
+        "h": 552
+      },
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-static-cast\\mina-step-large.png",
+      "proofSha256": "d879ff3877be407439b7be05c19f437848bb4122f78b2b9bc2c3b7b420a56264",
+      "observations": "Complete auburn-haired adult silhouette; shoulder/elbow/wrist continuity in open-palm and hip arms. Crossed step legs and ankles visibly join orange shoes."
+    },
+    {
+      "id": "mina-read",
+      "verdict": "pass",
+      "source": "assets/art/cast-static-mina-v2.png",
+      "sourceSha256": "163449ffe9a3566390a5e196b976a420e3eb58e5f409d4c101a76d82f81bdfc9",
+      "frame": {
+        "x": 802,
+        "y": 32,
+        "w": 202,
+        "h": 552
+      },
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-static-cast\\mina-read-large.png",
+      "proofSha256": "570fd9728c959f2a2e0acdbc8d6fed70e8c63e0501ea21e7e03fae3cee00c6d6",
+      "observations": "Grounded standing reader; both full sleeves terminate in hands touching book. Neck, torso, hips, straight legs, ankles and shoes remain continuous."
+    },
+    {
+      "id": "mina-map",
+      "verdict": "pass",
+      "source": "assets/art/cast-static-mina-v2.png",
+      "sourceSha256": "163449ffe9a3566390a5e196b976a420e3eb58e5f409d4c101a76d82f81bdfc9",
+      "frame": {
+        "x": 245,
+        "y": 644,
+        "w": 231,
+        "h": 563
+      },
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-static-cast\\mina-map-large.png",
+      "proofSha256": "6f2ba0a2761e39728cdfffe6574bbf9923b9e0afd7d5413098b1670cb98e9c32",
+      "observations": "Both hands meet map edges with magenta sleeves visible around sides. Whole grounded stance and ankles/shoes joined; no unsupported seated pose."
+    },
+    {
+      "id": "mina-skip",
+      "verdict": "pass",
+      "source": "assets/art/cast-static-mina-v2.png",
+      "sourceSha256": "163449ffe9a3566390a5e196b976a420e3eb58e5f409d4c101a76d82f81bdfc9",
+      "frame": {
+        "x": 744,
+        "y": 644,
+        "w": 308,
+        "h": 562
+      },
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-static-cast\\mina-skip-large.png",
+      "proofSha256": "a618dc3370e7edc02754ec64aaac9a6f9b9c166250100a112e8c467622ae2be4",
+      "observations": "One support leg and one bent raised leg have joined knee/ankle/shoe shapes. Both hands attach through wrists and sleeves; calm friendly face."
+    },
+    {
+      "id": "alex-listen",
+      "verdict": "pass",
+      "source": "assets/art/cast-static-alex-v3.png",
+      "sourceSha256": "86d6441f1062824451a8aa3cf0a43de137b2aaa17a42cd179561efa7cf227825",
+      "frame": {
+        "x": 174,
+        "y": 52,
+        "w": 367,
+        "h": 540
+      },
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-static-cast\\alex-listen-large.png",
+      "proofSha256": "2d0c8ac39858e2187b9713c0a5c6f683e5c297ae0c746bb958edf5d9b5d9d491",
+      "observations": "Head/neck/headphones/chest are joined. Both jacket sleeves lead to full hands; legs and cream shoes form a continuous grounded silhouette.",
+      "finalAtlasReinspected": true
+    },
+    {
+      "id": "alex-fix",
+      "verdict": "pass",
+      "source": "assets/art/cast-static-alex-v3.png",
+      "sourceSha256": "86d6441f1062824451a8aa3cf0a43de137b2aaa17a42cd179561efa7cf227825",
+      "frame": {
+        "x": 703,
+        "y": 53,
+        "w": 376,
+        "h": 539
+      },
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-static-cast\\alex-fix-large.png",
+      "proofSha256": "36023168afd1b54cf8321f556efe88628f2a10d25e2e95c994a94eb27d0a1651",
+      "observations": "Wrench physically overlaps the gripping palm and the wrist joins a full teal sleeve; hip arm, neck, torso and both legs/feet remain complete.",
+      "finalAtlasReinspected": true
+    },
+    {
+      "id": "alex-dance",
+      "verdict": "pass",
+      "source": "assets/art/cast-static-alex-v3.png",
+      "sourceSha256": "86d6441f1062824451a8aa3cf0a43de137b2aaa17a42cd179561efa7cf227825",
+      "frame": {
+        "x": 145,
+        "y": 650,
+        "w": 352,
+        "h": 554
+      },
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-static-cast\\alex-dance-large.png",
+      "proofSha256": "22c1e278300ce7225dbd446d6f200d26b60a13f4ef19d20148d208bfeb45b9be",
+      "observations": "Both lifted hands connect to full sleeves; hips, bent knees, ankles and shoes form a coherent posed adult silhouette. No detached raised piece.",
+      "finalAtlasReinspected": true
+    },
+    {
+      "id": "alex-sit",
+      "verdict": "pass",
+      "source": "assets/art/cast-static-alex-v3.png",
+      "sourceSha256": "86d6441f1062824451a8aa3cf0a43de137b2aaa17a42cd179561efa7cf227825",
+      "frame": {
+        "x": 687,
+        "y": 657,
+        "w": 453,
+        "h": 548
+      },
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-static-cast\\alex-sit-large.png",
+      "proofSha256": "34715c8147d0bae9d8e0bf6e7919a6c2a582688fc78a203967b6bb72e84ded6b",
+      "observations": "Final Alex v3 far shoulder/sleeve/forearm/wrist are visibly continuous into the far palm above the wheel. Near arm and both grips connect; chair supports thighs, joined knees/shins reach attached feet. The prior isolated-palm illusion is resolved.",
+      "finalAtlasReinspected": true
+    },
+    {
+      "id": "jo-offer",
+      "verdict": "pass",
+      "source": "assets/art/cast-static-jo-v3.png",
+      "sourceSha256": "e14e81e2a1912b24702f4fd1a4222f8ec8c6814649c31d624464a0fd06cdc10b",
+      "frame": {
+        "x": 193,
+        "y": 38,
+        "w": 284,
+        "h": 556
+      },
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-static-cast\\jo-offer-large.png",
+      "proofSha256": "32476a86b657c7d45f841bb23d44f71fd2a05f50ecf89c1c3940acc8865b978e",
+      "observations": "Final v3 grey hair has no strong inset shadow plane. Both joined orange sleeves lead to hands contacting mug/handle; neck/torso/legs/feet are complete."
+    },
+    {
+      "id": "jo-read",
+      "verdict": "pass",
+      "source": "assets/art/cast-static-jo-v3.png",
+      "sourceSha256": "e14e81e2a1912b24702f4fd1a4222f8ec8c6814649c31d624464a0fd06cdc10b",
+      "frame": {
+        "x": 776,
+        "y": 39,
+        "w": 286,
+        "h": 555
+      },
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-static-cast\\jo-read-large.png",
+      "proofSha256": "4b09ddda0bc69ddbaaaed7b682c9a4f98b017272bafa9af91164922156b60e68",
+      "observations": "Both hands hold the book with wrists meeting full orange sleeves. Grey hair reads as a simple silhouette; neck/apron/hips/legs/feet remain connected."
+    },
+    {
+      "id": "jo-pour",
+      "verdict": "pass",
+      "source": "assets/art/cast-static-jo-v3.png",
+      "sourceSha256": "e14e81e2a1912b24702f4fd1a4222f8ec8c6814649c31d624464a0fd06cdc10b",
+      "frame": {
+        "x": 198,
+        "y": 652,
+        "w": 294,
+        "h": 568
+      },
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-static-cast\\jo-pour-large.png",
+      "proofSha256": "fd8da633e51d31f0b3c18546979f363f9f6797600a01c670a2a7af7a6f91ea78",
+      "observations": "Cloth touches the left grip/rim and right hand touches mug handle. Full wrists/forearms attach to shoulders; no loose cloth or mug; stance complete."
+    },
+    {
+      "id": "jo-clap",
+      "verdict": "pass",
+      "source": "assets/art/cast-static-jo-v3.png",
+      "sourceSha256": "e14e81e2a1912b24702f4fd1a4222f8ec8c6814649c31d624464a0fd06cdc10b",
+      "frame": {
+        "x": 785,
+        "y": 650,
+        "w": 256,
+        "h": 570
+      },
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-static-cast\\jo-clap-large.png",
+      "proofSha256": "df961300252cca50e4d19bd1d1841ba65144978b1be1b15db7cc1c4847907433",
+      "observations": "Both forearms lead to meeting palms at chest, with full shoulders and wrists. Neck/torso/apron/legs/feet remain connected; final grey hair simple."
+    }
+  ],
+  "normalAndEnlargedSheets": [
+    {
+      "name": "pico",
+      "poses": [
+        "greet",
+        "explore",
+        "read",
+        "jump"
+      ],
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-static-cast-independent\\pico-independent-normal-enlarged.png",
+      "sha256": "d6ac399f9182e3ee8b999a213d68e9b09ae639f61b6d7cf4d7a3ad59bd8be6f2",
+      "checks": {
+        "animations": 0,
+        "images": [
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          }
+        ]
+      }
+    },
+    {
+      "name": "mina",
+      "poses": [
+        "step",
+        "read",
+        "map",
+        "skip"
+      ],
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-static-cast-independent\\mina-independent-normal-enlarged.png",
+      "sha256": "818fefe225fe69d02f4900e38c88b2b88bf9828bc1b5601fb1f5413773f0e2fa",
+      "checks": {
+        "animations": 0,
+        "images": [
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          }
+        ]
+      }
+    },
+    {
+      "name": "alex",
+      "poses": [
+        "listen",
+        "fix",
+        "dance",
+        "sit"
+      ],
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-static-cast-independent\\alex-independent-normal-enlarged.png",
+      "sha256": "915c6f66ffe117de873c4b023f028bb1947ee65d07ce111b1be400a10ea15a46",
+      "checks": {
+        "animations": 0,
+        "images": [
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          }
+        ]
+      }
+    },
+    {
+      "name": "jo",
+      "poses": [
+        "offer",
+        "read",
+        "pour",
+        "clap"
+      ],
+      "proof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-static-cast-independent\\jo-independent-normal-enlarged.png",
+      "sha256": "13f4c207655d0d853e81ec75bda73ff6eb18293161c69bc3516a4d6c55feb46e",
+      "checks": {
+        "animations": 0,
+        "images": [
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          },
+          {
+            "loaded": true,
+            "uniform": true,
+            "filter": "none",
+            "shadow": "none"
+          }
+        ]
+      }
+    }
+  ],
+  "findings": [],
+  "flatnessLimits": "Visual flatness is judged at normal UI size. Native raster retains subtle color variation and anti-aliasing at enlarged scale; this review does not claim mathematically uniform RGB fills. No cast/floor shadows, external halos or outline strokes were found. Map/book panels and facial feature shapes are intentional graphic color blocks.",
+  "sourceEditPerformed": false,
+  "next": "No cast-art changes required. Root owns final integrated page review/release.",
+  "resolvedFindings": [
+    {
+      "id": "alex-sit",
+      "severity": "visible-anatomy",
+      "message": "Concrete detachment illusion: the far viewer-right palm sits on the wheel edge without a visible wrist/forearm joining it to torso. Wheel interior is white. Chair/near arm/legs are supported, but the far arm needs a native whole-image correction.",
+      "authorNotified": true,
+      "rootNotified": true,
+      "status": "resolved",
+      "oldSource": "assets/art/cast-static-alex-v2.png",
+      "oldSourceSha256": "bde51b0a3ee43d2424a37518c2df49ec0d876b74b4b68ce227f08879bdae444d",
+      "currentSource": "assets/art/cast-static-alex-v3.png",
+      "currentSourceSha256": "86d6441f1062824451a8aa3cf0a43de137b2aaa17a42cd179561efa7cf227825",
+      "resolution": "Fresh native whole-image repair now includes a visible far teal sleeve from shoulder and brown forearm/wrist above the wheel into the far palm. Directly re-inspected at normal and enlarged sizes; neither grip appears to float."
+    }
+  ],
+  "date": "2026-11-04T23:40:36.481582+00:00",
+  "descriptorSha256": "85856045bbffed059b6a63c0cf82ea66a7c2cf8f2f83d2a21d094aecfe5cc3d1",
+  "browserProof": "reports/static-cast-independent-browser.json",
+  "browserValidation": {
+    "sourceStable": true,
+    "runtimeErrors": [],
+    "animations": 0,
+    "allImagesLoadedAndUniformlyScaled": true
+  }
+}

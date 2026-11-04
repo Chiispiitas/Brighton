@@ -1,6 +1,6 @@
-const CACHE='horizons-companion-friendly-v8';
+const CACHE='horizons-companion-static-v9';
 const BASE=new URL('./',self.location.href).pathname;
-const CORE=['./','./index.html','./styles/app.css?v=friendly1','./src/app.js?v=friendly1','./src/api-client.js','./src/art.js?v=friendly1','./src/avatar-rig.js?v=friendly1','./src/pico-articulated.js?v=friendly1','./src/cast-rig.js?v=friendly1','./assets/art/avatar-friendly-v1.frames.json','./assets/art/pico-friendly-v1.frames.json','./assets/art/cast-friendly-v1.frames.json','./assets/art/driver-flat-v1.frames.json','./content/unit1.mjs','./content/engine.mjs','./content/source-banks.mjs','./assets/fonts/MPLUSRounded1c-Regular.woff2','./assets/fonts/MPLUSRounded1c-ExtraBold.woff2','./assets/fonts/BebasNeue-Regular.woff2'];
+const CORE=['./','./index.html','./styles/app.css?v=static1','./src/app.js?v=static1','./src/api-client.js','./src/art.js?v=static1','./src/avatar-static.js?v=static1','./assets/art/avatar-static-v1.frames.json','./assets/art/manifest.json?static=1','./content/unit1.mjs','./content/engine.mjs','./content/source-banks.mjs','./assets/fonts/MPLUSRounded1c-Regular.woff2','./assets/fonts/MPLUSRounded1c-ExtraBold.woff2','./assets/fonts/BebasNeue-Regular.woff2'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)).catch(()=>{}));self.skipWaiting();});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith('horizons-companion-')&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim()));});
 self.addEventListener('fetch',event=>{

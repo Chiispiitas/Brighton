@@ -1,0 +1,68 @@
+{
+  "character": "jo",
+  "method": "Built-in image_gen; native alpha and output bytes preserved",
+  "nativeOutput": "C:/Users/David/.codex/generated_images/01a1a821-f54c-74b0-a1e7-e96dc5bfc498/exec-f68e903c-3bf3-450f-874d-ed5eddbfbb96.png",
+  "destination": "assets/art/cast-static-jo-v2.png",
+  "references": [
+    {
+      "path": "C:/Users/David/AppData/Local/Temp/codex-clipboard-0873ce2b-1019-4209-80e0-8afe628e32cc.png",
+      "role": "Identity and palette only"
+    },
+    {
+      "path": "C:/Users/David/AppData/Local/Temp/codex-clipboard-624d5ef7-8576-48fd-96e9-ca0d814badda.png",
+      "role": "Strict flat simple-shape style"
+    }
+  ],
+  "generationPrompt": "Use case: illustration-story. Generate a FRESH production PNG sprite atlas, not joint cutouts.\nInput image 1 is IDENTITY AND PALETTE reference only. Image 1 is NOT a rendering-style reference: do not copy its gradients, textured finish, modeled face planes or shadow triangles. Input image 2 is the STRICT FLAT SHAPE STYLE reference: simple coherent geometric figures with solid flat color regions.\nOutput one square genuinely transparent PNG containing exactly FOUR complete, full-body illustrations of ONE same character, arranged in a spacious 2 by 2 grid, ordered top-left, top-right, bottom-left, bottom-right. Each quadrant has a complete figure with all ears/hair, hands, feet and any held prop inside it. Generous transparent outer margins and central gutters: nothing may touch another quadrant or the canvas boundary. Same character scale and consistent proportions across the four poses. No labels, words, numbers, grid, cell backgrounds, border, watermark or ground line.\nSTRICT FLATNESS: one uniform solid opaque color per shape. Use literal unmodulated solid polygons, circles and rounded rectangles, as flat as solid-color pictograms. NO paper texture or lighting. ZERO gradients, tonal modeling, highlights, cast shadows, neck shadow, side-face darker plane, drop shadows, ambient occlusion, rim light, texture, grain, outlines, contour strokes or 3D effects. Different colors only identify actual different materials such as skin, shirt, trousers and shoes. All skin on a character uses one flat skin color. Preserve the graphic identity from image 1 while simplifying to image 2.\nANATOMY: each pose is one complete coherent native illustration. Continuous visible neck-to-body, sleeve-to-arm, elbow-to-hand, waist-to-leg and ankle-to-shoe silhouettes. No floating or detached hands, no disconnected props, no hidden forearm with an isolated hand peeking out. Friendly relaxed eyebrows, approachable open eyes and a warm smile. Adults retain adult proportions.\nCHARACTER: Jo, the older woman at top-right of image 1. Recognizable soft-square peach face, simple grey bob hair, navy rectangular glasses, orange blouse, navy caf\u00e9 apron with one cream pocket, olive trousers and cream shoes. A softly stout older adult, moderate build with readable waist and continuous arms. Grey hair is ONE flat grey silhouette. Orange blouse is ONE flat orange region, no collar shadows or dark triangular neck shading. Skin is one flat peach fill. Glasses are solid navy frame shapes around white eye areas; no contour outlines elsewhere. Gentle relaxed brows, open eyes and a warm smile.\nPOSES: top-left standing and offering a teal mug supported visibly by both connected hands around its sides/handle; top-right grounded standing reader with an open navy-and-cream book supported by both visible hands below the face; bottom-left caf\u00e9 task holding a teal mug in one connected hand while the other hand visibly grips a small cream cloth touching its rim, no floating cloth or extra props; bottom-right modest clapping pose with two visible connected hands meeting in front of the chest and both full feet planted. All four complete figures are in the identical outfit with coherent anatomy, no hidden arm with a detached hand and no unsupported sitting.\nUniform-fill requirement: a material shape should have the same RGB color across its entire interior, with edge antialiasing only. Do not add subtle tonal variation, even if it seems attractive.",
+  "rejectedFirstGeneration": {
+    "nativeOutput": "C:/Users/David/.codex/generated_images/01a1a821-f54c-74b0-a1e7-e96dc5bfc498/exec-2dedba58-5481-411e-aa72-433ca56a61da.png",
+    "reason": "Visible tonal modeling inherited from identity reference; not integrated"
+  },
+  "nativeCorrection": {
+    "prompt": "Use case: style-transfer. Native raster edit.\nImage 1: the complete four-pose atlas to correct. Keep the SAME character identity, SAME four poses, SAME coherent full-body silhouettes, supporting hands/props, palette, 2x2 layout, transparent background, generous gutters and margins. Image 2: the requested very simple flat-color rendering style.\nCHANGE ONLY THE RENDERING: redraw every material region with one uniform solid flat fill, like the simple 2D icon people in image 2. The current image1 is NOT flat enough. Remove ALL directional gradients, mottled or painted texture, subtle lighting, highlights, shadows, outlines and contour strokes. Remove every face side-plane and neck-shadow triangle rather than retaining it as a separate dark flat panel. Hair must be one flat hair color. Skin must be one flat skin color. Clothes must have no light/dark fabric bands. Different solid colors are only actual different materials or facial features. Keep eyes white, pupils dark, friendly relaxed eyebrows and a warm smile. No rosy cheeks, no gloss, no dimensional effects.\nThe result should look like a clean simple flat 2D cartoon sprite atlas, not a painted illustration. Every figure and every prop must remain one complete connected native illustration. Retain full hands/feet and clear paw/hand contact with book/map/mug/wrench/wheel. No text, grid, borders, floor marks or background. Real transparency; no shadow or haze around silhouettes. Do not add any element. Especially make the grey hair one flat fill and the apron one flat navy fill.",
+    "referencedImages": [
+      "C:/Users/David/.codex/generated_images/01a1a821-f54c-74b0-a1e7-e96dc5bfc498/exec-2dedba58-5481-411e-aa72-433ca56a61da.png",
+      "C:/Users/David/AppData/Local/Temp/codex-clipboard-624d5ef7-8576-48fd-96e9-ca0d814badda.png"
+    ]
+  },
+  "postProcessing": "None. No recoloring, quantization, redrawn pixels, alpha edits or compositing into the native asset.",
+  "reviewStatus": "NATIVE_WHOLE_POSE_AUTHOR_ANATOMY_PASS_FLATNESS_REVIEW_PENDING",
+  "sha256": "3256b3f66f74b30b1c8f3c807503bc40723aea607aabb0f0202828a435799cf3",
+  "atlas": {
+    "width": 1254,
+    "height": 1254
+  },
+  "measuredFrames": {
+    "offer": {
+      "x": 193,
+      "y": 39,
+      "w": 284,
+      "h": 556
+    },
+    "read": {
+      "x": 777,
+      "y": 39,
+      "w": 284,
+      "h": 556
+    },
+    "pour": {
+      "x": 199,
+      "y": 652,
+      "w": 292,
+      "h": 569
+    },
+    "clap": {
+      "x": 786,
+      "y": 650,
+      "w": 255,
+      "h": 571
+    }
+  },
+  "reviewProof": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-static-cast\\jo-normal-enlarged.png",
+  "nativeBytesMatch": true,
+  "referenceSha256": {
+    "C:/Users/David/AppData/Local/Temp/codex-clipboard-0873ce2b-1019-4209-80e0-8afe628e32cc.png": "5477a5e7b54407f8ec8e03c76f67d1718a670f20bc8f9cedace14c44f4cc3960",
+    "C:/Users/David/AppData/Local/Temp/codex-clipboard-624d5ef7-8576-48fd-96e9-ca0d814badda.png": "5cb13bc2767f5da32fd14dd47bc3781a849d0fad638e9fa8f7823cf05d14d43a"
+  },
+  "authorAnatomyReview": "All four complete poses inspected: connected figure/limb/clothing and visible supported prop contact."
+}

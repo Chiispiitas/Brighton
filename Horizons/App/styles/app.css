@@ -174,3 +174,15 @@ input,select,textarea{font-size:16px!important}
 .character>.posture-art{width:100%;height:100%;max-width:100%;max-height:100%;aspect-ratio:auto!important;display:block}.character>.raster-frame.posture-art>.raster-fit{top:100%!important;transform:translate(-50%,-100%)!important}
 .character[data-posture-sprite],.character[data-posture-sprite]>.posture-art{animation:none!important}
 .character[data-motion-system=articulated]{animation:none!important}
+
+/* Static edition: artwork and controls never float, blink, bounce or animate. */
+html{scroll-behavior:auto!important}
+*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+.character,.character *,.avatar,.avatar *,[data-static-art],[data-static-art] *{animation:none!important;transition:none!important;filter:none!important;box-shadow:none!important;text-shadow:none!important;border:0}
+button:hover,button:active,.path-stop:hover,.lesson-jumps>button:hover{transform:none!important}
+
+/* Flat controls retain focus outlines and selected-state colors. */
+*,*::before,*::after{box-shadow:none!important;text-shadow:none!important}
+
+/* Leave clear space below the title before Pico's ears on small screens. */
+@media(max-width:680px){.hero-pico{height:166px;width:114px;bottom:14px}.hero-copy>p{max-width:calc(100% - 110px)}}

@@ -1,0 +1,245 @@
+{
+  "version": 1,
+  "kind": "proposed-static-whole-illustration-vocabulary",
+  "sharedManifestUnmodified": true,
+  "vocabulary": {
+    "teacher": {
+      "src": "assets/art/jobs-static-1-v2.png",
+      "atlas": {
+        "width": 1254,
+        "height": 1254
+      },
+      "frame": {
+        "x": 84,
+        "y": 48,
+        "w": 495,
+        "h": 568
+      },
+      "animation": null
+    },
+    "chef": {
+      "src": "assets/art/jobs-static-1-v2.png",
+      "atlas": {
+        "width": 1254,
+        "height": 1254
+      },
+      "frame": {
+        "x": 735,
+        "y": 14,
+        "w": 359,
+        "h": 603
+      },
+      "animation": null
+    },
+    "doctor": {
+      "src": "assets/art/jobs-static-1-v2.png",
+      "atlas": {
+        "width": 1254,
+        "height": 1254
+      },
+      "frame": {
+        "x": 167,
+        "y": 648,
+        "w": 292,
+        "h": 593
+      },
+      "animation": null
+    },
+    "office worker": {
+      "src": "assets/art/jobs-static-1-v2.png",
+      "atlas": {
+        "width": 1254,
+        "height": 1254
+      },
+      "frame": {
+        "x": 682,
+        "y": 677,
+        "w": 476,
+        "h": 559
+      },
+      "animation": null
+    },
+    "receptionist": {
+      "src": "assets/art/jobs-static-2-v2.png",
+      "atlas": {
+        "width": 1254,
+        "height": 1254
+      },
+      "frame": {
+        "x": 81,
+        "y": 53,
+        "w": 470,
+        "h": 571
+      },
+      "animation": null
+    },
+    "salesclerk": {
+      "src": "assets/art/jobs-static-2-v2.png",
+      "atlas": {
+        "width": 1254,
+        "height": 1254
+      },
+      "frame": {
+        "x": 673,
+        "y": 42,
+        "w": 531,
+        "h": 582
+      },
+      "animation": null
+    },
+    "taxi driver": {
+      "src": "assets/art/jobs-static-2-v2.png",
+      "atlas": {
+        "width": 1254,
+        "height": 1254
+      },
+      "frame": {
+        "x": 40,
+        "y": 661,
+        "w": 572,
+        "h": 581
+      },
+      "animation": null
+    },
+    "waiter": {
+      "src": "assets/art/jobs-static-2-v2.png",
+      "atlas": {
+        "width": 1254,
+        "height": 1254
+      },
+      "frame": {
+        "x": 766,
+        "y": 651,
+        "w": 395,
+        "h": 591
+      },
+      "animation": null
+    },
+    "waitress": {
+      "src": "assets/art/jobs-static-3-v3.png",
+      "atlas": {
+        "width": 1254,
+        "height": 1254
+      },
+      "frame": {
+        "x": 183,
+        "y": 26,
+        "w": 360,
+        "h": 595
+      },
+      "animation": null
+    },
+    "farmer": {
+      "src": "assets/art/jobs-static-3-v3.png",
+      "atlas": {
+        "width": 1254,
+        "height": 1254
+      },
+      "frame": {
+        "x": 666,
+        "y": 17,
+        "w": 547,
+        "h": 604
+      },
+      "animation": null
+    },
+    "nurse": {
+      "src": "assets/art/jobs-static-3-v3.png",
+      "atlas": {
+        "width": 1254,
+        "height": 1254
+      },
+      "frame": {
+        "x": 192,
+        "y": 634,
+        "w": 273,
+        "h": 611
+      },
+      "animation": null
+    },
+    "dentist": {
+      "src": "assets/art/jobs-static-3-v3.png",
+      "atlas": {
+        "width": 1254,
+        "height": 1254
+      },
+      "frame": {
+        "x": 674,
+        "y": 640,
+        "w": 495,
+        "h": 606
+      },
+      "animation": null
+    },
+    "police officer": {
+      "src": "assets/art/jobs-static-4-v2.png",
+      "atlas": {
+        "width": 1536,
+        "height": 1024
+      },
+      "frame": {
+        "x": 105,
+        "y": 13,
+        "w": 328,
+        "h": 499
+      },
+      "animation": null
+    },
+    "actor": {
+      "src": "assets/art/jobs-static-4-v2.png",
+      "atlas": {
+        "width": 1536,
+        "height": 1024
+      },
+      "frame": {
+        "x": 600,
+        "y": 13,
+        "w": 348,
+        "h": 499
+      },
+      "animation": null
+    },
+    "student": {
+      "src": "assets/art/jobs-static-4-v2.png",
+      "atlas": {
+        "width": 1536,
+        "height": 1024
+      },
+      "frame": {
+        "x": 1139,
+        "y": 20,
+        "w": 252,
+        "h": 492
+      },
+      "animation": null
+    },
+    "driver": {
+      "src": "assets/art/jobs-static-4-v2.png",
+      "atlas": {
+        "width": 1536,
+        "height": 1024
+      },
+      "frame": {
+        "x": 27,
+        "y": 551,
+        "w": 453,
+        "h": 460
+      },
+      "animation": null
+    },
+    "school": {
+      "src": "assets/art/jobs-static-4-v2.png",
+      "atlas": {
+        "width": 1536,
+        "height": 1024
+      },
+      "frame": {
+        "x": 521,
+        "y": 581,
+        "w": 492,
+        "h": 391
+      },
+      "animation": null
+    }
+  }
+}

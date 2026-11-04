@@ -1,0 +1,37 @@
+{
+  "date": "2026-11-04T23:46:23.007045+00:00",
+  "status": "PASS",
+  "reviewer": "root, independent of occupation art author",
+  "scope": "All17 new job/school illustrations at normal gallery size; integrated UI/town/icon, actual welcome desktop, mobile learn/profile, and corrected mobile hero at4widths. Separate cast/avatar independent reports cover those native figures.",
+  "sourceHashes": {
+    "assets/art/app-icon-static-v1.png": "f220c0541a5f871b0fa4c6c0fbcd70d2f0043a06730b0f9eb086ec7641141059",
+    "assets/art/jobs-static-1-v2.png": "fb6a01224a140eb3f064a1a07cb9711fd10c2def0d4dfaa6f17c33263bc096d3",
+    "assets/art/jobs-static-2-v2.png": "4308ef795398ad9feebbe54bf7179d1b0f37742b4f0dd862e01f8df42e558da4",
+    "assets/art/jobs-static-3-v3.png": "1947efd87948efe32ea2ff300706d782d917c7461e6af7c8c7938abf0be809c1",
+    "assets/art/jobs-static-4-v2.png": "17e6ac1258161ebf5dcca92143d18b95bf29853249baefe7b0ec85a0edaef87d",
+    "assets/art/town-static-v1.png": "2f71a7437854f4062e1d1c04d0c54805f88ff252da4eb5276b737c19957334ba",
+    "assets/art/ui-static-v1.png": "fdbf04030127b6a1d6a7061a72b765a540cc25ec732eb4343a639ce7f11e1b42"
+  },
+  "occupationGallery": "C:/Users/David/Documents/Codex/2026-11-04/horizons-jobs-static/all-seventeen-normal.png",
+  "occupationFindings": [
+    "All17 required terms have a distinct complete illustration. Tools, setting and uniform support the word meaning.",
+    "Teacher book/board, chef spoon/pot, reception counter, folded-shirt seller, tray holders, basket and tomato plant, nurse clipboard and thermometer, dentist tooth model and chair, mask, student book and bus steering scene read coherently.",
+    "No visible separate palm, sleeve or foot gap found in the normal gallery. Author800px source inspection is retained separately, not represented as root full enlarged coverage."
+  ],
+  "uiFindings": [
+    "New native UI symbols, reward silhouettes, town and matching2-brow Pico icon are static and fitted uniformly.",
+    "Actual white/cream compositions show no cast or ground shadows, outlines around the figures, or modeled3Dlighting.",
+    "Source PNGs retain native antialiasing and slight raster color variation; they are not hand-vector redraws or mathematically palette-quantized artwork.",
+    "Mobile Pico ears initially touched the end of the title. Only final hero CSS was corrected; targeted4width native-image/text-range checks confirm no overlap and no clip."
+  ],
+  "proofs": [
+    "C:/Users/David/Documents/Codex/2026-11-04/horizons-static-release-local/welcome-1440.png",
+    "C:/Users/David/Documents/Codex/2026-11-04/horizons-static-release-local/profile-390.png",
+    "C:/Users/David/Documents/Codex/2026-11-04/horizons-static-final-layout/learn-390.png"
+  ],
+  "limits": [
+    "Visual approval records the stated renders; no promise of universal artistic perfection.",
+    "Edge/Chromium only; source-bound hosted verification follows publication."
+  ],
+  "pass": true
+}

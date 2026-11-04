@@ -1,1847 +1,282 @@
 {
-  "version": 6,
-  "pico": {
-    "parts": {
-      "torso": {
-        "src": "assets/art/pico-rig-v2.png",
-        "atlas": {
-          "width": 1266,
-          "height": 1242
-        },
-        "frame": {
-          "x": 43,
-          "y": 51,
-          "w": 247,
-          "h": 284
-        }
-      },
-      "head": {
-        "src": "assets/art/pico-rig-v2.png",
-        "atlas": {
-          "width": 1266,
-          "height": 1242
-        },
-        "frame": {
-          "x": 347,
-          "y": 92,
-          "w": 266,
-          "h": 210
-        }
-      },
-      "earLeft": {
-        "src": "assets/art/pico-rig-v2.png",
-        "atlas": {
-          "width": 1266,
-          "height": 1242
-        },
-        "frame": {
-          "x": 721,
-          "y": 36,
-          "w": 128,
-          "h": 297
-        }
-      },
-      "earRight": {
-        "src": "assets/art/pico-rig-v2.png",
-        "atlas": {
-          "width": 1266,
-          "height": 1242
-        },
-        "frame": {
-          "x": 985,
-          "y": 101,
-          "w": 242,
-          "h": 214
-        }
-      },
-      "upperArmLeft": {
-        "src": "assets/art/pico-rig-v2.png",
-        "atlas": {
-          "width": 1266,
-          "height": 1242
-        },
-        "frame": {
-          "x": 78,
-          "y": 392,
-          "w": 172,
-          "h": 200
-        }
-      },
-      "forearmLeft": {
-        "src": "assets/art/pico-rig-v2.png",
-        "atlas": {
-          "width": 1266,
-          "height": 1242
-        },
-        "frame": {
-          "x": 368,
-          "y": 425,
-          "w": 217,
-          "h": 153
-        }
-      },
-      "upperArmRight": {
-        "src": "assets/art/pico-rig-v2.png",
-        "atlas": {
-          "width": 1266,
-          "height": 1242
-        },
-        "frame": {
-          "x": 697,
-          "y": 397,
-          "w": 151,
-          "h": 195
-        }
-      },
-      "forearmRight": {
-        "src": "assets/art/pico-rig-v2.png",
-        "atlas": {
-          "width": 1266,
-          "height": 1242
-        },
-        "frame": {
-          "x": 979,
-          "y": 399,
-          "w": 252,
-          "h": 194
-        }
-      },
-      "legLeft": {
-        "src": "assets/art/pico-rig-v2.png",
-        "atlas": {
-          "width": 1266,
-          "height": 1242
-        },
-        "frame": {
-          "x": 42,
-          "y": 631,
-          "w": 220,
-          "h": 287
-        }
-      },
-      "legRight": {
-        "src": "assets/art/pico-rig-v2.png",
-        "atlas": {
-          "width": 1266,
-          "height": 1242
-        },
-        "frame": {
-          "x": 375,
-          "y": 630,
-          "w": 213,
-          "h": 287
-        }
-      },
-      "satchel": {
-        "src": "assets/art/pico-rig-v2.png",
-        "atlas": {
-          "width": 1266,
-          "height": 1242
-        },
-        "frame": {
-          "x": 676,
-          "y": 689,
-          "w": 225,
-          "h": 188
-        }
-      },
-      "strap": {
-        "src": "assets/art/pico-rig-v2.png",
-        "atlas": {
-          "width": 1266,
-          "height": 1242
-        },
-        "frame": {
-          "x": 987,
-          "y": 649,
-          "w": 223,
-          "h": 255
-        }
-      },
-      "eyesOpen": {
-        "src": "assets/art/pico-rig-v2.png",
-        "atlas": {
-          "width": 1266,
-          "height": 1242
-        },
-        "frame": {
-          "x": 51,
-          "y": 1000,
-          "w": 214,
-          "h": 130
-        }
-      },
-      "eyesClosed": {
-        "src": "assets/art/pico-rig-v2.png",
-        "atlas": {
-          "width": 1266,
-          "height": 1242
-        },
-        "frame": {
-          "x": 361,
-          "y": 1002,
-          "w": 227,
-          "h": 114
-        }
-      },
-      "mouthSmile": {
-        "src": "assets/art/pico-rig-v2.png",
-        "atlas": {
-          "width": 1266,
-          "height": 1242
-        },
-        "frame": {
-          "x": 736,
-          "y": 1056,
-          "w": 105,
-          "h": 84
-        }
-      },
-      "mouthO": {
-        "src": "assets/art/pico-rig-v2.png",
-        "atlas": {
-          "width": 1266,
-          "height": 1242
-        },
-        "frame": {
-          "x": 1085,
-          "y": 1062,
-          "w": 41,
-          "h": 60
-        }
-      }
-    }
-  },
-  "companions": {
-    "mina": {
-      "idle": {
-        "src": "assets/art/companions-v1.png",
-        "atlas": {
-          "width": 1216,
-          "height": 1293
-        },
-        "frame": {
-          "x": 124,
-          "y": 11,
-          "w": 159,
-          "h": 409
-        }
-      },
-      "wave": {
-        "src": "assets/art/companions-v1.png",
-        "atlas": {
-          "width": 1216,
-          "height": 1293
-        },
-        "frame": {
-          "x": 90,
-          "y": 441,
-          "w": 241,
-          "h": 400
-        }
-      },
-      "celebrate": {
-        "src": "assets/art/companions-v1.png",
-        "atlas": {
-          "width": 1216,
-          "height": 1293
-        },
-        "frame": {
-          "x": 92,
-          "y": 864,
-          "w": 211,
-          "h": 415
-        }
-      }
-    },
-    "alex": {
-      "idle": {
-        "src": "assets/art/companions-v1.png",
-        "atlas": {
-          "width": 1216,
-          "height": 1293
-        },
-        "frame": {
-          "x": 512,
-          "y": 8,
-          "w": 157,
-          "h": 411
-        }
-      },
-      "wave": {
-        "src": "assets/art/companions-v1.png",
-        "atlas": {
-          "width": 1216,
-          "height": 1293
-        },
-        "frame": {
-          "x": 495,
-          "y": 434,
-          "w": 245,
-          "h": 405
-        }
-      },
-      "celebrate": {
-        "src": "assets/art/companions-v1.png",
-        "atlas": {
-          "width": 1216,
-          "height": 1293
-        },
-        "frame": {
-          "x": 477,
-          "y": 862,
-          "w": 222,
-          "h": 418
-        }
-      }
-    },
-    "jo": {
-      "idle": {
-        "src": "assets/art/companions-v1.png",
-        "atlas": {
-          "width": 1216,
-          "height": 1293
-        },
-        "frame": {
-          "x": 883,
-          "y": 11,
-          "w": 192,
-          "h": 409
-        }
-      },
-      "wave": {
-        "src": "assets/art/companions-v1.png",
-        "atlas": {
-          "width": 1216,
-          "height": 1293
-        },
-        "frame": {
-          "x": 845,
-          "y": 440,
-          "w": 271,
-          "h": 400
-        }
-      },
-      "celebrate": {
-        "src": "assets/art/companions-v1.png",
-        "atlas": {
-          "width": 1216,
-          "height": 1293
-        },
-        "frame": {
-          "x": 885,
-          "y": 863,
-          "w": 177,
-          "h": 416
-        }
-      }
-    }
-  },
-  "rigs": {
-    "mina": {
-      "parts": {
-        "torso": {
-          "src": "assets/art/mina-rig-v1.png",
-          "atlas": {
-            "width": 1246,
-            "height": 1263
-          },
-          "frame": {
-            "x": 54,
-            "y": 31,
-            "w": 220,
-            "h": 294
-          }
-        },
-        "head": {
-          "src": "assets/art/mina-rig-v1.png",
-          "atlas": {
-            "width": 1246,
-            "height": 1263
-          },
-          "frame": {
-            "x": 327,
-            "y": 42,
-            "w": 291,
-            "h": 267
-          }
-        },
-        "upperArmLeft": {
-          "src": "assets/art/mina-rig-v1.png",
-          "atlas": {
-            "width": 1246,
-            "height": 1263
-          },
-          "frame": {
-            "x": 693,
-            "y": 37,
-            "w": 153,
-            "h": 257
-          }
-        },
-        "forearmLeft": {
-          "src": "assets/art/mina-rig-v1.png",
-          "atlas": {
-            "width": 1246,
-            "height": 1263
-          },
-          "frame": {
-            "x": 1041,
-            "y": 17,
-            "w": 109,
-            "h": 309
-          }
-        },
-        "upperArmRight": {
-          "src": "assets/art/mina-rig-v1.png",
-          "atlas": {
-            "width": 1246,
-            "height": 1263
-          },
-          "frame": {
-            "x": 83,
-            "y": 378,
-            "w": 152,
-            "h": 284
-          }
-        },
-        "forearmRight": {
-          "src": "assets/art/mina-rig-v1.png",
-          "atlas": {
-            "width": 1246,
-            "height": 1263
-          },
-          "frame": {
-            "x": 388,
-            "y": 359,
-            "w": 164,
-            "h": 324
-          }
-        },
-        "legLeft": {
-          "src": "assets/art/mina-rig-v1.png",
-          "atlas": {
-            "width": 1246,
-            "height": 1263
-          },
-          "frame": {
-            "x": 695,
-            "y": 349,
-            "w": 150,
-            "h": 341
-          }
-        },
-        "legRight": {
-          "src": "assets/art/mina-rig-v1.png",
-          "atlas": {
-            "width": 1246,
-            "height": 1263
-          },
-          "frame": {
-            "x": 1011,
-            "y": 350,
-            "w": 165,
-            "h": 338
-          }
-        },
-        "eyesOpen": {
-          "src": "assets/art/mina-rig-v1.png",
-          "atlas": {
-            "width": 1246,
-            "height": 1263
-          },
-          "frame": {
-            "x": 69,
-            "y": 779,
-            "w": 174,
-            "h": 73
-          }
-        },
-        "eyesClosed": {
-          "src": "assets/art/mina-rig-v1.png",
-          "atlas": {
-            "width": 1246,
-            "height": 1263
-          },
-          "frame": {
-            "x": 361,
-            "y": 792,
-            "w": 222,
-            "h": 40
-          }
-        },
-        "mouthSmile": {
-          "src": "assets/art/mina-rig-v1.png",
-          "atlas": {
-            "width": 1246,
-            "height": 1263
-          },
-          "frame": {
-            "x": 709,
-            "y": 782,
-            "w": 158,
-            "h": 97
-          }
-        },
-        "mouthTalk": {
-          "src": "assets/art/mina-rig-v1.png",
-          "atlas": {
-            "width": 1246,
-            "height": 1263
-          },
-          "frame": {
-            "x": 1061,
-            "y": 788,
-            "w": 80,
-            "h": 75
-          }
-        },
-        "accessory": {
-          "src": "assets/art/mina-rig-v1.png",
-          "atlas": {
-            "width": 1246,
-            "height": 1263
-          },
-          "frame": {
-            "x": 35,
-            "y": 950,
-            "w": 252,
-            "h": 295
-          }
-        },
-        "prop": {
-          "src": "assets/art/mina-rig-v1.png",
-          "atlas": {
-            "width": 1246,
-            "height": 1263
-          },
-          "frame": {
-            "x": 339,
-            "y": 1003,
-            "w": 254,
-            "h": 216
-          }
-        },
-        "handPoint": {
-          "src": "assets/art/mina-rig-v1.png",
-          "atlas": {
-            "width": 1246,
-            "height": 1263
-          },
-          "frame": {
-            "x": 656,
-            "y": 1029,
-            "w": 241,
-            "h": 139
-          }
-        },
-        "handThumb": {
-          "src": "assets/art/mina-rig-v1.png",
-          "atlas": {
-            "width": 1246,
-            "height": 1263
-          },
-          "frame": {
-            "x": 987,
-            "y": 987,
-            "w": 188,
-            "h": 197
-          }
-        },
-        "eyeOpenLeft": {
-          "src": "assets/art/mina-rig-v1.png",
-          "atlas": {
-            "width": 1246,
-            "height": 1263
-          },
-          "frame": {
-            "x": 71,
-            "y": 781,
-            "w": 48,
-            "h": 69
-          }
-        },
-        "eyeOpenRight": {
-          "src": "assets/art/mina-rig-v1.png",
-          "atlas": {
-            "width": 1246,
-            "height": 1263
-          },
-          "frame": {
-            "x": 198,
-            "y": 782,
-            "w": 43,
-            "h": 66
-          }
-        },
-        "eyeClosedLeft": {
-          "src": "assets/art/mina-rig-v1.png",
-          "atlas": {
-            "width": 1246,
-            "height": 1263
-          },
-          "frame": {
-            "x": 363,
-            "y": 794,
-            "w": 76,
-            "h": 36
-          }
-        },
-        "eyeClosedRight": {
-          "src": "assets/art/mina-rig-v1.png",
-          "atlas": {
-            "width": 1246,
-            "height": 1263
-          },
-          "frame": {
-            "x": 509,
-            "y": 794,
-            "w": 72,
-            "h": 30
-          }
-        }
-      }
-    },
-    "alex": {
-      "parts": {
-        "torso": {
-          "src": "assets/art/alex-rig-v1.png",
-          "atlas": {
-            "width": 1261,
-            "height": 1247
-          },
-          "frame": {
-            "x": 30,
-            "y": 49,
-            "w": 258,
-            "h": 277
-          }
-        },
-        "head": {
-          "src": "assets/art/alex-rig-v1.png",
-          "atlas": {
-            "width": 1261,
-            "height": 1247
-          },
-          "frame": {
-            "x": 348,
-            "y": 49,
-            "w": 226,
-            "h": 276
-          }
-        },
-        "upperArmLeft": {
-          "src": "assets/art/alex-rig-v1.png",
-          "atlas": {
-            "width": 1261,
-            "height": 1247
-          },
-          "frame": {
-            "x": 705,
-            "y": 65,
-            "w": 133,
-            "h": 253
-          }
-        },
-        "forearmLeft": {
-          "src": "assets/art/alex-rig-v1.png",
-          "atlas": {
-            "width": 1261,
-            "height": 1247
-          },
-          "frame": {
-            "x": 1055,
-            "y": 55,
-            "w": 100,
-            "h": 270
-          }
-        },
-        "upperArmRight": {
-          "src": "assets/art/alex-rig-v1.png",
-          "atlas": {
-            "width": 1261,
-            "height": 1247
-          },
-          "frame": {
-            "x": 79,
-            "y": 377,
-            "w": 146,
-            "h": 272
-          }
-        },
-        "forearmRight": {
-          "src": "assets/art/alex-rig-v1.png",
-          "atlas": {
-            "width": 1261,
-            "height": 1247
-          },
-          "frame": {
-            "x": 408,
-            "y": 376,
-            "w": 104,
-            "h": 279
-          }
-        },
-        "legLeft": {
-          "src": "assets/art/alex-rig-v1.png",
-          "atlas": {
-            "width": 1261,
-            "height": 1247
-          },
-          "frame": {
-            "x": 696,
-            "y": 363,
-            "w": 155,
-            "h": 314
-          }
-        },
-        "legRight": {
-          "src": "assets/art/alex-rig-v1.png",
-          "atlas": {
-            "width": 1261,
-            "height": 1247
-          },
-          "frame": {
-            "x": 1050,
-            "y": 364,
-            "w": 145,
-            "h": 309
-          }
-        },
-        "eyesOpen": {
-          "src": "assets/art/alex-rig-v1.png",
-          "atlas": {
-            "width": 1261,
-            "height": 1247
-          },
-          "frame": {
-            "x": 76,
-            "y": 771,
-            "w": 175,
-            "h": 66
-          }
-        },
-        "eyesClosed": {
-          "src": "assets/art/alex-rig-v1.png",
-          "atlas": {
-            "width": 1261,
-            "height": 1247
-          },
-          "frame": {
-            "x": 373,
-            "y": 782,
-            "w": 199,
-            "h": 40
-          }
-        },
-        "mouthSmile": {
-          "src": "assets/art/alex-rig-v1.png",
-          "atlas": {
-            "width": 1261,
-            "height": 1247
-          },
-          "frame": {
-            "x": 721,
-            "y": 779,
-            "w": 137,
-            "h": 79
-          }
-        },
-        "mouthTalk": {
-          "src": "assets/art/alex-rig-v1.png",
-          "atlas": {
-            "width": 1261,
-            "height": 1247
-          },
-          "frame": {
-            "x": 1059,
-            "y": 776,
-            "w": 75,
-            "h": 73
-          }
-        },
-        "accessory": {
-          "src": "assets/art/alex-rig-v1.png",
-          "atlas": {
-            "width": 1261,
-            "height": 1247
-          },
-          "frame": {
-            "x": 349,
-            "y": 972,
-            "w": 245,
-            "h": 237
-          }
-        },
-        "prop": {
-          "src": "assets/art/alex-rig-v1.png",
-          "atlas": {
-            "width": 1261,
-            "height": 1247
-          },
-          "frame": {
-            "x": 79,
-            "y": 975,
-            "w": 166,
-            "h": 229
-          }
-        },
-        "handPoint": {
-          "src": "assets/art/alex-rig-v1.png",
-          "atlas": {
-            "width": 1261,
-            "height": 1247
-          },
-          "frame": {
-            "x": 651,
-            "y": 1025,
-            "w": 241,
-            "h": 129
-          }
-        },
-        "handThumb": {
-          "src": "assets/art/alex-rig-v1.png",
-          "atlas": {
-            "width": 1261,
-            "height": 1247
-          },
-          "frame": {
-            "x": 991,
-            "y": 973,
-            "w": 192,
-            "h": 208
-          }
-        },
-        "eyeOpenLeft": {
-          "src": "assets/art/alex-rig-v1.png",
-          "atlas": {
-            "width": 1261,
-            "height": 1247
-          },
-          "frame": {
-            "x": 78,
-            "y": 773,
-            "w": 43,
-            "h": 62
-          }
-        },
-        "eyeOpenRight": {
-          "src": "assets/art/alex-rig-v1.png",
-          "atlas": {
-            "width": 1261,
-            "height": 1247
-          },
-          "frame": {
-            "x": 205,
-            "y": 773,
-            "w": 44,
-            "h": 62
-          }
-        },
-        "eyeClosedLeft": {
-          "src": "assets/art/alex-rig-v1.png",
-          "atlas": {
-            "width": 1261,
-            "height": 1247
-          },
-          "frame": {
-            "x": 375,
-            "y": 784,
-            "w": 72,
-            "h": 36
-          }
-        },
-        "eyeClosedRight": {
-          "src": "assets/art/alex-rig-v1.png",
-          "atlas": {
-            "width": 1261,
-            "height": 1247
-          },
-          "frame": {
-            "x": 499,
-            "y": 784,
-            "w": 71,
-            "h": 35
-          }
-        }
-      }
-    },
-    "jo": {
-      "parts": {
-        "torso": {
-          "src": "assets/art/jo-rig-v1.png",
-          "atlas": {
-            "width": 1263,
-            "height": 1246
-          },
-          "frame": {
-            "x": 46,
-            "y": 34,
-            "w": 225,
-            "h": 344
-          }
-        },
-        "head": {
-          "src": "assets/art/jo-rig-v1.png",
-          "atlas": {
-            "width": 1263,
-            "height": 1246
-          },
-          "frame": {
-            "x": 315,
-            "y": 62,
-            "w": 316,
-            "h": 287
-          }
-        },
-        "upperArmLeft": {
-          "src": "assets/art/jo-rig-v1.png",
-          "atlas": {
-            "width": 1263,
-            "height": 1246
-          },
-          "frame": {
-            "x": 721,
-            "y": 73,
-            "w": 118,
-            "h": 256
-          }
-        },
-        "forearmLeft": {
-          "src": "assets/art/jo-rig-v1.png",
-          "atlas": {
-            "width": 1263,
-            "height": 1246
-          },
-          "frame": {
-            "x": 1042,
-            "y": 60,
-            "w": 113,
-            "h": 305
-          }
-        },
-        "upperArmRight": {
-          "src": "assets/art/jo-rig-v1.png",
-          "atlas": {
-            "width": 1263,
-            "height": 1246
-          },
-          "frame": {
-            "x": 103,
-            "y": 436,
-            "w": 112,
-            "h": 271
-          }
-        },
-        "forearmRight": {
-          "src": "assets/art/jo-rig-v1.png",
-          "atlas": {
-            "width": 1263,
-            "height": 1246
-          },
-          "frame": {
-            "x": 420,
-            "y": 426,
-            "w": 109,
-            "h": 311
-          }
-        },
-        "legLeft": {
-          "src": "assets/art/jo-rig-v1.png",
-          "atlas": {
-            "width": 1263,
-            "height": 1246
-          },
-          "frame": {
-            "x": 702,
-            "y": 414,
-            "w": 139,
-            "h": 328
-          }
-        },
-        "legRight": {
-          "src": "assets/art/jo-rig-v1.png",
-          "atlas": {
-            "width": 1263,
-            "height": 1246
-          },
-          "frame": {
-            "x": 1042,
-            "y": 415,
-            "w": 132,
-            "h": 327
-          }
-        },
-        "eyesOpen": {
-          "src": "assets/art/jo-rig-v1.png",
-          "atlas": {
-            "width": 1263,
-            "height": 1246
-          },
-          "frame": {
-            "x": 32,
-            "y": 813,
-            "w": 251,
-            "h": 105
-          }
-        },
-        "eyesClosed": {
-          "src": "assets/art/jo-rig-v1.png",
-          "atlas": {
-            "width": 1263,
-            "height": 1246
-          },
-          "frame": {
-            "x": 348,
-            "y": 813,
-            "w": 251,
-            "h": 105
-          }
-        },
-        "mouthSmile": {
-          "src": "assets/art/jo-rig-v1.png",
-          "atlas": {
-            "width": 1263,
-            "height": 1246
-          },
-          "frame": {
-            "x": 727,
-            "y": 840,
-            "w": 127,
-            "h": 70
-          }
-        },
-        "mouthTalk": {
-          "src": "assets/art/jo-rig-v1.png",
-          "atlas": {
-            "width": 1263,
-            "height": 1246
-          },
-          "frame": {
-            "x": 1064,
-            "y": 833,
-            "w": 79,
-            "h": 76
-          }
-        },
-        "accessory": {
-          "src": "assets/art/jo-rig-v1.png",
-          "atlas": {
-            "width": 1263,
-            "height": 1246
-          },
-          "frame": {
-            "x": 365,
-            "y": 1024,
-            "w": 199,
-            "h": 198
-          }
-        },
-        "prop": {
-          "src": "assets/art/jo-rig-v1.png",
-          "atlas": {
-            "width": 1263,
-            "height": 1246
-          },
-          "frame": {
-            "x": 66,
-            "y": 1032,
-            "w": 219,
-            "h": 182
-          }
-        },
-        "handPoint": {
-          "src": "assets/art/jo-rig-v1.png",
-          "atlas": {
-            "width": 1263,
-            "height": 1246
-          },
-          "frame": {
-            "x": 681,
-            "y": 1059,
-            "w": 212,
-            "h": 129
-          }
-        },
-        "handThumb": {
-          "src": "assets/art/jo-rig-v1.png",
-          "atlas": {
-            "width": 1263,
-            "height": 1246
-          },
-          "frame": {
-            "x": 1014,
-            "y": 1010,
-            "w": 167,
-            "h": 201
-          }
-        },
-        "eyeOpenLeft": {
-          "src": "assets/art/jo-rig-v1.png",
-          "atlas": {
-            "width": 1263,
-            "height": 1246
-          },
-          "frame": {
-            "x": 98,
-            "y": 850,
-            "w": 22,
-            "h": 34
-          }
-        },
-        "eyeOpenRight": {
-          "src": "assets/art/jo-rig-v1.png",
-          "atlas": {
-            "width": 1263,
-            "height": 1246
-          },
-          "frame": {
-            "x": 201,
-            "y": 850,
-            "w": 22,
-            "h": 34
-          }
-        },
-        "eyeClosedLeft": {
-          "src": "assets/art/jo-rig-v1.png",
-          "atlas": {
-            "width": 1263,
-            "height": 1246
-          },
-          "frame": {
-            "x": 392,
-            "y": 855,
-            "w": 45,
-            "h": 17
-          }
-        },
-        "eyeClosedRight": {
-          "src": "assets/art/jo-rig-v1.png",
-          "atlas": {
-            "width": 1263,
-            "height": 1246
-          },
-          "frame": {
-            "x": 510,
-            "y": 855,
-            "w": 45,
-            "h": 17
-          }
-        }
-      }
-    }
-  },
+  "version": 7,
   "postures": {
     "pico": {
-      "explore": {
-        "src": "assets/art/pico-postures-v1.png",
+      "greet": {
+        "src": "assets/art/cast-static-pico-v2.png",
         "atlas": {
           "width": 1254,
           "height": 1254
         },
         "frame": {
-          "x": 34.0,
-          "y": 6,
-          "w": 255.0,
-          "h": 305
+          "x": 206,
+          "y": 17,
+          "w": 250,
+          "h": 585
+        },
+        "posture": "greet",
+        "anatomy": "complete-native-figure"
+      },
+      "explore": {
+        "src": "assets/art/cast-static-pico-v2.png",
+        "atlas": {
+          "width": 1254,
+          "height": 1254
+        },
+        "frame": {
+          "x": 764,
+          "y": 19,
+          "w": 248,
+          "h": 582
         },
         "posture": "explore",
-        "animation": {
-          "id": "pico-explore",
-          "duration": 3300,
-          "frames": [
-            {
-              "x": 34.0,
-              "y": 6,
-              "w": 255.0,
-              "h": 305
-            },
-            {
-              "x": 347.5,
-              "y": 6,
-              "w": 255.0,
-              "h": 305
-            },
-            {
-              "x": 661.0,
-              "y": 6,
-              "w": 255.0,
-              "h": 305
-            },
-            {
-              "x": 974.5,
-              "y": 6,
-              "w": 255.0,
-              "h": 305
-            }
-          ]
-        }
+        "anatomy": "complete-native-figure"
       },
       "read": {
-        "src": "assets/art/pico-postures-v1.png",
+        "src": "assets/art/cast-static-pico-v2.png",
         "atlas": {
           "width": 1254,
           "height": 1254
         },
         "frame": {
-          "x": 39.0,
-          "y": 314,
-          "w": 207.0,
-          "h": 304
+          "x": 206,
+          "y": 639,
+          "w": 236,
+          "h": 594
         },
         "posture": "read",
-        "animation": {
-          "id": "pico-read",
-          "duration": 3431,
-          "frames": [
-            {
-              "x": 39.0,
-              "y": 314,
-              "w": 207.0,
-              "h": 304
-            },
-            {
-              "x": 352.5,
-              "y": 314,
-              "w": 207.0,
-              "h": 304
-            },
-            {
-              "x": 666.0,
-              "y": 314,
-              "w": 207.0,
-              "h": 304
-            },
-            {
-              "x": 979.5,
-              "y": 314,
-              "w": 207.0,
-              "h": 304
-            }
-          ]
-        }
-      },
-      "stride": {
-        "src": "assets/art/pico-postures-v1.png",
-        "atlas": {
-          "width": 1254,
-          "height": 1254
-        },
-        "frame": {
-          "x": 59.5,
-          "y": 630,
-          "w": 212.5,
-          "h": 290
-        },
-        "posture": "stride",
-        "animation": {
-          "id": "pico-stride",
-          "duration": 3562,
-          "frames": [
-            {
-              "x": 59.5,
-              "y": 630,
-              "w": 212.5,
-              "h": 290
-            },
-            {
-              "x": 373.0,
-              "y": 630,
-              "w": 212.5,
-              "h": 290
-            },
-            {
-              "x": 686.5,
-              "y": 630,
-              "w": 212.5,
-              "h": 290
-            },
-            {
-              "x": 1000.0,
-              "y": 630,
-              "w": 212.5,
-              "h": 290
-            }
-          ]
-        }
+        "anatomy": "complete-native-figure"
       },
       "jump": {
-        "src": "assets/art/pico-postures-v1.png",
+        "src": "assets/art/cast-static-pico-v2.png",
         "atlas": {
           "width": 1254,
           "height": 1254
         },
         "frame": {
-          "x": 48.0,
-          "y": 934,
-          "w": 212.5,
-          "h": 310
+          "x": 729,
+          "y": 640,
+          "w": 299,
+          "h": 593
         },
         "posture": "jump",
-        "animation": {
-          "id": "pico-jump",
-          "duration": 3693,
-          "frames": [
-            {
-              "x": 48.0,
-              "y": 934,
-              "w": 212.5,
-              "h": 310
-            },
-            {
-              "x": 361.5,
-              "y": 934,
-              "w": 212.5,
-              "h": 310
-            },
-            {
-              "x": 675.0,
-              "y": 934,
-              "w": 212.5,
-              "h": 310
-            },
-            {
-              "x": 988.5,
-              "y": 934,
-              "w": 212.5,
-              "h": 310
-            }
-          ]
-        }
+        "anatomy": "complete-native-figure"
+      },
+      "stride": {
+        "src": "assets/art/cast-static-pico-v2.png",
+        "atlas": {
+          "width": 1254,
+          "height": 1254
+        },
+        "frame": {
+          "x": 206,
+          "y": 17,
+          "w": 250,
+          "h": 585
+        },
+        "posture": "stride",
+        "anatomy": "complete-native-figure"
       }
     },
     "mina": {
       "step": {
-        "src": "assets/art/mina-postures-v1.png",
+        "src": "assets/art/cast-static-mina-v2.png",
         "atlas": {
           "width": 1254,
           "height": 1254
         },
         "frame": {
-          "x": 53.5,
-          "y": 17,
-          "w": 228.5,
-          "h": 288
+          "x": 234,
+          "y": 32,
+          "w": 285,
+          "h": 552
         },
         "posture": "step",
-        "animation": {
-          "id": "mina-step",
-          "duration": 4400,
-          "frames": [
-            {
-              "x": 53.5,
-              "y": 17,
-              "w": 228.5,
-              "h": 288
-            },
-            {
-              "x": 367.0,
-              "y": 17,
-              "w": 228.5,
-              "h": 288
-            },
-            {
-              "x": 680.5,
-              "y": 17,
-              "w": 228.5,
-              "h": 288
-            },
-            {
-              "x": 994.0,
-              "y": 17,
-              "w": 228.5,
-              "h": 288
-            }
-          ]
-        }
-      },
-      "map": {
-        "src": "assets/art/mina-postures-v1.png",
-        "atlas": {
-          "width": 1254,
-          "height": 1254
-        },
-        "frame": {
-          "x": 64.0,
-          "y": 335,
-          "w": 192.0,
-          "h": 277
-        },
-        "posture": "map",
-        "animation": {
-          "id": "mina-map",
-          "duration": 4531,
-          "frames": [
-            {
-              "x": 64.0,
-              "y": 335,
-              "w": 192.0,
-              "h": 277
-            },
-            {
-              "x": 377.5,
-              "y": 335,
-              "w": 192.0,
-              "h": 277
-            },
-            {
-              "x": 691.0,
-              "y": 335,
-              "w": 192.0,
-              "h": 277
-            },
-            {
-              "x": 1004.5,
-              "y": 335,
-              "w": 192.0,
-              "h": 277
-            }
-          ]
-        }
+        "anatomy": "complete-native-figure"
       },
       "read": {
-        "src": "assets/art/mina-postures-v1.png",
+        "src": "assets/art/cast-static-mina-v2.png",
         "atlas": {
           "width": 1254,
           "height": 1254
         },
         "frame": {
-          "x": 39.5,
-          "y": 644,
-          "w": 233.5,
-          "h": 283
+          "x": 802,
+          "y": 32,
+          "w": 202,
+          "h": 552
         },
         "posture": "read",
-        "animation": {
-          "id": "mina-read",
-          "duration": 4662,
-          "frames": [
-            {
-              "x": 39.5,
-              "y": 644,
-              "w": 233.5,
-              "h": 283
-            },
-            {
-              "x": 353.0,
-              "y": 644,
-              "w": 233.5,
-              "h": 283
-            },
-            {
-              "x": 666.5,
-              "y": 644,
-              "w": 233.5,
-              "h": 283
-            },
-            {
-              "x": 980.0,
-              "y": 644,
-              "w": 233.5,
-              "h": 283
-            }
-          ]
-        }
+        "anatomy": "complete-native-figure"
       },
-      "skip": {
-        "src": "assets/art/mina-postures-v1.png",
+      "map": {
+        "src": "assets/art/cast-static-mina-v2.png",
         "atlas": {
           "width": 1254,
           "height": 1254
         },
         "frame": {
-          "x": 59.0,
-          "y": 952,
-          "w": 202.5,
-          "h": 293
+          "x": 245,
+          "y": 644,
+          "w": 231,
+          "h": 563
+        },
+        "posture": "map",
+        "anatomy": "complete-native-figure"
+      },
+      "skip": {
+        "src": "assets/art/cast-static-mina-v2.png",
+        "atlas": {
+          "width": 1254,
+          "height": 1254
+        },
+        "frame": {
+          "x": 744,
+          "y": 644,
+          "w": 308,
+          "h": 562
         },
         "posture": "skip",
-        "animation": {
-          "id": "mina-skip",
-          "duration": 4793,
-          "frames": [
-            {
-              "x": 59.0,
-              "y": 952,
-              "w": 202.5,
-              "h": 293
-            },
-            {
-              "x": 372.5,
-              "y": 952,
-              "w": 202.5,
-              "h": 293
-            },
-            {
-              "x": 686.0,
-              "y": 952,
-              "w": 202.5,
-              "h": 293
-            },
-            {
-              "x": 999.5,
-              "y": 952,
-              "w": 202.5,
-              "h": 293
-            }
-          ]
-        }
+        "anatomy": "complete-native-figure"
       }
     },
     "alex": {
       "listen": {
-        "src": "assets/art/alex-postures-v1.png",
+        "src": "assets/art/cast-static-alex-v3.png",
         "atlas": {
           "width": 1254,
           "height": 1254
         },
         "frame": {
-          "x": 94.0,
-          "y": 13,
-          "w": 148.5,
-          "h": 309
+          "x": 174,
+          "y": 52,
+          "w": 367,
+          "h": 540
         },
         "posture": "listen",
-        "animation": {
-          "id": "alex-listen",
-          "duration": 3600,
-          "frames": [
-            {
-              "x": 94.0,
-              "y": 13,
-              "w": 148.5,
-              "h": 309
-            },
-            {
-              "x": 407.5,
-              "y": 13,
-              "w": 148.5,
-              "h": 309
-            },
-            {
-              "x": 721.0,
-              "y": 13,
-              "w": 148.5,
-              "h": 309
-            },
-            {
-              "x": 1034.5,
-              "y": 13,
-              "w": 148.5,
-              "h": 309
-            }
-          ]
-        }
-      },
-      "sit": {
-        "src": "assets/art/alex-postures-v1.png",
-        "atlas": {
-          "width": 1254,
-          "height": 1254
-        },
-        "frame": {
-          "x": 71.0,
-          "y": 357,
-          "w": 184.0,
-          "h": 253
-        },
-        "posture": "sit",
-        "animation": {
-          "id": "alex-sit",
-          "duration": 3731,
-          "frames": [
-            {
-              "x": 71.0,
-              "y": 357,
-              "w": 184.0,
-              "h": 253
-            },
-            {
-              "x": 384.5,
-              "y": 357,
-              "w": 184.0,
-              "h": 253
-            },
-            {
-              "x": 698.0,
-              "y": 357,
-              "w": 184.0,
-              "h": 253
-            },
-            {
-              "x": 1011.5,
-              "y": 357,
-              "w": 184.0,
-              "h": 253
-            }
-          ]
-        }
+        "anatomy": "complete-native-figure"
       },
       "fix": {
-        "src": "assets/art/alex-postures-v1.png",
+        "src": "assets/art/cast-static-alex-v3.png",
         "atlas": {
           "width": 1254,
           "height": 1254
         },
         "frame": {
-          "x": 40.0,
-          "y": 656,
-          "w": 240.0,
-          "h": 232
+          "x": 703,
+          "y": 53,
+          "w": 376,
+          "h": 539
         },
         "posture": "fix",
-        "animation": {
-          "id": "alex-fix",
-          "duration": 3862,
-          "frames": [
-            {
-              "x": 40.0,
-              "y": 656,
-              "w": 240.0,
-              "h": 232
-            },
-            {
-              "x": 353.5,
-              "y": 656,
-              "w": 240.0,
-              "h": 232
-            },
-            {
-              "x": 667.0,
-              "y": 656,
-              "w": 240.0,
-              "h": 232
-            },
-            {
-              "x": 980.5,
-              "y": 656,
-              "w": 240.0,
-              "h": 232
-            }
-          ]
-        }
+        "anatomy": "complete-native-figure"
       },
       "dance": {
-        "src": "assets/art/alex-postures-v1.png",
+        "src": "assets/art/cast-static-alex-v3.png",
         "atlas": {
           "width": 1254,
           "height": 1254
         },
         "frame": {
-          "x": 53.5,
-          "y": 950,
-          "w": 225.5,
-          "h": 281
+          "x": 145,
+          "y": 650,
+          "w": 352,
+          "h": 554
         },
         "posture": "dance",
-        "animation": {
-          "id": "alex-dance",
-          "duration": 3993,
-          "frames": [
-            {
-              "x": 53.5,
-              "y": 950,
-              "w": 225.5,
-              "h": 281
-            },
-            {
-              "x": 367.0,
-              "y": 950,
-              "w": 225.5,
-              "h": 281
-            },
-            {
-              "x": 680.5,
-              "y": 950,
-              "w": 225.5,
-              "h": 281
-            },
-            {
-              "x": 994.0,
-              "y": 950,
-              "w": 225.5,
-              "h": 281
-            }
-          ]
-        }
+        "anatomy": "complete-native-figure"
+      },
+      "sit": {
+        "src": "assets/art/cast-static-alex-v3.png",
+        "atlas": {
+          "width": 1254,
+          "height": 1254
+        },
+        "frame": {
+          "x": 687,
+          "y": 657,
+          "w": 453,
+          "h": 548
+        },
+        "posture": "sit",
+        "anatomy": "complete-native-figure"
+      },
+      "drive": {
+        "src": "assets/art/cast-static-alex-v3.png",
+        "atlas": {
+          "width": 1254,
+          "height": 1254
+        },
+        "frame": {
+          "x": 687,
+          "y": 657,
+          "w": 453,
+          "h": 548
+        },
+        "posture": "drive",
+        "anatomy": "complete-native-figure"
       }
     },
     "jo": {
       "offer": {
-        "src": "assets/art/jo-postures-v1.png",
+        "src": "assets/art/cast-static-jo-v3.png",
         "atlas": {
           "width": 1254,
           "height": 1254
         },
         "frame": {
-          "x": 85.5,
-          "y": 8,
-          "w": 198.5,
-          "h": 298
+          "x": 193,
+          "y": 38,
+          "w": 284,
+          "h": 556
         },
         "posture": "offer",
-        "animation": {
-          "id": "jo-offer",
-          "duration": 5100,
-          "frames": [
-            {
-              "x": 85.5,
-              "y": 8,
-              "w": 198.5,
-              "h": 298
-            },
-            {
-              "x": 399.0,
-              "y": 8,
-              "w": 198.5,
-              "h": 298
-            },
-            {
-              "x": 712.5,
-              "y": 8,
-              "w": 198.5,
-              "h": 298
-            },
-            {
-              "x": 1026.0,
-              "y": 8,
-              "w": 198.5,
-              "h": 298
-            }
-          ]
-        }
-      },
-      "pour": {
-        "src": "assets/art/jo-postures-v1.png",
-        "atlas": {
-          "width": 1254,
-          "height": 1254
-        },
-        "frame": {
-          "x": 44.0,
-          "y": 321,
-          "w": 232.0,
-          "h": 299
-        },
-        "posture": "pour",
-        "animation": {
-          "id": "jo-pour",
-          "duration": 5231,
-          "frames": [
-            {
-              "x": 44.0,
-              "y": 321,
-              "w": 232.0,
-              "h": 299
-            },
-            {
-              "x": 357.5,
-              "y": 321,
-              "w": 232.0,
-              "h": 299
-            },
-            {
-              "x": 671.0,
-              "y": 321,
-              "w": 232.0,
-              "h": 299
-            },
-            {
-              "x": 984.5,
-              "y": 321,
-              "w": 232.0,
-              "h": 299
-            }
-          ]
-        }
+        "anatomy": "complete-native-figure"
       },
       "read": {
-        "src": "assets/art/jo-postures-v1.png",
+        "src": "assets/art/cast-static-jo-v3.png",
         "atlas": {
           "width": 1254,
           "height": 1254
         },
         "frame": {
-          "x": 72.0,
-          "y": 632,
-          "w": 172.5,
-          "h": 298
+          "x": 776,
+          "y": 39,
+          "w": 286,
+          "h": 555
         },
         "posture": "read",
-        "animation": {
-          "id": "jo-read",
-          "duration": 5362,
-          "frames": [
-            {
-              "x": 72.0,
-              "y": 632,
-              "w": 172.5,
-              "h": 298
-            },
-            {
-              "x": 385.5,
-              "y": 632,
-              "w": 172.5,
-              "h": 298
-            },
-            {
-              "x": 699.0,
-              "y": 632,
-              "w": 172.5,
-              "h": 298
-            },
-            {
-              "x": 1012.5,
-              "y": 632,
-              "w": 172.5,
-              "h": 298
-            }
-          ]
-        }
+        "anatomy": "complete-native-figure"
       },
-      "clap": {
-        "src": "assets/art/jo-postures-v1.png",
+      "pour": {
+        "src": "assets/art/cast-static-jo-v3.png",
         "atlas": {
           "width": 1254,
           "height": 1254
         },
         "frame": {
-          "x": 72.0,
-          "y": 949,
-          "w": 184.0,
-          "h": 296
+          "x": 198,
+          "y": 652,
+          "w": 294,
+          "h": 568
+        },
+        "posture": "pour",
+        "anatomy": "complete-native-figure"
+      },
+      "clap": {
+        "src": "assets/art/cast-static-jo-v3.png",
+        "atlas": {
+          "width": 1254,
+          "height": 1254
+        },
+        "frame": {
+          "x": 785,
+          "y": 650,
+          "w": 256,
+          "h": 570
         },
         "posture": "clap",
-        "animation": {
-          "id": "jo-clap",
-          "duration": 5493,
-          "frames": [
-            {
-              "x": 72.0,
-              "y": 949,
-              "w": 184.0,
-              "h": 296
-            },
-            {
-              "x": 385.5,
-              "y": 949,
-              "w": 184.0,
-              "h": 296
-            },
-            {
-              "x": 699.0,
-              "y": 949,
-              "w": 184.0,
-              "h": 296
-            },
-            {
-              "x": 1012.5,
-              "y": 949,
-              "w": 184.0,
-              "h": 296
-            }
-          ]
-        }
+        "anatomy": "complete-native-figure"
       }
     }
   },
@@ -1851,32 +286,32 @@
         "id": "male",
         "label": "Male",
         "group": "body",
-        "src": "assets/art/avatar-friendly-heads-v1.png",
+        "src": "assets/art/avatar-static-heads-v2.png",
         "atlas": {
           "width": 1536,
           "height": 1024
         },
         "frame": {
-          "x": 45,
-          "y": 53,
-          "w": 222,
-          "h": 264
+          "x": 29,
+          "y": 52,
+          "w": 327,
+          "h": 271
         }
       },
       {
         "id": "female",
         "label": "Female",
         "group": "body",
-        "src": "assets/art/avatar-friendly-heads-v1.png",
+        "src": "assets/art/avatar-static-heads-v2.png",
         "atlas": {
           "width": 1536,
           "height": 1024
         },
         "frame": {
-          "x": 48,
-          "y": 377,
-          "w": 214,
-          "h": 273
+          "x": 797,
+          "y": 395,
+          "w": 326,
+          "h": 268
         }
       }
     ],
@@ -1885,17 +320,6 @@
         "id": "skin-1",
         "label": "Porcelain",
         "group": "skin",
-        "src": "assets/art/avatar-friendly-heads-v1.png",
-        "atlas": {
-          "width": 1536,
-          "height": 1024
-        },
-        "frame": {
-          "x": 45,
-          "y": 53,
-          "w": 222,
-          "h": 264
-        },
         "headFrame": {
           "x": 45,
           "y": 53,
@@ -1951,29 +375,22 @@
         "eyeY": 152.627704454445,
         "eyeStageY": 118.05771944466495,
         "jawNeckOverlapPixels": 10.972972972972972,
-        "position": {
-          "x": 0.2,
-          "y": 0.04,
-          "w": 0.6,
-          "h": 0.94,
-          "z": 1
+        "src": "assets/art/avatar-static-heads-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 29,
+          "y": 52,
+          "w": 327,
+          "h": 271
         }
       },
       {
         "id": "skin-2",
         "label": "Peach",
         "group": "skin",
-        "src": "assets/art/avatar-friendly-heads-v1.png",
-        "atlas": {
-          "width": 1536,
-          "height": 1024
-        },
-        "frame": {
-          "x": 290,
-          "y": 53,
-          "w": 222,
-          "h": 264
-        },
         "headFrame": {
           "x": 290,
           "y": 53,
@@ -2029,29 +446,22 @@
         "eyeY": 152.7102381588678,
         "eyeStageY": 118.10084516409309,
         "jawNeckOverlapPixels": 10.972972972972972,
-        "position": {
-          "x": 0.2,
-          "y": 0.04,
-          "w": 0.6,
-          "h": 0.94,
-          "z": 1
+        "src": "assets/art/avatar-static-heads-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 413,
+          "y": 52,
+          "w": 326,
+          "h": 271
         }
       },
       {
         "id": "skin-3",
         "label": "Honey",
         "group": "skin",
-        "src": "assets/art/avatar-friendly-heads-v1.png",
-        "atlas": {
-          "width": 1536,
-          "height": 1024
-        },
-        "frame": {
-          "x": 535,
-          "y": 53,
-          "w": 222,
-          "h": 264
-        },
         "headFrame": {
           "x": 535,
           "y": 53,
@@ -2107,29 +517,22 @@
         "eyeY": 152.9166862289152,
         "eyeStageY": 118.20871893042417,
         "jawNeckOverlapPixels": 10.972972972972972,
-        "position": {
-          "x": 0.2,
-          "y": 0.04,
-          "w": 0.6,
-          "h": 0.94,
-          "z": 1
+        "src": "assets/art/avatar-static-heads-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 797,
+          "y": 52,
+          "w": 327,
+          "h": 271
         }
       },
       {
         "id": "skin-4",
         "label": "Caramel",
         "group": "skin",
-        "src": "assets/art/avatar-friendly-heads-v1.png",
-        "atlas": {
-          "width": 1536,
-          "height": 1024
-        },
-        "frame": {
-          "x": 780,
-          "y": 53,
-          "w": 222,
-          "h": 264
-        },
         "headFrame": {
           "x": 780,
           "y": 53,
@@ -2185,29 +588,22 @@
         "eyeY": 152.97709417944748,
         "eyeStageY": 118.24028344511669,
         "jawNeckOverlapPixels": 10.972972972972972,
-        "position": {
-          "x": 0.2,
-          "y": 0.04,
-          "w": 0.6,
-          "h": 0.94,
-          "z": 1
+        "src": "assets/art/avatar-static-heads-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 1181,
+          "y": 52,
+          "w": 326,
+          "h": 271
         }
       },
       {
         "id": "skin-5",
         "label": "Chestnut",
         "group": "skin",
-        "src": "assets/art/avatar-friendly-heads-v1.png",
-        "atlas": {
-          "width": 1536,
-          "height": 1024
-        },
-        "frame": {
-          "x": 1024,
-          "y": 53,
-          "w": 223,
-          "h": 264
-        },
         "headFrame": {
           "x": 1024,
           "y": 53,
@@ -2263,29 +659,22 @@
         "eyeY": 152.92482192393283,
         "eyeStageY": 117.97883113531931,
         "jawNeckOverlapPixels": 10.923766816143496,
-        "position": {
-          "x": 0.2,
-          "y": 0.04,
-          "w": 0.6,
-          "h": 0.94,
-          "z": 1
+        "src": "assets/art/avatar-static-heads-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 29,
+          "y": 395,
+          "w": 327,
+          "h": 268
         }
       },
       {
         "id": "skin-6",
         "label": "Deep brown",
         "group": "skin",
-        "src": "assets/art/avatar-friendly-heads-v1.png",
-        "atlas": {
-          "width": 1536,
-          "height": 1024
-        },
-        "frame": {
-          "x": 1270,
-          "y": 53,
-          "w": 222,
-          "h": 264
-        },
         "headFrame": {
           "x": 1270,
           "y": 53,
@@ -2341,12 +730,16 @@
         "eyeY": 152.908262454435,
         "eyeStageY": 118.20431731853361,
         "jawNeckOverlapPixels": 10.972972972972972,
-        "position": {
-          "x": 0.2,
-          "y": 0.04,
-          "w": 0.6,
-          "h": 0.94,
-          "z": 1
+        "src": "assets/art/avatar-static-heads-v2.png",
+        "atlas": {
+          "width": 1536,
+          "height": 1024
+        },
+        "frame": {
+          "x": 413,
+          "y": 395,
+          "w": 326,
+          "h": 268
         }
       }
     ],
@@ -2355,138 +748,96 @@
         "id": "outfit-1",
         "label": "Magenta hoodie",
         "group": "outfit",
-        "src": "assets/art/avatar-friendly-clothing-v2.png",
+        "src": "assets/art/avatar-static-clothes-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
         },
         "frame": {
-          "x": 56,
-          "y": 62,
-          "w": 207,
-          "h": 282
-        },
-        "position": {
-          "x": 0.16,
-          "y": 0.39,
-          "w": 0.68,
-          "h": 0.6,
-          "z": 2
+          "x": 38,
+          "y": 170,
+          "w": 461,
+          "h": 279
         }
       },
       {
         "id": "outfit-2",
         "label": "Teal summer",
         "group": "outfit",
-        "src": "assets/art/avatar-friendly-clothing-v2.png",
+        "src": "assets/art/avatar-static-clothes-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
         },
         "frame": {
-          "x": 312,
-          "y": 110,
-          "w": 192,
-          "h": 234
-        },
-        "position": {
-          "x": 0.16,
-          "y": 0.39,
-          "w": 0.68,
-          "h": 0.6,
-          "z": 2
+          "x": 537,
+          "y": 195,
+          "w": 462,
+          "h": 254
         }
       },
       {
         "id": "outfit-3",
         "label": "Explorer jacket",
         "group": "outfit",
-        "src": "assets/art/avatar-friendly-clothing-v2.png",
+        "src": "assets/art/avatar-static-clothes-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
         },
         "frame": {
-          "x": 553,
-          "y": 95,
-          "w": 193,
-          "h": 249
-        },
-        "position": {
-          "x": 0.16,
-          "y": 0.39,
-          "w": 0.68,
-          "h": 0.6,
-          "z": 2
+          "x": 1037,
+          "y": 186,
+          "w": 462,
+          "h": 263
         }
       },
       {
         "id": "outfit-4",
         "label": "Orange sweater",
         "group": "outfit",
-        "src": "assets/art/avatar-friendly-clothing-v2.png",
+        "src": "assets/art/avatar-static-clothes-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
         },
         "frame": {
-          "x": 796,
-          "y": 93,
-          "w": 194,
-          "h": 251
-        },
-        "position": {
-          "x": 0.16,
-          "y": 0.39,
-          "w": 0.68,
-          "h": 0.6,
-          "z": 2
+          "x": 38,
+          "y": 624,
+          "w": 461,
+          "h": 277
         }
       },
       {
         "id": "outfit-5",
         "label": "Teal overalls",
         "group": "outfit",
-        "src": "assets/art/avatar-friendly-clothing-v2.png",
+        "src": "assets/art/avatar-static-clothes-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
         },
         "frame": {
-          "x": 1040,
-          "y": 106,
-          "w": 194,
-          "h": 238
-        },
-        "position": {
-          "x": 0.16,
-          "y": 0.39,
-          "w": 0.68,
-          "h": 0.6,
-          "z": 2
+          "x": 537,
+          "y": 633,
+          "w": 462,
+          "h": 268
         }
       },
       {
         "id": "outfit-6",
         "label": "Magenta cardigan",
         "group": "outfit",
-        "src": "assets/art/avatar-friendly-clothing-v2.png",
+        "src": "assets/art/avatar-static-clothes-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
         },
         "frame": {
-          "x": 1283,
-          "y": 106,
-          "w": 199,
-          "h": 238
-        },
-        "position": {
-          "x": 0.16,
-          "y": 0.39,
-          "w": 0.68,
-          "h": 0.6,
-          "z": 2
+          "x": 1037,
+          "y": 640,
+          "w": 462,
+          "h": 261
         }
       }
     ],
@@ -2495,174 +846,96 @@
         "id": "hair-1",
         "label": "Side part",
         "group": "hair",
-        "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+        "src": "assets/art/avatar-static-hair-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
         },
         "frame": {
-          "x": 51,
-          "y": 348,
-          "w": 207,
-          "h": 181
-        },
-        "rigPosition": {
-          "x": 84.93951612903227,
-          "y": 31.30645161290323,
-          "w": 141.89516129032256,
-          "z": 5
-        },
-        "position": {
-          "x": 0.28,
-          "y": 0.025,
-          "w": 0.44,
-          "h": 0.3,
-          "z": 4
+          "x": 30,
+          "y": 24,
+          "w": 438,
+          "h": 323
         }
       },
       {
         "id": "hair-2",
         "label": "Short curls",
         "group": "hair",
-        "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+        "src": "assets/art/avatar-static-hair-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
         },
         "frame": {
-          "x": 298,
-          "y": 352,
-          "w": 208,
-          "h": 153
-        },
-        "rigPosition": {
-          "x": 89.0495867768595,
-          "y": 41.71900826446281,
-          "w": 146.11570247933884,
-          "z": 5
-        },
-        "position": {
-          "x": 0.28,
-          "y": 0.025,
-          "w": 0.44,
-          "h": 0.3,
-          "z": 4
+          "x": 529,
+          "y": 12,
+          "w": 465,
+          "h": 342
         }
       },
       {
         "id": "hair-3",
         "label": "Long straight",
         "group": "hair",
-        "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+        "src": "assets/art/avatar-static-hair-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
         },
         "frame": {
-          "x": 526,
-          "y": 352,
-          "w": 239,
-          "h": 215
-        },
-        "rigPosition": {
-          "x": 68.66228070175438,
-          "y": 35.58771929824562,
-          "w": 178.2017543859649,
-          "z": 5
-        },
-        "position": {
-          "x": 0.28,
-          "y": 0.025,
-          "w": 0.44,
-          "h": 0.3,
-          "z": 4
+          "x": 1049,
+          "y": 12,
+          "w": 450,
+          "h": 472
         }
       },
       {
         "id": "hair-4",
         "label": "Twin puffs",
         "group": "hair",
-        "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+        "src": "assets/art/avatar-static-hair-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
         },
         "frame": {
-          "x": 769,
-          "y": 360,
-          "w": 245,
-          "h": 145
-        },
-        "rigPosition": {
-          "x": 65.94907407407406,
-          "y": 37.907407407407405,
-          "w": 192.82407407407408,
-          "z": 5
-        },
-        "position": {
-          "x": 0.28,
-          "y": 0.025,
-          "w": 0.44,
-          "h": 0.3,
-          "z": 4
+          "x": 9,
+          "y": 532,
+          "w": 499,
+          "h": 282
         }
       },
       {
         "id": "hair-5",
         "label": "Blonde bob",
         "group": "hair",
-        "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+        "src": "assets/art/avatar-static-hair-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
         },
         "frame": {
-          "x": 1014,
-          "y": 364,
-          "w": 232,
-          "h": 198
-        },
-        "rigPosition": {
-          "x": 64.08256880733946,
-          "y": 43.87155963302752,
-          "w": 180.91743119266056,
-          "z": 5
-        },
-        "position": {
-          "x": 0.28,
-          "y": 0.025,
-          "w": 0.44,
-          "h": 0.3,
-          "z": 4
+          "x": 525,
+          "y": 533,
+          "w": 455,
+          "h": 443
         }
       },
       {
         "id": "hair-6",
         "label": "Soft waves",
         "group": "hair",
-        "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+        "src": "assets/art/avatar-static-hair-v1.png",
         "atlas": {
           "width": 1536,
           "height": 1024
         },
         "frame": {
-          "x": 1259,
-          "y": 366,
-          "w": 245,
-          "h": 192
-        },
-        "rigPosition": {
-          "x": 62.52293577981652,
-          "y": 49.330275229357795,
-          "w": 191.05504587155963,
-          "z": 5
-        },
-        "position": {
-          "x": 0.28,
-          "y": 0.025,
-          "w": 0.44,
-          "h": 0.3,
-          "z": 4
+          "x": 1011,
+          "y": 531,
+          "w": 516,
+          "h": 463
         }
       },
       {
@@ -2681,174 +954,96 @@
         "id": "accessory-1",
         "label": "Round glasses",
         "group": "accessory",
-        "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+        "src": "assets/art/avatar-static-extras-v3.png",
         "atlas": {
           "width": 1536,
           "height": 1024
         },
         "frame": {
-          "x": 45,
-          "y": 681,
-          "w": 225,
-          "h": 77
-        },
-        "rigPosition": {
-          "x": 120,
-          "y": 103,
-          "w": 80,
-          "z": 6
-        },
-        "position": {
-          "x": 0.32,
-          "y": 0.16,
-          "w": 0.36,
-          "h": 0.1,
-          "z": 6
+          "x": 79,
+          "y": 90,
+          "w": 408,
+          "h": 195
         }
       },
       {
         "id": "accessory-2",
         "label": "Orange cap",
         "group": "accessory",
-        "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+        "src": "assets/art/avatar-static-extras-v3.png",
         "atlas": {
           "width": 1536,
           "height": 1024
         },
         "frame": {
-          "x": 287,
-          "y": 643,
-          "w": 226,
-          "h": 134
-        },
-        "rigPosition": {
-          "x": 85,
-          "y": 9,
-          "w": 150,
-          "z": 6
-        },
-        "position": {
-          "x": 0.32,
-          "y": 0.16,
-          "w": 0.36,
-          "h": 0.1,
-          "z": 6
+          "x": 573,
+          "y": 61,
+          "w": 388,
+          "h": 204
         }
       },
       {
         "id": "accessory-3",
         "label": "Teal headphones",
         "group": "accessory",
-        "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+        "src": "assets/art/avatar-static-extras-v3.png",
         "atlas": {
           "width": 1536,
           "height": 1024
         },
         "frame": {
-          "x": 533,
-          "y": 623,
-          "w": 223,
-          "h": 184
-        },
-        "rigPosition": {
-          "x": 86.5,
-          "y": 44,
-          "w": 147,
-          "z": 6
-        },
-        "position": {
-          "x": 0.32,
-          "y": 0.16,
-          "w": 0.36,
-          "h": 0.1,
-          "z": 6
+          "x": 1053,
+          "y": 26,
+          "w": 382,
+          "h": 293
         }
       },
       {
         "id": "accessory-4",
         "label": "Pico satchel",
         "group": "accessory",
-        "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+        "src": "assets/art/avatar-static-extras-v3.png",
         "atlas": {
           "width": 1536,
           "height": 1024
         },
         "frame": {
-          "x": 810,
-          "y": 609,
-          "w": 171,
-          "h": 215
-        },
-        "rigPosition": {
-          "x": 125,
-          "y": 208,
-          "w": 112,
-          "z": 6
-        },
-        "position": {
-          "x": 0.32,
-          "y": 0.16,
-          "w": 0.36,
-          "h": 0.1,
-          "z": 6
+          "x": 164,
+          "y": 374,
+          "w": 285,
+          "h": 303
         }
       },
       {
         "id": "accessory-5",
         "label": "Orange scarf",
         "group": "accessory",
-        "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+        "src": "assets/art/avatar-static-extras-v3.png",
         "atlas": {
           "width": 1536,
           "height": 1024
         },
         "frame": {
-          "x": 1023,
-          "y": 632,
-          "w": 217,
-          "h": 198
-        },
-        "rigPosition": {
-          "x": 109,
-          "y": 190,
-          "w": 102,
-          "z": 6
-        },
-        "position": {
-          "x": 0.32,
-          "y": 0.16,
-          "w": 0.36,
-          "h": 0.1,
-          "z": 6
+          "x": 603,
+          "y": 384,
+          "w": 323,
+          "h": 288
         }
       },
       {
         "id": "accessory-6",
         "label": "Navy backpack",
         "group": "accessory",
-        "src": "assets/art/avatar-graphic-flat-kit-v2.png",
+        "src": "assets/art/avatar-static-extras-v3.png",
         "atlas": {
           "width": 1536,
           "height": 1024
         },
         "frame": {
-          "x": 1265,
-          "y": 607,
-          "w": 237,
-          "h": 224
-        },
-        "rigPosition": {
-          "x": 151,
-          "y": 192,
-          "w": 160,
-          "z": 0
-        },
-        "position": {
-          "x": 0.32,
-          "y": 0.16,
-          "w": 0.36,
-          "h": 0.1,
-          "z": 6
+          "x": 1086,
+          "y": 372,
+          "w": 319,
+          "h": 311
         }
       }
     ],
@@ -2863,23 +1058,16 @@
         "label": "First steps",
         "group": "badge",
         "unlockXp": 25,
-        "src": "assets/art/badges-graphic-v1.png",
+        "src": "assets/art/ui-static-v1.png",
         "atlas": {
-          "width": 2172,
-          "height": 724
+          "width": 1261,
+          "height": 1247
         },
         "frame": {
-          "x": 82,
-          "y": 71,
-          "w": 555,
-          "h": 613
-        },
-        "position": {
-          "x": 0.56,
-          "y": 0.43,
-          "w": 0.11,
-          "h": 0.095,
-          "z": 8
+          "x": 341,
+          "y": 371,
+          "w": 257,
+          "h": 238
         }
       },
       {
@@ -2887,23 +1075,16 @@
         "label": "Word explorer",
         "group": "badge",
         "unlockXp": 100,
-        "src": "assets/art/badges-graphic-v1.png",
+        "src": "assets/art/ui-static-v1.png",
         "atlas": {
-          "width": 2172,
-          "height": 724
+          "width": 1261,
+          "height": 1247
         },
         "frame": {
-          "x": 779,
-          "y": 121,
-          "w": 614,
-          "h": 525
-        },
-        "position": {
-          "x": 0.56,
-          "y": 0.43,
-          "w": 0.11,
-          "h": 0.095,
-          "z": 8
+          "x": 643,
+          "y": 370,
+          "w": 271,
+          "h": 244
         }
       },
       {
@@ -2911,930 +1092,488 @@
         "label": "New horizons",
         "group": "badge",
         "unlockXp": 250,
-        "src": "assets/art/badges-graphic-v1.png",
+        "src": "assets/art/ui-static-v1.png",
         "atlas": {
-          "width": 2172,
-          "height": 724
+          "width": 1261,
+          "height": 1247
         },
         "frame": {
-          "x": 1550,
-          "y": 86,
-          "w": 519,
-          "h": 569
-        },
-        "position": {
-          "x": 0.56,
-          "y": 0.43,
-          "w": 0.11,
-          "h": 0.095,
-          "z": 8
+          "x": 957,
+          "y": 668,
+          "w": 254,
+          "h": 253
         }
       }
     ]
   },
   "scenes": {
     "town": {
-      "src": "assets/art/town-flat-v1.png",
+      "src": "assets/art/town-static-v1.png",
       "atlas": {
         "width": 2172,
         "height": 724
       },
       "frame": {
-        "x": 30,
-        "y": 271,
-        "w": 2112,
-        "h": 435
+        "x": 31,
+        "y": 85,
+        "w": 2109,
+        "h": 598
       }
     }
   },
   "icons": {
     "home": {
-      "src": "assets/art/ui-flat-v1.png",
+      "src": "assets/art/ui-static-v1.png",
       "atlas": {
         "width": 1261,
         "height": 1247
       },
       "frame": {
-        "x": 39,
-        "y": 76,
-        "w": 255,
-        "h": 249
+        "x": 45,
+        "y": 69,
+        "w": 248,
+        "h": 237
       }
     },
     "book": {
-      "src": "assets/art/ui-flat-v1.png",
+      "src": "assets/art/ui-static-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 336,
+        "y": 90,
+        "w": 270,
+        "h": 216
+      }
+    },
+    "games": {
+      "src": "assets/art/ui-static-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 640,
+        "y": 103,
+        "w": 287,
+        "h": 192
+      }
+    },
+    "profile": {
+      "src": "assets/art/ui-static-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 974,
+        "y": 47,
+        "w": 235,
+        "h": 259
+      }
+    },
+    "flame": {
+      "src": "assets/art/ui-static-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 62,
+        "y": 372,
+        "w": 210,
+        "h": 242
+      }
+    },
+    "star": {
+      "src": "assets/art/ui-static-v1.png",
       "atlas": {
         "width": 1261,
         "height": 1247
       },
       "frame": {
         "x": 341,
-        "y": 96,
-        "w": 263,
-        "h": 216
-      }
-    },
-    "games": {
-      "src": "assets/art/ui-flat-v1.png",
-      "atlas": {
-        "width": 1261,
-        "height": 1247
-      },
-      "frame": {
-        "x": 653,
-        "y": 79,
-        "w": 266,
-        "h": 245
-      }
-    },
-    "profile": {
-      "src": "assets/art/profile-friendly-v2.png"
-    },
-    "flame": {
-      "src": "assets/art/ui-flat-v1.png",
-      "atlas": {
-        "width": 1261,
-        "height": 1247
-      },
-      "frame": {
-        "x": 51,
-        "y": 372,
-        "w": 230,
-        "h": 276
-      }
-    },
-    "star": {
-      "src": "assets/art/badges-graphic-v1.png",
-      "atlas": {
-        "width": 2172,
-        "height": 724
-      },
-      "frame": {
-        "x": 82,
-        "y": 71,
-        "w": 555,
-        "h": 613
+        "y": 371,
+        "w": 257,
+        "h": 238
       }
     },
     "trophy": {
-      "src": "assets/art/badges-graphic-v1.png",
-      "atlas": {
-        "width": 2172,
-        "height": 724
-      },
-      "frame": {
-        "x": 779,
-        "y": 121,
-        "w": 614,
-        "h": 525
-      }
-    },
-    "satchel": {
-      "src": "assets/art/ui-flat-v1.png",
+      "src": "assets/art/ui-static-v1.png",
       "atlas": {
         "width": 1261,
         "height": 1247
       },
       "frame": {
-        "x": 961,
-        "y": 386,
-        "w": 264,
-        "h": 245
+        "x": 643,
+        "y": 370,
+        "w": 271,
+        "h": 244
+      }
+    },
+    "satchel": {
+      "src": "assets/art/ui-static-v1.png",
+      "atlas": {
+        "width": 1261,
+        "height": 1247
+      },
+      "frame": {
+        "x": 958,
+        "y": 394,
+        "w": 258,
+        "h": 214
       }
     },
     "sound": {
-      "src": "assets/art/ui-flat-v1.png",
+      "src": "assets/art/ui-static-v1.png",
       "atlas": {
         "width": 1261,
         "height": 1247
       },
       "frame": {
         "x": 38,
-        "y": 715,
-        "w": 262,
-        "h": 204
+        "y": 694,
+        "w": 257,
+        "h": 207
       }
     },
     "key": {
-      "src": "assets/art/ui-flat-v1.png",
+      "src": "assets/art/ui-static-v1.png",
       "atlas": {
         "width": 1261,
         "height": 1247
       },
       "frame": {
-        "x": 330,
-        "y": 724,
-        "w": 276,
-        "h": 162
+        "x": 335,
+        "y": 704,
+        "w": 270,
+        "h": 149
       }
     },
     "calendar": {
-      "src": "assets/art/ui-flat-v1.png",
+      "src": "assets/art/ui-static-v1.png",
       "atlas": {
         "width": 1261,
         "height": 1247
       },
       "frame": {
-        "x": 650,
-        "y": 682,
-        "w": 265,
-        "h": 246
+        "x": 644,
+        "y": 658,
+        "w": 263,
+        "h": 255
       }
     },
     "compass": {
-      "src": "assets/art/badges-graphic-v1.png",
+      "src": "assets/art/ui-static-v1.png",
       "atlas": {
-        "width": 2172,
-        "height": 724
+        "width": 1261,
+        "height": 1247
       },
       "frame": {
-        "x": 1550,
-        "y": 86,
-        "w": 519,
-        "h": 569
+        "x": 957,
+        "y": 668,
+        "w": 254,
+        "h": 253
       }
     },
     "settings": {
-      "src": "assets/art/ui-flat-v1.png",
+      "src": "assets/art/ui-static-v1.png",
       "atlas": {
         "width": 1261,
         "height": 1247
       },
       "frame": {
-        "x": 34,
-        "y": 967,
-        "w": 263,
-        "h": 256
+        "x": 46,
+        "y": 961,
+        "w": 240,
+        "h": 245
       }
     },
     "flag": {
-      "src": "assets/art/ui-flat-v1.png",
+      "src": "assets/art/ui-static-v1.png",
       "atlas": {
         "width": 1261,
         "height": 1247
       },
       "frame": {
-        "x": 364,
-        "y": 967,
-        "w": 231,
-        "h": 248
+        "x": 368,
+        "y": 957,
+        "w": 220,
+        "h": 249
       }
     },
     "heart": {
-      "src": "assets/art/ui-flat-v1.png",
+      "src": "assets/art/ui-static-v1.png",
       "atlas": {
         "width": 1261,
         "height": 1247
       },
       "frame": {
-        "x": 650,
-        "y": 983,
-        "w": 270,
-        "h": 231
+        "x": 642,
+        "y": 979,
+        "w": 266,
+        "h": 227
       }
     },
     "addBook": {
-      "src": "assets/art/ui-flat-v1.png",
+      "src": "assets/art/ui-static-v1.png",
       "atlas": {
         "width": 1261,
         "height": 1247
       },
       "frame": {
-        "x": 979,
-        "y": 974,
-        "w": 228,
-        "h": 243
+        "x": 964,
+        "y": 962,
+        "w": 241,
+        "h": 250
       }
     }
   },
   "vocabulary": {
     "teacher": {
-      "src": "assets/art/jobs-friendly-1-v4.png",
+      "src": "assets/art/jobs-static-1-v2.png",
       "atlas": {
         "width": 1254,
         "height": 1254
       },
       "frame": {
-        "x": 0.0,
-        "y": 0,
-        "w": 313.5,
-        "h": 314
+        "x": 84,
+        "y": 48,
+        "w": 495,
+        "h": 568
       },
-      "animation": {
-        "id": "teacher",
-        "duration": 3400,
-        "frames": [
-          {
-            "x": 0.0,
-            "y": 0,
-            "w": 313.5,
-            "h": 314
-          },
-          {
-            "x": 313.5,
-            "y": 0,
-            "w": 313.5,
-            "h": 314
-          },
-          {
-            "x": 627.0,
-            "y": 0,
-            "w": 313.5,
-            "h": 314
-          },
-          {
-            "x": 940.5,
-            "y": 0,
-            "w": 313.5,
-            "h": 314
-          }
-        ]
-      }
+      "animation": null
     },
     "student": {
-      "src": "assets/art/jobs-motion-1.png",
+      "src": "assets/art/jobs-static-4-v2.png",
       "atlas": {
-        "width": 887,
-        "height": 1774
+        "width": 1536,
+        "height": 1024
       },
       "frame": {
-        "x": 0.0,
-        "y": 221.75,
-        "w": 221.75,
-        "h": 221.75
+        "x": 1139,
+        "y": 20,
+        "w": 252,
+        "h": 492
       },
-      "animation": {
-        "id": "student",
-        "duration": 3537,
-        "frames": [
-          {
-            "x": 0.0,
-            "y": 221.75,
-            "w": 221.75,
-            "h": 221.75
-          },
-          {
-            "x": 0.0,
-            "y": 221.75,
-            "w": 221.75,
-            "h": 221.75
-          },
-          {
-            "x": 443.5,
-            "y": 221.75,
-            "w": 221.75,
-            "h": 221.75
-          },
-          {
-            "x": 665.25,
-            "y": 221.75,
-            "w": 221.75,
-            "h": 221.75
-          }
-        ]
-      }
+      "animation": null
     },
     "chef": {
-      "src": "assets/art/jobs-friendly-1-v4.png",
+      "src": "assets/art/jobs-static-1-v2.png",
       "atlas": {
         "width": 1254,
         "height": 1254
       },
       "frame": {
-        "x": 0.0,
-        "y": 314,
-        "w": 313.5,
-        "h": 313
+        "x": 735,
+        "y": 14,
+        "w": 359,
+        "h": 603
       },
-      "animation": {
-        "id": "chef",
-        "duration": 3674,
-        "frames": [
-          {
-            "x": 0.0,
-            "y": 314,
-            "w": 313.5,
-            "h": 313
-          },
-          {
-            "x": 313.5,
-            "y": 314,
-            "w": 313.5,
-            "h": 313
-          },
-          {
-            "x": 627.0,
-            "y": 314,
-            "w": 313.5,
-            "h": 313
-          },
-          {
-            "x": 940.5,
-            "y": 314,
-            "w": 313.5,
-            "h": 313
-          }
-        ]
-      }
+      "animation": null
     },
     "doctor": {
-      "src": "assets/art/jobs-friendly-1-v4.png",
+      "src": "assets/art/jobs-static-1-v2.png",
       "atlas": {
         "width": 1254,
         "height": 1254
       },
       "frame": {
-        "x": 0.0,
-        "y": 627,
-        "w": 313.5,
-        "h": 324
+        "x": 167,
+        "y": 648,
+        "w": 292,
+        "h": 593
       },
-      "animation": {
-        "id": "doctor",
-        "duration": 3811,
-        "frames": [
-          {
-            "x": 0.0,
-            "y": 627,
-            "w": 313.5,
-            "h": 324
-          },
-          {
-            "x": 313.5,
-            "y": 627,
-            "w": 313.5,
-            "h": 324
-          },
-          {
-            "x": 627.0,
-            "y": 627,
-            "w": 313.5,
-            "h": 324
-          },
-          {
-            "x": 940.5,
-            "y": 627,
-            "w": 313.5,
-            "h": 324
-          }
-        ]
-      }
+      "animation": null
     },
     "office worker": {
-      "src": "assets/art/jobs-friendly-1-v4.png",
+      "src": "assets/art/jobs-static-1-v2.png",
       "atlas": {
         "width": 1254,
         "height": 1254
       },
       "frame": {
-        "x": 0.0,
-        "y": 951,
-        "w": 313.5,
-        "h": 303
+        "x": 682,
+        "y": 677,
+        "w": 476,
+        "h": 559
       },
-      "animation": {
-        "id": "office-worker",
-        "duration": 3948,
-        "frames": [
-          {
-            "x": 0.0,
-            "y": 951,
-            "w": 313.5,
-            "h": 303
-          },
-          {
-            "x": 313.5,
-            "y": 951,
-            "w": 313.5,
-            "h": 303
-          },
-          {
-            "x": 627.0,
-            "y": 951,
-            "w": 313.5,
-            "h": 303
-          },
-          {
-            "x": 940.5,
-            "y": 951,
-            "w": 313.5,
-            "h": 303
-          }
-        ]
-      }
+      "animation": null
     },
     "receptionist": {
-      "src": "assets/art/jobs-friendly-2-v2.png",
+      "src": "assets/art/jobs-static-2-v2.png",
       "atlas": {
-        "width": 1448,
-        "height": 1086
+        "width": 1254,
+        "height": 1254
       },
       "frame": {
-        "x": 0.0,
-        "y": 0,
-        "w": 362.0,
-        "h": 360
+        "x": 81,
+        "y": 53,
+        "w": 470,
+        "h": 571
       },
-      "animation": {
-        "id": "receptionist",
-        "duration": 4085,
-        "frames": [
-          {
-            "x": 0.0,
-            "y": 0,
-            "w": 362.0,
-            "h": 360
-          },
-          {
-            "x": 362.0,
-            "y": 0,
-            "w": 362.0,
-            "h": 360
-          },
-          {
-            "x": 724.0,
-            "y": 0,
-            "w": 362.0,
-            "h": 360
-          },
-          {
-            "x": 1086.0,
-            "y": 0,
-            "w": 362.0,
-            "h": 360
-          }
-        ]
-      }
+      "animation": null
     },
     "salesclerk": {
-      "src": "assets/art/jobs-friendly-2-v2.png",
+      "src": "assets/art/jobs-static-2-v2.png",
       "atlas": {
-        "width": 1448,
-        "height": 1086
+        "width": 1254,
+        "height": 1254
       },
       "frame": {
-        "x": 0.0,
-        "y": 360,
-        "w": 362.0,
-        "h": 361
+        "x": 673,
+        "y": 42,
+        "w": 531,
+        "h": 582
       },
-      "animation": {
-        "id": "salesclerk",
-        "duration": 4222,
-        "frames": [
-          {
-            "x": 0.0,
-            "y": 360,
-            "w": 362.0,
-            "h": 361
-          },
-          {
-            "x": 362.0,
-            "y": 360,
-            "w": 362.0,
-            "h": 361
-          },
-          {
-            "x": 724.0,
-            "y": 360,
-            "w": 362.0,
-            "h": 361
-          },
-          {
-            "x": 1086.0,
-            "y": 360,
-            "w": 362.0,
-            "h": 361
-          }
-        ]
-      }
+      "animation": null
     },
     "taxi driver": {
-      "src": "assets/art/jobs-friendly-2-v2.png",
+      "src": "assets/art/jobs-static-2-v2.png",
       "atlas": {
-        "width": 1448,
-        "height": 1086
+        "width": 1254,
+        "height": 1254
       },
       "frame": {
-        "x": 0.0,
-        "y": 721,
-        "w": 362.0,
-        "h": 365
+        "x": 40,
+        "y": 661,
+        "w": 572,
+        "h": 581
       },
-      "animation": {
-        "id": "taxi-driver",
-        "duration": 4359,
-        "frames": [
-          {
-            "x": 0.0,
-            "y": 721,
-            "w": 362.0,
-            "h": 365
-          },
-          {
-            "x": 362.0,
-            "y": 721,
-            "w": 362.0,
-            "h": 365
-          },
-          {
-            "x": 724.0,
-            "y": 721,
-            "w": 362.0,
-            "h": 365
-          },
-          {
-            "x": 1086.0,
-            "y": 721,
-            "w": 362.0,
-            "h": 365
-          }
-        ]
-      }
+      "animation": null
     },
     "waiter": {
-      "src": "assets/art/jobs-friendly-3-v2.png",
+      "src": "assets/art/jobs-static-2-v2.png",
       "atlas": {
         "width": 1254,
         "height": 1254
       },
       "frame": {
-        "x": 0.0,
-        "y": 0,
-        "w": 313.5,
-        "h": 317
+        "x": 766,
+        "y": 651,
+        "w": 395,
+        "h": 591
       },
-      "animation": {
-        "id": "waiter",
-        "duration": 3400,
-        "frames": [
-          {
-            "x": 0.0,
-            "y": 0,
-            "w": 313.5,
-            "h": 317
-          },
-          {
-            "x": 313.5,
-            "y": 0,
-            "w": 313.5,
-            "h": 317
-          },
-          {
-            "x": 627.0,
-            "y": 0,
-            "w": 313.5,
-            "h": 317
-          },
-          {
-            "x": 940.5,
-            "y": 0,
-            "w": 313.5,
-            "h": 317
-          }
-        ]
-      }
+      "animation": null
     },
     "waitress": {
-      "src": "assets/art/jobs-friendly-3-v2.png",
+      "src": "assets/art/jobs-static-3-v3.png",
       "atlas": {
         "width": 1254,
         "height": 1254
       },
       "frame": {
-        "x": 0.0,
-        "y": 317,
-        "w": 313.5,
-        "h": 312
+        "x": 183,
+        "y": 26,
+        "w": 360,
+        "h": 595
       },
-      "animation": {
-        "id": "waitress",
-        "duration": 3537,
-        "frames": [
-          {
-            "x": 0.0,
-            "y": 317,
-            "w": 313.5,
-            "h": 312
-          },
-          {
-            "x": 313.5,
-            "y": 317,
-            "w": 313.5,
-            "h": 312
-          },
-          {
-            "x": 627.0,
-            "y": 317,
-            "w": 313.5,
-            "h": 312
-          },
-          {
-            "x": 940.5,
-            "y": 317,
-            "w": 313.5,
-            "h": 312
-          }
-        ]
-      }
+      "animation": null
     },
     "farmer": {
-      "src": "assets/art/jobs-friendly-3-v2.png",
+      "src": "assets/art/jobs-static-3-v3.png",
       "atlas": {
         "width": 1254,
         "height": 1254
       },
       "frame": {
-        "x": 0.0,
-        "y": 629,
-        "w": 313.5,
-        "h": 313
+        "x": 666,
+        "y": 17,
+        "w": 547,
+        "h": 604
       },
-      "animation": {
-        "id": "farmer",
-        "duration": 3674,
-        "frames": [
-          {
-            "x": 0.0,
-            "y": 629,
-            "w": 313.5,
-            "h": 313
-          },
-          {
-            "x": 313.5,
-            "y": 629,
-            "w": 313.5,
-            "h": 313
-          },
-          {
-            "x": 627.0,
-            "y": 629,
-            "w": 313.5,
-            "h": 313
-          },
-          {
-            "x": 940.5,
-            "y": 629,
-            "w": 313.5,
-            "h": 313
-          }
-        ]
-      }
+      "animation": null
     },
     "nurse": {
-      "src": "assets/art/jobs-friendly-3-v2.png",
+      "src": "assets/art/jobs-static-3-v3.png",
       "atlas": {
         "width": 1254,
         "height": 1254
       },
       "frame": {
-        "x": 0.0,
-        "y": 942,
-        "w": 313.5,
-        "h": 312
+        "x": 192,
+        "y": 634,
+        "w": 273,
+        "h": 611
       },
-      "animation": {
-        "id": "nurse",
-        "duration": 3811,
-        "frames": [
-          {
-            "x": 0.0,
-            "y": 942,
-            "w": 313.5,
-            "h": 312
-          },
-          {
-            "x": 313.5,
-            "y": 942,
-            "w": 313.5,
-            "h": 312
-          },
-          {
-            "x": 627.0,
-            "y": 942,
-            "w": 313.5,
-            "h": 312
-          },
-          {
-            "x": 940.5,
-            "y": 942,
-            "w": 313.5,
-            "h": 312
-          }
-        ]
-      }
+      "animation": null
     },
     "dentist": {
-      "src": "assets/art/jobs-friendly-4-v2.png",
+      "src": "assets/art/jobs-static-3-v3.png",
       "atlas": {
-        "width": 1448,
-        "height": 1086
+        "width": 1254,
+        "height": 1254
       },
       "frame": {
-        "x": 0.0,
-        "y": 0,
-        "w": 362.0,
-        "h": 365
+        "x": 674,
+        "y": 640,
+        "w": 495,
+        "h": 606
       },
-      "animation": {
-        "id": "dentist",
-        "duration": 3948,
-        "frames": [
-          {
-            "x": 0.0,
-            "y": 0,
-            "w": 362.0,
-            "h": 365
-          },
-          {
-            "x": 362.0,
-            "y": 0,
-            "w": 362.0,
-            "h": 365
-          },
-          {
-            "x": 724.0,
-            "y": 0,
-            "w": 362.0,
-            "h": 365
-          },
-          {
-            "x": 1086.0,
-            "y": 0,
-            "w": 362.0,
-            "h": 365
-          }
-        ]
-      }
+      "animation": null
     },
     "police officer": {
-      "src": "assets/art/jobs-friendly-4-v2.png",
+      "src": "assets/art/jobs-static-4-v2.png",
       "atlas": {
-        "width": 1448,
-        "height": 1086
+        "width": 1536,
+        "height": 1024
       },
       "frame": {
-        "x": 0.0,
-        "y": 365,
-        "w": 362.0,
-        "h": 355
+        "x": 105,
+        "y": 13,
+        "w": 328,
+        "h": 499
       },
-      "animation": {
-        "id": "police-officer",
-        "duration": 4085,
-        "frames": [
-          {
-            "x": 0.0,
-            "y": 365,
-            "w": 362.0,
-            "h": 355
-          },
-          {
-            "x": 362.0,
-            "y": 365,
-            "w": 362.0,
-            "h": 355
-          },
-          {
-            "x": 724.0,
-            "y": 365,
-            "w": 362.0,
-            "h": 355
-          },
-          {
-            "x": 1086.0,
-            "y": 365,
-            "w": 362.0,
-            "h": 355
-          }
-        ]
-      }
+      "animation": null
     },
     "driver": {
-      "src": "assets/art/jobs-motion-2.png",
+      "src": "assets/art/jobs-static-4-v2.png",
       "atlas": {
-        "width": 887,
-        "height": 1774
+        "width": 1536,
+        "height": 1024
       },
       "frame": {
-        "x": 0.0,
-        "y": 1330.5,
-        "w": 221.75,
-        "h": 221.75
+        "x": 27,
+        "y": 551,
+        "w": 453,
+        "h": 460
       },
-      "animation": {
-        "id": "driver",
-        "duration": 4222,
-        "frames": [
-          {
-            "x": 0.0,
-            "y": 1330.5,
-            "w": 221.75,
-            "h": 221.75
-          },
-          {
-            "x": 221.75,
-            "y": 1330.5,
-            "w": 221.75,
-            "h": 221.75
-          },
-          {
-            "x": 443.5,
-            "y": 1330.5,
-            "w": 221.75,
-            "h": 221.75
-          },
-          {
-            "x": 665.25,
-            "y": 1330.5,
-            "w": 221.75,
-            "h": 221.75
-          }
-        ]
-      }
+      "animation": null
     },
     "actor": {
-      "src": "assets/art/jobs-friendly-4-v2.png",
+      "src": "assets/art/jobs-static-4-v2.png",
       "atlas": {
-        "width": 1448,
-        "height": 1086
+        "width": 1536,
+        "height": 1024
       },
       "frame": {
-        "x": 0.0,
-        "y": 720,
-        "w": 362.0,
-        "h": 366
+        "x": 600,
+        "y": 13,
+        "w": 348,
+        "h": 499
       },
-      "animation": {
-        "id": "actor",
-        "duration": 4359,
-        "frames": [
-          {
-            "x": 0.0,
-            "y": 720,
-            "w": 362.0,
-            "h": 366
-          },
-          {
-            "x": 362.0,
-            "y": 720,
-            "w": 362.0,
-            "h": 366
-          },
-          {
-            "x": 724.0,
-            "y": 720,
-            "w": 362.0,
-            "h": 366
-          },
-          {
-            "x": 1086.0,
-            "y": 720,
-            "w": 362.0,
-            "h": 366
-          }
-        ]
-      }
+      "animation": null
+    },
+    "school": {
+      "src": "assets/art/jobs-static-4-v2.png",
+      "atlas": {
+        "width": 1536,
+        "height": 1024
+      },
+      "frame": {
+        "x": 521,
+        "y": 581,
+        "w": 492,
+        "h": 391
+      },
+      "animation": null
     }
+  },
+  "avatarStatic": {
+    "metadata": "assets/art/avatar-static-v1.frames.json",
+    "module": "src/avatar-static.js",
+    "static": true
   }
 }

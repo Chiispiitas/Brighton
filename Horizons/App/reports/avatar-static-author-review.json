@@ -1,0 +1,1344 @@
+{
+  "date": "2026-11-04T23:44:04.800470+00:00",
+  "status": "AUTHOR_PASS_INDEPENDENT_REVIEW_REQUESTED",
+  "scope": "New entirely static flat avatar from the three user-supplied reference screenshots. Previous animation approvals are not inherited.",
+  "role": "Avatar artwork/rendering author visual review",
+  "sourceHashes": {
+    "src/avatar-static.js": "92742ed6eeb76787522b9ef904da7fbf403448a394babd15a154b3ca7cdc55e8",
+    "assets/art/avatar-static-v1.frames.json": "7ea0fd65138b223b3207780386c5437b26eaa5da21b25439b2029d93d4fb4ab5",
+    "assets/art/avatar-static-v1.fragment.json": "d79ef7f8156934b68ab715267322ec2674a7fe47074314cc2ba3c2289d8370d4",
+    "assets/art/avatar-static-clothes-v1.png": "38c59629065fbc10c6ec5d723c8d89f4630afb859c89699c7581f7b662e8180d",
+    "assets/art/avatar-static-extras-v3.png": "1842d76f71c1a8ccb01dabe6c5a6e5dbe1c71257490d77989f95e1e0022c16fe",
+    "assets/art/avatar-static-hair-v1.png": "c73a9e78139d3ceaf1c6b6cd61392835ebb3c82f13fbb222ccaae0edc9166e97",
+    "assets/art/avatar-static-heads-v2.png": "79f254047f5541326288ba948051aa82d576f47af105f3eda1c50caab6464779",
+    "assets/art/ui-static-v1.png": "fdbf04030127b6a1d6a7061a72b765a540cc25ec732eb4343a639ce7f11e1b42"
+  },
+  "sourceStable": true,
+  "provenance": {
+    "path": "assets\\art\\avatar-static-v1.provenance.json",
+    "sha256": "1ebd85a7f34f7cce4748872c087d32735a534d2c934ca4415e10bf493ab38dbc"
+  },
+  "nativeProductionHandling": "All active avatar PNG bytes copied intact from built-in ImageGen outputs. Cropping and placement use measured native frames; no program repainted or recolored production art.",
+  "nativeIdentity": "Large soft rounded-rectangular faces with straightish cheeks, broad flat jaw, open white eyes, simple droplet nose and warm small smile. Male/Female have their own twelve native skin/base heads. No hair-only base substitution.",
+  "contract": {
+    "body": [
+      "male",
+      "female"
+    ],
+    "skins": [
+      "skin-1",
+      "skin-2",
+      "skin-3",
+      "skin-4",
+      "skin-5",
+      "skin-6"
+    ],
+    "outfits": [
+      "outfit-1",
+      "outfit-2",
+      "outfit-3",
+      "outfit-4",
+      "outfit-5",
+      "outfit-6"
+    ],
+    "hair": [
+      "none",
+      "hair-1",
+      "hair-2",
+      "hair-3",
+      "hair-4",
+      "hair-5",
+      "hair-6"
+    ],
+    "accessories": [
+      "none",
+      "accessory-1",
+      "accessory-2",
+      "accessory-3",
+      "accessory-4",
+      "accessory-5",
+      "accessory-6"
+    ],
+    "badges": [
+      "none",
+      "star-pin",
+      "trophy-pin",
+      "compass-pin"
+    ],
+    "compatibility": "Legacy absent/unknown body renders Male. All saved option IDs remain stable. Badge crops match root-generated current static UI atlas."
+  },
+  "staticBehavior": {
+    "result": "PASS",
+    "checks": {
+      "animationChannels": 0,
+      "jointNodes": 0,
+      "unchanged": true,
+      "ready": true,
+      "uniformRasterScale": true
+    },
+    "implementation": "No animation definitions, Web Animations calls, timers, RAF, hover/focus handlers, joints, hands or separate limb layers. setMood/seek/play/pause are inert compatibility methods. Responsive square containment changes size only when the container resizes.",
+    "selector": "Mount slot uses data-avatar-static; internal frame uses data-avatar-render=static and data-ready=true."
+  },
+  "visualProof": {
+    "capture": {
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-static\\final-v2\\capture.json",
+      "sha256": "6dd70f661729b346c45788ec40ed5618484a7933553992c8535f1cd7d6ba7539"
+    },
+    "renderedRows": 128,
+    "uniqueAvatarStates": 114,
+    "sheets": [
+      {
+        "group": "primary",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-static\\final-v2\\primary-sheet-1.png",
+        "sha256": "fb7c30235e5ddcd07b39bfb1b5095083e441917549e4f269c2323eea585e46c0",
+        "cases": [
+          {
+            "id": "male-set-1",
+            "body": "male",
+            "skin": "skin-1",
+            "outfit": "outfit-1",
+            "hair": "hair-1",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "male-set-2",
+            "body": "male",
+            "skin": "skin-2",
+            "outfit": "outfit-2",
+            "hair": "hair-2",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "male-set-3",
+            "body": "male",
+            "skin": "skin-3",
+            "outfit": "outfit-3",
+            "hair": "hair-3",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "male-set-4",
+            "body": "male",
+            "skin": "skin-4",
+            "outfit": "outfit-4",
+            "hair": "hair-4",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "male-set-5",
+            "body": "male",
+            "skin": "skin-5",
+            "outfit": "outfit-5",
+            "hair": "hair-5",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "male-set-6",
+            "body": "male",
+            "skin": "skin-6",
+            "outfit": "outfit-6",
+            "hair": "hair-6",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "female-set-1",
+            "body": "female",
+            "skin": "skin-1",
+            "outfit": "outfit-1",
+            "hair": "hair-1",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "female-set-2",
+            "body": "female",
+            "skin": "skin-2",
+            "outfit": "outfit-2",
+            "hair": "hair-2",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "female-set-3",
+            "body": "female",
+            "skin": "skin-3",
+            "outfit": "outfit-3",
+            "hair": "hair-3",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "female-set-4",
+            "body": "female",
+            "skin": "skin-4",
+            "outfit": "outfit-4",
+            "hair": "hair-4",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "female-set-5",
+            "body": "female",
+            "skin": "skin-5",
+            "outfit": "outfit-5",
+            "hair": "hair-5",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "female-set-6",
+            "body": "female",
+            "skin": "skin-6",
+            "outfit": "outfit-6",
+            "hair": "hair-6",
+            "accessory": "none",
+            "badge": "none"
+          }
+        ]
+      },
+      {
+        "group": "families",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-static\\final-v2\\families-sheet-1.png",
+        "sha256": "d25855a3d0bc7163615ff040a1588a4883fc53500334266b8e2428f64d45d56a",
+        "cases": [
+          {
+            "id": "male-outfit-1-none",
+            "body": "male",
+            "skin": "skin-1",
+            "outfit": "outfit-1",
+            "hair": "hair-1",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "male-outfit-1-accessory-1",
+            "body": "male",
+            "skin": "skin-1",
+            "outfit": "outfit-1",
+            "hair": "hair-1",
+            "accessory": "accessory-1",
+            "badge": "none"
+          },
+          {
+            "id": "male-outfit-1-accessory-2",
+            "body": "male",
+            "skin": "skin-1",
+            "outfit": "outfit-1",
+            "hair": "hair-1",
+            "accessory": "accessory-2",
+            "badge": "none"
+          },
+          {
+            "id": "male-outfit-1-accessory-3",
+            "body": "male",
+            "skin": "skin-1",
+            "outfit": "outfit-1",
+            "hair": "hair-1",
+            "accessory": "accessory-3",
+            "badge": "none"
+          },
+          {
+            "id": "male-outfit-1-accessory-4",
+            "body": "male",
+            "skin": "skin-1",
+            "outfit": "outfit-1",
+            "hair": "hair-1",
+            "accessory": "accessory-4",
+            "badge": "none"
+          },
+          {
+            "id": "male-outfit-1-accessory-5",
+            "body": "male",
+            "skin": "skin-1",
+            "outfit": "outfit-1",
+            "hair": "hair-1",
+            "accessory": "accessory-5",
+            "badge": "none"
+          },
+          {
+            "id": "male-outfit-1-accessory-6",
+            "body": "male",
+            "skin": "skin-1",
+            "outfit": "outfit-1",
+            "hair": "hair-1",
+            "accessory": "accessory-6",
+            "badge": "none"
+          },
+          {
+            "id": "male-outfit-2-none",
+            "body": "male",
+            "skin": "skin-2",
+            "outfit": "outfit-2",
+            "hair": "hair-2",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "male-outfit-2-accessory-1",
+            "body": "male",
+            "skin": "skin-2",
+            "outfit": "outfit-2",
+            "hair": "hair-2",
+            "accessory": "accessory-1",
+            "badge": "none"
+          },
+          {
+            "id": "male-outfit-2-accessory-2",
+            "body": "male",
+            "skin": "skin-2",
+            "outfit": "outfit-2",
+            "hair": "hair-2",
+            "accessory": "accessory-2",
+            "badge": "none"
+          },
+          {
+            "id": "male-outfit-2-accessory-3",
+            "body": "male",
+            "skin": "skin-2",
+            "outfit": "outfit-2",
+            "hair": "hair-2",
+            "accessory": "accessory-3",
+            "badge": "none"
+          },
+          {
+            "id": "male-outfit-2-accessory-4",
+            "body": "male",
+            "skin": "skin-2",
+            "outfit": "outfit-2",
+            "hair": "hair-2",
+            "accessory": "accessory-4",
+            "badge": "none"
+          }
+        ]
+      },
+      {
+        "group": "families",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-static\\final-v2\\families-sheet-2.png",
+        "sha256": "07cea27915ab64a20a200e98fdae32a6d8011621d5d17e14caa16ef717d75c5a",
+        "cases": [
+          {
+            "id": "male-outfit-2-accessory-5",
+            "body": "male",
+            "skin": "skin-2",
+            "outfit": "outfit-2",
+            "hair": "hair-2",
+            "accessory": "accessory-5",
+            "badge": "none"
+          },
+          {
+            "id": "male-outfit-2-accessory-6",
+            "body": "male",
+            "skin": "skin-2",
+            "outfit": "outfit-2",
+            "hair": "hair-2",
+            "accessory": "accessory-6",
+            "badge": "none"
+          },
+          {
+            "id": "male-outfit-3-none",
+            "body": "male",
+            "skin": "skin-3",
+            "outfit": "outfit-3",
+            "hair": "hair-3",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "male-outfit-3-accessory-1",
+            "body": "male",
+            "skin": "skin-3",
+            "outfit": "outfit-3",
+            "hair": "hair-3",
+            "accessory": "accessory-1",
+            "badge": "none"
+          },
+          {
+            "id": "male-outfit-3-accessory-2",
+            "body": "male",
+            "skin": "skin-3",
+            "outfit": "outfit-3",
+            "hair": "hair-3",
+            "accessory": "accessory-2",
+            "badge": "none"
+          },
+          {
+            "id": "male-outfit-3-accessory-3",
+            "body": "male",
+            "skin": "skin-3",
+            "outfit": "outfit-3",
+            "hair": "hair-3",
+            "accessory": "accessory-3",
+            "badge": "none"
+          },
+          {
+            "id": "male-outfit-3-accessory-4",
+            "body": "male",
+            "skin": "skin-3",
+            "outfit": "outfit-3",
+            "hair": "hair-3",
+            "accessory": "accessory-4",
+            "badge": "none"
+          },
+          {
+            "id": "male-outfit-3-accessory-5",
+            "body": "male",
+            "skin": "skin-3",
+            "outfit": "outfit-3",
+            "hair": "hair-3",
+            "accessory": "accessory-5",
+            "badge": "none"
+          },
+          {
+            "id": "male-outfit-3-accessory-6",
+            "body": "male",
+            "skin": "skin-3",
+            "outfit": "outfit-3",
+            "hair": "hair-3",
+            "accessory": "accessory-6",
+            "badge": "none"
+          },
+          {
+            "id": "male-outfit-4-none",
+            "body": "male",
+            "skin": "skin-4",
+            "outfit": "outfit-4",
+            "hair": "hair-4",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "male-outfit-4-accessory-1",
+            "body": "male",
+            "skin": "skin-4",
+            "outfit": "outfit-4",
+            "hair": "hair-4",
+            "accessory": "accessory-1",
+            "badge": "none"
+          },
+          {
+            "id": "male-outfit-4-accessory-2",
+            "body": "male",
+            "skin": "skin-4",
+            "outfit": "outfit-4",
+            "hair": "hair-4",
+            "accessory": "accessory-2",
+            "badge": "none"
+          }
+        ]
+      },
+      {
+        "group": "families",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-static\\final-v2\\families-sheet-3.png",
+        "sha256": "fda573f2fb409b3add556aa74d76a89be05ec6fc3bd6c9bfa33c3d39dc6ae7aa",
+        "cases": [
+          {
+            "id": "male-outfit-4-accessory-3",
+            "body": "male",
+            "skin": "skin-4",
+            "outfit": "outfit-4",
+            "hair": "hair-4",
+            "accessory": "accessory-3",
+            "badge": "none"
+          },
+          {
+            "id": "male-outfit-4-accessory-4",
+            "body": "male",
+            "skin": "skin-4",
+            "outfit": "outfit-4",
+            "hair": "hair-4",
+            "accessory": "accessory-4",
+            "badge": "none"
+          },
+          {
+            "id": "male-outfit-4-accessory-5",
+            "body": "male",
+            "skin": "skin-4",
+            "outfit": "outfit-4",
+            "hair": "hair-4",
+            "accessory": "accessory-5",
+            "badge": "none"
+          },
+          {
+            "id": "male-outfit-4-accessory-6",
+            "body": "male",
+            "skin": "skin-4",
+            "outfit": "outfit-4",
+            "hair": "hair-4",
+            "accessory": "accessory-6",
+            "badge": "none"
+          },
+          {
+            "id": "male-outfit-5-none",
+            "body": "male",
+            "skin": "skin-5",
+            "outfit": "outfit-5",
+            "hair": "hair-5",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "male-outfit-5-accessory-1",
+            "body": "male",
+            "skin": "skin-5",
+            "outfit": "outfit-5",
+            "hair": "hair-5",
+            "accessory": "accessory-1",
+            "badge": "none"
+          },
+          {
+            "id": "male-outfit-5-accessory-2",
+            "body": "male",
+            "skin": "skin-5",
+            "outfit": "outfit-5",
+            "hair": "hair-5",
+            "accessory": "accessory-2",
+            "badge": "none"
+          },
+          {
+            "id": "male-outfit-5-accessory-3",
+            "body": "male",
+            "skin": "skin-5",
+            "outfit": "outfit-5",
+            "hair": "hair-5",
+            "accessory": "accessory-3",
+            "badge": "none"
+          },
+          {
+            "id": "male-outfit-5-accessory-4",
+            "body": "male",
+            "skin": "skin-5",
+            "outfit": "outfit-5",
+            "hair": "hair-5",
+            "accessory": "accessory-4",
+            "badge": "none"
+          },
+          {
+            "id": "male-outfit-5-accessory-5",
+            "body": "male",
+            "skin": "skin-5",
+            "outfit": "outfit-5",
+            "hair": "hair-5",
+            "accessory": "accessory-5",
+            "badge": "none"
+          },
+          {
+            "id": "male-outfit-5-accessory-6",
+            "body": "male",
+            "skin": "skin-5",
+            "outfit": "outfit-5",
+            "hair": "hair-5",
+            "accessory": "accessory-6",
+            "badge": "none"
+          },
+          {
+            "id": "male-outfit-6-none",
+            "body": "male",
+            "skin": "skin-6",
+            "outfit": "outfit-6",
+            "hair": "hair-6",
+            "accessory": "none",
+            "badge": "none"
+          }
+        ]
+      },
+      {
+        "group": "families",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-static\\final-v2\\families-sheet-4.png",
+        "sha256": "be3a73a5900b61bdf0fa6c073f30d85a502d1a966da3fbf4e800624bf0d5b070",
+        "cases": [
+          {
+            "id": "male-outfit-6-accessory-1",
+            "body": "male",
+            "skin": "skin-6",
+            "outfit": "outfit-6",
+            "hair": "hair-6",
+            "accessory": "accessory-1",
+            "badge": "none"
+          },
+          {
+            "id": "male-outfit-6-accessory-2",
+            "body": "male",
+            "skin": "skin-6",
+            "outfit": "outfit-6",
+            "hair": "hair-6",
+            "accessory": "accessory-2",
+            "badge": "none"
+          },
+          {
+            "id": "male-outfit-6-accessory-3",
+            "body": "male",
+            "skin": "skin-6",
+            "outfit": "outfit-6",
+            "hair": "hair-6",
+            "accessory": "accessory-3",
+            "badge": "none"
+          },
+          {
+            "id": "male-outfit-6-accessory-4",
+            "body": "male",
+            "skin": "skin-6",
+            "outfit": "outfit-6",
+            "hair": "hair-6",
+            "accessory": "accessory-4",
+            "badge": "none"
+          },
+          {
+            "id": "male-outfit-6-accessory-5",
+            "body": "male",
+            "skin": "skin-6",
+            "outfit": "outfit-6",
+            "hair": "hair-6",
+            "accessory": "accessory-5",
+            "badge": "none"
+          },
+          {
+            "id": "male-outfit-6-accessory-6",
+            "body": "male",
+            "skin": "skin-6",
+            "outfit": "outfit-6",
+            "hair": "hair-6",
+            "accessory": "accessory-6",
+            "badge": "none"
+          },
+          {
+            "id": "female-outfit-1-none",
+            "body": "female",
+            "skin": "skin-1",
+            "outfit": "outfit-1",
+            "hair": "hair-1",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "female-outfit-1-accessory-1",
+            "body": "female",
+            "skin": "skin-1",
+            "outfit": "outfit-1",
+            "hair": "hair-1",
+            "accessory": "accessory-1",
+            "badge": "none"
+          },
+          {
+            "id": "female-outfit-1-accessory-2",
+            "body": "female",
+            "skin": "skin-1",
+            "outfit": "outfit-1",
+            "hair": "hair-1",
+            "accessory": "accessory-2",
+            "badge": "none"
+          },
+          {
+            "id": "female-outfit-1-accessory-3",
+            "body": "female",
+            "skin": "skin-1",
+            "outfit": "outfit-1",
+            "hair": "hair-1",
+            "accessory": "accessory-3",
+            "badge": "none"
+          },
+          {
+            "id": "female-outfit-1-accessory-4",
+            "body": "female",
+            "skin": "skin-1",
+            "outfit": "outfit-1",
+            "hair": "hair-1",
+            "accessory": "accessory-4",
+            "badge": "none"
+          },
+          {
+            "id": "female-outfit-1-accessory-5",
+            "body": "female",
+            "skin": "skin-1",
+            "outfit": "outfit-1",
+            "hair": "hair-1",
+            "accessory": "accessory-5",
+            "badge": "none"
+          }
+        ]
+      },
+      {
+        "group": "families",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-static\\final-v2\\families-sheet-5.png",
+        "sha256": "df711e1548cb728fdf421c7cc87c5a76cd2ff919d8ae1391c239b4e6f8d4a068",
+        "cases": [
+          {
+            "id": "female-outfit-1-accessory-6",
+            "body": "female",
+            "skin": "skin-1",
+            "outfit": "outfit-1",
+            "hair": "hair-1",
+            "accessory": "accessory-6",
+            "badge": "none"
+          },
+          {
+            "id": "female-outfit-2-none",
+            "body": "female",
+            "skin": "skin-2",
+            "outfit": "outfit-2",
+            "hair": "hair-2",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "female-outfit-2-accessory-1",
+            "body": "female",
+            "skin": "skin-2",
+            "outfit": "outfit-2",
+            "hair": "hair-2",
+            "accessory": "accessory-1",
+            "badge": "none"
+          },
+          {
+            "id": "female-outfit-2-accessory-2",
+            "body": "female",
+            "skin": "skin-2",
+            "outfit": "outfit-2",
+            "hair": "hair-2",
+            "accessory": "accessory-2",
+            "badge": "none"
+          },
+          {
+            "id": "female-outfit-2-accessory-3",
+            "body": "female",
+            "skin": "skin-2",
+            "outfit": "outfit-2",
+            "hair": "hair-2",
+            "accessory": "accessory-3",
+            "badge": "none"
+          },
+          {
+            "id": "female-outfit-2-accessory-4",
+            "body": "female",
+            "skin": "skin-2",
+            "outfit": "outfit-2",
+            "hair": "hair-2",
+            "accessory": "accessory-4",
+            "badge": "none"
+          },
+          {
+            "id": "female-outfit-2-accessory-5",
+            "body": "female",
+            "skin": "skin-2",
+            "outfit": "outfit-2",
+            "hair": "hair-2",
+            "accessory": "accessory-5",
+            "badge": "none"
+          },
+          {
+            "id": "female-outfit-2-accessory-6",
+            "body": "female",
+            "skin": "skin-2",
+            "outfit": "outfit-2",
+            "hair": "hair-2",
+            "accessory": "accessory-6",
+            "badge": "none"
+          },
+          {
+            "id": "female-outfit-3-none",
+            "body": "female",
+            "skin": "skin-3",
+            "outfit": "outfit-3",
+            "hair": "hair-3",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "female-outfit-3-accessory-1",
+            "body": "female",
+            "skin": "skin-3",
+            "outfit": "outfit-3",
+            "hair": "hair-3",
+            "accessory": "accessory-1",
+            "badge": "none"
+          },
+          {
+            "id": "female-outfit-3-accessory-2",
+            "body": "female",
+            "skin": "skin-3",
+            "outfit": "outfit-3",
+            "hair": "hair-3",
+            "accessory": "accessory-2",
+            "badge": "none"
+          },
+          {
+            "id": "female-outfit-3-accessory-3",
+            "body": "female",
+            "skin": "skin-3",
+            "outfit": "outfit-3",
+            "hair": "hair-3",
+            "accessory": "accessory-3",
+            "badge": "none"
+          }
+        ]
+      },
+      {
+        "group": "families",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-static\\final-v2\\families-sheet-6.png",
+        "sha256": "da8d347095bd149c53ef97b177fd0da02292576273f5db177faa0129f22f421d",
+        "cases": [
+          {
+            "id": "female-outfit-3-accessory-4",
+            "body": "female",
+            "skin": "skin-3",
+            "outfit": "outfit-3",
+            "hair": "hair-3",
+            "accessory": "accessory-4",
+            "badge": "none"
+          },
+          {
+            "id": "female-outfit-3-accessory-5",
+            "body": "female",
+            "skin": "skin-3",
+            "outfit": "outfit-3",
+            "hair": "hair-3",
+            "accessory": "accessory-5",
+            "badge": "none"
+          },
+          {
+            "id": "female-outfit-3-accessory-6",
+            "body": "female",
+            "skin": "skin-3",
+            "outfit": "outfit-3",
+            "hair": "hair-3",
+            "accessory": "accessory-6",
+            "badge": "none"
+          },
+          {
+            "id": "female-outfit-4-none",
+            "body": "female",
+            "skin": "skin-4",
+            "outfit": "outfit-4",
+            "hair": "hair-4",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "female-outfit-4-accessory-1",
+            "body": "female",
+            "skin": "skin-4",
+            "outfit": "outfit-4",
+            "hair": "hair-4",
+            "accessory": "accessory-1",
+            "badge": "none"
+          },
+          {
+            "id": "female-outfit-4-accessory-2",
+            "body": "female",
+            "skin": "skin-4",
+            "outfit": "outfit-4",
+            "hair": "hair-4",
+            "accessory": "accessory-2",
+            "badge": "none"
+          },
+          {
+            "id": "female-outfit-4-accessory-3",
+            "body": "female",
+            "skin": "skin-4",
+            "outfit": "outfit-4",
+            "hair": "hair-4",
+            "accessory": "accessory-3",
+            "badge": "none"
+          },
+          {
+            "id": "female-outfit-4-accessory-4",
+            "body": "female",
+            "skin": "skin-4",
+            "outfit": "outfit-4",
+            "hair": "hair-4",
+            "accessory": "accessory-4",
+            "badge": "none"
+          },
+          {
+            "id": "female-outfit-4-accessory-5",
+            "body": "female",
+            "skin": "skin-4",
+            "outfit": "outfit-4",
+            "hair": "hair-4",
+            "accessory": "accessory-5",
+            "badge": "none"
+          },
+          {
+            "id": "female-outfit-4-accessory-6",
+            "body": "female",
+            "skin": "skin-4",
+            "outfit": "outfit-4",
+            "hair": "hair-4",
+            "accessory": "accessory-6",
+            "badge": "none"
+          },
+          {
+            "id": "female-outfit-5-none",
+            "body": "female",
+            "skin": "skin-5",
+            "outfit": "outfit-5",
+            "hair": "hair-5",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "female-outfit-5-accessory-1",
+            "body": "female",
+            "skin": "skin-5",
+            "outfit": "outfit-5",
+            "hair": "hair-5",
+            "accessory": "accessory-1",
+            "badge": "none"
+          }
+        ]
+      },
+      {
+        "group": "families",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-static\\final-v2\\families-sheet-7.png",
+        "sha256": "086f5f0a4e9bf9113690d0b9f6289f109bc2b0dbddfa8bae2f49a7e860784a69",
+        "cases": [
+          {
+            "id": "female-outfit-5-accessory-2",
+            "body": "female",
+            "skin": "skin-5",
+            "outfit": "outfit-5",
+            "hair": "hair-5",
+            "accessory": "accessory-2",
+            "badge": "none"
+          },
+          {
+            "id": "female-outfit-5-accessory-3",
+            "body": "female",
+            "skin": "skin-5",
+            "outfit": "outfit-5",
+            "hair": "hair-5",
+            "accessory": "accessory-3",
+            "badge": "none"
+          },
+          {
+            "id": "female-outfit-5-accessory-4",
+            "body": "female",
+            "skin": "skin-5",
+            "outfit": "outfit-5",
+            "hair": "hair-5",
+            "accessory": "accessory-4",
+            "badge": "none"
+          },
+          {
+            "id": "female-outfit-5-accessory-5",
+            "body": "female",
+            "skin": "skin-5",
+            "outfit": "outfit-5",
+            "hair": "hair-5",
+            "accessory": "accessory-5",
+            "badge": "none"
+          },
+          {
+            "id": "female-outfit-5-accessory-6",
+            "body": "female",
+            "skin": "skin-5",
+            "outfit": "outfit-5",
+            "hair": "hair-5",
+            "accessory": "accessory-6",
+            "badge": "none"
+          },
+          {
+            "id": "female-outfit-6-none",
+            "body": "female",
+            "skin": "skin-6",
+            "outfit": "outfit-6",
+            "hair": "hair-6",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "female-outfit-6-accessory-1",
+            "body": "female",
+            "skin": "skin-6",
+            "outfit": "outfit-6",
+            "hair": "hair-6",
+            "accessory": "accessory-1",
+            "badge": "none"
+          },
+          {
+            "id": "female-outfit-6-accessory-2",
+            "body": "female",
+            "skin": "skin-6",
+            "outfit": "outfit-6",
+            "hair": "hair-6",
+            "accessory": "accessory-2",
+            "badge": "none"
+          },
+          {
+            "id": "female-outfit-6-accessory-3",
+            "body": "female",
+            "skin": "skin-6",
+            "outfit": "outfit-6",
+            "hair": "hair-6",
+            "accessory": "accessory-3",
+            "badge": "none"
+          },
+          {
+            "id": "female-outfit-6-accessory-4",
+            "body": "female",
+            "skin": "skin-6",
+            "outfit": "outfit-6",
+            "hair": "hair-6",
+            "accessory": "accessory-4",
+            "badge": "none"
+          },
+          {
+            "id": "female-outfit-6-accessory-5",
+            "body": "female",
+            "skin": "skin-6",
+            "outfit": "outfit-6",
+            "hair": "hair-6",
+            "accessory": "accessory-5",
+            "badge": "none"
+          },
+          {
+            "id": "female-outfit-6-accessory-6",
+            "body": "female",
+            "skin": "skin-6",
+            "outfit": "outfit-6",
+            "hair": "hair-6",
+            "accessory": "accessory-6",
+            "badge": "none"
+          }
+        ]
+      },
+      {
+        "group": "hair",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-static\\final-v2\\hair-sheet-1.png",
+        "sha256": "6ac8caafac469d62aafe5cf0165f149fb89e6c7a607ea60961e482062491cd80",
+        "cases": [
+          {
+            "id": "male-none",
+            "body": "male",
+            "skin": "skin-3",
+            "outfit": "outfit-2",
+            "hair": "none",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "male-hair-1",
+            "body": "male",
+            "skin": "skin-3",
+            "outfit": "outfit-2",
+            "hair": "hair-1",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "male-hair-2",
+            "body": "male",
+            "skin": "skin-3",
+            "outfit": "outfit-2",
+            "hair": "hair-2",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "male-hair-3",
+            "body": "male",
+            "skin": "skin-3",
+            "outfit": "outfit-2",
+            "hair": "hair-3",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "male-hair-4",
+            "body": "male",
+            "skin": "skin-3",
+            "outfit": "outfit-2",
+            "hair": "hair-4",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "male-hair-5",
+            "body": "male",
+            "skin": "skin-3",
+            "outfit": "outfit-2",
+            "hair": "hair-5",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "male-hair-6",
+            "body": "male",
+            "skin": "skin-3",
+            "outfit": "outfit-2",
+            "hair": "hair-6",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "female-none",
+            "body": "female",
+            "skin": "skin-3",
+            "outfit": "outfit-2",
+            "hair": "none",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "female-hair-1",
+            "body": "female",
+            "skin": "skin-3",
+            "outfit": "outfit-2",
+            "hair": "hair-1",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "female-hair-2",
+            "body": "female",
+            "skin": "skin-3",
+            "outfit": "outfit-2",
+            "hair": "hair-2",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "female-hair-3",
+            "body": "female",
+            "skin": "skin-3",
+            "outfit": "outfit-2",
+            "hair": "hair-3",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "female-hair-4",
+            "body": "female",
+            "skin": "skin-3",
+            "outfit": "outfit-2",
+            "hair": "hair-4",
+            "accessory": "none",
+            "badge": "none"
+          }
+        ]
+      },
+      {
+        "group": "hair",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-static\\final-v2\\hair-sheet-2.png",
+        "sha256": "f319fe4400d6992fac86b2c6b24e85062dfd7397a21efdc86a88b8ca1fcef0c1",
+        "cases": [
+          {
+            "id": "female-hair-5",
+            "body": "female",
+            "skin": "skin-3",
+            "outfit": "outfit-2",
+            "hair": "hair-5",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "female-hair-6",
+            "body": "female",
+            "skin": "skin-3",
+            "outfit": "outfit-2",
+            "hair": "hair-6",
+            "accessory": "none",
+            "badge": "none"
+          }
+        ]
+      },
+      {
+        "group": "skins",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-static\\final-v2\\skins-sheet-1.png",
+        "sha256": "9ae0579df94022c77bcfe9bc72a8b0d1fb325806bc5a402a7b63bc9a2a743c5b",
+        "cases": [
+          {
+            "id": "male-skin-1",
+            "body": "male",
+            "skin": "skin-1",
+            "outfit": "outfit-2",
+            "hair": "none",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "male-skin-2",
+            "body": "male",
+            "skin": "skin-2",
+            "outfit": "outfit-2",
+            "hair": "none",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "male-skin-3",
+            "body": "male",
+            "skin": "skin-3",
+            "outfit": "outfit-2",
+            "hair": "none",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "male-skin-4",
+            "body": "male",
+            "skin": "skin-4",
+            "outfit": "outfit-2",
+            "hair": "none",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "male-skin-5",
+            "body": "male",
+            "skin": "skin-5",
+            "outfit": "outfit-2",
+            "hair": "none",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "male-skin-6",
+            "body": "male",
+            "skin": "skin-6",
+            "outfit": "outfit-2",
+            "hair": "none",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "female-skin-1",
+            "body": "female",
+            "skin": "skin-1",
+            "outfit": "outfit-2",
+            "hair": "none",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "female-skin-2",
+            "body": "female",
+            "skin": "skin-2",
+            "outfit": "outfit-2",
+            "hair": "none",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "female-skin-3",
+            "body": "female",
+            "skin": "skin-3",
+            "outfit": "outfit-2",
+            "hair": "none",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "female-skin-4",
+            "body": "female",
+            "skin": "skin-4",
+            "outfit": "outfit-2",
+            "hair": "none",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "female-skin-5",
+            "body": "female",
+            "skin": "skin-5",
+            "outfit": "outfit-2",
+            "hair": "none",
+            "accessory": "none",
+            "badge": "none"
+          },
+          {
+            "id": "female-skin-6",
+            "body": "female",
+            "skin": "skin-6",
+            "outfit": "outfit-2",
+            "hair": "none",
+            "accessory": "none",
+            "badge": "none"
+          }
+        ]
+      },
+      {
+        "group": "badges",
+        "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-static\\final-v2\\badges-sheet-1.png",
+        "sha256": "1c82ff4c7e2fdd19c4d94d991f08bfb97129e243764217a842d57d34592f85f0",
+        "cases": [
+          {
+            "id": "male-star-pin",
+            "body": "male",
+            "skin": "skin-2",
+            "outfit": "outfit-1",
+            "hair": "hair-1",
+            "accessory": "none",
+            "badge": "star-pin"
+          },
+          {
+            "id": "male-trophy-pin",
+            "body": "male",
+            "skin": "skin-2",
+            "outfit": "outfit-1",
+            "hair": "hair-1",
+            "accessory": "none",
+            "badge": "trophy-pin"
+          },
+          {
+            "id": "male-compass-pin",
+            "body": "male",
+            "skin": "skin-2",
+            "outfit": "outfit-1",
+            "hair": "hair-1",
+            "accessory": "none",
+            "badge": "compass-pin"
+          },
+          {
+            "id": "female-star-pin",
+            "body": "female",
+            "skin": "skin-2",
+            "outfit": "outfit-1",
+            "hair": "hair-1",
+            "accessory": "none",
+            "badge": "star-pin"
+          },
+          {
+            "id": "female-trophy-pin",
+            "body": "female",
+            "skin": "skin-2",
+            "outfit": "outfit-1",
+            "hair": "hair-1",
+            "accessory": "none",
+            "badge": "trophy-pin"
+          },
+          {
+            "id": "female-compass-pin",
+            "body": "female",
+            "skin": "skin-2",
+            "outfit": "outfit-1",
+            "hair": "hair-1",
+            "accessory": "none",
+            "badge": "compass-pin"
+          }
+        ]
+      }
+    ],
+    "sizes": "Every row has a320x320 main portrait and44x56 compact thumbnail; all12 final sheets directly inspected by the author.",
+    "coverage": "Both bases, six skin tones, no hair and all six hair silhouettes; every six-outfit by seven-accessory family across both bases, and all three badge pins for both bases.",
+    "findings": [
+      "All clothing is a single connected native shoulder-to-chest silhouette, with no independent arms or hands.",
+      "Heads and short necks meet every collar without visible open gaps; hair retains the wide rectangular jaw shape and leaves eyes/smiles visible.",
+      "Final round glasses have alpha-zero lens windows; native eyes remain visible. Headphones sit at the ears, caps overlap hair, scarf meets the neck, satchel strap sits on the shoulder/chest, backpack remains behind the bust.",
+      "No modeled shadow planes, rim highlights, borders, cast shadows or gradients appear in the actual cream browser composites. Flat material blocks remain clean at main and compact sizes.",
+      "All native images preserve aspect ratio; no source-image distortion or old-art fallback is present."
+    ]
+  },
+  "persistenceEvidence": {
+    "path": "reports\\avatar-static-persistence.json",
+    "sha256": "8d8efee9df6a3b5203d71ba520b30e7bce18cde3477fcd4c90b0cbbe036c0066"
+  },
+  "separateBackendClaim": "Persistence is recorded separately from painted fit. It passed five real isolated-profile checks, preserved progress and restored the original QA avatar.",
+  "limits": "Finite reviewed combinations and exact source binding; does not claim every possible cross-product was individually viewed. Root owns independent integrated-page review, sitewide regression, cache and publication.",
+  "pass": true
+}

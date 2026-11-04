@@ -1,0 +1,48 @@
+{
+  "base": "http://127.0.0.1:8898/Horizons/App/",
+  "scope": "Targeted final mobile hero spacing correction after the complete295-screen run. Only styles/app.css changed; full hosted regression follows publication.",
+  "screens": [
+    {
+      "width": 320,
+      "scrollWidth": 320,
+      "overlaps": [],
+      "contained": true,
+      "running": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-static-final-layout\\learn-320.png",
+      "sha256": "800829173b36859fb38bec8996aae8ef7c3f7253daa2dbc6c5f4bbe4bed4e822"
+    },
+    {
+      "width": 390,
+      "scrollWidth": 390,
+      "overlaps": [],
+      "contained": true,
+      "running": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-static-final-layout\\learn-390.png",
+      "sha256": "8be07fc787c55ae7e957fbaf7210fed100ccdaa89bf6fc3e57c24b4e76851aa5"
+    },
+    {
+      "width": 768,
+      "scrollWidth": 768,
+      "overlaps": [],
+      "contained": true,
+      "running": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-static-final-layout\\learn-768.png",
+      "sha256": "d3bdac874eba86a1cf8c1c457a1b1a675e3e889a8820a65a29063733c4f69b4d"
+    },
+    {
+      "width": 1440,
+      "scrollWidth": 1440,
+      "overlaps": [],
+      "contained": true,
+      "running": 0,
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-static-final-layout\\learn-1440.png",
+      "sha256": "7f9245e17b2d72033b39e8c83fa8eb7feb1fb77d11313c433b651bf9fcddaa64"
+    }
+  ],
+  "errors": [],
+  "pass": true,
+  "changedRuntimeFiles": [
+    "styles/app.css"
+  ],
+  "finalStyleSha256": "67e2e21c6ceeea54403255307c43c84d6d77a3cf4fdb1adda6c9391d3e241f1e"
+}

@@ -1,0 +1,442 @@
+{
+  "characters": {
+    "pico": {
+      "idle": {
+        "src": "assets/art/cast-static-pico-v2.png",
+        "atlas": {
+          "width": 1254,
+          "height": 1254
+        },
+        "frame": {
+          "x": 206,
+          "y": 17,
+          "w": 250,
+          "h": 585
+        },
+        "posture": "greet",
+        "anatomy": "complete-native-figure"
+      },
+      "wave": {
+        "src": "assets/art/cast-static-pico-v2.png",
+        "atlas": {
+          "width": 1254,
+          "height": 1254
+        },
+        "frame": {
+          "x": 206,
+          "y": 17,
+          "w": 250,
+          "h": 585
+        },
+        "posture": "greet",
+        "anatomy": "complete-native-figure"
+      }
+    },
+    "mina": {
+      "idle": {
+        "src": "assets/art/cast-static-mina-v2.png",
+        "atlas": {
+          "width": 1254,
+          "height": 1254
+        },
+        "frame": {
+          "x": 234,
+          "y": 32,
+          "w": 285,
+          "h": 552
+        },
+        "posture": "step",
+        "anatomy": "complete-native-figure"
+      },
+      "wave": {
+        "src": "assets/art/cast-static-mina-v2.png",
+        "atlas": {
+          "width": 1254,
+          "height": 1254
+        },
+        "frame": {
+          "x": 234,
+          "y": 32,
+          "w": 285,
+          "h": 552
+        },
+        "posture": "step",
+        "anatomy": "complete-native-figure"
+      }
+    },
+    "alex": {
+      "idle": {
+        "src": "assets/art/cast-static-alex-v3.png",
+        "atlas": {
+          "width": 1254,
+          "height": 1254
+        },
+        "frame": {
+          "x": 174,
+          "y": 52,
+          "w": 367,
+          "h": 540
+        },
+        "posture": "listen",
+        "anatomy": "complete-native-figure"
+      },
+      "wave": {
+        "src": "assets/art/cast-static-alex-v3.png",
+        "atlas": {
+          "width": 1254,
+          "height": 1254
+        },
+        "frame": {
+          "x": 174,
+          "y": 52,
+          "w": 367,
+          "h": 540
+        },
+        "posture": "listen",
+        "anatomy": "complete-native-figure"
+      }
+    },
+    "jo": {
+      "idle": {
+        "src": "assets/art/cast-static-jo-v3.png",
+        "atlas": {
+          "width": 1254,
+          "height": 1254
+        },
+        "frame": {
+          "x": 193,
+          "y": 38,
+          "w": 284,
+          "h": 556
+        },
+        "posture": "offer",
+        "anatomy": "complete-native-figure"
+      },
+      "wave": {
+        "src": "assets/art/cast-static-jo-v3.png",
+        "atlas": {
+          "width": 1254,
+          "height": 1254
+        },
+        "frame": {
+          "x": 193,
+          "y": 38,
+          "w": 284,
+          "h": 556
+        },
+        "posture": "offer",
+        "anatomy": "complete-native-figure"
+      }
+    }
+  },
+  "postures": {
+    "pico": {
+      "greet": {
+        "src": "assets/art/cast-static-pico-v2.png",
+        "atlas": {
+          "width": 1254,
+          "height": 1254
+        },
+        "frame": {
+          "x": 206,
+          "y": 17,
+          "w": 250,
+          "h": 585
+        },
+        "posture": "greet",
+        "anatomy": "complete-native-figure"
+      },
+      "explore": {
+        "src": "assets/art/cast-static-pico-v2.png",
+        "atlas": {
+          "width": 1254,
+          "height": 1254
+        },
+        "frame": {
+          "x": 764,
+          "y": 19,
+          "w": 248,
+          "h": 582
+        },
+        "posture": "explore",
+        "anatomy": "complete-native-figure"
+      },
+      "read": {
+        "src": "assets/art/cast-static-pico-v2.png",
+        "atlas": {
+          "width": 1254,
+          "height": 1254
+        },
+        "frame": {
+          "x": 206,
+          "y": 639,
+          "w": 236,
+          "h": 594
+        },
+        "posture": "read",
+        "anatomy": "complete-native-figure"
+      },
+      "jump": {
+        "src": "assets/art/cast-static-pico-v2.png",
+        "atlas": {
+          "width": 1254,
+          "height": 1254
+        },
+        "frame": {
+          "x": 729,
+          "y": 640,
+          "w": 299,
+          "h": 593
+        },
+        "posture": "jump",
+        "anatomy": "complete-native-figure"
+      },
+      "stride": {
+        "src": "assets/art/cast-static-pico-v2.png",
+        "atlas": {
+          "width": 1254,
+          "height": 1254
+        },
+        "frame": {
+          "x": 206,
+          "y": 17,
+          "w": 250,
+          "h": 585
+        },
+        "posture": "stride",
+        "anatomy": "complete-native-figure"
+      }
+    },
+    "mina": {
+      "step": {
+        "src": "assets/art/cast-static-mina-v2.png",
+        "atlas": {
+          "width": 1254,
+          "height": 1254
+        },
+        "frame": {
+          "x": 234,
+          "y": 32,
+          "w": 285,
+          "h": 552
+        },
+        "posture": "step",
+        "anatomy": "complete-native-figure"
+      },
+      "read": {
+        "src": "assets/art/cast-static-mina-v2.png",
+        "atlas": {
+          "width": 1254,
+          "height": 1254
+        },
+        "frame": {
+          "x": 802,
+          "y": 32,
+          "w": 202,
+          "h": 552
+        },
+        "posture": "read",
+        "anatomy": "complete-native-figure"
+      },
+      "map": {
+        "src": "assets/art/cast-static-mina-v2.png",
+        "atlas": {
+          "width": 1254,
+          "height": 1254
+        },
+        "frame": {
+          "x": 245,
+          "y": 644,
+          "w": 231,
+          "h": 563
+        },
+        "posture": "map",
+        "anatomy": "complete-native-figure"
+      },
+      "skip": {
+        "src": "assets/art/cast-static-mina-v2.png",
+        "atlas": {
+          "width": 1254,
+          "height": 1254
+        },
+        "frame": {
+          "x": 744,
+          "y": 644,
+          "w": 308,
+          "h": 562
+        },
+        "posture": "skip",
+        "anatomy": "complete-native-figure"
+      }
+    },
+    "alex": {
+      "listen": {
+        "src": "assets/art/cast-static-alex-v3.png",
+        "atlas": {
+          "width": 1254,
+          "height": 1254
+        },
+        "frame": {
+          "x": 174,
+          "y": 52,
+          "w": 367,
+          "h": 540
+        },
+        "posture": "listen",
+        "anatomy": "complete-native-figure"
+      },
+      "fix": {
+        "src": "assets/art/cast-static-alex-v3.png",
+        "atlas": {
+          "width": 1254,
+          "height": 1254
+        },
+        "frame": {
+          "x": 703,
+          "y": 53,
+          "w": 376,
+          "h": 539
+        },
+        "posture": "fix",
+        "anatomy": "complete-native-figure"
+      },
+      "dance": {
+        "src": "assets/art/cast-static-alex-v3.png",
+        "atlas": {
+          "width": 1254,
+          "height": 1254
+        },
+        "frame": {
+          "x": 145,
+          "y": 650,
+          "w": 352,
+          "h": 554
+        },
+        "posture": "dance",
+        "anatomy": "complete-native-figure"
+      },
+      "sit": {
+        "src": "assets/art/cast-static-alex-v3.png",
+        "atlas": {
+          "width": 1254,
+          "height": 1254
+        },
+        "frame": {
+          "x": 687,
+          "y": 657,
+          "w": 453,
+          "h": 548
+        },
+        "posture": "sit",
+        "anatomy": "complete-native-figure"
+      },
+      "drive": {
+        "src": "assets/art/cast-static-alex-v3.png",
+        "atlas": {
+          "width": 1254,
+          "height": 1254
+        },
+        "frame": {
+          "x": 687,
+          "y": 657,
+          "w": 453,
+          "h": 548
+        },
+        "posture": "drive",
+        "anatomy": "complete-native-figure"
+      }
+    },
+    "jo": {
+      "offer": {
+        "src": "assets/art/cast-static-jo-v3.png",
+        "atlas": {
+          "width": 1254,
+          "height": 1254
+        },
+        "frame": {
+          "x": 193,
+          "y": 38,
+          "w": 284,
+          "h": 556
+        },
+        "posture": "offer",
+        "anatomy": "complete-native-figure"
+      },
+      "read": {
+        "src": "assets/art/cast-static-jo-v3.png",
+        "atlas": {
+          "width": 1254,
+          "height": 1254
+        },
+        "frame": {
+          "x": 776,
+          "y": 39,
+          "w": 286,
+          "h": 555
+        },
+        "posture": "read",
+        "anatomy": "complete-native-figure"
+      },
+      "pour": {
+        "src": "assets/art/cast-static-jo-v3.png",
+        "atlas": {
+          "width": 1254,
+          "height": 1254
+        },
+        "frame": {
+          "x": 198,
+          "y": 652,
+          "w": 294,
+          "h": 568
+        },
+        "posture": "pour",
+        "anatomy": "complete-native-figure"
+      },
+      "clap": {
+        "src": "assets/art/cast-static-jo-v3.png",
+        "atlas": {
+          "width": 1254,
+          "height": 1254
+        },
+        "frame": {
+          "x": 785,
+          "y": 650,
+          "w": 256,
+          "h": 570
+        },
+        "posture": "clap",
+        "anatomy": "complete-native-figure"
+      }
+    }
+  },
+  "provenance": {
+    "pico": {
+      "file": "assets/art/cast-static-pico-v2.provenance.json",
+      "sha256": "6cc557478d70cb3ddbdd893d67bf09fa1236ca327c2384b06ac31ae141beb148"
+    },
+    "mina": {
+      "file": "assets/art/cast-static-mina-v2.provenance.json",
+      "sha256": "163449ffe9a3566390a5e196b976a420e3eb58e5f409d4c101a76d82f81bdfc9"
+    },
+    "alex": {
+      "file": "assets/art/cast-static-alex-v3.provenance.json",
+      "sha256": "86d6441f1062824451a8aa3cf0a43de137b2aaa17a42cd179561efa7cf227825"
+    },
+    "jo": {
+      "file": "assets/art/cast-static-jo-v3.provenance.json",
+      "sha256": "e14e81e2a1912b24702f4fd1a4222f8ec8c6814649c31d624464a0fd06cdc10b"
+    }
+  },
+  "reviewStatus": "SOURCE_FROZEN_INDEPENDENT_CAST_REVIEW_PENDING",
+  "nativeBytePreserved": true,
+  "authorReview": {
+    "scope": "Sixteen newly generated complete static native poses, four atlases. No joint cutouts and no runtime motion dependencies.",
+    "anatomy": "All16 whole poses directly viewed on cream and white. Complete heads/necks, clothed arms, hands, legs and feet; book/map/mug/cloth/wrench/wheel grips visibly supported. Alex seated pose includes a visible supporting chair and feet; remaining readers stand grounded.",
+    "identity": "Pico has two gentle eyebrows in every pose; Mina retains auburn swept hair and magenta/navy/orange palette; Alex retains brown skin, curls, teal/orange and neck headphones; Jo retains grey hair, navy glasses and caf\u00e9 apron.",
+    "flatness": "Pico/Mina v2 approved by root. Jo v3 is the requested native hair correction. Alex v3 is the native visible far-arm correction. No modeled shadow planes; full final four-sheet review pending.",
+    "proofFolder": "C:/Users/David/Documents/Codex/2026-11-04/horizons-static-cast",
+    "postProcessing": "Source PNG bytes/alpha preserved exactly. Atlas crops are metadata only; derived proof images are not production artwork.",
+    "independentReview": "Jobs independent reviewer found Alex v2 seated occlusion defect and confirmed other15 connected plus clean Jo v3 hair. Final Alex v3 submitted; all final sources frozen."
+  },
+  "sourceFreezeDate": "2026-11-04T23:38:24.698131+00:00"
+}

@@ -1,5 +1,5 @@
 import {api, APIError, getSessionToken, forgetSession} from './api-client.js';
-import {loadArt, artManifest, characterMarkup, avatarMarkup, avatarOptions, defaultAvatar, rasterMarkup, assetURL, refreshCharacterMotion, disposeCharacters, sceneMarkup, wordArt} from './art.js?v=friendly1';
+import {loadArt, artManifest, characterMarkup, avatarMarkup, avatarOptions, defaultAvatar, rasterMarkup, assetURL, refreshArtwork, disposeArtwork, sceneMarkup, wordArt} from './art.js?v=static1';
 import {course, lessons, vocabulary, chunks, grammarSets, activities, games, wordById, chunkById, lessonById} from '../content/unit1.mjs';
 import {buildQuiz, getActivityQuestions, getWordsForChunks, getMatchingPairs, checkAnswer} from '../content/engine.mjs';
 
@@ -142,15 +142,15 @@ function profilePage() {
     <section class="profile-details">${state.session.demo?'<p class="example-profile-note">Example profile — use made-up details.</p>':''}<form id="profile-form"><label for="display-name">What should we call you?</label><input id="display-name" name="displayName" value="${esc(p.displayName || p.name || '')}" maxlength="40" required autocomplete="nickname" placeholder="Your name"><label for="date-of-birth">Date of birth <span class="optional">${state.session.demo?'Example details · optional':'Private · optional'}</span></label><input id="date-of-birth" name="dateOfBirth" type="date" value="${esc((p.dateOfBirth || '').slice(0,10))}" max="${new Date().toISOString().slice(0,10)}"><label for="daily-goal">Your little daily goal</label><select id="daily-goal" name="goal">${[5,10,15,20].map(goal=>`<option value="${goal}" ${Number(p.goal||5)===goal?'selected':''}>${goal} minutes</option>`).join('')}</select><p class="quiet-note">Your profile follows your book codes, so your avatar and progress come with you.</p><p id="profile-error" class="form-error" role="alert"></p><button type="submit" class="primary-button">Save my profile ${icon('check')}</button></form><section class="your-books"><span class="eyebrow">YOUR BOOKS</span>${bookList().map(book=>`<div class="profile-book"><span class="book-level">${esc(book.level || 'A1')}</span><span><b>${esc(bookTitle(book))}</b><small>${book.expiresAt?`Your practice continues until ${formatDate(book.expiresAt)}`:'Ready for your next adventure'}</small></span></div>`).join('')}<button class="text-button" data-action="add-book">Add another book ${icon('plus')}</button></section><button class="sign-out" data-action="sign-out">Leave this device ${icon('exit')}</button></section></div>`;
 }
 function render() {
-  disposeCharacters(app);
+  disposeArtwork(app);
   app.removeAttribute('aria-busy');
-  if (!state.session) {app.innerHTML=welcome();refreshCharacterMotion(app);return;}
-  if (state.active) {app.innerHTML=renderActivity();refreshCharacterMotion(app);return;}
+  if (!state.session) {app.innerHTML=welcome();refreshArtwork(app);return;}
+  if (state.active) {app.innerHTML=renderActivity();refreshArtwork(app);return;}
   const pages={learn:home,practice,bank:wordBank,progress:progressPage,profile:profilePage};
   const learningRoute=['learn','practice','bank'].includes(state.route);
   app.innerHTML=shell(learningRoute&&!hasBookAccess()?accessPage():learningRoute&&!isA1Book()?home():(pages[state.route] || home)(),state.route==='bank'?'practice':state.route);
   setupAvatarChoices();
-  refreshCharacterMotion(app);
+  refreshArtwork(app);
   requestAnimationFrame(layoutPaths);document.fonts.ready.then(layoutPaths);
 }
 function findChunkActivity(id) {return allActivities.find(a=>a.chunkIds?.includes(id)&&['quiz','vocabulary'].includes(a.type));}
@@ -264,11 +264,11 @@ function renderResult(a) {
     ${a.saving?'<p class="save-note" role="status">Keeping your progress safe…</p>':a.error?`<div class="save-error" role="alert"><p>${esc(a.error)} Your answers are still here.</p><button class="text-button" data-action="retry-save">Save my progress ${icon('repeat')}</button></div>`:'<p class="save-note">Saved. Your progress comes with you.</p>'}
     <div class="result-actions"><button class="primary-button" data-action="back-to-path" ${a.saving?'disabled':''}>Back to my path ${icon('arrow')}</button><button class="text-button" data-action="play-again" ${a.saving?'disabled':''}>A fresh little round ${icon('repeat')}</button></div>${a.correct<a.total?'<p class="quiet-note">The words you missed will be ready for another try.</p>':''}</main>`;
 }
-function showDialog(content,kind='') {disposeCharacters(dialog);dialog.className=`app-dialog ${kind}`;dialog.innerHTML=content;dialog.showModal();refreshCharacterMotion(dialog);}
-function closeDialog(){disposeCharacters(dialog);dialog.close();}
+function showDialog(content,kind='') {disposeArtwork(dialog);dialog.className=`app-dialog ${kind}`;dialog.innerHTML=content;dialog.showModal();refreshArtwork(dialog);}
+function closeDialog(){disposeArtwork(dialog);dialog.close();}
 // Native close/Escape also releases rigs and disconnects placeholders before a
 // late module import can mount an animation into a hidden dialog.
-dialog.addEventListener('close',()=>{if(!dialog.open){disposeCharacters(dialog);for(const slot of dialog.querySelectorAll('[data-pico-articulated],[data-cast-articulated],[data-avatar-rig]'))slot.remove();}});
+dialog.addEventListener('close',()=>{if(!dialog.open){disposeArtwork(dialog);for(const slot of dialog.querySelectorAll('[data-avatar-static]'))slot.remove();}});
 function booksDialog(add=false) {
   showDialog(`<div class="dialog-heading"><div><span class="eyebrow">YOUR BOOKS</span><h2 id="dialog-title">${add?'Another book.<br>The same adventure.':'Where shall we go?'}</h2></div><button class="round-button" data-dialog-close aria-label="Close">${icon('close')}</button></div>${add?'':`<div class="book-library">${bookList().map(book=>`<button data-select-book="${esc(book.id || book.bookId)}" class="library-book ${String(book.id || book.bookId)===String(state.bookId)?'selected':''}"><span class="book-cover-mini"><span class="wordmark">HORIZONS</span><b>${esc(book.level || 'A1')}</b></span><span><b>${esc(bookTitle(book))}</b><small>${book.expiresAt?`Practice until ${formatDate(book.expiresAt)}`:'Ready to explore'}</small></span>${String(book.id || book.bookId)===String(state.bookId)?icon('check'):icon('arrow')}</button>`).join('')}</div>`}<form id="link-book-form"><label for="extra-code">${add?'Your new book code':'Add another book'}</label><div class="inline-code"><input id="extra-code" name="code" placeholder="Book code" autocapitalize="characters" spellcheck="false" autocomplete="off" required maxlength="80"><button class="primary-button" type="submit" aria-label="Add this book">${icon('plus')}</button></div><p class="quiet-note">Your avatar and progress stay together. Any linked valid code can open this profile.</p><p id="link-error" class="form-error" role="alert"></p></form>`,'books-dialog');
 }
