@@ -1,10 +1,13 @@
 # Horizons animation production audit
 
+Latest lesson-entry/path correction: no jump-in animation or entry delay; Start opens the selected activity immediately. Detail popovers reserve any required page space within the current learning path until the route changes; switching/dismissing details must not remove that space and clamp the page scroll upward. Minimal downward reveal remains when required to keep details below the island and clear of mobile navigation. Cache path-details-v47; module queries pathfix1.
+
+
 Updated 5 November 2026, America/Bogota. This is the current specification and production workflow. The user's latest instruction wins. Earlier claims and settings are preserved in [the preceding audit snapshot](animation-history/2026-11-05-before-v46-refresh.md) and [the original trial history](ANIMATION-AUDIT-HISTORY.md); they are not current instructions.
 
 ## Current source and publication status
 
-Current reviewed source: `5f6218c28594d231d218060de7a930d5681c32dc` (gaze/eyewear runtime introduced in `24b8af50bcd2c24cbbb7e087979a0bebc94624e5`; the later commit refreshes its glasses preview). At this audit refresh, both remote branches contain that source. Cache: `horizons-companion-avatar-face-v46`; module queries: `face5`; app stylesheet query: `options1`.
+Previous fully verified animation baseline (before the lesson-entry/path correction): `5f6218c28594d231d218060de7a930d5681c32dc` (gaze/eyewear runtime introduced in `24b8af50bcd2c24cbbb7e087979a0bebc94624e5`; the later commit refreshes its glasses preview). This historical baseline is retained for unchanged avatar-motion evidence. Cache: `horizons-companion-avatar-face-v46`; module queries: `face5`; app stylesheet query: `options1`.
 
 The current gaze/glasses implementation is live. [Pages run 42105016286](https://github.com/Chiispiitas/Brighton/actions/runs/42105016286) succeeded; the earlier run 42103418808 was cancelled. Fresh hosted checks passed at four widths, including matching face/glasses motion, slower varied glances, original rest, breathing, fixed background, masks, fallback and lifecycle. Exact hosted-byte parity covers 448 committed website files and 12 unchanged book recordings. See [current source-bound status](../reports/avatar-animation-audit-v46.json). Documentation-only commits after this runtime do not alter its behavior.
 
@@ -13,7 +16,7 @@ The current gaze/glasses implementation is live. [Pages run 42105016286](https:/
 | Target | Current authorized motion |
 | --- | --- |
 | Unit 1 banner Pico | Established faceless-head reading rig:8-second idle,6-second map inspection |
-| Main avatar editor and selected path portrait | Breathing, separate blink, varied glances, customization/selection feedback and lesson-entry jump |
+| Main avatar editor and selected path portrait | Breathing, separate blink, varied glances, customization/selection feedback; immediate lesson entry |
 | Sidebar avatars and option thumbnails | Static |
 | Decorative bird | Separate body/near/far wings, rotation-only flap and local hover |
 | Butterfly | Established local hover/flutter |
@@ -68,7 +71,7 @@ The stationary portrait container contains a square stage, then an avatar-only f
 - Blink: eye-only opaque swap at 4200–4340ms of each5200ms breathing period;140ms closed. Brows/nose/mouth and blank head remain unchanged.
 - Customization feedback:420ms, avatar artwork rises1% and shrinks to.98, then settles.
 - Explicit island activation:460ms, artwork rises2% and shrinks to.96, then settles. Hover/focus/scroll never retarget the player.
-- Lesson entry: established440ms full-opacity portrait jump. Escape, reselection, hidden tab or route change cancels stale entry. Reduced motion skips the jump.
+- Lesson entry: immediate activity start. The former 440ms jump, ghost portrait and delayed-entry cancellation flow are retired.
 
 ### Slower, varied look-around
 
@@ -92,7 +95,7 @@ Only main editor/path instances mount avatar motion. Reduced motion cancels tran
 
 ## Verification and limits
 
-Current local [face proof](../reports/avatar-face-proof.json) covers 320/390/768/1440px, glasses/face transform agreement within numerical rounding, unequal glances, long neutral rests, original resting pupil positions, visible breathing, fixed background, one unchanging blank head, eye-only blink, masks, opacity 1 and missing-sprite fallback. [Motion/lifecycle proof](../reports/avatar-motion-proof.json) covers scope, static sidebar/thumbnails, click-only targeting, feedback, reduced motion, pause, entry ordering, cancellation and cleanup. [Cache proof](../reports/avatar-cache-proof.json) installs v46, removes a synthetic expired v45 cache and checks new face assets; it is not a complete previous-worker update simulation.
+Current local [face proof](../reports/avatar-face-proof.json) covers 320/390/768/1440px, glasses/face transform agreement within numerical rounding, unequal glances, long neutral rests, original resting pupil positions, visible breathing, fixed background, one unchanging blank head, eye-only blink, masks, opacity 1 and missing-sprite fallback. [Motion/lifecycle proof](../reports/avatar-motion-proof.json) covers scope, static sidebar/thumbnails, click-only targeting, feedback, reduced motion, pause, immediate entry and cleanup. [Cache proof](../reports/avatar-cache-proof.json) installs v47, removes a synthetic expired v46 cache and checks new face assets; it is not a complete previous-worker update simulation.
 
 Current [hosted face checks](../reports/avatar-face-proof-hosted.json), [hosted lifecycle checks](../reports/avatar-motion-proof-hosted.json), [hosted costume checks](../reports/avatar-motion-costumes-hosted.json) and [hosted cache check](../reports/avatar-cache-proof-hosted.json) passed for v46. The 240-composition matrix covers the closed pose, both bases, six skins and ten costumes, with hair/glasses; it is not a 240-case full-gaze timeline. The 448-file [publication parity report](../reports/publication-assets.json) is bound to runtime 5f6218c. The [current release record](../reports/avatar-face-release.json) separates this from [preserved v44 evidence](../reports/avatar-face-release-v44.json).
 
@@ -196,3 +199,9 @@ Commit intended work, check remote branches, use the existing publication flow a
 ## Carry-forward checklist
 
 Carry this audit, source-bound status, native originals, exact briefs/preflights, archived inputs, current reference manifests/boards, preparation recipes, renderer/motion modules, preview capture/encoding recipes and revision-bound reports. Refresh hashes and label each artifact with its actual revision. Retire obsolete expression-head swaps, skin patches, fades, old frequencies and wing squash instead of presenting them as alternate current workflows. For a new character, reconstruct and inspect the still pose first; redo unsuitable generated parts before motion.
+
+## Lesson-entry and scroll correction
+
+The user’s20261105-2042-15.2403208.mp4 (5.70s,30fps) was inspected via23 contact frames at4fps. A1440×700 diagnostic reproduced scrollY oscillating156→176→156px when switching islands: closing details removed a temporary body spacer, clamping document scroll before the next reveal. The spacer now belongs to the current learning path and survives detail switching/dismissal. The same sequence stays156→176→176px. It leaves with the path on route/activity changes. A minimum downward reveal remains when needed; vertical wheel scrolling stays native.
+
+The lesson-entry jump helper and its asynchronous wait are removed. Start dispatches the selected activity immediately; no cloned portrait or deferred-entry cancellation remains. Selection/customization bounce, breathing, gaze, blinking and glasses tracking remain unchanged. [Current local regression](../reports/path-scroll-entry.json) covers27 selections at1440×700,1440×900 and390×844, dismissal, retained space, immediate activity entry and cleanup. Earlier jump-before-lesson and stale-entry-cancellation assertions are retired. No backend/book or real-learner changes.

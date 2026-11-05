@@ -1,11 +1,11 @@
-import {requestAvatarFeedback,jumpAvatarIntoIsland} from './avatar-motion.js?v=face5';
-import {animateUI,markControls,moveTabIndicator} from './ui-motion.js?v=face5';
+import {requestAvatarFeedback} from './avatar-motion.js?v=pathfix1';
+import {animateUI,markControls,moveTabIndicator} from './ui-motion.js?v=pathfix1';
 let selectedTab='skin';
 let tabResize;
 const bubble=document.createElement('div');bubble.id='path-bubble';bubble.className='path-bubble';bubble.setAttribute('popover','auto');bubble.setAttribute('role','dialog');bubble.setAttribute('aria-label','Activity details');document.body.append(bubble);
 let bubbleRequest=0,bubblePreparing=false,bubbleSpace;
 export function closePathBubble(){
- ++bubbleRequest;bubblePreparing=false;bubbleSpace?.remove();bubbleSpace=null;
+ ++bubbleRequest;bubblePreparing=false;
  bubble.getAnimations().forEach(a=>a.cancel());if(bubble.matches(':popover-open'))bubble.hidePopover();
 }
 export async function openPathBubble(content,anchor,event){
@@ -21,10 +21,10 @@ export async function openPathBubble(content,anchor,event){
  const overflow=Math.max(0,original.bottom+gap+measured.height-safeBottom);
  if(overflow){
   const max=Math.max(0,document.documentElement.scrollHeight-innerHeight),needed=Math.max(0,scrollY+overflow-max);
-  if(needed){bubbleSpace=document.createElement('div');bubbleSpace.setAttribute('aria-hidden','true');bubbleSpace.style.height=(needed+2)+'px';bubbleSpace.style.pointerEvents='none';document.body.append(bubbleSpace);}
+  if(needed){if(!bubbleSpace?.isConnected){bubbleSpace=document.createElement('div');bubbleSpace.dataset.pathDetailsSpace='';bubbleSpace.setAttribute('aria-hidden','true');bubbleSpace.style.cssText='grid-column:1/-1;pointer-events:none;overflow-anchor:none';anchor.closest('.learning-path').append(bubbleSpace);}bubbleSpace.style.height=((parseFloat(bubbleSpace.style.height)||0)+needed+2)+'px';}
   window.scrollBy({top:overflow,behavior:'instant'});
  }
- // Spacer removal can queue a scroll even when this new island needs no extra room.
+ // Let any minimum reveal scroll settle; reserved room survives switching/closing details.
  await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));
  if(request!==bubbleRequest||!anchor.isConnected||!bubble.matches(':popover-open'))return;
  const a=anchor.getBoundingClientRect(),r=bubble.getBoundingClientRect(),x=a.left+a.width/2;
@@ -36,11 +36,11 @@ export async function openPathBubble(content,anchor,event){
 }
 bubble.addEventListener('toggle',()=>{if(!bubble.matches(':popover-open'))closePathBubble();});
 window.addEventListener('keydown',event=>{if(event.key==='Escape')closePathBubble();});
-bubble.addEventListener('click',async event=>{const start=event.target.closest('[data-start-path]');if(start){if(start.disabled)return;start.disabled=true;const id=start.dataset.startPath,player=document.querySelector('.path-player .avatar'),island=[...document.querySelectorAll('.path-stop')].find(el=>el.dataset.pathNode===id)?.querySelector('.stop-orb');closePathBubble();if(!await jumpAvatarIntoIsland(player,island))return;const button=document.createElement('button');button.dataset.startActivity=start.dataset.startPath;button.hidden=true;document.getElementById('app').append(button);button.click();button.remove();}if(event.target.closest('[data-dialog-close]'))closePathBubble();});
+bubble.addEventListener('click',event=>{const start=event.target.closest('[data-start-path]');if(start){if(start.disabled)return;start.disabled=true;const id=start.dataset.startPath;closePathBubble();const button=document.createElement('button');button.dataset.startActivity=id;button.hidden=true;document.getElementById('app').append(button);button.click();button.remove();}if(event.target.closest('[data-dialog-close]'))closePathBubble();});
 function scrollState(){const hero=document.querySelector('.learn-hero');document.body.classList.toggle('path-scrolled',!!hero&&hero.getBoundingClientRect().bottom<24);}
 window.addEventListener('scroll',()=>{scrollState();if(!bubblePreparing)closePathBubble();},{passive:true});window.addEventListener('resize',closePathBubble);
 export function enhanceShell(xp,streak,icon,avatar={},manifest={}){
- tabResize?.disconnect();
+ tabResize?.disconnect();bubbleSpace?.remove();bubbleSpace=null;
  closePathBubble();
  const header=document.querySelector('.topbar');
  const metrics='<span class="metric">'+icon('spark')+'<b>'+streak+'</b><span>'+(streak===1?'day':'days')+'</span></span><span class="metric">'+icon('star')+'<b>'+xp+'</b><span>XP</span></span>';

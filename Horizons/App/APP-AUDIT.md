@@ -1,5 +1,8 @@
 # Horizons website process audit
 
+Latest lesson-entry/path correction: no jump-in animation or entry delay; Start opens the selected activity immediately. Detail popovers reserve any required page space within the current learning path until the route changes; switching/dismissing details must not remove that space and clamp the page scroll upward. Minimal downward reveal remains when required to keep details below the island and clear of mobile navigation. Cache path-details-v47; module queries pathfix1.
+
+
 Latest gaze refinement: glasses share the exact facial-layer translation. Look-around uses a30-second schedule with three unequal glances (right/up, left/up, slight right/down),1.4–1.9-second transitions and long neutral rests. Breathing and140ms blink retain their independent5200ms period. Original resting eyes, fixed background, full opacity, masks and reduced-motion handling remain. Cache avatar-face-v46; queries face5.
 
 

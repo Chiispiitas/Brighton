@@ -1,12 +1,12 @@
-import {requestAvatarFeedback} from './avatar-motion.js?v=face5';
-import {unitRoutes,adjacentUnit,updateBoundary} from './unit-navigation.js?v=face5';
-import {mountOverworld} from './overworld-motion.js?v=face5';
+import {requestAvatarFeedback} from './avatar-motion.js?v=pathfix1';
+import {unitRoutes,adjacentUnit,updateBoundary} from './unit-navigation.js?v=pathfix1';
+import {mountOverworld} from './overworld-motion.js?v=pathfix1';
 import {selectIslandQuestions,masteryTargets} from '../content/island-mastery.mjs';
-import {enhanceShell,openPathBubble,closePathBubble,avatarFeedback} from './studio-ui.js?v=face5';
-import {captureUI,enhanceMotion,markControls,animateUI} from './ui-motion.js?v=face5';
+import {enhanceShell,openPathBubble,closePathBubble,avatarFeedback} from './studio-ui.js?v=pathfix1';
+import {captureUI,enhanceMotion,markControls,animateUI} from './ui-motion.js?v=pathfix1';
 import {lessonArt} from './lesson-art.js?v=colors1';
 import {api, APIError, getSessionToken, forgetSession} from './api-client.js';
-import {loadArt, normalizeAvatar, artManifest, characterMarkup, avatarMarkup, avatarOptions, defaultAvatar, rasterMarkup, assetURL, refreshArtwork, disposeArtwork, sceneMarkup, wordArt} from './art.js?v=face5';
+import {loadArt, normalizeAvatar, artManifest, characterMarkup, avatarMarkup, avatarOptions, defaultAvatar, rasterMarkup, assetURL, refreshArtwork, disposeArtwork, sceneMarkup, wordArt} from './art.js?v=pathfix1';
 import {course, lessons, vocabulary, chunks, grammarSets, activities, games, wordById, chunkById, lessonById, pathNodes, pathNodeById} from '../content/unit1.mjs';
 import {buildQuiz, getActivityQuestions, getAudioFallbackQuestion, getWordsForChunks, getMatchingPairs, checkAnswer} from '../content/engine.mjs';
 
