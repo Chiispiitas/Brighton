@@ -1,5 +1,7 @@
 # Unit 1 overworld: New Friends Town
 
+Latest user correction (5 November): keep normal vertical mouse-wheel page scrolling; never convert it to horizontal map movement. Horizontal navigation uses slowly accelerating press-and-hold arrows, native touch swipe/momentum, mouse drag and keyboard buttons. Remove the extra New Friends Town heading, adventure tagline and all wheel/swipe/hover helper messages. Do not add promotional headings, taglines or navigation instruction copy unless explicitly requested. Older wheel-conversion reports are historical and superseded. Cache overworld-v33; queries overworld2.
+
 The user requested a video-game overworld on the existing horizontal path: normal mouse-wheel travel, thematic scenery, hover movement for the saved avatar, building landmarks and animated birds/butterflies. The compact Horizons shell, learning content and Pico banner remain.
 
 ## Theme and artwork
@@ -12,7 +14,7 @@ The initial Travel Garden and its transparent repair were rejected for an erased
 
 Only Unit 1 is implemented. Future units should receive a theme tied to their actual book content, new preflighted art and independent composed-page checks. This task does not create the printed book's other units or change the canonical curriculum.
 
-## Interaction
+## Original v32 interaction record (superseded by the correction above)
 
 - Wheel down moves the map right; wheel up moves it left. Conversion is scoped to the map and normalizes pixel/line/page wheel units. Horizontal/diagonal trackpad gestures, Shift+wheel and Ctrl/Meta browser zoom stay native. At either horizontal endpoint, an unconsumed wheel event returns to ordinary page scrolling. The wheel listener is non-passive only where cancellation is needed.
 - Hover/focus previews an activity by moving the learner's saved native avatar bubble. It does not open an activity, change mastery/XP, or save progress. Leaving the map restores the selected marker; clicking/tapping retains the existing compact details/Start flow. The marker stays below the ground anchor, clear of normal and building hit areas, and glides at full opacity. Its portrait, full hair, clothes and colors come from the saved avatar.
@@ -35,3 +37,7 @@ Reviewer: Codex subagent `/root/overworld_qa` independently inspected desktop/mo
 ## Published release
 
 Runtime 9a29911c85976856b30813fe3e27c9420046b65c is live. [Pages run 42055395675](https://github.com/Chiispiitas/Brighton/actions/runs/42055395675) succeeded. Hosted overworld, cache-upgrade and Pico proofs all passed; all 414 committed runtime/native files match the live route, including 12 existing book recordings. Root inspected the hosted 390px page. See [release summary](../reports/overworld-release.json), [hosted overworld proof](../reports/overworld-proof-hosted.json), [hosted cache upgrade](../reports/overworld-cache-upgrade-hosted.json) and [hosted Pico proof](../reports/overworld-pico-proof-hosted.json). Later evidence-only commits preserve this runtime.
+
+## Corrected navigation verification
+
+`tools/overworld-navigation-proof.mjs` verifies native vertical page wheel without sideways movement, accelerating held arrows and release, mouse drag without opening activities, native mobile touch swipe, and absence of removed messages. Earlier v32 wheel-conversion assertions are historical. No new artwork or learning/backend changes.

@@ -1,5 +1,7 @@
 # Horizons website session handoff
 
+Latest user correction (5 November): keep normal vertical mouse-wheel page scrolling; never convert it to horizontal map movement. Horizontal navigation uses slowly accelerating press-and-hold arrows, native touch swipe/momentum, mouse drag and keyboard buttons. Remove the extra New Friends Town heading, adventure tagline and all wheel/swipe/hover helper messages. Do not add promotional headings, taglines or navigation instruction copy unless explicitly requested. Older wheel-conversion reports are historical and superseded. Cache overworld-v33; queries overworld2.
+
 Overworld runtime 9a29911c85976856b30813fe3e27c9420046b65c is published on both branches; Pages run 42055395675 succeeded. Hosted world/cache/Pico checks pass, with exact parity for 414 runtime/native files. See reports/overworld-release.json. Later evidence-only commits preserve this runtime.
 
 Current enhancement: Unit 1 New Friends Town overworld, normal mouse-wheel vertical-to-horizontal travel, hover/focus saved-avatar preview movement, four native building landmarks, four ImageGen neighborhoods and eight animated decorative birds/butterflies. Same compact shell, 21 activity IDs, profile/learning/backend and Pico. Cache overworld-v32, queries overworld1. See OVERWORLD.md and docs/overworld/production-record.json. Current R07 now includes selected overworld art; the exact earlier inputs used for generation are archived in docs/overworld/inputs.

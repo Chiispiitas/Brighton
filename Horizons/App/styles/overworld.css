@@ -38,3 +38,8 @@
 .overworld-map .lesson-2 .world-bird{left:45%;top:57px}.overworld-map .lesson-3 .world-butterfly{right:18%;bottom:40px}.overworld-map .lesson-4 .world-bird{left:16%;top:48px}
 @media(max-width:680px){.overworld-heading{gap:12px;align-items:flex-start}.overworld-heading h2{font-size:24px}.world-map-note{display:none}.overworld-map{border-radius:22px}.overworld-map .lesson-landmark{min-height:86px;padding-left:22px}.world-zone-caption h2{font-size:21px}.overworld-map .lesson-trail .stop-orb{width:58px;height:58px}.overworld-map .landmark-stop .stop-orb{width:62px;height:62px}.overworld-map .path-player{width:56px}.overworld-map .path-player>.avatar{width:52px;height:52px}}
 @media(prefers-reduced-motion:reduce){.overworld-map .path-player[data-positioned=true]{transition:none}.world-fauna>img{animation:none!important;transition:none!important}}
+
+.path-scroll-toolbar{justify-content:flex-end}
+.overworld-map{touch-action:pan-x pan-y; -webkit-overflow-scrolling:touch;cursor:grab}
+.overworld-map.is-dragging{cursor:grabbing;user-select:none}
+.path-scroll-buttons button{touch-action:none;user-select:none}

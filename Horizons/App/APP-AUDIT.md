@@ -1,5 +1,7 @@
 # Horizons website process audit
 
+Latest user correction (5 November): keep normal vertical mouse-wheel page scrolling; never convert it to horizontal map movement. Horizontal navigation uses slowly accelerating press-and-hold arrows, native touch swipe/momentum, mouse drag and keyboard buttons. Remove the extra New Friends Town heading, adventure tagline and all wheel/swipe/hover helper messages. Do not add promotional headings, taglines or navigation instruction copy unless explicitly requested. Older wheel-conversion reports are historical and superseded. Cache overworld-v33; queries overworld2.
+
 Version 1 · Governing process · 4 November 2026
 
 This is the working specification for the Horizons companion website. Read it before changing content, artwork, interface behavior, access, persistence or deployment. It consolidates the current decisions; archived animation experiments and older screenshots are historical evidence, not instructions.
@@ -75,7 +77,7 @@ The Learn page has no promotional right sidebar, daily-invitation card or word-c
 - Preserve the previous compact design. The latest layout request replaces only the vertical trail with one horizontally scrollable unit route, using gentle sideways S bends and continuous joins through the same island centers. Four lessons sit side by side in the same order. Keep all activity IDs, orb states, headers, native inanimate decorations, sidebar, compact hero and popovers.
 - Unit 1 is New Friends Town: native ImageGen park/café, jobs market, travel garden and town hall scenery. The final activity of each lesson is a native building landmark with the same ID and completion/mastery states.
 - The saved native avatar bubble travels below the route on hover and keyboard focus, without starting activities or changing progress. Click/tap still selects and opens the compact details. Reuse saved hair/clothes/colors; no new articulated walking anatomy. Keep the bubble clear of full normal/building hit areas.
-- Normal mouse wheel down moves right and up moves left inside the overworld. Preserve zoom and native horizontal gestures; return unconsumed scrolling to the page at horizontal endpoints. Do not hijack wheel input outside the map.
+- Mouse wheel stays native and vertical. Use held arrows, swipe or mouse drag for horizontal map travel. No extra map heading, tagline or wheel/swipe/hover instruction messages.
 - Support manual swipe/scroll, keyboard access and optional left/right panning controls. Do not turn the buttons into lesson-jump shortcuts or hijack ordinary vertical scrolling. No body-wide horizontal overflow.
 - Islands have no permanent title/count/duration/step labels. Tap or keyboard activation opens a small non-modal speech bubble at the island/cursor.
 - The bubble contains the name, count, duration and Start. Keep it within the viewport, place its pointer sensibly, and dismiss with Escape, outside activation or scrolling. It must not dim or block the rest of the page.

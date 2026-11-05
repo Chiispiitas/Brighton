@@ -8,16 +8,49 @@ export function mountOverworld(region,{onPreview=()=>{},onLeave=()=>{}}={}){
  const fauna=[...region.querySelectorAll('.world-fauna > img')].filter(img=>!img.closest('.avatar,.character'));
  let disposed=false,visible=false,animations=[];
 
- const wheel=event=>{
-  // Preserve browser zoom, Shift+wheel and native horizontal/diagonal trackpads.
-  if(event.defaultPrevented||event.ctrlKey||event.metaKey||event.shiftKey||event.deltaX!==0||!event.deltaY||!event.cancelable)return;
-  const unit=event.deltaMode===1?32:event.deltaMode===2?region.clientWidth:1;
-  const delta=event.deltaY*unit,max=Math.max(0,region.scrollWidth-region.clientWidth);
-  const next=Math.max(0,Math.min(max,region.scrollLeft+delta));
-  // At either edge, leave the event untouched so ordinary page scroll continues.
-  if(Math.abs(next-region.scrollLeft)<.5)return;
-  event.preventDefault();region.scrollLeft=next;
+ // Wheel input stays entirely native: vertical wheel scrolls the page.
+ const input=new AbortController(),listen=(el,type,fn,options={})=>el.addEventListener(type,fn,{...options,signal:input.signal});
+ let frame=0,held=null,started=0,last=0,drag=null,suppressClick=false;
+ const stopPan=()=>{cancelAnimationFrame(frame);frame=0;held=null;};
+ const tick=time=>{
+  if(!held||disposed)return;
+  const dt=Math.min(32,time-last);last=time;
+  const speed=80+180*Math.min(1,(time-started)/900);
+  region.scrollLeft+=Number(held.dataset.pathPan)*speed*dt/1000;
+  frame=requestAnimationFrame(tick);
  };
+ for(const button of region.closest('.learning-path').querySelectorAll('[data-path-pan]')){
+  let pointerUsed=false;
+  listen(button,'pointerdown',event=>{
+   if(event.button!==0||button.disabled)return;
+   pointerUsed=true;stopPan();held=button;started=last=performance.now();
+   button.setPointerCapture(event.pointerId);frame=requestAnimationFrame(tick);
+  });
+  listen(button,'pointerup',()=>{if(held&&performance.now()-started<150)region.scrollBy({left:Number(button.dataset.pathPan)*100,behavior:reduced.matches?'instant':'smooth'});stopPan();});
+  for(const type of ['pointercancel','lostpointercapture'])listen(button,type,stopPan);
+  listen(button,'click',event=>{
+   event.preventDefault();
+   if(pointerUsed&&event.detail!==0){pointerUsed=false;return;}
+   region.scrollBy({left:Number(button.dataset.pathPan)*220,behavior:reduced.matches?'instant':'smooth'});
+  });
+ }
+ listen(window,'blur',stopPan);
+ listen(document,'visibilitychange',()=>{if(document.hidden)stopPan();});
+ // Touch uses native momentum scrolling; mouse users can also grab and drag.
+ listen(region,'pointerdown',event=>{
+  if(event.pointerType!=='mouse'||event.button!==0)return;
+  drag={id:event.pointerId,x:event.clientX,left:region.scrollLeft,moved:false};
+ });
+ listen(window,'pointermove',event=>{
+  if(!drag||event.pointerId!==drag.id)return;
+  const distance=event.clientX-drag.x;
+  if(Math.abs(distance)>8)drag.moved=true;
+  if(drag.moved){event.preventDefault();region.scrollLeft=drag.left-distance;region.classList.add('is-dragging');}
+ });
+ const endDrag=()=>{if(drag?.moved){suppressClick=true;setTimeout(()=>{suppressClick=false;},0);}drag=null;region.classList.remove('is-dragging');};
+ listen(window,'pointerup',endDrag);listen(window,'pointercancel',endDrag);
+ listen(region,'click',event=>{if(suppressClick){suppressClick=false;event.preventDefault();event.stopImmediatePropagation();}},{capture:true});
+ listen(region,'dragstart',event=>event.preventDefault());
  const preview=event=>{
   if(event.type==='pointerover'&&event.pointerType==='touch')return;
   const stop=event.target.closest?.('.path-stop[data-path-node]');
@@ -61,7 +94,6 @@ export function mountOverworld(region,{onPreview=()=>{},onLeave=()=>{}}={}){
  };
  const observer=new IntersectionObserver(entries=>{visible=entries[0]?.isIntersecting===true;sync();},{threshold:.01});
  observer.observe(region);
- region.addEventListener('wheel',wheel,{passive:false});
  region.addEventListener('pointerover',preview);
  region.addEventListener('pointerleave',leave);
  region.addEventListener('focusin',preview);
@@ -72,7 +104,7 @@ export function mountOverworld(region,{onPreview=()=>{},onLeave=()=>{}}={}){
  const dispose=()=>{
   if(disposed)return;disposed=true;
   observer.disconnect();animations.forEach(a=>a.cancel());animations=[];
-  region.removeEventListener('wheel',wheel);
+  stopPan();input.abort();drag=null;
   region.removeEventListener('pointerover',preview);
   region.removeEventListener('pointerleave',leave);
   region.removeEventListener('focusin',preview);

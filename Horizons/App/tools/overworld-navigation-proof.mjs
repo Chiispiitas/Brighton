@@ -1,0 +1,23 @@
+import {createRequire} from 'node:module';
+import assert from 'node:assert/strict';import fs from 'node:fs';import path from 'node:path';
+const require=createRequire(import.meta.url),{chromium}=require('C:/Users/David/.cache/codex-runtimes/codex-primary-runtime/dependencies/node/node_modules/playwright');
+const base=process.env.HZ_APP_URL||'http://127.0.0.1:8898/Horizons/App/',out=process.env.HZ_WORLD_OUTPUT||'C:/Users/David/Documents/Codex/2026-11-05/overworld-preview';fs.mkdirSync(out,{recursive:true});
+const browser=await chromium.launch({executablePath:'C:/Program Files (x86)/Microsoft/Edge/Application/msedge.exe',headless:true});
+const context=await browser.newContext({viewport:{width:1440,height:1100},serviceWorkers:'block'});
+await context.addCookies([{url:base,name:'hz_companion_session',value:'fictional-overworld-preview'}]);
+await context.route('**/api/horizons',route=>route.fulfill({contentType:'application/json',body:JSON.stringify({profile:{displayName:'Town Explorer',avatar:{body:'female',skin:'skin-3',hair:'hair-9',outfit:'outfit-3',background:'bg-mint',hairColor:'color-auburn'}},books:[{id:'horizons-a1',level:'A1',status:'active',expiresAt:'2030-01-01T00:00:00Z'}],progress:{xp:120,streak:3}})}));
+const page=await context.newPage();const errors=[];page.on('pageerror',e=>errors.push(e.message));await page.goto(base);await page.locator('.overworld-map').waitFor();
+await page.evaluate(async()=>{await document.fonts.ready;await Promise.all([...document.images].map(img=>img.decode().catch(()=>{})));});await page.waitForTimeout(700);
+
+const map=page.locator('.overworld-map'),right=page.locator('[data-path-pan="1"]');
+assert.equal(await page.locator('.overworld-heading,#world-help,.world-map-note').count(),0);
+await page.evaluate(()=>{document.body.style.paddingBottom='1000px'});
+await map.scrollIntoViewIfNeeded();await map.hover();const left=await map.evaluate(el=>el.scrollLeft),top=await page.evaluate(()=>scrollY);
+await page.mouse.wheel(0,200);await page.waitForTimeout(350);
+assert.equal(await map.evaluate(el=>el.scrollLeft),left);assert.ok(await page.evaluate(()=>scrollY)>top);
+await right.scrollIntoViewIfNeeded();const box=await right.boundingBox();await page.mouse.move(box.x+22,box.y+22);await page.mouse.down();await page.waitForTimeout(350);const early=await map.evaluate(el=>el.scrollLeft);await page.waitForTimeout(750);const late=await map.evaluate(el=>el.scrollLeft);await page.mouse.up();assert.ok(early>0&&late>early+100);await page.waitForTimeout(80);const stopped=await map.evaluate(el=>el.scrollLeft);await page.waitForTimeout(200);assert.equal(await map.evaluate(el=>el.scrollLeft),stopped);
+await map.scrollIntoViewIfNeeded();const r=await map.boundingBox();await page.mouse.move(r.x+r.width/2,r.y+150);await page.mouse.down();await page.mouse.move(r.x+r.width/2-180,r.y+150,{steps:12});await page.mouse.up();assert.ok(await map.evaluate(el=>el.scrollLeft)>stopped+100);assert.equal(await page.locator('#path-bubble').isVisible(),false);
+const mobile=await browser.newContext({viewport:{width:390,height:844},isMobile:true,hasTouch:true,serviceWorkers:'block'});await mobile.addCookies([{url:base,name:'hz_companion_session',value:'fictional-swipe'}]);await mobile.route('**/api/horizons',route=>route.fulfill({contentType:'application/json',body:JSON.stringify({profile:{displayName:'Swipe Fixture'},books:[{id:'horizons-a1',level:'A1',status:'active',expiresAt:'2030-01-01T00:00:00Z'}],progress:{}})}));
+const phone=await mobile.newPage();await phone.goto(base);const m=phone.locator('.overworld-map');await m.waitFor();await m.scrollIntoViewIfNeeded();const mb=await m.boundingBox(),cdp=await mobile.newCDPSession(phone),y=mb.y+200;await cdp.send('Input.dispatchTouchEvent',{type:'touchStart',touchPoints:[{x:310,y}]});for(let x=290;x>=90;x-=20){await cdp.send('Input.dispatchTouchEvent',{type:'touchMove',touchPoints:[{x,y}]});await phone.waitForTimeout(20);}await cdp.send('Input.dispatchTouchEvent',{type:'touchEnd',touchPoints:[]});await phone.waitForTimeout(400);assert.ok(await m.evaluate(el=>el.scrollLeft)>100);
+fs.writeFileSync(new URL('../reports/overworld-navigation.json',import.meta.url),JSON.stringify({date:new Date().toISOString(),base,pass:true,nativeVerticalWheel:true,heldArrowAccelerationAndRelease:true,mouseDrag:true,touchSwipe:true,removedMessages:true,errors},null,2)+'\n');assert.deepEqual(errors,[]);
+await browser.close();console.log('PASS native vertical wheel, hold/release arrows, mouse drag, real touch swipe and removed copy');
