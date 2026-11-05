@@ -1,3 +1,4 @@
+import { spanishFor } from './translations.mjs';
 import { sourceBanks } from './source-banks.mjs';
 
 export { sourceBanks };
@@ -7,7 +8,7 @@ const topicLessons = {
   jobs: ['1B'], adjectives: ['1B', '1C'], countries: ['1C'], phrases: ['1A', '1D']
 };
 const item = (topic, term, meaning, example, extra = {}) => ({
-  id: `v-${topic}-${slug(term)}`, term, meaning, example, topic,
+  id: `v-${topic}-${slug(term)}`, term, meaning, spanish:spanishFor(term,extra), example, topic,
   lessonIds: topicLessons[topic], kind: 'word', ...extra
 });
 const greetings = [
@@ -124,29 +125,29 @@ export const wordById = Object.fromEntries(vocabulary.map(word=>[word.id,word]))
 const ids = (topic, terms) => vocabulary.filter(word=>word.topic===topic && (!terms || terms.includes(word.term))).map(word=>word.id);
 const chunk = (id,lessonId,title,description,wordIds,extra={}) => ({id,lessonId,title,description,wordIds,estimatedMinutes:3,...extra});
 export const chunks = [
-  chunk('1a-greetings','1A','Hello, new friends!','Meet someone and choose a greeting.',ids('greetings',['Good morning','Good afternoon','Good evening','Hello','Hi','Nice to meet you']),{character:'mina'}),
-  chunk('1a-goodbyes','1A','See you soon','Leave a conversation with a friendly goodbye.',ids('greetings',['See you later','Goodbye','Bye','Good night']),{character:'pico'}),
-  chunk('1a-your-details','1A','Your club card','Names, class and contact details.',ids('personal',['name','class','first name','last name','phone number','email','What is your phone number?']),{character:'mina'}),
-  chunk('1a-more-details','1A','More about you','Countries, cities and the extra fields in a form.',ids('personal',['country','city','age','address','postal code','nationality']),{character:'mina'}),
-  chunk('1a-alphabet-ag','1A','Letter trail A–G','Match capital and small letters.',ids('alphabet').slice(0,7),{character:'alex'}),
-  chunk('1a-alphabet-hn','1A','Letter trail H–N','Keep following the alphabet.',ids('alphabet').slice(7,14),{character:'alex'}),
-  chunk('1a-alphabet-ot','1A','Letter trail O–T','Find the right letters.',ids('alphabet').slice(14,20),{character:'alex'}),
-  chunk('1a-alphabet-uz','1A','Letter trail U–Z','Complete your alphabet collection.',ids('alphabet').slice(20),{character:'alex'}),
-  chunk('1a-numbers-small','1A','Locker codes 0–10','Read and remember short number codes.',ids('numbers').slice(0,11),{character:'pico'}),
-  chunk('1a-numbers-teens','1A','Eleven to nineteen','Meet the teen numbers.',ids('numbers').slice(11,20),{character:'alex'}),
-  chunk('1a-numbers-tens','1A','Twenty to one hundred','Read tens and build bigger numbers.',ids('numbers').slice(20),{character:'alex'}),
-  chunk('1b-jobs-town','1B','People in town','Meet people at school, work and the café.',ids('jobs',['teacher','student','chef','doctor','office worker','receptionist']),{character:'jo'}),
-  chunk('1b-jobs-places','1B','A job for everyone','Shops, restaurants, farms and more.',ids('jobs',['salesclerk','taxi driver','waiter','waitress','farmer','actor','school']),{character:'jo'}),
-  chunk('1b-more-jobs','1B','More people to meet','Explore the extra jobs in your word bank.',ids('jobs',['nurse','dentist','police officer','driver']),{character:'mina'}),
-  chunk('1b-opposites','1B','Opposite corners','Size, temperature, age, activity and price.',ids('adjectives').slice(0,10),{character:'alex'}),
-  chunk('1b-people-words','1B','Describe the club','Words for people, places and a good time.',ids('adjectives').slice(10),{character:'jo'}),
-  chunk('1c-world-start','1C','Postcards from friends','Country and nationality pairs from the lesson.',ids('countries').slice(0,10),{character:'mina'}),
-  chunk('1c-world-more','1C','More places, more friends','Explore the fuller country and nationality bank.',ids('countries').slice(10),{character:'mina'}),
-  chunk('1c-places-opposites','1C','Choose a room','Describe a place using opposite words.',ids('adjectives').slice(0,10),{character:'jo'}),
-  chunk('1c-place-personality','1C','A place for you','Say what a place or person is like.',ids('adjectives').slice(10),{character:'alex'}),
-  chunk('1d-names-contact','1D','Welcome to the club','Choose the right fields for names and contact details.',ids('personal',['name','class','first name','last name','phone number','email','What is your phone number?']),{character:'jo'}),
-  chunk('1d-full-card','1D','The complete card','Country, city, age, address, postal code and nationality.',ids('personal',['country','city','age','address','postal code','nationality']),{character:'mina'}),
-  chunk('1d-ask-check','1D','Ask, spell, check','Useful questions for completing a form.',[...ids('phrases'),...ids('personal',['What is your phone number?'])],{character:'jo',supportOnly:true})
+  chunk('1a-greetings','1A','Greetings','Meet someone and choose a greeting.',ids('greetings',['Good morning','Good afternoon','Good evening','Hello','Hi','Nice to meet you']),{character:'mina'}),
+  chunk('1a-goodbyes','1A','Goodbyes','Leave a conversation with a friendly goodbye.',ids('greetings',['See you later','Goodbye','Bye','Good night']),{character:'pico'}),
+  chunk('1a-your-details','1A','Names and contact details','Names, class and contact details.',ids('personal',['name','class','first name','last name','phone number','email','What is your phone number?']),{character:'mina'}),
+  chunk('1a-more-details','1A','Personal information','Countries, cities and the extra fields in a form.',ids('personal',['country','city','age','address','postal code','nationality']),{character:'mina'}),
+  chunk('1a-alphabet-ag','1A','Alphabet A–G','Match capital and small letters.',ids('alphabet').slice(0,7),{character:'alex'}),
+  chunk('1a-alphabet-hn','1A','Alphabet H–N','Keep following the alphabet.',ids('alphabet').slice(7,14),{character:'alex'}),
+  chunk('1a-alphabet-ot','1A','Alphabet O–T','Find the right letters.',ids('alphabet').slice(14,20),{character:'alex'}),
+  chunk('1a-alphabet-uz','1A','Alphabet U–Z','Complete your alphabet collection.',ids('alphabet').slice(20),{character:'alex'}),
+  chunk('1a-numbers-small','1A','Numbers 0–10','Read and remember short number codes.',ids('numbers').slice(0,11),{character:'pico'}),
+  chunk('1a-numbers-teens','1A','Numbers 11–19','Meet the teen numbers.',ids('numbers').slice(11,20),{character:'alex'}),
+  chunk('1a-numbers-tens','1A','Numbers 20–100','Read tens and build bigger numbers.',ids('numbers').slice(20),{character:'alex'}),
+  chunk('1b-jobs-town','1B','Jobs 1','Meet people at school, work and the café.',ids('jobs',['teacher','student','chef','doctor','office worker','receptionist']),{character:'jo'}),
+  chunk('1b-jobs-places','1B','Jobs 2','Shops, restaurants, farms and more.',ids('jobs',['salesclerk','taxi driver','waiter','waitress','farmer','actor','school']),{character:'jo'}),
+  chunk('1b-more-jobs','1B','Jobs 3','Explore the extra jobs in your word bank.',ids('jobs',['nurse','dentist','police officer','driver']),{character:'mina'}),
+  chunk('1b-opposites','1B','Opposites','Size, temperature, age, activity and price.',ids('adjectives').slice(0,10),{character:'alex'}),
+  chunk('1b-people-words','1B','Describing people and places','Words for people, places and a good time.',ids('adjectives').slice(10),{character:'jo'}),
+  chunk('1c-world-start','1C','Countries and nationalities 1','Country and nationality pairs from the lesson.',ids('countries').slice(0,10),{character:'mina'}),
+  chunk('1c-world-more','1C','Countries and nationalities 2','Explore the fuller country and nationality bank.',ids('countries').slice(10),{character:'mina'}),
+  chunk('1c-places-opposites','1C','Adjectives 1','Describe a place using opposite words.',ids('adjectives').slice(0,10),{character:'jo'}),
+  chunk('1c-place-personality','1C','Adjectives 2','Say what a place or person is like.',ids('adjectives').slice(10),{character:'alex'}),
+  chunk('1d-names-contact','1D','Personal information 1','Choose the right fields for names and contact details.',ids('personal',['name','class','first name','last name','phone number','email','What is your phone number?']),{character:'jo'}),
+  chunk('1d-full-card','1D','Personal information 2','Country, city, age, address, postal code and nationality.',ids('personal',['country','city','age','address','postal code','nationality']),{character:'mina'}),
+  chunk('1d-ask-check','1D','Personal questions','Useful questions for completing a form.',[...ids('phrases'),...ids('personal',['What is your phone number?'])],{character:'jo',supportOnly:true})
 ];
 export const chunkById=Object.fromEntries(chunks.map(value=>[value.id,value]));
 
@@ -165,7 +166,7 @@ const beRows=[
 ];
 const formsQuestions=beRows.map(([subject,verb,positive],i)=>choice(`be-form-${i}`,`Complete: ${positive.replace(` ${verb} `,' ___ ')}`,verb,['am','is','are'].filter(x=>x!==verb),positive));
 export const grammarSets=[
- {id:'1a-be',lessonId:'1A',title:'Am, is and are',description:'Positive sentences, negatives, questions and short answers.',
+ {id:'1a-be',lessonId:'1A',title:'Verb to be',description:'Positive sentences, negatives, questions and short answers.',
   models:{columns:['Subject','Positive','Negative','Question'],rows:beRows.map(([subject,,positive,negative,question])=>[subject,positive,negative,question]),shortAnswers:[['Are you a student?','Yes, I am.','No, I’m not.'],['Is she a teacher?','Yes, she is.','No, she isn’t.'],['Are they students?','Yes, they are.','No, they aren’t.']]},
   questions:[...formsQuestions,
    choice('be-not','Choose the negative sentence.','She is not a teacher.',['She not is a teacher.','She is no a teacher.','She not a teacher.'],'She is not a teacher.'),
@@ -177,7 +178,7 @@ export const grammarSets=[
    order('be-order-you','Build the question.','Are you a student?'),
    order('be-order-negative','Build the negative sentence.','They are not teachers.')
   ]},
- {id:'1b-articles',lessonId:'1B',title:'A job: a or an?',description:'Choose the article for the first sound.',
+ {id:'1b-articles',lessonId:'1B',title:'A and an',description:'Choose the article for the first sound.',
   models:{columns:['First sound','Article','Examples'],rows:[['Consonant sound','a','a teacher · a taxi driver'],['Vowel sound','an','an actor · an office worker']]},
   questions:[...['teacher','student','chef','doctor','receptionist','salesclerk','taxi driver','waiter','waitress','farmer','nurse','dentist','police officer','driver'].map((job,i)=>choice(`article-a-${i}`,`Complete: I am ___ ${job}.`,'a',['an'],`I am a ${job}.`)),
    ...['actor','office worker'].map((job,i)=>choice(`article-an-${i}`,`Complete: I am ___ ${job}.`,'an',['a'],`I am an ${job}.`)),
@@ -185,14 +186,14 @@ export const grammarSets=[
    text('article-repair-teacher','Fix one word: She is an teacher.',['She is a teacher.'],'She is a teacher.'),
    order('article-order-actor','Build the sentence.','Alex is an actor.')
   ]},
- {id:'1b-contractions',lessonId:'1B',title:'Two words, one short form',description:'Full forms and contractions of be.',
+ {id:'1b-contractions',lessonId:'1B',title:'Contractions',description:'Full forms and contractions of be.',
   models:{columns:['Full form','Short form'],rows:[['I am','I’m'],['You are','You’re'],['He is','He’s'],['She is','She’s'],['It is','It’s'],['We are','We’re'],['They are','They’re']]},
   questions:[...[
    ['I am a student.',"I'm a student."],['You are my friend.',"You're my friend."],['He is a doctor.',"He's a doctor."],['She is my teacher.',"She's my teacher."],['It is a good job.',"It's a good job."],['We are students.',"We're students."],['They are friendly.',"They're friendly."]
   ].flatMap(([full,short],i)=>[text(`contract-${i}`,`Write the short form: ${full}`,[short],short),text(`expand-${i}`,`Write the full form: ${short}`,[full],full)]),
    choice('contract-youre','Choose the short form of “You are a student.”',"You're a student.",["Your a student.","You's a student.","You'm a student."],"You're a student.")
   ]},
- {id:'1c-be-descriptions',lessonId:'1C',title:'People and places',description:'Use be with a nationality or an adjective.',
+ {id:'1c-be-descriptions',lessonId:'1C',title:'Be: people and places',description:'Use be with a nationality or an adjective.',
   models:{columns:['Country','Nationality'],rows:countryPairs.map(([country,nationality])=>[`I am from ${country}.`,`I am ${nationality}.`])},
   questions:[
    choice('country-from','Complete: I am ___ Canada.','from',['Canadian','is','a'],'I am from Canada.'),
@@ -205,7 +206,7 @@ export const grammarSets=[
    text('nationality-argentina','Complete with the nationality: Jo is from Argentina. Jo is ___.',['Argentinian','Argentine'],'Jo is Argentinian.'),
    text('city-question','Make a question: The city is big.',['Is the city big?'],'Is the city big?')
   ]},
- {id:'1d-capitals',lessonId:'1D',title:'Names need capitals',description:'Names, places, sentence starts and the word I.',
+ {id:'1d-capitals',lessonId:'1D',title:'Capital letters',description:'Names, places, sentence starts and the word I.',
   models:{columns:['Use','Example'],rows:[['Names','Ana Ruiz'],['Places','Toronto · Canada'],['Sentence start and I','Hello, I am Ana.'],['Email','ana@club.example']]},
   questions:[
    text('caps-name','Write the name with capital letters: emma carter',['Emma Carter'],'Emma Carter',{normalization:'capitalization'}),
@@ -265,32 +266,54 @@ const readingQuestions=[
 export const challengeQuestions=[...listeningQuestions,...readingQuestions];
 export const grammarSetById=Object.fromEntries(grammarSets.map(value=>[value.id,value]));
 export const games=[
- {id:'1a-greeting-pairs',lessonId:'1A',title:'A friendly match',type:'memory',description:'Match greetings with situations.',chunkIds:['1a-greetings','1a-goodbyes'],character:'mina'},
- {id:'1a-locker-codes',lessonId:'1A',title:'Open the right locker',type:'locker',description:'Remember a short number code, then enter it.',chunkIds:['1a-numbers-small'],character:'pico'},
- {id:'1a-name-password',lessonId:'1A',title:'The password is a name',type:'spelling',description:'Put the letters of a name in order.',chunkIds:['1a-alphabet-ag','1a-alphabet-hn','1a-alphabet-ot','1a-alphabet-uz'],character:'alex'},
- {id:'1b-duty-board',lessonId:'1B',title:'Repair the duty board',type:'matching',description:'Match people’s jobs to their tasks.',chunkIds:['1b-jobs-town','1b-jobs-places','1b-more-jobs'],character:'jo'},
- {id:'1b-opposite-pairs',lessonId:'1B',title:'Opposite corners',type:'opposites',description:'Find words with opposite meanings.',chunkIds:['1b-opposites'],character:'alex'},
- {id:'1c-postcards',lessonId:'1C',title:'Postcard delivery',type:'countries',description:'Match countries and nationalities.',chunkIds:['1c-world-start','1c-world-more'],character:'mina'},
- {id:'1c-room-message',lessonId:'1C',title:'A room for the club',type:'reading',description:'Use the room cards to choose and repair a message.',chunkIds:['1c-places-opposites'],character:'jo'},
- {id:'1d-club-card',lessonId:'1D',title:'The club card mix-up',type:'form',description:'Sort the labels and check a fictional club card.',chunkIds:['1d-names-contact','1d-full-card'],character:'mina'}
+ {id:'1a-greeting-pairs',lessonId:'1A',title:'Greeting match',type:'memory',description:'Match English and Spanish.',chunkIds:['1a-greetings','1a-goodbyes'],character:'mina'},
+ {id:'1a-locker-codes',lessonId:'1A',title:'Number memory',type:'locker',description:'Remember a short number code, then enter it.',chunkIds:['1a-numbers-small'],character:'pico'},
+ {id:'1a-name-password',lessonId:'1A',title:'Name spelling',type:'spelling',description:'Put the letters of a name in order.',chunkIds:['1a-alphabet-ag','1a-alphabet-hn','1a-alphabet-ot','1a-alphabet-uz'],character:'alex'},
+ {id:'1b-duty-board',lessonId:'1B',title:'Job match',type:'matching',description:'Match English and Spanish.',chunkIds:['1b-jobs-town','1b-jobs-places','1b-more-jobs'],character:'jo'},
+ {id:'1b-opposite-pairs',lessonId:'1B',title:'Adjective match',type:'opposites',description:'Match English and Spanish.',chunkIds:['1b-opposites'],character:'alex'},
+ {id:'1c-postcards',lessonId:'1C',title:'Country match',type:'countries',description:'Match English and Spanish.',chunkIds:['1c-world-start','1c-world-more'],character:'mina'},
+ {id:'1c-room-message',lessonId:'1C',title:'Reading: rooms',type:'reading',description:'Use the room cards to choose and repair a message.',chunkIds:['1c-places-opposites'],character:'jo'},
+ {id:'1d-club-card',lessonId:'1D',title:'Personal information',type:'form',description:'Sort the labels and check a fictional club card.',chunkIds:['1d-names-contact','1d-full-card'],character:'mina'}
 ];
 
 const grammarActivities=grammarSets.map(set=>({id:`practice-${set.id}`,lessonId:set.lessonId,title:set.title,type:'grammar',description:set.description,grammarSetIds:[set.id],character:set.lessonId==='1B'?'alex':'mina',estimatedMinutes:3}));
 const vocabActivities=chunks.map(set=>({id:`quiz-${set.id}`,lessonId:set.lessonId,title:set.title,type:'quiz',description:set.description,chunkIds:[set.id],character:set.character,estimatedMinutes:3}));
-export const activities=[...vocabActivities,...grammarActivities,...games.map(game=>({...game,estimatedMinutes:3})),
- ...['1A','1B','1C','1D'].map(lessonId=>({id:`listen-${lessonId.toLowerCase()}`,lessonId,title:lessonId==='1A'?'Listen to your new friends':lessonId==='1B'?'Who does what?':lessonId==='1C'?'Where are they from?':'At the hotel',type:'listening',description:'Listen to a real book recording and find the details.',character:'jo',estimatedMinutes:4})),
- ...['1A','1B','1C','1D'].map(lessonId=>({id:`read-${lessonId.toLowerCase()}`,lessonId,title:lessonId==='1C'?'A room for the club':lessonId==='1D'?'Check the club cards':'A message from town',type:'reading',description:'Read a short message and find the information.',character:'mina',estimatedMinutes:3})),
- ...['1A','1B','1C','1D'].map(lessonId=>({id:`review-${lessonId.toLowerCase()}`,lessonId,title:'Mix and remember',type:'review',description:'Combine the lesson’s words and grammar.',character:'pico',estimatedMinutes:4}))
+const archivedActivities=[...vocabActivities,...grammarActivities,...games.map(game=>({...game,estimatedMinutes:3})),
+ ...['1A','1B','1C','1D'].map(lessonId=>({id:`listen-${lessonId.toLowerCase()}`,lessonId,title:'Listening',type:'listening',description:'Listen to a real book recording and find the details.',character:'jo',estimatedMinutes:4})),
+ ...['1A','1B','1C','1D'].map(lessonId=>({id:`read-${lessonId.toLowerCase()}`,lessonId,title:'Reading',type:'reading',description:'Read a short message and find the information.',character:'mina',estimatedMinutes:3})),
+ ...['1A','1B','1C','1D'].map(lessonId=>({id:`review-${lessonId.toLowerCase()}`,lessonId,title:'Review',type:'review',description:'Combine the lesson’s words and grammar.',character:'pico',estimatedMinutes:4}))
 ];
+// Main-path topics mirror the book. Smaller sets remain available in Practise.
+const topicActivities=[
+ {id:'topic-1a-greetings',lessonId:'1A',title:'Greetings',type:'quiz',chunkIds:['1a-greetings','1a-goodbyes'],character:'mina'},
+ {id:'topic-1a-alphabet',lessonId:'1A',title:'Alphabet',type:'quiz',chunkIds:['1a-alphabet-ag','1a-alphabet-hn','1a-alphabet-ot','1a-alphabet-uz'],character:'alex'},
+ {id:'topic-1a-numbers',lessonId:'1A',title:'Numbers',type:'quiz',chunkIds:['1a-numbers-small','1a-numbers-teens','1a-numbers-tens'],character:'alex'},
+ {id:'topic-1a-be',lessonId:'1A',title:'Verb to be',type:'grammar',grammarSetIds:['1a-be'],character:'mina'},
+ {id:'topic-1b-jobs',lessonId:'1B',title:'Jobs',type:'quiz',chunkIds:['1b-jobs-town','1b-jobs-places','1b-more-jobs'],character:'jo'},
+ {id:'topic-1b-articles',lessonId:'1B',title:'A and an',type:'grammar',grammarSetIds:['1b-articles'],character:'alex'},
+ {id:'topic-1b-contractions',lessonId:'1B',title:'Contractions',type:'grammar',grammarSetIds:['1b-contractions'],character:'alex'},
+ {id:'topic-1c-countries',lessonId:'1C',title:'Countries and nationalities',type:'quiz',chunkIds:['1c-world-start','1c-world-more'],character:'mina'},
+ {id:'topic-1c-adjectives',lessonId:'1C',title:'Adjectives',type:'quiz',chunkIds:['1c-places-opposites','1c-place-personality'],character:'jo'},
+ {id:'topic-1c-be',lessonId:'1C',title:'Be: people and places',type:'grammar',grammarSetIds:['1c-be-descriptions'],character:'alex'},
+ {id:'topic-1d-details',lessonId:'1D',title:'Personal information',type:'quiz',chunkIds:['1d-names-contact','1d-full-card'],character:'mina'},
+ {id:'topic-1d-questions',lessonId:'1D',title:'Personal questions',type:'quiz',chunkIds:['1d-ask-check'],character:'jo'},
+ {id:'topic-1d-capitals',lessonId:'1D',title:'Capital letters',type:'grammar',grammarSetIds:['1d-capitals'],character:'alex'}
+].map(activity=>({...activity,estimatedMinutes:3,description:'',kind:'topic'}));
+export const activities=[...archivedActivities,...topicActivities];
 export const activityById=Object.fromEntries(activities.map(value=>[value.id,value]));
+export const pathNodes=['1A','1B','1C','1D'].flatMap(lessonId=>[
+ ...topicActivities.filter(activity=>activity.lessonId===lessonId),
+ ...['listening','reading'].map((type,index)=>({...activityById[`${index?'read':'listen'}-${lessonId.toLowerCase()}`],title:index?'Reading game':'Listening game',kind:'game',estimatedMinutes:2}))
+]).map(node=>({...node,wordCount:new Set((node.chunkIds||[]).flatMap(id=>chunkById[id].wordIds)).size}));
+export const pathNodeById=Object.fromEntries(pathNodes.map(node=>[node.id,node]));
 export const lessons=[
  {id:'1A',title:'New friends',subtitle:'Meet someone, spell a name and exchange numbers.',character:'mina',color:'magenta',grammarSetIds:['1a-be']},
  {id:'1B',title:"What’s your job?",subtitle:'Find out what people do.',character:'jo',color:'orange',grammarSetIds:['1b-articles','1b-contractions']},
  {id:'1C',title:'Where are you from?',subtitle:'Describe a city and choose a place for a friend.',character:'mina',color:'blue',grammarSetIds:['1c-be-descriptions']},
  {id:'1D',title:'Let’s fill in a form',subtitle:'Ask for details and complete a registration form.',character:'alex',color:'magenta',grammarSetIds:['1d-capitals']}
-].map(lesson=>({...lesson,chunkIds:chunks.filter(x=>x.lessonId===lesson.id).map(x=>x.id),activityIds:activities.filter(x=>x.lessonId===lesson.id).map(x=>x.id),bookPages:lesson.id==='1A'?[5,6]:lesson.id==='1B'?[7,8]:lesson.id==='1C'?[9,10]:[11,12]}));
+].map(lesson=>({...lesson,chunkIds:chunks.filter(x=>x.lessonId===lesson.id).map(x=>x.id),activityIds:activities.filter(x=>x.lessonId===lesson.id).map(x=>x.id),pathNodeIds:pathNodes.filter(x=>x.lessonId===lesson.id).map(x=>x.id),bookPages:lesson.id==='1A'?[5,6]:lesson.id==='1B'?[7,8]:lesson.id==='1C'?[9,10]:[11,12]}));
 export const lessonById=Object.fromEntries(lessons.map(value=>[value.id,value]));
 export const course={id:'horizons-a1',bookId:'a1',title:'Horizons A1',level:'A1',unit:1,unitTitle:'New friends',language:'English',lessonIds:lessons.map(x=>x.id),
-  description:'Short practice stops to help the book’s words and grammar stay with you.',
+  description:'Vocabulary and grammar practice for the Student’s Book.',
   bookUrl:'../A1/Student%27s%20Book.html',sourceEdition:'2026-11-02',allLessonsAvailable:true,
-  activityIds:activities.map(x=>x.id),requiredBankEntries:vocabulary.filter(x=>!x.supportOnly).length};
+  activityIds:activities.map(x=>x.id),pathNodeIds:pathNodes.map(x=>x.id),requiredBankEntries:vocabulary.filter(x=>!x.supportOnly).length};

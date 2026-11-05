@@ -196,3 +196,56 @@ button:hover,button:active,.path-stop:hover,.lesson-jumps>button:hover{transform
 
 .question-scene.topic-scene .question-image{width:240px;height:150px;max-width:100%;margin:0}
 @media(max-width:680px){.question-scene.topic-scene .question-image{width:210px;height:128px;max-width:100%}}
+
+/* Main lessons show only book topics and two games. Details open on selection. */
+.top-avatar{display:block}
+.compact-hero{min-height:230px;padding:30px 38px;border-radius:30px}
+.compact-hero .hero-copy{width:70%}
+.compact-hero h1{font-size:clamp(32px,3.7vw,45px);line-height:1.12;margin-bottom:22px}
+.compact-hero .hero-pico{width:150px;height:205px;bottom:12px;right:30px}
+.learning-path{max-width:640px;margin:28px auto 0}
+.learning-path>.lesson-jumps{margin:0 0 26px;justify-content:center}
+.learning-path .path-lesson{margin:0 auto 24px;max-width:540px}
+.learning-path .lesson-landmark{min-height:100px;margin-bottom:0;padding-right:90px;gap:18px}
+.lesson-landmark>h2{font-size:24px;min-width:0;flex:1}
+.learning-path .lesson-guide{height:100px;width:75px;bottom:0}
+.lesson-trail{gap:4px;padding:10px 0 12px}
+.lesson-trail .path-stop{height:88px;width:88px;max-width:88px;left:calc(var(--path-x) - 44px);padding:10px 0;gap:0}
+.lesson-trail .stop-orb{width:62px;height:62px}
+.lesson-trail .trail-line path{stroke-width:14px}
+.path-node-dialog>h2{font-size:29px;line-height:1.3}
+.path-node-meta{display:flex;align-items:center;flex-wrap:wrap;gap:12px 20px;margin:20px 0 28px;color:var(--muted);font-size:14px}
+.path-node-meta>span{white-space:nowrap}
+.page-heading.practice-heading,.page-heading:has(+.bank-toolbar){min-height:155px;padding-top:10px;padding-bottom:22px}
+.page-heading>.page-character{height:145px;width:90px}
+.profile-heading{padding-top:18px}
+.profile-heading>h1{font-size:36px}
+.question-body>h1{font-size:clamp(27px,3.3vw,36px);line-height:1.35;white-space:pre-line}
+.question-cue{font-size:clamp(23px,3vw,30px);font-weight:700;line-height:1.45;margin-top:18px;white-space:pre-line}
+.listening-task{font-size:17px;line-height:1.65;margin-top:18px}
+.question-listen{margin-top:22px}
+.skip-audio{display:block;margin-top:8px;font-weight:700;color:var(--muted)}
+.answer-footer{justify-content:flex-end}
+.answer-footer .answer-feedback{margin-right:auto}
+.activity-page .question-body>.question-scene{margin:20px 0}
+.game-intro>h1{font-size:31px}
+.game-intro>.eyebrow{display:none}
+@media(max-width:680px){
+ .compact-hero{min-height:205px;padding:25px 24px;border-radius:26px}
+ .compact-hero .hero-copy{width:72%}
+ .compact-hero h1{font-size:32px;max-width:210px}
+ .compact-hero .hero-pico{width:100px;height:164px;right:10px;bottom:12px}
+ .learning-path{margin-top:24px}
+ .learning-path .lesson-landmark{min-height:94px;padding-right:70px;gap:13px}
+ .lesson-landmark>h2{font-size:21px}
+ .learning-path .lesson-guide{width:59px;height:91px}
+ .lesson-trail .path-stop{height:82px;width:80px;max-width:80px;left:calc(var(--path-x) - 40px);padding:8px 0}
+ .lesson-trail .stop-orb{width:58px;height:58px}
+ .lesson-trail .trail-line path{stroke-width:12px}
+ .page-heading.practice-heading,.page-heading:has(+.bank-toolbar){min-height:128px}
+ .page-heading>.page-character{height:120px;width:66px}
+ .question-body>h1{font-size:27px}
+ .activity-page .question-body>.question-scene{height:128px;margin:17px 0}
+ .path-node-dialog{padding:25px}
+ .result-character{height:195px;width:180px}
+}

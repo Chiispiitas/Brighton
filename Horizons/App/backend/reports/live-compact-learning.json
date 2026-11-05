@@ -1,0 +1,187 @@
+{
+  "endpoint": "https://headless-hphybypweny-chiispiitas-140b.wix-site-host.com/api/horizons",
+  "date": "2026-11-05T02:03:26.429Z",
+  "checks": [
+    {
+      "name": "Reserved QA profile restores without changing profile or access expiry",
+      "pass": true,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "name": "Vocabulary is typed English recall from a Spanish prompt",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "Live server accepts normalized typed answers and controls XP",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "awardedXp": 15
+      }
+    },
+    {
+      "name": "Typed-answer retry remains idempotent",
+      "pass": true,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "name": "Incorrect typed answer cannot claim client-provided correctness",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "awardedXp": 10
+      }
+    },
+    {
+      "name": "Grammar provides an eligible typed contraction question",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "Live server accepts a valid contraction when the task allows it",
+      "pass": true,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "name": "Cannot-listen variant is a different reading task with no audio",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "Live reading alternative saves without inventing vocabulary mastery",
+      "pass": true,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "name": "Changing saved audio mode is an idempotency conflict",
+      "pass": true,
+      "detail": {
+        "status": 409
+      }
+    },
+    {
+      "name": "Per-question audio fallback preserves other listening questions",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "Live server reconstructs one switched listening question",
+      "pass": true,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "name": "Live server rejects an invented audio alternative",
+      "pass": true,
+      "detail": {
+        "status": 400
+      }
+    },
+    {
+      "name": "Matching uses a Spanish translation instead of an English definition",
+      "pass": true,
+      "detail": {}
+    },
+    {
+      "name": "Live Spanish matching is authoritative recognition, not retrieval mastery",
+      "pass": true,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "name": "Complete custom listening round saves (audio)",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "questions": 12,
+        "awardedXp": 70
+      }
+    },
+    {
+      "name": "Complete custom listening retry is idempotent (audio)",
+      "pass": true,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "name": "Complete custom listening replay cannot change answers (audio)",
+      "pass": true,
+      "detail": {
+        "status": 409
+      }
+    },
+    {
+      "name": "Complete custom listening round saves (one)",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "questions": 12,
+        "awardedXp": 70
+      }
+    },
+    {
+      "name": "Complete custom listening retry is idempotent (one)",
+      "pass": true,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "name": "Complete custom listening replay cannot change answers (one)",
+      "pass": true,
+      "detail": {
+        "status": 409
+      }
+    },
+    {
+      "name": "Complete custom listening round saves (all)",
+      "pass": true,
+      "detail": {
+        "status": 200,
+        "questions": 12,
+        "awardedXp": 70
+      }
+    },
+    {
+      "name": "Complete custom listening retry is idempotent (all)",
+      "pass": true,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "name": "Complete custom listening replay cannot change answers (all)",
+      "pass": true,
+      "detail": {
+        "status": 409
+      }
+    },
+    {
+      "name": "Saved learning survives a fresh session bootstrap",
+      "pass": true,
+      "detail": {
+        "status": 200
+      }
+    },
+    {
+      "name": "Existing profile and original book entitlement remain unchanged",
+      "pass": true,
+      "detail": {}
+    }
+  ],
+  "passed": true,
+  "sample001CodesUntouched": true,
+  "profileFieldsUnchanged": true
+}

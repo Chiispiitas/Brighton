@@ -44,13 +44,14 @@ export function aggregateProgress(events,now,timeZone){
   for(const answer of event.answers)for(const itemId of answer.wordIds||[answer.itemId]){if(!itemId||answer.kind==='grammar')continue;const s=words[itemId]||={itemId,term:wordById[itemId]?.term||answer.term||itemId,kind:answer.kind||'vocabulary',bookId:event.bookId,lessonId:event.lessonId,correct:0,incorrect:0,seen:0,recallAttempts:0,retrievalCorrect:0,mastered:false,lastSeen:event.createdAt};s.seen++;s[answer.correct?'correct':'incorrect']++;if(answer.retrieval!==false)s.recallAttempts++;if(answer.correct&&answer.masteryEligible!==false)s.retrievalCorrect++;s.lastSeen=event.createdAt;s.lastCorrect=answer.correct;s.mastered=s.retrievalCorrect>=3&&s.retrievalCorrect/Math.max(1,s.recallAttempts)>=.75;}
  }
  const days=[...active].sort(),daySet=new Set(days);let streak=0,walk=daySet.has(today)?today:previousDay(today);while(daySet.has(walk)){streak++;walk=previousDay(walk);}let bestStreak=0,run=0,prev=null;for(const d of days){run=prev&&previousDay(d)===prev?run+1:1;bestStreak=Math.max(bestStreak,run);prev=d;}
- return{xp,streak,bestStreak,todayXp:daily[today]||0,completedActivities:[...complete],completedLessons:lessonDefinitions.filter(lesson=>lesson.activityIds.every(id=>complete.has(id))).map(lesson=>lesson.id),wordStats:words,lessons,attempts:events.length,activeDays:days,dailyXp:daily,reviewItems:Object.values(words).filter(x=>!x.mastered&&(!x.lastCorrect||x.incorrect>0)).map(x=>x.itemId),lastActivityId:last?.activityId||null,lastLessonId:last?.lessonId||null,lastBookId:last?.bookId||null};
+ const nodeDone=id=>{if(complete.has(id))return true;const node=activityById[id];if(node?.kind!=='topic')return false;const oldIds=[...(node.chunkIds||[]).map(id=>'quiz-'+id),...(node.grammarSetIds||[]).map(id=>'practice-'+id)];return oldIds.length>0&&oldIds.every(id=>complete.has(id));};
+ return{xp,streak,bestStreak,todayXp:daily[today]||0,completedActivities:[...complete],completedLessons:lessonDefinitions.filter(lesson=>(lesson.pathNodeIds||lesson.activityIds).every(nodeDone)).map(lesson=>lesson.id),wordStats:words,lessons,attempts:events.length,activeDays:days,dailyXp:daily,reviewItems:Object.values(words).filter(x=>!x.mastered&&(!x.lastCorrect||x.incorrect>0)).map(x=>x.itemId),lastActivityId:last?.activityId||null,lastLessonId:last?.lessonId||null,lastBookId:last?.bookId||null};
 }
 function cleanAttempt(raw,now){
  if(!object(raw))fail(400,'INVALID_ATTEMPT','Please try that practice round again.');
  const id=String(raw.attemptId||raw.id||'');if(!/^[a-zA-Z0-9_-]{8,90}$/.test(id))fail(400,'INVALID_ATTEMPT_ID','This practice round needs a valid identifier.');
  const options=object(raw.quizOptions)?raw.quizOptions:{};
- const b=bookId(raw.bookId||'horizons-a1'),activity=safeText(raw.activityId,140),definition=Object.hasOwn(activityById,activity)?activityById[activity]:null,custom=['mixed-practice','custom-mix','mix-quiz','mix-recall','mix-memory','mix-matching'].includes(activity);
+ const b=bookId(raw.bookId||'horizons-a1'),activity=safeText(raw.activityId,140),definition=Object.hasOwn(activityById,activity)?activityById[activity]:null,custom=['mixed-practice','custom-mix','mix-quiz','mix-recall','mix-memory','mix-matching','mix-listening'].includes(activity);
  const chunks=Array.isArray(options.chunkIds||raw.chunkIds)?(options.chunkIds||raw.chunkIds).slice(0,40).map(x=>String(x)):[];
  const lessonIds=Array.isArray(options.lessonIds||raw.lessonIds)?(options.lessonIds||raw.lessonIds).map(x=>String(x).toUpperCase()):[];
  const grammarSetIds=Array.isArray(options.grammarSetIds||raw.grammarSetIds)?(options.grammarSetIds||raw.grammarSetIds).map(String):[];
@@ -58,9 +59,18 @@ function cleanAttempt(raw,now){
  if(b!=='horizons-a1'||!/^1[ABCD]$/.test(lesson)||(!definition&&!custom)||chunks.some(x=>!Object.hasOwn(chunkById,x))||lessonIds.some(x=>!Object.hasOwn(lessonById,x)))fail(400,'INVALID_ACTIVITY','This practice activity is not available in this book.');
  if(!Array.isArray(raw.answers)||!raw.answers.length||raw.answers.length>512)fail(400,'INVALID_ANSWERS','Please finish a practice round with 1 to 512 answers.');
  const seed=safeText(options.seed??raw.seed??id,100),mode=safeText(options.mode||raw.mode||'',20),matching=['memory','matching'].includes(mode)||['mix-memory','mix-matching'].includes(activity);
+ if('audioEnabled'in options&&typeof options.audioEnabled!=='boolean')fail(400,'INVALID_ACTIVITY_OPTIONS','Please choose an available audio setting.');
+ const audioEnabled=options.audioEnabled!==false;
+ const fallbackIds=options.audioFallbackQuestionIds??[];
+ if(!Array.isArray(fallbackIds)||fallbackIds.length>512||fallbackIds.some(id=>typeof id!=='string'||!id.length||id.length>150)||new Set(fallbackIds).size!==fallbackIds.length)fail(400,'INVALID_ACTIVITY_OPTIONS','Please choose an available listening question.');
+ const audioFallbackQuestionIds=[...fallbackIds].sort();
  const generation={seed,chunkIds:chunks.length?chunks:definition?.chunkIds,lessonIds:lessonIds.length?lessonIds:definition?.lessonId?[definition.lessonId]:undefined,grammarSetIds:grammarSetIds.length?grammarSetIds:definition?.grammarSetIds,count:512,...(mode&&!matching?{mode}:{})};
  let expected;
- try{expected=matching?getMatchingPairs(generation):definition?getActivityQuestions(activity,generation):buildQuiz(generation);}catch{fail(400,'INVALID_ACTIVITY_OPTIONS','Please choose an available practice activity and word set.');}
+ try{
+  const reconstruct=settings=>matching?getMatchingPairs(settings):definition?getActivityQuestions(activity,settings):buildQuiz(settings);
+  if(audioFallbackQuestionIds.length){const original=reconstruct({...generation,audioEnabled:true,audioFallbackQuestionIds:[]}),listeningIds=new Set(original.filter(q=>q.listening||q.audio||q.audioWordId).map(q=>q.id));if(audioFallbackQuestionIds.some(id=>!listeningIds.has(id)))fail(400,'INVALID_ACTIVITY_OPTIONS','Please choose an available listening question.');}
+  expected=reconstruct({...generation,audioEnabled,audioFallbackQuestionIds});
+ }catch{fail(400,'INVALID_ACTIVITY_OPTIONS','Please choose an available practice activity and word set.');}
  const expectedById=new Map(expected.map(x=>[x.id,x])),seen=new Set();
  const answers=raw.answers.map(a=>{
   if(!object(a))fail(400,'INVALID_ANSWER','An answer could not be saved.');const qid=safeText(a.questionId||a.itemId||a.id,150),q=expectedById.get(qid);
@@ -71,7 +81,7 @@ function cleanAttempt(raw,now){
   return{questionId:qid,itemId:ids[0]||qid,wordIds:ids,correct:grade.correct,term:wordById[ids[0]]?.term||q.expectedTerm||qid,kind:q.kind==='grammar'?'grammar':'vocabulary',answer:safeText(Array.isArray(submitted)?submitted.join(' '):object(submitted)?submitted.text||submitted.id:submitted,180),retrieval:!matching&&q.retrieval!==false&&!hintUsed,masteryEligible:!matching&&!!grade.masteryEligible&&!hintUsed,hintUsed};
  });
  const seconds=Math.max(0,Math.min(3600,Number(raw.durationSeconds??(Number(raw.durationMs)||0)/1000)||0));
- return{id,bookId:b,lessonId:lesson,activityId:activity,chunkIds:chunks,mode,seed,answers,durationSeconds:seconds,createdAt:now,xp:answers.filter(x=>x.correct).length*5+10};
+ return{id,bookId:b,lessonId:lesson,activityId:activity,chunkIds:chunks,mode,seed,...(!audioEnabled?{audioEnabled:false}:{}),...(audioFallbackQuestionIds.length?{audioFallbackQuestionIds}:{}),answers,durationSeconds:seconds,createdAt:now,xp:answers.filter(x=>x.correct).length*5+10};
 }
 export function createApplication(store,{now=()=>new Date().toISOString(),trustedOrigins=['https://exams.bebrighton.net','https://chiispiitas.github.io'],allowLocal=true}={}){
  const localRate=new Map();

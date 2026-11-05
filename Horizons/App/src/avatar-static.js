@@ -4,7 +4,7 @@ const appURL=new URL('../',import.meta.url);
 let atlasPromise;
 const style=`.hzn-avatar-static{position:relative;display:block;width:100%;height:100%;overflow:hidden;isolation:isolate;pointer-events:none;container-type:size}.hzn-avatar-static-stage{position:absolute;left:50%;top:50%;width:min(100cqw,100cqh);height:min(100cqw,100cqh);transform:translate(-50%,-50%)}.hzn-avatar-static-pixels{position:absolute;display:block;overflow:hidden}.hzn-avatar-static-pixels>img{position:absolute;display:block;max-width:none!important;max-height:none!important;pointer-events:none;user-select:none}.hzn-avatar-static,.hzn-avatar-static *{animation:none!important;transition:none!important}`;
 function installStyle(){if(document.getElementById('hzn-avatar-static-style'))return;const node=document.createElement('style');node.id='hzn-avatar-static-style';node.textContent=style;document.head.append(node);}
-function atlas(){return atlasPromise??=fetch(new URL('assets/art/avatar-static-v1.frames.json?wardrobe=1',appURL)).then(r=>{if(!r.ok)throw Error('Static avatar artwork could not be opened');return r.json();});}
+function atlas(){return atlasPromise??=fetch(new URL('assets/art/avatar-static-v1.frames.json?compact=1',appURL)).then(r=>{if(!r.ok)throw Error('Static avatar artwork could not be opened');return r.json();});}
 export function unmountAvatar(element){mounts.get(element)?.dispose();mounts.delete(element);}
 export function mountAvatar(element,{avatar={},manifest}={}){
  installStyle();unmountAvatar(element);let disposed=false;

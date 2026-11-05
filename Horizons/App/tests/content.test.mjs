@@ -67,7 +67,7 @@ verify('every selected word can appear once in an all-words round and is graded 
 });
 
 verify('choice sets have one correct choice, no duplicate labels, and every wrong choice fails',()=>{
- const questions=buildQuiz({lessonIds:['1A','1B','1C','1D'],mode:'mixed',count:'all',seed:'all-choice-checks'});
+ const questions=buildQuiz({lessonIds:['1A','1B','1C','1D'],mode:'choice',count:'all',seed:'all-choice-checks'});
  for(const q of questions.filter(q=>q.type==='choice')){
   assert.equal(q.choices.filter(x=>x.id===q.answer).length,1,q.id);
   assert.equal(new Set(q.choices.map(x=>normalizeAnswer(x.text,q.normalization))).size,q.choices.length,q.id);
@@ -75,7 +75,7 @@ verify('choice sets have one correct choice, no duplicate labels, and every wron
  }
  const positions=new Set();
  for(let seed=0;seed<80;seed++){
-  const q=makeVocabularyQuestions([wordById['v-jobs-teacher']],{seed})[0];
+  const q=makeVocabularyQuestions([wordById['v-jobs-teacher']],{seed,mode:'choice'})[0];
   positions.add(q.choices.findIndex(x=>x.id===q.answer));
  }
  assert.equal(positions.size,4,'The correct answer should not stay in one slot.');
@@ -83,7 +83,7 @@ verify('choice sets have one correct choice, no duplicate labels, and every wron
 
 verify('synonyms do not appear as false distractors or falsely master an unseen bank spelling',()=>{
  for(const word of vocabulary){
-  const q=makeVocabularyQuestions([word],{seed:word.id})[0];
+  const q=makeVocabularyQuestions([word],{seed:word.id,mode:'choice'})[0];
   const equivalents=new Set([word.term,...word.aliases||[]].map(x=>normalizeAnswer(x)));
   for(const wrong of q.choices.filter(x=>x.id!==q.answer))assert.equal(equivalents.has(normalizeAnswer(wrong.text)),false,`${word.term}: false synonym ${wrong.text}`);
  }
@@ -111,12 +111,12 @@ verify('capital-letter practice really checks capitals and punctuation while ord
  assert.equal(isCorrect(country,'Canada'),false);
 });
 
-verify('sentence builders accept the correct order and reject a bag of the same words in the wrong order',()=>{
+verify('typed sentence construction accepts correct order and rejects reversed words',()=>{
  for(const set of grammarSets){
   const questions=getActivityQuestions(`practice-${set.id}`,{count:'all',seed:'builders'});
-  for(const q of questions.filter(q=>q.type==='order')){
-   assert.ok(q.sentenceTokens.every(x=>x.id&&x.text));
-   assert.equal(new Set(q.sentenceTokens.map(x=>x.id)).size,q.sentenceTokens.length);
+  for(const q of questions.filter(q=>q.tokens?.length)){
+   assert.equal(q.type,'text','Grammar sentence construction prioritizes typing.');
+   assert.ok(q.prompt.includes('Type the sentence.'));
    const correct=String(q.answer).split(' ');
    assert.equal(isCorrect(q,correct),true,q.id);
    assert.equal(isCorrect(q,[...correct].reverse()),false,q.id);
@@ -128,7 +128,7 @@ verify('sentence builders accept the correct order and reject a bag of the same 
  assert.equal(isCorrect(ariana,['A','R','A','I','N','A']),false);
 });
 
-verify('matching games preserve one-to-one meaning, opposite and country relationships',()=>{
+verify('matching games use one-to-one English and Spanish study pairs',()=>{
  for(const game of games.filter(x=>['memory','matching','countries','opposites'].includes(x.type))){
   const pairs=getMatchingPairs({activityId:game.id,count:6,seed:game.id});
   assert.ok(pairs.length>=3,game.id);
@@ -138,11 +138,11 @@ verify('matching games preserve one-to-one meaning, opposite and country relatio
   for(const pair of pairs)assert.ok(wordById[pair.wordId]);
  }
  const postcards=getMatchingPairs({activityId:'1c-postcards',count:'all',seed:'postcards'});
- assert.equal(postcards.length,11);
- assert.ok(postcards.some(x=>x.left==='Ecuador'&&x.right==='Ecuadorian'));
+ assert.equal(postcards.length,22);
+ assert.ok(postcards.some(x=>x.left==='Ecuadorian'&&x.right==='ecuatoriano / ecuatoriana'));
  const opposites=getMatchingPairs({activityId:'1b-opposite-pairs',count:'all'});
- assert.equal(opposites.length,5);
- assert.ok(opposites.some(x=>x.left==='cheap'&&x.right==='expensive'));
+ assert.equal(opposites.length,10);
+ assert.ok(opposites.some(x=>x.left==='cheap'&&x.right==='barato / barata'));
 });
 
 verify('locker codes retain number boundaries and never turn the game into arithmetic',()=>{

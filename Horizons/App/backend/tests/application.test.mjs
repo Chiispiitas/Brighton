@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {createApplication,COLLECTIONS,DEMO_CODES,idFor,addCalendarMonths,aggregateProgress} from '../src/server/application.mjs';
-import {activities,wordById,chunks,vocabulary} from '../src/content/unit1.mjs';
+import {activities,activityById,wordById,chunks,vocabulary,pathNodes,lessons} from '../src/content/unit1.mjs';
 import {getActivityQuestions,getMatchingPairs,buildQuiz} from '../src/content/engine.mjs';
 function memoryStore(){const rows=new Map();return{rows,async get(c,id){const v=structuredClone(rows.get(c+':'+id)||null);if(v)delete v._scope;return v},async create(c,id,v,scope){const key=c+':'+id;if(rows.has(key))throw Error('Already exists');rows.set(key,{...structuredClone(v),_scope:scope});return structuredClone(v)},async put(c,id,v,scope){rows.set(c+':'+id,{...structuredClone(v),_scope:scope});return structuredClone(v)},async list(c,scope){return[...rows.entries()].filter(([k,v])=>k.startsWith(c+':')&&v._scope===scope).map(([,v])=>{const x=structuredClone(v);delete x._scope;return x})}}}
 async function fixture(){const store=memoryStore();for(const c of DEMO_CODES)await store.create(COLLECTIONS.codes,await idFor('code:'+c.code),{bookId:c.bookId,disabled:false},'issued');let date='2026-11-04T12:00:00.000Z';const app=createApplication(store,{now:()=>date});return{store,app,setDate:value=>date=value,async call(action,data={},token='',origin='https://exams.bebrighton.net'){const res=await app.handle(new Request('https://test/api/horizons',{method:'POST',headers:{'Content-Type':'application/json','Origin':origin,...token?{'X-Requested-With':token}:{}},body:JSON.stringify({action,...data})}));return{status:res.status,...await res.json()}}}}
@@ -34,3 +34,60 @@ test('Synthetic mixes grade every selected word, including All, without acceptin
 
 test('Only registered path activities count as completed while mixed rounds retain learning progress',async()=>{const f=await fixture(),a=await f.call('redeem',{code:'DEMO-HZ-A1-001'});const result=await f.call('saveAttempt',{attempt:{...sampleAttempt,activityId:'mix-recall',quizOptions:{seed:54,mode:'recall',chunkIds:['1a-greetings']}}},a.token);assert.equal(result.status,200);assert.equal(result.progress.xp,15);assert.equal(result.progress.attempts,1);assert.equal(result.progress.wordStats['v-greetings-hello'].correct,1);assert.deepEqual(result.progress.completedActivities,[]);assert.deepEqual(result.progress.completedLessons,[]);});
 test('Avatar badge none is free; reward badges require authoritative stored XP',async()=>{const f=await fixture(),a=await f.call('redeem',{code:'DEMO-HZ-A1-001'});const free=await f.call('updateProfile',{patch:{avatar:{skin:'warm',hair:'short',outfit:'magenta',badge:'none'}}},a.token);assert.equal(free.status,200);assert.equal(free.profile.avatar.badge,'none');for(const badge of['star-pin','trophy-pin','compass-pin'])assert.equal((await f.call('updateProfile',{patch:{avatar:{badge}}},a.token)).status,403);assert.equal((await f.call('updateProfile',{patch:{avatar:{badge:'invented'}}},a.token)).status,400);for(let i=1;i<=17;i++){await f.call('saveAttempt',{attempt:{...sampleAttempt,attemptId:'badge-proof-round-'+i}},a.token);if(i===2)assert.equal((await f.call('updateProfile',{patch:{avatar:{badge:'star-pin'}}},a.token)).status,200);if(i===7)assert.equal((await f.call('updateProfile',{patch:{avatar:{badge:'trophy-pin'}}},a.token)).status,200);}const unlocked=await f.call('updateProfile',{patch:{avatar:{badge:'compass-pin'}}},a.token);assert.equal(unlocked.status,200);assert.equal(unlocked.progress.xp,255);const second=await f.call('redeem',{code:'DEMO-HZ-A1-001'});assert.equal(second.profile.avatar.badge,'compass-pin');});
+
+
+test('Audio alternatives are reconstructed on the server, persisted and retry-safe',async()=>{
+ const f=await fixture(),session=await f.call('redeem',{code:'DEMO-HZ-A1-001'}),activity=pathNodes.find(node=>node.type==='listening');
+ const options={seed:'audio-alternative-proof',count:512,audioEnabled:false},questions=getActivityQuestions(activity.id,options),q=questions.find(q=>q.audioFallback&&q.kind==='reading');
+ assert.ok(q);assert.ok(!q.audio&&!q.audioWordId&&!q.listening);assert.equal(q.retrieval,false);
+ const attempt={id:'audio-alternative-round',activityId:activity.id,quizOptions:options,answers:[{questionId:q.id,submitted:q.answer,correct:false,masteryEligible:true}]};
+ const saved=await f.call('saveAttempt',{attempt},session.token);assert.equal(saved.status,200);assert.equal(saved.attempt.awardedXp,15);
+ const events=await f.store.list(COLLECTIONS.attempts,session.profile.id);assert.equal(events[0].audioEnabled,false);assert.equal(events[0].answers[0].correct,true);assert.equal(events[0].answers[0].masteryEligible,false);assert.deepEqual(saved.progress.wordStats,{});
+ const retry=await f.call('saveAttempt',{attempt},session.token);assert.equal(retry.status,200);assert.equal(retry.attempt.awardedXp,0);
+ const swapped=await f.call('saveAttempt',{attempt:{...attempt,quizOptions:{...options,audioEnabled:true}}},session.token);assert.equal(swapped.status,409);
+});
+
+test('Per-question audio alternative changes only selected listening questions and is saved authoritatively',async()=>{
+ const f=await fixture(),session=await f.call('redeem',{code:'DEMO-HZ-A1-001'}),activity=pathNodes.find(node=>node.type==='listening');
+ const original=getActivityQuestions(activity.id,{seed:'one-offline',count:512}),id=original[0].id,options={seed:'one-offline',audioFallbackQuestionIds:[id],count:512};
+ const questions=getActivityQuestions(activity.id,options),alternative=questions.find(q=>q.id===id);assert.equal(alternative.audioFallback,true);assert.equal(questions.filter(q=>q.audioFallback).length,1);
+ const saved=await f.call('saveAttempt',{attempt:{id:'one-audio-alternative',activityId:activity.id,quizOptions:options,answers:[{questionId:id,submitted:alternative.correctText??alternative.answer}]}},session.token);assert.equal(saved.status,200);assert.equal(saved.attempt.awardedXp,15);
+ const events=await f.store.list(COLLECTIONS.attempts,session.profile.id);assert.deepEqual(events[0].audioFallbackQuestionIds,[id]);
+});
+
+test('Malformed audio settings and invented or non-listening alternatives are rejected',async()=>{
+ const f=await fixture(),session=await f.call('redeem',{code:'DEMO-HZ-A1-001'});
+ for(const settings of [{audioEnabled:'false'},{audioFallbackQuestionIds:'listen-class'},{audioFallbackQuestionIds:[1]},{audioFallbackQuestionIds:['unknown']},{audioFallbackQuestionIds:['recall-v-greetings-hello']},{audioFallbackQuestionIds:['listen-class','listen-class']}]){
+  const result=await f.call('saveAttempt',{attempt:{...sampleAttempt,quizOptions:{...sampleAttempt.quizOptions,...settings}}},session.token);assert.equal(result.status,400);assert.equal(result.error,'INVALID_ACTIVITY_OPTIONS');
+ }
+ assert.equal((await f.call('getProgress',{},session.token)).progress.attempts,0);
+});
+
+test('Complete custom listening mixes save and replay with per-question and all-audio alternatives',async()=>{
+ const f=await fixture(),session=await f.call('redeem',{code:'DEMO-HZ-A1-001'}),base={seed:'custom-listening-proof',mode:'listening',count:'all',chunkIds:['1a-greetings','1b-jobs-town']};
+ const original=buildQuiz(base);assert.ok(original.length>10);assert.ok(original.every(q=>q.listening&&q.audioWordId));
+ for(const [suffix,options]of[['audio',base],['one',{...base,audioFallbackQuestionIds:[original[0].id]}],['all',{...base,audioEnabled:false}]]){
+  const questions=buildQuiz(options);assert.equal(questions.length,original.length);assert.equal(questions.filter(q=>q.audioFallback).length,suffix==='audio'?0:suffix==='one'?1:original.length);
+  const attempt={id:'full-custom-listening-'+suffix,activityId:'mix-listening',quizOptions:options,answers:questions.map(q=>({questionId:q.id,submitted:q.correctText??q.answer,correct:false}))};
+  const saved=await f.call('saveAttempt',{attempt},session.token);assert.equal(saved.status,200,JSON.stringify(saved));assert.equal(saved.attempt.awardedXp,questions.length*5+10);assert.deepEqual(saved.progress.completedActivities,[]);
+  const retry=await f.call('saveAttempt',{attempt},session.token);assert.equal(retry.status,200);assert.equal(retry.attempt.duplicate,true);assert.equal(retry.attempt.awardedXp,0);
+  const changed=await f.call('saveAttempt',{attempt:{...attempt,answers:attempt.answers.map((a,i)=>i? a:{...a,submitted:'definitely wrong'})}},session.token);assert.equal(changed.status,409);
+ }
+ const events=await f.store.list(COLLECTIONS.attempts,session.profile.id);assert.equal(events.length,3);assert.equal(events.find(e=>e.id.endsWith('-all')).audioEnabled,false);assert.deepEqual(events.find(e=>e.id.endsWith('-one')).audioFallbackQuestionIds,[original[0].id]);
+ const restored=await f.call('getSession',{},session.token);assert.equal(restored.progress.attempts,3);assert.equal(restored.progress.xp,3*(original.length*5+10));
+});
+
+test('Spanish matching is server-graded and cannot be replaced by an English definition',async()=>{
+ const f=await fixture(),session=await f.call('redeem',{code:'DEMO-HZ-A1-001'}),options={seed:'spanish-matching',mode:'matching',chunkIds:['1b-jobs-town'],count:6},pairs=getMatchingPairs(options),q=pairs.find(q=>wordById[q.wordId].term==='teacher')||pairs[0];
+ const result=await f.call('saveAttempt',{attempt:{id:'spanish-matching-round',activityId:'mix-matching',quizOptions:options,answers:[{questionId:q.id,submitted:q.right,masteryEligible:true}]}},session.token);assert.equal(result.status,200);assert.equal(result.attempt.awardedXp,15);assert.equal(result.progress.wordStats[q.wordId].retrievalCorrect,0);
+ const wrong=await f.call('saveAttempt',{attempt:{id:'spanish-matching-english',activityId:'mix-matching',quizOptions:options,answers:[{questionId:q.id,submitted:wordById[q.wordId].meaning,correct:true}]}},session.token);assert.equal(wrong.status,200);assert.equal(wrong.attempt.awardedXp,10);
+});
+
+test('Compact lesson completion uses visible topics and games, without requiring archived exercises',()=>{
+ const lesson=lessons[0],nodeIds=lesson.pathNodeIds,base={bookId:'horizons-a1',lessonId:lesson.id,xp:0,answers:[],createdAt:'2026-11-04T12:00:00.000Z'};
+ const events=nodeIds.map(activityId=>({...base,activityId}));
+ assert.deepEqual(aggregateProgress(events,'2026-11-04T12:00:00.000Z','America/Guayaquil').completedLessons,[lesson.id]);
+ assert.deepEqual(aggregateProgress(events.slice(1),'2026-11-04T12:00:00.000Z','America/Guayaquil').completedLessons,[]);
+ const legacyIds=nodeIds.flatMap(id=>{const node=activityById[id];return node.kind==='topic'?[...(node.chunkIds||[]).map(id=>'quiz-'+id),...(node.grammarSetIds||[]).map(id=>'practice-'+id)]:[id]});
+ const legacy=aggregateProgress(legacyIds.map(activityId=>({...base,activityId})),'2026-11-04T12:00:00.000Z','America/Guayaquil');assert.deepEqual(legacy.completedLessons,[lesson.id]);assert.equal(legacy.xp,0);assert.deepEqual(Object.keys(legacy.wordStats),[]);assert.ok(!legacy.completedActivities.some(id=>id.startsWith('topic-')));
+});

@@ -1,3 +1,6 @@
+import { normalizeAnswer, matchesAcceptedAnswer, compileAnswerPattern } from './answer-matching.mjs';
+import { spanishLetterName } from './translations.mjs';
+export { normalizeAnswer, matchesAcceptedAnswer, compileAnswerPattern } from './answer-matching.mjs';
 import { vocabulary, wordById, chunks, chunkById, lessons, lessonById, grammarSets, grammarSetById, activities, activityById, challengeQuestions, numberToWords } from './unit1.mjs';
 
 export function seededRandom(seed = Date.now()) {
@@ -34,17 +37,6 @@ function selection(options={}) {
   return {activity,selectedChunks,selectedLessons,words,sets};
 }
 
-const standard = value => String(value ?? '').normalize('NFKC').replace(/[‘’]/g,"'").trim();
-export function normalizeAnswer(value,mode='normal') {
-  if(Array.isArray(value))value=value.map(x=>typeof x==='object'&&x?x.text??x.value??x.id:x).join(' ');
-  const text=standard(value);
-  if(mode==='capitalization')return text.replace(/\s+/g,' ');
-  if(mode==='digits')return text.replace(/\D/g,'');
-  if(mode==='spelling')return text.replace(/[^a-z]/gi,'').toLowerCase();
-  if(mode==='letter')return text.replace(/\s/g,'');
-  if(mode==='code')return text.split(/[^0-9]+/).filter(Boolean).map(x=>String(Number(x))).join(' ');
-  return text.toLowerCase().replace(/[.!?,;:]/g,'').replace(/[–—-]/g,' ').replace(/\s+/g,' ').trim();
-}
 function choiceQuestion(template,random) {
   const correctText=template.correctText ?? template.choices?.find(x=>x.id===template.answer)?.text;
   if(!correctText)throw new TypeError(`Question ${template.id} has no correct choice.`);
@@ -61,24 +53,30 @@ function orderQuestion(template,random) {
   return {...template,type:'order',sentenceTokens:tokens.map((text,i)=>({id:`${template.id}-token-${i}`,text})),tokens,
     answer:Array.isArray(template.answer)?template.answer.join(' '):template.answer,accepted:template.accepted||[template.answer],wordIds:template.wordIds||[],retrieval:true};
 }
-function materialize(template,random) {
-  if(template.type==='choice')return choiceQuestion(template,random);
-  if(template.type==='order')return orderQuestion(template,random);
-  return {...template,choices:template.choices||[],accepted:template.accepted||[template.answer],wordIds:template.wordIds||[],retrieval:template.retrieval!==false};
+function typedGrammar(template,random){
+ const accepted=template.accepted||[template.correctText??template.answer];
+ const answer=template.correctText??template.answer;
+ const instructions={
+  'be-not':'Make this negative: She is a teacher.',
+  'be-question':'Make this a question: She is a teacher.',
+  'be-short-positive':'Is she a teacher? Write a short answer with Yes.',
+  'be-short-negative':'Are they in Class 2? The card says Class 3. Write a short answer.',
+  'contract-youre':'Write the short form: You are a student.',
+  'caps-country':'Write it with capital letters and a full stop: i am from ecuador.'
+ };
+ let prompt=instructions[template.id]||template.prompt;
+ if(template.type==='order')prompt=`Put the words in order. Type the sentence.\n${shuffle(template.tokens,random).join(' / ')}`;
+ const answerForm=/short form/i.test(prompt)?'short':/full form/i.test(prompt)?'full':null;
+ return {...template,type:'text',prompt,answer,accepted,correctText:answer,choices:[],answerForm,allowContractions:!answerForm&&template.normalization!=='capitalization'&&template.id!=='be-short-positive',wordIds:template.wordIds||[],retrieval:true};
 }
-function vocabularyPrompt(word) {
-  if(word.kind==='letter')return `Match the small letter “${word.letter.toLowerCase()}”.`;
-  if(word.kind==='number')return `Which word matches ${word.numberValue}?`;
-  if(word.kind==='country')return `Which country matches “${word.pair}”?`;
-  if(word.kind==='nationality')return `Which nationality matches “${word.pair}”?`;
-  if(word.topic==='personal'&&word.kind!=='question')return `Which form field matches this clue?\n${word.meaning}`;
-  if(word.kind==='question')return `Choose the question.\n${word.meaning}`;
-  if(word.term==='Hello')return 'Choose the general greeting with five letters. It begins with H.';
-  if(word.term==='Hi')return 'Choose the short greeting with two letters.';
-  if(word.term==='Goodbye')return 'Choose the one-word leaving phrase with seven letters.';
-  if(word.term==='Bye')return 'Choose the short goodbye with three letters.';
-  return `Which word or phrase matches this clue?\n${word.meaning}`;
+function materialize(template,random,{typed=false}={}) {
+ if(typed)return typedGrammar(template,random);
+ if(template.type==='choice')return choiceQuestion(template,random);
+ if(template.type==='order')return orderQuestion(template,random);
+ return {...template,choices:template.choices||[],accepted:template.accepted||[template.answer],wordIds:template.wordIds||[],retrieval:template.retrieval!==false};
 }
+function vocabularyCue(word){return word.kind==='letter'?spanishLetterName(word.letter):word.spanish;}
+function vocabularyPrompt(word){return word.kind==='letter'?`Write the capital letter.\n${vocabularyCue(word)}`:`Write in English.\n${word.spanish}`;}
 function distractorPool(word) {
   let pool=vocabulary.filter(other=>other.id!==word.id);
   if(word.kind==='country'||word.kind==='nationality'||word.kind==='letter'||word.kind==='number')pool=pool.filter(other=>other.kind===word.kind);
@@ -90,18 +88,18 @@ function distractorPool(word) {
   const equivalents=new Set([word.term,...word.aliases||[]].map(x=>normalizeAnswer(x)));
   return pool.filter(other=>!equivalents.has(normalizeAnswer(other.term)));
 }
-export function makeVocabularyQuestions(words,{mode='vocabulary',seed=Date.now()}={}) {
-  const random=seededRandom(seed);
-  return words.map(word=>{
-    const base={id:`recall-${word.id}`,wordIds:[word.id],word,explanation:word.example,expectedTerm:word.term,kind:'vocabulary',retrieval:true};
-    if(mode==='recall'){
-      const prompt=word.kind==='number'?`Write ${word.numberValue} in words.`:word.kind==='letter'?`Write the capital letter for “${word.letter.toLowerCase()}”.`:word.kind==='country'?`Write the country for “${word.pair}”.`:word.kind==='nationality'?`Write the nationality for “${word.pair}”.`:`Write the word or phrase.\n${word.meaning}`;
-      const answer=word.kind==='letter'?word.letter:word.term;
-      return {...base,type:'text',prompt,answer,accepted:[answer,...word.aliases||[]],normalization:word.kind==='letter'?'letter':'normal',choices:[],hint:word.kind==='letter'?'Use a capital letter.':`It begins with ${word.term[0].toUpperCase()}.`};
-    }
-    const pool=shuffle(distractorPool(word),random);
-    return choiceQuestion({...base,type:'choice',prompt:vocabularyPrompt(word),correctText:word.term,distractors:pool.map(x=>x.term)},random);
-  });
+export function makeVocabularyQuestions(words,{mode='recall',seed=Date.now(),audioEnabled=true}={}) {
+ const random=seededRandom(seed);
+ return words.map(word=>{
+  const answer=word.kind==='letter'?word.letter:word.term;
+  const base={id:`recall-${word.id}`,wordIds:[word.id],word,translation:vocabularyCue(word),explanation:word.example,expectedTerm:answer,kind:'vocabulary',retrieval:true};
+  if(mode==='choice'||mode==='listening'){
+   const q=choiceQuestion({...base,prompt:mode==='listening'?'Listen and choose.':`Choose the English translation.\n${word.spanish}`,correctText:answer,distractors:shuffle(distractorPool(word),random).map(x=>x.kind==='letter'?x.letter:x.term)},random);
+   if(mode==='listening'){Object.assign(q,{listening:true,audioWordId:word.id,listenFor:'',hint:undefined});return audioEnabled===false?getAudioFallbackQuestion(q):q;}
+   return q;
+  }
+  return {...base,type:'text',prompt:vocabularyPrompt(word),answer,accepted:[answer,...word.aliases||[]],normalization:word.kind==='letter'?'letter':'normal',choices:[],allowContractions:word.kind==='question'};
+ });
 }
 
 function wantedCount(value,available) {
@@ -118,9 +116,9 @@ function prioritize(questions,options,random) {
 }
 export function buildQuiz(options={}) {
   const selected=selection(options),random=seededRandom(options.seed??Date.now());
-  const mode=options.mode || (selected.activity?.type==='grammar'?'grammar':selected.activity?.type==='review'?'mixed':'vocabulary');
-  let vocab=makeVocabularyQuestions(selected.words,{mode:mode==='recall'?'recall':'vocabulary',seed:options.seed});
-  let grammar=['grammar','mixed'].includes(mode)?selected.sets.flatMap(set=>set.questions.map(question=>({...materialize(question,random),kind:'grammar',grammarSetId:set.id,lessonId:set.lessonId}))):[];
+  const mode=options.mode || (selected.activity?.type==='grammar'?'grammar':selected.activity?.type==='review'?'mixed':'recall');
+  let vocab=makeVocabularyQuestions(selected.words,{mode:['choice','listening'].includes(mode)?mode:'recall',seed:options.seed,audioEnabled:options.audioEnabled});
+  let grammar=['grammar','mixed'].includes(mode)?selected.sets.flatMap(set=>set.questions.map(question=>({...materialize(question,random,{typed:options.answerMode!=='choice'}),kind:'grammar',grammarSetId:set.id,lessonId:set.lessonId}))):[];
   let candidates=mode==='grammar'?grammar:mode==='mixed'?shuffle([...vocab,...grammar],random):vocab;
   candidates=prioritize(candidates,options,random);
   const count=wantedCount(options.count,candidates.length);
@@ -129,34 +127,20 @@ export function buildQuiz(options={}) {
     const firstVocab=candidates.find(x=>x.kind==='vocabulary'),firstGrammar=candidates.find(x=>x.kind==='grammar');
     if(firstVocab&&firstGrammar)candidates=[firstVocab,firstGrammar,...candidates.filter(x=>x!==firstVocab&&x!==firstGrammar)];
   }
-  return shuffle(candidates.slice(0,count),random);
+  return applyAudioFallbacks(shuffle(candidates.slice(0,count),random),options);
 }
 
 export function getMatchingPairs(options={}) {
-  const selected=selection(options),random=seededRandom(options.seed??Date.now());
-  const words=selected.words.filter(x=>!x.supportOnly),wordIds=new Set(words.map(x=>x.id));
-  let pairs=[];
-  const type=options.type||options.mode||selected.activity?.type;
-  if(type==='countries'||(words.length&&words.every(x=>['country','nationality'].includes(x.kind)))){
-    pairs=words.filter(x=>x.kind==='country').map(country=>{
-      const nationality=words.find(x=>x.kind==='nationality'&&x.term===country.pair);
-      return nationality?{id:`pair-${country.id}`,left:country.term,right:nationality.term,wordId:country.id,wordIds:[country.id,nationality.id],kind:'countries'}:null;
-    }).filter(Boolean);
-  }else if(type==='opposites'||(words.length&&words.every(x=>x.topic==='adjectives'&&x.opposite))){
-    const used=new Set();
-    for(const word of words){const opposite=words.find(x=>x.term===word.opposite);if(!opposite||used.has(word.id)||used.has(opposite.id))continue;used.add(word.id);used.add(opposite.id);pairs.push({id:`pair-${word.id}`,left:word.term,right:opposite.term,wordId:word.id,wordIds:[word.id,opposite.id],kind:'opposites'});}
-  }else{
-    const groups=new Set(),rightTexts=new Set();
-    for(const word of shuffle(words,random)){
-      if(word.equivalentGroup&&groups.has(word.equivalentGroup))continue;
-      const right=word.kind==='letter'?word.letter.toLowerCase():word.kind==='number'?word.term:word.meaning;
-      const left=word.kind==='letter'?word.letter:word.kind==='number'?String(word.numberValue):word.term;
-      if(rightTexts.has(normalizeAnswer(right)))continue;
-      rightTexts.add(normalizeAnswer(right));if(word.equivalentGroup)groups.add(word.equivalentGroup);
-      pairs.push({id:`pair-${word.id}`,left,right,wordId:word.id,wordIds:[word.id],image:word.image,kind:word.kind});
-    }
-  }
-  return shuffle(pairs,random).slice(0,wantedCount(options.count??6,pairs.length));
+ const selected=selection(options),random=seededRandom(options.seed??Date.now());
+ const usedLeft=new Set(),usedRight=new Set(),pairs=[];
+ for(const word of shuffle(selected.words,random)){
+  const left=word.kind==='letter'?word.letter:word.term,right=word.spanish;
+  const l=normalizeAnswer(left),r=normalizeAnswer(right);
+  if(usedLeft.has(l)||usedRight.has(r))continue;
+  usedLeft.add(l);usedRight.add(r);
+  pairs.push({id:`pair-${word.id}`,left,right,wordId:word.id,wordIds:[word.id],kind:'translation',image:word.image});
+ }
+ return shuffle(pairs,random).slice(0,wantedCount(options.count??6,pairs.length));
 }
 
 const sourceCodes=[[4,0,8],[2,10,6],[9,1,5],[7,3,4]];
@@ -172,17 +156,51 @@ function spellingQuestions(options={}) {
   const random=seededRandom(options.seed??Date.now());
   return ['Kim','Luz','Sam','Ida','Ariana','Allison','Bryan','Lindsay'].map((name,i)=>materialize({id:`spell-name-${i}`,type:'order',kind:'game',prompt:`Put the letters in order to spell ${name}.`,answer:name.toUpperCase(),accepted:[name],tokens:[...name.toUpperCase()],normalization:'spelling',explanation:[...name.toUpperCase()].join(' · '),wordIds:[]},random));
 }
-export function getActivityQuestions(activityId,options={}) {
-  const activity=activityById[activityId];if(!activity)throw new RangeError(`Unknown activity: ${activityId}`);
-  const merged={...options,activityId};const random=seededRandom(options.seed??Date.now());
-  if(activity.type==='locker')return makeLockerChallenge({...options,rounds:options.count??4});
-  if(activity.type==='spelling')return shuffle(spellingQuestions(options),random).slice(0,wantedCount(options.count??8,8));
-  if(activity.type==='listening'||activity.type==='reading'||activity.type==='form'){
-    const source=challengeQuestions.filter(q=>q.lessonId===activity.lessonId&&(activity.type==='listening'?q.audio:!q.audio));
-    return shuffle(source.map(q=>materialize({...q,kind:activity.type},random)),random).slice(0,wantedCount(options.count??source.length,source.length));
-  }
-  return buildQuiz({...merged,mode:activity.type==='grammar'?'grammar':activity.type==='review'?'mixed':options.mode||'vocabulary'});
+function listeningQuestion(template,random){
+ const q=materialize(template,random);
+ const indexed=template.prompt.replace(/^Listen to pair (\d+)\.\s*/,'Pair $1: ').replace(/^Listen to name (\d+)\.\s*/,'Name $1: ');
+ const listenFor=indexed.replace(/^Listen(?: to [^.]+| at [^.]+)?\.\s*/,'').replace(/^Listen\.\s*/,'');
+ return {...q,prompt:q.type==='choice'?'Listen and choose.':'Listen and type.',listenFor,listening:true};
 }
+export function getAudioFallbackQuestion(question){
+ if(!question.listening&&!question.audio&&!question.audioWordId)return question;
+ const word=question.word||wordById[question.audioWordId]||vocabulary.find(w=>normalizeAnswer(w.term)===normalizeAnswer(question.correctText??question.answer));
+ let q;
+ if(word)q=makeVocabularyQuestions([word],{mode:'recall'})[0];
+ else if(question.id.startsWith('listen-short-')){
+  const index=Number(question.id.split('-').at(-1)),subject=['I','You','He','She'][index],verb=index===0?'am':index===1?'are':'is',short=["I'm","You're","He's","She's"][index];
+  q={type:'text',kind:'grammar',prompt:`Write the short form: ${subject} ${verb} a student.`,answer:`${short} a student.`,accepted:[`${short} a student.`],wordIds:[],explanation:`${short} a student.`,allowContractions:false};
+ }else if(question.id.includes('alphabet')){
+  const letters=question.id.includes('end')?'x y z':'a b c',names=letters.split(' ').map(spanishLetterName).join(' / ');q={type:'text',kind:'vocabulary',prompt:`Write the capital letters.\n${names}`,answer:letters.toUpperCase(),accepted:[letters.toUpperCase()],normalization:'letter',wordIds:[],explanation:letters.toUpperCase(),retrieval:true};
+ }else{
+  const cards=[['Nina','Cruz','6','Alex','07 314 826'],['Omar','Vega','2','Jo','07 582 139'],['Sara','Lopez','5','Mina','07 946 352'],['Leo','Evans','8','Sam','07 265 784'],['Ana','Ruiz','3','Jo','07 831 640'],['Ben','Park','7','Alex','07 493 215']];
+  const index=[...question.id].reduce((sum,c)=>sum+c.charCodeAt(0),0)%cards.length,[first,last,classNumber,teacher,phone]=cards[index];
+  const field=question.id.includes('phone')?'phone number':question.id.includes('teacher')?'teacher’s name':question.id.includes('last')?'last name':question.id.includes('class')?'class number':'first name';
+  const answer=field==='phone number'?phone:field==='teacher’s name'?teacher:field==='last name'?last:field==='class number'?classNumber:first;
+  q={type:'text',kind:'reading',prompt:`Read the card. Type the ${field}.`,passage:`Town Club\nFirst name: ${first}\nLast name: ${last}\nClass: ${classNumber}\nTeacher: ${teacher}\nPhone: ${phone}`,answer,accepted:field==='class number'?[answer,`Class ${answer}`]:[answer],normalization:field==='phone number'?'digits':'normal',wordIds:[],explanation:`${field[0].toUpperCase()+field.slice(1)}: ${answer}`,retrieval:false};
+ }
+ return {...q,id:question.id,audioFallback:true,originListening:true};
+}
+
+function applyAudioFallbacks(questions,options){
+ const requested=options.audioFallbackQuestionIds||[];
+ if(!Array.isArray(requested)||requested.some(id=>typeof id!=='string'))throw new TypeError('Audio alternatives must name question IDs.');
+ for(const id of requested)if(!questions.some(q=>q.id===id&&(q.listening||q.audio||q.audioWordId||q.originListening)))throw new RangeError(`Unknown listening alternative: ${id}`);
+ return questions.map(q=>(options.audioEnabled===false||requested.includes(q.id))&&(q.listening||q.audio||q.audioWordId)?getAudioFallbackQuestion(q):q);
+}
+export function getActivityQuestions(activityId,options={}) {
+ const activity=activityById[activityId];if(!activity)throw new RangeError(`Unknown activity: ${activityId}`);
+ const merged={...options,activityId};const random=seededRandom(options.seed??Date.now());
+ let questions;
+ if(activity.type==='locker')questions=makeLockerChallenge({...options,rounds:options.count??4});
+ else if(activity.type==='spelling')questions=shuffle(spellingQuestions(options),random).slice(0,wantedCount(options.count??8,8));
+ else if(['listening','reading','form'].includes(activity.type)){
+  const source=challengeQuestions.filter(q=>q.lessonId===activity.lessonId&&(activity.type==='listening'?q.audio:!q.audio));
+  questions=shuffle(source.map(q=>activity.type==='listening'?listeningQuestion({...q,kind:'listening'},random):materialize({...q,kind:activity.type},random,{typed:true})),random).slice(0,wantedCount(options.count??source.length,source.length));
+ }else questions=buildQuiz({...merged,mode:activity.type==='grammar'?'grammar':activity.type==='review'?'mixed':options.mode||'recall'});
+ return applyAudioFallbacks(questions,options);
+}
+
 export function createPracticeSession(options={}) {
   const selected=selection(options),activity=selected.activity;
   const questions=activity?getActivityQuestions(activity.id,options):buildQuiz(options);
@@ -204,7 +222,7 @@ export function checkAnswer(question,submitted) {
     let value=submitted;
     if(question.type==='order'&&Array.isArray(submitted))value=submitted.map(token=>typeof token==='object'?token.text:question.sentenceTokens?.find(x=>x.id===token)?.text??token).join(' ');
     const normalized=normalizeAnswer(value,mode);
-    correct=(question.accepted||[question.answer]).some(answer=>normalizeAnswer(answer,mode)===normalized);
+    correct=matchesAcceptedAnswer(value,question.accepted||[question.answer],{mode,allowContractions:question.allowContractions===true});
   }
   let wordIds=correct?unique(question.wordIds||[]):[];
   // A valid synonym earns a correct response, but does not pretend that the bank spelling was recalled.

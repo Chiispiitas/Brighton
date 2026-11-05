@@ -1,6 +1,6 @@
 # Horizons companion
 
-A responsive, English-only study companion for the Brighton Horizons books. The first release includes the complete A1 Unit 1 practice scope: lessons 1A–1D, all nine referenced vocabulary banks, 23 small word sets, 48 open path activities and 66 grammar question templates. It complements the printed book rather than reproducing its lesson pages.
+A responsive study companion for the Brighton Horizons books, with English controls and Spanish vocabulary cues. The current release covers A1 Unit 1: lessons 1A–1D, all nine referenced vocabulary banks, 23 small word sets, 21 compact path islands and 66 grammar question templates. It complements the printed book rather than reproducing its lesson pages. Earlier activity identifiers remain compatible with saved attempts.
 
 ## Open the app
 
@@ -14,13 +14,14 @@ There is no email or password. A book code creates or restores one saved profile
 
 ## What learners can do
 
-- Follow a recommended animated path, continue their next activity, or jump to any of the four lessons.
+- Follow a compact static path or jump to any of the four lessons. Tap an island to see its topic, word/question count, duration and Start button.
 - Study all 135 canonical bank entries plus seven source question models; hear each of the 142 models in Jessica's voice.
-- Combine word sets across lessons, with 8-word, 16-word or all-selected-word rounds; choose recognition, typed recall, matching or memory.
-- Practise grammar through choices and sentence building, plus number codes, spelling, opposites, countries, short reading, fictional form completion and twelve actual Unit 1 book recordings.
+- Combine word sets across lessons, with 8-word, 16-word or all-selected-word rounds; choose typed recall, listening, Spanish matching or memory.
+- Type grammar and reading answers. The reusable answer matcher accepts reviewed ordinary variants while preserving capitalization and explicit short/full-form tasks.
+- Use two listening/reading games per lesson and twelve actual Unit 1 book recordings. Listening tasks hide answer cues and offer deterministic non-audio alternatives through I can't listen now.
 - Receive specific corrections, revisit missed words, and retain server-graded progress across devices.
 - Edit a private optional date of birth, display name and daily goal; create an avatar from generated body, clothing, hair and accessory layers and earn three wearable pins.
-- Keep a gentle streak and XP without hearts, paid retries or locked lesson progression.
+- All lessons are available. Progress and XP remain saved internally; the Progress page and its navigation are temporarily removed.
 
 ## Static visual edition
 
@@ -42,14 +43,14 @@ Sessions last 90 days. Expired or revoked books cannot start practice or save at
 
 ## Validation and maintenance
 
-Current evidence: [static release](reports/static-release.json), [responsive/functional browser checks](reports/static-release-browser.json), [returning-browser cache upgrade](reports/static-cache-upgrade.json), [hosted browser checks](reports/static-release-browser-hosted.json), [hosted cache upgrade](reports/static-cache-upgrade-hosted.json), and [published asset parity](reports/publication-assets.json). Structural fit, unchanged pixels/zero running animation, and actual visual approval are reported separately. Browser coverage is Edge/Chromium; other engines are not claimed as tested.
+Current learning evidence: [compact browser checks](reports/compact-learning-browser.json), [returning-browser upgrade](reports/compact-learning-cache-upgrade.json), and [live backend checks](backend/reports/live-compact-learning.json). The [published asset parity](reports/publication-assets.json) records the last verified hosted revision. Earlier [static release](reports/static-release.json) evidence covers the retained artwork. Structural fit, zero running animation, and actual visual approval are reported separately. Browser coverage is Edge/Chromium; other engines are not claimed as tested.
 
 The [app audit](APP-AUDIT.md) records the static design decision and supersedes previous motion requirements. Failed native examples are retained outside active runtime mappings. Existing [content coverage](reports/content-coverage.json), [learning checks](reports/learning-browser.json), [backend checks](backend/reports/live-backend.json) and [profile/reward checks](backend/reports/live-profile.json) describe the learning/access contracts.
 
 - `npm test`: canonical banks, all activity types, grading and learning boundaries.
 - `cd backend` then `npm test`: entitlement, linked-code identity, ownership, server grading, idempotency, mastery and rewards.
 - Browser checks use reserved isolated example profiles. Public example001 remains for learners.
-- Keep the client content engine and backend copy synchronized with `backend/scripts/sync-content.mjs` before content/backend redeployment. This visual edition changes neither.
+- Keep every canonical `.mjs` module synchronized with `backend/scripts/sync-content.mjs` before content/backend redeployment. Audio alternative IDs and the original generation seed must travel with submitted attempts so the server grades the questions actually shown.
 
 Credentials, dependencies and unrelated book changes stay excluded. The abandoned selective-animation pass is preserved separately in Git stash d935ff2b4abb68181a6bca3a6d4661f81a2a43da; the last published baseline is bbd859f.
 

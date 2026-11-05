@@ -27,7 +27,7 @@ async function request(action, data = {}) {
     });
     body = await response.json();
   } catch (error) {
-    throw new APIError(error.name === 'AbortError' ? 'The connection is taking a little longer. Please try again.' : 'We could not reach your book. Check your connection and try again.');
+    throw new APIError(error.name === 'AbortError' ? 'The request timed out. Please try again.' : 'We could not reach your book. Check your connection and try again.');
   } finally { clearTimeout(timeout); }
   const result = normalise(body);
   if (!response.ok || body?.ok === false || body?.success === false || body?.error) {

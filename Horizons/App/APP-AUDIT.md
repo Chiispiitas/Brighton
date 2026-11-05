@@ -7,13 +7,21 @@ This audit governs the companion app. The book's existing audit remains authorit
 - Read the actual lesson and every referenced vocabulary bank before building a unit. Include the complete bank in study and retrieval practice; do not mistake the lesson's introductory sample for the full bank.
 - Keep the printed book central. Write short, purposeful digital practice and fresh game contexts rather than copying whole lesson pages.
 - Split banks into useful small sets. Allow learners to mix sets across lessons, remove duplicates by learning identity and include every selected word in an all-word round.
-- Keep one unambiguous correct choice, vary its position and exclude valid synonyms from false distractors. Capital-letter exercises must check capitals; ordinary recall can accept harmless casing and spacing.
-- Offer feedback that explains the specific answer. Word viewing, hints and simple recognition must not manufacture recall mastery. Track missed words for another attempt.
+- Main lesson paths contain only the book's core topics, followed by two short listening/reading games per lesson. Group alphabet, numbers and other full banks into topic islands rather than one island per small set. Keep smaller selectable sets in Practise.
+- Use Spanish translations as the vocabulary teaching and matching cues throughout A1. Keep navigation and task instructions in English. Retain the complete reviewed word bank; do not substitute English definitions that beginning learners cannot yet read.
+- Typed answers are the default for vocabulary recall, grammar and reading responses. Listening recognition may use choices. Match typed answers with a shared, anchored pattern built from trusted accepted answers, never a learner-supplied regular expression. Accept harmless ordinary casing, spacing, punctuation and reviewed contractions; preserve capitalization tasks and explicit short/full-form requirements. Reject incomplete or grammatically incorrect forms.
+- Where choices are used, keep one unambiguous correct choice, vary its position and exclude valid synonyms from false distractors.
+- Listening prompts say Listen and choose or Listen and type. Never print the spoken target, its translation, an answer-bearing illustration, a hint or an accessible label that reveals it before grading. Keep only necessary context such as the numbered item in a multi-item recording.
+- Every listening round offers I can't listen now. Replace the current and remaining listening items with deterministic non-audio questions. Retain their question IDs and submit the chosen alternatives so the server reconstructs exactly what was answered; do not retroactively change earlier answered audio items.
+- Feedback identifies the correct answer without extra encouragement. Word viewing, hints and simple recognition must not manufacture recall mastery. Track missed words for another attempt.
 - Grading, XP, mastered words and earned avatar parts are server decisions. Validate the submitted activity and reconstruct its questions from the reviewed content engine.
 - Reuse approved source recordings when appropriate. New word audio uses Jessica, includes no `[clearly]` tag, decodes correctly and receives an independent transcript check.
 
 ## Static visual design
 
+- Use plain functional copy: Learn, Practise, My profile, Word bank, Start and Results. Remove slogans, inspirational quotes, sugary headings and explanations that repeat obvious controls. Retain concise instructions, access information and necessary errors.
+- The Learn page has no right-hand promotional/daily-practice sidebar or word-count panel. The Progress page and its navigation are temporarily removed; preserve stored progress and completion history internally.
+- Path islands show icons without permanent names, counts, durations or step labels. One tap or keyboard activation opens a small accessible details dialog with the topic name, word/question count, duration and Start. Do not require a literal double-click or hide essential controls from keyboard users.
 - The current edition is entirely still. This supersedes earlier articulated, blink, gesture, float and pose-sequence requirements. No autonomous animation, CSS keyframes, picture transitions, hover movement, blinking, breathing, bobbing, parallax or animation runtime may be active. Choosing an avatar option or answering a question may replace the still image immediately.
 - Preserve the Horizons wordmark, supplied M PLUS Rounded1c and lively magenta, orange, navy, teal and warm-white identity. Keep the open minimal interface and symmetrical serpentine lesson path.
 - Use newly generated complete ImageGen stills for the recurring cast, occupations, avatar layers and scene illustrations. Keep native PNGs, genuine alpha, prompts and provenance. Do not substitute hand-drawn character vectors or turn old animation frames into the replacement art.
@@ -51,7 +59,7 @@ This audit governs the companion app. The book's existing audit remains authorit
 - Fit eyewear to the measured eye centers for each native base/skin; use one uniform scale and genuinely transparent clear lenses. Check all hairstyles, both bases, clothing and small navigation portraits.
 - Retired saved accessory IDs render as None and select None in the editor; do not silently reinterpret a retired bag as a new face accessory. Other saved profile fields remain intact. The remaining supported IDs1–3 now name the three reviewed eyewear choices.
 
-- Learning paths use one activity per row, evenly spaced along mirrored left/center/right curves. Keep the SVG connector through orb centers, preserve activity and keyboard order, and keep labels inside the viewport without overlap.
+- Learning paths use one compact island per row, evenly spaced along mirrored left/center/right curves. Keep the SVG connector through orb centers and preserve activity and keyboard order. Place lesson identity at the start of each short path and details inside the island dialog.
 
 - Hide the Avatar base selector. Preserve the saved base internally when displaying/editing profiles; skin, clothes, hair, eyewear and earned pins remain selectable. Do not overwrite an existing base merely because its selector is hidden.
 

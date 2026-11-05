@@ -3,11 +3,11 @@
   "appId": "ed2f1865-9249-46cd-b82e-37e2e844a870",
   "endpoint": "https://headless-hphybypweny-chiispiitas-140b.wix-site-host.com/api/horizons",
   "dashboard": "https://manage.wix.com/dashboard/09fbb304-3799-4b3a-8ec6-4a7097167f00",
-  "deploymentId": "505a6326-3a2a-4c87-936b-034a329647b7",
-  "sourceRevision": "d1a51e5796beb949bdd48e75b7276043b9a5823d",
-  "unitTests": 26,
-  "shippedActivityReconstructions": 48,
-  "verifiedAt": "2026-11-04T06:34:08.108267+00:00",
+  "deploymentId": "87b9875d-a8dd-4337-a952-bde6d3e9e977",
+  "sourceRevision": "670211bb13c3563605f42dedbedd29cc00d97cda",
+  "unitTests": 32,
+  "shippedActivityReconstructions": 61,
+  "verifiedAt": "2026-11-05T02:03:56.594813+00:00",
   "privateCollections": [
     "HzIssuedCodes",
     "HzClaims",
@@ -32,5 +32,21 @@
     "trophy-pin": 100,
     "compass-pin": 250
   },
-  "completionCountsKnownActivitiesOnly": true
+  "completionCountsKnownActivitiesOnly": true,
+  "visiblePathNodes": 21,
+  "compactLearningLiveChecks": 26,
+  "compactLearningLivePassed": true,
+  "audioAlternativesServerValidated": true,
+  "completedLessonsUseCompactPath": true,
+  "historicalProgressPreserved": true,
+  "contentHashes": {
+    "answer-matching.mjs": "f33e960eb0b189272c8ddb921d39457251d961f55300aa2b2ca44e1f9c6e3978",
+    "engine.mjs": "a4d4b68760ef9d6799531cd6a5f1381747c29e6588fe366f523cf3646676b80e",
+    "source-banks.mjs": "b357a3aab7ab088ad61dc7e9423d23e907c30df567d8517e290f8ecdfb8b22c1",
+    "translations.mjs": "ca703a3a5ca26e91ea0e194e3cc3d6bfee0fa2f30b66b39daa9f9e83940c6c88",
+    "unit1.mjs": "f03ac4c15898ee77e270ba70cd291d6c6be20fe519cd81f0abae58cbf6c790cc"
+  },
+  "customListeningRegistered": true,
+  "customListeningLiveQuestionsPerRound": 12,
+  "spanishAlphabetNameCues": true
 }
