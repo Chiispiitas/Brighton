@@ -1,5 +1,7 @@
 # Interface motion
 
+Latest exercise audio placement: Play audio now sits beside the suggested answer inside correct/incorrect feedback, below Correct!/Not quite. It plays the question's canonical target recording, independent of the user's typed answer (including accepted alternatives). It is absent before grading, and wraps beside long answers on small screens. Remove the former pronunciation slot below the input; the reserved feedback dock and listening alternative remain. Cache answer-audio-v59; entry/app.css queries answer1.
+
 ## Current lesson and result flow — 5 November 2026
 
 The 20261105-2236-31.1423238.mp4 recording shows a scrollbar appearing after answer feedback/word playback is added; the accompanying results image shows actions below the fold. Synthetic reproduction at1170×628 measured66px of checked-answer overflow and100px of result overflow. The revised layout fits both states at the tested desktop/mobile sizes down to320×576, with a stable answer position and no unnecessary document scroll. See reports/lesson-scroll.json; the baseline measurement is reports/lesson-scroll-baseline.json.

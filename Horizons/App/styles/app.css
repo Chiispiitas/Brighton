@@ -382,3 +382,7 @@ html.lesson-view{scrollbar-gutter:stable;scroll-behavior:auto}
 .result-page .result-actions>.primary-button{width:auto;max-width:100%;min-height:48px;padding:13px 18px}
 .completion-error p{max-width:440px}
 @media(max-height:650px){.activity-page .question-body>.question-scene{margin:6px 0}}
+
+/* Pronunciation belongs to the suggested answer, including accepted alternatives. */
+.answer-feedback-copy>.suggested-answer{display:flex;align-items:center;flex-wrap:wrap;column-gap:12px;row-gap:2px}
+.suggested-answer>.word-pronunciation{display:inline-flex;flex:none;padding:0 4px;color:var(--result-ink)}
