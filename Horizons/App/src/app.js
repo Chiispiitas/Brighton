@@ -1,6 +1,7 @@
-import {lessonArt} from './lesson-art.js?v=lapel1';
+import {enhanceShell,openPathBubble,closePathBubble,avatarFeedback} from './studio-ui.js?v=studio1';
+import {lessonArt} from './lesson-art.js?v=studio1';
 import {api, APIError, getSessionToken, forgetSession} from './api-client.js';
-import {loadArt, normalizeAvatar, artManifest, characterMarkup, avatarMarkup, avatarOptions, defaultAvatar, rasterMarkup, assetURL, refreshArtwork, disposeArtwork, sceneMarkup, wordArt} from './art.js?v=lapel1';
+import {loadArt, normalizeAvatar, artManifest, characterMarkup, avatarMarkup, avatarOptions, defaultAvatar, rasterMarkup, assetURL, refreshArtwork, disposeArtwork, sceneMarkup, wordArt} from './art.js?v=studio1';
 import {course, lessons, vocabulary, chunks, grammarSets, activities, games, wordById, chunkById, lessonById, pathNodes, pathNodeById} from '../content/unit1.mjs';
 import {buildQuiz, getActivityQuestions, getAudioFallbackQuestion, getWordsForChunks, getMatchingPairs, checkAnswer} from '../content/engine.mjs';
 
@@ -95,10 +96,10 @@ function lessonPath(lesson,index){
  const stops=nodes.map((node,i)=>{const x=50-Math.sin(i*Math.PI/2)*22,symbol=node.type==='listening'?'sound':node.type==='reading'?'book':node.type==='grammar'?'practice':'star';return `<button class="path-stop path-cell ${node.kind==='game'?'game-stop':''} ${nodeIsComplete(node)?'completed':''}" data-path-node="${esc(node.id)}" data-step="${i+1}" style="--path-x:${x}%" aria-label="${esc(lesson.id+' · '+node.title)}" aria-haspopup="dialog"><span class="stop-orb">${icon(nodeIsComplete(node)?'check':symbol)}</span></button>`;}).join('');
  return `<section class="path-lesson lesson-${index+1}" aria-labelledby="lesson-${esc(lesson.id)}"><div class="lesson-landmark"><span class="lesson-marker">${esc(lesson.id)}</span><h2 id="lesson-${esc(lesson.id)}">${esc(lesson.title)}</h2>${characterMarkup(character,'lesson-guide lesson-guide-'+lesson.id.toLowerCase())}</div><div class="lesson-trail" aria-label="${esc(lesson.id)} activities"><svg class="trail-line" aria-hidden="true"><path/></svg>${stops}</div></section>`;
 }
-function pathDetails(id){
+function pathDetails(id,anchor,event){
  const node=pathNodeById[id];if(!node||!requirePracticeAccess())return;
  const count=getActivityQuestions(node.id,{seed:0,count:8}).length;
- showDialog(`<div class="dialog-heading"><span class="eyebrow">LESSON ${esc(node.lessonId)}</span><button class="round-button" data-dialog-close aria-label="Close">${icon('close')}</button></div><h2 id="dialog-title">${esc(node.title)}</h2><div class="path-node-meta">${node.wordCount?`<span>${node.wordCount} words</span>`:''}<span>${count} questions</span><span>${node.estimatedMinutes||3} min</span></div><button class="primary-button full-width" data-start-path="${esc(node.id)}">Start ${icon('arrow')}</button>`,'path-node-dialog');
+ openPathBubble(`<div class="dialog-heading"><span class="eyebrow">LESSON ${esc(node.lessonId)}</span><button class="round-button" data-dialog-close aria-label="Close">${icon('close')}</button></div><h2 id="dialog-title">${esc(node.title)}</h2><div class="path-node-meta">${node.wordCount?`<span>${node.wordCount} words</span>`:''}<span>${count} questions</span><span>${node.estimatedMinutes||3} min</span></div><button class="primary-button full-width" data-start-path="${esc(node.id)}">Start ${icon('arrow')}</button>`,anchor,event);
 }
 function layoutPaths(){for(const trail of app.querySelectorAll('.lesson-trail')){const rect=trail.getBoundingClientRect(),svg=trail.querySelector('.trail-line'),points=[...trail.querySelectorAll('.stop-orb')].map(orb=>{const box=orb.getBoundingClientRect();return{x:box.left-rect.left+box.width/2,y:box.top-rect.top+box.height/2};});if(!points.length||!rect.width)continue;svg.setAttribute('viewBox',`0 0 ${rect.width} ${rect.height}`);let d=`M${points[0].x},${points[0].y}`;for(let i=1;i<points.length;i++){const a=points[i-1],b=points[i],dy=(b.y-a.y)*.5;d+=` C${a.x},${a.y+dy} ${b.x},${b.y-dy} ${b.x},${b.y}`;}svg.querySelector('path').setAttribute('d',d);}}
 function practice(){
@@ -124,7 +125,7 @@ function render() {
   const pages={learn:home,practice,bank:wordBank,profile:profilePage};
   const learningRoute=['learn','practice','bank'].includes(state.route);
   app.innerHTML=shell(learningRoute&&!hasBookAccess()?accessPage():learningRoute&&!isA1Book()?home():(pages[state.route] || home)(),state.route==='bank'?'practice':state.route);
-  setupAvatarChoices();
+  setupAvatarChoices();enhanceShell(xp(),streak(),icon);
   refreshArtwork(app);
   requestAnimationFrame(layoutPaths);document.fonts.ready.then(layoutPaths);
 }
@@ -284,7 +285,7 @@ async function saveProfile(form) {
 on('click','[data-route]',(event,target)=>{event.preventDefault();route(target.dataset.route);});
 on('click','[data-jump]',(_,target)=>document.getElementById(`lesson-${target.dataset.jump}`)?.closest('.path-lesson').scrollIntoView({behavior:matchMedia('(prefers-reduced-motion:reduce)').matches?'auto':'smooth',block:'start'}));
 on('click','[data-start-chunk]',(_,target)=>startChunk(target.dataset.startChunk));
-on('click','[data-path-node]',(_,target)=>pathDetails(target.dataset.pathNode));
+on('click','[data-path-node]',(event,target)=>pathDetails(target.dataset.pathNode,target,event));
 on('click','[data-start-activity]',(_,target)=>startActivity(target.dataset.startActivity));
 on('click','[data-choice]',(_,target)=>{if(state.active?.checked)return;state.active.selected=target.dataset.choice;render();});
 on('input','#typed-answer',(_,target)=>{if(state.active?.kind!=='quiz')return;state.active.selected=target.value;const check=app.querySelector('[data-action=check-answer]');if(check)check.disabled=!target.value.trim();});
@@ -300,7 +301,7 @@ on('click','[data-speak]',(_,target)=>speak(target.dataset.speak));
 on('click','[data-grammar]',(_,target)=>{const set=allGrammar.find(g=>g.id===target.dataset.grammar);startQuiz({mode:'grammar',grammarSetIds:[target.dataset.grammar],count:8,activityId:`practice-${target.dataset.grammar}`},set?.title || 'Grammar');});
 on('change','#round-length',(_,target)=>{state.roundLength=target.value==='all'?'all':Number(target.value);});
 on('click','[data-mix]',(_,target)=>{const mode=target.dataset.mix;const options={chunkIds:[...state.selected],mode:mode==='listening'?'listening':'recall',count:state.roundLength==='all'?getWordsForChunks([...state.selected]).length:state.roundLength,activityId:`mix-${mode}`};['memory','matching'].includes(mode)?startGame(mode,options):startQuiz(options,'Vocabulary practice');});
-on('click','[data-avatar-group]',(_,target)=>{state.avatarDraft[target.dataset.avatarGroup]=target.dataset.avatarValue;const form=app.querySelector('#profile-form');state.profileDraft=form?Object.fromEntries(new FormData(form)):state.profileDraft;const scroll=window.scrollY;render();if(state.profileDraft){for(const [key,value]of Object.entries(state.profileDraft)){const input=app.querySelector(`#profile-form [name="${key}"]`);if(input)input.value=value;}}window.scrollTo({top:scroll,behavior:'instant'});});
+on('click','[data-avatar-group]',(_,target)=>{state.avatarDraft[target.dataset.avatarGroup]=target.dataset.avatarValue;const form=app.querySelector('#profile-form');state.profileDraft=form?Object.fromEntries(new FormData(form)):state.profileDraft;const scroll=window.scrollY;render();if(state.profileDraft){for(const [key,value]of Object.entries(state.profileDraft)){const input=app.querySelector(`#profile-form [name="${key}"]`);if(input)input.value=value;}}window.scrollTo({top:scroll,behavior:'instant'});avatarFeedback();});
 on('submit','#redeem-form',(event,form)=>{event.preventDefault();redeem(form);});
 on('submit','#profile-form',(event,form)=>{event.preventDefault();saveProfile(form);});
 on('submit','#text-answer-form',event=>{event.preventDefault();gradeCurrent();});

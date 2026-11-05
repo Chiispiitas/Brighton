@@ -1,0 +1,52 @@
+{
+  "date": "2026-11-05T02:42:04.798Z",
+  "base": "http://127.0.0.1:8898/Horizons/App/",
+  "checks": [
+    {
+      "width": 320,
+      "metrics": true,
+      "floating": true,
+      "popover": true,
+      "start": true,
+      "tabs": true,
+      "threeNecklines": true,
+      "settlesToStill": true
+    },
+    {
+      "width": 390,
+      "metrics": true,
+      "floating": true,
+      "popover": true,
+      "start": true,
+      "tabs": true,
+      "threeNecklines": true,
+      "settlesToStill": true
+    },
+    {
+      "width": 768,
+      "metrics": true,
+      "floating": true,
+      "popover": true,
+      "start": true,
+      "tabs": true,
+      "threeNecklines": true,
+      "settlesToStill": true
+    },
+    {
+      "width": 1440,
+      "metrics": true,
+      "floating": true,
+      "popover": true,
+      "start": true,
+      "tabs": true,
+      "threeNecklines": true,
+      "settlesToStill": true
+    }
+  ],
+  "errors": [],
+  "pass": true,
+  "profileWrites": false,
+  "limits": [
+    "Edge/Chromium only; visual approval follows screenshot review."
+  ]
+}

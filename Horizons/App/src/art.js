@@ -5,7 +5,7 @@ const sourceBase=new URL('../assets/art/',import.meta.url);
 const esc=value=>String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 export async function loadArt(){
  installRasterFit();
- try{const response=await fetch(new URL('manifest.json?lapel=1',sourceBase),{cache:'no-cache'});if(response.ok)manifest=await response.json();}catch{/* Keep the learning interface available if artwork cannot load. */}
+ try{const response=await fetch(new URL('manifest.json?studio=1',sourceBase),{cache:'no-cache'});if(response.ok)manifest=await response.json();}catch{/* Keep the learning interface available if artwork cannot load. */}
  return manifest;
 }
 export function artManifest(){return manifest;}
@@ -56,6 +56,6 @@ export function defaultAvatar(){return Object.fromEntries(avatarOptions().map(gr
 export function normalizeAvatar(avatar={}){return{...avatar,accessory:['none','accessory-1','accessory-2','accessory-3'].includes(avatar.accessory)?avatar.accessory:'none'};}
 export function avatarMarkup(avatar={},cls='',name='Your avatar'){return `<span class="avatar avatar-bust ${esc(cls)}" data-avatar-static data-avatar="${esc(JSON.stringify(normalizeAvatar(avatar)))}" role="img" aria-label="${esc(name)}, bust portrait"></span>`;}
 export function refreshArtwork(container=document){
- for(const slot of container.querySelectorAll('[data-avatar-static]'))import('./avatar-static.js?v=lapel1').then(module=>{avatarModule=module;if(slot.isConnected&&!slot.closest('dialog:not([open])'))module.mountAvatar(slot,{avatar:JSON.parse(slot.dataset.avatar||'{}'),manifest});});
+ for(const slot of container.querySelectorAll('[data-avatar-static]'))import('./avatar-static.js?v=studio1').then(module=>{avatarModule=module;if(slot.isConnected&&!slot.closest('dialog:not([open])'))module.mountAvatar(slot,{avatar:JSON.parse(slot.dataset.avatar||'{}'),manifest});});
 }
 export function disposeArtwork(container=document){for(const slot of container.querySelectorAll('[data-avatar-static]'))avatarModule?.unmountAvatar?.(slot);}

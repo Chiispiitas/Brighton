@@ -25,7 +25,7 @@ There is no email or password. A book code creates or restores one saved profile
 
 ## Static visual edition
 
-The interface keeps M PLUS Rounded1c and the original Horizons wordmark. This edition deliberately removes all animation: no floating, blinking, gestures, hover displacement or picture-sequence playback. Artwork changes immediately only when the learner selects an option or moves to another question/page.
+The interface keeps M PLUS Rounded1c and the original Horizons wordmark. Characters remain still, with no idle floating, blinking, gestures or picture-sequence playback. Changing an avatar option triggers one brief preview bounce and an ImageGen sparkle reveal; reduced-motion settings disable this feedback. Profile options use category tabs, and Learn uses compact floating unit/XP/streak indicators and non-modal island bubbles.
 
 Pico, Mina, Alex and Jo now use sixteen newly generated complete still illustrations. Seventeen occupation/school pictures are complete native drawings with supported props. The town, UI pictures, reward shapes and Pico app icon were also regenerated. Native ImageGen PNG bytes and alpha are retained; measured atlas crops are fitted at one uniform scale.
 
