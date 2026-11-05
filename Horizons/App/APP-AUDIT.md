@@ -52,3 +52,5 @@ This audit governs the companion app. The book's existing audit remains authorit
 - Retired saved accessory IDs render as None and select None in the editor; do not silently reinterpret a retired bag as a new face accessory. Other saved profile fields remain intact. The remaining supported IDs1–3 now name the three reviewed eyewear choices.
 
 - Learning paths use one activity per row, evenly spaced along mirrored left/center/right curves. Keep the SVG connector through orb centers, preserve activity and keyboard order, and keep labels inside the viewport without overlap.
+
+- Hide the Avatar base selector. Preserve the saved base internally when displaying/editing profiles; skin, clothes, hair, eyewear and earned pins remain selectable. Do not overwrite an existing base merely because its selector is hidden.

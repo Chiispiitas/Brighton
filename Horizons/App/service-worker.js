@@ -1,6 +1,6 @@
-const CACHE='horizons-companion-snake-v12';
+const CACHE='horizons-companion-profile-v13';
 const BASE=new URL('./',self.location.href).pathname;
-const CORE=['./','./index.html','./styles/app.css?v=snake2','./src/app.js?v=snake1','./src/api-client.js','./src/art.js?v=snake1','./src/avatar-static.js?v=snake1','./assets/art/avatar-static-v1.frames.json?eyewear=1','./assets/art/manifest.json?static=1','./content/unit1.mjs','./content/engine.mjs','./content/source-banks.mjs','./assets/fonts/MPLUSRounded1c-Regular.woff2','./assets/fonts/MPLUSRounded1c-ExtraBold.woff2','./assets/fonts/BebasNeue-Regular.woff2'];
+const CORE=['./','./index.html','./styles/app.css?v=snake2','./src/app.js?v=nobase1','./src/api-client.js','./src/art.js?v=snake1','./src/avatar-static.js?v=snake1','./assets/art/avatar-static-v1.frames.json?eyewear=1','./assets/art/manifest.json?static=1','./content/unit1.mjs','./content/engine.mjs','./content/source-banks.mjs','./assets/fonts/MPLUSRounded1c-Regular.woff2','./assets/fonts/MPLUSRounded1c-ExtraBold.woff2','./assets/fonts/BebasNeue-Regular.woff2'];
 self.addEventListener('install',event=>{event.waitUntil(caches.open(CACHE).then(cache=>cache.addAll(CORE)).catch(()=>{}));self.skipWaiting();});
 self.addEventListener('activate',event=>{event.waitUntil(caches.keys().then(keys=>Promise.all(keys.filter(key=>key.startsWith('horizons-companion-')&&key!==CACHE).map(key=>caches.delete(key)))).then(()=>self.clients.claim()));});
 self.addEventListener('fetch',event=>{
