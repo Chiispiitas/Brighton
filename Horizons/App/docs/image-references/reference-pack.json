@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "createdAt": "2026-11-05T13:09:35.977Z",
-  "sourceCommit": "b275d3b8274f7ba555b322a22d6645804f8bf3b5",
+  "createdAt": "2026-11-05T13:17:44.315Z",
+  "sourceCommit": "cedf82261f3f8e5e3e66352911aef4454bcb231d",
   "maximumImageInputs": 7,
   "method": "Browser contact sheets of current native ImageGen artwork; labels and color chips are reference presentation, not new illustration generation.",
   "sources": [
@@ -15,7 +15,7 @@
     },
     {
       "file": "src/art.js",
-      "sha256": "a5aabd4017aca8ef6dc093a6cafbdb3600a68ba64d38a83849766b5cc94d653c"
+      "sha256": "20a7b07ad49758d368bb0ad67acc7d13247f962e5531b0fb4927a8f29ccf5130"
     },
     {
       "file": "src/avatar-static.js",
@@ -31,7 +31,7 @@
       "id": "R01",
       "file": "01-brand.png",
       "title": "Horizons brand and flat rendering",
-      "sha256": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535"
+      "sha256": "f599c7bf6679ebea5bedb86172ad08633f227683a8b3af2c8625287cb7ecb92c"
     },
     {
       "id": "R02",
@@ -55,7 +55,7 @@
       "id": "R05",
       "file": "05-wardrobe.png",
       "title": "Approved wardrobe",
-      "sha256": "3510bfa2edb2988843e333d0430908b9a48786351049472723d3f6d9b228a7d1"
+      "sha256": "aaf9abf104be1600019eb3bf51465f08ef00191ba37e8f6a55b7a33de1ba9ad5"
     },
     {
       "id": "R06",
@@ -69,6 +69,5 @@
       "title": "Scenes vocabulary and interface art",
       "sha256": "ac82c846ad3d4b2e8500dacaeb9eceea52d44e3f6f1293692b022b4f3db52469"
     }
-  ],
-  "sourceRuntimeRevision": "e5999ddc50b913973713ece2d0447843f48c4628"
+  ]
 }

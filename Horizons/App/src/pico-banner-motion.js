@@ -1,5 +1,5 @@
 // New, isolated trial. All artwork comes from the documented ImageGen parts.
-// Feet/body stay fixed. Head/neck and map+both grips share one 38-second clock.
+// Feet/body stay fixed. Head/neck and map+both grips share one 14-second clock.
 const controllers=new WeakMap();
 const source=new URL('../assets/art/pico-banner-motion-v1/',import.meta.url);
 const reduced=matchMedia('(prefers-reduced-motion: reduce)');
@@ -35,20 +35,20 @@ export function mountBannerPico(slot){
   if(reduced.matches){animations.forEach(a=>a.cancel());animations=[];stage.hidden=true;if(fallback)fallback.hidden=false;slot.dataset.bannerMotion='reduced';slot.dataset.anatomySource=originalSource||'complete-static-render';return;}
   stage.hidden=false;if(fallback)fallback.hidden=true;slot.dataset.bannerMotion='ready';slot.dataset.anatomySource='generated-parts-pico-banner-v1';
   if(!animations.length){
-   // Four complete eight-second idles, then a six-second closer inspection.
+   // One complete eight-second idle, then a six-second closer inspection.
    // One shared clock means pausing does not advance the idle counter.
-   const duration=38000,timing={duration,iterations:Infinity,easing:'linear'};
-   const track=(idle,action)=>{const frames=[];for(let loop=0;loop<4;loop++)for(const [t,value]of idle)frames.push({offset:(loop*8000+t)/duration,transform:value,easing:'ease-in-out'});for(const[t,value]of action)frames.push({offset:t/duration,transform:value,easing:'cubic-bezier(.34,1.3,.64,1)'});return frames;};
+   const duration=14000,timing={duration,iterations:Infinity,easing:'linear'};
+   const track=(idle,action)=>{const frames=[];for(let loop=0;loop<1;loop++)for(const [t,value]of idle)frames.push({offset:(loop*8000+t)/duration,transform:value,easing:'ease-in-out'});for(const[t,value]of action)frames.push({offset:t/duration,transform:value,easing:'cubic-bezier(.34,1.3,.64,1)'});return frames;};
    const headRest='translateY(0px) rotate(0deg) scale(1,1)',mapRest='translateY(0px) rotate(0deg) scale(1)';
    const headIdle=[[0,headRest],[1920,'rotate(2.8deg)'],[2560,'rotate(2.8deg)'],[4000,headRest],[5920,'rotate(-1.2deg)'],[8000,headRest]];
    const mapIdle=[[0,mapRest],[1920,'translateY(1.6px) rotate(-.9deg)'],[4000,mapRest],[5920,'translateY(.8px) rotate(.6deg)'],[8000,mapRest]];
-   const opacity=[];for(let loop=0;loop<4;loop++)for(const[t,v]of [[0,0],[2280,0],[2352,1],[2416,1],[2496,0],[5960,0],[6032,1],[6096,1],[6176,0],[8000,0]])opacity.push({offset:(loop*8000+t)/duration,opacity:v});opacity.push({offset:1,opacity:0});
-   const inspectOpacity=[{offset:0,opacity:0},{offset:32800/duration,opacity:0},{offset:33100/duration,opacity:1},{offset:36100/duration,opacity:1},{offset:36500/duration,opacity:0},{offset:1,opacity:0}];
+   const opacity=[];for(let loop=0;loop<1;loop++)for(const[t,v]of [[0,0],[2280,0],[2352,1],[2416,1],[2496,0],[5960,0],[6032,1],[6096,1],[6176,0],[8000,0]])opacity.push({offset:(loop*8000+t)/duration,opacity:v});opacity.push({offset:1,opacity:0});
+   const inspectOpacity=[{offset:0,opacity:0},{offset:8800/duration,opacity:0},{offset:9100/duration,opacity:1},{offset:12100/duration,opacity:1},{offset:12500/duration,opacity:0},{offset:1,opacity:0}];
    animations=[
-    head.animate(track(headIdle,[[32400,'translateY(-3px) rotate(-2deg) scale(.98,1.02)'],[33300,'translateY(9px) rotate(7deg) scale(1.025,.975)'],[33700,'translateY(7px) rotate(6deg) scale(1,1)'],[35700,'translateY(7px) rotate(6deg) scale(1,1)'],[36800,'translateY(-2px) rotate(-1deg) scale(.99,1.01)'],[38000,headRest]]),timing),
-    map.animate(track(mapIdle,[[32400,'translateY(4px) rotate(1deg) scale(.98)'],[33300,'translateY(-49px) rotate(-3deg) scale(.96,1.03)'],[33700,'translateY(-45px) rotate(-2deg) scale(.96,1.02)'],[35700,'translateY(-45px) rotate(-2deg) scale(.96,1.02)'],[36800,'translateY(2px) rotate(.5deg) scale(.99)'],[38000,mapRest]]),timing),
+    head.animate(track(headIdle,[[8400,'translateY(-3px) rotate(-2deg) scale(.98,1.02)'],[9300,'translateY(9px) rotate(7deg) scale(1.025,.975)'],[9700,'translateY(7px) rotate(6deg) scale(1,1)'],[11700,'translateY(7px) rotate(6deg) scale(1,1)'],[12800,'translateY(-2px) rotate(-1deg) scale(.99,1.01)'],[14000,headRest]]),timing),
+    map.animate(track(mapIdle,[[8400,'translateY(4px) rotate(1deg) scale(.98)'],[9300,'translateY(-49px) rotate(-3deg) scale(.96,1.03)'],[9700,'translateY(-45px) rotate(-2deg) scale(.96,1.02)'],[11700,'translateY(-45px) rotate(-2deg) scale(.96,1.02)'],[12800,'translateY(2px) rotate(.5deg) scale(.99)'],[14000,mapRest]]),timing),
     blink.animate(opacity,timing),
-    pupils.animate(track([[0,'translate(0,0)'],[1600,'translate(1px,1px)'],[3600,'translate(-2px,1px)'],[6200,'translate(1px,0)'],[8000,'translate(0,0)']],[[33000,'translate(0,2px)'],[37000,'translate(0,0)'],[38000,'translate(0,0)']]),timing),
+    pupils.animate(track([[0,'translate(0,0)'],[1600,'translate(1px,1px)'],[3600,'translate(-2px,1px)'],[6200,'translate(1px,0)'],[8000,'translate(0,0)']],[[9000,'translate(0,2px)'],[13000,'translate(0,0)'],[14000,'translate(0,0)']]),timing),
     expression.animate(inspectOpacity,timing),
     neutral.animate(inspectOpacity.map(f=>({...f,opacity:1-f.opacity})),timing),
     eyes.animate(opacity.map(f=>({...f,opacity:1-f.opacity})),timing)
