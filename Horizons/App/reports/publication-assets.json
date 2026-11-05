@@ -1,7 +1,7 @@
 {
-  "date": "2026-11-05T00:19:15.588578+00:00",
+  "date": "2026-11-05T00:32:57.849425+00:00",
   "url": "https://exams.bebrighton.net/Horizons/App/",
-  "revision": "b15a85f6807cd777455a0702c43d866a8d9a9df1",
+  "revision": "029eb5d68646691b9445d0fe0794b88ba27c6ac7",
   "checkedFiles": 330,
   "bookSourceRecordings": 12,
   "pass": true,
@@ -2228,8 +2228,8 @@
     {
       "path": "Horizons/App/index.html",
       "status": 200,
-      "bytes": 1693,
-      "sha256": "36ba198d41450d894ec314f80165e69272b71874d21bd4c371a5848e28f5d1b1",
+      "bytes": 1689,
+      "sha256": "02ad4ba660263ee6a03c77da2adbc0950fe0e7136732aa70f557b22dc350c1b2",
       "matchesCommittedBytes": true
     },
     {
@@ -2242,8 +2242,8 @@
     {
       "path": "Horizons/App/service-worker.js",
       "status": 200,
-      "bytes": 1664,
-      "sha256": "6c90d7eb7cba9f8c4034ffb11c1f38f554ec5b6ca7e4d155a106d7f321958025",
+      "bytes": 1654,
+      "sha256": "4cc5d6e6d73af8294df51dd615542439b3dd8bab93afc4b8d96b3f251a2c96fa",
       "matchesCommittedBytes": true
     },
     {
@@ -2256,15 +2256,15 @@
     {
       "path": "Horizons/App/src/app.js",
       "status": 200,
-      "bytes": 60730,
-      "sha256": "d0e3d6fb253dbd11da578f5212e8290937438f4f1e3513a7b77d2491e13b683d",
+      "bytes": 60508,
+      "sha256": "76f6c8bd9b60a7bf25255f9dcec56e64f000f13c3902586d14742b41161304ce",
       "matchesCommittedBytes": true
     },
     {
       "path": "Horizons/App/src/art.js",
       "status": 200,
-      "bytes": 6911,
-      "sha256": "91b43b7a5d1e200869ee824b4041fc116da909e4fe930318251b33a4e615b333",
+      "bytes": 6909,
+      "sha256": "a8a5c421a278abc5ae2ca1679d707d80afd4c08c9fc570ec95c6d58f477c79c1",
       "matchesCommittedBytes": true
     },
     {
@@ -2312,8 +2312,8 @@
     {
       "path": "Horizons/App/styles/app.css",
       "status": 200,
-      "bytes": 82895,
-      "sha256": "1cb42d136c85675c82c33122d6206688d1b826ebfaa3e2acb1e93f5741a86ce6",
+      "bytes": 83448,
+      "sha256": "e4cb7ce5e67e9361690a066805cb4f43698c0a54aecdd0624d6a16106ee95855",
       "matchesCommittedBytes": true
     }
   ]
