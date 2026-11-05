@@ -1,0 +1,29 @@
+{
+  "date": "2026-11-05T17:28:46.658Z",
+  "base": "https://exams.bebrighton.net/Horizons/App/",
+  "pass": true,
+  "hoverScroll": true,
+  "leaveStops": true,
+  "endpointsHidden": true,
+  "futureUnitBoundary": {
+    "label": "Go to Unit 2",
+    "href": "#unit-2",
+    "hidden": false
+  },
+  "offscreenPreviewBlocked": true,
+  "testedWidths": [
+    320,
+    390,
+    768,
+    1440
+  ],
+  "buildingLabelsRemoved": true,
+  "lessonProps": 4,
+  "birdParts": 12,
+  "wingAndHoverLoops": true,
+  "reducedMotionCancels": true,
+  "hiddenPausesWings": true,
+  "routeDisposesWings": true,
+  "errors": [],
+  "failedRequests": []
+}

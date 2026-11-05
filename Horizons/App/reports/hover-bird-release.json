@@ -1,0 +1,19 @@
+{
+  "runtimeRevision": "5b9361aef7650c2dca372456ca6eec41ee0c79fa",
+  "pass": true,
+  "hostedMatchedFiles": 430,
+  "reports": [
+    "reports/hover-bird-proof-hosted.json",
+    "reports/publication-assets.json"
+  ],
+  "unitsImplemented": [
+    1
+  ],
+  "conditionalNextUnit": "Only registers real implemented destinations; tested with fictional Unit2, not exposed in live catalog.",
+  "realLearnerWrites": false,
+  "limits": [
+    "Synthetic Edge/Chromium fixtures; no physical-device claim",
+    "Controlled document.hidden fixture",
+    "Native tonal variation retained; reconstruction similar rather than pixel-identical"
+  ]
+}

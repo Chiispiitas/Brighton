@@ -1,8 +1,8 @@
 {
-  "date": "2026-11-05T16:46:26.423486+00:00",
+  "date": "2026-11-05T17:29:34.572101+00:00",
   "url": "https://exams.bebrighton.net/Horizons/App/",
-  "revision": "13ab5f769cc47b39bf39cade28b3e724262fde56",
-  "checkedFiles": 421,
+  "revision": "5b9361aef7650c2dca372456ca6eec41ee0c79fa",
+  "checkedFiles": 430,
   "bookSourceRecordings": 12,
   "pass": true,
   "files": [
@@ -609,6 +609,34 @@
       "matchesCommittedBytes": true
     },
     {
+      "path": "Horizons/App/assets/art/bird-hover-v1/body.png",
+      "status": 200,
+      "bytes": 185058,
+      "sha256": "4ba58b35c10a27d527c72c09d03dd81f87f8f9c03c55c223eba05c69d7e94e1c",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/bird-hover-v1/parts-native.png",
+      "status": 200,
+      "bytes": 1235649,
+      "sha256": "2b8501065650f32fd26bc3a9266e5d82b266edc8b30ed1d0992ed63cef56c71b",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/bird-hover-v1/wing-far.png",
+      "status": 200,
+      "bytes": 188774,
+      "sha256": "b73b523a55fe6c56f520751553cff2ad6df60bac2bf3830b122697cfc5087fc8",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/bird-hover-v1/wing-near.png",
+      "status": 200,
+      "bytes": 127828,
+      "sha256": "d275c705744a9f3628e5acf6aaa3b065a4c936c988a632880a81ff7756001630",
+      "matchesCommittedBytes": true
+    },
+    {
       "path": "Horizons/App/assets/art/cast-articulated-v3.frames.json",
       "status": 200,
       "bytes": 13014,
@@ -991,6 +1019,34 @@
       "status": 200,
       "bytes": 1682566,
       "sha256": "b6493eecb2b426bf0d8e4b35e2a5168a2fbc415556ad50968c1800319e672f19",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/lesson-props-v1/countries.png",
+      "status": 200,
+      "bytes": 567902,
+      "sha256": "4532b4a23c0b7f120f993924c29f8c506633d51f34eec567078b126daf38f7d8",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/lesson-props-v1/greetings.png",
+      "status": 200,
+      "bytes": 315715,
+      "sha256": "676b5ec10afaa5b3be20b458f65097795272ff01e825eee942ac2313a9419ba4",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/lesson-props-v1/jobs.png",
+      "status": 200,
+      "bytes": 370748,
+      "sha256": "03fa23bfb6ac2a113e0679f2c5fc226dabc8d56fbeb0c136d80b976751172ec8",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/assets/art/lesson-props-v1/personal.png",
+      "status": 200,
+      "bytes": 429584,
+      "sha256": "4cb9db4bc8bd5dcf9765b67845c7fea12719676f50ccb23f617699cf4b7a59e1",
       "matchesCommittedBytes": true
     },
     {
@@ -2817,7 +2873,7 @@
       "path": "Horizons/App/index.html",
       "status": 200,
       "bytes": 3227,
-      "sha256": "83d531e1952af3f2e8f0e08fd715bf2378c5cb5eafe1bb41db736bac81120c9e",
+      "sha256": "0245f2c49bb80e9b83d7b1664e9a6351507f5a62488e4c31b0653ebba49d2b13",
       "matchesCommittedBytes": true
     },
     {
@@ -2830,8 +2886,8 @@
     {
       "path": "Horizons/App/service-worker.js",
       "status": 200,
-      "bytes": 3245,
-      "sha256": "e026b0354cb20afd02a54b4afe6d4881df67783666b9d586e0211db381c15fd8",
+      "bytes": 3578,
+      "sha256": "097c5fa4afbbe5f4a26abc58e82e447e935e82d23da8998653bf70d00ffaf4f9",
       "matchesCommittedBytes": true
     },
     {
@@ -2844,15 +2900,15 @@
     {
       "path": "Horizons/App/src/app.js",
       "status": 200,
-      "bytes": 59941,
-      "sha256": "c6448cdc15afc8538b127431173abe114656ecfdd8b17f2b0e9b8f35fd50fd11",
+      "bytes": 60784,
+      "sha256": "afc389c4d1c83952ae2d20db8431c6d469b8d92129e8e57897287d5b3d5a6438",
       "matchesCommittedBytes": true
     },
     {
       "path": "Horizons/App/src/art.js",
       "status": 200,
       "bytes": 8069,
-      "sha256": "fb458e03fd7484f697f83f944dd549989e8c1d1de8a95cd0cc84ef347bcfcdec",
+      "sha256": "cf2ba4d636dc324595b6af85ab32e64c5cfca11fd06b904f2b5341f83c0b9031",
       "matchesCommittedBytes": true
     },
     {
@@ -2893,8 +2949,8 @@
     {
       "path": "Horizons/App/src/overworld-motion.js",
       "status": 200,
-      "bytes": 5923,
-      "sha256": "8f8e32263716603fed9c24dc06645bf0db10f486153a271d2f6d48d7c3d4dace",
+      "bytes": 7208,
+      "sha256": "9531a367d062e6421f6efb8bd552a8474daefc549b97e2319566fcb168c05331",
       "matchesCommittedBytes": true
     },
     {
@@ -2922,7 +2978,7 @@
       "path": "Horizons/App/src/studio-ui.js",
       "status": 200,
       "bytes": 7488,
-      "sha256": "9fd3834069ffd485f51e5c96318c9168061bdc4d6da655eb5f6404016504eb8a",
+      "sha256": "95b8967801d05e26b49bc215f00df0a3954da702760436bb1b88078376f332f3",
       "matchesCommittedBytes": true
     },
     {
@@ -2930,6 +2986,13 @@
       "status": 200,
       "bytes": 7397,
       "sha256": "8522d0aa17a2f7d1561c0548ea96a7cede44f01dbfeee5ac9e3639e2d9fecd38",
+      "matchesCommittedBytes": true
+    },
+    {
+      "path": "Horizons/App/src/unit-navigation.js",
+      "status": 200,
+      "bytes": 898,
+      "sha256": "53fdb3f1317471ceb4ecce379fdd63cb312154c698b09cb615689913d00173d3",
       "matchesCommittedBytes": true
     },
     {
@@ -2949,8 +3012,8 @@
     {
       "path": "Horizons/App/styles/overworld.css",
       "status": 200,
-      "bytes": 4946,
-      "sha256": "00f6727a382feeb238214d803b45ad10d30076a2b21e63b8c32be64f94a4c846",
+      "bytes": 5982,
+      "sha256": "11b48c4cf14ad1afd01991138bbb4f974ad32d893a854e920b2b56b77d9e7111",
       "matchesCommittedBytes": true
     }
   ]

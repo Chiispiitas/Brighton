@@ -1,5 +1,5 @@
 {
-  "date": "2026-11-05T17:24:02.106Z",
+  "date": "2026-11-05T17:26:35.364Z",
   "base": "http://127.0.0.1:8898/Horizons/App/",
   "pass": true,
   "hoverScroll": true,
@@ -11,6 +11,12 @@
     "hidden": false
   },
   "offscreenPreviewBlocked": true,
+  "testedWidths": [
+    320,
+    390,
+    768,
+    1440
+  ],
   "buildingLabelsRemoved": true,
   "lessonProps": 4,
   "birdParts": 12,

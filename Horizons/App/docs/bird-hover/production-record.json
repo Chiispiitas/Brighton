@@ -114,5 +114,17 @@
     }
   ],
   "extraction": "Magenta color-key alpha, equal cell split and tight crop; visible RGB unchanged, native file untouched. Near/far wing pivots registered to original body.",
-  "lessonProps": "Mechanical near-white-background alpha extraction of existing four native isolated trail object illustrations; no scene generation."
+  "lessonProps": "Mechanical near-white-background alpha extraction of existing four native isolated trail object illustrations; no scene generation.",
+  "derivedPaths": [
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\bird-hover-v1\\body.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\bird-hover-v1\\wing-near.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\bird-hover-v1\\wing-far.png"
+  ],
+  "lessonPropPaths": [
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-props-v1\\greetings.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-props-v1\\jobs.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-props-v1\\countries.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\assets\\art\\lesson-props-v1\\personal.png"
+  ],
+  "qualityReview": "Reconstruction very similar to original, not pixel-identical; body/wing pivots remain connected throughout opaque flap and squash/skew smear cycle. Root viewed enlarged reconstruction and actual hosted mobile bird. No other character/Pico rig changed."
 }
