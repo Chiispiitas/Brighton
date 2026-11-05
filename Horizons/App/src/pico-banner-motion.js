@@ -12,7 +12,7 @@ export function mountBannerPico(slot){
  const body=document.createElement('img');body.className='pico-banner-body pico-banner-layer';body.src=new URL('body-registered.png',source).href;
  const map=document.createElement('img');map.className='pico-banner-map pico-banner-layer';map.src=new URL('map-registered.png',source).href;
  const open=document.createElement('img');open.src=new URL('head-registered.png',source).href;
- const blink=document.createElement('img');blink.src=new URL('blink-registered.png',source).href;blink.className='pico-banner-blink';
+ const blink=document.createElement('img');blink.src=new URL('blink-registered.png',source).href;blink.className='pico-banner-blink';blink.style.transformOrigin='112px 172px';blink.style.transform='scale(1.5)';blink.style.clipPath='inset(164px 0 0 0)';
  for(const image of[body,map,open,blink]){image.alt='';image.draggable=false;}
  head.append(open,blink);stage.append(head,body,map);slot.append(stage);
  let disposed=false,ready=false,visible=false,animations=[];
@@ -25,8 +25,8 @@ export function mountBannerPico(slot){
   if(!animations.length){
    const timing={duration:8000,iterations:Infinity,easing:'linear'};
    animations=[
-    head.animate([{transform:'rotate(0deg)',offset:0},{transform:'rotate(1.4deg)',offset:.24},{transform:'rotate(1.4deg)',offset:.32},{transform:'rotate(0deg)',offset:.5},{transform:'rotate(-.6deg)',offset:.74},{transform:'rotate(0deg)',offset:1}].map(frame=>({...frame,easing:'ease-in-out'})),timing),
-    map.animate([{transform:'translateY(0px) rotate(0deg)',offset:0},{transform:'translateY(.8px) rotate(-.45deg)',offset:.24},{transform:'translateY(0px) rotate(0deg)',offset:.5},{transform:'translateY(.4px) rotate(.3deg)',offset:.74},{transform:'translateY(0px) rotate(0deg)',offset:1}].map(frame=>({...frame,easing:'ease-in-out'})),timing),
+    head.animate([{transform:'rotate(0deg)',offset:0},{transform:'rotate(2.8deg)',offset:.24},{transform:'rotate(2.8deg)',offset:.32},{transform:'rotate(0deg)',offset:.5},{transform:'rotate(-1.2deg)',offset:.74},{transform:'rotate(0deg)',offset:1}].map(frame=>({...frame,easing:'ease-in-out'})),timing),
+    map.animate([{transform:'translateY(0px) rotate(0deg)',offset:0},{transform:'translateY(1.6px) rotate(-.9deg)',offset:.24},{transform:'translateY(0px) rotate(0deg)',offset:.5},{transform:'translateY(.8px) rotate(.6deg)',offset:.74},{transform:'translateY(0px) rotate(0deg)',offset:1}].map(frame=>({...frame,easing:'ease-in-out'})),timing),
     blink.animate([{opacity:0,offset:0},{opacity:0,offset:.285},{opacity:1,offset:.294},{opacity:1,offset:.302},{opacity:0,offset:.312},{opacity:0,offset:.745},{opacity:1,offset:.754},{opacity:1,offset:.762},{opacity:0,offset:.772},{opacity:0,offset:1}],{...timing,easing:'linear'})
    ];
    // Explicit common start time avoids independent limb/timeline drift.

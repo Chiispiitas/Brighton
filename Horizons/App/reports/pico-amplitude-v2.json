@@ -1,0 +1,41 @@
+{
+  "date": "2026-11-05T12:02:31.415Z",
+  "revision": "83afe582427a9ae95b548e19a25d7eae73ac5d42",
+  "base": "http://127.0.0.1:8898/Horizons/App/",
+  "checks": [
+    {
+      "width": 320,
+      "fit": true,
+      "staticOtherCharacters": true
+    },
+    {
+      "width": 390,
+      "fit": true,
+      "staticOtherCharacters": true
+    },
+    {
+      "width": 768,
+      "fit": true,
+      "staticOtherCharacters": true
+    },
+    {
+      "width": 1440,
+      "fit": true,
+      "staticOtherCharacters": true
+    }
+  ],
+  "headMapAndBlink": true,
+  "fixedBody": true,
+  "extremaCaptured": true,
+  "reducedNativeFallback": true,
+  "loadFailureFallback": true,
+  "offscreenPauseResume": true,
+  "hiddenDocumentEventFixture": true,
+  "rerenderDisposal": true,
+  "errors": [],
+  "pass": true,
+  "learnerWrites": false,
+  "limits": [
+    "Edge/Chromium only; frame review is recorded separately. Hidden-document event uses a controlled visibility fixture."
+  ]
+}

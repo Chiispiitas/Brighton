@@ -25,7 +25,7 @@ try{
  }
  await page.evaluate(()=>{const slot=document.querySelector('.hero-pico');slot.style.width='248px';slot.style.height='582px';slot.style.right='80px';document.querySelector('.learn-hero').style.minHeight='650px';});await page.waitForTimeout(150);
  for(const time of [0,1200,1920,2350,2400,2480,4000,5920,6080,8000]){
-  await sample(time);if(time===1920||time===5920){const angle=await page.locator('.pico-banner-head').evaluate(el=>{const m=new DOMMatrix(getComputedStyle(el).transform);return Math.atan2(m.b,m.a)*180/Math.PI;});assert.ok(Math.abs(angle-(time===1920?1.4:-.6))<.01,'actual head extremum');}assert.equal(await page.locator('.pico-banner-body').evaluate(el=>getComputedStyle(el).transform),'none');
+  await sample(time);if(time===1920||time===5920){const angle=await page.locator('.pico-banner-head').evaluate(el=>{const m=new DOMMatrix(getComputedStyle(el).transform);return Math.atan2(m.b,m.a)*180/Math.PI;});assert.ok(Math.abs(angle-(time===1920?2.8:-1.2))<.01,'actual head extremum');}assert.equal(await page.locator('.pico-banner-body').evaluate(el=>getComputedStyle(el).transform),'none');
   await page.locator('.hero-pico').screenshot({path:path.join(out,'frame-'+time+'.png')});
  }
  await sample(0);await page.locator('.hero-pico').evaluate(el=>el.getAnimations({subtree:true}).forEach(a=>a.play()));await page.waitForTimeout(8200);
