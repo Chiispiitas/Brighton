@@ -1,0 +1,35 @@
+{
+  "asset_id": "trail-jobs-v1",
+  "kind": "vocabulary",
+  "intent": "generate",
+  "reference_ids": [
+    "R01",
+    "R02",
+    "R07"
+  ],
+  "target_paths": [],
+  "prompt": "One isolated inanimate still-life: a chefs hat resting beside a wooden spoon. Match the native flat filled geometric Horizons art. Complete silhouette, generous transparent margins, readable at 85 pixels, no people, faces, lettering, outlines, shadows, shading, gradients, glow or texture. Opaque objects, true alpha outside.",
+  "nativeSource": "C:\\Users\\David\\.codex\\generated_images\\01a1a9d5-5815-78c1-981e-ce1309780714\\exec-898f8117-a79d-436a-92b1-44a942488cae.png",
+  "output": "Horizons\\App\\assets\\art\\trail-jobs-v1.png",
+  "sha256": "c460a1bcb57a33fe98a1c76f511fad9cfa344c741c6224f9cce88e39586746ab",
+  "tool": "built-in ImageGen",
+  "transparent_background": false,
+  "review": "Opaque paper-backed source selected; transparent attempts rejected for halo. Native bytes preserved. No characters.",
+  "input_paths": [
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\01-brand.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\02-cast.png",
+    "C:\\Users\\David\\Documents\\Codex\\2026-10-05\\hav\\work\\Brighton\\Horizons\\App\\docs\\image-references\\07-scenes-vocabulary-ui.png"
+  ],
+  "rejected_attempts": [],
+  "dimensions": [
+    1402,
+    1122
+  ],
+  "mode": "RGB",
+  "input_hashes": {
+    "R01": "318714ed771da6414bed2c0f5c52047776844bdfd884ced331d230a9f7de7535",
+    "R02": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21",
+    "R07": "ac82c846ad3d4b2e8500dacaeb9eceea52d44e3f6f1293692b022b4f3db52469"
+  },
+  "selected_prompt": "Horizons small lesson trail decoration: a white chef hat beside a simple orange wooden cooking spoon. Image1 R01 brand palette reference, image2 R02 style reference only NO characters, image3 R07 native object rendering reference. ONE isolated still life. Completely opaque uniform warm paper background #fffefa. Flat solid geometric paper cutouts, crisp edges, uniform matte fills, no shadows, gradients, glow, lighting, blur, texture, text, faces or people. Complete silhouettes centered with generous 20% paper margins. Readable at 90 pixels."
+}

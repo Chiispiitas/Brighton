@@ -293,3 +293,8 @@ input:not([type=checkbox]):focus,select:focus{background-color:var(--orange-soft
  .path-node-dialog{padding:25px}
  .result-character{height:195px;width:180px}
 }
+
+/* Smooth lesson S, with noninteractive still-life in its first inward bend. */
+.lesson-trail .path-stop{justify-content:center}
+.trail-decoration{position:absolute;left:58%;top:65px;width:36%;max-width:165px;height:150px;object-fit:contain;pointer-events:none;mix-blend-mode:multiply;z-index:-1}
+@media(max-width:680px){.trail-decoration{top:65px;height:120px;left:58%;width:39%}}

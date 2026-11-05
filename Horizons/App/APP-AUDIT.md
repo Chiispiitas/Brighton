@@ -72,7 +72,7 @@ The Learn page has no promotional right sidebar, daily-invitation card or word-c
 - Bottom sidebar shortcut: avatar picture, learner name and My profile. It opens the profile.
 - Mobile navigation retains Profile access.
 - Page headers contain the book switcher and authoritative XP/streak amounts, without a player-avatar picture.
-- Preserve the compact, symmetric snake path, one island per row and a connector through orb centers. Keep keyboard and reading order chronological.
+- Preserve the compact, smooth S trail, one island per row and a continuously tangent connector through orb centers. Inanimate lesson objects occupy the concave pockets without covering controls. Keep keyboard and reading order chronological.
 - Islands have no permanent title/count/duration/step labels. Tap or keyboard activation opens a small non-modal speech bubble at the island/cursor.
 - The bubble contains the name, count, duration and Start. Keep it within the viewport, place its pointer sensibly, and dismiss with Escape, outside activation or scrolling. It must not dim or block the rest of the page.
 - When the Learn hero scrolls out of view, show a compact fixed Unit banner and a separate XP/streak bubble. For future units, derive the number from content rather than copying Unit 1.
@@ -175,3 +175,5 @@ Reports must name runtime commit, backend revision if relevant, URLs, viewport/b
 A task is complete when requested behavior works in the user-visible route, meaningful checks pass, visual changes have been inspected, persistence is verified where relevant, authorized publication succeeds and the audit/reference records reflect the final state.
 
 Do not call an incomplete course complete, an archived experiment current, a local result deployed, or a generated picture visually approved merely because the tool returned it. Keep the final handoff concise: what changed, where to use it, what was verified and any material remaining limitation.
+
+Website name: Horizons. Browser title, welcome heading, installed-app name and social metadata use Horizons. The share card is a 1200×630 native-art composition using the supplied wordmark.
