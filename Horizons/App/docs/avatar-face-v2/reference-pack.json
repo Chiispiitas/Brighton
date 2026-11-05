@@ -1,34 +1,42 @@
 {
   "kind": "current-avatar-faceless-animation-reference-pack",
-  "method": "Actual current renderer; native source references in production-record.json",
+  "method": "Current v46 actual-renderer references; hosted closed-pose costume boards separately scoped from gaze preview",
   "references": [
     {
       "file": "reconstruction.png",
-      "sha256": "2f9ad046d73873d9e5ed2af1aa4e0bfe059c394a82838ada57bcc3f58c508082"
+      "sha256": "2f9ad046d73873d9e5ed2af1aa4e0bfe059c394a82838ada57bcc3f58c508082",
+      "scope": "current v46 gaze/eyewear actual renderer"
     },
     {
       "file": "neutral.png",
-      "sha256": "9f9a2543628f6012f10d39ff1264bed8cf48d8dd05feef9dfe7a010dcf451ab7"
+      "sha256": "9f9a2543628f6012f10d39ff1264bed8cf48d8dd05feef9dfe7a010dcf451ab7",
+      "scope": "current v46 gaze/eyewear actual renderer"
     },
     {
       "file": "blink.png",
-      "sha256": "410bb1976e3cc1e61864662a05e8ab42752744018d9a7d0be4eaec45571d7896"
+      "sha256": "410bb1976e3cc1e61864662a05e8ab42752744018d9a7d0be4eaec45571d7896",
+      "scope": "current v46 gaze/eyewear actual renderer"
     },
     {
       "file": "all-costumes.png",
-      "sha256": "aebb44e7448cf82f4da21f6435a32141bef31c0adc2a635e86b0da2f28150058"
+      "sha256": "ef104e6ad16f6188e2f0a99ef2182d9eb78a7aa16c82fad8526c2b26fcab4d05",
+      "scope": "current v46 hosted closed-pose costume fit; not a full-gaze matrix"
     },
     {
       "file": "hair-glasses.png",
-      "sha256": "6b79ac4ad554f6b50ee7d9a62a3c5df66f1502449d7d3f679d5b8a7ba859b4f3"
+      "sha256": "93c1cece177564834d99730ff0b0620e6ce89dcc652543dc0f7dc651ced79cf1",
+      "scope": "current v46 hosted closed-pose costume fit; not a full-gaze matrix"
     },
     {
       "file": "normal-speed-preview.mp4",
-      "sha256": "e54a65c9dc7fd2e5a9ed1661a2b0f782c443e87428e65e92fc8c137151625223"
+      "sha256": "e54a65c9dc7fd2e5a9ed1661a2b0f782c443e87428e65e92fc8c137151625223",
+      "scope": "current v46 gaze/eyewear actual renderer"
     },
     {
       "file": "preview-frames.png",
-      "sha256": "fa9b9bb26f0af16c42c2b5b87ec48aa5834ca74ee1f8391ee820f54b1b43a483"
+      "sha256": "fa9b9bb26f0af16c42c2b5b87ec48aa5834ca74ee1f8391ee820f54b1b43a483",
+      "scope": "current v46 gaze/eyewear actual renderer"
     }
-  ]
+  ],
+  "currentSourceRevision": "5f6218c28594d231d218060de7a930d5681c32dc"
 }

@@ -431,6 +431,18 @@
     }
   ],
   "limits": "Very similar reconstruction, not pixel identical; generated white-eye proportions differ slightly. No independent human approval claimed.",
-  "hostedRuntimeRevision": "86f7eb95d8de0dbb7810521b8e871f873637b5d7",
-  "hostedVerification": "reports/avatar-face-release.json"
+  "lastVerifiedHostedRuntimeRevision": "5f6218c28594d231d218060de7a930d5681c32dc",
+  "historicalHostedVerification": "reports/avatar-face-release-v44.json",
+  "currentSourceRevision": "5f6218c28594d231d218060de7a930d5681c32dc",
+  "currentStatus": "reports/avatar-animation-audit-v46.json",
+  "currentMotion": {
+    "gazePeriodMs": 30000,
+    "glances": 3,
+    "glassesFollowFace": true,
+    "faceAndGlassesFractionOfPupilDisplacement": 0.4,
+    "breathingPeriodMs": 5200,
+    "blinkDurationMs": 140,
+    "pupilLogicalWidth": 21,
+    "backgroundFixed": true
+  }
 }

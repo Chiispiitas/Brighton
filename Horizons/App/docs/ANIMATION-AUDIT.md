@@ -1,31 +1,114 @@
 # Horizons animation production audit
 
-Latest gaze refinement: glasses share the exact facial-layer translation. Look-around uses a30-second schedule with three unequal glances (right/up, left/up, slight right/down),1.4–1.9-second transitions and long neutral rests. Breathing and140ms blink retain their independent5200ms period. Original resting eyes, fixed background, full opacity, masks and reduced-motion handling remain. Cache avatar-face-v46; queries face5.
+Updated 5 November 2026, America/Bogota. This is the current specification and production workflow. The user's latest instruction wins. Earlier claims and settings are preserved in [the preceding audit snapshot](animation-history/2026-11-05-before-v46-refresh.md) and [the original trial history](ANIMATION-AUDIT-HISTORY.md); they are not current instructions.
 
+## Current source and publication status
 
-Latest avatar correction: generate a genuinely blank head FIRST, then separate expression/eye-white/pupil/blink sprites. Whole-head expression swaps and skin patches are prohibited for avatars as well as Pico. The portrait background stays completely still during breathing and customization/island feedback; only the internal avatar artwork moves. Subtle look-around combines masked pupil translation (±2.5 logical px) and face-layer translation (40% of that). Main editor/path only; sidebar/thumbnails static. 5200ms cycle,140ms eye-only blink, full-opacity transitions, reduced-motion still, hidden/offscreen pause and cleanup. All costume/hair/glasses anchors and saved IDs retained. Visible avatar-only breathing scales from(.994,.98) to1; the face moves with each glance, independently of the fixed background. Current assets/process: docs/avatar-face-v2/production-record.json; audit: docs/ANIMATION-AUDIT.md. Pupils enlarged17% (18 to21 logical px), retaining eye masks. Default white-eye bounds and inward pupil positions are measured from the accepted still for each base/skin; glances return to those measured positions. Cache avatar-face-v44; queries face4.
+Current reviewed source: `5f6218c28594d231d218060de7a930d5681c32dc` (gaze/eyewear runtime introduced in `24b8af50bcd2c24cbbb7e087979a0bebc94624e5`; the later commit refreshes its glasses preview). At this audit refresh, both remote branches contain that source. Cache: `horizons-companion-avatar-face-v46`; module queries: `face5`; app stylesheet query: `options1`.
 
-Latest correction: bird wings flap using ROTATION ONLY (-35 to55 degrees); no wing squash, stretch or skew and no whole-bird scaling. Saved player portrait changes island only on explicit island activation (mouse/touch click or equivalent keyboard activation), never on hover/focus/leave or auto-retargeting while scrolling. Scrolling the selected island out of view hides the portrait until it returns; it does not select another island. Initial placement is allowed. Hover arrows and other accepted controls remain.
+The current gaze/glasses implementation is live. [Pages run 42105016286](https://github.com/Chiispiitas/Brighton/actions/runs/42105016286) succeeded; the earlier run 42103418808 was cancelled. Fresh hosted checks passed at four widths, including matching face/glasses motion, slower varied glances, original rest, breathing, fixed background, masks, fallback and lifecycle. Exact hosted-byte parity covers 448 committed website files and 12 unchanged book recordings. See [current source-bound status](../reports/avatar-animation-audit-v46.json). Documentation-only commits after this runtime do not alter its behavior.
 
-Latest interaction/art update: mouse hovering an arrow scrolls until leave, as well as press/hold. Reached ends hide arrows; a real adjacent implemented unit turns its boundary into an explicit Go to Unit button (never auto-activate on hover). Unit registry currently contains only Unit 1. Avatar previews stay on fully visible islands; building names removed. Lesson-specific isolated native object tiles are reused. Bird now has separate ImageGen body/near/far wings, transform-only flaps with squash/stretch smear moments and local hover motion; butterfly also hovers locally. Reduced motion, hidden/offscreen pause and disposal apply to every wing loop. Older fixed-eight-animation / release-while-hover assertions are superseded.
+## Scope and non-negotiable rules
 
-Updated 5 November 2026, America/Bogota. This is the current production workflow and reference index. The [historical audit](ANIMATION-AUDIT-HISTORY.md) preserves earlier trials, rejected attempts and source-bound releases. Historical settings are not current requirements.
+| Target | Current authorized motion |
+| --- | --- |
+| Unit 1 banner Pico | Established faceless-head reading rig:8-second idle,6-second map inspection |
+| Main avatar editor and selected path portrait | Breathing, separate blink, varied glances, customization/selection feedback and lesson-entry jump |
+| Sidebar avatars and option thumbnails | Static |
+| Decorative bird | Separate body/near/far wings, rotation-only flap and local hover |
+| Butterfly | Established local hover/flutter |
+| Other cast | Static unless specifically authorized |
 
-## Current decisions and scope
+Generate a genuinely blank head FIRST and expressions/eye whites/pupils/eyelids separately. Do not swap complete expression heads, conceal baked eyes with skin patches, or revive abandoned articulated art. Keep native ImageGen originals and stable saved IDs. Masks contain already-separated features; they are not a substitute for separation.
 
-The user's latest instruction wins. This workflow explains how to create a newly requested animation; it does not authorize animating the rest of the cast. Pico in the Unit 1 Learn banner retains its established rig. The main avatar editor preview and path portrait now use the scoped minimal avatar system described above; sidebar portraits, thumbnails and other characters remain static. Preserve the accepted website, artwork IDs, printed book and backend.
+Visible character and avatar layers stay at opacity 1. No fades, crossfades or opacity transitions; eye states switch atomically. Native transparent backgrounds and antialiased PNG edges are valid. Existing interface-control motion remains governed by [UI-MOTION.md](UI-MOTION.md).
 
-Use a genuinely faceless head with separate transparent facial-feature sprites. Never conceal old expressions with peach skin patches. Separate the features needed by the action: nose, brows, mouths, eye whites, pupils, eyelids and special expressions. Shared features can remain constant layers. Masks contain features within the head and moving pupils within the eye whites.
+The portrait background is stationary during breathing and customization/island feedback. Only avatar artwork moves. Glasses follow the exact face translation; they do not stay behind when the face glances. Hair/costume/neck geometry and the accepted resting gaze remain registered. Keep the printed book, backend and real learner records outside visual QA.
 
-No fades, crossfades, opacity animation or transparency transitions. Visible sprites stay at opacity 1; incompatible expressions switch instantly. Transparent PNG backgrounds and native antialiased edges are still valid. Translation, rotation, resizing, controlled squash/stretch, anticipation, overshoot and bounce are allowed when anatomy stays connected and identity recognizable.
+## Current avatar references
 
-Pico's current cycle is one 8-second idle followed by a 6-second map check: 14 seconds total. The inspection expression has a raised eyebrow, downward squint, closed neutral mouth and no smile. Body and feet remain fixed. Closed eyelids display at 150% size. Reduced motion uses the original native still; offscreen/hidden-tab states pause the cycle. These are Pico's settings, not universal durations or amplitudes for future characters.
+| Reference | Purpose and limits |
+| --- | --- |
+| [Production record](avatar-face-v2/production-record.json) | Exact two ImageGen briefs, actual attached inputs, native output paths/hashes, alpha/palette preparation and asset inventory |
+| [Archived pre-generation references](avatar-face-v2/inputs/reference-pack-at-generation.json) | Source context used for those calls; native targets remain preserved |
+| [Current reference manifest](avatar-face-v2/reference-pack.json) | SHA256 inventory of current review artifacts; per-artifact source binding distinguishes older costume boards |
+| [Reconstruction/layer board](avatar-face-v2/reconstruction.png) | Accepted still, actual blank head, neutral assembly, separate eyelids and a glancing glasses example |
+| [Current neutral](avatar-face-v2/neutral.png), [blink](avatar-face-v2/blink.png) | Current synthetic editor captures |
+| [Glasses motion preview](avatar-face-v2/normal-speed-preview.mp4) |944 actual-renderer poses at 30fps:30-second gaze schedule,14 feedback frames and 30 settling frames;31.47 seconds total |
+| [Preview contacts](avatar-face-v2/preview-frames.png), [capture metadata](avatar-face-v2/preview-capture.json) | Controlled-clock visual review, not a real-time performance benchmark |
+| [Costume board](avatar-face-v2/all-costumes.png), [hair/glasses board](avatar-face-v2/hair-glasses.png) | Current v46 hosted 240-composition closed-pose fit check; not a full gaze matrix |
+| [Original reference contacts](avatar-motion/reference-contact-0.png) | Part of the 598-frame/native30fps analysis of the user's20261105-1757-26.9073882.mp4 clip; timing inspiration, not generated anatomy |
 
-Pico verified runtime: `56551e90b35c9219295ce26b74a0084cad82eef6`; cache `horizons-companion-pico-v29`, entry queries `pico6`. Later documentation-only commits preserve this runtime.
+The preview capture recipe is [avatar-face-preview.mjs](../tools/avatar-face-preview.mjs), with [encoding/contact recipe](../tools/encode-avatar-face-preview.py). [avatar-face-reference.mjs](../tools/avatar-face-reference.mjs) captures the layered comparison. No new ImageGen call was needed for the later breathing, resting-eye registration, glasses or timing refinements.
 
-## Updated reference index
+### Native art and mechanical preparation
 
-Read [IMAGE-PRODUCTION.md](IMAGE-PRODUCTION.md), [APP-AUDIT.md](../APP-AUDIT.md), and the [general reference manifest](image-references/reference-pack.json). Each cast ImageGen call must actually attach [R01 brand](image-references/01-brand.png), [R02 cast](image-references/02-cast.png), [R07 style/objects](image-references/07-scenes-vocabulary-ui.png) and the exact current edit target. **Maximum seven image inputs total, including targets.** Run the preflight before every call and attach its returned paths. Mentioning filenames in a prompt does not attach them.
+Both original built-in ImageGen calls attached the exact five returned preflight paths: R01, a verified full-resolution R03/R04 bundle, R05, R06 and the exact rounded-head edit target. All mandatory avatar references were present, within the seven-total-image cap. One call generated twelve blank heads, the other isolated facial features. Native results remain unchanged in [blank-native.png](../assets/art/avatar-face-v2/blank-native.png) and [features-native.png](../assets/art/avatar-face-v2/features-native.png).
+
+[prepare-avatar-face-v2.py](../tools/prepare-avatar-face-v2.py) performs disclosed magenta-matte separation, crop/trim, palette registration and rounded-alpha intersection. The original below-chin neck seam is retained for costume fit. Native shapes are not redrawn in code. These are documented derivatives, not untouched-native claims. Reconstruction is very similar, not pixel identical.
+
+| Active asset under assets/art/avatar-face-v2/ | Role |
+| --- | --- |
+| blank-heads.png | One faceless head/ears/neck per base/skin; unchanged through every expression |
+| eye-left.png, eye-right.png | Separate white eyes and pupil alpha masks |
+| pupil.png | Two instances;21 logical px, about 17% larger than the first18px separated rig |
+| brow-left.png, brow-right.png, nose.png, mouth.png | Independent neutral features |
+| lid-left.png, lid-right.png | Separate closed eyelids; replace eyes/pupils only |
+| rest-anchors.frames.json | Accepted-still white-eye bounds and actual dark-pupil centroids for both bases and all six skins |
+
+The accepted still has a slight inward resting gaze. Pupil centroids are measured from the native still rather than inferred from eyewear anchors. Glances return to those positions. Existing head, costume, hair, accessory and badge metadata and saved IDs remain unchanged. The original open head is used in static contexts and loading/failure fallback, and is hidden once the new facial rig is ready.
+
+### Layering, masks and eyewear
+
+The stationary portrait container contains a square stage, then an avatar-only feedback group, then an avatar-only breathing group. Blank head, wardrobe, hair, face and glasses inherit this breathing group together. A head-alpha mask contains the facial features; each white eye separately masks its pupil. Eyewear remains a sibling at its established foreground layer, outside the head mask so the temples are not clipped, but receives the same translation string as the face on every gaze update and reset. Hair follows breathing, not the small facial glance. Glasses also reset with neutral/reduced motion and disposal.
+
+### Breathing, blinking and feedback
+
+- Breathing:5200ms, ease-in-out, scale(.994,.98)→scale(1)→scale(.994,.98), pivot 50%/80%. This provides a visible rise/stretch without enlarging beyond the accepted crop or moving the background.
+- Blink: eye-only opaque swap at 4200–4340ms of each5200ms breathing period;140ms closed. Brows/nose/mouth and blank head remain unchanged.
+- Customization feedback:420ms, avatar artwork rises1% and shrinks to.98, then settles.
+- Explicit island activation:460ms, artwork rises2% and shrinks to.96, then settles. Hover/focus/scroll never retarget the player.
+- Lesson entry: established440ms full-opacity portrait jump. Escape, reselection, hidden tab or route change cancels stale entry. Reduced motion skips the jump.
+
+### Slower, varied look-around
+
+Gaze reads the same elapsed animation time as breathing/blinking, modulo 30000ms. Its period is independent of their 5200ms period. It is deterministic, not randomized. Each transition uses smoothstep easing; directions, amplitudes, hold lengths and rests differ. Pupils translate relative to the white eyes; the face and glasses move at 40% of that offset, up to 1 logical px horizontally. Masks remain in place throughout.
+
+| Time in 30-second schedule | Action; pupil offset in logical px |
+| --- | --- |
+|0–4.0s | Neutral rest |
+|4.0–5.4s /5.4–6.5s /6.5–8.2s | Ease to(2.5,−0.4), hold right/up, return |
+|8.2–12.4s | Neutral rest |
+|12.4–14.2s /14.2–15.3s /15.3–16.9s | Ease to(−1.9,−0.8), hold left/up, return |
+|16.9–23.2s | Neutral rest |
+|23.2–24.8s /24.8–25.7s /25.7–27.6s | Ease to(1.1,1.2), hold slight right/down, return |
+|27.6–30.0s | Neutral rest; joins the next cycle's initial rest |
+
+There are three glances per 30 seconds, roughly six per minute, replacing two glances per 5.2 seconds. Transitions take1.4–1.9 seconds. The longer, varied gaze does not slow breathing or blinking. The31.47-second preview covers this gaze schedule and feedback, not the full combined phase repetition of the independent periods.
+
+### Accessibility and lifecycle
+
+Only main editor/path instances mount avatar motion. Reduced motion cancels transforms and resets face, eyewear, pupils and eyes to neutral. Offscreen/hidden states pause the clock and reset visible facial state; resume reads the preserved phase. Disposal removes listeners, observers, animations and frame callbacks. Missing facial sprites/registration retain the original native still. There are no character opacity tracks.
+
+## Verification and limits
+
+Current local [face proof](../reports/avatar-face-proof.json) covers 320/390/768/1440px, glasses/face transform agreement within numerical rounding, unequal glances, long neutral rests, original resting pupil positions, visible breathing, fixed background, one unchanging blank head, eye-only blink, masks, opacity 1 and missing-sprite fallback. [Motion/lifecycle proof](../reports/avatar-motion-proof.json) covers scope, static sidebar/thumbnails, click-only targeting, feedback, reduced motion, pause, entry ordering, cancellation and cleanup. [Cache proof](../reports/avatar-cache-proof.json) installs v46, removes a synthetic expired v45 cache and checks new face assets; it is not a complete previous-worker update simulation.
+
+Current [hosted face checks](../reports/avatar-face-proof-hosted.json), [hosted lifecycle checks](../reports/avatar-motion-proof-hosted.json), [hosted costume checks](../reports/avatar-motion-costumes-hosted.json) and [hosted cache check](../reports/avatar-cache-proof-hosted.json) passed for v46. The 240-composition matrix covers the closed pose, both bases, six skins and ten costumes, with hair/glasses; it is not a 240-case full-gaze timeline. The 448-file [publication parity report](../reports/publication-assets.json) is bound to runtime 5f6218c. The [current release record](../reports/avatar-face-release.json) separates this from [preserved v44 evidence](../reports/avatar-face-release-v44.json).
+
+Review is by the root agent using actual-renderer captures. No physical-phone, Safari/Firefox, independent reviewer or human approval is claimed. Hidden-document checks use a controlled event fixture. No real learner data was used. Preserve these limits when summarizing the result.
+
+## Pico and overworld motion
+
+Pico retains the established faceless head and separate neutral/inspection features. One8-second idle is followed by a 6-second map check: head lowers, map/paws lift together, raised brow and squint replace the smile with a closed neutral mouth. Closed eyelids retain150% size. Body/feet stay fixed. Full-opacity swaps, masks, reduced-motion still, phase-preserving pause and disposal remain. This audit refresh does not alter Pico. Earlier [Pico hosted proof](../reports/pico-opaque-hosted.json) remains bound to its original runtime56551e9; Pico behavior was not rerun in this documentation refresh.
+
+Bird body and two generated wings remain separate. Wings flap with rotation only from −35° to 55° and back over 620ms. No wing squash/stretch/skew or whole-bird scale. The assembled bird hovers locally; it does not travel along a line. Butterfly motion remains a local hover/flutter. Reduced motion, offscreen/hidden pause and cleanup apply. Original smear/squash wing trials are historical. See [bird production record](bird-hover/production-record.json) and [OVERWORLD.md](OVERWORLD.md).
+
+Map selection stays click-only. Wheel scrolling remains vertical; hover/hold arrows, touch momentum, mouse drag and keyboard activation retain their accepted behavior. No extra promotional headings or wheel/swipe/hover helper messages. Buildings have no visible name labels. Decorations use isolated sparse tiles, not large generated environment panels.
+
+## Pico references and active sprite map
+
+For Pico, read [IMAGE-PRODUCTION.md](IMAGE-PRODUCTION.md), [APP-AUDIT.md](../APP-AUDIT.md), and the [general reference manifest](image-references/reference-pack.json). Each cast ImageGen call must actually attach [R01 brand](image-references/01-brand.png), [R02 cast](image-references/02-cast.png), [R07 style/objects](image-references/07-scenes-vocabulary-ui.png) and the exact current edit target. **Maximum seven image inputs total, including targets.** Run the preflight before every call and attach its returned paths. Mentioning filenames in a prompt does not attach them.
 
 The [animation reference manifest](pico-banner-animation/animation-reference-pack.json) inventories active assets, hashes and current visual references. It supplements the general pack; it does not replace mandatory inputs or exempt additional images from the seven-input cap.
 
@@ -62,20 +145,6 @@ Layer order: head behind body/map; inside head, blank base then contained facial
 
 Recipes: [initial registration](../tools/prepare-pico-banner-parts.py), then [faceless head/feature separation](../tools/prepare-pico-face-sprites.py). The old [prepare-pico-check.py](../tools/prepare-pico-check.py) is historical patch work. Runtime no longer displays head-look-base.png, blink-registered.png or check-face-registered.png as face layers.
 
-## What changed and why
-
-| Trial/change | Result carried forward |
-| --- | --- |
-| Generated head, body and map/paws | Rejected initial proportion mismatches and map glow; tighter native targets produced a very similar reconstruction. Raw outputs retained. |
-| Reconstructed the neutral pose first | Established common coordinates, pivots and joint overlaps. No abandoned articulated rig reused. |
-| Added synchronized reading movement/blink | Corrected effect-level easing to a linear common clock with easing inside motion segments, so stated sample times match actual extrema. |
-| Doubled motion and enlarged blink to 150% | Kept wider movement. The enlarged skin patch exposed clipping/overlap problems. |
-| Added gaze and map inspection | Pupil movement, anticipation, stretch, overshoot and settling; raised-brow/no-smile face. Limited map width expansion to prevent paw clipping. |
-| Tried masks and expression skin patches | Containment improved, but seams and covering old features remained problematic. Retired that expression approach. |
-| Generated faceless head and separated features | Established current architecture; removed backing/exterior pixels and restored the tongue after incomplete extraction. |
-| Changed inspection frequency | Four idle loops became one: 8 seconds idle plus 6 seconds inspection. |
-| Removed every fade | Atomic hidden/show changes read the shared clock. Boundary checks caught overlap in an intermediate visibility-keyframe approach; it was replaced. |
-| Checked lifecycle/publication | Native still for loading/reduced motion/failure; phase-preserving pause, cleanup and source-bound hosted proof. Initial independent review covers that trial only. |
 
 ## New animation from scratch
 
@@ -89,7 +158,7 @@ Start with a faceless head and separate features. List only body, limbs, prop, h
 
 ### 3. Prepare references and preflight every image call
 
-Inspect R01/R02/R07 and the exact current native target. If the general pack is stale, rebuild it with the reference-board tool and review affected sheets first. Save one brief per deliverable: component boundaries, invariants, framing, alpha requirements, prompt, reference IDs and targets. Run tools/check-image-brief.py from the app directory. Attach its exact returned input_paths to built-in ImageGen; explain input roles in the prompt. Count all images, never more than seven. Repair a rejected preflight before generating.
+Inspect the mandatory references for the asset domain: R01/R02/R07 for cast; R01/R03/R04/R05/R06 for avatars. Include the exact current native target for an edit. A verified lossless full-sheet bundle may reduce physical input count without dropping mandatory references. If the general pack is stale, rebuild it with the reference-board tool and review affected sheets first. Save one brief per deliverable: component boundaries, invariants, framing, alpha requirements, prompt, reference IDs and targets. Run tools/check-image-brief.py from the app directory. Attach its exact returned input_paths to built-in ImageGen; explain input roles in the prompt. Count all images, never more than seven. Repair a rejected preflight before generating.
 
 ### 4. Generate parts and preserve provenance
 
@@ -101,11 +170,11 @@ View native results and checkerboard composites. Reject wrong identity/proportio
 
 ### 6. Prepare sprites and reconstruct the still pose
 
-Keep native files untouched. Make versioned derivatives with a repeatable recipe: mechanical crop, alpha selection, masks, uniform registration and translation. Disclose sampled-color fills used during separation; derivatives are not untouched native bytes. Put features above the blank head in one coordinate space. Preserve complete ears/hair and joint overlap. Inspect blank head, isolated expressions and every composed face. Compare the full neutral assembly with the baseline side by side, with overlays/differences when useful. Identity and connected anatomy must pass before motion. Silhouette scores support review; they are not sole acceptance criteria or claims of pixel identity.
+Keep native files untouched. Make versioned derivatives with a repeatable recipe: mechanical crop, alpha selection, masks, documented scaling/registration and translation. Avatar eye bounds and pupil centroids come from the accepted still; never confuse eyewear anchors with actual resting pupil centers. Disclose sampled-color fills used during separation; derivatives are not untouched native bytes. Put features above the blank head in one coordinate space. Preserve complete ears/hair and joint overlap. Inspect blank head, isolated expressions and every composed face. Compare the full neutral assembly with the baseline side by side, with overlays/differences when useful. Identity and connected anatomy must pass before motion. Silhouette scores support review; they are not sole acceptance criteria or claims of pixel identity.
 
 ### 7. Build purposeful motion with transforms
 
-Set pivots/fixed supports, then idle movement, then special action. Use translation/rotation/resizing, modest squash/stretch, anticipation, overshoot and settling where they serve the action. Keep feet grounded unless the action moves them; keep neck/collar connections and object grips intact. Review true extreme poses for clipping, detachment, unwanted floating or distorted identity before increasing movement.
+Set pivots/fixed supports and a separate stationary background, then idle movement, then special action. Use translation/rotation/resizing, modest squash/stretch, anticipation, overshoot and settling where they serve the action. Keep feet grounded unless the action moves them; keep neck/collar connections and object grips intact. Review true extreme poses for clipping, detachment, unwanted floating or distorted identity before increasing movement.
 
 ### 8. Switch expressions at full opacity on one clock
 
@@ -113,83 +182,17 @@ No fades/crossfades/opacity interpolation. Hide outgoing features and show incom
 
 ### 9. Integrate fallback, accessibility and cleanup
 
-Opt in only the authorized character/location. Fit the rig uniformly to the real slot. Decode every sprite/mask before replacing the accepted still. Keep the still for missing module/assets and reduced motion. Pause the clock and face updater offscreen/in hidden tabs. Cancel animations/frame callbacks, disconnect observers/listeners and prevent late decodes from remounting after navigation. Preserve stable IDs and other static-character guards. Define resume behavior; Pico preserves phase.
+Opt in only the authorized character/location. Fit the rig uniformly to the real slot. Decode every sprite/mask before replacing the accepted still. Keep a decoded still for missing module/assets and reduced motion. Pico uses its original native still; avatars reset the assembled face to open neutral eyes and zero gaze, or retain the original native head when new facial parts fail to load. Pause the clock and face updater offscreen/in hidden tabs. Cancel animations/frame callbacks, disconnect observers/listeners and reset eyewear with the facial group and prevent late decodes from remounting after navigation. Preserve stable IDs and other static-character guards. Define resume behavior; Pico preserves phase.
 
 ### 10. Review composed motion and test behavior
 
-Inspect neutral, actual extrema, blink, special face, return and loop seam, enlarged and at real app size. Review normal-speed playback of a complete current cycle. Test the actual route at 320/390/768/1440px: edge clearance, joints, grips, grounded body, face alignment and unwanted pixels. Probe before/at/after each expression switch and inside former fade windows. Reject fractional opacity or incompatible features visible together. Verify pupil containment, frequency, reduced motion, pause/resume, repeated navigation/disposal and missing assets/modules using fresh contexts. Use synthetic state, never real learner records. Name actual reviewers/scope; never imply human or independent approval that did not occur.
+Inspect neutral, actual extrema, blink, special face, return and loop seam, enlarged and at real app size. Review normal-speed playback covering every action. Avatar gaze repeats in 30 seconds while breathing/blinking repeat in 5.2 seconds; the 31.47-second preview covers a gaze schedule plus feedback, not the entire combined phase repetition. Test the actual route at 320/390/768/1440px: edge clearance, joints, grips, grounded body, face alignment and unwanted pixels. Probe before/at/after each expression switch and inside former fade windows. Reject fractional opacity or incompatible features visible together. Verify pupil containment, frequency, reduced motion, pause/resume, repeated navigation/disposal and missing assets/modules using fresh contexts. Use synthetic state, never real learner records. Name actual reviewers/scope; never imply human or independent approval that did not occur.
 
 ### 11. Publish and refresh the audit/reference set
 
 Commit intended work, check remote branches, use the existing publication flow and invalidate relevant entry/service-worker caches. Verify live route, exact hosted module/art bytes and relevant browser behavior. Adapt cache-lifecycle tests to the real previous/new versions; old reports do not prove a later upgrade. Record revision, publication run, hashes, reports, browsers and remaining gaps. Refresh current reference boards, manifest and complete-cycle preview; label older material historical. No book/backend deployment as a side effect of animation work.
 
-## Current evidence and remaining limits
 
-[Hosted opaque proof](../reports/pico-opaque-hosted.json), bound to runtime 56551e9: four widths, mutually exclusive eye/expression states, no opacity tracks, all head descendants at computed opacity 1, one idle then inspection, masks, fixed body, reduced-motion still, load fallback, offscreen pause/resume, controlled hidden-document event and disposal. [Local proof](../reports/pico-opaque.json) and [proof script](../tools/pico-banner-motion-proof.mjs) record the contract. Samples cover both sides of 2352/2496/6032/6176/9100/12500ms.
+## Carry-forward checklist
 
-[Publication parity](../reports/publication-assets.json) verified 397 committed runtime/native files, including 12 unchanged book recordings. [Pages run 42036348344](https://github.com/Chiispiitas/Brighton/actions/runs/42036348344) succeeded. Refreshed visual captures use the hosted renderer without learner API calls; they are visual documentation, not a new cross-browser interaction matrix.
-
-Limits: Edge/Chromium automation; controlled hidden-document event fixture. No physical-phone or Safari/Firefox verification claimed. Initial independent review does not approve later revisions/poses. Current visual review is by the root agent; clips support the user's style/pacing review. Reconstruction is very similar, not pixel-identical; the faceless silhouette diagnostic was 0.97680 against the prior head. Earlier cache-upgrade evidence verifies v23→v24 only; no v28→v29 lifecycle test is claimed here.
-
-## Carry-forward package
-
-Carry this audit, image-production guide, reference manifests/boards, native baseline, selected raw parts, briefs/provenance, preparation recipes, renderer, proof scripts and source-bound reports. Rejected parts, skin-patch expressions, four-idle timing, fades and abandoned articulated rigs remain historical; they must not become new production instructions. Adapt motion to the newly requested action while preserving these process/quality rules.
-
-## Overworld motion extension
-
-The latest request separately authorizes saved-avatar hover/focus travel and decorative bird/butterfly flight. They use full-opacity transforms, native generated cutouts, reduced-motion static states and offscreen/hidden-tab pause/disposal. No new articulated avatar anatomy or other cast animation is authorized. Pico's rig and timing are unchanged. See [OVERWORLD.md](OVERWORLD.md), [new art provenance](overworld/production-record.json), src/overworld-motion.js and the source-bound overworld reports. Exact old reference inputs are archived before R07 was refreshed with the new scenery.
-
-## Original bird hover rig production (motion values superseded above)
-
-Native exact bird target plus preflighted R01/R02/R07 (four total actual image inputs) produced three separate native parts: body/head/tail/beak/eye without wings, near wing and far wing. The opaque magenta-backed native atlas remains unchanged; derived parts use documented color-key alpha and cell crop, without redrawing anatomy. Near wing registers left7%, bottom23%, width51%, pivot88%/86%; far wing left30%, bottom49%, width37%, pivot78%/90%. Body is full width aligned at bottom of the original bird aspect ratio. Reconstruction is very similar, not pixel-identical.
-
-620ms transform-only wing cycle has brief 0.38/0.18 vertical scales, 1.12/1.20 horizontal stretch and ±skew for opaque smear-like downstrokes, then recovery. The composed bird hovers locally (3px sideways with gentle bob), rather than travelling across the map. Butterfly motion is also local. Every wing/hover animation joins the same pause/reduced-motion/disposal collection. All transitions remain opaque. See bird-hover/production-record.json for exact prompts, saved paths, actual inputs and native SHA; bird-hover/reconstruction.png for enlarged composed review.
-
-Rotation-only/click-only runtime ae37cb9e10917c3614cf7051efb50d5f256fcdb7 is published. Hosted checks confirm hover, focus and pointer leave do not move the selected portrait; island click does; scrolling retains selection and hides/reveals it when offscreen. All wing keyframes are rotate-only, and reduced motion cancels the loops. Exact hosted bytes verified for all six changed runtime files. See reports/click-avatar-release.json. No new native art, curriculum or backend changes.
-
-## Avatar correction: faceless head and separate expressions
-
-The previous avatar-motion-v41 implementation violated this audit. It generated/swapped complete open/closed heads and bounced the colored background. The whole-head exception written into the prior audit was not authorized. Those assets, reports and the old preview in `docs/avatar-motion/` are historical, rejected as a production architecture. They do not approve the current correction. Pico and bird rigs remain unchanged.
-
-The [production record](avatar-face-v2/production-record.json) contains two distinct built-in ImageGen calls: one twelve-head **blank** atlas, then an isolated native feature atlas. Both attached the exact five returned preflight paths: R01, a lossless full-resolution R03/R04 bundle, R05, R06, and the exact rounded-head target. All mandatory references are present; there are five physical inputs, below the seven total cap. [Archived inputs](avatar-face-v2/inputs/reference-pack-at-generation.json) preserve the source-bound pre-generation reference context. Native results stay unchanged in `assets/art/avatar-face-v2/blank-native.png` and `features-native.png`.
-
-[Current avatar reference manifest](avatar-face-v2/reference-pack.json) inventories review artifacts and hashes. [All-costume board](avatar-face-v2/all-costumes.png) and [hair/glasses board](avatar-face-v2/hair-glasses.png) retain the current240-case visual check. [Reconstruction and parts](avatar-face-v2/reconstruction.png) show the accepted still, the actual blank head, the neutral assembled face, eyelids and gaze. [Normal-speed preview](avatar-face-v2/normal-speed-preview.mp4) uses944 controlled-clock actual-renderer frames at30fps: one complete30000ms gaze schedule with independent breathing/blinks, customization feedback and settling. This is visual playback, not a performance benchmark. It supersedes the whole-head preview. The existing reference video remains sampled at native30fps across all598 frames; its dense contact sheets in `docs/avatar-motion/` remain valid timing references, rather than acceptable sprite architecture.
-
-### Active avatar layers and preparation
-
-`tools/prepare-avatar-face-v2.py` is the repeatable mechanical recipe. It keys the native magenta, crops the isolated shapes, intersects the blank head with the existing rounded alpha and retains only the original below-chin neck seam for costume compatibility. It explicitly registers the generated feature palette to the accepted charcoal/orange colors; these are derivatives, not untouched-native bytes. No anatomy is drawn in code, no old eyes remain below the features, and no skin patches conceal old expressions. The separate generated white eyes are registered to the accepted still’s measured eye bounds; pupil rest positions use the actual original dark-pixel centroids, including its subtle inward gaze. Measurements are in `rest-anchors.frames.json`. The pupils remain21 logical px (17% larger than the first separated rig). Reconstruction is very similar, not pixel identical.
-
-| Active file(s), under assets/art/avatar-face-v2 | Role |
-| --- | --- |
-| blank-heads.png | One unchanged faceless head/ears/neck for every skin/base; no expression changes on this layer |
-| eye-left.png, eye-right.png | Separate native white eyes; their alpha also masks pupils |
-| pupil.png | Separate native pupil, instantiated twice |
-| brow-left.png, brow-right.png, nose.png, mouth.png | Constant neutral feature sprites above the blank head |
-| lid-left.png, lid-right.png | Separate generated eyelids; replace only eye whites/pupils at4200–4340ms |
-
-The original head/costume/hair/accessory/badge metadata and eye anchors remain unchanged. The original open native head appears only in static contexts or loading/failure fallback; it is hidden once every new sprite decodes. A head-alpha mask contains the moving face, and separate white-eye alpha masks contain each pupil. Glasses and hair keep their accepted registration. Masks supplement actual separation; they never cover a baked expression.
-
-### Motion and fixed background
-
-The colored portrait container is outside both internal feedback and idle groups and receives no transform animation. Avatar artwork alone breathes from scale(.994,.98) to1 over5200ms, anchored at50%/80%; it never expands beyond its accepted crop. Feedback shrinks the artwork slightly while rising1% in the editor or2% on island activation, then settles. This keeps complete hair inside its circle. Face translation is at most1 logical px horizontally; pupils glance at±2.5px inside their eye masks. The same clock drives gaze and140ms eye-only blinks. All visible layers remain opacity1, with atomic hidden/show eye switching. Reduced motion resets gaze/open eyes and cancels loops; offscreen/hidden pauses preserve phase. The existing440ms lesson-entry jump and stale-entry cancellation remain.
-
-### From scratch for the next avatar animation
-
-1. Record the exact approved still, location, action, timing and fallback; inspect the actual reference video at sufficient frame density.
-2. Plan a blank head plus only the separate features/action parts required. Keep wardrobe, hair, eyewear, neck anchors and saved IDs stable.
-3. Save a distinct brief for the blank head and each feature deliverable. Preflight each call with the mandatory domain sheets plus actual target; attach the exact returned paths, maximum seven total. A verified lossless bundle may reduce physical input count without dropping a mandatory sheet.
-4. Generate the blank head and features separately in built-in ImageGen. Preserve exact native outputs, prompts, ordered hashes, paths, reference roles and rejection reasons. Reject baked expressions/backing skin or a reconstruction that cannot preserve identity.
-5. Mechanically prepare and register transparent parts with a repeatable recipe. Disclose color/alpha derivatives. Compare the assembled neutral against the baseline before any motion. Never use a complete expression-head swap or code-painted replacement anatomy.
-6. Keep background outside all avatar motion groups. Contain the face within the head and pupils within eye whites. Add restrained transforms on one clock; eye-only blinks swap at full opacity.
-7. Review the blank head, isolated parts, neutral, blink, gaze extrema, bounce extrema and a complete normal-speed cycle at actual sizes. Check all costumes/skin bases and eyewear/hair, plus reduced motion, offscreen/hidden pause, late loads, failure fallback and disposal.
-8. Publish with a new cache version, read back the actual live code/art, refresh current boards and audit, and clearly retire superseded trials. Never call a passing old report proof of a new architecture.
-
-### Current verification
-
-`reports/avatar-face-proof.json`:320/390/768/1440px synthetic app checks keep the exact same blank-head source through blink/gaze, verify eye-only switching, actual pupil and face transform changes, face/eye masks, opacity1, zero opacity tracks, fixed background geometry/transform through idle and feedback, and missing-sprite native-still fallback. `reports/avatar-motion-proof.json`: editor/path-only scope, static sidebar/thumbnails, click-only targeting, feedback, live reduced-motion changes, hidden/offscreen pause, entry jump before activity, Escape/reselection cancellation and route cleanup. `reports/avatar-motion-costumes.json`:240 compositions across both bases, all six skins and ten costumes, including hair and glasses, with unchanged metadata. These are Edge/Chromium synthetic fixtures and root-agent visual review; no physical-phone, Safari/Firefox or independent human approval is claimed.
-
-The current cache check (`reports/avatar-cache-proof.json`) installs the real v44 worker, verifies the blank/eye/registration files are cached, and removes a synthetic expired v43 cache. It does not claim a complete old-worker update simulation. Current preview capture/encoding recipes are `tools/avatar-face-preview.mjs` and `tools/encode-avatar-face-preview.py`.
-
-Avatar v43 runtime `441704d3dc63764aca436746768bcb4851f53929` is published on both branches. [Pages run42090254698](https://github.com/Chiispiitas/Brighton/actions/runs/42090254698) succeeded. Hosted face/gaze/background/fallback tests at four widths, lifecycle/cancellation checks,240 costume compositions and the worker-installation cache check passed. Exact published-byte parity covers448 committed website files, including12 unchanged book recordings. See [source-bound avatar release](../reports/avatar-face-release.json). Later evidence-only commits preserve this runtime.
-
-Latest breathing restoration: runtime `86f7eb95d8de0dbb7810521b8e871f873637b5d7`, cache v44, query face4, Pages run42101154583 succeeded. Hosted four-width checks confirm visible avatar-height change, moving face and pupils, fixed background, unchanged resting eyes, opaque blink, reduced-motion/lifecycle/fallback and cache installation. All448 hosted files match committed bytes.240 costume combinations were rechecked locally; earlier hosted costume-matrix evidence remains bound to its older revision. Native generated sprites remain unchanged.
+Carry this audit, source-bound status, native originals, exact briefs/preflights, archived inputs, current reference manifests/boards, preparation recipes, renderer/motion modules, preview capture/encoding recipes and revision-bound reports. Refresh hashes and label each artifact with its actual revision. Retire obsolete expression-head swaps, skin patches, fades, old frequencies and wing squash instead of presenting them as alternate current workflows. For a new character, reconstruct and inspect the still pose first; redo unsuitable generated parts before motion.

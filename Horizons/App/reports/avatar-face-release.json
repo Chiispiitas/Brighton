@@ -1,47 +1,88 @@
 {
-  "runtimeRevision": "86f7eb95d8de0dbb7810521b8e871f873637b5d7",
-  "url": "https://exams.bebrighton.net/Horizons/App/",
-  "pagesRun": 42101154583,
-  "pass": true,
+  "sourceRevision": "5f6218c28594d231d218060de7a930d5681c32dc",
+  "runtimeIntroducedIn": "24b8af50bcd2c24cbbb7e087979a0bebc94624e5",
+  "checkedAt": "2026-11-05T20:45:47.344617+00:00",
+  "localChecksPass": true,
+  "publicationVerified": true,
+  "publicationStatus": "face5 live; Pages succeeded; all448 checked files match committed runtime",
+  "pagesRun": 42105016286,
+  "previousRun": {
+    "id": 42103418808,
+    "conclusion": "cancelled"
+  },
+  "cache": "horizons-companion-avatar-face-v46",
+  "entryQuery": "face5",
+  "gazePeriodMs": 30000,
+  "glancesPerPeriod": 3,
+  "transitionMs": [
+    1400,
+    1700,
+    1800,
+    1600,
+    1600,
+    1900
+  ],
+  "faceAndGlassesScaleOfPupilTranslation": 0.4,
+  "breathingPeriodMs": 5200,
+  "blinkClosedIntervalMs": [
+    4200,
+    4340
+  ],
+  "preview": {
+    "frames": 944,
+    "fps": 30,
+    "seconds": 31.466666666666665,
+    "controlledClock": true,
+    "glassesVisible": true
+  },
+  "currentLocalReports": [
+    "reports/avatar-face-proof.json",
+    "reports/avatar-motion-proof.json",
+    "reports/avatar-cache-proof.json"
+  ],
+  "historicalHostedEvidence": "reports/avatar-face-release-v44.json",
+  "sources": [
+    {
+      "file": "src/avatar-static.js",
+      "sha256": "005abbf2a5c8ee7a29eab6d64afc1c7f731e42723ee0538e8bd2fdfa7b60601f"
+    },
+    {
+      "file": "src/avatar-motion.js",
+      "sha256": "7992775e58db2ffa5339d2cd34afe4117ca0ae89adf622bed103de3783901a77"
+    },
+    {
+      "file": "service-worker.js",
+      "sha256": "3550e4798cad5c84e6a6ae87e754098be323aa4fe6a4199c88d32a10da4f55d2"
+    },
+    {
+      "file": "index.html",
+      "sha256": "0506936c84ba15957290d4045d5bb7d167847ef48c6be3793028a27df8fc4a00"
+    },
+    {
+      "file": "assets/art/avatar-face-v2/rest-anchors.frames.json",
+      "sha256": "9bf4db1ffe46c28ba7cc547f6c36f404553ecf519920edc514f1b3ae27c5a643"
+    },
+    {
+      "file": "docs/avatar-face-v2/normal-speed-preview.mp4",
+      "sha256": "e54a65c9dc7fd2e5a9ed1661a2b0f782c443e87428e65e92fc8c137151625223"
+    }
+  ],
+  "limits": [
+    "Edge/Chromium synthetic fixtures; no physical-device/Safari/Firefox or independent-human approval",
+    "Controlled document.hidden event; expired cache seed, not a complete old-worker upgrade simulation",
+    "Preview uses944 controlled-clock frames, not a real-time performance benchmark",
+    "240-case costume board covers closed pose; no full-gaze240-case matrix"
+  ],
+  "hostedChecksPass": true,
   "hostedMatchedFiles": 448,
   "bookSourceRecordingsUnchanged": 12,
-  "cache": "horizons-companion-avatar-face-v44",
-  "entryQuery": "face4",
-  "facelessHeadAndSeparateGeneratedSprites": true,
-  "wholeHeadExpressionsRetired": true,
-  "fixedBackgroundDuringIdleAndFeedback": true,
-  "defaultEyes": "accepted-still white bounds and native pupil centroids per base/skin; subtle inward rest",
-  "pupilLogicalWidth": 21,
-  "increaseFromFirstSeparatedRigPercent": 16.6667,
-  "gaze": "pupils +/-2.5 logical px, face at40% of pupil displacement, masked",
-  "blinkMs": 140,
-  "idleCycleMs": 5200,
-  "responsiveWidths": [
-    320,
-    390,
-    768,
-    1440
-  ],
-  "costumeCombinations": 240,
-  "nativeMetadataAndSavedIDsUnchanged": true,
-  "clickOnlyTargeting": true,
-  "reducedMotionAndLifecycle": true,
-  "reports": [
+  "currentHostedReports": [
     "reports/avatar-face-proof-hosted.json",
     "reports/avatar-motion-proof-hosted.json",
     "reports/avatar-motion-costumes-hosted.json",
     "reports/avatar-cache-proof-hosted.json",
     "reports/publication-assets.json"
   ],
-  "backendChanges": false,
-  "realLearnerWrites": false,
-  "review": "Root inspected native parts, blank/still/neutral/blink/gaze reconstruction, current costume boards, dense controlled-clock preview frames and hosted neutral. No independent approval claimed.",
-  "limits": [
-    "Edge/Chromium synthetic fixtures; no physical-phone/Safari/Firefox claim",
-    "Controlled document.hidden event and seeded expired-cache worker-installation check; no full previous-worker upgrade simulation",
-    "Preview is200 controlled-clock actual-renderer frames at30fps; not a performance benchmark",
-    "Very similar reconstruction, not pixel identical"
-  ],
-  "breathing": "avatar artwork only; scale(.994,.98) to1 over5200ms; fixed background",
-  "currentCostumeEvidence": "240 local compositions for this revision; previous hosted costume matrix remains historical"
+  "costumeEvidence": "240 hosted closed-pose compositions; not a full-gaze240-case matrix",
+  "pass": true
 }
