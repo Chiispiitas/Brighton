@@ -30,7 +30,7 @@ Keep all entitled lessons available. Recommend a next activity without locking t
 
 Read each actual book lesson and all vocabulary banks it references. Distinguish introductory lesson samples from the full bank. Maintain an inventory mapping lesson, topic, bank entries, grammar targets, recordings, path nodes and practice questions.
 
-The main path contains core book topics and two short listening/reading games per lesson. For 1A, the topics are Greetings, Alphabet, Numbers and Verb to be. Do not create one island per arbitrary chunk of alphabet or numbers. Keep small selectable sets in Practise and let learners combine them. An all-selected-word round includes every selected learning identity once.
+The main path contains core book topics and two short listening/reading games per lesson. For 1A, the topics are Greetings, Alphabet, Numbers and Verb to be. Do not create one island per arbitrary chunk of alphabet or numbers. Keep small selectable sets in Practice and let learners combine them. An all-selected-word round includes every selected learning identity once.
 
 Use fresh, plausible contexts rather than repeatedly recycling the same character profile, reception scene or picture. Tasks need an understandable goal and a genuine language decision. Avoid stereotypes, arithmetic disguised as English practice and copying a displayed answer. For silent alphabet practice, use Spanish letter names such as hache rather than showing the letter to copy.
 
@@ -62,13 +62,13 @@ Reuse approved book recordings where suitable. Recorded word audio uses Jessica 
 
 Keep the Horizons wordmark typography and M PLUS Rounded1c. Retain lively magenta, orange, navy, teal and warm paper with open spacing. Avoid a different visual series, excessive boxes, decorative borders, heavy shadows and repeated accent formulas.
 
-Use functional labels: Learn, Practise, My profile, Word bank, Start and Results. Remove slogans, inspirational quotes, sugary greetings and explanations that repeat obvious controls. Retain necessary task instructions, expiry information, errors and clear example-code disclosure.
+Use functional labels: Learn, Practice, My profile, Word bank, Start and Results. Remove slogans, inspirational quotes, sugary greetings and explanations that repeat obvious controls. Retain necessary task instructions, expiry information, errors and clear example-code disclosure.
 
 The Learn page has no promotional right sidebar, daily-invitation card or word-count panel. The separate Progress page remains removed; stored history, XP and streaks remain intact.
 
 ### Navigation and path
 
-- Desktop sidebar menu: Learn and Practise. No separate Profile menu item.
+- Desktop sidebar menu: Learn and Practice. No separate Profile menu item.
 - Bottom sidebar shortcut: avatar picture, learner name and My profile. It opens the profile.
 - Mobile navigation retains Profile access.
 - Page headers contain the book switcher and authoritative XP/streak amounts, without a player-avatar picture.
@@ -180,4 +180,6 @@ Website name: Horizons. Browser title, welcome heading, installed-app name and s
 
 Lesson headings have no cast characters. Islands use narrower lateral travel and longer vertical spacing on an analytically sampled sine trail, with continuous tangents through the complete bend. Keep 21 activity IDs and the existing object decorations.
 
-Island details use a compact 240px bubble: title, mastered-item count, question count and Start/Continue/Practise again. Remove the lesson-jump shortcuts; navigation through Unit 1 is manual scrolling. Completion keeps its check mark. Server-derived mastery gives a gold island with crown; all mastered islands crown their lesson. Later rounds draw from the complete canonical pool, prioritising unseen and unmastered items, at most eight questions per round. Vocabulary retains three unaided recalls and 75% accuracy; grammar/read/listen skills require three unaided correct answers and 75% accuracy per question. Silent alternatives cannot master audio. Crowns reflect current saved performance, and may change if accuracy later falls below the threshold.
+Island details use a compact 240px bubble: title, mastered-item count, question count and Start/Continue/Practice again. Remove the lesson-jump shortcuts; navigation through Unit 1 is manual scrolling. Completion keeps its check mark. Server-derived mastery gives a gold island with crown; all mastered islands crown their lesson. Later rounds draw from the complete canonical pool, prioritising unseen and unmastered items, at most eight questions per round. Vocabulary retains three unaided recalls and 75% accuracy; grammar/read/listen skills require three unaided correct answers and 75% accuracy per question. Silent alternatives cannot master audio. Crowns reflect current saved performance, and may change if accuracy later falls below the threshold.
+
+Interface spelling is Practice. Start screen omits the repeated Horizons heading, the vocabulary/grammar/games sentence and the 12-month access footnote. Keep the brand wordmark and book-code form. Access rules are unchanged.
