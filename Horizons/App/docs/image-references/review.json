@@ -1,0 +1,22 @@
+{
+  "date": "2026-11-04",
+  "referenceCount": 7,
+  "reviewer": "Codex root; direct visual inspection of all seven browser-rendered PNG sheets",
+  "pass": true,
+  "checks": [
+    "All seven files exist and decode.",
+    "Brand typography and palette inspected.",
+    "Cast identities and complete poses inspected.",
+    "Both avatar bases and six skins present.",
+    "All twelve hair silhouettes present.",
+    "All ten outfits and corrected lapels present.",
+    "Accessories, eight hair colors and six backgrounds present.",
+    "Vocabulary, town and native UI objects present.",
+    "Six preflight tests pass, including rejection of eight total inputs and stale source."
+  ],
+  "limits": [
+    "Reference sheets contain current native artwork, including some legacy rendering effects; production guide explicitly forbids copying those effects.",
+    "No new illustration was generated for this documentation task.",
+    "Preflight validates local inputs; the actual ImageGen call must still attach them."
+  ]
+}

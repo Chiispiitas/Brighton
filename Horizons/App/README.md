@@ -1,5 +1,7 @@
 # Horizons companion
 
+Production rules: [complete website audit](APP-AUDIT.md), [image production guide](docs/IMAGE-PRODUCTION.md), and [seven mandatory visual reference sheets](docs/image-references/reference-pack.json). Before every ImageGen call, validate the saved brief with tools/check-image-brief.py and attach the returned image paths; the seven-input limit includes edit targets.
+
 A responsive study companion for the Brighton Horizons books, with English controls and Spanish vocabulary cues. The current release covers A1 Unit 1: lessons 1A–1D, all nine referenced vocabulary banks, 23 small word sets, 21 compact path islands and 66 grammar question templates. It complements the printed book rather than reproducing its lesson pages. Earlier activity identifiers remain compatible with saved attempts.
 
 ## Open the app

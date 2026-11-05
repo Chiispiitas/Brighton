@@ -1,0 +1,8 @@
+{
+  "asset_id": "new-avatar-outfit",
+  "kind": "clothing",
+  "intent": "generate",
+  "reference_ids": ["R01", "R03", "R05", "R06"],
+  "target_paths": [],
+  "prompt": "Create one complete flat static shoulder-to-chest clothing cutout. Match the attached avatar proportions, neckline, palette and wardrobe references. Keep the neck opening registered, fabric opaque and surroundings genuinely transparent. No head, hands, outlines, shading, shadows, glow or extra objects."
+}

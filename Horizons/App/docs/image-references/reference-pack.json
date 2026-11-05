@@ -1,0 +1,73 @@
+{
+  "version": 1,
+  "createdAt": "2026-11-05T03:36:53.220Z",
+  "sourceCommit": "b2b062e245b758e217b9abe80c0b88c0cdbb37ec",
+  "maximumImageInputs": 7,
+  "method": "Browser contact sheets of current native ImageGen artwork; labels and color chips are reference presentation, not new illustration generation.",
+  "sources": [
+    {
+      "file": "assets/art/manifest.json",
+      "sha256": "bd7c378a0deb4718415207e2612e038e35c785fe9f8c0ac33857fb6d16df2610"
+    },
+    {
+      "file": "assets/art/avatar-static-v1.frames.json",
+      "sha256": "a36be43633b532d9eed7300c4ac6933d6c7bdfb13f9c7fd4df221046905ab33c"
+    },
+    {
+      "file": "src/art.js",
+      "sha256": "2ae0f9e250ec1d058cae2bc2d34ce2d8a3cde0667b412e6424e77dafb84972df"
+    },
+    {
+      "file": "src/avatar-static.js",
+      "sha256": "555db0ffef37967ad82b822a472ff633af5440d19f51f5e4f2e732e873636ccc"
+    },
+    {
+      "file": "styles/app.css",
+      "sha256": "8a418cb22b66a54e49acb5486d809b1895dd5ca4d8d93256bb345f7ead0de1d0"
+    }
+  ],
+  "references": [
+    {
+      "id": "R01",
+      "file": "01-brand.png",
+      "title": "Horizons brand and flat rendering",
+      "sha256": "f599c7bf6679ebea5bedb86172ad08633f227683a8b3af2c8625287cb7ecb92c"
+    },
+    {
+      "id": "R02",
+      "file": "02-cast.png",
+      "title": "Recurring cast",
+      "sha256": "4252efb9326c2b8de5ecdfe500947178c4dc2b1dd265f10900b9633e21db4c21"
+    },
+    {
+      "id": "R03",
+      "file": "03-avatar-bases.png",
+      "title": "Avatar bases and skin tones",
+      "sha256": "34a3c79f085cd925f19f7f5e28b259dd293dcc493c605f1123f9c7868e2e5499"
+    },
+    {
+      "id": "R04",
+      "file": "04-hairstyles.png",
+      "title": "Approved hairstyles",
+      "sha256": "c7b262895cf3ff8074b3fbdb429e1af803cb7a49b4c133d8887da4ba6d66f4e2"
+    },
+    {
+      "id": "R05",
+      "file": "05-wardrobe.png",
+      "title": "Approved wardrobe",
+      "sha256": "3510bfa2edb2988843e333d0430908b9a48786351049472723d3f6d9b228a7d1"
+    },
+    {
+      "id": "R06",
+      "file": "06-accessories-and-colors.png",
+      "title": "Accessories and customization",
+      "sha256": "5d4972dab0e70ab4dae69dceee238ccae7ea135d814e555fcb530c1ba4a2a812"
+    },
+    {
+      "id": "R07",
+      "file": "07-scenes-vocabulary-ui.png",
+      "title": "Scenes vocabulary and interface art",
+      "sha256": "ac82c846ad3d4b2e8500dacaeb9eceea52d44e3f6f1293692b022b4f3db52469"
+    }
+  ]
+}
