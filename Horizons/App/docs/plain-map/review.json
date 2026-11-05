@@ -1,0 +1,15 @@
+{
+  "review": "Root visually inspected desktop/mobile: transparent map, original orange/pink island appearance, pale single connectors, no scrollbar, centered bottom controls. Native tiles and player-above/details-below preserved.",
+  "heldSpeedPxPerSecond": [
+    200,
+    640
+  ],
+  "rampMs": 600,
+  "tapPx": 180,
+  "keyboardPx": 360,
+  "checks": [
+    "four widths, 84 details placements and landscape/races",
+    "native wheel/drag/touch swipe"
+  ],
+  "pass": true
+}

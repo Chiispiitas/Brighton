@@ -1,0 +1,2591 @@
+{
+  "date": "2026-11-05T16:54:47.177Z",
+  "revision": "f7307802487860dfda065ab4253e51db943499b0",
+  "uncommittedRuntime": true,
+  "scope": "complete",
+  "base": "http://127.0.0.1:8898/Horizons/App/",
+  "tileSelector": ".world-tile",
+  "runtimeSources": {
+    "src/app.js": "ae4259cd51abae2e59e4c2de59a4c2843aa96eafb313ef278ccb59d27ae7fcd9",
+    "src/studio-ui.js": "e5fb258eaa77b3c92e3cb159f93064e38d904cf1f648641e9bd2892cb98daf23",
+    "src/overworld-motion.js": "a1aae26f8bd96931eca80b4a04c413c6d2574447e31d5f139aec88f892d15333",
+    "styles/horizontal-path.css": "8a9f7a77e2c4465971dd2431d94a811a36c089bb01efc1cf6249239c2a9e038d",
+    "styles/overworld.css": "f43e1789b5fefac7de8056929ac8dbeefde5824b88cb12036fccdfc284b4342e",
+    "index.html": "b77d32e5706695af4cd4c893a070dcaa255f8defabfdca70ed9252d7370488f7",
+    "service-worker.js": "8c07c56849e9bc06e21f290e52ac6cc5a9d7a381d1b11e640039c11c1d9b5724"
+  },
+  "checks": [
+    {
+      "width": 320,
+      "trailHeight": 308,
+      "islands": 21,
+      "landmarks": 4,
+      "tiles": 16,
+      "uniqueTileAssets": 6,
+      "touchTargets": true,
+      "noDocumentOverflow": true,
+      "popups": [
+        {
+          "id": "topic-1a-greetings",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 76,
+            "y": 455.484375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 12,
+            "y": 555.484375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 92,
+            "y": 377.484375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1a-alphabet",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 116,
+            "y": 423.1875,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 40,
+            "y": 523.1875,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 132,
+            "y": 345.1875,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1a-numbers",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 116,
+            "y": 423.1875,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 40,
+            "y": 523.1875,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 132,
+            "y": 345.1875,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1a-be",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 116,
+            "y": 487.765625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 40,
+            "y": 587.765625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 132,
+            "y": 409.765625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "listen-1a",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 116,
+            "y": 487.765625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 40,
+            "y": 587.765625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 132,
+            "y": 409.765625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "read-1a",
+          "landmark": true,
+          "keyboard": true,
+          "anchor": {
+            "x": 96,
+            "y": 379.484375,
+            "width": 128,
+            "height": 152
+          },
+          "bubble": {
+            "x": 40,
+            "y": 567.484375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 132,
+            "y": 301.484375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1b-jobs",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 116,
+            "y": 455.484375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 40,
+            "y": 555.484375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 132,
+            "y": 377.484375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1b-articles",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 116,
+            "y": 414.640625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 40,
+            "y": 514.640625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 132,
+            "y": 336.640625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1b-contractions",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 116,
+            "y": 455.484375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 40,
+            "y": 555.484375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 132,
+            "y": 377.484375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "listen-1b",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 116,
+            "y": 496.3125,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 40,
+            "y": 596.3125,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 132,
+            "y": 418.3125,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "read-1b",
+          "landmark": true,
+          "keyboard": false,
+          "anchor": {
+            "x": 96,
+            "y": 379.484375,
+            "width": 128,
+            "height": 152
+          },
+          "bubble": {
+            "x": 40,
+            "y": 567.484375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 132,
+            "y": 301.484375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1c-countries",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 116,
+            "y": 455.484375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 40,
+            "y": 555.484375,
+            "width": 240,
+            "height": 159
+          },
+          "avatar": {
+            "x": 132,
+            "y": 377.484375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1c-adjectives",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 116,
+            "y": 414.640625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 40,
+            "y": 514.640625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 132,
+            "y": 336.640625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1c-be",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 116,
+            "y": 455.484375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 40,
+            "y": 555.484375,
+            "width": 240,
+            "height": 159
+          },
+          "avatar": {
+            "x": 132,
+            "y": 377.484375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "listen-1c",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 116,
+            "y": 496.3125,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 40,
+            "y": 596.3125,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 132,
+            "y": 418.3125,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "read-1c",
+          "landmark": true,
+          "keyboard": true,
+          "anchor": {
+            "x": 96,
+            "y": 379.484375,
+            "width": 128,
+            "height": 152
+          },
+          "bubble": {
+            "x": 40,
+            "y": 567.484375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 132,
+            "y": 301.484375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1d-details",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 116,
+            "y": 455.484375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 40,
+            "y": 555.484375,
+            "width": 240,
+            "height": 159
+          },
+          "avatar": {
+            "x": 132,
+            "y": 377.484375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1d-questions",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 116,
+            "y": 414.640625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 40,
+            "y": 514.640625,
+            "width": 240,
+            "height": 159
+          },
+          "avatar": {
+            "x": 132,
+            "y": 336.640625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1d-capitals",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 116,
+            "y": 455.484375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 40,
+            "y": 555.484375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 132,
+            "y": 377.484375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "listen-1d",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 116,
+            "y": 496.3125,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 40,
+            "y": 596.3125,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 132,
+            "y": 418.3125,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "read-1d",
+          "landmark": true,
+          "keyboard": false,
+          "anchor": {
+            "x": 136,
+            "y": 379.484375,
+            "width": 128,
+            "height": 152
+          },
+          "bubble": {
+            "x": 68,
+            "y": 567.484375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 172,
+            "y": 301.484375,
+            "width": 56,
+            "height": 70.390625
+          }
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "trailHeight": 308,
+      "islands": 21,
+      "landmarks": 4,
+      "tiles": 16,
+      "uniqueTileAssets": 6,
+      "touchTargets": true,
+      "noDocumentOverflow": true,
+      "popups": [
+        {
+          "id": "topic-1a-greetings",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 80,
+            "y": 454.65625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 12,
+            "y": 554.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 96,
+            "y": 376.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1a-alphabet",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 151,
+            "y": 422.359375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 75,
+            "y": 522.359375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 167,
+            "y": 344.359375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1a-numbers",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 151,
+            "y": 422.359375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 75,
+            "y": 522.359375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 167,
+            "y": 344.359375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1a-be",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 151,
+            "y": 486.9375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 75,
+            "y": 586.9375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 167,
+            "y": 408.9375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "listen-1a",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 151,
+            "y": 486.9375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 75,
+            "y": 586.9375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 167,
+            "y": 408.9375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "read-1a",
+          "landmark": true,
+          "keyboard": true,
+          "anchor": {
+            "x": 131,
+            "y": 378.65625,
+            "width": 128,
+            "height": 152
+          },
+          "bubble": {
+            "x": 75,
+            "y": 566.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 167,
+            "y": 300.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1b-jobs",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 151,
+            "y": 454.65625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 75,
+            "y": 554.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 167,
+            "y": 376.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1b-articles",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 151,
+            "y": 413.8125,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 75,
+            "y": 513.8125,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 167,
+            "y": 335.8125,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1b-contractions",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 151,
+            "y": 454.65625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 75,
+            "y": 554.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 167,
+            "y": 376.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "listen-1b",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 151,
+            "y": 495.484375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 75,
+            "y": 595.484375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 167,
+            "y": 417.484375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "read-1b",
+          "landmark": true,
+          "keyboard": false,
+          "anchor": {
+            "x": 131,
+            "y": 378.65625,
+            "width": 128,
+            "height": 152
+          },
+          "bubble": {
+            "x": 75,
+            "y": 566.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 167,
+            "y": 300.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1c-countries",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 151,
+            "y": 454.65625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 75,
+            "y": 554.65625,
+            "width": 240,
+            "height": 159
+          },
+          "avatar": {
+            "x": 167,
+            "y": 376.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1c-adjectives",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 151,
+            "y": 413.8125,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 75,
+            "y": 513.8125,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 167,
+            "y": 335.8125,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1c-be",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 151,
+            "y": 454.65625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 75,
+            "y": 554.65625,
+            "width": 240,
+            "height": 159
+          },
+          "avatar": {
+            "x": 167,
+            "y": 376.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "listen-1c",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 151,
+            "y": 495.484375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 75,
+            "y": 595.484375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 167,
+            "y": 417.484375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "read-1c",
+          "landmark": true,
+          "keyboard": true,
+          "anchor": {
+            "x": 131,
+            "y": 378.65625,
+            "width": 128,
+            "height": 152
+          },
+          "bubble": {
+            "x": 75,
+            "y": 566.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 167,
+            "y": 300.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1d-details",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 151,
+            "y": 454.65625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 75,
+            "y": 554.65625,
+            "width": 240,
+            "height": 159
+          },
+          "avatar": {
+            "x": 167,
+            "y": 376.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1d-questions",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 151,
+            "y": 413.8125,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 75,
+            "y": 513.8125,
+            "width": 240,
+            "height": 159
+          },
+          "avatar": {
+            "x": 167,
+            "y": 335.8125,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1d-capitals",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 151,
+            "y": 454.65625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 75,
+            "y": 554.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 167,
+            "y": 376.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "listen-1d",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 151,
+            "y": 495.484375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 75,
+            "y": 595.484375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 167,
+            "y": 417.484375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "read-1d",
+          "landmark": true,
+          "keyboard": false,
+          "anchor": {
+            "x": 202,
+            "y": 378.65625,
+            "width": 128,
+            "height": 152
+          },
+          "bubble": {
+            "x": 138,
+            "y": 566.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 238,
+            "y": 300.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        }
+      ]
+    },
+    {
+      "width": 768,
+      "trailHeight": 308,
+      "islands": 21,
+      "landmarks": 4,
+      "tiles": 16,
+      "uniqueTileAssets": 6,
+      "touchTargets": true,
+      "noDocumentOverflow": true,
+      "popups": [
+        {
+          "id": "topic-1a-greetings",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 280,
+            "y": 548.65625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 204,
+            "y": 648.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 296,
+            "y": 470.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1a-alphabet",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 412,
+            "y": 516.359375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 336,
+            "y": 616.359375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 428,
+            "y": 438.359375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1a-numbers",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 435,
+            "y": 516.359375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 359,
+            "y": 616.359375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 451,
+            "y": 438.359375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1a-be",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 435,
+            "y": 580.9375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 359,
+            "y": 680.9375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 451,
+            "y": 502.9375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "listen-1a",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 435,
+            "y": 580.9375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 359,
+            "y": 680.9375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 451,
+            "y": 502.9375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "read-1a",
+          "landmark": true,
+          "keyboard": true,
+          "anchor": {
+            "x": 415,
+            "y": 472.65625,
+            "width": 128,
+            "height": 152
+          },
+          "bubble": {
+            "x": 359,
+            "y": 660.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 451,
+            "y": 394.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1b-jobs",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 435,
+            "y": 548.65625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 359,
+            "y": 648.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 451,
+            "y": 470.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1b-articles",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 435,
+            "y": 507.8125,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 359,
+            "y": 607.8125,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 451,
+            "y": 429.8125,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1b-contractions",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 435,
+            "y": 548.65625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 359,
+            "y": 648.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 451,
+            "y": 470.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "listen-1b",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 435,
+            "y": 589.484375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 359,
+            "y": 689.484375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 451,
+            "y": 511.484375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "read-1b",
+          "landmark": true,
+          "keyboard": false,
+          "anchor": {
+            "x": 415,
+            "y": 472.65625,
+            "width": 128,
+            "height": 152
+          },
+          "bubble": {
+            "x": 359,
+            "y": 660.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 451,
+            "y": 394.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1c-countries",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 435,
+            "y": 548.65625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 359,
+            "y": 648.65625,
+            "width": 240,
+            "height": 159
+          },
+          "avatar": {
+            "x": 451,
+            "y": 470.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1c-adjectives",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 435,
+            "y": 507.8125,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 359,
+            "y": 607.8125,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 451,
+            "y": 429.8125,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1c-be",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 435,
+            "y": 548.65625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 359,
+            "y": 648.65625,
+            "width": 240,
+            "height": 159
+          },
+          "avatar": {
+            "x": 451,
+            "y": 470.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "listen-1c",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 435,
+            "y": 589.484375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 359,
+            "y": 689.484375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 451,
+            "y": 511.484375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "read-1c",
+          "landmark": true,
+          "keyboard": true,
+          "anchor": {
+            "x": 415,
+            "y": 472.65625,
+            "width": 128,
+            "height": 152
+          },
+          "bubble": {
+            "x": 359,
+            "y": 660.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 451,
+            "y": 394.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1d-details",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 435,
+            "y": 548.65625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 359,
+            "y": 648.65625,
+            "width": 240,
+            "height": 159
+          },
+          "avatar": {
+            "x": 451,
+            "y": 470.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1d-questions",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 435,
+            "y": 507.8125,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 359,
+            "y": 607.8125,
+            "width": 240,
+            "height": 159
+          },
+          "avatar": {
+            "x": 451,
+            "y": 429.8125,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1d-capitals",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 435,
+            "y": 548.65625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 359,
+            "y": 648.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 451,
+            "y": 470.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "listen-1d",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 458,
+            "y": 589.484375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 382,
+            "y": 689.484375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 474,
+            "y": 511.484375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "read-1d",
+          "landmark": true,
+          "keyboard": false,
+          "anchor": {
+            "x": 570,
+            "y": 472.65625,
+            "width": 128,
+            "height": 152
+          },
+          "bubble": {
+            "x": 514,
+            "y": 660.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 606,
+            "y": 394.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "trailHeight": 308,
+      "islands": 21,
+      "landmarks": 4,
+      "tiles": 16,
+      "uniqueTileAssets": 6,
+      "touchTargets": true,
+      "noDocumentOverflow": true,
+      "popups": [
+        {
+          "id": "topic-1a-greetings",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 344,
+            "y": 577.78125,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 268,
+            "y": 677.78125,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 360,
+            "y": 499.78125,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1a-alphabet",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 476,
+            "y": 545.484375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 400,
+            "y": 645.484375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 492,
+            "y": 467.484375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1a-numbers",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 608,
+            "y": 545.484375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 532,
+            "y": 645.484375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 624,
+            "y": 467.484375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1a-be",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 740,
+            "y": 610.0625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 664,
+            "y": 710.0625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 756,
+            "y": 532.0625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "listen-1a",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 786,
+            "y": 610.0625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 710,
+            "y": 710.0625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 802,
+            "y": 532.0625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "read-1a",
+          "landmark": true,
+          "keyboard": true,
+          "anchor": {
+            "x": 766,
+            "y": 501.78125,
+            "width": 128,
+            "height": 152
+          },
+          "bubble": {
+            "x": 710,
+            "y": 689.78125,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 802,
+            "y": 423.78125,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1b-jobs",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 786,
+            "y": 577.78125,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 710,
+            "y": 677.78125,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 802,
+            "y": 499.78125,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1b-articles",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 786,
+            "y": 536.9375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 710,
+            "y": 636.9375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 802,
+            "y": 458.9375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1b-contractions",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 786,
+            "y": 577.78125,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 710,
+            "y": 677.78125,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 802,
+            "y": 499.78125,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "listen-1b",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 786,
+            "y": 618.609375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 710,
+            "y": 718.609375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 802,
+            "y": 540.609375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "read-1b",
+          "landmark": true,
+          "keyboard": false,
+          "anchor": {
+            "x": 766,
+            "y": 501.78125,
+            "width": 128,
+            "height": 152
+          },
+          "bubble": {
+            "x": 710,
+            "y": 689.78125,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 802,
+            "y": 423.78125,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1c-countries",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 786,
+            "y": 577.78125,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 710,
+            "y": 677.78125,
+            "width": 240,
+            "height": 159
+          },
+          "avatar": {
+            "x": 802,
+            "y": 499.78125,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1c-adjectives",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 786,
+            "y": 536.9375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 710,
+            "y": 636.9375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 802,
+            "y": 458.9375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1c-be",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 786,
+            "y": 577.78125,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 710,
+            "y": 677.78125,
+            "width": 240,
+            "height": 159
+          },
+          "avatar": {
+            "x": 802,
+            "y": 499.78125,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "listen-1c",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 786,
+            "y": 618.609375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 710,
+            "y": 718.609375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 802,
+            "y": 540.609375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "read-1c",
+          "landmark": true,
+          "keyboard": true,
+          "anchor": {
+            "x": 766,
+            "y": 501.78125,
+            "width": 128,
+            "height": 152
+          },
+          "bubble": {
+            "x": 710,
+            "y": 689.78125,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 802,
+            "y": 423.78125,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1d-details",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 786,
+            "y": 577.78125,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 710,
+            "y": 677.78125,
+            "width": 240,
+            "height": 159
+          },
+          "avatar": {
+            "x": 802,
+            "y": 499.78125,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1d-questions",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 832,
+            "y": 536.9375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 756,
+            "y": 636.9375,
+            "width": 240,
+            "height": 159
+          },
+          "avatar": {
+            "x": 848,
+            "y": 458.9375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "topic-1d-capitals",
+          "landmark": false,
+          "keyboard": false,
+          "anchor": {
+            "x": 964,
+            "y": 577.78125,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 888,
+            "y": 677.78125,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 980,
+            "y": 499.78125,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "listen-1d",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 1096,
+            "y": 618.609375,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 1020,
+            "y": 718.609375,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 1112,
+            "y": 540.609375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "read-1d",
+          "landmark": true,
+          "keyboard": false,
+          "anchor": {
+            "x": 1208,
+            "y": 501.78125,
+            "width": 128,
+            "height": 152
+          },
+          "bubble": {
+            "x": 1152,
+            "y": 689.78125,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 1244,
+            "y": 423.78125,
+            "width": 56,
+            "height": 70.390625
+          }
+        }
+      ]
+    },
+    {
+      "width": 844,
+      "height": 390,
+      "landscape": [
+        {
+          "id": "topic-1a-greetings",
+          "landmark": false,
+          "keyboard": true,
+          "anchor": {
+            "x": 280,
+            "y": 123.65625,
+            "width": 88,
+            "height": 88
+          },
+          "bubble": {
+            "x": 204,
+            "y": 223.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 296,
+            "y": 45.65625,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "read-1b",
+          "landmark": true,
+          "keyboard": true,
+          "anchor": {
+            "x": 453,
+            "y": 35.65625,
+            "width": 128,
+            "height": 152
+          },
+          "bubble": {
+            "x": 397,
+            "y": 223.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 489,
+            "y": -42.34375,
+            "width": 56,
+            "height": 70.390625
+          }
+        },
+        {
+          "id": "read-1d",
+          "landmark": true,
+          "keyboard": true,
+          "anchor": {
+            "x": 646,
+            "y": 35.65625,
+            "width": 128,
+            "height": 152
+          },
+          "bubble": {
+            "x": 590,
+            "y": 223.65625,
+            "width": 240,
+            "height": 154
+          },
+          "avatar": {
+            "x": 682,
+            "y": -42.34375,
+            "width": 56,
+            "height": 70.390625
+          }
+        }
+      ],
+      "popoverBelow": true,
+      "rapidReselection": true,
+      "escapeDuringPlacement": true,
+      "temporarySpacerCleanup": true
+    }
+  ],
+  "screens": [
+    {
+      "name": "minimal-start-320",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\plain-map-proof\\minimal-start-320.png",
+      "sha256": "4d35af644079db4a509a492f5b39a25c3557e595d05b032397c446bd68c4e896"
+    },
+    {
+      "name": "minimal-details-320-topic-1a-greetings",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\plain-map-proof\\minimal-details-320-topic-1a-greetings.png",
+      "sha256": "a096dbddf9f84f2f7c1caacac21ade66c7f9f60638324800756788dd55d17d35"
+    },
+    {
+      "name": "minimal-details-320-read-1a",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\plain-map-proof\\minimal-details-320-read-1a.png",
+      "sha256": "e9e34606cc911d93b9e1924876611ace8a7c15c85ae50441739c13fc3bda93d4"
+    },
+    {
+      "name": "minimal-details-320-read-1b",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\plain-map-proof\\minimal-details-320-read-1b.png",
+      "sha256": "0607954e61e96b9467d4e7a3a9aae7f25072126b37e661d32bf362480f52262a"
+    },
+    {
+      "name": "minimal-details-320-listen-1d",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\plain-map-proof\\minimal-details-320-listen-1d.png",
+      "sha256": "f61058e7da165035b767f8d52c9b23904a5bfaac2a465a30cea691df687204a8"
+    },
+    {
+      "name": "minimal-details-320-read-1d",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\plain-map-proof\\minimal-details-320-read-1d.png",
+      "sha256": "8d3bad2213dafbe0d198d199225e58fd758efb387b692161b847181cce08c92c"
+    },
+    {
+      "name": "minimal-end-320",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\plain-map-proof\\minimal-end-320.png",
+      "sha256": "a29e85bbf8d720ba19830ae22dce305ff39d0cfd9afa3afc718ef8b790ed457f"
+    },
+    {
+      "name": "minimal-start-390",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\plain-map-proof\\minimal-start-390.png",
+      "sha256": "073d1f2bfcff6c8ac9f2216e16a4b2af3319968630d05af69f8d9e2ade7c4b94"
+    },
+    {
+      "name": "minimal-details-390-topic-1a-greetings",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\plain-map-proof\\minimal-details-390-topic-1a-greetings.png",
+      "sha256": "b7d74a435d6de04deff4f7adf65288731c3c062be36e8b9bbe99984073c8a68c"
+    },
+    {
+      "name": "minimal-details-390-read-1a",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\plain-map-proof\\minimal-details-390-read-1a.png",
+      "sha256": "ab1e940f157dc51304e6941d28ee116b9d6f8d2446aeef5cdd6cdf019e07469d"
+    },
+    {
+      "name": "minimal-details-390-read-1b",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\plain-map-proof\\minimal-details-390-read-1b.png",
+      "sha256": "d32b3b7e90d2d3359f975d8f12472185431ee810d0c0787eb636c367439a5710"
+    },
+    {
+      "name": "minimal-details-390-listen-1d",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\plain-map-proof\\minimal-details-390-listen-1d.png",
+      "sha256": "1836fb581ba6221dfbfcf68f53ebed37ad27d43b4569ff357091c608cd62e580"
+    },
+    {
+      "name": "minimal-details-390-read-1d",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\plain-map-proof\\minimal-details-390-read-1d.png",
+      "sha256": "d99c8423dac49b516e84ce183713d3c68f293b1ab934d280f573eccc4c084db6"
+    },
+    {
+      "name": "minimal-end-390",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\plain-map-proof\\minimal-end-390.png",
+      "sha256": "3ab9f75f7b421d2a532f6fc683f9064f12a0e28b8e89120b21df06987a3c76f9"
+    },
+    {
+      "name": "minimal-start-768",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\plain-map-proof\\minimal-start-768.png",
+      "sha256": "108b143226cbc3094c1753736282ffeda683e08acf455d8c1c47099da40329ab"
+    },
+    {
+      "name": "minimal-details-768-topic-1a-greetings",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\plain-map-proof\\minimal-details-768-topic-1a-greetings.png",
+      "sha256": "0721bf928d5dcd28966a3e99629da6653c781d7510485f9c8d9f94b0879ad60f"
+    },
+    {
+      "name": "minimal-details-768-read-1a",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\plain-map-proof\\minimal-details-768-read-1a.png",
+      "sha256": "2103540164aa38ba1b6bb2927c067240afeead816a358a350bd3694872fa077e"
+    },
+    {
+      "name": "minimal-details-768-read-1b",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\plain-map-proof\\minimal-details-768-read-1b.png",
+      "sha256": "d1bd55b05a6aeb12b750dfa77c754bbc5e21142af318b0c6035c5446d91c6fda"
+    },
+    {
+      "name": "minimal-details-768-listen-1d",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\plain-map-proof\\minimal-details-768-listen-1d.png",
+      "sha256": "ab4e07e78e5d6a8453bebd81de28bd31b11646d7c893466a7024bbc3d2b55964"
+    },
+    {
+      "name": "minimal-details-768-read-1d",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\plain-map-proof\\minimal-details-768-read-1d.png",
+      "sha256": "81b99c6eae2f50be82feded19b76c2283d01888b53d2937c9e897e1427b66703"
+    },
+    {
+      "name": "minimal-end-768",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\plain-map-proof\\minimal-end-768.png",
+      "sha256": "305ac7388bf0b65d6b135623628ca16da79babbc3e86b9d86e23bce8792d7002"
+    },
+    {
+      "name": "minimal-start-1440",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\plain-map-proof\\minimal-start-1440.png",
+      "sha256": "59957ebf333fc998f869f5a065bd4b432fd2b48a8ddc6741a14fd96630078df3"
+    },
+    {
+      "name": "minimal-details-1440-topic-1a-greetings",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\plain-map-proof\\minimal-details-1440-topic-1a-greetings.png",
+      "sha256": "976901ee043775ad5ffc301ad9d90373d61c31e9c2a33794bf6ea57d6c245c8c"
+    },
+    {
+      "name": "minimal-details-1440-read-1a",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\plain-map-proof\\minimal-details-1440-read-1a.png",
+      "sha256": "b92a68768a1ab3fe7d3ea69bf6d6baf43139c3667e74820ca7fffbcf079e85d4"
+    },
+    {
+      "name": "minimal-details-1440-read-1b",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\plain-map-proof\\minimal-details-1440-read-1b.png",
+      "sha256": "42cd8db70a2320856e746011e34ecfba8f9b83fba1d5715fae024c18c0d905a6"
+    },
+    {
+      "name": "minimal-details-1440-listen-1d",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\plain-map-proof\\minimal-details-1440-listen-1d.png",
+      "sha256": "e07b9484ef00700d7445f6e061b1932dcd430b7e911e62651d0f14dd65e883f6"
+    },
+    {
+      "name": "minimal-details-1440-read-1d",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\plain-map-proof\\minimal-details-1440-read-1d.png",
+      "sha256": "b44a64d08765fb38b19f5ba93e71dd47c89e8c34c9731c4787295fd95a20064e"
+    },
+    {
+      "name": "minimal-end-1440",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\plain-map-proof\\minimal-end-1440.png",
+      "sha256": "c0bcba92f313c960b9248ae302651d8be40d61e5857756535a32720ddfe144b8"
+    },
+    {
+      "name": "minimal-details-landscape-844x390",
+      "file": "C:\\Users\\David\\Documents\\Codex\\2026-11-05\\plain-map-proof\\minimal-details-landscape-844x390.png",
+      "sha256": "eb15edda51dcf1acea22125cc1492dc778a44a3a4addb05c953ecd44f0d377db"
+    }
+  ],
+  "obsoleteSceneRequests": [],
+  "imageResponses": [
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/ui-static-v1.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "847743"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/cast-static-pico-v2.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "561246"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/overworld-tiles-v1/bush-flowers.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "103878"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/overworld-tiles-v1/tree-round.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "86707"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/overworld-tiles-v1/flowers.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "103565"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/overworld-tiles-v1/grass.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "66639"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/overworld-unit1-v1/landmark-0.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "236880"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/overworld-unit1-v1/bird.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "157303"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/overworld-unit1-v1/butterfly.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "177927"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/overworld-tiles-v1/tree-slender.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "104421"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/overworld-tiles-v1/bush.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "70229"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/overworld-unit1-v1/landmark-1.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "225391"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/overworld-unit1-v1/landmark-2.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "208067"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/overworld-unit1-v1/landmark-3.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "233430"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/body-registered.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "50754"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/head-faceless-registered.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "41878"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/map-registered.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "36227"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/face-blink-eyelids.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "3184"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/pupils-native.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "4444"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/face-inspect-features.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "16885"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/face-neutral-eyes.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "43376"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/face-neutral-brows-mouth.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "44360"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/face-nose.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "44286"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/eyes-mask.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "438"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-static-heads-v2.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "1444728"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-static-clothes-v1.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "1251353"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-jacket-lapels-v1.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "256980"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-expansion-hair-9.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "169344"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/head-faceless-registered.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "41878"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/eyes-mask.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "438"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/eyes-mask.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "438"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/head-faceless-registered.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "41878"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/eyes-mask.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "438"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/eyes-mask.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "438"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/eyes-mask.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "438"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/eyes-mask.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "438"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/eyes-mask.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "438"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/cast-static-alex-v3.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "676780"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/body-registered.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "50754"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/head-faceless-registered.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "41878"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/map-registered.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "36227"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/pupils-native.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "4444"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/face-blink-eyelids.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "3184"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/face-inspect-features.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "16885"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/face-neutral-brows-mouth.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "44360"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/face-neutral-eyes.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "43376"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/eyes-mask.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "438"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/face-nose.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "44286"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/body-registered.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "50754"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/map-registered.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "36227"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/head-faceless-registered.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "41878"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/face-blink-eyelids.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "3184"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/pupils-native.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "4444"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/face-inspect-features.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "16885"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/face-neutral-eyes.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "43376"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/face-neutral-brows-mouth.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "44360"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/face-nose.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "44286"
+    },
+    {
+      "url": "http://127.0.0.1:8898/Horizons/App/assets/art/pico-banner-motion-v1/eyes-mask.png",
+      "status": 200,
+      "contentType": "image/png",
+      "contentLength": "438"
+    }
+  ],
+  "requestFailures": [],
+  "brokenImagesSeen": [],
+  "apiActions": [
+    "getSession"
+  ],
+  "realBackendRequests": false,
+  "realLearnerWrites": false,
+  "errors": [],
+  "pass": true,
+  "limits": [
+    "Edge/Chromium only; no physical-device claim",
+    "Fictional intercepted session; no real learner/API writes",
+    "Temporary page bottom padding permits real vertical wheel check",
+    "Navigation touch swipe is separately covered by overworld-navigation-proof.mjs"
+  ]
+}

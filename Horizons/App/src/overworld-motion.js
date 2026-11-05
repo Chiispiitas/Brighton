@@ -15,7 +15,7 @@ export function mountOverworld(region,{onPreview=()=>{},onLeave=()=>{}}={}){
  const tick=time=>{
   if(!held||disposed)return;
   const dt=Math.min(32,time-last);last=time;
-  const speed=80+180*Math.min(1,(time-started)/900);
+  const speed=200+440*Math.min(1,(time-started)/600);
   region.scrollLeft+=Number(held.dataset.pathPan)*speed*dt/1000;
   frame=requestAnimationFrame(tick);
  };
@@ -26,12 +26,12 @@ export function mountOverworld(region,{onPreview=()=>{},onLeave=()=>{}}={}){
    pointerUsed=true;stopPan();held=button;started=last=performance.now();
    button.setPointerCapture(event.pointerId);frame=requestAnimationFrame(tick);
   });
-  listen(button,'pointerup',()=>{if(held&&performance.now()-started<150)region.scrollBy({left:Number(button.dataset.pathPan)*100,behavior:reduced.matches?'instant':'smooth'});stopPan();});
+  listen(button,'pointerup',()=>{if(held&&performance.now()-started<150)region.scrollBy({left:Number(button.dataset.pathPan)*180,behavior:reduced.matches?'instant':'smooth'});stopPan();});
   for(const type of ['pointercancel','lostpointercapture'])listen(button,type,stopPan);
   listen(button,'click',event=>{
    event.preventDefault();
    if(pointerUsed&&event.detail!==0){pointerUsed=false;return;}
-   region.scrollBy({left:Number(button.dataset.pathPan)*220,behavior:reduced.matches?'instant':'smooth'});
+   region.scrollBy({left:Number(button.dataset.pathPan)*360,behavior:reduced.matches?'instant':'smooth'});
   });
  }
  listen(window,'blur',()=>{stopPan();endDrag();});

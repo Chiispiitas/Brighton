@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "createdAt": "2026-11-05T16:33:56.859Z",
-  "sourceCommit": "f2c949863bd902c5b142b5dc47cc551d3a102f0b",
+  "createdAt": "2026-11-05T16:53:29.972Z",
+  "sourceCommit": "f7307802487860dfda065ab4253e51db943499b0",
   "maximumImageInputs": 7,
   "method": "Browser contact sheets of current native ImageGen artwork; labels and color chips are reference presentation, not new illustration generation.",
   "sources": [
@@ -15,7 +15,7 @@
     },
     {
       "file": "src/art.js",
-      "sha256": "523a41dd5b15a17936f727b2dbca51ba8c201bac44d6176feee73fcd86d4a7dd"
+      "sha256": "1594e79172d972dfb53427a7a6b7b7b873b500111558c205ebb261e64d47a5f1"
     },
     {
       "file": "src/avatar-static.js",
@@ -31,7 +31,7 @@
     },
     {
       "file": "styles/overworld.css",
-      "sha256": "0df51bc64b49d33bf5146d3d374fba26294e751fa5abba10163dc3c78a2542c2"
+      "sha256": "f43e1789b5fefac7de8056929ac8dbeefde5824b88cb12036fccdfc284b4342e"
     },
     {
       "file": "assets/art/overworld-unit1-v1/landmark-0.png",
@@ -130,6 +130,5 @@
       "sha256": "ee99b7f2ead017bf435441355038c405881ff2306ea23513974287c594e0e151"
     }
   ],
-  "sourceRuntimeRevision": "13ab5f769cc47b39bf39cade28b3e724262fde56",
-  "sourceCommitNote": "sourceCommit is checkout base at sheet creation; sourceRuntimeRevision binds included selected modular tiles and styles to published runtime."
+  "reviewNote": "Artwork and reference-board presentation unchanged by map-only CSS. Retained approved PNG bytes after rebuild; source hashes updated for current styles/imports."
 }
