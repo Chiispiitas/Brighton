@@ -1,0 +1,45 @@
+{
+  "runtimeRevision": "315458b957f1ba78a099abb5c31ff2e6d6588d0d",
+  "url": "https://exams.bebrighton.net/Horizons/App/",
+  "pass": true,
+  "files": [
+    {
+      "file": "index.html",
+      "sha256": "35b3a9ccbfa80bb9ed71a01f914e4d462409d7b7f6c3aea18c8a7e843348981d",
+      "matches": true
+    },
+    {
+      "file": "service-worker.js",
+      "sha256": "68bb713cfb54b47ccf82ee45a9a8b3df55eeff4ac5d7d052e7f0aa789cc294a9",
+      "matches": true
+    },
+    {
+      "file": "src/app.js",
+      "sha256": "bdd3397e30bd255b78285e96f05fd2c1a2182c18286e92ee45345a9db2489e3e",
+      "matches": true
+    },
+    {
+      "file": "src/art.js",
+      "sha256": "65f2826b98ec0d8093b86575521918869c8ef7b398383131a8c8208cff212ea0",
+      "matches": true
+    },
+    {
+      "file": "src/studio-ui.js",
+      "sha256": "9ca09779379981290fdb869534c662a48fce3356b2cc959e3249386dee9dde62",
+      "matches": true
+    },
+    {
+      "file": "src/overworld-motion.js",
+      "sha256": "6f0b2ae3fcbaaa724c5efab63cb6b1dd61907ebc3882abd139cda3e5f5c69f72",
+      "matches": true
+    },
+    {
+      "file": "styles/overworld.css",
+      "sha256": "3d458c85bb1d0431057de4224cb86aec33bd175d97357a6927119885f8c99a74",
+      "matches": true
+    }
+  ],
+  "geometryReport": "reports/plain-map-proof.json",
+  "navigationReport": "reports/plain-map-navigation-hosted.json",
+  "review": "Local four-width 84-placement proof passed; live navigation/touch proof passed. No art/content/backend changes."
+}
