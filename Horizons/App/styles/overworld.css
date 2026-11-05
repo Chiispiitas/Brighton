@@ -43,3 +43,11 @@
 
 .overworld-map::-webkit-scrollbar{display:none}
 .overworld-map .lesson-1{--trail-color:#f8edf1}.overworld-map .lesson-2{--trail-color:#faf0df}.overworld-map .lesson-3{--trail-color:#edf2f3}.overworld-map .lesson-4{--trail-color:#f0f3e8}
+
+/* Flanking controls sit outside the swipe surface and clear every island. */
+.learning-path{display:grid;grid-template-columns:44px minmax(0,1fr) 44px;column-gap:8px;align-items:center}
+.learning-path>.overworld-map{grid-column:2;grid-row:1}
+.learning-path>.path-scroll-toolbar,.learning-path .path-scroll-buttons{display:contents}
+.learning-path .path-scroll-buttons>.round-button{grid-row:1;margin-top:60px}
+.learning-path .path-pan-prev{grid-column:1}
+.learning-path [data-path-pan="1"]{grid-column:3}

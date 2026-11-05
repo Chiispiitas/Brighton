@@ -1,5 +1,7 @@
 # Horizons website session handoff
 
+Latest controls placement: left/right arrows flank the actual path at its left and right edges, vertically aligned with the trail center. Dedicated 44px columns keep them outside the swipe surface and island hit targets. This supersedes bottom-centered controls; faster scrolling and native vertical wheel/swipe remain. Cache tiles-v37, queries tiles3.
+
 Latest visual correction: plain/colorless map surface (same paper as page), original orange/magenta/pink island styling and thin pale per-lesson connectors without the tan road outline. Hide the horizontal scrollbar; center left/right arrows BELOW the map. Faster held-arrow travel: 200→640px/s over600ms, short tap180px, keyboard activation360px. Keep native vertical wheel, swipe/drag, 308px trail, sparse tiles and portrait-above/details-below. Do not restore helper messages.
 
 Latest modular runtime 13ab5f769cc47b39bf39cade28b3e724262fde56 is published on both branches; Pages run42066986191 succeeded. Trail308px, sparse reusable tiles, NO whole-environment panels; portrait ABOVE, details BELOW. Hosted 84-placement/navigation/Start checks pass, 421-file parity. See reports/minimal-overworld-release.json. Older world-panel and opposite-placement instructions below are superseded. Cache tiles-v35; entry queries tiles1.

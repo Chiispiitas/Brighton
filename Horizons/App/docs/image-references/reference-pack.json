@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "createdAt": "2026-11-05T16:53:29.972Z",
-  "sourceCommit": "f7307802487860dfda065ab4253e51db943499b0",
+  "createdAt": "2026-11-05T17:03:20.960Z",
+  "sourceCommit": "aa4e916fa6eef3a0686ba7a8417ceb775320a8ae",
   "maximumImageInputs": 7,
   "method": "Browser contact sheets of current native ImageGen artwork; labels and color chips are reference presentation, not new illustration generation.",
   "sources": [
@@ -15,7 +15,7 @@
     },
     {
       "file": "src/art.js",
-      "sha256": "1594e79172d972dfb53427a7a6b7b7b873b500111558c205ebb261e64d47a5f1"
+      "sha256": "367b135069995013f85a204df58dfd51e12dc9bd06b012e74275988d5e15214b"
     },
     {
       "file": "src/avatar-static.js",
@@ -31,7 +31,7 @@
     },
     {
       "file": "styles/overworld.css",
-      "sha256": "f43e1789b5fefac7de8056929ac8dbeefde5824b88cb12036fccdfc284b4342e"
+      "sha256": "fe5b21614b80aba9fac6d14acc5233ee06ad0ae38a8d67d86c02340b0ec3b27e"
     },
     {
       "file": "assets/art/overworld-unit1-v1/landmark-0.png",
@@ -130,6 +130,5 @@
       "sha256": "ee99b7f2ead017bf435441355038c405881ff2306ea23513974287c594e0e151"
     }
   ],
-  "reviewNote": "Artwork and reference-board presentation unchanged by map-only CSS. Retained approved PNG bytes after rebuild; source hashes updated for current styles/imports.",
-  "sourceRuntimeRevision": "315458b957f1ba78a099abb5c31ff2e6d6588d0d"
+  "reviewNote": "Approved art/reference-board PNGs unchanged by map-control placement; rebuilt source metadata tracks current renderer and styles."
 }
