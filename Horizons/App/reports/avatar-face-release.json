@@ -1,19 +1,19 @@
 {
-  "runtimeRevision": "441704d3dc63764aca436746768bcb4851f53929",
+  "runtimeRevision": "86f7eb95d8de0dbb7810521b8e871f873637b5d7",
   "url": "https://exams.bebrighton.net/Horizons/App/",
-  "pagesRun": 42090254698,
+  "pagesRun": 42101154583,
   "pass": true,
   "hostedMatchedFiles": 448,
   "bookSourceRecordingsUnchanged": 12,
-  "cache": "horizons-companion-avatar-face-v43",
-  "entryQuery": "face3",
+  "cache": "horizons-companion-avatar-face-v44",
+  "entryQuery": "face4",
   "facelessHeadAndSeparateGeneratedSprites": true,
   "wholeHeadExpressionsRetired": true,
   "fixedBackgroundDuringIdleAndFeedback": true,
   "defaultEyes": "accepted-still white bounds and native pupil centroids per base/skin; subtle inward rest",
   "pupilLogicalWidth": 21,
   "increaseFromFirstSeparatedRigPercent": 16.6667,
-  "gaze": "pupils +/-2.5 logical px, face at18% of pupil displacement, masked",
+  "gaze": "pupils +/-2.5 logical px, face at40% of pupil displacement, masked",
   "blinkMs": 140,
   "idleCycleMs": 5200,
   "responsiveWidths": [
@@ -41,5 +41,7 @@
     "Controlled document.hidden event and seeded expired-cache worker-installation check; no full previous-worker upgrade simulation",
     "Preview is200 controlled-clock actual-renderer frames at30fps; not a performance benchmark",
     "Very similar reconstruction, not pixel identical"
-  ]
+  ],
+  "breathing": "avatar artwork only; scale(.994,.98) to1 over5200ms; fixed background",
+  "currentCostumeEvidence": "240 local compositions for this revision; previous hosted costume matrix remains historical"
 }

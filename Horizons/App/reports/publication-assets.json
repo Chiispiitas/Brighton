@@ -1,7 +1,7 @@
 {
-  "date": "2026-11-05T19:08:39.606674+00:00",
+  "date": "2026-11-05T20:17:22.171204+00:00",
   "url": "https://exams.bebrighton.net/Horizons/App/",
-  "revision": "441704d3dc63764aca436746768bcb4851f53929",
+  "revision": "86f7eb95d8de0dbb7810521b8e871f873637b5d7",
   "checkedFiles": 448,
   "bookSourceRecordings": 12,
   "pass": true,
@@ -2992,7 +2992,7 @@
       "path": "Horizons/App/index.html",
       "status": 200,
       "bytes": 3223,
-      "sha256": "51ed7da7dc5c25cf0de718f4b9276367c1e9262e89104de4d6cb018b19444362",
+      "sha256": "f8d145f4b5b4b35f9cb6dfe67dba9412ca58b08d04f3aed7ae69606276973885",
       "matchesCommittedBytes": true
     },
     {
@@ -3006,7 +3006,7 @@
       "path": "Horizons/App/service-worker.js",
       "status": 200,
       "bytes": 4127,
-      "sha256": "506f0777c8cb0bc7660df2470817c689ba4821fb6783aee2d0b735ba9db2d3e8",
+      "sha256": "611097dad34832f404d22b68a69e0d6a63774eb9b38fbea135dcafaeffd1d66e",
       "matchesCommittedBytes": true
     },
     {
@@ -3020,21 +3020,21 @@
       "path": "Horizons/App/src/app.js",
       "status": 200,
       "bytes": 60794,
-      "sha256": "1e13461807fe08bc6b7f82b757df758d2d3c274c3b5b3776dfd5a4206ec6f187",
+      "sha256": "529272e094f9f65473b88b027b91d599f8b68728229f374aee96270ed0618c65",
       "matchesCommittedBytes": true
     },
     {
       "path": "Horizons/App/src/art.js",
       "status": 200,
       "bytes": 8065,
-      "sha256": "842f1f02683e38afcf933acf993abcd287261abc3cf35ef7d46937609e645bdc",
+      "sha256": "6a6f831669da051e39a4c19e0bc3a3d0ab14f8e91b5a6ad422c43ff836b5ab08",
       "matchesCommittedBytes": true
     },
     {
       "path": "Horizons/App/src/avatar-motion.js",
       "status": 200,
-      "bytes": 5851,
-      "sha256": "f137bc617fae865ee4c0ae8255f1dda97fd8864c90c80af5fbd18e1d5525607c",
+      "bytes": 5847,
+      "sha256": "e31e578e69c9e30c69e6cf64761600fa38480a72b0af932fdb0f66096d2ea2d0",
       "matchesCommittedBytes": true
     },
     {
@@ -3048,7 +3048,7 @@
       "path": "Horizons/App/src/avatar-static.js",
       "status": 200,
       "bytes": 10107,
-      "sha256": "77dc420e263f320673b99ab9b09e35919360d02671581902ef6bf7d1bd0d6719",
+      "sha256": "6180f534efc98a2c1f2bbaf79b066369f8bdbf1248ecb1c27f20e0732bbbd297",
       "matchesCommittedBytes": true
     },
     {
@@ -3104,7 +3104,7 @@
       "path": "Horizons/App/src/studio-ui.js",
       "status": 200,
       "bytes": 7978,
-      "sha256": "7b8abf56c4ee2cb9c506c136a0a6a2005a8cf92851110dd66493a230a2c60dc2",
+      "sha256": "d92f6f1148233d0c8d7cf2c1dd37f76396cc3c01afe51f98d60a57d44d00fac8",
       "matchesCommittedBytes": true
     },
     {
