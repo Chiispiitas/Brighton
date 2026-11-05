@@ -1,0 +1,35 @@
+{
+  "date": "2026-11-05T14:37:07.915255+00:00",
+  "runtimeRevision": "3aa9764e3ef436e06fb479c0e8fcb4d2aee7e4cb",
+  "url": "https://exams.bebrighton.net/Horizons/App/",
+  "baselineDesignRevision": "0058c04fd7209a3a959427aecf56cf038c1b71c1",
+  "pagesRun": 42045717814,
+  "pagesConclusion": "success",
+  "restoredCompactDesign": true,
+  "horizontalActivityCount": 21,
+  "savedAvatarTraveller": true,
+  "testedWidths": [
+    320,
+    390,
+    768,
+    1440
+  ],
+  "cacheUpgrade": "fieldguide-v30 to horizontal-v31",
+  "hostedMatchedFiles": 398,
+  "existingBookRecordings": 12,
+  "backendChanges": false,
+  "nativeArtChanges": false,
+  "realLearnerWrites": false,
+  "reports": [
+    "reports/horizontal-path-proof-hosted.json",
+    "reports/horizontal-cache-upgrade-hosted.json",
+    "reports/horizontal-pico-proof-hosted.json",
+    "reports/publication-assets.json"
+  ],
+  "limits": [
+    "Edge/Chromium",
+    "Synthetic intercepted API state, including profile save/reload",
+    "No physical-phone/Safari/Firefox claim"
+  ],
+  "pass": true
+}
