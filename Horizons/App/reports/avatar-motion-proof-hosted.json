@@ -1,0 +1,18 @@
+{
+  "base": "https://exams.bebrighton.net/Horizons/App/",
+  "pass": true,
+  "scopedEditorAndPath": true,
+  "sidebarAndThumbnailsStatic": true,
+  "clickOnlySelection": true,
+  "selectionBounce": true,
+  "customizeBounce": true,
+  "opaqueBlink": true,
+  "reducedMotion": true,
+  "jumpBeforeLesson": true,
+  "escapeCancelsEntry": true,
+  "reselectionCancelsEntry": true,
+  "routeCleanup": true,
+  "hiddenAndOffscreenPause": true,
+  "errors": [],
+  "failedRequests": []
+}

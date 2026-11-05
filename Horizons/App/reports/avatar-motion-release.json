@@ -1,0 +1,35 @@
+{
+  "runtimeRevision": "cd8e3c281b3c2fc074d0f7a5e569019e06d90e7b",
+  "pass": true,
+  "url": "https://exams.bebrighton.net/Horizons/App/",
+  "pagesRun": 42083558717,
+  "hostedMatchedFiles": 435,
+  "costumeCombinations": 240,
+  "sampledReferenceFrames": 598,
+  "referenceFps": 30,
+  "scope": [
+    "main editor preview",
+    "path portrait"
+  ],
+  "feedback": [
+    "customization bounce",
+    "explicit island activation bounce",
+    "440ms entry jump before exercise"
+  ],
+  "blinkMs": 140,
+  "idleCycleMs": 5200,
+  "idleRisePercent": 0.35,
+  "clickOnlyTargeting": true,
+  "reducedMotionAndLifecycle": true,
+  "backendChanges": false,
+  "realLearnerWrites": false,
+  "reports": [
+    "reports/avatar-motion-proof-hosted.json",
+    "reports/avatar-motion-costumes-hosted.json",
+    "reports/publication-assets.json"
+  ],
+  "limits": [
+    "Synthetic Edge/Chromium fixtures, controlled document.hidden event",
+    "Root visual review; no independent/physical-device claim"
+  ]
+}
