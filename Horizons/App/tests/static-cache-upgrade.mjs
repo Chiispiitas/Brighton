@@ -30,7 +30,18 @@ const resources=new Map(),loadedHashes=new Map(),pending=[];
 page.on('pageerror',error=>report.runtimeErrors.push(error.message));
 page.on('response',response=>{const u=new URL(response.url());if(!legacy&&u.origin===base.origin&&u.pathname.startsWith(base.pathname)){const rel=u.pathname.slice(base.pathname.length);resources.set(rel+u.search,response.fromServiceWorker());if(Object.hasOwn(expectedHashes,rel))pending.push(response.body().then(bytes=>loadedHashes.set(rel,{path:rel,url:rel+u.search,sha256:hash(bytes),fromServiceWorker:response.fromServiceWorker()})));}});
 await context.route('**/*',async route=>{const u=new URL(route.request().url());if(legacy&&u.origin===base.origin&&u.pathname.startsWith(base.pathname)){const rel=decodeURIComponent(u.pathname.slice(base.pathname.length))||'index.html';if(rel==='service-worker.js')oldWorkerIntercepts++;if(/\.(js|mjs|html|css|json|png)$/.test(rel)||rel==='index.html'){const body=oldFile(rel);if(body)return route.fulfill({status:200,contentType:mime(rel),headers:{'Cache-Control':'no-store'},body});}}return route.continue();});
-async function still(selector){const actor=page.locator(selector).first();await page.evaluate(()=>Promise.all([...document.images].map(im=>im.decode().catch(()=>{}))));await actor.scrollIntoViewIfNeeded();await page.mouse.move(0,0);const before=await actor.screenshot();await actor.hover();await page.waitForTimeout(1100);const after=await actor.screenshot();assert.equal(hash(before),hash(after),'Static pixels stay fixed during hover and wait');return{selector,sha256:hash(before),unchangedAfter1100ms:true};}
+async function still(selector){
+ const actor=page.locator(selector).first(),dir=path.resolve('C:/Users/David/Documents/Codex/2026-11-04/horizons-static-cache-ready');fs.mkdirSync(dir,{recursive:true});
+ await page.evaluate(()=>Promise.all([...document.images].map(im=>im.decode().catch(()=>{}))));await actor.scrollIntoViewIfNeeded();await page.mouse.move(0,0);
+ const state=()=>actor.evaluate(el=>{const r=el.getBoundingClientRect();return{fonts:document.fonts.status,rect:{x:r.x,y:r.y,width:r.width,height:r.height},animations:el.getAnimations({subtree:true}).filter(a=>a.playState==='running').length,images:[...el.querySelectorAll('img')].map(im=>{const r=im.getBoundingClientRect();return{x:r.x,y:r.y,width:r.width,height:r.height,left:getComputedStyle(im).left,top:getComputedStyle(im).top};})};});
+ const initialState=await state(),initial=await actor.screenshot();
+ await page.evaluate(async()=>{await document.fonts.ready;await new Promise(resolve=>requestAnimationFrame(()=>requestAnimationFrame(resolve)));});
+ const beforeState=await state(),before=await actor.screenshot();await actor.hover();await page.waitForTimeout(1100);const afterState=await state(),after=await actor.screenshot();
+ const name=(selector.match(/character=([a-z]+)/)||[])[1]||'avatar';for(const[label,bytes]of[['initial',initial],['ready',before],['after-hover',after]])fs.writeFileSync(path.join(dir,name+'-'+label+'.png'),bytes);
+ const proof={selector,initialState,beforeState,afterState,initialSha256:hash(initial),readySha256:hash(before),afterSha256:hash(after),initialChangedBeforeReadiness:hash(initial)!==hash(before),unchangedAfterReadyAnd1100ms:hash(before)===hash(after)};(report.readinessProofs??=[]).push(proof);
+ assert.equal(beforeState.animations,0);assert.equal(afterState.animations,0);assert.equal(hash(before),hash(after),'Static pixels stay fixed after fonts/images/layout are ready, including hover and wait');return proof;
+}
+
 try{
  report.phase='install-committed-previous-friendly-runtime';
  await page.goto(base.href,{waitUntil:'domcontentloaded'});await page.locator('#redeem-form').waitFor({timeout:45000});await page.waitForFunction(()=>document.querySelectorAll('.character').length===4&&[...document.querySelectorAll('.character')].every(el=>el.dataset.rigReady==='true'),null,{timeout:30000});

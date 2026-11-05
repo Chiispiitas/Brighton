@@ -1,0 +1,255 @@
+{
+  "date": "2026-11-04T23:59:06.654Z",
+  "base": "https://exams.bebrighton.net/Horizons/App/",
+  "sourceReference": {
+    "kind": "git-blob",
+    "commit": "48f9491beaf2cb656d8396d3c27942f50bd8727d"
+  },
+  "sourceHashes": {
+    "src/avatar-static.js": "92742ed6eeb76787522b9ef904da7fbf403448a394babd15a154b3ca7cdc55e8",
+    "assets/art/avatar-static-v1.frames.json": "36c21423def58ed6edd6d1dee1ef98a41b41a8c4debaa6ca9cb79eb87ba4cc77",
+    "assets/art/avatar-static-heads-v2.png": "79f254047f5541326288ba948051aa82d576f47af105f3eda1c50caab6464779",
+    "assets/art/avatar-static-clothes-v1.png": "38c59629065fbc10c6ec5d723c8d89f4630afb859c89699c7581f7b662e8180d",
+    "assets/art/avatar-static-hair-v1.png": "c73a9e78139d3ceaf1c6b6cd61392835ebb3c82f13fbb222ccaae0edc9166e97",
+    "assets/art/avatar-static-extras-v3.png": "1842d76f71c1a8ccb01dabe6c5a6e5dbe1c71257490d77989f95e1e0022c16fe",
+    "assets/art/ui-static-v1.png": "fdbf04030127b6a1d6a7061a72b765a540cc25ec732eb4343a639ce7f11e1b42"
+  },
+  "scope": "Static renderer with unchanged saved IDs, using the real isolated QA profile and existing backend avatar.body field. No activity attempts, no private values/codes/tokens logged.",
+  "testAdaptation": "Static-avatar adaptation of the authorized isolated012 profile workflow. Native static sources are bound exactly; previews and base selectors are shown at top. No activity attempts or progress writes; original avatar is restored and read back.",
+  "errors": [],
+  "checks": [
+    {
+      "name": "Existing saved base and customization restore on initial sign-in with a valid default base",
+      "pass": true
+    },
+    {
+      "name": "Female is a separate base with every hair/outfit/accessory available and draft-aware thumbnails",
+      "pass": true
+    },
+    {
+      "name": "Changing base keeps the other unsaved selections",
+      "pass": true
+    },
+    {
+      "name": "Real backend accepts and persists avatar.body female without migration or activity changes",
+      "pass": true
+    },
+    {
+      "name": "Saved female base and selections restore on reload and independent device session",
+      "pass": true
+    }
+  ],
+  "proofs": [
+    {
+      "name": "female-draft-desktop",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-static\\hosted\\female-draft-desktop.png",
+      "sha256": "75cd6e3f969a2da307211763c56662a43e213a3f08bb96d80442e13e27346f9f",
+      "width": 1280
+    },
+    {
+      "name": "male-draft-desktop",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-static\\hosted\\male-draft-desktop.png",
+      "sha256": "48754b7278bcd5627d84c2c517eb3d8677c18a5389e454b46bb91f8e722d2949",
+      "width": 1280
+    },
+    {
+      "name": "female-saved-mobile",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-static\\hosted\\female-saved-mobile.png",
+      "sha256": "caa7a676fdee1fd4e61dc25e728ea597f7fe95efbee4d45613fd70a11942f35d",
+      "width": 390
+    },
+    {
+      "name": "female-restored-second-device",
+      "path": "C:\\Users\\David\\Documents\\Codex\\2026-11-04\\horizons-avatar-static\\hosted\\female-restored-second-device.png",
+      "sha256": "caa7a676fdee1fd4e61dc25e728ea597f7fe95efbee4d45613fd70a11942f35d",
+      "width": 390
+    }
+  ],
+  "pass": true,
+  "savedValue": {
+    "body": "female",
+    "skin": "skin-6",
+    "outfit": "outfit-3",
+    "hair": "hair-1",
+    "accessory": "accessory-3"
+  },
+  "savedHttpStatus": 200,
+  "progressUnchanged": true,
+  "staticAvatarDOM": {
+    "render": "static",
+    "animations": 0,
+    "joints": 0,
+    "loadedNativeSources": [
+      "/Horizons/App/assets/art/avatar-static-heads-v2.png",
+      "/Horizons/App/assets/art/avatar-static-clothes-v1.png",
+      "/Horizons/App/assets/art/avatar-static-hair-v1.png",
+      "/Horizons/App/assets/art/avatar-static-extras-v3.png"
+    ]
+  },
+  "originalAvatarRestored": true,
+  "loadedByteBinding": {
+    "comparison": "Actual loaded HTTP response bytes versus exact committed git blobs (LF for text; unchanged native PNG bytes)",
+    "files": [
+      {
+        "file": "src/avatar-static.js",
+        "expected": "92742ed6eeb76787522b9ef904da7fbf403448a394babd15a154b3ca7cdc55e8",
+        "observations": [
+          {
+            "query": "?v=static1",
+            "status": 200,
+            "sha256": "92742ed6eeb76787522b9ef904da7fbf403448a394babd15a154b3ca7cdc55e8"
+          },
+          {
+            "query": "?v=static1",
+            "status": 200,
+            "sha256": "92742ed6eeb76787522b9ef904da7fbf403448a394babd15a154b3ca7cdc55e8"
+          },
+          {
+            "query": "?v=static1",
+            "status": 200,
+            "sha256": "92742ed6eeb76787522b9ef904da7fbf403448a394babd15a154b3ca7cdc55e8"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/avatar-static-v1.frames.json",
+        "expected": "36c21423def58ed6edd6d1dee1ef98a41b41a8c4debaa6ca9cb79eb87ba4cc77",
+        "observations": [
+          {
+            "query": "",
+            "status": 200,
+            "sha256": "36c21423def58ed6edd6d1dee1ef98a41b41a8c4debaa6ca9cb79eb87ba4cc77"
+          },
+          {
+            "query": "",
+            "status": 200,
+            "sha256": "36c21423def58ed6edd6d1dee1ef98a41b41a8c4debaa6ca9cb79eb87ba4cc77"
+          },
+          {
+            "query": "",
+            "status": 200,
+            "sha256": "36c21423def58ed6edd6d1dee1ef98a41b41a8c4debaa6ca9cb79eb87ba4cc77"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/avatar-static-heads-v2.png",
+        "expected": "79f254047f5541326288ba948051aa82d576f47af105f3eda1c50caab6464779",
+        "observations": [
+          {
+            "query": "",
+            "status": 200,
+            "sha256": "79f254047f5541326288ba948051aa82d576f47af105f3eda1c50caab6464779"
+          },
+          {
+            "query": "",
+            "status": 200,
+            "sha256": "79f254047f5541326288ba948051aa82d576f47af105f3eda1c50caab6464779"
+          },
+          {
+            "query": "",
+            "status": 200,
+            "sha256": "79f254047f5541326288ba948051aa82d576f47af105f3eda1c50caab6464779"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/avatar-static-clothes-v1.png",
+        "expected": "38c59629065fbc10c6ec5d723c8d89f4630afb859c89699c7581f7b662e8180d",
+        "observations": [
+          {
+            "query": "",
+            "status": 200,
+            "sha256": "38c59629065fbc10c6ec5d723c8d89f4630afb859c89699c7581f7b662e8180d"
+          },
+          {
+            "query": "",
+            "status": 200,
+            "sha256": "38c59629065fbc10c6ec5d723c8d89f4630afb859c89699c7581f7b662e8180d"
+          },
+          {
+            "query": "",
+            "status": 200,
+            "sha256": "38c59629065fbc10c6ec5d723c8d89f4630afb859c89699c7581f7b662e8180d"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/avatar-static-hair-v1.png",
+        "expected": "c73a9e78139d3ceaf1c6b6cd61392835ebb3c82f13fbb222ccaae0edc9166e97",
+        "observations": [
+          {
+            "query": "",
+            "status": 200,
+            "sha256": "c73a9e78139d3ceaf1c6b6cd61392835ebb3c82f13fbb222ccaae0edc9166e97"
+          },
+          {
+            "query": "",
+            "status": 200,
+            "sha256": "c73a9e78139d3ceaf1c6b6cd61392835ebb3c82f13fbb222ccaae0edc9166e97"
+          },
+          {
+            "query": "",
+            "status": 200,
+            "sha256": "c73a9e78139d3ceaf1c6b6cd61392835ebb3c82f13fbb222ccaae0edc9166e97"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/avatar-static-extras-v3.png",
+        "expected": "1842d76f71c1a8ccb01dabe6c5a6e5dbe1c71257490d77989f95e1e0022c16fe",
+        "observations": [
+          {
+            "query": "",
+            "status": 200,
+            "sha256": "1842d76f71c1a8ccb01dabe6c5a6e5dbe1c71257490d77989f95e1e0022c16fe"
+          },
+          {
+            "query": "",
+            "status": 200,
+            "sha256": "1842d76f71c1a8ccb01dabe6c5a6e5dbe1c71257490d77989f95e1e0022c16fe"
+          },
+          {
+            "query": "",
+            "status": 200,
+            "sha256": "1842d76f71c1a8ccb01dabe6c5a6e5dbe1c71257490d77989f95e1e0022c16fe"
+          }
+        ]
+      },
+      {
+        "file": "assets/art/ui-static-v1.png",
+        "expected": "fdbf04030127b6a1d6a7061a72b765a540cc25ec732eb4343a639ce7f11e1b42",
+        "observations": [
+          {
+            "query": "",
+            "status": 200,
+            "sha256": "fdbf04030127b6a1d6a7061a72b765a540cc25ec732eb4343a639ce7f11e1b42"
+          },
+          {
+            "query": "",
+            "status": 200,
+            "sha256": "fdbf04030127b6a1d6a7061a72b765a540cc25ec732eb4343a639ce7f11e1b42"
+          },
+          {
+            "query": "",
+            "status": 200,
+            "sha256": "fdbf04030127b6a1d6a7061a72b765a540cc25ec732eb4343a639ce7f11e1b42"
+          }
+        ]
+      }
+    ],
+    "errors": [],
+    "pass": true
+  },
+  "visualReview": {
+    "verdict": "PASS",
+    "reviewed": [
+      "female-draft-desktop",
+      "male-draft-desktop",
+      "female-saved-mobile",
+      "female-restored-second-device"
+    ],
+    "observation": "Fresh actual hosted desktop Male and Female draft views and mobile saved/second-device Female profile screens directly inspected. Distinct base controls are visible. Friendly rounded-square native face, connected neck and single shoulder-to-chest shape; headphones fit and navigation portraits stay static. No visible detached parts or clipping in these actual hosted proofs.",
+    "scope": "Focused avatar/profile visual review; sitewide295-screen and cache/publication parity are separate root-owned checks."
+  }
+}

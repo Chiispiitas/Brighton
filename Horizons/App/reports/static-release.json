@@ -1,7 +1,7 @@
 {
-  "date": "2026-11-04T23:50:51.897790+00:00",
-  "status": "LOCAL_PASS_PUBLICATION_PENDING",
-  "pass": false,
+  "date": "2026-11-05T00:02:21.287149+00:00",
+  "status": "PASS",
+  "pass": true,
   "baselineCommit": "bbd859f40cc5bc692a1ec2798bcb002907eaf17b",
   "abortedPassPreservedInStash": "d935ff2b4abb68181a6bca3a6d4661f81a2a43da",
   "backupBranch": "safety/horizons-before-static-redraw-20261104",
@@ -47,7 +47,13 @@
     "realReturningBrowserCacheUpgrade": true,
     "avatarSaveReloadSecondDeviceRestore": true,
     "zeroRunningAnimations": true,
-    "timedPixelIdentityAfterHover": true
+    "timedPixelIdentityAfterHover": true,
+    "initialHostedCacheAttempt": {
+      "path": "reports/static-cache-upgrade-hosted-initial.json",
+      "result": "Pixel equality failed before explicit font/layout readiness; original failure retained.",
+      "resolution": "Test now records initial/ready/after-hover states and PNGs, waits for fonts and two layout frames, and passes byte-identical ready/after screenshots for all4cast plusavatar. No runtime changed. Full295-view hosted check also passes zero animations and timed still images.",
+      "limit": "The original failure did not save its screenshots, so its exact initial-load difference is not retrospectively established."
+    }
   },
   "runtimeSourceHashes": {
     "index.html": "66833736593825f275c172d201a077f3be03bb2334b8de019d06c051825c2e9c",
@@ -109,11 +115,74 @@
     }
   },
   "hosted": {
-    "status": "PENDING"
+    "status": "PASS",
+    "sourceCommit": "48f9491beaf2cb656d8396d3c27942f50bd8727d",
+    "responsiveScreens": 295,
+    "widths": [
+      320,
+      390,
+      768,
+      1440
+    ],
+    "checkedPublishedFiles": 328,
+    "sourceBookRecordings": 12,
+    "evidence": {
+      "static-release-browser-hosted": {
+        "path": "reports/static-release-browser-hosted.json",
+        "pass": true
+      },
+      "static-cache-upgrade-hosted": {
+        "path": "reports/static-cache-upgrade-hosted.json",
+        "pass": true
+      },
+      "avatar-static-persistence-hosted": {
+        "path": "reports/avatar-static-persistence-hosted.json",
+        "pass": true
+      },
+      "publication-assets": {
+        "path": "reports/publication-assets.json",
+        "pass": true
+      }
+    },
+    "rootDirectlyViewed": [
+      "welcome-1440",
+      "profile-390",
+      "vocabulary-waiter-390"
+    ],
+    "realServiceWorkerUpgrade": true,
+    "exactGitLFAndNativePNGReadback": true
   },
   "limits": [
     "Edge/Chromium only.",
     "Finite reviewed poses and avatar families, not every possible customization permutation.",
     "Native ImageGen raster variation retained; flat design judged at actual UI sizes and enlarged."
-  ]
+  ],
+  "publishedRuntimeCommit": "48f9491beaf2cb656d8396d3c27942f50bd8727d",
+  "url": "https://exams.bebrighton.net/Horizons/App/",
+  "finalRuntimeSourceHashes": {
+    "index.html": "8309d049e877c83c31433436ab1f9c57a4f405c6302d2dcee91a0b95a8481e2f",
+    "manifest.webmanifest": "14199dc91c010d339f61ee92025046d00164a735b9985aed93d8575d4cfcc06c",
+    "styles/app.css": "1cb42d136c85675c82c33122d6206688d1b826ebfaa3e2acb1e93f5741a86ce6",
+    "src/app.js": "ef750a452f4d1648d71c99fdf111a5e0c5bc224a7817b97ae5b7d13b370834d1",
+    "src/art.js": "6da7793a501252ef545dfe5144eb007d32c3d69f24bba61cc44ab33652eacc99",
+    "src/avatar-static.js": "92742ed6eeb76787522b9ef904da7fbf403448a394babd15a154b3ca7cdc55e8",
+    "service-worker.js": "388027d3f53f8742bbf3c0f78ded6d84938d51d852a24764bb1f002e2a88a407",
+    "assets/art/manifest.json": "e351db9cb35f9e954037fd7c8d48f1ce1d9627c829c38c9faf08f78246767b4a",
+    "assets/art/avatar-static-v1.frames.json": "36c21423def58ed6edd6d1dee1ef98a41b41a8c4debaa6ca9cb79eb87ba4cc77",
+    "assets/art/cast-static-pico-v2.png": "6cc557478d70cb3ddbdd893d67bf09fa1236ca327c2384b06ac31ae141beb148",
+    "assets/art/cast-static-mina-v2.png": "163449ffe9a3566390a5e196b976a420e3eb58e5f409d4c101a76d82f81bdfc9",
+    "assets/art/cast-static-alex-v3.png": "86d6441f1062824451a8aa3cf0a43de137b2aaa17a42cd179561efa7cf227825",
+    "assets/art/cast-static-jo-v3.png": "e14e81e2a1912b24702f4fd1a4222f8ec8c6814649c31d624464a0fd06cdc10b",
+    "assets/art/avatar-static-heads-v2.png": "79f254047f5541326288ba948051aa82d576f47af105f3eda1c50caab6464779",
+    "assets/art/avatar-static-clothes-v1.png": "38c59629065fbc10c6ec5d723c8d89f4630afb859c89699c7581f7b662e8180d",
+    "assets/art/avatar-static-hair-v1.png": "c73a9e78139d3ceaf1c6b6cd61392835ebb3c82f13fbb222ccaae0edc9166e97",
+    "assets/art/avatar-static-extras-v3.png": "1842d76f71c1a8ccb01dabe6c5a6e5dbe1c71257490d77989f95e1e0022c16fe",
+    "assets/art/ui-static-v1.png": "fdbf04030127b6a1d6a7061a72b765a540cc25ec732eb4343a639ce7f11e1b42",
+    "assets/art/town-static-v1.png": "2f71a7437854f4062e1d1c04d0c54805f88ff252da4eb5276b737c19957334ba",
+    "assets/art/jobs-static-1-v2.png": "fb6a01224a140eb3f064a1a07cb9711fd10c2def0d4dfaa6f17c33263bc096d3",
+    "assets/art/jobs-static-4-v2.png": "17e6ac1258161ebf5dcca92143d18b95bf29853249baefe7b0ec85a0edaef87d",
+    "assets/art/jobs-static-2-v2.png": "4308ef795398ad9feebbe54bf7179d1b0f37742b4f0dd862e01f8df42e558da4",
+    "assets/art/jobs-static-3-v3.png": "1947efd87948efe32ea2ff300706d782d917c7461e6af7c8c7938abf0be809c1"
+  },
+  "evidenceOnlyChangesAfterRuntimePublication": true
 }
