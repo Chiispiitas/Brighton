@@ -747,7 +747,7 @@
       },
       {
         "id": "hair-5",
-        "label": "Blonde bob",
+        "label": "Rounded bob",
         "group": "hair",
         "src": "assets/art/avatar-static-hair-v1.png",
         "atlas": {
@@ -990,6 +990,80 @@
           "w": 254,
           "h": 253
         }
+      }
+    ],
+    "hairColor": [
+      {
+        "id": "color-original",
+        "label": "Original",
+        "swatch": "#846345"
+      },
+      {
+        "id": "color-black",
+        "label": "Black",
+        "swatch": "#272830"
+      },
+      {
+        "id": "color-brown",
+        "label": "Brown",
+        "swatch": "#68402b"
+      },
+      {
+        "id": "color-auburn",
+        "label": "Auburn",
+        "swatch": "#a44830"
+      },
+      {
+        "id": "color-blond",
+        "label": "Blond",
+        "swatch": "#eab45e"
+      },
+      {
+        "id": "color-silver",
+        "label": "Silver",
+        "swatch": "#bcc1c8"
+      },
+      {
+        "id": "color-navy",
+        "label": "Navy",
+        "swatch": "#263655"
+      },
+      {
+        "id": "color-magenta",
+        "label": "Magenta",
+        "swatch": "#aa245f"
+      }
+    ],
+    "background": [
+      {
+        "id": "bg-cream",
+        "label": "Cream",
+        "swatch": "#fff1dc"
+      },
+      {
+        "id": "bg-sky",
+        "label": "Sky",
+        "swatch": "#d6edf6"
+      },
+      {
+        "id": "bg-mint",
+        "label": "Mint",
+        "swatch": "#d7eee2"
+      },
+      {
+        "id": "bg-rose",
+        "label": "Rose",
+        "swatch": "#f5dce7"
+      },
+      {
+        "id": "bg-lavender",
+        "label": "Lavender",
+        "swatch": "#e8e0f5"
+      },
+      {
+        "id": "bg-navy",
+        "label": "Navy",
+        "swatch": "#243752"
       }
     ]
   },

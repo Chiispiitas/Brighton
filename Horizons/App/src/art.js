@@ -5,7 +5,7 @@ const sourceBase=new URL('../assets/art/',import.meta.url);
 const esc=value=>String(value??'').replace(/[&<>"']/g,char=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[char]));
 export async function loadArt(){
  installRasterFit();
- try{const response=await fetch(new URL('manifest.json?studio=1',sourceBase),{cache:'no-cache'});if(response.ok)manifest=await response.json();}catch{/* Keep the learning interface available if artwork cannot load. */}
+ try{const response=await fetch(new URL('manifest.json?colors=1',sourceBase),{cache:'no-cache'});if(response.ok)manifest=await response.json();}catch{/* Keep the learning interface available if artwork cannot load. */}
  return manifest;
 }
 export function artManifest(){return manifest;}
@@ -51,11 +51,11 @@ function choosePosture(name,cls,mood){
  return null;
 }
 function avatarGroups(){return manifest.avatar?.groups||manifest.avatar?.layers||manifest.avatar||{};}
-export function avatarOptions(){const groups=avatarGroups();if(Array.isArray(groups))return groups;return Object.entries(groups).filter(([,values])=>Array.isArray(values)||values?.options).map(([id,values])=>({id,label:({body:'Avatar base',skin:'Skin tone',outfit:'Clothes',hair:'Hair',accessory:'Eyewear'})[id]||id[0].toUpperCase()+id.slice(1),options:Array.isArray(values)?values:values.options||[]}));}
+export function avatarOptions(){const groups=avatarGroups();if(Array.isArray(groups))return groups;return Object.entries(groups).filter(([,values])=>Array.isArray(values)||values?.options).map(([id,values])=>({id,label:({body:'Avatar base',skin:'Skin tone',outfit:'Clothes',hair:'Hair',hairColor:'Hair color',background:'Background',accessory:'Eyewear'})[id]||id[0].toUpperCase()+id.slice(1),options:Array.isArray(values)?values:values.options||[]}));}
 export function defaultAvatar(){return Object.fromEntries(avatarOptions().map(group=>[group.id,group.options?.[0]?.id||'none']));}
-export function normalizeAvatar(avatar={}){return{...avatar,accessory:['none','accessory-1','accessory-2','accessory-3'].includes(avatar.accessory)?avatar.accessory:'none'};}
+export function normalizeAvatar(avatar={}){return{...avatar,hairColor:manifest.avatar?.hairColor?.some(c=>c.id===avatar.hairColor)?avatar.hairColor:'color-original',background:manifest.avatar?.background?.some(c=>c.id===avatar.background)?avatar.background:'bg-cream',accessory:['none','accessory-1','accessory-2','accessory-3'].includes(avatar.accessory)?avatar.accessory:'none'};}
 export function avatarMarkup(avatar={},cls='',name='Your avatar'){return `<span class="avatar avatar-bust ${esc(cls)}" data-avatar-static data-avatar="${esc(JSON.stringify(normalizeAvatar(avatar)))}" role="img" aria-label="${esc(name)}, bust portrait"></span>`;}
 export function refreshArtwork(container=document){
- for(const slot of container.querySelectorAll('[data-avatar-static]'))import('./avatar-static.js?v=studio1').then(module=>{avatarModule=module;if(slot.isConnected&&!slot.closest('dialog:not([open])'))module.mountAvatar(slot,{avatar:JSON.parse(slot.dataset.avatar||'{}'),manifest});});
+ for(const slot of container.querySelectorAll('[data-avatar-static]'))import('./avatar-static.js?v=colors1').then(module=>{avatarModule=module;if(slot.isConnected&&!slot.closest('dialog:not([open])'))module.mountAvatar(slot,{avatar:JSON.parse(slot.dataset.avatar||'{}'),manifest});});
 }
 export function disposeArtwork(container=document){for(const slot of container.querySelectorAll('[data-avatar-static]'))avatarModule?.unmountAvatar?.(slot);}

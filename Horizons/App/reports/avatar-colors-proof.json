@@ -1,0 +1,40 @@
+{
+  "date": "2026-11-05T03:01:26.623Z",
+  "base": "http://127.0.0.1:8898/Horizons/App/",
+  "checks": [
+    {
+      "width": 320,
+      "noPlayerIcons": true,
+      "hairColor": true,
+      "background": true,
+      "circleBust": true
+    },
+    {
+      "width": 390,
+      "noPlayerIcons": true,
+      "hairColor": true,
+      "background": true,
+      "circleBust": true
+    },
+    {
+      "width": 768,
+      "noPlayerIcons": true,
+      "hairColor": true,
+      "background": true,
+      "circleBust": true
+    },
+    {
+      "width": 1440,
+      "noPlayerIcons": true,
+      "hairColor": true,
+      "background": true,
+      "circleBust": true
+    }
+  ],
+  "save": true,
+  "reload": true,
+  "secondDevice": true,
+  "isolatedProfileRestored": true,
+  "errors": [],
+  "pass": true
+}
