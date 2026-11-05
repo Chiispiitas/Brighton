@@ -8,7 +8,7 @@ const browser=await chromium.launch({executablePath:'C:/Program Files (x86)/Micr
 async function context(options={}){
  const c=await browser.newContext({viewport:{width:1440,height:1000},serviceWorkers:'block',...options});
  await c.addCookies([{url:base,name:'hz_companion_session',value:'fictional-face-proof'}]);
- await c.route('**/api/horizons',r=>r.fulfill({contentType:'application/json',body:JSON.stringify({profile:{displayName:'Town Explorer',avatar:{body:'female',skin:'skin-3',hair:'hair-9',outfit:'outfit-3',background:'bg-mint',hairColor:'color-auburn'}},books:[{id:'horizons-a1',level:'A1',status:'active',expiresAt:'2030-01-01T00:00:00Z'}],progress:{xp:120,streak:3}})}));
+ await c.route('**/api/horizons',r=>r.fulfill({contentType:'application/json',body:JSON.stringify({profile:{displayName:'Town Explorer',avatar:{body:'female',skin:'skin-3',hair:'hair-9',outfit:'outfit-3',background:'bg-mint',accessory:'accessory-1',hairColor:'color-auburn'}},books:[{id:'horizons-a1',level:'A1',status:'active',expiresAt:'2030-01-01T00:00:00Z'}],progress:{xp:120,streak:3}})}));
  return c;
 }
 const c=await context(),page=await c.newPage(),errors=[];page.on('pageerror',e=>errors.push(e.message));
@@ -21,6 +21,7 @@ async function sample(root,time){
   const box=bg.getBoundingClientRect(),stage=el.querySelector('.hzn-avatar-idle').getBoundingClientRect();
   return {artHeight:stage.height,background:{x:box.x,y:box.y,w:box.width,h:box.height,transform:getComputedStyle(bg).transform,animations:bg.getAnimations().length},
    head:el.querySelector('[data-static-part=head] img').src,
+   eyewear:el.querySelector('[data-static-part=eyewear]')?getComputedStyle(el.querySelector('[data-static-part=eyewear]')).transform:null,
    face:getComputedStyle(el.querySelector('.hzn-avatar-face')).transform,
    pupil:getComputedStyle(el.querySelector('[data-face-part=pupil]')).transform,
    blink:el.querySelector('[data-avatar-blink]').dataset.avatarBlink,
@@ -39,11 +40,11 @@ const widths=[320,390,768,1440],samples=[];
 for(const width of widths){
  await page.setViewportSize({width,height:1000});
  const player=page.locator('.path-player [data-avatar-static]');
- const p0=await sample(player,0),p1=await sample(player,1600),p2=await sample(player,3700),pb=await sample(player,4210),p3=await sample(player,4500);
+ const rest=await sample(player,12000),down=await sample(player,25100),end=await sample(player,29000);const p0=await sample(player,0),p1=await sample(player,5800),p2=await sample(player,14600),pb=await sample(player,4210),p3=await sample(player,4500);
  assert.deepEqual(p0.background,p1.background);assert.deepEqual(p0.background,p2.background);assert.deepEqual(p0.background,pb.background);
- assert.ok(Math.abs(p1.pupilWidth/p1.eyeWidth-21/p1.eyeLogicalWidth)<.01);for(const p of p0.restingPupils)for(let i=0;i<2;i++)assert.ok(Math.abs(p.actual[i]-p.expected[i])<.5,'neutral pupil matches accepted still '+JSON.stringify(p));assert.ok(p1.artHeight/p0.artHeight>1.005,'breathing visibly changes avatar height');assert.notEqual(p1.pupil,p2.pupil);assert.notEqual(p1.face,p2.face);
+ assert.ok(Math.abs(p1.pupilWidth/p1.eyeWidth-21/p1.eyeLogicalWidth)<.01);for(const p of p0.restingPupils)for(let i=0;i<2;i++)assert.ok(Math.abs(p.actual[i]-p.expected[i])<.5,'neutral pupil matches accepted still '+JSON.stringify(p));const peak=await sample(player,2600);assert.ok(peak.artHeight/p0.artHeight>1.005,'breathing visibly changes avatar height');assert.notEqual(p1.pupil,p2.pupil);assert.notEqual(p1.face,p2.face);assert.equal(rest.face,p0.face);assert.equal(end.face,p0.face);assert.notEqual(down.face,p1.face);
  assert.equal(pb.blink,'closed');assert.equal(pb.eyesHidden,true);assert.equal(pb.lidsHidden,false);assert.equal(p3.blink,'open');
- for(const s of [p0,p1,p2,pb,p3]){assert.equal(s.head,p0.head);assert.ok(s.head.endsWith('/avatar-face-v2/blank-heads.png'));assert.ok(s.oldStillHidden&&s.pupilMask&&s.mask!=='none'&&s.opaque&&!s.opacityTracks);}
+ for(const s of [p0,p1,p2,pb,p3,rest,down,end]){assert.ok(s.eyewear.slice(7,-1).split(',').map(Number).every((v,i)=>Math.abs(v-Number(s.face.slice(7,-1).split(',')[i]))<.00001),'glasses follow facial translation');assert.equal(s.head,p0.head);assert.ok(s.head.endsWith('/avatar-face-v2/blank-heads.png'));assert.ok(s.oldStillHidden&&s.pupilMask&&s.mask!=='none'&&s.opaque&&!s.opacityTracks);}
  await page.locator('[data-route=profile]:visible').first().click();await page.locator('#avatar-preview [data-avatar-motion=minimal]').waitFor();
  const editor=page.locator('#avatar-preview [data-avatar-static]'),a=await sample(editor,0),b=await sample(editor,1600),d=await sample(editor,4210);
  assert.deepEqual(a.background,b.background);assert.deepEqual(a.background,d.background);
@@ -72,5 +73,5 @@ if(process.env.HZ_RECORD_AVATAR){
  await v.close();fs.writeFileSync(videoDir+'/latest-path.txt',await p.video().path());
 }
 await browser.close();
-fs.writeFileSync(process.env.HZ_AVATAR_FACE_REPORT||new URL('../reports/avatar-face-proof.json',import.meta.url),JSON.stringify({base,pass:true,widths,samples,separateGeneratedBlankAndFeatures:true,naturalClockBlink:true,pupilLogicalWidth:21,neutralPupilsMatchAcceptedStill:true,fixedBackgroundThroughIdleAndBounce:true,containedPupils:true,opaque:true,missingSpriteFallback:true,errors},null,2)+'\n');
+fs.writeFileSync(process.env.HZ_AVATAR_FACE_REPORT||new URL('../reports/avatar-face-proof.json',import.meta.url),JSON.stringify({base,pass:true,widths,samples,glassesFollowFace:true,variedGazeCycleMs:30000,separateGeneratedBlankAndFeatures:true,naturalClockBlink:true,pupilLogicalWidth:21,neutralPupilsMatchAcceptedStill:true,fixedBackgroundThroughIdleAndBounce:true,containedPupils:true,opaque:true,missingSpriteFallback:true,errors},null,2)+'\n');
 console.log('PASS separate blank/feature rig, gaze, masks, fixed backgrounds, opacity and fallback at four widths');

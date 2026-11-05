@@ -1,5 +1,5 @@
-import {requestAvatarFeedback,jumpAvatarIntoIsland} from './avatar-motion.js?v=face4';
-import {animateUI,markControls,moveTabIndicator} from './ui-motion.js?v=face4';
+import {requestAvatarFeedback,jumpAvatarIntoIsland} from './avatar-motion.js?v=face5';
+import {animateUI,markControls,moveTabIndicator} from './ui-motion.js?v=face5';
 let selectedTab='skin';
 let tabResize;
 const bubble=document.createElement('div');bubble.id='path-bubble';bubble.className='path-bubble';bubble.setAttribute('popover','auto');bubble.setAttribute('role','dialog');bubble.setAttribute('aria-label','Activity details');document.body.append(bubble);

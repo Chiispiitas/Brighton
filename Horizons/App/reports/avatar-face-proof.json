@@ -22,6 +22,7 @@
             "animations": 0
           },
           "head": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "eyewear": "matrix(1, 0, 0, 1, 0, 0)",
           "face": "matrix(1, 0, 0, 1, 0, 0)",
           "pupil": "matrix(1, 0, 0, 1, 0, 0)",
           "blink": "open",
@@ -59,7 +60,7 @@
           "opacityTracks": false
         },
         {
-          "artHeight": 51.370330810546875,
+          "artHeight": 51.014923095703125,
           "background": {
             "x": 146,
             "y": 460.484375,
@@ -69,8 +70,9 @@
             "animations": 0
           },
           "head": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
-          "face": "matrix(1, 0, 0, 1, 0.1625, -0.0325)",
-          "pupil": "matrix(1, 0, 0, 1, 0.40625, -0.08125)",
+          "eyewear": "matrix(1, 0, 0, 1, 0.1625, -0.026)",
+          "face": "matrix(1, 0, 0, 1, 0.1625, -0.026)",
+          "pupil": "matrix(1, 0, 0, 1, 0.40625, -0.065)",
           "blink": "open",
           "eyesHidden": false,
           "lidsHidden": true,
@@ -79,8 +81,8 @@
           "restingPupils": [
             {
               "actual": [
-                136.28846717942497,
-                141.3192039698141
+                136.28843879186803,
+                141.45916297422258
               ],
               "expected": [
                 132.92481095734055,
@@ -89,8 +91,8 @@
             },
             {
               "actual": [
-                193.49999352082114,
-                141.3192039698141
+                193.49999881953806,
+                141.45916297422258
               ],
               "expected": [
                 190.1275390374788,
@@ -99,14 +101,14 @@
             }
           ],
           "eyeLogicalWidth": 39.877300613496935,
-          "pupilWidth": 3.393890380859375,
-          "eyeWidth": 6.44525146484375,
+          "pupilWidth": 3.3868865966796875,
+          "eyeWidth": 6.4319915771484375,
           "pupilMask": true,
           "opaque": true,
           "opacityTracks": false
         },
         {
-          "artHeight": 51.3199462890625,
+          "artHeight": 51.116729736328125,
           "background": {
             "x": 146,
             "y": 460.484375,
@@ -116,18 +118,19 @@
             "animations": 0
           },
           "head": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
-          "face": "matrix(1, 0, 0, 1, -0.1625, 0.0455)",
-          "pupil": "matrix(1, 0, 0, 1, -0.40625, 0.11375)",
-          "blink": "open",
-          "eyesHidden": false,
-          "lidsHidden": true,
+          "eyewear": "matrix(1, 0, 0, 1, -0.1235, -0.052)",
+          "face": "matrix(1, 0, 0, 1, -0.1235, -0.052)",
+          "pupil": "none",
+          "blink": "closed",
+          "eyesHidden": true,
+          "lidsHidden": false,
           "oldStillHidden": true,
           "mask": "url(\"http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
           "restingPupils": [
             {
               "actual": [
-                129.28848431285903,
-                142.9990985055172
+                -903.8829248495653,
+                -2887.1393731197686
               ],
               "expected": [
                 132.92481095734055,
@@ -136,8 +139,8 @@
             },
             {
               "actual": [
-                186.49999705405804,
-                142.9990985055172
+                -903.8829248495653,
+                -2887.1393731197686
               ],
               "expected": [
                 190.1275390374788,
@@ -146,8 +149,8 @@
             }
           ],
           "eyeLogicalWidth": 39.877300613496935,
-          "pupilWidth": 3.39288330078125,
-          "eyeWidth": 6.443359375,
+          "pupilWidth": 0,
+          "eyeWidth": 0,
           "pupilMask": true,
           "opaque": true,
           "opacityTracks": false
@@ -163,7 +166,8 @@
             "animations": 0
           },
           "head": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
-          "face": "matrix(1, 0, 0, 1, -0.133996, 0.037519)",
+          "eyewear": "matrix(1, 0, 0, 1, 0.00987189, -0.0015795)",
+          "face": "matrix(1, 0, 0, 1, 0.00987187, -0.0015795)",
           "pupil": "none",
           "blink": "closed",
           "eyesHidden": true,
@@ -210,8 +214,9 @@
             "animations": 0
           },
           "head": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
-          "face": "matrix(1, 0, 0, 1, -0.0253906, 0.00710938)",
-          "pupil": "matrix(1, 0, 0, 1, -0.0634766, 0.0177734)",
+          "eyewear": "matrix(1, 0, 0, 1, 0.0473761, -0.0075802)",
+          "face": "matrix(1, 0, 0, 1, 0.0473761, -0.00758018)",
+          "pupil": "matrix(1, 0, 0, 1, 0.11844, -0.0189504)",
           "blink": "open",
           "eyesHidden": false,
           "lidsHidden": true,
@@ -220,8 +225,8 @@
           "restingPupils": [
             {
               "actual": [
-                132.24156704257953,
-                142.17237548181396
+                133.80889289936044,
+                141.85607351676646
               ],
               "expected": [
                 132.92481095734055,
@@ -230,8 +235,8 @@
             },
             {
               "actual": [
-                189.45313915464166,
-                142.17237548181396
+                191.0204177985462,
+                141.85607351676646
               ],
               "expected": [
                 190.1275390374788,
@@ -240,7 +245,7 @@
             }
           ],
           "eyeLogicalWidth": 39.877300613496935,
-          "pupilWidth": 3.387298583984375,
+          "pupilWidth": 3.3872833251953125,
           "eyeWidth": 6.4327545166015625,
           "pupilMask": true,
           "opaque": true,
@@ -259,6 +264,7 @@
             "animations": 0
           },
           "head": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "eyewear": "matrix(1, 0, 0, 1, 0, 0)",
           "face": "matrix(1, 0, 0, 1, 0, 0)",
           "pupil": "matrix(1, 0, 0, 1, 0, 0)",
           "blink": "open",
@@ -306,8 +312,9 @@
             "animations": 0
           },
           "head": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
-          "face": "matrix(1, 0, 0, 1, 0.71875, -0.14375)",
-          "pupil": "matrix(1, 0, 0, 1, 1.79688, -0.359375)",
+          "eyewear": "matrix(1, 0, 0, 1, 0, 0)",
+          "face": "matrix(1, 0, 0, 1, 0, 0)",
+          "pupil": "matrix(1, 0, 0, 1, 0, 0)",
           "blink": "open",
           "eyesHidden": false,
           "lidsHidden": true,
@@ -316,8 +323,8 @@
           "restingPupils": [
             {
               "actual": [
-                136.3913035372327,
-                141.45218349997035
+                132.89130486892185,
+                142.1521724662742
               ],
               "expected": [
                 132.92481095734055,
@@ -326,8 +333,8 @@
             },
             {
               "actual": [
-                193.58696862274044,
-                141.45218349997035
+                190.08695930091648,
+                142.1521724662742
               ],
               "expected": [
                 190.1275390374788,
@@ -337,7 +344,7 @@
           ],
           "eyeLogicalWidth": 39.877300613496935,
           "pupilWidth": 15.023345947265625,
-          "eyeWidth": 28.55213165283203,
+          "eyeWidth": 28.552146911621094,
           "pupilMask": true,
           "opaque": true,
           "opacityTracks": false
@@ -353,7 +360,8 @@
             "animations": 0
           },
           "head": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
-          "face": "matrix(1, 0, 0, 1, -0.592676, 0.165949)",
+          "eyewear": "matrix(1, 0, 0, 1, 0.0436641, -0.00698625)",
+          "face": "matrix(1, 0, 0, 1, 0.0436641, -0.00698625)",
           "pupil": "none",
           "blink": "closed",
           "eyesHidden": true,
@@ -401,8 +409,9 @@
           "animations": 0
         },
         "head": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
-        "face": "matrix(1, 0, 0, 1, 0.71875, -0.14375)",
-        "pupil": "matrix(1, 0, 0, 1, 1.79688, -0.359375)",
+        "eyewear": "matrix(1, 0, 0, 1, 0, 0)",
+        "face": "matrix(1, 0, 0, 1, 0, 0)",
+        "pupil": "matrix(1, 0, 0, 1, 0, 0)",
         "blink": "open",
         "eyesHidden": false,
         "lidsHidden": true,
@@ -411,8 +420,8 @@
         "restingPupils": [
           {
             "actual": [
-              136.39129867926357,
-              141.45216350316397
+              132.8913000491904,
+              142.1521736442631
             ],
             "expected": [
               132.92481095734055,
@@ -421,8 +430,8 @@
           },
           {
             "actual": [
-              193.58695423368533,
-              141.45216350316397
+              190.08695560361215,
+              142.1521736442631
             ],
             "expected": [
               190.1275390374788,
@@ -432,7 +441,7 @@
         ],
         "eyeLogicalWidth": 39.877300613496935,
         "pupilWidth": 14.9691162109375,
-        "eyeWidth": 28.449066162109375,
+        "eyeWidth": 28.449073791503906,
         "pupilMask": true,
         "opaque": true,
         "opacityTracks": false
@@ -452,6 +461,7 @@
             "animations": 0
           },
           "head": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "eyewear": "matrix(1, 0, 0, 1, 0, 0)",
           "face": "matrix(1, 0, 0, 1, 0, 0)",
           "pupil": "matrix(1, 0, 0, 1, 0, 0)",
           "blink": "open",
@@ -489,7 +499,7 @@
           "opacityTracks": false
         },
         {
-          "artHeight": 51.37030029296875,
+          "artHeight": 51.014923095703125,
           "background": {
             "x": 150,
             "y": 424.65625,
@@ -499,8 +509,9 @@
             "animations": 0
           },
           "head": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
-          "face": "matrix(1, 0, 0, 1, 0.1625, -0.0325)",
-          "pupil": "matrix(1, 0, 0, 1, 0.40625, -0.08125)",
+          "eyewear": "matrix(1, 0, 0, 1, 0.1625, -0.026)",
+          "face": "matrix(1, 0, 0, 1, 0.1625, -0.026)",
+          "pupil": "matrix(1, 0, 0, 1, 0.40625, -0.065)",
           "blink": "open",
           "eyesHidden": false,
           "lidsHidden": true,
@@ -509,8 +520,8 @@
           "restingPupils": [
             {
               "actual": [
-                136.28846717942497,
-                141.31928792337916
+                136.28843879186803,
+                141.45916297422258
               ],
               "expected": [
                 132.92481095734055,
@@ -519,8 +530,8 @@
             },
             {
               "actual": [
-                193.49999352082114,
-                141.31928792337916
+                193.49999881953806,
+                141.45916297422258
               ],
               "expected": [
                 190.1275390374788,
@@ -529,14 +540,14 @@
             }
           ],
           "eyeLogicalWidth": 39.877300613496935,
-          "pupilWidth": 3.393890380859375,
-          "eyeWidth": 6.44525146484375,
+          "pupilWidth": 3.3868865966796875,
+          "eyeWidth": 6.4319915771484375,
           "pupilMask": true,
           "opaque": true,
           "opacityTracks": false
         },
         {
-          "artHeight": 51.319915771484375,
+          "artHeight": 51.11669921875,
           "background": {
             "x": 150,
             "y": 424.65625,
@@ -546,18 +557,19 @@
             "animations": 0
           },
           "head": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
-          "face": "matrix(1, 0, 0, 1, -0.1625, 0.0455)",
-          "pupil": "matrix(1, 0, 0, 1, -0.40625, 0.11375)",
-          "blink": "open",
-          "eyesHidden": false,
-          "lidsHidden": true,
+          "eyewear": "matrix(1, 0, 0, 1, -0.1235, -0.052)",
+          "face": "matrix(1, 0, 0, 1, -0.1235, -0.052)",
+          "pupil": "none",
+          "blink": "closed",
+          "eyesHidden": true,
+          "lidsHidden": false,
           "oldStillHidden": true,
           "mask": "url(\"http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
           "restingPupils": [
             {
               "actual": [
-                129.28848431285903,
-                142.99918354046113
+                -928.6243882181598,
+                -2662.8504016735606
               ],
               "expected": [
                 132.92481095734055,
@@ -566,8 +578,8 @@
             },
             {
               "actual": [
-                186.49999705405804,
-                142.99918354046113
+                -928.6243882181598,
+                -2662.8504016735606
               ],
               "expected": [
                 190.1275390374788,
@@ -576,8 +588,8 @@
             }
           ],
           "eyeLogicalWidth": 39.877300613496935,
-          "pupilWidth": 3.39288330078125,
-          "eyeWidth": 6.443359375,
+          "pupilWidth": 0,
+          "eyeWidth": 0,
           "pupilMask": true,
           "opaque": true,
           "opacityTracks": false
@@ -593,7 +605,8 @@
             "animations": 0
           },
           "head": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
-          "face": "matrix(1, 0, 0, 1, -0.133996, 0.037519)",
+          "eyewear": "matrix(1, 0, 0, 1, 0.00987189, -0.0015795)",
+          "face": "matrix(1, 0, 0, 1, 0.00987187, -0.0015795)",
           "pupil": "none",
           "blink": "closed",
           "eyesHidden": true,
@@ -640,8 +653,9 @@
             "animations": 0
           },
           "head": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
-          "face": "matrix(1, 0, 0, 1, -0.0253906, 0.00710938)",
-          "pupil": "matrix(1, 0, 0, 1, -0.0634766, 0.0177734)",
+          "eyewear": "matrix(1, 0, 0, 1, 0.0473761, -0.0075802)",
+          "face": "matrix(1, 0, 0, 1, 0.0473761, -0.00758018)",
+          "pupil": "matrix(1, 0, 0, 1, 0.11844, -0.0189504)",
           "blink": "open",
           "eyesHidden": false,
           "lidsHidden": true,
@@ -650,8 +664,8 @@
           "restingPupils": [
             {
               "actual": [
-                132.24156704257953,
-                142.17237548181396
+                133.80889289936044,
+                141.85607351676646
               ],
               "expected": [
                 132.92481095734055,
@@ -660,8 +674,8 @@
             },
             {
               "actual": [
-                189.45313915464166,
-                142.17237548181396
+                191.0204177985462,
+                141.85607351676646
               ],
               "expected": [
                 190.1275390374788,
@@ -670,7 +684,7 @@
             }
           ],
           "eyeLogicalWidth": 39.877300613496935,
-          "pupilWidth": 3.387298583984375,
+          "pupilWidth": 3.3872833251953125,
           "eyeWidth": 6.4327545166015625,
           "pupilMask": true,
           "opaque": true,
@@ -689,6 +703,7 @@
             "animations": 0
           },
           "head": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "eyewear": "matrix(1, 0, 0, 1, 0, 0)",
           "face": "matrix(1, 0, 0, 1, 0, 0)",
           "pupil": "matrix(1, 0, 0, 1, 0, 0)",
           "blink": "open",
@@ -736,8 +751,9 @@
             "animations": 0
           },
           "head": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
-          "face": "matrix(1, 0, 0, 1, 0.71875, -0.14375)",
-          "pupil": "matrix(1, 0, 0, 1, 1.79688, -0.359375)",
+          "eyewear": "matrix(1, 0, 0, 1, 0, 0)",
+          "face": "matrix(1, 0, 0, 1, 0, 0)",
+          "pupil": "matrix(1, 0, 0, 1, 0, 0)",
           "blink": "open",
           "eyesHidden": false,
           "lidsHidden": true,
@@ -746,8 +762,8 @@
           "restingPupils": [
             {
               "actual": [
-                136.3913035372327,
-                141.45218349997035
+                132.89130486892185,
+                142.1521724662742
               ],
               "expected": [
                 132.92481095734055,
@@ -756,8 +772,8 @@
             },
             {
               "actual": [
-                193.58696862274044,
-                141.45218349997035
+                190.08695930091648,
+                142.1521724662742
               ],
               "expected": [
                 190.1275390374788,
@@ -767,7 +783,7 @@
           ],
           "eyeLogicalWidth": 39.877300613496935,
           "pupilWidth": 15.023345947265625,
-          "eyeWidth": 28.5521240234375,
+          "eyeWidth": 28.552154541015625,
           "pupilMask": true,
           "opaque": true,
           "opacityTracks": false
@@ -783,7 +799,8 @@
             "animations": 0
           },
           "head": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
-          "face": "matrix(1, 0, 0, 1, -0.592676, 0.165949)",
+          "eyewear": "matrix(1, 0, 0, 1, 0.0436641, -0.00698625)",
+          "face": "matrix(1, 0, 0, 1, 0.0436641, -0.00698625)",
           "pupil": "none",
           "blink": "closed",
           "eyesHidden": true,
@@ -831,8 +848,9 @@
           "animations": 0
         },
         "head": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
-        "face": "matrix(1, 0, 0, 1, 0.71875, -0.14375)",
-        "pupil": "matrix(1, 0, 0, 1, 1.79688, -0.359375)",
+        "eyewear": "matrix(1, 0, 0, 1, 0, 0)",
+        "face": "matrix(1, 0, 0, 1, 0, 0)",
+        "pupil": "matrix(1, 0, 0, 1, 0, 0)",
         "blink": "open",
         "eyesHidden": false,
         "lidsHidden": true,
@@ -841,8 +859,8 @@
         "restingPupils": [
           {
             "actual": [
-              136.3912949108759,
-              141.45216350316397
+              132.89129651469256,
+              142.1521736442631
             ],
             "expected": [
               132.92481095734055,
@@ -851,8 +869,8 @@
           },
           {
             "actual": [
-              193.58694664315829,
-              141.45216350316397
+              190.08694824697494,
+              142.1521736442631
             ],
             "expected": [
               190.1275390374788,
@@ -882,6 +900,7 @@
             "animations": 0
           },
           "head": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "eyewear": "matrix(1, 0, 0, 1, 0, 0)",
           "face": "matrix(1, 0, 0, 1, 0, 0)",
           "pupil": "matrix(1, 0, 0, 1, 0, 0)",
           "blink": "open",
@@ -919,7 +938,7 @@
           "opacityTracks": false
         },
         {
-          "artHeight": 51.370330810546875,
+          "artHeight": 51.014923095703125,
           "background": {
             "x": 350,
             "y": 470.65625,
@@ -929,8 +948,9 @@
             "animations": 0
           },
           "head": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
-          "face": "matrix(1, 0, 0, 1, 0.1625, -0.0325)",
-          "pupil": "matrix(1, 0, 0, 1, 0.40625, -0.08125)",
+          "eyewear": "matrix(1, 0, 0, 1, 0.1625, -0.026)",
+          "face": "matrix(1, 0, 0, 1, 0.1625, -0.026)",
+          "pupil": "matrix(1, 0, 0, 1, 0.40625, -0.065)",
           "blink": "open",
           "eyesHidden": false,
           "lidsHidden": true,
@@ -939,8 +959,8 @@
           "restingPupils": [
             {
               "actual": [
-                136.28846717942497,
-                141.3192039698141
+                136.28848601034557,
+                141.45916297422258
               ],
               "expected": [
                 132.92481095734055,
@@ -949,8 +969,8 @@
             },
             {
               "actual": [
-                193.50004064212197,
-                141.3192039698141
+                193.49999881953806,
+                141.45916297422258
               ],
               "expected": [
                 190.1275390374788,
@@ -959,14 +979,14 @@
             }
           ],
           "eyeLogicalWidth": 39.877300613496935,
-          "pupilWidth": 3.393890380859375,
-          "eyeWidth": 6.44525146484375,
+          "pupilWidth": 3.386871337890625,
+          "eyeWidth": 6.4320068359375,
           "pupilMask": true,
           "opaque": true,
           "opacityTracks": false
         },
         {
-          "artHeight": 51.3199462890625,
+          "artHeight": 51.116729736328125,
           "background": {
             "x": 350,
             "y": 470.65625,
@@ -976,18 +996,19 @@
             "animations": 0
           },
           "head": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
-          "face": "matrix(1, 0, 0, 1, -0.1625, 0.0455)",
-          "pupil": "matrix(1, 0, 0, 1, -0.40625, 0.11375)",
-          "blink": "open",
-          "eyesHidden": false,
-          "lidsHidden": true,
+          "eyewear": "matrix(1, 0, 0, 1, -0.1235, -0.052)",
+          "face": "matrix(1, 0, 0, 1, -0.1235, -0.052)",
+          "pupil": "none",
+          "blink": "closed",
+          "eyesHidden": true,
+          "lidsHidden": false,
           "oldStillHidden": true,
           "mask": "url(\"http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
           "restingPupils": [
             {
               "actual": [
-                129.28848431285903,
-                142.9990985055172
+                -2165.698928536878,
+                -2950.817155653785
               ],
               "expected": [
                 132.92481095734055,
@@ -996,8 +1017,8 @@
             },
             {
               "actual": [
-                186.50009132420092,
-                142.9990985055172
+                -2165.698928536878,
+                -2950.817155653785
               ],
               "expected": [
                 190.1275390374788,
@@ -1006,8 +1027,8 @@
             }
           ],
           "eyeLogicalWidth": 39.877300613496935,
-          "pupilWidth": 3.39288330078125,
-          "eyeWidth": 6.443359375,
+          "pupilWidth": 0,
+          "eyeWidth": 0,
           "pupilMask": true,
           "opaque": true,
           "opacityTracks": false
@@ -1023,7 +1044,8 @@
             "animations": 0
           },
           "head": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
-          "face": "matrix(1, 0, 0, 1, -0.133996, 0.037519)",
+          "eyewear": "matrix(1, 0, 0, 1, 0.00987189, -0.0015795)",
+          "face": "matrix(1, 0, 0, 1, 0.00987187, -0.0015795)",
           "pupil": "none",
           "blink": "closed",
           "eyesHidden": true,
@@ -1070,8 +1092,9 @@
             "animations": 0
           },
           "head": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
-          "face": "matrix(1, 0, 0, 1, -0.0253906, 0.00710938)",
-          "pupil": "matrix(1, 0, 0, 1, -0.0634766, 0.0177734)",
+          "eyewear": "matrix(1, 0, 0, 1, 0.0473761, -0.0075802)",
+          "face": "matrix(1, 0, 0, 1, 0.0473761, -0.00758018)",
+          "pupil": "matrix(1, 0, 0, 1, 0.11844, -0.0189504)",
           "blink": "open",
           "eyesHidden": false,
           "lidsHidden": true,
@@ -1080,8 +1103,8 @@
           "restingPupils": [
             {
               "actual": [
-                132.24155066062656,
-                142.17237548181396
+                133.80883022947833,
+                141.85607351676646
               ],
               "expected": [
                 132.92481095734055,
@@ -1090,8 +1113,8 @@
             },
             {
               "actual": [
-                189.45320374964888,
-                142.17237548181396
+                191.0204833185006,
+                141.85607351676646
               ],
               "expected": [
                 190.1275390374788,
@@ -1119,6 +1142,7 @@
             "animations": 0
           },
           "head": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "eyewear": "matrix(1, 0, 0, 1, 0, 0)",
           "face": "matrix(1, 0, 0, 1, 0, 0)",
           "pupil": "matrix(1, 0, 0, 1, 0, 0)",
           "blink": "open",
@@ -1166,8 +1190,9 @@
             "animations": 0
           },
           "head": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
-          "face": "matrix(1, 0, 0, 1, 0.96875, -0.19375)",
-          "pupil": "matrix(1, 0, 0, 1, 2.42188, -0.484375)",
+          "eyewear": "matrix(1, 0, 0, 1, 0, 0)",
+          "face": "matrix(1, 0, 0, 1, 0, 0)",
+          "pupil": "matrix(1, 0, 0, 1, 0, 0)",
           "blink": "open",
           "eyesHidden": false,
           "lidsHidden": true,
@@ -1176,8 +1201,8 @@
           "restingPupils": [
             {
               "actual": [
-                136.40323219357117,
-                141.47742267866593
+                132.90324365468993,
+                142.17741580277965
               ],
               "expected": [
                 132.92481095734055,
@@ -1186,8 +1211,8 @@
             },
             {
               "actual": [
-                193.59680732752796,
-                141.47742267866593
+                190.0967871717674,
+                142.17741580277965
               ],
               "expected": [
                 190.1275390374788,
@@ -1213,7 +1238,8 @@
             "animations": 0
           },
           "head": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
-          "face": "matrix(1, 0, 0, 1, -0.798824, 0.223671)",
+          "eyewear": "matrix(1, 0, 0, 1, 0.0588516, -0.00941625)",
+          "face": "matrix(1, 0, 0, 1, 0.0588516, -0.00941625)",
           "pupil": "none",
           "blink": "closed",
           "eyesHidden": true,
@@ -1261,8 +1287,9 @@
           "animations": 0
         },
         "head": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
-        "face": "matrix(1, 0, 0, 1, 0.96875, -0.19375)",
-        "pupil": "matrix(1, 0, 0, 1, 2.42188, -0.484375)",
+        "eyewear": "matrix(1, 0, 0, 1, 0, 0)",
+        "face": "matrix(1, 0, 0, 1, 0, 0)",
+        "pupil": "matrix(1, 0, 0, 1, 0, 0)",
         "blink": "open",
         "eyesHidden": false,
         "lidsHidden": true,
@@ -1271,8 +1298,8 @@
         "restingPupils": [
           {
             "actual": [
-              136.40321122023195,
-              141.47742707243492
+              132.90321915308826,
+              142.17742262116965
             ],
             "expected": [
               132.92481095734055,
@@ -1281,8 +1308,8 @@
           },
           {
             "actual": [
-              193.59677291405544,
-              141.47742707243492
+              190.09673324977393,
+              142.17742262116965
             ],
             "expected": [
               190.1275390374788,
@@ -1291,8 +1318,8 @@
           }
         ],
         "eyeLogicalWidth": 39.877300613496935,
-        "pupilWidth": 20.181182861328125,
-        "eyeWidth": 38.345733642578125,
+        "pupilWidth": 20.18115234375,
+        "eyeWidth": 38.34576416015625,
         "pupilMask": true,
         "opaque": true,
         "opacityTracks": false
@@ -1312,6 +1339,7 @@
             "animations": 0
           },
           "head": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "eyewear": "matrix(1, 0, 0, 1, 0, 0)",
           "face": "matrix(1, 0, 0, 1, 0, 0)",
           "pupil": "matrix(1, 0, 0, 1, 0, 0)",
           "blink": "open",
@@ -1349,7 +1377,7 @@
           "opacityTracks": false
         },
         {
-          "artHeight": 51.370330810546875,
+          "artHeight": 51.014923095703125,
           "background": {
             "x": 414,
             "y": 499.78125,
@@ -1359,8 +1387,9 @@
             "animations": 0
           },
           "head": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
-          "face": "matrix(1, 0, 0, 1, 0.1625, -0.0325)",
-          "pupil": "matrix(1, 0, 0, 1, 0.40625, -0.08125)",
+          "eyewear": "matrix(1, 0, 0, 1, 0.1625, -0.026)",
+          "face": "matrix(1, 0, 0, 1, 0.1625, -0.026)",
+          "pupil": "matrix(1, 0, 0, 1, 0.40625, -0.065)",
           "blink": "open",
           "eyesHidden": false,
           "lidsHidden": true,
@@ -1369,8 +1398,8 @@
           "restingPupils": [
             {
               "actual": [
-                136.28846717942497,
-                141.31910891859636
+                136.28848601034557,
+                141.4592586876375
               ],
               "expected": [
                 132.92481095734055,
@@ -1379,8 +1408,8 @@
             },
             {
               "actual": [
-                193.50004064212197,
-                141.31910891859636
+                193.49999881953806,
+                141.4592586876375
               ],
               "expected": [
                 190.1275390374788,
@@ -1389,14 +1418,14 @@
             }
           ],
           "eyeLogicalWidth": 39.877300613496935,
-          "pupilWidth": 3.393890380859375,
-          "eyeWidth": 6.44525146484375,
+          "pupilWidth": 3.386871337890625,
+          "eyeWidth": 6.4320068359375,
           "pupilMask": true,
           "opaque": true,
           "opacityTracks": false
         },
         {
-          "artHeight": 51.3199462890625,
+          "artHeight": 51.116729736328125,
           "background": {
             "x": 414,
             "y": 499.78125,
@@ -1406,18 +1435,19 @@
             "animations": 0
           },
           "head": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
-          "face": "matrix(1, 0, 0, 1, -0.1625, 0.0455)",
-          "pupil": "matrix(1, 0, 0, 1, -0.40625, 0.11375)",
-          "blink": "open",
-          "eyesHidden": false,
-          "lidsHidden": true,
+          "eyewear": "matrix(1, 0, 0, 1, -0.1235, -0.052)",
+          "face": "matrix(1, 0, 0, 1, -0.1235, -0.052)",
+          "pupil": "none",
+          "blink": "closed",
+          "eyesHidden": true,
+          "lidsHidden": false,
           "oldStillHidden": true,
           "mask": "url(\"http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png\")",
           "restingPupils": [
             {
               "actual": [
-                129.28848431285903,
-                142.99919365005363
+                -2561.5625759474106,
+                -3133.144938516161
               ],
               "expected": [
                 132.92481095734055,
@@ -1426,8 +1456,8 @@
             },
             {
               "actual": [
-                186.50009132420092,
-                142.99919365005363
+                -2561.5625759474106,
+                -3133.144938516161
               ],
               "expected": [
                 190.1275390374788,
@@ -1436,8 +1466,8 @@
             }
           ],
           "eyeLogicalWidth": 39.877300613496935,
-          "pupilWidth": 3.39288330078125,
-          "eyeWidth": 6.443359375,
+          "pupilWidth": 0,
+          "eyeWidth": 0,
           "pupilMask": true,
           "opaque": true,
           "opacityTracks": false
@@ -1453,7 +1483,8 @@
             "animations": 0
           },
           "head": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
-          "face": "matrix(1, 0, 0, 1, -0.133996, 0.037519)",
+          "eyewear": "matrix(1, 0, 0, 1, 0.00987189, -0.0015795)",
+          "face": "matrix(1, 0, 0, 1, 0.00987187, -0.0015795)",
           "pupil": "none",
           "blink": "closed",
           "eyesHidden": true,
@@ -1500,8 +1531,9 @@
             "animations": 0
           },
           "head": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
-          "face": "matrix(1, 0, 0, 1, -0.0253906, 0.00710938)",
-          "pupil": "matrix(1, 0, 0, 1, -0.0634766, 0.0177734)",
+          "eyewear": "matrix(1, 0, 0, 1, 0.0473761, -0.0075802)",
+          "face": "matrix(1, 0, 0, 1, 0.0473761, -0.00758018)",
+          "pupil": "matrix(1, 0, 0, 1, 0.11844, -0.0189504)",
           "blink": "open",
           "eyesHidden": false,
           "lidsHidden": true,
@@ -1510,8 +1542,8 @@
           "restingPupils": [
             {
               "actual": [
-                132.24155066062656,
-                142.1722798066884
+                133.80883022947833,
+                141.85597784164094
               ],
               "expected": [
                 132.92481095734055,
@@ -1520,8 +1552,8 @@
             },
             {
               "actual": [
-                189.45320374964888,
-                142.1722798066884
+                191.0204833185006,
+                141.85597784164094
               ],
               "expected": [
                 190.1275390374788,
@@ -1549,6 +1581,7 @@
             "animations": 0
           },
           "head": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
+          "eyewear": "matrix(1, 0, 0, 1, 0, 0)",
           "face": "matrix(1, 0, 0, 1, 0, 0)",
           "pupil": "matrix(1, 0, 0, 1, 0, 0)",
           "blink": "open",
@@ -1596,8 +1629,9 @@
             "animations": 0
           },
           "head": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
-          "face": "matrix(1, 0, 0, 1, 0.96875, -0.19375)",
-          "pupil": "matrix(1, 0, 0, 1, 2.42188, -0.484375)",
+          "eyewear": "matrix(1, 0, 0, 1, 0, 0)",
+          "face": "matrix(1, 0, 0, 1, 0, 0)",
+          "pupil": "matrix(1, 0, 0, 1, 0, 0)",
           "blink": "open",
           "eyesHidden": false,
           "lidsHidden": true,
@@ -1606,8 +1640,8 @@
           "restingPupils": [
             {
               "actual": [
-                136.40321638513154,
-                141.47742267866593
+                132.90322784625027,
+                142.17741580277965
               ],
               "expected": [
                 132.92481095734055,
@@ -1616,8 +1650,8 @@
             },
             {
               "actual": [
-                193.5967915190883,
-                141.47742267866593
+                190.09677136332772,
+                142.17741580277965
               ],
               "expected": [
                 190.1275390374788,
@@ -1643,7 +1677,8 @@
             "animations": 0
           },
           "head": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
-          "face": "matrix(1, 0, 0, 1, -0.798824, 0.223671)",
+          "eyewear": "matrix(1, 0, 0, 1, 0.0588516, -0.00941625)",
+          "face": "matrix(1, 0, 0, 1, 0.0588516, -0.00941625)",
           "pupil": "none",
           "blink": "closed",
           "eyesHidden": true,
@@ -1691,8 +1726,9 @@
           "animations": 0
         },
         "head": "http://127.0.0.1:8898/Horizons/App/assets/art/avatar-face-v2/blank-heads.png",
-        "face": "matrix(1, 0, 0, 1, 0.96875, -0.19375)",
-        "pupil": "matrix(1, 0, 0, 1, 2.42188, -0.484375)",
+        "eyewear": "matrix(1, 0, 0, 1, 0, 0)",
+        "face": "matrix(1, 0, 0, 1, 0, 0)",
+        "pupil": "matrix(1, 0, 0, 1, 0, 0)",
         "blink": "open",
         "eyesHidden": false,
         "lidsHidden": true,
@@ -1701,8 +1737,8 @@
         "restingPupils": [
           {
             "actual": [
-              136.40322708594456,
-              141.47742707243492
+              132.90323501880087,
+              142.17742262116965
             ],
             "expected": [
               132.92481095734055,
@@ -1711,8 +1747,8 @@
           },
           {
             "actual": [
-              193.59678877976805,
-              141.47742707243492
+              190.09674911548655,
+              142.17742262116965
             ],
             "expected": [
               190.1275390374788,
@@ -1721,14 +1757,16 @@
           }
         ],
         "eyeLogicalWidth": 39.877300613496935,
-        "pupilWidth": 20.181182861328125,
-        "eyeWidth": 38.345733642578125,
+        "pupilWidth": 20.18115234375,
+        "eyeWidth": 38.34576416015625,
         "pupilMask": true,
         "opaque": true,
         "opacityTracks": false
       }
     }
   ],
+  "glassesFollowFace": true,
+  "variedGazeCycleMs": 30000,
   "separateGeneratedBlankAndFeatures": true,
   "naturalClockBlink": true,
   "pupilLogicalWidth": 21,

@@ -1,4 +1,4 @@
-import {mountAvatarMotion} from './avatar-motion.js?v=face4';
+import {mountAvatarMotion} from './avatar-motion.js?v=face5';
 /* Native bitmap portraits; only the editor and selected path portrait opt into motion. */
 const mounts=new WeakMap();
 const appURL=new URL('../',import.meta.url);
@@ -21,7 +21,7 @@ export function mountAvatar(element,{avatar={},manifest}={}){
   function layer(asset,part){if(!asset)return;const f=asset.frame,original=asset.position,isClothes=part==='clothes'||part==='clothes-overlay',p=isClothes?{...original,x:160+(original.x-160)*1.06,w:original.w*1.06}:original,node=document.createElement('span');node.className='hzn-avatar-static-pixels';node.dataset.staticPart=part;node.dataset.nativeFrame=JSON.stringify(f);node.dataset.nativeAtlas=JSON.stringify(asset.atlas);node.style.cssText=`left:${p.x/3.2}%;top:${p.y/3.2}%;width:${p.w/3.2}%;height:${p.w*f.h/f.w/3.2}%;z-index:${p.z}`;const img=document.createElement('img');img.alt='';img.draggable=false;img.decoding='async';img.src=new URL(asset.src,appURL).href;img.style.cssText=`width:${asset.atlas.width/f.w*100}%;height:${asset.atlas.height/f.h*100}%;left:${-f.x/f.w*100}%;top:${-f.y/f.h*100}%`;if(isClothes)node.style.clipPath=`circle(50cqw at ${(160-p.x)/3.2}cqw ${(160-p.y)/3.2}cqw)`;if(part==='hair'){const color=manifest?.avatar?.hairColor?.find(c=>c.id===avatar.hairColor)?.swatch;if(color&&avatar.hairColor!=='color-original'){img.style.setProperty('filter','url(#'+hairFilter(color)+')','important');node.dataset.hairColor=avatar.hairColor;}}node.append(img);idle.append(node);return node;}
   const clothes=data.clothes[avatar.outfit]||data.clothes['outfit-1'];
   const active=!!element.closest('#avatar-preview,.path-player');
-  const fallback=layer(skin,active?'still-fallback':'head');let blank,face,eyes,closed,pupils=[];
+  const fallback=layer(skin,active?'still-fallback':'head');let blank,face,eyes,closed,eyewear,pupils=[];
   layer(clothes,'clothes');
   for(const overlay of clothes.overlays||[])layer(overlay,'clothes-overlay');
   layer(data.hair[avatar.hair],'hair');
@@ -30,7 +30,7 @@ export function mountAvatar(element,{avatar={},manifest}={}){
    const [left,right]=skin.eyeCenters,[lensLeft,lensRight]=extra.lensCenters;
    const scale=(right[0]-left[0])/(lensRight[0]-lensLeft[0]);
    const position={x:left[0]-lensLeft[0]*scale,y:(left[1]+right[1])/2-(lensLeft[1]+lensRight[1])/2*scale,w:extra.frame.w*scale,z:6};
-   layer({...extra,position},'eyewear');
+   eyewear=layer({...extra,position},'eyewear');
   }
   const groups=manifest?.avatar?.groups||manifest?.avatar?.layers||manifest?.avatar;
   const pins=groups?.badge,options=Array.isArray(pins)?pins:pins?.options;
@@ -64,7 +64,7 @@ export function mountAvatar(element,{avatar={},manifest}={}){
    sprite('nose',face,153.5,147,13,22);sprite('mouth',face,143,179,34,11);
    controller.faceReady=Promise.all([blank.querySelector('img'),...clip.querySelectorAll('img')].map(img=>img.decode())).then(()=>{if(disposed)return false;fallback.hidden=true;blank.hidden=false;clip.hidden=false;frame.dataset.faceRig='faceless-v2';return true;}).catch(()=>{frame.dataset.avatarMotion='fallback';return false;});
   }
-  frame.dataset.ready='true';frame.dataset.rigReady='true';if(active&&await controller.faceReady&&!disposed){controller.motion='minimal';controller.motionController=mountAvatarMotion(element,{frame,idle,feedback,face,eyes,closed,pupils});await controller.motionController.ready;}return controller;
+  frame.dataset.ready='true';frame.dataset.rigReady='true';if(active&&await controller.faceReady&&!disposed){controller.motion='minimal';controller.motionController=mountAvatarMotion(element,{frame,idle,feedback,face,eyes,closed,pupils,eyewear});await controller.motionController.ready;}return controller;
  }).catch(error=>{if(!disposed){element.dataset.avatarError='true';console.error(error);}throw error;});
  return controller;
 }

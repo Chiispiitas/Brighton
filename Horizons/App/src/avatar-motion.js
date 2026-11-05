@@ -4,20 +4,21 @@ export function requestAvatarFeedback(element,kind='select'){
  if(!element)return;element.dataset.pendingAvatarFeedback=kind;
  element.dispatchEvent(new CustomEvent('hzn-avatar-feedback',{detail:kind}));
 }
-export function mountAvatarMotion(element,{frame,idle,feedback,face,eyes,closed,pupils}){
+export function mountAvatarMotion(element,{frame,idle,feedback,face,eyes,closed,pupils,eyewear}){
  mounts.get(element)?.dispose();
  const reduced=matchMedia('(prefers-reduced-motion: reduce)'),input=new AbortController();
  let disposed=false,visible=false,ready=false,raf=0,idleAnimation,effect;
- const gaze=(x=0,y=0)=>{face.style.transform=`translate(${x*.4/3.2}cqw,${y*.4/3.2}cqw)`;for(const pupil of pupils)pupil.style.transform=`translate(${x/3.2}cqw,${y/3.2}cqw)`;};
+ const gaze=(x=0,y=0)=>{face.style.transform=`translate(${x*.4/3.2}cqw,${y*.4/3.2}cqw)`;if(eyewear)eyewear.style.transform=face.style.transform;for(const pupil of pupils)pupil.style.transform=`translate(${x/3.2}cqw,${y/3.2}cqw)`;};
  const reset=()=>{eyes.hidden=false;closed.hidden=true;gaze();frame.dataset.avatarBlink='open';};
  const draw=()=>{
   if(disposed)return;
   if(!visible||document.hidden||reduced.matches){sync();return;}
   const t=(idleAnimation?.currentTime||0)%5200,blink=t>=4200&&t<4340;
   eyes.hidden=blink;closed.hidden=!blink;frame.dataset.avatarBlink=blink?'closed':'open';
-  // Rest, glance right, settle, glance left, settle. A shared clock also drives blinking.
-  const keys=[[0,0,0],[800,0,0],[1350,2.5,-.5],[2100,2.5,-.5],[2550,0,0],[3050,0,0],[3550,-2.5,.7],[4050,-2.5,.7],[4650,0,0],[5200,0,0]];
-  const next=keys.findIndex(k=>k[0]>t),a=keys[Math.max(0,next-1)],b=keys[next]||keys.at(-1),u=(t-a[0])/(b[0]-a[0]||1),e=u*u*(3-2*u);
+  // Longer rests and slower, unequal glances; breathing/blinking retain their own period.
+  const lookTime=(idleAnimation?.currentTime||0)%30000;
+  const keys=[[0,0,0],[4000,0,0],[5400,2.5,-.4],[6500,2.5,-.4],[8200,0,0],[12400,0,0],[14200,-1.9,-.8],[15300,-1.9,-.8],[16900,0,0],[23200,0,0],[24800,1.1,1.2],[25700,1.1,1.2],[27600,0,0],[30000,0,0]];
+  const next=keys.findIndex(k=>k[0]>lookTime),a=keys[Math.max(0,next-1)],b=keys[next]||keys.at(-1),u=(lookTime-a[0])/(b[0]-a[0]||1),e=u*u*(3-2*u);
   gaze(a[1]+(b[1]-a[1])*e,a[2]+(b[2]-a[2])*e);
   raf=requestAnimationFrame(draw);
  };

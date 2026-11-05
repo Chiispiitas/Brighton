@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "createdAt": "2026-11-05T20:18:38.591Z",
-  "sourceCommit": "3fc492c9d73303171808bc97148d2a5b06e30fd0",
+  "createdAt": "2026-11-05T20:26:14.842Z",
+  "sourceCommit": "59182fe6757a29ead737f16356b5ef7f1b3d947f",
   "maximumImageInputs": 7,
   "method": "Browser contact sheets of current native ImageGen artwork; labels and color chips are reference presentation, not new illustration generation.",
   "sources": [
@@ -15,11 +15,11 @@
     },
     {
       "file": "src/art.js",
-      "sha256": "92438f2cb0f6e81bb7e37e8de082e6d00c5b012585714deb0144ca8720ac3234"
+      "sha256": "9f85830da60075623ccb0aef22ab9eae1736ec937d520b0b1b95aeb79a6ffd95"
     },
     {
       "file": "src/avatar-static.js",
-      "sha256": "bc99b46e1dcd697d337382ebc14345bf82b5b419db8106e8b0683f58a7519517"
+      "sha256": "005abbf2a5c8ee7a29eab6d64afc1c7f731e42723ee0538e8bd2fdfa7b60601f"
     },
     {
       "file": "styles/app.css",
@@ -95,7 +95,7 @@
     },
     {
       "file": "src/avatar-motion.js",
-      "sha256": "a06e163b9fc0e4ca937cdea382742723bae874c07c56bfe18aa41f296884ff19"
+      "sha256": "7992775e58db2ffa5339d2cd34afe4117ca0ae89adf622bed103de3783901a77"
     },
     {
       "file": "assets/art/avatar-face-v2/blank-heads.png",
