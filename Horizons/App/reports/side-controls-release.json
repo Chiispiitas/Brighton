@@ -1,0 +1,42 @@
+{
+  "runtimeRevision": "bc35774e1f502059ab7aabcbb02a1db105b65049",
+  "url": "https://exams.bebrighton.net/Horizons/App/",
+  "pass": true,
+  "matchedChangedRuntimeFiles": [
+    {
+      "file": "index.html",
+      "sha256": "c0a4e942d9b5a2e00e076b55efc60efcc9e9735db67f9d795172f74e08365653",
+      "matches": true
+    },
+    {
+      "file": "service-worker.js",
+      "sha256": "0b33c9459c1ebdad0c279770ba6abae6c7aee518f91a41e7ddd2ae78b8f71bb1",
+      "matches": true
+    },
+    {
+      "file": "src/app.js",
+      "sha256": "f8fa9af62813758ce85f28e4334c2f137f7ae247e7827ecd6326aa25b28f9f69",
+      "matches": true
+    },
+    {
+      "file": "src/art.js",
+      "sha256": "13d11d49c1796ed7445e03b9cf222ed771c1ba6399b33c38319e8b8161570fa3",
+      "matches": true
+    },
+    {
+      "file": "src/studio-ui.js",
+      "sha256": "b4f1d272da8899a3ecfe248f805a5a0ce651b676d579a8f3b1985ecc501c3ca9",
+      "matches": true
+    },
+    {
+      "file": "styles/overworld.css",
+      "sha256": "9aa2ecc680346b8381012b667970f1aec2d417f7b28808abef89a336f1e6d9be",
+      "matches": true
+    }
+  ],
+  "localGeometry": "reports/side-controls-proof.json",
+  "hostedNavigation": "reports/side-controls-navigation-hosted.json",
+  "placement": "44px left/right side columns, aligned with trail center, outside island hit areas",
+  "pagesRun": 42071088307,
+  "artContentBackendChanges": false
+}
