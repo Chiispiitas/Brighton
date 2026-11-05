@@ -52,3 +52,5 @@ The [app audit](APP-AUDIT.md) records the static design decision and supersedes 
 - Keep the client content engine and backend copy synchronized with `backend/scripts/sync-content.mjs` before content/backend redeployment. This visual edition changes neither.
 
 Credentials, dependencies and unrelated book changes stay excluded. The abandoned selective-animation pass is preserved separately in Git stash d935ff2b4abb68181a6bca3a6d4661f81a2a43da; the last published baseline is bbd859f.
+
+The eyewear correction replaces the mixed accessory list with None, round glasses, rectangular glasses and sunglasses. New ImageGen art and exact prompts: [eyewear provenance](assets/art/avatar-eyewear.provenance.json). Lens positions follow each native face’s eye centers. Retired bag/scarf/backpack slots4–6 display as None; other profile fields are preserved. Slots1–3 are the current eyewear choices. The old static-release reports describe the preceding accessory set; current evidence is in [eyewear review](reports/eyewear-review.json).

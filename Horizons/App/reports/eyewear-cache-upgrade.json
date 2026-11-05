@@ -1,0 +1,922 @@
+{
+  "date": "2026-11-05T00:12:59.642Z",
+  "base": "http://127.0.0.1:8898/Horizons/App/",
+  "baselineCommit": "8556be7",
+  "baselineCache": "horizons-companion-static-v9",
+  "currentCache": "horizons-companion-eyewear-v10",
+  "scope": "Actual committed previous friendly renderer and service-worker Cache Storage installed, then replaced through the real update/activate/controller lifecycle by the current complete-still artwork release. Reserved isolated QA profile; no activity awards or profile edits.",
+  "sourceReference": {
+    "kind": "working-tree",
+    "comparison": "Exact working-tree source and binary bytes."
+  },
+  "currentSourceHashes": {
+    "index.html": "98f25de25e4e929027c1a0c521d88377b1c1bb831b56350dc03ee1f06126f1e2",
+    "manifest.webmanifest": "55db46a4c79dfd20a17e7c3027fc7424e6d7cf7a239a94cb6104f6a230e4533b",
+    "styles/app.css": "67e2e21c6ceeea54403255307c43c84d6d77a3cf4fdb1adda6c9391d3e241f1e",
+    "src/app.js": "f2013a22a22d54d5bea443b7e3daa672aa67ed67dcaf151fb0c85d7bb911518c",
+    "src/art.js": "d958e067603ff7b1c1fbf144fcf748f447d59ea80b31b5e918857021cb30c2dd",
+    "src/avatar-static.js": "127ea3b2a4f0f82d840d52f8c9814d883a4f52fe127ecc0d42126d49881e3fdf",
+    "service-worker.js": "fac0dcee8250888d3a17754d2436acb5a8b9ead0135ce62efa101675f5db80a5",
+    "assets/art/manifest.json": "8cdc5343f3655b7fc95ce5e2b33ef13cd332460afcd3384bd6877938e2059819",
+    "assets/art/avatar-static-v1.frames.json": "57937e4e5134aff24ff70ed93755e95bcf09a70676be54fefa037d09954fc186",
+    "assets/art/cast-static-pico-v2.png": "6cc557478d70cb3ddbdd893d67bf09fa1236ca327c2384b06ac31ae141beb148",
+    "assets/art/cast-static-mina-v2.png": "163449ffe9a3566390a5e196b976a420e3eb58e5f409d4c101a76d82f81bdfc9",
+    "assets/art/cast-static-alex-v3.png": "86d6441f1062824451a8aa3cf0a43de137b2aaa17a42cd179561efa7cf227825",
+    "assets/art/cast-static-jo-v3.png": "e14e81e2a1912b24702f4fd1a4222f8ec8c6814649c31d624464a0fd06cdc10b",
+    "assets/art/avatar-static-heads-v2.png": "79f254047f5541326288ba948051aa82d576f47af105f3eda1c50caab6464779",
+    "assets/art/avatar-static-clothes-v1.png": "38c59629065fbc10c6ec5d723c8d89f4630afb859c89699c7581f7b662e8180d",
+    "assets/art/avatar-static-hair-v1.png": "c73a9e78139d3ceaf1c6b6cd61392835ebb3c82f13fbb222ccaae0edc9166e97",
+    "assets/art/avatar-eyewear-v2.png": "9c7be98f01de71709ed96d89a0a1cb3fc655a7c5e3c40f21f04c385b699920a1",
+    "assets/art/ui-static-v1.png": "fdbf04030127b6a1d6a7061a72b765a540cc25ec732eb4343a639ce7f11e1b42",
+    "assets/art/town-static-v1.png": "2f71a7437854f4062e1d1c04d0c54805f88ff252da4eb5276b737c19957334ba",
+    "assets/art/jobs-static-1-v2.png": "fb6a01224a140eb3f064a1a07cb9711fd10c2def0d4dfaa6f17c33263bc096d3",
+    "assets/art/jobs-static-4-v2.png": "17e6ac1258161ebf5dcca92143d18b95bf29853249baefe7b0ec85a0edaef87d",
+    "assets/art/jobs-static-2-v2.png": "4308ef795398ad9feebbe54bf7179d1b0f37742b4f0dd862e01f8df42e558da4",
+    "assets/art/jobs-static-3-v3.png": "1947efd87948efe32ea2ff300706d782d917c7461e6af7c8c7938abf0be809c1"
+  },
+  "steps": [
+    {
+      "name": "old-worker-and-exact-old-art-really-installed",
+      "cacheNames": [
+        "horizons-companion-static-v9"
+      ],
+      "controller": true,
+      "oldArtHash": "6da7793a501252ef545dfe5144eb007d32c3d69f24bba61cc44ab33652eacc99",
+      "pass": true
+    },
+    {
+      "name": "new-static-worker-activated-and-old-cache-removed",
+      "cacheNames": [
+        "horizons-companion-eyewear-v10"
+      ],
+      "pass": true
+    },
+    {
+      "name": "current-static-source-and-art-loaded-after-real-update",
+      "runningAnimations": 0,
+      "legacySystems": 0,
+      "modules": [
+        {
+          "path": "src/app.js",
+          "version": "eyewear1"
+        },
+        {
+          "path": "src/api-client.js",
+          "version": null
+        },
+        {
+          "path": "src/art.js",
+          "version": "eyewear1"
+        },
+        {
+          "path": "src/avatar-static.js",
+          "version": "eyewear1"
+        }
+      ],
+      "stills": [
+        {
+          "selector": ".character[data-character=pico]",
+          "initialState": {
+            "fonts": "loaded",
+            "rect": {
+              "x": 986,
+              "y": 156.828125,
+              "width": 230,
+              "height": 300
+            },
+            "animations": 0,
+            "images": [
+              {
+                "x": 643.3046875,
+                "y": 147.046875,
+                "width": 646.34375,
+                "height": 646.390625,
+                "left": "-393.781px",
+                "top": "-9.78125px"
+              }
+            ]
+          },
+          "beforeState": {
+            "fonts": "loaded",
+            "rect": {
+              "x": 986,
+              "y": 156.828125,
+              "width": 230,
+              "height": 300
+            },
+            "animations": 0,
+            "images": [
+              {
+                "x": 643.3046875,
+                "y": 147.046875,
+                "width": 646.34375,
+                "height": 646.390625,
+                "left": "-393.781px",
+                "top": "-9.78125px"
+              }
+            ]
+          },
+          "afterState": {
+            "fonts": "loaded",
+            "rect": {
+              "x": 986,
+              "y": 156.828125,
+              "width": 230,
+              "height": 300
+            },
+            "animations": 0,
+            "images": [
+              {
+                "x": 643.3046875,
+                "y": 147.046875,
+                "width": 646.34375,
+                "height": 646.390625,
+                "left": "-393.781px",
+                "top": "-9.78125px"
+              }
+            ]
+          },
+          "initialSha256": "5d2ec4f59b4266aa58fa8963a5713253d4b1e5fd7344615dabb5d6a2028fb24f",
+          "readySha256": "5d2ec4f59b4266aa58fa8963a5713253d4b1e5fd7344615dabb5d6a2028fb24f",
+          "afterSha256": "5d2ec4f59b4266aa58fa8963a5713253d4b1e5fd7344615dabb5d6a2028fb24f",
+          "initialChangedBeforeReadiness": false,
+          "unchangedAfterReadyAnd1100ms": true
+        },
+        {
+          "selector": ".character[data-character=mina]",
+          "initialState": {
+            "fonts": "loaded",
+            "rect": {
+              "x": 873,
+              "y": 706.421875,
+              "width": 92,
+              "height": 120
+            },
+            "animations": 0,
+            "images": [
+              {
+                "x": 837.1640625,
+                "y": 699.46875,
+                "width": 272.59375,
+                "height": 272.59375,
+                "left": "-50.8594px",
+                "top": "-6.95312px"
+              }
+            ]
+          },
+          "beforeState": {
+            "fonts": "loaded",
+            "rect": {
+              "x": 873,
+              "y": 706.421875,
+              "width": 92,
+              "height": 120
+            },
+            "animations": 0,
+            "images": [
+              {
+                "x": 837.1640625,
+                "y": 699.46875,
+                "width": 272.59375,
+                "height": 272.59375,
+                "left": "-50.8594px",
+                "top": "-6.95312px"
+              }
+            ]
+          },
+          "afterState": {
+            "fonts": "loaded",
+            "rect": {
+              "x": 873,
+              "y": 706.421875,
+              "width": 92,
+              "height": 120
+            },
+            "animations": 0,
+            "images": [
+              {
+                "x": 837.1640625,
+                "y": 699.46875,
+                "width": 272.59375,
+                "height": 272.59375,
+                "left": "-50.8594px",
+                "top": "-6.95312px"
+              }
+            ]
+          },
+          "initialSha256": "489ed1f8a94fa170be704a5d84e28c19139a061b967eda0c2423416fa6f6d552",
+          "readySha256": "489ed1f8a94fa170be704a5d84e28c19139a061b967eda0c2423416fa6f6d552",
+          "afterSha256": "489ed1f8a94fa170be704a5d84e28c19139a061b967eda0c2423416fa6f6d552",
+          "initialChangedBeforeReadiness": false,
+          "unchangedAfterReadyAnd1100ms": true
+        },
+        {
+          "selector": ".character[data-character=alex]",
+          "initialState": {
+            "fonts": "loaded",
+            "rect": {
+              "x": 873,
+              "y": 415.421875,
+              "width": 92,
+              "height": 120
+            },
+            "animations": 0,
+            "images": [
+              {
+                "x": 720.6640625,
+                "y": 403.625,
+                "width": 279.15625,
+                "height": 279.171875,
+                "left": "-156.484px",
+                "top": "-11.7969px"
+              }
+            ]
+          },
+          "beforeState": {
+            "fonts": "loaded",
+            "rect": {
+              "x": 873,
+              "y": 415.421875,
+              "width": 92,
+              "height": 120
+            },
+            "animations": 0,
+            "images": [
+              {
+                "x": 720.6640625,
+                "y": 403.625,
+                "width": 279.15625,
+                "height": 279.171875,
+                "left": "-156.484px",
+                "top": "-11.7969px"
+              }
+            ]
+          },
+          "afterState": {
+            "fonts": "loaded",
+            "rect": {
+              "x": 873,
+              "y": 415.421875,
+              "width": 92,
+              "height": 120
+            },
+            "animations": 0,
+            "images": [
+              {
+                "x": 720.6640625,
+                "y": 403.625,
+                "width": 279.15625,
+                "height": 279.171875,
+                "left": "-156.484px",
+                "top": "-11.7969px"
+              }
+            ]
+          },
+          "initialSha256": "57cdbcc654f458bbc5ecd2633ac81a34d51abbd7299e2422735222df7f145d10",
+          "readySha256": "57cdbcc654f458bbc5ecd2633ac81a34d51abbd7299e2422735222df7f145d10",
+          "afterSha256": "57cdbcc654f458bbc5ecd2633ac81a34d51abbd7299e2422735222df7f145d10",
+          "initialChangedBeforeReadiness": false,
+          "unchangedAfterReadyAnd1100ms": true
+        },
+        {
+          "selector": ".character[data-character=jo]",
+          "initialState": {
+            "fonts": "loaded",
+            "rect": {
+              "x": 873,
+              "y": 415.421875,
+              "width": 92,
+              "height": 120
+            },
+            "animations": 0,
+            "images": [
+              {
+                "x": 846.1171875,
+                "y": 277.6875,
+                "width": 264.90625,
+                "height": 264.921875,
+                "left": "-41.8281px",
+                "top": "-137.734px"
+              }
+            ]
+          },
+          "beforeState": {
+            "fonts": "loaded",
+            "rect": {
+              "x": 873,
+              "y": 415.421875,
+              "width": 92,
+              "height": 120
+            },
+            "animations": 0,
+            "images": [
+              {
+                "x": 846.1171875,
+                "y": 277.6875,
+                "width": 264.90625,
+                "height": 264.921875,
+                "left": "-41.8281px",
+                "top": "-137.734px"
+              }
+            ]
+          },
+          "afterState": {
+            "fonts": "loaded",
+            "rect": {
+              "x": 873,
+              "y": 415.421875,
+              "width": 92,
+              "height": 120
+            },
+            "animations": 0,
+            "images": [
+              {
+                "x": 846.1171875,
+                "y": 277.6875,
+                "width": 264.90625,
+                "height": 264.921875,
+                "left": "-41.8281px",
+                "top": "-137.734px"
+              }
+            ]
+          },
+          "initialSha256": "e1c2933aee93673fa9d4359b69346e0868edaabbee667d9f0aad7fc8f7d77cdb",
+          "readySha256": "e1c2933aee93673fa9d4359b69346e0868edaabbee667d9f0aad7fc8f7d77cdb",
+          "afterSha256": "e1c2933aee93673fa9d4359b69346e0868edaabbee667d9f0aad7fc8f7d77cdb",
+          "initialChangedBeforeReadiness": false,
+          "unchangedAfterReadyAnd1100ms": true
+        },
+        {
+          "selector": "#avatar-preview [data-avatar-static]",
+          "initialState": {
+            "fonts": "loaded",
+            "rect": {
+              "x": 361.859375,
+              "y": 286.9375,
+              "width": 291.390625,
+              "height": 291.390625
+            },
+            "animations": 0,
+            "images": [
+              {
+                "x": 400.3359375,
+                "y": 318.2890625,
+                "width": 855.40625,
+                "height": 570.265625,
+                "left": "-16.1406px",
+                "top": "-28.9531px"
+              },
+              {
+                "x": 412.0859375,
+                "y": 417.2109375,
+                "width": 546.109375,
+                "height": 364.03125,
+                "left": "-13.5px",
+                "top": "-60.4219px"
+              }
+            ]
+          },
+          "beforeState": {
+            "fonts": "loaded",
+            "rect": {
+              "x": 361.859375,
+              "y": 286.9375,
+              "width": 291.390625,
+              "height": 291.390625
+            },
+            "animations": 0,
+            "images": [
+              {
+                "x": 400.3359375,
+                "y": 318.2890625,
+                "width": 855.40625,
+                "height": 570.265625,
+                "left": "-16.1406px",
+                "top": "-28.9531px"
+              },
+              {
+                "x": 412.0859375,
+                "y": 417.2109375,
+                "width": 546.109375,
+                "height": 364.03125,
+                "left": "-13.5px",
+                "top": "-60.4219px"
+              }
+            ]
+          },
+          "afterState": {
+            "fonts": "loaded",
+            "rect": {
+              "x": 361.859375,
+              "y": 286.9375,
+              "width": 291.390625,
+              "height": 291.390625
+            },
+            "animations": 0,
+            "images": [
+              {
+                "x": 400.3359375,
+                "y": 318.2890625,
+                "width": 855.40625,
+                "height": 570.265625,
+                "left": "-16.1406px",
+                "top": "-28.9531px"
+              },
+              {
+                "x": 412.0859375,
+                "y": 417.2109375,
+                "width": 546.109375,
+                "height": 364.03125,
+                "left": "-13.5px",
+                "top": "-60.4219px"
+              }
+            ]
+          },
+          "initialSha256": "1bd668d63236575bc2a813889d1e1fa29bbcbba616ae9a46f890d9d878d4a66d",
+          "readySha256": "1bd668d63236575bc2a813889d1e1fa29bbcbba616ae9a46f890d9d878d4a66d",
+          "afterSha256": "1bd668d63236575bc2a813889d1e1fa29bbcbba616ae9a46f890d9d878d4a66d",
+          "initialChangedBeforeReadiness": false,
+          "unchangedAfterReadyAnd1100ms": true
+        }
+      ],
+      "loadedNativePNGs": [
+        {
+          "path": "assets/art/avatar-static-heads-v2.png",
+          "url": "assets/art/avatar-static-heads-v2.png",
+          "sha256": "79f254047f5541326288ba948051aa82d576f47af105f3eda1c50caab6464779",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/ui-static-v1.png",
+          "url": "assets/art/ui-static-v1.png",
+          "sha256": "fdbf04030127b6a1d6a7061a72b765a540cc25ec732eb4343a639ce7f11e1b42",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-static-clothes-v1.png",
+          "url": "assets/art/avatar-static-clothes-v1.png",
+          "sha256": "38c59629065fbc10c6ec5d723c8d89f4630afb859c89699c7581f7b662e8180d",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-static-hair-v1.png",
+          "url": "assets/art/avatar-static-hair-v1.png",
+          "sha256": "c73a9e78139d3ceaf1c6b6cd61392835ebb3c82f13fbb222ccaae0edc9166e97",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/avatar-eyewear-v2.png",
+          "url": "assets/art/avatar-eyewear-v2.png",
+          "sha256": "9c7be98f01de71709ed96d89a0a1cb3fc655a7c5e3c40f21f04c385b699920a1",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/cast-static-pico-v2.png",
+          "url": "assets/art/cast-static-pico-v2.png",
+          "sha256": "6cc557478d70cb3ddbdd893d67bf09fa1236ca327c2384b06ac31ae141beb148",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/cast-static-jo-v3.png",
+          "url": "assets/art/cast-static-jo-v3.png",
+          "sha256": "e14e81e2a1912b24702f4fd1a4222f8ec8c6814649c31d624464a0fd06cdc10b",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/cast-static-alex-v3.png",
+          "url": "assets/art/cast-static-alex-v3.png",
+          "sha256": "86d6441f1062824451a8aa3cf0a43de137b2aaa17a42cd179561efa7cf227825",
+          "fromServiceWorker": true
+        },
+        {
+          "path": "assets/art/cast-static-mina-v2.png",
+          "url": "assets/art/cast-static-mina-v2.png",
+          "sha256": "163449ffe9a3566390a5e196b976a420e3eb58e5f409d4c101a76d82f81bdfc9",
+          "fromServiceWorker": true
+        }
+      ],
+      "pass": true
+    }
+  ],
+  "runtimeErrors": [],
+  "workerLifecycle": [
+    {
+      "event": "new-worker-state",
+      "state": "installing"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "installed"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "activating"
+    },
+    {
+      "event": "controllerchange"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "activated"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "installing"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "installed"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "redundant"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "activating"
+    },
+    {
+      "event": "controllerchange"
+    },
+    {
+      "event": "new-worker-state",
+      "state": "activated"
+    }
+  ],
+  "limits": [
+    "Chromium/Edge only. This verifies a real returning-browser service worker and Cache Storage upgrade, not every browser engine or CDN.",
+    "Old runtime requests are served from committed repository blobs during the baseline phase; API requests continue to the actual backend.",
+    "No session values, raw codes or personal details are logged.",
+    "Joint samples use one shared physical time across all animations. Automated movement and clothing attachment checks do not replace independent painted-frame anatomy review."
+  ],
+  "pass": true,
+  "status": "PASS",
+  "phase": "complete",
+  "readinessProofs": [
+    {
+      "selector": ".character[data-character=pico]",
+      "initialState": {
+        "fonts": "loaded",
+        "rect": {
+          "x": 986,
+          "y": 156.828125,
+          "width": 230,
+          "height": 300
+        },
+        "animations": 0,
+        "images": [
+          {
+            "x": 643.3046875,
+            "y": 147.046875,
+            "width": 646.34375,
+            "height": 646.390625,
+            "left": "-393.781px",
+            "top": "-9.78125px"
+          }
+        ]
+      },
+      "beforeState": {
+        "fonts": "loaded",
+        "rect": {
+          "x": 986,
+          "y": 156.828125,
+          "width": 230,
+          "height": 300
+        },
+        "animations": 0,
+        "images": [
+          {
+            "x": 643.3046875,
+            "y": 147.046875,
+            "width": 646.34375,
+            "height": 646.390625,
+            "left": "-393.781px",
+            "top": "-9.78125px"
+          }
+        ]
+      },
+      "afterState": {
+        "fonts": "loaded",
+        "rect": {
+          "x": 986,
+          "y": 156.828125,
+          "width": 230,
+          "height": 300
+        },
+        "animations": 0,
+        "images": [
+          {
+            "x": 643.3046875,
+            "y": 147.046875,
+            "width": 646.34375,
+            "height": 646.390625,
+            "left": "-393.781px",
+            "top": "-9.78125px"
+          }
+        ]
+      },
+      "initialSha256": "5d2ec4f59b4266aa58fa8963a5713253d4b1e5fd7344615dabb5d6a2028fb24f",
+      "readySha256": "5d2ec4f59b4266aa58fa8963a5713253d4b1e5fd7344615dabb5d6a2028fb24f",
+      "afterSha256": "5d2ec4f59b4266aa58fa8963a5713253d4b1e5fd7344615dabb5d6a2028fb24f",
+      "initialChangedBeforeReadiness": false,
+      "unchangedAfterReadyAnd1100ms": true
+    },
+    {
+      "selector": ".character[data-character=mina]",
+      "initialState": {
+        "fonts": "loaded",
+        "rect": {
+          "x": 873,
+          "y": 706.421875,
+          "width": 92,
+          "height": 120
+        },
+        "animations": 0,
+        "images": [
+          {
+            "x": 837.1640625,
+            "y": 699.46875,
+            "width": 272.59375,
+            "height": 272.59375,
+            "left": "-50.8594px",
+            "top": "-6.95312px"
+          }
+        ]
+      },
+      "beforeState": {
+        "fonts": "loaded",
+        "rect": {
+          "x": 873,
+          "y": 706.421875,
+          "width": 92,
+          "height": 120
+        },
+        "animations": 0,
+        "images": [
+          {
+            "x": 837.1640625,
+            "y": 699.46875,
+            "width": 272.59375,
+            "height": 272.59375,
+            "left": "-50.8594px",
+            "top": "-6.95312px"
+          }
+        ]
+      },
+      "afterState": {
+        "fonts": "loaded",
+        "rect": {
+          "x": 873,
+          "y": 706.421875,
+          "width": 92,
+          "height": 120
+        },
+        "animations": 0,
+        "images": [
+          {
+            "x": 837.1640625,
+            "y": 699.46875,
+            "width": 272.59375,
+            "height": 272.59375,
+            "left": "-50.8594px",
+            "top": "-6.95312px"
+          }
+        ]
+      },
+      "initialSha256": "489ed1f8a94fa170be704a5d84e28c19139a061b967eda0c2423416fa6f6d552",
+      "readySha256": "489ed1f8a94fa170be704a5d84e28c19139a061b967eda0c2423416fa6f6d552",
+      "afterSha256": "489ed1f8a94fa170be704a5d84e28c19139a061b967eda0c2423416fa6f6d552",
+      "initialChangedBeforeReadiness": false,
+      "unchangedAfterReadyAnd1100ms": true
+    },
+    {
+      "selector": ".character[data-character=alex]",
+      "initialState": {
+        "fonts": "loaded",
+        "rect": {
+          "x": 873,
+          "y": 415.421875,
+          "width": 92,
+          "height": 120
+        },
+        "animations": 0,
+        "images": [
+          {
+            "x": 720.6640625,
+            "y": 403.625,
+            "width": 279.15625,
+            "height": 279.171875,
+            "left": "-156.484px",
+            "top": "-11.7969px"
+          }
+        ]
+      },
+      "beforeState": {
+        "fonts": "loaded",
+        "rect": {
+          "x": 873,
+          "y": 415.421875,
+          "width": 92,
+          "height": 120
+        },
+        "animations": 0,
+        "images": [
+          {
+            "x": 720.6640625,
+            "y": 403.625,
+            "width": 279.15625,
+            "height": 279.171875,
+            "left": "-156.484px",
+            "top": "-11.7969px"
+          }
+        ]
+      },
+      "afterState": {
+        "fonts": "loaded",
+        "rect": {
+          "x": 873,
+          "y": 415.421875,
+          "width": 92,
+          "height": 120
+        },
+        "animations": 0,
+        "images": [
+          {
+            "x": 720.6640625,
+            "y": 403.625,
+            "width": 279.15625,
+            "height": 279.171875,
+            "left": "-156.484px",
+            "top": "-11.7969px"
+          }
+        ]
+      },
+      "initialSha256": "57cdbcc654f458bbc5ecd2633ac81a34d51abbd7299e2422735222df7f145d10",
+      "readySha256": "57cdbcc654f458bbc5ecd2633ac81a34d51abbd7299e2422735222df7f145d10",
+      "afterSha256": "57cdbcc654f458bbc5ecd2633ac81a34d51abbd7299e2422735222df7f145d10",
+      "initialChangedBeforeReadiness": false,
+      "unchangedAfterReadyAnd1100ms": true
+    },
+    {
+      "selector": ".character[data-character=jo]",
+      "initialState": {
+        "fonts": "loaded",
+        "rect": {
+          "x": 873,
+          "y": 415.421875,
+          "width": 92,
+          "height": 120
+        },
+        "animations": 0,
+        "images": [
+          {
+            "x": 846.1171875,
+            "y": 277.6875,
+            "width": 264.90625,
+            "height": 264.921875,
+            "left": "-41.8281px",
+            "top": "-137.734px"
+          }
+        ]
+      },
+      "beforeState": {
+        "fonts": "loaded",
+        "rect": {
+          "x": 873,
+          "y": 415.421875,
+          "width": 92,
+          "height": 120
+        },
+        "animations": 0,
+        "images": [
+          {
+            "x": 846.1171875,
+            "y": 277.6875,
+            "width": 264.90625,
+            "height": 264.921875,
+            "left": "-41.8281px",
+            "top": "-137.734px"
+          }
+        ]
+      },
+      "afterState": {
+        "fonts": "loaded",
+        "rect": {
+          "x": 873,
+          "y": 415.421875,
+          "width": 92,
+          "height": 120
+        },
+        "animations": 0,
+        "images": [
+          {
+            "x": 846.1171875,
+            "y": 277.6875,
+            "width": 264.90625,
+            "height": 264.921875,
+            "left": "-41.8281px",
+            "top": "-137.734px"
+          }
+        ]
+      },
+      "initialSha256": "e1c2933aee93673fa9d4359b69346e0868edaabbee667d9f0aad7fc8f7d77cdb",
+      "readySha256": "e1c2933aee93673fa9d4359b69346e0868edaabbee667d9f0aad7fc8f7d77cdb",
+      "afterSha256": "e1c2933aee93673fa9d4359b69346e0868edaabbee667d9f0aad7fc8f7d77cdb",
+      "initialChangedBeforeReadiness": false,
+      "unchangedAfterReadyAnd1100ms": true
+    },
+    {
+      "selector": "#avatar-preview [data-avatar-static]",
+      "initialState": {
+        "fonts": "loaded",
+        "rect": {
+          "x": 361.859375,
+          "y": 286.9375,
+          "width": 291.390625,
+          "height": 291.390625
+        },
+        "animations": 0,
+        "images": [
+          {
+            "x": 400.3359375,
+            "y": 318.2890625,
+            "width": 855.40625,
+            "height": 570.265625,
+            "left": "-16.1406px",
+            "top": "-28.9531px"
+          },
+          {
+            "x": 412.0859375,
+            "y": 417.2109375,
+            "width": 546.109375,
+            "height": 364.03125,
+            "left": "-13.5px",
+            "top": "-60.4219px"
+          }
+        ]
+      },
+      "beforeState": {
+        "fonts": "loaded",
+        "rect": {
+          "x": 361.859375,
+          "y": 286.9375,
+          "width": 291.390625,
+          "height": 291.390625
+        },
+        "animations": 0,
+        "images": [
+          {
+            "x": 400.3359375,
+            "y": 318.2890625,
+            "width": 855.40625,
+            "height": 570.265625,
+            "left": "-16.1406px",
+            "top": "-28.9531px"
+          },
+          {
+            "x": 412.0859375,
+            "y": 417.2109375,
+            "width": 546.109375,
+            "height": 364.03125,
+            "left": "-13.5px",
+            "top": "-60.4219px"
+          }
+        ]
+      },
+      "afterState": {
+        "fonts": "loaded",
+        "rect": {
+          "x": 361.859375,
+          "y": 286.9375,
+          "width": 291.390625,
+          "height": 291.390625
+        },
+        "animations": 0,
+        "images": [
+          {
+            "x": 400.3359375,
+            "y": 318.2890625,
+            "width": 855.40625,
+            "height": 570.265625,
+            "left": "-16.1406px",
+            "top": "-28.9531px"
+          },
+          {
+            "x": 412.0859375,
+            "y": 417.2109375,
+            "width": 546.109375,
+            "height": 364.03125,
+            "left": "-13.5px",
+            "top": "-60.4219px"
+          }
+        ]
+      },
+      "initialSha256": "1bd668d63236575bc2a813889d1e1fa29bbcbba616ae9a46f890d9d878d4a66d",
+      "readySha256": "1bd668d63236575bc2a813889d1e1fa29bbcbba616ae9a46f890d9d878d4a66d",
+      "afterSha256": "1bd668d63236575bc2a813889d1e1fa29bbcbba616ae9a46f890d9d878d4a66d",
+      "initialChangedBeforeReadiness": false,
+      "unchangedAfterReadyAnd1100ms": true
+    }
+  ],
+  "changedSources": []
+}

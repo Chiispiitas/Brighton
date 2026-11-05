@@ -50,10 +50,11 @@ function choosePosture(name,cls,mood){
  return null;
 }
 function avatarGroups(){return manifest.avatar?.groups||manifest.avatar?.layers||manifest.avatar||{};}
-export function avatarOptions(){const groups=avatarGroups();if(Array.isArray(groups))return groups;return Object.entries(groups).filter(([,values])=>Array.isArray(values)||values?.options).map(([id,values])=>({id,label:({body:'Avatar base',skin:'Skin tone',outfit:'Clothes',hair:'Hair',accessory:'A little extra'})[id]||id[0].toUpperCase()+id.slice(1),options:Array.isArray(values)?values:values.options||[]}));}
+export function avatarOptions(){const groups=avatarGroups();if(Array.isArray(groups))return groups;return Object.entries(groups).filter(([,values])=>Array.isArray(values)||values?.options).map(([id,values])=>({id,label:({body:'Avatar base',skin:'Skin tone',outfit:'Clothes',hair:'Hair',accessory:'Eyewear'})[id]||id[0].toUpperCase()+id.slice(1),options:Array.isArray(values)?values:values.options||[]}));}
 export function defaultAvatar(){return Object.fromEntries(avatarOptions().map(group=>[group.id,group.options?.[0]?.id||'none']));}
-export function avatarMarkup(avatar={},cls='',name='Your avatar'){return `<span class="avatar avatar-bust ${esc(cls)}" data-avatar-static data-avatar="${esc(JSON.stringify(avatar))}" role="img" aria-label="${esc(name)}, bust portrait"></span>`;}
+export function normalizeAvatar(avatar={}){return{...avatar,accessory:['none','accessory-1','accessory-2','accessory-3'].includes(avatar.accessory)?avatar.accessory:'none'};}
+export function avatarMarkup(avatar={},cls='',name='Your avatar'){return `<span class="avatar avatar-bust ${esc(cls)}" data-avatar-static data-avatar="${esc(JSON.stringify(normalizeAvatar(avatar)))}" role="img" aria-label="${esc(name)}, bust portrait"></span>`;}
 export function refreshArtwork(container=document){
- for(const slot of container.querySelectorAll('[data-avatar-static]'))import('./avatar-static.js?v=static1').then(module=>{avatarModule=module;if(slot.isConnected&&!slot.closest('dialog:not([open])'))module.mountAvatar(slot,{avatar:JSON.parse(slot.dataset.avatar||'{}'),manifest});});
+ for(const slot of container.querySelectorAll('[data-avatar-static]'))import('./avatar-static.js?v=eyewear1').then(module=>{avatarModule=module;if(slot.isConnected&&!slot.closest('dialog:not([open])'))module.mountAvatar(slot,{avatar:JSON.parse(slot.dataset.avatar||'{}'),manifest});});
 }
 export function disposeArtwork(container=document){for(const slot of container.querySelectorAll('[data-avatar-static]'))avatarModule?.unmountAvatar?.(slot);}

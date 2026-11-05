@@ -21,7 +21,7 @@ This audit governs the companion app. The book's existing audit remains authorit
 - Pico, Mina, Alex and Jo retain their identities and welcoming faces. Pico has two separate gentle eyebrows. Use a small set of purposeful complete poses suited to reading, welcoming, exploring and success, without showing animation between them.
 - Every complete native character must already have coherent neck, shoulders, arms, hands, hips, knees and feet before integration. Check visible silhouettes and supported book/map/cup/tool grips. No disconnected parts, doubled limbs, hidden forearms with loose hands, or unsupported sitting poses.
 - Avatar design follows the supplied rounded-square-face customizer screenshots: simple expressive eyes, small nose/mouth, clear ears and a warm friendly expression. Use an upper-chest bust everywhere, with no lower-edge hand fragments. Whole static clothing/hair/accessory layers share a registered canvas; there are no jointed avatar arms.
-- Preserve both avatar bases, all six skin IDs, every saved hair/clothing/accessory ID and earned-pin contract. Every choice remains available to both bases. Verify all option families and source-bound combinations, including save, reload and another device.
+- Preserve both avatar bases, all six skin IDs, saved hair/clothing IDs and earned-pin contract. Every choice remains available to both bases. Verify all option families and source-bound combinations, including save, reload and another device.
 - Fit raster crops at one uniform scale within their allocated boxes. Preserve native alpha and anti-aliased edges. Do not stretch a head, clip hair/headwear, cut off feet or crop held props. Keep atlas gutters out of the visible render.
 - Keep still art truly still at entry, after hover/focus, after waiting and during navigation. Check unchanged pixels and transforms as well as zero running CSS/WAAPI animation objects. Do not use status labels or old motion tests as evidence.
 - Check desktop and small phones, actual avatar selections, every activity and dialog, typography and touch targets. Release evidence names the screens and combinations actually inspected; it must separate structural measurements from visual approval.
@@ -44,3 +44,9 @@ This audit governs the companion app. The book's existing audit remains authorit
 - Real browser sign-in, profile save, practice, source audio, answer correction, progress save and another-device restoration pass using isolated codes. Keep public demo001 pristine.
 - Publish to the existing GitHub Pages path and verify the actual hosted interface, native artwork, fonts, audio and API. Test a real returning-browser service-worker upgrade with exact current source/asset readback.
 - Keep a reversible baseline, source-bound visual reports and explicit browser coverage limits. Exclude credentials, dependencies and unrelated book changes. Previous motion reports are historical evidence, not current static-edition approval.
+
+## Bust accessories
+
+- Curate accessories for the actual portrait crop. The current selection is None, round glasses, rectangular glasses and sunglasses. Bags, scarves, hats and oversized headphones are retired.
+- Fit eyewear to the measured eye centers for each native base/skin; use one uniform scale and genuinely transparent clear lenses. Check all hairstyles, both bases, clothing and small navigation portraits.
+- Retired saved accessory IDs render as None and select None in the editor; do not silently reinterpret a retired bag as a new face accessory. Other saved profile fields remain intact. The remaining supported IDs1–3 now name the three reviewed eyewear choices.

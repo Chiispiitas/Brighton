@@ -707,103 +707,55 @@
     "accessory": [
       {
         "id": "none",
-        "label": "No extra",
+        "label": "No eyewear",
         "group": "accessory"
       },
       {
         "id": "accessory-1",
         "label": "Round glasses",
         "group": "accessory",
-        "src": "assets/art/avatar-static-extras-v3.png",
+        "src": "assets/art/avatar-eyewear-v2.png",
         "atlas": {
-          "width": 1536,
-          "height": 1024
+          "width": 2172,
+          "height": 724
         },
         "frame": {
-          "x": 79,
-          "y": 90,
-          "w": 408,
-          "h": 195
+          "x": 73,
+          "y": 245,
+          "w": 575,
+          "h": 233
         }
       },
       {
         "id": "accessory-2",
-        "label": "Orange cap",
+        "label": "Rectangular glasses",
         "group": "accessory",
-        "src": "assets/art/avatar-static-extras-v3.png",
+        "src": "assets/art/avatar-eyewear-v2.png",
         "atlas": {
-          "width": 1536,
-          "height": 1024
+          "width": 2172,
+          "height": 724
         },
         "frame": {
-          "x": 573,
-          "y": 61,
-          "w": 388,
-          "h": 204
+          "x": 778,
+          "y": 244,
+          "w": 617,
+          "h": 235
         }
       },
       {
         "id": "accessory-3",
-        "label": "Teal headphones",
+        "label": "Sunglasses",
         "group": "accessory",
-        "src": "assets/art/avatar-static-extras-v3.png",
+        "src": "assets/art/avatar-eyewear-v2.png",
         "atlas": {
-          "width": 1536,
-          "height": 1024
+          "width": 2172,
+          "height": 724
         },
         "frame": {
-          "x": 1053,
-          "y": 26,
-          "w": 382,
-          "h": 293
-        }
-      },
-      {
-        "id": "accessory-4",
-        "label": "Pico satchel",
-        "group": "accessory",
-        "src": "assets/art/avatar-static-extras-v3.png",
-        "atlas": {
-          "width": 1536,
-          "height": 1024
-        },
-        "frame": {
-          "x": 164,
-          "y": 374,
-          "w": 285,
-          "h": 303
-        }
-      },
-      {
-        "id": "accessory-5",
-        "label": "Orange scarf",
-        "group": "accessory",
-        "src": "assets/art/avatar-static-extras-v3.png",
-        "atlas": {
-          "width": 1536,
-          "height": 1024
-        },
-        "frame": {
-          "x": 603,
-          "y": 384,
-          "w": 323,
-          "h": 288
-        }
-      },
-      {
-        "id": "accessory-6",
-        "label": "Navy backpack",
-        "group": "accessory",
-        "src": "assets/art/avatar-static-extras-v3.png",
-        "atlas": {
-          "width": 1536,
-          "height": 1024
-        },
-        "frame": {
-          "x": 1086,
-          "y": 372,
-          "w": 319,
-          "h": 311
+          "x": 1508,
+          "y": 236,
+          "w": 624,
+          "h": 250
         }
       }
     ],

@@ -1,0 +1,15 @@
+{
+  "method": "Built-in ImageGen; unchanged native PNGs, measured alpha lens openings and per-skin native eye registration; no hand-drawn replacement graphics.",
+  "prompt": "Use case: illustration-story. Generate a TRANSPARENT native PNG accessory atlas for a flat rounded-square-face avatar. Exactly THREE front-facing pairs of glasses arranged left to right in3equal columns on a wide3:1 canvas. Large empty transparent margins; each complete pair stays inside its own column. No faces, heads, hair, people, labels, text, panels or other objects.\nLEFT: simple slim dark-navy ROUND eyeglass frames, two identical circular lenses and a short bridge, short horizontal temples; interiors of both lenses genuinely TRANSPARENT, not white fills.\nCENTER: simple slim dark-navy softly RECTANGULAR eyeglass frames, two identical rounded rectangular lenses and short bridge, horizontal temples. Both lens interiors genuinely TRANSPARENT.\nRIGHT: simple dark-navy classic SUNGLASSES, two softly rectangular solid navy lenses, modest thickness, short bridge, no reflections or light effects.\nAll three pairs symmetrical horizontal with identical lens-center spacing as a ratio of overall width. One single dark-navy solid color#163d50; no gradients, shadows, highlights, strokes around objects, texture, bevels, modeled lighting or3D. Optical frames are intentionally thin solid shapes with open centers. Clean native alpha outside all shapes and through the clear lenses, no matte or glow. Flat geometric2D design, readable at avatar thumbnail size. Do not include any earrings, hats, headphones, bags or clothing.",
+  "repairPrompt": "Precise edit of attached THREE-pair eyewear atlas. Keep3columns, horizontal symmetry, sameoverallwidth and lens-center horizontal spacing, same navy solid fill, clean transparent background. Leave LEFT round glasses unchanged. In CENTER rectangular glasses, enlarge BOTH clear lens OPENINGS VERTICALLY by55percent around their existing centers. The frames now need tall rounded-square openings, not narrow horizontal slots; thin navy frame surrounds each larger opening. Keep opening width and bridge spacing unchanged. In RIGHT sunglasses, enlarge BOTH opaque lenses VERTICALLY by55percent around their centers, so each fully covers a large round cartoon eye; same width/spacing. Absolutely no thin or narrow lenses. All lenses vertically centered on shared baseline. No shine, shadows, gradients, texture or new objects. No heads/faces/text. Transparent alpha through BOTH clear glass pairs. Opaque navy through sunglasses. Preserve native crisp flat graphic style.",
+  "selected": "assets/art/avatar-eyewear-v2.png",
+  "original": "C:/Users/David/.codex/generated_images/01a10ee1-5c4c-7e80-817b-36b2c2dafd47/exec-d040e8e6-422e-4938-9e9f-956d76234f68.png",
+  "rejected": "assets/art/avatar-eyewear-v1.png",
+  "reason": "Narrow rectangular and opaque lenses did not contain the native round eyes.",
+  "selection": [
+    "None",
+    "Round glasses",
+    "Rectangular glasses",
+    "Sunglasses"
+  ]
+}
