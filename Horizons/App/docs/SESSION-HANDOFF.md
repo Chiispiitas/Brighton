@@ -1,5 +1,7 @@
 # Horizons website session handoff
 
+Latest milestone sounds: native ElevenLabs v3 assets in assets/audio/milestones-v1; saved rounds play completion, newly earned server-confirmed island crowns play mastery instead. Shared remembered mute includes all four cues. New files, exact briefs, provenance, async-save handling and QA: [SOUND-PRODUCTION.md](SOUND-PRODUCTION.md). Cache milestone-sounds-v54; queries milestones1.
+
 Latest answer sounds: native ElevenLabs v3 correct/wrong cues are in assets/audio/feedback-v1. The exercise header mute persists locally and does not mute lesson recordings. See [SOUND-PRODUCTION.md](SOUND-PRODUCTION.md) for native provenance, exact prompts, runtime rules and verification. Cache answer-sounds-v53; queries sounds1.
 
 Latest editor feedback: first look-around begins after500ms, easing to its first pose at1900ms; the existing20-second varied gaze pattern is retained. Each avatar option change (skin, clothes, hair, eyewear, badge, hair color or background) triggers an immediate140ms eye-only blink alongside customization feedback, including changes queued while art loads. Reduced motion remains neutral with no feedback animation. Face/glasses tracking, fixed background, immediate lesson entry and stable path scroll remain. Cache avatar-editor-v49; queries look2.

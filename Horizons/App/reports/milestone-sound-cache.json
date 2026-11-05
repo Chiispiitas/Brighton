@@ -1,0 +1,39 @@
+{
+  "pass": true,
+  "baseline": "66b3714d311322014fe8dabb888a1467fecbd772",
+  "cache": "horizons-companion-milestone-sounds-v54",
+  "oldCacheRemoved": true,
+  "offlineAssets": [
+    {
+      "path": "src/feedback-sound.js?v=milestones1",
+      "status": 200,
+      "sha256": "6bddfd17c0d7386f126a0582cf7baf1fe7aad20dc2b304935dd4a594ec1cd9f7"
+    },
+    {
+      "path": "assets/audio/feedback-v1/correct.mp3",
+      "status": 200,
+      "sha256": "993cd9258129338ef708f07277f62298597025d0c3daa57b5a399c838a8c7d9b",
+      "duration": 0.6865
+    },
+    {
+      "path": "assets/audio/feedback-v1/wrong.mp3",
+      "status": 200,
+      "sha256": "7aabb61c1f1974bc27c12df194497fd17d0faeb96e85ea2fc108776d898db44e",
+      "duration": 0.6865
+    },
+    {
+      "path": "assets/audio/milestones-v1/lesson-complete.mp3",
+      "status": 200,
+      "sha256": "3fe328b108de40266ca432780459705909f2cfa54ff52c2db9035c8c91aa6231",
+      "duration": 1.36
+    },
+    {
+      "path": "assets/audio/milestones-v1/island-mastered.mp3",
+      "status": 200,
+      "sha256": "32efcba28136dc824c621ec61cf2bdf1207925229790fb635046a36d7b9390b6",
+      "duration": 1.88
+    }
+  ],
+  "errors": [],
+  "scope": "Real previous worker installed, then updated to v54. New controller and native MP3 bytes verified through cache-backed offline fetch and browser decoding. Unauthenticated start screen only; no learner records."
+}

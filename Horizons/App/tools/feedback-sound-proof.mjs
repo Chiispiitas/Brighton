@@ -44,12 +44,12 @@ for(const type of['text','choice','order'])for(const correct of[true,false]){
  samples.push({type,correct});
 }
 await page.evaluate(()=>soundFixture());await page.locator('#typed-answer').fill('Hello');
-await page.getByRole('button',{name:'Mute answer sounds',exact:true}).click();
+await page.getByRole('button',{name:'Mute sound effects',exact:true}).click();
 assert.equal(await page.locator('#typed-answer').inputValue(),'Hello','mute preserves draft');
 let before=await count();await page.locator('[data-action=check-answer]').click();assert.equal(await count(),before);
 await page.reload();await page.locator('.overworld-map').waitFor();await page.evaluate(()=>soundFixture());
 assert.equal(await page.locator('.feedback-sound-toggle').getAttribute('aria-pressed'),'false','mute persists');
-await page.getByRole('button',{name:'Enable answer sounds',exact:true}).click();
+await page.getByRole('button',{name:'Enable sound effects',exact:true}).click();
 await page.emulateMedia({reducedMotion:'reduce'});await page.evaluate(()=>{soundFixture('text',true);blockSound=true;});
 assert.equal(await page.locator('.question-body').textContent().then(s=>s.includes('Hello')),false);
 await page.locator('#typed-answer').fill('Hello');await page.locator('[data-action=check-answer]').click();

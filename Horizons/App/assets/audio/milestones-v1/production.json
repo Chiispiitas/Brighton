@@ -1,0 +1,40 @@
+{
+  "createdAt": "2026-11-05T22:03:51.876030+00:00",
+  "method": "Direct ElevenLabs API; existing protected credential loaded only into request process. Native responses preserved unchanged.",
+  "sources": [
+    {
+      "id": "lesson-complete",
+      "provider": "ElevenLabs",
+      "model": "eleven_text_to_sound_v3",
+      "outputFormat": "mp3_44100_128",
+      "durationRequested": 1.4,
+      "durationDecoded": 1.36,
+      "promptInfluence": 0.3,
+      "loop": false,
+      "prompt": "Lesson-complete UI cue for Horizons, a warm playful adult language-learning adventure. Soft rounded wooden marimba/plucked-bell timbre, matching friendly answer chimes. Three gently bouncing ascending notes resolve into a warm major chord and tiny bell sparkle. Tactile, polished, satisfying but restrained. 1.4 seconds, immediate attack, short natural decay, dry, gentle volume. No voice, words, drums, ambience, harsh highs, long reverb or loop.",
+      "file": "lesson-complete.mp3",
+      "bytes": 23030,
+      "sha256": "3fe328b108de40266ca432780459705909f2cfa54ff52c2db9035c8c91aa6231",
+      "monoPeakDb": -0.6063736081123352,
+      "monoRmsDb": -18.517358779907227,
+      "clippedDecodedSamples": 0
+    },
+    {
+      "id": "island-mastered",
+      "provider": "ElevenLabs",
+      "model": "eleven_text_to_sound_v3",
+      "outputFormat": "mp3_44100_128",
+      "durationRequested": 1.9,
+      "durationDecoded": 1.88,
+      "promptInfluence": 0.3,
+      "loop": false,
+      "prompt": "Island-mastery crown reward UI cue for Horizons, a warm playful adult language-learning adventure. Soft rounded wooden marimba/plucked-bell timbre, matching friendly answer chimes. A rising five-note major arpeggio resolves into a warm rounded chord and delicate bell sparkle. Gently bouncy, tactile, special but restrained. 1.9 seconds, immediate attack, short decay, gentle volume. No voice, words, drums, brass, harsh highs, long reverb or loop.",
+      "file": "island-mastered.mp3",
+      "bytes": 30972,
+      "sha256": "32efcba28136dc824c621ec61cf2bdf1207925229790fb635046a36d7b9390b6",
+      "monoPeakDb": -3.3521523475646973,
+      "monoRmsDb": -18.685449600219727,
+      "clippedDecodedSamples": 0
+    }
+  ]
+}

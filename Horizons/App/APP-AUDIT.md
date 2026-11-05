@@ -1,5 +1,7 @@
 # Horizons website process audit
 
+Latest milestone sounds: native ElevenLabs lesson-complete and island-mastery cues. Successful saved rounds play completion; newly server-confirmed crowns play mastery instead, once. Failed saves, existing crowns and rerenders do not replay a mastery reward. Shared remembered mute, navigation/hidden-page cancellation, retry handling and pre-save audio unlock are verified with synthetic sessions. See [SOUND-PRODUCTION.md](docs/SOUND-PRODUCTION.md). Cache milestone-sounds-v54; queries milestones1.
+
 Latest answer sounds: native ElevenLabs v3 correct/wrong cues, local playback once per graded quiz answer, remembered header mute independent of lesson recordings. Empty/duplicate submissions and rerenders stay silent; Continue, route changes and hidden pages stop the cue. No character animation changes. Production prompts, files, hashes and QA limits: [docs/SOUND-PRODUCTION.md](docs/SOUND-PRODUCTION.md). Cache answer-sounds-v53; queries sounds1.
 
 Exercise feedback: prominent green/coral result panel with check/cross, explicit Correct!/Not quite text and labeled correct answer. Existing explanations are shown for wrong answers. Finite success badge/progress pop or brief wrong-answer nudge, plus responsive Continue button; reduced motion uses immediate static states. Neutral draggable tiles, accepted grading/mastery, listening privacy and static cast stay intact. Cache answer-feedback-v52; queries feedback1.

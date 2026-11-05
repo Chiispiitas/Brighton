@@ -1,13 +1,13 @@
-import {playFeedbackSound,stopFeedbackSound,feedbackSoundsEnabled,setFeedbackSoundsEnabled} from './feedback-sound.js?v=sounds1';
-import {requestAvatarFeedback} from './avatar-motion.js?v=sounds1';
-import {unitRoutes,adjacentUnit,updateBoundary} from './unit-navigation.js?v=sounds1';
-import {mountOverworld} from './overworld-motion.js?v=sounds1';
+import {playFeedbackSound,stopFeedbackSound,feedbackSoundsEnabled,setFeedbackSoundsEnabled,prepareCompletionSound,playCompletionSound} from './feedback-sound.js?v=milestones1';
+import {requestAvatarFeedback} from './avatar-motion.js?v=milestones1';
+import {unitRoutes,adjacentUnit,updateBoundary} from './unit-navigation.js?v=milestones1';
+import {mountOverworld} from './overworld-motion.js?v=milestones1';
 import {selectIslandQuestions,masteryTargets} from '../content/island-mastery.mjs';
-import {enhanceShell,openPathBubble,closePathBubble,avatarFeedback} from './studio-ui.js?v=sounds1';
-import {captureUI,enhanceMotion,markControls,animateUI} from './ui-motion.js?v=sounds1';
+import {enhanceShell,openPathBubble,closePathBubble,avatarFeedback} from './studio-ui.js?v=milestones1';
+import {captureUI,enhanceMotion,markControls,animateUI} from './ui-motion.js?v=milestones1';
 import {lessonArt} from './lesson-art.js?v=colors1';
 import {api, APIError, getSessionToken, forgetSession} from './api-client.js';
-import {loadArt, normalizeAvatar, artManifest, characterMarkup, avatarMarkup, avatarOptions, defaultAvatar, rasterMarkup, assetURL, refreshArtwork, disposeArtwork, sceneMarkup, wordArt} from './art.js?v=sounds1';
+import {loadArt, normalizeAvatar, artManifest, characterMarkup, avatarMarkup, avatarOptions, defaultAvatar, rasterMarkup, assetURL, refreshArtwork, disposeArtwork, sceneMarkup, wordArt} from './art.js?v=milestones1';
 import {course, lessons, vocabulary, chunks, grammarSets, activities, games, wordById, chunkById, lessonById, pathNodes, pathNodeById} from '../content/unit1.mjs';
 import {buildQuiz, getActivityQuestions, getAudioFallbackQuestion, getWordsForChunks, getMatchingPairs, checkAnswer} from '../content/engine.mjs';
 
@@ -195,11 +195,12 @@ function startQuiz(options,title='Vocabulary') {
 function beginQuiz(questions,options,title) {
   if (!Array.isArray(questions)) questions=questions?.questions || [];
   if (!questions.length) {notify('No questions available for this selection.');return;}
+  stopAudio();
   state.active={kind:'quiz',title,questions,options,index:0,selected:null,order:[],checked:false,answers:[],started:Date.now(),hintUsed:false,saving:false,previewVisible:Boolean(questions[0]?.preview)};
   render();schedulePreview();window.scrollTo({top:0,behavior:'instant'});
 }
 function schedulePreview(){const current=state.active;if(!current||current.kind!=='quiz'||!current.previewVisible)return;const index=current.index;setTimeout(()=>{if(state.active===current&&current.index===index){current.previewVisible=false;render();document.getElementById('typed-answer')?.focus();}},current.questions[index].previewMs||4500);}
-function activityHeader(title,index,total) {return `<header class="activity-header"><button class="round-button" data-action="leave-activity" aria-label="Leave practice">${icon('close')}</button><div><span class="activity-track"><i style="width:${Math.max(0,index/total*100)}%"></i></span><span class="activity-title">${esc(title)}</span></div><span class="activity-count">${index}/${total}</span><button class="round-button feedback-sound-toggle ${feedbackSoundsEnabled()?'':'muted'}" data-action="toggle-feedback-sound" aria-label="${feedbackSoundsEnabled()?'Mute answer sounds':'Enable answer sounds'}" aria-pressed="${feedbackSoundsEnabled()}" title="${feedbackSoundsEnabled()?'Answer sounds on':'Answer sounds off'}">${icon('sound')}</button></header>`;}
+function activityHeader(title,index,total) {return `<header class="activity-header"><button class="round-button" data-action="leave-activity" aria-label="Leave practice">${icon('close')}</button><div><span class="activity-track"><i style="width:${Math.max(0,index/total*100)}%"></i></span><span class="activity-title">${esc(title)}</span></div><span class="activity-count">${index}/${total}</span><button class="round-button feedback-sound-toggle ${feedbackSoundsEnabled()?'':'muted'}" data-action="toggle-feedback-sound" aria-label="${feedbackSoundsEnabled()?'Mute sound effects':'Enable sound effects'}" aria-pressed="${feedbackSoundsEnabled()}" title="${feedbackSoundsEnabled()?'Sound effects on':'Sound effects off'}">${icon('sound')}</button></header>`;}
 
 function renderActivity(){
  const a=state.active;
@@ -252,6 +253,7 @@ function startGame(kind,options) {
   const seed=Date.now(),chunkIds=options.chunkIds || [...state.selected],lessonIds=options.lessonIds || (options.lessonId?[options.lessonId]:undefined);let pairs;
   try {pairs=getMatchingPairs({chunkIds,lessonIds,count:6,seed});} catch {notify('Choose a few more words for this game.');return;}
   if (!pairs?.length) {notify('Choose a word set first.');return;}
+  stopAudio();
   const shuffle=values=>values.map(value=>({value,sort:Math.random()})).sort((a,b)=>a.sort-b.sort).map(x=>x.value);
   state.active={kind,title:options.title || (kind==='memory'?'Memory':'Matching'),options:{...options,chunkIds,lessonIds,seed,count:6,mode:kind,activityId:options.id || options.activityId || `mix-${kind}`},pairs,cards:shuffle(pairs.flatMap(pair=>[{id:pair.id+'-left',pairId:pair.id,text:pair.left,side:'left'},{id:pair.id+'-right',pairId:pair.id,text:pair.right,side:'right'}])),right:shuffle([...pairs]),matched:[],flipped:[],left:null,rightChoice:null,mistakes:0,moves:0,started:Date.now(),answers:[],locked:false};
   render();window.scrollTo({top:0,behavior:'instant'});
@@ -286,9 +288,26 @@ async function finishActivity() {
   const quizOptions={seed:previous.options.seed,mode:previous.kind==='quiz'?(previous.options.mode||'mixed'):previous.kind,count:previous.options.count || previous.questions?.length || 6,chunkIds:previous.options.chunkIds || [],lessonIds:previous.options.lessonIds || (previous.options.lessonId?[previous.options.lessonId]:[]),grammarSetIds:previous.options.grammarSetIds || [],audioEnabled:previous.options.audioEnabled!==false,audioFallbackQuestionIds:previous.options.audioFallbackQuestionIds||[]};
   const inferredLesson=previous.options.lessonId || quizOptions.lessonIds[0] || getChunk(quizOptions.chunkIds[0])?.lessonId || allGrammar.find(g=>quizOptions.grammarSetIds.includes(g.id))?.lessonId || '1A';
   const attempt={id:crypto.randomUUID(),bookId:'horizons-a1',lessonId:inferredLesson,activityId:previous.options.activityId || previous.options.id || 'mixed-practice',mode:quizOptions.mode,quizOptions,...quizOptions,answers:previous.answers,durationMs:Date.now()-previous.started,mistakes:previous.mistakes || 0};
-  state.active={kind:'result',title:previous.title,previous,attempt,correct,total,saving:true,saved:false,oldXp:xp(),error:null};render();
-  try {const result=await api.saveAttempt(attempt);setSession(result);state.active.saving=false;state.active.saved=true;state.active.earnedXp=Math.max(0,xp()-state.active.oldXp);const rewards=rewardItems().filter(item=>state.active.oldXp<item.unlockXp&&xp()>=item.unlockXp);render();if(rewards.length)notify(`You earned ${rewards[0].label}. Find it in your avatar’s pins.`,'success');}
-  catch(error){state.active.saving=false;state.active.error=error.message;render();}
+  state.active={kind:'result',title:previous.title,previous,attempt,correct,total,saving:false,saved:false,oldXp:xp(),masteredBefore:Object.entries(progress().islands||{}).filter(([,island])=>island.mastered).map(([id])=>id),error:null};
+  return saveActivityResult(state.active);
+}
+async function saveActivityResult(result){
+  if(!result||result.kind!=='result'||result.saving||result.saved)return;
+  result.saving=true;result.error=null;prepareCompletionSound();render();
+  try{
+    const response=await api.saveAttempt(result.attempt);setSession(response);
+    result.saved=true;result.earnedXp=Math.max(0,xp()-result.oldXp);
+    result.newIslandMastery=Object.entries(progress().islands||{}).some(([id,island])=>island.mastered&&!result.masteredBefore.includes(id));
+  }catch(error){result.error=error.message;}
+  result.saving=false;
+  // A delayed save must not play a reward on a different route or activity.
+  if(state.active!==result)return;
+  render();
+  if(result.saved){
+    playCompletionSound(result.newIslandMastery);
+    const rewards=rewardItems().filter(item=>result.oldXp<item.unlockXp&&xp()>=item.unlockXp);
+    if(rewards.length)notify(`You earned ${rewards[0].label}. Find it in your avatar’s pins.`,'success');
+  }
 }
 function renderResult(a){
  const percent=a.total?Math.round(a.correct/a.total*100):0,companion=a.previous.options.character||allActivities.find(item=>item.id===a.attempt.activityId)?.character||'alex';
@@ -384,13 +403,13 @@ on('click','[data-action]',async(_,target)=>{
     case'word-bank':return route('bank');case'practice-sets':return route('practice');
     case'select-all':state.selected=state.selected.size===allChunks.length?new Set():new Set(allChunks.map(chunk=>chunk.id));return render();
     case'mix-unit':state.selected=new Set(allChunks.map(chunk=>chunk.id));return route('practice');
-    case'toggle-feedback-sound':{const enabled=setFeedbackSoundsEnabled(!feedbackSoundsEnabled());target.setAttribute('aria-pressed',String(enabled));target.setAttribute('aria-label',enabled?'Mute answer sounds':'Enable answer sounds');target.title=enabled?'Answer sounds on':'Answer sounds off';target.classList.toggle('muted',!enabled);return;}case'skip-audio':return skipAudio();case'check-answer':return gradeCurrent();case'next-question':return nextQuestion();
+    case'toggle-feedback-sound':{const enabled=setFeedbackSoundsEnabled(!feedbackSoundsEnabled());target.setAttribute('aria-pressed',String(enabled));target.setAttribute('aria-label',enabled?'Mute sound effects':'Enable sound effects');target.title=enabled?'Sound effects on':'Sound effects off';target.classList.toggle('muted',!enabled);return;}case'skip-audio':return skipAudio();case'check-answer':return gradeCurrent();case'next-question':return nextQuestion();
     case'clear-sentence':state.active.order=[];return render();
     case'hint':state.active.hintUsed=true;return render();
     case'finish-game':return finishActivity();
     case'back-to-path':stopAudio();state.active=null;return route('learn');
     case'play-again':{const previous=state.active.previous;state.active=null;if(previous.kind==='quiz'){const options={...previous.options,audioFallbackQuestionIds:[],audioEnabled:previous.audioDisabled?false:previous.options.audioEnabled};if(options.activityId&&allActivities.some(item=>item.id===options.activityId)){const seed=Date.now(),questions=pathNodeById[options.activityId]?selectIslandQuestions(pathNodeById[options.activityId],progress(),{...options,count:8,seed}):getActivityQuestions(options.activityId,{...options,seed});return beginQuiz(questions,{...options,seed},previous.title);}return startQuiz(options,previous.title);}return startGame(previous.kind,previous.options);}
-    case'retry-save':{const result=state.active;if(result.saving)return;result.saving=true;result.error=null;render();try{const response=await api.saveAttempt(result.attempt);setSession(response);result.saved=true;result.earnedXp=Math.max(0,xp()-result.oldXp);}catch(issue){result.error=issue.message;}result.saving=false;return render();}
+    case'retry-save':return saveActivityResult(state.active);
     case'leave-activity':return showDialog(`<div class="dialog-heading"><h2 id="dialog-title">Leave practice?</h2><button class="round-button" data-dialog-close aria-label="Close">${icon('close')}</button></div><p>This round will not be saved.</p><div class="dialog-actions"><button class="primary-button" data-dialog-close>Continue</button><button class="text-button" data-leave-confirm>Back to lessons</button></div>`);
     case'sign-out':return showDialog(`<div class="dialog-heading"><h2 id="dialog-title">Sign out?</h2><button class="round-button" data-dialog-close aria-label="Close">${icon('close')}</button></div><p>You can sign in again with your book code.</p><div class="dialog-actions"><button class="primary-button" data-signout-confirm>Sign out</button><button class="text-button" data-dialog-close>Cancel</button></div>`);
     case'demo-codes':{let codes=window.HORIZONS_CONFIG?.demoCodes || [];if(!codes.length){try{const response=await fetch('./demo-codes.json');if(response.ok){const data=await response.json();codes=data.codes || data;}}catch{}}return showDialog(`<div class="dialog-heading"><h2 id="dialog-title">Example codes</h2><button class="round-button" data-dialog-close aria-label="Close">${icon('close')}</button></div><p>These example book codes open a shared demonstration profile. Use a made-up name and date.</p>${codes.length?`<div class="demo-code-list">${codes.map(item=>{const code=typeof item==='string'?item:item.code;return `<button data-use-demo="${esc(code)}"><b>${esc(code)}</b><small>${esc(typeof item==='string'?'Horizons A1':item.label || item.title || 'Horizons A1')}</small>${icon('arrow')}</button>`;}).join('')}</div>`:'<p>Example codes are being prepared. Your Brighton book code can be used in the main field.</p>'}`);}

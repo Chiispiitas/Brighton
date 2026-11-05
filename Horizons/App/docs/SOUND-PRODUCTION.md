@@ -1,5 +1,26 @@
 # Horizons answer sound production
 
+## Current lesson and mastery cues — 5 November 2026
+
+Two additional native cues were generated through the authenticated ElevenLabs API, model `eleven_text_to_sound_v3`, prompt influence 0.3, looping off, MP3 44.1kHz/128kbps. The existing protected credential was loaded only for the generation requests; no credential was copied into this repository. The accepted correct/wrong files remain unchanged.
+
+| Cue | Native file | Requested / decoded duration | SHA-256 |
+| --- | --- | --- | --- |
+| Lesson complete | `assets/audio/milestones-v1/lesson-complete.mp3` | 1.4s / 1.36s | `3fe328b108de40266ca432780459705909f2cfa54ff52c2db9035c8c91aa6231` |
+| Island mastered | `assets/audio/milestones-v1/island-mastered.mp3` | 1.9s / 1.88s | `32efcba28136dc824c621ec61cf2bdf1207925229790fb635046a36d7b9390b6` |
+
+The lesson brief extends the warm wooden marimba/plucked-bell palette into three ascending notes and a small major-chord sparkle. The mastery brief uses a five-note rising arpeggio and a slightly longer rounded resolution. Both are restrained, tactile and gently bouncy, without speech, drums or a harsh fanfare. Exact authored prompts, native-byte hashes, generation settings and decoded measurements are preserved in [the production manifest](../assets/audio/milestones-v1/production.json) and the adjacent `.prompt.txt` files. No native audio was edited or replaced by synthesis. Neither file has clipped decoded samples; runtime gain is 0.45, comparable to the accepted answer-success cue. Tone descriptions describe the authored generation briefs; physical speaker/headphone listening remains a human review step.
+
+A completed, successfully saved lesson/activity round plays the completion cue, including repeat practice. Newly earned island mastery is determined by comparing the server-returned `progress.islands` with the snapshot taken before that attempt. A new crown replaces the completion cue for that result; the two never stack. An already mastered island uses the normal completion cue on later practice. This adds sound feedback to the existing completion/mastery rules and does not alter scoring, progress, required retrievals or the backend. Full lesson completion receives the same completion cue; it is not an extra stacked event.
+
+Playback is triggered after a successful save, once per result. Failed saves are silent; a successful retry can play the pending reward once. Rendering, restoring the path, reopening details and loading an existing crown never trigger a reward. A delayed save that finishes after navigation cannot play on the new route. The existing locally remembered mute now has the accessible label **Mute sound effects**/**Enable sound effects** and covers answer and milestone cues independently of lesson recordings and reduced motion. Navigation, starting another round, a new answer cue and hiding the page stop reward playback.
+
+To allow a confirmed reward after an asynchronous save, `prepareCompletionSound()` resumes a Web Audio context from the Results/retry button gesture and starts decoding the two local files. `playCompletionSound()` plays the chosen decoded native file after the save succeeds. A cancellation generation prevents an in-flight decode from playing after navigation/muting. Sound failures leave the saved Results screen usable. Real Edge browser playback is checked; physical iOS/audio hardware is not verified in this session.
+
+Verification: `tools/milestone-sound-proof.mjs` uses synthetic sessions and intercepted save responses to exercise real grading, Results, retry, server-progress comparison and native Web Audio playback. It covers lesson completion, new crown priority, simultaneous milestones, already crowned practice, failed save/retry, duplicate renders, mute, reduced motion, hidden pages, navigation, delayed saves and playback failures. Both files play to `ended`. The 25 content/learning tests and the existing answer-sound regression proof pass. The v53→v54 worker upgrade proof verifies all four MP3s and the controller offline against exact file hashes; see `reports/milestone-sound-cache.json`. See `reports/milestone-sounds.json` for milestone event checks. Cache **milestone-sounds-v54**, queries **milestones1**, precaches all four sound files and the controller.
+
+Resolved generation error: the direct `/v1/sound-generation` requests initially returned HTTP 400, with code `text_too_long` and maximum 450 characters. The exact error was identified, briefs shortened to 447/448 characters, and the local session generator now checks this limit before submitting. Both valid requests succeeded. This establishes the origin of these specific 400 responses; it does not establish the origin of older unrelated Bad Request messages.
+
 Updated 5 November 2026, America/Bogota. User requested correct/wrong sounds generated with ElevenLabs, matching the app's design and personality.
 
 ## Native sources

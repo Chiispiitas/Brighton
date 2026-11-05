@@ -1,5 +1,7 @@
 # Horizons animation production audit
 
+Latest milestone audio: saved lesson rounds and newly earned island crowns have distinct native ElevenLabs cues. Audio is independent of reduced motion, shares remembered sound-effects mute, and adds no character motion. See [SOUND-PRODUCTION.md](SOUND-PRODUCTION.md).
+
 Latest exercise audio: finite answer feedback now has local ElevenLabs correct/wrong cues and a remembered mute button. No character or motion changes. Sound provenance and reproduction process: [SOUND-PRODUCTION.md](SOUND-PRODUCTION.md).
 
 Latest exercise feedback: result-panel, badge, button, answer nudge and progress pulse are finite interface motion only; see [UI-MOTION.md](UI-MOTION.md). Cast and avatar animation contracts remain unchanged.

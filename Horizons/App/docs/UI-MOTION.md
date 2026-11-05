@@ -1,5 +1,7 @@
 # Interface motion
 
+Milestone audio now accompanies saved lesson rounds and newly earned island crowns, with one cue per result and crown priority. Existing motion and character rules are unchanged. See [SOUND-PRODUCTION.md](SOUND-PRODUCTION.md) for generation and playback details.
+
 Answer sounds supplement the existing finite feedback motion. Native ElevenLabs cues, independent mute and playback rules are recorded in [SOUND-PRODUCTION.md](SOUND-PRODUCTION.md); reduced motion remains an independent preference.
 
 ## Current exercise feedback — 5 November 2026

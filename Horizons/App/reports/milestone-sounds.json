@@ -1,0 +1,58 @@
+{
+  "pass": true,
+  "base": "http://127.0.0.1:8898/Horizons/App/",
+  "checks": [
+    "lesson round",
+    "full lesson completion",
+    "new island crown",
+    "lesson and crown together",
+    "already crowned practice",
+    "failed save silent; retry earns crown once",
+    "remembered mute includes milestones",
+    "reduced motion does not mute",
+    "starting another round stops reward",
+    "navigation remains usable",
+    "hidden page silent",
+    "late save cannot play on another route",
+    "playback failure preserves results"
+  ],
+  "starts": [
+    {
+      "duration": 1.36,
+      "contextState": "running"
+    },
+    {
+      "duration": 1.36,
+      "contextState": "running"
+    },
+    {
+      "duration": 1.88,
+      "contextState": "running"
+    },
+    {
+      "duration": 1.88,
+      "contextState": "running"
+    },
+    {
+      "duration": 1.36,
+      "contextState": "running"
+    },
+    {
+      "duration": 1.88,
+      "contextState": "running"
+    },
+    {
+      "duration": 1.88,
+      "contextState": "running"
+    }
+  ],
+  "saves": 12,
+  "headerAndResultsWidths": [
+    320,
+    390,
+    768,
+    1440
+  ],
+  "fixture": "Synthetic session and intercepted saveAttempt responses only. Actual gradeCurrent, finishActivity, retry, server-confirmed progress comparison, renderer and Web Audio playback; both native buffers played to ended.",
+  "errors": []
+}
