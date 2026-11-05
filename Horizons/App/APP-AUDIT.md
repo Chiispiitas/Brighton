@@ -1,5 +1,8 @@
 # Horizons website process audit
 
+Latest avatar picker: every hairstyle option uses a black silhouette preview. Hair color is immediately after Hair in tab/keyboard order. Thumbnail recoloring is scoped to the picker; selected/saved hair colors remain on the actual avatar. Cache avatar-picker-v50; stylesheet/module queries hair1.
+
+
 Latest editor feedback: first look-around begins after500ms, easing to its first pose at1900ms; the existing20-second varied gaze pattern is retained. Each avatar option change (skin, clothes, hair, eyewear, badge, hair color or background) triggers an immediate140ms eye-only blink alongside customization feedback, including changes queued while art loads. Reduced motion remains neutral with no feedback animation. Face/glasses tracking, fixed background, immediate lesson entry and stable path scroll remain. Cache avatar-editor-v49; queries look2.
 
 

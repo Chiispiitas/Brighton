@@ -1,12 +1,12 @@
-import {requestAvatarFeedback} from './avatar-motion.js?v=look2';
-import {unitRoutes,adjacentUnit,updateBoundary} from './unit-navigation.js?v=look2';
-import {mountOverworld} from './overworld-motion.js?v=look2';
+import {requestAvatarFeedback} from './avatar-motion.js?v=hair1';
+import {unitRoutes,adjacentUnit,updateBoundary} from './unit-navigation.js?v=hair1';
+import {mountOverworld} from './overworld-motion.js?v=hair1';
 import {selectIslandQuestions,masteryTargets} from '../content/island-mastery.mjs';
-import {enhanceShell,openPathBubble,closePathBubble,avatarFeedback} from './studio-ui.js?v=look2';
-import {captureUI,enhanceMotion,markControls,animateUI} from './ui-motion.js?v=look2';
+import {enhanceShell,openPathBubble,closePathBubble,avatarFeedback} from './studio-ui.js?v=hair1';
+import {captureUI,enhanceMotion,markControls,animateUI} from './ui-motion.js?v=hair1';
 import {lessonArt} from './lesson-art.js?v=colors1';
 import {api, APIError, getSessionToken, forgetSession} from './api-client.js';
-import {loadArt, normalizeAvatar, artManifest, characterMarkup, avatarMarkup, avatarOptions, defaultAvatar, rasterMarkup, assetURL, refreshArtwork, disposeArtwork, sceneMarkup, wordArt} from './art.js?v=look2';
+import {loadArt, normalizeAvatar, artManifest, characterMarkup, avatarMarkup, avatarOptions, defaultAvatar, rasterMarkup, assetURL, refreshArtwork, disposeArtwork, sceneMarkup, wordArt} from './art.js?v=hair1';
 import {course, lessons, vocabulary, chunks, grammarSets, activities, games, wordById, chunkById, lessonById, pathNodes, pathNodeById} from '../content/unit1.mjs';
 import {buildQuiz, getActivityQuestions, getAudioFallbackQuestion, getWordsForChunks, getMatchingPairs, checkAnswer} from '../content/engine.mjs';
 
@@ -148,8 +148,12 @@ function wordBank(){
 
 function profilePage() {
   const p = profile();
+  const profileGroups=avatarOptions().filter(group=>group.id!=='body');
+  const colorIndex=profileGroups.findIndex(group=>group.id==='hairColor');
+  if(colorIndex>=0&&profileGroups.some(group=>group.id==='hair')){const [color]=profileGroups.splice(colorIndex,1);profileGroups.splice(profileGroups.findIndex(group=>group.id==='hair')+1,0,color);}
+
   if (!state.avatarDraft){state.avatarDraft=normalizeAvatar({...defaultAvatar(),...(p.avatar || {})});if(!['male','female'].includes(state.avatarDraft.body))state.avatarDraft.body='male';}
-  return `<section class="profile-heading"><h1>My profile</h1></section><div class="profile-layout"><section class="avatar-studio"><div class="avatar-preview" id="avatar-preview">${avatarMarkup(state.avatarDraft,'avatar-large',name())}<span class="avatar-studio-spark" aria-hidden="true">✦</span></div><div class="avatar-options">${avatarOptions().filter(group=>group.id!=='body').map(group=>`<fieldset><legend>${esc(group.label)}</legend><div class="avatar-option-row">${(group.options||[]).map(option=>`<button type="button" class="avatar-option ${state.avatarDraft[group.id]===option.id?'selected':''}" data-avatar-group="${esc(group.id)}" data-avatar-value="${esc(option.id)}" aria-pressed="${state.avatarDraft[group.id]===option.id}" aria-label="${esc(option.label || option.name || option.id)}">${option.swatch?`<span class="avatar-swatch" style="background:${esc(option.swatch)}"></span>`:option.thumbnail?rasterMarkup(option.thumbnail,'',''):esc(option.label || option.name || option.id)}</button>`).join('')}</div></fieldset>`).join('')}${avatarOptions().length?'':'<p>Your avatar will appear here when the character artwork finishes loading.</p>'}</div></section>
+  return `<section class="profile-heading"><h1>My profile</h1></section><div class="profile-layout"><section class="avatar-studio"><div class="avatar-preview" id="avatar-preview">${avatarMarkup(state.avatarDraft,'avatar-large',name())}<span class="avatar-studio-spark" aria-hidden="true">✦</span></div><div class="avatar-options">${profileGroups.map(group=>`<fieldset><legend>${esc(group.label)}</legend><div class="avatar-option-row">${(group.options||[]).map(option=>`<button type="button" class="avatar-option ${state.avatarDraft[group.id]===option.id?'selected':''}" data-avatar-group="${esc(group.id)}" data-avatar-value="${esc(option.id)}" aria-pressed="${state.avatarDraft[group.id]===option.id}" aria-label="${esc(option.label || option.name || option.id)}">${option.swatch?`<span class="avatar-swatch" style="background:${esc(option.swatch)}"></span>`:option.thumbnail?rasterMarkup(option.thumbnail,'',''):esc(option.label || option.name || option.id)}</button>`).join('')}</div></fieldset>`).join('')}${avatarOptions().length?'':'<p>Your avatar will appear here when the character artwork finishes loading.</p>'}</div></section>
     <section class="profile-details"><form id="profile-form"><label for="display-name">Name</label><input id="display-name" name="displayName" value="${esc(p.displayName || p.name || '')}" maxlength="40" required autocomplete="nickname" placeholder="Your name"><label for="date-of-birth">Date of birth <span class="optional">Optional</span></label><input id="date-of-birth" name="dateOfBirth" type="date" value="${esc((p.dateOfBirth || '').slice(0,10))}" max="${new Date().toISOString().slice(0,10)}"><label for="daily-goal">Daily goal</label><select id="daily-goal" name="goal">${[5,10,15,20].map(goal=>`<option value="${goal}" ${Number(p.goal||5)===goal?'selected':''}>${goal} minutes</option>`).join('')}</select><p id="profile-error" class="form-error" role="alert"></p><button type="submit" class="primary-button">Save profile ${icon('check')}</button></form><section class="your-books"><span class="eyebrow">YOUR BOOKS</span>${bookList().map(book=>`<div class="profile-book"><span class="book-level">${esc(book.level || 'A1')}</span><span><b>${esc(bookTitle(book))}</b><small>${book.expiresAt?`Expires ${formatDate(book.expiresAt)}`:'Available'}</small></span></div>`).join('')}<button class="text-button" data-action="add-book">Add another book ${icon('plus')}</button></section><button class="sign-out" data-action="sign-out">Sign out ${icon('exit')}</button></section></div>`;
 }
 function render() {

@@ -328,3 +328,6 @@ input:not([type=checkbox]):focus,select:focus{background-color:var(--orange-soft
 .pico-banner-map{transform-origin:126px 327px;z-index:2}
 .hero-pico .pico-banner-stage [hidden]{display:none!important}
 @media(prefers-reduced-motion:reduce){.hero-pico .pico-banner-stage{display:none!important}}
+
+/* Neutral black silhouettes in the hairstyle picker. */
+.avatar-option[data-avatar-group="hair"] .avatar-option-art{filter:brightness(0)!important}
