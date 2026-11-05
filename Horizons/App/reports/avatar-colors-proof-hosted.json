@@ -1,0 +1,40 @@
+{
+  "date": "2026-11-05T03:28:29.377Z",
+  "base": "https://exams.bebrighton.net/Horizons/App/",
+  "checks": [
+    {
+      "width": 320,
+      "noPlayerIcons": true,
+      "hairColor": true,
+      "background": true,
+      "circleBust": true
+    },
+    {
+      "width": 390,
+      "noPlayerIcons": true,
+      "hairColor": true,
+      "background": true,
+      "circleBust": true
+    },
+    {
+      "width": 768,
+      "noPlayerIcons": true,
+      "hairColor": true,
+      "background": true,
+      "circleBust": true
+    },
+    {
+      "width": 1440,
+      "noPlayerIcons": true,
+      "hairColor": true,
+      "background": true,
+      "circleBust": true
+    }
+  ],
+  "save": true,
+  "reload": true,
+  "secondDevice": true,
+  "isolatedProfileRestored": true,
+  "errors": [],
+  "pass": true
+}
