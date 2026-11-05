@@ -19,8 +19,8 @@ test('every study-bank entry has a Spanish cue, including letters, numbers and s
  assert.equal(vocabulary.find(w=>w.term==='Where are you from?').spanish,'¿De dónde eres?');
 });
 
-test('ordinary vocabulary and every grammar set prioritize typed answers over multiple choice',()=>{
- for(const q of buildQuiz({lessonIds:lessons.map(l=>l.id),mode:'mixed',count:'all',seed:'typed-default'})){assert.equal(q.type,'text');if(q.kind==='vocabulary'){assert.ok(q.prompt.includes(q.translation));assert.ok(!q.prompt.includes(q.word.meaning));}}
+test('lexical recall stays typed, sentence vocabulary uses choices, and grammar keeps its target',()=>{
+ for(const q of buildQuiz({lessonIds:lessons.map(l=>l.id),mode:'mixed',count:'all',seed:'typed-default'})){assert.equal(q.type,q.kind==='vocabulary'&&(q.word.kind==='question'||q.word.answerMode==='choice')?'choice':'text');if(q.kind==='vocabulary'){assert.ok(q.prompt.includes(q.translation));assert.ok(!q.prompt.includes(q.word.meaning));}}
  for(const set of grammarSets){const questions=getActivityQuestions(`practice-${set.id}`,{count:'all',seed:'typed-grammar'});assert.ok(questions.length);assert.ok(questions.every(q=>q.type==='text'));for(const q of questions)assert.equal(checkAnswer(q,q.accepted[0]).correct,true,q.id);}
 });
 
@@ -81,4 +81,26 @@ test('a selected no-audio alternative has a deterministic different task and is 
 test('audio-free rounds cover every original question without audio or repeated one-answer substitutes',()=>{
  for(const lesson of lessons){const id=`listen-${lesson.id.toLowerCase()}`,options={count:'all',seed:id},original=getActivityQuestions(id,options),silent=getActivityQuestions(id,{...options,audioEnabled:false});assert.deepEqual(silent.map(q=>q.id),original.map(q=>q.id));for(const q of silent){assert.equal(q.audio,undefined);assert.equal(q.audioWordId,undefined);assert.equal(q.listening,undefined);assert.equal(q.audioFallback,true);assert.equal(checkAnswer(q,q.accepted[0]).correct,true);}}
  const alternatives=getActivityQuestions('listen-1a',{count:'all',audioEnabled:false,seed:'variety'});assert.ok(new Set(alternatives.map(q=>q.prompt)).size>=4);assert.ok(new Set(alternatives.map(q=>q.answer)).size>=6);
+});
+
+test('full-sentence vocabulary is recognition, while apellido and other lexical chunks stay typed',()=>{
+ const generated=makeVocabularyQuestions(vocabulary,{seed:'sentence-policy'});
+ for(const term of ['What is your last name?','What is your phone number?','Where are you from?','Nice to meet you','See you later']){
+  const q=generated.find(q=>q.word.term===term);assert.equal(q.type,'choice',term);assert.ok(q.prompt.startsWith('Choose the English translation.'));assert.ok(q.choices.length>=2);assert.equal(checkAnswer(q,q.answer).correct,true);assert.equal(checkAnswer(q,q.choices.find(c=>c.id!==q.answer).id).correct,false);
+ }
+ for(const term of ['last name','first name','phone number','Good morning','Good night'])assert.equal(generated.find(q=>q.word.term===term).type,'text',term);
+ assert.equal(generated.find(q=>q.word.term==='last name').translation,'apellido');
+ const listening=makeVocabularyQuestions(vocabulary.filter(w=>w.kind==='question'),{mode:'listening',seed:'sentence-audio'});
+ for(const q of listening){assert.equal(q.prompt,'Listen and choose.');assert.ok(!q.prompt.includes(q.word.spanish));const a=getAudioFallbackQuestion(q),b=getAudioFallbackQuestion(q);assert.equal(a.type,'choice');assert.deepEqual(a.choices,b.choices);}
+});
+
+test('new sentence choices retain question IDs and grade correctly on the unchanged server engine',async()=>{
+ const legacy=await import('../backend/src/content/engine.mjs');
+ for(const activity of activities.filter(a=>['quiz','review'].includes(a.type))){
+  const options={count:'all',seed:'sentence-server-parity'},current=getActivityQuestions(activity.id,options),previous=legacy.getActivityQuestions(activity.id,options);
+  assert.deepEqual(current.map(q=>q.id),previous.map(q=>q.id),activity.id);
+  for(const q of current.filter(q=>q.kind==='vocabulary'&&q.type==='choice')){
+   const old=previous.find(p=>p.id===q.id);for(const c of q.choices)assert.equal(legacy.checkAnswer(old,c.text).correct,checkAnswer(q,c.id).correct,q.id+': '+c.text);
+  }
+ }
 });

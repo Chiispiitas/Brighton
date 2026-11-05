@@ -93,7 +93,8 @@ export function makeVocabularyQuestions(words,{mode='recall',seed=Date.now(),aud
  return words.map(word=>{
   const answer=word.kind==='letter'?word.letter:word.term;
   const base={id:`recall-${word.id}`,wordIds:[word.id],word,translation:vocabularyCue(word),explanation:word.example,expectedTerm:answer,kind:'vocabulary',retrieval:true};
-  if(mode==='choice'||mode==='listening'){
+  // Sentence-level language is recognition practice here, not grammar composition.
+  if(mode==='choice'||mode==='listening'||word.kind==='question'||word.answerMode==='choice'){
    const q=choiceQuestion({...base,prompt:mode==='listening'?'Listen and choose.':`Choose the English translation.\n${word.spanish}`,correctText:answer,distractors:shuffle(distractorPool(word),random).map(x=>x.kind==='letter'?x.letter:x.term)},random);
    if(mode==='listening'){Object.assign(q,{listening:true,audioWordId:word.id,listenFor:'',hint:undefined});return audioEnabled===false?getAudioFallbackQuestion(q):q;}
    return q;
@@ -166,7 +167,7 @@ export function getAudioFallbackQuestion(question){
  if(!question.listening&&!question.audio&&!question.audioWordId)return question;
  const word=question.word||wordById[question.audioWordId]||vocabulary.find(w=>normalizeAnswer(w.term)===normalizeAnswer(question.correctText??question.answer));
  let q;
- if(word)q=makeVocabularyQuestions([word],{mode:'recall'})[0];
+ if(word)q=makeVocabularyQuestions([word],{mode:'recall',seed:question.id})[0];
  else if(question.id.startsWith('listen-short-')){
   const index=Number(question.id.split('-').at(-1)),subject=['I','You','He','She'][index],verb=index===0?'am':index===1?'are':'is',short=["I'm","You're","He's","She's"][index];
   q={type:'text',kind:'grammar',prompt:`Write the short form: ${subject} ${verb} a student.`,answer:`${short} a student.`,accepted:[`${short} a student.`],wordIds:[],explanation:`${short} a student.`,allowContractions:false};

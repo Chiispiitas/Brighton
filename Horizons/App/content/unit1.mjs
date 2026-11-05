@@ -17,8 +17,8 @@ const greetings = [
   ['Good evening', 'A time-of-day greeting when you meet at 8:00 p.m.', 'Good evening. Nice to meet you.', { group: 'time-greeting' }],
   ['Hello', 'A greeting when you meet someone.', 'Hello! I am Mina.', { equivalentGroup: 'hello', aliases: ['Hi'] }],
   ['Hi', 'A short, friendly greeting.', 'Hi, Alex!', { equivalentGroup: 'hello', aliases: ['Hello'] }],
-  ['Nice to meet you', 'A friendly phrase for meeting someone for the first time.', 'I am Jo. Nice to meet you.', { kind: 'phrase' }],
-  ['See you later', 'A goodbye when you expect to meet again.', 'See you later, Mina.', { equivalentGroup: 'goodbye', kind: 'phrase' }],
+  ['Nice to meet you', 'A friendly phrase for meeting someone for the first time.', 'I am Jo. Nice to meet you.', { kind: 'phrase', answerMode: 'choice' }],
+  ['See you later', 'A goodbye when you expect to meet again.', 'See you later, Mina.', { equivalentGroup: 'goodbye', kind: 'phrase', answerMode: 'choice' }],
   ['Goodbye', 'A word for leaving.', 'Goodbye, Jo!', { equivalentGroup: 'goodbye', aliases: ['Bye'] }],
   ['Bye', 'A short, friendly goodbye.', 'Bye! See you later.', { equivalentGroup: 'goodbye', aliases: ['Goodbye'] }],
   ['Good night', 'A goodbye at night or before you go to bed.', 'Good night. See you tomorrow.', { kind: 'phrase' }]
