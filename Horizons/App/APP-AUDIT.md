@@ -1,5 +1,8 @@
 # Horizons website process audit
 
+Word-order questions: neutral stone tiles, pointer dragging into the answer, reordering within it and dragging back to the bank. Mouse/pen/touch supported; click/keyboard button activation remains. Checked answers lock tile changes. Cache word-tiles-v51; queries order1.
+
+
 Latest avatar picker: every hairstyle option uses a black silhouette preview. Hair color is immediately after Hair in tab/keyboard order. Thumbnail recoloring is scoped to the picker; selected/saved hair colors remain on the actual avatar. Cache avatar-picker-v50; stylesheet/module queries hair1.
 
 

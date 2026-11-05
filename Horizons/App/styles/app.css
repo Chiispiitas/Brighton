@@ -331,3 +331,5 @@ input:not([type=checkbox]):focus,select:focus{background-color:var(--orange-soft
 
 /* Neutral black silhouettes in the hairstyle picker. */
 .avatar-option[data-avatar-group="hair"] .avatar-option-art{filter:brightness(0)!important}
+
+.sentence-answer>button,.sentence-tokens>button{background:#e9e6df;color:var(--ink);border:1px solid #d4d0c6;box-shadow:0 2px 0 #d4d0c6;touch-action:none;cursor:grab}.sentence-tokens>button:disabled{cursor:default}.sentence-answer{min-height:95px}

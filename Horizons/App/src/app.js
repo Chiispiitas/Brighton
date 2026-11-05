@@ -1,12 +1,12 @@
-import {requestAvatarFeedback} from './avatar-motion.js?v=hair1';
-import {unitRoutes,adjacentUnit,updateBoundary} from './unit-navigation.js?v=hair1';
-import {mountOverworld} from './overworld-motion.js?v=hair1';
+import {requestAvatarFeedback} from './avatar-motion.js?v=order1';
+import {unitRoutes,adjacentUnit,updateBoundary} from './unit-navigation.js?v=order1';
+import {mountOverworld} from './overworld-motion.js?v=order1';
 import {selectIslandQuestions,masteryTargets} from '../content/island-mastery.mjs';
-import {enhanceShell,openPathBubble,closePathBubble,avatarFeedback} from './studio-ui.js?v=hair1';
-import {captureUI,enhanceMotion,markControls,animateUI} from './ui-motion.js?v=hair1';
+import {enhanceShell,openPathBubble,closePathBubble,avatarFeedback} from './studio-ui.js?v=order1';
+import {captureUI,enhanceMotion,markControls,animateUI} from './ui-motion.js?v=order1';
 import {lessonArt} from './lesson-art.js?v=colors1';
 import {api, APIError, getSessionToken, forgetSession} from './api-client.js';
-import {loadArt, normalizeAvatar, artManifest, characterMarkup, avatarMarkup, avatarOptions, defaultAvatar, rasterMarkup, assetURL, refreshArtwork, disposeArtwork, sceneMarkup, wordArt} from './art.js?v=hair1';
+import {loadArt, normalizeAvatar, artManifest, characterMarkup, avatarMarkup, avatarOptions, defaultAvatar, rasterMarkup, assetURL, refreshArtwork, disposeArtwork, sceneMarkup, wordArt} from './art.js?v=order1';
 import {course, lessons, vocabulary, chunks, grammarSets, activities, games, wordById, chunkById, lessonById, pathNodes, pathNodeById} from '../content/unit1.mjs';
 import {buildQuiz, getActivityQuestions, getAudioFallbackQuestion, getWordsForChunks, getMatchingPairs, checkAnswer} from '../content/engine.mjs';
 
@@ -333,6 +333,31 @@ on('click','[data-path-node]',(event,target)=>pathDetails(target.dataset.pathNod
 on('click','[data-start-activity]',(_,target)=>startActivity(target.dataset.startActivity));
 on('click','[data-choice]',(_,target)=>{if(state.active?.checked)return;state.active.selected=target.dataset.choice;render();});
 on('input','#typed-answer',(_,target)=>{if(state.active?.kind!=='quiz')return;state.active.selected=target.value;const check=app.querySelector('[data-action=check-answer]');if(check)check.disabled=!target.value.trim();});
+// Pointer-based tile dragging works with mouse, pen and touch; clicks remain available.
+let tileDrag=null,suppressTileClick=false;
+function clearTileDrag(){tileDrag?.ghost?.remove();tileDrag=null;}
+app.addEventListener('pointerdown',event=>{
+ const tile=event.target.closest('[data-token],[data-remove-token]');
+ if(!tile||tile.disabled||event.button!==0||state.active?.checked)return;
+ tileDrag={tile,id:event.pointerId,x:event.clientX,y:event.clientY,index:Number(tile.dataset.token??tile.dataset.removeToken),activity:state.active};app.setPointerCapture(event.pointerId);
+});
+app.addEventListener('pointermove',event=>{
+ const d=tileDrag;if(!d||event.pointerId!==d.id)return;
+ if(!d.tile.isConnected||state.active!==d.activity){clearTileDrag();return;}
+ if(!d.ghost&&Math.hypot(event.clientX-d.x,event.clientY-d.y)<8)return;
+ event.preventDefault();
+ if(!d.ghost){const r=d.tile.getBoundingClientRect(),style=getComputedStyle(d.tile);d.ghost=d.tile.cloneNode(true);d.ghost.removeAttribute('data-token');d.ghost.removeAttribute('data-remove-token');d.ghost.style.cssText=`position:fixed;pointer-events:none;z-index:1000;width:${r.width}px;height:${r.height}px;background:#e9e6df;color:#173e5c;border:1px solid #cbc7bd;border-radius:14px;font:${style.font};opacity:1`;document.body.append(d.ghost);}
+ d.ghost.style.left=(event.clientX-d.ghost.offsetWidth/2)+'px';d.ghost.style.top=(event.clientY-d.ghost.offsetHeight/2)+'px';
+});
+app.addEventListener('pointerup',event=>{
+ const d=tileDrag;if(!d||event.pointerId!==d.id)return;
+ if(d.ghost){suppressTileClick=true;setTimeout(()=>suppressTileClick=false,0);const target=document.elementFromPoint(event.clientX,event.clientY),answer=target?.closest('.sentence-answer'),bank=target?.closest('.sentence-tokens');
+ if(state.active===d.activity&&!d.activity.checked&&(answer||bank)){const order=d.activity.order.filter(i=>i!==d.index);if(answer){const token=target.closest('[data-remove-token]');let pos=order.length;if(token&&Number(token.dataset.removeToken)!==d.index){const r=token.getBoundingClientRect();pos=order.indexOf(Number(token.dataset.removeToken))+(event.clientX>=r.left+r.width/2?1:0);}else if(token)pos=d.activity.order.indexOf(d.index);order.splice(pos,0,d.index);}d.activity.order=order;clearTileDrag();render();}}
+ clearTileDrag();
+});
+app.addEventListener('click',event=>{if(suppressTileClick){event.preventDefault();event.stopImmediatePropagation();}},true);
+app.addEventListener('pointercancel',clearTileDrag);window.addEventListener('blur',clearTileDrag);
+new MutationObserver(()=>{if(tileDrag&&!tileDrag.tile.isConnected)clearTileDrag();}).observe(app,{childList:true,subtree:true});
 on('click','[data-token]',(_,target)=>{state.active.order.push(Number(target.dataset.token));render();});
 on('click','[data-remove-token]',(_,target)=>{state.active.order=state.active.order.filter(index=>index!==Number(target.dataset.removeToken));render();});
 on('click','[data-memory]',(_,target)=>flipCard(target.dataset.memory));

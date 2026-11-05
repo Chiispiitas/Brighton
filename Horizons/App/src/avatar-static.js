@@ -1,4 +1,4 @@
-import {mountAvatarMotion} from './avatar-motion.js?v=hair1';
+import {mountAvatarMotion} from './avatar-motion.js?v=order1';
 /* Native bitmap portraits; only the editor and selected path portrait opt into motion. */
 const mounts=new WeakMap();
 const appURL=new URL('../',import.meta.url);

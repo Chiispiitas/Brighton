@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "createdAt": "2026-11-05T21:05:13.183Z",
-  "sourceCommit": "fcc8bfb07634ecb62a7d40de1a45459328de4755",
+  "createdAt": "2026-11-05T21:08:41.118Z",
+  "sourceCommit": "f6ca7f0575f5482b7720b156f1a21ae4d10f7c3a",
   "maximumImageInputs": 7,
   "method": "Browser contact sheets of current native ImageGen artwork; labels and color chips are reference presentation, not new illustration generation.",
   "sources": [
@@ -15,15 +15,15 @@
     },
     {
       "file": "src/art.js",
-      "sha256": "eb7745608f2553731b33c8718f0042d1835bc18251343aac99fa296f4703606a"
+      "sha256": "8c932f1355d0ad179af5da47ae8224ff6f42d94b6594a50815e1b74347d25006"
     },
     {
       "file": "src/avatar-static.js",
-      "sha256": "1f4740b48304ea0b7c8c0262eace1af0a741a8e570f7df12a259147d17f4d3e2"
+      "sha256": "5b2ed16245ad9a0d73ca19eee958d87cb8c8d7888e821d9500b630419cd5d5d4"
     },
     {
       "file": "styles/app.css",
-      "sha256": "c7598468ad0241db851517760b2575e12f5d32520589676db9f73ab98a787f3e"
+      "sha256": "2cdd9caaa002b059e40d9a9015f7cd3c415868a2d0f81e70cf57f2df8b9d54ff"
     },
     {
       "file": "styles/horizontal-path.css",
