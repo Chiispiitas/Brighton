@@ -1,4 +1,5 @@
-import {enhanceShell,openPathBubble,closePathBubble,avatarFeedback} from './studio-ui.js?v=colors1';
+import {enhanceShell,openPathBubble,closePathBubble,avatarFeedback} from './studio-ui.js?v=motion1';
+import {captureUI,enhanceMotion,markControls,animateUI} from './ui-motion.js?v=motion1';
 import {lessonArt} from './lesson-art.js?v=colors1';
 import {api, APIError, getSessionToken, forgetSession} from './api-client.js';
 import {loadArt, normalizeAvatar, artManifest, characterMarkup, avatarMarkup, avatarOptions, defaultAvatar, rasterMarkup, assetURL, refreshArtwork, disposeArtwork, sceneMarkup, wordArt} from './art.js?v=colors1';
@@ -118,15 +119,17 @@ function profilePage() {
     <section class="profile-details"><form id="profile-form"><label for="display-name">Name</label><input id="display-name" name="displayName" value="${esc(p.displayName || p.name || '')}" maxlength="40" required autocomplete="nickname" placeholder="Your name"><label for="date-of-birth">Date of birth <span class="optional">Optional</span></label><input id="date-of-birth" name="dateOfBirth" type="date" value="${esc((p.dateOfBirth || '').slice(0,10))}" max="${new Date().toISOString().slice(0,10)}"><label for="daily-goal">Daily goal</label><select id="daily-goal" name="goal">${[5,10,15,20].map(goal=>`<option value="${goal}" ${Number(p.goal||5)===goal?'selected':''}>${goal} minutes</option>`).join('')}</select><p id="profile-error" class="form-error" role="alert"></p><button type="submit" class="primary-button">Save profile ${icon('check')}</button></form><section class="your-books"><span class="eyebrow">YOUR BOOKS</span>${bookList().map(book=>`<div class="profile-book"><span class="book-level">${esc(book.level || 'A1')}</span><span><b>${esc(bookTitle(book))}</b><small>${book.expiresAt?`Expires ${formatDate(book.expiresAt)}`:'Available'}</small></span></div>`).join('')}<button class="text-button" data-action="add-book">Add another book ${icon('plus')}</button></section><button class="sign-out" data-action="sign-out">Sign out ${icon('exit')}</button></section></div>`;
 }
 function render() {
+  const motionBefore=captureUI(app);
   disposeArtwork(app);
   app.removeAttribute('aria-busy');
-  if (!state.session) {app.innerHTML=welcome();refreshArtwork(app);return;}
-  if (state.active) {app.innerHTML=renderActivity();refreshArtwork(app);return;}
+  if (!state.session) {app.innerHTML=welcome();refreshArtwork(app);enhanceMotion(app,motionBefore);return;}
+  if (state.active) {app.innerHTML=renderActivity();refreshArtwork(app);enhanceMotion(app,motionBefore);return;}
   const pages={learn:home,practice,bank:wordBank,profile:profilePage};
   const learningRoute=['learn','practice','bank'].includes(state.route);
   app.innerHTML=shell(learningRoute&&!hasBookAccess()?accessPage():learningRoute&&!isA1Book()?home():(pages[state.route] || home)(),state.route==='bank'?'practice':state.route);
   setupAvatarChoices();enhanceShell(xp(),streak(),icon,state.avatarDraft||profile().avatar,artManifest());
   refreshArtwork(app);
+  enhanceMotion(app,motionBefore);
   requestAnimationFrame(layoutPaths);document.fonts.ready.then(layoutPaths);
 }
 function findChunkActivity(id) {return allActivities.find(a=>a.chunkIds?.includes(id)&&['quiz','vocabulary'].includes(a.type));}
@@ -247,7 +250,7 @@ function renderResult(a){
  const percent=a.total?Math.round(a.correct/a.total*100):0,companion=a.previous.options.character||allActivities.find(item=>item.id===a.attempt.activityId)?.character||'alex';
  return `<main class="result-page"><a class="result-brand wordmark" href="#learn" data-route="learn">HORIZONS</a><div class="result-character">${characterMarkup(companion,'result-pico','celebrate',({pico:'jump',mina:'skip',alex:'dance',jo:'clap'})[companion])}</div><h1>Results</h1><p>${a.correct} of ${a.total} correct</p><div class="result-stats"><div><b>${percent}%</b><span>Score</span></div><div><b>${Math.max(1,Math.round(a.attempt.durationMs/60000))}</b><span>min</span></div></div>${a.saving?'<p class="save-note" role="status">Saving…</p>':a.error?`<div class="save-error" role="alert"><p>${esc(a.error)}</p><button class="text-button" data-action="retry-save">Retry save ${icon('repeat')}</button></div>`:'<p class="save-note">Saved</p>'}<div class="result-actions"><button class="primary-button" data-action="back-to-path" ${a.saving?'disabled':''}>Back to lessons ${icon('arrow')}</button><button class="text-button" data-action="play-again" ${a.saving?'disabled':''}>Practise again ${icon('repeat')}</button></div></main>`;
 }
-function showDialog(content,kind='') {disposeArtwork(dialog);dialog.className=`app-dialog ${kind}`;dialog.innerHTML=content;dialog.showModal();refreshArtwork(dialog);}
+function showDialog(content,kind='') {disposeArtwork(dialog);dialog.className=`app-dialog ${kind}`;dialog.innerHTML=content;dialog.showModal();refreshArtwork(dialog);markControls(dialog);animateUI(dialog,[{opacity:0,transform:'translateY(10px) scale(.98)'},{opacity:1,transform:'translateY(0) scale(1)'}]);}
 function closeDialog(){disposeArtwork(dialog);dialog.close();}
 // Native close/Escape also releases rigs and disconnects placeholders before a
 // late module import can mount an animation into a hidden dialog.

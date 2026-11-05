@@ -175,11 +175,11 @@ input,select,textarea{font-size:16px!important}
 .character[data-posture-sprite],.character[data-posture-sprite]>.posture-art{animation:none!important}
 .character[data-motion-system=articulated]{animation:none!important}
 
-/* Static edition: artwork and controls never float, blink, bounce or animate. */
+/* Characters stay static. Legacy looping effects remain disabled. */
 html{scroll-behavior:auto!important}
-*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}
+*,*::before,*::after{animation:none!important;transition:none;scroll-behavior:auto!important}
 .character,.character *,.avatar,.avatar *,[data-static-art],[data-static-art] *{animation:none!important;transition:none!important;filter:none!important;box-shadow:none!important;text-shadow:none!important;border:0}
-button:hover,button:active,.path-stop:hover,.lesson-jumps>button:hover{transform:none!important}
+button:not([data-ui-motion]):not(.path-stop):hover,button:not([data-ui-motion]):not(.path-stop):active,.path-stop:hover{transform:none!important}
 
 /* Flat controls retain focus outlines and selected-state colors. */
 *,*::before,*::after{box-shadow:none!important;text-shadow:none!important}
@@ -192,7 +192,7 @@ button:hover,button:active,.path-stop:hover,.lesson-jumps>button:hover{transform
 .lesson-trail .path-stop{position:relative;left:calc(var(--path-x) - 90px);flex:none;width:180px;max-width:180px;height:136px;margin:0;grid-area:auto}
 @media(max-width:680px){.lesson-trail .path-stop{left:calc(var(--path-x) - 75px);width:150px;max-width:150px;height:136px}.lesson-trail .stop-label b{font-size:12px}}
 
-.lesson-trail .path-stop:hover .stop-orb{transform:none!important}
+.lesson-trail .path-stop:hover .stop-orb{transform:scale(1.06)}
 
 .question-scene.topic-scene .question-image{width:240px;height:150px;max-width:100%;margin:0}
 @media(max-width:680px){.question-scene.topic-scene .question-image{width:210px;height:128px;max-width:100%}}
@@ -247,6 +247,33 @@ button:hover,button:active,.path-stop:hover,.lesson-jumps>button:hover{transform
 .activity-page .question-body>.question-scene{margin:20px 0}
 .game-intro>h1{font-size:31px}
 .game-intro>.eyebrow{display:none}
+/* Interface motion: short responses to input, with no perpetual decoration. */
+button[data-ui-motion]{transition:transform 180ms cubic-bezier(.2,.8,.2,1.25),background-color 160ms,color 160ms;transform:none}
+button[data-ui-motion]:disabled{transform:none;transition:background-color 160ms,color 160ms}
+button[data-ui-motion]:not(:disabled):active{transform:translateY(2px) scale(.97);transition-duration:70ms}
+.avatar-option:not([data-ui-motion]){transform:none}
+.chunk-option{transition:background-color 160ms;transform:none}
+.chunk-check{transition:background-color 160ms,color 160ms}
+.lesson-trail .stop-orb{transition:transform 200ms cubic-bezier(.2,.8,.2,1.3),background-color 160ms}
+.lesson-trail .path-stop:active .stop-orb{transform:scale(.93);transition-duration:70ms}
+.avatar-tabs{position:relative;isolation:isolate}
+.avatar-tabs button{position:relative;z-index:1}
+.avatar-tabs:has(.ui-tab-indicator) [aria-selected=true]{background:transparent}
+.ui-tab-indicator{position:absolute;z-index:0;background:var(--pink);border-radius:16px;pointer-events:none}
+.path-floating{display:flex;visibility:hidden;opacity:0;transform:translateY(-8px);transition:opacity 200ms,transform 240ms cubic-bezier(.2,.8,.2,1),visibility 200ms}
+.path-scrolled .path-floating{visibility:visible;opacity:1;transform:translateY(0)}
+.toast{transition:transform 240ms cubic-bezier(.2,.8,.2,1),opacity 180ms}
+input:not([type=checkbox]),select{transition:background-color 160ms}
+input:not([type=checkbox]):focus,select:focus{background-color:var(--orange-soft)}
+@media(hover:hover) and (pointer:fine){
+ button[data-ui-motion]:not(:disabled):not(:active):hover{transform:translateY(-2px)}
+ .avatar-tabs button[data-ui-motion]:not(:disabled):not(:active):hover{transform:none}
+ button.avatar-option[data-ui-motion]:not(:disabled):not(:active):hover{transform:scale(1.035)}
+}
+@media(prefers-reduced-motion:reduce){
+ *,*::before,*::after{transition:none!important;animation:none!important;scroll-behavior:auto!important}
+ button[data-ui-motion]:hover,button[data-ui-motion]:active,.lesson-trail .path-stop:hover .stop-orb,.lesson-trail .path-stop:active .stop-orb{transform:none!important}
+}
 @media(max-width:680px){
  .compact-hero{min-height:205px;padding:25px 24px;border-radius:26px}
  .compact-hero .hero-copy{width:72%}

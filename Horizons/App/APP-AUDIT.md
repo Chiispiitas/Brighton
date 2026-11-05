@@ -96,7 +96,7 @@ Date of birth is optional and private. A future social feature is a separate pro
 
 Characters are static: no idle floating, blinking, limb rigs, breathing, pose sequences, parallax or hover displacement. Use complete purposeful still poses and varied cast members appropriate to the task.
 
-One exception is allowed: changing an avatar option may trigger a brief whole-preview bounce and an ImageGen sparkle reveal. It must finish, never loop, and be disabled for reduced motion. After the feedback ends, there must be no running animation or changing pixels.
+The 4 November video-reference request authorizes finite interface motion: button presses, badge/selection feedback, sliding tab highlights, section text entrances, path-bubble pop-ins, progress fills and answer-tile movement. Preserve the accepted layout and flat visual identity. Do not animate characters or containers holding them; the earlier whole-avatar preview bounce is now removed. The existing native ImageGen sparkle may reveal briefly after an avatar option changes. All feedback must settle, never loop, and respect reduced motion, including cancelling active feedback if that preference changes. See [UI-MOTION.md](docs/UI-MOTION.md).
 
 Use real buttons and inputs, visible keyboard focus, descriptive accessible names, keyboard-operable tabs and useful light-dismiss behavior. A literal double-click is never required. Aim for at least 44px touch controls; never let a compact design make targets hard to use. Check content at 320, 390, 768 and 1440px, and with zoom/long labels.
 
