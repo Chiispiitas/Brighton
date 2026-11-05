@@ -1,0 +1,41 @@
+{
+  "date": "2026-11-05T05:48:31.681Z",
+  "revision": "a1fbc38c44b2a5b39783be1c9b2eacc658af0df0",
+  "base": "https://exams.bebrighton.net/Horizons/App/",
+  "checks": [
+    {
+      "width": 320,
+      "fit": true,
+      "staticOtherCharacters": true
+    },
+    {
+      "width": 390,
+      "fit": true,
+      "staticOtherCharacters": true
+    },
+    {
+      "width": 768,
+      "fit": true,
+      "staticOtherCharacters": true
+    },
+    {
+      "width": 1440,
+      "fit": true,
+      "staticOtherCharacters": true
+    }
+  ],
+  "headMapAndBlink": true,
+  "fixedBody": true,
+  "extremaCaptured": true,
+  "reducedNativeFallback": true,
+  "loadFailureFallback": true,
+  "offscreenPauseResume": true,
+  "hiddenDocumentEventFixture": true,
+  "rerenderDisposal": true,
+  "errors": [],
+  "pass": true,
+  "learnerWrites": false,
+  "limits": [
+    "Edge/Chromium only; frame review is recorded separately. Hidden-document event uses a controlled visibility fixture."
+  ]
+}

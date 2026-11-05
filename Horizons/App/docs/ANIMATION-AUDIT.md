@@ -1,6 +1,6 @@
 # Horizons character animation audit
 
-Status: rest reconstruction and sampled motion approved for this scoped banner trial; local QA passed. Hosted verification pending.
+Status: rest reconstruction and sampled motion approved for this scoped banner trial; local and hosted QA passed. Published runtime: a1fbc38c44b2a5b39783be1c9b2eacc658af0df0.
 
 ## Authority and scope
 
@@ -71,3 +71,9 @@ Derived masks use alpha > 180 to seed the selection, MinFilter(3) then MaxFilter
 ### Review artifacts
 
 [Neutral comparison](../assets/art/pico-banner-motion-v1/reconstruction-comparison.png), [true extrema](pico-banner-animation/review/motion-extrema-linear-clock.png), [mobile banner](pico-banner-animation/review/banner-390.png), [normal-speed preview](pico-banner-animation/review/pico-reading-v1.mp4), and [independent review](pico-banner-animation/review/independent-review.json) are preserved. The final proof asserts the computed +1.4°/−0.6° angles at their declared times. Missing-image and missing-module tests use fresh browser contexts so decoded caches cannot bypass the failure fixture.
+
+### Hosted release evidence
+
+Runtime a1fbc38c44b2a5b39783be1c9b2eacc658af0df0 is published at [Horizons](https://exams.bebrighton.net/Horizons/App/). [GitHub Pages run 41975897079](https://github.com/Chiispiitas/Brighton/actions/runs/41975897079) completed successfully. The hosted proof passed at 320, 390, 768 and 1440px, including the scoped animation, fixed body, reduced-motion still, missing-part/module fallback, offscreen pause/resume, controlled hidden-document event and route disposal. Root viewed the actual hosted mobile banner and +1.4° extreme; preserved copies are [hosted banner](pico-banner-animation/review/hosted-banner-390.png) and [hosted extreme](pico-banner-animation/review/hosted-frame-1920.png).
+
+The real v23→v24 service-worker upgrade passed with exact committed module/part bytes in Cache Storage. Publication parity passed for all 382 committed runtime/native files, including 12 existing book recordings. Reports: [release](../reports/pico-banner-release.json), [hosted motion](../reports/pico-banner-motion-proof-hosted.json), [hosted cache upgrade](../reports/pico-banner-cache-upgrade-hosted.json), and [publication parity](../reports/publication-assets.json). These checks use synthetic intercepted app state and make no learner/backend writes. Browser and visual-review limitations above still apply. Later evidence-only commits do not alter this verified runtime.
