@@ -1,0 +1,256 @@
+{
+  "date": "2026-11-05T05:07:45.804Z",
+  "base": "https://exams.bebrighton.net/Horizons/App/",
+  "baseline": "f58999b4614806bf20b478d15ae3d6799c77cfc5",
+  "sourceRef": "5dc0a3dce6215c83584e2d91d98e82adbec91245",
+  "oldCache": "horizons-companion-curve-v22",
+  "newCache": "horizons-companion-mastery-v23",
+  "scope": "Real committed curve v22 runtime installed and cached, then upgraded through update/activate/controller lifecycle to mastery v23. New motion module, entry files, native overlay and source bytes verified in browser and Cache Storage. No API calls or learner writes.",
+  "steps": [
+    {
+      "name": "Previous worker and exact cached runtime installed",
+      "cacheNames": [
+        "horizons-companion-curve-v22"
+      ],
+      "controller": true,
+      "oldAppHash": "dcbb10efa302a1e9e5d7faed437759f2c9893034083e5d758901ad518596f9b0",
+      "pass": true
+    },
+    {
+      "name": "New worker activated and previous cache removed",
+      "cacheNames": [
+        "horizons-companion-mastery-v23"
+      ],
+      "pass": true
+    },
+    {
+      "name": "Corrected native collar overlay decoded in actual outfit3 renderer",
+      "ready": true,
+      "overlaySource": "assets/art/avatar-jacket-lapels-v1.png",
+      "nativeWidth": 1662,
+      "nativeHeight": 946,
+      "uniform": true,
+      "animations": 0,
+      "pass": true
+    },
+    {
+      "name": "Motion interface and unchanged native art have exact current bytes in Cache Storage",
+      "title": "Horizons",
+      "modules": [
+        "src/app.js?v=mastery1",
+        "src/studio-ui.js?v=mastery1",
+        "src/ui-motion.js?v=mastery1",
+        "src/art.js?v=colors1",
+        "src/api-client.js",
+        "src/lesson-art.js?v=colors1"
+      ],
+      "pass": true
+    }
+  ],
+  "lifecycle": [
+    {
+      "event": "worker-state",
+      "state": "installing"
+    },
+    {
+      "event": "worker-state",
+      "state": "installed"
+    },
+    {
+      "event": "worker-state",
+      "state": "activating"
+    },
+    {
+      "event": "controllerchange"
+    },
+    {
+      "event": "worker-state",
+      "state": "activated"
+    }
+  ],
+  "runtimeErrors": [],
+  "bindingErrors": [],
+  "apiRequests": [],
+  "loaded": [
+    {
+      "file": "styles/app.css",
+      "query": "?v=mastery1",
+      "sha256": "854afb851d7683c360aaae60c51e70ae68b463ed45d004bb237bd690504c30f5",
+      "fromServiceWorker": true
+    },
+    {
+      "file": "src/app.js",
+      "query": "?v=mastery1",
+      "sha256": "f46a12b135e7f1b9c61440ed758e002cc6d4374ae3bf8f98d9c5929ebead96c6",
+      "fromServiceWorker": true
+    },
+    {
+      "file": "src/studio-ui.js",
+      "query": "?v=mastery1",
+      "sha256": "38c95c3c2d0a10e20f41e1e8df7db33b51010c23be4cd1aa6d6eec955a6a836a",
+      "fromServiceWorker": true
+    },
+    {
+      "file": "content/island-mastery.mjs",
+      "query": "",
+      "sha256": "22f2a49e26838f99344134234e2e6c4504b88fc930849fab5e34501231469a7c",
+      "fromServiceWorker": true
+    },
+    {
+      "file": "src/ui-motion.js",
+      "query": "?v=mastery1",
+      "sha256": "8522d0aa17a2f7d1561c0548ea96a7cede44f01dbfeee5ac9e3639e2d9fecd38",
+      "fromServiceWorker": true
+    },
+    {
+      "file": "content/unit1.mjs",
+      "query": "",
+      "sha256": "a8ba4f964ff6a6b06f070d4cfed8c6b4bbfcbdeb6aaf3943ca426bd2b90b8439",
+      "fromServiceWorker": true
+    },
+    {
+      "file": "src/art.js",
+      "query": "?v=colors1",
+      "sha256": "238aa04deaeaa9b743af6052233a1db92e791ac6e62b7f06588662c478f56429",
+      "fromServiceWorker": true
+    },
+    {
+      "file": "content/engine.mjs",
+      "query": "",
+      "sha256": "036987abd687f4e35ce283545ce4d4777aaf05cfd2beca334ac3ae8f2b622d38",
+      "fromServiceWorker": true
+    },
+    {
+      "file": "content/translations.mjs",
+      "query": "",
+      "sha256": "ca703a3a5ca26e91ea0e194e3cc3d6bfee0fa2f30b66b39daa9f9e83940c6c88",
+      "fromServiceWorker": true
+    },
+    {
+      "file": "content/answer-matching.mjs",
+      "query": "",
+      "sha256": "f33e960eb0b189272c8ddb921d39457251d961f55300aa2b2ca44e1f9c6e3978",
+      "fromServiceWorker": true
+    },
+    {
+      "file": "assets/art/manifest.json",
+      "query": "?colors=1",
+      "sha256": "a600ddd18b4a7b9983a3a0606c8e1df5b7f4a3fde5ece0d861e099870f12a6a9",
+      "fromServiceWorker": true
+    },
+    {
+      "file": "src/avatar-static.js",
+      "query": "?v=colors1",
+      "sha256": "a503b49b234eb23b1e615039499a2d9c8855946d87bac3afc7ab2a57b0e67597",
+      "fromServiceWorker": true
+    },
+    {
+      "file": "assets/art/manifest.json",
+      "query": "?lapel=1",
+      "sha256": "a600ddd18b4a7b9983a3a0606c8e1df5b7f4a3fde5ece0d861e099870f12a6a9",
+      "fromServiceWorker": true
+    },
+    {
+      "file": "assets/art/avatar-static-v1.frames.json",
+      "query": "?colors=1",
+      "sha256": "e74f95119e7c64925b6e760a6f0698a127518fdd83808c016e40e5cf565b324a",
+      "fromServiceWorker": true
+    },
+    {
+      "file": "assets/art/avatar-jacket-lapels-v1.png",
+      "query": "",
+      "sha256": "1938b2ee00058ea4094870729fdca115bf35a294afc551fe54cf1aabfca357ce",
+      "fromServiceWorker": true
+    }
+  ],
+  "pass": true,
+  "cacheBinding": [
+    {
+      "file": "assets/art/avatar-change-sparkles-v1.png",
+      "query": "",
+      "sha256": "c9b4c96f423dfde60ab6f493e02c984bfa9cf670db68a490e8cbca0adae9b5be"
+    },
+    {
+      "file": "index.html",
+      "query": "",
+      "sha256": "aa289d0924df7224ec37a68bd740becca87928831eba3238e88a11aacaa557f5"
+    },
+    {
+      "file": "styles/app.css",
+      "query": "?v=mastery1",
+      "sha256": "854afb851d7683c360aaae60c51e70ae68b463ed45d004bb237bd690504c30f5"
+    },
+    {
+      "file": "src/app.js",
+      "query": "?v=mastery1",
+      "sha256": "f46a12b135e7f1b9c61440ed758e002cc6d4374ae3bf8f98d9c5929ebead96c6"
+    },
+    {
+      "file": "src/studio-ui.js",
+      "query": "?v=mastery1",
+      "sha256": "38c95c3c2d0a10e20f41e1e8df7db33b51010c23be4cd1aa6d6eec955a6a836a"
+    },
+    {
+      "file": "src/ui-motion.js",
+      "query": "?v=mastery1",
+      "sha256": "8522d0aa17a2f7d1561c0548ea96a7cede44f01dbfeee5ac9e3639e2d9fecd38"
+    },
+    {
+      "file": "content/island-mastery.mjs",
+      "query": "",
+      "sha256": "22f2a49e26838f99344134234e2e6c4504b88fc930849fab5e34501231469a7c"
+    },
+    {
+      "file": "content/unit1.mjs",
+      "query": "",
+      "sha256": "a8ba4f964ff6a6b06f070d4cfed8c6b4bbfcbdeb6aaf3943ca426bd2b90b8439"
+    },
+    {
+      "file": "content/engine.mjs",
+      "query": "",
+      "sha256": "036987abd687f4e35ce283545ce4d4777aaf05cfd2beca334ac3ae8f2b622d38"
+    },
+    {
+      "file": "src/art.js",
+      "query": "?v=colors1",
+      "sha256": "238aa04deaeaa9b743af6052233a1db92e791ac6e62b7f06588662c478f56429"
+    },
+    {
+      "file": "content/translations.mjs",
+      "query": "",
+      "sha256": "ca703a3a5ca26e91ea0e194e3cc3d6bfee0fa2f30b66b39daa9f9e83940c6c88"
+    },
+    {
+      "file": "content/answer-matching.mjs",
+      "query": "",
+      "sha256": "f33e960eb0b189272c8ddb921d39457251d961f55300aa2b2ca44e1f9c6e3978"
+    },
+    {
+      "file": "assets/art/manifest.json",
+      "query": "?colors=1",
+      "sha256": "a600ddd18b4a7b9983a3a0606c8e1df5b7f4a3fde5ece0d861e099870f12a6a9"
+    },
+    {
+      "file": "src/avatar-static.js",
+      "query": "?v=colors1",
+      "sha256": "a503b49b234eb23b1e615039499a2d9c8855946d87bac3afc7ab2a57b0e67597"
+    },
+    {
+      "file": "assets/art/manifest.json",
+      "query": "?lapel=1",
+      "sha256": "a600ddd18b4a7b9983a3a0606c8e1df5b7f4a3fde5ece0d861e099870f12a6a9"
+    },
+    {
+      "file": "assets/art/avatar-static-v1.frames.json",
+      "query": "?colors=1",
+      "sha256": "e74f95119e7c64925b6e760a6f0698a127518fdd83808c016e40e5cf565b324a"
+    },
+    {
+      "file": "assets/art/avatar-jacket-lapels-v1.png",
+      "query": "",
+      "sha256": "1938b2ee00058ea4094870729fdca115bf35a294afc551fe54cf1aabfca357ce"
+    }
+  ],
+  "changedSources": [],
+  "status": "PASS"
+}

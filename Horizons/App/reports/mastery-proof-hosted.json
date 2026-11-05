@@ -1,0 +1,84 @@
+{
+  "date": "2026-11-05T05:07:44.090Z",
+  "revision": "5dc0a3dce6215c83584e2d91d98e82adbec91245",
+  "runtimeSources": {
+    "src/ui-motion.js": "8522d0aa17a2f7d1561c0548ea96a7cede44f01dbfeee5ac9e3639e2d9fecd38",
+    "src/studio-ui.js": "38c95c3c2d0a10e20f41e1e8df7db33b51010c23be4cd1aa6d6eec955a6a836a",
+    "src/app.js": "f46a12b135e7f1b9c61440ed758e002cc6d4374ae3bf8f98d9c5929ebead96c6",
+    "styles/app.css": "854afb851d7683c360aaae60c51e70ae68b463ed45d004bb237bd690504c30f5",
+    "index.html": "aa289d0924df7224ec37a68bd740becca87928831eba3238e88a11aacaa557f5",
+    "service-worker.js": "868d847ee530d8abdb6b3c81c6f738f9a8884d66be9f1c4394ad740f561991a9"
+  },
+  "base": "https://exams.bebrighton.net/Horizons/App/",
+  "checks": [
+    {
+      "width": 320,
+      "press": true,
+      "bubble": true,
+      "dismissal": true,
+      "keyboard": true,
+      "sectionEntry": true,
+      "selection": true,
+      "slidingTabs": true,
+      "draftPreserved": true,
+      "staticCharacters": true,
+      "settles": true
+    },
+    {
+      "width": 390,
+      "press": true,
+      "bubble": true,
+      "dismissal": true,
+      "keyboard": true,
+      "sectionEntry": true,
+      "selection": true,
+      "slidingTabs": true,
+      "draftPreserved": true,
+      "staticCharacters": true,
+      "settles": true
+    },
+    {
+      "width": 768,
+      "press": true,
+      "bubble": true,
+      "dismissal": true,
+      "keyboard": true,
+      "sectionEntry": true,
+      "selection": true,
+      "slidingTabs": true,
+      "draftPreserved": true,
+      "staticCharacters": true,
+      "settles": true
+    },
+    {
+      "width": 1440,
+      "press": true,
+      "bubble": true,
+      "dismissal": true,
+      "keyboard": true,
+      "sectionEntry": true,
+      "selection": true,
+      "slidingTabs": true,
+      "draftPreserved": true,
+      "staticCharacters": true,
+      "settles": true
+    }
+  ],
+  "progressFill": true,
+  "answerFeedback": true,
+  "tokenMovement": true,
+  "memory": true,
+  "reducedMotion": true,
+  "midFlightReducedMotion": true,
+  "api": "Synthetic session only; real API requests intercepted; no profile/attempt writes",
+  "errors": [],
+  "pass": true,
+  "limits": [
+    "Edge/Chromium only. Token movement uses a small DOM fixture with the production motion hooks. Visual verdict recorded after screenshot review."
+  ],
+  "visualReview": {
+    "reviewer": "Codex root",
+    "pass": true,
+    "scope": "Direct full-size local mobile/desktop and hosted mobile review of compact opaque bubble, island crowns, lesson crown, missing shortcut row and static characters."
+  }
+}

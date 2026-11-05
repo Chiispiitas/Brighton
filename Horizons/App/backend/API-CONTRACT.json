@@ -149,5 +149,26 @@
     "Lesson completion follows the compact path topic IDs and their linked historical chunk/grammar completions without creating attempts, XP or mastery",
     "Audio alternatives are reconstructed on the server from audioEnabled and original listening question IDs; clients cannot substitute arbitrary questions",
     "Avatar badge none is free; star-pin/trophy-pin/compass-pin require25/100/250storedXP and locked selections return403 BADGE_LOCKED"
-  ]
+  ],
+  "islandMastery": {
+    "responseFields": [
+      "bootstrap.progress.islands",
+      "bootstrap.progress.masteredLessons"
+    ],
+    "islands": {
+      "key": "Canonical path node ID",
+      "fields": [
+        "items",
+        "total",
+        "seen",
+        "masteredCount",
+        "mastered"
+      ]
+    },
+    "vocabulary": "Existing stored word mastery: three unaided correct recalls, at least 75% recall accuracy.",
+    "skills": "Three unaided correct responses per canonical grammar/reading/listening question with 75% accuracy. Silent alternatives do not master audio.",
+    "roundSelection": "Frontend selects at most eight unseen/unmastered items from the full seeded canonical pool; server reconstructs and grades their IDs independently.",
+    "persistence": "Derived from stored server-graded events; no client crown flag or new collection.",
+    "retry": "Same saved attempt does not award XP or mastery twice."
+  }
 }

@@ -1,0 +1,47 @@
+{
+  "date": "2026-11-05T05:08:21.360Z",
+  "base": "https://exams.bebrighton.net/Horizons/App/",
+  "pass": true,
+  "checks": [
+    {
+      "width": 320,
+      "compactBubble": true,
+      "goldCrown": true,
+      "lessonCrown": true,
+      "noShortcuts": true
+    },
+    {
+      "width": 390,
+      "compactBubble": true,
+      "goldCrown": true,
+      "lessonCrown": true,
+      "noShortcuts": true
+    },
+    {
+      "width": 768,
+      "compactBubble": true,
+      "goldCrown": true,
+      "lessonCrown": true,
+      "noShortcuts": true
+    },
+    {
+      "width": 1440,
+      "compactBubble": true,
+      "goldCrown": true,
+      "lessonCrown": true,
+      "noShortcuts": true
+    }
+  ],
+  "roundsToMaster": 4,
+  "unseenWordsPrioritized": true,
+  "wrongAndCorrectSaved": true,
+  "completionBeforeMastery": true,
+  "reload": true,
+  "secondDeviceSession": true,
+  "backend": "Actual application with isolated in-memory store, no real CMS writes",
+  "limits": [
+    "Edge/Chromium only"
+  ],
+  "revision": "5dc0a3dce6215c83584e2d91d98e82adbec91245",
+  "visualReview": "Codex root: hosted 390px crown/bubble screenshot inspected; root local four-width screenshots inspected."
+}

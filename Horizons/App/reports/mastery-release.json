@@ -1,0 +1,28 @@
+{
+  "date": "2026-11-05T05:09:26.870243+00:00",
+  "revision": "5dc0a3dce6215c83584e2d91d98e82adbec91245",
+  "pass": true,
+  "url": "https://exams.bebrighton.net/Horizons/App/",
+  "pagesRun": 41971552196,
+  "backendDeployment": "32611cc2-cdaa-4c78-8968-b9dd7681530f",
+  "backendSourceRevision": "b9bec307cd90a7a8d249b56c6a317d3bdb5d2dce",
+  "backendTests": 35,
+  "referencePreflightTests": 6,
+  "hostedWidths": [
+    320,
+    390,
+    768,
+    1440
+  ],
+  "hostedFilesMatch": 356,
+  "mastery": "Server-derived from existing graded events; vocabulary and skill standards documented in APP-AUDIT.md.",
+  "liveCMS": "Reserved synthetic QA fixture reached Greetings crown in four rounds; retry added no XP/mastery; second-device session restored crown. No profile writes or real learner data.",
+  "browser": "Actual application with isolated in-memory store: first eight, remaining two prioritised, incorrect/correct answers saved, check before crown, lesson crown, reload, four compact bubble sizes, no lesson shortcuts.",
+  "cacheUpgrade": "Real v22 to v23 lifecycle and exact cached bytes passed.",
+  "limits": [
+    "Edge/Chromium only.",
+    "Browser mastery writes use isolated in-memory store; a separate real CMS run verifies hosted persistence.",
+    "Mastery reflects current stored accuracy."
+  ],
+  "evidenceCommit": "No runtime changes."
+}
